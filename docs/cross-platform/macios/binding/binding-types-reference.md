@@ -6,12 +6,12 @@ ms.assetid: C6618E9D-07FA-4C84-D014-10DAC989E48D
 author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: 9c5a3cdbc8a8d5a046db90ffa48b12709359da98
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: d460bf867ce09e614be76d0a4a7ffef01420cf82
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55234031"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669480"
 ---
 # <a name="binding-types-reference-guide"></a>バインドの種類のリファレンス ガイド
 
@@ -299,7 +299,7 @@ interface FooObject_Extensions {
 }
 ```
 
-これが正しくないためにを使用する、`BoolMethod`拡張機能のインスタンスを必要`FooObject`、ObjC をバインドしているが、**静的**拡張機能では、これは方法のための副作用C#拡張メソッドが実装されています。
+これが正しくないためにを使用する、`BoolMethod`拡張機能のインスタンスを必要`FooObject`、ObjC をバインドしているが、**静的**拡張機能では、これは方法のための副作用C#拡張メソッドが実装されています.
 
 上記の定義を使用する唯一の方法は、厄介次のコードでは。
 
@@ -906,7 +906,7 @@ CAScroll? [] GetScrollModes (CGRect [] rects) { ... }
 
 メソッドやプロパティの効果に使用される場合、`[Bind]`属性は、指定されたセレクターが呼び出すメソッドを生成します。 その結果、生成されたメソッドが修飾されていないが、 [ `[Export]` ](#ExportAttribute)属性には、メソッドのオーバーライドで参加できるしないことを意味します。 これは通常と組み合わせて使用、 `[Target]` Objective C の拡張メソッドを実装するための属性。
 
-例:
+例えば:
 
 ```csharp
 public interface UIView {
@@ -1673,7 +1673,7 @@ enum NSRunLoopMode {
 
 コード ジェネレーターを作成する上記のバインドの定義から、`enum`自体も作成し、`*Extensions`列挙型値間の 2 つの方法で変換メソッドを含む静的な型と`NSString`定数。 つまり、定数のまま、API の一部でない場合でも開発者が利用できます。
 
-次に例を示します。
+次に例を示します。 
 
 ```csharp
 // using the NSString constant in a different API / framework / 3rd party code
@@ -1795,7 +1795,7 @@ public class LinkWithAttribute : Attribute {
 
 なお、`LinkTarget`引数は、Xamarin.iOS によって推定され、設定する必要はありません。
 
-次に例を示します。
+次に例を示します。 
 
 ```csharp
 // Specify additional linker:
@@ -1851,7 +1851,7 @@ public class LinkWithAttribute : Attribute {
 
 `WeakFrameworks`プロパティと同じように機能、`Frameworks`プロパティ、リンク時に、点を除いて、`-weak_framework`指定子は、各表示されているフレームワークの gcc に渡されます。
 
-`WeakFrameworks` 使用するようできます必要に応じてそれらが使用可能なが受け取らない、ライブラリの機能を追加するものでは場合に便利ですがハードの依存関係に新しいライブラリおよびアプリケーション プラットフォーム フレームワークに対して弱くリンクすることによりiOS のバージョン。 脆弱なリンクの詳細については、Apple のドキュメントを参照して[弱いリンク](http://developer.apple.com/library/mac/#documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WeakLinking.html)します。
+`WeakFrameworks` 使用するようできます必要に応じてそれらが使用可能なが受け取らない、ライブラリの機能を追加するものでは場合に便利ですがハードの依存関係に新しいライブラリおよびアプリケーション プラットフォーム フレームワークに対して弱くリンクすることによりiOS のバージョン。 脆弱なリンクの詳細については、Apple のドキュメントを参照して[弱いリンク](https://developer.apple.com/library/mac/#documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WeakLinking.html)します。
 
 脆弱なリンクに適した候補となります`Frameworks`などのアカウント、 `CoreBluetooth`、 `CoreImage`、 `GLKit`、`NewsstandKit`と`Twitter`iOS 5 で利用可能なだけであることから。
 

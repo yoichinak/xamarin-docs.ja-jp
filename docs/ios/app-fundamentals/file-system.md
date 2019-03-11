@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 11/12/2018
-ms.openlocfilehash: 38422682849de60a3f43e513ef48011d32b030ef
-ms.sourcegitcommit: d09391c315336d36496880ef465a72b8974f2ac7
+ms.openlocfilehash: 09e05fcfe10a994e14aa605b203ea67efae80d62
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51579870"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672626"
 ---
 # <a name="file-system-access-in-xamarinios"></a>Xamarin.iOS でのファイル システム アクセス
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/FileSystemSampleCode/)
 
-Xamarin.iOS を使用して、`System.IO`クラス、 *.NET 基本クラス ライブラリ (BCL)* iOS ファイル システムにアクセスします。 `File`クラスにより、作成、削除、および、ファイルの読み取りおよび`Directory`クラスでは、作成、削除、またはディレクトリの内容を列挙することができます。 使用することも`Stream`サブクラスより詳細なファイル操作 (など、ファイル内の圧縮または位置の検索) 経由での制御を提供することができます。
+Xamarin.iOS を使用して、`System.IO`クラス、 *.NET 基本クラス ライブラリ (BCL)* iOS ファイル システムにアクセスします。 `File` クラスでは、ファイルを作成し、削除し、読み込むことができます。`Directory` クラスでは、ディレクトリの内容を作成し、削除し、列挙できます。 使用することも`Stream`サブクラスより詳細なファイル操作 (など、ファイル内の圧縮または位置の検索) 経由での制御を提供することができます。
 
 iOS で、アプリケーションが、アプリケーションのデータのセキュリティを維持して、有害なアプリからユーザーを保護するファイル システムで実行できる操作のいくつかの制限が課せられます。 これらの制限の一部である、*アプリケーションのサンド ボックス*– ファイル、設定、ネットワーク リソース、ハードウェアなどに、アプリケーションのアクセスを制限する一連の規則。アプリケーションがそのホーム ディレクトリ (インストールされている場所) 内のファイルの読み書きに制限されます。別のアプリケーションのファイルにアクセスできません。
 
@@ -200,7 +200,7 @@ iOS は、スラッシュを使用してパスの区切り文字として '/' (�
 
 |ディレクトリ|説明|
 |---|---|
-|[ApplicationName] .app/|**IOS 7 およびそれ以前で**、これは、`ApplicationBundle`アプリケーションの実行可能ファイルが格納されているディレクトリ。 アプリで作成するディレクトリ構造は、(たとえば、イメージと、Visual Studio for Mac プロジェクトでリソースとしてマークされているその他のファイルの種類) は、このディレクトリに存在します。<br /><br />このディレクトリへのパスを利用し、アプリケーション バンドル内のコンテンツ ファイルにアクセスする必要がある場合、`NSBundle.MainBundle.BundlePath`プロパティ。|
+|[ApplicationName].app/|**IOS 7 およびそれ以前で**、これは、`ApplicationBundle`アプリケーションの実行可能ファイルが格納されているディレクトリ。 アプリで作成するディレクトリ構造は、(たとえば、イメージと、Visual Studio for Mac プロジェクトでリソースとしてマークされているその他のファイルの種類) は、このディレクトリに存在します。<br /><br />このディレクトリへのパスを利用し、アプリケーション バンドル内のコンテンツ ファイルにアクセスする必要がある場合、`NSBundle.MainBundle.BundlePath`プロパティ。|
 |ドキュメント/|このディレクトリを使用すると、ユーザーのドキュメントおよびアプリケーション データ ファイルを格納できます。<br /><br />このディレクトリの内容使用できるユーザーに iTunes のファイル (ただし、これは既定で無効です) を共有します。 追加、 `UIFileSharingEnabled` Info.plist ファイルにこれらのファイルへのアクセスを許可するブール値のキー。<br /><br />アプリケーションでは、ファイル共有を有効にするすぐに、場合でも、このディレクトリ内のユーザーから非表示にするファイルを配置することを避ける必要があります (など、データベース ファイルを共有するのでない限り)。 機密性の高いファイルは非表示のまま、限り、これらのファイルいない公開されている (とする可能性のある移動、変更、または iTunes によって削除された) 場合は、今後のバージョンでファイル共有を有効にします。<br /><br /> 使用することができます、`Environment.GetFolderPath (Environment.SpecialFolder.MyDocuments)`アプリケーションの Documents ディレクトリへのパスを取得します。<br /><br />このディレクトリの内容は、iTunes でバックアップされます。|
 |ライブラリ/|ライブラリ ディレクトリは、データベースやその他のアプリケーションによって生成されたファイルなど、ユーザーが直接作成されないファイルを格納することをお勧めします。 このディレクトリの内容は iTunes を介してユーザーに公開されることはありません。<br /><br />ライブラリで、独自のサブディレクトリを作成することができます。ただし、あるは既にいくつかシステムで作成されたディレクトリは、ここなどの基本設定とキャッシュの把握しておく必要があります。<br /><br />(キャッシュのサブディレクトリ) を除く、このディレクトリの内容は、iTunes でバックアップされます。 ライブラリで作成したカスタム ディレクトリのバックアップが作成されます。|
 |ライブラリの基本/|アプリケーション固有の基本設定ファイルは、このディレクトリに格納されます。 これらのファイルを直接作成しません。 代わりに、使用、`NSUserDefaults`クラス。<br /><br />このディレクトリの内容は、iTunes でバックアップされます。|
@@ -357,5 +357,5 @@ Console.WriteLine ("Group Path: " + appGroupContainerPath);
 ## <a name="related-links"></a>関連リンク
 
 - [ファイル システムのサンプル コード](https://developer.xamarin.com/samples/FileSystemSampleCode/)
-- [ファイル システムのプログラミング ガイド](http://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/FileSystemProgrammingGUide/Introduction/Introduction.html)
-- [ファイルを登録、アプリケーションがサポートを種類します。](http://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Articles/RegisteringtheFileTypesYourAppSupports.html#/apple_ref/doc/uid/TP40010411-SW1)
+- [ファイル システムのプログラミング ガイド](https://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/FileSystemProgrammingGUide/Introduction/Introduction.html)
+- [ファイルを登録、アプリケーションがサポートを種類します。](https://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Articles/RegisteringtheFileTypesYourAppSupports.html#/apple_ref/doc/uid/TP40010411-SW1)

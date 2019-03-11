@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: 1ac68992d36627eb5d6aee0d4d19564ce63a3936
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 8bd77ec4975fae3cc7245c5adc2b5ef18568b9e1
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53052136"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667583"
 ---
 # <a name="consuming-an-azure-mobile-app"></a>Azure Mobile Appsの使用
 
@@ -22,7 +22,7 @@ _Azure Mobile Appsでは、モバイル認証、オフライン同期、およ�
 
 
 > [!NOTE]
-> 6 月 30 日以降は、すべての新しい Azure モバイル アプリが作成されます TLS 1.2 を既定では。 さらもをお勧めする既存の Azure Mobile Apps TLS 1.2 を使用するように再構成します。 Azure モバイル アプリで TLS 1.2 を適用する方法については、次を参照してください。 [TLS 1.2 を適用する](/azure/app-service/app-service-web-tutorial-custom-ssl#enforce-tls-1112)します。 TLS 1.2 を使用する Xamarin プロジェクトを構成する方法については、次を参照してください。[トランスポート層セキュリティ (TLS) 1.2](~/cross-platform/app-fundamentals/transport-layer-security.md)します。
+> 6 月 30 日以降は、すべての新しい Azure モバイル アプリが作成されます TLS 1.2 を既定では。 さらもをお勧めする既存の Azure Mobile Apps TLS 1.2 を使用するように再構成します。 Azure モバイル アプリで TLS 1.2 を適用する方法については、次を参照してください。[適用の TLS バージョン](/azure/app-service/app-service-web-tutorial-custom-ssl#enforce-tls-versions)します。 TLS 1.2 を使用する Xamarin プロジェクトを構成する方法については、次を参照してください。[トランスポート層セキュリティ (TLS) 1.2](~/cross-platform/app-fundamentals/transport-layer-security.md)します。
 
 Xamarin.Forms で利用できる Azure Mobile Apps インスタンスを作成する方法については、 [Xamarin.Forms アプリを作成する](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-forms-get-started/) を参照してください。 これらの手順に従うと、後に設定して、Azure Mobile Apps インスタンスを使用するダウンロード可能なサンプル アプリケーションを構成できます。`Constants.ApplicationURL` Azure Mobile Apps インスタンスの URL にします。 次に、サンプル アプリケーションを実行すると、次のスクリーン ショットに示すように、Azure Mobile Apps インスタンスに接続します。
 

@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/05/2018
-ms.openlocfilehash: 655f988cc54cf54e346e68109271775dee2918a9
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 5e354f8271257ab21a855bdf5d576ce3062fadc7
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111253"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668245"
 ---
 # <a name="working-with-the-android-manifest"></a>Android マニフェストの使用
 
@@ -84,8 +84,8 @@ public class MyActivity : Activity
 
 ### <a name="activity-title-bar"></a>アクティビティのタイトル バー
 
-既定では、Android ことで、アプリケーションのタイトル バーを実行した場合。 このために使用する値は[ `/manifest/application/activity/@android:label`](http://developer.android.com/guide/topics/manifest/activity-element.html#label)します。 ほとんどの場合、この値は、クラス名と異なります。 タイトル バーに、アプリのラベルを指定するには、使用、 [ `Label` ](https://developer.xamarin.com/api/property/Android.App.ActivityAttribute.Label/)プロパティ。
-例えば: 
+既定では、Android ことで、アプリケーションのタイトル バーを実行した場合。 このために使用する値は[ `/manifest/application/activity/@android:label`](https://developer.android.com/guide/topics/manifest/activity-element.html#label)します。 ほとんどの場合、この値は、クラス名と異なります。 タイトル バーに、アプリのラベルを指定するには、使用、 [ `Label` ](https://developer.xamarin.com/api/property/Android.App.ActivityAttribute.Label/)プロパティ。
+例: 
 
 ```csharp
 [Activity (Label="Awesome Demo App")]
@@ -104,7 +104,7 @@ public class MyActivity : Activity
 
 ### <a name="launchable-from-application-chooser"></a>アプリケーションの選択 ダイアログ ボックスから起動可能
 
-既定では、アクティビティは表示されませんで Android のアプリケーションの起動画面。 これは、存在する可能性は多くのアクティビティで、アプリケーションでは、1 つにつき、アイコンが必要ないためです。 アプリケーション起動プログラムから起動可能なものがありますを指定するには、使用、 [ `MainLauncher` ](https://developer.xamarin.com/api/property/Android.App.ActivityAttribute.MainLauncher/)プロパティ。 例えば: 
+既定では、アクティビティは表示されませんで Android のアプリケーションの起動画面。 これは、存在する可能性は多くのアクティビティで、アプリケーションでは、1 つにつき、アイコンが必要ないためです。 アプリケーション起動プログラムから起動可能なものがありますを指定するには、使用、 [ `MainLauncher` ](https://developer.xamarin.com/api/property/Android.App.ActivityAttribute.MainLauncher/)プロパティ。 例: 
 
 ```csharp
 [Activity (Label="Awesome Demo App", MainLauncher=true)] 
@@ -129,7 +129,7 @@ public class MyActivity : Activity
 
 ### <a name="activity-icon"></a>アクティビティのアイコン
 
-既定では、システムによって提供される既定のランチャー アイコン、アクティビティが指定されます。 カスタム アイコンを使用するには、まず追加、 **.png**に**リソース/drawable**、ビルド アクションを設定**AndroidResource**を使用して、 [ `Icon` ](https://developer.xamarin.com/api/property/Android.App.ActivityAttribute.Icon/)プロパティを使用するアイコンを指定します。 例えば: 
+既定では、システムによって提供される既定のランチャー アイコン、アクティビティが指定されます。 カスタム アイコンを使用するには、まず追加、 **.png**に**リソース/drawable**、ビルド アクションを設定**AndroidResource**を使用して、 [ `Icon` ](https://developer.xamarin.com/api/property/Android.App.ActivityAttribute.Icon/)プロパティを使用するアイコンを指定します。 例: 
 
 ```csharp
 [Activity (Label="Awesome Demo App", MainLauncher=true, Icon="@drawable/myicon")] 
@@ -178,7 +178,7 @@ Android マニフェストにアクセス許可を追加すると (」の説明�
 
 ### <a name="intent-actions-and-features"></a>インテント アクションと機能
 
-Android マニフェストでは、アクティビティの機能を記述するための手段を提供します。 使用してこれには[インテント](http://developer.android.com/guide/topics/manifest/intent-filter-element.html)と [`[IntentFilter]`](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/) 
+Android マニフェストでは、アクティビティの機能を記述するための手段を提供します。 使用してこれには[インテント](https://developer.android.com/guide/topics/manifest/intent-filter-element.html)と [`[IntentFilter]`](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/) 
 カスタム属性です。 アクティビティの適切なアクションを指定することができます、 [`IntentFilter`](https://developer.xamarin.com/api/constructor/Android.App.IntentFilterAttribute.IntentFilterAttribute/p/System.String[]/) 
 コンス トラクター、および対象のカテゴリは適切な [`Categories`](https://developer.xamarin.com/api/property/Android.App.IntentFilterAttribute.Categories/) 
 プロパティを使用する方法を示します。 少なくとも 1 つのアクティビティには、(これは、コンス トラクターでアクティビティが提供されているためにです) を提供する必要があります。 `[IntentFilter]` 複数回、および使用するたびの個別の結果に用意できる`<intent-filter/>`内の要素、`<activity/>`します。 例えば:
@@ -240,18 +240,18 @@ Android マニフェストでは、アプリケーション全体のプロパテ
 
 ## <a name="list-of-custom-attributes"></a>カスタム属性の一覧
 
--   [Android.App.ActivityAttribute](https://developer.xamarin.com/api/type/Android.App.ActivityAttribute/) : 生成、 [/manifest/application/activity](http://developer.android.com/guide/topics/manifest/activity-element.html) XML フラグメント 
--   [Android.App.ApplicationAttribute](https://developer.xamarin.com/api/type/Android.App.ApplicationAttribute/) : 生成、[マニフェスト/アプリケーション](http://developer.android.com/guide/topics/manifest/application-element.html)XML フラグメント 
--   [Android.App.InstrumentationAttribute](https://developer.xamarin.com/api/type/Android.App.InstrumentationAttribute/) : 生成、[インストルメンテーションマニフェスト/](http://developer.android.com/guide/topics/manifest/instrumentation-element.html) XML フラグメント 
--   [Android.App.IntentFilterAttribute](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/) : 生成、 [//intent-filter](http://developer.android.com/guide/topics/manifest/intent-filter-element.html) XML フラグメント 
--   [Android.App.MetaDataAttribute](https://developer.xamarin.com/api/type/Android.App.MetaDataAttribute/) : 生成、 [//meta-data](http://developer.android.com/guide/topics/manifest/meta-data-element.html) XML フラグメント 
--   [Android.App.PermissionAttribute](https://developer.xamarin.com/api/type/Android.App.PermissionAttribute/) : 生成、 [//permission](http://developer.android.com/guide/topics/manifest/permission-element.html) XML フラグメント 
--   [Android.App.PermissionGroupAttribute](https://developer.xamarin.com/api/type/Android.App.PermissionGroupAttribute/) : 生成、 [//permission-group](http://developer.android.com/guide/topics/manifest/permission-group-element.html) XML フラグメント 
--   [Android.App.PermissionTreeAttribute](https://developer.xamarin.com/api/type/Android.App.PermissionTreeAttribute/) : 生成、 [//permission-tree](http://developer.android.com/guide/topics/manifest/permission-tree-element.html) XML フラグメント 
--   [Android.App.ServiceAttribute](https://developer.xamarin.com/api/type/Android.App.ServiceAttribute/) : 生成、 [/manifest/application/service](http://developer.android.com/guide/topics/manifest/service-element.html) XML フラグメント 
--   [Android.App.UsesLibraryAttribute](https://developer.xamarin.com/api/type/Android.App.UsesLibraryAttribute/) : 生成、 [/manifest/application/uses-library](http://developer.android.com/guide/topics/manifest/uses-library-element.html) XML フラグメント 
--   [Android.App.UsesPermissionAttribute](https://developer.xamarin.com/api/type/Android.App.UsesPermissionAttribute/) : 生成、 [/manifest/uses-permission](http://developer.android.com/guide/topics/manifest/uses-permission-element.html) XML フラグメント 
--   [Android.Content.BroadcastReceiverAttribute](https://developer.xamarin.com/api/type/Android.Content.BroadcastReceiverAttribute/) : Generates a  [/manifest/application/receiver](http://developer.android.com/guide/topics/manifest/receiver-element.html) XML fragment 
--   [Android.Content.ContentProviderAttribute](https://developer.xamarin.com/api/type/Android.Content.ContentProviderAttribute/) : Generates a  [/manifest/application/provider](http://developer.android.com/guide/topics/manifest/provider-element.html) XML fragment 
--   [Android.Content.GrantUriPermissionAttribute](https://developer.xamarin.com/api/type/Android.Content.GrantUriPermissionAttribute/) : Generates a  [/manifest/application/provider/grant-uri-permission](http://developer.android.com/guide/topics/manifest/grant-uri-permission-element.html) XML fragment
+-   [Android.App.ActivityAttribute](https://developer.xamarin.com/api/type/Android.App.ActivityAttribute/) :生成、 [/manifest/application/activity](https://developer.android.com/guide/topics/manifest/activity-element.html) XML フラグメント 
+-   [Android.App.ApplicationAttribute](https://developer.xamarin.com/api/type/Android.App.ApplicationAttribute/) :生成、[マニフェスト/アプリケーション](https://developer.android.com/guide/topics/manifest/application-element.html)XML フラグメント 
+-   [Android.App.InstrumentationAttribute](https://developer.xamarin.com/api/type/Android.App.InstrumentationAttribute/) :生成、[インストルメンテーションマニフェスト/](https://developer.android.com/guide/topics/manifest/instrumentation-element.html) XML フラグメント 
+-   [Android.App.IntentFilterAttribute](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/) :生成、 [//intent-filter](https://developer.android.com/guide/topics/manifest/intent-filter-element.html) XML フラグメント 
+-   [Android.App.MetaDataAttribute](https://developer.xamarin.com/api/type/Android.App.MetaDataAttribute/) :生成、 [//meta-data](https://developer.android.com/guide/topics/manifest/meta-data-element.html) XML フラグメント 
+-   [Android.App.PermissionAttribute](https://developer.xamarin.com/api/type/Android.App.PermissionAttribute/) :生成、 [//permission](https://developer.android.com/guide/topics/manifest/permission-element.html) XML フラグメント 
+-   [Android.App.PermissionGroupAttribute](https://developer.xamarin.com/api/type/Android.App.PermissionGroupAttribute/) :生成、 [//permission-group](https://developer.android.com/guide/topics/manifest/permission-group-element.html) XML フラグメント 
+-   [Android.App.PermissionTreeAttribute](https://developer.xamarin.com/api/type/Android.App.PermissionTreeAttribute/) :生成、 [//permission-tree](https://developer.android.com/guide/topics/manifest/permission-tree-element.html) XML フラグメント 
+-   [Android.App.ServiceAttribute](https://developer.xamarin.com/api/type/Android.App.ServiceAttribute/) :生成、 [/manifest/application/service](https://developer.android.com/guide/topics/manifest/service-element.html) XML フラグメント 
+-   [Android.App.UsesLibraryAttribute](https://developer.xamarin.com/api/type/Android.App.UsesLibraryAttribute/) :生成、 [/manifest/application/uses-library](https://developer.android.com/guide/topics/manifest/uses-library-element.html) XML フラグメント 
+-   [Android.App.UsesPermissionAttribute](https://developer.xamarin.com/api/type/Android.App.UsesPermissionAttribute/) :生成、 [/manifest/uses-permission](https://developer.android.com/guide/topics/manifest/uses-permission-element.html) XML フラグメント 
+-   [Android.Content.BroadcastReceiverAttribute](https://developer.xamarin.com/api/type/Android.Content.BroadcastReceiverAttribute/) :生成、 [/manifest/application/receiver](https://developer.android.com/guide/topics/manifest/receiver-element.html) XML フラグメント 
+-   [Android.Content.ContentProviderAttribute](https://developer.xamarin.com/api/type/Android.Content.ContentProviderAttribute/) :生成、 [/manifest/application/provider](https://developer.android.com/guide/topics/manifest/provider-element.html) XML フラグメント 
+-   [Android.Content.GrantUriPermissionAttribute](https://developer.xamarin.com/api/type/Android.Content.GrantUriPermissionAttribute/) :生成、 [/manifest/application/provider/grant-uri-permission](https://developer.android.com/guide/topics/manifest/grant-uri-permission-element.html) XML フラグメント
 

@@ -1,20 +1,20 @@
 ---
-title: Windows Communication Foundation (WCF) Web サービスを使用
+title: Windows Communication Foundation (WCF) Web サービスを使用します。
 description: この記事では、Xamarin.Forms アプリケーションから WCF 簡易オブジェクト アクセス プロトコル (SOAP) サービスを使用する方法を示します。
 ms.prod: xamarin
 ms.assetid: 5696FF04-EF21-4B7A-8C8B-26DE28B5C0AD
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 09/20/2016
-ms.openlocfilehash: 7e8acc6e8aaf8b8e0e8cec7d5d0f3e28cf60073a
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.date: 03/08/2019
+ms.openlocfilehash: 600120b6ed8484399cf5fc48638ef4b129e9c406
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53055596"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671963"
 ---
-# <a name="consuming-a-windows-communication-foundation-wcf-web-service"></a>Windows Communication Foundation (WCF) Web サービスを使用
+# <a name="consume-a-windows-communication-foundation-wcf-web-service"></a>Windows Communication Foundation (WCF) Web サービスを使用します。
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoWCF/)
 
@@ -29,9 +29,10 @@ WCF では、次を含むさまざまなコントラクトのさまざまなサ�
 
 ASP.NET Web サービス (ASMX) と WCF では、違いがありますが、WCF が、同じ ASMX が提供する機能: HTTP 経由の SOAP メッセージをサポートしているかを理解することが重要です。 ASMX サービスの使用に関する詳細については、次を参照してください。[消費の ASP.NET Web サービス (ASMX)](~/xamarin-forms/data-cloud/consuming/asmx.md)します。
 
-一般に、Xamarin プラットフォームでは、Silverlight ランタイムに付属する WCF のクライアント側のサブセットが同じをサポートしています。 WCF の最も一般的なエンコード、およびプロトコルの実装が含まれます: HTTP 経由の SOAP メッセージのテキストでエンコードされたトランスポート プロトコルを使用して、`BasicHttpBinding`クラス。 さらに、WCF のサポートには、プロキシを生成する Windows 環境でのみ使用できるツールの使用が必要です。
+> [!IMPORTANT]
+> HTTP または HTTPS を使用して経由で WCF の Xamarin プラットフォームのサポートはテキストでエンコードされた SOAP メッセージに制限されます、`BasicHttpBinding`クラス。 さらに、WCF のサポートには、プロキシを生成する Windows 環境でのみ使用できるツールの使用が必要です。
 
-WCF サービスの設定方法については、サンプル アプリケーションに付属する readme ファイルで確認できます。 ただし、サンプル アプリケーションの実行時に、次のスクリーン ショットに示すように、データへの読み取り専用アクセスを提供する Xamarin でホストされる WCF サービスに接続には。
+サンプル アプリケーションで使用できるホスト可能な WCF サービスを使用する、 **TodoWCFService**フォルダーのサンプルでは、次のスクリーン ショットに示したと。
 
 ![](wcf-images/portal.png "サンプル アプリケーション")
 
@@ -39,7 +40,7 @@ WCF サービスの設定方法については、サンプル アプリケーシ
 > iOS 9 以降ではは、アプリのトランスポート セキュリティ (ATS) は、機密情報の誤った情報開示を回避をセキュリティで保護された接続 (アプリのバック エンド サーバーなど) のインターネット リソースと、アプリの間に強制します。  ATS が iOS 9 用にビルドされたアプリで既定で有効になるために、すべての接続は ATS セキュリティ要件に応じたされます。 接続はこれらの要件を満たしていない場合は、例外で失敗します。
 > 使用することができない場合の ATS を選択することができます、`HTTPS`プロトコルし、インターネット リソースのための通信をセキュリティで保護します。 これは、アプリの更新することで実現できます**Info.plist**ファイル。 詳細については、次を参照してください。[アプリ トランスポート セキュリティ](~/ios/app-fundamentals/ats.md)します。
 
-## <a name="consuming-the-web-service"></a>Web サービスの使用
+## <a name="consume-the-web-service"></a>Web サービスを使用します。
 
 WCF サービスは、次の操作を提供します。
 
@@ -51,9 +52,6 @@ WCF サービスは、次の操作を提供します。
 |DeleteTodoItem|To Do アイテムの削除|XML シリアル化する TodoItem|
 
 アプリケーションで使用されるデータ モデルの詳細については、次を参照してください。 [、データのモデリング](~/xamarin-forms/data-cloud/walkthrough.md)します。
-
-> [!NOTE]
-> サンプル アプリケーションでは、web サービスへの読み取り専用アクセスを提供する、Xamarin でホストされる WCF サービスを消費します。 そのため、作成、更新、およびデータを削除する操作では、アプリケーションで使用されるデータは変更されません。 ただし、ASMX サービスのホスト可能なバージョンが記載されて、 **TodoWCFService**付属のサンプル アプリケーション内のフォルダー。 このホスト可能なバージョンの WCF サービスが完全な作成、更新、読み取り、およびデータへのアクセスを削除します。
 
 A*プロキシ*により、アプリケーションは、サービスに接続する WCF サービスを使用する生成する必要があります。 プロキシは、メソッドと関連付けられているサービスの構成を定義するサービスのメタデータを使用して構築されます。 このメタデータは、web サービスによって生成される Web サービス記述言語 (WSDL) ドキュメントの形式で公開されます。 Visual Studio 2017 で .NET Standard ライブラリを web サービスのサービス参照を追加する Microsoft WCF Web Service Reference Provider を使用して、プロキシを構築できます。 Visual Studio 2017 での Microsoft WCF Web Service Reference Provider を使用してプロキシを作成する代わりにでは、ServiceModel メタデータ ユーティリティ ツール (svcutil.exe) を使用します。 詳細については、次を参照してください。 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe/)します。
 
@@ -67,7 +65,7 @@ A*プロキシ*により、アプリケーションは、サービスに接続�
 
 APM の詳細については、次を参照してください。[非同期プログラミング モデル](https://msdn.microsoft.com/library/ms228963(v=vs.110).aspx)と[TPL と従来の .NET Framework 非同期プログラミング](https://msdn.microsoft.com/library/dd997423(v=vs.110).aspx)msdn です。
 
-### <a name="creating-the-todoserviceclient-object"></a>TodoServiceClient オブジェクトを作成します。
+### <a name="create-the-todoserviceclient-object"></a>TodoServiceClient オブジェクトを作成します。
 
 生成されたプロキシ クラスには、`TodoServiceClient`クラスは、HTTP 経由で WCF サービスと通信するために使用します。 識別されたサービス インスタンスの URI からの非同期操作は、web サービス メソッドを呼び出すために、機能を提供します。 非同期操作の詳細については、次を参照してください。[非同期サポートの概要](~/cross-platform/platform/async.md)します。
 
@@ -93,14 +91,15 @@ public class SoapService : ISoapService
 
 サービス参照を構成する方法の詳細については、次を参照してください。[サービス参照を構成する](~/cross-platform/data-cloud/web-services/index.md#wcf)します。
 
-### <a name="creating-data-transfer-objects"></a>データ転送オブジェクトの作成
+### <a name="create-data-transfer-objects"></a>データ転送オブジェクトを作成します。
 
 サンプル アプリケーションを使用して、`TodoItem`モデル データへのクラス。 格納する、`TodoItem`最初生成されたプロキシに変換する必要がある、web サービス内の項目`TodoItem`型。 これは、`ToWCFServiceTodoItem`メソッドを次のコード例に示すようにします。
 
 ```csharp
 TodoWCFService.TodoItem ToWCFServiceTodoItem (TodoItem item)
 {
-  return new TodoWCFService.TodoItem {
+  return new TodoWCFService.TodoItem
+  {
     ID = item.ID,
     Name = item.Name,
     Notes = item.Notes,
@@ -116,7 +115,8 @@ TodoWCFService.TodoItem ToWCFServiceTodoItem (TodoItem item)
 ```csharp
 static TodoItem FromWCFServiceTodoItem (TodoWCFService.TodoItem item)
 {
-  return new TodoItem {
+  return new TodoItem
+  {
     ID = item.ID,
     Name = item.Name,
     Notes = item.Notes,
@@ -128,7 +128,7 @@ static TodoItem FromWCFServiceTodoItem (TodoWCFService.TodoItem item)
 
 このメソッドは、生成されたプロキシからのデータを取得する単に`TodoItem`を入力し、新しく作成設定`TodoItem`インスタンス。
 
-### <a name="retrieving-data"></a>データの取得
+### <a name="retrieve-data"></a>データを取得します。
 
 `TodoServiceClient.BeginGetTodoItems`と`TodoServiceClient.EndGetTodoItems`メソッド呼び出しを使用して、 `GetTodoItems` web サービスによって提供される操作。 これらの非同期メソッドをカプセル化、`Task`オブジェクト、次のコード例に示すようにします。
 
@@ -142,7 +142,8 @@ public async Task<List<TodoItem>> RefreshDataAsync ()
     null,
     TaskCreationOptions.None);
 
-  foreach (var item in todoItems) {
+  foreach (var item in todoItems)
+  {
     Items.Add (FromWCFServiceTodoItem (item));
   }
   ...
@@ -153,7 +154,7 @@ public async Task<List<TodoItem>> RefreshDataAsync ()
 
 `TodoServiceClient.EndGetTodoItems`メソッドを返します、`ObservableCollection`の`TodoWCFService.TodoItem`に変換し、インスタンス、`List`の`TodoItem`表示のインスタンス。
 
-### <a name="creating-data"></a>データの作成
+### <a name="create-data"></a>データを作成します。
 
 `TodoServiceClient.BeginCreateTodoItem`と`TodoServiceClient.EndCreateTodoItem`メソッド呼び出しを使用して、 `CreateTodoItem` web サービスによって提供される操作。 これらの非同期メソッドをカプセル化、`Task`オブジェクト、次のコード例に示すようにします。
 
@@ -176,7 +177,7 @@ public async Task SaveTodoItemAsync (TodoItem item, bool isNewItem = false)
 
 Web サービスがスローされます、`FaultException`作成に失敗した場合、`TodoItem`をアプリケーションでこれを処理します。
 
-### <a name="updating-data"></a>データの更新
+### <a name="update-data"></a>データの更新
 
 `TodoServiceClient.BeginEditTodoItem`と`TodoServiceClient.EndEditTodoItem`メソッド呼び出しを使用して、 `EditTodoItem` web サービスによって提供される操作。 これらの非同期メソッドをカプセル化、`Task`オブジェクト、次のコード例に示すようにします。
 
@@ -199,7 +200,7 @@ public async Task SaveTodoItemAsync (TodoItem item, bool isNewItem = false)
 
 Web サービスがスローされます、`FaultException`を探すか、更新に失敗した場合、 `TodoItem`、アプリケーションでこれを処理します。
 
-### <a name="deleting-data"></a>データの削除
+### <a name="delete-data"></a>データを削除します。
 
 `TodoServiceClient.BeginDeleteTodoItem`と`TodoServiceClient.EndDeleteTodoItem`メソッド呼び出しを使用して、 `DeleteTodoItem` web サービスによって提供される操作。 これらの非同期メソッドをカプセル化、`Task`オブジェクト、次のコード例に示すようにします。
 
@@ -220,12 +221,8 @@ public async Task DeleteTodoItemAsync (string id)
 
 Web サービスがスローされます、`FaultException`を探すか、削除に失敗した場合、`TodoItem`をアプリケーションでこれを処理します。
 
-## <a name="summary"></a>まとめ
-
-この記事では、Xamarin.Forms アプリケーションから WCF SOAP サービスを使用する方法を示しました。 一般に、Xamarin プラットフォームでは、Silverlight ランタイムに付属する WCF のクライアント側のサブセットが同じをサポートしています。 WCF の最も一般的なエンコード、およびプロトコルの実装が含まれます: HTTP 経由の SOAP メッセージのテキストでエンコードされたトランスポート プロトコルを使用して、`BasicHttpBinding`クラス。 さらに、WCF のサポートには、プロキシを生成する Windows 環境でのみ使用できるツールの使用が必要です。
-
-
 ## <a name="related-links"></a>関連リンク
 
 - [TodoWCF (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoWCF/)
-- [IAsyncResult](https://msdn.microsoft.com/library/system.iasyncresult(v=vs.110).aspx)
+- [方法: Windows Communication Foundation クライアントを作成します。](https://docs.microsoft.com/dotnet/framework/wcf/how-to-create-a-wcf-client)
+- [ServiceModel メタデータ ユーティリティ ツール (svcutil.exe)](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)
