@@ -8,12 +8,6 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/13/2018
-ms.openlocfilehash: f84a6dac64300eb17a45576ae83f9b94208f5732
-ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55831925"
 ---
 # <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>カスケード スタイル シート (CSS) を使用した Xamarin.Forms アプリのスタイル設定
 
@@ -466,7 +460,7 @@ Xamarin.Forms では次の CSS プロパティがサポートされています�
 - 4 つの値は、上・右・下・左の太さを示します。
 
 > [!NOTE]
-> CSS の `thickness` 値と XAML の [ `Thickness` ](/api/type/Xamarin.Forms.Thickness/) 値は異なります。 たとえば、XAML では、2 つの値の `Thickness` は左右・上下の順で、4 つの値の `Thickness` は、左・上・右・下の順で太さを示します。 さらに、XAML の `Thickness` 値は、コンマで区切られます。
+> CSS の `thickness` 値と XAML の [ `Thickness` ](xref:Xamarin.Forms.Thickness) 値は異なります。 たとえば、XAML では、2 つの値の `Thickness` は左右・上下の順で、4 つの値の `Thickness` は、左・上・右・下の順で太さを示します。 さらに、XAML の `Thickness` 値は、コンマで区切られます。
 
 ### <a name="namedsize"></a>NamedSize
 

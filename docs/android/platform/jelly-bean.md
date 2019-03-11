@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 9e83c9a8c1e2740596a981598cafbbfb65e2caf2
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 24fc14b0342591c56f5bf91862b0d94759a42834
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119242"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670104"
 ---
 # <a name="jelly-bean-features"></a>Jelly Bean の機能
 
@@ -79,7 +79,7 @@ animator.Start();
 
 ### <a name="application-stack-navigation"></a>アプリケーション スタックのナビゲーション
 
-Android 4.1 の Android 3.0 で導入されたアプリケーション スタックのナビゲーションが向上します。 指定することによって、`ParentName`のプロパティ、 `ActivityAttribute`、Android は、ユーザーが押したときに適切な親アクティビティを開くことができます、[上方向ボタン](http://developer.android.com/design/patterns/navigation.html#up-vs-back)Android には、操作バーの上、で指定されたアクティビティがインスタンス化`ParentName`プロパティ。 これにより、特定のタスクを構成するアクティビティの階層を保持するアプリケーション。
+Android 4.1 の Android 3.0 で導入されたアプリケーション スタックのナビゲーションが向上します。 指定することによって、`ParentName`のプロパティ、 `ActivityAttribute`、Android は、ユーザーが押したときに適切な親アクティビティを開くことができます、[上方向ボタン](https://developer.android.com/design/patterns/navigation.html#up-vs-back)Android には、操作バーの上、で指定されたアクティビティがインスタンス化`ParentName`プロパティ。 これにより、特定のタスクを構成するアクティビティの階層を保持するアプリケーション。
 
 ほとんどのアプリケーション設定、`ParentName`アクティビティには、アプリケーション スタックを移動するための正しい動作を提供する Android 用の十分な情報Android は親アクティビティごとに一連のインテントを作成して、必要に応じてバック スタックを合成します。 ただし、これは人為的なアプリケーション スタックであるため、各代理の活動は自然なアクティビティが、保存された状態がありません。 アクティビティはオーバーライドの代理の親アクティビティに保存された状態を提供する、`OnPrepareNavigationUpTaskStack`メソッド。 このメソッドは受信、 `TaskStackBuilder` Android が戻るスタックの作成に使用することを目的のコレクションを持つインスタンスのオブジェクトします。 アクティビティは、代理の活動が作成されると、適切な状態情報を受信するため、これらのインテントを変更できます。
 
@@ -284,6 +284,6 @@ Android 4.1 では、柔軟性とコントロール通知の表示、アプリ�
 ## <a name="related-links"></a>関連リンク
 
 - [時間のアニメーション例 (サンプル)](https://developer.xamarin.com/samples/monodroid/PlatformFeatures/TimeAnimatorExample/)
-- [Android 4.1 Api](http://developer.android.com/about/versions/android-4.1.html)
-- [タスク ウィンドウとバック スタック](http://developer.android.com/guide/components/tasks-and-back-stack.html)
-- [戻る と アップによるナビゲーション](http://developer.android.com/design/patterns/navigation.html)
+- [Android 4.1 Api](https://developer.android.com/about/versions/android-4.1.html)
+- [タスク ウィンドウとバック スタック](https://developer.android.com/guide/components/tasks-and-back-stack.html)
+- [[戻る] と アップによるナビゲーション](https://developer.android.com/design/patterns/navigation.html)

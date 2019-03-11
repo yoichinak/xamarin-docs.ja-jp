@@ -1,20 +1,20 @@
 ---
-title: 'Xamarin.Essentials: トラブルシューティング'
+title: Xamarin.Essentials:トラブルシューティング
 description: このドキュメントでは、Xamarin.Essentials ライブラリを使って開発するときに発生した問題のトラブルシューティング方法について説明します。
 ms.assetid: 2E474FAF-F841-4E3C-B815-F7ABD8EE3361
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: 3440b572514c02c8c2240dc99b09aecfde06fcb9
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.openlocfilehash: d13589680161de4c9b5d77eef6d5f823cc884136
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52898747"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671430"
 ---
-# <a name="xamarinessentials-troubleshooting"></a>Xamarin.Essentials: トラブルシューティング
+# <a name="xamarinessentials-troubleshooting"></a>Xamarin.Essentials:トラブルシューティング
 
-## <a name="error-version-conflict-detected-for-xamarinandroidsupportcompat"></a>エラー: Xamarin.Android.Support.Compat について検出されるバージョンの競合
+## <a name="error-version-conflict-detected-for-xamarinandroidsupportcompat"></a>エラー :Xamarin.Android.Support.Compat について検出されるバージョンの競合
 
 Xamarin.Essentials を使っている Xamarin.Forms プロジェクトを含む NuGet パッケージを更新 (または新しいパッケージを追加) するときに、次のエラーが発生する場合があります。
 
@@ -30,4 +30,4 @@ NU1107: Version conflict detected for Xamarin.Android.Support.Compat. Reference 
 
 詳細情報と、問題の解決方法に関するビデオについては、[このブログ記事](https://redth.codes/how-to-fix-the-dreaded-version-conflict-nuget-error-in-your-xamarin-android-projects/)を参照してください。
 
-問題が発生したりバグを見つけたりした場合は、[Xamarin.Essentials の GitHub リポジトリ](http://github.com/xamarin/Essentials)上でご報告ください。
+問題が発生したりバグを見つけたりした場合は、[Xamarin.Essentials の GitHub リポジトリ](https://github.com/xamarin/Essentials)上でご報告ください。

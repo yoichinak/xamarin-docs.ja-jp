@@ -6,12 +6,12 @@ ms.assetid: 8DD34D21-342C-48E9-97AA-1B649DD8B61F
 ms.date: 03/29/2017
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: ce5c8f7cf30407e64464c412359263b52e134675
-ms.sourcegitcommit: 2868c968f418cd7cc110f9664f3c3ffb6df1f9af
+ms.openlocfilehash: a5083e1d31377caece1b8fb4faf33b6e3ff88202
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53267392"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672457"
 ---
 # <a name="tips-for-updating-code-to-the-unified-api"></a>コードを Unified API に更新する場合のヒント
 
@@ -88,7 +88,7 @@ Objective-C exception thrown. Name: NSInvalidArgumentException Reason: Could not
 
  * `NSAction` されました[交換](~/cross-platform/macios/unified/overview.md#NSAction)starndard .NET で`Action`します。 いくつかの単純な (1 つのパラメーター) のデリゲートが置き換えられましたも`Action<T>`します。
 
-最後を参照してください、[クラシック v Unified API の相違点](http://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)コード Api への変更を検索します。 検索[このページ](http://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)クラシック Api とどのようなしたに更新されてを検出するのに役立ちます。
+最後を参照してください、[クラシック v Unified API の相違点](https://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)コード Api への変更を検索します。 検索[このページ](https://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)クラシック Api とどのようなしたに更新されてを検出するのに役立ちます。
 
 **注:** 、`MonoTouch.Dialog`移行後に同じ名前空間を変更します。 コードで使用する場合**MonoTouch.Dialog** - その名前空間を使用することは引き続き*いない*変更`MonoTouch.Dialog`に`Dialog`!
 
@@ -170,7 +170,7 @@ MKAnnotation をサブクラス化してカスタム注釈を作成するとき�
 * SetCoordinate メソッドをオーバーライドし、フィールドの設定
 * 渡された座標パラメーターを使用して、ctor に SetCoordinate を呼び出す
 
-次のように表示する必要があります。
+次のようになっているはずです。
 
 ```csharp
 class BasicPinAnnotation : MKAnnotation
