@@ -101,7 +101,7 @@ Visual Studio for Mac では、空のテンプレートが提供されません�
 
 -----
 
-使用して iOS アプリケーションの構築、 [MVC パターン](~/ios/get-started/hello-ios-multiscreen/hello-ios-multiscreen-deepdive.md#model-view-controller-mvc)します。 アプリケーションが表示される最初の画面は、ウィンドウのルート ビュー コント ローラーから作成されます。 参照してください、[こんにちは, iOS マルチ スクリーン](~/ios/get-started/hello-ios-multiscreen/index.md)の詳細については、MVC パターン自体をガイドします。
+iOS のアプリケーションは [MVC パターン](~/ios/get-started/hello-ios-multiscreen/hello-ios-multiscreen-deepdive.md#model-view-controller-mvc) を使用して構築されます。 アプリケーションが表示される最初の画面は、ウィンドウのルート ビュー コントローラーから作成されます。 [Hello, iOS マルチ スクリーン](~/ios/get-started/hello-ios-multiscreen/index.md)の詳細については、MVC パターンを参照してください。
 
 実装、`AppDelegate`によって追加されたテンプレートを作成、アプリケーション ウィンドウのすべての iOS アプリケーションの 1 つだけであり、次のコードで可視化します。
 
