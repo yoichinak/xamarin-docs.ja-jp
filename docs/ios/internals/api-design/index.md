@@ -11,7 +11,7 @@ ms.date: 03/21/2017
 
 # <a name="xamarinios-api-design"></a>Xamarin.iOS API の設計
 
-Core、Mono の一部である基本クラス ライブラリだけでなく[Xamarin.iOS](http://www.xamarin.com/iOS)さまざまな iOS 開発者は Mono とネイティブの iOS アプリケーションの作成を許可する Api のバインドが付属しています。
+[Xamarin.iOS](http://www.xamarin.com/iOS)には、Mono の一部であるコアの基本クラス ライブラリだけでなく、開発者が Mono を利用してネイティブの iOS アプリケーションの作成を可能にするために、さまざまな iOS Api へのバインドが付属しています。
 
 Xamarin.iOS の中核は、OBJECTIVE-C の世界と iOS CoreGraphics などの C ベースの Api のバインドでの c# 世界をブリッジするエンジンと相互運用機能および[OpenGL ES](#OpenGLES)します。
 
