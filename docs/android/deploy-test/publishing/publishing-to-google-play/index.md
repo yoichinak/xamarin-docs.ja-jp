@@ -185,7 +185,7 @@ Visual Studio for Mac は、Google Play にアプリを公開するための統�
 #### <a name="create-a-google-api-project"></a>Google API プロジェクトを作成する
 
 最初に、[Google Play 開発者アカウント](https://play.google.com/apps/publish)にサインインします。
-Google Play 開発者アカウントがまだない場合は、「[Get Started with Publishing](http://developer.android.com/distribute/googleplay/start.html)」(公開の概要) をご覧ください。
+Google Play 開発者アカウントがまだない場合は、「[Get Started with Publishing](https://developer.android.com/distribute/googleplay/start.html)」(公開の概要) をご覧ください。
 また、Google Play 開発者 API の「[Getting Started](https://developers.google.com/android-publisher/getting_started)」(概要) でも、Google Play 開発者 API の使い方が説明されています。 Google Play Developer Console にサインインした後、**[Settings]\(設定\)** をクリックします。
 
 [![[Settings]\(設定\) アイコン](images/01-google-play-developer-console-sml.png)](images/01-google-play-developer-console.png#lightbox)

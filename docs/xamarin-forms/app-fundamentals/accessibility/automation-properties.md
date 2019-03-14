@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/18/2018
-ms.openlocfilehash: 284e10af41429d320ce08b8d45ccd5bbcec851d1
-ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
+ms.openlocfilehash: 142c22cd239d6b66e5139346b45994ef2f20bdc8
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55831990"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672561"
 ---
 # <a name="automation-properties-in-xamarinforms"></a>Xamarin.Forms でのオートメーション プロパティ
 
@@ -36,7 +36,7 @@ Xamarin.Forms では、次の添付プロパティを使用して、ユーザー
 
 - iOS では VoiceOver が使用されます。 詳しくは、developer.apple.com の「[Test Accessibility on Your Device with VoiceOver](https://developer.apple.com/library/content/technotes/TestingAccessibilityOfiOSApps/TestAccessibilityonYourDevicewithVoiceOver/TestAccessibilityonYourDevicewithVoiceOver.html)」(VoiceOver を使用するデバイスでのアクセシビリティをテストする) をご覧ください。
 - Android では TalkBack が使用されます。 詳しくは、「[Testing Your App's Accessibility](https://developer.android.com/training/accessibility/testing.html#talkback)」(アプリのアクセシビリティのテスト) をご覧ください。
-- Windows ではナレーターが使用されます。 詳しくは、「[ナレーターを使用してメイン アプリのシナリオを検証する](/windows/uwp/accessibility/accessibility-testing#verify-main-app-scenarios-by-using-narrator/)」をご覧ください。
+- Windows ではナレーターが使用されます。 詳しくは、「[ナレーターを使用してメイン アプリのシナリオを検証する](/windows/uwp/accessibility/accessibility-testing#verify-main-app-scenarios-by-using-narrator)」をご覧ください。
 
 ただし、スクリーン リーダーの厳密な動作は、ソフトウェアおよびそのユーザー構成に依存します。 たとえば、ほとんどのスクリーン リーダーでは、フォーカスを受け取ったコントロールに関連付けられているテキストが読み上げられて、ユーザーはページ上のコントロール間を移動しながら自分がいる場所を知ることができます。 一部のスクリーン リーダーでは、ページが表示されたときにアプリケーションのユーザー インターフェイス全体も読み上げられ、ユーザーはページで使用可能なすべての情報コンテンツを受け取ってから、ナビゲートを試みることができます。
 

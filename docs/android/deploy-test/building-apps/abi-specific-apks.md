@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: bb9be2140c69578de85128cf7c3a013ad12aa511
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.openlocfilehash: d5d4274adad64e8555659645533a8e58b845bfa7
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617567"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667907"
 ---
 # <a name="building-abi-specific-apks"></a>ABI 固有の APK のビルド
 
@@ -29,7 +29,7 @@ _このドキュメントでは、Xamarin.Android を使用する単一の ABI �
 -  **さまざまな CPU アーキテクチャをサポートする** - アプリケーションに特定の CPU の共有ライブラリがある場合、その CPU の共有ライブラリのみを配布できます。
 
 
-APK が複数あると配布が困難になる場合がある - Google Play で対処されている問題。 Google Play は、アプリケーションのバージョン コードと **AndroidManifest.XML** とともに含まれるその他のメタデータに基づいて、正しい APK が確実にデバイスに配布されるようにします。 Google Play がアプリケーションでの複数の APK の使用をサポートする方法に関する詳細と制限事項については、[複数の APK サポートに関する Google のドキュメント](http://developer.android.com/google/play/publishing/multiple-apks.html)を参照してください。
+APK が複数あると配布が困難になる場合がある - Google Play で対処されている問題。 Google Play は、アプリケーションのバージョン コードと **AndroidManifest.XML** とともに含まれるその他のメタデータに基づいて、正しい APK が確実にデバイスに配布されるようにします。 Google Play がアプリケーションでの複数の APK の使用をサポートする方法に関する詳細と制限事項については、[複数の APK サポートに関する Google のドキュメント](https://developer.android.com/google/play/publishing/multiple-apks.html)を参照してください。
 
 このガイドでは、Xamarin.Android アプリケーションに対する複数の APK (それぞれ特定の ABI をターゲットとする) のビルドをスクリプト化する方法について説明します。 次のトピックが含まれます。
 
@@ -45,7 +45,7 @@ APK が複数あると配布が困難になる場合がある - Google Play で�
 
 ### <a name="creating-the-version-code-for-the-apk"></a>APK のバージョン コードの作成
 
-Google では、7 桁のバージョン コードを使用するバージョン コードの特定のアルゴリズムを推奨しています ([複数の APK サポートに関するドキュメント](http://developer.android.com/google/play/publishing/multiple-apks.html)の*バージョン コード スキームの使用* に関するセクションを参照してください)。
+Google では、7 桁のバージョン コードを使用するバージョン コードの特定のアルゴリズムを推奨しています ([複数の APK サポートに関するドキュメント](https://developer.android.com/google/play/publishing/multiple-apks.html)の*バージョン コード スキームの使用* に関するセクションを参照してください)。
 このバージョン コード スキームを 8 桁に拡張することで、Google Play で正しい APK がデバイスに確実に配布されるように、バージョン コードにいくつかの ABI 情報を含めることができます。 以下のリストで、8 桁のバージョン コード形式について説明します (左から右にインデックスが付けられます)。
 
 -   **インデックス 0** (下図では赤色で示されている) &ndash; ABI の整数:
@@ -187,4 +187,4 @@ rake タスクが完了すると、ファイル `xamarin.helloworld.apk` を含�
 
 - [OneABIPerAPK (サンプル)](https://developer.xamarin.com/samples/OneABIPerAPK/)
 - [アプリケーションの発行](~/android/deploy-test/publishing/index.md)
-- [Google Play の複数の APK サポート](http://developer.android.com/google/play/publishing/multiple-apks.html)
+- [Google Play の複数の APK サポート](https://developer.android.com/google/play/publishing/multiple-apks.html)

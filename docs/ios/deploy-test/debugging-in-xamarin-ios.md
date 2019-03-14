@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 3d1a3090318649e6f04a5b8f44dc4a9b2689a870
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: a6cc7ffe52711f4e65f0191f8dc556760e8817ea
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119632"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668778"
 ---
 # <a name="debugging-xamarinios-apps"></a>Xamarin.iOS アプリのデバッグ
 
@@ -26,7 +26,7 @@ C# やその他の管理対象言語コードのデバッグには、Visual Stud
 
 Xamarin.iOS デバッガーは IDE に統合されており、開発者はシミュレーターまたはデバイスで、Xamarin.iOS が対応している管理対象言語でビルドされた Xamarin.iOS アプリケーションをデバッグできます。
 
-Xamarin.iOS デバッガーは [Mono Soft Debugger](http://www.mono-project.com/docs/advanced/runtime/docs/soft-debugger/) を利用します。つまり、生成されたコードと Mono ランタイムが IDE と連動してデバッグを行います。 これが LLDB や MDB のようなハード デバッガーとの違いです。ハード デバッガーは、デバッグされるプログラムから情報や協力を得ることなくプログラムを制御します。
+Xamarin.iOS デバッガーは [Mono Soft Debugger](https://www.mono-project.com/docs/advanced/runtime/docs/soft-debugger/) を利用します。つまり、生成されたコードと Mono ランタイムが IDE と連動してデバッグを行います。 これが LLDB や MDB のようなハード デバッガーとの違いです。ハード デバッガーは、デバッグされるプログラムから情報や協力を得ることなくプログラムを制御します。
 
 ## <a name="setting-breakpoints"></a>ブレークポイントの設定
 

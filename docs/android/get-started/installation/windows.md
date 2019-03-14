@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/22/2018
-ms.openlocfilehash: 26865fdbfc1cc6f11a978a70bd768e63771bcd4b
-ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
+ms.openlocfilehash: 0053bf97dbcc98c5ffbd6fbddb1e40f884810e60
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57197473"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670754"
 ---
 # <a name="windows-installation"></a>Windows のインストール
 
@@ -47,7 +47,7 @@ Xamarin.Android では Java Development Kit (JDK) と Android SDK を使用し�
 
 ほとんどのユーザーは、これらの既定の場所を変更しなくても使用できます。 ただし、これらのツールのカスタムの場所で Visual Studio を構成することもできます (Java JDK、Android SDK、または NDK を別の場所にインストールした場合など)。 変更するパスの横にある **[変更]** をクリックして、新しい場所に移動します。
 
-Xamarin.Android は [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) を使用します。これは、API レベル 24 以上で開発する場合に必要となります (JDK 8 は 23 以下の API レベルもサポートしています)。 API レベル 23 以下のみで開発している場合は、[JDK 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) を引き続き使用することができます。
+Xamarin.Android は [JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) を使用します。これは、API レベル 24 以上で開発する場合に必要となります (JDK 8 は 23 以下の API レベルもサポートしています)。 API レベル 23 以下のみで開発している場合は、[JDK 7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) を引き続き使用することができます。
 
 > [!IMPORTANT]
 > Xamarin.Android は JDK 9 をサポートしていません。

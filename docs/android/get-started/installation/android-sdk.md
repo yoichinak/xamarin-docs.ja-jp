@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/09/2018
-ms.openlocfilehash: 6023bb4ebcc9d4adcd3408ca09bf9118d14351d4
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: d0eb5d1c2c45ce347a7ddf9ed0e72bddc57e4188
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120815"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668791"
 ---
 # <a name="setting-up-the-android-sdk-for-xamarinandroid"></a>Xamarin.Android 向け Android SDK を設定する
 
@@ -30,7 +30,7 @@ _Visual Studio には、Xamarin.Android アプリの開発に必要な Android S
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 Xamarin Android SDK Manager を使用するには、次が必要です。
 
@@ -42,9 +42,9 @@ Xamarin Android SDK Manager は、Visual Studio 2015 に対応していません
 
 Xamarin Android SDK Manager には、Java Development Kit (Xamarin.Android と同時に自動的にインストールされます) も必要です。 JDK の代わりとして、次のような選択肢があります。
 
--   既定では、Xamarin.Android は [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) を使用します。これは、API レベル 24 以上で開発する場合に必須となります (JDK 8 は 23 以下の API レベルもサポートしています)。
+-   既定では、Xamarin.Android は [JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) を使用します。これは、API レベル 24 以上で開発する場合に必須となります (JDK 8 は 23 以下の API レベルもサポートしています)。
 
--   API レベル 23 以下のみで開発している場合は、[JDK 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) を引き続き使用することができます。
+-   API レベル 23 以下のみで開発している場合は、[JDK 7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) を引き続き使用することができます。
 
 -   Visual Studio 15.8 Preview 5 以降を使用している場合は、JDK 8 ではなく [Microsoft が配布する OpenJDK](openjdk.md) (現在プレビュー段階です) を使用することができます。
 
@@ -131,7 +131,7 @@ Google リポジトリを選択すると、以前は使用できなかった追�
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 Xamarin Android SDK Manager を使用するには、次が必要です。
 
@@ -139,9 +139,9 @@ Xamarin Android SDK Manager を使用するには、次が必要です。
 
 Xamarin Android SDK Manager には、Java Development Kit (Xamarin.Android と同時に自動的にインストールされます) も必要です。 JDK の代わりとして、次のような選択肢があります。
 
--   既定では、Xamarin.Android は [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) を使用します。これは、API レベル 24 以上で開発する場合に必須となります (JDK 8 は 23 以下の API レベルもサポートしています)。
+-   既定では、Xamarin.Android は [JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) を使用します。これは、API レベル 24 以上で開発する場合に必須となります (JDK 8 は 23 以下の API レベルもサポートしています)。
 
--   API レベル 23 以下のみで開発している場合は、[JDK 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) を引き続き使用することができます。
+-   API レベル 23 以下のみで開発している場合は、[JDK 7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) を引き続き使用することができます。
 
 -   Visual Studio for Mac 7.7 以降を使用している場合は、JDK 8 ではなく [Microsoft が配布する OpenJDK](openjdk.md) (現在プレビュー段階です) を使用することができます。
 

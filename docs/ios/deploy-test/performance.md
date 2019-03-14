@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 01/29/2016
-ms.openlocfilehash: 01c743b4b0eff81bbf4c41e1c2f387e0dc40c067
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: 1f7f2af19c6faad32f94d82dbc58f140f45dea5d
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233758"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671119"
 ---
 # <a name="xamarinios-performance"></a>Xamarin.iOS のパフォーマンス
 
-アプリケーションのパフォーマンスの低さは、さまざまな形でアプリケーションに現れます。 たとえば、アプリケーションが応答しなかったり、スクロールが遅くなったり、電池の寿命が減ったりすることがあります。 ただし、パフォーマンスを最適化するには、単に効率的なコードを実装するだけでは済みません。 アプリケーション パフォーマンスのユーザー エクスペリエンスも考慮する必要があります。 たとえば、操作の実行によって、ユーザーが他の操作を実行できない状況にならないようにすることで、ユーザー エクスペリエンスを改善できます。 
+アプリケーションのパフォーマンスの低さは、さまざまな形でアプリケーションに現れます。 たとえば、アプリケーションが応答しなかったり、スクロールが遅くなったり、電池の寿命が減ったりすることがあります。 ただし、パフォーマンスを最適化するには、単に効率的なコードを実装するだけでは済みません。 アプリケーション パフォーマンスのユーザー エクスペリエンスも考慮する必要があります。 たとえば、操作の実行によって、ユーザーが他の操作を実行できない状況にならないようにすることで、ユーザー エクスペリエンスを改善できます。
 
 このドキュメントでは、Xamarin.iOS アプリケーションでパフォーマンスとメモリ使用量を改善する手法について説明します。
 
@@ -140,7 +140,7 @@ public class MyFooDelegate : FooDelegate {
 次は、[委任](https://developer.apple.com/library/content/documentation/General/Conceptual/DevPedia-CocoaCore/Delegation.html)パターンで `[Weak]` を使用するもう 1 つの例です。
 
 ```csharp
-public class MyViewController : UIViewController 
+public class MyViewController : UIViewController
 {
     WKWebView webView;
 
@@ -155,7 +155,7 @@ public class MyViewController : UIViewController
     }
 }
 
-public class UIDelegate : WKUIDelegate 
+public class UIDelegate : WKUIDelegate
 {
     [Weak] MyViewController controller;
 
@@ -196,7 +196,7 @@ class MyContainer : UIView
 親に対する強い参照を維持する子オブジェクトの場合は、`Dispose` 実装で親に対する参照をクリアします。
 
 ```csharp
-class MyChild : UIView 
+class MyChild : UIView
 {
     MyContainer container;
     public MyChild (MyContainer container)
@@ -215,13 +215,13 @@ class MyChild : UIView
 
 ### <a name="more-information"></a>詳細情報
 
-詳細については、Cocoa With Love の「[Rules to Avoid Retain Cycles](http://www.cocoawithlove.com/2009/07/rules-to-avoid-retain-cycles.html)」(循環の保持を回避する規則)、StackOverflow の「[Is this a bug in MonoTouch GC](http://stackoverflow.com/questions/13058521/is-this-a-bug-in-monotouch-gc)」(これは MonoTouch GC のバグですか)、StackOverflow の「[Why can't MonoTouch GC kill managed objects with refcount &gt; 1?](http://stackoverflow.com/questions/13064669/why-cant-monotouch-gc-kill-managed-objects-with-refcount-1)」(参照カウントが 1 を超えるマネージド オブジェクトを MonoTouch GC でキルできないのはなぜですか?) を参照してください。
+詳細については、Cocoa With Love の「[Rules to Avoid Retain Cycles](http://www.cocoawithlove.com/2009/07/rules-to-avoid-retain-cycles.html)」(循環の保持を回避する規則)、StackOverflow の「[Is this a bug in MonoTouch GC](https://stackoverflow.com/questions/13058521/is-this-a-bug-in-monotouch-gc)」(これは MonoTouch GC のバグですか)、StackOverflow の「[Why can't MonoTouch GC kill managed objects with refcount &gt; 1?](https://stackoverflow.com/questions/13064669/why-cant-monotouch-gc-kill-managed-objects-with-refcount-1)」(参照カウントが 1 を超えるマネージド オブジェクトを MonoTouch GC でキルできないのはなぜですか?) を参照してください。
 
 ## <a name="optimize-table-views"></a>テーブル ビューを最適化する
 
 ユーザーは、[`UITableView`](xref:UIKit.UITableView) インスタンスのスムーズなスクロールと読み込み時間の短縮を期待します。 ただし、セルに深い入れ子のビュー階層が含まれる場合、またはセルに複雑なレイアウトが含まれる場合、スクロールのパフォーマンスは低下する可能性があります。 ただし、`UITableView` のパフォーマンス低下を回避するために使用できる手法があります。
 
-- セルを再利用する。 詳細については、「[Reuse Cells](#reusecells)」(セルの再利用) を参照してください。
+- セルを再利用する。 詳細については、「[Reuse Cells](#reuse-cells)」(セルの再利用) を参照してください。
 - サブビューの数を減らす。
 - Web サービスから取得されるセルのコンテンツをキャッシュする。
 - 行の高さが同じでない場合はキャッシュする。

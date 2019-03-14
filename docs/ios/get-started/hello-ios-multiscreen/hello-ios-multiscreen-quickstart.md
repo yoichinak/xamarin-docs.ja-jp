@@ -9,12 +9,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: 09db1075ef787041e806ef3afb569e4830f51575
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: 2c05e46309fb2a38b6b3c1542051e7115a58d13c
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563824"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668834"
 ---
 # <a name="hello-ios-multiscreen--quickstart"></a>Hello, iOS マルチスクリーン – クイック スタート
 
@@ -24,7 +24,7 @@ ms.locfileid: "51563824"
 
 [後半の詳細のページ](~/ios/get-started/hello-ios-multiscreen/hello-ios-multiscreen-deepdive.md)では、ビルドしたアプリケーションを確認し、アーキテクチャ、ナビゲーション、およびその過程で遭遇したその他の新しい iOS の概念について説明します。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 このガイドは、「Hello, iOS」ドキュメントを中断した箇所から再開するため、「[Hello, iOS クイック スタート](~/ios/get-started/hello-ios/index.md)」を完了する必要があります。 Phoneword アプリの完成版は、[Hello, iOS のサンプル](https://developer.xamarin.com/samples/monotouch/Hello_iOS/) ページからダウンロードできます。
 
@@ -518,5 +518,5 @@ ms.locfileid: "51563824"
 ## <a name="related-links"></a>関連リンク
 
 - [Hello, iOS (サンプル)](https://developer.xamarin.com/samples/monotouch/Hello_iOS/)
-- [iOS ヒューマン インターフェイス ガイドライン](http://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/Introduction/Introduction.html)
+- [iOS ヒューマン インターフェイス ガイドライン](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/Introduction/Introduction.html)
 - [iOS プロビジョニング ポータル](https://developer.apple.com/ios/manage/overview/index.action)

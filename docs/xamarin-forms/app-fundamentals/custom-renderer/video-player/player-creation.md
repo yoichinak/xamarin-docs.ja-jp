@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 69e5d74bf9beea02ca8accf6e1f8eb1ccaa5c9fa
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 2679756cd9a9a60c2d7ab637678ff1d8262b2403
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53061960"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669987"
 ---
 # <a name="creating-the-platform-video-players"></a>プラットフォーム ビデオ プレーヤーの作成
 
@@ -220,7 +220,7 @@ namespace FormsVideoLibrary.Droid
 
 ### <a name="the-uwp-media-element"></a>UWP のメディア要素
 
-ユニバーサル Windows プラットフォーム (UWP) で最も一般的なビデオ プレーヤーは、[`MediaElement`](/uwp/api/Windows.UI.Xaml.Controls.MediaElement/) です。 `MediaElement` のドキュメントでは、ビルド 1607 以降のバージョンの Windows 10 をサポートするために必要な場合のみ、[`MediaPlayerElement`](/uwp/api/windows.ui.xaml.controls.mediaplayerelement/) を代わりに使用する必要があると説明されています。
+ユニバーサル Windows プラットフォーム (UWP) で最も一般的なビデオ プレーヤーは、[`MediaElement`](xref:Windows.UI.Xaml.Controls.MediaElement) です。 `MediaElement` のドキュメントでは、ビルド 1607 以降のバージョンの Windows 10 をサポートするために必要な場合のみ、[`MediaPlayerElement`](xref:Windows.UI.Xaml.Controls.MediaPlayerElement) を代わりに使用する必要があると説明されています。
 
 `OnElementChanged` オーバーライドは、`MediaElement` を作成し、いくつかのイベント ハンドラーを設定し、`MediaElement` オブジェクトを `SetNativeControl` に設定する必要があります。
 
@@ -424,7 +424,7 @@ namespace FormsVideoLibrary.Droid
 
 ### <a name="the-uwp-transport-controls-property"></a>UWP のトランスポート コントロールのプロパティ
 
-UWP `MediaElement` は [`AreTransportControlsEnabled`](/uwp/api/windows.ui.xaml.controls.mediaelement#Windows_UI_Xaml_Controls_MediaElement_AreTransportControlsEnabled) という名前のプロパティを定義するため、そのプロパティは、同じ名前の `VideoPlayer` プロパティから設定されます。
+UWP `MediaElement` は [`AreTransportControlsEnabled`](xref:Windows.UI.Xaml.Controls.MediaElement.AreTransportControlsEnabled*) という名前のプロパティを定義するため、そのプロパティは、同じ名前の `VideoPlayer` プロパティから設定されます。
 
 ```csharp
 namespace FormsVideoLibrary.UWP

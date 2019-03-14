@@ -7,13 +7,8 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: c7ae25688b2f8635a9a89318e0b307e58add7a5a
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998745"
 ---
+
 # <a name="xamarinforms-custom-renderers"></a>Xamarin.Forms のカスタム レンダラー
 
 _Xamarin.Forms のユーザー インターフェイスは、ターゲット プラットフォームのネイティブ コントロールを使用してレンダリングされるため、Xamarin.Forms アプリケーションでは各プラットフォームの適切な外観を維持できます。カスタム レンダラーにより、開発者はこのプロセスをオーバーライドして、各プラットフォーム上で Xamarin.Forms コントロールの外観とビヘイビアーをカスタマイズできるようになります。_
@@ -44,7 +39,7 @@ Xamarin.Forms の [`ListView`](xref:Xamarin.Forms.ListView) は、データの�
 
 ## <a name="customizing-a-viewcellviewcellmd"></a>[ViewCell のカスタマイズ](viewcell.md)
 
-Xamarin.Forms の [`ViewCell`](xref:Xamarin.Forms.ViewCell) は、[`ListView`](xref:Xamarin.Forms.ListView) または [`TableView`](xref:Xamarin.Forms.TableView) に追加できるセルで、これには開発者が定義したビューが含まれます。 この記事では、Xamarin.Forms の `ListView` コントロール内でホストされる、`ViewCell` 用のカスタム レンダラーを作成する方法を示します。 これにより、`ListView` のスクロール中に Xamarin.Forms のレイアウトの計算が繰り返し呼び出されることを回避します。
+Xamarin.Forms の [`ViewCell`](xref:Xamarin.Forms.ViewCell) は、[`ListView`](xref:Xamarin.Forms.ListView) または [`TableView`](xref:Xamarin.Forms.TableView) に追加できるセルで、これには開発者が定義したビューが含まれます。 この記事では、Xamarin.Forms の `ListView` コントロール内でホストされる、`ViewCell` 用のカスタム レンダラーを作成する方法を示します。 これにより、`ListView` のスクロール中に Xamarin.Forms のレイアウトの計算が繰り返し呼び出されることが回避されます。
 
 ## <a name="implementing-a-viewviewmd"></a>[ページの実装](view.md)
 
@@ -63,4 +58,3 @@ Xamarin.Forms のカスタム ユーザー インターフェイス コントロ
 
 - [エフェクト](~/xamarin-forms/app-fundamentals/effects/index.md)
 - [カスタム レンダラー (Xamarin University のビデオ)](https://developer.xamarin.com/videos/cross-platform/xamarinforms-custom-renderers/)
-- [カスタム レンダラー (Xamarin University のビデオ) サンプル](http://bit.ly/xf-customrenderer)

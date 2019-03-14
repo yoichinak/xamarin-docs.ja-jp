@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 12/03/2018
-ms.openlocfilehash: 99b5798e8d3cd5723f99aa2483d5d1c0eff8d57c
-ms.sourcegitcommit: 6655cccf9d3be755773c2f774b5918e0b141bf84
+ms.openlocfilehash: 86e2380a2931517b021162a6cecadc7d6d5b4c43
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/04/2019
-ms.locfileid: "57305647"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669395"
 ---
 # <a name="build-process"></a>ビルド プロセス
 
@@ -98,7 +98,7 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
 
 インストール プロパティは、`Install` ターゲットと `Uninstall` ターゲットの動作を制御します。
 
--   **AdbTarget** &ndash; Android パッケージのインストール先または削除元となる Android ターゲット デバイスを指定します。 このプロパティの値は、[`adb` ターゲット デバイス オプション](http://developer.android.com/tools/help/adb.html#issuingcommands)と同じです。
+-   **AdbTarget** &ndash; Android パッケージのインストール先または削除元となる Android ターゲット デバイスを指定します。 このプロパティの値は、[`adb` ターゲット デバイス オプション](https://developer.android.com/tools/help/adb.html#issuingcommands)と同じです。
 
     ```bash
     # Install package onto emulator via -e
@@ -145,7 +145,7 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
 
     このプロパティは既定で `False` です。
 
--   **AndroidEnableSGenConcurrent** &ndash; Mono の[同時 GC コレクター](http://www.mono-project.com/docs/about-mono/releases/4.8.0/#concurrent-sgen)が使用されるかどうかを決定するブール型プロパティ。
+-   **AndroidEnableSGenConcurrent** &ndash; Mono の[同時 GC コレクター](https://www.mono-project.com/docs/about-mono/releases/4.8.0/#concurrent-sgen)が使用されるかどうかを決定するブール型プロパティ。
 
     このプロパティのサポートは、Xamarin.Android 7.2 で追加されました。
 
@@ -293,7 +293,7 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
 
     `$(AotAssemblies)` MSBuild プロパティが `True` でない限り、このプロパティは無視されます。
 
--   **EnableProguard** &ndash; [ProGuard](http://developer.android.com/tools/help/proguard.html) を Java コードをリンクするパッケージ化プロセスの一部として実行するかどうかを決定するブール型プロパティ。
+-   **EnableProguard** &ndash; [ProGuard](https://developer.android.com/tools/help/proguard.html) を Java コードをリンクするパッケージ化プロセスの一部として実行するかどうかを決定するブール型プロパティ。
 
     このプロパティのサポートは、Xamarin.Android 5.1 で追加されました。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 998232119159c5dc3a284dd51d55dc381271a4e0
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f6f3377c4fdeedefa3277d05012ec868f6626c41
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117396"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670000"
 ---
 # <a name="proguard"></a>ProGuard
 
@@ -192,7 +192,7 @@ Xamarin.Android では、次の ProGuard オプションがサポートされて
 
 ProGuard を Android 7.0 以降に対して使用する場合は、Android SDK には JDK 1.8 と互換性がある新しいバージョンが含まれていないため、ProGuard の新しいバージョンをダウンロードする必要があります。
 
-この [NuGet パッケージ](https://www.nuget.org/packages/name.atsushieno.proguard.facebook/5.3.0)を使用して、`proguard.jar` の新しいバージョンをインストールできます。 Android SDK の既定の `proguard.jar` の更新の詳細については、こちらの [Stack Overflow](http://stackoverflow.com/questions/39514518/xamarin-android-proguard-unsupported-class-version-number-52-0/39514706#39514706) をご覧ください。
+この [NuGet パッケージ](https://www.nuget.org/packages/name.atsushieno.proguard.facebook/5.3.0)を使用して、`proguard.jar` の新しいバージョンをインストールできます。 Android SDK の既定の `proguard.jar` の更新の詳細については、こちらの [Stack Overflow](https://stackoverflow.com/questions/39514518/xamarin-android-proguard-unsupported-class-version-number-52-0/39514706#39514706) をご覧ください。
 
 [SourceForge ページ](https://sourceforge.net/projects/proguard/files/)で ProGuard のすべてのバージョンを見つけることができます。 
 
@@ -341,7 +341,7 @@ ProGuard を使うと発生する可能性がある一般的な問題と解決�
 
 ## <a name="summary"></a>まとめ
 
-このガイドでは、Xamarin.Android での ProGuard の機能、アプリ プロジェクトで有効にする方法、および設定方法について説明しました。 ProGuard の構成の例を示し、一般的な問題の対処方法を説明します。 ProGuard ツールと Android の詳細については、「[Shrink Your Code and Resources](http://developer.android.com/tools/help/proguard.html)」(コードとリソースの圧縮) をご覧ください。 
+このガイドでは、Xamarin.Android での ProGuard の機能、アプリ プロジェクトで有効にする方法、および設定方法について説明しました。 ProGuard の構成の例を示し、一般的な問題の対処方法を説明します。 ProGuard ツールと Android の詳細については、「[Shrink Your Code and Resources](https://developer.android.com/tools/help/proguard.html)」(コードとリソースの圧縮) をご覧ください。 
 
 
 ## <a name="related-links"></a>関連リンク

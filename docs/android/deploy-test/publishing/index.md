@@ -6,13 +6,8 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: ef504e4bef22ac5b2bec5b6a57eb46e8b2f1baff
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50102543"
 ---
+
 # <a name="publishing-an-application"></a>アプリケーションの発行
 
 優れたアプリケーションを開発されると、人はそれを使ってみたくなります。 このセクションには、電子メール、プライベート Web サーバー、Google Play、Amazon Android アプリ ストアなどのチャネルによって、Xamarin.Android で作成したアプリケーションを公開配信するための手順が含まれます。
@@ -60,8 +55,8 @@ Amazon のモバイル アプリ配信プログラムでは、モバイル ア�
 - [リンク](~/android/deploy-test/linker.md)
 - [Google マップ API キーを取得する](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)
 - [アプリケーション署名](https://source.android.com/security/apksigning/)
-- [Google Play で公開する](http://developer.android.com/distribute/googleplay/publish/index.html)
-- [Google アプリケーション ライセンス](http://developer.android.com/guide/google/play/licensing/index.html)
+- [Google Play で公開する](https://developer.android.com/distribute/googleplay/publish/index.html)
+- [Google アプリケーション ライセンス](https://developer.android.com/guide/google/play/licensing/index.html)
 - [Android.Play.ExpansionLibrary](https://github.com/mattleibow/Android.Play.ExpansionLibrary)
 - [モバイル アプリの配布ポータル](https://developer.amazon.com/welcome.html)
 - [Amazon モバイル アプリの配布に関する FAQ](https://developer.amazon.com/help/faq.html)

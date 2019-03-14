@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/06/2016
-ms.openlocfilehash: 6f12670dd463471ba1e337802453c775adbe16a7
-ms.sourcegitcommit: 0044d04990faa0b144b8626a4fceea0fdff95cfe
+ms.openlocfilehash: 31992c7d9219289847ebc3e9c8af755d54dc18ab
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56666949"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672717"
 ---
 # <a name="localization"></a>ローカリゼーション
 
@@ -22,7 +22,7 @@ _Xamarin.Forms アプリは、.NET リソース ファイルを使用してロ�
 
 ## <a name="overview"></a>概要
 
-.NET アプリケーションをローカライズするための組み込みメカニズムでは、`System.Resources` および `System.Globalization` 名前空間にある [RESX ファイル](http://msdn.microsoft.com/library/ekyft91f(v=vs.90).aspx)とクラスが使われます。 翻訳された文字列を含む RESX ファイルは、厳密に型指定された翻訳へのアクセスを提供するコンパイラ生成のクラスと共に、Xamarin.Forms アセンブリに埋め込まれます。 その後、翻訳されたテキストをコードで取得できます。
+.NET アプリケーションをローカライズするための組み込みメカニズムでは、`System.Resources` および `System.Globalization` 名前空間にある [RESX ファイル](https://msdn.microsoft.com/library/ekyft91f(v=vs.90).aspx)とクラスが使われます。 翻訳された文字列を含む RESX ファイルは、厳密に型指定された翻訳へのアクセスを提供するコンパイラ生成のクラスと共に、Xamarin.Forms アセンブリに埋め込まれます。 その後、翻訳されたテキストをコードで取得できます。
 
 ### <a name="sample-code"></a>サンプル コード
 
@@ -761,7 +761,7 @@ Android では、言語コード サフィックスが異なる**ドローアブ
 
 Android では、簡体中国語と繁体字中国語で zh-Hans と zh-Hant コードを使用しないことに注意してください。代わりに、国固有のコードである zh-CN と zh-TW のみがサポートされます。
 
-高密度画面でさまざまな解像度イメージをサポートするには、**drawables-es-mdpi**、**drawables-es-xdpi**、**drawables-es-xxdpi** などの `-*dpi` サフィックスを使用して、追加の言語フォルダーを作成します。詳細については、[代替の Android リソースの提供](http://developer.android.com/guide/topics/resources/providing-resources.html#AlternativeResources)に関するページを参照してください。
+高密度画面でさまざまな解像度イメージをサポートするには、**drawables-es-mdpi**、**drawables-es-xdpi**、**drawables-es-xxdpi** などの `-*dpi` サフィックスを使用して、追加の言語フォルダーを作成します。詳細については、[代替の Android リソースの提供](https://developer.android.com/guide/topics/resources/providing-resources.html#AlternativeResources)に関するページを参照してください。
 
 #### <a name="app-name"></a>アプリ名
 
@@ -811,5 +811,5 @@ Xamarin.Forms アプリケーションは、RESX ファイルと .NET グロー�
 - [iOS のローカライズ](~/ios/app-fundamentals/localization/index.md)
 - [Android のローカライズ](~/android/app-fundamentals/localization.md)
 - [UWP のローカライズ](/windows/uwp/design/globalizing/globalizing-portal/)
-- [CultureInfo クラスの使用 (MSDN)](http://msdn.microsoft.com/library/87k6sx8t%28v=vs.90%29.aspx)
-- [固有カルチャのリソースの検索と使用 (MSDN)](http://msdn.microsoft.com/library/s9ckwb4b%28v=vs.90%29.aspx)
+- [CultureInfo クラスの使用 (MSDN)](https://msdn.microsoft.com/library/87k6sx8t%28v=vs.90%29.aspx)
+- [固有カルチャのリソースの検索と使用 (MSDN)](https://msdn.microsoft.com/library/s9ckwb4b%28v=vs.90%29.aspx)
