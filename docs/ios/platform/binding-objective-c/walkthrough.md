@@ -94,7 +94,7 @@ Xamarin.iOS でこの特定の Objective C API を使用するすべての必要
 このチュートリアルで、次の手順について説明します。
 
 - **[スタティック ライブラリを作成](#Creating_A_Static_Library)** -この手順では、スタティック ライブラリを作成、 **InfColorPicker** Objective C コード。 スタティック ライブラリが必要があります、`.a`ファイル拡張子、およびライブラリ プロジェクトの .NET アセンブリに埋め込まれます。
-- **[Xamarin.iOS のバインド プロジェクトを作成する](#Create_a_Xamarin.iOS_Binding_Project)** -スタティック ライブラリを取得したらを Xamarin.iOS バインド プロジェクトの作成に使用します。 バインド プロジェクトは、先ほど作成した、スタティック ライブラリおよびの形式でメタデータC#Objective C API の使用方法について説明するコードです。 このメタデータは、API 定義とも呼ばれます。 使用して**[目標油性](#Using_Objective_Sharpie)** にご協力に API 定義を作成します。
+- **[Xamarin.iOS のバインド プロジェクトを作成する](#Create_a_Xamarin.iOS_Binding_Project)** -スタティック ライブラリを取得したらを Xamarin.iOS バインド プロジェクトの作成に使用します。 バインド プロジェクトは、先ほど作成した、スタティック ライブラリおよびの形式でメタデータC#Objective C API の使用方法について説明するコードです。 このメタデータは、API 定義とも呼ばれます。 使用して **[目標油性](#Using_Objective_Sharpie)** にご協力に API 定義を作成します。
 - **[API 定義を正規化](#Normalize_the_API_Definitions)** - 目標油性のうえ、良い仕事をするは、すべてを行うことはできません。 使用する API 定義をする必要があるいくつかの変更について説明します。
 - **[バインド ライブラリを使用して](#Using_the_Binding)** -最後に、新しく作成したバインド プロジェクトを使用する方法について説明 Xamarin.iOS アプリケーションを作成します。
 
