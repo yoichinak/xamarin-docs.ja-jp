@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 38568fa9258c7e3de2c3333cdca5dc7d5867319c
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 56c5aa7f0f8db746fbc6d7f8b5409f7d6c0f5d0d
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117103"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57666893"
 ---
 # <a name="apk-expansion-files"></a>APK 拡張ファイル
 
@@ -73,7 +73,7 @@ Google Play では、拡張ファイルを既存の APK にアップロードし
 
 [![APK 拡張フローチャート](apk-expansion-files-images/apkexpansion.png)](apk-expansion-files-images/apkexpansion.png#lightbox)
 
-起動時に、アプリケーションは現在のデバイスにしかるべき拡張ファイルが存在することを確認します。 存在しない場合、アプリケーションは Google Play の[アプリケーション ライセンス](http://developer.android.com/google/play/licensing/index.html)に要求する必要があります。 この確認は *LVL (License Verification Library)* によって行われます。無料のアプリケーションにも、ライセンス購入アプリケーションにも行います。 LVL は主に、ライセンス制限を適用する目的で有料アプリケーションによって使用されます。 ただし、Google では LVL が拡張されており、拡張ライブラリでも使用できます。 無料のアプリケーションは LVL 確認を実行する必要がありますが、ライセンス制限は無視できます。 LVL 要求は、アプリケーションが必要とする拡張ファイルに関する次の情報を提供する役割を担っています。 
+起動時に、アプリケーションは現在のデバイスにしかるべき拡張ファイルが存在することを確認します。 存在しない場合、アプリケーションは Google Play の[アプリケーション ライセンス](https://developer.android.com/google/play/licensing/index.html)に要求する必要があります。 この確認は *LVL (License Verification Library)* によって行われます。無料のアプリケーションにも、ライセンス購入アプリケーションにも行います。 LVL は主に、ライセンス制限を適用する目的で有料アプリケーションによって使用されます。 ただし、Google では LVL が拡張されており、拡張ライブラリでも使用できます。 無料のアプリケーションは LVL 確認を実行する必要がありますが、ライセンス制限は無視できます。 LVL 要求は、アプリケーションが必要とする拡張ファイルに関する次の情報を提供する役割を担っています。 
 
 -   **ファイル サイズ** &ndash; 拡張ファイルのファイル サイズは、正しい拡張ファイルが既にダウンロードされているかどうかを判断するための確認で利用されます。
 -   **ファイル名** &ndash; これは拡張パックを保存する現在のデバイスでのファイル名です。
