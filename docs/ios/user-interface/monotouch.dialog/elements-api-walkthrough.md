@@ -36,10 +36,8 @@ MonoTouch.Dialog の作成画面の作成プロセスを開始する、 `DialogV
 
 MonoTouch.Dialog のマルチ スクリーン アプリケーションを作成する必要があります。
 
-1.  
-  `UINavigationController.` の作成
-1.  
-  `DialogViewController.` の作成
+1.  `UINavigationController.` の作成
+1.  `DialogViewController.` の作成
 1.  追加、`DialogViewController`のルートとして、  `UINavigationController.` 
 1.  追加、`RootElement`に、  `DialogViewController.`
 1.  追加`Sections`と`Elements`に、  `RootElement.` 

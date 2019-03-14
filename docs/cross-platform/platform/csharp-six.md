@@ -51,7 +51,7 @@ Visual Studio for Mac は、システム上の Mono のインストールを自�
 
 Windows ユーザー必要があります[Visual Studio 2015 または 2017 ^](https://visualstudio.microsoft.com/)コンパイルにインストールされているC#6 コード (お使いの IDE として Xamarin Studio for Windows を選択する) 場合でもです。
 
-^ または*[Microsoft Build Tools 2015](https://www.microsoft.com/download/details.aspx?id=48159)* コマンド ライン コンパイルやビルド サーバー、たとえばします。
+^ または *[Microsoft Build Tools 2015](https://www.microsoft.com/download/details.aspx?id=48159)* コマンド ライン コンパイルやビルド サーバー、たとえばします。
 
 ## <a name="using-c-6"></a>使用してC#6
 
