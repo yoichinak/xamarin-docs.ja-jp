@@ -181,7 +181,7 @@ stacklayout {
 このセレクタは、スタイルシートを適用したページ上のすべての [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) 要素を特定し、余白を均一20に設定します。
 
 > [!NOTE]
-> `element` セレクターは、指定した型のサブクラスを特定することはできません。
+> `element`セレクターは、指定した型のサブクラスを識別できません。
 
 ### <a name="selecting-elements-by-base-class"></a>基本クラスによる要素の選択
 
@@ -336,7 +336,7 @@ Xamarin.Forms では、次の CSS セレクターがサポートされていま�
 |`.class`|`.header`|`StyleClass` プロパティに `header` を含むすべての要素を選択します。 このセレクターは、大文字小文字を区別することに注意してください。|
 |`#id`|`#email`|`StyleId` に `email` が設定されているすべての要素を選択します。 `StyleId` が設定されていない場合は、`x:Name` でフォールバックします。 XAML を使用する場合は、`StyleId` より `x:Name`が優先されます。 このセレクターは、大文字小文字を区別することに注意してください。|
 |`*`|`*`|すべての要素を選択します。|
-|`element`|`label`|`Label` 型の要素をすべて選択します。ただしサブクラスは選択しません。 このセレクターは、大文字小文字を区別しないことに注意してください。|
+|`element`|`label`|型の要素をすべて選択`Label`サブクラスではありませんが、します。 このセレクターは、大文字小文字を区別しないことに注意してください。|
 |`^base`|`^contentpage`|基本クラスが `ContentPage` であるすべての要素を選択します。これには `ContentPage` 自体も含みます。 このセレクターは大文字と小文字を区別せず、また CSS の仕様の一部ではないことに注意してください。|
 |`element,element`|`label,button`|すべての `Button` 要素とすべての `Label` 要素を選択します。 このセレクターは、大文字小文字を区別しないことに注意してください。|
 |`element element`|`stacklayout label`|`StackLayout` 内のすべての `Label` 要素を選択します。 このセレクターは、大文字小文字を区別しないことに注意してください。|

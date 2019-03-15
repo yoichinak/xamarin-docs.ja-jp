@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/13/2018
-ms.openlocfilehash: 71962c5e7d2f4c360e14b2040779498d4be95282
-ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
+ms.openlocfilehash: 270191890e8747ecad7d250fb0fe18ce253d3823
+ms.sourcegitcommit: 97dca3face7c4ad5555dfaca88f5b45a70ca556d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55831796"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "57972651"
 ---
 # <a name="customizing-listview-appearance"></a>ListView の外観のカスタマイズ
 
@@ -206,8 +206,8 @@ ListView HeaderList = new ListView() {
 [`ListView`](xref:Xamarin.Forms.ListView) `HorizontalScrollBarVisibility`と`VerticalScrollBarVisibility`を取得または設定するプロパティを[ `ScrollBarVisibility` ](xref:Xamarin.Forms.ScrollBarVisibility) 、水平方向または垂直方向のスクロール バーが表示されているときを表す値です。 両方のプロパティは、次の値に設定できます。
 
 - [`Default`](xref:Xamarin.Forms.ScrollBarVisibility) プラットフォームのスクロール バーの既定動作を示しの既定値は、`HorizontalScrollBarVisibility`と`VerticalScrollBarVisibility`プロパティ。
-- [`Always`](xref:Xamarin.Forms.ScrollBarVisibility) コンテンツ ビューに収まらない場合でも、スクロール バーが、表示されることを示します。
-- [`Never`](xref:Xamarin.Forms.ScrollBarVisibility) スクロール バーが表示されないことを示すイベント ビューで、コンテンツが収まらない場合。
+- [`Always`](xref:Xamarin.Forms.ScrollBarVisibility) ビューでコンテンツを調整する場合でも、スクロール バーが、表示されることを示します。
+- [`Never`](xref:Xamarin.Forms.ScrollBarVisibility) スクロール バーが表示されないこと、コンテンツ ビューに収まらない場合でもを示します。
 
 <a name="Row_Separators" />
 

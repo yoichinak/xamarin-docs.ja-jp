@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/24/2016
-ms.openlocfilehash: 4f5f32871c273fc7ac3bab8fd9bcbcac03fc47fa
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: cf04c3e89e3effdd317fa98beb46f9075a1defcd
+ms.sourcegitcommit: 97dca3face7c4ad5555dfaca88f5b45a70ca556d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233810"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "57972664"
 ---
 # <a name="native-views-in-xaml"></a>XAML のネイティブ ビュー
 
@@ -325,7 +325,7 @@ IOS と Android のネイティブ ビューの多くでは、コントロール
 
 ページには、各プラットフォームのネイティブ ピッカー ビューも含まれています。 各ネイティブの表示には、バインド、果物のコレクションが表示されます、`ItemSource`プロパティを`SubclassedNativeControlsPageViewModel.Fruits`コレクション。 これにより、次のスクリーン ショットに示すように、ユーザー、フルーツを選択します。
 
-![](xaml-images/sub-classed.png "サブクラスのネイティブ ビュー")
+![](xaml-images/sub-classed.png "サブクラス化されたネイティブ ビュー")
 
 IOS と Android では、ネイティブの選択は、コントロールを設定するのにメソッドを使用します。 そのため、これらの選択は、XAML に対応できるようにするプロパティを公開するサブクラス化する必要があります。 ユニバーサル Windows プラットフォーム (UWP) で、`ComboBox`は既に XAML への対応、およびそのため、サブクラス化を必要としません。
 

@@ -105,7 +105,7 @@ Xamarin.Forms のテーマは、標準のコントロールの特定の外観を
 
 ## <a name="visualvisualindexmd"></a>[ビジュアル](visual/index.md)
 
-Xamarin.Forms Visual により、選択的に適用するレンダラー `VisualElement` Xamarin.Forms コントロールのサブクラス化することがなく、オブジェクト。
+IOS と Android でまったく同じ、またはほぼ同じですが、外観の Xamarin.Forms アプリケーションを作成する Xamarin.Forms マテリアル Visual を使用できます。
 
 ## <a name="visual-state-managervisual-state-managermd"></a>[Visual State Manager](visual-state-manager.md)
 
