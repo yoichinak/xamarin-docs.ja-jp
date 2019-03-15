@@ -6,13 +6,13 @@ ms.assetid: 58DFFA52-4057-49A8-8682-50A58C7E842C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/19/2018
-ms.openlocfilehash: 997b3e8a8f847ae08eea7e022e7b3424d0fddd8d
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.date: 03/07/2019
+ms.openlocfilehash: b88226dda14e2ae5cd21bb066e107fb4bcad78f6
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233940"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672522"
 ---
 # <a name="implementing-a-hybridwebview"></a>HybridWebView の実装
 
@@ -240,6 +240,8 @@ function invokeCSCode(data) {
 
 `invokeCSharpAction` JavaScript 関数は Web ページで定義されておらず、各カスタム レンダラーによって挿入されます。
 
+iOS の場合、この HTML ファイルは、**BundleResource** のビルド アクションと一緒に、プラットフォーム プロジェクトの Content フォルダーに置かれます。 Android の場合、この HTML ファイルは、**AndroidAsset** のビルド アクションと一緒にプラットフォーム プロジェクトの Assets/Content フォルダーに置かれます。
+
 <a name="Invoking_C_from_JavaScript" />
 
 ### <a name="invoking-c-from-javascript"></a>JavaScript から C# を呼び出す
@@ -319,6 +321,16 @@ namespace CustomRenderer.iOS
 
 > [!NOTE]
 > `WKWebView` クラスは、iOS 8 以降でのみサポートされています。
+
+さらに、次の値を含むように、**Info.plist** を更新する必要があります。
+
+```
+<key>NSAppTransportSecurity</key>
+<dict>
+    <key>NSAllowsArbitraryLoads</key>
+    <true/>
+</dict>
+```
 
 ### <a name="creating-the-custom-renderer-on-android"></a>Android 上でのカスタム レンダラーの作成
 

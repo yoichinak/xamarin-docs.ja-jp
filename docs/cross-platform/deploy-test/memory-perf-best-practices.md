@@ -6,16 +6,16 @@ ms.assetid: 9ce61f18-22ac-4b93-91be-5b499677d661
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: bd08e1f83f7b1752a2830bda1390ffae4f86b360
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 7f03df796c338380a776f9af26563af2e60e59a1
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242408"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672652"
 ---
 # <a name="cross-platform-performance"></a>クロスプラットフォームのパフォーマンス
 
-低いアプリケーション パフォーマンスは、さまざまな方法で示されます。 たとえば、アプリケーションが応答しない、スクロールが遅くなった、電池の寿命が減っている可能性がある、などです。 ただし、パフォーマンスを最適化するには、単に効率的なコードを実装するだけでは済みません。 アプリケーション パフォーマンスのユーザー エクスペリエンスも考慮する必要があります。 たとえば、操作の実行によって、ユーザーが他の操作を実行できない状況にならないようにすることで、ユーザー エクスペリエンスを改善できます。
+低いアプリケーション パフォーマンスは、さまざまな方法で示されます。 たとえば、アプリケーションが応答しなかったり、スクロールが遅くなったり、電池の寿命が減ったりすることがあります。 ただし、パフォーマンスを最適化するには、単に効率的なコードを実装するだけでは済みません。 アプリケーション パフォーマンスのユーザー エクスペリエンスも考慮する必要があります。 たとえば、操作の実行によって、ユーザーが他の操作を実行できない状況にならないようにすることで、ユーザー エクスペリエンスを改善できます。
 
 <a name="profiler" />
 
@@ -257,7 +257,7 @@ public class FaceDetection
 
 使用されなくなったオブジェクトに割り当てられているメモリを再利用するために、C# などのマネージド言語ではガーベジ コレクションが使用されます。 Xamarin プラットフォームで使用される 2 つのガベージ コレクターは次のとおりです。
 
-- [**SGen** ](http://www.mono-project.com/docs/advanced/garbage-collector/sgen/) – これは世代別ガベージ コレクターであり、Xamarin のプラットフォームの既定のガベージ コレクターです。
+- [**SGen** ](https://www.mono-project.com/docs/advanced/garbage-collector/sgen/) – これは世代別ガベージ コレクターであり、Xamarin のプラットフォームの既定のガベージ コレクターです。
 - [**Boehm** ](http://www.hboehm.info/gc/) – これは、保守的な、非世代別ガベージ コレクターです。 これは、Classic API を使用する Xamarin.iOS アプリケーションで使用される既定のガベージ コレクターです。
 
 SGen では、オブジェクトにスペースを割り当てる際に、次の 3 つのヒープのいずれかが利用されます。
@@ -334,11 +334,11 @@ SGen がガベージ コレクションを開始すると、メモリの再利�
 - アプリケーションのマネージド コード サイズを減らします。 これは、すべてのアセンブリでリンカーを有効にすることで行うことができます (iOS プロジェクトの場合は *[すべてリンク]*、Android プロジェクトの場合は *[すべてのアセンブリをリンクする]*)。
 
 Android アプリは、ABI ("アーキテクチャ") ごとに別の APK に分割することもできます。
-詳細については、このブログの投稿「[How To Keep Your Android App Size Down](http://motzcod.es/post/112072508362/how-to-keep-your-android-app-size-down)」 (Android アプリのサイズを小さくしておく方法) を参照してください。
+詳細については、次のブログ記事を参照してください: [ご利用の Android アプリのサイズを小さくしておく方法](http://motzcod.es/post/112072508362/how-to-keep-your-android-app-size-down)。
 
 <a name="optimizeimages" />
 
-## <a name="optimize-image-resources"></a>画像リソースを最適化する
+## <a name="optimize-image-resources"></a>イメージ リソースを最適化する
 
 アプリケーションが使用するリソースのうち最もコストが高いものとして画像があります。多くの場合、画像は高解像度でキャプチャされます。 画像は細かい部分まで鮮明になりますが、そのような画像を表示するアプリケーションでは通常、画像をデコードするためにより多くの CPU を使用する必要があり、また、デコードされた画像を格納するためにより多くのメモリが必要になります。 表示サイズを小さくするためにスケールダウンする場合、メモリ内の高解像度画像をデコードするのは無駄です。 代わりに、予測された表示サイズに近い、格納された画像の多重解像度バージョンを作成して、CPU 使用量とメモリの占有領域を減らします。 たとえば、リスト ビューに表示される画像は、全画面で表示される画像よりも解像度が低くなる可能性が最も高くなります。 さらに、メモリへの影響を最小限に抑えて効率的に画像を表示するために、高解像度の画像のスケールダウン バージョンを読み込むことができます。 詳細については、「[Load Large Bitmaps Efficiently](https://github.com/xamarin/recipes/tree/master/Recipes/android/resources/general/load_large_bitmaps_efficiently)」 (大きなビットマップを効率的に読み込む) を参照してください。
 

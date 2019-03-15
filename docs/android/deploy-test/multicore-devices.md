@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/05/2018
-ms.openlocfilehash: 1a2739d1a3848303b3086c23c0a28a889250ee2e
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.openlocfilehash: b89f5329430fed0387443bf923c45cd40181b22e
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50675511"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668388"
 ---
 # <a name="multi-core-devices--xamarinandroid"></a>マルチコア デバイスと Xamarin.Android
 
@@ -53,7 +53,7 @@ Android でサポートされている各 ABI は、一意の名前で識別さ�
 
 これは、最低限 ARMv5TE 命令セットをサポートする ARM ベースの CPU の EABI の名前です。 Android では、リトル エンディアン ARM GNU/Linux ABI に従います。 この ABI は、ハードウェア依存の浮動小数点演算をサポートしていません。 すべての FP 演算は、コンパイラの `libgcc.a` スタティック ライブラリに由来するソフトウェア ヘルパー関数で実行されます。 SMP デバイスは `armeabi` でサポートされていません。
 
-**注:** Xamarin.Android の `armeabi` コードはスレッド セーフではなく、マルチ CPU の `armeabi-v7a` デバイスでは使用しないでください (以下で説明)。 シングル コアの `armeabi-v7a` デバイスで `aremabi` コードを使用するのは安全です。
+**注**: Xamarin.Android の `armeabi` コードはスレッド セーフではなく、マルチ CPU の `armeabi-v7a` デバイスでは使用しないでください (以下で説明)。 シングル コアの `armeabi-v7a` デバイスで `aremabi` コードを使用するのは安全です。
 
 #### <a name="armeabi-v7a"></a>armeabi-v7a
 
@@ -125,7 +125,7 @@ Android アプリケーション パッケージは、Android のアプリケー
 
 Android のネイティブ ライブラリのインストール動作は、Android のバージョンによって大幅に異なります。
 
-#### <a name="installing-native-libraries-pre-android-40"></a>ネイティブ ライブラリのインストール: Android 4.0 より前のバージョン
+#### <a name="installing-native-libraries-pre-android-40"></a>ネイティブ ライブラリのインストール: Android 4.0 より前
 
 Android 4.0 Ice Cream Sandwich より前のバージョンでは、`.apk` 内の *1 つの ABI* からのみネイティブ ライブラリを抽出します。 この古い Android アプリが最初にプライマリ ABI のすべてのネイティブ ライブラリの抽出を試みて、ライブラリが存在しない場合は、次に Android がセカンダリ ABI のすべてのネイティブ ライブラリを抽出します。 "マージ" は行われません。
 
@@ -177,7 +177,7 @@ $APP/lib/libone.so
 $APP/lib/libtwo.so
 ```
 
-ただし、この動作は、ドキュメント「[Issue 24321: Galaxy Nexus 4.0.2 uses armeabi native code when both armeabi and armeabi-v7a is included in apk](http://code.google.com/p/android/issues/detail?id=25321)」 (問題 24321: apk に armeabi と armeabi v7a の両方が含まれていると、Galaxy Nexus 4.0.2 では armeabi ネイティブ コードが使用される) で説明されているように、順序依存です。
+ただし、この動作は次のドキュメントで説明されているように順序依存です: [問題 24321: apk に armeabi と armeabi v7a の両方が含まれている場合、Galaxy Nexus 4.0.2 では armeabi ネイティブ コードが使用される](http://code.google.com/p/android/issues/detail?id=25321)
 
 ネイティブ ライブラリは、(たとえば、unzip で一覧表示されているように) "順番に" 処理され、*最初の一致*が抽出されます。 `.apk` には `libtwo.so` の `armeabi` バージョンと `armeabi-v7a` バージョンが含まれており、`armeabi` が最初にリストされているため、`armeabi-v7a` バージョン*ではなく*、`armeabi` バージョンが抽出されます。
 
@@ -257,6 +257,6 @@ Visual Studio for Mac では、次のスクリーンショットで示すよう�
 
 - [MIPS アーキテクチャ](http://www.mips.com/products/product-materials/processor/mips-architecture)
 - [ARM アーキテクチャの ABI (PDF)](http://infocenter.arm.com/help/topic/com.arm.doc.ihi0036b/IHI0036B_bsabi.pdf)
-- [Android NDK](http://developer.android.com/tools/sdk/ndk/index.html)
+- [Android NDK](https://developer.android.com/tools/sdk/ndk/index.html)
 - [問題 9089: Nexus One - armeabi v7a に 1 つ以上のライブラリがある場合、armeabi からどのネイティブ ライブラリも読み込まれない](http://code.google.com/p/android/issues/detail?id=9089)
-- [問題 24321: apk に armeabi と armeabi v7a の両方が含まれている場合、Galaxy Nexus 4.0.2 が armeabi ネイティブ コードを使用する](http://code.google.com/p/android/issues/detail?id=25321)
+- [問題 24321: apk に armeabi と armeabi v7a の両方が含まれている場合、Galaxy Nexus 4.0.2 では armeabi ネイティブ コードが使用される](http://code.google.com/p/android/issues/detail?id=25321)

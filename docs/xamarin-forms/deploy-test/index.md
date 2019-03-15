@@ -6,20 +6,31 @@ ms.assetid: 705c9fa4-12ef-4ee0-ab3e-8319ee9944c5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/31/2016
-ms.openlocfilehash: 74a80183c29b4f1681fdce85ed9debd9ee9fbce2
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35243223"
+ms.date: 03/04/2019
 ---
+
 # <a name="xamarinforms-deployment-and-testing"></a>Xamarin.Forms の配置とテスト
+
+## <a name="publishing-ios-appsiosdeploy-testapp-distributionindexmd"></a>[iOS アプリの発行](~/ios/deploy-test/app-distribution/index.md)
+
+iOS アプリは、Apple の App Store 配布、社内配布、およびアドホック チャネル配布によって発行することができます。
+
+## <a name="publishing-android-appsandroiddeploy-testpublishingindexmd"></a>[Android アプリの発行](~/android/deploy-test/publishing/index.md)
+
+Android アプリは、電子メール、プライベートの Web サーバー、Google Play、Android 用の Amazon App Store などのチャネルを介して配布することができます。
+
+## <a name="publishing-universal-windows-platform-appswindowsuwppackaging"></a>[ユニバーサル Windows プラットフォーム アプリの配布](/windows/uwp/packaging/)
+
+UWP アプリは、Microsoft Store を経由するか、デバイスにアプリ パッケージを直接サイド ローディングするか、または Web インストールを介して配布することができます。
+
+## <a name="publishing-mac-appsmacdeploy-testpublishing-to-the-app-storeindexmd"></a>[Mac アプリの発行](~/mac/deploy-test/publishing-to-the-app-store/index.md)
+
+Mac アプリは Mac App Store を介して、または直接、配布することができます。
 
 ## <a name="performanceperformancemd"></a>[パフォーマンス](performance.md)
 
 Xamarin.Forms アプリのパフォーマンスを高めるための方法は多数あります。 これらの手法をすべて使用することで、CPU で実行される作業量や、アプリケーションで消費されるメモリ量を大幅に減らすことができます。
 
-## <a name="automated-testing-with-xamarinuitest-and-app-centeruitest-and-test-cloudmd"></a>[Xamarin.UITest と App Center によるテストの自動化](uitest-and-test-cloud.md)
+## <a name="automated-testing-with-visual-studio-app-centerappcentertest-cloud"></a>[Visual Studio App Center を使用した自動テスト](/appcenter/test-cloud/)
 
-Xamarin Test Cloud の **UITest** コンポーネントを Xamarin.Forms で使用して、数百台のデバイスを対象にクラウドで実行する UI テストを作成できます。
+App Center テストは、ネイティブおよびハイブリッド モバイル アプリ用のテスト自動化サービスであり、Test Cloud とも呼ばれています。

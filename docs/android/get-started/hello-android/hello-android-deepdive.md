@@ -1,5 +1,5 @@
 ---
-title: 'Hello, Android: 詳細説明'
+title: Hello, Android:詳しく調べる
 description: このガイドは 2 つに分かれています。最初に、Xamarin.Android アプリケーションを作成し、Xamarin を使用する Android アプリケーション開発の基礎について理解を深めます。 その過程で、Xamarin.Android アプリケーションの作成と展開に必要なツール、概念、および手順を紹介します。
 zone_pivot_groups: platform
 ms.topic: quickstart
@@ -9,14 +9,14 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 10/05/2018
-ms.openlocfilehash: cdd0a792a76fa411fdc010c3d662a3d1acc2f373
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 3d34ce3d5cb6e8e4931eafcc7cd82d141f5db8d7
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108815"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670182"
 ---
-# <a name="hello-android-deep-dive"></a>Hello, Android: 詳細説明
+# <a name="hello-android-deep-dive"></a>Hello, Android:詳しく調べる
 
 _このガイドは 2 つに分かれています。最初に、Xamarin.Android アプリケーションを作成し、Xamarin を使用する Android アプリケーション開発の基礎について理解を深めます。その過程で、Xamarin.Android アプリケーションの作成と展開に必要なツール、概念、および手順を紹介します。_
 
@@ -113,7 +113,7 @@ Visual Studio for Mac は、コードを_ソリューション_と_プロジェ�
 
 下の表に項目をまとめます。
 
-- **drawable** &ndash; drawable ディレクトリには、画像やビットマップなどの[ドローアブル リソース](http://developer.android.com/guide/topics/resources/drawable-resource.html)が含まれています。
+- **drawable** &ndash; drawable ディレクトリには、画像やビットマップなどの[ドローアブル リソース](https://developer.android.com/guide/topics/resources/drawable-resource.html)が含まれています。
 
 - **mipmap** &ndash;mipmap ディレクトリには、密度が異なる起動アイコンのドローアブル ファイルが含まれています。 既定のテンプレートでは、drawable ディレクトリにはアプリケーション アイコン ファイル **Icon.png** が含まれています。
 
@@ -269,7 +269,7 @@ SetContentView (Resource.Layout.activity_main);
 ::: zone-end
 ::: zone pivot="macos"
 
-**Phoneword** アプリで、`OnCreate` で最初に実行する操作は、Android Designer で作成されたユーザー インターフェイスを読み込むことです。 UI を読み込むには、`SetContentView` を呼び出し、レイアウト ファイル (**Main.axml**) の*リソース レイアウト名*を渡します。 レイアウトは `Resource.Layout.Main` に置かれています。
+**Phoneword** アプリで、`OnCreate` で最初に実行する操作は、Android Designer で作成されたユーザー インターフェイスを読み込むことです。 UI を読み込むには、`SetContentView` を呼び出し、次のレイアウト ファイルの "*リソース レイアウト名*" を渡します: **Main.axml** レイアウトは `Resource.Layout.Main` に置かれています。
 
 ```csharp
 SetContentView (Resource.Layout.Main);

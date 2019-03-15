@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/05/2017
-ms.openlocfilehash: 870a9cb20ea962b3c1a342e7222c5e9322537dd1
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 4f545893ca4cde441cd05fc3d8e52ecf0f6aae98
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109212"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669493"
 ---
 # <a name="using-mtouch-to-bundle-xamarinios-apps"></a>mtouch を使用する Xamarin.iOS アプリのバンドル
 
@@ -66,7 +66,7 @@ $ mtouch -sim Hello.app hello.exe
 $ mtouch -dev -c "iPhone Developer: Miguel de Icaza" foo.exe
 ```
 
-この事例では、"iPhone Developer: Miguel de Icaza" という証明書でアプリケーションに署名します。 この手順は非常に重要です。この手順がなければ、物理デバイスはアプリケーションの読み込みを拒否します。
+この特別なケースでは、"iPhone Developer: Miguel de Icaza" 証明書を使用してアプリケーションに署名します。 この手順は非常に重要です。この手順がなければ、物理デバイスはアプリケーションの読み込みを拒否します。
 
  <a name="Running_your_Application" />
 
@@ -84,7 +84,7 @@ $ mtouch --sdkroot /Applications/Xcode.app -launchsim Hello.app
 
 `--sdkroot` フラグが設定されていない場合、既定で xcode-select パスに設定され、次の警告が表示されます。
 
-> eg: warning MT0061: No Xcode.app specified (using --sdkroot), using the system Xcode as reported by 'xcode-select --print-path': /Applications/Xcode.app/Contents/Developer 
+> 例: 警告 MT0061: Xcode.app が (--sdkroot を使用して) 指定されていません。'xcode-select --print-path': /Applications/Xcode.app/Contents/Developer によってレポートされたようなシステム Xcode を使用 
 
 このコマンド ラインで次のような出力が生成されます。
 
@@ -110,7 +110,7 @@ Press enter to terminate the application
 
 ### <a name="deploying-to-a-device"></a>デバイスの展開
 
-デバイスに配置するには、Apple の[デバイスの管理](http://developer.apple.com/library/ios/#documentation/Xcode/Conceptual/ios_development_workflow/00-About_the_iOS_Application_Development_Workflow/introduction.html)に関するドキュメントに基づいてデバイスをプロビジョニングする必要があります。 デバイスが適切にプロビジョニングされると、mtouch コマンドを利用し、コンパイル済みの ".app" をデバイスに配置できます。 これは次のコマンドで行います。
+デバイスに配置するには、Apple の[デバイスの管理](https://developer.apple.com/library/ios/#documentation/Xcode/Conceptual/ios_development_workflow/00-About_the_iOS_Application_Development_Workflow/introduction.html)に関するドキュメントに基づいてデバイスをプロビジョニングする必要があります。 デバイスが適切にプロビジョニングされると、mtouch コマンドを利用し、コンパイル済みの ".app" をデバイスに配置できます。 これは次のコマンドで行います。
 
 ```bash
 $ mtouch —sdkroot /Applications/Xcode.app -installdev=MyApp.app
@@ -118,11 +118,11 @@ $ mtouch —sdkroot /Applications/Xcode.app -installdev=MyApp.app
 
 `--sdkroot` フラグが設定されていない場合、既定で xcode-select パスに設定され、次の警告が表示されます。
 
-> eg: warning MT0061: No Xcode.app specified (using --sdkroot), using the system Xcode as reported by 'xcode-select --print-path': /Applications/Xcode.app/Contents/Developer 
+> 例: 警告 MT0061: Xcode.app が (--sdkroot を使用して) 指定されていません。'xcode-select --print-path': /Applications/Xcode.app/Contents/Developer によってレポートされたようなシステム Xcode を使用 
 
 以上の手順は通常、Visual Studio for Mac で実行されます。
 
-## <a name="reference"></a>参照
+## <a name="reference"></a>関連項目
 
 その他のコマンド ライン オプションについては、[mtouch(1)](http://docs.go-mono.com/?link=man%3amtouch(1)) マニュアル ページをご覧ください。
 

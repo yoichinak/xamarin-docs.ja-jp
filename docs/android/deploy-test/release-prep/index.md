@@ -6,13 +6,8 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2018
-ms.openlocfilehash: dff57b142745729d5d38db4cce892bb1d55796a6
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059731"
 ---
+
 # <a name="preparing-an-application-for-release"></a>リリースに向けてアプリケーションを準備する
 
 アプリケーションがコード化され、テストされたら、配信のためにパッケージを用意する必要があります。 このパッケージ準備における最初の作業は、リリース用のアプリケーションをビルドすることです。中心的な作業は、いくつかのアプリケーション属性を設定することです。
@@ -98,9 +93,9 @@ Visual Studio では、次のスクリーンショットで示すように、こ
 
 リリース モードでは、アプリケーションがランタイムで必要な Xamarin.Android の要素のみを送付するように、共有ランタイムはオフにし、リンクをオンにします。 Xamarin.Android の*リンカー*では、スタティック分析を使用して、Xamarin.Android アプリケーションによって使用または参照されるアセンブリ、型、および型メンバーを決定します。 次に、リンカーは、使用 (または参照) されないすべての未使用のアセンブリ、型、メンバーを破棄します。 この操作を行うと、パッケージ サイズが大幅に削減されます。 たとえば、[HelloWorld](~/android/deploy-test/linker.md) の例を検討します。この例では、APK の最終的なサイズが 83% 削減されます。 
 
--   構成:なし &ndash; Xamarin.Android 4.2.5 サイズ = 17.4 MB。
+-   構成: なし &ndash; Xamarin.Android 4.2.5 サイズ = 17.4 MB。
 
--   構成:SDK アセンブリのみ &ndash; Xamarin.Android 4.2.5 サイズ = 3.0 MB。
+-   構成: SDK アセンブリのみ &ndash; Xamarin.Android 4.2.5 サイズ = 3.0 MB。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -222,7 +217,7 @@ Dotfuscator CE を構成するには、「[Using Dotfuscator Community Edition w
 
 **[AOT コンパイル]** オプション ([[パッケージング プロパティ]](#Set_Packaging_Properties) ページ) により、アセンブリの Ahead Of Time (AOT) コンパイルが有効になります。 このオプションを有効にすると、ランタイム前にアセンブリがプリコンパイルされることで Just In Time (JIT) スタートアップのオーバーヘッドが最小化します。 生成されたネイティブ コードは、コンパイルされていないアセンブリと共に APK に含まれています。 この結果、アプリケーションの起動時間が短縮しますが、APK のサイズが少し大きくなります。
 
-**[AOT コンパイル]** オプションには、Enterprise 以上のライセンスが必要です。 **[AOT コンパイル]** は、プロジェクトがリリース モードで構成されていて、これが既定で無効になっている場合にのみ使用できます。 AOT コンパイルの詳細については、「[AOT](http://www.mono-project.com/docs/advanced/aot/)」を参照してください。
+**[AOT コンパイル]** オプションには、Enterprise 以上のライセンスが必要です。 **[AOT コンパイル]** は、プロジェクトがリリース モードで構成されていて、これが既定で無効になっている場合にのみ使用できます。 AOT コンパイルの詳細については、「[AOT](https://www.mono-project.com/docs/advanced/aot/)」を参照してください。
 
 #### <a name="llvm-optimizing-compiler"></a>LLVM 最適化コンパイラ
 
@@ -266,7 +261,7 @@ _LLVM 最適化コンパイラ_では、より小さく高速なコンパイル�
 
 参照されるすべてのライブラリのすべてのメソッドをアプリが使用していない場合があるため、ProGuard (上記参照) などのツールを使用して、未使用のメソッドをコードから削除することができます。 **[Multi-Dex を有効にする]** は本当に必要な場合にのみ有効にすることをお勧めします。たとえば、ProGuard を使用してもアプリが 65K を超える Java メソッドを参照する場合などです。
 
-Multi-Dex の詳細については、「[64K を超えるメソッドを使用するアプリの設定](http://developer.android.com/tools/building/multidex.html)」を参照してください。
+Multi-Dex の詳細については、「[64K を超えるメソッドを使用するアプリの設定](https://developer.android.com/tools/building/multidex.html)」を参照してください。
 
 <a name="Compile" />
 
@@ -374,6 +369,6 @@ Multi-Dex の詳細については、「[64K を超えるメソッドを使用�
 
 - [マルチコア デバイスと Xamarin.Android](~/android/deploy-test/multicore-devices.md)
 - [CPU アーキテクチャ](~/android/app-fundamentals/cpu-architectures.md)
-- [AOT](http://www.mono-project.com/docs/advanced/aot/)
-- [コードとリソースを圧縮する](http://developer.android.com/tools/help/proguard.html)
-- [64K を超えるメソッドを使用するアプリの設定](http://developer.android.com/tools/building/multidex.html)
+- [AOT](https://www.mono-project.com/docs/advanced/aot/)
+- [コードとリソースを圧縮する](https://developer.android.com/tools/help/proguard.html)
+- [64K を超えるメソッドを使用するアプリの設定](https://developer.android.com/tools/building/multidex.html)

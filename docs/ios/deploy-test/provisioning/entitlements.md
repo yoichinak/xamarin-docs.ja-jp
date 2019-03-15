@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/13/2018
-ms.openlocfilehash: 6e45f87b3c64abb9de22e09150935e3e5065fea4
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 5ce778d0e6c2d023362ca5c9c691d77548dd7383
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103414"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672600"
 ---
 # <a name="working-with-entitlements-in-xamarinios"></a>Xamarin.iOS での権利の使用
 
@@ -68,7 +68,7 @@ Visual Studio で権利を構成するには、次の操作を行います。
 
     ![](entitlements-images/servicevs02.png "権利の編集")
 
-    または、**Entitlements.plist** ファイルをダブルクリックして XML ソース エディターを開きます。このエディターでは、後述の[権利の参照](#keyreference)に関するセクションで詳しく説明されているように、権利プロパティとキーの値を設定することができます。
+    または、**Entitlements.plist** ファイルをダブルクリックして XML ソース エディターを開きます。このエディターでは、後述の[権利キー参照](#entitlement-key-reference)に関するセクションで詳しく説明されているように、権利プロパティとキーの値を設定することができます。
 
 5. Xamarin.iOS アプリケーションに必要な権利を選択して構成し、アプリ ID が作成されたときに定義された設定と一致するようにします。
 6. 変更内容を **Entitlements.plist** ファイルに保存します。
@@ -109,7 +109,7 @@ Entitlements.plist エディターの [ソース] パネルを使用して、権
 
 ### <a name="icloud"></a>iCloud
 
-*   **説明**: iCloud は、iOS ユーザーに自分のコンテンツを格納し、デバイス間で共有するための便利で簡単な方法を提供します。 開発者が iCloud を使用して、ユーザーにストレージの手段を提供できる方法は 4 つあります。つまり、Key-Value ストレージ、UIDocument ストレージ、CoreData、および CloudKit を直接使用して個別のファイルとディレクトリにストレージを提供できます。 これらの詳細については、iCloud の概要に関するガイドを参照してください。
+*   **説明**: iCloud は、iOS ユーザーに自分のコンテンツを格納し、デバイス間で共有するための便利で簡単な方法を提供します。 開発者が iCloud を使用してユーザーにストレージの手段を提供するには、次の 4 つの方法があります: Key-Value ストレージ、UIDocument ストレージ、CoreData の各方法の他に、CloudKit を直接使用して個々のファイルおよびディレクトリ用にストレージを提供する方法。 これらの詳細については、iCloud の概要に関するガイドを参照してください。
 
     - **iCloud ドキュメントと CloudKit**
         - **キー**: com.apple.developer.ubiquity-container-identifiers
@@ -137,7 +137,7 @@ Entitlements.plist エディターの [ソース] パネルを使用して、権
 
 ### <a name="apple-pay"></a>Apple Pay
 
-- **説明**: Apple Pay を使用すると、ユーザーは自分の iOS デバイスから物理的な商品の支払いができます。
+- **説明**: Apple Pay を使用すると、ユーザーはご自分の iOS デバイスから物理的な商品の支払いができます。
     - **キー**: com.apple.developer.in-app-payments
     - **文字列**: merchant.your.mechantid
 
@@ -148,7 +148,7 @@ Entitlements.plist エディターの [ソース] パネルを使用して、権
 
 ### <a name="siri"></a>Siri
 
-- **説明**: SiriKit を使用すると、iOS アプリは、アプリ拡張機能と新しい Intents および Intents UI フレームワークを使用して、iOS デバイス上のマップ アプリと Siri にアクセス可能なサービスを提供できます。 詳細については、SiriKit の概要に関するガイドを参照してください。
+- **説明**: SiriKit を使用すると、iOS アプリでは、App Extensions と新しい Intents および Intents UI フレームワークを使用して、iOS デバイス上のマップ アプリと Siri にアクセス可能なサービスを提供することができます。 詳細については、SiriKit の概要に関するガイドを参照してください。
     - **キー**: com.apple.developer.siri
 
 ### <a name="personal-vpn"></a>個人の VPN
@@ -176,7 +176,7 @@ Entitlements.plist エディターの [ソース] パネルを使用して、権
 
 ### <a name="data-protection"></a>データの保護
 
-- **説明**: データの保護を有効にする場合は、組み込みの暗号化ハードウェアを使用して、暗号化された形式でアプリで使用される機密データを格納します。 既定では、保護レベルは完全な保護に設定されます (デバイスのロックが解除されたときにのみ、ファイルにアクセスできます)。
+- **説明**: データの保護を有効にすると、組み込みの暗号化ハードウェアを使用して、アプリで使用される機密データが暗号化された形式で格納されます。 既定では、保護レベルは完全な保護に設定されます (デバイスのロックが解除されたときにのみ、ファイルにアクセスできます)。
     - **キー**: com.apple.developer.default-data-protection
     - **文字列**: NSFileProtectionComplete
 
@@ -188,19 +188,19 @@ Entitlements.plist エディターの [ソース] パネルを使用して、権
 
 ### <a name="healthkit"></a>HealthKit
 
-- **説明**: HealthKit は iOS 8 で導入されたフレームワークです。正常性に関する情報のための集中型の調整されたセキュア データ ストアを提供します。 HealthKit の使用の詳細については、HealthKit の概要に関するガイドを参照してください。
+- **説明**: HealthKit は iOS 8 で導入されたフレームワークです。これにより、正常性に関する情報のための集中型の調整されたセキュア データ ストアが提供されます。 HealthKit の使用の詳細については、HealthKit の概要に関するガイドを参照してください。
     - **キー**: com.apple.developer.healthkit
     - **ブール値**: YES
 
 ### <a name="wireless-accessory-configuration"></a>Wireless Accessory Configuration
 
-- **説明**: Wireless Accessory Configuration を使用すると、アプリケーションで MFi Wi-Fi アクセサリを構成できます。
+- **説明**: Wireless Accessory Configuration を使用すると、ご利用のアプリで MFi Wi-Fi アクセサリを構成できます
     - **キー**: com.apple.external-accessory.wireless-configuration
     - **ブール値**: YES
 
 ### <a name="classkit"></a>ClassKit
 
-- **説明**: ClassKit を使用すると、教師はアプリで割り当てられた活動に対する学生の進捗状況を表示できます。
+- **説明**: ClassKit を使用すると、教師は割り当てられた活動に対する学生の進捗状況をアプリで表示できます。
     - **キー**: com.apple.developer.ClassKit-environment
     - **文字列**: `development` または `production`
 

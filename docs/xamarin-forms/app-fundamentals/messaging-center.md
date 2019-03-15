@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/01/2016
-ms.openlocfilehash: ecd3fe7256eeaa51baf1bc2c367ff7560db51b0c
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 2e87142594da8f028323b5dc81afb0e9f8021028
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53055816"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667056"
 ---
 # <a name="xamarinforms-messagingcenter"></a>Xamarin.Forms の MessagingCenter
 
@@ -35,7 +35,6 @@ Xamarin.Forms の `MessagingCenter` を使うと、ビュー モデルとその�
 -  **Subscribe** - 特定のシグネチャを持つメッセージをリッスンし、受信したら何らかのアクションを実行します。 複数のサブスクライバーで同じメッセージをリッスンできます。
 -  **Send** - リスナーが処理するメッセージを発行します。 サブスクライブしているリスナーがない場合、メッセージは無視されます。
 
-
 `MessagingService` は、ソリューション全体で使用される `Subscribe` メソッドと `Send` メソッドを含む静的クラスです。
 
 メッセージには文字列の `message` パラメーターがあり、メッセージの "*アドレスを指定する*" 手段として使用されます。 `Subscribe` メソッドと `Send` メソッドでは、ジェネリック パラメーターを使用して、メッセージの配信方法がさらに制御されます。`message` のテキストが同じでも、ジェネリック型引数が異なる 2 つのメッセージは、同じサブスクライバーに配信されません。
@@ -56,6 +55,8 @@ Xamarin.Forms の `MessagingCenter` を使うと、ビュー モデルとその�
 ## <a name="using-the-messagingcenter"></a>MessagingCenter を使用する
 
 メッセージは、ユーザー操作 (ボタン クリックなど)、システム イベント (コントロールの状態の変化など)、または他の何らかのインシデント (非同期ダウンロードの完了など) の結果として、送信される場合があります。 サブスクライバーは、ユーザー インターフェイスの外観の変更、データの保存、他の何らかの操作のトリガーなどのために、リッスンしている可能性があります。
+
+`MessagingCenter` クラスの使用に関する詳細については、「[疎結合コンポーネント間の通信](~/xamarin-forms/enterprise-application-patterns/communicating-between-loosely-coupled-components.md)」を参照してください。
 
 ### <a name="simple-string-message"></a>シンプルな文字列メッセージ
 
@@ -114,3 +115,4 @@ MessagingCenter は、結合を減らす簡単な方法です (特にビュー �
 
 - [MessagingCenterSample](https://developer.xamarin.com/samples/UsingMessagingCenter)
 - [Xamarin.Forms のサンプル](https://github.com/xamarin/xamarin-forms-samples)
+- [疎結合コンポーネント間の通信](~/xamarin-forms/enterprise-application-patterns/communicating-between-loosely-coupled-components.md)

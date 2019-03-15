@@ -6,12 +6,12 @@ ms.assetid: 420c5fdf-4610-4e71-9db5-fe894c961924
 author: asb3993
 ms.author: amburns
 ms.date: 11/22/2016
-ms.openlocfilehash: 8a95f89ad41ab793d8c26631f1a967180b4c1779
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: b8f36ef407c3acc9b3472539735816649e13b7db
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782334"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672665"
 ---
 # <a name="introduction-to-the-mobile-software-development-lifecycle"></a>モバイル ソフトウェア開発ライフサイクルの概要
 
@@ -58,7 +58,7 @@ IDE を起動して何かをまとめてスローし、ちょっとしたテス�
 -   **価値** - このアプリはユーザーにどのような価値をもたらしますか。 ユーザーはどのように使用しますか。
 -   **フォーム/モビリティ** - このアプリはモバイル フォーム ファクターでどのように機能しますか。 位置情報の認識、カメラなどのモバイル テクノロジを使用してどのように価値を追加しますか。
 
-アプリの機能を設計する際には、アクターと[ユース ケース](http://en.wikipedia.org/wiki/Use_case)を定義することが役立つ場合があります。 アクターとはアプリケーション内のロールです。多くの場合はユーザーです。 通常、ユース ケースはアクションまたはインテントです。
+アプリの機能を設計する際には、アクターと[ユース ケース](https://en.wikipedia.org/wiki/Use_case)を定義することが役立つ場合があります。 アクターとはアプリケーション内のロールです。多くの場合はユーザーです。 通常、ユース ケースはアクションまたはインテントです。
 
 たとえば、タスク追跡アプリケーションには、*ユーザー*と*フレンド*という 2 つのアクターがいる可能性があります。 ユーザーは*タスクを作成*し、フレンドと*タスクを共有*することがあります。 この場合、タスクの作成とタスクの共有は 2 つの別のユース ケースです。ユース ケースとアクターを合わせることで、構築する必要がある画面や、開発する必要があるビジネス エンティティやロジックがわかります。
 
@@ -77,7 +77,7 @@ IDE を起動して何かをまとめてスローし、ちょっとしたテス�
 UX モックアップを作成するときは、アプリが対象とする多様なプラットフォームのインターフェイス ガイドラインを考慮することが重要です。 各プラットフォームで "使い慣れた感覚" のアプリになるようにします。 各プラットフォームの公式デザイン ガイドラインは次のとおりです。
 
 1.   **Apple** -  [Human Interface Guidelines](https://developer.apple.com/ios/human-interface-guidelines/overview/themes/) (ヒューマン デザイン ガイドライン)
-1.   **Android** - [Design Guidelines](http://developer.android.com/design/index.html) (デザイン ガイドライン)
+1.   **Android** - [Design Guidelines](https://developer.android.com/design/index.html) (デザイン ガイドライン)
 1.   **UWP** – [UWP Design basics](https://docs.microsoft.com/windows/uwp/design/basics/) (UWP デザインの基本)
 
 たとえば、各アプリには、アプリケーションのセクション間を切り替える操作のメタファーがあります。 iOS は、画面の下部にあるタブ バーを使用し、Android は画面の上部にあるタブ バーを使用し、UWP は[ピボットまたはタブ](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/tabs-pivot) ビューを使用します。
@@ -227,7 +227,7 @@ Android デバイスは過度に断片化されているため、ほとんどの
 #### <a name="security-considerations"></a>セキュリティの考慮事項
 
 Android OS のアプリケーションはいずれも、制限されたアクセス許可を持つ個別の分離された ID で実行されます。 既定でアプリケーションができることはほとんどありません。 たとえば、特別なアクセス許可がなければ、アプリケーションはテキスト メッセージの送信、電話の状態の特定、さらにはインターネットへのアクセスを実行することもできません。 アプリケーションからこのような機能にアクセスするには、アプリケーション マニフェスト ファイルで、使用したいアクセス許可と、インストールされるタイミングを指定する必要があります。OS はこのようなアクセス許可を読み取り、アプリケーションからそれらのアクセス許可が要求されていることをユーザーに通知し、ユーザーがインストールを続行するか取り消すかを選択できるようにします。
-これは、Android 配布モデルでは重要な手順です。というのも、開かれたアプリケーション ストア モデルであり、たとえば iOS のような方法でアプリケーションが管理されていないためです。 アプリケーションのアクセス許可一覧については、Android ドキュメントの「[Manifest Permissions](http://developer.android.com/reference/android/Manifest.permission.html)」(マニフェストのアクセス許可) 参考記事を参照してください。
+これは、Android 配布モデルでは重要な手順です。というのも、開かれたアプリケーション ストア モデルであり、たとえば iOS のような方法でアプリケーションが管理されていないためです。 アプリケーションのアクセス許可一覧については、Android ドキュメントの「[Manifest Permissions](https://developer.android.com/reference/android/Manifest.permission.html)」(マニフェストのアクセス許可) 参考記事を参照してください。
 
 ### <a name="windows-considerations"></a>Windows に関する考慮事項
 
@@ -253,5 +253,5 @@ UWP のセキュリティに関する重要な考慮事項については、「[
 
 - [モバイル開発の概要](~/cross-platform/get-started/introduction-to-mobile-development.md)
 - [Hello, iOS](~/ios/get-started/hello-ios/index.md)
-- [Hello Android](http://developer.xamarin.com/get-started-droid/)
+- [Hello Android](https://developer.xamarin.com/get-started-droid/)
 - [アプリケーションの基礎](~/cross-platform/app-fundamentals/index.md)

@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 12/02/2016
-ms.openlocfilehash: 745328aeb884031863d8d85caca1e4a6563fc916
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: 87987e79fce2bd5277f8092d09752fe715e2f2ce
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526950"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667654"
 ---
 # <a name="xamarinmac-related-documentation"></a>Xamarin.Mac – 関連ドキュメント
 
@@ -22,7 +22,7 @@ Xamarin.Mac に関する質問の資料は、[developer.xamarin.com](~/mac/get-s
 
 - **Apple の [Mac Dev Center](https://developer.apple.com/devcenter/mac/)**: Objective-C での呼び出しに使用する API の例の多くは、簡単な方法で C# に変換できます。 これを行う方法については、「[Understanding Mac API](~/mac/app-fundamentals/mac-apis.md)」 (Mac の API を理解する) を参照してください。
 
-- [**Stack Overflow**](http://stackoverflow.com/): 「[NSOutlineView でのすべてのノードの自動展開の方法](http://stackoverflow.com/questions/519751/nsoutlineview-auto-expand-all-nodes)」 などの簡単な質問が充実しています。 これらの例は多くの場合 Objective-C 用で、C# に変換する必要がありますが、C# 用の回答も一部あります。
+- [**Stack Overflow**](https://stackoverflow.com/): 「[NSOutlineView でのすべてのノードの自動展開の方法](https://stackoverflow.com/questions/519751/nsoutlineview-auto-expand-all-nodes)」 などの簡単な質問が充実しています。 これらの例は多くの場合 Objective-C 用で、C# に変換する必要がありますが、C# 用の回答も一部あります。
 
 ## <a name="user-interface"></a>ユーザー インターフェイス
 

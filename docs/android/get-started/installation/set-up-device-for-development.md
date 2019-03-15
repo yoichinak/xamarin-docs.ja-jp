@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/22/2018
-ms.openlocfilehash: ce102f189321cbd49b37e7718c1f3d478c322f55
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: e009ec60abc5afd06e43122424c325bbb1bf42ac
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526690"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668869"
 ---
 # <a name="set-up-device-for-development"></a>開発用のデバイスの設定
 
@@ -77,7 +77,7 @@ Windows コンピューターが USB で接続された Android デバイスを�
 ### <a name="download-the-usb-drivers"></a>USB ドライバーをダウンロードする
 
 Google Nexus デバイス (Galaxy Nexus を除く) では、Google USB ドライバーが必要です。 Galaxy Nexus 用のドライバーは [Samsung によって配布](http://www.samsung.com/us/support/downloads/)されます。
-他のすべての Android デバイスでは、[それぞれの製造元の USB ドライバー](http://developer.android.com/tools/extras/oem-usb.html#Drivers)を使用する必要があります。
+他のすべての Android デバイスでは、[それぞれの製造元の USB ドライバー](https://developer.android.com/tools/extras/oem-usb.html#Drivers)を使用する必要があります。
 
 Android SDK マネージャーを起動し、以下のスクリーン ショットに示されているように、**Extras** フォルダーを展開して、**Google USB ドライバー** パッケージをインストールします。
 
@@ -144,7 +144,7 @@ Windows 8 で未確認のドライバーをインストールするには、追�
 
 ### <a name="connecting-over-wifi"></a>WiFi 経由の接続
 
-既定では、[Android Debug Bridge](http://developer.android.com/tools/help/adb.html) (*ADB*) は USB 経由で Android デバイスと通信するように構成されます。 USB の代わりに TCP/IP を使用するように再構成することができます。 これを行うには、デバイスとコンピューターの両方が同じ WiFi ネットワーク上にある必要があります。 WiFi 経由でデバッグを行うために環境を設定するには、コマンド ラインを使用して以下の手順を実行します。
+既定では、[Android Debug Bridge](https://developer.android.com/tools/help/adb.html) (*ADB*) は USB 経由で Android デバイスと通信するように構成されます。 USB の代わりに TCP/IP を使用するように再構成することができます。 これを行うには、デバイスとコンピューターの両方が同じ WiFi ネットワーク上にある必要があります。 WiFi 経由でデバッグを行うために環境を設定するには、コマンド ラインを使用して以下の手順を実行します。
 
 1.  Android デバイスの IP アドレスを決定します。 IP アドレスを見つける 1 つの方法は、**[設定]、[Wi-Fi]** で確認し、デバイスが接続されている WiFi ネットワークをタップすることです。 これで、設定画面が表示され、以下のスクリーン ショットのような、ネットワーク接続に関する情報が示されます。
 
@@ -184,9 +184,9 @@ WiFi 経由でのデバッグが完了したら、以下のコマンドを使用
 
 ## <a name="related-links"></a>関連リンク
 
-- [Android Debug Bridge](http://developer.android.com/tools/help/adb.html)
-- [ハードウェア デバイスの使用](http://developer.android.com/tools/device.html)
+- [Android Debug Bridge](https://developer.android.com/tools/help/adb.html)
+- [ハードウェア デバイスの使用](https://developer.android.com/tools/device.html)
 - [Samsung ドライバーのダウンロード](http://www.samsung.com/us/support/downloads/)
-- [OEM USB ドライバー](http://developer.android.com/tools/extras/oem-usb.html#Drivers)
-- [Google USB ドライバー](http://developer.android.com/sdk/win-usb.html)
+- [OEM USB ドライバー](https://developer.android.com/tools/extras/oem-usb.html#Drivers)
+- [Google USB ドライバー](https://developer.android.com/sdk/win-usb.html)
 - [XDA 開発者: Windows 8 - ADB/高速ブート ドライバーの問題が解決されました](http://forum.xda-developers.com/showthread.php?t=1583801)
