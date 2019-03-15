@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/05/2018
-ms.openlocfilehash: 84e99849e3b3d925747df59ffcde242c145dbe74
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: c64714974f6467bcd7e0e4705a1426c83aa691b5
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111383"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667591"
 ---
 # <a name="gdb"></a>GDB
 
@@ -155,7 +155,7 @@ GNU gdb (GDB) 7.3.1-gg2
 
 アクセス可能な `gdbserver` は、「[高速展開を使用しないデバッグ ビルド](#Debug_Builds_without_Fast_Deployment)」セクションに従って指定できます。
 
-問題: `_Gdb` MSBuild ターゲットは既に実行されているアプリ インスタンスをすべて強制終了します。 Android v4.0 より前のバージョンのターゲットではこのようなことはありません。
+問題: `_Gdb` 既に実行されているアプリ インスタンスが MSBuild ターゲットによってすべて強制終了されます。 Android v4.0 より前のバージョンのターゲットではこのようなことはありません。
 
 <a name="Troubleshooting" />
 
@@ -163,7 +163,7 @@ GNU gdb (GDB) 7.3.1-gg2
 
 ### <a name="monopmip-doesnt-work"></a>`mono_pmip` が機能しない
 
-`mono_pmip` 関数 ([マネージド スタック フレームを取得する](http://www.mono-project.com/docs/debug+profile/debug/#debugging-with-gdb)場合に役立つ) が (現在、`_Gdb` ターゲットがプルダウンしていない) `libmonosgen-2.0.so` からエクスポートされます  (この問題は今後のリリースで修正される予定です)。
+`mono_pmip` 関数 ([マネージド スタック フレームを取得する](https://www.mono-project.com/docs/debug+profile/debug/#debugging-with-gdb)場合に役立つ) が (現在、`_Gdb` ターゲットがプルダウンしていない) `libmonosgen-2.0.so` からエクスポートされます  (この問題は今後のリリースで修正される予定です)。
 
 `libmonosgen-2.0.so` にある関数の呼び出しを有効にするには、次のようにターゲット デバイスから `gdb-symbols` ディレクトリにコピーします。
 
@@ -173,7 +173,7 @@ $ adb pull /data/data/Mono.Android.DebugRuntime/lib/libmonosgen-2.0.so Project/g
 
 次に、デバッグ セッションを再開します。
 
-### <a name="bus-error-10-when-running-the-gdb-command"></a>`gdb` コマンドの実行時のバス エラー: 10
+### <a name="bus-error-10-when-running-the-gdb-command"></a>バス エラー: `gdb` コマンド実行時のバス エラー: 10
 
 `gdb` コマンドが `"Bus error: 10"` のエラーで終了した場合は、Android デバイスを再起動します。
 
