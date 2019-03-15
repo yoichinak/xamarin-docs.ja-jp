@@ -36,7 +36,7 @@ Xamarin.iOS は、この .NET のアプローチだけでなく、より複雑�
 
 ## <a name="net-events-with-uikit"></a>UIKit で .NET イベント
 
-Xamarin.iOS では、UIKit コントロールの .NET イベントを公開します。 たとえば、TouchUpInside イベントを使用する次のコードに示すように、.NET では、通常どおりに処理するには UIButton、C#ラムダ式。
+Xamarin.iOS では、UIKit コントロールの .NET イベントを公開します。 たとえば、C# のラムダ式をを使用する次のコードに示すように、UIButton には TouchUpInside イベントがあります。このイベントは、通常の .NET の場合と同じように処理します。
 
 ```csharp
 aButton.TouchUpInside += (o,s) => {
