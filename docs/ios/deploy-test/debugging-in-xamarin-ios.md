@@ -18,7 +18,7 @@ ms.locfileid: "57668778"
 
 _Xamarin.iOS アプリケーションは Visual Studio for Mac や Visual Studio に内蔵されているデバッガーでデバッグできます。_
 
-C# やその他の管理対象言語コードのデバッグには、Visual Studio for Mac のネイティブ デバッグ サポートを利用します。Xamarin.iOS プロジェクトにリンクする可能性がある C、C++、Objective C コードのデバッグには、[LLDB](http://lldb.llvm.org/tutorial.html) を利用します。
+C# やその他のマネージド言語コードのデバッグには、Visual Studio for Mac のネイティブ デバッグ サポートを利用します。Xamarin.iOS プロジェクトにリンクする可能性がある C、C++、Objective C コードのデバッグには、[LLDB](http://lldb.llvm.org/tutorial.html) を利用します。
 
 
 > [!NOTE]
