@@ -16,7 +16,7 @@ ms.locfileid: "54879343"
 ---
 # <a name="xamarinios-api-overview"></a>Xamarin.iOS API の概要
 
-Xamarin.iOS を公開する C #/visual CIL CocoaTouch API へのバインドであり、ECMA CIL Api と .NET のさまざまな Api にもアクセスできます。
+Xamarin.iOS は、 CocoaTouch API への C #/visual CIL バインディングを公開し、また、ECMA CIL API と .NET のさまざまな API へのアクセスも提供します。
 
  **API リファレンス**:API リファレンスについては、「 [ https://developer.xamarin.com/api/ ](https://docs.microsoft.com/dotnet/api/)、開始、 [Xamarin.iOS Framework ノード](https://docs.microsoft.com/dotnet/api/?view=xamarinios-10.8)ネイティブ iPhone Api または移動先の API バインドの[の基本クラスライブラリノード](https://docs.microsoft.com/dotnet/api/?view=netstandard-2.0) .NET API に関するドキュメントについてはします。
 
