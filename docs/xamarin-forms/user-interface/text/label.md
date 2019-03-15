@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/26/2019
-ms.openlocfilehash: e57135c5a9a90ec75ae610ad92cecaa2a9b1e482
-ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
+ms.openlocfilehash: e220abc575270f483c0a822ae01f979966691432
+ms.sourcegitcommit: 97dca3face7c4ad5555dfaca88f5b45a70ca556d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57557039"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "57972677"
 ---
 # <a name="xamarinforms-label"></a>Xamarin.Forms のラベル
 
@@ -116,8 +116,8 @@ public partial class LabelPage : ContentPage
 
 [ `Label` ](xref:Xamarin.Forms.Label)に表示される行数は、 `Label.MaxLines`プロパティに`int`値を指定して設定することができます。
 
-- `MaxLines`が 0 の場合は、 [ `LineBreakMode` ](xref:Xamarin.Forms.Label.LineBreakMode)プロパティの値を考慮して、１行だけ（場合によっては切り捨て）、または全てのテキストを含む全ての行を表示します。
-- `MaxLines`が 1 の場合は、 [ `LineBreakMode` ](xref:Xamarin.Forms.Label.LineBreakMode)プロパティを[ `NoWrap` ](xref:Xamarin.Forms.LineBreakMode)、 [ `HeadTruncation` ](xref:Xamarin.Forms.LineBreakMode)、 [`MiddleTruncation` ](xref:Xamarin.Forms.LineBreakMode)、または[ `TailTruncation`](xref:Xamarin.Forms.LineBreakMode)に設定するのと同じです。 ただし、省略記号の表示については、 [ `LineBreakMode` ](xref:Xamarin.Forms.Label.LineBreakMode)の値を尊重します。
+- `MaxLines`が 0 の場合は、`Label` [ `LineBreakMode` ](xref:Xamarin.Forms.Label.LineBreakMode)プロパティの値を考慮して、１行だけ（場合によっては切り捨て）、または全てのテキストを含む全ての行を表示します。
+- `MaxLines`が 1 の場合は、 [ `LineBreakMode` ](xref:Xamarin.Forms.Label.LineBreakMode)プロパティを[ `NoWrap` ](xref:Xamarin.Forms.LineBreakMode)、 [ `HeadTruncation` ](xref:Xamarin.Forms.LineBreakMode)、 [`MiddleTruncation` ](xref:Xamarin.Forms.LineBreakMode)、または[ `TailTruncation`](xref:Xamarin.Forms.LineBreakMode)に設定するのと同じです。 ただし、`Label` 省略記号の表示については、 [ `LineBreakMode` ](xref:Xamarin.Forms.Label.LineBreakMode)の値を尊重します。
 - `MaxLines`が 1 より大きい場合は、指定された行数を`Label`に表示しますが、省略記号の表示は必要に応じて [ `LineBreakMode` ](xref:Xamarin.Forms.Label.LineBreakMode)プロパティの値を考慮します。 ただし、`MaxLines`プロパティを 1 より大きい値にしている場合でも、 [ `LineBreakMode` ](xref:Xamarin.Forms.Label.LineBreakMode)プロパティに[ `NoWrap`](xref:Xamarin.Forms.LineBreakMode)が設定されている場合は効果がありません。
 
 次の XAML は、[ `Label` ](xref:Xamarin.Forms.Label)の`MaxLines`プロパティを設定する例です:
@@ -148,7 +148,7 @@ var label =
 
 ラベルの公開、 [ `FormattedText` ](xref:Xamarin.Forms.Label.FormattedText)プロパティを複数のフォントとテキストの表示を許可し、同じビューでの色します。
 
-`FormattedText`プロパティの型は[ `FormattedString` ](xref:Xamarin.Forms.FormattedString)、1 つまたは複数で構成される[ `Span` ](xref:Xamarin.Forms.Span)設定を使用して、インスタンス、 [ `Spans` ](xref:Xamarin.Forms.FormattedString.Spans)プロパティ. 外観を設定することができます。
+`FormattedText`プロパティの型は[ `FormattedString` ](xref:Xamarin.Forms.FormattedString)、1 つまたは複数で構成される[ `Span` ](xref:Xamarin.Forms.Span)設定を使用して、インスタンス、 [ `Spans` ](xref:Xamarin.Forms.FormattedString.Spans)プロパティ. `Span` 外観を設定することができます。
 
 - [`BackgroundColor`](xref:Xamarin.Forms.Span.BackgroundColor) – スパンの背景色。
 - [`Font`](xref:Xamarin.Forms.Span.Font) -スパン内のテキストのフォント。
@@ -356,7 +356,7 @@ public partial class MainPage : ContentPage
 
 ### <a name="creating-a-reusable-hyperlink-class"></a>ハイパーリンクの再利用可能なクラスを作成します。
 
-ハイパーリンクを作成するのには、前のアプローチでは、アプリケーションのハイパーリンクを必要とするたびに繰り返し発生するコードの記述が必要です。 ただし、両方、 [ `Label` ](xref:Xamarin.Forms.Label)と[ `Span` ](xref:Xamarin.Forms.Span)クラスをサブクラスを作成することができる`HyperlinkLabel`と`HyperlinkSpan`クラス、ジェスチャ レコグナイザーとテキストの書式設定コードが追加されました。
+ハイパーリンクを作成するのには、前のアプローチでは、アプリケーションのハイパーリンクを必要とするたびに繰り返し発生するコードの記述が必要です。 ただし、両方、 [ `Label` ](xref:Xamarin.Forms.Label)と[ `Span` ](xref:Xamarin.Forms.Span)を作成するクラスをサブクラス化できます`HyperlinkLabel`と`HyperlinkSpan`ジェスチャ レコグナイザーおよびコードの書式設定テキストと共に、クラスそこにも追加します。
 
 取得した次のコード例、[ハイパーリンク デモ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/HyperlinkDemos)サンプルを示しています、`HyperlinkSpan`クラス。
 

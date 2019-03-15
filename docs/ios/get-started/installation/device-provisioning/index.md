@@ -7,12 +7,6 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 05/06/2018
-ms.openlocfilehash: f0d6d2343350455a101033aced7cec0c31695503
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353231"
 ---
 # <a name="device-provisioning-for-xamarinios"></a>Xamarin.iOS のデバイス プロビジョニング
 
@@ -22,7 +16,7 @@ Xamarin.iOS アプリケーションを開発する場合、シミュレータ�
 
 [![](images/provisioningdiagram.png "この図で強調表示されているセクションは、iOS のプロビジョニングの設定に必要な手順を示しています")](images/provisioningdiagram.png#lightbox)
 
-次の手順は、アプリケーションの配布です。 展開の詳細については、「[App Distribution](~/ios/deploy-test/app-distribution/index.md)」(アプリの配布) ガイドを参照してください。
+このあと、次の手順はアプリケーションの配布です。 展開の詳細については、「[App Distribution](~/ios/deploy-test/app-distribution/index.md)」(アプリの配布) ガイドを参照してください。
 
 デバイスにアプリケーションを展開する前に、Apple の Developer Program の有効なサブスクリプションがあるか *、*[無料プロビジョニング](~/ios/get-started/installation/device-provisioning/free-provisioning.md)を使用する必要があります。 Apple は 2 つのプログラム オプションを用意しています。
 
@@ -49,7 +43,7 @@ iOS デバイスをプロビジョニングする方法は 2 つあります。
 
 * **自動 (推奨)** - プロジェクトで **[自動プロビジョニング]** スキームを選択すると、Visual Studio で署名 ID、アプリ ID、プロビジョニング プロファイルが自動的に作成され、管理されます。 プロビジョニングを自動的に管理する方法については、「[自動プロビジョニング](automatic-provisioning.md)」ガイドを参照してください。 これは、iOS デバイスをプロビジョニングする場合にお勧めの方法です。
 
-*  **手動** - ID、アプリケーション ID、およびプロビジョニング プロファイルの署名は、「[手動プロビジョニング](manual-provisioning.md)」ガイドに記載されているように、Apple Developer Portal を使用して作成および管理できます。 これらのアーティファクトは、「[Apple Account Management](~/cross-platform/macios/apple-account-management.md)」(Apple アカウント管理) ガイドの説明に従って管理できます。
+* **手動** - ID、アプリケーション ID、およびプロビジョニング プロファイルの署名は、「[手動プロビジョニング](manual-provisioning.md)」ガイドに記載されているように、Apple Developer Portal を使用して作成および管理できます。 これらのアーティファクトは、「[Apple Account Management](~/cross-platform/macios/apple-account-management.md)」(Apple アカウント管理) ガイドの説明に従って管理できます。
 
 ## <a name="provisioning-for-application-services"></a>アプリケーション サービスのプロビジョニング
 
