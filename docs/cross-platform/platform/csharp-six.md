@@ -7,12 +7,12 @@ ms.custom: xamu-video
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: d5478a09c461ec8f1bf51efaa7b4dc2f862d69b4
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: b69fe417bb521781453042269b9b52609d8e00a0
+ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57668941"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58070957"
 ---
 # <a name="c-6-new-features-overview"></a>C#6 の新機能の概要
 
@@ -20,38 +20,9 @@ _最新バージョンのC#言語 – バージョン 6 – は少ない定型�
 
 このドキュメントの新しい機能を紹介するC#6。 Mono コンパイラで完全にサポートされているし、開発者が Xamarin のすべてのターゲット プラットフォームでの新機能の使用を開始することができます。
 
-この記事には簡単なスニペットが含まれています、C#基本的な使用方法を説明する 6 コード。
-サンプル アプリケーションは、すべての Xamarin のターゲット プラットフォームで実行され、さまざまな機能を実行するコマンド ライン プログラムです。
-
-
 > [!VIDEO https://youtube.com/embed/7UdV7zGPfMU]
 
 **新C#6 により、 [Xamarin University](https://university.xamarin.com/)**
-
-
-## <a name="development-environment"></a>開発環境
-
-### <a name="mac"></a>Mac
-
-* **Visual Studio for Mac**はサポートしていますC#6: ビルドしてコンパイルを使用して Xamarin アプリC#6 の機能です。
-  詳細をご覧ください[Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/)します。
-
-### <a name="windows"></a>Windows
-
-* **Visual Studio 2015 と 2017**とは、完全なサポートが上記のC#6。 Visual Studio の以前のバージョンはサポートされませんC#6。
-
-* **Xamarin Studio for Windows**はサポートしていませんC#6 エディター機能。
-
-
-
-## <a name="compiler"></a>コンパイラ
-
-Mono C# 6 のコンパイラは、これは Mono 4.0 以降に含まれている[無償でダウンロードできる](https://www.mono-project.com/download/)します。
-Visual Studio for Mac は、システム上の Mono のインストールを自動的に更新します。
-
-Windows ユーザー必要があります[Visual Studio 2015 または 2017 ^](https://visualstudio.microsoft.com/)コンパイルにインストールされているC#6 コード (お使いの IDE として Xamarin Studio for Windows を選択する) 場合でもです。
-
-^ または *[Microsoft Build Tools 2015](https://www.microsoft.com/download/details.aspx?id=48159)* コマンド ライン コンパイルやビルド サーバー、たとえばします。
 
 ## <a name="using-c-6"></a>使用してC#6
 

@@ -6,12 +6,12 @@ ms.assetid: FBCEF258-D3D8-A420-79ED-3AAB4A7308E4
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 2765ab0c697d977eb332e47cfbc413e3e0adafb7
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 7ac8df634c4abe3aafa725992c251f9ef879dc00
+ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57668817"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58070983"
 ---
 # <a name="part-1--understanding-the-xamarin-mobile-platform"></a>パート 1-Xamarin モバイル プラットフォームを理解します。
 
@@ -105,7 +105,7 @@ Visual Studio IDE でコードを記述し、画面レイアウトをプログ�
 Android アプリケーション開発では、Java と Android Sdk をインストールする必要があります。 これらは、コンパイラ、エミュレーターおよびビルド、配置およびテストに必要なその他のツールを提供します。 Java、Google の Android SDK および Xamarin のツールすべてをインストールして実行できる次の構成で。
 
 -  Mac OS X El Capitan と (10.11 以降) 上で Visual Studio for Mac
--  Windows 7 上と Visual Studio 2015 または 2017 を使用
+-  Windows 7 上と Visual Studio 2017 またはそれ以降
 
 
 Xamarin では、統合インストーラーは、システムを構成前提の Java、Android と Xamarin のツール (画面のレイアウトのビジュアル デザイナーを含む) を提供します。 参照してください、 [Xamarin.Android インストール ガイド](~/android/get-started/installation/index.md)詳しい手順についてはします。

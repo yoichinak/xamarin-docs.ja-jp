@@ -7,16 +7,9 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/07/2016
-ms.openlocfilehash: 84de9d042295aee8ca07ce3372f2e19bdec9f599
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118137"
 ---
-# <a name="getting-started-with-tvos-in-xamarin"></a>Xamarin で tvOS の概要
 
-Xamarin.tvOS により、ネイティブの tvOS アプリを作成するための柔軟性と洗練さ、最新のC#言語、.NET 基本クラス ライブラリ (BCL) と Windows の場合は、Visual Studio for Mac または Visual Studio 2015 または 2017 の機能です。
+# <a name="getting-started-with-tvos-in-xamarin"></a>Xamarin で tvOS の概要
 
 このシリーズでは、Xamarin.tvOS 開発の基礎について説明します。 開始、設計、コーディングとアプリを実行している tvOS のサポートのインストールからなります。 その過程で、スキルとツールセット、Xamarin.tvOS アプリで作業する必要がありますを説明します。
 

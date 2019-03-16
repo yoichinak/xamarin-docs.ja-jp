@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: cfb684df89bf800a0d32607b119d1bd3fc297c58
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 41a9ec90b4b734dde7a982ac3d4b2e7b2082321c
+ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50123740"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58070867"
 ---
 # <a name="auto-layout-with-the-xamarin-designer-for-ios"></a>IOS 用の Xamarin のデザイナーを使用した自動レイアウト
 
@@ -22,7 +22,7 @@ ms.locfileid: "50123740"
 
 ## <a name="requirements"></a>必要条件
 
-IOS 用 Xamarin デザイナーは、Windows 上の Mac に Visual Studio 2015 と 2017 の Visual Studio で使用します。
+IOS 用 Xamarin デザイナーは、Visual Studio for Mac で Visual Studio 2017 と、後で Windows で使用します。
 
 このガイドでは、デザイナーのコンポーネントからのナレッジ、 [iOS Designer の概要](~/ios/user-interface/designer/introduction.md)ガイド。
 
@@ -56,11 +56,11 @@ IOS Designer の既定の構成が、制約モードを有効にします。 た
 
 制約ツールバーが更新され、2 つの主要な部分から成るようになりました。
 
-- **制約モード ボタンの切り替え**: 以前は、デザイン画面で選択したビューをもう一度クリックして制約モードを入力します。 制約バーにこのトグル ボタンを使用する必要がありますようになりました。
+- **制約モード ボタンの切り替え**:以前は、デザイン画面で選択したビューをもう一度クリックして制約モードを入力します。 制約バーにこのトグル ボタンを使用する必要がありますようになりました。
 
   ![制約モードの切り替え](designer-auto-layout-images/constraints.png)
 
-- **「更新制約」ボタンを:** が場合に応じて変更している編集モードの制約に注意してください。
+- **「更新制約」のボタンをクリックします。** 制約の編集モードではするかにより、変更に注意して重要です。
   - 制約の編集モードでは、このボタンは、要素のフレームを一致するように制約を調整します。
   - フレームが編集モードでは、このボタンは、制約を定義する位置に一致する要素のフレームを調整します。
 
@@ -201,7 +201,7 @@ IOS Designer の制約は次の設定を指定します。
 
 ### <a name="animating-constraint-changes"></a>制約の変更をアニメーション化
 
-制約のプロパティを変更するだけでなく、ビューの制約に加えた変更をアニメーション化するのにコア アニメーションを使用できます。 例えば:
+制約のプロパティを変更するだけでなく、ビューの制約に加えた変更をアニメーション化するのにコア アニメーションを使用できます。 例:
 
 ```csharp
 UIView.BeginAnimations("OpenInfo");

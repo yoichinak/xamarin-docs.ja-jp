@@ -1,5 +1,5 @@
 ---
-title: よく寄せられる質問
+title: Xamarin.iOS のよく寄せられる質問
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 65E04188-185D-493D-BA3C-A89711CB6CAF
@@ -7,14 +7,9 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: d2d0af5a69920f392eba1cd655f1d8ab74971be6
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107509"
 ---
-# <a name="frequently-asked-questions"></a>よく寄せられる質問
+
+# <a name="ios-frequently-asked-questions"></a>iOS のよく寄せられる質問
 
 ## <a name="general-questions"></a>一般的な質問
 
@@ -58,7 +53,7 @@ Xamarin サイクルの 7 の時点では、これを実現するためにカス
 ### <a name="is-it-possible-to-create-a-xcarchive-archive-from-visual-studiocreate-xcarchivemd"></a>[Visual Studio から .xcarchive アーカイブを作成することはできますか。](create-xcarchive.md)
 Xamarin 4 では、これで作成する、 `.xcarchive` Windows を設定してから、`ArchiveOnBuild`プロパティを`true`します。
 
-### <a name="why-does-my-app-submission-fail-with-disallowed-paths--itunesmetadataplist--found-at--itunesmetadata-disallowed-pathsmd"></a>[アプリの送信が失敗して "Disallowed paths ( "iTunesMetadata.plist" ) found at ..." (許可されないパス ( "iTunesMetadata.plist" ) が ... で見つかりました) と表示されるのはなぜですか。](itunesmetadata-disallowed-paths.md)
+### <a name="why-does-my-app-submission-fail-with-disallowed-paths--itunesmetadataplist--found-at--itunesmetadata-disallowed-pathsmd"></a>[アプリの送信が "Disallowed paths ( "iTunesMetadata.plist" ) found at ..."\(許可されていないパス ("iTunesMetadata.plist") が...で見つかりました\) で失敗するのはなぜですか。](itunesmetadata-disallowed-paths.md)
 このエラーは、Apple の App Store の検証プロセスでの変更の結果です。 この特定のエラーは_いない_は Xamarin がインストールされている特定のバージョンに関連して、そのためにダウン グレード_いない_ヘルプします。 このガイドは、問題を解決する方法の詳細については、ページにリンクしています。
 
 
@@ -70,13 +65,13 @@ Xamarin 4 では、これで作成する、 `.xcarchive` Windows を設定して
 ### <a name="why-does-my-ios-build-fail-with-no-valid-iphone-code-signing-keys-found-in-keychainno-codesigning-keysmd"></a>[iOS のビルドが失敗して "no valid iPhone code signing keys found in keychain" (キーチェーンに有効な iPhone コード署名キーがありません) と表示されるのはなぜですか。](no-codesigning-keys.md)
 このエラー メッセージは、対象のプロジェクトが有効なコード署名の資格情報を検索するときに発生しますが、それらを検索することができません。 コード署名は、テストと物理 iOS デバイスに展開するために必要です。だけでなく、アドホックとアプリのビルドを格納します。
 
-### <a name="why-does-my-ios-9-app-fail-with-systemexception-failed-to-marshal-the-objective-c-objectexception-marshal-obj-cmd"></a>[iOS 9 アプリが失敗して "System.Exception: Failed to marshal the Objective-C object" (System.Exception: Objective-C object をマーシャリングできませんでした) と表示されるのはなぜですか。](exception-marshal-obj-c.md)
+### <a name="why-does-my-ios-9-app-fail-with-systemexception-failed-to-marshal-the-objective-c-objectexception-marshal-obj-cmd"></a>[iOS 9 アプリが System.Exception: Failed to marshal the Objective-C object\(System.Exception: Objective C オブジェクトのマーシャリングが失敗しました\) で失敗するのはなぜですか。](exception-marshal-obj-c.md)
 IOS 9 の API の変更は、基になる API を今すぐとしてアンマネージ コードを呼び出すことが期待したときにコールバック コンス トラクターを使用することが必要です。
 
-### <a name="runtime-error-the-assembly-mscorlibdll-was-not-found-or-could-not-be-loadederror-mscorlib-not-foundmd"></a>[ランタイム エラー: "Runtime error: The assembly mscorlib.dll was not found or could not be loaded" (アセンブリ mscorlib.dll が見つからないか、読み込めませんでした)](error-mscorlib-not-found.md)
+### <a name="runtime-error-the-assembly-mscorlibdll-was-not-found-or-could-not-be-loadederror-mscorlib-not-foundmd"></a>[ランタイム エラー: The assembly mscorlib.dll was not found or could not be loaded (アセンブリ mscorlib.dll が見つからないか、読み込めませんでした)](error-mscorlib-not-found.md)
 この問題が発生したときに、*隠し*`.monotouch-32`と`.monotouch-64`フォルダーが見つかりません、`.xcarchive`の署名/IPA の作成、実行時エラーをトリガーします。
 
-## <a name="deprecated"></a>非推奨とされます。
+## <a name="deprecated"></a>非推奨
 
 > [!IMPORTANT]
 > 以下の記事は、Xamarin の最近のバージョンで解決された問題に適用されます。 ただし、ソフトウェアの最新バージョンで問題が発生した場合を提出してください、[新しいバグ](~/cross-platform/troubleshooting/questions/howto-file-bug.md)完全なバージョン管理情報と完全のビルド ログ出力します。
@@ -86,10 +81,10 @@ IOS 9 の API の変更は、基になる API を今すぐとしてアンマネ�
 ### <a name="ipa-file-is-0-bytesipa-zero-bytesmd"></a>[IPA ファイルが 0 バイトです](ipa-zero-bytes.md)
 以前のバージョンの Xamarin 0 バイトにする Windows 上の IPA ファイルを引き起こす可能性のある既知の問題がありました。
 
-### <a name="ibtool-error-the-operation-couldnt-be-completederror-ibtoolmd"></a>[IBTool エラー: "The operation couldn’t be completed." (操作を完了できませんでした。)](error-ibtool.md)
+### <a name="ibtool-error-the-operation-couldnt-be-completederror-ibtoolmd"></a>[IBTool エラー: 操作を完了できませんでした。](error-ibtool.md)
 Apple[固定](https://developer.apple.com/library/ios/releasenotes/DeveloperTools/RN-Xcode/Chapters/xc6_release_notes.html)この`ibtool`Xcode 6.1.1、したがって Xcode 6.1.1 をアップグレードまたはそれ以降のバグが最も簡単な修正します。
 
-### <a name="error-mt1009-could-not-copy-the-assemblyerror-mt1009md"></a>[エラー MT1009: "Could not copy the assembly" (アセンブリをコピーできませんでした)](error-mt1009.md)
+### <a name="error-mt1009-could-not-copy-the-assemblyerror-mt1009md"></a>[エラー MT1009: Could not copy the assembly (アセンブリをコピーできませんでした)](error-mt1009.md)
 これは、Xamarin.iOS 7.2.6 を実行しているユーザーに影響します。 この問題は、開発者の主なアカウントの別のユーザー アカウントを使用して Xamarin.iOS がインストールされている場合は、高い特権を必要とするファイルのアクセス許可のため、します。
 
 ### <a name="systemexception-amdevicenotificationsubscribe-returned-exception-amddevicenotificationsubscribemd"></a>[System.Exception AMDeviceNotificationSubscribe returned ... (System.Exception AMDeviceNotificationSubscribe が ... を返しました)](exception-amddevicenotificationsubscribe.md)

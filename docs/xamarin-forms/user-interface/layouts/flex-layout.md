@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/07/2018
-ms.openlocfilehash: b37070ca627e535f9470916e9f84cdf55bb2aed3
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 7626c49b2267cbd087a16c310f1b85aea7139823
+ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53056137"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "57981732"
 ---
 # <a name="the-xamarinforms-flexlayout"></a>Xamarin.Forms FlexLayout
 
@@ -393,7 +393,7 @@ XAML ファイルの最初の `FlexLayout` は垂直の主軸を持ち、列に�
 
 プログラムを起動すると、5 つの `Picker` view に、これら 5 つの `FlexLayout` のプロパティの規定値が表示されます。 画面下部の `FlexLayout` は 3 つの子を含んでいます。
 
-[![The Experiment Page: Default](flex-layout-images/ExperimentDefault.png "The Experiment Page - Default")](flex-layout-images/ExperimentDefault-Large.png#lightbox)
+[![実験ページ:既定の](flex-layout-images/ExperimentDefault.png "実験ページの既定")](flex-layout-images/ExperimentDefault-Large.png#lightbox)
 
 各 `Label` view は、 `FlexLayout` 内で `Label` に割り当てられた領域を示すグレーの背景を持っています。 `FlexLayout` 自身の背景はアリスブルーです。 それはページ下部の左右の少量の余白を除いた領域全体を占めます。
 
@@ -412,7 +412,7 @@ XAML では、このプロパティの値を大文字や小文字、またはそ
 
 ここに、 (左から右へ順番に) `Row` direction、`Column` direction、および`ColumnReverse` direction で表示した **Experiment** ページ を示します。
 
-[![The Experiment Page: Direction](flex-layout-images/ExperimentDirection.png "The Experiment Page - Direction")](flex-layout-images/ExperimentDirection-Large.png#lightbox)
+[![実験ページ:方向](flex-layout-images/ExperimentDirection.png "実験ページ - の方向")](flex-layout-images/ExperimentDirection-Large.png#lightbox)
 
 `Reverse` オプションに注意してください。これはアイテムが右または下から始まるようになります。
 
@@ -428,7 +428,7 @@ XAML では、このプロパティの値を大文字や小文字、またはそ
 
 左から順番に、12 の子を持つ `NoWrap` 、`Wrap`、`Reverse` オプションでの画面表示です。
 
-[![The Experiment Page: Wrap](flex-layout-images/ExperimentWrap.png "The Experiment Page - Wrap")](flex-layout-images/ExperimentWrap-Large.png#lightbox)
+[![実験ページ:ラップ](flex-layout-images/ExperimentWrap.png "実験ページのラップ")](flex-layout-images/ExperimentWrap-Large.png#lightbox)
 
 `Wrap` プロパティに `NoWrap` が設定されていて、主軸が (このプログラム) のように制約されていると、主軸は全ての子を合わせるほどの十分な高さや幅がありません。`FlexLayout` は、iOSのデモのスクリーンショットのように、アイテムを小さくさせることを試みます。 [`Shrink`](#shrink) 添付プロパティを使って、これらのアイテムの縮小を制御することができます。
 
@@ -447,7 +447,7 @@ XAML では、このプロパティの値を大文字や小文字、またはそ
 
 このプロパティは、主軸上でのアイテムを配置方法を指定します。この例では主軸は水平軸です。
 
-[![The Experiment Page: Justify Content](flex-layout-images/ExperimentJustifyContent.png "The Experiment Page - Justify Content")](flex-layout-images/ExperimentJustifyContent-Large.png#lightbox)
+[![実験ページ:コンテンツを正当化](flex-layout-images/ExperimentJustifyContent.png "実験ページ - コンテンツを正当化")](flex-layout-images/ExperimentJustifyContent-Large.png#lightbox)
 
 3 つのすべてのスクリーン ショットでは、`Wrap` プロパティには `Wrap` が設定されています。 規定値である `Start` は、Android のスクリーンショットで示しています。 iOS のスクリーンショットには `Center` オプション （すべてのアイテムが中央に移動）が示されています。 `Space` という単語で始まるその他3つのオプションは、アイテムに使用されなかった余白を割り当てます。 `SpaceBetween` はアイテムの間に余白を均等に割り当て、`SpaceAround` は各アイテムの両端に均等に余白を置きます。一方、`SpaceEvenly` は各アイテムの間と行の最初のアイテムの前と最後のアイテムの後に均等に余白を置きます。
 
@@ -464,7 +464,7 @@ XAML では、このプロパティの値を大文字や小文字、またはそ
 
 これは、 交差軸上に子を整列する方法を示す 2 つのプロパティの 1 つ（もう 1 つは[`AlignContent`](#align-content)）です。 各行内で（上のスクリーンショットで示すように）子は引き伸ばされますが、以下の3つのスクリーンショットのように、各アイテムの開始・中央・終了位置に揃えられます。
 
-[![The Experiment Page: Align Items](flex-layout-images/ExperimentAlignItems.png "The Experiment Page - Align Items")](flex-layout-images/ExperimentAlignItems-Large.png#lightbox)
+[![実験ページ:アイテムを揃える](flex-layout-images/ExperimentAlignItems.png "実験ページ - アイテムの配置")](flex-layout-images/ExperimentAlignItems-Large.png#lightbox)
 
 iOS のスクリーンショットでは、すべての子は上揃えになっています。 Android のスクリーンショットでは、全てのアイテムはもっとも高い子に合わせて垂直方向に中央揃えになっています。 UWP のスクリーンショットでは、すべてのアイテムは下揃えになっています。
 
@@ -486,11 +486,11 @@ iOS のスクリーンショットでは、すべての子は上揃えになっ�
 
 `AlignItems` と同様に、`AlignContent` プロパティも交差軸上の子を整列しますが、これは行または列全体に影響を与えます。
 
-[![The Experiment Page: Align Content](flex-layout-images/ExperimentAlignContent.png "The Experiment Page - Align Content")](flex-layout-images/ExperimentAlignContent-Large.png#lightbox)
+[![実験ページ:コンテンツを配置する](flex-layout-images/ExperimentAlignContent.png "実験ページ - コンテンツを配置します。")](flex-layout-images/ExperimentAlignContent-Large.png#lightbox)
 
 両方の行は、iOS のスクリーン ショット。 上部にあります。center; にあればの Android のスクリーン ショット下部にある UWP のスクリーン ショットになるとします。 行自体もさまざまな方法で配置することができます。
 
-[![The Experiment Page:  Align Content 2](flex-layout-images/ExperimentAlignContent2.png "The Experiment Page - Align Content 2")](flex-layout-images/ExperimentAlignContent2-Large.png#lightbox)
+[![実験ページ:2 のコンテンツを整列](flex-layout-images/ExperimentAlignContent2.png "実験ページ - コンテンツの 2 の整列")](flex-layout-images/ExperimentAlignContent2-Large.png#lightbox)
 
 `AlignContent` は1行または1列のみの場合は影響を与えません。
 
@@ -517,13 +517,13 @@ iOS のスクリーンショットでは、すべての子は上揃えになっ�
 例えば `Label` という名前の `label` 要素には、以下のようにコードで `AlignSelf` プロパティをセットすることができます。
 
 ```csharp
-FlexAlign.SetAlignSelf(label, FlexAlignSelf.Center);
+FlexLayout.SetAlignSelf(label, FlexAlignSelf.Center);
 ```
 
 `Label` の親である `FlexLayout` への参照がないことに注意してください。 XAML では、このようなプロパティを設定します。
 
 ```xaml
-<Label ... FlexAlign.AlignSelf="Center" ... />
+<Label ... FlexLayout.AlignSelf="Center" ... />
 ```
 
 ### <a name="the-order-property"></a>Order プロパティ
@@ -580,7 +580,7 @@ XAML では、デバイス非依存単位のサイズの数値を使用できま
 
 [![The Basis Experiment Page](flex-layout-images/BasisExperiment.png "The Basis Experiment Page")](flex-layout-images/BasisExperiment-Large.png#lightbox)
 
-左の iOS のスクリーンショットは、2 つの `Label` 要素がデバイス非依存単位で高さが与えられていること示しています。 Android のスクリーンショットは、それらの要素が `FlexLayout` の 合計の高さに対する割合での高さが与えられていることを示しています。 `Basis` に 100% がセットされた場合、UWP のスクリーンショットで示すように、子は `FlexLayout` の高さになり、次の列に折り返され、その列の全体の高さを占有します。さも 5 つの子が行に配置されたかのように見えますが、それらは実際は 5 つの列に配置されています。
+左の iOS のスクリーンショットは、2 つの `Label` 要素がデバイス非依存単位で高さが与えられていること示しています。 Android のスクリーンショットは、それらの要素が `FlexLayout` の 合計の高さに対する割合での高さが与えられていることを示しています。 場合、 `Basis` 、子の高さは、100% に設定されて、`FlexLayout`とは次の列にラップし、UWP のスクリーン ショットに示すように、その列の全体の高さを占めます。5 つの子は、行に配置されますが、実際には 5 つの列に配置される場合とが表示されます。
 
 ### <a name="the-grow-property"></a>Grow プロパティ
 

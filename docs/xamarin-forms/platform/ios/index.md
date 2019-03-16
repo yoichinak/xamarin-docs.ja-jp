@@ -1,5 +1,5 @@
 ---
-title: iOS プラットフォーム機能
+title: Xamarin.Forms での iOS プラットフォーム機能
 description: Xamarin.Forms アプリケーションには、iOS 固有の機能を追加します。
 ms.prod: xamarin
 ms.assetid: 634AB62E-68C8-454C-838B-F1CC4E4E21BC
@@ -9,7 +9,7 @@ ms.author: dabritch
 ms.date: 02/22/2019
 ---
 
-# <a name="ios-platform-features"></a>iOS プラットフォーム機能
+# <a name="ios-platform-features-in-xamarinforms"></a>Xamarin.Forms での iOS プラットフォーム機能
 
 IOS 用の Xamarin.Forms アプリケーションの開発には、Visual Studio が必要です。 [要件ページ](~/get-started/requirements.md)の前提条件の詳細が含まれています。
 

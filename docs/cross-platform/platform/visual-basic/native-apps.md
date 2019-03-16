@@ -6,12 +6,12 @@ ms.assetid: 455fda67-3879-4299-8036-b12840e6a498
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 55c08c1bd0d82f8458e0c07b4202b6275600ff38
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: f62d3cb076019ba49303f2c82f009975d9fbdc50
+ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57671105"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58070970"
 ---
 # <a name="visual-basicnet-in-xamarin-ios-and-android"></a>Xamarin iOS アプリと Android で visual basic.net
 
@@ -284,18 +284,6 @@ Visual Studio for Mac のポータブル クラス ライブラリのサポー�
 2. 追加、 _post-build_出力 DLL をこのプロジェクトのプロジェクトのルート ディレクトリにコピーするスクリプト (の外部である **/bin/**)。 バージョン コントロールの構成によって、DLL のソース管理に追加することがようになりました場合があります。
 
   [![](native-apps-images/image6-vs-sml.png "ビルド イベントの後のビルド スクリプト VB DLL をコピーするには")](native-apps-images/image6-vs.png#lightbox)
-
-#### <a name="visual-studio-2015"></a>Visual Studio 2015
-
-1.  プロジェクトを右クリックし、選択**プロパティ > コンパイル**、し、くまなくボックスの左上にすべての構成が選択されていることを確認します。 をクリックして、**イベントを作成しています.** 右下のボタンをクリックします。
-
-    [![](native-apps-images/image6.png "プロジェクトのプロパティ セクションをコンパイルします。")](native-apps-images/image6.png#lightbox)
-
-1.  このプロジェクトのプロジェクトのルート ディレクトリに出力 DLL をコピーするビルド後のスクリプトを追加 (の外部である **/bin/** )。 バージョン コントロールの構成によって、DLL のソース管理に追加することがようになりました場合があります。
-
-    [![](native-apps-images/image7.png "ビルド イベント ウィンドウ")](native-apps-images/image7.png#lightbox)
-
-#### <a name="all-versions"></a>すべてのバージョン
 
 次回プロジェクトをビルドするをプロジェクトのルートを使用して、変更、DLL はれますチェック-/コミット/プッシュしたポータブル クラス ライブラリ アセンブリがコピーされます (その for Mac で Visual Studio を Mac にダウンロードできます) を格納します。
 

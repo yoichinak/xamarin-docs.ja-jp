@@ -5,12 +5,12 @@ description: UWP と Windows 10 だけなく、macOS、iOS、Android、上で実
 author: asb3993
 ms.author: amburns
 ms.date: 04/26/2017
-ms.openlocfilehash: 3d3af9c78b7486e7ebfb063a3cb00fabdbd0f5b7
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.openlocfilehash: 4bf1dea170bd6b63209693963d54cc2e16163eea
+ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617541"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58071100"
 ---
 # <a name="desktop-app-porting-guidance"></a>デスクトップ アプリの移植のガイダンス
 
@@ -26,7 +26,7 @@ ms.locfileid: "51617541"
 
 ## <a name="net-portability-analyzer"></a>.NET portability Analyzer
 
-Visual Studio 2015 と 2017 のサポート、 [.NET Portability Analyzer](https://docs.microsoft.com/dotnet/articles/standard/portability-analyzer) ([Windows 用のダウンロード](https://marketplace.visualstudio.com/items?itemName=ConnieYau.NETPortabilityAnalyzer))、既存のアプリケーションを確認し、コードの量現状有姿を他のプラットフォームに移植することがわかるができます. これから詳細情報を入手できる[Channel 9 のビデオ](https://channel9.msdn.com/Blogs/Seth-Juarez/A-Brief-Look-at-the-NET-Portability-Analyzer)します。
+Visual Studio 2017 およびそれ以降のサポート、 [.NET Portability Analyzer](https://docs.microsoft.com/dotnet/articles/standard/portability-analyzer) ([Windows 用のダウンロード](https://marketplace.visualstudio.com/items?itemName=ConnieYau.NETPortabilityAnalyzer))、既存のアプリケーションを調べるし、わかりますコードの量は、「現状有姿移植できる他のプラットフォーム。 これから詳細情報を入手できる[Channel 9 のビデオ](https://channel9.msdn.com/Blogs/Seth-Juarez/A-Brief-Look-at-the-NET-Portability-Analyzer)します。
 
 コマンド ライン ツールをからダウンロードできます[GitHub での移植性アナライザー](https://github.com/Microsoft/dotnet-apiport)と同じレポートを提供するために使用します。
 

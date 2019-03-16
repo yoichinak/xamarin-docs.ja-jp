@@ -20,7 +20,7 @@ ms.date: 03/22/2017
 
 ## <a name="requirements"></a>必要条件
 
-ストーリー ボードは、Xamarin のワークロードがインストールされている iOS Visual Studio for Mac で Designer と Visual Studio 2015 と 2017 使用できます。
+ストーリー ボードは、Xamarin のワークロードがインストールされている iOS Designer では、Visual Studio for Mac または Visual Studio 2017 で使用できます。
 
 ## <a name="what-is-a-storyboard"></a>ストーリー ボードとは何ですか。
 

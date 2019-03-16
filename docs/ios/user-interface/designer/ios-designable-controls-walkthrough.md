@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 0401c2c05677c719bbe4914cc7e008b650fdd198
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: 98504c9d5f210d55a2be4c85c52d4bc1418fc223
+ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526242"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58070827"
 ---
 # <a name="using-custom-controls-with-the-ios-designer"></a>IOS Designer でカスタム コントロールの使用
 
 ## <a name="requirements"></a>必要条件
 
-IOS 用の Xamarin デザイナーは、Windows の場合は、Visual Studio for Mac と Visual Studio 2015 と 2017 の使用。
+IOS 用 Xamarin デザイナーは、Visual Studio for Mac と Visual Studio 2017 と後での Windows で使用します。
 
 このガイドで説明した内容を熟知することを前提としています、[ガイド ファースト](~/ios/get-started/index.md)します。
 

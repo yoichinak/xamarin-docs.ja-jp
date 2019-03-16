@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/17/2018
-ms.openlocfilehash: 731aeaf0ad89a44211072962bf9891851a44ffcc
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 3082dfcd6d0ffbc6404a89a10819e60b57b9c61c
+ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57667725"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58070710"
 ---
 # <a name="getting-started-with-fingerprint-authentication"></a>指紋認証の概要
 
@@ -25,7 +25,7 @@ ms.locfileid: "57667725"
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-Android アプリケーションを要求する必要があります、`USE_FINGERPRINT`マニフェストにアクセスを許可します。 次のスクリーン ショットでは、Visual Studio 2015 でのアプリケーションにこのアクセス許可を追加する方法を示します。
+Android アプリケーションを要求する必要があります、`USE_FINGERPRINT`マニフェストにアクセスを許可します。 次のスクリーン ショットは、Visual Studio でアプリケーションにこのアクセス許可を追加する方法を示しています。
 
 [![使用を有効にする\_[Android マニフェスト] 画面では、フィンガー プリント](get-started-images/fingerprint-01-vs.png)](get-started-images/fingerprint-01-vs.png#lightbox) 
 

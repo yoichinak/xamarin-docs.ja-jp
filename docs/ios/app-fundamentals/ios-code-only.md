@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/03/2018
-ms.openlocfilehash: 2b3ba0a0cf31ae2c2d631da8b595390c973957d6
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 28475df4baa225cc9a608607be6ed673ad0e6e8a
+ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57670678"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "57981706"
 ---
 # <a name="creating-ios-user-interfaces-in-code-in-xamarinios"></a>Xamarin.iOS でのコードで iOS ユーザー インターフェイスの作成
 
@@ -85,19 +85,20 @@ Visual Studio for Mac では、空のテンプレートが提供されません�
 
 1. 最後に、次のコードを追加、 `FinishedLaunching` AppDelegate クラスのメソッド。
 
-        public override bool FinishedLaunching(UIApplication app, NSDictionary options)
-        {
-            // create a new window instance based on the screen size
-            window = new UIWindow(UIScreen.MainScreen.Bounds);
+    ```csharp
+    public override bool FinishedLaunching(UIApplication app, NSDictionary options)
+    {
+        // create a new window instance based on the screen size
+        window = new UIWindow(UIScreen.MainScreen.Bounds);
 
-            // make the window visible
-            window.MakeKeyAndVisible();
+        // make the window visible
+        window.MakeKeyAndVisible();
 
-            return true;
-        }
+        return true;
+    }
+    ```
 
 コードに追加された、`FinishedLaunching`メソッドは、上記の手順 5 では、iOS アプリケーションに対するウィンドウ作成に必要なコードの最小量。
-
 
 -----
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/01/2017
-ms.openlocfilehash: 435ca560eee4f8f44443816c2a4ccec195ba5395
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: b02ecc8a40f6ff8a1862d50202439d369003a53d
+ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103895"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "57981602"
 ---
 # <a name="using-arkit-with-urhosharp-in-xamarinios"></a>Xamarin.iOS で UrhoSharp を ARKit を使用します。
 
@@ -118,7 +118,7 @@ ARKit API は非常に単純で、作成および構成する、 [ARSession](htt
 ただし、これら 2 つの世界をブレンドする 2 つの問題に直面しました。
 
 
-1. Ios では、GPU のテクスチャの解像度 2 の累乗である必要がありますが、カメラから取得するフレームには、例 2 の累乗である解像度はありません: 1280 x 720 します。
+1. Ios では、GPU のテクスチャの解像度 2 の累乗である必要がありますが、カメラから取得するフレームには、例 2 の累乗である解像度はありません。1280 x 720 します。
 2. フレームがでエンコードされた[YUV](https://en.wikipedia.org/wiki/YUV)形式、2 つのイメージの輝度およびおよび彩度によって表されます。
 
 YUV フレームは、2 つのさまざまな解像度で提供されます。  輝度 (基本的に、グレースケール イメージ) とくらい小さい 640 x 360 クロミナンス コンポーネントを表す 1280 x 720 イメージ:
@@ -207,11 +207,11 @@ void OnTouchEnd(TouchEndEventArgs e)
 
 実際の照明条件に応じて仮想のシーンは明るくしたり暗く周囲のにより適したものにする必要があります。 ARFrame には、Urho のアンビエント光を調整するために使用できる LightEstimate プロパティが含まれています。 これは、次のように。
 
-
-    var ambientIntensity = (float) frame.LightEstimate.AmbientIntensity / 1000f;
-    var zone = Scene.GetComponent<Zone>();
-    zone.AmbientColor = Color.White * ambientIntensity;
-
+```csharp
+var ambientIntensity = (float) frame.LightEstimate.AmbientIntensity / 1000f;
+var zone = Scene.GetComponent<Zone>();
+zone.AmbientColor = Color.White * ambientIntensity;
+```
 
 ### <a name="beyond-ios---hololens"></a>IOS - HoloLens を超える
 
@@ -225,4 +225,4 @@ MutantDemo ソースを検索できる[github.com/EgorBo/ARKitXamarinDemo](https
 ## <a name="related-links"></a>関連リンク
 
 - [UrhoSharp](~/graphics-games/urhosharp/index.md)
-- [(で UrhoSharp) ARKitXamarinDemo (サンプル)](https://github.com/EgorBo/ARKitXamarinDemo)
+- [ARKitXamarinDemo (with UrhoSharp) (sample)](https://github.com/EgorBo/ARKitXamarinDemo)

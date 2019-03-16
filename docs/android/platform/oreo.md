@@ -8,12 +8,12 @@ ms.custom: video
 author: conceptdev
 ms.author: crdun
 ms.date: 07/06/2018
-ms.openlocfilehash: 765494b5d9a55aedd9c9b3f0ea29ea389346ae3c
-ms.sourcegitcommit: 2868c968f418cd7cc110f9664f3c3ffb6df1f9af
+ms.openlocfilehash: c34d81feee48caca94989973a67ba783a0139a90
+ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53267626"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58071074"
 ---
 # <a name="oreo-features"></a>Oreo 機能
 
@@ -65,8 +65,6 @@ Visual Studio には、Android Oreo のサポートを追加するには、次�
     1. Visual Studio 2017 バージョン 15.7 以降に更新プログラム (を参照してください[Visual Studio 2017 更新](https://docs.microsoft.com/visualstudio/install/update-visual-studio))。
 
     2. 使用して、 [SDK Manager](~/android/get-started/installation/android-sdk.md) API レベル 26.0 以降をインストールします。
-
--   Visual Studio 2015 を使用している場合は、25 古い Google エミュレーター マネージャー GUI を使用して SDK Tools の昇格を勧めします。 25 の SDK ツールは、API 26、27 日以降と共に使用でき、新しいプラットフォームの開発に影響しません。 こうインターフェイスとの古いバージョンの Android SDK を管理するためです。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 

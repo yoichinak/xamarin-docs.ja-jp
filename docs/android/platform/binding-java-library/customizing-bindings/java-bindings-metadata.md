@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: ce9bf0293b846299cc7cd06773ce936f725715fa
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 06a7a3b00934b7a2f3eeb4fcfa6fc90071901ba0
+ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669896"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58070905"
 ---
 # <a name="java-bindings-metadata"></a>Java バインド メタデータ
 
@@ -246,7 +246,10 @@ NavigationManager.2DSignNextManueverEventArgs
 
 ### <a name="obfuscated"></a>難読化
 
-Java ライブラリを難読化ツールは、Xamarin.Android バインド ジェネレーターおよび生成するには、その機能を妨げる可能性がC#ラッパー クラス。 難読化されたクラスの特性が含まれます * クラス名が含まれています、 **$**、つまり **$.class** * クラス名がつまり侵害の小文字の場合は、完全 **a.class**
+Java ライブラリを難読化ツールは、Xamarin.Android バインド ジェネレーターおよび生成するには、その機能を妨げる可能性がC#ラッパー クラス。 難読化されたクラスの特性は次のとおりです。 
+
+* クラス名が含まれています、 **$**、つまり **$.class**
+* クラス名がつまり侵害の小文字の場合は、まったく**a.class**
 
 このスニペットを生成する方法の例は、「難読化されていない」、C#型。
 
@@ -275,7 +278,7 @@ Java ライブラリを難読化ツールは、Xamarin.Android バインド ジ�
 
 ### <a name="sender"></a>sender
 
-メソッドのパラメーターにする必要がありますを指定します、`sender`パラメーター、メソッドがイベントにマップされている場合。 値を指定できます`true`または`false`します。 例えば:
+メソッドのパラメーターにする必要がありますを指定します、`sender`パラメーター、メソッドがイベントにマップされている場合。 値を指定できます`true`または`false`します。 例:
 
 ```xml
 <attr path="/api/package[@name='android.app']/

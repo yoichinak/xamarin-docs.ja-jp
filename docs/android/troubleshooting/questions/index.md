@@ -1,5 +1,5 @@
 ---
-title: よく寄せられる質問
+title: Xamarin.Android のよく寄せられる質問
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 0F0FDD2B-FFB1-476F-B674-81DB3A5E1CF3
@@ -7,14 +7,9 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/29/2018
-ms.openlocfilehash: ad3fc32245880f6603c63d33aac49309fd61b753
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "36935465"
 ---
-# <a name="frequently-asked-questions"></a>よく寄せられる質問
+
+# <a name="android-frequently-asked-questions"></a>Android のよく寄せられる質問
 
 ## <a name="installation--setup"></a>インストールとセットアップ
 
@@ -72,7 +67,7 @@ Windows で開発するときに、Android デバイスでデバッグするに�
 
 
 
-## <a name="deprecated"></a>非推奨とされます。
+## <a name="deprecated"></a>非推奨
 
 > [!NOTE]
 > 以下の記事は、Xamarin の最近のバージョンで解決された問題に適用されます。 ただし、ソフトウェアの最新バージョンで問題が発生した場合を提出してください、[新しいバグ](~/cross-platform/troubleshooting/questions/howto-file-bug.md)完全なバージョン管理情報と完全のビルド ログ出力します。

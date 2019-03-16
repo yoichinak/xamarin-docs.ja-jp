@@ -7,22 +7,22 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 01/31/2018
-ms.openlocfilehash: 8622c40e41071d6c05b05abbe2d5d8a8a844ebde
-ms.sourcegitcommit: b60a37587aad8a0bfa8a522d88d22fa672002443
+ms.openlocfilehash: 2c6409410ecba7df8559c07c3231f5e493c98897
+ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51285587"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58071079"
 ---
 # <a name="ios-designer-basics"></a>iOS Designer の基本
 
 _このガイドでは、iOS 用の Xamarin デザイナーについて説明します。IOS Designer を使用してコントロールを視覚的にレイアウトする方法、コードでは、それらのコントロールにアクセスする方法、およびプロパティを編集する方法を示します。_
 
-IOS 用の Xamarin デザイナーとは、Xcode の Interface Builder のようなビジュアル インターフェイス デザイナーと Android デザイナーです。 多数の機能の一部には、Visual Studio for Mac と Visual Studio 2015 および 2017、ドラッグ アンド ドロップ編集、イベントのハンドラーを設定するためのインターフェイス、およびカスタム コントロールをレンダリングする機能とシームレスな統合が含まれます。
+IOS 用の Xamarin デザイナーとは、Xcode の Interface Builder のようなビジュアル インターフェイス デザイナーと Android デザイナーです。 多数の機能の一部には、Visual Studio for Windows、Mac、ドラッグ アンド ドロップ編集、イベントのハンドラーを設定するためのインターフェイスおよびカスタム コントロールをレンダリングする機能とシームレスな統合が含まれます。
 
 ## <a name="requirements"></a>必要条件
 
-IOS デザイナーは、Windows でおよび Visual Studio 2015 と 2017 の Visual Studio for Mac で利用できます。 Visual Studio 2015 または 2017 では、iOS Designer では、Xcode が実行されていない必要がある場合に、適切に構成された Mac ビルド ホストへの接続が必要です。
+IOS デザイナーは、Visual Studio for Mac と Visual Studio 2017 と後での Windows で使用します。 Windows の Visual Studio で iOS Designer では、Xcode が実行されていない必要がある場合に、適切に構成された Mac ビルド ホストへの接続が必要です。
 
 このガイドで説明した内容を熟知することを前提としています、[ガイド ファースト](~/ios/get-started/index.md)します。
 
@@ -84,13 +84,13 @@ IOS Designer では、アプリケーションのユーザー インターフェ
 
 **Solution Pad**に移動する、 **ViewController.cs**わかりました漏えいインジケーターをクリックすると、ビュー コント ローラーの`ViewController`2 つのクラス定義の範囲がファイルの含まれています、[部分クラス](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods)定義。
 
-[![2 つのファイル、ViewController クラスを構成する: ViewController.cs と ViewController.designer.cs](introduction-images/5-twoviewcontrollerfiles-vsmac.png "2 つのファイルをことで、ViewController クラス: ViewController.cs と ViewController.designer.cs")](introduction-images/5-twoviewcontrollerfiles-vsmac-large.png#lightbox)
+[![2 つのファイル ViewController クラスを構成します。ViewController.cs と ViewController.designer.cs](introduction-images/5-twoviewcontrollerfiles-vsmac.png "2 つのファイル、ViewController クラスを構成します。ViewController.cs と ViewController.designer.cs")](introduction-images/5-twoviewcontrollerfiles-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 **ソリューション エクスプ ローラー**に移動する、 **ViewController.cs**わかりました漏えいインジケーターをクリックすると、ビュー コント ローラーの`ViewController`クラス定義が、それぞれの 2 つのファイルにまたがる含まれています、[部分クラス](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods)定義。
 
-[![2 つのファイル、ViewController クラスを構成する: ViewController.cs と ViewController.designer.cs](introduction-images/5-twoviewcontrollerfiles-vs.png "2 つのファイルをことで、ViewController クラス: ViewController.cs と ViewController.designer.cs")](introduction-images/5-twoviewcontrollerfiles-vs-large.png#lightbox)
+[![2 つのファイル ViewController クラスを構成します。ViewController.cs と ViewController.designer.cs](introduction-images/5-twoviewcontrollerfiles-vs.png "2 つのファイル、ViewController クラスを構成します。ViewController.cs と ViewController.designer.cs")](introduction-images/5-twoviewcontrollerfiles-vs-large.png#lightbox)
 
 -----
 
@@ -151,7 +151,7 @@ Visual Studio for Mac で作成された Xamarin.iOS プロジェクトには、
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-Visual Studio 2015 または 2017 で作成されたほとんどの Xamarin.iOS プロジェクトには、ストーリー ボードが含まれます。 ストーリー ボードの内容を表示するで .storyboard ファイルをダブルクリック、**ソリューション エクスプ ローラー**:
+Visual Studio で作成されたほとんどの Xamarin.iOS プロジェクトには、ストーリー ボードが含まれます。 ストーリー ボードの内容を表示するで .storyboard ファイルをダブルクリック、**ソリューション エクスプ ローラー**:
 
 [![IOS Designer でストーリー ボードが開いて](introduction-images/7-storyboardopen-vs.png "iOS Designer でストーリー ボードを開きます")](introduction-images/7-storyboardopen-vs-large.png#lightbox)
 
