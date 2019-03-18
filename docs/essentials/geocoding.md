@@ -1,18 +1,18 @@
 ---
-title: 'Xamarin.Essentials: ジオコーディング'
+title: Xamarin.Essentials:ジオコーディング
 description: Xamarin.Essentials の Geocoding クラスでは、placemark を位置座標にジオコーディングするための API と、逆に座標を placemark にジオコーディングする API の両方が提供されています。
 ms.assetid: 3ADC440C-B000-4708-A2CC-296F5160AF90
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: 0f44f179588c564ac9fa46d42ec18de6d303e239
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.openlocfilehash: bc08554f0060ca5de8d7ffc90ea5c65463b93f3b
+ms.sourcegitcommit: 97dca3face7c4ad5555dfaca88f5b45a70ca556d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52898980"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "57972599"
 ---
-# <a name="xamarinessentials-geocoding"></a>Xamarin.Essentials: ジオコーディング
+# <a name="xamarinessentials-geocoding"></a>Xamarin.Essentials:ジオコーディング
 
 **Geocoding** クラスでは、placemark を位置座標にジオコーディングするための API と、逆に座標を placemark にジオコーディングする API が提供されています。
 
@@ -76,7 +76,9 @@ catch (Exception ex)
 
 高度は常に使用できるとは限りません。 使用できない場合、`Altitude` プロパティは `null` または 0 になることがあります。 高度を使用できる場合、値は海抜メートル単位です。
 
-既存の座標セットに対する [placemark](xref:Xamarin.Essentials.Placemark) の取得:
+## <a name="using-reverse-geocoding"></a>逆ジオコーディングの使用
+
+逆ジオコーディングは、既存の座標セットに対する [placemarks](xref:Xamarin.Essentials.Placemark) を取得するプロセスです。
 
 ```csharp
 try
@@ -116,7 +118,7 @@ catch (Exception ex)
 
 ## <a name="distance-between-two-locations"></a>2 つの場所の間の距離
 
-[`Location`](xref:Xamarin.Essentials.Location) クラスおよび [`LocationExtensions`](xref:Xamarin.Essentials.LocationExtensions) クラスでは、2 つの場所の間の距離を計算するメソッドが定義されています。 例については、「[**Xamarin.Essentials: 位置情報**](geolocation.md#calculate-distance)」をご覧ください。
+[`Location`](xref:Xamarin.Essentials.Location) クラスおよび [`LocationExtensions`](xref:Xamarin.Essentials.LocationExtensions) クラスでは、2 つの場所の間の距離を計算するメソッドが定義されています。 例については、[**Xamarin.Essentials:位置情報**](geolocation.md#calculate-distance)に関する記事をご覧ください。
 
 ## <a name="api"></a>API
 
