@@ -32,7 +32,7 @@ Xamarin.Forms アプリケーションでは、[SQLite.NET PCL NuGet](https://ww
 
 ## <a name="using-sqlite"></a>SQLite の使用
 
-Xamarin.Forms .NET Standard ライブラリに SQLite のサポートを追加するには、NuGet の検索機能を使用して **pcl-sqlite-net** を検索し、最新のパッケージをインストールします。
+Xamarin.Forms .NET Standard ライブラリに SQLite のサポートを追加するには、NuGet の検索機能を使用して **sqlite-net-pcl** を検索し、最新のパッケージをインストールします。
 
 ![NuGet SQLite.NET PCL パッケージの追加](databases-images/vs2017-sqlite-pcl-nuget.png "Add NuGet SQLite.NET PCL パッケージの追加")
 
@@ -43,7 +43,7 @@ Xamarin.Forms .NET Standard ライブラリに SQLite のサポートを追加�
 - **NuGet リンク:**  [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
 
 > [!NOTE]
-> パッケージ名に関係なく、**pcl-sqlite-net** NuGet パッケージを .NET Standard プロジェクトでも使用します。
+> パッケージ名に関係なく、**sqlite-net-pcl** NuGet パッケージを .NET Standard プロジェクトでも使用します。
 
 参照を追加したら、データベースを格納するためのローカル ファイル パスを返すプロパティを `App` クラスに追加します。
 
