@@ -1,18 +1,18 @@
 ---
 ms.assetid: 1BB412D1-FC3D-4E69-8B01-B976A3DB6328
-title: 'WPF とします。Xamarin.Forms: 類似点と相違点'
+title: WPF とします。Xamarin.Forms:類似点と相違点
 description: このドキュメントでは、比較し、Xamarin.Forms の WPF は対照的です。 これは、コントロール テンプレート、XAML、バインド インフラストラクチャ、データ テンプレート、ItemsControl、ユーザー コントロール、ナビゲーション、および URL のナビゲーションについて説明します。
 author: asb3993
 ms.author: amburns
 ms.date: 04/26/2017
-ms.openlocfilehash: d3e772c270f6003d01e3e7b487f69f682fec2d61
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.openlocfilehash: 990253cbd31ad79bc47f086dc5bd2b99233f2032
+ms.sourcegitcommit: 64d6da88bb6ba222ab2decd2fdc8e95d377438a6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617593"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58175240"
 ---
-# <a name="wpf-vs-xamarinforms-similarities--differences"></a>WPF とします。Xamarin.Forms: 類似点と相違点
+# <a name="wpf-vs-xamarinforms-similarities--differences"></a>WPF とします。Xamarin.Forms:類似点と相違点
 
 ## <a name="control-templates"></a>コントロール テンプレート
 
@@ -154,7 +154,7 @@ WPF に組み込まれている`RoutedCommand`使用される場合がありま�
 
 ## <a name="itemscontrol"></a>ItemsControl
 
-組み込みの分がない、 `ItemsControl` Xamarin.Forms; では、[カスタムの 1 つの Xamarin.Forms こちらで入手できます](https://github.com/xamarinhq/xamu-infrastructure/blob/master/src/XamU.Infrastructure/Controls/ItemsControl.cs)。
+相当する組み込みはありません、 `ItemsControl` ; Xamarin.Forms では、[カスタムの 1 つの Xamarin.Forms こちらで入手できます](https://github.com/xamarinhq/xamu-infrastructure/blob/master/src/XamU.Infrastructure/Controls/ItemsControl.cs)。
 
 ## <a name="user-controls"></a>ユーザー コントロール
 
@@ -173,7 +173,7 @@ Phone デバイス、異なる_画面_ソリューションでは多くの場合
 |タブ|TabbedPage|
 |左/右の方向にスワイプ|CarouselView|
 
-`NavigationPage` 、最も一般的なアプローチは、すべてのページが、`Navigation`プロパティ プッシュやポップをページで、ナビゲーション スタックからポップするために使用できます。 これに最も近い分、 `NavigationService` WPF で見つかった。
+`NavigationPage` 、最も一般的なアプローチは、すべてのページが、`Navigation`プロパティ プッシュやポップをページで、ナビゲーション スタックからポップするために使用できます。 これは、最も近い相当する、 `NavigationService` wpf が見つかりました。
 
 ### <a name="url-navigation"></a>URL ナビゲーション
 
