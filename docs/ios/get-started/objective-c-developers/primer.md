@@ -38,7 +38,7 @@ Objective-C と C# は、構文とランタイムの観点からはまったく�
 
 ### <a name="protocols-vs-interfaces"></a>プロトコルとインターフェイス
 
-Objective-C と C# はどちらも単一継承言語です。 ただし、どちらの言語も、特定のクラスでの複数のインターフェイスの実装をサポートしています。 Objective-C では、これらの論理インターフェイスは "*プロトコル*" と呼ばれ、C# では "*インターフェイス*" と呼ばれます。 実装の観点からは、C# インターフェイスと Objective-C プロトコルの主な違いは、Objective-C ではオプションのメソッドを使用できることです。 詳しくは、「[Events, Delegates and Protocols](~/ios/app-fundamentals/delegates-protocols-and-events.md)」(イベント、委任、プロトコル) の記事をご覧ください。
+Objective-C と C# はどちらも単一継承言語です。 ただし、どちらの言語も、特定のクラスでの複数のインターフェイスの実装をサポートしています。 Objective-C では、これらの論理インターフェイスは "*プロトコル*" と呼ばれ、C# では "*インターフェイス*" と呼ばれます。 実装の観点からは、C# インターフェイスと Objective-C プロトコルの主な違いは、Objective-C ではオプションのメソッドを使用できることです。 詳しくは、「[Events, Delegates and Protocols](~/ios/app-fundamentals/delegates-protocols-and-events.md)」(イベント、デリゲート、プロトコル) の記事をご覧ください。
 
 ### <a name="categories-vs-extension-methods"></a>カテゴリと拡張メソッド
 
