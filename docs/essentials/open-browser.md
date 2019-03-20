@@ -4,15 +4,15 @@ description: Xamarin.Essentials の Browser クラスを使用すると、最適
 ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: ea2a10c11a77fcb2b3ce142d176522ebf0310725
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.date: 03/13/2019
+ms.openlocfilehash: 4a822b4b6738e261b9ddaee02334ad629e1d4879
+ms.sourcegitcommit: 64d6da88bb6ba222ab2decd2fdc8e95d377438a6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52898879"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58175318"
 ---
-# <a name="xamarinessentials-browser"></a>Xamarin.Essentials: ブラウザー
+# <a name="xamarinessentials-browser"></a>Xamarin.Essentials:ブラウザー
 
 **Browser** クラスを使用すると、最適化されたシステム推奨のブラウザーまたは外部のブラウザーを使って、アプリケーションで Web リンクを開くことができます。
 
@@ -42,6 +42,24 @@ public class BrowserTest
 ```
 
 このメソッドは、ブラウザーが_起動_した後に返されるもので、必ずしもブラウザーがユーザーによって_終了_されるわけではありません。  `bool` の結果は起動が成功したかどうかを示しています。
+
+## <a name="customization"></a>カスタマイズ
+
+システム推奨ブラウザーの使用時、iOS と Android ではカスタマイズ オプションをいくつか利用できます。 たとえば、`TitleMode` (Android のみ)、`Toolbar` に推奨される色の選択肢 (iOS と Android)、`Controls` の表示 (iOS のみ) があります。 
+
+このようなオプションは `OpenAsync` の呼び出し時、`BrowserLaunchOptions` を使用することで指定されます。
+
+```csharp
+await Browser.OpenAsync(uri, new BrowserLaunchOptions
+                {
+                    LaunchMode = BrowserLaunchMode.SystemPreferred,
+                    TitleMode = BrowserTitleMode.Show,
+                    PreferredToolbarColor = Color.AliceBlue,
+                    PreferredControlColor = Color.Violet
+                });
+```
+
+![ブラウザー オプション](images/browser-options.png)
 
 ## <a name="platform-implementation-specifics"></a>プラットフォームの実装の詳細
 

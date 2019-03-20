@@ -5,13 +5,8 @@ ms.assetid: 4EDC9897-5FD1-44CA-A26D-2E5AB472C99A
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: 0f4271e5c0c9de53a83a840f7fe0a83b594a06fa
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52898642"
 ---
+
 # <a name="xamarinessentials"></a>Xamarin.Essentials
 
 Xamarin.Essentials には、モバイル アプリケーション開発用のクロスプラットフォーム API が用意されています。
@@ -28,11 +23,13 @@ Android、iOS、UWP では独自のオペレーティング システムとプ�
 
 * [加速度計](accelerometer.md?context=xamarin/xamarin-forms) – 3 次元空間内のデバイスの加速度データを取得します。
 * [アプリ情報](app-information.md?context=xamarin/xamarin-forms) – アプリケーションに関する情報を見つけます。
-* [バロメーター](barometer.md?context=xamarin/xamarin-forms) – 気圧の変化のバロメーターを監視します。
+* [バロメーター](barometer.md?context=xamarin/xamarin-forms) – 負荷の変化のバロメーターを監視します。
 * [バッテリ](battery.md?context=xamarin/xamarin-forms) – バッテリ レベル、ソース、および状態を簡単に検出します。
 * [クリップボード](clipboard.md?context=xamarin/xamarin-forms) – クリップボード上のテキストをすばやく簡単に設定したり読み取ったりします。
+* [色の変換機能](color-converters.md?context=xamarin/xamarin-forms) – System.Drawing.Color のヘルパー メソッド。
 * [コンパス](compass.md?context=xamarin/xamarin-forms) – 変化のコンパスを監視します。
 * [接続](connectivity.md?context=xamarin/xamarin-forms) – 接続状態を確認し、変更を検出します。
+* [Detect Shake](detect-shake.md?context=xamarin/xamarin-forms) – デバイスを振る動きを検出します。
 * [デバイス ディスプレイ情報](device-display.md?context=xamarin/xamarin-forms) – デバイスの画面のメトリックと向きを取得します。
 * [デバイス情報](device-information.md?context=xamarin/xamarin-forms) – デバイスの詳細を簡単に確認します。
 * [電子メール](email.md?context=xamarin/xamarin-forms) – 電子メール メッセージを簡単に送信します。
@@ -48,11 +45,13 @@ Android、iOS、UWP では独自のオペレーティング システムとプ�
 * [ブラウザーを開く](open-browser.md?context=xamarin/xamarin-forms) – ブラウザーで特定の Web サイトをすばやく簡単に開きます。
 * [向きセンサー](orientation-sensor.md?context=xamarin/xamarin-forms) – 3 次元空間内のデバイスの向きを取得します。
 * [ダイヤラー](phone-dialer.md?context=xamarin/xamarin-forms) – ダイヤラーを開きます。
+* [プラットフォーム拡張](platform-extensions.md?context=xamarin/xamarin-forms) – Rect、Size、Point を変換するためのヘルパー メソッド。
 * [ユーザー設定](preferences.md?context=xamarin/xamarin-forms) – 永続的なユーザー設定をすばやく簡単に追加します。
 * [セキュリティで保護されたストレージ](secure-storage.md?context=xamarin/xamarin-forms) – データを安全に格納します。
-* [共有](share.md?context=xamarin/xamarin-forms) – 他のアプリにテキストや Web サイトの URI を送信します。
+* [Share](share.md?context=xamarin/xamarin-forms) – 他のアプリにテキストや Web サイトの URI を送信します。
 * [SMS](sms.md?context=xamarin/xamarin-forms) – 送信用の SMS メッセージを作成します。
 * [音声合成](text-to-speech.md?context=xamarin/xamarin-forms) – デバイス上のテキストを音声化します。
+* [単位変換機能](unit-converters.md?context=xamarin/xamarin-forms) – 単位を変換するためのヘルパー メソッド。
 * [バージョンの追跡](version-tracking.md?context=xamarin/xamarin-forms) – アプリケーションのバージョンとビルド番号を追跡します。
 * [バイブレーション](vibrate.md?context=xamarin/xamarin-forms) – デバイスをバイブレーションさせます。
 
