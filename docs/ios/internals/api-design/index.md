@@ -13,7 +13,7 @@ ms.date: 03/21/2017
 
 [Xamarin.iOS](http://www.xamarin.com/iOS)には、Mono の一部であるコアの基本クラス ライブラリだけでなく、開発者が Mono を利用してネイティブの iOS アプリケーションの作成を可能にするために、さまざまな iOS Api へのバインドが付属しています。
 
-Xamarin.iOS の中核は、OBJECTIVE-C の世界と iOS CoreGraphics などの C ベースの Api のバインドでの c# 世界をブリッジするエンジンと相互運用機能および[OpenGL ES](#OpenGLES)します。
+Xamarin.iOS のコアには、C# の世界と OBJECTIVE-C の世界をブリッジする相互運用機能および、CoreGraphics や [OpenGL ES](#OpenGLES) などの iOS C ベースの API のバインドがあります。
 
 Objective C コードとの通信に低レベルのランタイムがで[MonoTouch.ObjCRuntime](#MonoTouch.ObjCRuntime)します。 上のこのバインドに[Foundation](#MonoTouch.Foundation)、CoreFoundation、および[UIKit](#MonoTouch.UIKit)提供されます。
 
