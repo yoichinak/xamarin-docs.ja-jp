@@ -1,16 +1,10 @@
 ---
 ms.assetid: EA2D979E-9151-4CE9-9289-13B6A979838B
 title: Xamarin を使用した C と C++ のライブラリを使用します。
-description: Visual Studio for Mac ができますをビルドし、iOS、Android 向けモバイル アプリにクロス プラットフォームの C/C++ コードを統合する Xamarin を使用して、C#します。 この記事を設定して、Xamarin アプリで C++ プロジェクトをデバッグする方法について説明します。
+description: 'Visual Studio for Mac ができますをビルドし、iOS、Android 向けモバイル アプリにクロス プラットフォームの C/C++ コードを統合する Xamarin を使用して、C#します。 この記事を設定して、Xamarin アプリで C++ プロジェクトをデバッグする方法について説明します。'
 author: mikeparker104
 ms.author: miparker
 ms.date: 12/17/20178
-ms.openlocfilehash: ffbf2d26dc525d8024b8e9611f2dd3e4ac980727
-ms.sourcegitcommit: 190808013249005ceffbc798f9f4570e8cdc943a
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54841503"
 ---
 # <a name="use-cc-libraries-with-xamarin"></a>Xamarin を使用した C と C++ のライブラリを使用します。
 
@@ -159,8 +153,8 @@ extern "C" {
 
 11. **ソリューション エクスプ ローラー**をダブルクリックして、 **MathFuncs.Standard**プロジェクト。
 12. 移動します**メイン設定**、更新し、**既定 Namespace**に**MathFuncs**します。
-13. 移動し、**出力**の設定を更新し、**アセンブリ名**に**MathFuncs**順にクリックします **[ok]** します。
-14. 移動します、**コンパイラ**設定、変更、**構成**に**リリース**設定**デバッグ情報**に**シンボルのみ**します。
+13. 移動し、**出力**の設定を更新し、**アセンブリ名**に**MathFuncs**します。
+14. 移動します、**コンパイラ**設定、変更、**構成**に**リリース**設定**デバッグ情報**に**シンボルのみ** をクリックし、 **OK**します。
 15. 削除**Class1.cs/Getting 開始**プロジェクト (次のいずれかがされている場合、テンプレートの一部として含まれています)。
 16. **コントロール + をクリックします**プロジェクト**依存関係、参照**フォルダーを選択し、**参照の編集**。
 17. 選択**MathFuncs.Shared**から、**プロジェクト** タブの  をクリックし、 **OK**します。
@@ -199,7 +193,7 @@ extern "C" {
     - x86_64  
 
     > [!NOTE]
-    > さらに詳しい概要については、次を参照してください、 [アーキテクチャと Cpu](https://developer.android.com/ndk/guides/arch) トピックから、 [NDK 開発者ガイド](https://developer.android.com/ndk/guides/)、アドレス指定に関するセクションでは具体的には [アプリ パッケージ内のネイティブ コード。](https://developer.android.com/ndk/guides/abis#native-code-in-app-packages).
+    > さらに詳しい概要については、次を参照してください、 [アーキテクチャと Cpu](https://developer.android.com/ndk/guides/arch) トピックから、 [NDK 開発者ガイド](https://developer.android.com/ndk/guides/)、アドレス指定に関するセクションでは具体的には [アプリ パッケージ内のネイティブ コード](https://developer.android.com/ndk/guides/abis#native-code-in-app-packages)。
 
 3. フォルダー構造を確認します。  
 
@@ -479,7 +473,7 @@ extern "C" {
 1.  **コントロール + をクリックします** ソリューション **MathFuncs**を選択し、 **ソリューション フォルダーの追加**から、 **追加** としますメニュー **SolutionItems**します。
 2.  **コントロール + をクリックします** 上、 **SolutionItems** フォルダーを選択し、 **新しいファイル.** から、 **追加** メニュー。
 3.  選択 **空の XML ファイル** から、 **新しいファイル** ウィンドウで、名前を付けます **MathFuncs.nuspec** をクリックして **新しい**します。
-4.  Update **MathFuncs.nuspec** に表示する基本的なパッケージ メタデータ、 **NuGet**コンシューマー。 例:
+4.  Update **MathFuncs.nuspec** に表示する基本的なパッケージ メタデータ、 **NuGet**コンシューマー。 例えば:
 
 
     ```xml
@@ -588,7 +582,7 @@ NuGet フィードの最も単純な形式では、ローカル ディレクト�
 
 1.  設定、 **ビルド構成** に **リリース**を使用してビルドを実行および **コマンド + B**します。
 2.  開いている **ターミナル**を含むフォルダーにディレクトリを変更し、 **nuspec** ファイル。
-3.   **ターミナル**、実行、 **nuget パック** コマンドを指定する、 **nuspec** ファイル、 **バージョン**  (例: 1.0.0) と **OutputDirectory** で作成したフォルダーを使用して、 [前の手順](https://docs.microsoft.com/xamarin/cross-platform/cpp/index#creating-a-local-nuget-feed)、つまり **ローカルの nuget フィード**します。 例:
+3.   **ターミナル**、実行、 **nuget パック** コマンドを指定する、 **nuspec** ファイル、 **バージョン**  (例: 1.0.0) と **OutputDirectory** で作成したフォルダーを使用して、 [前の手順](https://docs.microsoft.com/xamarin/cross-platform/cpp/index#creating-a-local-nuget-feed)、つまり **ローカルの nuget フィード**します。 例えば:
 
     ```bash
     nuget pack MathFuncs.nuspec -Version 1.0.0 -OutputDirectory ~/local-nuget-feed
