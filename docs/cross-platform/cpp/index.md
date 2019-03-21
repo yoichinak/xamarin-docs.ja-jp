@@ -4,7 +4,7 @@ title: Xamarin を使用した C と C++ のライブラリを使用します。
 description: 'Visual Studio for Mac ができますをビルドし、iOS、Android 向けモバイル アプリにクロス プラットフォームの C/C++ コードを統合する Xamarin を使用して、C#します。 この記事を設定して、Xamarin アプリで C++ プロジェクトをデバッグする方法について説明します。'
 author: mikeparker104
 ms.author: miparker
-ms.date: 12/17/20178
+ms.date: 12/17/2018
 ---
 # <a name="use-cc-libraries-with-xamarin"></a>Xamarin を使用した C と C++ のライブラリを使用します。
 
@@ -193,7 +193,7 @@ extern "C" {
     - x86_64  
 
     > [!NOTE]
-    > さらに詳しい概要については、次を参照してください、 [アーキテクチャと Cpu](https://developer.android.com/ndk/guides/arch) トピックから、 [NDK 開発者ガイド](https://developer.android.com/ndk/guides/)、アドレス指定に関するセクションでは具体的には [アプリ パッケージ内のネイティブ コード](https://developer.android.com/ndk/guides/abis#native-code-in-app-packages)。
+    > さらに詳しい概要については、次を参照してください、 [アーキテクチャと Cpu](https://developer.android.com/ndk/guides/arch) トピックから、 [NDK 開発者ガイド](https://developer.android.com/ndk/guides/)、アドレス指定に関するセクションでは具体的には [アプリ パッケージ内のネイティブ コード](https://developer.android.com/ndk/guides/abis#native-code-in-app-packages).
 
 3. フォルダー構造を確認します。  
 
