@@ -6,13 +6,13 @@ ms.assetid: AC070686-A423-4A98-8BB6-0B9F94C062CC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 13/11/2018
-ms.openlocfilehash: f5e3c5dbadeeb3cc1c019707ce7aa106e4946e36
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.date: 11/13/2018
+ms.openlocfilehash: da7d63f43a431d2a31428d28e81e8b6abfed838e
+ms.sourcegitcommit: 4c97f5d73be7eb2da153a85183be4258b6b11ca6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55292013"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58288590"
 ---
 # <a name="xamarinforms-views"></a>Xamarin.Forms のビュー
 
@@ -183,7 +183,7 @@ _Xamarin.Forms のビューとは、クロス プラットフォーム モバイ
 
 |     |     |
 | --- | --- |
-| [`ListView`](xref:Xamarin.Forms.ListView) 派生した[ `ItemsView[Cell]` ](xref:Xamarin.Forms.ItemsView`1)選択可能なデータ項目のスクロール可能な一覧が表示されます。 設定、 [ `ItemsSource` ](xref:Xamarin.Forms.ItemsView`1.ItemsSource)プロパティ オブジェクト、およびセットのコレクションを[ `ItemTemplate` ](xref:Xamarin.Forms.ItemsView`1.ItemTemplate)プロパティを[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)アイテムがどのように記述するオブジェクト書式設定されます。 [ `ItemSelected` ](xref:Xamarin.Forms.ListView.ItemSelected)選択が行われたこと、として利用できるイベントの通知、 [ `SelectedItem` ](xref:Xamarin.Forms.ListView.SelectedItem)プロパティ。<br /><br />[API ドキュメント](xref:Xamarin.Forms.ListView) / [ガイド](~/xamarin-forms/user-interface/listview/index.md) / [サンプル](https://developer.xamarin.com/samples/WorkingWithListview) | [![ListView の例](views-images/ListView.png "ListView 例")](views-images/ListView-Large.png#lightbox "ListView の例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ListViewDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ListViewDemoPage.xaml) |
+| [`ListView`](xref:Xamarin.Forms.ListView) 派生した[ `ItemsView[Cell]` ](xref:Xamarin.Forms.ItemsView`1)選択可能なデータ項目のスクロール可能な一覧が表示されます。 設定、 [ `ItemsSource` ](xref:Xamarin.Forms.ItemsView`1.ItemsSource)プロパティ オブジェクト、およびセットのコレクションを[ `ItemTemplate` ](xref:Xamarin.Forms.ItemsView`1.ItemTemplate)プロパティを[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)アイテムがどのように記述するオブジェクト書式設定されます。 [ `ItemSelected` ](xref:Xamarin.Forms.ListView.ItemSelected)選択が行われたこと、として利用できるイベントの通知、 [ `SelectedItem` ](xref:Xamarin.Forms.ListView.SelectedItem)プロパティ。<br /><br />[API ドキュメント](xref:Xamarin.Forms.ListView) / [ガイド](~/xamarin-forms/user-interface/listview/index.md) / [サンプル](https://developer.xamarin.com/samples/WorkingWithListview) | [![ListView 例](views-images/ListView.png "ListView 例")](views-images/ListView-Large.png#lightbox "ListView の例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ListViewDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ListViewDemoPage.xaml) |
 |     |     |
 
 <a name="tableView" />
