@@ -7,18 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2015
-ms.openlocfilehash: 967d4ae65bdb47adf824f20f47c7b32e24211f9a
-ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55831811"
 ---
+
 # <a name="xamarinforms-listview"></a>Xamarin.Forms ListView
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/WorkingWithListview)
 
 [`ListView`](xref:Xamarin.Forms.ListView) 特に長い一覧をスクロールを必要とするデータの一覧を表示するためのビューです。
+
+> [!IMPORTANT]
+> `CollectionView` 別のレイアウトの仕様を使用してデータのリストを表示するためのビュー。 目的より柔軟に提供してパフォーマンスの高い代替に[ `ListView`](xref:Xamarin.Forms.ListView)します。 詳細については、次を参照してください。 [Xamarin.Forms CollectionView](~/xamarin-forms/user-interface/collectionview/index.md)します。
 
 ## <a name="use-cases"></a>ユース ケース
 

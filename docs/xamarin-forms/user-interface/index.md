@@ -27,7 +27,7 @@ Xamarin.Forms には、複雑なアニメーションを作成するのに十分
 
 `Button`タップまたは特定のタスクを実行するためにアプリケーションに指示するクリックに応答します。
 
-## <a name="collectionviewcollectionviewmd"></a>[CollectionView](collectionview.md)
+## <a name="collectionviewcollectionviewindexmd"></a>[CollectionView](collectionview/index.md)
 
 `CollectionView`は別のレイアウトの仕様を使用してデータのリストを表示するための柔軟性とパフォーマンスの高いビューです。
 

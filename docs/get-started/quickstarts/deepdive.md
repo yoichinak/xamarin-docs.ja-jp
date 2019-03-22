@@ -9,12 +9,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/27/2018
-ms.openlocfilehash: 8e466c80468551f8262cfe49556d9527a147de4c
-ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
+ms.openlocfilehash: 8674ef47867acf3bca4d05fd6628a58e2f9ad90e
+ms.sourcegitcommit: 5d4e6677224971e2bc0268f405d192d0358c74b8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57197551"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58329365"
 ---
 # <a name="xamarinforms-quickstart-deep-dive"></a>Xamarin.Forms のクイック スタートの詳細情報
 
@@ -353,7 +353,7 @@ public App ()
 }
 ```
 
-すべての [`ContentPage`](xref:Xamarin.Forms.ContentPage) インスタンスに、ページ スタックを変更するメソッドを公開する [`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) プロパティがあります。 このメソッドは、アプリケーションに [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) が含まれる場合にのみ呼び出します。 `NoteEntryPage` に移動するには、下のコード例のように、[`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync(Xamarin.Forms.Page)) メソッドを呼び出す必要があります。
+すべての [`ContentPage`](xref:Xamarin.Forms.ContentPage) インスタンスに、ページ スタックを変更するメソッドを公開する [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) プロパティがあります。 このメソッドは、アプリケーションに [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) が含まれる場合にのみ呼び出します。 `NoteEntryPage` に移動するには、下のコード例のように、[`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync(Xamarin.Forms.Page)) メソッドを呼び出す必要があります。
 
 ```csharp
 await Navigation.PushAsync(new NoteEntryPage());
@@ -424,7 +424,7 @@ async void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs e)
 
 *ソース* オブジェクトの [`Editor.Text`](xref:Xamarin.Forms.Editor.Text) プロパティと `Text` プロパティ間のバインディングが確立されました。 行われた変更、`Editor`に自動的に伝達されます、`Note`オブジェクト。 同様に、変更された場合、`Note.Text`プロパティ、Xamarin.Forms のバインド エンジンによっての内容更新も、`Editor`します。 これは、*両方向のバインド*とも呼ばれています。
 
-データ バインディングの詳細については、次を参照してください。 [Xamarin.Forms データ バインディング](~/xamarin-forms/app-fundamentals/data-binding/index.md)します。
+データ バインディングの詳細については、「[Xamarin.Forms Data Binding](~/xamarin-forms/app-fundamentals/data-binding/index.md)」 (Xamarin.Forms のデータ バインディング) を参照してください。
 
 ## <a name="styling"></a>[スタイル]
 
@@ -509,14 +509,14 @@ Visual Studio for Mac と Visual Studio のいずれも、アプリケーショ�
 
 この詳細情報には、Xamarin.Forms を使用したアプリケーション開発の基礎が調べします。 推奨される次の手順としては、次の機能の説明を読んでください。
 
-- Xamarin.Forms アプリケーションのユーザー インターフェイスを作成するために、主に 4 つのコントロール グループが使用されます。 詳細については、次を参照してください。[コントロールのリファレンス](~/xamarin-forms/user-interface/controls/index.md)します。
-- データ バインディングは、1 つのプロパティの変更は、その他のプロパティに自動的に反映されるように、2 つのオブジェクトのプロパティをリンクするための手法です。 詳細については、次を参照してください。[データ バインディング](~/xamarin-forms/app-fundamentals/data-binding/index.md)
-- Xamarin.Forms は、さまざまな使用されているページの種類に応じて、別のページ ナビゲーション エクスペリエンスを提供します。 詳細については、「[ナビゲーション](~/xamarin-forms/app-fundamentals/navigation/index.md)」を参照してください。
-- スタイルは、反復的なマークアップを削減し、アプリケーションの外観をより簡単に変更を許可するのに役立ちます。 詳細については、次を参照してください。 [Xamarin.Forms アプリのスタイル設定](~/xamarin-forms/user-interface/styles/index.md)します。
-- XAML マークアップ拡張機能は、リテラル テキスト文字列以外のソースから設定する要素の属性を許可することで、電源と XAML の柔軟性を拡張します。 詳細については、次を参照してください。 [XAML マークアップ拡張機能](~/xamarin-forms/xaml/markup-extensions/index.md)します。
-- データ テンプレートは、サポートされているビューのデータのプレゼンテーションを定義する機能を提供します。 詳細については、「[Data Templates](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)」 (データ テンプレート) を参照してください。
-- 各ページ、レイアウト、およびビューは、各プラットフォームで異なってレンダリング、`Renderer`をさらに、ネイティブ コントロールを作成するクラスが、画面上で並べられ、共有コードで指定された動作を追加します。 開発者は独自の `Renderer` クラスを実装して、コントロールの外観や動作をカスタマイズできます。 詳細については、「[Custom Renderers](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)」 (カスタム レンダラー) を参照してください。
-- 効果では、各プラットフォームのネイティブ コントロールのカスタマイズを可能にします。 効果をサブクラス化してプラットフォーム固有のプロジェクトで作成された、 [ `PlatformEffect` ](xref:Xamarin.Forms.PlatformEffect`2)クラス、および適切な Xamarin.Forms コントロールに添付することによって使用されます。 詳細については、「[Effects](~/xamarin-forms/app-fundamentals/effects/index.md)」 (効果) を参照してください。
+- Xamarin.Forms アプリケーションのユーザー インターフェイスを作成するために、主に 4 つのコントロール グループが使用されます。 詳細については、「[Controls Reference](~/xamarin-forms/user-interface/controls/index.md)」 (コントロールのリファレンス) を参照してください。
+- データ バインディングは、2 つのオブジェクトのプロパティをリンクして、片方のプロパティでの変更が自動的にもう片方のプロパティに反映されるようにする手法です。 詳細については、[データ バインディング](~/xamarin-forms/app-fundamentals/data-binding/index.md)に関するページを参照してください。
+- Xamarin.Forms では、使用されるページの種類に応じて、さまざまなページ ナビゲーションのエクスペリエンスが提供されます。 詳細については、「[ナビゲーション](~/xamarin-forms/app-fundamentals/navigation/index.md)」を参照してください。
+- スタイルは、繰り返されるマークアップを減らすのに役立ち、アプリケーションの外観をより簡単に変更できるようにします。 詳しくは、「[Styling Xamarin.Forms Apps](~/xamarin-forms/user-interface/styles/index.md)」 (Xamarin.Forms アプリのスタイル設定) をご覧ください。
+- XAML マークアップ拡張では、要素属性をリテラル テキスト文字列ではなく、ソースから設定できるようにすることで、XAML をより強力かつ柔軟なものにします。 詳細については、「[XAML Markup Extensions](~/xamarin-forms/xaml/markup-extensions/index.md)」 (XAML マークアップ拡張) を参照してください。
+- データ テンプレートでは、サポートされているビューでのデータの表現方法を定義する機能が提供されます。 詳細については、「[Data Templates](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)」 (データ テンプレート) を参照してください。
+- 各ページ、レイアウト、およびビューは `Renderer` クラスを使用して、プラットフォームごとに異なる方法でレンダリングされます。その後、ネイティブ コントロールが作成され、画面に配置され、共有コードで指定された動作が追加されます。 開発者は独自の `Renderer` クラスを実装して、コントロールの外観や動作をカスタマイズできます。 詳細については、「[Custom Renderers](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)」 (カスタム レンダラー) を参照してください。
+- 効果では、各プラットフォームのネイティブ コントロールのカスタマイズを可能にします。 効果は、プラットフォーム固有のプロジェクトで [`PlatformEffect`](xref:Xamarin.Forms.PlatformEffect`2) クラスをサブクラス化することによって作成され、適切な Xamarin.Forms コントロールに添付することによって使用されます。 詳細については、「[Effects](~/xamarin-forms/app-fundamentals/effects/index.md)」 (効果) を参照してください。
 - 共有コードはネイティブ機能に [`DependencyService`](xref:Xamarin.Forms.DependencyService) クラスを介してアクセスできます。 詳細については、「[Accessing Native Features with DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md)」 (DependencyService を使用したネイティブ機能へのアクセス) を参照してください。
 
 または、Charles Petzold 著の『[_Creating Mobile Apps with Xamarin.Forms_](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)』 (Xamarin.Forms でモバイル アプリを作成する) でも Xamarin.Forms の詳細を学習できます。 この書籍は、PDF またはさまざまな形式の電子ブックとして入手可能です。

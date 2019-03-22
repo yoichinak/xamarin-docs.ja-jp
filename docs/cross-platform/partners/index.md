@@ -223,6 +223,7 @@ _プライマリの場所で表示されている、多くのパートナーは�
 |[CommerceLab](http://www.commercelab.com.au)|オーストラリア、シドニー|小規模企業は、オンラインとオフラインの最新の marketplace でのコンテストに電源、シドニー ベースのアプリ開発|
 |[Datacom](http://www.datacom.co.nz/)|ウェリントン、New Zealand;オークランド (ニュージーランド)。オーストラリア、シドニー|Datacom を設計するには、ビルド、IT システムとのビジネス プロセスを実行します。|
 |[Envoy のテクノロジの詳細](http://www.envoyat.com/)|Chatswood、オーストラリア|Envoy は specialises web、モバイル、エンタープライズ アプリケーションを構築します。|
+|[XAM コンサルティング](http://www.xam-consulting.com/)|オーストラリア ワイド|XAM では、エンタープライズ級のアプリケーションを構築します。 Xamarin でかつサーバーレス 20 + 専門家のチームです。|
 |[Kloud ソリューション](http://www.kloud.com.au)|メルボルン (オーストラリア)|多くのオーストラリアの最大のブランド、ビジネスを変換し、コストの削減およびプロセスの合理化革新的な新しいクラウド サービスの導入を支援したコンピューティング|
 |[マーカー Metro](http://www.markermetro.com/)|オークランド (ニュージーランド)。オーストラリア、シドニー|キーのクライアント エクスペリエンスには、Disney Mobile、Sony、NZTE、Carters Holt Harvey、Commonwealth Bank には空気ニュージーランドが含まれます。 マーカー Metro は Xamarin パートナーの誇りです。|
 |[Millipede](http://millipede.com.au)|メルボルン (オーストラリア)|Millipede には、WPP、8000 以上のユーザーと世界規模の企業の一部です。 私たちは、ソフトウェア エンジニア、デザイナーと UX の専門家より優れたより効果的なモバイル ソリューションからセキュリティで保護されたコンシューマーが銀行とエンタープライズ ユーティリティ アプリ モバイル ゲームの開発に取り組むの非常にクリエイティブなグループです。|
