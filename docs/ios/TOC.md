@@ -154,6 +154,7 @@
 ### [iOS の拡張機能](platform/extensions.md)
 ### [埋め込みフレームワーク](platform/embedded-frameworks.md)
 ### [例外のマーシャリング](platform/exception-marshaling.md)
+### [ファイル圧縮](platform/file-compression.md)
 ### [iOS のグラフィックスとアニメーション](platform/graphics-animation-ios/index.md)
 #### [CoreImage](platform/graphics-animation-ios/introduction-to-coreimage.md)
 #### [コア グラフィックス](platform/graphics-animation-ios/core-graphics.md)

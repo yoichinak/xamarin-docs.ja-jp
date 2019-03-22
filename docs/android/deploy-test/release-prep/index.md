@@ -38,7 +38,7 @@ Xamarin.Android アプリケーションそれぞれでアプリケーション 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-Visual Studio 2015 以降では、アプリケーション アイコンは、次のスクリーンショットで示すように、プロジェクトの **[プロパティ]** の **[Android マニフェスト]** セクションから指定します。
+Visual Studio 2017 以降では、アプリケーション アイコンは、次のスクリーンショットで示すように、プロジェクトの **[プロパティ]** の **[Android マニフェスト]** セクションから指定します。
 
 [![アプリケーションのアイコンを設定する](images/vs/01-application-icon-sml.png)](images/vs/01-application-icon.png#lightbox)
 
@@ -186,7 +186,8 @@ Android マニフェストには、アプリケーションをデバッグする
 [デバッグが無効](#Disable_Debugging)になっていても、攻撃者が、アプリケーションを再パッケージ化し、構成オプションまたはアクセス許可を追加または削除することは可能です。 これにより、攻撃者がアプリケーションをリバース エンジニアリング、デバッグ、または改ざんすることができます。
 [Dotfuscator Community Edition (CE)](https://www.preemptive.com/products/dotfuscator/overview) を使用して、マネージド コードを難読化し、ビルド時にランタイムのセキュリティ状態検出コードを Xamarin.Android アプリに挿入して、アプリがルート化されたデバイスで実行されている場合に検出して対応することができます。
 
-Dotfuscator CE は、Visual Studio に含まれていますが、Visual Studio 2015 Update 3 (およびそれ以降) にのみ Xamarin.Android で機能する適切なバージョンが含まれています。 Dotfuscator を使用するには、**[ツール]、[PreEmptive Protection - Dotfuscator]** の順にクリックします。
+Dotfuscator CE は Visual Studio 2017 と共にインストールされます。
+Dotfuscator を使用するには、**[ツール]、[PreEmptive Protection - Dotfuscator]** の順にクリックします。
 
 Dotfuscator CE を構成するには、「[Using Dotfuscator Community Edition with Xamarin](https://www.preemptive.com/obfuscating-xamarin-with-dotfuscator)」(Xamarin での Dotfuscator Community Edition の使用) を参照してください。
 構成されると、Dotfuscator CE は、自動的に作成される各ビルドを保護します。

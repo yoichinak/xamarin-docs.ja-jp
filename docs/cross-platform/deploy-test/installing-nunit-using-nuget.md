@@ -6,12 +6,12 @@ ms.assetid: 7683F2B8-7FDF-48C4-8E7D-649D4D4E79F0
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: c43b3f3204cba890cb2fa9c4cfc33a23250e0550
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: b6b95f730b966ef5edaabbe7b0f333c2cacf5bc5
+ms.sourcegitcommit: 64d6da88bb6ba222ab2decd2fdc8e95d377438a6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112053"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58070840"
 ---
 # <a name="installing-nunit-264-using-nuget"></a>NuGet を使用する NUnit 2.6.4 のインストール
 
@@ -25,11 +25,11 @@ Visual Studio for Mac または Xamarin.UITest を使用してテストを作成
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-このガイドでは、Visual Studio 2015 で NuGet を使用して NUnit 3.0 を NUnit 2.6.4 にダウングレードする方法を説明します。
+このガイドでは、Visual Studio 2015 以降で NuGet を使用して NUnit 3.0 を NUnit 2.6.4 にダウングレードする方法を説明します。
 
 -----
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 このガイドでは、モバイル アプリ プロジェクトとテスト プロジェクトについて既存のソリューションがあることを前提とします。
 
@@ -62,7 +62,7 @@ Solution Pad で NUnit パッケージのバージョン番号を調べ、NUnit 
 
 ## <a name="installing-nunit-264-in-visual-studio"></a>Visual Studio での NUnit 2.6.4 のインストール
 
-このセクションでは、Visual Studio 2015 で _NuGet パッケージ マネージャー コンソール_を使用して、NUnit 3.0 をアンインストールし、NUnit 2.6.4 をインストールする方法に焦点を当てています。
+このセクションでは、Visual Studio 2015 以降で _NuGet パッケージ マネージャー コンソール_を使用して、NUnit 3.0 をアンインストールし、NUnit 2.6.4 をインストールする方法に焦点を当てています。
 
 
 1. **NuGet パッケージ マネージャー コンソールを起動する** - **[ツール]、[NuGet パッケージ マネージャー]、[パッケージ マネージャー コンソール]** の順に選択します。
@@ -105,7 +105,7 @@ NUnit 3.0 以上が表示された場合は、NUnit 2.6.4 にダウングレー�
     
 ## <a name="summary"></a>まとめ
 
-このガイドでは、Visual Studio 2015 でパッケージ マネージャー コンソールを使用して、NUnit 3.0 を NUnit 2.6.4 にダウングレードする方法を説明しました。
+このガイドでは、Visual Studio 2015 以降でパッケージ マネージャー コンソールを使用して、NUnit 3.0 を NUnit 2.6.4 にダウングレードする方法を説明しました。
 
 -----
 
