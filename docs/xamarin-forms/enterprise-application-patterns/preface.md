@@ -29,11 +29,11 @@ ms.locfileid: "35242369"
 
 このガイドはコンテナー化されたマイクロサービスを開発・展開することにフォーカスした[.NET Microservices: コンテナー化された .NET アプリケーションのアーキテクチャ](https://aka.ms/microservicesebook)を補足するものです。その他の関連ドキュメントとして[ASP.NET Core と Microsoft Azure を使用したモダン Web アプリケーションの設計と開発](http://aka.ms/WebAppEbook)、 [Microsoft プラットフォームとツールを使用したコンテナー化された Docker アプリケーションのライフサイクル](http://aka.ms/dockerlifecycleebook)、および[モバイル アプリ開発用の Microsoft プラットフォームとツール](http://aka.ms/MobAppDev/StndPDF)があります。
 
-## <a name="who-should-use-this-guide"></a>このガイドを使用する必要があります。
+## <a name="who-should-use-this-guide"></a>対象読者
 
-このガイドの対象ユーザーは、開発者およびように設計および Xamarin.Forms を使用してエンタープライズのクロスプラット フォーム アプリを実装する方法を説明する設計者では主にです。
+このガイドの主な対象読者は、Xamarin.Forms を使ったクロスプラットフォーム エンタープライズ アプリケーションの設計と実装方法について学びたいと思っている開発者とアーキテクトです。
 
-セカンダリの対象ユーザーは、Xamarin.Forms を使用してクロスプラット フォームのエンタープライズ アプリの開発を選択する方法を決める前に、アーキテクチャとテクノロジの概要を受信する技術の意思決定者です。
+次の対象読者は、Xamarin.Forms を使用したクロスプラットフォーム エンタープライズ アプリケーション開発を開発するにあたってアプローチを選択する前に、設計と技術の概要を知りたい技術面での意思決定者です。
 
 ## <a name="how-to-use-this-guide"></a>このガイドを使用する方法
 
