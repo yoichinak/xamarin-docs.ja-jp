@@ -1,6 +1,6 @@
 ---
-title: エンタープライズ アプリの開発に「はじめに」
-description: この章では、Xamarin.Forms を使用してエンタープライズ アプリケーションのパターンに語句を提供します。
+title: エンタープライズアプリケーションの開発にあたって
+description: この章では、Xamarin.Forms を使用したエンタープライズアプリケーション開発にあたっての前提事項について説明します。
 ms.prod: xamarin
 ms.assetid: fbf32a44-1d33-4e16-a904-dc7ee5991e7c
 ms.technology: xamarin-forms
@@ -14,13 +14,14 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 06/08/2018
 ms.locfileid: "35242369"
 ---
-# <a name="preface-to-enterprise-app-development"></a>エンタープライズ アプリの開発に「はじめに」
+# <a name="preface-to-enterprise-app-development"></a>エンタープライズアプリケーションの開発にあたって
 
-この電子では、Xamarin.Forms を使用してクロスプラット フォームのエンタープライズ アプリの構築についてを説明します。 Xamarin.Forms は iOS、Android、およびユニバーサル Windows プラットフォーム (UWP) を含む、プラットフォームで共有できるインターフェイス レイアウトにネイティブ ユーザーを簡単に作成するための開発者ができるクロスプラット フォームの UI ツールキットです。 従業員 (B2E)、企業間取引 (B2B)、およびすべてのターゲット プラットフォーム間でコードを共有する機能を提供して、総保有コスト (tco) の削減に役立ちますコンシューマー (間 B2C) アプリにビジネスの包括的なソリューションを提供します。
+この電子書籍では、Xamarin.Forms を使用してクロス プラットフォームのエンタープライズアプリケーションを構築するためのガイダンスについて説明します。Xamarin.Forms は容易に iOS、Android、およびユニバーサル Windows プラットフォーム（UWP）のネイティブなユーザーインターフェースレイアウトをプラットフォーム間で共有して開発できるクロスプラットフォーム UI ツールキットです。この電子書籍では、従業員向け（B2E）、対企業向け（B2B）、およびコンシューマー向け（B2C）アプリの全てに対して適用可能な総保有コスト（TCO）削減が出来るクロスプラットフォーム間でのソースコード共有の包括的なソリューションを提供します。
 
-このガイドでは、適応性、保守、およびテストが容易な Xamarin.Forms のエンタープライズ アプリケーションを開発するためのアーキテクチャに関するガイダンスを提供します。 疎結合を維持しながら MVVM、依存関係の挿入、ナビゲーション、検証、および構成の管理を実装する方法についてガイダンスを示します。 さらもガイダンスにある認証と IdentityServer、コンテナー化 microservices、および単体テストからのデータ アクセスの承認を実行します。
 
-番組ガイドが付属してソース コードを[eShopOnContainers モバイル アプリ](https://github.com/dotnet-architecture/eShopOnContainers/tree/master/src/Mobile)、およびソース コードの[eShopOnContainers 参照アプリ](https://github.com/dotnet-architecture/eShopOnContainers)です。 EShopOnContainers モバイル アプリは、開発、eShopOnContainers アプリの参照と呼ばれるコンテナー化 microservices の系列に接続する、Xamarin.Forms を使用してクロスプラット フォームのエンタープライズ アプリです。 ただし、eShopOnContainers モバイル アプリを構成して、コンテナー化 microservices の展開を避けたいと管理者向けのモック サービスからデータを使用できます。
+このガイドでは、適応性、保守、およびテストが容易な Xamarin.Forms のエンタープライズ アプリケーションを開発するためのアーキテクチャに関するガイダンスを提供します。 疎結合を維持しながら MVVM、依存性の注入、ナビゲーション、検証、および構成の管理を実装する方法についてガイダンスを示します。 さらに、このガイダンスでは認証サーバーを使用した認証と認可、コンテナー化されたマイクロサービスへのデータアクセス、そしてユニットテストについても記載しています。
+
+このガイドには [eShopOnContainers モバイル アプリ](https://github.com/dotnet-architecture/eShopOnContainers/tree/master/src/Mobile)と、[eShopOnContainers リファレンスアプリケーション](https://github.com/dotnet-architecture/eShopOnContainers)のソースコードもあります。eShopOnContainers モバイル アプリは一連の eShopOnContainers リファレンスアプリケーションとして知られるコンテナ化されたマイクロサービスと接続して動作する、Xamarin.Forms で開発されたクロスプラットフォーム エンタープライズ アプリケーションですが、コンテナー化されたマイクロサービスの展開をしなくても、モックサービスからデータを取得するように構成できます。
 
 ## <a name="whats-left-out-of-this-guides-scope"></a>このガイドのスコープから除外されます新機能
 
