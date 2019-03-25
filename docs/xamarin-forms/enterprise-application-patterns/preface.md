@@ -21,13 +21,13 @@ ms.locfileid: "35242369"
 
 このガイドでは、適応性、保守、およびテストが容易な Xamarin.Forms のエンタープライズ アプリケーションを開発するためのアーキテクチャに関するガイダンスを提供します。 疎結合を維持しながら MVVM、依存性の注入、ナビゲーション、検証、および構成の管理を実装する方法についてガイダンスを示します。 さらに、このガイダンスでは認証サーバーを使用した認証と認可、コンテナー化されたマイクロサービスへのデータアクセス、そしてユニットテストについても記載しています。
 
-このガイドには [eShopOnContainers モバイル アプリ](https://github.com/dotnet-architecture/eShopOnContainers/tree/master/src/Mobile)と、[eShopOnContainers リファレンスアプリケーション](https://github.com/dotnet-architecture/eShopOnContainers)のソースコードもあります。eShopOnContainers モバイル アプリは一連の eShopOnContainers リファレンスアプリケーションとして知られるコンテナ化されたマイクロサービスと接続して動作する、Xamarin.Forms で開発されたクロスプラットフォーム エンタープライズ アプリケーションですが、コンテナー化されたマイクロサービスの展開をしなくても、モックサービスからデータを取得するように構成できます。
+このガイドには [eShopOnContainers モバイル アプリ](https://github.com/dotnet-architecture/eShopOnContainers/tree/master/src/Mobile)と、[eShopOnContainers リファレンスアプリケーション](https://github.com/dotnet-architecture/eShopOnContainers)のソースコードもあります。eShopOnContainers モバイル アプリは一連の eShopOnContainers リファレンスアプリケーションとして知られるコンテナ化されたマイクロサービスと接続して動作する、Xamarin.Forms で開発されたクロスプラットフォーム エンタープライズ アプリケーションですが、コンテナー化されたマイクロサービスの展開をしなくても、モックサービスからデータを取得するようにも構成できます。
 
-## <a name="whats-left-out-of-this-guides-scope"></a>このガイドのスコープから除外されます新機能
+## <a name="whats-left-out-of-this-guides-scope"></a>このガイドで触れない事項について
 
-このガイドの目的は、Xamarin.Forms に慣れている読者です。 Xamarin.Forms の詳細な概要については、次を参照してください。、 [Xamarin.Forms ドキュメント](~/xamarin-forms/index.yml)、および[Xamarin.Forms を使用したモバイル アプリを作成する](https://aka.ms/xamebook)です。
+このガイドは、既に Xamarin.Forms について熟知している読者を対象としています。 Xamarin.Forms の詳細な概要については [Xamarin.Forms ドキュメント](~/xamarin-forms/index.yml)、および[Xamarin.Forms を使用したモバイル アプリを作成する](https://aka.ms/xamebook)を参照してください。
 
-このガイドに補完するものです[.NET Microservices: .NET アプリケーションのコンテナーをアーキテクチャ](https://aka.ms/microservicesebook)、開発と配置のコンテナー化 microservices に焦点を合わせたです。 読み取りの価値があるその他のガイドが含まれます[を設計および ASP.NET Core と Microsoft Azure で最新の Web アプリケーションの開発](http://aka.ms/WebAppEbook)、 [Microsoft プラットフォームとツールがDockerアプリケーションのライフサイクルのコンテナー](http://aka.ms/dockerlifecycleebook)、および[Microsoft プラットフォームとモバイル アプリ開発用ツール](http://aka.ms/MobAppDev/StndPDF)です。
+このガイドはコンテナー化されたマイクロサービスを開発・展開することにフォーカスした[.NET Microservices: コンテナー化された .NET アプリケーションのアーキテクチャ](https://aka.ms/microservicesebook)を補足するものです。その他の関連ドキュメントとして[ASP.NET Core と Microsoft Azure を使用したモダン Web アプリケーションの設計と開発](http://aka.ms/WebAppEbook)、 [Microsoft プラットフォームとツールを使用したコンテナー化された Docker アプリケーションのライフサイクル](http://aka.ms/dockerlifecycleebook)、および[モバイル アプリ開発用の Microsoft プラットフォームとツール](http://aka.ms/MobAppDev/StndPDF)があります。
 
 ## <a name="who-should-use-this-guide"></a>このガイドを使用する必要があります。
 
