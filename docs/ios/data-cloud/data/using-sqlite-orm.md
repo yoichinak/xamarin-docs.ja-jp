@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/18/2018
-ms.openlocfilehash: e78c224bae3a0e2c2dfcfded30a4bf2c4794e255
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 370867b52ec09d0c3ad0f801b6a75c356d806734
+ms.sourcegitcommit: 086edd9c44dfc0e77412e1ed5eda7318bbd1ce7c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112014"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58477396"
 ---
 # <a name="using-sqlitenet-with-xamarinios"></a>Xamarin.iOS で SQLite.NET の使用
 
@@ -27,7 +27,7 @@ SQLite.NET ライブラリを Xamarin アプリに含めるには、プロジェ
 
 - **パッケージ名:** sqlite-net-pcl
 - **作成者:** Frank A. Krueger
-- **Id:** sqlite-net-pcl
+- **ID:** sqlite-net-pcl
 - **Url:** [nuget.org/packages/sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
 
 [![SQLite.NET NuGet パッケージ](using-sqlite-orm-images/image1a-sml.png "SQLite.NET NuGet パッケージ")](using-sqlite-orm-images/image1a.png#lightbox)
@@ -196,11 +196,13 @@ var rowcount = db.Delete<Stock>(someStock.Id); // Id is the primary key
 
 ## <a name="using-sqlitenet-with-multiple-threads"></a>複数のスレッドで SQLite.NET の使用
 
-SQLite は、次の 3 つの異なるスレッド処理モードをサポートしています:*シングル スレッド*、*マルチ スレッド*、および*シリアル化*します。 制限を適用せずに複数のスレッドからデータベースにアクセスする場合は、SQLite を使用するを構成することができます、**シリアル化**モードのスレッドを処理します。 アプリケーションの初期段階でこのモードを設定することが重要 (などの先頭に、`OnCreate`メソッド)。
+SQLite は、次の 3 つの異なるスレッド処理モードをサポートしています。*シングル スレッド*、*マルチ スレッド*、および*シリアル化*します。 制限を適用せずに複数のスレッドからデータベースにアクセスする場合は、SQLite を使用するを構成することができます、**シリアル化**モードのスレッドを処理します。 アプリケーションの初期段階でこのモードを設定することが重要 (などの先頭に、`OnCreate`メソッド)。
 
-スレッド処理モードを変更するには、呼び出す`SqliteConnection.SetConfig`します。 たとえば、SQLite for の構成のコード行**シリアル化**モード。
+スレッド処理モードを変更するには、呼び出す`SqliteConnection.SetConfig`では、`Mono.Data.Sqlite`名前空間。 たとえば、SQLite for の構成のコード行**シリアル化**モード。
 
 ```csharp
+using Mono.Data.Sqlite;
+...
 SqliteConnection.SetConfig(SQLiteConfig.Serialized);
 ```
 
