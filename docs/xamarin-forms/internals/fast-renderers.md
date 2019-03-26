@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2017
-ms.openlocfilehash: 42889e3805391e9e586cda61d26103398ba16269
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.openlocfilehash: 9a40644df6abcbbcc327b1b0c2dcb26c2dbc4db5
+ms.sourcegitcommit: 247a6d00a95fd7f4cf918d923e5f357c8db56761
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52898525"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58420211"
 ---
 # <a name="xamarinforms-fast-renderers"></a>Xamarin.Forms の高速レンダラー
 
 ![[プレビュー]](~/media/shared/preview.png)
 
-_この記事では、高速レンダラーは、結果として得られるネイティブ コントロール階層をフラット化して、増加し、android、Xamarin.Forms コントロールのレンダリング コストを削減について説明します。_
+_この記事では、結果として得られるネイティブ コントロール階層をフラット化して、増加し、android、Xamarin.Forms コントロールのレンダリング コストを削減する高速レンダラー (Xamarin.Forms 2.4 で追加) について説明します。_
 
 これまでは、Android で元のコントロールのレンダラーのほとんどは、2 つのビューから構成されます。
 
