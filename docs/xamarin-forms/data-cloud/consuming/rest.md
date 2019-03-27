@@ -6,13 +6,13 @@ ms.assetid: B540910C-9C51-416A-AAB9-057BF76489C3
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/22/2017
-ms.openlocfilehash: 840dee3213bc117cff82fe52b094dc71f343dcd1
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.date: 01/22/2018
+ms.openlocfilehash: 1b25a4a1b65a1473bd122ae9cf7c1a6a72ff9ccc
+ms.sourcegitcommit: 086edd9c44dfc0e77412e1ed5eda7318bbd1ce7c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57668193"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58477383"
 ---
 # <a name="consuming-a-restful-web-service"></a>RESTful Web サービスの使用
 
@@ -38,7 +38,7 @@ Web サービスの REST に準拠している Api では、RESTful Api と呼�
 
 REST の簡潔さが、モバイル アプリケーションの web サービスにアクセスする主な方法を行うことができました。
 
-REST サービスの設定方法については、サンプル アプリケーションに付属する readme ファイルで確認できます。 ただし、サンプル アプリケーションを実行すると、次のスクリーン ショットに示すように、データに読み取り専用アクセスを提供する Xamarin でホストされている REST サービスに接続には。
+サンプル アプリケーションを実行すると、次のスクリーン ショットに示すようにローカルにホストされた REST サービスに接続されます。
 
 ![](rest-images/portal.png "サンプル アプリケーション")
 
@@ -78,10 +78,6 @@ config.Routes.MapHttpRoute(
 
 REST サービスでは、基本認証を使用します。 詳細については、次を参照してください。 [RESTful web サービスを認証](~/xamarin-forms/data-cloud/authentication/rest.md)します。 ASP.NET Web API ルーティングの詳細については、次を参照してください。 [ASP.NET Web API におけるルーティング](http://www.asp.net/web-api/overview/web-api-routing-and-actions/routing-in-aspnet-web-api)、ASP.NET web サイト。 ASP.NET Core を使用して REST サービスの構築についての詳細については、次を参照してください。[ネイティブ モバイル アプリケーションのバックエンド サービスを作成する](/aspnet/core/mobile/native-mobile-backend/)します。
 
-> [!NOTE]
-> サンプル アプリケーションでは、web サービスへの読み取り専用アクセスを提供する REST の Xamarin でホストされるサービスを消費します。 そのため、作成、更新、およびデータを削除する操作では、アプリケーションで使用されるデータは変更されません。 ただし、REST サービスのホスト可能なバージョンが記載されて、 **TodoRESTService**フォルダーは付随する[サンプル コード](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoREST/)します。
-> 完全な許可をホストする場合、REST サービスを自分で、作成、更新、読み取り、およびデータへのアクセスを削除します。
-
 `HttpClient`クラスは HTTP 経由で要求を送受信するために使用します。 HTTP 要求を送信する機能を提供し、リソースを識別する URI から HTTP 応答を受信します。 各要求は、非同期操作として送信されます。 非同期操作の詳細については、次を参照してください。[非同期サポートの概要](~/cross-platform/platform/async.md)します。
 
 `HttpResponseMessage`クラスは、HTTP 要求が行われた後に、web サービスから受信した HTTP 応答メッセージを表します。 状態コード、ヘッダー、および任意の本文を含む、応答に関する情報が含まれています。 `HttpContent`クラスなどを表します HTTP 本体およびコンテンツ ヘッダーは、`Content-Type`と`Content-Encoding`します。 いずれかを使用して、コンテンツを読み取ることができます、`ReadAs`メソッドなど`ReadAsStringAsync`と`ReadAsByteArrayAsync`データの形式に応じて、します。
@@ -93,19 +89,16 @@ REST サービスでは、基本認証を使用します。 詳細について�
 ```csharp
 public class RestService : IRestService
 {
-  HttpClient client;
+  HttpClient _client;
   ...
 
   public RestService ()
   {
-    client = new HttpClient ();
-    client.MaxResponseContentBufferSize = 256000;
+    _client = new HttpClient ();
   }
   ...
 }
 ```
-
-`HttpClient.MaxResponseContentBufferSize`プロパティが使用して HTTP 応答メッセージの内容を読み取るときにバッファーに書き込むバイトの最大数を指定します。 このプロパティの既定のサイズは、整数の最大サイズです。 したがって、プロパティが設定値を小さくする、予防策として、アプリケーションが web サービスからの応答として受け入れるデータの量を制限します。
 
 ### <a name="retrieving-data"></a>データの取得
 
@@ -115,11 +108,11 @@ public class RestService : IRestService
 public async Task<List<TodoItem>> RefreshDataAsync ()
 {
   ...
-  // RestUrl = https://developer.xamarin.com:8081/api/todoitems/
-  var uri = new Uri (string.Format (Constants.RestUrl, string.Empty));
+  var uri = new Uri (string.Format (Constants.TodoItemsUrl, string.Empty));
   ...
-  var response = await client.GetAsync (uri);
-  if (response.IsSuccessStatusCode) {
+  var response = await _client.GetAsync (uri);
+  if (response.IsSuccessStatusCode)
+  {
       var content = await response.Content.ReadAsStringAsync ();
       Items = JsonConvert.DeserializeObject <List<TodoItem>> (content);
   }
@@ -138,21 +131,22 @@ HTTP 操作が成功した場合、応答のコンテンツを読み取り表示
 ```csharp
 public async Task SaveTodoItemAsync (TodoItem item, bool isNewItem = false)
 {
-  // RestUrl = https://developer.xamarin.com:8081/api/todoitems/
-  var uri = new Uri (string.Format (Constants.RestUrl, string.Empty));
+  var uri = new Uri (string.Format (Constants.TodoItemsUrl, string.Empty));
 
   ...
   var json = JsonConvert.SerializeObject (item);
   var content = new StringContent (json, Encoding.UTF8, "application/json");
 
   HttpResponseMessage response = null;
-  if (isNewItem) {
-    response = await client.PostAsync (uri, content);
+  if (isNewItem)
+  {
+    response = await _client.PostAsync (uri, content);
   }
   ...
 
-  if (response.IsSuccessStatusCode) {
-    Debug.WriteLine (@"                TodoItem successfully saved.");
+  if (response.IsSuccessStatusCode)
+  {
+    Debug.WriteLine (@"\tTodoItem successfully saved.");
 
   }
   ...
@@ -175,7 +169,7 @@ REST サービスでの HTTP ステータス コードの送信、`HttpResponseM
 public async Task SaveTodoItemAsync (TodoItem item, bool isNewItem = false)
 {
   ...
-  response = await client.PutAsync (uri, content);
+  response = await _client.PutAsync (uri, content);
   ...
 }
 ```
@@ -194,12 +188,12 @@ REST サービスでの HTTP ステータス コードの送信、`HttpResponseM
 ```csharp
 public async Task DeleteTodoItemAsync (string id)
 {
-  // RestUrl = https://developer.xamarin.com:8081/api/todoitems/{0}
-  var uri = new Uri (string.Format (Constants.RestUrl, id));
+  var uri = new Uri (string.Format (Constants.TodoItemsUrl, id));
   ...
-  var response = await client.DeleteAsync (uri);
-  if (response.IsSuccessStatusCode) {
-    Debug.WriteLine (@"                TodoItem successfully deleted.");
+  var response = await _client.DeleteAsync (uri);
+  if (response.IsSuccessStatusCode)
+  {
+    Debug.WriteLine (@"\tTodoItem successfully deleted.");
   }
   ...
 }
@@ -210,11 +204,6 @@ REST サービスでの HTTP ステータス コードの送信、`HttpResponseM
 - **204 (NO CONTENT)** – 要求が正常に処理され、応答は意図的に空白です。
 - **400 (BAD REQUEST)** – 要求がサーバーで認識されません。
 - **404 (NOT FOUND)** : 要求されたリソースがサーバー上に存在しません。
-
-## <a name="summary"></a>まとめ
-
-この記事では、Xamarin.Forms アプリケーションから rest ベースの web サービスを使用する方法を検証を使用して、`HttpClient`クラス。 REST の簡潔さが、モバイル アプリケーションの web サービスにアクセスする主な方法を行うことができました。
-
 
 ## <a name="related-links"></a>関連リンク
 
