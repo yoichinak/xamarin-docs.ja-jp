@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 30c507a1b78600ef1b9a96e37f88904daaf82987
-ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
+ms.openlocfilehash: 22b5fe703486f0ded3a5b91241e3fe5ce41bbc98
+ms.sourcegitcommit: a7170494e1975f0f1be547a45444752fd8e57819
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51528573"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58507098"
 ---
 # <a name="validation-in-enterprise-apps"></a>エンタープライズ アプリの検証
 
@@ -22,7 +22,7 @@ ms.locfileid: "51528573"
 
 [![](validation-images/validation.png "EShopOnContainers のモバイル アプリで検証クラス")](validation-images/validation-large.png#lightbox "eShopOnContainers のモバイル アプリで検証クラス")
 
-**図 6-1**: eShopOnContainers のモバイル アプリで検証クラス
+**図 6-1**:EShopOnContainers のモバイル アプリで検証クラス
 
 検証が必要なビュー モデルのプロパティが型`ValidatableObject<T>`、および各`ValidatableObject<T>`インスタンスに追加する検証規則にはその`Validations`プロパティ。 ビュー モデルから呼び出すことによって検証が呼び出される、`Validate`のメソッド、`ValidatableObject<T>`インスタンスで、検証を取得しますがルールし、それらに対して実行される、 `ValidatableObject<T>` `Value`プロパティ。 検証エラーが配置されます、`Errors`のプロパティ、`ValidatableObject<T>`インスタンス、および`IsValid`のプロパティ、`ValidatableObject<T>`インスタンスは、検証が成功したか失敗したかどうかを示すために更新されます。
 
@@ -248,7 +248,7 @@ EShopOnContainers のモバイル アプリを赤色の線で無効なデータ�
 </Style>
 ```
 
-このスタイル設定、`ApplyLineColor`と`LineColor`添付プロパティの`LineColorBehavior`の動作をアタッチ、 [ `Entry` ](xref:Xamarin.Forms.Entry)コントロール。 スタイルの詳細については、次を参照してください。[スタイル](~/xamarin-forms/user-interface/styles/index.md)します。
+このスタイル設定、`ApplyLineColor`と`LineColor`添付プロパティの`LineColorBehavior`の動作をアタッチ、 [ `Entry` ](xref:Xamarin.Forms.Entry)コントロール。 スタイルについて詳しくは、[スタイル](~/xamarin-forms/user-interface/styles/index.md)に関する記事をご覧ください。
 
 ときの値、`ApplyLineColor`添付プロパティは、セット、または、変更、`LineColorBehavior`添付の動作を実行、`OnApplyLineColorChanged`メソッドは、次のコード例に示されています。
 
@@ -296,7 +296,7 @@ public class EntryLineColorEffect : RoutingEffect
 }
 ```
 
-[ `RoutingEffect` ](xref:Xamarin.Forms.RoutingEffect)クラスは、プラットフォーム固有の内部の効果をラップするプラットフォームに依存しない効果を表します。 プラットフォーム固有の効果の型情報をコンパイル時のアクセスがないために、効果の削除プロセスが簡略化します。 `EntryLineColorEffect`解像度のグループ名、および各プラットフォームに固有のエフェクト クラスで指定されている一意の ID の連結で構成されるパラメーターを渡して基底クラスのコンス トラクターを呼び出します。
+[ `RoutingEffect` ](xref:Xamarin.Forms.RoutingEffect)クラスは、プラットフォーム固有の内部の効果をラップするプラットフォームに依存しない効果を表します。 これは、プラットフォーム固有の効果の型情報へのコンパイル時アクセスがないため、効果の削除プロセスを簡略化します。 `EntryLineColorEffect`解像度のグループ名、および各プラットフォームに固有のエフェクト クラスで指定されている一意の ID の連結で構成されるパラメーターを渡して基底クラスのコンス トラクターを呼び出します。
 
 次のコード例は、 `eShopOnContainers.EntryLineColorEffect` iOS 用の実装。
 
@@ -374,13 +374,13 @@ namespace eShopOnContainers.iOS.Effects
 }
 ```
 
-`OnAttached`メソッドは、Xamarin.Forms のネイティブ コントロールを取得[ `Entry` ](xref:Xamarin.Forms.Entry)制御、および線の色を呼び出すことによって更新、`UpdateLineColor`メソッド。 `OnElementPropertyChanged`上、上書きがバインド可能なプロパティの変更に応答、`Entry`場合は、線の色を更新することでコントロール、添付された`LineColor`プロパティの変更、または[ `Height` ](xref:Xamarin.Forms.VisualElement.Height) のプロパティ`Entry`変更します。 影響の詳細については、次を参照してください。[効果](~/xamarin-forms/app-fundamentals/effects/index.md)します。
+`OnAttached`メソッドは、Xamarin.Forms のネイティブ コントロールを取得[ `Entry` ](xref:Xamarin.Forms.Entry)制御、および線の色を呼び出すことによって更新、`UpdateLineColor`メソッド。 `OnElementPropertyChanged`上、上書きがバインド可能なプロパティの変更に応答、`Entry`場合は、線の色を更新することでコントロール、添付された`LineColor`プロパティの変更、または[ `Height` ](xref:Xamarin.Forms.VisualElement.Height) のプロパティ`Entry`変更します。 エフェクトの詳細については、[エフェクト](~/xamarin-forms/app-fundamentals/effects/index.md)に関するページを参照してください。
 
 有効なデータが入力された場合、 [ `Entry` ](xref:Xamarin.Forms.Entry)コントロール、検証エラーがないことを示すために、コントロールの下部に黒の線が適用されます。 図 6-3 は、この例を示します。
 
 ![](validation-images/validation-blackline.png "黒の線の検証エラーがないことを示します。")
 
-**図 6-3**: 黒の線の検証エラーがないことを示します。
+**図 6-3**:黒の線の検証エラーがないことを示します。
 
 [ `Entry` ](xref:Xamarin.Forms.Entry)コントロールもあります、 [ `DataTrigger` ](xref:Xamarin.Forms.DataTrigger)に追加されたその[ `Triggers` ](xref:Xamarin.Forms.VisualElement.Triggers)コレクション。 次のコード例は、 `DataTrigger`:
 
@@ -403,7 +403,7 @@ namespace eShopOnContainers.iOS.Effects
 
 ![](validation-images/validation-redline.png "検証エラーを示す赤色の線")
 
-**図 6-4**: 検証エラーを示す赤色の線
+**図 6-4**:検証エラーを示す赤色の線
 
 内の行、 [ `Entry` ](xref:Xamarin.Forms.Entry)入力されたデータが有効な間に、コントロールが赤いまま、それ以外の場合、入力したデータが有効であることを示す黒に変更されます。
 
@@ -414,7 +414,7 @@ namespace eShopOnContainers.iOS.Effects
 UI では、データの検証に失敗しました、各コントロールの下にあるラベル コントロールで検証エラー メッセージが表示されます。 次のコード例は、 [ `Label` ](xref:Xamarin.Forms.Label)ユーザーが有効なユーザー名を入力していない場合、検証エラー メッセージを表示します。
 
 ```xaml
-<Label Text="{Binding UserName.Errors, Converter={StaticResource FirstValidationErrorConverter}"  
+<Label Text="{Binding UserName.Errors, Converter={StaticResource FirstValidationErrorConverter}}"  
        Style="{StaticResource ValidationErrorLabelStyle}" />
 ```
 

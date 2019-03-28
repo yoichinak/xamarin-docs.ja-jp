@@ -6,12 +6,12 @@ ms.assetid: 1E6825DF-1254-4FCB-B94D-ADD33D1B5309
 author: lobrien
 ms.author: laobri
 ms.date: 03/23/2017
-ms.openlocfilehash: 7f66c97ce4b7880d32dfd87aec0691a26a08cfd2
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 2e6a75fa3c4c63e8dea402c6761f8ef753908540
+ms.sourcegitcommit: a7170494e1975f0f1be547a45444752fd8e57819
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669428"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58507202"
 ---
 # <a name="using-jenkins-with-xamarin"></a>Xamarin における Jenkins の使用
 
@@ -230,7 +230,7 @@ Jenkins が行う最初のタスクは、ソース コード管理システム�
 
 #### <a name="using-git-for-source-code-control"></a>ソース コード管理に Git を使用する
 
-ソース コード管理用に TFS を使用している場合は、このセクションは[スキップ](#Using-TFS-for-Source-Code-Management)して、TFS を使用する次のセクションに進んでください。
+ソース コード管理用に TFS を使用している場合は、このセクションは[スキップ](#using-tfs-for-source-code-management)して、TFS を使用する次のセクションに進んでください。
 
 Jenkins は、標準で Git をサポートします。追加のプラグインは必要ありません。 Git を使用するには、**Git** ラジオボタンをクリックして、 次のスクリーンショットで示すように Git リポジトリの URL を入力します。
 

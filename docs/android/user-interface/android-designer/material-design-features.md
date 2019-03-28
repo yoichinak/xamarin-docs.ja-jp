@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/25/2018
-ms.openlocfilehash: 5e6d7b4bdfdf7ea48d26537cb41c763656b050e0
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 59c61cc637a435f8107256ddcd6bfacfb0466867
+ms.sourcegitcommit: a7170494e1975f0f1be547a45444752fd8e57819
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669654"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58507020"
 ---
 # <a name="xamarinandroid-designer-material-design-features"></a>Xamarin.Android デザイナー マテリアル デザイン機能
 
@@ -145,9 +145,9 @@ Hue を選択すると、プロパティの色が選択されている hue に�
 
 **バック グラウンド**デザイナーでの色を新しい色の選択を変更したが、この変更が保存されていません。 この時点で、次のいずれかを行うことができます。
 
--   クリックして**変更の破棄**を新しい色の選択 (または選択) を破棄し、テーマを元の状態を元に戻します。 
+-   クリックして**変更の破棄**を新しい色の選択 (または選択) を破棄し、テーマを元の状態を元に戻します。
 
--   キーを押して<kbd>CTRL + S</kbd>に変更を保存する、現在のテーマ。 
+-   キーを押して<kbd>CTRL + S</kbd>に変更を保存する、現在のテーマ。
 
 次の例では、 <kbd>CTRL + S</kbd>に変更が保存されたようにが押された**AppTheme**:
 
@@ -300,7 +300,7 @@ Hue を選択すると、プロパティの色が選択されている hue に�
 
 ### <a name="material-palette"></a>素材パレット
 
-**素材パレット**タブが表示されます、**マテリアル デザインのカラー パレット**説明[以前](#material_palette)します。 このパレットから色の値を選択すると、マテリアル デザイン ガイドラインに矛盾があるように、色の選択が制限されます。
+**素材パレット**タブが表示されます、**マテリアル デザインのカラー パレット**説明[以前](#material-design-color-palette)します。 このパレットから色の値を選択すると、マテリアル デザイン ガイドラインに矛盾があるように、色の選択が制限されます。
 
 [![素材パレット](material-design-features-images/xs/16-material-palette-sml.png)](material-design-features-images/xs/16-material-palette.png#lightbox)
 
@@ -316,9 +316,9 @@ Hue を選択すると、プロパティの色が選択されている hue に�
 
 デザイナーでの色の変更を行ったが、この変更が保存されていません。 この時点で、次のいずれかを行うことができます。
 
--   クリックして**変更の破棄**を新しい色の選択 (または選択) を破棄し、テーマを元の状態を元に戻します。 
+-   クリックして**変更の破棄**を新しい色の選択 (または選択) を破棄し、テーマを元の状態を元に戻します。
 
--   キーを押して **&#8984; + S**という名前の新しいテーマに変更を保存する**カスタム**します。 
+-   キーを押して **&#8984; + S**という名前の新しいテーマに変更を保存する**カスタム**します。
 
 
 ## <a name="summary"></a>まとめ

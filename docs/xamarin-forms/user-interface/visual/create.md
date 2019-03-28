@@ -1,18 +1,18 @@
 ---
 title: Xamarin.Forms Visual レンダラーを作成します。
-description: Xamarin.Forms のビジュアルでは、Xamarin.Forms のビューのサブクラス化することがなく選択的に、VisualElement オブジェクトに適用するレンダラーを使用できます。
+description: Xamarin.Forms のビューのサブクラス化することがなく選択的に、VisualElement オブジェクトに適用する Xamarin.Forms のビジュアルを作成します。
 ms.prod: xamarin
 ms.assetid: 80BF9C72-AC28-4AAF-9DDD-B60CBDD1CD59
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/12/2019
-ms.openlocfilehash: 1bd56d09932c97508dd0a05fbc0eb2bad3af3f0e
-ms.sourcegitcommit: 97dca3face7c4ad5555dfaca88f5b45a70ca556d
+ms.openlocfilehash: a11c2045fa6119d0689834c35794bc8913c80bd6
+ms.sourcegitcommit: a7170494e1975f0f1be547a45444752fd8e57819
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57972586"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58506968"
 ---
 # <a name="create-a-xamarinforms-visual-renderer"></a>Xamarin.Forms Visual レンダラーを作成します。
 
@@ -25,7 +25,7 @@ Xamarin.Forms Visual により作成され、選択的に適用するレンダ�
 
 作成および Xamarin.Forms Visual レンダラーを使用するためのプロセスは次のとおりです。
 
-1. 必要なビューのプラットフォームのレンダラーを作成します。 詳細については、次を参照してください。[レンダラーを作成する](#create-platfomr-renderers)します。
+1. 必要なビューのプラットフォームのレンダラーを作成します。 詳細については、次を参照してください。[レンダラーを作成する](#create-platform-renderers)します。
 1. 派生した型を作成する`IVisual`します。 詳細については、次を参照してください。 [IVisual 型を作成](#create-an-ivisual-type)です。
 1. 登録、`IVisual`型の一部として、`ExportRendererAttribute`レンダラーを装飾します。 詳細については、次を参照してください。 [IVisual の種類を登録](#register-the-ivisual-type)します。
 1. 設定して、ビジュアルのレンダラーを使用、 [ `Visual` ](xref:Xamarin.Forms.VisualElement.Visual)に対してビューのプロパティ、`IVisual`名。 詳細については、次を参照してください。 [Visual レンダラーを消費する](#consume-the-visual-renderer)します。
