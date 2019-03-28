@@ -6,12 +6,12 @@ ms.assetid: D9BEAD83-1D9E-41C3-AD4B-3D87E13674A0
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 7d07733ebf62e6e12ccee05f9b72eaf1a74afad2
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.openlocfilehash: 5e5c4f1545d39befde6574338ec4c1ca4037ad8b
+ms.sourcegitcommit: a7170494e1975f0f1be547a45444752fd8e57819
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "34784040"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58507163"
 ---
 # <a name="using-urhosharp-to-build-a-3d-game"></a>UrhoSharp を使用して 3D ゲームをビルドするには
 
@@ -23,7 +23,7 @@ ms.locfileid: "34784040"
 
 シーンのモデルは、コンポーネント ベースのシーン グラフとして記述できます。 シーンは、シーン全体を表すもルート ノードからシーンのノードの階層で構成されます。 各[ `Node` ](https://developer.xamarin.com/api/type/Urho.Node/)は 3D 変換 (位置、回転、およびスケール)、名前、ID、およびコンポーネントの任意の数。  コンポーネントをノードを実現する、視覚的表現の追加を行えるように ([`StaticModel`](https://developer.xamarin.com/api/type/Urho.StaticModel))、サウンドを出力することができます ([`SoundSource`](https://developer.xamarin.com/api/type/Urho.Audio.SoundSource))、これに衝突境界を提供できます。
 
-セットアップのノードを使用して、シーンを作成することができます、 [Urho エディター](#UrhoEditor)、または c# コードから操作を実行できます。  このドキュメントで紹介設定、コードを使用して作業を画面に表示させるために必要な要素について説明するよう
+セットアップのノードを使用して、シーンを作成することができます、 [Urho エディター](#urhoeditor)、または c# コードから操作を実行できます。  このドキュメントで紹介設定、コードを使用して作業を画面に表示させるために必要な要素について説明するよう
 
 セットアップに必要なシーンを設定するだけでなく、 [ `Camera` ](https://developer.xamarin.com/api/type/Urho.Camera/)、これは、どのようにして決まります内容は、ユーザーに表示を取得します。
 
@@ -217,7 +217,7 @@ await cloud.RunActionAsync (
 [ `Component` ](https://developer.xamarin.com/api/type/Urho.Component/)サブクラスでは、コンポーネントの動作を準備し、そのドライブの機能を非同期メソッドを導入する必要があります。
 C# を使用してこのメソッドを呼び出すよう、 `await` 、プログラムの別の部分からキーワードか、`Application.Start`メソッドや、アプリケーションのユーザーまたはストーリー ポイントへの応答。
 
-例えば:
+例:
 
 ```csharp
 class Robot : Component {
