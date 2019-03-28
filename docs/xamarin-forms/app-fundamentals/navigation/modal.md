@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 32d0775baa75b70ebc118457945efc0f6c0acec2
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: c84995e210d61e735d12a089f40bf9afa720acb5
+ms.sourcegitcommit: 5d4e6677224971e2bc0268f405d192d0358c74b8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53057062"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58329287"
 ---
 # <a name="xamarinforms-modal-pages"></a>Xamarin.Forms モーダル ページ
 
@@ -39,9 +39,9 @@ _Xamarin.Forms はモーダル ページをサポートしています。モー�
 
 ## <a name="performing-navigation"></a>ナビゲーションを実行する
 
-モーダル ナビゲーション メソッドは、任意の [`Page`](xref:Xamarin.Forms.Page) 派生型の [`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) プロパティによって公開されます。 これらのメソッドは、モーダル スタックに[モーダル ページをプッシュし](#Pushing_Pages_to_the_Modal_Stack)、モーダル スタックから[モーダル ページをポップする](#Popping_Pages_from_the_Modal_Stack)機能を提供します。
+モーダル ナビゲーション メソッドは、任意の [`Page`](xref:Xamarin.Forms.Page) 派生型の [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) プロパティによって公開されます。 これらのメソッドは、モーダル スタックに[モーダル ページをプッシュし](#Pushing_Pages_to_the_Modal_Stack)、モーダル スタックから[モーダル ページをポップする](#Popping_Pages_from_the_Modal_Stack)機能を提供します。
 
-[`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) プロパティでは、モーダル スタック内のモーダル ページを取得する [`ModalStack`](xref:Xamarin.Forms.INavigation.ModalStack) プロパティも公開されています。 ただし、モーダル スタックの操作を実行したり、モーダル ナビゲーションで、ルート ページにポップしたりする概念はありません。 これは、これらの操作が基になるプラットフォームで一般にサポートされていないためです。
+[`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) プロパティでは、モーダル スタック内のモーダル ページを取得する [`ModalStack`](xref:Xamarin.Forms.INavigation.ModalStack) プロパティも公開されています。 ただし、モーダル スタックの操作を実行したり、モーダル ナビゲーションで、ルート ページにポップしたりする概念はありません。 これは、これらの操作が基になるプラットフォームで一般にサポートされていないためです。
 
 > [!NOTE]
 > [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) インスタンスは、モーダル ページ ナビゲーションの実行には不要です。
@@ -50,7 +50,7 @@ _Xamarin.Forms はモーダル ページをサポートしています。モー�
 
 ### <a name="pushing-pages-to-the-modal-stack"></a>モーダル スタックにページをプッシュする
 
-`ModalPage` にナビゲートするには、次のコード例で示すように、現在のページの [`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) プロパティで [`PushModalAsync`](xref:Xamarin.Forms.INavigation.PushModalAsync*) メソッドを起動する必要があります。
+`ModalPage` にナビゲートするには、次のコード例で示すように、現在のページの [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) プロパティで [`PushModalAsync`](xref:Xamarin.Forms.INavigation.PushModalAsync*) メソッドを起動する必要があります。
 
 ```csharp
 async void OnItemSelected (object sender, SelectedItemChangedEventArgs e)
@@ -107,7 +107,7 @@ Android では、デバイスの標準の *[戻る]* ボタンを押して、い
 
 ### <a name="animating-page-transitions"></a>ページ遷移をアニメーション化する
 
-各ページの [`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) プロパティには、次のコード例に示すように、ナビゲーション中にページ アニメーションを表示するかどうかを制御する `boolean` パラメーターを含むオーバーライドされたプッシュおよびポップ メソッドも用意されています。
+各ページの [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) プロパティには、次のコード例に示すように、ナビゲーション中にページ アニメーションを表示するかどうかを制御する `boolean` パラメーターを含むオーバーライドされたプッシュおよびポップ メソッドも用意されています。
 
 ```csharp
 async void OnNextPageButtonClicked (object sender, EventArgs e)

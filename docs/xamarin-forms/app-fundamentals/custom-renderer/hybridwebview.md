@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/07/2019
-ms.openlocfilehash: b88226dda14e2ae5cd21bb066e107fb4bcad78f6
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 0b91aae1456827625526d7568176a07e7e61f225
+ms.sourcegitcommit: a7170494e1975f0f1be547a45444752fd8e57819
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672522"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58507124"
 ---
 # <a name="implementing-a-hybridwebview"></a>HybridWebView の実装
 
@@ -30,7 +30,7 @@ _Xamarin.Forms のカスタム ユーザー インターフェイス コント�
 
 1. `HybridWebView` カスタム コントロールを[作成](#Creating_the_HybridWebView)します。
 1. Xamarin.Forms から `HybridWebView` を[使用](#Consuming_the_HybridWebView)します。
-1. 各プラットフォーム上で `HybridWebView` のカスタム レンダラーを[作成](#Creating_the_Custom_Renderer_on_each_Platform)します。
+1. 各プラットフォーム上で `HybridWebView` のカスタム レンダラーを[作成](#creating-the-custom-renderer-on-each-platform)します。
 
 プラットフォーム固有の Web コントロールを強化して、JavaScript から C# コードを呼び出すことができる `HybridWebView` レンダラーを実装するために、各項目について順番に説明します。 `HybridWebView` インスタンスは、ユーザーに名前の入力を求める HTML ページを表示するために使用されます。 それからユーザーが HTML ボタンをクリックすると、JavaScript 関数によって、ユーザー名を含むポップアップを表示する C# `Action` が呼び出されます。
 
@@ -141,8 +141,6 @@ public partial class HybridWebViewPage : ContentPage
 このアクションから、モーダル ポップアップを表示する [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert(System.String,System.String,System.String)) メソッドが呼び出されます。このポップアップには、`HybridWebView` インスタンスによって表示される HTML ページに入力された名前が示されます。
 
 カスタム レンダラーを各アプリケーション プロジェクトに追加して、C# コードを JavaScript から呼び出すことで、プラットフォーム固有の Web コントロールを強化することができます。
-
-<a nane="Creating_the_Custom_Renderer_on_each_Platform" />
 
 ## <a name="creating-the-custom-renderer-on-each-platform"></a>各プラットフォーム上でのカスタム レンダラーの作成
 

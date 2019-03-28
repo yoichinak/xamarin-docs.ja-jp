@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/01/2016
-ms.openlocfilehash: 2e87142594da8f028323b5dc81afb0e9f8021028
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 6af392988b8ffa5f01ef07f81be53ea8f82e8fb5
+ms.sourcegitcommit: 086edd9c44dfc0e77412e1ed5eda7318bbd1ce7c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57667056"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58477331"
 ---
 # <a name="xamarinforms-messagingcenter"></a>Xamarin.Forms の MessagingCenter
 
@@ -35,7 +35,7 @@ Xamarin.Forms の `MessagingCenter` を使うと、ビュー モデルとその�
 -  **Subscribe** - 特定のシグネチャを持つメッセージをリッスンし、受信したら何らかのアクションを実行します。 複数のサブスクライバーで同じメッセージをリッスンできます。
 -  **Send** - リスナーが処理するメッセージを発行します。 サブスクライブしているリスナーがない場合、メッセージは無視されます。
 
-`MessagingService` は、ソリューション全体で使用される `Subscribe` メソッドと `Send` メソッドを含む静的クラスです。
+`MessagingCenter` は、ソリューション全体で使用される `Subscribe` メソッドと `Send` メソッドを含む静的クラスです。
 
 メッセージには文字列の `message` パラメーターがあり、メッセージの "*アドレスを指定する*" 手段として使用されます。 `Subscribe` メソッドと `Send` メソッドでは、ジェネリック パラメーターを使用して、メッセージの配信方法がさらに制御されます。`message` のテキストが同じでも、ジェネリック型引数が異なる 2 つのメッセージは、同じサブスクライバーに配信されません。
 

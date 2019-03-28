@@ -7,13 +7,8 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/02/2018
-ms.openlocfilehash: f05de5185f224f8606f38011d8f307ed62d64541
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112872"
 ---
+
 # <a name="signing-the-android-application-package"></a>Android アプリケーション パッケージに署名する
 
 「[リリースに向けてアプリケーションを準備する](~/android/deploy-test/release-prep/index.md)」では、**アーカイブ マネージャー**を使用してアプリをビルドし、署名および公開するためにそれをアーカイブに配置しました。 このセクションでは、Android の署名 ID を作成する方法、Android アプリケーション用の新しい署名証明書を作成する方法、アーカイブしたアプリの*アドホック*をディスクに公開する方法について説明します。 結果として得られる APK は、アプリ ストアを経由せずに Android デバイスにサイドロードすることができます。
@@ -42,7 +37,7 @@ ms.locfileid: "50112872"
 
 **[アドホック]** を選択すると、次のスクリーンショットに示されているように、Visual Studio でダイアログの **[署名 ID]** ページが開きます。 .APK を公開するには、まず署名キー (証明書とも呼ばれます) で署名する必要があります。
 
-既存の証明書を使用するには、**[インポート]** ボタンをクリックし、[[APK の署名]](#signapkvs) に進みます。 または、**[+]** ボタンをクリックして、新しい証明書を作成します。
+既存の証明書を使用するには、**[インポート]** ボタンをクリックし、[[APK の署名]](#sign-the-apk) に進みます。 または、**[+]** ボタンをクリックして、新しい証明書を作成します。
 
 [![アドホック署名 ID](images/vs/02-ad-hoc-signing-identity-vs-sml.png)](images/vs/02-ad-hoc-signing-identity-vs.png#lightbox)
 
@@ -69,7 +64,7 @@ ms.locfileid: "50112872"
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-**[アドホック]** をクリックすると、次のスクリーンショットに示すように、Visual Studio for Mac で **[Android の署名の識別情報]** ダイアログが開きます。 .APK を公開するには、まず署名キー (証明書とも呼ばれます) で署名する必要があります。 証明書が既に存在する場合は、**[既存のキーをインポート]** ボタンをクリックしてインポートし、[[APK の署名]](#signapkxs) に進みます。または、**[キーの新規作成]** ボタンをクリックして新しい証明書を作成します。 
+**[アドホック]** をクリックすると、次のスクリーンショットに示すように、Visual Studio for Mac で **[Android の署名の識別情報]** ダイアログが開きます。 .APK を公開するには、まず署名キー (証明書とも呼ばれます) で署名する必要があります。 証明書が既に存在する場合は、**[既存のキーをインポート]** ボタンをクリックしてインポートし、[[APK の署名]](#sign-the-apk) に進みます。または、**[キーの新規作成]** ボタンをクリックして新しい証明書を作成します。
 
 [![[Android の署名の識別情報] ダイアログ](images/xs/02-android-signing-identity-sml.png)](images/xs/02-android-signing-identity.png#lightbox)
 
@@ -92,8 +87,6 @@ ms.locfileid: "50112872"
 キーストアの詳細については、「[キーストアの MD5 または SHA1 署名の検索](~/android/deploy-test/signing/keystore-signature.md)」を参照してください。
 
 -----
-
-<a name="signapkvs" />
 
 ## <a name="sign-the-apk"></a>APK に署名する
 
@@ -137,7 +130,7 @@ ms.locfileid: "50112872"
 
 ![[APK ファイルを出力] ダイアログ](images/xs/06-output-apk-file.png)
 
-次に、証明書のパスワード (**[新しい証明書を作成]** ダイアログで使用したパスワード) を入力し、**[OK]** をクリックします。 
+次に、証明書のパスワード (**[新しい証明書を作成]** ダイアログで使用したパスワード) を入力し、**[OK]** をクリックします。
 
 ![証明書パスワードの入力](images/xs/07-signing-certificate.png)
 

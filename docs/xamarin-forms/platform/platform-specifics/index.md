@@ -7,13 +7,8 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/01/2018
-ms.openlocfilehash: 44d0cf3a257c00b448a6c70064af2f8e3ba63f69
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54207792"
 ---
+
 # <a name="platform-specifics"></a>プラットフォーム仕様
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
@@ -34,7 +29,7 @@ XAML、またはコードの fluent API を通じてプラットフォームに�
 
 プラットフォーム仕様は、[`IPlatformElementConfiguration`](xref:Xamarin.Forms.IPlatformElementConfiguration`2)オブジェクトを返すコードの `On<T>` fluent API を通じて使用します。 これにより、メソッドのカスケードを同じオブジェクトで呼び出される複数のプラットフォーム固有です。
 
-Xamarin.Forms によって提供されるプラットフォーム固有の詳細については、次を参照してください[iOS プラットフォーム固有](~/xamarin-forms/platform/ios/index.md)、 [Android プラットフォーム固有](~/xamarin-forms/platform/android/index.md)、および[Windows プラットフォーム-詳細。](~/xamarin-forms/platform/windows/index.md).
+Xamarin.Forms によって提供されるプラットフォーム固有の詳細については、次を参照してください[iOS プラットフォーム固有](~/xamarin-forms/platform/ios/index.md)、 [Android プラットフォーム固有](~/xamarin-forms/platform/android/index.md)、および[Windows プラットフォーム-詳細](~/xamarin-forms/platform/windows/index.md)。
 
 ## <a name="creating-platform-specifics"></a>プラットフォーム固有設定の作成
 
@@ -43,10 +38,10 @@ Xamarin.Forms によって提供されるプラットフォーム固有の詳細
 Platform-specific を作成する手順は次のとおりです。
 
 1. 特定の機能を Effect として実装します。 詳細については、[Effect の作成](~/xamarin-forms/app-fundamentals/effects/creating.md) を参照してください。
-1. 作成した Effect を公開する platform-specific クラスを作成します。 詳細については、[Platform-Specific クラスの作成](#creating)を参照してください。
-1. Platform-Specific クラスに XAML から使用できるようにするために、添付プロパティを実装します。 詳細については、[添付プロパティの追加](#attached_property)を参照してください。
-1. Platform-Specific クラスに fluent API から使用できるようにするために、拡張メソッドを実装します。 詳細については、[拡張メソッドの追加](#extension_methods)を参照してください。
-1. Platform-specific が Effect と同じプラットフォーム上で呼び出された場合にのみ、その Effect が適用されるように Effect の実装を修正します。 詳細については、[Effect の作成](#creating_the_effect)を参照してください。
+1. 作成した Effect を公開する platform-specific クラスを作成します。 詳細については、[Platform-Specific クラスの作成](#creating-a-platform-specific-class)を参照してください。
+1. Platform-Specific クラスに XAML から使用できるようにするために、添付プロパティを実装します。 詳細については、[添付プロパティの追加](#adding-an-attached-property)を参照してください。
+1. Platform-Specific クラスに fluent API から使用できるようにするために、拡張メソッドを実装します。 詳細については、[拡張メソッドの追加](#adding-extension-methods)を参照してください。
+1. Platform-specific が Effect と同じプラットフォーム上で呼び出された場合にのみ、その Effect が適用されるように Effect の実装を修正します。 詳細については、[Effect の作成](#creating-the-effect)を参照してください。
 
 Platform-specific として Effect を公開すると、 fluent API や XAML を通して、より簡単に Effect を使えるようになります。
 

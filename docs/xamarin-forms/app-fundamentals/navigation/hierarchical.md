@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/14/2018
-ms.openlocfilehash: f69acd60d7a80607528e4a39ee6a8bfbc19711f5
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.openlocfilehash: c5eeb00d4dc5992666a7ba5f9fef2685d5056447
+ms.sourcegitcommit: 5d4e6677224971e2bc0268f405d192d0358c74b8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54207974"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58329274"
 ---
 # <a name="hierarchical-navigation"></a>階層ナビゲーション
 
@@ -28,7 +28,7 @@ _NavigationPage クラスは、ユーザーが前後を希望どおりにペー�
 
 ![](hierarchical-images/popping.png "ナビゲーション スタックからページをポップする")
 
-ナビゲーション メソッドは、任意の [`Page`](xref:Xamarin.Forms.Page) 派生型の [`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) プロパティによって公開されます。 これらのメソッドには、ページをナビゲーション スタックにプッシュし、ナビゲーション スタックからページをポップし、スタック操作を実行する機能があります。
+ナビゲーション メソッドは、任意の [`Page`](xref:Xamarin.Forms.Page) 派生型の [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) プロパティによって公開されます。 これらのメソッドには、ページをナビゲーション スタックにプッシュし、ナビゲーション スタックからページをポップし、スタック操作を実行する機能があります。
 
 <a name="Performing_Navigation" />
 
@@ -69,7 +69,7 @@ public App ()
 
 ### <a name="pushing-pages-to-the-navigation-stack"></a>ナビゲーション スタックにページをプッシュする
 
-`Page2Xaml` にナビゲートするには、次のコード例で示すように、現在のページの [`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) プロパティで [`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync*) メソッドを起動する必要があります。
+`Page2Xaml` にナビゲートするには、次のコード例で示すように、現在のページの [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) プロパティで [`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync*) メソッドを起動する必要があります。
 
 ```csharp
 async void OnNextPageButtonClicked (object sender, EventArgs e)
@@ -114,7 +114,7 @@ async void OnPreviousPageButtonClicked (object sender, EventArgs e)
 
 ただし、これらのイベントが発生する正確な順序はプラットフォームによって異なります。 詳細については、Charles Petzold 氏著作の Xamarin.Forms ブックの[第 24 章](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf)を参照してください。
 
-各ページの [`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) プロパティには、[`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync*) および [`PopAsync`](xref:Xamarin.Forms.NavigationPage.PopAsync) メソッドだけでなく、次のコード例に示すように、[`PopToRootAsync`](xref:Xamarin.Forms.NavigationPage.PopToRootAsync) メソッドも用意されています。
+各ページの [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) プロパティには、[`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync*) および [`PopAsync`](xref:Xamarin.Forms.NavigationPage.PopAsync) メソッドだけでなく、次のコード例に示すように、[`PopToRootAsync`](xref:Xamarin.Forms.NavigationPage.PopToRootAsync) メソッドも用意されています。
 
 ```csharp
 async void OnRootPageButtonClicked (object sender, EventArgs e)
@@ -127,7 +127,7 @@ async void OnRootPageButtonClicked (object sender, EventArgs e)
 
 ### <a name="animating-page-transitions"></a>ページ遷移をアニメーション化する
 
-各ページの [`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) プロパティには、次のコード例に示すように、ナビゲーション中にページ アニメーションを表示するかどうかを制御する `boolean` パラメーターを含むオーバーライドされたプッシュおよびポップ メソッドも用意されています。
+各ページの [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) プロパティには、次のコード例に示すように、ナビゲーション中にページ アニメーションを表示するかどうかを制御する `boolean` パラメーターを含むオーバーライドされたプッシュおよびポップ メソッドも用意されています。
 
 ```csharp
 async void OnNextPageButtonClicked (object sender, EventArgs e)
@@ -276,7 +276,7 @@ public class SecondPageCS : ContentPage
 
 ## <a name="manipulating-the-navigation-stack"></a>ナビゲーション スタックの操作
 
-[`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) プロパティは、ナビゲーション スタックのページを取得する [`NavigationStack`](xref:Xamarin.Forms.INavigation.NavigationStack) プロパティを公開します。 Xamarin.Forms はナビゲーション スタックへのアクセスを維持していますが、`Navigation` プロパティには、ページを挿入または削除することでスタックを操作するための [`InsertPageBefore`](xref:Xamarin.Forms.INavigation.InsertPageBefore*) および [`RemovePage`](xref:Xamarin.Forms.INavigation.RemovePage*) メソッドが用意されています。
+[`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) プロパティは、ナビゲーション スタックのページを取得する [`NavigationStack`](xref:Xamarin.Forms.INavigation.NavigationStack) プロパティを公開します。 Xamarin.Forms はナビゲーション スタックへのアクセスを維持していますが、`Navigation` プロパティには、ページを挿入または削除することでスタックを操作するための [`InsertPageBefore`](xref:Xamarin.Forms.INavigation.InsertPageBefore*) および [`RemovePage`](xref:Xamarin.Forms.INavigation.RemovePage*) メソッドが用意されています。
 
 次の図に示すように、[`InsertPageBefore`](xref:Xamarin.Forms.INavigation.InsertPageBefore*) メソッドによって、ナビゲーション スタック内の指定されたページが既存の指定されたページの前に挿入されます。
 
