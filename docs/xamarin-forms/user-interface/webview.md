@@ -6,13 +6,13 @@ ms.assetid: E44F5D0F-DB8E-46C7-8789-114F1652A6C5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/24/2018
-ms.openlocfilehash: 6d3355b1ebac5001984677eb8cc527fe619b8349
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.date: 03/29/2019
+ms.openlocfilehash: 658ce23b0aaced8e195461a485f3e846900c2026
+ms.sourcegitcommit: 236a346838c421c7d8951f50abbf4f5365559372
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53052252"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58641453"
 ---
 # <a name="xamarinforms-webview"></a>Xamarin.Forms の WebView
 
@@ -331,11 +331,25 @@ public partial class InAppBrowserXaml : ContentPage
 
 Web ビューは、状態の変化に対応するために、次のイベントを発生させます。
 
-- **移動**– 新しいページを読み込む、WebView の開始時に発生するイベントです。
-- **移動**– イベント ページが読み込まれ、ナビゲーションが停止したときに発生します。
-- **ReloadRequested** – 現在のコンテンツを再読み込み要求が行われたときに発生するイベントです。
+- [`Navigating`](xref:Xamarin.Forms.WebView.Navigating) -新しいページを読み込む、WebView の開始時に発生するイベントです。
+- [`Navigated`](xref:Xamarin.Forms.WebView.Navigated) – イベント ページが読み込まれ、ナビゲーションが停止したときに発生します。
+- [`ReloadRequested`](xref:Xamarin.Forms.WebView.ReloadRequested) – 現在のコンテンツを再読み込み要求が行われたときに発生するイベントです。
 
-読み込みに長い時間がかかるの web ページを使用する見込みがある場合は、使用を検討して、`Navigating`と`Navigated`状態インジケーターを実装するイベントです。 たとえば、XAML は、次のようになります。
+[ `WebNavigatingEventArgs` ](xref:Xamarin.Forms.WebNavigatingEventArgs)に付属しているオブジェクト、 [ `Navigating` ](xref:Xamarin.Forms.WebView.Navigating)イベントには 4 つのプロパティ。
+
+- `Cancel` –、ナビゲーションをキャンセルするかどうかを示します。
+- `NavigationEvent` – ナビゲーション イベントが発生しました。
+- `Source` – 要素、ナビゲーションを実行します。
+- `Url` – ナビゲーション先。
+
+[ `WebNavigatedEventArgs` ](xref:Xamarin.Forms.WebNavigatedEventArgs)に付属しているオブジェクト、 [ `Navigated` ](xref:Xamarin.Forms.WebView.Navigated)イベントには 4 つのプロパティ。
+
+- `NavigationEvent` – ナビゲーション イベントが発生しました。
+- `Result` –、ナビゲーションの結果をについて説明します。 を使用して、 [ `WebNavigationResult` ](xref:Xamarin.Forms.WebNavigationResult)列挙型のメンバー。 正しい値は `Cancel`、`Failure`、`Success`、`Timeout` です。
+- `Source` – 要素、ナビゲーションを実行します。
+- `Url` – ナビゲーション先。
+
+読み込みに長い時間がかかるの web ページを使用する見込みがある場合は、使用を検討して、 [ `Navigating` ](xref:Xamarin.Forms.WebView.Navigating)と[ `Navigated` ](xref:Xamarin.Forms.WebView.Navigated)状態インジケーターを実装するイベントです。 例:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"

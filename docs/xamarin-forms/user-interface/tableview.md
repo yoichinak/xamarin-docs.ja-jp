@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2018
-ms.openlocfilehash: fda8c08cdbdab01f5d68b7f349d5f28f31316290
-ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
+ms.openlocfilehash: c18eba873dc1a1dae36c401507d55652ed233b00
+ms.sourcegitcommit: 236a346838c421c7d8951f50abbf4f5365559372
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55832003"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58641440"
 ---
 # <a name="xamarinforms-tableview"></a>Xamarin.Forms テーブル
 
@@ -51,7 +51,7 @@ ms.locfileid: "55832003"
 </TableView>
 ```
 
-同等の c# コードに示します。
+同等の C# コードに示します。
 
 ```csharp
 Content = new TableView
@@ -115,7 +115,7 @@ Xamarin.Forms を収集して情報を表示するための組み込みのセル
 [`EntryCell`](xref:Xamarin.Forms.EntryCell) ユーザーが編集できるテキスト データを表示する必要がある場合に役立ちます。 これには、次のプロパティを定義します。
 
 - `Keyboard` – 編集中に表示するキーボード。 数値、電子メール、電話番号などのオプションがあります。[API ドキュメントを参照してください。](xref:Xamarin.Forms.Keyboard)
-- `Label` – テキスト入力フィールドの右側に表示するラベル テキスト。
+- `Label` – テキスト入力フィールドの左側に表示するラベル テキスト。
 - `LabelColor` – ラベルのテキストの色。
 - `Placeholder` – が null または空のときに、入力フィールドに表示するテキスト。 このテキストは、テキスト エントリの開始時に表示されなくなります。
 - `Text` – エントリ フィールド内のテキスト。
@@ -164,7 +164,7 @@ Xamarin.Forms を収集して情報を表示するための組み込みのセル
 </ContentPage>
 ```
 
-同等の c# コードに示します。
+同等の C# コードに示します。
 
 ```csharp
 var table = new TableView();
