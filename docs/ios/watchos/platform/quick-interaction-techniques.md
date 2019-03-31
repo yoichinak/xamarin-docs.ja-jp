@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 6a8e74860efd606ae6dd565ea7e3f67884eefc11
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 5086724b565fb95274c4988ca1b6e4bb11064575
+ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103219"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58677938"
 ---
 # <a name="quick-interaction-techniques-for-watchos-3-in-xamarin"></a>Xamarin で watchOS 3 用のクイック操作手法
 
@@ -120,7 +120,7 @@ Apple Watch アプリの使用 watchOS 2、以降、`WKInterfacePicker`オブジ
 
 #### <a name="rotations-per-second"></a>1 秒あたりの回転
 
-物理運動の使用ベースのアニメーション場合は、デジタル クラウンから秒あたりの回転にアクセスすると便利です。 秒あたりの回転にアクセスするには、使用、`CrownSequencer`のプロパティ、`WKInterfaceController`ウォッチ拡張機能の。 例えば:
+物理運動の使用ベースのアニメーション場合は、デジタル クラウンから秒あたりの回転にアクセスすると便利です。 秒あたりの回転にアクセスするには、使用、`CrownSequencer`のプロパティ、`WKInterfaceController`ウォッチ拡張機能の。 例:
 
 ```csharp
 var rotationsPerSecond = CrownSequencer.RotationsPerSecond;
@@ -128,7 +128,7 @@ var rotationsPerSecond = CrownSequencer.RotationsPerSecond;
 
 #### <a name="rotational-deltas"></a>回転の差分
 
-デジタル クラウンからデルタを回転を使用して、回転の数をカウントします。 使用して、`CrownDidRotate`のメソッドをオーバーライド、`WKCrownDelegate`回転デルタへのアクセスにします。 例えば:
+デジタル クラウンからデルタを回転を使用して、回転の数をカウントします。 使用して、`CrownDidRotate`のメソッドをオーバーライド、`WKCrownDelegate`回転デルタへのアクセスにします。 例:
 
 ```csharp
 using System;
@@ -299,7 +299,7 @@ Apple Watch に通知は、イベントまたは受信メッセージまたは�
 
 ## <a name="simple-navigation"></a>単純なナビゲーション
 
-watchOS 3 はいくつかの方法を開発者が新しいなど、watchOS アプリ内のナビゲーションを簡略化できます[垂直ページング](#Vertical-Paging)、[ジェスチャ認識エンジン サポート](#Gesture-Recognizer-Support)と[デジタル クラウン回転](#Digital-Crown-Rotation)上の機能が表示されます。
+watchOS 3 はいくつかの方法を開発者が新しいなど、watchOS アプリ内のナビゲーションを簡略化できます[垂直ページング](#vertical-paging)、[ジェスチャ認識エンジン サポート](#gesture-recognizer-support)と[デジタル クラウン回転](#digital-crown-rotation)上の機能が表示されます。
 
 デジタル クラウンは、Apple Watch に固有のナビゲーションを簡略化するさまざまな方法で使用できます。 たとえば、タイマー アプリケーションはを通じて使用可能なタイマーの長さをスクラブするデジタル クラウンを使用できます。
 

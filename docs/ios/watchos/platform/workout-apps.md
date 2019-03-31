@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: fd677aa802adf32ac81396f81c67264d88639967
-ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
+ms.openlocfilehash: 02db7dce6ba38b6c1e943ff189ff69efb7cc1c08
+ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51528781"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58677834"
 ---
 # <a name="watchos-workout-apps-in-xamarin"></a>watchOS で Xamarin トレーニング アプリ
 
@@ -636,7 +636,7 @@ private void SaveWorkoutSamples (HKWorkout workout)
 
 ## <a name="workouts-and-ios-10"></a>ワークアウト、iOS 10
 
-すべてのアプリに watchOS 3 トレーニングが親 iOS 10 ベースのトレーニング アプリと、10、iOS に新しい (ユーザーの介入) トレーニング モードで、Apple Watch の配置は、バック グラウンドで実行されているモードで watchOS アプリを実行しているトレーニングを開始するこの iOS アプリを使用できます (を参照してください[バック グラウンドの実行に関する](#About-Background-Running)上詳細)。
+すべてのアプリに watchOS 3 トレーニングが親 iOS 10 ベースのトレーニング アプリと、10、iOS に新しい (ユーザーの介入) トレーニング モードで、Apple Watch の配置は、バック グラウンドで実行されているモードで watchOS アプリを実行しているトレーニングを開始するこの iOS アプリを使用できます (を参照してください[バック グラウンドの実行に関する](#about-background-running)上詳細)。
 
 WatchOS アプリの実行中に WatchConnectivity メッセージングと親 iOS アプリとの通信に使用できます。
 
@@ -649,7 +649,7 @@ WatchOS アプリの実行中に WatchConnectivity メッセージングと親 i
 3. WatchOS 3 アプリ トレーニング構成では、渡されたを使用して、新しいトレーニング セッションを開始 (`HKWorkoutSession`)。
 
 > [!IMPORTANT]
-> 親の iPhone アプリでは、Apple Watch、トレーニングを開始するためには、3 watchOS アプリにバック グラウンド実行が有効になっている必要があります。 参照してください[バック グラウンド実行を有効にする](#Enabling-Background-Running)上の詳細。
+> 親の iPhone アプリでは、Apple Watch、トレーニングを開始するためには、3 watchOS アプリにバック グラウンド実行が有効になっている必要があります。 参照してください[バック グラウンド実行を有効にする](#enabling-background-running)上の詳細。
 
 このプロセスは、直接 3 watchOS アプリのトレーニング セッションの開始のプロセスによく似ています。 Iphone の場合は、次のコードを使用します。
 
