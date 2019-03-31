@@ -17,7 +17,7 @@ _このドキュメントでは、iOS SDK のローカライズ機能と Xamarin
 
 ## <a name="ios-platform-features"></a>iOS プラットフォーム機能
 
-このセクションでは、iOS のローカライズ機能の一部について説明します。 スキップする、[次のセクション](#Localization-basics-in-iOS)に固有のコードと例を参照してください。
+このセクションでは、iOS のローカライズ機能の一部について説明します。 スキップする、[次のセクション](#localization-basics-in-ios)に固有のコードと例を参照してください。
 
 ### <a name="language"></a>言語
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/03/2018
-ms.openlocfilehash: b0571f826101576b402368923c2147e35aa9299e
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 4472654064812142e3281374754ace0042b542bf
+ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116330"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58677756"
 ---
 # <a name="advanced-user-notifications-in-xamarinios"></a>Xamarin.iOS での高度なユーザー通知
 
@@ -65,7 +65,7 @@ Apple が、通知を押すし、カスタム ユーザー インターフェイ
 
 ただし、送信に関連するサイズでも、小さいイメージがリモート通知ペイロードにアタッチに実用的でないなります。 このような状況を処理するには、開発者、新しいサービス拡張機能を使用で iOS 10 (CloudKit データストア) などの別のソースからイメージをダウンロードして、ユーザーに表示されるまで、通知のコンテンツにアタッチします。
 
-サービスの拡張機能を使用して変更するリモート通知の場合は、そのペイロードを変更可能としてマークにする必要があります。 例えば:
+サービスの拡張機能を使用して変更するリモート通知の場合は、そのペイロードを変更可能としてマークにする必要があります。 例:
 
 ```csharp
 {
@@ -266,7 +266,7 @@ namespace MonkeyChatNotifyExtension
 
 -----
 
-通知のコンテンツの拡張機能カテゴリ (`UNNotificationExtensionCategory`) 通知アクションの登録に使用する同じカテゴリの値を使用します。 アプリの複数のカテゴリと同じ UI を使用できる場所の場合、切り替え、`UNNotificationExtensionCategory`型に**配列**しすべての必要なカテゴリを指定します。 例えば:
+通知のコンテンツの拡張機能カテゴリ (`UNNotificationExtensionCategory`) 通知アクションの登録に使用する同じカテゴリの値を使用します。 アプリの複数のカテゴリと同じ UI を使用できる場所の場合、切り替え、`UNNotificationExtensionCategory`型に**配列**しすべての必要なカテゴリを指定します。 例:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -299,7 +299,7 @@ Notification Content 拡張機能のカスタム ユーザー インターフェ
 > [!NOTE]
 > Notification Content の拡張機能は 12、iOS の時点で、ボタンやテキスト フィールドなどの対話型のコントロールを含めることができます。 詳細については、次を参照してください。、 [iOS 12 で対話型通知](~/ios/platform/introduction-to-ios12/notifications/interactive.md)ドキュメント。
 
-UI のレイアウトされているしに必要な制御が公開されるC#コード、開いている、`NotificationViewController.cs`を編集するため変更と、`DidReceiveNotification`ユーザー通知を展開する場合に、UI を設定するメソッド。 例えば:
+UI のレイアウトされているしに必要な制御が公開されるC#コード、開いている、`NotificationViewController.cs`を編集するため変更と、`DidReceiveNotification`ユーザー通知を展開する場合に、UI を設定するメソッド。 例:
 
 ```csharp
 using System;
@@ -361,7 +361,7 @@ namespace MonkeyChatNotifyExtension
 
 最初に、通知システムが既にコンテンツの拡張が呼び出されると、通知、コンテンツ領域の前に実行されているため、フル インストール オプションのサイズし、ユーザーに表示されるときに、要求されたサイズまでアニメーション化します。
 
-この効果をなくすため、編集、`Info.plist`拡張機能とセットのファイル、`UNNotificationExtensionInitialContentSizeRatio`のキー、`NSExtensionAttributes`キーを入力する**数**で目的の比率を表す値。 例えば:
+この効果をなくすため、編集、`Info.plist`拡張機能とセットのファイル、`UNNotificationExtensionInitialContentSizeRatio`のキー、`NSExtensionAttributes`キーを入力する**数**で目的の比率を表す値。 例:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -375,7 +375,7 @@ namespace MonkeyChatNotifyExtension
 
 ### <a name="using-media-attachments-in-custom-ui"></a>カスタムの UI でのメディア添付ファイルの使用
 
-ため、メディア添付ファイル (に示すよう、[メディア添付ファイルの追加](#Adding-Media-Attachments)前のセクション) 通知のペイロードの一部である、アクセスし既定値の場合と同様に、Notification Content 拡張機能に表示されることができますUI の通知。
+ため、メディア添付ファイル (に示すよう、[メディア添付ファイルの追加](#adding-media-attachments)前のセクション) 通知のペイロードの一部である、アクセスし既定値の場合と同様に、Notification Content 拡張機能に表示されることができますUI の通知。
 
 たとえば、上記のカスタム UI が含まれている場合、`UIImageView`に公開されたでC#、次のコードからメディア添付ファイルを設定するコードを使用します。
 
@@ -453,7 +453,7 @@ namespace MonkeyChatNotifyExtension
 
 Notification Content 拡張機能は、ユーザーがカスタム アクションのいずれかを呼び出したときに、UI を更新する機能もある、ユーザーがタップしたときに承諾済みとしての日付を表示するなど、 **Accept**カスタム アクション ボタンをクリックします。 さらに、Notification Content 拡張機能は、システムに通知を閉じる前に、ユーザーはその操作の効果を確認できるように、通知の UI のジョンソンを遅延するを指示することができます。
 
-2 番目のバージョンを実装することによってこれは、`DidReceiveNotification`完了ハンドラーを含むメソッド。 例えば:
+2 番目のバージョンを実装することによってこれは、`DidReceiveNotification`完了ハンドラーを含むメソッド。 例:
 
 ```csharp
 using System;
@@ -527,7 +527,7 @@ namespace myApp {
 }
 ```
 
-追加することで、`Server.PostEventResponse`ハンドラーを`DidReceiveNotification`メソッドは、Notification Content 拡張機能、拡張機能の*する必要があります*すべてのカスタム アクションを処理します。 拡張機能は含むアプリにカスタム アクションを変更することで転送できますも、`UNNotificationContentExtensionResponseOption`します。 例えば:
+追加することで、`Server.PostEventResponse`ハンドラーを`DidReceiveNotification`メソッドは、Notification Content 拡張機能、拡張機能の*する必要があります*すべてのカスタム アクションを処理します。 拡張機能は含むアプリにカスタム アクションを変更することで転送できますも、`UNNotificationContentExtensionResponseOption`します。 例:
 
 ```csharp
 // Close Notification
@@ -538,7 +538,7 @@ completionHandler (UNNotificationContentExtensionResponseOption.DismissAndForwar
 
 によって、アプリと通知のデザイン、(メッセージに返信する) などの通知にテキストを入力する必要がある回あります。 Notification Content の拡張機能は、標準的な通知は同様に、組み込みのテキスト入力のアクションへのアクセスが。
 
-例えば:
+例:
 
 ```csharp
 using System;

@@ -7,13 +7,8 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/29/2017
-ms.openlocfilehash: f2a612eea39a3447cae03e2d7b675a46c47aad52
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233745"
 ---
+
 # <a name="introduction-to-ios-10"></a>IOS 10 の概要
 
 _この記事では、Xamarin.iOS の開発者向けのすべての新規および変更した Api と iOS 10 で使用できる機能を紹介します。_
@@ -49,7 +44,7 @@ Apple は iOS 10 で新しいアプリ拡張機能ポイントをいくつか用
 
 - ディレクトリを呼び出す
 - Intents および Intents UI
-- メッセージ
+- [メッセージ]
 - 通知の内容
 - Notification Services
 - ステッカー パック
@@ -231,7 +226,7 @@ IOS 10 では、次の Api が廃止されました。
 - [NSPersistentStoreCoordnator](https://developer.xamarin.com/api/type/CoreData.NSPersistentStoreCoordinator/)ユビキタス コンテンツに関連するシンボルが非推奨とされました。
 - `ADBannerView`、`ADInterstitialAd`内のシンボルに関連し、 [UIViewController](xref:UIKit.UIViewController)クラスが推奨されていません。
 - [SKUniform](https://developer.apple.com/reference/spritekit/skuniform)浮動小数点値に関連するシンボルが非推奨とされました。
-- `UILocalNotification`、 `UIMutableUserNotificationAction`、 `UIMutableUserNotificationCategory`、 `UIUserNotificationAction`、`UIUserNotificationCategory`と`UIUserNotificationSettings`UIKit のクラスが非推奨とされました。 使用して、[ユーザー通知](#User-Notifications)framework 代わりにします。
+- `UILocalNotification`、 `UIMutableUserNotificationAction`、 `UIMutableUserNotificationCategory`、 `UIUserNotificationAction`、`UIUserNotificationCategory`と`UIUserNotificationSettings`UIKit のクラスが非推奨とされました。 使用して、[ユーザー通知](#user-notifications)framework 代わりにします。
 - `HandleActionForLocalNotification`、 `HandleActionForRemoteNotification`、`DidReceiveLocalNotification`と`DidReceiveRemoteNotification`WatchKit メソッドが非推奨とされました。 使用して、`HandleActionForNotification`と`DidReceiveNotification`メソッド代わりにします。
 - `DidReceiveLocalNotification`と`DidReceiveRemoteNotification`のメソッド、 [WKExtensionDelegate](https://developer.apple.com/reference/watchkit/wkextensiondelegate)非推奨とされました。 インスタンスを作成[UNUserNotificationCenterDelegate](https://developer.apple.com/reference/usernotifications/unusernotificationcenterdelegate)適切なメソッドを実装してに割り当てる、`Delegate`のプロパティ、 [UNUserNotificationCenter](https://developer.apple.com/reference/usernotifications/unusernotificationcenter)オブジェクト。
 - **Game Center アプリ**非推奨し、iOS から削除されています。 アプリが GameKit を使用する場合、_する必要があります_GameKit 機能 (ランキングなど) の表示に独自のインターフェイスを提供します。

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 1cfa51b8e5434480d7d15fbf23d78f8b8735f16a
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 3cb8d1c1d92146e70056c6cf562f2fa1cb028e7c
+ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112592"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58677873"
 ---
 # <a name="working-with-tvos-navigation-and-focus-in-xamarin"></a>ナビゲーションとフォーカス Xamarin で tvOS の操作
 
@@ -25,7 +25,7 @@ _この記事では、フォーカスとその使用を提示して Xamarin.tvOS
 
 フォーカスを使用する方法を見てをみましょう次に、[視差](#Focus-and-Parallax)と*階層型イメージ*をユーザーがナビゲーションの現在の状態を視覚的な手がかりを提供します。
 
-使用方法について説明します最後に、[フォーカス](#Working-with-Focus)、[フォーカス更新](#Working-with-Focus-Updates)、[フォーカス ガイド](#Working-with-Focus-Guides)、[コレクション内のフォーカス](#Working-with-Focus-in-Collections)と[視差効果を有効にする](#Enabling-Parallax)Xamarin.tvOS アプリでのイメージ ビュー。
+使用方法について説明します最後に、[フォーカス](#Working-with-Focus)、[フォーカス更新](#Working-with-Focus-Updates)、[フォーカス ガイド](#Working-with-Focus-Guides)、[コレクション内のフォーカス](#Working-with-Focus-in-Collections)と[視差効果を有効にする](#enabling-parallax)Xamarin.tvOS アプリでのイメージ ビュー。
 
 <a name="Navigation" />
 
@@ -81,7 +81,7 @@ Apple では、フォーカスと選択を操作するための次の推奨事�
 
 ### <a name="working-with-focus"></a>フォーカスの操作
 
-フォーカスを設定できる項目となるカスタム コントロールを作成し時間である可能性があります。 場合これをオーバーライド、`CanBecomeFocused`プロパティと戻り`true`, それ以外の場合、return`false`します。 例えば:
+フォーカスを設定できる項目となるカスタム コントロールを作成し時間である可能性があります。 場合これをオーバーライド、`CanBecomeFocused`プロパティと戻り`true`, それ以外の場合、return`false`します。 例:
 
 ```csharp
 public class myView : UIView
@@ -92,7 +92,7 @@ public class myView : UIView
 }
 ```
 
-いつでも使用することができます、`Focused`のプロパティを`UIKit`それが現在の項目であるかどうかを制御します。 場合`true`UI 項目現在フォーカスがある、それ以外の場合そうでないです。 例えば:
+いつでも使用することができます、`Focused`のプロパティを`UIKit`それが現在の項目であるかどうかを制御します。 場合`true`UI 項目現在フォーカスがある、それ以外の場合そうでないです。 例:
 
 ```csharp
 // Is my view in focus?
@@ -102,7 +102,7 @@ if (myView.Focused) {
 }
 ```
 
-UI 要素は、設定して、画面が読み込まれるときに最初にフォーカスを取得を指定するには直接コードを使用して別の UI 要素にフォーカスを移動することはできません、その`PreferredFocusedView`プロパティを`true`します。 例えば:
+UI 要素は、設定して、画面が読み込まれるときに最初にフォーカスを取得を指定するには直接コードを使用して別の UI 要素にフォーカスを移動することはできません、その`PreferredFocusedView`プロパティを`true`します。 例:
 
 ```csharp
 // Make the play button the starting focus item
@@ -208,7 +208,7 @@ public override void DidUpdateFocus (UIFocusUpdateContext context, UIFocusAnimat
 
 最初に、このコードの取得の`NextFocusedView`から、`UIFocusUpdateContext`で渡された (`context`)。 このビューは、する場合`null`処理は必要ありませんし、メソッドを終了しました。
 
-次に、`nextFocusableItem`が評価されます。 いずれかと一致する場合、**詳細**または**購入**ボタン、フォーカスはフォーカスのガイドを使用して逆ボタンに送信される`PreferredFocusedView`プロパティ。 例えば:
+次に、`nextFocusableItem`が評価されます。 いずれかと一致する場合、**詳細**または**購入**ボタン、フォーカスはフォーカスのガイドを使用して逆ボタンに送信される`PreferredFocusedView`プロパティ。 例:
 
 ```csharp
 // Move from the More Info to Buy button
@@ -226,7 +226,7 @@ FocusGuide.PreferredFocusedView = null;
 
 ### <a name="working-with-focus-in-collections"></a>コレクション内のフォーカスの操作
 
-個々 の項目にフォーカスを設定できるできるかどうかを決定する際に、`UICollectionView`または`UITableView`のメソッドをオーバーライドします、`UICollectionViewDelegate`または`UITableViewDelegate`それぞれします。 例えば:
+個々 の項目にフォーカスを設定できるできるかどうかを決定する際に、`UICollectionView`または`UITableView`のメソッドをオーバーライドします、`UICollectionViewDelegate`または`UITableViewDelegate`それぞれします。 例:
 
 ```csharp
 public class CardHandDelegate : UICollectionViewDelegateFlowLayout

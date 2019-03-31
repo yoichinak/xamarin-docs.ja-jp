@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: d04ce6827f6695163c7d9a8d34acc3891d854c8d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 6d5be72a9329675a65b0d6873d13894b314b50e7
+ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122674"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58677847"
 ---
 # <a name="stack-views-in-xamarinios"></a>Xamarin.iOS でスタック ビュー
 
@@ -233,7 +233,7 @@ icon.RemoveFromSuperview();
 - **ベースライン相対**– `true`、各サブビューの上下の間隔をそのベースラインから導き出されます。
 - **レイアウトの余白相対**– 標準的なレイアウトの余白を基準とした、サブビューを配置します。
 
-一般的にはスタック ビューは、サブビューの数が少ないを配置するために使用します。 1 つ以上のスタック ビューどうしを入れ子にしてより複雑なユーザー インターフェイスを作成できます (で行ったよう、 [UIStackView クイック スタート](#UIStackView-Quickstart)上)。
+一般的にはスタック ビューは、サブビューの数が少ないを配置するために使用します。 1 つ以上のスタック ビューどうしを入れ子にしてより複雑なユーザー インターフェイスを作成できます (で行ったよう、 [UIStackView クイック スタート](#uistackview-quickstart)上)。
 
 (たとえば、コントロールの高さまたは幅) にサブビューを追加の制約を追加することで、Ui の外観をさらに微調整できます。 ただし、注意してください自体スタック ビューで導入されたものに競合する制約を含める必要はありません。
 

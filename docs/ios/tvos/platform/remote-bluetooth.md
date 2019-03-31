@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 14c62051afd7489389f154c21b3a76b9aad3f32e
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 79022f7a454ea423fa3112a4c4ade2bcd471fbb8
+ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50115537"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58677951"
 ---
 # <a name="siri-remote-and-bluetooth-controllers-for-tvos-in-xamarin"></a>Siri のリモートおよび Xamarin で tvOS の Bluetooth コント ローラー
 
@@ -51,7 +51,7 @@ Siri のリモートでは、次の機能と tvOS アプリ内の予想される
 
 Siri のリモートのタッチ画面は、さまざまな Xamarin.tvOS アプリに対応できる、1 本指のジェスチャを検出できません。
 
-|スワイプ|クリック|タップします|
+|スワイプ|ここを|タップします|
 |---|---|---|
 |![](remote-bluetooth-images/Gesture01.png)|![](remote-bluetooth-images/Gesture02.png)|![](remote-bluetooth-images/Gesture03.png)|
 |画面上の UI 要素の間での選択 (フォーカス) を移動します (、上下左右右)。 慣性による処理を使用して迅速にコンテンツの大規模なリストをスクロールする方向のスワイプ操作を使用できます。|選択 (フォーカス設定) 項目をアクティブ化またはゲームでは、主ボタンのように機能します。 クリックし、保持するには、コンテキスト メニューまたはセカンダリの関数がアクティブ化できます。|軽く、タッチの画面の端をタップして、パッド、上、下、左、またはタップ領域権利に応じて、フォーカスを移動の方向ボタンと同様します。 非表示のコントロールを表示するアプリによってを使用できます。|
@@ -310,7 +310,7 @@ Apple では、ゲーム コント ローラーを操作するための次の推
 アプリにコント ローラーの低レベルの入力が必要な場合は、Apple を使用できます[ゲーム コント ローラー フレームワーク](https://developer.apple.com/library/prerelease/tvos/documentation/ServicesDiscovery/Conceptual/GameControllerPG/Introduction/Introduction.html#//apple_ref/doc/uid/TP40013276)tvOS の次の変更が含まれています。
 
 - マイクロ ゲーム コント ローラー プロファイル (`GCMicroGamepad`) Siri のリモートの対象に追加されました。
-- 新しい`GCEventViewController`クラスは、アプリ、ゲーム コント ローラー イベントのルーティングに使用できます。 参照してください、[ゲーム コント ローラーの入力を決定する](#Determining-Game-Controller-Input)詳細については後述します。
+- 新しい`GCEventViewController`クラスは、アプリ、ゲーム コント ローラー イベントのルーティングに使用できます。 参照してください、[ゲーム コント ローラーの入力を決定する](#determining-game-controller-input)詳細については後述します。
 
 <a name="Game-Controller-Support-Requirements" />
 

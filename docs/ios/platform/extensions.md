@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: e02d7a13a1fd5b554943f9facd6c9f120096a6a5
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: b21bf4da7cf862bd32e71708f9e3657f577682c2
+ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57667816"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58677925"
 ---
 # <a name="ios-extensions-in-xamarinios"></a>Xamarin.iOS での iOS 拡張機能
 
@@ -69,7 +69,7 @@ ms.locfileid: "57667816"
 
 アプリのいずれかを選択した場合の拡張機能では、その`UIViewController`がインスタンス化され、通常のビュー コント ローラーのライフ サイクルを開始します。 ただし、拡張機能は中断しているが、一般終了とやり取りするユーザーが終了したときに、通常のアプリとは異なり、読み込まれて、実行、および、繰り返しが終了しは。
 
-拡張機能を使用してアプリをホストと通信できる、 [NSExtensionContext](xref:Foundation.NSExtensionContext)オブジェクト。 一部の拡張機能では、結果を使用した非同期のコールバックを受信する操作があります。 これらのコールバックがバック グラウンド スレッドで実行され、考慮します。 この拡張機能を考慮する必要があります。使用して、たとえば、 [NSObject.InvokeOnMainThread](xref:Foundation.NSObject.InvokeOnMainThread*)ユーザー インターフェイスを更新する場合。 参照してください、[ホスト アプリケーションと通信する](#Communicating-with-the-Host-App)詳細については後述します。
+拡張機能を使用してアプリをホストと通信できる、 [NSExtensionContext](xref:Foundation.NSExtensionContext)オブジェクト。 一部の拡張機能では、結果を使用した非同期のコールバックを受信する操作があります。 これらのコールバックがバック グラウンド スレッドで実行され、考慮します。 この拡張機能を考慮する必要があります。使用して、たとえば、 [NSObject.InvokeOnMainThread](xref:Foundation.NSObject.InvokeOnMainThread*)ユーザー インターフェイスを更新する場合。 参照してください、[ホスト アプリケーションと通信する](#communicating-with-the-host-app)詳細については後述します。
 
 既定では、拡張機能とそのコンテナー アプリ通信可能でない、一緒にインストールされているにもかかわらずです。 場合によっては、コンテナー アプリは基本的に、空"shipping"コンテナーを目的とするが、拡張機能がインストールされると処理されます。 ただし、状況下で、必要である場合コンテナー アプリと拡張機能がリソースを共有一般的な領域から。 さらに、**拡張機能を今すぐ**の URL を開くには、そのコンテナー アプリを要求する場合があります。 この動作を示した、[進化 Countdown Widget](https://github.com/xamarin/monotouch-samples/tree/master/ExtensionsDemo)します。
 

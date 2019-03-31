@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/03/2018
-ms.openlocfilehash: c8d5c1394bee2ca2419904b077522fac9d03d825
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 2c3bddc89348b46c9bba277580071cb8ac3d6943
+ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669447"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58678055"
 ---
 # <a name="implementing-sirikit-in-xamarinios"></a>Xamarin.iOS で SiriKit の実装
 
@@ -324,7 +324,7 @@ if (language == "en-US") {
 
 カスタム語彙として登録する用語を選択する場合は、用語のみを選択して、アプリに慣れていないユーザーを誤解される可能性があります。 決して登録する一般的な用語「My トレーニング」または「My アルバム」など。 たとえば、MonkeyChat アプリは、各連絡先ユーザーのアドレス帳に関連付けられているニックネームを登録します。
 
-アプリが呼び出すことによってユーザーの特定の語彙を提供します、`SetVocabularyStrings`のメソッド、`INVocabulary`クラスを渡して、`NSOrderedSet`メイン アプリから収集します。 アプリは常に呼び出す必要があります、`RemoveAllVocabularyStrings`メソッド最初は、新しいものを追加する前に、既存の用語を削除します。 例えば:
+アプリが呼び出すことによってユーザーの特定の語彙を提供します、`SetVocabularyStrings`のメソッド、`INVocabulary`クラスを渡して、`NSOrderedSet`メイン アプリから収集します。 アプリは常に呼び出す必要があります、`RemoveAllVocabularyStrings`メソッド最初は、新しいものを追加する前に、既存の用語を削除します。 例:
 
 ```csharp
 using System;
@@ -635,7 +635,7 @@ Intents の拡張機能をソリューションに追加するには、次の操
     
 -----
 
-目的の拡張機能の数を次の手順を繰り返します (に基づいて[拡張機能用のアプリを設計](#Architecting-the-App-for-Extensions)前のセクション)、アプリが必要になります。
+目的の拡張機能の数を次の手順を繰り返します (に基づいて[拡張機能用のアプリを設計](#architecting-the-app-for-extensions)前のセクション)、アプリが必要になります。
 
 ### <a name="configuring-the-infoplist"></a>Info.plist の構成
 
@@ -935,7 +935,7 @@ Intents UI 拡張機能の構成`Info.plist`ファイルをアプリで動作し
 
 ### <a name="configuring-the-main-class"></a>メイン クラスを構成します。
 
-Siri を目的とした UI の拡張機能のメイン エントリ ポイントとして機能するメイン クラスを構成します。 サブクラス化する必要があります`UIViewController`に準拠している`IINUIHostedViewController`インターフェイス。 例えば:
+Siri を目的とした UI の拡張機能のメイン エントリ ポイントとして機能するメイン クラスを構成します。 サブクラス化する必要があります`UIViewController`に準拠している`IINUIHostedViewController`インターフェイス。 例:
 
 ```csharp
 using System;

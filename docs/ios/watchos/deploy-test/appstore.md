@@ -7,17 +7,17 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 7b2f9ab4cf9bad71153d5bdae9ae44ddf091deed
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: bf86759832a1aba0ccc1c144981af6ea4eae8670
+ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106365"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58677795"
 ---
 # <a name="deploying-watchos-apps-to-the-app-store"></a>WatchOS アプリを App Store に展開します。
 
 > [!IMPORTANT]
-> 必ず確認[Apple のウォッチ キット送信ガイド](https://developer.apple.com/app-store/watch/)、しを参照してください、[トラブルシューティング](#Troubleshooting)セクションに関する問題がある可能性があります。
+> 必ず確認[Apple のウォッチ キット送信ガイド](https://developer.apple.com/app-store/watch/)、しを参照してください、[トラブルシューティング](#troubleshooting)セクションに関する問題がある可能性があります。
 
 - あることを確認します。
   - [**配布プロビジョニング プロファイル**](#provisioning)プロジェクト用に作成します。
@@ -41,7 +41,7 @@ ms.locfileid: "50106365"
   - (省略可能)**を検証しています.** アーカイブします。
   - **送信...** archive and を iTunes にアップロードする手順を確認および承認の接続に従ってください。
 
-特定のヒントを次にこれらの項目に関連するを参照します。 参照してください、[トラブルシューティング](#Troubleshooting)セクションに問題がある場合。
+特定のヒントを次にこれらの項目に関連するを参照します。 参照してください、[トラブルシューティング](#troubleshooting)セクションに問題がある場合。
 
 <a name="provisioning" />
 

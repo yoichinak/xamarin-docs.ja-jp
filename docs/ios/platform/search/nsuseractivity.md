@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: acfff90b4b983f92718bb9af1f587a73ec0f8da7
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: b853bd3bc55a2d4cb613a9f0079aebae9f57027b
+ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104259"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58677860"
 ---
 # <a name="search-with-nsuseractivity-in-xamarinios"></a>Xamarin.iOS で NSUserActivity で検索
 
@@ -29,7 +29,7 @@ IOS 9 に新しい`NSUserActivity`(パブリックとプライベートの両方
 
  - `EligibleForHandoff` – `true`、ハンドオフ操作でこのアクティビティを使用できます。
  - `EligibleForSearch` – `true`、このアクティビティは、デバイス上のインデックスに追加し、検索結果に表示されます。
- - `EligibleForPublicIndexing` – `true`、このアクティビティが Apple のクラウド ベースのインデックスに追加し、まだインストールしていないアプリ、iOS デバイスで (検索) 経由でユーザーに表示されます。 参照してください、[パブリック検索インデックス作成](#Public-Search-Indexing)詳細については後述します。
+ - `EligibleForPublicIndexing` – `true`、このアクティビティが Apple のクラウド ベースのインデックスに追加し、まだインストールしていないアプリ、iOS デバイスで (検索) 経由でユーザーに表示されます。 参照してください、[パブリック検索インデックス作成](#public-search-indexing)詳細については後述します。
  - `Title` -アクティビティのタイトルを提供する、検索結果に表示されます。 ユーザーがそれ自体のタイトルのテキストの検索もできます。
  - `Keywords` – をインデックス化し、エンドユーザーが、検索可能には、アクティビティの記述に使用される文字列の配列です。
  - `ContentAttributeSet` – は、`CSSearchableItemAttributeSet`さらに、アクティビティの詳細を説明し、検索結果のリッチ コンテンツを提供するために使用します。
@@ -96,7 +96,7 @@ activity.BecomeCurrent();
 
 ## <a name="responding-to-an-activity"></a>アクティビティへの応答
 
-検索結果をタップすると、ユーザーに応答する (`NSUserActivity`)、アプリでは、編集、 **AppDelegate.cs**オーバーライド ファイルを開き、`ContinueUserActivity`メソッド。 例えば:
+検索結果をタップすると、ユーザーに応答する (`NSUserActivity`)、アプリでは、編集、 **AppDelegate.cs**オーバーライド ファイルを開き、`ContinueUserActivity`メソッド。 例:
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)

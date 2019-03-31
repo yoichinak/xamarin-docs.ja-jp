@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 899e40460371933a3e1cb694618c7d33a124e76c
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 1a5cc9f06fdca5944a9a3201ac15d63ca7f15453
+ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672704"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58677964"
 ---
 # <a name="handoff-in-xamarinios"></a>Xamarin.iOS でハンドオフ
 
@@ -52,9 +52,9 @@ ICloud を使用して同期されている、大きなデータ パケットで
 
 受信側のアプリからの情報を使用して、`NSUserActivity`の`UserInfo`ユーザー インターフェイスを構成し、遷移がエンドユーザーにシームレスに表示されるように指定したアクティビティの状態を復元するためのディクショナリ。
 
-継続をかどうかにより効率的に送信できるより多くの情報が必要です、`NSUserActivity`呼び出し元のアプリを送信し、必要なデータを転送する 1 つまたは複数のストリームを確立するアプリを再開することができます。 たとえば、アクティビティが複数のイメージを持つ大きなテキスト ドキュメントを編集していた場合ストリーミング必要になります、受信側のデバイスで、アクティビティを続行するために必要な情報を転送します。 詳細については、次を参照してください。、[サポート継続ストリーム](#Supporting-Continuation-Streams)以下のセクション。
+継続をかどうかにより効率的に送信できるより多くの情報が必要です、`NSUserActivity`呼び出し元のアプリを送信し、必要なデータを転送する 1 つまたは複数のストリームを確立するアプリを再開することができます。 たとえば、アクティビティが複数のイメージを持つ大きなテキスト ドキュメントを編集していた場合ストリーミング必要になります、受信側のデバイスで、アクティビティを続行するために必要な情報を転送します。 詳細については、次を参照してください。、[サポート継続ストリーム](#supporting-continuation-streams)以下のセクション。
 
-上記で説明したように`NSDocument`または`UIDocument`ベースのアプリに自動的にハンドオフは組み込みのサポートがあります。 詳細については、次を参照してください。、[ドキュメント ベース アプリでのサポートのハンドオフ](#Supporting-Handoff-in-Document-Based-Apps)以下のセクション。
+上記で説明したように`NSDocument`または`UIDocument`ベースのアプリに自動的にハンドオフは組み込みのサポートがあります。 詳細については、次を参照してください。、[ドキュメント ベース アプリでのサポートのハンドオフ](#supporting-handoff-in-document-based-apps)以下のセクション。
 
 ### <a name="the-nsuseractivity-class"></a>NSUserActivity クラス
 
@@ -68,7 +68,7 @@ ICloud を使用して同期されている、大きなデータ パケットで
 
 実装する必要があります、`UserActivityWillSave`メソッドとする変更が加えられる、 `NSUserActivity` (など`UserInfo`、`Title`など) を現在のアクティビティの状態を反映することを確認します。 システムを呼び出すと、`UserActivityWillSave`メソッド、`NeedsSave`フラグがクリアされます。 アクティビティのデータのプロパティを変更する場合は、設定する必要あります`NeedsSave`に`true`もう一度です。
 
-使用する代わりに、`UserActivityWillSave`メソッド上で示した、させることもできます`UIKit`または`AppKit`ユーザーのアクティビティを自動的に管理します。 これを行うには、設定、応答側オブジェクトの`UserActivity`プロパティと実装、`UpdateUserActivityState`メソッド。 参照してください、[レスポンダーでサポートしているハンドオフ](#Supporting-Handoff-in-Responders)詳細については後述します。
+使用する代わりに、`UserActivityWillSave`メソッド上で示した、させることもできます`UIKit`または`AppKit`ユーザーのアクティビティを自動的に管理します。 これを行うには、設定、応答側オブジェクトの`UserActivity`プロパティと実装、`UpdateUserActivityState`メソッド。 参照してください、[レスポンダーでサポートしているハンドオフ](#supporting-handoff-in-responders)詳細については後述します。
 
 ### <a name="app-framework-support"></a>アプリのフレームワークのサポート
 
@@ -84,7 +84,7 @@ OS X 上、`NSUserActivity`によって管理される`AppKit`レスポンダー
 
 `AppKit` いずれかを自動的に復元`UserActivity`OS X では、この方法で作成されたプロパティ。これは、場合に発生、`ContinueUserActivity`メソッドを返します。`false`実装されていない場合またはします。 このような状況では、ドキュメントが開かれて、`OpenDocument`のメソッド、`NSDocumentController`しを受信して、`RestoreUserActivityState`メソッドの呼び出し。
 
-参照してください、[ドキュメント ベース アプリでのサポートのハンドオフ](#Supporting-Handoff-in-Document-Based-Apps)詳細については後述します。
+参照してください、[ドキュメント ベース アプリでのサポートのハンドオフ](#supporting-handoff-in-document-based-apps)詳細については後述します。
 
 #### <a name="user-activities-and-responders"></a>ユーザー アクティビティとレスポンダー
 
@@ -94,7 +94,7 @@ OS X 上、`NSUserActivity`によって管理される`AppKit`レスポンダー
 
 アクティビティから自体の関連付けを解除、応答側が設定できるその`UserActivity`プロパティを`null`します。 アプリケーションのフレームワークが管理されている`NSUserActivity`インスタンスには、関連付けられているレスポンダーよりまたはドキュメントがない、自動的に検証済みではありません。
 
-参照してください、[レスポンダーでサポートしているハンドオフ](#Supporting-Handoff-in-Responders)詳細については後述します。
+参照してください、[レスポンダーでサポートしているハンドオフ](#supporting-handoff-in-responders)詳細については後述します。
 
 #### <a name="user-activities-and-the-appdelegate"></a>ユーザーのアクティビティと、AppDelegate
 
@@ -102,7 +102,7 @@ OS X 上、`NSUserActivity`によって管理される`AppKit`レスポンダー
 
 `NSUserActivity`インスタンスが配信される、`AppDelegate`の`ContinueUserActivity`メソッドが呼び出されます。 この時点では、アプリのユーザー インターフェイスを構成し、特定のアクティビティを続行する必要があります。
 
-参照してください、[実装ハンドオフ](#Implementing-Handoff)詳細については後述します。
+参照してください、[実装ハンドオフ](#implementing-handoff)詳細については後述します。
 
 ## <a name="enabling-handoff-in-a-xamarin-app"></a>Xamarin アプリでのハンドオフを有効にします。
 
@@ -201,7 +201,7 @@ namespace MonkeyBrowse
 }
 ```
 
-`UserActivityReceivedData`継続 Stream が送信側のデバイスからデータを受信したときに、メソッドが呼び出されます。 詳細については、次を参照してください。、[サポート継続ストリーム](#Supporting-Continuation-Streams)以下のセクション。
+`UserActivityReceivedData`継続 Stream が送信側のデバイスからデータを受信したときに、メソッドが呼び出されます。 詳細については、次を参照してください。、[サポート継続ストリーム](#supporting-continuation-streams)以下のセクション。
 
 `UserActivityWasContinued`メソッドは、別のデバイスが現在のデバイスからアクティビティを実行したときに呼び出されます。 、ToDo リストに新しい項目の追加などのアクティビティの種類に応じてアプリを送信側のデバイスでのアクティビティ中止必要がある可能性があります。
 
@@ -246,7 +246,7 @@ userInfo.Add (new NSString ("Url"), new NSString (url));
 UserActivity.AddUserInfoEntries (userInfo);
 ```
 
-Apple では、アクティビティが受信側のデバイスに適切なタイミングで送信されるように、必要最低限に送信される情報を維持することをお勧めします。 ドキュメントにアタッチされているイメージ編集より大きな情報が必要な場合に継続ストリームを使用する必要があります、送信する必要があります。 参照してください、[サポート継続ストリーム](#Supporting-Continuation-Streams)詳細については後述します。
+Apple では、アクティビティが受信側のデバイスに適切なタイミングで送信されるように、必要最低限に送信される情報を維持することをお勧めします。 ドキュメントにアタッチされているイメージ編集より大きな情報が必要な場合に継続ストリームを使用する必要があります、送信する必要があります。 参照してください、[サポート継続ストリーム](#supporting-continuation-streams)詳細については後述します。
 
 ### <a name="continuing-an-activity"></a>アクティビティの続行
 
@@ -403,7 +403,7 @@ public void PerformHandoff(NSUserActivity activity) {
 }
 ```
 
-`ContinueUserActivity`メソッドが含まれています、`UIApplicationRestorationHandler`ベース アクティビティの再開のドキュメントまたは応答側を呼び出すことです。 渡す必要があります、`NSArray`または復元のハンドラーが呼び出されたときに、復元可能なオブジェクト。 例えば:
+`ContinueUserActivity`メソッドが含まれています、`UIApplicationRestorationHandler`ベース アクティビティの再開のドキュメントまたは応答側を呼び出すことです。 渡す必要があります、`NSArray`または復元のハンドラーが呼び出されたときに、復元可能なオブジェクト。 例:
 
 ```csharp
 completionHandler (new NSObject[]{Tab4});
@@ -421,7 +421,7 @@ public override void RestoreUserActivityState (NSUserActivity activity)
 }
 ```
 
-ドキュメント ベースのアプリを実装していない場合の`ContinueUserActivity`メソッドまたはそれを返します`false`、`UIKit`または`AppKit`アクティビティを自動的に再開することができます。 参照してください、[ドキュメント ベース アプリでのサポートのハンドオフ](#Supporting-Handoff-in-Document-Based-Apps)詳細については後述します。
+ドキュメント ベースのアプリを実装していない場合の`ContinueUserActivity`メソッドまたはそれを返します`false`、`UIKit`または`AppKit`アクティビティを自動的に再開することができます。 参照してください、[ドキュメント ベース アプリでのサポートのハンドオフ](#supporting-handoff-in-document-based-apps)詳細については後述します。
 
 ### <a name="failing-handoff-gracefully"></a>ハンドオフにおける注意点
 

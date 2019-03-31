@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 7b7564e3b94062c2294919121f32c4f830346bda
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: bb6b47f7936745b00e2b7e6095662a7e8273e1bd
+ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105338"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58677899"
 ---
 # <a name="introduction-to-proactive-suggestions-in-xamarinios"></a>Xamarin.iOS でプロアクティブな候補の概要
 
@@ -166,7 +166,7 @@ activity.WebPageUrl = new NSUrl("http://xamarin.com/platform");
 
 ### <a name="restoring-an-activity"></a>アクティビティを復元します。
 
-検索結果をタップすると、ユーザーに応答する (`NSUserActivity`) アプリでは、編集、 **AppDelegate.cs**オーバーライド ファイルを開き、`ContinueUserActivity`メソッド。 例えば:
+検索結果をタップすると、ユーザーに応答する (`NSUserActivity`) アプリでは、編集、 **AppDelegate.cs**オーバーライド ファイルを開き、`ContinueUserActivity`メソッド。 例:
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)
@@ -397,7 +397,7 @@ namespace MonkeyNotification
 }
 ```
 
-このコードの詳細を見ると、それを作成し、インスタンスを設定します。 `NSUserActivity` (ように、[アクティビティを作成する](#Creating-an-Activity)前のセクション)。 次のインスタンスを作成`INSendMessageIntent`(から継承される`INIntent`) して送信されるメッセージの詳細を設定します。
+このコードの詳細を見ると、それを作成し、インスタンスを設定します。 `NSUserActivity` (ように、[アクティビティを作成する](#creating-an-activity)前のセクション)。 次のインスタンスを作成`INSendMessageIntent`(から継承される`INIntent`) して送信されるメッセージの詳細を設定します。
 
 ```csharp
 var intent = new INSendMessageIntent (to, text, "", "MonkeyChat", from);
@@ -503,7 +503,7 @@ Schema.org 背景:
 - アプリは、アプリでプロアクティブな候補を取得できます。
 - アプリは、強化されたオート コレクトを利用できます。
 
-新しい`TextContentType`iOS 10 でテキストのフィールド コントロールのプロパティにより、開発者は、ユーザーは、特定のフィールドに入力しようとします。 値のセマンティックな目的を定義します。 例えば:
+新しい`TextContentType`iOS 10 でテキストのフィールド コントロールのプロパティにより、開発者は、ユーザーは、特定のフィールドに入力しようとします。 値のセマンティックな目的を定義します。 例:
 
 ```csharp
 var textField = new UITextField();
@@ -532,7 +532,7 @@ textField.TextContentType = UITextContentType.FullStreetAddress;
 - 処理を MapKit でアプリを起動する`MKDirectionsRequest`オブジェクト。
 - IOS については、適切なタイミングに、ユーザーにアプリを提案する機能を提供するには、ユーザー エンゲージメントに基づいています。
 
-MapKit で、アプリの起動時に`MKDirectionsRequest`オブジェクトの場合に自動的に始めると、要求された場所にユーザーの指示またはを指示の取得を開始するユーザーを容易にする UI を表示する必要があります。 例えば:
+MapKit で、アプリの起動時に`MKDirectionsRequest`オブジェクトの場合に自動的に始めると、要求された場所にユーザーの指示またはを指示の取得を開始するユーザーを容易にする UI を表示する必要があります。 例:
 
 
 ```csharp

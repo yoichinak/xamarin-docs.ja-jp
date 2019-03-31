@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/15/2017
-ms.openlocfilehash: 40d4a6cbd3bb8e3bd4c55c50c69f85f91d94feac
-ms.sourcegitcommit: 2f6a5c1abf90fbdb0475fd8a3ce6de3cd7c7d575
+ms.openlocfilehash: 6db9ff0085c17f07d07a7591f5d735793bfbc5f9
+ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52459929"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58678042"
 ---
 # <a name="callkit-in-xamarinios"></a>Xamarin.iOS で CallKit
 
@@ -278,7 +278,7 @@ namespace MonkeyCall
 }
 ```
 
-`CallHandleFromURL`と`CallHandleFromActivity`クラスは、発信通話で呼び出されている担当者の連絡先のハンドルを取得する、AppDelegate で使用されます。 詳細についてを参照してください、[発信呼び出しの処理](#Handling-Outgoing-Calls)以下のセクション。
+`CallHandleFromURL`と`CallHandleFromActivity`クラスは、発信通話で呼び出されている担当者の連絡先のハンドルを取得する、AppDelegate で使用されます。 詳細についてを参照してください、[発信呼び出しの処理](#handling-outgoing-calls)以下のセクション。
 
 ### <a name="the-activecallmanager-class"></a>ActiveCallManager クラス
 
@@ -392,7 +392,7 @@ namespace MonkeyCall
 }
 ```
 
-もう一度のみ、シミュレーションは、このため、`ActiveCallManager`のみのコレクションを保持`ActiveCall`オブジェクトによって指定された呼び出しを検索するためのルーチンであり、`UUID`プロパティ。 開始、終了および、発信通話の保留中の状態を変更するメソッドも含まれています。 詳細についてを参照してください、[発信呼び出しの処理](#Handling-Outgoing-Calls)以下のセクション。
+もう一度のみ、シミュレーションは、このため、`ActiveCallManager`のみのコレクションを保持`ActiveCall`オブジェクトによって指定された呼び出しを検索するためのルーチンであり、`UUID`プロパティ。 開始、終了および、発信通話の保留中の状態を変更するメソッドも含まれています。 詳細についてを参照してください、[発信呼び出しの処理](#handling-outgoing-calls)以下のセクション。
 
 ### <a name="the-providerdelegate-class"></a>ProviderDelegate クラス
 
@@ -728,7 +728,7 @@ namespace MonkeyCall
 }
 ```
 
-`OpenUrl`と`ContinueUserActivity`メソッドは、アプリが、発信通話を処理するときに使用します。 上書きします。 詳細についてを参照してください、[発信呼び出しの処理](#Handling-Outgoing-Calls)以下のセクション。
+`OpenUrl`と`ContinueUserActivity`メソッドは、アプリが、発信通話を処理するときに使用します。 上書きします。 詳細についてを参照してください、[発信呼び出しの処理](#handling-outgoing-calls)以下のセクション。
 
 ## <a name="handling-incoming-calls"></a>着信通話の処理
 
@@ -945,9 +945,9 @@ public override bool ContinueUserActivity (UIApplication application, NSUserActi
 }
 ```
 
-ここで、`CallHandleFromActivity`ヘルパー クラスのメソッド`StartCallRequest`呼び出されている人に、ハンドルの取得に使用されている (を参照してください[StartCallRequest クラス](#The-StartCallRequest-Class)上)。 
+ここで、`CallHandleFromActivity`ヘルパー クラスのメソッド`StartCallRequest`呼び出されている人に、ハンドルの取得に使用されている (を参照してください[StartCallRequest クラス](#the-startcallrequest-class)上)。
 
-`PerformStartCallAction`のメソッド、 [ProviderDelegate クラス](#The-ProviderDelegate-Class)最後に実際の送信呼び出しを起動し、そのライフ サイクルのシステムに伝達するために使用します。
+`PerformStartCallAction`のメソッド、 [ProviderDelegate クラス](#the-providerdelegate-class)最後に実際の送信呼び出しを起動し、そのライフ サイクルのシステムに伝達するために使用します。
 
 ```csharp
 public override void PerformStartCallAction (CXProvider provider, CXStartCallAction action)
