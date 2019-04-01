@@ -1,18 +1,18 @@
 ---
-title: 'Xamarin.Essentials: デバイス情報'
+title: Xamarin.Essentials:デバイス情報
 description: このドキュメントでは、アプリケーションが実行されているデバイスに関する情報を提供する Xamarin.Essentials の DeviceInfo クラスについて説明します。
 ms.assetid: A1AC5373-926A-4FB6-8D7D-4B87EB8EB522
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: b78c04d30871552f9b1e18a42c871e24464c4802
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.openlocfilehash: a7868277cd5e924d55ad688df1e8e07c81c5f074
+ms.sourcegitcommit: 5d4e6677224971e2bc0268f405d192d0358c74b8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52898954"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58329326"
 ---
-# <a name="xamarinessentials-device-information"></a>Xamarin.Essentials: デバイス情報
+# <a name="xamarinessentials-device-information"></a>Xamarin.Essentials:デバイス情報
 
 **DeviceInfo** クラスでは、アプリケーションが実行されているデバイスに関する情報が提供されます。
 
@@ -53,18 +53,18 @@ var idiom = DeviceInfo.Idiom;
 var deviceType = DeviceInfo.DeviceType;
 ```
 
-## <a name="platformsxrefxamarinessentialsdeviceinfoplatforms"></a>[プラットフォーム](xref:Xamarin.Essentials.DeviceInfo.Platforms)
+## <a name="platforms"></a>プラットフォーム
 
-`DeviceInfo.Platform` は、オペレーティング システムにマップされる定数文字列に対応します。 値は次の `DevicePlatform` 構造体で確認できます。
+[`DeviceInfo.Platform`](xref:Xamarin.Essentials.DeviceInfo.Platform) は、オペレーティング システムにマップされる定数文字列に関連付けられます。 値は次の `DevicePlatform` 構造体で確認できます。
 
 - **DevicePlatform.iOS** – iOS
 - **DevicePlatform.Android** – Android
 - **DevicePlatform.UWP** – UWP
 - **DevicePlatform.Unknown** – 不明
 
-## <a name="idiomsxrefxamarinessentialsdeviceinfoidioms"></a>[表示形式](xref:Xamarin.Essentials.DeviceInfo.Idioms)
+## <a name="idioms"></a>表示形式
 
-`DeviceInfo.Idiom` は、アプリケーションが実行されているデバイスの種類にマップされる文字列定数に対応します。 値は次の `DeviceIdiom` 構造体で確認できます。
+[`DeviceInfo.Idiom`](xref:Xamarin.Essentials.DeviceInfo.Idiom) は、アプリケーションが実行されるデバイスの種類にマップされる文字列定数に関連付けられます。 値は次の `DeviceIdiom` 構造体で確認できます。
 
 - **DeviceIdiom.Phone** – 電話
 - **DeviceIdiom.Tablet** – タブレット

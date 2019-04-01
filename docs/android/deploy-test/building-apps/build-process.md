@@ -5,13 +5,13 @@ ms.assetid: 3BE5EE1E-3FF6-4E95-7C9F-7B443EE3E94C
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
-ms.date: 12/03/2018
-ms.openlocfilehash: 86e2380a2931517b021162a6cecadc7d6d5b4c43
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.date: 03/22/2019
+ms.openlocfilehash: 3e660e821e54d673b5c28c611ad24dcb4eefd4bb
+ms.sourcegitcommit: 247a6d00a95fd7f4cf918d923e5f357c8db56761
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669395"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58420186"
 ---
 # <a name="build-process"></a>ビルド プロセス
 
@@ -21,11 +21,11 @@ Xamarin.Android ビルド プロセスは、[`Resource.designer.cs` の生成](~
 
 ## <a name="application-packages"></a>アプリケーション パッケージ
 
-Xamarin.Android ビルド システムが生成できる Android アプリケーション パッケージ (`.apk` ファイル) には、大まかに次の 2 種類があります。 
+Xamarin.Android ビルド システムが生成できる Android アプリケーション パッケージ (`.apk` ファイル) には、大まかに次の 2 種類があります。
 
--   **リリース** ビルドは、実行に追加のパッケージを必要としない、完全な自己完結型です。 App Store に提供されるのはこのパッケージです。 
+-   **リリース** ビルドは、実行に追加のパッケージを必要としない、完全な自己完結型です。 App Store に提供されるのはこのパッケージです。
 
--   **デバッグ** ビルドではありません。 
+-   **デバッグ** ビルドではありません。
 
 偶然ではなく、これらはパッケージを生成する MSBuild `Configuration` が一致しています。
 
@@ -33,13 +33,13 @@ Xamarin.Android ビルド システムが生成できる Android アプリケー
 
 *共有ランタイム*は、基本クラス ライブラリ (`mscorlib.dll` など) と Android バインド ライブラリ (`Mono.Android.dll` など) を提供する追加の Android パッケージのペアです。 デバッグ ビルドは共有ランタイムに依存して、基本クラス ライブラリとバインド アセンブリを Android アプリケーション パッケージ内に含める代わりに、デバッグ パッケージをより小さくできるようにします。
 
-共有ランタイムは、`$(AndroidUseSharedRuntime)` プロパティを `False` に設定することで、デバッグ ビルドで無効にすることができます。 
+共有ランタイムは、`$(AndroidUseSharedRuntime)` プロパティを `False` に設定することで、デバッグ ビルドで無効にすることができます。
 
 <a name="Fast_Deployment" />
 
 ### <a name="fast-deployment"></a>高速展開
 
-*高速展開*は、共有ランタイムと連携して、Android アプリケーション パッケージのサイズをさらに縮小します。 これはアプリのアセンブリをパッケージ内にバンドルせずに、 `adb push` を介してターゲットにコピーすることで行います。 このプロセスにより、ビルド/展開/デバッグのサイクルが高速化されます。アセンブリ*のみ*が変更された場合、パッケージは再インストールされず、 代わりに、更新されたアセンブリだけがターゲット デバイスに再同期されるからです。 
+*高速展開*は、共有ランタイムと連携して、Android アプリケーション パッケージのサイズをさらに縮小します。 これはアプリのアセンブリをパッケージ内にバンドルせずに、 `adb push` を介してターゲットにコピーすることで行います。 このプロセスにより、ビルド/展開/デバッグのサイクルが高速化されます。アセンブリ*のみ*が変更された場合、パッケージは再インストールされず、 代わりに、更新されたアセンブリだけがターゲット デバイスに再同期されるからです。
 
 高速展開は、`adb` のディレクトリ `/data/data/@PACKAGE_NAME@/files/.__override__` への同期をブロックするデバイスでは失敗することがわかっています。
 
@@ -49,9 +49,10 @@ Xamarin.Android ビルド システムが生成できる Android アプリケー
 ## <a name="msbuild-projects"></a>MSBuild プロジェクト
 
 Xamarin.Android ビルド プロセスは、Visual Studio for Mac と Visual Studio で使用されるプロジェクト ファイル形式でもある MSBuild に基づいています。
-通常、ユーザーは、MSBuild ファイルを手動で編集する必要はありません &ndash; IDE によって完全に機能するプロジェクトが作成され、変更があれば更新され、必要に応じて自動的にビルド ターゲットが呼び出されます。 
+通常、ユーザーは、MSBuild ファイルを手動で編集する必要はありません &ndash; IDE によって完全に機能するプロジェクトが作成され、変更があれば更新され、必要に応じて自動的にビルド ターゲットが呼び出されます。
 
-上級ユーザーが IDE の GUI でサポートされていないことを行えるように、ビルド プロセスは、プロジェクト ファイルを直接編集することでカスタマイズできるようになっています。 このページでは、Xamarin.Android 固有の機能とカスタマイズのみを文書化しています &ndash; 通常の MSBuild 項目、プロパティおよびターゲットを使用して、さらに多くのことができます。 
+上級ユーザーが IDE の GUI でサポートされていないことを行えるように、ビルド プロセスは、プロジェクト ファイルを直接編集することでカスタマイズできるようになっています。
+このページでは、Xamarin.Android 固有の機能とカスタマイズのみを文書化しています &ndash; 通常の MSBuild 項目、プロパティおよびターゲットを使用して、さらに多くのことができます。
 
 <a name="Build_Targets" />
 
@@ -74,7 +75,7 @@ Xamarin.Android プロジェクトに対して、次のビルド ターゲット
 
 ## <a name="build-properties"></a>[ビルド プロパティ]
 
-MSBuild プロパティは、ターゲットの動作を制御します。 これらは、[MSBuild PropertyGroup 要素](https://docs.microsoft.com/visualstudio/msbuild/propertygroup-element-msbuild)内のプロジェクト ファイル (**MyApp.csproj** など) 内で指定されます。 
+MSBuild プロパティは、ターゲットの動作を制御します。 これらは、[MSBuild PropertyGroup 要素](https://docs.microsoft.com/visualstudio/msbuild/propertygroup-element-msbuild)内のプロジェクト ファイル (**MyApp.csproj** など) 内で指定されます。
 
 -   **Configuration** &ndash; 使用するビルド構成 ("Debug" または "Release" など) を指定します。 Configuration プロパティは、ターゲットの動作を決定するその他のプロパティの既定値を決定するために使用されます。 追加の構成は、IDE 内で作成できます。
 
@@ -86,14 +87,14 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
 
 -   **DebugType** &ndash; ビルドの一部として生成するための[デバッグ シンボルの型](https://docs.microsoft.com/visualstudio/msbuild/csc-task)を指定します。これはアプリケーションがデバッグ可能かどうかにも影響します。 次のような値となる場合があります。
 
-    - **Full**: 完全なシンボルが生成されます。 `DebugSymbols` MSBuild プロパティも `True` の場合、アプリケーション パッケージはデバッグ可能です。
+    -   **Full**: 完全なシンボルが生成されます。 `DebugSymbols` MSBuild プロパティも `True` の場合、アプリケーション パッケージはデバッグ可能です。
 
-    - **PdbOnly**: "PDB" シンボルが生成されます。 アプリケーション パッケージはデバッグ可能には*なりません*。
+    -   **PdbOnly**: "PDB" シンボルが生成されます。 アプリケーション パッケージはデバッグ可能には*なりません*。
 
     `DebugType` が設定されていないか、空の文字列の場合、`DebugSymbols` プロパティが、アプリケーションがデバッグ可能かどうかを制御します。
 
-    - **AndroidGenerateLayoutBindings** &ndash; `true` に設定されている場合は[レイアウトのコードビハインド](https://github.com/xamarin/xamarin-android/blob/master/Documentation/guides/LayoutCodeBehind.md)の生成を有効にし、`false` に設定されている場合は完全に無効にします。 既定値は `false` です。
-    
+    -   **AndroidGenerateLayoutBindings** &ndash; `true` に設定されている場合は[レイアウトのコードビハインド](https://github.com/xamarin/xamarin-android/blob/master/Documentation/guides/LayoutCodeBehind.md)の生成を有効にし、`false` に設定されている場合は完全に無効にします。 既定値は `false` です。
+
 ### <a name="install-properties"></a>インストール プロパティ
 
 インストール プロパティは、`Install` ターゲットと `Uninstall` ターゲットの動作を制御します。
@@ -112,6 +113,9 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
 パッケージング プロパティは、Android パッケージの作成を制御し、`Install` ターゲットと `SignAndroidPackage` ターゲッによって使用されます。
 リリース アプリケーションをパッケージングする場合には、[署名プロパティ](#Signing_Properties)も関係します。
 
+-   **AndroidApkSignerAdditionalArguments** &ndash; 開発者が `apksigner` ツールに追加の引数を指定することを許可する文字列プロパティ。
+
+    Xamarin.Android 8.2 で追加されました。
 
 -   **AndroidApkSigningAlgorithm** &ndash; `jarsigner -sigalg` で使用する署名アルゴリズムを指定する文字列値。
 
@@ -123,13 +127,17 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
 
     `<AndroidApplication>True</AndroidApplication>` を持つプロジェクトは、Android パッケージ内に 1 つしか存在できない場合があります (残念ながら、これについてはまだ検証されていません。Android リソースに関するわかりにくいおかしなエラーになることがあります)。
 
+-   **AndroidApplicationJavaClass** &ndash; [Android.App.Application](https://developer.xamarin.com/api/type/Android.App.Application/) からクラスを継承するときに、`android.app.Application` の代わりに使用する完全な Java クラス名。
+
+    このプロパティは、通常、`$(AndroidEnableMultiDex)` MSBuild プロパティなどの "*他の*" プロパティによって設定されます。
+
+    Xamarin.Android 6.1 で追加されました。
+
 -   **AndroidBuildApplicationPackage** &ndash; パッケージ (.apk) を作成して署名するかどうかを示すブール値。 この値を `True` に設定することは、[SignAndroidPackage](#Build_Targets) ビルド ターゲットを使用することと同じです。
 
     このプロパティのサポートは、Xamarin.Android 7.1 以降で追加されました。
 
     このプロパティは既定で `False` です。
-
--   **AndroidD8JarPath** &ndash; d8 dex-compiler で使用する `d8.jar` へのパス。 既定値は、Xamarin.Android のインストール パスになります。 詳細については、[D8 と R8][d8-r8] のドキュメントを参照してください。
 
 -   **AndroidDexTool** &ndash; `dx` または `d8` の有効な値の列挙方式のプロパティ。 Xamarin.Android のビルド プロセス中に使用される Android の [dex][dex] コンパイラを示します。
     現在の既定値は `dx` です。 詳細については、[D8 と R8][d8-r8] のドキュメントを参照してください。
@@ -144,6 +152,20 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
     このプロパティのサポートは、Xamarin.Android 5.1 で追加されました。
 
     このプロパティは既定で `False` です。
+
+-   **AndroidEnablePreloadAssemblies** &ndash; アプリケーション パッケージ内でバンドルされているすべてのマネージド アセンブリを、プロセスの起動中に読み込むかどうかを制御するブール型プロパティ。
+
+    `True` に設定すると、アプリケーション コードが呼び出される前に、アプリケーション パッケージ内でバンドルされているすべてのアセンブリがプロセスの起動中に読み込まれます。
+    これは、Xamarin.Android 9.2 より前のリリースの Xamarin.Android の動作と一致します。
+
+    `False` に設定すると、アセンブリは必要な場合にのみ読み込まれます。
+    これにより、アプリケーションの起動がより高速になり、デスクトップの .NET セマンティクスとの整合性も高まります。  時間の短縮を確認したい場合は、`timing` を含めるよう `debug.mono.log` システム プロパティを設定して、`adb logcat` 内で `Finished loading assemblies: preloaded` メッセージを探します。
+
+    依存関係の挿入を使うアプリケーションまたはライブラリでは、それらが同じように `AppDomain.CurrentDomain.GetAssemblies()` でアプリケーション バンドル内のすべてのアセンブリを返すことが必要な場合、それ以外ではアセンブリが必要なかった場合でも、このプロパティが `True` になることを "*必要とする*" 場合があります。
+
+    既定では、この値は `True` に設定されます。
+
+    Xamarin.Android 9.2 で追加されました。
 
 -   **AndroidEnableSGenConcurrent** &ndash; Mono の[同時 GC コレクター](https://www.mono-project.com/docs/about-mono/releases/4.8.0/#concurrent-sgen)が使用されるかどうかを決定するブール型プロパティ。
 
@@ -182,13 +204,40 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
 
     **試験的**です。 Xamarin.Android 6.1 で追加されました。
 
--   **AndroidApplicationJavaClass** &ndash; [Android.App.Application](https://developer.xamarin.com/api/type/Android.App.Application/) からクラスを継承するときに、`android.app.Application` の代わりに使用する完全な Java クラス名。
+-   **AndroidGenerateJniMarshalMethods** &ndash; ビルド プロセスの一環として、JNI マーシャリング メソッドの生成を有効にするブール型プロパティ。 これにより、バインディング ヘルパー コードでの System.Reflection の使用量が大幅に削減されます。
 
-    このプロパティは、通常、`$(AndroidEnableMultiDex)` MSBuild プロパティなどの "*他の*" プロパティによって設定されます。
+    既定では、これは False に設定されます。 開発者が新しい JNI マーシャリング メソッド機能を使用する場合、
 
-    Xamarin.Android 6.1 で追加されました。
+    ```xml
+    <AndroidGenerateJniMarshalMethods>True</AndroidGenerateJniMarshalMethods>
+    ```
 
--   **AndroidHttpClientHandlerType** &ndash; 既定の `System.Net.Http.HttpClient` コンストラクターによって使用される、既定の `System.Net.Http.HttpMessageHandler` の実装を制御します。 値は `HttpMessageHandler` サブクラスのアセンブリ修飾型名であり、[`System.Type.GetType(string)`](/dotnet/api/system.type.gettype?view=netcore-2.0#System_Type_GetType_System_String_) での使用に適しています。
+    自分の .csproj で設定できます。 または、コマンド ラインでプロパティを指定します。
+
+    ```
+    /p:AndroidGenerateJniMarshalMethods=True
+    ```
+
+    **試験的**です。 Xamarin.Android 9.2 で追加されました。
+    既定値は False です。
+
+-   **AndroidGenerateJniMarshalMethodsAdditionalArguments** &ndash; `jnimarshalmethod-gen.exe` 呼び出しにさらにパラメーターを追加するために使用できる文字列プロパティ。  これはデバッグに役立つため、オプション (`-v`、`-d`、`--keeptemp` など) を使用できます。
+
+    既定値は、空の文字列です。 これは、.csproj ファイルまたはコマンド ラインで設定できます。 次に例を示します。
+
+    ```xml
+    <AndroidGenerateJniMarshalMethodsAdditionalArguments>-v -d --keeptemp</AndroidGenerateJniMarshalMethodsAdditionalArguments>
+    ```
+
+    または
+
+    ```
+    /p:AndroidGenerateJniMarshalMethodsAdditionalArguments="-v -d --keeptemp"
+    ```
+
+    Xamarin.Android 9.2 で追加されました。
+
+-   **AndroidHttpClientHandlerType** &ndash; 既定の `System.Net.Http.HttpClient` コンストラクターによって使用される、既定の `System.Net.Http.HttpMessageHandler` の実装を制御します。 値は `HttpMessageHandler` サブクラスのアセンブリ修飾型名であり、[`System.Type.GetType(string)`](https://docs.microsoft.com/dotnet/api/system.type.gettype?view=netcore-2.0#System_Type_GetType_System_String_) での使用に適しています。
 
     既定値は `System.Net.Http.HttpClientHandler, System.Net.Http` です。
 
@@ -202,31 +251,13 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
 
     Xamarin.Android 6.1 で追加されました。
 
--   **AndroidTlsProvider** &ndash; アプリケーションで使用する必要がある TLS プロバイダーを指定する文字列値。 指定できる値は次のとおりです。
-
-    - `btls`:[HttpWebRequest](xref:System.Net.HttpWebRequest) との TLS 通信に [BoringSSL](https://boringssl.googlesource.com/boringssl) を使用します。
-      これにより、Android のすべてのバージョンで TLS 1.2 を使用できます。
-
-    - `legacy`:ネットワークの対話に過去に管理されていた SSL の実装を使用します。 これは、TLS 1.2 をサポート*していません*。
-
-    - `default`:*Mono* で既定の TLS プロバイダーを選択することを許可します。
-      Xamarin.Android 7.3 でも、これは `legacy` と同等です。  
-      *注*:IDE の "既定" 値が `$(AndroidTlsProvider)` プロパティの "*削除*" をもたらすため、この値が `.csproj` の値に表示される可能性は低いです。
-
-    - 空の文字列を設定解除します。Xamarin.Android 7.1 では、これは `legacy` と同等です。  
-      Xamarin.Android 7.3 では、これは `btls` と同等です。
-
-    既定値は、空の文字列です。
-
-    Xamarin.Android 7.1 で追加されました。
-
 -   **AndroidLinkMode** &ndash; Android パッケージ内に含まれるアセンブリで実行する必要がある[リンク](~/android/deploy-test/linker.md)の種類を指定します。 Android アプリケーション プロジェクトでのみ使用されます。 既定値は *SdkOnly* です。 次の値を指定できます。
 
-    - **None**: リンクは試行されません。
+    -   **None**: リンクは試行されません。
 
-    - **SdkOnly**: リンクは基本クラス ライブラリでのみ実行され、ユーザーのアセンブリでは実行されません。
+    -   **SdkOnly**: リンクは基本クラス ライブラリでのみ実行され、ユーザーのアセンブリでは実行されません。
 
-    - **Full**: リンクは基本クラス ライブラリとユーザーのアセンブリで実行されます。 **注:***Full* の `AndroidLinkMode` 値を使用すると、多くの場合、特にリフレクションを使用している場合には、アプリが破損します。 何をしているかを*十分に*理解している場合を除き、使用しないでください。
+    -   **Full**: リンクは基本クラス ライブラリとユーザーのアセンブリで実行されます。 **注:***Full* の `AndroidLinkMode` 値を使用すると、多くの場合、特にリフレクションを使用している場合には、アプリが破損します。 何をしているかを*十分に*理解している場合を除き、使用しないでください。
 
     ```xml
     <AndroidLinkMode>SdkOnly</AndroidLinkMode>
@@ -242,9 +273,18 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
 
     [d8-r8]: https://github.com/xamarin/xamarin-android/blob/master/Documentation/guides/D8andR8.md
 
--   **LinkerDumpDependencies** &ndash; リンカーの依存関係ファイルの生成を有効にするブール型プロパティ。 このファイルは、[illinkanalyzer](https://github.com/mono/linker/blob/master/src/analyzer/README.md) ツールに対する入力として使用できます。
+-   **AndroidLintEnabled** &ndash; 開発者がパッケージ化プロセスの一部として、Android の `lint` ツールを実行できるようにするブール型プロパティ。
 
-    既定値は False です。
+    -   **AndroidLintEnabledIssues** &ndash; 有効にする lint の問題のコンマ区切りリスト。
+
+    -   **AndroidLintDisabledIssues** &ndash; 無効にする lint の問題のコンマ区切りリスト。
+
+    -   **AndroidLintCheckIssues** &ndash; チェックする lint の問題のコンマ区切りリスト。
+        注: これらの問題のみがチェックされます。
+
+    -   **AndroidLintConfig** &ndash; これは Lint のスタイル構成ファイルのビルド アクションです。 有効または無効にされた問題の確認に使用できます。 複数のファイルで、コンテンツがマージされるように、このビルド アクションを使用できます。
+
+    Android の `lint` ツールの詳細については、[Lint のヘルプ](https://developer.android.com/studio/write/lint)に関するページを参照してください。
 
 -   **AndroidManagedSymbols** &ndash; ファイル名と行番号の情報を `Release` スタック トレースから抽出できるように、シーケンス ポイントを生成するかどうかを制御するブール型プロパティ。
 
@@ -253,6 +293,23 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
 -   **AndroidManifest** &ndash; アプリの [`AndroidManifest.xml`](~/android/platform/android-manifest.md) のテンプレートとして使用するファイル名を指定します。
     ビルド時に、実際の `AndroidManifest.xml` を生成するためにその他の必要な値がマージされます。
     `$(AndroidManifest)` は、`/manifest/@package` 属性にパッケージ名を含める必要があります。
+
+-   **AndroidMultiDexClassListExtraArgs** &ndash; `multidex.keep` ファイルを生成するときに、開発者が追加の引数を `com.android.multidex.MainDexListBuilder` に渡すことを許可する文字列プロパティ。
+
+    1 つの具体的なケースは、`dx` のコンパイル中に次のエラーが発生する場合です。
+
+        com.android.dex.DexException: Too many classes in --main-dex-list, main dex capacity exceeded
+
+    このエラーが発生している場合は、以下を .csproj に追加できます。
+
+    ```xml
+    <DxExtraArguments>--force-jumbo </DxExtraArguments>
+    <AndroidMultiDexClassListExtraArgs>--disable-annotation-resolution-workaround</AndroidMultiDexClassListExtraArgs>
+    ```
+
+    これにより、`dx` の手順を成功させることができます。
+
+    Xamarin.Android 8.3 で追加されました。
 
 -   **AndroidR8JarPath** &ndash; r8 dex コンパイラおよびシュリンカーで使用する `r8.jar` へのパス。 既定値は、Xamarin.Android のインストール パスになります。 詳細については、[D8 と R8][d8-r8] のドキュメントを参照してください。
 
@@ -269,9 +326,72 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
     -   `arm64-v8a`:Xamarin.Android 5.1 以降が必要です。
     -   `x86_64`:Xamarin.Android 5.1 以降が必要です。
 
+-   **AndroidTlsProvider** &ndash; アプリケーションで使用する必要がある TLS プロバイダーを指定する文字列値。 指定できる値は次のとおりです。
+
+    -   `btls`:[HttpWebRequest](xref:System.Net.HttpWebRequest) との TLS 通信に [BoringSSL](https://boringssl.googlesource.com/boringssl) を使用します。
+        これにより、Android のすべてのバージョンで TLS 1.2 を使用できます。
+
+    -   `legacy`:ネットワークの対話に過去に管理されていた SSL の実装を使用します。 これは、TLS 1.2 をサポート*していません*。
+
+    -   `default`:*Mono* で既定の TLS プロバイダーを選択することを許可します。
+        Xamarin.Android 7.3 でも、これは `legacy` と同等です。  
+        *注*:IDE の "既定" 値が `$(AndroidTlsProvider)` プロパティの "*削除*" をもたらすため、この値が `.csproj` の値に表示される可能性は低いです。
+
+    -   空の文字列を設定解除します。Xamarin.Android 7.1 では、これは `legacy` と同等です。  
+        Xamarin.Android 7.3 では、これは `btls` と同等です。
+
+    既定値は、空の文字列です。
+
+    Xamarin.Android 7.1 で追加されました。
+
+-   **AndroidUseApkSigner** &ndash; `jarsigner` ではなく `apksigner` ツールを使用することを開発者に許可するブール型プロパティ。
+
+    Xamarin.Android 8.2 で追加されました。
+
+-   **AndroidUseLegacyVersionCode** &ndash; 開発者が versionCode の計算を Xamarin.Android 8.2 前の動作に戻すことを許可するブール型プロパティ。 これは、Google Play ストアに既存のアプリケーションがある開発者に向けてのみ使用する必要があります。 新しい `$(AndroidVersionCodePattern)` プロパティを使用することを強くお勧めします。
+
+    Xamarin.Android 8.2 で追加されました。
+
+-   **AndroidUseManagedDesignTimeResourceGenerator** &ndash; デザイン時のビルドを、`aapt` ではなく管理対象リソース パーサーの使用に切り替えるブール型プロパティ。
+
+    Xamarin.Android 8.1 で追加されました。
+
 -   **AndroidUseSharedRuntime** &ndash; ターゲット デバイスでアプリケーションを実行するために*共有ランタイム パッケージ*が必要かどうかを決定するブール型プロパティ。 共有ランタイム パッケージに依存することで、アプリケーション パッケージをより小型化し、パッケージの作成と展開プロセスを高速化できるため、ビルド/配置/デバッグのターンアラウンド サイクルの高速化が結果として得られます。
 
     このプロパティは、デバッグ ビルドには `True`、リリース プロジェクトには `False` にする必要があります。
+
+-   **AndroidVersionCodePattern** &ndash; 開発者がマニフェスト内の `versionCode` をカスタマイズできるようにする文字列プロパティ。
+    `versionCode` の決定に関する情報は、「[Creating the Version Code for the APK](~/android/deploy-test/building-apps/abi-specific-apks.md)」 (APK のバージョン コードの作成) を参照してください。
+
+    いくつかの例では、`abi` が `armeabi` でマニフェスト内の `versionCode` が `123` の場合、`$(AndroidCreatePackagePerAbi)` が True のときには `{abi}{versionCode}` により `1123` の versionCode が生成され、それ以外のときは 123 の値が生成されます。
+    `abi` が `x86_64` でマニフェスト内の `versionCode` は `44` です。 これにより、`$(AndroidCreatePackagePerAbi)` が True の場合には `544` が生成され、それ以外の場合は `44` の値が生成されます。
+
+    `versionCode` を `0` でレフト パディングしているため、レフト パディングの書式文字列 `{abi}{versionCode:0000}` を含めると、`50044` が生成されます。 または、`{abi}{versionCode:D4}` などの 10 進パディングを使用することもできます。
+    これは前の例と同じ動作になります。
+
+    値は整数である必要があるため、'0' と 'Dx' のパディングの書式文字列のみがサポートされます。
+
+    事前定義済みのキー項目
+
+    -   **abi** &ndash; アプリのターゲットとなる abi を挿入します。
+        -   2 &ndash; `armeabi-v7a`
+        -   3 &ndash; `x86`
+        -   4 &ndash; `arm64-v8a`
+        -   5 &ndash; `x86_64`
+
+    -   **minSDK** &ndash; `AndroidManifest.xml` または `11` (定義されていない場合) からサポートされる Sdk の最小値を挿入します。
+
+    -   **versionCode** &ndash; `Properties\AndroidManifest.xml` から直接バージョン コードを使用します。
+
+    `$(AndroidVersionCodeProperties)` プロパティ (次で定義) を使用してカスタム項目を定義することができます。
+
+    既定では、値は `{abi}{versionCode:D6}` に設定されます。 開発者が古い動作を保持する必要がある場合は、`$(AndroidUseLegacyVersionCode)` プロパティを `true` に設定することで既定値をオーバーライドできます。
+
+    Xamarin.Android 7.2 で追加されました。
+
+-   **AndroidVersionCodeProperties** &ndash; `AndroidVersionCodePattern` で使用するために、開発者がカスタム項目を定義できるようにする文字列プロパティ。 これらは `key=value` ペアの形式です。 `value` 内のすべての項目は整数値である必要があります。 たとえば、`screen=23;target=$(_AndroidApiLevel)` のように指定します。 ご覧のとおり、既存またはカスタムの MSBuild プロパティを文字列で利用することができます。
+
+    Xamarin.Android 7.2 で追加されました。
 
 -   **AotAssemblies** &ndash; アセンブリをネイティブ コードに Ahead-of-Time コンパイルして、`.apk` に含めるかどうかを決定するブール型プロパティ。
 
@@ -283,7 +403,7 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
 
     このプロパティは、リリース ビルドには `True`、デバッグ ビルドには `False` にする必要があります。 高速展開でターゲット デバイスがサポートされない場合は、デバッグ ビルドでこのプロパティを `True` にする必要がある*場合があります*。
 
-    このプロパティが `False` の場合、`$(AndroidFastDeploymentType)` MSBuild プロパティで `.apk` に埋め込まれるものも制御されるため、展開および再ビルド時間に影響を及ぼす場合があります。
+    このプロパティが `False` の場合、`$(AndroidFastDeploymentType)` MSBuild プロパティが `.apk` に埋め込まれるものも制御するため、展開および再ビルド時間に影響を及ぼす場合があります。
 
 -   **EnableLLVM** &ndash; アセンブリをネイティブ コードに Ahead-of-Time コンパイルするときに、LLVM を使用するかどうかを決定するブール型プロパティ。
 
@@ -313,6 +433,10 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
 
 -   **JavaOptions** &ndash; `.dex` ファイルのビルド時に、**java** に渡す追加のコマンド ライン オプションを指定します。
 
+-   **LinkerDumpDependencies** &ndash; リンカーの依存関係ファイルの生成を有効にするブール型プロパティ。 このファイルは、[illinkanalyzer](https://github.com/mono/linker/blob/master/src/analyzer/README.md) ツールに対する入力として使用できます。
+
+    既定値は False です。
+
 -   **MandroidI18n** &ndash; 照合順序や並べ替えテーブルなど、アプリケーションに含まれる国際化サポートを指定します。 値は、次の大文字と小文字を区別しない値の 1 つ以上のコンマ区切りまたはセミコロン区切りのリストです。
 
     -   **None**: 追加のエンコードは含まれません。
@@ -340,130 +464,22 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
 
     Xamarin.Android 7.1 で追加されました。
 
--   **AndroidVersionCodePattern** &ndash; 開発者がマニフェスト内の `versionCode` をカスタマイズできるようにする文字列プロパティ。
-    `versionCode` の決定に関する情報は、「[Creating the Version Code for the APK](~/android/deploy-test/building-apps/abi-specific-apks.md)」 (APK のバージョン コードの作成) を参照してください。
-    
-    いくつかの例では、`abi` が `armeabi` でマニフェスト内の `versionCode` が `123` の場合、`$(AndroidCreatePackagePerAbi)` が True のときには `{abi}{versionCode}` により `1123` の versionCode が生成され、それ以外のときは 123 の値が生成されます。
-    `abi` が `x86_64` でマニフェスト内の `versionCode` は `44` です。 これにより、`$(AndroidCreatePackagePerAbi)` が True の場合には `544` が生成され、それ以外の場合は `44` の値が生成されます。
-
-    `versionCode` を `0` でレフト パディングしているため、レフト パディングの書式文字列 `{abi}{versionCode:0000}` を含めると、`50044` が生成されます。 または、`{abi}{versionCode:D4}` などの 10 進パディングを使用することもできます。
-    これは前の例と同じ動作になります。
-
-    値は整数である必要があるため、'0' と 'Dx' のパディングの書式文字列のみがサポートされます。
-    
-    事前定義済みのキー項目
-
-    -   **abi** &ndash; アプリのターゲットとなる abi を挿入する
-        -   2 &ndash; `armeabi-v7a`
-        -   3 &ndash; `x86`
-        -   4 &ndash; `arm64-v8a`
-        -   5 &ndash; `x86_64`
-
-    -   **minSDK** &ndash; `AndroidManifest.xml` または `11` (定義されていない場合) からサポートされる Sdk の最小値を挿入します。
-
-    -   **versionCode** &ndash; `Properties\AndroidManifest.xml` から直接バージョン コードを使用します。 
-
-    `$(AndroidVersionCodeProperties)` プロパティ (次で定義) を使用してカスタム項目を定義することができます。
-
-    既定では、値は `{abi}{versionCode:D6}` に設定されます。 開発者が古い動作を保持する必要がある場合は、`$(AndroidUseLegacyVersionCode)` プロパティを `true` に設定することで既定値をオーバーライドできます。
-
-    Xamarin.Android 7.2 で追加されました。
-
--   **AndroidVersionCodeProperties** &ndash; `AndroidVersionCodePattern` で使用するために、開発者がカスタム項目を定義できるようにする文字列プロパティ。 これらは `key=value` ペアの形式です。 `value` 内のすべての項目は整数値である必要があります。 たとえば、`screen=23;target=$(_AndroidApiLevel)` のように指定します。 ご覧のとおり、既存またはカスタムの MSBuild プロパティを文字列で利用することができます。
-
-    Xamarin.Android 7.2 で追加されました。
-
--   **AndroidUseLegacyVersionCode** &ndash; 開発者が versionCode の計算を Xamarin.Android 8.2 前の動作に戻すことを許可するブール型プロパティ。 これは、Google Play ストアに既存のアプリケーションがある開発者に向けてのみ使用する必要があります。 新しい `$(AndroidVersionCodePattern)` プロパティを使用することを強くお勧めします。
-
-    Xamarin.Android 8.2 で追加されました。
-
--  **AndroidUseManagedDesignTimeResourceGenerator**&ndash;デザイン時のビルドを、`aapt` ではなくマネージド リソース パーサーの使用に切り替えるブール型プロパティ。
-
-    Xamarin.Android 8.1 で追加されました。
-
--  **AndroidUseApkSigner** &ndash; `jarsigner` ではなく `apksigner` ツールを使用することを開発者に許可するブール型プロパティ。
-
-    Xamarin.Android 8.2 で追加されました。
-
--  **AndroidApkSignerAdditionalArguments** &ndash; 開発者が `apksigner` ツールに追加の引数を指定することを許可する文字列プロパティ。
-
-    Xamarin.Android 8.2 で追加されました。
-
--  **AndroidLintEnabled** &ndash; 開発者がパッケージ化プロセスの一部として、Android の `lint` ツールを実行できるようにするブール型プロパティ。
-
-    -   **AndroidLintEnabledIssues** &ndash; Lint の問題のコンマ区切りリストを有効にする。
-
-    -   **AndroidLintDisabledIssues** &ndash; Lint の問題のコンマ区切りリストを無効にする。
-
-    -   **AndroidLintCheckIssues** &ndash; Lint の問題のコンマ区切りリストをチェックする。 
-       注: これらの問題のみがチェックされます。
-
-    -   **AndroidLintConfig** &ndash; これは Lint のスタイル構成ファイルのビルド アクションです。 有効または無効にされた問題の確認に使用できます。 複数のファイルで、コンテンツがマージされるように、このビルド アクションを使用できます。
-
-    Android の `lint` ツールの詳細については、[Lint のヘルプ](http://www.androiddocs.com/tools/help/lint.html)に関するページを参照してください。
-
--  **AndroidGenerateJniMarshalMethods** &ndash; ビルド プロセスの一環として、JNI マーシャリング メソッドの生成を有効にするブール型プロパティ。 これにより、バインディング ヘルパー コードでの System.Reflection の使用量が大幅に削減されます。
-
-   既定では、これは False に設定されます。 開発者が新しい JNI マーシャリング メソッド機能を使用する場合、
-
-    ```xml
-    <AndroidGenerateJniMarshalMethods>True</AndroidGenerateJniMarshalMethods>
-    ```
-
-    自分の csproj で設定できます。 または、コマンド ラインでプロパティを指定します。
-
-    `/p:AndroidGenerateJniMarshalMethods=True`
-
-    **試験的**です。 Xamarin.Android 9.2 で追加されました。
-    既定値は False です。
-
-- **AndroidGenerateJniMarshalMethodsAdditionalArguments** &ndash; `jnimarshalmethod-gen.exe` 呼び出しにさらにパラメーターを追加するために使用できる文字列プロパティ。  これはデバッグに役立つため、オプション (`-v`、`-d`、`--keeptemp` など) を使用できます。
-
-   既定値は、空の文字列です。 これは、csproj ファイルまたはコマンド ラインで設定できます。 次に例を示します。
-
-    ```xml
-    <AndroidGenerateJniMarshalMethodsAdditionalArguments>-v -d --keeptemp</AndroidGenerateJniMarshalMethodsAdditionalArguments>
-    ```
-
-   または
-
-    `/p:AndroidGenerateJniMarshalMethodsAdditionalArguments="-v -d --keeptemp"`
-
-    Xamarin.Android 9.2 で追加されました。
-
-- **AndroidMultiDexClassListExtraArgs** &ndash; `multidex.keep` ファイルを生成するときに、開発者が追加の引数を `com.android.multidex.MainDexListBuilder` に渡すことを許可する文字列プロパティ。 
-
-    1 つの特定のケースは、`dx` のコンパイル中に次のエラーが発生する場合です。
-
-        com.android.dex.DexException: Too many classes in --main-dex-list, main dex capacity exceeded
-
-    このエラーが発生している場合は、以下を .csproj に追加できます。
-
-    ```xml
-    <DxExtraArguments>--force-jumbo </DxExtraArguments>
-    <AndroidMultiDexClassListExtraArgs>--disable-annotation-resolution-workaround</AndroidMultiDexClassListExtraArgs>
-    ```
-
-    これにより、`dx` の手順を成功させることができます。
-
-    Xamarin.Android 8.3 で追加されました。
-
 ### <a name="binding-project-build-properties"></a>プロジェクトのビルド プロパティをバインドする
 
 次の MSBuild プロパティは、[バインド プロジェクト](~/android/platform/binding-java-library/index.md)で使用されます。
 
 -   **AndroidClassParser** &ndash; `.jar` ファイルの解析方法を制御する文字列プロパティ。 次のような値となる場合があります。
 
-    - **class-parse**: JVM を利用せずに、`class-parse.exe` を使用して直接 Java バイトコードを解析します。 この値は試験的です。 
+    -   **class-parse**: JVM を利用せずに、`class-parse.exe` を使用して直接 Java バイトコードを解析します。 この値は試験的です。
 
 
-    - **jar2xml**: Java リフレクションを使用して `.jar` ファイルから型とメンバーを抽出するには、`jar2xml.jar` を使用します。
+    -   **jar2xml**: Java リフレクションを使用して `.jar` ファイルから型とメンバーを抽出するには、`jar2xml.jar` を使用します。
 
     `jar2xml` よりも優れている `class-parse` の利点は次のとおりです。
 
-    - `class-parse` は、*デバッグ* シンボル (`javac -g` でコンパイルされたバイトコードなど) を含む Java バイトコードからパラメーター名を抽出できます。
+    -   `class-parse` は、*デバッグ* シンボル (`javac -g` でコンパイルされたバイトコードなど) を含む Java バイトコードからパラメーター名を抽出できます。
 
-    - `class-parse` は、解決できない型のメンバーから継承するクラスやそのようなメンバーが含まれるクラスを "スキップ" しません。
+    -   `class-parse` は、解決できない型のメンバーから継承するクラスやそのようなメンバーが含まれるクラスを "スキップ" しません。
 
     **試験的**です。 Xamarin.Android 6.0 で追加されました。
 
@@ -473,52 +489,24 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
 
 -   **AndroidCodegenTarget** &ndash; コード生成ターゲット ABI を制御する文字列型プロパティ。 次のような値となる場合があります。
 
-    - **XamarinAndroid**: Mono for Android 1.0 以降に付属している JNI バインド API を使用します。 Xamarin.Android 5.0 以降でビルドされたバインドのアセンブリは、Xamarin.Android 5.0 以降 (API/ABI 追加機能) でないと実行できませんが、*ソース*は前の製品バージョンと互換性があります。
+    -   **XamarinAndroid**: Mono for Android 1.0 以降に付属している JNI バインド API を使用します。 Xamarin.Android 5.0 以降でビルドされたバインドのアセンブリは、Xamarin.Android 5.0 以降 (API/ABI 追加機能) でないと実行できませんが、*ソース*は前の製品バージョンと互換性があります。
 
-    - **XAJavaInterop1**: JNI の呼び出しに Java.Interop を使用します。 `XAJavaInterop1` を使用したバインドのアセンブリは、Xamarin.Android 6.1 以降でのみビルドおよび実行できます。 Xamarin.Android 6.1 以降は、この値で `Mono.Android.dll` をバインドします。
+    -   **XAJavaInterop1**: JNI の呼び出しに Java.Interop を使用します。 `XAJavaInterop1` を使用したバインドのアセンブリは、Xamarin.Android 6.1 以降でのみビルドおよび実行できます。 Xamarin.Android 6.1 以降は、この値で `Mono.Android.dll` をバインドします。
 
-      `XAJavaInterop1` には次の利点があります。
+        `XAJavaInterop1` には次の利点があります。
 
-      - より小さなアセンブリ。
+        -   より小さなアセンブリ。
 
-      - 継承階層の他のバインドの種類がすべて `XAJavaInterop1` 以降でビルドされる限り、`base` メソッドの呼び出しに `jmethodID` キャッシュを使用。
+        -   継承階層の他のバインドの種類がすべて `XAJavaInterop1` 以降でビルドされる限り、`base` メソッドの呼び出しに `jmethodID` キャッシュを使用。
 
-      - マネージド サブクラスに対して Java 呼び出し可能ラッパー コンストラクターに `jmethodID` キャッシュを使用。
+        -   マネージド サブクラスに対して Java 呼び出し可能ラッパー コンストラクターに `jmethodID` キャッシュを使用。
 
-    既定値は `XAJavaInterop1` です。
+        既定値は `XAJavaInterop1` です。
 
 
 ### <a name="resource-properties"></a>リソースのプロパティ
 
-リソースのプロパティは、Android ソースへのアクセスを提供する、`Resource.designer.cs` ファイルの生成を制御します。 
-
--   **AndroidResgenExtraArgs** &ndash; Android アセットとリソースを処理するときに、**aapt** コマンドに渡す追加のコマンド ライン オプションを指定します。
-
--   **AndroidResgenFile** &ndash; 生成するリソース ファイルの名前を指定します。 既定のテンプレートでは、これは `Resource.designer.cs` に設定されます。
-
--   **MonoAndroidResourcePrefix** &ndash; `AndroidResource` のビルド アクションで、ファイル名の先頭から削除される*パス プレフィックス*を指定します。 これにより、リソースがある場所を変更することができます。
-
-    既定値は `Resources` です。 Java プロジェクトの構造には、これを `res` に変更します。
-
--   **AndroidExplicitCrunch** &ndash; ローカル ドローアブルの数が非常に多いアプリをビルドする場合、初期のビルド (または再ビルド) の完了に数分かかる場合があります。 ビルド プロセスを高速化するため、このプロパティを含めて、`True` に設定してみます。 このプロパティを設定すると、ビルド プロセスで .png ファイルが事前クランチされます。
-
-    メモ:このオプションは `$(AndroidUseAapt2)` オプションと互換性がありません。 `$(AndroidUseAapt2)` が有効になっている場合は、この機能は無効になります。 この機能を引き続き使用したい場合は、`$(AndroidUseAapt2)` に `False` を設定してください。
-
-    **試験的**です。 Xamarin.Android 7.0 で追加されました。
-
--  **AndroidUseAapt2** &ndash; 開発者がパッケージ化するために `aapt2` ツールの使用を制御することを許可するブール型プロパティ。
-    既定では、これは False に設定され、`aapt` が使用されます。
-    開発者が新しい `aapt2` 機能を使用したい場合は、
-        
-    ```xml
-    <AndroidUseAapt2>True</AndroidUseAapt2>
-    ```
-        
-    自分の csproj で設定できます。 または、コマンド ラインでプロパティを指定します。
-
-    `/p:AndroidUseAapt2=True`
-
-    Xamarin.Android 8.3 で追加されました。
+リソースのプロパティは、Android ソースへのアクセスを提供する、`Resource.designer.cs` ファイルの生成を制御します。
 
 -   **AndroidAapt2CompileExtraArgs** &ndash; Android アセットとリソースを処理するときに、**aapt2 compile** コマンドに渡す追加のコマンド ライン オプションを指定します。
 
@@ -528,6 +516,36 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
 
     Xamarin.Android 9.1 で追加されました。
 
+-   **AndroidExplicitCrunch** &ndash; ローカル ドローアブルの数が非常に多いアプリをビルドする場合、初期のビルド (または再ビルド) の完了に数分かかる場合があります。 ビルド プロセスを高速化するため、このプロパティを含めて、`True` に設定してみます。 このプロパティを設定すると、ビルド プロセスで .png ファイルが事前クランチされます。
+
+    メモ:このオプションは `$(AndroidUseAapt2)` オプションと互換性がありません。 `$(AndroidUseAapt2)` が有効になっている場合は、この機能は無効になります。 この機能を引き続き使用したい場合は、`$(AndroidUseAapt2)` に `False` を設定してください。
+
+    **試験的**です。 Xamarin.Android 7.0 で追加されました。
+
+-   **AndroidResgenExtraArgs** &ndash; Android アセットとリソースを処理するときに、**aapt** コマンドに渡す追加のコマンド ライン オプションを指定します。
+
+-   **AndroidResgenFile** &ndash; 生成するリソース ファイルの名前を指定します。 既定のテンプレートでは、これは `Resource.designer.cs` に設定されます。
+
+-   **AndroidUseAapt2** &ndash; 開発者がパッケージ化するために `aapt2` ツールの使用を制御することを許可するブール型プロパティ。
+    既定では、これは False に設定され、`aapt` が使用されます。
+    開発者が新しい `aapt2` 機能を使用したい場合は、
+
+    ```xml
+    <AndroidUseAapt2>True</AndroidUseAapt2>
+    ```
+
+    自分の .csproj で設定できます。 または、コマンド ラインでプロパティを指定します。
+
+    ```
+    /p:AndroidUseAapt2=True
+    ```
+
+    Xamarin.Android 8.3 で追加されました。
+
+-   **MonoAndroidResourcePrefix** &ndash; `AndroidResource` のビルド アクションで、ファイル名の先頭から削除される*パス プレフィックス*を指定します。 これにより、リソースがある場所を変更することができます。
+
+    既定値は `Resources` です。 Java プロジェクトの構造には、これを `res` に変更します。
+
 <a name="Signing_Properties" />
 
 ### <a name="signing-properties"></a>署名プロパティ
@@ -536,15 +554,19 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
 
 既定では、必要に応じて署名ターゲットによって新しいデバッグ署名キーが生成されます。 たとえばビルド サーバーなどで特定のキーを使用する場合は、次の MSBuild プロパティが使用できます。
 
+-   **AndroidDebugKeyAlgorithm** &ndash; `debug.keystore` 用に使用する既定のアルゴリズムを指定します。 既定値は `RSA` です。
+
+-   **AndroidDebugKeyValidity** &ndash; `debug.keystore` 用に使用する既定の有効性を指定します。 既定値は `10950`、`30 * 365`、または `30 years` です。
+
 -   **AndroidKeyStore** &ndash; カスタム署名情報を使用するかどうかを示すブール値。 既定値は `False` で、既定のデバッグ署名キーがパッケージの署名に使用されることを意味します。
 
--   **AndroidSigningKeyAlias** &ndash; キーストア内のキーに別名を指定します。 これは、キーストアを作成するときに使用される **keytool -alias** 値です。 
+-   **AndroidSigningKeyAlias** &ndash; キーストア内のキーに別名を指定します。 これは、キーストアを作成するときに使用される **keytool -alias** 値です。
 
 -   **AndroidSigningKeyPass** &ndash;キーストア ファイル内にあるキーのパスワードを指定します。 これは、`keytool` が **Enter key password for $(AndroidSigningKeyAlias)** ($(AndroidSigningKeyAlias) のキーのパスワードを入力) を求めたときに入力される値です。
 
 -   **AndroidSigningKeyStore** &ndash; `keytool` で作成されたキーストア ファイルのファイル名を指定します。 これは、**keytool -keystore** オプションで指定された値に対応します。
 
--   **AndroidSigningStorePass** &ndash; `$(AndroidSigningKeyStore)` へのパスワードを指定します。 これは、キーストア ファイルを作成していて、**Enter keystore password:** (キーストア パスワードを入力) で求められたときに、`keytool` に指定する値です。 
+-   **AndroidSigningStorePass** &ndash; `$(AndroidSigningKeyStore)` へのパスワードを指定します。 これは、キーストア ファイルを作成していて、**Enter keystore password:** (キーストア パスワードを入力) で求められたときに、`keytool` に指定する値です。
 
 たとえば、次の `keytool` 呼び出しを考えてみます。
 
@@ -575,15 +597,28 @@ Enter key password for keystore.alias
 </PropertyGroup>
 ```
 
--   **AndroidDebugKeyAlgorithm** &ndash; `debug.keystore` 用に使用する既定のアルゴリズムを指定します。 既定値は `RSA` です。
-
--   **AndroidDebugKeyValidity** &ndash; `debug.keystore` 用に使用する既定の有効性を指定します。 既定値は `10950`、`30 * 365`、または `30 years` です。
-
 <a name="Build_Actions" />
 
 ## <a name="build-actions"></a>ビルド アクション
 
-*ビルド アクション*は、プロジェクト内の[ファイルに適用](https://docs.microsoft.com/visualstudio/msbuild/common-msbuild-project-items)され、ファイルの処理方法を制御します。 
+*ビルド アクション*は、プロジェクト内の[ファイルに適用](https://docs.microsoft.com/visualstudio/msbuild/common-msbuild-project-items)され、ファイルの処理方法を制御します。
+
+
+### <a name="androidaarlibrary"></a>AndroidAarLibrary
+
+.aar ファイルを直接参照するには、`AndroidAarLibrary` のビルド アクションを使用する必要があります。 このビルド アクションは、Xamarin コンポーネントで最もよく使用されます。 つまり、Google Play やその他のサービスを動作させるのに必要な .aar ファイルへの参照を含めるためです。
+
+このビルド アクションを使用するファイルは、ライブラリ プロジェクトで見つかる埋め込みリソースと同様に扱われます。 .aar は、中間ディレクトリに抽出されます。 次に、すべてのアセット、リソース、.jar ファイルが、適切な項目グループに含まれます。
+
+
+### <a name="androidboundlayout"></a>AndroidBoundLayout
+
+`AndroidGenerateLayoutBindings` プロパティが `false` に設定された場合に、レイアウト ファイルにコードビハインドが生成されることを示します。 その他すべての面において、これは上記で説明された `AndroidResource` と同じです。 このアクションは、次のレイアウト ファイルで**のみ**使用できます。
+
+```xml
+<AndroidBoundLayout Include="Resources\layout\Main.axml" />
+```
+
 
 <a name="AndroidEnvironment" />
 
@@ -593,14 +628,51 @@ Enter key password for keystore.alias
 `AndroidEnvironment` ビルド アクションは、複数のファイルに適用でき、任意の順序で評価されます (そのため、複数のファイルで同じ環境変数またはシステム プロパティを指定しないでください)。
 
 
-### <a name="androidjavasource"></a>AndroidJavaSource
+### <a name="androidfragmenttype"></a>AndroidFragmentType
 
-`AndroidJavaSource` のビルド アクションを持つファイルは、最終的な Android パッケージに含まれる Java ソース コードです。
+レイアウト バインディング コードを生成するときに、すべての `<fragment>` レイアウト要素に使用される既定の完全修飾型を指定します。 プロパティの既定値は、標準の Android `Android.App.Fragment` 型になります。
 
 
 ### <a name="androidjavalibrary"></a>AndroidJavaLibrary
 
 `AndroidJavaLibrary` のビルド アクションを持つファイルは、最終的な Android パッケージに含まれる Java アーカイブ (`.jar` ファイル) です。
+
+
+### <a name="androidjavasource"></a>AndroidJavaSource
+
+`AndroidJavaSource` のビルド アクションを持つファイルは、最終的な Android パッケージに含まれる Java ソース コードです。
+
+
+### <a name="androidlintconfig"></a>AndroidLintConfig
+
+ビルド アクション 'AndroidLintConfig' は、`AndroidLintEnabled` ビルド プロパティと組み合わせて使用する必要があります。 このビルド アクションを含むファイルはマージされ、Android の `lint` ツールに渡されます。 これは、どのテストを有効および無効にするかに関する情報を含んだ XML ファイルになります。
+
+詳細については、[Lint に関するドキュメント](https://developer.android.com/studio/write/lint)を参照してください。
+
+
+### <a name="androidnativelibrary"></a>AndroidNativeLibrary
+
+[ネイティブ ライブラリ](~/android/platform/native-libraries.md)は、そのビルド アクションを `AndroidNativeLibrary` に設定することで、ビルドに追加されます。
+
+Android では、複数のアプリケーション バイナリ インターフェイス (ABI) をサポートしているため、ビルド システムではネイティブ ライブラリがどの ABI に対してビルドされているかを知る必要があります。 これを行うには 2 つの方法があります。
+
+1.  パス "スニッフィング"。
+2.  `Abi` 項目属性の使用。
+
+パス スニッフィングを使用すると、ネイティブ ライブラリの親ディレクトリ名が、ライブラリがターゲットとする ABI を指定するために使用されます。 したがって、ビルドに `lib/armeabi-v7a/libfoo.so` を追加すると、ABI は `armeabi-v7a` として "スニッフィング" されます。
+
+
+#### <a name="item-attribute-name"></a>項目属性名
+
+**Abi** &ndash; ネイティブ ライブラリの ABI を指定します。
+
+```xml
+<ItemGroup>
+  <AndroidNativeLibrary Include="path/to/libfoo.so">
+    <Abi>armeabi-v7a</Abi>
+  </AndroidNativeLibrary>
+</ItemGroup>
+```
 
 
 ### <a name="androidresource"></a>AndroidResource
@@ -640,61 +712,13 @@ Enter key password for keystore.alias
 </ItemGroup>
 ```
 
-### <a name="androidboundlayout"></a>AndroidBoundLayout
-
-`AndroidGenerateLayoutBindings` プロパティが `false` に設定された場合に、レイアウト ファイルにコードビハインドが生成されることを示します。 その他すべての面において、これは上記で説明された `AndroidResource` と同じです。 このアクションは、次のレイアウト ファイルで**のみ**使用できます。
-
-```xml
-<AndroidBoundLayout Include="Resources\layout\Main.axml" />
-```
-
-### <a name="androidfragmenttype"></a>AndroidFragmentType
-
-レイアウト バインディング コードを生成するときに、すべての `<fragment>` レイアウト要素に使用される既定の完全修飾型を指定します。 プロパティの既定値は、標準の Android `Android.App.Fragment` 型になります。
-
-
-### <a name="androidnativelibrary"></a>AndroidNativeLibrary
-
-[ネイティブ ライブラリ](~/android/platform/native-libraries.md)は、そのビルド アクションを `AndroidNativeLibrary` に設定することで、ビルドに追加されます。
-
-Android では、複数のアプリケーション バイナリ インターフェイス (ABI) をサポートしているため、ビルド システムではネイティブ ライブラリがどの ABI に対してビルドされているかを知る必要があります。 これを行うには 2 つの方法があります。
-
-1.  パス "スニッフィング"。
-2.  `Abi` 項目属性の使用。
-
-パス スニッフィングを使用すると、ネイティブ ライブラリの親ディレクトリ名が、ライブラリがターゲットとする ABI を指定するために使用されます。 したがって、ビルドに `lib/armeabi-v7a/libfoo.so` を追加すると、ABI は `armeabi-v7a` として "スニッフィング" されます。 
-
-
-#### <a name="item-attribute-name"></a>項目属性名
-
-**Abi** &ndash; ネイティブ ライブラリの ABI を指定します。
-
-```xml
-<ItemGroup>
-  <AndroidNativeLibrary Include="path/to/libfoo.so">
-    <Abi>armeabi-v7a</Abi>
-  </AndroidNativeLibrary>
-</ItemGroup>
-```
-
-
-### <a name="androidaarlibrary"></a>AndroidAarLibrary
-
-.aar ファイルを直接参照するには、`AndroidAarLibrary` のビルド アクションを使用する必要があります。 このビルド アクションは、Xamarin コンポーネントで最もよく使用されます。 つまり、Google Play やその他のサービスを動作させるのに必要な .aar ファイルへの参照を含めるためです。
-
-このビルド アクションを使用するファイルは、ライブラリ プロジェクトで見つかる埋め込みリソースと同様に扱われます。 .aar は、中間ディレクトリに抽出されます。 次に、すべてのアセット、リソース、.jar ファイルが、適切な項目グループに含まれます。 
-
-### <a name="androidlintconfig"></a>AndroidLintConfig
-
-ビルド アクション 'AndroidLintConfig' は、`AndroidLintEnabled` ビルド プロパティと組み合わせて使用する必要があります。 このビルド アクションを含むファイルはマージされ、Android の `lint` ツールに渡されます。 これは有効または無効にされたテストに関する情報を含む、xml ファイルになります。
-
-詳細については、[Lint に関するドキュメント](http://www.androiddocs.com/tools/help/lint.html)を参照してください。
 
 ### <a name="content"></a>Content
 
 通常の `Content` ビルド アクションはサポートされていません (コストのかかる可能性がある最初の実行手順を行わずにサポートする方法が見つかっていないからです)。
 
 Xamarin.Android 5.1 以降では、`@(Content)` ビルド アクションを使用しようとすると、`XA0101` 警告が発生します。
+
 
 ### <a name="linkdescription"></a>LinkDescription
 
@@ -724,7 +748,7 @@ Xamarin.Android 5.1 以降では、`@(Content)` ビルド アクションを使�
 </PropertyGroup>
 ```
 
-*Xamarin.Android.CSharp.targets* をインポートすることで、C# 用にこれらすべてのターゲットとプロパティを含めることができます。 
+*Xamarin.Android.CSharp.targets* をインポートすることで、C# 用にこれらすべてのターゲットとプロパティを含めることができます。
 
 ```xml
 <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
