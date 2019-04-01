@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 8e114f39a01c2243889c53c855acd7fa8061ed09
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f57f2a2bc17690b7a1e0a72c583b0e94519ca4db
+ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114731"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58677990"
 ---
 # <a name="collection-views-in-xamarinios"></a>Xamarin.iOS でのコレクション ビュー
 
@@ -443,7 +443,7 @@ IOS 9、コレクション ビューで (`UICollectionView`) がサポートさ�
     - [単純な並べ替えの例](#Simple-Reordering-Example)
     - [カスタムのジェスチャ認識エンジンの使用](#Using-a-Custom-Gesture-Recognizer)
     - [カスタム レイアウト、および並べ替え](#Custom-Layouts-and-Reording)
-- [コレクションの変更の表示](#Collection-View-Changes)
+- [コレクションの変更の表示](#collection-view-changes)
 
 <a name="Easy-Reordering-of-Items" />
 
@@ -453,7 +453,7 @@ IOS 9、コレクション ビューで (`UICollectionView`) がサポートさ�
 
 コレクション ビューの並べ替えを追加する最も簡単な方法は、iOS 9 を使用する、`UICollectionViewController`します。
 コレクション ビュー コント ローラーのようになりましたが、`InstallsStandardGestureForInteractiveMovement`プロパティで、標準的なを追加します。*ジェスチャ認識エンジン*コレクション内の項目の順序を変更するドラッグをサポートします。
-既定値は、ため`true`、のみを実装する必要がある、`MoveItem`のメソッド、`UICollectionViewDataSource`ドラッグの並べ替えをサポートするクラス。 例えば:
+既定値は、ため`true`、のみを実装する必要がある、`MoveItem`のメソッド、`UICollectionViewDataSource`ドラッグの並べ替えをサポートするクラス。 例:
 
 ```csharp
 public override void MoveItem (UICollectionView collectionView, NSIndexPath sourceIndexPath, NSIndexPath destinationIndexPath)
@@ -472,11 +472,11 @@ public override void MoveItem (UICollectionView collectionView, NSIndexPath sour
 
 (これは、ドキュメント アウトラインから実行する最も簡単なことでもかまいません)、コレクション ビューを選択します。 Properties Pad の [レイアウト] タブでは、次のスクリーン ショットに示すように、次のサイズを設定します。
 
-- **セル サイズ**: 幅 – 60 |Height: 60
-- **ヘッダー サイズ**: 幅 – 0 |Height: 0
-- **フッターのサイズ**: 幅 – 0 |Height: 0
-- **最小間隔**: セル – 8 |行: 8
-- **セクションのくぼみ**: Top: 16 |下部にある – 16 |Left: 16 |右 – 16
+- **セル サイズ**:Width: 60 |Height: 60
+- **ヘッダー サイズ**:Width: 0 |Height: 0
+- **フッターのサイズ**:Width: 0 |Height: 0
+- **最小間隔**:セル – 8 |行: 8
+- **セクションのくぼみ**:Top: 16 |下部にある – 16 |Left: 16 |右 – 16
 
 [![](uicollectionview-images/quick04.png "コレクション ビューのサイズを設定します。")](uicollectionview-images/quick04.png#lightbox)
 
@@ -693,7 +693,7 @@ namespace CollectionView
 
 UI に加えた変更を保存し、アプリを実行します。
 ユーザーは、一覧から項目を選択しを新しい場所にドラッグ、項目の移動に他の項目が自動的にアニメーションするは。
-ユーザーが新しい場所に項目をドロップ、ときに、その場所を引き続き使用します。 例えば:
+ユーザーが新しい場所に項目をドロップ、ときに、その場所を引き続き使用します。 例:
 
 [![](uicollectionview-images/intro01.png "新しい場所に項目をドラッグする例")](uicollectionview-images/intro01.png#lightbox)
 
@@ -701,7 +701,7 @@ UI に加えた変更を保存し、アプリを実行します。
 
 ### <a name="using-a-custom-gesture-recognizer"></a>カスタムのジェスチャ認識エンジンの使用
 
-使用できない場合、`UICollectionViewController`標準を使用する必要がありますと`UIViewController`、またはドラッグ アンド ドロップ ジェスチャの詳細に制御を実行する場合は、独自のカスタム ジェスチャ レコグナイザーを作成し、ビューが読み込まれるコレクション ビューに追加します。 例えば:
+使用できない場合、`UICollectionViewController`標準を使用する必要がありますと`UIViewController`、またはドラッグ アンド ドロップ ジェスチャの詳細に制御を実行する場合は、独自のカスタム ジェスチャ レコグナイザーを作成し、ビューが読み込まれるコレクション ビューに追加します。 例:
 
 ```csharp
 public override void ViewDidLoad ()

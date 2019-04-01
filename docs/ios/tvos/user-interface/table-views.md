@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: a8b31d9f2e9c8921420b1fd50c4092273962f54b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 3e7fc3d627b5d7a1dc73caa395a9181efb0b5f08
+ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105897"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58678003"
 ---
 # <a name="working-with-tvos-table-views-in-xamarin"></a>表形式ビュー Xamarin で tvOS の操作
 
@@ -101,7 +101,7 @@ Xamarin.tvOS アプリでのテーブル ビューを使用する最も簡単な
 1. 各**プロトタイプ セル**選択し、一意の割り当て、**識別子**で、**ウィジェット**のタブ、**プロパティ エクスプ ローラー**します。 この手順は_非常に重要な_この識別子を後で必要なデータを読み込む場合、テーブル。 たとえば`AttrCell`: 
 
     [![](table-views-images/table12.png "[ウィジェット] タブ")](table-views-images/table12.png#lightbox)
-1. 1 つとして、セルを表示する選択することもできます、[テーブル ビュー セルの種類を既定の](#Table-View-Cell-Types)を使用して、**スタイル**ドロップダウンかに設定して**カスタム**セルのレイアウトをデザイン画面を使用して、。内から他の UI ウィジェットをドラッグして、**ツールボックス**: 
+1. 1 つとして、セルを表示する選択することもできます、[テーブル ビュー セルの種類を既定の](#table-view-cell-types)を使用して、**スタイル**ドロップダウンかに設定して**カスタム**セルのレイアウトをデザイン画面を使用して、。内から他の UI ウィジェットをドラッグして、**ツールボックス**: 
 
     [![](table-views-images/table13.png "セルのレイアウト")](table-views-images/table13.png#lightbox)
 1. 割り当てる一意**名前**プロトタイプのセルの設計では、各 UI 要素に、**ウィジェット**のタブ、**プロパティ エクスプ ローラー**後でアクセスできるようにC#コード。 
@@ -142,7 +142,7 @@ Xamarin.tvOS アプリでのテーブル ビューを使用する最も簡単な
 1. 各**プロトタイプ セル**選択し、一意の割り当て、**識別子**で、**ウィジェット**のタブ、**プロパティ エクスプ ローラー**します。 この手順は_非常に重要な_この識別子を後で必要なデータを読み込む場合、テーブル。 たとえば`AttrCell`: 
 
     [![](table-views-images/table12-vs.png "識別子を割り当てる")](table-views-images/table12-vs.png#lightbox)
-1. 1 つとして、セルを表示する選択することもできます、[テーブル ビュー セルの種類を既定の](#Table-View-Cell-Types)を使用して、**スタイル**ドロップダウンかに設定して**カスタム**セルのレイアウトをデザイン画面を使用して、。内から他の UI ウィジェットをドラッグして、**ツールボックス**: 
+1. 1 つとして、セルを表示する選択することもできます、[テーブル ビュー セルの種類を既定の](#table-view-cell-types)を使用して、**スタイル**ドロップダウンかに設定して**カスタム**セルのレイアウトをデザイン画面を使用して、。内から他の UI ウィジェットをドラッグして、**ツールボックス**: 
 
     [![](table-views-images/table13-vs.png "スタイル ドロップダウン")](table-views-images/table13-vs.png#lightbox)
 1. 割り当てる一意**名前**プロトタイプのセルの設計では、各 UI 要素に、**ウィジェット**のタブ、**プロパティ エクスプ ローラー**後でアクセスできるようにC#コード。 
@@ -731,7 +731,7 @@ namespace tvTable
 
 ## <a name="pulling-it-all-together"></a>すべてをまとめてプル
 
-テーブルのビューが通常の一方の側で表示されますこのドキュメントの先頭に述べたように、[分割ビュー](~/ios/tvos/user-interface/split-views.md)反対側に表示される選択した項目の詳細のナビゲーションとして。 例えば: 
+テーブルのビューが通常の一方の側で表示されますこのドキュメントの先頭に述べたように、[分割ビュー](~/ios/tvos/user-interface/split-views.md)反対側に表示される選択した項目の詳細のナビゲーションとして。 例: 
 
 [![](table-views-images/intro01.png "サンプル アプリの実行")](table-views-images/intro01.png#lightbox)
 
