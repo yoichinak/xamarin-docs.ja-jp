@@ -49,10 +49,6 @@ Windows で開発するときに、Android デバイスでデバッグするに�
 
 このガイドは、Android NUnit テストのプロジェクトをセットアップするための手順を説明して_いない_Xamarin.UITest プロジェクト。 Xamarin.UITest ガイド[ここ](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/uitest)します。
 
-### <a name="how-do-i-enable-intellisense-in-android-axml-filesenable-axml-intellisensemd"></a>[Android の .axml ファイルで Intellisense を有効にする方法を教えてください](enable-axml-intellisense.md)
-
-このガイドでは、Android の .axml ファイル用の Visual Studio の Intellisense をアクティブ化する方法について説明します。
-
 ### <a name="why-cant-my-android-release-build-connect-to-the-internetandroid-internetmd"></a>[Android のリリース ビルドがインターネットに接続できないのはなぜですか](android-internet.md)
 
 この問題の最も一般的な原因は、**インターネット**アクセス許可は、デバッグ ビルドでは自動的に追加しますが、リリース ビルドを手動で設定する必要があります。 このガイドでは、リリース ビルドのアクセス許可を有効にする方法について説明します。
