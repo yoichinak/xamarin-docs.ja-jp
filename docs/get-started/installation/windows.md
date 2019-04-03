@@ -1,19 +1,19 @@
 ---
-title: Visual Studio 2017 での Xamarin のインストール
-description: このドキュメントでは、Visual Studio 2017 で Xamarin をインストールする方法を説明します。 要件、インストール プロセス、インストールの確認について説明します。
+title: Visual Studio 2019 で Xamarin をインストールします。
+description: このドキュメントでは、Visual Studio 2019 で Xamarin をインストールする方法について説明します。 要件、インストール プロセス、インストールの確認について説明します。
 ms.prod: xamarin
 ms.assetid: E20D4463-368E-4B60-A059-F50DB8C5552D
 author: conceptdev
 ms.author: crdun
 ms.date: 08/28/2018
-ms.openlocfilehash: 62a10ca57b867255766c02616ee41e57ac166af3
-ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
+ms.openlocfilehash: 5d9f91300194eb45c5f5f3c52403660cf4898a19
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58071048"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58853977"
 ---
-# <a name="installing-xamarin-in-visual-studio-2017"></a>Visual Studio 2017 での Xamarin のインストール
+# <a name="installing-xamarin-in-visual-studio-2019"></a>Visual Studio 2019 で Xamarin をインストールします。
 
 <a name="requirements" />
 
@@ -23,26 +23,26 @@ ms.locfileid: "58071048"
 
 [!include[](~/cross-platform/includes/install-xamarin-windows.md)]
 
-Visual Studio 2017 で、**[ヘルプ]** メニューをクリックして Xamarin がインストールされていることを確認します。 Xamarin がインストールされている場合は、以下のスクリーン ショットのように、**Xamarin** のメニュー項目が表示されます。
+Visual Studio 2019 でをクリックして、Xamarin がインストールされていることを確認します、**ヘルプ**メニュー。 Xamarin がインストールされている場合は、以下のスクリーン ショットのように、**Xamarin** のメニュー項目が表示されます。
 
 ![Xamarin のヘルプ メニューのメニュー項目](windows-images/12-xamarin-menu-item.png "Xamarin のヘルプ メニューのメニュー項目")
 
 **[ヘルプ]、[Microsoft Visual Studio のバージョン情報]** の順にクリックし、インストールされている製品のリストをスクロールして、Xamarin がインストールされているかどうかを確認することもできます。
 
-![Visual Studio 2017 には、製品の画面がインストールされている](windows-images/13-xamarin-is-installed.png "Visual Studio 2017 には、製品の画面がインストールされています。")
+![Visual Studio 2019 に製品の画面がインストールされている](windows-images/13-xamarin-is-installed.png "Visual Studio 2019 に製品の画面がインストールされています。")
 
 バージョン情報を見つける方法の詳細については、「[Where can I find my version information and logs?](~/cross-platform/troubleshooting/questions/version-logs.md)」 (バージョン情報とログはどこにありますか?) を参照してください
 
 ## <a name="next-steps"></a>次の手順
 
-Visual Studio 2017 に Xamarin をインストールすることで、アプリのコードの記述を開始できるようになりますが、シミュレーター、エミュレーター、デバイスにアプリを構築および展開するための追加のセットアップは必要ありません。 インストールを完了し、クロス プラットフォームのアプリの構築を開始するには、以下のガイドを参照してください。
+Visual Studio 2019 で Xamarin をインストール、アプリのコードの記述を開始することができますが、構築して、シミュレーター、エミュレーター、およびデバイスにアプリを展開するための追加のセットアップは必要です。 インストールを完了し、クロス プラットフォームのアプリの構築を開始するには、以下のガイドを参照してください。
 
 ### <a name="ios"></a>iOS
 
 詳細については、「[Installing Xamarin.iOS on Windows](~/ios/get-started/installation/windows/index.md)」(Windows への Xamarin.iOS のインストール) ガイドを参照してください。 
 
 1. [Visual Studio for Mac をインストールする](https://docs.microsoft.com/visualstudio/mac/installation)
-2. [Mac ビルド ホストへの Visual Studio の接続](~/ios/get-started/installation/windows/connecting-to-mac/index.md)
+2. [Visual Studio を Mac ビルド ホストに接続します。](~/ios/get-started/installation/windows/connecting-to-mac/index.md)
 3. [iOS 開発者のセットアップ](~/ios/get-started/installation/device-provisioning/index.md) - デバイスでアプリケーションを実行するために必要
 5. [リモートの iOS シミュレーター](~/tools/ios-simulator/index.md)
 6. [Xamarin.iOS for Visual Studio の概要](~/ios/get-started/installation/windows/introduction-to-xamarin-ios-for-visual-studio.md)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/09/2016
-ms.openlocfilehash: 56456372b13dad5b5040c0c466f2efdf6ecdbc2a
-ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
+ms.openlocfilehash: 009e061726f655999c08192b5839a5c962d35e24
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58071022"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58855095"
 ---
 # <a name="using-icloud-with-xamarinios"></a>Xamarin.iOS で iCloud の使用
 
@@ -36,8 +36,8 @@ IOS 5 で iCloud ストレージ API には、中央の場所にユーザーの�
 ## <a name="requirements"></a>必要条件
 
 - Xamarin.iOS の最新の安定バージョン
-- Xcode 8 以降
-- Visual Studio for Mac または Visual Studio 2017 以降。
+- Xcode 10
+- Visual Studio for Mac または Visual Studio 2019。
 
 ## <a name="preparing-for-icloud-development"></a>ICloud の開発の準備
 

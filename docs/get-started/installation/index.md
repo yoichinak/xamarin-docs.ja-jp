@@ -1,18 +1,36 @@
 ---
 title: Xamarin のインストール
 description: このセクションでは、Visual Studio で Xamarin を設定するのに使用できるインストールと設定の方法の概要を説明します。
+zone_pivot_groups: platform-dev16
 ms.prod: xamarin
 ms.assetid: 0f813a14-2f0c-415d-8667-4563f3dc06e8
 author: conceptdev
 ms.author: crdun
 ms.custom: video
-ms.date: 08/08/2018
+ms.date: 04/02/2019
+ms.openlocfilehash: 642f66e068f021e76402c9dcc6f167bb74283aaa
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58854848"
 ---
 # <a name="installing-xamarin"></a>Xamarin のインストール
 
-_Visual Studio と Xamarin を設定して .NET でモバイル アプリを構築する方法_。
+_.NET を使用したモバイル アプリの構築を開始する Visual Studio と Xamarin を設定する方法。_
 
-## <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+::: zone pivot="windows"
+
+## <a name="installing-xamarin-on-windows"></a>Windows での Xamarin のインストール
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Installing-Visual-Studio-2017-for-Mobile-Development-with-NET/player]
+
+## <a name="step-by-step-instructions"></a>ステップ バイ ステップの指示
+
+[!include[](~/cross-platform/includes/install-xamarin-windows-2019.md)]
+
+::: zone-end
+::: zone pivot="win-vs2017"
 
 ## <a name="installing-xamarin-on-windows"></a>Windows での Xamarin のインストール
 
@@ -22,7 +40,8 @@ _Visual Studio と Xamarin を設定して .NET でモバイル アプリを構�
 
 [!include[](~/cross-platform/includes/install-xamarin-windows.md)]
 
-## <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+::: zone-end
+::: zone pivot="macos"
 
 ## <a name="installing-xamarin-on-macos"></a>macOS での Xamarin のインストール
 
@@ -32,7 +51,7 @@ _Visual Studio と Xamarin を設定して .NET でモバイル アプリを構�
 
 このビデオ以外に、Visual Studio for Mac と Visual Studio for Xamarin について説明する[ステップ バイ ステップのインストール ガイド](/visualstudio/mac/installation/)があります。
 
------
+::: zone-end
 
 ## <a name="related-links"></a>関連リンク
 

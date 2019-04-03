@@ -1,0 +1,109 @@
+---
+title: XAML プレビューアーでデザイン時のデータを使用します。
+description: この記事では、デザイン時のデータを使用して、アプリを実行することがなく、XAML プレビューアーでデータ負荷の高いレイアウトを表示する方法について説明します。
+ms.prod: xamarin
+ms.assetid: 0F608019-5951-4BE6-80E0-9EEE1733D642
+ms.technology: xamarin-forms
+author: maddyleger1
+ms.author: maleger
+ms.date: 03/27/2019
+ms.openlocfilehash: 0ff9f8b5ee6f9468650b6535745706bee8f96536
+ms.sourcegitcommit: 1c2565c372207bfa257cadac2a2d23d4f90b0cea
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58866359"
+---
+# <a name="use-design-time-data-with-the-xaml-previewer"></a>XAML プレビューアーでデザイン時のデータを使用します。
+
+_一部のレイアウトでは、データを視覚化する困難です。 XAML プレビューアーで、データの量が多いページのプレビューを最大限に活用するには、これらのヒントを使用します。_
+
+## <a name="design-time-data-basics"></a>デザイン時データの基礎
+
+デザイン時のデータは、XAML プレビューアーでコントロールを簡単に視覚化できますを設定する偽のデータです。 開始するには、XAML ページのヘッダーに次のコード行を追加します。
+
+```csharp
+xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+mc:Ignorable="d"
+```
+
+名前空間を追加した後に配置できます`d:`の属性または XAML プレビューアーで表示するコントロールの前にします。 要素を`d:`実行時に表示されません。
+
+たとえば、通常は、データをバインドするラベルにテキストを追加できます。
+
+```csharp
+<Label Text={Binding Name} d:Text="Name" />
+```
+
+[![D時刻のデータ ラベルのテキストに esign](xaml-previewer-images/designtimedata-label-sm.png "デザイン時刻のテキスト データ ラベル")](xaml-previewer-images/designtimedata-label-lg.png#lightbox)
+
+ この例でなく`d:Text`、XAML プレビューアーには、ラベルについて何も表示されます。 代わりに、ラベルが実行時に実際のデータをある場所"Name"を示します。
+
+使用することができます`d:`色、フォント サイズ、および間隔など、Xamarin.Forms コントロールのすべての属性。 コントロール自体にも追加できます。
+
+```csharp
+<d:Button Text="Design Time Button" />
+```
+
+[![D時刻のデータをボタン コントロールに esign](xaml-previewer-images/designtimedata-controls-sm.png "ボタン コントロールと時刻のデータの設計")](xaml-previewer-images/designtimedata-controls-lg.png#lightbox)
+
+この例で、ボタンはデザイン時にのみ表示されます。 このメソッドを使用して、プレース ホルダーを[XAML プレビューアーでサポートされていないカスタム コントロール](render-custom-controls.md)します。
+
+## <a name="preview-images-at-design-time"></a>デザイン時にプレビュー イメージ
+
+ページにバインドされているかに動的に読み込まれているイメージのデザイン時ソースを設定することができます。 Android プロジェクトで、追加する XAML プレビューアーで表示するイメージ、**リソース > ディスプレイ**フォルダー。 IOS プロジェクトで、イメージを追加、**リソース**フォルダー。 デザイン時に XAML プレビューアーでのイメージを表示できます。
+
+```csharp
+<Image Source={Binding ProfilePicture} d:Source="DesignTimePicture.jpg" />
+```
+[![D時刻のデータをイメージに esign](xaml-previewer-images/designtimedata-image-sm.png "組み込まで時刻のデータの設計")](xaml-previewer-images/designtimedata-image-lg.png#lightbox)
+
+## <a name="design-time-data-for-listviews"></a>Listview のデザイン時のデータ
+
+Listview は、モバイル アプリでデータを表示する一般的な方法です。 ただし、これらはなく実際のデータを視覚化するが困難です。 でそれらをデザイン時のデータを使用するには、ItemsSource として使用するデザイン時の配列を作成する必要があります。 XAML プレビューアーでは、デザイン時に、ListView では、その配列があるものが表示されます。
+
+```csharp
+<StackLayout>
+    <ListView ItemsSource="{Binding Items}">
+        <d:ListView.ItemsSource>
+            <x:Array Type="{x:Type x:String}">
+                <x:String>Item One</x:String>
+                <x:String>Item Two</x:String>
+                <x:String>Item Three</x:String>
+            </x:Array>
+        </d:ListView.ItemsSource>
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <TextCell Text="{Binding ItemName}"
+                          d:Text="{Binding .}" />
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</StackLayout>
+```
+
+[![D時刻のデータを ListView に esign](xaml-previewer-images/designtimedata-itemssource-sm.png "時刻データを ListView の設計")](xaml-previewer-images/designtimedata-itemssource-lg.png#lightbox)
+
+この例の 3 つ TextCells の ListView を XAML プレビューアーで表示されます。 変更することができます`x:String`プロジェクト内の既存のデータ モデルにします。
+
+参照してください[James Montemagno 氏の Hanselman.Forms アプリ](https://github.com/jamesmontemagno/Hanselman.Forms/blob/vnext/src/Hanselman/Views/Podcasts/PodcastDetailsPage.xaml#L36-L57)より複雑な例です。
+
+
+## <a name="alternative-hardcode-a-static-viewmodel"></a>代替方法:静的な ViewModel をハードコーディングします。
+
+個々 のコントロールをデザイン時のデータを追加しない場合は、ページにバインドするモック データ ストアを設定できます。 XAMLの静的なViewModelにバインドする方法については、James Montemagnoの[デザイン時のデータの追加に関するブログ記事](http://motzcod.es/post/143702671962/xamarinforms-xaml-previewer-design-time-data)を参照してください。
+
+## <a name="troubleshooting"></a>トラブルシューティング
+
+### <a name="requirements"></a>必要条件
+
+デザイン時のデータには、Xamarin.Forms 3.6 の最小バージョンが必要です。
+
+### <a name="intellisense-shows-squiggly-lines-under-my-design-time-data"></a>IntelliSense は、デザイン時のデータは、下に波線を示しています。
+
+既知の問題は、これは今後のバージョンの Visual Studio で修正されます。 プロジェクトがエラーなしまだビルドされます。
+
+### <a name="the-xaml-previewer-stopped-working"></a>XAML プレビューアーの動作が停止しました
+
+XAML ファイルをもう一度開いてとクリーニングを閉じてプロジェクトを再構築します。

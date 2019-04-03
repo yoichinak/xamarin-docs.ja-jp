@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/10/2018
-ms.openlocfilehash: 6243f7d90b921207f4dd406a1f33f4d7af40ecfb
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 7e9bfa841db9f0a76f762bab22050377830d85de
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57668369"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58854874"
 ---
 # <a name="gtk-platform-setup"></a>GTK # プラットフォームのセットアップ
 
@@ -29,11 +29,11 @@ Xamarin.Forms では、GTK # アプリのプレビューをサポートできる
 
 GTK # の macOS および Linux がの一部としてインストールされている[Mono](https://www.mono-project.com/download/stable/)します。 GTK # for .NET をインストールできるで Windows、 [GTK # インストーラー](https://www.mono-project.com/download/stable/#download-win)します。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
 
 Windows デスクトップで実行される GTK # アプリを追加するこれらの手順に従います。
 
-1. ソリューション名を右クリックし、Visual Studio 2017 で**ソリューション エクスプ ローラー**選択**追加 > 新しいプロジェクト.**.
+1. Visual Studio 2019 でソリューション名を右クリックして**ソリューション エクスプ ローラー**選択**追加 > 新しいプロジェクト.**.
 
 2. **新しいプロジェクト**ウィンドウで、左側の選択で**Visual c#** と**Windows クラシック デスクトップ**します。 プロジェクトの種類の一覧で選択**クラス ライブラリ (.NET Framework)**、いることを確認し、 **Framework**ドロップダウンは、.NET Framework 4.7 の最小値に設定されます。
 
@@ -110,7 +110,7 @@ Windows デスクトップで実行される GTK # アプリを追加するこ�
 
     ![GTK # の耐用年数のゲーム](gtk-images/win/gtk-gameoflife.png "GTK # の耐用年数のゲーム")
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
 
 Mac のデスクトップで実行される GTK # アプリを追加するこれらの手順に従います。
 

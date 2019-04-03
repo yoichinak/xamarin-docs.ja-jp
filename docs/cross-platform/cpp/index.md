@@ -1,10 +1,16 @@
 ---
 ms.assetid: EA2D979E-9151-4CE9-9289-13B6A979838B
 title: Xamarin を使用した C と C++ のライブラリを使用します。
-description: 'Visual Studio for Mac ができますをビルドし、iOS、Android 向けモバイル アプリにクロス プラットフォームの C/C++ コードを統合する Xamarin を使用して、C#します。 この記事を設定して、Xamarin アプリで C++ プロジェクトをデバッグする方法について説明します。'
+description: Visual Studio for Mac ができますをビルドし、iOS、Android 向けモバイル アプリにクロス プラットフォームの C/C++ コードを統合する Xamarin を使用して、C#します。 この記事を設定して、Xamarin アプリで C++ プロジェクトをデバッグする方法について説明します。
 author: mikeparker104
 ms.author: miparker
 ms.date: 12/17/2018
+ms.openlocfilehash: a235a24d544e938d4bf29e6569564aface2f6972
+ms.sourcegitcommit: 1c2565c372207bfa257cadac2a2d23d4f90b0cea
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58866385"
 ---
 # <a name="use-cc-libraries-with-xamarin"></a>Xamarin を使用した C と C++ のライブラリを使用します。
 
@@ -12,7 +18,7 @@ ms.date: 12/17/2018
 
 Xamarin では、Visual Studio を使用したクロス プラットフォーム ネイティブ モバイル アプリを作成することができます。 一般に、C#バインドを使用する開発者に既存のプラットフォーム コンポーネントを公開します。 ただし、既存を使用する Xamarin アプリの必要性がコードベース場合もあります。 場合がありますチームだけがないコードベースを時間、予算、またはリソースを十分にテストされた、大幅に最適化された大規模なポートをC#します。
 
-[クロス プラットフォーム モバイル開発のための visual C](https://docs.microsoft.com/visualstudio/cross-platform/visual-cpp-for-cross-platform-mobile-development) により、C と C++ とC#統合されたデバッグ操作を含む多くの利点を提供する、同じソリューションの一部としてビルドするコードをします。 Microsoft はなど、アプリを配布するには、この方法で C と C++ と Xamarin を使用が [Hyperlapse Mobile](https://www.microsoft.com/p/hyperlapse-mobile/9wzdncrd1prw) と [Pix カメラ](https://www.microsoft.com/microsoftpix)します。
+[クロス プラットフォーム モバイル開発のための visual C](https://docs.microsoft.com/visualstudio/cross-platform/visual-cpp-for-cross-platform-mobile-development)により、C と C++ とC#統合されたデバッグ操作を含む多くの利点を提供する、同じソリューションの一部としてビルドするコードをします。 Microsoft はなど、アプリを配布するには、この方法で C と C++ と Xamarin を使用が[Hyperlapse Mobile](https://www.microsoft.com/p/hyperlapse-mobile/9wzdncrd1prw)と[Pix カメラ](https://www.microsoft.com/microsoftpix)します。
 
 ただし、場合によってはあるは、要望 (要件) を保持する既存の C と C++ のツールとライブラリ コードがサード パーティ製コンポーネントのような場合と同様に、ライブラリを扱う方法、アプリケーションから分離するために、インプレース プロセスです。 このような状況で課題がないだけを公開するのに関連するメンバーC#が依存関係としてライブラリを管理します。 もちろん、できるだけこのプロセスの自動化とは、します。  
 
@@ -42,7 +48,7 @@ C/C++ はクロスプラット フォーム対応の言語と見なされます�
 
 このステージの目標は、呼び出すことができるネイティブ ライブラリを作成する、C#ラッパー。 これは、状況に応じて関連することができない可能性がありますもかまいません。 多くのツールとプロセスにこの一般的なシナリオに移動することができますは、この記事の範囲を超えています。 重要な考慮事項は、C と C++ のコードベースを任意のネイティブ ラッパー コード、十分な単体テストとの同期を管理することでビルドの自動化。 
 
-付随するシェル スクリプトを使用して Visual Studio Code を使用して、チュートリアルでは、ライブラリが作成されています。 このチュートリアルの拡張バージョンが記載されて、 [Mobile CAT GitHub リポジトリ](https://github.com/xamarin/mobcat/blob/dev/samples/cppwithxamarin/README.md)さらに詳しくサンプルのこの部分をについて説明します。 ネイティブ ライブラリ中として扱われます、サードパーティの依存関係ここでが、コンテキストのこのステージを示します。
+付随するシェル スクリプトを使用して Visual Studio Code を使用して、チュートリアルでは、ライブラリが作成されています。 このチュートリアルの拡張バージョンが記載されて、 [Mobile CAT GitHub リポジトリ](https://github.com/xamarin/mobcat/blob/dev/samples/cppwithxamarin/README.md)さらに詳しくサンプルのこの部分をについて説明します。 ネイティブ ライブラリ中として扱われます、サードパーティの依存関係ここでが、コンテキストのこのステージを示します。
 
 
 わかりやすくするため、このチュートリアルには、アーキテクチャのサブセットのみが対象とします。 Ios の場合は、個々 のアーキテクチャに固有のバイナリから 1 つの fat バイナリを作成するのに lipo ユーティリティを使用します。 Android では、動的なバイナリは .so 拡張機能を使用し、iOS では、静的 fat バイナリは .a 拡張機能を使用します。 
@@ -71,7 +77,7 @@ C/C++ はクロスプラット フォーム対応の言語と見なされます�
 
 ## <a name="walk-through"></a>チュートリアルについて
 
-固有の手順に従って **Visual Studio for Mac**、構造体は **Visual Studio 2017** もします。
+固有の手順に従って**Visual Studio for Mac**、構造体は**Visual Studio 2017**もします。
 
 ### <a name="prerequisites"></a>必須コンポーネント
 
@@ -82,17 +88,17 @@ C/C++ はクロスプラット フォーム対応の言語と見なされます�
 -   [*Visual Studio* *for Mac*](https://visualstudio.microsoft.com/downloads)
 
 > [!NOTE]
-> アクティブな [**Apple 開発者アカウント**](https://developer.apple.com/) が iphone アプリを展開するために必要です。
+> アクティブな[ **Apple 開発者アカウント**](https://developer.apple.com/)が iphone アプリを展開するために必要です。
 
 ## <a name="creating-the-native-libraries-stage-1"></a>ネイティブ ライブラリ (ステージ 1) の作成
 
-ネイティブ ライブラリの機能は、例からに基づいて [チュートリアル。スタティック ライブラリ (C++) の作成と](https://docs.microsoft.com/cpp/windows/walkthrough-creating-and-using-a-static-library-cpp?view=vs-2017)します。
+ネイティブ ライブラリの機能は、例からに基づいて[チュートリアル。スタティック ライブラリ (C++) の作成と](https://docs.microsoft.com/cpp/windows/walkthrough-creating-and-using-a-static-library-cpp?view=vs-2017)します。
 
-このチュートリアルでは、このシナリオでは、サードパーティの依存関係として、ライブラリが提供されるため、ネイティブ ライブラリを構築して、最初のステージをスキップします。 プリコンパイル済みのネイティブ ライブラリに含まれる、 [サンプル コード](https://github.com/xamarin/mobcat/tree/master/samples/cpp_with_xamarin)することもできます[ダウンロード](https://github.com/xamarin/mobcat/tree/master/samples/cpp_with_xamarin/Sample/Artefacts) 直接します。
+このチュートリアルでは、このシナリオでは、サードパーティの依存関係として、ライブラリが提供されるため、ネイティブ ライブラリを構築して、最初のステージをスキップします。 プリコンパイル済みのネイティブ ライブラリに含まれる、[サンプル コード](https://github.com/xamarin/mobcat/tree/master/samples/cpp_with_xamarin)することもできます[ダウンロード](https://github.com/xamarin/mobcat/tree/master/samples/cpp_with_xamarin/Sample/Artefacts)直接します。
 
 ### <a name="working-with-the-native-library"></a>ネイティブ ライブラリの操作
 
-元の *MathFuncsLib* 例には次の定義の MyMathFuncs と呼ばれる 1 つのクラスが含まれています。 
+元の*MathFuncsLib*例には次の定義の MyMathFuncs と呼ばれる 1 つのクラスが含まれています。 
 
 ```cpp
 namespace MathFuncs
@@ -124,11 +130,11 @@ extern "C" {
 }
 ```
 
-これらのラッパー関数で使用されているがなります、 [Xamarin](https://visualstudio.microsoft.com/xamarin/) 側です。
+これらのラッパー関数で使用されているがなります、 [Xamarin](https://visualstudio.microsoft.com/xamarin/) 側です。
 
 ## <a name="wrapping-the-native-library-stage-2"></a>折り返しのネイティブ ライブラリ (ステージ 2)
 
-このステージが必要です、[ライブラリをプリコンパイル済み](https://github.com/xamarin/mobcat/tree/master/samples/cpp_with_xamarin/Sample/Artefacts)で説明されている、 [前のセクション](https://docs.microsoft.com/xamarin/cross-platform/cpp/index)します。
+このステージが必要です、[ライブラリをプリコンパイル済み](https://github.com/xamarin/mobcat/tree/master/samples/cpp_with_xamarin/Sample/Artefacts)で説明されている、[前のセクション](https://docs.microsoft.com/xamarin/cross-platform/cpp/index)します。
 
 ### <a name="creating-the-visual-studio-solution"></a>Visual Studio ソリューションを作成します。
 
@@ -185,7 +191,7 @@ extern "C" {
 
 1. **コントロール + クリック**で、 **MathFuncs.Android**プロジェクトを選択し、**新しいフォルダー**から、**追加** メニューの名前を付け、 **libs**.
 
-2. 各 **ABI** (アプリケーション バイナリ インターフェイス) **コントロール + をクリックします** 上、 **libs** フォルダー、を選択し、 **新しいフォルダー** から、 **追加** メニューで、その後、名前付けそれぞれ **ABI**します。 この場合、次のようになります。
+2. 各**ABI** (アプリケーション バイナリ インターフェイス)、**コントロール + をクリックします**で、 **libs**フォルダーを選択し、**新しいフォルダー** から**追加**メニューで、その後、名前付けそれぞれ**ABI**します。 この場合、次のようになります。
 
     - arm64-v8a
     - armeabi-v7a
@@ -193,7 +199,7 @@ extern "C" {
     - x86_64  
 
     > [!NOTE]
-    > さらに詳しい概要については、次を参照してください、 [アーキテクチャと Cpu](https://developer.android.com/ndk/guides/arch) トピックから、 [NDK 開発者ガイド](https://developer.android.com/ndk/guides/)、アドレス指定に関するセクションでは具体的には [アプリ パッケージ内のネイティブ コード](https://developer.android.com/ndk/guides/abis#native-code-in-app-packages).
+    > さらに詳しい概要については、次を参照してください、[アーキテクチャと Cpu](https://developer.android.com/ndk/guides/arch)トピックから、 [NDK 開発者ガイド](https://developer.android.com/ndk/guides/)、アドレス指定に関するセクションでは具体的には[アプリ パッケージ内のネイティブ コード](https://developer.android.com/ndk/guides/abis#native-code-in-app-packages).
 
 3. フォルダー構造を確認します。  
 
@@ -220,7 +226,7 @@ extern "C" {
 
 5. 各、 **.so**ファイル、**コントロール + をクリック**選択し、 **EmbeddedNativeLibrary**オプションを**ビルド アクション**メニュー。
 
-これで、 **libs** フォルダーが次のように表示されます。
+これで、 **libs**フォルダーが次のように表示されます。
 
 ```bash
 - lib
@@ -468,12 +474,12 @@ extern "C" {
 
 #### <a name="creating-the-nuspec"></a>Nuspec を作成します。
 
-ライブラリをパッケージ化され、NuGet 経由で配布するために、ソリューションが必要な **nuspec**ファイル。 これにより、サポートされているプラットフォームごとに生成されたアセンブリの対象は、識別します。
+ライブラリをパッケージ化され、NuGet 経由で配布するために、ソリューションが必要な**nuspec**ファイル。 これにより、サポートされているプラットフォームごとに生成されたアセンブリの対象は、識別します。
 
-1.  **コントロール + をクリックします** ソリューション **MathFuncs**を選択し、 **ソリューション フォルダーの追加**から、 **追加** としますメニュー **SolutionItems**します。
-2.  **コントロール + をクリックします** 上、 **SolutionItems** フォルダーを選択し、 **新しいファイル.** から、 **追加** メニュー。
-3.  選択 **空の XML ファイル** から、 **新しいファイル** ウィンドウで、名前を付けます **MathFuncs.nuspec** をクリックして **新しい**します。
-4.  Update **MathFuncs.nuspec** に表示する基本的なパッケージ メタデータ、 **NuGet**コンシューマー。 例えば:
+1.  **コントロール + をクリックします**ソリューション**MathFuncs**を選択し、**ソリューション フォルダーの追加**から、**追加** メニューの名前を付け、 **SolutionItems**.
+2.  **コントロール + をクリックします**上、 **SolutionItems**フォルダーを選択し、**新しいファイル.** から、**追加**メニュー。
+3.  選択**空の XML ファイル**から、**新しいファイル**ウィンドウで、名前を付けます**MathFuncs.nuspec**順にクリックします**新規**します。
+4.  Update **MathFuncs.nuspec**に表示する基本的なパッケージ メタデータ、 **NuGet**コンシューマー。 例:
 
 
     ```xml
@@ -563,9 +569,9 @@ extern "C" {
     ```
 
     > [!NOTE]
-    > このファイルからアセンブリの出力パスを指定します、 **リリース** ビルドは、あるため、その構成を使用してソリューションを構築することを確認します。
+    > このファイルからアセンブリの出力パスを指定します、**リリース**ビルドは、あるため、その構成を使用してソリューションを構築することを確認します。
 
-3 つの .NET アセンブリおよびサポートするこの時点では、ソリューションに含まれる **nuspec** マニフェストします。
+3 つの .NET アセンブリおよびサポートするこの時点では、ソリューションに含まれる**nuspec**マニフェストします。
 
 ## <a name="distributing-the-net-wrapper-with-nuget"></a>NuGet の .NET ラッパーを配布します。
 
@@ -575,33 +581,33 @@ extern "C" {
 
 NuGet フィードの最も単純な形式では、ローカル ディレクトリを示します。
 
-1.   **Finder**、便利なディレクトリに移動します。 たとえば、 **"/users"** します。
-2.  選択 **新しいフォルダー** から、 **ファイル** などのわかりやすい名前を提供するメニュー **ローカル nuget フィード**します。
+1.  **Finder**、便利なディレクトリに移動します。 たとえば、 **"/users"** します。
+2.  選択**新しいフォルダー**から、**ファイル**などのわかりやすい名前を提供するメニュー**ローカル nuget フィード**します。
 
 ### <a name="creating-the-package"></a>パッケージを作成します。
 
-1.  設定、 **ビルド構成** に **リリース**を使用してビルドを実行および **コマンド + B**します。
-2.  開いている **ターミナル**を含むフォルダーにディレクトリを変更し、 **nuspec** ファイル。
-3.   **ターミナル**、実行、 **nuget パック** コマンドを指定する、 **nuspec** ファイル、 **バージョン**  (例: 1.0.0) と **OutputDirectory** で作成したフォルダーを使用して、 [前の手順](https://docs.microsoft.com/xamarin/cross-platform/cpp/index#creating-a-local-nuget-feed)、つまり **ローカルの nuget フィード**します。 例えば:
+1.  設定、**ビルド構成**に**リリース**を使用してビルドを実行および**コマンド + B**します。
+2.  開いている**ターミナル**を含むフォルダーにディレクトリを変更し、 **nuspec**ファイル。
+3.  **ターミナル**、実行、 **nuget パック**コマンドを指定する、 **nuspec**ファイル、**バージョン**(例: 1.0.0) と、 **OutputDirectory**で作成したフォルダーを使用して、[前の手順](https://docs.microsoft.com/xamarin/cross-platform/cpp/index#creating-a-local-nuget-feed)、つまり**ローカル nuget フィード**します。 例:
 
     ```bash
     nuget pack MathFuncs.nuspec -Version 1.0.0 -OutputDirectory ~/local-nuget-feed
     ```
 
-4. **確認**を **MathFuncs.1.0.0.nupkg** 内で作成された、 **ローカル nuget フィード**ディレクトリ。
+4. **確認**を**MathFuncs.1.0.0.nupkg**内で作成された、**ローカル nuget フィード**ディレクトリ。
 
 ### <a name="optional-using-a-private-nuget-feed-with-azure-devops"></a>[省略可能]Azure DevOps での NuGet フィードのプライベートを使用します。
 
-堅牢な手法については、 [Azure DevOps の NuGet パッケージの概要](https://docs.microsoft.com/azure/devops/artifacts/get-started-nuget?view=vsts&tabs=new-nav#publish-a-package)、そのフィードにプライベート フィードを作成し、(前の手順で生成された) パッケージをプッシュする方法を示しています。
+堅牢な手法については、 [Azure DevOps の NuGet パッケージの概要](https://docs.microsoft.com/azure/devops/artifacts/get-started-nuget?view=vsts&tabs=new-nav#publish-a-package)、そのフィードにプライベート フィードを作成し、(前の手順で生成された) パッケージをプッシュする方法を示しています。
 
-このワークフローを完全に例を使用して自動化することをお勧め [Azure パイプライン](https://docs.microsoft.com/azure/devops/pipelines/index?view=vsts)します。 詳細については、次を参照してください。 [Azure パイプラインの概要](https://docs.microsoft.com/azure/devops/pipelines/get-started/index?view=vsts)します。
+このワークフローを完全に例を使用して自動化することをお勧め[Azure パイプライン](https://docs.microsoft.com/azure/devops/pipelines/index?view=vsts)します。 詳細については、次を参照してください。 [Azure パイプラインの概要](https://docs.microsoft.com/azure/devops/pipelines/get-started/index?view=vsts)します。
 
 ## <a name="consuming-the-net-wrapper-from-a-xamarinforms-app"></a>Xamarin.Forms アプリから .NET ラッパーの使用
-このチュートリアルを完了するには作成、 **Xamarin.Forms** だけパッケージを使用するアプリケーションをローカルに発行 **NuGet** フィードします。
+このチュートリアルを完了するには作成、 **Xamarin.Forms**だけパッケージを使用するアプリケーションをローカルに発行**NuGet**フィードします。
 
 ### <a name="creating-the-xamarinforms-project"></a>作成、 **Xamarin.Forms**プロジェクト
 
-1. 新しいインスタンスを開く **Visual Studio for Mac**します。 これから実行できます **ターミナル**:
+1. 新しいインスタンスを開く**Visual Studio for Mac**します。 これから実行できます**ターミナル**:
 
     ```bash
     open -n -a "Visual Studio"
@@ -639,7 +645,7 @@ NuGet フィードの最も単純な形式では、ローカル ディレクト�
     - **場所:** 指定、**ローカル nuget フィード**で作成したフォルダー、[前の手順](#preparing-a-local-packages-directory)します。
 
     > [!NOTE]
-    > ここで指定する必要はありません、 **Username** と **パスワード**します。 
+    > ここで指定する必要はありません、 **Username**と**パスワード**します。 
 
 4. **[OK]** をクリックします。
 
@@ -654,10 +660,10 @@ NuGet フィードの最も単純な形式では、ローカル ディレクト�
 
 ### <a name="using-the-library-functions"></a>ライブラリ関数を使用します。
 
-ここを参照する、 **MathFuncs** 関数は、プロジェクトの各パッケージが利用できる、C#コード。
+ここを参照する、 **MathFuncs**関数は、プロジェクトの各パッケージが利用できる、C#コード。
 
-1.  開いている **MainPage.xaml.cs** 内から、 **MathFuncsApp** 共通 **Xamarin.Forms**プロジェクト (両方によって参照される **MathFuncsApp.Android** と **MathFuncsApp.iOS**)。
-2.  追加 **を使用して** ステートメント **System.Diagnostics** と **MathFuncs** ファイルの上部にあります。
+1.  開いている**MainPage.xaml.cs**内から、 **MathFuncsApp**共通**Xamarin.Forms**プロジェクト (両方で参照されている**MathFuncsApp.Android**と**MathFuncsApp.iOS**)。
+2.  追加**を使用して**ステートメント**System.Diagnostics**と**MathFuncs**ファイルの上部にあります。
 
     ```csharp
     using System.Diagnostics;

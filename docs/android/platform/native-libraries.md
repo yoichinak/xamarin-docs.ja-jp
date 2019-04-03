@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: 1195685db9e85e7fba006272ef300e22d47d1fa6
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 1b0771a0ccc2597ebd800468b82044e4020d9d94
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57666373"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58854614"
 ---
 # <a name="using-native-libraries"></a>ネイティブ ライブラリの使用
 
@@ -42,10 +42,10 @@ Android では、複数のアプリケーション バイナリ インターフ�
 
 ネイティブ ライブラリの使用に関する詳細については、次を参照してください。[ネイティブ ライブラリとの相互運用](https://www.mono-project.com/docs/advanced/pinvoke/)します。
 
-## <a name="debugging-native-code-with-visual-studio-2017"></a>Visual Studio 2017 でのネイティブ コードのデバッグ
+## <a name="debugging-native-code-with-visual-studio"></a>Visual Studio を使用したネイティブ コードのデバッグ
 
-使用している場合*Visual Studio 2017*以上で、前述のように、プロジェクト ファイルを変更する必要はありません。
-ビルドして、C++ への参照をプロジェクトに追加することで、Xamarin.Android ソリューション内で C++ をデバッグ**ダイナミック共有ライブラリ (Android)** プロジェクト。 
+使用している場合*Visual Studio 2019*または*Visual Studio 2017*、前述のように、プロジェクト ファイルを変更する必要はありません。
+ビルドして、C++ への参照をプロジェクトに追加することで、Xamarin.Android ソリューション内で C++ をデバッグ**ダイナミック共有ライブラリ (Android)** プロジェクト。
 
 プロジェクトでネイティブの C++ コードをデバッグするには、次の手順を実行します。
 
@@ -53,7 +53,7 @@ Android では、複数のアプリケーション バイナリ インターフ�
 2. 下へスクロールして**デバッグ オプション**します。
 3. **デバッガー**ドロップダウン メニューで、 **C++** (既定ではなく **.Net (Xamarin)**)。
 
-Visual Studio の C++ 開発者を参照してください、 [SanAngeles_NativeDebug](https://developer.xamarin.com/samples/monodroid/SanAngeles_NDK/)サンプルを Visual Studio 2017 と Xamarin; から C のデバッグを試すしを参照してください、[ブログの投稿](https://blog.xamarin.com/build-and-debug-c-libraries-in-xamarin-android-apps-with-visual-studio-2015/)詳細についてはします。
+Visual Studio の C++ 開発者を参照してください、 [SanAngeles_NativeDebug](https://developer.xamarin.com/samples/monodroid/SanAngeles_NDK/)サンプルを Visual Studio 2019 または Visual Studio 2017 と Xamarin; から C のデバッグを試すしを参照してください、[ブログの投稿](https://blog.xamarin.com/build-and-debug-c-libraries-in-xamarin-android-apps-with-visual-studio-2015/)詳細についてはします。
 
 
 

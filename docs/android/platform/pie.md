@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2018
-ms.openlocfilehash: fa41affc57714254a12623f79da3dc1396ecd009
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: e08324d5a905639e7ecd59bc4c7a5c0f02d0adfe
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57670144"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58854718"
 ---
 # <a name="android-pie-features"></a>Android の円グラフの機能
 
@@ -30,19 +30,20 @@ Xamarin.Android 9.0 では、Android の円のサポートを提供します。 
 
 Android の円の機能を Xamarin ベースのアプリで使用する次の一覧が必要です。
 
--   **Visual Studio** &ndash; Windows を使用している場合は、Visual Studio 2017 15.8 またはそれ以降のバージョンに更新します。 Mac を使用している場合は、Mac 7.6 またはそれ以降のバージョンの Visual Studio 2017 を更新します。
+- **Visual Studio** &ndash; Visual Studio 2019 をお勧めします。
+    Visual Studio 2017 では、Visual Studio 2017 15.8 またはそれ以降のバージョンの Windows 更新プログラムを使用しています。 場合、 Macos では、Mac 7.6 またはそれ以降のバージョンの Visual Studio 2017 を更新します。
 
--   **Xamarin.Android** &ndash; Xamarin.Android 9.0.0.17 以降、Visual Studio をインストールする必要があります (Xamarin.Android がの一部として自動的にインストールされている、 **.NET によるモバイル開発**ワークロード)。
+- **Xamarin.Android** &ndash; Xamarin.Android 9.0.0.17 以降、Visual Studio をインストールする必要があります (Xamarin.Android がの一部として自動的にインストールされている、 **.NET によるモバイル開発**ワークロード)。
 
--   **Java Developer Kit** &ndash; Xamarin Android 9.0 開発が必要です[JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) (または、Microsoft の配布のプレビューを試すことができます、 [OpenJDK](~/android/get-started/installation/openjdk.md))。 JDK8 がの一部として自動的にインストールされている、 **.NET によるモバイル開発**ワークロード。
+- **Java Developer Kit** &ndash; Xamarin Android 9.0 開発が必要です[JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) (または、Microsoft の配布のプレビューを試すことができます、 [OpenJDK](~/android/get-started/installation/openjdk.md))。 JDK8 がの一部として自動的にインストールされている、 **.NET によるモバイル開発**ワークロード。
 
--   **Android SDK** &ndash; 28 またはそれ以降の Android SDK API が、Android SDK Manager を使用してをインストールする必要があります。
+- **Android SDK** &ndash; 28 またはそれ以降の Android SDK API が、Android SDK Manager を使用してをインストールする必要があります。
 
 ## <a name="getting-started"></a>作業の開始
 
 Xamarin.Android で円グラフの Android アプリを開発して開始するには、ダウンロードし、最初の円を Android プロジェクトを作成する前に、最新のツールと SDK パッケージをインストールする必要があります。
 
-1. 更新する[Visual Studio 2017 バージョン 15.8](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes)またはそれ以降。 Visual Studio for Mac を使用している場合に更新[Visual Studio 2017 for Mac バージョン 7.6](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes)またはそれ以降。
+1. Visual Studio 2019 をお勧めします。 Visual Studio 2017 を使用している場合に更新[Visual Studio 2017 バージョン 15.8](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes)またはそれ以降。 Visual Studio for Mac を使用している場合に更新[Visual Studio 2017 for Mac バージョン 7.6](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes)またはそれ以降。
 
 2. インストール**Android 円 (API 28)** パッケージとツール、SDK Manager を使用しています。
 
@@ -52,13 +53,11 @@ Xamarin.Android で円グラフの Android アプリを開発して開始する�
 
 次のセクションでは、これらの各手順について説明します。
 
-
 ### <a name="update-visual-studio"></a>Visual Studio 2017 を更新する
 
-Visual Studio には、Android の円のサポートを追加するには、Visual Studio 2017 15.8 またはそれ以降のバージョンに更新 (手順については、次を参照してください。[を最新のリリースの Visual Studio 2017 の更新](https://docs.microsoft.com/visualstudio/install/update-visual-studio))。
+Visual Studio 2019 は Xamarin を使用して円の Android アプリを構築するためお勧めします。
 
-For Mac に Visual Studio を Android 円のサポートを追加するには、Visual Studio 2017 for Mac 7.6 以降に更新 (手順については、次を参照してください。[セットアップとインストールの Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/installation))。
-
+Visual Studio 2017 を使用している場合は、Visual Studio 2017 15.8 またはそれ以降のバージョンに更新 (手順については、次を参照してください。[を最新のリリースの Visual Studio 2017 の更新](https://docs.microsoft.com/visualstudio/install/update-visual-studio))。 Macos では、Visual Studio 2017 for Mac 7.6 以降に更新 (手順については、次を参照してください。[セットアップとインストールの Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/installation))。
 
 ### <a name="install-the-android-sdk"></a>Android SDK をインストールします。
 
@@ -68,15 +67,13 @@ Xamarin.Android 9.0、プロジェクトを作成する必要があります最�
 
 2. 、右下隅で歯車アイコンをクリックし、選択**リポジトリ > Google (サポートされていません)**:
 
-    [![Google にリポジトリを設定します。](pie-images/vs/set-repo-sml.png)](pie-images/vs/set-repo.png#lightbox)
+    [![Setting Google リポジトリ](pie-images/vs/set-repo-sml.png)](pie-images/vs/set-repo.png#lightbox)
 
 3. インストール、 **Android 円**としてリストされている SDK パッケージ**Android SDK プラットフォーム 28**で、**プラットフォーム** タブ (詳細については、SDK Manager を使用して、参照してください[Android SDK セットアップ](~/android/get-started/installation/android-sdk.md))。
 
-    [![Android の円のパッケージをインストールします。](pie-images/vs/sdk-manager-sml.png)](pie-images/vs/sdk-manager.png#lightbox)
+    [![Installing Android 円パッケージ](pie-images/vs/sdk-manager-sml.png)](pie-images/vs/sdk-manager.png#lightbox)
 
 4. エミュレーターを使用している場合をサポートする仮想デバイスを作成します。 **API レベル 28**します。 仮想デバイスの作成の詳細については、次を参照してください。[仮想デバイスの管理が Android Device Manager](~/android/get-started/installation/android-emulator/device-manager.md)します。
-
-
 
 ### <a name="start-a-xamarinandroid-project"></a>Xamarin.Android プロジェクトを開始します。
 
@@ -114,7 +111,7 @@ Android の円グラフには、さまざまな新しい機能が導入されて
 エッジ ツー エッジ画面に多数の新しい Android デバイスが、*素材の表示*(または「ノッチ」) の表示をカメラ、スピーカーの上部にあります。
 次のスクリーン ショットでは、素材のエミュレーター例を示します。
 
-[![Android エミュレーターの素材をシミュレートします。](pie-images/02-example-cutout-sml.png)](pie-images/02-example-cutout.png#lightbox)
+[![A素材をシミュレートする ndroid エミュレーター](pie-images/02-example-cutout-sml.png)](pie-images/02-example-cutout.png#lightbox)
 
 表示素材を備えたデバイスでアプリのウィンドウの内容を表示する方法を管理する Android の円は、新しい追加が[LayoutInDisplayCutoutMode](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#layoutInDisplayCutoutMode)ウィンドウ レイアウトの属性。 この属性は、次の値のいずれかに設定できます。
 
@@ -133,7 +130,7 @@ Window.Attributes.LayoutInDisplayCutoutMode =
 
 次の例では、これらの素材のモードの例を示します。 左側の最初のスクリーン ショットでは、非全画面表示モードでのアプリです。 Center スクリーン ショットは、アプリが全画面表示で`LayoutInDisplayCutoutMode`設定`LayoutInDisplayCutoutModeShortEdges`します。 素材の表示領域に、アプリの背景が白が拡張されていることを確認します。
 
-[![例は、エミュレーターで素材モードを表示します。](pie-images/03-cutout-modes-sml.png)](pie-images/03-cutout-modes.png#lightbox)
+[![Example は、エミュレーターで、素材のモードを表示](pie-images/03-cutout-modes-sml.png)](pie-images/03-cutout-modes.png#lightbox)
 
 最終的なスクリーン ショットでは (上、右上)、`LayoutInDisplayCutoutMode`に設定されている`LayoutInDisplayCutoutModeShortNever`全画面表示に移動する前にします。
 素材の表示領域に拡張するアプリの背景が白が許可されないことに注意してください。
@@ -158,7 +155,7 @@ Android の円グラフには、メッセージ エクスペリエンスを向�
 
 次の例では、新しい Api を使用してイメージを含む通知を生成する方法を示します。 次のスクリーン ショットにテキスト通知が投稿され、を埋め込みイメージでの通知が続きます。 (右側に表示される) と、通知が展開されます、最初の通知のテキストが表示され、イメージに埋め込まれている 2 つ目の通知が拡大します。
 
-[![イメージの例の通知](pie-images/04-example-notifications-sml.png)](pie-images/04-example-notifications.png#lightbox)
+[![Eイメージを含む xample 通知](pie-images/04-example-notifications-sml.png)](pie-images/04-example-notifications.png#lightbox)
 
 次の例では、Android の円の通知では、画像を含める方法と、新しいの使用方法を示します`Person`クラス。
 
@@ -173,7 +170,7 @@ Android の円グラフには、メッセージ エクスペリエンスを向�
     ```
 
 2. 作成、`Notification.MessagingStyle.Message`を新しいイメージを渡すことを送信するイメージを含む[Notification.MessagingStyle.Message.SetData](https://developer.android.com/reference/android/app/Notification.MessagingStyle.Message.html#setData%28java.lang.String,%20android.net.Uri)メソッド。
-   例えば:
+   例:
 
     ```csharp
     Uri imageUri = Uri.Parse("android.resource://com.xamarin.pminidemo/drawable/example_image");
@@ -214,7 +211,7 @@ Android の円グラフには、メッセージ エクスペリエンスを向�
 
 Android の円は、IEEE 802.11mc のサポートを提供します (とも呼ばれます_WiFi Round-Trip 時_または_WiFi RTT_) との距離をいずれかを検出するためにアプリをできるように、または、複数の Wi-fi アクセス ポイントします。 この情報を使用することが活用するために、アプリの*室内配置*1 ~ 2 のメーターの精度でします。 IEEE 801.11mc のハードウェアのサポートを提供する Android デバイスでアプリがスマート アプライアンスまたはターンで有効にする手順については、店舗の場所ベースのコントロールなどのナビゲーション機能を提供できます。
 
-[![WiFi RTT を使用して、屋内ナビゲーションの例](pie-images/05-wifi-rtt-sml.png)](pie-images/05-wifi-rtt.png#lightbox)
+[![EWiFi RTT を使用して、屋内ナビゲーションの xample](pie-images/05-wifi-rtt-sml.png)](pie-images/05-wifi-rtt.png#lightbox)
 
 新しい[WifiRttManager](https://developer.android.com/reference/android/net/wifi/rtt/WifiRttManager)クラスといくつかのヘルパー クラスは、Wi-fi デバイスまでの距離を測定する手段を提供します。 Android の P で導入されたに屋内配置 Api に関する詳細については、次を参照してください。 [Android.Net.Wifi.Rtt](https://developer.android.com/reference/android/net/wifi/rtt/package-summary)します。
 
@@ -270,4 +267,4 @@ API のドキュメントへのリンクが含まれているし、円の Androi
 
 ## <a name="related-links"></a>関連リンク
 
-- [Android の 9 円](https://developer.android.com/about/versions/pie/)
+- [Android 9 Pie](https://developer.android.com/about/versions/pie/)

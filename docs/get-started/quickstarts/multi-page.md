@@ -1,5 +1,5 @@
 ---
-title: 複数ページの Xamarin.Forms アプリケーションでのナビゲーションを実行します。
+title: 複数ページの Xamarin.Forms アプリケーションでナビゲーションを実行する
 description: この記事では、複数のノートを格納できる、複数ページのアプリケーションに 1 つの注記を格納できるシングル ページ アプリケーションを有効にする方法について説明します。
 zone_pivot_groups: platform
 ms.topic: quickstart
@@ -8,17 +8,17 @@ ms.assetid: 9DC3B3D6-6CBC-4705-BE80-3D86A9E65F92
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 01/02/2019
-ms.openlocfilehash: f3c5ec1c6d37c74fd9b4fb4980c68a59c9864c05
-ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
+ms.date: 04/01/2019
+ms.openlocfilehash: 855962560897789dadba535f69c4a7da42bb4742
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57197369"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58854978"
 ---
 # <a name="perform-navigation-in-a-multi-page-xamarinforms-application"></a>複数ページの Xamarin.Forms アプリケーションでのナビゲーションを実行します。
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/MultiPage/)
+[![Download サンプル](~/media/shared/download.png) サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/MultiPage/)
 
 このクイック スタートでは、学習する方法。
 
@@ -39,7 +39,7 @@ ms.locfileid: "57197369"
 
 ## <a name="update-the-app-with-visual-studio"></a>Visual Studio でアプリを更新する
 
-1. Visual Studio を起動します。 スタート ページでをクリックして**プロジェクトを開く/ソリューション**、し、**プロジェクトを開く**ダイアログ ノート プロジェクトのソリューション ファイルを選択します。
+1. Visual Studio を起動します。 [開始] ウィンドウ、**ノート**最近使ったプロジェクトおよびソリューションの一覧、またはクリックでソリューション**プロジェクトまたはソリューションを開く**、し、**プロジェクト/ソリューションを開く**ダイアログノートのプロジェクトのソリューション ファイルを選択します。
 
     ![](multi-page-images/vs/open-solution.png "プロジェクトを開く")
 
@@ -285,9 +285,7 @@ ms.locfileid: "57197369"
     using System;
     using System.IO;
     using Xamarin.Forms;
-    using Xamarin.Forms.Xaml;
 
-    [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
     namespace Notes
     {
         public partial class App : Application
@@ -324,7 +322,7 @@ ms.locfileid: "57197369"
 
 ## <a name="update-the-app-with-visual-studio-for-mac"></a>Visual Studio for Mac でアプリを更新する
 
-1. Visual Studio for Mac を起動します。 スタート ページで次のようにクリックします**オープンしています...**、ダイアログ ボックスで、ノートのプロジェクトのソリューション ファイルを選択します。
+1. Visual Studio for Mac を起動します。 開始時間帯でクリックして**オープン**、ダイアログ ボックスで、ノートのプロジェクトのソリューション ファイルを選択します。
 
     ![](multi-page-images/vsmac/open-solution.png "ソリューションを開く")
 
@@ -570,9 +568,7 @@ ms.locfileid: "57197369"
     using System;
     using System.IO;
     using Xamarin.Forms;
-    using Xamarin.Forms.Xaml;
 
-    [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
     namespace Notes
     {
         public partial class App : Application
@@ -621,5 +617,5 @@ SQLite.NET のローカル データベースに、データを格納できる�
 
 ## <a name="related-links"></a>関連リンク
 
-- [Notes (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/MultiPage/)
+- [メモ (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/MultiPage/)
 - [Xamarin.Forms のクイック スタートの詳細情報](deepdive.md)

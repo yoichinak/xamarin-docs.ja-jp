@@ -1,5 +1,5 @@
 ---
-title: タイミングと方法は、バグ レポートをファイルする必要がありますか。
+title: バグを報告する場合と方法を教えてください
 description: このドキュメントが説明される場所、および方法にバグを報告します。 バグ レポートの問題を診断する最適なエンジニアを有効にするベスト プラクティスも提供します。
 ms.topic: troubleshooting
 ms.prod: xamarin
@@ -7,19 +7,19 @@ ms.assetid: 8AD9CFBF-282A-4C1F-95E9-25F21141B052
 author: conceptdev
 ms.author: crdun
 ms.date: 08/01/2018
-ms.openlocfilehash: f20740ff1e16187be3d3703b3da07329f6f52daf
-ms.sourcegitcommit: bf05041cc74fb05fd906746b8ca4d1403fc5cc7a
+ms.openlocfilehash: 1224d38a2230fa2f5c7ca08f6e33c5468886c206
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/04/2018
-ms.locfileid: "39514339"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58855212"
 ---
-# <a name="when-and-how-should-i-file-a-bug-report"></a>タイミングと方法は、バグ レポートをファイルする必要がありますか。
+# <a name="when-and-how-should-i-file-a-bug-report"></a>バグを報告する場合と方法を教えてください
 
 > [!TIP]
 > 使用して、**問題を報告する**Visual Studio でメニュー項目&ndash;診断情報を問題を解決するために、バグ レポートと共に送信されます。
 >
-> 詳細な手順については[Visual Studio 2017](https://docs.microsoft.com/visualstudio/ide/how-to-report-a-problem-with-visual-studio-2017)と[Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/report-a-problem)します。
+> 詳細な手順については[Visual Studio 2019 または Visual Studio 2017](https://docs.microsoft.com/visualstudio/ide/how-to-report-a-problem-with-visual-studio)と[Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/report-a-problem)します。
 >
 > 既存のレポートを検索することができます、 [Visual Studio Developer Community](https://developercommunity.visualstudio.com/) web サイト。
 
@@ -47,7 +47,7 @@ OR
 
 ## <a name="additional-details"></a>追加の詳細
 
-1. <a name="note-1" />[*^*](#ref-1) 理想的には「に見える現象」の説明含める必要があります十分な情報を他の顧客が同じ問題が発生するかどうかを確認することができます (同じエラー メッセージ、同じパフォーマンスの低下、同じのスタック トレース、クラッシュから_など。_). 「環境」、1 つの良い例になります。 場合、ようなものを言うことができます:"は通常問題が発生、時間の 75% が、この 1 つを変更した場合、は問題を回避できます、完全に"。 「正確な状況」のような別の例では、Xamarin の以前のバージョンにダウン グレードする問題を停止するかどうかです。
+1. <a name="note-1" />[*^*](#ref-1) 理想的には「に見える現象」の説明含める必要があります十分な情報を他の顧客が同じ問題が発生するかどうかを確認することができます (同じエラー メッセージ、同じパフォーマンスの低下、同じのスタック トレース、クラッシュから_など。_). 「正確な状況」の 1 つの好例かどうかと答えてようなもののようになります「は通常問題が発生、時間の 75% が、この 1 つを変更した場合は問題を回避できます、完全に」。 「正確な状況」のような別の例では、Xamarin の以前のバージョンにダウン グレードする問題を停止するかどうかです。
 
 1. <a name="note-2" />[*^*](#ref-2) 予想どおり、エラーのテキスト (またはその他の一意のわかりやすいテキスト) のスニペットは最適な検索用語では、通常は。 既存のバグのレポートが不完全な場合は、詳細を追加またはファイルの新しいバグ レポートを強化する [ようこそ] は。
 

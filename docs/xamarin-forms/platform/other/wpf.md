@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/05/2018
-ms.openlocfilehash: cdf115c4ea6d6613a1da2d0d2cfa14ed500086f8
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.openlocfilehash: 2bef13e7f465dd213649f88deb572eb661895250
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54209187"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58854809"
 ---
 # <a name="wpf-platform-setup"></a>WPF プラットフォームのセットアップ
 
@@ -21,7 +21,7 @@ ms.locfileid: "54209187"
 
 Xamarin.Forms では、Windows Presentation Foundation (WPF) のプレビューをサポートできるようになりました。 この記事では、WPF プロジェクトを Xamarin.Forms ソリューションに追加する方法を示します。
 
-開始、Visual Studio 2017 で新しい Xamarin.Forms ソリューションを作成または既存の Xamarin.Forms ソリューションを使用して、たとえば、前に[ **BoxViewClock**](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BoxViewClock/)します。 WPF アプリは、Windows での Xamarin.Forms ソリューションにのみ追加できます。
+開始、Visual Studio 2019 で新しい Xamarin.Forms ソリューションの作成または既存の Xamarin.Forms ソリューションを使用して、たとえば、前に[ **BoxViewClock**](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BoxViewClock/)します。 WPF アプリは、Windows での Xamarin.Forms ソリューションにのみ追加できます。
 
 ## <a name="add-a-wpf-project-to-a-xamarinforms-app-with-xamarinuniversity"></a>WPF プロジェクト Xamarin.University で Xamarin.Forms アプリを追加します。
 
@@ -33,9 +33,9 @@ Xamarin.Forms では、Windows Presentation Foundation (WPF) のプレビュー�
 
 Windows 7、8、および 10 のデスクトップ上で実行される WPF アプリを追加するこれらの手順に従います。
 
-1. Visual Studio 2017 でソリューション名を右クリックし、**ソリューション エクスプ ローラー**選択**追加 > 新しいプロジェクト.**.
+1. Visual Studio 2019 でソリューション名を右クリックし、**ソリューション エクスプ ローラー**選択**追加 > 新しいプロジェクト.**.
 
-2. **新しいプロジェクト**ウィンドウで、左側の選択で**Visual C#** と**Windows クラシック デスクトップ**します。 プロジェクトの種類の一覧で選択**WPF アプリ (.NET Framework)** します。 
+2. **新しいプロジェクト**ウィンドウで、左側の選択で**Visual c#** と**Windows クラシック デスクトップ**します。 プロジェクトの種類の一覧で選択**WPF アプリ (.NET Framework)** します。 
 
 3. 使用してプロジェクトの名前を入力、 **WPF**拡張子、たとえば、 **BoxViewClock.WPF**します。 をクリックして、**参照**ボタンを選択、 **BoxViewClock**フォルダー、およびキーを押して**フォルダーの選択**します。 これにより、WPF プロジェクト、ソリューション内の他のプロジェクトと同じディレクトリに入ります。
 
@@ -149,7 +149,7 @@ WPF のウィンドウの初期サイズを調整する**MainWindow.xaml**ファ
 Title="BoxViewClock" Height="450" Width="800"
 ```
 
-## <a name="issues"></a>Issues
+## <a name="issues"></a>懸案事項
 
 これは、その運用環境の準備がすべてではないことを想定する必要がありますのプレビューです。 Xamarin.Forms 用のすべての NuGet パッケージは、WPF の準備が整ったし、一部の機能が完全に機能していない可能性があります。
 

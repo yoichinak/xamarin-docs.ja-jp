@@ -8,12 +8,12 @@ ms.custom: video
 author: conceptdev
 ms.author: crdun
 ms.date: 07/06/2018
-ms.openlocfilehash: c34d81feee48caca94989973a67ba783a0139a90
-ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
+ms.openlocfilehash: 24a9fa0e954ddba1451ba8bf98216550d7d70b51
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58071074"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58854783"
 ---
 # <a name="oreo-features"></a>Oreo 機能
 
@@ -52,23 +52,23 @@ Xamarin.Android で Android Oreo の使用を開始するには、ダウンロ�
 
 次のセクションでは、これらの各手順について説明します。
 
-
-
 ### <a name="update-visual-studio-and-xamarinandroid"></a>Visual Studio を更新および Xamarin.Android
 
 Visual Studio には、Android Oreo のサポートを追加するには、次の操作を行います。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
 
--   : Visual Studio 2017 を使用する場合 
+- Visual Studio 2019、使用、 [SDK Manager](~/android/get-started/installation/android-sdk.md) API レベル 26.0 以降をインストールします。
+
+- : Visual Studio 2017 を使用する場合
 
     1. Visual Studio 2017 バージョン 15.7 以降に更新プログラム (を参照してください[Visual Studio 2017 更新](https://docs.microsoft.com/visualstudio/install/update-visual-studio))。
 
     2. 使用して、 [SDK Manager](~/android/get-started/installation/android-sdk.md) API レベル 26.0 以降をインストールします。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
 
--   For Mac で説明したように Visual Studio 2017 の最新の安定したバージョンに更新[Visual Studio for Mac の更新](https://docs.microsoft.com/visualstudio/mac/update)します。
+- For Mac で説明したように Visual Studio の最新の安定したバージョンに更新[Visual Studio for Mac の更新](https://docs.microsoft.com/visualstudio/mac/update)します。
 
 -----
 
@@ -80,29 +80,29 @@ Android Oreo 用の Xamarin サポートの詳細については、次を参照�
 
 Xamarin.Android 8.0 でプロジェクトを作成する必要があります最初に使用する、Xamarin Android SDK Manager の SDK プラットフォームをインストールする**Android 8.0 の Oreo**またはそれ以降。 また、Android SDK Tools 26.0 以降をインストールする必要があります。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
 
 1. SDK マネージャーを起動 (Visual Studio で、次のようにクリックします。**ツール > Android > Android SDK Manager**)。
 
 2. インストール、 **Android 8.0 の Oreo**パッケージ。 Android SDK エミュレーターを使用している場合に含めるようにしてください、 **x86**システム イメージを必要があります。
 
-    [![Android SDK Manager で Android 8.0 パッケージを選択します。](oreo-images/win/01-android-o-packages.png)](oreo-images/win/01-android-o-packages.png#lightbox)
+    [![SAndroid SDK Manager での Android 8.0 パッケージの選択](oreo-images/win/01-android-o-packages.png)](oreo-images/win/01-android-o-packages.png#lightbox)
 
 3. インストール**Android SDK Tools 26.0.2**またはそれ以降、 **Android SDK Platform-tools 26.0.0**またはそれ以降、および**Android SDK ビルド ツール 26.0.0** (またはそれ以降)。
 
-    [![Android SDK Manager で Android SDK Tools 26 を選択します。](oreo-images/win/02-sdk-tools.png)](oreo-images/win/02-sdk-tools.png#lightbox)
+    [![SAndroid SDK Tools 26 Android SDK Manager での選択](oreo-images/win/02-sdk-tools.png)](oreo-images/win/02-sdk-tools.png#lightbox)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
 
 1. SDK マネージャーを起動 (Visual studio for Mac では、次のようにクリックします。**ツール > SDK Manager**)。
 
 2. インストール、 **Android 8.0 の Oreo** SDK パッケージ。 Android SDK エミュレーターを使用している場合に含めるようにしてください、 **x86**システム イメージを必要があります。
 
-    [![SDK Manager で Android 8.0 パッケージを選択します。](oreo-images/mac/01-android-o-packages.png)](oreo-images/mac/01-android-o-packages.png#lightbox)
+    [![SAndroid 8.0 SDK Manager でのパッケージの選択](oreo-images/mac/01-android-o-packages.png)](oreo-images/mac/01-android-o-packages.png#lightbox)
 
 3. インストール**Android SDK Tools 26.0.2**またはそれ以降、 **Android SDK Platform-tools 26.0.0**またはそれ以降、および**Android SDK ビルド ツール 26.0.0** (またはそれ以降)。
 
-    [![SDK Manager で Android SDK Tools 26 を選択します。](oreo-images/mac/02-sdk-tools.png)](oreo-images/mac/02-sdk-tools.png#lightbox)
+    [![SAndroid SDK Tools 26 SDK Manager での選択](oreo-images/mac/02-sdk-tools.png)](oreo-images/mac/02-sdk-tools.png#lightbox)
 
 -----
 
@@ -119,11 +119,11 @@ Android プロジェクトを作成するときに、Android 8.0 以降をター
 
 Android SDK Tools 26.0 をインストールした後、既定の Google GUI ベースの AVD マネージャーを起動しようとした場合、後で、コマンド ライン AVD マネージャー ツールを使用するように指示する、次のエラー ダイアログを get が**avdmanager**代わりに:
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
 
 ![Android エミュレーター マネージャーの警告ダイアログ](oreo-images/win/03-avd-warning.png)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
 
 ![Android エミュレーター マネージャーの警告ダイアログ](oreo-images/mac/03-avd-warning.png)
 
@@ -139,7 +139,7 @@ Android Device Manager なしの仮想デバイスを作成するには、次の
 
 使用する**avdmanager**を新しい仮想デバイスを作成するには、次の手順に従います。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
 
 1.  コマンド プロンプト ウィンドウを開き、設定`JAVA_HOME`コンピューター上の Java SDK の場所にします。 一般的な Xamarin のインストールでは、次のコマンドを使用できます。
 
@@ -164,9 +164,9 @@ Android Device Manager なしの仮想デバイスを作成するには、次の
 
 したら**avdmanager**こと、仮想デバイスを作成するデバイスのプルダウン メニューに含めるは。
 
-[![デバイスのプルダウン メニューに追加された新しい AVD](oreo-images/win/04-android-o-avd-sml.png)](oreo-images/win/04-android-o-avd.png#lightbox)
+[![N新しい AVD は、デバイス プルダウン メニューに追加](oreo-images/win/04-android-o-avd-sml.png)](oreo-images/win/04-android-o-avd.png#lightbox)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
 
 1.  開く、**ターミナル**ウィンドウと mac の Android SDK tools ディレクトリの場所の変更 一般的な Xamarin のインストールでは、次のコマンドを使用できます。
 
@@ -184,7 +184,7 @@ Android Device Manager なしの仮想デバイスを作成するには、次の
 
 使用した後**avdmanager**こと、仮想デバイスを作成するデバイスのプルダウン メニューに含めるは。
 
-[![デバイスのプルダウン メニューに追加された新しい AVD](oreo-images/mac/04-android-o-avd-sml.png)](oreo-images/mac/04-android-o-avd.png#lightbox)
+[![N新しい AVD は、デバイス プルダウン メニューに追加](oreo-images/mac/04-android-o-avd-sml.png)](oreo-images/mac/04-android-o-avd.png#lightbox)
 
 -----
 
@@ -213,7 +213,7 @@ Android Oreo では、さまざまな新機能と、通知チャネル、通知�
 
 通知のバッジは、このスクリーン ショットで示すように、アプリのアイコンの上に表示される小さなドットです。
 
-[![アプリ アイコンに通知バッジの例](oreo-images/02-badges-sml.png)](oreo-images/02-badges.png#lightbox)
+[![Eアプリ アイコンに xample 通知のバッジ](oreo-images/02-badges-sml.png)](oreo-images/02-badges.png#lightbox)
 
 これらのドットは、そのアプリ アイコンに関連付けられているアプリで通知チャネルを 1 つまたは複数の新しい通知があることを示します&ndash;これらは、通知をユーザーがまだ破棄も処理します。 ユーザーできます時間の長い-キーを押しますアイコンに関連付けられた通知のバッジ、通知を消去またはその appeaars 時間の長い-キーを押してメニューからの通知の動作をします。
 

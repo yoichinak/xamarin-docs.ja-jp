@@ -1,11 +1,11 @@
 ---
 ms.topic: include
-ms.openlocfilehash: cfb387f452939bf72ca3606f9f88f482f6622202
+ms.openlocfilehash: 0270f4a5ddab593372eb6687650e24d627f97c62
 ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/02/2019
-ms.locfileid: "58855356"
+ms.locfileid: "58855344"
 ---
 Xamarin の一部としてインストールすることができます、_新しい_次の手順で、Visual Studio 2019 インストール。
 
@@ -15,25 +15,21 @@ Xamarin の一部としてインストールすることができます、_新�
 
 3. インストール画面で **[.NET によるモバイル開発]** ワークロードを選択します。
 
-    ![ワークロード画面での [.NET によるモバイル開発] の選択](~/get-started/installation/windows-images/01-mobile-dev-workload.png)
+    [![M選択した場合 .NET obile 開発](~/get-started/installation/windows-images/vs2019-mobile-dev-workload-sml.png)](~/get-started/installation/windows-images/vs2019-mobile-dev-workload.png#lightbox)
 
-4. **[.NET によるモバイル開発]** を選択したままで、右側の **[インストールの詳細]** パネルを確認します。 ここで、インストールしないモバイル開発オプションの選択を解除することができます。
+4. Visual Studio 2019 インストールを開始する準備ができたら、 をクリックして、**インストール**右下隅のボタンをクリックします。
 
-    ![インストールする Xamarin オプションを一覧表示する [インストールの詳細] パネル](~/get-started/installation/windows-images/02-summary.png)
-
-5. Visual Studio 2019 インストールを開始する準備ができたら、 をクリックして、**インストール**右下隅のボタンをクリックします。
-
-    ![[インストール] ボタン](~/get-started/installation/windows-images/03-click-install.png)
+    ![[インストール] ボタン](~/get-started/installation/windows-images/vs2019-click-install.png)
 
    Visual Studio 2019 のエディションをインストールすることによって、インストール プロセスは完了までに時間をかかる可能性があります。 進行状況バーを使用して、インストールを監視することができます。
 
-    ![インストール中の進行状況バー](~/get-started/installation/windows-images/04-progress-bars.png)
+    ![インストール中の進行状況バー](~/get-started/installation/windows-images/vs2019-progress-bars.png)
 
-6. Visual Studio 2019 インストールが完了したら、クリックして、**起動**Visual Studio を起動するボタンをクリックします。
+5. Visual Studio 2019 インストールが完了したら、クリックして、**起動**Visual Studio を起動するボタンをクリックします。
 
-    ![[起動] ボタンの場所](~/get-started/installation/windows-images/05-launch.png)
+    ![[起動] ボタンの場所](~/get-started/installation/windows-images/vs2019-launch.png)
 
-<a name="vs2017" />
+<a name="vs2019" />
 
 ### <a name="adding-xamarin-to-visual-studio-2019"></a>Visual Studio 2019 への Xamarin の追加
 

@@ -1,18 +1,18 @@
 ---
 title: IOS 11 の概要
-description: このドキュメントでは、iOS 11 アプリの開発を開始するために必要な手順について説明します。 これには、Xcode をダウンロードして Visual Studio 2017 を更新する方法について説明します。
+description: このドキュメントでは、iOS 11 アプリの開発を開始するために必要な手順について説明します。 これには、Xcode をダウンロードして Visual Studio 2019 を更新する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 794EA2C4-884B-42AC-B8C4-8C8E5474B660
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/19/2017
-ms.openlocfilehash: 697ae79ea7dd9aaeedb1400a405a4ca5c4dc3d1e
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: ec69cd7d176ca4047ffa37fcc2ed8554bd9f9353
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50123636"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58854601"
 ---
 # <a name="getting-started-with-ios-11"></a>IOS 11 の概要
 
@@ -27,7 +27,7 @@ _ダウンロードし、Xcode 9 のインストール_
 
 最新の iOS、tvOS、watchOS の機能を使用する準備ができたことを確認する次の手順に従います。
 
-1. **最新の Xcode インストール**–[ダウンロード](https://developer.apple.com/download/)最新バージョンのインストールと_Xcode 9_します。
+1. **最新の Xcode のインストール**–[ダウンロード](https://developer.apple.com/download/)最新バージョンのインストールと_Xcode 10_します。
 
 2. **Xcode の最初の実行**– Xcode の実行 1 回、ツール、Xamarin の更新といくつかのインストール過程で、for Mac、Visual Studio を実行する前に時間が必要です、最初に実行されます。
 
