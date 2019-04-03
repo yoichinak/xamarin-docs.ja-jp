@@ -7,8 +7,13 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
+ms.openlocfilehash: 3a59cbb8385fe201d7eef086092c9b393a21cc71
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57666369"
 ---
-
 # <a name="xamarinforms-custom-renderers"></a>Xamarin.Forms のカスタム レンダラー
 
 _Xamarin.Forms のユーザー インターフェイスは、ターゲット プラットフォームのネイティブ コントロールを使用してレンダリングされるため、Xamarin.Forms アプリケーションでは各プラットフォームの適切な外観を維持できます。カスタム レンダラーにより、開発者はこのプロセスをオーバーライドして、各プラットフォーム上で Xamarin.Forms コントロールの外観とビヘイビアーをカスタマイズできるようになります。_
