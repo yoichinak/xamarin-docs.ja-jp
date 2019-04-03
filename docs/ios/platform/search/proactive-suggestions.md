@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: bb6b47f7936745b00e2b7e6095662a7e8273e1bd
-ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
+ms.openlocfilehash: 2ab0147f918b36dc47ef6eed7d9bf1b6295d9733
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/30/2019
-ms.locfileid: "58677899"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870405"
 ---
 # <a name="introduction-to-proactive-suggestions-in-xamarinios"></a>Xamarin.iOS でプロアクティブな候補の概要
 
@@ -51,7 +51,7 @@ UIKit は iOS 10 に含めるで拡張されていますが、 [TextContentType]
 
 ## <a name="media-based-suggestions"></a>メディアに基づいて候補
 
-アプリを使用してメディアを再生する場合、 [MPPlayableContentManager](https://developer.xamarin.com/api/type/MediaPlayer.MPPlayableContentManager/) API、iOS 10 により、ユーザーは、アルバム アートを表示して、ロック画面で、アプリでメディアを再生します。
+アプリを使用してメディアを再生する場合、 [MPPlayableContentManager](xref:MediaPlayer.MPPlayableContentManager) API、iOS 10 により、ユーザーは、アルバム アートを表示して、ロック画面で、アプリでメディアを再生します。
 
 ## <a name="contextual-siri-reminders"></a>コンテキストの Siri アラーム
 
@@ -63,12 +63,12 @@ Siri を使用して、後で、アプリに、表示されているコンテン
 
 ## <a name="ride-sharing-based-suggestions"></a>共有の乗り物に基づいて候補
 
-ライドシェア アプリで使用する場合、 [MKDirectionsRequest](https://developer.xamarin.com/api/type/MapKit.MKDirectionsRequest/) API、iOS 10 が表示されますが、アプリケーションのスイッチャーのオプションとしてときに、ユーザーは、乗車する可能性があります。 指定することによって、ライドシェア アプリとしてアプリが登録もする必要があります、`MKDirectionsModeRideShare`の[MKDirectionsApplicationSupportedModes](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html)キーでその`Info.plist`ファイル。
+ライドシェア アプリで使用する場合、 [MKDirectionsRequest](xref:MapKit.MKDirectionsRequest) API、iOS 10 が表示されますが、アプリケーションのスイッチャーのオプションとしてときに、ユーザーは、乗車する可能性があります。 指定することによって、ライドシェア アプリとしてアプリが登録もする必要があります、`MKDirectionsModeRideShare`の[MKDirectionsApplicationSupportedModes](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html)キーでその`Info.plist`ファイル。
 
 のみ、アプリは、乗車の共有をサポートする場合、その提案をシステムで開始 *「への変更を取得...」*、ルーティングの方向 (ウォーキングまたは自転車) などの他の種類はサポートされている場合、システムが使用 *「する方向を取得...」*
 
 > [!IMPORTANT]
-> [MKMapItem](https://developer.xamarin.com/api/type/MapKit.MKMapItem/)アプリが受け取るオブジェクトの緯度と経度の情報を含まない場合がありますおよびジオコーディングが必要になります。
+> [MKMapItem](xref:MapKit.MKMapItem)アプリが受け取るオブジェクトの緯度と経度の情報を含まない場合がありますおよびジオコーディングが必要になります。
 
 ## <a name="implementing-proactive-suggestions"></a>プロアクティブな候補を実装します。
 
@@ -189,7 +189,7 @@ public override bool ContinueUserActivity (UIApplication application, NSUserActi
 
 最小限の上に示したコードでは、アプリでは 3 つの新しい iOS 10 の機能を活用するためにできるようになりました。
 
-- **Handoff**
+- **ハンドオフ**
 - **スポット ライト検索**
 - **コンテキストの Siri アラーム**
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/15/2018
-ms.openlocfilehash: 2d62e42e755a0d3088283adb863dfd684ddeae28
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.openlocfilehash: 50d59f0b6ff2133c5870d84a1d740547768116e0
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617580"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58869729"
 ---
 # <a name="core-ml-2-in-xamarinios"></a>Xamarin.iOS で ML 2 コア
 
@@ -20,7 +20,7 @@ ms.locfileid: "51617580"
 
 12、iOS では、Core ML には、バッチ処理 API が含まれています。 この API より効率的に Core ML し、モデルを使用して一連の予測を作成するシナリオでパフォーマンスの向上を提供します。
 
-## <a name="sample-app-marshabitatcoremltimer"></a>サンプル アプリ: MarsHabitatCoreMLTimer
+## <a name="sample-app-marshabitatcoremltimer"></a>サンプル アプリ:MarsHabitatCoreMLTimer
 
 コア ML を使用したバッチ予測を示すためを見て、 [MarsHabitatCoreMLTimer](https://developer.xamarin.com/samples/monotouch/iOS12/MarsHabitatCoreMLTimer)サンプル アプリです。 このサンプルを使用して、habitat、Mars で構築するためのコストを予測するコア ML モデルのトレーニングは、さまざまな入力に基づく: ソーラー パネル、greenhouses、数、および 2万の数の数値。
 
@@ -74,7 +74,7 @@ async void RunTest(int num)
 
 ## <a name="for-loop"></a>for ループ
 
-`for`指定の数の入力を反復処理単純ループのバージョンのテストを呼び出す[ `GetPrediction` ](https://developer.xamarin.com/api/member/CoreML.MLModel.GetPrediction/)ごとと、結果を破棄します。 メソッドは、予測にかかる時間を時間します。
+`for`指定の数の入力を反復処理単純ループのバージョンのテストを呼び出す[ `GetPrediction` ](xref:CoreML.MLModel.GetPrediction*)ごとと、結果を破棄します。 メソッドは、予測にかかる時間を時間します。
 
 ```csharp
 async Task FetchNonBatchResults(int num)
@@ -94,7 +94,7 @@ async Task FetchNonBatchResults(int num)
 
 ## <a name="getpredictions-new-batch-api"></a>GetPredictions (新しいバッチ API)
 
-テストのバッチのバージョンを作成します、`MLArrayBatchProvider`入力配列からオブジェクト (これは必須の入力パラメーターのため、`GetPredictions`メソッド)、作成、 [`MLPredictionOptions`](https://developer.xamarin.com/api/type/CoreML.MLPredictionOptions/)
+テストのバッチのバージョンを作成します、`MLArrayBatchProvider`入力配列からオブジェクト (これは必須の入力パラメーターのため、`GetPredictions`メソッド)、作成、 [`MLPredictionOptions`](xref:CoreML.MLPredictionOptions)
 オブジェクトを使用して、CPU に制限されない予測計算を防止、`GetPredictions`をもう一度、結果を破棄することで予測をフェッチする API。
 
 ```csharp

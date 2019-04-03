@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 11/25/2015
-ms.openlocfilehash: d43ee2ef3f6d66042f489079a0f969509adfb946
-ms.sourcegitcommit: ee626f215de02707b7a94ba1d0fa1d75b22ab84f
+ms.openlocfilehash: a4637099907dd75a3ab58222dbb4ef42b42e19c3
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54879343"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870067"
 ---
 # <a name="xamarinios-api-overview"></a>Xamarin.iOS API の概要
 
 Xamarin.iOS は、 CocoaTouch API への C #/visual CIL バインディングを公開し、また、ECMA CIL API と .NET のさまざまな API へのアクセスも提供します。
 
- **API リファレンス**:API リファレンスについては、「 [ https://developer.xamarin.com/api/ ](https://docs.microsoft.com/dotnet/api/)、開始、 [Xamarin.iOS Framework ノード](https://docs.microsoft.com/dotnet/api/?view=xamarinios-10.8)ネイティブ iPhone Api または移動先の API バインドの[の基本クラスライブラリノード](https://docs.microsoft.com/dotnet/api/?view=netstandard-2.0) .NET API に関するドキュメントについてはします。
+ **API リファレンス**:API リファレンスについては、「 [docs.microsoft.com/dotnet/api/](https://docs.microsoft.com/dotnet/api/)、開始、 [Xamarin.iOS 参照](https://docs.microsoft.com/dotnet/api/?view=xamarin-ios-sdk-12)ネイティブ iPhone Api または移動先の API バインドの[基本クラス ライブラリノード](https://docs.microsoft.com/dotnet/api/?view=xamarinios-10.8).NET API に関するドキュメントについてはします。
 
  **API の設計**:CIL/OBJECTIVE-C のバインドの API の設計については、 [Xamarin.iOS API デザイン](~/ios/internals/api-design/index.md)ドキュメントとは CocoaTouch から OBJECTIVE-C と C# Api をバインドおよびそれらを公開する方法について説明します、 C#/CIL 世界です。
 

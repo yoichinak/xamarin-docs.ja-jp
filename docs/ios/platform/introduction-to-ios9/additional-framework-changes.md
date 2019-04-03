@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: f7106c9b23fa71b32043ef8190691d798c36370d
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 5156259f8178da69595464f75a10cd8f41965519
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672574"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870327"
 ---
 # <a name="additional-ios-9-frameworks-changes"></a>追加の iOS 9 フレームワークの変更
 
@@ -24,7 +24,7 @@ IOS の大幅な変更を加え Apple は、iOS 9 の修正といくつかの既
 
 ## <a name="avfoundation-framework-additions"></a>AVFoundation フレームワークの追加
 
-AVFoundation フレームワークで、 [AVSpeechSynthesisVoice](https://developer.xamarin.com/api/type/AVFoundation.AVSpeechSynthesisVoice/)クラスの言語に加えて言語識別子を使用して、音声を指定できるようになりました。
+AVFoundation フレームワークで、 [AVSpeechSynthesisVoice](xref:AVFoundation.AVSpeechSynthesisVoice)クラスの言語に加えて言語識別子を使用して、音声を指定できるようになりました。
 
 たとえば、次のコードは、すべての利用できる音声の一覧を取得します。
 
@@ -32,15 +32,15 @@ AVFoundation フレームワークで、 [AVSpeechSynthesisVoice](https://develo
 var voices = AVSpeechSynthesisVoice.GetSpeechVoices ();
 ```
 
-として設定して、一覧から、音声のいずれか、使用できます、`Voice`のインスタンスのプロパティ、 [AVSpeachUtterance](https://developer.xamarin.com/api/type/AVFoundation.AVSpeechUtterance/)クラス。
+として設定して、一覧から、音声のいずれか、使用できます、`Voice`のインスタンスのプロパティ、 [AVSpeachUtterance](xref:AVFoundation.AVSpeechUtterance)クラス。
 
-[AVQueuePlayer](https://developer.xamarin.com/api/type/AVFoundation.AVQueuePlayer/)クラスは、キュー内のインターネットのストリーミングとファイル ベースのメディアの混在をサポートするようになりました。 以前のバージョンは、同じ種類のキュー メディアのみでした。
+[AVQueuePlayer](xref:AVFoundation.AVQueuePlayer)クラスは、キュー内のインターネットのストリーミングとファイル ベースのメディアの混在をサポートするようになりました。 以前のバージョンは、同じ種類のキュー メディアのみでした。
 
 詳細については、Apple を参照してください[AVSpeechSynthesisVoice 参照](https://developer.apple.com/library/prerelease/ios/documentation/AVFoundation/Reference/AVSpeechSynthesisVoice_Ref/index.html#//apple_ref/occ/cl/AVSpeechSynthesisVoice)します。
 
 ## <a name="avkit-framework-additions"></a>AVKit フレームワークの追加
 
-AVKit フレームワークを含む、新しい画像画像 (PIP) の新機能を使用する`AVPictureInPictureController`と[AVPlayerViewController](https://developer.xamarin.com/api/type/AVKit.AVPlayerViewController/)クラス。
+AVKit フレームワークを含む、新しい画像画像 (PIP) の新機能を使用する`AVPictureInPictureController`と[AVPlayerViewController](xref:AVKit.AVPlayerViewController)クラス。
 
 - **AVPictureInPictureController** -このクラスは、iPad で浮動小数点、サイズ変更可能な PIP ウィンドウで、ビデオの再生を実行するユーザーに対応するアプリを iOS 9 を使用できます。
 - **AVPlayerViewController** -管理、`AVPlayer`コント ローラーが iPad で浮動小数点、サイズ変更可能な PIP ウィンドウでビデオを再生するために使用します。
@@ -104,7 +104,7 @@ NSProcessInfo.ProcessInfo.EndActivity(activity);
 
 ### <a name="reacting-to-low-power-mode"></a>省電力モードへの対応
 
-使用して、`LowPowerModeEnabled`のプロパティ、 [NSProcessInfo](xref:Foundation.NSProcessInfo)クラスで、アプリが実行されている iOS デバイスで、低電力モードが有効にされているかどうかを決定します。 例えば:
+使用して、`LowPowerModeEnabled`のプロパティ、 [NSProcessInfo](xref:Foundation.NSProcessInfo)クラスで、アプリが実行されている iOS デバイスで、低電力モードが有効にされているかどうかを決定します。 例:
 
 ```csharp
 // Is the device in low power mode?
@@ -117,7 +117,7 @@ if (NSProcessInfo.ProcessInfo.LowPowerModeEnabled) {
 
 ## <a name="healthkit-framework-changes"></a>HealthKit フレームワークの変更
 
-Apple には、次の変更が含まれている、 [HealthKit](https://developer.xamarin.com/api/namespace/HealthKit/) iOS 9 フレームワーク。
+Apple には、次の変更が含まれている、 [HealthKit](xref:HealthKit) iOS 9 フレームワーク。
 
 - 一括削除と HealthKit データベース内のエントリの削除の追跡をサポートします。 Apple を参照してください。 [HKDeletedObject](https://developer.apple.com/library/prerelease/ios/documentation/HealthKit/Reference/HKDeletedObject_ClassReference/index.html#//apple_ref/occ/cl/HKDeletedObject)、 [HKAnchoredObjectQuery](https://developer.apple.com/library/prerelease/ios/documentation/HealthKit/Reference/HKAnchoredObjectQuery_Class/index.html#//apple_ref/occ/cl/HKAnchoredObjectQuery)と[HKHealthStore クラス参照](https://developer.apple.com/library/prerelease/ios/documentation/HealthKit/Reference/HKHealthStore_Class/index.html#//apple_ref/doc/uid/TP40014708)詳細についてはします。
 - 新しい追跡カテゴリと特性が追加されました、`HKQuantityTypeIdentifier`クラス (など`UVExposure`) と、`HKCategoryTypeIdentifier`クラス (など`OvulationTestResult`)。 Apple を参照してください。 [HealthKit の定数参照](https://developer.apple.com/library/prerelease/ios/documentation/HealthKit/Reference/HealthKit_Constants/index.html#//apple_ref/doc/uid/TP40014710)詳細についてはします。
@@ -126,9 +126,9 @@ Apple には、次の変更が含まれている、 [HealthKit](https://develope
 
 ## <a name="local-authentication-framework-changes"></a>ローカル認証フレームワークの変更
 
-Apple には、次の変更が含まれている、[ローカル認証](https://developer.xamarin.com/api/namespace/LocalAuthentication/)iOS 9 フレームワーク。
+Apple には、次の変更が含まれている、[ローカル認証](xref:LocalAuthentication)iOS 9 フレームワーク。
 
-- 使用して、`EvaluateAccessControl`と`EvaluatePolicy`のメソッド、 [LAContext](https://developer.xamarin.com/api/type/LocalAuthentication.LAContext/)クラスできるようになりましたロック解除に成功した前から Touch ID と一致する再利用しようとします。
+- 使用して、`EvaluateAccessControl`と`EvaluatePolicy`のメソッド、 [LAContext](xref:LocalAuthentication.LAContext)クラスできるようになりましたロック解除に成功した前から Touch ID と一致する再利用しようとします。
 - 現在登録されている本の指の一覧を取得する機能。
 - 指を追加または認証から削除されたときの追跡をサポートします。
 - 使用できる_認証コンテキスト_キーチェーンの呼び出しでキーチェーン アクセス制御を評価するためのサポートを一覧表示します。
@@ -138,7 +138,7 @@ Apple には、次の変更が含まれている、[ローカル認証](https://
 
 ### <a name="lacontext-changes"></a>LAContext 変更
 
-次の変更を加え、 [LAContext](https://developer.xamarin.com/api/type/LocalAuthentication.LAContext/) iOS 9 のクラス。
+次の変更を加え、 [LAContext](xref:LocalAuthentication.LAContext) iOS 9 のクラス。
 
 - **TouchIdAuthenticationMaximumAllowableReuseDuration** -最大タッチ ID の認証を再利用可能な時間を返します。
 - **EvaluatedPolicyDomainState** - を取得または評価のポリシーの状態を設定します。
@@ -153,17 +153,17 @@ Apple を参照してください[LAContext 参照](https://developer.apple.com/
 
 ## <a name="mapkit-framework-changes"></a>MapKit フレームワークの変更
 
-Apple には、次の変更が含まれている、 [MapKit](https://developer.xamarin.com/api/namespace/MapKit/) iOS 9 フレームワーク。
+Apple には、次の変更が含まれている、 [MapKit](xref:MapKit) iOS 9 フレームワーク。
 
-- MapKit が今すぐ転送の方向に直接マップ アプリを起動するため、転送中の到着 (予定) を使用して推定時間を照会するためにサポートが提供、 [MKLaunchOptions](https://developer.xamarin.com/api/type/MapKit.MKLaunchOptions/)と[MKDirections](https://developer.xamarin.com/api/type/MapKit.MKLaunchOptions/)クラス。
-- MapKit によって返される検索結果と[CLGeocoder](https://developer.xamarin.com/api/type/CoreLocation.CLGeocoder/)クラスは、結果のタイム ゾーンも提供できます。
-- マップの注釈を使用して iOS アプリによって提示されるを完全にカスタマイズできるようになりました、`DetailCalloutAccessoryView`のプロパティ、 [MKAnnotationView](https://developer.xamarin.com/api/type/MapKit.MKAnnotationView/)クラス。
+- MapKit が今すぐ転送の方向に直接マップ アプリを起動するため、転送中の到着 (予定) を使用して推定時間を照会するためにサポートが提供、 [MKLaunchOptions](xref:MapKit.MKLaunchOptions)と[MKDirections](xref:MapKit.MKLaunchOptions)クラス。
+- MapKit によって返される検索結果と[CLGeocoder](xref:CoreLocation.CLGeocoder)クラスは、結果のタイム ゾーンも提供できます。
+- マップの注釈を使用して iOS アプリによって提示されるを完全にカスタマイズできるようになりました、`DetailCalloutAccessoryView`のプロパティ、 [MKAnnotationView](xref:MapKit.MKAnnotationView)クラス。
 
 参照してください、 [iOS マップ](~/ios/user-interface/controls/ios-maps/index.md)と[チュートリアル - 注釈とオーバーレイ MapKit で探索](~/ios/user-interface/controls/ios-maps/ios-maps-walkthrough.md)マップと Xamarin.iOS および Appleで注釈を操作する方法の詳細についてはマニュアル[CLGeocoder 参照](https://developer.apple.com/library/prerelease/ios/documentation/CoreLocation/Reference/CLGeocoder_class/index.html#//apple_ref/occ/cl/CLGeocoder)詳細についてはします。
 
 ## <a name="passkit-framework-additions"></a>PassKit Framework の追加
 
-Apple には、次の変更が含まれている、 [PassKit](https://developer.xamarin.com/api/namespace/PassKit/) iOS 9 フレームワーク。
+Apple には、次の変更が含まれている、 [PassKit](xref:PassKit) iOS 9 フレームワーク。
 
 - ストア借方と Discover カードと共にクレジット カードの両方に Apple Pay なりました。 参照してください、**支払ネットワーク**の Apple の「 [PKPaymentRequest クラス参照](https://developer.apple.com/library/prerelease/ios/documentation/PassKit/Reference/PKPaymentRequest_Ref/index.html#//apple_ref/doc/uid/TP40014832)詳細についてはします。
 - Xamarin.iOS アプリ内で直接追加できますカード発行者と支払いネットワーク Apple Pay にします。 Apple を参照してください。 [PKAddPaymentPassViewController クラス参照](https://developer.apple.com/library/prerelease/ios/documentation/PassKit/Reference/PKAddPaymentPassViewController_Class/index.html#//apple_ref/doc/uid/TP40016116)の詳細。
@@ -172,15 +172,15 @@ Apple には、次の変更が含まれている、 [PassKit](https://developer.
 
 ## <a name="safari-services-framework-additions"></a>Safari Services Framework の追加
 
-Apple には、次の変更が含まれている、 [Safari サービス](https://developer.xamarin.com/api/namespace/SafariServices/)iOS 9 フレームワーク。
+Apple には、次の変更が含まれている、 [Safari サービス](xref:SafariServices)iOS 9 フレームワーク。
 
-- 使用できるように、新しい[SFSafariViewController](https://developer.xamarin.com/api/type/SafariServices.SFSafariViewController/) Xamarin.iOS アプリ内で web コンテンツを表示するクラス。 Safari のアプリと web サイト データと cookie を共有する機能を提供し、いくつかのリーダーとオートコンプリート) などの Safari の機能が含まれています。 [SFSafariViewController](https://developer.xamarin.com/api/type/SafariServices.SFSafariViewController/)機能、**完了**web コンテンツの表示が完了したら、アプリにユーザーが戻るボタン。
+- 使用できるように、新しい[SFSafariViewController](xref:SafariServices.SFSafariViewController) Xamarin.iOS アプリ内で web コンテンツを表示するクラス。 Safari のアプリと web サイト データと cookie を共有する機能を提供し、いくつかのリーダーとオートコンプリート) などの Safari の機能が含まれています。 [SFSafariViewController](xref:SafariServices.SFSafariViewController)機能、**完了**web コンテンツの表示が完了したら、アプリにユーザーが戻るボタン。
 
-[SFSafariViewController](https://developer.xamarin.com/api/type/SafariServices.SFSafariViewController/)テーラード フィット クラスの 1 つの web コンテンツのページを表示する、いずれかを置換するために使用する必要があります[WKWebKit](xref:WebKit.WKWebView)または[UIWebView](xref:UIKit.UIWebView)、既存の Xamarin.iOS アプリ内のコントロール。
+[SFSafariViewController](xref:SafariServices.SFSafariViewController)テーラード フィット クラスの 1 つの web コンテンツのページを表示する、いずれかを置換するために使用する必要があります[WKWebKit](xref:WebKit.WKWebView)または[UIWebView](xref:UIKit.UIWebView)、既存の Xamarin.iOS アプリ内のコントロール。
 
 ### <a name="displaying-a-website"></a>Web サイトを表示します。
 
-次のコードは、呼び出し元の例を[SFSafariViewController](https://developer.xamarin.com/api/type/SafariServices.SFSafariViewController/)から別のビュー コント ローラーの内部。
+次のコードは、呼び出し元の例を[SFSafariViewController](xref:SafariServices.SFSafariViewController)から別のビュー コント ローラーの内部。
 
 ```csharp
 // Create an instance of the Safari Services View Controller
@@ -267,6 +267,6 @@ Ios 9 でこの自動サイズ変更が発生しないことと、コントロ�
 ## <a name="related-links"></a>関連リンク
 
 - [iOS 9 のサンプル](https://developer.xamarin.com/samples/ios/iOS9/)
-- [iOS 9 の概要](~/ios/platform/introduction-to-ios9/index.md)
+- [IOS 9 の概要](~/ios/platform/introduction-to-ios9/index.md)
 - [iOS 9 開発者向け](https://developer.apple.com/ios/pre-release/)
 - [IOS 9.0 を新します。](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)

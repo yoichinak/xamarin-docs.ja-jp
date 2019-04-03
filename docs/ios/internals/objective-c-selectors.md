@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/12/2017
-ms.openlocfilehash: cf39d548dc83fae67e8703d42e9387b8f19504e6
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 15db59945f482728f760006095e294bc5628c8bd
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669754"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870177"
 ---
 # <a name="objective-c-selectors-in-xamarinios"></a>Xamarin.iOS での OBJECTIVE-C セレクター
 
@@ -137,15 +137,15 @@ else
 
 ### <a name="selector-targets"></a>セレクターのターゲット
 
-セレクターをターゲットとは、オブジェクトのインスタンスまたは OBJECTIVE-C クラスのいずれかです。 ターゲットがインスタンスであり、バインドされた Xamarin.iOS 型の取得元である場合は、使用、 [ `ObjCRuntime.INativeObject.Handle` ](https://developer.xamarin.com/api/property/ObjCRuntime.INativeObject.Handle/)プロパティ。
+セレクターをターゲットとは、オブジェクトのインスタンスまたは OBJECTIVE-C クラスのいずれかです。 ターゲットがインスタンスであり、バインドされた Xamarin.iOS 型の取得元である場合は、使用、 [ `ObjCRuntime.INativeObject.Handle` ](xref:ObjCRuntime.INativeObject.Handle)プロパティ。
 
-ターゲットが、クラスの場合を使用して、 [ `ObjCRuntime.Class` ](https://developer.xamarin.com/api/type/ObjCRuntime.Class/)クラスのインスタンスへの参照を取得するを使用し、 [ `Class.Handle` ](https://developer.xamarin.com/api/property/ObjCRuntime.Class.Handle/)プロパティ。
+ターゲットが、クラスの場合を使用して、 [ `ObjCRuntime.Class` ](xref:ObjCRuntime.Class)クラスのインスタンスへの参照を取得するを使用し、 [ `Class.Handle` ](xref:ObjCRuntime.Class.Handle)プロパティ。
 
 ### <a name="selector-names"></a>セレクター名
 
 セレクター名は、Apple のドキュメントに表示されます。 たとえば、 [ `NSString` ](https://developer.apple.com/documentation/foundation/nsstring?language=objc)が含まれています[ `sizeWithFont:` ](https://developer.apple.com/documentation/foundation/nsstring/1619917-sizewithfont?language=objc)と[ `sizeWithFont:forWidth:lineBreakMode:` ](https://developer.apple.com/documentation/foundation/nsstring/1619914-sizewithfont?language=objc)セレクター。 埋め込みおよび末尾のコロンは、セレクターの名前の一部であるし、省略することはできません。
 
-セレクターの名前を使用すると、作成できます、 [ `ObjCRuntime.Selector` ](https://developer.xamarin.com/api/type/ObjCRuntime.Selector/)のインスタンス。
+セレクターの名前を使用すると、作成できます、 [ `ObjCRuntime.Selector` ](xref:ObjCRuntime.Selector)のインスタンス。
 
 ### <a name="calling-objcmsgsend"></a>Objc_msgSend を呼び出す
 
