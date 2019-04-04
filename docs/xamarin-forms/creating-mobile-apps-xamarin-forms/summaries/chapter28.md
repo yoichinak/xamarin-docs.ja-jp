@@ -1,22 +1,22 @@
 ---
 title: 第 28 章の概要です。 場所とマップ
-description: 'Xamarin.Forms によるモバイル アプリの作成: 第 28 章の概要。 場所とマップ'
+description: Xamarin.Forms によるモバイル アプリの作成。第 28 章の概要です。 場所とマップ
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: F6E20077-687C-45C4-A375-31D4F49BBFA4
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: bcca7bc7ac56b745945b6d7daef3c4ddd634b486
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 0abd7e6cb5b8b9650a3dc324338587ff59a80a19
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059406"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870418"
 ---
 # <a name="summary-of-chapter-28-location-and-maps"></a>第 28 章の概要です。 場所とマップ
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter28)
+[![Download サンプル](~/media/shared/download.png) サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter28)
 
 > [!NOTE]
 > このページに関する注意事項は、この本で説明されている内容が Xamarin.Forms が異なっている領域を示しています。
@@ -62,7 +62,7 @@ Xamarin.Forms`Map`クラスには、ユーザーの地理的な場所を取得�
 
 #### <a name="the-ios-location-manager"></a>IOS のロケーション マネージャー
 
-IOS のカスタム実装の`ILocationTracker`は、 [ `LocationTracker` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.iOS/LocationTracker.cs)により、クラスを使用して、iOS の[ `CLLocationManager`](https://developer.xamarin.com/api/type/CoreLocation.CLLocationManager/)します。
+IOS のカスタム実装の`ILocationTracker`は、 [ `LocationTracker` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.iOS/LocationTracker.cs)により、クラスを使用して、iOS の[ `CLLocationManager`](xref:CoreLocation.CLLocationManager)します。
 
 #### <a name="the-android-location-manager"></a>Android のロケーション マネージャー
 
@@ -146,7 +146,7 @@ Ios の場合、 **info.plist**ファイルは、そのユーザーの場所の�
 
 `VisibleRegion` 種類は[ `MapSpan` ](xref:Xamarin.Forms.Maps.MapSpan)、4 つの読み取り専用プロパティを持つクラス。
 
-- [`Center`](xref:Xamarin.Forms.Maps.MapSpan.Center) 型の [`Position`](xref:Xamarin.Forms.Maps.Position)
+- [`Position`](xref:Xamarin.Forms.Maps.Position) 型の [`Center`](xref:Xamarin.Forms.Maps.MapSpan.Center)
 - [`LatitudeDegrees`](xref:Xamarin.Forms.Maps.MapSpan.LatitudeDegrees) 型の`double`マップの表示領域の高さを示す
 - [`LongitudeDegrees`](xref:Xamarin.Forms.Maps.MapSpan.LongitudeDegrees) 型の`double`マップの表示領域の幅を示す
 - [`Radius`](xref:Xamarin.Forms.Maps.MapSpan.Radius) 型の[ `Distance`](xref:Xamarin.Forms.Maps.Distance)マップに表示される円形領域の最大のサイズを示す

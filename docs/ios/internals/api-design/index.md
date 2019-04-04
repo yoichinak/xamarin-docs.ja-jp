@@ -7,8 +7,13 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
+ms.openlocfilehash: 9425b26b5cc8fcd9b8a80df422d932c96d52889b
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870366"
 ---
-
 # <a name="xamarinios-api-design"></a>Xamarin.iOS API の設計
 
 [Xamarin.iOS](http://www.xamarin.com/iOS)には、Mono の一部であるコアの基本クラス ライブラリだけでなく、開発者が Mono を利用してネイティブの iOS アプリケーションの作成を可能にするために、さまざまな iOS Api へのバインドが付属しています。
@@ -26,7 +31,7 @@ Objective C コードとの通信に低レベルのランタイムがで[MonoTou
 
   - 既存のクラスから派生します。
   - チェーンに、基底コンス トラクターを呼び出す
-  - # の上書きのシステムでメソッドのオーバーライドを行う必要があります。
+  - メソッドのオーバーライドを行う必要がありますC#のシステムを上書き
   - サブクラス化は、c# の標準的な構成要素を使用する必要があります。
 
 - 開発者は OBJECTIVE-C セレクターを公開しません
@@ -57,7 +62,7 @@ Objective C コードとの通信に低レベルのランタイムがで[MonoTou
 
 - ネイティブの c# 型:
 
-  - [`NSString` なります `string`](~/ios/internals/api-design/nsstring.md)
+  - [`NSString` 結果 `string`](~/ios/internals/api-design/nsstring.md)
   - 有効にする`int`と`uint`パラメーター (C#) 列挙型と c# の列挙体に列挙されています`[Flags]`属性
   - 型に依存しないのではなく`NSArray`オブジェクトとして厳密に型指定された配列の配列を公開します。
   - イベントと通知は、ユーザーの間で選択できるように。
@@ -80,7 +85,7 @@ Xamarin.iOS には構成するアセンブリの数値が含まれています�
 
 #### <a name="objcruntime"></a>ObjCRuntime
 
-[ObjCRuntime](https://developer.xamarin.com/api/namespace/ObjCRuntime/)名前空間により、開発者の c# と OBJECTIVE-C の世界の橋渡しを
+[ObjCRuntime](xref:ObjCRuntime)名前空間により、開発者の c# と OBJECTIVE-C の世界の橋渡しを
 これは、新しいバインディング、Cocoa # と Gtk # の経験を基に、iOS 向けに設計されています。
 
 <a name="MonoTouch.Foundation" />
@@ -201,13 +206,13 @@ C# のデリゲートは、一般的な操作向けに提供されます。 参�
 
 #### <a name="opengles"></a>OpenGLES
 
-OpenGLES を配布、[バージョン変更](https://developer.xamarin.com/api/namespace/OpenTK/)の[OpenTK](http://www.opentk.com/) CoreGraphics データ型と構造体を使用するように変更されている OpenGL するためのオブジェクト指向のバインドとしてのみ公開している API、iOS で使用できる機能。
+OpenGLES を配布、[バージョン変更](xref:OpenTK)の[OpenTK](http://www.opentk.com/) CoreGraphics データ型と構造体を使用するように変更されている OpenGL するためのオブジェクト指向のバインドとしてのみ公開している API、iOS で使用できる機能。
 
-OpenGLES 1.1 の機能が記載されている、ES11.GL 型を介して使用可能な[ここ](https://developer.xamarin.com/api/type/OpenTK.Graphics.ES11.GL/)型。
+OpenGLES 1.1 の機能が記載されている、ES11.GL 型を介して使用可能な[ここ](xref:OpenTK.Graphics.ES11.GL)型。
 
-OpenGLES 2.0 の機能が記載されている、ES20.GL 型を介して使用可能な[ここ](https://developer.xamarin.com/api/type/OpenTK.Graphics.ES20.GL/)型。
+OpenGLES 2.0 の機能が記載されている、ES20.GL 型を介して使用可能な[ここ](xref:OpenTK.Graphics.ES20.GL)型。
 
-OpenGLES 3.0 の機能が記載されている、ES30.GL 型を介して使用可能な[ここ](https://developer.xamarin.com/api/type/OpenTK.Graphics.ES30.GL/)型。
+OpenGLES 3.0 の機能が記載されている、ES30.GL 型を介して使用可能な[ここ](xref:OpenTK.Graphics.ES30.GL)型。
 
 
 ### <a name="binding-design"></a>バインドのデザイン
@@ -374,7 +379,7 @@ UIWebView 場合は、たとえば特定のコントロールの動作を制御�
 厳密に型指定のプロパティだけでなく、開発者に必要な場合は、モ ノを異なる方法でバインドを許可する弱い型指定されたデリゲートもあります。
 厳密に型指定されたすべての場所で`Delegate`での Xamarin.iOS のバインド、対応するプロパティが公開される`WeakDelegate`プロパティも公開されています。
 
-使用する場合、 `WeakDelegate`、正しくクラスを使用して、修飾することを担当、[エクスポート](xref:Foundation.ExportAttribute)セレクターを指定する属性。 例:
+使用する場合、 `WeakDelegate`、正しくクラスを使用して、修飾することを担当、[エクスポート](xref:Foundation.ExportAttribute)セレクターを指定する属性。 例えば:
 
 ```csharp
 class Notifier : NSObject  {
