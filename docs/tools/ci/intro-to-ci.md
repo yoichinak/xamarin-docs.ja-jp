@@ -95,11 +95,11 @@ Team Foundation Server では、特定のターゲット プラットフォー�
 
 [![](intro-to-ci-images/intro03-small.png "この図では、このトポロジを示しています。")](intro-to-ci-images/intro03.png#lightbox)
 
-プロジェクトは Azure DevOps を構築するため、ローカル サーバーに委任は、Visual Studio Team Services にローカル、TFS サーバーをリンクすることもできます。 詳細については、次を参照してください。[ビルドとリリース エージェント](https://docs.microsoft.com/azure/devops/pipelines/agents/agents/)します。
+プロジェクトは Azure DevOps を構築するため、ローカル サーバーに委任は、Visual Studio Team Services にローカル、TFS サーバーをリンクすることもできます。 詳細については、[ビルドとリリース エージェント](https://docs.microsoft.com/azure/devops/pipelines/agents/agents/)を参照してください。
 
 ### <a name="visual-studio-team-services-and-jenkins"></a>Visual Studio Team Services と Jenkins
 
-Jenkins を使用して、アプリをビルドする場合は、Visual Studio Team Services または Team Foundation Server にコードを保存し、CI ビルドとして Jenkins を使い続けることができます。 チーム プロジェクトの Git リポジトリにプッシュしたとき、または TFVC にコードをチェックインしたときに、Jenkins ビルドをトリガーできます。 詳細については、次を参照してください。 [Azure DevOps での Jenkins](https://docs.microsoft.com/azure/devops/service-hooks/services/jenkins)します。
+Jenkins を使用して、アプリをビルドする場合は、Visual Studio Team Services または Team Foundation Server にコードを保存し、CI ビルドとして Jenkins を使い続けることができます。 チーム プロジェクトの Git リポジトリにプッシュしたとき、または TFVC にコードをチェックインしたときに、Jenkins ビルドをトリガーできます。 詳細については、[Azure DevOps での Jenkins](https://docs.microsoft.com/azure/devops/service-hooks/services/jenkins)を参照してください。
 
 [![](intro-to-ci-images/intro04-small.png "Jenkins を使用して、アプリをビルドする場合は、Visual Studio Team Services または Team Foundation Server にコードを保存し、CI ビルドとして Jenkins を使い続けることができます. ")](intro-to-ci-images/intro04.png#lightbox)
 

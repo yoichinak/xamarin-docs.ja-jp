@@ -7,8 +7,13 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2018
+ms.openlocfilehash: 4347ee40b0b72cc2d182ba1ef8f111212dd0ee47
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669727"
 ---
-
 # <a name="fragments"></a>フラグメント
 
 _Android 3.0 には、携帯電話とタブレットで検出された多くのさまざまな画面サイズをより柔軟な設計をサポートする方法を示す、フラグメントが導入されました。この記事では、事前 Android 3.0 (API レベル 11) デバイス上のフラグメントをサポートする方法とフラグメントを使用して、Xamarin.Android アプリケーションを開発する方法について説明します。_

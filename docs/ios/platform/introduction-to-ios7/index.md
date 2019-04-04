@@ -218,7 +218,7 @@ var dynBehavior = new UIDynamicItemBehavior (dynItems) {
 
 ## <a name="general-user-interface-changes"></a>一般的なユーザー インターフェイスの変更
 
-Api だけでなく、新しい UIKit UIKit Dynamics、コント ローラーの切り替え、上記で説明した UIView アニメーションの強化など、iOS 7 では、さまざまな UI を視覚的な変更とさまざまなビューとコントロールの関連する API の変更が導入されています。 詳細については、次を参照してください。、 [iOS 7 ユーザー インターフェイスの概要](~/ios/platform/introduction-to-ios7/ios7-ui.md)します。
+Api だけでなく、新しい UIKit UIKit Dynamics、コント ローラーの切り替え、上記で説明した UIView アニメーションの強化など、iOS 7 では、さまざまな UI を視覚的な変更とさまざまなビューとコントロールの関連する API の変更が導入されています。 詳細については、、 [iOS 7 ユーザー インターフェイスの概要](~/ios/platform/introduction-to-ios7/ios7-ui.md)を参照してください。
 
 ## <a name="text-kit"></a>テキストのキット
 

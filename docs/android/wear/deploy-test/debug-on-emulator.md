@@ -24,7 +24,7 @@ Android Wear のアプリケーションの開発には、物理ハードウェ�
 
 ## <a name="configure-the-android-emulator"></a>Android エミュレーターを構成します。
 
-Wear アプリをエミュレーターで実行するには、は、Android SDK Android エミュレーターをインストールし、Android Wear 用に構成する必要があります。 全体的な Android SDK エミュレーターのインストールと構成については、次を参照してください。 [Android Emulator のセットアップ](~/android/get-started/installation/android-emulator/index.md)します。
+Wear アプリをエミュレーターで実行するには、は、Android SDK Android エミュレーターをインストールし、Android Wear 用に構成する必要があります。 全体的な Android SDK エミュレーターのインストールと構成については、[Android Emulator のセットアップ](~/android/get-started/installation/android-emulator/index.md)を参照してください。
 
 Wear 仮想デバイスを作成するときに、Android Wear デバイス プロファイルを選択 (など**Android Wear の正方形**)。 パフォーマンスを向上させるには、使用、Wear **x86** CPU/ABI この例のように。
 

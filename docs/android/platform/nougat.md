@@ -27,7 +27,7 @@ _Xamarin.Android を使用して Android Nougat 用アプリの開発を開始�
 
 [![Android タブレットと Android Nougat を実行している携帯電話のヒーローのイメージ](nougat-images/android-n-hero-sml.png)](nougat-images/android-n-hero.png#lightbox)
 
-Android 7.x Api の詳細については、次を参照してください。[開発者向けの Android 7.1](https://developer.android.com/preview/api-overview.html)します。
+Android 7.x Api の詳細については、[開発者向けの Android 7.1](https://developer.android.com/preview/api-overview.html)を参照してください。
 Xamarin.Android 7.0 の既知の問題についてを参照してください、[リリース ノート](https://developer.xamarin.com/releases/android/xamarin.android_7/xamarin.android_7.0/)します。
 
 Android Nougat では、Xamarin.Android 開発者にとって関心のある多くの新機能を提供します。 これには次の機能があります。
@@ -79,7 +79,7 @@ Xamarin.Android で Android Nougat を使用して開始するには、ダウン
 
 ### <a name="install-xamarin-updates"></a>Xamarin の更新プログラムをインストールします。
 
-Android Nougat の Xamarin のサポートを追加するには、安定チャネルに for Mac で Visual Studio または Visual Studio 更新プログラム チャネルを変更し、最新の更新プログラムを適用します。 アルファ版またはベータ チャネルのみで現在利用できる機能も必要がある場合は、アルファ チャネルまたはベータ チャネル (アルファ版およびベータ チャネルに対するサポートも提供 Android 7.x まで) に切り替えることができます。 更新プログラム (リリース) チャネルを変更する方法については、次を参照してください。[更新チャネルを変更する](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/change_updates_channel)します。
+Android Nougat の Xamarin のサポートを追加するには、安定チャネルに for Mac で Visual Studio または Visual Studio 更新プログラム チャネルを変更し、最新の更新プログラムを適用します。 アルファ版またはベータ チャネルのみで現在利用できる機能も必要がある場合は、アルファ チャネルまたはベータ チャネル (アルファ版およびベータ チャネルに対するサポートも提供 Android 7.x まで) に切り替えることができます。 更新プログラム (リリース) チャネルを変更する方法については、[更新チャネルを変更する](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/change_updates_channel)を参照してください。
 
 
 
@@ -109,9 +109,9 @@ Xamarin Android 7.0 プロジェクトを作成する必要があります最初
 
 ### <a name="start-a-xamarinandroid-project"></a>Xamarin.Android プロジェクトを開始します。
 
-新しい Xamarin.Android プロジェクトを作成します。 Xamarin で Android の開発に慣れていない場合は、次を参照してください。 [Hello, Android](~/android/get-started/hello-android/index.md)を Xamarin.Android プロジェクトを作成する方法について説明します。
+新しい Xamarin.Android プロジェクトを作成します。 Xamarin で Android の開発に慣れていない場合は、[Hello, Android](~/android/get-started/hello-android/index.md)を Xamarin.Android プロジェクトを作成する方法について説明を参照してください。
 
-Android プロジェクトを作成するときに、Android 7.0 以降をターゲットにバージョン設定を構成する必要があります。 たとえば、Android 7.0 のプロジェクトを対象にする必要がありますを構成するにプロジェクトのターゲットの Android API レベル**Android 7.0 (API 24 - Nougat)** します。 API 24、またはそれ以降は、ターゲット フレームワークのレベルを設定することをお勧めします。 詳細レベルの Android API レベルの構成については、次を参照してください。 [Understanding Android API Levels](~/android/app-fundamentals/android-api-levels.md)します。
+Android プロジェクトを作成するときに、Android 7.0 以降をターゲットにバージョン設定を構成する必要があります。 たとえば、Android 7.0 のプロジェクトを対象にする必要がありますを構成するにプロジェクトのターゲットの Android API レベル**Android 7.0 (API 24 - Nougat)** します。 API 24、またはそれ以降は、ターゲット フレームワークのレベルを設定することをお勧めします。 詳細レベルの Android API レベルの構成については、[Understanding Android API Levels](~/android/app-fundamentals/android-api-levels.md)を参照してください。
 
 
 > [!NOTE]
@@ -131,7 +131,7 @@ Android プロジェクトを作成するときに、Android 7.0 以降をター
 
 [![Nexus 6 デバイス、Android 7.0 ターゲット、および Intel Atom x86 CPU/ABI を使用して、AVD を構成します。](nougat-images/android-n-avd.png)](nougat-images/android-n-avd.png#lightbox)
 
-X 5、6、または 9 の Nexus などの物理デバイスを使用している場合か、無線 (OTA) 更新プログラムを自動でデバイスを更新またはシステム イメージをダウンロードしてフラッシュ、デバイスを直接。 Android Nougat にデバイスを手動で更新の詳細については、次を参照してください。 [Nexus デバイスの OTA イメージ](https://developers.google.com/android/nexus/ota)します。
+X 5、6、または 9 の Nexus などの物理デバイスを使用している場合か、無線 (OTA) 更新プログラムを自動でデバイスを更新またはシステム イメージをダウンロードしてフラッシュ、デバイスを直接。 Android Nougat にデバイスを手動で更新の詳細については、[Nexus デバイスの OTA イメージ](https://developers.google.com/android/nexus/ota)を参照してください。
 
 Nexus 5 デバイスと Android Nougat でサポートされていないことに注意してください。
 
@@ -162,7 +162,7 @@ if (!IsInMultiWindowMode) {
 
 [MultiWindowPlayground](https://developer.xamarin.com/samples/monodroid/android-n/MultiWindowPlayground/)サンプル アプリに複数のウィンドウで、アプリのユーザー インターフェイスを利用する方法を示す c# コードが含まれています。
 
-マルチ ウィンドウ モードの詳細については、次を参照してください。、[マルチ ウィンドウ サポート](https://developer.android.com/guide/topics/ui/multi-window.html)します。
+マルチ ウィンドウ モードの詳細については、、[マルチ ウィンドウ サポート](https://developer.android.com/guide/topics/ui/multi-window.html)を参照してください。
 
 
 

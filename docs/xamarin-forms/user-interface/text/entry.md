@@ -234,7 +234,7 @@ var entry = new Entry { ReturnType = ReturnType.Send };
 > [!NOTE]
 > 戻り値のキーの正確な外観は、プラットフォームによって異なります。 Ios では、戻り値のキーは、テキスト ベースのボタンです。 ただし、Android およびユニバーサル Windows プラットフォームでは、戻り値のキーは、アイコンに基づくボタンです。
 
-戻り値のキーが押されたときに、 [ `Completed` ](xref:Xamarin.Forms.Entry.Completed)イベントが発生して、`ICommand`で指定された、 [ `ReturnCommand` ](xref:Xamarin.Forms.Entry.ReturnCommand)プロパティを実行します。 さらに、すべて`object`で指定された、 [ `ReturnCommandParameter` ](xref:Xamarin.Forms.Entry.ReturnCommandParameter)プロパティに渡される、`ICommand`をパラメーターとして。 コマンドの詳細については、次を参照してください。 [、のコマンド インターフェイス](~/xamarin-forms/app-fundamentals/data-binding/commanding.md)します。
+戻り値のキーが押されたときに、 [ `Completed` ](xref:Xamarin.Forms.Entry.Completed)イベントが発生して、`ICommand`で指定された、 [ `ReturnCommand` ](xref:Xamarin.Forms.Entry.ReturnCommand)プロパティを実行します。 さらに、すべて`object`で指定された、 [ `ReturnCommandParameter` ](xref:Xamarin.Forms.Entry.ReturnCommandParameter)プロパティに渡される、`ICommand`をパラメーターとして。 コマンドの詳細については、[、のコマンド インターフェイス](~/xamarin-forms/app-fundamentals/data-binding/commanding.md)を参照してください。
 
 ### <a name="enabling-and-disabling-spell-checking"></a>有効にして、スペル チェックを無効化
 

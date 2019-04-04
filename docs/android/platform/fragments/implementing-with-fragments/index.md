@@ -8,8 +8,13 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/26/2018
+ms.openlocfilehash: 2ff4729e68497391d41521da26917571c146b541
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667266"
 ---
-
 # <a name="implementing-fragments---walkthrough"></a>フラグメントのチュートリアルの実装
 
 _フラグメントは、さまざまな画面サイズを持つデバイスを対象とする Android アプリの複雑さに対処できる自己完結型のモジュラー コンポーネントです。この記事で作成して Xamarin.Android アプリケーションを開発する際に、フラグメントを使用する方法について説明します。_

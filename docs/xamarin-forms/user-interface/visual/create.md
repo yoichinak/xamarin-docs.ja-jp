@@ -25,15 +25,15 @@ Xamarin.Forms Visual により作成され、選択的に適用するレンダ�
 
 作成および Xamarin.Forms Visual レンダラーを使用するためのプロセスは次のとおりです。
 
-1. 必要なビューのプラットフォームのレンダラーを作成します。 詳細については、次を参照してください。[レンダラーを作成する](#create-platform-renderers)します。
-1. 派生した型を作成する`IVisual`します。 詳細については、次を参照してください。 [IVisual 型を作成](#create-an-ivisual-type)です。
-1. 登録、`IVisual`型の一部として、`ExportRendererAttribute`レンダラーを装飾します。 詳細については、次を参照してください。 [IVisual の種類を登録](#register-the-ivisual-type)します。
-1. 設定して、ビジュアルのレンダラーを使用、 [ `Visual` ](xref:Xamarin.Forms.VisualElement.Visual)に対してビューのプロパティ、`IVisual`名。 詳細については、次を参照してください。 [Visual レンダラーを消費する](#consume-the-visual-renderer)します。
-1. [省略可能]名前を登録、`IVisual`型。 詳細については、次を参照してください。 [IVisual 型名登録](#register-a-name-for-the-ivisual-type)します。
+1. 必要なビューのプラットフォームのレンダラーを作成します。 詳細については、[レンダラーを作成する](#create-platform-renderers)を参照してください。
+1. 派生した型を作成する`IVisual`します。 詳細については、[IVisual 型を作成](#create-an-ivisual-type)を参照してください。
+1. 登録、`IVisual`型の一部として、`ExportRendererAttribute`レンダラーを装飾します。 詳細については、[IVisual の種類を登録](#register-the-ivisual-type)を参照してください。
+1. 設定して、ビジュアルのレンダラーを使用、 [ `Visual` ](xref:Xamarin.Forms.VisualElement.Visual)に対してビューのプロパティ、`IVisual`名。 詳細については、[Visual レンダラーを消費する](#consume-the-visual-renderer)を参照してください。
+1. [省略可能]名前を登録、`IVisual`型。 詳細については、[IVisual 型名登録](#register-a-name-for-the-ivisual-type)を参照してください。
 
 ## <a name="create-platform-renderers"></a>プラットフォームのレンダラーを作成します。
 
-レンダラー クラスを作成する方法の詳細については、次を参照してください。[カスタム レンダラー](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)します。 ただし、ビューをサブクラス化することがなく、ビューを Xamarin.Forms Visual レンダラーに適用します。
+レンダラー クラスを作成する方法の詳細については、[カスタム レンダラー](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)を参照してください。 ただし、ビューをサブクラス化することがなく、ビューを Xamarin.Forms Visual レンダラーに適用します。
 
 ここで説明されているレンダラー クラスは実装してカスタム[ `Button` ](xref:Xamarin.Forms.Button)影付きテキストを表示します。
 

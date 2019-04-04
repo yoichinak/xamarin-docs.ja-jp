@@ -31,7 +31,7 @@ Xamarin ツールは、1 つまたは複数の入力からバインド ライブ
 MCW に生成されたコードでは、API の呼び出しを転送する JNI (Java ネイティブ インターフェイス) を使用して、基になります。JAR ファイル。 バインディング ライブラリは、いずれかを作成できます。Android (Xamarin ツールが非 Android Java ライブラリのバインドを現在サポートしていないことに注意してください) で使用する本来の目的を JAR ファイルです。 内容を含めずに、バインド ライブラリを構築することもできます、します。JAR ファイルを DLL に依存しているようにします。実行時に JAR です。
 
 このガイドでは、1 つのバインド ライブラリの作成の基礎を手順説明します。JAR ファイル。 すべてが適切な例について説明します&ndash;は、カスタマイズなしまたはバインドのデバッグが必要な場合。 
-[バインドを使用してメタデータを作成する](~/android/platform/binding-java-library/customizing-bindings/java-bindings-metadata.md)バインド プロセスが完全に自動化し一定の手動による介入が必要です。 より高度なシナリオの例を示します。 Java ライブラリによるバインディングの一般 (基本的なコード例では) の概要については、次を参照してください。 [Java ライブラリのバインド](~/android/platform/binding-java-library/index.md)します。 
+[バインドを使用してメタデータを作成する](~/android/platform/binding-java-library/customizing-bindings/java-bindings-metadata.md)バインド プロセスが完全に自動化し一定の手動による介入が必要です。 より高度なシナリオの例を示します。 Java ライブラリによるバインディングの一般 (基本的なコード例では) の概要については、[Java ライブラリのバインド](~/android/platform/binding-java-library/index.md)を参照してください。 
 
  
 ## <a name="walkthrough"></a>チュートリアル

@@ -30,11 +30,11 @@ Firebase Cloud Messaging (FCM) は、送信、ルーティング、およびサ�
 
 [![クライアント アプリとアプリ サーバー間、FCM](firebase-cloud-messaging-images/01-server-fcm-app-sml.png)](firebase-cloud-messaging-images/01-server-fcm-app.png#lightbox)
 
-FCM を使用して、アプリのサーバー メッセージを送信できます 1 つのデバイス、デバイス グループまたはトピックにサブスクライブしているデバイス数。 クライアント アプリでは、アプリケーション サーバー (たとえば、リモート通知を受信する場合など) からのダウン ストリームのメッセージをサブスクライブする FCM を使用できます。 Firebase のメッセージのさまざまな種類の詳細については、次を参照してください。 [FCM メッセージについて](https://firebase.google.com/docs/cloud-messaging/concept-options)します。
+FCM を使用して、アプリのサーバー メッセージを送信できます 1 つのデバイス、デバイス グループまたはトピックにサブスクライブしているデバイス数。 クライアント アプリでは、アプリケーション サーバー (たとえば、リモート通知を受信する場合など) からのダウン ストリームのメッセージをサブスクライブする FCM を使用できます。 Firebase のメッセージのさまざまな種類の詳細については、[FCM メッセージについて](https://firebase.google.com/docs/cloud-messaging/concept-options)を参照してください。
 
 ## <a name="fcm-in-action"></a>アクションの firebase Cloud Messaging
 
-アプリケーション サーバーからクライアント アプリにダウン ストリーム メッセージが送信されると、アプリ サーバーが、メッセージを送信、 *FCM 接続サーバー* ; Google から提供される、FCM 接続サーバーを実行しているデバイスにメッセージをさらに、転送、クライアント アプリ。 HTTP 経由でメッセージを送信できるまたは[XMPP](https://developers.google.com/cloud-messaging/ccs) (拡張可能なメッセージングとプレゼンス プロトコル)。 クライアント アプリは常に接続されていないため、または実行中、FCM 接続サーバー エンキューとストア メッセージ、再接続し、使用可能になるクライアント アプリに送信します。 同様に、FCM はエンキュー アプリ サーバーにクライアント アプリからアップ ストリームのメッセージ アプリ サーバーが使用できない場合。 詳細については、FCM 接続のサーバーは、次を参照してください。 [Firebase クラウド メッセージング サーバーについて](https://firebase.google.com/docs/cloud-messaging/server)します。
+アプリケーション サーバーからクライアント アプリにダウン ストリーム メッセージが送信されると、アプリ サーバーが、メッセージを送信、 *FCM 接続サーバー* ; Google から提供される、FCM 接続サーバーを実行しているデバイスにメッセージをさらに、転送、クライアント アプリ。 HTTP 経由でメッセージを送信できるまたは[XMPP](https://developers.google.com/cloud-messaging/ccs) (拡張可能なメッセージングとプレゼンス プロトコル)。 クライアント アプリは常に接続されていないため、または実行中、FCM 接続サーバー エンキューとストア メッセージ、再接続し、使用可能になるクライアント アプリに送信します。 同様に、FCM はエンキュー アプリ サーバーにクライアント アプリからアップ ストリームのメッセージ アプリ サーバーが使用できない場合。 詳細については、FCM 接続のサーバーは、[Firebase クラウド メッセージング サーバーについて](https://firebase.google.com/docs/cloud-messaging/server)を参照してください。
 
 FCM がアプリ サーバーと、クライアント アプリを識別するために次の資格情報を使用して、FCM を使用したトランザクション メッセージを承認するためにこれらの資格情報を使用しています。
 
@@ -90,7 +90,7 @@ FCM がアプリ サーバーと、クライアント アプリを識別する�
 
 (アプリ サーバーが送信する場所、メッセージを 1 つのクライアント アプリに) このメッセージング シナリオでメッセージが最大 4 kB の長さを指定できます。
 
-Android でダウン ストリームの FCM メッセージの受信の詳細については、次を参照してください。 [FCM を使用したリモート通知](~/android/data-cloud/google-messaging/remote-notifications-with-fcm.md)します。
+Android でダウン ストリームの FCM メッセージの受信の詳細については、[FCM を使用したリモート通知](~/android/data-cloud/google-messaging/remote-notifications-with-fcm.md)を参照してください。
 
 ### <a name="topic-messaging"></a>トピックのメッセージング
 
@@ -133,7 +133,7 @@ FCM サービスを使用するには、アプリで、前にする必要があ�
 
     [![アプリのニックネーム FCM 例を入力します。](firebase-cloud-messaging-images/08-package-name-sml.png)](firebase-cloud-messaging-images/08-package-name.png#lightbox)
 
-5.  アプリでは、動的リンク、招待、または Google の認証を使用する場合、デバッグの署名証明書を入力する必要もあります。 署名証明書を見つける方法についての詳細については、次を参照してください。[キーストアの MD5 または SHA1 署名の検索](~/android/deploy-test/signing/keystore-signature.md)します。
+5.  アプリでは、動的リンク、招待、または Google の認証を使用する場合、デバッグの署名証明書を入力する必要もあります。 署名証明書を見つける方法についての詳細については、[キーストアの MD5 または SHA1 署名の検索](~/android/deploy-test/signing/keystore-signature.md)を参照してください。
     この例で、署名証明書が空白になります。
 
 6.  クリックして**アプリの追加**:

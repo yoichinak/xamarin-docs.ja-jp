@@ -116,7 +116,7 @@ public LoginView()
 }
 ```
 
-プログラムによる構築と、ビューの分離コード内でビュー モデルの割り当てには、単純であるという利点があります。 ただし、このアプローチの主な欠点は、ビューが必要な依存関係にビュー モデルを提供する必要があることにします。 依存関係の注入コンテナーを使用して疎結合、ビューとビュー モデルを維持するために役立ちます。 詳細については、次を参照してください。[依存関係の注入](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md)します。
+プログラムによる構築と、ビューの分離コード内でビュー モデルの割り当てには、単純であるという利点があります。 ただし、このアプローチの主な欠点は、ビューが必要な依存関係にビュー モデルを提供する必要があることにします。 依存関係の注入コンテナーを使用して疎結合、ビューとビュー モデルを維持するために役立ちます。 詳細については、[依存関係の注入](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md)を参照してください。
 
 ### <a name="creating-a-view-defined-as-a-data-template"></a>データ テンプレートとして定義されているビューを作成します。
 
@@ -166,7 +166,7 @@ private static void OnAutoWireViewModelChanged(BindableObject bindable, object o
 -   ビュー モデルは、します。Viewmodel の子名前空間。
 -   ビュー モデルの名前は、ビューの名前と対応して、"ViewModel"で終わります。
 
-最後に、`OnAutoWireViewModelChanged`メソッドのセット、 [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)解決済みのビュー モデルの種類にビューの種類の。 ビュー モデルの型を解決する方法の詳細については、次を参照してください。[解決](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#resolution)します。
+最後に、`OnAutoWireViewModelChanged`メソッドのセット、 [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)解決済みのビュー モデルの種類にビューの種類の。 ビュー モデルの型を解決する方法の詳細については、[解決](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#resolution)を参照してください。
 
 このアプローチでは、アプリは、ビュー モデルとビューへの接続のインスタンス化を担当する 1 つのクラスであるという利点があります。
 
@@ -282,7 +282,7 @@ public ICommand NavigateCommand => new Command<string>(NavigateAsync);
 
 動作は、それらをサブクラス化しなくても、UI コントロールに追加する機能を使用できます。 代わりに、機能が動作クラスで実装し、コントロール自体の一部であったかのように、コントロールに適用します。 動作を簡潔に、コントロールにアタッチできパッケージには、複数のビューまたはアプリの間で再利用方法で、コントロールの API を直接操作するため、分離コードとして記述する必要が通常のコードを実装できます。 MVVM のコンテキストでは、動作は、コマンドにコントロールを接続するために役立つアプローチです。
 
-添付プロパティをコントロールに関連付けられている動作と呼ばれる、*動作をアタッチ*します。 動作は、それがアタッチされている機能を制御する、またはビューのビジュアル ツリー内の他のコントロールに追加する要素の公開されている API を使用できます。 EShopOnContainers のモバイル アプリが含まれる、`LineColorBehavior`クラスは、これは、接続されている動作です。 この動作の詳細については、次を参照してください。[検証エラーを表示する](~/xamarin-forms/enterprise-application-patterns/validation.md#displaying_validation_errors)します。
+添付プロパティをコントロールに関連付けられている動作と呼ばれる、*動作をアタッチ*します。 動作は、それがアタッチされている機能を制御する、またはビューのビジュアル ツリー内の他のコントロールに追加する要素の公開されている API を使用できます。 EShopOnContainers のモバイル アプリが含まれる、`LineColorBehavior`クラスは、これは、接続されている動作です。 この動作の詳細については、[検証エラーを表示する](~/xamarin-forms/enterprise-application-patterns/validation.md#displaying_validation_errors)を参照してください。
 
 Xamarin.Forms の動作はから派生したクラス、 [ `Behavior` ](xref:Xamarin.Forms.Behavior)または[ `Behavior<T>` ](xref:Xamarin.Forms.Behavior`1)クラス、`T `動作を適用するコントロールの種類です。 これらのクラスを提供`OnAttachedTo`と`OnDetachingFrom`メソッドで、動作にアタッチされているし、コントロールからデタッチされたときに実行するロジックを提供するオーバーライドする必要があります。
 
@@ -356,7 +356,7 @@ public class EventToCommandBehavior : BindableBehavior<View>
 
 実行時に、`EventToCommandBehavior`との対話に応答が、 [ `ListView`](xref:Xamarin.Forms.ListView)します。 項目を選択すると、 `ListView`、 [ `ItemTapped` ](xref:Xamarin.Forms.ListView.ItemTapped)が実行されるイベントは起動、`OrderDetailCommand`で、`ProfileViewModel`します。 既定では、イベントのイベント引数は、コマンドに渡されます。 このデータは、ソースとターゲット間で指定されたコンバーターによって渡される、変換、`EventArgsConverter`返すプロパティを[ `Item` ](xref:Xamarin.Forms.ItemTappedEventArgs.Item)の`ListView`から、 [ `ItemTappedEventArgs`](xref:Xamarin.Forms.ItemTappedEventArgs). そのため、`OrderDetailCommand`が実行される、選択した`Order`は登録されているアクションをパラメーターとして渡されます。
 
-動作の詳細については、次を参照してください。[動作](~/xamarin-forms/app-fundamentals/behaviors/index.md)します。
+動作の詳細については、[動作](~/xamarin-forms/app-fundamentals/behaviors/index.md)を参照してください。
 
 ## <a name="summary"></a>まとめ
 

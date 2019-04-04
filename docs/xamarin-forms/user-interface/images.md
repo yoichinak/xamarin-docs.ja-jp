@@ -52,12 +52,12 @@ Xamarin.Forms を使用して、 [ `Image` ](xref:Xamarin.Forms.Image)をペー�
 
 すべてのアプリ間で 1 つのイメージを使用する*すべてのプラットフォームで同じファイル名を使用する必要があります*、有効な Android のリソース名を指定する必要があります (つまり。 のみ小文字、数字、アンダー スコア、および期間が許可されている)。
 
-- **iOS** - 管理し、iOS 9 は、使用するために、イメージをサポートする方法を優先**資産カタログの画像セット**、すべてのスケール ファクターのさまざまなデバイスをサポートするために必要なイメージのバージョンを含める必要がありますが、アプリケーション。 詳細については、次を参照してください。[資産カタログ イメージ セットに追加するイメージ](~/ios/app-fundamentals/images-icons/displaying-an-image.md)します。
+- **iOS** - 管理し、iOS 9 は、使用するために、イメージをサポートする方法を優先**資産カタログの画像セット**、すべてのスケール ファクターのさまざまなデバイスをサポートするために必要なイメージのバージョンを含める必要がありますが、アプリケーション。 詳細については、[資産カタログ イメージ セットに追加するイメージ](~/ios/app-fundamentals/images-icons/displaying-an-image.md)を参照してください。
 - **Android** -内のイメージを配置、**リソース/drawable**ディレクトリが**ビルド アクション。AndroidResource**します。 高 DPI と低いバージョンの画像が指定することもできます (で適切に名前付き**リソース**など、サブディレクトリ**ldpi drawable**、 **drawable hdpi**と**drawable xhdpi**)。
 - **ユニバーサル Windows プラットフォーム (UWP)** -アプリケーションのルート ディレクトリにイメージを配置**ビルド アクション。コンテンツ**します。
 
 > [!IMPORTANT]
-> IOS 9 の場合は、前にイメージが通常の配置、**リソース**フォルダー**ビルド アクション。BundleResource**します。 ただし、apple の iOS アプリで画像の操作には、このメソッドは廃止されました。 詳細については、次を参照してください。[画像のサイズとファイル名](~/ios/app-fundamentals/images-icons/displaying-an-image.md)します。
+> IOS 9 の場合は、前にイメージが通常の配置、**リソース**フォルダー**ビルド アクション。BundleResource**します。 ただし、apple の iOS アプリで画像の操作には、このメソッドは廃止されました。 詳細については、[画像のサイズとファイル名](~/ios/app-fundamentals/images-icons/displaying-an-image.md)を参照してください。
 
 ファイルの名前付けおよび配置についてこれらの規則に準拠するには、次の XAML を読み込み、すべてのプラットフォーム イメージを表示することができます。
 
@@ -88,9 +88,9 @@ image.Source = Device.RuntimePlatform == Device.Android ? ImageSource.FromFile("
 
 iOS、Android、および UWP には、オペレーティング システムがデバイスの機能に基づいて実行時に適切なイメージを選択、さまざまな画像の解像度のサポートが含まれます。 Xamarin.Forms では、ローカルのイメージを読み込み、ファイルが正しくという名前し、プロジェクト内にある場合に自動的に代替の解像度をサポートに、ネイティブ プラットフォームの Api を使用します。
 
-IOS 9 以降のイメージの管理の推奨される方法は、適切な資産カタログの画像セットに必要な各解像度のイメージをドラッグすることです。 詳細については、次を参照してください。[資産カタログ イメージ セットに追加するイメージ](~/ios/app-fundamentals/images-icons/displaying-an-image.md)します。
+IOS 9 以降のイメージの管理の推奨される方法は、適切な資産カタログの画像セットに必要な各解像度のイメージをドラッグすることです。 詳細については、[資産カタログ イメージ セットに追加するイメージ](~/ios/app-fundamentals/images-icons/displaying-an-image.md)を参照してください。
 
-Retina のバージョンのイメージは、iOS 9 より前に配置する可能性があります、 **リソース** フォルダー - 2 と 3 回の解像度、 **@2x** または **@3x** (例: ファイル拡張子の前に、ファイル名のサフィックス **myimage@2x.png**). ただし、apple の iOS アプリで画像の操作には、このメソッドは廃止されました。 詳細については、次を参照してください。[画像のサイズとファイル名](~/ios/app-fundamentals/images-icons/displaying-an-image.md)します。
+Retina のバージョンのイメージは、iOS 9 より前に配置する可能性があります、 **リソース** フォルダー - 2 と 3 回の解像度、 **@2x** または **@3x** (例: ファイル拡張子の前に、ファイル名のサフィックス **myimage@2x.png**). ただし、apple の iOS アプリで画像の操作には、このメソッドは廃止されました。 詳細については、[画像のサイズとファイル名](~/ios/app-fundamentals/images-icons/displaying-an-image.md)を参照してください。
 
 Android の代替解像度のイメージを配置する必要があります[特別という名前のディレクトリ](https://developer.android.com/guide/practices/screens_support.html)に次のスクリーン ショットに示すように、Android プロジェクトで。
 

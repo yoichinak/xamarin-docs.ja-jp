@@ -18,9 +18,9 @@ ms.locfileid: "57667855"
 
 _この記事では、.NET Standard 2.0 を使用して、Xamarin.Forms アプリケーションに変換する方法について説明します。_
 
-.NET standard には、すべての .NET 実装で使用可能にすることを意図した .NET Api の仕様を示します。 これにより、します簡単にデスクトップ アプリケーション、モバイル アプリ、ゲームでコードを共有して、さまざまなプラットフォームに同じ Api を導入することでクラウド サービス。 .NET Standard でサポートされるプラットフォームについては、次を参照してください。 [.NET 実装のサポート](/dotnet/standard/net-standard#net-implementation-support)します。
+.NET standard には、すべての .NET 実装で使用可能にすることを意図した .NET Api の仕様を示します。 これにより、します簡単にデスクトップ アプリケーション、モバイル アプリ、ゲームでコードを共有して、さまざまなプラットフォームに同じ Api を導入することでクラウド サービス。 .NET Standard でサポートされるプラットフォームについては、[.NET 実装のサポート](/dotnet/standard/net-standard#net-implementation-support)を参照してください。
 
-.NET standard ライブラリは、ポータブル クラス ライブラリ (PCL) に置換します。 ただし、.NET Standard を対象とするライブラリは、PCL ではまだあり、.NET Standard ベースの PCL と呼びます。 特定の PCL プロファイルは .NET Standard のバージョンにマップされ、マッピングであるプロファイルの場合は、2 つのライブラリの型は相互に参照することになります。 詳細については、次を参照してください。 [PCL 互換性](/dotnet/standard/net-standard#pcl-compatibility)します。
+.NET standard ライブラリは、ポータブル クラス ライブラリ (PCL) に置換します。 ただし、.NET Standard を対象とするライブラリは、PCL ではまだあり、.NET Standard ベースの PCL と呼びます。 特定の PCL プロファイルは .NET Standard のバージョンにマップされ、マッピングであるプロファイルの場合は、2 つのライブラリの型は相互に参照することになります。 詳細については、[PCL 互換性](/dotnet/standard/net-standard#pcl-compatibility)を参照してください。
 
 Xamarin.Forms 2.4 で .NET Standard 2.0 をターゲットに Xamarin.Forms アプリケーションは、.NET Standard 2.0 ライブラリを PCL に置き換えます。 これは、次のように実現できます。
 

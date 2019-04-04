@@ -204,7 +204,7 @@ App Store を使用して、アプリ内購入を提供する*でコンテンツ
 
  [![](changes-to-storekit-images/image5.png "アプリは前に、最中、購入後にこのような検索します。")](changes-to-storekit-images/image5.png#lightbox)
 
-テキスト ファイルとイメージがダウンロードして、アプリケーションの Documents ディレクトリにコピーします。 アプリケーション ストレージに使用できる別のディレクトリの詳細については、次を参照してください。、[ファイル システムのマニュアル](~/ios/app-fundamentals/file-system.md)します。
+テキスト ファイルとイメージがダウンロードして、アプリケーションの Documents ディレクトリにコピーします。 アプリケーション ストレージに使用できる別のディレクトリの詳細については、、[ファイル システムのマニュアル](~/ios/app-fundamentals/file-system.md)を参照してください。
 
 ## <a name="itunes-connect"></a>iTunes Connect
 

@@ -218,8 +218,8 @@ var settingsView = new SettingsView().CreateContainer();
 vbox.PackEnd(settingsView, true, true, 0);
 ```
 
-ネイティブ数字形式の詳細については、次を参照してください。[ネイティブ フォーム](~/xamarin-forms/platform/native-forms.md)します。
+ネイティブ数字形式の詳細については、[ネイティブ フォーム](~/xamarin-forms/platform/native-forms.md)を参照してください。
 
 ## <a name="issues"></a>懸案事項
 
-これは、その運用環境の準備がすべてではないことを想定する必要がありますのプレビューです。 現在の実装の状態を参照してください。[状態](https://github.com/jsuarezruiz/forms-gtk-progress/blob/master/Status.md)、および現在の既知の問題では、次を参照してください。[保留中と既知の問題](https://github.com/jsuarezruiz/forms-gtk-progress/blob/master/Issues-Pending.md)します。
+これは、その運用環境の準備がすべてではないことを想定する必要がありますのプレビューです。 現在の実装の状態を参照してください。[状態](https://github.com/jsuarezruiz/forms-gtk-progress/blob/master/Status.md)、および現在の既知の問題では、[保留中と既知の問題](https://github.com/jsuarezruiz/forms-gtk-progress/blob/master/Issues-Pending.md)を参照してください。

@@ -93,7 +93,7 @@ Xamarin.Android には、印刷の向きを指定するためのいくつかの�
 
 ## <a name="reacting-to-changes-in-orientation"></a>印刷の向きの変更に反応します。
 
-Xamarin.Forms は、アプリの共有コードで向きの変更を通知するため、ネイティブのイベントを提供していません。 ただし、`SizeChanged`のイベント、`Page`ときに発生の高さまたは幅、`Page`変更します。 ときの幅、`Page`が高さよりも大きい、デバイスが横モードでします。 詳細については、次を参照してください。[画面の向きに基づいてイメージを表示](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/screen-orientation)します。
+Xamarin.Forms は、アプリの共有コードで向きの変更を通知するため、ネイティブのイベントを提供していません。 ただし、`SizeChanged`のイベント、`Page`ときに発生の高さまたは幅、`Page`変更します。 ときの幅、`Page`が高さよりも大きい、デバイスが横モードでします。 詳細については、[画面の向きに基づいてイメージを表示](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/screen-orientation)を参照してください。
 
 > [!NOTE]
 > 共有コードで向きの変更の通知を受信するため、既存の無料の NuGet パッケージがあります。 参照してください、 [GitHub リポジトリ](https://github.com/aliozgur/Xamarin.Plugins/tree/master/DeviceOrientation)詳細についてはします。

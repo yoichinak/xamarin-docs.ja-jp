@@ -19,7 +19,7 @@ _CocosSharp を使用して 2D ゲームを構築するためのライブラリ�
 
 ## <a name="introduction-to-cocossharp"></a>CocosSharp の概要
 
-CocosSharp の 2D ゲーム エンジンは、クロス プラットフォーム ゲームを行うためのテクノロジを提供します。 サポートされているプラットフォームの完全な一覧については、次を参照してください。、 [GitHub の wiki を CocosSharp](https://github.com/mono/CocosSharp/wiki)します。
+CocosSharp の 2D ゲーム エンジンは、クロス プラットフォーム ゲームを行うためのテクノロジを提供します。 サポートされているプラットフォームの完全な一覧については、、 [GitHub の wiki を CocosSharp](https://github.com/mono/CocosSharp/wiki)を参照してください。
 これらのガイドを使用して、C#コード サンプル、CocosSharp で完全に機能がF#もします。
 
 CocosSharp のコアがによって提供される、[フレームワークの MonoGame](http://www.monogame.net/)、クロス プラットフォームは、ハードウェア アクセラレーション アセットをインポートするためのグラフィック、オーディオ、ゲームの状態管理、入力、およびコンテンツ パイプラインを提供する API。

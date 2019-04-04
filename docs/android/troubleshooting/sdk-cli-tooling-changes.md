@@ -50,13 +50,13 @@ Visual Studio と Visual Studio for Mac は、提供が中止された Google GU
 
 **追加されました:** Android SDK Tools 25.2.3 (2016 年 11 月) 以降。
 
-呼ばれる新しいプログラムがある**sdkmanager**で、**ツール/bin** Android SDK のフォルダー。 このツールは、コマンドラインでの Android SDK を維持するために使用されます。 詳細については、このツールを使用して、次を参照してください。 [sdkmanager](https://developer.android.com/studio/command-line/sdkmanager.html)します。
+呼ばれる新しいプログラムがある**sdkmanager**で、**ツール/bin** Android SDK のフォルダー。 このツールは、コマンドラインでの Android SDK を維持するために使用されます。 詳細については、このツールを使用して、[sdkmanager](https://developer.android.com/studio/command-line/sdkmanager.html)を参照してください。
 
 #### <a name="avdmanager"></a>avdmanager
 
 **追加されました:** Android SDK Tools 25.3.0 (2017 年 3 月) 以降。
 
-呼ばれる新しいプログラムがある**avdmanager**で、**ツール/bin** Android SDK のフォルダー。 このツールは、Android emulator、Avd を維持するために使用されます。 詳細については、このツールを使用して、次を参照してください。 [avdmanager](https://developer.android.com/studio/command-line/avdmanager.html)します。
+呼ばれる新しいプログラムがある**avdmanager**で、**ツール/bin** Android SDK のフォルダー。 このツールは、Android emulator、Avd を維持するために使用されます。 詳細については、このツールを使用して、[avdmanager](https://developer.android.com/studio/command-line/avdmanager.html)を参照してください。
 
 ### <a name="downgrading"></a>ダウン グレード
 

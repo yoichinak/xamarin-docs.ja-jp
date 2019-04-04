@@ -8,6 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/13/2018
+ms.openlocfilehash: ca87e5997fa05e014be56f85087ce3e7ffe1ab12
+ms.sourcegitcommit: 97dca3face7c4ad5555dfaca88f5b45a70ca556d
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "57972690"
 ---
 # <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>カスケード スタイル シート (CSS) を使用した Xamarin.Forms アプリのスタイル設定
 
@@ -121,7 +127,7 @@ Xamarin.Forms では、CSS スタイル シートはコンパイル時ではな�
 </ContentPage>
 ```
 
-リソース ディクショナリの詳細については、次を参照してください。[リソース ディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)します。
+リソース ディクショナリの詳細については、[リソース ディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)を参照してください。
 
 ### <a name="c"></a>C#
 

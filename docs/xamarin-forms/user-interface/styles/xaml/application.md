@@ -22,7 +22,7 @@ _スタイル利用できるグローバルに、アプリケーションのリ�
 
 ## <a name="create-a-global-style-in-xaml"></a>XAML でグローバルなスタイルを作成します。
 
-既定では、テンプレートから作成したすべての Xamarin.Forms アプリケーションでは、**App** クラスを使用して [`Application`](xref:Xamarin.Forms.Application) サブクラスが実装されます。 宣言する、 [ `Style` ](xref:Xamarin.Forms.Style)アプリケーションのアプリケーション レベルで[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) XAML、既定値を使用して**アプリ**クラスを XAML で置き換える必要があります**アプリ**クラスと関連付けられているコード ビハインドです。 詳細については、次を参照してください。[アプリ クラスで操作して](~/xamarin-forms/app-fundamentals/application-class.md)します。
+既定では、テンプレートから作成したすべての Xamarin.Forms アプリケーションでは、**App** クラスを使用して [`Application`](xref:Xamarin.Forms.Application) サブクラスが実装されます。 宣言する、 [ `Style` ](xref:Xamarin.Forms.Style)アプリケーションのアプリケーション レベルで[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) XAML、既定値を使用して**アプリ**クラスを XAML で置き換える必要があります**アプリ**クラスと関連付けられているコード ビハインドです。 詳細については、[アプリ クラスで操作して](~/xamarin-forms/app-fundamentals/application-class.md)を参照してください。
 
 次のコード例は、 [ `Style` ](xref:Xamarin.Forms.Style)アプリケーション レベルで宣言されています。
 

@@ -427,7 +427,7 @@ public partial class PressAndReleaseButtonPage : ContentPage
 - [`CornerRadius`](xref:Xamarin.Forms.Button.CornerRadius) 角の半径は、 `Button`
 
 > [!NOTE]
-> `Button`クラスもあります[ `Margin` ](xref:Xamarin.Forms.View.Margin)と[ `Padding` ](xref:Xamarin.Forms.Button.Padding)のレイアウト動作を制御するプロパティ、`Button`します。 詳細については、次を参照してください。[余白やパディング](~/xamarin-forms/user-interface/layouts/margin-and-padding.md)します。
+> `Button`クラスもあります[ `Margin` ](xref:Xamarin.Forms.View.Margin)と[ `Padding` ](xref:Xamarin.Forms.Button.Padding)のレイアウト動作を制御するプロパティ、`Button`します。 詳細については、[余白やパディング](~/xamarin-forms/user-interface/layouts/margin-and-padding.md)を参照してください。
 
 これらのプロパティの 6 つの効果 (を除く`FontFamily`と`FontAttributes`) で説明されています、**ボタンの外観**ページ。 別のプロパティ、 [ `Image`](xref:Xamarin.Forms.Button.Image)は、セクションで説明[**ボタンにビットマップを使用して**](#image-button)します。
 
@@ -578,7 +578,7 @@ UWP でを選択すると、`CornerRadius`の高さの半分を超えている�
 
 `Pressed` [ `VisualState` ](xref:Xamarin.Forms.VisualState)される場合、 [ `Button` ](xref:Xamarin.Forms.Button)を押すと、その[ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale)からプロパティを変更する、1 に 0.8 の既定値。 `Normal` `VisualState`される場合、`Button`通常の状態では、その`Scale`プロパティを 1 に設定されます。 そのため、全体の効果では、ときに、`Button`を押すと、これは再スケーリング、若干小さいとタイミングを`Button`がリリースされると、これは再スケーリングの既定のサイズにします。
 
-表示状態の詳細については、次を参照してください。 [、Xamarin.Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md)します。
+表示状態の詳細については、[、Xamarin.Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md)を参照してください。
 
 ## <a name="creating-a-toggle-button"></a>トグル ボタンを作成します。
 

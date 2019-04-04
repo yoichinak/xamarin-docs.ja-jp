@@ -70,7 +70,7 @@ namespace My {
 -   [BroadcastReceiverAttribute.Name](https://developer.xamarin.com/api/property/Android.Content.BroadcastReceiverAttribute.Name/)
 -   [ContentProviderAttribute.Name](https://developer.xamarin.com/api/property/Android.Content.ContentProviderAttribute.Name/)
 
-Md5 チェックサムに基づくについての名前付けは、Xamarin.Android 5.0 で導入されました。 属性の名前付けの詳細については、次を参照してください。 [RegisterAttribute](https://developer.xamarin.com/api/type/Android.Runtime.RegisterAttribute/)します。 
+Md5 チェックサムに基づくについての名前付けは、Xamarin.Android 5.0 で導入されました。 属性の名前付けの詳細については、[RegisterAttribute](https://developer.xamarin.com/api/type/Android.Runtime.RegisterAttribute/)を参照してください。 
 
 
 

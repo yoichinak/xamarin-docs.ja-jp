@@ -60,7 +60,7 @@ TimePicker timePicker = new TimePicker
 
 場合、 [ `TimePicker` ](xref:Xamarin.Forms.TimePicker)でバインドが含まれていないその[ `Time` ](xref:Xamarin.Forms.TimePicker.Time)プロパティ、アプリケーションはハンドラーをアタッチする必要があります、 [ `PropertyChanged` ](xref:Xamarin.Forms.BindableObject.PropertyChanged)イベント通知されず、ユーザーが新しい時刻を選択します。
 
-フォントのプロパティの設定については、次を参照してください。[フォント](~/xamarin-forms/user-interface/text/fonts.md)します。
+フォントのプロパティの設定については、[フォント](~/xamarin-forms/user-interface/text/fonts.md)を参照してください。
 
 ## <a name="timepicker-and-layout"></a>TimePicker とレイアウト
 

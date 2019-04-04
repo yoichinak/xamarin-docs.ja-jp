@@ -83,7 +83,7 @@ Ios 8 (以降) で、開発者は、1 つまたは複数の静的な起動イメ
 
     ![レイアウトの制約でのイメージ ビュー](launch-screens-images/launch10.png)
 
-    - 制約を追加する方法の詳細については、次を参照してください。 [iOS 用の Xamarin のデザイナーを使用した自動レイアウト](~/ios/user-interface/designer/designer-auto-layout.md)します。
+    - 制約を追加する方法の詳細については、[iOS 用の Xamarin のデザイナーを使用した自動レイアウト](~/ios/user-interface/designer/designer-auto-layout.md)を参照してください。
 
 11. 制約を追加、**ラベル**、水平方向に中央固定に配置して、高さと幅を付けることから、垂直方向に距離、 **Image View**:
 
@@ -166,7 +166,7 @@ Ios 8 (以降) で、開発者は、1 つまたは複数の静的な起動イメ
 
     ![レイアウトの制約でのイメージ ビュー](launch-screens-images/launch13-vs.png) 
 
-    - 制約を追加する方法の詳細については、次を参照してください。 [iOS 用の Xamarin のデザイナーを使用した自動レイアウト](~/ios/user-interface/designer/designer-auto-layout.md)します。
+    - 制約を追加する方法の詳細については、[iOS 用の Xamarin のデザイナーを使用した自動レイアウト](~/ios/user-interface/designer/designer-auto-layout.md)を参照してください。
 
 14. 制約を追加、**ラベル**、水平方向に中央固定に配置して、高さと幅を付けることから、垂直方向に距離、 **Image View**:
     

@@ -7,8 +7,13 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
+ms.openlocfilehash: d5dda3cc22d91248cc31cc526e898a5eabbbefd0
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670145"
 ---
-
 # <a name="introduction-to-monotouchdialog-for-xamarinios"></a>MonoTouch.Dialog Xamarin.iOS 用の概要
 
 MonoTouch.Dialog、山と呼ばれます略して、D は、開発者がアプリケーション画面とナビゲーション コント ローラーの表示、テーブルなどを作成する面倒な作業ではなく、情報を使用して構築できる、迅速な開発フォーム UI ツールキットです。そのため、UI の開発とコードの削減の大幅な簡略化したものを提供します。 たとえば、次のスクリーン ショットを考えてみます。

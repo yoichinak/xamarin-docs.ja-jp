@@ -55,7 +55,7 @@ StartActivity (mapIntent);
 
 
 
-Geo の URI スキームの詳細については、次を参照してください。[マップ上の場所を表示する](https://developer.android.com/guide/components/intents-common.html#Maps)します。
+Geo の URI スキームの詳細については、[マップ上の場所を表示する](https://developer.android.com/guide/components/intents-common.html#Maps)を参照してください。
 
 
 ## <a name="street-view"></a>番地のビュー

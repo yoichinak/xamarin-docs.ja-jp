@@ -79,7 +79,7 @@ builder.RegisterType<NavigationService>().As<INavigationService>().SingleInstanc
 NavigationService = ViewModelLocator.Resolve<INavigationService>();
 ```
 
-参照が返されます、`NavigationService`によって作成される Autofac 依存関係挿入コンテナーに格納されているオブジェクト、`InitNavigation`メソッドで、`App`クラス。 詳細については、次を参照してください。[を移動するときに、アプリが起動される](#navigating_when_the_app_is_launched)します。
+参照が返されます、`NavigationService`によって作成される Autofac 依存関係挿入コンテナーに格納されているオブジェクト、`InitNavigation`メソッドで、`App`クラス。 詳細については、[を移動するときに、アプリが起動される](#navigating_when_the_app_is_launched)を参照してください。
 
 `ViewModelBase`ストア クラス、`NavigationService`インスタンス、`NavigationService`型のプロパティ、`INavigationService`します。 そのため、すべてのビュー モデル クラスから派生する、`ViewModelBase`クラスを使用できる、`NavigationService`プロパティで指定されたメソッドへのアクセス、`INavigationService`インターフェイス。 挿入するオーバーヘッドを回避できますこの、`NavigationService`各ビュー モデル クラスに Autofac 依存関係挿入コンテナーからのオブジェクト。
 
@@ -126,7 +126,7 @@ public Task NavigateToAsync<TViewModel>(object parameter) where TViewModel : Vie
 }
 ```
 
-各メソッドは、任意のビュー モデル クラスから派生した、`ViewModelBase`を呼び出すことによって階層型ナビゲーションを実行するクラス、`InternalNavigateToAsync`メソッド。 さらに、2 番目の`NavigateToAsync`メソッドは、これが通常使用されている初期化を実行するには、移動先のビュー モデルに渡される引数として指定するナビゲーション データを使用できます。 詳細については、次を参照してください。[ナビゲーション中にパラメーターを渡す](#passing_parameters_during_navigation)します。
+各メソッドは、任意のビュー モデル クラスから派生した、`ViewModelBase`を呼び出すことによって階層型ナビゲーションを実行するクラス、`InternalNavigateToAsync`メソッド。 さらに、2 番目の`NavigateToAsync`メソッドは、これが通常使用されている初期化を実行するには、移動先のビュー モデルに渡される引数として指定するナビゲーション データを使用できます。 詳細については、[ナビゲーション中にパラメーターを渡す](#passing_parameters_during_navigation)を参照してください。
 
 `InternalNavigateToAsync`メソッドは、ナビゲーション要求を実行し、次のコード例に示します。
 
@@ -185,14 +185,14 @@ private Page CreatePage(Type viewModelType, object parameter)
 -   ビュー モデルは、します。Viewmodel の子名前空間。
 -   削除された「モデル」と、モデル名を表示するビューの名前が対応しています。
 
-ビューがインスタンス化されるときに、対応するビュー モデルに関連付けします。 このしくみの詳細については、次を参照してください。[自動的にビュー モデルを作成するビュー モデル ロケーターと](~/xamarin-forms/enterprise-application-patterns/mvvm.md#automatically_creating_a_view_model_with_a_view_model_locator)します。
+ビューがインスタンス化されるときに、対応するビュー モデルに関連付けします。 このしくみの詳細については、[自動的にビュー モデルを作成するビュー モデル ロケーターと](~/xamarin-forms/enterprise-application-patterns/mvvm.md#automatically_creating_a_view_model_with_a_view_model_locator)を参照してください。
 
 作成されるビューの場合は、 `LoginView`、内の新しいインスタンスでラップされます、`CustomNavigationView`クラスおよびに割り当てられている、 [ `Application.Current.MainPage` ](xref:Xamarin.Forms.Application.MainPage)プロパティ。 それ以外の場合、`CustomNavigationView`インスタンスの取得、および null でないことを指定、 [ `PushAsync` ](xref:Xamarin.Forms.NavigationPage)ナビゲーション スタックに作成されるビューをプッシュするメソッドが呼び出されます。 ただし場合、取得した`CustomNavigationView`インスタンスが`null`の新しいインスタンス内に作成されるビューがラップされた、`CustomNavigationView`クラスおよびに割り当てられている、`Application.Current.MainPage`プロパティ。 このメカニズムによりナビゲーション中に、ページが正しく追加ナビゲーション スタックに空である場合に、データが含まれている場合の両方。
 
 > [!TIP]
 > ページのキャッシュを検討してください。 ページが現在表示されていないビューのメモリ使用量の結果をキャッシュします。 ただし、ページのキャッシュなし、わけでは XAML を解析し、ページとそのビュー モデルの構築が発生するたびに新しいページにナビゲートすると、複雑なページのパフォーマンスに影響があります。 過剰な数のコントロールを使用していない適切に設計されたページのパフォーマンスは十分にあります。 ただし、ページがキャッシュに役立つ遅いページ読み込み時間が発生した場合。
 
-ビューが作成されに移動した後、`InitializeAsync`ビューの関連するビュー モデルのメソッドが実行されます。 詳細については、次を参照してください。[ナビゲーション中にパラメーターを渡す](#passing_parameters_during_navigation)します。
+ビューが作成されに移動した後、`InitializeAsync`ビューの関連するビュー モデルのメソッドが実行されます。 詳細については、[ナビゲーション中にパラメーターを渡す](#passing_parameters_during_navigation)を参照してください。
 
 <a name="navigating_when_the_app_is_launched" />
 
@@ -227,7 +227,7 @@ public Task InitializeAsync()
 
 `MainView`アプリには、キャッシュされたアクセス トークンは、認証に使用される場合に移動します。 それ以外の場合、`LoginView`にナビゲートするとします。
 
-Autofac 依存関係の注入コンテナーの詳細については、次を参照してください。[依存関係の挿入の概要](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#introduction_to_dependency_injection)します。
+Autofac 依存関係の注入コンテナーの詳細については、[依存関係の挿入の概要](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#introduction_to_dependency_injection)を参照してください。
 
 <a name="passing_parameters_during_navigation" />
 

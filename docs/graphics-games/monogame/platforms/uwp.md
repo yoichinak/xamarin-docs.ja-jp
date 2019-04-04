@@ -76,7 +76,7 @@ UWP プロジェクトは、同じプロジェクトから任意の Windows 10 �
 
 ![](uwp-images/remote.png "リモート コンピューターへのターゲットの切り替えを Xbox の IP アドレスを入力することによって、UWP アプリを展開できます。")
 
-Xbox One では、白い境界線は、Tv の非セーフ領域を表します。 詳細については、次を参照してください。、[安全領域セクション](#safe-area-on-xbox-one)します。
+Xbox One では、白い境界線は、Tv の非セーフ領域を表します。 詳細については、、[安全領域セクション](#safe-area-on-xbox-one)を参照してください。
 
 ![](uwp-images/safearea.png "Xbox One で白い境界線が Tv の非セーフ領域を表します")
 
@@ -92,7 +92,7 @@ Xbox One の MonoGame テンプレートでは、安全領域が考慮され、�
 
 ファイルから直接または MonoGame プロジェクト内のコンテンツを参照することができます、 [MonoGame コンテンツ パイプライン](~/graphics-games/cocossharp/content-pipeline/index.md)します。 小さなゲーム プロジェクト ファイルからの読み込みの簡潔さが挙げられます。 大規模なプロジェクトは、コンテンツのサイズを小さくして読み込み時間を最適化するために、コンテンツ パイプラインを使用して得られます。 Xbox 360 に XNA とは異なり、`System.IO.File`クラスは Xbox の 1 つの UWP アプリで使用できます。
 
-コンテンツ パイプラインを使用してコンテンツを読み込む詳細については、次を参照してください。、[コンテンツ パイプライン ガイド](~/graphics-games/cocossharp/content-pipeline/index.md)します。
+コンテンツ パイプラインを使用してコンテンツを読み込む詳細については、、[コンテンツ パイプライン ガイド](~/graphics-games/cocossharp/content-pipeline/index.md)を参照してください。
 
 ### <a name="loading-content-from-file"></a>ファイルからコンテンツを読み込む
 

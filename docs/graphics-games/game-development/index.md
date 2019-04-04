@@ -6,8 +6,13 @@ ms.assetid: 0E3CDCD2-FBE4-49F5-A70E-8A7B937BAF1D
 author: conceptdev
 ms.author: crdun
 ms.date: 03/24/2017
+ms.openlocfilehash: 2fa40925b67e60c5e03e3059c7c369f2a53ce540
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672431"
 ---
-
 # <a name="introduction-to-game-development-with-xamarin"></a>Xamarin を使用したゲーム開発の概要
 
 ゲームを開発できる非常に魅力的な特にモバイル プラットフォームでの作業を発行することが簡単であるかを指定します。 この記事では、概念を説明します。 し、目標は、ゲームやプログラムを楽しむのために、高品質の AAA を作成するかどうか、どのようにゲームの開発に関連するテクノロジが、ゲームを作成します。

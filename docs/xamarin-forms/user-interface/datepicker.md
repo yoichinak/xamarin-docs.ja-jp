@@ -73,7 +73,7 @@ DatePicker datePicker = new DatePicker
 
 場合、`DatePicker`でバインドが含まれていないその`Date`プロパティ、アプリケーションはハンドラーをアタッチする必要があります、`DateSelected`するイベント通知、ユーザーが新しい日付を選択するとします。
 
-フォントのプロパティの設定については、次を参照してください。[フォント](~/xamarin-forms/user-interface/text/fonts.md)します。
+フォントのプロパティの設定については、[フォント](~/xamarin-forms/user-interface/text/fonts.md)を参照してください。
 
 ## <a name="datepicker-and-layout"></a>DatePicker とレイアウト
 

@@ -265,7 +265,7 @@ Android 5.0 では、個々 のビューのスタイルを設定することが�
 
 Android 5.0 デバイスでアプリを実行するで指定されたテーマの定義が使用されます**Resources/values-v21/styles.xml**します。 このアプリを以前の Android デバイスで実行すると自動的にフォールバックで指定されたテーマの定義に**Resources/values/styles.xml**します。
 
-古い Android バージョンとの互換性をテーマの詳細については、次を参照してください。[代替リ ソース](~/android/app-fundamentals/resources-in-android/alternate-resources.md)します。
+古い Android バージョンとの互換性をテーマの詳細については、[代替リ ソース](~/android/app-fundamentals/resources-in-android/alternate-resources.md)を参照してください。
 
 ## <a name="summary"></a>まとめ
 

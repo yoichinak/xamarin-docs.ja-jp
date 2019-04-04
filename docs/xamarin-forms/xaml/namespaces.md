@@ -52,7 +52,7 @@ XAML では、プレフィックスを使用して、名前空間内の型を参
 詳細については、`x:DataType`属性は、「[コンパイル バインド](~/xamarin-forms/app-fundamentals/data-binding/compiled-bindings.md)します。 詳細については、`x:FieldModifier`属性は、「[フィールド修飾子](~/xamarin-forms/xaml/field-modifiers.md)します。 詳細については、 `x:Arguments`、 `x:FactoryMethod`、および`x:TypeArguments`属性を参照してください[XAML で引数を渡す](~/xamarin-forms/xaml/passing-arguments.md)します。
 
 > [!NOTE]
-> 上記の名前空間属性の他 Xamarin.Forms も含まれていますマークアップ拡張機能で使用できる`x`名前空間プレフィックス。 詳細については、次を参照してください。 [XAML マークアップ拡張機能の使用](~/xamarin-forms/xaml/markup-extensions/consuming.md)します。
+> 上記の名前空間属性の他 Xamarin.Forms も含まれていますマークアップ拡張機能で使用できる`x`名前空間プレフィックス。 詳細については、[XAML マークアップ拡張機能の使用](~/xamarin-forms/xaml/markup-extensions/consuming.md)を参照してください。
 
 XAML では、名前空間の宣言は、子要素を親要素から継承します。 そのため、XAML ファイルのルート要素で名前空間を定義するときにそのファイル内のすべての要素は、名前空間宣言を継承します。
 
@@ -99,7 +99,7 @@ XAML では、名前空間の宣言は、子要素を親要素から継承しま
 </ListView>
 ```
 
-カスタムの名前空間のスキーマを定義する方法の詳細については、次を参照してください。 [XAML カスタム Namespace スキーマ](custom-namespace-schemas.md)します。
+カスタムの名前空間のスキーマを定義する方法の詳細については、[XAML カスタム Namespace スキーマ](custom-namespace-schemas.md)を参照してください。
 
 ## <a name="summary"></a>まとめ
 

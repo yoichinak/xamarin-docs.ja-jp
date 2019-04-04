@@ -7,8 +7,13 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
+ms.openlocfilehash: f359da6b8744e03cfcbd77d48f5f77f216e828f8
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670950"
 ---
-
 # <a name="images-and-icons-in-xamarinios"></a>イメージと Xamarin.iOS でのアイコン
 
 _このセクションには、コントロールとカスタム ドキュメントの種類のアイコンを提供することでアイコンとして使用するなど、Xamarin.iOS アプリでのイメージの操作に対応、画面を起動する記事のまたはそれらを含むさまざまなが含まれています。_

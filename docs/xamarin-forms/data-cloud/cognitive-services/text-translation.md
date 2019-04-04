@@ -31,7 +31,7 @@ Translator API では、2 つのコンポーネントがあります。
 
 Translator Text API を使用する API キーを取得する必要があります。 これから入手できる[Microsoft Translator Text API にサインアップする方法](/azure/cognitive-services/translator/translator-text-how-to-signup/)します。
 
-Microsoft Translator Text API の詳細については、次を参照してください。 [Translator Text API ドキュメント](/azure/cognitive-services/translator/)します。
+Microsoft Translator Text API の詳細については、[Translator Text API ドキュメント](/azure/cognitive-services/translator/)を参照してください。
 
 ## <a name="authentication"></a>認証
 
@@ -64,7 +64,7 @@ Base64 テキストには、返されたアクセス トークンが 10 分間�
 httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", bearerToken);
 ```
 
-Cognitive services のトークン サービスの詳細については、次を参照してください。[認証トークン API](http://docs.microsofttranslator.com/oauth-token.html)します。
+Cognitive services のトークン サービスの詳細については、[認証トークン API](http://docs.microsofttranslator.com/oauth-token.html)を参照してください。
 
 ## <a name="performing-text-translation"></a>テキストの翻訳を実行します。
 
@@ -84,7 +84,7 @@ public async Task<string> TranslateTextAsync(string text)
 
 `TranslateTextAsync`メソッドは、要求 URI を生成し、トークン サービスからアクセス トークンを取得します。 テキストの翻訳の要求に送信し、 `translate` API で、結果を格納する XML 応答を返します。 XML 応答が解析され、呼び出し元のメソッドの表示、変換結果が返されます。
 
-テキストの翻訳の REST Api の詳細については、次を参照してください。 [Microsoft Translator Text API](http://docs.microsofttranslator.com/text-translate.html)します。
+テキストの翻訳の REST Api の詳細については、[Microsoft Translator Text API](http://docs.microsofttranslator.com/text-translate.html)を参照してください。
 
 ### <a name="configuring-text-translation"></a>テキストの翻訳を構成します。
 
@@ -100,7 +100,7 @@ string GenerateRequestUri(string endpoint, string text, string to)
 }
 ```
 
-このメソッドは、翻訳するテキストとテキストを翻訳する言語を設定します。 Microsoft Translator でサポートされる言語の一覧は、次を参照してください。 [Microsoft Translator Text API でサポートされる言語](/azure/cognitive-services/translator/languages/)します。
+このメソッドは、翻訳するテキストとテキストを翻訳する言語を設定します。 Microsoft Translator でサポートされる言語の一覧は、[Microsoft Translator Text API でサポートされる言語](/azure/cognitive-services/translator/languages/)を参照してください。
 
 > [!NOTE]
 > テキストが、どのような言語を理解する必要がある場合、`Detect`テキスト文字列の言語を検出するために API を呼び出すことができます。

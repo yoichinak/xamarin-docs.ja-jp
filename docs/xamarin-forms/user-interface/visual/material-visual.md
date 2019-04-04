@@ -25,12 +25,12 @@ Xamarin.Forms マテリアル Visual は iOS と Android でまったく同じ�
 アプリケーションで Xamarin.Forms マテリアル ビジュアルを有効にするプロセスは次のとおりです。
 
 1. 追加、 [Xamarin.Forms.Visual.Material](https://www.nuget.org/packages/Xamarin.Forms.Visual.Material/) iOS および Android プラットフォームのプロジェクトに NuGet パッケージ。 この NuGet パッケージは、iOS と Android での最適化されたマテリアル デザイン レンダラーを提供します。 Ios では、パッケージは、推移的依存関係を提供[Xamarin.iOS.MaterialComponents](https://www.nuget.org/packages/Xamarin.iOS.MaterialComponents)、これは、 C# Google へのバインド[iOS 用資料コンポーネント](https://material.io/develop/ios/)します。 Android では、パッケージは、TargetFramework が正しく設定されていることを確認するビルド ターゲットを提供します。
-1. 各プラットフォーム プロジェクトで素材のレンダラーを初期化します。 詳細については、次を参照してください。[素材のレンダラーを初期化](#initialize-material-renderers)します。
-1. 素材のレンダラーを使用するには、設定、 [ `Visual` ](xref:Xamarin.Forms.VisualElement.Visual)プロパティを`Material`マテリアル デザイン規則を採用すべきページにします。 詳細については、次を参照してください。[素材のレンダラーを消費する](#consume-material-renderers)します。
-1. [省略可能]素材のレンダラーをカスタマイズします。 詳細については、次を参照してください。[素材のレンダラーをカスタマイズ](#customize-material-renderers)します。
+1. 各プラットフォーム プロジェクトで素材のレンダラーを初期化します。 詳細については、[素材のレンダラーを初期化](#initialize-material-renderers)を参照してください。
+1. 素材のレンダラーを使用するには、設定、 [ `Visual` ](xref:Xamarin.Forms.VisualElement.Visual)プロパティを`Material`マテリアル デザイン規則を採用すべきページにします。 詳細については、[素材のレンダラーを消費する](#consume-material-renderers)を参照してください。
+1. [省略可能]素材のレンダラーをカスタマイズします。 詳細については、[素材のレンダラーをカスタマイズ](#customize-material-renderers)を参照してください。
 
 > [!IMPORTANT]
-> Android では、素材のレンダラーが 5.0 (API 21) の最小バージョンを必要または以上、およびバージョン 9.0 の TargetFramework (API 28)。 さらに、プラットフォーム プロジェクトには、Android サポート ライブラリ 28.0.0 が必要です。 以降、のテーマは、マテリアル コンポーネント テーマから継承または AppCompat のテーマを継承する続行する必要があります。 詳細については、次を参照してください。 [Android 用資料のコンポーネントの概要](https://github.com/material-components/material-components-android/blob/master/docs/getting-started.md)します。
+> Android では、素材のレンダラーが 5.0 (API 21) の最小バージョンを必要または以上、およびバージョン 9.0 の TargetFramework (API 28)。 さらに、プラットフォーム プロジェクトには、Android サポート ライブラリ 28.0.0 が必要です。 以降、のテーマは、マテリアル コンポーネント テーマから継承または AppCompat のテーマを継承する続行する必要があります。 詳細については、[Android 用資料のコンポーネントの概要](https://github.com/material-components/material-components-android/blob/master/docs/getting-started.md)を参照してください。
 
 素材のレンダラーは現在に含まれる、 [Xamarin.Forms.Visual.Material](https://www.nuget.org/packages/Xamarin.Forms.Visual.Material/)次のビュー用の NuGet パッケージ。
 
@@ -142,7 +142,7 @@ namespace MyApp.Android
 > [!NOTE]
 > 指定するレンダラー、`IVisual`型の一部としてその`ExportRendererAttribute`既定のレンダラーではなく、ビュー、オプトイン レンダリングに使用します。 レンダラーの選択時に、`Visual`ビューのプロパティを検査および表示機能の選択プロセスに含まれています。
 
-カスタム レンダラーの詳細については、次を参照してください。[カスタム レンダラー](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)します。
+カスタム レンダラーの詳細については、[カスタム レンダラー](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 

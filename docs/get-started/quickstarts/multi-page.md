@@ -114,7 +114,7 @@ ms.locfileid: "58854978"
       </ContentPage>
       ```
 
-      このコードで構成されると、ページのユーザー インターフェイスを宣言によって定義されます、 [ `Editor` ](xref:Xamarin.Forms.Editor)テキストの入力と 2 つの[ `Button` ](xref:Xamarin.Forms.Button)の保存または削除するには、アプリケーション インスタンスファイルです。 2 つ`Button`インスタンスが水平方向にレイアウトを[ `Grid`](xref:Xamarin.Forms.Grid)で、`Editor`と`Grid`に垂直方向にレイアウトされる、 [ `StackLayout`](xref:Xamarin.Forms.StackLayout)します。 さらに、`Editor`にバインドするデータ バインドを使用して、`Text`のプロパティ、`Note`モデル。 データ バインディングの詳細については、次を参照してください。[データ バインディング](deepdive.md#data-binding)で、 [Xamarin.Forms クイック スタートの Deep Dive](deepdive.md)します。
+      このコードで構成されると、ページのユーザー インターフェイスを宣言によって定義されます、 [ `Editor` ](xref:Xamarin.Forms.Editor)テキストの入力と 2 つの[ `Button` ](xref:Xamarin.Forms.Button)の保存または削除するには、アプリケーション インスタンスファイルです。 2 つ`Button`インスタンスが水平方向にレイアウトを[ `Grid`](xref:Xamarin.Forms.Grid)で、`Editor`と`Grid`に垂直方向にレイアウトされる、 [ `StackLayout`](xref:Xamarin.Forms.StackLayout)します。 さらに、`Editor`にバインドするデータ バインドを使用して、`Text`のプロパティ、`Note`モデル。 データ バインディングの詳細については、[データ バインディング](deepdive.md#data-binding)で、 [Xamarin.Forms クイック スタートの Deep Dive](deepdive.md)を参照してください。
 
       変更を保存**NoteEntryPage.xaml**キーを押して**CTRL + S**ファイルを閉じます。
 
@@ -169,7 +169,7 @@ ms.locfileid: "58854978"
       }
       ```
 
-      このコードを格納、`Note`インスタンスで 1 つの注記を表す、 [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)のページ。 ときに、**保存** [ `Button` ](xref:Xamarin.Forms.Button)が押された、`OnSaveButtonClicked`イベント ハンドラーが実行の内容を保存するか、 `Editor` 、ランダムに生成されたファイル名を持つ新しいファイルまたはメモを更新します。 存在する場合は、既存のファイルをします。 どちらの場合で、ファイルは、アプリケーションのローカル アプリケーション データ フォルダーに格納されます。 メソッドは、前のページに移動します。 ときに、**削除**`Button`が押された、`OnDeleteButtonClicked`イベント ハンドラーを実行すると、それが存在し、前のページにナビゲートされるファイルを削除します。 ナビゲーションの詳細については、次を参照してください。[ナビゲーション](deepdive.md#navigation)で、 [Xamarin.Forms クイック スタートの Deep Dive](deepdive.md)します。
+      このコードを格納、`Note`インスタンスで 1 つの注記を表す、 [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)のページ。 ときに、**保存** [ `Button` ](xref:Xamarin.Forms.Button)が押された、`OnSaveButtonClicked`イベント ハンドラーが実行の内容を保存するか、 `Editor` 、ランダムに生成されたファイル名を持つ新しいファイルまたはメモを更新します。 存在する場合は、既存のファイルをします。 どちらの場合で、ファイルは、アプリケーションのローカル アプリケーション データ フォルダーに格納されます。 メソッドは、前のページに移動します。 ときに、**削除**`Button`が押された、`OnDeleteButtonClicked`イベント ハンドラーを実行すると、それが存在し、前のページにナビゲートされるファイルを削除します。 ナビゲーションの詳細については、[ナビゲーション](deepdive.md#navigation)で、 [Xamarin.Forms クイック スタートの Deep Dive](deepdive.md)を参照してください。
 
       変更を保存**NoteEntryPage.xaml.cs**キーを押して**CTRL + S**ファイルを閉じます。
 
@@ -205,7 +205,7 @@ ms.locfileid: "58854978"
     </ContentPage>
     ```
 
-    このコードで構成されると、ページのユーザー インターフェイスを宣言によって定義されます、 [ `ListView` ](xref:Xamarin.Forms.ListView)と[ `ToolbarItem`](xref:Xamarin.Forms.ToolbarItem)します。 `ListView`使用データ、アプリケーションによって取得されるメモを表示するバインディングと、メモしてを選択するに移動、`NoteEntryPage`メモを変更できます。 新しいメモを作成して、キーを押しても、`ToolbarItem`します。 データ バインディングの詳細については、次を参照してください。[データ バインディング](deepdive.md#data-binding)で、 [Xamarin.Forms クイック スタートの Deep Dive](deepdive.md)します。
+    このコードで構成されると、ページのユーザー インターフェイスを宣言によって定義されます、 [ `ListView` ](xref:Xamarin.Forms.ListView)と[ `ToolbarItem`](xref:Xamarin.Forms.ToolbarItem)します。 `ListView`使用データ、アプリケーションによって取得されるメモを表示するバインディングと、メモしてを選択するに移動、`NoteEntryPage`メモを変更できます。 新しいメモを作成して、キーを押しても、`ToolbarItem`します。 データ バインディングの詳細については、[データ バインディング](deepdive.md#data-binding)で、 [Xamarin.Forms クイック スタートの Deep Dive](deepdive.md)を参照してください。
 
     変更を保存**NotesPage.xaml**キーを押して**CTRL + S**ファイルを閉じます。
 
@@ -272,7 +272,7 @@ ms.locfileid: "58854978"
     }
     ```    
 
-    このコードの機能を定義する、`NotesPage`します。 ページが表示されたら、`OnAppearing`メソッドの実行を設定します、 [ `ListView` ](xref:Xamarin.Forms.ListView)メモをローカル アプリケーション データ フォルダーから取得されたとします。 ときに、 [ `ToolbarItem` ](xref:Xamarin.Forms.ToolbarItem)が押された、`OnNoteAddedClicked`イベント ハンドラーが実行されます。 このメソッドに移動、`NoteEntryPage`で、設定、 [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)の`NoteEntryPage`を新しい`Note`インスタンス。 内の項目のときに、`ListView`が選択されている、`OnListViewItemSelected`イベント ハンドラーが実行されます。 このメソッドに移動、`NoteEntryPage`で、設定、 [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)の`NoteEntryPage`に、選択した`Note`インスタンス。 ナビゲーションの詳細については、次を参照してください。[ナビゲーション](deepdive.md#navigation)で、 [Xamarin.Forms クイック スタートの Deep Dive](deepdive.md)します。
+    このコードの機能を定義する、`NotesPage`します。 ページが表示されたら、`OnAppearing`メソッドの実行を設定します、 [ `ListView` ](xref:Xamarin.Forms.ListView)メモをローカル アプリケーション データ フォルダーから取得されたとします。 ときに、 [ `ToolbarItem` ](xref:Xamarin.Forms.ToolbarItem)が押された、`OnNoteAddedClicked`イベント ハンドラーが実行されます。 このメソッドに移動、`NoteEntryPage`で、設定、 [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)の`NoteEntryPage`を新しい`Note`インスタンス。 内の項目のときに、`ListView`が選択されている、`OnListViewItemSelected`イベント ハンドラーが実行されます。 このメソッドに移動、`NoteEntryPage`で、設定、 [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)の`NoteEntryPage`に、選択した`Note`インスタンス。 ナビゲーションの詳細については、[ナビゲーション](deepdive.md#navigation)で、 [Xamarin.Forms クイック スタートの Deep Dive](deepdive.md)を参照してください。
 
     変更を保存**NotesPage.xaml.cs**キーを押して**CTRL + S**ファイルを閉じます。
 
@@ -303,7 +303,7 @@ ms.locfileid: "58854978"
     }
     ```
 
-    このコードは、名前空間宣言を追加、`System.IO`名前空間の静的な宣言を追加します。`FolderPath`型のプロパティ`string`。 `FolderPath`注データが格納されるデバイス上のパスを格納するプロパティが使用されます。 さらに、コードを初期化します、`FolderPath`プロパティ、`App`コンス トラクター、および初期化、 [ `MainPage` ](xref:Xamarin.Forms.Application.MainPage)プロパティを[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)をホストする、インスタンス`NotesPage`します。 ナビゲーションの詳細については、次を参照してください。[ナビゲーション](deepdive.md#navigation)で、 [Xamarin.Forms クイック スタートの Deep Dive](deepdive.md)します。
+    このコードは、名前空間宣言を追加、`System.IO`名前空間の静的な宣言を追加します。`FolderPath`型のプロパティ`string`。 `FolderPath`注データが格納されるデバイス上のパスを格納するプロパティが使用されます。 さらに、コードを初期化します、`FolderPath`プロパティ、`App`コンス トラクター、および初期化、 [ `MainPage` ](xref:Xamarin.Forms.Application.MainPage)プロパティを[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)をホストする、インスタンス`NotesPage`します。 ナビゲーションの詳細については、[ナビゲーション](deepdive.md#navigation)で、 [Xamarin.Forms クイック スタートの Deep Dive](deepdive.md)を参照してください。
 
     **CTRL + S** を押し、**App.xaml.cs** への変更内容を保存してから、ファイルを閉じます。
 
@@ -311,7 +311,7 @@ ms.locfileid: "58854978"
 
     これには、不要になったために使用されるページが削除されます。
 
-15. 構築し、各プラットフォームで、プロジェクトを実行します。 詳細については、次を参照してください。[クイック スタートを構築](single-page.md#building-the-quickstart)します。
+15. 構築し、各プラットフォームで、プロジェクトを実行します。 詳細については、[クイック スタートを構築](single-page.md#building-the-quickstart)を参照してください。
 
     **NotesPage**キーを押して、 **+** に移動するボタン、 **NoteEntryPage**メモを入力します。 移動は、アプリケーションのメモの保存後、 **NotesPage**します。
 
@@ -397,7 +397,7 @@ ms.locfileid: "58854978"
       </ContentPage>
       ```
 
-      このコードで構成されると、ページのユーザー インターフェイスを宣言によって定義されます、 [ `Editor` ](xref:Xamarin.Forms.Editor)テキストの入力と 2 つの[ `Button` ](xref:Xamarin.Forms.Button)の保存または削除するには、アプリケーション インスタンスファイルです。 2 つ`Button`インスタンスが水平方向にレイアウトを[ `Grid`](xref:Xamarin.Forms.Grid)で、`Editor`と`Grid`に垂直方向にレイアウトされる、 [ `StackLayout`](xref:Xamarin.Forms.StackLayout)します。 さらに、`Editor`にバインドするデータ バインドを使用して、`Text`のプロパティ、`Note`モデル。 データ バインディングの詳細については、次を参照してください。[データ バインディング](deepdive.md#data-binding)で、 [Xamarin.Forms クイック スタートの Deep Dive](deepdive.md)します。
+      このコードで構成されると、ページのユーザー インターフェイスを宣言によって定義されます、 [ `Editor` ](xref:Xamarin.Forms.Editor)テキストの入力と 2 つの[ `Button` ](xref:Xamarin.Forms.Button)の保存または削除するには、アプリケーション インスタンスファイルです。 2 つ`Button`インスタンスが水平方向にレイアウトを[ `Grid`](xref:Xamarin.Forms.Grid)で、`Editor`と`Grid`に垂直方向にレイアウトされる、 [ `StackLayout`](xref:Xamarin.Forms.StackLayout)します。 さらに、`Editor`にバインドするデータ バインドを使用して、`Text`のプロパティ、`Note`モデル。 データ バインディングの詳細については、[データ バインディング](deepdive.md#data-binding)で、 [Xamarin.Forms クイック スタートの Deep Dive](deepdive.md)を参照してください。
 
       変更を保存**NoteEntryPage.xaml**を選択して**ファイル > 保存**(またはキーを押して **&#8984; + S**)、ファイルを閉じます。
 
@@ -452,7 +452,7 @@ ms.locfileid: "58854978"
       }
       ```
 
-      このコードを格納、`Note`インスタンスで 1 つの注記を表す、 [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)のページ。 ときに、**保存** [ `Button` ](xref:Xamarin.Forms.Button)が押された、`OnSaveButtonClicked`イベント ハンドラーが実行の内容を保存するか、 `Editor` 、ランダムに生成されたファイル名を持つ新しいファイルまたはメモを更新します。 存在する場合は、既存のファイルをします。 どちらの場合で、ファイルは、アプリケーションのローカル アプリケーション データ フォルダーに格納されます。 メソッドは、前のページに移動します。 ときに、**削除**`Button`が押された、`OnDeleteButtonClicked`イベント ハンドラーを実行すると、それが存在し、前のページにナビゲートされるファイルを削除します。 ナビゲーションの詳細については、次を参照してください。[ナビゲーション](deepdive.md#navigation)で、 [Xamarin.Forms クイック スタートの Deep Dive](deepdive.md)します。
+      このコードを格納、`Note`インスタンスで 1 つの注記を表す、 [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)のページ。 ときに、**保存** [ `Button` ](xref:Xamarin.Forms.Button)が押された、`OnSaveButtonClicked`イベント ハンドラーが実行の内容を保存するか、 `Editor` 、ランダムに生成されたファイル名を持つ新しいファイルまたはメモを更新します。 存在する場合は、既存のファイルをします。 どちらの場合で、ファイルは、アプリケーションのローカル アプリケーション データ フォルダーに格納されます。 メソッドは、前のページに移動します。 ときに、**削除**`Button`が押された、`OnDeleteButtonClicked`イベント ハンドラーを実行すると、それが存在し、前のページにナビゲートされるファイルを削除します。 ナビゲーションの詳細については、[ナビゲーション](deepdive.md#navigation)で、 [Xamarin.Forms クイック スタートの Deep Dive](deepdive.md)を参照してください。
 
       変更を保存**NoteEntryPage.xaml.cs**を選択して**ファイル > 保存**(またはキーを押して **&#8984; + S**)、ファイルを閉じます。
 
@@ -488,7 +488,7 @@ ms.locfileid: "58854978"
     </ContentPage>
     ```
 
-    このコードで構成されると、ページのユーザー インターフェイスを宣言によって定義されます、 [ `ListView` ](xref:Xamarin.Forms.ListView)と[ `ToolbarItem`](xref:Xamarin.Forms.ToolbarItem)します。 `ListView`使用データ、アプリケーションによって取得されるメモを表示するバインディングと、メモしてを選択するに移動、`NoteEntryPage`メモを変更できます。 新しいメモを作成して、キーを押しても、`ToolbarItem`します。 データ バインディングの詳細については、次を参照してください。[データ バインディング](deepdive.md#data-binding)で、 [Xamarin.Forms クイック スタートの Deep Dive](deepdive.md)します。
+    このコードで構成されると、ページのユーザー インターフェイスを宣言によって定義されます、 [ `ListView` ](xref:Xamarin.Forms.ListView)と[ `ToolbarItem`](xref:Xamarin.Forms.ToolbarItem)します。 `ListView`使用データ、アプリケーションによって取得されるメモを表示するバインディングと、メモしてを選択するに移動、`NoteEntryPage`メモを変更できます。 新しいメモを作成して、キーを押しても、`ToolbarItem`します。 データ バインディングの詳細については、[データ バインディング](deepdive.md#data-binding)で、 [Xamarin.Forms クイック スタートの Deep Dive](deepdive.md)を参照してください。
 
     変更を保存**NotesPage.xaml**を選択して**ファイル > 保存**(またはキーを押して **&#8984; + S**)、ファイルを閉じます。
 
@@ -555,7 +555,7 @@ ms.locfileid: "58854978"
     }
     ```    
 
-    このコードの機能を定義する、`NotesPage`します。 ページが表示されたら、`OnAppearing`メソッドの実行を設定します、 [ `ListView` ](xref:Xamarin.Forms.ListView)メモをローカル アプリケーション データ フォルダーから取得されたとします。 ときに、 [ `ToolbarItem` ](xref:Xamarin.Forms.ToolbarItem)が押された、`OnNoteAddedClicked`イベント ハンドラーが実行されます。 このメソッドに移動、`NoteEntryPage`で、設定、 [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)の`NoteEntryPage`を新しい`Note`インスタンス。 内の項目のときに、`ListView`が選択されている、`OnListViewItemSelected`イベント ハンドラーが実行されます。 このメソッドに移動、`NoteEntryPage`で、設定、 [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)の`NoteEntryPage`に、選択した`Note`インスタンス。 ナビゲーションの詳細については、次を参照してください。[ナビゲーション](deepdive.md#navigation)で、 [Xamarin.Forms クイック スタートの Deep Dive](deepdive.md)します。
+    このコードの機能を定義する、`NotesPage`します。 ページが表示されたら、`OnAppearing`メソッドの実行を設定します、 [ `ListView` ](xref:Xamarin.Forms.ListView)メモをローカル アプリケーション データ フォルダーから取得されたとします。 ときに、 [ `ToolbarItem` ](xref:Xamarin.Forms.ToolbarItem)が押された、`OnNoteAddedClicked`イベント ハンドラーが実行されます。 このメソッドに移動、`NoteEntryPage`で、設定、 [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)の`NoteEntryPage`を新しい`Note`インスタンス。 内の項目のときに、`ListView`が選択されている、`OnListViewItemSelected`イベント ハンドラーが実行されます。 このメソッドに移動、`NoteEntryPage`で、設定、 [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)の`NoteEntryPage`に、選択した`Note`インスタンス。 ナビゲーションの詳細については、[ナビゲーション](deepdive.md#navigation)で、 [Xamarin.Forms クイック スタートの Deep Dive](deepdive.md)を参照してください。
 
     変更を保存**NotesPage.xaml.cs**を選択して**ファイル > 保存**(またはキーを押して **&#8984; + S**)、ファイルを閉じます。
 
@@ -586,7 +586,7 @@ ms.locfileid: "58854978"
     }
     ```
 
-    このコードは、名前空間宣言を追加、`System.IO`名前空間の静的な宣言を追加します。`FolderPath`型のプロパティ`string`。 `FolderPath`注データが格納されるデバイス上のパスを格納するプロパティが使用されます。 さらに、コードを初期化します、`FolderPath`プロパティ、`App`コンス トラクター、および初期化、 [ `MainPage` ](xref:Xamarin.Forms.Application.MainPage)プロパティを[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)をホストする、インスタンス`NotesPage`します。 ナビゲーションの詳細については、次を参照してください。[ナビゲーション](deepdive.md#navigation)で、 [Xamarin.Forms クイック スタートの Deep Dive](deepdive.md)します。
+    このコードは、名前空間宣言を追加、`System.IO`名前空間の静的な宣言を追加します。`FolderPath`型のプロパティ`string`。 `FolderPath`注データが格納されるデバイス上のパスを格納するプロパティが使用されます。 さらに、コードを初期化します、`FolderPath`プロパティ、`App`コンス トラクター、および初期化、 [ `MainPage` ](xref:Xamarin.Forms.Application.MainPage)プロパティを[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)をホストする、インスタンス`NotesPage`します。 ナビゲーションの詳細については、[ナビゲーション](deepdive.md#navigation)で、 [Xamarin.Forms クイック スタートの Deep Dive](deepdive.md)を参照してください。
 
     **[ファイル]、[保存]** の順に選択し (または **&#8984; + S** キーを押し)、**App.xaml.cs** への変更内容を保存してから、ファイルを閉じます。
 
@@ -594,7 +594,7 @@ ms.locfileid: "58854978"
 
     これには、不要になったために使用されるページが削除されます。
 
-15. 構築し、各プラットフォームで、プロジェクトを実行します。 詳細については、次を参照してください。[クイック スタートを構築](single-page.md#building-the-quickstart)します。
+15. 構築し、各プラットフォームで、プロジェクトを実行します。 詳細については、[クイック スタートを構築](single-page.md#building-the-quickstart)を参照してください。
 
     **NotesPage**キーを押して、 **+** に移動するボタン、 **NoteEntryPage**メモを入力します。 移動は、アプリケーションのメモの保存後、 **NotesPage**します。
 

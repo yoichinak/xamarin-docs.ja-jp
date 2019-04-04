@@ -85,7 +85,7 @@ Await を使用して、呼び出し元のスレッド – をブロックしま
 
 タスクは自体をキャンセルし、キャンセルを確認します。
 
-キャンセルの詳細については、次を参照してください。[非同期タスクを取り消す方法](https://msdn.microsoft.com/library/vstudio/jj155761.aspx)msdn です。
+キャンセルの詳細については、[非同期タスクを取り消す方法](https://msdn.microsoft.com/library/vstudio/jj155761.aspx)msdn を参照してください。
 
 ## <a name="example"></a>例
 

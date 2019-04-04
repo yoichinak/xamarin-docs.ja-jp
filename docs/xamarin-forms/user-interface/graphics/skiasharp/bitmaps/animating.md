@@ -34,7 +34,7 @@ SkiaSharp と似たことを行うことができます。 この記事では、
 
 ## <a name="bitmap-animation"></a>ビットマップのアニメーション
 
-マンデルブロ集合とは、魅力的な視覚的が時間のかかる computionally です。 (マンデルブロ集合とここで使用する数学の詳細については、次を参照してください。[の第 20 章_を Xamarin.Forms での Mobile Apps の作成_](https://xamarin.azureedge.net/developer/xamarin-forms-book/XamarinFormsBook-Ch20-Apr2016.pdf) 666 ページで開始します。 次の説明を想定その背景知識。)
+マンデルブロ集合とは、魅力的な視覚的が時間のかかる computionally です。 (マンデルブロ集合とここで使用する数学の詳細については、[の第 20 章_を Xamarin.Forms での Mobile Apps の作成_](https://xamarin.azureedge.net/developer/xamarin-forms-book/XamarinFormsBook-Ch20-Apr2016.pdf) 666 ページで開始を参照してください。 次の説明を想定その背景知識。)
 
 [**マンデルブロ アニメーション**](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/MandelAnima/)サンプルでは、ビットマップのアニメーションを使用して、マンデルブロ集合に固定小数点の継続的な拡大をシミュレートします。 ズーム アウト、後で拡大され、状態のままか、プログラムを終了するまで、サイクルが繰り返されます。
 

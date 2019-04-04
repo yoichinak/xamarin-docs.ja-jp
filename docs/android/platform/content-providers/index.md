@@ -7,8 +7,13 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
+ms.openlocfilehash: 60f9420fc630bcfc44a6b19356b2315ac8bcd523
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670313"
 ---
-
 # <a name="intro-to-contentproviders"></a>ContentProviders の概要
 
 _Android オペレーティング システムでは、コンテンツ プロバイダーを使用して、メディア ファイル、連絡先や予定表の情報などの共有データへのアクセスを容易にします。この記事を ContentProvider クラスについて説明し、その使用方法の 2 つの例を示します。_

@@ -37,7 +37,7 @@ _Xamarin.Forms には、アニメーションの速度または実行されて�
 
 `In`と`Out`サフィックスは、イージング関数によって提供される効果が最後に、またはその両方で、アニメーションの先頭に顕著なを指定します。
 
-さらに、カスタム イージング関数を作成できます。 詳細については、次を参照してください。[カスタム イージング関数](#customeasing)します。
+さらに、カスタム イージング関数を作成できます。 詳細については、[カスタム イージング関数](#customeasing)を参照してください。
 
 ## <a name="consuming-an-easing-function"></a>イージング関数を使用
 
@@ -53,7 +53,7 @@ await image.TranslateTo(0, -200, 2000, Easing.BounceOut);
 
 アニメーションにイージング関数を指定するは、アニメーションの速度は、非線形のようになり、イージング関数によって提供される効果を生成します。 アニメーションを作成するときに、イージング関数を省略すると、既定値を使用するアニメーションが[ `Linear` ](xref:Xamarin.Forms.Easing.Linear)イージング機能で、線形の速度が生成されます。
 
-アニメーションの拡張メソッドを使用しての詳細については、 [ `ViewExtensions` ](xref:Xamarin.Forms.ViewExtensions)クラスを参照してください[単純なアニメーション](~/xamarin-forms/user-interface/animation/simple.md)します。 イージング関数を使用できますが、 [ `Animation` ](xref:Xamarin.Forms.Animation)クラス。 詳細については、次を参照してください。[アニメーション](~/xamarin-forms/user-interface/animation/custom.md)します。
+アニメーションの拡張メソッドを使用しての詳細については、 [ `ViewExtensions` ](xref:Xamarin.Forms.ViewExtensions)クラスを参照してください[単純なアニメーション](~/xamarin-forms/user-interface/animation/simple.md)します。 イージング関数を使用できますが、 [ `Animation` ](xref:Xamarin.Forms.Animation)クラス。 詳細については、[アニメーション](~/xamarin-forms/user-interface/animation/custom.md)を参照してください。
 
 <a name="customeasing" />
 

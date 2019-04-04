@@ -73,21 +73,21 @@ Xamarin.Android 9.0、プロジェクトを作成する必要があります最�
 
     [![Installing Android 円パッケージ](pie-images/vs/sdk-manager-sml.png)](pie-images/vs/sdk-manager.png#lightbox)
 
-4. エミュレーターを使用している場合をサポートする仮想デバイスを作成します。 **API レベル 28**します。 仮想デバイスの作成の詳細については、次を参照してください。[仮想デバイスの管理が Android Device Manager](~/android/get-started/installation/android-emulator/device-manager.md)します。
+4. エミュレーターを使用している場合をサポートする仮想デバイスを作成します。 **API レベル 28**します。 仮想デバイスの作成の詳細については、[仮想デバイスの管理が Android Device Manager](~/android/get-started/installation/android-emulator/device-manager.md)を参照してください。
 
 ### <a name="start-a-xamarinandroid-project"></a>Xamarin.Android プロジェクトを開始します。
 
-新しい Xamarin.Android プロジェクトを作成します。 Xamarin で Android の開発に慣れていない場合は、次を参照してください。 [Hello, Android](~/android/get-started/hello-android/index.md)を Xamarin.Android プロジェクトを作成する方法について説明します。
+新しい Xamarin.Android プロジェクトを作成します。 Xamarin で Android の開発に慣れていない場合は、[Hello, Android](~/android/get-started/hello-android/index.md)を Xamarin.Android プロジェクトを作成する方法について説明を参照してください。
 
-Android プロジェクトを作成するときに、ターゲット Android バージョン 9.0 以降にバージョン設定を構成する必要があります。 たとえば、Android の円のプロジェクトを対象にする必要がありますを構成するにプロジェクトのターゲットの Android API レベル**Android 9.0** (API 28)。 設定することも、ターゲット フレームワーク レベル API 28 以降をお勧めします。 Android API レベルを構成する方法の詳細は、次を参照してください。 [Understanding Android API Levels](~/android/app-fundamentals/android-api-levels.md)します。
+Android プロジェクトを作成するときに、ターゲット Android バージョン 9.0 以降にバージョン設定を構成する必要があります。 たとえば、Android の円のプロジェクトを対象にする必要がありますを構成するにプロジェクトのターゲットの Android API レベル**Android 9.0** (API 28)。 設定することも、ターゲット フレームワーク レベル API 28 以降をお勧めします。 Android API レベルを構成する方法の詳細は、[Understanding Android API Levels](~/android/app-fundamentals/android-api-levels.md)を参照してください。
 
 
 ### <a name="configure-a-device-or-emulator"></a>デバイスまたはエミュレーターを構成します。
 
 Nexus やピクセルなどの物理デバイスを使用している場合はデバイスを更新する Android の円を次の手順で[Nexus とピクセル デバイスの工場出荷時イメージ](https://developers.google.com/android/images)します。
 
-エミュレーターを使用している場合は、API レベル 28 仮想デバイスを作成し、x86 ベースのイメージを選択します。 Android Device Manager を使用して作成し、仮想デバイスの管理方法の詳細については、次を参照してください。[仮想デバイスの管理が Android Device Manager](~/android/get-started/installation/android-emulator/device-manager.md)します。
-テストとデバッグ用の Android エミュレーターの使用方法の詳細については、次を参照してください。 [Android エミュレーターでデバッグする](~/android/deploy-test/debugging/debug-on-emulator.md)します。
+エミュレーターを使用している場合は、API レベル 28 仮想デバイスを作成し、x86 ベースのイメージを選択します。 Android Device Manager を使用して作成し、仮想デバイスの管理方法の詳細については、[仮想デバイスの管理が Android Device Manager](~/android/get-started/installation/android-emulator/device-manager.md)を参照してください。
+テストとデバッグ用の Android エミュレーターの使用方法の詳細については、[Android エミュレーターでデバッグする](~/android/deploy-test/debugging/debug-on-emulator.md)を参照してください。
 
 
 
@@ -137,7 +137,7 @@ Window.Attributes.LayoutInDisplayCutoutMode =
 
 デバイスで、素材の領域に関する詳細情報が必要な場合、新しい使える[DisplayCutout](https://developer.android.com/reference/android/view/DisplayCutout.html)クラス。 `DisplayCutout` コンテンツを表示するために使用できない表示の領域を表します。 この情報を使用すると、アプリがこの非機能的な領域の内容を表示しないように、素材の形状と場所を取得します。
 
-Android の P で素材の新機能についての詳細については、次を参照してください。[ディスプレイ素材サポート](https://developer.android.com/about/versions/pie/android-9.0#cutout)します。
+Android の P で素材の新機能についての詳細については、[ディスプレイ素材サポート](https://developer.android.com/about/versions/pie/android-9.0#cutout)を参照してください。
 
 
 
@@ -204,7 +204,7 @@ Android の円グラフには、メッセージ エクスペリエンスを向�
     notificationManager.Notify(notificationId, builder.Build());
     ```
 
-通知の作成の詳細については、次を参照してください。[ローカル通知](~/android/app-fundamentals/notifications/local-notifications.md)します。
+通知の作成の詳細については、[ローカル通知](~/android/app-fundamentals/notifications/local-notifications.md)を参照してください。
 
 
 ### <a name="indoor-positioning"></a>室内の配置
@@ -213,7 +213,7 @@ Android の円は、IEEE 802.11mc のサポートを提供します (とも呼�
 
 [![EWiFi RTT を使用して、屋内ナビゲーションの xample](pie-images/05-wifi-rtt-sml.png)](pie-images/05-wifi-rtt.png#lightbox)
 
-新しい[WifiRttManager](https://developer.android.com/reference/android/net/wifi/rtt/WifiRttManager)クラスといくつかのヘルパー クラスは、Wi-fi デバイスまでの距離を測定する手段を提供します。 Android の P で導入されたに屋内配置 Api に関する詳細については、次を参照してください。 [Android.Net.Wifi.Rtt](https://developer.android.com/reference/android/net/wifi/rtt/package-summary)します。
+新しい[WifiRttManager](https://developer.android.com/reference/android/net/wifi/rtt/WifiRttManager)クラスといくつかのヘルパー クラスは、Wi-fi デバイスまでの距離を測定する手段を提供します。 Android の P で導入されたに屋内配置 Api に関する詳細については、[Android.Net.Wifi.Rtt](https://developer.android.com/reference/android/net/wifi/rtt/package-summary)を参照してください。
 
 
 ### <a name="multi-camera-support"></a>複数のカメラのサポート
@@ -238,7 +238,7 @@ Android の円も含まれています、新しい[セッション構成](https:
 
 -   [JobScheduler](https://developer.android.com/reference/android/app/job/JobScheduler.html)はネットワーク関連の仕事をよりインテリジェントに処理するために強化されています。 新しい[GetNetwork](https://developer.android.com/reference/android/app/job/JobParameters#getNetwork%28%29)のメソッド、 [JobParameters](https://developer.android.com/reference/android/app/job/JobParameters)クラスは、特定のジョブをすべてのネットワーク要求を実行するための最適なネットワークを返します。
 
-Android の円の最新の機能の詳細については、次を参照してください。 [Android 9 の機能と Api](https://developer.android.com/about/versions/pie/android-9.0)します。
+Android の円の最新の機能の詳細については、[Android 9 の機能と Api](https://developer.android.com/about/versions/pie/android-9.0)を参照してください。
 
 
 ## <a name="behavior-changes"></a>動作の変更
@@ -251,7 +251,7 @@ Android の円の最新の機能の詳細については、次を参照してく
 
 -  直接パスで別のアプリのデータ ディレクトリへのアクセスはもう行えません。
 
-Android の P を対象とするアプリの動作の変更の詳細については、次を参照してください。[動作の変更](https://developer.android.com/about/versions/pie/android-9.0-changes-all#p-apps)します。
+Android の P を対象とするアプリの動作の変更の詳細については、[動作の変更](https://developer.android.com/about/versions/pie/android-9.0-changes-all#p-apps)を参照してください。
 
 
 ## <a name="sample-code"></a>サンプル コード

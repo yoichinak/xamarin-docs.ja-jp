@@ -29,7 +29,7 @@ Bing Spell Check REST API は 2 つの動作モードを備え、API に要求�
 
 Bing Spell Check API を使用する API キーを取得する必要があります。 これから入手できる[Cognitive Services をお試しください](https://azure.microsoft.com/try/cognitive-services/)
 
-Bing Spell Check API でサポートされる言語の一覧は、次を参照してください。[サポートされる言語](/azure/cognitive-services/bing-spell-check/bing-spell-check-supported-languages/)します。 Bing Spell Check API の詳細については、次を参照してください。 [Bing Spell 確認ドキュメント](/azure/cognitive-services/bing-spell-check/)します。
+Bing Spell Check API でサポートされる言語の一覧は、[サポートされる言語](/azure/cognitive-services/bing-spell-check/bing-spell-check-supported-languages/)を参照してください。 Bing Spell Check API の詳細については、[Bing Spell 確認ドキュメント](/azure/cognitive-services/bing-spell-check/)を参照してください。
 
 ## <a name="authentication"></a>認証
 
@@ -79,7 +79,7 @@ string GenerateRequestUri(string spellCheckEndpoint, string text, SpellCheckMode
 
 このメソッドは、スペル チェック、およびスペル チェック モードにするテキストを設定します。
 
-Bing Spell Check REST API の詳細については、次を参照してください。 [Spell Check API v7 参照](/rest/api/cognitiveservices/bing-spell-check-api-v7-reference/)します。
+Bing Spell Check REST API の詳細については、[Spell Check API v7 参照](/rest/api/cognitiveservices/bing-spell-check-api-v7-reference/)を参照してください。
 
 ### <a name="sending-the-request"></a>要求を送信します。
 
@@ -95,7 +95,7 @@ async Task<string> SendRequestAsync(string url)
 
 このメソッドが GET 要求を送信、 `SpellCheck` API を変換するテキストを指定する要求 URL と、スペル チェック モードを使用します。 応答が読み取られ、呼び出し元メソッドに返されます。
 
-`SpellCheck` API は、要求が有効である、要求が成功したことを示すし、の要求された情報は、応答で提供される応答には、HTTP 状態コード 200 (OK) を送信します。 応答オブジェクトの一覧は、次を参照してください。[応答オブジェクト](/rest/api/cognitiveservices/bing-spell-check-api-v7-reference#response-objects)します。
+`SpellCheck` API は、要求が有効である、要求が成功したことを示すし、の要求された情報は、応答で提供される応答には、HTTP 状態コード 200 (OK) を送信します。 応答オブジェクトの一覧は、[応答オブジェクト](/rest/api/cognitiveservices/bing-spell-check-api-v7-reference#response-objects)を参照してください。
 
 ### <a name="processing-the-response"></a>応答の処理
 

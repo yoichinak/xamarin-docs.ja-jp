@@ -29,7 +29,7 @@ Android アプリケーションの最も基本的な構成要素には、リス
 
 
 > [!NOTE]
-> `RecyclerView`ウィジェットより高度で柔軟性のあるバージョンの`ListView`します。 `RecyclerView`後継は、 `ListView` (と`GridView`)、使用することをお勧めします。`RecyclerView`なく`ListView`新しいアプリの開発。 詳細については、次を参照してください。 [RecyclerView](~/android/user-interface/layouts/recycler-view/index.md)します。
+> `RecyclerView`ウィジェットより高度で柔軟性のあるバージョンの`ListView`します。 `RecyclerView`後継は、 `ListView` (と`GridView`)、使用することをお勧めします。`RecyclerView`なく`ListView`新しいアプリの開発。 詳細については、[RecyclerView](~/android/user-interface/layouts/recycler-view/index.md)を参照してください。
 
 
 

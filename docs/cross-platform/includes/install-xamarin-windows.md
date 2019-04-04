@@ -39,4 +39,4 @@ Xamarin の一部としてインストールすることができます、_新�
 
 Visual Studio 2019 が既にインストールされている場合は、ワークロードを変更する Visual Studio 2019 のインストーラーを再実行して Xamarin を追加 (を参照してください[Visual Studio の変更](https://docs.microsoft.com/visualstudio/install/modify-visual-studio)詳細については)。 次に、前述の手順に従って、Xamarin をインストールします。
 
-ダウンロードと Visual Studio 2019 のインストールに関する詳細については、次を参照してください。 [Visual Studio のインストール 2019](https://docs.microsoft.com/visualstudio/install/install-visual-studio)します。
+ダウンロードと Visual Studio 2019 のインストールに関する詳細については、[Visual Studio のインストール 2019](https://docs.microsoft.com/visualstudio/install/install-visual-studio)を参照してください。

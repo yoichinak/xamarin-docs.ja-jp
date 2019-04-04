@@ -99,12 +99,12 @@ Android Wear エミュレーターを使用するを使用して、Android Wear 
 
 -----
 
-Android Wear エミュレーターの設定に関する詳細については、次を参照してください。[エミュレーターで Android Wear をデバッグ](~/android/wear/deploy-test/debug-on-emulator.md)します。
+Android Wear エミュレーターの設定に関する詳細については、[エミュレーターで Android Wear をデバッグ](~/android/wear/deploy-test/debug-on-emulator.md)を参照してください。
 
 
 ### <a name="android-wear-device"></a>Android Wear デバイス
 
-Android Wear デバイス、Android Wear スマートウォッチなどを使っている場合は、エミュレーターを使用する代わりにこのデバイスでアプリをデバッグできます。 Wear デバイスでの開発方法の詳細については、次を参照してください。 [Wear デバイスでのデバッグ](~/android/wear/deploy-test/debug-on-device.md)します。
+Android Wear デバイス、Android Wear スマートウォッチなどを使っている場合は、エミュレーターを使用する代わりにこのデバイスでアプリをデバッグできます。 Wear デバイスでの開発方法の詳細については、[Wear デバイスでのデバッグ](~/android/wear/deploy-test/debug-on-device.md)を参照してください。
 
 
 ## <a name="create-your-first-android-wear-app"></a>最初の Android Wear アプリを作成します。
@@ -118,7 +118,7 @@ Android wear のアプリケーションは、付属の Android フォン アプ
 
 Android Wear アプリケーションをメインの Android アプリへの参照として追加する場合は自動的に、Android Wear のプロジェクトと見なされます、必要なすべての XML とメタデータを生成します。 さらに、Google Play にアプリを簡単に出荷できるようにパッケージとバージョン番号が一致することを確認します。 
 
-Wear アプリをパッケージ化の詳細については、次を参照してください。[パッケージ化操作](~/android/wear/deploy-test/packaging.md)します。
+Wear アプリをパッケージ化の詳細については、[パッケージ化操作](~/android/wear/deploy-test/packaging.md)を参照してください。
 
 
 ## <a name="related-links"></a>関連リンク

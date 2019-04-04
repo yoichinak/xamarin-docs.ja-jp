@@ -71,7 +71,7 @@ this.PositionY += this.VelocityY * seconds;
 
 下のフレーム レートでを実行するゲームが少ないそのオブジェクトの位置を頻繁に更新ことを検討してください。 そのため、各更新プログラムは、ゲームをより頻繁に更新していた場合はさらに移動するオブジェクトになります。 `seconds`前回の更新以降の経過時間の量を報告することによって、このアカウントの値します。
 
-時間ベースのアニメーションを追加する方法の例は、次を参照してください。[ベースの移動の時間をカバーするこのレシピ](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/game_development/time_based_movement)します。
+時間ベースのアニメーションを追加する方法の例は、[ベースの移動の時間をカバーするこのレシピ](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/game_development/time_based_movement)を参照してください。
 
 
 ### <a name="calculating-positions-using-velocity"></a>Velocity を使用して位置の計算

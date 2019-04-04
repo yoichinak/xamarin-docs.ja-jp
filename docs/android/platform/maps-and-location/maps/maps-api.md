@@ -40,7 +40,7 @@ Xamarin.Android アプリは Google Maps Android API を使用することは前
 
 ### <a name="a-nameobtain-maps-key-obtain-a-google-maps-api-key"></a><a name="obtain-maps-key" />Google マップ API キーを入手します。
 
-最初の手順では、Google マップ API キー (従来の Google Maps v1 API から API キーを再利用できないことに注意してください) を取得します。 取得して、Xamarin.Android で API キーを使用する方法については、次を参照してください。 [A Google マップ API のキーを取得する](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)します。
+最初の手順では、Google マップ API キー (従来の Google Maps v1 API から API キーを再利用できないことに注意してください) を取得します。 取得して、Xamarin.Android で API キーを使用する方法については、[A Google マップ API のキーを取得する](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)を参照してください。
  
 
 ### <a name="a-nameinstall-gps-sdk--install-the-google-play-services-sdk"></a><a name="install-gps-sdk" /> Google Play Services SDK をインストールします。
@@ -140,7 +140,7 @@ Google Play Services のマップ パッケージを追加するを右クリッ�
 
 ### <a name="a-namecreate-emulator-with-google-api-create-an-emulator-with-google-apis"></a><a name="create-emulator-with-google-api" />Google Api を使用した、エミュレーターを作成します。
 
-物理 Android デバイスで Google play 開発者サービスがインストールされていないこと、開発用のエミュレーター イメージを作成することができます。 詳細については、次を参照してください。、[デバイス マネージャー](~/android/get-started/installation/android-emulator/device-manager.md)します。
+物理 Android デバイスで Google play 開発者サービスがインストールされていないこと、開発用のエミュレーター イメージを作成することができます。 詳細については、、[デバイス マネージャー](~/android/get-started/installation/android-emulator/device-manager.md)を参照してください。
 
 
 ## <a name="the-googlemap-class"></a>GoogleMap クラス

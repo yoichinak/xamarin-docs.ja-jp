@@ -37,7 +37,7 @@ ms.locfileid: "50108224"
 
 ## <a name="start-an-app-project"></a>アプリ プロジェクトを開始します。
 
-という新しい Android プロジェクトを作成**ToolbarFun** (を参照してください[こんにちは, Android](~/android/get-started/hello-android/hello-android-quickstart.md)詳細については、新しい Android プロジェクトの作成) します。 このプロジェクトを作成すると後、は、ターゲットと最小の Android API レベルを設定**Android 5.0 (API レベル 21 - ロリポップ)** またはそれ以降。 Android のバージョン レベルの設定の詳細については、次を参照してください。 [Understanding Android API Levels](~/android/app-fundamentals/android-api-levels.md)します。 アプリをビルドして実行して、ときにこのスクリーン ショットで、既定の操作バーが表示されます。
+という新しい Android プロジェクトを作成**ToolbarFun** (を参照してください[こんにちは, Android](~/android/get-started/hello-android/hello-android-quickstart.md)詳細については、新しい Android プロジェクトの作成) します。 このプロジェクトを作成すると後、は、ターゲットと最小の Android API レベルを設定**Android 5.0 (API レベル 21 - ロリポップ)** またはそれ以降。 Android のバージョン レベルの設定の詳細については、[Understanding Android API Levels](~/android/app-fundamentals/android-api-levels.md)を参照してください。 アプリをビルドして実行して、ときにこのスクリーン ショットで、既定の操作バーが表示されます。
 
 [![既定の操作バーのスクリーン ショット](replacing-the-action-bar-images/01-before-sml.png)](replacing-the-action-bar-images/01-before.png#lightbox)
 
@@ -84,7 +84,7 @@ Olive-green`colorPrimary`ツールバーの背景色の設定を使用します�
 <application android:label="@string/app_name" android:theme="@style/MyTheme"></application>
 ```
 
-アプリにカスタム テーマを適用する方法についての詳細については、次を参照してください。[カスタム テーマを使用して](~/android/user-interface/material-theme.md#customtheme)します。 
+アプリにカスタム テーマを適用する方法についての詳細については、[カスタム テーマを使用して](~/android/user-interface/material-theme.md#customtheme)を参照してください。 
 
 
 

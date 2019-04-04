@@ -70,7 +70,7 @@ public class HelloActivity : Activity
 ```
 
 > [!NOTE]
-> 忘れず、`[Register]`属性。 詳細については、次を参照してください。[制限](#current-limitations-on-android)します。
+> 忘れず、`[Register]`属性。 詳細については、[制限](#current-limitations-on-android)を参照してください。
 
 プロジェクトをビルドします。 結果として得られるアセンブリを保存する`bin/Debug/hello-from-csharp.dll`します。
 
