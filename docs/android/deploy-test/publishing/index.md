@@ -6,8 +6,13 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
+ms.openlocfilehash: 4b50d230be642466de68c54957a3fe9a79c1093b
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670951"
 ---
-
 # <a name="publishing-an-application"></a>アプリケーションの発行
 
 優れたアプリケーションを開発されると、人はそれを使ってみたくなります。 このセクションには、電子メール、プライベート Web サーバー、Google Play、Amazon Android アプリ ストアなどのチャネルによって、Xamarin.Android で作成したアプリケーションを公開配信するための手順が含まれます。

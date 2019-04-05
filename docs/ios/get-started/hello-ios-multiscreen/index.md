@@ -1,5 +1,5 @@
 ---
-title: 'Hello, iOS マルチスクリーン'
+title: Hello, iOS マルチスクリーン
 description: このドキュメントは、Phoneword サンプル アプリケーションを拡張して 2 つ目の画面を追加するチュートリアルにリンクされています。 このチュートリアルでは、モデル ビュー コントローラー デザイン パターン、iOS ナビゲーション、その他のコア iOS 開発概念について説明しています。
 ms.topic: quickstart
 ms.prod: xamarin
@@ -8,6 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
+ms.openlocfilehash: 8545afc9957f263104afa69359847d2b187e2558
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669363"
 ---
 # <a name="hello-ios-multiscreen"></a>Hello, iOS マルチスクリーン
 

@@ -7,8 +7,13 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
+ms.openlocfilehash: f24be635afcba181efcab85d81a984d93dae4bc8
+ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58071113"
 ---
-
 # <a name="introduction-to-storyboards-in-xamarinios"></a>Xamarin.iOS でストーリー ボードの概要
 
 このガイドでは、どのようなストーリー ボードを説明しましたが、主要なコンポーネント – Segues などのいくつかを確認します。 ストーリー ボードを作成して、使用する方法について説明しますおよび開発者がどのような利点があります。

@@ -6,13 +6,13 @@ ms.assetid: CD30EECC-8AC1-4CF5-A4FE-348420A6231E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 02/28/2019
-ms.openlocfilehash: fa93cb86867cb8539fb7ce4db45ad4751bfe6e04
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.date: 04/03/2019
+ms.openlocfilehash: 1f6bdfb1aed87f8a2dabdc0efcea3a1b8bf2ecf2
+ms.sourcegitcommit: be51b459a0a148ae3adca31d7599f53f7b2c3a68
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58854225"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59019348"
 ---
 # <a name="extensible-application-markup-language-xaml"></a>eXtensible Application Markup Language (XAML)
 
@@ -24,6 +24,10 @@ _XAML は、ユーザー インターフェイスの定義に使用できる宣�
 
 > [!NOTE]
 > お試し、 [XAML Standard プレビュー](standard/index.md)
+
+## [<a name="xaml-controls"></a>XAML コントロール](xaml-controls.md)
+
+すべての Xamarin.Forms で定義されているビューは、XAML ファイルから参照できます。
 
 <a name="xaml" />
 
@@ -43,11 +47,11 @@ XAML は任意で、XAML コンパイラ (XAMLC) を利用し、中間言語 (IL
 
 XAML を使用して、 `xmlns` XML 名前空間宣言属性。 この記事では、XAML 名前空間の構文を紹介し、型にアクセスする XAML 名前空間を宣言する方法を示します。
 
-## [<a name="xaml-custom-namespace-schemas"></a>XAML Namespace カスタム スキーマ](custom-namespace-schemas.md)
+## [<a name="xaml-custom-namespace-schemas"></a>XAML カスタム名前空間スキーマ](custom-namespace-schemas.md)
 
 XAML 名前空間のカスタム スキーマを定義すること、`XmlnsDefinitionAttribute`クラスは、カスタムの URL と 1 つまたは複数の CLR 名前空間の間のマッピングを指定します。 カスタムの名前空間のスキーマは、XAML 名前空間の宣言で使用できます。
 
-## [<a name="xaml-namespace-recommended-prefixes"></a>XAML Namespace プレフィックスをお勧めします](custom-prefix.md)
+## [<a name="xaml-namespace-recommended-prefixes"></a>XAML 名前空間で推奨されるプレフィックス](custom-prefix.md)
 
 `XmlnsPrefixAttribute`クラスは、XAML の使用量の XAML 名前空間に関連付ける推奨プレフィックスを指定するコントロールの作成者によって使用できます。
 
@@ -63,7 +67,7 @@ XAML には、値または単純な文字列で表現できる内容を超える
 
 既定以外のコンス トラクターまたはファクトリ メソッドへの引数を渡すには、XAML を使用できます。 この記事では、工場出荷時のメソッドを呼び出すと、ジェネリック引数の型を指定する、コンス トラクターに引数を渡すに使用できる XAML 属性の使用を示します。
 
-## [<a name="bindable-properties"></a>バインド可能なプロパティ](bindable-properties.md)
+## [<a name="bindable-properties"></a>連結可能プロパティ](bindable-properties.md)
 
 Xamarin.Forms では、共通言語ランタイム (CLR) のプロパティの機能は、バインド可能なプロパティが拡張されます。 バインド可能なプロパティは、特殊な種類のプロパティ、プロパティの値が Xamarin.Forms プロパティ システムによって追跡されます。 この記事では、バインド可能なプロパティは、概要を示し、作成し、これらを使用する方法を示します。
 
@@ -75,6 +79,6 @@ Xamarin.Forms では、共通言語ランタイム (CLR) のプロパティの�
 
 XAML リソースは、2 回以上使用できるオブジェクトの定義です。 A [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)リソースを 1 つの場所で定義されている、Xamarin.Forms アプリケーション全体で再利用を許可します。 この記事で作成および使用する方法を示します、 `ResourceDictionary`、いずれかのマージする方法と`ResourceDictionary`別にします。
 
-## [<a name="loading-xaml-at-runtime"></a>実行時に XAML の読み込み](runtime-load.md)
+## [<a name="loading-xaml-at-runtime"></a>実行時の XAML の読み込み](runtime-load.md)
 
 XAML の読み込みおよび実行時に解析できる、 [ `LoadFromXaml` ](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*)拡張メソッド。

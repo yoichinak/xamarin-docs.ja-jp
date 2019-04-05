@@ -8,8 +8,13 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 12/02/2016
+ms.openlocfilehash: c67d2be3d0bb1a159d234e815b16a988b93087d4
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670892"
 ---
-
 # <a name="hello-android-multiscreen"></a>Hello Android のマルチスクリーン
 
 _このガイドは 2 つに分かれています。2 つ目の画面を処理するために、「Hello Android」ガイドで作成された Phoneword アプリケーションを展開します。その過程で、このガイドでは、基本的な Android のアプリケーションのビルド ブロックについて紹介し、Android アプリケーションの構造と機能の理解を深めながら、Android アーキテクチャを深く分析します。_
