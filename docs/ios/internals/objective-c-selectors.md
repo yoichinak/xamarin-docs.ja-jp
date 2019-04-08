@@ -1,6 +1,6 @@
 ---
 title: Xamarin.iOS での OBJECTIVE-C セレクター
-description: このドキュメントでは、c# から OBJECTIVE-C セレクターと対話する方法について説明します。 これには、セレクターとその際に考慮する必要がありますが、技術的な考慮事項を呼び出す方法について説明します。
+description: このドキュメントでは、C# から OBJECTIVE-C セレクターと対話する方法について説明します。 これには、セレクターとその際に考慮する必要がありますが、技術的な考慮事項を呼び出す方法について説明します。
 ms.prod: xamarin
 ms.assetid: A80904C4-6A89-389B-0487-057AFEB70989
 ms.technology: xamarin-ios

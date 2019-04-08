@@ -1,6 +1,6 @@
 ---
 title: Xamarin.Forms CollectionView
-description: CollectionView は、別のレイアウトの仕様を使用してデータのリストを表示するための柔軟で高パフォーマンスのビューです。
+description: CollectionView は、異なるレイアウト仕様を使ってデータのリストを表示するための柔軟で高パフォーマンスなビューです。
 ms.prod: xamarin
 ms.assetid: 2BC9B223-2D5C-4B09-849C-B9D578954557
 ms.technology: xamarin-forms
@@ -19,13 +19,13 @@ ms.locfileid: "58329945"
 ![[プレビュー]](~/media/shared/preview.png)
 
 > [!IMPORTANT]
-> `CollectionView`は現在プレビュー段階で、その計画的な機能の一部が不足しています。 さらに、実装が完了すると、API を変更することがあります。
+> `CollectionView`は現在プレビュー段階で、計画されている機能の一部が不足しています。 さらに、実装が完了すると、API が変更されることがあります。
 
-`CollectionView` 別のレイアウトの仕様を使用してデータのリストを表示するためのビュー。 目的より柔軟に提供してパフォーマンスの高い代替に[ `ListView`](xref:Xamarin.Forms.ListView)します。 中に、`CollectionView`と`ListView`Api は似ています、注目すべきいくつか違いがあります。
+`CollectionView` は、異なるレイアウト仕様を使用してデータのリストを表示するためのビューです。 これは [ `ListView`](xref:Xamarin.Forms.ListView) の代わりとして、より柔軟でより高パフォーマンスを提供することを目的にしています。 `CollectionView` と `ListView` の API は似ていますが、注意すべきいくつかの違いがあります。
 
-- `CollectionView` 柔軟なレイアウト モデル、データをリストまたはグリッドの垂直方向または水平方向に表示することが可能があります。
-- `CollectionView` セルの概念はありません。 代わりに、データ テンプレートを使用して、一覧のデータの各アイテムの外観を定義します。
-- `CollectionView` 基になるネイティブ コントロールによって提供される仮想化を自動的に利用します。
+- `CollectionView` は柔軟なレイアウトモデルを持ち、データをリストまたはグリッドに、垂直方向または水平方向に表示することが可能です。
+- `CollectionView` にはセルの概念はありません。 代わりに、データテンプレートを使用して、リストのデータの各アイテムの外観を定義します。
+- `CollectionView` は基になるネイティブ コントロールによって提供される仮想化を自動的に利用します。
 - `CollectionView` API サーフェスを減少[ `ListView`](xref:Xamarin.Forms.ListView)します。 多くのプロパティおよびイベントから`ListView`が存在しない`CollectionView`します。
 - `CollectionView` 組み込みの区切り記号は含まれません。
 

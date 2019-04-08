@@ -27,7 +27,7 @@ WCF では、次を含むさまざまなコントラクトのさまざまなサ�
 - **フォールト コントラクト**– を指定するカスタムの SOAP エラーを許可します。
 - **サービス コントラクト**– と、メッセージが各操作と対話するために必要なサービスをサポートする操作を指定します。 また、各サービスでの操作に関連付けることができる任意のカスタム エラー動作を指定します。
 
-ASP.NET Web サービス (ASMX) と WCF では、違いがありますが、WCF が、同じ ASMX が提供する機能: HTTP 経由の SOAP メッセージをサポートしているかを理解することが重要です。 ASMX サービスの使用に関する詳細については、次を参照してください。[消費の ASP.NET Web サービス (ASMX)](~/xamarin-forms/data-cloud/consuming/asmx.md)します。
+ASP.NET Web サービス (ASMX) と WCF では、違いがありますが、WCF が、同じ ASMX が提供する機能: HTTP 経由の SOAP メッセージをサポートしているかを理解することが重要です。 ASMX サービスの使用に関する詳細については、[消費の ASP.NET Web サービス (ASMX)](~/xamarin-forms/data-cloud/consuming/asmx.md)を参照してください。
 
 > [!IMPORTANT]
 > HTTP または HTTPS を使用して経由で WCF の Xamarin プラットフォームのサポートはテキストでエンコードされた SOAP メッセージに制限されます、`BasicHttpBinding`クラス。 さらに、WCF のサポートには、プロキシを生成する Windows 環境でのみ使用できるツールの使用が必要です。
@@ -38,7 +38,7 @@ ASP.NET Web サービス (ASMX) と WCF では、違いがありますが、WCF 
 
 > [!NOTE]
 > iOS 9 以降ではは、アプリのトランスポート セキュリティ (ATS) は、機密情報の誤った情報開示を回避をセキュリティで保護された接続 (アプリのバック エンド サーバーなど) のインターネット リソースと、アプリの間に強制します。  ATS が iOS 9 用にビルドされたアプリで既定で有効になるために、すべての接続は ATS セキュリティ要件に応じたされます。 接続はこれらの要件を満たしていない場合は、例外で失敗します。
-> 使用することができない場合の ATS を選択することができます、`HTTPS`プロトコルし、インターネット リソースのための通信をセキュリティで保護します。 これは、アプリの更新することで実現できます**Info.plist**ファイル。 詳細については、次を参照してください。[アプリ トランスポート セキュリティ](~/ios/app-fundamentals/ats.md)します。
+> 使用することができない場合の ATS を選択することができます、`HTTPS`プロトコルし、インターネット リソースのための通信をセキュリティで保護します。 これは、アプリの更新することで実現できます**Info.plist**ファイル。 詳細については、[アプリ トランスポート セキュリティ](~/ios/app-fundamentals/ats.md)を参照してください。
 
 ## <a name="consume-the-web-service"></a>Web サービスを使用します。
 
@@ -51,9 +51,9 @@ WCF サービスは、次の操作を提供します。
 |EditTodoItem|To Do アイテムの更新|XML シリアル化する TodoItem|
 |DeleteTodoItem|To Do アイテムの削除|XML シリアル化する TodoItem|
 
-アプリケーションで使用されるデータ モデルの詳細については、次を参照してください。 [、データのモデリング](~/xamarin-forms/data-cloud/walkthrough.md)します。
+アプリケーションで使用されるデータ モデルの詳細については、[、データのモデリング](~/xamarin-forms/data-cloud/walkthrough.md)を参照してください。
 
-A*プロキシ*により、アプリケーションは、サービスに接続する WCF サービスを使用する生成する必要があります。 プロキシは、メソッドと関連付けられているサービスの構成を定義するサービスのメタデータを使用して構築されます。 このメタデータは、web サービスによって生成される Web サービス記述言語 (WSDL) ドキュメントの形式で公開されます。 Visual Studio 2017 で .NET Standard ライブラリを web サービスのサービス参照を追加する Microsoft WCF Web Service Reference Provider を使用して、プロキシを構築できます。 Visual Studio 2017 での Microsoft WCF Web Service Reference Provider を使用してプロキシを作成する代わりにでは、ServiceModel メタデータ ユーティリティ ツール (svcutil.exe) を使用します。 詳細については、次を参照してください。 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe/)します。
+A*プロキシ*により、アプリケーションは、サービスに接続する WCF サービスを使用する生成する必要があります。 プロキシは、メソッドと関連付けられているサービスの構成を定義するサービスのメタデータを使用して構築されます。 このメタデータは、web サービスによって生成される Web サービス記述言語 (WSDL) ドキュメントの形式で公開されます。 Visual Studio 2017 で .NET Standard ライブラリを web サービスのサービス参照を追加する Microsoft WCF Web Service Reference Provider を使用して、プロキシを構築できます。 Visual Studio 2017 での Microsoft WCF Web Service Reference Provider を使用してプロキシを作成する代わりにでは、ServiceModel メタデータ ユーティリティ ツール (svcutil.exe) を使用します。 詳細については、[ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe/)を参照してください。
 
 生成されたプロキシ クラスは、非同期プログラミング モデル (APM) デザイン パターンを使用する web サービスを使用するためのメソッドを提供します。 このパターンで非同期操作はという 2 つのメソッドとして実装*BeginOperationName*と*EndOperationName*を開始し、非同期操作を終了します。
 
@@ -63,11 +63,11 @@ A*プロキシ*により、アプリケーションは、サービスに接続�
 
 タスク並列ライブラリ (TPL) は、同じ非同期操作をカプセル化して APM 開始/終了メソッドのペアを利用する場合のプロセスを簡略化できます`Task`オブジェクト。 このカプセル化が複数のオーバー ロードによって提供される、`TaskFactory.FromAsync`メソッド。
 
-APM の詳細については、次を参照してください。[非同期プログラミング モデル](https://msdn.microsoft.com/library/ms228963(v=vs.110).aspx)と[TPL と従来の .NET Framework 非同期プログラミング](https://msdn.microsoft.com/library/dd997423(v=vs.110).aspx)msdn です。
+APM の詳細については、[非同期プログラミング モデル](https://msdn.microsoft.com/library/ms228963(v=vs.110).aspx)と[TPL と従来の .NET Framework 非同期プログラミング](https://msdn.microsoft.com/library/dd997423(v=vs.110).aspx)msdn を参照してください。
 
 ### <a name="create-the-todoserviceclient-object"></a>TodoServiceClient オブジェクトを作成します。
 
-生成されたプロキシ クラスには、`TodoServiceClient`クラスは、HTTP 経由で WCF サービスと通信するために使用します。 識別されたサービス インスタンスの URI からの非同期操作は、web サービス メソッドを呼び出すために、機能を提供します。 非同期操作の詳細については、次を参照してください。[非同期サポートの概要](~/cross-platform/platform/async.md)します。
+生成されたプロキシ クラスには、`TodoServiceClient`クラスは、HTTP 経由で WCF サービスと通信するために使用します。 識別されたサービス インスタンスの URI からの非同期操作は、web サービス メソッドを呼び出すために、機能を提供します。 非同期操作の詳細については、[非同期サポートの概要](~/cross-platform/platform/async.md)を参照してください。
 
 `TodoServiceClient`次のコード例に示すように、WCF サービスを使用するアプリケーションに必要な限りのオブジェクトが存在するために、クラス レベルでインスタンスが宣言されています。
 
@@ -89,7 +89,7 @@ public class SoapService : ISoapService
 
 `TodoServiceClient`インスタンスはバインド情報とエンドポイント アドレスで構成します。 バインディングを使用して、トランスポート、エンコーディング、およびアプリケーションとサービスが互いに通信するために必要なプロトコルの詳細を指定します。 `BasicHttpBinding`テキストでエンコードされた SOAP メッセージは、HTTP トランスポート プロトコル経由で送信されることを指定します。 パブリッシュされた複数のインスタンスがあること、WCF サービスの異なるインスタンスに接続するアプリケーションをエンドポイント アドレスの指定できます。
 
-サービス参照を構成する方法の詳細については、次を参照してください。[サービス参照を構成する](~/cross-platform/data-cloud/web-services/index.md#wcf)します。
+サービス参照を構成する方法の詳細については、[サービス参照を構成する](~/cross-platform/data-cloud/web-services/index.md#wcf)を参照してください。
 
 ### <a name="create-data-transfer-objects"></a>データ転送オブジェクトを作成します。
 

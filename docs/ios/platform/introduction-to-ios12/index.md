@@ -1,6 +1,6 @@
 ---
 title: 12 iOS の概要
-description: このドキュメントを提供する Xamarin のプレビュー リリースで c# バインディングは、一部の iOS 12 Api の概要を説明します。
+description: このドキュメントを提供する Xamarin のプレビュー リリースで C# バインディングは、一部の iOS 12 Api の概要を説明します。
 ms.prod: xamarin
 ms.assetid: 99EA7090-315D-493C-87D3-26AB73D9E1A9
 ms.technology: xamarin-ios
@@ -16,7 +16,7 @@ ms.locfileid: "55233836"
 ---
 # <a name="introduction-to-ios-12"></a>12 iOS の概要
 
-このドキュメントを提供する Xamarin のプレビュー リリースで c# バインディングは、一部の iOS 12 Api の概要を説明します。
+このドキュメントを提供する Xamarin のプレビュー リリースで C# バインディングは、一部の iOS 12 Api の概要を説明します。
 
 Xamarin を使った iOS 12 のアプリの構築を開始を参照してください、[ファースト ステップ ガイド](get-started.md)
 

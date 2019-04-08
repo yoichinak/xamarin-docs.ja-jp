@@ -20,7 +20,7 @@ _HTTP では、リソースへのアクセスを制御するいくつかの認�
 
 > [!NOTE]
 > iOS 9 以降では、アプリのトランスポート セキュリティ (ATS) は、機密情報の誤った情報開示を回避をセキュリティで保護された接続 (アプリのバック エンド サーバーなど) のインターネット リソースと、アプリの間に強制します。   ATS が iOS 9 用にビルドされたアプリで既定で有効になるために、すべての接続は ATS セキュリティ要件に応じたされます。 接続はこれらの要件を満たしていない場合は、例外で失敗します。
-> 使用することができない場合の ATS を選択することができます、`HTTPS`プロトコルし、インターネット リソースのための通信をセキュリティで保護します。 これは、アプリの更新することで実現できます**Info.plist**ファイル。 詳細については、次を参照してください。[アプリ トランスポート セキュリティ](~/ios/app-fundamentals/ats.md)します。
+> 使用することができない場合の ATS を選択することができます、`HTTPS`プロトコルし、インターネット リソースのための通信をセキュリティで保護します。 これは、アプリの更新することで実現できます**Info.plist**ファイル。 詳細については、[アプリ トランスポート セキュリティ](~/ios/app-fundamentals/ats.md)を参照してください。
 
 ## <a name="authenticating-users-over-http"></a>HTTP 経由でユーザーの認証
 
@@ -73,7 +73,7 @@ public class RestService : IRestService
 要求に署名する web サービス操作に要求が行われたときにその後、`Authorization`ユーザーが操作を呼び出すアクセス許可を持つかどうかを示すヘッダー。
 
 > [!NOTE]
-> このコードは、定数として資格情報を格納、安全でない形式で公開されたアプリケーションしない格納する必要があります。 [Xamarith.Auth](https://www.nuget.org/packages/Xamarin.Auth/) NuGet が資格情報を安全に格納するための機能を提供します。 詳細については、次を参照してください。[の格納とデバイスのアカウント情報の取得](~/xamarin-forms/data-cloud/authentication/oauth.md)します。
+> このコードは、定数として資格情報を格納、安全でない形式で公開されたアプリケーションしない格納する必要があります。 [Xamarith.Auth](https://www.nuget.org/packages/Xamarin.Auth/) NuGet が資格情報を安全に格納するための機能を提供します。 詳細については、[の格納とデバイスのアカウント情報の取得](~/xamarin-forms/data-cloud/authentication/oauth.md)を参照してください。
 
 ## <a name="processing-the-authorization-header-server-side"></a>承認ヘッダーのサーバー側の処理
 

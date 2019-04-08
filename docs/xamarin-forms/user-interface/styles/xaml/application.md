@@ -128,7 +128,7 @@ public class App : Application
 
 コンス トラクターは、1 つを定義します。*明示的な*に適用するためのスタイル[ `Button` ](xref:Xamarin.Forms.Button)アプリケーション全体でのインスタンス。 *明示的な* [ `Style` ](xref:Xamarin.Forms.Style)にインスタンスが追加される、 [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)を使用して、 [ `Add` ](xref:Xamarin.Forms.ResourceDictionary.Add(System.String,System.Object)) を指定して、メソッド`key`を参照する文字列、`Style`インスタンス。 `Style`インスタンス、アプリケーションで適切な種類のコントロールに適用できます。 ただし、グローバルなスタイルは、*明示的な*または*暗黙的な*します。
 
-次のコード例に示します、c# のページを適用する、`buttonStyle`をページの[ `Button` ](xref:Xamarin.Forms.Button)インスタンス。
+次のコード例に示します、C# のページを適用する、`buttonStyle`をページの[ `Button` ](xref:Xamarin.Forms.Button)インスタンス。
 
 ```csharp
 public class ApplicationStylesPageCS : ContentPage

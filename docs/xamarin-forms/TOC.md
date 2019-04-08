@@ -9,6 +9,7 @@
 ### [スタイルのクイック スタート](~/get-started/quickstarts/styling.md)
 ### [Deep Dive](~/get-started/quickstarts/deepdive.md)
 ## [XAML](xaml/index.md)
+### [XAML コントロール](xaml/xaml-controls.md)
 ### [XAML の基礎](xaml/xaml-basics/index.md)
 #### [第 1 部 XAML の使用を開始する](xaml/xaml-basics/get-started-with-xaml.md)
 #### [第 2 部 基本的な XAML 構文](xaml/xaml-basics/essential-xaml-syntax.md)

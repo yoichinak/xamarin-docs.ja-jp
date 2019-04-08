@@ -71,7 +71,7 @@ _Xamarin.Forms には、Device.Styles クラスで、デバイスのスタイル
 
 *デバイス*スタイルも設定から派生した、 [ `BaseResourceKey` ](xref:Xamarin.Forms.Style.BaseResourceKey)プロパティをデバイスのスタイルのキーの名前。 上記のコード例で`myBodyStyle`継承[ `BodyStyle` ](xref:Xamarin.Forms.Device.Styles.BodyStyle)およびアクセント記号付きテキストの色を設定します。 動的なスタイルの継承の詳細については、[動的スタイル継承](~/xamarin-forms/user-interface/styles/xaml/dynamic.md#dynamic-style-inheritance)を参照してください。
 
-次のコード例では、c# で最初のページを示しています。
+次のコード例では、C# で最初のページを示しています。
 
 ```csharp
 public class DeviceStylesPageCS : ContentPage

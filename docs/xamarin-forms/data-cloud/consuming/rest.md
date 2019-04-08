@@ -45,7 +45,7 @@ REST の簡潔さが、モバイル アプリケーションの web サービス
 > [!NOTE]
 > iOS 9 以降ではは、アプリのトランスポート セキュリティ (ATS) は、機密情報の誤った情報開示を回避をセキュリティで保護された接続 (アプリのバック エンド サーバーなど) のインターネット リソースと、アプリの間に強制します。  ATS が iOS 9 用にビルドされたアプリで既定で有効になるために、すべての接続は ATS セキュリティ要件に応じたされます。 接続はこれらの要件を満たしていない場合は、例外で失敗します。
 >
->使用することができない場合の ATS を選択することができます、 **HTTPS**プロトコルし、インターネット リソースのための通信をセキュリティで保護します。 これは、アプリの更新することで実現できます**Info.plist**ファイル。 詳細については、次を参照してください。[アプリ トランスポート セキュリティ](~/ios/app-fundamentals/ats.md)します。
+>使用することができない場合の ATS を選択することができます、 **HTTPS**プロトコルし、インターネット リソースのための通信をセキュリティで保護します。 これは、アプリの更新することで実現できます**Info.plist**ファイル。 詳細については、[アプリ トランスポート セキュリティ](~/ios/app-fundamentals/ats.md)を参照してください。
 
 ## <a name="consuming-the-web-service"></a>Web サービスの使用
 
@@ -58,7 +58,7 @@ REST サービスでは、ASP.NET Core を使用して記述し、次の操作�
 |To Do アイテムの更新|PUT|/api/todoitems/|JSON 形式の TodoItem|
 |To Do アイテムの削除|Del|/api/todoitems/{id}|
 
-Uri の大部分が含まれて、`TodoItem`パス内の ID。 たとえば、削除するため、 `TodoItem` ID が持つ`6bb8a868-dba1-4f1a-93b7-24ebce87e243`、クライアントに DELETE 要求を送信`http://hostname/api/todoitems/6bb8a868-dba1-4f1a-93b7-24ebce87e243`。 サンプル アプリケーションで使用されるデータ モデルの詳細については、次を参照してください。 [、データのモデリング](~/xamarin-forms/data-cloud/walkthrough.md)します。
+Uri の大部分が含まれて、`TodoItem`パス内の ID。 たとえば、削除するため、 `TodoItem` ID が持つ`6bb8a868-dba1-4f1a-93b7-24ebce87e243`、クライアントに DELETE 要求を送信`http://hostname/api/todoitems/6bb8a868-dba1-4f1a-93b7-24ebce87e243`。 サンプル アプリケーションで使用されるデータ モデルの詳細については、[、データのモデリング](~/xamarin-forms/data-cloud/walkthrough.md)を参照してください。
 
 Web API フレームワークは、要求を受信すると、アクションに要求をルーティングします。 これらのアクションは単なるパブリック メソッド、`TodoItemsController`クラス。 フレームワークでは、ルーティング テーブルを使ってを呼び出す次のコード例に示されている要求に応答するアクションを決定します。
 
@@ -76,9 +76,9 @@ config.Routes.MapHttpRoute(
 - アクションを検索するは、Web API は HTTP メソッドが、属性として同じ HTTP メソッドで装飾するコント ローラー アクションではします。
 - *{Id}* プレース ホルダー変数は、アクション パラメーターにマップされます。
 
-REST サービスでは、基本認証を使用します。 詳細については、次を参照してください。 [RESTful web サービスを認証](~/xamarin-forms/data-cloud/authentication/rest.md)します。 ASP.NET Web API ルーティングの詳細については、次を参照してください。 [ASP.NET Web API におけるルーティング](http://www.asp.net/web-api/overview/web-api-routing-and-actions/routing-in-aspnet-web-api)、ASP.NET web サイト。 ASP.NET Core を使用して REST サービスの構築についての詳細については、次を参照してください。[ネイティブ モバイル アプリケーションのバックエンド サービスを作成する](/aspnet/core/mobile/native-mobile-backend/)します。
+REST サービスでは、基本認証を使用します。 詳細については、[RESTful web サービスを認証](~/xamarin-forms/data-cloud/authentication/rest.md)を参照してください。 ASP.NET Web API ルーティングの詳細については、次を参照してください。 [ASP.NET Web API におけるルーティング](http://www.asp.net/web-api/overview/web-api-routing-and-actions/routing-in-aspnet-web-api)、ASP.NET web サイト。 ASP.NET Core を使用して REST サービスの構築についての詳細については、[ネイティブ モバイル アプリケーションのバックエンド サービスを作成する](/aspnet/core/mobile/native-mobile-backend/)を参照してください。
 
-`HttpClient`クラスは HTTP 経由で要求を送受信するために使用します。 HTTP 要求を送信する機能を提供し、リソースを識別する URI から HTTP 応答を受信します。 各要求は、非同期操作として送信されます。 非同期操作の詳細については、次を参照してください。[非同期サポートの概要](~/cross-platform/platform/async.md)します。
+`HttpClient`クラスは HTTP 経由で要求を送受信するために使用します。 HTTP 要求を送信する機能を提供し、リソースを識別する URI から HTTP 応答を受信します。 各要求は、非同期操作として送信されます。 非同期操作の詳細については、[非同期サポートの概要](~/cross-platform/platform/async.md)を参照してください。
 
 `HttpResponseMessage`クラスは、HTTP 要求が行われた後に、web サービスから受信した HTTP 応答メッセージを表します。 状態コード、ヘッダー、および任意の本文を含む、応答に関する情報が含まれています。 `HttpContent`クラスなどを表します HTTP 本体およびコンテンツ ヘッダーは、`Content-Type`と`Content-Encoding`します。 いずれかを使用して、コンテンツを読み取ることができます、`ReadAs`メソッドなど`ReadAsStringAsync`と`ReadAsByteArrayAsync`データの形式に応じて、します。
 

@@ -29,7 +29,7 @@ ms.locfileid: "54208707"
 </ContentPage>
 ```
 
-代わりに、fluent API を使用して c# から使用できます。
+代わりに、fluent API を使用して C# から使用できます。
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;

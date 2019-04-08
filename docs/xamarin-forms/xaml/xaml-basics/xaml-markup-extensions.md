@@ -389,7 +389,7 @@ xmlns="http://xamarin.com/schemas/2014/forms"
 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 ```
 
-その他のクラスにアクセスする XML 名前空間宣言を追加する必要があります。 各追加の XML 名前空間宣言は、新しいプレフィックスを定義します。 共有アプリケーションの .NET Standard ライブラリのローカル クラスへのアクセスなどに`AppConstants`、XAML のプログラマは多くの場合、プレフィックスを使用して`local`します。 名前空間の宣言は、CLR (共通言語ランタイム) の名前空間の名前とも呼ばれる .NET 名前空間の名前、これは、c# で表示される名前を示す必要があります`namespace`定義または、`using`ディレクティブ。
+その他のクラスにアクセスする XML 名前空間宣言を追加する必要があります。 各追加の XML 名前空間宣言は、新しいプレフィックスを定義します。 共有アプリケーションの .NET Standard ライブラリのローカル クラスへのアクセスなどに`AppConstants`、XAML のプログラマは多くの場合、プレフィックスを使用して`local`します。 名前空間の宣言は、CLR (共通言語ランタイム) の名前空間の名前とも呼ばれる .NET 名前空間の名前、これは、C# で表示される名前を示す必要があります`namespace`定義または、`using`ディレクティブ。
 
 ```csharp
 xmlns:local="clr-namespace:XamlSamples"

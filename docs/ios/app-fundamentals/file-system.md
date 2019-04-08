@@ -88,7 +88,7 @@ var directoryname = Path.Combine (documents, "NewDirectory");
 Directory.CreateDirectory(directoryname);
 ```
 
-詳細については、次を参照してください。、 [System.IO API リファレンス](xref:System.IO)します。
+詳細については、、 [System.IO API リファレンス](xref:System.IO)を参照してください。
 
 ### <a name="serializing-json"></a>JSON のシリアル化
 

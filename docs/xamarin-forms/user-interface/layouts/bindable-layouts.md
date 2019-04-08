@@ -42,7 +42,7 @@ ms.locfileid: "55832244"
 <Grid BindableLayout.ItemsSource="{Binding Items}" />
 ```
 
-同等の c# コードに示します。
+同等の C# コードに示します。
 
 ```csharp
 IEnumerable<string> items = ...;
@@ -72,7 +72,7 @@ BindableLayout.SetItemsSource(grid, items);
 </StackLayout>
 ```
 
-同等の c# コードに示します。
+同等の C# コードに示します。
 
 ```csharp
 DataTemplate circleImageTemplate = ...;
@@ -97,7 +97,7 @@ BindableLayout.SetItemTemplate(stackLayout, circleImageTemplate);
             ... />
 ```
 
-同等の c# コードに示します。
+同等の C# コードに示します。
 
 ```csharp
 DataTemplateSelector dataTemplateSelector = new TechItemTemplateSelector { ... };

@@ -86,7 +86,7 @@ _暗黙的なスタイルは、いずれかのスタイルを参照するには�
 
 ## <a name="create-an-implicit-style-in-c35"></a>C での暗黙的なスタイルを作成します。&#35;
 
-[`Style`](xref:Xamarin.Forms.Style) ページのインスタンスを追加することができます[ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources)新しいを作成して c# でのコレクション[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)、追加してから、`Style`インスタンスを`ResourceDictionary`ように、次のコード例:
+[`Style`](xref:Xamarin.Forms.Style) ページのインスタンスを追加することができます[ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources)新しいを作成して C# でのコレクション[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)、追加してから、`Style`インスタンスを`ResourceDictionary`ように、次のコード例:
 
 ```csharp
 public class ImplicitStylesPageCS : ContentPage
@@ -135,7 +135,7 @@ public class ImplicitStylesPageCS : ContentPage
 
 ページごとにこのスタイルを配置する[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)すべてに適用されていることになります[ `Button` ](xref:Xamarin.Forms.Button)インスタンスページで、またから派生したコントロールに`Button`します。 ただし場合、 [ `ApplyToDerivedTypes` ](xref:Xamarin.Forms.Style.ApplyToDerivedTypes)プロパティが設定を解除したまま、スタイルのみに適用される`Button`インスタンス。
 
-同等の c# コードに示します。
+同等の C# コードに示します。
 
 ```csharp
 var buttonStyle = new Style(typeof(Button))

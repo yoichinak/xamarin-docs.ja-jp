@@ -86,7 +86,7 @@ public partial class DynamicStylesPage : ContentPage
 [![](dynamic-images/dynamic-style-blue.png "動的なスタイルの例の青")](dynamic-images/dynamic-style-blue-large.png#lightbox "動的スタイルの例を青")
 [![](dynamic-images/dynamic-style-green.png "緑の動的なスタイルの使用例")](dynamic-images/dynamic-style-green-large.png#lightbox "緑の動的なスタイルの例")
 
-次のコード例では、c# で最初のページを示しています。
+次のコード例では、C# で最初のページを示しています。
 
 ```csharp
 public class DynamicStylesPageCS : ContentPage
@@ -165,7 +165,7 @@ C# で、 [ `SearchBar` ](xref:Xamarin.Forms.SearchBar)インスタンスを使�
 [![](dynamic-images/dynamic-style-inheritance-blue.png "動的なスタイル継承の例の青")](dynamic-images/dynamic-style-inheritance-blue-large.png#lightbox "動的スタイル継承の例の青")
 [![](dynamic-images/dynamic-style-inheritance-green.png "緑の動的なスタイル継承の例")](dynamic-images/dynamic-style-inheritance-green-large.png#lightbox "緑の動的なスタイル継承の例")
 
-次のコード例では、c# で最初のページを示しています。
+次のコード例では、C# で最初のページを示しています。
 
 ```csharp
 public class DynamicStylesInheritancePageCS : ContentPage
