@@ -26,7 +26,7 @@ ms.locfileid: "58329945"
 - `CollectionView` は柔軟なレイアウトモデルを持ち、データをリストまたはグリッドに、垂直方向または水平方向に表示することが可能です。
 - `CollectionView` にはセルの概念はありません。 代わりに、データテンプレートを使用して、リストのデータの各アイテムの外観を定義します。
 - `CollectionView` は基になるネイティブ コントロールによって提供される仮想化を自動的に利用します。
-- `CollectionView` API サーフェスを減少[ `ListView`](xref:Xamarin.Forms.ListView)します。 多くのプロパティおよびイベントから`ListView`が存在しない`CollectionView`します。
+- `CollectionView` は [ `ListView`](xref:Xamarin.Forms.ListView) の外観に関する API を減らしています。 `ListView` の多くのプロパティおよびイベントは、 `CollectionView` では存在しません。
 - `CollectionView` 組み込みの区切り記号は含まれません。
 
 `CollectionView` Xamarin.Forms 4.0 より前のリリースで使用できます。 ただし、現在、試験段階は、し、次のコードの行を追加することでのみ使用できます、`AppDelegate`クラスでは、iOS、または、 `MainActivity` android では、クラスを呼び出す前に`Forms.Init`:
@@ -36,13 +36,13 @@ Forms.SetFlags("CollectionView_Experimental");
 ```
 
 > [!NOTE]
-> `CollectionView` iOS と Android ではできるだけです。
+> `CollectionView` は iOS と Android でのみ利用できます。
 
-## <a name="populate-collectionview-with-datapopulate-datamd"></a>[データ CollectionView を設定します。](populate-data.md)
+## <a name="populate-collectionview-with-datapopulate-datamd"></a>[ CollectionView にデータを挿入する ](populate-data.md)
 
-A`CollectionView`設定によってデータが読み込まれて、`ItemsSource`プロパティを実装するコレクションを`IEnumerable`します。 設定して、リストの各項目の外観を定義することができます、`ItemTemplate`プロパティを[ `DataTemplate`](xref:Xamarin.Forms.DataTemplate)します。
+`CollectionView` は、`ItemsSource` プロパティに `IEnumerable` を実装した任意のコレクションを設定することで、データが挿入されます。 リストの各項目の外観は、`ItemTemplate` プロパティに[ `DataTemplate`](xref:Xamarin.Forms.DataTemplate) を設定することで定義することができます。
 
-## <a name="specify-collectionview-layoutlayoutmd"></a>[CollectionView レイアウトを指定します](layout.md)
+## <a name="specify-collectionview-layoutlayoutmd"></a>[CollectionView にレイアウトを指定する ](layout.md)
 
 既定で、`CollectionView`を垂直方向に一覧の項目が表示されます。 ただし、垂直および水平方向のリストとグリッドを指定することができます。
 
@@ -56,4 +56,4 @@ A`CollectionView`設定によってデータが読み込まれて、`ItemsSource
 
 ## <a name="scroll-an-item-into-viewscrollingmd"></a>[項目をビューにスクロールします。](scrolling.md)
 
-ユーザー カードのスクロールを開始するには、ときに項目が完全に表示されるように、スクロールの終了位置を制御できます。 さらに、 `CollectionView` 2 つ定義する`ScrollTo`メソッドは、プログラムで項目をビューにスクロールします。 ビューに指定したインデックス位置にある項目を指定した項目をスクロール、表示中に、オーバー ロードの 1 つスクロールします。
+ユーザーが、スクロールを開始するためにスワイプした場合に、項目が完全に表示されるように、スクロールの終了位置を制御することができます。 さらに、 `CollectionView` には、2 つの `ScrollTo` メソッドが定義されており、プログラムでビューの項目にスクロールできます。 オーバーロードの 1 つは、ビュー内の指定したインデックスにある項目にスクロールし、もう一つは、ビュー内の指定した項目にスクロールします。
