@@ -39,9 +39,9 @@ _ViewExtensions クラスは、単純なアニメーションを作成するた�
 > [!NOTE]
 > [ `ViewExtensions` ](xref:Xamarin.Forms.ViewExtensions)クラスには、 [ `LayoutTo` ](xref:Xamarin.Forms.ViewExtensions.LayoutTo(Xamarin.Forms.VisualElement,Xamarin.Forms.Rectangle,System.UInt32,Xamarin.Forms.Easing))拡張メソッド。 ただし、このメソッドは、サイズを格納し、変更を配置するレイアウト状態間の遷移をアニメーション化するレイアウトで使用されるものです。 したがって、この属性にのみ使用する必要があります[ `Layout` ](xref:Xamarin.Forms.Layout)サブクラスです。
 
-アニメーションの拡張メソッドにおいて、 [ `ViewExtensions` ](xref:Xamarin.Forms.ViewExtensions)クラスには、すべて非同期に戻り、`Task<bool>`オブジェクト。 戻り値は`false`アニメーションが完了すると、および`true`アニメーションが取り消された場合。 そのため、アニメーションのメソッドで使用が通常、`await`演算子は、簡単にアニメーションが完了したタイミングを決定することができます。 さらにが可能になり、前のメソッドが完了した後に実行する後続のアニメーションの方法で順次アニメーションを作成します。 詳細については、次を参照してください。[複合アニメーション](#compound)します。
+アニメーションの拡張メソッドにおいて、 [ `ViewExtensions` ](xref:Xamarin.Forms.ViewExtensions)クラスには、すべて非同期に戻り、`Task<bool>`オブジェクト。 戻り値は`false`アニメーションが完了すると、および`true`アニメーションが取り消された場合。 そのため、アニメーションのメソッドで使用が通常、`await`演算子は、簡単にアニメーションが完了したタイミングを決定することができます。 さらにが可能になり、前のメソッドが完了した後に実行する後続のアニメーションの方法で順次アニメーションを作成します。 詳細については、[複合アニメーション](#compound)を参照してください。
 
-アニメーションをできるようにする必要がある場合、バック グラウンドで完了、`await`演算子を省略できます。 このシナリオで、迅速に、バック グラウンドで発生しているアニメーションを使用して、アニメーションを開始した後に、アニメーションの拡張機能メソッドが返されます。 複合のアニメーションを作成するときにより、この操作に利用を実行できます。 詳細については、次を参照してください。[複合アニメーション](#composite)します。
+アニメーションをできるようにする必要がある場合、バック グラウンドで完了、`await`演算子を省略できます。 このシナリオで、迅速に、バック グラウンドで発生しているアニメーションを使用して、アニメーションを開始した後に、アニメーションの拡張機能メソッドが返されます。 複合のアニメーションを作成するときにより、この操作に利用を実行できます。 詳細については、[複合アニメーション](#composite)を参照してください。
 
 詳細については、`await`演算子を参照してください[非同期サポートの概要](~/cross-platform/platform/async.md)します。
 
@@ -93,7 +93,7 @@ await image.ScaleTo (2, 2000);
 ![](simple-images/scaleto.png "アニメーションのスケーリング")
 
 > [!NOTE]
-> [ `VisualElement` ](xref:Xamarin.Forms.VisualElement)クラスも定義[ `ScaleX` ](xref:Xamarin.Forms.VisualElement.ScaleX)と[ `ScaleY` ](xref:Xamarin.Forms.VisualElement.ScaleY)プロパティ、拡張することが、`VisualElement`異なる方法で、水平および垂直方向。 これらのプロパティをアニメーション化できる、 [ `Animation` ](xref:Xamarin.Forms.Animation)クラス。 詳細については、次を参照してください。 [Xamarin.Forms でのカスタム アニメーション](custom.md)します。
+> [ `VisualElement` ](xref:Xamarin.Forms.VisualElement)クラスも定義[ `ScaleX` ](xref:Xamarin.Forms.VisualElement.ScaleX)と[ `ScaleY` ](xref:Xamarin.Forms.VisualElement.ScaleY)プロパティ、拡張することが、`VisualElement`異なる方法で、水平および垂直方向。 これらのプロパティをアニメーション化できる、 [ `Animation` ](xref:Xamarin.Forms.Animation)クラス。 詳細については、[Xamarin.Forms でのカスタム アニメーション](custom.md)を参照してください。
 
 ### <a name="relative-scaling"></a>相対スケール
 

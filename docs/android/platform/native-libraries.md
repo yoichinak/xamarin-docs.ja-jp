@@ -40,7 +40,7 @@ Android では、複数のアプリケーション バイナリ インターフ�
 </ItemGroup>
 ```
 
-ネイティブ ライブラリの使用に関する詳細については、次を参照してください。[ネイティブ ライブラリとの相互運用](https://www.mono-project.com/docs/advanced/pinvoke/)します。
+ネイティブ ライブラリの使用に関する詳細については、[ネイティブ ライブラリとの相互運用](https://www.mono-project.com/docs/advanced/pinvoke/)を参照してください。
 
 ## <a name="debugging-native-code-with-visual-studio"></a>Visual Studio を使用したネイティブ コードのデバッグ
 

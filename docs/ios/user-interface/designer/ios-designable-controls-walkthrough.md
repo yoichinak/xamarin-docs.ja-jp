@@ -28,7 +28,7 @@ IOS 用 Xamarin デザイナーは、Visual Studio for Mac と Visual Studio 201
 > Xamarin.Studio 5.5 以降、カスタム コントロールを作成する方法は、以前のバージョンと若干異なります。 か、カスタム コントロールを作成する、`IComponent`インターフェイスは、(関連する実装メソッド) を使用して必要またはクラスの注釈として付ける`[DesignTimeVisible(true)]`します。 後者の方法は、チュートリアルの次の例で使用されています。
 
 
-1. 新しいソリューションを作成、 **iOS > アプリ > 単一ビュー アプリケーション > c#** テンプレート、という名前を付けます`ScratchTicket`、し、新しいプロジェクト ウィザードを続行します。
+1. 新しいソリューションを作成、 **iOS > アプリ > 単一ビュー アプリケーション > C#** テンプレート、という名前を付けます`ScratchTicket`、し、新しいプロジェクト ウィザードを続行します。
 
     [![](ios-designable-controls-walkthrough-images/01new.png "新しいソリューションを作成します。")](ios-designable-controls-walkthrough-images/01new.png#lightbox)
 

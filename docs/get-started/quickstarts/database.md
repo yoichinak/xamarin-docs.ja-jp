@@ -230,7 +230,7 @@ ms.locfileid: "58854991"
 
       変更を保存**NoteEntryPage.xaml.cs**キーを押して**CTRL + S**ファイルを閉じます。
 
-11. 構築し、各プラットフォームで、プロジェクトを実行します。 詳細については、次を参照してください。[クイック スタートを構築](single-page.md#building-the-quickstart)します。
+11. 構築し、各プラットフォームで、プロジェクトを実行します。 詳細については、[クイック スタートを構築](single-page.md#building-the-quickstart)を参照してください。
 
     **NotesPage**キーを押して、 **+** に移動するボタン、 **NoteEntryPage**メモを入力します。 移動は、アプリケーションのメモの保存後、 **NotesPage**します。
 
@@ -433,7 +433,7 @@ ms.locfileid: "58854991"
 
       変更を保存**NoteEntryPage.xaml.cs**を選択して**ファイル > 保存**(またはキーを押して **&#8984; + S**)、ファイルを閉じます。
 
-11. 構築し、各プラットフォームで、プロジェクトを実行します。 詳細については、次を参照してください。[クイック スタートを構築](single-page.md#building-the-quickstart)します。
+11. 構築し、各プラットフォームで、プロジェクトを実行します。 詳細については、[クイック スタートを構築](single-page.md#building-the-quickstart)を参照してください。
 
     **NotesPage**キーを押して、 **+** に移動するボタン、 **NoteEntryPage**メモを入力します。 移動は、アプリケーションのメモの保存後、 **NotesPage**します。
 

@@ -51,15 +51,15 @@ Azure Mobile Apps では、notification hubs を使用してプッシュ通知�
 
 [![](azure-images/screenshots.png "サンプル アプリケーションのプッシュ通知を受信")](azure-images/screenshots-large.png#lightbox "サンプル アプリケーションのプッシュ通知の受信")
 
-Azure Notification Hubs の詳細については、次を参照してください。 [Azure Notification Hubs](https://azure.microsoft.com/documentation/articles/notification-hubs-push-notification-overview/)と[Xamarin.Forms アプリにプッシュ通知を追加](/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started-push/)します。
+Azure Notification Hubs の詳細については、[Azure Notification Hubs](https://azure.microsoft.com/documentation/articles/notification-hubs-push-notification-overview/)と[Xamarin.Forms アプリにプッシュ通知を追加](/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started-push/)を参照してください。
 
 ## <a name="azure-and-platform-notification-system-setup"></a>Azure とプラットフォーム通知システムのセットアップ
 
 Azure Mobile Apps インスタンスに Azure Notification Hub を統合するためのプロセスは次のとおりです。
 
 1. Azure Mobile Apps インスタンスを作成します。 詳細については、[Azure Mobile App の使用](~/xamarin-forms/data-cloud/consuming/azure.md) を参照してください。
-1. 通知ハブを構成します。 詳細については、次を参照してください。[通知ハブを構成](/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started-push#configure-hub)します。
-1. プッシュ通知を送信する Azure Mobile Apps のインスタンスを更新します。 詳細については、次を参照してください。[プッシュ通知を送信するサーバー プロジェクトを更新](/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started-push#update-the-server-project-to-send-push-notifications)します。
+1. 通知ハブを構成します。 詳細については、[通知ハブを構成](/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started-push#configure-hub)を参照してください。
+1. プッシュ通知を送信する Azure Mobile Apps のインスタンスを更新します。 詳細については、[プッシュ通知を送信するサーバー プロジェクトを更新](/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started-push#update-the-server-project-to-send-push-notifications)を参照してください。
 1. 各 PNS に登録します。
 1. 各 PNS との通信に、通知ハブを構成します。
 
@@ -69,25 +69,25 @@ Azure Mobile Apps インスタンスに Azure Notification Hub を統合する�
 
 Apple Push Notification Service (APNS) から Azure Notification Hub を使用する次の手順を実行する必要があります。
 
-1. キーチェーン アクセス ツールを使用してプッシュ証明書の要求の署名証明書を生成します。 詳細については、次を参照してください。[プッシュ通知証明書の証明書署名要求ファイルを生成](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-forms-get-started-push/#generate-the-certificate-signing-request-file-for-the-push-certificate)Azure ドキュメント センターにします。
-1. Apple Developer Center でのプッシュ通知のサポート用の Xamarin.Forms アプリケーションを登録します。 詳細については、次を参照してください。[アプリ プッシュ通知を登録](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-forms-get-started-push/#register-your-app-for-push-notifications)Azure ドキュメント センターにします。
-1. Apple Developer Center でプッシュ通知が有効なプロビジョニング プロファイルの Xamarin.Forms アプリケーションを作成します。 詳細については、次を参照してください。[アプリのプロビジョニング プロファイルを作成する](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-forms-get-started-push/#create-a-provisioning-profile-for-the-app)Azure ドキュメント センターにします。
-1. APNS との通信に、通知ハブを構成します。 詳細については、次を参照してください。 [APNS 用通知ハブを構成](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-forms-get-started-push/#configure-the-notification-hub-for-apns)します。
-1. 新しいアプリ ID とプロビジョニング プロファイルを使用する、Xamarin.Forms アプリケーションを構成します。 詳細については、次を参照してください。 [Xamarin Studio で iOS プロジェクトを構成する](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-forms-get-started-push/#configuring-the-ios-project-in-xamarin-studio)または[Visual Studio で iOS プロジェクトを構成する](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-forms-get-started-push/#configuring-the-ios-project-in-visual-studio)Azure ドキュメント センターにします。
+1. キーチェーン アクセス ツールを使用してプッシュ証明書の要求の署名証明書を生成します。 詳細については、[プッシュ通知証明書の証明書署名要求ファイルを生成](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-forms-get-started-push/#generate-the-certificate-signing-request-file-for-the-push-certificate)Azure ドキュメント センターにを参照してください。
+1. Apple Developer Center でのプッシュ通知のサポート用の Xamarin.Forms アプリケーションを登録します。 詳細については、[アプリ プッシュ通知を登録](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-forms-get-started-push/#register-your-app-for-push-notifications)Azure ドキュメント センターにを参照してください。
+1. Apple Developer Center でプッシュ通知が有効なプロビジョニング プロファイルの Xamarin.Forms アプリケーションを作成します。 詳細については、[アプリのプロビジョニング プロファイルを作成する](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-forms-get-started-push/#create-a-provisioning-profile-for-the-app)Azure ドキュメント センターにを参照してください。
+1. APNS との通信に、通知ハブを構成します。 詳細については、[APNS 用通知ハブを構成](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-forms-get-started-push/#configure-the-notification-hub-for-apns)を参照してください。
+1. 新しいアプリ ID とプロビジョニング プロファイルを使用する、Xamarin.Forms アプリケーションを構成します。 詳細については、[Xamarin Studio で iOS プロジェクトを構成する](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-forms-get-started-push/#configuring-the-ios-project-in-xamarin-studio)または[Visual Studio で iOS プロジェクトを構成する](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-forms-get-started-push/#configuring-the-ios-project-in-visual-studio)Azure ドキュメント センターにを参照してください。
 
 ### <a name="android"></a>Android
 
 Firebase Cloud Messaging (FCM) から Azure Notification Hub を使用する、次の手順実行する必要があります。
 
-1. FCM に登録します。 サーバーの API キーとクライアント ID は、自動的に生成されるとにパックされて、`google-services.json`ダウンロードされるファイル。 詳細については、次を参照してください。[を有効にする Firebase Cloud Messaging (FCM)](/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started-push#enable-firebase-cloud-messaging-fcm)します。
-1. FCM との通信に、通知ハブを構成します。 詳細については、次を参照してください。 [FCM を使用してプッシュ要求を送信するには、Mobile Apps バックエンド終了構成](/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started-push#configure-the-mobile-apps-back-end-to-send-push-requests-by-using-fcm)します。
+1. FCM に登録します。 サーバーの API キーとクライアント ID は、自動的に生成されるとにパックされて、`google-services.json`ダウンロードされるファイル。 詳細については、[を有効にする Firebase Cloud Messaging (FCM)](/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started-push#enable-firebase-cloud-messaging-fcm)を参照してください。
+1. FCM との通信に、通知ハブを構成します。 詳細については、[FCM を使用してプッシュ要求を送信するには、Mobile Apps バックエンド終了構成](/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started-push#configure-the-mobile-apps-back-end-to-send-push-requests-by-using-fcm)を参照してください。
 
 ### <a name="universal-windows-platform"></a>ユニバーサル Windows プラットフォーム
 
 次の手順は、Azure Notification Hub からの Windows 通知サービス (WNS) を使用する実行する必要があります。
 
-1. Windows 通知サービス (WNS) に登録します。 詳細については、次を参照してください。 [WNS によるプッシュ通知用の Windows アプリを登録](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-forms-get-started-push/#register-your-windows-app-for-push-notifications-with-wns)Azure ドキュメント センターにします。
-1. WNS との通信に、通知ハブを構成します。 詳細については、次を参照してください。 [WNS 用通知ハブを構成](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-forms-get-started-push/#configure-the-notification-hub-for-wns)Azure ドキュメント センターにします。
+1. Windows 通知サービス (WNS) に登録します。 詳細については、[WNS によるプッシュ通知用の Windows アプリを登録](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-forms-get-started-push/#register-your-windows-app-for-push-notifications-with-wns)Azure ドキュメント センターにを参照してください。
+1. WNS との通信に、通知ハブを構成します。 詳細については、[WNS 用通知ハブを構成](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-forms-get-started-push/#configure-the-notification-hub-for-wns)Azure ドキュメント センターにを参照してください。
 
 ## <a name="adding-push-notification-support-to-the-xamarinforms-application"></a>Xamarin.Forms アプリケーションにプッシュ通知のサポートを追加します。
 
@@ -97,9 +97,9 @@ Firebase Cloud Messaging (FCM) から Azure Notification Hub を使用する、�
 
 IOS アプリケーションにプッシュ通知のサポートを実装するためのプロセスは次のとおりです。
 
-1. 登録すると、Apple Push Notification Service (APNS) で、`AppDelegate.FinishedLaunching`メソッド。 詳細については、次を参照してください。 [Apple プッシュ通知システムに登録する](#ios_register)します。
-1. 実装、`AppDelegate.RegisteredForRemoteNotifications`登録応答を処理するメソッド。 詳細については、次を参照してください。[登録応答の処理](#ios_registration_response)します。
-1. 実装、`AppDelegate.DidReceiveRemoteNotification`受信したプッシュ通知を処理するメソッド。 詳細については、次を参照してください。[プッシュ通知の受信処理](#ios_process_incoming)します。
+1. 登録すると、Apple Push Notification Service (APNS) で、`AppDelegate.FinishedLaunching`メソッド。 詳細については、[Apple プッシュ通知システムに登録する](#ios_register)を参照してください。
+1. 実装、`AppDelegate.RegisteredForRemoteNotifications`登録応答を処理するメソッド。 詳細については、[登録応答の処理](#ios_registration_response)を参照してください。
+1. 実装、`AppDelegate.DidReceiveRemoteNotification`受信したプッシュ通知を処理するメソッド。 詳細については、[プッシュ通知の受信処理](#ios_process_incoming)を参照してください。
 
 <a name="ios_register" />
 
@@ -184,30 +184,30 @@ public override void DidReceiveRemoteNotification(
 > [!NOTE]
 > プッシュ通知が到着すると、アプリケーションが実行されていない場合、アプリケーションは起動されますが、`DidReceiveRemoteNotification`メソッドは、通知を処理しません。 代わりに、通知ペイロードを取得してから適切に応答、`WillFinishLaunching`または`FinishedLaunching`よりも優先されます。
 
-APNS の詳細については、次を参照してください。 [ios Push Notifications](~/ios/platform/user-notifications/deprecated/remote-notifications-in-ios.md)します。
+APNS の詳細については、[ios Push Notifications](~/ios/platform/user-notifications/deprecated/remote-notifications-in-ios.md)を参照してください。
 
 ### <a name="android"></a>Android
 
 Android アプリケーションにプッシュ通知のサポートを実装するためのプロセスは次のとおりです。
 
 1. 追加、 [Xamarin.Firebase.Messaging](https://www.nuget.org/packages/Xamarin.Firebase.Messaging/) NuGet は、Android プロジェクトにパッケージ化し、Android 7.0 以上のアプリケーションのターゲット バージョンを設定します。
-1. 追加、`google-services.json`ファイル、Android プロジェクトのルートに、Firebase コンソールからダウンロードされ、ビルド アクションを設定**GoogleServicesJson**します。 詳細については、次を参照してください。 [、Google Services JSON ファイルを追加](~/android/data-cloud/google-messaging/remote-notifications-with-fcm.md)します。
-1. Android マニフェストでの受信者を宣言することでレジスタ Firebase Cloud Messaging (FCM) でファイルを開き、実装によって、`FirebaseRegistrationService.OnTokenRefresh`メソッド。 詳細については、次を参照してください。 [Firebase Cloud Messaging と登録](#android_register_fcm)します。
-1. Azure 通知ハブに登録、`AzureNotificationHubService.RegisterAsync`メソッド。 詳細については、次を参照してください。 [Azure 通知ハブへの登録](#android_register_azure)します。
-1. 実装、`FirebaseNotificationService.OnMessageReceived`受信したプッシュ通知を処理するメソッド。 詳細については、次を参照してください。[プッシュ通知の内容を表示する](#android_displaying_notification)します。
+1. 追加、`google-services.json`ファイル、Android プロジェクトのルートに、Firebase コンソールからダウンロードされ、ビルド アクションを設定**GoogleServicesJson**します。 詳細については、[、Google Services JSON ファイルを追加](~/android/data-cloud/google-messaging/remote-notifications-with-fcm.md)を参照してください。
+1. Android マニフェストでの受信者を宣言することでレジスタ Firebase Cloud Messaging (FCM) でファイルを開き、実装によって、`FirebaseRegistrationService.OnTokenRefresh`メソッド。 詳細については、[Firebase Cloud Messaging と登録](#android_register_fcm)を参照してください。
+1. Azure 通知ハブに登録、`AzureNotificationHubService.RegisterAsync`メソッド。 詳細については、[Azure 通知ハブへの登録](#android_register_azure)を参照してください。
+1. 実装、`FirebaseNotificationService.OnMessageReceived`受信したプッシュ通知を処理するメソッド。 詳細については、[プッシュ通知の内容を表示する](#android_displaying_notification)を参照してください。
 
-Firebase Cloud Messaging の詳細については、次を参照してください。 [Firebase Cloud Messaging](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md)と[Firebase Cloud Messaging を使用したリモート通知](~/android/data-cloud/google-messaging/remote-notifications-with-fcm.md)します。
+Firebase Cloud Messaging の詳細については、[Firebase Cloud Messaging](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md)と[Firebase Cloud Messaging を使用したリモート通知](~/android/data-cloud/google-messaging/remote-notifications-with-fcm.md)を参照してください。
 
 <a name="android_register_fcm" />
 
 #### <a name="registering-with-firebase-cloud-messaging"></a>登録 firebase Cloud Messaging
 
-Android アプリケーションがプッシュ通知を受信する前に、FCM 登録トークンを生成し、アプリケーションに戻すことはこれが登録する必要があります。 登録トークンの詳細については、次を参照してください。 [FCM 登録](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md#registration)します。
+Android アプリケーションがプッシュ通知を受信する前に、FCM 登録トークンを生成し、アプリケーションに戻すことはこれが登録する必要があります。 登録トークンの詳細については、[FCM 登録](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md#registration)を参照してください。
 
 これは、によって実現されます。
 
-- Android マニフェストでの受信者を宣言します。 詳細については、次を参照してください。 [Android マニフェストで、受信側を宣言する](#declaring_a_receiver)します。
-- Firebase インスタンス ID サービスを実装します。 詳細については、次を参照してください。 [Firebase インスタンス ID サービスを実装する](#implementing-firebase-instance-id-service)します。
+- Android マニフェストでの受信者を宣言します。 詳細については、[Android マニフェストで、受信側を宣言する](#declaring_a_receiver)を参照してください。
+- Firebase インスタンス ID サービスを実装します。 詳細については、[Firebase インスタンス ID サービスを実装する](#implementing-firebase-instance-id-service)を参照してください。
 
 <a name="declaring_a_receiver" />
 

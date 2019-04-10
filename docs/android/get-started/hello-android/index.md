@@ -1,5 +1,5 @@
 ---
-title: 'Hello, Android'
+title: Hello, Android
 description: この 2 部構成のガイドでは、最初に Visual Studio for Mac または Visual Studio を使用して Xamarin.Android アプリケーションを作成し、Xamarin での Android アプリケーション開発の基礎について理解を深めます。 その過程で、Xamarin.Android アプリケーションの作成と配置に必要なツール、概念、手順を紹介します。
 ms.topic: quickstart
 ms.prod: xamarin
@@ -8,8 +8,13 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 12/02/2016
+ms.openlocfilehash: fbe62f08a096a5a48fe96a3445e09eac9c0485fd
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668258"
 ---
-
 # <a name="hello-android"></a>Hello, Android
 
 _この 2 部構成のガイドでは、最初に Visual Studio for Mac または Visual Studio を使用して Xamarin.Android アプリケーションを作成し、Xamarin での Android アプリケーション開発の基礎について理解を深めます。その過程で、Xamarin.Android アプリケーションの作成と配置に必要なツール、概念、手順を紹介します。_

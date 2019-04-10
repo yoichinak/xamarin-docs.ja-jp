@@ -129,7 +129,7 @@ adb -s 127.0.0.1:4444 uninstall <package name>
 adb -s 127.0.0.1:4444 uninstall com.xamarin.weartest
 ```
 
-Bluetooth 経由で Android Wear デバイスのデバッグの詳細については、次を参照してください。 [Bluetooth 経由でデバッグ](https://developer.android.com/training/wearables/apps/bt-debugging.html)します。
+Bluetooth 経由で Android Wear デバイスのデバッグの詳細については、[Bluetooth 経由でデバッグ](https://developer.android.com/training/wearables/apps/bt-debugging.html)を参照してください。
 
 
 ## <a name="debugging-a-wear-app-with-a-companion-phone-app"></a>コンパニオンの phone アプリの Wear アプリのデバッグ

@@ -31,7 +31,7 @@ Xamarin.Forms アプリケーションのビジュアル インターフェイ�
 
 Xamarin.Forms ページは、一般に、画面全体を占有します。 ページには、通常、ビューやその他のレイアウトを含むレイアウトが含まれます。 セルで使用される特殊なコンポーネントは、 [ `TableView` ](views.md#tableView)と[ `ListView`](views.md#listView)します。
 
-次の 4 つの記事で[**ページ**](pages.md)、 [**レイアウト**](layouts.md)、 [**ビュー** ](views.md)、および[**セル**](cells.md)、(存在する場合) とその API のドキュメント、記事の使用 (存在する場合、および 1 つまたは複数のサンプル プログラムへのリンク コントロールの種類が説明されています。 コントロールの種類ごとのページを示すスクリーン ショットが付属しても、 [ **FormsGallery** ](https://developer.xamarin.com/samples/FormsGallery/)サンプル デバイスを iOS、Android、UWP で実行します。 次の各スクリーン ショットは c# ページ、同等の XAML ページのソース コードへのリンクと、(適切な場合)、XAML ページの c# 分離コード ファイル。
+次の 4 つの記事で[**ページ**](pages.md)、 [**レイアウト**](layouts.md)、 [**ビュー** ](views.md)、および[**セル**](cells.md)、(存在する場合) とその API のドキュメント、記事の使用 (存在する場合、および 1 つまたは複数のサンプル プログラムへのリンク コントロールの種類が説明されています。 コントロールの種類ごとのページを示すスクリーン ショットが付属しても、 [ **FormsGallery** ](https://developer.xamarin.com/samples/FormsGallery/)サンプル デバイスを iOS、Android、UWP で実行します。 次の各スクリーン ショットは C# ページ、同等の XAML ページのソース コードへのリンクと、(適切な場合)、XAML ページの C# 分離コード ファイル。
 
 ## <a name="related-links"></a>関連リンク
 

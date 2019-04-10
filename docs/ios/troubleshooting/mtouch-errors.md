@@ -647,7 +647,7 @@ Xamarin.iOS で内部整合性チェックが失敗した場合、このエラ�
 
 ユーザー側で操作は必要ありません、このメッセージは、純粋な情報。
 
-詳細については、次を参照してください。 バグの #[51710](https://bugzilla.xamarin.com/show_bug.cgi?id=51710)します。
+詳細については、バグの #[51710](https://bugzilla.xamarin.com/show_bug.cgi?id=51710)を参照してください。
 
 今後この警告は報告されません。
 
@@ -659,7 +659,7 @@ Bitcode を有効に自動的にこのバージョンの Xamarin.iOS でビル�
 
 ユーザー側で操作は必要ありません、このメッセージは、純粋な情報。
 
-詳細については、次を参照してください。 バグの #[51634](https://bugzilla.xamarin.com/show_bug.cgi?id=51634)します。
+詳細については、バグの #[51634](https://bugzilla.xamarin.com/show_bug.cgi?id=51634)を参照してください。
 
 <a name="MT0112" />
 
@@ -830,7 +830,7 @@ Xamarin.iOS のこのバージョンは常にプロジェクトをビルド複�
 
 操作は必要ありません、このメッセージは、純粋な情報。
 
-詳細については、次を参照してください。 バグの #[52727](https://bugzilla.xamarin.com/show_bug.cgi?id=52727)します。
+詳細については、バグの #[52727](https://bugzilla.xamarin.com/show_bug.cgi?id=52727)を参照してください。
 
 <a name="MT0128" />
 

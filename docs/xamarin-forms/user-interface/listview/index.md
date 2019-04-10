@@ -7,8 +7,13 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2015
+ms.openlocfilehash: 540e787b476fc2b249bfbe487e45ac61f2e7405a
+ms.sourcegitcommit: 5d4e6677224971e2bc0268f405d192d0358c74b8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58329352"
 ---
-
 # <a name="xamarinforms-listview"></a>Xamarin.Forms ListView
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/WorkingWithListview)
@@ -16,7 +21,7 @@ ms.date: 12/14/2015
 [`ListView`](xref:Xamarin.Forms.ListView) 特に長い一覧をスクロールを必要とするデータの一覧を表示するためのビューです。
 
 > [!IMPORTANT]
-> `CollectionView` 別のレイアウトの仕様を使用してデータのリストを表示するためのビュー。 目的より柔軟に提供してパフォーマンスの高い代替に[ `ListView`](xref:Xamarin.Forms.ListView)します。 詳細については、次を参照してください。 [Xamarin.Forms CollectionView](~/xamarin-forms/user-interface/collectionview/index.md)します。
+> `CollectionView` 別のレイアウトの仕様を使用してデータのリストを表示するためのビュー。 目的より柔軟に提供してパフォーマンスの高い代替に[ `ListView`](xref:Xamarin.Forms.ListView)します。 詳細については、[Xamarin.Forms CollectionView](~/xamarin-forms/user-interface/collectionview/index.md)を参照してください。
 
 ## <a name="use-cases"></a>ユース ケース
 
@@ -42,7 +47,7 @@ ListView が、さまざまなコンポーネントの各プラットフォー�
 
 ![](images/image-cell-default.png "ImageCells と ListView")
 
-ListView 内のセルのカスタマイズに関する詳細については、次を参照してください。 [ListView セルの外観のカスタマイズ](customizing-cell-appearance.md)します。
+ListView 内のセルのカスタマイズに関する詳細については、[ListView セルの外観のカスタマイズ](customizing-cell-appearance.md)を参照してください。
 
 ## <a name="functionality"></a>機能
 ListView は、さまざまな相互作用のスタイル (など) をサポートしています。
@@ -53,7 +58,7 @@ ListView は、さまざまな相互作用のスタイル (など) をサポー�
 
 ![](images/context-default.png "コンテキスト アクションを含む ListView")
 
-ListView の対話機能の詳細については、次を参照してください。 [ListView の対話機能 (&)、アクション](interactivity.md)します。
+ListView の対話機能の詳細については、[ListView の対話機能 (&)、アクション](interactivity.md)を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 

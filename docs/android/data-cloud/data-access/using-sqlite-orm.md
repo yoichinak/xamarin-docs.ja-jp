@@ -237,7 +237,7 @@ Android のバージョンの SQLite では、さらに、いくつかの手順�
     sqlite3_initialize();
     ```
 
-この回避策にも適して、`Mono.Data.Sqlite`ライブラリ。 SQLite とマルチ スレッドの詳細については、次を参照してください。 [SQLite と複数のスレッド](https://www.sqlite.org/threadsafe.html)します。
+この回避策にも適して、`Mono.Data.Sqlite`ライブラリ。 SQLite とマルチ スレッドの詳細については、[SQLite と複数のスレッド](https://www.sqlite.org/threadsafe.html)を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 

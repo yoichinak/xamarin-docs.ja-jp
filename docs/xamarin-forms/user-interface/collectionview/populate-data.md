@@ -96,7 +96,7 @@ collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 この例で、`ItemsSource`プロパティ データにバインド、`Monkeys`接続されているビュー モデルのプロパティ。
 
 > [!NOTE]
-> Xamarin.Forms アプリケーションのデータ バインディングのパフォーマンスを向上させるためには、コンパイル済みのバインドを有効にすることができます。 詳細については、次を参照してください。[コンパイル バインド](~/xamarin-forms/app-fundamentals/data-binding/compiled-bindings.md)します。
+> Xamarin.Forms アプリケーションのデータ バインディングのパフォーマンスを向上させるためには、コンパイル済みのバインドを有効にすることができます。 詳細については、[コンパイル バインド](~/xamarin-forms/app-fundamentals/data-binding/compiled-bindings.md)を参照してください。
 
 データ バインディングの詳細については、「[Xamarin.Forms Data Binding](~/xamarin-forms/app-fundamentals/data-binding/index.md)」 (Xamarin.Forms のデータ バインディング) を参照してください。
 

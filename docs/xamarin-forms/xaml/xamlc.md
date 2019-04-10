@@ -58,7 +58,7 @@ public class HomePage : ContentPage
 この例では、コンパイル時に XAML のチェックでは、`HomePage`クラスが実行され、エラーは、コンパイル プロセスの一部として報告します。
 
 > [!NOTE]
-> Xamarin.Forms アプリケーションのデータ バインディングのパフォーマンスを向上させるためには、コンパイル済みのバインドを有効にすることができます。 詳細については、次を参照してください。[コンパイル バインド](~/xamarin-forms/app-fundamentals/data-binding/compiled-bindings.md)します。
+> Xamarin.Forms アプリケーションのデータ バインディングのパフォーマンスを向上させるためには、コンパイル済みのバインドを有効にすることができます。 詳細については、[コンパイル バインド](~/xamarin-forms/app-fundamentals/data-binding/compiled-bindings.md)を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 

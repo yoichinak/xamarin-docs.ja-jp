@@ -1,22 +1,22 @@
 ---
 title: 第 18 章の概要です。 MVVM
-description: 'Xamarin.Forms によるモバイル アプリの作成: 第 18 章の概要。 MVVM'
+description: Xamarin.Forms によるモバイル アプリの作成。第 18 章の概要です。 MVVM
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 6A774510-7709-4F60-8EF5-29D478176F8F
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: db837ac8bfa1b7a946ee606e9481f9feb2a8a31f
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 6379bafb8c879237171951756441d1227f65b825
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53050126"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870223"
 ---
 # <a name="summary-of-chapter-18-mvvm"></a>第 18 章の概要です。 MVVM
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18)
+[![Download サンプル](~/media/shared/download.png) サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18)
 
 呼ばれます、基になる、コードからのユーザー インターフェイスを分離することで、アプリケーションを構築する最善の方法の 1 つは、*ビジネス ロジック*します。 いくつかの手法が存在するが、XAML ベースの環境用に調整されているがモデル-ビュー-ビューモデルまたは MVVM と呼ばれます。
 
@@ -87,7 +87,7 @@ MVVM はデータのバインドを操作し、MVVM を処理する際に不十�
 
 ### <a name="a-calculator-almost"></a>電卓、ほぼ
 
-[ **AddingMachine** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18/AddingMachine)によりサンプルの両方を使用して、`Execute`と`CanExecute`メソッドの`ICommand`します。 使用して、 [ `AdderViewModel` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AdderViewModel.cs)クラス、 [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AdderViewModel.cs)ライブラリ。 ViewModel には型の 6 つのプロパティが含まれています`ICommand`します。 これらがから初期化される、 [ `Command`コンス トラクター](xref:Xamarin.Forms.Command.%23ctor(System.Action))と[`Command`コンス トラクター](xref:Xamarin.Forms.Command.%23ctor(System.Action,System.Func{System.Boolean}))の`Command`と[`Command<T>`コンス トラクター](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Command%3CT%3E.Command%3CT%3E/p/System.Action%7BT%7D/System.Func%7BT,System.Boolean%7D/)`Command<T>`します。 計算機の数値キーはすべて使用して初期化されるプロパティにバインド`Command<T>`と`string`引数`Execute`と`CanExecute`特定のキーを識別します。
+[ **AddingMachine** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18/AddingMachine)によりサンプルの両方を使用して、`Execute`と`CanExecute`メソッドの`ICommand`します。 使用して、 [ `AdderViewModel` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AdderViewModel.cs)クラス、 [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AdderViewModel.cs)ライブラリ。 ViewModel には型の 6 つのプロパティが含まれています`ICommand`します。 これらがから初期化される、 [ `Command`コンス トラクター](xref:Xamarin.Forms.Command.%23ctor(System.Action))と[`Command`コンス トラクター](xref:Xamarin.Forms.Command.%23ctor(System.Action,System.Func{System.Boolean}))の`Command`と[`Command<T>`コンス トラクター](https://docs.microsoft.com/dotnet/api/xamarin.forms.command.-ctor?view=xamarin-forms#Xamarin_Forms_Command__ctor_System_Action_System_Object__System_Func_System_Object_System_Boolean__)`Command<T>`します。 計算機の数値キーはすべて使用して初期化されるプロパティにバインド`Command<T>`と`string`引数`Execute`と`CanExecute`特定のキーを識別します。
 
 ## <a name="viewmodels-and-the-application-lifecycle"></a>ビューモデル、およびアプリケーションのライフ サイクル
 

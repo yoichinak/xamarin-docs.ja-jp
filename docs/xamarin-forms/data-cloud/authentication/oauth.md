@@ -33,7 +33,7 @@ OAuth id プロバイダーを使用するときに、認証フローの概要�
 
 > [!NOTE]
 > iOS 9 以降では、アプリのトランスポート セキュリティ (ATS) は、機密情報の誤った情報開示を回避をセキュリティで保護された接続 (アプリのバック エンド サーバーなど) のインターネット リソースと、アプリの間に強制します。   ATS が iOS 9 用にビルドされたアプリで既定で有効になるために、すべての接続は ATS セキュリティ要件に応じたされます。 接続はこれらの要件を満たしていない場合は、例外で失敗します。
-> 使用することができない場合の ATS を選択することができます、`HTTPS`プロトコルし、インターネット リソースのための通信をセキュリティで保護します。 これは、アプリの更新することで実現できます**Info.plist**ファイル。 詳細については、次を参照してください。[アプリ トランスポート セキュリティ](~/ios/app-fundamentals/ats.md)します。
+> 使用することができない場合の ATS を選択することができます、`HTTPS`プロトコルし、インターネット リソースのための通信をセキュリティで保護します。 これは、アプリの更新することで実現できます**Info.plist**ファイル。 詳細については、[アプリ トランスポート セキュリティ](~/ios/app-fundamentals/ats.md)を参照してください。
 
 ## <a name="using-xamarinauth-to-authenticate-users"></a>Xamarin.Auth を使用してユーザーを認証するには
 
@@ -238,7 +238,7 @@ if (response != null)
 
 HTTP メソッドと、API URL、`OAuth2Request`インスタンスも指定します、`Account`インスタンスで指定された URL への要求に署名するアクセス トークンを含む、`Constants.UserInfoUrl`プロパティ。 Id プロバイダーは、アクセス トークン有効期間として認識されているユーザーの名前と電子メール アドレスを含む、JSON の応答としてし、基本的なユーザー データを返します。 JSON 応答は読み取りとに逆シリアル化し、`user`変数。
 
-詳細については、次を参照してください。 [Google API を呼び出す](https://developers.google.com/identity/protocols/OAuth2InstalledApp#callinganapi)Google 開発者ポータルにします。
+詳細については、[Google API を呼び出す](https://developers.google.com/identity/protocols/OAuth2InstalledApp#callinganapi)Google 開発者ポータルにを参照してください。
 
 ### <a name="storing-and-retrieving-account-information-on-devices"></a>格納して、デバイスのアカウント情報の取得
 

@@ -22,7 +22,7 @@ _Azure Mobile Appsでは、モバイル認証、オフライン同期、およ�
 
 
 > [!NOTE]
-> 6 月 30 日以降は、すべての新しい Azure モバイル アプリが作成されます TLS 1.2 を既定では。 さらもをお勧めする既存の Azure Mobile Apps TLS 1.2 を使用するように再構成します。 Azure モバイル アプリで TLS 1.2 を適用する方法については、次を参照してください。[適用の TLS バージョン](/azure/app-service/app-service-web-tutorial-custom-ssl#enforce-tls-versions)します。 TLS 1.2 を使用する Xamarin プロジェクトを構成する方法については、次を参照してください。[トランスポート層セキュリティ (TLS) 1.2](~/cross-platform/app-fundamentals/transport-layer-security.md)します。
+> 6 月 30 日以降は、すべての新しい Azure モバイル アプリが作成されます TLS 1.2 を既定では。 さらもをお勧めする既存の Azure Mobile Apps TLS 1.2 を使用するように再構成します。 Azure モバイル アプリで TLS 1.2 を適用する方法については、[適用の TLS バージョン](/azure/app-service/app-service-web-tutorial-custom-ssl#enforce-tls-versions)を参照してください。 TLS 1.2 を使用する Xamarin プロジェクトを構成する方法については、[トランスポート層セキュリティ (TLS) 1.2](~/cross-platform/app-fundamentals/transport-layer-security.md)を参照してください。
 
 Xamarin.Forms で利用できる Azure Mobile Apps インスタンスを作成する方法については、 [Xamarin.Forms アプリを作成する](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-forms-get-started/) を参照してください。 これらの手順に従うと、後に設定して、Azure Mobile Apps インスタンスを使用するダウンロード可能なサンプル アプリケーションを構成できます。`Constants.ApplicationURL` Azure Mobile Apps インスタンスの URL にします。 次に、サンプル アプリケーションを実行すると、次のスクリーン ショットに示すように、Azure Mobile Apps インスタンスに接続します。
 
@@ -32,7 +32,7 @@ Azure Mobile Apps へのアクセスは、 [Azure Mobile Client SDK](https://www
 
 > [!NOTE]
 > iOS 9 以降では、アプリのトランスポート セキュリティ (ATS) は、機密情報の誤った情報開示を回避をセキュリティで保護された接続 (アプリのバック エンド サーバーなど) のインターネット リソースと、アプリの間に強制します。   ATS が iOS 9 用にビルドされたアプリで既定で有効になるために、すべての接続は ATS セキュリティ要件に応じたされます。 接続はこれらの要件を満たしていない場合は、例外で失敗します。
-> 使用することができない場合の ATS を選択することができます、`HTTPS`プロトコルし、インターネット リソースのための通信をセキュリティで保護します。 これは、アプリの更新することで実現できます**Info.plist**ファイル。 詳細については、次を参照してください。[アプリ トランスポート セキュリティ](~/ios/app-fundamentals/ats.md)します。
+> 使用することができない場合の ATS を選択することができます、`HTTPS`プロトコルし、インターネット リソースのための通信をセキュリティで保護します。 これは、アプリの更新することで実現できます**Info.plist**ファイル。 詳細については、[アプリ トランスポート セキュリティ](~/ios/app-fundamentals/ats.md)を参照してください。
 
 ## <a name="consuming-an-azure-mobile-app-instance"></a>Azure Mobile App インスタンスの使用
 

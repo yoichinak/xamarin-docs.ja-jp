@@ -31,17 +31,17 @@ Azure Cosmos DB ドキュメント データベースでは、0 個以上のド�
 
 0 個以上の JSON ドキュメントの各ドキュメントのコレクションで構成されます。 コレクション内のドキュメントは、スキーマ フリーし、ため、同じ構造またはフィールドを共有する必要はありません。 ドキュメント コレクションにドキュメントが追加される、Cosmos DB は、そのクエリを実行する利用可能になったに自動的にインデックスします。
 
-開発のために、ドキュメント データベースをエミュレーターで使用できます。 エミュレーターを使用して、アプリケーションの開発方法および Azure サブスクリプションを作成したり、コストをかけたりせずにローカルでテストします。 エミュレーターの詳細については、次を参照してください。 [、Azure Cosmos DB Emulator を使用したローカル開発](/azure/cosmos-db/local-emulator/)します。
+開発のために、ドキュメント データベースをエミュレーターで使用できます。 エミュレーターを使用して、アプリケーションの開発方法および Azure サブスクリプションを作成したり、コストをかけたりせずにローカルでテストします。 エミュレーターの詳細については、[、Azure Cosmos DB Emulator を使用したローカル開発](/azure/cosmos-db/local-emulator/)を参照してください。
 
-この記事と付属のサンプル アプリケーション、タスクが、Azure Cosmos DB ドキュメント データベースに格納されます、Todo リスト アプリケーションを示します。 サンプル アプリケーションの詳細については、次を参照してください。[サンプルについて理解する](~/xamarin-forms/data-cloud/walkthrough.md)します。
+この記事と付属のサンプル アプリケーション、タスクが、Azure Cosmos DB ドキュメント データベースに格納されます、Todo リスト アプリケーションを示します。 サンプル アプリケーションの詳細については、[サンプルについて理解する](~/xamarin-forms/data-cloud/walkthrough.md)を参照してください。
 
-Azure Cosmos DB の詳細については、次を参照してください。、 [Azure Cosmos DB ドキュメント](/azure/cosmos-db/)します。
+Azure Cosmos DB の詳細については、、 [Azure Cosmos DB ドキュメント](/azure/cosmos-db/)を参照してください。
 
 ## <a name="setup"></a>セットアップ
 
 Xamarin.Forms アプリケーションに Azure Cosmos DB ドキュメント データベースを統合するためのプロセスは次のとおりです。
 
-1. Cosmos DB アカウントを作成します。 詳細については、次を参照してください。 [Azure Cosmos DB アカウントを作成](/azure/cosmos-db/sql-api-dotnetcore-get-started#create-an-azure-cosmos-account)です。
+1. Cosmos DB アカウントを作成します。 詳細については、[Azure Cosmos DB アカウントを作成](/azure/cosmos-db/sql-api-dotnetcore-get-started#create-an-azure-cosmos-account)を参照してください。
 1. 追加、 [Azure Cosmos DB .NET Standard クライアント ライブラリ](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core)Xamarin.Forms ソリューションでプラットフォームのプロジェクトに NuGet パッケージ。
 1. 追加`using`ディレクティブを`Microsoft.Azure.Documents`、 `Microsoft.Azure.Documents.Client`、および`Microsoft.Azure.Documents.Linq`が Cosmos DB アカウントにアクセスするクラスに名前空間。
 
@@ -58,7 +58,7 @@ Xamarin.Forms アプリケーションに Azure Cosmos DB ドキュメント デ
 DocumentClient client = new DocumentClient(new Uri(Constants.EndpointUri), Constants.PrimaryKey);
 ```
 
-Cosmos DB Uri とプライマリ キーを指定する必要があります、`DocumentClient`コンス トラクター。 これらは、Azure Portal から取得できます。 詳細については、次を参照してください。 [Azure Cosmos DB アカウントへの接続](/azure/cosmos-db/sql-api-dotnetcore-get-started#Connect)します。
+Cosmos DB Uri とプライマリ キーを指定する必要があります、`DocumentClient`コンス トラクター。 これらは、Azure Portal から取得できます。 詳細については、[Azure Cosmos DB アカウントへの接続](/azure/cosmos-db/sql-api-dotnetcore-get-started#Connect)を参照してください。
 
 ### <a name="creating-a-database"></a>データベースを作成します。
 

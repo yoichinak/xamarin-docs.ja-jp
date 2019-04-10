@@ -1,22 +1,22 @@
 ---
 title: 第 17 章の概要です。 マスター グリッド
-description: 'Xamarin.Forms によるモバイル アプリの作成: 第 17 章の概要。 マスター グリッド'
+description: Xamarin.Forms によるモバイル アプリの作成。第 17 章の概要です。 マスター グリッド
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 71EDEF9C-4220-4D2E-A235-43F1EC8746C1
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: dc9d57c0edf50f7fe5a7241e64cc727413004252
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 3aaf8e9d1eb8e0d98ad32a6b5a1286f14c7bb906
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53050898"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58869989"
 ---
 # <a name="summary-of-chapter-17-mastering-the-grid"></a>第 17 章の概要です。 マスター グリッド
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17)
+[![Download サンプル](~/media/shared/download.png) サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17)
 
 [ `Grid` ](xref:Xamarin.Forms.Grid)は行とセルの列にその子を配置するレイアウトの強力なメカニズムです。 ような HTML とは異なり`table`要素、`Grid`プレゼンテーションではなく、レイアウトの目的でのみです。
 
@@ -68,11 +68,11 @@ XAML では、これらの値を設定するため、次の属性を使用しま
 
 ### <a name="the-grid-in-code"></a>コードのグリッド
 
-[ **GridCodeDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/GridCodeDemo)サンプルを作成し、`Grid`コード。 添付プロパティを設定するには、それぞれの子、直接または間接的に呼び出して追加`Add`などのメソッド[ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid+IGridList%3CT%3E.Add/p/Xamarin.Forms.View/System.Int32/System.Int32/System.Int32/System.Int32/)によって定義された、 [Grid.IGridList<T> ](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid+IGridList%3CT%3E/)インターフェイスです。
+[ **GridCodeDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/GridCodeDemo)サンプルを作成し、`Grid`コード。 添付プロパティを設定するには、それぞれの子、直接または間接的に呼び出して追加`Add`などのメソッド[ `Add` ](xref:Xamarin.Forms.Grid.IGridList`1.Add*)によって定義された、 [Grid.IGridList<T> ](xref:Xamarin.Forms.Grid.IGridList`1)インターフェイスです。
 
 ### <a name="the-grid-bar-chart"></a>グリッドの横棒グラフ
 
-[ **GridBarChart** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/GridBarChart)サンプルは、複数追加する方法を示しています。`BoxView`要素を、`Grid`一括[ `AddHorizontal` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid+IGridList%3CT%3E.AddHorizontal/p/System.Collections.Generic.IEnumerable%7BXamarin.Forms.View%7D/)メソッド。 既定では、これら`BoxView`要素がある等幅。 高さ`BoxView`を横棒グラフのように制御できます。
+[ **GridBarChart** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/GridBarChart)サンプルは、複数追加する方法を示しています。`BoxView`要素を、`Grid`一括[ `AddHorizontal` ](xref:Xamarin.Forms.Grid.IGridList`1.AddHorizontal*)メソッド。 既定では、これら`BoxView`要素がある等幅。 高さ`BoxView`を横棒グラフのように制御できます。
 
 `Grid`で、 **GridBarChart**サンプル共有、`AbsoluteLayout`最初に非表示に親`Frame`します。 また、プログラム、設定、`TapGestureRecognizer`各`BoxView`を使用する、`Frame`タップされたバーに関する情報を表示します。
 

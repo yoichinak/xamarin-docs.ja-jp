@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 01/29/2016
-ms.openlocfilehash: 1f7f2af19c6faad32f94d82dbc58f140f45dea5d
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 2cacf429efb11c5dd19276d62b997acae767516e
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57671119"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870392"
 ---
 # <a name="xamarinios-performance"></a>Xamarin.iOS のパフォーマンス
 
@@ -101,11 +101,11 @@ container.AddSubview (new MyView (container));
 
 ここで、含まれるオブジェクトでは、親が維持されません。 ただし、親では、`container.AddSubView` を呼び出すことで子が維持されます。
 
-デリゲートまたはデータ ソース パターンを使用する iOS API でも、同じことが起こります。たとえば、[`Delegate`](https://developer.xamarin.com/api/property/MonoTouch.UIKit.UITableView.Delegate/) 
-プロパティまたは [`DataSource`](https://developer.xamarin.com/api/property/MonoTouch.UIKit.UITableView.DataSource/) を 
+デリゲートまたはデータ ソース パターンを使用する iOS API でも、同じことが起こります。たとえば、[`Delegate`](xref:UIKit.UITableView.Delegate*) 
+プロパティまたは [`DataSource`](xref:UIKit.UITableView.DataSource*) を 
 [`UITableView`](xref:UIKit.UITableView) クラスで設定するときなどに、ピア クラスに実装が含まれます。
 
-プロトコルを実装するためだけに作成されたクラスの場合 ([`IUITableViewDataSource`](https://developer.xamarin.com/api/type/MonoTouch.UIKit.IUITableViewDataSource/) など) にできることは、サブクラスの作成ではなく、クラスにインターフェイスを実装し、メソッドをオーバーライドし、`DataSource` プロパティを `this` に割り当てることです。
+プロトコルを実装するためだけに作成されたクラスの場合 ([`IUITableViewDataSource`](xref:UIKit.IUITableViewDataSource) など) にできることは、サブクラスの作成ではなく、クラスにインターフェイスを実装し、メソッドをオーバーライドし、`DataSource` プロパティを `this` に割り当てることです。
 
 #### <a name="weak-attribute"></a>Weak 属性
 
@@ -278,7 +278,7 @@ class MyTableSource : UITableViewSource
 
 ゲームには、ゲーム ロジックを実行し、画面を更新するループが詰まっている傾向があります。 一般的なフレーム レート範囲は 1 秒あたり 30 から 60 フレームです。 開発者によっては、1 秒あたりの画面の更新回数を可能な限り多くした方がよいと考え、ゲームのシミュレーションを画面の更新を組み合わせて、1 秒あたりのフレーム数を 60 超にしようとするかもしれません。
 
-一方、ディスプレイ サーバーは 1 秒あたり 60 下位の上限で画面の更新を実行します。 そのため、この上限よりも高速に画面を更新しようとすると、画面の停止や途切れが発生する可能性があります。 画面の更新がディスプレイの更新と同期するようにコードを作成することをお勧めします。 この同期には、[`CoreAnimation.CADisplayLink`](https://developer.xamarin.com/api/type/CoreAnimation.CADisplayLink/) クラスを使用できます。このクラスは、1 秒あたり 60 フレームで実行される視覚化やゲームに適したタイマーです。
+一方、ディスプレイ サーバーは 1 秒あたり 60 下位の上限で画面の更新を実行します。 そのため、この上限よりも高速に画面を更新しようとすると、画面の停止や途切れが発生する可能性があります。 画面の更新がディスプレイの更新と同期するようにコードを作成することをお勧めします。 この同期には、[`CoreAnimation.CADisplayLink`](xref:CoreAnimation.CADisplayLink) クラスを使用できます。このクラスは、1 秒あたり 60 フレームで実行される視覚化やゲームに適したタイマーです。
 
 ## <a name="avoid-core-animation-transparency"></a>コア アニメーションの透過を避ける
 

@@ -7,8 +7,13 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/08/2018
+ms.openlocfilehash: 9367e22ede733ee2d93feccc001836fb4dc02564
+ms.sourcegitcommit: a7170494e1975f0f1be547a45444752fd8e57819
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58507111"
 ---
-
 # <a name="windows-platform-features"></a>Windows プラットフォームの機能
 
 Windows プラットフォーム用の Xamarin.Forms アプリケーションの開発には、Visual Studio が必要です。 [要件ページ](~/get-started/requirements.md)の前提条件の詳細が含まれています。
@@ -21,21 +26,21 @@ Windows プラットフォーム用の Xamarin.Forms アプリケーションの
 
 Xamarin.Forms のビュー、ページ、およびユニバーサル Windows プラットフォーム (UWP) でのレイアウトを次のプラットフォーム固有の機能が提供されます。
 
-- アクセス キーの設定、 [ `VisualElement`](xref:Xamarin.Forms.VisualElement)します。 詳細については、次を参照してください。 [Windows のアクセス キーを VisualElement](visualelement-access-keys.md)します。
-- サポートされている従来のカラー モードを無効にする[ `VisualElement`](xref:Xamarin.Forms.VisualElement)します。 詳細については、次を参照してください。 [VisualElement レガシ カラー モード Windows](legacy-color-mode.md)します。
+- アクセス キーの設定、 [ `VisualElement`](xref:Xamarin.Forms.VisualElement)します。 詳細については、[Windows のアクセス キーを VisualElement](visualelement-access-keys.md)を参照してください。
+- サポートされている従来のカラー モードを無効にする[ `VisualElement`](xref:Xamarin.Forms.VisualElement)します。 詳細については、[VisualElement レガシ カラー モード Windows](legacy-color-mode.md)を参照してください。
 
 UWP の Xamarin.Forms のビューでは、次のプラットフォームに固有の機能が提供されます。
 
-- 検出、テキスト コンテンツからの読み取り順序[ `Entry` ](xref:Xamarin.Forms.Entry)、 [ `Editor` ](xref:Xamarin.Forms.Editor)、および[ `Label` ](xref:Xamarin.Forms.Label)インスタンス。 詳細については、次を参照してください。 [Windows 上の読み取り順序を InputView](inputview-reading-order.md)します。
-- タップ ジェスチャのサポートを有効にすると、 [ `ListView`](xref:Xamarin.Forms.ListView)します。 詳細については、次を参照してください。 [Windows 上の ListView SelectionMode](listview-selectionmode.md)します。
-- 有効にすると、 [ `SearchBar` ](xref:Xamarin.Forms.SearchBar)スペル チェック エンジンと対話します。 詳細については、次を参照してください。 [Windows で SearchBar Spell Check](searchbar-spell-check.md)します。
-- 有効にすると、 [ `WebView` ](xref:Xamarin.Forms.WebView) UWP メッセージ ダイアログ ボックスで、JavaScript のアラートを表示します。 詳細については、次を参照してください。 [Windows 上の web ビュー JavaScript アラート](webview-javascript-alert.md)します。
+- 検出、テキスト コンテンツからの読み取り順序[ `Entry` ](xref:Xamarin.Forms.Entry)、 [ `Editor` ](xref:Xamarin.Forms.Editor)、および[ `Label` ](xref:Xamarin.Forms.Label)インスタンス。 詳細については、[Windows 上の読み取り順序を InputView](inputview-reading-order.md)を参照してください。
+- タップ ジェスチャのサポートを有効にすると、 [ `ListView`](xref:Xamarin.Forms.ListView)します。 詳細については、[Windows 上の ListView SelectionMode](listview-selectionmode.md)を参照してください。
+- 有効にすると、 [ `SearchBar` ](xref:Xamarin.Forms.SearchBar)スペル チェック エンジンと対話します。 詳細については、[Windows で SearchBar Spell Check](searchbar-spell-check.md)を参照してください。
+- 有効にすると、 [ `WebView` ](xref:Xamarin.Forms.WebView) UWP メッセージ ダイアログ ボックスで、JavaScript のアラートを表示します。 詳細については、[Windows 上の web ビュー JavaScript アラート](webview-javascript-alert.md)を参照してください。
 
 UWP の Xamarin.Forms のページでは、次のプラットフォームに固有の機能が提供されます。
 
-- 折りたたみ、 [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage)ナビゲーション バー。 詳細については、次を参照してください。 [Windows 上のナビゲーション バーの MasterDetailPage](masterdetailpage-navigation-bar.md)します。
-- ツールバーの配置オプションを設定します。 詳細については、次を参照してください。 [Windows でページのツールバーの配置](page-toolbar-placement.md)します。
-- 表示されるページのアイコンを有効にすると、 [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage)ツールバー。 詳細については、次を参照してください。 [Windows 上のアイコンを TabbedPage](tabbedpage-icons.md)します。
+- 折りたたみ、 [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage)ナビゲーション バー。 詳細については、[Windows 上のナビゲーション バーの MasterDetailPage](masterdetailpage-navigation-bar.md)を参照してください。
+- ツールバーの配置オプションを設定します。 詳細については、[Windows でページのツールバーの配置](page-toolbar-placement.md)を参照してください。
+- 表示されるページのアイコンを有効にすると、 [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage)ツールバー。 詳細については、[Windows 上のアイコンを TabbedPage](tabbedpage-icons.md)を参照してください。
 
 ## <a name="platform-support"></a>プラットフォームのサポート
 

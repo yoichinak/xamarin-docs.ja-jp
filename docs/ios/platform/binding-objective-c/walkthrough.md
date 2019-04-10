@@ -566,7 +566,7 @@ Europa:Resources kmullins$
 
 ### <a name="protocols-and-xamarinios"></a>プロトコルと Xamarin.iOS
 
-メソッド (またはメッセージ)、OBJECTIVE-C でプロトコルを定義する特定の状況で使用できます。 内のインターフェイスとよく似ている概念的には、C#します。 1 つの主な違い、OBJECTIVE-C プロトコルとC#インターフェイスは、プロトコルは省略可能なメソッドのクラスが実装する必要はありませんメソッドであることができます。 Objective C を使用して、@optionalが省略可能な方法を示すキーワードを使用します。 プロトコルの詳細については、次を参照してください。[イベント、プロトコル、デリゲート](~/ios/app-fundamentals/delegates-protocols-and-events.md)します。
+メソッド (またはメッセージ)、OBJECTIVE-C でプロトコルを定義する特定の状況で使用できます。 内のインターフェイスとよく似ている概念的には、C#します。 1 つの主な違い、OBJECTIVE-C プロトコルとC#インターフェイスは、プロトコルは省略可能なメソッドのクラスが実装する必要はありませんメソッドであることができます。 Objective C を使用して、@optionalが省略可能な方法を示すキーワードを使用します。 プロトコルの詳細については、[イベント、プロトコル、デリゲート](~/ios/app-fundamentals/delegates-protocols-and-events.md)を参照してください。
 
 **InfColorPickerController**が次のコード スニペットに示すように、このような 1 つのプロトコル。
 

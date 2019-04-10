@@ -6,8 +6,13 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
+ms.openlocfilehash: 9620362b48e9cf1db4c25e4470851fb518a8e0f3
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671170"
 ---
-
 # <a name="android-wear-controls"></a>Android Wear コントロール
 
 Android Wear アプリ多く使用できますのと同じコントロールの既になど、標準の Android アプリの使用で`Button`、 `TextView`、余白とイメージのドローアブルします。 などのレイアウト コントロール`ScrollView`、 `LinearLayout`、および`RelativateLayout`こともできます。

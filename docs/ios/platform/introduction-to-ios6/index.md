@@ -31,7 +31,7 @@ _iOS 6 には、さまざまな Xamarin.iOS 6 を提供するには、アプリ�
 
 ## <a name="introduction-to-passkitiosplatformpasskitmd"></a>[PassKit の概要](~/ios/platform/passkit.md)
 
-PassKit framework Passbook アプリで管理されているデジタルのパスとの対話を可能です。 詳細については、次を参照してください。、[渡すキット ガイドの概要](~/ios/platform/passkit.md)します。
+PassKit framework Passbook アプリで管理されているデジタルのパスとの対話を可能です。 詳細については、、[渡すキット ガイドの概要](~/ios/platform/passkit.md)を参照してください。
 
 
 ##  <a name="introduction-to-eventkitiosplatformeventkitmd"></a>[EventKit の概要](~/ios/platform/eventkit.md)

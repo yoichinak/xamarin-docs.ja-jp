@@ -35,7 +35,7 @@ Windows デスクトップで実行される GTK # アプリを追加するこ�
 
 1. Visual Studio 2019 でソリューション名を右クリックして**ソリューション エクスプ ローラー**選択**追加 > 新しいプロジェクト.**.
 
-2. **新しいプロジェクト**ウィンドウで、左側の選択で**Visual c#** と**Windows クラシック デスクトップ**します。 プロジェクトの種類の一覧で選択**クラス ライブラリ (.NET Framework)**、いることを確認し、 **Framework**ドロップダウンは、.NET Framework 4.7 の最小値に設定されます。
+2. **新しいプロジェクト**ウィンドウで、左側の選択で**Visual C#** と**Windows クラシック デスクトップ**します。 プロジェクトの種類の一覧で選択**クラス ライブラリ (.NET Framework)**、いることを確認し、 **Framework**ドロップダウンは、.NET Framework 4.7 の最小値に設定されます。
 
 3. 使用してプロジェクトの名前を入力、 **GTK**拡張機能の例では、 **GameOfLife.GTK**します。 をクリックして、**参照**ボタン、その他のプラットフォームを含むフォルダーを選択してプロジェクト、およびキーを押して**フォルダーの選択**。 GTK プロジェクトをソリューション内の他のプロジェクトと同じディレクトリに、これには。
 
@@ -218,8 +218,8 @@ var settingsView = new SettingsView().CreateContainer();
 vbox.PackEnd(settingsView, true, true, 0);
 ```
 
-ネイティブ数字形式の詳細については、次を参照してください。[ネイティブ フォーム](~/xamarin-forms/platform/native-forms.md)します。
+ネイティブ数字形式の詳細については、[ネイティブ フォーム](~/xamarin-forms/platform/native-forms.md)を参照してください。
 
 ## <a name="issues"></a>懸案事項
 
-これは、その運用環境の準備がすべてではないことを想定する必要がありますのプレビューです。 現在の実装の状態を参照してください。[状態](https://github.com/jsuarezruiz/forms-gtk-progress/blob/master/Status.md)、および現在の既知の問題では、次を参照してください。[保留中と既知の問題](https://github.com/jsuarezruiz/forms-gtk-progress/blob/master/Issues-Pending.md)します。
+これは、その運用環境の準備がすべてではないことを想定する必要がありますのプレビューです。 現在の実装の状態を参照してください。[状態](https://github.com/jsuarezruiz/forms-gtk-progress/blob/master/Status.md)、および現在の既知の問題では、[保留中と既知の問題](https://github.com/jsuarezruiz/forms-gtk-progress/blob/master/Issues-Pending.md)を参照してください。

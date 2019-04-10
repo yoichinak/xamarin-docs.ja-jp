@@ -100,7 +100,7 @@ button4.On<Windows>()
 
 ユーザー アクセス後に Alt キーを押してアクセス キーをアクティブにしたときのキーの既定のアクション、`VisualElement`が実行されます。 などの場合、ユーザーがアクティブにアクセス キーで、 [ `Switch` ](xref:Xamarin.Forms.Switch)、`Switch`が切り替えられました。 ユーザーがアクセス キーをアクティブ化のときに、 [ `Entry` ](xref:Xamarin.Forms.Entry)、`Entry`がフォーカスを取得します。 ユーザーがアクセス キーをアクティブ化のときに、 [ `Button`](xref:Xamarin.Forms.Button)のイベント ハンドラー、 [ `Clicked` ](xref:Xamarin.Forms.Button.Clicked)イベントを実行します。
 
-アクセス キーの詳細については、次を参照してください。[アクセス キー](/windows/uwp/design/input/access-keys#key-tip-positioning)します。
+アクセス キーの詳細については、[アクセス キー](/windows/uwp/design/input/access-keys#key-tip-positioning)を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 

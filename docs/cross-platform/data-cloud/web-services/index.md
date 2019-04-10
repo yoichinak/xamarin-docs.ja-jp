@@ -6,8 +6,13 @@ ms.assetid: 72627B90-586A-02B6-E231-F7CE015A1B97
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
+ms.openlocfilehash: afebe7f491855844e18bf054d665cf8d54e8f353
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672392"
 ---
-
 # <a name="introduction-to-web-services"></a>Web サービスの概要
 
 _このガイドでは、別の web サービス テクノロジを使用する方法を示します。サービスの REST、SOAP サービス、および Windows Communication Foundation サービスとの通信について書かれています。_
@@ -20,7 +25,7 @@ Xamarin.Forms を使用してお客様の場合は、それぞれでこれらの
 > Ios 9 では、App Transport Security (ATS) は、機密情報の偶発的漏えいを防ぐをセキュリティで保護された接続 (アプリのバック エンド サーバーの場合) などのインターネット リソースと、アプリの間に適用されます。
 >  ATS が iOS 9 用にビルドされたアプリで既定で有効になるために、すべての接続は ATS セキュリティ要件に応じたされます。 接続はこれらの要件を満たしていない場合は、例外で失敗します。
 
-できますオプトアウトする ATS の場合、使用することはできません、`HTTPS`プロトコルし、インターネット リソースのための通信をセキュリティで保護します。 これは、アプリの更新することで実現できます**Info.plist**ファイル。 詳細については、次を参照してください。[アプリ トランスポート セキュリティ](~/ios/app-fundamentals/ats.md)します。
+できますオプトアウトする ATS の場合、使用することはできません、`HTTPS`プロトコルし、インターネット リソースのための通信をセキュリティで保護します。 これは、アプリの更新することで実現できます**Info.plist**ファイル。 詳細については、[アプリ トランスポート セキュリティ](~/ios/app-fundamentals/ats.md)を参照してください。
 
 ## <a name="rest"></a>REST
 
@@ -42,11 +47,11 @@ REST の簡潔さが、モバイル アプリケーションの web サービス
 
 ## <a name="consuming-rest-services"></a>REST サービスの使用
 
-さまざまなライブラリと REST サービスを利用するために使用できるクラスがあるし、次のサブセクションでは、それらについて説明します。 REST サービスの使用に関する詳細については、次を参照してください。 [RESTful Web サービスの使用](~/xamarin-forms/data-cloud/consuming/rest.md)します。
+さまざまなライブラリと REST サービスを利用するために使用できるクラスがあるし、次のサブセクションでは、それらについて説明します。 REST サービスの使用に関する詳細については、[RESTful Web サービスの使用](~/xamarin-forms/data-cloud/consuming/rest.md)を参照してください。
 
 ### <a name="httpclient"></a>HttpClient
 
-[Microsoft HTTP Client Libraries](https://www.nuget.org/packages/Microsoft.Net.Http)提供、`HttpClient`クラスは、HTTP 経由で要求を送受信するために使用します。 HTTP 要求を送信し、URI で識別されるリソースから HTTP 応答を受信機能を提供します。 各要求は、非同期操作として送信されます。 非同期操作の詳細については、次を参照してください。[非同期サポートの概要](~/cross-platform/platform/async.md)します。
+[Microsoft HTTP Client Libraries](https://www.nuget.org/packages/Microsoft.Net.Http)提供、`HttpClient`クラスは、HTTP 経由で要求を送受信するために使用します。 HTTP 要求を送信し、URI で識別されるリソースから HTTP 応答を受信機能を提供します。 各要求は、非同期操作として送信されます。 非同期操作の詳細については、[非同期サポートの概要](~/cross-platform/platform/async.md)を参照してください。
 
 `HttpResponseMessage`クラスは、HTTP 要求が行われた後に、web サービスから受信した HTTP 応答メッセージを表します。 応答にステータス コード、ヘッダー、本文などに関する情報が含まれています。 `HttpContent`クラスなどを表します HTTP 本体およびコンテンツ ヘッダーは、`Content-Type`と`Content-Encoding`します。 いずれかを使用して、コンテンツを読み取ることができます、`ReadAs`メソッドなど`ReadAsStringAsync`と`ReadAsByteArrayAsync`データの形式に応じて、します。
 
@@ -322,9 +327,9 @@ public async Task<List<TodoItem>> RefreshDataAsync ()
 
 タスク並列ライブラリ (TPL) は、同じ非同期操作をカプセル化して APM 開始/終了メソッドのペアを利用する場合のプロセスを簡略化できます`Task`オブジェクト。 このカプセル化が複数のオーバー ロードによって提供される、`Task.Factory.FromAsync`メソッド。 このメソッドを作成、`Task`を実行する、`TodoService.EndGetTodoItems`メソッドを 1 回、`TodoService.BeginGetTodoItems`メソッドが完了したらで、`null`パラメーターにデータが渡されていないことを示す、`BeginGetTodoItems`を委任します。 値では、最後に、`TaskCreationOptions`列挙型の作成とタスクの実行の既定の動作を使用することを指定します。
 
-APM の詳細については、次を参照してください。[非同期プログラミング モデル](https://msdn.microsoft.com/library/ms228963(v=vs.110).aspx)と[TPL と従来の .NET Framework 非同期プログラミング](https://msdn.microsoft.com/library/dd997423(v=vs.110).aspx)msdn です。
+APM の詳細については、[非同期プログラミング モデル](https://msdn.microsoft.com/library/ms228963(v=vs.110).aspx)と[TPL と従来の .NET Framework 非同期プログラミング](https://msdn.microsoft.com/library/dd997423(v=vs.110).aspx)msdn を参照してください。
 
-ASMX サービスの使用に関する詳細については、次を参照してください。 [ASP.NET Web サービス (ASMX) を消費して](~/xamarin-forms/data-cloud/consuming/asmx.md)します。
+ASMX サービスの使用に関する詳細については、[ASP.NET Web サービス (ASMX) を消費して](~/xamarin-forms/data-cloud/consuming/asmx.md)を参照してください。
 
 <a name="wcf" />
 
@@ -348,7 +353,7 @@ ASP.NET Web サービス (ASMX) と WCF では、違いがありますが、WCF 
 
 A*プロキシ*により、アプリケーションは、サービスに接続する WCF サービスを使用する生成する必要があります。 プロキシは、メソッドと関連付けられているサービスの構成を定義するサービスのメタデータを使用して構築されます。 このメタデータは、web サービスによって生成される Web サービス記述言語 (WSDL) ドキュメントの形式で公開されます。 Visual Studio 2017 で .NET Standard Library に web サービスのサービス参照を追加する Microsoft WCF Web Service Reference Provider を使用して、プロキシを構築できます。
 
-Visual Studio 2017 での Microsoft WCF Web Service Reference Provider を使用してプロキシを作成する代わりにでは、ServiceModel メタデータ ユーティリティ ツール (svcutil.exe) を使用します。 詳細については、次を参照してください。 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)します。
+Visual Studio 2017 での Microsoft WCF Web Service Reference Provider を使用してプロキシを作成する代わりにでは、ServiceModel メタデータ ユーティリティ ツール (svcutil.exe) を使用します。 詳細については、[ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)を参照してください。
 
 <a name="Calling_a_WCF_Service_with_Client_Credential_Security" />
 
@@ -400,9 +405,9 @@ public async Task<List<TodoItem>> RefreshDataAsync ()
 
 タスク並列ライブラリ (TPL) は、同じ非同期操作をカプセル化して APM 開始/終了メソッドのペアを利用する場合のプロセスを簡略化できます`Task`オブジェクト。 このカプセル化が複数のオーバー ロードによって提供される、`Task.Factory.FromAsync`メソッド。 このメソッドを作成、`Task`を実行する、`TodoServiceClient.EndGetTodoItems`メソッドを 1 回、`TodoServiceClient.BeginGetTodoItems`メソッドが完了したらで、`null`パラメーターにデータが渡されていないことを示す、`BeginGetTodoItems`を委任します。 値では、最後に、`TaskCreationOptions`列挙型の作成とタスクの実行の既定の動作を使用することを指定します。
 
-APM の詳細については、次を参照してください。[非同期プログラミング モデル](https://msdn.microsoft.com/library/ms228963(v=vs.110).aspx)と[TPL と従来の .NET Framework 非同期プログラミング](https://msdn.microsoft.com/library/dd997423(v=vs.110).aspx)msdn です。
+APM の詳細については、[非同期プログラミング モデル](https://msdn.microsoft.com/library/ms228963(v=vs.110).aspx)と[TPL と従来の .NET Framework 非同期プログラミング](https://msdn.microsoft.com/library/dd997423(v=vs.110).aspx)msdn を参照してください。
 
-WCF サービスの使用に関する詳細については、次を参照してください。 [Windows Communication Foundation (WCF) Web サービスの使用](~/xamarin-forms/data-cloud/consuming/wcf.md)します。
+WCF サービスの使用に関する詳細については、[Windows Communication Foundation (WCF) Web サービスの使用](~/xamarin-forms/data-cloud/consuming/wcf.md)を参照してください。
 
 <a name="Calling_a_WCF_Service_with_Transport_Security" />
 
@@ -415,7 +420,7 @@ System.Net.ServicePointManager.ServerCertificateValidationCallback +=
 (se, cert, chain, sslerror) => { return true; };
 ```
 
-これにより、サーバー側の証明書の検証を無視しているときに、トランスポートの暗号化が維持されます。 ただし、この方法は効果的に証明書に関連付けられている信頼の懸念事項を無視し、適切なことができない可能性があります。 詳細については、次を参照してください。[信頼されたルート Respectfully を使用して](https://www.mono-project.com/UsingTrustedRootsRespectfully)で[mono project.com](https://www.mono-project.com)します。
+これにより、サーバー側の証明書の検証を無視しているときに、トランスポートの暗号化が維持されます。 ただし、この方法は効果的に証明書に関連付けられている信頼の懸念事項を無視し、適切なことができない可能性があります。 詳細については、[信頼されたルート Respectfully を使用して](https://www.mono-project.com/UsingTrustedRootsRespectfully)で[mono project.com](https://www.mono-project.com)を参照してください。
 
 <a name="Calling_a_WCF_Service_with_Client_Credential_Security" />
 

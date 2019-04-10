@@ -6,8 +6,13 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
+ms.openlocfilehash: 8ba0d14fff22d38d9e1a1d062fcce3f9ace88dea
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668856"
 ---
-
 # <a name="publishing-to-google-play"></a>GooglePlay に公開する
 
 アプリケーション配布用のアプリ マーケットは数多くありますが、Google Play はほぼ間違いなく Android アプリ用のストアとして世界最大であり最も多くの訪問者があります。 Google Play は、Android アプリケーションの配布、広告、販売、および売上分析のための単一のプラットフォームを提供します。

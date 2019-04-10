@@ -7,15 +7,20 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
+ms.openlocfilehash: f24be635afcba181efcab85d81a984d93dae4bc8
+ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58071113"
 ---
-
 # <a name="introduction-to-storyboards-in-xamarinios"></a>Xamarin.iOS でストーリー ボードの概要
 
 このガイドでは、どのようなストーリー ボードを説明しましたが、主要なコンポーネント – Segues などのいくつかを確認します。 ストーリー ボードを作成して、使用する方法について説明しますおよび開発者がどのような利点があります。
 
 ストーリー ボード ファイルの形式は、iOS アプリケーションの UI の視覚的表現として、Apple によって導入された、前に、開発者は各ビュー コント ローラー用の XIB ファイルを作成し、それぞれのビュー間のナビゲーションのプログラムを手動で作成します。  ストーリー ボードを使用して、ビュー コント ローラーと、デザイン サーフェイスにそれらの間のナビゲーションを定義する、開発者し、により、アプリケーションのユーザー インターフェイスの WYSIWYG 編集します。
 
-ストーリー ボードの作成、開くおよび Xamarin iOS Designer で編集できます。 このガイドもチュートリアル デザイナーを使用して c# プログラムのナビゲーションを使用しているときに、ストーリー ボードを作成する方法。
+ストーリー ボードの作成、開くおよび Xamarin iOS Designer で編集できます。 このガイドもチュートリアル デザイナーを使用して C# プログラムのナビゲーションを使用しているときに、ストーリー ボードを作成する方法。
 
 
 ## <a name="requirements"></a>必要条件

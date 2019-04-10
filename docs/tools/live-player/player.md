@@ -6,16 +6,19 @@ ms.assetid: A7EB73C1-38D7-46C5-9AF6-4C571C168BE7
 author: lobrien
 ms.author: laobri
 ms.date: 08/08/2017
-ms.openlocfilehash: fdd602da932e0c36cadade50476babba51d67398
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 89795e5df00b426c0f11c04a0844993071df1e25
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113171"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58855199"
 ---
 # <a name="xamarin-live-player-app"></a>Xamarin Live Player アプリ
 
 ![プレビュー機能](~/media/shared/preview.png)
+
+> [!NOTE]
+> Live Player のプレビューには、Visual Studio 2017 ではできるだけです。
 
 次のスマート フォンにアプリをインストールすると、[セットアップ手順](~/tools/live-player/install.md)コンピューターに接続します。 いずれかの操作を再試行してください、[サンプル アプリ](~/tools/live-player/samples.md)これを利用します。
 
@@ -35,7 +38,7 @@ ms.locfileid: "50113171"
 
 情報ボタンを押して **(i)** を表示するアプリの下部にある、**オプション**メニュー。
 
-[![[オプション] メニューのスクリーン ショット](player-images/options-sml.png)](player-images/options.png#lightbox)
+[![S[オプション] メニューの creenshot](player-images/options-sml.png)](player-images/options.png#lightbox)
 
 ### <a name="logs"></a>ログ
 
@@ -47,13 +50,13 @@ ms.locfileid: "50113171"
 - バージョン情報です。
 - フィードバックを送信します。
 
-[![設定のスクリーン ショット](player-images/settings-sml.png)](player-images/settings.png#lightbox)
+[![S設定の creenshot](player-images/settings-sml.png)](player-images/settings.png#lightbox)
 
 ## <a name="managing-devices"></a>デバイスを管理します。
 
 最初にデバイスを接続する手順については、[要件およびセットアップ](~/tools/live-player/install.md)します。 複数のデバイスをペアリングし、IDE を使用して管理できます。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
 
 Visual Studio で、次のように選択します**ツール > Xamarin Live Player > デバイスを管理しています...**
 
@@ -67,7 +70,7 @@ Visual Studio で、次のように選択します**ツール > Xamarin Live Pla
 
 このウィンドウは、デバイスの一覧からアクセスすることもできます。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
 
 Visual studio for Mac では、次のように選択します**ツール > (Xamarin Live Player) デバイスを管理しています...**
 
@@ -91,6 +94,5 @@ Visual studio for Mac では、次のように選択します**ツール > (Xama
 
 ## <a name="related-links"></a>関連リンク
 
-- [制限事項](~/tools/live-player/limitations.md)
 - [トラブルシューティング](~/tools/live-player/troubleshooting.md)
-- [Xamarin Live Player のサンプル](samples.md)
+- [Live Player を使用するサンプル](https://developer.xamarin.com/samples/xamarin-live-player/all/)

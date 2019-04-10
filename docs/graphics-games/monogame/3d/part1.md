@@ -33,7 +33,7 @@ MonoGame API には、`Model`レンダリングを実行して、コンテンツ
 
 ## <a name="creating-an-empty-game-project"></a>ゲームの空のプロジェクトを作成します。
 
-最初に呼び出された MonoGame3D ゲーム プロジェクトを設定する必要があります。 新しい MonoGame プロジェクトを作成する方法の詳細については、次を参照してください。[クロス プラットフォーム Monogame プロジェクトを作成するには、このチュートリアル](~/graphics-games/monogame/introduction/part1.md)します。
+最初に呼び出された MonoGame3D ゲーム プロジェクトを設定する必要があります。 新しい MonoGame プロジェクトを作成する方法の詳細については、[クロス プラットフォーム Monogame プロジェクトを作成するには、このチュートリアル](~/graphics-games/monogame/introduction/part1.md)を参照してください。
 
 続行する前にする必要がありますのプロジェクトが開き、正しく展開を確認します。 展開後、空のブルー スクリーンが表示されます。
 
@@ -44,7 +44,7 @@ MonoGame API には、`Model`レンダリングを実行して、コンテンツ
 
 .Xnb ファイルの形式がビルドされたコンテンツを標準の拡張機能 (で作成されたコンテンツ、 [MonoGame パイプライン ツール](http://www.monogame.net/documentation/?page=Pipeline))。 組み込みのすべてのコンテンツは、ソース ファイル (つまり、モデルの場合、.fbx ファイル) および変換先のファイル (.xnb ファイル) を持ちます。 .Fbx 形式などのアプリケーションで作成できる一般的な 3D モデル形式[Maya](http://www.autodesk.com/products/maya/overview)と[Blender](http://www.blender.org/)します。 
 
-`Model`ファイルを読み込んで .xnb 3D ジオメトリ データが含まれているディスクからクラスを作成できます。   コンテンツ プロジェクトを通じてこの .xnb ファイルが作成されます。 自動的に、Monogame テンプレートには、当社の Content フォルダのコンテンツ (拡張子 .mgcp) を含むプロジェクトが含まれます。 MonoGame パイプライン ツールの詳細については、次を参照してください。、[コンテンツ パイプライン ガイド](~/graphics-games/cocossharp/content-pipeline/index.md)します。
+`Model`ファイルを読み込んで .xnb 3D ジオメトリ データが含まれているディスクからクラスを作成できます。   コンテンツ プロジェクトを通じてこの .xnb ファイルが作成されます。 自動的に、Monogame テンプレートには、当社の Content フォルダのコンテンツ (拡張子 .mgcp) を含むプロジェクトが含まれます。 MonoGame パイプライン ツールの詳細については、、[コンテンツ パイプライン ガイド](~/graphics-games/cocossharp/content-pipeline/index.md)を参照してください。
 
 MonoGame パイプラインを使用して経由では省略しますこのガイドは、ツールを使用します。ここに含まれる XNB ファイル。 なお、します。XNB ファイル プラットフォームごとに異なるため、XNB ファイルの正しいセットを使用しているいずれのプラットフォームを使用してください。
 

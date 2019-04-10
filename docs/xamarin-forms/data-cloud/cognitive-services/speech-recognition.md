@@ -29,9 +29,9 @@ Microsoft Speech API では、2 つのコンポーネントがあります。
 
 この記事では、REST API 経由での音声認識を実行する方法について説明します。 クライアントとサービス ライブラリでは、部分的な結果を返すことをサポート、REST API はのみ、部分的な結果なしの 1 つの認識結果を返します。
 
-Microsoft Speech API を使用して API キーを取得する必要があります。 これは、Azure から取得できます[ポータル](https://portal.azure.com/)します。 詳細については、次を参照してください。 [、Azure portal で Cognitive Services アカウントの作成](/azure/cognitive-services/cognitive-services-apis-create-account)です。
+Microsoft Speech API を使用して API キーを取得する必要があります。 これは、Azure から取得できます[ポータル](https://portal.azure.com/)します。 詳細については、[、Azure portal で Cognitive Services アカウントの作成](/azure/cognitive-services/cognitive-services-apis-create-account)を参照してください。
 
-Microsoft Speech API の詳細については、次を参照してください。 [Microsoft Speech API のドキュメント](/azure/cognitive-services/speech/home/)します。
+Microsoft Speech API の詳細については、[Microsoft Speech API のドキュメント](/azure/cognitive-services/speech/home/)を参照してください。
 
 ## <a name="authentication"></a>認証
 
@@ -114,7 +114,7 @@ string GenerateRequestUri(string speechEndpoint)
 }
 ```
 
-によって実行される主な構成、`GenerateRequestUri`メソッドは、オーディオ コンテンツのロケールを設定します。 サポートされているロケールの一覧は、次を参照してください。[サポートされる言語](/azure/cognitive-services/speech/api-reference-rest/supportedlanguages/)します。
+によって実行される主な構成、`GenerateRequestUri`メソッドは、オーディオ コンテンツのロケールを設定します。 サポートされているロケールの一覧は、[サポートされる言語](/azure/cognitive-services/speech/api-reference-rest/supportedlanguages/)を参照してください。
 
 ### <a name="sending-the-request"></a>要求を送信します。
 
@@ -144,7 +144,7 @@ async Task<string> SendRequestAsync(Stream fileStream, string url, string bearer
 
 POST 要求に送信し、 `recognition` API。 応答が読み取られ、呼び出し元メソッドに返されます。
 
-`recognition` API は、要求が有効である、要求が成功したことを示すし、の要求された情報は、応答で提供される応答には、HTTP 状態コード 200 (OK) を送信します。 想定されるエラー応答の一覧は、次を参照してください。[トラブルシューティング](/azure/cognitive-services/speech/troubleshooting)します。
+`recognition` API は、要求が有効である、要求が成功したことを示すし、の要求された情報は、応答で提供される応答には、HTTP 状態コード 200 (OK) を送信します。 想定されるエラー応答の一覧は、[トラブルシューティング](/azure/cognitive-services/speech/troubleshooting)を参照してください。
 
 ### <a name="processing-the-response"></a>応答の処理
 

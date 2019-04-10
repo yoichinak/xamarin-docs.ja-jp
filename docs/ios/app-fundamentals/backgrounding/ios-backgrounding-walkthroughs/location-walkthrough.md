@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: b857ee97951f0abfdf8e082ca9a826d5580d24ab
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: fa8a48e165764a449af4bc5414d2e66aecea8269
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669194"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870145"
 ---
 # <a name="walkthrough---background-location-in-xamarinios"></a>チュートリアル - Xamarin.iOS でのバック グラウンド場所
 
@@ -72,7 +72,7 @@ ms.locfileid: "57669194"
     }
     ```
 
-    上記のコードでのさまざまなプロパティとアクセス許可の設定、 [CLLocationManager](https://developer.xamarin.com/api/type/CoreLocation.CLLocationManager/)クラス。
+    上記のコードでのさまざまなプロパティとアクセス許可の設定、 [CLLocationManager](xref:CoreLocation.CLLocationManager)クラス。
 
     - `PausesLocationUpdatesAutomatically` – これは、ブール値に応じて、システムの場所の更新プログラムを一時停止が許可されたかどうかを設定できます。 一部のデバイスを既定`true`、バック グラウンド約 15 分後に位置情報の更新の取得を停止するデバイスが発生することができます。
     - `RequestAlwaysAuthorization` -アプリのユーザーに、バック グラウンドでアクセスできる場所を許可するオプションを提供するには、このメソッドを渡す必要があります。 `RequestWhenInUseAuthorization` アプリがフォア グラウンドである場合にのみアクセスする場所を許可するオプションをユーザーに付与する場合も渡されることができます。

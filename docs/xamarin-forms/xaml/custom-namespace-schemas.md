@@ -31,7 +31,7 @@ ms.locfileid: "57557218"
 
 など、カスタムの名前空間スキーマを定義するその他の方法は、 `http://mycompany.com/schemas/controls`、1 つまたは複数の CLR 名前空間にマップされます。 これにより、異なる名前空間内にある場合でも、アセンブリ内のすべての型を参照する 1 つの XAML 名前空間宣言。 また、複数のアセンブリで参照型を 1 つの XAML 名前空間宣言こともできます。
 
-XAML 名前空間の詳細については、次を参照してください。 [Xamarin.Forms の XAML 名前空間](namespaces.md)します。
+XAML 名前空間の詳細については、[Xamarin.Forms の XAML 名前空間](namespaces.md)を参照してください。
 
 ## <a name="defining-a-custom-namespace-schema"></a>カスタムの名前空間のスキーマを定義します。
 

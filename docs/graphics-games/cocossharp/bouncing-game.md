@@ -418,7 +418,7 @@ if (doesBallOverlapPaddle && isMovingDownward)
 
 このチュートリアルでは、クロス プラットフォーム ゲームを作成するグラフィックス、物理学 CocosSharp を使用して、入力と表示されます。 CocosSharp のゲーム開発を開始する最初の手順になります。 CocosSharp、オブジェクトが適切にレンダリングされるため、ビジュアル ツリーを構築する方法、およびフレームごとのゲーム ロジックを実装する方法の最も一般的なクラスのいくつか説明しました。
 
-このチュートリアルでは、CocosSharp ゲーム エンジンの機能のほんの一部について説明します。 CocosSharp に関するその他のチュートリアルとは、次を参照してください。 [CocosSharp ガイドの残りの部分](~/graphics-games/cocossharp/index.md)します。
+このチュートリアルでは、CocosSharp ゲーム エンジンの機能のほんの一部について説明します。 CocosSharp に関するその他のチュートリアルとは、[CocosSharp ガイドの残りの部分](~/graphics-games/cocossharp/index.md)を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 

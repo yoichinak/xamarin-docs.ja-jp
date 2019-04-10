@@ -21,7 +21,7 @@ ms.locfileid: "53056241"
 _アニメーション クラスは、1 つまたは複数のアニメーション オブジェクトを作成する ViewExtensions クラスで拡張メソッドで、すべての Xamarin.Forms のアニメーションのビルディング ブロックです。この記事では、アニメーション クラスを使用して作成、アニメーションを取り消すと、複数のアニメーションを同期するには、既存のアニメーションの方法でアニメーション化するプロパティをアニメーション化するカスタムのアニメーションを作成する方法を示します。_
 
 
-作成時に、パラメーターの数を指定する必要があります、`Animation`をアニメーション化するプロパティの開始と終了値を含むオブジェクトとプロパティの値を変更するコールバック。 `Animation`オブジェクト実行および同期が可能な子アニメーションのコレクションの管理もできます。 詳細については、次を参照してください。[子アニメーション](#child)します。
+作成時に、パラメーターの数を指定する必要があります、`Animation`をアニメーション化するプロパティの開始と終了値を含むオブジェクトとプロパティの値を変更するコールバック。 `Animation`オブジェクト実行および同期が可能な子アニメーションのコレクションの管理もできます。 詳細については、[子アニメーション](#child)を参照してください。
 
 作成したアニメーションの実行、 [ `Animation` ](xref:Xamarin.Forms.Animation)子アニメーションを含まない場合がありますか、クラスが呼び出すことによって実現されます、 [ `Commit` ](xref:Xamarin.Forms.Animation.Commit(Xamarin.Forms.IAnimatable,System.String,System.UInt32,System.UInt32,Xamarin.Forms.Easing,System.Action{System.Double,System.Boolean},System.Func{System.Boolean}))メソッド。 このメソッドは、期間と、他の項目の間で、アニメーションのアニメーションを繰り返すかどうかを制御するコールバックを指定します。
 
@@ -49,7 +49,7 @@ animation.Commit (this, "SimpleAnimation", 16, 2000, Easing.Linear, (v, c) => im
 - 2 番目の引数 (*名前*) 名前を持つアニメーションを識別します。 名前は、アニメーションを一意に識別するために、所有者と組み合わされます。 この一意の id、アニメーションが実行されているかどうかを使用できます ([`AnimationIsRunning`](xref:Xamarin.Forms.AnimationExtensions.AnimationIsRunning(Xamarin.Forms.IAnimatable,System.String)))、またはそれをキャンセルする ([`AbortAnimation`](xref:Xamarin.Forms.AnimationExtensions.AbortAnimation(Xamarin.Forms.IAnimatable,System.String)))。
 - 3 番目の引数 (*レート*) で定義されたコールバック メソッドを呼び出す間隔 (ミリ秒) の数を示す、 [ `Animation` ](xref:Xamarin.Forms.Animation)コンス トラクター
 - 4 番目の引数 (*長さ*) (ミリ秒単位)、アニメーションの時間を示します。
-- 5 番目の引数 (*イージング*)、アニメーションで使用されるイージング関数を定義します。 引数として、イージング関数を指定する代わりに、 [ `Animation` ](xref:Xamarin.Forms.Animation)コンス トラクター。 イージング関数の詳細については、次を参照してください。[イージング関数](~/xamarin-forms/user-interface/animation/easing.md)します。
+- 5 番目の引数 (*イージング*)、アニメーションで使用されるイージング関数を定義します。 引数として、イージング関数を指定する代わりに、 [ `Animation` ](xref:Xamarin.Forms.Animation)コンス トラクター。 イージング関数の詳細については、[イージング関数](~/xamarin-forms/user-interface/animation/easing.md)を参照してください。
 - 6 番目の引数 (*完了*) は、アニメーションが完了したときに実行されるコールバックです。 このコールバックは、最初の引数を示す最終的な値では、2 番目の引数を 2 つの引数を受け取り、`bool`に設定されている`true`アニメーションが取り消された場合。 または、*完了*への引数としてコールバックを指定することができます、 [ `Animation` ](xref:Xamarin.Forms.Animation)コンス トラクター。 ただし、1 つのアニメーションで場合*完了*コールバックが両方で指定された、`Animation`コンス トラクターと`Commit`メソッドで指定されたコールバックのみ、`Commit`メソッドが実行されます。
 - 7 番目の引数 (*繰り返します*) は、アニメーションを繰り返すことができるコールバックです。 アニメーションの終了時に呼び出され、返す`true`アニメーションを繰り返すよう指定する必要があります。
 

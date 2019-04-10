@@ -36,7 +36,7 @@ MonoGame のパイプライン ツールは、コンテンツ ファイルに変
 
 ## <a name="monogame-pipeline-tool-discussion"></a>MonoGame パイプライン ツールについて
 
-MonoGame のパイプライン ツールは、Windows、OS X、Linux で使用できます。 このチュートリアルは、Windows のツールを実行しますが、続きます Mac および Linux でも。 最大値または Linux で設定するツールを取得する方法の詳細については、次を参照してください。[このページ](http://www.monogame.net/2015/01/09/monogame-pipeline-tool-available-for-macos-and-linux/)します。
+MonoGame のパイプライン ツールは、Windows、OS X、Linux で使用できます。 このチュートリアルは、Windows のツールを実行しますが、続きます Mac および Linux でも。 最大値または Linux で設定するツールを取得する方法の詳細については、[このページ](http://www.monogame.net/2015/01/09/monogame-pipeline-tool-available-for-macos-and-linux/)を参照してください。
 
 MonoGame パイプライン ツールは、iOS アプリケーションでも実行とを使用するための開発者、Windows 上のコンテンツを作成することが[Xamarin Mac Agent](~/ios/get-started/installation/windows/connecting-to-mac/index.md) Windows での開発を続けることができます。
 

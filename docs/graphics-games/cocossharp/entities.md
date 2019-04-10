@@ -106,7 +106,7 @@ public override void ApplicationDidFinishLaunching (CCApplication applicati
 } 
 ```
 
-CocosSharp の解像度で処理する方法の詳細については、次を参照してください。 この[CocosSharp での複数の解決を処理ガイド](~/graphics-games/cocossharp/resolutions.md)します。
+CocosSharp の解像度で処理する方法の詳細については、この[CocosSharp での複数の解決を処理ガイド](~/graphics-games/cocossharp/resolutions.md)を参照してください。
 
 
 ## <a name="adding-content-to-the-project"></a>プロジェクトにコンテンツを追加します。

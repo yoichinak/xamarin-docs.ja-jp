@@ -7,8 +7,13 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2018
+ms.openlocfilehash: ca8b554e03c4e8339922ca99619245a45bd08e1d
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669090"
 ---
-
 # <a name="android-wear"></a>Android Wear
 
 Android Wear、スマート ウォッチなど、ウェアラブル デバイス用に設計された Android のバージョンです。 このセクションをインストールして、最初の Wear デバイスと、独自に作成するための Wear アプリを参照できるサンプルの一覧を作成するためのステップ バイ ステップ チュートリアル、Wear の開発に必要なツールを構成する方法の手順を説明します。

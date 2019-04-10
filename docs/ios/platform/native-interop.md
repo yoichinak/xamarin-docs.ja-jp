@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/28/2016
-ms.openlocfilehash: 42cf10e592a37f9a979d05d7784553059923646c
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 7ed8fc18624f46abd4a9fc293d8c33a1722da7dd
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57667322"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870262"
 ---
 # <a name="referencing-native-libraries-in-xamarinios"></a>Xamarin.iOS でネイティブ ライブラリを参照します。
 
@@ -122,8 +122,7 @@ lipo -info /full/path/to/libraryname.a
 -  ライブラリ内の特定します。
 -  適切な P/invoke 宣言を書き込む
 
-
-P/invoke を使用する場合は、リンクするライブラリのパスを指定する必要があります。 ライブラリを共有する iOS を使用して、ハードコーディングするか、パスまたはで定義していますが、利便性定数を使用するときに、[定数クラス](https://developer.xamarin.com/api/type/Constants/)、これらの定数は、iOS の共有ライブラリをカバーする必要があります。
+P/invoke を使用する場合は、リンクするライブラリのパスを指定する必要があります。 ライブラリを共有する iOS を使用して、ハードコーディングするか、パスまたはで定義していますが、利便性定数を使用するときに、 `Constants`、これらの定数は、iOS の共有ライブラリをカバーする必要があります。
 
 たとえば、c: このシグネチャのある Apple の UIKit ライブラリから UIRectFrameUsingBlendMode メソッドを呼び出す必要がある場合
 

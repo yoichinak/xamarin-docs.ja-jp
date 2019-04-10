@@ -7,8 +7,13 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/29/2017
+ms.openlocfilehash: b018fe343a7d46f1323119b03a22cc3831a02d9f
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870249"
 ---
-
 # <a name="introduction-to-ios-10"></a>IOS 10 の概要
 
 _この記事では、Xamarin.iOS の開発者向けのすべての新規および変更した Api と iOS 10 で使用できる機能を紹介します。_
@@ -221,9 +226,9 @@ Apple には、ウィジェット システムをウィジェットに美しく�
 
 IOS 10 では、次の Api が廃止されました。
 
-- `CKDiscoverAllContactsOperation`、 `CKDiscoveredUserInfo`、`CKDiscoverUserInfosOperation`と`CKFetchRecordChangesOperation`クラス CloudKit で iOS 10 の廃止されました。 使用して、 [CKDiscoverAllUserIdentitiesOperation](https://developer.xamarin.com/api/type/CloudKit.CKDiscoverUserIdentitiesOperation/)、 [CKUserIdentity](https://developer.xamarin.com/api/type/CloudKit.CKUserIdentity/)と[CKFetchRecordZoneChangesOperation](https://developer.xamarin.com/api/type/CloudKit.CKFetchRecordZoneChangesOperation/)クラス (レコードの共有をサポート) を代わりにします。
-- いくつか[CKSubscription](https://developer.apple.com/reference/cloudkit/cksubscription) (ゾーンおよびクエリ ベース サブスクリプション) などの Api が非推奨とされました。 使用して、 [CKRecordZoneSubscription](https://developer.xamarin.com/api/type/CloudKit.CKRecordZoneSubscription/)と[CKQuerySubscription](https://developer.xamarin.com/api/type/CloudKit.CKQuerySubscription/) Api 代わりにします。
-- [NSPersistentStoreCoordnator](https://developer.xamarin.com/api/type/CoreData.NSPersistentStoreCoordinator/)ユビキタス コンテンツに関連するシンボルが非推奨とされました。
+- `CKDiscoverAllContactsOperation`、 `CKDiscoveredUserInfo`、`CKDiscoverUserInfosOperation`と`CKFetchRecordChangesOperation`クラス CloudKit で iOS 10 の廃止されました。 使用して、 [CKDiscoverAllUserIdentitiesOperation](xref:CloudKit.CKDiscoverUserIdentitiesOperation)、 [CKUserIdentity](xref:CloudKit.CKUserIdentity)と[CKFetchRecordZoneChangesOperation](xref:CloudKit.CKFetchRecordZoneChangesOperation)クラス (レコードの共有をサポート) を代わりにします。
+- いくつか[CKSubscription](https://developer.apple.com/reference/cloudkit/cksubscription) (ゾーンおよびクエリ ベース サブスクリプション) などの Api が非推奨とされました。 使用して、 [CKRecordZoneSubscription](xref:CloudKit.CKRecordZoneSubscription)と[CKQuerySubscription](xref:CloudKit.CKQuerySubscription) Api 代わりにします。
+- [NSPersistentStoreCoordnator](xref:CoreData.NSPersistentStoreCoordinator)ユビキタス コンテンツに関連するシンボルが非推奨とされました。
 - `ADBannerView`、`ADInterstitialAd`内のシンボルに関連し、 [UIViewController](xref:UIKit.UIViewController)クラスが推奨されていません。
 - [SKUniform](https://developer.apple.com/reference/spritekit/skuniform)浮動小数点値に関連するシンボルが非推奨とされました。
 - `UILocalNotification`、 `UIMutableUserNotificationAction`、 `UIMutableUserNotificationCategory`、 `UIUserNotificationAction`、`UIUserNotificationCategory`と`UIUserNotificationSettings`UIKit のクラスが非推奨とされました。 使用して、[ユーザー通知](#user-notifications)framework 代わりにします。

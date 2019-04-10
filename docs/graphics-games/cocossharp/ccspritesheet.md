@@ -123,7 +123,7 @@ TexturePacker、 [TexturePacker web サイトからダウンロード](https://w
 
 スプライト シートをエクスポートするには、クリックして、**発行スプライト シート**ボタンをクリックし、スプライト シートの場所を選択します。 TexturePacker は形式の .plist ファイルとイメージ ファイルを保存します。
 
-結果として得られるファイルを使用するには、.png と .plist の両方を CocosSharp プロジェクトに追加します。 CocosSharp プロジェクトにファイルを追加する方法については、次を参照してください。、 [BouncingGame ガイド](~/graphics-games/cocossharp/bouncing-game.md)します。 読み込まれることができますが、ファイルが追加される、`CCSpriteSheet`上記のコードで以前表示されます。
+結果として得られるファイルを使用するには、.png と .plist の両方を CocosSharp プロジェクトに追加します。 CocosSharp プロジェクトにファイルを追加する方法については、、 [BouncingGame ガイド](~/graphics-games/cocossharp/bouncing-game.md)を参照してください。 読み込まれることができますが、ファイルが追加される、`CCSpriteSheet`上記のコードで以前表示されます。
 
 ```csharp
 CCSpriteSheet sheet = new CCSpriteSheet ("sheet.plist", "sheet.png"); 

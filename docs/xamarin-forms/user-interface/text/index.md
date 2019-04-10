@@ -7,8 +7,13 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2018
+ms.openlocfilehash: 8754f6573b00334fd228b1c9bd094cd91565976c
+ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57557091"
 ---
-
 # <a name="text-in-xamarinforms"></a>Xamarin.Forms でのテキスト
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
@@ -33,7 +38,7 @@ Xamarin.Forms では、テキストを操作するための 3 つのプライマ
 
 参照してください、[ラベル](label.md)」の記事より詳細な情報。
 
-ラベルで使用されるフォントをカスタマイズする方法の詳細については、次を参照してください。[フォント](fonts.md)します。
+ラベルで使用されるフォントをカスタマイズする方法の詳細については、[フォント](fonts.md)を参照してください。
 
 <a name="Entry" />
 

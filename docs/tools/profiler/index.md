@@ -6,8 +6,13 @@ ms.assetid: 3247fcee-6acc-470d-ab87-c1c511d67363
 author: lobrien
 ms.author: laobri
 ms.date: 06/03/2018
+ms.openlocfilehash: 15739ff191953e4730d44c6ad9f63dccb9a0017e
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668414"
 ---
-
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
 _このガイドでは、Xamarin Profiler の主な機能について説明します。これにより、プロファイラーがプロファイリング、およびときに使用する必要があります、および標準的なワークフローが Xamarin アプリケーションのプロファイリングを探します。_
@@ -171,7 +176,7 @@ IOS または Android のアプリケーションをプロファイリングす�
 
 読み込むことができます *.mlpd* 、スタンドアロン アプリケーションを開くことで Profiler にファイルを選択すると**ターゲットの選択**ファイルの読み込みとします。
 
-詳細については、次を参照してください。 [.mlpd ファイルを生成する](~/tools/profiler/troubleshooting.md#gen_mlpd)します。
+詳細については、[.mlpd ファイルを生成する](~/tools/profiler/troubleshooting.md#gen_mlpd)を参照してください。
 
 ## <a name="profiler-features"></a>Profiler の機能
 

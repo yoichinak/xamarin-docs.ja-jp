@@ -71,7 +71,7 @@ Nuget パッケージからテーマを追加するだけでなく (など、 [L
 xmlns:local="clr-namespace:ThemesDemo;assembly=ThemesDemo"
 ```
 
-### <a name="c-code-in-the-net-standard-library-project-or-shared-project"></a>.NET Standard ライブラリ プロジェクトまたは共有プロジェクトで c# コード
+### <a name="c-code-in-the-net-standard-library-project-or-shared-project"></a>.NET Standard ライブラリ プロジェクトまたは共有プロジェクトで C# コード
 
 ラウンド角を作成するコード`BoxView`使用[効果](~/xamarin-forms/app-fundamentals/effects/index.md)します。
 使用して、角の半径を適用、`BindableProperty`適用することによって実装されると、[効果](~/xamarin-forms/app-fundamentals/effects/index.md)。 効果でプラットフォーム固有のコードが必要です、 [iOS](#ios)と[Android](#android)プロジェクト (下記参照)。
@@ -128,7 +128,7 @@ namespace ThemesDemo
 
 <a name="ios" />
 
-### <a name="c-code-in-the-ios-project"></a>IOS プロジェクトで c# コード
+### <a name="c-code-in-the-ios-project"></a>IOS プロジェクトで C# コード
 
 ```csharp
 using System;
@@ -184,7 +184,7 @@ namespace ThemesDemo.iOS
 
 <a name="android" />
 
-### <a name="c-code-in-the-android-project"></a>Android プロジェクトで c# コード
+### <a name="c-code-in-the-android-project"></a>Android プロジェクトで C# コード
 
 ```csharp
 using System;

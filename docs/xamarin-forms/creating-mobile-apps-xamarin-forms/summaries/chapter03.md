@@ -22,7 +22,7 @@ ms.locfileid: "54207849"
 
 ## <a name="wrapping-paragraphs"></a>段落の折り返し
 
-ときに、 [ `Text` ](xref:Xamarin.Forms.Label.Text)プロパティの`Label`長いテキストを含む`Label`、自動的に折り返さ、複数の行に示すように、 [ **Baskervilles**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/Baskervilles)サンプル。 '\U2014' em dash、または c# の新しい行に分割するには、'\r' などの文字などの Unicode コードを埋め込むことができます。
+ときに、 [ `Text` ](xref:Xamarin.Forms.Label.Text)プロパティの`Label`長いテキストを含む`Label`、自動的に折り返さ、複数の行に示すように、 [ **Baskervilles**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/Baskervilles)サンプル。 '\U2014' em dash、または C# の新しい行に分割するには、'\r' などの文字などの Unicode コードを埋め込むことができます。
 
 ときに、 [ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions)と[ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions)のプロパティを`Label`に設定されます`LayoutOptions.Fill`、全体のサイズ、`Label`領域に準拠するものをそのコンテナー使用できるようにします。 `Label`言います*制約付き*します。 サイズ、`Label`はそのコンテナーのサイズです。
 
@@ -121,7 +121,7 @@ Android を対象とする場合になっても Android.Manifest.xml ファイ�
 
 別の方法としていくつかのプリセットのプラットフォームに依存するフォント サイズのいずれかを取得できます。 静的な[ `Device.GetNamedSize` ](xref:Xamarin.Forms.Device.GetNamedSize(Xamarin.Forms.NamedSize,System.Type))メソッドと[オーバー ロード](xref:Xamarin.Forms.Device.GetNamedSize(Xamarin.Forms.NamedSize,Xamarin.Forms.Element))両方を返す、`double`プラットフォームに適切なフォント サイズ値がのメンバーに基づいて、 [ `NamedSize` ](xref:Xamarin.Forms.NamedSize)列挙型 ([`Default`](xref:Xamarin.Forms.NamedSize.Default)、 [ `Micro` ](xref:Xamarin.Forms.NamedSize.Micro)、 [ `Small` ](xref:Xamarin.Forms.NamedSize.Small)、 [ `Medium` ](xref:Xamarin.Forms.NamedSize.Medium)、 [ `Large` ](xref:Xamarin.Forms.NamedSize.Large))。 返される値、`Medium`メンバーが必ずしも同じ`Default`します。 [ **NamedFontSizes** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/NamedFontSizes)サンプルでは、これらのサイズを名前付きのテキストを表示します。
 
-設定、 [ `FontAttributes` ](xref:Xamarin.Forms.Label.FontAttributes)プロパティの`Label`これらのメンバーに[ `FontAttributes` ](xref:Xamarin.Forms.FontAttributes)列挙型、 [ `Bold` ](xref:Xamarin.Forms.FontAttributes.Bold)、 [ `Italic`](xref:Xamarin.Forms.FontAttributes.Italic)、または[ `None`](xref:Xamarin.Forms.FontAttributes.None)します。 組み合わせることができます、`Bold`と`Italic`c# or 演算子を持つメンバー。
+設定、 [ `FontAttributes` ](xref:Xamarin.Forms.Label.FontAttributes)プロパティの`Label`これらのメンバーに[ `FontAttributes` ](xref:Xamarin.Forms.FontAttributes)列挙型、 [ `Bold` ](xref:Xamarin.Forms.FontAttributes.Bold)、 [ `Italic`](xref:Xamarin.Forms.FontAttributes.Italic)、または[ `None`](xref:Xamarin.Forms.FontAttributes.None)します。 組み合わせることができます、`Bold`と`Italic`C# or 演算子を持つメンバー。
 
 ## <a name="formatted-text"></a>書式付きテキスト
 

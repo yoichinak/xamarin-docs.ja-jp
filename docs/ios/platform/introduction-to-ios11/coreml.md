@@ -175,7 +175,7 @@ void HandleClassification(VNRequest request, NSError error){
 
 * [Vision & CoreML サンプル](https://developer.xamarin.com/samples/monotouch/ios11/CoreMLVision/)イメージ パラメーターを受け取り、1 桁の数字を認識する CoreML モデルに渡される画像の正方形の領域を識別するビジョン フレームワークを使用します。
 
-* 最後に、 [CoreML 画像認識のサンプル](https://developer.xamarin.com/samples/monotouch/ios11/CoreMLImageRecognition/)CoreML を写真で機能を識別するために使用します。 既定では、小さい**SqueezeNet**モデル (5 MB) が、書き込まれたダウンロードされ、大きい方を組み込むように**VGG16**モデル (553 MB)。 詳細については、次を参照してください。、[サンプルの readme](https://github.com/xamarin/ios-samples/blob/master/ios11/CoreMLImageRecognition/CoreMLImageRecognition/README.md)します。
+* 最後に、 [CoreML 画像認識のサンプル](https://developer.xamarin.com/samples/monotouch/ios11/CoreMLImageRecognition/)CoreML を写真で機能を識別するために使用します。 既定では、小さい**SqueezeNet**モデル (5 MB) が、書き込まれたダウンロードされ、大きい方を組み込むように**VGG16**モデル (553 MB)。 詳細については、、[サンプルの readme](https://github.com/xamarin/ios-samples/blob/master/ios11/CoreMLImageRecognition/CoreMLImageRecognition/README.md)を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 

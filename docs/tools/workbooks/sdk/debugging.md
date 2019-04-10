@@ -50,7 +50,7 @@ Xamarin Workbooks を再起動します。 そうと表示する必要があり�
 
 [![Safari の開発ツール](debugging-images/mac-dev-tools.png)](debugging-images/mac-dev-tools.png#lightbox)
 
-Safari の開発者ツールの使用方法の詳細については、次を参照してください。、 [WebKit インスペクター ドキュメント][webkit-docs]します。
+Safari の開発者ツールの使用方法の詳細については、、 [WebKit インスペクター ドキュメント][webkit-docs]を参照してください。
 
 ### <a name="windows"></a>Windows
 

@@ -40,7 +40,7 @@ _RecyclerView は、ビュー グループはコレクションを表示しま�
 
 -  **Xamarin.Android** &ndash; Xamarin.Android 4.20 or later must be installed and configured with either Visual Studio or Visual Studio for Mac.
 
--  アプリ プロジェクトを含める必要があります、 **Xamarin.Android.Support.v7.RecyclerView**パッケージ。 NuGet パッケージのインストールの詳細については、次を参照してください。[チュートリアル: NuGet でプロジェクトを含む](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)します。
+-  アプリ プロジェクトを含める必要があります、 **Xamarin.Android.Support.v7.RecyclerView**パッケージ。 NuGet パッケージのインストールの詳細については、[チュートリアル: NuGet でプロジェクトを含む](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)を参照してください。
 
 
 ### <a name="overview"></a>概要

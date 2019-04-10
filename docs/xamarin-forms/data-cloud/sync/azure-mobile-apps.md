@@ -28,7 +28,7 @@ _オフライン同期により、データの変更や、表示、追加、モ�
 
 オフライン同期には、Azure Mobile Apps のインスタンスとカスタム競合解決で、両方のローカル ストアと同じレコードが変更されたときの競合を検出のサポートも含まれています。 競合は、ローカル ストア、または Azure Mobile Apps のインスタンスか、処理できます。
 
-オフライン同期の詳細については、次を参照してください。 [Azure Mobile Apps でのオフライン データ同期](/azure/app-service-mobile/app-service-mobile-offline-data-sync/)と[Xamarin.Forms モバイル アプリのオフライン同期を有効にする](/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started-offline-data/)します。
+オフライン同期の詳細については、[Azure Mobile Apps でのオフライン データ同期](/azure/app-service-mobile/app-service-mobile-offline-data-sync/)と[Xamarin.Forms モバイル アプリのオフライン同期を有効にする](/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started-offline-data/)を参照してください。
 
 ## <a name="setup"></a>セットアップ
 
@@ -170,7 +170,7 @@ protected override async void OnAppearing()
 
 これは、アプリケーションは開始時に Azure Mobile Apps のインスタンスと同期しようとしていることを意味します。
 
-使用して、データの一覧と、Windows プラットフォームを更新するプルを使用して同期を iOS と Android で開始するさらに、**同期**ユーザー インターフェイスでボタンをクリックします。 詳細については、次を参照してください。[プルして更新](~/xamarin-forms/user-interface/listview/interactivity.md#Pull_to_Refresh)します。
+使用して、データの一覧と、Windows プラットフォームを更新するプルを使用して同期を iOS と Android で開始するさらに、**同期**ユーザー インターフェイスでボタンをクリックします。 詳細については、[プルして更新](~/xamarin-forms/user-interface/listview/interactivity.md#Pull_to_Refresh)を参照してください。
 
 ## <a name="summary"></a>まとめ
 

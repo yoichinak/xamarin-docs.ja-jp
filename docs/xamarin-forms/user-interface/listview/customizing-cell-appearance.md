@@ -254,7 +254,7 @@ var listView = new ListView {
 };
 ```
 
-IOS と Android での場合、 [ `ListView` ](xref:Xamarin.Forms.ListView)要素がリサイクルされると、カスタムのセルは、カスタム レンダラーを使用して、カスタム レンダラーがプロパティの変更通知を正しく実装する必要があります。 セルが再利用されると、`PropertyChanged` イベントが発生し、それらセルのプロパティの値は、binding context が有効なセルに更新される時を変更します。 より詳しい情報は [Customizing a ViewCell](~/xamarin-forms/app-fundamentals/custom-renderer/viewcell.md) を参照してください。 セルのリサイクルの詳細については、次を参照してください。[キャッシュ戦略](~/xamarin-forms/user-interface/listview/performance.md#cachingstrategy)します。
+IOS と Android での場合、 [ `ListView` ](xref:Xamarin.Forms.ListView)要素がリサイクルされると、カスタムのセルは、カスタム レンダラーを使用して、カスタム レンダラーがプロパティの変更通知を正しく実装する必要があります。 セルが再利用されると、`PropertyChanged` イベントが発生し、それらセルのプロパティの値は、binding context が有効なセルに更新される時を変更します。 より詳しい情報は [Customizing a ViewCell](~/xamarin-forms/app-fundamentals/custom-renderer/viewcell.md) を参照してください。 セルのリサイクルの詳細については、[キャッシュ戦略](~/xamarin-forms/user-interface/listview/performance.md#cachingstrategy)を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 

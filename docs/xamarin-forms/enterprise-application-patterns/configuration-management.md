@@ -22,7 +22,7 @@ ms.locfileid: "38995361"
 
 ユーザー設定は、アプリの動作に影響を頻繁に再調整を必要としないアプリのカスタマイズ可能な設定です。 たとえば、アプリ ユーザーが、データの取得方法と、画面上に表示する方法を指定することができます。
 
-Xamarin.Forms には、設定データの格納に使用できる永続的なディクショナリが含まれています。 このディクショナリを使用してアクセスできる、 [ `Application.Current.Properties` ](xref:Xamarin.Forms.Application.Properties)プロパティ、およびそこに配置されているすべてのデータには、アプリが、スリープ状態になるし、アプリが再び起動または再開時に復元するときに保存されます。 さらに、 [ `Application` ](xref:Xamarin.Forms.Application)クラスがあります、 [ `SavePropertiesAsync` ](xref:Xamarin.Forms.Application.SavePropertiesAsync)アプリの設定の保存に必要な場合に許可するメソッド。 このディクショナリの詳細については、次を参照してください。 [Properties ディクショナリ](~/xamarin-forms/app-fundamentals/application-class.md#Properties_Dictionary)します。
+Xamarin.Forms には、設定データの格納に使用できる永続的なディクショナリが含まれています。 このディクショナリを使用してアクセスできる、 [ `Application.Current.Properties` ](xref:Xamarin.Forms.Application.Properties)プロパティ、およびそこに配置されているすべてのデータには、アプリが、スリープ状態になるし、アプリが再び起動または再開時に復元するときに保存されます。 さらに、 [ `Application` ](xref:Xamarin.Forms.Application)クラスがあります、 [ `SavePropertiesAsync` ](xref:Xamarin.Forms.Application.SavePropertiesAsync)アプリの設定の保存に必要な場合に許可するメソッド。 このディクショナリの詳細については、[Properties ディクショナリ](~/xamarin-forms/app-fundamentals/application-class.md#Properties_Dictionary)を参照してください。
 
 Xamarin.Forms の永続的なディクショナリを使用してデータを格納する欠点は簡単にバインドされたデータです。 EShopOnContainers のモバイル アプリがから利用可能な Xam.Plugins.Settings ライブラリを使用するため、 [NuGet](https://www.nuget.org/packages/Xam.Plugins.Settings/)します。 このライブラリは、永続化すると、各プラットフォームで提供されるネイティブの設定の管理を使用しているときにアプリとユーザーの設定を取得する一貫した、タイプ セーフ、クロス プラットフォームのアプローチを提供します。 さらに、これは、データ バインディングを使用して、ライブラリによって公開される設定データにアクセスする簡単です。
 

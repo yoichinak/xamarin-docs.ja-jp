@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: b21bf4da7cf862bd32e71708f9e3657f577682c2
-ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
+ms.openlocfilehash: 25b27765a35310c5cdbaf5ae19902b1d19eff6ea
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/30/2019
-ms.locfileid: "58677925"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870275"
 ---
 # <a name="ios-extensions-in-xamarinios"></a>Xamarin.iOS での iOS 拡張機能
 
@@ -99,7 +99,7 @@ ms.locfileid: "58677925"
 
     ![](extensions-images/registerandprincipalclass.png)
 
-特定の種類の拡張機能の追加要件があります。 たとえば、**今日**または**通知センター**拡張機能のプリンシパル クラスを実装する必要があります[INCWidgetProviding](https://developer.xamarin.com/api/type/NotificationCenter.INCWidgetProviding/)します。
+特定の種類の拡張機能の追加要件があります。 たとえば、**今日**または**通知センター**拡張機能のプリンシパル クラスを実装する必要があります[INCWidgetProviding](xref:NotificationCenter.INCWidgetProviding)します。
 
 > [!IMPORTANT]
 > For Mac に Visual Studio によって提供される拡張機能のテンプレートを 1 つを使用してプロジェクトを開始する場合、これらの (全部ではない場合は、ほとんどの要件が提供され、テンプレートによって自動的にするために満たします。

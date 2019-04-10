@@ -29,7 +29,7 @@ _ImageButton がイメージを表示し、タップまたは特定のタスク�
 
 ## <a name="setting-the-image-source"></a>イメージ ソースを設定します。
 
-`ImageButton` 定義、`Source`プロパティをイメージ ソース ファイルを URI、リソース、またはストリームに、ボタンに表示するイメージに設定する必要があります。 さまざまなソースからのイメージの読み込みの詳細については、次を参照してください。 [Xamarin.Forms でイメージ](images.md)します。
+`ImageButton` 定義、`Source`プロパティをイメージ ソース ファイルを URI、リソース、またはストリームに、ボタンに表示するイメージに設定する必要があります。 さまざまなソースからのイメージの読み込みの詳細については、[Xamarin.Forms でイメージ](images.md)を参照してください。
 
 次の例では、インスタンス化する方法を示しています、 `ImageButton` XAML で。
 
@@ -238,7 +238,7 @@ public class ImageButtonDemoPage : ContentPage
 - [`AspectFit`](xref:Xamarin.Forms.Aspect.AspectFit) -レター ボックス (必要に応じて) のイメージにイメージ全体が収まるように、`ImageButton`空白かどうかは、イメージ、幅または高さに応じて境界線の上/下に追加でします。 これは、既定値の[ `Aspect` ](xref:Xamarin.Forms.Aspect)列挙体。
 
 > [!NOTE]
-> `ImageButton`クラスもあります[ `Margin` ](xref:Xamarin.Forms.View.Margin)と`Padding`のレイアウト動作を制御するプロパティ、`ImageButton`します。 詳細については、次を参照してください。[余白やパディング](~/xamarin-forms/user-interface/layouts/margin-and-padding.md)します。
+> `ImageButton`クラスもあります[ `Margin` ](xref:Xamarin.Forms.View.Margin)と`Padding`のレイアウト動作を制御するプロパティ、`ImageButton`します。 詳細については、[余白やパディング](~/xamarin-forms/user-interface/layouts/margin-and-padding.md)を参照してください。
 
 ## <a name="imagebutton-visual-states"></a>ImageButton 表示状態
 
@@ -272,7 +272,7 @@ public class ImageButtonDemoPage : ContentPage
 
 `Pressed` [ `VisualState` ](xref:Xamarin.Forms.VisualState)される場合、`ImageButton`を押すと、その[ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale)プロパティは 1 に 0.8 の既定値から変更されます。 `Normal` `VisualState`される場合、`ImageButton`通常の状態では、その`Scale`プロパティを 1 に設定されます。 そのため、全体の効果では、ときに、`ImageButton`を押すと、これは再スケーリング、若干小さいとタイミングを`ImageButton`がリリースされると、これは再スケーリングの既定のサイズにします。
 
-表示状態の詳細については、次を参照してください。 [、Xamarin.Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md)します。
+表示状態の詳細については、[、Xamarin.Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md)を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 

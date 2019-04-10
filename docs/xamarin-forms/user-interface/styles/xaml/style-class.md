@@ -76,9 +76,9 @@ _Xamarin.Forms のスタイル クラスには、スタイルの継承を使用�
 
 `Separator`、 `Rounded`、および`Circle`スタイル クラスの各セット[ `BoxView` ](xref:Xamarin.Forms.BoxView)プロパティを特定の値にします。
 
-`Rotated`スタイル クラスには、 [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)の[ `VisualElement` ](xref:Xamarin.Forms.VisualElement)、つまりのみに適用できる`VisualElement`インスタンス。 ただし、その[ `ApplyToDerivedTypes` ](xref:Xamarin.Forms.Style.ApplyToDerivedTypes)プロパティに設定されて`true`から派生したコントロールに適用できることが保証`VisualElement`など[ `BoxView`](xref:Xamarin.Forms.BoxView)します。 派生型にスタイルを適用する方法についての詳細については、次を参照してください。[派生型にスタイルを適用](implicit.md#apply-a-style-to-derived-types)します。
+`Rotated`スタイル クラスには、 [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)の[ `VisualElement` ](xref:Xamarin.Forms.VisualElement)、つまりのみに適用できる`VisualElement`インスタンス。 ただし、その[ `ApplyToDerivedTypes` ](xref:Xamarin.Forms.Style.ApplyToDerivedTypes)プロパティに設定されて`true`から派生したコントロールに適用できることが保証`VisualElement`など[ `BoxView`](xref:Xamarin.Forms.BoxView)します。 派生型にスタイルを適用する方法についての詳細については、[派生型にスタイルを適用](implicit.md#apply-a-style-to-derived-types)を参照してください。
 
-同等の c# コードに示します。
+同等の C# コードに示します。
 
 ```csharp
 var separatorBoxViewStyle = new Style(typeof(BoxView))
@@ -208,7 +208,7 @@ Resources = new ResourceDictionary
 > [!IMPORTANT]
 > コントロールに複数のスタイル クラスを適用できます、 [ `StyleClass` ](xref:Xamarin.Forms.VisualElement.StyleClass)プロパティの型は`IList<string>`します。 この場合、一覧の順序の昇順でスタイル クラスが適用されます。 そのため、複数のスタイル クラスでは、同じプロパティを設定するときに最高のリストの位置にあるスタイル クラスでプロパティが優先されます。
 
-同等の c# コードに示します。
+同等の C# コードに示します。
 
 ```csharp
 ...

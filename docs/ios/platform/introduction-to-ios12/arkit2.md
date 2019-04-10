@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/22/2018
-ms.openlocfilehash: 7f3c196eafd71e8571ea49a17784e5290e7ef44e
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: 559ef9cc9a3e5ace7a4023e81363825c6861f6d4
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233603"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870314"
 ---
 # <a name="arkit-2-in-xamarinios"></a>ARKit 2 in Xamarin.iOS
 
@@ -394,7 +394,7 @@ Xamarin では、変換行列を操作するための一般的な型は`NVector4
 
 ![行優先と列優先](images/arkit_row_vs_column.png)
 
-マトリックスの解釈の選択と一貫しているは、適切な動作に不可欠です。 一貫性のミスで任意の種類のコンパイル時または実行時も例外は生成されません 3D 変換行列は、4 x 4 であるためは操作が予期せずに機能することだけです。 場合、SceneKit/ARKit オブジェクトのスタックや飛行、ジッターと思われる、不適切な変換マトリックスが適切な可能性があります。 ソリューションは簡単: [ `NMatrix4.Transpose` ](https://developer.xamarin.com/api/member/OpenTK.NMatrix4.Transpose)要素のインプレース入れ換えを実行します。
+マトリックスの解釈の選択と一貫しているは、適切な動作に不可欠です。 一貫性のミスで任意の種類のコンパイル時または実行時も例外は生成されません 3D 変換行列は、4 x 4 であるためは操作が予期せずに機能することだけです。 場合、SceneKit/ARKit オブジェクトのスタックや飛行、ジッターと思われる、不適切な変換マトリックスが適切な可能性があります。 ソリューションは簡単: [ `NMatrix4.Transpose` ](xref:OpenTK.NMatrix4.Transpose*)要素のインプレース入れ換えを実行します。
 
 ## <a name="related-links"></a>関連リンク
 

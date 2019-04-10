@@ -46,17 +46,17 @@ _Azure Cosmos DB ドキュメント データベースでは、パーティシ�
 > [!NOTE]
 > リソース トークンの期限が切れると、データベースに要求する後続のドキュメントには 401 unauthorized 例外が表示されます。 この時点では、Xamarin.Forms アプリケーションでは、id を再度確立し、新しいリソース トークンを要求する必要があります。
 
-Cosmos DB がパーティション分割の詳細については、次を参照してください。[パーティション分割と Azure Cosmos DB でのスケーリング方法](/azure/cosmos-db/partition-data/)します。 Cosmos DB へのアクセス制御の詳細については、次を参照してください。 [Cosmos DB のデータへのアクセスをセキュリティで保護する](/azure/cosmos-db/secure-access-to-data/)と[SQL API でのアクセス制御](/rest/api/documentdb/access-control-on-documentdb-resources/)します。
+Cosmos DB がパーティション分割の詳細については、[パーティション分割と Azure Cosmos DB でのスケーリング方法](/azure/cosmos-db/partition-data/)を参照してください。 Cosmos DB へのアクセス制御の詳細については、[Cosmos DB のデータへのアクセスをセキュリティで保護する](/azure/cosmos-db/secure-access-to-data/)と[SQL API でのアクセス制御](/rest/api/documentdb/access-control-on-documentdb-resources/)を参照してください。
 
 ## <a name="setup"></a>セットアップ
 
 Xamarin.Forms アプリケーションにリソース トークン ブローカーを統合するためのプロセスは次のとおりです。
 
-1. アクセス制御を使用する Cosmos DB アカウントを作成します。 詳細については、次を参照してください。 [Cosmos DB 構成](#cosmosdb_configuration)します。
-1. リソース トークン ブローカーをホストする Azure App Service を作成します。 詳細については、次を参照してください。 [Azure App Service の構成](#app_service_configuration)します。
-1. 認証を実行する Facebook アプリを作成します。 詳細については、次を参照してください。 [Facebook アプリの構成](#facebook_configuration)します。
-1. Facebook と簡単に認証を実行する Azure App Service を構成します。 詳細については、次を参照してください。 [Azure App Service の認証構成](#app_service_authentication_configuration)します。
-1. Azure App Service と Cosmos DB と通信する Xamarin.Forms のサンプル アプリケーションを構成します。 詳細については、次を参照してください。 [Xamarin.Forms アプリケーションの構成](#forms_application_configuration)します。
+1. アクセス制御を使用する Cosmos DB アカウントを作成します。 詳細については、[Cosmos DB 構成](#cosmosdb_configuration)を参照してください。
+1. リソース トークン ブローカーをホストする Azure App Service を作成します。 詳細については、[Azure App Service の構成](#app_service_configuration)を参照してください。
+1. 認証を実行する Facebook アプリを作成します。 詳細については、[Facebook アプリの構成](#facebook_configuration)を参照してください。
+1. Facebook と簡単に認証を実行する Azure App Service を構成します。 詳細については、[Azure App Service の認証構成](#app_service_authentication_configuration)を参照してください。
+1. Azure App Service と Cosmos DB と通信する Xamarin.Forms のサンプル アプリケーションを構成します。 詳細については、[Xamarin.Forms アプリケーションの構成](#forms_application_configuration)を参照してください。
 
 <a name="cosmosdb_configuration" />
 
@@ -64,7 +64,7 @@ Xamarin.Forms アプリケーションにリソース トークン ブローカ�
 
 アクセス制御を使用する Cosmos DB アカウントを作成するプロセスは次のとおりです。
 
-1. Cosmos DB アカウントを作成します。 詳細については、次を参照してください。 [Azure Cosmos DB アカウントを作成](/azure/cosmos-db/sql-api-dotnetcore-get-started#step-1-create-an-azure-cosmos-db-account)です。
+1. Cosmos DB アカウントを作成します。 詳細については、[Azure Cosmos DB アカウントを作成](/azure/cosmos-db/sql-api-dotnetcore-get-started#step-1-create-an-azure-cosmos-db-account)を参照してください。
 1. という名前の新しいコレクションを作成、Cosmos DB アカウントで`UserItems`のパーティション キーを指定する`/userid`します。
 
 <a name="app_service_configuration" />
@@ -73,7 +73,7 @@ Xamarin.Forms アプリケーションにリソース トークン ブローカ�
 
 Azure App Service でリソース トークン ブローカーをホストするためのプロセスは次のとおりです。
 
-1. Azure portal では、新しい App Service web アプリを作成します。 詳細については、次を参照してください。 [App Service Environment で web アプリの作成](/azure/app-service-web/app-service-web-how-to-create-a-web-app-in-an-ase/)です。
+1. Azure portal では、新しい App Service web アプリを作成します。 詳細については、[App Service Environment で web アプリの作成](/azure/app-service-web/app-service-web-how-to-create-a-web-app-in-an-ase/)を参照してください。
 1. Azure portal の web アプリでは、アプリの設定 ブレードを開き、次の設定を追加します。
     - `accountUrl` – 値は、Cosmos DB アカウントの [キー] ブレードから Cosmos DB アカウントの URL を指定する必要があります。
     - `accountKey` – 値は、Cosmos DB アカウントの [キー] ブレードから Cosmos DB のマスター キー (プライマリまたはセカンダリ) を指定する必要があります。
@@ -93,8 +93,8 @@ Azure App Service でリソース トークン ブローカーをホストする
 
 認証を実行する Facebook アプリを作成するプロセスは次のとおりです。
 
-1. Facebook アプリを作成します。 詳細については、次を参照してください。[登録とアプリを構成する](https://developers.facebook.com/docs/apps/register)Facebook デベロッパー センターでします。
-1. アプリに Facebook ログイン製品を追加します。 詳細については、次を参照してください。[アプリまたは web サイトを Facebook ログインを追加](https://developers.facebook.com/docs/facebook-login)Facebook デベロッパー センターでします。
+1. Facebook アプリを作成します。 詳細については、[登録とアプリを構成する](https://developers.facebook.com/docs/apps/register)Facebook デベロッパー センターでを参照してください。
+1. アプリに Facebook ログイン製品を追加します。 詳細については、[アプリまたは web サイトを Facebook ログインを追加](https://developers.facebook.com/docs/facebook-login)Facebook デベロッパー センターでを参照してください。
 1. Facebook ログインを次のように構成します。
   - クライアントの OAuth ログインを有効にします。
   - Web の OAuth ログインを有効にします。
@@ -104,7 +104,7 @@ Azure App Service でリソース トークン ブローカーをホストする
 
   ![](authentication-images/facebook-oauth-settings.png "Facebook ログイン OAuth の設定")
 
-詳細については、次を参照してください。 [Facebook にアプリケーションを登録](/azure/app-service-mobile/app-service-mobile-how-to-configure-facebook-authentication#a-nameregister-aregister-your-application-with-facebook)します。
+詳細については、[Facebook にアプリケーションを登録](/azure/app-service-mobile/app-service-mobile-how-to-configure-facebook-authentication#a-nameregister-aregister-your-application-with-facebook)を参照してください。
 
 <a name="app_service_authentication_configuration" />
 
@@ -121,7 +121,7 @@ App Service の簡単な認証を構成するためのプロセスは次のと�
 
   [![](authentication-images/app-service-authentication-settings.png "App Service Web アプリの認証設定")](authentication-images/app-service-authentication-settings-large.png#lightbox "App Service Web アプリの認証設定")
 
-App Service の web アプリは、認証フローを有効にする、Facebook アプリとの通信にも構成する必要があります。 これは、Facebook id プロバイダーを選択し、入力によって実現できます、**アプリ ID**と**アプリ シークレット**Facebook のデベロッパー センターで Facebook アプリ設定の値。 詳細については、次を参照してください。 [Facebook の追加については、アプリケーションに](/azure/app-service-mobile/app-service-mobile-how-to-configure-facebook-authentication#a-namesecrets-aadd-facebook-information-to-your-application)します。
+App Service の web アプリは、認証フローを有効にする、Facebook アプリとの通信にも構成する必要があります。 これは、Facebook id プロバイダーを選択し、入力によって実現できます、**アプリ ID**と**アプリ シークレット**Facebook のデベロッパー センターで Facebook アプリ設定の値。 詳細については、[Facebook の追加については、アプリケーションに](/azure/app-service-mobile/app-service-mobile-how-to-configure-facebook-authentication#a-namesecrets-aadd-facebook-information-to-your-application)を参照してください。
 
 <a name="forms_application_configuration" />
 
@@ -152,7 +152,7 @@ var auth = new Xamarin.Auth.WebRedirectAuthenticator(
 
 キーを押して、ログインをキャンセルできます、**キャンセル**iOS かキーを押して、**戻る**android では、ユーザーが認証されていない場合、id プロバイダーのユーザー インターフェイスは、ボタンをクリックします。画面から削除されます。
 
-詳細については、Xamarin.Auth は、次を参照してください。[を Id プロバイダーにユーザーを認証](~/xamarin-forms/data-cloud/authentication/oauth.md)します。
+詳細については、Xamarin.Auth は、[を Id プロバイダーにユーザーを認証](~/xamarin-forms/data-cloud/authentication/oauth.md)を参照してください。
 
 ## <a name="obtaining-a-resource-token"></a>リソース トークンを取得します。
 
@@ -233,7 +233,7 @@ while (query.HasMoreResults)
 > [!NOTE]
 > Xamarin.Forms アプリケーションで作成したドキュメントと同じドキュメント コレクションにリソース トークン ブローカーを作成、アクセス許可のドキュメントが保存されるように注意してください。 そのため、ドキュメントのクエリに含まれる、`Where`ドキュメント コレクションに対するクエリにフィルター述語を適用する句。 この句は、ドキュメントのコレクションからのアクセス許可のドキュメントが返されないことにより、します。
 
-ドキュメント コレクションからドキュメントを取得する方法についての詳細については、次を参照してください。[ドキュメント コレクションのドキュメントを取得する](~/xamarin-forms/data-cloud/cosmosdb/consuming.md#document_query)します。
+ドキュメント コレクションからドキュメントを取得する方法についての詳細については、[ドキュメント コレクションのドキュメントを取得する](~/xamarin-forms/data-cloud/cosmosdb/consuming.md#document_query)を参照してください。
 
 ## <a name="inserting-documents"></a>ドキュメントを挿入します。
 
@@ -246,7 +246,7 @@ await client.CreateDocumentAsync(collectionLink, item);
 
 これにより、ユーザーのパーティション分割コレクションにドキュメントが挿入されること。
 
-ドキュメント コレクションにドキュメントを挿入する詳細については、次を参照してください。[ドキュメント コレクションにドキュメントを挿入](~/xamarin-forms/data-cloud/cosmosdb/consuming.md#inserting_document)します。
+ドキュメント コレクションにドキュメントを挿入する詳細については、[ドキュメント コレクションにドキュメントを挿入](~/xamarin-forms/data-cloud/cosmosdb/consuming.md#inserting_document)を参照してください。
 
 ## <a name="deleting-documents"></a>ドキュメントの削除
 
@@ -262,7 +262,7 @@ await client.DeleteDocumentAsync(UriFactory.CreateDocumentUri(Constants.Database
 
 これにより、Cosmos DB は、パーティション分割されていることを知っているからドキュメントを削除するコレクション。
 
-ドキュメント コレクションからドキュメントを削除する方法の詳細については、次を参照してください。[ドキュメント コレクションからドキュメントを削除する](~/xamarin-forms/data-cloud/cosmosdb/consuming.md#deleting_document)します。
+ドキュメント コレクションからドキュメントを削除する方法の詳細については、[ドキュメント コレクションからドキュメントを削除する](~/xamarin-forms/data-cloud/cosmosdb/consuming.md#deleting_document)を参照してください。
 
 ## <a name="summary"></a>まとめ
 

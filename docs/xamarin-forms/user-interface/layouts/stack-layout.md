@@ -97,7 +97,7 @@ StackLayout 内でビューのサイズは、高さと幅の要求とレイア�
 - **FillAndExpand** &ndash;余白がありませんし、レイアウトが指定されます限り多くの領域を占有するように、ビューを配置します。
 - **StartAndExpand** &ndash;レイアウトの開始時、ビューを配置し、親は、限り多くの領域を占有します。
 
-詳細については、次を参照してください。[拡張](~/xamarin-forms/user-interface/layouts/layout-options.md#expansion)します。
+詳細については、[拡張](~/xamarin-forms/user-interface/layouts/layout-options.md#expansion)を参照してください。
 
 ### <a name="positioning"></a>配置
 
@@ -156,7 +156,7 @@ public class StackLayoutCode : ContentPage
 }
 ```
 
-詳細については、次を参照してください。[配置](~/xamarin-forms/user-interface/layouts/layout-options.md#alignment)します。
+詳細については、[配置](~/xamarin-forms/user-interface/layouts/layout-options.md#alignment)を参照してください。
 
 ## <a name="exploring-a-complex-layout"></a>複雑なレイアウトの調査
 

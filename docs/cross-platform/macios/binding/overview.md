@@ -6,12 +6,12 @@ ms.assetid: 9EE288C5-8952-C5A9-E542-0BD847300EC6
 author: asb3993
 ms.author: amburns
 ms.date: 11/25/2015
-ms.openlocfilehash: 4f08468d08e12ad77cacbac66b55ad8fc6ead433
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: d29239d986ebfe153381915dbe0f4bfbbe738007
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57667965"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870340"
 ---
 # <a name="overview-of-objective-c-bindings"></a>OBJECTIVE-C バインディングの概要
 
@@ -88,7 +88,7 @@ namespace Example.Binding {
 }
 ```
 
-3 番目に、OBJECTIVE-C のドキュメントを確認し、作成[ObjCRuntime.Selector](https://developer.xamarin.com/api/type/ObjCRuntime.Selector/)を使用する各セレクターのインスタンス。 これらのクラスの本文内に配置します。
+3 番目に、OBJECTIVE-C のドキュメントを確認し、作成[ObjCRuntime.Selector](xref:ObjCRuntime.Selector)を使用する各セレクターのインスタンス。 これらのクラスの本文内に配置します。
 
 ```csharp
 static Selector selInit       = new Selector("init");
@@ -116,7 +116,7 @@ public NSEnumerator(IntPtr handle)
 }
 ```
 
-5 番目に、手順 3 で宣言されている、セレクターの各メソッドを提供します。 これらを使用して、`objc_msgSend()`をネイティブ オブジェクトのセレクターを呼び出します。 使用に注意してください[Runtime.GetNSObject()](https://developer.xamarin.com/api/member/ObjCRuntime.Runtime.GetNSObject/(System.IntPtr))に変換する、`IntPtr`に適切に型指定された`NSObject`(サブ) 型。 Objective C コードで、メンバーから呼び出せるメソッド場合*する必要があります*する**仮想**します。
+5 番目に、手順 3 で宣言されている、セレクターの各メソッドを提供します。 これらを使用して、`objc_msgSend()`をネイティブ オブジェクトのセレクターを呼び出します。 使用に注意してください[Runtime.GetNSObject()](xref:ObjCRuntime.Runtime.GetNSObject*)に変換する、`IntPtr`に適切に型指定された`NSObject`(サブ) 型。 Objective C コードで、メンバーから呼び出せるメソッド場合*する必要があります*する**仮想**します。
 
 ```csharp
 [Export("nextObject")]

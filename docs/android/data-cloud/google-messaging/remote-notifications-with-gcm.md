@@ -26,7 +26,7 @@ _このチュートリアルでは、Xamarin.Android アプリケーションで
 
 このチュートリアルで Google Cloud Messaging (GCM) を使用して、リモート通知を実装する Xamarin.Android アプリケーションを作成します (とも呼ばれます*プッシュ通知*)。 GCM を使用して、リモートのメッセージングでは、さまざまな目的、およびリスナー サービスを実装し、アプリケーション サーバーをシミュレートするコマンド ライン プログラムで今回の実装をテストします。 
 
-Firebase Cloud Messaging (FCM) GCM の新しいバージョンであることに注意してください。 &ndash; GCM ではなく、FCM を使用して Google が強く推奨します。 GCM を使用している場合は、FCM にアップグレードすることをお勧めします。 FCM の詳細については、次を参照してください。 [Firebase Cloud Messaging](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md)します。 
+Firebase Cloud Messaging (FCM) GCM の新しいバージョンであることに注意してください。 &ndash; GCM ではなく、FCM を使用して Google が強く推奨します。 GCM を使用している場合は、FCM にアップグレードすることをお勧めします。 FCM の詳細については、[Firebase Cloud Messaging](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md)を参照してください。 
 
 このチュートリアルを続行するには、Google の GCM サーバーを使用するために必要な資格情報を取得する必要があります。このプロセスについては[Google Cloud Messaging](~/android/data-cloud/google-messaging/google-cloud-messaging.md)します。 具体的には、する必要があります、 *API キー*と*Sender ID*このチュートリアルで示すサンプル コードに挿入します。 
 
@@ -72,7 +72,7 @@ using Android.Util;
 
 #### <a name="google-play-store"></a>Google Play Store
 
-GCM からメッセージを受信するには、デバイスに Google Play ストア アプリケーションをインストールする必要があります。 (Google Play のアプリケーションはデバイスにインストールするときに Google Play ストアもインストールため、テスト デバイスに既にインストールされている可能性があります。)Google Play を Android アプリケーションは GCM からのメッセージを受信できません。 デバイスにインストールされている Google Play ストア アプリがあるまだない場合は、次を参照してください。、 [Google Play](https://support.google.com/googleplay) web サイトをダウンロードして Google Play をインストールします。 
+GCM からメッセージを受信するには、デバイスに Google Play ストア アプリケーションをインストールする必要があります。 (Google Play のアプリケーションはデバイスにインストールするときに Google Play ストアもインストールため、テスト デバイスに既にインストールされている可能性があります。)Google Play を Android アプリケーションは GCM からのメッセージを受信できません。 デバイスにインストールされている Google Play ストア アプリがあるまだない場合は、、 [Google Play](https://support.google.com/googleplay) web サイトをダウンロードして Google Play をインストールを参照してください。 
 
 または、2.2 以降 (Android エミュレーターに Google Play ストアをインストールする必要はありません) テスト デバイスではなく、Android を実行している Android エミュレーターを使用することができます。 ただし、エミュレーターを使用する場合は、GCM への接続に Wi-fi を使用する必要があり、このチュートリアルの後半で説明したように、Wi-fi、ファイアウォールでいくつかのポートを開く必要があります。 
 
@@ -657,7 +657,7 @@ D/MyGcmListenerService(16103): Message: Hello, Xamarin!
 
 これで、アプリがその最初のリモート通知を受信しました。
 
-アプリが強制的に停止した場合 GCM メッセージを受信する不要になったことに注意してください。 通知を強制停止後に再開するには、アプリを手動で再起動する必要があります。 この Android ポリシーの詳細については、次を参照してください。[停止状態のアプリケーション上のコントロールを起動](https://developer.android.com/about/versions/android-3.1.html#launchcontrols)と[スタック オーバーフロー post](https://stackoverflow.com/questions/5051687/broadcastreceiver-not-receiving-boot-completed/19856267#19856267)します。 
+アプリが強制的に停止した場合 GCM メッセージを受信する不要になったことに注意してください。 通知を強制停止後に再開するには、アプリを手動で再起動する必要があります。 この Android ポリシーの詳細については、[停止状態のアプリケーション上のコントロールを起動](https://developer.android.com/about/versions/android-3.1.html#launchcontrols)と[スタック オーバーフロー post](https://stackoverflow.com/questions/5051687/broadcastreceiver-not-receiving-boot-completed/19856267#19856267)を参照してください。 
 
  
 ## <a name="summary"></a>まとめ

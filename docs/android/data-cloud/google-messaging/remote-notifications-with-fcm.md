@@ -42,11 +42,11 @@ _このチュートリアルでは、Xamarin.Android アプリケーションで
 このチュートリアルを続行するには、Google の FCM サーバーを使用するために必要な資格情報を取得する必要があります。このプロセスについては[Firebase Cloud Messaging](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md#setup_fcm)します。
 具体的には、ダウンロードする必要があります、 **google-services.json**このチュートリアルで説明するコード例で使用するファイル。 かどうかはまだ作成していないプロジェクトで、Firebase コンソール (まだダウンロードしていない場合や、 **google-services.json**ファイル) を参照してください[Firebase Cloud Messaging](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md)します。
 
-例のアプリを実行するには、テストの Android デバイスまたは firebase の互換性のあるエミュレーターを必要があります。 Firebase Cloud Messaging で Android 4.0 以降を実行しているクライアントをサポートしているし、これらのデバイスには、Google Play ストア アプリがインストールされている必要があります (Google Play Services 9.2.1 または以降が必要です)。 デバイスにインストールされている Google Play ストア アプリがあるまだない場合は、次を参照してください。、 [Google Play](https://support.google.com/googleplay) web サイトをダウンロードしてインストールします。 または、テスト デバイス (Android SDK エミュレーターを使用している場合は、Google Play ストアをインストールする必要はありません) の代わりにインストールされている Google play 開発者サービスで、Android SDK エミュレーターを使用できます。
+例のアプリを実行するには、テストの Android デバイスまたは firebase の互換性のあるエミュレーターを必要があります。 Firebase Cloud Messaging で Android 4.0 以降を実行しているクライアントをサポートしているし、これらのデバイスには、Google Play ストア アプリがインストールされている必要があります (Google Play Services 9.2.1 または以降が必要です)。 デバイスにインストールされている Google Play ストア アプリがあるまだない場合は、、 [Google Play](https://support.google.com/googleplay) web サイトをダウンロードしてインストールを参照してください。 または、テスト デバイス (Android SDK エミュレーターを使用している場合は、Google Play ストアをインストールする必要はありません) の代わりにインストールされている Google play 開発者サービスで、Android SDK エミュレーターを使用できます。
 
 ## <a name="start-an-app-project"></a>アプリ プロジェクトを開始します。
 
-という名前の新しい空の Xamarin.Android プロジェクトの作成を開始する**FCMClient**します。 Xamarin.Android プロジェクトの作成に慣れていない場合は、次を参照してください。 [Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md)します。
+という名前の新しい空の Xamarin.Android プロジェクトの作成を開始する**FCMClient**します。 Xamarin.Android プロジェクトの作成に慣れていない場合は、[Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md)を参照してください。
 新しいアプリを作成した後、次の手順は、パッケージ名を設定し、FCM との通信に使用されるいくつかの NuGet パッケージをインストールするのには。
 
 ### <a name="set-the-package-name"></a>パッケージ名を設定します。
@@ -532,7 +532,7 @@ Android デバイス (またはエミュレーターで)、Android をタップ�
 
 ## <a name="handle-topic-messages"></a>トピックのメッセージを処理します。
 
-これまでに記述されたコードでは、登録トークンを処理し、リモート通知機能をアプリに追加します。 次の例では、リッスンするコードを追加します*トピック メッセージ*し、ユーザーにリモートとして通知を転送します。 トピックのメッセージは、特定のトピックにサブスクライブする 1 つまたは複数のデバイスに送信される FCM メッセージです。 トピックのメッセージの詳細については、次を参照してください。[トピック メッセージング](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md)します。
+これまでに記述されたコードでは、登録トークンを処理し、リモート通知機能をアプリに追加します。 次の例では、リッスンするコードを追加します*トピック メッセージ*し、ユーザーにリモートとして通知を転送します。 トピックのメッセージは、特定のトピックにサブスクライブする 1 つまたは複数のデバイスに送信される FCM メッセージです。 トピックのメッセージの詳細については、[トピック メッセージング](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md)を参照してください。
 
 ### <a name="subscribe-to-a-topic"></a>トピックをサブスクライブします。
 

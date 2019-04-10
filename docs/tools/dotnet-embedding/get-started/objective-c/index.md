@@ -6,8 +6,13 @@ ms.assetid: 4ABC0247-B608-42D4-89CB-D2E598097142
 author: lobrien
 ms.author: laobri
 ms.date: 11/14/2017
+ms.openlocfilehash: 92b11db2ee566bcd9f3f8a3ee3771e163a47589b
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670221"
 ---
-
 # <a name="getting-started-with-objective-c"></a>Objective C の概要
 
 これは、サポートされているすべてのプラットフォームの基礎を対象とする OBJECTIVE-C の作業の開始ページです。

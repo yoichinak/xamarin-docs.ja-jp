@@ -110,7 +110,7 @@ _スタイルは、重複を削減し、再利用を有効にするには、そ�
 
 ## <a name="style-inheritance-in-c35"></a>C スタイルの継承&#35;
 
-同等の c# ページで、 [ `Style` ](xref:Xamarin.Forms.Style)インスタンスに直接割り当てられた、 [ `Style` ](xref:Xamarin.Forms.VisualElement.Style) 、必要なコントロールのプロパティが次のコード例に示すように。
+同等の C# ページで、 [ `Style` ](xref:Xamarin.Forms.Style)インスタンスに直接割り当てられた、 [ `Style` ](xref:Xamarin.Forms.VisualElement.Style) 、必要なコントロールのプロパティが次のコード例に示すように。
 
 ```csharp
 public class StyleInheritancePageCS : ContentPage

@@ -57,7 +57,7 @@ _最初の Android Wear アプリを作成し、Wear エミュレーターまた
 
 -----
 
-ターゲット フレームワークの設定の詳細については、次を参照してください。 [Understanding Android API Levels](~/android/app-fundamentals/android-api-levels.md)します。
+ターゲット フレームワークの設定の詳細については、[Understanding Android API Levels](~/android/app-fundamentals/android-api-levels.md)を参照してください。
 
 
 ### <a name="3-edit-the-mainaxml-layout"></a>3.編集、 **Main.axml**レイアウト
@@ -133,9 +133,9 @@ public class MainActivity : Activity
 
 [次へ] の手順をデプロイして、アプリを実行するには、エミュレーターまたはデバイスを設定するとします。 ない場合の展開および実行するプロセスに詳しく Xamarin.Android アプリ一般を参照してください、[こんにちは, Android クイック スタート](~/android/get-started/hello-android/hello-android-quickstart.md)します。
 
-Android Wear デバイス、Android Wear スマートウォッチなどがいない場合は、エミュレーターで、アプリを実行できます。 Wear アプリをエミュレーターでのデバッグについては、次を参照してください。[エミュレーターで Android Wear をデバッグ](~/android/wear/deploy-test/debug-on-emulator.md)します。
+Android Wear デバイス、Android Wear スマートウォッチなどがいない場合は、エミュレーターで、アプリを実行できます。 Wear アプリをエミュレーターでのデバッグについては、[エミュレーターで Android Wear をデバッグ](~/android/wear/deploy-test/debug-on-emulator.md)を参照してください。
 
-Android Wear デバイス、Android Wear スマートウォッチなどを使っている場合は、エミュレーターを使用する代わりに、デバイスでアプリを実行できます。 Wear デバイスでのデバッグの詳細については、次を参照してください。 [Wear デバイスでのデバッグ](~/android/wear/deploy-test/debug-on-device.md)します。
+Android Wear デバイス、Android Wear スマートウォッチなどを使っている場合は、エミュレーターを使用する代わりに、デバイスでアプリを実行できます。 Wear デバイスでのデバッグの詳細については、[Wear デバイスでのデバッグ](~/android/wear/deploy-test/debug-on-device.md)を参照してください。
 
 
 ### <a name="6-run-the-android-wear-app"></a>6.Android Wear アプリを実行します。

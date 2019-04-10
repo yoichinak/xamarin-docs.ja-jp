@@ -1,22 +1,22 @@
 ---
 title: 第 15 章の概要です。 対話型インターフェイス
-description: 'Xamarin.Forms によるモバイル アプリの作成: 第 15 章の概要。 対話型インターフェイス'
+description: Xamarin.Forms によるモバイル アプリの作成。第 15 章の概要です。 対話型インターフェイス
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: F54E86F4-1CDA-474E-9B09-242060C2C13D
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 6b519b15199373762965a8eeee6c9ae73f125cf3
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 974ef2a141ec7175c2306d4af63f534a5c77ecb2
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53060434"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870119"
 ---
 # <a name="summary-of-chapter-15-the-interactive-interface"></a>第 15 章の概要です。 対話型インターフェイス
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15)
+[![Download サンプル](~/media/shared/download.png) サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15)
 
 この章では、8 について説明します`View`ユーザーとの対話を許可する派生クラス。
 
@@ -24,12 +24,12 @@ ms.locfileid: "53060434"
 
 Xamarin.Forms には 20 のインスタンス化可能なクラスから派生した`View`なく`Layout`します。 これらの 6 つ前の章で説明します。
 
-- `Label`: [**第 2 章です。アプリの詳細**](chapter02.md)
-- `BoxView`: [**第 3 章です。スタックをスクロール**](chapter03.md)
-- `Button`: [**第 6 章です。ボタンのクリック**](chapter06.md)
-- `Image`: [**第 13 章です。ビットマップ**](chapter13.md)
-- `ActivityIndicator`: [**第 13 章です。ビットマップ**](chapter13.md)
-- `ProgressBar`: [ **14 章です。AbsoluteLayout**](chapter14.md)
+- `Label`:[**第 2 章です。アプリの詳細**](chapter02.md)
+- `BoxView`:[**第 3 章です。スタックをスクロール**](chapter03.md)
+- `Button`:[**第 6 章です。ボタンのクリック**](chapter06.md)
+- `Image`:[**第 13 章です。ビットマップ**](chapter13.md)
+- `ActivityIndicator`:[**第 13 章です。ビットマップ**](chapter13.md)
+- `ProgressBar`:[**第 14 章です。AbsoluteLayout**](chapter14.md)
 
 この章では 8 つのビューは、.NET の基本データ型と対話するユーザーを効果的に許可します。
 
@@ -44,12 +44,12 @@ Xamarin.Forms には 20 のインスタンス化可能なクラスから派生�
 
 次の章では、残りの 6 つのビューが含まれます。
 
-- `WebView`: [ **16 章です。データ バインディング**](chapter16.md)
-- `Picker`: [ **19 章です。コレクション ビュー**](chapter19.md)
-- `ListView`: [ **19 章です。コレクション ビュー**](chapter19.md)
-- `TableView`: [ **19 章です。コレクション ビュー**](chapter19.md)
-- `Map`: [ **28 章です。場所とマップ**](chapter28.md)
-- `OpenGLView`します。 この本 (および Windows プラットフォームはサポートされません) について説明 not
+- `WebView`:[**第 16 章です。データ バインディング**](chapter16.md)
+- `Picker`:[**第 19 章です。コレクション ビュー**](chapter19.md)
+- `ListView`:[**第 19 章です。コレクション ビュー**](chapter19.md)
+- `TableView`:[**第 19 章です。コレクション ビュー**](chapter19.md)
+- `Map`:[**第 28 章です。場所とマップ**](chapter28.md)
+- `OpenGLView`:この本 (と Windows プラットフォームはサポートされていません) は、「not
 
 ## <a name="slider-and-stepper"></a>スライダーとステッパ
 
@@ -65,8 +65,8 @@ Xamarin.Forms には 20 のインスタンス化可能なクラスから派生�
 
 これらのプロパティをバインドできるプロパティは、一貫性のあるいることを確認します。
 
-- すべての 3 つのプロパティの[ `coerceValue` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty+CoerceValueDelegate/)バインド可能なプロパティにより指定されたメソッド`Value`間`Minimum`と`Maximum`します。
-- [ `validateValue` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty+ValidateValueDelegate/)メソッド`MinimumProperty`返します`false`場合`Minimum`より大きいまたは等しい値に設定されて`Maximum`との類似`MaximumProperty`します。 返す`false`から、`validateValue`メソッド、`ArgumentException`が発生します。
+- すべての 3 つのプロパティの[ `coerceValue` ](xref:Xamarin.Forms.BindableProperty.CoerceValueDelegate)バインド可能なプロパティにより指定されたメソッド`Value`間`Minimum`と`Maximum`します。
+- [ `validateValue` ](xref:Xamarin.Forms.BindableProperty.ValidateValueDelegate)メソッド`MinimumProperty`返します`false`場合`Minimum`より大きいまたは等しい値に設定されて`Maximum`との類似`MaximumProperty`します。 返す`false`から、`validateValue`メソッド、`ArgumentException`が発生します。
 
 `Slider` 起動、 [ `ValueChanged` ](xref:Xamarin.Forms.Slider.ValueChanged)イベントを[ `ValueChangedEventArgs` ](xref:Xamarin.Forms.ValueChangedEventArgs)引数ときに、`Value`プロパティの変更をユーザーが操作するプログラムまたはときに、`Slider`します。
 
@@ -245,7 +245,7 @@ Xamarin.Forms では、ユーザーを入力し、テキストを編集できる
 
 - [第 15 章「フル テキスト (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch15-Apr2016.pdf)
 - [第 15 章のサンプル](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15)
-- [Slider](~/xamarin-forms/user-interface/slider.md)
-- [エントリ](~/xamarin-forms/user-interface/text/entry.md)
-- [[エディター]](~/xamarin-forms/user-interface/text/editor.md)
+- [スライダー](~/xamarin-forms/user-interface/slider.md)
+- [入力](~/xamarin-forms/user-interface/text/entry.md)
+- [エディター](~/xamarin-forms/user-interface/text/editor.md)
 - [DatePicker](~/xamarin-forms/user-interface/datepicker.md)

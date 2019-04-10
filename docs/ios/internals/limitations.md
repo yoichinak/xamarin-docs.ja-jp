@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/09/2018
-ms.openlocfilehash: a6a4ef9fb36fde067fa58fec9a6206b1dbc1fbf0
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: b79d3683c8e4979cbbd13550f3df86c39622ad2b
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57668349"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870182"
 ---
 # <a name="limitations-of-xamarinios"></a>Xamarin.iOS の制限事項
 
@@ -83,7 +83,7 @@ System.Reflection の欠如。 **出力**ランタイム コードの生成に�
 C# のデリゲートを使用してネイティブ関数を呼び出すには、次の属性のいずれかのデリゲートの宣言を装飾する必要があります。
 
 - [UnmanagedFunctionPointerAttribute](xref:System.Runtime.InteropServices.UnmanagedFunctionPointerAttribute) (推奨、クロス プラットフォームと .NET Standard 1.1 以降と互換性があるため)
-- [MonoNativeFunctionWrapperAttribute](https://developer.xamarin.com/api/type/ObjCRuntime.MonoNativeFunctionWrapperAttribute)
+- [MonoNativeFunctionWrapperAttribute](xref:ObjCRuntime.MonoNativeFunctionWrapperAttribute)
 
 これらの属性のいずれかの指定に失敗するなどのランタイム エラーが発生します。
 
@@ -96,12 +96,12 @@ System.ExecutionEngineException: Attempting to JIT compile method '(wrapper mana
 
 ### <a name="reverse-callbacks"></a>逆方向のコールバック
 
-標準の Mono でを c# のデリゲートのインスタンスを代わりに関数ポインターをアンマネージ コードに渡すことができます。 ランタイムでは、マネージ コードにコールバックするアンマネージ コードを許可する小さなサンクにこれらの関数ポインターを変換は通常します。
+標準の Mono でを C# のデリゲートのインスタンスを代わりに関数ポインターをアンマネージ コードに渡すことができます。 ランタイムでは、マネージ コードにコールバックするアンマネージ コードを許可する小さなサンクにこれらの関数ポインターを変換は通常します。
 
 ジャストイン タイムで Mono でこれらのブリッジが実装されているコンパイラ。 ときに、時間の先行コンパイラを使用して必要な iPhone でこの時点では 2 つの重要な制限があります。
 
--  すべてのコールバック メソッドでフラグを設定する必要があります、 [MonoPInvokeCallbackAttribute](https://developer.xamarin.com/api/type/ObjCRuntime.MonoPInvokeCallbackAttribute) 
--  メソッドが静的メソッドにする必要はありませんサポートのインスタンス メソッド。 
+-  すべてのコールバック メソッドでフラグを設定する必要があります、 [MonoPInvokeCallbackAttribute](xref:ObjCRuntime.MonoPInvokeCallbackAttribute)
+-  メソッドが静的メソッドにする必要はありませんサポートのインスタンス メソッド。
  
 <a name="No_Remoting" />
 

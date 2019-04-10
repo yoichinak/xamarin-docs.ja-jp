@@ -20,7 +20,7 @@ ms.locfileid: "53052716"
 
 _この記事では、アプリケーションの依存関係注入コンテナーがある作成およびカスタム レンダラー、エフェクト、および DependencyService 実装の有効期間を制御できるように、Xamarin.Forms に依存関係の解決方法を挿入する方法について説明します。この記事のコード例がから取得した、[コンテナーを使用して依存関係の解決](https://developer.xamarin.com/samples/xamarin-forms/Advanced/DependencyResolution/DIContainerDemo/)サンプル。_
 
-モデル-ビュー-ビューモデル (MVVM) パターンを使用して、Xamarin.Forms アプリケーションのコンテキストでは、依存関係の注入コンテナーを登録およびモデルの表示を解決するため、サービスを登録すると、ビュー モデルに挿入することに使用できます。 ビュー モデルの作成時に、コンテナーは、必要なすべての依存関係を挿入します。 これらの依存関係が作成されていない場合、コンテナーが作成し、最初の依存関係を解決します。 ビューのモデルへの依存関係の挿入の例など、依存関係の挿入の詳細については、次を参照してください。[依存関係の注入](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md)します。
+モデル-ビュー-ビューモデル (MVVM) パターンを使用して、Xamarin.Forms アプリケーションのコンテキストでは、依存関係の注入コンテナーを登録およびモデルの表示を解決するため、サービスを登録すると、ビュー モデルに挿入することに使用できます。 ビュー モデルの作成時に、コンテナーは、必要なすべての依存関係を挿入します。 これらの依存関係が作成されていない場合、コンテナーが作成し、最初の依存関係を解決します。 ビューのモデルへの依存関係の挿入の例など、依存関係の挿入の詳細については、[依存関係の注入](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md)を参照してください。
 
 作成の制御のプラットフォーム プロジェクトの種類の有効期間は従来、Xamarin.Forms を使用して実行し、`Activator.CreateInstance`カスタム レンダラーでは、特殊効果のインスタンスを作成するメソッドをおよび[ `DependencyService` ](xref:Xamarin.Forms.DependencyService)実装。 残念ながら、これは開発者の作成と、これらの型とそれらに依存関係を挿入する機能の有効期間の制御点を制限します。 この動作は、Xamarin.Forms にアプリケーションの依存関係注入コンテナー、または Xamarin.Forms 制御の種類を作成する方法: 依存関係の解決方法を挿入することで変更できます。 ただし、依存関係の解決方法を Xamarin.Forms に挿入するための要件がないことに注意してください。 Xamarin.Forms は引き続き作成し、依存関係の解決方法が挿入されていない場合は、プラットフォームのプロジェクト内の型の有効期間を管理します。
 
@@ -140,7 +140,7 @@ public partial class App : Application
 </ContentPage>
 ```
 
-`VideoPlayer`ビューが、各プラットフォームで実装されている、`VideoPlayerRenderer`ビデオを再生するための機能を提供するクラス。 これらのカスタム レンダラー クラスの詳細については、次を参照してください。[ビデオ プレーヤーを実装する](~/xamarin-forms/app-fundamentals/custom-renderer/video-player/index.md)します。
+`VideoPlayer`ビューが、各プラットフォームで実装されている、`VideoPlayerRenderer`ビデオを再生するための機能を提供するクラス。 これらのカスタム レンダラー クラスの詳細については、[ビデオ プレーヤーを実装する](~/xamarin-forms/app-fundamentals/custom-renderer/video-player/index.md)を参照してください。
 
 IOS、ユニバーサル Windows プラットフォーム (UWP) で、`VideoPlayerRenderer`クラスが必要と次のコンス トラクターがある、`ILogger`引数。
 
@@ -196,7 +196,7 @@ var touchEffect = new TouchEffect();
 boxView.Effects.Add(touchEffect);
 ```
 
-`TouchEffect`クラスは、 [ `RoutingEffect` ](xref:Xamarin.Forms.RoutingEffect)によって各プラットフォームで実装される、`TouchEffect`クラスですが、 `PlatformEffect`。 プラットフォーム`TouchEffect`クラスをドラッグする機能を提供、`BoxView`ページの周りにします。 これらのエフェクト クラスの詳細については、次を参照してください。[効果からイベントを呼び出す](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)します。
+`TouchEffect`クラスは、 [ `RoutingEffect` ](xref:Xamarin.Forms.RoutingEffect)によって各プラットフォームで実装される、`TouchEffect`クラスですが、 `PlatformEffect`。 プラットフォーム`TouchEffect`クラスをドラッグする機能を提供、`BoxView`ページの周りにします。 これらのエフェクト クラスの詳細については、[効果からイベントを呼び出す](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)を参照してください。
 
 すべてのプラットフォームで、`TouchEffect`クラスに必要と次のコンス トラクター、`ILogger`引数。
 
@@ -231,7 +231,7 @@ public interface IPhotoPicker
 }
 ```
 
-各プラットフォーム プロジェクトで、`PhotoPicker`クラスが実装する、`IPhotoPicker`プラットフォーム Api を使用してインターフェイス。 これらの依存関係サービスの詳細については、次を参照してください。[画像ライブラリから写真を選択](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)します。
+各プラットフォーム プロジェクトで、`PhotoPicker`クラスが実装する、`IPhotoPicker`プラットフォーム Api を使用してインターフェイス。 これらの依存関係サービスの詳細については、[画像ライブラリから写真を選択](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)を参照してください。
 
 IOS と UWP での`PhotoPicker`クラスが必要と次のコンス トラクターがある、`ILogger`引数。
 

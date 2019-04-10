@@ -24,7 +24,7 @@ _このトピックでは、素材の設計に準拠していませんレイア�
 
 ## <a name="overview"></a>概要
 
-Xamarin.Android のデザイナーには、マテリアル デザイン準拠のレイアウトを作成するためのより簡単にする機能が含まれています。 マテリアル デザインに慣れていない場合は、次を参照してください。、[マテリアル デザイン概要](https://material.io/design/introduction)します。
+Xamarin.Android のデザイナーには、マテリアル デザイン準拠のレイアウトを作成するためのより簡単にする機能が含まれています。 マテリアル デザインに慣れていない場合は、、[マテリアル デザイン概要](https://material.io/design/introduction)を参照してください。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -90,7 +90,7 @@ Xamarin.Android のデザイナーには、マテリアル デザイン準拠の
 [![タブを継承します。](material-design-features-images/vs/06-inherit-tab-w158-sml.png)](material-design-features-images/vs/06-inherit-tab-w158.png#lightbox)
 
 この例で、**既定のテーマ**を使用するスタイルを継承`@color/background_material_light`でよりも優先されますが、`color/material_grey_50`のカラー コード値を持つ`#fffafafa`します。
-スタイルの継承の詳細については、次を参照してください。[スタイルとテーマ](https://developer.android.com/guide/topics/ui/themes.html#Inheritance)します。
+スタイルの継承の詳細については、[スタイルとテーマ](https://developer.android.com/guide/topics/ui/themes.html#Inheritance)を参照してください。
 
 ### <a name="color-picker"></a>カラー ピッカー
 
@@ -156,7 +156,7 @@ Hue を選択すると、プロパティの色が選択されている hue に�
 ## <a name="summary"></a>まとめ
 
 このトピックでは、Xamarin.Android デザイナーで使用可能なマテリアル デザイン機能について説明します。 有効にし、素材のデザイン グリッドを構成する方法を説明し、テーマ エディターを使用して、マテリアル デザイン ガイドラインに準拠した新しいカスタム テーマを作成する方法について説明します。
-マテリアル デザインの Xamarin.Android のサポートの詳細については、次を参照してください。[マテリアル テーマ](~/android/user-interface/material-theme.md)します。
+マテリアル デザインの Xamarin.Android のサポートの詳細については、[マテリアル テーマ](~/android/user-interface/material-theme.md)を参照してください。
 
 
 
@@ -271,7 +271,7 @@ Hue を選択すると、プロパティの色が選択されている hue に�
 [![タブを継承します。](material-design-features-images/xs/13-inherit-sml.png)](material-design-features-images/xs/13-inherit.png#lightbox)
 
 この例で、**既定のテーマ**を使用するスタイルを継承`@color/background_material_dark`でよりも優先されますが、`color/material_grey_850`のカラー コード値を持つ`#ff303030`します。
-スタイルの継承の詳細については、次を参照してください。[スタイルとテーマ](https://developer.android.com/guide/topics/ui/themes.html#Inheritance)します。
+スタイルの継承の詳細については、[スタイルとテーマ](https://developer.android.com/guide/topics/ui/themes.html#Inheritance)を参照してください。
 
 ### <a name="color-picker"></a>カラー ピッカー
 
@@ -323,7 +323,7 @@ Hue を選択すると、プロパティの色が選択されている hue に�
 
 ## <a name="summary"></a>まとめ
 
-このトピックでは、Xamarin.Android デザイナーで使用可能なマテリアル デザイン機能について説明します。 これは、有効にし、素材のデザイン グリッドを構成する方法、マテリアル デザインのカラー パレットを使用して、色のプロパティを編集する方法、および文字体裁スケール セレクターを使用して、テキストのプロパティを構成する方法について説明します。 テーマ エディターを使用して、マテリアル デザイン ガイドラインに準拠した新しいカスタム テーマを作成する方法も示されています。 マテリアル デザインの Xamarin.Android のサポートの詳細については、次を参照してください。[マテリアル テーマ](~/android/user-interface/material-theme.md)します。
+このトピックでは、Xamarin.Android デザイナーで使用可能なマテリアル デザイン機能について説明します。 これは、有効にし、素材のデザイン グリッドを構成する方法、マテリアル デザインのカラー パレットを使用して、色のプロパティを編集する方法、および文字体裁スケール セレクターを使用して、テキストのプロパティを構成する方法について説明します。 テーマ エディターを使用して、マテリアル デザイン ガイドラインに準拠した新しいカスタム テーマを作成する方法も示されています。 マテリアル デザインの Xamarin.Android のサポートの詳細については、[マテリアル テーマ](~/android/user-interface/material-theme.md)を参照してください。
 
 -----
 

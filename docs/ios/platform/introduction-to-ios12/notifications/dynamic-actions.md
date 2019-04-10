@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/04/2018
-ms.openlocfilehash: edaf9d90e019729f69f721c0a92826c0148db8df
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 5611d673ecc7af896fd3a9e566e184e408b6b367
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669631"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870093"
 ---
 # <a name="dynamic-notification-action-buttons-in-xamarinios"></a>Xamarin.iOS で動的に通知アクション ボタン
 
@@ -131,15 +131,15 @@ Notification content の拡張機能には、通知のカスタム インター�
 サンプル アプリで、notification content 拡張機能のビュー コント ローラーは、既存のアクション ボタンのタップに応答する場合にのみ、動作設定ボタンを変更します。
 
 > [!NOTE]
-> コンテンツの拡張は、ビュー コント ローラーのアクション ボタンのタップに応答できる通知[ `DidReceiveNotificationResponse` ](https://developer.xamarin.com/api/member/UserNotificationsUI.UNNotificationContentExtension_Extensions.DidReceiveNotificationResponse/)の一部として宣言されたメソッドは、 [IUNNotificationContentExtension](https://developer.xamarin.com/api/type/UserNotificationsUI.IUNNotificationContentExtension/)します。
+> コンテンツの拡張は、ビュー コント ローラーのアクション ボタンのタップに応答できる通知[ `DidReceiveNotificationResponse` ](xref:UserNotificationsUI.UNNotificationContentExtension_Extensions.DidReceiveNotificationResponse*)の一部として宣言されたメソッドは、 [IUNNotificationContentExtension](xref:UserNotificationsUI.IUNNotificationContentExtension)します。
 >
 > 同じ名前でも、`DidReceiveNotificationResponse`メソッド[上記で説明した](#in-app-handling-of-notification-action-buttons)、これはさまざまな方法です。
 >
-> Notification content の拡張機能では、ボタンのタップの処理が完了すると、それをその同じボタンのタップを処理するためにメイン アプリケーションに指示するかどうかを選択できます。 これには、これには、適切な値の渡す必要があります[UNNotificationContentExtensionResponseOption](https://developer.xamarin.com/api/type/UserNotificationsUI.UNNotificationContentExtensionResponseOption/)を完了ハンドラーに。
+> Notification content の拡張機能では、ボタンのタップの処理が完了すると、それをその同じボタンのタップを処理するためにメイン アプリケーションに指示するかどうかを選択できます。 これには、これには、適切な値の渡す必要があります[UNNotificationContentExtensionResponseOption](xref:UserNotificationsUI.UNNotificationContentExtensionResponseOption)を完了ハンドラーに。
 >
-> - [`Dismiss`](https://developer.xamarin.com/api/field/UserNotificationsUI.UNNotificationContentExtensionResponseOption.Dismiss/) 通知インターフェイスを終了することと、メイン アプリケーションがボタンのタップを処理する必要がないことを示します。
-> - [`DismissAndForwardAction`](https://developer.xamarin.com/api/field/UserNotificationsUI.UNNotificationContentExtensionResponseOption.DismissAndForwardAction/) 通知インターフェイスを終了することと、メイン アプリケーションは、ボタンのタップにも処理する必要がありますを示します。
-> - [`DoNotDismiss`](https://developer.xamarin.com/api/field/UserNotificationsUI.UNNotificationContentExtensionResponseOption.DoNotDismiss/) 通知インターフェイスを無視できませんが、メイン アプリケーションがボタンのタップを処理する必要がないことを示します。
+> - `Dismiss` 通知インターフェイスを終了することと、メイン アプリケーションがボタンのタップを処理する必要がないことを示します。
+> - `DismissAndForwardAction` 通知インターフェイスを終了することと、メイン アプリケーションは、ボタンのタップにも処理する必要がありますを示します。
+> - `DoNotDismiss` 通知インターフェイスを無視できませんが、メイン アプリケーションがボタンのタップを処理する必要がないことを示します。
 
 コンテンツの拡張機能の`DidReceiveNotificationResponse`メソッドは、どのアクション ボタンがタップされたかを決定、通知のインターフェイス、および表示または非表示にイメージを回転、**リセット**アクション ボタン。
 

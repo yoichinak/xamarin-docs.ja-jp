@@ -24,11 +24,11 @@ _Face API は、入力として画像の顔の式を受け取りし、一連の�
 
 Face API は、顔の式で、怒り、軽蔑、嫌悪感、恐怖、喜び、中立を検出するために、感情の検出、悲しみ、驚きを実行できます。 これらの感情は、同じ基本的な表情を使用してユニバーサルおよび交わさ伝達されます。 表情、emotion 結果を返すと、Face API こともできますを返します。 検出された顔の境界ボックス。 Face API を使用して、API キーを取得する必要がありますに注意してください。 これから入手できる[Cognitive Services をお試しください](https://azure.microsoft.com/try/cognitive-services/?api=face-api)します。
 
-クライアント ライブラリ、および REST API を使用して、感情認識を実行できます。 この記事では、REST API 経由での感情認識を実行する方法について説明します。 REST API の詳細については、次を参照してください。 [Face REST API](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)します。
+クライアント ライブラリ、および REST API を使用して、感情認識を実行できます。 この記事では、REST API 経由での感情認識を実行する方法について説明します。 REST API の詳細については、[Face REST API](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)を参照してください。
 
-Face API では、ビデオでは、人物の表情を認識するためにも使用して、感情の概要を返すことができます。 詳細については、次を参照してください。[リアルタイムでビデオを分析する方法](/azure/cognitive-services/face/face-api-how-to-topics/howtoanalyzevideo_face/)します。
+Face API では、ビデオでは、人物の表情を認識するためにも使用して、感情の概要を返すことができます。 詳細については、[リアルタイムでビデオを分析する方法](/azure/cognitive-services/face/face-api-how-to-topics/howtoanalyzevideo_face/)を参照してください。
 
-Face API の詳細については、次を参照してください。 [Face API](/azure/cognitive-services/face/overview/)します。
+Face API の詳細については、[Face API](/azure/cognitive-services/face/overview/)を参照してください。
 
 ## <a name="authentication"></a>認証
 
@@ -130,7 +130,7 @@ async Task<TResponse> SendRequestAsync<TRequest, TResponse>(HttpMethod httpMetho
 
 POST 要求に送信し、 `detect` API。 応答は、読み取られ、逆シリアル化、呼び出し元のメソッドが返されます。
 
-`detect` API は、要求が有効である、要求が成功したことを示すし、の要求された情報は、応答で提供される応答には、HTTP 状態コード 200 (OK) を送信します。 想定されるエラー応答の一覧は、次を参照してください。 [Face REST API](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)します。
+`detect` API は、要求が有効である、要求が成功したことを示すし、の要求された情報は、応答で提供される応答には、HTTP 状態コード 200 (OK) を送信します。 想定されるエラー応答の一覧は、[Face REST API](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)を参照してください。
 
 ### <a name="processing-the-response"></a>応答の処理
 

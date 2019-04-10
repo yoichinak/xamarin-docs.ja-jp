@@ -34,7 +34,7 @@ Azure Storage では、4 つのストレージ サービスを提供します。
 
 この記事と付属のサンプル アプリケーションでは、blob storage、およびそれらをダウンロードするイメージとテキスト ファイルのアップロードを示します。 さらに、これは、blob storage からファイルの一覧を取得して、ファイルの削除にも示します。
 
-Azure Storage の詳細については、次を参照してください。 [Storage の概要](https://azure.microsoft.com/documentation/articles/storage-introduction/)します。
+Azure Storage の詳細については、[Storage の概要](https://azure.microsoft.com/documentation/articles/storage-introduction/)を参照してください。
 
 ## <a name="introduction-to-blob-storage"></a>Blob Storage の概要
 
@@ -63,9 +63,9 @@ Azure Storage に格納されているすべてのオブジェクトには、一
 
 Xamarin.Forms アプリケーションに Azure Storage アカウントを統合するためのプロセスは次のとおりです。
 
-1. ストレージ アカウントを作成します。 詳細については、次を参照してください。[ストレージ アカウントの作成](https://azure.microsoft.com/documentation/articles/storage-create-storage-account/#create-a-storage-account)です。
+1. ストレージ アカウントを作成します。 詳細については、[ストレージ アカウントの作成](https://azure.microsoft.com/documentation/articles/storage-create-storage-account/#create-a-storage-account)を参照してください。
 1. 追加、 [Azure Storage Client Library](https://www.nuget.org/packages/WindowsAzure.Storage/) Xamarin.Forms アプリケーションにします。
-1. ストレージ接続文字列を構成します。 詳細については、次を参照してください。 [Azure Storage に接続する](#connecting)します。
+1. ストレージ接続文字列を構成します。 詳細については、[Azure Storage に接続する](#connecting)を参照してください。
 1. 追加`using`ディレクティブを`Microsoft.WindowsAzure.Storage`と`Microsoft.WindowsAzure.Storage.Blob`名前空間を Azure Storage にアクセスするクラス。
 
 <a name="connecting" />
@@ -92,7 +92,7 @@ Azure ストレージ エミュレーターでは、Azure blob、キュー、お
 UseDevelopmentStorage=true
 ```
 
-Azure ストレージ エミュレーターの詳細については、次を参照してください。[開発およびテスト用の Azure ストレージ エミュレーターを使用して](https://azure.microsoft.com/documentation/articles/storage-use-emulator/)します。
+Azure ストレージ エミュレーターの詳細については、[開発およびテスト用の Azure ストレージ エミュレーターを使用して](https://azure.microsoft.com/documentation/articles/storage-use-emulator/)を参照してください。
 
 ### <a name="connecting-to-azure-storage-using-a-shared-key"></a>共有キーを使用して Azure Storage への接続
 
@@ -118,7 +118,7 @@ SAS を使用して Azure Storage に接続するには、次の接続文字列�
 > [!NOTE]
 > 実稼働アプリケーションには、SAS 認証を使用することをお勧めします。 ただし、運用アプリケーションでは、SAS をアプリケーションにバンドルされているのではなく、バックエンド サービス、オンデマンドでから取得する必要があります。
 
-Shared Access Signature の詳細については、次を参照してください。 [Shared Access Signature (SAS)](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/)します。
+Shared Access Signature の詳細については、[Shared Access Signature (SAS)](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/)を参照してください。
 
 ## <a name="creating-a-container"></a>コンテナーの作成
 
@@ -150,7 +150,7 @@ var container = GetContainer(containerType);
 await container.CreateIfNotExistsAsync();
 ```
 
-既定では、新しく作成されたコンテナーはプライベートです。 つまり、コンテナーから blob を取得する、ストレージ アクセス キーを指定する必要があります。 パブリック コンテナー内の blob を作成する方法については、次を参照してください。[コンテナーを作成する](https://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-blobs/#create-a-container)します。
+既定では、新しく作成されたコンテナーはプライベートです。 つまり、コンテナーから blob を取得する、ストレージ アクセス キーを指定する必要があります。 パブリック コンテナー内の blob を作成する方法については、[コンテナーを作成する](https://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-blobs/#create-a-container)を参照してください。
 
 ## <a name="uploading-data-to-a-container"></a>コンテナーにデータをアップロードします。
 

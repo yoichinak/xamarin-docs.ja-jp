@@ -52,7 +52,7 @@ Java(TM) SE Runtime Environment (build 9.0.4+11)
 Java HotSpot(TM) 64-Bit Server VM (build 9.0.4+11, mixed mode)
 ```
 
-JDK 9 以降がインストールされている場合は、Java JDK 8 (1.8) または Microsoft Mobile OpenJDK のプレビューをインストールする必要があります。 JDK 8 をインストールする方法については、次を参照してください。 [Java Development Kit (JDK) バージョンを更新する方法でしょうか。](~/android/troubleshooting/questions/update-jdk.md)します。 Microsoft Mobile OpenJDK をインストールする方法については、次を参照してください。 [Microsoft Mobile OpenJDK Preview](~/android/get-started/installation/openjdk.md)します。
+JDK 9 以降がインストールされている場合は、Java JDK 8 (1.8) または Microsoft Mobile OpenJDK のプレビューをインストールする必要があります。 JDK 8 をインストールする方法については、[Java Development Kit (JDK) バージョンを更新する方法でしょうか。](~/android/troubleshooting/questions/update-jdk.md)を参照してください。 Microsoft Mobile OpenJDK をインストールする方法については、[Microsoft Mobile OpenJDK Preview](~/android/get-started/installation/openjdk.md)を参照してください。
 
 以降のバージョンの JDK; をアンインストールする必要はありません。ただし、それ以降の JDK バージョンではなく、JDK 8 Xamarin を使用していることを確認する必要があります。 Visual Studio で、次のようにクリックします。**ツール > オプション > Xamarin > Android 設定**します。 場合**Java Development Kit の場所**JDK 8 の場所に設定されていない (など**c:\\Program Files\\Java\\jdk1.8.0_111**)、をクリックして**変更** JDK 8 がインストールされている場所に設定します。 Visual studio for Mac に移動します。**設定 > プロジェクト > SDK の場所 > Android > Java SDK (JDK)**  をクリック**参照**このパスを更新します。
 

@@ -9,12 +9,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/27/2018
-ms.openlocfilehash: 8674ef47867acf3bca4d05fd6628a58e2f9ad90e
-ms.sourcegitcommit: 5d4e6677224971e2bc0268f405d192d0358c74b8
+ms.openlocfilehash: 67b189254cc08fac0323b7df5fcbab5abd994c05
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58329365"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58855017"
 ---
 # <a name="xamarinforms-quickstart-deep-dive"></a>Xamarin.Forms のクイック スタートの詳細情報
 
@@ -80,6 +80,7 @@ Visual Studio は、コードを*ソリューション*と*プロジェクト*�
 - **Models\Note.cs** – このクラスを定義、`Note`モデルがあり、そのインスタンスが、アプリケーションで各メモに関するデータを格納します。
 - **App.xaml**: `App` クラスの XAML マークアップ。アプリケーションのリソース ディクショナリを定義します。
 - **App.xaml.cs**: `App` クラスの分離コード。各プラットフォーム上のアプリケーションで表示される最初のページのインスタンス化と、アプリケーションのライフサイクル イベント処理を担当します。
+- **AssemblyInfo.cs** – このファイルには、アセンブリ レベルで適用されると、プロジェクトのアプリケーション属性が含まれています。
 - **NotesPage.xaml** –、XAML マークアップを`NotesPage`クラスは、アプリケーションが起動されているページの UI を定義します。
 - **NotesPage.xaml.cs** – の分離コード、`NotesPage`クラスは、ユーザーがページと対話するときに実行されるビジネス ロジックが含まれています。
 - **NoteEntryPage.xaml** –、XAML マークアップを`NoteEntryPage`クラスは、ユーザーがメモに入ったときに表示するページの UI を定義します。
@@ -106,9 +107,7 @@ Xamarin.Forms アプリケーションは、従来のクロスプラットフォ
 
 ```csharp
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
-[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace Notes
 {
     public partial class App : Application
@@ -123,7 +122,17 @@ namespace Notes
 }
 ```
 
-このコードを設定、`MainPage`のプロパティ、`App`クラスを[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)インスタンスの内容を持つ、`NotesPage`インスタンス。 また、XAML コンパイラで [`XamlCompilation`](xref:Xamarin.Forms.Xaml.XamlCompilationAttribute) 属性が有効なので、XAML は中間言語に直接コンパイルされます。 詳細については、「[XAML Compilation](~/xamarin-forms/xaml/xamlc.md)」(XAML のコンパイル) を参照してください。
+このコードを設定、`MainPage`のプロパティ、`App`クラスを[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)インスタンスの内容を持つ、`NotesPage`インスタンス。
+
+さらに、 **AssemblyInfo.cs**ファイルには、アセンブリ レベルで適用される 1 つのアプリケーション属性が含まれています。
+
+```csharp
+using Xamarin.Forms.Xaml;
+
+[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
+```
+
+[ `XamlCompilation` ](xref:Xamarin.Forms.Xaml.XamlCompilationAttribute) XAML は中間言語に直接コンパイルできるように、属性が、XAML コンパイラをオンにします。 詳細については、「[XAML Compilation](~/xamarin-forms/xaml/xamlc.md)」(XAML のコンパイル) を参照してください。
 
 ## <a name="launching-the-application-on-each-platform"></a>各プラットフォームでアプリケーションを起動します。
 
@@ -412,7 +421,7 @@ async void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs e)
 `OnNoteAddedClicked`メソッドは、アプリケーションに新しいメモが追加されたときに実行される、 [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)の`NoteEntryPage`新しいに設定されている`Note`インスタンス。 `OnListViewItemSelected`メソッドで、既存のノートがで選択したときに実行される、 [ `ListView` ](xref:Xamarin.Forms.ListView)、`BindingContext`の`NoteEntryPage`が、選択したセット`Note`インスタンスを通じてアクセスされる、[ `e.SelectedItem` ](xref:Xamarin.Forms.SelectedItemChangedEventArgs.SelectedItem)プロパティ。
 
 > [!IMPORTANT]
-> 各*ターゲット* オブジェクトの [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) プロパティは個々に設定できますが、これは必ずしも行う必要はありません。 `BindingContext` は、その子がすべて継承する特殊なプロパティです。 そのため、`BindingContext`で、 [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)に設定されている、`Note`インスタンス、すべての子の`ContentPage`が同じである`BindingContext`、し、のパブリックプロパティにバインドできます`Note`オブジェクト。
+> 各*ターゲット* オブジェクトの [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) プロパティは個々に設定できますが、これは必ずしも行う必要はありません。 `BindingContext` そのすべての子によって継承される特殊なプロパティです。 そのため、`BindingContext`で、 [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)に設定されている、`Note`インスタンス、すべての子の`ContentPage`が同じである`BindingContext`、し、のパブリックプロパティにバインドできます`Note`オブジェクト。
 
 [ `Editor` ](xref:Xamarin.Forms.Editor)で`NoteEntryPage`にバインドし、`Text`のプロパティ、`Note`オブジェクト。
 
@@ -526,7 +535,7 @@ Visual Studio for Mac と Visual Studio のいずれも、アプリケーショ�
 - [eXtensible Application Markup Language (XAML)](~/xamarin-forms/xaml/index.md)
 - [データ バインディング](~/xamarin-forms/app-fundamentals/data-binding/index.md)
 - [コントロールのリファレンス](~/xamarin-forms/user-interface/controls/index.md)
-- [XAML マークアップ拡張](~/xamarin-forms/xaml/markup-extensions/index.md)
+- [XAML マークアップ拡張機能](~/xamarin-forms/xaml/markup-extensions/index.md)
 - [Xamarin.Forms のサンプル](https://developer.xamarin.com/samples/xamarin-forms/all/)
 - [入門サンプル](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/)
 - [Xamarin.Forms API リファレンス](xref:Xamarin.Forms)

@@ -7,8 +7,13 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/26/2019
+ms.openlocfilehash: dc39fd9c129fb63fa4a3a73b15aea4204a38cdbd
+ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57557270"
 ---
-
 # <a name="xamarinforms-picker"></a>Xamarin.Forms の選択
 
 _ピッカーの表示は、データの一覧から、テキスト項目を選択するためのコントロールです。_
@@ -25,7 +30,7 @@ Xamarin.Forms [ `Picker` ](xref:Xamarin.Forms.Picker)ユーザーが項目を選
 - [`FontFamily`](xref:Xamarin.Forms.Picker.FontFamily) 型の`string`、既定では`null`します。
 - [`FontSize`](xref:Xamarin.Forms.Picker.FontSize) 型の`double`、既定では-1.0。
 
-すべてのプロパティに支えは[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)オブジェクト、つまりスタイルして、プロパティがデータ バインドの対象になることができます。 [ `SelectedIndex` ](xref:Xamarin.Forms.Picker.SelectedIndex)と[ `SelectedItem` ](xref:Xamarin.Forms.Picker.SelectedItem)プロパティの既定のバインド モードがある[ `BindingMode.TwoWay` ](xref:Xamarin.Forms.BindingMode.TwoWay)、つまり、データ バインドのターゲットできること使用するアプリケーションで、[モデル-ビュー-ビューモデル (MVVM)](~/xamarin-forms/enterprise-application-patterns/mvvm.md)アーキテクチャ。 フォントのプロパティの設定については、次を参照してください。[フォント](~/xamarin-forms/user-interface/text/fonts.md)します。
+すべてのプロパティに支えは[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)オブジェクト、つまりスタイルして、プロパティがデータ バインドの対象になることができます。 [ `SelectedIndex` ](xref:Xamarin.Forms.Picker.SelectedIndex)と[ `SelectedItem` ](xref:Xamarin.Forms.Picker.SelectedItem)プロパティの既定のバインド モードがある[ `BindingMode.TwoWay` ](xref:Xamarin.Forms.BindingMode.TwoWay)、つまり、データ バインドのターゲットできること使用するアプリケーションで、[モデル-ビュー-ビューモデル (MVVM)](~/xamarin-forms/enterprise-application-patterns/mvvm.md)アーキテクチャ。 フォントのプロパティの設定については、[フォント](~/xamarin-forms/user-interface/text/fonts.md)を参照してください。
 
 A [ `Picker` ](xref:Xamarin.Forms.Picker)が最初に表示されるときに、すべてのデータは表示されません。 代わりの値、 [ `Title` ](xref:Xamarin.Forms.Picker.Title)プロパティは、iOS および Android プラットフォームにプレース ホルダーとして表示されます。
 
@@ -41,8 +46,8 @@ A [ `Picker` ](xref:Xamarin.Forms.Picker)が最初に表示されるときに、
 
 設定するための 2 つの手法がある、 [ `Picker` ](xref:Xamarin.Forms.Picker)データ。
 
-- 設定、 [ `ItemsSource` ](xref:Xamarin.Forms.Picker.ItemsSource)プロパティを表示するデータ。 この手法を使用することをお勧めします。 詳細については、次を参照してください。[ピッカーの ItemsSource プロパティを設定](populating-itemssource.md)します。
-- 表示するデータの追加、 [ `Items` ](xref:Xamarin.Forms.Picker.Items)コレクション。 この手法が、元のプロセスを設定するため、 [ `Picker` ](xref:Xamarin.Forms.Picker)データ。 詳細については、次を参照してください。[ピッカーの項目のコレクションに追加データ](populating-items.md)します。
+- 設定、 [ `ItemsSource` ](xref:Xamarin.Forms.Picker.ItemsSource)プロパティを表示するデータ。 この手法を使用することをお勧めします。 詳細については、[ピッカーの ItemsSource プロパティを設定](populating-itemssource.md)を参照してください。
+- 表示するデータの追加、 [ `Items` ](xref:Xamarin.Forms.Picker.Items)コレクション。 この手法が、元のプロセスを設定するため、 [ `Picker` ](xref:Xamarin.Forms.Picker)データ。 詳細については、[ピッカーの項目のコレクションに追加データ](populating-items.md)を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: becba36655a5247a11decb7dc54334f9397ecdfc
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: d0ad25a1ecff7262b9b4b41a5f9d73a5931bbd1c
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233537"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870197"
 ---
 # <a name="introduction-to-ios-9"></a>IOS 9 の概要
 
@@ -58,7 +58,7 @@ IOS 9 のマルチタス キングの新機能に関する詳細については�
 
 ## <a name="new-contacts-and-contacts-ui-frameworks"></a>新しいアドレス帳と連絡先の UI フレームワーク
 
-Apple iOS 9 の導入に伴い、2 つの新しいフレームワークをリリースしました[連絡先](https://developer.xamarin.com/api/namespace/Contacts/)と[ContactsUI](https://developer.xamarin.com/api/namespace/ContactsUI/)8 以降、iOS でアドレス帳の UI フレームワークが使用される、既存のアドレス帳を交換します。
+Apple iOS 9 の導入に伴い、2 つの新しいフレームワークをリリースしました[連絡先](xref:Contacts)と[ContactsUI](xref:ContactsUI)8 以降、iOS でアドレス帳の UI フレームワークが使用される、既存のアドレス帳を交換します。
 
 これらの新しい、オブジェクト指向フレームワークは、以下を説明します。
 
@@ -103,7 +103,7 @@ Ios 9、Apple は、Xamarin.iOS アプリでゲームのグラフィックとオ
 
 ## <a name="homekit-framework-changes"></a>HomeKit フレームワークの変更
 
-[HomeKit](https://developer.xamarin.com/api/namespace/HomeKit/) iOS 8 で導入されたフレームワークをセットアップして Xamarin.iOS アプリから (自動化されたライト、ドアのロック ガレージ ドアを開ける装置など) の各種の有効になっている HomeKit アクセサリを制御する機能を提供します。 簡単にセットアップして構成することに加え、Siri の音声コマンドを使用して HomeKit アクセサリを制御できます。
+[HomeKit](xref:HomeKit) iOS 8 で導入されたフレームワークをセットアップして Xamarin.iOS アプリから (自動化されたライト、ドアのロック ガレージ ドアを開ける装置など) の各種の有効になっている HomeKit アクセサリを制御する機能を提供します。 簡単にセットアップして構成することに加え、Siri の音声コマンドを使用して HomeKit アクセサリを制御できます。
 
 Ios 9 では Apple がセットアップを簡単に行う、サポートされており (アクセサリ iCloud を使用してリモートで制御する) など、複数のアクセサリ相互作用を提供する、[アクセサリ] の種類を展開します。
 
@@ -213,7 +213,7 @@ Apple には、次の Api と iOS 9 の関数が非推奨とされます。
 - [iOS 9 のサンプル](https://developer.xamarin.com/samples/ios/iOS9/)
 - [3D Touch の概要](~/ios/platform/3d-touch.md)
 - [アプリケーション トランスポート セキュリティ](~/ios/app-fundamentals/ats.md)
-- [iPad のマルチタスキング](~/ios/platform/multitasking.md)
+- [IPad のマルチタス キング](~/ios/platform/multitasking.md)
 - [連絡先と連絡先 UI](~/ios/platform/contacts.md)
 - [新しい Search Api](~/ios/platform/search/index.md)
 - [スタック ビューの概要](~/ios/user-interface/controls/uistackview.md)
@@ -221,7 +221,7 @@ Apple には、次の Api と iOS 9 の関数が非推奨とされます。
 - [ゲームの機能強化](~/ios/platform/gaming/index.md)
 - [HomeKit の概要](~/ios/platform/homekit.md)
 - [ハンドオフの概要](~/ios/platform/handoff.md)
-- [iOS 9 フレームワークのその他の変更点](~/ios/platform/introduction-to-ios9/additional-framework-changes.md)
+- [追加の iOS 9 フレームワークの変更](~/ios/platform/introduction-to-ios9/additional-framework-changes.md)
 - [トラブルシューティング](~/ios/platform/introduction-to-ios9/troubleshooting.md)
 - [iOS 9 開発者向け](https://developer.apple.com/ios/pre-release/)
 - [IOS 9.0 を新します。](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)

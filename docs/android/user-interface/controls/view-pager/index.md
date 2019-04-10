@@ -39,7 +39,7 @@ _ViewPager は、レイアウト マネージャー ジェスチャー ナビゲ
 
 ## <a name="requirements"></a>必要条件
 
-使用する`ViewPager`、アプリ プロジェクトでインストールする必要があります、 [Android サポート ライブラリ v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)パッケージ。 NuGet パッケージのインストールの詳細については、次を参照してください。[チュートリアル: NuGet でプロジェクトを含む](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)します。 
+使用する`ViewPager`、アプリ プロジェクトでインストールする必要があります、 [Android サポート ライブラリ v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)パッケージ。 NuGet パッケージのインストールの詳細については、[チュートリアル: NuGet でプロジェクトを含む](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)を参照してください。 
 
  
 ## <a name="architecture"></a>アーキテクチャ

@@ -113,7 +113,7 @@ Xamarin.Forms のプログラムにはから派生したクラス 1 つだけに
 [![](resource-dictionaries-images/screenshots-sml.png "ResourceDictionary リソースを消費して")](resource-dictionaries-images/screenshots.png#lightbox "ResourceDictionary リソースを消費")
 
 > [!NOTE]
-> 1 つのページに固有のリソースは、アプリケーション レベルのリソース ディクショナリをそのため、ページで必要なときに、リソースの代わりに、アプリケーションの起動時に解析されますに含めることはできません。 詳細については、次を参照してください。[アプリケーション リソース ディクショナリのサイズを減らす](~/xamarin-forms/deploy-test/performance.md)します。
+> 1 つのページに固有のリソースは、アプリケーション レベルのリソース ディクショナリをそのため、ページで必要なときに、リソースの代わりに、アプリケーションの起動時に解析されますに含めることはできません。 詳細については、[アプリケーション リソース ディクショナリのサイズを減らす](~/xamarin-forms/deploy-test/performance.md)を参照してください。
 
 ## <a name="overriding-resources"></a>リソースのオーバーライド
 

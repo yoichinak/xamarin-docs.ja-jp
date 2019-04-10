@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/08/2018
-ms.openlocfilehash: 8b3b9a5b110432f33e06edf7ab51c582681e4ea3
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: e37fd88f0d5fcf02ece0ae2f5e3164a507067e29
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233732"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58869825"
 ---
 # <a name="siri-shortcuts-in-xamarinios"></a>Xamarin.iOS で Siri ショートカット
 
@@ -149,7 +149,7 @@ public static NSUserActivity ViewMenuActivity {
 以下に注意具体的には。
 
 - 設定`EligibleForPrediction`に`true`Siri がこのアクティビティを予測し、ショートカットとして画面にことを示します。
-- [ `ContentAttributeSet` ](xref:Foundation.NSUserActivity.ContentAttributeSet)配列は、標準[ `CSSearchableItemAttributeSet` ](https://developer.xamarin.com/api/type/CoreSpotlight.CSSearchableItemAttributeSet/)含めるために使用、 `NSUserActivity` iOS 検索結果にします。
+- [ `ContentAttributeSet` ](xref:Foundation.NSUserActivity.ContentAttributeSet)配列は、標準[ `CSSearchableItemAttributeSet` ](xref:CoreSpotlight.CSSearchableItemAttributeSet)含めるために使用、 `NSUserActivity` iOS 検索結果にします。
 - [`SuggestedInvocationPhrase`](xref:Foundation.NSUserActivity.SuggestedInvocationPhrase) Siri は、潜在的な選択肢としてショートカットに語句を割り当てる場合で、ユーザーに提案されます語句です。
 
 ### <a name="handling-an-nsuseractivity-shortcut"></a>NSUserActivity ショートカットの処理
@@ -227,7 +227,8 @@ Xcode の 10 を使用すると、カスタムのインテントを作成しま�
 これを表示するには、コードが生成されます。
 
 - 開いている**AppDelegate.m**します。
-- カスタムの目的のヘッダー ファイルには、インポートを追加します。 `#import "OrderSoupIntent.h"`
+- カスタムの目的のヘッダー ファイルには、インポートを追加します。
+`#import "OrderSoupIntent.h"`
 - クラス内の任意のメソッド内への参照を追加`OrderSoupIntent`します。
 - 右クリックして`OrderSoupIntent`選択**定義にジャンプ**します。
 - 新しく開かれたファイルで右クリックして**OrderSoupIntent.h**を選択し、 **Finder で表示する**します。
@@ -318,7 +319,7 @@ Siri のショートカットを提案するためには、最初のショート
 この詳細については、スープ Chef Siri を与える_団体に寄付_インテント Siri たびに、ユーザーの混乱状態に注文します。 これが寄付、場所寄付が、ときに、この寄付 – に基づいて、パラメーターが含まれている – Siri 学習、将来、ショートカットを提案するときにします。
 
 **SoupChef**を使用して、`SoupOrderDataManager`寄付を配置するクラス。
-で、ユーザーの部品注文とする呼び出されると、`PlaceOrder`メソッドを呼び出します[ `DonateInteraction` ](https://developer.xamarin.com/api/member/Intents.INInteraction.DonateInteraction/):
+で、ユーザーの部品注文とする呼び出されると、`PlaceOrder`メソッドを呼び出します[ `DonateInteraction` ](xref:Intents.INInteraction.DonateInteraction*):
 
 ```csharp
 void DonateInteraction(Order order)
@@ -332,8 +333,8 @@ void DonateInteraction(Order order)
 }
 ```
 
-インテントをフェッチした後にラップする[ `INInteraction`](https://developer.xamarin.com/api/type/Intents.INInteraction/)します。
-`INInteraction`が与えられます、 [`Identifier`](https://developer.xamarin.com/api/property/Intents.INInteraction.Identifier/)
+インテントをフェッチした後にラップする[ `INInteraction`](xref:Intents.INInteraction)します。
+`INInteraction`が与えられます、 [`Identifier`](xref:Intents.INInteraction.Identifier*)
 (便利になります後で有効になっているインテント寄付を削除するときに) 注文の一意の ID に一致します。 次に、相互作用は Siri を寄付します。
 
 呼び出し、 `order.Intent` get アクセス操作子のフェッチ、`OrderSoupIntent`を設定して、順序を表すその`Quantity`、 `Soup`、`Options`とイメージ、およびユーザーに関連付ける Siri の語句を記録するときに、修正候補として使用する、呼び出しの語句目的: で
@@ -469,7 +470,7 @@ Siri がインテントを呼び出すときに実行されるコードは、Xam
 
 Intents の拡張機能は、カスタムの意図に基づいたショートカットの必要なバック グラウンド タスクを実行します。
 
-Siri の呼び出し、 [ `GetHandler` ](https://developer.xamarin.com/api/member/Intents.INExtension.GetHandler/)のメソッド、`IntentHandler`クラス (で定義されている**Info.plist**として、 `NSExtensionPrincipalClass`) を拡張するクラスのインスタンスを取得する`OrderSoupIntentHandling`、使用できます。処理するために、 `OrderSoupIntent`:
+Siri の呼び出し、 [ `GetHandler` ](xref:Intents.INExtension.GetHandler*)のメソッド、`IntentHandler`クラス (で定義されている**Info.plist**として、 `NSExtensionPrincipalClass`) を拡張するクラスのインスタンスを取得する`OrderSoupIntentHandling`、使用できます。処理するために、 `OrderSoupIntent`:
 
 ```csharp
 [Register("IntentHandler")]
@@ -563,9 +564,9 @@ Intents UI 拡張機能は、Intents の拡張機能のカスタム ユーザー
 > [!NOTE]
 > インターフェイスを**invoiceView**と**confirmationView**で定義された**Main.storyboard**セカンダリ ビューとして。 IOS Designer が Visual studio for Mac と Visual Studio 2017 では、表示またはセカンダリ ビューを編集するためのサポートは提供されません。これを行うには、開く**Main.storyboard** Xcode の Interface Builder でします。
 
-`IntentViewController` 実装します [`IINUIHostedViewControlling`](https://developer.xamarin.com/api/type/IntentsUI.IINUIHostedViewControlling/)
-このインターフェイスを使用して、Siri インテントを使用する場合は、カスタム インターフェイスを提供するために使用します。 、 [`ConfigureView`](https://developer.xamarin.com/api/member/IntentsUI.INUIHostedViewControlling_Extensions.ConfigureView/)
-メソッドを呼び出して、確認または相互作用が確認されているかどうかに応じて、請求書を表示するインターフェイスをカスタマイズする ([`INIntentHandlingStatus.Ready`](https://developer.xamarin.com/api/type/Intents.INIntentHandlingStatus/)) または正常に実行される ([ `INIntentHandlingStatus.Success`](https://developer.xamarin.com/api/type/Intents.INIntentHandlingStatus/)):
+`IntentViewController` 実装します [`IINUIHostedViewControlling`](xref:IntentsUI.IINUIHostedViewControlling)
+このインターフェイスを使用して、Siri インテントを使用する場合は、カスタム インターフェイスを提供するために使用します。 、 [`ConfigureView`](xref:IntentsUI.INUIHostedViewControlling_Extensions.ConfigureView*)
+メソッドを呼び出して、確認または相互作用が確認されているかどうかに応じて、請求書を表示するインターフェイスをカスタマイズする ([`INIntentHandlingStatus.Ready`](xref:Intents.INIntentHandlingStatus)) または正常に実行される ([ `INIntentHandlingStatus.Success`](xref:Intents.INIntentHandlingStatus)):
 
 ```csharp
 [Export("configureViewForParameters:ofInteraction:interactiveBehavior:context:completion:")]
@@ -631,9 +632,9 @@ public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
 }
 ```
 
-現在表示されているために、既存の音声ショートカットが存在するかどうかに基づいて`RowSelected`型のビュー コント ローラーを表示します。 [ `INUIEditVoiceShortcutViewController` ](https://developer.xamarin.com/api/type/IntentsUI.INUIEditVoiceShortcutViewController/)または[ `INUIAddVoiceShortcutViewController`](https://developer.xamarin.com/api/type/IntentsUI.INUIAddVoiceShortcutViewController/)します。
-各ケースで`OrderDetailViewController`ビュー コント ローラーとして設定`Delegate`も実装されているためにです [`IINUIAddVoiceShortcutViewControllerDelegate`](https://developer.xamarin.com/api/type/IntentsUI.IINUIAddVoiceShortcutViewControllerDelegate/)
-[ `IINUIEditVoiceShortcutViewControllerDelegate`](https://developer.xamarin.com/api/type/IntentsUI.IINUIEditVoiceShortcutViewControllerDelegate/)します。
+現在表示されているために、既存の音声ショートカットが存在するかどうかに基づいて`RowSelected`型のビュー コント ローラーを表示します。 [ `INUIEditVoiceShortcutViewController` ](xref:IntentsUI.INUIEditVoiceShortcutViewController)または[ `INUIAddVoiceShortcutViewController`](xref:IntentsUI.INUIAddVoiceShortcutViewController)します。
+各ケースで`OrderDetailViewController`ビュー コント ローラーとして設定`Delegate`も実装されているためにです [`IINUIAddVoiceShortcutViewControllerDelegate`](xref:IntentsUI.IINUIAddVoiceShortcutViewControllerDelegate)
+[ `IINUIEditVoiceShortcutViewControllerDelegate`](xref:IntentsUI.IINUIEditVoiceShortcutViewControllerDelegate)します。
 
 ## <a name="testing-on-device"></a>デバイスでのテスト
 

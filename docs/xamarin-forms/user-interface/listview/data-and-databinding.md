@@ -85,7 +85,7 @@ employees.Add(new Employee(){ DisplayName="Mr. Mono"});
 
 データ バインディングは、バインドされた値が変更、オブジェクトを同期維持することで動作します。 コントロールの値が変更されるたびにイベント ハンドラーを記述するのではなく、バインドを確立し、ViewModel でバインディングを有効にします。
 
-データ バインディングの詳細については、次を参照してください。[データ バインディングの基礎](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)4 つの一部では、[記事シリーズを Xamarin.Forms XAML の基礎](~/xamarin-forms/xaml/xaml-basics/index.md)します。
+データ バインディングの詳細については、[データ バインディングの基礎](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)4 つの一部では、[記事シリーズを Xamarin.Forms XAML の基礎](~/xamarin-forms/xaml/xaml-basics/index.md)を参照してください。
 
 ### <a name="binding-cells"></a>セルのバインド
 内のオブジェクトのプロパティにバインドできるプロパティのセル (セルの子)、`ItemsSource`します。 たとえば、ListView を使用して、従業員の一覧を提供する可能性があります。

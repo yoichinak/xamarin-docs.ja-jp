@@ -191,7 +191,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 
 ## <a name="xtype-markup-extension"></a>x:Type マークアップ拡張機能
 
-`x:Type`マークアップ拡張機能は、XAML と同等の c# [ `typeof` ](/dotnet/csharp/language-reference/keywords/typeof/)キーワード。 サポートされている、 [ `TypeExtension` ](xref:Xamarin.Forms.Xaml.TypeExtension)という名前の 1 つのプロパティを定義するクラスを[ `TypeName` ](xref:Xamarin.Forms.Xaml.TypeExtension.TypeName)型の`string`クラスまたは構造体の名前に設定されています。 `x:Type`マークアップ拡張機能を返します、 [ `System.Type` ](xref:System.Type)そのクラスまたは構造体のオブジェクト。 `TypeName` コンテンツ プロパティ`TypeExtension`ため、`TypeName=`必要でない場合に`x:Type`中かっこが表示されます。
+`x:Type`マークアップ拡張機能は、XAML と同等の C# [ `typeof` ](/dotnet/csharp/language-reference/keywords/typeof/)キーワード。 サポートされている、 [ `TypeExtension` ](xref:Xamarin.Forms.Xaml.TypeExtension)という名前の 1 つのプロパティを定義するクラスを[ `TypeName` ](xref:Xamarin.Forms.Xaml.TypeExtension.TypeName)型の`string`クラスまたは構造体の名前に設定されています。 `x:Type`マークアップ拡張機能を返します、 [ `System.Type` ](xref:System.Type)そのクラスまたは構造体のオブジェクト。 `TypeName` コンテンツ プロパティ`TypeExtension`ため、`TypeName=`必要でない場合に`x:Type`中かっこが表示されます。
 
 Xamarin.Forms 内では、いくつかのプロパティ型の引数を持つ`Type`します。 例としては、 [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)プロパティの`Style`、および[X:typearguments](~/xamarin-forms/xaml/passing-arguments.md#generic_type_arguments)属性をジェネリック クラスの引数を指定するために使用します。 ただし、XAML パーサーの実行、`typeof`操作自動的には、および`x:Type`マークアップ拡張機能は、このような場合は使用されません。
 
@@ -406,7 +406,7 @@ public partial class TypeDemoPage : ContentPage
 
 ## <a name="xnull-markup-extension"></a>x:Null のマークアップ拡張機能
 
-`x:Null`によってマークアップ拡張機能がサポートされている、 [ `NullExtension` ](xref:Xamarin.Forms.Xaml.NullExtension)クラス。 プロパティは持たず、c# の XAML と同じだけ[ `null` ](/dotnet/csharp/language-reference/keywords/null/)キーワード。
+`x:Null`によってマークアップ拡張機能がサポートされている、 [ `NullExtension` ](xref:Xamarin.Forms.Xaml.NullExtension)クラス。 プロパティは持たず、C# の XAML と同じだけ[ `null` ](/dotnet/csharp/language-reference/keywords/null/)キーワード。
 
 `x:Null`ことの必要性が見つかった場合は、ある場合が存在する、よかったが、マークアップ拡張機能をほとんど必要し、めったに使用します。
 

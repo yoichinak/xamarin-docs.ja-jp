@@ -26,7 +26,7 @@ _この記事では、Xamarin.Android を使用して、Android 6.0 Marshmallow 
 [Android 6.0 Marshmallow](https://developer.android.com/about/versions/marshmallow/index.html)、次の主要な Android は、Android Lollipop の後にリリースします。
 Xamarin.Android では、Android Marshmallow をサポートしているしが含まれています。
 
--   **API 23/Android 6.0 バインディング** &ndash; Android 6.0 以下に示す新機能の多くの新しい Api を追加します。 API レベル 23 が対象とする場合は、これらの Api が Xamarin.Android アプリを利用できます。 Android 6.0 Api の詳細については、次を参照してください。 [Android 6.0 Api](https://developer.android.com/preview/api-overview.html)します。 
+-   **API 23/Android 6.0 バインディング** &ndash; Android 6.0 以下に示す新機能の多くの新しい Api を追加します。 API レベル 23 が対象とする場合は、これらの Api が Xamarin.Android アプリを利用できます。 Android 6.0 Api の詳細については、[Android 6.0 Api](https://developer.android.com/preview/api-overview.html)を参照してください。 
 
 [![タブレットと携帯電話 Marshmallow を実行しているのヒーローのイメージ](marshmallow-images/android-m-hero-sml.png)](marshmallow-images/android-m-hero.png#lightbox)
 
@@ -88,7 +88,7 @@ Xamarin.Android で Android Marshmallow の使用を開始するには、ダウ�
 
 ### <a name="install-xamarin-updates"></a>Xamarin の更新プログラムをインストールします。
 
-Xamarin は、Android 6.0 Marshmallow のサポートを含むように更新するに変更する更新プログラム チャネル**安定した**し、すべての更新プログラムをインストールします。 更新プログラム チャネルから更新プログラムのインストールの詳細については、次を参照してください。[更新チャネルを変更](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/change_updates_channel)します。 
+Xamarin は、Android 6.0 Marshmallow のサポートを含むように更新するに変更する更新プログラム チャネル**安定した**し、すべての更新プログラムをインストールします。 更新プログラム チャネルから更新プログラムのインストールの詳細については、[更新チャネルを変更](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/change_updates_channel)を参照してください。 
 
 
 ### <a name="install-the-android-60-sdk"></a>Android 6.0 SDK をインストールします。
@@ -104,15 +104,15 @@ Android Marshmallow の Xamarin.Android プロジェクトを作成するには�
     [![Android SDK Manager で Android 6.0 SDK パッケージを選択します。](marshmallow-images/mnc-preview-packages.png)](marshmallow-images/mnc-preview-packages.png#lightbox)
 
 Android SDK Tools のリビジョン 24.3.4 をインストールする必要がありますまたはそれ以降。
-Android SDK Manager を使用して、Android 6.0 SDK をインストールする方法の詳細については、次を参照してください。 [SDK Manager](https://developer.android.com/tools/help/sdk-manager.html)します。
+Android SDK Manager を使用して、Android 6.0 SDK をインストールする方法の詳細については、[SDK Manager](https://developer.android.com/tools/help/sdk-manager.html)を参照してください。
 
 
 
 ### <a name="start-a-xamarinandroid-project"></a>Xamarin.Android プロジェクトを開始します。
 
-新しい Xamarin.Android プロジェクトを作成します。 Xamarin で Android の開発に慣れていない場合は、次を参照してください。 [Hello, Android](~/android/get-started/hello-android/index.md)を Android プロジェクトを作成する方法について説明します。 
+新しい Xamarin.Android プロジェクトを作成します。 Xamarin で Android の開発に慣れていない場合は、[Hello, Android](~/android/get-started/hello-android/index.md)を Android プロジェクトを作成する方法について説明を参照してください。 
 
-Android プロジェクトを作成するときに、ターゲット Android 6.0 MarshMallow にバージョン設定を構成する必要があります。 Marshmallow のプロジェクトを対象とするには、プロジェクトを構成する必要があります**API レベル 23 (Xamarin.Android v6.0 サポート)** します。 詳細レベルの Android API レベルの構成については、次を参照してください。 [Understanding Android API Levels](~/android/app-fundamentals/android-api-levels.md)します。
+Android プロジェクトを作成するときに、ターゲット Android 6.0 MarshMallow にバージョン設定を構成する必要があります。 Marshmallow のプロジェクトを対象とするには、プロジェクトを構成する必要があります**API レベル 23 (Xamarin.Android v6.0 サポート)** します。 詳細レベルの Android API レベルの構成については、[Understanding Android API Levels](~/android/app-fundamentals/android-api-levels.md)を参照してください。
 
 
 
@@ -128,7 +128,7 @@ Android プロジェクトを作成するときに、ターゲット Android 6.0
 
 [![Nexus 5 デバイス、Android 6.0 ターゲット、および Intel Atom (x86) を使用して、AVD を構成します。](marshmallow-images/android-m-avd.png)](marshmallow-images/android-m-avd.png#lightbox)
 
-Nexus 5 などの物理デバイスを使用している場合、6 か月または 9 をインストールできます Android Marshmallow のプレビュー イメージ。 デバイスを Android Marshmallow に更新の詳細については、次を参照してください。[ハードウェア システムのイメージ](https://developer.android.com/preview/download.html#images)します。
+Nexus 5 などの物理デバイスを使用している場合、6 か月または 9 をインストールできます Android Marshmallow のプレビュー イメージ。 デバイスを Android Marshmallow に更新の詳細については、[ハードウェア システムのイメージ](https://developer.android.com/preview/download.html#images)を参照してください。
 
 
 
@@ -155,7 +155,7 @@ Xamarin には、Android Marshmallow で (とそれ以降) のランタイムの
 1.  タップして、**カメラ**または**連絡先**のアクセス許可を表示するボタンがダイアログを要求します。
 2.  カメラや連絡先のフラグメントを表示するアクセス許可を付与します。
 
-Android Marshmallow でランタイムのアクセス許可の新機能についての詳細については、次を参照してください。[システム権限を持つ作業](https://developer.android.com/preview/features/runtime-permissions.html)します。
+Android Marshmallow でランタイムのアクセス許可の新機能についての詳細については、[システム権限を持つ作業](https://developer.android.com/preview/features/runtime-permissions.html)を参照してください。
 
 
 
@@ -173,7 +173,7 @@ Android Marshmallow には、パスワードの必要性を排除するのに役
 #### <a name="fingerprint-authentication"></a>指紋認証
 
 指紋ハードウェアのスキャンをサポートするデバイスの場合で新しい使える`FingerPrintManager`ユーザーを認証するクラス。
-Android Marshmallow の指紋認証機能の詳細については、次を参照してください。[指紋認証](https://developer.android.com/preview/api-overview.html#fingerprint-authentication)します。
+Android Marshmallow の指紋認証機能の詳細については、[指紋認証](https://developer.android.com/preview/api-overview.html#fingerprint-authentication)を参照してください。
 
 Xamarin には、登録済みの指紋を使用して、アプリ内のユーザーを認証する方法を示すサンプル アプリが用意されています。[FingerprintDialog](https://developer.xamarin.com/samples/monodroid/android-m/FingerprintDialog)します。
 
@@ -189,7 +189,7 @@ Xamarin には、登録済みの指紋を使用して、アプリ内のユーザ
 
 #### <a name="voice-interactions"></a>音声の相互作用
 
-Android Marshmallow で導入された新しい音声の相互作用の機能は、アクションを確認し、オプションの一覧から選択する音声を使用するアプリのユーザーを使用できます。 音声の相互作用の詳細については、次を参照してください。[音声の相互作用 API の概要](https://developers.google.com/voice-actions/interaction/)します。 
+Android Marshmallow で導入された新しい音声の相互作用の機能は、アクションを確認し、オプションの一覧から選択する音声を使用するアプリのユーザーを使用できます。 音声の相互作用の詳細については、[音声の相互作用 API の概要](https://developers.google.com/voice-actions/interaction/)を参照してください。 
 
 参照してください[音声の相互作用使用の Android アプリへのメッセージ交換を追加](https://blog.xamarin.com/add-a-conversation-to-your-android-app-with-voice-interactions/)Xamarin.Android アプリで音声の相互作用の実装の詳細について (コード例を含む)。
 サンプル アプリを利用できるを Xamarin.Android アプリで音声の相互作用の API を使用する方法を示しています。[音声の相互作用](https://github.com/jamesmontemagno/MarshmallowSamples/tree/master/VoiceInteractions)します。
@@ -199,7 +199,7 @@ Android Marshmallow で導入された新しい音声の相互作用の機能は
 #### <a name="confirm-credential"></a>資格情報を確認します。
 
 新しい*資格情報を確認します。* 機能 Android Marshmallow でのユーザー記憶して、どのくらいの期間、デバイスがロック解除されたに基づいてそれらを認証することによってアプリ固有のパスワードを入力する必要がなくなりますを解放することができます。
-これを行うには、使用する新しい`SetUserAuthenticationValidityDurationSeconds`のメソッド、`KeyGenerator`します。 使用して、`KeyGuardManager`の`CreateConfirmDeviceCredentialIntent`をアプリ内からユーザーを再認証する方法。 Android Marshmallow のこの新機能の詳細については、次を参照してください。[資格情報の確認](https://developer.android.com/preview/api-overview.html#confirm-credential)します。
+これを行うには、使用する新しい`SetUserAuthenticationValidityDurationSeconds`のメソッド、`KeyGenerator`します。 使用して、`KeyGuardManager`の`CreateConfirmDeviceCredentialIntent`をアプリ内からユーザーを再認証する方法。 Android Marshmallow のこの新機能の詳細については、[資格情報の確認](https://developer.android.com/preview/api-overview.html#confirm-credential)を参照してください。
 
 Xamarin では、アプリでデバイスの資格情報 (など、PIN、パターン、またはパスワード) を使用する方法を示すサンプル アプリを提供します。[ConfirmCredential](https://developer.xamarin.com/samples/monodroid/android-m/ConfirmCredential/)
 
@@ -225,7 +225,7 @@ URL をタップすると、アプリ開発者直面選択肢: アプリする�
 -   Chrome (高速な読み込み) の開始前とコンテンツのプリフェッチ
 
 Xamarin.Android アプリでこの機能を利用するをダウンロードしてインストール、 [Android サポートのカスタム タブ ライブラリ](https://www.nuget.org/packages/Xamarin.Android.Support.CustomTabs/)します。
-この機能の詳細については、次を参照してください。 [Chrome カスタム タブ](https://developer.chrome.com/multidevice/android/customtabs)します。
+この機能の詳細については、[Chrome カスタム タブ](https://developer.chrome.com/multidevice/android/customtabs)を参照してください。
 
 
 
@@ -260,14 +260,14 @@ Xamarin には、Xamarin.Android で新しい Android のデザイン ライブ�
 -   NavigationView
 -   Snackbar
 
-デザイン ライブラリの詳細については、次を参照してください。 [Android サポート ライブラリを設計する](http://android-developers.blogspot.co.at/2015/05/android-design-support-library.html)Android 開発者のブログにします。
+デザイン ライブラリの詳細については、[Android サポート ライブラリを設計する](http://android-developers.blogspot.co.at/2015/05/android-design-support-library.html)Android 開発者のブログにを参照してください。
 
 
 ### <a name="additional-library-updates"></a>追加のライブラリの更新プログラム
 
 だけでなく Android Marshmallow、Google はいくつかの中核となる Android ライブラリに関連する更新プログラムを発表しました。 Xamarin では、いくつかのプレビュー リリースの NuGet パッケージでこれらの更新プログラムの Xamarin.Android のサポートを提供します。 
 
--   [Google play 開発者サービス](https://www.nuget.org/packages?q=Xamarin+Google+Play+Services) &ndash; Google play 開発者サービスの最新バージョンが含まれていますが、新しい*アプリへの招待*機能は、ユーザーを友人と、アプリを共有することができます。 この機能の詳細については、次を参照してください。 [Google のアプリへの招待を展開し、アプリのリーチ](https://blog.xamarin.com/expand-your-apps-reach-with-googles-app-invites/)します。 
+-   [Google play 開発者サービス](https://www.nuget.org/packages?q=Xamarin+Google+Play+Services) &ndash; Google play 開発者サービスの最新バージョンが含まれていますが、新しい*アプリへの招待*機能は、ユーザーを友人と、アプリを共有することができます。 この機能の詳細については、[Google のアプリへの招待を展開し、アプリのリーチ](https://blog.xamarin.com/expand-your-apps-reach-with-googles-app-invites/)を参照してください。 
 
 -   [Android サポート ライブラリ](https://www.nuget.org/packages?q=xamarin+support+library)&ndash;は旧バージョンと互換性のあるバージョンの Android framework Api を提供しながら、ライブラリ Api の使用のみこれらの Nuget 機能します。 
 

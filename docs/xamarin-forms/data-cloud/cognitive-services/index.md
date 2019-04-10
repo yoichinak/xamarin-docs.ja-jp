@@ -25,12 +25,12 @@ _Microsoft Cognitive Services では、Api、Sdk、および開発者は、顔�
 付属のサンプルでは、機能を提供する todo リスト アプリケーションを示します。
 
 - タスクの一覧を表示します。
-- 追加し、ソフト キーボード、または Microsoft Speech API を使用した音声認識を実行することによって、タスクを編集します。 音声認識の実行の詳細については、次を参照してください。 [Microsoft Speech API を使用して、音声認識](speech-recognition.md)します。
-- スペルをチェック タスクの Bing Spell Check API を使用します。 詳細については、次を参照してください。[スペル チェック、Bing Spell Check API を使用して](spell-check.md)します。
-- Translator API を使用してドイツ語、英語からタスクを変換します。 詳細については、次を参照してください。 [Translator API を使用してテキストの翻訳](text-translation.md)します。
+- 追加し、ソフト キーボード、または Microsoft Speech API を使用した音声認識を実行することによって、タスクを編集します。 音声認識の実行の詳細については、[Microsoft Speech API を使用して、音声認識](speech-recognition.md)を参照してください。
+- スペルをチェック タスクの Bing Spell Check API を使用します。 詳細については、[スペル チェック、Bing Spell Check API を使用して](spell-check.md)を参照してください。
+- Translator API を使用してドイツ語、英語からタスクを変換します。 詳細については、[Translator API を使用してテキストの翻訳](text-translation.md)を参照してください。
 - タスクを削除します。
 - タスクの状態 'done' に設定します。
-- Face API を使用して、感情認識を使用してアプリケーションを評価します。 詳細については、次を参照してください。 [Face API を使用して、感情認識](emotion-recognition.md)します。
+- Face API を使用して、感情認識を使用してアプリケーションを評価します。 詳細については、[Face API を使用して、感情認識](emotion-recognition.md)を参照してください。
 
 タスクは、ローカルの SQLite データベースに格納されます。 詳細については、ローカルの SQLite データベースを使用して、次を参照してください。[ローカル Database](~/xamarin-forms/app-fundamentals/databases.md)。
 
@@ -117,10 +117,10 @@ public class TodoItem
 
 サンプル アプリケーションは、次の Microsoft Cognitive Services を呼び出します。
 
-- Microsoft Speech API。 詳細については、次を参照してください。 [Microsoft Speech API を使用して、音声認識](speech-recognition.md)します。
-- Bing Spell Check API。 詳細については、次を参照してください。[スペル チェック、Bing Spell Check API を使用して](spell-check.md)します。
-- API を変換します。 詳細については、次を参照してください。 [Translator API を使用してテキストの翻訳](text-translation.md)します。
-- Face API。 詳細については、次を参照してください。 [Face API を使用して、感情認識](emotion-recognition.md)します。
+- Microsoft Speech API。 詳細については、[Microsoft Speech API を使用して、音声認識](speech-recognition.md)を参照してください。
+- Bing Spell Check API。 詳細については、[スペル チェック、Bing Spell Check API を使用して](spell-check.md)を参照してください。
+- API を変換します。 詳細については、[Translator API を使用してテキストの翻訳](text-translation.md)を参照してください。
+- Face API。 詳細については、[Face API を使用して、感情認識](emotion-recognition.md)を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 

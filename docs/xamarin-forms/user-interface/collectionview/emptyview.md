@@ -258,7 +258,7 @@ void ToggleEmptyView(bool isToggled)
 
 [![IOS と Android でのスワップ空ビューを垂直方向の CollectionView 一覧のスクリーン ショット](emptyview-images/swap.png "CollectionView スワップの空のビューを垂直方向に一覧")](emptyview-images/swap-large.png#lightbox "CollectionView を垂直方向に一覧空のビューのスワップ")
 
-リソース ディクショナリの詳細については、次を参照してください。 [Xamarin.Forms リソース ディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)します。
+リソース ディクショナリの詳細については、[Xamarin.Forms リソース ディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 

@@ -8,6 +8,12 @@ ms.author: crdun
 ms.date: 09/17/2018
 hide_comments: true
 hideEdit: true
+ms.openlocfilehash: ddf80fb650127b91bef89792fc622267ad1ed0d4
+ms.sourcegitcommit: 5d4e6677224971e2bc0268f405d192d0358c74b8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58329404"
 ---
 # <a name="certified-consulting-partners-to-deliver-mobile-solutions"></a>モバイル ソリューションを提供するコンサルティング パートナーの認定
 
@@ -551,7 +557,7 @@ _プライマリの場所で表示されている、多くのパートナーは�
 
 | Partner | 場所 | 説明 |
 | --- | --- | --- |
-|[Enlighten 設計](https://www.enlighten.co.nz)|オークランド (ニュージーランド)|Enlighten を非常に設計された、革新的な存在し、顧客に特化した世界にテクノロジ ソリューション。 IOS、Android、Windows の c# でアプリケーションを作成するのに Microsoft テクノロジを使用します。|
+|[Enlighten 設計](https://www.enlighten.co.nz)|オークランド (ニュージーランド)|Enlighten を非常に設計された、革新的な存在し、顧客に特化した世界にテクノロジ ソリューション。 IOS、Android、Windows の C# でアプリケーションを作成するのに Microsoft テクノロジを使用します。|
 |[Hydrogen Apps Ltd](http://www.hydrogenapps.com)|オークランド (ニュージーランド)|Hydrogen では 10 年以上に、世界規模で大規模なプラットフォームを提供するエクスペリエンスを活用することによって、アプリ、モバイル、ゲーム開発の新しい時代に未処理のソフトウェア配布の豊富なの経験|
 |[磁力ソリューション Ltd](https://www.magnetismsolutions.com/)|オークランド (ニュージーランド)。ニュージーランド Christchurch、|取得、キックのすべての CRM 実装を提供していますをクライアントにします。 これらの複数の 1500 を正常に起動私たちは、多様なとポートフォリオの範囲全体の非常に誇りに思っています。 CRM の国際的な実装での経験では、CRM ソリューションを提供する配置もことを意味します。 |
 |[Zebra 交差](http://zebracrossing.co.nz/)|ニュージーランド Taranaki、|テクノロジは、ビジネスのイノベーションを使用します。 聞き取りを開始するの目標について説明し、配信の必要なものは人と連携します。|

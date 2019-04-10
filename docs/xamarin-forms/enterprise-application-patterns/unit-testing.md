@@ -93,7 +93,7 @@ public async Task OrderPropertyIsNotNullAfterViewModelInitializationTest()
 }
 ```
 
-この単体テストでは、ことを確認、`Order`のプロパティ、`OrderDetailViewModel`インスタンスの後の値になります、`InitializeAsync`メソッドが呼び出されています。 `InitializeAsync`ビュー モデルの対応するビューを移動するメソッドが呼び出されます。 ナビゲーションの詳細については、次を参照してください。[ナビゲーション](~/xamarin-forms/enterprise-application-patterns/navigation.md)します。
+この単体テストでは、ことを確認、`Order`のプロパティ、`OrderDetailViewModel`インスタンスの後の値になります、`InitializeAsync`メソッドが呼び出されています。 `InitializeAsync`ビュー モデルの対応するビューを移動するメソッドが呼び出されます。 ナビゲーションの詳細については、[ナビゲーション](~/xamarin-forms/enterprise-application-patterns/navigation.md)を参照してください。
 
 ときに、`OrderDetailViewModel`インスタンスを作成すると、想定を`OrderService`を引数として指定するインスタンス。 ただし、 `OrderService` web サービスからデータを取得します。 そのため、`OrderMockService`モック バージョンでは、インスタンスの`OrderService`クラスへの引数として指定されて、`OrderDetailViewModel`コンス トラクター。 その後、ビュー モデルの`InitializeAsync`メソッドが呼び出されるを呼び出します`IOrderService`操作、モック データは、web サービスと通信するのではなく、取得しました。
 
