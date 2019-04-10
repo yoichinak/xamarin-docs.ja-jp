@@ -29,7 +29,7 @@ ms.locfileid: "58329945"
 - `CollectionView` は [ `ListView`](xref:Xamarin.Forms.ListView) の外観に関する API を減らしています。 `ListView` の多くのプロパティおよびイベントは、 `CollectionView` では存在しません。
 - `CollectionView` には組み込みの区切り線は含まれません。
 
-`CollectionView` Xamarin.Forms 4.0 より前のリリースで使用できます。 ただし、現在、試験段階は、し、次のコードの行を追加することでのみ使用できます、`AppDelegate`クラスでは、iOS、または、 `MainActivity` android では、クラスを呼び出す前に`Forms.Init`:
+`CollectionView` は、Xamarin.Forms 4.0 プレリリースで使用できます。 ただし、現在試験段階で、`Forms.Init` を呼ぶ前に、Android では `MainActivity` クラス、iOS では `AppDelegate` クラスに以下の1行を加えることによってのみ使用できます。:
 
 ```csharp
 Forms.SetFlags("CollectionView_Experimental");
@@ -44,15 +44,15 @@ Forms.SetFlags("CollectionView_Experimental");
 
 ## <a name="specify-collectionview-layoutlayoutmd"></a>[CollectionView にレイアウトを指定する ](layout.md)
 
-既定で、`CollectionView`を垂直方向に一覧の項目が表示されます。 ただし、垂直および水平方向のリストとグリッドを指定することができます。
+既定では、`CollectionView` は、垂直方向のリストに項目を表示しますが、垂直および水平方向のリストとグリッドを指定することができます。
 
 ## <a name="set-collectionview-selection-modeselectionmd"></a>[CollectionView の選択モードを設定する ](selection.md)
 
-既定では、`CollectionView`選択が無効になっています。 ただし、1 つまたは複数選択を有効にすることができます。
+既定では、`CollectionView` の選択は無効になっていますが、単一または複数選択を有効にすることができます。
 
 ## <a name="display-an-emptyview-when-data-is-unavailableemptyviewmd"></a>[データが利用できない場合に、EmptyView を表示する ](emptyview.md)
 
-`CollectionView`、表示できるデータがない場合、ユーザーにフィードバックを提供する空のビューを指定することができます。 空のビューには、文字列、ビュー、または複数のビューができます。
+`CollectionView` では、表示できるデータがない場合、ユーザーにフィードバックを提供するための `EmptyView` を指定することができます。 `EmptyView` には、文字列、ビュー、または複数のビューが使用できます。
 
 ## <a name="scroll-an-item-into-viewscrollingmd"></a>[項目をビューにスクロールします。](scrolling.md)
 
