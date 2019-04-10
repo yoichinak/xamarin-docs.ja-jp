@@ -600,7 +600,7 @@ NuGet フィードの最も単純な形式では、ローカル ディレクト�
 
 堅牢な手法については、 [Azure DevOps の NuGet パッケージの概要](https://docs.microsoft.com/azure/devops/artifacts/get-started-nuget?view=vsts&tabs=new-nav#publish-a-package)、そのフィードにプライベート フィードを作成し、(前の手順で生成された) パッケージをプッシュする方法を示しています。
 
-このワークフローを完全に例を使用して自動化することをお勧め[Azure パイプライン](https://docs.microsoft.com/azure/devops/pipelines/index?view=vsts)します。 詳細については、次を参照してください。 [Azure パイプラインの概要](https://docs.microsoft.com/azure/devops/pipelines/get-started/index?view=vsts)します。
+このワークフローを完全に例を使用して自動化することをお勧め[Azure パイプライン](https://docs.microsoft.com/azure/devops/pipelines/index?view=vsts)します。 詳細については、[Azure パイプラインの概要](https://docs.microsoft.com/azure/devops/pipelines/get-started/index?view=vsts)を参照してください。
 
 ## <a name="consuming-the-net-wrapper-from-a-xamarinforms-app"></a>Xamarin.Forms アプリから .NET ラッパーの使用
 このチュートリアルを完了するには作成、 **Xamarin.Forms**だけパッケージを使用するアプリケーションをローカルに発行**NuGet**フィードします。
