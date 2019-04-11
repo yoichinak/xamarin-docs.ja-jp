@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 06b95c40b12aa93b79f25c3adf12b74bda232267
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: bb58866a0fc0ddb542c0a40eb7a0bd9b37562776
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53056627"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58869670"
 ---
 # <a name="playing-a-web-video"></a>Web ビデオの再生
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
+[![Dサンプルのダウンロード](~/media/shared/download.png) サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
 
 `VideoPlayer` クラスでは、`AutoPlay` プロパティと共に、ビデオ ファイルのソースの指定に使用される `Source` プロパティが定義されます。 `AutoPlay` の既定の設定は `true` です。これは、`Source` の設定後、自動的にビデオの再生が開始されることを意味します。
 
@@ -225,7 +225,7 @@ namespace FormsVideoLibrary.iOS
 
 その後、`Source` プロパティが変更されると、`OnElementPropertyChanged` メソッドが "Source" の `PropertyName` プロパティで呼び出され、`SetSource` が再度呼び出されます。
 
-iOS でビデオ ファイルを再生するには、最初にビデオ ファイルをカプセル化するために [`AVAsset`](https://developer.xamarin.com/api/type/AVFoundation.AVAsset/) 型のオブジェクトが作成され、これを使用して [`AVPlayerItem`](https://developer.xamarin.com/api/type/AVFoundation.AVPlayerItem/) が作成され、`AVPlayer` オブジェクトに渡されます。 `SetSource` メソッドの型が `UriVideoSource` である場合の `Source` プロパティの処理方法を示します。
+iOS でビデオ ファイルを再生するには、最初にビデオ ファイルをカプセル化するために [`AVAsset`](xref:AVFoundation.AVAsset) 型のオブジェクトが作成され、これを使用して [`AVPlayerItem`](xref:AVFoundation.AVPlayerItem) が作成され、`AVPlayer` オブジェクトに渡されます。 `SetSource` メソッドの型が `UriVideoSource` である場合の `Source` プロパティの処理方法を示します。
 
 ```csharp
 namespace FormsVideoLibrary.iOS

@@ -4,15 +4,16 @@ description: Xamarin.Essentials の Map クラスを使用すると、アプリ�
 ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: 9797244a9f89d0658b65b132eaf541ed763be97b
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.date: 04/02/2019
+ms.custom: video
+ms.openlocfilehash: c0875534d88ea5b66b3072c35b9d38894fe98934
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52898967"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870028"
 ---
-# <a name="xamarinessentials-map"></a>Xamarin.Essentials: Map
+# <a name="xamarinessentials-map"></a>Xamarin.Essentials:マップ
 
 **Map** クラスを使用すると、アプリケーションによってインストールされているマップ アプリケーションを使用して、特定の場所または placemark を開くことができます。
 
@@ -102,15 +103,15 @@ public class MapTest
 
 ## <a name="platform-differences"></a>プラットフォームによる違い
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# [<a name="android"></a>Android](#tab/android)
 
 - `NavigationMode` ではサイクリング、ドライビング、徒歩がサポートされています。
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# [<a name="ios"></a>iOS](#tab/ios)
 
 - `NavigationMode` ではドライビング、路線、徒歩がサポートされています。
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# [<a name="uwp"></a>UWP](#tab/uwp)
 
 - `NavigationMode` ではドライビング、路線、徒歩がサポートされています。
 
@@ -118,15 +119,15 @@ public class MapTest
 
 ## <a name="platform-implementation-specifics"></a>プラットフォームの実装の詳細
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# [<a name="android"></a>Android](#tab/android)
 
 Android では、URI スキーム `geo:` を使用してデバイス上のマップ アプリケーションを起動します。 これにより、この URI スキームをサポートしている既存のアプリから選択するよう、ユーザーが求められる場合があります。  Xamarin.Essentials は、このスキームをサポートしている Google マップを使用してテストされます。
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# [<a name="ios"></a>iOS](#tab/ios)
 
 プラットフォーム固有の実装の詳細はありません。
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# [<a name="uwp"></a>UWP](#tab/uwp)
 
 プラットフォーム固有の実装の詳細はありません。
 
@@ -136,3 +137,9 @@ Android では、URI スキーム `geo:` を使用してデバイス上のマッ
 
 - [Map のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Map)
 - [Map API のドキュメント](xref:Xamarin.Essentials.Map)
+
+## <a name="related-video"></a>関連ビデオ
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Maps-XamarinEssentials-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

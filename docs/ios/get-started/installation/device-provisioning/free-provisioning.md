@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 07/16/2018
-ms.openlocfilehash: 503dae8253b3c0bb82038dd54b5d97ff632b439b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 533ab09a73116402e39da65933f26b8f3065357c
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50115043"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58855069"
 ---
 # <a name="free-provisioning-for-xamarinios-apps"></a>Xamarin.iOS アプリの無料プロビジョニング
 
@@ -22,12 +22,12 @@ ms.locfileid: "50115043"
 無料プロビジョニングを使用してアプリをデバイスに展開するには:
 
 - Xcode を使用して、必要な*署名 ID* (開発者の証明書と秘密キー) と*プロビジョニング プロファイル* (明示的なアプリ ID と接続されている iOS デバイスの UDID を含む) を作成します。
-- Xamarin.iOS アプリケーションを展開するには、Visual Studio for Mac または Visual Studio 2017 の Xcode で作成された署名 ID とプロビジョニング プロファイルを使用します。
+- Xamarin.iOS アプリケーションを展開するには、Visual Studio for Mac または Visual Studio 2019 の Xcode で作成された署名 ID とプロビジョニング プロファイルを使用します。
 
 > [!IMPORTANT]
-> [自動プロビジョニング](~/ios/get-started/installation/device-provisioning/automatic-provisioning.md)により、Visual Studio for Mac または Visual Studio 2017 で開発者テスト用のデバイスを自動的にセットアップできるようになります。 ただし、自動プロビジョニングは無料プロビジョニングとの互換性がありません。 自動プロビジョニングを使用するには、有料の Apple Developer Program アカウントが必要です。
+> [自動プロビジョニング](~/ios/get-started/installation/device-provisioning/automatic-provisioning.md)により、Visual Studio for Mac または Visual Studio 2019 で開発者テスト用のデバイスを自動的にセットアップできるようになります。 ただし、自動プロビジョニングは無料プロビジョニングとの互換性がありません。 自動プロビジョニングを使用するには、有料の Apple Developer Program アカウントが必要です。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 無料プロビジョニングを使用して Xamarin.iOS アプリケーションをデバイスに展開するには:
 
@@ -87,7 +87,7 @@ ms.locfileid: "50115043"
 
 ### <a name="deploy-your-xamarinios-app"></a>Xamarin.iOS アプリを展開する
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
 
 1. iOS デバイスを USB 経由または[ワイヤレス](~/ios/deploy-test/wireless-deployment.md)で Mac ビルド ホストに接続します。
 2. Visual Studio for Mac の **Solution Pad** で **Info.plist** をダブルクリックします。
@@ -106,11 +106,11 @@ ms.locfileid: "50115043"
 9. **[OK]** をクリックし、**[プロジェクト オプション]** を保存して閉じます。
 10. iOS デバイスを選択し、アプリを実行します。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
 
-1. Visual Studio 2017 が [Mac ビルド ホストとペアリング](~/ios/get-started/installation/windows/connecting-to-mac/index.md)されていることを確認します。
+1. Visual Studio 2019 または Visual Studio 2017 が [Mac ビルド ホストとペアリング](~/ios/get-started/installation/windows/connecting-to-mac/index.md)されていることを確認します。
 2. iOS デバイスを USB 経由または[ワイヤレス](~/ios/deploy-test/wireless-deployment.md)で Mac ビルド ホストに接続します。
-3. Visual Studio 2017 の**ソリューション エクスプローラー**で、Xamarin.iOS プロジェクトを右クリックし、**[プロパティ]** を選択します。
+3. Visual Studio 2019 または Visual Studio 2017 の**ソリューション エクスプローラー**で、Xamarin.iOS プロジェクトを右クリックし、**[プロパティ]** を選択します。
 4. **[iOS バンドル署名]** に移動します。
 5. **[構成]** に **[デバッグ]** を選択します。
 6. **[プラットフォーム]** に **[iPhone]** を選択します。
@@ -121,7 +121,7 @@ ms.locfileid: "50115043"
     ![署名 ID とプロビジョニング プロファイルの設定](free-provisioning-images/setprofile-w157.png "署名 ID とプロビジョニング プロファイルの設定")
 
     > [!TIP]
-    > この署名 ID とプロビジョニング プロファイルは Xcode により作成され、Mac ビルド ホストに格納されました。 Mac ビルド ホストとは[ペアリングされている](~/ios/get-started/installation/windows/connecting-to-mac/index.md)ため、Visual Studio 2017 からアクセスすることができます。 一覧に表示されない場合は、場合によって Visual Studio 2017 を再起動する必要があります。
+    > この署名 ID とプロビジョニング プロファイルは Xcode により作成され、Mac ビルド ホストに格納されました。 Mac ビルド ホストとは[ペアリングされている](~/ios/get-started/installation/windows/connecting-to-mac/index.md)ため、Visual Studio 2019 または Visual Studio 2017 からアクセスすることができます。 一覧に表示されない場合は、場合によって Visual Studio 2019 または Visual Studio 2017 を再起動する必要があります。
 
 10. プロジェクトのプロパティを保存して閉じます。
 11. iOS デバイスを選択し、アプリを実行します。

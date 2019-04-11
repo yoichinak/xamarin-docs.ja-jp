@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2018
-ms.openlocfilehash: 5f2617272cfdc84fa2b835ce44919d2599a1dce6
-ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
+ms.openlocfilehash: e6f95713fdf3dbe8983c9f51554df7165637fc9a
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57197200"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58855134"
 ---
 # <a name="introduction-to-xamarinios-for-visual-studio"></a>Xamarin.iOS for Visual Studio の概要
 
@@ -22,11 +22,9 @@ Xamarin for Windows では、iOS アプリケーションを Visual Studio 内�
 
 Visual Studio 内での iOS 向けの開発には、次のような多くの利点があります。
 
--  iOS、Android および Windows アプリケーション用のクロスプラットフォーム ソリューションの作成。
--  iOS ソース コードを含む、すべてのクロスプラットフォーム プロジェクトでのお気に入りの Visual Studio ツール (**Resharper** や **Team Foundation Server** など) の使用。
--  Apple のすべての API の Xamarin.iOS バインディングを活用しながら、使い慣れた IDE を使用。
-
-<a name="Requirements_and_Installation" />
+- iOS、Android および Windows アプリケーション用のクロスプラットフォーム ソリューションの作成。
+- iOS ソース コードを含む、すべてのクロスプラットフォーム プロジェクトでのお気に入りの Visual Studio ツール (**Resharper** や **Team Foundation Server** など) の使用。
+- Apple のすべての API の Xamarin.iOS バインディングを活用しながら、使い慣れた IDE を使用。
 
 ## <a name="requirements-and-installation"></a>要件とインストール
 
@@ -34,8 +32,8 @@ Visual Studio での iOS 向けの開発時に従う必要があるいくつか�
 
 いくつかの構成オプションを使用できるため、開発のニーズに最適なものを判断できます。 それらを以下に示します。
 
--  メインの開発用コンピューターとして Mac を使用して、Visual Studio がインストールされている Windows 仮想マシンを実行します。 [Parallels](http://www.parallels.com/products/desktop/) や [VMWare](http://www.vmware.com/products/fusion/) などの VM ソフトウェアを使用することをお勧めします。
--  ビルド ホストと同じように Mac を使用します。 このシナリオでは、[必要な](~/get-started/installation/windows.md#installation)ツールがインストールされている Windows コンピューターと同じネットワークに接続されます。
+- メインの開発用コンピューターとして Mac を使用して、Visual Studio がインストールされている Windows 仮想マシンを実行します。 [Parallels](http://www.parallels.com/products/desktop/) や [VMWare](http://www.vmware.com/products/fusion/) などの VM ソフトウェアを使用することをお勧めします。
+- ビルド ホストと同じように Mac を使用します。 このシナリオでは、[必要な](~/get-started/installation/windows.md#installation)ツールがインストールされている Windows コンピューターと同じネットワークに接続されます。
 
 いずれの場合も、次の手順に従う必要があります。
 
@@ -55,23 +53,23 @@ Xamarin iOS for Visual Studio は、アイテムを標準のツール バーと�
 
 Xamarin iOS 開発に関連するコントロールは赤い円で囲まれています。
 
- [![](introduction-to-xamarin-ios-for-visual-studio-images/03.png "Xamarin iOS 開発に関連するコントロールは赤い円で囲まれています")](introduction-to-xamarin-ios-for-visual-studio-images/03.png#lightbox "Xamarin iOS 開発に関連するコントロールは赤い円で囲まれています")
+[![](introduction-to-xamarin-ios-for-visual-studio-images/03.png "Xamarin iOS 開発に関連するコントロールは赤い円で囲まれています")](introduction-to-xamarin-ios-for-visual-studio-images/03.png#lightbox "Xamarin iOS 開発に関連するコントロールは赤い円で囲まれています")
 
--  **開始** - 選択されたプラットフォームでアプリケーションのデバッグまたは実行を開始します。 接続された Mac が必要です (iOS ツール バーのステータス インジケーターを確認してください)。
--  **ソリューション構成** – 使用する構成 (デバッグ、リリースなど) を選択できます。
--  **ソリューション プラットフォーム** - 展開する iPhone または iPhoneSimulator を選択できます。
+- **開始** - 選択されたプラットフォームでアプリケーションのデバッグまたは実行を開始します。 接続された Mac が必要です (iOS ツール バーのステータス インジケーターを確認してください)。
+- **ソリューション構成** – 使用する構成 (デバッグ、リリースなど) を選択できます。
+- **ソリューション プラットフォーム** - 展開する iPhone または iPhoneSimulator を選択できます。
 
 ### <a name="ios-toolbar"></a>iOS ツール バー
 
 Visual Studio の各バージョンでの、Visual Studio の iOS ツール バーは似ています。 それらすべてを以下に示します。
 
-[![](introduction-to-xamarin-ios-for-visual-studio-images/iostoolbar.png "iOS ツール バー")](introduction-to-xamarin-ios-for-visual-studio-images/iostoolbar.png#lightbox)
+[![](introduction-to-xamarin-ios-for-visual-studio-images/iostoolbar.png "[iOS] ツール バー")](introduction-to-xamarin-ios-for-visual-studio-images/iostoolbar.png#lightbox)
 
 各アイテムについては以下に説明します。
 
--  **Mac Agent/接続マネージャー** – Xamarin Mac Agent のダイアログ ボックスを表示します。 このアイコンは、接続中の場合は*オレンジ*になり、接続済みの場合は*緑*になります。
--  **iOS シミュレーターの表示** – Mac の前面に iOS シミュレーター ウィンドウを移動します。
--  **ビルド サーバーに IPA ファイルを表示** - アプリケーションの IPA 出力ファイルの場所に Mac のファインダーを開きます。
+- **Mac Agent/接続マネージャー** – Xamarin Mac Agent のダイアログ ボックスを表示します。 このアイコンは、接続中の場合は*オレンジ*になり、接続済みの場合は*緑*になります。
+- **iOS シミュレーターの表示** – Mac の前面に iOS シミュレーター ウィンドウを移動します。
+- **ビルド サーバーに IPA ファイルを表示** - アプリケーションの IPA 出力ファイルの場所に Mac のファインダーを開きます。
 
 ## <a name="ios-output-options"></a>iOS 出力オプション
 
@@ -85,39 +83,39 @@ Visual Studio の各バージョンでの、Visual Studio の iOS ツール バ�
 
 - **Xamarin** – これには、Mac への接続やアクティブ化の状態など、Xamarin のみに関連する情報が含まれます。
 
-    [![](introduction-to-xamarin-ios-for-visual-studio-images/output3-sml.png "Mac への接続やアクティブ化の状態など、Xamarin のみに関連する情報")](introduction-to-xamarin-ios-for-visual-studio-images/output3-large.png#lightbox)
+  [![](introduction-to-xamarin-ios-for-visual-studio-images/output3-sml.png "Mac への接続やアクティブ化の状態など、Xamarin のみに関連する情報")](introduction-to-xamarin-ios-for-visual-studio-images/output3-large.png#lightbox)
 
 - **Xamarin 診断** – Android との対話など、Xamarin プロジェクトに関する詳細情報が示されます。
 
-    [![](introduction-to-xamarin-ios-for-visual-studio-images/output4-sml.png "Xamarin プロジェクトに関する詳細情報")](introduction-to-xamarin-ios-for-visual-studio-images/output3-large.png#lightbox)
+  [![](introduction-to-xamarin-ios-for-visual-studio-images/output4-sml.png "Xamarin プロジェクトに関する詳細情報")](introduction-to-xamarin-ios-for-visual-studio-images/output3-large.png#lightbox)
 
 デバッグやビルドなどの Visual Studio の他の既定の出力ウィンドウは出力ビュー内でも使用でき、次のようにデバッグ出力や MSBuild 出力で使用されます。
 
--  **デバッグ**
+- **デバッグ**
 
-    [![](introduction-to-xamarin-ios-for-visual-studio-images/output2-sml.png "デバッグの出力")](introduction-to-xamarin-ios-for-visual-studio-images/output2-large.png#lightbox)
+  [![](introduction-to-xamarin-ios-for-visual-studio-images/output2-sml.png "デバッグの出力")](introduction-to-xamarin-ios-for-visual-studio-images/output2-large.png#lightbox)
 
 - **ビルド** & **ビルドの順序**
 
-    [![](introduction-to-xamarin-ios-for-visual-studio-images/output1-sml.png "MSBuild 出力")](introduction-to-xamarin-ios-for-visual-studio-images/output1-large.png#lightbox)
+  [![](introduction-to-xamarin-ios-for-visual-studio-images/output1-sml.png "MSBuild 出力")](introduction-to-xamarin-ios-for-visual-studio-images/output1-large.png#lightbox)
 
 ## <a name="ios-project-properties"></a>iOS プロジェクト プロパティ
 
 Visual Studio のプロジェクト プロパティには、プロジェクト名を右クリックし、コンテキスト メニューの *[プロパティ]* を選択することでアクセス可能です。 これにより、次のスクリーンショットのように、iOS アプリケーションを構成できるようになります。
 
- ![](introduction-to-xamarin-ios-for-visual-studio-images/iosproperties.png "iOS アプリケーションの構成")
+![](introduction-to-xamarin-ios-for-visual-studio-images/iosproperties.png "iOS アプリケーションの構成")
 
--  *iOS バンドル署名* – Mac に接続して、コード署名 ID とプロビジョニング プロファイルを設定します。
+- *iOS バンドル署名* – Mac に接続して、コード署名 ID とプロビジョニング プロファイルを設定します。
 
- ![](introduction-to-xamarin-ios-for-visual-studio-images/bundlesigning.png "コード署名 ID とプロビジョニング プロファイルを設定します")
+  ![コード署名 ID とプロビジョニング プロファイルを設定する](introduction-to-xamarin-ios-for-visual-studio-images/bundlesigning.png)
 
--  *iOS IPA オプション* – IPA ファイルが Mac のファイル システムに保存されます。
+- *iOS IPA オプション* – IPA ファイルが Mac のファイル システムに保存されます。
 
- ![](introduction-to-xamarin-ios-for-visual-studio-images/ipaoptions.png "iOS IPA オプション")
+  ![iOS IPA オプション](introduction-to-xamarin-ios-for-visual-studio-images/ipaoptions.png)
 
--  *iOS 実行オプション* – その他のパラメーターを構成します。
+- *iOS 実行オプション* – その他のパラメーターを構成します。
 
- ![](introduction-to-xamarin-ios-for-visual-studio-images/iosrunoptions.png "iOS 実行オプション")
+  ![iOS 実行オプション](introduction-to-xamarin-ios-for-visual-studio-images/iosrunoptions.png)
 
 ## <a name="creating-a-new-project-for-ios-applications"></a>iOS アプリケーション用の新しいプロジェクトの作成
 
@@ -151,9 +149,9 @@ Visual Studio 2017 では、Android および iOS のログ パッドが統合�
 
 Visual Studio 用の新しい [デバイス ログ] ツール ウィンドウでは、Android および iOS デバイスのログを表示できます。 次のコマンドのいずれかを実行して表示できます。
 
-- **[ビュー]、[その他のウィンドウ]、[デバイス ログ]**
-- **[ツール]、[iOS]、[デバイス ログ]**
-- **[iOS ツール バー]、[デバイス ログ]**
+- **[ビュー] > [その他のウィンドウ] > [デバイス ログ]**
+- **[ツール] > [iOS] > [デバイス ログ]**
+- **[iOS ツール バー] > [デバイス ログ]**
 
 ツール ウィンドウが表示されたら、ユーザーはデバイスのドロップダウン リストから物理デバイスを選択できます。 デバイスが選択されると、ログがテーブルに自動的に追加されます。 デバイスを切り替えると、デバイスのログが停止し、開始されます。
 
@@ -169,13 +167,13 @@ Visual Studio 用の新しい [デバイス ログ] ツール ウィンドウで
 
 デバッグを開始し、シミュレーターまたはデバイスを使用して、ブレークポイントにアプリケーションを移動します。 ブレークポイントにヒットすると、行が強調表示され、Visual Studio の通常のデバッグ動作が有効になります。コードのステップ イン、ステップ オーバー、またはステップ アウトを行ったり、ローカル変数を確認したり、あるいはイミディエイト ウィンドウを使用することができます。
 
-このスクリーンショットでは、OS X の Parallels を使用する Visual Studio の横に実行されている iOS シミュレーターが示されています。
+このスクリーンショットでは、macOS の Parallels を使用する Visual Studio の横に実行されている iOS シミュレーターが示されています。
 
-![](introduction-to-xamarin-ios-for-visual-studio-images/image19.png "このスクリーンショットでは、OS X の Parallels を使用する Visual Studio の横に実行されている iOS シミュレーターが示されています")
+![このスクリーンショットでは、macOS の Parallels を使用する Visual Studio の横に実行されている iOS シミュレーターが示されている](introduction-to-xamarin-ios-for-visual-studio-images/image19.png)
 
 ### <a name="examine-local-variables"></a>ローカル変数を確認する
 
-![](introduction-to-xamarin-ios-for-visual-studio-images/image20.png "デバッグでのローカル変数の確認")
+![デバッグでのローカル変数の確認](introduction-to-xamarin-ios-for-visual-studio-images/image20.png)
 
 ## <a name="summary"></a>まとめ
 

@@ -4,14 +4,14 @@ description: アプリケーションで Xamarin.Essentials の Share クラス�
 ms.assetid: B7B01D55-0129-4C87-B515-89F8F4E94665
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 02/12/2019
+ms.date: 04/02/2019
 ms.custom: video
-ms.openlocfilehash: ad56a626133e03c1ca75b1db26b0904d5df7fea3
-ms.sourcegitcommit: 64d6da88bb6ba222ab2decd2fdc8e95d377438a6
+ms.openlocfilehash: 1a9a7b008773255d9d7743a4fcb21f02feb3e116
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58175331"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58869378"
 ---
 # <a name="xamarinessentials-share"></a>Xamarin.Essentials:共有
 
@@ -61,21 +61,47 @@ public class ShareTest
 
 ## <a name="platform-differences"></a>プラットフォームによる違い
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# [<a name="android"></a>Android](#tab/android)
 
 * `Subject` プロパティは、メッセージの望ましい件名に使用されます。
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# [<a name="ios"></a>iOS](#tab/ios)
 
 * `Subject` は使用されません。
 * `Title` は使用されません。
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# [<a name="uwp"></a>UWP](#tab/uwp)
 
-* `Title` が設定されていない場合の既定値はアプリケーション名です。
+* `Title` が設定されていない場合のアプリケーション名の既定値です。
 * `Subject` は使用されません。
 
 -----
+
+## <a name="files"></a>ファイル
+
+![プレビュー機能](~/media/shared/preview.png)
+
+ファイルの共有は、Xamarin.Essentials バージョン 1.1.0 で実験的プレビューとして利用できます。 この機能により、アプリではデバイス上の他のアプリケーションとファイルを共有できます。 この機能を有効にするには、アプリのスタートアップ コードで次のプロパティを設定します。
+
+```csharp
+ExperimentalFeatures.Enable(ExperimentalFeatures.ShareFileRequest);
+```
+
+機能を有効にした後は、すべてのファイルを共有できます。 Xamarin.Essentials では、自動的にファイルの種類 (MIME) が検出されて、共有が要求されます。 各プラットフォームでは、特定のファイル拡張子のみをサポートできます。
+
+テキストをディスクに書き込んで他のアプリと共有するサンプルを次に示します。
+
+```csharp
+var fn =  "Attachment.txt";
+var file = Path.Combine(FileSystem.CacheDirectory, fn);
+File.WriteAllText(file, "Hello World");
+
+await Share.RequestAsync(new ShareFileRequest
+{
+    Title = Title,
+    File = new ShareFile(file)
+});
+```
 
 ## <a name="api"></a>API
 

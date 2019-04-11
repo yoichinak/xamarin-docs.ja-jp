@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 05/06/2018
-ms.openlocfilehash: f051becad7b6ef329d57417214eb976589386970
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 7049cc36f5f661152e027beb53180d793078beff
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120945"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58855030"
 ---
 # <a name="working-with-capabilities-in-xamarinios"></a>Xamarin.iOS の機能の使用
 
-_アプリケーションに機能を追加するには、多くの場合、追加のプロビジョニングの設定が必要です。このガイドでは、すべての機能に必要な設定について説明します。_
+_アプリケーションに機能を追加するには、多くの場合、追加のプロビジョニングの設定が必要です。 このガイドでは、すべての機能に必要な設定について説明します。_
 
 Apple は、機能を拡張し、iOS アプリで実行可能な操作の範囲を広げる手段として、_アプリ サービス_としてよく知られる_機能_を開発者に提供しています。 この機能を使用して、開発者はアプリケーションにより緊密に統合されたプラットフォーム機能を追加することができます。これにより、Siri などのアプリの追加デバイス サービスからの金融取引の開始が可能になります。
 これらの機能は、Xamarin.iOS プロジェクトで使用できます。 サービスの完全なリストを以下に示します。
@@ -44,14 +44,13 @@ Apple は、機能を拡張し、iOS アプリで実行可能な操作の範囲�
 * マルチパス
 * NFC タグの読み取り
 
-
-これらの機能は、Visual Studio for Mac か Visual Studio 2017 を介して、または Apple Developer ポータルで手動で有効にすることができます。 ウォレット、Apple Pay、および iCloud などの特定の機能には、アプリ ID の追加構成が必要になります。
+これらの機能は、Visual Studio for Mac か Visual Studio 2019 を介して、または Apple Developer ポータルで手動で有効にすることができます。 ウォレット、Apple Pay、および iCloud などの特定の機能には、アプリ ID の追加構成が必要になります。
 
 このガイドでは、アプリケーションでこれらの各 App Services を、Visual Studio で自動的に有効にする方法と、Developer Center を介して手動で有効にする方法について説明します。また、場合によっては必要になる追加の設定についても説明します。 
 
 ## <a name="adding-app-services"></a>App Services の追加
 
-機能を使用するには、アプリに、正しいサービスが有効になっている App ID を含む有効なプロビジョニング プロファイルが必要です。 このプロビジョニング プロファイルは、Visual Studio for Mac や Visual Studio 2017 で自動的に作成するか、Apple Developer Center で手動で作成できます。
+機能を使用するには、アプリに、正しいサービスが有効になっている App ID を含む有効なプロビジョニング プロファイルが必要です。 このプロビジョニング プロファイルは、Visual Studio for Mac や Visual Studio 2019 で自動的に作成するか、Apple Developer Center で手動で作成できます。
 
 このセクションでは、Visual Studio の自動プロビジョニングか Developer Center を使用して、ほとんどの機能を有効にする方法について説明します。 iCloud、Apple Pay、およびアプリ グループなど、追加の設定が必要な機能がいくつかあります。 これらについては隣接するガイドで詳しく説明します。
 
@@ -73,7 +72,7 @@ Apple は、機能を拡張し、iOS アプリで実行可能な操作の範囲�
 
 ## <a name="using-the-ide"></a>IDE の使用
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
 
 機能は、Visual Studio for Mac の **Entitlements.plist** に追加されます。 機能を追加するには次の手順に従います。
 
@@ -93,11 +92,11 @@ Apple は、機能を拡張し、iOS アプリで実行可能な操作の範囲�
 
     ![entitlements.plist ファイルに機能を追加する](images/image18.png)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
 
-機能は **Entitlements.plist** に追加されます。 Visual Studio 2017 の場合、次の手順で機能を追加します。
+機能は **Entitlements.plist** に追加されます。 Visual Studio 2019 の場合、次の手順で機能を追加します。
 
-1. 「[Mac とペアリング](~/ios/get-started/installation/windows/connecting-to-mac/index.md)」ガイドに基づき、Visual Studio 2017 と Mac をペアリングします。
+1. 「[Mac とペアリング](~/ios/get-started/installation/windows/connecting-to-mac/index.md)」ガイドに基づき、Visual Studio 2019 と Mac をペアリングします。
 
 2. **[プロジェクト]、[Provisioning Properties…]\(プロパティのプロビジョニング...\)** の順に選択し、プロビジョニング オプションを開きます。
 
@@ -142,7 +141,7 @@ Developer Center の使用には 2 ステップのプロセスがあります。
     ![App Services の選択ページ](images/image8.png)
 
 7.  **[続行]** を押します。
-8.  アプリ ID を確認します。 各サービスの状態は、以下のように、**[有効]**、**[無効]**、**[構成可能]** のいずれかになります。 **[有効]** の場合は、プロビジョニング プロファイルで使用する準備ができています。 **[構成可能]** の場合は、この機能に対して追加の設定が必要です。 これらの追加手順については、以降のセクションで詳しく説明します。
+8.  アプリ ID を確認します。 各サービスは、次のいずれかの状態になります: **[有効]**、**[無効]**、**[構成可能]** (次の図を参照)。 **[有効]** の場合は、プロビジョニング プロファイルで使用する準備ができています。 **[構成可能]** の場合は、この機能に対して追加の設定が必要です。 これらの追加手順については、以降のセクションで詳しく説明します。
 
     ![アプリ ID の確認](images/image9.png)
 

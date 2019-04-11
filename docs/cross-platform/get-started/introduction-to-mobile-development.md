@@ -6,12 +6,12 @@ ms.assetid: 33C83E13-F3E5-17B4-6512-207F3D3C5AB6
 author: asb3993
 ms.author: amburns
 ms.date: 03/28/2017
-ms.openlocfilehash: 0062c5da4db206a9fe4dc0030a104ec034ab97f1
-ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
+ms.openlocfilehash: 296284b7f9a8eac26817e76a97bf35b03d591532
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57197161"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58855329"
 ---
 # <a name="introduction-to-mobile-development"></a>モバイル開発の概要
 
@@ -38,14 +38,10 @@ Xamarin はネイティブ プラットフォームの威力がすべて組み�
 1.   **最新の統合開発環境 (IDE)** – Xamarin は Mac OS X では Visual Studio for Mac を、Windows では Visual Studio を使用します。 どちらも最新の IDE で、コードのオート コンプリート、高度なプロジェクトとソリューションの管理システム、包括的なプロジェクト テンプレート ライブラリ、統合ソース管理などの機能が含まれます。
 1.   **モバイルのクロス プラットフォーム サポート** – Xamarin は iOS、Android、Windows Phone の 3 つの主要なモバイル プラットフォーム向けに高度なクロス プラット フォーム サポートを提供しています。 記述したアプリケーションは最大 90% のコードを共有することができ、Xamarin.Mobile ライブラリでは 3 つのすべてのプラットフォームに共通するリソースにアクセスするための Unified API を提供しています。 これにより、特に一般的な 3 つのモバイル プラットフォームを対象とするモバイル開発者の開発コストと市場投入までの時間の両方が大幅に削減されます。
 
-
 Xamarin には強力で包括的な機能セットがあるため、クロス プラットフォームのモバイル アプリケーションの開発に最新の言語とプラットフォームを使用したいと考えるアプリケーション開発者の要望に応えることができます。
-
 
 > [!NOTE]
 > この「作業の開始」のシリーズでは、iOS および Android アプリケーションの構築の開始に焦点を当てます。 Microsoft は、タブレットおよびデスクトップ用の[ユニバーサル Windows プラットフォーム (UWP) の開発](https://docs.microsoft.com/windows/uwp/develop/)に関する情報を提供しています。 (Windows 用の UWP アプリを含む) Xamarin を使用したクロスプラットフォーム開発の詳細については、「[Building Cross-Platform Applications](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)」(クロスプラットフォーム アプリケーションの構築) ガイドを参照してください。
-
-
 
 ## <a name="how-does-xamarin-work"></a>Xamarin のしくみ
 
@@ -54,8 +50,6 @@ Xamarin は、Xamarin.iOS および Xamarin.Android という 2 つの製品を�
 iOS では、Xamarin の *Ahead-of-Time* (*AOT*) コンパイラによって Xamarin.iOS アプリケーションが直接ネイティブの ARM アセンブリ コードにコンパイルされます。 Android では、Xamarin のコンパイラによって*中間言語* (*IL*) にコンパイルされてから、アプリケーションの起動時にネイティブのアセンブリに *Just-in-Time* (*JIT*) コンパイルされます。
 
 どちらの場合も、Xamarin アプリケーションはランタイムを活用するため、メモリ割り当て、ガベージ コレクション、基になるプラットフォームの相互運用などが自動的に処理されます。
-
-
 
 ### <a name="xamariniosdll-and-monoandroiddll"></a>Xamarin.iOS.dll と Mono.Android.dll
 
@@ -69,27 +63,10 @@ Xamarin アプリケーションは、Xamarin モバイル プロファイルと
 
 Xamarin アプリケーションがコンパイルされると、iOS には .app ファイルの、Android には .apk ファイルのアプリケーション パッケージが生成されます。 これらのファイルはプラットフォームの既定の IDE で構築されたアプリケーション パッケージと区別がつかず、まったく同じ方法で展開することができます。
 
-## <a name="getting-started"></a>作業の開始
+## <a name="next-steps"></a>次の手順
 
-Xamarin のしくみの概要について説明したので、さらに詳しい話をしましょう。
+Xamarin の動作方法についてある程度わかったので、次に以下のガイドのいずれかを使用してアプリの構築を開始します。
 
-次の手順は、以下のガイドのいずれかを使用したアプリ構築の開始方法です。
-
-* [**Hello, iOS**](~/ios/get-started/hello-ios/index.md)
-
-![](introduction-to-mobile-development-images/ios.png "Hello, iOS")
-
-* [**Android へようこそ**](~/android/get-started/hello-android/index.md)
-
-![](introduction-to-mobile-development-images/android.png "Hello, Android")
-
-* [**Xamarin.Forms の概要**](~/get-started/index.yml)
-
-## <a name="summary"></a>まとめ
-
-このドキュメントは、Xamarin プラットフォームの紹介にすぎません。 本当に面白くなるのは、初めてアプリを使い始めてからです。 「[Hello, iOS](~/ios/get-started/hello-ios/index.md)」、「[Android へようこそ](~/android/get-started/hello-android/index.md)」、「[Xamarin.Forms の概要](~/get-started/index.yml)」のガイドを参照して、始めましょう。
-
-## <a name="related-links"></a>関連リンク
-
-- [Hello, iOS](~/ios/get-started/hello-ios/index.md)
-- [Hello Android](~/android/get-started/hello-android/index.md)
+- [**Xamarin.Forms の概要**](~/get-started/index.yml)
+- [**Xamarin.iOS の概要**](~/ios/get-started/hello-ios/index.md)
+- [**Xamarin.Android の概要**](~/android/get-started/hello-android/index.md)

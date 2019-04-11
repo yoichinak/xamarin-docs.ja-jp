@@ -4,13 +4,14 @@ description: Xamarin.Essentials の Browser クラスを使用すると、最適
 ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 03/13/2019
-ms.openlocfilehash: 4a822b4b6738e261b9ddaee02334ad629e1d4879
-ms.sourcegitcommit: 64d6da88bb6ba222ab2decd2fdc8e95d377438a6
+ms.date: 04/02/2019
+ms.custom: video
+ms.openlocfilehash: 3f9e5a7a1e20b8e7d708ff80712e6262bae4baa7
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58175318"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58869588"
 ---
 # <a name="xamarinessentials-browser"></a>Xamarin.Essentials:ブラウザー
 
@@ -63,7 +64,7 @@ await Browser.OpenAsync(uri, new BrowserLaunchOptions
 
 ## <a name="platform-implementation-specifics"></a>プラットフォームの実装の詳細
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# [<a name="android"></a>Android](#tab/android)
 
 起動モードによってブラウザーを起動する方法が決定されます。
 
@@ -75,17 +76,17 @@ await Browser.OpenAsync(uri, new BrowserLaunchOptions
 
 `Intent` を使用して、システムの通常のブラウザーで URI を開くよう要求します。
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# [<a name="ios"></a>iOS](#tab/ios)
 
 ## <a name="system-preferred"></a>システム推奨
 
-[SFSafariViewController](https://developer.xamarin.com/api/type/SafariServices.SFSafariViewController/) を使用して、URI を読み込み、ナビゲーション認識を保持します。
+[SFSafariViewController](xref:SafariServices.SFSafariViewController) を使用して、URI を読み込み、ナビゲーション認識を保持します。
 
 ## <a name="external"></a>外部
 
 メイン アプリケーションの標準の `OpenUrl` を使用して、アプリケーションの外部で既定のブラウザーを起動します。
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# [<a name="uwp"></a>UWP](#tab/uwp)
 
 `BrowserLaunchMode` に関係なく、常にユーザーの既定のブラウザーが起動します。
 
@@ -94,4 +95,11 @@ await Browser.OpenAsync(uri, new BrowserLaunchOptions
 ## <a name="api"></a>API
 
 - [Browser のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Browser)
-- [Browser API ドキュメント](xref:Xamarin.Essentials.Browser)
+- [Browser API のドキュメント](xref:Xamarin.Essentials.Browser)
+
+## <a name="related-video"></a>関連ビデオ
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Open-Browser-XamarinEssentials-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]
+

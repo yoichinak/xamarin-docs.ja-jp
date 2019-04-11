@@ -6,12 +6,12 @@ ms.assetid: dd344d57-18e2-42a5-8c15-3f5be4123c72
 author: conceptdev
 ms.author: crdun
 ms.date: 07/24/2018
-ms.openlocfilehash: 486c5c57961e897eae59df66b216a9078d5df517
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: c03e9782fe80a88c70df6b7780c43778f673d10d
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57667991"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58854562"
 ---
 # <a name="system-requirements"></a>システム要件
 
@@ -45,20 +45,20 @@ Xamarin の開発に Mac コンピューターを使用するには、次のソ�
 [!include[](~/cross-platform/includes/macos-testing.md)]
 
 > [!WARNING]
-> 今度の Xamarin.Mac 4.8 リリースでは、macOS 10.9 以降のみをサポートします。
+> Xamarin.Mac 4.8 では、macOS 10.9 以降のみがサポートされます。
 > 以前のバージョンの Xamarin.Mac では macOS 10.7 以降をサポートしていましたが、これらの古い macOS バージョンは TLS 1.2 をサポートするための十分な TLS インフラストラクチャがありませんでした。 macOS 10.7 または macOS 10.8 をターゲットにするには、Xamarin.Mac 4.6 以前を使用してください。
 
 ## <a name="windows-requirements"></a>Windows の要件
 
 Xamarin の開発に Windows コンピューターを使用するには、次のソフトウェア/SDK バージョンが必要です。
 オペレーティング システムのバージョンを確認してください (さらに、*Express* バージョンの Visual Studio を使用していないことを確認します。使用している場合は、*Community* エディションへの更新を検討してください)。
-Visual Studio 2017 インストーラーには、Xamarin を自動的にインストールするオプションが含まれています (**.NET によるモバイル開発**)。
+Visual Studio 2019 および Visual Studio 2017 のインストーラーには、Xamarin を自動的にインストールするオプションが含まれています (**.NET によるモバイル開発**ワークロード)。
 
 [!include[](~/cross-platform/includes/windows-requirements.md)]
 
 > [!NOTE]
-> - Xamarin for Visual Studio では Visual Studio 2017 (Community、Professional、および Enterprise) がサポートされています。
-> - ユニバーサル Windows プラットフォーム (UWP) 用に Xamarin.Forms アプリを開発するには、Visual Studio 2017 がインストールされている Windows 10 が必要です。
+> - Xamarin for Visual Studio では、Visual Studio 2019 または Visual Studio 2017 (Community、Professional、および Enterprise) がサポートされています。
+> - ユニバーサル Windows プラットフォーム (UWP) 用に Xamarin.Forms アプリを開発するには、Visual Studio 2017 がインストールされている Windows 10 が必要です。 Visual Studio 2019 をお勧めします。
 
 ### <a name="testing--debugging-on-windows"></a>Windows でのテストとデバッグ
 
@@ -68,7 +68,7 @@ Xamarin モバイル アプリケーションを USB 経由またはワイヤレ
 
 ## <a name="installation-instructions"></a>インストール手順
 
-macOS 用の最新の Xamarin リリースは、[xamarin.com/download](http://xamarin.com/download) からダウンロードできます。 Windows の場合は、[Visual Studio 2017](https://docs.microsoft.com/visualstudio/install/install-visual-studio) のインストール手順に従ってください。
+macOS 用の最新の Xamarin リリースは、[Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/installation) でダウンロードできます。 Windows の場合は、[Visual Studio のインストール手順](https://docs.microsoft.com/visualstudio/install/install-visual-studio)に従ってください。
 
 現在の製品バージョンの完全なリストは、[現在のリリースのページ](https://developer.xamarin.com/releases/current/)で確認できます。 このページには、ベータおよびアルファ チャネルの個々の製品バージョンの概要 (およびリリース ノートへのリンク) も示されています。
 
@@ -83,4 +83,6 @@ macOS 用の最新の Xamarin リリースは、[xamarin.com/download](http://xa
 ## <a name="related-links"></a>関連リンク
 
 - [Xamarin のダウンロード](https://visualstudio.microsoft.com/xamarin/)
-- [現在のリリース](https://developer.xamarin.com/releases/current/)
+- [Xamarin.Forms のリリース ノート](/xamarin/xamarin-forms/release-notes/)
+- [Xamarin.Android のリリース ノート](/xamarin/android/release-notes/)
+- [Xamarin.iOS のリリース ノート](/xamarin/ios/release-notes/)

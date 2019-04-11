@@ -1,6 +1,6 @@
 ---
 title: Xamarin.iOS および tvOS アプリのワイヤレス展開
-description: このドキュメントでは、Visual Studio for Mac や Visual Studio 2017 から iOS デバイスに Xamarin.iOS アプリをワイヤレス展開する方法について説明します。
+description: このドキュメントでは、Visual Studio for Mac や Visual Studio 2019 から iOS デバイスに Xamarin.iOS アプリをワイヤレス展開する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 5AB4C5A9-4FBB-4DCB-BD72-0022D5439E65
 ms.technology: xamarin-ios
@@ -8,12 +8,12 @@ author: lobrien
 ms.author: laobri
 ms.custom: video
 ms.date: 01/22/2019
-ms.openlocfilehash: 6d64acdcc84c16f33a1f543bf1c9506ae7c8e347
-ms.sourcegitcommit: 2ee36611ef667affee7d417db947fbb614d75315
+ms.openlocfilehash: 82bdd2c160572b0d813fb87d81b09c00996cef18
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54479694"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58854835"
 ---
 # <a name="wireless-deployment-for-xamarinios-and-tvos-apps"></a>Xamarin.iOS および tvOS アプリのワイヤレス展開
 
@@ -27,14 +27,14 @@ ms.locfileid: "54479694"
 
 ワイヤレス展開を使用するには、以下が必要です。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
 
 - macOS 10.12.4
 - Visual Studio for Mac の最新バージョン
 - Xcode 9.0 以降
 - iOS 11.0 または tvOS 11.0 以降のデバイス
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
 
 - Visual Studio の最新バージョン
 - iOS 11.0 または tvOS 11.0 以降のデバイス

@@ -9,12 +9,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: 12fcf6ff1b289c773e0dce03be4ac62105f6acd4
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 7f40671cd37ba88834698dea8cdaba267c96600c
+ms.sourcegitcommit: c77d4257f8a35c8d931538b78a2ebc2aa48c0db9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669467"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58751260"
 ---
 # <a name="hello-ios--deep-dive"></a>Hello, iOS – 深い分析
 
@@ -310,7 +310,7 @@ public partial class ViewController : UIViewController
 
 ビュー コントローラーの最も重要な役割は、ボタンを押す操作、ナビゲーションなどのユーザーの操作に応答することです。 ユーザーの操作を処理する最も簡単な方法は、ユーザーの入力をリッスンするようにコントロールを配置し、入力に応答するためのイベント ハンドラーをアタッチすることです。 たとえば、Phoneword アプリで示したように、タッチ イベントに応答するようにボタンを配置することができます。
 
-これでビューとビュー コントローラーについて理解を深めたので、その動作を見てみましょう。
+このしくみを見てみましょう。
 `Phoneword_iOS` プロジェクトでは、`TranslateButton` というボタンを現在のビュー階層に追加しました。
 
 [![](hello-ios-deepdive-images/image1.png "TranslateButton というボタンがコンテンツ ビュー階層に追加されました")](hello-ios-deepdive-images/image1.png#lightbox)

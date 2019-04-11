@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 15cba21eed510ec13bfa3dc3f176fce30fb4ed68
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 54509d0a1133d86727317366b0d229bc218cb263
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059380"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870301"
 ---
 # <a name="customizing-a-map-pin"></a>マップ ピンのカスタマイズ
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/pin/)
+[![Dサンプルのダウンロード](~/media/shared/download.png) サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/pin/)
 
 _この記事では、各プラットフォーム上でカスタマイズされたピンとピン データのカスタマイズされたビューを含むネイティブ マップを表示する、マップ コントロール用のカスタム レンダラーを作成する方法を示します。_
 
@@ -225,9 +225,9 @@ namespace CustomRenderer.iOS
 }
 ```
 
-`OnElementChanged` メソッドでは、カスタム レンダラーが新しい Xamarin.Forms 要素にアタッチされている場合、次の [`MKMapView`](https://developer.xamarin.com/api/type/MapKit.MKMapView/) インスタンスの構成が実行されます。
+`OnElementChanged` メソッドでは、カスタム レンダラーが新しい Xamarin.Forms 要素にアタッチされている場合、次の [`MKMapView`](xref:MapKit.MKMapView) インスタンスの構成が実行されます。
 
-- [`GetViewForAnnotation`](https://developer.xamarin.com/api/property/MapKit.MKMapView.GetViewForAnnotation/) プロパティは `GetViewForAnnotation` メソッドに設定されます。 このメソッドは、[注釈の場所がマップで表示されるようになった](#Displaying_the_Annotation)ときに呼び出され、表示する前に注釈をカスタマイズするために使用されます。
+- [`GetViewForAnnotation`](xref:MapKit.MKMapView.GetViewForAnnotation*) プロパティは `GetViewForAnnotation` メソッドに設定されます。 このメソッドは、[注釈の場所がマップで表示されるようになった](#Displaying_the_Annotation)ときに呼び出され、表示する前に注釈をカスタマイズするために使用されます。
 - `CalloutAccessoryControlTapped`、`DidSelectAnnotationView`、および `DidDeselectAnnotationView` イベントのイベント ハンドラーが登録されます。 これらのイベントは、ユーザーが[吹き出しの右側のアクセサリをタップ](#Tapping_on_the_Right_Callout_Accessory_View)したとき、およびユーザーが注釈を[選択](#Selecting_the_Annotation)および[選択解除](#Deselecting_the_Annotation)したときに、それぞれ発生します。 レンダラーがアタッチされているイベントが変わった場合にのみ、イベントのサブスクライブが解除されます。
 
 <a name="Displaying_the_Annotation" />
@@ -273,7 +273,7 @@ protected override MKAnnotationView GetViewForAnnotation(MKMapView mapView, IMKA
 このメソッドにより、注釈はシステム定義のピンではなく、カスタム イメージとして確実に表示されるようになります。また、注釈がタップされたときに、注釈のタイトルとアドレスの左側と右側に追加のコンテンツを含む吹き出しが確実に表示されるようになります。 これは次のように行われます。
 
 1. 注釈のカスタム ピン データを返すために、`GetCustomPin` メソッドが呼び出されます。
-1. メモリを節約するため、[`DequeueReusableAnnotation`](https://developer.xamarin.com/api/member/MapKit.MKMapView.DequeueReusableAnnotation/(System.String)/) の呼び出しで再利用できるように注釈のビューがプーリングされます。
+1. メモリを節約するため、[`DequeueReusableAnnotation`](xref:MapKit.MKMapView.DequeueReusableAnnotation*) の呼び出しで再利用できるように注釈のビューがプーリングされます。
 1. `CustomMKAnnotationView` クラスでは、`CustomPin` インスタンスの同じプロパティに対応する `Id` および `Url` プロパティを使用して、`MKAnnotationView` クラスが拡張されます。 注釈が `null` の場合、`CustomMKAnnotationView` の新しいインスタンスが作成されます。
     - `CustomMKAnnotationView.Image` プロパティは、マップ上の注釈を表すイメージに設定されます。
     - `CustomMKAnnotationView.CalloutOffset` プロパティは `CGPoint` に設定されます。これにより、吹き出しが注釈の上の中央に表示されることが指定されます。
@@ -281,7 +281,7 @@ protected override MKAnnotationView GetViewForAnnotation(MKMapView mapView, IMKA
     - `CustomMKAnnotationView.RightCalloutAccessoryView` プロパティは、注釈のタイトルとアドレスの右側に表示される*情報* ボタンに設定されます。
     - `CustomMKAnnotationView.Id` プロパティは、`GetCustomPin` メソッドによって返される `CustomPin.Id` プロパティに設定されます。 これにより、注釈を識別でき、必要に応じて、その[吹き出しをさらにカスタマイズできる](#Selecting_the_Annotation)ようになります。
     - `CustomMKAnnotationView.Url` プロパティは、`GetCustomPin` メソッドによって返される `CustomPin.Url` プロパティに設定されます。 ユーザーが[右側の吹き出しのアクセサリ ビューに表示されるボタンをタップ](#Tapping_on_the_Right_Callout_Accessory_View)したときに、URL にナビゲートされます。
-1. [`MKAnnotationView.CanShowCallout`](https://developer.xamarin.com/api/property/MapKit.MKAnnotationView.CanShowCallout/) プロパティは `true` に設定され、注釈がタップされたときに吹き出しが表示されるようになります。
+1. [`MKAnnotationView.CanShowCallout`](xref:MapKit.MKAnnotationView.CanShowCallout*) プロパティは `true` に設定され、注釈がタップされたときに吹き出しが表示されるようになります。
 1. マップに表示される注釈が返されます。
 
 <a name="Selecting_the_Annotation" />

@@ -8,31 +8,32 @@ author: asb3993
 ms.author: amburns
 ms.custom: video
 ms.date: 01/22/2019
-ms.openlocfilehash: 9f198336d3fc9cca3bc79c377749a1211ebbac55
-ms.sourcegitcommit: 2ee36611ef667affee7d417db947fbb614d75315
+ms.openlocfilehash: 4d4c9980dd4c7be4ed18f1b6ce015d73b3caf836
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54479681"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58855173"
 ---
 # <a name="automatic-provisioning-for-xamarinios"></a>Xamarin.iOS の自動プロビジョニング
 
-_Xamarin.iOS が正常にインストールされたら、iOS 開発の次の手順は、iOS デバイスをプロビジョニングすることです。このガイドでは、自動署名を使用して、開発証明書とプロファイルを要求する方法について説明します。_
+_Xamarin.iOS が正常にインストールされたら、iOS 開発の次の手順は、iOS デバイスをプロビジョニングすることです。 このガイドでは、自動署名を使用して、開発証明書とプロファイルを要求する方法について説明します。_
 
 ## <a name="requirements"></a>要件
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
 
 - Visual Studio for Mac 7.3 以降
 - Xcode 9 以降
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
 
-- Visual Studio 2017 バージョン 15.7 (以降)
+- Visual Studio 2019
+- または Visual Studio 2017 バージョン 15.7 (以降)
 
 また、次に該当する Mac ビルド ホストとペアリングする必要があります。
 
-- Xcode 9 以降
+- Xcode 10 以降
 
 -----
 
@@ -54,7 +55,7 @@ _Xamarin.iOS が正常にインストールされたら、iOS 開発の次の手
 
 iOS デバイスで開発のためにアプリに自動的に署名するには、次の手順を実行します。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
 
 1. Visual Studio for Mac で iOS プロジェクトを開きます。
 
@@ -72,9 +73,9 @@ iOS デバイスで開発のためにアプリに自動的に署名するには�
 
     自動署名に失敗すると、**自動署名パッド**にエラーの理由が表示されます。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
 
-1. 「[Mac とペアリング](~/ios/get-started/installation/windows/connecting-to-mac/index.md)」ガイドに基づき、Visual Studio 2017 と Mac をペアリングします。
+1. 「[Mac とペアリング](~/ios/get-started/installation/windows/connecting-to-mac/index.md)」ガイドに基づき、Visual Studio 2019 と Mac をペアリングします。
 
 2. **ソリューション エクスプローラー**でプロジェクト名を右クリックし、**[プロパティ]** を選択します. 次に、**[iOS バンドル署名]** タブに移動します。
 
