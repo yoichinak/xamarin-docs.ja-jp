@@ -1,6 +1,6 @@
 ---
-title: データ CollectionView を Xamarin.Forms を設定します。
-description: CollectionView に IEnumerable を実装する任意のコレクションをその ItemsSource プロパティを設定して、データを設定します。
+title: Xamarin.Forms の CollectionView にデータを設定する。
+description: CollectionView は、 ItemsSource プロパティに IEnumerable を実装した任意のコレクションを指定して、データを設定します。
 ms.prod: xamarin
 ms.assetid: E1783E34-1C0F-401A-80D5-B2BE5508F5F8
 ms.technology: xamarin-forms
@@ -14,25 +14,25 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 03/27/2019
 ms.locfileid: "58507189"
 ---
-# <a name="populate-xamarinforms-collectionview-with-data"></a>データ CollectionView を Xamarin.Forms を設定します。
+# <a name="populate-xamarinforms-collectionview-with-data"></a>Xamarin.Forms の CollectionView にデータを設定する。
 
 ![[プレビュー]](~/media/shared/preview.png)
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/CollectionViewDemos/)
 
 > [!IMPORTANT]
-> `CollectionView`は現在プレビュー段階で、その計画的な機能の一部が不足しています。 さらに、実装が完了すると、API を変更することがあります。
+> `CollectionView` は現在プレビュー段階で、計画的されている機能の一部が不足しています。 さらに、実装が完了すると、API を変更することがあります。
 
-`CollectionView` 表示されるデータを定義する次のプロパティとその外観を定義します。
+`CollectionView` には、表示するデータとその外観を定義する以下のプロパティが定義されています。
 
-- `ItemsSource`、型の`IEnumerable`、表示される項目のコレクションを指定の既定値を持つと`null`します。
-- `ItemTemplate`、型の[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)、表示する項目のコレクション内の各項目に適用するテンプレートを指定します。
+- `ItemsSource`: `IEnumerable` 型で、表示される項目のコレクションを指定します。既定値は `null` です。
+- `ItemTemplate`: [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) 型で、表示する項目のコレクション内の各項目に適用するテンプレートを指定します。
 
-これらのプロパティが支え[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)オブジェクトで、このプロパティはデータ バインドの対象であることを意味します。
+これらのプロパティは、[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty) オブジェクトで、そのプロパティはデータバインディングの対象であることを意味しています。
 
-## <a name="populate-a-collectionview-with-data"></a>データの CollectionView を設定します。
+## <a name="populate-a-collectionview-with-data"></a> CollectionView にデータを設定する
 
-A`CollectionView`設定によってデータが読み込まれて、`ItemsSource`プロパティを実装するコレクションを`IEnumerable`します。 初期化することにより XAML で項目を追加できる、`ItemsSource`文字列の配列からのプロパティ。
+`CollectionView` は、`ItemsSource` プロパティに `IEnumerable` を実装した任意のコレクションを設定にすることによってデータが読み込まれます。項目は XAML で `ItemsSource` プロパティを文字配列で初期化することにより追加できます。
 
 ```xaml
 <CollectionView>
@@ -53,7 +53,7 @@ A`CollectionView`設定によってデータが読み込まれて、`ItemsSource
 > [!NOTE]
 > `x:Array` 要素には、配列内の項目の型を示す `Type` 属性が必要です。
 
-同等の C# コードに示します。
+同等の C# コードは以下の通りです。
 
 ```csharp
 CollectionView collectionView = new CollectionView();
@@ -70,39 +70,39 @@ collectionView.ItemsSource = new string[]
 ```
 
 > [!IMPORTANT]
-> 場合、`CollectionView`は項目の追加、削除、または基になるコレクションで変更されても更新するために必要な基になるコレクションである必要があります、`IEnumerable`プロパティを送信するコレクションの変更通知、`ObservableCollection`します。
+> `CollectionView` が、基になるコレクションの項目の追加・削除・変更時に更新する必要がある場合は、基になるコレクションは、 `ObservableCollection` のようなプロパティ変更通知を送信する `IEnumerable` コレクションである必要があります。
 
-既定では、`CollectionView`次のスクリーン ショットに示すように垂直方向に一覧項目が表示されます。
+既定では、`CollectionView` は、次のスクリーン ショットに示すように垂直方向に一覧項目を表示します。
 
-[![IOS と Android でのテキスト アイテムを格納しているスクリーン ショットの CollectionView](populate-data-images/text.png "collectionview テキスト アイテム")](populate-data-images/text-large.png#lightbox "collectionview テキスト アイテム")
+[![IOS と Android でのテキスト アイテムを格納している CollectionView のスクリーン ショット](populate-data-images/text.png "collectionview テキスト アイテム")](populate-data-images/text-large.png#lightbox "collectionview テキスト アイテム")
 
-変更する方法については、`CollectionView`レイアウトを参照してください[レイアウトを指定](layout.md)します。 内の各項目の外観を定義する方法については、`CollectionView`を参照してください[項目の外観を定義](#define-item-appearance)します。
+`CollectionView` のレイアウトを変更する方法については、[レイアウトの指定](layout.md)を参照してください。 `CollectionView` 内の各項目の外観を定義する方法については、[項目の外観の定義](#define-item-appearance)を参照してください。
 
 ### <a name="data-binding"></a>データ バインディング
 
-`CollectionView` バインドするデータ バインディングを使用してデータを設定することができます、`ItemsSource`プロパティを`IEnumerable`コレクション。 XAML でこれは、`Binding`マークアップ拡張機能。
+`CollectionView` は、`ItemsSource` プロパティに `IEnumerable` コレクションをバインドするデータ バインディングを使用してデータを設定することができます。 XAML では、これは `Binding` マークアップ拡張を使って実現します。
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}" />
 ```
 
-同等の C# コードに示します。
+同等の C# コードは以下の通りです。
 
 ```csharp
 CollectionView collectionView = new CollectionView();
 collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 ```
 
-この例で、`ItemsSource`プロパティ データにバインド、`Monkeys`接続されているビュー モデルのプロパティ。
+この例では、`ItemsSource` プロパティのデータは、接続されているビューモデルの `Monkeys` プロパティにバインドされます。
 
 > [!NOTE]
-> Xamarin.Forms アプリケーションのデータ バインディングのパフォーマンスを向上させるためには、コンパイル済みのバインドを有効にすることができます。 詳細については、[コンパイル バインド](~/xamarin-forms/app-fundamentals/data-binding/compiled-bindings.md)を参照してください。
+> Xamarin.Forms アプリケーションのデータ バインディングのパフォーマンスを向上させるために、コンパイル済みのバインドを有効にすることができます。 詳細については、[コンパイル済みバインディング](~/xamarin-forms/app-fundamentals/data-binding/compiled-bindings.md)を参照してください。
 
 データ バインディングの詳細については、「[Xamarin.Forms Data Binding](~/xamarin-forms/app-fundamentals/data-binding/index.md)」 (Xamarin.Forms のデータ バインディング) を参照してください。
 
-## <a name="define-item-appearance"></a>項目の外観を定義します。
+## <a name="define-item-appearance"></a>項目の外観を定義する
 
-内の各項目の外観、`CollectionView`を設定して定義することができます、`CollectionView.ItemTemplate`プロパティを[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate):
+`CollectionView` 内の各項目の外観は、`CollectionView.ItemTemplate` プロパティに[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) を設定して定義することができます。
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}">
@@ -137,7 +137,7 @@ collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 </CollectionView>
 ```
 
-同等の C# コードに示します。
+同等の C# コードは以下の通りです。
 
 ```csharp
 CollectionView collectionView = new CollectionView();
@@ -170,7 +170,7 @@ collectionView.ItemTemplate = new DataTemplate(() =>
 });
 ```
 
-指定した要素、 [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)一覧の各項目の外観を定義します。 内のレイアウトの例で、`DataTemplate`によって管理される、 [ `Grid`](xref:Xamarin.Forms.Grid)します。 `Grid`が含まれています、 [ `Image` ](xref:Xamarin.Forms.Image)オブジェクト、および 2 [ `Label` ](xref:Xamarin.Forms.Label)オブジェクトの場合、すべてのプロパティにバインドする、`Monkey`クラス。
+[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) で指定した要素で、リスト内の各項目の外観を定義します。 サンプルでは、`DataTemplate` 内のレイアウトを[ `Grid`](xref:Xamarin.Forms.Grid) で管理しています。 `Grid` は、 [ `Image` ](xref:Xamarin.Forms.Image) オブジェクトと 2 つの [ `Label` ](xref:Xamarin.Forms.Label) オブジェクトを含み、その全てが `Monkey` クラスのプロパティにバインドしています。
 
 ```csharp
 public class Monkey
@@ -182,9 +182,9 @@ public class Monkey
 }
 ```
 
-次のスクリーン ショットは、一覧に各項目のテンプレートの結果を表示します。
+次のスクリーン ショットは、リストの各項目をテンプレートに展開した結果を表示します。
 
-[![各項目が、iOS と Android で template 宣言されるスクリーン ショットの CollectionView](populate-data-images/datatemplate.png "collectionview テンプレート化された項目")](populate-data-images/datatemplate-large.png#lightbox "collectionview テンプレート化された項目")
+[![iOS と Android で、各項目をテンプレート化した CollectionView のスクリーンショット](populate-data-images/datatemplate.png "collectionview テンプレート化された項目")](populate-data-images/datatemplate-large.png#lightbox "collectionview テンプレート化された項目")
 
 データ テンプレートについて詳しくは「[Xamarin.Forms Data Templates](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)」(Xamarin.Forms のデータ テンプレート) をご覧ください。
 
