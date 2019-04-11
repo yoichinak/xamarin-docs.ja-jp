@@ -6,12 +6,12 @@ ms.assetid: 420c5fdf-4610-4e71-9db5-fe894c961924
 author: asb3993
 ms.author: amburns
 ms.date: 11/22/2016
-ms.openlocfilehash: b8f36ef407c3acc9b3472539735816649e13b7db
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 74a9fc59b395d68db9b116106cc9fa63d3969c3b
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672665"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58855238"
 ---
 # <a name="introduction-to-the-mobile-software-development-lifecycle"></a>モバイル ソフトウェア開発ライフサイクルの概要
 
@@ -72,7 +72,7 @@ IDE を起動して何かをまとめてスローし、ちょっとしたテス�
 
 通常 UX は、多くの[デザイン ツールキット](https://docs.microsoft.com/windows/uwp/design/downloads/)のいずれかを使用したワイヤフレームまたはモックアップで行います。 UX モックアップを使用すると、実際の UI デザインを心配することなく UX をデザインできます。
 
- [![](introduction-to-mobile-sdlc-images/balsamiq.png "通常 UX は、Balsamiq などのツールを使用したワイヤフレームまたはモックアップで行います")](introduction-to-mobile-sdlc-images/balsamiq.png#lightbox)
+ [![](introduction-to-mobile-sdlc-images/balsamiq.png "通常 UX は、Balsamiq などのツールを使用したワイヤフレームまたはモックアップで行う")](introduction-to-mobile-sdlc-images/balsamiq.png#lightbox)
 
 UX モックアップを作成するときは、アプリが対象とする多様なプラットフォームのインターフェイス ガイドラインを考慮することが重要です。 各プラットフォームで "使い慣れた感覚" のアプリになるようにします。 各プラットフォームの公式デザイン ガイドラインは次のとおりです。
 
@@ -88,7 +88,7 @@ UX モックアップを作成するときは、アプリが対象とする多�
 
 さらに、フォーム ファクターも UX の決定に影響があります。 タブレットにははるかに広いスペースがあるため、より多くの情報を表示できます。 多くの場合、スマートフォンで複数の画面が必要な機能は、タブレットでは 1 つの画面に収まります。
 
- [![](introduction-to-mobile-sdlc-images/iphone-vs-ipad.png "多くの場合、スマートフォンで複数の画面が必要な機能は、タブレットでは 1 つの画面に収まります")](introduction-to-mobile-sdlc-images/iphone-vs-ipad.png#lightbox)
+ [![](introduction-to-mobile-sdlc-images/iphone-vs-ipad.png "多くの場合、スマートフォンで複数の画面が必要な機能は、タブレットでは 1 つの画面に収まる")](introduction-to-mobile-sdlc-images/iphone-vs-ipad.png#lightbox)
 
 また、さまざまなフォーム ファクターがあるため、多くの場合、中サイズのフォーム ファクター (スマートフォンとタブレットの間くらい) を対象とすることがあります。
 
@@ -98,7 +98,7 @@ UX が決まったら、次の手順は UI デザインの作成です。 通常
 
 UX の場合と同様に、各プラットフォームには独自のデザイン言語があることを理解することが重要です。また、適切なデザインのアプリケーションの外観は、プラットフォームによって異なる可能性があります。
 
- [![](introduction-to-mobile-sdlc-images/multiplatform-1.png "適切なデザインのアプリケーションの外観は、プラットフォームによって異なる可能性があります")](introduction-to-mobile-sdlc-images/multiplatform-1.png#lightbox)
+ [![](introduction-to-mobile-sdlc-images/multiplatform-1.png "適切なデザインのアプリケーションの外観は、プラットフォームによって異なる可能性がある")](introduction-to-mobile-sdlc-images/multiplatform-1.png#lightbox)
 
 ### <a name="development"></a>開発
 
@@ -151,7 +151,7 @@ Android はこの情報を使用して、Android OS 内で実行されるアプ�
 1.  [Handango](http://www.handango.com/)
 1.  [GetJar](http://www.getjar.com/)
 
-#### <a name="uwp"></a>UWP 
+#### <a name="uwp"></a>UWP
 
 UWP アプリケーションは、Microsoft ストアを介してユーザーに配布されます。 開発者は自作アプリを提出して承認を受けます。アプリは承認後にストアに表示されます。 Windows アプリを公開する方法の詳細については、UWP の[公開](https://docs.microsoft.com/windows/uwp/publish/)に関するドキュメントを参照してください。
 
@@ -233,7 +233,7 @@ Android OS のアプリケーションはいずれも、制限されたアクセ
 
 #### <a name="multitasking"></a>マルチタスキング
 
-UWP のマルチタスキングには 2 つの部分があります。ページとアプリケーションのライフサイクルと、バックグラウンド プロセスです。 アプリケーションの各画面は、ページ クラスのインスタンスであり、アクティブまたは非アクティブになる処理に関連するイベントがあります (また、非アクティブ状態または "廃棄済み" を処理する特殊なルールがあります)。 
+UWP のマルチタスキングには 2 つの部分があります。ページとアプリケーションのライフサイクルと、バックグラウンド プロセスです。 アプリケーションの各画面は、ページ クラスのインスタンスであり、アクティブまたは非アクティブになる処理に関連するイベントがあります (また、非アクティブ状態または "廃棄済み" を処理する特殊なルールがあります)。
 
 2 つ目の部分は、アプリケーションがフォアグラウンドで実行中でない場合でも、タスクを処理するバックグラウンド エージェントを提供しています。 
 
@@ -249,9 +249,8 @@ UWP のセキュリティに関する重要な考慮事項については、「[
 
 このガイドでは、モバイル開発に関連する SDLC の概要について説明しました。 また、モバイル アプリケーションの構築に関する全般的な考慮事項の概要を説明し、デザイン、テスト、配置などのプラットフォーム固有の考慮事項をいくつか考察しました。
 
-## <a name="related-links"></a>関連リンク
+## <a name="next-steps"></a>次の手順
 
 - [モバイル開発の概要](~/cross-platform/get-started/introduction-to-mobile-development.md)
-- [Hello, iOS](~/ios/get-started/hello-ios/index.md)
-- [Hello Android](https://developer.xamarin.com/get-started-droid/)
-- [アプリケーションの基礎](~/cross-platform/app-fundamentals/index.md)
+- [Xamarin の概要](~/get-started/index.yml)
+- [プラットフォーム間でのコードの共有](~/cross-platform/app-fundamentals/index.md)

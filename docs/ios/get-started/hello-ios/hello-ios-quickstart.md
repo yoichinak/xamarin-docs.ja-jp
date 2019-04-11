@@ -9,18 +9,18 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: 336f1ec4e4406d2ab40c5e8aea247bd3be9ed765
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: ed59f32711bae56672d1d7f114fbb80a906d67ce
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672730"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58855290"
 ---
 # <a name="hello-ios--quickstart"></a>Hello, iOS – クイックスタート
 
 このガイドでは、ユーザーが入力した英字の電話番号を数値の電話番号に変換してから、その番号に電話をかけるアプリケーションの作成方法を説明します。 最終的にアプリケーションは次のようになります。
 
- [![](hello-ios-quickstart-images/image1.png "Hello.iOS クイックスタート アプリ")](hello-ios-quickstart-images/image1.png#lightbox)
+ [![](hello-ios-quickstart-images/image1.png "Hello.iOS クイック スタート アプリ")](hello-ios-quickstart-images/image1.png#lightbox)
 
 ## <a name="requirements"></a>要件
 
@@ -42,7 +42,7 @@ Xamarin.iOS は次のセットアップで機能します。
 
 Xamarin.iOS は次のセットアップで機能します。
 
-- 最新版の Visual Studio 2017 Community、Professional、または Enterprise。Windows 10。上記の仕様を満たす Mac ビルド ホストとペア。
+- 最新版の Visual Studio 2019 または Visual Studio 2017 Community、Professional、または Enterprise。Windows 10。上記の仕様を満たす Mac ビルド ホストとペア。
 
 [Xamarin.iOS Windows インストール ガイド](~/ios/get-started/installation/windows/index.md)で段階的インストール手順をご確認いただけます。
 

@@ -7,34 +7,35 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/09/2018
-ms.openlocfilehash: 66b9e89080d88fa6f8192b42bc8ab0a97c92c20c
-ms.sourcegitcommit: 64d6da88bb6ba222ab2decd2fdc8e95d377438a6
+ms.openlocfilehash: f4ff43ea51dc690daa716e69021f690511cdcc97
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58071009"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58854055"
 ---
 # <a name="setting-up-the-android-sdk-for-xamarinandroid"></a>Xamarin.Android 向け Android SDK を設定する
 
 _Visual Studio には、Xamarin.Android アプリの開発に必要な Android SDK ツール、プラットフォーム、およびその他のコンポーネントをダウンロードするために使用する SDK Manager が含まれています。_
-
 
 ## <a name="overview"></a>概要
 
 このガイドでは、Visual Studio および Visual Studio for Mac で Xamarin Android SDK Manager ツールを使用する方法を説明しました。
 
 > [!NOTE]
-> このガイドが適用されるのは、Visual Studio 2017 と Visual Studio for Mac のみです。  
+> このガイドが適用されるのは、Visual Studio 2019、Visual Studio 2017、Visual Studio for Mac のみです。  
 
 (**.NET によるモバイル開発**の一部分としてインストールされる) Xamarin Android SDK Manager を使用すると、Xamarin.Android アプリを開発するために必要な最新の Android コンポーネントをダウンロードできます。 これは非推奨とされた Google のスタンドアロン SDK Manager の代わりとなります。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
 
 ## <a name="requirements"></a>要件
 
 Xamarin Android SDK Manager を使用するには、次が必要です。
 
-- Visual Studio 2017 (Community、Professional、または Enterprise Edition)。 Visual Studio 2017 バージョン 15.7 以降。
+- Visual Studio 2019 Community、Professional、または Enterprise。
+
+- または、Visual Studio 2017 (Community、Professional、または Enterprise Edition)。 Visual Studio 2017 バージョン 15.7 以降。
 
 - Visual Studio Tools for Xamarin バージョン 4.10.0 以降 (**.NET によるモバイル開発**ワークロードの一部としてインストールされる)。 
 
@@ -54,11 +55,11 @@ Xamarin Android SDK Manager には、Java Development Kit (Xamarin.Android と�
 
 Visual Studio で SDK Manager を起動するには、**[ツール]、[Android]、[Android SDK Manager]** の順にクリックします。
 
-[![Android SDK Manager のメニュー アイテムの場所](android-sdk-images/win/02-sdk-manager-menu-item-sml.png)](android-sdk-images/win/02-sdk-manager-menu-item.png#lightbox)
+[![LAndroid SDK Manager のメニュー アイテムの場所](android-sdk-images/win/02-sdk-manager-menu-item-sml.png)](android-sdk-images/win/02-sdk-manager-menu-item.png#lightbox)
 
 Android SDK Manager が **[Android SDK とツール]** 画面で開きます。 この画面には、**[プラットフォーム]** と **[ツール]** の 2 つのタブがあります。
 
-[![[プラットフォーム] タブが開かれた Android SDK Manager のスクリーン ショット](android-sdk-images/win/03-sdk-manager-platforms-sml.png)](android-sdk-images/win/03-sdk-manager-platforms.png#lightbox)
+[![S[プラットフォーム] タブが開かれた Android SDK Manager のスクリーン ショット](android-sdk-images/win/03-sdk-manager-platforms-sml.png)](android-sdk-images/win/03-sdk-manager-platforms.png#lightbox)
 
 **[Android SDK とツール]** 画面の詳細については、以降のセクションで詳しく説明します。
 
@@ -86,7 +87,7 @@ Android SDK の場所を設定するには、**[Android SDK の場所]** の右�
 
 たとえば、Google Android Emulator パッケージをダウンロードするには、**[Android Emulator]** の横のチェック マークをクリックし、**[変更の適用]** ボタンをクリックします。
 
-[![[ツール] タブからの Android Emulator のインストール](android-sdk-images/win/06-install-emulator-sml.png)](android-sdk-images/win/06-install-emulator.png#lightbox)
+[![I[ツール] タブからの Android Emulator のインストール](android-sdk-images/win/06-install-emulator-sml.png)](android-sdk-images/win/06-install-emulator.png#lightbox)
 
 ダイアログに_次のパッケージでは、インストールする前にライセンス条項に同意することが必要です_というメッセージが表示される場合があります。
 
@@ -98,7 +99,7 @@ Android SDK の場所を設定するには、**[Android SDK の場所]** の右�
 
 **[プラットフォーム]** タブに、各プラットフォームのプラットフォーム SDK バージョンとその他のリソース (システム イメージなど) 一覧が表示されます。
 
-[![[プラットフォーム] ウィンドウのスクリーン ショット](android-sdk-images/win/08-platforms-pane-sml.png)](android-sdk-images/win/08-platforms-pane.png#lightbox)
+[![S[プラットフォーム] ウィンドウのスクリーン ショット](android-sdk-images/win/08-platforms-pane-sml.png)](android-sdk-images/win/08-platforms-pane.png#lightbox)
 
 この画面には、(**Android 8.0** などの) Android のバージョン、コード名 (**Oreo**)、(**26** などの) API レベル、そのプラットフォームのコンポーネントの (**1 GB** などの) サイズが表示されます。 **[プラットフォーム]** タブを使用して、対象とする Android API レベルのコンポーネントを一覧表示します。 Android のバージョンと API レベルの詳細については、「[Understanding Android API Levels](~/android/app-fundamentals/android-api-levels.md)」(Android API レベルについて) を参照してください。
 
@@ -107,11 +108,11 @@ Android SDK の場所を設定するには、**[Android SDK の場所]** の右�
 
 SDK に別のプラットフォームを追加する場合、そのプラットフォームのすべてのコンポーネントをインストールするチェック マークが表示されるまで、プラットフォームの横にあるボックスをクリックし、**[変更の適用]** をクリックします。
 
-[![Android SDK に Android 7.1 Nougat コンポーネントを追加する例](android-sdk-images/win/09-adding-a-platform-sml.png)](android-sdk-images/win/09-adding-a-platform.png#lightbox)
+[![EAndroid SDK に Android 7.1 Nougat コンポーネントを追加する例](android-sdk-images/win/09-adding-a-platform-sml.png)](android-sdk-images/win/09-adding-a-platform.png#lightbox)
 
 特定のコンポーネントのみをインストールするには、プラットフォームの横にあるボックスを 1 回クリックします。 その後、必要な個々のコンポーネントを選択します。
 
-[![いくつかの Android 7.1 コンポーネントを追加する例](android-sdk-images/win/10-adding-some-components-sml.png)](android-sdk-images/win/10-adding-some-components.png#lightbox)
+[![Eいくつかの Android 7.1 コンポーネントを追加する例](android-sdk-images/win/10-adding-some-components-sml.png)](android-sdk-images/win/10-adding-some-components.png#lightbox)
 
 インストールするコンポーネントの数が **[変更の適用]** ボタンの横に表示されます。 **[変更の適用]** ボタンをクリックすると、前に示したような **[ライセンスの同意]** 画面が表示されます。
 使用条件に同意する場合、**[同意]** をクリックします。 このダイアログ ボックスは、コンポーネントを複数インストールする必要がある場合、2 回以上表示される場合があります。 ウィンドウの下部に、ダウンロードとインストールの進行状況を示す進行状況バーが表示されます。 ダウンロードおよびインストール手順が完了すると (ダウンロードするコンポーネント数に応じてこれには何分もかかる場合があります)、追加されたコンポーネントはチェック マーク付きで**インストール済み**と表示されます。
@@ -120,14 +121,14 @@ SDK に別のプラットフォームを追加する場合、そのプラット�
 
 既定では、Android SDK Manager は、Microsoft が管理するリポジトリからプラットフォームのコンポーネントとツールをダウンロードします。 Microsoft リポジトリでまだ使用できない試験段階のアルファ/ベータ版のプラットフォームとツールにアクセスする必要がある場合は、Google のリポジトリを使用するように SDK Manager を切り替えることができます。 この切り替えを行うには、右下隅の歯車アイコンをクリックして、**[リポジトリ]、[Google (サポート対象外)]** の順に選択します。
 
-[![Google のリポジトリの選択](android-sdk-images/win/11-google-repo-w157-sml.png)](android-sdk-images/win/11-google-repo-w157.png#lightbox)
+[![SGoogle のリポジトリの選択](android-sdk-images/win/11-google-repo-w157-sml.png)](android-sdk-images/win/11-google-repo-w157.png#lightbox)
 
 Google リポジトリを選択すると、以前は使用できなかった追加のパッケージが **[プラットフォーム]** タブに表示される場合があります。 (上のスクリーン ショットでは、Google リポジトリに切り替えたことで **[Android SDK Platform 28]** が追加されています。)Google リポジトリはサポートの対象外であるため、日常的な開発には推奨されないことに注意してください。
 
 プラットフォームとツールのサポート対象のリポジトリに戻すには、**[Microsoft (推奨)]** をクリックします。 これにより、パッケージとツールの一覧が、既定の選択に戻ります。
 
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
 
 ## <a name="requirements"></a>要件
 
@@ -150,11 +151,11 @@ Xamarin Android SDK Manager には、Java Development Kit (Xamarin.Android と�
 
 Visual Studio for Mac で SDK Manager を起動するには、**[ツール]、[SDK Manager]** の順にクリックします。
  
-[![Android SDK Manager のメニュー アイテムの場所](android-sdk-images/mac/01-sdk-manager-menu-item-m75-sml.png)](android-sdk-images/mac/01-sdk-manager-menu-item-m75.png#lightbox)
+[![LAndroid SDK Manager のメニュー アイテムの場所](android-sdk-images/mac/01-sdk-manager-menu-item-m75-sml.png)](android-sdk-images/mac/01-sdk-manager-menu-item-m75.png#lightbox)
 
 **Android SDK Manager** は、**[プラットフォーム]**、**[ツール]**、および **[場所]** の 3 つのタブがある **[Preferences window]** \(環境設定ウィンドウ\) に開きます。
 
-[![[プラットフォーム] タブが開かれた Android SDK Manager のスクリーン ショット](android-sdk-images/mac/02-sdk-manager-platforms-m75-sml.png)](android-sdk-images/mac/02-sdk-manager-platforms-m75.png#lightbox)
+[![S[プラットフォーム] タブが開かれた Android SDK Manager のスクリーン ショット](android-sdk-images/mac/02-sdk-manager-platforms-m75-sml.png)](android-sdk-images/mac/02-sdk-manager-platforms-m75.png#lightbox)
 
 Android SDK Manager のタブは以降のセクションで説明します。
 
@@ -165,7 +166,7 @@ Android SDK Manager のタブは以降のセクションで説明します。
 
 SDK Manager が起動されると、インストールされている各パッケージのパスが自動的に判別され、パスの横に緑のチェックマークが表示され、それが**検出**済みであることが示されます。
 
-[![[場所] タブのスクリーンショット](android-sdk-images/mac/03-locations-tab-m75-sml.png)](android-sdk-images/mac/03-locations-tab-m75.png#lightbox)
+[![S[場所] タブのスクリーンショット](android-sdk-images/mac/03-locations-tab-m75-sml.png)](android-sdk-images/mac/03-locations-tab-m75.png#lightbox)
 
 **[既定値にリセット]** ボタンをクリックして、SDK Manager に既定の場所から SDK、NDK、および JDK を検索させます。 
 
@@ -178,11 +179,11 @@ Android SDK および Java JDK の場所を変更する場合、通常は **[場
 
 たとえば、Google Android Emulator パッケージをダウンロードするには、**[Android Emulator]** の横のチェック マークをクリックし、**[変更の適用]** ボタンをクリックします。
 
-[![[ツール] タブからの Android Emulator のインストール](android-sdk-images/mac/04-tools-tab-m75-sml.png)](android-sdk-images/mac/04-tools-tab-m75.png#lightbox)
+[![I[ツール] タブからの Android Emulator のインストール](android-sdk-images/mac/04-tools-tab-m75-sml.png)](android-sdk-images/mac/04-tools-tab-m75.png#lightbox)
 
 ダイアログに_次のパッケージでは、インストールする前にライセンス条項に同意することが必要です_というメッセージが表示される場合があります。
 
-[![[ライセンスの同意] 画面](android-sdk-images/mac/05-license-acceptance-m75-sml.png)](android-sdk-images/mac/05-license-acceptance-m75.png#lightbox)
+[![Lライセンスの同意画面](android-sdk-images/mac/05-license-acceptance-m75-sml.png)](android-sdk-images/mac/05-license-acceptance-m75.png#lightbox)
 
 使用条件に同意する場合、**[同意]** をクリックします。 ウィンドウの下部に、ダウンロードとインストールの進行状況を示す進行状況バーが表示されます。 インストールが完了すると、**[ツール]** タブに選択したツールとその他の機能がインストールされたことが表示されます。
 
@@ -191,7 +192,7 @@ Android SDK および Java JDK の場所を変更する場合、通常は **[場
 
 **[プラットフォーム]** タブに、各プラットフォームのプラットフォーム SDK バージョンとその他のリソース (システム イメージなど) 一覧が表示されます。
 
-[![[プラットフォーム] ウィンドウのスクリーン ショット](android-sdk-images/mac/06-platforms-tab-m75-sml.png)](android-sdk-images/mac/06-platforms-tab-m75.png#lightbox)
+[![S[プラットフォーム] ウィンドウのスクリーン ショット](android-sdk-images/mac/06-platforms-tab-m75-sml.png)](android-sdk-images/mac/06-platforms-tab-m75.png#lightbox)
 
 この画面には、(**Android 8.1** などの) Android のバージョン、コード名 (**Oreo**)、(**27** などの) API レベル、そのプラットフォームのコンポーネントの (**1 GB** などの) サイズが表示されます。 **[プラットフォーム]** タブを使用して、対象とする Android API レベルのコンポーネントを一覧表示します。 Android のバージョンと API レベルの詳細については、「[Understanding Android API Levels](~/android/app-fundamentals/android-api-levels.md)」(Android API レベルについて) を参照してください。
 
@@ -200,11 +201,11 @@ Android SDK および Java JDK の場所を変更する場合、通常は **[場
 
 SDK に別のプラットフォームを追加する場合、そのプラットフォームのすべてのコンポーネントをインストールするチェック マークが表示されるまで、プラットフォームの横にあるボックスをクリックし、**[変更の適用]** をクリックします。
 
-[![プラットフォームの全コンポーネントを追加する例](android-sdk-images/mac/07-install-all-m75-sml.png)](android-sdk-images/mac/07-install-all-m75.png#lightbox)
+[![Eプラットフォームの全コンポーネントを追加する例](android-sdk-images/mac/07-install-all-m75-sml.png)](android-sdk-images/mac/07-install-all-m75.png#lightbox)
 
 一部のコンポーネントのみをインストールするには、プラットフォームの横にあるボックスを 1 回クリックします。 その後、必要な個々のコンポーネントを選択します。
 
-[![いくつかのコンポーネントを追加する例](android-sdk-images/mac/08-individual-components-m75-sml.png)](android-sdk-images/mac/08-individual-components-m75.png#lightbox)
+[![Eいくつかのコンポーネントを追加する例](android-sdk-images/mac/08-individual-components-m75-sml.png)](android-sdk-images/mac/08-individual-components-m75.png#lightbox)
 
 インストールするコンポーネントの数が **[変更の適用]** ボタンの横に表示されます。 **[変更の適用]** ボタンをクリックすると、前に示したような **[ライセンスの同意]** 画面が表示されます。
 使用条件に同意する場合、**[同意]** をクリックします。 このダイアログ ボックスは、コンポーネントを複数インストールする必要がある場合、2 回以上表示される場合があります。 ウィンドウの下部に、ダウンロードとインストールの進行状況を示す進行状況バーが表示されます。 ダウンロードおよびインストール手順が完了すると (ダウンロードするコンポーネント数に応じてこれには何分もかかる場合があります)、追加されたコンポーネントはチェック マーク付きで**インストール済み**と表示されます。
@@ -213,7 +214,7 @@ SDK に別のプラットフォームを追加する場合、そのプラット�
 
 既定では、Android SDK Manager は、Microsoft が管理するリポジトリからプラットフォームのコンポーネントとツールをダウンロードします。 Microsoft リポジトリでまだ使用できない試験段階のアルファ/ベータ版のプラットフォームとツールにアクセスする必要がある場合は、Google のリポジトリを使用するように SDK Manager を切り替えることができます。 この切り替えを行うには、右下隅の歯車アイコンをクリックして、**[リポジトリ]、[Google (サポート対象外)]** の順に選択します。
 
-[![Google のリポジトリの選択](android-sdk-images/mac/09-google-repo-m75-sml.png)](android-sdk-images/mac/09-google-repo-m75.png#lightbox)
+[![SGoogle のリポジトリの選択](android-sdk-images/mac/09-google-repo-m75-sml.png)](android-sdk-images/mac/09-google-repo-m75.png#lightbox)
 
 Google リポジトリを選択すると、以前は使用できなかった追加のパッケージが **[プラットフォーム]** タブに表示される場合があります。 (上のスクリーン ショットでは、Google リポジトリに切り替えたことで **[Android SDK Platform 28]** が追加されています。)Google リポジトリはサポートの対象外であるため、日常的な開発には推奨されないことに注意してください。
 
@@ -230,4 +231,4 @@ Google リポジトリを選択すると、以前は使用できなかった追�
 ## <a name="related-links"></a>関連リンク
 
 - [Android API レベルの理解](~/android/app-fundamentals/android-api-levels.md)
-- [Android SDK ツールの変更](~/android/troubleshooting/sdk-cli-tooling-changes.md)
+- [Android SDK ツールへの変更](~/android/troubleshooting/sdk-cli-tooling-changes.md)
