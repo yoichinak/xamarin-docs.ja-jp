@@ -6,16 +6,16 @@ ms.assetid: C034200E-2947-4309-9DDD-80DAC505C43F
 author: lobrien
 ms.author: laobri
 ms.date: 07/19/2017
-ms.openlocfilehash: 35c5811d57ade1d320e56e292c1eeed094963a0d
-ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
+ms.openlocfilehash: 44e45d38ecd98be6f75c619125f9c14ce707b251
+ms.sourcegitcommit: 9e9340999d569a3db01b4b59a0fcf24b8caa869c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58070918"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59509889"
 ---
 # <a name="introduction-to-continuous-integration-with-xamarin"></a>Xamarin を使用した継続的インテグレーションの概要
 
-_継続的インテグレーションは、プロジェクトのバージョン管理リポジトリで開発者によってコードに変更や追加が加えられた場合に、自動化されたビルドがアプリをコンパイルし必要に応じてテストするというソフトウェア工学の実践です。この記事は、継続的インテグレーションの一般的な概念と、Xamarin プロジェクトの継続的インテグレーションに利用できるいくつかの選択を説明します。_
+_継続的インテグレーションは、ソフトウェア エンジニア リングのプラクティスを自動化されたビルドがコンパイルし、必要に応じてコードを追加または開発者がプロジェクトのバージョン管理リポジトリに変更されたときにアプリをテストします。 この記事では、継続的インテグレーションの一般的な概念と、使用できるオプションの継続的インテグレーションの Xamarin プロジェクトでいくつかについて説明します。_
 
 ソフトウェア プロジェクトでは開発者が並行して作業することが一般的です。 ある時点で、最終的な製品を構成する1つのコードベースに、これらの並行する作業の流れのすべてを統合する必要があります。 ソフトウェア開発の初期の頃は、この統合は、プロジェクトの最後に実行されていましたが、それは難しく危険な処理でした。
 
@@ -32,17 +32,21 @@ _継続的インテグレーションは、プロジェクトのバージョン�
 
 以下のダイアグラム図は、上記のプロセスを示します。
 
-[![](intro-to-ci-images/intro01-small.png "このダイアグラム図では、上記のプロセスを示しています。")](intro-to-ci-images/intro01.png#lightbox)
+[![](intro-to-ci-images/intro01-small.png "この図では、このプロセスを示しています。")](intro-to-ci-images/intro01.png#lightbox)
 
 モバイルアプリでは、継続的インテグレーションに特有の課題を導入します。 アプリには、物理デバイスでのみ使用できる、GPS やカメラなどのセンサーが要求されることがあります。 さらに、シミュレーターやエミュレーターは、ハードウェアの近似にすぎず、問題が隠れたり分かりにくくなったりします。 結局は、実機上のモバイルアプリをテストして、確実に顧客への準備ができていることを保証する必要があります。
 
 [App Center Test](https://docs.microsoft.com/appcenter/test-cloud)は、数百台の物理デバイス上でアプリを直接テストすることで、この特有の問題に対処します。 開発者は、自動受諾テストを記述し、強力な UI テストを可能にします。 これらのテストが App Center にアップロードされると、CI サーバーは、次のダイアグラム図に示すように CI プロセスの一部として自動的にそれらを実行することができます。
 
-[![](intro-to-ci-images/intro02-small.png "これらのテストが App Center にアップロードされると、CI サーバーは、この図が示すように CI のプロセスの一部として自動的にそれらを実行できます. ")](intro-to-ci-images/intro02.png#lightbox)
+[![](intro-to-ci-images/intro02-small.png "これらのテストは、App Center にアップロード、CI サーバーに自動的に実行できます CI プロセスの一部としてこの図に示すように")](intro-to-ci-images/intro02.png#lightbox)
 
-## <a name="version-control"></a>バージョン コントロール
+## <a name="components-of-continuous-integration"></a>継続的インテグレーションの構成要素
 
-### <a name="azure-devops-and-team-foundation-server"></a>Azure DevOps と Team Foundation Server
+CI をサポートするように設計された商用およびオープンソースのツールによる豊富なエコシステムがあります。 このセクションでは、最も一般的ないくつかのツールについて説明します。
+
+### <a name="version-control"></a>バージョン コントロール
+
+#### <a name="azure-devops-and-team-foundation-server"></a>Azure DevOps と Team Foundation Server
 
 [Azure DevOps](https://azure.microsoft.com/services/devops/)と[Team Foundation Server](https://visualstudio.microsoft.com/tfs/) (TFS) は、継続的インテグレーションのマイクロソフトのコラボレーション ツールは、サービス、タスクの追跡、アジャイル計画およびレポート ツール、およびバージョン管理を構築します。 バージョン管理、Azure DevOps と TFS 作業できます独自のシステム (Team Foundation バージョン管理または TFVC) または GitHub でホストされるプロジェクト。
 
@@ -55,11 +59,11 @@ TFS と Azure DevOps の両方は Visual Studio と緊密に統合し、開発�
 
 Visual Studio、Azure DevOps、および Team Foundation Server では、参照のすべてのアプリケーション ライフ サイクル管理 (ALM) 機能の完全な概要[Xamarin アプリを使用した DevOps](https://docs.microsoft.com/visualstudio/cross-platform/application-lifecycle-management-alm-with-xamarin-apps)します。
 
-### <a name="team-explorer-everywhere"></a>Team Explorer Everywhere
+#### <a name="team-explorer-everywhere"></a>Team Explorer Everywhere
 
 [Team Explorer Everywhere](https://docs.microsoft.com/azure/devops/java/download-eclipse-plug-in/) により Visual Studio 外のチーム開発に、Team Foundation Server と Visual Studio Team Services の機能を利用できます。 これにより、開発者がオンプレミスで、または OS X と Linux 版の Eclipse やクロスプラットフォームのコマンドラインから、クラウド内のチームプロジェクトに接続できるようになります。 Team Explorer Everywhere は、バージョン管理 (Gitを含む) 、作業アイテム、Windows 以外のプラットフォームのビルド機能への完全なアクセスを提供します。
 
-### <a name="git"></a>Git
+#### <a name="git"></a>Git
 
 [Git](http://git-scm.com)は 当初 Linux カーネルでソースコードを管理するために開発された一般的なオープン ソース バージョン管理ソリューションです。 これは、あらゆる規模のソフトウェア プロジェクトで人気のある非常に高速で柔軟なシステムです。 貧弱なインターネットアクセスの個人開発者から世界中に及ぶ大規模なチームまで簡単にスケーリングします。 Git はまた、とても簡単にブランチを作成でき、さらに最小限のリスクで開発の並列のストリームを促進することができます。
 
@@ -67,11 +71,11 @@ Git は、web ブラウザーや Linux、Mac OSX、Windows 上の [GUI クライ
 
 Visual Studio for Windows と Mac の現在のバージョンでは、Git のネイティブ サポートを提供します。 Microsoft が提供、 [Git のダウンロード可能な拡張機能](http://visualstudiogallery.msdn.microsoft.com/abafc7d6-dcaa-40f4-8a5e-d6724bdb980c)Visual Studio の以前のバージョン。 前述したように、Visual Studio Team Services と TFS は、TFVC の代わりにバージョン管理として Git を使用できます。
 
-### <a name="subversion"></a>Subversion
+#### <a name="subversion"></a>Subversion
 
 [Subversion](http://subversion.apache.org) (SVN) は、2000年から使用されている一般的なオープン ソース バージョン コントロール システムです。 SVN は、OS X、Windows、FreeBSD、Linux および Unix のすべての最新バージョンで動作します。 Visual Studio for Mac は、SVN に対するネイティブ サポートがあります。 Visual Studio に SVN サポートをもたらすサード パーティ製の拡張機能があります。
 
-## <a name="continuous-integration-environments"></a>継続的インテグレーション環境
+### <a name="continuous-integration-environments"></a>継続的インテグレーション環境
 
 継続的インテグレーション環境のセットアップは、バージョン管理システムとビルドサービスを組み合わせることを意味します。  後者で最も一般的な2つとして以下のようなものがあります。
 
@@ -80,7 +84,7 @@ Visual Studio for Windows と Mac の現在のバージョンでは、Git のネ
 
 TFS/Azure DevOps を使用するには、単独でまたは、次のセクションで説明されていると、TFS または Azure DevOps または Git での組み合わせに Jenkins を使用できます。
 
-### <a name="visual-studio-team-services-and-team-foundation-server"></a>Visual Studio Team Services と Team Foundation Server
+#### <a name="visual-studio-team-services-and-team-foundation-server"></a>Visual Studio Team Services と Team Foundation Server
 
 前述したように、Visual Studio Team Services と Team Foundation Server は、バージョン管理とビルドサービスの両方を提供します。 ビルドサービスは、常にターゲットプラットフォームごとに、Xamarin Business または Enterprise のライセンスが必要です。
 
@@ -95,19 +99,19 @@ Team Foundation Server では、特定のターゲット プラットフォー�
 
 [![](intro-to-ci-images/intro03-small.png "この図では、このトポロジを示しています。")](intro-to-ci-images/intro03.png#lightbox)
 
-プロジェクトは Azure DevOps を構築するため、ローカル サーバーに委任は、Visual Studio Team Services にローカル、TFS サーバーをリンクすることもできます。 詳細については、[ビルドとリリース エージェント](https://docs.microsoft.com/azure/devops/pipelines/agents/agents/)を参照してください。
+プロジェクトは Azure DevOps を構築するため、ローカル サーバーに委任は、Visual Studio Team Services にローカル、TFS サーバーをリンクすることもできます。 詳細については、次を参照してください。[ビルドとリリース エージェント](https://docs.microsoft.com/azure/devops/pipelines/agents/agents/)します。
 
-### <a name="visual-studio-team-services-and-jenkins"></a>Visual Studio Team Services と Jenkins
+#### <a name="visual-studio-team-services-and-jenkins"></a>Visual Studio Team Services と Jenkins
 
-Jenkins を使用して、アプリをビルドする場合は、Visual Studio Team Services または Team Foundation Server にコードを保存し、CI ビルドとして Jenkins を使い続けることができます。 チーム プロジェクトの Git リポジトリにプッシュしたとき、または TFVC にコードをチェックインしたときに、Jenkins ビルドをトリガーできます。 詳細については、[Azure DevOps での Jenkins](https://docs.microsoft.com/azure/devops/service-hooks/services/jenkins)を参照してください。
+Jenkins を使用して、アプリをビルドする場合は、Visual Studio Team Services または Team Foundation Server にコードを保存し、CI ビルドとして Jenkins を使い続けることができます。 チーム プロジェクトの Git リポジトリにプッシュしたとき、または TFVC にコードをチェックインしたときに、Jenkins ビルドをトリガーできます。 詳細については、次を参照してください。 [Azure DevOps での Jenkins](https://docs.microsoft.com/azure/devops/service-hooks/services/jenkins)します。
 
-[![](intro-to-ci-images/intro04-small.png "Jenkins を使用して、アプリをビルドする場合は、Visual Studio Team Services または Team Foundation Server にコードを保存し、CI ビルドとして Jenkins を使い続けることができます. ")](intro-to-ci-images/intro04.png#lightbox)
+[![](intro-to-ci-images/intro04-small.png "Jenkins を使用して、アプリを構築する場合は、コード Visual Studio Team Services または Team Foundation Server に格納して引き続き CI ビルドに Jenkins を使用するには")](intro-to-ci-images/intro04.png#lightbox)
 
-### <a name="git-and-jenkins"></a>Git と Jenkins
+#### <a name="git-and-jenkins"></a>Git と Jenkins
 
 もう一つの一般的な CI 環境では、完全に OS X をベースにすることができます。 このシナリオは、ソースコート管理に Gitを、ビルドサーバーに Jenkins を使用します。 これらのどちらも Visual Studio for Mac がインストールされた単一の Mac OS X コンピュータで実行します。 これは、前のセクションで説明した Visual Studio Team Services + Jenkins の環境によく似ています。
 
-[![](intro-to-ci-images/intro05-small.png "これは、前のセクションで説明した Visual Studio Team Services + Jenkins の環境によく似ています. ")](intro-to-ci-images/intro05.png#lightbox)
+[![](intro-to-ci-images/intro05-small.png "これは、Visual Studio Team Services と、前のセクションで説明する Jenkins 環境を非常に似ています")](intro-to-ci-images/intro05.png#lightbox)
 
 > [!IMPORTANT]
 > **Jenkins は[Microsoft でサポートされていない](~/cross-platform/troubleshooting/questions/xamarin-jenkins.md)します。**
