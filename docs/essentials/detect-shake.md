@@ -5,12 +5,12 @@ ms.assetid: 07513D32-120F-4F12-8757-A47802A8027B
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: f1482de3fd1c3e550ac9739d0f815092f7fe753d
-ms.sourcegitcommit: 64d6da88bb6ba222ab2decd2fdc8e95d377438a6
+ms.openlocfilehash: 2a14d739806fef353472a5186a9dbedd8e218662
+ms.sourcegitcommit: be51b459a0a148ae3adca31d7599f53f7b2c3a68
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58176043"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59019309"
 ---
 # <a name="xamarinessentials-detect-shake"></a>Xamarin.Essentials:Detect Shake
 
@@ -28,14 +28,14 @@ ms.locfileid: "58176043"
 using Xamarin.Essentials;
 ```
 
-デバイスの揺れを検出するには、Accelerometer 機能を使用する必要があります。具体的には、`Start` メソッドと `Stop` メソッドを呼び出すことで、加速の変化を待ち受け、揺れを検出します。 揺れが検出されるたびに `ShakeDetected ` イベントが始動します。 以下がサンプルの使用方法です。
+デバイスの揺れを検出するには、Accelerometer 機能を使用する必要があります。具体的には、`Start` メソッドと `Stop` メソッドを呼び出すことで、加速の変化を待ち受け、揺れを検出します。 揺れが検出されるたびに `ShakeDetected ` イベントが始動します。 `SensorSpeed` には `Game` またはそれより高速を使うことをお勧めします。 以下がサンプルの使用方法です。
 
 ```csharp
 
 public class DetectShakeTest
 {
     // Set speed delay for monitoring changes.
-    SensorSpeed speed = SensorSpeed.UI;
+    SensorSpeed speed = SensorSpeed.Game;
 
     public DetectShakeTest()
     {
@@ -77,5 +77,5 @@ Detect Shake API では、加速度計で読み取られた値が未加工のま
 
 ## <a name="api"></a>API
 
-- [加速度計のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Accelerometer)
-- [加速度計の API ドキュメント](xref:Xamarin.Essentials.Accelerometer)
+- [Accelerometer のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Accelerometer)
+- [Accelerometer API のドキュメント](xref:Xamarin.Essentials.Accelerometer)

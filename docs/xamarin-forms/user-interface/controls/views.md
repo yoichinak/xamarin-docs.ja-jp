@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/21/2019
-ms.openlocfilehash: e165e6c713028517d69fee92916c94bbf0e46f33
-ms.sourcegitcommit: 5d4e6677224971e2bc0268f405d192d0358c74b8
+ms.openlocfilehash: 5b2e58901d4a850863f68b26ce41e1aa4e8daee4
+ms.sourcegitcommit: 9e9340999d569a3db01b4b59a0fcf24b8caa869c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58329236"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59509903"
 ---
 # <a name="xamarinforms-views"></a>Xamarin.Forms のビュー
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/FormsGallery/)
+[![Dサンプルのダウンロード](~/media/shared/download.png) サンプルのダウンロード](https://developer.xamarin.com/samples/FormsGallery/)
 
 _Xamarin.Forms のビューとは、クロス プラットフォーム モバイルのユーザー インターフェイスの構成要素です。_
 
@@ -174,7 +174,7 @@ _Xamarin.Forms のビューとは、クロス プラットフォーム モバイ
 
 |     |     |
 | --- | --- |
-| `CollectionView` を別のレイアウトの仕様を使用して、選択可能なデータ項目のスクロール可能な一覧が表示されます。 目的より柔軟に提供してパフォーマンスの高い代替に[ `ListView`](xref:Xamarin.Forms.ListView)します。 設定、`ItemsSource`プロパティ オブジェクト、およびセットのコレクションを`ItemTemplate`プロパティを[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)アイテムの書式設定する方法を記述するオブジェクト。 `SelectionChanged`選択が行われたこと、として利用できるイベントの通知、`SelectedItem`プロパティ。<br /><br />[ガイド](~/xamarin-forms/user-interface/collectionview/index.md) / [サンプル](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/CollectionViewDemos/) | [![CollectionView 例](views-images/CollectionView.png "CollectionView 例")](views-images/CollectionView-Large.png#lightbox "CollectionView 例")<br />[このページの C# コード](https://github.com/xamarin/xamarin-forms-samples/blob/forms40/FormsGallery/FormsGallery/FormsGallery/CodeExamples/CollectionViewDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/forms40/FormsGallery/FormsGallery/FormsGallery/XamlExamples/CollectionViewDemoPage.xaml) |
+| `CollectionView` を別のレイアウトの仕様を使用して、選択可能なデータ項目のスクロール可能な一覧が表示されます。 これは [ `ListView`](xref:Xamarin.Forms.ListView) の代わりとして、より柔軟でより高パフォーマンスを提供することを目的にしています。 設定、`ItemsSource`プロパティ オブジェクト、およびセットのコレクションを`ItemTemplate`プロパティを[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)アイテムの書式設定する方法を記述するオブジェクト。 `SelectionChanged`選択が行われたこと、として利用できるイベントの通知、`SelectedItem`プロパティ。<br /><br />[ガイド](~/xamarin-forms/user-interface/collectionview/index.md) / [サンプル](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/CollectionViewDemos/) | [![CollectionView 例](views-images/CollectionView.png "CollectionView 例")](views-images/CollectionView-Large.png#lightbox "CollectionView 例")<br />[このページの C# コード](https://github.com/xamarin/xamarin-forms-samples/blob/forms40/FormsGallery/FormsGallery/FormsGallery/CodeExamples/CollectionViewDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/forms40/FormsGallery/FormsGallery/FormsGallery/XamlExamples/CollectionViewDemoPage.xaml) |
 |     |     |
 
 <a name="listView" />
@@ -183,7 +183,7 @@ _Xamarin.Forms のビューとは、クロス プラットフォーム モバイ
 
 |     |     |
 | --- | --- |
-| [`ListView`](xref:Xamarin.Forms.ListView) 派生した[ `ItemsView[Cell]` ](xref:Xamarin.Forms.ItemsView`1)選択可能なデータ項目のスクロール可能な一覧が表示されます。 設定、 [ `ItemsSource` ](xref:Xamarin.Forms.ItemsView`1.ItemsSource)プロパティ オブジェクト、およびセットのコレクションを[ `ItemTemplate` ](xref:Xamarin.Forms.ItemsView`1.ItemTemplate)プロパティを[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)アイテムがどのように記述するオブジェクト書式設定されます。 [ `ItemSelected` ](xref:Xamarin.Forms.ListView.ItemSelected)選択が行われたこと、として利用できるイベントの通知、 [ `SelectedItem` ](xref:Xamarin.Forms.ListView.SelectedItem)プロパティ。<br /><br />[API ドキュメント](xref:Xamarin.Forms.ListView) / [ガイド](~/xamarin-forms/user-interface/listview/index.md) / [サンプル](https://developer.xamarin.com/samples/WorkingWithListview) | [![ListView 例](views-images/ListView.png "ListView 例")](views-images/ListView-Large.png#lightbox "ListView の例")<br />[このページの C# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ListViewDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ListViewDemoPage.xaml) |
+| [`ListView`](xref:Xamarin.Forms.ListView) 派生した[ `ItemsView` ](xref:Xamarin.Forms.ItemsView`1)選択可能なデータ項目のスクロール可能な一覧が表示されます。 設定、 [ `ItemsSource` ](xref:Xamarin.Forms.ItemsView`1.ItemsSource)プロパティ オブジェクト、およびセットのコレクションを[ `ItemTemplate` ](xref:Xamarin.Forms.ItemsView`1.ItemTemplate)プロパティを[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)アイテムがどのように記述するオブジェクト書式設定されます。 [ `ItemSelected` ](xref:Xamarin.Forms.ListView.ItemSelected)選択が行われたこと、として利用できるイベントの通知、 [ `SelectedItem` ](xref:Xamarin.Forms.ListView.SelectedItem)プロパティ。<br /><br />[API ドキュメント](xref:Xamarin.Forms.ListView) / [ガイド](~/xamarin-forms/user-interface/listview/index.md) / [サンプル](https://developer.xamarin.com/samples/WorkingWithListview) | [![ListView 例](views-images/ListView.png "ListView 例")](views-images/ListView-Large.png#lightbox "ListView の例")<br />[このページの C# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ListViewDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ListViewDemoPage.xaml) |
 |     |     |
 
 ### <a name="picker"></a>ピッカー
