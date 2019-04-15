@@ -7,8 +7,13 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/23/2018
+ms.openlocfilehash: 2978f0b2bcbdd463876784a9addd7dec055b8af9
+ms.sourcegitcommit: 91a4fcb715506e18e8070bc89bf2cb14d079ad32
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/15/2019
+ms.locfileid: "59574820"
 ---
-
 # <a name="file-storage-and-access-with-xamarinandroid"></a>ファイル格納処理および Xamarin.Android を使用したアクセス
 
 Android アプリの一般的な要件は、ファイルを操作する&ndash;画像の保存、ドキュメントをダウンロードまたは他のプログラムを共有するデータをエクスポートします。 (これは、Linux に基づいた) Android では、ファイルの記憶域スペースを提供することで、これをサポートします。 Android では、2 つの異なる種類のストレージにファイル システムをグループ化します。
@@ -61,13 +66,12 @@ Xamarin.Android アプリ (または Xamarin.Android を対象とする Xamarin.
 
 | System.Environment.SpecialFolder | パス  |
 |----------------------|---|
-| `ApplicationData` | **_内部\_ストレージ_/.config** |
-| `Desktop` | **_内部\_ストレージ_  /デスクトップ** |
-| `LocalApplicationData` | **_内部\_ストレージ_/.local/share** |
-| `MyComputer` | **_内部\_ストレージ_/.local/share** |
+| `ApplicationData` | **_INTERNAL\_STORAGE_/.config** |
+| `Desktop` | **_INTERNAL\_STORAGE_/Desktop** |
+| `LocalApplicationData` | **_INTERNAL\_STORAGE_/.local/share** |
 | `MyDocuments` | **_内部\_ストレージ_** |
-| `MyMusic` | **_内部\_ストレージ_/Music** |
-| `MyPictures` | **_内部\_ストレージ_/Music** |
+| `MyMusic` | **_INTERNAL\_STORAGE_/Music** |
+| `MyPictures` | **_内部\_ストレージ_/pictures** |
 | `MyVideos` | **_内部\_ストレージ_/Videos** |
 | `Personal` | **_内部\_ストレージ_** |
 
