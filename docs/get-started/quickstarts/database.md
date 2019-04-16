@@ -10,15 +10,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 04/01/2019
 ms.openlocfilehash: 5c3daf04c08e2109c46b24c198fef8e71fac2f3d
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: e7f27ba75cae5099ef053b819b84132a77d4f9e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/16/2019
 ms.locfileid: "58854991"
 ---
 # <a name="store-data-in-a-local-sqlitenet-database"></a>SQLite.NET のローカル データベースにデータを格納します。
 
-[![Download サンプル](~/media/shared/download.png) サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/Database/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/Database/)
 
 このクイック スタートでは、学習する方法。
 
@@ -230,7 +230,7 @@ ms.locfileid: "58854991"
 
       変更を保存**NoteEntryPage.xaml.cs**キーを押して**CTRL + S**ファイルを閉じます。
 
-11. 構築し、各プラットフォームで、プロジェクトを実行します。 詳細については、[クイック スタートを構築](single-page.md#building-the-quickstart)を参照してください。
+11. 構築し、各プラットフォームで、プロジェクトを実行します。 詳細については、次を参照してください。[クイック スタートを構築](single-page.md#building-the-quickstart)します。
 
     **NotesPage**キーを押して、 **+** に移動するボタン、 **NoteEntryPage**メモを入力します。 移動は、アプリケーションのメモの保存後、 **NotesPage**します。
 
@@ -433,7 +433,7 @@ ms.locfileid: "58854991"
 
       変更を保存**NoteEntryPage.xaml.cs**を選択して**ファイル > 保存**(またはキーを押して **&#8984; + S**)、ファイルを閉じます。
 
-11. 構築し、各プラットフォームで、プロジェクトを実行します。 詳細については、[クイック スタートを構築](single-page.md#building-the-quickstart)を参照してください。
+11. 構築し、各プラットフォームで、プロジェクトを実行します。 詳細については、次を参照してください。[クイック スタートを構築](single-page.md#building-the-quickstart)します。
 
     **NotesPage**キーを押して、 **+** に移動するボタン、 **NoteEntryPage**メモを入力します。 移動は、アプリケーションのメモの保存後、 **NotesPage**します。
 
@@ -455,5 +455,5 @@ XAML スタイルを使用して、アプリケーションのスタイルを設
 
 ## <a name="related-links"></a>関連リンク
 
-- [メモ (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/Database/)
+- [Notes (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/Database/)
 - [Xamarin.Forms のクイック スタートの詳細情報](deepdive.md)

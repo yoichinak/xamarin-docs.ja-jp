@@ -6,12 +6,12 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 04/02/2019
 ms.custom: video
-ms.openlocfilehash: aa051a0f94853b39077738a7b22383192aa32e87
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.openlocfilehash: b9838ddb9771cb6ce757a4080520a5edd720531a
+ms.sourcegitcommit: 91a4fcb715506e18e8070bc89bf2cb14d079ad32
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58870288"
+ms.lasthandoff: 04/15/2019
+ms.locfileid: "59574742"
 ---
 # <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials:セキュリティで保護されたストレージ
 
@@ -23,7 +23,7 @@ ms.locfileid: "58870288"
 
 **SecureStorage** の機能にアクセスするには、次のプラットフォーム固有の設定が必要です。
 
-# [<a name="android"></a>Android](#tab/android)
+# <a name="androidtabandroid"></a>[Android](#tab/android)
 
 > [!TIP]
 > [アプリの自動バックアップ](https://developer.android.com/guide/topics/data/autobackup)は Android 6.0 (API レベル 23) 以降の機能です。ユーザーのアプリ データ (共有の設定、アプリの内部ストレージ内のファイル、その他の特定のファイル) がバックアップされます。 アプリが新しいデバイスに再インストールまたはインストールされると、データが復元されます。 これは、バックアップされ、復元するときに暗号化解除できない共有の設定を利用する `SecureStorage` に影響を与えます。 Xamarin.Essentials では、リセットできるようにキーを削除することで自動的にこのケースを処理しますが、自動バックアップを無効にすることで追加の手順を実行できます。
@@ -61,7 +61,7 @@ ms.locfileid: "58870288"
     </full-backup-content>
     ```
 
-# [<a name="ios"></a>iOS](#tab/ios)
+# <a name="iostabios"></a>[iOS](#tab/ios)
 
 **iOS シミュレーター**上で開発している場合は、**キーチェーン** エンタイトルメントを有効にし、アプリケーションのバンドル ID に対してキーチェーンのアクセス グループを追加します。 
 
@@ -72,7 +72,7 @@ iOS プロジェクト内の **Entitlements.plist** を開き、**キーチェ�
 > [!TIP]
 > iOS デバイスに展開する場合は、このエンタイトルメントは不要であり、削除する必要があります。
 
-# [<a name="uwp"></a>UWP](#tab/uwp)
+# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
 追加の設定は必要ありません。
 
@@ -130,7 +130,7 @@ SecureStorage.RemoveAll();
 
 ## <a name="platform-implementation-specifics"></a>プラットフォームの実装の詳細
 
-# [<a name="android"></a>Android](#tab/android)
+# <a name="androidtabandroid"></a>[Android](#tab/android)
 
 [Android キーストア](https://developer.android.com/training/articles/keystore.html)は、[共有の設定](https://developer.android.com/training/data-storage/shared-preferences.html)に **[アプリのパッケージ ID].xamarinessentials** というファイル名で保存する前に、値を暗号化するための暗号キーを格納するために使用されます。  共有の設定ファイルで使用されるキーは、`SecureStorage` API に渡されるキーの _MD5 Hash_ です。
 
@@ -144,15 +144,15 @@ SecureStorage.RemoveAll();
 
 **SecureStorage** は [Preferences](preferences.md) API を使用し、[Preferences](preferences.md#persistence) ドキュメントで説明されているのと同じデータ永続化に従います。 デバイスが API レベル 22 以下から API レベル 23 以上にアップグレードされる場合、アプリをアンインストールするか **RemoveAll** を呼び出さない限り、この種類の暗号化が使用され続けます。
 
-# [<a name="ios"></a>iOS](#tab/ios)
+# <a name="iostabios"></a>[iOS](#tab/ios)
 
 iOS デバイスに値を安全に格納するために、[キーチェーン](xref:Security.SecKeyChain)が使用されます。  値を格納するために使用される `SecRecord` は、**[アプリのバンドル ID].xamarinessentials** に設定された `Service` 値を持ちます。
 
 場合によっては、キーチェーン データが iCloud と同期され、アプリケーションをアンインストールしても iCloud やユーザーのその他のデバイスからセキュリティで保護された値が削除されない場合があります。
 
-# [<a name="uwp"></a>UWP](#tab/uwp)
+# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-暗号化された値に対して、UWP デバイス上で [DataProtectionProvider](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider) が安全に使用されます。
+暗号化する値に対して、UWP デバイス上で [DataProtectionProvider](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider) が安全に使用されます。
 
 暗号化された値は、`ApplicationData.Current.LocalSettings` の、**[アプリの ID].xamarinessentials** という名前のコンテナーの内部に格納されます。
 
@@ -167,7 +167,7 @@ iOS デバイスに値を安全に格納するために、[キーチェーン](x
 ## <a name="api"></a>API
 
 - [SecureStorage のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/SecureStorage)
-- [SecureStorage API のドキュメント](xref:Xamarin.Essentials.SecureStorage)
+- [SecureStorage API ドキュメント](xref:Xamarin.Essentials.SecureStorage)
 
 ## <a name="related-video"></a>関連ビデオ
 
