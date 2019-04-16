@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/01/2018
-ms.openlocfilehash: 2673021fae2f0a0b45761bf4ed619c92fb826b13
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: b0f747c37362997563a35d9b94f8e677d4104ee1
+ms.sourcegitcommit: e7f27ba75cae5099ef053b819b84132a77d4f9e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50110135"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59587765"
 ---
 # <a name="android-resource-basics"></a>Android リソースの基本
 
@@ -96,8 +96,8 @@ public partial class Resource
 
 プログラムで (コード) 内のリソースを参照するときに、次の構文を使用するリソースのクラス階層を使用してアクセスできます。
 
-```xml
-@[<PackageName>.]Resource.<ResourceType>.<ResourceName>
+```csharp
+[<PackageName>.]Resource.<ResourceType>.<ResourceName>
 ```
 
 -  **PackageName** &ndash;リソースを提供する、のみ、パッケージが必要なときに使用されている他のパッケージからのリソース。
@@ -112,7 +112,7 @@ public partial class Resource
 XML ファイルにリソースを以下へのアクセス、特別な構文。
 
 ```xml
-@[<PackageName>:]<ResourceType>/<ResourceName>.
+@[<PackageName>:]<ResourceType>/<ResourceName>
 ```
 
 -  **PackageName** &ndash;リソースを提供する、のみ、パッケージが必要なときに使用されている他のパッケージからのリソース。
@@ -136,8 +136,7 @@ XML ファイルにリソースを以下へのアクセス、特別な構文。
 </LinearLayout>
 ```
 
-この例では、 [ `ImageView` ](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/imageview)という名前の描画可能なリソースが必要な**フラグ**します。 `ImageView`がその`src`属性に設定 **@drawable/flag**します。 Android は、ディレクトリ内になります、アクティビティの開始時に**リソース/ディスプレイ**という名前のファイルの**flag.png** (ファイルの拡張機能が、別のイメージ形式をこのようなにできる**flag.jpg**)そのファイルを読み込むし、表示、`ImageView`します。
+この例では、 [ `ImageView` ](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/imageview)という名前の描画可能なリソースが必要な**フラグ**します。 `ImageView`がその`src`属性に設定`@drawable/flag`します。 Android は、ディレクトリ内になります、アクティビティの開始時に**リソース/ディスプレイ**という名前のファイルの**flag.png** (ファイルの拡張機能が、別のイメージ形式をこのようなにできる**flag.jpg**)そのファイルを読み込むし、表示、`ImageView`します。
 このアプリケーションを実行すると、次の図のようになります。
 
 ![ローカライズされた ImageView](android-resource-basics-images/03-localized-screenshot.png)
-
