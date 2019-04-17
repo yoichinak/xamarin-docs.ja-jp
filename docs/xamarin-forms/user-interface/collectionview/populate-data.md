@@ -25,14 +25,14 @@ ms.locfileid: "58507189"
 
 `CollectionView` には、表示するデータとその外観を定義する以下のプロパティが定義されています。
 
-- `ItemsSource`、型の`IEnumerable`、表示される項目のコレクションを指定の既定値を持つと`null`します。
+- `ItemsSource`: `IEnumerable` 型で、表示される項目のコレクションを指定します。既定値は `null` です。
 - `ItemTemplate`: [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) 型で、表示する項目のコレクション内の各項目に適用するテンプレートを指定します。
 
-これらのプロパティが支え[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)オブジェクトで、このプロパティはデータ バインドの対象であることを意味します。
+これらのプロパティは、[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty) オブジェクトによりサポートされます。つまりデータバインディングの対象となる可能性があるという意味です。
 
-## <a name="populate-a-collectionview-with-data"></a>CollectionView にデータを設定する
+## <a name="populate-a-collectionview-with-data"></a> CollectionView にデータを設定する
 
-`CollectionView` には、`ItemsSource` プロパティに `IEnumerable` を実装した任意のコレクションを設定することでデータが設定されます。 項目は任意の文字配列からの `ItemsSource` プロパティを初期化することにより、XAML で追加できます。
+`CollectionView` には、`ItemsSource` プロパティに `IEnumerable` を実装した任意のコレクションを設定することでデータが設定されます。項目は任意の文字配列からの `ItemsSource` プロパティを初期化することにより、XAML で追加できます。
 
 ```xaml
 <CollectionView>
@@ -170,7 +170,7 @@ collectionView.ItemTemplate = new DataTemplate(() =>
 });
 ```
 
-[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) に指定された要素により、リスト内の各項目の外観は定義されます。 サンプルでは、`DataTemplate` 内のレイアウトは [ `Grid`](xref:Xamarin.Forms.Grid) により管理されています。 `Grid` は、[ `Image` ](xref:Xamarin.Forms.Image) オブジェクトと 2 つの [ `Label` ](xref:Xamarin.Forms.Label) オブジェクトを含み、そのすべてが `Monkey` クラスのプロパティにバインドされています。
+[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) に指定された要素により、リスト内の各項目の外観は定義されます。 サンプルでは、`DataTemplate` 内のレイアウトは [ `Grid`](xref:Xamarin.Forms.Grid) により管理されています。`Grid` は、[ `Image` ](xref:Xamarin.Forms.Image) オブジェクトと 2 つの [ `Label` ](xref:Xamarin.Forms.Label) オブジェクトを含み、そのすべてが `Monkey` クラスのプロパティにバインドされています。
 
 ```csharp
 public class Monkey
