@@ -9,16 +9,16 @@ ms.custom: video
 author: conceptdev
 ms.author: crdun
 ms.date: 04/02/2019
-ms.openlocfilehash: 0031cb7fb46cf5ad35872963fd3c3def0a2ae9a6
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.openlocfilehash: 5dc37212facbc5b58b807d3fbcba8650a5b065f8
+ms.sourcegitcommit: 34819671c7910d29f018bdb394ddd4a4b0cd3a31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58855303"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59675817"
 ---
 # <a name="build-your-first-xamarinforms-app"></a>最初の Xamarin.Forms アプリのビルド
 
-_このビデオを視聴し、Xamarin.Forms で初めてのモバイル アプリを作成する作業を進めるにします。_
+_このビデオを視聴し、作業を進めて、Xamarin.Forms による最初のモバイル アプリを作成します。_
 
 ::: zone pivot="windows"
 
@@ -26,25 +26,25 @@ _このビデオを視聴し、Xamarin.Forms で初めてのモバイル アプ�
 
 ## <a name="step-by-step-instructions-for-windows"></a>Windows での手順の詳細
 
-[![Download サンプル](~/media/shared/download.png) サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/FirstApp/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/FirstApp/)
 
 上記のビデオと共に以下の手順に従います。
 
 1. 選択**ファイル > 新規 > プロジェクト.** かキーを押して、**新しいプロジェクトの作成.** ボタンをクリックします。
 
-    [![C新しいプロジェクトを作成する](images/win-2019/01-sml.png)](images/win-2019/01.png#lightbox)
+    [![新しいプロジェクトを作成する](images/win-2019/01-sml.png)](images/win-2019/01.png#lightbox)
 
 2. "Xamarin"を検索または選択**Mobile**から、**プロジェクトの種類**メニュー。 選択、**モバイル アプリ (Xamarin.Forms)** プロジェクトの種類。
 
-    [![FXamarin プロジェクトの ilter](images/win-2019/02-sml.png)](images/win-2019/02.png#lightbox)
+    [![Xamarin プロジェクト用のフィルター](images/win-2019/02-sml.png)](images/win-2019/02.png#lightbox)
 
 3. プロジェクト名を選択&ndash;"AwesomeApp"を使用する例を示します。
 
-    [![Cプロジェクト名の選択](images/win-2019/03-sml.png)](images/win-2019/03.png#lightbox)
+    [![プロジェクト名を選択します。](images/win-2019/03-sml.png)](images/win-2019/03.png#lightbox)
 
-4. をクリックして、**黒**プロジェクトの種類を確認して**Android**と**iOS**が選択されています。
+4. をクリックして、**空白**プロジェクトの種類を確認して**Android**と**iOS**が選択されています。
 
-    [![Android と .NET Standard での iOS の場合](images/win-2019/04-sml.png)](images/win-2019/04.png#lightbox)
+    [![Android および iOS と .NET Standard](images/win-2019/04-sml.png)](images/win-2019/04.png#lightbox)
 
 5. NuGet パッケージが復元される (ステータス バーに "復元が完了しました" メッセージが表示される) まで待ちます。
 
@@ -81,17 +81,17 @@ _このビデオを視聴し、Xamarin.Forms で初めてのモバイル アプ�
 
 ## <a name="step-by-step-instructions-for-windows"></a>Windows での手順の詳細
 
-[![Download サンプル](~/media/shared/download.png) サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/FirstApp/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/FirstApp/)
 
 上記のビデオと共に以下の手順に従います。
 
 1. **[ファイル]、[新規]、[プロジェクト]** の順に選択するか、**[新しいプロジェクトの作成]** ボタンをクリックして、**[Visual C#]、[クロスプラットフォーム]、[モバイル アプリ (Xamarin.Forms)]** の順にクリックします。
 
-    [![Mobile アプリ (Xamarin.Forms)](images/win/01-sml.png)](images/win/01.png#lightbox)
+    [![モバイル アプリ (Xamarin.Forms)](images/win/01-sml.png)](images/win/01.png#lightbox)
 
 2. **.NET Standard** コード共有と共に、**[Android]** と **[iOS]** が確実に選択されているようにします。
 
-    [![Android と .NET Standard での iOS の場合](images/win/02-sml.png)](images/win/02.png#lightbox)
+    [![Android および iOS と .NET Standard](images/win/02-sml.png)](images/win/02.png#lightbox)
 
 3. NuGet パッケージが復元される (ステータス バーに "復元が完了しました" メッセージが表示される) まで待ちます。
 
@@ -128,17 +128,17 @@ _このビデオを視聴し、Xamarin.Forms で初めてのモバイル アプ�
 
 ## <a name="step-by-step-instructions-for-mac"></a>Mac での手順の詳細
 
-[![Download サンプル](~/media/shared/download.png) サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/FirstApp/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/FirstApp/)
 
 上記のビデオと共に以下の手順に従います。
 
 1. **[ファイル]、[新しいソリューション]** の順に選択するか、**[新しいプロジェクト]** ボタンをクリックし、**[マルチプラットフォーム]、[アプリ]、[空白フォームのアプリ]** の順に選択します。
 
-    [![Blank フォーム アプリの場合](images/01-sml.png)](images/01.png#lightbox)
+    [![空白フォームのアプリ](images/01-sml.png)](images/01.png#lightbox)
 
 2. **.NET Standard** コード共有と共に、**[Android]** と **[iOS]** が確実に選択されているようにします。
 
-    [![Android と .NET Standard での iOS の場合](images/02-sml.png)](images/02.png#lightbox)
+    [![Android および iOS と .NET Standard](images/02-sml.png)](images/02.png#lightbox)
 
 3. ソリューションを右クリックして、NuGet パッケージを復元します。
 
@@ -169,7 +169,7 @@ _このビデオを視聴し、Xamarin.Forms で初めてのモバイル アプ�
 
 8. 右クリックして、iOS を**スタートアップ プロジェクト**に設定します。
 
-    [![Set iOS をスタートアップ プロジェクト](images/08-sml.png)](images/08.png#lightbox)
+    [![スタートアップ プロジェクトを iOS に設定します](images/08-sml.png)](images/08.png#lightbox)
 
 9. iOS 上のアプリのデバッグ:
 

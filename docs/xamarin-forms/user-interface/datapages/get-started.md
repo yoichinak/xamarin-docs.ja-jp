@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: ef3ec5f8d1a2ded8fc7cae34663f10ab6eb7c86f
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: e3256787c0bc0852275f663772b8a91a6825a0dd
+ms.sourcegitcommit: 34819671c7910d29f018bdb394ddd4a4b0cd3a31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53052972"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59675869"
 ---
 # <a name="getting-started-with-datapages"></a>DataPages の概要
 
@@ -34,7 +34,7 @@ Xamarin.Forms .NET Standard ライブラリとアプリケーション プロジ
 
 * Xamarin.Forms.Pages
 * Xamarin.Forms.Theme.Base
-* テーマの実装を Nuget (例: Xamarin.Forms.Themes.Light)
+* テーマの実装を Nuget (例: Xamarin.Forms.Theme.Light)
 
 ## <a name="2-add-theme-reference"></a>2.テーマの参照を追加します。
 
@@ -51,7 +51,7 @@ Xamarin.Forms .NET Standard ライブラリとアプリケーション プロジ
 </Application>
 ```
 
-**重要:** する手順を行う必要があります[テーマ アセンブリ (下記) を読み込む](#loadtheme)iOS に一部の定型コードを追加して`AppDelegate`と Android`MainActivity`します。 これは、将来のプレビュー リリースで改善されます。
+**大事な：** 手順を行う必要があります[テーマ アセンブリ (下記) を読み込む](#loadtheme)iOS に一部の定型コードを追加して`AppDelegate`と Android`MainActivity`します。 これは、将来のプレビュー リリースで改善されます。
 
 
 ## <a name="3-add-a-xaml-page"></a>3.XAML ページを追加します。
