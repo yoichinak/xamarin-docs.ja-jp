@@ -7,40 +7,40 @@ author: conceptdev
 ms.author: crdun
 ms.date: 07/18/2018
 ms.openlocfilehash: 35c210cc75033f2ad2c83ed6f5196f71d26d000f
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58854185"
 ---
 # <a name="sharing-code-on-multiple-platforms"></a>複数のプラットフォームでコードの共有
 
 これらの記事では、Windows、Android、iOS、および詳細を含む、プラットフォームでコードを共有するために使用できるさまざまなオプションについて説明します。
 
-## [<a name="code-sharing-overview"></a>コード共有の概要](code-sharing.md)
+## <a name="code-sharing-overviewcode-sharingmd"></a>[コード共有の概要](code-sharing.md)
 
 Xamarin プロジェクトでは、.NET Standard ライブラリおよび共有プロジェクトを含む使用可能なオプションを共有する別のコードについて説明します。 ポータブル クラス ライブラリがサポートされても、非推奨の .NET Standard ためただしと見なされます。
 
-## [<a name="net-standard"></a>.NET Standard](~/cross-platform/app-fundamentals/net-standard.md)
+## <a name="net-standardcross-platformapp-fundamentalsnet-standardmd"></a>[.NET Standard](~/cross-platform/app-fundamentals/net-standard.md)
 
 .NET standard はプラットフォーム間でコードを共有するための推奨されるオプションです。 特定のバージョンに対してコードをビルド (2.0 では、既存の .NET Framework コードで最適な API の互換性を提供します) と、そのレベルをサポートするその他のプロジェクトで使用またはより高いことができます。 .NET standard プロジェクトは、for mac。 Visual Studio 2019 と Visual Studio 2019 の両方でサポートされます。
 
-## [<a name="shared-projects"></a>共有プロジェクト](~/cross-platform/app-fundamentals/shared-projects.md)
+## <a name="shared-projectscross-platformapp-fundamentalsshared-projectsmd"></a>[共有プロジェクト](~/cross-platform/app-fundamentals/shared-projects.md)
 
 共有プロジェクトでは、複数の異なるアプリケーション プロジェクトによって参照される共通のコードを記述できます。 コードでは、各参照元のプロジェクトの一部としてコンパイルされ、共有コード ベースでプラットフォーム固有の機能を組み込むためのコンパイラ ディレクティブを含めることができます。 この記事では、共有プロジェクトのしくみ、および作成し、Xamarin プロジェクトで使用する方法について説明します。
 
-## [<a name="portable-class-libraries"></a>ポータブル クラス ライブラリ](~/cross-platform/app-fundamentals/pcl.md)
+## <a name="portable-class-librariescross-platformapp-fundamentalspclmd"></a>[ポータブル クラス ライブラリ](~/cross-platform/app-fundamentals/pcl.md)
 
 ポータブル クラス ライブラリ プロジェクトをビルドし、複数のプラットフォームで実行する共有コードが含まれているアセンブリを配布できます。 ポータブル クラス ライブラリ (または"の PCL") を作成するには、は、まずを対象とし、これらのプラットフォームに対して定義されているプロファイルで使用できる .NET Framework のサブセットに対してコードを記述するプラットフォームを選択します。 Pcl は、最新バージョンの Visual Studio; で非推奨となると見なされます開発者は、代わりに .NET Standard 2.0 を使用することが推奨されます。
 
-## [<a name="nuget-projects-multiplatform-libraries-for-code-sharing"></a>NuGet プロジェクト:コードを共有するためのマルチプラット フォーム ライブラリ](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/index.md)
+## <a name="nuget-projects-multiplatform-libraries-for-code-sharingcross-platformapp-fundamentalsnuget-multiplatform-librariesindexmd"></a>[NuGet プロジェクト:コードを共有するためのマルチプラット フォーム ライブラリ](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/index.md)
 
 NuGet パッケージを PCL または .NET standard プロジェクトから自動的に生成できます。および共有プロジェクトを別の NuGet プロジェクトの種類を使用して、「おとり」NuGet パッケージにパッケージ化できます。 このセクションでは、各コード共有のシナリオ用の NuGet パッケージを作成する方法について説明します。
 
-## [<a name="manually-creating-nuget-packages-for-xamarin"></a>Xamarin 用 NuGet パッケージを手動で作成します。](~/cross-platform/app-fundamentals/nuget-manual.md)
+## <a name="manually-creating-nuget-packages-for-xamarincross-platformapp-fundamentalsnuget-manualmd"></a>[Xamarin 用 NuGet パッケージを手動で作成します。](~/cross-platform/app-fundamentals/nuget-manual.md)
 
 Xamarin プラットフォームで動作する NuGet パッケージの作成に関するヒント。
 
-## [<a name="use-cc-libraries-in-cross-platform-xamarin-projects"></a>クロス プラットフォーム Xamarin プロジェクトで C/C++ ライブラリを使用します。](~/cross-platform/cpp/index.md)
+## <a name="use-cc-libraries-in-cross-platform-xamarin-projectscross-platformcppindexmd"></a>[クロス プラットフォーム Xamarin プロジェクトで C/C++ ライブラリを使用します。](~/cross-platform/cpp/index.md)
 
 この手法を使用すると、C と C++ のライブラリが進化したものを切り離す、 C# NuGet、および Xamarin アプリケーションでバインドします。 機能、ネイティブ プラットフォームの C/C++ ライブラリによって提供されますが、すべてのプラットフォーム固有のコードはコードの重複を指定できる最大のパフォーマンスをできるように、Xamarin の最終的なアプリケーションから分離されます。 

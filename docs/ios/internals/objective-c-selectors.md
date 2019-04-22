@@ -1,6 +1,6 @@
 ---
 title: Xamarin.iOS での OBJECTIVE-C セレクター
-description: このドキュメントでは、C# から OBJECTIVE-C セレクターと対話する方法について説明します。 これには、セレクターとその際に考慮する必要がありますが、技術的な考慮事項を呼び出す方法について説明します。
+description: このドキュメントでは、c# から OBJECTIVE-C セレクターと対話する方法について説明します。 これには、セレクターとその際に考慮する必要がありますが、技術的な考慮事項を呼び出す方法について説明します。
 ms.prod: xamarin
 ms.assetid: A80904C4-6A89-389B-0487-057AFEB70989
 ms.technology: xamarin-ios
@@ -8,10 +8,10 @@ author: lobrien
 ms.author: laobri
 ms.date: 07/12/2017
 ms.openlocfilehash: 15db59945f482728f760006095e294bc5628c8bd
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58870177"
 ---
 # <a name="objective-c-selectors-in-xamarinios"></a>Xamarin.iOS での OBJECTIVE-C セレクター

@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
 ms.openlocfilehash: 54509d0a1133d86727317366b0d229bc218cb263
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58870301"
 ---
 # <a name="customizing-a-map-pin"></a>マップ ピンのカスタマイズ
 
-[![Dサンプルのダウンロード](~/media/shared/download.png) サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/pin/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/pin/)
 
 _この記事では、各プラットフォーム上でカスタマイズされたピンとピン データのカスタマイズされたビューを含むネイティブ マップを表示する、マップ コントロール用のカスタム レンダラーを作成する方法を示します。_
 

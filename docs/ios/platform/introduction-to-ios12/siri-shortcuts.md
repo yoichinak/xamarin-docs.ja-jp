@@ -8,10 +8,10 @@ author: lobrien
 ms.author: laobri
 ms.date: 08/08/2018
 ms.openlocfilehash: e37fd88f0d5fcf02ece0ae2f5e3164a507067e29
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58869825"
 ---
 # <a name="siri-shortcuts-in-xamarinios"></a>Xamarin.iOS で Siri ショートカット
@@ -227,8 +227,7 @@ Xcode の 10 を使用すると、カスタムのインテントを作成しま�
 これを表示するには、コードが生成されます。
 
 - 開いている**AppDelegate.m**します。
-- カスタムの目的のヘッダー ファイルには、インポートを追加します。
-`#import "OrderSoupIntent.h"`
+- カスタムの目的のヘッダー ファイルには、インポートを追加します。 `#import "OrderSoupIntent.h"`
 - クラス内の任意のメソッド内への参照を追加`OrderSoupIntent`します。
 - 右クリックして`OrderSoupIntent`選択**定義にジャンプ**します。
 - 新しく開かれたファイルで右クリックして**OrderSoupIntent.h**を選択し、 **Finder で表示する**します。

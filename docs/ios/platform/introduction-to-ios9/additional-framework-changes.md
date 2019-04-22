@@ -8,10 +8,10 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
 ms.openlocfilehash: 5156259f8178da69595464f75a10cd8f41965519
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58870327"
 ---
 # <a name="additional-ios-9-frameworks-changes"></a>追加の iOS 9 フレームワークの変更
@@ -267,6 +267,6 @@ Ios 9 でこの自動サイズ変更が発生しないことと、コントロ�
 ## <a name="related-links"></a>関連リンク
 
 - [iOS 9 のサンプル](https://developer.xamarin.com/samples/ios/iOS9/)
-- [IOS 9 の概要](~/ios/platform/introduction-to-ios9/index.md)
+- [iOS 9 の概要](~/ios/platform/introduction-to-ios9/index.md)
 - [iOS 9 開発者向け](https://developer.apple.com/ios/pre-release/)
 - [IOS 9.0 を新します。](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)

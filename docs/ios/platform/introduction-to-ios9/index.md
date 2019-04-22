@@ -1,5 +1,5 @@
 ---
-title: IOS 9 の概要
+title: iOS 9 の概要
 description: この記事では、Xamarin.iOS の開発者向けのすべての新規および変更した Api と iOS 9 で使用できる機能を紹介します。
 ms.prod: xamarin
 ms.assetid: 4D71BBD9-B948-4B59-9AF5-F199C51CBEB3
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
 ms.openlocfilehash: d0ad25a1ecff7262b9b4b41a5f9d73a5931bbd1c
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58870197"
 ---
-# <a name="introduction-to-ios-9"></a>IOS 9 の概要
+# <a name="introduction-to-ios-9"></a>iOS 9 の概要
 
 _この記事では、Xamarin.iOS の開発者向けのすべての新規および変更した Api と iOS 9 で使用できる機能を紹介します。_
 
@@ -44,7 +44,7 @@ ATS に関する詳細については、次を参照してください、[アプ
 
 <a name="multitasking" />
 
-## <a name="multitasking-for-ipad"></a>IPad のマルチタス キング
+## <a name="multitasking-for-ipad"></a>iPad のマルチタスキング
 
 IOS 9 の場合は、Apple iPad の特定のハードウェア上で同時に 2 つのアプリを実行するためのマルチタス キングのサポートが追加されます。 その結果、任意の時点で実行されている唯一のアプリであるか、全画面表示や、デバイスのリソースへのアクセスである、Xamarin.iOS アプリは想定できなくできます。
 
@@ -213,7 +213,7 @@ Apple には、次の Api と iOS 9 の関数が非推奨とされます。
 - [iOS 9 のサンプル](https://developer.xamarin.com/samples/ios/iOS9/)
 - [3D Touch の概要](~/ios/platform/3d-touch.md)
 - [アプリケーション トランスポート セキュリティ](~/ios/app-fundamentals/ats.md)
-- [IPad のマルチタス キング](~/ios/platform/multitasking.md)
+- [iPad のマルチタスキング](~/ios/platform/multitasking.md)
 - [連絡先と連絡先 UI](~/ios/platform/contacts.md)
 - [新しい Search Api](~/ios/platform/search/index.md)
 - [スタック ビューの概要](~/ios/user-interface/controls/uistackview.md)
@@ -221,7 +221,7 @@ Apple には、次の Api と iOS 9 の関数が非推奨とされます。
 - [ゲームの機能強化](~/ios/platform/gaming/index.md)
 - [HomeKit の概要](~/ios/platform/homekit.md)
 - [ハンドオフの概要](~/ios/platform/handoff.md)
-- [追加の iOS 9 フレームワークの変更](~/ios/platform/introduction-to-ios9/additional-framework-changes.md)
+- [iOS 9 フレームワークのその他の変更点](~/ios/platform/introduction-to-ios9/additional-framework-changes.md)
 - [トラブルシューティング](~/ios/platform/introduction-to-ios9/troubleshooting.md)
 - [iOS 9 開発者向け](https://developer.apple.com/ios/pre-release/)
 - [IOS 9.0 を新します。](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)

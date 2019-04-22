@@ -9,10 +9,10 @@ author: maddyleger1
 ms.author: maleger
 ms.date: 02/04/2019
 ms.openlocfilehash: db243a9c8dcb25f51bc7926a7aa239531e9c24f6
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58859012"
 ---
 # <a name="xaml-previewer-for-xamarinforms"></a>Xamarin.Forms 用 XAML プレビューアー
@@ -31,7 +31,7 @@ XAML プレビューアーは iOS と Android で Xamarin.Forms XAML ページ�
 
 分割ビューのウィンドウにある矢印をクリックして、XAML プレビューアーを開くことができます。 既定値に分割表示動作を変更する場合は、使用、**ツール > オプション > Xamarin > フォーム プレビューアー**ダイアログ。 このダイアログ ボックスでは、既定のドキュメント ビューと分割の向きを選択できます。
 
-[![Xamarin します。Visual Studio のフォームのプレビューアーのオプション](xaml-previewer-images/xamlp-options-vs-sm.png "Visual Studio で Xamarin.Forms プレビューアーのオプション")](xaml-previewer-images/xamlp-options-vs-lg.png#lightbox)
+[![Visual Studio のオプションの Xamarin.Forms プレビューアー](xaml-previewer-images/xamlp-options-vs-sm.png "Visual Studio で Xamarin.Forms プレビューアーのオプション")](xaml-previewer-images/xamlp-options-vs-lg.png#lightbox)
 
 エディターが開きますフルサイズまたは次へ で選択した設定に基づいて、プレビューアーを XAML ファイルを開くときに、**ツール > オプション > Xamarin > フォーム プレビューアー**ダイアログ。 ただし、エディター ウィンドウ内の各ファイルの分割を変更できます。
 
@@ -39,11 +39,11 @@ XAML プレビューアーは iOS と Android で Xamarin.Forms XAML ページ�
 
 XAML プレビューアーをコードを表示するかどうか、またはウィンドウを表示、分割ボタンを選択すると、両方とも選択します。 中央のボタンは、何側プレビューアーと、コードが上を交換します。
 
-[![Xamarin します。フォームをデザイン、ソース、および Visual Studio での分割ビューを切り替えるプレビューアーのコントロール](xaml-previewer-images/xamlp-controls-splitview-vs-sm.png "Xamarin.Forms プレビューアーのコントロールをデザイン、ソース、および Visual Studio での分割ビューを切り替える")](xaml-previewer-images/xamlp-controls-splitview-vs-lg.png#lightbox)
+[![デザイン、ソース、および Visual Studio での分割ビューの切り替えにコントロールを Xamarin.Forms プレビューアー](xaml-previewer-images/xamlp-controls-splitview-vs-sm.png "Xamarin.Forms プレビューアーのコントロールをデザイン、ソース、および Visual Studio での分割ビューを切り替える")](xaml-previewer-images/xamlp-controls-splitview-vs-lg.png#lightbox)
 
 画面が垂直方向または水平方向に分割するかどうかを変更するか、完全に 1 つのペインを折りたたみます。
 
-[![Xamarin します。Visual Studio での向きのプレビューアーのペイン コントロールをフォーム](xaml-previewer-images/xamlp-controls-orientation-vs-sm.png "Visual Studio で Xamarin.Forms プレビューアー ウィンドウの向きのコントロール")](xaml-previewer-images/xamlp-controls-orientation-vs-lg.png#lightbox)
+[![Visual Studio で Xamarin.Forms プレビューアー ウィンドウの向きコントロール](xaml-previewer-images/xamlp-controls-orientation-vs-sm.png "Visual Studio で Xamarin.Forms プレビューアー ウィンドウの向きのコントロール")](xaml-previewer-images/xamlp-controls-orientation-vs-lg.png#lightbox)
 
 ::: zone-end
 ::: zone pivot="macos"
@@ -52,7 +52,7 @@ XAML プレビューアーをコードを表示するかどうか、またはウ
 
 **プレビュー** XAML ページを開くと、エディター ボタンが表示されます。 表示またはキーを押して、プレビューアーを非表示、**プレビュー**任意の XAML ドキュメント ウィンドウの右上隅にあるボタン。
 
-[![Xamarin します。Visual studio for Mac のプレビューアーをフォーム](xaml-previewer-images/xamlp-list-sml.png "Visual Studio for Mac で Xamarin.Forms プレビューアー")](xaml-previewer-images/xamlp-list.png#lightbox)
+[![Visual Studio for Mac で Xamarin.Forms プレビューアー](xaml-previewer-images/xamlp-list-sml.png "Visual Studio for Mac で Xamarin.Forms プレビューアー")](xaml-previewer-images/xamlp-list.png#lightbox)
 
 ::: zone-end
 
@@ -99,4 +99,4 @@ if (!DesignMode.IsDesignModeEnabled)
 
 ### <a name="custom-controls-arent-rendering"></a>カスタム コントロールが表示されません。
 
-プロジェクトのビルドを再試行してください。 プレビューアーには、コントロールを表示するために失敗した場合、または場合のデザイン時レンダリングのコントロールの作成者のオプトアウトのコントロールの基底クラスが表示されます。 詳細については、[XAML プレビューアーでカスタム コントロールのレンダリング](render-custom-controls.md)を参照してください。
+プロジェクトのビルドを再試行してください。 プレビューアーには、コントロールを表示するために失敗した場合、または場合のデザイン時レンダリングのコントロールの作成者のオプトアウトのコントロールの基底クラスが表示されます。 詳細については、次を参照してください。 [XAML プレビューアーでカスタム コントロールのレンダリング](render-custom-controls.md)します。

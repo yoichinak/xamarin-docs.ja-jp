@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
 ms.openlocfilehash: 7371f134944d7492e51aa2d02247c0ab48345a47
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58870236"
 ---
 # <a name="summary-of-chapter-14-absolute-layout"></a>第 14 章の概要です。 絶対レイアウト
 
-[![Download サンプル](~/media/shared/download.png) サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14)
 
 ような`StackLayout`、 [ `AbsoluteLayout` ](xref:Xamarin.Forms.AbsoluteLayout)から派生した`Layout<View>`を継承し、`Children`プロパティ。 `AbsoluteLayout` その子と、必要に応じて、そのサイズの位置を指定するプログラマが必要なレイアウト システムを実装します。 左上隅に対して相対的子の左上隅で、位置が指定された、`AbsoluteLayout`デバイスに依存しない単位。 `AbsoluteLayout` 比例位置とサイズ変更機能を実装します。
 
@@ -106,4 +106,4 @@ layoutBounds.Y = (fractionalChildCoordinate.Y/(1 - layoutBounds.Height))
 - [第 14 章フル テキスト (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch14-Apr2016.pdf)
 - [第 14 章のサンプル](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14)
 - [AbsoluteLayout](~/xamarin-forms/user-interface/layouts/absolute-layout.md)
-- [アタッチされるプロパティ](~/xamarin-forms/xaml/attached-properties.md)
+- [添付プロパティ](~/xamarin-forms/xaml/attached-properties.md)

@@ -6,10 +6,10 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
 ms.openlocfilehash: 2a14d739806fef353472a5186a9dbedd8e218662
-ms.sourcegitcommit: be51b459a0a148ae3adca31d7599f53f7b2c3a68
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59019309"
 ---
 # <a name="xamarinessentials-detect-shake"></a>Xamarin.Essentials:Detect Shake
@@ -77,5 +77,5 @@ Detect Shake API では、加速度計で読み取られた値が未加工のま
 
 ## <a name="api"></a>API
 
-- [Accelerometer のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Accelerometer)
-- [Accelerometer API のドキュメント](xref:Xamarin.Essentials.Accelerometer)
+- [加速度計のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Accelerometer)
+- [加速度計の API ドキュメント](xref:Xamarin.Essentials.Accelerometer)

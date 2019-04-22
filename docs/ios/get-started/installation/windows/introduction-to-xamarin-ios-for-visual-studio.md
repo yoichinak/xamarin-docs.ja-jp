@@ -8,10 +8,10 @@ author: lobrien
 ms.author: laobri
 ms.date: 05/02/2018
 ms.openlocfilehash: e6f95713fdf3dbe8983c9f51554df7165637fc9a
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58855134"
 ---
 # <a name="introduction-to-xamarinios-for-visual-studio"></a>Xamarin.iOS for Visual Studio の概要
@@ -63,7 +63,7 @@ Xamarin iOS 開発に関連するコントロールは赤い円で囲まれて�
 
 Visual Studio の各バージョンでの、Visual Studio の iOS ツール バーは似ています。 それらすべてを以下に示します。
 
-[![](introduction-to-xamarin-ios-for-visual-studio-images/iostoolbar.png "[iOS] ツール バー")](introduction-to-xamarin-ios-for-visual-studio-images/iostoolbar.png#lightbox)
+[![](introduction-to-xamarin-ios-for-visual-studio-images/iostoolbar.png "iOS ツール バー")](introduction-to-xamarin-ios-for-visual-studio-images/iostoolbar.png#lightbox)
 
 各アイテムについては以下に説明します。
 
@@ -149,9 +149,9 @@ Visual Studio 2017 では、Android および iOS のログ パッドが統合�
 
 Visual Studio 用の新しい [デバイス ログ] ツール ウィンドウでは、Android および iOS デバイスのログを表示できます。 次のコマンドのいずれかを実行して表示できます。
 
-- **[ビュー] > [その他のウィンドウ] > [デバイス ログ]**
-- **[ツール] > [iOS] > [デバイス ログ]**
-- **[iOS ツール バー] > [デバイス ログ]**
+- **[ビュー]、[その他のウィンドウ]、[デバイス ログ]**
+- **[ツール]、[iOS]、[デバイス ログ]**
+- **[iOS ツール バー]、[デバイス ログ]**
 
 ツール ウィンドウが表示されたら、ユーザーはデバイスのドロップダウン リストから物理デバイスを選択できます。 デバイスが選択されると、ログがテーブルに自動的に追加されます。 デバイスを切り替えると、デバイスのログが停止し、開始されます。
 

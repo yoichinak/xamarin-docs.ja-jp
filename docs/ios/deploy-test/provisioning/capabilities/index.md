@@ -8,15 +8,15 @@ author: asb3993
 ms.author: amburns
 ms.date: 05/06/2018
 ms.openlocfilehash: 7049cc36f5f661152e027beb53180d793078beff
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58855030"
 ---
 # <a name="working-with-capabilities-in-xamarinios"></a>Xamarin.iOS の機能の使用
 
-_アプリケーションに機能を追加するには、多くの場合、追加のプロビジョニングの設定が必要です。 このガイドでは、すべての機能に必要な設定について説明します。_
+_アプリケーションに機能を追加するには、多くの場合、追加のプロビジョニングの設定が必要です。このガイドでは、すべての機能に必要な設定について説明します。_
 
 Apple は、機能を拡張し、iOS アプリで実行可能な操作の範囲を広げる手段として、_アプリ サービス_としてよく知られる_機能_を開発者に提供しています。 この機能を使用して、開発者はアプリケーションにより緊密に統合されたプラットフォーム機能を追加することができます。これにより、Siri などのアプリの追加デバイス サービスからの金融取引の開始が可能になります。
 これらの機能は、Xamarin.iOS プロジェクトで使用できます。 サービスの完全なリストを以下に示します。
@@ -72,7 +72,7 @@ Apple は、機能を拡張し、iOS アプリで実行可能な操作の範囲�
 
 ## <a name="using-the-ide"></a>IDE の使用
 
-# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 機能は、Visual Studio for Mac の **Entitlements.plist** に追加されます。 機能を追加するには次の手順に従います。
 
@@ -92,7 +92,7 @@ Apple は、機能を拡張し、iOS アプリで実行可能な操作の範囲�
 
     ![entitlements.plist ファイルに機能を追加する](images/image18.png)
 
-# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 機能は **Entitlements.plist** に追加されます。 Visual Studio 2019 の場合、次の手順で機能を追加します。
 

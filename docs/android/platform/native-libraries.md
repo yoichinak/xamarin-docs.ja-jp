@@ -7,10 +7,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
 ms.openlocfilehash: 1b0771a0ccc2597ebd800468b82044e4020d9d94
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58854614"
 ---
 # <a name="using-native-libraries"></a>ネイティブ ライブラリの使用
@@ -40,7 +40,7 @@ Android では、複数のアプリケーション バイナリ インターフ�
 </ItemGroup>
 ```
 
-ネイティブ ライブラリの使用に関する詳細については、[ネイティブ ライブラリとの相互運用](https://www.mono-project.com/docs/advanced/pinvoke/)を参照してください。
+ネイティブ ライブラリの使用に関する詳細については、次を参照してください。[ネイティブ ライブラリとの相互運用](https://www.mono-project.com/docs/advanced/pinvoke/)します。
 
 ## <a name="debugging-native-code-with-visual-studio"></a>Visual Studio を使用したネイティブ コードのデバッグ
 
@@ -53,7 +53,7 @@ Android では、複数のアプリケーション バイナリ インターフ�
 2. 下へスクロールして**デバッグ オプション**します。
 3. **デバッガー**ドロップダウン メニューで、 **C++** (既定ではなく **.Net (Xamarin)**)。
 
-Visual Studio の C++ 開発者を参照してください、 [SanAngeles_NativeDebug](https://developer.xamarin.com/samples/monodroid/SanAngeles_NDK/)サンプルを Visual Studio 2019 または Visual Studio 2017 と Xamarin; から C のデバッグを試すしを参照してください、[ブログの投稿](https://blog.xamarin.com/build-and-debug-c-libraries-in-xamarin-android-apps-with-visual-studio-2015/)詳細についてはします。
+Visual StudioC++開発者を参照してください、 [SanAngeles_NativeDebug](https://developer.xamarin.com/samples/monodroid/SanAngeles_NDK/)デバッグのサンプルC++から Visual Studio 2019 または Visual Studio 2017 と Xamarin; を参照してください、[ブログの投稿](https://blog.xamarin.com/build-and-debug-c-libraries-in-xamarin-android-apps-with-visual-studio-2015/)詳細情報。
 
 
 

@@ -7,10 +7,10 @@ ms.author: jamont
 ms.date: 04/02/2019
 ms.custom: video
 ms.openlocfilehash: c0875534d88ea5b66b3072c35b9d38894fe98934
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58870028"
 ---
 # <a name="xamarinessentials-map"></a>Xamarin.Essentials:マップ
@@ -103,15 +103,15 @@ public class MapTest
 
 ## <a name="platform-differences"></a>プラットフォームによる違い
 
-# [<a name="android"></a>Android](#tab/android)
+# <a name="androidtabandroid"></a>[Android](#tab/android)
 
 - `NavigationMode` ではサイクリング、ドライビング、徒歩がサポートされています。
 
-# [<a name="ios"></a>iOS](#tab/ios)
+# <a name="iostabios"></a>[iOS](#tab/ios)
 
 - `NavigationMode` ではドライビング、路線、徒歩がサポートされています。
 
-# [<a name="uwp"></a>UWP](#tab/uwp)
+# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
 - `NavigationMode` ではドライビング、路線、徒歩がサポートされています。
 
@@ -119,15 +119,15 @@ public class MapTest
 
 ## <a name="platform-implementation-specifics"></a>プラットフォームの実装の詳細
 
-# [<a name="android"></a>Android](#tab/android)
+# <a name="androidtabandroid"></a>[Android](#tab/android)
 
 Android では、URI スキーム `geo:` を使用してデバイス上のマップ アプリケーションを起動します。 これにより、この URI スキームをサポートしている既存のアプリから選択するよう、ユーザーが求められる場合があります。  Xamarin.Essentials は、このスキームをサポートしている Google マップを使用してテストされます。
 
-# [<a name="ios"></a>iOS](#tab/ios)
+# <a name="iostabios"></a>[iOS](#tab/ios)
 
 プラットフォーム固有の実装の詳細はありません。
 
-# [<a name="uwp"></a>UWP](#tab/uwp)
+# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
 プラットフォーム固有の実装の詳細はありません。
 

@@ -8,26 +8,26 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
 ms.openlocfilehash: e85eb64099ba60a2b3663730a6fb058efdac6c60
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58854705"
 ---
 # <a name="xamarinforms-xaml-basics"></a>Xamarin.Forms XAML の基礎
 
-[![Download サンプル](~/media/shared/download.png) サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
 
 XAML (eXtensible Application Markup Language) を使用すると、開発者は Xamarin.Forms アプリケーションでコードではなくマークアップを使用してユーザー インターフェイスを定義できます。 Xamarin.Forms のプログラムでは、XAML が必要なことはありませんが、方が簡潔なと同等のコードより視覚的に一貫性のある使いやすい可能性があります。 XAML は、一般的な MVVM (モデル-ビュー-ビューモデル) アプリケーションのアーキテクチャで使用するため特に適しています。XAML では、XAML ベースのデータ バインディングによって、ビューモデルのコードにリンクされているビューを定義します。
 
 ## <a name="xaml-basics-contents"></a>XAML の基礎の内容
 
 * [概要](#Overview)
-* [第 1 部です。 XAML の概要](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
-* [第 2 部です。 重要な XAML 構文](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
-* [第 3 部です。 XAML マークアップ拡張機能](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
-* [パート 4 です。 データ バインディングの基礎](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)
-* [パート 5 です。 MVVM へのデータ バインディングから](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)
+* [第 1 部XAML の概要](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
+* [第 2 部基本的な XAML 構文](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
+* [第 3 部XAML マークアップ拡張](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
+* [第 4 部データ バインディングの基礎](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)
+* [第 5 部MVVM へのデータ バインディングから](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)
 
 書籍の章をダウンロードするだけでなく、次の XAML の基礎記事[を Xamarin.Forms での Mobile Apps の作成](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md):
 

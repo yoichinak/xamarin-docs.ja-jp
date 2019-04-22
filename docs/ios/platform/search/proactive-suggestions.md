@@ -8,10 +8,10 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
 ms.openlocfilehash: 2ab0147f918b36dc47ef6eed7d9bf1b6295d9733
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58870405"
 ---
 # <a name="introduction-to-proactive-suggestions-in-xamarinios"></a>Xamarin.iOS でプロアクティブな候補の概要
@@ -189,7 +189,7 @@ public override bool ContinueUserActivity (UIApplication application, NSUserActi
 
 最小限の上に示したコードでは、アプリでは 3 つの新しい iOS 10 の機能を活用するためにできるようになりました。
 
-- **ハンドオフ**
+- **Handoff**
 - **スポット ライト検索**
 - **コンテキストの Siri アラーム**
 
@@ -503,7 +503,7 @@ Schema.org 背景:
 - アプリは、アプリでプロアクティブな候補を取得できます。
 - アプリは、強化されたオート コレクトを利用できます。
 
-新しい`TextContentType`iOS 10 でテキストのフィールド コントロールのプロパティにより、開発者は、ユーザーは、特定のフィールドに入力しようとします。 値のセマンティックな目的を定義します。 例:
+新しい`TextContentType`iOS 10 でテキストのフィールド コントロールのプロパティにより、開発者は、ユーザーは、特定のフィールドに入力しようとします。 値のセマンティックな目的を定義します。 例えば:
 
 ```csharp
 var textField = new UITextField();

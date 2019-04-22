@@ -7,10 +7,10 @@ author: asb3993
 ms.author: amburns
 ms.date: 11/22/2016
 ms.openlocfilehash: 74a9fc59b395d68db9b116106cc9fa63d3969c3b
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58855238"
 ---
 # <a name="introduction-to-the-mobile-software-development-lifecycle"></a>モバイル ソフトウェア開発ライフサイクルの概要
@@ -72,7 +72,7 @@ IDE を起動して何かをまとめてスローし、ちょっとしたテス�
 
 通常 UX は、多くの[デザイン ツールキット](https://docs.microsoft.com/windows/uwp/design/downloads/)のいずれかを使用したワイヤフレームまたはモックアップで行います。 UX モックアップを使用すると、実際の UI デザインを心配することなく UX をデザインできます。
 
- [![](introduction-to-mobile-sdlc-images/balsamiq.png "通常 UX は、Balsamiq などのツールを使用したワイヤフレームまたはモックアップで行う")](introduction-to-mobile-sdlc-images/balsamiq.png#lightbox)
+ [![](introduction-to-mobile-sdlc-images/balsamiq.png "通常 UX は、Balsamiq などのツールを使用したワイヤフレームまたはモックアップで行います")](introduction-to-mobile-sdlc-images/balsamiq.png#lightbox)
 
 UX モックアップを作成するときは、アプリが対象とする多様なプラットフォームのインターフェイス ガイドラインを考慮することが重要です。 各プラットフォームで "使い慣れた感覚" のアプリになるようにします。 各プラットフォームの公式デザイン ガイドラインは次のとおりです。
 
@@ -88,7 +88,7 @@ UX モックアップを作成するときは、アプリが対象とする多�
 
 さらに、フォーム ファクターも UX の決定に影響があります。 タブレットにははるかに広いスペースがあるため、より多くの情報を表示できます。 多くの場合、スマートフォンで複数の画面が必要な機能は、タブレットでは 1 つの画面に収まります。
 
- [![](introduction-to-mobile-sdlc-images/iphone-vs-ipad.png "多くの場合、スマートフォンで複数の画面が必要な機能は、タブレットでは 1 つの画面に収まる")](introduction-to-mobile-sdlc-images/iphone-vs-ipad.png#lightbox)
+ [![](introduction-to-mobile-sdlc-images/iphone-vs-ipad.png "多くの場合、スマートフォンで複数の画面が必要な機能は、タブレットでは 1 つの画面に収まります")](introduction-to-mobile-sdlc-images/iphone-vs-ipad.png#lightbox)
 
 また、さまざまなフォーム ファクターがあるため、多くの場合、中サイズのフォーム ファクター (スマートフォンとタブレットの間くらい) を対象とすることがあります。
 
@@ -98,7 +98,7 @@ UX が決まったら、次の手順は UI デザインの作成です。 通常
 
 UX の場合と同様に、各プラットフォームには独自のデザイン言語があることを理解することが重要です。また、適切なデザインのアプリケーションの外観は、プラットフォームによって異なる可能性があります。
 
- [![](introduction-to-mobile-sdlc-images/multiplatform-1.png "適切なデザインのアプリケーションの外観は、プラットフォームによって異なる可能性がある")](introduction-to-mobile-sdlc-images/multiplatform-1.png#lightbox)
+ [![](introduction-to-mobile-sdlc-images/multiplatform-1.png "適切なデザインのアプリケーションの外観は、プラットフォームによって異なる可能性があります")](introduction-to-mobile-sdlc-images/multiplatform-1.png#lightbox)
 
 ### <a name="development"></a>開発
 

@@ -1,5 +1,5 @@
 ---
-title: IOS 10 の概要
+title: iOS 10 の概要
 description: この記事では、Xamarin.iOS の開発者向けのすべての新規および変更した Api と iOS 10 で使用できる機能を紹介します。
 ms.prod: xamarin
 ms.assetid: FB91DFFE-CF5E-4253-92CB-78A6371259D9
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/29/2017
 ms.openlocfilehash: b018fe343a7d46f1323119b03a22cc3831a02d9f
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58870249"
 ---
-# <a name="introduction-to-ios-10"></a>IOS 10 の概要
+# <a name="introduction-to-ios-10"></a>iOS 10 の概要
 
 _この記事では、Xamarin.iOS の開発者向けのすべての新規および変更した Api と iOS 10 で使用できる機能を紹介します。_
 
@@ -49,7 +49,7 @@ Apple は iOS 10 で新しいアプリ拡張機能ポイントをいくつか用
 
 - ディレクトリを呼び出す
 - Intents および Intents UI
-- [メッセージ]
+- メッセージ
 - 通知の内容
 - Notification Services
 - ステッカー パック
@@ -61,7 +61,7 @@ Apple は iOS 10 で新しいアプリ拡張機能ポイントをいくつか用
 
 詳細についてを参照してください、[拡張機能の概要](~/ios/platform/extensions.md)、[メッセージ アプリ統合](~/ios/platform/message-app-integration/index.md)、[プロアクティブな候補の概要](~/ios/platform/search/proactive-suggestions.md)、 [SiriKit の概要](~/ios/platform/sirikit/index.md)、[ユーザー通知の概要](~/ios/platform/user-notifications/index.md)と Apple の[アプリ拡張機能のプログラミング ガイド](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214)します。
 
-## <a name="app-search-enhancements"></a>アプリの検索の機能強化
+## <a name="app-search-enhancements"></a>アプリ検索の機能強化
 
 IOS 10 でコア スポット ライトは、次のアプリを検索するいくつかの機能強化を提供します。
 
@@ -139,7 +139,7 @@ iOS 10 では、事前に提示する役に立つ情報に自動的にユーザ�
 
 詳細については、次を参照してください、[プロアクティブな候補の概要](~/ios/platform/search/proactive-suggestions.md)ガイド。
 
-## <a name="request-app-review"></a>アプリ レビューを要求します。
+## <a name="request-app-review"></a>アプリ レビューの要求
 
 Ios 10.3、新しい、`RequestReview()`メソッド iOS アプリに許可することを確認したり評価ユーザーに確認します。 このメソッドは、ユーザー エクスペリエンスの理にかなって任意の時点で呼び出すことが、中にレビュー プロセスの管理し、アプリ ストアのポリシーによって処理されます。 結果として、このメソッド可能性がありますまたはアラートが表示されない場合があり、ボタンをタップするなどのユーザー アクションへの応答では呼び出さないでいます。
 
@@ -194,7 +194,7 @@ iOS 10 には、アプリを継続的な音声認識をサポートし、議事�
 
 新しい ios 10 の場合、ビデオ サブスクライバー アカウント フレームワークにより、アプリその認証のストリーミング サポートまたはビデオ オンデマンドで、ケーブル会社または衛星テレビ放送、エンドユーザーは、単一のサインイン エクスペリエンスを使用して認証します。
 
-## <a name="wide-color"></a>色
+## <a name="wide-color"></a>広色域
 
 iOS 10 では、拡張範囲のピクセル形式とコア グラフィックス、Core のイメージ、金属製および AVFoundation などのフレームワークを含めて、システム全体で全体の色域スペースのサポートを拡張します。 ワイド カラー ディスプレイを使用したデバイスのサポートはさらに、全体のグラフィックス スタック全体でこの動作を提供することで緩和されました。
 

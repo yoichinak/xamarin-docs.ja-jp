@@ -7,17 +7,17 @@ author: lobrien
 ms.author: laobri
 ms.date: 04/02/2019
 ms.openlocfilehash: b962390d5a5a365ada93d1778e3efb65839f41c5
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58854952"
 ---
 # <a name="remoted-ios-simulator-for-windows"></a>Remoted iOS Simulator for Windows
 
 リモートの iOS シミュレーターの Windows では、Visual Studio 2019 と Visual Studio 2017 と共に Windows に表示される iOS シミュレーターでアプリをテストできます。
 
-[![iWindows で実行されている OS シミュレーター](images/hero-sml.png "Windows で実行されている iOS シミュレーター")](images/hero.png#lightbox)
+[![Windows で実行されている iOS シミュレーター](images/hero-sml.png "Windows で実行されている iOS シミュレーター")](images/hero.png#lightbox)
 
 ## <a name="getting-started"></a>作業の開始
 
@@ -38,13 +38,13 @@ Windows のリモートの iOS シミュレーターは、Visual Studio 2019 と
 - [**設定**](#settings) – キーボード、場所、およびその他の設定が表示されます。
 - [**その他のオプション**](#other-options) – 回転、シェイク ジェスチャ、タッチ ID などのさまざまなシミュレーター オプションが表示されます
 
-    [![iOS のシミュレーターでは、例をマップ](images/maps-app-sml.png "iOS シミュレーターの使用例をマップします。")](images/maps-app.png#lightbox)
+    [![iOS シミュレーターの使用例をマップする](images/maps-app-sml.png "iOS シミュレーターの使用例をマップします。")](images/maps-app.png#lightbox)
 
 ## <a name="settings"></a>設定
 
 ツールバーの歯車アイコンをクリックすると、**設定**ウィンドウ。
 
-[![iOS シミュレーターの設定](images/settings-sml.png "iOS シミュレーターの設定")](images/settings.png#lightbox)
+[![iOS シミュレーター設定](images/settings-sml.png "iOS シミュレーターの設定")](images/settings.png#lightbox)
 
 これらの設定では、デバイスが場所を選択する、ハードウェア キーボードを有効にすることができるレポート (静的および移動の場所の両方がサポート)、Touch ID を有効にして、コンテンツとシミュレーターの設定をリセットします。
 
@@ -52,7 +52,7 @@ Windows のリモートの iOS シミュレーターは、Visual Studio 2019 と
 
 ツールバーの省略記号ボタンには、回転、シェイク ジェスチャ、および再起動などの他のオプションが表示されます。 シミュレーターのウィンドウで任意の場所を右クリックして、これらと同じオプションをリストとして表示できます。
 
-[![iOS のシミュレーターの追加の設定](images/more-sml.png "iOS シミュレーターの追加の設定")](images/more.png#lightbox)
+[![iOS シミュレーターの追加設定](images/more-sml.png "iOS シミュレーターの追加の設定")](images/more.png#lightbox)
 
 ## <a name="touchscreen-support"></a>タッチ スクリーン サポート
 
@@ -64,6 +64,6 @@ Windows のリモートの iOS シミュレーターは、Visual Studio 2019 と
 
 リモートの iOS シミュレーターの Windows を無効にするに移動します。**ツール > オプション > Xamarin > iOS 設定**をオフにし**リモート Windows Simulator**します。
 
-[![cシミュレーターを使用する heckbox](images/options-sml.png "シミュレーターを使用する チェック ボックス")](images/options.png#lightbox)
+[![シミュレーターを使用する チェック ボックス](images/options-sml.png "シミュレーターを使用する チェック ボックス")](images/options.png#lightbox)
 
 このオプションを無効にすると、デバッグが開きますは、接続されている Mac 上の iOS シミュレーターは、ホストを構築します。

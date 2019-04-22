@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
 ms.openlocfilehash: 974ef2a141ec7175c2306d4af63f534a5c77ecb2
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58870119"
 ---
 # <a name="summary-of-chapter-15-the-interactive-interface"></a>第 15 章の概要です。 対話型インターフェイス
 
-[![Download サンプル](~/media/shared/download.png) サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15)
 
 この章では、8 について説明します`View`ユーザーとの対話を許可する派生クラス。
 
@@ -245,7 +245,7 @@ Xamarin.Forms では、ユーザーを入力し、テキストを編集できる
 
 - [第 15 章「フル テキスト (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch15-Apr2016.pdf)
 - [第 15 章のサンプル](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15)
-- [スライダー](~/xamarin-forms/user-interface/slider.md)
-- [入力](~/xamarin-forms/user-interface/text/entry.md)
-- [エディター](~/xamarin-forms/user-interface/text/editor.md)
+- [Slider](~/xamarin-forms/user-interface/slider.md)
+- [エントリ](~/xamarin-forms/user-interface/text/entry.md)
+- [[エディター]](~/xamarin-forms/user-interface/text/editor.md)
 - [DatePicker](~/xamarin-forms/user-interface/datepicker.md)

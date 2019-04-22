@@ -8,10 +8,10 @@ author: lobrien
 ms.author: laobri
 ms.date: 04/09/2018
 ms.openlocfilehash: b79d3683c8e4979cbbd13550f3df86c39622ad2b
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58870182"
 ---
 # <a name="limitations-of-xamarinios"></a>Xamarin.iOS の制限事項
@@ -96,7 +96,7 @@ System.ExecutionEngineException: Attempting to JIT compile method '(wrapper mana
 
 ### <a name="reverse-callbacks"></a>逆方向のコールバック
 
-標準の Mono でを C# のデリゲートのインスタンスを代わりに関数ポインターをアンマネージ コードに渡すことができます。 ランタイムでは、マネージ コードにコールバックするアンマネージ コードを許可する小さなサンクにこれらの関数ポインターを変換は通常します。
+標準の Mono でを c# のデリゲートのインスタンスを代わりに関数ポインターをアンマネージ コードに渡すことができます。 ランタイムでは、マネージ コードにコールバックするアンマネージ コードを許可する小さなサンクにこれらの関数ポインターを変換は通常します。
 
 ジャストイン タイムで Mono でこれらのブリッジが実装されているコンパイラ。 ときに、時間の先行コンパイラを使用して必要な iPhone でこの時点では 2 つの重要な制限があります。
 

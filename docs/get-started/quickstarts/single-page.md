@@ -10,15 +10,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 04/01/2019
 ms.openlocfilehash: 7b13ab5a4cc0d8e66e260329b5a53397778cb179
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58855121"
 ---
 # <a name="create-a-single-page-xamarinforms-application"></a>ページの 1 つの Xamarin.Forms アプリケーションを作成します。
 
-[![Download サンプル](~/media/shared/download.png) サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/SinglePage/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/SinglePage/)
 
 このクイック スタートでは、学習する方法。
 
@@ -160,7 +160,7 @@ ms.locfileid: "58855121"
 
     ![](single-page-images/vs/android-start.png "Visual Studio Android ツール バー")
 
-    [![](single-page-images/vs/notes-android.png "Android Emulator の Notes")](single-page-images/vs/notes-android-large.png#lightbox "Notes in the Android Simulator")
+    [![](single-page-images/vs/notes-android.png "Android エミュレーターでのノート")](single-page-images/vs/notes-android-large.png#lightbox "Notes in the Android Simulator")
 
     メモを入力して **[保存]** ボタンを押します。
 
@@ -310,7 +310,7 @@ ms.locfileid: "58855121"
 
     ![](single-page-images/vs/android-start.png "Visual Studio Android ツール バー")
 
-    [![](single-page-images/vs/notes-android.png "Android Emulator の Notes")](single-page-images/vs/notes-android-large.png#lightbox "Notes in the Android Simulator")
+    [![](single-page-images/vs/notes-android.png "Android エミュレーターでのノート")](single-page-images/vs/notes-android-large.png#lightbox "Notes in the Android Simulator")
 
     メモを入力して **[保存]** ボタンを押します。
 
@@ -480,7 +480,7 @@ ms.locfileid: "58855121"
 
 5. Visual Studio for Mac ツール バーで、**[開始]** ボタン ([再生] ボタンのような三角形のボタン) を押し、選択した Android エミュレーター内でアプリケーションを起動します。
 
-      [![](single-page-images/vsmac/notes-android.png "Android Emulator の Notes")](single-page-images/vsmac/notes-android-large.png#lightbox "Notes in the Android Simulator")
+      [![](single-page-images/vsmac/notes-android.png "Android エミュレーターでのノート")](single-page-images/vsmac/notes-android-large.png#lightbox "Notes in the Android Simulator")
 
     メモを入力して **[保存]** ボタンを押します。
 
@@ -503,5 +503,5 @@ ms.locfileid: "58855121"
 
 ## <a name="related-links"></a>関連リンク
 
-- [メモ (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/SinglePage/)
+- [Notes (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/SinglePage/)
 - [Xamarin.Forms のクイック スタートの詳細情報](deepdive.md)

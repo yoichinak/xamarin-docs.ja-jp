@@ -7,10 +7,10 @@ author: asb3993
 ms.author: amburns
 ms.date: 05/06/2018
 ms.openlocfilehash: 8617d6e0c0930f581c45dbb461dfcb5d85a2becc
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58855056"
 ---
 # <a name="apple-account-management"></a>Apple のアカウント管理
@@ -44,7 +44,7 @@ Apple アカウントの管理は、Visual Studio for Mac、Visual Studio 2019�
 
 ## <a name="adding-an-apple-developer-account"></a>Apple 開発者アカウントを追加します。
 
-# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 移動するアカウント管理ダイアログ ボックスを開くには**Visual Studio > 設定 > Apple 開発者アカウント**:
 
@@ -68,7 +68,7 @@ Apple アカウントの管理は、Visual Studio for Mac、Visual Studio 2019�
 
     ![署名 id とプロビジョニング プロファイルがコンピューターにビューの詳細画面が表示されました。](apple-account-management-images/image6.png)
 
-# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. Visual Studio 2019 への Apple ID の追加を開始する前に、開発環境が確認[Mac ビルド ホストにペアリング](~/ios/get-started/installation/windows/connecting-to-mac/index.md)します。
 
@@ -109,11 +109,11 @@ Apple アカウントの管理は、Visual Studio for Mac、Visual Studio 2019�
 
 ドロップダウン リストのオプションがグレーで表示、選択解除されている場合は、この種類の証明書を作成する適切なチームのアクセス許可がないことを意味します。
 
-# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 ![証明書オプションを作成します。](apple-account-management-images/image8.png)
 
-# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ![証明書オプションを作成します。](apple-account-management-images/prov3.png)
 
@@ -123,11 +123,11 @@ Apple アカウントの管理は、Visual Studio for Mac、Visual Studio 2019�
 
 チームの詳細 ダイアログには、開発者アカウントに接続されているすべてのプロビジョニング プロファイルの一覧も表示されます。 すべてのプロビジョニング プロファイルをローカル コンピューターにダウンロードするにはキーを押して、**すべてのプロファイルをダウンロード**ボタン
 
-# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 ![プロビジョニング プロファイル セクションをダウンロードします。](apple-account-management-images/image9.png)
 
-# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ![プロビジョニング プロファイル セクションをダウンロードします。](apple-account-management-images/prov4.png)
 

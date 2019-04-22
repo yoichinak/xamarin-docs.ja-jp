@@ -8,17 +8,17 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 03/28/2019
 ms.openlocfilehash: 7106c0aed03800d3479471caab0974be3c09c1f8
-ms.sourcegitcommit: cc750b0d8086ed14f84cd8eb9a06f45c719b3cf4
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59239915"
 ---
 # <a name="consume-a-windows-communication-foundation-wcf-web-service"></a>Windows Communication Foundation (WCF) Web サービスを使用します。
 
-[![Download サンプル](~/media/shared/download.png) サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoWCF/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoWCF/)
 
-_WCF は、サービス指向アプリケーションを構築するための Microsoft の統一されたフレームワークです。 セキュリティで保護された、信頼性が高く、トランザクション、および相互運用可能な分散アプリケーションを構築できます。 この記事では、Xamarin.Forms アプリケーションから WCF 簡易オブジェクト アクセス プロトコル (SOAP) サービスを使用する方法を示します。_
+_WCF は、サービス指向アプリケーションを構築するための Microsoft の統一されたフレームワークです。セキュリティで保護された、信頼性が高く、トランザクション、および相互運用可能な分散アプリケーションを構築できます。この記事では、Xamarin.Forms アプリケーションから WCF 簡易オブジェクト アクセス プロトコル (SOAP) サービスを使用する方法を示します。_
 
 WCF では、異なるコントラクトを含むのさまざまなサービスについて説明します。
 

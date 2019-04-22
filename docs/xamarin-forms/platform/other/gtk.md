@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 04/10/2018
 ms.openlocfilehash: 7e9bfa841db9f0a76f762bab22050377830d85de
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58854874"
 ---
 # <a name="gtk-platform-setup"></a>GTK # プラットフォームのセットアップ
@@ -29,13 +29,13 @@ Xamarin.Forms では、GTK # アプリのプレビューをサポートできる
 
 GTK # の macOS および Linux がの一部としてインストールされている[Mono](https://www.mono-project.com/download/stable/)します。 GTK # for .NET をインストールできるで Windows、 [GTK # インストーラー](https://www.mono-project.com/download/stable/#download-win)します。
 
-# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Windows デスクトップで実行される GTK # アプリを追加するこれらの手順に従います。
 
 1. Visual Studio 2019 でソリューション名を右クリックして**ソリューション エクスプ ローラー**選択**追加 > 新しいプロジェクト.**.
 
-2. **新しいプロジェクト**ウィンドウで、左側の選択で**Visual C#** と**Windows クラシック デスクトップ**します。 プロジェクトの種類の一覧で選択**クラス ライブラリ (.NET Framework)**、いることを確認し、 **Framework**ドロップダウンは、.NET Framework 4.7 の最小値に設定されます。
+2. **新しいプロジェクト**ウィンドウで、左側の選択で**Visual c#** と**Windows クラシック デスクトップ**します。 プロジェクトの種類の一覧で選択**クラス ライブラリ (.NET Framework)**、いることを確認し、 **Framework**ドロップダウンは、.NET Framework 4.7 の最小値に設定されます。
 
 3. 使用してプロジェクトの名前を入力、 **GTK**拡張機能の例では、 **GameOfLife.GTK**します。 をクリックして、**参照**ボタン、その他のプラットフォームを含むフォルダーを選択してプロジェクト、およびキーを押して**フォルダーの選択**。 GTK プロジェクトをソリューション内の他のプロジェクトと同じディレクトリに、これには。
 
@@ -110,7 +110,7 @@ Windows デスクトップで実行される GTK # アプリを追加するこ�
 
     ![GTK # の耐用年数のゲーム](gtk-images/win/gtk-gameoflife.png "GTK # の耐用年数のゲーム")
 
-# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 Mac のデスクトップで実行される GTK # アプリを追加するこれらの手順に従います。
 
@@ -218,8 +218,8 @@ var settingsView = new SettingsView().CreateContainer();
 vbox.PackEnd(settingsView, true, true, 0);
 ```
 
-ネイティブ数字形式の詳細については、[ネイティブ フォーム](~/xamarin-forms/platform/native-forms.md)を参照してください。
+ネイティブ数字形式の詳細については、次を参照してください。[ネイティブ フォーム](~/xamarin-forms/platform/native-forms.md)します。
 
 ## <a name="issues"></a>懸案事項
 
-これは、その運用環境の準備がすべてではないことを想定する必要がありますのプレビューです。 現在の実装の状態を参照してください。[状態](https://github.com/jsuarezruiz/forms-gtk-progress/blob/master/Status.md)、および現在の既知の問題では、[保留中と既知の問題](https://github.com/jsuarezruiz/forms-gtk-progress/blob/master/Issues-Pending.md)を参照してください。
+これは、その運用環境の準備がすべてではないことを想定する必要がありますのプレビューです。 現在の実装の状態を参照してください。[状態](https://github.com/jsuarezruiz/forms-gtk-progress/blob/master/Status.md)、および現在の既知の問題では、次を参照してください。[保留中と既知の問題](https://github.com/jsuarezruiz/forms-gtk-progress/blob/master/Issues-Pending.md)します。

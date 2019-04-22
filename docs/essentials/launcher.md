@@ -6,10 +6,10 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
 ms.openlocfilehash: 26ab3687e9bcfecbd003ddd0a97f3e46a0cd92b2
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58870054"
 ---
 # <a name="xamarinessentials-launcher"></a>Xamarin.Essentials:ランチャー
@@ -44,11 +44,11 @@ public class LauncherTest
 
 ## <a name="platform-differences"></a>プラットフォームによる違い
 
-# [<a name="android"></a>Android](#tab/android)
+# <a name="androidtabandroid"></a>[Android](#tab/android)
 
 `CanOpenAsync` から返されたタスクはすぐに完了します。
 
-# [<a name="ios"></a>iOS](#tab/ios)
+# <a name="iostabios"></a>[iOS](#tab/ios)
 
 自分のアプリケーションから `OpenAsync` でこのデバイス上の目的のアプリケーションを開いたことがない場合、iOS によって、ユーザーは一度、自分のアプリがそれを開くことを許可するよう求められます。
 
@@ -56,7 +56,7 @@ public class LauncherTest
 
 iOS の実装について詳しくは、[こちら](xref:UIKit.UIApplication.CanOpenUrl*)をご覧ください。
 
-# [<a name="uwp"></a>UWP](#tab/uwp)
+# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
 プラットフォームによる違いはありません。
 
@@ -65,4 +65,4 @@ iOS の実装について詳しくは、[こちら](xref:UIKit.UIApplication.Can
 ## <a name="api"></a>API
 
 - [Launcher のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Launcher)
-- [Launcher API のドキュメント](xref:Xamarin.Essentials.Launcher)
+- [Launcher API ドキュメント](xref:Xamarin.Essentials.Launcher)

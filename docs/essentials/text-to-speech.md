@@ -6,10 +6,10 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
 ms.openlocfilehash: 35ef922553cb91aa915c08df03414d1e5f3034cb
-ms.sourcegitcommit: cc750b0d8086ed14f84cd8eb9a06f45c719b3cf4
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59239928"
 ---
 # <a name="xamarinessentials-text-to-speech"></a>Xamarin.Essentials:音声合成
@@ -148,4 +148,4 @@ public async Task SpeakNow()
 ## <a name="api"></a>API
 
 - [TextToSpeech のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/TextToSpeech)
-- [TextToSpeech API のドキュメント](xref:Xamarin.Essentials.TextToSpeech)
+- [TextToSpeech API ドキュメント](xref:Xamarin.Essentials.TextToSpeech)

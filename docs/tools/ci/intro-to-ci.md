@@ -7,15 +7,15 @@ author: lobrien
 ms.author: laobri
 ms.date: 07/19/2017
 ms.openlocfilehash: 44e45d38ecd98be6f75c619125f9c14ce707b251
-ms.sourcegitcommit: 9e9340999d569a3db01b4b59a0fcf24b8caa869c
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59509889"
 ---
 # <a name="introduction-to-continuous-integration-with-xamarin"></a>Xamarin を使用した継続的インテグレーションの概要
 
-_継続的インテグレーションは、ソフトウェア エンジニア リングのプラクティスを自動化されたビルドがコンパイルし、必要に応じてコードを追加または開発者がプロジェクトのバージョン管理リポジトリに変更されたときにアプリをテストします。 この記事では、継続的インテグレーションの一般的な概念と、使用できるオプションの継続的インテグレーションの Xamarin プロジェクトでいくつかについて説明します。_
+_継続的インテグレーションは、プロジェクトのバージョン管理リポジトリで開発者によってコードに変更や追加が加えられた場合に、自動化されたビルドがアプリをコンパイルし必要に応じてテストするというソフトウェア工学の実践です。この記事は、継続的インテグレーションの一般的な概念と、Xamarin プロジェクトの継続的インテグレーションに利用できるいくつかの選択を説明します。_
 
 ソフトウェア プロジェクトでは開発者が並行して作業することが一般的です。 ある時点で、最終的な製品を構成する1つのコードベースに、これらの並行する作業の流れのすべてを統合する必要があります。 ソフトウェア開発の初期の頃は、この統合は、プロジェクトの最後に実行されていましたが、それは難しく危険な処理でした。
 
@@ -32,13 +32,13 @@ _継続的インテグレーションは、ソフトウェア エンジニア �
 
 以下のダイアグラム図は、上記のプロセスを示します。
 
-[![](intro-to-ci-images/intro01-small.png "この図では、このプロセスを示しています。")](intro-to-ci-images/intro01.png#lightbox)
+[![](intro-to-ci-images/intro01-small.png "このダイアグラム図では、上記のプロセスを示しています。")](intro-to-ci-images/intro01.png#lightbox)
 
 モバイルアプリでは、継続的インテグレーションに特有の課題を導入します。 アプリには、物理デバイスでのみ使用できる、GPS やカメラなどのセンサーが要求されることがあります。 さらに、シミュレーターやエミュレーターは、ハードウェアの近似にすぎず、問題が隠れたり分かりにくくなったりします。 結局は、実機上のモバイルアプリをテストして、確実に顧客への準備ができていることを保証する必要があります。
 
 [App Center Test](https://docs.microsoft.com/appcenter/test-cloud)は、数百台の物理デバイス上でアプリを直接テストすることで、この特有の問題に対処します。 開発者は、自動受諾テストを記述し、強力な UI テストを可能にします。 これらのテストが App Center にアップロードされると、CI サーバーは、次のダイアグラム図に示すように CI プロセスの一部として自動的にそれらを実行することができます。
 
-[![](intro-to-ci-images/intro02-small.png "これらのテストは、App Center にアップロード、CI サーバーに自動的に実行できます CI プロセスの一部としてこの図に示すように")](intro-to-ci-images/intro02.png#lightbox)
+[![](intro-to-ci-images/intro02-small.png "これらのテストが App Center にアップロードされると、CI サーバーは、この図が示すように CI のプロセスの一部として自動的にそれらを実行できます. ")](intro-to-ci-images/intro02.png#lightbox)
 
 ## <a name="components-of-continuous-integration"></a>継続的インテグレーションの構成要素
 
@@ -105,13 +105,13 @@ Team Foundation Server では、特定のターゲット プラットフォー�
 
 Jenkins を使用して、アプリをビルドする場合は、Visual Studio Team Services または Team Foundation Server にコードを保存し、CI ビルドとして Jenkins を使い続けることができます。 チーム プロジェクトの Git リポジトリにプッシュしたとき、または TFVC にコードをチェックインしたときに、Jenkins ビルドをトリガーできます。 詳細については、次を参照してください。 [Azure DevOps での Jenkins](https://docs.microsoft.com/azure/devops/service-hooks/services/jenkins)します。
 
-[![](intro-to-ci-images/intro04-small.png "Jenkins を使用して、アプリを構築する場合は、コード Visual Studio Team Services または Team Foundation Server に格納して引き続き CI ビルドに Jenkins を使用するには")](intro-to-ci-images/intro04.png#lightbox)
+[![](intro-to-ci-images/intro04-small.png "Jenkins を使用して、アプリをビルドする場合は、Visual Studio Team Services または Team Foundation Server にコードを保存し、CI ビルドとして Jenkins を使い続けることができます. ")](intro-to-ci-images/intro04.png#lightbox)
 
 #### <a name="git-and-jenkins"></a>Git と Jenkins
 
 もう一つの一般的な CI 環境では、完全に OS X をベースにすることができます。 このシナリオは、ソースコート管理に Gitを、ビルドサーバーに Jenkins を使用します。 これらのどちらも Visual Studio for Mac がインストールされた単一の Mac OS X コンピュータで実行します。 これは、前のセクションで説明した Visual Studio Team Services + Jenkins の環境によく似ています。
 
-[![](intro-to-ci-images/intro05-small.png "これは、Visual Studio Team Services と、前のセクションで説明する Jenkins 環境を非常に似ています")](intro-to-ci-images/intro05.png#lightbox)
+[![](intro-to-ci-images/intro05-small.png "これは、前のセクションで説明した Visual Studio Team Services + Jenkins の環境によく似ています. ")](intro-to-ci-images/intro05.png#lightbox)
 
 > [!IMPORTANT]
 > **Jenkins は[Microsoft でサポートされていない](~/cross-platform/troubleshooting/questions/xamarin-jenkins.md)します。**

@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
 ms.openlocfilehash: 0abd7e6cb5b8b9650a3dc324338587ff59a80a19
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58870418"
 ---
 # <a name="summary-of-chapter-28-location-and-maps"></a>第 28 章の概要です。 場所とマップ
 
-[![Download サンプル](~/media/shared/download.png) サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter28)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter28)
 
 > [!NOTE]
 > このページに関する注意事項は、この本で説明されている内容が Xamarin.Forms が異なっている領域を示しています。
@@ -146,7 +146,7 @@ Ios の場合、 **info.plist**ファイルは、そのユーザーの場所の�
 
 `VisibleRegion` 種類は[ `MapSpan` ](xref:Xamarin.Forms.Maps.MapSpan)、4 つの読み取り専用プロパティを持つクラス。
 
-- [`Position`](xref:Xamarin.Forms.Maps.Position) 型の [`Center`](xref:Xamarin.Forms.Maps.MapSpan.Center)
+- [`Center`](xref:Xamarin.Forms.Maps.MapSpan.Center) 型の [`Position`](xref:Xamarin.Forms.Maps.Position)
 - [`LatitudeDegrees`](xref:Xamarin.Forms.Maps.MapSpan.LatitudeDegrees) 型の`double`マップの表示領域の高さを示す
 - [`LongitudeDegrees`](xref:Xamarin.Forms.Maps.MapSpan.LongitudeDegrees) 型の`double`マップの表示領域の幅を示す
 - [`Radius`](xref:Xamarin.Forms.Maps.MapSpan.Radius) 型の[ `Distance`](xref:Xamarin.Forms.Maps.Distance)マップに表示される円形領域の最大のサイズを示す

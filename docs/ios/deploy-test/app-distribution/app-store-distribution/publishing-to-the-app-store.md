@@ -8,10 +8,10 @@ author: lobrien
 ms.author: laobri
 ms.date: 06/25/2018
 ms.openlocfilehash: a00b157940cfde8021b92004fe27a4d52bac5e0c
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58855160"
 ---
 # <a name="publishing-xamarinios-apps-to-the-app-store"></a>App Store への Xamarin.iOS アプリの公開
@@ -90,7 +90,7 @@ App Store プロビジョニング プロファイルを作成してインスト
 
 新しい Xamarin.iOS プロジェクトでは、**デバッグ**および**リリース** _ビルド構成_が自動的に設定されます。 **リリース** ビルドを正しく構成するには、次の手順に従います。
 
-# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. **Solution Pad** から、**Info.plist** を開きます。 **[手動プロビジョニング]** を選択します。 ファイルを保存して閉じます。
 2. **Solution Pad** で **[プロジェクト名]** を右クリックし、**[オプション]** を選択して **[iOS ビルド]** タブに移動します。
@@ -120,7 +120,7 @@ App Store プロビジョニング プロファイルを作成してインスト
 
 15. **[OK]** をクリックして、プロジェクト プロパティへの変更を保存します。
 
-# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. Visual Studio 2019 または Visual Studio 2017 が [Mac ビルド ホストとペアリング](~/ios/get-started/installation/windows/connecting-to-mac/index.md)されていることを確認します。
 2. **ソリューション エクスプローラー**で **[プロジェクト名]** を右クリックし、**[プロパティ]** を選択します。
@@ -172,7 +172,7 @@ App Store プロビジョニング プロファイルを作成してインスト
 
 ビルド設定が正しく構成され、iTunes Connect が提出待ちの状態になったら、アプリをビルドして Apple に提出することができます。
 
-# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. Visual Studio for Mac で、**[リリース]** ビルド構成とビルド対象のデバイス (シミュレーターではない) を選択します。
 
@@ -231,7 +231,7 @@ App Store プロビジョニング プロファイルを作成してインスト
     >
     > このエラーの回避策については、[Xamarin フォーラムのこちらの投稿](https://forums.xamarin.com/discussion/40388/disallowed-paths-itunesmetadata-plist-found-at-when-submitting-to-app-store/p1)を参照してください。
 
-# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 > [!NOTE]
 > Visual Studio 2017 では、現在、Visual Studio for Mac で検出される**発行のためのアーカイブ** ワークフローはサポートされていません。

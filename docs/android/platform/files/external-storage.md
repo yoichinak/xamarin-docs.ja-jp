@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 07/23/2018
 ms.openlocfilehash: 78051fce44239eea86948988a4d19ac37c5ea0d5
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58854900"
 ---
 # <a name="external-storage"></a>外部ストレージ
@@ -54,14 +54,14 @@ SD カードなどのリムーバブル メディア上のディスク パーテ
 | `Android.OS.Environment` | ディレクトリ |
 |-|-|
 | DirectoryAlarms | **_PRIVATE\_EXTERNAL\_STORAGE_/Alarms** |
-| DirectoryDcim | **_PRIVATE\_EXTERNAL\_STORAGE_/DCIM** |
-| DirectoryDownloads | **_PRIVATE\_EXTERNAL\_STORAGE_/Download** |
-| DirectoryDocuments | **_PRIVATE\_EXTERNAL\_STORAGE_/Documents** |
-| DirectoryMovies | **_PRIVATE\_EXTERNAL\_STORAGE_/Movies** |
+| DirectoryDcim | **_プライベート\_外部\_ストレージ_/DCIM** |
+| DirectoryDownloads | **_プライベート\_外部\_ストレージ_  /ダウンロード** |
+| DirectoryDocuments | **_プライベート\_外部\_ストレージ_ドキュメント/** |
+| DirectoryMovies | **_プライベート\_外部\_ストレージ_/Movies** |
 | DirectoryMusic | **_PRIVATE\_EXTERNAL\_STORAGE_/Music** |
 | DirectoryNotifications | **_PRIVATE\_EXTERNAL\_STORAGE_/Notifications** |
 | DirectoryPodcasts | **_PRIVATE\_EXTERNAL\_STORAGE_/Podcasts** |
-| DirectoryRingtones | **_PRIVATE\_EXTERNAL\_STORAGE_/Ringtones** |
+| DirectoryRingtones | **_プライベート\_外部\_ストレージ_/Ringtones** |
 | DirectoryPictures | **_PRIVATE\_EXTERNAL\_STORAGE_/Pictures** |
 
 デバイスの外部記憶域の複数のパーティションがある場合、各パーティションは、プライベート ファイルが想定されているディレクトリがあります。 メソッド`Android.Content.Context.GetExternalFilesDirs(string type)`の配列を返す`Java.IO.Files`します。 各オブジェクトはプライベート アプリケーション固有のディレクトリを表す、所有するすべての共有/外部ストレージ デバイスをアプリケーションがファイルを配置できます。
@@ -140,17 +140,17 @@ Android を考慮する外部ストレージへのアクセス、_危険なア�
 > [!NOTE]
 > ユーザーによって付与される場合`WRITE_EXTERNAL_STORAGE`、し`READ_EXTERNAL_STORAGE`も暗黙的に与えられます。 両方のアクセス許可を要求する必要はありません**AndroidManifest.xml**します。
 
-# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 使用して、アクセス許可を追加することがありますも、 **Android マニフェスト**のタブ、**ソリューションのプロパティ**:
 
 ![ソリューション エクスプ ローラー - Visual Studio の必要なアクセス許可](./images/required-permissions.w157.png)
 
-# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 使用して、アクセス許可を追加することがありますも、 **Android マニフェスト**のタブ、**ソリューション プロパティ パッド**:
 
-[![Sソリューション パッド - Visual Studio for Mac の必要なアクセス許可](./images/required-permissions.m752-sml.png)](./images/required-permissions.m752.png#lightbox)
+[![Solution Pad - for Visual Studio for Mac の必要なアクセス許可](./images/required-permissions.m752-sml.png)](./images/required-permissions.m752.png#lightbox)
 
 -----
 

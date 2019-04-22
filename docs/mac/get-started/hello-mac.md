@@ -9,10 +9,10 @@ author: lobrien
 ms.author: laobri
 ms.date: 09/02/2018
 ms.openlocfilehash: 9175c60c436f2e808f3658bae717a747e0401c28
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58855316"
 ---
 # <a name="hello-mac-walkthrough"></a>Hello, Mac - チュートリアル
@@ -246,7 +246,7 @@ Xcode の一部として、Apple は Interface Builder というツールを作�
 
 作業を開始するには、**ソリューション エクスプローラー**で `Main.storyboard` ファイルをダブルクリックして、Xcode と Interface Builder での編集用に開きます。
 
-[![](hello-mac-images/xcode01.png "ソリューション エクスプローラーの Main.storyboard")](hello-mac-images/xcode01.png#lightbox)
+[![](hello-mac-images/xcode01.png "ソリューション エクスプローラーの Main.storyboard ファイル")](hello-mac-images/xcode01.png#lightbox)
 
 これで、次のスクリーンショットのように Xcode が起動します。
 

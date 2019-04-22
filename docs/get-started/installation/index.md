@@ -9,15 +9,15 @@ ms.author: crdun
 ms.custom: video
 ms.date: 04/02/2019
 ms.openlocfilehash: 642f66e068f021e76402c9dcc6f167bb74283aaa
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58854848"
 ---
 # <a name="installing-xamarin"></a>Xamarin のインストール
 
-_.NET を使用したモバイル アプリの構築を開始する Visual Studio と Xamarin を設定する方法。_
+_Visual Studio と Xamarin を設定して .NET でモバイル アプリを構築する方法_。
 
 ::: zone pivot="windows"
 

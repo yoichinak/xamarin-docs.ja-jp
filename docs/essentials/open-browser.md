@@ -7,10 +7,10 @@ ms.author: jamont
 ms.date: 04/02/2019
 ms.custom: video
 ms.openlocfilehash: 3f9e5a7a1e20b8e7d708ff80712e6262bae4baa7
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58869588"
 ---
 # <a name="xamarinessentials-browser"></a>Xamarin.Essentials:ブラウザー
@@ -64,7 +64,7 @@ await Browser.OpenAsync(uri, new BrowserLaunchOptions
 
 ## <a name="platform-implementation-specifics"></a>プラットフォームの実装の詳細
 
-# [<a name="android"></a>Android](#tab/android)
+# <a name="androidtabandroid"></a>[Android](#tab/android)
 
 起動モードによってブラウザーを起動する方法が決定されます。
 
@@ -76,7 +76,7 @@ await Browser.OpenAsync(uri, new BrowserLaunchOptions
 
 `Intent` を使用して、システムの通常のブラウザーで URI を開くよう要求します。
 
-# [<a name="ios"></a>iOS](#tab/ios)
+# <a name="iostabios"></a>[iOS](#tab/ios)
 
 ## <a name="system-preferred"></a>システム推奨
 
@@ -86,7 +86,7 @@ await Browser.OpenAsync(uri, new BrowserLaunchOptions
 
 メイン アプリケーションの標準の `OpenUrl` を使用して、アプリケーションの外部で既定のブラウザーを起動します。
 
-# [<a name="uwp"></a>UWP](#tab/uwp)
+# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
 `BrowserLaunchMode` に関係なく、常にユーザーの既定のブラウザーが起動します。
 
@@ -95,7 +95,7 @@ await Browser.OpenAsync(uri, new BrowserLaunchOptions
 ## <a name="api"></a>API
 
 - [Browser のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Browser)
-- [Browser API のドキュメント](xref:Xamarin.Essentials.Browser)
+- [Browser API ドキュメント](xref:Xamarin.Essentials.Browser)
 
 ## <a name="related-video"></a>関連ビデオ
 

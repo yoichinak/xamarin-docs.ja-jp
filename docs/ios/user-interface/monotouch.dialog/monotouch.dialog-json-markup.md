@@ -8,10 +8,10 @@ ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
 ms.openlocfilehash: 2bd45c5482a8f0367bffa21f301bb631c3429a21
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58870132"
 ---
 # <a name="monotouchdialog-json-markup"></a>MonoTouch.Dialog Json マークアップ
@@ -133,7 +133,7 @@ var theBoolean = jsonElement ["the-boolean"] as BooleanElement
  <a name="type" />
 
 
-### <a name="type"></a>型
+### <a name="type"></a>種類
 
 設定する必要があります`"root"`とき (これは入れ子にコント ローラーを使用) セクションに表示されます。
 
@@ -153,7 +153,7 @@ var theBoolean = jsonElement ["the-boolean"] as BooleanElement
 
 -  `header` (省略可能)
 -  `footer` (省略可能)
--  `elements` array
+-  `elements` 配列
 
 
  <a name="header" />
@@ -362,7 +362,7 @@ class Foo {
 
 ## <a name="boolean-elements"></a>ブール型要素
 
-ブール型要素に型を設定する必要があります`"bool"`、含めることができます、`"caption"`を表示して、 `"value"` true または false に設定されます。 場合、`"on"`と`"off"`プロパティを設定、イメージをしたと見なされます。 イメージは、アプリケーションでは、現在の作業ディレクトリを基準として解決されます。 バンドルの相対ファイルを参照する場合は、使用、`"~"`アプリケーション バンドル ディレクトリ表してへのショートカットとして。 たとえば`"~/favorite.png"`バンドル ファイルに含まれる favorite.png になります。 例:
+ブール型要素に型を設定する必要があります`"bool"`、含めることができます、`"caption"`を表示して、 `"value"` true または false に設定されます。 場合、`"on"`と`"off"`プロパティを設定、イメージをしたと見なされます。 イメージは、アプリケーションでは、現在の作業ディレクトリを基準として解決されます。 バンドルの相対ファイルを参照する場合は、使用、`"~"`アプリケーション バンドル ディレクトリ表してへのショートカットとして。 たとえば`"~/favorite.png"`バンドル ファイルに含まれる favorite.png になります。 例えば:
 
 ```csharp
 { 
@@ -383,7 +383,7 @@ class Foo {
  <a name="type" />
 
 
-### <a name="type"></a>型
+### <a name="type"></a>種類
 
 種類はいずれかに設定できます`"boolean"`または`"checkbox"`します。 かどうかはブール値に設定はまたはを使用して、UISlider イメージ (両方`"on"`と`"off"`設定されます)。 かどうかはチェック ボックスをオンに設定すると、それはチェック ボックスを使用します。 `"group"`プロパティは、特定のグループに属するものとしてブール型の要素のタグを使用できます。 コンテナーのルートもある場合に役立ちます。 これは、`"group"`ルートとしてのプロパティは、同じグループに属しているすべてのブール値 (またはチェック ボックス) の数は、結果を集計します。
 

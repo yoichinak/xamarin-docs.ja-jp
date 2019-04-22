@@ -8,10 +8,10 @@ author: lobrien
 ms.author: laobri
 ms.date: 06/07/2016
 ms.openlocfilehash: df50b4280335001f2d27ff23a91e4098eed3ba99
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58870210"
 ---
 # <a name="assemblies-supported-by-xamarin-for-tvos"></a>TvOS 用の Xamarin でのアセンブリのサポートされています。
@@ -26,7 +26,7 @@ Xamarin.tvOS アプリを Xamarin でサポートされるアセンブリの一�
 |Mono.Data.Sqlite.dll|1.2|SQLite の ADO.NET プロバイダー参照してください[制限](~/ios/data-cloud/system.data.md)します。|
 |Mono.Data.Tds.dll|1.2|TDS プロトコルのサポート。使用される[System.Data.SqlClient](xref:System.Data.SqlClient)内サポート[System.Data](~/ios/data-cloud/system.data.md)します。|
 |Mono.Security.dll|1|暗号化 Api です。|
-|monotouch.dll|1|このアセンブリに含まれる、 [C# CocoaTouch API へのバインド](https://docs.microsoft.com/dotnet/api/?view=xamarinios-10.8)します。|
+|monotouch.dll|1|このアセンブリに含まれる、 [c# CocoaTouch API へのバインド](https://docs.microsoft.com/dotnet/api/?view=xamarinios-10.8)します。|
 |mscorlib.dll|1|[Silverlight](https://msdn.microsoft.com/library/cc838194(VS.95).aspx)|
 |OpenTK.dll|1|OpenGL/OpenAL オブジェクト指向 Api、 [iPhone デバイス サポートを提供する拡張](xref:OpenGLES)します。|
 |System.dll|1|[Silverlight](https://msdn.microsoft.com/library/cc838194(VS.95).aspx)、さらに次の名前空間の型。 <ul><li>System.Collections.Specialized</li> <li>System.ComponentModel</li> <li>System.ComponentModel.Design</li> <li>System.Diagnostics</li> <li>System.IO.Compression</li> <li>System.Net</li> <li>System.Net.Cache</li> <li>System.Net.Mail</li> <li>System.Net.Mime</li> <li>System.Net.NetworkInformation</li> <li>System.Net.Security</li> <li>System.Net.Sockets</li> <li>System.Security.Authentication</li> <li>System.Security.Cryptography</li> <li>System.Timers</li></ul>|

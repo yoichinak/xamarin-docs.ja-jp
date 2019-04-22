@@ -7,10 +7,10 @@ author: lobrien
 ms.author: laobri
 ms.date: 08/08/2017
 ms.openlocfilehash: 89795e5df00b426c0f11c04a0844993071df1e25
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58855199"
 ---
 # <a name="xamarin-live-player-app"></a>Xamarin Live Player アプリ
@@ -38,7 +38,7 @@ ms.locfileid: "58855199"
 
 情報ボタンを押して **(i)** を表示するアプリの下部にある、**オプション**メニュー。
 
-[![S[オプション] メニューの creenshot](player-images/options-sml.png)](player-images/options.png#lightbox)
+[![[オプション] メニューのスクリーン ショット](player-images/options-sml.png)](player-images/options.png#lightbox)
 
 ### <a name="logs"></a>ログ
 
@@ -50,13 +50,13 @@ ms.locfileid: "58855199"
 - バージョン情報です。
 - フィードバックを送信します。
 
-[![S設定の creenshot](player-images/settings-sml.png)](player-images/settings.png#lightbox)
+[![設定のスクリーン ショット](player-images/settings-sml.png)](player-images/settings.png#lightbox)
 
 ## <a name="managing-devices"></a>デバイスを管理します。
 
 最初にデバイスを接続する手順については、[要件およびセットアップ](~/tools/live-player/install.md)します。 複数のデバイスをペアリングし、IDE を使用して管理できます。
 
-# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Visual Studio で、次のように選択します**ツール > Xamarin Live Player > デバイスを管理しています...**
 
@@ -70,7 +70,7 @@ Visual Studio で、次のように選択します**ツール > Xamarin Live Pla
 
 このウィンドウは、デバイスの一覧からアクセスすることもできます。
 
-# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 Visual studio for Mac では、次のように選択します**ツール > (Xamarin Live Player) デバイスを管理しています...**
 

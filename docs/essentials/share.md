@@ -7,10 +7,10 @@ ms.author: jamont
 ms.date: 04/02/2019
 ms.custom: video
 ms.openlocfilehash: 1a9a7b008773255d9d7743a4fcb21f02feb3e116
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58869378"
 ---
 # <a name="xamarinessentials-share"></a>Xamarin.Essentials:共有
@@ -61,18 +61,18 @@ public class ShareTest
 
 ## <a name="platform-differences"></a>プラットフォームによる違い
 
-# [<a name="android"></a>Android](#tab/android)
+# <a name="androidtabandroid"></a>[Android](#tab/android)
 
 * `Subject` プロパティは、メッセージの望ましい件名に使用されます。
 
-# [<a name="ios"></a>iOS](#tab/ios)
+# <a name="iostabios"></a>[iOS](#tab/ios)
 
 * `Subject` は使用されません。
 * `Title` は使用されません。
 
-# [<a name="uwp"></a>UWP](#tab/uwp)
+# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-* `Title` が設定されていない場合のアプリケーション名の既定値です。
+* `Title` が設定されていない場合の既定値はアプリケーション名です。
 * `Subject` は使用されません。
 
 -----

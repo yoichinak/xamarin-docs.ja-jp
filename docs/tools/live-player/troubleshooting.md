@@ -7,10 +7,10 @@ author: lobrien
 ms.author: laobri
 ms.date: 08/08/2018
 ms.openlocfilehash: 5eb0dcead230e0bb2e7d99241e5d8e5a4115f838
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58855264"
 ---
 # <a name="troubleshooting-xamarin-live-player"></a>Xamarin Live Player のトラブルシューティング
@@ -84,7 +84,7 @@ Xamarin Live Player を実行しているモバイル デバイスが Visual Stu
 
 いない Wi-fi 経由でデバイスに接続できる場合、次の手順で、構成ファイルを使用してデバイスを手動で構成しようとすることができます。
 
-**手順 1: 構成ファイルを開く**
+**手順 1:構成ファイルを開く**
 
 アプリケーション データ フォルダーに移動します。
 
@@ -93,21 +93,21 @@ Xamarin Live Player を実行しているモバイル デバイスが Visual Stu
 
 このフォルダーでは紹介**PlayerDeviceList.xml**が存在しない場合は、1 つを作成する必要があります。
 
-**手順 2: IP アドレスを取得します。**
+**手順 2:IP アドレスを取得します。**
 
 Xamarin Live Player アプリに移動**について > 接続テスト > 接続テストの開始**します。
 
 メモ、IP アドレスは、IP アドレスが、デバイスを構成するときに表示されている必要があります。
 
-**手順 3: コードのペアを取得します。**
+**手順 3:コードのペアを取得します。**
 
 Xamarin Live Player タップ内**ペア**または**ペアをもう一度**、キーを押します**手動で入力**します。 数値のコードが表示されます、これは、構成ファイルを更新する必要があります。
 
-**手順 4: GUID を生成します。**
+**手順 4:GUID を生成します。**
 
 移動: https://www.guidgenerator.com/online-guid-generator.aspx 新しい guid を生成して、大文字のことを確認します。
 
-**手順 5: デバイスを構成します。**
+**手順 5:デバイスを構成します。**
 
 開き、 **PlayerDeviceList.xml**など、Visual Studio または Visual Studio Code エディターでセットアップします。 このファイルに手動でデバイスを構成する必要があります。 既定では、ファイルは次の空白を含める必要があります`Devices`XML 要素。
 

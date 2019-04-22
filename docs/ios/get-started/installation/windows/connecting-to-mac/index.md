@@ -8,15 +8,15 @@ author: lobrien
 ms.author: laobri
 ms.date: 05/29/2018
 ms.openlocfilehash: 9456686157f10d81e36b908cb0a2441e64d47663
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58855147"
 ---
 # <a name="pair-to-mac-for-xamarinios-development"></a>Xamarin.iOS 開発のために Mac とペアリングする
 
-_このガイドでは、[Mac とペアリング] を使って Visual Studio 2019 を Mac ビルド ホストに接続する方法を説明します。 同じ手順が、Visual Studio 2017 に適用されます。_
+_このガイドでは、[Mac とペアリング] を使って Visual Studio 2019 を Mac ビルド ホストに接続する方法を説明します。同じ手順が、Visual Studio 2017 に適用されます。_
 
 ## <a name="overview"></a>概要
 
@@ -130,7 +130,7 @@ Mac とペアリングできない場合は、[Mac を手動で追加](#manually
 
     - Mac で **[システム環境設定] > [共有] > [リモート ログイン]** を開きます。
 
-        [![T[システム環境設定] > [共有] で表示される Mac の IP アドレス](images/sharing-ipaddress.png "[システム環境設定] > [共有] で表示される Mac の IP アドレス")](images/sharing.png#lightbox)
+        [![[システム環境設定] > [共有] で表示される Mac の IP アドレス](images/sharing-ipaddress.png "[システム環境設定] > [共有] で表示される Mac の IP アドレス")](images/sharing.png#lightbox)
 
     - または、コマンド ラインを使用します。 ターミナルで次のコマンドを実行します。 
 
@@ -143,7 +143,7 @@ Mac とペアリングできない場合は、[Mac を手動で追加](#manually
 
 2. Visual Studio 2019 の **[Mac とペアリング]** ダイアログで、**[Mac の追加]** を選びます。
 
-    [![T[Mac とペアリング] ダイアログの [Mac の追加] ボタン](images/addtomac.png "[Mac とペアリング] ダイアログの [Mac の追加] ボタン")](images/addtomac-large.png#lightbox)
+    [![[Mac とペアリング] ダイアログの [Mac の追加] ボタン](images/addtomac.png "[Mac とペアリング] ダイアログの [Mac の追加] ボタン")](images/addtomac-large.png#lightbox)
 
 3. Mac の IP アドレスを入力して、**[追加]** をクリックします。
 
@@ -177,7 +177,7 @@ Visual Studio 2017 が [Mac に接続している](#connect-to-the-mac-from-visu
 
 ||インストールのチェック|ダウンロード中|インストール
 |---|---|---|---|
-|Mono|[![MMono がインストールされていない](images/mono-missing.png "Mono がインストールされていない")](images/mono-missing-large.png#lightbox)|[![DMono のダウンロード](images/mono-downloading.png "Mono のダウンロード")](images/mono-downloading-large.png#lightbox)|[![IMono のインストール](images/mono-installing.png "Mono のインストール")](images/mono-installing-large.png#lightbox)|
+|Mono|[![Mono がインストールされていない](images/mono-missing.png "Mono がインストールされていない")](images/mono-missing-large.png#lightbox)|[![Mono のダウンロード中](images/mono-downloading.png "Mono のダウンロード中")](images/mono-downloading-large.png#lightbox)|[![Mono のインストール中](images/mono-installing.png "Mono のインストール中")](images/mono-installing-large.png#lightbox)|
 
 ### <a name="xamarinios"></a>Xamarin.iOS
 
@@ -192,7 +192,7 @@ Visual Studio 2017 が [Mac に接続している](#connect-to-the-mac-from-visu
 
 ||インストールのチェック|ダウンロード中|インストール
 |---|---|---|---|
-|Xamarin.iOS|[![MXamarin.iOS がインストールされていない](images/xamios-missing.png "Xamarin.iOS がインストールされていない")](images/xamios-missing-large.png#lightbox)|[![DXamarin.iOS のダウンロード](images/xamios-downloading.png "Xamarin.iOS のダウンロード")](images/xamios-downloading-large.png#lightbox)|[![IXamarin.iOS のインストール](images/xamios-installing.png "Xamarin.iOS のインストール")](images/xamios-installing-large.png#lightbox)|
+|Xamarin.iOS|[![Xamarin.iOS がインストールされていない](images/xamios-missing.png "Xamarin.iOS がインストールされていない")](images/xamios-missing-large.png#lightbox)|[![Xamarin.iOS のダウンロード中](images/xamios-downloading.png "Xamarin.iOS のダウンロード中")](images/xamios-downloading-large.png#lightbox)|[![Xamarin.iOS のインストール中](images/xamios-installing.png "Xamarin.iOS のインストール中")](images/xamios-installing-large.png#lightbox)|
 
 ### <a name="xcode-tools-and-license"></a>Xcode ツールとライセンス
 
@@ -200,7 +200,7 @@ Visual Studio 2017 が [Mac に接続している](#connect-to-the-mac-from-visu
 
 ||インストールのチェック|ライセンスの同意|
 |---|---|---|
-|Xcode|[![MXcode がインストールされていない](images/xcode-missing.png "Xcode がインストールされていない")](images/xcode-missing-large.png#lightbox)|[![XXcode のライセンス](images/xcode-license.png "Xcode のライセンス")](images/xcode-license-large.png#lightbox)|
+|Xcode|[![Xcode がインストールされていない](images/xcode-missing.png "Xcode がインストールされていない")](images/xcode-missing-large.png#lightbox)|[![Xcode のライセンス](images/xcode-license.png "Xcode のライセンス")](images/xcode-license-large.png#lightbox)|
 
 さらに、[Mac とペアリング] は Xcode と共に配布されるさまざまなパッケージをインストールまたは更新します。 次に例を示します。
 
@@ -249,5 +249,5 @@ C:\samples\App1>msbuild App1.sln /p:ServerAddress=10.211.55.2 /p:ServerUser=xamU
 - [接続のトラブルシューティング](~/ios/get-started/installation/windows/connecting-to-mac/troubleshooting.md)
 - [Xamarin Mac ビルド エージェント - Xamarin University Lightning Lecture](https://www.youtube.com/watch?v=MBAPBtxkjFQ)
 - [Xamarin.iOS for Visual Studio の概要](~/ios/get-started/installation/windows/introduction-to-xamarin-ios-for-visual-studio.md)
-- [Remoted iOS Simulator for Windows](~/tools/ios-simulator/index.md)
+- [リモートの iOS シミュレーターWindows用](~/tools/ios-simulator/index.md)
 - [ワイヤレス展開](~/ios/deploy-test/wireless-deployment.md)

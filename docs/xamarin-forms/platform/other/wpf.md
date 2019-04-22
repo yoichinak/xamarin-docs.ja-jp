@@ -9,10 +9,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 04/05/2018
 ms.openlocfilehash: 2bef13e7f465dd213649f88deb572eb661895250
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58854809"
 ---
 # <a name="wpf-platform-setup"></a>WPF プラットフォームのセットアップ
@@ -35,7 +35,7 @@ Windows 7、8、および 10 のデスクトップ上で実行される WPF ア�
 
 1. Visual Studio 2019 でソリューション名を右クリックし、**ソリューション エクスプ ローラー**選択**追加 > 新しいプロジェクト.**.
 
-2. **新しいプロジェクト**ウィンドウで、左側の選択で**Visual C#** と**Windows クラシック デスクトップ**します。 プロジェクトの種類の一覧で選択**WPF アプリ (.NET Framework)** します。 
+2. **新しいプロジェクト**ウィンドウで、左側の選択で**Visual c#** と**Windows クラシック デスクトップ**します。 プロジェクトの種類の一覧で選択**WPF アプリ (.NET Framework)** します。 
 
 3. 使用してプロジェクトの名前を入力、 **WPF**拡張子、たとえば、 **BoxViewClock.WPF**します。 をクリックして、**参照**ボタンを選択、 **BoxViewClock**フォルダー、およびキーを押して**フォルダーの選択**します。 これにより、WPF プロジェクト、ソリューション内の他のプロジェクトと同じディレクトリに入ります。
 

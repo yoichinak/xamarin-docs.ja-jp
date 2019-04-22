@@ -1,10 +1,10 @@
 ---
 ms.topic: include
 ms.openlocfilehash: 0270f4a5ddab593372eb6687650e24d627f97c62
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58855344"
 ---
 Xamarin の一部としてインストールすることができます、_新しい_次の手順で、Visual Studio 2019 インストール。
@@ -15,7 +15,7 @@ Xamarin の一部としてインストールすることができます、_新�
 
 3. インストール画面で **[.NET によるモバイル開発]** ワークロードを選択します。
 
-    [![M選択した場合 .NET obile 開発](~/get-started/installation/windows-images/vs2019-mobile-dev-workload-sml.png)](~/get-started/installation/windows-images/vs2019-mobile-dev-workload.png#lightbox)
+    [![選択範囲の .NET によるモバイル開発](~/get-started/installation/windows-images/vs2019-mobile-dev-workload-sml.png)](~/get-started/installation/windows-images/vs2019-mobile-dev-workload.png#lightbox)
 
 4. Visual Studio 2019 インストールを開始する準備ができたら、 をクリックして、**インストール**右下隅のボタンをクリックします。
 
@@ -35,4 +35,4 @@ Xamarin の一部としてインストールすることができます、_新�
 
 Visual Studio 2019 が既にインストールされている場合は、ワークロードを変更する Visual Studio 2019 のインストーラーを再実行して Xamarin を追加 (を参照してください[Visual Studio の変更](https://docs.microsoft.com/visualstudio/install/modify-visual-studio)詳細については)。 次に、前述の手順に従って、Xamarin をインストールします。
 
-ダウンロードと Visual Studio 2019 のインストールに関する詳細については、[Visual Studio のインストール 2019](https://docs.microsoft.com/visualstudio/install/install-visual-studio)を参照してください。
+ダウンロードと Visual Studio 2019 のインストールに関する詳細については、次を参照してください。 [Visual Studio のインストール 2019](https://docs.microsoft.com/visualstudio/install/install-visual-studio)します。

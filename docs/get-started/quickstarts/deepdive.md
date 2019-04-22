@@ -10,10 +10,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/27/2018
 ms.openlocfilehash: 67b189254cc08fac0323b7df5fcbab5abd994c05
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58855017"
 ---
 # <a name="xamarinforms-quickstart-deep-dive"></a>Xamarin.Forms のクイック スタートの詳細情報
@@ -421,7 +421,7 @@ async void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs e)
 `OnNoteAddedClicked`メソッドは、アプリケーションに新しいメモが追加されたときに実行される、 [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)の`NoteEntryPage`新しいに設定されている`Note`インスタンス。 `OnListViewItemSelected`メソッドで、既存のノートがで選択したときに実行される、 [ `ListView` ](xref:Xamarin.Forms.ListView)、`BindingContext`の`NoteEntryPage`が、選択したセット`Note`インスタンスを通じてアクセスされる、[ `e.SelectedItem` ](xref:Xamarin.Forms.SelectedItemChangedEventArgs.SelectedItem)プロパティ。
 
 > [!IMPORTANT]
-> 各*ターゲット* オブジェクトの [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) プロパティは個々に設定できますが、これは必ずしも行う必要はありません。 `BindingContext` そのすべての子によって継承される特殊なプロパティです。 そのため、`BindingContext`で、 [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)に設定されている、`Note`インスタンス、すべての子の`ContentPage`が同じである`BindingContext`、し、のパブリックプロパティにバインドできます`Note`オブジェクト。
+> 各*ターゲット* オブジェクトの [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) プロパティは個々に設定できますが、これは必ずしも行う必要はありません。 `BindingContext` は、その子がすべて継承する特殊なプロパティです。 そのため、`BindingContext`で、 [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)に設定されている、`Note`インスタンス、すべての子の`ContentPage`が同じである`BindingContext`、し、のパブリックプロパティにバインドできます`Note`オブジェクト。
 
 [ `Editor` ](xref:Xamarin.Forms.Editor)で`NoteEntryPage`にバインドし、`Text`のプロパティ、`Note`オブジェクト。
 
@@ -535,7 +535,7 @@ Visual Studio for Mac と Visual Studio のいずれも、アプリケーショ�
 - [eXtensible Application Markup Language (XAML)](~/xamarin-forms/xaml/index.md)
 - [データ バインディング](~/xamarin-forms/app-fundamentals/data-binding/index.md)
 - [コントロールのリファレンス](~/xamarin-forms/user-interface/controls/index.md)
-- [XAML マークアップ拡張機能](~/xamarin-forms/xaml/markup-extensions/index.md)
+- [XAML マークアップ拡張](~/xamarin-forms/xaml/markup-extensions/index.md)
 - [Xamarin.Forms のサンプル](https://developer.xamarin.com/samples/xamarin-forms/all/)
 - [入門サンプル](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/)
 - [Xamarin.Forms API リファレンス](xref:Xamarin.Forms)

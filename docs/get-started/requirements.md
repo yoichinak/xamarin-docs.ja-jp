@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/23/2018
 ms.openlocfilehash: 66785fcd4b38f29ca0358e1e8885e6b7da59f5a7
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58854743"
 ---
 # <a name="xamarinforms-requirements"></a>Xamarin.Forms の要件
@@ -44,7 +44,7 @@ Xamarin.Forms アプリケーションは次のオペレーティング シス�
 これらのプラットフォームは、Xamarin.Forms 3.0 を使用する場合はサポートされません。
 
 - *Windows 8.1 / Windows Phone 8.1 WinRT*
-- *Windows Phone Silverlight 8*
+- *Windows Phone 8 Silverlight*
 
 ### <a name="android"></a>Android
 
@@ -52,19 +52,19 @@ Xamarin.Forms アプリケーションは次のオペレーティング シス�
 
 また、Android プロジェクトのターゲット/コンパイル バージョンを*インストールされている最新のプラットフォームを使用するように*設定する**必要があります**。 ただし、Android 4.4 以降を使用するデバイスを引き続きサポートできるように、最小バージョンを API 19 に設定できます。 値は**プロジェクト オプション**で設定されます。
 
-# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-**プロジェクト オプション > アプリケーション > アプリケーションのプロパティ**
+**[プロジェクト オプション]、[アプリケーション]、[アプリケーション プロパティ]**
 
 ![Visual Studio での android のビルド オプション](requirements-images/options-android-vs-sml.png)
 
-# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-**ビルド > [全般]**
+**[ビルド]、[全般]**
 
 ![最新のターゲット フレームワークを選択します。](requirements-images/options-general-sml.png)
 
-**ビルド > Android アプリケーション**
+**[ビルド]、[Android アプリケーション]**
 
 ![最小値を選択し、アプリの Android バージョンをターゲット](requirements-images/options-android-sml.png)
 

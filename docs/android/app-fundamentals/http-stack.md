@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 04/20/2018
 ms.openlocfilehash: a3704552c8fc147588919ecdde2813e831237d89
-ms.sourcegitcommit: cc750b0d8086ed14f84cd8eb9a06f45c719b3cf4
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59239902"
 ---
 # <a name="httpclient-stack-and-ssltls-implementation-selector-for-android"></a>HttpClient スタックと SSL/TLS の実装セレクター for Android
@@ -25,7 +25,7 @@ HttpClient スタックと SSL/TLS の実装セレクターは、Xamarin.Android
 >
 > アプリは引き続きこれらのサーバーとサービスを使用することを確認するには**で Xamarin プロジェクトを更新する必要があります、`Android HttpClient`と`Native TLS 1.2`、次に示す設定を再構築し、アプリを再デプロイ**に、ユーザー。
 
-# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Xamarin.Android HttpClient 構成が**プロジェクト オプション > Android オプション**、 をクリックし、**詳細オプション**ボタン。
 
@@ -34,13 +34,13 @@ TLS 1.2 のサポートの推奨設定を次に示します。
 [![Visual Studio Android オプション](http-stack-images/android-win-sml.png)](http-stack-images/android-win.png#lightbox)
 
 
-# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 Xamarin.Android HttpClient 構成が**プロジェクト オプション > ビルド > Android のビルド**設定とをクリックして、**全般** タブ。
 
 TLS 1.2 のサポートの推奨設定を次に示します。
 
-[![Visual Studio for Mac の [Android オプション](http-stack-images/android-mac-sml.png)](http-stack-images/android-mac.png#lightbox)
+[![Visual Studio for Mac の Android オプション](http-stack-images/android-mac-sml.png)](http-stack-images/android-mac.png#lightbox)
 
 -----
 
@@ -49,7 +49,7 @@ TLS 1.2 のサポートの推奨設定を次に示します。
 ### <a name="androidclienthandler"></a>AndroidClientHandler
 
 AndroidClientHandler は、マネージ コードで実装するすべてのものではなく、ネイティブの Java/OS コードにデリゲートする新しいハンドラーです。
-**これが推奨されるオプションです。**
+**これは、推奨されるオプションです。**
 
 #### <a name="pros"></a>プロフェッショナル
 
@@ -119,13 +119,13 @@ HttpClient client = new HttpClient(new Xamarin.Android.Net.AndroidClientHandler 
 
 このプロジェクトのオプションは、すべての web 要求で使用されるどのような基になる TLS ライブラリを制御します。 どちらも`HttpClient`と`WebRequest`します。 既定では、TLS 1.2 が選択されます。
 
-# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![TVisual Studio での LS/SSL の実装のコンボ ボックス](http-stack-images/tls06-vs.png)](http-stack-images/tls05-vs.png#lightbox)
+[![Visual Studio での TLS または SSL 実装コンボ ボックス](http-stack-images/tls06-vs.png)](http-stack-images/tls05-vs.png#lightbox)
 
-# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-[![TLS/SSL 実装コンボは、Visual studio for Mac ボックス](http-stack-images/tls06-xs.png)](http-stack-images/tls05-xs.png#lightbox)
+[![Visual Studio for Mac での TLS または SSL 実装コンボ ボックス](http-stack-images/tls06-xs.png)](http-stack-images/tls05-xs.png#lightbox)
 
 -----
 
@@ -169,11 +169,11 @@ Xamarin.Android で TLS の使用に関連する 2 つの環境変数です。
 
 追加することでこの環境変数を設定、_環境ファイル_をプロジェクトにします。 環境ファイルは Unix 形式のプレーン テキスト ファイルのビルド アクションを持つ**AndroidEnvironment**:
 
-# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ![Visual Studio で AndroidEnvironment ビルド アクションのスクリーン ショット。](http-stack-images/tls03-vs.png)
 
-# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 ![Visual studio for mac のアクションを構築、AndroidEnvironment のスクリーン ショット](http-stack-images/tls03-xs.png)
 

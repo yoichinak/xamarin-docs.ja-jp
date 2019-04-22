@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
 ms.openlocfilehash: 3aaf8e9d1eb8e0d98ad32a6b5a1286f14c7bb906
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58869989"
 ---
 # <a name="summary-of-chapter-17-mastering-the-grid"></a>第 17 章の概要です。 マスター グリッド
 
-[![Download サンプル](~/media/shared/download.png) サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17)
 
 [ `Grid` ](xref:Xamarin.Forms.Grid)は行とセルの列にその子を配置するレイアウトの強力なメカニズムです。 ような HTML とは異なり`table`要素、`Grid`プレゼンテーションではなく、レイアウトの目的でのみです。
 

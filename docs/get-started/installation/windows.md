@@ -7,10 +7,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 08/28/2018
 ms.openlocfilehash: 5d9f91300194eb45c5f5f3c52403660cf4898a19
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58853977"
 ---
 # <a name="installing-xamarin-in-visual-studio-2019"></a>Visual Studio 2019 で Xamarin をインストールします。
@@ -42,7 +42,7 @@ Visual Studio 2019 で Xamarin をインストール、アプリのコードの�
 詳細については、「[Installing Xamarin.iOS on Windows](~/ios/get-started/installation/windows/index.md)」(Windows への Xamarin.iOS のインストール) ガイドを参照してください。 
 
 1. [Visual Studio for Mac をインストールする](https://docs.microsoft.com/visualstudio/mac/installation)
-2. [Visual Studio を Mac ビルド ホストに接続します。](~/ios/get-started/installation/windows/connecting-to-mac/index.md)
+2. [Mac ビルド ホストへの Visual Studio の接続](~/ios/get-started/installation/windows/connecting-to-mac/index.md)
 3. [iOS 開発者のセットアップ](~/ios/get-started/installation/device-provisioning/index.md) - デバイスでアプリケーションを実行するために必要
 5. [リモートの iOS シミュレーター](~/tools/ios-simulator/index.md)
 6. [Xamarin.iOS for Visual Studio の概要](~/ios/get-started/installation/windows/introduction-to-xamarin-ios-for-visual-studio.md)

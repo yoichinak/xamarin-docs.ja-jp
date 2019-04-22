@@ -6,10 +6,10 @@ author: mikeparker104
 ms.author: miparker
 ms.date: 12/17/2018
 ms.openlocfilehash: a235a24d544e938d4bf29e6569564aface2f6972
-ms.sourcegitcommit: 1c2565c372207bfa257cadac2a2d23d4f90b0cea
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58866385"
 ---
 # <a name="use-cc-libraries-with-xamarin"></a>Xamarin を使用した C と C++ のライブラリを使用します。
@@ -600,7 +600,7 @@ NuGet フィードの最も単純な形式では、ローカル ディレクト�
 
 堅牢な手法については、 [Azure DevOps の NuGet パッケージの概要](https://docs.microsoft.com/azure/devops/artifacts/get-started-nuget?view=vsts&tabs=new-nav#publish-a-package)、そのフィードにプライベート フィードを作成し、(前の手順で生成された) パッケージをプッシュする方法を示しています。
 
-このワークフローを完全に例を使用して自動化することをお勧め[Azure パイプライン](https://docs.microsoft.com/azure/devops/pipelines/index?view=vsts)します。 詳細については、[Azure パイプラインの概要](https://docs.microsoft.com/azure/devops/pipelines/get-started/index?view=vsts)を参照してください。
+このワークフローを完全に例を使用して自動化することをお勧め[Azure パイプライン](https://docs.microsoft.com/azure/devops/pipelines/index?view=vsts)します。 詳細については、次を参照してください。 [Azure パイプラインの概要](https://docs.microsoft.com/azure/devops/pipelines/get-started/index?view=vsts)します。
 
 ## <a name="consuming-the-net-wrapper-from-a-xamarinforms-app"></a>Xamarin.Forms アプリから .NET ラッパーの使用
 このチュートリアルを完了するには作成、 **Xamarin.Forms**だけパッケージを使用するアプリケーションをローカルに発行**NuGet**フィードします。

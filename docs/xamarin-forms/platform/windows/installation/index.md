@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 04/10/2018
 ms.openlocfilehash: b0f06cf15d3a3ec7eae4742d5d037e233be46d08
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58855186"
 ---
 # <a name="setup-windows-projects"></a>セットアップの Windows プロジェクト
@@ -22,7 +22,7 @@ _既存の Xamarin.Forms ソリューションに新しい Windows プロジェ�
 
 ## <a name="add-a-universal-windows-platform-app"></a>追加するユニバーサル Windows プラットフォーム アプリ
 
-**Visual Studio 2019**で**Windows 10** UWP アプリの構築をお勧めします。 ユニバーサル Windows プラットフォームの詳細については、[ユニバーサル Windows プラットフォームの紹介](/windows/uwp/get-started/universal-application-platform-guide/)を参照してください。
+**Visual Studio 2019**で**Windows 10** UWP アプリの構築をお勧めします。 ユニバーサル Windows プラットフォームの詳細については、次を参照してください。[ユニバーサル Windows プラットフォームの紹介](/windows/uwp/get-started/universal-application-platform-guide/)します。
 
 UWP は、Xamarin.Forms 2.1 で使用可能な以降と、Xamarin.Forms 2.2 以降、Xamarin.Forms.Maps はサポートされます。
 

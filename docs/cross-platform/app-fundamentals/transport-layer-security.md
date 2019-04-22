@@ -7,10 +7,10 @@ author: asb3993
 ms.author: amburns
 ms.date: 04/20/2018
 ms.openlocfilehash: 26870ae0e84a84a7b78f7766a8e134ecfc7b223e
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58855004"
 ---
 # <a name="transport-layer-security-tls-12"></a>トランスポート層セキュリティ (TLS) 1.2
@@ -31,17 +31,17 @@ ms.locfileid: "58855004"
 > [!NOTE]
 > Android 5.0 以降が必要です。
 
-# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 これらの設定が記載されて**プロジェクトのプロパティ > Android オプション**をクリックし、 **[詳細設定]** ボタン。
 
-[![CHttpClient の構成と Visual Studio での TLS](transport-layer-security-images/android-win-sml.png)](transport-layer-security-images/android-win.png#lightbox)
+[![Visual Studio での HttpClient と TLS を構成します。](transport-layer-security-images/android-win-sml.png)](transport-layer-security-images/android-win.png#lightbox)
 
-# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 これらの設定が記載されて**プロジェクト オプション > ビルド > Android のビルド** タブ。
 
-[![CHttpClient の構成と Visual Studio for Mac での TLS](transport-layer-security-images/android-mac-sml.png)](transport-layer-security-images/android-mac.png#lightbox)
+[![Visual studio for Mac HttpClient と TLS を構成します。](transport-layer-security-images/android-mac-sml.png)](transport-layer-security-images/android-mac.png#lightbox)
 
 -----
 
@@ -49,17 +49,17 @@ ms.locfileid: "58855004"
 
 更新プログラム、 **HttpClient 実装**TSL 1.2 セキュリティを有効にするオプション。
 
-# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 この設定が記載されて**プロジェクトのプロパティ > iOS ビルド**:
 
-[![CHttpClient の構成と Visual Studio での TLS](transport-layer-security-images/ios-win-sml.png)](transport-layer-security-images/ios-win.png#lightbox)
+[![Visual Studio での HttpClient と TLS を構成します。](transport-layer-security-images/ios-win-sml.png)](transport-layer-security-images/ios-win.png#lightbox)
 
-# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 この設定が記載されて**プロジェクト オプション > ビルド > iOS ビルド** タブ。
 
-[![CVisual Studio for Mac での HttpClient を構成する](transport-layer-security-images/ios-mac-sml.png)](transport-layer-security-images/ios-mac.png#lightbox)
+[![Visual studio for Mac の HttpClient を構成します。](transport-layer-security-images/ios-mac-sml.png)](transport-layer-security-images/ios-mac.png#lightbox)
 
 -----
 
@@ -67,7 +67,7 @@ ms.locfileid: "58855004"
 
 Visual Studio for Mac で Xamarin.Mac アプリで TLS 1.2 を有効にする更新、 **HttpClient 実装**オプション**プロジェクト オプション > ビルド > Mac ビルド**:
 
-[![CVisual Studio for Mac での HttpClient を構成する](transport-layer-security-images/macos-mac-sml.png)](transport-layer-security-images/macos-mac.png#lightbox)
+[![Visual studio for Mac の HttpClient を構成します。](transport-layer-security-images/macos-mac-sml.png)](transport-layer-security-images/macos-mac.png#lightbox)
 
 > [!WARNING]
 > 今度の Xamarin.Mac 4.8 リリースでは、macOS 10.9 以降のみをサポートします。
@@ -110,7 +110,7 @@ Android プロジェクトのオプションでは、サポートするために
 上記の概要では、Xamarin プロジェクトでは、HttpClient と SSL/TLS の実装プロジェクト レベルの設定について説明します。 HttpClient 実装は、コードで動的に設定することもできます。 これらの詳細についてはプラットフォーム固有のガイドを参照してください。
 
 - [**Android**](~/android/app-fundamentals/http-stack.md)
-- [**iOS と Mac**](~/cross-platform/macios/http-stack.md)
+- [**iOS および Mac**](~/cross-platform/macios/http-stack.md)
 
 ## <a name="summary"></a>まとめ
 

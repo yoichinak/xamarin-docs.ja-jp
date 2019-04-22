@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
 ms.openlocfilehash: bb58866a0fc0ddb542c0a40eb7a0bd9b37562776
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58869670"
 ---
 # <a name="playing-a-web-video"></a>Web ビデオの再生
 
-[![Dサンプルのダウンロード](~/media/shared/download.png) サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
 
 `VideoPlayer` クラスでは、`AutoPlay` プロパティと共に、ビデオ ファイルのソースの指定に使用される `Source` プロパティが定義されます。 `AutoPlay` の既定の設定は `true` です。これは、`Source` の設定後、自動的にビデオの再生が開始されることを意味します。
 

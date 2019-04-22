@@ -7,10 +7,10 @@ author: asb3993
 ms.author: amburns
 ms.date: 03/20/2018
 ms.openlocfilehash: 9ce56891eeab73f661a9c22cc047c4d0bcb10337
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58854796"
 ---
 # <a name="installing-xamarin-preview-on-windows"></a>Windows に Xamarin (プレビュー) をインストールする
@@ -38,7 +38,7 @@ Visual Studio のプレビュー バージョンには、次のような、Xamar
 
 次に示すように、インストール プロセスの間に**インストールのニックネーム**をサイド バイ サイド インストールに適用できます ([スタート] メニューで識別できるに)。
 
-[![eインストールする前に dit ニックネーム](windows-images/vs2017-nickname-sml.png "をインストールする前に、のニックネームの編集")](windows-images/vs2017-nickname.png#lightbox)
+[![インストール前のニックネームの編集](windows-images/vs2017-nickname-sml.png "インストール前のニックネームの編集")](windows-images/vs2017-nickname.png#lightbox)
 
 ### <a name="uninstalling-visual-studio-2019-preview"></a>Visual Studio 2019 Preview をアンインストールします。
 

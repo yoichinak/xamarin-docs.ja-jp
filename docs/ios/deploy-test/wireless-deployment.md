@@ -9,10 +9,10 @@ ms.author: laobri
 ms.custom: video
 ms.date: 01/22/2019
 ms.openlocfilehash: 82bdd2c160572b0d813fb87d81b09c00996cef18
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58854835"
 ---
 # <a name="wireless-deployment-for-xamarinios-and-tvos-apps"></a>Xamarin.iOS および tvOS アプリのワイヤレス展開
@@ -27,14 +27,14 @@ ms.locfileid: "58854835"
 
 ワイヤレス展開を使用するには、以下が必要です。
 
-# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 - macOS 10.12.4
 - Visual Studio for Mac の最新バージョン
 - Xcode 9.0 以降
 - iOS 11.0 または tvOS 11.0 以降のデバイス
 
-# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 - Visual Studio の最新バージョン
 - iOS 11.0 または tvOS 11.0 以降のデバイス

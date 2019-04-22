@@ -8,15 +8,15 @@ author: maddyleger1
 ms.author: maleger
 ms.date: 03/27/2019
 ms.openlocfilehash: 0ff9f8b5ee6f9468650b6535745706bee8f96536
-ms.sourcegitcommit: 1c2565c372207bfa257cadac2a2d23d4f90b0cea
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58866359"
 ---
 # <a name="use-design-time-data-with-the-xaml-previewer"></a>XAML プレビューアーでデザイン時のデータを使用します。
 
-_一部のレイアウトでは、データを視覚化する困難です。 XAML プレビューアーで、データの量が多いページのプレビューを最大限に活用するには、これらのヒントを使用します。_
+_一部のレイアウトでは、データを視覚化する困難です。XAML プレビューアーで、データの量が多いページのプレビューを最大限に活用するには、これらのヒントを使用します。_
 
 ## <a name="design-time-data-basics"></a>デザイン時データの基礎
 
@@ -36,7 +36,7 @@ mc:Ignorable="d"
 <Label Text={Binding Name} d:Text="Name" />
 ```
 
-[![D時刻のデータ ラベルのテキストに esign](xaml-previewer-images/designtimedata-label-sm.png "デザイン時刻のテキスト データ ラベル")](xaml-previewer-images/designtimedata-label-lg.png#lightbox)
+[![デザイン時データ ラベルのテキストを](xaml-previewer-images/designtimedata-label-sm.png "デザイン時刻のテキスト データ ラベル")](xaml-previewer-images/designtimedata-label-lg.png#lightbox)
 
  この例でなく`d:Text`、XAML プレビューアーには、ラベルについて何も表示されます。 代わりに、ラベルが実行時に実際のデータをある場所"Name"を示します。
 
@@ -46,7 +46,7 @@ mc:Ignorable="d"
 <d:Button Text="Design Time Button" />
 ```
 
-[![D時刻のデータをボタン コントロールに esign](xaml-previewer-images/designtimedata-controls-sm.png "ボタン コントロールと時刻のデータの設計")](xaml-previewer-images/designtimedata-controls-lg.png#lightbox)
+[![時刻データをボタン コントロールをデザイン](xaml-previewer-images/designtimedata-controls-sm.png "ボタン コントロールと時刻のデータの設計")](xaml-previewer-images/designtimedata-controls-lg.png#lightbox)
 
 この例で、ボタンはデザイン時にのみ表示されます。 このメソッドを使用して、プレース ホルダーを[XAML プレビューアーでサポートされていないカスタム コントロール](render-custom-controls.md)します。
 
@@ -57,7 +57,7 @@ mc:Ignorable="d"
 ```csharp
 <Image Source={Binding ProfilePicture} d:Source="DesignTimePicture.jpg" />
 ```
-[![D時刻のデータをイメージに esign](xaml-previewer-images/designtimedata-image-sm.png "組み込まで時刻のデータの設計")](xaml-previewer-images/designtimedata-image-lg.png#lightbox)
+[![デザイン時データ イメージを](xaml-previewer-images/designtimedata-image-sm.png "組み込まで時刻のデータの設計")](xaml-previewer-images/designtimedata-image-lg.png#lightbox)
 
 ## <a name="design-time-data-for-listviews"></a>Listview のデザイン時のデータ
 
@@ -83,7 +83,7 @@ Listview は、モバイル アプリでデータを表示する一般的な方�
 </StackLayout>
 ```
 
-[![D時刻のデータを ListView に esign](xaml-previewer-images/designtimedata-itemssource-sm.png "時刻データを ListView の設計")](xaml-previewer-images/designtimedata-itemssource-lg.png#lightbox)
+[![時刻データを ListView の設計](xaml-previewer-images/designtimedata-itemssource-sm.png "時刻データを ListView の設計")](xaml-previewer-images/designtimedata-itemssource-lg.png#lightbox)
 
 この例の 3 つ TextCells の ListView を XAML プレビューアーで表示されます。 変更することができます`x:String`プロジェクト内の既存のデータ モデルにします。
 
