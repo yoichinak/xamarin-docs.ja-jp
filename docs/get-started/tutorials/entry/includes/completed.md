@@ -1,4 +1,12 @@
-これでこのチュートリアルは完了です。ここでは、次のことを学習しました。
+---
+ms.openlocfilehash: 064ef79d79a74582e8deb6999589fda14d227e91
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61343454"
+---
+これでこのチュートリアルは完了です。ここでは以下の方法を学習しました。
 
 > [!div class="checklist"]
 > - XAML で Xamarin.Forms [`Entry`](xref:Xamarin.Forms.Entry) を作成する。

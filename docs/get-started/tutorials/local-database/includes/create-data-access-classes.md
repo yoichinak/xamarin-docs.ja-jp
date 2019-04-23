@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 83e28796a2c387927dddd708da3ee6623f800a35
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61193250"
+---
 この演習では、データ アクセス クラスを **LocalDatabaseTutorial**プロジェクト追加します。これは、人に関するデータをデータベースに保持するために使用されます。
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)

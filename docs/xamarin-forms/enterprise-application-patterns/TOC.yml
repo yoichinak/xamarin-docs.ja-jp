@@ -1,37 +1,30 @@
-items:
 - name: エンタープライズ アプリケーション パターン電子ブック
   href: index.md
-  items:
-  - name: はじめに
-    href: preface.md
-  - name: はじめに
-    href: introduction.md
-  - name: MVVM
-    displayName: Model, View, ViewModel
-    href: mvvm.md
-  - name: 依存関係の挿入
-    displayName: DI
-    href: dependency-injection.md
-  - name: 疎結合コンポーネント間の通信
-    href: communicating-between-loosely-coupled-components.md
-  - name: ナビゲーション
-    href: navigation.md
-  - name: 検証
-    href: validation.md
-  - name: 構成管理
-    href: configuration-management.md
-  - name: コンテナー化 Microservices
-    href: containerized-microservices.md
-  - name: 認証と承認
-    href: authentication-and-authorization.md
-  - name: リモート データへのアクセス
-    href: accessing-remote-data.md
-  - name: 単体テスト
-    href: unit-testing.md
   expanded: true
-ms.openlocfilehash: bbe9a87553babb954e37138458d1f07b95c1f443
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50110438"
+  items:
+    - name: はじめに
+      href: preface.md
+    - name: はじめに
+      href: introduction.md
+    - name: MVVM
+      displayName: 'Model, View, ViewModel'
+      href: mvvm.md
+    - name: 依存関係の挿入
+      displayName: DI
+      href: dependency-injection.md
+    - name: 疎結合コンポーネント間の通信
+      href: communicating-between-loosely-coupled-components.md
+    - name: ナビゲーション
+      href: navigation.md
+    - name: 検証
+      href: validation.md
+    - name: 構成管理
+      href: configuration-management.md
+    - name: コンテナー化 Microservices
+      href: containerized-microservices.md
+    - name: 認証と承認
+      href: authentication-and-authorization.md
+    - name: リモート データへのアクセス
+      href: accessing-remote-data.md
+    - name: 単体テスト
+      href: unit-testing.md

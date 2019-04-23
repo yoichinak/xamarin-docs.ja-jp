@@ -1,6 +1,14 @@
+---
+ms.openlocfilehash: 4fc6c50b5aa2ce502b4157ca2b15f0d33a68ecd1
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60896737"
+---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-1. **[MainPage.xaml]** で、[`Label`](xref:Xamarin.Forms.Label) 宣言を変更して、その外観を変更します。
+1. **[MainPage.xaml]** で、[`Label`](xref:Xamarin.Forms.Label) 宣言を変更してその外観を変更します。
 
     ```xaml
     <Label Text="Welcome to Xamarin.Forms!"
@@ -21,7 +29,7 @@
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-1. **[MainPage.xaml]** で、[`Label`](xref:Xamarin.Forms.Label) 宣言を変更して、その外観を変更します。
+1. **[MainPage.xaml]** で、[`Label`](xref:Xamarin.Forms.Label) 宣言を変更してその外観を変更します。
 
     ```xaml
     <Label Text="Welcome to Xamarin.Forms!"

@@ -1,10 +1,4 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 8df0acd20f07235608520c09897b6faf3e1eb99e
-ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57198748"
 documentType: LandingData
 title: Xamarin.Forms のチュートリアル
 metadata:
@@ -20,93 +14,93 @@ metadata:
 abstract:
   description: このページは、Xamarin.Forms を使用して、モバイル アプリケーションを作成する基本について学習するためのチュートリアルにリンクしています。 Xamarin.Forms の詳細なドキュメントについては、<a href="/xamarin/xamarin-forms/">Xamarin.Forms に関するドキュメント</a>を参照してください。
 sections:
-- title: レイアウト
-  items:
-  - type: list
-    style: cards
-    className: cardsB
+  - title: レイアウト
     items:
-    - href: stacklayout/
-      html: ビューを 1 次元のスタックで水平方向または垂直方向に整理する方法について学習します。
-      image:
-        src: https://docs.microsoft.com/media/common/i_dashboard.svg
-        href: stacklayout/
-      title: StackLayout
-    - href: grid/
-      html: ビューを比例サイズと絶対サイズにできるように行と列に整理する方法について学習します。
-      image:
-        src: https://docs.microsoft.com/media/common/i_table.svg
-        href: grid/
-      title: グリッド
-- title: Views
-  items:
-  - type: list
-    style: cards
-    className: cardsB
+      - type: list
+        style: cards
+        className: cardsB
+        items:
+          - href: stacklayout/
+            html: ビューを 1 次元のスタックで水平方向または垂直方向に整理する方法について学習します。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: stacklayout/
+            title: StackLayout
+          - href: grid/
+            html: ビューを比例サイズと絶対サイズにできるように行と列に整理する方法について学習します。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_table.svg'
+              href: grid/
+            title: グリッド
+  - title: Views
     items:
-    - href: label/
-      html: 単一行と複数行の両方で、テキストを表示する方法について学習します。
-      image:
-        src: ~/media/icons/i_form-label.svg
-        href: label/
-      title: group1
-    - href: button/
-      html: 特定のタスクを実行するようにアプリケーションに指示する、ボタンのタップまたはクリックに応答する方法について学習します。
-      image:
-        src: https://docs.microsoft.com/media/common/i_button.svg
-        href: button/
-      title: ボタン
-    - href: entry/
-      html: 単一行テキスト入力を受け入れる方法について学習します。
-      image:
-        src: ~/media/icons/i_form-entry.svg
-        href: entry/
-      title: 入力
-    - href: editor/
-      html: 複数行テキスト入力を受け入れる方法について学習します。
-      image:
-        src: ~/media/icons/i_form-editor.svg
-        href: editor/
-      title: エディター
-    - href: image/
-      html: ページにイメージを表示する方法について学習します。
-      image:
-        src: https://docs.microsoft.com/media/common/i_account-management.svg
-        href: image/
-      title: イメージ
-    - href: listview/
-      html: データのリストを表示する方法について学習します。
-      image:
-        src: https://docs.microsoft.com/media/common/i_sharepoint-list.svg
-        href: listview/
-      title: ListView
-- title: アプリの基礎
-  items:
-  - type: list
-    style: cards
-    className: cardsB
+      - type: list
+        style: cards
+        className: cardsB
+        items:
+          - href: label/
+            html: 単一行と複数行の両方で、テキストを表示する方法について学習します。
+            image:
+              src: ~/media/icons/i_form-label.svg
+              href: label/
+            title: group1
+          - href: button/
+            html: 特定のタスクを実行するようにアプリケーションに指示する、ボタンのタップまたはクリックに応答する方法について学習します。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_button.svg'
+              href: button/
+            title: ボタン
+          - href: entry/
+            html: 単一行テキスト入力を受け入れる方法について学習します。
+            image:
+              src: ~/media/icons/i_form-entry.svg
+              href: entry/
+            title: 入力
+          - href: editor/
+            html: 複数行テキスト入力を受け入れる方法について学習します。
+            image:
+              src: ~/media/icons/i_form-editor.svg
+              href: editor/
+            title: エディター
+          - href: image/
+            html: ページにイメージを表示する方法について学習します。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_account-management.svg'
+              href: image/
+            title: イメージ
+          - href: listview/
+            html: データのリストを表示する方法について学習します。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_sharepoint-list.svg'
+              href: listview/
+            title: ListView
+  - title: アプリの基礎
     items:
-    - href: pop-ups/
-      html: Xamarin.Forms を使用して、アラートおよびアクション シートを表示し、ユーザーに簡単な質問をしたり、タスクの手順を示す方法について学習します。
-      image:
-        src: https://docs.microsoft.com/media/common/i_alert.svg
-        href: pop-ups/
-      title: ポップアップ
-    - href: app-lifecycle/
-      html: Xamarin.Forms アプリのライフサイクルと、ライフサイクルの状態変化をまたいでデータを保持する方法について学習します。
-      image:
-        src: https://docs.microsoft.com/media/common/i_agile.svg
-        href: app-lifecycle/
-      title: アプリのライフサイクル
-    - href: local-database/
-      html: SQLite.NET NuGet パッケージを使用して、アプリにローカル データベース操作を組み込む方法について学習します。
-      image:
-        src: https://docs.microsoft.com/media/common/i_generic-database.svg
-        href: local-database/
-      title: ローカル データベース
-    - href: web-service/
-      html: Xamarin.Forms から REST ベースの Web サービスを使用する方法について学習します。
-      image:
-        src: https://docs.microsoft.com/media/common/i_server.svg
-        href: web-service/
-      title: Web サービス
+      - type: list
+        style: cards
+        className: cardsB
+        items:
+          - href: pop-ups/
+            html: Xamarin.Forms を使用して、アラートおよびアクション シートを表示し、ユーザーに簡単な質問をしたり、タスクの手順を示す方法について学習します。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_alert.svg'
+              href: pop-ups/
+            title: ポップアップ
+          - href: app-lifecycle/
+            html: Xamarin.Forms アプリのライフサイクルと、ライフサイクルの状態変化をまたいでデータを保持する方法について学習します。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_agile.svg'
+              href: app-lifecycle/
+            title: アプリのライフサイクル
+          - href: local-database/
+            html: SQLite.NET NuGet パッケージを使用して、アプリにローカル データベース操作を組み込む方法について学習します。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_generic-database.svg'
+              href: local-database/
+            title: ローカル データベース
+          - href: web-service/
+            html: Xamarin.Forms から REST ベースの Web サービスを使用する方法について学習します。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_server.svg'
+              href: web-service/
+            title: Web サービス

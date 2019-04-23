@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 3c88b71cea834f5e6ef20d43332904c052c6e3a6
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61037626"
+---
 以前は、データ バインディングを使用して [`ListView`](xref:Xamarin.Forms.ListView) にデータが取り込まれていました。 しかし、コレクション内の各オブジェクトが複数のデータ項目を定義しているコレクションへのデータ バインディングであるにもかかわらず、オブジェクトごとに単一のデータ項目のみ (`Monkey` オブジェクトの `Name` プロパティー) が表示されていました。
 
 この演習では、[`ListView`](xref:Xamarin.Forms.ListView) の各行に複数のデータ項目が表示されるように **ListViewTutorial** プロジェクトを変更します。

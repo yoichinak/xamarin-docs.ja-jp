@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: effebf02a7fb84ef955f4dcfda75d5273ef96b29
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61384679"
+---
 
 Xamarin.Forms には、アクション シートとして知られるモーダル ポップアップが用意されており、タスクの完了までユーザーをガイドするのに使用できます。 この演習では、[`Page`](xref:Xamarin.Forms.Page) クラスから [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*) メソッドを使用して、タスクの完了までユーザーをガイドするアクション シートを表示します。
 

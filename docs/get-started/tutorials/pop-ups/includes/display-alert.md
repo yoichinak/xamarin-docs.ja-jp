@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: cff466025306ee5d23b5245e625eba23c5448c15
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61384689"
+---
 Xamarin.Forms には、ユーザーにアラートを表示する、または簡単な質問をする、アラートと呼ばれる、モーダル ポップアップがあります。 この演習では、[`Page`](xref:Xamarin.Forms.Page) クラスから [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*) メソッドを使用して、ユーザーにアラートを表示したり、簡単な質問をします。
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)

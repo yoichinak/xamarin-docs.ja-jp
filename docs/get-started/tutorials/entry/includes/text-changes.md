@@ -1,6 +1,14 @@
+---
+ms.openlocfilehash: 846ff203a26f38fdaabe5a5dd6eff1c6a6b39b08
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61343466"
+---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-1. **MainPage.xaml** で、[`TextChanged`](xref:Xamarin.Forms.Entry.TextChanged) イベントと [`Completed`](xref:Xamarin.Forms.Entry.Completed) イベントのハンドラーを設定するように [`Entry`](xref:Xamarin.Forms.Entry) 宣言を変更します。
+1. **[MainPage.xaml]** で、[`TextChanged`](xref:Xamarin.Forms.Entry.TextChanged) イベントと [`Completed`](xref:Xamarin.Forms.Entry.Completed) イベントのハンドラーを設定するように [`Entry`](xref:Xamarin.Forms.Entry) 宣言を変更します。
 
     ```xaml
     <Entry Placeholder="Enter text"
@@ -8,7 +16,7 @@
            Completed="OnEntryCompleted" />
     ```
 
-    このコードは、[`TextChanged`](xref:Xamarin.Forms.Entry.TextChanged) イベントを `OnEntryTextChanged` という名前のイベント ハンドラーに設定し、[`Completed`](xref:Xamarin.Forms.Entry.Completed) イベントを `OnEntryCompleted` という名前のイベント ハンドラーに設定します。 両方のイベント ハンドラーは次の手順で作成します。
+    このコードでは、[`TextChanged`](xref:Xamarin.Forms.Entry.TextChanged) イベントを `OnEntryTextChanged` という名前のイベント ハンドラーに設定し、[`Completed`](xref:Xamarin.Forms.Entry.Completed) イベントを `OnEntryCompleted` という名前のイベント ハンドラーに設定します。 両方のイベント ハンドラーは次の手順で作成します。
 
 1. **ソリューション エクスプローラー**の **LabelTutorial** プロジェクトで **[MainPage.xaml]** を展開し、**[MainPage.xaml.cs]** をダブルクリックして開きます。 次に、**MainPage.xaml.cs** で、`OnEntryTextChanged` と `OnEntryCompleted` のイベント ハンドラーをクラスに追加します。
 
@@ -42,7 +50,7 @@
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-1. **MainPage.xaml** で、[`TextChanged`](xref:Xamarin.Forms.Entry.TextChanged) イベントと [`Completed`](xref:Xamarin.Forms.Entry.Completed) イベントのハンドラーを設定するように [`Entry`](xref:Xamarin.Forms.Entry) 宣言を変更します。
+1. **[MainPage.xaml]** で、[`TextChanged`](xref:Xamarin.Forms.Entry.TextChanged) イベントと [`Completed`](xref:Xamarin.Forms.Entry.Completed) イベントのハンドラーを設定するように [`Entry`](xref:Xamarin.Forms.Entry) 宣言を変更します。
 
     ```xaml
     <Entry Placeholder="Enter text"
@@ -50,7 +58,7 @@
            Completed="OnEntryCompleted" />
     ```
 
-    このコードは、[`TextChanged`](xref:Xamarin.Forms.Entry.TextChanged) イベントを `OnEntryTextChanged` という名前のイベント ハンドラーに設定し、[`Completed`](xref:Xamarin.Forms.Entry.Completed) イベントを `OnEntryCompleted` という名前のイベント ハンドラーに設定します。 両方のイベント ハンドラーは次の手順で作成します。
+    このコードでは、[`TextChanged`](xref:Xamarin.Forms.Entry.TextChanged) イベントを `OnEntryTextChanged` という名前のイベント ハンドラーに設定し、[`Completed`](xref:Xamarin.Forms.Entry.Completed) イベントを `OnEntryCompleted` という名前のイベント ハンドラーに設定します。 両方のイベント ハンドラーは次の手順で作成します。
 
 1. **Solution Pad** の **LabelTutorial** プロジェクトで **[MainPage.xaml]** を展開し、**[MainPage.xaml.cs]** をダブルクリックして開きます。 次に、**MainPage.xaml.cs** で、`OnEntryTextChanged` と `OnEntryCompleted` のイベント ハンドラーをクラスに追加します。
 

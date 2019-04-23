@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: a13426f4213d7c306c0de6922d336d4bb7723d72
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61037597"
+---
 `IEnumerable` 型の [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) プロパティを使用して、[`ListView`](xref:Xamarin.Forms.ListView) にデータが取り込まれます。 前の手順で、XAML の `ListView` に文字列の配列を取り込みました。 ただし、通常 `ListView` には、`IEnumerable` を実装するコードビハインドで定義されたコレクションからのデータが取り込まれます。
 
 この演習では、`List` に保管されているオブジェクトのコレクションからのデータを [`ListView`](xref:Xamarin.Forms.ListView) に取り込むように **ListViewTutorial** プロジェクトを変更します。

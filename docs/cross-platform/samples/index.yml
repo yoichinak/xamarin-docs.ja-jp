@@ -7,82 +7,76 @@ metadata:
   ms.author: crdun
   ms.date: 02/26/2018
   ms.topic: sample
-  ms.openlocfilehash: e60722dbd99ab845c63eee2c585905f8d06e5279
-  ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
-  ms.translationtype: HT
-  ms.contentlocale: ja-JP
-  ms.lasthandoff: 04/04/2018
-  ms.locfileid: "30768429"
 abstract:
-  description: Xamarin クロスプラットフォーム サンプル アプリとコード デモを参考にして、C# と Xamarin でモバイル アプリを構築してみてください。
+  description: 'Xamarin クロスプラットフォーム サンプル アプリとコード デモを参考にして、C# と Xamarin でモバイル アプリを構築してみてください。'
   menu:
     items:
-    - href: https://developer.xamarin.com/samples/
-      text: すべての Xamarin サンプル
+      - href: 'https://developer.xamarin.com/samples/'
+        text: すべての Xamarin サンプル
 sections:
-- title: 開始するには
-  items:
-  - type: list
-    style: cards
-    className: cardsW
+  - title: 開始するには
     items:
-    - href: https://developer.xamarin.com/samples/xamarin-forms/Todo/
-      html: このサンプルは、データがローカルの SQLite データベースに格納され、アクセスされ、Xamarin.Forms で構築された Todo リスト アプリケーションの例です。
-      image:
-        src: images/todo.png
-        href: https://developer.xamarin.com/samples/xamarin-forms/Todo/
-      title: Todo
-    - href: https://github.com/xamarinhq/app-myshoppe
-      html: 販売員が販売成績を把握したり、潜在顧客を管理したり、連絡先を表示したり、注文を管理したり、製品カタログを参照したりできるようにするデモ アプリです。
-      image:
-        src: images/myshoppe.png
-        href: https://github.com/xamarinhq/app-myshoppe
-      title: My Shoppe
-    - href: https://github.com/xamarin/app-crm
-      html: 販売員が販売成績を把握したり、潜在顧客を管理したり、連絡先を表示したり、注文を管理したり、製品カタログを参照したりできるようにするデモ アプリです。
-      image:
-        src: images/crm.png
-        href: https://github.com/xamarin/app-crm
-      title: Xamarin CRM
-- title: Azure & Enterprise
-  items:
-  - type: list
-    style: cards
-    className: cardsW
+      - type: list
+        style: cards
+        className: cardsW
+        items:
+          - href: 'https://developer.xamarin.com/samples/xamarin-forms/Todo/'
+            html: このサンプルは、データがローカルの SQLite データベースに格納され、アクセスされ、Xamarin.Forms で構築された Todo リスト アプリケーションの例です。
+            image:
+              src: images/todo.png
+              href: 'https://developer.xamarin.com/samples/xamarin-forms/Todo/'
+            title: Todo
+          - href: 'https://github.com/xamarinhq/app-myshoppe'
+            html: 販売員が販売成績を把握したり、潜在顧客を管理したり、連絡先を表示したり、注文を管理したり、製品カタログを参照したりできるようにするデモ アプリです。
+            image:
+              src: images/myshoppe.png
+              href: 'https://github.com/xamarinhq/app-myshoppe'
+            title: My Shoppe
+          - href: 'https://github.com/xamarin/app-crm'
+            html: 販売員が販売成績を把握したり、潜在顧客を管理したり、連絡先を表示したり、注文を管理したり、製品カタログを参照したりできるようにするデモ アプリです。
+            image:
+              src: images/crm.png
+              href: 'https://github.com/xamarin/app-crm'
+            title: Xamarin CRM
+  - title: Azure & Enterprise
     items:
-    - href: https://github.com/xamarinhq/app-acquaint/
-      html: 詳細と編集の画面が含まれる、連絡先リストのアプリです。 ソース コードは、Xamarin.Forms と Xamarin のネイティブ実装の両方で使用できます。
-      image:
-        src: images/acquaint.jpg
-        href: https://github.com/xamarinhq/app-acquaint
-      title: Acquaint
-    - href: https://github.com/Microsoft/SmartHotel360-mobile-desktop-apps
-      html: Xamarin と Azure を含むアプリ スイートを構築する Connect 2017 のデモです。
-      image:
-        src: images/smarthotel360.png
-        href: https://github.com/Microsoft/SmartHotel360-mobile-desktop-apps
-      title: SmartHotel360
-    - href: https://github.com/Microsoft/BikeSharing360_MobileApps
-      html: Xamarin と Azure を含むアプリ スイートを構築する Connect 2016 のデモです。
-      image:
-        src: images/bikesharing360.png
-        href: https://github.com/Microsoft/BikeSharing360_MobileApps
-      title: BikeSharing360
-    - href: https://github.com/dotnet-architecture/eShopOnContainers/tree/dev/src/Mobile
-      html: Azure でコンテナーを使用してアプリを構築するためのエンタープライズ アーキテクチャ ガイダンスです。
-      image:
-        src: images/eshop.png
-        href: https://github.com/dotnet-architecture/eShopOnContainers/tree/dev/src/Mobile
-      title: eShop
-- title: すべてのサンプル
-  items:
-  - type: list
-    style: cards
-    className: cardsW
+      - type: list
+        style: cards
+        className: cardsW
+        items:
+          - href: 'https://github.com/xamarinhq/app-acquaint/'
+            html: 詳細と編集の画面が含まれる、連絡先リストのアプリです。 ソース コードは、Xamarin.Forms と Xamarin のネイティブ実装の両方で使用できます。
+            image:
+              src: images/acquaint.jpg
+              href: 'https://github.com/xamarinhq/app-acquaint'
+            title: Acquaint
+          - href: 'https://github.com/Microsoft/SmartHotel360-mobile-desktop-apps'
+            html: Xamarin と Azure を含むアプリ スイートを構築する Connect 2017 のデモです。
+            image:
+              src: images/smarthotel360.png
+              href: 'https://github.com/Microsoft/SmartHotel360-mobile-desktop-apps'
+            title: SmartHotel360
+          - href: 'https://github.com/Microsoft/BikeSharing360_MobileApps'
+            html: Xamarin と Azure を含むアプリ スイートを構築する Connect 2016 のデモです。
+            image:
+              src: images/bikesharing360.png
+              href: 'https://github.com/Microsoft/BikeSharing360_MobileApps'
+            title: BikeSharing360
+          - href: 'https://github.com/dotnet-architecture/eShopOnContainers/tree/dev/src/Mobile'
+            html: Azure でコンテナーを使用してアプリを構築するためのエンタープライズ アーキテクチャ ガイダンスです。
+            image:
+              src: images/eshop.png
+              href: 'https://github.com/dotnet-architecture/eShopOnContainers/tree/dev/src/Mobile'
+            title: eShop
+  - title: すべてのサンプル
     items:
-    - href: https://developer.xamarin.com/samples/
-      html: すべての Xamarin クロスプラットフォーム サンプル アプリとコード デモです。
-      image:
-        src: ~/media/shared/sample-download.svg
-        href: https://developer.xamarin.com/samples/
-      title: すべての Xamarin サンプル
+      - type: list
+        style: cards
+        className: cardsW
+        items:
+          - href: 'https://developer.xamarin.com/samples/'
+            html: すべての Xamarin クロスプラットフォーム サンプル アプリとコード デモです。
+            image:
+              src: ~/media/shared/sample-download.svg
+              href: 'https://developer.xamarin.com/samples/'
+            title: すべての Xamarin サンプル

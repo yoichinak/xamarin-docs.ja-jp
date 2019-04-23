@@ -7,64 +7,58 @@ metadata:
   ms.author: crdun
   ms.date: 02/17/2018
   ms.topic: sample
-  ms.openlocfilehash: 9a22147adbcd59fe7168af8e717d065d6d27b85e
-  ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
-  ms.translationtype: HT
-  ms.contentlocale: ja-JP
-  ms.lasthandoff: 04/04/2018
-  ms.locfileid: "30776132"
 abstract:
-  description: Xamarin iOS のサンプル アプリとコード デモを参考にして、C# と Xamarin でモバイル アプリを構築してみてください。
+  description: 'Xamarin iOS のサンプル アプリとコード デモを参考にして、C# と Xamarin でモバイル アプリを構築してみてください。'
   menu:
     items:
-    - href: https://developer.xamarin.com/samples/ios/all/
-      text: すべての Xamarin.iOS サンプル
+      - href: 'https://developer.xamarin.com/samples/ios/all/'
+        text: すべての Xamarin.iOS サンプル
 sections:
-- title: 
-  items:
-  - type: list
-    style: cards
-    className: cardsW
+  - title: null
     items:
-    - href: https://developer.xamarin.com/samples/monotouch/ios11/ARKitPlacingObjects/
-      html: 検出された表面にオブジェクトを配置する、ARKit を使用した拡張現実のデモです。
-      image:
-        src: images/arkit.png
-        href: https://developer.xamarin.com/samples/monotouch/ios11/ARKitPlacingObjects/
-      title: ARKit (iOS 11)
-    - href: https://developer.xamarin.com/samples/monotouch/ios11/MapKitSample/
-      html: 'iOS 11 での MapKit の新機能: ズーム レベルに基づいてマーカーをグループ化したり分割したりできます。'
-      image:
-        src: images/mapkit.png
-        href: https://developer.xamarin.com/samples/monotouch/ios11/MapKitSample/
-      title: MapKit (iOS 11)
-    - href: https://developer.xamarin.com/samples/monotouch/ios11/CoreMLAzureModel/
-      html: Azure の Custom Vision Service でトレーニングされたモデルを使用する、iOS 11 の Vision.framework と CoreML。
-      image:
-        src: images/coremlazure.png
-        href: https://developer.xamarin.com/samples/monotouch/ios11/CoreMLAzureModel/
-      title: CoreML と Azure (iOS 11)
-    - href: https://developer.xamarin.com/samples/monotouch/ios9/QuickContacts/
-      html: ContactsUI のビュー コントローラーとプロパティの使用方法です。
-      image:
-        src: images/contacts.png
-        href: https://developer.xamarin.com/samples/monotouch/ios9/QuickContacts/
-      title: QuickContacts
-    - href: https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/
-      html: watchOS で使用できる UI コントロール スイートです。
-      image:
-        src: images/watchos.png
-        href: https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/
-      title: WatchKit カタログ
-    - href: https://developer.xamarin.com/samples/monotouch/tvos/UICatalog/
-      html: tvOS の UIKit フレームワークで多くのビューとコントロールを使用する方法を示します。
-      image:
-        src: images/tvosui.png
-        href: https://developer.xamarin.com/samples/monotouch/tvos/UICatalog/
-      title: tvOS UI カタログ
-    - href: https://developer.xamarin.com/samples/ios/all/
-      html: すべての Xamarin.iOS サンプル アプリとコード デモです。
-      image:
-        src: ~/media/shared/sample-download.svg
-        href: https://developer.xamarin.com/samples/ios/all/
-      title: すべての Xamarin.iOS サンプル
+      - type: list
+        style: cards
+        className: cardsW
+        items:
+          - href: 'https://developer.xamarin.com/samples/monotouch/ios11/ARKitPlacingObjects/'
+            html: 検出された表面にオブジェクトを配置する、ARKit を使用した拡張現実のデモです。
+            image:
+              src: images/arkit.png
+              href: 'https://developer.xamarin.com/samples/monotouch/ios11/ARKitPlacingObjects/'
+            title: ARKit (iOS 11)
+          - href: 'https://developer.xamarin.com/samples/monotouch/ios11/MapKitSample/'
+            html: 'iOS 11 での MapKit の新機能: ズーム レベルに基づいてマーカーをグループ化したり分割したりできます。'
+            image:
+              src: images/mapkit.png
+              href: 'https://developer.xamarin.com/samples/monotouch/ios11/MapKitSample/'
+            title: MapKit (iOS 11)
+          - href: 'https://developer.xamarin.com/samples/monotouch/ios11/CoreMLAzureModel/'
+            html: Azure の Custom Vision Service でトレーニングされたモデルを使用する、iOS 11 の Vision.framework と CoreML。
+            image:
+              src: images/coremlazure.png
+              href: 'https://developer.xamarin.com/samples/monotouch/ios11/CoreMLAzureModel/'
+            title: CoreML と Azure (iOS 11)
+          - href: 'https://developer.xamarin.com/samples/monotouch/ios9/QuickContacts/'
+            html: ContactsUI のビュー コントローラーとプロパティの使用方法です。
+            image:
+              src: images/contacts.png
+              href: 'https://developer.xamarin.com/samples/monotouch/ios9/QuickContacts/'
+            title: QuickContacts
+          - href: 'https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/'
+            html: watchOS で使用できる UI コントロール スイートです。
+            image:
+              src: images/watchos.png
+              href: 'https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/'
+            title: WatchKit カタログ
+          - href: 'https://developer.xamarin.com/samples/monotouch/tvos/UICatalog/'
+            html: tvOS の UIKit フレームワークで多くのビューとコントロールを使用する方法を示します。
+            image:
+              src: images/tvosui.png
+              href: 'https://developer.xamarin.com/samples/monotouch/tvos/UICatalog/'
+            title: tvOS UI カタログ
+          - href: 'https://developer.xamarin.com/samples/ios/all/'
+            html: すべての Xamarin.iOS サンプル アプリとコード デモです。
+            image:
+              src: ~/media/shared/sample-download.svg
+              href: 'https://developer.xamarin.com/samples/ios/all/'
+            title: すべての Xamarin.iOS サンプル

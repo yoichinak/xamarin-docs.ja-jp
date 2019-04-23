@@ -1,10 +1,4 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 68a999cae8d3eb1113805a8876fc0e2928f0003e
-ms.sourcegitcommit: 2868c968f418cd7cc110f9664f3c3ffb6df1f9af
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53267314"
 documentType: LandingData
 title: Xamarin.Android
 metadata:
@@ -15,110 +9,110 @@ metadata:
   ms.topic: landing-page
   ms.technology: xamarin-android
 abstract:
-  description: Xamarin.Android は、.NET 開発者向けに Android SDK 全体を公開しています。 Visual Studio で C# または F# を使用して、完全にネイティブな Android アプリを構築できます。
+  description: 'Xamarin.Android は、.NET 開発者向けに Android SDK 全体を公開しています。 Visual Studio で C# または F# を使用して、完全にネイティブな Android アプリを構築できます。'
   menu:
     items:
-    - href: ~/android/samples/
-      text: Android のサンプル
-    - href: https://docs.microsoft.com/xamarin/android/release-notes/
-      text: リリース ノート
-    - href: https://developers.google.com/
-      text: Google の開発者向けドキュメント
-    - href: /visualstudio/
-      text: Visual Studio
+      - href: ~/android/samples/
+        text: Android のサンプル
+      - href: 'https://docs.microsoft.com/xamarin/android/release-notes/'
+        text: リリース ノート
+      - href: 'https://developers.google.com/'
+        text: Google の開発者向けドキュメント
+      - href: /visualstudio/
+        text: Visual Studio
 sections:
-- title: 開始するには
-  items:
-  - type: paragraph
-    text: Xamarin と C# で最初の Android アプリを構築する方法について説明します。
-  - type: list
-    style: icon48
+  - title: 開始するには
     items:
-    - image:
-        src: https://docs.microsoft.com/media/common/i_setup.svg
-      text: セットアップ
-      href: ~/android/get-started/installation/index.md
-    - image:
-        src: https://docs.microsoft.com/media/common/i_mobileapp.svg
-      text: Hello, Android
-      href: ~/android/get-started/hello-android/hello-android-quickstart.md
-    - image:
-        src: https://docs.microsoft.com/media/common/i_mobileapp.svg
-      text: マルチスクリーン アプリ
-      href: ~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-quickstart.md
-    - image:
-        src: https://docs.microsoft.com/media/common/i_mobile-app-developement.svg
-      text: Android Pie
-      href: ~/android/platform/pie.md
-- title: ガイド
-  items:
-  - type: list
-    style: cards
-    className: cardsB
+      - type: paragraph
+        text: 'Xamarin と C# で最初の Android アプリを構築する方法について説明します。'
+      - type: list
+        style: icon48
+        items:
+          - image:
+              src: 'https://docs.microsoft.com/media/common/i_setup.svg'
+            text: セットアップ
+            href: ~/android/get-started/installation/index.md
+          - image:
+              src: 'https://docs.microsoft.com/media/common/i_mobileapp.svg'
+            text: 'Hello, Android'
+            href: ~/android/get-started/hello-android/hello-android-quickstart.md
+          - image:
+              src: 'https://docs.microsoft.com/media/common/i_mobileapp.svg'
+            text: マルチスクリーン アプリ
+            href: ~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-quickstart.md
+          - image:
+              src: 'https://docs.microsoft.com/media/common/i_mobile-app-developement.svg'
+            text: Android Pie
+            href: ~/android/platform/pie.md
+  - title: ガイド
     items:
-    - href: ~/android/get-started/index.md
-      html: すぐに Xamarin.Android を活用できるようになるチュートリアルです。 インストールがすべて完了していることを確認し、最初の Mac アプリを構築してみましょう。
-      image:
-        src: https://docs.microsoft.com/media/common/i_get-started.svg
-        href: ~/android/get-started/index.md
-      title: 作業の開始
-    - href: ~/android/app-fundamentals/
-      html: ファイル、画像、データベースの扱いなど、Android アプリを構築するために必要なすべての情報を説明します。
-      image:
-        src: ~/media/icons/i_app-build.svg
-        href: ~/android/app-fundamentals/
-      title: アプリケーションの基礎
-    - href: ~/android/user-interface
-      html: Android で使用できるすべてのユーザー インターフェイス コントロール ウィジェットについて説明します。
-      image:
-        src: ~/media/icons/i_user-interface.svg
-        href: ~/android/user-interface/
-      title: ユーザー インターフェイス
-    - href: ~/android/platform/
-      html: 指紋認証などの Android プラットフォーム機能、Android 8.0 Oreo の最新機能について説明します。
-      image:
-        src: ~/media/icons/i_platform.svg
-        href: ~/android/platform/
-      title: プラットフォーム機能
-    - href: ~/essentials/index.md?context=xamarin/android
-      html: モバイル アプリケーション用のクロスプラットフォーム API。
-      image:
-        src: https://docs.microsoft.com/media/common/i_multi-connect.svg
-        href: ~/essentials/index.md?context=xamarin/android
-      title: Xamarin.Essentials
-    - href: ~/android/data-cloud/
-      html: ローカル データとリモートデータの格納と取得、その他のクラウド ベースのサービスについて説明します。
-      image:
-        src: ~/media/icons/i_data-cloud.svg
-        href: ~/android/data-cloud/
-      title: データとクラウド サービス
-    - href: ~/android/deploy-test/
-      html: アプリを構築して Google Play に配置する手順と、事前にテストする場合のヒントについて説明します。
-      image:
-        src: ~/media/icons/i_deploy-test.svg
-        href: ~/android/deploy-test/
-      title: 配置とテスト
-    - href: ~/android/internals/
-      html: Xamarin.Android の内部構造の詳細と、ローカライズやアクセシビリティなどの機能について説明します。
-      image:
-        src: https://docs.microsoft.com/media/common/i_advanced.svg
-        href: ~/android/internals/
-      title: 高度な概念と内部構造
-    - href: ~/android/wear/
-      html: Android Wear 用アプリを構築します。
-      image:
-        src: ~/media/icons/i_android-wear.svg
-        href: ~/android/wear/
-      title: Android Wear
-- title: 参照
-  items:
-  - type: list
-    style: cards
-    className: cardsD
+      - type: list
+        style: cards
+        className: cardsB
+        items:
+          - href: ~/android/get-started/index.md
+            html: すぐに Xamarin.Android を活用できるようになるチュートリアルです。 インストールがすべて完了していることを確認し、最初の Mac アプリを構築してみましょう。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_get-started.svg'
+              href: ~/android/get-started/index.md
+            title: 作業の開始
+          - href: ~/android/app-fundamentals/
+            html: ファイル、画像、データベースの扱いなど、Android アプリを構築するために必要なすべての情報を説明します。
+            image:
+              src: ~/media/icons/i_app-build.svg
+              href: ~/android/app-fundamentals/
+            title: アプリケーションの基礎
+          - href: ~/android/user-interface
+            html: Android で使用できるすべてのユーザー インターフェイス コントロール ウィジェットについて説明します。
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: ~/android/user-interface/
+            title: ユーザー インターフェイス
+          - href: ~/android/platform/
+            html: 指紋認証などの Android プラットフォーム機能、Android 8.0 Oreo の最新機能について説明します。
+            image:
+              src: ~/media/icons/i_platform.svg
+              href: ~/android/platform/
+            title: プラットフォーム機能
+          - href: ~/essentials/index.md?context=xamarin/android
+            html: モバイル アプリケーション用のクロスプラットフォーム API。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_multi-connect.svg'
+              href: ~/essentials/index.md?context=xamarin/android
+            title: Xamarin.Essentials
+          - href: ~/android/data-cloud/
+            html: ローカル データとリモートデータの格納と取得、その他のクラウド ベースのサービスについて説明します。
+            image:
+              src: ~/media/icons/i_data-cloud.svg
+              href: ~/android/data-cloud/
+            title: データとクラウド サービス
+          - href: ~/android/deploy-test/
+            html: アプリを構築して Google Play に配置する手順と、事前にテストする場合のヒントについて説明します。
+            image:
+              src: ~/media/icons/i_deploy-test.svg
+              href: ~/android/deploy-test/
+            title: 配置とテスト
+          - href: ~/android/internals/
+            html: Xamarin.Android の内部構造の詳細と、ローカライズやアクセシビリティなどの機能について説明します。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_advanced.svg'
+              href: ~/android/internals/
+            title: 高度な概念と内部構造
+          - href: ~/android/wear/
+            html: Android Wear 用アプリを構築します。
+            image:
+              src: ~/media/icons/i_android-wear.svg
+              href: ~/android/wear/
+            title: Android Wear
+  - title: 関連項目
     items:
-    - title: API
-      href: https://developer.xamarin.com/api/root/MonoAndroid-lib/
-      html: <p><a href="https://developer.xamarin.com/api/root/MonoAndroid-lib/">Android API ドキュメント</a></p><p><a href="https://docs.microsoft.com/dotnet/api/?view=xamarinandroid-7.1">基本クラス ライブラリ</a></p>
-    - title: サンプル
-      href: https://developer.xamarin.com/samples/android/all/
-      html: <p><a href="https://developer.xamarin.com/samples/android/all/">Android のサンプル</a></p>
+      - type: list
+        style: cards
+        className: cardsD
+        items:
+          - title: API
+            href: 'https://developer.xamarin.com/api/root/MonoAndroid-lib/'
+            html: '<p><a href="https://developer.xamarin.com/api/root/MonoAndroid-lib/">Android API ドキュメント</a></p><p><a href="https://docs.microsoft.com/dotnet/api/?view=xamarinandroid-7.1">基本クラス ライブラリ</a></p>'
+          - title: サンプル
+            href: 'https://developer.xamarin.com/samples/android/all/'
+            html: '<p><a href="https://developer.xamarin.com/samples/android/all/">Android のサンプル</a></p>'

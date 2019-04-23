@@ -1,93 +1,86 @@
-items:
 - name: 開始するには
   href: index.yml
-  items:
-  - name: 要件
-    href: requirements.md
-  - name: インストール
-    href: installation/index.md
-    items:
-    - name: Windows での Xamarin のインストール
-      href: installation/windows.md
-      items:
-      - name: Xamarin のインストールのプレビュー (Windows)
-        href: installation/windows-preview.md
-    - name: Visual Studio for Mac のインストール
-      href: /visualstudio/mac/installation/
-      items:
-      - name: Xamarin のインストールのプレビュー (Mac)
-        href: /visualstudio/mac/update/
-    - name: Xamarin ファイアウォールの構成手順
-      href: installation/firewall.md
-    - name: Xamarin のアンインストール
-      href: installation/uninstalling-xamarin.md
-  - name: 最初のアプリ
-    href: first-app/index.md
-  - name: クイックスタート
-    href: quickstarts/index.yml
-    items:
-    - name: ファイル > 新規
-      href: quickstarts/single-page.md
-    - name: マルチページ
-      href: quickstarts/multi-page.md
-    - name: データベース
-      href: quickstarts/database.md
-    - name: '[スタイル]'
-      href: quickstarts/styling.md
-    - name: Deep Dive
-      href: quickstarts/deepdive.md
-    expanded: true
-  - name: チュートリアル
-    href: tutorials/index.yml
-    items:
-    - name: スタック レイアウト
-      href: tutorials/stacklayout/index.yml
-    - name: group1
-      href: tutorials/label/index.yml
-    - name: ボタン
-      href: tutorials/button/index.yml
-    - name: テキスト入力
-      href: tutorials/entry/index.yml
-    - name: テキスト エディター
-      href: tutorials/editor/index.yml
-    - name: イメージ
-      href: tutorials/image/index.yml
-    - name: Grid レイアウト
-      href: tutorials/grid/index.yml
-    - name: 表示内容
-      href: tutorials/listview/index.yml
-    - name: ポップアップ
-      href: tutorials/pop-ups/index.yml
-    - name: アプリのライフサイクル
-      href: tutorials/app-lifecycle/index.yml
-    - name: ローカル データベース
-      href: tutorials/local-database/index.yml
-    - name: Web サービス
-      href: tutorials/web-service/index.yml
-    expanded: true
-  - name: Xamarin について学習する
-    items:
-    - name: ネイティブ アプリ
-      href: ~/cross-platform/get-started/introduction-to-mobile-development.md
-    - name: .NET 開発者
-      href: ~/cross-platform/desktop/index.md
-    - name: ASP.NET 開発者
-      href: ~/cross-platform/desktop/index.md
-    - name: Java 開発者
-      href: ~/android/get-started/java-developers.md
-    - name: Swift 開発者
-      href: ~/ios/get-started/objective-c-developers/index.md
-    - name: Objective-C 開発者
-      href: ~/ios/get-started/objective-c-developers/index.md
-    - name: Azure
-      href: ~/xamarin-forms/data-cloud/index.md
-    expanded: true
-  - name: 開発ガイダンス
-    href: ~/cross-platform/index.yml
   expanded: true
-ms.openlocfilehash: 9acbdb260877a0cb835b5f9f05fe6faa0f0a3bb0
-ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57198508"
+  items:
+    - name: 要件
+      href: requirements.md
+    - name: インストール
+      href: installation/index.md
+      items:
+        - name: Windows での Xamarin のインストール
+          href: installation/windows.md
+          items:
+            - name: Xamarin のインストールのプレビュー (Windows)
+              href: installation/windows-preview.md
+        - name: Visual Studio for Mac のインストール
+          href: /visualstudio/mac/installation/
+          items:
+            - name: Xamarin のインストールのプレビュー (Mac)
+              href: /visualstudio/mac/update/
+        - name: Xamarin ファイアウォールの構成手順
+          href: installation/firewall.md
+        - name: Xamarin のアンインストール
+          href: installation/uninstalling-xamarin.md
+    - name: 最初のアプリ
+      href: first-app/index.md
+    - name: クイックスタート
+      href: quickstarts/index.yml
+      expanded: true
+      items:
+        - name: ファイル > 新規
+          href: quickstarts/single-page.md
+        - name: マルチページ
+          href: quickstarts/multi-page.md
+        - name: データベース
+          href: quickstarts/database.md
+        - name: '[スタイル]'
+          href: quickstarts/styling.md
+        - name: Deep Dive
+          href: quickstarts/deepdive.md
+    - name: チュートリアル
+      href: tutorials/index.yml
+      expanded: true
+      items:
+        - name: スタック レイアウト
+          href: tutorials/stacklayout/index.yml
+        - name: group1
+          href: tutorials/label/index.yml
+        - name: ボタン
+          href: tutorials/button/index.yml
+        - name: テキスト入力
+          href: tutorials/entry/index.yml
+        - name: テキスト エディター
+          href: tutorials/editor/index.yml
+        - name: イメージ
+          href: tutorials/image/index.yml
+        - name: Grid レイアウト
+          href: tutorials/grid/index.yml
+        - name: 表示内容
+          href: tutorials/listview/index.yml
+        - name: ポップアップ
+          href: tutorials/pop-ups/index.yml
+        - name: アプリのライフサイクル
+          href: tutorials/app-lifecycle/index.yml
+        - name: ローカル データベース
+          href: tutorials/local-database/index.yml
+        - name: Web サービス
+          href: tutorials/web-service/index.yml
+    - name: Xamarin について学習する
+      expanded: true
+      items:
+        - name: ネイティブ アプリ
+          href: ~/cross-platform/get-started/introduction-to-mobile-development.md
+        - name: .NET 開発者
+          href: ~/cross-platform/desktop/index.md
+        - name: ASP.NET 開発者
+          href: ~/cross-platform/desktop/index.md
+        - name: Java 開発者
+          href: ~/android/get-started/java-developers.md
+        - name: Swift 開発者
+          href: ~/ios/get-started/objective-c-developers/index.md
+        - name: Objective-C 開発者
+          href: ~/ios/get-started/objective-c-developers/index.md
+        - name: Azure
+          href: ~/xamarin-forms/data-cloud/index.md
+    - name: 開発ガイダンス
+      href: ~/cross-platform/index.yml

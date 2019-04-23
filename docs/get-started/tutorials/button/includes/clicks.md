@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: d1f7d209eaaca62a55b768646f51024609057a63
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61372975"
+---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 1. **MainPage.xaml** で、[`Clicked`](xref:Xamarin.Forms.Button.Clicked) イベント用のハンドラーを設定するように [`Button`](xref:Xamarin.Forms.Button) 宣言を変更します。

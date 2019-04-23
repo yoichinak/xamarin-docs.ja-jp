@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: d6dbc82e56959399c2befb6a12f0a2cf3793ee5b
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61382570"
+---
 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 内の子ビューのサイズと位置は、子ビューの [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) プロパティと [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) プロパティの値、および [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) プロパティと [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) プロパティの値によって異なります。
 
 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) プロパティと [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) プロパティは、2 つのレイアウト設定をカプセル化する [`LayoutOptions`](xref:Xamarin.Forms.LayoutOptions) 構造体のフィールドに設定できます。

@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: f0c07199a8f839d8dc9d334ae06c96a9b363c36e
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61388885"
+---
 REST 要求は、Web ブラウザーがページの取得やサーバーへのデータ送信に使用するのと同じ HTTP 動詞を使用して HTTP 経由で行われます。 この演習では、GET 動詞を使用して [OpenWeatherMap](https://openweathermap.org/) Web API からデータを取得するクラスを作成します。 この Web API は、指定された場所の天気予報データを取得するために使用できます。 この Web API を使用するには、API キーにサインアップする必要があります。
 
 > [!div class="nextstepaction"]

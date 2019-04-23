@@ -1,234 +1,227 @@
-items:
 - name: Xamarin.Mac
   href: index.yml
-  items:
-  - name: 開始するには
-    href: get-started/index.md
-    items:
-    - name: インストール
-      href: /visualstudio/mac/installation/
-    - name: Hello Mac
-      href: get-started/hello-mac.md
-    - name: 関連ドキュメント
-      href: get-started/related.md
-    expanded: true
-  - name: アプリケーションの基礎
-    href: app-fundamentals/index.md
-    items:
-    - name: ユーザー補助
-      href: app-fundamentals/accessibility.md
-    - name: 一般的なパターンと成句
-      href: app-fundamentals/patterns.md
-    - name: コンソール アプリ
-      href: app-fundamentals/console.md
-    - name: macOS API
-      href: app-fundamentals/mac-apis.md
-    - name: .xib ファイル
-      href: app-fundamentals/xib.md
-    - name: .storyboard/.xib-less ユーザー インターフェイスの設計
-      href: app-fundamentals/xibless-ui.md
-    - name: イメージ
-      href: app-fundamentals/image.md
-    - name: データ バインディングとキー値コーディング
-      href: app-fundamentals/databinding.md
-    - name: Databases
-      href: app-fundamentals/databases.md
-    - name: コピーと貼り付け
-      href: app-fundamentals/copy-paste.md
-    - name: Xamarin.Mac アプリのサンドボックス化
-      href: app-fundamentals/sandboxing.md
-    - name: AVAudioPlayer でのサウンドの再生
-      href: app-fundamentals/sounds.md
-  - name: ユーザー インターフェイス
-    href: user-interface/index.md
-    items:
-    - name: Windows
-      href: user-interface/window.md
-    - name: ダイアログ
-      href: user-interface/dialog.md
-    - name: アラート
-      href: user-interface/alert.md
-    - name: メニュー
-      href: user-interface/menu.md
-    - name: 標準コントロール
-      href: user-interface/standard-controls.md
-    - name: ツールバー
-      href: user-interface/toolbar.md
-    - name: テーブル ビュー
-      href: user-interface/table-view.md
-    - name: アウトライン ビュー
-      href: user-interface/outline-view.md
-    - name: ソース リスト
-      href: user-interface/source-list.md
-    - name: コレクション ビュー
-      href: user-interface/collection-view.md
-    - name: カスタム コントロールの作成
-      href: user-interface/custom-controls.md
-  - name: プラットフォーム機能
-    href: platform/index.md
-    items:
-    - name: macOS Mojave の概要
-      href: platform/introduction-to-macos-mojave/index.md
-      items:
-      - name: 作業の開始
-        href: platform/introduction-to-macos-mojave/get-started.md
-    - name: macOS High Sierra の概要
-      href: platform/introduction-to-macos-high-sierra/index.md
-    - name: macOS Sierra の概要
-      href: platform/introduction-to-macos-sierra/index.md
-      items:
-      - name: 最新の macOS アプリの構築
-        href: platform/introduction-to-macos-sierra/modern-cocoa-apps.md
-      - name: 追加の macOS Sierra フレームワークの変更
-        href: platform/introduction-to-macos-sierra/additional-framework-changes.md
-      - name: トラブルシューティング
-        href: platform/introduction-to-macos-sierra/troubleshooting.md
-    - name: Mac ライブラリのバインド
-      href: platform/binding.md
-    - name: OpenTK の概要
-      href: platform/opentk.md
-    - name: ストーリーボードの概要
-      href: platform/storyboards/index.md
-      items:
-      - name: ストーリーボードのクイック スタート
-        href: platform/storyboards/quickstart.md
-      - name: ストーリーボードの使用
-        href: platform/storyboards/indepth.md
-    - name: Xamarin.Mac 拡張機能のサポート
-      href: platform/extensions.md
-    - name: '[対象とする Framework]'
-      href: platform/target-framework.md
-  - name: 配置とテスト
-    href: deploy-test/index.md
-    items:
-    - name: アプリケーション アイコン
-      href: deploy-test/app-icon.md
-    - name: ネイティブ クラッシュのデバッグ
-      href: deploy-test/debugging-native-crash.md
-    - name: リンカー
-      href: deploy-test/linker.md
-    - name: パフォーマンス
-      href: deploy-test/performance.md
-    - name: App Store への発行
-      href: deploy-test/publishing-to-the-app-store/index.md
-      items:
-      - name: 証明書と ID
-        href: deploy-test/publishing-to-the-app-store/certificates-identifiers.md
-      - name: プロビジョニング プロファイル
-        href: deploy-test/publishing-to-the-app-store/profiles.md
-      - name: Mac アプリの構成
-        href: deploy-test/publishing-to-the-app-store/app-configuration.md
-      - name: Developer ID を使用して署名する
-        href: deploy-test/publishing-to-the-app-store/signing.md
-      - name: Mac App Store 用のバンドル
-        href: deploy-test/publishing-to-the-app-store/bundling.md
-      - name: Mac App Store へのアップロード
-        href: deploy-test/publishing-to-the-app-store/uploading.md
-  - name: Apple プラットフォーム
-    href: ~/cross-platform/macios/index.md?context=xamarin/mac
-    items:
-    - name: Apple のアカウント管理
-      href: ~/cross-platform/macios/apple-account-management.md?context=xamarin/mac
-    - name: Unified API
-      href: ~/cross-platform/macios/unified/index.md?context=xamarin/mac
-      items:
-      - name: 概要
-        href: ~/cross-platform/macios/unified/overview.md?context=xamarin/mac
-      - name: 既存のアプリの更新
-        href: ~/cross-platform/macios/unified/updating-apps.md?context=xamarin/mac
-      - name: 既存の iOS アプリの更新
-        href: ~/cross-platform/macios/unified/updating-ios-apps.md?context=xamarin/mac
-      - name: 既存の Mac アプリの更新
-        href: ~/cross-platform/macios/unified/updating-mac-apps.md?context=xamarin/mac
-      - name: 既存の Xamarin.Forms アプリの更新
-        href: ~/cross-platform/macios/unified/updating-xamarin-forms-apps.md?context=xamarin/mac
-      - name: バインドの Unified API への移行
-        href: ~/cross-platform/macios/unified/update-binding.md?context=xamarin/mac
-      - name: コードを Unified API に更新する場合のヒント
-        href: ~/cross-platform/macios/unified/updating-tips.md?context=xamarin/mac
-    - name: Objective-C のバインディング
-      href: ~/cross-platform/macios/binding/index.md?context=xamarin/mac
-      items:
-      - name: 概要
-        href: ~/cross-platform/macios/binding/overview.md?context=xamarin/mac
-      - name: Objective-C ライブラリのバインド
-        href: ~/cross-platform/macios/binding/objective-c-libraries.md?context=xamarin/mac
-      - name: 型のバインド リファレンス
-        href: ~/cross-platform/macios/binding/binding-types-reference.md?context=xamarin/mac
-      - name: Objective Sharpie
-        href: ~/cross-platform/macios/binding/objective-sharpie/index.md?context=xamarin/mac
-        items:
-        - name: 作業の開始
-          href: ~/cross-platform/macios/binding/objective-sharpie/get-started.md?context=xamarin/mac
-        - name: ツールとコマンド
-          href: ~/cross-platform/macios/binding/objective-sharpie/tools.md?context=xamarin/mac
-        - name: フィーチャー
-          href: ~/cross-platform/macios/binding/objective-sharpie/platform/index.md?context=xamarin/mac
-          items:
-          - name: ApiDefinitions と StructsAndEnums
-            href: ~/cross-platform/macios/binding/objective-sharpie/platform/apidefinitions-structsandenums.md?context=xamarin/mac
-          - name: ネイティブ フレームワークのバインド
-            href: ~/cross-platform/macios/binding/objective-sharpie/platform/native-frameworks.md?context=xamarin/mac
-          - name: 属性の検証
-            href: ~/cross-platform/macios/binding/objective-sharpie/platform/verify.md?context=xamarin/mac
-        - name: 使用例
-          href: ~/cross-platform/macios/binding/objective-sharpie/examples/index.md?context=xamarin/mac
-          items:
-          - name: Xcode
-            href: ~/cross-platform/macios/binding/objective-sharpie/examples/xcode.md?context=xamarin/mac
-          - name: CocoaPod
-            href: ~/cross-platform/macios/binding/objective-sharpie/examples/cocoapod.md?context=xamarin/mac
-          - name: 高度 (手動)
-            href: ~/cross-platform/macios/binding/objective-sharpie/examples/advanced.md?context=xamarin/mac
-        - name: リリース履歴
-          href: ~/cross-platform/macios/binding/objective-sharpie/releases.md?context=xamarin/mac
-      - name: トラブルシューティング
-        href: ~/cross-platform/macios/binding/troubleshooting.md?context=xamarin/mac
-    - name: ネイティブ参照
-      href: ~/cross-platform/macios/native-references.md?context=xamarin/mac
-    - name: ネイティブ型
-      href: ~/cross-platform/macios/nativetypes.md?context=xamarin/mac
-    - name: 32 ビットおよび 64 ビット プラットフォームの考慮事項
-      href: ~/cross-platform/macios/32-and-64/index.md?context=xamarin/mac
-      items:
-      - name: Xamarin.Mac 統合アプリの 64 ビットへの更新
-        href: ~/cross-platform/macios/32-and-64/mac-64-bit.md?context=xamarin/mac
-    - name: クロスプラットフォーム アプリでのネイティブ型の使用
-      href: ~/cross-platform/macios/native-types-cross-platform.md?context=xamarin/mac
-    - name: HttpClient と SSL/TLS の実装セレクター
-      href: ~/cross-platform/macios/http-stack.md?context=xamarin/mac
-    - name: ビルドの最適化
-      href: ~/cross-platform/macios/optimizations.md?context=xamarin/mac
-  - name: 高度な概念と内部構造
-    href: internals/index.md
-    items:
-    - name: AOT
-      href: internals/aot.md
-    - name: 使用できるアセンブリ
-      href: ~/cross-platform/internals/available-assemblies.md?context=xamarin/mac
-    - name: Mac のアーキテクチャ
-      href: internals/architecture.md
-    - name: Xamarin.Mac のしくみ
-      href: internals/how-it-works.md
-    - name: フレームワーク
-      href: internals/frameworks.md
-    - name: レジストラー
-      href: internals/registrar.md
-  - name: トラブルシューティング
-    href: troubleshooting/index.md
-    items:
-    - name: トラブルシューティングのヒント
-      href: troubleshooting/troubleshooting.md
-    - name: エラー メッセージ (mmp)
-      href: troubleshooting/mmp-errors.md
-  - name: リリース ノート
-    href: https://docs.microsoft.com/xamarin/mac/release-notes/
-  - name: サンプル
-    href: samples/index.yml
   expanded: true
-ms.openlocfilehash: eccff6d2397c1b85bf5b17d71d13dbfa27f94277
-ms.sourcegitcommit: 2868c968f418cd7cc110f9664f3c3ffb6df1f9af
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53267496"
+  items:
+    - name: 開始するには
+      href: get-started/index.md
+      expanded: true
+      items:
+        - name: インストール
+          href: /visualstudio/mac/installation/
+        - name: Hello Mac
+          href: get-started/hello-mac.md
+        - name: 関連ドキュメント
+          href: get-started/related.md
+    - name: アプリケーションの基礎
+      href: app-fundamentals/index.md
+      items:
+        - name: ユーザー補助
+          href: app-fundamentals/accessibility.md
+        - name: 一般的なパターンと成句
+          href: app-fundamentals/patterns.md
+        - name: コンソール アプリ
+          href: app-fundamentals/console.md
+        - name: macOS API
+          href: app-fundamentals/mac-apis.md
+        - name: .xib ファイル
+          href: app-fundamentals/xib.md
+        - name: .storyboard/.xib-less ユーザー インターフェイスの設計
+          href: app-fundamentals/xibless-ui.md
+        - name: イメージ
+          href: app-fundamentals/image.md
+        - name: データ バインディングとキー値コーディング
+          href: app-fundamentals/databinding.md
+        - name: データベース
+          href: app-fundamentals/databases.md
+        - name: コピーと貼り付け
+          href: app-fundamentals/copy-paste.md
+        - name: Xamarin.Mac アプリのサンドボックス化
+          href: app-fundamentals/sandboxing.md
+        - name: AVAudioPlayer でのサウンドの再生
+          href: app-fundamentals/sounds.md
+    - name: ユーザー インターフェイス
+      href: user-interface/index.md
+      items:
+        - name: Windows
+          href: user-interface/window.md
+        - name: ダイアログ
+          href: user-interface/dialog.md
+        - name: アラート
+          href: user-interface/alert.md
+        - name: メニュー
+          href: user-interface/menu.md
+        - name: 標準コントロール
+          href: user-interface/standard-controls.md
+        - name: ツールバー
+          href: user-interface/toolbar.md
+        - name: テーブル ビュー
+          href: user-interface/table-view.md
+        - name: アウトライン ビュー
+          href: user-interface/outline-view.md
+        - name: ソース リスト
+          href: user-interface/source-list.md
+        - name: コレクション ビュー
+          href: user-interface/collection-view.md
+        - name: カスタム コントロールの作成
+          href: user-interface/custom-controls.md
+    - name: プラットフォーム機能
+      href: platform/index.md
+      items:
+        - name: macOS Mojave の概要
+          href: platform/introduction-to-macos-mojave/index.md
+          items:
+            - name: 作業の開始
+              href: platform/introduction-to-macos-mojave/get-started.md
+        - name: macOS High Sierra の概要
+          href: platform/introduction-to-macos-high-sierra/index.md
+        - name: macOS Sierra の概要
+          href: platform/introduction-to-macos-sierra/index.md
+          items:
+            - name: 最新の macOS アプリの構築
+              href: platform/introduction-to-macos-sierra/modern-cocoa-apps.md
+            - name: 追加の macOS Sierra フレームワークの変更
+              href: platform/introduction-to-macos-sierra/additional-framework-changes.md
+            - name: トラブルシューティング
+              href: platform/introduction-to-macos-sierra/troubleshooting.md
+        - name: Mac ライブラリのバインド
+          href: platform/binding.md
+        - name: OpenTK の概要
+          href: platform/opentk.md
+        - name: ストーリーボードの概要
+          href: platform/storyboards/index.md
+          items:
+            - name: ストーリーボードのクイック スタート
+              href: platform/storyboards/quickstart.md
+            - name: ストーリーボードの使用
+              href: platform/storyboards/indepth.md
+        - name: Xamarin.Mac 拡張機能のサポート
+          href: platform/extensions.md
+        - name: '[対象とする Framework]'
+          href: platform/target-framework.md
+    - name: 配置とテスト
+      href: deploy-test/index.md
+      items:
+        - name: アプリケーション アイコン
+          href: deploy-test/app-icon.md
+        - name: ネイティブ クラッシュのデバッグ
+          href: deploy-test/debugging-native-crash.md
+        - name: リンカー
+          href: deploy-test/linker.md
+        - name: パフォーマンス
+          href: deploy-test/performance.md
+        - name: App Store への発行
+          href: deploy-test/publishing-to-the-app-store/index.md
+          items:
+            - name: 証明書と ID
+              href: deploy-test/publishing-to-the-app-store/certificates-identifiers.md
+            - name: プロビジョニング プロファイル
+              href: deploy-test/publishing-to-the-app-store/profiles.md
+            - name: Mac アプリの構成
+              href: deploy-test/publishing-to-the-app-store/app-configuration.md
+            - name: Developer ID を使用して署名する
+              href: deploy-test/publishing-to-the-app-store/signing.md
+            - name: Mac App Store 用のバンドル
+              href: deploy-test/publishing-to-the-app-store/bundling.md
+            - name: Mac App Store へのアップロード
+              href: deploy-test/publishing-to-the-app-store/uploading.md
+    - name: Apple プラットフォーム
+      href: ~/cross-platform/macios/index.md?context=xamarin/mac
+      items:
+        - name: Apple のアカウント管理
+          href: ~/cross-platform/macios/apple-account-management.md?context=xamarin/mac
+        - name: Unified API
+          href: ~/cross-platform/macios/unified/index.md?context=xamarin/mac
+          items:
+            - name: 概要
+              href: ~/cross-platform/macios/unified/overview.md?context=xamarin/mac
+            - name: 既存のアプリの更新
+              href: ~/cross-platform/macios/unified/updating-apps.md?context=xamarin/mac
+            - name: 既存の iOS アプリの更新
+              href: ~/cross-platform/macios/unified/updating-ios-apps.md?context=xamarin/mac
+            - name: 既存の Mac アプリの更新
+              href: ~/cross-platform/macios/unified/updating-mac-apps.md?context=xamarin/mac
+            - name: 既存の Xamarin.Forms アプリの更新
+              href: ~/cross-platform/macios/unified/updating-xamarin-forms-apps.md?context=xamarin/mac
+            - name: バインドの Unified API への移行
+              href: ~/cross-platform/macios/unified/update-binding.md?context=xamarin/mac
+            - name: コードを Unified API に更新する場合のヒント
+              href: ~/cross-platform/macios/unified/updating-tips.md?context=xamarin/mac
+        - name: Objective-C のバインディング
+          href: ~/cross-platform/macios/binding/index.md?context=xamarin/mac
+          items:
+            - name: 概要
+              href: ~/cross-platform/macios/binding/overview.md?context=xamarin/mac
+            - name: Objective-C ライブラリのバインド
+              href: ~/cross-platform/macios/binding/objective-c-libraries.md?context=xamarin/mac
+            - name: 型のバインド リファレンス
+              href: ~/cross-platform/macios/binding/binding-types-reference.md?context=xamarin/mac
+            - name: Objective Sharpie
+              href: ~/cross-platform/macios/binding/objective-sharpie/index.md?context=xamarin/mac
+              items:
+                - name: 作業の開始
+                  href: ~/cross-platform/macios/binding/objective-sharpie/get-started.md?context=xamarin/mac
+                - name: ツールとコマンド
+                  href: ~/cross-platform/macios/binding/objective-sharpie/tools.md?context=xamarin/mac
+                - name: フィーチャー
+                  href: ~/cross-platform/macios/binding/objective-sharpie/platform/index.md?context=xamarin/mac
+                  items:
+                    - name: ApiDefinitions と StructsAndEnums
+                      href: ~/cross-platform/macios/binding/objective-sharpie/platform/apidefinitions-structsandenums.md?context=xamarin/mac
+                    - name: ネイティブ フレームワークのバインド
+                      href: ~/cross-platform/macios/binding/objective-sharpie/platform/native-frameworks.md?context=xamarin/mac
+                    - name: 属性の検証
+                      href: ~/cross-platform/macios/binding/objective-sharpie/platform/verify.md?context=xamarin/mac
+                - name: 使用例
+                  href: ~/cross-platform/macios/binding/objective-sharpie/examples/index.md?context=xamarin/mac
+                  items:
+                    - name: Xcode
+                      href: ~/cross-platform/macios/binding/objective-sharpie/examples/xcode.md?context=xamarin/mac
+                    - name: CocoaPod
+                      href: ~/cross-platform/macios/binding/objective-sharpie/examples/cocoapod.md?context=xamarin/mac
+                    - name: 高度 (手動)
+                      href: ~/cross-platform/macios/binding/objective-sharpie/examples/advanced.md?context=xamarin/mac
+                - name: リリース履歴
+                  href: ~/cross-platform/macios/binding/objective-sharpie/releases.md?context=xamarin/mac
+            - name: トラブルシューティング
+              href: ~/cross-platform/macios/binding/troubleshooting.md?context=xamarin/mac
+        - name: ネイティブ参照
+          href: ~/cross-platform/macios/native-references.md?context=xamarin/mac
+        - name: ネイティブ型
+          href: ~/cross-platform/macios/nativetypes.md?context=xamarin/mac
+        - name: 32 ビットおよび 64 ビット プラットフォームの考慮事項
+          href: ~/cross-platform/macios/32-and-64/index.md?context=xamarin/mac
+          items:
+            - name: Xamarin.Mac 統合アプリの 64 ビットへの更新
+              href: ~/cross-platform/macios/32-and-64/mac-64-bit.md?context=xamarin/mac
+        - name: クロスプラットフォーム アプリでのネイティブ型の使用
+          href: ~/cross-platform/macios/native-types-cross-platform.md?context=xamarin/mac
+        - name: HttpClient と SSL/TLS の実装セレクター
+          href: ~/cross-platform/macios/http-stack.md?context=xamarin/mac
+        - name: ビルドの最適化
+          href: ~/cross-platform/macios/optimizations.md?context=xamarin/mac
+    - name: 高度な概念と内部構造
+      href: internals/index.md
+      items:
+        - name: AOT
+          href: internals/aot.md
+        - name: 使用できるアセンブリ
+          href: ~/cross-platform/internals/available-assemblies.md?context=xamarin/mac
+        - name: Mac のアーキテクチャ
+          href: internals/architecture.md
+        - name: Xamarin.Mac のしくみ
+          href: internals/how-it-works.md
+        - name: フレームワーク
+          href: internals/frameworks.md
+        - name: レジストラー
+          href: internals/registrar.md
+    - name: トラブルシューティング
+      href: troubleshooting/index.md
+      items:
+        - name: トラブルシューティングのヒント
+          href: troubleshooting/troubleshooting.md
+        - name: エラー メッセージ (mmp)
+          href: troubleshooting/mmp-errors.md
+    - name: リリース ノート
+      href: 'https://docs.microsoft.com/xamarin/mac/release-notes/'
+    - name: サンプル
+      href: samples/index.yml

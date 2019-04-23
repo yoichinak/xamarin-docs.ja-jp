@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 93ee0681adcc63fe05b4be88ff67f0aeee3e03ca
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61384584"
+---
 イメージ ファイルをプラットフォーム プロジェクトに追加したり、Xamarin.Forms 共有コードから参照したりすることができます。 このイメージ配布方法は、イメージがプラットフォーム固有の場合に必要になります。例えば、異なるプラットフォームで異なる解像度を使用する場合や、わずかに異なるデザインを使用する場合などです。
 
 この演習では、URI からダウンロードしたイメージではなく、ローカル イメージを表示するように **ImageTutorial** ソリューションを変更します。 ローカル イメージは Xamarin のロゴです。下のボタンをクリックしてダウンロードする必要があります。

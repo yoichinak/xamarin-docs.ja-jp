@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 19afeed47f1c06c89c58dfd996d360698b19fc9c
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61373414"
+---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 1. **[MainPage.xaml]** で、[`TextChanged`](xref:Xamarin.Forms.Editor.TextChanged) イベントと [`Completed`](xref:Xamarin.Forms.Editor.Completed) イベントのハンドラーを設定するように [`Editor`](xref:Xamarin.Forms.Editor) 宣言を変更します。

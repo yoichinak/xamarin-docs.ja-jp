@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 48af50d31013f696879174a5cf108ab9fde92d0b
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61343463"
+---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 1. **[MainPage.xaml]** で、[`Entry`](xref:Xamarin.Forms.Entry) 宣言を変更して、その動作をカスタマイズします。

@@ -1,10 +1,4 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: c52714a36b204d8e92baa87f3aa7389c1b08260c
-ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57197525"
 documentType: LandingData
 title: クロスプラットフォーム ガイダンス
 metadata:
@@ -17,79 +11,79 @@ abstract:
   description: Xamarin には、モバイル、タブレット、およびデスクトップ アプリケーション向けに、クロスプラットフォーム開発ソリューションが用意されています。 このセクションでは、どのプラットフォームを対象とするかは問われません。
   menu:
     items:
-    - href: ~/cross-platform/samples/index.yml
-      text: Xamarin のサンプル
-    - href: /visualstudio/
-      text: Visual Studio
-    - href: /visualstudio/mac/
-      text: Visual Studio for Mac
+      - href: ~/cross-platform/samples/index.yml
+        text: Xamarin のサンプル
+      - href: /visualstudio/
+        text: Visual Studio
+      - href: /visualstudio/mac/
+        text: Visual Studio for Mac
 sections:
-- title: 開始するには
-  items:
-  - type: paragraph
-    text: Xamarin と C# を使用して、Android、iOS、macOS、UWP など用の最初のアプリを構築する方法について説明します。
-  - type: list
-    style: icon48
+  - title: 開始するには
     items:
-    - image:
-        src: https://docs.microsoft.com/media/common/i_setup.svg
-      text: 要件
-      href: ~/cross-platform/get-started/requirements.md
-    - image:
-        src: ~/media/icons/i_desktop-phone.svg
-      text: Xamarin.Forms
-      href: ~/get-started/quickstarts/index.md
-    - image:
-        src: https://docs.microsoft.com/media/common/i_mobileapp.svg
-      text: Android
-      href: ~/android/get-started/hello-android/hello-android-quickstart
-    - image:
-        src: https://docs.microsoft.com/media/common/i_mobile-app-developement.svg
-      text: iOS
-      href: ~/ios/get-started/hello-ios/hello-ios-quickstart.md
-    - image:
-        src: https://docs.microsoft.com/media/common/i_xplat-code.svg
-      text: Mac
-      href: ~/mac/get-started/hello-mac.md
-- title: ガイド
-  items:
-  - type: list
-    style: cards
-    className: cardsB
+      - type: paragraph
+        text: 'Xamarin と C# を使用して、Android、iOS、macOS、UWP など用の最初のアプリを構築する方法について説明します。'
+      - type: list
+        style: icon48
+        items:
+          - image:
+              src: 'https://docs.microsoft.com/media/common/i_setup.svg'
+            text: 要件
+            href: ~/cross-platform/get-started/requirements.md
+          - image:
+              src: ~/media/icons/i_desktop-phone.svg
+            text: Xamarin.Forms
+            href: ~/get-started/quickstarts/index.md
+          - image:
+              src: 'https://docs.microsoft.com/media/common/i_mobileapp.svg'
+            text: Android
+            href: ~/android/get-started/hello-android/hello-android-quickstart
+          - image:
+              src: 'https://docs.microsoft.com/media/common/i_mobile-app-developement.svg'
+            text: iOS
+            href: ~/ios/get-started/hello-ios/hello-ios-quickstart.md
+          - image:
+              src: 'https://docs.microsoft.com/media/common/i_xplat-code.svg'
+            text: Mac
+            href: ~/mac/get-started/hello-mac.md
+  - title: ガイド
     items:
-    - href: ~/cross-platform/get-started/index.md
-      html: Xamarin を使用したモバイル アプリ開発の概要。
-      image:
-        src: https://docs.microsoft.com/media/common/i_get-started.svg
-        href: ~/cross-platform/get-started/index.md
-      title: モバイル アプリの構築
-    - href: ~/cross-platform/platform
-      html: Xamarin では、C#、F#、および Razor テンプレート エンジンがサポートされます。
-      image:
-        src: ~/media/icons/i_app-build.svg
-        href: ~/cross-platform/platform
-      title: 言語サポート
-    - href: ~/cross-platform/app-fundamentals/
-      html: アプリを構築するために必要なすべての情報について説明します。
-      image:
-        src: ~/media/icons/i_platform.svg
-        href: ~/cross-platform/app-fundamentals/
-      title: コードの共有
-    - href: ~/cross-platform/deploy-test/performance.md
-      html: アプリのパフォーマンスとセキュリティのガイドラインを示します。
-      image:
-        src: https://docs.microsoft.com/media/common/i_code-performance.svg
-        href: ~/cross-platform/deploy-test/performance.md
-      title: パフォーマンスとセキュリティ
-    - href: ~/cross-platform/deploy-test/
-      html: デバッグと配置のヒントを紹介します。
-      image:
-        src: ~/media/icons/i_deploy-test.svg
-        href: ~/cross-platform/deploy-test/
-      title: 配置とデバッグ
-    - href: ~/cross-platform/desktop/
-      html: モバイル アプリの構築に関心のある .NET デスクトップ開発者向けガイダンスです。
-      image:
-        src: https://docs.microsoft.com/media/common/i_xplat-code.svg
-        href: ~/cross-platform/desktop/
-      title: デスクトップ開発者
+      - type: list
+        style: cards
+        className: cardsB
+        items:
+          - href: ~/cross-platform/get-started/index.md
+            html: Xamarin を使用したモバイル アプリ開発の概要。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_get-started.svg'
+              href: ~/cross-platform/get-started/index.md
+            title: モバイル アプリの構築
+          - href: ~/cross-platform/platform
+            html: 'Xamarin では、C#、F#、および Razor テンプレート エンジンがサポートされます。'
+            image:
+              src: ~/media/icons/i_app-build.svg
+              href: ~/cross-platform/platform
+            title: 言語サポート
+          - href: ~/cross-platform/app-fundamentals/
+            html: アプリを構築するために必要なすべての情報について説明します。
+            image:
+              src: ~/media/icons/i_platform.svg
+              href: ~/cross-platform/app-fundamentals/
+            title: コードの共有
+          - href: ~/cross-platform/deploy-test/performance.md
+            html: アプリのパフォーマンスとセキュリティのガイドラインを示します。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_code-performance.svg'
+              href: ~/cross-platform/deploy-test/performance.md
+            title: パフォーマンスとセキュリティ
+          - href: ~/cross-platform/deploy-test/
+            html: デバッグと配置のヒントを紹介します。
+            image:
+              src: ~/media/icons/i_deploy-test.svg
+              href: ~/cross-platform/deploy-test/
+            title: 配置とデバッグ
+          - href: ~/cross-platform/desktop/
+            html: モバイル アプリの構築に関心のある .NET デスクトップ開発者向けガイダンスです。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_xplat-code.svg'
+              href: ~/cross-platform/desktop/
+            title: デスクトップ開発者

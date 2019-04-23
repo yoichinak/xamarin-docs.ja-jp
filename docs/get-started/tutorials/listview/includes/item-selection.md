@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: c33db7de63a585cb6fb47aa1145aa724c9eb790f
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61037561"
+---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 1. **MainPage.xaml** で、[`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected) イベントと [`ItemTapped`](xref:Xamarin.Forms.ListView.ItemTapped) イベントのハンドラーを設定するように [`ListView`](xref:Xamarin.Forms.ListView) 宣言を変更します。

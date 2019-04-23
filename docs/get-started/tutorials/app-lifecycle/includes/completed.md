@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: b18f6d88c5694415d2082a6db112143fc421471c
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61187509"
+---
 これでこのチュートリアルは完了です。ここでは以下の方法を学習しました。
 
 > [!div class="checklist"]

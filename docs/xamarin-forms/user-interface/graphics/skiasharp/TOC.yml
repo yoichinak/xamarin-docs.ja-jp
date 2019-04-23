@@ -1,134 +1,127 @@
-items:
 - name: Xamarin.Forms での SkiaSharp グラフィックス
   href: index.md
-  items:
-  - name: 描画の基本
-    href: basics/index.md
-    items:
-    - name: 単純な円の描画
-      href: basics/circle.md
-    - name: Xamarin.Forms との統合
-      href: basics/integration.md
-    - name: ピクセル、およびデバイスに依存しない単位
-      href: basics/pixels.md
-    - name: 基本的なアニメーション
-      href: basics/animation.md
-    - name: テキストとグラフィックスの統合
-      href: basics/text.md
-    - name: ビットマップの基礎
-      href: basics/bitmaps.md
-    - name: '[透明度]'
-      href: basics/transparency.md
-    expanded: true
-  - name: 線とパス
-    href: paths/index.md
-    items:
-    - name: 線とストローク キャップ
-      href: paths/lines.md
-    - name: パスの基礎
-      href: paths/paths.md
-    - name: パスの塗りつぶしの種類
-      href: paths/fill-types.md
-    - name: 多角形やパラメーターの式
-      href: paths/polylines.md
-    - name: ドットとダッシュ
-      href: paths/dots.md
-    - name: 指による描画
-      href: paths/finger-paint.md
-  - name: 変換
-    href: transforms/index.md
-    items:
-    - name: 平行移動変換
-      href: transforms/translate.md
-    - name: スケール変換
-      href: transforms/scale.md
-    - name: 回転変換
-      href: transforms/rotate.md
-    - name: 傾斜変換
-      href: transforms/skew.md
-    - name: 行列変換
-      href: transforms/matrix.md
-    - name: タッチ操作
-      href: transforms/touch.md
-    - name: 非アフィン変換
-      href: transforms/non-affine.md
-    - name: 3 次元回転
-      displayName: Three-D Rotation
-      href: transforms/3d-rotation.md
-  - name: 曲線とパス
-    href: curves/index.md
-    items:
-    - name: 円弧を描画する 3 つの方法
-      href: curves/arcs.md
-    - name: 3 つの種類のベジエ曲線
-      href: curves/beziers.md
-    - name: SVG パス データ
-      href: curves/path-data.md
-    - name: パスおよび領域でのクリッピング
-      href: curves/clipping.md
-    - name: パスの効果
-      href: curves/effects.md
-    - name: パスとテキスト
-      href: curves/text-paths.md
-    - name: パス情報と列挙
-      href: curves/information.md
-  - name: ビットマップ
-    href: bitmaps/index.md
-    items:
-    - name: ビットマップの表示
-      href: bitmaps/displaying.md
-    - name: ビットマップの作成と描画
-      href: bitmaps/drawing.md
-    - name: ビットマップのトリミング
-      href: bitmaps/cropping.md
-    - name: ビットマップのセグメント化された表示
-      href: bitmaps/segmented.md
-    - name: ビットマップのファイルへの保存
-      href: bitmaps/saving.md
-    - name: ビットマップのピクセル ビットへのアクセス
-      href: bitmaps/pixel-bits.md
-    - name: ビットマップのアニメーション化
-      href: bitmaps/animating.md
-  - name: 効果
-    href: effects/index.md
-    items:
-    - name: シェーダー
-      href: effects/shaders/index.md
-      items:
-      - name: 線形グラデーション
-        href: effects/shaders/linear-gradient.md
-      - name: 円形グラデーション
-        href: effects/shaders/circular-gradients.md
-      - name: ビットマップのタイル
-        href: effects/shaders/bitmap-tiling.md
-      - name: ノイズ
-        href: effects/shaders/noise.md
-    - name: ブレンド モード
-      href: effects/blend-modes/index.md
-      items:
-      - name: Porter-Duff ブレンド モード
-        href: effects/blend-modes/porter-duff.md
-      - name: 分離可能なブレンド モード
-        href: effects/blend-modes/separable.md
-      - name: 分離不可能なブレンド モード
-        href: effects/blend-modes/non-separable.md
-    - name: マスク フィルター
-      href: effects/mask-filters.md
-    - name: イメージ フィルター
-      href: effects/image-filters.md
-    - name: 色フィルター
-      href: effects/color-filters.md
-  - name: プラットフォームに依存しない例
-    href: ~/graphics-games/skiasharp/introduction.md
-    items:
-    - name: プラットフォーム固有のメモ
-      href: ~/graphics-games/skiasharp/platform.md
-  - name: API リファレンス
-    href: /dotnet/api/skiasharp/
   expanded: true
-ms.openlocfilehash: 59cc8bbb28a912ae32ef189c83c5d2e4f3209f31
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50130226"
+  items:
+    - name: 描画の基本
+      href: basics/index.md
+      expanded: true
+      items:
+        - name: 単純な円の描画
+          href: basics/circle.md
+        - name: Xamarin.Forms との統合
+          href: basics/integration.md
+        - name: ピクセル、およびデバイスに依存しない単位
+          href: basics/pixels.md
+        - name: 基本的なアニメーション
+          href: basics/animation.md
+        - name: テキストとグラフィックスの統合
+          href: basics/text.md
+        - name: ビットマップの基礎
+          href: basics/bitmaps.md
+        - name: '[透明度]'
+          href: basics/transparency.md
+    - name: 線とパス
+      href: paths/index.md
+      items:
+        - name: 線とストローク キャップ
+          href: paths/lines.md
+        - name: パスの基礎
+          href: paths/paths.md
+        - name: パスの塗りつぶしの種類
+          href: paths/fill-types.md
+        - name: 多角形やパラメーターの式
+          href: paths/polylines.md
+        - name: ドットとダッシュ
+          href: paths/dots.md
+        - name: 指による描画
+          href: paths/finger-paint.md
+    - name: 変換
+      href: transforms/index.md
+      items:
+        - name: 平行移動変換
+          href: transforms/translate.md
+        - name: スケール変換
+          href: transforms/scale.md
+        - name: 回転変換
+          href: transforms/rotate.md
+        - name: 傾斜変換
+          href: transforms/skew.md
+        - name: 行列変換
+          href: transforms/matrix.md
+        - name: タッチ操作
+          href: transforms/touch.md
+        - name: 非アフィン変換
+          href: transforms/non-affine.md
+        - name: 3 次元回転
+          displayName: Three-D Rotation
+          href: transforms/3d-rotation.md
+    - name: 曲線とパス
+      href: curves/index.md
+      items:
+        - name: 円弧を描画する 3 つの方法
+          href: curves/arcs.md
+        - name: 3 つの種類のベジエ曲線
+          href: curves/beziers.md
+        - name: SVG パス データ
+          href: curves/path-data.md
+        - name: パスおよび領域でのクリッピング
+          href: curves/clipping.md
+        - name: パスの効果
+          href: curves/effects.md
+        - name: パスとテキスト
+          href: curves/text-paths.md
+        - name: パス情報と列挙
+          href: curves/information.md
+    - name: ビットマップ
+      href: bitmaps/index.md
+      items:
+        - name: ビットマップの表示
+          href: bitmaps/displaying.md
+        - name: ビットマップの作成と描画
+          href: bitmaps/drawing.md
+        - name: ビットマップのトリミング
+          href: bitmaps/cropping.md
+        - name: ビットマップのセグメント化された表示
+          href: bitmaps/segmented.md
+        - name: ビットマップのファイルへの保存
+          href: bitmaps/saving.md
+        - name: ビットマップのピクセル ビットへのアクセス
+          href: bitmaps/pixel-bits.md
+        - name: ビットマップのアニメーション化
+          href: bitmaps/animating.md
+    - name: 効果
+      href: effects/index.md
+      items:
+        - name: シェーダー
+          href: effects/shaders/index.md
+          items:
+            - name: 線形グラデーション
+              href: effects/shaders/linear-gradient.md
+            - name: 円形グラデーション
+              href: effects/shaders/circular-gradients.md
+            - name: ビットマップのタイル
+              href: effects/shaders/bitmap-tiling.md
+            - name: ノイズ
+              href: effects/shaders/noise.md
+        - name: ブレンド モード
+          href: effects/blend-modes/index.md
+          items:
+            - name: Porter-Duff ブレンド モード
+              href: effects/blend-modes/porter-duff.md
+            - name: 分離可能なブレンド モード
+              href: effects/blend-modes/separable.md
+            - name: 分離不可能なブレンド モード
+              href: effects/blend-modes/non-separable.md
+        - name: マスク フィルター
+          href: effects/mask-filters.md
+        - name: イメージ フィルター
+          href: effects/image-filters.md
+        - name: 色フィルター
+          href: effects/color-filters.md
+    - name: プラットフォームに依存しない例
+      href: ~/graphics-games/skiasharp/introduction.md
+      items:
+        - name: プラットフォーム固有のメモ
+          href: ~/graphics-games/skiasharp/platform.md
+    - name: API リファレンス
+      href: /dotnet/api/skiasharp/

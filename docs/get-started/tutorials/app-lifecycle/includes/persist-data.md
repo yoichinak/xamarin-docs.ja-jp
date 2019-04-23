@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 2c6c71f5ed46cc1cae66c5d1f412898825805cc6
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61187519"
+---
 [`Application`](xref:Xamarin.Forms.Application) サブクラスには、ライフサイクルの状態の変化を通してデータを格納するために使用できる静的 [`Properties`](xref:Xamarin.Forms.Application.Properties) ディクショナリがあります。 このディクショナリでは、`string` キーが使用され、`object` 値が格納されます。 このディクショナリはデバイスに自動的に保存され、アプリケーションの再起動時にデータが再作成されます。
 
 > [!IMPORTANT]
