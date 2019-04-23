@@ -7,18 +7,18 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 05/25/2017
-ms.openlocfilehash: cd5371cde1dfcbe3cb1aea5dbdf8439816d66d95
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 0635e110cb2aa7bc00234d3d06df57e0fd6f966e
+ms.sourcegitcommit: 6f728aa0c1775224e16c0f3e583cf843d34270f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111318"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59893232"
 ---
 # <a name="how-xamarinmac-works"></a>Xamarin.Mac のしくみ
 
 ほとんどの開発者は、ただし、内部「マジック」、Xamarin.Mac の気にする必要ことはありませんが両方の解釈既存ドキュメントでの内部でモ ノの動作の利用方法の大まかな理解をC#レンズとデバッグ問題が発生したとき。
 
-アプリケーションが 2 つの世界をブリッジする、Xamarin.Mac、: ネイティブ クラスのインスタンスを含む、Objective C ベースのランタイムがある (`NSString`、`NSApplication`など) があると、C#ランタイムのインスタンスを含むマネージ クラス (`System.String`、`HttpClient`など)。 アプリは objective-c で (セレクター) のメソッドを呼び出すことができますのでこれら 2 つの環境間 Xamarin.Mac が双方向ブリッジを作成 (など`NSApplication.Init`)、OBJECTIVE-C では、アプリを呼び出すことがC#メソッド (など、アプリケーション デリゲートのメソッド) バックアップを作成します。 使用して OBJECTIVE-C への呼び出しを透過的に処理が一般に、 **P/invoke**とランタイムのコードを Xamarin を提供します。
+Xamarin.Mac では、アプリケーションは、2 つの世界をブリッジします。ネイティブ クラスのインスタンスを含む、Objective C ベースのランタイムがある (`NSString`、`NSApplication`など) があると、C#ランタイムのインスタンスを含むマネージ クラス (`System.String`、`HttpClient`など)。 アプリは objective-c で (セレクター) のメソッドを呼び出すことができますのでこれら 2 つの環境間 Xamarin.Mac が双方向ブリッジを作成 (など`NSApplication.Init`)、OBJECTIVE-C では、アプリを呼び出すことがC#メソッド (など、アプリケーション デリゲートのメソッド) バックアップを作成します。 使用して OBJECTIVE-C への呼び出しを透過的に処理が一般に、 **P/invoke**とランタイムのコードを Xamarin を提供します。
 
 <a name="exposing-classes" />
 
@@ -120,7 +120,7 @@ Xamarin.Mac アプリで AOT コンパイルを有効にする場合に調整で
 - `core` -AOT コンパイル、 `Xamarin.Mac`、`System`と`mscorlib`アセンブリ。
 - `sdk` -AOT コンパイル、`Xamarin.Mac`と基本クラス ライブラリ (BCL) のアセンブリ。
 - `|hybrid` -上記のオプションのいずれかにこれにより、ハイブリッド AOT IL ストリッピングを使用できるがの結果になったコンパイルの時間を追加します。
-- `+` -AOT コンパイルするために 1 つが含まれています。
+- `+` -AOT コンパイルの 1 つのファイルが含まれています。
 - `-` -AOT コンパイルから 1 つのファイルを削除します。
 
 たとえば、 `--aot:all,-MyAssembly.dll` 、MonoBundle 内のアセンブリのすべての AOT コンパイルを有効にすると_を除く_`MyAssembly.dll`と`--aot:core|hybrid,+MyOtherAssembly.dll,-mscorlib.dll`ハイブリッドを有効にすると、AOT のコードを含める、 `MyOtherAssembly.dll` を除外`mscorlib.dll`.
@@ -146,7 +146,7 @@ Xamarin.iOS の 8.13 で初めて導入された一部の静的登録は両方�
 
 ### <a name="enabling-the-partial-static-registrar"></a>一部の静的なレジストラーを有効にします。
 
-ダブルクリックして Xamarin.Mac で部分的な静的レジストラーが有効になっている、**プロジェクト名**で、**ソリューション エクスプ ローラー**に移動する、 **Mac ビルド**の追加`--registrar:static`を**追加の mmp 引数:** フィールド。 例えば:
+ダブルクリックして Xamarin.Mac で部分的な静的レジストラーが有効になっている、**プロジェクト名**で、**ソリューション エクスプ ローラー**に移動する、 **Mac ビルド**の追加`--registrar:static`を**追加の mmp 引数:** フィールド。 例:
 
 ![追加の mmp 引数への部分的な静的レジストラーの追加](how-it-works-images/psr01.png "部分の静的なレジストラーを追加の mmp 引数に追加します。")
 

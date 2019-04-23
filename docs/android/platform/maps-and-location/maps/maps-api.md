@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 09/07/2018
-ms.openlocfilehash: 12ff6f615b30e53704fee6368c9d7f171f881df0
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 1889154a12a701fb4ce57ef8644699dd978f768e
+ms.sourcegitcommit: 6f728aa0c1775224e16c0f3e583cf843d34270f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57671066"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59893258"
 ---
 # <a name="using-the-google-maps-api-in-your-application"></a>アプリケーションで Google マップ API の使用
 
@@ -40,8 +40,8 @@ Xamarin.Android アプリは Google Maps Android API を使用することは前
 
 ### <a name="a-nameobtain-maps-key-obtain-a-google-maps-api-key"></a><a name="obtain-maps-key" />Google マップ API キーを入手します。
 
-最初の手順では、Google マップ API キー (従来の Google Maps v1 API から API キーを再利用できないことに注意してください) を取得します。 取得して、Xamarin.Android で API キーを使用する方法については、[A Google マップ API のキーを取得する](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)を参照してください。
- 
+最初の手順では、Google マップ API キー (従来の Google Maps v1 API から API キーを再利用できないことに注意してください) を取得します。 取得して、Xamarin.Android で API キーを使用する方法については、次を参照してください。 [A Google マップ API のキーを取得する](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)します。
+
 
 ### <a name="a-nameinstall-gps-sdk--install-the-google-play-services-sdk"></a><a name="install-gps-sdk" /> Google Play Services SDK をインストールします。
 
@@ -89,8 +89,8 @@ Google Play Services のマップ パッケージを追加するを右クリッ�
 -  **OpenGL ES v2** &ndash;アプリケーションは、OpenGL ES v2 の要件を宣言する必要があります。
 
 -  **Google マップ API キー** &ndash; API キーを使用して、アプリケーションが登録され、Google play 開発者サービスの使用が許可されていることを確認します。 参照してください[Google マップ API キーを取得する](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)詳細については、このキー。
-   
-- **従来の Apache HTTP クライアントに要求** &ndash; Android 9.0 (API レベル 28) を対象とするアプリまたはレガシ Apache HTTP クライアントは、オプションのライブラリを使用すること以上する必要があります指定します。 
+
+- **従来の Apache HTTP クライアントに要求** &ndash; Android 9.0 (API レベル 28) を対象とするアプリまたはレガシ Apache HTTP クライアントは、オプションのライブラリを使用すること以上する必要があります指定します。
 
 -  **Google Web ベースのサービスへのアクセス**&ndash;アプリケーションには、マップの Android API をバックアップする Google の web サービスへのアクセス許可が必要があります。
 
@@ -99,6 +99,14 @@ Google Play Services のマップ パッケージを追加するを右クリッ�
 -  **場所プロバイダーへのアクセス**&ndash;これらは省略可能なアクセス許可。
    `GoogleMap`クラスをマップに、デバイスの場所を表示します。
 
+さらに、Android 9 では、Apache HTTP クライアント ライブラリは、bootclasspath から削除し、ないので以上 API 28 を対象とするアプリケーションを使用できます。 次の行を追加する必要があります、`application`のノード、 **AndroidManifest.xml**は引き続き 28 またはそれ以降の API を対象とするアプリケーションでの Apache HTTP クライアントを使用するファイル。
+
+```xml
+<application ...>
+   ...
+   <uses-library android:name="org.apache.http.legacy" android:required="false" />    
+</application>
+```
 
 > [!NOTE]
 > Google Play SDK の非常に古いバージョンを要求するアプリに必要な`WRITE_EXTERNAL_STORAGE`権限。 この要件は、Google play 開発者サービス用の最新の Xamarin バインドで必要はなくなりました。
@@ -112,7 +120,7 @@ Google Play Services のマップ パッケージを追加するを右クリッ�
 
     <!-- Google Maps for Android v2 requires OpenGL ES v2 -->
     <uses-feature android:glEsVersion="0x00020000" android:required="true" />
-    
+
     <!-- Necessary for apps that target Android 9.0 or higher -->
     <uses-library android:name="org.apache.http.legacy" android:required="false" />
 
@@ -131,6 +139,8 @@ Google Play Services のマップ パッケージを追加するを右クリッ�
         <!-- Put your Google Maps V2 API Key here. -->
         <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="YOUR_API_KEY" />
         <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
+        <!-- Necessary for apps that target Android 9.0 or higher -->
+        <uses-library android:name="org.apache.http.legacy" android:required="false" />
     </application>
 </manifest>
 ```
@@ -140,7 +150,7 @@ Google Play Services のマップ パッケージを追加するを右クリッ�
 
 ### <a name="a-namecreate-emulator-with-google-api-create-an-emulator-with-google-apis"></a><a name="create-emulator-with-google-api" />Google Api を使用した、エミュレーターを作成します。
 
-物理 Android デバイスで Google play 開発者サービスがインストールされていないこと、開発用のエミュレーター イメージを作成することができます。 詳細については、、[デバイス マネージャー](~/android/get-started/installation/android-emulator/device-manager.md)を参照してください。
+物理 Android デバイスで Google play 開発者サービスがインストールされていないこと、開発用のエミュレーター イメージを作成することができます。 詳細については、次を参照してください。、[デバイス マネージャー](~/android/get-started/installation/android-emulator/device-manager.md)します。
 
 
 ## <a name="the-googlemap-class"></a>GoogleMap クラス
@@ -184,7 +194,7 @@ Google Play Services のマップ パッケージを追加するを右クリッ�
     ```
 
 -   **プログラムで**-`MapFragment`を使用してプログラムでインスタンス化できる、 [ `MapFragment.NewInstance` ](https://developers.google.com/android/reference/com/google/android/gms/maps/MapFragment.html#newInstance())メソッド アクティビティに追加します。 このスニペットは、インスタンス化する最も簡単な方法を示しています、`MapFragment`オブジェクトし、アクティビティを追加します。
-    
+
     ```csharp
         var mapFrag = MapFragment.NewInstance();
         activity.FragmentManager.BeginTransaction()
@@ -195,7 +205,7 @@ Google Play Services のマップ パッケージを追加するを右クリッ�
 
     構成することは、`MapFragment`オブジェクトを渡すことによって、 [ `GoogleMapOptions` ](https://developers.google.com/android/reference/com/google/android/gms/maps/GoogleMapOptions)オブジェクトを`NewInstance`します。 これは、セクションで説明[GoogleMap プロパティ](#googlemap_object)このガイドで後で表示されます。
 
-`MapFragment.GetMapAsync`メソッドが初期化に使用される、 [ `GoogleMap` ](#googlemap_object)フラグメントによってホストされ、によってホストされているマップ オブジェクトへの参照を取得する、`MapFragment`します。 このメソッドを実装するオブジェクトには、`IOnMapReadyCallback`インターフェイス。 
+`MapFragment.GetMapAsync`メソッドが初期化に使用される、 [ `GoogleMap` ](#googlemap_object)フラグメントによってホストされ、によってホストされているマップ オブジェクトへの参照を取得する、`MapFragment`します。 このメソッドを実装するオブジェクトには、`IOnMapReadyCallback`インターフェイス。
 
 このインターフェイスは、1 つのメソッドを持って`IMapReadyCallback.OnMapReady(MapFragment map)`することは、アプリと対話するときに呼び出される、`GoogleMap`オブジェクト。 次のコード スニペットは、Android の Activity を初期化できる方法を示しています、`MapFragment`を実装し、`IOnMapReadyCallback`インターフェイス。
 ```csharp
@@ -205,13 +215,13 @@ public class MapWithMarkersActivity : AppCompatActivity, IOnMapReadyCallback
     {
         base.OnCreate(bundle);
         SetContentView(Resource.Layout.MapLayout);
-    
+
         var mapFragment = (MapFragment) FragmentManager.FindFragmentById(Resource.Id.map);
         mapFragment.GetMapAsync(this);
-    
+
         // remainder of code omitted
     }
-    
+
     public void OnMapReady(GoogleMap map)
     {
         // Do something with the map, i.e. add markers, move to a specific location, etc.
@@ -304,15 +314,15 @@ public void OnMapReady(GoogleMap map)
 public void OnMapReady(GoogleMap map)
 {
     LatLng location = new LatLng(50.897778, 3.013333);
-    
+
     CameraPosition.Builder builder = CameraPosition.InvokeBuilder();
     builder.Target(location);
     builder.Zoom(18);
     builder.Bearing(155);
     builder.Tilt(65);
-    
+
     CameraPosition cameraPosition = builder.Build();
-    
+
     CameraUpdate cameraUpdate = CameraUpdateFactory.NewCameraPosition(cameraPosition);
 
     map.MoveCamera(cameraUpdate);
@@ -350,7 +360,7 @@ public void OnMapReady(GoogleMap map)
     MarkerOptions markerOpt1 = new MarkerOptions();
     markerOpt1.SetPosition(new LatLng(50.379444, 2.773611));
     markerOpt1.SetTitle("Vimy Ridge");
-    
+
     map.AddMarker(markerOpt1);
 }
 ```
@@ -383,10 +393,10 @@ public void OnMapReady(GoogleMap map)
     MarkerOptions markerOpt1 = new MarkerOptions();
     markerOpt1.SetPosition(new LatLng(50.379444, 2.773611));
     markerOpt1.SetTitle("Vimy Ridge");
-    
+
     var bmDescriptor = BitmapDescriptorFactory.DefaultMarker (BitmapDescriptorFactory.HueCyan);
     markerOpt1.InvokeIcon(bmDescriptor);
-    
+
     map.AddMarker(markerOpt1);
 }
 ```
@@ -520,7 +530,7 @@ void MapOnMarkerClick(object sender, GoogleMap.MarkerClickEventArgs markerClickE
     if (marker.Id.Equals(gotMauiMarkerId))
     {
         LatLng InMaui = new LatLng(20.72110, -156.44776);
-    
+
         // Move the camera to look at Maui.
         PositionPolarBearGroundOverlay(InMaui);
         googleMap.AnimateCamera(CameraUpdateFactory.NewLatLngZoom(InMaui, 13));

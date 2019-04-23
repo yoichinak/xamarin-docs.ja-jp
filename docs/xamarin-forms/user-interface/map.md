@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/27/2018
-ms.openlocfilehash: 20b09ab44eaaaa21535d50b947449e253652cc62
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: ddc9d18b57eac099331f0814b5963fb207840380
+ms.sourcegitcommit: 6f728aa0c1775224e16c0f3e583cf843d34270f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672483"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59893245"
 ---
 # <a name="xamarinforms-map"></a>Xamarin.Forms のマップ
 
@@ -128,6 +128,15 @@ Android プロジェクトを右クリックして適切なアクセス許可を
 ![Android 用のアクセス許可を必要な](map-images/android-map-permissions.png "Android 用の必要なアクセス許可")
 
 アプリケーションにマップ データのダウンロードへのネットワーク接続が必要なために、最後の 2 つが必要です。 Android について[権限](https://developer.android.com/reference/android/Manifest.permission.html)詳細。
+
+さらに、Android 9 では、Apache HTTP クライアント ライブラリは、bootclasspath から削除し、ないので以上 API 28 を対象とするアプリケーションを使用できます。 次の行を追加する必要があります、`application`のノード、 **AndroidManifest.xml**は引き続き 28 またはそれ以降の API を対象とするアプリケーションでの Apache HTTP クライアントを使用するファイル。
+
+```xml
+<application ...>
+    ...
+    <uses-library android:name="org.apache.http.legacy" android:required="false" />    
+</application>
+```
 
 ### <a name="universal-windows-platform"></a>ユニバーサル Windows プラットフォーム
 
