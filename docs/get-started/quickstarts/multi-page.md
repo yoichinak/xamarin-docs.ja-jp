@@ -298,7 +298,6 @@ ms.locfileid: "58854978"
                 FolderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData));
                 MainPage = new NavigationPage(new NotesPage());
             }
-            ...
         }
     }
     ```
