@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: d3b7a14938e204898f7e32d3c75be60787bfb324
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61303282"
+---
 ||テストに関する注意事項|
 |---|---|
 |**Xamarin.iOS**|<ul><li>作業を開始する最も簡単な方法は、Xcode に含まれている iPhone、iPad、Apple Watch、および Apple TV の各シミュレーターを使用することです。</li><li>テスト用にデバイスを使用する場合は、<a href="~/ios/get-started/installation/device-provisioning/index.md">この手順</a>に従ってください。</li></ul>|
