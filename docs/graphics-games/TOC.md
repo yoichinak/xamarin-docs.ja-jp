@@ -24,7 +24,7 @@
 ### [CocosSharp で複数の解像度を処理する](cocossharp/resolutions.md)
 ### [CocosSharp のコンテンツ パイプライン](cocossharp/content-pipeline/index.md)
 #### [コンテンツ パイプラインの概要](cocossharp/content-pipeline/introduction.md)
-#### [チュートリアル: CocosSharp でコンテンツ パイプラインを使用する](cocossharp/content-pipeline/walkthrough.md)
+#### [チュートリアル :CocosSharp でコンテンツ パイプラインを使用する](cocossharp/content-pipeline/walkthrough.md)
 ### [CCSpriteSheet でフレームレートを改善する](cocossharp/ccspritesheet.md)
 ### [テクスチャのキャッシュ](cocossharp/texture-cache.md)
 ### [CocosSharp による 2 次元数値演算](cocossharp/math.md)
