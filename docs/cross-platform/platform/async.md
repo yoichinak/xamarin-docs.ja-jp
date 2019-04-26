@@ -7,11 +7,11 @@ author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
 ms.openlocfilehash: 0a72dead1b6c001f1514f1a089df9b407eb90644
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57671879"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61037381"
 ---
 # <a name="async-support-overview"></a>非同期サポートの概要
 
@@ -85,7 +85,7 @@ Await を使用して、呼び出し元のスレッド – をブロックしま
 
 タスクは自体をキャンセルし、キャンセルを確認します。
 
-キャンセルの詳細については、[非同期タスクを取り消す方法](https://msdn.microsoft.com/library/vstudio/jj155761.aspx)msdn を参照してください。
+キャンセルの詳細については、次を参照してください。[非同期タスクを取り消す方法](https://msdn.microsoft.com/library/vstudio/jj155761.aspx)msdn です。
 
 ## <a name="example"></a>例
 

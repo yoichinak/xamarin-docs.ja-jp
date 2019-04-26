@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/27/2017
 ms.openlocfilehash: 95227689303a8367785202956a6aaef921c1c593
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526443"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61085268"
 ---
 # <a name="performance-and-visual-effects-with-ccrendertexture"></a>パフォーマンスと CCRenderTexture で視覚効果
 
@@ -67,7 +67,7 @@ protected override void AddedToScene ()
 
 ### <a name="card-draw-calls"></a>描画呼び出しのカード
 
-コードの内容は、完全で見つかる可能性がありますの簡素化*収集可能なカード ゲーム*(CCG)「マジック:: The 収集」または"Hearthstone"など。 のみ、ゲームは 3 つのカードを一度に表示あり (青、緑、およびオレンジ色) 可能なユニットの数が少ないになります。 これに対し、完全なゲームが特定の時点で 20 を超えるカードを画面に表示される必要があり、プレーヤーは数百のカードのデッキを作成するときに選択する必要があります。 ゲームがパフォーマンスの問題から低下しない場合でも同様の実装と完全なゲーム可能性があります。
+コードの内容は、完全で見つかる可能性がありますの簡素化*収集可能なカード ゲーム*(CCG) など、"マジック。収集"または"Hearthstone"。 のみ、ゲームは 3 つのカードを一度に表示あり (青、緑、およびオレンジ色) 可能なユニットの数が少ないになります。 これに対し、完全なゲームが特定の時点で 20 を超えるカードを画面に表示される必要があり、プレーヤーは数百のカードのデッキを作成するときに選択する必要があります。 ゲームがパフォーマンスの問題から低下しない場合でも同様の実装と完全なゲーム可能性があります。
 
 CocosSharp では、描画呼び出しを公開することにより、レンダリングのパフォーマンスに関する洞察フレームごとの実行を提供します。 `GameLayer.AddedToScene`メソッドのセット、`GameView.Stats.Enabled`に`true`、パフォーマンスについては、画面の左下に表示されます。
 

@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
 ms.openlocfilehash: f139bcceda12752e43a3a8330fa0a0e038e539f9
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121309"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61423564"
 ---
 # <a name="wide-color-in-xamarinios"></a>Xamarin.iOS の色
 
@@ -330,7 +330,7 @@ public UIImage DrawWideColorImage ()
 
 ### <a name="drawing-wide-color-in-macos"></a>MacOS での色の描画
 
-`NSImage` Macos Sierra ワイド カラー イメージの描画をサポートするクラスが拡張されています。 例えば:
+`NSImage` Macos Sierra ワイド カラー イメージの描画をサポートするクラスが拡張されています。 例:
 
 ```csharp
 var size = CGSize(250,250);
@@ -396,7 +396,7 @@ IOS 10 と同様、 `UIGraphicsImageRenderer` sRGB、Extended Range sRGB 色空�
 
 ### <a name="rendering-on-screen-in-macos"></a>MacOS の画面に表示
 
-アプリは、macOS の画面に表示される色でイメージをレンダリングする必要がある、オーバーライド、`DrawRect`のメソッド、`NSView`通常どおり問題。 例えば:
+アプリは、macOS の画面に表示される色でイメージをレンダリングする必要がある、オーバーライド、`DrawRect`のメソッド、`NSView`通常どおり問題。 例:
 
 ```csharp
 using System;

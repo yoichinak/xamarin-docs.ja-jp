@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/29/2017
 ms.openlocfilehash: cc5052c8988a27605cf7680a3853f80e7afd38b7
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105494"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61171012"
 ---
 # <a name="alternate-app-icons-in-xamarinios"></a>Xamarin.iOS での代替アプリ アイコン
 
@@ -119,7 +119,7 @@ PrimaryIconButton.Enabled = UIApplication.SharedApplication.SupportsAlternateIco
 AlternateIconButton.Enabled = UIApplication.SharedApplication.SupportsAlternateIcons;
 ```
 
-`ApplicationIconBadgeNumber`のプロパティ、`UIApplication`クラスにより、開発者は取得、または、スプリング ボードで現在のアプリ アイコンのバッジの数を設定します。 既定値は、ゼロ (0) です。 例えば:
+`ApplicationIconBadgeNumber`のプロパティ、`UIApplication`クラスにより、開発者は取得、または、スプリング ボードで現在のアプリ アイコンのバッジの数を設定します。 既定値は 0 です。 例:
 
 ```csharp
 // Set the badge number to 1

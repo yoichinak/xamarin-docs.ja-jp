@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
 ms.openlocfilehash: ad1c7f94467c6f32b9108ab7f6abe85d31679d3a
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54208987"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60952135"
 ---
 # <a name="large-page-titles-on-ios"></a>IOS での大きいページ タイトル
 
@@ -30,7 +30,7 @@ ms.locfileid: "54208987"
 </NavigationPage>
 ```
 
-または、fluent API を使用して c# から使用できます。
+または、fluent API を使用して C# から使用できます。
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -55,7 +55,7 @@ navigationPage.On<iOS>().SetPrefersLargeTitles(true);
 </ContentPage>
 ```
 
-または、fluent API を使用して、c# からページの動作を上書きできます。
+または、fluent API を使用して、C# からページの動作を上書きできます。
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;

@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
 ms.openlocfilehash: a57e50f098c92dbfcdcaa3139565d2ba0e291e3d
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53057536"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61347766"
 ---
 # <a name="skiasharp-transforms"></a>SkiaSharp の変換
 
@@ -49,7 +49,7 @@ SkiaSharp の変換が全体に適用されている最初の違いは、`SKCanv
 
 SkiaSharp の変換の左上隅を基準と、 `SKCanvas` Xamarin.Forms 変換は、の左上隅を基準としたときに、`VisualElement`に適用されます。 スケーリングを適用するときに、この違いは重要ですし、回転変換のため、これらの変換は、常に特定の時点を基準とします。
 
-SKiaSharp の変換が非常に大きな違いは、*メソッド*Xamarin.Forms 変換は*プロパティ*します。 これは、構文の違いを超えるセマンティックな相違点: SkiaSharp の変換は、Xamarin.Forms の変換状態を設定中に操作を実行します。 SkiaSharp の変換は、変換が適用される前に、描画する graphics オブジェクトではなく、グラフィックスの描画後のオブジェクトに適用されます。 これに対し、プロパティを設定するとすぐには、以前にレンダリングされる要素に Xamarin.Forms 変換が適用されます。 SkiaSharp の変換、累積的なメソッドが呼び出されます。Xamarin.Forms の変換には、別の値を持つプロパティが設定されている場合は置き換えられます。
+SKiaSharp の変換が非常に大きな違いは、*メソッド*Xamarin.Forms 変換は*プロパティ*します。 これは、構文の違いを超えるセマンティックな相違点です。SkiaSharp の変換操作を実行、Xamarin.Forms は、セットを変換中に、状態。 SkiaSharp の変換は、変換が適用される前に、描画する graphics オブジェクトではなく、グラフィックスの描画後のオブジェクトに適用されます。 これに対し、プロパティを設定するとすぐには、以前にレンダリングされる要素に Xamarin.Forms 変換が適用されます。 SkiaSharp の変換、累積的なメソッドが呼び出されます。Xamarin.Forms の変換には、別の値を持つプロパティが設定されている場合は置き換えられます。
 
 このセクションでは、すべてのサンプル プログラムに表示、 **SkiaSharp の変換**のセクション、 [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)プログラム。 ソース コードが記載されて、 [**変換**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms)ソリューションのフォルダー。
 

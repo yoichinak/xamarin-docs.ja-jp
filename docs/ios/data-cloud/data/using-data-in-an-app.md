@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 10/11/2016
 ms.openlocfilehash: e3127f85841c13422d9674bcf12373af9222afba
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50115669"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61153752"
 ---
 # <a name="using-data-in-an-ios-app"></a>IOS アプリでデータを使用
 
@@ -107,7 +107,7 @@ public int DeleteStock(Stock stock)
 
 アプリを配布用のデータベース ファイルを作成するときと確実に、コードでは、c# のクラスおよびプロパティに一致する名前を必要とする SQLite.NET を使用している場合に特にテーブルと列の名前付けを使用処理 (または、関連付けられているカスタム属性の場合)。
 
-Ios の場合、アプリケーションに sqlite ファイルを含めるし、が付いていることを確認**ビルド アクション: コンテンツ**します。 内のコードを配置、`FinishedLaunching`ファイルを書き込み可能なディレクトリにコピーする*する前に*データ メソッドを呼び出します。 次のコードと呼ばれる既存のデータベースのコピーは**data.sqlite**存在しない場合にのみ、します。
+Ios の場合、アプリケーションに sqlite ファイルを含めるし、が付いていることを確認**ビルド アクション。コンテンツ**します。 内のコードを配置、`FinishedLaunching`ファイルを書き込み可能なディレクトリにコピーする*する前に*データ メソッドを呼び出します。 次のコードと呼ばれる既存のデータベースのコピーは**data.sqlite**存在しない場合にのみ、します。
 
 ```csharp
 // Copy the database across (if it doesn't exist)

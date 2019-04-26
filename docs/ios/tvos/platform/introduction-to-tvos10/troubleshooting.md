@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
 ms.openlocfilehash: 3815790cfb73f93f399c14d3da44aa3210725388
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119997"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60932439"
 ---
 # <a name="troubleshooting-tvos-10-apps-built-with-xamarin"></a>TvOS 10 のトラブルシューティング、Xamarin でビルドされたアプリ
 
@@ -28,7 +28,7 @@ ms.locfileid: "50119997"
 
 <a name="App-Store" />
 
-## <a name="app-store"></a>アプリ ストア
+## <a name="app-store"></a>App Store
 
 既知の問題:
 

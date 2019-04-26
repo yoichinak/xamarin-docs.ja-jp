@@ -1,5 +1,5 @@
 ---
-title: IOS 7 の概要
+title: iOS 7 の概要
 description: この記事では、iOS ビュー コント ローラーの遷移、UIView アニメーション、UIKit Dynamics とテキストのキットの機能強化を含め、7 で導入された主要な新しい Api について説明します。 また、一部のユーザー インターフェイス、および新しい強化マルチタスク機能への変更について説明します。
 ms.prod: xamarin
 ms.assetid: 2C33018F-D64A-4BAA-A34E-082EF311D162
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
 ms.openlocfilehash: db2ce779962947e2121ff03280544a080e193e2e
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118046"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61037417"
 ---
-# <a name="introduction-to-ios-7"></a>IOS 7 の概要
+# <a name="introduction-to-ios-7"></a>iOS 7 の概要
 
 _この記事では、iOS ビュー コント ローラーの遷移、UIView アニメーション、UIKit Dynamics とテキストのキットの機能強化を含め、7 で導入された主要な新しい Api について説明します。また、一部のユーザー インターフェイス、および新しい強化マルチタスク機能への変更について説明します。_
 
@@ -218,7 +218,7 @@ var dynBehavior = new UIDynamicItemBehavior (dynItems) {
 
 ## <a name="general-user-interface-changes"></a>一般的なユーザー インターフェイスの変更
 
-Api だけでなく、新しい UIKit UIKit Dynamics、コント ローラーの切り替え、上記で説明した UIView アニメーションの強化など、iOS 7 では、さまざまな UI を視覚的な変更とさまざまなビューとコントロールの関連する API の変更が導入されています。 詳細については、、 [iOS 7 ユーザー インターフェイスの概要](~/ios/platform/introduction-to-ios7/ios7-ui.md)を参照してください。
+Api だけでなく、新しい UIKit UIKit Dynamics、コント ローラーの切り替え、上記で説明した UIView アニメーションの強化など、iOS 7 では、さまざまな UI を視覚的な変更とさまざまなビューとコントロールの関連する API の変更が導入されています。 詳細については、次を参照してください。、 [iOS 7 ユーザー インターフェイスの概要](~/ios/platform/introduction-to-ios7/ios7-ui.md)します。
 
 ## <a name="text-kit"></a>テキストのキット
 

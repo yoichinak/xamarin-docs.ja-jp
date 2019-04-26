@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
 ms.openlocfilehash: 82b1408cafedf98a8619e8e039ba00b332f74516
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "33921990"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61381843"
 ---
 # <a name="part-1--creating-a-cross-platform-monogame"></a>パート 1-クロスプラット フォーム MonoGame の作成
 
@@ -30,7 +30,7 @@ MonoGame として追加できる追加の Visual studio for mac。 Mac で次�
 ![MonoGame を選択すると、Mac の拡張機能ギャラリーの visual Studio](part1-images/image2.png)
 
 > [!IMPORTANT]
-> **注**: 場合、**ゲーム開発**セクションがない、アドイン マネージャーから、手動でダウンロードし、ここから最新バージョンをインストールできます: http://www.monogame.net/downloads/ です。 Visual Studio に表示されるテンプレート用の Mac を再起動する必要があります。
+> **注**:場合、**ゲーム開発**アドイン マネージャーにセクションがない場合、手動でダウンロードし、ここから最新のバージョンをインストールすることができます:http://www.monogame.net/downloads/します。 Visual Studio に表示されるテンプレート用の Mac を再起動する必要があります。
 
 インストールされると、次のセクションで紹介するよう MonoGame テンプレートは for Mac、Visual Studio で表示します。
 

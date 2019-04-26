@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
 ms.openlocfilehash: 3d8e69af7f790415343abf464ea2bb22e879e025
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106962"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61170774"
 ---
 # <a name="programmatic-layout-constraints-in-xamarinios"></a>Xamarin.iOS でプログラムによるレイアウトの制約
 
@@ -51,7 +51,7 @@ _このガイドは iOS の操作での自動レイアウトの制約C#iOS Desig
 - **ConstraintGreaterThanOrEqualTo** -のリレーションシップを定義、`first attribute >= second attribute + [constant]`をオプションで指定された`constant`オフセット値。
 - **ConstraintLessThanOrEqualTo** -のリレーションシップを定義、`first attribute <= second attribute + [constant]`をオプションで指定された`constant`オフセット値。
 
-例えば:
+例:
 
 ```csharp
 // Get the parent view's layout
@@ -95,7 +95,7 @@ PurpleView.LeadingAnchor.ConstraintEqualTo (OrangeView.TrailingAnchor, 10).Activ
 
 ### <a name="layout-constraints"></a>レイアウトの制約
 
-自動レイアウトの制約を手動で追加するには直接作成することにより、`NSLayoutConstraint`でC#コード。 レイアウトのアンカーを使用するとは異なり、定義されている制約に影響はない場合でも、すべてのパラメーターの値を指定する必要があります。 その結果、非常に長い時間、読み取り、定型コードを生成することになります。 例えば:
+自動レイアウトの制約を手動で追加するには直接作成することにより、`NSLayoutConstraint`でC#コード。 レイアウトのアンカーを使用するとは異なり、定義されている制約に影響はない場合でも、すべてのパラメーターの値を指定する必要があります。 その結果、非常に長い時間、読み取り、定型コードを生成することになります。 例:
 
 ```csharp
 //// Pin the leading edge of the view to the margin
@@ -163,6 +163,6 @@ Apple を参照してください。 [Visual 形式の言語の付録](https://d
 
 - [ストーリーボードの概要](~/ios/user-interface/storyboards/index.md)
 - [iOS デザイン可能なコントロールのチュートリアル](~/ios/user-interface/designer/ios-designable-controls-walkthrough.md)
-- [IOS 用の Xamarin のデザイナーを使用した自動レイアウト](~/ios/user-interface/designer/designer-auto-layout.md#modifying-in-code)
+- [iOS 用の Xamarin のデザイナーを使用した自動レイアウト](~/ios/user-interface/designer/designer-auto-layout.md#modifying-in-code)
 - [Apple の制約をプログラムで作成します。](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/AutolayoutPG/ProgrammaticallyCreatingConstraints.html#//apple_ref/doc/uid/TP40010853-CH16-SW1)
 - [Apple のビジュアルな形式の言語の付録](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/AutolayoutPG/VisualFormatLanguage.html#//apple_ref/doc/uid/TP40010853-CH27-SW1)

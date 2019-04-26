@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
 ms.openlocfilehash: 7edbdaa5a690a641523cb5baad7909ed01992aa5
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121816"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61090893"
 ---
 # <a name="android-callable-wrappers"></a>Android 呼び出し可能ラッパー
 
@@ -70,7 +70,7 @@ namespace My {
 -   [BroadcastReceiverAttribute.Name](https://developer.xamarin.com/api/property/Android.Content.BroadcastReceiverAttribute.Name/)
 -   [ContentProviderAttribute.Name](https://developer.xamarin.com/api/property/Android.Content.ContentProviderAttribute.Name/)
 
-Md5 チェックサムに基づくについての名前付けは、Xamarin.Android 5.0 で導入されました。 属性の名前付けの詳細については、[RegisterAttribute](https://developer.xamarin.com/api/type/Android.Runtime.RegisterAttribute/)を参照してください。 
+Md5 チェックサムに基づくについての名前付けは、Xamarin.Android 5.0 で導入されました。 属性の名前付けの詳細については、次を参照してください。 [RegisterAttribute](https://developer.xamarin.com/api/type/Android.Runtime.RegisterAttribute/)します。 
 
 
 

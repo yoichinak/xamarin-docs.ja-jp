@@ -1,5 +1,5 @@
 ---
-title: IOS でユーザー インターフェイス
+title: iOS のユーザー インターフェイス
 description: このドキュメントは、Xamarin.iOS アプリでユーザー インターフェイスを構築する方法を説明するガイドにリンクしています。 リンクのガイドでは、ユーザー インターフェイス オブジェクトやレイアウトのオプションを作成、外観 API について説明します。
 ms.prod: xamarin
 ms.assetid: 1BB46561-F503-491E-A27C-7878E7EBE00B
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 06/14/2017
 ms.openlocfilehash: efb88ada8a4b4c36dd49de137eb64acd63552968
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50115680"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61382337"
 ---
-# <a name="user-interfaces-in-ios"></a>IOS でユーザー インターフェイス
+# <a name="user-interfaces-in-ios"></a>iOS のユーザー インターフェイス
 
 ## <a name="appearance-apiintroduction-to-the-appearance-apimd"></a>[外観 API](introduction-to-the-appearance-api.md)
 
@@ -26,7 +26,7 @@ Apple のグループに関連の Xamarin.iOS の名前空間と同等の「フ�
 
 ## <a name="layout-optionsiosuser-interfaceios-uilayout-optionsmd"></a>[レイアウト オプション](~/ios/user-interface/ios-ui/layout-options.md)
 
-ビューのサイズを変更または回転したときに、レイアウトを制御するための 2 つの異なるメカニズムがある: 自動サイズ調整と自動レイアウト。
+これには、ビューがサイズ変更、または回転したときに、レイアウトを制御するための 2 つの異なるメカニズムがあります。自動サイズ調整と自動レイアウト。
 
 ## <a name="providing-haptic-feedbackiosuser-interfaceios-uihaptic-feedbackmd"></a>[Haptic フィードバックの提供](~/ios/user-interface/ios-ui/haptic-feedback.md)
 

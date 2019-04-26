@@ -7,11 +7,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/30/2017
 ms.openlocfilehash: d9aafbe13e06875b6577a4d2308e419932fd1589
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103713"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61382114"
 ---
 # <a name="representations-in-xamarin-workbooks"></a>Xamarin Workbooks での表示
 
@@ -25,7 +25,7 @@ Xamarin Workbooks は、すべてのエージェントと結果のリッチな�
 
 ## <a name="external-representations"></a>外部表現
 
-[`Xamarin.Interactive.IAgent.RepresentationManager`][repman] 登録する機能を提供する [`RepresentationProvider`][repp] 統合が、任意のオブジェクトから表示するために依存しない形式に変換するために実装する必要があります。 これらに依存しない形式を実装する必要があります、 [`ISerializableObject`][serobj] インターフェイス。
+[`Xamarin.Interactive.IAgent.RepresentationManager`][repman] 登録する機能を提供する[`RepresentationProvider`][repp]統合が、任意のオブジェクトから表示するために依存しない形式に変換するために実装する必要があります。 これらに依存しない形式を実装する必要があります、 [`ISerializableObject`][serobj]インターフェイス。
 
 実装する、`ISerializableObject`インターフェイス オブジェクトをシリアル化する方法を正確に制御する Serialize メソッドを追加します。 `Serialize`メソッドは、シリアル化するプロパティがあり、最終的な名前がなります、開発者が正確に指定ことが必要です。 見て、`Person`オブジェクトで、[`KitchenSink`サンプル] [サンプル] にこのしくみがわかります。
 

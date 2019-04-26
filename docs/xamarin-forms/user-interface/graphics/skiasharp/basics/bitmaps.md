@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
 ms.openlocfilehash: e1e21fe121fba30755efbabe302ed0f22149e7e0
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53060266"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61157397"
 ---
 # <a name="bitmap-basics-in-skiasharp"></a>SkiaSharp のビットマップの基礎
 
@@ -104,7 +104,7 @@ Android オペレーティング システムを使用する場合に例外を�
 
 コードの観点からビットマップを読み込む最も簡単な方法は、アプリケーションで直接ビットマップ リソースを含むです。 **SkiaSharpFormsDemos**プログラムには、という名前のフォルダーが含まれています。**メディア**ビットマップなどのファイルのいくつか含む**monkey.png**します。 プログラムのリソースとして格納されているビットマップに使用する必要があります、**プロパティ**ファイルを提供するためのダイアログ、**ビルド アクション**の**埋め込まれたリソース**!
 
-各埋め込みリソースには、*リソース ID*プロジェクト名、フォルダー、およびファイル名、ピリオドで接続されているすべてから構成される: **SkiaSharpFormsDemos.Media.monkey.png**します。 そのリソースを指定することでこのリソースへのアクセスを取得する ID を引数として、 [ `GetManifestResourceStream` ](xref:System.Reflection.Assembly.GetManifestResourceStream(System.String))のメソッド、 [ `Assembly` ](xref:System.Reflection.Assembly)クラス。
+各埋め込みリソースには、*リソース ID*プロジェクト名、フォルダー、およびファイル名、ピリオドで接続されているすべてから構成されます。**SkiaSharpFormsDemos.Media.monkey.png**します。 そのリソースを指定することでこのリソースへのアクセスを取得する ID を引数として、 [ `GetManifestResourceStream` ](xref:System.Reflection.Assembly.GetManifestResourceStream(System.String))のメソッド、 [ `Assembly` ](xref:System.Reflection.Assembly)クラス。
 
 ```csharp
 string resourceID = "SkiaSharpFormsDemos.Media.monkey.png";

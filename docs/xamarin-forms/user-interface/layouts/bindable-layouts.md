@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/18/2018
 ms.openlocfilehash: b0e2d5e3c7923e5c3cf2adcc1dd104a97b78e727
-ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55832244"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61321574"
 ---
 # <a name="bindable-layouts-in-xamarinforms"></a>Xamarin.Forms でのバインド可能なレイアウト
 
@@ -29,7 +29,7 @@ ms.locfileid: "55832244"
 > [!NOTE]
 > `ItemTemplate`プロパティが優先と両方、`ItemTemplate`と`ItemTemplateSelector`プロパティを設定します。
 
-`Layout<T>`クラスでは、 [ `Children` ](xref:Xamarin.Forms.Layout`1.Children)レイアウトの子要素を追加するコレクション。 ときに、`BinableLayout.ItemsSource`プロパティが項目のコレクションに設定されに接続されている、 [ `Layout<T>` ](xref:Xamarin.Forms.Layout`1)-クラスの派生、コレクション内の各項目を追加、`Layout<T>.Children`レイアウトで表示するためのコレクション。 `Layout<T>`の基になるコレクションが変更されたときに、派生クラスはその子ビューを更新し、されます。 Xamarin.Forms のレイアウト サイクルの詳細については、[カスタム レイアウトを作成する](~/xamarin-forms/user-interface/layouts/custom.md)を参照してください。
+`Layout<T>`クラスでは、 [ `Children` ](xref:Xamarin.Forms.Layout`1.Children)レイアウトの子要素を追加するコレクション。 ときに、`BinableLayout.ItemsSource`プロパティが項目のコレクションに設定されに接続されている、 [ `Layout<T>` ](xref:Xamarin.Forms.Layout`1)-クラスの派生、コレクション内の各項目を追加、`Layout<T>.Children`レイアウトで表示するためのコレクション。 `Layout<T>`の基になるコレクションが変更されたときに、派生クラスはその子ビューを更新し、されます。 Xamarin.Forms のレイアウト サイクルの詳細については、次を参照してください。[カスタム レイアウトを作成する](~/xamarin-forms/user-interface/layouts/custom.md)します。
 
 > [!IMPORTANT]
 > バインド可能なレイアウトは、表示する項目のコレクションが小さいと、スクロールと選択が必要ない場合にのみ使用する必要があります。 バインド可能なレイアウトの折り返しによって提供されることのスクロール中に、 [ `ScrollView` ](xref:Xamarin.Forms.ScrollView)、これはお勧めしませんバインド可能なレイアウトが UI の仮想化がないです。 スクロールが必要な場合、UI の仮想化にはなどが含まれているスクロール可能なビュー [ `ListView` ](xref:Xamarin.Forms.ListView)または`CollectionView`、使用する必要があります。 この推奨事項を確認するエラーは、パフォーマンスの問題につながります。
@@ -85,7 +85,7 @@ BindableLayout.SetItemTemplate(stackLayout, circleImageTemplate);
 
 ![DataTemplate でバインド可能なレイアウト](bindable-layouts-images/top-followers.png "データ テンプレートを使用してバインド可能なレイアウト")
 
-データ テンプレートの詳細については、[Xamarin.Forms データ テンプレート](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)を参照してください。
+データ テンプレートについて詳しくは「[Xamarin.Forms Data Templates](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)」(Xamarin.Forms のデータ テンプレート) をご覧ください。
 
 ## <a name="choosing-item-appearance-at-runtime"></a>実行時に項目の外観を選択します。
 
@@ -125,7 +125,7 @@ public class TechItemTemplateSelector : DataTemplateSelector
 
 ![バインド可能なレイアウト、DataTemplateSelector](bindable-layouts-images/favorite-tech.png "データ テンプレート セレクターにバインド可能なレイアウト")
 
-データ テンプレート セレクターの詳細については、[作成 Xamarin.Forms DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)を参照してください。
+データ テンプレート セレクターの詳細については、次を参照してください。[作成 Xamarin.Forms DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)します。
 
 ## <a name="related-links"></a>関連リンク
 

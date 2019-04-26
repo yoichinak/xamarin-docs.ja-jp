@@ -1,5 +1,5 @@
 ---
-title: 'チュートリアル: IOS OBJECTIVE-C ライブラリのバインド'
+title: 'チュートリアル: iOS Objective-C ライブラリのバインド'
 description: この記事では、既存の OBJECTIVE-C ライブラリ、InfColorPicker の Xamarin.iOS バインディングを作成する実践的なチュートリアルを示します。 静的 OBJECTIVE-C ライブラリのコンパイル、バインドすることで、Xamarin.iOS アプリケーションでバインドを使用してなどのトピックについて説明します。
 ms.prod: xamarin
 ms.assetid: D3F6FFA0-3C4B-4969-9B83-B6020B522F57
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
 ms.openlocfilehash: fcf4e6d9b281eaac4be888c499e537f7397528a0
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669272"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61392013"
 ---
-# <a name="walkthrough-binding-an-ios-objective-c-library"></a>チュートリアル: IOS OBJECTIVE-C ライブラリのバインド
+# <a name="walkthrough-binding-an-ios-objective-c-library"></a>チュートリアル: iOS Objective-C ライブラリのバインド
 
 _この記事では、既存の OBJECTIVE-C ライブラリ、InfColorPicker の Xamarin.iOS バインディングを作成する実践的なチュートリアルを示します。静的 OBJECTIVE-C ライブラリのコンパイル、バインドすることで、Xamarin.iOS アプリケーションでバインドを使用してなどのトピックについて説明します。_
 
@@ -566,7 +566,7 @@ Europa:Resources kmullins$
 
 ### <a name="protocols-and-xamarinios"></a>プロトコルと Xamarin.iOS
 
-メソッド (またはメッセージ)、OBJECTIVE-C でプロトコルを定義する特定の状況で使用できます。 内のインターフェイスとよく似ている概念的には、C#します。 1 つの主な違い、OBJECTIVE-C プロトコルとC#インターフェイスは、プロトコルは省略可能なメソッドのクラスが実装する必要はありませんメソッドであることができます。 Objective C を使用して、@optionalが省略可能な方法を示すキーワードを使用します。 プロトコルの詳細については、[イベント、プロトコル、デリゲート](~/ios/app-fundamentals/delegates-protocols-and-events.md)を参照してください。
+メソッド (またはメッセージ)、OBJECTIVE-C でプロトコルを定義する特定の状況で使用できます。 内のインターフェイスとよく似ている概念的には、C#します。 1 つの主な違い、OBJECTIVE-C プロトコルとC#インターフェイスは、プロトコルは省略可能なメソッドのクラスが実装する必要はありませんメソッドであることができます。 Objective C を使用して、@optionalが省略可能な方法を示すキーワードを使用します。 プロトコルの詳細については、次を参照してください。[イベント、プロトコル、デリゲート](~/ios/app-fundamentals/delegates-protocols-and-events.md)します。
 
 **InfColorPickerController**が次のコード スニペットに示すように、このような 1 つのプロトコル。
 

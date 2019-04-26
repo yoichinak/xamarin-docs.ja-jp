@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/27/2018
 ms.openlocfilehash: a12553cf0b7b9584bb8ff7bc04ed326ad4a7ad2a
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107834"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61281598"
 ---
 # <a name="macos-user-interface-controls-in-xamarinmac"></a>Xamarin.Mac の macOS ユーザー インターフェイス コントロール
 
@@ -38,7 +38,7 @@ _この記事では、さまざまな macOS UI コントロールについて説
 
 ## <a name="menusmacuser-interfacemenumd"></a>[メニュー](~/mac/user-interface/menu.md)
 
-メニューを使用して、Mac アプリケーションのユーザー インターフェイスのさまざまな部分でアプリケーションのメイン メニューのポップアップ メニューとコンテキスト メニュー ウィンドウをどこにでも表示できる画面の上部にあります。 メニューは、Mac アプリケーションのユーザー エクスペリエンスの不可欠な部分です。 この記事では、Xamarin.Mac アプリケーションでの Cocoa メニューの操作について説明します。
+メニューを使用して、Mac アプリケーションのユーザー インターフェイスのさまざまな部分でアプリケーションのメイン メニューのポップアップ メニューとコンテキスト メニュー ウィンドウをどこにでも表示できる画面の上部にあります。 メニューは、Mac アプリケーションのユーザー エクスペリエンスにとって不可欠な部分です。 この記事では、Xamarin.Mac アプリケーションでの Cocoa メニューの操作について説明します。
 
 ## <a name="standard-controlsmacuser-interfacestandard-controlsmd"></a>[標準コントロール](~/mac/user-interface/standard-controls.md)
 

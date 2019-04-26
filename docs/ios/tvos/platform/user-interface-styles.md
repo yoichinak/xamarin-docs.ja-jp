@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
 ms.openlocfilehash: 2536ca5d3bff3f5b7962bc4fcf58b31a130fd03c
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104766"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61270883"
 ---
 # <a name="tvos-user-interface-styles-in-xamarin"></a>tvOS Xamarin でのユーザー インターフェイスのスタイル
 
@@ -149,7 +149,7 @@ public override void TraitCollectionDidChange (UITraitCollection previousTraitCo
 
 TvOS アプリの設計に基づきがあります、開発者が特定のユーザー インターフェイス要素の特徴であるコレクションをオーバーライドして、それを常に特定の UI テーマを使用する必要がある場合。
 
-これを使用して、`SetOverrideTraitCollection`メソッドを`UIViewController`クラス。 例えば:
+これを使用して、`SetOverrideTraitCollection`メソッドを`UIViewController`クラス。 例:
 
 ```csharp
 // Create new trait and configure it

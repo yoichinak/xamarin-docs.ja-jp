@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
 ms.openlocfilehash: bdc03721569682cd5b4f72908fcab1e4a567b83c
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53055803"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61370636"
 ---
 # <a name="xamarinforms-stacklayout"></a>Xamarin.Forms の StackLayout
 
@@ -97,7 +97,7 @@ StackLayout 内でビューのサイズは、高さと幅の要求とレイア�
 - **FillAndExpand** &ndash;余白がありませんし、レイアウトが指定されます限り多くの領域を占有するように、ビューを配置します。
 - **StartAndExpand** &ndash;レイアウトの開始時、ビューを配置し、親は、限り多くの領域を占有します。
 
-詳細については、[拡張](~/xamarin-forms/user-interface/layouts/layout-options.md#expansion)を参照してください。
+詳細については、次を参照してください。[拡張](~/xamarin-forms/user-interface/layouts/layout-options.md#expansion)します。
 
 ### <a name="positioning"></a>配置
 
@@ -156,7 +156,7 @@ public class StackLayoutCode : ContentPage
 }
 ```
 
-詳細については、[配置](~/xamarin-forms/user-interface/layouts/layout-options.md#alignment)を参照してください。
+詳細については、次を参照してください。[配置](~/xamarin-forms/user-interface/layouts/layout-options.md#alignment)します。
 
 ## <a name="exploring-a-complex-layout"></a>複雑なレイアウトの調査
 

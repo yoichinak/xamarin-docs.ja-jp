@@ -1,67 +1,67 @@
 ---
-title: 統合 API への既存のアプリの更新
-description: このドキュメントには、Unified API に Xamarin アプリケーションを更新する方法を説明するさまざまなガイドへのリンクがします。 Xamarin.iOS アプリ、Xamarin.Mac アプリについても説明します。 Xamarin.Forms アプリ、およびバインド プロジェクトのクロスプラット フォーム アプリでネイティブ型です。
+title: Unified API への既存のアプリの更新
+description: このドキュメントは、Unified API への Xamarin アプリケーションを更新する方法を説明するさまざまなガイドにリンクしています。 Xamarin.iOS アプリでは、Xamarin.Mac アプリがについて説明します。 Xamarin.Forms アプリでは、クロス プラットフォーム アプリ、およびバインド プロジェクトでのネイティブ型です。
 ms.prod: xamarin
 ms.assetid: 8A654C95-5DCA-4BB5-A582-F96C2BECC81C
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
 ms.openlocfilehash: 2d09be7b85980e5c5a8eb209dc1b4ff3136c34b3
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34781632"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61195603"
 ---
-# <a name="updating-existing-apps-to-the-unified-api"></a>統合 API への既存のアプリの更新
+# <a name="updating-existing-apps-to-the-unified-api"></a>Unified API への既存のアプリの更新
 
 > [!IMPORTANT]
-> Unified API の前に、Xamarin Classic API は廃止されました。 
-> - Classic API (monotouch.dll) をサポートするために Xamarin.iOS の最後のバージョンでは、Xamarin.iOS 9.10 はでした。
-> - 更新されなくは Xamarin.Mac が引き続きクラシックの API をサポートします。 推奨されなくなりましたので、開発者は、Unified API にアプリケーションを移動します。
+> Unified API の前に、Xamarin のクラシック API は非推奨とされました。 
+> - 最後のバージョンのクラシック API (monotouch.dll) をサポートするために Xamarin.iOS では、Xamarin.iOS 9.10 をしました。
+> - Xamarin.Mac には、従来の API では、引き続きサポートされていますは更新されなく。 非推奨であるために、開発者は、Unified API アプリケーションを移動します。
 
 ## <a name="how-to-update-your-apps"></a>アプリを更新する方法
 
-Xamarin 大学自由に利用可能なビデオが**iOS Unified API へのアップグレード**です。 参照してください[Xamarin 大学稲妻講義](http://university.xamarin.com/lightninglectures)を監視します。
+Xamarin University ビデオを自由に利用できるが**iOS Unified API へのアップグレード**します。 参照してください[Xamarin University Lightning 講義](http://university.xamarin.com/lightninglectures)をご覧ください。
 
-[ ![](updating-apps-images/xamu-video-sml.png "Xamarin 大学")](http://university.xamarin.com/lightninglectures)
+[ ![](updating-apps-images/xamu-video-sml.png "Xamarin University")](http://university.xamarin.com/lightninglectures)
 
-これには、アプリを更新する 3 つの手順があります。
+アプリを更新する次の 3 つの手順があります。
 
-1. 非推奨の Api に関連するものでは特に、既存のコードで、コンパイラ警告を修正します。
+1. 特にの非推奨の Api に関連する、既存のコードで、コンパイラの警告を修正します。
 
-2. Mac 用の Visual Studio に組み込まれている移行ツールを使用して、プロジェクト ファイルと名前空間を更新します。
+2. Visual Studio for Mac に組み込まれている移行ツールを使用して、プロジェクト ファイルと名前空間を更新します。
 
-3. 残りの新しいに関連するコンパイラ エラー修正[64 型](~/cross-platform/macios/nativetypes.md)と[他の Api](~/cross-platform/macios/unified/overview.md#deprecated-typos)に変更されました。 チェック アウト[これらのヒント](~/cross-platform/macios/unified/updating-tips.md)必要になる可能性がある手動で更新の詳細についてはします。
+3. 残りの関連する、新しいコンパイラ エラー修正[64 種類](~/cross-platform/macios/nativetypes.md)と[他の Api](~/cross-platform/macios/unified/overview.md#deprecated-typos)に変更されました。 チェック アウト[これらのヒント](~/cross-platform/macios/unified/updating-tips.md)詳細については、手動で更新する必要があります。
 
-特定のガイドは、Unified API と 64 ビットをサポートするアプリを更新するためには、各製品利用できます。
+特定のガイドは、Unified API と 64 ビットをサポートするアプリを更新するためには、各製品使用できます。
 
 ### <a name="xamarinios-appscross-platformmaciosunifiedupdating-ios-appsmd"></a>[Xamarin.iOS アプリ](~/cross-platform/macios/unified/updating-ios-apps.md)
 
-For mac を Visual Studio に組み込まれて自動的に移行ツールを使用して、統合 API に既存の Xamarin.iOS アプリを更新することができます。 いくつか追加の修正し、必要があります、」の説明に従って[手順](~/cross-platform/macios/unified/updating-ios-apps.md)と[ヒント](~/cross-platform/macios/unified/updating-tips.md)です。
+For mac。 Visual Studio に組み込まれている自動移行ツールを使用して、Unified API に既存の Xamarin.iOS アプリを更新できます。 いくつか追加の修正は次の必要な場合で説明したよう[手順](~/cross-platform/macios/unified/updating-ios-apps.md)と[ヒント](~/cross-platform/macios/unified/updating-tips.md)します。
 
 ###  <a name="xamarinmac-appscross-platformmaciosunifiedupdating-mac-appsmd"></a>[Xamarin.Mac アプリ](~/cross-platform/macios/unified/updating-mac-apps.md)
 
-For mac を Visual Studio に組み込まれて自動的に移行ツールを使用して、統合 API に Xamarin.Mac の既存のアプリを更新することができます。 いくつか追加の修正し、必要があります、」の説明に従って[手順](~/cross-platform/macios/unified/updating-mac-apps.md)と[ヒント](~/cross-platform/macios/unified/updating-tips.md)です。
+For mac。 Visual Studio に組み込まれている自動移行ツールを使用して、Unified API に既存の Xamarin.Mac アプリを更新できます。 いくつか追加の修正は次の必要な場合で説明したよう[手順](~/cross-platform/macios/unified/updating-mac-apps.md)と[ヒント](~/cross-platform/macios/unified/updating-tips.md)します。
 
 ###  <a name="xamarinforms-appscross-platformmaciosunifiedupdating-xamarin-forms-appsmd"></a>[Xamarin.Forms アプリ](~/cross-platform/macios/unified/updating-xamarin-forms-apps.md)
 
-Unified API を使用して、iOS プロジェクトで既存の Xamarin.Forms ソリューションを更新する次の手順に従います。 統一された API のサポートのみ利用可能で、Xamarin.Forms 1.3 にその後、ように[指示](~/cross-platform/macios/unified/updating-xamarin-forms-apps.md)バージョン 1.3 に Xamarin.Forms アプリを更新する方法についても説明します。 これら[ヒント](~/cross-platform/macios/unified/updating-tips.md)カスタム レンダラーや依存関係サービス内のすべてのネイティブの iOS コードを更新役立つ場合があります。
+Unified API を使用して、iOS プロジェクトで既存の Xamarin.Forms ソリューションを更新する次の手順に従います。 統一された API のサポートは Xamarin.Forms 1.3 で使用できる以降のみように[指示](~/cross-platform/macios/unified/updating-xamarin-forms-apps.md)バージョン 1.3 に Xamarin.Forms アプリを更新する方法についても説明します。 これら[ヒント](~/cross-platform/macios/unified/updating-tips.md)カスタム レンダラーまたは依存関係サービスで、ネイティブ iOS コードの更新に役立つ場合があります。
 
 ## <a name="working-with-native-types-in-cross-platform-appscross-platformmaciosnativetypesmd"></a>[クロスプラットフォーム アプリでのネイティブ型の使用](~/cross-platform/macios/nativetypes.md)
 
-この記事では、コードが Android や Windows Phone Os などの非 iOS デバイスと共有されているクロス プラットフォーム アプリケーションで新しい iOS Unified API をネイティブ型 (nint、nuint、nfloat) の使用について説明します。 ネイティブ型を使用すべき状況を把握し、クロス プラットフォームのコードで、新しい型を使用する必要がある場合に使用するいくつかの考えられる解決策を提供します。
+この記事では、Android や Windows Phone Os iOS 以外のデバイスでコードが共有されているクロス プラットフォーム アプリケーションで新しい iOS Unified API をネイティブ型 (nint、nuint、nfloat) を使用する方法について説明します。 ネイティブ型を使用するかを把握し、クロス プラットフォームのコードで、新しい型を使用する必要がありますケースをいくつかの考えられる解決策を提供します。
 
-## <a name="update-bindings-to-the-unified-api"></a>統一された API へのバインドを更新します。
+## <a name="update-bindings-to-the-unified-api"></a>Unified API へのバインドを更新します。
 
-Objective C のライブラリへのバインドを作成した顧客は、(一部の型が現在される 64 ビット)、基になる API の変更を反映するようにバインディング プロジェクトを更新する必要があります。
-次の手順に従って[Unified API をサポートするために既存のバインドのプロジェクトを更新](~/cross-platform/macios/unified/update-binding.md)です。
+Objective C ライブラリへのバインドを作成したお客様は、(一部の種類が今すぐされる 64 ビット)、基になる API の変更を反映するようにバインディング プロジェクトを更新する必要があります。
+次の手順に従います[Unified API をサポートするために既存のバインド プロジェクト更新](~/cross-platform/macios/unified/update-binding.md)します。
 
 ## <a name="related-links"></a>関連リンク
 
 - [IOS アプリの更新](~/cross-platform/macios/unified/updating-ios-apps.md)
-- [Mac アプリケーションの更新](~/cross-platform/macios/unified/updating-mac-apps.md)
-- [Xamarin.Forms アプリの更新](~/cross-platform/macios/unified/updating-xamarin-forms-apps.md)
-- [バインドの更新](~/cross-platform/macios/unified/update-binding.md)
-- [ヒントの更新](~/cross-platform/macios/unified/updating-tips.md)
-- [従来の vs Unified API の相違点](https://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)
+- [Mac アプリを更新します。](~/cross-platform/macios/unified/updating-mac-apps.md)
+- [Xamarin.Forms アプリを更新します。](~/cross-platform/macios/unified/updating-xamarin-forms-apps.md)
+- [バインドを更新しています](~/cross-platform/macios/unified/update-binding.md)
+- [ヒントを更新しています](~/cross-platform/macios/unified/updating-tips.md)
+- [クラシックと Unified API の相違点](https://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)

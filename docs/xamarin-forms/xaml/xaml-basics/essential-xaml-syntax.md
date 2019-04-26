@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
 ms.openlocfilehash: 75d3c628a513b81af9dea7308ca49c2b490c4aff
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059744"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61407655"
 ---
 # <a name="part-2-essential-xaml-syntax"></a>第 2 部です。 重要な XAML 構文
 
@@ -351,7 +351,7 @@ XAML、ただし、この構文は非常に特殊です。 他に何も表示で
 </ContentPage>
 ```
 
-問題: がこれらのプロパティ要素はなぜ*いない*XAML ファイルで、必須ですか?
+実際の疑問が浮かびます。なぜこれらのプロパティ要素を*いない*XAML ファイルで、必須か?
 
 XAML で使用するために、Xamarin.Forms で定義された要素が実行を許可されている 1 つのプロパティのフラグが設定された、`ContentProperty`クラスの属性。 検索する場合、`ContentPage`クラス オンライン Xamarin.Forms ドキュメントでは、この属性を確認します。
 

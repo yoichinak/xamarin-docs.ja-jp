@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
 ms.openlocfilehash: f815afa6b1abb15348019b0c53333b4acb054008
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108029"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60933883"
 ---
 # <a name="working-with-tvos-collection-views-in-xamarin"></a>TvOS Xamarin でのコレクション ビューの操作
 
@@ -59,7 +59,7 @@ ms.locfileid: "50108029"
 - `DequeueReusableCell` -作成するか (アプリのストーリー ボードで指定) として指定された型のセルを返します。
 - `DequeueReusableSupplementaryView` -作成または補助 (アプリのストーリー ボードで指定) として指定された型のビューを返します。
 
-これらのメソッドのいずれかを呼び出す前に、クラスを登録する必要がありますストーリー ボードまたは`.xib`ファイル コレクション ビュー セルのビューを作成するために使用します。 例えば:
+これらのメソッドのいずれかを呼び出す前に、クラスを登録する必要がありますストーリー ボードまたは`.xib`ファイル コレクション ビュー セルのビューを作成するために使用します。 例:
 
 ```csharp
 public CityCollectionView (IntPtr handle) : base (handle)
@@ -102,7 +102,7 @@ Xamarin.tvOS アプリでのコレクション ビューを使用する最も簡
 1. 既存のビューをイメージの表示、ラベルとボタンを追加し、次のように構成します。 
 
     [![](collection-views-images/collection02.png "サンプル レイアウト")](collection-views-images/collection02.png#lightbox)
-1. 割り当てる、**名前**イメージ ビューとでラベルを**ウィジェット タブ**の**プロパティ エクスプ ローラー**します。 例えば: 
+1. 割り当てる、**名前**イメージ ビューとでラベルを**ウィジェット タブ**の**プロパティ エクスプ ローラー**します。 例: 
 
     [![](collection-views-images/collection03.png "名を設定します。")](collection-views-images/collection03.png#lightbox)
 1. 次に、ストーリー ボードにコレクションのビュー コント ローラーをドラッグします。 
@@ -142,7 +142,7 @@ Xamarin.tvOS アプリでのコレクション ビューを使用する最も簡
 1. 既存のビューをイメージの表示、ラベルとボタンを追加し、次のように構成します。 
 
     [![](collection-views-images/collection02vs.png "レイアウトを構成します。")](collection-views-images/collection02vs.png#lightbox)
-1. 割り当てる、**名前**イメージ ビューとでラベルを**ウィジェット タブ**の**プロパティ エクスプ ローラー**します。 例えば: 
+1. 割り当てる、**名前**イメージ ビューとでラベルを**ウィジェット タブ**の**プロパティ エクスプ ローラー**します。 例: 
 
     [![](collection-views-images/collection03vs.png "プロパティ エクスプ ローラー")](collection-views-images/collection03vs.png#lightbox)
 1. 次に、ストーリー ボードにコレクションのビュー コント ローラーをドラッグします。 

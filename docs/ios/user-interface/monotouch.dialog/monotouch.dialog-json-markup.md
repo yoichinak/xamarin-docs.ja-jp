@@ -8,11 +8,11 @@ ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
 ms.openlocfilehash: 2bd45c5482a8f0367bffa21f301bb631c3429a21
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58870132"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61395154"
 ---
 # <a name="monotouchdialog-json-markup"></a>MonoTouch.Dialog Json マークアップ
 
@@ -297,7 +297,7 @@ var theBoolean = jsonElement ["the-boolean"] as BooleanElement
 
 ### <a name="ontap-and-onaccessorytap"></a>ontap と onaccessorytap
 
-これらのプロパティは、パラメーターとしてオブジェクトを取得するアプリケーションで静的メソッド名をポイントする必要があります。 JsonDialog.FromFile または JsonDialog.FromJson メソッドを使用して、階層を作成するときに、省略可能なオブジェクトの値を渡すことができます。 このオブジェクトの値は、メソッドに渡されます。 これを使用するには、静的メソッドにいくつかのコンテキストを渡す。 例:
+これらのプロパティは、パラメーターとしてオブジェクトを取得するアプリケーションで静的メソッド名をポイントする必要があります。 JsonDialog.FromFile または JsonDialog.FromJson メソッドを使用して、階層を作成するときに、省略可能なオブジェクトの値を渡すことができます。 このオブジェクトの値は、メソッドに渡されます。 これを使用するには、静的メソッドにいくつかのコンテキストを渡す。 例えば:
 
 ```csharp
 class Foo {
@@ -362,7 +362,7 @@ class Foo {
 
 ## <a name="boolean-elements"></a>ブール型要素
 
-ブール型要素に型を設定する必要があります`"bool"`、含めることができます、`"caption"`を表示して、 `"value"` true または false に設定されます。 場合、`"on"`と`"off"`プロパティを設定、イメージをしたと見なされます。 イメージは、アプリケーションでは、現在の作業ディレクトリを基準として解決されます。 バンドルの相対ファイルを参照する場合は、使用、`"~"`アプリケーション バンドル ディレクトリ表してへのショートカットとして。 たとえば`"~/favorite.png"`バンドル ファイルに含まれる favorite.png になります。 例えば:
+ブール型要素に型を設定する必要があります`"bool"`、含めることができます、`"caption"`を表示して、 `"value"` true または false に設定されます。 場合、`"on"`と`"off"`プロパティを設定、イメージをしたと見なされます。 イメージは、アプリケーションでは、現在の作業ディレクトリを基準として解決されます。 バンドルの相対ファイルを参照する場合は、使用、`"~"`アプリケーション バンドル ディレクトリ表してへのショートカットとして。 たとえば`"~/favorite.png"`バンドル ファイルに含まれる favorite.png になります。 例:
 
 ```csharp
 { 

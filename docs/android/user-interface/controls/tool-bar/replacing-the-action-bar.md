@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/27/2018
 ms.openlocfilehash: 9e9fa1e2651661670f89baac7fcd438b3d14bfb3
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108224"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61200919"
 ---
 # <a name="replacing-the-action-bar"></a>操作バーの置き換え
 
@@ -37,7 +37,7 @@ ms.locfileid: "50108224"
 
 ## <a name="start-an-app-project"></a>アプリ プロジェクトを開始します。
 
-という新しい Android プロジェクトを作成**ToolbarFun** (を参照してください[こんにちは, Android](~/android/get-started/hello-android/hello-android-quickstart.md)詳細については、新しい Android プロジェクトの作成) します。 このプロジェクトを作成すると後、は、ターゲットと最小の Android API レベルを設定**Android 5.0 (API レベル 21 - ロリポップ)** またはそれ以降。 Android のバージョン レベルの設定の詳細については、[Understanding Android API Levels](~/android/app-fundamentals/android-api-levels.md)を参照してください。 アプリをビルドして実行して、ときにこのスクリーン ショットで、既定の操作バーが表示されます。
+という新しい Android プロジェクトを作成**ToolbarFun** (を参照してください[こんにちは, Android](~/android/get-started/hello-android/hello-android-quickstart.md)詳細については、新しい Android プロジェクトの作成) します。 このプロジェクトを作成すると後、は、ターゲットと最小の Android API レベルを設定**Android 5.0 (API レベル 21 - ロリポップ)** またはそれ以降。 Android のバージョン レベルの設定の詳細については、次を参照してください。 [Understanding Android API Levels](~/android/app-fundamentals/android-api-levels.md)します。 アプリをビルドして実行して、ときにこのスクリーン ショットで、既定の操作バーが表示されます。
 
 [![既定の操作バーのスクリーン ショット](replacing-the-action-bar-images/01-before-sml.png)](replacing-the-action-bar-images/01-before.png#lightbox)
 
@@ -84,7 +84,7 @@ Olive-green`colorPrimary`ツールバーの背景色の設定を使用します�
 <application android:label="@string/app_name" android:theme="@style/MyTheme"></application>
 ```
 
-アプリにカスタム テーマを適用する方法についての詳細については、[カスタム テーマを使用して](~/android/user-interface/material-theme.md#customtheme)を参照してください。 
+アプリにカスタム テーマを適用する方法についての詳細については、次を参照してください。[カスタム テーマを使用して](~/android/user-interface/material-theme.md#customtheme)します。 
 
 
 
@@ -283,7 +283,7 @@ Android のメニューの詳細については、Android の開発者を参照�
 
 ![カスタム テーマを使用しない場合に発生するエラー](replacing-the-action-bar-images/03-theme-not-defined.png)
 
-エラー メッセージは次が生成するなどのさらに、: _Java.Lang.IllegalStateException: このアクティビティは既にウィンドウも親しみやすくによって提供されるアクション バー。_ 
+さらに、次などのエラー メッセージを生成する可能性があります。_Java.Lang.IllegalStateException:このアクティビティは既にウィンドウも親しみやすくによって提供されるアクション バーを使用しています。_ 
 
 このエラーを修正することを確認、`android:theme`属性にユーザー定義のテーマが追加された場合`<application>`(で**Properties/AndroidManifest.xml**) 前述の[カスタムテーマを適用](#apply-the-custom-theme). 場合にこのエラーがさらに、発生する可能性があります、`Toolbar`レイアウトまたはカスタム テーマ正しく構成されていません。
 

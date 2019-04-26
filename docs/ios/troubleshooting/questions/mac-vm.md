@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 04/03/2018
 ms.openlocfilehash: f0fc6ad7e6bf23fce2d742b4e0ed15da73549dc9
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105325"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61420854"
 ---
 # <a name="can-i-use-a-mac-vm-with-xamarin"></a>Xamarin で Mac VM を使用できますか。 
 

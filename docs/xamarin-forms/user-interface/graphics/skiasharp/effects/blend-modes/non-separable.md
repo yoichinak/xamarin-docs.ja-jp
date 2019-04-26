@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
 ms.openlocfilehash: 9b94db14a197ca31be42e8712c2170fd66b86579
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53055012"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61162572"
 ---
 # <a name="the-non-separable-blend-modes"></a>Blend のない分離モード
 
@@ -28,7 +28,7 @@ Blend のない分離モードを理解するのには、送信先と送信元�
 
 HSL カラー モデルは、情報の記事で説明した[ **Xamarin.Forms との統合**](../../basics/integration.md)でき実験 HSL の色をその記事ではサンプル プログラムです。 作成することができます、`SKColor`色合い、鮮やかさ、および明るさの値を使用して、静的値[ `SKColor.FromHsl` ](xref:SkiaSharp.SKColor.FromHsl*)メソッド。
 
-色合いは、色のドミナント波長を表します。 色相 0 ~ 360 の範囲の値の加算と減算のプライマリに切り替える: 赤が値 0、黄色は 60、緑 120、シアンが 180 度、青は 240、マゼンタは 300 におよび、サイクルが 360 に赤に戻ります。
+色合いは、色のドミナント波長を表します。 色相 0 ~ 360 の範囲の値の加算と減算のプライマリの切り替え。赤は値 0、黄色は 60、緑は 120、シアンが 180 度、青は 240、マゼンタは 300 におよび、サイクルが 360 に赤に戻ります。
 
 主調色がない場合は&mdash;色は白または黒、灰色の網かけ、たとえば、&mdash;色合いは未定義であり、通常は 0 に設定します。 
 
@@ -198,7 +198,7 @@ public partial class NonSeparableBlendModesPage : ContentPage
 
 この blend モードのアプリケーションは、間もなく表示されます。
 
-最後に、 `SKBlendModes.Luminosity` blend モードは、逆の`SKBlendModes.Color`します。 Hue と変換先の飽和状態が保持されますが、ソースの明るさを使用します。 `Luminosity` Blend モードは、バッチの中で最も不可解な:、色相と彩度のスライダーに影響を与える、イメージが中程度の輝度であっても、イメージで異なるはありません。
+最後に、 `SKBlendModes.Luminosity` blend モードは、逆の`SKBlendModes.Color`します。 Hue と変換先の飽和状態が保持されますが、ソースの明るさを使用します。 `Luminosity` Blend モードは最も不可解なバッチ。色相と彩度のスライダーに影響を与える、イメージが、中規模の輝度であっても、イメージは distinct できません。
 
 [![非分離ブレンド モード - 光度](non-separable-images/NonSeparableBlendModes-Luminosity.png "非分離ブレンド モードの明るさ")](non-separable-images/NonSeparableBlendModes-Luminosity-Large.png#lightbox)
 

@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 04/28/2017
 ms.openlocfilehash: db24c8677b0a3099193132575e92bc43a4c31dea
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50675563"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61251034"
 ---
 # <a name="internationalization-encodings-in-xamarinios"></a>Xamarin.iOS での国際化エンコーディング
 
@@ -29,10 +29,10 @@ Xamarin.iOS アプリケーションのサイズを減らすためには、特�
 これらのいずれかを選択できます。
 
 -  cjk: Chineese、日本語および韓国語
--  mideast: アラビア語、ヘブライ語、トルコ語、ラテン 5。
--  その他: キリル文字、バルト語、ベトナム語、ウクライナ語、タイ語
--  まれな: EBCDIC エンコーディングとその他のまれなコード ページ
--  西部: イースターと西ヨーロッパ言語ラテン語の言語
+-  mideast:アラビア語、ヘブライ語、トルコ語、ラテン 5。
+-  その他の。キリル文字、バルト語、ベトナム語、ウクライナ語、タイ語
+-  まれです。EBCDIC エンコーディングとその他のまれなコード ページ
+-  西部:イースターと西ヨーロッパ言語ラテン語の言語
 -  all
 
 

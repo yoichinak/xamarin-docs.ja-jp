@@ -1,5 +1,5 @@
 ---
-title: iOS のタスクをバック グラウンド処理
+title: タスクを使用した iOS バックグラウンド処理
 description: このドキュメントでは、バック グラウンド タスクを使用して、アプリケーションがバック グラウンドで配置された後に、実行時間の長いタスクを実行する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 205D230E-C618-4D69-96EE-4B91D7819121
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
 ms.openlocfilehash: c8d1abebf6dec2b7b5fe76d57ff851fad457f2a8
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669831"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61170683"
 ---
-# <a name="ios-backgrounding-with-tasks"></a>iOS のタスクをバック グラウンド処理
+# <a name="ios-backgrounding-with-tasks"></a>タスクを使用した iOS バックグラウンド処理
 
 Ios バック グラウンド処理を実行する最も簡単な方法では、backgrounding、要件、タスクに分割し、バック グラウンドでタスクを実行します。 タスクは、厳密な時間制限では、下にあるし、通常 iOS 7 以降で、アプリケーションが ios 6、バック グラウンドに移動した後、処理時間の約 600 秒 (10 分) と 10 分未満を取得します。
 

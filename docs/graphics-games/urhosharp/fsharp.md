@@ -1,40 +1,40 @@
 ---
-title: F# による UrhoSharp のプログラミング
-description: このドキュメントは、f# では、Visual Studio for mac を使用、単純な hello world UrhoSharp のアプリケーションを作成する方法を説明します
+title: による UrhoSharp のプログラミングF#
+description: このドキュメントは、単純な hello world UrhoSharp を使用してアプリケーションを作成する方法を説明しますF#Visual studio for mac。
 ms.prod: xamarin
 ms.assetid: F976AB09-0697-4408-999A-633977FEFF64
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
 ms.openlocfilehash: 99e8f8bf04465d0d61086139ba9889eae141207e
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50123103"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61160597"
 ---
-# <a name="programming-urhosharp-with-f"></a>F# による UrhoSharp のプログラミング
+# <a name="programming-urhosharp-with-f"></a>による UrhoSharp のプログラミングF#
 
-同じライブラリと c# で使用される概念を使用した f# で UrhoSharp をプログラミングできます。 [を使用して UrhoSharp](~/graphics-games/urhosharp/using.md)記事 UrhoSharp エンジンの概要を説明し、この記事の前に読む必要があります。
+UrhoSharp をプログラミングできるF#同じライブラリとによって使用される概念を使用してC#プログラマです。 [を使用して UrhoSharp](~/graphics-games/urhosharp/using.md)記事 UrhoSharp エンジンの概要を説明し、この記事の前に読む必要があります。
 
 C++ の世界で発生した多くのライブラリと同様には、多くの UrhoSharp 関数は、ブール値または整数の成功または失敗を示す値を返します。 使用する必要があります`|> ignore`をこれらの値を無視します。
 
-[サンプル プログラム](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp)UrhoSharp f# からは、"Hello World"です。
+[サンプル プログラム](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp)UrhoSharp からは、"Hello World"F#します。
 
 ## <a name="creating-an-empty-project"></a>空のプロジェクトを作成します。
 
-F# UrhoSharp のテンプレートがないまだ UrhoSharp プロジェクトを作成するため、使用可能なことができますを開始するか、[サンプル](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp)またはこれらの手順に従います。
+あるないF#テンプレート UrhoSharp をまだ使用可能なで始めることができますか、独自の UrhoSharp プロジェクトを作成するには、ので、[サンプル](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp)またはこれらの手順に従います。
 
-1. Visual Studio for Mac では、作成、新しい**ソリューション**します。 選択**iOS > アプリ > 単一ビュー アプリ**選択**f#** 実装言語として。 
+1. Visual Studio for Mac では、作成、新しい**ソリューション**します。 選択**iOS > アプリ > 単一ビュー アプリ**選択**F#** 実装言語として。 
 1. 削除、 **Main.storyboard**ファイル。 開く、 **Info.plist**ファイルし、 **iPhone/iPod 展開情報**ウィンドウで、削除、`Main`内の文字列、**メイン インターフェイス**ドロップダウンします。
 1. 削除、 **ViewController.fs**ファイルにもします。
 
 ## <a name="building-hello-world-in-urho"></a>Urho の Hello World を構築
 
-ゲームのクラスの定義を開始する準備が整いました。 少なくとものサブクラスを定義する必要があります`Urho.Application`オーバーライドとその`Start`メソッド。 このファイルを作成する f# プロジェクトを右クリックし、選択**新しいファイルを追加しています.** をプロジェクトに空の f# クラスを追加します。 新しいファイルは、プロジェクト内のファイルの一覧の末尾に追加されますが、表示されるようにドラッグする必要があります*する前に*で使用される**AppDelegate.fs**します。
+ゲームのクラスの定義を開始する準備が整いました。 少なくとものサブクラスを定義する必要があります`Urho.Application`オーバーライドとその`Start`メソッド。 このファイルを作成するを右クリックし、F#プロジェクトで、選択**新しいファイルを追加しています.** 、空の追加とF#クラスをプロジェクトにします。 新しいファイルは、プロジェクト内のファイルの一覧の末尾に追加されますが、表示されるようにドラッグする必要があります*する前に*で使用される**AppDelegate.fs**します。
 
 1. Urho NuGet パッケージへの参照を追加します。
-1. (大) のディレクトリをコピーすると、既存の Urho プロジェクトから**CoreData/** と**データ/** にプロジェクトの**リソース/** ディレクトリ。 F# プロジェクトを右クリックし、**リソース**フォルダー**追加/既存のフォルダーを追加**これらすべてのファイルをプロジェクトに追加します。
+1. (大) のディレクトリをコピーすると、既存の Urho プロジェクトから**CoreData/** と**データ/** にプロジェクトの**リソース/** ディレクトリ。 F#プロジェクトを右クリックし、**リソース**フォルダー**追加/既存のフォルダーを追加**これらすべてのファイルをプロジェクトに追加します。
 
 プロジェクトの構造は、以下のようになりますようになりました。
 

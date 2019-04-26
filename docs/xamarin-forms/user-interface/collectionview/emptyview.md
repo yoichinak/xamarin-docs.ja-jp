@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 03/19/2019
 ms.openlocfilehash: a430387bba83887045e5687c99d9295d4be373e4
-ms.sourcegitcommit: 5d4e6677224971e2bc0268f405d192d0358c74b8
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58329977"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61019469"
 ---
 # <a name="display-an-emptyview-when-data-is-unavailable"></a>データが使用できない場合に表示される、EmptyView
 
@@ -21,14 +21,14 @@ ms.locfileid: "58329977"
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/CollectionViewDemos/)
 
 > [!IMPORTANT]
-> `CollectionView`は現在プレビュー段階で、その計画的な機能の一部が不足しています。 さらに、実装が完了すると、API を変更することがあります。
+> `CollectionView` は現在プレビュー段階で、計画されている機能の一部が不足しています。 さらに、実装の完了時には、API は変更される可能性があります。
 
 `CollectionView` 表示するデータがない場合は、ユーザーからのフィードバックを提供するために使用できる次のプロパティを定義します。
 
 - `EmptyView`、型の`object`、文字列、バインド、または表示されるときに表示される、`ItemsSource`プロパティが`null`、によって、コレクションが指定されている場合、または、`ItemsSource`プロパティが`null`または空です。 既定値は `null` です。
 - `EmptyViewTemplate`、型の[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)、テンプレートを使用して、指定した書式を`EmptyView`します。 既定値は `null` です。
 
-これらのプロパティが支え[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)オブジェクトで、このプロパティはデータ バインドの対象であることを意味します。
+これらのプロパティは、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトによりサポートされます。つまりデータバインディングの対象となる可能性があるという意味です。
 
 設定の主な使用シナリオ、`EmptyView`プロパティでフィルター処理時にユーザーからのフィードバックが表示されて、`CollectionView`増えませんデータ、およびユーザーのフィードバックを表示する web サービスからデータを取得するときにします。
 
@@ -258,7 +258,7 @@ void ToggleEmptyView(bool isToggled)
 
 [![IOS と Android でのスワップ空ビューを垂直方向の CollectionView 一覧のスクリーン ショット](emptyview-images/swap.png "CollectionView スワップの空のビューを垂直方向に一覧")](emptyview-images/swap-large.png#lightbox "CollectionView を垂直方向に一覧空のビューのスワップ")
 
-リソース ディクショナリの詳細については、[Xamarin.Forms リソース ディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)を参照してください。
+リソース ディクショナリの詳細については、次を参照してください。 [Xamarin.Forms リソース ディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)します。
 
 ## <a name="related-links"></a>関連リンク
 

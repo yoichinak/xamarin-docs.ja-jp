@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
 ms.openlocfilehash: 2d67bc71361e335515cfba8b5a20e157ed6b6b05
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114341"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61087857"
 ---
 # <a name="touch-id-in-xamarinios"></a>Xamarin.iOS で touch ID
 
@@ -63,7 +63,7 @@ Touch ID とその分を完全に理解をする必要があります Keychain �
 
 前のセクションで確立されるとアプリケーションは、デバイスに設定されているセキュリティ ポリシーに準拠しているユーザーを認証するのにローカル認証を使用できます。
 
-API は現時点では、2 つのみの機能を提供します。 まず、新しいキーチェーン アクセス制御リスト (Acl) を使用して既存の Keychain サービスを支援します。 キーチェーンのデータは、ユーザーの指紋認証が成功したロックされていることができます。
+現時点では、API は、2 つだけの機能を提供します。まず、新しいキーチェーン アクセス制御リスト (Acl) を使用して既存の Keychain サービスを支援します。 キーチェーンのデータは、ユーザーの指紋認証が成功したロックされていることができます。
 
 次に、LocalAuthentication は、アプリケーションをローカルで認証する 2 つのメソッドを提供します。 開発者が使用する必要があります`CanEvaluatePolicy`デバイスがタッチの ID を受信できるかどうかが決定し、`EvaluatePolicy`認証操作を開始します。
 

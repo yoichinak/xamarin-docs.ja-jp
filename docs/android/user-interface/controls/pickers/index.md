@@ -1,5 +1,5 @@
 ---
-title: ピッカー
+title: 選択
 description: Android の組み込みダイアログを使用して日付と時刻をユーザーを照会するには
 ms.prod: xamarin
 ms.assetid: 57C86933-3F04-47DD-9839-72D522D73330
@@ -8,13 +8,13 @@ author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
 ms.openlocfilehash: af6e71e83f90be720db75887553e24a99966720c
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119858"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61153560"
 ---
-# <a name="pickers"></a>ピッカー
+# <a name="pickers"></a>選択
 
 
 *ピッカー*ユーザーが Android によって提供されるダイアログ ボックスを使用して、日付や時刻を選択できるようにする UI 要素を示します。

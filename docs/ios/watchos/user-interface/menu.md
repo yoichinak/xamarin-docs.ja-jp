@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
 ms.openlocfilehash: 7696c820ab6fdf19bdef46db31061fb5914e6cf4
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109758"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60880687"
 ---
 # <a name="watchos-menu-control-force-touch-in-xamarin"></a>watchOS で Xamarin (Force Touch) メニュー コントロール
 
@@ -40,7 +40,7 @@ A`Menu`に追加する必要があります、`InterfaceController`デザイン�
 
 - タイトル、および
 - カスタム イメージ、または
-- システム イメージ: 受け入れるには、追加、ブロック、拒否、情報、さらに、ミュート、一時停止、再生、再開、共有、シャッフル、スピーカー、ごみ箱を繰り返します。
+- システム イメージの場合:受け入れるように、ブロック、拒否、情報を追加、さらに、ミュート、一時停止、再生、再開、共有、シャッフル、スピーカー、ごみ箱を繰り返します。
 
 作成、`Action`を選択して、**イベント**のセクション、**プロパティ**パッド、アクション メソッドの名前を入力します。 部分メソッドが、コードでは、次のように、インターフェイス コント ローラー クラスで実装できますで作成されます。
 

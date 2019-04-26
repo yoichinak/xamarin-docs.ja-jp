@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
 ms.openlocfilehash: 7f957c9ff5a0e7c3a0821978703860ed2f723a92
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50123324"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61013143"
 ---
 # <a name="touch-and-gestures-in-xamarinandroid"></a>タッチおよびジェスチャを Xamarin.Android で
 
@@ -33,7 +33,7 @@ Android や iOS 上を操作するかどうかタッチとジェスチャ レコ
 ## <a name="sections"></a>セクション
 
 -  [Android でのタッチ](~/android/app-fundamentals/touch/android-touch-walkthrough.md)
--  [チュートリアル: Android でタッチを使用します。](~/android/app-fundamentals/touch/android-touch-walkthrough.md)
+-  [チュートリアル: Android でタッチを使用](~/android/app-fundamentals/touch/android-touch-walkthrough.md)
 -  [マルチタッチ追跡](touch-tracking.md)
 
 ## <a name="summary"></a>まとめ

@@ -8,17 +8,17 @@ author: lobrien
 ms.author: laobri
 ms.date: 09/19/2018
 ms.openlocfilehash: 77589d0d644c366fc0feacd874929c7456b4ae30
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "39615175"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61398799"
 ---
 # <a name="get-started-with-ios-12-tvos-12-and-watchos-5"></a>IOS 12、12、tvOS と watchOS 5 の概要します。
 
 このドキュメントでは、12 を iOS、tvOS 12、および watchOS 5 Xcode 10 でリリースされている Api を呼び出す Xamarin アプリの構築を開始する方法について説明します。
 
-## <a name="download-and-install"></a>ダウンロードとインストール
+## <a name="download-and-install"></a>ダウンロードしてインストールする
 
 1. **Xcode の 10 をインストール**– Apple の登録されている開発者はダウンロードして、Xcode 10 からの最新バージョンをインストール、 [Apple Developer Portal](https://developer.apple.com/download/)または**App Store**します。
 

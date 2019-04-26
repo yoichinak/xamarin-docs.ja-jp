@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 03/15/2019
 ms.openlocfilehash: 8ed365ed41ac31c66d41f1a32a7a16929cdc6770
-ms.sourcegitcommit: 5d4e6677224971e2bc0268f405d192d0358c74b8
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58329940"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61367602"
 ---
 # <a name="specify-xamarinforms-collectionview-layout"></a>Xamarin.Forms CollectionView レイアウトを指定します
 
@@ -21,14 +21,14 @@ ms.locfileid: "58329940"
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/CollectionViewDemos/)
 
 > [!IMPORTANT]
-> `CollectionView`は現在プレビュー段階で、その計画的な機能の一部が不足しています。 さらに、実装が完了すると、API を変更することがあります。
+> `CollectionView` は現在プレビュー段階で、計画されている機能の一部が不足しています。 さらに、実装の完了時には、API は変更される可能性があります。
 
 `CollectionView` レイアウトを制御する次のプロパティを定義します。
 
 - `ItemsLayout`、型の`IItemsLayout`、使用するレイアウトを指定します。
 - `ItemSizingStrategy`、型の`ItemSizingStrategy`、使用する項目のメジャーの戦略を指定します。
 
-これらのプロパティが支え[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)オブジェクトで、このプロパティはデータ バインドの対象であることを意味します。
+これらのプロパティは、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトによりサポートされます。つまりデータバインディングの対象となる可能性があるという意味です。
 
 既定で、`CollectionView`を垂直方向に一覧の項目が表示されます。 ただし、使用のレイアウトのいずれかのことができます。
 
@@ -43,7 +43,7 @@ ms.locfileid: "58329940"
 - `SnapPointsAlignment`、型の`SnapPointsAlignment`、項目を含むのスナップ ポイントを配置する方法を指定します。
 - `SnapPointsType`、型の`SnapPointsType`、スクロールするとき、スナップ ポイントの動作を指定します。
 
-これらのプロパティが支え[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)オブジェクトで、このプロパティはデータ バインドの対象であることを意味します。 スナップ ポイントの詳細については、次を参照してください。[のスナップ ポイント](scrolling.md#snap-points)で、[項目をスクロールして表示](scrolling.md)ガイド。
+これらのプロパティは、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトによりサポートされます。つまりデータバインディングの対象となる可能性があるという意味です。 スナップ ポイントの詳細については、次を参照してください。[のスナップ ポイント](scrolling.md#snap-points)で、[項目をスクロールして表示](scrolling.md)ガイド。
 
 `ItemsLayoutOrientation`列挙体は、次のメンバーを定義します。
 
@@ -334,7 +334,7 @@ CollectionView collectionView = new CollectionView
 
 [![IOS と Android での CollectionView 垂直方向のリストを右から左のレイアウトのスクリーン ショット](layout-images/vertical-list-rtl.png "CollectionView 垂直方向のリストを右から左のレイアウト")](layout-images/vertical-list-rtl-large.png#lightbox "CollectionView 右から左の垂直方向リストのレイアウト")
 
-フローの方向に関する詳細については、[右から左のローカリゼーション](~/xamarin-forms/app-fundamentals/localization/right-to-left.md)を参照してください。
+フローの方向に関する詳細については、次を参照してください。[右から左のローカリゼーション](~/xamarin-forms/app-fundamentals/localization/right-to-left.md)します。
 
 ## <a name="item-sizing"></a>項目のサイズ変更
 

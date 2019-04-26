@@ -1,6 +1,6 @@
 ---
 title: トラブルシューティング
-description: 一般的なエラー状況と問題を解決する方法
+description: 一般的なエラー状況とその解決方法
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 63291951-7375-4CBF-BCC3-2E4AD157A2C8
@@ -9,19 +9,19 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 04/25/2017
 ms.openlocfilehash: fbe4fb6fce52636b59a9637ee0150c4c19fcc9da
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30788524"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60850442"
 ---
 # <a name="troubleshooting"></a>トラブルシューティング
 
-_一般的なエラー状況と問題を解決する方法_
+_一般的なエラー状況とその解決方法_
 
-## <a name="error-unable-to-find-a-version-of-xamarinforms-compatible-with"></a>「できません Xamarin.Forms のバージョンと互換性が... 見つかりません」エラー:
+## <a name="error-unable-to-find-a-version-of-xamarinforms-compatible-with"></a>エラー :「Xamarin.Forms のバージョンとの互換性を... 検索できません。」
 
-次のエラーが表示できる、**パッケージ コンソール**すべての Nuget パッケージ、まず Xamarin.Forms ソリューションまたは Xamarin.Forms Android アプリ プロジェクトを更新するときにウィンドウ。
+次のエラーが表示できる、**パッケージ コンソール**ウィンドウのすべての Nuget パッケージで Xamarin.Forms ソリューション、または Xamarin.Forms の Android アプリ プロジェクトで更新する場合。
 
 ```csharp
 Attempting to resolve dependency 'Xamarin.Android.Support.v7.AppCompat (= 23.3.0.0)'.
@@ -32,30 +32,30 @@ Updating 'Xamarin.Android.Support.v7.MediaRouter 23.3.0.0' to 'Xamarin.Android.S
 Unable to find a version of 'Xamarin.Forms' that is compatible with 'Xamarin.Android.Support.v7.MediaRouter 23.3.0.0'.
 ```
 
-### <a name="what-causes-this-error"></a>このエラーの原因ですか。
+### <a name="what-causes-this-error"></a>このエラーの原因は何ですか。
 
-Mac (または Visual Studio) 用の visual Studio は、更新プログラムは Xamarin.Forms Nuget パッケージを使用する可能性があります*とそのすべての依存関係*です。 Xamarin Studio で、ソリューションの**パッケージ**ノードは次のようになります (バージョン番号が異なる可能性があります)。
+更新プログラムは、Xamarin.Forms Nuget パッケージを使用する visual Studio for Mac (または Visual Studio) がある可能性があります*とそのすべての依存関係*します。 Xamarin Studio で、ソリューションの**パッケージ**ノードは次のようになります (バージョン番号が異なる可能性があります)。
 
-![](images/updates-available.png "Android プロジェクト パッケージ フォルダー")
+![](images/updates-available.png "Android プロジェクトのパッケージ フォルダー")
 
-このエラーは、更新しようとする場合に発生する可能性があります_すべて_パッケージです。
+このエラーは、更新しようとした場合に発生する可能性があります_すべて_パッケージ。
 
-これは、Android プロジェクトが Android 6.0 (API 23) のターゲット/コンパイル バージョンに設定または次に、Xamarin.Forms ハードに依存しているため*特定*Android のバージョンは、パッケージをサポートします。 これらのパッケージの更新バージョンを使用することが Xamarin.Forms は必ずしも互換性にありません。
+これは、Android プロジェクトが Android 6.0 (API 23) のターゲット/コンパイル バージョンに設定または以下では、Xamarin.Forms ハードに依存しているため*特定*Android のバージョンは、パッケージをサポートします。 これらのパッケージの更新バージョンができる場合があります、Xamarin.Forms は必ずしも互換性それらがありません。
 
-ここで更新する必要があります_のみ_、 **Xamarin.Forms**パッケージの依存関係は、互換性のあるバージョンに残っていることができます。 他のパッケージをプロジェクトに追加した可能性がありますも個別に更新する、Android のサポート パッケージを更新することがない限り、します。
+このケースで更新する必要があります_のみ_、 **Xamarin.Forms**パッケージの依存関係が互換性のあるバージョンに残っていることができます。 その他のパッケージをプロジェクトに追加した可能性がありますも個別に更新する Android サポート パッケージを更新することがない限り、します。
 
 
 > [!NOTE]
-> Xamarin.Forms 2.3.4 を使用している場合またはそれ以上**と**Android 7.0 (API 24) 以上、Android プロジェクトのターゲット/コンパイル バージョンに設定されている、不要になった上記ハード依存関係を適用し、サポートを更新することがありますXamarin.Forms パッケージとは別にパッケージします。
+> Xamarin.Forms 2.3.4 を使用している場合またはそれ以上**と**Android 7.0 (API 24) または以降では、Android プロジェクトのターゲット/コンパイル バージョンに設定、不要になった上記で説明したハードの依存関係を適用し、サポートを更新することがありますXamarin.Forms パッケージとは別にパッケージします。
 
 
-### <a name="fix-remove-all-packages-and-re-add-xamarinforms"></a>修正: すべてのパッケージを削除してから再度 Xamarin.Forms を追加
+### <a name="fix-remove-all-packages-and-re-add-xamarinforms"></a>修正:すべてのパッケージを削除して再度 Xamarin.Forms を追加
 
-場合、 **Xamarin.Android.Support**パッケージは、互換性のないバージョンに更新されましたが、最も簡単な修正プログラムでは。
+場合、 **Xamarin.Android.Support**パッケージは、互換性のないバージョンに更新されましたが、最も簡単な修正するには。
 
 1. Android のプロジェクト内のすべての Nuget パッケージを手動で削除し、
-2. もう一度追加、 **Xamarin.Forms**パッケージです。
+2. もう一度追加、 **Xamarin.Forms**パッケージ。
 
 これは自動的にダウンロード、*正しい*の他のパッケージのバージョン。
 
-このプロセスのビデオを表示するには、これを参照してください[フォーラムの投稿](https://forums.xamarin.com/discussion/comment/170012/#Comment_170012)です。
+このプロセスのビデオを参照してください、これを参照してください[フォーラム投稿](https://forums.xamarin.com/discussion/comment/170012/#Comment_170012)します。

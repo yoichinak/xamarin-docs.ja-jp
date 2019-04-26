@@ -1,5 +1,5 @@
 ---
-title: 間の通信を疎結合コンポーネント
+title: 疎結合コンポーネント間の通信
 description: 'この章では、eShopOnContainers のモバイル アプリで、発行の実装方法について説明します-サブスクライブ パターンでは、オブジェクトと型を参照することでリンクするは便利ではないコンポーネント間のメッセージ ベースの通信を許可します。 '
 ms.prod: xamarin
 ms.assetid: 1194af33-8a91-48d2-88b5-b84d77f2ce69
@@ -8,13 +8,13 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
 ms.openlocfilehash: ddc33d28aad4e00c9259893c0f8e7a1ab40ee429
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998545"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61381877"
 ---
-# <a name="communicating-between-loosely-coupled-components"></a>間の通信を疎結合コンポーネント
+# <a name="communicating-between-loosely-coupled-components"></a>疎結合コンポーネント間の通信
 
 発行-サブスクライブ パターンはパブリッシャーがサブスクライバーと呼ばれる、すべての受信者の知識をしなくてもメッセージを送信するメッセージング パターンです。 同様に、サブスクライバーはパブリッシャーの知識がなくてせず、特定のメッセージを待機します。
 
@@ -55,16 +55,16 @@ EShopOnContainers のモバイル アプリで[`MessagingCenter` ](xref:Xamarin.
 [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) メッセージは、メッセージを識別するために使用される文字列です。 次のコード例では、eShopOnContainers のモバイル アプリ内で定義されているメッセージを示します。
 
 ```csharp
-public class MessengerKeys  
+public class MessengerKeys  
 {  
-    // Add product to basket  
-    public const string AddProduct = "AddProduct";  
+    // Add product to basket  
+    public const string AddProduct = "AddProduct";  
 
-    // Filter  
-    public const string Filter = "Filter";  
+    // Filter  
+    public const string Filter = "Filter";  
 
-    // Change selected Tab programmatically  
-    public const string ChangeTab = "ChangeTab";  
+    // Change selected Tab programmatically  
+    public const string ChangeTab = "ChangeTab";  
 }
 ```
 
@@ -75,7 +75,7 @@ public class MessengerKeys
 発行元のいずれかのメッセージのサブスクライバーに通知、 [ `MessagingCenter.Send` ](xref:Xamarin.Forms.MessagingCenter.Send*)オーバー ロードします。 次のコード例に示します発行、`AddProduct`メッセージ。
 
 ```csharp
-MessagingCenter.Send(this, MessengerKeys.AddProduct, catalogItem);
+MessagingCenter.Send(this, MessengerKeys.AddProduct, catalogItem);
 ```
 
 この例で、 [ `Send` ](xref:Xamarin.Forms.MessagingCenter.Send*)メソッドは、3 つの引数を指定します。
@@ -94,12 +94,12 @@ MessagingCenter.Send(this, MessengerKeys.AddProduct, catalogItem);
 いずれかを使用してメッセージを受信するサブスクライバーを登録できます、 [ `MessagingCenter.Subscribe` ](xref:Xamarin.Forms.MessagingCenter.Subscribe*)オーバー ロードします。 次のコード例を示します、eShopOnContainers のモバイル アプリのサブスクライブし、処理、`AddProduct`メッセージ。
 
 ```csharp
-MessagingCenter.Subscribe<CatalogViewModel, CatalogItem>(  
-    this, MessageKeys.AddProduct, async (sender, arg) =>  
+MessagingCenter.Subscribe<CatalogViewModel, CatalogItem>(  
+    this, MessageKeys.AddProduct, async (sender, arg) =>  
 {  
-    BadgeCount++;  
+    BadgeCount++;  
 
-    await AddCatalogItemAsync(arg);  
+    await AddCatalogItemAsync(arg);  
 });
 ```
 
@@ -115,7 +115,7 @@ MessagingCenter.Subscribe<CatalogViewModel, CatalogItem>(
 サブスクライバーからメッセージを受信する必要がなくなった登録を解除できます。 いずれかでこれは、 [ `MessagingCenter.Unsubscribe` ](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*)次のコード例に示すように、オーバー ロードします。
 
 ```csharp
-MessagingCenter.Unsubscribe<CatalogViewModel, CatalogItem>(this, MessengerKeys.AddProduct);
+MessagingCenter.Unsubscribe<CatalogViewModel, CatalogItem>(this, MessengerKeys.AddProduct);
 ```
 
 この例で、 [ `Unsubscribe` ](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*)メソッド構文がサブスクライブを受信するときに指定された型引数を反映して、`AddProduct`メッセージ。

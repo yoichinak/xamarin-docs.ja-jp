@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
 ms.openlocfilehash: 173bc7713b5b8c330d4d4c5863bef24be8bdcb52
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107470"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61179669"
 ---
 # <a name="working-with-tvos-page-controls-in-xamarin"></a>TvOS Xamarin でのページ コントロールの操作
 
@@ -61,7 +61,7 @@ Xamarin.tvOS アプリでページ コントロールを操作する最も簡単
 
     [![](page-controls-images/page03-vs.png "[ウィジェット] タブ")](page-controls-images/page03-vs.png#lightbox)
 1. 次に、後ろに移動し、ページのコレクションを転送するには、ビューにコントロールやジェスチャを追加します。
-1. 最後に、割り当てる**名**コントロール内に応答できるようにC#コード。 例えば: 
+1. 最後に、割り当てる**名**コントロール内に応答できるようにC#コード。 例: 
 
     [![](page-controls-images/page04-vs.png "コントロールに名前")](page-controls-images/page04-vs.png#lightbox)
 1. 変更内容を保存します。
@@ -72,7 +72,7 @@ Xamarin.tvOS アプリでページ コントロールを操作する最も簡単
 > [!IMPORTANT]
 > などのイベントを割り当てることはできますが`TouchUpInside`iOS Designer の UI 要素 (、UIButton) など、これは呼び出されません Apple TV がタッチ画面またはタッチ イベントをサポートしていないためです。 常に使用する必要があります、 `Primary Action` tvOS 用のイベント ハンドラーのユーザー インターフェイス要素を作成するときにイベント。
 
-ビュー コント ローラーの編集 (例`ViewController.cs`) ファイルし、変更されているページを処理するコードを追加します。 例えば:
+ビュー コント ローラーの編集 (例`ViewController.cs`) ファイルし、変更されているページを処理するコードを追加します。 例:
 
 ```csharp
 using System;

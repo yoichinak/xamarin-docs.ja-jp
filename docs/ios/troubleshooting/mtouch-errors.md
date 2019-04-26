@@ -9,11 +9,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/06/2018
 ms.openlocfilehash: e6e3a989db922dc2941cca4c888c862ffe159241
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672860"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61422053"
 ---
 # <a name="xamarinios-errors"></a>Xamarin.iOS のエラー
 
@@ -647,7 +647,7 @@ Xamarin.iOS で内部整合性チェックが失敗した場合、このエラ�
 
 ユーザー側で操作は必要ありません、このメッセージは、純粋な情報。
 
-詳細については、バグの #[51710](https://bugzilla.xamarin.com/show_bug.cgi?id=51710)を参照してください。
+詳細については、次を参照してください。 バグの #[51710](https://bugzilla.xamarin.com/show_bug.cgi?id=51710)します。
 
 今後この警告は報告されません。
 
@@ -659,7 +659,7 @@ Bitcode を有効に自動的にこのバージョンの Xamarin.iOS でビル�
 
 ユーザー側で操作は必要ありません、このメッセージは、純粋な情報。
 
-詳細については、バグの #[51634](https://bugzilla.xamarin.com/show_bug.cgi?id=51634)を参照してください。
+詳細については、次を参照してください。 バグの #[51634](https://bugzilla.xamarin.com/show_bug.cgi?id=51634)します。
 
 <a name="MT0112" />
 
@@ -830,7 +830,7 @@ Xamarin.iOS のこのバージョンは常にプロジェクトをビルド複�
 
 操作は必要ありません、このメッセージは、純粋な情報。
 
-詳細については、バグの #[52727](https://bugzilla.xamarin.com/show_bug.cgi?id=52727)を参照してください。
+詳細については、次を参照してください。 バグの #[52727](https://bugzilla.xamarin.com/show_bug.cgi?id=52727)します。
 
 <a name="MT0128" />
 
@@ -2770,19 +2770,19 @@ Xamarin.iOS を使用してこのようなシンボルを保持するネイテ�
 
 <a name="MT7050" />
 
-### <a name="mt7050-delete-cant-delete-entry--from-parent"></a>MT7050:削除します。エントリを削除することはできません *、親から。
+### <a name="mt7050-delete-cant-delete-entry--from-parent"></a>MT7050:削除: エントリを削除することはできません *、親から。
 
 *MSBuild タスク。PropertyListEditorTaskBase*
 
 <a name="MT7051" />
 
-### <a name="mt7051-delete-entry--contains-invalid-array-index"></a>MT7051:削除します。エントリ、*、無効な配列のインデックスが含まれています。
+### <a name="mt7051-delete-entry--contains-invalid-array-index"></a>MT7051:削除: エントリ、*、無効な配列のインデックスが含まれています。
 
 *MSBuild タスク。PropertyListEditorTaskBase*
 
 <a name="MT7052" />
 
-### <a name="mt7052-delete-entry--does-not-exist"></a>MT7052:削除します。エントリ、*、存在しません。
+### <a name="mt7052-delete-entry--does-not-exist"></a>MT7052:削除: エントリ、*、存在しません。
 
 *MSBuild タスク。PropertyListEditorTaskBase*
 

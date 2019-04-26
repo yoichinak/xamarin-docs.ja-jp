@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
 ms.openlocfilehash: 53bfc9f147b6cf369b8f5ce8d1257dbaf6b0f807
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113522"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61032830"
 ---
 # <a name="building-modern-macos-apps"></a>最新の macOS アプリの構築
 
@@ -436,7 +436,7 @@ A`CALayer`オブジェクトは、提示された内容を制御する開発者�
 
 #### <a name="redrawing-views-with-layers"></a>レイヤーにビューを再描画
 
-もう 1 つの重要なステップ設定は、Xamarin.Mac アプリでレイヤー バックアップ ビューを使用するときに、`LayerContentsRedrawPolicy`の`NSView`に`OnSetNeedsDisplay`で、`NSViewController`します。 例えば:
+もう 1 つの重要なステップ設定は、Xamarin.Mac アプリでレイヤー バックアップ ビューを使用するときに、`LayerContentsRedrawPolicy`の`NSView`に`OnSetNeedsDisplay`で、`NSViewController`します。 例:
 
 ```csharp
 public override void ViewWillAppear ()
@@ -836,7 +836,7 @@ public override void ViewDidLoad ()
 
 場所、`Alignment`と`ImagePosition`に基づいて設定されて、`UserInterfaceLayoutDirection`のコントロール。
 
-macOS Sierra がいくつかの新しい便利なコンス トラクターを追加します (静的なを使用して`CreateButton`メソッド) を (タイトル、イメージ、およびアクション) などのいくつかのパラメーターを受け取るし、自動的に正しく反映されます。 例えば:
+macOS Sierra がいくつかの新しい便利なコンス トラクターを追加します (静的なを使用して`CreateButton`メソッド) を (タイトル、イメージ、およびアクション) などのいくつかのパラメーターを受け取るし、自動的に正しく反映されます。 例:
 
 ```csharp
 var button2 = NSButton.CreateButton (myTitle, myImage, () => {
@@ -908,7 +908,7 @@ Apple では、システムの外観を使用するための次の推奨事項�
 - この制限が UI の柔軟性はハードコーディング UI 構造の依存関係、しないでください。
 - 使用C#のインターフェイスを依存関係を汎用的なデータを提供します。
 
-セグエのソースとして動作しているビュー コント ローラーがオーバーライドできる、`PrepareForSegue`メソッドと、セグエの前にデータを渡す) など、初期化が必要な操作が実行されている場合に対象ビュー コント ローラーを表示します。 例えば:
+セグエのソースとして動作しているビュー コント ローラーがオーバーライドできる、`PrepareForSegue`メソッドと、セグエの前にデータを渡す) など、初期化が必要な操作が実行されている場合に対象ビュー コント ローラーを表示します。 例:
 
 ```csharp
 public override void PrepareForSegue (NSStoryboardSegue segue, NSObject sender)

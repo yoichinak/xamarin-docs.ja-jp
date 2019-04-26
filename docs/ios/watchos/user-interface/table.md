@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
 ms.openlocfilehash: cd5e7299874bbfb1b652315a549b9d067d58e9a0
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109394"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60881337"
 ---
 # <a name="watchos-table-controls-in-xamarin"></a>watchOS Xamarin でのテーブル コントロール
 
@@ -160,7 +160,7 @@ watchOS 3 には、テーブルの新しい機能が導入されました。 詳
 
 <a name="add_row_controller" />
 
-## <a name="appendix-row-controller-code-example"></a>付録: 行コント ローラーのコード例
+## <a name="appendix-row-controller-code-example"></a>付録:行コント ローラーのコード例
 
 IDE では、行のコント ローラーは、デザイナーで作成されたときに、2 つのコード ファイルが自動的に作成します。 これらの生成されたファイル内のコードは、参照を以下に示します。
 

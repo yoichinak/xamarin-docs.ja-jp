@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
 ms.openlocfilehash: f2865858552d4445dff95c85767c41849c19cc29
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122271"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61018267"
 ---
 # <a name="cpu-architectures"></a>CPU アーキテクチャ
 
@@ -21,7 +21,7 @@ _Xamarin.Android には、32 ビットおよび 64 ビットのデバイスを�
 ## <a name="cpu-architectures-overview"></a>CPU アーキテクチャの概要
 
 どのプラットフォームの CPU アーキテクチャを指定する必要があります、リリースのアプリを準備するときに、アプリケーションがサポートされます。 1 つの APK に、複数の異なるアーキテクチャをサポートするためのマシン コードを含めることができます。 アーキテクチャ固有のコードの各コレクションが関連付けられている、*アプリケーション バイナリ インターフェイス*(ABI)。 各 ABI は、このマシン語コードの実行時に、Android とやり取りが予想される方法を定義します。
-このしくみの詳細については、[マルチコア デバイス&amp;Xamarin.Android](~/android/deploy-test/multicore-devices.md)を参照してください。
+このしくみの詳細については、次を参照してください。[マルチコア デバイス&amp;Xamarin.Android](~/android/deploy-test/multicore-devices.md)します。
 
 
 ## <a name="how-to-specify-supported-architectures"></a>サポートされているアーキテクチャを指定する方法
@@ -71,4 +71,4 @@ Xamarin.Android の既定値は`armeabi-v7a`の**リリース**をビルドし�
 ## <a name="additional-information"></a>追加情報
 
 状況によっては、アーキテクチャごとに個別の APK を作成する必要があります (、APK のサイズを小さくか、アプリが特定の CPU アーキテクチャに固有のライブラリを共有するため)。
-この方法の詳細については、[ABI 固有の Apk のビルド](~/android/deploy-test/building-apps/abi-specific-apks.md)を参照してください。
+この方法の詳細については、次を参照してください。 [ABI 固有の Apk のビルド](~/android/deploy-test/building-apps/abi-specific-apks.md)します。

@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2018
 ms.openlocfilehash: 8690be7551046a26339f58029da5f3f58e18cd15
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
-ms.translationtype: HT
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672587"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61024220"
 ---
 # <a name="understanding-android-api-levels"></a>Android API レベルの理解
 
@@ -29,11 +29,11 @@ Xamarin.Android では、次の 3 つの Android API レベルのプロジェク
 
 -   [ターゲット Android バージョン](#target)&ndash;上で実行するためのもので、アプリが Android のバージョンを指定します。 この API のレベルに使用される*実行*Android によって時間。
 
-API レベルを構成するには、プロジェクトの前に、その API レベルの SDK プラットフォームのコンポーネントをインストールする必要があります。 ダウンロードとインストールの Android SDK コンポーネントに関する詳細については、[Android SDK セットアップ](~/android/get-started/installation/android-sdk.md)を参照してください。
+API レベルを構成するには、プロジェクトの前に、その API レベルの SDK プラットフォームのコンポーネントをインストールする必要があります。 ダウンロードとインストールの Android SDK コンポーネントに関する詳細については、次を参照してください。 [Android SDK セットアップ](~/android/get-started/installation/android-sdk.md)します。
 
 > [!NOTE]
 > 2018 の年 8 月以降、Google Play コンソールが必要になります新しいアプリがターゲット API レベル 26 (Android 8.0) で、またはそれ以降。
-既存のアプリは、API レベル 26 または 2018 年 11 月以降の高い対象にする必要があります。 詳細については、[アプリのセキュリティとする年の Google Play でのパフォーマンスの向上](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html)を参照してください。
+既存のアプリは、API レベル 26 または 2018 年 11 月以降の高い対象にする必要があります。 詳細については、次を参照してください。[アプリのセキュリティとする年の Google Play でのパフォーマンスの向上](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html)します。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -114,7 +114,7 @@ Xamarin.Android をさらに、定義*バージョン コードをビルド*現�
 
 ### <a name="android-sdk-platforms"></a>Android SDK プラットフォーム
 
-Xamarin.Android では、ターゲットまたは最小 API レベルを選択できますが、前に、API レベルに対応する Android SDK プラットフォームのバージョンをインストールする必要があります。 ターゲット フレームワーク、Minimum Android version、およびターゲット Android バージョンで使用できる選択肢の範囲は、インストールされている、バージョンの Android SDK の範囲に制限されます。 SDK Manager を使用するには、必要な Android SDK バージョンがインストールされている、され、使用して、アプリに必要なすべての新しい API レベルを追加するのにことを確認します。 API レベルをインストールする方法に慣れていない場合は、[Android SDK セットアップ](~/android/get-started/installation/android-sdk.md)を参照してください。
+Xamarin.Android では、ターゲットまたは最小 API レベルを選択できますが、前に、API レベルに対応する Android SDK プラットフォームのバージョンをインストールする必要があります。 ターゲット フレームワーク、Minimum Android version、およびターゲット Android バージョンで使用できる選択肢の範囲は、インストールされている、バージョンの Android SDK の範囲に制限されます。 SDK Manager を使用するには、必要な Android SDK バージョンがインストールされている、され、使用して、アプリに必要なすべての新しい API レベルを追加するのにことを確認します。 API レベルをインストールする方法に慣れていない場合は、次を参照してください。 [Android SDK セットアップ](~/android/get-started/installation/android-sdk.md)します。
 
 <a name="framework" />
 

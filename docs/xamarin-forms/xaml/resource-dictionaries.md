@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/21/2018
 ms.openlocfilehash: 5b1c9ff709022d6bcae51597a03fe2a71097cd2d
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53052557"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61076672"
 ---
 # <a name="resource-dictionaries"></a>リソース ディクショナリ
 
@@ -113,7 +113,7 @@ Xamarin.Forms のプログラムにはから派生したクラス 1 つだけに
 [![](resource-dictionaries-images/screenshots-sml.png "ResourceDictionary リソースを消費して")](resource-dictionaries-images/screenshots.png#lightbox "ResourceDictionary リソースを消費")
 
 > [!NOTE]
-> 1 つのページに固有のリソースは、アプリケーション レベルのリソース ディクショナリをそのため、ページで必要なときに、リソースの代わりに、アプリケーションの起動時に解析されますに含めることはできません。 詳細については、[アプリケーション リソース ディクショナリのサイズを減らす](~/xamarin-forms/deploy-test/performance.md)を参照してください。
+> 1 つのページに固有のリソースは、アプリケーション レベルのリソース ディクショナリをそのため、ページで必要なときに、リソースの代わりに、アプリケーションの起動時に解析されますに含めることはできません。 詳細については、次を参照してください。[アプリケーション リソース ディクショナリのサイズを減らす](~/xamarin-forms/deploy-test/performance.md)します。
 
 ## <a name="overriding-resources"></a>リソースのオーバーライド
 
@@ -149,7 +149,7 @@ Xamarin.Forms のプログラムにはから派生したクラス 1 つだけに
 
 ただし、注意のバック グラウンド バー、 [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)黄色のまま、ため、 [ `BarBackgroundColor` ](xref:Xamarin.Forms.NavigationPage.BarBackgroundColor)の値に設定されて、`PageBackgroundColor`アプリケーションで定義されているリソースレベル`ResourceDictionary`します。
 
-について検討する別の方法を次に示します`ResourceDictionary`優先順位: ときに、XAML パーサーが検出した、 `StaticResource`、ビジュアル ツリーを介したを結ぶこと、一致するキーを検索、見つかった最初の一致を使用します。 XAML パーサーが検索ページでこの検索を終了し、キーもまだ検出された場合、`ResourceDictionary`にアタッチされている、`App`オブジェクト。 でも、キーが存在しない場合は、例外が発生します。
+別の方法について考える`ResourceDictionary`よりも優先されます。XAML パーサーが検出した場合、 `StaticResource`、ビジュアル ツリーを介したを結ぶこと、一致するキーを検索、見つかった最初の一致を使用します。 XAML パーサーが検索ページでこの検索を終了し、キーもまだ検出された場合、`ResourceDictionary`にアタッチされている、`App`オブジェクト。 でも、キーが存在しない場合は、例外が発生します。
 
 ## <a name="stand-alone-resource-dictionaries"></a>スタンドアロンのリソース ディクショナリ
 
@@ -195,7 +195,7 @@ Xamarin.Forms のプログラムにはから派生したクラス 1 つだけに
 
 インスタンス`MyResourceDictionary`に設定されている、`Resources`のプロパティ、`ContentPage`オブジェクト。
 
-ただし、このアプローチにはいくつかの制限:`Resources`のプロパティ、`ContentPage`参照のみ`ResourceDictionary`します。 などの他のオプションが必要なほとんどの場合、`ResourceDictionary`インスタンスとおそらく他のリソースもします。
+ただし、このアプローチでは、いくつかの制限があります。`Resources`のプロパティ、`ContentPage`参照のみ`ResourceDictionary`します。 などの他のオプションが必要なほとんどの場合、`ResourceDictionary`インスタンスとおそらく他のリソースもします。
 
 このタスクでは、マージされたリソース ディクショナリが必要です。
 

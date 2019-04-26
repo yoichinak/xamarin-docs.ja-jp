@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/13/2018
 ms.openlocfilehash: e71e79b58d912ecb697576e92ae921a848f24f4c
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57671171"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61013377"
 ---
 # <a name="alternate-resources"></a>代替リソース
 
@@ -44,7 +44,7 @@ ms.locfileid: "57671171"
 可能な修飾子は、参照を以下に示します。
 
 - **MCC と mnc も** &ndash; 、[モバイルの国コード](https://en.wikipedia.org/wiki/List_of_mobile_country_codes)(MCC) と、必要に応じて、[モバイル ネットワーク コード](https://en.wikipedia.org/wiki/Mobile_Network_Code)(mnc も)。 SIM カードは、ネットワークにデバイスが接続されているが、mnc もを提供します、MCC を提供します。 ターゲット ロケールが、モバイルの国コードを使用することはできますが、推奨されるアプローチでは、以下で指定した言語修飾子を使用します。 たとえば、ドイツ、ターゲット リソースを修飾子になります`mcc262`します。 T モバイル米国内のターゲット リソースに、修飾子が`mcc310-mnc026`します。
-  モバイルの国コードとモバイル ネットワーク コードの完全な一覧については、<http://mcc-mnc.com/>を参照してください。
+  モバイルの国コードとモバイル ネットワーク コードの完全な一覧については、次を参照してください。<http://mcc-mnc.com/>します。
 
 - **言語** &ndash; 2 文字[ISO 639-1 言語コード](https://en.wikipedia.org/wiki/ISO_639-1)し、必要に応じてその後に 2 文字[ISO 3166-alpha-2 地域コード](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)します。 
   両方の修飾子を指定すると場合によって区切られます、`-r`します。 ターゲットのフランス語を話すロケールの修飾子をたとえば、`fr`使用されます。 カナダのロケールを対象に、`fr-rCA`は使用されます。 言語コードと地域コードの完全な一覧を参照してください。[言語のコードの表現の名前の](http://www.loc.gov/standards/iso639-2/php/English_list.php)と[国の名前とコード要素](http://www.iso.org/iso/country_codes/iso_3166_code_lists/country_names_and_code_elements.htm)します。

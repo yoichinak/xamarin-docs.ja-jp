@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
 ms.openlocfilehash: 83f5fd233c004271169a4d00d0a65e70aa925b95
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117656"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61369109"
 ---
 # <a name="transactions-and-verification-in-xamarinios"></a>トランザクションと Xamarin.iOS での検証
 
@@ -111,7 +111,7 @@ public override void RestoreCompletedTransactionsFailedWithError (SKPaymentQueue
 
 使用して`NSUserDefaults`がコードの例を単純なままで技術的に関心を持つユーザーは (支払い機構のバイパス) 設定を更新する可能性があるように、非常に安全なソリューションを提供しません。   
    
-注: 実際のアプリケーションは、ユーザーが改ざんされる可能性がないコンテンツが購入を格納するためのセキュリティで保護されたメカニズムを採用する必要があります。 これは、暗号化やその他の手法をリモート サーバーの認証を含む必要があります。   
+メモ:実際のアプリケーションでは、ユーザーが改ざんされる可能性がないコンテンツが購入を格納するためのセキュリティで保護されたメカニズムを採用する必要があります。 これは、暗号化やその他の手法をリモート サーバーの認証を含む必要があります。   
    
  メカニズムは、iOS、iTunes および iCloud の組み込みのバックアップと回復機能を活用するために設計することも必要があります。 これにより、ユーザーは、バックアップを復元した後、以前に購入はすぐに使用できるが保証されます。   
    

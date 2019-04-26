@@ -8,11 +8,11 @@ author: asb3993
 ms.author: amburns
 ms.date: 06/05/2018
 ms.openlocfilehash: c2e409b796d5ef2525079e02aafdd0c6e8db5d81
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113444"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61158937"
 ---
 # <a name="why-isnt-jenkins-supported-by-microsoft"></a>Microsoft Jenkins がサポートされていないのはなぜですか
 
@@ -32,7 +32,7 @@ Jenkins の問題が私たちのチームで直接サポートされていない
 
 この問題のエラー メッセージは、このようなものです。
 
-> エラー XA5205: The Android SDK ディレクトリが見つかりませんでした。 /P:AndroidSdkDirectory を使用して設定してください。
+> エラー XA5205:Android SDK ディレクトリが見つかりませんでした。 /P:AndroidSdkDirectory を使用して設定してください。
 
 SDK の場所を設定するためのオプションは; を使用している正確な Android の Jenkins プラグインによって異なる場合があります。これを設定する方法を確認するに適してが、プラグインのガイドです。 たとえば、[Android エミュレーター プラグイン](https://wiki.jenkins-ci.org/display/JENKINS/Android+Emulator+Plugin#AndroidEmulatorPlugin-Systemconfiguration)場合は、SDK を自動的に検索が見つかりません。 そのプラグインを Jenkins システムの構成 ページで、場所を設定することもできます。 
 
@@ -47,10 +47,10 @@ SDK の場所を設定するためのオプションは; を使用している�
 ### <a name="jenkins-reports-an-invalid-xamarin-license"></a>Jenkins は、無効な Xamarin ライセンスを報告します。
 この問題のエラー メッセージは、ようなもので、通常
 
-> XA9008 エラー: コマンドラインからのビルドには、ビジネス ライセンスが必要です。
+> XA9008 エラー:コマンドラインからのビルドには、ビジネス ライセンスが必要です。
 
 または
 
-> エラー: Xamarin.iOS の Starter Edition は Xamarin Studio の外部でビルドをサポートしません 
+> エラー :Xamarin.iOS の Starter Edition では、Xamarin Studio の外部でビルドすることはできません。 
 
 このシナリオの最も一般的な原因は、Xamarin ライセンスに関連付けられていないユーザー アカウントでログインして Jenkins の使用です。 これを解決する最も簡単な方法では、ユーザー アカウントを使用して直接アプリとして Jenkins をインストールします。 そのプロセスといくつか追加の考慮事項がここで説明します。 [https://forums.xamarin.com/discussion/comment/99397/#Comment_99397](https://forums.xamarin.com/discussion/comment/99397/#Comment_99397)

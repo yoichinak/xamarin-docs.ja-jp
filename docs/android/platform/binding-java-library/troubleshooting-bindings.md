@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
 ms.openlocfilehash: b0bb7cbb6160865af5b1e40d40c7b999a8bd5ebc
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57668518"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60956534"
 ---
 # <a name="troubleshooting-bindings"></a>バインドのトラブルシューティング
 
@@ -85,7 +85,7 @@ Xamarin.Android バインド プロジェクトのビルドの一部、として
 
 #### <a name="possible-causes"></a>考えられる原因:
 
-必ずビルド アクションに設定されて`EmbeddedJar`します。 複数のビルド アクションがあるためです。JAR ファイル (など`InputJar`、 `EmbeddedJar`、`ReferenceJar`と`EmbeddedReferenceJar`)、バインド ジェネレーターは、既定で使用するを推測できない自動的にします。 ビルド アクションの詳細については、[構築アクション](~/android/platform/binding-java-library/index.md)を参照してください。
+必ずビルド アクションに設定されて`EmbeddedJar`します。 複数のビルド アクションがあるためです。JAR ファイル (など`InputJar`、 `EmbeddedJar`、`ReferenceJar`と`EmbeddedReferenceJar`)、バインド ジェネレーターは、既定で使用するを推測できない自動的にします。 ビルド アクションの詳細については、次を参照してください。[構築アクション](~/android/platform/binding-java-library/index.md)します。
 
 
 ### <a name="problem-binding-tools-cannot-load-the-jar-library"></a>問題 : バインディング ツールを読み込むことはできません、します。JAR ライブラリ

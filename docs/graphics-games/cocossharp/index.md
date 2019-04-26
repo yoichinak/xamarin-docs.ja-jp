@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2018
 ms.openlocfilehash: add73360ea98d8c516e413f0cc0264f68c58d79d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107015"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61024453"
 ---
 # <a name="cocossharp-2d-game-engine"></a>CocosSharp の 2D ゲーム エンジン
 
@@ -19,7 +19,7 @@ _CocosSharp を使用して 2D ゲームを構築するためのライブラリ�
 
 ## <a name="introduction-to-cocossharp"></a>CocosSharp の概要
 
-CocosSharp の 2D ゲーム エンジンは、クロス プラットフォーム ゲームを行うためのテクノロジを提供します。 サポートされているプラットフォームの完全な一覧については、、 [GitHub の wiki を CocosSharp](https://github.com/mono/CocosSharp/wiki)を参照してください。
+CocosSharp の 2D ゲーム エンジンは、クロス プラットフォーム ゲームを行うためのテクノロジを提供します。 サポートされているプラットフォームの完全な一覧については、次を参照してください。、 [GitHub の wiki を CocosSharp](https://github.com/mono/CocosSharp/wiki)します。
 これらのガイドを使用して、C#コード サンプル、CocosSharp で完全に機能がF#もします。
 
 CocosSharp のコアがによって提供される、[フレームワークの MonoGame](http://www.monogame.net/)、クロス プラットフォームは、ハードウェア アクセラレーション アセットをインポートするためのグラフィック、オーディオ、ゲームの状態管理、入力、およびコンテンツ パイプラインを提供する API。

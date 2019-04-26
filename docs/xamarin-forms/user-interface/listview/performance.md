@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/11/2017
 ms.openlocfilehash: 98212483481b2ce60c73a40c014816ee3c3f110c
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059247"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61386574"
 ---
 # <a name="listview-performance"></a>ListView のパフォーマンス
 
@@ -133,7 +133,7 @@ XAML では、以下のコードで示すように `CachingStrategy` 属性を�
 
 #### <a name="setting-the-caching-strategy-in-a-subclassed-listview"></a>サブクラス化された ListView での Caching Strategy の設定
 
-`CachingStrategy` [ `ListView` のサブクラスでは、 XAML での ](xref:Xamarin.Forms.ListView) 属性の設定は、期待した動作は起こりません。 `ListView`CachingStrategy`には `ListView` というプロパティは存在しないからです。 さらに、 [XAMLC](~/xamarin-forms/xaml/xamlc.md) が有効であれば、次のようなエラーメッセージが表示されるでしょう。
+`CachingStrategy` [ `ListView` のサブクラスでは、 XAML での ](xref:Xamarin.Forms.ListView) 属性の設定は、期待した動作は起こりません。 `ListView`CachingStrategy`には `ListView` というプロパティは存在しないからです。 さらに場合、 [XAMLC](~/xamarin-forms/xaml/xamlc.md)が有効にすると、次のエラー メッセージが生成されます。**ないプロパティ、バインド可能なプロパティ、またはイベント 'CachingStrategy' が見つかりませんでした。**
 
 この問題を解決するには、 [ `ListView` ](xref:Xamarin.Forms.ListView) パラメータを受け取る [ `ListViewCachingStrategy` ](xref:Xamarin.Forms.ListViewCachingStrategy) のサブクラスのコンストラクタを作成し、それを基本クラスに渡します。
 

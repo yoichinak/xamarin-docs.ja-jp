@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
 ms.openlocfilehash: 7f4f7fd3af1e90307a84037f01ddf8e52b1ee030
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669051"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61020029"
 ---
 # <a name="graphics-and-animation"></a>グラフィックスとアニメーション
 
@@ -170,7 +170,7 @@ Canvas canvas = new Canvas(b);
 
 取得するその他の方法、`Canvas`し、オブジェクトが、 [OnDraw](https://developer.xamarin.com/api/member/Android.Views.View.OnDraw/)から提供されるコールバック メソッド、[ビュー](https://developer.xamarin.com/api/type/Android.Views.View/)基本クラス。 Android は、ビュー自体を描画する必要がありますを渡しますを決めるときにこのメソッドを呼び出して、`Canvas`を使用するビューのオブジェクト。
 
-キャンバスのクラスは、プログラムで描画の指示を提供するメソッドを公開します。 例:
+キャンバスのクラスは、プログラムで描画の指示を提供するメソッドを公開します。 例えば:
 
 -   [Canvas.DrawPaint](https://developer.xamarin.com/api/member/Android.Graphics.Canvas.DrawPaint/p/Android.Graphics.Paint/) &ndash;キャンバス全体のビットマップを指定の描画で塗りつぶします。
 

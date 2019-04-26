@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 06/12/2017
 ms.openlocfilehash: 48ef40ce8560fd9fbb842dde70622d968591ab98
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57666906"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61022238"
 ---
 # <a name="providing-backwards-compatibility-with-the-android-support-package"></a>旧バージョンと Android のサポート パッケージとの互換性を提供します。
 
@@ -37,7 +37,7 @@ Android のサポート パッケージは Xamarin.Android アプリケーショ
 
 -   **名前空間を更新**&ndash;から継承するクラス`Android.App.Fragment`から継承する必要があります`Android.Support.V4.App.Fragment`します。 使用して、削除ステートメント" `using Android.App;` "ソース コードの上部にあるファイルし、コードに置き換えます" `using Android.Support.V4.App` "。 
 
--   **SupportFragmentManager を使用して、** &ndash; `Android.Support.V4.App.FragmentActivity`公開、`SupportingFragmentManager`プロパティへの参照を取得するために使用する必要があります、`FragmentManager`します。 例えば: 
+-   **SupportFragmentManager を使用して、** &ndash; `Android.Support.V4.App.FragmentActivity`公開、`SupportingFragmentManager`プロパティへの参照を取得するために使用する必要があります、`FragmentManager`します。 例: 
 
 ```csharp
 FragmentTransaction fragmentTx = this.SupportingFragmentManager.BeginTransaction();

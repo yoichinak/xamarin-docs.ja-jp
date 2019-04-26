@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
 ms.openlocfilehash: 166a50021c22aa09be3eecdb8b745a70e75c3d51
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107249"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61031485"
 ---
 # <a name="introduction-to-storyboards-in-xamarinmac"></a>Xamarin.Mac でストーリー ボードの概要
 
@@ -94,7 +94,7 @@ MacOS、ほとんどのアプリを分割ビュー タブなどの UI 要素を�
 
 <a name="Working-with-Storyboards" />
 
-## <a name="working-with-storyboards"></a>ストーリー ボードの使用
+## <a name="working-with-storyboards"></a>ストーリーボードの使用
 
 ここでは、詳細の[ストーリー ボードの使用](~/mac/platform/storyboards/indepth.md)Xamarin.Mac アプリでします。 話をシーンとのビュー コント ローラーとビューで構成されている方法を詳しく説明します。 次に、シーンが Segues と関連付けられている方法を見てをみましょう。 最後に、カスタムのセグエの種類の操作を見てをみましょう。 
 

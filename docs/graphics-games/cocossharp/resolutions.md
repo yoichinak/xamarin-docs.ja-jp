@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
 ms.openlocfilehash: 6803dc2668b89ee2d037da8b34e202191dd5465d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118683"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61307818"
 ---
 # <a name="handling-multiple-resolutions-in-cocossharp"></a>CocosSharp で複数の解像度の処理
 
@@ -26,7 +26,7 @@ CocosSharp の既定の解決の動作は、ゲーム内の座標と物理ピク
 |--- | --- |--- |
 |必要な表示|368 x 240 (と縦横比の黒いバー)| ![368 x 240 (と縦横比の黒いバー)](resolutions-images/image1.png) |
 |iPhone 4 s|960 x 640| ![iPhone 4s 960x640](resolutions-images/image2.png) |
-|iPhone 6 Plus|1920 x 1080| ![iPhone 6 Plus 1920 x 1080](resolutions-images/image3.png) |
+|iPhone 6 Plus|1920 x 1080| ![iPhone 6 Plus 1920x1080](resolutions-images/image3.png) |
 
 このドキュメントでは、CocosSharp を使用して、上記の表に示すように問題を解決する方法について説明します。 つまり、任意のデバイスの画面の解像度に関係なく – 最初の行に示すように表示する方法について説明します。
 

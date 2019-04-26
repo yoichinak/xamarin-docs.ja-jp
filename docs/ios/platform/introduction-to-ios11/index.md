@@ -1,5 +1,5 @@
 ---
-title: IOS 11 の概要
+title: iOS 11 の概要
 description: このドキュメントは、iOS 11、ARKit や CoreML、MapKit、PDFKit、SiriKit、ビジョン フレームワークなどの機能を記述するさまざまなガイドにリンクしています。
 ms.prod: xamarin
 ms.assetid: 22C38EA6-6DA9-4B92-B41B-814E589033F6
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 09/19/2017
 ms.openlocfilehash: 5e75a7872081d82c289db0312bbc7d84bce77b4e
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116720"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61171412"
 ---
-# <a name="introduction-to-ios-11"></a>IOS 11 の概要
+# <a name="introduction-to-ios-11"></a>iOS 11 の概要
 
 _新しい iOS 11 をお試しください。 Xamarin を使用した Api です。_
 

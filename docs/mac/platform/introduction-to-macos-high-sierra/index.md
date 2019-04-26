@@ -1,5 +1,5 @@
 ---
-title: MacOS High Sierra の概要
+title: macOS High Sierra の概要
 description: このドキュメントでは、導入され、macOS High Sierra と Apple の更新プログラムの概要を説明へのリンクで拡張機能を示します。
 ms.prod: xamarin
 ms.assetid: CD4E4C3C-5341-4830-8ED2-6C67AFC49674
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 06/25/2018
 ms.openlocfilehash: daa745f2cf5552c7147a77c273ed8be5956bf4b2
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103700"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61032050"
 ---
-# <a name="introduction-to-macos-high-sierra"></a>MacOS High Sierra の概要
+# <a name="introduction-to-macos-high-sierra"></a>macOS High Sierra の概要
 
 macOS High Sierra を含む、macOS に新機能と更新が導入されました。
 

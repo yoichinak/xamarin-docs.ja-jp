@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 02/07/2018
 ms.openlocfilehash: da8aacac1f282fefb6b8d0e84cae168cf3a7148b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108016"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60953376"
 ---
 # <a name="creating-a-custom-contentprovider"></a>カスタム ContentProvider の作成
 
@@ -62,7 +62,7 @@ MIME の種類の 2 番目の部分は、アプリケーションに固有であ
 前述のように、`ContentProviders`が定義されている以外のアプリケーションから利用できます。 この例では、データが、同じアプリケーションで使用されるが、他のアプリケーションもアクセスできる (これは通常、定数値として公開) スキーマについては、Uri がわかっている限りに注意してください。
 
 
-## <a name="create-a-database"></a>データベースを作成します。
+## <a name="create-a-database"></a>データベースを作成する
 
 ほとんど`ContentProvider`実装の基になる、`SQLite`データベース。 データベース コードの例で**SimpleContentProvider/VegetableDatabase.cs**に示すように、非常に単純な 2 つの列のデータベースを作成します。
 

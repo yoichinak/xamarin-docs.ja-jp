@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
 ms.openlocfilehash: 96af7fab366c3fd3493cf5adbf183d80b7c1ee26
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116460"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61418196"
 ---
 # <a name="working-with-tvos-icons-and-images-in-xamarin"></a>アイコンとイメージを Xamarin で tvOS の操作
 
@@ -287,11 +287,11 @@ Xamarin.tvOS アプリが、ゲーム、Game Center のサポートが含まれ�
 
 ||アチーブメントのアイコン|ダッシュ ボードのアートワーク|ランキングのアートワーク|
 |---|---|---|---|
-|表示サイズ|200x200px|923x150px|N/A|
-|実際のサイズ|320x320px|N/A|659x371px|
-|安全なゾーンのサイズ|N/A|N/A|618x348px|
-|フォーカスされていないサイズ|N/A|N/A|548x309px|
-|フォーカスのあるサイズ|N/A|N/A|618x348px|
+|表示サイズ|200x200px|923x150px|適用なし|
+|実際のサイズ|320x320px|適用なし|659x371px|
+|安全なゾーンのサイズ|適用なし|適用なし|618x348px|
+|フォーカスされていないサイズ|適用なし|適用なし|548x309px|
+|フォーカスのあるサイズ|適用なし|適用なし|618x348px|
 
 Game Center の使用方法の詳細については、Apple を参照してください[ゲーム センターのプログラミング ガイド](https://developer.apple.com/library/prerelease/tvos/documentation/NetworkingInternet/Conceptual/GameKit_Guide/Introduction/Introduction.html)します。
 

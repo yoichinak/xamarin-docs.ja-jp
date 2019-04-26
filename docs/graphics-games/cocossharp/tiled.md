@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
 ms.openlocfilehash: 8e7ef890af264bb08827d86c635d555184f1ec00
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672509"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61235960"
 ---
 # <a name="using-tiled-with-cocossharp"></a>CocosSharp によるタイル表示
 
@@ -269,7 +269,7 @@ public class GameLayer : CCLayer
 
 コードのほとんどは一目瞭然ですが宝物タイルの処理について説明する必要があります。 ここで宝物整理として識別されるタイルを削除する予定です。 宝物整理効果の衝突して、プレーヤーの特典を開いたときに宝の内容を実行時にカスタム コードで必要になるためにです。 中に対応するため、宝物がさらに、必要があります (その視覚的な外観を変更する) を開くし、敵が負けましたすべて画面に表示されるときに表示される専用のロジックがある可能性があります。
 
-宝箱がされるで単純なタイルではなく、エンティティの中から得られる、つまり、`CCTileMap`します。 ゲームのエンティティの詳細については、、 [CocosSharp のエンティティのガイド](~/graphics-games/cocossharp/entities.md)を参照してください。
+宝箱がされるで単純なタイルではなく、エンティティの中から得られる、つまり、`CCTileMap`します。 ゲームのエンティティの詳細については、次を参照してください。、 [CocosSharp のエンティティのガイド](~/graphics-games/cocossharp/entities.md)します。
 
 
 ## <a name="summary"></a>まとめ

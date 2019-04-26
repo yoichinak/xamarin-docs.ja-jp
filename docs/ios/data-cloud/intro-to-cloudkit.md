@@ -1,5 +1,5 @@
 ---
-title: Xamarin.iOS で CloudKit
+title: CloudKit in Xamarin.iOS
 description: このドキュメントでは、Xamarin.iOS で CloudKit を操作する方法について説明します。 CloudKit の概要を説明し、CloudKit の利便性のための API、スケーラビリティ、ユーザー アカウント、および開発および運用環境を有効にする方法について説明します。
 ms.prod: xamarin
 ms.assetid: 66B207F2-FAA0-4551-B43B-3DB9F620C397
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 05/11/2016
 ms.openlocfilehash: daea27472ac7c0578c1cfd79ebd96428212fafb3
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107444"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61165591"
 ---
-# <a name="cloudkit-in-xamarinios"></a>Xamarin.iOS で CloudKit
+# <a name="cloudkit-in-xamarinios"></a>CloudKit in Xamarin.iOS
 
 CloudKit フレームワークでは、アプリケーションの開発に、そのアクセス iCloud が効率化します。 これには、アプリケーション データと資産の権利とアプリケーションの情報を安全に保管することの取得が含まれます。 このキットでは、個人情報を共有することがなく、iCloud Id とアプリケーションへのアクセスを許可することでユーザーの匿名性レイヤーを提供します。
 
@@ -114,7 +114,7 @@ iCloud.com.company-name.application-name
 
 コンテナーは、既定で、バインドされている特定のアプリケーションに一対一、中には、アプリケーション間で共有できます。 このため、複数のアプリケーションは、1 つのコンテナーで調整できます。 1 つのアプリケーションは、複数のコンテナーにも説明します。
 
-### <a name="databases"></a>Databases
+### <a name="databases"></a>データベース
 
 ICloud サーバーまでそのモデルをアプリケーションのデータ モデルとレプリケーションにかかる CloudKit の主な機能の 1 つです。 作成したユーザーのためのものがいくつかの情報やその他の情報は、パブリック データ (など、レストランのレビュー) を公開して使用するためにユーザーが作成したもの、開発者がアプリケーションの公開情報がある可能性があります。 どちらの場合は、対象ユーザーが 1 人のユーザーだけではありませんが、人のコミュニティします。
 
@@ -150,7 +150,7 @@ PrivateDatabase = CKContainer.DefaultContainer.PrivateCloudDatabase;
 
 ||Public データベース|プライベート データベース|
 |---|--- |--- |
-|**データ型**|共有データ|現在のユーザーのデータ|
+|**[データ型]**|共有データ|現在のユーザーのデータ|
 |**クォータ**|開発者のクォータに計上|ユーザーのクォータに計上|
 |**既定のアクセス許可**|読み取り可能な世界|読み取り可能なユーザー|
 |**アクセス許可の編集**|レコード クラス レベルで iCloud ダッシュ ボードの役割|N/A|
@@ -252,7 +252,7 @@ var recordID =  new CKRecordID("My Record");
 var reference = new CKReference(newRecord, new CKReferenceAction());
 ```
 
-### <a name="assets"></a>アセット
+### <a name="assets"></a>アセット 
 
 ICloud にアップロードされ、特定のレコードに関連付けられている、大規模な非構造化データのファイルの資産を許可します。
 
@@ -278,7 +278,7 @@ newRecord ["name"] = asset;
 
 説明すべて CloudKit 内の基本的なオブジェクトのようになりました。 コンテナーは、アプリケーションに関連付けられているし、データベースを格納します。 データベースには、ゾーンのレコードにグループ化され、レコードの識別子によって示されるされるレコードが含まれます。 参照を使用してレコード間の親子リレーションシップが定義されます。 最後に、大きなファイルをアップロードして資産を使用してレコードに関連付けられています。
 
-## <a name="cloudkit-convenience-api"></a>CloudKit の利便性 API
+## <a name="cloudkit-convenience-api"></a>CloudKit Convenience API
 
 Apple では、CloudKit を操作するための 2 つの異なる API セットが用意されています。
 
@@ -883,6 +883,6 @@ ITunes Connect に直接アプリケーションを送信するために似て�
 
 ## <a name="related-links"></a>関連リンク
 
-- [CloudKitAtlas (サンプル)](https://developer.xamarin.com/samples/monotouch/ios8/CloudKitAtlas/)
+- [CloudKitAtlas (sample)](https://developer.xamarin.com/samples/monotouch/ios8/CloudKitAtlas/)
 - [iOS 8 の概要](~/ios/platform/introduction-to-ios8.md)
 - [プロビジョニング プロファイルを作成します。](~/ios/get-started/installation/device-provisioning/index.md)

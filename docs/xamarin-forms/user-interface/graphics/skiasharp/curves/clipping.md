@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
 ms.openlocfilehash: 4f8b6b7ea0db8d46886c3391f1aef3ba20a5be44
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53057445"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61086051"
 ---
 # <a name="clipping-with-paths-and-regions"></a>パスおよび領域でのクリッピング
 
@@ -24,7 +24,7 @@ _クリップ グラフィックスへのパスを使用して、特定の領域
 
 ![](clipping-images/clippingsample.png "Monkey、keyhole 経由")
 
-*のクリッピング領域*はグラフィックスのレンダリングを画面の領域です。 クリッピング領域の外側に表示されるものは表示されません。 クリッピング領域は通常、四角形によって定義または[ `SKPath` ](xref:SkiaSharp.SKPath)オブジェクトが別の方法として定義できますを使用してクリッピング領域を[ `SKRegion` ](xref:SkiaSharp.SKRegion)オブジェクト。 これら 2 種類のオブジェクトは、パスからの領域を作成するために最初に、関連ようです。 ただし、リージョンからパスを作成することはできず、それらが内部的に非常に異なる: パスは一連の線の水平方向のスキャンによって定義されていますが、リージョン、一連の直線と曲線で構成されます。
+*のクリッピング領域*はグラフィックスのレンダリングを画面の領域です。 クリッピング領域の外側に表示されるものは表示されません。 クリッピング領域は通常、四角形によって定義または[ `SKPath` ](xref:SkiaSharp.SKPath)オブジェクトが別の方法として定義できますを使用してクリッピング領域を[ `SKRegion` ](xref:SkiaSharp.SKRegion)オブジェクト。 これら 2 種類のオブジェクトは、パスからの領域を作成するために最初に、関連ようです。 ただし、領域からパスを作成することはできませんし、それらが内部的に非常に異なる。パスには、一連の線の水平方向のスキャンによって定義されていますが、リージョン、一連の直線と曲線が構成されています。
 
 上の図は、によって作成された、 **Keyhole を通じて Monkey**ページ。 [ `MonkeyThroughKeyholePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/MonkeyThroughKeyholePage.cs)クラスは、SVG のデータを使用して、パスを定義し、コンス トラクターを使ってプログラム リソースからビットマップを読み込みます。
 
@@ -366,7 +366,7 @@ void DisplayClipOp(SKCanvas canvas, SKRect rect, SKRegionOperation regionOp)
 
 一連の昔ながらの掃除機 tube Tv などの水平方向のスキャン ラインの各パスが短縮された場合、このジョブがかなり簡素化します。 各スキャン ラインは、始点と終点で水平な線だけです。 たとえば、10 ピクセルの半径の円は、20 の水平方向のスキャン ラインをそれぞれの円の左端から始まり、右側の部分で終わりますに分解することができます。 リージョンのいずれかの操作を 2 つの円を組み合わせること、単に対応するスキャン ラインの各ペアの開始と終了座標を調べることである非常に簡単になります。
 
-これは、どのようなリージョンが: 一連の領域を定義する水平方向のスキャン ライン。
+これは、どのような領域。一連の領域を定義する水平方向のスキャン ライン。
 
 ただし、一連のスキャンに領域を縮小するときに行、行は、特定のピクセル寸法に基づいて、これらのスキャンします。 厳密に言えば、領域は、ベクター グラフィックス オブジェクトではありません。 パスよりも圧縮モノクロ ビットマップと本質的に似ています。 そのため、リージョンを拡大または忠実度を失うことがなく、このような理由のクリッピング領域を使用すると、変換されませんを回転することはできません。
 

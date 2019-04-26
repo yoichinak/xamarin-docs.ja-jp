@@ -1,17 +1,17 @@
 ---
 title: 共有コードの概要
-description: このドキュメントは、クロス プラットフォーム プロジェクト間でコードを共有するためのさまざまな方法を比較します。その方法には、共有プロジェクト、ポータブル クラス ライブラリ、.NET Standard があり、それぞれの長所と短所についても取り上げます。
+description: このドキュメントでは、クロス プラットフォーム プロジェクト間でコードの共有のさまざまな方法を比較します。共有プロジェクト、ポータブル クラス ライブラリ、および .NET Standard、長所と短所の各など。
 ms.prod: xamarin
 ms.assetid: B73675D2-09A3-14C1-E41E-20352B819B53
 author: conceptdev
 ms.author: crdun
 ms.date: 08/06/2018
 ms.openlocfilehash: 98b5786ae4f071b4d8e8f854561db97aee037fdc
-ms.sourcegitcommit: aa7b0182d117e2af66ffaa4fa29b8c214ceecae1
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39520286"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61228039"
 ---
 # <a name="sharing-code-overview"></a>共有コードの概要
 
@@ -135,6 +135,6 @@ PCL プロジェクトは引き続き Visual Studio でサポートされるは�
 - [ポータブル クラス ライブラリ](~/cross-platform/app-fundamentals/pcl.md)
 - [共有プロジェクト](~/cross-platform/app-fundamentals/shared-projects.md)
 - [.NET Standard](~/cross-platform/app-fundamentals/net-standard.md)
-- [ケース スタディ: Tasky](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)
+- [ケース スタディ:Tasky](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)
 - [Tasky サンプル (github)](https://github.com/xamarin/mobile-samples/tree/master/Tasky)
 - [PCL (github) を使用してサンプルを tasky](https://github.com/xamarin/mobile-samples/tree/master/TaskyPortable)

@@ -9,11 +9,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 08/29/2018
 ms.openlocfilehash: d8c64ff79367d93e282edd9534ffb98f5bb90c93
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "36269674"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61153333"
 ---
 # <a name="xamarinandroid-and-java-development-kit-9-or-later"></a>Xamarin.Android と Java Development Kit 9 以降
 
@@ -52,7 +52,7 @@ Java(TM) SE Runtime Environment (build 9.0.4+11)
 Java HotSpot(TM) 64-Bit Server VM (build 9.0.4+11, mixed mode)
 ```
 
-JDK 9 以降がインストールされている場合は、Java JDK 8 (1.8) または Microsoft Mobile OpenJDK のプレビューをインストールする必要があります。 JDK 8 をインストールする方法については、[Java Development Kit (JDK) バージョンを更新する方法でしょうか。](~/android/troubleshooting/questions/update-jdk.md)を参照してください。 Microsoft Mobile OpenJDK をインストールする方法については、[Microsoft Mobile OpenJDK Preview](~/android/get-started/installation/openjdk.md)を参照してください。
+JDK 9 以降がインストールされている場合は、Java JDK 8 (1.8) または Microsoft Mobile OpenJDK のプレビューをインストールする必要があります。 JDK 8 をインストールする方法については、次を参照してください。 [Java Development Kit (JDK) バージョンを更新する方法でしょうか。](~/android/troubleshooting/questions/update-jdk.md)します。 Microsoft Mobile OpenJDK をインストールする方法については、次を参照してください。 [Microsoft Mobile OpenJDK Preview](~/android/get-started/installation/openjdk.md)します。
 
 以降のバージョンの JDK; をアンインストールする必要はありません。ただし、それ以降の JDK バージョンではなく、JDK 8 Xamarin を使用していることを確認する必要があります。 Visual Studio で、次のようにクリックします。**ツール > オプション > Xamarin > Android 設定**します。 場合**Java Development Kit の場所**JDK 8 の場所に設定されていない (など**c:\\Program Files\\Java\\jdk1.8.0_111**)、をクリックして**変更** JDK 8 がインストールされている場所に設定します。 Visual studio for Mac に移動します。**設定 > プロジェクト > SDK の場所 > Android > Java SDK (JDK)**  をクリック**参照**このパスを更新します。
 

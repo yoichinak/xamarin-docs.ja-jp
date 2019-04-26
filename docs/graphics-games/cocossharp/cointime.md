@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/24/2017
 ms.openlocfilehash: af914e10eb93aa0668743a113ffe647a939fea75
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112625"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61395899"
 ---
 # <a name="coin-time-game-details"></a>Coin Time game の詳細
 
@@ -38,7 +38,7 @@ _このガイドでは、マップのタイルの操作、エンティティの�
 
 ## <a name="working-with-tmx-files"></a>Tmx ファイルの使用
 
-コイン時間レベルが、出力で .tmx ファイル形式を使用して定義されている、[並べて](http://www.mapeditor.org)タイル マップ エディター。 並べて表示の操作の詳細については、、 [Cocos シャープ ガイド」(並べて表示) を使用して](~/graphics-games/cocossharp/tiled.md)を参照してください。 
+コイン時間レベルが、出力で .tmx ファイル形式を使用して定義されている、[並べて](http://www.mapeditor.org)タイル マップ エディター。 並べて表示の操作の詳細については、次を参照してください。、 [Cocos シャープ ガイド」(並べて表示) を使用して](~/graphics-games/cocossharp/tiled.md)します。 
 
 各レベルに含まれる、独自の .tmx ファイルで定義されている、 **CoinTime/資産/コンテンツ/レベル**フォルダー。 すべての硬貨時間レベルで定義されている 1 つのタイルセット ファイルの共有、 **mastersheet.tsx**ファイル。 このファイルは、タイルの solid の衝突がかどうかや、エンティティのインスタンスで、タイルを置き換える必要があるかどうかなど、各タイルのカスタム プロパティを定義します。 Mastersheet.tsx ファイルは、1 回だけ定義でき、すべてのレベルで使用されるプロパティを使用できます。 
 

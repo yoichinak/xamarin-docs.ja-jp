@@ -7,11 +7,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/28/2018
 ms.openlocfilehash: e60892edfcf73f3e7cada8923e16bcc1be2c203e
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121387"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60876930"
 ---
 # <a name="getting-started-with-android"></a>Android の概要
 
@@ -70,7 +70,7 @@ public class HelloActivity : Activity
 ```
 
 > [!NOTE]
-> 忘れず、`[Register]`属性。 詳細については、[制限](#current-limitations-on-android)を参照してください。
+> 忘れず、`[Register]`属性。 詳細については、次を参照してください。[制限](#current-limitations-on-android)します。
 
 プロジェクトをビルドします。 結果として得られるアセンブリを保存する`bin/Debug/hello-from-csharp.dll`します。
 

@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
 ms.openlocfilehash: 7bd4a87843852e940da96f688371ddbecbf7e0b4
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105780"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61153892"
 ---
 # <a name="message-app-extension-basics-in-xamarinios"></a>Xamarin.iOS でメッセージ アプリ拡張機能の基本
 
@@ -37,7 +37,7 @@ _この記事で示しますメッセージ アプリと連携し、新しい機
 
 また新しい iOS 10 では、Apple が追加ユーザーを簡単にアプリを検出できるインライン アプリ属性。 たとえば、1 人のユーザーは、2 つ目のユーザーが持っていないアプリから別にコンテンツを送信する場合 (たとえばステッカー) のようにインストールされている送信側のアプリの名前 下にあるメッセージ履歴内のコンテンツ。 ユーザーがアプリのタップした場合の名前、メッセージ アプリ ストアを開くこと、アプリ ストアで選択されています。
 
-メッセージ アプリ拡張機能は、既存の iOS アプリ開発者が簡単に作成し、すべての標準的なフレームワークと標準の iOS アプリの機能へのアクセスことに似ています。 例えば:
+メッセージ アプリ拡張機能は、既存の iOS アプリ開発者が簡単に作成し、すべての標準的なフレームワークと標準の iOS アプリの機能へのアクセスことに似ています。 例:
 
 - アプリ内購入へのアクセスがあります。
 - これらは、Apple Pay にアクセスします。

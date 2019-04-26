@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 08/31/2018
 ms.openlocfilehash: cf2221380e5ddbd8278cc2d387c6eb185d990c1a
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57671899"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61036545"
 ---
 # <a name="auto-complete"></a>オートコンプリート
 
@@ -197,7 +197,7 @@ var adapter = new ArrayAdapter<String> (this, Resource.layout.list_item, countri
 ```
 
 
-### <a name="references"></a>関連項目
+### <a name="references"></a>参照
 
 -   [AutoCompleteTextView レシピ](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/autocomplete_text_view/add_an_autocomplete_text_input)&ndash;用の Xamarin.Android サンプル プロジェクト、`AutoCompleteTextView`します。
 -   [`ArrayAdapter`](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter/)

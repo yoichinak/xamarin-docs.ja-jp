@@ -1,5 +1,5 @@
 ---
-title: iPad モーダル ページ表示スタイル
+title: iPad モーダル ページの表示スタイル
 description: プラットフォーム仕様はカスタム レンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ利用できる機能の使用を可能にします。 この記事では、iOS プラットフォームに固有のセットを iPad では、モーダル ページの表示スタイルを使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: C791F7CF-330A-44BA-987A-4CFCCBB9278B
@@ -8,13 +8,13 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
 ms.openlocfilehash: b99898301ed6469b6e0d62ae0077b96aa9c4f3eb
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54209087"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60896929"
 ---
-# <a name="ipad-modal-page-presentation-style"></a>iPad モーダル ページ表示スタイル
+# <a name="ipad-modal-page-presentation-style"></a>iPad モーダル ページの表示スタイル
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
 
@@ -28,7 +28,7 @@ ms.locfileid: "54209087"
 </ContentPage>
 ```
 
-代わりに、fluent API を使用して c# から使用できます。
+代わりに、fluent API を使用して C# から使用できます。
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;

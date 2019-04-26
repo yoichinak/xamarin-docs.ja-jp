@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 04/03/2018
 ms.openlocfilehash: bf135755f64e4d17db2c187d58572c525dfee559
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117409"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61420893"
 ---
 # <a name="can-i-add-files-to-or-remove-files-from-an-ipa-file-after-building-it-in-visual-studio"></a>ファイルを追加または Visual Studio でビルドした後で IPA ファイルからファイルを削除できますか。
 
@@ -46,7 +46,7 @@ ms.locfileid: "50117409"
 
 9.  目的のファイルから削除、`.ipa`します。 Finder を使用してごみ箱に移動またはを使用して、コマンドラインでそれらを削除することができます`Terminal.app`します。 内容を表示する、 `Payload/iPhone` finder で、コントロールのクリック、ファイルのファイルおよび選択した**パッケージの内容**します。
 
-10.  ログ ファイルを検索して、手順 3. のように、同じ一般的な方法を使用して`~/Library/Logs/Xamarin/MonoTouchVS/`プロジェクト名を持つ、`generated session id`名: ![](modify-ipa-images/build-log.png "Finder で、プロジェクトのビルド ログを見つける")
+10.  ログ ファイルを検索して、手順 3. のように、同じ一般的な方法を使用して`~/Library/Logs/Xamarin/MonoTouchVS/`プロジェクト名を持つ、`generated session id`名。![](modify-ipa-images/build-log.png "Finder で、プロジェクトのビルド ログを見つける")
 
 11.  ダブルクリックしてなど手順 10 からのビルド ログを開きます。
 
@@ -88,4 +88,4 @@ file missing: /Users/macuser/Library/Caches/Xamarin/mtbs/builds/iPhoneApp1/cc530
 
 アプリ ストアの検証プロセスのようなエラー メッセージが報告されます。
 
-> エラー ITMS-90035:"無効な署名します。 封印されたリソースとは見つからないか無効です。 パス [iPhoneApp1.app/iPhoneApp1] にあるバイナリには、無効な署名が含まれています。 配布証明書、いないアドホックの証明書または開発証明書を使用してアプリケーションに署名を確認します。 (これは、プロジェクト レベルで任意の値を上書きするには)、ターゲット レベルでの Xcode でコード署名の設定が正しいことを確認します。 また、アップロードするバンドルは、Xcode シミュレーター ターゲットではないでリリースのターゲットを使用してビルドされたことを確認してください。 コードの署名の設定が正しい場合は、"クリーン All"を選択して、Xcode で、finder で、「ビルド」ディレクトリを削除およびターゲットのリリースを再構築します。 詳細についてを参照してください[ https://developer.apple.com/library/ios/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html ](https://developer.apple.com/library/ios/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html)"
+> エラー ITMS-90035:"署名が無効です。 封印されたリソースとは見つからないか無効です。 パス [iPhoneApp1.app/iPhoneApp1] にあるバイナリには、無効な署名が含まれています。 配布証明書、いないアドホックの証明書または開発証明書を使用してアプリケーションに署名を確認します。 (これは、プロジェクト レベルで任意の値を上書きするには)、ターゲット レベルでの Xcode でコード署名の設定が正しいことを確認します。 また、アップロードするバンドルは、Xcode シミュレーター ターゲットではないでリリースのターゲットを使用してビルドされたことを確認してください。 コードの署名の設定が正しい場合は、"クリーン All"を選択して、Xcode で、finder で、「ビルド」ディレクトリを削除およびターゲットのリリースを再構築します。 詳細についてを参照してください[ https://developer.apple.com/library/ios/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html ](https://developer.apple.com/library/ios/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html)"

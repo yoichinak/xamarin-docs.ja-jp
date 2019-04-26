@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 05/03/2018
 ms.openlocfilehash: 2c3bddc89348b46c9bba277580071cb8ac3d6943
-ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/30/2019
-ms.locfileid: "58678055"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61434757"
 ---
 # <a name="implementing-sirikit-in-xamarinios"></a>Xamarin.iOS で SiriKit の実装
 
@@ -689,7 +689,7 @@ Intents の拡張機能をソリューションに追加するには、次の操
 
 ### <a name="configuring-the-main-class"></a>メイン クラスを構成します。
 
-次に、開発者は Siri を目的とした拡張機能のメイン エントリ ポイントとして機能するメイン クラスを構成する必要があります。 サブクラス化する必要があります`INExtension`に準拠している`IINIntentHandler`を委任します。 例:
+次に、開発者は Siri を目的とした拡張機能のメイン エントリ ポイントとして機能するメイン クラスを構成する必要があります。 サブクラス化する必要があります`INExtension`に準拠している`IINIntentHandler`を委任します。 例えば:
 
 ```csharp
 using System;

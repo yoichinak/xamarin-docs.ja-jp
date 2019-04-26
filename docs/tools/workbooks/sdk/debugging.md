@@ -7,11 +7,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 06/19/2018
 ms.openlocfilehash: 86d9c6af93e7f59eb0e819730e46324688df7566
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106001"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61293741"
 ---
 # <a name="debugging-integrations"></a>デバッグの統合
 
@@ -50,7 +50,7 @@ Xamarin Workbooks を再起動します。 そうと表示する必要があり�
 
 [![Safari の開発ツール](debugging-images/mac-dev-tools.png)](debugging-images/mac-dev-tools.png#lightbox)
 
-Safari の開発者ツールの使用方法の詳細については、、 [WebKit インスペクター ドキュメント][webkit-docs]を参照してください。
+Safari の開発者ツールの使用方法の詳細については、次を参照してください。、 [WebKit インスペクター ドキュメント][webkit-docs]します。
 
 ### <a name="windows"></a>Windows
 

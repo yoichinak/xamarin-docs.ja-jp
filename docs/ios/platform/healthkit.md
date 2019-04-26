@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
 ms.openlocfilehash: df0b0e8dd57129917f2d8dab07115551ca675acf
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109225"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61163319"
 ---
 # <a name="healthkit-in-xamarinios"></a>Xamarin.iOS で HealthKit
 
@@ -422,7 +422,7 @@ IOS シミュレーターは、キットの正常性をサポートしていま�
 
 ダブルクリックして、**ホーム**デバイスでボタンをクリックし、正常性のアプリを開きます。 をクリックして、**ソース**タブが表示されているサンプル アプリに表示されます。 選択して、心拍数のデータを更新する権限を許可しないようにします。 ダブルクリックして、**ホーム**ボタンとスイッチがアプリに戻します。 もう一度、`ReactToHealthCarePermissions()`呼び出される、ただし、アクセスが拒否されたため、 **StoreData**ボタンが無効になります (これが非同期に行われますことと、ユーザー インターフェイスの変更がエンドユーザーに表示される可能性がありますに注意してください)。
 
-## <a name="advanced-topics"></a>高度なトピック
+## <a name="advanced-topics"></a>詳細トピック
 
 正常性キットからデータを読み取るデータベースはデータの書き込みによく似ていますデータは、要求の承認にアクセスしようとする 1 つの種類を 1 つを指定とその承認が与えられている場合、データは、の互換性のある単位に自動的に変換。測定します。
 

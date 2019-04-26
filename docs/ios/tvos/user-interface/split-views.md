@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
 ms.openlocfilehash: 9f1bd48378faa9ae6a4853083c93377268c38f01
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122193"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61374623"
 ---
 # <a name="working-with-tvos-split-view-controllers-in-xamarin"></a>TvOS Xamarin で分割ビュー コント ローラーの操作
 
@@ -100,7 +100,7 @@ Xamarin.tvOS アプリで分割ビュー コント ローラーを使用する�
 
 ### <a name="accessing-master-and-detail"></a>マスター/詳細へのアクセス
 
-マスターと詳細ビュー コント ローラーをプログラムでアクセスする必要がある場合、`ViewControllers `分割ビュー コント ローラーのプロパティ。 例えば:
+マスターと詳細ビュー コント ローラーをプログラムでアクセスする必要がある場合、`ViewControllers `分割ビュー コント ローラーのプロパティ。 例:
 
 ```csharp
 // Gain access to master and detail view controllers
@@ -122,7 +122,7 @@ var detailController = ViewControllers [1] as DetailViewController;
 public DetailViewController DetailController { get; set;}
 ```
 
-分割ビュー コント ローラーでは、オーバーライド、 `ViewDidLoad` 2 つをまとめて表示メソッドと同順位です。 例えば:
+分割ビュー コント ローラーでは、オーバーライド、 `ViewDidLoad` 2 つをまとめて表示メソッドと同順位です。 例:
 
 ```csharp
 public override void ViewDidLoad ()

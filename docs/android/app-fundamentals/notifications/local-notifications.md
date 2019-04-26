@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 08/16/2018
 ms.openlocfilehash: 362041efc5a19dfb70430054f3e4636d4fdfbd7e
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672750"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61021816"
 ---
 <a name="compatibility"></a>
 
@@ -332,7 +332,7 @@ notificationManager.Notify (notificationId, notification);
 
 -   アプリケーション呼び出し`NotificationManager.CancelAll`します。
 
-Android の通知の更新については、[変更通知](https://developer.android.com/training/notify-user/managing.html#Updating)を参照してください。
+Android の通知の更新については、次を参照してください。[変更通知](https://developer.android.com/training/notify-user/managing.html#Updating)します。
 
 
 ### <a name="starting-an-activity-from-a-notification"></a>通知から、アクティビティの開始
@@ -437,7 +437,7 @@ string message = Intent.Extras.GetString ("message", "");
 
 「Greetings から MainActivity!、」、取得したこのメッセージが表示されます、`SecondActivity`画面で、上記のスクリーン ショットに示すようにします。 押されたとき、**戻る**の中にボタン`SecondActivity`ナビゲーションのリードをアプリからサインアウトし、アプリの起動の前の画面に戻る。
 
-保留中のインテントを作成する詳細については、[PendingIntent](https://developer.xamarin.com/api/type/Android.App.PendingIntent/)を参照してください。
+保留中のインテントを作成する詳細については、次を参照してください。 [PendingIntent](https://developer.xamarin.com/api/type/Android.App.PendingIntent/)します。
 
 
 <a name="beyond-the-basic-notification" />
@@ -568,7 +568,7 @@ builder.SetStyle (picStyle);
 
 呼び出しをラップすることをお勧めは場合は、イメージ ファイルのサイズを事前にわかっていない、 [BitmapFactory.DecodeFile](https://developer.xamarin.com/api/member/Android.Graphics.BitmapFactory.DecodeFile/p/System.String/Android.Graphics.BitmapFactory+Options/)例外ハンドラーで&ndash;、`OutOfMemoryError`に対してイメージが大きすぎる場合、例外がスローされます。Android のサイズを変更します。
 
-詳細については、読み込みと大きいビットマップ イメージのデコードは、[ロード大きなビットマップ効率的に](https://github.com/xamarin/recipes/tree/master/Recipes/android/resources/general/load_large_bitmaps_efficiently)を参照してください。
+詳細については、読み込みと大きいビットマップ イメージのデコードは、次を参照してください。[ロード大きなビットマップ効率的に](https://github.com/xamarin/recipes/tree/master/Recipes/android/resources/general/load_large_bitmaps_efficiently)します。
 
 
 ### <a name="inbox-style"></a>受信トレイのスタイル
@@ -770,7 +770,7 @@ if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Lollipop) {
 
 この記事では、Android でのローカル通知を作成する方法について説明します。 通知の詳細を説明し、使用する方法について説明し`NotificationCompat.Builder`、通知を作成する大きなアイコンのスタイルの通知方法*大きなテキスト*、*イメージ*と*受信トレイ*形式、通知の優先度、可視性、およびカテゴリなどのメタデータの設定を設定する方法、および通知からアクティビティを起動する方法。 この記事でこれらの通知設定が新しいヘッドアップ、画面のロックを扱う方法についても説明し、*不可*Android 5.0 で導入された機能です。 最後に、使用する方法を学習しました`NotificationCompat.Builder`以前のバージョンの Android の通知の互換性を維持します。
 
-Android 用の通知の設計に関するガイドラインについては、[通知](https://developer.android.com/guide/topics/ui/notifiers/notifications.html)を参照してください。
+Android 用の通知の設計に関するガイドラインについては、次を参照してください。[通知](https://developer.android.com/guide/topics/ui/notifiers/notifications.html)します。
 
 
 ## <a name="related-links"></a>関連リンク

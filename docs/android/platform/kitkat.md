@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
 ms.openlocfilehash: b3981572e4d2629fd88d1e255fc7459bfe8912f1
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669012"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60950329"
 ---
 # <a name="kitkat-features"></a>KitKat 機能
 
@@ -323,7 +323,7 @@ KitKat をより細かく制御テーマ オプションの半透明の状態と
 ストレージ アクセス フレームワーク (SAF) は、イメージ、ビデオ、ドキュメントなどの格納されているコンテンツと対話するユーザーの新しい方法です。 コンテンツを処理するためにアプリケーションを選択するダイアログ ボックスでユーザーを表示するのではなく KitKat は、データ集計の 1 つの場所にアクセスするユーザーを許可する新しい UI が開きます。 コンテンツが選択されているし、ユーザーは、コンテンツを要求したアプリケーションに戻りますアプリ エクスペリエンスを通常どおりに続行されます。
 
 この変更には、開発者側で 2 つのアクションが必要です。 プロバイダーからのコンテンツを必要とするアプリが最初に、要求元のコンテンツの新しい方法を更新する必要があります。 データを書き込む、2 つ目のアプリケーション、`ContentProvider`新しいフレームワークを使用するように変更する必要があります。 どちらのシナリオは、新しいに依存します。 [`DocumentsProvider`](https://developer.xamarin.com/api/type/Android.Provider.DocumentsProvider/)
-API.
+[API]。
 
 #### <a name="documentsprovider"></a>DocumentsProvider
 

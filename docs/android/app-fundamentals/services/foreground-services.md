@@ -1,5 +1,5 @@
 ---
-title: フォア グラウンド サービス
+title: フォアグラウンド サービス
 ms.prod: xamarin
 ms.assetid: C10FD999-7A91-4708-B642-0C1B0901BD24
 ms.technology: xamarin-android
@@ -7,13 +7,13 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2018
 ms.openlocfilehash: df917896f901060a5518076afa859d34a03f4d6d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108354"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61012352"
 ---
-# <a name="foreground-services"></a>フォア グラウンド サービス
+# <a name="foreground-services"></a>フォアグラウンド サービス
 
 フォア グラウンド サービスは、特殊な種類のバインドされているサービスまたは開始されるサービスです。 場合によってはサービスでは、ユーザーがアクティブに意識する必要があるタスクを実行、これらのサービスと呼ばれます_フォア グラウンド サービス_します。 フォア グラウンド サービスの例では、方向が運転または徒歩中にユーザーを提供しているアプリです。 場合でも、アプリは、バック グラウンドでは、サービスに適切に機能するための十分なリソースと、ユーザーがアプリにアクセスする迅速かつ便利な手段を持っていることも重要です。 Android アプリで、つまり、フォア グラウンド サービスは、「通常の」サービスよりも高い優先順位を受信する必要があります、フォア グラウンド サービスを提供する必要があります、`Notification`サービスが実行されている限り、Android が表示されます。
  

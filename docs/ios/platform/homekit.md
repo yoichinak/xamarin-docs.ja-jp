@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
 ms.openlocfilehash: 6793190fa3278455a00d7ea08ab52a643c369a35
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672821"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61371543"
 ---
 # <a name="homekit-in-xamarinios"></a>Xamarin.iOS で HomeKit
 
@@ -285,7 +285,7 @@ ThisApp.HomeManager.AddHome(HomeName.Text,(home,error) =>{
 
 [![](homekit-images/accessory01.png "新しいアクセサリの検索")](homekit-images/accessory01.png#lightbox)
 
-呼び出す、`AddAccessory`ホームのコレクションを選択したアクセサリを追加するメソッド。 例えば:
+呼び出す、`AddAccessory`ホームのコレクションを選択したアクセサリを追加するメソッド。 例:
 
 ```csharp
 // Add the requested accessory to the home
@@ -318,7 +318,7 @@ ThisApp.HomeManager.PrimaryHome.AddAccessory (_controller.AccessoryBrowser.Disco
 
 この例でを保存するモ ノ シンプルかつルームまたはゾーンに編成ではなく自宅のアクセサリを直接と連携します。
 
-`HMHome`オブジェクトでユーザーに表示することが割り当てられた付属品の一覧が含まれています。 その`Accessories`プロパティ。 例えば:
+`HMHome`オブジェクトでユーザーに表示することが割り当てられた付属品の一覧が含まれています。 その`Accessories`プロパティ。 例:
 
 [![](homekit-images/accessory04.png "例アクセサリ")](homekit-images/accessory04.png#lightbox)
 

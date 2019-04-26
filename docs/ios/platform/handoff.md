@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
 ms.openlocfilehash: 1a5cc9f06fdca5944a9a3201ac15d63ca7f15453
-ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/30/2019
-ms.locfileid: "58677964"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61385585"
 ---
 # <a name="handoff-in-xamarinios"></a>Xamarin.iOS でハンドオフ
 
@@ -453,7 +453,7 @@ public override void DidFailToContinueUserActivitiy (UIApplication application, 
 
 指定したドメインと一致する場合、`WebpageURL`ハンドオフ プロパティの値は、そのドメインに web サイトから承認されたアプリ Id の一覧をダウンロードします。 Web サイトが承認済みの Id という名前の署名された JSON ファイルの一覧を提供する必要があります**apple アプリ サイト関連付け**(たとえば、 `https://company.com/apple-app-site-association`)。
 
-この JSON ファイル形式でアプリ Id のリストを指定するディクショナリを格納して`<team identifier>.<bundle identifier>`します。 例:
+この JSON ファイル形式でアプリ Id のリストを指定するディクショナリを格納して`<team identifier>.<bundle identifier>`します。 例えば:
 
 ```csharp
 {

@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 02/28/2018
 ms.openlocfilehash: a1a9dd06fb3cd6899dd3a564072bb63e413edf22
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57667557"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61022629"
 ---
 # <a name="android-audio"></a>Android のオーディオ
 
@@ -124,7 +124,7 @@ player.Release();
 
 2. 使用して経由でのオーディオ入力をキャプチャするハードウェア デバイスを指定して、 [SetAudioSource](https://developer.xamarin.com/api/member/Android.Media.MediaRecorder.SetAudioSource/p/Android.Media.AudioSource/)メソッド。
 
-3. 出力ファイル形式のオーディオ形式を使用して、設定、 [SetOutputFormat](https://developer.xamarin.com/api/member/Android.Media.MediaRecorder.SetOutputFormat/p/Android.Media.OutputFormat/)メソッド。 サポートされているオーディオの種類の一覧については、[Android サポートされているメディア形式](https://developer.android.com/guide/appendix/media-formats.html)を参照してください。
+3. 出力ファイル形式のオーディオ形式を使用して、設定、 [SetOutputFormat](https://developer.xamarin.com/api/member/Android.Media.MediaRecorder.SetOutputFormat/p/Android.Media.OutputFormat/)メソッド。 サポートされているオーディオの種類の一覧については、次を参照してください。 [Android サポートされているメディア形式](https://developer.android.com/guide/appendix/media-formats.html)します。
 
 4. 呼び出す、 [SetAudioEncoder](https://developer.xamarin.com/api/member/Android.Media.MediaRecorder.SetAudioEncoder/p/Android.Media.AudioEncoder/)オーディオのエンコードの種類を設定します。
 
@@ -210,7 +210,7 @@ recorder.Release();
 
 オーディオ フォーカス可能性がある、すぐに許可または最初に拒否され後で付与します。 たとえば場合、アプリケーション要求オーディオ フォーカス電話の呼び出し中に、拒否されますが、電話呼び出しが完了すると、フォーカスを与えるも可能性があります。 この場合、オーディオのフォーカスがすぐに実行された場合、それに応じて応答するためにリスナーが登録されています。 オーディオのフォーカスを要求すると、かを判断するかどうか、[ok] を再生するオーディオの録音に使用されます。
 
-オーディオのフォーカスの詳細については、[オーディオのフォーカスを管理する](https://developer.android.com/training/managing-audio/audio-focus.html)を参照してください。
+オーディオのフォーカスの詳細については、次を参照してください。[オーディオのフォーカスを管理する](https://developer.android.com/training/managing-audio/audio-focus.html)します。
 
 
 

@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 06/25/2018
 ms.openlocfilehash: fff6620732ffcaccd13dde7ae31ab03a5106da16
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "37066430"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61364420"
 ---
 # <a name="ios-platform-features"></a>iOS プラットフォーム機能
 
@@ -102,7 +102,7 @@ Apple は iOS 9 での Api のゲーム プレイするゲームのグラフィ�
 
 ## <a name="multitasking-for-ipadiosplatformmultitaskingmd"></a>[iPad のマルチタスキング](~/ios/platform/multitasking.md)
 
-iOS 9 iPad の特定のハードウェア上で同時に 2 つのアプリを実行するためのマルチタス キングのサポートを追加します。 IPad のマルチタス キングが、次の機能でサポートされています。 スライド上、分割ビュー、Picture in Picture します。
+iOS 9 iPad の特定のハードウェア上で同時に 2 つのアプリを実行するためのマルチタス キングのサポートを追加します。 IPad のマルチタス キングは、次の機能を使用してサポートされています。上のスライド、分割ビューと Picture in Picture。
 
 ## <a name="passkitiosplatformpasskitmd"></a>[PassKit](~/ios/platform/passkit.md)
 

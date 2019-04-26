@@ -1,5 +1,5 @@
 ---
-title: IOS のグラフィックスとアニメーション
+title: iOS のグラフィックスとアニメーション
 description: このドキュメントは、Xamarin.iOS で Core イメージ、Core Graphics、コア アニメーション フレームワークを使用する方法について説明するさまざまなガイドにリンクしています。
 ms.prod: xamarin
 ms.assetid: 3FEF45F2-C0F0-4D66-8796-9674FFE6740F
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
 ms.openlocfilehash: c553bd6d81e43913b6322b2ff85972a81b87f6cf
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57666412"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60945708"
 ---
-# <a name="graphics-and-animation-in-ios"></a>IOS のグラフィックスとアニメーション
+# <a name="graphics-and-animation-in-ios"></a>iOS のグラフィックスとアニメーション
 
 ![Images/00_final_app.png](images/00-final-app.png "アプリの実行例")
 

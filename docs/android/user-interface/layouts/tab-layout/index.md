@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 05/08/2017
 ms.openlocfilehash: 32d1ce4e440a962e02fda052375171bea7676053
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57670149"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61303250"
 ---
 # <a name="tabbed-layouts"></a>タブ付きレイアウト
 
@@ -28,7 +28,7 @@ ms.locfileid: "57670149"
 
 -   **ツールバー** &ndash; `Toolbar`を置き換える新しいより柔軟なアクション バー コンポーネント`ActionBar`します。 `Toolbar` Android 5.0 Lollipop で使用できる以降も古いバージョンを使用して Android の使用と、 [Android サポート ライブラリ v7](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/) NuGet パッケージ。 
     `Toolbar` Android アプリで使用する推奨される操作バー コンポーネントは現在です。
-    詳細については、[ツールバー](~/android/user-interface/controls/tool-bar/index.md)を参照してください。 
+    詳細については、次を参照してください。[ツールバー](~/android/user-interface/controls/tool-bar/index.md)します。 
 
 
 

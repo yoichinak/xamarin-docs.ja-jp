@@ -9,11 +9,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 05/29/2018
 ms.openlocfilehash: 4cb3e13ebbe3d9e8aed153528a35ab16c92e2145
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108705"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61153329"
 ---
 # <a name="how-do-i-resolve-a-pathtoolongexception-error"></a>PathTooLongException エラーを解決する方法
 
@@ -49,4 +49,4 @@ Xamarin.Android 8.0 以降、`UseShortFileNames`このエラーを回避する�
 </PropertyGroup>
 ```
 
-ビルドのプロパティの設定の詳細については、[ビルド プロセス](~/android/deploy-test/building-apps/build-process.md)を参照してください。
+ビルドのプロパティの設定の詳細については、次を参照してください。[ビルド プロセス](~/android/deploy-test/building-apps/build-process.md)します。

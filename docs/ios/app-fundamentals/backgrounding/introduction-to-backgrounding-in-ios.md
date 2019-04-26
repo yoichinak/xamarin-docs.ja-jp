@@ -1,5 +1,5 @@
 ---
-title: IOS でのバック グラウンド処理の概要
+title: iOS におけるバックグラウンド処理の概要
 description: このドキュメントでは、iOS でバック グラウンド処理について説明します。 アプリケーションの状態、アプリケーション ライフ サイクル メソッドをおよびバック グラウンド アプリで更新します。
 ms.prod: xamarin
 ms.assetid: E214F2C7-E74E-46C7-B5BA-080B30D61250
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 07/24/2018
 ms.openlocfilehash: c533dd54e3b6b11465cfd7daf5b9a93265dbe7b7
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119060"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61169763"
 ---
-# <a name="introduction-to-backgrounding-in-ios"></a>IOS でのバック グラウンド処理の概要
+# <a name="introduction-to-backgrounding-in-ios"></a>iOS におけるバックグラウンド処理の概要
 
 iOS では、バック グラウンド処理が非常に厳格に制御していますし、それを実装する 3 つのアプローチを提供しています。
 

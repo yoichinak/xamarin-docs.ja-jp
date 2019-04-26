@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
 ms.openlocfilehash: d8a531e495a19be7437d4a600e758028594248ab
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116005"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60953325"
 ---
 # <a name="ios-gaming-apis-in-xamarinios"></a>iOS ゲーム Api Xamarin.iOS で
 
@@ -373,9 +373,9 @@ public override void ViewWillLayoutSubviews ()
 
 上記のサンプルに加えて、Apple にトランス コードは、次のサンプル アプリが提供されるC#と Xamarin.iOS:
 
-- [FourInARow: GameplayKit Minmax ストラテジストを使用して対戦相手の AI](https://developer.apple.com/library/prerelease/ios/samplecode/FourInARow/Introduction/Intro.html#//apple_ref/doc/uid/TP40016142)
-- [AgentsCatalog: GameplayKit エージェント システムを使用します。](https://developer.apple.com/library/prerelease/ios/samplecode/AgentsCatalog/Introduction/Intro.html#//apple_ref/doc/uid/TP40016141)
-- [DemoBots: SpriteKit と GameplayKit クロス プラットフォーム ゲームを構築します。](https://developer.apple.com/library/prerelease/ios/samplecode/DemoBots/Introduction/Intro.html#//apple_ref/doc/uid/TP40015179)
+- [FourInARow:対戦相手の AI の GameplayKit Minmax ストラテジストを使用します。](https://developer.apple.com/library/prerelease/ios/samplecode/FourInARow/Introduction/Intro.html#//apple_ref/doc/uid/TP40016142)
+- [AgentsCatalog:GameplayKit で、エージェント システムの使用](https://developer.apple.com/library/prerelease/ios/samplecode/AgentsCatalog/Introduction/Intro.html#//apple_ref/doc/uid/TP40016141)
+- [DemoBots:SpriteKit と GameplayKit クロス プラットフォーム ゲームの作成](https://developer.apple.com/library/prerelease/ios/samplecode/DemoBots/Introduction/Intro.html#//apple_ref/doc/uid/TP40015179)
 
 ## <a name="metal"></a>メタル
 
@@ -429,7 +429,7 @@ Apple のモデルの I/O のフレームワークでは、(モデルとその�
 
 新しい ReplayKit の Apple のフレームワークを使用すると、簡単に、iOS ゲームをゲーム プレイの記録を追加し、迅速かつ簡単に編集し、アプリ内からこの動画を共有するユーザーを許可することができます。
 
-詳細については、Apple を参照してください[ReplayKit と Game Center のビデオでソーシャル機能と](https://developer.apple.com/videos/wwdc/2015/?id=605)とその[DemoBots: SpriteKit と GameplayKit とクロス プラットフォーム ゲームを構築](https://developer.apple.com/library/prerelease/ios/samplecode/DemoBots/Introduction/Intro.html#//apple_ref/doc/uid/TP40015179)サンプル アプリです。
+詳細については、Apple を参照してください[ReplayKit と Game Center のビデオでソーシャル機能と](https://developer.apple.com/videos/wwdc/2015/?id=605)とその[DemoBots:SpriteKit と GameplayKit とクロス プラットフォーム ゲームを構築](https://developer.apple.com/library/prerelease/ios/samplecode/DemoBots/Introduction/Intro.html#//apple_ref/doc/uid/TP40015179)サンプル アプリです。
 
 ## <a name="scenekit"></a>SceneKit
 
@@ -445,7 +445,7 @@ Apple が ios 9、SceneKit に次の新機能を追加します。
 - `SCNView`と`SCNSceneRenderer`(サポートされている iOS デバイス) 上でのベアメタルのレンダリングを有効にするクラスを使用できます。
 - `SCNAudioPlayer`と`SCNNode`プレイヤーの位置を iOS アプリに自動的に追跡する空間のオーディオ効果を追加するクラスを使用できます。
 
-詳細についてを参照してください、 [SceneKit ドキュメント](~/ios/platform/introduction-to-ios8.md#scenekit)と Apple の[SceneKit フレームワーク参照](https://developer.apple.com/library/prerelease/ios/documentation/SceneKit/Reference/SceneKit_Framework/index.html#//apple_ref/doc/uid/TP40012283)と[Fox: SceneKit ゲームで、Xcode シーン エディター](https://developer.apple.com/library/prerelease/ios/samplecode/Fox/Introduction/Intro.html#//apple_ref/doc/uid/TP40016154)サンプル プロジェクト。
+詳細についてを参照してください、 [SceneKit ドキュメント](~/ios/platform/introduction-to-ios8.md#scenekit)と Apple の[SceneKit フレームワーク参照](https://developer.apple.com/library/prerelease/ios/documentation/SceneKit/Reference/SceneKit_Framework/index.html#//apple_ref/doc/uid/TP40012283)と[Fox:SceneKit ゲーム Xcode シーン エディターでビルド](https://developer.apple.com/library/prerelease/ios/samplecode/Fox/Introduction/Intro.html#//apple_ref/doc/uid/TP40016154)サンプル プロジェクト。
 
 ## <a name="spritekit"></a>SpriteKit
 
@@ -462,7 +462,7 @@ Apple が iOS 9 の SpriteKit に次の新機能を追加します。
 - 新しいカメラのノードを持つゲームのサポートを簡単にスクロール (`SKCameraNode`) オブジェクト。
 - 金属をサポートする iOS デバイスで SpriteKit が自動的に使用が、表示用 OpenGL ES のカスタムのシェーダーを既に使用していた場合でもです。
 
-詳細についてを参照してください、 [SpriteKit ドキュメント](~/ios/platform/introduction-to-ios8.md#spritekit)Apple の[SpriteKit フレームワーク参照](https://developer.apple.com/library/prerelease/ios/documentation/SpriteKit/Reference/SpriteKitFramework_Ref/index.html#//apple_ref/doc/uid/TP40013041)とその[DemoBots: SpriteKit とクロス プラットフォーム ゲームを構築し、GameplayKit](https://developer.apple.com/library/prerelease/ios/samplecode/DemoBots/Introduction/Intro.html#//apple_ref/doc/uid/TP40015179)サンプル アプリです。
+詳細についてを参照してください、 [SpriteKit ドキュメント](~/ios/platform/introduction-to-ios8.md#spritekit)Apple の[SpriteKit フレームワーク参照](https://developer.apple.com/library/prerelease/ios/documentation/SpriteKit/Reference/SpriteKitFramework_Ref/index.html#//apple_ref/doc/uid/TP40013041)とその[DemoBots:SpriteKit と GameplayKit とクロス プラットフォーム ゲームを構築](https://developer.apple.com/library/prerelease/ios/samplecode/DemoBots/Introduction/Intro.html#//apple_ref/doc/uid/TP40015179)サンプル アプリです。
 
 ## <a name="summary"></a>まとめ
 

@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 03/18/2019
 ms.openlocfilehash: 441afb9348a85de61d35574bb9121c7de713a897
-ms.sourcegitcommit: 5d4e6677224971e2bc0268f405d192d0358c74b8
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58329953"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61367779"
 ---
 # <a name="set-collectionview-selection-mode"></a>CollectionView 選択モードを設定します。
 
@@ -21,7 +21,7 @@ ms.locfileid: "58329953"
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/CollectionViewDemos/)
 
 > [!IMPORTANT]
-> `CollectionView`は現在プレビュー段階で、その計画的な機能の一部が不足しています。 さらに、実装が完了すると、API を変更することがあります。
+> `CollectionView` は現在プレビュー段階で、計画されている機能の一部が不足しています。 さらに、実装の完了時には、API は変更される可能性があります。
 
 `CollectionView` 項目の選択を制御する次のプロパティを定義します。
 
@@ -191,7 +191,7 @@ public class MonkeysViewModel : INotifyPropertyChanged
 
 [![IOS と Android での単一選択のカスタム色で CollectionView 垂直方向の一覧のスクリーン ショット](selection-images/single-selection-color.png "単一選択のカスタム色で縦方向のリストを CollectionView") ] (selection-images/single-selection-color-large.png#lightbox "単一選択のカスタム色で縦方向のリストを CollectionView")
 
-表示状態の詳細については、[Xamarin.Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md)を参照してください。
+表示状態の詳細については、次を参照してください。 [Xamarin.Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md)します。
 
 ## <a name="disable-selection"></a>選択範囲を無効にします。
 

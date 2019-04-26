@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2018
 ms.openlocfilehash: 9fd6c9108695f58bd69a1c4aa307ca2e4be6dede
-ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51528742"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61357528"
 ---
 # <a name="bouncinggame-details"></a>BouncingGame の詳細
 
@@ -418,7 +418,7 @@ if (doesBallOverlapPaddle && isMovingDownward)
 
 このチュートリアルでは、クロス プラットフォーム ゲームを作成するグラフィックス、物理学 CocosSharp を使用して、入力と表示されます。 CocosSharp のゲーム開発を開始する最初の手順になります。 CocosSharp、オブジェクトが適切にレンダリングされるため、ビジュアル ツリーを構築する方法、およびフレームごとのゲーム ロジックを実装する方法の最も一般的なクラスのいくつか説明しました。
 
-このチュートリアルでは、CocosSharp ゲーム エンジンの機能のほんの一部について説明します。 CocosSharp に関するその他のチュートリアルとは、[CocosSharp ガイドの残りの部分](~/graphics-games/cocossharp/index.md)を参照してください。
+このチュートリアルでは、CocosSharp ゲーム エンジンの機能のほんの一部について説明します。 CocosSharp に関するその他のチュートリアルとは、次を参照してください。 [CocosSharp ガイドの残りの部分](~/graphics-games/cocossharp/index.md)します。
 
 ## <a name="related-links"></a>関連リンク
 
