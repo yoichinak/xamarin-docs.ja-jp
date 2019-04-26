@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
 ms.openlocfilehash: 26aeaa3d230a5c104014edd899b8d9231ced31e9
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108523"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61430502"
 ---
 # <a name="unified-storyboards-in-xamarinios"></a>Xamarin.iOS で統一されたストーリー ボード
 
@@ -264,7 +264,7 @@ Apple は iOS 8 に加えられたその他の変更では、開発者がビュ�
 
  [![](unified-storyboards-images/gettargetforaction.png "新しい GetTargetForAction メソッド")](unified-storyboards-images/gettargetforaction.png#lightbox)
 
-このメソッドでは、適切なコンテナーのビュー コント ローラーが見つかるまで、階層チェーンについて説明します。 例えば:
+このメソッドでは、適切なコンテナーのビュー コント ローラーが見つかるまで、階層チェーンについて説明します。 例:
 
 1.  場合、`ShowViewController`メソッドが呼び出されると、このメソッドを実装するチェーンの最初のビュー コント ローラーにはナビゲーション コント ローラーがあるため、新しいビューの親として使用されます。
 1.  場合、`ShowDetailViewController`メソッドが呼び出された代わりに、分割ビュー コント ローラーは、親として使用されているため、実装する最初のビュー コント ローラー。
@@ -356,7 +356,7 @@ public void UpdateConstraintsForTraitCollection (UITraitCollection collection)
 
 ### <a name="adding-transition-animations"></a>遷移のアニメーションを追加します。
 
-オーバーライドすることで、既定のアニメーションに追加、分割ビュー コント ローラーからのアプリケーションがアダプティブの写真に折りたたむに展開されていると、アニメーション、`WillTransitionToTraitCollection`ビュー コント ローラーのメソッド。 例えば:
+オーバーライドすることで、既定のアニメーションに追加、分割ビュー コント ローラーからのアプリケーションがアダプティブの写真に折りたたむに展開されていると、アニメーション、`WillTransitionToTraitCollection`ビュー コント ローラーのメソッド。 例:
 
 ```csharp
 public override void WillTransitionToTraitCollection (UITraitCollection traitCollection, IUIViewControllerTransitionCoordinator coordinator)
@@ -552,7 +552,7 @@ public override void ViewDidLoad ()
 
 アダプティブ写真アプリケーション サイズ クラスがすべての方法を詳しく見て、特徴のコレクションとアダプティブのビュー コント ローラーを使用して、Xamarin.iOS で簡単に統合されたアプリケーションを作成します。
 
-## <a name="unified-storyboards"></a>統合ストーリー ボード
+## <a name="unified-storyboards"></a>統合ストーリーボード
 
 新しい ios 8、Unified ストーリー ボードがサイズ クラスの複数ターゲットとする、iPhone と iPad の両方のデバイスで表示できるストーリー ボード ファイルをユニファイド開発者が、1 つを作成できるようにします。 Unified ストーリー ボードを使用すると、開発者は、小さい UI 固有のコードを記述しが 1 つだけのインターフェイスのデザインを作成および管理します。
 
@@ -625,7 +625,7 @@ Iphone 縦向きの用紙のレイアウトを編集するには、左下隅で�
 
 ### <a name="adaptive-segue-types"></a>アダプティブ セグエの種類
 
-かどうか、開発者が前に、ストーリー ボードを使用しの既存のセグエの種類に精通することが**プッシュ**、**モーダル**と**ポップ オーバー**します。 次アダプティブ セグエの種類 (上で説明した新しいビュー コント ローラー API に対応) が可能サイズ クラスは、Unified ストーリー ボード ファイルに有効な場合は、:**表示**と**詳細の表示**.
+かどうか、開発者が前に、ストーリー ボードを使用しの既存のセグエの種類に精通することが**プッシュ**、**モーダル**と**ポップ オーバー**します。 サイズ クラスは、Unified ストーリー ボード ファイルに有効な場合は、次アダプティブ セグエの種類 (上で説明した新しいビュー コント ローラー API に対応) が提供されます。**表示**と**詳細を表示する**します。
 
 > [!IMPORTANT]
 > サイズ クラスを有効にするをセグエ既存のすべての新しい型に変換します。

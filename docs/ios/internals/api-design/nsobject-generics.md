@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 39faa4670b17cdf4853bfe24ff104765ca541b9f
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 512280e9c298cfbcea6f693b0691236fd1cf5a5f
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106222"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61036482"
 ---
 # <a name="generic-subclasses-of-nsobject-in-xamarinios"></a>Xamarin.iOS での NSObject のジェネリック サブクラス
 
 ## <a name="using-generics-with-nsobjects"></a>NSObjects でジェネリックを使用します。
 
-Xamarin.iOS 7.2.1 以降では、`NSObject` のサブクラス (たとえば [UIView](https://developer.xamarin.com/api/type/UIKit.UIView/)) でジェネリックを使用することができます。
+サブクラスでジェネリックを使用できる Xamarin.iOS 7.2.1 で始まる`NSObject`(たとえば[UIView](xref:UIKit.UIView)します。
 
 次のようなジェネリック クラスを作成できます。
 
@@ -54,7 +54,7 @@ class Generic<T> : NSObject where T: NSObject
 }
 ```
 
-**理由**: ジェネリック型パラメーターは、`NSObject`ため、セレクターの署名`myMethod:`OBJECTIVE-C に安全に公開することができます (常に`NSObject`またはそのサブクラス)。
+**理由**:ジェネリック型パラメーターは、`NSObject`ため、セレクターの署名`myMethod:`OBJECTIVE-C に安全に公開することができます (常に`NSObject`またはそのサブクラス)。
 
 **不適切な**:
 
@@ -151,7 +151,7 @@ class MyClass : NSObject
 }
 ```
 
-**理由**: Xamarin.iOS が型引数を使用する種類を把握していないため、これは`T`Objective C からのメソッドの呼び出し時にします。
+**理由**:Xamarin.iOS が型引数を使用する種類を把握していないため、これは`T`Objective C からのメソッドの呼び出し時にします。
 
 別の方法は、特殊なメソッドを作成し、代わりにエクスポートするには。
 
@@ -188,7 +188,7 @@ class Generic<T> : NSObject where T : NSObject
 }
 ```
 
-**理由:** T. ジェネリック型引数を使用する種類を知ることができる Xamarin.iOS 実行時のニーズ、ジェネリック メソッドと同様
+**理由:** T. ジェネリック型引数を使用する種類を把握できる必要があります、Xamarin.iOS ランタイム、ジェネリック メソッドと同様
 
 インスタンス自体が使用されるメンバーのインスタンス (ジェネリック インスタンスされませんので<T>、ジェネリックは常に<SomeSpecificClass>) が静的メンバーにこの情報が存在しません。
 

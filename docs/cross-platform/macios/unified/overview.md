@@ -7,11 +7,11 @@ author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
 ms.openlocfilehash: 1d159d280bd3b8855c32e3e437dfdefcbe0463cb
-ms.sourcegitcommit: 4859da8772dbe920fdd653180450e5ddfb436718
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50235026"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61261130"
 ---
 # <a name="unified-api-overview"></a>統一された API の概要
 
@@ -40,8 +40,8 @@ Xamarin の Unified API では、Mac、iOS、およびサポート 32 ビット�
 
 この時点以降は、当社の Api は、2 つの方法に表示されます。
 
--  **クラシック API:** 32 ビット (のみ) に制限付きで公開されていると、`monotouch.dll`と`XamMac.dll`アセンブリ。
--  **Unified API:** で使用できる 1 つの API で 32 と 64 ビットの開発をサポート、`Xamarin.iOS.dll`と`Xamarin.Mac.dll`アセンブリ。
+-  **クラシック API:** 32 ビット (のみ) に制限されておりで公開されている、`monotouch.dll`と`XamMac.dll`アセンブリ。
+-  **Unified API:** 使用できる 1 つの API で 32 と 64 ビットの開発をサポート、`Xamarin.iOS.dll`と`Xamarin.Mac.dll`アセンブリ。
 
 つまり、企業の開発者 (しない対象アプリ ストア) を引き続き使用できます、既存のクラシック Api 私たちは保持を維持することや、永久にそれらは、新しい Api にアップグレードできます。
 
@@ -133,7 +133,7 @@ if (IntPtr.Size == 4) {
 
 ### <a name="arrays-and-systemcollectionsgeneric"></a>配列と System.Collections.Generic
 
-C#インデクサーの型を期待する`int`、明示的にキャストする必要があります`nint`値`int`コレクションまたは配列要素にアクセスします。 例えば:
+C#インデクサーの型を期待する`int`、明示的にキャストする必要があります`nint`値`int`コレクションまたは配列要素にアクセスします。 例:
 
 ```csharp
 public List<string> Names = new List<string>();
@@ -179,7 +179,7 @@ public static NSDate DateTimeToNSDate(this DateTime date)
 
 内部 Xamarin.iOS クラシック API (monotouch.dll)、`[Obsolete]`属性は、2 つの方法で使用されていました。
 
--  **IOS API を非推奨とされます:** これは、Apple のヒントを新しいによって置き換えされているため、API の使用を停止する場合。 クラシック API も問題と多くの場合、必要なは (iOS の古いバージョンをサポートする) 場合。
+-  **IOS API は非推奨:** これは、場合、新しいによって置き換えされているため、API の使用を停止するために Apple のヒントです。 クラシック API も問題と多くの場合、必要なは (iOS の古いバージョンをサポートする) 場合。
  このような API (および`[Obsolete]`属性)、新しい Xamarin.iOS アセンブリに含まれます。
 -  **無効な API**一部の API が、名前にタイプミスを必要があります。
 
@@ -287,7 +287,7 @@ API は、最適ではない完全にサポート ObjC プロトコルと、一�
 
 Unified API でこれを修正しました。  新しいアセンブリしか、`.ctor(NSCoder)`を型に準拠している場合`NSCoding`します。 このような型が今すぐ必要も、`Encode(NSCoder)`メソッドに準拠した、`INSCoding`インターフェイス。
 
-影響が少ない: ほとんどの場合にこの変更は影響しませんアプリケーション古い、削除、コンス トラクターを使用することもありません。
+影響が少ない:ほとんどの場合、削除、古いコンス トラクターを使用することもありません、この変更によってアプリケーションが影響するされません。
 
 ## <a name="further-tips"></a>他のヒント
 

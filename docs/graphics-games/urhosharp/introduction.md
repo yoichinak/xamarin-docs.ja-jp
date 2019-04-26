@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
 ms.openlocfilehash: a3e14ebca961e828fc578035adaca5ba2a809438
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "34783556"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61288519"
 ---
 # <a name="an-introduction-to-urhosharp"></a>UrhoSharp の概要
 
@@ -38,7 +38,7 @@ UrhoSharp では、多くの機能をすぐにゲーム エンジンを示しま
 
 ## <a name="getting-started"></a>作業の開始
 
-UrhoSharp は便利なこととして配布されます、 [NuGet パッケージ](https://www.nuget.org/)それに追加できる、c# または f# プロジェクト Windows、Mac、Android または iOS を対象とします。  NuGet のエンジンによって使用される基本的な資産 (CoreData) だけでなく、プログラムの実行に必要なライブラリが付属します。
+UrhoSharp は便利なこととして配布される、 [NuGet パッケージ](https://www.nuget.org/)に追加することができ、C#またはF#Windows、Mac、Android または iOS を対象とするプロジェクト。  NuGet のエンジンによって使用される基本的な資産 (CoreData) だけでなく、プログラムの実行に必要なライブラリが付属します。
 
 ### <a name="urho-as-a-portable-class-library"></a>ポータブル クラス ライブラリとして Urho
 

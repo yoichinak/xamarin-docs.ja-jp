@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
 ms.openlocfilehash: b2968399279fe3e9d160471bbcae08ae091be93e
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233303"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61075667"
 ---
 # <a name="search-apis-in-xamarinios"></a>Xamarin.iOS での search Api
 
@@ -59,7 +59,7 @@ Apple では、アプリでの検索インデックスを提供するどのよ�
  - ナビゲーションのポイントとアプリ内で機能します。
  - 新しいメッセージやコンテンツなど、デバイスを最近ダウンロードされたアプリで表示される項目の種類をなど。
 
-## <a name="app-search-enhancements"></a>アプリの検索の機能強化
+## <a name="app-search-enhancements"></a>アプリ検索の機能強化
 
 IOS 10 でコア スポット ライトは、次のアプリを検索するいくつかの機能強化を提供します。
 

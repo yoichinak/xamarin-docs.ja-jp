@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
 ms.openlocfilehash: 8ad2dde701814c0977e25e6e58272c0aa01ca4ca
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672847"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61085626"
 ---
 # <a name="working-with-jni"></a>JNI の使用
 
@@ -72,7 +72,7 @@ Android 呼び出し可能ラッパーがによって生成された、 **monodr
 Android のインターフェイスを実装する必要がある場合があります (など[Android.Content.IComponentCallbacks](https://developer.xamarin.com/api/type/Android.Content.IComponentCallbacks/))。
 
 すべての Android のクラスとインターフェイスを拡張して、 [Android.Runtime.IJavaObject](https://developer.xamarin.com/api/type/Android.Runtime.IJavaObject/)インターフェイス。 したがって、すべての Android の種類を実装する必要があります`IJavaObject`します。
-このファクトの Xamarin.Android を活用&ndash;を使用して`IJavaObject`を指定したマネージ型の Java プロキシ (、Android 呼び出し可能ラッパー) を使用した Android を提供します。 **Monodroid.exe**だけを検索`Java.Lang.Object`サブクラス (実装する必要があります`IJavaObject`)、サブクラス`Java.Lang.Object`マネージ コードでインターフェイスを実装する方法を示します。 例えば:
+このファクトの Xamarin.Android を活用&ndash;を使用して`IJavaObject`を指定したマネージ型の Java プロキシ (、Android 呼び出し可能ラッパー) を使用した Android を提供します。 **Monodroid.exe**だけを検索`Java.Lang.Object`サブクラス (実装する必要があります`IJavaObject`)、サブクラス`Java.Lang.Object`マネージ コードでインターフェイスを実装する方法を示します。 例:
 
 ```csharp
 class MyComponentCallbacks : Java.Lang.Object, Android.Content.IComponentCallbacks {

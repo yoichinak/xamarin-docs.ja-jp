@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2016
 ms.openlocfilehash: 1baad2e2edfb661fff9f3ef0ccf52c9922e9f351
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53051825"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61178157"
 ---
 # <a name="passing-arguments-in-xaml"></a>XAML で引数の受け渡し
 
@@ -24,10 +24,10 @@ _この記事では、工場出荷時のメソッドを呼び出すと、ジェ�
 
 引数を必要とするコンス トラクターまたは静的作成メソッドを呼び出してオブジェクトをインスタンス化する必要があります。 これを使用して XAML で実現できる、`x:Arguments`と`x:FactoryMethod`属性。
 
-- `x:Arguments`属性は、既定ではないコンス トラクターまたはファクトリ メソッドのオブジェクトの宣言にコンス トラクター引数を指定するために使用します。 詳細については、[コンス トラクターの引数を渡す](#constructor_arguments)を参照してください。
-- `x:FactoryMethod`オブジェクトを初期化するために使用できるファクトリ メソッドを指定する属性を使用します。 詳細については、[ファクトリ メソッドを呼び出す](#factory_methods)を参照してください。
+- `x:Arguments`属性は、既定ではないコンス トラクターまたはファクトリ メソッドのオブジェクトの宣言にコンス トラクター引数を指定するために使用します。 詳細については、次を参照してください。[コンス トラクターの引数を渡す](#constructor_arguments)します。
+- `x:FactoryMethod`オブジェクトを初期化するために使用できるファクトリ メソッドを指定する属性を使用します。 詳細については、次を参照してください。[ファクトリ メソッドを呼び出す](#factory_methods)します。
 
-さらに、`x:TypeArguments`属性を使用して、ジェネリック型のコンス トラクターにジェネリック型引数を指定することができます。 詳細については、[ジェネリック型引数を指定する](#generic_type_arguments)を参照してください。
+さらに、`x:TypeArguments`属性を使用して、ジェネリック型のコンス トラクターにジェネリック型引数を指定することができます。 詳細については、次を参照してください。[ジェネリック型引数を指定する](#generic_type_arguments)します。
 
 <a name="constructor_arguments" />
 

@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/24/2017
 ms.openlocfilehash: eab6153653a8c8df2068aaaf879d84d35473c541
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50123566"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61245691"
 ---
 # <a name="improving-frame-rate-with-ccspritesheet"></a>CCSpriteSheet でフレーム レートの向上
 
@@ -123,7 +123,7 @@ TexturePacker、 [TexturePacker web サイトからダウンロード](https://w
 
 スプライト シートをエクスポートするには、クリックして、**発行スプライト シート**ボタンをクリックし、スプライト シートの場所を選択します。 TexturePacker は形式の .plist ファイルとイメージ ファイルを保存します。
 
-結果として得られるファイルを使用するには、.png と .plist の両方を CocosSharp プロジェクトに追加します。 CocosSharp プロジェクトにファイルを追加する方法については、、 [BouncingGame ガイド](~/graphics-games/cocossharp/bouncing-game.md)を参照してください。 読み込まれることができますが、ファイルが追加される、`CCSpriteSheet`上記のコードで以前表示されます。
+結果として得られるファイルを使用するには、.png と .plist の両方を CocosSharp プロジェクトに追加します。 CocosSharp プロジェクトにファイルを追加する方法については、次を参照してください。、 [BouncingGame ガイド](~/graphics-games/cocossharp/bouncing-game.md)します。 読み込まれることができますが、ファイルが追加される、`CCSpriteSheet`上記のコードで以前表示されます。
 
 ```csharp
 CCSpriteSheet sheet = new CCSpriteSheet ("sheet.plist", "sheet.png"); 

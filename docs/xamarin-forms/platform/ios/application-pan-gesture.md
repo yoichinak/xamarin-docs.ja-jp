@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
 ms.openlocfilehash: 32c3651734fcc94dd75372f0c47f0ffb22b4a4ee
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54209707"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61031376"
 ---
 # <a name="simultaneous-pan-gesture-recognition-on-ios"></a>IOS での同時パン ジェスチャ認識
 
@@ -30,7 +30,7 @@ ms.locfileid: "54209707"
 </Application>
 ```
 
-代わりに、fluent API を使用して c# から使用できます。
+代わりに、fluent API を使用して C# から使用できます。
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;

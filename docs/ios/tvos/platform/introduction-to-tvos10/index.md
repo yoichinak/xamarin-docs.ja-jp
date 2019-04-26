@@ -1,5 +1,5 @@
 ---
-title: TvOS 10 の概要
+title: tvOS 10 の概要
 description: この記事では、Xamarin.tvOS 開発者向けのすべての新規および変更した Api と tvOS 10 で使用できる機能を紹介します。
 ms.prod: xamarin
 ms.assetid: CB9C1EC8-6008-43AD-977E-976AE7C73DD8
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
 ms.openlocfilehash: 260d01d6aa8344dd3cf107f1ffc34167c457a491
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120984"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61269326"
 ---
-# <a name="introduction-to-tvos-10"></a>TvOS 10 の概要
+# <a name="introduction-to-tvos-10"></a>tvOS 10 の概要
 
 _この記事では、Xamarin.tvOS 開発者向けのすべての新規および変更した Api と tvOS 10 で使用できる機能を紹介します。_
 
@@ -48,7 +48,7 @@ TvOS 10 では、iOS 10 とこれらの変更を共有するため、iOS 10 を�
 
 <!--To find out more, please see our [Video Subscriber Account](~/ios/platform-features/introduction-to-ios10/video-subscriber-account/) guide.-->
 
-## <a name="wide-color"></a>色
+## <a name="wide-color"></a>広色域
 
 tvOS 10 では、拡張範囲のピクセル形式とコア グラフィックス、Core のイメージ、金属製および AVFoundation などのフレームワークを含めて、システム全体で全体の色域スペースのサポートを拡張します。 ワイド カラー ディスプレイを使用したデバイスのサポートはさらに、全体のグラフィックス スタック全体でこの動作を提供することで緩和されました。
 

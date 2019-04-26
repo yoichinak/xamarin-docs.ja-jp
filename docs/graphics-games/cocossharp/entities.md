@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/27/2017
 ms.openlocfilehash: 42034261c374183346c8072eb42014f43a4fe22c
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57667608"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61210381"
 ---
 # <a name="entities-in-cocossharp"></a>CocosSharp のエンティティ
 
@@ -106,7 +106,7 @@ public override void ApplicationDidFinishLaunching (CCApplication applicati
 } 
 ```
 
-CocosSharp の解像度で処理する方法の詳細については、この[CocosSharp での複数の解決を処理ガイド](~/graphics-games/cocossharp/resolutions.md)を参照してください。
+CocosSharp の解像度で処理する方法の詳細については、次を参照してください。 この[CocosSharp での複数の解決を処理ガイド](~/graphics-games/cocossharp/resolutions.md)します。
 
 
 ## <a name="adding-content-to-the-project"></a>プロジェクトにコンテンツを追加します。

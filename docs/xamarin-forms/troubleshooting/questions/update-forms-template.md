@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Forms の既定のテンプレートを新しい NuGet パッケージは更新できますか。
+title: Xamarin.Forms の既定のテンプレートを新しい NuGet パッケージに更新することはできますか。
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 160FBE13-26EB-4B4F-9248-A5CBE58FDD7F
@@ -8,13 +8,13 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 04/25/2017
 ms.openlocfilehash: e439d39dd8591cad14485e64aabab2d6016a8e27
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57668228"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61345912"
 ---
-# <a name="can-i-update-the-xamarinforms-default-template-to-a-newer-nuget-package"></a>Xamarin.Forms の既定のテンプレートを新しい NuGet パッケージは更新できますか。
+# <a name="can-i-update-the-xamarinforms-default-template-to-a-newer-nuget-package"></a>Xamarin.Forms の既定のテンプレートを新しい NuGet パッケージに更新することはできますか。
 
 このガイドは、例として、Xamarin.Forms .NET Standard ライブラリ テンプレートを使用しますが、同じ一般的な方法は、Xamarin.Forms 共有プロジェクト テンプレートの動作も。 このガイドは、Xamarin.Forms 1.5.1.6471 に 2.1.0.6529 から更新の例で記述されたが、同じ手順は他のバージョンを代わりに、既定として設定すること。
 
@@ -31,7 +31,7 @@ ms.locfileid: "57668228"
 
     例: `<package id="Xamarin.Forms" version="1.5.1.6471" />` -> `<package id="Xamarin.Forms" version="2.1.0.6529" />`
 
-4.  メインの"name"要素を変更する[複数プロジェクトのテンプレート ファイル](https://msdn.microsoft.com/library/ms185308.aspx)(`Xamarin.Forms.PCL.vstemplate`) 一意になるようにします。 例:
+4.  メインの"name"要素を変更する[複数プロジェクトのテンプレート ファイル](https://msdn.microsoft.com/library/ms185308.aspx)(`Xamarin.Forms.PCL.vstemplate`) 一意になるようにします。 例えば:
     > <Name>Blank App (Xamarin.Forms Portable) - 2.1.0.6529</Name>
 
 5.  再全体のテンプレート フォルダーを zip 圧縮します。 元のファイル構造と一致することを確認、`.zip`ファイル。 `Xamarin.Forms.PCL.vstemplate`の上部にあるファイルがあります、`.zip`ファイル、フォルダー内にありません。

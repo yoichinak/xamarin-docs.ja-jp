@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/27/2017
 ms.openlocfilehash: ac84d5b28b0f211dccb1697a4b3dbbc9cedf81e9
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57670165"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61030251"
 ---
 # <a name="2d-math-with-cocossharp"></a>CocosSharp による 2 次元数値演算
 
@@ -71,7 +71,7 @@ this.PositionY += this.VelocityY * seconds;
 
 下のフレーム レートでを実行するゲームが少ないそのオブジェクトの位置を頻繁に更新ことを検討してください。 そのため、各更新プログラムは、ゲームをより頻繁に更新していた場合はさらに移動するオブジェクトになります。 `seconds`前回の更新以降の経過時間の量を報告することによって、このアカウントの値します。
 
-時間ベースのアニメーションを追加する方法の例は、[ベースの移動の時間をカバーするこのレシピ](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/game_development/time_based_movement)を参照してください。
+時間ベースのアニメーションを追加する方法の例は、次を参照してください。[ベースの移動の時間をカバーするこのレシピ](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/game_development/time_based_movement)します。
 
 
 ### <a name="calculating-positions-using-velocity"></a>Velocity を使用して位置の計算

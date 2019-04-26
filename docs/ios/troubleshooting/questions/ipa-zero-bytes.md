@@ -1,5 +1,5 @@
 ---
-title: IPA ファイルが 0 バイトです。
+title: IPA ファイルが 0 バイトです
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 376BBA27-8694-4E63-9976-BF60349D42D8
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
 ms.openlocfilehash: 4835c980b6b11c92ec1c81dea69f229aa5652275
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50102660"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61420937"
 ---
-# <a name="ipa-file-is-0-bytes"></a>IPA ファイルが 0 バイトです。
+# <a name="ipa-file-is-0-bytes"></a>IPA ファイルが 0 バイトです
 
 > [!IMPORTANT]
 > Xamarin の最近のバージョンでは、この問題を解決されています。 ただし、ソフトウェアの最新バージョンで問題が発生した場合を提出してください、[新しいバグ](~/cross-platform/troubleshooting/questions/howto-file-bug.md)完全なバージョン管理情報と完全のビルド ログ出力します。

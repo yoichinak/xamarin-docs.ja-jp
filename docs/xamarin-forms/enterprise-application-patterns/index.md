@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
 ms.openlocfilehash: f972a32f8daf920f2121e5aa56923c0f3a7f808a
-ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51528443"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61299951"
 ---
 # <a name="enterprise-application-patterns-using-xamarinforms-ebook"></a>Xamarin.Forms 電子ブックを使用してエンタープライズ アプリケーション パターン
 
@@ -20,7 +20,7 @@ _適応性のある、保守、およびテストが容易な Xamarin.Forms エ�
 
 ![](images/cover-sml.png "Xamarin.Forms 電子ブックを使用してエンタープライズ アプリケーション パターン")
 
-この電子ブックは、疎結合を維持しながら、モデル-ビュー-ビューモデル (MVVM) パターン、依存関係の挿入、ナビゲーション、検証、および構成の管理を実装する方法のガイダンスを提供します。 さらに、またがガイダンス認証と IdentityServer は、コンテナー化されたマイクロ サービス、および単体テストからのデータ アクセスの承認を実行します。
+この電子ブックは、疎結合を維持しながら、モデル-ビュー-ビューモデル (MVVM) パターン、依存関係の挿入、ナビゲーション、検証、および構成の管理を実装する方法のガイダンスを提供します。 さらに、このガイダンスでは認証サーバーを使用した認証と認可、コンテナー化されたマイクロサービスへのデータアクセス、そしてユニットテストについても記載しています。
 
 ## <a name="prefaceprefacemd"></a>[「はじめに」](preface.md)
 

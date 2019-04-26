@@ -9,11 +9,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 06/21/2018
 ms.openlocfilehash: dbd3287e7c646be7fd969699eab685906a1c6c1a
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112807"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61093936"
 ---
 # <a name="changes-to-the-android-sdk-tooling"></a>Android SDK ツールへの変更
 
@@ -48,15 +48,15 @@ Visual Studio と Visual Studio for Mac は、提供が中止された Google GU
 
 #### <a name="sdkmanager"></a>sdkmanager
 
-**追加されました:** Android SDK Tools 25.2.3 (2016 年 11 月) 以降。
+**追加されます。** Android SDK Tools 25.2.3 (2016 年 11 月) 以降。
 
-呼ばれる新しいプログラムがある**sdkmanager**で、**ツール/bin** Android SDK のフォルダー。 このツールは、コマンドラインでの Android SDK を維持するために使用されます。 詳細については、このツールを使用して、[sdkmanager](https://developer.android.com/studio/command-line/sdkmanager.html)を参照してください。
+呼ばれる新しいプログラムがある**sdkmanager**で、**ツール/bin** Android SDK のフォルダー。 このツールは、コマンドラインでの Android SDK を維持するために使用されます。 詳細については、このツールを使用して、次を参照してください。 [sdkmanager](https://developer.android.com/studio/command-line/sdkmanager.html)します。
 
 #### <a name="avdmanager"></a>avdmanager
 
-**追加されました:** Android SDK Tools 25.3.0 (2017 年 3 月) 以降。
+**追加されます。** Android SDK Tools 25.3.0 (2017 年 3 月) 以降。
 
-呼ばれる新しいプログラムがある**avdmanager**で、**ツール/bin** Android SDK のフォルダー。 このツールは、Android emulator、Avd を維持するために使用されます。 詳細については、このツールを使用して、[avdmanager](https://developer.android.com/studio/command-line/avdmanager.html)を参照してください。
+呼ばれる新しいプログラムがある**avdmanager**で、**ツール/bin** Android SDK のフォルダー。 このツールは、Android emulator、Avd を維持するために使用されます。 詳細については、このツールを使用して、次を参照してください。 [avdmanager](https://developer.android.com/studio/command-line/avdmanager.html)します。
 
 ### <a name="downgrading"></a>ダウン グレード
 

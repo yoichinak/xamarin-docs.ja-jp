@@ -1,5 +1,5 @@
 ---
-title: TvOS 9 の概要
+title: tvOS 9 の概要
 description: この記事では、Xamarin.tvOS 開発者向けのすべての新規および変更した Api と tvOS 9 で使用できる機能を紹介します。
 ms.prod: xamarin
 ms.assetid: A7E738E1-9F94-489B-918F-7DF8F0810987
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 06/07/2016
 ms.openlocfilehash: dda197f71b2a2ab3e0d61a838ab85d79b7a078c7
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104311"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61270353"
 ---
-# <a name="introduction-to-tvos-9"></a>TvOS 9 の概要
+# <a name="introduction-to-tvos-9"></a>tvOS 9 の概要
 
 _この記事では、Xamarin.tvOS 開発者向けのすべての新規および変更した Api と tvOS 9 で使用できる機能を紹介します。_
 
@@ -75,7 +75,7 @@ tvOS アプリの Apple TV で実行されているが、次のサポート機�
 
 ### <a name="siri-remote"></a>Siri のリモート
 
-リージョンに基づき、指定された Apple TV リモートになるいずれか 1 つの構成: Siri のリモートまたは Apple TV リモートです。
+リージョンに基づき、指定された Apple TV リモートになるいずれか 1 つの構成。Siri のリモートまたは Apple TV リモートです。
 
 Siri のリモートは、次の国で現在使用できません。
 

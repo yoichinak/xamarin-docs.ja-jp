@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 06/05/2018
 ms.openlocfilehash: 55d6fc71c82c6005eb9b32d169055cca5b688d0c
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109563"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61421209"
 ---
 # <a name="where-can-i-set-my-ios-sdk-locations"></a>どこでできます設定 iOS SDK の場所ですか。
 

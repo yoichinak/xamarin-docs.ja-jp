@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 04/10/2018
 ms.openlocfilehash: a8e27063040ff91f72a1cbf932b1b277a5dee63d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104922"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61277396"
 ---
 # <a name="hello-wear"></a>Wear の基本
 
@@ -57,7 +57,7 @@ _最初の Android Wear アプリを作成し、Wear エミュレーターまた
 
 -----
 
-ターゲット フレームワークの設定の詳細については、[Understanding Android API Levels](~/android/app-fundamentals/android-api-levels.md)を参照してください。
+ターゲット フレームワークの設定の詳細については、次を参照してください。 [Understanding Android API Levels](~/android/app-fundamentals/android-api-levels.md)します。
 
 
 ### <a name="3-edit-the-mainaxml-layout"></a>3.編集、 **Main.axml**レイアウト
@@ -133,9 +133,9 @@ public class MainActivity : Activity
 
 [次へ] の手順をデプロイして、アプリを実行するには、エミュレーターまたはデバイスを設定するとします。 ない場合の展開および実行するプロセスに詳しく Xamarin.Android アプリ一般を参照してください、[こんにちは, Android クイック スタート](~/android/get-started/hello-android/hello-android-quickstart.md)します。
 
-Android Wear デバイス、Android Wear スマートウォッチなどがいない場合は、エミュレーターで、アプリを実行できます。 Wear アプリをエミュレーターでのデバッグについては、[エミュレーターで Android Wear をデバッグ](~/android/wear/deploy-test/debug-on-emulator.md)を参照してください。
+Android Wear デバイス、Android Wear スマートウォッチなどがいない場合は、エミュレーターで、アプリを実行できます。 Wear アプリをエミュレーターでのデバッグについては、次を参照してください。[エミュレーターで Android Wear をデバッグ](~/android/wear/deploy-test/debug-on-emulator.md)します。
 
-Android Wear デバイス、Android Wear スマートウォッチなどを使っている場合は、エミュレーターを使用する代わりに、デバイスでアプリを実行できます。 Wear デバイスでのデバッグの詳細については、[Wear デバイスでのデバッグ](~/android/wear/deploy-test/debug-on-device.md)を参照してください。
+Android Wear デバイス、Android Wear スマートウォッチなどを使っている場合は、エミュレーターを使用する代わりに、デバイスでアプリを実行できます。 Wear デバイスでのデバッグの詳細については、次を参照してください。 [Wear デバイスでのデバッグ](~/android/wear/deploy-test/debug-on-device.md)します。
 
 
 ### <a name="6-run-the-android-wear-app"></a>6.Android Wear アプリを実行します。

@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/27/2017
 ms.openlocfilehash: 84f825c19aa1ac08fbcf3e732077304218768bcc
-ms.sourcegitcommit: f541a92b4f896474f6a5467ccff2028dafa6fee7
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "50983602"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61371327"
 ---
 # <a name="using-the-monogame-pipeline-tool"></a>MonoGame パイプライン ツールを使用します。
 
@@ -36,7 +36,7 @@ MonoGame のパイプライン ツールは、コンテンツ ファイルに変
 
 ## <a name="monogame-pipeline-tool-discussion"></a>MonoGame パイプライン ツールについて
 
-MonoGame のパイプライン ツールは、Windows、OS X、Linux で使用できます。 このチュートリアルは、Windows のツールを実行しますが、続きます Mac および Linux でも。 最大値または Linux で設定するツールを取得する方法の詳細については、[このページ](http://www.monogame.net/2015/01/09/monogame-pipeline-tool-available-for-macos-and-linux/)を参照してください。
+MonoGame のパイプライン ツールは、Windows、OS X、Linux で使用できます。 このチュートリアルは、Windows のツールを実行しますが、続きます Mac および Linux でも。 最大値または Linux で設定するツールを取得する方法の詳細については、次を参照してください。[このページ](http://www.monogame.net/2015/01/09/monogame-pipeline-tool-available-for-macos-and-linux/)します。
 
 MonoGame パイプライン ツールは、iOS アプリケーションでも実行とを使用するための開発者、Windows 上のコンテンツを作成することが[Xamarin Mac Agent](~/ios/get-started/installation/windows/connecting-to-mac/index.md) Windows での開発を続けることができます。
 

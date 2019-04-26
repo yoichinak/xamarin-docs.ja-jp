@@ -7,11 +7,11 @@ author: asb3993
 ms.author: amburns
 ms.date: 10/11/2017
 ms.openlocfilehash: 03e4a5ac8906d2593cbdf3c15f6b2d1f4a2c6d19
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57667259"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61199650"
 ---
 # <a name="objective-sharpie-release-history"></a>目標油性リリース履歴
 
@@ -68,13 +68,13 @@ ms.locfileid: "57667259"
 
 [V2.1.0 をダウンロードします。](https://download.xamarin.com/objective-sharpie/ObjectiveSharpie-2.1.0.pkg)
 
-* [bxc#27849](https://bugzilla.xamarin.com/show_bug.cgi?id=27849):確認`using ObjCRuntime;`と生成されます`ArgumentSemantic`使用されます。
-* [bxc#27850](https://bugzilla.xamarin.com/show_bug.cgi?id=27850):確認`using System.Runtime.InteropServices;`と生成されます`DllImport`使用されます。
-* [bxc#27852](https://bugzilla.xamarin.com/show_bug.cgi?id=27852):既定の`DllImport`からシンボルの読み込みに`__Internal`します。
-* [bxc#27848](https://bugzilla.xamarin.com/show_bug.cgi?id=27848):OBJECTIVE-C でコンテナーの宣言の事前宣言をスキップします。
-* [bxc#27846](https://bugzilla.xamarin.com/show_bug.cgi?id=27846):具体的なインターフェイスとして修飾で 1 つのプロトコルの種類のバインド (`id<Foo>`として`Foo`の代わりに`Foundation.NSObject<Foo>`)。
-* [bxc#28037](https://bugzilla.xamarin.com/show_bug.cgi?id=28037):バインド`UInt32`、 `UInt64`、および`Int64`としてリテラル`Int32`を削除する、`u`や`uL`サフィックスの値が安全に収まらないときに`Int32`します。
-* [bxc#28038](https://bugzilla.xamarin.com/show_bug.cgi?id=28038):元のネイティブ名が始まるときに列挙型名のマッピングを修正、`k`プレフィックス。
+* [bxC#27849](https://bugzilla.xamarin.com/show_bug.cgi?id=27849):確認`using ObjCRuntime;`と生成されます`ArgumentSemantic`使用されます。
+* [bxC#27850](https://bugzilla.xamarin.com/show_bug.cgi?id=27850):確認`using System.Runtime.InteropServices;`と生成されます`DllImport`使用されます。
+* [bxC#27852](https://bugzilla.xamarin.com/show_bug.cgi?id=27852):既定の`DllImport`からシンボルの読み込みに`__Internal`します。
+* [bxC#27848](https://bugzilla.xamarin.com/show_bug.cgi?id=27848):OBJECTIVE-C でコンテナーの宣言の事前宣言をスキップします。
+* [bxC#27846](https://bugzilla.xamarin.com/show_bug.cgi?id=27846):具体的なインターフェイスとして修飾で 1 つのプロトコルの種類のバインド (`id<Foo>`として`Foo`の代わりに`Foundation.NSObject<Foo>`)。
+* [bxC#28037](https://bugzilla.xamarin.com/show_bug.cgi?id=28037):バインド`UInt32`、 `UInt64`、および`Int64`としてリテラル`Int32`を削除する、`u`や`uL`サフィックスの値が安全に収まらないときに`Int32`します。
+* [bxC#28038](https://bugzilla.xamarin.com/show_bug.cgi?id=28038):元のネイティブ名が始まるときに列挙型名のマッピングを修正、`k`プレフィックス。
 * `sizeof` C 式を引数の型が、C# のプリミティブ型にマップされていないは Clang で評価され、無効な C# 生成を回避するのには整数リテラルとしてバインドします。
 * プロパティの型が、ブロックの Objective C の構文を修正 (Objective C コードは、バインド宣言を超えたコメントに表示されます)。
 * 放射性型を元の型としてバインド (`int[]`を減衰`int*`Clang でセマンティック分析中に、バインドに書き込まれた元`int[]`代わりに)。

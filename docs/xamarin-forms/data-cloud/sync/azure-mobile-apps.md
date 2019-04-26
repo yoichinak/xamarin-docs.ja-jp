@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/02/2017
 ms.openlocfilehash: 6080b4dc152558d6f532399cee7424670c588c28
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53058179"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61319579"
 ---
 # <a name="synchronizing-offline-data-with-azure-mobile-apps"></a>Azure Mobile Apps のオフライン データの同期
 
@@ -28,7 +28,7 @@ _オフライン同期により、データの変更や、表示、追加、モ�
 
 オフライン同期には、Azure Mobile Apps のインスタンスとカスタム競合解決で、両方のローカル ストアと同じレコードが変更されたときの競合を検出のサポートも含まれています。 競合は、ローカル ストア、または Azure Mobile Apps のインスタンスか、処理できます。
 
-オフライン同期の詳細については、[Azure Mobile Apps でのオフライン データ同期](/azure/app-service-mobile/app-service-mobile-offline-data-sync/)と[Xamarin.Forms モバイル アプリのオフライン同期を有効にする](/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started-offline-data/)を参照してください。
+オフライン同期の詳細については、次を参照してください。 [Azure Mobile Apps でのオフライン データ同期](/azure/app-service-mobile/app-service-mobile-offline-data-sync/)と[Xamarin.Forms モバイル アプリのオフライン同期を有効にする](/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started-offline-data/)します。
 
 ## <a name="setup"></a>セットアップ
 
@@ -170,7 +170,7 @@ protected override async void OnAppearing()
 
 これは、アプリケーションは開始時に Azure Mobile Apps のインスタンスと同期しようとしていることを意味します。
 
-使用して、データの一覧と、Windows プラットフォームを更新するプルを使用して同期を iOS と Android で開始するさらに、**同期**ユーザー インターフェイスでボタンをクリックします。 詳細については、[プルして更新](~/xamarin-forms/user-interface/listview/interactivity.md#Pull_to_Refresh)を参照してください。
+使用して、データの一覧と、Windows プラットフォームを更新するプルを使用して同期を iOS と Android で開始するさらに、**同期**ユーザー インターフェイスでボタンをクリックします。 詳細については、次を参照してください。[プルして更新](~/xamarin-forms/user-interface/listview/interactivity.md#Pull_to_Refresh)します。
 
 ## <a name="summary"></a>まとめ
 

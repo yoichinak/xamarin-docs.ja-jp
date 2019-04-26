@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/26/2019
 ms.openlocfilehash: dc39fd9c129fb63fa4a3a73b15aea4204a38cdbd
-ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57557270"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61231038"
 ---
 # <a name="xamarinforms-picker"></a>Xamarin.Forms の選択
 
@@ -46,8 +46,8 @@ A [ `Picker` ](xref:Xamarin.Forms.Picker)が最初に表示されるときに、
 
 設定するための 2 つの手法がある、 [ `Picker` ](xref:Xamarin.Forms.Picker)データ。
 
-- 設定、 [ `ItemsSource` ](xref:Xamarin.Forms.Picker.ItemsSource)プロパティを表示するデータ。 この手法を使用することをお勧めします。 詳細については、[ピッカーの ItemsSource プロパティを設定](populating-itemssource.md)を参照してください。
-- 表示するデータの追加、 [ `Items` ](xref:Xamarin.Forms.Picker.Items)コレクション。 この手法が、元のプロセスを設定するため、 [ `Picker` ](xref:Xamarin.Forms.Picker)データ。 詳細については、[ピッカーの項目のコレクションに追加データ](populating-items.md)を参照してください。
+- 設定、 [ `ItemsSource` ](xref:Xamarin.Forms.Picker.ItemsSource)プロパティを表示するデータ。 この手法を使用することをお勧めします。 詳細については、次を参照してください。[ピッカーの ItemsSource プロパティを設定](populating-itemssource.md)します。
+- 表示するデータの追加、 [ `Items` ](xref:Xamarin.Forms.Picker.Items)コレクション。 この手法が、元のプロセスを設定するため、 [ `Picker` ](xref:Xamarin.Forms.Picker)データ。 詳細については、次を参照してください。[ピッカーの項目のコレクションに追加データ](populating-items.md)します。
 
 ## <a name="related-links"></a>関連リンク
 

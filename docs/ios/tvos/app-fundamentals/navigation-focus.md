@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
 ms.openlocfilehash: 3cb8d1c1d92146e70056c6cf562f2fa1cb028e7c
-ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/30/2019
-ms.locfileid: "58677873"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61416449"
 ---
 # <a name="working-with-tvos-navigation-and-focus-in-xamarin"></a>ナビゲーションとフォーカス Xamarin で tvOS の操作
 
@@ -81,7 +81,7 @@ Apple では、フォーカスと選択を操作するための次の推奨事�
 
 ### <a name="working-with-focus"></a>フォーカスの操作
 
-フォーカスを設定できる項目となるカスタム コントロールを作成し時間である可能性があります。 場合これをオーバーライド、`CanBecomeFocused`プロパティと戻り`true`, それ以外の場合、return`false`します。 例:
+フォーカスを設定できる項目となるカスタム コントロールを作成し時間である可能性があります。 場合これをオーバーライド、`CanBecomeFocused`プロパティと戻り`true`, それ以外の場合、return`false`します。 例えば:
 
 ```csharp
 public class myView : UIView
@@ -208,7 +208,7 @@ public override void DidUpdateFocus (UIFocusUpdateContext context, UIFocusAnimat
 
 最初に、このコードの取得の`NextFocusedView`から、`UIFocusUpdateContext`で渡された (`context`)。 このビューは、する場合`null`処理は必要ありませんし、メソッドを終了しました。
 
-次に、`nextFocusableItem`が評価されます。 いずれかと一致する場合、**詳細**または**購入**ボタン、フォーカスはフォーカスのガイドを使用して逆ボタンに送信される`PreferredFocusedView`プロパティ。 例:
+次に、`nextFocusableItem`が評価されます。 いずれかと一致する場合、**詳細**または**購入**ボタン、フォーカスはフォーカスのガイドを使用して逆ボタンに送信される`PreferredFocusedView`プロパティ。 例えば:
 
 ```csharp
 // Move from the More Info to Buy button

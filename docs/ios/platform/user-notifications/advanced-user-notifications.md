@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 05/03/2018
 ms.openlocfilehash: 4472654064812142e3281374754ace0042b542bf
-ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/30/2019
-ms.locfileid: "58677756"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61089249"
 ---
 # <a name="advanced-user-notifications-in-xamarinios"></a>Xamarin.iOS での高度なユーザー通知
 
@@ -453,7 +453,7 @@ namespace MonkeyChatNotifyExtension
 
 Notification Content 拡張機能は、ユーザーがカスタム アクションのいずれかを呼び出したときに、UI を更新する機能もある、ユーザーがタップしたときに承諾済みとしての日付を表示するなど、 **Accept**カスタム アクション ボタンをクリックします。 さらに、Notification Content 拡張機能は、システムに通知を閉じる前に、ユーザーはその操作の効果を確認できるように、通知の UI のジョンソンを遅延するを指示することができます。
 
-2 番目のバージョンを実装することによってこれは、`DidReceiveNotification`完了ハンドラーを含むメソッド。 例:
+2 番目のバージョンを実装することによってこれは、`DidReceiveNotification`完了ハンドラーを含むメソッド。 例えば:
 
 ```csharp
 using System;
@@ -527,7 +527,7 @@ namespace myApp {
 }
 ```
 
-追加することで、`Server.PostEventResponse`ハンドラーを`DidReceiveNotification`メソッドは、Notification Content 拡張機能、拡張機能の*する必要があります*すべてのカスタム アクションを処理します。 拡張機能は含むアプリにカスタム アクションを変更することで転送できますも、`UNNotificationContentExtensionResponseOption`します。 例:
+追加することで、`Server.PostEventResponse`ハンドラーを`DidReceiveNotification`メソッドは、Notification Content 拡張機能、拡張機能の*する必要があります*すべてのカスタム アクションを処理します。 拡張機能は含むアプリにカスタム アクションを変更することで転送できますも、`UNNotificationContentExtensionResponseOption`します。 例えば:
 
 ```csharp
 // Close Notification

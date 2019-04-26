@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 04/12/2018
 ms.openlocfilehash: c2ca567ffcb247622d1b3e8f3e0136c453723b96
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119112"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61017682"
 ---
 # <a name="google-cloud-messaging"></a>Google Cloud Messaging
 
@@ -34,7 +34,7 @@ Google Cloud Messaging (GCM) は、送信、ルーティング、およびサー
 
 GCM を使用して、アプリ サーバーは 1 つのデバイス、デバイスのグループまたはさまざまなトピックにサブスクライブしているデバイスにメッセージを送信できます。 クライアント アプリは、GCM を使用して、アプリケーション サーバー (たとえば、リモート通知を受信する場合など) からのダウン ストリームのメッセージをサブスクライブすることができます。 また、GCM により、クライアント アプリのアップ ストリームのメッセージをアプリケーション サーバーに送信することにします。
 
-GCM 用のアプリケーション サーバーの実装方法の詳細については、[GCM 接続サーバーについて](https://developers.google.com/cloud-messaging/server)を参照してください。
+GCM 用のアプリケーション サーバーの実装方法の詳細については、次を参照してください。 [GCM 接続サーバーについて](https://developers.google.com/cloud-messaging/server)します。
 
 
 
@@ -45,7 +45,7 @@ GCM 用のアプリケーション サーバーの実装方法の詳細につい
 GCM がアプリ サーバーとクライアント アプリを識別するために次の資格情報を使用して、GCM を使用したトランザクション メッセージを承認するためにこれらの資格情報を使用しています。
 
 -   **API キー** &ndash; 、 *API キー* Google サービスへのアクセス権をアプリ サーバーの提供GCM では、アプリ サーバーの認証にこのキーを使用します。
-    API キーを取得する必要があります最初、GCM サービスを使用する前に、 [Google Developer Console](https://console.developers.google.com/)を作成して、*プロジェクト*します。 API キーは、セキュリティで保護された; 保持する必要があります。API キーを保護する方法の詳細については、[API キーを安全に使用するためのベスト プラクティス](https://support.google.com/cloud/answer/6310037?hl=en)を参照してください。
+    API キーを取得する必要があります最初、GCM サービスを使用する前に、 [Google Developer Console](https://console.developers.google.com/)を作成して、*プロジェクト*します。 API キーは、セキュリティで保護された; 保持する必要があります。API キーを保護する方法の詳細については、次を参照してください。 [API キーを安全に使用するためのベスト プラクティス](https://support.google.com/cloud/answer/6310037?hl=en)します。
 
 -   **Sender ID** &ndash; 、 *Sender ID*クライアント アプリにアプリ サーバーを承認&ndash;クライアント アプリへのメッセージの送信を許可されているアプリのサーバーを識別する一意の数します。
     Sender ID も、プロジェクトの数。プロジェクトを登録するときに、Google 開発者コンソールから送信者 ID を取得します。
@@ -97,7 +97,7 @@ Google の[クライアント アプリの登録](https://developers.google.com/
 
 (アプリ サーバーが送信する場所、メッセージを 1 つのクライアント アプリに) このメッセージング シナリオでメッセージが最大 4 kB の長さを指定できます。
 
-Android でダウン ストリームの GCM メッセージの受信について (コード サンプルを含む) 詳細なは、[リモート通知](~/android/data-cloud/google-messaging/remote-notifications-with-gcm.md)を参照してください。
+Android でダウン ストリームの GCM メッセージの受信について (コード サンプルを含む) 詳細なは、次を参照してください。[リモート通知](~/android/data-cloud/google-messaging/remote-notifications-with-gcm.md)します。
 
 
 #### <a name="topic-messaging"></a>トピックのメッセージング

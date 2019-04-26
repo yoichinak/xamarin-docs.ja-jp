@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 09/07/2017
 ms.openlocfilehash: 7e895dc2865880ec2789a40f8cdf047a20f8693b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111039"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61400301"
 ---
 # <a name="sirikit-updates-in-ios-11"></a>IOS 11 で SiriKit の更新プログラム
 
@@ -118,7 +118,7 @@ Siri 要求を処理するアプリに新しい拡張機能プロジェクトを
 
 1. ソリューションを右クリックし、選択**追加 > 新しいプロジェクトの追加.**.
 2. 選択、 **iOS > 拡張機能 > Intents の拡張機能**テンプレート。
-3. 2 つの新しいプロジェクトが追加されます。 意図と IntentUI します。 サンプルには、コードにはのみが含まれていますので、UI のカスタマイズは省略可能で、**インテント**プロジェクト。
+3. 2 つの新しいプロジェクトが追加されます。目的および IntentUI します。 サンプルには、コードにはのみが含まれていますので、UI のカスタマイズは省略可能で、**インテント**プロジェクト。
 
 拡張機能プロジェクトは、SiriKit のすべての要求を処理します。 別個の拡張機能として自動的がない – メイン アプリとの通信が、通常はアプリのグループを使用して共有ファイル ストレージを実装することで解決する方法。
 
@@ -217,7 +217,7 @@ public void HandleCreateTaskList(INCreateTaskListIntent intent, Action<INCreateT
 
 ### <a name="nsinternalinconsistencyexception"></a>NSInternalInconsistencyException
 
-_Objective C 例外がスローされます。名前: NSInternalInconsistencyException 理由: クラスの使用 < INPreferences: 0x60400082ff00 > アプリから権利 com.apple.developer.siri が必要です。Xcode プロジェクトで Siri 機能を有効にしたでしょうか。_
+_Objective C 例外がスローされます。名前:NSInternalInconsistencyException 理由:クラスの使用 < INPreferences:0x60400082ff00 > アプリから権利 com.apple.developer.siri が必要です。Xcode プロジェクトで Siri 機能を有効にしたでしょうか。_
 
 - SiriKit がでオンになって**Entitlements.plist**します。
 - **Entitlements.plist**で構成されている場合は、**プロジェクト オプション > ビルド > iOS バンドル署名**します。

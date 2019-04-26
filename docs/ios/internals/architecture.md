@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
 ms.openlocfilehash: d08f7e3a35cd82f4262ef1f145d4b4648f7baef8
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526664"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61036169"
 ---
 # <a name="ios-app-architecture"></a>iOS アプリのアーキテクチャ
 
@@ -22,7 +22,7 @@ Xamarin.iOS アプリケーションは Mono 実行環境内で実行され、C#
 
 [ ![](architecture-images/ios-arch-small.png "この図では、事前の Time (AOT) コンパイルのアーキテクチャの基本的な概要を示しています。")](architecture-images/ios-arch.png#lightbox)
 
-## <a name="native-and-managed-code-an-explanation"></a>ネイティブおよびマネージ コード: の説明
+## <a name="native-and-managed-code-an-explanation"></a>ネイティブおよびマネージ コードの場合:詳細について
 
 Xamarin で開発するときには、*ネイティブ コードとマネージ コード*という用語がよく使用されます。 [マネージ コード](https://blogs.msdn.microsoft.com/brada/2004/01/09/what-is-managed-code/)は、 [.NET Framework 共通言語ランタイム](https://msdn.microsoft.com/library/8bs2ecf4(v=vs.110).aspx)、 または、 Xamarin の場合は Mono ランタイムによって実行が管理されるコードです。 これは、中間言語と呼ばれるものです。
 

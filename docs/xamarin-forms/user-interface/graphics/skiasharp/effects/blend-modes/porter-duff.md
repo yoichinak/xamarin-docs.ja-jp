@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
 ms.openlocfilehash: f988c16e933214b3ce737febb89d05a451eb2f14
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53055038"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61205897"
 ---
 # <a name="porter-duff-blend-modes"></a>Porter Duff ブレンド モード
 
@@ -78,10 +78,10 @@ Skia という 14 モードを追加します`Modulate`に非常に似ていま�
 | `SrcIn`    |             | ソース       |        |
 | `DstIn`    |             | 保存先  |        |
 | `SrcOut`   |             |              | x      |
-| `DstOut`   | X           |              |        |
+| `DstOut`   | x           |              |        |
 | `SrcATop`  | x           | ソース       |        |
 | `DstATop`  |             | 保存先  | x      |
-| `Xor`      | X           |              | X      |
+| `Xor`      | x           |              | x      |
 | `Plus`     | x           | Sum          | x      |
 | `Modulate` |             | 製品      |        | 
 
@@ -279,7 +279,7 @@ canvas.Clear(SKColors.White);
 
 ## <a name="using-mattes-with-porter-duff"></a>Porter Duff でマットを使用します。
 
-**レンガ壁の複合**ページは、クラシック合成タスクの例を示しています。 画像を除去する必要がある背景ビットマップを含む、いくつかの情報を使用して組み立てする必要があります。 ここでは、 **SeatedMonkey.jpg**問題のある背景ビットマップを。
+**レンガ壁合成**ページは、クラシック合成タスクの例を示しています。画像を除去する必要がある背景ビットマップを含む、いくつかの情報を使用して組み立てする必要があります。 ここでは、 **SeatedMonkey.jpg**問題のある背景ビットマップを。
 
 ![Monkey を装着](porter-duff-images/SeatedMonkey.jpg "Monkey の取り付け")
 

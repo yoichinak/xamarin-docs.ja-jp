@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
 ms.openlocfilehash: ec907e71074a97bd5d1714e79dd504013f5c8a4b
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526976"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61240840"
 ---
 # <a name="windows-in-xamarinmac"></a>Xamarin.Mac での Windows
 
@@ -744,7 +744,7 @@ void OpenDialog (NSObject sender)
 
 [![](window-images/panel03.png "属性インスペクター")](window-images/panel03.png#lightbox)
 
-- **スタイル**-からパネルのスタイルを調整することを許可する: 通常パネル (標準的なウィンドウのようになります)、ユーティリティのパネル (より小さいタイトル バーを持つ) HUD パネル (半透明タイトル バーの背景の一部であり)。
+- **スタイル**-からパネルのスタイルを調整することを許可します。通常のパネル (標準的なウィンドウのようになります)、ユーティリティのパネル (より小さいタイトル バーを持つ) HUD パネル (半透明タイトル バーの背景の一部であり)。
 - **非ライセンス**-で決定、パネル、[キー] ウィンドウになります。
 - **ドキュメントのモーダル**-場合ドキュメント モーダルで、アプリケーションのウィンドウの上、パネルがフローティングのみ、それ以外の場合よりも手前何よりです。
 

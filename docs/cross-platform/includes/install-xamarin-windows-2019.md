@@ -1,11 +1,11 @@
 ---
 ms.topic: include
 ms.openlocfilehash: 0270f4a5ddab593372eb6687650e24d627f97c62
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58855344"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61264192"
 ---
 Xamarin の一部としてインストールすることができます、_新しい_次の手順で、Visual Studio 2019 インストール。
 
