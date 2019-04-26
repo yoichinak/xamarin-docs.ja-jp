@@ -1,5 +1,5 @@
 ---
-title: 理由 Visual Studio を含まない参照先のライブラリ プロジェクトでビルドしますか。
+title: Visual Studio に自分のビルドの参照先ライブラリ プロジェクトが含まれないのはなぜですか
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: b9009db8-e716-43aa-b40e-6f28a8eb1b82
@@ -7,25 +7,25 @@ author: asb3993
 ms.author: amburns
 ms.date: 12/02/2016
 ms.openlocfilehash: d7aeac2f433e8fdf231f5887f1537f15e2bd1976
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782223"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61341309"
 ---
-# <a name="why-doesnt-visual-studio-include-my-referenced-library-project-in-my-build"></a>理由 Visual Studio を含まない参照先のライブラリ プロジェクトでビルドしますか。
+# <a name="why-doesnt-visual-studio-include-my-referenced-library-project-in-my-build"></a>Visual Studio に自分のビルドの参照先ライブラリ プロジェクトが含まれないのはなぜですか
 
-Visual Studio を使用して、 **Configuration Manager**先となるプロジェクトをソリューションでは、特定のビルドまたは配置の構成に自動的に追加を決定します。
+Visual Studio を使用して、 **Configuration Manager**をソリューションにプロジェクトが特定のビルドまたは配置構成で自動的に含まれているかを判断します。
 
-参照先のライブラリ プロジェクトで生成される一部のテンプレートが、構成に含まれる参照先のライブラリそれ以外の場合、手動で設定する必要があります。
+参照先のライブラリ プロジェクトを使用して生成された一部のテンプレートは、構成に含まれる参照先のライブラリが既に手動で設定する必要がそれ以外の場合。
 
-## <a name="how-to-use-the-configuration-manager"></a>構成マネージャーを使用する方法
+## <a name="how-to-use-the-configuration-manager"></a>Configuration Manager を使用する方法
 
-1. 開いている**ビルド > 構成マネージャー**
-2. 例: をカスタマイズする構成を選択**デバッグ | iPhone**
+1. 開いている**ビルド > Configuration Manager**
+2. 例: をカスタマイズする構成を選択します**デバッグ | iPhone。**
 3. 含めるプロジェクトのチェック ボックスを選択します。
 
 > [!NOTE]
-> 灰色ボックスが自動的に処理され、変更する必要はありません。
+> 灰色ボックスは、自動的に処理され、すべての変更は必要ありません。
 
-これらの手順のスクリーン キャスト。 [http://screencast.com/t/zLoQOpEn](http://screencast.com/t/zLoQOpEn)
+次の手順のスクリーン キャスト: [http://screencast.com/t/zLoQOpEn](http://screencast.com/t/zLoQOpEn)

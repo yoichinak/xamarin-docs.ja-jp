@@ -6,11 +6,11 @@ author: asb3993
 ms.author: amburns
 ms.date: 04/26/2017
 ms.openlocfilehash: 5f157f2bbf36076e542a5f96b912cb1788a99052
-ms.sourcegitcommit: 64d6da88bb6ba222ab2decd2fdc8e95d377438a6
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58175227"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61269342"
 ---
 # <a name="wpf-vs-xamarinforms-app-lifecycle"></a>WPF とします。Xamarin.Forms アプリのライフサイクル
 
@@ -86,7 +86,7 @@ Xamarin.Forms は、モバイルのシナリオを中心指向は主にします
 |非表示|Window.IsVisibleChanged|Page.Disappearing|
 |中断/Lost フォーカス|Window.OnDeactivated|Page.OnSleep|
 |アクティブ化/Got フォーカス|Window.OnActivated|Page.OnResume|
-|Closed|Window.OnClosing + Window.OnClosed|N/A|
+|Closed|Window.OnClosing + Window.OnClosed|適用なし|
 
 
 両方サポートは非表示/表示子コントロールも、WPF では、3 つの状態プロパティ`IsVisible`(表示、非表示、および折りたたまれている)。 Xamarin.Forms でのみ表示するかを非表示は、`IsVisible`プロパティ。
@@ -125,10 +125,10 @@ WPF と Xamarin.Forms は、子要素を配置するのにレイアウト コン
 |--- |--- |--- |
 |StackPanel|StackLayout|左から右、または上から下の無限スタック|
 |グリッド|グリッド|表形式 (行と列)|
-|DockPanel|N/A|ウィンドウの端にドッキングします。|
+|DockPanel|適用なし|ウィンドウの端にドッキングします。|
 |Canvas|AbsoluteLayout|座標をピクセル単位/配置|
-|WrapPanel|N/A|スタックの折り返し|
-|N/A|RelativeLayout|相対的なルール ベースの配置|
+|WrapPanel|適用なし|スタックの折り返し|
+|適用なし|RelativeLayout|相対的なルール ベースの配置|
 
 > [!NOTE]
 > Xamarin.Forms はサポートしていません、`GridSplitter`します。

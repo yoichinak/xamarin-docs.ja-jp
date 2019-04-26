@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
 ms.openlocfilehash: 329984d44318b2204f2f5ee253402eb158c85b9f
-ms.sourcegitcommit: d09391c315336d36496880ef465a72b8974f2ac7
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51579857"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61283464"
 ---
 # <a name="dialogs-in-xamarinmac"></a>Xamarin.Mac でダイアログ ボックス
 
@@ -87,7 +87,7 @@ macOS は、標準的な印刷を使用しているすべてのアプリケー�
 
 ### <a name="save-dialogs"></a>ファイルの保存
 
-[保存] ダイアログ ボックスは、ユーザーがアプリケーションの項目を保存する方法を統一できます。 保存ダイアログに 2 つの状態があります:**最小限**(折りたたまれているとも呼ばれます)。
+[保存] ダイアログ ボックスは、ユーザーがアプリケーションの項目を保存する方法を統一できます。 [保存] ダイアログ ボックスでは、2 つの状態があります。**最小**(折りたたまれているとも呼ばれます)。
 
 [![](dialog-images/save01.png "保存 ダイアログ")](dialog-images/save01.png#lightbox)
 
@@ -754,7 +754,7 @@ namespace SourceWriter
 }
 ```
 
-このクラスがここでは、2 つのことを行うことに注意してください。 最初に、ヘルパーがある`App`プロパティにアクセスすることを、 **AppDelegate**簡単です。 2 番目、`Preferences`プロパティは、グローバルな公開**AppPreferences**クラスは、このビューにデータ バインディングの UI コントロールを配置します。
+このクラスがここでは、2 つのことを行うことに注意してください。最初に、ヘルパーがある`App`プロパティへのアクセスを**AppDelegate**容易にします。 2 番目、`Preferences`プロパティは、グローバルな公開**AppPreferences**クラスは、このビューにデータ バインディングの UI コントロールを配置します。
 
 次に、Interface Builder で再度開きます (および上だけに行われた変更を参照してください)、ストーリー ボード ファイルをダブルクリックします。 ビューに、基本設定のインターフェイスを構築するために必要な UI コントロールをドラッグします。 各コントロールでは、スイッチ、**バインド インスペクター**の個々 のプロパティにバインドし、 **AppPreference**クラス。
 

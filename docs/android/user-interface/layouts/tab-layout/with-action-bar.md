@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
 ms.openlocfilehash: 6ce8099aa4230a11a12f4fe8aeffe850f9ef2ce9
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57671001"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61304510"
 ---
 # <a name="tabbed-layouts-with-the-actionbar"></a>Actionbar タブ付きレイ アウト
 
@@ -23,7 +23,7 @@ _このガイドでは、紹介し、ActionBar Api を使用して、Xamarin.And
 
 アクション バーでは、タブ、アプリケーション id、メニューのおよび検索といった主要機能の一貫性のあるユーザー インターフェイスを提供するために使用する Android の UI パターンです。 Android 3.0 (API レベル 11) で Google Android プラットフォームを ActionBar Api が導入されました。 ActionBar Api は、一貫したルック アンド フィールとタブ付きのユーザー インターフェイスを使用するクラスを提供する UI テーマを紹介します。 このガイドでは、Xamarin.Android アプリケーションを操作バーのタブを追加する方法について説明します。 Android 2.3 に Android 2.1 を対象とする Xamarin.Android アプリケーションにバックポート ActionBar タブに Android サポート ライブラリ v7 を使用する方法も説明します。 
 
-なお`Toolbar`の代わりに使用する新しいより汎用的なアクション バー コンポーネント`ActionBar`(`Toolbar`を置き換える`ActionBar`)。 詳細については、[ツールバー](~/android/user-interface/controls/tool-bar/index.md)を参照してください。 
+なお`Toolbar`の代わりに使用する新しいより汎用的なアクション バー コンポーネント`ActionBar`(`Toolbar`を置き換える`ActionBar`)。 詳細については、次を参照してください。[ツールバー](~/android/user-interface/controls/tool-bar/index.md)します。 
 
 
 

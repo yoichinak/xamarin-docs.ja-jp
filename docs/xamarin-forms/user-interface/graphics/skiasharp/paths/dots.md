@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
 ms.openlocfilehash: f59aa92f5f4f013a2d14b1667f4d0679a7ba82b3
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53051611"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61384831"
 ---
 # <a name="dots-and-dashes-in-skiasharp"></a>ドットとダッシュで SkiaSharp
 
@@ -26,7 +26,7 @@ SkiaSharp では、solid はありませんが、代わりに、ドットとダ�
 
 これには、*パス効果*のインスタンスである、 [ `SKPathEffect` ](xref:SkiaSharp.SKPathEffect)に設定するクラス、 [ `PathEffect` ](xref:SkiaSharp.SKPaint.PathEffect)プロパティの`SKPaint`します。 パスを作成することによって定義された静的な作成方法のいずれかを使用して、効果 (または結合パスの効果)`SKPathEffect`します。 (`SKPathEffect` SkiaSharp でサポートされる 6 つの効果の 1 つは、他のユーザーは、セクションで説明されている[ **SkiaSharp 効果**](../effects/index.md))。
 
-点線または破線を描画するために使用する、 [ `SKPathEffect.CreateDash` ](xref:SkiaSharp.SKPathEffect.CreateDash(System.Single[],System.Single))静的メソッド。 2 つの引数: 最初の配列は、この`float`ドットとダッシュの長さとそれらの間の空白文字の長さを示す値。 この配列は、要素の偶数をいる必要があり、少なくとも 2 つの要素があります。 (がありますが、配列の要素が 0、実線では、その結果です。)2 つの要素がある場合は、1 つはドットまたはダッシュの長さ、2 番目の間隔の長さ [次へ] のドットまたは dash の前にします。 3 つ以上の要素があるかどうか、この順序で、: ダッシュの長さ、ギャップの長さ、ダッシュの長さ、時間の差、およびなど。
+点線または破線を描画するために使用する、 [ `SKPathEffect.CreateDash` ](xref:SkiaSharp.SKPathEffect.CreateDash(System.Single[],System.Single))静的メソッド。 これには 2 つの引数があります。これは最初の配列、`float`ドットとダッシュの長さとそれらの間の空白文字の長さを示す値。 この配列は、要素の偶数をいる必要があり、少なくとも 2 つの要素があります。 (がありますが、配列の要素が 0、実線では、その結果です。)2 つの要素がある場合は、1 つはドットまたはダッシュの長さ、2 番目の間隔の長さ [次へ] のドットまたは dash の前にします。 3 つ以上の要素があるかどうか、この順序で、: ダッシュの長さ、ギャップの長さ、ダッシュの長さ、時間の差、およびなど。
 
 一般的には、dash と間隔の長さのストロークの幅の倍数を作成するします。 ストロークの幅が 10 ピクセルの場合は、たとえば、し {10, 10} 配列描画点線、ドットとのギャップが、同じ長さのストロークの太さとします。
 

@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 05/01/2017
 ms.openlocfilehash: 0f4ec3cfd7c154e43db9f8e123259317c0d17e21
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57670533"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60957454"
 ---
 # <a name="binding-a-java-library"></a>Java ライブラリのバインド
 
@@ -26,7 +26,7 @@ Android 用のサード パーティ製のライブラリ エコシステム膨�
 
 -   使用して、 *Java ネイティブ インターフェイス*(*JNI*) Java ライブラリ コードで呼び出しを直接起動します。 JNI は、Java コードを呼び出し、ネイティブ アプリケーションやライブラリによって呼び出されるようにするプログラミング フレームワークです。
 
-このガイドでは、最初のオプション: を作成する方法、*バインド ライブラリ*1 つまたは複数の既存の Java ライブラリをラップするアセンブリ、アプリケーションでリンクすることができます。 JNI の使用に関する詳細については、[JNI の](~/android/platform/java-integration/working-with-jni.md)を参照してください。
+このガイドでは、最初のオプション: を作成する方法、*バインド ライブラリ*1 つまたは複数の既存の Java ライブラリをラップするアセンブリ、アプリケーションでリンクすることができます。 JNI の使用に関する詳細については、次を参照してください。 [JNI の](~/android/platform/java-integration/working-with-jni.md)します。
 
 Xamarin.Android を使用してバインドを実装する*呼び出し可能ラッパーをマネージ*(*MCW*)。 MCW は、マネージ コードは、Java のコードを呼び出す必要がある場合に使用される JNI のブリッジです。 呼び出し可能ラッパーをマネージ Java 型をサブクラス化と Java の型の仮想メソッドのオーバーライドもサポートしています。 同様に、Android ランタイム (アート) コードがマネージ コードを呼び出すことが希望されるたびにこれは Android 呼び出し可能ラッパー (について) と呼ばれる別の JNI ブリッジを使用しています。 これは、[アーキテクチャ](~/android/internals/architecture.md)次の図に示します。
 

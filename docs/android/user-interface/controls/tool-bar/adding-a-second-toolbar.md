@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
 ms.openlocfilehash: fc95c05c1945464cd9cac8565d8a11ff1b4c7e1d
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51527288"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61175153"
 ---
 # <a name="adding-a-second-toolbar"></a>2 番目のツール バーの追加
 
@@ -94,7 +94,7 @@ android:background="?android:attr/colorAccent
 
 4.  クリック ハンドラーを実装する`OnCreate`新しいメニュー項目。 
 
-次のセクションでは、このプロセスの詳細を示します:**切り取り**、**コピー**、および**貼り付け**メニュー項目を下に追加されます`Toolbar`します。 
+次のセクションでは、このプロセスの詳細を示しています。**切り取り**、**コピー**、および**貼り付け**メニュー項目を下に追加されて`Toolbar`します。 
 
 
 

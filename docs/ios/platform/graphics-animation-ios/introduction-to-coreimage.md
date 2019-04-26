@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
 ms.openlocfilehash: d71f14c26865b71eca991910df4a68f2540f9715
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50115409"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61085575"
 ---
 # <a name="core-image-in-xamarinios"></a>Xamarin.iOS で core イメージ
 
@@ -118,7 +118,7 @@ faceView.SetNeedsDisplay();
 
 50 以上のさまざまな組み込みフィルターがあるし、フレームワークは、新しいフィルターを実装できるように拡張可能です。
 
-## <a name="using-filters"></a>フィルターを使用します。
+## <a name="using-filters"></a>フィルターの使用
 
 4 つの手順には、イメージにフィルターを適用: イメージの読み込み、フィルターを作成、フィルターを適用して保存 (または表示する) の結果。
 

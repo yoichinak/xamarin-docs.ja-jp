@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 03/04/2019
 ms.openlocfilehash: 530fcf638454373ae68391e4e11bca85dd2fff63
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669558"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61093707"
 ---
 # <a name="fonts-in-xamarinforms"></a>Xamarin.Forms でのフォント
 
@@ -225,7 +225,7 @@ XAML で[ `Device.RuntimePlatform` ](~/xamarin-forms/platform/device.md#providin
 </Image>
 ```
 
-このコードで Ionicons フォント ファミリから、XBox アイコンが表示されます、 [ `Image` ](xref:Xamarin.Forms.Image)ビュー。 Unicode 文字のこのアイコンは、のことに注目`\uf30c`、XAML でエスケープする必要があり、したがってようになります`&#xf30c;`します。 同等の C# コードに示します。
+このコードで Ionicons フォント ファミリから、XBox アイコンが表示されます、 [ `Image` ](xref:Xamarin.Forms.Image)ビュー。 Unicode 文字のこのアイコンは、のことに注目`\uf30c`、XAML でエスケープする必要があり、したがってようになります`&#xf30c;`します。 同等の C# コードは以下のとおりです。
 
 ```csharp
 Image image = new Image { BackgroundColor = Color.FromHex("#D1D1D1") };

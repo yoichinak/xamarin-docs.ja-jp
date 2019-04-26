@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
 ms.openlocfilehash: a8b7fa53d3384821d028e4a88ba22071a17e5bd9
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113925"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61311606"
 ---
 # <a name="viewpager-with-views"></a>ViewPager とビュー
 
@@ -29,7 +29,7 @@ _ViewPager は、レイアウト マネージャー ジェスチャー ナビゲ
 
 ## <a name="start-an-app-project"></a>アプリ プロジェクトを開始します。
 
-という新しい Android プロジェクトを作成**TreePager** (を参照してください[こんにちは, Android](~/android/get-started/hello-android/hello-android-quickstart.md)詳細については、新しい Android プロジェクトの作成) します。 次に、NuGet パッケージ マネージャーを起動します。 (NuGet パッケージのインストールの詳細については、次を参照してください。[チュートリアル: NuGet でプロジェクトを含む](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough))。 検索およびインストール**Android サポート ライブラリ v4**: 
+という新しい Android プロジェクトを作成**TreePager** (を参照してください[こんにちは, Android](~/android/get-started/hello-android/hello-android-quickstart.md)詳細については、新しい Android プロジェクトの作成) します。 次に、NuGet パッケージ マネージャーを起動します。 (NuGet パッケージのインストールの詳細については、次を参照してください。[チュートリアル。NuGet をプロジェクトに含める](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough))。 検索およびインストール**Android サポート ライブラリ v4**: 
 
 [![サポートのスクリーン ショット v4 の Nuget、NuGet パッケージ マネージャーを選択](viewpager-and-views-images/01-install-support-lib-sml.png)](viewpager-and-views-images/01-install-support-lib.png#lightbox)
 

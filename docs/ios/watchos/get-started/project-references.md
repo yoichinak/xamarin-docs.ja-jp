@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 09/13/2016
 ms.openlocfilehash: c900ab714fed2bb1e02367ba39ad3c5a0a76121e
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106664"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61408350"
 ---
 # <a name="watchos-project-references-in-xamarin"></a>watchOS で Xamarin プロジェクトの参照
 
@@ -20,7 +20,7 @@ _IOS アプリ、watch アプリ、およびウォッチ拡張機能間のリレ
 
 WatchOS ソリューションの 3 つのプロジェクトは*自動的に構成された*3 watchOS アプリを構築して正しくバンドルの特定の方法で相互に参照します。 これらのプロジェクト参照とバンドルの識別子の設定は、以下の参照を説明します。
 
-## <a name="project-references"></a>プロジェクト参照
+## <a name="project-references"></a>プロジェクトの参照
 
 各プロジェクトの参照ノードをダブルクリックして、参照を表示します。
 

@@ -1,5 +1,5 @@
 ---
-title: IOS 8 の概要
+title: iOS 8 の概要
 description: IOS 8、Apple は多くの新しいフレームワークと開発者を魅了し、エキサイティングに Api を提供しました。 このガイドはこれらの新しい Api を導入し、iOS 8 が開発者とユーザーの両方を利用する方法を参照してください。
 ms.prod: xamarin
 ms.assetid: 33AD66C0-3743-49FE-9DCE-88ED3A16BA63
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 06/14/2017
 ms.openlocfilehash: 9299322eb20561444262c2b2ba87191d2bddcde4
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57668752"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61317640"
 ---
-# <a name="introduction-to-ios-8"></a>IOS 8 の概要
+# <a name="introduction-to-ios-8"></a>iOS 8 の概要
 
 _IOS 8、Apple は多くの新しいフレームワークと開発者を魅了し、エキサイティングに Api を提供しました。このガイドはこれらの新しい Api を導入し、iOS 8 が開発者とユーザーの両方を利用する方法を参照してください。_
 
@@ -101,7 +101,7 @@ Touch ID と Xamarin.iOS アプリケーションに統合する方法につい�
 
 ドキュメント ピッカーの詳細にについて説明し、Xamarin.iOS アプリケーションに統合する方法についてを参照して、 [、ドキュメント ピッカーの概要](~/ios/platform/document-picker.md)ガイド。
 
-### <a name="handoff"></a>ハンドオフ
+### <a name="handoff"></a>Handoff
 
 大規模な継続性機能の一部である、ハンドオフは OS X、iOS の統合に向けてさらに一歩を受け取ります。 これには、クロス プラットフォーム AirDrop、呼び出しの iPhone、iPad、Mac、および iPhone からテザリングの向上で SMS を実行する機能が含まれます。
 
@@ -109,7 +109,7 @@ Handoff を使用して、iOS 8 および Yosemite で動作、使用する別�
 
 詳細についてを参照してください、[ハンドオフ](~/ios/platform/handoff.md)ガイド。
 
-## <a name="unified-storyboards"></a>統合ストーリー ボード
+## <a name="unified-storyboards"></a>統合ストーリーボード
 iOS 8 が含まれていますが、新しいユーザー インターフェイスを作成するためのメカニズムを使用する方が簡単-統合されたストーリー ボード。 別のハードウェアの画面サイズのすべてをカバーする 1 つにストーリー ボードは、true「一度設計すれば、多くを使用して、」スタイルの高速で応答性の高いビューを作成できます。
 
 IOS8、前に開発者が使用される`UIInterfaceOrientation`縦長と横長のモードを区別する、 `UIInterfaceIdiom` iOS デバイスを区別します。 IOS8 でできなくなった iPhone および iPad デバイスの個別のストーリー ボードを作成するために必要な印刷の向きとデバイスを使用してによって決定されます*サイズ クラス*。

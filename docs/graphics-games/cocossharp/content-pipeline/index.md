@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/27/2017
 ms.openlocfilehash: 32dc98143bc45482dc863d412d678d452b634890
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526963"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61153350"
 ---
 # <a name="cocossharp-content-pipeline"></a>CocosSharp のコンテンツ パイプライン
 
@@ -21,6 +21,6 @@ ms.locfileid: "51526963"
 
 この記事では、主に重点を CocosSharp および MonoGame で使用されるコンテンツ パイプラインの実装である MonoGame コンテンツ パイプラインのコンテンツ パイプラインの概念の理解を提供します。
 
-##  <a name="walkthrough--using-the-content-pipeline-with-cocossharpgraphics-gamescocossharpcontent-pipelinewalkthroughmd"></a>[チュートリアル: CocosSharp でコンテンツ パイプラインを使用する](~/graphics-games/cocossharp/content-pipeline/walkthrough.md)
+##  <a name="walkthrough--using-the-content-pipeline-with-cocossharpgraphics-gamescocossharpcontent-pipelinewalkthroughmd"></a>[チュートリアル:CocosSharp でコンテンツ パイプラインの使用](~/graphics-games/cocossharp/content-pipeline/walkthrough.md)
 
 このチュートリアルでは、.xnb ファイルをロードして、アプリケーションで使用する方法を示すために CocosSharp プロジェクト useuses をされます。  MonoGame のユーザーは、CocosSharp と MonoGame の両方が同じ .xnb コンテンツ ファイルを使用すると、このチュートリアルを参照できるようにもなります。  

@@ -8,11 +8,11 @@ ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
 ms.openlocfilehash: d5dda3cc22d91248cc31cc526e898a5eabbbefd0
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57670145"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61415551"
 ---
 # <a name="introduction-to-monotouchdialog-for-xamarinios"></a>MonoTouch.Dialog Xamarin.iOS 用の概要
 
@@ -463,7 +463,7 @@ ImageLoader クラスは、すべてのメモリに現在キャッシュされ�
 
 ## <a name="using-linq-to-create-element-hierarchy"></a>LINQ を使用して、要素の階層を作成するには
 
-LINQ と # の初期化の構文の巧妙な使用法を使用して LINQ を使用して、要素の階層を作成します。 たとえば、次のコードは、一部の文字列配列から画面を作成およびハンドル セルのそれぞれに渡される匿名関数を使用して選択`StringElement`:
+LINQ の優れた使用法を使用して、C#の要素の階層を作成する初期化構文、LINQ を使用できます。 たとえば、次のコードは、一部の文字列配列から画面を作成およびハンドル セルのそれぞれに渡される匿名関数を使用して選択`StringElement`:
 
 ```csharp
 var rootElement = new RootElement ("LINQ root element") {

@@ -1,5 +1,5 @@
 ---
-title: WatchOS 5 の概要
+title: watchOS 5 の概要
 description: このドキュメントは、いくつかの watchOS 5 の概要を説明を提供します。 Xamarin 用の Api。
 ms.prod: xamarin
 ms.assetid: 775BE4E4-F408-4620-AED9-2B48C7B27F38
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
 ms.openlocfilehash: 5df751f683c530ee9f7ec58d9d6393d9f089314d
-ms.sourcegitcommit: 2713f2c1d74e3582704c3d0ca65b6651119ed489
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56321117"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61222859"
 ---
-# <a name="introduction-to-watchos-5"></a>WatchOS 5 の概要
+# <a name="introduction-to-watchos-5"></a>watchOS 5 の概要
 
 このドキュメントは、いくつかの watchOS 5 の概要を説明を提供します。 Api。
 

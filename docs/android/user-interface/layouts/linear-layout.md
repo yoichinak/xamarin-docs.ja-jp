@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 06/07/2018
 ms.openlocfilehash: f3d0394f6b2388918f728bd5a25e9e809a832ca6
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57670975"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61187105"
 ---
 # <a name="linearlayout"></a>LinearLayout
 
@@ -130,7 +130,7 @@ XML 属性が各ビューの動作を定義する方法に注意してくださ�
 ハンドル、`android:layout_weight`属性。
 
 
-## <a name="references"></a>関連項目
+## <a name="references"></a>参照
 
 -   [`LinearLayout`](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/) 
 -   [`TextView`](https://developer.xamarin.com/api/type/Android.Widget.TextView/) 

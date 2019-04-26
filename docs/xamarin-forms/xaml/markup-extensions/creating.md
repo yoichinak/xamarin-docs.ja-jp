@@ -8,13 +8,13 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
 ms.openlocfilehash: e69d4b9dcf93c095804c5ac46527c03049580d1c
-ms.sourcegitcommit: 9492e417f739772bf264f5944d6bae056e130480
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53746805"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61178109"
 ---
-# <a name="creating-xaml-markup-extensions"></a>XAML マークアップ拡張機能の作成
+# <a name="creating-xaml-markup-extensions"></a>XAML マークアップ拡張の作成
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/XAML/MarkupExtensions/)
 

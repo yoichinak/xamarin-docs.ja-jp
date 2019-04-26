@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 03/23/2017
 ms.openlocfilehash: 9bc320273df192f9daf2520f451601335731e7b0
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53061353"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61189242"
 ---
 # <a name="the-scale-transform"></a>スケール変換
 
@@ -102,7 +102,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-疑問に思うかもしれません。 はどのようにスケール ファクター影響から返される値、`MeasureText`メソッドの`SKPaint`でしょうか。 答え: いいえ、違います。 `Scale` メソッドは、`SKCanvas`します。 行う何らかの処理は影響しません、`SKPaint`キャンバスで何かを表示するためにそのオブジェクトを使用するまでのオブジェクトします。
+疑問に思うかもしれません。どのようにスケール ファクター影響から返される値、`MeasureText`メソッドの`SKPaint`でしょうか。 答えは：まったくありません。 `Scale` メソッドは、`SKCanvas`します。 行う何らかの処理は影響しません、`SKPaint`キャンバスで何かを表示するためにそのオブジェクトを使用するまでのオブジェクトします。
 
 ご覧のとおり、すべての後に描画、`Scale`比例して増加を呼び出します。
 
@@ -251,7 +251,7 @@ using (SKPaint strokePaint = new SKPaint
 
 [![](scale-images/anisotropicscaling-small.png "スケーリングの異方性ページのスクリーン ショットをトリプル")](scale-images/anisotropicscaling-large.png#lightbox "異方性スケール ページの 3 倍になるスクリーン ショット")
 
-別の方法を考えることができます、`Scale`と`Translate`呼び出しは、逆の順序で効果を確認する:`Translate`呼び出しは、キャンバスの左上隅に指向が完全に可視状態になるようにパスをシフトします。 `Scale`メソッドからは、そのスター左上隅に対して相対的に大きくします。
+別の方法を考えることができます、`Scale`と`Translate`呼び出しは、逆の順序で効果を確認します。`Translate`呼び出しは、キャンバスの左上隅に指向が完全に可視状態になるようにパスをシフトします。 `Scale`メソッドからは、そのスター左上隅に対して相対的に大きくします。
 
 実際には、星がキャンバスより少し大きいでことが表示されます。 問題は、ストロークの幅です。 `Bounds`プロパティの`SKPath`パスでエンコードされた座標のディメンションとは、プログラムの使用を拡張することを示します。 特定のストロークの幅と、パスが表示されると、表示されたパスは、キャンバスを超えています。
 

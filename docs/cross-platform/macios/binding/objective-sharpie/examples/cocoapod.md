@@ -1,17 +1,17 @@
 ---
 title: CocoaPods を使用して実際の例
-description: このドキュメントでは、目的の油性を使用して、CocoaPod から c# バインディングの定義を自動的に生成する方法を示します。
+description: このドキュメントが自動的に生成する目的油性を使用する方法を示します、 C# 、CocoaPod から定義をバインドします。
 ms.prod: xamarin
 ms.assetid: 233B781D-5841-4250-9F63-0585231D2112
 author: asb3993
 ms.author: amburns
 ms.date: 03/28/2018
 ms.openlocfilehash: bac34f662e24c6b08a67cd8da1f41b37b43b3faf
-ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37855209"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61200316"
 ---
 # <a name="real-world-example-using-cocoapods"></a>CocoaPods を使用して実際の例
 
@@ -93,6 +93,6 @@ Done.
 
 - [OBJECTIVE-C のバインディングの概要](~/cross-platform/macios/binding/overview.md)
 - [OBJECTIVE-C ライブラリのバインド](~/cross-platform/macios/binding/objective-c-libraries.md)
-- [チュートリアル: iOS の Objective C ライブラリのバインド](~/ios/platform/binding-objective-c/walkthrough.md)
-- [Xamarin University のコース: OBJECTIVE-C のバインド ライブラリをビルドします。](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin University のコース: 目標油性、OBJECTIVE-C のバインド ライブラリをビルドします。](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)
+- [チュートリアル: IOS の Objective C ライブラリのバインド](~/ios/platform/binding-objective-c/walkthrough.md)
+- [Xamarin University のコース:OBJECTIVE-C バインディング ライブラリをビルド](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
+- [Xamarin University のコース:目標油性で、OBJECTIVE-C のバインド ライブラリをビルドします。](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

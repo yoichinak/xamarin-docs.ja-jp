@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 03/15/2019
 ms.openlocfilehash: b22449659d2d4b7791328d53ed2d2b29d405ffc8
-ms.sourcegitcommit: 5d4e6677224971e2bc0268f405d192d0358c74b8
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58329945"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61019997"
 ---
 # <a name="xamarinforms-collectionview"></a>Xamarin.Forms CollectionView
 
@@ -29,7 +29,7 @@ ms.locfileid: "58329945"
 - `CollectionView` は [ `ListView`](xref:Xamarin.Forms.ListView) の外観に関する API を減らしています。 `ListView` の多くのプロパティおよびイベントは、 `CollectionView` では存在しません。
 - `CollectionView` には組み込みの区切り線は含まれません。
 
-`CollectionView` は、Xamarin.Forms 4.0 プレリリースで使用できます。 ただし、現在試験段階で、`Forms.Init` を呼ぶ前に、Android では `MainActivity` クラス、iOS では `AppDelegate` クラスに以下の1行を加えることによってのみ使用できます。:
+`CollectionView` は、Xamarin.Forms 4.0 プレリリースで使用できます。 ただし、現在試験段階で、`Forms.Init` を呼ぶ前に、Android では `MainActivity` クラス、iOS では `AppDelegate` クラスに以下の1行を加えることによってのみ使用できます:
 
 ```csharp
 Forms.SetFlags("CollectionView_Experimental");
@@ -44,11 +44,11 @@ Forms.SetFlags("CollectionView_Experimental");
 
 ## <a name="specify-collectionview-layoutlayoutmd"></a>[CollectionView にレイアウトを指定する ](layout.md)
 
-既定では、`CollectionView` は、垂直方向のリストに項目を表示しますが、垂直および水平方向のリストとグリッドを指定することができます。
+既定では、`CollectionView` は、垂直方向のリストに項目を表示しますが、 垂直および水平方向のリストとグリッドを指定することができます。
 
 ## <a name="set-collectionview-selection-modeselectionmd"></a>[CollectionView の選択モードを設定する ](selection.md)
 
-既定では、`CollectionView` の選択は無効になっていますが、単一または複数選択を有効にすることができます。
+既定では、`CollectionView` の選択は無効になっていますが、 単一または複数選択を有効にすることができます。
 
 ## <a name="display-an-emptyview-when-data-is-unavailableemptyviewmd"></a>[データが利用できない場合に、EmptyView を表示する ](emptyview.md)
 

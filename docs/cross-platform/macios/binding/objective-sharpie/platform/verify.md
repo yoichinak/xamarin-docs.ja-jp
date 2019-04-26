@@ -7,11 +7,11 @@ author: asb3993
 ms.author: amburns
 ms.date: 01/15/2016
 ms.openlocfilehash: 4bca896afb4dfc96fd6c1d7cdf489feb6a879e31
-ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37855030"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61261229"
 ---
 # <a name="objective-sharpie-verify-attributes"></a>目標油性属性を確認します。
 
@@ -22,7 +22,7 @@ ms.locfileid: "37855030"
 修正するかが修正されました。 これが正しい場合、バインドがあることを確認する_削除_、`[Verify]`バインディングからの属性。
 
 > [!IMPORTANT]
-> `[Verify]` 属性では、バインドを確認する必要があるように、c# のコンパイル エラーが意図的に発生します。 削除する必要があります、`[Verify]`レビュー (し、修正された可能性があります)、コードの属性します。
+> `[Verify]` 属性が意図的に発生するC#コンパイル エラー、バインディングを確認する必要があるようにします。 削除する必要があります、`[Verify]`レビュー (し、修正された可能性があります)、コードの属性します。
 
 ## <a name="verify-hints-reference"></a>ヒントの参照を検証します。
 
@@ -32,7 +32,7 @@ ms.locfileid: "37855030"
 |---|---|
 |InferredFromPreceedingTypedef|この宣言の名前は、一般的な慣例から推定された、すぐに上記`typedef`で元のネイティブなソース コード。 推測される名前がこの規則があいまいなために正しいことを確認します。|
 |ConstantsInterfaceAssociation|Objective C インターフェイスと extern の変数宣言は関連付けることを確認する確実な方法はありません。 これらのインスタンスとしてバインドされている`[Field]`可能性があります 'Constants' を排除しながらより直感的な API を生成するためにほぼの具体的なインターフェイスに部分的なインターフェイスでプロパティが完全にインターフェイスします。|
-|MethodToProperty|Objective C、メソッドは、c# プロパティをパラメーターを受け取らないと、(非 void の戻り値) の値を返すなどの規則が原因としてバインドされました。 上記のような多くの場合、メソッドより良い API を表示するプロパティとしてバインドする必要がありますが、偽陽性が発生することがあり、メソッドを実際には、バインドします。|
+|MethodToProperty|Objective C、メソッドとしてバインドされました、C#パラメーターを受け取らないと、(非 void の戻り値) の値を返すなどの規則のためのプロパティ。 上記のような多くの場合、メソッドより良い API を表示するプロパティとしてバインドする必要がありますが、偽陽性が発生することがあり、メソッドを実際には、バインドします。|
 |StronglyTypedNSArray|ネイティブ`NSArray*`としてバインドされました`NSObject[]`します。 API のドキュメント (例: ヘッダー ファイル内のコメント) を設定する予測に基づいて、バインディングに配列をより厳密に入力できる可能性がありますまたはテストによって、配列の内容を確認します。 たとえば、NSArray * のみ NSNumber * を含む instancescan としてバインドする`NSNumber[]`の代わりに`NSObject[]`します。|
 
 ヒントを使用して、ドキュメントを受け取ることができますもすばやく、`sharpie verify-docs`ツール、たとえば。
@@ -43,5 +43,5 @@ sharpie verify-docs InferredFromPreceedingTypedef
 
 ## <a name="related-links"></a>関連リンク
 
-- [Xamarin University のコース: OBJECTIVE-C のバインド ライブラリをビルドします。](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin University のコース: 目標油性、OBJECTIVE-C のバインド ライブラリをビルドします。](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)
+- [Xamarin University のコース:OBJECTIVE-C バインディング ライブラリをビルド](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
+- [Xamarin University のコース:目標油性で、OBJECTIVE-C のバインド ライブラリをビルドします。](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

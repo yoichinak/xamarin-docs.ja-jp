@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
 ms.openlocfilehash: 95defd11a9e568d1089cb2f262cb323045b6c247
-ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57197265"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61334397"
 ---
 # <a name="summary-of-chapter-2-anatomy-of-an-app"></a>第 2 章の概要です。 アプリの詳細
 
@@ -104,7 +104,7 @@ Xamarin.Forms プログラムの多くでは、アプリケーション プロ�
 
 Xamarin.Forms のほとんどの開発者では、ライブラリのアプローチを選択します。 この本では、ソリューションの多くは、ライブラリを使用します。 SAP を使用するものが含まれて、 **Sap**プロジェクト名にサフィックス。
 
-SAP アプローチでは、共有プロジェクト内のコードは、c# プリプロセッサ ディレクティブを使用して、さまざまなプラットフォームのさまざまなコードを実行できます (`#if`、#`elif`、および`#endif`) これらの定義済みの識別子。
+SAP アプローチでは、共有プロジェクト内のコードは、C# プリプロセッサ ディレクティブを使用して、さまざまなプラットフォームのさまざまなコードを実行できます (`#if`、#`elif`、および`#endif`) これらの定義済みの識別子。
 
 - iOS: `__IOS__`
 - Android: `__ANDROID__`
@@ -114,7 +114,7 @@ SAP アプローチでは、共有プロジェクト内のコードは、c# プ�
 
 ## <a name="labels-for-text"></a>テキストのラベル
 
-[ **Greetings** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Greetings)ソリューションは、新しい c# ファイルを追加する方法を示します、 **Greetings**プロジェクト。 このファイルは、という名前のクラスを定義します。`GreetingsPage`から派生した`ContentPage`します。 この本では、ほとんどのプロジェクトは、1 つを含めることが`ContentPage`名前サフィックスを持つプロジェクトの名前は、派生物`Page`追加されます。
+[ **Greetings** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Greetings)ソリューションは、新しい C# ファイルを追加する方法を示します、 **Greetings**プロジェクト。 このファイルは、という名前のクラスを定義します。`GreetingsPage`から派生した`ContentPage`します。 この本では、ほとんどのプロジェクトは、1 つを含めることが`ContentPage`名前サフィックスを持つプロジェクトの名前は、派生物`Page`追加されます。
 
 `GreetingsPage`コンス トラクターをインスタンス化、 [ `Label` ](xref:Xamarin.Forms.Label)ビューで、テキストを表示する Xamarin.Forms のビューです。 [ `Text` ](xref:Xamarin.Forms.Label.Text)プロパティによって表示されるテキストに設定されて、`Label`します。 このプログラムの設定、`Label`を`Content`プロパティの`ContentPage`します。 コンス トラクター、`App`クラスのインスタンスを作成し、`GreetingsPage`に設定とその`MainPage`プロパティ。
 

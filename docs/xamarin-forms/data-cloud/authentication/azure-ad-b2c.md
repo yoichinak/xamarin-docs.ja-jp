@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
 ms.openlocfilehash: 7c12136a0dad0165c46f1559e7a2d61abaf7af1e
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
-ms.translationtype: MT
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059705"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61331500"
 ---
 # <a name="authenticating-users-with-azure-active-directory-b2c"></a>Azure Active Directory B2C でユーザーを認証します。
 
@@ -35,8 +35,8 @@ Azure Active Directory B2C は、コンシューマー向けのアプリケー�
 モバイル アプリケーションに Azure Active Directory B2C ID 管理サービスを統合するための手順は次のとおりです。
 
 1. Azure Active Directory B2C テナントを作成します。 詳細については、[Azure ポータルで Azure Active Directory B2C テナントを作成する](/azure/active-directory-b2c/active-directory-b2c-get-started/) を参照してください。
-1. Azure Active Directory B2C テナントに、モバイル アプリケーションを登録します。 登録処理では、アプリケーションを一意に識別する **アプリケーション ID** やアプリケーションへ戻って応答を伝えるために使用できる **リダイレクト URL** を割り当てます。 詳細については、[Azure Active Directory B2C: アプリケーションの登録](/azure/active-directory-b2c/active-directory-b2c-app-registration/) を参照してください。
-1. サインアップとサインインのポリシーを作成します。 このポリシーは、コンシューマーがサインアップとサインインの間に通過するエクスペリエンスを定義し、またアプリケーションがサインアップやサインインの成功で受け取るトークンの内容を指定します。 詳細については、[Azure Active Directory B2C: 組み込みポリシー](/azure/active-directory-b2c/active-directory-b2c-reference-policies/) を参照してください。
+1. Azure Active Directory B2C テナントに、モバイル アプリケーションを登録します。 登録処理では、アプリケーションを一意に識別する **アプリケーション ID** やアプリケーションへ戻って応答を伝えるために使用できる **リダイレクト URL** を割り当てます。 詳細については、次を参照してください[Azure Active Directory B2C:。アプリケーションを登録する](/azure/active-directory-b2c/active-directory-b2c-app-registration/)します。
+1. サインアップとサインインのポリシーを作成します。 このポリシーは、コンシューマーがサインアップとサインインの間に通過するエクスペリエンスを定義し、またアプリケーションがサインアップやサインインの成功で受け取るトークンの内容を指定します。 詳細については、次を参照してください[Azure Active Directory B2C:。組み込みのポリシー](/azure/active-directory-b2c/active-directory-b2c-reference-policies/)します。
 1. [Microsoft Authentication Library](https://www.nuget.org/packages/Microsoft.Identity.Client) (MSAL) をモバイルアプリケーションで使用して、Azure Active Directory B2C テナントを使った認証ワークフローを開始します。
 
 > [!NOTE]
@@ -55,7 +55,7 @@ Azure Active Directory B2C テナントに送信される各要求には *ポリ
 - [サインアップ] ページのコンテンツ。
 - ポリシーが実行されたときに、モバイル アプリケーションが受け取るトークンの要求。
 
-Azure Active Directory テナントには、さまざまな種類の複数のポリシーを含めることができ、必要に応じて、アプリケーションで使用することができます。 さらに、ポリシーは、複数のアプリケーションで再利用でき、コードを変更せずにコンシューマー ID エクスペリエンスの定義や変更をすることができます。 ポリシーの詳細については、[Azure Active Directory B2C: 組み込みポリシー](/azure/active-directory-b2c/active-directory-b2c-reference-policies/)を参照してください。
+Azure Active Directory テナントには、さまざまな種類の複数のポリシーを含めることができ、必要に応じて、アプリケーションで使用することができます。 さらに、ポリシーは、複数のアプリケーションで再利用でき、コードを変更せずにコンシューマー ID エクスペリエンスの定義や変更をすることができます。 ポリシーの詳細については、次を参照してください[Azure Active Directory B2C:。組み込みのポリシー](/azure/active-directory-b2c/active-directory-b2c-reference-policies/)します。
 
 ## <a name="setup"></a>セットアップ
 

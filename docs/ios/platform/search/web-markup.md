@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
 ms.openlocfilehash: 4ee07e4b47ed9e1bdca0efc814ad44e513f68e80
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672366"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61076618"
 ---
 # <a name="search-with-web-markup-in-xamarinios"></a>Xamarin.iOS での Web マークアップの検索
 
@@ -87,7 +87,7 @@ Facebook アプリのリンクを使用して、アプリのコンテンツへ�
 
 ## <a name="opening-deep-links"></a>ディープ リンクを開く
 
-開くと、Xamarin.iOS アプリでのディープ リンクの表示のサポートを追加する必要があります。 編集、 **AppDelegate.cs**オーバーライド ファイルを開き、`OpenURL`カスタムの URL 形式を処理するメソッド。 例えば:
+開くと、Xamarin.iOS アプリでのディープ リンクの表示のサポートを追加する必要があります。 編集、 **AppDelegate.cs**オーバーライド ファイルを開き、`OpenURL`カスタムの URL 形式を処理するメソッド。 例:
 
 ```csharp
 public override bool OpenUrl (UIApplication application, NSUrl url, string sourceApplication, NSObject annotation)
@@ -121,7 +121,7 @@ public override bool OpenUrl (UIApplication application, NSUrl url, string sourc
 
 豊富な結果の詳細魅力的なと向上に役立つ、順位付け、クラウド内でより多くのユーザー対話機能を使用する魅力的な検索インデックスのベースします。
 
-構造化データのマークアップを提供するための 1 つのオプションは、Open Graph を使用することです。 例:
+構造化データのマークアップを提供するための 1 つのオプションは、Open Graph を使用することです。 例えば:
 
 ```xml
 <meta property="og:image" content="http://company.com/appname/icon.jpg">
@@ -131,7 +131,7 @@ public override bool OpenUrl (UIApplication application, NSUrl url, string sourc
 
 詳細についてを参照してください、 [Open Graph](http://ogp.me) web サイト。
 
-構造化データのマークアップのもう 1 つの一般的な形式は、schema.org のアフター形式です。 例:
+構造化データのマークアップのもう 1 つの一般的な形式は、schema.org のアフター形式です。 例えば:
 
 ```xml
 <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">

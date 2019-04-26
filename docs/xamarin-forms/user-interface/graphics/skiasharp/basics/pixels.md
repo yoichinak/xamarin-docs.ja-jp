@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/09/2017
 ms.openlocfilehash: c1e4a76a70dcac3414d384469f25bad7908ae77f
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059786"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61019967"
 ---
 # <a name="pixels-and-device-independent-units"></a>ピクセル、およびデバイスに依存しない単位
 
@@ -55,7 +55,7 @@ public SurfaceSizePage()
 public void DrawText (String text, Single x, Single y, SKPaint paint)
 ```
 
-X および Y 座標をテキストの開始、位置、テキスト文字列を指定して、`SKPaint`オブジェクト。 X 座標は、注意が、テキストの左側にあるを配置する場所を指定します: Y 座標を指定の位置を指定する、*ベースライン*のテキスト。 インライン展開のホワイト ペーパーでは、手動でこれまで記述した、ベースラインにどの文字 sit と (文字 g、p、q、および y 上など) には、どのディセンダー降下の下の行をします。
+X および Y 座標をテキストの開始、位置、テキスト文字列を指定して、`SKPaint`オブジェクト。 X 座標では、注意が、テキストの左側にあるを配置する場所を指定します。Y 座標の位置を指定する、*ベースライン*のテキスト。 インライン展開のホワイト ペーパーでは、手動でこれまで記述した、ベースラインにどの文字 sit と (文字 g、p、q、および y 上など) には、どのディセンダー降下の下の行をします。
 
 `SKPaint`オブジェクトを使用すると、テキスト、フォント ファミリ、およびテキストのサイズの色を指定します。 既定で、 [ `TextSize` ](xref:SkiaSharp.SKPaint.TextSize)携帯電話などの高解像度のデバイスで最小のテキストで、12 の値を持つプロパティです。 最も簡単なアプリケーション以外も必要になりますいくつかの情報を表示しているテキストのサイズにします。 `SKPaint`クラスを定義、 [ `FontMetrics` ](xref:SkiaSharp.SKPaint.FontMetrics)プロパティは、いくつか[ `MeasureText` ](xref:SkiaSharp.SKPaint.MeasureText(System.String))メソッドが、高度な少なくニーズに応じて、 [ `FontSpacing` ](xref:SkiaSharp.SKPaint.FontSpacing)プロパティは、テキストの空白文字の連続する行の推奨値を提供します。
 

@@ -1,13 +1,18 @@
 ---
 title: Razor テンプレートを使用して構築 HTML ビュー
-description: ' 全画面表示の web ページを使用して HTML を表示するためには、web サイト プロジェクトから、HTML、Javascript と CSS が既にある場合に特にクロスプラット フォーム対応の方法で複雑な書式設定を表示するためにシンプルかつ効果的な方法です。'
+description: " 全画面表示の web ページを使用して HTML を表示するためには、web サイト プロジェクトから、HTML、Javascript と CSS が既にある場合に特にクロスプラット フォーム対応の方法で複雑な書式設定を表示するためにシンプルかつ効果的な方法です。"
 ms.prod: xamarin
 ms.assetid: D8B87C4F-178E-48D9-BE43-85066C46F05C
 author: asb3993
 ms.author: amburns
 ms.date: 07/24/2018
+ms.openlocfilehash: 7e569aaddef912d9534e98f2f987ad5dfca8a5a6
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61168011"
 ---
-
 # <a name="building-html-views-using-razor-templates"></a>Razor テンプレートを使用して構築 HTML ビュー
 
 モバイル開発の世界で用語「ハイブリッド アプリ」は、通常、ホストされた web ビューアー コントロールの内部 HTML ページとしてその画面の一部 (またはすべて) を表示するアプリケーションを指します。
@@ -81,7 +86,7 @@ webView.LoadHtmlString (page, NSBundle.MainBundle.BundleUrl);
 
 すべての静的なコンテンツ ファイルのビルド アクションをする必要があります**BundleResource**:
 
- ![iOS プロジェクトのビルド アクション: BundleResource](images/image2_250x131.png)
+ ![iOS プロジェクトのビルド アクション:BundleResource](images/image2_250x131.png)
 
 #### <a name="android"></a>Android
 
@@ -97,7 +102,7 @@ webView.LoadDataWithBaseURL("file:///android_asset/", page, "text/html", "UTF-8"
 
 すべての静的なコンテンツ ファイルのビルド アクションをする必要があります**AndroidAsset**します。
 
- ![Android プロジェクトのビルド アクション: AndroidAsset](images/image4_250x71.png)
+ ![Android プロジェクトのビルド アクション:AndroidAsset](images/image4_250x71.png)
 
 ### <a name="calling-c-from-html-and-javascript"></a>HTML および Javascript からの C# の呼び出し
 

@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2018
 ms.openlocfilehash: 086ed765781d9297f07574519d2cbc9cf93ac4dd
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059549"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61344804"
 ---
 # <a name="part-1-getting-started-with-xaml"></a>第 1 部です。 XAML の概要
 
@@ -203,9 +203,9 @@ Visual Studio では、プロジェクトをビルド、生成する XAML ファ
 
 また、`Title`ルート タグに属性が設定されています。
 
-この時点では、クラス、プロパティ、および XML 間のリレーションシップを明らかにする必要があります。 A Xamarin.Forms クラス (など`ContentPage`または`Label`) XML 要素としての XAML ファイルに表示されます。 そのクラスのプロパティ-など`Title`で`ContentPage`の 7 つのプロパティと`Label`-通常、XML 属性として表示されます。
+現時点では、クラス、プロパティ、および XML 間の関係を明らかになります。Xamarin.Forms クラス (など`ContentPage`または`Label`) XML 要素としての XAML ファイルに表示されます。 そのクラスのプロパティ-など`Title`で`ContentPage`の 7 つのプロパティと`Label`-通常、XML 属性として表示されます。
 
-これらのプロパティの値を設定する多くのショートカットが存在します。 一部のプロパティは基本データ型: など、`Title`と`Text`型のプロパティは、 `String`、`Rotation`の種類は`Double`と`IsVisible`(は`true`既定でし、ここでのみ設定されます図) は型の`Boolean`します。
+これらのプロパティの値を設定する多くのショートカットが存在します。 一部のプロパティは、基本的なデータの種類です。など、`Title`と`Text`型のプロパティは、 `String`、`Rotation`の種類は`Double`と`IsVisible`(は`true`既定では説明のみをここで設定されます) 型`Boolean`.
 
 `HorizontalTextAlignment`プロパティの型は`TextAlignment`、列挙型であります。 列挙型のプロパティ、メンバー名はすべて指定する必要があります。
 

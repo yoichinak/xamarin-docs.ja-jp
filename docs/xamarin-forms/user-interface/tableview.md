@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2018
 ms.openlocfilehash: c18eba873dc1a1dae36c401507d55652ed233b00
-ms.sourcegitcommit: 236a346838c421c7d8951f50abbf4f5365559372
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58641440"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61194584"
 ---
 # <a name="xamarinforms-tableview"></a>Xamarin.Forms テーブル
 
@@ -51,7 +51,7 @@ ms.locfileid: "58641440"
 </TableView>
 ```
 
-同等の C# コードに示します。
+同等の C# コードは以下のとおりです。
 
 ```csharp
 Content = new TableView
@@ -164,7 +164,7 @@ Xamarin.Forms を収集して情報を表示するための組み込みのセル
 </ContentPage>
 ```
 
-同等の C# コードに示します。
+同等の C# コードは以下のとおりです。
 
 ```csharp
 var table = new TableView();

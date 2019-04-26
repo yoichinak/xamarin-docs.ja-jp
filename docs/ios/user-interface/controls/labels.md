@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/11/2017
-ms.openlocfilehash: 7c52ce9fcdd290958a53af7fa91ef93a2caff7b5
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: cca74ac74e5077822193f6dd97a69f8d9b823561
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108965"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61227831"
 ---
 # <a name="labels-in-xamarinios"></a>Xamarin.iOS でのラベル
 
@@ -20,7 +20,7 @@ ms.locfileid: "50108965"
 
 ## <a name="implementing-a-label"></a>ラベルを実装します。
 
-新しいラベルがインスタンス化によって作成された、 [ `UILabel` ](https://developer.xamarin.com/api/type/UIKit.UILabel/):
+新しいラベルがインスタンス化によって作成された、 [ `UILabel` ](xref:UIKit.UILabel):
 
 ```csharp
 UILabel label = new UILabel();

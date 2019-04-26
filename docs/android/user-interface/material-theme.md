@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: ff94211086956e36da377445d90359789b62fc60
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 512775864f5ad55ddfedd53b83dd02d7b0e1d1f8
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57668323"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61309132"
 ---
 # <a name="material-theme"></a>マテリアル テーマ
 
@@ -53,7 +53,7 @@ Android 5.0 アプリのプロジェクトを構成する方法についてを�
 
 ## <a name="using-the-built-in-themes"></a>組み込みのテーマの使用
 
-素材のテーマを使用する最も簡単な方法では、組み込みのテーマのカスタマイズを使用するようアプリを構成します。 テーマを明示的に構成しない場合、アプリは既定`Theme.Material`(濃色のテーマ)。 アプリに 1 つだけのアクティビティがある場合は、アプリケーション レベルでテーマを構成できます。 アプリに複数のアクティビティがある場合は、すべてのアクティビティ間で同じテーマを使用したり、さまざまなテーマを別のアクティビティに割り当てることができます、アプリケーション レベルでテーマを構成できます。 次のセクションでは、アプリ レベルで、アクティビティ レベルでは、テーマを構成する方法を説明します。
+素材のテーマを使用する最も簡単な方法では、組み込みのテーマのカスタマイズを使用するようアプリを構成します。 テーマを明示的に構成しない場合、アプリは既定`Theme.Material`(濃色のテーマ)。 アプリに 1 つだけのアクティビティがある場合は、アクティビティ レベルでテーマを構成できます。 アプリに複数のアクティビティがある場合は、すべてのアクティビティ間で同じテーマを使用したり、さまざまなテーマを別のアクティビティに割り当てることができます、アプリケーション レベルでテーマを構成できます。 次のセクションでは、アプリ レベルで、アクティビティ レベルでは、テーマを構成する方法を説明します。
 
 
 ### <a name="theming-an-application"></a>アプリケーションのテーマ
@@ -265,7 +265,7 @@ Android 5.0 では、個々 のビューのスタイルを設定することが�
 
 Android 5.0 デバイスでアプリを実行するで指定されたテーマの定義が使用されます**Resources/values-v21/styles.xml**します。 このアプリを以前の Android デバイスで実行すると自動的にフォールバックで指定されたテーマの定義に**Resources/values/styles.xml**します。
 
-古い Android バージョンとの互換性をテーマの詳細については、[代替リ ソース](~/android/app-fundamentals/resources-in-android/alternate-resources.md)を参照してください。
+古い Android バージョンとの互換性をテーマの詳細については、次を参照してください。[代替リ ソース](~/android/app-fundamentals/resources-in-android/alternate-resources.md)します。
 
 ## <a name="summary"></a>まとめ
 

@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
 ms.openlocfilehash: e97b211fe6a92ee0df3beed2301cf00c3d42c8f8
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57671807"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61200834"
 ---
 # <a name="binding-objective-c-libraries"></a>OBJECTIVE-C ライブラリのバインド
 
@@ -479,7 +479,7 @@ interface NSStringDrawingExtensions {
 
 ### <a name="binding-objective-c-argument-lists"></a>引数リストを OBJECTIVE-C のバインド
 
-Objective C では、可変個引数をサポートします。 例えば:
+Objective C では、可変個引数をサポートします。 例:
 
 ```objc
 - (void) appendWorkers:(XWorker *) firstWorker, ...
@@ -522,7 +522,7 @@ public void AppendWorkers(params Worker[] workers)
 
 通常これらのフィールドには、参照する必要がある文字列または整数の値が含まれます。 ディクショナリ内のキーと、特定の通知を表す文字列としてよく使用されます。
 
-フィールドをバインドするには、インターフェイス定義ファイルにプロパティを追加しを持つプロパティを装飾、 [ `[Field]` ](~/cross-platform/macios/binding/binding-types-reference.md#FieldAttribute)属性。 この属性は 1 つのパラメーターを受け取ります。 参照するシンボルの C の名前。 例えば:
+フィールドをバインドするには、インターフェイス定義ファイルにプロパティを追加しを持つプロパティを装飾、 [ `[Field]` ](~/cross-platform/macios/binding/binding-types-reference.md#FieldAttribute)属性。 この属性は 1 つのパラメーターを受け取ります。 参照するシンボルの C の名前。 例:
 
 ```csharp
 [Field ("NSSomeEventNotification")]
@@ -632,7 +632,7 @@ interface MyType {
 装飾できるは、(戻り値) のメソッド、パラメーターおよびプロパティを[ `[BindAs]`](~/cross-platform/macios/binding/binding-types-reference.md#BindAsAttribute)します。 唯一の制限は、メンバー**は許可されません**内に、 [`[Protocol]`](~/cross-platform/macios/binding/binding-types-reference.md#ProtocolAttribute) 
 または[ `[Model]` ](~/cross-platform/macios/binding/binding-types-reference.md#ModelAttribute)インターフェイス。
 
-例:
+例えば:
 
 ```csharp
 [return: BindAs (typeof (bool?))]

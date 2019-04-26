@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/26/2018
 ms.openlocfilehash: 3131963efa3d4ba4de9ff63c741c276a62e9d12d
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57670416"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61229742"
 ---
 # <a name="xamarinforms-editor"></a>Xamarin.Forms のエディター
 
@@ -130,7 +130,7 @@ var editor = new Editor { Text = "Enter text here", AutoSize = EditorAutoSizeOpt
 <Editor Keyboard="Chat" />
 ```
 
-同等の c# コードに示します。
+同等の C# コードに示します。
 
 ```csharp
 var editor = new Editor { Keyboard = Keyboard.Chat };
@@ -163,7 +163,7 @@ var editor = new Editor { Keyboard = Keyboard.Chat };
 </Editor>
 ```
 
-同等の c# コードに示します。
+同等の C# コードに示します。
 
 ```csharp
 var editor = new Editor();

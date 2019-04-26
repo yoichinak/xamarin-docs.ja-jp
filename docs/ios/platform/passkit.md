@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 06/13/2018
 ms.openlocfilehash: d1c640bef41e875b3bb427d657c9c239e4c3e16d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121400"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61192679"
 ---
 # <a name="passkit-in-xamarinios"></a>Xamarin.iOS で PassKit
 
@@ -65,7 +65,7 @@ PassKit は CocoaTouch 内 API だけではありませんではなくアプリ�
 
 パスは、チケット、クーポンまたはカードを表すデータのコレクションです。 個人が 1 回の使用を想定している可能性があります (およびしたがってフライトの数と接続クライアントの割り当てなどの詳細が含まれます) または複数の使用トークンのユーザー (割引クーポン) などの任意の数で共有できることがあります。 詳細な説明については、apple の[渡すファイル](https://developer.apple.com/library/prerelease/ios/#documentation/UserExperience/Reference/PassKit_Bundle/Chapters/Introduction.html)ドキュメント。
 
-### <a name="types"></a>種類
+### <a name="types"></a>型
 
 現在、ウォレット アプリ内のパスの上端のレイアウトとによって識別できる種類は、5 つサポートされています。
 
@@ -169,7 +169,7 @@ PassKit は CocoaTouch 内 API だけではありませんではなくアプリ�
 
 ### <a name="barcodes"></a>バーコード
 
-2D のみの形式がサポートされています: pdf417 バーコード、アステカ、QR します。 Apple では、1 次元バーコードがスキャン バックライト スマート フォンの画面に適していないことを要求します。
+だけ 2D の形式がサポートされています。Pdf417 バーコード、アステカ、QR できます。 Apple では、1 次元バーコードがスキャン バックライト スマート フォンの画面に適していないことを要求します。
 
 バーコードの下に表示される代替テキストは省略可能 – 一部の加盟店が読み取り/型を手動でにできるようにします。
 
@@ -225,9 +225,9 @@ App Store を入力するパスの順番は、開発者アカウントにリン�
 
 それぞれのパスの型 ID を設定するには、まず_型_のサポートされるパス。 渡す ID (または渡す型識別子)、パスの一意の識別子を作成します。 証明書を使用して、開発者アカウントと、パスをリンクするのにこの ID を使用します。
 
-1. [IOS プロビジョニング ポータルの証明書、識別子、およびプロファイル セクション](https://developer.apple.com/account/overview.action)に移動します**識別子**選択**型 Id を渡す**します。 選択し、 **+** 新しい成功の種類を作成するボタン: [ ![](passkit-images/passid.png "新しい成功の種類の作成")](passkit-images/passid.png#lightbox)
+1. [IOS プロビジョニング ポータルの証明書、識別子、およびプロファイル セクション](https://developer.apple.com/account/overview.action)に移動します**識別子**選択**型 Id を渡す**します。 選択し、 **+** 新しい成功の種類を作成するボタン。[![](passkit-images/passid.png "新しいパスの種類を作成します。")](passkit-images/passid.png#lightbox)
 
-2.   提供、**説明**(名) と**識別子**(一意の文字列) のパス。 型 Id を渡すすべてが文字列で始まる必要がありますので注意`pass.`使用してこの例では`pass.com.xamarin.coupon.banana`: [ ![](passkit-images/register.png "説明と識別子を指定")](passkit-images/register.png#lightbox)
+2.   提供、**説明**(名) と**識別子**(一意の文字列) のパス。 型 Id を渡すすべてが文字列で始まる必要がありますので注意`pass.`使用してこの例では`pass.com.xamarin.coupon.banana`:[![](passkit-images/register.png "説明と識別子を指定します。")](passkit-images/register.png#lightbox)
 
 
 3.   キーを押して渡す ID の確認、**登録**ボタンをクリックします。
@@ -236,7 +236,7 @@ App Store を入力するパスの順番は、開発者アカウントにリン�
 
 このパスの型 ID の新しい証明書を作成するには、次の操作を行います。
 
-1.  一覧から、新しく作成された渡す ID を選択し、をクリックして**編集**: [ ![](passkit-images/pass-done.png "一覧から新しいパスの ID を選択します。")](passkit-images/pass-done.png#lightbox)
+1.  一覧から、新しく作成された渡す ID を選択し、をクリックして**編集**:[![](passkit-images/pass-done.png "一覧から新しいパスの ID を選択します。")](passkit-images/pass-done.png#lightbox)
 
     次に、選択**証明書を作成しています.** :
 

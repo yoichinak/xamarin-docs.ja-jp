@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/05/2016
 ms.openlocfilehash: 640d50a45b4b7f61113b609fa6a5e4a04566b360
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57667549"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61327024"
 ---
 # <a name="searching-data-with-azure-search"></a>Azure Search を使用したデータを検索
 

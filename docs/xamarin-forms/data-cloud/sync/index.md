@@ -1,6 +1,6 @@
 ---
-title: Web サービスとデータを同期します。
-description: オフラインの同期により、ユーザーは、データの変更や、表示、追加すると、モバイル アプリケーションを操作したり、ネットワーク接続がない場合でもです。 変更は、ローカル データベースに格納し、デバイスがオンラインで、変更を同期 web サービスとします。
+title: Web サービスとデータを同期する
+description: オフライン同期により、データの変更や、表示、追加、モバイル アプリケーションと対話するユーザーのネットワーク接続がないときでもです。 変更は、ローカルのデータベースに格納され、デバイスがオンラインになると変更は、web サービスと同期ことができます。
 ms.prod: xamarin
 ms.assetid: 8A7794BB-F21D-49BF-92F0-76383BBED791
 ms.technology: xamarin-forms
@@ -8,19 +8,19 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
 ms.openlocfilehash: aa94fe2af676ddad415958430240572f8e94e494
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30789437"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61319546"
 ---
-# <a name="synchronizing-data-with-web-services"></a>Web サービスとデータを同期します。
+# <a name="synchronizing-data-with-web-services"></a>Web サービスとデータを同期する
 
-_オフラインの同期により、ユーザーは、データの変更や、表示、追加すると、モバイル アプリケーションを操作したり、ネットワーク接続がない場合でもです。変更は、ローカル データベースに格納し、デバイスがオンラインで、変更を同期 web サービスとします。_
+_オフライン同期により、データの変更や、表示、追加、モバイル アプリケーションと対話するユーザーのネットワーク接続がないときでもです。変更は、ローカルのデータベースに格納され、デバイスがオンラインになると変更は、web サービスと同期ことができます。_
 
-## <a name="synchronizing-offline-data-with-azure-mobile-appsazure-mobile-appsmd"></a>[Azure のモバイル アプリを使用してオフラインのデータの同期](azure-mobile-apps.md)
+## <a name="synchronizing-offline-data-with-azure-mobile-appsazure-mobile-appsmd"></a>[Azure Mobile Apps のオフライン データの同期](azure-mobile-apps.md)
 
-この記事では、オフラインの同期機能を Xamarin.Forms アプリケーションに追加する方法について説明します。
+この記事では、Xamarin.Forms アプリケーションにオフライン同期機能を追加する方法について説明します。
 
 
 

@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
 ms.openlocfilehash: 1b6e1c8ce91eaad46e779527c5ba12e2187cad24
-ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51528430"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61038407"
 ---
 # <a name="viewpager-with-fragments"></a>ViewPager とフラグメント
 
@@ -29,7 +29,7 @@ _ViewPager は、レイアウト マネージャー ジェスチャー ナビゲ
 
 ## <a name="start-an-app-project"></a>アプリ プロジェクトを開始します。
 
-という新しい Android プロジェクトを作成**FlashCardPager**します。 次に、NuGet パッケージ マネージャーを起動 (NuGet パッケージのインストールの詳細については、次を参照してください。[チュートリアル: NuGet でプロジェクトを含む](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough))。 検索し、インストール、 **Xamarin.Android.Support.v4**で説明したようにパッケージ化[Viewpager とビュー](~/android/user-interface/controls/view-pager/viewpager-and-views.md)します。 
+という新しい Android プロジェクトを作成**FlashCardPager**します。 次に、NuGet パッケージ マネージャーを起動 (NuGet パッケージのインストールの詳細については、次を参照してください。[チュートリアル。NuGet をプロジェクトに含める](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough))。 検索し、インストール、 **Xamarin.Android.Support.v4**で説明したようにパッケージ化[Viewpager とビュー](~/android/user-interface/controls/view-pager/viewpager-and-views.md)します。 
 
 
 

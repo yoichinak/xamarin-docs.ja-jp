@@ -9,11 +9,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
 ms.openlocfilehash: 6d5be72a9329675a65b0d6873d13894b314b50e7
-ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/30/2019
-ms.locfileid: "58677847"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61088141"
 ---
 # <a name="stack-views-in-xamarinios"></a>Xamarin.iOS でスタック ビュー
 
@@ -28,7 +28,7 @@ _この記事では、水平方向または垂直方向に配置後のスタッ�
 
 [![](uistackview-images/stacked01.png "スタック ビュー レイアウトの図")](uistackview-images/stacked01.png#lightbox)
 
-使用する場合、 `UIStackView` Xamarin.iOS アプリケーションでは、開発者はいずれかで iOS Designer、または追加し、C# コードでサブビューを削除するには、ストーリー ボード内のいずれかのサブビューを定義します。
+使用する場合、 `UIStackView` Xamarin.iOS アプリケーションでは、開発者はいずれかで iOS Designer、または追加し、c# コードでサブビューを削除するには、ストーリー ボード内のいずれかのサブビューを定義します。
 
 このドキュメントは、2 つの部分で構成されています。 最初のスタックを表示する実装し、その動作についていくつか技術的な詳細から簡単に開始します。
 

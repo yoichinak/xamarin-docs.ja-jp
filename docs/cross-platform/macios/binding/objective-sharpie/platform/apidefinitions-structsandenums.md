@@ -1,17 +1,17 @@
 ---
 title: ApiDefinitions と StructsAndEnums ファイル
-description: このドキュメントでは、目標油性を生成する ApiDefinitions.cs および StructsAndEnums.cs ファイルについて説明します。 これらのファイルは、c# から OBJECTIVE-C コードへのアクセスに使用されます。
+description: このドキュメントでは、目標油性を生成する ApiDefinitions.cs および StructsAndEnums.cs ファイルについて説明します。 これらのファイルがから OBJECTIVE-C コードへのアクセスに使用し、C#します。
 ms.prod: xamarin
 ms.assetid: AC2087C0-BA54-46D8-B70C-6972941C8F73
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
 ms.openlocfilehash: df8d4508db14116a5b36e893f161ac891d58dc46
-ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37855183"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61266366"
 ---
 # <a name="apidefinitions--structsandenums-files"></a>ApiDefinitions と StructsAndEnums ファイル
 
@@ -22,11 +22,11 @@ ms.locfileid: "37855183"
 
 次の手順のとおりです。
 
-- **名前を調整する**: メソッドと、.NET Framework デザイン ガイドラインに一致するようにクラスの名前を調整することがありますします。
-- **メソッドまたはプロパティ**: も油性の目的で使用するヒューリスティックがプロパティに有効にする方法を選択します。 この時点では、これが意図した動作かどうかを決定できます。
-- **イベントをフックする**: リンク、クラス、デリゲート クラスを使用して自動的にこれらのイベントを生成します。
-- **通知フック**: 純粋なヘッダー ファイルからの通知 API コントラクトを抽出することはできません、API のドキュメントへのトリップが必要になります。 厳密に型指定された通知を設定する場合は、結果を更新する必要があります。
-- **API キュレーション**: この時点で余分なコンス トラクターを提供、(c# の初期化の構築の構文の許可) するメソッド、演算子のオーバー ロードおよび実装を追加する選択が、追加の定義ファイルに独自のインターフェイス。
+- **名前を調整する**:場合がありますメソッドと、.NET Framework デザイン ガイドラインに一致するようにクラスの名前を調整するされます。
+- **メソッドまたはプロパティ**:目標油性でも使用するヒューリスティックでは、プロパティに有効にする方法を選択します。 この時点では、これが意図した動作かどうかを決定できます。
+- **イベントをフックする**:リンク、クラス、デリゲート クラスを使用して自動的にこれらのイベントを生成します。
+- **通知フック**:純粋なヘッダー ファイルからの通知 API コントラクトを抽出することはできません、API のドキュメントへのトリップが必要になります。 厳密に型指定された通知を設定する場合は、結果を更新する必要があります。
+- **API キュレーション**:この時点では、追加のコンス トラクターを提供するメソッドを追加できます (を許可するC#初期化の構築での構文)、演算子のオーバー ロードと、追加の定義ファイルに独自のインターフェイスを実装します。
 
 参照してください、[バインド API](~/cross-platform/macios/binding/objective-c-libraries.md)説明を次の図に示すように、これらのファイルが、バインディング プロセスに適合させる方法を確認します。
 
@@ -36,5 +36,5 @@ ms.locfileid: "37855183"
 
 ## <a name="related-links"></a>関連リンク
 
-- [Xamarin University のコース: OBJECTIVE-C のバインド ライブラリをビルドします。](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin University のコース: 目標油性、OBJECTIVE-C のバインド ライブラリをビルドします。](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)
+- [Xamarin University のコース:OBJECTIVE-C バインディング ライブラリをビルド](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
+- [Xamarin University のコース:目標油性で、OBJECTIVE-C のバインド ライブラリをビルドします。](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

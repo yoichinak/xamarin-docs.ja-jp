@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 02/28/2018
 ms.openlocfilehash: 3592a3027469cb9997d973db53d636ddea9e679d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50110889"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61024308"
 ---
 # <a name="activity-lifecycle"></a>アクティビティのライフサイクル
 
@@ -30,7 +30,7 @@ _アクティビティは、Android アプリケーションの基本的なビ�
 この章はアクティビティのライフ サイクルの詳細を含みます。
 
 -  アクティビティの状態
--  ライフ サイクル メソッド
+-  ライフサイクル メソッド
 -  アプリケーションの状態の保持
 
 

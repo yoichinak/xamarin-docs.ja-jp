@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/30/2018
 ms.openlocfilehash: e53f6dce47dd7db60267d21c8d816ece554dc46c
-ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57197117"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61320013"
 ---
 # <a name="listview-data-sources"></a>ListView のデータ ソース
 
@@ -42,7 +42,7 @@ A [ `ListView` ](xref:Xamarin.Forms.ListView)を使用してデータが表示�
 </ListView>
 ```
 
-同等の c# コードに示します。
+同等の C# コードに示します。
 
 ```csharp
 var listView = new ListView();

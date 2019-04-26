@@ -1,6 +1,6 @@
 ---
-title: エンタープライズのアプリ開発の概要
-description: この章では、エンタープライズ アプリの開発の概要について説明し、eShopOnContainers モバイル アプリを紹介します。
+title: エンタープライズ アプリの開発の概要
+description: この章では、エンタープライズ アプリの開発の概要について説明し、eShopOnContainers のモバイル アプリを紹介します。
 ms.prod: xamarin
 ms.assetid: cbce0659-fa03-447a-86ec-140438143230
 ms.technology: xamarin-forms
@@ -8,94 +8,94 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
 ms.openlocfilehash: 9deb685c92092ceb0e1c775a1e53ac1bce5a4a57
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35242961"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61299993"
 ---
-# <a name="introduction-to-enterprise-app-development"></a>エンタープライズのアプリ開発の概要
+# <a name="introduction-to-enterprise-app-development"></a>エンタープライズ アプリの開発の概要
 
-すべてのプラットフォームでいくつかの課題に直面してエンタープライズ アプリケーションの開発者。
+プラットフォームにかかわらずエンタープライズ アプリの開発者はいくつかの課題に直面します。
 
--   時間の経過と共に変更可能なアプリの要件です。
--   新しいビジネス チャンスと課題です。
--   スコープおよびアプリケーションの要件に大きく影響するための開発中に継続的なフィードバックです。
+-   時間の経過と共に変更できるアプリの要件。
+-   新しいビジネス チャンス、課題です。
+-   スコープと、アプリの要件に大きく影響する開発中に継続的なフィードバック。
 
-以下の点には、簡単に変更したりできる時間の経過と共に拡張アプリを作成する必要があります。 このような適応性の設計は、個別に開発され、アプリの残りの部分に影響を与えずに分離してテストするアプリの個々 の部分を使用するためのアーキテクチャが必要な難しいがあります。
+これらを考慮してが簡単に変更または時間の経過と共に拡張が可能なアプリの構築に重要です。 アーキテクチャを個別に開発して、アプリの残りの部分に影響を与えずに分離してテスト アプリの個々 の部分を許可する必要がある、このような適応性の設計が難しいことができます。
 
-多くのエンタープライズ アプリは、複数の開発者を要求するように十分に複雑です。 複数の開発者できますで動作するよういない効果的にアプリのさまざまな独立して、確保した構成要素を取得すること一緒にシームレスにアプリに統合した場合、アプリを設計する方法を決定する重要な課題があります。
+多くのエンタープライズ アプリは、複数の開発者を要求するように十分に複雑です。 複数の開発者が作業できるようにしない効果的に、アプリの異なる部分に対して個別に、こと部分一体とシームレスに統合すると、アプリに確保しながら、アプリを設計する方法を決定する重要な課題になります。
 
-設計と、アプリでどのような結果を構築するには、従来のアプローチと呼びます、*モノリシック*アプリケーションでは、ここでコンポーネントが密接に連動してない明確に分離します。 通常、このモノリシックなアプローチは、アプリの他のコンポーネントを分断することがなく、バグを解決するのには困難があるために、困難および維持するため、非効率的なアプリにし、新しい機能を追加または既存の機能を置き換えるには難しい可能性があります。
+設計とアプリでどのような結果を構築するには、従来のアプローチと呼ばれます、*モノリシック*コンポーネント密にクリア分離せずに結合されているアプリ。 通常、このモノリシック手法があるアプリケーションへは難しく、維持するため、非効率的なアプリでは、その他のコンポーネントを損なうことがなく、バグを解決することは難しいため、潜在顧客し、新しい機能を追加または既存の機能を置き換えるには難しい可能性があります。
 
-これらの課題の効果的な救済手段は、アプリを簡単に統合できるまとめてをアプリに discrete、疎結合のコンポーネントに分割することです。 このようなアプローチには、いくつかの利点があります。
+これらの課題の効果的なの救済手段では、アプリを簡単に統合できるまとめてをアプリに、discrete、疎結合コンポーネントに分割します。 このアプローチには、いくつかの利点があります。
 
--   これにより、個々 の機能を開発、テスト、拡張、およびさまざまな個人またはチームで管理できます。
--   再利用して、アプリの水平方向などの機能、認証とデータ アクセスとアプリの特定のビジネス機能などの垂直方向、機能上の問題を明確に分離を昇格させます。 これにより、依存関係をより簡単に管理できるアプリのコンポーネント間の相互作用できます。
--   により、特定のタスクまたは 1 つの専門知識に従って機能に重点を置くには、別の個人やチームの役割の分離を維持するのに役立ちます。 具体的には、ユーザー インターフェイスと、アプリのビジネス ロジックの間で明確に分離を提供します。
+-   これにより、開発、テスト、拡張、およびさまざまな個人やチームによって管理されるに個々 の機能です。
+-   再利用との間で認証とデータのアクセスなど、アプリの水平方向の機能とアプリの特定のビジネス機能など、垂直方向の機能の問題を明確に分離を昇格します。 これにより、依存関係とより簡単に管理するアプリのコンポーネント間の相互作用します。
+-   により、特定のタスクまたはその専門知識に従って機能の一部に注目するには、別の個人やチームの役割の分離を維持することができます。 具体的には、ユーザー インターフェイスと、アプリのビジネス ロジックを明確に区別を提供します。
 
-ただし、discrete、疎結合されたコンポーネントにアプリをパーティション分割するときに解決する必要がある多くの問題があります。 次の設定があります。
+ただし、discrete、疎結合コンポーネントにアプリをパーティション分割するときに解決する必要がある多くの問題があります。 不足している機能には次が含まれます。
 
--   ユーザー インターフェイス コントロールとそのロジックの間の問題を明確に分離を提供する方法を決定します。 Xamarin.Forms エンタープライズ アプリを作成するときに、最も重要な決定の 1 つは、分離コード ファイルにビジネス ロジックを配置するかどうか、またはユーザー インターフェイス コントロールとより、アプリを作成、ロジックの間での問題を明確に分離を作成するかどうか保守が容易な管理およびテストします。 詳細については、次を参照してください。[モデル View-viewmodel](~/xamarin-forms/enterprise-application-patterns/mvvm.md)です。
--   依存関係性の注入コンテナーを使用するかどうかを決定します。 依存性の注入コンテナーは、結合の挿入、その依存関係を持つクラスのインスタンスを構築するために機能を提供することによって、オブジェクト間の依存関係を削減し、コンテナーの構成に基づいてその有効期間を管理します。 詳細については、次を参照してください。[依存性の注入](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md)です。
--   プラットフォームが提供するイベント処理の間、緩やかなを選択するには、オブジェクトと型の参照によってリンクするときに便利ではないコンポーネント間のメッセージ ベースの通信が結合されています。 詳細については、概要を参照してください。[通信間疎結合されたコンポーネント](~/xamarin-forms/enterprise-application-patterns/communicating-between-loosely-coupled-components.md)です。
--   ナビゲーションを呼び出す方法を含めて、ページ間を移動する方法を決定し、ナビゲーション ロジックが存在する必要があります。 詳細については、「[ナビゲーション](~/xamarin-forms/enterprise-application-patterns/navigation.md)」を参照してください。
--   ユーザー入力が正しいことを検証する方法を決定します。 意思決定には、ユーザー入力を検証する方法と、検証エラーをユーザーに通知する方法を含める必要があります。 詳細については、次を参照してください。[検証](~/xamarin-forms/enterprise-application-patterns/validation.md)です。
--   権限を持つリソースを保護する方法と、認証を実行する方法を決定します。 詳細については、次を参照してください。[認証および承認](~/xamarin-forms/enterprise-application-patterns/authentication-and-authorization.md)です。
--   Web からリモート データにアクセスする方法を決定するサービスは、確実にデータを取得する方法とデータをキャッシュする方法が含まれています。 詳細については、次を参照してください。[リモート データにアクセスする](~/xamarin-forms/enterprise-application-patterns/accessing-remote-data.md)です。
--   アプリをテストする方法を決定します。 詳細については、次を参照してください。[単体テスト](~/xamarin-forms/enterprise-application-patterns/unit-testing.md)です。
+-   ユーザー インターフェイス コントロールとそのロジックの間の懸念事項の明確な分離を提供する方法を決定します。 Xamarin.Forms エンタープライズ アプリを作成するときの最も重要な決定事項の 1 つが、分離コード ファイルにビジネス ロジックを配置するかどうか、またはを明確により、アプリを作成、ロジックとユーザー インターフェイス コントロール間の懸念事項の分離を作成するかどうか管理およびテストします。 詳細については、次を参照してください。[モデル-ビュー-ビューモデル](~/xamarin-forms/enterprise-application-patterns/mvvm.md)します。
+-   依存関係の注入コンテナーを使用するかどうかを決定します。 依存関係注入コンテナーでは、依存関係の挿入、関係を含むクラスのインスタンスを構築する機能を提供することでオブジェクト間の結合を削減し、コンテナーの構成に基づいて、有効期間を管理します。 詳細については、次を参照してください。[依存関係の注入](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md)します。
+-   プラットフォームで提供されるイベントの間、緩やかなを選択するには、オブジェクトと型を参照することでリンクするは便利ではないコンポーネント間の通信のメッセージに基づく結合されています。 詳細については、概要を参照してください。[通信コンポーネント間の疎結合](~/xamarin-forms/enterprise-application-patterns/communicating-between-loosely-coupled-components.md)します。
+-   ナビゲーションを呼び出す方法など、ページ間を移動する方法を決定し、ナビゲーション ロジックが存在する必要があります。 詳細については、「[ナビゲーション](~/xamarin-forms/enterprise-application-patterns/navigation.md)」を参照してください。
+-   ユーザー入力が正しいことを検証する方法を決定します。 意思決定には、ユーザーの入力を検証する方法と、検証エラーをユーザーに通知する方法を含める必要があります。 詳細については、次を参照してください。[検証](~/xamarin-forms/enterprise-application-patterns/validation.md)です。
+-   認証を実行する方法と権限を持つリソースを保護する方法を決定します。 詳細については、次を参照してください。[認証と承認](~/xamarin-forms/enterprise-application-patterns/authentication-and-authorization.md)します。
+-   Web からリモート データにアクセスする方法を決定するサービスは、データをキャッシュする方法と、データを確実に取得する方法などです。 詳細については、次を参照してください。[にアクセスするリモート データ](~/xamarin-forms/enterprise-application-patterns/accessing-remote-data.md)します。
+-   アプリをテストする方法を決定します。 詳細については、次を参照してください。 [Unit Testing](~/xamarin-forms/enterprise-application-patterns/unit-testing.md)します。
 
-このガイドでは、これらの問題に関するガイダンスを提供し、中核となるパターンと Xamarin.Forms を使用してエンタープライズのクロスプラット フォーム アプリを構築するためのアーキテクチャに重点を置いています。 ガイダンスの目的は、一般的な Xamarin.Forms エンタープライズ アプリの開発シナ リオをアドレス指定し、プレゼンテーション、プレゼンテーション ロジック、およびサポートによるエンティティの懸案事項を分離することにより、適応性、保守、およびテストが容易なコードを生成するために、モデル View-viewmodel (MVVM) パターン。
+このガイドでは、これらの問題のガイダンスを提供し、Xamarin.Forms を使用したクロスプラット フォーム対応のエンタープライズ アプリを構築するためのアーキテクチャと主要なパターンに重点を置いています。 ガイドの目的は、一般的な Xamarin.Forms エンタープライズ アプリの開発シナリオをアドレス指定し、プレゼンテーション、プレゼンテーション ロジック、およびサポート エンティティの懸念事項を分離することで、適応性のある、管理、およびテストのコードを生成するために、モデル-ビュー-ビューモデル (MVVM) パターンです。
 
 ## <a name="sample-application"></a>サンプル アプリケーション
 
-このガイドには、次の機能が含まれているオンライン ストアである eShopOnContainers、サンプル アプリケーションが含まれています。
+このガイドには、eShopOnContainers で、次の機能が含まれているオンライン ストアである、サンプル アプリケーションが含まれています。
 
 -   認証とバックエンド サービスに対して承認します。
--   シャツ、コーヒーマグ、およびその他のマーケティングの項目のカタログを参照しています。
--   カタログのフィルター処理します。
--   カタログからの項目を順序付けです。
+-   シャツ、コーヒー マグ カップ、およびその他の商品のカタログを参照します。
+-   カタログをフィルター処理します。
+-   カタログの項目の順序付けします。
 -   ユーザーの注文履歴を表示します。
 -   設定の構成。
 
 ### <a name="sample-application-architecture"></a>サンプル アプリケーションのアーキテクチャ
 
-図 1-1 では、サンプル アプリケーションのアーキテクチャの大まかな概要を説明します。
+図 1-1 では、サンプル アプリケーションのアーキテクチャの概要を示します。
 
-![](introduction-images/architecture.png "eShopOnContainers アーキテクチャの概要")
+![](introduction-images/architecture.png "eShopOnContainers のアーキテクチャの概要")
 
 **図 1-1**: eShopOnContainers アーキテクチャの概要
 
-サンプル アプリケーションは、3 つのクライアント アプリに付属します。
+サンプル アプリケーションは、次の 3 つのクライアント アプリが付属しています。
 
--   ASP.NET Core を使用して、MVC アプリケーション開発します。
--   Angular 2 と Typescript 単一ページ アプリケーション (SPA) を開発しました。 Web アプリケーション用には、この方法は、各操作を使用してサーバーへのラウンド トリップの実行を回避できます。
--   IOS、Android、およびユニバーサル Windows プラットフォーム (UWP) をサポートする、Xamarin.Forms を使用したモバイル アプリを開発しました。
+-   ASP.NET core MVC アプリケーションが開発しました。
+-   Angular 2 と Typescript を使用して、シングル ページ アプリケーション (SPA) 開発します。 各操作で、サーバーへのラウンド トリップを実行する web アプリケーションには、このアプローチを回避できます。
+-   IOS、Android、およびユニバーサル Windows プラットフォーム (UWP) をサポートする Xamarin.Forms を使用してモバイル アプリを開発しました。
 
-Web アプリケーションについては、次を参照してください。[を設計および ASP.NET Core と Microsoft Azure で最新の Web アプリケーションの開発](http://aka.ms/WebAppEbook)です。
+Web アプリケーションについては、次を参照してください。 [Architecting と ASP.NET Core と Microsoft Azure で最新の Web アプリケーションの開発](http://aka.ms/WebAppEbook)します。
 
 サンプル アプリケーションには、次のバックエンド サービスが含まれます。
 
--   Identity マイクロ サービス、ASP.NET Core Id と IdentityServer を使用します。
--   カタログ マイクロ サービスは、データ ドリブンの作成には、読み取り、更新、EntityFramework コアを使用して SQL Server データベースを使用する (CRUD) サービスを削除します。
--   順序付けマイクロ サービスをドメインに基づくデザイン パターンを使用してドメイン ベースのサービスであります。
--   バスケット マイクロ サービス、Redis Cache を使用するデータ ドリブン CRUD サービスであります。
+-   Id マイクロ サービス、ASP.NET Core Identity と IdentityServer を使用しています。
+-   データに基づく作成、読み取り、カタログ マイクロ サービスは、更新、および entity Framework Core を使用して、SQL Server データベースを使用する (CRUD) サービスを削除します。
+-   順序付けマイクロ サービスをドメイン駆動設計パターンを使用してドメイン ベースのサービスであります。
+-   買い物かごマイクロ サービス、Redis Cache を使用するデータ ドリブン CRUD サービスであります。
 
-これらのバックエンド サービスは、ASP.NET Core の MVC を使用して microservices として実装され、1 つの Docker ホスト内で一意のコンテナーとして展開されます。 集合的に、これらのバックエンド サービスは呼ば、eShopOnContainers がアプリケーションを参照します。 クライアント アプリは、Representational State Transfer (REST) web インターフェイスからバックエンド サービスと通信します。 Microservices と Docker の詳細については、次を参照してください。[コンテナー Microservices](~/xamarin-forms/enterprise-application-patterns/containerized-microservices.md)です。
+これらのバックエンド サービスは、ASP.NET Core MVC を使用してマイクロ サービスとして実装され、単一の Docker ホスト内で一意のコンテナーとして展開されます。 総称して、eShopOnContainers 参照アプリケーションとして、これらのバックエンド サービスに呼ばれます。 クライアント アプリは、Representational State Transfer (REST) web インターフェイスでバックエンド サービスと通信します。 マイクロ サービスと Docker の詳細については、次を参照してください。 [: コンテナー化されたマイクロ サービス](~/xamarin-forms/enterprise-application-patterns/containerized-microservices.md)します。
 
-バックエンド サービスの実装については、次を参照してください。 [.NET Microservices: .NET アプリケーションのコンテナーをアーキテクチャ](https://aka.ms/microservicesebook)です。
+バックエンド サービスの実装については、次を参照してください。 [.NET マイクロ サービス。Architecture for Containerized .NET Applications](https://aka.ms/microservicesebook)」(.NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ) を参照してください。
 
 ### <a name="mobile-app"></a>モバイル アプリ
 
-このガイドでは、Xamarin.Forms を使用してクロスプラット フォームのエンタープライズ アプリの構築に焦点を当てていて、例として eShopOnContainers モバイル アプリを使用します。 図 1-2 では、先に説明した機能を提供する eShopOnContainers モバイル アプリからページを表示します。
+このガイドでは、Xamarin.Forms を使用してクロスプラット フォーム対応のエンタープライズ アプリの構築に焦点を当てていて、例として、eShopOnContainers のモバイル アプリを使用します。 図 1-2 には、先に説明した機能を提供する eShopOnContainers のモバイル アプリからページが表示されます。
 
-[![](introduction-images/screenshots.png "EShopOnContainers モバイル アプリ")](introduction-images/screenshots-large.png#lightbox "eShopOnContainers モバイル アプリ")
+[![](introduction-images/screenshots.png "EShopOnContainers のモバイル アプリ")](introduction-images/screenshots-large.png#lightbox "eShopOnContainers のモバイル アプリ")
 
-**図 1-2**: eShopOnContainers モバイル アプリ
+**図 1-2**:EShopOnContainers のモバイル アプリ
 
-モバイル アプリでは、eShopOnContainers 参照アプリケーションによって提供されるバックエンド サービスを使用します。 ただし、バックエンド サービスのデプロイを避けたいと管理者向けのモック サービスからのデータを使用するよう構成できます。
+モバイル アプリでは、eShopOnContainers 参照アプリケーションが提供するバックエンド サービスを消費します。 ただし、バックエンド サービスのデプロイを回避したい方のためのモック サービスからデータを使用するよう構成できます。
 
-EShopOnContainers モバイル アプリは Xamarin.Forms の次の機能を実行します。
+EShopOnContainers のモバイル アプリでは、Xamarin.Forms の次の機能を実行します。
 
 -   XAML
 -   コントロール
@@ -111,26 +111,26 @@ EShopOnContainers モバイル アプリは Xamarin.Forms の次の機能を実�
 -   MessagingCenter
 -   カスタム コントロール
 
-この機能の詳細については、次を参照してください。、 [Xamarin.Forms ドキュメント](~/xamarin-forms/index.yml)、および[Xamarin.Forms を使用したモバイル アプリを作成する](https://aka.ms/xamebook)です。
+この機能の詳細については、次を参照してください。、 [Xamarin.Forms ドキュメント](~/xamarin-forms/index.yml)、および[を Xamarin.Forms での Mobile Apps の作成](https://aka.ms/xamebook)です。
 
-さらに、単体テストは、クラス、eShopOnContainers モバイル アプリでは、一部で提供されます。
+さらに、単体テストは、eShopOnContainers のモバイル アプリ内のクラスのいくつか提供されます。
 
 #### <a name="mobile-app-solution"></a>モバイル アプリのソリューション
 
-EShopOnContainers モバイル アプリのソリューションでは、ソース コードおよびその他のリソースをプロジェクトに整理します。 すべてのプロジェクトは、フォルダーを使用して、ソース コードおよびその他のリソースのカテゴリを整理します。 次の表は、eShopOnContainers モバイル アプリを構成するプロジェクトを示します。
+EShopOnContainers のモバイル アプリのソリューションでは、ソース コードとその他のリソースをプロジェクトに整理します。 すべてのプロジェクトは、フォルダーを使用して、カテゴリに、ソース コードとその他のリソースを整理します。 次の表に、eShopOnContainers のモバイル アプリを構成するプロジェクト。
 
 |プロジェクト|説明|
 |--- |--- |
 |eShopOnContainers.Core|このプロジェクトは、共有コードと共有 UI を含むポータブル クラス ライブラリ (PCL) プロジェクトです。|
-|eShopOnContainers.Droid|このプロジェクトは、特定の Android のコードを保持され、Android アプリ用のエントリ ポイントです。|
-|eShopOnContainers.iOS|このプロジェクトは、iOS に固有のコードを保持して、iOS アプリのエントリ ポイントです。|
-|eShopOnContainers.UWP|このプロジェクトは、固有のコードをユニバーサル Windows プラットフォーム (UWP) を保持して、Windows アプリ用のエントリ ポイントです。|
-|eShopOnContainers.TestRunner.Droid|このプロジェクトは、Android のテスト ランナー eShopOnContainers.UnitTests プロジェクトです。|
-|eShopOnContainers.TestRunner.iOS|このプロジェクトは、iOS のテスト ランナー eShopOnContainers.UnitTests プロジェクトです。|
-|eShopOnContainers.TestRunner.Windows|このプロジェクトは、eShopOnContainers.UnitTests プロジェクトのユニバーサル Windows プラットフォームのテスト ランナーです。|
+|eShopOnContainers.Droid|このプロジェクトは、Android 固有のコードを保持して、Android アプリのエントリ ポイントです。|
+|eShopOnContainers.iOS|このプロジェクトは、iOS 固有のコードを保持しているし、for iOS アプリのエントリ ポイントです。|
+|eShopOnContainers.UWP|このプロジェクトは、ユニバーサル Windows プラットフォーム (UWP) 固有のコードを保持して、Windows アプリのエントリ ポイントです。|
+|eShopOnContainers.TestRunner.Droid|このプロジェクトは eShopOnContainers.UnitTests プロジェクト用の Android のテスト ランナーです。|
+|eShopOnContainers.TestRunner.iOS|このプロジェクトは、iOS テスト ランナー eShopOnContainers.UnitTests プロジェクトです。|
+|eShopOnContainers.TestRunner.Windows|このプロジェクトは eShopOnContainers.UnitTests プロジェクトのユニバーサル Windows プラットフォームのテスト ランナーです。|
 |eShopOnContainers.UnitTests|このプロジェクトには、eShopOnContainers.Core プロジェクトの単体テストが含まれています。|
 
-EShopOnContainers モバイル アプリからのクラスは、ほとんどまたはまったく変更せずにすべての Xamarin.Forms アプリで再利用できます。
+EShopOnContainers のモバイル アプリからのクラスは、ほとんどまたはまったく変更をすべての Xamarin.Forms アプリで再利用できます。
 
 ##### <a name="eshoponcontainerscore-project"></a>eShopOnContainers.Core プロジェクト
 
@@ -138,34 +138,34 @@ EShopOnContainers.Core PCL プロジェクトには、次のフォルダーが�
 
 |フォルダー|説明|
 |--- |--- |
-|Animations|XAML で消費されるアニメーションを有効にするクラスが含まれています。|
-|ビヘイビアー|クラスを表示する公開されている動作が含まれています。|
-|コントロール|アプリで使用するカスタム コントロールが含まれています。|
+|Animations|XAML で使用するアニメーションを有効にするクラスが含まれています。|
+|ビヘイビアー|クラスを表示するのには、動作が含まれています。|
+|コントロール|アプリで使用されるカスタム コントロールが含まれています。|
 |コンバーター|バインディングにカスタム ロジックを適用する値コンバーターが含まれています。|
-|効果|含まれています、`EntryLineColorEffect`を特定の罫線の色を変更するために使用されるクラス`Entry`コントロール。|
-|例外|ユーザー設定を含む`ServiceAuthenticationException`です。|
-|拡張機能|拡張メソッドを格納、`VisualElement`と`IEnumerable`クラスです。|
-|ヘルパー|アプリ用にヘルパー クラスが含まれています。|
-|モデル|アプリのモデル クラスを含みます。|
+|効果|含まれています、`EntryLineColorEffect`クラスは、特定の罫線の色を変更するために使用`Entry`コントロール。|
+|例外|ユーザー設定を含む`ServiceAuthenticationException`します。|
+|拡張機能|拡張メソッドを格納、`VisualElement`と`IEnumerable`クラス。|
+|ヘルパー|アプリのヘルパー クラスが含まれています。|
+|モデル|アプリのモデル クラスが含まれています。|
 |プロパティ|含む`AssemblyInfo.cs`、.NET アセンブリのメタデータ ファイル。|
-|Services|アプリに提供するサービスを実装するインターフェイスとクラスが含まれています。|
-|トリガー|含まれています、`BeginAnimation`トリガーで、XAML でのアニメーションの呼び出しに使用します。|
+|Services|アプリに提供されるサービスを実装するインターフェイスとクラスが含まれています。|
+|トリガー|含まれています、`BeginAnimation`トリガーで、XAML でアニメーションを起動するために使用します。|
 |検証|データ入力の検証に関連するクラスが含まれています。|
 |ViewModels|ページに公開されているアプリケーションのロジックが含まれています。|
 |Views|アプリのページが含まれています。|
 
 ##### <a name="platform-projects"></a>プラットフォームのプロジェクト
 
-プラットフォームのプロジェクトには、影響の実装、カスタム レンダラー実装、およびその他のプラットフォームに固有のリソースが含まれます。
+プラットフォームのプロジェクトには、効果の実装、カスタム レンダラーの実装、およびその他のプラットフォームに固有のリソースが含まれます。
 
 ## <a name="summary"></a>まとめ
 
-Xamarin のクロスプラット フォーム モバイル アプリ開発ツールとプラットフォーム、包括的なソリューションを提供 B2E、B2B および B2C のモバイル クライアント アプリでは、すべてのターゲット プラットフォーム (iOS、Android、および Windows) とレベルを下げるには、支援することでコードを共有する機能を提供する、総保有コスト。 アプリは、ネイティブ プラットフォームのルック アンド フィールを維持しながら、ユーザー インターフェイスとアプリケーション ロジックのコードを共有できます。
+Xamarin のクロスプラット フォーム モバイル アプリ開発ツールとプラットフォームでは、包括的なソリューション B2E、B2B と B2C のモバイル クライアント アプリでは、すべてのターゲット プラットフォーム (iOS、Android、および Windows) と削減を支援することでコードを共有する機能を提供する、総保有コスト。 アプリでは、ネイティブ プラットフォームのルック アンド フィールを維持しながら、ユーザー インターフェイスとアプリケーション ロジック コードを共有できます。
 
-エンタープライズ アプリケーションの開発者は、開発時に、アプリのアーキテクチャを変更するいくつかの課題に直面します。 そのため、変更または時間の経過と共に拡張できるようにする、アプリのビルドに重要なです。 このような適応性の設計では、困難ですを指定できますが、通常は、アプリを簡単に統合できるまとめてをアプリに discrete、疎結合のコンポーネントに分割します。
+エンタープライズ アプリの開発者は、開発中に、アプリのアーキテクチャを変更するいくつかの課題に直面します。 したがって、変更にまたは時間の経過と共に拡張されるようにアプリをビルドする重要なは。 このような適応性の設計では、困難であり、できますが、通常は、アプリを簡単に統合できるまとめてをアプリに、discrete、疎結合コンポーネントに分割します。
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [電子 (2 Mb PDF) のダウンロードします。](https://aka.ms/xamarinpatternsebook)
+- [(2 Mb の PDF) 電子ブックをダウンロードします。](https://aka.ms/xamarinpatternsebook)
 - [eShopOnContainers (GitHub) (サンプル)](https://github.com/dotnet-architecture/eShopOnContainers)

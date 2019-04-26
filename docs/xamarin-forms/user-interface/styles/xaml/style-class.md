@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/30/2019
 ms.openlocfilehash: dd749a4a78adbab5317f1ae5ca6334caa009b9b3
-ms.sourcegitcommit: 9dcb7377dc92ad921285fbb857b0be13030bbea3
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55668551"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61277799"
 ---
 # <a name="xamarinforms-style-classes"></a>Xamarin.Forms のスタイル クラス
 
@@ -76,7 +76,7 @@ _Xamarin.Forms のスタイル クラスには、スタイルの継承を使用�
 
 `Separator`、 `Rounded`、および`Circle`スタイル クラスの各セット[ `BoxView` ](xref:Xamarin.Forms.BoxView)プロパティを特定の値にします。
 
-`Rotated`スタイル クラスには、 [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)の[ `VisualElement` ](xref:Xamarin.Forms.VisualElement)、つまりのみに適用できる`VisualElement`インスタンス。 ただし、その[ `ApplyToDerivedTypes` ](xref:Xamarin.Forms.Style.ApplyToDerivedTypes)プロパティに設定されて`true`から派生したコントロールに適用できることが保証`VisualElement`など[ `BoxView`](xref:Xamarin.Forms.BoxView)します。 派生型にスタイルを適用する方法についての詳細については、[派生型にスタイルを適用](implicit.md#apply-a-style-to-derived-types)を参照してください。
+`Rotated`スタイル クラスには、 [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)の[ `VisualElement` ](xref:Xamarin.Forms.VisualElement)、つまりのみに適用できる`VisualElement`インスタンス。 ただし、その[ `ApplyToDerivedTypes` ](xref:Xamarin.Forms.Style.ApplyToDerivedTypes)プロパティに設定されて`true`から派生したコントロールに適用できることが保証`VisualElement`など[ `BoxView`](xref:Xamarin.Forms.BoxView)します。 派生型にスタイルを適用する方法についての詳細については、次を参照してください。[派生型にスタイルを適用](implicit.md#apply-a-style-to-derived-types)します。
 
 同等の C# コードに示します。
 

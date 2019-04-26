@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
 ms.openlocfilehash: 8ad742607e506df436a5526d31621ac7636ac29b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50110018"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61087048"
 ---
 # <a name="push-notifications-in-ios"></a>IOS でプッシュ通知
 
@@ -22,7 +22,7 @@ ms.locfileid: "50110018"
 プッシュ通知は、簡単に保持する必要がありが更新プログラムのサーバー アプリケーションを接続する必要がありますが、モバイル アプリケーションに通知するための十分なデータだけを格納します。 たとえば、新しい電子メールが到着すると、サーバー アプリケーションは新しい電子メールが到着したモバイル アプリケーションは通知のみです。 通知には、新しい電子メール自体が含まれていません。 モバイル アプリケーションは、適切な時に、サーバーから新しい電子メールを取得
 
 IOS での通知は、プッシュの中央にある、 *Apple プッシュ通知ゲートウェイ サービス (APNS)* します。 これは、アプリケーション サーバーから iOS デバイスへの通知のルーティングを担当する Apple によって提供されるサービスです。
-次の図は、iOS のプッシュ通知のトポロジを示しています。: ![](remote-notifications-in-ios-images/image4.png "このイメージは、iOS のプッシュ通知のトポロジを示しています。")
+次の図は、iOS のプッシュ通知のトポロジを示しています。![](remote-notifications-in-ios-images/image4.png "このイメージは、iOS のプッシュ通知のトポロジを示しています。")
 
 リモート通知自体は JSON 形式の文字列形式に準拠しているで指定されたプロトコル[、通知ペイロード](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/CreatingtheNotificationPayload.html#//apple_ref/doc/uid/TP40008194-CH10-SW1)のセクション、[ローカルおよびプッシュ通知プログラミング ガイド](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/)で、 [iOS 開発者向けドキュメント](https://developer.apple.com/devcenter/ios/index.action)します。
 

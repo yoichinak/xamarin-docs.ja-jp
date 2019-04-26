@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
 ms.openlocfilehash: f693b480fff141c177ed135ced60afd65abd77de
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50102792"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61082186"
 ---
 # <a name="search-and-home-screen-widget-enhancements-in-ios-10"></a>検索し、iOS 10 のホーム画面ウィジェットの強化
 
@@ -50,7 +50,7 @@ Apple には、ウィジェット システムをウィジェットに美しく�
 
 ## <a name="working-with-vibrancy"></a>活気の操作
 
-活気により、ウィジェットのテキストが、ウィジェットのライト、ぼかしの背景 (システムによって提供される) で表示したときに読みのままになることです。 IOS 10 では、前に、開発者は使用して、 [NotificationCenterVibrancyEffect](https://developer.apple.com/reference/uikit/uivibrancyeffect/1613917-notificationcentervibrancyeffect)ウィジェットの活気にします。 例えば:
+活気により、ウィジェットのテキストが、ウィジェットのライト、ぼかしの背景 (システムによって提供される) で表示したときに読みのままになることです。 IOS 10 では、前に、開発者は使用して、 [NotificationCenterVibrancyEffect](https://developer.apple.com/reference/uikit/uivibrancyeffect/1613917-notificationcentervibrancyeffect)ウィジェットの活気にします。 例:
 
 ```csharp
 // DEPRECATED: Get Widget Vibrancy Effect

@@ -1,6 +1,6 @@
 ---
 title: Web サービスへのアクセスの認証
-description: このガイドでは、自分のデータにアクセスすることのみバックエンドを共有するユーザーを有効にする Xamarin.Forms アプリケーションに認証サービスを統合する方法について説明します。
+description: このガイドでは、独自のデータにアクセスすることのみをバックエンドを共有するユーザーを有効にする Xamarin.Forms アプリケーションに認証サービスを統合する方法について説明します。
 ms.prod: xamarin
 ms.assetid: E6FCFAE1-4F83-4F93-9190-EC5290360C54
 ms.technology: xamarin-forms
@@ -8,35 +8,35 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
 ms.openlocfilehash: d598a9b3de31ea6823530f911c3544bf3cebb37f
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240688"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61331183"
 ---
 # <a name="authenticating-access-to-web-services"></a>Web サービスへのアクセスの認証
 
-_このガイドでは、自分のデータにアクセスすることのみバックエンドを共有するユーザーを有効にする Xamarin.Forms アプリケーションに認証サービスを統合する方法について説明します。別のプロバイダーによって提供される組み込みの認証メカニズムを使用しておよび基本認証を使用して、OAuth id プロバイダーに対して認証する Xamarin.Auth コンポーネントを使用して、REST サービスにトピックが含まれます。_
+_このガイドでは、独自のデータにアクセスすることのみをバックエンドを共有するユーザーを有効にする Xamarin.Forms アプリケーションに認証サービスを統合する方法について説明します。トピックを取り上げていますが、Xamarin.Auth コンポーネントを使用して、OAuth id プロバイダーに対する認証に REST サービスで基本認証を使用し、別のプロバイダーによって提供される組み込みの認証メカニズムを使用しています。_
 
-## <a name="authenticating-a-restful-web-servicerestmd"></a>[RESTful Web サービスを認証](rest.md)
+## <a name="authenticating-a-restful-web-servicerestmd"></a>[RESTful Web サービスの認証](rest.md)
 
-HTTP では、リソースへのアクセスを制御するいくつかの認証メカニズムの使用をサポートします。 基本認証では、正しい資格情報を持つクライアントのみにリソースへのアクセスを提供します。 この記事では、基本認証を使用して、RESTful web サービスのリソースへのアクセスを保護する方法を示します。
+HTTP では、リソースへのアクセスを制御するいくつかの認証メカニズムの使用をサポートします。 基本認証では、適切な資格情報を持つクライアントのみにリソースへのアクセスを提供します。 この記事では、基本認証を使用して RESTful web サービスのリソースへのアクセスを保護する方法を示します。
 
-## <a name="authenticating-users-with-an-identity-provideroauthmd"></a>[Id プロバイダーとユーザーの認証](oauth.md)
+## <a name="authenticating-users-with-an-identity-provideroauthmd"></a>[Id プロバイダーでユーザーを認証します。](oauth.md)
 
-Xamarin.Auth では、クロス プラットフォーム SDK はユーザーを認証して、自分のアカウントを格納するためです。 これには、Google、Microsoft、Facebook、Twitter などの id プロバイダーを使用するためのサポートを提供する OAuth 認証子が含まれます。 この記事では、Xamarin.Auth を使用して、Xamarin.Forms アプリケーションでの認証プロセスを管理する方法について説明します。
+Xamarin.Auth は、ユーザーを認証し、自分のアカウントを格納するをクロス プラットフォーム SDK です。 これには、Google、Microsoft、Facebook、Twitter などの id プロバイダーを使用するためのサポートを提供する OAuth 認証子が含まれます。 この記事では、Xamarin.Auth を使用して、Xamarin.Forms アプリケーションの認証プロセスを管理する方法について説明します。
 
-## <a name="authenticating-users-with-azure-mobile-appsazuremd"></a>[Azure のモバイル アプリを使用してユーザーの認証](azure.md)
+## <a name="authenticating-users-with-azure-mobile-appsazuremd"></a>[Azure Mobile Apps を使ったユーザー認証](azure.md)
 
-Azure のモバイル アプリでは、認証とアプリケーションのユーザーの承認をサポートするために、さまざまな外部の id プロバイダーを使用します。 アクセス許可は、認証されたユーザーのみにアクセスを制限するテーブルで設定できます。 この記事では、Azure Mobile Apps を使用して、Xamarin.Forms アプリケーションでの認証プロセスを管理する方法について説明します。
+Azure Mobile Apps の認証とアプリケーションのユーザーの承認をサポートするためにさまざまな外部 id プロバイダーを使用します。 アクセス許可は、認証されたユーザーのみにアクセスを制限するテーブルで設定できます。 この記事では、Azure Mobile Apps を使用して、Xamarin.Forms アプリケーションの認証プロセスを管理する方法について説明します。
 
-## <a name="authenticating-users-with-azure-active-directory-b2cazure-ad-b2cmd"></a>[Azure Active Directory B2C のユーザーの認証](azure-ad-b2c.md)
+## <a name="authenticating-users-with-azure-active-directory-b2cazure-ad-b2cmd"></a>[Azure Active Directory B2C のユーザー認証](azure-ad-b2c.md)
 
-Azure Active Directory B2C は、消費者向けの web アプリケーションとモバイル アプリケーションのクラウド id 管理ソリューションです。 この記事では、Microsoft の認証ライブラリ (MSAL) と Azure Active Directory B2C を使用して、Xamarin.Forms アプリケーションにコンシューマーの id 管理を統合する方法を示します。
+Azure Active Directory B2C は、コンシューマー向けの web アプリケーションとモバイル アプリケーションのクラウド id 管理ソリューションです。 この記事では、Microsoft Authentication Library (MSAL) と Azure Active Directory B2C を使用して、Xamarin.Forms アプリケーションにコンシューマーの id 管理を統合する方法を示します。
 
 ## <a name="integrating-azure-active-directory-b2c-with-azure-mobile-appsazure-ad-b2c-mobile-appmd"></a>[Azure Active Directory B2C とAzure Mobile Apps との統合](azure-ad-b2c-mobile-app.md)
 
-Azure Active Directory B2C は、Azure Mobile Apps の認証ワークフローの管理に使用できます。 この方法は、id 管理エクスペリエンスを完全にクラウドでは、定義し、モバイル アプリケーションのコードを変更することがなく変更できます。 この記事では、Xamarin.Forms を使用した Azure Mobile Apps インスタンスに対する認証および承認を提供する Azure Active Directory B2C を使用する方法を示します。
+Azure Mobile Apps の認証ワークフローを管理する azure Active Directory B2C を使用できます。 この方法を使えば、id 管理エクスペリエンスを完全にクラウドで定義でき、モバイル アプリケーションのコードを変更することなく修正できます。 この記事では、Azure Active Directory B2C を使用して、Xamarin.Forms の Azure Mobile Apps インスタンスに対する認証および承認を提供する方法を示します。
 
 ## <a name="related-links"></a>関連リンク
 

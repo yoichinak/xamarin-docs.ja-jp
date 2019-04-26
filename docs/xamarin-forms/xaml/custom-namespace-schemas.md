@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/21/2018
 ms.openlocfilehash: 2e09e89fe17956efaef910638e827b69a5795bc0
-ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57557218"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60857484"
 ---
 # <a name="xaml-custom-namespace-schemas-in-xamarinforms"></a>Xamarin.Forms の XAML Namespace カスタム スキーマ
 
@@ -31,7 +31,7 @@ ms.locfileid: "57557218"
 
 など、カスタムの名前空間スキーマを定義するその他の方法は、 `http://mycompany.com/schemas/controls`、1 つまたは複数の CLR 名前空間にマップされます。 これにより、異なる名前空間内にある場合でも、アセンブリ内のすべての型を参照する 1 つの XAML 名前空間宣言。 また、複数のアセンブリで参照型を 1 つの XAML 名前空間宣言こともできます。
 
-XAML 名前空間の詳細については、[Xamarin.Forms の XAML 名前空間](namespaces.md)を参照してください。
+XAML 名前空間の詳細については、次を参照してください。 [Xamarin.Forms の XAML 名前空間](namespaces.md)します。
 
 ## <a name="defining-a-custom-namespace-schema"></a>カスタムの名前空間のスキーマを定義します。
 
@@ -144,5 +144,5 @@ namespace CustomNamespaceSchemaDemo
 ## <a name="related-links"></a>関連リンク
 
 - [カスタムの Namespace スキーマ (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/XAML/CustomNamespaceSchemas/)
-- [XAML Namespace プレフィックスをお勧めします](custom-prefix.md)
+- [XAML 名前空間で推奨されるプレフィックス](custom-prefix.md)
 - [Xamarin.Forms の XAML 名前空間](namespaces.md)
