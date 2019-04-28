@@ -1,5 +1,5 @@
 ---
-title: SiriKit の概念を理解します。
+title: SiriKit の概念の理解
 description: このドキュメントでは、Xamarin.iOS アプリで SiriKit を操作するために必要な主要な概念について説明します。 たとえば、インテントについて説明しますおよび Intents UI 拡張機能、SiriKit のアクセス許可は、優れたエクスペリエンスなどを設計します。
 ms.prod: xamarin
 ms.assetid: 99EC5C1E-484F-4371-8555-58C9F60DE37F
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
 ms.openlocfilehash: b2a9e757e8a3407bbb19ae0580e5788eabe84cf0
-ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51528872"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61188986"
 ---
-# <a name="understanding-sirikit-concepts"></a>SiriKit の概念を理解します。
+# <a name="understanding-sirikit-concepts"></a>SiriKit の概念の理解
 
 _この記事では、Xamarin.iOS アプリで SiriKit を操作するために必要な主要な概念について説明します。_
 
@@ -65,33 +65,33 @@ MonkeyChat ユーザーの友人の連絡先独自書籍を保持する、各 (B
 
 たとえば、ユーザーが友人の Bobo にメッセージを送信しようとすると、Siri と次のメッセージ交換がある場合します。
 
-_ユーザー: さん、Siri MonkeyChat メッセージを送信します。_<br />
-_Siri: にだれか。_<br />
-_ユーザー: Bobo します。_<br />
-_Siri: 何と答えて Bobo でしょうか。_<br />
-_ユーザーの場合は、複数 Bananas を送信してください。_<br />
+_ユーザー:こんにちは Siri MonkeyChat メッセージを送信します。_<br />
+_Siri:だれですか。_<br />
+_ユーザー:Bobo します。_<br />
+_Siri:Bobo をしますか。_<br />
+_ユーザー:詳細について Bananas を送信してください。_<br />
 
 別のユーザーには、別のメッセージ交換で要求を同じをことがあります。
 
-_: ユーザーは、Bobo MonkeyChat 上にメッセージを送信します。_<br />
-_Siri: 何と答えて Bobo でしょうか。_<br />
-_ユーザーの場合は、複数 bananas を送信してください。_<br />
+_ユーザー:Bobo MonkeyChat 上には、メッセージを送信します。_<br />
+_Siri:Bobo をしますか。_<br />
+_ユーザー:詳細について bananas を送信してください。_<br />
 
 別のユーザーは、さらに短いコードの要求を行う可能性があります。
 
-_ユーザー: MonkeyChat Bobo に複数の bananas を送信してください。_<br />
-_Siri: Ok、メッセージを送信する送信してください複数 bananas Bobo Monkeychat 上。_<br />
+_ユーザー:MonkeyChat Bobo 複数 bananas を送信してください。_<br />
+_Siri:[Ok]、メッセージを送信する送信してください複数 bananas Bobo Monkeychat で。_<br />
 
 または、別の言語でも同じ要求を行います。
 
-_ユーザー: MonkeyChat Bobo s'il vous plaît envoyer plus de bananes します。_<br />
-_Siri: Oui、envoi メッセージ s'il vous plaît envoyer plus de bananes 比べて Bobo サー Monkeychat_<br />
+_ユーザー:MonkeyChat Bobo s'il vous plaît envoyer plus de bananes します。_<br />
+_Siri:Oui、envoi メッセージ s'il vous plaît envoyer plus de bananes 比べて Bobo サー Monkeychat します。_<br />
 
 まだ他のユーザーは、メッセージ交換で非常に冗長になる可能性があります。
 
-_ユーザー: こんにちは Siri くださいお願いし、できますを送信する MonkeyChat アプリを起動、テキスト メッセージを複数 bananas を送信してください。_<br />
-_Siri: にだれか。_<br />
-_ユーザー: マイ ベスト pal Bobo します。_<br />
+_ユーザー:こんにちは Siri できますくださいお願いして、テキスト メッセージを送信する MonkeyChat アプリを起動複数 bananas を送信してください。_<br />
+_Siri:だれですか。_<br />
+_ユーザー:マイ ベスト pal Bobo します。_<br />
 
 さらに、Siri 要求が行われた方法に基づいて一部の要求に応答するさまざまな方法があります。
 
@@ -123,9 +123,9 @@ Siri は、ユーザーのアクセシビリティ ニーズを満たすとは�
 
 上記の情報を指定するには、MonkeyChat アプリに次のメッセージ交換は対話する方法を確認します。
 
-_ユーザー: こんにちは Siri、Bobo MonkeyChat 上にメッセージを送信します。_<br />
-_Siri: 何と答えて Bobo でしょうか。_<br />
-_ユーザーの場合は、複数 bananas を送信してください。_<br />
+_ユーザー:こんにちは Siri Bobo MonkeyChat 上にメッセージを送信します。_<br />
+_Siri:Bobo をしますか。_<br />
+_ユーザー:詳細について bananas を送信してください。_<br />
 
 アプリは、メッセージ交換の最初のロールでは、Siri ユーザーの音声を理解します。
 
@@ -133,7 +133,7 @@ _ユーザーの場合は、複数 bananas を送信してください。_<br />
 
 Siri"Bobo"で、そのデータベースの名前はありませんが、アプリは、Siri を語彙を使用してこの情報が共有します。 アプリにも役立ちます Siri Bobo は、Siri としてを指定したそのので、受信者を認識、*連絡先*します。
 
-Siri を知っていますので、そのメッセージがコンテンツが必要かどうかを表示するアプリの拡張機能をチェックして迅速に、受信者だけよりもメッセージを送信するために必要。 Siri が質問をユーザーに応答する MonkeyChat のため、: *"どのような do you want Bobo をでしょうか"。*
+Siri を知っていますので、そのメッセージがコンテンツが必要かどうかを表示するアプリの拡張機能をチェックして迅速に、受信者だけよりもメッセージを送信するために必要。 MonkeyChat のため、Siri は、質問をユーザーに応答します。*"何と答えて Bobo でしょうか。"*
 
 上記の例では、ユーザーが応答、 *「複数 bananas を送信してください」*、Siri は、構造化にバンドルする**インテント**:
 
@@ -144,7 +144,7 @@ Siri を知っていますので、そのメッセージがコンテンツが必
 - **ドメイン:** メッセージ
 - **目的:** sendMessage
 - **受信者:** Bobo
-- **コンテンツ:** 複数 bananas を送信してください
+- **コンテンツ:** 詳細について bananas お送りください。
 
 セットとして各ドメインは、知って*アクション*に多くのパラメーターは、目的に含めることがゼロに内で実行してドメインと、アクションに基づくことができますが、アプリに送信されます。
 
@@ -290,7 +290,7 @@ SiriKit の実装の最後のピースが必要なボキャブラリが提供す
 
 いくつかの部分、ボキャブラリを`AppIntentVocabulary.plist`ファイル。
 
-- **例のアプリでは使用**-これらアプリのユーザーと、要求の一般的なユース ケースのセットを提供します。 例: *"MonkeyFit で、トレーニングを Start"。*
+- **例のアプリでは使用**-これらアプリのユーザーと、要求の一般的なユース ケースのセットを提供します。 例:*"MonkeyFit で、トレーニングを start"。*
 - **パラメーター** -アプリに固有の非標準のパラメーター型のセットを提供します。 たとえば、トレーニング アプリの名を MonkeyFit。 これらは、で構成されます。
     - **語句**-アプリの一意の語句を定義するアプリに許可します。 例: MonkeyFit アプリの"Bananarific"トレーニングの種類。 
     - **発音**-Siri を特定のフレーズの単純な音声スペルとして発音のヒントを提供します。 たとえば、"ba nana ri fic"です。
@@ -352,7 +352,7 @@ Siri とアプリの対話を設計するとき、アプリを構築すること
 
 会話インターフェイスからは、メッセージ交換中に質問と回答して、ユーザーと Siri の両方から形成されました。 したがって Siri の質問をしてこのインターフェイスを設計するときに応答する方法について考える重要です。
 
-Siri が、質問に応答メッセージを作成するユーザーの次の例を見て *「に送信する準備がでしょうか」。* ユーザーがなどのさまざまな方法で対応できます *「送信」*、 *「キャンセル」* この質問に完全には関係のないものもまたはします。 メッセージ交換の再生方法に関係なく Siri はアプリでは、処理し、送信関連情報が利用可能になった。
+Siri が、質問に応答メッセージを作成するユーザーの次の例を見て *「に送信する準備がでしょうか」*。 ユーザーがなどのさまざまな方法で対応できます *「送信」*、 *「キャンセル」* この質問に完全には関係のないものもまたはします。 メッセージ交換の再生方法に関係なく Siri はアプリでは、処理し、送信関連情報が利用可能になった。
 
 ユーザーが Siri とのメッセージ交換を開始がいくつかのさまざまな方法はあります。
 

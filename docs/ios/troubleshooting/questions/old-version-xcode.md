@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: chamons
 ms.author: chhamo
 ms.date: 04/16/2019
-ms.openlocfilehash: 2a208d39454a33adc849bcccc66802361693e82e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
-ms.translationtype: HT
+ms.openlocfilehash: 7cbc14e0a912fe9c55ff672796e839a8dcdfd9b5
+ms.sourcegitcommit: 864f47c4f79fa588b65ff7f721367311ff2e8f8e
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61419316"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "64347114"
 ---
 # <a name="can-i-use-an-older-version-of-xcode-or-xamarinios"></a>以前のバージョンの Xcode または Xamarin.iOS を使用できますか。
 
@@ -53,7 +53,7 @@ Xamarin.iOS と Xcode のない更新が可能であれば、以上の一定の�
 一般に、Xamarin.iOS には、ある程度可能であれば、古い Xcode リリースがサポートされています。 いくつかの潜在的な課題は次のとおりです。
 
 - 新しい Xamarin.iOS は、一部の機能をサポート可能性があり、選択した Xcode での Api が存在しません。 
-- **静的レジストラー**に先行するアプリケーションをビルドする Xcode ヘッダー ファイルを必要と[ `MT0091` ](~/ios/troubleshooting/mtouch-errors.md#MT0091)または[ `MT4109` ](~/ios/troubleshooting/mtouch-errors.md#MT4109)' Api が存在しない場合のエラー。
+- **静的レジストラー**に先行するアプリケーションをビルドする Xcode ヘッダー ファイルを必要と[ `MT0091` ](~/ios/troubleshooting/mtouch-errors.md#MT0091)または[ `MT4109` ](~/ios/troubleshooting/mtouch-errors.md#MT4109) Api が存在しない場合のエラー。
   - ほとんどの場合 (新しい API の管理対象のバインドを削除する) を管理対象のリンカーを有効にするはにより使用されていない場合。
 - Bitcode ビルド (tvOS と watchOS) は、Xcode 9.0 以降のツール チェーンを使用しない場合、アプリ ストアに送信するをフェールバックできます。
 

@@ -1,5 +1,5 @@
 ---
-title: Google マップ API キー取得
+title: Google マップ API キーを取得する
 description: 追加するための Google マップ API キーを取得する方法は、機能をアプリにマップします。
 ms.prod: xamarin
 ms.assetid: D5969C57-3444-465E-D6FF-249AEE62E127
@@ -8,13 +8,13 @@ author: conceptdev
 ms.author: crdun
 ms.date: 06/25/2018
 ms.openlocfilehash: bfeb9d8fa2a0b5a9b18ab8266500586e2e3b6c68
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120022"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61155365"
 ---
-# <a name="obtaining-a-google-maps-api-key"></a>Google マップ API キー取得
+# <a name="obtaining-a-google-maps-api-key"></a>Google マップ API キーを取得する
 
 Google Maps 機能を使用して、Android では、Google マップ API キーを登録する必要があります。 これを行うまでは、アプリケーションで空白のグリッド、マップではなくだけ表示されます。 Google Maps Android API v2 キーを取得する必要があります - 古い Google Maps Android API キー v1 からのキーは機能しません。
 
