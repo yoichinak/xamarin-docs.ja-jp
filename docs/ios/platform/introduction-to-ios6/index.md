@@ -1,5 +1,5 @@
 ---
-title: IOS 6 の概要
+title: iOS 6 の概要
 description: このドキュメントは、iOS 6 で導入された機能について説明するガイドにリンクしています。 コレクション ビュー、PassKit、ソーシャル フレームワーク、および StoreKit の変更内容はすべて説明します。
 ms.prod: xamarin
 ms.assetid: 242DA7E3-8FD8-5F20-285D-603259CA622D
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
 ms.openlocfilehash: 25926d82e060b91b007da9c2295b328cb049e8df
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103869"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61302263"
 ---
-# <a name="introduction-to-ios-6"></a>IOS 6 の概要
+# <a name="introduction-to-ios-6"></a>iOS 6 の概要
 
 _iOS 6 には、さまざまな Xamarin.iOS 6 を提供するには、アプリを開発するための新しいテクノロジが含まれていますC#開発者。_
 
@@ -31,7 +31,7 @@ _iOS 6 には、さまざまな Xamarin.iOS 6 を提供するには、アプリ�
 
 ## <a name="introduction-to-passkitiosplatformpasskitmd"></a>[PassKit の概要](~/ios/platform/passkit.md)
 
-PassKit framework Passbook アプリで管理されているデジタルのパスとの対話を可能です。 詳細については、、[渡すキット ガイドの概要](~/ios/platform/passkit.md)を参照してください。
+PassKit framework Passbook アプリで管理されているデジタルのパスとの対話を可能です。 詳細については、次を参照してください。、[渡すキット ガイドの概要](~/ios/platform/passkit.md)します。
 
 
 ##  <a name="introduction-to-eventkitiosplatformeventkitmd"></a>[EventKit の概要](~/ios/platform/eventkit.md)

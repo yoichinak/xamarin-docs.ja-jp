@@ -1,5 +1,5 @@
 ---
-title: 'IOS 9 アプリが失敗する理由と: System.Exception: OBJECTIVE-C オブジェクトをマーシャ リングできませんでしたか?'
+title: 'iOS 9 アプリが System.Exception: Failed to marshal the Objective-C object\(System.Exception: Objective C オブジェクトのマーシャリングが失敗しました\) で失敗するのはなぜですか。'
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 8805ABEC-48D4-4CCB-A226-3A5B2ECE4BF0
@@ -8,17 +8,17 @@ author: lobrien
 ms.author: laobri
 ms.date: 04/03/2018
 ms.openlocfilehash: dfe1918d271946eb96d1f57d32c533a075f6d0bd
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103362"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61421958"
 ---
-# <a name="why-does-my-ios-9-app-fail-with-systemexception-failed-to-marshal-the-objective-c-object"></a>IOS 9 アプリが失敗する理由と: System.Exception: OBJECTIVE-C オブジェクトをマーシャ リングできませんでしたか?
+# <a name="why-does-my-ios-9-app-fail-with-systemexception-failed-to-marshal-the-objective-c-object"></a>iOS 9 アプリが System.Exception: Failed to marshal the Objective-C object\(System.Exception: Objective C オブジェクトのマーシャリングが失敗しました\) で失敗するのはなぜですか。
 
 このフォームのエラーが表示することがあります。
 
-> System.Exception: OBJECTIVE-C オブジェクトをマーシャ リングできませんでした.このオブジェクトの既存のマネージ インスタンスが見つかりませんでした.
+> System.Exception: Objective C のオブジェクトをマーシャ リングできませんでした.このオブジェクトの既存のマネージ インスタンスが見つかりませんでした.
 
 IOS 9 の API の変更は、基になる API を今すぐとしてアンマネージ コードを呼び出すことが期待したときにコールバック コンス トラクターを使用することが必要です。 クラスにコールバック コンス トラクターを追加するのにには、次の行を使用します。 
 
