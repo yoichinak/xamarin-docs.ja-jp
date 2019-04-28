@@ -7,11 +7,11 @@ author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
 ms.openlocfilehash: afebe7f491855844e18bf054d665cf8d54e8f353
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672392"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61183898"
 ---
 # <a name="introduction-to-web-services"></a>Web サービスの概要
 
@@ -47,7 +47,7 @@ REST の簡潔さが、モバイル アプリケーションの web サービス
 
 ## <a name="consuming-rest-services"></a>REST サービスの使用
 
-さまざまなライブラリと REST サービスを利用するために使用できるクラスがあるし、次のサブセクションでは、それらについて説明します。 REST サービスの使用に関する詳細については、[RESTful Web サービスの使用](~/xamarin-forms/data-cloud/consuming/rest.md)を参照してください。
+さまざまなライブラリと REST サービスを利用するために使用できるクラスがあるし、次のサブセクションでは、それらについて説明します。 REST サービスの使用に関する詳細については、次を参照してください。 [RESTful Web サービスの使用](~/xamarin-forms/data-cloud/consuming/rest.md)します。
 
 ### <a name="httpclient"></a>HttpClient
 
@@ -327,9 +327,9 @@ public async Task<List<TodoItem>> RefreshDataAsync ()
 
 タスク並列ライブラリ (TPL) は、同じ非同期操作をカプセル化して APM 開始/終了メソッドのペアを利用する場合のプロセスを簡略化できます`Task`オブジェクト。 このカプセル化が複数のオーバー ロードによって提供される、`Task.Factory.FromAsync`メソッド。 このメソッドを作成、`Task`を実行する、`TodoService.EndGetTodoItems`メソッドを 1 回、`TodoService.BeginGetTodoItems`メソッドが完了したらで、`null`パラメーターにデータが渡されていないことを示す、`BeginGetTodoItems`を委任します。 値では、最後に、`TaskCreationOptions`列挙型の作成とタスクの実行の既定の動作を使用することを指定します。
 
-APM の詳細については、[非同期プログラミング モデル](https://msdn.microsoft.com/library/ms228963(v=vs.110).aspx)と[TPL と従来の .NET Framework 非同期プログラミング](https://msdn.microsoft.com/library/dd997423(v=vs.110).aspx)msdn を参照してください。
+APM の詳細については、次を参照してください。[非同期プログラミング モデル](https://msdn.microsoft.com/library/ms228963(v=vs.110).aspx)と[TPL と従来の .NET Framework 非同期プログラミング](https://msdn.microsoft.com/library/dd997423(v=vs.110).aspx)msdn です。
 
-ASMX サービスの使用に関する詳細については、[ASP.NET Web サービス (ASMX) を消費して](~/xamarin-forms/data-cloud/consuming/asmx.md)を参照してください。
+ASMX サービスの使用に関する詳細については、次を参照してください。 [ASP.NET Web サービス (ASMX) を消費して](~/xamarin-forms/data-cloud/consuming/asmx.md)します。
 
 <a name="wcf" />
 
@@ -405,9 +405,9 @@ public async Task<List<TodoItem>> RefreshDataAsync ()
 
 タスク並列ライブラリ (TPL) は、同じ非同期操作をカプセル化して APM 開始/終了メソッドのペアを利用する場合のプロセスを簡略化できます`Task`オブジェクト。 このカプセル化が複数のオーバー ロードによって提供される、`Task.Factory.FromAsync`メソッド。 このメソッドを作成、`Task`を実行する、`TodoServiceClient.EndGetTodoItems`メソッドを 1 回、`TodoServiceClient.BeginGetTodoItems`メソッドが完了したらで、`null`パラメーターにデータが渡されていないことを示す、`BeginGetTodoItems`を委任します。 値では、最後に、`TaskCreationOptions`列挙型の作成とタスクの実行の既定の動作を使用することを指定します。
 
-APM の詳細については、[非同期プログラミング モデル](https://msdn.microsoft.com/library/ms228963(v=vs.110).aspx)と[TPL と従来の .NET Framework 非同期プログラミング](https://msdn.microsoft.com/library/dd997423(v=vs.110).aspx)msdn を参照してください。
+APM の詳細については、次を参照してください。[非同期プログラミング モデル](https://msdn.microsoft.com/library/ms228963(v=vs.110).aspx)と[TPL と従来の .NET Framework 非同期プログラミング](https://msdn.microsoft.com/library/dd997423(v=vs.110).aspx)msdn です。
 
-WCF サービスの使用に関する詳細については、[Windows Communication Foundation (WCF) Web サービスの使用](~/xamarin-forms/data-cloud/consuming/wcf.md)を参照してください。
+WCF サービスの使用に関する詳細については、次を参照してください。 [Windows Communication Foundation (WCF) Web サービスの使用](~/xamarin-forms/data-cloud/consuming/wcf.md)します。
 
 <a name="Calling_a_WCF_Service_with_Transport_Security" />
 
@@ -420,7 +420,7 @@ System.Net.ServicePointManager.ServerCertificateValidationCallback +=
 (se, cert, chain, sslerror) => { return true; };
 ```
 
-これにより、サーバー側の証明書の検証を無視しているときに、トランスポートの暗号化が維持されます。 ただし、この方法は効果的に証明書に関連付けられている信頼の懸念事項を無視し、適切なことができない可能性があります。 詳細については、[信頼されたルート Respectfully を使用して](https://www.mono-project.com/UsingTrustedRootsRespectfully)で[mono project.com](https://www.mono-project.com)を参照してください。
+これにより、サーバー側の証明書の検証を無視しているときに、トランスポートの暗号化が維持されます。 ただし、この方法は効果的に証明書に関連付けられている信頼の懸念事項を無視し、適切なことができない可能性があります。 詳細については、次を参照してください。[信頼されたルート Respectfully を使用して](https://www.mono-project.com/UsingTrustedRootsRespectfully)で[mono project.com](https://www.mono-project.com)します。
 
 <a name="Calling_a_WCF_Service_with_Client_Credential_Security" />
 

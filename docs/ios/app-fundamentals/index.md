@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 06/21/2017
 ms.openlocfilehash: a40227454b597578ff1c1c247b326e523c23493b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50110473"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61248518"
 ---
 # <a name="xamarinios-application-fundamentals"></a>Xamarin.iOS アプリケーションの基礎
 
@@ -36,7 +36,7 @@ ms.locfileid: "50110473"
 
 ## <a name="events-protocols-and-delegatesiosapp-fundamentalsdelegates-protocols-and-eventsmd"></a>[イベント、プロトコル、およびデリゲート](~/ios/app-fundamentals/delegates-protocols-and-events.md)
 
-この記事では、コールバックを受信して、ユーザー インターフェイス コントロールにデータを設定する場合に鍵となるiOS テクノロジを示します。 具体的には、イベント、プロトコル、およびデリゲートです。この記事では、それぞれどのようなものであるか、それぞれの C# からの使用方法を説明します。 この記事は Xamarin.iOSが iOSコントロールを使って使い慣れた .NET イベントを公開する方法だけでなく、Xamarin.iOSが プロトコルやデリゲートといった Objective-Cの概念をサポートする方法を示します。 (Objective-C デリゲートとC# デリゲートを混同しないように) この記事は プロトコルがObjective-C デリゲートと非デリゲートシナリオの両方の基盤としてどのように使うのかについても例を示します。
+この記事では、コールバックを受信して、ユーザー インターフェイス コントロールにデータを設定する場合に鍵となるiOS テクノロジを示します。 具体的には、イベント、プロトコル、およびデリゲートです。この記事では、それぞれどのようなものであるか、それぞれの C# からの使用方法を説明します。  この記事は Xamarin.iOSが iOSコントロールを使って使い慣れた .NET イベントを公開する方法だけでなく、Xamarin.iOSが プロトコルやデリゲートといった Objective-Cの概念をサポートする方法を示します。 (Objective-C デリゲートとC# デリゲートを混同しないように) この記事は プロトコルがObjective-C デリゲートと非デリゲートシナリオの両方の基盤としてどのように使うのかについても例を示します。
 
 ## <a name="working-with-the-file-systemiosapp-fundamentalsfile-systemmd"></a>[ファイル システムの操作](~/ios/app-fundamentals/file-system.md)
 

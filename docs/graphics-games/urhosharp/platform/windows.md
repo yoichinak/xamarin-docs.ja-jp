@@ -7,15 +7,15 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
 ms.openlocfilehash: 471029375d8a61a6c48d94a66d7836807e0da22f
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526807"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61386319"
 ---
 # <a name="urhosharp-windows-support"></a>UrhoSharp の Windows のサポート
 
-Urho は、ポータブル クラス ライブラリであり、ゲーム ロジックにさまざまなプラットフォーム全体で使用する同じ API を使用する必要があります、プラットフォーム固有のドライバーと、場合によっては、Urho を初期化、プラットフォーム固有の機能を活用するためにします。
+Urho は、ポータブル クラス ライブラリであり、ゲーム ロジックにさまざまなプラットフォーム全体で使用する同じ API を使用する必要があります、プラットフォーム固有のドライバーと、場合によっては、Urho を初期化、プラットフォーム固有の機能を活用するためにします.
 
 以下のページにある`MyGame`のサブクラスには、`Application`クラス。
 

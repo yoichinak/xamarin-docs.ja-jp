@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
 ms.openlocfilehash: 3e7fc3d627b5d7a1dc73caa395a9181efb0b5f08
-ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/30/2019
-ms.locfileid: "58678003"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61356136"
 ---
 # <a name="working-with-tvos-table-views-in-xamarin"></a>表形式ビュー Xamarin で tvOS の操作
 
@@ -731,7 +731,7 @@ namespace tvTable
 
 ## <a name="pulling-it-all-together"></a>すべてをまとめてプル
 
-テーブルのビューが通常の一方の側で表示されますこのドキュメントの先頭に述べたように、[分割ビュー](~/ios/tvos/user-interface/split-views.md)反対側に表示される選択した項目の詳細のナビゲーションとして。 例: 
+テーブルのビューが通常の一方の側で表示されますこのドキュメントの先頭に述べたように、[分割ビュー](~/ios/tvos/user-interface/split-views.md)反対側に表示される選択した項目の詳細のナビゲーションとして。 例えば: 
 
 [![](table-views-images/intro01.png "サンプル アプリの実行")](table-views-images/intro01.png#lightbox)
 

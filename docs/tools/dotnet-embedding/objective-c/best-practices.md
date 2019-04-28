@@ -7,11 +7,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 11/14/2017
 ms.openlocfilehash: 33138b7858b8bc04a5be30f9fad1709e916f5575
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105403"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61364140"
 ---
 # <a name="net-embedding-best-practices-for-objective-c"></a>Objective C の .NET の埋め込みのベスト プラクティス
 
@@ -64,7 +64,7 @@ Person *p = [[Person alloc] initWithFirstName:@"Sebastien" lastName:@"Pouliot"];
 
 名前付けすると、コンピューター サイエンス、他のキャッシュの無効化と 1 ではオフのエラーをされている 2 つの最も困難な問題の 1 つです。 うまくいけば .NET を埋め込むことができますからも保護以外のすべての名前付けします。
 
-### <a name="types"></a>種類
+### <a name="types"></a>型
 
 Objective C では、名前空間はサポートされていません。 一般に、その型が付いて、2 (Apple) の (サード パーティ) の 3 文字のようなプレフィックス、または`UIView`UIKit の表示を示すフレームワーク。
 

@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/08/2017
 ms.openlocfilehash: 9db9902dfbf602ba21b353f3a17920dc37b03ee5
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55234005"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61382311"
 ---
 # <a name="authentication-and-authorization"></a>認証と承認
 
@@ -37,7 +37,7 @@ OpenID Connect、OAuth 2.0 プロトコル上に、認証レイヤーです。 O
 
 OpenID Connect と OAuth 2.0 の組み合わせは、認証と API のアクセスの 2 つの基本的なセキュリティ上の懸念を結合し、IdentityServer 4 はこれらのプロトコルの実装です。
 
-EShopOnContainers 参照アプリケーションなど、マイクロ サービスへのクライアントへの直接的な通信を使用するアプリケーションでセキュリティ トークン サービス (STS) として機能する専用認証マイクロ サービスができます、ユーザーを認証する図のように9-1。 マイクロ サービスへのクライアントへの直接的な通信の詳細については、[クライアント間の通信とマイクロ サービス](~/xamarin-forms/enterprise-application-patterns/containerized-microservices.md#communication_between_client_and_microservices)を参照してください。
+EShopOnContainers 参照アプリケーションなど、マイクロ サービスへのクライアントへの直接的な通信を使用するアプリケーションでセキュリティ トークン サービス (STS) として機能する専用認証マイクロ サービスができます、ユーザーを認証する図のように9-1。 マイクロ サービスへのクライアントへの直接的な通信の詳細については、次を参照してください。[クライアント間の通信とマイクロ サービス](~/xamarin-forms/enterprise-application-patterns/containerized-microservices.md#communication_between_client_and_microservices)します。
 
 ![](authentication-and-authorization-images/authentication.png "専用認証マイクロ サービスによる認証")
 
@@ -191,7 +191,7 @@ public static IEnumerable<Client> GetClients(Dictionary<string,string> clien
 
 -   `ClientId`:クライアントの一意の ID。
 -   `ClientName`:クライアントは、ログ記録と同意画面で使用される名前を表示します。
--   `AllowedGrantTypes`:クライアントが IdentityServer と対話しようとした方法を指定します。 詳細については、[認証フローを構成する](#configuring_the_authentication_flow)を参照してください。
+-   `AllowedGrantTypes`:クライアントが IdentityServer と対話しようとした方法を指定します。 詳細については、次を参照してください。[認証フローを構成する](#configuring_the_authentication_flow)します。
 -   `ClientSecrets`:トークン エンドポイントからトークンを要求するときに使用されるクライアント シークレットの資格情報を指定します。
 -   `RedirectUris`:承認コードまたはトークンを返しますを許可されている Uri を指定します。
 -   `RequireConsent`:同意画面が必要かどうかを指定します。
@@ -279,7 +279,7 @@ public string CreateAuthorizationRequest()
 
 ```
 
-このメソッドは、IdentityServer の URI を作成します。[承認エンドポイント](https://identityserver4.readthedocs.io/en/latest/endpoints/authorize.html)、必要なパラメーターを使用します。 承認エンドポイントが、 `/connect/authorize` 5105 ユーザー設定として公開される基本のエンドポイントのポートします。 ユーザー設定の詳細については、[構成管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)を参照してください。
+このメソッドは、IdentityServer の URI を作成します。[承認エンドポイント](https://identityserver4.readthedocs.io/en/latest/endpoints/authorize.html)、必要なパラメーターを使用します。 承認エンドポイントが、 `/connect/authorize` 5105 ユーザー設定として公開される基本のエンドポイントのポートします。 ユーザー設定の詳細については、次を参照してください。[構成管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)します。
 
 > [!NOTE]
 > EShopOnContainers のモバイル アプリの攻撃対象領域を削減するには、OAuth コード Exchange (PKCE) 拡張機能の証明キーを実装します。 PKCE は、それが傍受された場合に使用されているから認証コードを保護します。 これは、うちハッシュが承認要求で渡されると、シークレットの検証コードを生成するクライアントによって、表示されているハッシュされていない認証コードを使用するときにです。 PKCE の詳細については、次を参照してください。 [OAuth パブリック クライアントでのコードの Exchange 用の Proof Key](https://tools.ietf.org/html/rfc7636) Internet Engineering Task Force の web サイト。
@@ -315,20 +315,20 @@ private async Task NavigateAsync(string url)
 }
 ```
 
-このメソッドは、戻り値の URI に含まれている認証の応答を解析し、IdentityServer には有効な承認コードが存在する、要求[トークン エンドポイント](https://identityserver4.readthedocs.io/en/latest/endpoints/token.html)、認証コードを渡すこと、PKCE シークレットの検証方法、およびその他の必須パラメーターです。 トークン エンドポイントが、 `/connect/token` 5105 ユーザー設定として公開される基本のエンドポイントのポートします。 ユーザー設定の詳細については、[構成管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)を参照してください。
+このメソッドは、戻り値の URI に含まれている認証の応答を解析し、IdentityServer には有効な承認コードが存在する、要求[トークン エンドポイント](https://identityserver4.readthedocs.io/en/latest/endpoints/token.html)、認証コードを渡すこと、PKCE シークレットの検証方法、およびその他の必須パラメーターです。 トークン エンドポイントが、 `/connect/token` 5105 ユーザー設定として公開される基本のエンドポイントのポートします。 ユーザー設定の詳細については、次を参照してください。[構成管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)します。
 
 >💡 **ヒント:**:戻り値の Uri を検証します。 ただし、eShopOnContainers のモバイル アプリでは、戻り値の URI を検証しませんは、戻り値の URI がオープン リダイレクト攻撃を防ぐための既知の場所を指すことを検証することをお勧めします。
 
 トークン エンドポイントでは、有効な承認コードと PKCE シークレットの検証を受信する場合は、アクセス トークン、id トークン、更新トークンと応答します。 (これは、API リソースへのアクセスを許可するには) アクセス トークンと id トークンは、アプリケーション設定として格納し、ページ ナビゲーションを実行します。 そのため、これは eShopOnContainers のモバイル アプリでの全体的な結果: に移動されるときのユーザーが、IdentityServer で正常に認証することに、 `MainView`  ページで、これは、 [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage)表示する、`CatalogView`として選択されているそのタブ。
 
-ページ ナビゲーションの詳細については、[ナビゲーション](~/xamarin-forms/enterprise-application-patterns/navigation.md)を参照してください。 方法については[ `WebView` ](xref:Xamarin.Forms.WebView)ナビゲーションとビュー モデルのメソッドを実行するを参照してください[ビヘイビアーを使用して呼び出すナビゲーション](~/xamarin-forms/enterprise-application-patterns/navigation.md#invoking_navigation_using_behaviors)します。 アプリケーションの設定については、[構成管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)を参照してください。
+ページ ナビゲーションの詳細については、次を参照してください。[ナビゲーション](~/xamarin-forms/enterprise-application-patterns/navigation.md)します。 方法については[ `WebView` ](xref:Xamarin.Forms.WebView)ナビゲーションとビュー モデルのメソッドを実行するを参照してください[ビヘイビアーを使用して呼び出すナビゲーション](~/xamarin-forms/enterprise-application-patterns/navigation.md#invoking_navigation_using_behaviors)します。 アプリケーションの設定については、次を参照してください。[構成管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)します。
 
 > [!NOTE]
 > EShopOnContainers できますモックのサインインでモック サービスを使用するアプリが構成されている場合、`SettingsView`します。 このモードで、アプリは、IdentityServer は、代わりに、資格情報を使用してサインインするユーザーを許可すると通信しません。
 
 #### <a name="signing-out"></a>署名アウト
 
-ユーザーがタップしたときに、 **LOG OUT**ボタン、 `ProfileView`、`LogoutCommand`で、`ProfileViewModel`クラスを実行すると、順番に実行する、`LogoutAsync`メソッド。 このメソッドにページ ナビゲーションの実行、`LoginView`渡してページ、`LogoutParameter`インスタンスに設定`true`をパラメーターとして。 ページ ナビゲーション中に渡すパラメーターの詳細については、[ナビゲーション中にパラメーターを渡す](~/xamarin-forms/enterprise-application-patterns/navigation.md#passing_parameters_during_navigation)を参照してください。
+ユーザーがタップしたときに、 **LOG OUT**ボタン、 `ProfileView`、`LogoutCommand`で、`ProfileViewModel`クラスを実行すると、順番に実行する、`LogoutAsync`メソッド。 このメソッドにページ ナビゲーションの実行、`LoginView`渡してページ、`LogoutParameter`インスタンスに設定`true`をパラメーターとして。 ページ ナビゲーション中に渡すパラメーターの詳細については、次を参照してください。[ナビゲーション中にパラメーターを渡す](~/xamarin-forms/enterprise-application-patterns/navigation.md#passing_parameters_during_navigation)します。
 
 ビューが作成されに移動したときに、`InitializeAsync`ビューの関連するビュー モデルのメソッドを実行すると、実行し、`Logout`のメソッド、`LoginViewModel`クラスは、次のコード例に示されています。
 
@@ -347,7 +347,7 @@ private void Logout()
 }
 ```
 
-このメソッドは、`CreateLogoutRequest`メソッドで、`IdentityService`をパラメーターとして、クラス、id トークンを渡すことがアプリケーションの設定から取得します。 アプリケーション設定の詳細については、[構成管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)を参照してください。 次のコード例は、`CreateLogoutRequest` メソッドを示しています。
+このメソッドは、`CreateLogoutRequest`メソッドで、`IdentityService`をパラメーターとして、クラス、id トークンを渡すことがアプリケーションの設定から取得します。 アプリケーション設定の詳細については、次を参照してください。[構成管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)します。 次のコード例は、`CreateLogoutRequest` メソッドを示しています。
 
 ```csharp
 public string CreateLogoutRequest(string token)  
@@ -360,7 +360,7 @@ public string CreateLogoutRequest(string token)
 }
 ```
 
-このメソッドは、IdentityServer の URI を作成します。[エンドポイントのセッションを終了](https://identityserver4.readthedocs.io/en/latest/endpoints/endsession.html#refendsession)、必要なパラメーターを使用します。 エンドポイントのセッションが、 `/connect/endsession` 5105 ユーザー設定として公開される基本のエンドポイントのポートします。 ユーザー設定の詳細については、[構成管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)を参照してください。
+このメソッドは、IdentityServer の URI を作成します。[エンドポイントのセッションを終了](https://identityserver4.readthedocs.io/en/latest/endpoints/endsession.html#refendsession)、必要なパラメーターを使用します。 エンドポイントのセッションが、 `/connect/endsession` 5105 ユーザー設定として公開される基本のエンドポイントのポートします。 ユーザー設定の詳細については、次を参照してください。[構成管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)します。
 
 返された URI が格納されている、`LoginUrl`のプロパティ、`LoginViewModel`クラス。 中に、`IsLogin`プロパティは`true`、 [ `WebView` ](xref:Xamarin.Forms.WebView)で、`LoginView`を表示します。 `WebView`データ バインド、 [ `Source` ](xref:Xamarin.Forms.WebView.Source)プロパティを`LoginUrl`のプロパティ、`LoginViewModel`クラス、およびサインアウト要求 IdentityServer になるときに、`LoginUrl`プロパティに設定IdentityServer の最後のセッションのエンドポイント。 IdentityServer は、ユーザーがサインインがこの要求を受け取り、サインアウトの処理が発生します。 認証は、ASP.NET Core から cookie 認証ミドルウェアによって管理される cookie で追跡されます。 そのため、IdentityServer からサインアウトは、認証 cookie を削除し、ログアウト後のリダイレクト URI がクライアントに送り返しますを送信します。
 
@@ -378,9 +378,9 @@ private async Task NavigateAsync(string url)
 }
 ```
 
-このメソッドは、id トークンとアプリケーションの設定 からアクセス トークンの両方をクリアし、設定、`IsLogin`プロパティを`false`、原因となる、 [ `WebView` ](xref:Xamarin.Forms.WebView)上、`LoginView`ページを非表示になります。 最後に、`LoginUrl`プロパティが、URI の IdentityServer の[承認エンドポイント](https://identityserver4.readthedocs.io/en/latest/endpoints/authorize.html)、必須のパラメーターを使用して、次回に備えて、ユーザーが開始には、サインインします。
+このメソッドは、id トークンとアプリケーションの設定 からアクセス トークンの両方をクリアし、設定、`IsLogin`プロパティを`false`、原因となる、 [ `WebView` ](xref:Xamarin.Forms.WebView)上、`LoginView`ページを非表示になります. 最後に、`LoginUrl`プロパティが、URI の IdentityServer の[承認エンドポイント](https://identityserver4.readthedocs.io/en/latest/endpoints/authorize.html)、必須のパラメーターを使用して、次回に備えて、ユーザーが開始には、サインインします。
 
-ページ ナビゲーションの詳細については、[ナビゲーション](~/xamarin-forms/enterprise-application-patterns/navigation.md)を参照してください。 方法については[ `WebView` ](xref:Xamarin.Forms.WebView)ナビゲーションとビュー モデルのメソッドを実行するを参照してください[ビヘイビアーを使用して呼び出すナビゲーション](~/xamarin-forms/enterprise-application-patterns/navigation.md#invoking_navigation_using_behaviors)します。 アプリケーションの設定については、[構成管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)を参照してください。
+ページ ナビゲーションの詳細については、次を参照してください。[ナビゲーション](~/xamarin-forms/enterprise-application-patterns/navigation.md)します。 方法については[ `WebView` ](xref:Xamarin.Forms.WebView)ナビゲーションとビュー モデルのメソッドを実行するを参照してください[ビヘイビアーを使用して呼び出すナビゲーション](~/xamarin-forms/enterprise-application-patterns/navigation.md#invoking_navigation_using_behaviors)します。 アプリケーションの設定については、次を参照してください。[構成管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)します。
 
 > [!NOTE]
 > EShopOnContainers で、SettingsView モック サービスを使用するアプリが構成されている場合、モックをサインアウトしてできます。 このモードでは、アプリは、IdentityServer は通信しませんし、アプリケーションの設定からのすべてのストアド トークンがクリアされます。
@@ -404,7 +404,7 @@ public class BasketController : Controller
 コント ローラーまたはアクションでマークされているアクセスしようとしているユーザーが承認されていない場合、`Authorize`属性、MVC フレームワークは、401 (未承認) HTTP 状態コードを返します。
 
 > [!NOTE]
-> パラメーターを指定することができます、 `Authorize` API を特定のユーザーに制限する属性。 詳細については、[承認](/aspnet/core/security/authorization/introduction/)を参照してください。
+> パラメーターを指定することができます、 `Authorize` API を特定のユーザーに制限する属性。 詳細については、次を参照してください。[承認](/aspnet/core/security/authorization/introduction/)します。
 
 IdentityServer は、アクセス トークンの承認を制御を提供するように、承認ワークフローに統合できます。 このアプローチは、図 9-5 に表示されます。
 
@@ -412,7 +412,7 @@ IdentityServer は、アクセス トークンの承認を制御を提供する�
 
 **図 9-5:** アクセス トークンによる認証
 
-EShopOnContainers のモバイル アプリでは、id マイクロ サービスと通信し、認証プロセスの一環としてアクセス トークンを要求します。 アクセス トークンは、アクセス要求の一部として、順序付けと basket マイクロ サービスによって公開される Api に転送されます。 アクセス トークンは、クライアントと、ユーザーに関する情報を格納します。 Api は、データへのアクセスを承認するためにその情報を使用します。 IdentityServer は、Api の保護を構成する方法については、[API リソースの構成](#configuring-api-resources)を参照してください。
+EShopOnContainers のモバイル アプリでは、id マイクロ サービスと通信し、認証プロセスの一環としてアクセス トークンを要求します。 アクセス トークンは、アクセス要求の一部として、順序付けと basket マイクロ サービスによって公開される Api に転送されます。 アクセス トークンは、クライアントと、ユーザーに関する情報を格納します。 Api は、データへのアクセスを承認するためにその情報を使用します。 IdentityServer は、Api の保護を構成する方法については、次を参照してください。 [API リソースの構成](#configuring-api-resources)します。
 
 ### <a name="configuring-identityserver-to-perform-authorization"></a>IdentityServer は承認を実行するを構成します。
 
@@ -468,7 +468,7 @@ httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValu
 
 `DefaultRequestHeaders`のプロパティ、`HttpClient`クラスは、各要求と一緒に送信されるヘッダーを公開し、アクセス トークンに追加されます、`Authorization`ヘッダー文字列で始まる`Bearer`します。 値、RESTful API に要求が送信されると、`Authorization`ヘッダーが抽出され、信頼された発行者から送信されたことと、ユーザーが API を呼び出す権限を持っているかどうかを判断するために使用を受け取ることを確認するために検証します。
 
-EShopOnContainers のモバイル アプリが web 要求を使用する方法の詳細については、[にアクセスするリモート データ](~/xamarin-forms/enterprise-application-patterns/accessing-remote-data.md)を参照してください。
+EShopOnContainers のモバイル アプリが web 要求を使用する方法の詳細については、次を参照してください。[にアクセスするリモート データ](~/xamarin-forms/enterprise-application-patterns/accessing-remote-data.md)します。
 
 ## <a name="summary"></a>まとめ
 

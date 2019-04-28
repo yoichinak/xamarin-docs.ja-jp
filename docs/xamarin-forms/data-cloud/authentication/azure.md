@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/02/2017
 ms.openlocfilehash: 428e536d6895ff16a928f8cc40a8a7976d087471
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53060492"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61331325"
 ---
 # <a name="authenticating-users-with-azure-mobile-apps"></a>Azure Mobile Apps でのユーザーの認証
 
@@ -24,14 +24,14 @@ _Azure Mobile Apps の認証と承認など、Facebook、Google、Microsoft、Tw
 
 Azure Mobile Apps の管理、Xamarin.Forms アプリケーションの認証プロセスのプロセスは次のとおりです。
 
-1. Id プロバイダーのサイトには、Azure モバイル アプリを登録し、Mobile Apps バックエンドにプロバイダーによって生成された資格情報を設定します。 詳細については、[認証用のアプリを登録し、アプリ サービスを構成する](/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started-users#register-your-app-for-authentication-and-configure-app-services)を参照してください。
-1. これにより、認証プロセスが完了すると、Xamarin.Forms アプリケーションにリダイレクトすると認証システム、Xamarin.Forms アプリケーションの新しい URL スキームを定義します。 詳細については、[アプリ、許可されている外部リダイレクト Url を追加する](/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started-users#redirecturl)を参照してください。
-1. 認証済みクライアントのみに Azure Mobile Apps バックエンドへのアクセスを制限します。 詳細については、[認証されたユーザーへのアクセス許可を制限](/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started-users#restrict-permissions-to-authenticated-users)を参照してください。
+1. Id プロバイダーのサイトには、Azure モバイル アプリを登録し、Mobile Apps バックエンドにプロバイダーによって生成された資格情報を設定します。 詳細については、次を参照してください。[認証用のアプリを登録し、アプリ サービスを構成する](/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started-users#register-your-app-for-authentication-and-configure-app-services)します。
+1. これにより、認証プロセスが完了すると、Xamarin.Forms アプリケーションにリダイレクトすると認証システム、Xamarin.Forms アプリケーションの新しい URL スキームを定義します。 詳細については、次を参照してください。[アプリ、許可されている外部リダイレクト Url を追加する](/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started-users#redirecturl)します。
+1. 認証済みクライアントのみに Azure Mobile Apps バックエンドへのアクセスを制限します。 詳細については、次を参照してください。[認証されたユーザーへのアクセス許可を制限](/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started-users#restrict-permissions-to-authenticated-users)します。
 1. Xamarin.Forms アプリケーションからの認証を呼び出します。 詳細については、次を参照してください[ポータブル クラス ライブラリに追加の認証](/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started-users#add-authentication-to-the-portable-class-library)、 [iOS アプリに認証の追加](/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started-users#add-authentication-to-the-ios-app)、 [Android アプリに認証の追加](/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started-users#add-authentication-to-the-android-app)、および。[Windows 10 アプリ プロジェクトに認証を追加](/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started-users#add-authentication-to-windows-10-including-phone-app-projects)します。
 
 > [!NOTE]
 > iOS 9 以降では、アプリのトランスポート セキュリティ (ATS) は、機密情報の誤った情報開示を回避をセキュリティで保護された接続 (アプリのバック エンド サーバーなど) のインターネット リソースと、アプリの間に強制します。   ATS が iOS 9 用にビルドされたアプリで既定で有効になるために、すべての接続は ATS セキュリティ要件に応じたされます。 接続はこれらの要件を満たしていない場合は、例外で失敗します。
-> 使用することができない場合の ATS を選択することができます、`HTTPS`プロトコルし、インターネット リソースのための通信をセキュリティで保護します。 これは、アプリの更新することで実現できます**Info.plist**ファイル。 詳細については、[アプリ トランスポート セキュリティ](~/ios/app-fundamentals/ats.md)を参照してください。
+> 使用することができない場合の ATS を選択することができます、`HTTPS`プロトコルし、インターネット リソースのための通信をセキュリティで保護します。 これは、アプリの更新することで実現できます**Info.plist**ファイル。 詳細については、次を参照してください。[アプリ トランスポート セキュリティ](~/ios/app-fundamentals/ats.md)します。
 
 従来、モバイル アプリケーションでは、認証 id プロバイダーを実行するのに埋め込み web ビューを使用するがします。 次の理由でこれを不要になったお勧めします。
 

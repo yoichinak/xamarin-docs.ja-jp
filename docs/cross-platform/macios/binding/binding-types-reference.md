@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
 ms.openlocfilehash: d460bf867ce09e614be76d0a4a7ffef01420cf82
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669480"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61266506"
 ---
 # <a name="binding-types-reference-guide"></a>バインドの種類のリファレンス ガイド
 
@@ -1942,7 +1942,7 @@ interface MyBinding {
 
 Xamarin.iOS 8.0 でラップする厳密に型指定されたクラスを簡単に作成するためのサポートが導入`NSDictionaries`します。
 
-使用して常になったときに、 [DictionaryContainer](xref:Foundation.DictionaryContainer)と共に、手動の API のデータ型になったこれを行うにははるかに簡単です。  詳細については、[厳密な型の提示](~/cross-platform/macios/binding/objective-c-libraries.md#Surfacing_Strong_Types)を参照してください。
+使用して常になったときに、 [DictionaryContainer](xref:Foundation.DictionaryContainer)と共に、手動の API のデータ型になったこれを行うにははるかに簡単です。  詳細については、次を参照してください。[厳密な型の提示](~/cross-platform/macios/binding/objective-c-libraries.md#Surfacing_Strong_Types)します。
 
 <a name="StrongDictionary" />
 

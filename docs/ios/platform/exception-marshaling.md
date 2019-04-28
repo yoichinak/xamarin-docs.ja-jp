@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/05/2017
 ms.openlocfilehash: 167d6ac421bdd2652e7f8474e1ea21bd9040723f
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114302"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61075096"
 ---
 # <a name="exception-marshaling-in-xamarinios"></a>Xamarin.iOS でマーシャ リング例外
 
@@ -261,18 +261,18 @@ xamarin_dyn_objc_msgSend (id obj, SEL sel)
 
 次のモードを使用できます。
 
-- `Default`: 既定値は、プラットフォームによって異なります。 `ThrowObjectiveCException` 、GC が協調モード (watchOS) の場合と`UnwindNativeCode`それ以外の場合 (iOS/watchOS/macOS)。 既定値は、今後変更可能性があります。
-- `UnwindNativeCode`: これは、(未定義) 以前の動作です。 GC を協調モードを使用する場合は使用できません (watchOS で唯一のオプションは、そのため、これは watchOS で有効なオプション) が、その他のすべてのプラットフォームの既定のオプション。
-- `ThrowObjectiveCException`: Objective C 例外にマネージ例外を変換し、Objective C の例外をスローします。 これは、watchOS の既定値です。
-- `Abort`: プロセスを中止します。
-- `Disable`: イベント ハンドラーでこの値を設定する意味をなさないが無効にする遅すぎますが、イベントが発生すると、例外のインターセプトに無効にします。 いずれの場合もかどうか、設定の動作として`UnwindNativeCode`します。
+- `Default`:既定値は、プラットフォームによって異なります。 `ThrowObjectiveCException` 、GC が協調モード (watchOS) の場合と`UnwindNativeCode`それ以外の場合 (iOS/watchOS/macOS)。 既定値は、今後変更可能性があります。
+- `UnwindNativeCode`:これは、(未定義) 以前の動作です。 GC を協調モードを使用する場合は使用できません (watchOS で唯一のオプションは、そのため、これは watchOS で有効なオプション) が、その他のすべてのプラットフォームの既定のオプション。
+- `ThrowObjectiveCException`:Objective C 例外にマネージ例外を変換し、Objective C の例外をスローします。 これは、watchOS の既定値です。
+- `Abort`:プロセスを中止します。
+- `Disable`:イベント ハンドラーでこの値を設定する意味をなさないが無効にする遅すぎますが、イベントが発生すると、例外のインターセプトを無効にします。 いずれの場合もかどうか、設定の動作として`UnwindNativeCode`します。
 
 マネージ コードへの Objective C の例外をマーシャ リングには、次のモードを使用できます。
 
-- `Default`: 既定値は、プラットフォームによって異なります。 `ThrowManagedException` 、GC が協調モード (watchOS) である場合と`UnwindManagedCode`それ以外の場合 (iOS と tvOS/macOS)。 既定値は、今後変更可能性があります。
-- `UnwindManagedCode`: これは、(未定義) 以前の動作です。 GC を協調モードを使用する場合は使用できません (watchOS で唯一の有効な GC モードは、watchOS で有効なオプションでないこのため)、その他のすべてのプラットフォームの既定値は。
-- `ThrowManagedException`: OBJECTIVE-C で例外をマネージ例外に変換し、マネージ例外をスローします。 これは、watchOS の既定値です。
-- `Abort`: プロセスを中止します。
+- `Default`:既定値は、プラットフォームによって異なります。 `ThrowManagedException` 、GC が協調モード (watchOS) である場合と`UnwindManagedCode`それ以外の場合 (iOS と tvOS/macOS)。 既定値は、今後変更可能性があります。
+- `UnwindManagedCode`:これは、(未定義) 以前の動作です。 GC を協調モードを使用する場合は使用できません (watchOS で唯一の有効な GC モードは、watchOS で有効なオプションでないこのため)、その他のすべてのプラットフォームの既定値は。
+- `ThrowManagedException`:Objective C の例外をマネージ例外に変換し、マネージ例外をスローします。 これは、watchOS の既定値です。
+- `Abort`:プロセスを中止します。
 - `Disable`: ハンドラーが 1 回、イベントが発生したイベントには、この値を設定する意味をなさないためは、無効にするには遅すぎるを例外の傍受を無効にします。 いずれの場合もかどうか、そのプロセスを中止します。
 
 したがって、については、例外をマーシャ リングするたびに、これを行うことができます。
