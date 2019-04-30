@@ -1,6 +1,6 @@
 ---
 title: Xamarin.Forms CollectionView のレイアウトを指定する
-description: 既定では、CollectionView を垂直方向の一覧でその項目が表示されます。 ただし、垂直および水平方向のリストとグリッドを指定することができます。
+description: 既定では、CollectionView は垂直方向のリストでその項目を表示しますが、 垂直および水平方向のリストとグリッドを指定することができます。
 ms.prod: xamarin
 ms.assetid: 5FE78207-1BD6-4706-91EF-B13932321FC9
 ms.technology: xamarin-forms
@@ -25,25 +25,25 @@ ms.locfileid: "61367602"
 
 `CollectionView` はレイアウトを制御する以下のプロパティを定義しています。
 
-- `ItemsLayout`、型の`IItemsLayout`、使用するレイアウトを指定します。
-- `ItemSizingStrategy`、型の`ItemSizingStrategy`、使用する項目のメジャーの戦略を指定します。
+- `ItemsLayout`。`IItemsLayout` 型で使用するレイアウトを指定します。
+- `ItemSizingStrategy`。`ItemSizingStrategy` 型の、使用するアイテム サイズ計測の戦略を指定します。
 
 これらのプロパティは、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトによりサポートされます。つまりデータバインディングの対象となる可能性があるという意味です。
 
-既定で、`CollectionView`を垂直方向に一覧の項目が表示されます。 ただし、使用のレイアウトのいずれかのことができます。
+既定で、 `CollectionView` は、垂直方向のリストでその項目を表示しますが、 以下のいずれかのレイアウトを使用することができます。
 
 - 垂直方向リスト – 新しい項目が追加されるにつれ、垂直方向に拡大する 1 つの列のリスト。
 - 水平方向リスト – 新しい項目が追加されるにつれ、水平方向に拡大する 1 つの行のリスト。
 - 垂直グリッド – 新しい項目が追加されるにつれ、垂直方向に拡大する複数列のグリッド。
 - 水平グリッド – 新しい項目が追加されるにつれ、水平方向に拡大する複数行のグリッド。
 
-これらのレイアウトを設定して指定できます、`ItemsLayout`から派生したクラスにプロパティ、`ItemsLayout`クラス。 このクラスは、次のプロパティを定義します。
+これらのレイアウトは、`ItemsLayout` プロパティに `ItemsLayout` クラスから派生したクラスを設定して指定できます このクラスは、 以下のようなプロパティを定義します。
 
 - `Orientation` – `ItemsLayoutOrientation` 型で、項目を追加したときに `CollectionView` が拡大する方向を指定します。
 - `SnapPointsAlignment` – `SnapPointsAlignment` 型で、スナップ ポイントを項目と揃える方法を指定します。
 - `SnapPointsType` – `SnapPointsType` 型で、スクロールするときのスナップポイントの動作を指定します。
 
-これらのプロパティは、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトによりサポートされます。つまりデータバインディングの対象となる可能性があるという意味です。 スナップ ポイントの詳細については、次を参照してください。[のスナップ ポイント](scrolling.md#snap-points)で、[項目をスクロールして表示](scrolling.md)ガイド。
+これらのプロパティは、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトによりサポートされます。つまりデータバインディングの対象となる可能性があるという意味です。 スナップ ポイントの詳細については、[ビューの項目をスクロールして表示](scrolling.md) の [スナップ ポイント](scrolling.md#snap-points) を参照してください。
 
 `ItemsLayoutOrientation`列挙体は、次のメンバーを定義します。
 
@@ -59,7 +59,7 @@ ms.locfileid: "61367602"
 
 ## <a name="vertical-list"></a>垂直方向リスト
 
-既定では、`CollectionView`垂直方向のリストのレイアウトでその項目が表示されます。 そのため、設定する必要はありません、`ItemsLayout`このレイアウトを使用するプロパティ。
+既定では、`CollectionView` は、垂直リストのレイアウトで項目を表示します ただし、次のどのレイアウトでも使用できます。
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}">
@@ -313,7 +313,7 @@ CollectionView collectionView = new CollectionView
 
 ## <a name="right-to-left-layout"></a>右から左へのレイアウト
 
-`CollectionView` レイアウトで右から左方向には、そのコンテンツを設定してできます、 [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection)プロパティを[ `RightToLeft`](xref:Xamarin.Forms.FlowDirection.RightToLeft)します。 ただし、`FlowDirection`フローの方向に応答する ページで、またはルート レイアウト内のすべての要素が発生した場合、ページまたはルートのレイアウトのプロパティが設定理想的には必要があります。
+`CollectionView` は、[`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) プロパティに [`RightToLeft`](xref:Xamarin.Forms.FlowDirection.RightToLeft) を設定することで、右から左に流れる方向でコンテンツをレイアウトできます。 ただし、`FlowDirection` プロパティは、ページまたはルートレイアウト内のすべての要素をその方向の流れに応じるようにするために、ページまたはルートレイアウトに設定するのが理想的です。
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -330,11 +330,11 @@ CollectionView collectionView = new CollectionView
 </ContentPage>
 ```
 
-既定の[ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection)親を持つ要素が[ `MatchParent`](xref:Xamarin.Forms.FlowDirection.MatchParent)します。 そのため、`CollectionView`継承、`FlowDirection`プロパティの値から、 [ `StackLayout` ](xref:Xamarin.Forms.StackLayout)、さらに継承する、`FlowDirection`プロパティの値から、 [ `ContentPage` ](xref:Xamarin.Forms.ContentPage). これは、次のスクリーン ショットに示すように、右から左のレイアウトが得られます。
+親を持つ要素の既定の [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) は、[`MatchParent`](xref:Xamarin.Forms.FlowDirection.MatchParent) です。 そのため、`CollectionView` は、[`StackLayout`](xref:Xamarin.Forms.StackLayout) から `FlowDirection` プロパティの値を継承します。さらにその `StackLayout` は、[`ContentPage`](xref:Xamarin.Forms.ContentPage) から `FlowDirection` プロパティの値を継承します。 この結果、次のスクリーン ショットに示すように、右から左のレイアウトになります。
 
 [![IOS と Android での CollectionView 垂直方向のリストを右から左のレイアウトのスクリーン ショット](layout-images/vertical-list-rtl.png "CollectionView 垂直方向のリストを右から左のレイアウト")](layout-images/vertical-list-rtl-large.png#lightbox "CollectionView 右から左の垂直方向リストのレイアウト")
 
-フローの方向に関する詳細については、次を参照してください。[右から左のローカリゼーション](~/xamarin-forms/app-fundamentals/localization/right-to-left.md)します。
+フローの方向に関する詳細については、[Right-to-left のローカリゼーション](~/xamarin-forms/app-fundamentals/localization/right-to-left.md)を参照してください。
 
 ## <a name="item-sizing"></a>項目のサイズ変更
 
