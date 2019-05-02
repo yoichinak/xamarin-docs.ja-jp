@@ -1,4 +1,4 @@
----
+﻿---
 title: Xamarin.Forms CollectionView のレイアウトを指定する
 description: 既定では、CollectionView は垂直方向のリストでその項目を表示しますが、 垂直および水平方向のリストとグリッドを指定することができます。
 ms.prod: xamarin
