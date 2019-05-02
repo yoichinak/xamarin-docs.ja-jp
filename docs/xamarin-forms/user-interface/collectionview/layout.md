@@ -23,12 +23,12 @@ ms.locfileid: "58329940"
 > [!IMPORTANT]
 > `CollectionView` は現在プレビュー段階で、計画されている機能の一部が不足しています。 さらに、実装の完了時には、API は変更される可能性があります。
 
-`CollectionView` にはレイアウトを制御する以下のプロパティが定義されています。
+`CollectionView` はレイアウトを制御する以下のプロパティを定義しています。
 
 - `ItemsLayout`。`IItemsLayout` 型で使用するレイアウトを指定します。
-- `ItemSizingStrategy`。`ItemSizingStrategy` 型で使用するアイテムのサイズ計測の戦略を指定します。
+- `ItemSizingStrategy`。`ItemSizingStrategy` 型の、使用するアイテム サイズ計測の戦略を指定します。
 
-これらのプロパティは、[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)オブジェクトで、このプロパティはデータ バインドの対象であることを意味します。
+これらのプロパティは、[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty) オブジェクトでサポートされます。つまり、このプロパティはデータ バインドの対象となることを意味します。
 
 既定で、`CollectionView` は、垂直方向のリストでその項目を表示しますが、以下のいずれかのレイアウトを使用することができます。
 
@@ -37,29 +37,29 @@ ms.locfileid: "58329940"
 - 垂直グリッド – 新しい項目が追加されるにつれ、垂直方向に拡大する複数列のグリッド。
 - 水平グリッド – 新しい項目が追加されるにつれ、水平方向に拡大する複数行のグリッド。
 
-これらのレイアウトは、`ItemsLayout` プロパティに `ItemsLayout` クラスから派生したクラスを設定して指定できます このクラスは、以下のようなプロパティが定義されています。
+これらのレイアウトは、`ItemsLayout` プロパティに `ItemsLayout` クラスから派生したクラスを設定して指定できます このクラスは、以下のようなプロパティを定義します。
 
-- `Orientation` – `ItemsLayoutOrientation` 型で、アイテムを追加した時に `CollectionView` が拡大する方向を指定します。
-- `SnapPointsAlignment` – `SnapPointsAlignment` 型で、アイテムを含むスナップ ポイントを配置する方法を指定します。
+- `Orientation` – `ItemsLayoutOrientation` 型で、項目を追加したときに `CollectionView` が拡大する方向を指定します。
+- `SnapPointsAlignment` – `SnapPointsAlignment` 型で、スナップ ポイントを項目と揃える方法を指定します。
 - `SnapPointsType` – `SnapPointsType` 型で、スクロールするときのスナップポイントの動作を指定します。
 
-これらのプロパティは、[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)オブジェクトで、このプロパティはデータ バインドの対象であることを意味します。 スナップ ポイントの詳細については、[ビューの項目をスクロールして表示](scrolling.md) の [スナップ ポイント](scrolling.md#snap-points) を参照してください。
+これらのプロパティは、[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty) オブジェクトでサポートされ、このプロパティはデータ バインドの対象になることを意味します。 スナップ ポイントの詳細については、[ビューの項目をスクロールして表示](scrolling.md) の [スナップ ポイント](scrolling.md#snap-points) を参照してください。
 
 `ItemsLayoutOrientation` 列挙体には、以下のメンバーが定義されています。
 
-- `Vertical` – アイテムが追加された時に、`CollectionView` が垂直に拡大することを示します。
-- `Horizontal` – アイテムが追加された時に、`CollectionView` が水平に拡大することを示します。
+- `Vertical` – 項目が追加されたときに、`CollectionView` が垂直に拡大することを示します。
+- `Horizontal` – 項目が追加されたときに、`CollectionView` が水平に拡大することを示します。
 
-`ListItemsLayout` クラスは、`ItemsLayout` クラスを継承し、静的な `VerticalList` と `HorizontalList` メンバーが定義されています。 これらのメンバーを使って、垂直または水平方向のリストをそれぞれ作成することができます。 また、`ListItemsLayout` オブジェクトは、`ItemsLayoutOrientation` 列挙型メンバーを引数として指定して生成することができます。
+`ListItemsLayout` クラスは、`ItemsLayout` クラスを継承し、静的な `VerticalList` と `HorizontalList` メンバーを定義します。 これらのメンバーを使って、垂直または水平方向のリストをそれぞれ作成することができます。 また、`ListItemsLayout` オブジェクトは、`ItemsLayoutOrientation` 列挙型メンバーを引数として指定して作成することができます。
 
-`GridItemsLayout` クラスは、 `ItemsLayout` クラスを継承し、 `int` 型の `Span` プロパティが定義されており、グリッドの中に表示する列数・行数を表します。 `Span` プロパティの規定値は 1 で、その値は常に1 以上である必要があります。
+`GridItemsLayout` クラスは、 `ItemsLayout` クラスを継承し、 `int` 型の `Span` プロパティを定義しており、グリッドの中に表示する列数または行数を表します。 `Span` プロパティの既定値は 1 で、その値は常に1 以上でなければなりません。
 
 > [!NOTE]
 > `CollectionView` は、ネイティブのレイアウト エンジンを使用して、レイアウトを実行します。
 
 ## <a name="vertical-list"></a>垂直方向リスト
 
-既定では、`CollectionView` は、垂直リストのレイアウトでアイテムを表示します。そのため、このレイアウトを使うために `ItemsLayout` プロパティを設定する必要はありません。
+既定では、`CollectionView` は、垂直リストのレイアウトで項目を表示します。ただし、次のどのレイアウトでも使用できます。
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}">
@@ -93,7 +93,7 @@ ms.locfileid: "58329940"
 </CollectionView>
 ```
 
-ただし、完全を求めるなら、`CollectionView` は、`ItemsLayout` に静的な `ListItemsLayout.VerticalList` メンバーを設定することで、垂直リストでアイテムを表示するための設定ができます。
+ただし、完全さを期して、`CollectionView` は、`ItemsLayout` に静的な `ListItemsLayout.VerticalList` メンバーを設定することで、垂直リストで項目を表示するように設定できます。
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}"
@@ -102,7 +102,7 @@ ms.locfileid: "58329940"
 </CollectionView>
 ```
 
-また、`ItemsLayout` プロパティに 引数として `ItemsLayoutOrientation` 列挙型のメンバーの `Vertical` を指定した `ListItemsLayout` クラスのオブジェクトをセットすることでも設定できます。
+また、引数として `ItemsLayoutOrientation` 列挙型のメンバーの `Vertical` を指定して、`ItemsLayout` プロパティに `ListItemsLayout` クラスのオブジェクトを設定することでも実現できます。
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}">
@@ -117,7 +117,7 @@ ms.locfileid: "58329940"
 </CollectionView>
 ```
 
-同等の C# コードは以下の通りです。
+同等の C# コードは以下のとおりです。
 
 ```csharp
 CollectionView collectionView = new CollectionView
@@ -127,13 +127,13 @@ CollectionView collectionView = new CollectionView
 };
 ```
 
-この結果、1 列のリストになり、新しいアイテムが追加されると垂直に拡大します。
+これにより 1 列のリストが生成され、そのリストは新しい項目が追加されると垂直に拡大します。
 
 [![IOS と Android での CollectionView 縦方向リスト レイアウトのスクリーン ショット](layout-images/vertical-list.png "CollectionView 垂直レイアウト")](layout-images/vertical-list-large.png#lightbox "CollectionView 垂直方向のリストのレイアウト")
 
 ## <a name="horizontal-list"></a>水平方向リスト
 
-`CollectionView` は、`ItemsLayout` プロパティに静的な `ListItemsLayout.HorizontalList` メンバーを設定することで、水平方向のリストにアイテムを表示できます。
+`CollectionView` は、`ItemsLayout` プロパティに静的な `ListItemsLayout.HorizontalList` メンバーを設定することで、水平方向のリストで項目を表示できます。
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}"
@@ -170,7 +170,7 @@ CollectionView collectionView = new CollectionView
 </CollectionView>
 ```
 
-また、`ItemsLayout` プロパティに 引数として `ItemsLayoutOrientation` 列挙型のメンバーの `Horizontal` を指定した `ListItemsLayout` オブジェクトをセットすることでも設定できます。
+また、引数として `Horizontal` `ItemsLayoutOrientation` 列挙型のメンバーを指定して、`ItemsLayout` プロパティに`ListItemsLayout` オブジェクトを設定することでも実現できます。
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}">
@@ -185,7 +185,7 @@ CollectionView collectionView = new CollectionView
 </CollectionView>
 ```
 
-同等の C# コードは以下の通りです。
+同等の C# コードは以下のとおりです。
 
 ```csharp
 CollectionView collectionView = new CollectionView
@@ -195,13 +195,13 @@ CollectionView collectionView = new CollectionView
 };
 ```
 
-この結果、1 行リストになり、新しいアイテムが追加されると、水平方向に拡大します。
+これにより 1 行のリストが生成され、新しい項目が追加されると、水平方向に拡大します。
 
 [![IOS と Android での CollectionView 一覧 (横並び) レイアウトのスクリーン ショット](layout-images/horizontal-list.png "CollectionView 水平レイアウト")](layout-images/horizontal-list-large.png#lightbox "CollectionView 水平方向のリストのレイアウト")
 
 ## <a name="vertical-grid"></a>垂直グリッド
 
-`CollectionView` は、`ItemsLayout` プロパティに `GridItemsLayout` オブジェクトを設定し、その `Orientation` プロパティに `Vertical` を設定することで垂直のグリッドにアイテムを表示できます。
+`CollectionView` は、`ItemsLayout` プロパティに `GridItemsLayout` オブジェクトを設定し、その `Orientation` プロパティに `Vertical` を設定することで垂直のグリッドに項目を表示できます。
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}">
@@ -241,7 +241,7 @@ CollectionView collectionView = new CollectionView
 </CollectionView>
 ```
 
-同等の C# コードは以下の通りです。
+同等の C# コードは以下のとおりです。
 
 ```csharp
 CollectionView collectionView = new CollectionView
@@ -251,13 +251,13 @@ CollectionView collectionView = new CollectionView
 };
 ```
 
-既定では、垂直の `GridItemsLayout` は、1 つの列にアイテムを表示します。 ただし、この例では、 `GridItemsLayout.Span` プロパティに 2 を設定しています。 これによって、 2 列のグリッドになり、新しい項目が追加されると、垂直方向に拡大します。
+既定では、垂直の `GridItemsLayout` は、1 つの列に項目を表示します。ただし、この例では、`GridItemsLayout.Span` プロパティに 2 を設定しています。 これによって、2 列のグリッドになり、新しい項目が追加されると、垂直方向に拡大します。
 
 [![IOS と Android での CollectionView 垂直グリッド レイアウトのスクリーン ショット](layout-images/vertical-grid.png "CollectionView 垂直グリッド レイアウト")](layout-images/vertical-grid-large.png#lightbox "CollectionView 垂直グリッド レイアウト")
 
 ## <a name="horizontal-grid"></a>水平グリッド
 
-`CollectionView` は、`ItemsLayout` プロパティに `GridItemsLayout` オブジェクトを設定し、その `Orientation` プロパティに `Horizontal` を設定することで水平のグリッドでアイテムを表示できます。
+`CollectionView` は `ItemsLayout` プロパティに `GridItemsLayout` オブジェクトを設定し、その `Orientation` プロパティに `Horizontal` を設定することで、水平のグリッドで項目を表示できます。
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}">
@@ -297,7 +297,7 @@ CollectionView collectionView = new CollectionView
 </CollectionView>
 ```
 
-同等の C# コードは以下の通りです。
+同等の C# コードは以下のとおりです。
 
 ```csharp
 CollectionView collectionView = new CollectionView
@@ -307,13 +307,13 @@ CollectionView collectionView = new CollectionView
 };
 ```
 
-既定では、水平の `GridItemsLayout` は、1 つの行にアイテムを表示します。ただし、この例では、 `GridItemsLayout.Span` プロパティに 4 を設定しています。 これによって、4 行のグリッドになり、新しい項目が追加されると、水平方向に拡大します。
+既定では、水平の `GridItemsLayout` は、1 つの行に項目を表示します。ただし、この例では、`GridItemsLayout.Span` プロパティに 4 を設定しています。 これによって 4 行のグリッドになり、新しい項目が追加されると水平方向に拡大します。
 
 [![IOS と Android での CollectionView 水平グリッド レイアウトのスクリーン ショット](layout-images/horizontal-grid.png "CollectionView 水平グリッド レイアウト")](layout-images/horizontal-grid-large.png#lightbox "CollectionView 水平グリッド レイアウト")
 
 ## <a name="right-to-left-layout"></a>右から左へのレイアウト
 
-`CollectionView` は、[ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection)プロパティに[ `RightToLeft`](xref:Xamarin.Forms.FlowDirection.RightToLeft)を設定することで、右から左へ流れる方向でコンテンツをレイアウトできます。 ただし、`FlowDirection` プロパティは、ページまたはルートレイアウト内の全ての要素がその流れの方向に反応させるために、ページまたはルートレイアウトに設定するのが理想的です。
+`CollectionView` は、[ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) プロパティに [ `RightToLeft`](xref:Xamarin.Forms.FlowDirection.RightToLeft) を設定することで、右から左に流れる方向でコンテンツをレイアウトできます。ただし、`FlowDirection` プロパティは、ページまたはルートレイアウト内のすべての要素をその方向の流れに応じるようにするために、ページまたはルートレイアウトに設定するのが理想的です。
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -330,7 +330,7 @@ CollectionView collectionView = new CollectionView
 </ContentPage>
 ```
 
-親を持つ要素の既定の [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) は、[ `MatchParent`](xref:Xamarin.Forms.FlowDirection.MatchParent) です。 そのため、`CollectionView` は、[ `StackLayout` ](xref:Xamarin.Forms.StackLayout) から `FlowDirection` プロパティの値を継承します。さらにその `StackLayout` は、[ `ContentPage` ](xref:Xamarin.Forms.ContentPage) から `FlowDirection` プロパティの値を継承しています。 この結果、次のスクリーン ショットに示すように、右から左のレイアウトになります。
+親を持つ要素の既定の [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) は、[ `MatchParent`](xref:Xamarin.Forms.FlowDirection.MatchParent) です。そのため、`CollectionView` は、[ `StackLayout` ](xref:Xamarin.Forms.StackLayout) から `FlowDirection` プロパティの値を継承します。さらにその `StackLayout` は、[ `ContentPage` ](xref:Xamarin.Forms.ContentPage) から `FlowDirection` プロパティの値を継承します。この結果、次のスクリーン ショットに示すように、右から左のレイアウトになります。
 
 [![IOS と Android での CollectionView 垂直方向のリストを右から左のレイアウトのスクリーン ショット](layout-images/vertical-list-rtl.png "CollectionView 垂直方向のリストを右から左のレイアウト")](layout-images/vertical-list-rtl-large.png#lightbox "CollectionView 右から左の垂直方向リストのレイアウト")
 
@@ -338,13 +338,13 @@ CollectionView collectionView = new CollectionView
 
 ## <a name="item-sizing"></a>項目のサイズ変更
 
-既定では、`CollectionView` の各項目は、[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) の UI 要素 が、固定のサイズを指定しない場合は、個別に測定しサイズが決定されます。 この動作は、変更できますが、それは `CollectionView.ItemSizingStrategy` プロパティの値で指定します。 このプロパティの値には、`ItemSizingStrategy` 列挙型のメンバーの 1 つを設定することができます。
+既定では、`CollectionView` の各項目は、[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) の UI 要素が固定のサイズを指定しない場合は、個別に測定されサイズが決定されます。この動作は変更でき、`CollectionView.ItemSizingStrategy` プロパティの値で指定します。 このプロパティの値には、`ItemSizingStrategy` 列挙型のメンバーの 1 つを設定することができます。
 
 - `MeasureAllItems` – 各アイテムは個別に測定されます。 これは既定値です。
-- `MeasureFirstItem` – 最初の項目のみが測定され、全ての後続の項目は最初の項目と同じサイズが与えられます。
+- `MeasureFirstItem` – 最初の項目のみが測定され、後続のすべての項目にはその最初の項目と同じサイズが与えられます。
 
 > [!IMPORTANT]
-> `MeasureFirstItem` サイズ戦略は、項目のサイズが全ての項目を通して均一であることを意図した状況で使用する必要があり、その結果としてパフォーマンスが向上します。
+> `MeasureFirstItem` サイズ戦略は、項目のサイズがすべての項目で統一されることを意図した状況で使用する必要があり、その結果としてパフォーマンスが向上します。
 
 次のコード例は、`ItemSizingStrategy` プロパティの設定を示しています。
 
