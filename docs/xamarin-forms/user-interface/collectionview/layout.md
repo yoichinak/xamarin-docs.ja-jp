@@ -45,7 +45,7 @@ ms.locfileid: "58329940"
 
 これらのプロパティは、[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty) オブジェクトでサポートされ、このプロパティはデータ バインドの対象になることを意味します。 スナップ ポイントの詳細については、[ビューの項目をスクロールして表示](scrolling.md) の [スナップ ポイント](scrolling.md#snap-points) を参照してください。
 
-`ItemsLayoutOrientation` 列挙体には、以下のメンバーが定義されています。
+`ItemsLayoutOrientation`列挙体は、次のメンバーを定義します。
 
 - `Vertical` – 項目が追加されたときに、`CollectionView` が垂直に拡大することを示します。
 - `Horizontal` – 項目が追加されたときに、`CollectionView` が水平に拡大することを示します。
