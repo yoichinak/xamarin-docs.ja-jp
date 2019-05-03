@@ -105,7 +105,7 @@ Download failed. Please download https://dl-ssl.google.com/android/repository/an
 
     -   [android\_m2repository\_r16.zip](https://dl-ssl.google.com/android/repository/android_m2repository_r16.zip) &ndash; 0595E577D19D31708195A83087881EE6
 
-    場合、 **m2repository**ダウンロード URL を作成するには前に付加して、このテーブルにアーカイブが表示されていない**https://dl-ssl.google.com/android/repository/** の名前に、 **m2repository**をダウンロードします。 たとえば、使用して**https://dl-ssl.google.com/android/repository/android\_m2repository\_r10.zip**をダウンロードする**android\_m2repository\_r10.zip**します。
+    場合、 **m2repository**ダウンロード URL を作成するには前に付加して、このテーブルにアーカイブが表示されていない**https://dl-ssl.google.com/android/repository/** の名前に、 **m2repository**をダウンロードします。 たとえば、使用して **https://dl-ssl.google.com/android/repository/android\_m2repository\_r10.zip** をダウンロードする **android\_m2repository\_r10.zip** します。
 
 2.  上記の表に示すように、ダウンロード URL の対応する MD5 ハッシュをファイルの名前を変更します。 たとえば、ダウンロードした**android\_m2repository\_r25.zip**、名前を変更する**0B3F1796C97C707339FB13AE8507AF50.zip**。 表に、ダウンロードしたファイルのダウンロード URL の MD5 ハッシュが表示されない場合は使用できます、[オンライン MD5 ジェネレーター](http://www.webconfs.com/online-md5-generator.php) URL を MD5 ハッシュ文字列に変換します。 
 
