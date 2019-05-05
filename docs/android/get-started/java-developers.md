@@ -473,7 +473,7 @@ Java で使われている言語キーワードの多くは、C# でも使われ
 |[struct](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/struct)|関連する変数のグループをカプセル化する値の型です。|
 |[typeof](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/typeof)|オブジェクトの型を取得します。|
 |[var](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/var)|暗黙的に型指定されたローカル変数を宣言します。|
-|[値](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/value)|クライアント コードがプロパティに代入する値を参照します。|
+|[value](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/value)|クライアント コードがプロパティに代入する値を参照します。|
 |[virtual](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/virtual)|派生クラスでのメソッドのオーバーライドを許可します。|
 
 
