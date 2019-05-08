@@ -32,7 +32,7 @@ Renderscript を使用して`clang`APK にバンドルされている LLVM バ�
 
 Renderscript ルーチンへの 2 つのコンポーネントです。
 
-1. **Renderscript ランタイム** &ndash; Renderscript の実行に責任を持っているネイティブ Api になります。 これには、アプリケーション用に記述された任意の Renderscripts が含まれます。
+1. **Renderscript ランタイム** &ndash; Renderscript の実行に責任を持っているネイティブ API になります。 これには、アプリケーション用に記述された任意の Renderscripts が含まれます。
 
 2. **Android のフレームワークからのマネージ ラッパー** &ndash;マネージ クラスを制御し、Renderscript ランタイム スクリプトと対話する Android アプリを許可します。 Renderscript ランタイムを制御するためのフレームワークが提供するクラス、だけでなく Android ツール チェーンは Renderscript のソース コードを調べるし、Android アプリケーションで使用するためのマネージ ラッパー クラスを生成します。
 
@@ -85,7 +85,7 @@ Renderscript エンジンでは、各割り当ての要素が、カーネルで�
 
 - [ScriptIntrinsic3DLUT](https://developer.xamarin.com/api/type/Android.Renderscripts.ScriptIntrinsic3DLUT//) &ndash; RGBA 3D ルックアップ テーブルを使用する RGB に変換します。 
 
-- [ScriptIntrinsicBLAS](https://developer.android.com/reference/android/renderscript/ScriptIntrinsicBLAS.html) &ndash; Provideshigh パフォーマンス Renderscript Api に[BLAS](http://www.netlib.org/blas/)します。 BLAS (基本線形代数サブプログラム) は、基本的なベクトルおよびマトリックスの操作を実行するための標準の構成ブロックを提供するルーチンです。 
+- [ScriptIntrinsicBLAS](https://developer.android.com/reference/android/renderscript/ScriptIntrinsicBLAS.html) &ndash; Provideshigh パフォーマンス Renderscript API に[BLAS](http://www.netlib.org/blas/)します。 BLAS (基本線形代数サブプログラム) は、基本的なベクトルおよびマトリックスの操作を実行するための標準の構成ブロックを提供するルーチンです。 
 
 - [ScriptIntrinsicBlend](https://developer.xamarin.com/api/type/Android.Renderscripts.ScriptIntrinsicBlend) &ndash; 2 つの割り当てをブレンドします。
 
