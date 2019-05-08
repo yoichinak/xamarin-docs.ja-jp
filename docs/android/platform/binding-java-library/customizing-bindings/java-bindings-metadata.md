@@ -21,7 +21,7 @@ _C#Xamarin.Android でのコードでは、バインドは、Java ネイティ�
 
 ## <a name="overview"></a>概要
 
-Xamarin.Android **Java バインディング ライブラリ**とも呼ばれるツールのヘルプで既存の Android ライブラリをバインドするために必要な作業の多くが自動化しようとする、_バインディング ジェネレーター_します。 Java ライブラリをバインドするときに、Xamarin.Android は Java のクラスを検査し、すべてのパッケージ、型、およびメンバーの一覧を生成すると、バインドします。 含まれる XML ファイルにこの Api の一覧が格納されている **\{プロジェクト directory}\obj\Release\api.xml** の **リリース** ビルドで **\{プロジェクトdirectory}\obj\Debug\api.xml** の **デバッグ** を構築します。
+Xamarin.Android **Java バインディング ライブラリ**とも呼ばれるツールのヘルプで既存の Android ライブラリをバインドするために必要な作業の多くが自動化しようとする、_バインディング ジェネレーター_します。 Java ライブラリをバインドするときに、Xamarin.Android は Java のクラスを検査し、すべてのパッケージ、型、およびメンバーの一覧を生成すると、バインドします。 含まれる XML ファイルにこの API の一覧が格納されている **\{プロジェクト directory}\obj\Release\api.xml** の **リリース** ビルドで **\{プロジェクトdirectory}\obj\Debug\api.xml** の **デバッグ** を構築します。
 
 ![Obj/デバッグ フォルダーで api.xml ファイルの場所](java-bindings-metadata-images/java-bindings-metadata-01.png)
 
@@ -192,7 +192,7 @@ NavigationManager.2DSignNextManueverEventArgs
 
 ## <a name="supported-attributes"></a>サポートされている属性
 
-次のセクションでは、Java Api を変換するための属性について説明します。
+次のセクションでは、Java API を変換するための属性について説明します。
 
 ### <a name="argstype"></a>argsType
 
