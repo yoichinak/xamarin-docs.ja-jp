@@ -182,4 +182,4 @@ saveButton.ContentDescription = Resources.GetText (Resource.String.save_info);
 ## <a name="related-links"></a>関連リンク
 
 - [クロスプラットフォームのアクセシビリティ](~/cross-platform/app-fundamentals/accessibility.md)
-- [ユーザー補助の android Api](https://developer.android.com/guide/topics/ui/accessibility/index.html)
+- [AndroidのアクセシビリティAPI](https://developer.android.com/guide/topics/ui/accessibility/index.html)
