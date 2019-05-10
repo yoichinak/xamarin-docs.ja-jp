@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 6d5be72a9329675a65b0d6873d13894b314b50e7
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e9c18920386cb58f152d7631c52240b4b5b72ff9
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61088141"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64977845"
 ---
 # <a name="stack-views-in-xamarinios"></a>Xamarin.iOS でスタック ビュー
 
@@ -34,7 +34,7 @@ _この記事では、水平方向または垂直方向に配置後のスタッ�
 
 > [!VIDEO https://youtube.com/embed/p3po6507Ip8]
 
-**UIStackView により、 [Xamarin University](https://university.xamarin.com/)**
+**UIStackView ビデオ**
 
 ## <a name="uistackview-quickstart"></a>UIStackView クイック スタート
 

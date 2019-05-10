@@ -6,13 +6,13 @@ ms.assetid: eecaf6a5-567c-49b2-ac83-2a195596c5bf
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/23/2018
-ms.openlocfilehash: 66785fcd4b38f29ca0358e1e8885e6b7da59f5a7
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 05/01/2019
+ms.openlocfilehash: 89afb106320ce77e86a66f2c78bd6e32de8c38f3
+ms.sourcegitcommit: be9658de032f3893741261f16162a664952ce178
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61189794"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64986966"
 ---
 # <a name="xamarinforms-requirements"></a>Xamarin.Forms の要件
 
@@ -25,10 +25,10 @@ _Xamarin.Forms のプラットフォームと開発システムの要件_
 Xamarin.Forms アプリケーションは次のオペレーティング システム用として記述できます。
 
 - iOS 8 以上
-- Android 4.4 (API 19) 以上 ([詳細](#android))
+- Android 5.0 (API 21) またはそれ以降 ([詳細](#android))
 - Windows 10 ユニバーサル Windows プラットフォーム ([詳細](#windows10))
 
-開発者が [.NET Standard](~/cross-platform/app-fundamentals/net-standard.md) と[共有プロジェクト](~/cross-platform/app-fundamentals/shared-projects.md)に関する知識を持っていることを前提としています。
+開発者の知識であると見なされます[.NET Standard](~/cross-platform/app-fundamentals/net-standard.md)します。
 
 ### <a name="additional-platform-support"></a>その他のプラットフォームのサポート
 
@@ -38,13 +38,6 @@ Xamarin.Forms アプリケーションは次のオペレーティング シス�
 - macOS
 - GTK#
 - WPF
-
-### <a name="platforms-from-earlier-versions"></a>旧バージョンのプラットフォーム
-
-これらのプラットフォームは、Xamarin.Forms 3.0 を使用する場合はサポートされません。
-
-- *Windows 8.1 / Windows Phone 8.1 WinRT*
-- *Windows Phone 8 Silverlight*
 
 ### <a name="android"></a>Android
 
@@ -98,3 +91,10 @@ UWP 用の Xamarin.Forms アプリの開発に必要なもの:
 - [Windows 10 SDK](https://dev.windows.com/downloads/windows-10-sdk)
 
 既存の Xamarin.Forms ソリューションに、いつでも[ユニバーサル Windows プラットフォーム (UWP) アプリを追加](~/xamarin-forms/platform/windows/installation/index.md)できます。
+
+## <a name="deprecated-platforms"></a>非推奨のプラットフォーム
+
+3.0 以降は Xamarin.Forms を使用する場合、これらのプラットフォームはサポートされていません。
+
+- *Windows 8.1 / Windows Phone 8.1 WinRT*
+- *Windows Phone 8 Silverlight*

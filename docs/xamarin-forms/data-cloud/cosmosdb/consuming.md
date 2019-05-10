@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: bc50f3567135d5b1dc805fa691cdd95acadf34f1
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6b1453164533e2905e78407f33d79a178c7f1ae8
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61327924"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978271"
 ---
 # <a name="consuming-an-azure-cosmos-db-document-database"></a>Azure Cosmos DB ドキュメント データベースの使用
 
@@ -23,7 +23,7 @@ _Azure Cosmos DB ドキュメント データベースは、JSON ドキュメン
 
 > [!VIDEO https://youtube.com/embed/BoVH12igmbg]
 
-**Microsoft Azure Cosmos DB により、 [Xamarin University](https://university.xamarin.com/)**
+**Microsoft Azure Cosmos DB のビデオ**
 
 Azure のサブスクリプションを使用して、Azure Cosmos DB ドキュメント データベース アカウントをプロビジョニングできます。 各データベース アカウントには、0 個以上のデータベースを持つことができます。 Azure Cosmos db ドキュメント データベースは、ドキュメントのコレクションとユーザーの論理コンテナーです。
 
@@ -58,7 +58,7 @@ Xamarin.Forms アプリケーションに Azure Cosmos DB ドキュメント デ
 DocumentClient client = new DocumentClient(new Uri(Constants.EndpointUri), Constants.PrimaryKey);
 ```
 
-Cosmos DB Uri とプライマリ キーを指定する必要があります、`DocumentClient`コンス トラクター。 これらは、Azure Portal から取得できます。 詳細については、[Azure Cosmos DB アカウントへの接続](/azure/cosmos-db/sql-api-dotnetcore-get-started#Connect)を参照してください。
+Cosmos DB Uri とプライマリ キーを指定する必要があります、`DocumentClient`コンストラクター。 これらは、Azure Portal から取得できます。 詳細については、[Azure Cosmos DB アカウントへの接続](/azure/cosmos-db/sql-api-dotnetcore-get-started#Connect)を参照してください。
 
 ### <a name="creating-a-database"></a>データベースを作成します。
 

@@ -1,34 +1,31 @@
-﻿---
-title: Xamarin.Forms CollectionView のレイアウトを指定する
+---
+title: Xamarin.Forms CollectionView レイアウト
 description: 既定では、CollectionView は垂直方向のリストでその項目を表示しますが、 垂直および水平方向のリストとグリッドを指定することができます。
 ms.prod: xamarin
 ms.assetid: 5FE78207-1BD6-4706-91EF-B13932321FC9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/15/2019
-ms.openlocfilehash: 8ed365ed41ac31c66d41f1a32a7a16929cdc6770
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 05/06/2019
+ms.openlocfilehash: 5543bcc93f3c38b56a4a6caa0ea23b8ccf434e1c
+ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61367602"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65048243"
 ---
-# <a name="specify-xamarinforms-collectionview-layout"></a>Xamarin.Forms CollectionView のレイアウトを指定する
+# <a name="xamarinforms-collectionview-layout"></a>Xamarin.Forms CollectionView レイアウト
 
-![[プレビュー]](~/media/shared/preview.png)
+![](~/media/shared/preview.png "この API は、現在プレリリースです")
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/CollectionViewDemos/)
-
-> [!IMPORTANT]
-> `CollectionView` は現在プレビュー段階で、計画されている機能の一部が不足しています。 さらに、実装の完了時には、API は変更される可能性があります。
 
 `CollectionView` はレイアウトを制御する以下のプロパティを定義しています。
 
 - `ItemsLayout`。`IItemsLayout` 型で使用するレイアウトを指定します。
 - `ItemSizingStrategy`。`ItemSizingStrategy` 型の、使用するアイテム サイズ計測の戦略を指定します。
 
-これらのプロパティは、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトによりサポートされます。つまりデータバインディングの対象となる可能性があるという意味です。
+これらのプロパティは、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトでサポートされます。つまり、このプロパティはデータ バインドの対象となることを意味します。
 
 既定で、 `CollectionView` は、垂直方向のリストでその項目を表示しますが、 以下のいずれかのレイアウトを使用することができます。
 
@@ -43,7 +40,7 @@ ms.locfileid: "61367602"
 - `SnapPointsAlignment` – `SnapPointsAlignment` 型で、スナップ ポイントを項目と揃える方法を指定します。
 - `SnapPointsType` – `SnapPointsType` 型で、スクロールするときのスナップポイントの動作を指定します。
 
-これらのプロパティは、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトによりサポートされます。つまりデータバインディングの対象となる可能性があるという意味です。 スナップ ポイントの詳細については、[ビューの項目をスクロールして表示](scrolling.md) の [スナップ ポイント](scrolling.md#snap-points) を参照してください。
+これらのプロパティは、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトでサポートされます。つまり、このプロパティはデータ バインドの対象となることを意味します。 スナップ ポイントの詳細については、次を参照してください。[のスナップ ポイント](scrolling.md#snap-points)で、 [Xamarin.Forms CollectionView スクロール](scrolling.md)ガイド。
 
 `ItemsLayoutOrientation`列挙体は、次のメンバーを定義します。
 
@@ -59,7 +56,7 @@ ms.locfileid: "61367602"
 
 ## <a name="vertical-list"></a>垂直方向リスト
 
-既定では、`CollectionView` は、垂直リストのレイアウトで項目を表示します ただし、次のどのレイアウトでも使用できます。
+既定では、`CollectionView` は、垂直リストのレイアウトで項目を表示します ただし、`ItemsLayout` 次のどのレイアウトでも使用できます。
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}">
@@ -344,7 +341,7 @@ CollectionView collectionView = new CollectionView
 - `MeasureFirstItem` – 最初の項目のみが測定され、後続のすべての項目にはその最初の項目と同じサイズが与えられます。
 
 > [!IMPORTANT]
-> `MeasureFirstItem` サイズ戦略は、項目のサイズがすべての項目で統一されることを意図した状況で使用する必要があり、その結果としてパフォーマンスが向上します。
+> `MeasureFirstItem`戦略をサイズ変更、アイテムのサイズがすべての項目の間で統一する予定は状況で使用するとパフォーマンスの向上が発生します。
 
 次のコード例は、`ItemSizingStrategy` プロパティの設定を示しています。
 
@@ -355,7 +352,7 @@ CollectionView collectionView = new CollectionView
 </CollectionView>
 ```
 
-同等の C# コードは以下のとおりです。
+同等のコードをC#で示します。
 
 ```csharp
 CollectionView collectionView = new CollectionView
@@ -365,8 +362,11 @@ CollectionView collectionView = new CollectionView
 };
 ```
 
+> [!NOTE]
+> 戦略をサイズ変更項目は、現在で実装されている iOS のみです。
+
 ## <a name="related-links"></a>関連リンク
 
 - [CollectionView (サンプル)](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/CollectionViewDemos/)
 - [Right-to-left のローカライズ](~/xamarin-forms/app-fundamentals/localization/right-to-left.md)
-- [ビューのアイテムへのスクロール](scrolling.md)
+- [Xamarin.Forms の CollectionView スクロール](scrolling.md)

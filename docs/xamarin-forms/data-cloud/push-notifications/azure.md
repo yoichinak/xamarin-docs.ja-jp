@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/02/2017
-ms.openlocfilehash: 92c068ceb3d382ed4612318dc987d950ec7e7ef2
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 2cfb15222c33309101366273d5bc9c42db68b436
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61327478"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978122"
 ---
 # <a name="sending-push-notifications-from-azure-mobile-apps"></a>Azure Mobile Apps からプッシュ通知を送信します。
 
@@ -23,7 +23,7 @@ _Azure Notification Hubs は、バックエンドを異なるプラットフォ�
 
 > [!VIDEO https://youtube.com/embed/le2lDY22xwM]
 
-**Azure プッシュ通知ハブと、Xamarin.Forms で[Xamarin University](https://university.xamarin.com/)**
+**Azure Notification Hub のプッシュと Xamarin.Forms のビデオ**
 
 プッシュ通知を使用して、アプリケーションの engagement と使用率を向上させるには、モバイル デバイスでアプリケーションのバックエンド システムから、メッセージなどの情報を提供します。 ユーザーが対象となるアプリケーションを使用していない場合でも、通知の送信でいつでも、することができます。
 

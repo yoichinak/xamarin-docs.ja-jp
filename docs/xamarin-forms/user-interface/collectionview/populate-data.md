@@ -1,27 +1,24 @@
 ---
-title: Xamarin.Forms の CollectionView にデータを設定する
+title: Xamarin.Forms CollectionView データ
 description: CollectionView は、ItemsSource プロパティに IEnumerable を実装した任意のコレクションを設定することで、データを設定します。
 ms.prod: xamarin
 ms.assetid: E1783E34-1C0F-401A-80D5-B2BE5508F5F8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/15/2019
-ms.openlocfilehash: 57012202d981b96dba42f3017a19f2e32e4982ec
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 05/06/2019
+ms.openlocfilehash: 1350d5a5a0845029b7ef6a06647ad4c56f0f8135
+ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61367032"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65048275"
 ---
-# <a name="populate-xamarinforms-collectionview-with-data"></a>Xamarin.Forms の CollectionView にデータを設定する
+# <a name="xamarinforms-collectionview-data"></a>Xamarin.Forms CollectionView データ
 
-![[プレビュー]](~/media/shared/preview.png)
+![](~/media/shared/preview.png "この API は、現在プレリリースです")
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/CollectionViewDemos/)
-
-> [!IMPORTANT]
-> `CollectionView` は現在プレビュー段階で、計画されている機能の一部が不足しています。 さらに、実装の完了時には、API は変更される可能性があります。
 
 `CollectionView` には、表示するデータとその外観を定義する以下のプロパティが定義されています。
 
@@ -188,8 +185,66 @@ public class Monkey
 
 データ テンプレートについて詳しくは「[Xamarin.Forms Data Templates](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)」(Xamarin.Forms のデータ テンプレート) をご覧ください。
 
+## <a name="choose-item-appearance-at-runtime"></a>実行時に項目の外観を選択します。
+
+内の各項目の外観、`CollectionView`を設定して、項目の値に基づいて、実行時に選択することができます、`CollectionView.ItemTemplate`プロパティを[ `DataTemplateSelector` ](xref:Xamarin.Forms.DataTemplateSelector)オブジェクト。
+
+```xaml
+<ContentPage ...
+             xmlns:controls="clr-namespace:CollectionViewDemos.Controls">
+    <ContentPage.Resources>
+        <DataTemplate x:Key="AmericanMonkeyTemplate">
+            ...
+        </DataTemplate>
+
+        <DataTemplate x:Key="OtherMonkeyTemplate">
+            ...
+        </DataTemplate>
+
+        <controls:MonkeyDataTemplateSelector x:Key="MonkeySelector"
+                                             AmericanMonkey="{StaticResource AmericanMonkeyTemplate}"
+                                             OtherMonkey="{StaticResource OtherMonkeyTemplate}" />
+    </ContentPage.Resources>
+
+    <CollectionView ItemsSource="{Binding Monkeys}"
+                    ItemTemplate="{StaticResource MonkeySelector}" />
+</ContentPage>
+```
+
+同等のコードをC#で示します。
+
+```csharp
+CollectionView collectionView = new CollectionView
+{
+    ItemTemplate = new MonkeyDataTemplateSelector { ... }
+};
+collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
+```
+
+`ItemTemplate`プロパティに設定されて、`MonkeyDataTemplateSelector`オブジェクト。 次の例は、`MonkeyDataTemplateSelector`クラス。
+
+```csharp
+public class MonkeyDataTemplateSelector : DataTemplateSelector
+{
+    public DataTemplate AmericanMonkey { get; set; }
+    public DataTemplate OtherMonkey { get; set; }
+
+    protected override DataTemplate OnSelectTemplate(object item, BindableObject container)
+    {
+        return ((Monkey)item).Location.Contains("America") ? AmericanMonkey : OtherMonkey;
+    }
+}
+```
+
+`MonkeyDataTemplateSelector`クラス定義`AmericanMonkey`と`OtherMonkey` [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)さまざまなデータ テンプレートに設定されているプロパティ。 `OnSelectTemplate`のオーバーライド、`AmericanMonkey`テンプレート、monkey の名前に"America"が含まれている場合に、青緑に monkey の名前と場所を表示します。 Monkey の名前に"America"が含まれていない場合、`OnSelectTemplate`のオーバーライド、`OtherMonkey`テンプレートで、silver に monkey の名前と場所を表示します。
+
+[![スクリーン ショットの CollectionView ランタイム項目テンプレートの選択、iOS と Android で](populate-data-images/datatemplateselector.png "collectionview ランタイム項目テンプレートの選択")](populate-data-images/datatemplateselector-large.png#lightbox "ランタイムで項目テンプレートの選択、CollectionView")
+
+データ テンプレート セレクターの詳細については、次を参照してください。[作成 Xamarin.Forms DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)します。
+
 ## <a name="related-links"></a>関連リンク
 
 - [CollectionView (サンプル)](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/CollectionViewDemos/)
 - [Xamarin.Forms のデータ バインディング](~/xamarin-forms/app-fundamentals/data-binding/index.md)
 - [Xamarin.Forms データ テンプレート](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
+- [Xamarin.Forms DataTemplateSelector を作成します。](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)

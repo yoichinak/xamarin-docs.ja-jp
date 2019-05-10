@@ -6,12 +6,12 @@ ms.assetid: 1ACB0935-6D5F-4A5F-BE28-08DA1B675F0E
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 4cb2dde4dc23bb9376343b49a091277b667d834e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c3232282b788edbc401f889f5277d0227a1572b8
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61199630"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64977741"
 ---
 # <a name="objective-sharpie-examples"></a>目標油性例
 
@@ -26,8 +26,3 @@ ms.locfileid: "61199630"
 ## <a name="completed-ios-bindings"></a>完了した iOS のバインド
 
 完了のバインディング数を表示したりからダウンロードすること、 [monotouch バインド Github リポジトリ](https://github.com/mono/monotouch-bindings/)します。
-
-## <a name="related-links"></a>関連リンク
-
-- [Xamarin University のコース:OBJECTIVE-C バインディング ライブラリをビルド](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin University のコース:目標油性で、OBJECTIVE-C のバインド ライブラリをビルドします。](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

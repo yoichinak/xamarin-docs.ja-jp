@@ -1,34 +1,31 @@
 ---
-title: データが使用できない場合に表示される、EmptyView
-description: Collectionview は、表示できるデータがない場合、ユーザーにフィードバックを提供する空のビューを指定できます。 空のビューには、文字列、ビュー、または複数のビューができます。
+title: Xamarin.Forms CollectionView EmptyView
+description: Collectionview は、表示できるデータがない場合、ユーザーにフィードバックを提供する空のビューを指定できます。 `EmptyView` には、文字列、ビュー、または複数のビューが使用できます。
 ms.prod: xamarin
 ms.assetid: 6CEBCFE6-5577-4F68-9709-431062609153
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/19/2019
-ms.openlocfilehash: a430387bba83887045e5687c99d9295d4be373e4
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 05/06/2019
+ms.openlocfilehash: 78e9ddcb1d9dd91dadea94016b206867ac9508e6
+ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61019469"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65048194"
 ---
-# <a name="display-an-emptyview-when-data-is-unavailable"></a>データが使用できない場合に表示される、EmptyView
+# <a name="xamarinforms-collectionview-emptyview"></a>Xamarin.Forms CollectionView EmptyView
 
-![[プレビュー]](~/media/shared/preview.png)
+![](~/media/shared/preview.png "この API は、現在プレリリースです")
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/CollectionViewDemos/)
-
-> [!IMPORTANT]
-> `CollectionView` は現在プレビュー段階で、計画されている機能の一部が不足しています。 さらに、実装の完了時には、API は変更される可能性があります。
 
 `CollectionView` 表示するデータがない場合は、ユーザーからのフィードバックを提供するために使用できる次のプロパティを定義します。
 
 - `EmptyView`、型の`object`、文字列、バインド、または表示されるときに表示される、`ItemsSource`プロパティが`null`、によって、コレクションが指定されている場合、または、`ItemsSource`プロパティが`null`または空です。 既定値は `null` です。
 - `EmptyViewTemplate`、型の[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)、テンプレートを使用して、指定した書式を`EmptyView`します。 既定値は `null` です。
 
-これらのプロパティは、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトによりサポートされます。つまりデータバインディングの対象となる可能性があるという意味です。
+これらのプロパティは、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトでサポートされます。つまり、このプロパティはデータ バインドの対象となることを意味します。
 
 設定の主な使用シナリオ、`EmptyView`プロパティでフィルター処理時にユーザーからのフィードバックが表示されて、`CollectionView`増えませんデータ、およびユーザーのフィードバックを表示する web サービスからデータを取得するときにします。
 
@@ -260,8 +257,80 @@ void ToggleEmptyView(bool isToggled)
 
 リソース ディクショナリの詳細については、次を参照してください。 [Xamarin.Forms リソース ディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)します。
 
+## <a name="choose-an-emptyviewtemplate-at-runtime"></a>実行時に、EmptyViewTemplate を選択します。
+
+外観、`EmptyView`を設定して、その値に基づいて、実行時に選択することができます、`CollectionView.EmptyViewTemplate`プロパティを[ `DataTemplateSelector` ](xref:Xamarin.Forms.DataTemplateSelector)オブジェクト。
+
+```xaml
+<ContentPage ...
+             xmlns:controls="clr-namespace:CollectionViewDemos.Controls">
+    <ContentPage.Resources>
+        <DataTemplate x:Key="AdvancedTemplate">
+            ...
+        </DataTemplate>
+
+        <DataTemplate x:Key="BasicTemplate">
+            ...
+        </DataTemplate>
+
+        <controls:SearchTermDataTemplateSelector x:Key="SearchSelector"
+                                                 DefaultTemplate="{StaticResource AdvancedTemplate}"
+                                                 OtherTemplate="{StaticResource BasicTemplate}" />
+    </ContentPage.Resources>
+
+    <StackLayout Margin="20">
+        <SearchBar x:Name="searchBar"
+                   SearchCommand="{Binding FilterCommand}"
+                   SearchCommandParameter="{Binding Source={x:Reference searchBar}, Path=Text}"
+                   Placeholder="Filter" />
+        <CollectionView ItemsSource="{Binding Monkeys}"
+                        EmptyView="{Binding Source={x:Reference searchBar}, Path=Text}"
+                        EmptyViewTemplate="{StaticResource SearchSelector}" />
+    </StackLayout>
+</ContentPage>
+```
+
+同等のコードをC#で示します。
+
+```csharp
+SearchBar searchBar = new SearchBar { ... };
+CollectionView collectionView = new CollectionView
+{
+    EmptyView = searchBar.Text,
+    EmptyViewTemplate = new SearchTermDataTemplateSelector { ... }
+};
+collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
+```
+
+`EmptyView`プロパティに設定されて、 [ `SearchBar.Text` ](xref:Xamarin.Forms.SearchBar.Text)プロパティ、および`EmptyViewTemplate`プロパティに設定されて、`SearchTermDataTemplateSelector`オブジェクト。
+
+ときに、 [ `SearchBar` ](xref:Xamarin.Forms.SearchBar)実行、 `FilterCommand`、によって表示されるコレクション、`CollectionView`に格納されている検索用語のフィルター処理されて、 [ `SearchBar.Text` ](xref:Xamarin.Forms.SearchBar.Text)プロパティ。 フィルター処理の結果、データがない場合、 [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)によって選択された、`SearchTermDataTemplateSelector`としてオブジェクトを設定、`EmptyViewTemplate`プロパティと表示されます。
+
+次の例は、`SearchTermDataTemplateSelector`クラス。
+
+```csharp
+public class SearchTermDataTemplateSelector : DataTemplateSelector
+{
+    public DataTemplate DefaultTemplate { get; set; }
+    public DataTemplate OtherTemplate { get; set; }
+
+    protected override DataTemplate OnSelectTemplate(object item, BindableObject container)
+    {
+        string query = (string)item;
+        return query.ToLower().Equals("xamarin") ? OtherTemplate : DefaultTemplate;
+    }
+}
+```
+
+`SearchTermTemplateSelector`クラス定義`DefaultTemplate`と`OtherTemplate` [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)さまざまなデータ テンプレートに設定されているプロパティ。 `OnSelectTemplate`のオーバーライド`DefaultTemplate`、検索クエリに"xamarin"と等しくない場合、ユーザーにメッセージが表示されます。 検索クエリが、"xamarin"に等しい場合に、`OnSelectTemplate`のオーバーライド`OtherTemplate`、基本的なメッセージをユーザーが表示されます。
+
+[![CollectionView ランタイム空のビュー テンプレートの選択、iOS や Android 上のスクリーン ショット](emptyview-images/datatemplateselector.png "collectionview ランタイム空のビュー テンプレートの選択")](emptyview-images/datatemplateselector-large.png#lightbox "ランタイム空のビュー テンプレートcollectionview の選択")
+
+データ テンプレート セレクターの詳細については、次を参照してください。[作成 Xamarin.Forms DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)します。
+
 ## <a name="related-links"></a>関連リンク
 
 - [CollectionView (サンプル)](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/CollectionViewDemos/)
 - [Xamarin.Forms データ テンプレート](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
 - [Xamarin.Forms のリソース ディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)
+- [Xamarin.Forms DataTemplateSelector を作成します。](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)

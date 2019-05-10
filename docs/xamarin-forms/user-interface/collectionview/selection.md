@@ -1,44 +1,42 @@
 ---
-title: Xamarin.Forms CollectionView 選択モードを設定します。
-description: 既定では、CollectionView 選択は無効です。 ただし、1 つまたは複数選択を有効にすることができます。
+title: Xamarin.Forms CollectionView の選択
+description: 既定では、CollectionView 選択は無効です。 単一または複数選択を有効にすることができます。
 ms.prod: xamarin
 ms.assetid: 423D91C7-1E58-4735-9E80-58F11CDFD953
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/18/2019
-ms.openlocfilehash: 441afb9348a85de61d35574bb9121c7de713a897
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 05/06/2019
+ms.openlocfilehash: 1ffed60253889491636fa105dd444ced9c2bedf5
+ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61367779"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65048218"
 ---
-# <a name="set-collectionview-selection-mode"></a>CollectionView 選択モードを設定します。
+# <a name="xamarinforms-collectionview-selection"></a>Xamarin.Forms CollectionView の選択
 
-![[プレビュー]](~/media/shared/preview.png)
+![](~/media/shared/preview.png "この API は、現在プレリリースです")
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/CollectionViewDemos/)
-
-> [!IMPORTANT]
-> `CollectionView` は現在プレビュー段階で、計画されている機能の一部が不足しています。 さらに、実装の完了時には、API は変更される可能性があります。
 
 `CollectionView` 項目の選択を制御する次のプロパティを定義します。
 
 - `SelectionMode`、型の`SelectionMode`、選択モード。
 - `SelectedItem`、型の`object`、一覧で選択された項目。 このプロパティは、`null`項目が選択されていないときの値します。
+- `SelectedItems`、型の`IList<object>`、一覧で項目を選択します。 このプロパティは読み取り専用であり、`null`項目が選択されていないときの値します。
 - `SelectionChangedCommand`、型の`ICommand`、選択した項目が変更されたときに実行されます。
 - `SelectionChangedCommandParameter`、型の`object`、に渡されるパラメーターは、`SelectionChangedCommand`します。
 
 これらすべてのプロパティに支えは[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)オブジェクトで、このプロパティはデータ バインドの対象であることを意味します。
 
-既定では、`CollectionView`選択が無効になっています。 この動作を変更して、設定して、ただし、`SelectionMode`プロパティの値のいずれかを`SelectionMode`列挙型メンバー。
+既定では、`CollectionView` の選択は無効になっていますが、 この動作を変更して、設定して、ただし、`SelectionMode`プロパティの値のいずれかを`SelectionMode`列挙型メンバー。
 
 - `None` – 項目を選択できないことを示します。 これが既定値です。
 - `Single` –、強調表示されている選択項目を 1 つの項目を選択できることを示します。
 - `Multiple` – 複数の項目選択できるである、選択したアイテムを強調表示されていることを示します。
 
-`CollectionView` 定義、`SelectionChanged`ときに発生するイベント、`SelectedItem`プロパティの変更、いずれかの理由、ユーザーまたはアプリケーションが、プロパティを設定すると、一覧から項目を選択します。 `SelectionChangedEventArgs`に付属しているオブジェクト、`SelectionChanged`イベントには 2 つのプロパティが両方の種類の`IReadOnlyList<object>`:
+`CollectionView` 定義、`SelectionChanged`ときに発生するイベント、`SelectedItem`プロパティの変更、いずれかの理由、ユーザーまたはアプリケーションが、プロパティを設定すると、一覧から項目を選択します。 さらに、このイベントもときに発生する、`SelectedItems`プロパティの変更。 `SelectionChangedEventArgs`に付属しているオブジェクト、`SelectionChanged`イベントには 2 つのプロパティが両方の種類の`IReadOnlyList<object>`:
 
 - `PreviousSelection` – 選択範囲が変更される前に、選択された項目の一覧。
 - `CurrentSelection` – 選択の変更後に、選択された項目の一覧。
@@ -73,8 +71,8 @@ collectionView.SelectionChanged += OnCollectionViewSelectionChanged;
 ```csharp
 void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e)
 {
-    string previous = (previousSelectedItems.FirstOrDefault() as Monkey)?.Name;
-    string current = (currentSelectedItems.FirstOrDefault() as Monkey)?.Name;
+    string previous = (e.PreviousSelection.FirstOrDefault() as Monkey)?.Name;
+    string current = (e.CurrentSelection.FirstOrDefault() as Monkey)?.Name;
     ...
 }
 ```
@@ -86,7 +84,50 @@ void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e
 
 [![IOS と Android で、1 つを選択した CollectionView 垂直方向の一覧のスクリーン ショット](selection-images/single-selection.png "CollectionView 垂直方向に 1 つを選択した一覧")](selection-images/single-selection-large.png#lightbox "CollectionView で単一の垂直方向の一覧選択")
 
-## <a name="pre-selection"></a>前の選択
+## <a name="multiple-selection"></a>複数の選択
+
+ときに、`SelectionMode`プロパティに設定されて`Multiple`での複数の項目、`CollectionView`を選択できます。 項目が選択されているときに、`SelectedItems`プロパティは、選択した項目に設定されます。 このプロパティが変更されたときに、`SelectionChangedCommand`が実行される (の値を持つ、`SelectionChangedCommandParameter`に渡される、 `ICommand`)、および`SelectionChanged`イベントが発生します。
+
+次の XAML の例は、`CollectionView`複数項目の選択に応答することができます。
+
+```xaml
+<CollectionView ItemsSource="{Binding Monkeys}"
+                SelectionMode="Multiple"
+                SelectionChanged="OnCollectionViewSelectionChanged">
+    ...
+</CollectionView>
+```
+
+同等のコードをC#で示します。
+
+```csharp
+CollectionView collectionView = new CollectionView
+{
+    SelectionMode = SelectionMode.Multiple
+};
+collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
+collectionView.SelectionChanged += OnCollectionViewSelectionChanged;
+```
+
+このコード例では、`OnCollectionViewSelectionChanged`イベント ハンドラーが実行されるときに、`SelectionChanged`イベント ハンドラーが、以前に選択した項目では、および現在の選択した項目を取得するイベントの起動。
+
+```csharp
+void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e)
+{
+    var previous = e.PreviousSelection;
+    var current = e.CurrentSelection;
+    ...
+}
+```
+
+> [!IMPORTANT]
+> `SelectionChanged`変更した結果として発生した変更がイベントを発生させる、`SelectionMode`プロパティ。
+
+次のスクリーン ショットで複数の項目の選択、 `CollectionView`:
+
+[![IOS と Android での複数選択 CollectionView 垂直方向の一覧のスクリーン ショット](selection-images/multiple-selection.png "CollectionView 複数を選択した垂直方向に一覧")](selection-images/multiple-selection-large.png#lightbox "CollectionView を垂直方向に一覧複数の選択")
+
+## <a name="single-pre-selection"></a>1 つの事前選択
 
 ときに、`SelectionMode`プロパティに設定されて`Single`、1 つの項目で、`CollectionView`設定であらかじめ選択されて、`SelectedItem`プロパティ項目を。 次の XAML の例は、`CollectionView`事前に 1 つの項目を選択します。
 
@@ -145,6 +186,43 @@ public class MonkeysViewModel : INotifyPropertyChanged
 そのため、ときに、`CollectionView`が表示されたら、一覧の 4 番目の項目が事前選択されています。
 
 [![IOS と Android での 1 つの事前選択で CollectionView 垂直方向の一覧のスクリーン ショット](selection-images/single-pre-selection.png "CollectionView 垂直方向に一覧で 1 つの事前選択")](selection-images/single-pre-selection-large.png#lightbox "CollectionView 垂直方向の一覧1 つ前の選択")
+
+## <a name="multiple-pre-selection"></a>複数の事前選択
+
+ときに、`SelectionMode`プロパティに設定されて`Multiple`での複数の項目、`CollectionView`事前に選択できます。 次の XAML の例は、`CollectionView`を複数の項目の前の選択が有効になります。
+
+```xaml
+<CollectionView x:Name="collectionView"
+                ItemsSource="{Binding Monkeys}"
+                SelectionMode="Multiple">
+    ...
+</CollectionView>
+```
+
+同等のコードをC#で示します。
+
+```csharp
+CollectionView collectionView = new CollectionView
+{
+    SelectionMode = SelectionMode.Multiple
+};
+collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
+```
+
+複数の項目、`CollectionView`追加することによってあらかじめ選択されて、`SelectedItems`プロパティ。
+
+```csharp
+collectionView.SelectedItems.Add(viewModel.Monkeys.Skip(1).FirstOrDefault());
+collectionView.SelectedItems.Add(viewModel.Monkeys.Skip(3).FirstOrDefault());
+collectionView.SelectedItems.Add(viewModel.Monkeys.Skip(4).FirstOrDefault());
+```
+
+> [!NOTE]
+> `SelectedItems`プロパティが読み取り専用、およびため双方向のデータが事前に項目を選択するバインディングを使用することはできません。
+
+そのため、ときに、`CollectionView`が表示されたら、2 番目、4 番目に、リスト内の 5 番目の項目があらかじめ選択と。
+
+[![IOS と Android での複数の事前選択 CollectionView 垂直方向の一覧のスクリーン ショット](selection-images/multiple-pre-selection.png "CollectionView 垂直方向に一覧で複数の事前選択")](selection-images/multiple-pre-selection-large.png#lightbox "CollectionView 垂直複数の事前選択されたリスト")
 
 ## <a name="change-selected-item-color"></a>選択した項目の色を変更します。
 

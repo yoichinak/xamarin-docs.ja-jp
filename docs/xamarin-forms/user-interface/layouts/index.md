@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/18/2018
-ms.openlocfilehash: 5bd232293c979566faed2856de7287903da94054
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 661f27b90882234ddc629ac280690d534aca499d
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61300398"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64977792"
 ---
 # <a name="layouts-in-xamarinforms"></a>Xamarin.Forms のレイアウト
 
@@ -23,7 +23,7 @@ Xamarin.Forms は、いくつかのレイアウトと画面上のコンテンツ
 
 > [!VIDEO https://youtube.com/embed/4HlLjTZQzjM]
 
-**Xamarin.Forms のレイアウトにより、 [Xamarin University](https://university.xamarin.com/)**
+**Xamarin.Forms のレイアウトのビデオ**
 
 各レイアウト コントロールは画面の向きの変更を処理する方法の詳細と、以下について説明します。
 

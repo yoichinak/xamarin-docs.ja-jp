@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
-ms.openlocfilehash: fcf4e6d9b281eaac4be888c499e537f7397528a0
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c8adc7ec7f717cf0004f79e3b71123d6daeaee86
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61392013"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978440"
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>チュートリアル: iOS Objective-C ライブラリのバインド
 
@@ -734,5 +734,3 @@ public void ColorPickerControllerDidFinish (InfColorPickerController controller)
 - [バインドの種類のリファレンス ガイド](~/cross-platform/macios/binding/binding-types-reference.md)
 - [Objective-C 開発者向けの Xamarin](~/ios/get-started/objective-c-developers/index.md)
 - [フレームワーク デザインのガイドライン](https://msdn.microsoft.com/library/ms229042.aspx)
-- [Xamarin University のコース:OBJECTIVE-C バインディング ライブラリをビルド](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin University のコース:目標油性で、OBJECTIVE-C のバインド ライブラリをビルドします。](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

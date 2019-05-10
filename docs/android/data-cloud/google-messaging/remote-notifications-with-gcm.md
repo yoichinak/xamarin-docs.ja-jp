@@ -6,27 +6,26 @@ ms.assetid: 4FC3C774-EF93-41B2-A81E-C6A08F32C09B
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
-ms.date: 04/12/2018
-ms.openlocfilehash: e5a5e44a61d352b5de05564ebb7192d21ed83dfa
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 05/02/2019
+ms.openlocfilehash: 7f7afacaf8154cd425fcd1c1638a512d5bc32ffd
+ms.sourcegitcommit: 53480ed32a126f88eec82e8c8ee5ed8d30616c44
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61012817"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "65017696"
 ---
 # <a name="remote-notifications-with-google-cloud-messaging"></a>Google Cloud Messaging を使用したリモート通知
 
-_このチュートリアルでは、Xamarin.Android アプリケーションで Google Cloud Messaging を使用して、リモートの通知 (プッシュ通知とも呼ばれます) を実装する方法の詳細な手順の説明を提供します。Google Cloud Messaging (GCM) と通信するために実装する必要があります、さまざまなクラスについて説明します、GCM へのアクセスの Android マニフェストでのアクセス許可を設定する方法について説明およびサンプルのテスト プログラムとエンド ツー エンドのメッセージングを示します。_
+> [!WARNING]
+> Google は、GCM 2018 年 4 月 10 日の時点で非推奨とされます。 次のドキュメントとサンプル プロジェクトを保持しない場合があります。 Google の GCM サーバーおよびクライアント Api は、2019 年 5 月 29日とすぐに削除されます。 Google GCM アプリ Firebase Cloud Messaging (FCM) への移行をお勧めします。 GCM の廃止と移行の詳細については、次を参照してください。 [Google クラウドのメッセージング - 非推奨とされます](https://developers.google.com/cloud-messaging/)します。
+>
+> Firebase Cloud Messaging を使用して、Xamarin を使用したリモート通知の使用開始するを参照してください。 [FCM を使用したリモート通知](remote-notifications-with-fcm.md)します。
 
-> [!NOTE]
-> GCM がによって置き換えられた[Firebase Cloud Messaging](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md) (FCM)。
-> GCM サーバーおよびクライアント Api[非推奨とされました](https://firebase.googleblog.com/2018/04/time-to-upgrade-from-gcm-to-fcm.html)は利用できなく、2019 年 4 月 11 日早くとします。
+_このチュートリアルでは、Xamarin.Android アプリケーションで Google Cloud Messaging を使用して、リモートの通知 (プッシュ通知とも呼ばれます) を実装する方法の詳細な手順の説明を提供します。Google Cloud Messaging (GCM) と通信するために実装する必要があります、さまざまなクラスについて説明します、GCM へのアクセスの Android マニフェストでのアクセス許可を設定する方法について説明およびサンプルのテスト プログラムとエンド ツー エンドのメッセージングを示します。_
 
 ## <a name="gcm-notifications-overview"></a>GCM 通知の概要
 
 このチュートリアルで Google Cloud Messaging (GCM) を使用して、リモート通知を実装する Xamarin.Android アプリケーションを作成します (とも呼ばれます*プッシュ通知*)。 GCM を使用して、リモートのメッセージングでは、さまざまな目的、およびリスナー サービスを実装し、アプリケーション サーバーをシミュレートするコマンド ライン プログラムで今回の実装をテストします。 
-
-Firebase Cloud Messaging (FCM) GCM の新しいバージョンであることに注意してください。 &ndash; GCM ではなく、FCM を使用して Google が強く推奨します。 GCM を使用している場合は、FCM にアップグレードすることをお勧めします。 FCM の詳細については、次を参照してください。 [Firebase Cloud Messaging](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md)します。 
 
 このチュートリアルを続行するには、Google の GCM サーバーを使用するために必要な資格情報を取得する必要があります。このプロセスについては[Google Cloud Messaging](~/android/data-cloud/google-messaging/google-cloud-messaging.md)します。 具体的には、する必要があります、 *API キー*と*Sender ID*このチュートリアルで示すサンプル コードに挿入します。 
 

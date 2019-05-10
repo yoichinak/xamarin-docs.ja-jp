@@ -6,12 +6,12 @@ ms.assetid: DBBAA086-BB0F-8161-DF44-632F4F5DFE5D
 author: asb3993
 ms.author: amburns
 ms.date: 01/25/2016
-ms.openlocfilehash: 3f1e1ce324e849c0c939d936eb6ee1470cf24a3b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: bdf284d66539da3eca35e79d761712012674de0d
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61266609"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978455"
 ---
 # <a name="binding-objective-c"></a>Objective-C のバインド
 
@@ -45,17 +45,13 @@ C Api だけをバインドする場合は、これは、P/invoke framework 標�
 
 ### <a name="binding-sampleshttpsgithubcommonomonotouch-bindings"></a>[バインディング サンプル](https://github.com/mono/monotouch-bindings)
 
-可能性のあるサード パーティのバインドのコレクションでは、新しいプロジェクトのバインドを作成するときの参照が使用されます。
+新しいプロジェクトのバインドを作成するときに参照として使用できるサード パーティのバインドのコレクション。
 
 ## <a name="mac"></a>Mac
 
 これまで[Mac バインド](~/mac/platform/binding.md)非常に手動のプロセスにされました。 現時点では、[ダウンロード可能なプレビュー](https://forums.xamarin.com/discussion/59760/xamarin-mac-binding-project-preview)の将来のリリースの Visual Studio for mac Mac バインド プロジェクト サポート。
 
-
-
 ## <a name="related-links"></a>関連リンク
 
 - [iOS バインド](~/ios/platform/binding-objective-c/index.md)
 - [Mac のバインド](~/mac/platform/binding.md)
-- [Xamarin University のコース:OBJECTIVE-C バインディング ライブラリをビルド](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin University のコース:目標油性で、OBJECTIVE-C のバインド ライブラリをビルドします。](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

@@ -1,11 +1,11 @@
 ---
 ms.topic: include
-ms.openlocfilehash: 0270f4a5ddab593372eb6687650e24d627f97c62
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e2ab71fa96be44168a52e5dde24967136e9a06fb
+ms.sourcegitcommit: be9658de032f3893741261f16162a664952ce178
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61264192"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64992213"
 ---
 Xamarin の一部としてインストールすることができます、_新しい_次の手順で、Visual Studio 2019 インストール。
 
@@ -21,7 +21,7 @@ Xamarin の一部としてインストールすることができます、_新�
 
     ![[インストール] ボタン](~/get-started/installation/windows-images/vs2019-click-install.png)
 
-   Visual Studio 2019 のエディションをインストールすることによって、インストール プロセスは完了までに時間をかかる可能性があります。 進行状況バーを使用して、インストールを監視することができます。
+   インストールを監視するのにには、進行状況バーを使用します。
 
     ![インストール中の進行状況バー](~/get-started/installation/windows-images/vs2019-progress-bars.png)
 

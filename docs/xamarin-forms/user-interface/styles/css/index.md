@@ -7,13 +7,13 @@ ms.technology: xamarin-forms
 ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/13/2018
-ms.openlocfilehash: ca87e5997fa05e014be56f85087ce3e7ffe1ab12
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 04/11/2019
+ms.openlocfilehash: 7dc9a0c0d7330588dc4a6d3f3dedd4b72211f019
+ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61250888"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65048022"
 ---
 # <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>カスケード スタイル シート (CSS) を使用した Xamarin.Forms アプリのスタイル設定
 
@@ -417,6 +417,19 @@ Xamarin.Forms では次の CSS プロパティがサポートされています�
 |`visibility`|`VisualElement`|`true` \| `visible` \| `false` \| `hidden` \| `collapse` \| `initial `|`visibility: hidden;`|
 |`width`|`VisualElement`|_double_ \| `initial`|`min-width: 320;`|
 
+> [!NOTE]
+> `initial` は、すべてのプロパティで有効な値です。 別のスタイルが設定された値をクリア(既定値にリセット)します。
+
+次のプロパティは、現在サポートされていません。
+
+- `all: initial`。
+- レイアウト プロパティ (box または grid)。
+- `font` や `border` などの短縮形のプロパティ。
+
+さらに、`inherit` 値は存在しないため、継承はサポートされていません。 したがって、たとえば、`font-size` プロパティをレイアウトに設定し、そのレイアウト内のすべての [ `Label` ](xref:Xamarin.Forms.Label) インスタンスにその値が継承されることは期待できません。 1つの例外として、`direction` プロパティがあり、それは `inherit` の規定値を持ちます。
+
+### <a name="xamarinforms-specific-properties"></a>Xamarin.Forms の特定のプロパティ
+
 次の Xamarin.Forms 特定 CSS プロパティがサポートされても (で、**値**列、型は_斜体_文字列リテラルは、 `gray`)。
 
 |プロパティ|対象|値|例|
@@ -434,16 +447,23 @@ Xamarin.Forms では次の CSS プロパティがサポートされています�
 |`-xf-thumb-color`|`Slider`|_color_ \| `initial` |`-xf-thumb-color: limegreen;`|
 |`-xf-spacing`|`StackLayout`|_double_ \| `initial` |`-xf-spacing: 8;`|
 
-> [!NOTE]
-> `initial` は、すべてのプロパティで有効な値です。 別のスタイルが設定された値をクリア(既定値にリセット)します。
+### <a name="xamarinforms-shell-specific-properties"></a>Xamarin.Forms シェル固有のプロパティ
 
-次のプロパティは、現在サポートされていません。
+次の Xamarin.Forms シェル特定 CSS プロパティがサポートされても (で、**値**列、型は_斜体_文字列リテラルは、 `gray`)。
 
-- `all: initial`。
-- レイアウト プロパティ (box または grid)。
-- `font` や `border` などの短縮形のプロパティ。
-
-さらに、`inherit` 値は存在しないため、継承はサポートされていません。 したがって、たとえば、`font-size` プロパティをレイアウトに設定し、そのレイアウト内のすべての [ `Label` ](xref:Xamarin.Forms.Label) インスタンスにその値が継承されることは期待できません。 1つの例外として、`direction` プロパティがあり、それは `inherit` の規定値を持ちます。
+|プロパティ|対象|値|例|
+|---|---|---|---|
+|`-xf-flyout-background`|`Shell`|_color_ \| `initial` |`-xf-flyout-background: red;`|
+|`-xf-shell-background`|`Element`|_color_ \| `initial` |`-xf-shell-background: green;`|
+|`-xf-shell-disabled`|`Element`|_color_ \| `initial` |`-xf-shell-disabled: blue;`|
+|`-xf-shell-foreground`|`Element`|_color_ \| `initial` |`-xf-shell-foreground: yellow;`|
+|`-xf-shell-tabbar-background`|`Element`|_color_ \| `initial` |`-xf-shell-tabbar-background: white;`|
+|`-xf-shell-tabbar-disabled`|`Element`|_color_ \| `initial` |`-xf-shell-tabbar-disabled: black;`|
+|`-xf-shell-tabbar-foreground`|`Element`|_color_ \| `initial` |`-xf-shell-tabbar-foreground: gray;`|
+|`-xf-shell-tabbar-title`|`Element`|_color_ \| `initial` |`-xf-shell-tabbar-title: lightgray;`|
+|`-xf-shell-tabbar-unselected`|`Element`|_color_ \| `initial` |`-xf-shell-tabbar-unselected: cyan;`|
+|`-xf-shell-title`|`Element`|_color_ \| `initial` |`-xf-shell-title: teal;`|
+|`-xf-shell-unselected`|`Element`|_color_ \| `initial` |`-xf-shell-unselected: limegreen;`|
 
 ### <a name="color"></a>色
 
@@ -484,7 +504,7 @@ Xamarin.Forms では次の CSS プロパティがサポートされています�
 
 > [!VIDEO https://youtube.com/embed/va-Vb7vtan8]
 
-**[Xamarin University](https://university.xamarin.com/) による Xamarin.Forms 3.0 CSS**
+**Xamarin.Forms 3.0 CSS ビデオ**
 
 ## <a name="related-links"></a>関連リンク
 

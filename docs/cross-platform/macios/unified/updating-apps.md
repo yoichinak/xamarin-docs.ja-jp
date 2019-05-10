@@ -6,25 +6,21 @@ ms.assetid: 8A654C95-5DCA-4BB5-A582-F96C2BECC81C
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 2d09be7b85980e5c5a8eb209dc1b4ff3136c34b3
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 62b8e82a1191f3213453e9a213ea615e476662d5
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61195603"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978222"
 ---
 # <a name="updating-existing-apps-to-the-unified-api"></a>Unified API への既存のアプリの更新
 
 > [!IMPORTANT]
-> Unified API の前に、Xamarin のクラシック API は非推奨とされました。 
+> Unified API の前に、Xamarin のクラシック API は非推奨とされました。
 > - 最後のバージョンのクラシック API (monotouch.dll) をサポートするために Xamarin.iOS では、Xamarin.iOS 9.10 をしました。
 > - Xamarin.Mac には、従来の API では、引き続きサポートされていますは更新されなく。 非推奨であるために、開発者は、Unified API アプリケーションを移動します。
 
 ## <a name="how-to-update-your-apps"></a>アプリを更新する方法
-
-Xamarin University ビデオを自由に利用できるが**iOS Unified API へのアップグレード**します。 参照してください[Xamarin University Lightning 講義](http://university.xamarin.com/lightninglectures)をご覧ください。
-
-[ ![](updating-apps-images/xamu-video-sml.png "Xamarin University")](http://university.xamarin.com/lightninglectures)
 
 アプリを更新する次の 3 つの手順があります。
 

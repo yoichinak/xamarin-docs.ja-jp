@@ -6,12 +6,12 @@ ms.assetid: 577512BF-1A90-41E5-89DE-9E056C478678
 author: asb3993
 ms.author: amburns
 ms.date: 10/11/2017
-ms.openlocfilehash: c1831467ca0cbb4329a1e77fb355698f2d16cd6a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4fb5e503a82a2b666bf6f8d7d7166475e94546e7
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61199781"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978398"
 ---
 # <a name="getting-started-with-objective-sharpie"></a>目標油性の概要
 
@@ -58,8 +58,3 @@ Xcode プロジェクトが使用できない場合は、正しい入力ヘッ�
 
 **新機能！** バージョン 3.0 は、簡単にバインドするためのツールも導入されています。 [CocoaPods](https://cocoapods.org)を使用して、`sharpie pod`コマンド。
 CocoaPod としてライブラリに関心がある場合は、(従来は、ソースに対して直接バインドしようとしています) と目標油性 CocoaPod をバインドしようとしてを起動するをお勧めします。
-
-## <a name="related-links"></a>関連リンク
-
-- [Xamarin University のコース:OBJECTIVE-C バインディング ライブラリをビルド](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin University のコース:目標油性で、OBJECTIVE-C のバインド ライブラリをビルドします。](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 3a59cbb8385fe201d7eef086092c9b393a21cc71
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: cc188abaece54a4df139918582e57d4116f894d0
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57666369"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978136"
 ---
 # <a name="xamarinforms-custom-renderers"></a>Xamarin.Forms のカスタム レンダラー
 
@@ -58,8 +58,6 @@ Xamarin.Forms のカスタム ユーザー インターフェイス コントロ
 
 この記事では、レンダラーを記述して、Web のビデオ、アプリケーションのリソースとして埋め込まれたビデオ、またはユーザーのデバイス上のビデオ ライブラリに格納されているビデオを再生できる `VideoPlayer` のカスタム コントロールを実装する方法を示します。 メソッドの実装や、バインド可能な読み取り専用プロパティなど、いくつかの手法を示します。
 
-
 ## <a name="related-links"></a>関連リンク
 
 - [エフェクト](~/xamarin-forms/app-fundamentals/effects/index.md)
-- [カスタム レンダラー (Xamarin University のビデオ)](https://developer.xamarin.com/videos/cross-platform/xamarinforms-custom-renderers/)

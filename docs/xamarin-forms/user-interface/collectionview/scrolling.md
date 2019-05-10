@@ -1,27 +1,24 @@
 ---
-title: 項目をビューにスクロールします。
+title: Xamarin.Forms の CollectionView スクロール
 description: ユーザーが、スクロールを開始するためにスワイプした場合に、項目が完全に表示されるように、スクロールの終了位置を制御することができます。 さらに、CollectionView は、プログラムで項目をスクロールして表示する 2 つの ScrollTo メソッドを定義します。
 ms.prod: xamarin
 ms.assetid: 2ED719AF-33D2-434D-949A-B70B479C9BA5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/19/2019
-ms.openlocfilehash: da7f379076b8e193deddc99e9004f051ba006cbb
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 05/06/2019
+ms.openlocfilehash: 888b4f369f67a7d8566640927ba2ae3a395d68d8
+ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61367658"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65048169"
 ---
-# <a name="scroll-an-item-into-view"></a>項目をビューにスクロールします。
+# <a name="xamarinforms-collectionview-scrolling"></a>Xamarin.Forms の CollectionView スクロール
 
-![[プレビュー]](~/media/shared/preview.png)
+![](~/media/shared/preview.png "この API は、現在プレリリースです")
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/CollectionViewDemos/)
-
-> [!IMPORTANT]
-> `CollectionView` は現在プレビュー段階で、計画されている機能の一部が不足しています。 さらに、実装の完了時には、API は変更される可能性があります。
 
 `CollectionView` 2 つ定義する`ScrollTo`メソッドは、項目をビューにスクロールします。 オーバーロードの 1 つは、ビュー内の指定したインデックスにある項目にスクロールし、もう一つは、ビュー内の指定した項目にスクロールします。 両方のオーバー ロードは、スクロールが完了すると、項目の正確な位置を示すために指定できる追加の引数とスクロールをアニメーション化するかどうかがあります。
 
@@ -114,10 +111,10 @@ collectionView.ScrollTo(monkey, animate: false);
 
 ユーザーが、スクロールを開始するためにスワイプした場合に、項目が完全に表示されるように、スクロールの終了位置を制御することができます。 項目が停止し、次のプロパティによって制御されます、スクロールするときに配置するスナップために、この機能が、スナップと呼ばれる、`ItemsLayout`クラス。
 
-- `SnapPointsType`、型の`SnapPointsType`、スクロールするとき、スナップ ポイントの動作を指定します。
-- `SnapPointsAlignment`、型の`SnapPointsAlignment`、項目を含むのスナップ ポイントを配置する方法を指定します。
+- `SnapPointsType` – `SnapPointsType` 型で、スクロールするときのスナップポイントの動作を指定します。
+- `SnapPointsAlignment` – `SnapPointsAlignment` 型で、スナップ ポイントを項目と揃える方法を指定します。
 
-これらのプロパティは、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトによりサポートされます。つまりデータバインディングの対象となる可能性があるという意味です。
+これらのプロパティは、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトでサポートされます。つまり、このプロパティはデータ バインドの対象となることを意味します。
 
 > [!NOTE]
 > スナップが発生したときに、方向で実行されます、運動量が少なくを生成します。
