@@ -6,12 +6,12 @@ ms.assetid: 107FBCEA-266B-4295-B7AA-40A881B82B7B
 author: asb3993
 ms.author: amburns
 ms.date: 01/15/2016
-ms.openlocfilehash: 4bca896afb4dfc96fd6c1d7cdf489feb6a879e31
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 96e5bafc14c2d3aba03ccc137151a83ee8afeef9
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61261229"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64977859"
 ---
 # <a name="objective-sharpie-verify-attributes"></a>目標油性属性を確認します。
 
@@ -41,7 +41,3 @@ ms.locfileid: "61261229"
 sharpie verify-docs InferredFromPreceedingTypedef
 ```
 
-## <a name="related-links"></a>関連リンク
-
-- [Xamarin University のコース:OBJECTIVE-C バインディング ライブラリをビルド](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin University のコース:目標油性で、OBJECTIVE-C のバインド ライブラリをビルドします。](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)
