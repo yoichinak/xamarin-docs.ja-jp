@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 971effc34716596ec6be3708ac9da4e68d7bdfee
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: fb5cea018180966e914a5bce5e85cb83fbdf901d
+ms.sourcegitcommit: 0cb62b02a7efb5426f2356d7dbdfd9afd85f2f4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64978586"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65557246"
 ---
 # <a name="ios-extensions-in-xamarinios"></a>Xamarin.iOS での iOS 拡張機能
 
@@ -71,7 +71,7 @@ ms.locfileid: "64978586"
 
 拡張機能を使用してアプリをホストと通信できる、 [NSExtensionContext](xref:Foundation.NSExtensionContext)オブジェクト。 一部の拡張機能では、結果を使用した非同期のコールバックを受信する操作があります。 これらのコールバックがバック グラウンド スレッドで実行され、考慮します。 この拡張機能を考慮する必要があります。使用して、たとえば、 [NSObject.InvokeOnMainThread](xref:Foundation.NSObject.InvokeOnMainThread*)ユーザー インターフェイスを更新する場合。 参照してください、[ホスト アプリケーションと通信する](#communicating-with-the-host-app)詳細については後述します。
 
-既定では、拡張機能とそのコンテナー アプリ通信可能でない、一緒にインストールされているにもかかわらずです。 場合によっては、コンテナー アプリは基本的に、空"shipping"コンテナーを目的とするが、拡張機能がインストールされると処理されます。 ただし、状況下で、必要である場合コンテナー アプリと拡張機能がリソースを共有一般的な領域から。 さらに、**拡張機能を今すぐ**の URL を開くには、そのコンテナー アプリを要求する場合があります。 この動作を示した、[進化 Countdown Widget](https://github.com/xamarin/monotouch-samples/tree/master/ExtensionsDemo)します。
+既定では、拡張機能とそのコンテナー アプリ通信可能でない、一緒にインストールされているにもかかわらずです。 場合によっては、コンテナー アプリは基本的に、空"shipping"コンテナーを目的とするが、拡張機能がインストールされると処理されます。 ただし、状況下で、必要である場合コンテナー アプリと拡張機能がリソースを共有一般的な領域から。 さらに、**拡張機能を今すぐ**の URL を開くには、そのコンテナー アプリを要求する場合があります。 この動作を示した、[イベント Countdown Widget](https://github.com/xamarin/ios-samples/tree/master/intro-to-extensions)します。
 
 ## <a name="creating-an-extension"></a>拡張機能の作成
 
