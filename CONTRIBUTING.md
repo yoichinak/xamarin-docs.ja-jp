@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 63ddc7d34d0bcca4e86cb03b08a6040d20f8f037
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: f0e2c93c4a6be0e83c9c4f1607b125b8d240ccc1
+ms.sourcegitcommit: 0cb62b02a7efb5426f2356d7dbdfd9afd85f2f4a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60857636"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65557216"
 ---
 # <a name="contributing"></a>コントリビューション
 
@@ -24,7 +24,7 @@ Xamarin ドキュメントへの投稿に関心をお寄せいただきありが
 
 2. 変更の`branch`を作成します。
 
-3. コンテンツを記述します。 [テンプレート](../contributing-guidelines/template.md)と[スタイル ガイド](../contributing-guidelines/voice-tone.md)を参照してください。
+3. コンテンツを記述します。 [テンプレート](contributing-guidelines/template.md)と[スタイル ガイド](contributing-guidelines/voice-tone.md)を参照してください。
 
 4. ご自分のブランチから `MicrosoftDocs/xamarin-docs/live` に Pull Request (PR) を送信します。
 
