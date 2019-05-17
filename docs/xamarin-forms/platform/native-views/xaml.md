@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/24/2016
-ms.openlocfilehash: cf04c3e89e3effdd317fa98beb46f9075a1defcd
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 7a5c09bfe46b9e775383889e07fd93094ba9bf68
+ms.sourcegitcommit: a9c60f50b40203dd784e3e790b0d83e2bfc86129
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61301939"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65731522"
 ---
 # <a name="native-views-in-xaml"></a>XAML のネイティブ ビュー
 
@@ -24,7 +24,7 @@ _IOS、Android、およびユニバーサル Windows プラットフォームか
 
 - [ネイティブ ビューの使用](#consuming)– XAML からのネイティブ ビューを使用するためのプロセス。
 - [ネイティブのバインドを使用して](#native_bindings)– データとの間のネイティブ ビューのプロパティをバインドします。
-- [ネイティブ ビューに引数を渡す](#passing_arguments)– ネイティブ ビュー コンス トラクターに引数を渡すと、ネイティブのビュー ファクトリ メソッドを呼び出すことです。
+- [ネイティブ ビューに引数を渡す](#passing_arguments)– ネイティブ ビュー コンストラクターに引数を渡すと、ネイティブのビュー ファクトリ メソッドを呼び出すことです。
 - [コードからネイティブ ビューを参照する](#native_view_code)– その分離コード ファイルからの XAML ファイルで宣言されているネイティブ ビューのインスタンスを取得します。
 - [ネイティブ ビューのサブクラス化](#subclassing)– XAML 使いやすい API を定義するネイティブ ビューのサブクラス化します。  
 
@@ -37,8 +37,8 @@ Xamarin.Forms XAML ファイルにネイティブのビューを埋め込むに�
 1. 追加、`xmlns`ネイティブ ビューを含む名前空間の XAML ファイルの名前空間宣言。
 1. XAML ファイルでのネイティブ ビューのインスタンスを作成します。
 
-> [!NOTE]
-> XAMLC は、ネイティブのビューを使用しているすべての XAML ページをオフにする必要があります。
+> [!IMPORTANT]
+> ネイティブ ビューを使用しているすべての XAML ページには、コンパイルされた XAML を無効にする必要があります。 これは、XAML ページの分離コード クラスを修飾することによって実現できます、`[XamlCompilation(XamlCompilationOptions.Skip)]`属性。 XAML のコンパイルの詳細については、次を参照してください。 [xamarin.forms XAML コンパイル](~/xamarin-forms/xaml/xamlc.md)します。
 
 分離コード ファイルからのネイティブ ビューを参照するには、共有資産プロジェクト (SAP) を使用して、条件付きコンパイル ディレクティブを使用してプラットフォーム固有のコードをラップする必要があります。 詳細については、[コードからネイティブ ビューを参照する](#native_view_code)を参照してください。
 
@@ -74,7 +74,7 @@ Xamarin.Forms XAML ファイルにネイティブのビューを埋め込むに�
 > [!NOTE]
 > スタイルのみ対象にできるためでは、提供されるプロパティは、ネイティブのビューのスタイルを使用できないことに注意してください`BindableProperty`オブジェクト。
 
-Android のウィジェットのコンス トラクターは通常、Android を必要と`Context`オブジェクト引数、およびこれが利用できる静的プロパティを通じて、`MainActivity`クラス。 そのため、XAML で Android のウィジェットを作成するときに、`Context`オブジェクトは、ウィジェットのコンス トラクターに渡す一般的にする必要がありますを使用して、`x:Arguments`属性、`x:Static`マークアップ拡張機能。 詳細については、[をネイティブのビューに渡す引数](#passing_arguments)を参照してください。
+Android のウィジェットのコンストラクターは通常、Android を必要と`Context`オブジェクト引数、およびこれが利用できる静的プロパティを通じて、`MainActivity`クラス。 そのため、XAML で Android のウィジェットを作成するときに、`Context`オブジェクトは、ウィジェットのコンストラクターに渡す一般的にする必要がありますを使用して、`x:Arguments`属性、`x:Static`マークアップ拡張機能。 詳細については、[をネイティブのビューに渡す引数](#passing_arguments)を参照してください。
 
 > [!NOTE]
 > ネイティブ ビューの名前を付けることに注意してください。 `x:Name` .NET Standard ライブラリ プロジェクトまたは共有資産プロジェクト (SAP) のいずれかのことはできません。 そうと、コンパイル エラーの原因は、ネイティブの型の変数が生成されます。 ただし、ネイティブのビューにラップできます`ContentView`インスタンスし、SAP が使用されていること、分離コード ファイルで取得します。 詳細については、[コードからネイティブのビューを参照する](#native_view_code)を参照してください。
@@ -128,7 +128,7 @@ Android のウィジェットのコンス トラクターは通常、Android を
 
 ## <a name="passing-arguments-to-native-views"></a>ネイティブ ビューに引数を渡す
 
-コンス トラクターの引数を使用してネイティブのビューに渡すことができます、`x:Arguments`属性、`x:Static`マークアップ拡張機能。 さらに、ファクトリ メソッドのネイティブ ビュー (`public static`オブジェクトまたはクラスまたはメソッドを定義する構造体と同じ型の値を返すメソッドを)、メソッドの指定することによって呼び出すことが名前を使用して、`x:FactoryMethod`属性、およびその引数使用して、`x:Arguments`属性。
+コンストラクターの引数を使用してネイティブのビューに渡すことができます、`x:Arguments`属性、`x:Static`マークアップ拡張機能。 さらに、ファクトリ メソッドのネイティブ ビュー (`public static`オブジェクトまたはクラスまたはメソッドを定義する構造体と同じ型の値を返すメソッドを)、メソッドの指定することによって呼び出すことが名前を使用して、`x:FactoryMethod`属性、およびその引数使用して、`x:Arguments`属性。
 
 次のコード例では、両方の方法を示しています。
 
@@ -186,12 +186,12 @@ Android のウィジェットのコンス トラクターは通常、Android を
 
 [ `Typeface.Create` ](https://developer.xamarin.com/api/member/Android.Graphics.Typeface.Create/p/System.String/Android.Graphics.TypefaceStyle/)ファクトリ メソッドを設定するため、 [ `TextView.Typeface` ](https://developer.xamarin.com/api/property/Android.Widget.TextView.Typeface/)プロパティを新しい[ `Typeface` ](https://developer.xamarin.com/api/type/Android.Graphics.Typeface/) Android で。 `Typeface`ファミリ名とスタイルの子であるメソッドの引数によって指定されます、`x:Arguments`属性。
 
-[ `FontFamily` ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.fontfamily)コンス トラクターは、設定に使用される、 [ `TextBlock.FontFamily` ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.fontfamily)プロパティを新しい`FontFamily`ユニバーサル Windows プラットフォーム (UWP) にします。 `FontFamily`の子であるメソッドの引数で指定された名前、`x:Arguments`属性。
+[ `FontFamily` ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.fontfamily)コンストラクターは、設定に使用される、 [ `TextBlock.FontFamily` ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.fontfamily)プロパティを新しい`FontFamily`ユニバーサル Windows プラットフォーム (UWP) にします。 `FontFamily`の子であるメソッドの引数で指定された名前、`x:Arguments`属性。
 
 > [!NOTE]
-> 引数は、コンス トラクターまたはファクトリ メソッドで必要な型と一致する必要があります。
+> 引数は、コンストラクターまたはファクトリ メソッドで必要な型と一致する必要があります。
 
-次のスクリーン ショットでは、別のネイティブ ビューのフォントを設定するファクトリ メソッドとコンス トラクターの引数を指定して結果を表示します。
+次のスクリーン ショットでは、別のネイティブ ビューのフォントを設定するファクトリ メソッドとコンストラクターの引数を指定して結果を表示します。
 
 ![](xaml-images/passing-arguments.png "ネイティブ ビューのフォントの設定")
 

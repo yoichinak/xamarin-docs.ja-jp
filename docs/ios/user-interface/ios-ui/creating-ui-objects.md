@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: a4cf63b84d0686bc28b02b18a6266908251bdf6f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c24b2c2f0742ee2c6814d9821f3c0603c6e48a96
+ms.sourcegitcommit: 0c823f5439f4279a35af23dd466e7a0483e65d50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61154079"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65804926"
 ---
 # <a name="creating-user-interface-objects-in-xamarinios"></a>Xamarin.iOS でのユーザー インターフェイス オブジェクトの作成
 
@@ -80,7 +80,7 @@ Xcode で開くストーリー ボードには、右クリックしてストー�
 
  [![](creating-ui-objects-images/image6a.png "アシスタント エディター ボタン")](creating-ui-objects-images/image6a.png#lightbox)
 
-ユーザー インターフェイス オブジェクトでは; をクリックします。**コントロールのドラッグ**.h ファイルにします。 * * コントロール ドラッグ * コントロール キーを押しながら をクリックし、ユーザー インターフェイス オブジェクト上でのコンセント (またはアクション) を作成します。 保持コントロール キーを押しながらヘッダー ファイルにドラッグします。 [完了] の下にドラッグ、`@interface`定義します。 青い線は、次のスクリーン ショットに示すように、キャプションの挿入のコンセントまたはコンセントのコレクションで表示されます。
+ユーザー インターフェイス オブジェクトでは; をクリックします。**コントロールのドラッグ**.h ファイルにします。 **コントロールのドラッグ**コントロール キーを押しながら、し、をクリックしておよびのコンセント (またはアクション) を作成しているユーザー インターフェイス オブジェクトの上に保持します。 保持コントロール キーを押しながらヘッダー ファイルにドラッグします。 [完了] の下にドラッグ、`@interface`定義します。 青い線は、次のスクリーン ショットに示すように、キャプションの挿入のコンセントまたはコンセントのコレクションで表示されます。
 
 作成するために使用すると、出口の名前を指定するメッセージが表示されます をクリックをリリースするときに、C#プロパティをコードで参照できます。
 
