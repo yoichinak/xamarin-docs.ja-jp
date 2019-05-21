@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/07/2018
-ms.openlocfilehash: 3bd606ae87c524202fd5ea7c141223042e90ec1a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: dc02fdc8754db4ae97c29ba2a496804b2263abdc
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61363046"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65970727"
 ---
 # <a name="android-platform-features"></a>Android プラットフォーム機能
 
@@ -34,6 +34,7 @@ Android で Xamarin.Forms のビューでは、次のプラットフォームに
 - ドロップ シャドウを有効にすると、`ImageButton`します。 詳細については、次を参照してください。 [android ImageButton ドロップ シャドウ](imagebutton-drop-shadow.md)します。
 - 高速のスクロールを有効にする、 [ `ListView` ](xref:Xamarin.Forms.ListView)詳細については、次を参照してください。 [Android で高速スクロールを ListView](listview-fast-scrolling.md)します。
 - 制御するかどうかを[ `WebView` ](xref:Xamarin.Forms.WebView)混合コンテンツを表示できます。 詳細については、次を参照してください。 [WebView 混合コンテンツ android](webview-mixed-content.md)します。
+- ズームを有効にすると、 [ `WebView`](xref:Xamarin.Forms.WebView)します。 詳細については、次を参照してください。 [android web ビューのズーム](webview-zoom-controls.md)します。
 
 Android で Xamarin.Forms のページでは、次のプラットフォームに固有の機能が提供されます。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/22/2019
-ms.openlocfilehash: 471e09f236be505190ad2c08169bd445dcfca0a3
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: f77b2346808f78e182edc59f9ea92d0a8a99344f
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61365671"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65971019"
 ---
 # <a name="ios-platform-features-in-xamarinforms"></a>Xamarin.Forms での iOS プラットフォーム機能
 
@@ -45,6 +45,7 @@ IOS 上の Xamarin.Forms ページの次のプラットフォーム固有の機�
 - ナビゲーション バーが半透明かどうかを制御します。 詳細については、次を参照してください。 [iOS でのナビゲーション バーの透明度](navigation-bar-translucent.md)します。
 - [`NavigationPage`](xref:Xamarin.Forms.NavigationPage)上のステータスバーのテキストの色をナビゲーションバーの明るさに合わせて調整するかどうかを制御します。 詳細については、次を参照してください。 [iOS で、バーのテキスト色 NavigationPage モード](status-bar-text-color.md)します。
 - ナビゲーションバーでページタイトルを大タイトルとして表示するかどうかを制御します。 詳細については、次を参照してください。 [iOS での大きいページ タイトル](page-large-title.md)します。
+- ホームのインジケーターの可視性の設定、 [ `Page`](xref:Xamarin.Forms.Page)します。 詳細については、次を参照してください。 [iOS でのインジケーター可視性ホーム](page-home-indicator.md)します。
 - [`Page`](xref:Xamarin.Forms.Page) のステータス バーの可視性を設定します。 詳細については、次を参照してください。 [iOS でのステータス バーの可視性をページ](page-status-bar-visibility.md)します。
 - すべての iOS デバイスの安全である画面の領域には、そのページの内容の確認が配置されています。 詳細については、次を参照してください。 [iOS での安全領域レイアウト ガイド](page-safe-area-layout.md)します。
 - IPad でのモーダル ページ表示スタイルを設定します。 詳細については、次を参照してください。 [iPad モーダル ページ表示スタイル](ipad-page-presentation-style.md)します。
