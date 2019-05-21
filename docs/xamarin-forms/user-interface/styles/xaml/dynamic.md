@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 260c215df52eb31139998438cc0eda10a887be65
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 574f4cb5541a12525fb0d160599d4d2f13653cf0
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61395210"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926938"
 ---
 # <a name="dynamic-styles-in-xamarinforms"></a>Xamarin.Forms での動的なスタイル
 
@@ -53,9 +53,9 @@ _スタイルはないプロパティの変更に応答し、アプリケーシ�
 </ContentPage>
 ```
 
-[ `SearchBar` ](xref:Xamarin.Forms.SearchBar)インスタンスを使用して、`DynamicResource`を参照するマークアップ拡張機能、 [ `Style` ](xref:Xamarin.Forms.Style)という`searchBarStyle`、XAML で定義されていません。 ただし、ため、 [ `Style` ](xref:Xamarin.Forms.VisualElement.Style)のプロパティ、`SearchBar`を使用してインスタンスが設定されて、 `DynamicResource`、ディクショナリ キーがないことはない例外がスローされます。
+[ `SearchBar` ](xref:Xamarin.Forms.SearchBar)インスタンスを使用して、`DynamicResource`を参照するマークアップ拡張機能、 [ `Style` ](xref:Xamarin.Forms.Style)という`searchBarStyle`、XAML で定義されていません。 ただし、ため、 [ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)のプロパティ、`SearchBar`を使用してインスタンスが設定されて、 `DynamicResource`、ディクショナリ キーがないことはない例外がスローされます。
 
-代わりに、分離コード ファイルでコンス トラクターは、作成、 [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)キーを持つエントリ`searchBarStyle`次のコード例のように。
+代わりに、分離コード ファイルでコンストラクターは、作成、 [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)キーを持つエントリ`searchBarStyle`次のコード例のように。
 
 ```csharp
 public partial class DynamicStylesPage : ContentPage
@@ -160,7 +160,7 @@ C# で、 [ `SearchBar` ](xref:Xamarin.Forms.SearchBar)インスタンスを使�
 
 [ `SearchBar` ](xref:Xamarin.Forms.SearchBar)インスタンスを使用して、`StaticResource`を参照するマークアップ拡張機能、 [ `Style` ](xref:Xamarin.Forms.Style)という`tealSearchBarStyle`します。 これは、`Style`いくつか追加のプロパティを設定しを使用して、 [ `BaseResourceKey` ](xref:Xamarin.Forms.Style.BaseResourceKey)プロパティ参照を`searchBarStyle`します。 `DynamicResource`マークアップ拡張機能は必要ありませんので`tealSearchBarStyle`は変更されませんを除き、`Style`から派生します。 そのため、`tealSearchBarStyle`へのリンクを維持`searchBarStyle`が、基本のスタイルが変更されたときに変更されるとします。
 
-コンス トラクターを作成、分離コード ファイルで、 [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)キーを持つエントリ`searchBarStyle`、動的なスタイルを示す前の例のようです。 ときに、`OnButtonClicked`イベント ハンドラーを実行すると、`searchBarStyle`間の切り替えは`blueSearchBarStyle`と`greenSearchBarStyle`します。 次のスクリーン ショットに示すように外観が発生します。
+コンストラクターを作成、分離コード ファイルで、 [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)キーを持つエントリ`searchBarStyle`、動的なスタイルを示す前の例のようです。 ときに、`OnButtonClicked`イベント ハンドラーを実行すると、`searchBarStyle`間の切り替えは`blueSearchBarStyle`と`greenSearchBarStyle`します。 次のスクリーン ショットに示すように外観が発生します。
 
 [![](dynamic-images/dynamic-style-inheritance-blue.png "動的なスタイル継承の例の青")](dynamic-images/dynamic-style-inheritance-blue-large.png#lightbox "動的スタイル継承の例の青")
 [![](dynamic-images/dynamic-style-inheritance-green.png "緑の動的なスタイル継承の例")](dynamic-images/dynamic-style-inheritance-green-large.png#lightbox "緑の動的なスタイル継承の例")
@@ -205,7 +205,7 @@ public class DynamicStylesInheritancePageCS : ContentPage
 }
 ```
 
-`tealSearchBarStyle`に直接割り当てられている、 [ `Style` ](xref:Xamarin.Forms.VisualElement.Style)のプロパティ、 [ `SearchBar` ](xref:Xamarin.Forms.SearchBar)インスタンス。 これは、`Style`いくつか追加のプロパティを設定しを使用して、 [ `BaseResourceKey` ](xref:Xamarin.Forms.Style.BaseResourceKey)プロパティ参照を`searchBarStyle`します。 [ `SetDynamicResource` ](xref:Xamarin.Forms.Element.SetDynamicResource*)メソッドは必要ありませんここため`tealSearchBarStyle`は変更されませんを除き、`Style`から派生します。 そのため、`tealSearchBarStyle`へのリンクを維持`searchBarStyle`が、基本のスタイルが変更されたときに変更されるとします。
+`tealSearchBarStyle`に直接割り当てられている、 [ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)のプロパティ、 [ `SearchBar` ](xref:Xamarin.Forms.SearchBar)インスタンス。 これは、`Style`いくつか追加のプロパティを設定しを使用して、 [ `BaseResourceKey` ](xref:Xamarin.Forms.Style.BaseResourceKey)プロパティ参照を`searchBarStyle`します。 [ `SetDynamicResource` ](xref:Xamarin.Forms.Element.SetDynamicResource*)メソッドは必要ありませんここため`tealSearchBarStyle`は変更されませんを除き、`Style`から派生します。 そのため、`tealSearchBarStyle`へのリンクを維持`searchBarStyle`が、基本のスタイルが変更されたときに変更されるとします。
 
 ## <a name="related-links"></a>関連リンク
 

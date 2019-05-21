@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: fd5181040c1805d3fdabdae4803bbe32c6bb6652
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 252f3271c7247f7070df66712035938be651e7f4
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61345529"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65924790"
 ---
 # <a name="device-styles-in-xamarinforms"></a>Xamarin.Forms でのデバイスのスタイル
 
@@ -29,7 +29,7 @@ _Xamarin.Forms には、Device.Styles クラスで、デバイスのスタイル
 - [`SubtitleStyle`](xref:Xamarin.Forms.Device.Styles.SubtitleStyle)
 - [`TitleStyle`](xref:Xamarin.Forms.Device.Styles.TitleStyle)
 
-6 つのすべてのスタイルにのみ適用[ `Label` ](xref:Xamarin.Forms.Label)インスタンス。 など、`Label`段落の本文が表示されている設定がその[ `Style` ](xref:Xamarin.Forms.VisualElement.Style)プロパティを[ `BodyStyle`](xref:Xamarin.Forms.Device.Styles.BodyStyle)します。
+6 つのすべてのスタイルにのみ適用[ `Label` ](xref:Xamarin.Forms.Label)インスタンス。 など、`Label`段落の本文が表示されている設定がその[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)プロパティを[ `BodyStyle`](xref:Xamarin.Forms.Device.Styles.BodyStyle)します。
 
 次のコード例に示しますを使用して、*デバイス*XAML ページのスタイル。
 
@@ -109,7 +109,7 @@ public class DeviceStylesPageCS : ContentPage
 }
 ```
 
-[ `Style` ](xref:Xamarin.Forms.VisualElement.Style)の各プロパティ[ `Label` ](xref:Xamarin.Forms.Label)インスタンスから適切なプロパティに設定されて、 [ `Devices.Styles` ](xref:Xamarin.Forms.Device.Styles)クラス。
+[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)の各プロパティ[ `Label` ](xref:Xamarin.Forms.Label)インスタンスから適切なプロパティに設定されて、 [ `Devices.Styles` ](xref:Xamarin.Forms.Device.Styles)クラス。
 
 ## <a name="accessibility"></a>ユーザー補助
 

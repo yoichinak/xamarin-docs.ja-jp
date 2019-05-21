@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: f14014b257ee5061b6dd074719c3ca27577c6013
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c480f398c37ce43b634e0ec1c955b965466757f1
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60854943"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926842"
 ---
 # <a name="visualelement-access-keys-on-windows"></a>Windows の VisualElement アクセス キー
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
 
 アクセス キーは、キーボードの代わりにタッチを使用して、アプリの表示の UI を使用したにすばやく移動し、対話ユーザー向けの直感的な方法を提供することで、使いやすさとアプリ、ユニバーサル Windows プラットフォーム (UWP) でのアクセシビリティを向上させるためのキーボード ショートカットまたは、マウスを選択します。 これらは、Alt キーと 1 つまたは複数英数字キー、順番に押された通常の組み合わせです。 キーボード ショートカットは自動的に 1 つの英数字を使用して、アクセス キーのサポートします。
 
@@ -104,6 +104,6 @@ button4.On<Windows>()
 
 ## <a name="related-links"></a>関連リンク
 
-- [プラットフォーム仕様 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+- [プラットフォーム仕様 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
 - [プラットフォーム仕様の作成](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [WindowsSpecific API](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)

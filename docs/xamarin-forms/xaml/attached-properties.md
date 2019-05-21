@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/02/2016
-ms.openlocfilehash: 130f4e3efdd7b3792f6458ad28fc85654e6e38c8
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c1fb596abb580cf42edda21ab71f2c70de59a547
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60857433"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65924556"
 ---
 # <a name="attached-properties"></a>アタッチされるプロパティ
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/effects/shadoweffect/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/Effects/ShadowEffect/)
 
 _添付プロパティは、特殊な種類のバインド可能なプロパティ、1 つのクラスで定義されているが、他のオブジェクトにアタッチされ、クラスを含む属性として XAML で認識可能なプロパティ名はピリオドで区切られました。この記事では、添付プロパティは、概要を示し、作成し、これらを使用する方法を示します。_
 
@@ -126,7 +126,7 @@ ShadowEffect.SetHasShadow (label, true);
 </Style>
 ```
 
-[ `Style` ](xref:Xamarin.Forms.Style)に適用できる、 [ `Label` ](xref:Xamarin.Forms.Label)を設定してその[ `Style` ](xref:Xamarin.Forms.VisualElement.Style)プロパティを`Style`インスタンス、を使用して`StaticResource`マークアップ拡張機能で、次のコード例で示した。
+[ `Style` ](xref:Xamarin.Forms.Style)に適用できる、 [ `Label` ](xref:Xamarin.Forms.Label)を設定してその[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)プロパティを`Style`インスタンス、を使用して`StaticResource`マークアップ拡張機能で、次のコード例で示した。
 
 ```xaml
 <Label Text="Label Shadow Effect" Style="{StaticResource ShadowEffectStyle}" />
@@ -147,6 +147,6 @@ ShadowEffect.SetHasShadow (label, true);
 
 - [連結可能プロパティ](~/xamarin-forms/xaml/bindable-properties.md)
 - [XAML 名前空間](~/xamarin-forms/xaml/namespaces.md)
-- [シャドウ効果 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/effects/shadoweffect/)
+- [シャドウ効果 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/Effects/ShadowEffect/)
 - [BindableProperty](xref:Xamarin.Forms.BindableProperty)
 - [BindableObject](xref:Xamarin.Forms.BindableObject)

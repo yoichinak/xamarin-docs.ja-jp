@@ -7,11 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/01/2018
+ms.openlocfilehash: 04cbdaac50b0ea77659d7c495dcd1a9e6d43335c
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926992"
 ---
-
 # <a name="platform-specifics"></a>プラットフォーム仕様
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
 
 _プラットフォーム仕様は、 カスタム レンダラーや特殊効果を実装することなく、特定のプラットフォーム上でのみ利用できる機能の使用を可能にします。_
 
@@ -272,7 +277,7 @@ shadowLabel.On<iOS>().SetIsShadowed(true);
 
 ## <a name="related-links"></a>関連リンク
 
-- [プラットフォーム仕様 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+- [プラットフォーム仕様 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
 - [ShadowPlatformSpecific (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/shadowplatformspecific/)
 - [iOS プラットフォーム固有設定](~/xamarin-forms/platform/ios/index.md)
 - [Android のプラットフォーム固有設定](~/xamarin-forms/platform/android/index.md)

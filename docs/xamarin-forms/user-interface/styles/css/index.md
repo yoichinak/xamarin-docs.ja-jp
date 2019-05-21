@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/11/2019
-ms.openlocfilehash: 7dc9a0c0d7330588dc4a6d3f3dedd4b72211f019
-ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
+ms.openlocfilehash: bb13113a947fe6ff25f5e96e299828d1d93e20ac
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65048022"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65927038"
 ---
 # <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>カスケード スタイル シート (CSS) を使用した Xamarin.Forms アプリのスタイル設定
 
@@ -246,7 +246,7 @@ stacklayout {
 }
 ```
 
-CSS クラスは、要素の [ `StyleClass` ](xref:Xamarin.Forms.VisualElement.StyleClass) プロパティに CSS クラス名を設定して、XAML 要素に 割り当てることができます。 したがって、次の XAML の例では、`.detailPageTitle` クラスによって定義されたスタイルが、最初の [ `Label` ](xref:Xamarin.Forms.Label) に割り当てられ、`.detailPageSubtitle` クラスは 2 番目の `Label` に割り当てられます。
+CSS クラスは、要素の [ `StyleClass` ](xref:Xamarin.Forms.NavigableElement.StyleClass) プロパティに CSS クラス名を設定して、XAML 要素に 割り当てることができます。 したがって、次の XAML の例では、`.detailPageTitle` クラスによって定義されたスタイルが、最初の [ `Label` ](xref:Xamarin.Forms.Label) に割り当てられ、`.detailPageSubtitle` クラスは 2 番目の `Label` に割り当てられます。
 
 ```xaml
 <ContentPage ...>

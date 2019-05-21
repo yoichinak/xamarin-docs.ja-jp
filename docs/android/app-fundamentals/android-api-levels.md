@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2018
-ms.openlocfilehash: 8690be7551046a26339f58029da5f3f58e18cd15
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 1f88525fefb83c92d5e5dda2176d3622bb67c78d
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61024220"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65924961"
 ---
 # <a name="understanding-android-api-levels"></a>Android API レベルの理解
 
@@ -46,7 +46,7 @@ API レベルを構成するには、プロジェクトの前に、その API �
 
 [![最小値とターゲット Android バージョンがターゲット フレームワークのバージョンに設定します。](android-api-levels-images/vs-manifest-defaults-sml.png)](android-api-levels-images/vs-manifest-defaults.png#lightbox)
 
-Android の以前のバージョンと旧バージョンとの互換性を維持する場合は、設定**対象とする最小 Android バージョン**最も古いバージョンの Android アプリでサポートするために使用することにします。 (必要な最小 API レベルは、API レベル 14 [Google play 開発者サービスと Firebase サポート](https://android-developers.googleblog.com/2016/11/google-play-services-and-firebase-for-android-will-support-api-level-14-at-minimum.html))。次の例の構成には、API レベル 25 を通じて API レベル 14 からの Android バージョンがサポートされています。
+Android の以前のバージョンと旧バージョンとの互換性を維持する場合は、設定**対象とする最小 Android バージョン**最も古いバージョンの Android アプリでサポートするために使用することにします。 (必要な最小 API レベルは、API レベル 14 [Google play 開発者サービスと Firebase サポート](https://android-developers.googleblog.com/2016/11/google-play-services-and-firebase-for-android-will-support-api-level-14-at-minimum.html))。次の例の構成には、API レベル 25 で API レベル 14 からの Android バージョンがサポートされています。
 
 [![API レベル 25 を使用してコンパイル Nougat、API レベル 14 に設定された最小 Android バージョン](android-api-levels-images/vs-minimum-sml.png)](android-api-levels-images/vs-minimum.png#lightbox)
 

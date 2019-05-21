@@ -7,12 +7,12 @@ ms.assetid: DDCDB49C-6008-4F72-B095-463EE21D7C23
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 7210cffb3cd348a6bdbf6cee80c4b6cd55553c58
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: ce56c30cd631e87d39c9c5bda101b67252a0762a
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61333549"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926895"
 ---
 # <a name="summary-of-chapter-24-page-navigation"></a>第 24 章の概要です。 ページのナビゲーション
 
@@ -38,7 +38,7 @@ ms.locfileid: "61333549"
 
 前のページに戻る前に、ページにいくつかの情報を提供する、ユーザーが必要な場合に、アプリケーションは一般にモーダル ページを使用します。 モーダルではないページとも呼ばれるモードレスまたは*階層*します。 モーダルまたはモードレス; として区別ページ自体ではありません。これは、そこに移動するために使用するメソッドによって、代わりに制御されます。 すべてのプラットフォームで作業を行う、モーダル ページは、前のページに戻るの独自のユーザー インターフェイスを提供する必要があります。
 
-[ **ModelessAndModal** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24/ModelessAndModal)モードレスとモーダル ページ間の違いを調査することができます。 ページ ナビゲーションを使用するアプリケーションがそのホーム ページに渡す必要があります、 [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)コンス トラクター、プログラムの一般に`App`クラス。 1 つおまけが不要になったを設定する必要があること、 `Padding` iOS 用のページ。
+[ **ModelessAndModal** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24/ModelessAndModal)モードレスとモーダル ページ間の違いを調査することができます。 ページ ナビゲーションを使用するアプリケーションがそのホーム ページに渡す必要があります、 [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)コンストラクター、プログラムの一般に`App`クラス。 1 つおまけが不要になったを設定する必要があること、 `Padding` iOS 用のページ。
 
 モードレス ページ、ページのことを発見したは[ `Title` ](xref:Xamarin.Forms.Page.Title)プロパティが表示されます。 IOS、Android、および Windows タブレットとデスクトップ プラットフォームは、前のページに戻るユーザー インターフェイス要素を提供します。 コース、Android、および Windows Phone のデバイスがある標準**戻る**戻るボタンをクリックします。
 
@@ -67,7 +67,7 @@ ms.locfileid: "61333549"
 - [`SetHasBackButton`](xref:Xamarin.Forms.NavigationPage.SetHasBackButton(Xamarin.Forms.Page,System.Boolean)) および [`GetHasBackButton`](xref:Xamarin.Forms.NavigationPage.GetHasBackButton(Xamarin.Forms.Page))
 - [`SetHasNavigationBar`](xref:Xamarin.Forms.NavigationPage.SetHasNavigationBar(Xamarin.Forms.BindableObject,System.Boolean)) および [`GetHasNavigationBar`](xref:Xamarin.Forms.NavigationPage.GetHasNavigationBar(Xamarin.Forms.BindableObject))
 - [`SetBackButtonTitle`](xref:Xamarin.Forms.NavigationPage.SetBackButtonTitle(Xamarin.Forms.BindableObject,System.String)) [ `GetBackButtonTitle` ](xref:Xamarin.Forms.NavigationPage.GetBackButtonTitle(Xamarin.Forms.BindableObject)) iOS のみで動作
-- [`SetTitleIcon`](xref:Xamarin.Forms.NavigationPage.SetTitleIcon(Xamarin.Forms.BindableObject,Xamarin.Forms.FileImageSource)) [ `GetTitleIcon` ](xref:Xamarin.Forms.NavigationPage.GetTitleIcon(Xamarin.Forms.BindableObject))作業して iOS と Android のみ
+- [`SetTitleIcon`](xref:Xamarin.Forms.NavigationPage.SetTitleIcon(Xamarin.Forms.BindableObject,Xamarin.Forms.ImageSource)) [ `GetTitleIcon` ](xref:Xamarin.Forms.NavigationPage.GetTitleIcon(Xamarin.Forms.BindableObject))作業して iOS と Android のみ
 
 ### <a name="exploring-the-mechanics"></a>しくみの調査
 
@@ -123,9 +123,9 @@ ms.locfileid: "61333549"
 
 ページ間でデータを共有する必要があります&mdash;へ移動 ページでは、およびページを起動したページにデータを返すデータを転送します。 これを行うためのいくつかの方法はあります。
 
-### <a name="constructor-arguments"></a>コンス トラクターの引数
+### <a name="constructor-arguments"></a>コンストラクターの引数
 
-新しいページに移動するととき、自体を初期化するためにページを使用するコンス トラクター引数を使用して、ページ クラスのインスタンスを作成することができます。 [ **SchoolAndStudents** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24/SchoolAndStudents)のサンプルで例示します。 移動して、ページのこともその`BindingContext`ページに移動するで設定します。
+新しいページに移動するととき、自体を初期化するためにページを使用するコンストラクター引数を使用して、ページ クラスのインスタンスを作成することができます。 [ **SchoolAndStudents** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24/SchoolAndStudents)のサンプルで例示します。 移動して、ページのこともその`BindingContext`ページに移動するで設定します。
 
 ### <a name="properties-and-method-calls"></a>プロパティとメソッドの呼び出し
 

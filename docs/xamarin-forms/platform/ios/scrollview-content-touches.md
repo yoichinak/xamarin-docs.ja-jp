@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 7f6ec13b1b21a1526bb53f260c4d80e881e7feba
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 19a683fbd4aeb7060d97406a89c1e9308fb56b03
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60952243"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926000"
 ---
 # <a name="scrollview-content-touches-on-ios"></a>IOS で ScrollView コンテンツの仕上げ
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
 
 iOSでは、[`ScrollView`](xref:Xamarin.Forms.ScrollView) 内でタッチジェスチャーが開始される時、暗黙のタイマーが呼ばれます。そして `ScrollView` は、そのタイマーの間のユーザーのアクションに基づいて、そのジェスチャーを処理するか、その中のコンテンツに渡すかを決めます。 既定では iOS の `ScrollView` はコンテンツのタッチを遅らせますが、これは `ScrollView` のコンテンツでジェスチャーが発生すべきときに発生しない、というようないくつかの状況での問題の原因となりえます。 したがって、このプラットフォーム仕様は `ScrollView` がタッチジェスチャーを処理するか、その中のコンテンツに渡すかどうかを制御します。 これは、 XAML で `ScrollView.ShouldDelayContentTouches` 添付プロパティを `boolean` 値に設定して使用します。
 
@@ -61,6 +61,6 @@ scrollView.On<iOS>().SetShouldDelayContentTouches(!scrollView.On<iOS>().ShouldDe
 
 ## <a name="related-links"></a>関連リンク
 
-- [プラットフォーム仕様 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+- [プラットフォーム仕様 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
 - [プラットフォーム仕様の作成](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

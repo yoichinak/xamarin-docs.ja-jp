@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 749e9bca87b2c9547b9733248d75718a4443ab88
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 665f5d1653b74997519149cef68e0882f476179d
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61160743"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65924607"
 ---
 # <a name="global-styles-in-xamarinforms"></a>Xamarin.Forms でグローバル スタイル
 
@@ -126,7 +126,7 @@ public class App : Application
 }
 ```
 
-コンス トラクターは、1 つを定義します。*明示的な*に適用するためのスタイル[ `Button` ](xref:Xamarin.Forms.Button)アプリケーション全体でのインスタンス。 *明示的な* [ `Style` ](xref:Xamarin.Forms.Style)にインスタンスが追加される、 [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)を使用して、 [ `Add` ](xref:Xamarin.Forms.ResourceDictionary.Add(System.String,System.Object)) を指定して、メソッド`key`を参照する文字列、`Style`インスタンス。 `Style`インスタンス、アプリケーションで適切な種類のコントロールに適用できます。 ただし、グローバルなスタイルは、*明示的な*または*暗黙的な*します。
+コンストラクターは、1 つを定義します。*明示的な*に適用するためのスタイル[ `Button` ](xref:Xamarin.Forms.Button)アプリケーション全体でのインスタンス。 *明示的な* [ `Style` ](xref:Xamarin.Forms.Style)にインスタンスが追加される、 [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)を使用して、 [ `Add` ](xref:Xamarin.Forms.ResourceDictionary.Add(System.String,System.Object)) を指定して、メソッド`key`を参照する文字列、`Style`インスタンス。 `Style`インスタンス、アプリケーションで適切な種類のコントロールに適用できます。 ただし、グローバルなスタイルは、*明示的な*または*暗黙的な*します。
 
 次のコード例に示します、C# のページを適用する、`buttonStyle`をページの[ `Button` ](xref:Xamarin.Forms.Button)インスタンス。
 
@@ -148,7 +148,7 @@ public class ApplicationStylesPageCS : ContentPage
 }
 ```
 
-`buttonStyle`に適用される、 [ `Button` ](xref:Xamarin.Forms.Button)インスタンスを設定して、 [ `Style` ](xref:Xamarin.Forms.VisualElement.Style)プロパティの外観を制御し、`Button`インスタンス。
+`buttonStyle`に適用される、 [ `Button` ](xref:Xamarin.Forms.Button)インスタンスを設定して、 [ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)プロパティの外観を制御し、`Button`インスタンス。
 
 ## <a name="related-links"></a>関連リンク
 

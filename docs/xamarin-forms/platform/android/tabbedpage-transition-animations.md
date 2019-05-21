@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: 1e9c46fe9535c313581d6d0053559a28aa327887
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: b57718038c43f7bc2a9e27e780a0624eb50a54fe
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61359896"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926414"
 ---
 # <a name="tabbedpage-page-transition-animations-on-android"></a>Android で TabbedPage ページ遷移アニメーション
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
 
 この Android プラットフォームに固有の使用の移動時にページを使用するかプログラムで、または、タブ バーを使用する場合は、遷移アニメーションを無効にする、 [ `TabbedPage`](xref:Xamarin.Forms.TabbedPage)します。 XAML で設定して使用される、`TabbedPage.IsSmoothScrollEnabled`バインド可能なプロパティを`false`:
 
@@ -46,7 +46,7 @@ On<Android>().SetIsSmoothScrollEnabled(false);
 
 ## <a name="related-links"></a>関連リンク
 
-- [プラットフォーム仕様 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+- [プラットフォーム仕様 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
 - [プラットフォーム仕様の作成](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [AndroidSpecific API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)
 - [AndroidSpecific.AppCompat API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)

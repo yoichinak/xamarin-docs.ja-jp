@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/02/2016
-ms.openlocfilehash: 0251d06ff68185990ed8b7acb46389c59c71a99a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: d3e1c8a2b17ba41e3c9d212948f42023c15205ac
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61075222"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926234"
 ---
 # <a name="bindable-properties"></a>バインド可能なプロパティ
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/behaviors/eventtocommandbehavior/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/Behaviors/EventToCommandBehavior/)
 
 _Xamarin.Forms では、共通言語ランタイム (CLR) のプロパティの機能は、バインド可能なプロパティが拡張されます。バインド可能なプロパティは、特殊な種類のプロパティ、プロパティの値が Xamarin.Forms プロパティ システムによって追跡されます。この記事では、バインド可能なプロパティは、概要を示し、作成し、これらを使用する方法を示します。_
 
@@ -226,7 +226,7 @@ public static readonly BindableProperty SizeProperty =
 ## <a name="related-links"></a>関連リンク
 
 - [XAML 名前空間](~/xamarin-forms/xaml/namespaces.md)
-- [イベントをコマンドの動作 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/behaviors/eventtocommandbehavior/)
+- [イベントをコマンドの動作 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/Behaviors/EventToCommandBehavior/)
 - [検証コールバック (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/xaml/validationcallback/)
 - [強制値コールバック (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/xaml/coercevaluecallback/)
 - [BindableProperty](xref:Xamarin.Forms.BindableProperty)

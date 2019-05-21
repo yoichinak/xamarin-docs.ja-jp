@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 4048ec78d48b810b39d46fbcb7708860c478cce3
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: bc0173df1d4318af7db945d1c5ed6654282e31f5
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61023437"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65927001"
 ---
 # <a name="introduction-to-xamarinforms-styles"></a>Xamarin.Forms のスタイルの概要
 
@@ -107,7 +107,7 @@ public class NoStylesPageCS : ContentPage
 
 各[ `Style` ](xref:Xamarin.Forms.Style)インスタンスは*明示的な*、または*暗黙的な*:
 
-- *明示的な* [ `Style` ](xref:Xamarin.Forms.Style)インスタンスが指定することで定義されている、 [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)と`x:Key`値し、ターゲット要素の設定[`Style` ](xref:Xamarin.Forms.VisualElement.Style)プロパティを`x:Key`参照。 詳細については*明示的な*スタイルを参照してください[明示的なスタイル](~/xamarin-forms/user-interface/styles/explicit.md)します。
+- *明示的な* [ `Style` ](xref:Xamarin.Forms.Style)インスタンスが指定することで定義されている、 [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)と`x:Key`値し、ターゲット要素の設定[`Style` ](xref:Xamarin.Forms.NavigableElement.Style)プロパティを`x:Key`参照。 詳細については*明示的な*スタイルを参照してください[明示的なスタイル](~/xamarin-forms/user-interface/styles/explicit.md)します。
 - *暗黙的な* [ `Style` ](xref:Xamarin.Forms.Style)のみを指定してインスタンスが定義されている、 [ `TargetType`](xref:Xamarin.Forms.Style.TargetType)します。 `Style`は、自動的にその型のすべての要素に適用されますし、インスタンス。 注そのサブクラスの`TargetType`が自動的にない、`Style`適用します。 詳細については*暗黙的な*スタイルを参照してください[暗黙的スタイル](~/xamarin-forms/user-interface/styles/implicit.md)します。
 
 作成するときに、 [ `Style` ](xref:Xamarin.Forms.Style)、 [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)プロパティは常に必要です。 次のコード例は、*明示的な*スタイル (注、 `x:Key`) XAML で作成します。

@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2016
-ms.openlocfilehash: 1baad2e2edfb661fff9f3ef0ccf52c9922e9f351
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: b00452d348072060ab0e31a64fdb8cd4eb177471
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61178157"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926972"
 ---
 # <a name="passing-arguments-in-xaml"></a>XAML で引数の受け渡し
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/xaml/passingconstructorarguments/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/XAML/PassingConstructorArguments/)
 
 _この記事では、工場出荷時のメソッドを呼び出すと、ジェネリック引数の型を指定する既定以外のコンス トラクターに引数を渡すに使用できる XAML 属性の使用を示します。_
 
@@ -173,5 +173,5 @@ _この記事では、工場出荷時のメソッドを呼び出すと、ジェ�
 ## <a name="related-links"></a>関連リンク
 
 - [XAML 名前空間](~/xamarin-forms/xaml/namespaces.md)
-- [コンス トラクター引数の受け渡し (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/xaml/passingconstructorarguments/)
+- [コンス トラクター引数の受け渡し (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/XAML/PassingConstructorArguments/)
 - [ファクトリ メソッドを呼び出す (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/xaml/callingfactorymethods/)

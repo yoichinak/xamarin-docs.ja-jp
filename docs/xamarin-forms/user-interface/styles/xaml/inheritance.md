@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: bef48db93ae76346802b6569080bb1e54e3e51b3
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c0b38453c5e573a13a51b6c001d3324936a8b7fb
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61394009"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926870"
 ---
 # <a name="style-inheritance-in-xamarinforms"></a>Xamarin.Forms でスタイル継承
 
@@ -62,7 +62,7 @@ _スタイルは、重複を削減し、再利用を有効にするには、そ�
 </ContentPage>
 ```
 
-`baseStyle`ターゲット[ `View` ](xref:Xamarin.Forms.View)インスタンス、および設定、 [ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions)と[ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions)プロパティ。 `baseStyle`がコントロール上で直接設定されていません。 代わりに、`labelStyle`と`buttonStyle`バインド可能な追加のプロパティ値の設定をそれを継承します。 `labelStyle`と`buttonStyle`に適用される、 [ `Label` ](xref:Xamarin.Forms.Label)インスタンスと[ `Button` ](xref:Xamarin.Forms.Button)を設定して、インスタンス、 [ `Style` ](xref:Xamarin.Forms.VisualElement.Style)プロパティ。 次のスクリーン ショットに示すように外観が発生します。
+`baseStyle`ターゲット[ `View` ](xref:Xamarin.Forms.View)インスタンス、および設定、 [ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions)と[ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions)プロパティ。 `baseStyle`がコントロール上で直接設定されていません。 代わりに、`labelStyle`と`buttonStyle`バインド可能な追加のプロパティ値の設定をそれを継承します。 `labelStyle`と`buttonStyle`に適用される、 [ `Label` ](xref:Xamarin.Forms.Label)インスタンスと[ `Button` ](xref:Xamarin.Forms.Button)を設定して、インスタンス、 [ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)プロパティ。 次のスクリーン ショットに示すように外観が発生します。
 
 [![](inheritance-images/style-inheritance.png)](inheritance-images/style-inheritance-large.png#lightbox)
 
@@ -110,7 +110,7 @@ _スタイルは、重複を削減し、再利用を有効にするには、そ�
 
 ## <a name="style-inheritance-in-c35"></a>C スタイルの継承&#35;
 
-同等の C# ページで、 [ `Style` ](xref:Xamarin.Forms.Style)インスタンスに直接割り当てられた、 [ `Style` ](xref:Xamarin.Forms.VisualElement.Style) 、必要なコントロールのプロパティが次のコード例に示すように。
+同等の C# ページで、 [ `Style` ](xref:Xamarin.Forms.Style)インスタンスに直接割り当てられた、 [ `Style` ](xref:Xamarin.Forms.NavigableElement.Style) 、必要なコントロールのプロパティが次のコード例に示すように。
 
 ```csharp
 public class StyleInheritancePageCS : ContentPage
@@ -153,7 +153,7 @@ public class StyleInheritancePageCS : ContentPage
 }
 ```
 
-`baseStyle`ターゲット[ `View` ](xref:Xamarin.Forms.View)インスタンス、および設定、 [ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions)と[ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions)プロパティ。 `baseStyle`がコントロール上で直接設定されていません。 代わりに、`labelStyle`と`buttonStyle`バインド可能な追加のプロパティ値の設定をそれを継承します。 `labelStyle`と`buttonStyle`に適用される、 [ `Label` ](xref:Xamarin.Forms.Label)インスタンスと[ `Button` ](xref:Xamarin.Forms.Button)を設定して、インスタンス、 [ `Style` ](xref:Xamarin.Forms.VisualElement.Style)プロパティ。
+`baseStyle`ターゲット[ `View` ](xref:Xamarin.Forms.View)インスタンス、および設定、 [ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions)と[ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions)プロパティ。 `baseStyle`がコントロール上で直接設定されていません。 代わりに、`labelStyle`と`buttonStyle`バインド可能な追加のプロパティ値の設定をそれを継承します。 `labelStyle`と`buttonStyle`に適用される、 [ `Label` ](xref:Xamarin.Forms.Label)インスタンスと[ `Button` ](xref:Xamarin.Forms.Button)を設定して、インスタンス、 [ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)プロパティ。
 
 ## <a name="related-links"></a>関連リンク
 

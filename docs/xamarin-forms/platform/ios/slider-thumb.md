@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 43cc87f9d319295ce65d55488e1be032ae00a697
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: b195a277defa04bac88ad65b928957c6efff4601
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61082206"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65925338"
 ---
 # <a name="slider-thumb-tap-on-ios"></a>IOS でスライダーつまみをタップします
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
 
 この iOS プラットフォームに固有の有効、 [ `Slider.Value` ](xref:Xamarin.Forms.Slider.Value)の位置をタップして設定されるプロパティを[ `Slider` ](xref:Xamarin.Forms.Slider)をドラッグすることではなく、横棒グラフ、`Slider`つまみ。 XAML で設定して使用される、 [ `Slider.UpdateOnTap` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Slider.UpdateOnTapProperty)バインド可能なプロパティを`true`:
 
@@ -49,6 +49,6 @@ slider.On<iOS>().SetUpdateOnTap(true);
 
 ## <a name="related-links"></a>関連リンク
 
-- [プラットフォーム仕様 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+- [プラットフォーム仕様 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
 - [プラットフォーム仕様の作成](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

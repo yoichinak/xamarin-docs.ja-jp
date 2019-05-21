@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/30/2019
-ms.openlocfilehash: dd749a4a78adbab5317f1ae5ca6334caa009b9b3
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a3ef0f96bcc955dcac4231f9eb9cf1ab16ee61aa
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61277799"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65925291"
 ---
 # <a name="xamarinforms-style-classes"></a>Xamarin.Forms のスタイル クラス
 
@@ -180,7 +180,7 @@ Resources = new ResourceDictionary
 
 ## <a name="consume-style-classes"></a>スタイル クラスを使用します。
 
-設定でスタイル クラスを使用できる、 [ `StyleClass` ](xref:Xamarin.Forms.VisualElement.StyleClass)プロパティの型であるコントロールの`IList<string>`、スタイル クラス名の一覧にします。 コントロールの型と一致すること、スタイル クラスが適用されます、 [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)スタイルのクラス。
+設定でスタイル クラスを使用できる、 [ `StyleClass` ](xref:Xamarin.Forms.NavigableElement.StyleClass)プロパティの型であるコントロールの`IList<string>`、スタイル クラス名の一覧にします。 コントロールの型と一致すること、スタイル クラスが適用されます、 [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)スタイルのクラス。
 
 次の例では 3 つ[ `BoxView` ](xref:Xamarin.Forms.BoxView)インスタンスでは、それぞれ異なるスタイル クラスに設定します。
 
@@ -206,7 +206,7 @@ Resources = new ResourceDictionary
 ![](style-class-images/boxviews.png "BoxViews スタイル クラスのスタイル設定")
 
 > [!IMPORTANT]
-> コントロールに複数のスタイル クラスを適用できます、 [ `StyleClass` ](xref:Xamarin.Forms.VisualElement.StyleClass)プロパティの型は`IList<string>`します。 この場合、一覧の順序の昇順でスタイル クラスが適用されます。 そのため、複数のスタイル クラスでは、同じプロパティを設定するときに最高のリストの位置にあるスタイル クラスでプロパティが優先されます。
+> コントロールに複数のスタイル クラスを適用できます、 [ `StyleClass` ](xref:Xamarin.Forms.NavigableElement.StyleClass)プロパティの型は`IList<string>`します。 この場合、一覧の順序の昇順でスタイル クラスが適用されます。 そのため、複数のスタイル クラスでは、同じプロパティを設定するときに最高のリストの位置にあるスタイル クラスでプロパティが優先されます。
 
 同等の C# コードに示します。
 

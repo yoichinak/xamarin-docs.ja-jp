@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: bc18f1e1f051e18a970464b134733f2af39681ae
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: f38064027b4eb6dada2becc69b4163d6fa6082fb
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61250911"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65927016"
 ---
 # <a name="safe-area-layout-guide-on-ios"></a>IOS での安全領域レイアウト ガイド
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
 
 この iOS プラットフォーム固有を使用して、ページのコンテンツが iOS 11 以降を使用するすべてのデバイスの安全である画面の領域に配置されていることを確認します。 特に、iPhone X でデバイスの角の丸まり、ホームインジケータ、またはセンサーハウジングによってコンテンツが切り抜かれないように。これは XAML で `Page.UseSafeArea` 添付プロパティを `boolean` 値に設定して使用します。
 
@@ -65,6 +65,6 @@ protected override void OnAppearing()
 
 ## <a name="related-links"></a>関連リンク
 
-- [プラットフォーム仕様 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+- [プラットフォーム仕様 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
 - [プラットフォーム仕様の作成](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)
