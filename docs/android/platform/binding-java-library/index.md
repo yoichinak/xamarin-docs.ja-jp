@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/01/2017
-ms.openlocfilehash: 0f4ec3cfd7c154e43db9f8e123259317c0d17e21
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 016ac7269f334f6df7fba9635897b9608f459284
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60957454"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65970219"
 ---
 # <a name="binding-a-java-library"></a>Java ライブラリのバインド
 
@@ -70,7 +70,7 @@ using Com.Company.Package;
 
 * **ライブラリの外部の依存関係はありますか。** &ndash; Xamarin.Android プロジェクトでは、Android ライブラリで必要な Java 依存関係を含める必要がある、 **ReferenceJar**か、または、 **EmbeddedReferenceJar**します。 ネイティブ アセンブリとしてバインド プロジェクトに追加する必要があります、 **EmbeddedNativeLibrary**します。  
 
-* **Android ライブラリのターゲットにはサポートされている Android API のバージョンですか。** &ndash; Android API レベルを「ダウン グレード」することはできません。Xamarin.Android バインド プロジェクトも、レベル (またはそれ以上) には、同じ API をターゲットはことを確認、Android ライブラリとして。
+* **Android API のバージョンは、Android ライブラリの対象ですか?** &ndash; Android API レベルを「ダウン グレード」することはできません。Xamarin.Android バインド プロジェクトも、レベル (またはそれ以上) には、同じ API をターゲットはことを確認、Android ライブラリとして。
 
 * **JDK のバージョンは、ライブラリをコンパイルに使用されたか。** &ndash; Xamarin.Android で Android ライブラリの使用よりも JDK の異なるバージョンで作成した場合、バインド エラーが発生します。 可能であれば、同じバージョンの Xamarin.Android のインストールで使用される JDK を使用して、Android ライブラリを再コンパイルします。
 
