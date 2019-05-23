@@ -7,16 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
-ms.openlocfilehash: b2f32f6695fffa27068fce9d8c12f4ecd9157bc2
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: bd328c307ef5ad243569c294a7256ae9bdb3806a
+ms.sourcegitcommit: 0596004d4a0e599c1da1ddd75a6ac928f21191c2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65970539"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66005265"
 ---
 # <a name="xamarinforms-collectionview-scrolling"></a>Xamarin.Forms の CollectionView スクロール
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/CollectionViewDemos/)
+![](~/media/shared/preview.png "この API は、現在プレリリースです")
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/CollectionViewDemos/)
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 2 つ定義する[ `ScrollTo` ](xref:Xamarin.Forms.ItemsView.ScrollTo*)メソッドは、項目をビューにスクロールします。 オーバーロードの 1 つは、ビュー内の指定したインデックスにある項目にスクロールし、もう一つは、ビュー内の指定した項目にスクロールします。 両方のオーバー ロードは、スクロールが完了すると、項目の正確な位置を示すために指定できる追加の引数とスクロールをアニメーション化するかどうかがあります。
 
@@ -272,4 +274,4 @@ CollectionView collectionView = new CollectionView
 
 ## <a name="related-links"></a>関連リンク
 
-- [CollectionView (サンプル)](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/CollectionViewDemos/)
+- [CollectionView (サンプル)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/CollectionViewDemos/)

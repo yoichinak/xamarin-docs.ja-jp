@@ -7,16 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
-ms.openlocfilehash: 74cfade0cd872ae107f74ca86d6bc5fffa22e1f6
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: a64a54d763edc4f02383af686fc8e9386daad572
+ms.sourcegitcommit: 0596004d4a0e599c1da1ddd75a6ac928f21191c2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65971278"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66005246"
 ---
 # <a name="xamarinforms-collectionview-layout"></a>Xamarin.Forms CollectionView レイアウト
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/CollectionViewDemos/)
+![](~/media/shared/preview.png "この API は、現在プレリリースです")
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/CollectionViewDemos/)
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView) レイアウトを制御する次のプロパティを定義します。
 
@@ -381,6 +383,6 @@ void OnImageTapped(object sender, EventArgs e)
 
 ## <a name="related-links"></a>関連リンク
 
-- [CollectionView (サンプル)](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/CollectionViewDemos/)
+- [CollectionView (サンプル)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/CollectionViewDemos/)
 - [Right-to-left のローカライズ](~/xamarin-forms/app-fundamentals/localization/right-to-left.md)
 - [Xamarin.Forms の CollectionView スクロール](scrolling.md)
