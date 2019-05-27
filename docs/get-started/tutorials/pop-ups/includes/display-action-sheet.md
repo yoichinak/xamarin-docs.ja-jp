@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: effebf02a7fb84ef955f4dcfda75d5273ef96b29
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 87eb021e6cc571a9a5522697cde2aa11ee991308
+ms.sourcegitcommit: 6ad272c2c7b0c3c30e375ad17ce6296ac1ce72b2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61384679"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66193795"
 ---
 
 Xamarin.Forms には、アクション シートとして知られるモーダル ポップアップが用意されており、タスクの完了までユーザーをガイドするのに使用できます。 この演習では、[`Page`](xref:Xamarin.Forms.Page) クラスから [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*) メソッドを使用して、タスクの完了までユーザーをガイドするアクション シートを表示します。
@@ -41,7 +41,7 @@ Xamarin.Forms には、アクション シートとして知られるモーダ�
 
     アクション シート ダイアログで代替方法を選択した後、その選択が Visual Studio の **[出力]** ウィンドウに出力されることを確認します。
 
-    アクション シートの表示に関する詳細は、「[ポップアップの表示](~/xamarin-forms/app-fundamentals/navigation/pop-ups.md)」ガイドの「[タスクを通じたユーザーのガイド](~/xamarin-forms/app-fundamentals/navigation/pop-ups.md#guiding-users-through-tasks)」を参照してください。
+    アクション シートの表示に関する詳細は、「[Display Pop-ups (ポップアップの表示)](~/xamarin-forms/user-interface/pop-ups.md)」ガイドの「[Guide users through tasks (タスクを通じたユーザーのガイド)](~/xamarin-forms/user-interface/pop-ups.md#guide-users-through-tasks)」をご覧ください。
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -75,4 +75,4 @@ Xamarin.Forms には、アクション シートとして知られるモーダ�
 
     アクション シート ダイアログで代替方法を選択した後、その選択が Visual Studio for Mac の **[出力]** ウィンドウに出力されることを確認します。
 
-    アクション シートの表示に関する詳細は、「[ポップアップの表示](~/xamarin-forms/app-fundamentals/navigation/pop-ups.md)」ガイドの「[タスクを通じたユーザーのガイド](~/xamarin-forms/app-fundamentals/navigation/pop-ups.md#guiding-users-through-tasks)」を参照してください。
+    アクション シートの表示に関する詳細は、「[Display Pop-ups (ポップアップの表示)](~/xamarin-forms/user-interface/pop-ups.md)」ガイドの「[Guide users through tasks (タスクを通じたユーザーのガイド)](~/xamarin-forms/user-interface/pop-ups.md#guide-users-through-tasks)」をご覧ください。

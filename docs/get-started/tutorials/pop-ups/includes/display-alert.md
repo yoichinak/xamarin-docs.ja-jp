@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: cff466025306ee5d23b5245e625eba23c5448c15
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 1e7b4b2ce4b7592c2350af20cf516436e244d95f
+ms.sourcegitcommit: 6ad272c2c7b0c3c30e375ad17ce6296ac1ce72b2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61384689"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66193789"
 ---
 Xamarin.Forms には、ユーザーにアラートを表示する、または簡単な質問をする、アラートと呼ばれる、モーダル ポップアップがあります。 この演習では、[`Page`](xref:Xamarin.Forms.Page) クラスから [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*) メソッドを使用して、ユーザーにアラートを表示したり、簡単な質問をします。
 
@@ -67,7 +67,7 @@ Xamarin.Forms には、ユーザーにアラートを表示する、または簡
 
     質問への回答を選択した後、回答が Visual Studio の **[出力]** ウィンドウに出力されることを確認します。
 
-    アラートの表示について詳しくは、「[Displaying Pop-ups](~/xamarin-forms/app-fundamentals/navigation/pop-ups.md)」 (ポップアップの表示) ガイドの「[Displaying an alert](~/xamarin-forms/app-fundamentals/navigation/pop-ups.md#displaying-an-alert)」 (アラートの表示) を参照してください。
+    アラートの表示について詳しくは、「[Display Pop-ups (ポップアップの表示)](~/xamarin-forms/user-interface/pop-ups.md)」ガイドの「[Display an alert (アラートを表示する)](~/xamarin-forms/user-interface/pop-ups.md#display-an-alert)」をご覧ください。
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -128,4 +128,4 @@ Xamarin.Forms には、ユーザーにアラートを表示する、または簡
 
     質問への回答を選択した後、回答が Visual Studio for Mac の **[アプリケーション出力]** ウィンドウに出力されることを確認します。
 
-    アラートの表示について詳しくは、「[Displaying Pop-ups](~/xamarin-forms/app-fundamentals/navigation/pop-ups.md)」 (ポップアップの表示) ガイドの「[Displaying an alert](~/xamarin-forms/app-fundamentals/navigation/pop-ups.md#displaying-an-alert)」 (アラートの表示) を参照してください。
+    アラートの表示について詳しくは、「[Display Pop-ups (ポップアップの表示)](~/xamarin-forms/user-interface/pop-ups.md)」ガイドの「[Display an alert (アラートを表示する)](~/xamarin-forms/user-interface/pop-ups.md#display-an-alert)」をご覧ください。
