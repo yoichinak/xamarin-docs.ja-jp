@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/21/2019
-ms.openlocfilehash: 779b39441893324e38843e036614484443e37574
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: b70a842a2f677bf0343ea7db1e9627fa2087bf71
+ms.sourcegitcommit: 0596004d4a0e599c1da1ddd75a6ac928f21191c2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65971286"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66005333"
 ---
 # <a name="xamarinforms-views"></a>Xamarin.Forms のビュー
 
@@ -174,7 +174,7 @@ _Xamarin.Forms のビューとは、クロス プラットフォーム モバイ
 
 |     |     |
 | --- | --- |
-| [`CollectionView`](xref:Xamarin.Forms.CollectionView) を別のレイアウトの仕様を使用して、選択可能なデータ項目のスクロール可能な一覧が表示されます。 これは [ `ListView`](xref:Xamarin.Forms.ListView) の代わりとして、より柔軟でより高パフォーマンスを提供することを目的にしています。 設定、`ItemsSource`プロパティ オブジェクト、およびセットのコレクションを`ItemTemplate`プロパティを[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)アイテムの書式設定する方法を記述するオブジェクト。 `SelectionChanged`選択が行われたこと、として利用できるイベントの通知、`SelectedItem`プロパティ。<br /><br />[ガイド](~/xamarin-forms/user-interface/collectionview/index.md) / [サンプル](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/CollectionViewDemos/) | [![CollectionView 例](views-images/CollectionView.png "CollectionView 例")](views-images/CollectionView-Large.png#lightbox "CollectionView 例")<br />[このページの C# コード](https://github.com/xamarin/xamarin-forms-samples/blob/forms40/FormsGallery/FormsGallery/FormsGallery/CodeExamples/CollectionViewDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/forms40/FormsGallery/FormsGallery/FormsGallery/XamlExamples/CollectionViewDemoPage.xaml) |
+| [`CollectionView`](xref:Xamarin.Forms.CollectionView) を別のレイアウトの仕様を使用して、選択可能なデータ項目のスクロール可能な一覧が表示されます。 これは [ `ListView`](xref:Xamarin.Forms.ListView) の代わりとして、より柔軟でより高パフォーマンスを提供することを目的にしています。 設定、`ItemsSource`プロパティ オブジェクト、およびセットのコレクションを`ItemTemplate`プロパティを[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)アイテムの書式設定する方法を記述するオブジェクト。 `SelectionChanged`選択が行われたこと、として利用できるイベントの通知、`SelectedItem`プロパティ。<br /><br />[ガイド](~/xamarin-forms/user-interface/collectionview/index.md) / [サンプル](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/CollectionViewDemos/) | [![CollectionView 例](views-images/CollectionView.png "CollectionView 例")](views-images/CollectionView-Large.png#lightbox "CollectionView 例")<br />[このページの C# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/CollectionViewDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/CollectionViewDemoPage.xaml) |
 |     |     |
 
 <a name="listView" />

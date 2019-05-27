@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 0f0c2e9f3e0a2309db1ad96ff286d6ac17f78bc5
-ms.sourcegitcommit: 5d4e6677224971e2bc0268f405d192d0358c74b8
+ms.openlocfilehash: 8926813e8efae72efa9af2221318d6f1ff1e344f
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58329300"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65970925"
 ---
 # <a name="xamarinforms-tabbed-page"></a>Xamarin.Forms のタブ付きページ
 
@@ -32,7 +32,7 @@ _Xamarin.Form の TabbedPage は、タブのリストと大きい詳細エリア
 
 [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) のレイアウトとタブは、プラットフォームによって異なります。
 
-- iOS では、タブのリストが画面の下部に表示され、その上に詳細エリアが表示されます。 また、各タブにはアイコン イメージがあり、これらのサイズは、通常の解像度の場合は 30 × 30 (PNG) の透明度、高解像度の場合は 60 × 60、iPhone 6 Plus の場合は 90 × 90 である必要があります。 6 個以上のタブがある場合、*[その他]* タブが表示され、これを使用して追加のタブにアクセスできます。 Xamarin.Forms アプリケーションでイメージを読み込む方法の詳細については、[イメージの操作](~/xamarin-forms/user-interface/images.md)に関するページを参照してください。 アイコンの要件の詳細については、[タブ付きアプリケーションの作成](~/ios/user-interface/controls/creating-tabbed-applications.md)に関するページを参照してください。
+- iOS では、タブのリストが画面の下部に表示され、その上に詳細エリアが表示されます。 また、各タブにはアイコン イメージがあり、これらのサイズは、通常の解像度の場合は 30 × 30 (PNG) の透明度、高解像度の場合は 60 × 60、iPhone 6 Plus の場合は 90 × 90 である必要があります。 6 個以上のタブがある場合、 *[その他]* タブが表示され、これを使用して追加のタブにアクセスできます。 Xamarin.Forms アプリケーションでイメージを読み込む方法の詳細については、[イメージの操作](~/xamarin-forms/user-interface/images.md)に関するページを参照してください。 アイコンの要件の詳細については、[タブ付きアプリケーションの作成](~/ios/user-interface/controls/creating-tabbed-applications.md)に関するページを参照してください。
 
   > [!NOTE]
   > iOS 用の `TabbedRenderer` には、指定されたソースからタブ アイコンを読み込むために使用できるオーバーライド可能な `GetIcon` メソッドがあることに注意してください。 このオーバーライドにより、SVG イメージを `TabbedPage` のアイコンとして使用することができます。 さらに、アイコンの選択バージョンと未選択バージョンも提供することができます。
@@ -44,9 +44,18 @@ _Xamarin.Form の TabbedPage は、タブのリストと大きい詳細エリア
 
 - Windows タブレット フォーム ファクターでは、タブは常に表示されるとは限らないため、ユーザーは下方向にスワイプ (マウスが接続されている場合は右クリック) して `TabbedPage` でタブを表示する必要があります (次のスクリーンショットを参照)。
 
-![](tabbed-page-images/windows-tabs.png "Windows の TabbedPage のタブ")
+    ![](tabbed-page-images/windows-tabs.png "Windows の TabbedPage のタブ")
 
 ## <a name="creating-a-tabbedpage"></a>TabbedPage の作成
+
+[`TabbedPage`](xref:Xamarin.Forms.TabbedPage) は次の特性を定義します。
+
+- タイプが [`Color`](xref:Xamarin.Forms.Color) の[`BarBackgroundColor`](xref:Xamarin.Forms.TabbedPage.BarBackgroundColor) (タブ バーの背景色)。
+- タイプが [`Color`](xref:Xamarin.Forms.Color) の[`BarTextColor`](xref:Xamarin.Forms.TabbedPage.BarTextColor) (タブ バーのテキストの色)。
+- タイプが [`Color`](xref:Xamarin.Forms.Color) の [`SelectedTabColor`](xref:Xamarin.Forms.TabbedPage.SelectedTabColor) (タブが選択されているときの色)。
+- タイプが [`Color`](xref:Xamarin.Forms.Color) の [`UnselectedTabColor`](xref:Xamarin.Forms.TabbedPage.UnselectedTabColor) (タブが選択されていないときの色)。
+
+これらのプロパティはすべて、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトを基盤としています。つまり、スタイルを指定でき、プロパティがデータ バインディングの対象になる場合があります。
 
 [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) を作成するには、次の 2 つの方法を使用することができます。
 
@@ -70,7 +79,7 @@ _Xamarin.Form の TabbedPage は、タブのリストと大きい詳細エリア
             xmlns:local="clr-namespace:TabbedPageWithNavigationPage;assembly=TabbedPageWithNavigationPage"
             x:Class="TabbedPageWithNavigationPage.MainPage">
     <local:TodayPage />
-    <NavigationPage Title="Schedule" Icon="schedule.png">
+    <NavigationPage Title="Schedule" IconImageSource="schedule.png">
         <x:Arguments>
             <local:SchedulePage />
         </x:Arguments>
@@ -86,7 +95,7 @@ public class MainPageCS : TabbedPage
   public MainPageCS ()
   {
     var navigationPage = new NavigationPage (new SchedulePageCS ());
-    navigationPage.Icon = "schedule.png";
+    navigationPage.IconImageSource = "schedule.png";
     navigationPage.Title = "Schedule";
 
     Children.Add (new TodayPageCS ());
@@ -100,7 +109,7 @@ public class MainPageCS : TabbedPage
 > [!NOTE]
 > [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) では、UI の仮想化はサポートされません。 このため、`TabbedPage` に含まれる子要素が多すぎると、パフォーマンスに影響する可能性があります。
 
-次のスクリーンショットは、`TodayPage` [`ContentPage`](xref:Xamarin.Forms.ContentPage) インスタンスを示します。これは、*[今日]* タブで表示されます。
+次のスクリーンショットは、`TodayPage` [`ContentPage`](xref:Xamarin.Forms.ContentPage) インスタンスを示します。これは、 *[今日]* タブで表示されます。
 
 ![](tabbed-page-images/today-page.png "TabbedPage 内の ContentPage")
 
@@ -148,7 +157,7 @@ async void OnUpcomingAppointmentsButtonClicked (object sender, EventArgs e)
   </TabbedPage.Resources>
   <TabbedPage.ItemTemplate>
     <DataTemplate>
-      <ContentPage Title="{Binding Name}" Icon="monkeyicon.png">
+      <ContentPage Title="{Binding Name}" IconImageSource="monkeyicon.png">
         <StackLayout Padding="5, 25">
           <Label Text="{Binding Name}" Font="Bold,Large" HorizontalOptions="Center" />
           <Image Source="{Binding PhotoUrl}" WidthRequest="200" HeightRequest="200" />
@@ -204,7 +213,7 @@ public class TabbedPageDemoPageCS : TabbedPage
       ...
 
       var contentPage = new ContentPage {
-        Icon = "monkeyicon.png",
+        IconImageSource = "monkeyicon.png",
         Content = new StackLayout {
           Padding = new Thickness (5, 25),
           Children = {
@@ -234,7 +243,7 @@ public class TabbedPageDemoPageCS : TabbedPage
 }
 ```
 
-各タブでは、[`ContentPage`](xref:Xamarin.Forms.ContentPage) が表示されます。これは、一連の [`StackLayout`](xref:Xamarin.Forms.StackLayout) インスタンスと [`Label`](xref:Xamarin.Forms.Label) インスタンスを使用して、各タブのデータを表示します。次のスクリーンショットは、*[Tamarin]* タブのコンテンツを示します。
+各タブでは、[`ContentPage`](xref:Xamarin.Forms.ContentPage) が表示されます。これは、一連の [`StackLayout`](xref:Xamarin.Forms.StackLayout) インスタンスと [`Label`](xref:Xamarin.Forms.Label) インスタンスを使用して、各タブのデータを表示します。次のスクリーンショットは、 *[Tamarin]* タブのコンテンツを示します。
 
 ![](tabbed-page-images/tab3.png "テンプレートを使って TabbedPage を作成する")
 

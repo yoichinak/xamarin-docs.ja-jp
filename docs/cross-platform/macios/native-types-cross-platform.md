@@ -6,12 +6,12 @@ ms.assetid: B9C56C3B-E196-4ADA-A1DE-AC10D1001C2A
 author: asb3993
 ms.author: amburns
 ms.date: 04/07/2016
-ms.openlocfilehash: 489d2a76e6eff661360b24d1872ed1343c74b85e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 847566feec2069dea924bcd2a18abf2b3ddb250b
+ms.sourcegitcommit: b986460787677cf8c2fc7cc8c03f4bc60c592120
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61261182"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66213291"
 ---
 # <a name="working-with-native-types-in-cross-platform-apps"></a>クロスプラットフォーム アプリでのネイティブ型の使用
 
@@ -28,7 +28,7 @@ Xamarin.iOS および Xamarin.Mac Unified Api がまだが含まれて、 `int`�
 
 によって、共有されているコードの性質がありますクロス プラットフォームのコードが処理する必要があります、 `nint`、`nuint`と`nfloat`データ型。 例: 以前を使用して四角形のデータの変換を処理するライブラリ`System.Drawing.RectangleF`Xamarin.iOS および Xamarin.Android のバージョン、アプリの間での機能を共有する、iOS のネイティブ型を処理するために更新する必要があります。
 
-コードを共有の形式が使用されている次のセクションで紹介するようおよびサイズと複雑さ、アプリケーションのこれらの変更の処理方法によって異なります。
+サイズと、アプリケーションの複雑さによって異なりますが、これらの変更の処理方法と、コードを共有の形式が使用されているように、次のセクションが表示されます。
 
 ## <a name="code-sharing-considerations"></a>コードの共有に関する考慮事項
 
@@ -38,7 +38,7 @@ Xamarin.iOS および Xamarin.Mac Unified Api がまだが含まれて、 `int`�
 
 ポータブル クラス ライブラリ (PCL) では、サポート、およびプラットフォーム固有の機能を提供するインターフェイスを使用するプラットフォームをターゲットにできます。
 
-PCL プロジェクトの種類が下にコンパイルされた後、`.DLL`と Unified API の意味を持たない、既存のデータ型を引き続き使用することが必要あります (`int`、 `uint`、 `float`)、PCL にソース コードと型キャスト、Pcl への呼び出しクラスとフロント エンド アプリケーションでのメソッドです。 たとえば、次のように入力します。
+PCL プロジェクトの種類が下にコンパイルされた後、`.DLL`と Unified API の意味を持たない、既存のデータ型を引き続き使用することが必要あります (`int`、 `uint`、 `float`)、PCL にソース コードと型キャスト PCL への呼び出しクラスとフロント エンド アプリケーションでのメソッドです。 例:
 
 ```csharp
 using NativePCL;
@@ -52,13 +52,13 @@ Console.WriteLine ("Rectangle Area: {0}", Transformations.CalculateArea ((Rectan
 
 共有アセット プロジェクトの種類を使用すると、個々 のプラットフォームに固有のフロント エンドのアプリにし、取得に含まれるおよびコンパイル別のプロジェクトでソース コードを整理および使用`#if`を管理するために、コンパイラ ディレクティブプラットフォームに固有の要件。
 
-サイズと複雑さ、前面のサイズと共有されているコードの複雑さの共有コードを使用しているでのクロス プラットフォームの種類のネイティブ データのサポート方法を選択するときに考慮する必要があるモバイル アプリケーションを終了します共有アセット プロジェクトの種類。
+共有コードは、サイズと共有されているコードの複雑さを消費している、クロス プラットフォームでネイティブ データ型用のサポート方法を選択する際に考慮する必要がありますをフロント エンドのモバイル アプリケーションの複雑さとサイズ共有アセット プロジェクトです。
 
 これらの要因に基づき、次の種類のソリューションの実装を使用して、`if __UNIFIED__ ... #endif`コンパイラ ディレクティブをコードを Unified API の特定の変更を処理します。
 
 #### <a name="using-duplicate-methods"></a>重複するメソッドを使用してください。
 
-上で指定した四角形のデータの変換を行っているライブラリの例を実行します。 ライブラリがのみ 1 つまたは 2 つの非常に単純なメソッドが含まれる場合は、Xamarin.iOS と Xamarin.Android のこれらのメソッドの複製バージョンを作成することもできます。 例:
+上で指定した四角形のデータの変換を行っているライブラリの例を実行します。 ライブラリがのみ 1 つまたは 2 つの非常に単純なメソッドが含まれる場合は、Xamarin.iOS と Xamarin.Android のこれらのメソッドの複製バージョンを作成することもできます。 例えば:
 
 ```csharp
 using System;
@@ -127,8 +127,8 @@ namespace NativeShared
         #if __UNIFIED__
             public static nfloat CalculateArea(CGRect rect) {
 
-            // Call original routine to calculate area
-            return (nfloat)CalculateArea((RectangleF)rect);
+                // Call original routine to calculate area
+                return (nfloat)CalculateArea((RectangleF)rect);
 
             }
         #endif
@@ -173,12 +173,12 @@ using System;
 using System.Drawing;
 
 #if __UNIFIED__
-    // Mappings Unified CoreGraphic classes to MonoTouch classes
+    // Map Unified CoreGraphic classes to MonoTouch classes
     using RectangleF = global::CoreGraphics.CGRect;
     using SizeF = global::CoreGraphics.CGSize;
     using PointF = global::CoreGraphics.CGPoint;
 #else
-    // Mappings Unified types to MonoTouch types
+    // Map Unified types to MonoTouch types
     using nfloat = global::System.Single;
     using nint = global::System.Int32;
     using nuint = global::System.UInt32;
@@ -207,14 +207,14 @@ namespace NativeShared
 }
 ```
 
-注意が変更されましたここで、`CalculateArea`メソッドの戻り値、`nfloat`標準ではなく`float`します。 しようとして、コンパイル エラーが発生しましたが受けようにこれは_暗黙的に_変換、`nfloat`の計算結果 (乗算される両方の値があるため`nfloat`) に、`float`値を返します。
+注意が変更されましたここで、`CalculateArea`を返すメソッドを`nfloat`標準ではなく`float`します。 しようとして、コンパイル エラーが発生しましたが受けようにこれは_暗黙的に_変換、`nfloat`の計算結果 (乗算される両方の値型であるため`nfloat`) に、`float`値を返します。
 
 コードがコンパイルされ、非 Unified API デバイスで実行する場合、`using nfloat = global::System.Single;`マップ、`nfloat`を`Single`に暗黙的に変換を`float`、コンシューマー側のフロント エンド アプリケーションを呼び出すことができます、`CalculateArea`メソッドなし変更します。
 
 
 #### <a name="using-type-conversions-in-the-front-end-app"></a>フロント エンド アプリでの型変換の使用
 
-のみ、フロント エンド アプリケーションするいくつかの共有コード ライブラリへの呼び出しには、ある別のソリューションは変更なし、ライブラリのままにすることし、既存のルーチンを呼び出すときに、Xamarin.iOS または Xamarin.Mac アプリケーションでのキャストを入力しないでください。 たとえば、次のように入力します。
+のみ、フロント エンド アプリケーションするいくつかの共有コード ライブラリへの呼び出しには、ある別のソリューションは変更なし、ライブラリのままにすることし、既存のルーチンを呼び出すときに、Xamarin.iOS または Xamarin.Mac アプリケーションでのキャストを入力しないでください。 例えば:
 
 ```csharp
 using NativeShared;
@@ -236,13 +236,13 @@ Console.WriteLine ("Rectangle Area: {0}", Transformations.CalculateArea ((Rectan
 - バージョン 1.3.1 ソリューション全体を使用する必要があります (またはそれ以上) の Xamarin.Forms NuGet パッケージ。
 - Xamarin.iOS カスタム レンダリング共有 (共有プロジェクトまたは PCL) UI コードを使用された方法に基づいてソリューションが前述の同じ型を使用します。
 
-標準的なクロス プラットフォーム アプリケーションでは、ように既存の 32 ビットのデータ型使用してください、クロス プラットフォームの共有コードではほとんどすべての状況に。 新しいネイティブ データ型は、アーキテクチャに対応した型は、必要なをサポートしている Mac または iOS API への呼び出しを行う場合にのみ使用する必要があります。
+標準的なクロス プラットフォーム アプリケーション、ほとんどの場合、既存の 32 ビットのデータ型、共有、クロスプラット フォーム コードで使用する必要があります。 新しいネイティブ データ型は、アーキテクチャに対応した型のサポート、Mac、または iOS API を呼び出すことが必要な場合にのみ使用する必要があります。
 
 詳細については、次を参照してください。 この[既存の Xamarin.Forms アプリの更新](https://developer.xamarin.com/guides/cross-platform/macios/updating-xamarin-forms-apps/)ドキュメント。
 
 ## <a name="summary"></a>まとめ
 
-この記事では、Unified API アプリケーションとその影響クロスプラット内のネイティブ データ型に使用するときに「」を参照があります。 クロス プラットフォーム ライブラリで、新しいネイティブ データ型を使用する必要がありますの状況で使用できるいくつかのソリューションを紹介しました。 Unified Api をサポートしている Xamarin.Forms のクロスプラット フォーム対応のアプリケーションでのクイック ガイドを説明しました。
+この記事では、Unified API アプリケーションとその影響クロスプラット内のネイティブ データ型を使用する場合を見たがあります。 クロス プラットフォーム ライブラリで、新しいネイティブ データ型を使用する必要がありますの状況で使用できるいくつかのソリューションを紹介しました。 また、Unified Api をサポートしている Xamarin.Forms のクロスプラット フォーム対応のアプリケーションでのクイック ガイドを説明しました。
 
 
 

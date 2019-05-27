@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
-ms.openlocfilehash: 7bd4a87843852e940da96f688371ddbecbf7e0b4
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: cdeaae6cb83062f0d84a3605582b9779c9f36145
+ms.sourcegitcommit: 6ad272c2c7b0c3c30e375ad17ce6296ac1ce72b2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61153892"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66178050"
 ---
 # <a name="message-app-extension-basics-in-xamarinios"></a>Xamarin.iOS でメッセージ アプリ拡張機能の基本
 
@@ -133,7 +133,7 @@ Apple では、考え得るあらゆる状況で最適な表示されるよう�
 
 1. Visual Studio を起動します。
 2. メッセージ アプリ拡張機能を追加するソリューションを開きます。
-3. 選択 * * iOS 拡張機能 > iMessage 拡張機能 (iOS) * * をクリックし、**次**ボタン。
+3. 選択**iOS 拡張機能 > iMessage 拡張機能 (iOS)**  をクリックし、**次**ボタン。
 
     [![IMessage 拡張機能 (iOS) を選択します。](intro-to-message-app-extensions-images/message01.w157-sml.png)](intro-to-message-app-extensions-images/message01.w157.png#lightbox)
 

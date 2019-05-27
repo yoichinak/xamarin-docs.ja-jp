@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/05/2016
-ms.openlocfilehash: 642a4a63ca2c451c6a085f0e99cebd93babe078d
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: fbc5ccda4e798b818b4c21dd459bab6b467cba31
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53058757"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65925442"
 ---
 # <a name="passing-effect-parameters-as-attached-properties"></a>効果のパラメーターを添付プロパティとして渡す
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/effects/shadoweffectruntimechange/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/Effects/ShadowEffectRuntimeChange/)
 
 _添付プロパティは、実行時のプロパティの変更に応答する効果のパラメーターの定義に使用できます。この記事では、添付プロパティを使用して効果にパラメーターを渡す方法と、実行時にパラメーターを変更する方法を示します。_
 
@@ -174,7 +174,7 @@ ShadowEffect.SetColor (label, Color.Teal);
 </Style>
 ```
 
-[`Style`](xref:Xamarin.Forms.Style) は、次のコード例に示すように、`StaticResource` マークアップ拡張を使用して自身の [`Style`](xref:Xamarin.Forms.VisualElement.Style) プロパティを `Style` インスタンスに設定することで、[`Label`](xref:Xamarin.Forms.Label) に適用できます。
+[`Style`](xref:Xamarin.Forms.Style) は、次のコード例に示すように、`StaticResource` マークアップ拡張を使用して自身の [`Style`](xref:Xamarin.Forms.NavigableElement.Style) プロパティを `Style` インスタンスに設定することで、[`Label`](xref:Xamarin.Forms.Label) に適用できます。
 
 ```xaml
 <Label Text="Label Shadow Effect" ... Style="{StaticResource ShadowEffectStyle}" />
@@ -440,4 +440,4 @@ public class LabelShadowEffect : PlatformEffect
 - [効果](xref:Xamarin.Forms.Effect)
 - [PlatformEffect](xref:Xamarin.Forms.PlatformEffect`2)
 - [RoutingEffect](xref:Xamarin.Forms.RoutingEffect)
-- [影効果 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/effects/shadoweffectruntimechange/)
+- [影効果 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/Effects/ShadowEffectRuntimeChange/)

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/18/2018
-ms.openlocfilehash: 142c22cd239d6b66e5139346b45994ef2f20bdc8
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 634ba351d419b1d18dcc5d5bdbf5e248f510329d
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672561"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65971257"
 ---
 # <a name="automation-properties-in-xamarinforms"></a>Xamarin.Forms でのオートメーション プロパティ
 
@@ -149,7 +149,7 @@ Android 上で、[`NavigationPage`](xref:Xamarin.Forms.NavigationPage) のアク
 
 ### <a name="masterdetailpage"></a>MasterDetailPage
 
-iOS およびユニバーサル Windows プラットフォーム (UWP) 上で、[`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) のトグル ボタンに対してスクリーン リーダーが読み上げるテキストを設定するには、`MasterDetailPage` 上で `AutomationProperties.Name` プロパティおよび `AutomationProperties.HelpText` プロパティを設定するか、または `Master` ページの `Icon` プロパティ上でそれらのプロパティを設定します。
+iOS およびユニバーサル Windows プラットフォーム (UWP) 上で、[`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) のトグル ボタンに対してスクリーン リーダーが読み上げるテキストを設定するには、`MasterDetailPage` 上で `AutomationProperties.Name` プロパティおよび `AutomationProperties.HelpText` プロパティを設定するか、または `Master` ページの `IconImageSource` プロパティ上でそれらのプロパティを設定します。
 
 Android 上で、[`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) のトグル ボタンに対してスクリーン リーダーが読み上げるテキストを設定するには、Android プロジェクトに次のように文字列リソースを追加します。
 
@@ -161,11 +161,11 @@ Android 上で、[`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) の�
 </resources>
 ```
 
-次に、`Master` ページの `Icon` プロパティの `AutomationId` プロパティを設定します。
+次に、`Master` ページの `IconImageSource` プロパティの `AutomationId` プロパティを設定します。
 
 ```csharp
 var master = new ContentPage { ... };
-master.Icon.AutomationId = "btnMDPAutomationID";
+master.IconImageSource.AutomationId = "btnMDPAutomationID";
 ```
 
 ### <a name="toolbaritem"></a>ToolbarItem

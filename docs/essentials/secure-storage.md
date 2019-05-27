@@ -6,12 +6,12 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 04/02/2019
 ms.custom: video
-ms.openlocfilehash: b9838ddb9771cb6ce757a4080520a5edd720531a
-ms.sourcegitcommit: 91a4fcb715506e18e8070bc89bf2cb14d079ad32
+ms.openlocfilehash: e0bc4b988905f03edbc66a252cc47a05c441f2c9
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59574742"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65925836"
 ---
 # <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials:セキュリティで保護されたストレージ
 
@@ -51,7 +51,7 @@ ms.locfileid: "59574742"
     </application>
     ```
 
-2. **auto_backup_rules.xml** という名前の新しい XML ファイルを **Resources/xml** ディレクトリに作成します。 次に、`SecureStorage` を除くすべての共有の設定を含める次の内容を設定します。
+2. **auto_backup_rules.xml** という名前の新しい XML ファイルを、**AndroidResource** のビルド アクションで **Resources/xml** ディレクトリに作成します。 次に、`SecureStorage` を除くすべての共有の設定を含める次の内容を設定します。
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -67,7 +67,7 @@ ms.locfileid: "59574742"
 
 iOS プロジェクト内の **Entitlements.plist** を開き、**キーチェーン** エンタイトルメントを見つけて有効にします。 これで、アプリケーションの ID がグループとして自動的に追加されます。
 
-プロジェクトのプロパティの **[iOS バンドル署名]** で、**[カスタムの権利]** を **Entitlements.plist** に設定します。
+プロジェクトのプロパティの **[iOS バンドル署名]** で、 **[カスタムの権利]** を **Entitlements.plist** に設定します。
 
 > [!TIP]
 > iOS デバイスに展開する場合は、このエンタイトルメントは不要であり、削除する必要があります。
@@ -132,7 +132,7 @@ SecureStorage.RemoveAll();
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-[Android キーストア](https://developer.android.com/training/articles/keystore.html)は、[共有の設定](https://developer.android.com/training/data-storage/shared-preferences.html)に **[アプリのパッケージ ID].xamarinessentials** というファイル名で保存する前に、値を暗号化するための暗号キーを格納するために使用されます。  共有の設定ファイルで使用されるキーは、`SecureStorage` API に渡されるキーの _MD5 Hash_ です。
+[Android キーストア](https://developer.android.com/training/articles/keystore.html)は、[共有の設定](https://developer.android.com/training/data-storage/shared-preferences.html)に **[アプリのパッケージ ID].xamarinessentials** というファイル名で保存する前に、値を暗号化するための暗号キーを格納するために使用されます。  共有の設定ファイルで使用されるキー (暗号化キーではなく_値_の_キー_) は、`SecureStorage` API に渡されるキーの _MD5 ハッシュ_です。
 
 ## <a name="api-level-23-and-higher"></a>API レベル 23 以上
 
@@ -146,7 +146,7 @@ SecureStorage.RemoveAll();
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-iOS デバイスに値を安全に格納するために、[キーチェーン](xref:Security.SecKeyChain)が使用されます。  値を格納するために使用される `SecRecord` は、**[アプリのバンドル ID].xamarinessentials** に設定された `Service` 値を持ちます。
+iOS デバイスに値を安全に格納するために、[キーチェーン](xref:Security.SecKeyChain)が使用されます。  値を格納するために使用される `SecRecord` は、 **[アプリのバンドル ID].xamarinessentials** に設定された `Service` 値を持ちます。
 
 場合によっては、キーチェーン データが iCloud と同期され、アプリケーションをアンインストールしても iCloud やユーザーのその他のデバイスからセキュリティで保護された値が削除されない場合があります。
 
@@ -154,7 +154,7 @@ iOS デバイスに値を安全に格納するために、[キーチェーン](x
 
 暗号化する値に対して、UWP デバイス上で [DataProtectionProvider](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider) が安全に使用されます。
 
-暗号化された値は、`ApplicationData.Current.LocalSettings` の、**[アプリの ID].xamarinessentials** という名前のコンテナーの内部に格納されます。
+暗号化された値は、`ApplicationData.Current.LocalSettings` の、 **[アプリの ID].xamarinessentials** という名前のコンテナーの内部に格納されます。
 
 **SecureStorage** は [Preferences](preferences.md) API を使用し、[Preferences](preferences.md#persistence) ドキュメントで説明されているのと同じデータ永続化に従います。
 

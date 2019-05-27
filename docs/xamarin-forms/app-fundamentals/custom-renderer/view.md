@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2018
-ms.openlocfilehash: 22392603e337205dcdd4909dc61b6c22ca2f00b9
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 88be56cae52e881792ec7a187ef7e158790e8a1b
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53057971"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926601"
 ---
 # <a name="implementing-a-view"></a>ページの実装
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/view/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/View/)
 
 _Xamarin.Forms のカスタム ユーザー インターフェイス コントロールは、View クラスから派生させる必要があります。これは画面上にレイアウトとコントロールを配置するために使われます。この記事では、デバイスのカメラからビデオ ストリームのプレビューを表示するために使う、Xamarin.Forms のカスタム コントロール用のカスタム レンダラーを作成する方法を示します。_
 
@@ -56,13 +56,13 @@ public class CameraPreview : View
 }
 ```
 
-`CameraPreview` カスタム コントロールは、ポータブル クラス ライブラリ (PCL) プロジェクトで作成され、コントロールの API の定義に使用されます。 カスタム コントロールは、デバイスの前面または背面のカメラからビデオ ストリームを表示するかどうかを制御するために使用される `Camera` プロパティを公開しています。 コントロールの作成時に `Camera` プロパティの値が指定されていない場合は、既定で背面のカメラが指定されます。
+`CameraPreview` カスタム コントロールは、.NET 標準ライブラリ プロジェクトで作成され、このコントロールの API を定義します。 カスタム コントロールは、デバイスの前面または背面のカメラからビデオ ストリームを表示するかどうかを制御するために使用される `Camera` プロパティを公開しています。 コントロールの作成時に `Camera` プロパティの値が指定されていない場合は、既定で背面のカメラが指定されます。
 
 <a name="Consuming_the_Custom_Control" />
 
 ## <a name="consuming-the-custom-control"></a>カスタム コントロールの使用
 
-`CameraPreview` カスタム コントロールは、その場所の名前空間を宣言し、カスタム コントロール要素上で名前空間プレフィックスを使用することで PCL プロジェクトの XAML で参照することができます。 次のコード例は、XAML ページがどのように `CameraPreview` カスタム コントロールを使用できるかを示しています。
+`CameraPreview` カスタム コントロールは、その場所の名前空間を宣言し、カスタム コントロール要素上で名前空間プレフィックスを使用することで .NET Standard ライブラリ プロジェクトの XAML で参照することができます。 次のコード例は、XAML ページがどのように `CameraPreview` カスタム コントロールを使用できるかを示しています。
 
 ```xaml
 <ContentPage ...
@@ -334,4 +334,4 @@ namespace CustomRenderer.UWP
 
 ## <a name="related-links"></a>関連リンク
 
-- [CustomRendererView (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/view/)
+- [CustomRendererView (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/View/)

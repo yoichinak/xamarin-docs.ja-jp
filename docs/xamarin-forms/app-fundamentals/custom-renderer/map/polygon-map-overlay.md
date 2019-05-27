@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 9859df6856f118dcfbc6bb4553b10882295866b2
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 01db31a797efc4b383f3bda3fbcf3bb91e0d38e1
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53057255"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926041"
 ---
 # <a name="highlighting-a-region-on-a-map"></a>マップ上での領域の強調表示
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/polygon/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/Map/Polygon/)
 
 "_この記事では、多角形のオーバーレイをマップに追加して、マップ上のある領域を強調表示する方法について説明します。多角形は閉じた図形であり、その内側が塗りつぶされます。_"
 
@@ -308,6 +308,6 @@ namespace MapOverlay.UWP
 
 ## <a name="related-links"></a>関連リンク
 
-- [ポリゴン マップのオーバーレイ (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/polygon/)
+- [ポリゴン マップのオーバーレイ (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/Map/Polygon/)
 - [マップ ピンのカスタマイズ](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md)
 - [Xamarin.Forms.Maps](xref:Xamarin.Forms.Maps)
