@@ -1,25 +1,25 @@
 ---
-title: パート 3 - Xamarin クロスプラットフォーム ソリューションのセットアップ
-description: このドキュメントでは、Xamarin でクロス プラットフォーム ソリューションを設定する方法について説明します。 これで共有戦略など、さまざまなコードがプロジェクトと .NET Standard を共有します。
+title: パート 3 - Xamarin クロスプラット フォーム ソリューションのセットアップ
+description: このドキュメントでは、Xamarin でクロス プラットフォーム ソリューションを設定する方法について説明します。 これには、さまざまなコードの共有など、共有プロジェクトと .NET Standard の戦略について説明します。
 ms.prod: xamarin
 ms.assetid: 4139A6C2-D477-C563-C1AB-98CCD0D10A93
 author: asb3993
 ms.author: amburns
 ms.date: 03/27/2017
-ms.openlocfilehash: f802e31d851915d33cb6dbf5866f8cba3ab90303
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: d20275bab4e4ce90f902a5e72321701d94b1d416
+ms.sourcegitcommit: 4a1520dee7759f8355ea65c8bb3d1bac8ba58122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61276628"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66354067"
 ---
-# <a name="part-3---setting-up-a-xamarin-cross-platform-solution"></a>パート 3 - Xamarin クロスプラットフォーム ソリューションのセットアップ
+# <a name="part-3---setting-up-a-xamarin-cross-platform-solution"></a>パート 3 - Xamarin クロスプラット フォーム ソリューションのセットアップ
 
 Xamarin プロジェクトのすべてが同じソリューション ファイルの形式を使用して、使用されているどのようなプラットフォームに関係なく (Visual Studio **.sln**ファイル形式)。 (Visual Studio for Mac で Windows プロジェクトの場合) など、個々 のプロジェクトを読み込むことができない場合でも、ソリューションを開発の環境間で共有できます。
 
 
 
-新しいクロス プラットフォーム アプリケーションを作成する場合、最初の手順では、空のソリューションを作成します。 これは、セクションの次の動作: クロス プラットフォーム モバイル アプリを構築するためのプロジェクトを設定します。
+新しいクロス プラットフォーム アプリケーションを作成するときに、最初の手順では、空のソリューションを作成します。 このセクションでは、次の動作について説明します。 クロス プラットフォーム モバイル アプリを構築するためのプロジェクトを設定します。
 
  <a name="Sharing_Code" />
 
@@ -33,7 +33,7 @@ Xamarin プロジェクトのすべてが同じソリューション ファイ�
 
 ### <a name="shared-projects"></a>共有プロジェクト
 
-コード ファイルを共有する最も簡単な方法は、使用、[共有プロジェクト](~/cross-platform/app-fundamentals/shared-projects.md)します。
+コード ファイルを共有する最も簡単な方法を使用して、[共有プロジェクト](~/cross-platform/app-fundamentals/shared-projects.md)します。
 
 このメソッドを使用すると、さまざまなプラットフォームのプロジェクトで同じコードを共有して、コンパイラ ディレクティブを使用して、さまざまなプラットフォーム固有のコード パスを含めることができます。
 
@@ -106,7 +106,7 @@ Xamarin アプローチは、2 種類のプロジェクトにコードをグル�
 
  [ ![](setting-up-a-xamarin-cross-platform-solution-images/conceptualarchitecture.png "アプリケーションのアーキテクチャは、この図に示します")](setting-up-a-xamarin-cross-platform-solution-images/conceptualarchitecture.png#lightbox)
 
-このスクリーン ショットでは、共有のコア プロジェクト、iOS および Android アプリケーション プロジェクトとソリューションのセットアップを示します。 共有プロジェクトには、各アーキテクチャのレイヤー (ビジネス、サービス、データおよびデータ アクセス コード) に関連するコードが含まれています。
+このスクリーン ショットは、共有コア プロジェクト、iOS、Android アプリケーション プロジェクトとソリューションのセットアップを示しています。 共有プロジェクトには、各アーキテクチャのレイヤー (ビジネス、サービス、データおよびデータ アクセス コード) に関連するコードが含まれています。
 
  ![](setting-up-a-xamarin-cross-platform-solution-images/core-solution-example.png "共有プロジェクトには、各アーキテクチャのレイヤー (ビジネス、サービス、データおよびデータ アクセス コード) に関連するコードが含まれています。")
 

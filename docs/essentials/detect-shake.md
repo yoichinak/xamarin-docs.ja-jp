@@ -4,13 +4,14 @@ description: Xamarin.Essentials の Accelerometer クラスを利用すると、
 ms.assetid: 07513D32-120F-4F12-8757-A47802A8027B
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: 2a14d739806fef353472a5186a9dbedd8e218662
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.date: 05/28/2019
+ms.custom: video
+ms.openlocfilehash: 8aa1062c7948a57a21d59a785d6359056351245d
+ms.sourcegitcommit: 4a1520dee7759f8355ea65c8bb3d1bac8ba58122
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59019309"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66354055"
 ---
 # <a name="xamarinessentials-detect-shake"></a>Xamarin.Essentials:Detect Shake
 
@@ -79,3 +80,9 @@ Detect Shake API では、加速度計で読み取られた値が未加工のま
 
 - [加速度計のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Accelerometer)
 - [加速度計の API ドキュメント](xref:Xamarin.Essentials.Accelerometer)
+
+## <a name="related-video"></a>関連ビデオ
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Detect-Shake-XamarinEssentials-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

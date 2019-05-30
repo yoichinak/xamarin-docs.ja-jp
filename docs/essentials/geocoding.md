@@ -4,13 +4,14 @@ description: Xamarin.Essentials の Geocoding クラスでは、placemark を位
 ms.assetid: 3ADC440C-B000-4708-A2CC-296F5160AF90
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: bc08554f0060ca5de8d7ffc90ea5c65463b93f3b
-ms.sourcegitcommit: 97dca3face7c4ad5555dfaca88f5b45a70ca556d
+ms.date: 05/28/2019
+ms.custom: video
+ms.openlocfilehash: 157eb3116f09268790036f8983543114e7a58276
+ms.sourcegitcommit: 4a1520dee7759f8355ea65c8bb3d1bac8ba58122
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57972599"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66354108"
 ---
 # <a name="xamarinessentials-geocoding"></a>Xamarin.Essentials:ジオコーディング
 
@@ -32,7 +33,7 @@ ms.locfileid: "57972599"
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-ジオコーディング機能を使用するには、Bing Maps API キーが必要です。 無料の [Bing Maps](https://www.bingmapsportal.com/) アカウントにサインアップします。 **[My account]\(マイ アカウント\) > [My keys]\(マイ キー\)** で、新しいキーを作成し、アプリケーションの種類に基づいて情報を入力します (UWP アプリの場合は、**[Public Windows App (UWP, 8.x, and earlier)]\(パブリック Windows アプリ (UWP、8.x 以前向け)\)** にする必要があります)。
+ジオコーディング機能を使用するには、Bing Maps API キーが必要です。 無料の [Bing Maps](https://www.bingmapsportal.com/) アカウントにサインアップします。 **[My account]\(マイ アカウント\) > [My keys]\(マイ キー\)** で、新しいキーを作成し、アプリケーションの種類に基づいて情報を入力します (UWP アプリの場合は、 **[Public Windows App (UWP, 8.x, and earlier)]\(パブリック Windows アプリ (UWP、8.x 以前向け)\)** にする必要があります)。
 
 **Geocoding** のメソッドを呼び出す前のアプリケーションのライフサイクルの早い段階で、API キーを設定します (UWP でのみ可能です)。
 
@@ -124,3 +125,9 @@ catch (Exception ex)
 
 - [Geocoding のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Geocoding)
 - [Geocoding API のドキュメント](xref:Xamarin.Essentials.Geocoding)
+
+## <a name="related-video"></a>関連ビデオ
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Geocoding-XamarinEssentials-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

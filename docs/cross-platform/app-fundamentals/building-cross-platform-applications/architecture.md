@@ -6,12 +6,12 @@ ms.assetid: 2176DB2D-E84A-3757-CFAB-04A586068D50
 author: asb3993
 ms.author: amburns
 ms.date: 03/27/2017
-ms.openlocfilehash: cfb2bddceea7717ac87bd7a78fd9cd45e8b93144
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4f70690df46b71db75e48eca0fd901a854be0b21
+ms.sourcegitcommit: 4a1520dee7759f8355ea65c8bb3d1bac8ba58122
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61285149"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66354009"
 ---
 # <a name="part-2---architecture"></a>パート 2 - アーキテクチャ
 
@@ -31,7 +31,7 @@ ms.locfileid: "61285149"
 
 このドキュメントとケース スタディを通してには、次の 6 つのアプリケーション層を参照してください。
 
--   **データ層**– 非揮発性データの永続化、SQLite データベースを使用する可能性がありますが、XML ファイルやその他の適切なメカニズムを実装できます。
+-   **データ層**– 非揮発性データの永続化、SQLite データベースをする可能性がありますが、XML ファイルやその他の適切なメカニズムを実装できます。
 -   **データ アクセス層**– 作成、読み取り、更新、呼び出し元に実装の詳細を公開することがなくデータへの削除 (CRUD) アクセスを提供するデータ層のラッパーです。 たとえば、DAL は、クエリやデータを更新する SQL ステートメントを含めることができますが、参照元のコードは、これを理解する必要はありません。
 -   **ビジネス層**– (ビジネス ロジック層または BLL とも呼ばれます) ビジネス エンティティの定義 (モデル) とビジネス ロジックが含まれています。 ビジネスのファサード パターンの候補。
 -   **サービスへのアクセス層**– 使用されているクラウド サービスへのアクセス: リモート サーバーからのデータと画像の取得の単純な複雑な web サービス (REST、JSON、WCF) から。 ネットワークの動作をカプセル化し、アプリケーションと UI レイヤーで使用する単純な API を提供します。
