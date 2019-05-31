@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/07/2018
-ms.openlocfilehash: c4098bfe40a252da2adbe7a7a2cd4c0f105ad1c8
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: e74231133c0a52ba0fe4e5589f09aab15e1b9924
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53050414"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978599"
 ---
 # <a name="right-to-left-localization"></a>右から左へのローカライズ
 
@@ -79,7 +79,7 @@ this.FlowDirection = Device.FlowDirection;
 右から左へのローカライズは、デバイスまたはシミュレーター上の言語とリージョンを **Info.plist** で指定された右から左のロケールに変更することによって、テストできます。
 
 > [!WARNING]
-> iOS で言語とリージョンを右から左のロケールに変更するときに、そのロケールに必要なリソースを含めていない場合、任意の [`DatePicker`](xref:Xamarin.Forms.DatePicker) ビューで例外がスローされることに注意してください。 たとえば、`DatePicker` を含むアラビア語のアプリをテストする場合、**[iOS ビルド]** ウィンドウの **[国際化]** セクションに **[mideast]** が選択されていることを確認します。
+> iOS で言語とリージョンを右から左のロケールに変更するときに、そのロケールに必要なリソースを含めていない場合、任意の [`DatePicker`](xref:Xamarin.Forms.DatePicker) ビューで例外がスローされることに注意してください。 たとえば、`DatePicker` を含むアラビア語のアプリをテストする場合、 **[iOS ビルド]** ウィンドウの **[国際化]** セクションに **[mideast]** が選択されていることを確認します。
 
 ### <a name="android"></a>Android
 
@@ -150,7 +150,7 @@ using System.Resources;
 
 > [!VIDEO https://youtube.com/embed/f2lQ5yw3iiU]
 
-**[Xamarin University](https://university.xamarin.com/) による Xamarin.Forms 3.0 の右から左のサポート**
+**Xamarin.Forms 3.0 での右から左方向のサポートのビデオ**
 
 ## <a name="related-links"></a>関連リンク
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/01/2018
-ms.openlocfilehash: 1a8611e5dd0be77eeef065d546f6a0642f384b00
-ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
+ms.openlocfilehash: 4583b703d6c6b15105d60a98e7a1064e6a2e9263
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57557283"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64977784"
 ---
 # <a name="xamarinforms-binding-mode"></a>Xamarin.Forms のバインディング モード
 
@@ -109,7 +109,7 @@ Model-View-ViewModel (MVVM) アプリケーション アーキテクチャでデ
 
 **Simple Color Selector** ページに、シンプルな ViewModel の使用方法が示されています。 データ バインディングにより、ユーザーは色相、彩度、明度用の 3 つの `Slider` 要素を使用して色を選択することができます。
 
-ViewModel はデータ バインディングのソースです。 ViewModel ではバインド可能プロパティは定義*されません*。しかし、プロパティの値が変更されたタイミングをバインディング インフラストラクチャに通知するメカニズムが ViewModel によって実装されます。 この通知メカニズムは [`INotifyPropertyChanged`](xref:System.ComponentModel.INotifyPropertyChanged) インターフェイスであり、[`PropertyChanged`](xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged) という名前の 1 つのプロパティが定義されます。 通常は、このインターフェイスを実装するクラスでは、そのパブリック プロパティのいずれかで値が変更されたときにイベントが発生します。 プロパティが変更されることがない場合、イベントを発生させる必要はありません。 (`INotifyPropertyChanged` インターフェイスも `BindableObject` によって実装されます。`PropertyChanged` イベントは、バインド可能なプロパティで値が変更されるたびに発生します)。
+ViewModel はデータ バインディングのソースです。 ViewModel ではバインド可能プロパティは定義*されません*。しかし、プロパティの値が変更されたタイミングをバインディング インフラストラクチャに通知するメカニズムが ViewModel によって実装されます。 この通知メカニズムは [`INotifyPropertyChanged`](xref:System.ComponentModel.INotifyPropertyChanged) インターフェイスであり、[`PropertyChanged`](xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged) という名前の 1 つのイベントを定義しています。 通常は、このインターフェイスを実装するクラスでは、そのパブリック プロパティのいずれかで値が変更されたときにイベントが発生します。 プロパティが変更されることがない場合、イベントを発生させる必要はありません。 (`INotifyPropertyChanged` インターフェイスも `BindableObject` によって実装されます。`PropertyChanged` イベントは、バインド可能なプロパティで値が変更されるたびに発生します)。
 
 `HslColorViewModel` クラスでは、5 つのプロパティが定義されます。`Hue`、`Saturation`、`Luminosity`、および `Color` のプロパティは相互に関連しています。 3 つの色コンポーネントのいずれかで値が変更されると、`Color` プロパティが再計算され、4 つのプロパティすべてに対して `PropertyChanged` イベントが発生します。
 
@@ -677,7 +677,7 @@ public partial class SampleSettingsPage : ContentPage
 
 [![設定のサンプル](binding-mode-images/samplesettings-small.png "設定のサンプル")](binding-mode-images/samplesettings-large.png#lightbox "設定のサンプル")
 
-その他の 2 つのスクリーンショットには、変更された設定が示されています。 このページを試してみる場合は、プログラムが実行されているデバイスまたはエミュレーター上でプログラムをスリープ状態にするか、または終了することを忘れないでください。 Visual Studio デバッガーからプログラムを終了すると、`App` クラス内の `OnSleep` オーバーライドは呼び出されません。
+他のスクリーンショットは、変更された設定を示しています。 このページを試してみる場合は、プログラムが実行されているデバイスまたはエミュレーター上でプログラムをスリープ状態にするか、または終了することを忘れないでください。 Visual Studio デバッガーからプログラムを終了すると、`App` クラス内の `OnSleep` オーバーライドは呼び出されません。
 
 次の記事では、`Label` の `Text` プロパティで設定されたデータ バインディングの[**文字列の書式設定**](string-formatting.md)を指定する方法を説明します。
 

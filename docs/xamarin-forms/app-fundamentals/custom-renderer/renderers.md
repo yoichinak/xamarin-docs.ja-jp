@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/19/2018
-ms.openlocfilehash: cdca5294ea12bf8907ea5f6242efea00f384e77e
-ms.sourcegitcommit: 5d4e6677224971e2bc0268f405d192d0358c74b8
+ms.openlocfilehash: 3db4b5f37eb58f71d3b522693ab2c75a7b5f8919
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58329339"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65970887"
 ---
 # <a name="renderer-base-classes-and-native-controls"></a>レンダラーの基本クラスおよびネイティブ コントロール
 
@@ -30,6 +30,9 @@ _すべての Xamarin.Forms コントロールには、ネイティブ コント
 - **iOS** - Xamarin.Forms.Maps.iOS
 - **Android** - Xamarin.Forms.Maps.Android
 - **ユニバーサル Windows プラットフォーム (UWP)** - Xamarin.Forms.Maps.UWP
+
+> [!NOTE]
+> シェル アプリケーションに対するカスタム レンダラーの作成について詳しくは、「[Xamarin.Forms Shell Custom Renderers (Xamarin.Forms シェルのカスタム レンダラー)](~/xamarin-forms/app-fundamentals/shell/customrenderers.md)」をご覧ください。
 
 ## <a name="pages"></a>Pages
 
@@ -70,7 +73,7 @@ _すべての Xamarin.Forms コントロールには、ネイティブ コント
 |[`ActivityIndicator`](xref:Xamarin.Forms.ActivityIndicator)|ActivityIndicatorRenderer|UIActivityIndicator|ProgressBar||ProgressBar|
 |[`BoxView`](xref:Xamarin.Forms.BoxView)|BoxRenderer (iOS および Android)、BoxViewRenderer (UWP)|UIView|ViewGroup||四角形|
 |[`Button`](xref:Xamarin.Forms.Button)|ButtonRenderer|UIButton|ボタン|AppCompatButton|ボタン|
-|`CollectionView`|CollectionViewRenderer|UICollectionView||RecyclerView||
+|[`CollectionView`](xref:Xamarin.Forms.CollectionView)|CollectionViewRenderer|UICollectionView||RecyclerView||
 |[`DatePicker`](xref:Xamarin.Forms.DatePicker)|DatePickerRenderer|UITextField|EditText||DatePicker|
 |[`Editor`](xref:Xamarin.Forms.Editor)|EditorRenderer|UITextView|EditText||TextBox|
 |[`Entry`](xref:Xamarin.Forms.Entry)|[EntryRenderer](~/xamarin-forms/app-fundamentals/custom-renderer/entry.md)|UITextField|EditText||TextBox|
@@ -104,7 +107,3 @@ _すべての Xamarin.Forms コントロールには、ネイティブ コント
 ## <a name="summary"></a>まとめ
 
 この記事では、Xamarin.Forms の各ページ、レイアウト、ビュー、およびセルを実装する、レンダラーおよびネイティブ コントロールのクラスの一覧を示しました。 すべての Xamarin.Forms コントロールには、ネイティブ コントロールのインスタンスを作成する各プラットフォーム用のレンダラーが付属しています。
-
-## <a name="related-links"></a>関連リンク
-
-- [カスタム レンダラー (Xamarin University のビデオ)](https://developer.xamarin.com/videos/cross-platform/xamarinforms-custom-renderers/)

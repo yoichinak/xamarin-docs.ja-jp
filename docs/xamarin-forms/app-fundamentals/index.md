@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/08/2018
-ms.openlocfilehash: 2178c9f4115c42396635e22cb0688695b590ec26
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.openlocfilehash: 1e40b0a71317d8c9cb3de391a0b941a5bb081956
+ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55292156"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65048151"
 ---
 # <a name="xamarinforms-application-fundamentals"></a>Xamarin.Forms のアプリケーションの基礎
 
@@ -76,9 +76,9 @@ Xamarin.Forms の `MessagingCenter` を使うと、ビュー モデルとその�
 
 Xamarin.Forms は、使用している `Page` 型に応じて多数のページ ナビゲーション エクスペリエンスを提供します。
 
-## <a name="shellshellmd"></a>[Shell](shell.md)
+## <a name="shellshellindexmd"></a>[Shell](shell/index.md)
 
-Xamarin.Forms シェルは、アプリケーションのコンテナーです。これにより、アプリケーションの主要なワークロードに集中したままで、ほとんどのアプリケーションで必要とされる基本的な UI 機能が提供されます。
+Xamarin.Forms シェルでは、ほとんどのモバイル アプリケーションが必要としている基本機能を提供することで、モバイル アプリケーション開発の複雑さを軽減します。 これには、一般的なナビゲーション ユーザー エクスペリエンス、URI ベースのナビゲーション体系、および統合された検索ハンドラーが含まれます。
 
 ## <a name="templatestemplatesindexmd"></a>[テンプレート](templates/index.md)
 

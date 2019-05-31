@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 77b721adc4a745a5bf184bfbde1985bce980ddf7
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: df4c5f1fe4464f3614c1156f095a803f0d265d70
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50110343"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64977762"
 ---
 # <a name="get-started-with-xamarinandroid"></a>Xamarin.Android の概要
 
@@ -34,8 +34,8 @@ Xamarin.Android を設定し、Visual Studio で実行します。 このセク�
 
 この記事では Java 開発者向けの C# プログラミングの概要を提供します。特に Java 開発者が Xamarin.Android アプリの開発を学ぶうえで目にする C# 言語の機能に重点を置いています。
 
-## <a name="xamarin-university-video"></a>Xamarin University のビデオ
+## <a name="video"></a>ビデオ
 
 > [!VIDEO https://youtube.com/embed/rkNikCa5D48]
 
-**Building Your First Android App with Xamarin for Visual Studio (Xamarin for Visual Studio で最初の Android アプリを構築する)、by [Xamarin University](https://university.xamarin.com)**
+**Building Your First Android App with Xamarin for Visual Studio (Xamarin for Visual Studio を使って最初の Android アプリを構築する)**
