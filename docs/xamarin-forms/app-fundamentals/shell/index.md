@@ -6,21 +6,23 @@ ms.assetid: 85B322AA-808F-41B6-953A-5877264AE643
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/06/2019
-ms.openlocfilehash: 7699b39a6df6c64ae9a481d9171f23dc6a8eba57
-ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
+ms.date: 05/28/2019
+ms.openlocfilehash: a988a99e20af76d071f55c4cd2c97b135ad077f8
+ms.sourcegitcommit: 10b4ccbfcf182be940899c00fc0fecae1e199c5b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65054192"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66252278"
 ---
 # <a name="xamarinforms-shell"></a>Xamarin.Forms シェル
-
-![](~/media/shared/preview.png "この API は現在プレリリースです")
 
 ## <a name="introductionintroductionmd"></a>[はじめに](introduction.md)
 
 Xamarin.Forms シェルでは、ほとんどのモバイル アプリケーションが必要としている基本機能を提供することで、モバイル アプリケーション開発の複雑さを軽減します。 これには、一般的なナビゲーション ユーザー エクスペリエンス、URI ベースのナビゲーション体系、および統合された検索ハンドラーが含まれます。
+
+## <a name="create-a-xamarinforms-shell-applicationcreatemd"></a>[Xamarin.Forms シェル アプリケーションを作成する](create.md)
+
+Xamarin.Forms シェル アプリケーションを作成するプロセスは、`Shell` クラスをサブクラス化し、アプリケーションの `App` クラスの `MainPage` プロパティにサブクラス化した `Shell` オブジェクトを設定した後に、サブクラス化した `Shell` クラスにアプリケーションのビジュアル階層を記述する XAML ファイルを作成することです。
 
 ## <a name="flyoutflyoutmd"></a>[ポップアップ](flyout.md)
 
@@ -28,7 +30,11 @@ Xamarin.Forms シェルでは、ほとんどのモバイル アプリケーシ�
 
 ## <a name="tabstabsmd"></a>[タブ](tabs.md)
 
-ポップアップ後は、シェル アプリケーション内の次のレベルのナビゲーションが下部のタブ バーに表示されます。 タブに複数のページが含まれる場合は、上部のタブからページをナビゲートできます。
+ポップアップ後は、シェル アプリケーション内の次のレベルのナビゲーションが下部のタブ バーに表示されます。 または、アプリケーションのナビゲーション パターンを下部のタブから始めて、ポップアップを使用しないようにすることができます。 どちらの場合も下部のタブに複数のページが含まれる場合は、上部のタブからページをナビゲートできます。
+
+## <a name="page-configurationconfigurationmd"></a>[ページの構成](configuration.md)
+
+`Shell` クラスは、Xamarin.Forms シェル アプリケーションでページの外観を構成するために使用できる添付プロパティを定義します。 これには、ページの色の設定、ナビゲーション バーの無効化、タブ バーの無効化、およびナビゲーション バーでのビューの表示が含まれます。
 
 ## <a name="navigationnavigationmd"></a>[ナビゲーション](navigation.md)
 

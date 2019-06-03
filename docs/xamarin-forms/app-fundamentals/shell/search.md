@@ -6,68 +6,27 @@ ms.assetid: F8F9471D-6771-4D23-96C0-2B79473A06D4
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/06/2019
-ms.openlocfilehash: acaa847b61443eff480e2b39e388f5df9de06e42
-ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
+ms.date: 05/24/2019
+ms.openlocfilehash: df8ecba2527015dd6a7e2fd324b34306295b94d3
+ms.sourcegitcommit: b986460787677cf8c2fc7cc8c03f4bc60c592120
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65054422"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66213311"
 ---
-# <a name="xamarinforms-shell"></a>Xamarin.Forms シェル
+# <a name="xamarinforms-shell-search"></a>Xamarin.Forms シェルでの検索
 
-![](~/media/shared/preview.png "この API は現在プレリリースです")
-
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/Xaminals/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals/)
 
 Xamarin.Forms シェルには、`SearchHandler` クラスによって提供される統合された検索機能が組み込まれています。 検索機能は、サブクラス化された `SearchHandler` オブジェクトを `Shell.SearchHandler` 添付プロパティに設定することで、ページに追加できます。 これにより、検索ボックスがページの上部に追加されます。
 
 [![iOS および Android 上での、シェルの SearchHandler のスクリーンショット](search-images/searchhandler.png "シェルの SearchHandler")](search-images/searchhandler-large.png#lightbox "シェルの SearchHandler")
 
-検索ボックスにクエリが入力されると、検索候補領域にデータが設定される場合があります。
+検索ボックスにクエリが入力されると、`Query` プロパティが更新され、更新ごとに `OnQueryChanged` メソッドが実行されます。 このメソッドをオーバーライドして、検索候補領域にデータを設定できます。
 
 [![iOS および Android 上での、シェルの SearchHandler の検索結果を示したスクリーンショット](search-images/search-suggestions.png "シェルの SearchHandler の検索結果")](search-images/search-suggestions-large.png#lightbox "シェルの SearchHandler の検索結果")
 
-その後、1 つの検索結果が選択されると、アプリケーションは、別のページに移動するなど、適切に応答することができます。
-
-## <a name="searchhandler-class"></a>SearchHandler クラス
-
-`SearchHandler` クラスでは、外観と動作を制御する次のプロパティを定義します。
-
-- `ClearIcon`: [`ImageSource`](xref:Xamarin.Forms.ImageSource) 型、検索ボックスの内容を消去するために表示されるアイコン。
-- `ClearIconHelpText`: `string` 型、クリア アイコン用のアクセス可能なヘルプ テキスト。
-- `ClearIconName`: `string` 型、スクリーン リーダーで使用するためのクリア アイコンの名前。
-- `ClearPlaceholderCommand`: `ICommand` 型、`ClearPlaceholderIcon` がタップされたときに実行されます。
-- `ClearPlaceholderCommandParameter`: `object` 型、`ClearPlaceholderCommand` に渡されるパラメーター。
-- `ClearPlaceholderEnabled`: `bool` 型、`ClearPlaceholderCommand` を実行できるかどうかを判定します。 既定値は `true` です。
-- `ClearPlaceholderHelpText`: `string` 型、クリア プレースホルダ― アイコンのためのアクセス可能なヘルプ テキスト。
-- `ClearPlaceholderIcon`: [`ImageSource`](xref:Xamarin.Forms.ImageSource) 型、検索ボックスが空の場合に表示されるクリア プレースホルダー アイコン。
-- `ClearPlaceholderName`: `string` 型、スクリーン リーダーで使用するためのクリア プレースホルダー アイコンの名前。
-- `Command`: `ICommand` 型、検索クエリが確定されたときに実行されます。
-- `CommandParameter`: `object` 型、`Command` に渡されるパラメーター。
-- `DisplayMemberName`: `string` 型、`ItemsSource` コレクションにあるデータの項目ごとに表示されるプロパティの名前またはパスを表します。
-- `IsSearchEnabled`: `bool` 型、検索ボックスの有効化された状態を表します。 既定値は `true` です。
-- `ItemsSource`: `IEnumerable` 型、候補領域に項目のコレクションが表示されるように指定します。また、既定値は `null` です。
-- `ItemTemplate`: [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 型、候補領域に表示される項目のコレクション内の、各項目に適用するテンプレートを指定します。
-- `Placeholder`: `string` 型、検索ボックスが空の場合に表示するテキスト。
-- `Query`: `string` 型、ユーザーが検索ボックスに入力したテキスト。
-- `QueryIcon`: [`ImageSource`](xref:Xamarin.Forms.ImageSource) 型、検索が利用できることをユーザーに示すために使用されるアイコン。
-- `QueryIconHelpText`: `string` 型、クエリ アイコン用のアクセス可能なヘルプ テキスト。
-- `QueryIconName`: `string` 型、スクリーン リーダーで使用するためのクエリ アイコンの名前。
-- `SearchBoxVisibility`: `SearchBoxVisibility` 型、検索ボックスの表示/非表示。 既定では、検索ボックスは表示され、完全に展開されています。
-- `SelectedItem`: `object` 型、検索結果内の選択された項目。 このプロパティは読み取り専用であり、既定値は `null` です。
-- `ShowsResults`: `bool` 型、テキスト入力時に、候補領域に検索結果が表示されるかどうかを指示します。 既定値は `false` です。
-
-これらのプロパティはすべて、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトを基盤としています。つまり、プロパティがデータ バインディングの対象になる場合があります。
-
-また、`SearchHandler`ク ラスでは、オーバーライドできる次のようなメソッドを提供しています。
-
-- `OnClearPlaceholderClicked`: `ClearPlaceholderIcon` がタップされるたびに呼び出されます。
-- `OnItemSelected`: ユーザーによって検索結果が選択されるたびに呼び出されます。
-- `OnQueryChanged`: `Query` プロパティが変更されたときに呼び出されます。
-- `OnQueryConfirmed`: ユーザーが Enter キーを押すか、または検索ボックスでクエリを確定するたびに、呼び出されます。
-
-ユーザーが検索ボックスにクエリを入力すると、`Query` プロパティが更新され、更新ごとに `OnQueryChanged` メソッドが実行されます。 このメソッドは、検索ボックス下に表示される候補領域を更新するために使用できます。 ユーザーが候補領域から結果を選択すると、`OnItemSelected` メソッドが実行されます。
+検索候補領域から結果が選択されると、`OnItemSelected` メソッドが実行されます。 このメソッドは、詳細ページに移動するなどによって、適切に応答するようにオーバーライドできます。
 
 ## <a name="create-a-searchhandler"></a>SearchHandler を作成する
 
@@ -217,9 +176,9 @@ Shell.SetSearchHandler(this, new MonkeySearchHandler
 
 データ テンプレートについて詳しくは「[Xamarin.Forms Data Templates](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)」(Xamarin.Forms のデータ テンプレート) をご覧ください。
 
-## <a name="searchbox-visibility"></a>検索ボックスの表示/非表示
+## <a name="search-box-visibility"></a>検索ボックスの表示
 
-検索ボックスがページの上部に追加されると、既定で検索ボックスが表示され、完全に展開されます。 しかし、`SearchHandler.SearchBoxVisibility` プロパティを `SearchBoxVisibility` 列挙メンバーのいずれかに設定することで、この動作を変更することができます。
+`SearchHandler` がページの上部に追加されると、既定で検索ボックスが表示され、完全に展開されます。 しかし、`SearchHandler.SearchBoxVisibility` プロパティを `SearchBoxVisibility` 列挙メンバーのいずれかに設定することで、この動作を変更することができます。
 
 - `Hidden` – 検索ボックスは表示されず、アクセスできません。
 - `Collapsible` – 表示するためのアクションをユーザーが実行するまで、検索ボックスは非表示になります。
@@ -238,7 +197,134 @@ Shell.SetSearchHandler(this, new MonkeySearchHandler
 </ContentPage>
 ```
 
+## <a name="search-box-focus"></a>検索ボックスのフォーカス
+
+検索ボックスをタップすると、検索ボックスが入力フォーカスを取得して、オンスクリーン キーボードが呼び出されます。 これは、検索ボックスに入力フォーカスを設定しようと試み、成功したら `true` を返す `Focus` メソッド呼び出すことによって、プログラムで実現することもできます。 検索ボックスがフォーカスを獲得すると、`Focus` イベントが発生し、オーバーライド可能な `OnFocused` メソッドが呼び出されます。
+
+検索ボックスに入力フォーカスがあるときに、画面上の他の場所をタップすると、オンスクリーン キーボードが消去され、検索ボックスから入力フォーカスが失われます。 これも `Unfocus` メソッドを呼び出すことによって、プログラムで実現できます。 検索ボックスからフォーカスが失われると、`Unfocused` イベントが発生し、オーバーライド可能な `OnUnfocus` メソッドが呼び出されます。
+
+検索ボックスのフォーカス状態は、`IsFocused` プロパティから取得できます。これは `SearchHandler` に現在入力フォーカスがある場合に `true` を返します。
+
+## <a name="searchhandler-appearance"></a>SearchHandler の外観
+
+`SearchHandler` クラスでは、その外観に影響する次のプロパティを定義します。
+
+- `BackgroundColor`:`Color` 型、検索ボックスのテキストの背景の色。
+- `CancelButtonColor`:`Color` 型、キャンセル ボタンの色。
+- `FontAttributes`:`FontAttributes` 型、ボ:ックスのテキストが斜体か太字かを示します。
+- `FontFamily`:`string` 型、検索ボックスのテキストに使用されるフォント ファミリ。
+- `FontSize`:`double` 型、検索ボックスのテキストのサイズ。
+- `HorizontalTextAlignment`:`TextAlignment` 型、検索ボックスのテキストの水平方向の配置。
+- `PlaceholderColor`:`Color` 型、プレースホルダー検索ボックスのテキストの色。
+- `TextColor`:`Color` 型、検索ボックスのテキストの色。
+
+## <a name="searchhandler-keyboard"></a>SearchHandler キーボード
+
+ユーザーが `SearchHandler` とやりとりする際に表示されるキーボードは、プログラムで `Keyboard` プロパティによって、[`Keyboard`](xref:Xamarin.Forms.Keyboard) クラスの次のいずれかのプロパティに設定できます。
+
+- [`Chat`](xref:Xamarin.Forms.Keyboard.Chat) - 絵文字が使えるテキスト メッセージや場所に使います。
+- [`Default`](xref:Xamarin.Forms.Keyboard.Default) - 既定のキーボード。
+- [`Email`](xref:Xamarin.Forms.Keyboard.Email) - 電子メール アドレスを入力するときに使用します。
+- [`Numeric`](xref:Xamarin.Forms.Keyboard.Numeric) - 数値を入力するときに使用します。
+- [`Plain`](xref:Xamarin.Forms.Keyboard.Plain) - [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags) を指定しないで、テキストを入力するときに使用します。
+- [`Telephone`](xref:Xamarin.Forms.Keyboard.Telephone) - 電話番号を入力するときに使用します。
+- [`Text`](xref:Xamarin.Forms.Keyboard.Text) - テキストを入力するときに使用します。
+- [`Url`](xref:Xamarin.Forms.Keyboard.Url) - ファイル パスおよび Web アドレスを入力するために使用します。
+
+XAML では次のようにしてこれを実現できます。
+
+```xaml
+<SearchHandler Keyboard="Email" />
+```
+
+該当の C# コードを次に示します。
+
+```csharp
+SearchHandler searchHandler = new SearchHandler { Keyboard = Keyboard.Email };
+```
+
+[`Keyboard`](xref:Xamarin.Forms.Keyboard) クラスには、大文字の設定、スペルチェック、および単語補完候補の動作を指定することで、キーボードをカスタマイズするために使用できる [`Create`](xref:Xamarin.Forms.Keyboard.Create*) ファクトリ メソッドもあります。 [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags) 列挙値がメソッドへの引数として指定され、カスタマイズされた `Keyboard` が返されます。 `KeyboardFlags` 列挙体には次の値が含まれます。
+
+- [`None`](xref:Xamarin.Forms.KeyboardFlags.None) - キーボードに機能は追加されません。
+- [`CapitalizeSentence`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeSentence) - 入力された各文の最初の単語の最初の文字が自動的に大文字になることを示します。
+- [`Spellcheck`](xref:Xamarin.Forms.KeyboardFlags.Spellcheck) - 入力したテキストに対してスペル チェックが実行されることを示します。
+- [`Suggestions`](xref:Xamarin.Forms.KeyboardFlags.Suggestions) - 入力したテキストに対して単語補完が提供されることを示します。
+- [`CapitalizeWord`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeWord) - 各単語の最初の文字が自動的に大文字になることを示します。
+- [`CapitalizeCharacter`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeCharacter) - すべての文字が自動的に大文字になることを示します。
+- [`CapitalizeNone`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeNone) - 大文字の自動設定を行わないことを示します。
+- [`All`](xref:Xamarin.Forms.KeyboardFlags.All) - 入力したテキストに対して、スペルチェック、単語補完、および文への大文字の設定が行われることを示します。
+
+次の XAML コード例は、既定の [`Keyboard`](xref:Xamarin.Forms.Keyboard) をカスタマイズして、単語補完を提供し、入力したすべての文字を大文字に設定する方法を示しています。
+
+```xaml
+<SearchHandler Placeholder="Enter search terms">
+    <SearchHandler.Keyboard>
+        <Keyboard x:FactoryMethod="Create">
+            <x:Arguments>
+                <KeyboardFlags>Suggestions,CapitalizeCharacter</KeyboardFlags>
+            </x:Arguments>
+        </Keyboard>
+    </SearchHandler.Keyboard>
+</SearchHandler>
+```
+
+該当の C# コードを次に示します。
+
+```csharp
+SearchHandler searchHandler = new SearchHandler { Placeholder = "Enter search terms" };
+searchHandler.Keyboard = Keyboard.Create(KeyboardFlags.Suggestions | KeyboardFlags.CapitalizeCharacter);
+```
+
+## <a name="searchhandler-reference"></a>SearchHandler リファレンス
+
+`SearchHandler` クラスでは、外観と動作を制御する次のプロパティを定義します。
+
+- `BackgroundColor`:`Color` 型、検索ボックスのテキストの背景の色。
+- `CancelButtonColor`:`Color` 型、キャンセル ボタンの色。
+- `ClearIcon`: [`ImageSource`](xref:Xamarin.Forms.ImageSource) 型、検索ボックスの内容を消去するために表示されるアイコン。
+- `ClearIconHelpText`: `string` 型、クリア アイコン用のアクセス可能なヘルプ テキスト。
+- `ClearIconName`: `string` 型、スクリーン リーダーで使用するためのクリア アイコンの名前。
+- `ClearPlaceholderCommand`: `ICommand` 型、`ClearPlaceholderIcon` がタップされたときに実行されます。
+- `ClearPlaceholderCommandParameter`: `object` 型、`ClearPlaceholderCommand` に渡されるパラメーター。
+- `ClearPlaceholderEnabled`: `bool` 型、`ClearPlaceholderCommand` を実行できるかどうかを判定します。 既定値は `true` です。
+- `ClearPlaceholderHelpText`: `string` 型、クリア プレースホルダ― アイコンのためのアクセス可能なヘルプ テキスト。
+- `ClearPlaceholderIcon`: [`ImageSource`](xref:Xamarin.Forms.ImageSource) 型、検索ボックスが空の場合に表示されるクリア プレースホルダー アイコン。
+- `ClearPlaceholderName`: `string` 型、スクリーン リーダーで使用するためのクリア プレースホルダー アイコンの名前。
+- `Command`: `ICommand` 型、検索クエリが確定されたときに実行されます。
+- `CommandParameter`: `object` 型、`Command` に渡されるパラメーター。
+- `DisplayMemberName`: `string` 型、`ItemsSource` コレクションにあるデータの項目ごとに表示されるプロパティの名前またはパスを表します。
+- `FontAttributes`:`FontAttributes` 型、ボ:ックスのテキストが斜体か太字かを示します。
+- `FontFamily`:`string` 型、検索ボックスのテキストに使用されるフォント ファミリ。
+- `FontSize`:`double` 型、検索ボックスのテキストのサイズ。
+- `HorizontalTextAlignment`:`TextAlignment` 型、検索ボックスのテキストの水平方向の配置。
+- `IsFocused`:`bool` 型、`SearchHandler` に現在入力フォーカスがあるかどうかを表します。
+- `IsSearchEnabled`: `bool` 型、検索ボックスの有効化された状態を表します。 既定値は `true` です。
+- `ItemsSource`: `IEnumerable` 型、候補領域に項目のコレクションが表示されるように指定します。また、既定値は `null` です。
+- `ItemTemplate`: [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 型、候補領域に表示される項目のコレクション内の、各項目に適用するテンプレートを指定します。
+- `Keyboard`: `Keyboard` 型、`SearchHandler`用のキーボードです。
+- `Placeholder`: `string` 型、検索ボックスが空の場合に表示するテキスト。
+- `PlaceholderColor`:`Color` 型、プレースホルダー検索ボックスのテキストの色。
+- `Query`: `string` 型、ユーザーが検索ボックスに入力したテキスト。
+- `QueryIcon`: [`ImageSource`](xref:Xamarin.Forms.ImageSource) 型、検索が利用できることをユーザーに示すために使用されるアイコン。
+- `QueryIconHelpText`: `string` 型、クエリ アイコン用のアクセス可能なヘルプ テキスト。
+- `QueryIconName`: `string` 型、スクリーン リーダーで使用するためのクエリ アイコンの名前。
+- `SearchBoxVisibility`: `SearchBoxVisibility` 型、検索ボックスの表示/非表示。 既定では、検索ボックスは表示され、完全に展開されています。
+- `SelectedItem`: `object` 型、検索結果内の選択された項目。 このプロパティは読み取り専用であり、既定値は `null` です。
+- `ShowsResults`: `bool` 型、テキスト入力時に、候補領域に検索結果が表示されるかどうかを指示します。 既定値は `false` です。
+- `TextColor`:`Color` 型、検索ボックスのテキストの色。
+
+これらのプロパティはすべて、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトを基盤としています。つまり、プロパティがデータ バインディングの対象になる場合があります。
+
+また、`SearchHandler`ク ラスでは、オーバーライドできる次のようなメソッドを提供しています。
+
+- `OnClearPlaceholderClicked`: `ClearPlaceholderIcon` がタップされるたびに呼び出されます。
+- `OnItemSelected`: ユーザーによって検索結果が選択されるたびに呼び出されます。
+- `OnFocused`: `SearchHandler` が入力フォーカスを獲得したときに呼び出されます。
+- `OnQueryChanged`: `Query` プロパティが変更されたときに呼び出されます。
+- `OnQueryConfirmed`: ユーザーが Enter キーを押すか、または検索ボックスでクエリを確定するたびに、呼び出されます。
+- `OnUnfocus`: `SearchHandler` から入力フォーカスが失われるときに呼び出されます。
+
 ## <a name="related-links"></a>関連リンク
 
-- [Xaminals (サンプル)](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/Xaminals/)
+- [Xaminals (サンプル)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals/)
 - [Xamarin.Forms シェルのナビゲーション](navigation.md)

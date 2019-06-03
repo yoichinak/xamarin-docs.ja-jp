@@ -7,18 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
-ms.openlocfilehash: b1709330678a201521fd226d473cd334bcd86f94
-ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
+ms.openlocfilehash: 747fabd68187dbe48b5e68b40916cef45269c4ae
+ms.sourcegitcommit: 0596004d4a0e599c1da1ddd75a6ac928f21191c2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65054272"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66005165"
 ---
 # <a name="xamarinforms-shell-navigation"></a>Xamarin.Forms シェルのナビゲーション
 
-![](~/media/shared/preview.png "この API は現在プレリリースです")
-
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/Xaminals/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals/)
 
 Xamarin.Forms シェルには、設定されたナビゲーション階層に従わなくても、アプリケーション内の任意のページに移動するルートを使用する URI ベースのナビゲーション操作が用意されています。 さらに、これにより、ナビゲーション スタックのすべてのページにアクセスすることなく、後方に移動する機能も提供されます。
 
@@ -274,7 +272,7 @@ async void OnCollectionViewSelectionChanged(object sender, SelectionChangedEvent
 }
 ```
 
-このコード サンプルでは、`CollectionView` 内の現在選択されているゾウを取得し、`elephantName` をクエリ パラメーターとして渡して `elephantdetails` ルートに移動します。 クエリ パラメーターはナビゲーション用にエンコードされた URL になるため、"Indian Elephant" は "Indian%20Elephant" になることに注意してください。
+このコード サンプルでは、[`CollectionView`](xref:Xamarin.Forms.CollectionView) 内の現在選択されているゾウを取得し、`elephantName` をクエリ パラメーターとして渡して `elephantdetails` ルートに移動します。 クエリ パラメーターはナビゲーション用にエンコードされた URL になるため、"Indian Elephant" は "Indian%20Elephant" になることに注意してください。
 
 データを受信するには、移動先ページを表すクラスまたはページの [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) に対応するクラスが、各クエリ パラメーターの `QueryPropertyAttribute` によって修飾されている必要があります。
 
@@ -341,4 +339,4 @@ Shell.SetBackButtonBehavior(this, new BackButtonBehavior
 
 ## <a name="related-links"></a>関連リンク
 
-- [Xaminals (サンプル)](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/Xaminals/)
+- [Xaminals (サンプル)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals/)

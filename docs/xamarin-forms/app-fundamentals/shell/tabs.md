@@ -1,48 +1,50 @@
 ---
 title: Xamarin.Forms シェルのレイアウト
-description: シェル アプリケーションにおけるポップアップの次のレベルのナビゲーションは、下部のタブ バーです。 タブに複数のページが含まれる場合は、上部のタブからページをナビゲートできます。
+description: シェル アプリケーションにおけるポップアップの次のレベルのナビゲーションは、下部のタブ バーです。 または、アプリケーションのナビゲーション パターンを下部のタブから始めて、ポップアップを使用しないようにすることができます。 どちらの場合も下部のタブに複数のページが含まれる場合は、上部のタブからページをナビゲートできます。
 ms.prod: xamarin
 ms.assetid: 318D81DB-E456-4E44-B083-36A27DBD9523
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/06/2019
-ms.openlocfilehash: bc1ca01f4bf5cb8f7ef51c705319fb2cc1a0bd99
-ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
+ms.date: 05/23/2019
+ms.openlocfilehash: cd3bfd9186c87594fc42702e2d62b33e68973db6
+ms.sourcegitcommit: 10b4ccbfcf182be940899c00fc0fecae1e199c5b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65054312"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66252289"
 ---
 # <a name="xamarinforms-shell-tabs"></a>Xamarin.Forms シェルのタブ
 
-![](~/media/shared/preview.png "この API は現在プレリリースです")
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals/)
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/Xaminals/)
+アプリケーションのナビゲーション パターンに、ポップアップが含まれている場合、アプリケーションにおける次のレベルのナビゲーションは、下部のタブ バーです。 さらに、ポップアップを閉じた場合、下部のタブ バーを最上位のナビゲーションと見なすことができます。
 
-シェル アプリケーションにおけるポップアップの次のレベルのナビゲーションは、下部のタブ バーです。 または、ポップアップを閉じた場合、下部のタブ バーが最上位のナビゲーションと見なされます。
+または、アプリケーションのナビゲーション パターンを下部のタブから始めて、ポップアップを使用しないようにすることができます。 このシナリオでは、`Shell` オブジェクトの子を、下部のタブ バーを表す `TabBar` オブジェクトにする必要があります。
 
-各 `FlyoutItem` オブジェクトには 1 つ以上の `Tab` オブジェクトを含めることができ、各 `Tab` オブジェクトは下部のタブ バー上の 1 つのタブを表します。 各 `Tab` オブジェクトには 1 つ以上の `ShellContent` オブジェクトを含めることができ、各 `ShellContent` オブジェクトにより 1 つの [`ContentPage`](xref:Xamarin.Forms.ContentPage) オブジェクトが表示されます。 複数の `ShellContent` オブジェクトが `Tab` オブジェクト内にある場合は、上部タブから `ContentPage` オブジェクトをナビゲートできます。
+> [!NOTE]
+> `TabBar` 型は、ポップアップを無効にします。
 
-各 `ContentPage` オブジェクト内で、追加の `ContentPage` オブジェクトに移動できます。 ナビゲーションについて詳しくは、「[Xamarin.Forms シェルのナビゲーション](navigation.md)」をご覧ください。
+各 `FlyoutItem` または `TabBar` オブジェクトには 1 つ以上の `Tab` オブジェクトを含めることができ、各 `Tab` オブジェクトは下部のタブ バー上の 1 つのタブを表します。 各 `Tab` オブジェクトには 1 つ以上の `ShellContent` オブジェクトを含めることができ、各 `ShellContent` オブジェクトにより 1 つの [`ContentPage`](xref:Xamarin.Forms.ContentPage) オブジェクトが表示されます。 複数の `ShellContent` オブジェクトが `Tab` オブジェクト内にある場合は、上部タブから `ContentPage` オブジェクトをナビゲートできます。
+
+各 [`ContentPage`](xref:Xamarin.Forms.ContentPage) オブジェクト内で、追加の `ContentPage` オブジェクトに移動できます。 ナビゲーションについて詳しくは、「[Xamarin.Forms シェルのナビゲーション](navigation.md)」をご覧ください。
 
 ## <a name="single-page-application"></a>シングル ページ アプリケーション
 
-最もシンプルなシェル アプリケーションはシングル ページ アプリケーションです。これは `FlyoutItem` オブジェクトに `Tab` オブジェクトを 1 つ追加することで作成できます。 `Tab` オブジェクト内で、`ShellContent` オブジェクトを [`ContentPage`](xref:Xamarin.Forms.ContentPage) オブジェクトに設定する必要があります。
+最もシンプルなシェル アプリケーションはシングル ページ アプリケーションです。これは `TabBar` オブジェクトに `Tab` オブジェクトを 1 つ追加することで作成できます。 `Tab` オブジェクト内で、`ShellContent` オブジェクトを [`ContentPage`](xref:Xamarin.Forms.ContentPage) オブジェクトに設定する必要があります。
 
 ```xaml
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:views="clr-namespace:Xaminals.Views"
-       x:Class="Xaminals.AppShell"
-       FlyoutBehavior="Disabled">
-    <FlyoutItem>
+       x:Class="Xaminals.AppShell">
+    <TabBar>
         <Tab>
             <ShellContent>
                 <views:CatsPage />
             </ShellContent>
         </Tab>
-    </FlyoutItem>
+    </TabBar>
 </Shell>
 ```
 
@@ -50,12 +52,10 @@ ms.locfileid: "65054312"
 
 [![iOS と Android でのシェルのシングル ページ アプリのスクリーンショット](tabs-images/single-page-app.png "シェルのシングル ページ アプリ")](tabs-images/single-page-app-large.png#lightbox "シェルのシングル ページ アプリ")
 
-シングル ページ アプリケーションではポップアップは不要です。そのため、`Shell.FlyoutBehavior` プロパティを `Disabled` に設定しています。
-
 > [!NOTE]
 > 必要に応じてナビゲーション バーを非表示にすることができます。それには、[`ContentPage`](xref:Xamarin.Forms.ContentPage) オブジェクト上で `Shell.NavBarIsVisible` 添付プロパティを `false` に設定します。
 
-シェルには暗黙的な変換演算子が備わっています。これにより、ビジュアル ツリーに追加のビューを導入することなくシェルの視覚階層を単純化できます。 これが可能になるのは、サブクラス化された `Shell` オブジェクトには `FlyoutItem` しか含めることができず、それには `Tab` オブジェクトしか含めることができず、それには `ShellContent` オブジェクトしか含めることができないためです。 このような暗黙的な変換演算子を使って、前の例から `FlyoutItem`、`Tab`、`ShellContent` オブジェクトを削除することができます。
+シェルには暗黙的な変換演算子が備わっています。これにより、ビジュアル ツリーに追加のビューを導入することなくシェルの視覚階層を単純化できます。 これが可能になるのは、サブクラス化された `Shell` オブジェクトには `FlyoutItem` オブジェクトまたは `TabBar` オブジェクトしか含めることができず、それには `Tab` オブジェクトしか含めることができず、それには `ShellContent` オブジェクトしか含めることができないためです。 このような暗黙的な変換演算子を使って、前の例から `TabBar`、`Tab`、`ShellContent` オブジェクトを削除することができます。
 
 ```xaml
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
@@ -67,22 +67,21 @@ ms.locfileid: "65054312"
 </Shell>
 ```
 
-この暗黙的な変換では、[`ContentPage`](xref:Xamarin.Forms.ContentPage) オブジェクトが自動的に `ShellContent` オブジェクトでラップされ、それが `Tab` オブジェクトでラップされ、それが `FlyoutItem` オブジェクトでラップされます。
+この暗黙的な変換では、[`ContentPage`](xref:Xamarin.Forms.ContentPage) オブジェクトが自動的に `ShellContent` オブジェクトでラップされ、それが `Tab` オブジェクトでラップされ、それが `FlyoutItem` オブジェクトでラップされます。 シングル ページ アプリケーションではポップアップは不要です。そのため、`Shell.FlyoutBehavior` プロパティを `Disabled` に設定しています。
 
 > [!IMPORTANT]
 > シェル アプリケーションでは、`ShellContent` オブジェクトの子である各 [`ContentPage`](xref:Xamarin.Forms.ContentPage) は、アプリケーションの起動中に作成されます。 この手法を利用して追加の `ShellContent` オブジェクトを付け加えると、アプリケーションの起動時に追加のページが作成され、起動エクスペリエンスの低下を引き起こす場合があります。 ただし、シェルでは、ナビゲーションに応答して、必要に応じてページを作成することも可能です。 詳細については、「[効率的なページの読み込み](tabs.md#efficient-page-loading)」をご覧ください。
 
 ## <a name="bottom-tabs"></a>下部のタブ
 
-1 つの `FlyoutItem` オブジェクト内に複数の `Tab` オブジェクトがある場合、`Tab` オブジェクトは下部のタブとしてレンダリングされます。
+1 つの `TabBar` オブジェクト内に複数の `Tab` オブジェクトがある場合、`Tab` オブジェクトは下部のタブとしてレンダリングされます。
 
 ```xaml
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:views="clr-namespace:Xaminals.Views"
-       x:Class="Xaminals.AppShell"
-       FlyoutBehavior="Disabled">
-    <FlyoutItem>
+       x:Class="Xaminals.AppShell">
+    <TabBar>
         <Tab Title="Cats"
              Icon="cat.png">
             <ShellContent>
@@ -95,7 +94,7 @@ ms.locfileid: "65054312"
                 <views:DogsPage />
             </ShellContent>
         </Tab>
-    </FlyoutItem>
+    </TabBar>
 </Shell>
 ```
 
@@ -109,12 +108,11 @@ ms.locfileid: "65054312"
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:views="clr-namespace:Xaminals.Views"
-       x:Class="Xaminals.AppShell"
-       FlyoutBehavior="Disabled">
-    <FlyoutItem>
-        <views:CatsPage Icon="cat.png" />
-        <views:DogsPage Icon="dog.png" />
-    </FlyoutItem>
+       x:Class="Xaminals.AppShell">
+    <TabBar>
+        <views:CatsPage IconImageSource="cat.png" />
+        <views:DogsPage IconImageSource="dog.png" />
+    </TabBar>
 </Shell>
 ```
 
@@ -133,7 +131,9 @@ ms.locfileid: "65054312"
 - `Icon`: `ImageSource` 型、ポップアップではないクロムのパーツに表示するアイコンを定義します。
 - `IsChecked`: `boolean` 型、現在ポップアップで項目を強調表示するかどうかを定義します。
 - `IsEnabled`: `boolean` 型、クロム内の項目を選択できるかどうかを定義します。
-- `Items`: `ShellContentCollection` 型、`Tab` 内のすべてのコンテンツを定義します。
+- `IsTabStop`: `bool` 型、タブのナビゲーションに `Tab` を含めるかどうかを指定します。 既定値は `true` で、値を `false` にすると、`Tab` は、`TabIndex` が設定されているかどうかにかかわらず、タブ ナビゲーション インフラストラクチャによって無視されます。
+- `Items`: `IList<ShellContent>` 型、`Tab` 内のすべてのコンテンツを定義します。
+- `TabIndex`: `int` 型、ユーザーが Tab キーを押して項目間を移動するときに、`Tab` オブジェクトがフォーカスを受け取る順序を指定します。 このプロパティの既定値は 0 です。
 - `Title`: `string` 型、UI のタブに表示するタイトル。
 
 ## <a name="shell-content"></a>シェル コンテンツ
@@ -144,9 +144,8 @@ ms.locfileid: "65054312"
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:views="clr-namespace:Xaminals.Views"
-       x:Class="Xaminals.AppShell"
-       FlyoutBehavior="Disabled">
-    <FlyoutItem>
+       x:Class="Xaminals.AppShell">
+    <TabBar>
         <Tab Title="Cats"
              Icon="cat.png">
             <ShellContent>
@@ -159,11 +158,11 @@ ms.locfileid: "65054312"
                 <views:DogsPage />
             </ShellContent>
         </Tab>
-    </FlyoutItem>
+    </TabBar>
 </Shell>
 ```
 
-各 `ContentPage` オブジェクト内で、追加の `ContentPage` オブジェクトに移動できます。 ナビゲーションについて詳しくは、「[Xamarin.Forms シェルのナビゲーション](navigation.md)」をご覧ください。
+各 [`ContentPage`](xref:Xamarin.Forms.ContentPage) オブジェクト内で、追加の `ContentPage` オブジェクトに移動できます。 ナビゲーションについて詳しくは、「[Xamarin.Forms シェルのナビゲーション](navigation.md)」をご覧ください。
 
 ### <a name="shellcontent-class"></a>ShellContent クラス
 
@@ -182,15 +181,14 @@ ms.locfileid: "65054312"
 
 ## <a name="bottom-and-top-tabs"></a>下部と上部のタブ
 
-`Tab` オブジェクト内に複数の `ShellContent` オブジェクトがある場合、下部のタブに上部タブ バーが追加されます。これを使って `ContentPage` オブジェクトを移動できます。
+`Tab` オブジェクト内に複数の `ShellContent` オブジェクトがある場合、下部のタブに上部タブ バーが追加されます。これを使って [`ContentPage`](xref:Xamarin.Forms.ContentPage) オブジェクトを移動できます。
 
 ```xaml
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:views="clr-namespace:Xaminals.Views"
-       x:Class="Xaminals.AppShell"
-       FlyoutBehavior="Disabled">
-    <FlyoutItem>
+       x:Class="Xaminals.AppShell">
+    <TabBar>
         <Tab Title="Domestic"
              Icon="domestic.png">
             <ShellContent>
@@ -206,7 +204,7 @@ ms.locfileid: "65054312"
                 <views:MonkeysPage />
             </ShellContent>
         </Tab>
-    </FlyoutItem>
+    </TabBar>
 </Shell>
 ```
 
@@ -220,16 +218,15 @@ ms.locfileid: "65054312"
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:views="clr-namespace:Xaminals.Views"
-       x:Class="Xaminals.AppShell"
-       FlyoutBehavior="Disabled">
-    <FlyoutItem>
+       x:Class="Xaminals.AppShell">
+    <TabBar>
         <Tab Title="Domestic"
              Icon="domestic.png">
             <views:CatsPage />
             <views:DogsPage />
         </Tab>
-        <views:MonkeysPage Icon="monkey.png" />
-    </FlyoutItem>
+        <views:MonkeysPage IconImageSource="monkey.png" />
+    </TabBar>
 </Shell>
 ```
 
@@ -244,8 +241,7 @@ ms.locfileid: "65054312"
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:views="clr-namespace:Xaminals.Views"
        x:Class="Xaminals.AppShell">    
-    <FlyoutItem Title="Animals"
-                FlyoutDisplayOptions="AsMultipleItems">
+    <TabBar>
         <Tab Title="Domestic"
              Icon="paw.png">
             <ShellContent Title="Cats"
@@ -258,7 +254,7 @@ ms.locfileid: "65054312"
         <ShellContent Title="Monkeys"
                       Icon="monkey.png"
                       ContentTemplate="{DataTemplate views:MonkeysPage}" />
-    </FlyoutItem>    
+    </TabBar>    
 </Shell>
 ```
 
@@ -266,26 +262,26 @@ ms.locfileid: "65054312"
 
 ## <a name="tab-appearance"></a>タブの外観
 
-`Shell` クラスでは、タブの外観を制御する次のプロパティを定義しています。
+`Shell` クラスでは、タブの外観を制御する次の添付プロパティを定義しています。
 
-- `ShellTabBarBackgroundColor`: `Color` 型、タブ バーの背景色を定義する添付プロパティ。 プロパティが設定されていない場合、`ShellBackgroundColor` プロパティ値が使われます。
-- `ShellTabBarDisabledColor`: `Color` 型、タブ バーの無効にされた色を定義する添付プロパティ。 プロパティが設定されていない場合、`ShellDisabledColor` プロパティ値が使われます。
-- `ShellTabBarForegroundColor`: `Color` 型、タブ バーの前景色を定義する添付プロパティ。 プロパティが設定されていない場合、`ShellForegroundColor` プロパティ値が使われます。
-- `ShellTabBarTitleColor`: `Color` 型、タブ バーのタイトルの色を定義する添付プロパティ。 プロパティが設定されていない場合、`ShellTitleColor` プロパティ値が使われます。
-- `ShellTabBarUnselectedColor`: `Color` 型、タブ バーの選択されていない色を定義する添付プロパティ。 プロパティが設定されていない場合、`ShellUnselectedColor` プロパティ値が使われます。
+- `TabBarBackgroundColor`:`Color` 型、タブ バーの背景色を定義します。 プロパティが設定されていない場合、`BackgroundColor` プロパティ値が使われます。
+- `TabBarDisabledColor`:`Color` 型、タブ バーの無効な色を定義します。 プロパティが設定されていない場合、`DisabledColor` プロパティ値が使われます。
+- `TabBarForegroundColor`:`Color` 型、タブ バーの前景色を定義します。 プロパティが設定されていない場合、`ForegroundColor` プロパティ値が使われます。
+- `TabBarTitleColor`:`Color` 型、タブ バーのタイトルの色を定義します。 プロパティが設定されていない場合、`TitleColor` プロパティ値が使われます。
+- `TabBarUnselectedColor`:`Color` 型、タブ バーの選択されていない色を定義します。 プロパティが設定されていない場合、`UnselectedColor` プロパティ値が使われます。
 
-これらのプロパティはすべて、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトを基盤としています。つまり、プロパティはデータ バインディングの対象にすることができます。
+これらのプロパティはすべて、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトを基盤としています。つまり、プロパティをデータ バインディングの対象にして、スタイル設定することができます。
 
-そのため、タブは XAML スタイルを使ってスタイル設定することができます。 次の例は、さまざまなタブの色のプロパティを設定する XAML スタイルを示しています。
+次の例は、さまざまなタブの色のプロパティを設定する XAML スタイルを示しています。
 
 ```xaml
 <Style x:Key="BaseStyle"
        TargetType="Element">
-    <Setter Property="Shell.ShellTabBarBackgroundColor"
+    <Setter Property="Shell.TabBarBackgroundColor"
             Value="#3498DB" />
-    <Setter Property="Shell.ShellTabBarTitleColor"
+    <Setter Property="Shell.TabBarTitleColor"
             Value="White" />
-    <Setter Property="Shell.ShellTabBarUnselectedColor"
+    <Setter Property="Shell.TabBarUnselectedColor"
             Value="#B4FFFFFF" />
 </Style>
 ```
@@ -294,6 +290,6 @@ ms.locfileid: "65054312"
 
 ## <a name="related-links"></a>関連リンク
 
-- [Xaminals (サンプル)](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/Xaminals/)
+- [Xaminals (サンプル)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals/)
 - [Xamarin.Forms シェルのナビゲーション](navigation.md)
-- [Xamarin.Forms シェル固有のプロパティ](~/xamarin-forms/user-interface/styles/css/index.md#xamarinforms-shell-specific-properties)
+- [Xamarin.Forms CSS シェル固有のプロパティ](~/xamarin-forms/user-interface/styles/css/index.md#xamarinforms-shell-specific-properties)

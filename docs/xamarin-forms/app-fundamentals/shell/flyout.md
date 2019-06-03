@@ -6,19 +6,17 @@ ms.assetid: FEDE51EB-577E-4B3E-9890-B7C1A5E52516
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/06/2019
-ms.openlocfilehash: 05ce2536c04306c2881ccc5dfa5e2016c9025b11
-ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
+ms.date: 05/23/2019
+ms.openlocfilehash: 51d8764854db2fb62a412fab6e1e48c8beabbf1f
+ms.sourcegitcommit: 6ad272c2c7b0c3c30e375ad17ce6296ac1ce72b2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65054492"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66178060"
 ---
 # <a name="xamarinforms-shell-flyout"></a>Xamarin.Forms シェルのポップアップ
 
-![](~/media/shared/preview.png "この API は現在プレリリースです")
-
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/Xaminals/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals/)
 
 ポップアップは、シェル アプリケーションのルート メニューであり、アイコンから、または画面の横からスワイプして、アクセスすることが可能です。 ポップアップは、オプションのヘッダー、ポップアップ項目、およびオプションのメニュー項目から構成されています。
 
@@ -135,7 +133,9 @@ Shell.Current.FlyoutIsPresented = false;
 
 ## <a name="flyout-items"></a>ポップアップの項目
 
-すべてのサブクラス化された `Shell` オブジェクトには 1 つまたは複数の `FlyoutItem` オブジェクトを含める必要があり、各 `FlyoutItem` オブジェクトはポップアップ上の 1 つの項目を表します。 次の例では、ポップアップ ヘッダーと 2 つのポップアップ項目を含むポップアップを作成します。
+アプリケーションのナビゲーション パターンにポップアップが含まれる場合、サブクラス化された `Shell` オブジェクトに 1 つまたは複数の `FlyoutItem` オブジェクトを含めて、各 `FlyoutItem` オブジェクトがポップアップ上の 1 つの項目を表す必要があります。 各 `FlyoutItem` オブジェクトは、`Shell` オブジェクトの子である必要があります。
+
+次の例では、ポップアップ ヘッダーと 2 つのポップアップ項目を含むポップアップを作成します。
 
 ```xaml
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
@@ -172,7 +172,7 @@ Shell.Current.FlyoutIsPresented = false;
 > [!NOTE]
 > ポップアップ ヘッダーが存在しない場合、ポップアップ項目はポップアップの一番上に表示されます。 それ以外の場合、それらはポップアップ ヘッダーの下に表示されます。
 
-シェルには暗黙的な変換演算子が備わっています。これにより、ビジュアル ツリーに追加のビューを導入することなくシェルの視覚階層を単純化できます。 これが可能になるのは、サブクラス化された `Shell` オブジェクトには `FlyoutItem` しか含めることができず、それには `Tab` オブジェクトしか含めることができず、それには `ShellContent` オブジェクトしか含めることができないためです。 このような暗黙的な変換演算子を使って、前の例から `FlyoutItem`、`Tab`、`ShellContent` オブジェクトを削除することができます。
+シェルには暗黙的な変換演算子が備わっています。これにより、ビジュアル ツリーに追加のビューを導入することなくシェルの視覚階層を単純化できます。 これが可能になるのは、サブクラス化された `Shell` オブジェクトには `FlyoutItem` オブジェクトまたは `TabBar` オブジェクトしか含めることができず、それには `Tab` オブジェクトしか含めることができず、それには `ShellContent` オブジェクトしか含めることができないためです。 このような暗黙的な変換演算子を使って、前の例から `FlyoutItem`、`Tab`、`ShellContent` オブジェクトを削除することができます。
 
 ```xaml
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
@@ -183,8 +183,8 @@ Shell.Current.FlyoutIsPresented = false;
     <Shell.FlyoutHeader>
         <controls:FlyoutHeader />
     </Shell.FlyoutHeader>
-    <views:CatsPage Icon="cat.png" />
-    <views:DogsPage Icon="dog.png" />
+    <views:CatsPage IconImageSource="cat.png" />
+    <views:DogsPage IconImageSource="dog.png" />
 </Shell>
 ```
 
@@ -195,11 +195,11 @@ Shell.Current.FlyoutIsPresented = false;
 
 ### <a name="flyoutitem-class"></a>FlyoutItem クラス
 
-`FlyoutItem` クラスには、その外観と動作を制御する次のプロパティが含まれています。
+`FlyoutItem` クラスには、ポップアップ項目の外観と動作を制御する次のプロパティが含まれています。
 
 - `FlyoutDisplayOptions`: `FlyoutDisplayOptions` 型、ポップアップで項目とその子を表示する方法を定義します。 既定値は `AsSingleItem` です。
 - `CurrentItem`: `Tab` 型、選択された項目。
-- `Items`: `ShellSectionCollection` 型、`FlyoutItem` 内のすべてのタブを定義します。
+- `Items`: `IList<Tab>` 型、`FlyoutItem` 内のすべてのタブを定義します。
 - `FlyoutIcon`: `ImageSource` 型、項目用に使用するアイコン。 このプロパティが設定されていない場合は、代わりに `Icon` プロパティ値が使われます。
 - `Icon`: `ImageSource` 型、ポップアップではないクロムのパーツに表示するアイコンを定義します。
 - `IsChecked`: `boolean` 型、現在ポップアップで項目を強調表示するかどうかを定義します。
@@ -270,7 +270,7 @@ Shell.Current.FlyoutIsPresented = false;
 </Shell>
 ```
 
-この例では、`FlyoutItem` オブジェクトの子である `Tab` オブジェクトと、`FlyoutItem` オブジェクトの子である `Shellontent` オブジェクトに向けてポップアップ項目が作成されます。 こうなる理由は、`FlyoutItem` オブジェクトの子である各 `ShellContent` オブジェクトが、自動的に `Tab` オブジェクトでラップされるためです。 さらに、最後の `ShellContent` オブジェクトに向けてポップアップ項目が作成されます。これは `Tab` オブジェクト、`FlyoutItem` オブジェクトの順でラップされます。
+この例では、`FlyoutItem` オブジェクトの子である `Tab` オブジェクトと、`FlyoutItem` オブジェクトの子である `ShellContent` オブジェクトに向けてポップアップ項目が作成されます。 こうなる理由は、`FlyoutItem` オブジェクトの子である各 `ShellContent` オブジェクトが、自動的に `Tab` オブジェクトでラップされるためです。 さらに、最後の `ShellContent` オブジェクトに向けてポップアップ項目が作成されます。これは `Tab` オブジェクト、`FlyoutItem` オブジェクトの順でラップされます。
 
 これにより、次のポップアップ項目が得られます。
 
@@ -278,7 +278,7 @@ Shell.Current.FlyoutIsPresented = false;
 
 ## <a name="define-flyoutitem-appearance"></a>ポップアップの外観を定義する
 
-各 `FlyoutItem` の外観は、`Shell.ItemTemplate` プロパティを [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) に設定することでカスタマイズできます。
+各 `FlyoutItem` の外観は、`Shell.ItemTemplate` 添付プロパティを [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) に設定することでカスタマイズできます。
 
 ```xaml
 <Shell ...>
@@ -290,7 +290,7 @@ Shell.Current.FlyoutIsPresented = false;
                     <ColumnDefinition Width="0.2*" />
                     <ColumnDefinition Width="0.8*" />
                 </Grid.ColumnDefinitions>
-                <Image Source="{Binding Icon}"
+                <Image Source="{Binding FlyoutIcon}"
                        Margin="5"
                        HeightRequest="45" />
                 <Label Grid.Column="1"
@@ -308,7 +308,7 @@ Shell.Current.FlyoutIsPresented = false;
 [![iOS と Android でのテンプレート化された FlyoutItem オブジェクトのスクリーンショット](flyout-images/flyoutitem-templated.png "シェルのテンプレート化された FlyoutItem オブジェクト")](flyout-images/flyoutitem-templated-large.png#lightbox "シェルのテンプレート化された FlyoutItem オブジェクト")
 
 > [!NOTE]
-> シェルには、`ItemTemplate` の [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) に対する `Title` と `Icon` プロパティが用意されています。
+> シェルには、`ItemTemplate` の [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) に対する `Title` と `FlyoutIcon` プロパティが用意されています。
 
 ## <a name="flyoutitem-tab-order"></a>FlyoutItem のタブ オーダー
 
@@ -355,68 +355,116 @@ Shell.Current.CurrentItem = aboutItem;
 
 ## <a name="menu-items"></a>メニュー項目
 
-必要に応じて、ポップアップにメニュー項目を表示できます。それはポップアップ項目の下に表示されます。 各メニュー項目は [`MenuItem`](xref:Xamarin.Forms.MenuItem) オブジェクトによって表されます。
+メニュー項目は必要に応じてポップアップに追加できますが、各メニュー項目は [ `MenuItem`](xref:Xamarin.Forms.MenuItem) オブジェクトによって表されます。 ポップアップ上の `MenuItem` オブジェクトの位置は、シェル ビジュアル階層内の宣言の順序によって異なります。 そのため、`FlyoutItem` オブジェクトの前に宣言された `MenuItem` オブジェクトは、ポップアップの一番上に表示され、`FlyoutItem` オブジェクトの後に宣言された `MenuItem` オブジェクトは、ポップアップの一番下に表示されます。
 
 > [!NOTE]
 > `MenuItem` クラスには、[`Clicked`](xref:Xamarin.Forms.MenuItem.Clicked) イベントと [`Command`](xref:Xamarin.Forms.MenuItem.Command) プロパティがあります。 そのため、`MenuItem` オブジェクトを使って、タップされた `MenuItem` への応答としてアクションを実行するシナリオを実現できます。 このようなシナリオには、ナビゲーションの実行や、特定の Web ページで Web ブラウザーを開くことなどが含まれます。
 
-`Shell.MenuItems` コレクションによって、ポップアップに表示される [`MenuItem`](xref:Xamarin.Forms.MenuItem) オブジェクトのリストが定義されます。 このコレクションは、次の例に示すように `MenuItem` オブジェクトを使って設定できます。
+次の例に示すように、[`MenuItem`](xref:Xamarin.Forms.MenuItem) オブジェクトをポップアップに追加できます。
 
 ```xaml
-<Shell ...
-       x:Name="self">
+<Shell ...>
     ...            
-    <Shell.MenuItems>
-        <MenuItem Text="Random"
-                  Icon="random.png"
-                  BindingContext="{x:Reference self}"
-                  Command="{Binding RandomPageCommand}" />
-        <MenuItem Text="Help"
-                  Icon="help.png"
-                  BindingContext="{x:Reference self}"
-                  Command="{Binding HelpCommand}"
-                  CommandParameter="https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell" />
-    </Shell.MenuItems>    
+    <MenuItem Text="Random"
+              IconImageSource="random.png"
+              Command="{Binding RandomPageCommand}" />
+    <MenuItem Text="Help"
+              IconImageSource="help.png"
+              Command="{Binding HelpCommand}"
+              CommandParameter="https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell" />    
 </Shell>
 ```
 
-このコードでは、ポップアップに 2 つの [`MenuItem`](xref:Xamarin.Forms.MenuItem) オブジェクトを追加しています。
+このコードでは、すべてのポップアップ項目の下で、2 つの [`MenuItem`](xref:Xamarin.Forms.MenuItem) オブジェクトがポップアップに追加されます。
 
 [![iOS と Android での MenuItem オブジェクトを含むポップアップのスクリーンショット](flyout-images/flyout.png "MenuItem オブジェクトを含むシェルのポップアップ")](flyout-images/flyout-large.png#lightbox "MenuItem オブジェクトを含むシェルのポップアップ")
 
-最初の [`MenuItem`](xref:Xamarin.Forms.MenuItem)オブジェクトでは `RandomPageCommand` という名前の `ICommand` が実行され、アプリケーション内のランダムなページに移動します。 2 番目の `MenuItem` オブジェクトでは `HelpCommand` という名前の `ICommand` が実行され、`CommandParameter` プロパティで指定した URL が Web ブラウザーで開かれます。 各 `MenuItem` の [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) は、サブクラス化された `Shell` オブジェクトに設定されます。
+最初の [`MenuItem`](xref:Xamarin.Forms.MenuItem)オブジェクトでは `RandomPageCommand` という名前の `ICommand` が実行され、アプリケーション内のランダムなページに移動します。 2 番目の `MenuItem` オブジェクトでは `HelpCommand` という名前の `ICommand` が実行され、`CommandParameter` プロパティで指定した URL が Web ブラウザーで開かれます。
+
+> [!NOTE]
+> 各 `MenuItem` の [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) は、サブクラス化された `Shell` オブジェクトから継承されます。
 
 ## <a name="define-menuitem-appearance"></a>MenuItem の外観を定義する
 
-各 `MenuItem` の外観は、`Shell.MenuItemTemplate` プロパティを [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) に設定することでカスタマイズできます。
+各 `MenuItem` の外観は、`Shell.MenuItemTemplate` 添付プロパティを [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) に設定することでカスタマイズできます。
 
 ```xaml
-<Shell.MenuItemTemplate>
-    <DataTemplate>
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="0.2*" />
-                <ColumnDefinition Width="0.8*" />
-            </Grid.ColumnDefinitions>
-            <Image Source="{Binding Icon}"
-                   Margin="5"
-                   HeightRequest="45" />
-            <Label Grid.Column="1"
-                   Text="{Binding Text}"
-                   FontAttributes="Italic"
-                   VerticalTextAlignment="Center" />
-        </Grid>
-    </DataTemplate>
-</Shell.MenuItemTemplate>
+<Shell ...>
+    <Shell.MenuItemTemplate>
+        <DataTemplate>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.2*" />
+                    <ColumnDefinition Width="0.8*" />
+                </Grid.ColumnDefinitions>
+                <Image Source="{Binding Icon}"
+                       Margin="5"
+                       HeightRequest="45" />
+                <Label Grid.Column="1"
+                       Text="{Binding Text}"
+                       FontAttributes="Italic"
+                       VerticalTextAlignment="Center" />
+            </Grid>
+        </DataTemplate>
+    </Shell.MenuItemTemplate>
+    ...
+    <MenuItem Text="Random"
+              IconImageSource="random.png"
+              Command="{Binding RandomPageCommand}" />
+    <MenuItem Text="Help"
+              IconImageSource="help.png"
+              Command="{Binding HelpCommand}"
+              CommandParameter="https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell" />  
+</Shell>
 ```
 
-この例では、各 `MenuItem` オブジェクトのタイトルを斜体で表示します。
+この例では、シェルレベルの `MenuItemTemplate` を各 `MenuItem` オブジェクトに添付し、各 `MenuItem` オブジェクトのタイトルを斜体で表示します。
 
 [![iOS と Android でのテンプレート化された MenuItem オブジェクトのスクリーンショット](flyout-images/menuitem-templated.png "シェルのテンプレート化された MenuItem オブジェクト")](flyout-images/menuitem-templated-large.png#lightbox "シェルのテンプレート化された MenuItem オブジェクト")
 
 > [!NOTE]
-> シェルには、`MenuItemTemplate` の [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) に対する [`Text`](xref:Xamarin.Forms.MenuItem.Text) と [`Icon`](xref:Xamarin.Forms.MenuItem.Icon) プロパティが用意されています。`
+> シェルには、`MenuItemTemplate` の [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) に対する [`Text`](xref:Xamarin.Forms.MenuItem.Text) と [`IconImageSource`](xref:Xamarin.Forms.MenuItem.IconImageSource) プロパティが用意されています。`
+
+`Shell.MenuItemTemplate` は添付プロパティであるため、さまざまなテンプレートを特定の `MenuItem` オブジェクトに添付できます。
+
+```xaml
+<Shell ...>
+    <Shell.MenuItemTemplate>
+        <DataTemplate>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.2*" />
+                    <ColumnDefinition Width="0.8*" />
+                </Grid.ColumnDefinitions>
+                <Image Source="{Binding Icon}"
+                       Margin="5"
+                       HeightRequest="45" />
+                <Label Grid.Column="1"
+                       Text="{Binding Text}"
+                       FontAttributes="Italic"
+                       VerticalTextAlignment="Center" />
+            </Grid>
+        </DataTemplate>
+    </Shell.MenuItemTemplate>
+    ...
+    <MenuItem Text="Random"
+              IconImageSource="random.png"
+              Command="{Binding RandomPageCommand}" />
+    <MenuItem Text="Help"
+              Icon="help.png"
+              Command="{Binding HelpCommand}"
+              CommandParameter="https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell">
+        <Shell.MenuItemTemplate>
+            <DataTemplate>
+                ...
+            </DataTemplate>
+        </Shell.MenuItemTemplate>
+    </MenuItem>
+</Shell>
+```
+
+この例では、シェルレベルの `MenuItemTemplate` を最初の `MenuItem` オブジェクトに添付し、インライン `MenuItemTemplate` を 2 番目の `MenuItem` に添付しています。
 
 ## <a name="related-links"></a>関連リンク
 
-- [Xaminals (サンプル)](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/Xaminals/)
+- [Xaminals (サンプル)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals/)
