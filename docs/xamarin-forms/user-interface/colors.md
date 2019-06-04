@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: 43854929cfc232b24cad18e276b3ba51d1e5dece
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: b07bfd9f9ecbde66dbac3854bdbb611ad89e0ee2
+ms.sourcegitcommit: 4f8dc5298a95d591a59e97cdd347fd82858a1019
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61153503"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66469527"
 ---
 # <a name="colors-in-xamarinforms"></a>Xamarin.Forms での色
 
@@ -25,7 +25,7 @@ _Xamarin.Forms は、柔軟なクロスプラット フォーム対応の色ク�
 `Color`クラスは、さまざまな色のインスタンスを作成するメソッドを提供します。
 
 -  **名前付きの色**-一般的な名前付きの色などのコレクション`Red`、 `Green`、および`Blue`します。
--  **FromHex** -文字列値を HTML では、次のような"00FF00"で使用される構文に似ています。 アルファは、最初の文字 ("CC00FF00") のペアとして必要に応じて指定できます。
+-  **FromHex** -文字列値を HTML、たとえば"00FF00"で使用される構文に似ています。 アルファは、最初の文字 ("CC00FF00") のペアとしてオプションで指定できます。
 -  **FromHsla** -色相、彩度と輝度`double`アルファ値は省略可能な (0.0 ~ 1.0) の値。
 -  **FromRgb** -赤、緑、および青`int`値 (0 ~ 255)。
 -  **FromRgba** -赤、緑、青、およびアルファ`int`値 (0 ~ 255)。
