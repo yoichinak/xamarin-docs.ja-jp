@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
-ms.openlocfilehash: 747fabd68187dbe48b5e68b40916cef45269c4ae
-ms.sourcegitcommit: 0596004d4a0e599c1da1ddd75a6ac928f21191c2
+ms.openlocfilehash: 9f48659a8af7bb74cc33ec0929f41b2a881e1978
+ms.sourcegitcommit: 4f8dc5298a95d591a59e97cdd347fd82858a1019
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66005165"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66469512"
 ---
 # <a name="xamarinforms-shell-navigation"></a>Xamarin.Forms シェルのナビゲーション
 
@@ -213,11 +213,11 @@ bears
 
 | プロパティ | 型 | 説明 |
 |---|---|---|
-| [現在] | `ShellNavigationState` | 現在のページの URI。 |
-| ソース | `ShellNavigationSource` | 発生したナビゲーションの種類。 |
-| Target | `ShellNavigationState`  | ナビゲーションの発信先を表す URI。 |
-| CanCancel  | `bool` | ナビゲーションをキャンセルできるかどうかを示す値。 |
-| 取り消し済み  | `bool` | ナビゲーションがキャンセルされたかどうかを示す値。 |
+| `Current` | `ShellNavigationState` | 現在のページの URI。 |
+| `Source` | `ShellNavigationSource` | 発生したナビゲーションの種類。 |
+| `Target` | `ShellNavigationState`  | ナビゲーションの発信先を表す URI。 |
+| `CanCancel`  | `bool` | ナビゲーションをキャンセルできるかどうかを示す値。 |
+| `Cancelled`  | `bool` | ナビゲーションがキャンセルされたかどうかを示す値。 |
 
 さらに、`ShellNavigatingEventArgs` クラスでは、ナビゲーションのキャンセルに使用できる `Cancel` メソッドを提供しています。
 
@@ -228,9 +228,9 @@ bears
 
 | プロパティ | 型 | 説明 |
 |---|---|---|
-| [現在] | `ShellNavigationState` | 現在のページの URI。 |
-| 前へ| `ShellNavigationState` | 前のページの URI。 |
-| ソース  | `ShellNavigationSource` | 発生したナビゲーションの種類。 |
+| `Current` | `ShellNavigationState` | 現在のページの URI。 |
+| `Previous`| `ShellNavigationState` | 前のページの URI。 |
+| `Source`  | `ShellNavigationSource` | 発生したナビゲーションの種類。 |
 
 > [!NOTE]
 > `Navigating` イベントは、`Shell` クラスにあるオーバーライド可能な `OnNavigated` メソッドによって発生します。

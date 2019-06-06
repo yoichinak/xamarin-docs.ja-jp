@@ -7,14 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/24/2019
-ms.openlocfilehash: 38553b3b30388bc64fd97a7ac96a671279d20bc5
-ms.sourcegitcommit: b986460787677cf8c2fc7cc8c03f4bc60c592120
+ms.openlocfilehash: 266dc91e80ced89410046a83cc79e45371e8c0a4
+ms.sourcegitcommit: b4a12607ca944de10fd166139765241a4501831c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66213343"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66686990"
 ---
-# <a name="xamarinforms-shell"></a>Xamarin.Forms シェル
+# <a name="xamarinforms-shell-introduction"></a>Xamarin.Forms シェルの概要
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals/)
 
@@ -34,7 +34,7 @@ Xamarin.Forms シェルでは、次に示すようなほとんどのモバイル
 
 シェルでは、ポップアップとタブに基づいて、厳格なナビゲーション エクスペリエンスを提供しています。 シェル アプリケーションでのナビゲーションの最上位レベルは、アプリケーションのナビゲーション要件に応じて、ポップアップまたは下部のタブ バーのいずれかです。 次の例は、ナビゲーションの最上位レベルがポップアップであるアプリケーションを示しています。
 
-[![iOS および Android 上での、シェルのポップアップのスクリーンショット](introduction-images/flyout.png "シェルのポップアップ")](introduction-images/flyout-large.png#lightbox "シェルのポップアップ")
+[![iOS および Android 上での、シェル ポップアップのスクリーンショット](introduction-images/flyout.png "シェル ポップアップ")](introduction-images/flyout-large.png#lightbox "シェル ポップアップ")
 
 ポップアップ項目を選択すると、項目が選択され表示された状態で、下部のタブが表示されます。
 
