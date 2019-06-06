@@ -1,0 +1,111 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: Xamarin ドキュメントの新機能
+metadata:
+  title: Xamarin ドキュメントの新機能
+  description: Xamarin ドキュメントの新機能です。
+  ms.topic: landing-page
+  ms.prod: xamarin
+  ms.assetid: 7D34BF92-6326-40F5-B34B-18B03F293B34
+  author: davidbritch
+  ms.author: dabritch
+  ms.date: 05/31/2019
+abstract:
+  description: Xamarin ドキュメントの新機能へようこそ。
+sections:
+  - title: 新機能
+    items:
+      - type: list
+        style: cards
+        className: cardsB
+        items:
+          - href: 2019-06.md
+            html: 'Xamarin ドキュメントの 2019 年 6 月の新機能: Xamarin.Forms 4.0 がリリースされ、データとクラウドのサービスが新しくなり、API ドキュメントが docs.microsoft.com で使用できるようになりました。'
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_article.svg'
+              href: 2019-06.md
+            title: 2019 年 6 月
+          - href: 2019-03.md
+            html: 'Xamarin ドキュメントの 2019 年 3 月の新機能: 使用開始の例と 12 の新しいチュートリアル、Xamarin.Forms 3.6、Xamarin.Forms 3.5。'
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_article.svg'
+              href: 2019-03.md
+            title: 2019 年 3 月
+  - title: オープン ソースのコントリビューション
+    items:
+      - type: list
+        style: cards
+        className: cardsB
+        items:
+          - href: 'https://github.com/MicrosoftDocs/xamarin-docs/blob/live/CONTRIBUTING.md'
+            html: Xamarin のコンテンツへのコントリビューションに関心がある場合は、まずこの共同作成者ガイドをご覧ください。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_library.svg'
+              href: 'https://github.com/MicrosoftDocs/xamarin-docs/blob/live/CONTRIBUTING.md'
+            title: 共同作成者ガイド
+          - href: 'https://github.com/MicrosoftDocs/xamarin-docs'
+            html: コンテンツの提案やアイデアをお持ちの場合は、ドキュメントの GitHub リポジトリで新しいイシューを登録してください。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_feedback.svg'
+              href: 'https://github.com/MicrosoftDocs/xamarin-docs'
+            title: Xamarin ドキュメントの GitHub リポジトリ
+          - href: 'https://github.com/xamarin/Xamarin.Forms-api-docs'
+            html: Xamarin.Forms API ドキュメントへのコントリビューションは、Xamarin.Forms API ドキュメントのリポジトリで行うことができます。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_api-reference.svg'
+              href: 'https://github.com/xamarin/Xamarin.Forms-api-docs'
+            title: Xamarin.Forms API ドキュメントの GitHub リポジトリ
+          - href: 'https://github.com/xamarin/apple-api-docs'
+            html: Xamarin.iOS または Xamarin.Mac API ドキュメントへのコントリビューションは、Xamarin.iOS と Xamarin.Mac の API ドキュメントのリポジトリで行うことができます。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_api-reference.svg'
+              href: 'https://github.com/xamarin/apple-api-docs'
+            title: Xamarin.iOS と Mac の API ドキュメントの GitHub リポジトリ
+          - href: 'https://github.com/xamarin/android-api-docs'
+            html: Xamarin.Android API ドキュメントへのコントリビューションは、Xamarin.Android API ドキュメントのリポジトリで行うことができます。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_api-reference.svg'
+              href: 'https://github.com/xamarin/android-api-docs'
+            title: Xamarin.Android API ドキュメントの GitHub リポジトリ
+          - href: 'https://github.com/mono/skiasharp-api-docs'
+            html: SkiaSharp API ドキュメントへのコントリビューションは、SkiaSharp API ドキュメントのリポジトリで行うことができます。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_api-reference.svg'
+              href: 'https://github.com/mono/skiasharp-api-docs'
+            title: SkiaSharp API ドキュメントの GitHub リポジトリ
+  - title: 製品のリリース ノート
+    items:
+      - type: list
+        style: cards
+        className: cardsB
+        items:
+          - href: 'https://docs.microsoft.com/xamarin/xamarin-forms/release-notes/'
+            html: Xamarin.Forms のリリース ノートを表示します。
+            image:
+              src: 'https://docs.microsoft.com/media/logos/logo_xamarin.svg'
+              href: 'https://docs.microsoft.com/xamarin/xamarin-forms/release-notes/'
+            title: Xamarin.Forms
+          - href: 'https://docs.microsoft.com/xamarin/ios/release-notes/'
+            html: Xamarin.iOS のリリース ノートを表示します。
+            image:
+              src: 'https://docs.microsoft.com/media/logos/logo_ios.svg'
+              href: 'https://docs.microsoft.com/xamarin/ios/release-notes/'
+            title: Xamarin.iOS
+          - href: 'https://docs.microsoft.com/xamarin/android/release-notes/'
+            html: Xamarin.Android のリリース ノートを表示します。
+            image:
+              src: 'https://docs.microsoft.com/media/logos/logo_android.svg'
+              href: 'https://docs.microsoft.com/xamarin/android/release-notes/'
+            title: Xamarin.Android
+          - href: 'https://docs.microsoft.com/xamarin/mac/release-notes/'
+            html: Xamarin.Mac のリリース ノートを表示します。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_xplat-code.svg'
+              href: 'https://docs.microsoft.com/xamarin/mac/release-notes/'
+            title: Xamarin.Mac
+          - href: 'https://docs.microsoft.com/xamarin/tools/'
+            html: '<a href="https://docs.microsoft.com/xamarin/tools/dotnet-embedding/release-notes/">.NET Embedding</a>、<a href="https://docs.microsoft.com/xamarin/tools/inspector/release-notes/">Inspector と Workbooks</a>、<a href="https://docs.microsoft.com/xamarin/tools/ios-simulator/release-notes/">Windows 向けリモート iOS シミュレーター</a>、<a href="https://docs.microsoft.com/xamarin/tools/profiler/release-notes/">Profiler</a> などの Xamarin ツールのリリース ノートを表示します。'
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_tools.svg'
+              href: 'https://docs.microsoft.com/xamarin/tools/'
+            title: ツール
