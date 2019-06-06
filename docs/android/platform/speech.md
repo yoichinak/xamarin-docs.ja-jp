@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/02/2018
-ms.openlocfilehash: e88f6e24cbf4c8b2f0c0486c6408e234e87066cc
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 3d4c29a7d206b826046fd1f79e0513e85ea57898
+ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61228595"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66740666"
 ---
 # <a name="android-speech"></a>Android の音声認識
 
@@ -39,7 +39,7 @@ Google では、開発者は、デバイス (for the blind に設計されたソ
 
 定義を簡単に理解するができるなら、トーンやコンテキストすの本当の意味を判別するのには だけを解釈するには、単語を受け取り、それらを別の形式で出力することです。
 
-日常的なメッセージ交換で使用されている次の単純な例を検討してください。 
+日常的なメッセージ交換で使用されている次の単純な例を検討してください。
 
 <kbd>こんにちは、元気ですか。</kbd>
 
@@ -161,7 +161,8 @@ foreach (var locale in localesAvailable)
 langAvailable = langAvailable.OrderBy(t => t).Distinct().ToList();
 ```
 
-このコードは呼び出して[TextToSpeech.IsLanguageAvailable](https://developer.xamarin.com/api/member/Android.Speech.Tts.TextToSpeech.IsLanguageAvailable/p/Java.Util.Locale/)特定のロケールの言語パッケージが既にデバイス上に存在する場合をテストします。 このメソッドが戻る、 [LanguageAvailableResult](https://developer.xamarin.com/api/type/Android.Speech.Tts.LanguageAvailableResult/)、渡されたロケールの言語が使用できるかどうかを示します。 場合`LanguageAvailableResult`言語があることを示します`NotSupported`、(ダウンロード) の場合でも使用可能な音声パッケージはありませんし、その言語の。 場合`LanguageAvailableResult`に設定されている`MissingData`、手順 4. で、次に示すように、新しい言語パッケージをダウンロードする可能性があります。
+このコードは呼び出して[TextToSpeech.IsLanguageAvailable](https://developer.xamarin.com/api/member/Android.Speech.Tts.TextToSpeech.IsLanguageAvailable/p/Java.Util.Locale/)特定のロケールの言語パッケージが既にデバイス上に存在する場合をテストします。
+このメソッドが戻る、 [LanguageAvailableResult](https://developer.xamarin.com/api/type/Android.Speech.Tts.LanguageAvailableResult/)、渡されたロケールの言語が使用できるかどうかを示します。 場合`LanguageAvailableResult`言語があることを示します`NotSupported`、(ダウンロード) の場合でも使用可能な音声パッケージはありませんし、その言語の。 場合`LanguageAvailableResult`に設定されている`MissingData`、手順 4. で、次に示すように、新しい言語パッケージをダウンロードする可能性があります。
 
 ### <a name="step-3---setting-the-speed-and-pitch"></a>手順 3 - 速度とピッチの設定
 
@@ -233,7 +234,7 @@ void TextToSpeech.IOnInitListener.OnInit(OperationResult status)
 
 ## <a name="related-links"></a>関連リンク
 
-- [Xamarin.Forms DependencyService](https://developer.xamarin.com/samples/UsingDependencyService/)
+- [Xamarin.Forms DependencyService](https://developer.xamarin.com/samples/xamarin-forms/UsingDependencyService/)
 - [テキストを音声 (サンプル)](https://developer.xamarin.com/samples/monodroid/PlatformFeatures/TextToSpeech)
 - [音声からテキスト (サンプル)](https://developer.xamarin.com/samples/monodroid/PlatformFeatures/SpeechToText)
 - [Android.Speech の名前空間](https://developer.xamarin.com/api/namespace/Android.Speech/)
