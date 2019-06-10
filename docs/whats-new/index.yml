@@ -1,9 +1,9 @@
 ### YamlMime:YamlDocument
 documentType: LandingData
-title: Xamarin ドキュメントの新機能
+title: Xamarin ドキュメントの新着記事
 metadata:
-  title: Xamarin ドキュメントの新機能
-  description: Xamarin ドキュメントの新機能です。
+  title: Xamarin ドキュメントの新着記事
+  description: Xamarin ドキュメントの新着記事です。
   ms.topic: landing-page
   ms.prod: xamarin
   ms.assetid: 7D34BF92-6326-40F5-B34B-18B03F293B34
@@ -11,22 +11,22 @@ metadata:
   ms.author: dabritch
   ms.date: 05/31/2019
 abstract:
-  description: Xamarin ドキュメントの新機能へようこそ。
+  description: Xamarin ドキュメントの新着記事へようこそ。
 sections:
-  - title: 新機能
+  - title: 新着記事
     items:
       - type: list
         style: cards
         className: cardsB
         items:
           - href: 2019-06.md
-            html: 'Xamarin ドキュメントの 2019 年 6 月の新機能: Xamarin.Forms 4.0 がリリースされ、データとクラウドのサービスが新しくなり、API ドキュメントが docs.microsoft.com で使用できるようになりました。'
+            html: 'Xamarin ドキュメントの 2019 年 6 月の新着記事: Xamarin.Forms 4.0 がリリースされ、データとクラウドのサービスが新しくなり、API ドキュメントが docs.microsoft.com で使用できるようになりました。'
             image:
               src: 'https://docs.microsoft.com/media/common/i_article.svg'
               href: 2019-06.md
             title: 2019 年 6 月
           - href: 2019-03.md
-            html: 'Xamarin ドキュメントの 2019 年 3 月の新機能: 使用開始の例と 12 の新しいチュートリアル、Xamarin.Forms 3.6、Xamarin.Forms 3.5。'
+            html: 'Xamarin ドキュメントの 2019 年 3 月の新着記事: 使用開始の例と 12 の新しいチュートリアル、Xamarin.Forms 3.6、Xamarin.Forms 3.5。'
             image:
               src: 'https://docs.microsoft.com/media/common/i_article.svg'
               href: 2019-03.md

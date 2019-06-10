@@ -1,11 +1,11 @@
-- name: 新機能
+- name: 新着記事
   href: index.yml
   expanded: true
   items:
-    - name: 2019
+    - name: 2019 年
       expanded: true
       items:
         - name: 6 月
           href: 2019-06.md
-        - name: March
+        - name: 3 月
           href: 2019-03.md
