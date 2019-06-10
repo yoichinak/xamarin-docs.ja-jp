@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/28/2018
-ms.openlocfilehash: 3592a3027469cb9997d973db53d636ddea9e679d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 48ff30397b2592dd2c4dbd445987392d78ced6f3
+ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61024308"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66740779"
 ---
 # <a name="activity-lifecycle"></a>アクティビティのライフサイクル
 
@@ -62,12 +62,12 @@ Android OS を介し、状態に基づいてアクティビティ。 これに�
 
 複雑な問題をするためには、Android は、構成の変更と呼ばれるミックス内の 1 つ以上のレンチをスローします。 構成の変更はアクティビティの迅速な破棄/再 creation サイクル、デバイスの場合などのアクティビティの構成が変更されたときに発生する[回転](~/android/app-fundamentals/handling-rotation.md)(および横または縦向きに再ビルドする必要のあるアクティビティモード)、キーボードが表示されます (とそれ自体のサイズを変更する機会は、アクティビティが表示されます)、またはデバイスを他のユーザーの間でのドックに配置するとします。
 
-構成の変更を停止して再起動活動の間に行われるのと同じアクティビティの状態の変更もあります。 ただし、アプリケーション応答性を感じていることを確認の構成の変更時に実行するには、するために可能な限り早く処理することが重要です。 このため、Android では、構成の変更時に状態を永続化に使用できる特定の API があります。
+構成の変更を停止して再起動活動の間に行われるのと同じアクティビティの状態の変更もあります。 ただし、アプリケーションは応答性の高いと判断し、構成の変更時に実行するには、するにはこれが可能な限り早く処理される重要です。 このため、Android では、構成の変更時に状態を永続化に使用できる特定の API があります。
 この後で取り上げます、 [the Lifecycle 全体で状態を管理する](~/android/app-fundamentals/activity-lifecycle/index.md#Managing_State_Throughout_the_Lifecycle)セクション。
 
 ### <a name="activity-lifecycle-methods"></a>アクティビティのライフ サイクル メソッド
 
-Android SDK と、拡張機能によって Xamarin.Android フレームワークは、アプリケーション内のアクティビティの状態を管理する強力なモデルを提供します。 アクティビティの状態が変更されるときに、アクティビティは、そのアクティビティの特定のメソッドを呼び出すと、OS によって通知されます。 次の図は、アクティビティのライフ サイクルの関係におけるこれらのメソッドを示しています。
+Android SDK と、拡張機能によって Xamarin.Android フレームワークは、アプリケーション内のアクティビティの状態を管理する強力なモデルを提供します。 アクティビティの状態が変更されるときに、アクティビティは、そのアクティビティの特定のメソッドを呼び出すと、OS によって通知されます。 次の図は、これらのメソッドとの関連アクティビティのライフ サイクルを示しています。
 
 [![アクティビティのライフ サイクルのフローチャート](images/image2-sml.png)](images/image2.png#lightbox)
 
@@ -117,7 +117,7 @@ protected override void OnCreate(Bundle bundle)
 システム コール[OnResume](https://developer.xamarin.com/api/member/Android.App.Activity.OnResume/)アクティビティがユーザーとの対話を開始する準備です。
 アクティビティなどのタスクを実行するには、このメソッドをオーバーライドする必要があります。
 
--  (ゲームの構築に一般的なタスク) のフレーム レートの急増
+-  (ゲーム開発の一般的なタスク) のフレーム レートの急増
 -  アニメーションの開始
 -  GPS の更新プログラムのリッスン
 -  関連するアラートや、ダイアログを表示します。

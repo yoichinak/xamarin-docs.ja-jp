@@ -7,23 +7,23 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/27/2018
-ms.openlocfilehash: ddc9d18b57eac099331f0814b5963fb207840380
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 166927f2168015cb4786502d841e01b2faeb0c51
+ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61169592"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66741010"
 ---
 # <a name="xamarinforms-map"></a>Xamarin.Forms のマップ
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/WorkingWithMaps/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithMaps/)
 
 _Xamarin.Forms は、各プラットフォームでネイティブ マップ Api を使用します。_
 
 Xamarin.Forms.Maps は、各プラットフォームでネイティブ マップ Api を使用します。 これにより、ユーザーは、マップの高速で使い慣れたエクスペリエンスを提供しますが、各プラットフォーム API の要件に準拠するいくつかの構成手順が必要であることを意味します。
 構成すると、`Map`共通コードでその他の Xamarin.Forms 要素と同様の動作を制御します。
 
-マップ コントロールが使用されて、 [MapsSample](https://developer.xamarin.com/samples/WorkingWithMaps/)サンプルは、次のとおりです。
+マップ コントロールが使用されて、 [MapsSample](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithMaps/)サンプルは、次のとおりです。
 
  [![MobileCRM サンプル内の対応付け](map-images/maps-zoom-sml.png "マップ コントロールの例")](map-images/maps-zoom.png#lightbox "マップ コントロールの例")
 
@@ -58,7 +58,7 @@ Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
 
 -  **iOS** -AppDelegate.cs ファイルで、`FinishedLaunching`メソッド。
 -  **Android** -MainActivity.cs ファイルで、`OnCreate`メソッド。
--  **UWP** -MainPage.xaml.cs ファイルで、`MainPage`コンス トラクター。
+-  **UWP** -MainPage.xaml.cs ファイルで、`MainPage`コンストラクター。
 
 NuGet パッケージが追加され、各アプリケーション内で初期化メソッドが呼び出された後`Xamarin.Forms.Maps`Api は、一般的な .NET Standard ライブラリ プロジェクトまたは共有プロジェクトのコードで使用できます。
 
@@ -184,10 +184,10 @@ map.MapType == MapType.Street;
 
 ### <a name="map-region-and-mapspan"></a>マップの領域と MapSpan
 
-上記のコード スニペットに示すように指定して、`MapSpan`インスタンス マップ コンス トラクターに初期ビューの設定 (ポイントを中心し、ズーム レベル) が読み込まれるときに、マップの。 `MoveToRegion`マップ クラスのメソッドは、マップの位置やズーム レベルを変更し使用できます。 新たに作成する 2 つの方法がある`MapSpan`インスタンス。
+上記のコード スニペットに示すように指定して、`MapSpan`インスタンス マップ コンストラクターに初期ビューの設定 (ポイントを中心し、ズーム レベル) が読み込まれるときに、マップの。 `MoveToRegion`マップ クラスのメソッドは、マップの位置やズーム レベルを変更し使用できます。 新たに作成する 2 つの方法がある`MapSpan`インスタンス。
 
 -  **MapSpan.FromCenterAndRadius()** -からのスパンを作成する静的メソッド、`Position`を指定して、`Distance`します。
--  **新しい MapSpan ()** -コンス トラクターを使用する、`Position`と緯度と経度を表示する角度。
+-  **新しい MapSpan ()** -コンストラクターを使用する、`Position`と緯度と経度を表示する角度。
 
 
 場所を変更することがなく、マップのズーム レベルを変更するには、新しい作成`MapSpan`から現在の場所を使用して、`VisibleRegion.Center`マップ コントロールのプロパティ。 A `Slider` (ただし、マップ コントロールに直接ズーム スライダーの値を更新できません現在) は、このようなマップのズームを制御するされる可能性があります。
@@ -298,6 +298,6 @@ MyMap.MoveToRegion(
 
 ## <a name="related-links"></a>関連リンク
 
-- [MapsSample](https://developer.xamarin.com/samples/WorkingWithMaps/)
+- [MapsSample](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithMaps/)
 - [カスタム レンダラーをマップします。](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md)
 - [Xamarin.Forms のサンプル](https://developer.xamarin.com/samples/xamarin-forms/all/)

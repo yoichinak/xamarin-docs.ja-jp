@@ -6,13 +6,13 @@ ms.assetid: D812883C-A14A-E74B-0F72-E50071E96328
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
-ms.date: 02/05/2018
-ms.openlocfilehash: b89f5329430fed0387443bf923c45cd40181b22e
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.date: 05/30/2019
+ms.openlocfilehash: bb1b615bc922b19c50435218dfee51f9e19d1259
+ms.sourcegitcommit: dd73477b1bccbd7ca45c1fb4e794da6b36ca163d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57668388"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66394723"
 ---
 # <a name="multi-core-devices--xamarinandroid"></a>マルチコア デバイスと Xamarin.Android
 
@@ -53,7 +53,7 @@ Android でサポートされている各 ABI は、一意の名前で識別さ�
 
 これは、最低限 ARMv5TE 命令セットをサポートする ARM ベースの CPU の EABI の名前です。 Android では、リトル エンディアン ARM GNU/Linux ABI に従います。 この ABI は、ハードウェア依存の浮動小数点演算をサポートしていません。 すべての FP 演算は、コンパイラの `libgcc.a` スタティック ライブラリに由来するソフトウェア ヘルパー関数で実行されます。 SMP デバイスは `armeabi` でサポートされていません。
 
-**注**: Xamarin.Android の `armeabi` コードはスレッド セーフではなく、マルチ CPU の `armeabi-v7a` デバイスでは使用しないでください (以下で説明)。 シングル コアの `armeabi-v7a` デバイスで `aremabi` コードを使用するのは安全です。
+**注**:Xamarin.Android の `armeabi` コードはスレッド セーフではないため、マルチ CPU の `armeabi-v7a` デバイスでは使用しないでください (以下で説明)。 シングル コアの `armeabi-v7a` デバイスで `armeabi` コードを使用するのは安全です。
 
 #### <a name="armeabi-v7a"></a>armeabi-v7a
 
@@ -64,7 +64,7 @@ Android でサポートされている各 ABI は、一意の名前で識別さ�
 #### <a name="arm64-v8a"></a>arm64-v8a
 
 これは、ARMv8 CPU アーキテクチャに基づく 64 ビット命令セットです。 このアーキテクチャは、*Nexus 9* で使用されています。
-Xamarin.Android 5.1 では、このアーキテクチャの実験的なサポートを提供しています (詳細については、[試験的機能](https://developer.xamarin.com/releases/android/xamarin.android_5/xamarin.android_5.1/#Experimental_Features)に関するトピックを参照してください)。
+Xamarin.Android 5.1 ではこのアーキテクチャのサポートが導入されています (詳細については「[64-bit runtime support (64 ビット ランタイムのサポート)](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/android/xamarin.android_5/xamarin.android_5.1/index.md#64-bit-runtime-support)」を参照)。
 
 #### <a name="x86"></a>x86
 
@@ -74,17 +74,11 @@ Xamarin.Android 5.1 では、このアーキテクチャの実験的なサポー
 - 追加の SSE3 拡張機能 (SSSE3)。
 - SSE4 の任意のバリアント。
 
-**注:** Google TV は x86 上で実行されますが、Android の NDK ではサポートされていません。
+**注:**  Google TV は x86 上で実行されますが、Android の NDK ではサポートされていません。
 
 #### <a name="x8664"></a>x86_64
 
-これは、64 ビット x86 命令セット (*x64* または *AMD64* とも呼ばれます) をサポートする CPU の ABI の名前です。 Xamarin.Android 5.1 では、このアーキテクチャの実験的なサポートを提供しています (詳細については、[試験的機能](https://developer.xamarin.com/releases/android/xamarin.android_5/xamarin.android_5.1/#Experimental_Features)に関するトピックを参照してください)。
-
-#### <a name="mips"></a>mips
-
-これは、最低限 `MIPS32r1` 命令セットをサポートする MIPS ベースの CPU の ABI の名前です。 MIPS 16 も `micromips` も Android ではサポートされていません。
-
-**注:** MIPS デバイスは、Xamarin.Android では現在サポートされていませんが、将来のリリースでサポートされる予定です。
+これは、64 ビット x86 命令セット (*x64* または *AMD64* とも呼ばれます) をサポートする CPU の ABI の名前です。 Xamarin.Android 5.1 ではこのアーキテクチャのサポートが導入されています (詳細については「[64-bit runtime support (64 ビット ランタイムのサポート)](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/android/xamarin.android_5/xamarin.android_5.1/index.md#64-bit-runtime-support)」を参照)。
 
 #### <a name="apk-file-format"></a>APK ファイル形式
 
@@ -215,19 +209,22 @@ $APP/lib/libtwo.so # from armeabi-v7a
 
 ### <a name="xamarinandroid-and-abis"></a>Xamarin.Android と ABI
 
-Xamarin.Android では、次のアーキテクチャがサポートされています。
-
-- `armeabi`
-- `armeabi-v7a`
-- `x86`
-
-Xamarin.Android では、次のアーキテクチャの実験的なサポートが提供されています。
+Xamarin.Android では、次の "_64 ビット_" アーキテクチャがサポートされています。
 
 - `arm64-v8a`
 - `x86_64`
 
 > [!NOTE]
 > 2018 年 8 月から、新しいアプリは API レベル 26 をターゲットにすることが必須となります。また、2019 年 8 月から、アプリは 32 ビット バージョンに加えて [64 ビット バージョンを提供することが必須となります](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html)。
+
+Xamarin.Android では、次の 32 ビット アーキテクチャがサポートされています。
+
+- `armeabi` ^
+- `armeabi-v7a`
+- `x86`
+
+> [!NOTE]
+> **^** [Xamarin.Android 9.2](https://docs.microsoft.com/xamarin/android/release-notes/9/9.2#removal-of-support-for-armeabi-cpu-architecture) 以降、`armeabi` はサポート対象から除外されました。
 
 Xamarin.Android では現在、`mips` をサポートしていません。
 
@@ -237,8 +234,7 @@ Xamarin.Android では現在、`mips` をサポートしていません。
 
 ![Android オプションの詳細プロパティ](multicore-devices-images/vs-abi-selections.png)
 
-
-Visual Studio for Mac では、次のスクリーンショットで示すように、サポートされるアーキテクチャは、**[プロジェクト オプション]** の **[Android のビルド]** ページの **[詳細設定]** タブの下で選択できます。
+Visual Studio for Mac では、次のスクリーンショットで示すように、サポートされるアーキテクチャは、 **[プロジェクト オプション]** の **[Android のビルド]** ページの **[詳細設定]** タブの下で選択できます。
 
 [![Android のビルドのサポートされる ABI](multicore-devices-images/xs-abi-selections-sml.png)](multicore-devices-images/xs-abi-selections.png#lightbox)
 
@@ -255,7 +251,6 @@ Visual Studio for Mac では、次のスクリーンショットで示すよう�
 
 ## <a name="related-links"></a>関連リンク
 
-- [MIPS アーキテクチャ](http://www.mips.com/products/product-materials/processor/mips-architecture)
 - [ARM アーキテクチャの ABI (PDF)](http://infocenter.arm.com/help/topic/com.arm.doc.ihi0036b/IHI0036B_bsabi.pdf)
 - [Android NDK](https://developer.android.com/tools/sdk/ndk/index.html)
 - [問題 9089: Nexus One - armeabi v7a に 1 つ以上のライブラリがある場合、armeabi からどのネイティブ ライブラリも読み込まれない](http://code.google.com/p/android/issues/detail?id=9089)
