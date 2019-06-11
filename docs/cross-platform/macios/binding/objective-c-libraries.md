@@ -6,12 +6,12 @@ ms.assetid: 8A832A76-A770-1A7C-24BA-B3E6F57617A0
 author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: 3b81ba51a0fbdf4c684ca602cb083f8da08c7d6a
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 306cce581eb1506e770222ea10e160c4fdbe1b29
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64977986"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827487"
 ---
 # <a name="binding-objective-c-libraries"></a>OBJECTIVE-C ライブラリのバインド
 
@@ -44,7 +44,7 @@ IOS と Mac ライブラリの両方のバインドを構築できます。
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 バインディングを作成する最も簡単な方法では、Xamarin.iOS のバインド プロジェクトを作成します。
-これを行う Windows 上の Visual Studio から、プロジェクトの種類を選択して**Visual C# > iOS > バインド ライブラリ (iOS)**:
+これを行う Windows 上の Visual Studio から、プロジェクトの種類を選択して**Visual C# > iOS > バインド ライブラリ (iOS)** :
 
 [![](objective-c-libraries-images/00vs-sml.png "iOS バインド ライブラリ iOS")](objective-c-libraries-images/00vs.png#lightbox)
 
@@ -1403,4 +1403,4 @@ Xamarin.iOS の v3.2 時点でサポートされていますが付いている�
 
 ## <a name="related-links"></a>関連リンク
 
-- [バインドのサンプル](https://developer.xamarin.com/samples/BindingSample/)
+- [バインドのサンプル](https://developer.xamarin.com/samples/monotouch/BindingSample/)

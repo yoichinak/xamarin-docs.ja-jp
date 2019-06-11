@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: ecbda48ac7b175503701aa64f001c0138cfb423a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 2ac828c8efca3a1a5c54d4dcdaf175ebfc63fdc2
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61217400"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827311"
 ---
 # <a name="creating-a-xamarinios-application-using-the-reflection-api"></a>リフレクション API を使用して Xamarin.iOS アプリケーションを作成します。
 
@@ -148,9 +148,7 @@ public class Expense
 
 ## <a name="related-links"></a>関連リンク
 
-- [MTDReflectionWalkthrough (サンプル)](https://developer.xamarin.com/samples/MTDReflectionWalkthrough/)
-- [MonoTouch.Dialog とスクリーン キャスト - Miguel de Icaza の作成、iOS のログイン画面](http://youtu.be/3butqB1EG0c)
-- [スクリーン キャスト - MonoTouch.Dialog で iOS ユーザー インターフェイスを簡単に作成](http://youtu.be/j7OC5r8ZkYg)
+- [MTDReflectionWalkthrough (サンプル)](https://developer.xamarin.com/samples/monotouch/MTDReflectionWalkthrough/)
 - [MonoTouch ダイアログの概要](~/ios/user-interface/monotouch.dialog/index.md)
 - [要素の API のチュートリアル](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md)
 - [JSON 要素のチュートリアル](~/ios/user-interface/monotouch.dialog/monotouch.dialog-json-markup.md)

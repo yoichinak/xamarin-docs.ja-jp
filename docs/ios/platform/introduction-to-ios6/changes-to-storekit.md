@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 5d1bb5ab636cd7527a560332a9890e9907fac454
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 35bac91e54181753bd1f3fd8b4cf0b851bfa1882
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61295761"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827494"
 ---
 # <a name="changes-to-storekit-in-ios-6"></a>IOS 6 で StoreKit の変更
 
@@ -522,7 +522,7 @@ Apple の iCloud のバックアップ ガイドラインを提案する非ユ�
 
 ## <a name="related-links"></a>関連リンク
 
-- [StoreKit (サンプル)](https://developer.xamarin.com/samples/StoreKit/)
+- [StoreKit (サンプル)](https://developer.xamarin.com/samples/monotouch/StoreKit/)
 - [アプリ内購入](~/ios/platform/in-app-purchasing/index.md)
 - [StoreKit のフレームワーク参照](https://developer.apple.com/library/prerelease/ios/#documentation/StoreKit/Reference/StoreKit_Collection/_index.html)
 - [SKStoreProductViewController クラスのリファレンス](https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKITunesProductViewController_Ref/SKStoreProductViewController.html)

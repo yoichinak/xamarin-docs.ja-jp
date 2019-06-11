@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: 07bcbfe046fd689e08eed4e64495b56d083ceeb8
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: cd80217b39ecca2cc7b49437b9469aaa1107208b
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61304472"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827226"
 ---
 # <a name="using-json-to-create-a-user-interface-in-xamarinios"></a>JSON を使用して Xamarin.iOS でのユーザー インターフェイスを作成するには
 
@@ -169,9 +169,7 @@ _rootElement = new RootElement ("Json Example"){
 
 ## <a name="related-links"></a>関連リンク
 
-- [MTDJsonDemo (sample)](https://developer.xamarin.com/samples/MTDJsonDemo/)
-- [MonoTouch.Dialog とスクリーン キャスト - Miguel de Icaza の作成、iOS のログイン画面](http://youtu.be/3butqB1EG0c)
-- [スクリーン キャスト - MonoTouch.Dialog で iOS ユーザー インターフェイスを簡単に作成](http://youtu.be/j7OC5r8ZkYg)
+- [MTDJsonDemo (sample)](https://developer.xamarin.com/samples/monotouch/MTDJsonDemo/)
 - [MonoTouch.Dialog の概要](~/ios/user-interface/monotouch.dialog/index.md)
 - [要素の API のチュートリアル](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md)
 - [リフレクション API のチュートリアル](~/ios/user-interface/monotouch.dialog/reflection-api-walkthrough.md)

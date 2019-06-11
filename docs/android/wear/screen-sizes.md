@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 9fc22a3c08b60a8474b006f1c9225155b9705507
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a9b71fb069a428d9bec03481c986f4deb4c904ea
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61285818"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827736"
 ---
 # <a name="working-with-screen-sizes"></a>画面サイズの使用
 
@@ -27,7 +27,7 @@ Wear サポート ライブラリを提供する際に役立ついくつかの�
 
 ### <a name="watchviewstub"></a>WatchViewStub
 
-参照してください、 [WatchViewStub](https://developer.xamarin.com/samples/WatchViewStub/)サンプルを画面の種類を検出し、種類ごとに異なるレイアウトを表示する方法を参照してください。
+参照してください、 [WatchViewStub](https://developer.xamarin.com/samples/monodroid/wear/WatchViewStub/)サンプルを画面の種類を検出し、種類ごとに異なるレイアウトを表示する方法を参照してください。
 
 メインのレイアウト ファイルが含まれています、`android.support.wearable.view.WatchViewStub`を使用して四角形と円形の画面のさまざまなレイアウトを参照する、`app:rectLayout`と`app:roundLayout`属性。
 

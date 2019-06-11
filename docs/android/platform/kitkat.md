@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: b3981572e4d2629fd88d1e255fc7459bfe8912f1
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: f957bd5b361d7287353542186916c7f934ee0490
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60950329"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827783"
 ---
 # <a name="kitkat-features"></a>KitKat 機能
 
@@ -713,6 +713,6 @@ adb shell screenrecord --bit-rate 8000000 --time-limit 60 /sdcard/screencast.mp4
 
 ## <a name="related-links"></a>関連リンク
 
-- [KitKat サンプル](https://developer.xamarin.com/samples/KitKat/)
+- [KitKat サンプル](https://developer.xamarin.com/samples/monodroid/KitKat/)
 - [Android 4.4 Api](https://developer.android.com/about/versions/android-4.4.html)
 - [Android KitKat](https://developer.android.com/about/versions/kitkat.html)

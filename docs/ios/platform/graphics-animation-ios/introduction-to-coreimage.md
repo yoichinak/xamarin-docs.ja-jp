@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: d71f14c26865b71eca991910df4a68f2540f9715
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: b58cf2244d16e154cf0a979bc509e7356a75bdb2
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61085575"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827840"
 ---
 # <a name="core-image-in-xamarinios"></a>Xamarin.iOS で core イメージ
 
@@ -224,7 +224,7 @@ foreach (var filter in filters){
 
 ## <a name="related-links"></a>関連リンク
 
-- [Core のイメージ (サンプル)](https://developer.xamarin.com/samples/CoreImage/)
+- [Core のイメージ (サンプル)](https://developer.xamarin.com/samples/monotouch/CoreImage/)
 - [コントラクトと、イメージのレシピの明るさを調整します。](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/coreimage/adjust_contrast_and_brightness_of_an_image)
 - [コア イメージ フィルターを使用します。](https://developer.apple.com/library/prerelease/ios/#documentation/GraphicsImaging/Conceptual/CoreImaging/ci_tasks/ci_tasks.html)
 - [CIFilter クラスのリファレンス](https://developer.apple.com/library/prerelease/ios/#documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilter_Class/Reference/Reference.htm)
