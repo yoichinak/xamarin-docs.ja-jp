@@ -20,7 +20,7 @@ sections:
         className: cardsB
         items:
           - href: 2019-06.md
-            html: 'Xamarin ドキュメントの 2019 年 6 月の新着記事: Xamarin.Forms 4.0 がリリースされ、データとクラウドのサービスが新しくなり、API ドキュメントが docs.microsoft.com で使用できるようになりました。'
+            html: 'Xamarin ドキュメントの 2019 年 6 月の新着記事:Xamarin.Forms 4.0 がリリースされ、データとクラウドのサービスが新しくなり、API ドキュメントが docs.microsoft.com で使用できるようになりました。'
             image:
               src: 'https://docs.microsoft.com/media/common/i_article.svg'
               href: 2019-06.md

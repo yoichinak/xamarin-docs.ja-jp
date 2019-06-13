@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: cd80217b39ecca2cc7b49437b9469aaa1107208b
-ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
+ms.openlocfilehash: e1eae07fab4a74a4f47f565d4c4ca0b7f6bc1aa9
+ms.sourcegitcommit: 85c45dc28ab3625321c271804768d8e4fce62faf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66827226"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67039662"
 ---
 # <a name="using-json-to-create-a-user-interface-in-xamarinios"></a>JSON を使用して Xamarin.iOS でのユーザー インターフェイスを作成するには
 
@@ -42,27 +42,27 @@ MT.D は、Xamarin.iOS で分散されます。 これを使用するを右ク�
 
 たとえば、次の JSON は、セクションとタスクの詳細の要素について説明します。
 
-```csharp
+```json
 {
     "title": "Task",
     "sections": [
         {
-          "elements" : [
-            {
-                "id" : "task-description",
-                "type": "entry",
-                "placeholder": "Enter task description"
-            },
-            {
-                "id" : "task-duedate",
-                "type": "date",
-                "caption": "Due Date",
-                "value": "00:00"
-            }
-         ]
+            "elements" : [
+                {
+                    "id" : "task-description",
+                    "type": "entry",
+                    "placeholder": "Enter task description"
+                },
+                {
+                    "id" : "task-duedate",
+                    "type": "date",
+                    "caption": "Due Date",
+                    "value": "00:00"
+                }
+            ]
         }
     ]
-  }
+}
 ```
 
 上記の JSON に注意してくださいには、各要素の id が含まれています。 任意の要素には、実行時に参照する、id を含めることができます。 これをコードで JSON を読み込む方法を表示するとすぐには、使用する方法が表示されます。
@@ -79,14 +79,13 @@ var taskElement = JsonElement.FromFile ("task.json");
 
 ```csharp
 _addButton.Clicked += (sender, e) => {
+    ++n;
 
-        ++n;
+    var task = new Task{Name = "task " + n, DueDate = DateTime.Now};
 
-        var task = new Task{Name = "task " + n, DueDate = DateTime.Now};
+    var taskElement = JsonElement.FromFile ("task.json");
 
-        var taskElement = JsonElement.FromFile ("task.json");
-
-        _rootElement [0].Add (taskElement);
+    _rootElement [0].Add (taskElement);
 };
 ```
 
@@ -96,28 +95,27 @@ JSON ファイルで宣言するときに、両方の要素に id を追加し�
 
 ```csharp
 _addButton.Clicked += (sender, e) => {
+    ++n;
 
-        ++n;
+    var task = new Task{Name = "task " + n, DueDate = DateTime.Now};
 
-        var task = new Task{Name = "task " + n, DueDate = DateTime.Now};
+    var taskElement = JsonElement.FromFile ("task.json");
 
-        var taskElement = JsonElement.FromFile ("task.json");
+    taskElement.Caption = task.Name;
 
-        taskElement.Caption = task.Name;
+    var description = taskElement ["task-description"] as EntryElement;
 
-        var description = taskElement ["task-description"] as EntryElement;
+    if (description != null) {
+        description.Caption = task.Name;
+        description.Value = task.Description;       
+    }
 
-        if (description != null) {
-                description.Caption = task.Name;
-                description.Value = task.Description;       
-        }
+    var duedate = taskElement ["task-duedate"] as DateElement;
 
-        var duedate = taskElement ["task-duedate"] as DateElement;
-
-        if (duedate != null) {                
-                duedate.DateValue = task.DueDate;
-        }
-        _rootElement [0].Add (taskElement);
+    if (duedate != null) {                
+        duedate.DateValue = task.DueDate;
+    }
+    _rootElement [0].Add (taskElement);
 };
 ```
 
@@ -125,37 +123,37 @@ _addButton.Clicked += (sender, e) => {
 
 MT.コンス トラクターに、Url を渡すだけで、外部の Url からの JSON を動的な読み込みにもサポート D、`JsonElement`します。 MT.D は画面間を移動すると、必要に応じて、JSON で宣言された階層を展開します。 たとえば、ローカル web サーバーのルートにある次などの JSON ファイルを検討します。
 
-```csharp
+```json
 {
     "type": "root",
     "title": "home",
     "sections": [
-       {
-         "header": "Nested view!",
-         "elements": [
-           {
-             "type": "boolean",
-             "caption": "Just a boolean",
-             "id": "first-boolean",
-             "value": false
-           },
-           {
-             "type": "string",
-             "caption": "Welcome to the nested controller"
-           }
-         ]
-       }
-     ]
+        {
+            "header": "Nested view!",
+            "elements": [
+                {
+                    "type": "boolean",
+                    "caption": "Just a boolean",
+                    "id": "first-boolean",
+                    "value": false
+                },
+                {
+                    "type": "string",
+                    "caption": "Welcome to the nested controller"
+                }
+            ]
+        }
+    ]
 }
 ```
 
 私たちはこれを使用して読み込む、`JsonElement`次のコードのようにします。
 
 ```csharp
-_rootElement = new RootElement ("Json Example"){
-        new Section (""){ new JsonElement ("Load from url",
-                "http://localhost/sample.json")
-        }
+_rootElement = new RootElement ("Json Example") {
+    new Section ("") {
+        new JsonElement ("Load from url", "http://localhost/sample.json")
+    }
 };
 ```
 
