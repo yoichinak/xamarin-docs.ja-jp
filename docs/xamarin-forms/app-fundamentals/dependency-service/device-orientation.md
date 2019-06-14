@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: a63d0d4c90bff36e55d98b731217133fe5958c1f
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: d8763c6fe8e330181c836bc8d10923ea676a07c1
+ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53051472"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66740947"
 ---
 # <a name="checking-device-orientation"></a>デバイスの向きを確認する
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/UsingDependencyService)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/UsingDependencyService/)
 
 この記事では、各プラットフォームでネイティブ API を使用して共有コードからデバイスの向きを確認するために、[`DependencyService`](xref:Xamarin.Forms.DependencyService) を使用する方法を説明します。 このチュートリアルは、Ali Özgür による既存の `DeviceOrientation` プラグインが基になっています。 詳しくは、[GitHub リポジトリ](https://github.com/aliozgur/Xamarin.Plugins/tree/master/DeviceOrientation)をご覧ください。
 
@@ -224,6 +224,6 @@ iOS、Android、または Windows プラットフォームでこのアプリケ�
 
 ## <a name="related-links"></a>関連リンク
 
-- [DependencyService の使用 (サンプル)](https://developer.xamarin.com/samples/UsingDependencyService)
-- [DependencyService (サンプル)](https://developer.xamarin.com/samples/DependencyService/DependencyServiceSample/)
+- [DependencyService の使用 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UsingDependencyService/)
+- [DependencyService (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/DependencyService/)
 - [Xamarin.Forms のサンプル](https://github.com/xamarin/xamarin-forms-samples)

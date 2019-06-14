@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/01/2016
-ms.openlocfilehash: 7a273d43ce43ca2946e1ff3177fc4575cd92a534
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 901bf683f59574d71c035b9635abaa3441152252
+ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53050609"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66741057"
 ---
 # <a name="xamarinforms-triggers"></a>Xamarin.Forms のトリガー
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/WorkingWithTriggers)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithTriggers)
 
 トリガーを使用すると、イベントまたはプロパティの変更に基づいてコントロールの外観を変更するアクションを XAML での宣言として表すことができます。
 
@@ -111,7 +111,7 @@ ms.locfileid: "53050609"
 </Button>
 ```
 
-ヒント: `Path=Text.Length` を評価するときは常に、ターゲット プロパティの既定値が提供されます (例:  `Text=""`)。そうしないと `null` になって、トリガーが意図したとおりに動作しないためです。
+ヒント: `Path=Text.Length` を評価するときは常に、ターゲット プロパティの既定値が提供されます (例: `Text=""`)。そうしないと `null` になって、トリガーが意図したとおりに動作しないためです。
 
 `Setter` を指定するだけでなく、[`EnterActions` と `ExitActions`](#enterexit) を提供することもできます。
 
@@ -266,8 +266,8 @@ XAML を以下に示します。 最初のマルチ トリガーの例と次の�
 </Button>
 ```
 
-次のスクリーンショットは、上記の 2 つのマルチ トリガーの例の違いを示したものです。 画面の上部では、**[Save]** ボタンを有効にするには、1 つの `Entry` へのテキスト入力だけで十分です。
-画面の下部では、両方のフィールドにデータを入力するまで、**[Login]** ボタンはアクティブになりません。
+次のスクリーンショットは、上記の 2 つのマルチ トリガーの例の違いを示したものです。 画面の上部では、 **[Save]** ボタンを有効にするには、1 つの `Entry` へのテキスト入力だけで十分です。
+画面の下部では、両方のフィールドにデータを入力するまで、 **[Login]** ボタンはアクティブになりません。
 
 ![](triggers-images/multi-requireall.png "マルチ トリガーの例")
 
@@ -333,5 +333,5 @@ public class FadeTriggerAction : TriggerAction<VisualElement>
 
 ## <a name="related-links"></a>関連リンク
 
-- [トリガーのサンプル](https://developer.xamarin.com/samples/WorkingWithTriggers)
+- [トリガーのサンプル](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithTriggers)
 - [Xamarin.Forms API ドキュメント](xref:Xamarin.Forms.TriggerAction`1)
