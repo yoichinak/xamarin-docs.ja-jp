@@ -240,7 +240,8 @@
 ### [バイブレーション](~/essentials/vibrate.md?context=xamarin/ios)
 ### [トラブルシューティング](~/essentials/troubleshooting.md?context=xamarin/ios)
 
-## [データとクラウド サービス](data-cloud/index.md)
+## データとクラウド サービス
+### [概要](data-cloud/index.md)
 ### [Azure Active Directory](~/cross-platform/data-cloud/active-directory/index.md?context=xamarin/ios)
 #### [はじめに](~/cross-platform/data-cloud/active-directory/get-started/index.md?context=xamarin/ios)
 ##### [手順 1.登録](~/cross-platform/data-cloud/active-directory/get-started/register.md?context=xamarin/ios)
@@ -258,7 +259,8 @@
 ### [CloudKit](data-cloud/intro-to-cloudkit.md)
 
 ### [Web サービスの概要](~/cross-platform/data-cloud/web-services/index.md?context=xamarin/ios)
-## [配置とテスト](deploy-test/index.md)
+## 配置とテスト
+### [概要](deploy-test/index.md)
 ### [アプリの配布](deploy-test/app-distribution/index.md)
 #### [App Store の配布](deploy-test/app-distribution/app-store-distribution/index.md)
 ##### [iTunes Connect でのアプリの構成](deploy-test/app-distribution/app-store-distribution/itunesconnect.md)
@@ -292,7 +294,8 @@
 ### [チュートリアル: Apple の Instruments ツールの使用](deploy-test/walkthrough-apples-instrument.md)
 ### [パフォーマンス](deploy-test/performance.md)
 ### [トラブルシューティング](deploy-test/troubleshooting.md)
-## [Apple プラットフォーム](~/cross-platform/macios/index.md?context=xamarin/ios)
+## Apple プラットフォーム
+### [iOS と macOS の概要](~/cross-platform/macios/index.md?context=xamarin/ios)
 ### [Apple のアカウント管理](~/cross-platform/macios/apple-account-management.md?context=xamarin/ios)
 ### [Unified API](~/cross-platform/macios/unified/index.md?context=xamarin/ios)
 #### [概要](~/cross-platform/macios/unified/overview.md?context=xamarin/ios)
@@ -326,7 +329,8 @@
 ### [クロスプラットフォーム アプリでのネイティブ型の使用](~/cross-platform/macios/native-types-cross-platform.md?context=xamarin/ios)
 ### [HttpClient と SSL/TLS の実装セレクター](~/cross-platform/macios/http-stack.md?context=xamarin/ios)
 ### [ビルドの最適化](~/cross-platform/macios/optimizations.md?context=xamarin/ios)
-## [高度な概念と内部構造](internals/index.md)
+## 高度な概念と内部構造
+### [概要](internals/index.md)
 ### [API](internals/api.md)
 ### [API の設計](internals/api-design/index.md)
 #### [NSString](internals/api-design/nsstring.md)
@@ -339,8 +343,10 @@
 ### [新しい refcount](internals/newrefcount.md)
 ### [Objective-C セレクター](internals/objective-c-selectors.md)
 ### [レジストラー](internals/registrar.md)
-## [トラブルシューティング](troubleshooting/index.md)
+## トラブルシューティング
+### [概要](troubleshooting/index.md)
 ### [トラブルシューティングのヒント](troubleshooting/troubleshooting.md)
+### [Xcode 11 のプレビュー](~/ios/platform/ios13/troubleshooting/index.md)
 ### [Xamarin.iOS の分析規則](troubleshooting/xamarin-ios-analysis.md)
 ### [エラー メッセージ (mtouch)](troubleshooting/mtouch-errors.md)
 ### [よく寄せられる質問](troubleshooting/questions/index.md)
@@ -368,7 +374,8 @@
 #### [System.Exception AMDeviceNotificationSubscribe returned ... (System.Exception AMDeviceNotificationSubscribe が ... を返しました)](troubleshooting/questions/exception-amddevicenotificationsubscribe.md)
 #### [MDocArchiveToMsxDocConverter.exe not found rver.BaseCommand.OnRequest (MDocArchiveToMsxDocConverter.exe が rver.BaseCommand.OnRequest に見つかりません)](troubleshooting/questions/mdocarchivetomsxdocconverter-not-found.md)
 #### [Xamarin Studio で iOS プロジェクトの Mono ランタイム環境変数を設定する方法を教えてください。](troubleshooting/questions/xs-mono-runtime.md)
-## [watchOS](watchos/index.md)
+## watchOS
+### [概要](watchos/index.md)
 ### [はじめに](watchos/get-started/index.md)
 #### [watchOS の概要](watchos/get-started/intro-to-watchos.md)
 #### [セットアップとインストール](watchos/get-started/installation.md)
@@ -405,7 +412,8 @@
 #### [Apple Watch](watchos/deploy-test/device.md)
 #### [App Store](watchos/deploy-test/appstore.md)
 ### [トラブルシューティング](watchos/troubleshooting.md)
-## [tvOS](tvos/index.md)
+## tvOS
+### [概要](tvos/index.md)
 ### [はじめに](tvos/get-started/index.md)
 #### [tvOS のインストールのサポート](tvos/get-started/installation.md)
 #### [はじめての tvOS クイック スタート ガイド](tvos/get-started/hello-tvos.md)
