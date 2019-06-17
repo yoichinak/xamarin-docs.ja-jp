@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/05/2017
-ms.openlocfilehash: 949958387ab710cb671cd9874bb9062227f3e3b8
-ms.sourcegitcommit: dd73477b1bccbd7ca45c1fb4e794da6b36ca163d
+ms.openlocfilehash: 6d0e6fe402a657b3df0a03f2a9ce30ce22702f20
+ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66394672"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66741099"
 ---
 # <a name="xamarin-for-objective-c-developers"></a>Objective-C 開発者向けの Xamarin
 
@@ -26,7 +26,7 @@ iOS を対象とした開発者は Xamarin を使用し、 ユーザーインタ
 
 ## <a name="transitioning-from-objective-c"></a>Objective-C からの移行
 
-ドキュメント サイトには使い慣れたコードに C# のコードを統合することで Xamarin への移行を簡単にするための豊富な情報が含まれています。 以下のような情報は特に使い始めに重要です。
+ドキュメント サイトには Xamarin への移行を簡単にするための情報が多数用意されており、C# コードを使い慣れたコードに統合する方法が示されています。 以下のような情報は特に使い始めに重要です。
 
 -   [Objective-C 開発者向けの C# 入門](primer.md) - Xamarin と C# への移行を検討している Objective-C 開発者向けの簡単な入門。 
 -   [チュートリアル: Objective-C ライブラリのバインディング](~/ios/platform/binding-objective-c/walkthrough.md) - Xamarin.iOS アプリケーションで既存の Objective-C コードを再利用するための手順に関するチュートリアル。 
@@ -38,4 +38,4 @@ C# と Objective-C の違いについて理解し、上記のチュートリア�
 
 ## <a name="cross-platform-development"></a>プラットフォーム間の開発
 
-最後に、Xamarin.iOS への移行後、開発した参照アプリケーションのケーススタディや、[クロスプラットフォーム アプリケーションの構築のセクション](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)に含まれている再利用可能なクロスプラットフォーム コードの作成に関するベストプラクティスなど、クロスプラットフォームのガイダンスについて確認できます。
+最後に、Xamarin.iOS への移行後は、クロスプラットフォームに関するガイダンスを確認できます。これには、開発した参照アプリケーションのケーススタディや、[クロスプラットフォーム アプリケーションの構築のセクション](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)に含まれている再利用可能なクロスプラットフォーム コードを作成するためのベストプラクティスが含まれています。

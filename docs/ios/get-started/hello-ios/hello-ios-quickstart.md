@@ -9,12 +9,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: 0b063619387d9984e24f6987234605b626289e2d
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 5fbe711cb8ad4902da047a2027fc05e9956de863
+ms.sourcegitcommit: 85c45dc28ab3625321c271804768d8e4fce62faf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64978299"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67039720"
 ---
 # <a name="hello-ios--quickstart"></a>Hello, iOS – クイックスタート
 
@@ -283,7 +283,7 @@ Xamarin.iOS は次のセットアップで機能します。
 
     ![](hello-ios-quickstart-images/image001-.png "スタート画面")
 
-    **[ファイル]、[新規]、[プロジェクト]、[Visual C#]、[iPhone と iPad]、[iOS アプリ (Xamarin)]** の順に選択し、新しい Xamarin.iOS ソリューションを作成します。
+    **[ファイル] > [新規] > [プロジェクト...] > [Visual C#] > [iPhone と iPad] > [iOS アプリ (Xamarin)]** の順に選択し、新しい Xamarin.iOS ソリューションを作成します。
 
     ![iOS アプリ (Xamarin) プロジェクト タイプを選択する](hello-ios-quickstart-images/image002.w157.png "iOS アプリ (Xamarin) プロジェクト タイプを選択する")
 
