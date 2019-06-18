@@ -5,37 +5,33 @@ ms.prod: xamarin
 ms.assetid: 19B1F126-866E-4672-92D2-BE2B70ACF0F1
 author: lobrien
 ms.author: laobri
-ms.date: 08/08/2017
-ms.openlocfilehash: 5b969c6118d1fa23558efaabc87cd53a920f3490
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 06/13/2019
+ms.openlocfilehash: d4329f252bd75de3c149aea9f03c137bf0c73d5a
+ms.sourcegitcommit: 93b1e2255d59c8ca6674485938f26bd425740dd1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61282007"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67157678"
 ---
 # <a name="xamarin-live-player-for-xamarinforms"></a>Xamarin.Forms 用の Xamarin Live Player
 
-Xamarin Live Player を使用して、Android デバイスでテストできるモバイル アプリの構築を学習して Xamarin.Forms 開発を開始するのに役立ちます。 最初に、Xamarin Live Player のダウンロード、Visual Studio にペアリングししてコードをデプロイおよびアプリをテストします。
-
-Xamarin Live Player のプレビューでは、開発者がデバイス上で簡単に視覚化、アイデアを取得するためのサンド ボックス、作業の開始として設計されています。 アクセスできますので、ソース コードの解釈、[制限](limitations.md)後、時間と完全にデバイスまたはエミュレーターのアプリをコンパイルする必要です。
+アクセスできますので、ソース コードの解釈、[制限](limitations.md)後、時間と完全にデバイスまたはエミュレーターのアプリをコンパイルする必要です。
 
 ![プレビュー機能](~/media/shared/preview.png)
 
-> [!NOTE]
-> Live Player のプレビューには、Visual Studio 2017 ではできるだけです。
+> [!WARNING]
+> Xamarin Live Player のプレビューが終了しました。 アプリが使用できなくします。 以下の手順は、Visual Studio 2017 のプレビューを使用して引き続きお客様に提供されます。
 
-## <a name="get-started-with-xamarin-live-player"></a>Xamarin Live Player を概要します。
+> [!TIP]
+> 使用することができます、 [XAML プレビューアー](~/xamarin-forms/xaml/xaml-previewer/index.md)でそれらを編集すると、画面のデザインを表示するには、Visual Studio 2019 または Visual Studio for Mac。
+
+## <a name="how-xamarin-live-player-worked"></a>Xamarin Live Player の動作
 
 [![Xamarin Live Player:テスト コードをスキャン](images/xamarin-live.png)](images/xamarin-live-sml.png#lightbox)
 
-1. に従って、アプリをダウンロード、 [Xamarin Live Player セットアップ](install.md)指示します。
-2. 有効にする、 *Xamarin Live Player*で**設定**からデバイスを選択し、**デバイス**一覧。
-3. Visual Studio は、デバイスをペアリングする QR コードをスキャンする Live Player デバイスを管理します。
-4. アプリは、携帯電話またはタブレット右に実行されます。
-
-## <a name="xamarin-live-player-setupinstallmd"></a>[Xamarin Live Player のセットアップ](install.md)
-
-Xamarin Live Player をダウンロードして for mac から Visual Studio 2017 または Visual Studio の Xamarin.Forms アプリで使用する IDE の構成 
+1. 有効にする、 *Xamarin Live Player*で**設定**からデバイスを選択し、**デバイス**一覧。
+2. Visual Studio は、デバイスをペアリングする QR コードをスキャンする Live Player デバイスを管理します。
+3. 携帯電話およびタブレットでアプリが実行されます。
 
 ## <a name="xamarin-live-player-appplayermd"></a>[Xamarin Live Player アプリ](player.md)
 
@@ -44,7 +40,3 @@ Xamarin Live Player をダウンロードして for mac から Visual Studio 201
 ## <a name="troubleshootingtroubleshootingmd"></a>[トラブルシューティング](troubleshooting.md)
 
 問題が生じた場合は、ヘルプを検索します。
-
-## <a name="related-links"></a>関連リンク
-
-- [Xamarin Live Player のサンプル](https://developer.xamarin.com/samples/xamarin-live-player/all/)

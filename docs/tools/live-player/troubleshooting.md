@@ -5,20 +5,23 @@ ms.prod: xamarin
 ms.assetid: 29A97ADA-80E0-40A1-8B26-C68FFABE7D26
 author: lobrien
 ms.author: laobri
-ms.date: 08/08/2018
-ms.openlocfilehash: 5eb0dcead230e0bb2e7d99241e5d8e5a4115f838
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 06/13/2019
+ms.openlocfilehash: bf0186b55b14d9797397b98390f4d825d669d0f4
+ms.sourcegitcommit: 93b1e2255d59c8ca6674485938f26bd425740dd1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61175397"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67157696"
 ---
 # <a name="troubleshooting-xamarin-live-player"></a>Xamarin Live Player のトラブルシューティング
 
 ![プレビュー機能](~/media/shared/preview.png)
 
-> [!NOTE]
-> Live Player のプレビューには、Visual Studio 2017 ではできるだけです。
+> [!WARNING]
+> Xamarin Live Player のプレビューが終了しました。 アプリが使用できなくします。 以下の手順は、Visual Studio 2017 のプレビューを使用して引き続きお客様に提供されます.
+
+> [!TIP]
+> 使用することができます、 [XAML プレビューアー](~/xamarin-forms/xaml/xaml-previewer/index.md)でそれらを編集すると、画面のデザインを表示するには、Visual Studio 2019 または Visual Studio for Mac。
 
 この記事では、それらを修正するには、Live Player、および手順に関する一般的な問題の制限事項について説明します。
 
@@ -163,4 +166,3 @@ Xamarin.Forms の Android プロジェクトでは、関連するレイアウト
 ## <a name="related-links"></a>関連リンク
 
 - [セットアップ](~/tools/live-player/install.md)
-- [Live Player を使用するサンプル](https://developer.xamarin.com/samples/xamarin-live-player/all/)

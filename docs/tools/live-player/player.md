@@ -5,22 +5,23 @@ ms.prod: xamarin
 ms.assetid: A7EB73C1-38D7-46C5-9AF6-4C571C168BE7
 author: lobrien
 ms.author: laobri
-ms.date: 08/08/2017
-ms.openlocfilehash: 89795e5df00b426c0f11c04a0844993071df1e25
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 06/13/2019
+ms.openlocfilehash: fce0eeae4ef5776842ea1b45c36163118042dc49
+ms.sourcegitcommit: 93b1e2255d59c8ca6674485938f26bd425740dd1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61279416"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67157728"
 ---
 # <a name="xamarin-live-player-app"></a>Xamarin Live Player アプリ
 
 ![プレビュー機能](~/media/shared/preview.png)
 
-> [!NOTE]
-> Live Player のプレビューには、Visual Studio 2017 ではできるだけです。
+> [!WARNING]
+> Xamarin Live Player のプレビューが終了しました。 アプリが使用できなくします。 以下の手順は、Visual Studio 2017 のプレビューを使用して引き続きお客様に提供されます。
 
-次のスマート フォンにアプリをインストールすると、[セットアップ手順](~/tools/live-player/install.md)コンピューターに接続します。 いずれかの操作を再試行してください、[サンプル アプリ](~/tools/live-player/samples.md)これを利用します。
+> [!TIP]
+> 使用することができます、 [XAML プレビューアー](~/xamarin-forms/xaml/xaml-previewer/index.md)でそれらを編集すると、画面のデザインを表示するには、Visual Studio 2019 または Visual Studio for Mac。
 
 スタートアップ時に、Xamarin Live Player アプリは、ようになります。
 
@@ -56,7 +57,7 @@ ms.locfileid: "61279416"
 
 最初にデバイスを接続する手順については、[要件およびセットアップ](~/tools/live-player/install.md)します。 複数のデバイスをペアリングし、IDE を使用して管理できます。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio-2017tabwindows"></a>[Visual Studio 2017](#tab/windows)
 
 Visual Studio で、次のように選択します**ツール > Xamarin Live Player > デバイスを管理しています...**
 
@@ -95,4 +96,4 @@ Visual studio for Mac では、次のように選択します**ツール > (Xama
 ## <a name="related-links"></a>関連リンク
 
 - [トラブルシューティング](~/tools/live-player/troubleshooting.md)
-- [Live Player を使用するサンプル](https://developer.xamarin.com/samples/xamarin-live-player/all/)
+
