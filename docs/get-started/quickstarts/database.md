@@ -9,12 +9,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/01/2019
-ms.openlocfilehash: 5c3daf04c08e2109c46b24c198fef8e71fac2f3d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: ebf0f21ed57b7d436721018abb2dca329b56baa4
+ms.sourcegitcommit: 215b507b2e5a44bb023abc2c804c824b1a6190d8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61263086"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67194968"
 ---
 # <a name="store-data-in-a-local-sqlitenet-database"></a>SQLite.NET のローカル データベースにデータを格納します。
 
@@ -40,11 +40,11 @@ ms.locfileid: "61263086"
 
 1. Visual Studio を起動し、ノートのソリューションを開きます。
 
-2. **ソリューション エクスプ ローラー**を選択、**ノート**プロジェクトを右クリックし、 **NuGet パッケージの管理.**:
+2. **ソリューション エクスプ ローラー**を選択、**ノート**プロジェクトを右クリックし、 **NuGet パッケージの管理.** :
 
     ![](database-images/vs/add-nuget-packages.png "NuGet パッケージを追加します")    
 
-3. **NuGet パッケージ マネージャー**で、**[参照]** タブを選択し、**pcl-sqlite-net** NuGet パッケージを検索して選択し、**[インストール]** ボタンをクリックしてプロジェクトに追加します。
+3. **NuGet パッケージ マネージャー**で、 **[参照]** タブを選択し、**pcl-sqlite-net** NuGet パッケージを検索して選択し、 **[インストール]** ボタンをクリックしてプロジェクトに追加します。
 
     ![](database-images/vs/add-package.png "パッケージを追加します。")
 
@@ -177,7 +177,7 @@ ms.locfileid: "61263086"
                 InitializeComponent();
                 MainPage = new NavigationPage(new NotesPage());
             }
-            ...
+            //...
         }
     }
     ```
@@ -243,11 +243,11 @@ ms.locfileid: "61263086"
 
 1. Visual Studio for Mac 起動し、ノートのプロジェクトを開きます。
 
-2. **Solution Pad**を選択、**ノート**プロジェクトを右クリックし、**追加 > NuGet パッケージを追加しています.**:
+2. **Solution Pad**を選択、**ノート**プロジェクトを右クリックし、**追加 > NuGet パッケージを追加しています.** :
 
     ![](database-images/vsmac/add-nuget-packages.png "NuGet パッケージを追加します")    
 
-3. **[パッケージを追加]** ウィンドウで、**sqlite-net-pcl** NuGet パッケージを検索して選択し、**[パッケージを追加]** ボタンをクリックしてプロジェクトに追加します。
+3. **[パッケージを追加]** ウィンドウで、**sqlite-net-pcl** NuGet パッケージを検索して選択し、 **[パッケージを追加]** ボタンをクリックしてプロジェクトに追加します。
 
     ![](database-images/vsmac/add-package.png "パッケージを追加します。")
 
