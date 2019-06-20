@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: f0e2c93c4a6be0e83c9c4f1607b125b8d240ccc1
-ms.sourcegitcommit: 0cb62b02a7efb5426f2356d7dbdfd9afd85f2f4a
+ms.openlocfilehash: db5fd78a7907826bcb60ce1c2635491e01f0c02b
+ms.sourcegitcommit: 215b507b2e5a44bb023abc2c804c824b1a6190d8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/13/2019
-ms.locfileid: "65557216"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67194937"
 ---
 # <a name="contributing"></a>コントリビューション
 
@@ -45,7 +45,7 @@ Xamarin ドキュメントへの投稿に関心をお寄せいただきありが
 
 新しいトピックの場合は、この[テンプレート ファイル](../contributing-guidelines/template.md)を開始点として使用できます。 このファイルには、作成のガイドラインが含まれ、作成者情報など、記事ごとに必要なメタデータについても説明されています。
 
-イメージとその他の静的リソースについては、**<mypage>-images** という名前のサブフォルダーに追加します。 コンテンツ用の新しいフォルダーを作成する場合は、新しいフォルダーに images フォルダーを追加します。
+イメージとその他の静的リソースについては、 **<mypage>-images** という名前のサブフォルダーに追加します。 コンテンツ用の新しいフォルダーを作成する場合は、新しいフォルダーに images フォルダーを追加します。
 
 #### <a name="example-structure"></a>構造の例
 
@@ -70,13 +70,13 @@ Xamarin チームが PR を確認し、変更が適切であるか、または�
 .NET ドキュメントに投稿する際に注意する必要があるガイド ルールの簡単な一覧を次に示します。
 
 - 突然に、巨大な pull requests を送信**しないでください**。 代わりに、問題を提出し、ディスカッションを開始して、大量の時間を費やす前に方向について同意が得られるようにしてください。
-- [スタイル ガイド](../contributing-guidelines/template.md)と[スタイルとトーン](../contributing-guidelines/voice-tone.md)のガイドラインを**お読みください**。
-- [テンプレート](../contributing-guidelines/template.md) ファイルを作業の開始点として**使用してください**。
+- [スタイル ガイド](contributing-guidelines/template.md)と[スタイルとトーン](contributing-guidelines/voice-tone.md)のガイドラインを**お読みください**。
+- [テンプレート](contributing-guidelines/template.md) ファイルを作業の開始点として**使用してください**。
 - 記事に取り掛かる前に、フォークに個別のブランチを**作成してください**。
 - [GitHub フロー ワークフロー](https://guides.github.com/introduction/flow/)に**従ってください**。
 - 投稿について頻繁にブログやツイート**を書いてください**。
 
 > [!NOTE]
-> 一部のトピックが現在、この記事や[スタイル ガイド](./contributing-guidelines/template.md)に指定されたすべてのガイドラインに従っていないことに気付く場合があります。 Microsoft では、サイト全体で一貫性の達成に向けて取り組んでいます。 
+> 一部のトピックが現在、この記事や[スタイル ガイド](contributing-guidelines/template.md)に指定されたすべてのガイドラインに従っていないことに気付く場合があります。 Microsoft では、サイト全体で一貫性の達成に向けて取り組んでいます。 
 
 
