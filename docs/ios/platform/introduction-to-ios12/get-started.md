@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/19/2018
-ms.openlocfilehash: 77589d0d644c366fc0feacd874929c7456b4ae30
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 71799e4299f01a881c6bc265baa7ad721ec5fc79
+ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61398799"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67268887"
 ---
 # <a name="get-started-with-ios-12-tvos-12-and-watchos-5"></a>IOS 12、12、tvOS と watchOS 5 の概要します。
 
@@ -40,4 +40,4 @@ ms.locfileid: "61398799"
 
 ## <a name="related-links"></a>関連リンク
 
-- [Xcode 10 をダウンロードします。](https://developer.apple.com/download/)
+- [Xcode をダウンロードします。](https://developer.apple.com/download/)

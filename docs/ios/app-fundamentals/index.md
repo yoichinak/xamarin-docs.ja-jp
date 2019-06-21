@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/21/2017
-ms.openlocfilehash: a40227454b597578ff1c1c247b326e523c23493b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 120bbfe0d5fa91e632fc56ee05431f5555653360
+ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61248518"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67268592"
 ---
 # <a name="xamarinios-application-fundamentals"></a>Xamarin.iOS アプリケーションの基礎
 
@@ -33,6 +33,10 @@ ms.locfileid: "61248518"
 ## <a name="creating-ios-applications-in-codeiosapp-fundamentalsios-code-onlymd"></a>[コードで iOS アプリケーションの作成](~/ios/app-fundamentals/ios-code-only.md)
 
 この記事では、Visual Studio と Visual Studio for mac を使用するコードだけで iOS アプリケーションを作成する方法を説明します。 UIKit からビューの階層を作成して、コント ローラーで、アプリケーションの画面を構築する空のプロジェクト テンプレートから開始する方法を示します。 次に、コント ローラーで読み込むことができるカスタム ビューを作成する方法について説明します。
+
+## <a name="exception-marshalingiosplatformexception-marshalingmd"></a>[例外のマーシャ リング](~/ios/platform/exception-marshaling.md)
+
+OBJECTIVE-C とマネージ例外はネイティブおよびマネージ フレーム間マーシャ リングする方法について説明します。
 
 ## <a name="events-protocols-and-delegatesiosapp-fundamentalsdelegates-protocols-and-eventsmd"></a>[イベント、プロトコル、およびデリゲート](~/ios/app-fundamentals/delegates-protocols-and-events.md)
 

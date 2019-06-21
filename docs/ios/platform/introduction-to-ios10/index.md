@@ -7,18 +7,14 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/29/2017
-ms.openlocfilehash: b018fe343a7d46f1323119b03a22cc3831a02d9f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e84f5acdd1660633521d1a99325155b614b87e1b
+ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61402404"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67268908"
 ---
 # <a name="introduction-to-ios-10"></a>iOS 10 の概要
-
-_この記事では、Xamarin.iOS の開発者向けのすべての新規および変更した Api と iOS 10 で使用できる機能を紹介します。_
-
-## <a name="introducing-ios-10"></a>IOS 10 の概要
 
 新しい ios 10 SDK、Apple に含まれている新しい Api とアプリおよび機能の新しいカテゴリを作成する開発者を有効にするサービス。 IOS アプリでは、ユーザーが以前使用したリッチで魅力的な機能を提供するメッセージ、Siri、Phone、およびマップ アプリを拡張できるようにします。
 
@@ -27,7 +23,6 @@ IOS 10 の詳細については、Apple を参照してください[iOS + アプ
 ## <a name="whats-new-in-ios-10"></a>IOS 10 で新します。
 
 Apple は iOS 10 と共になど、既存の機能に多くの機能強化でいくつかの新しい Api やサービスが追加します。
-
 
 ## <a name="adapting-to-the-true-tone-display"></a>True のトーン表示への適応
 
@@ -41,15 +36,13 @@ Apple の True トーン表示テクノロジでは、色と現在の照明条�
 - `UIWhitePointAdaptivityStyleVideo` -アプリのビデオに重点を置いたの使用。
 - `UIWhitePointAdaptivityStylePhoto` -アプリの使用写真に重点を置いた色の忠実性が環境の白点の調整をよりも重要です。
 
-<a name="app-extensions" />
-
 ## <a name="app-extensions"></a>アプリ拡張機能
 
 Apple は iOS 10 で新しいアプリ拡張機能ポイントをいくつか用意されています。
 
 - ディレクトリを呼び出す
 - Intents および Intents UI
-- メッセージ
+- [メッセージ]
 - 通知の内容
 - Notification Services
 - ステッカー パック
@@ -87,13 +80,12 @@ IOS 10 では、いくつかの新しい Api が追加されました iOS と動
 
 Apple には、そのアイコンを管理するアプリを許可する iOS 10.3 にいくつかの機能強化が追加されます。
 
- - `ApplicationIconBadgeNumber` -を取得します。 または、スプリング ボードで、アプリ アイコンのバッジを設定します。
- - `SupportsAlternateIcons` If`true`アプリには、別のアイコンのセット。
- - `AlternateIconName` -現在選択されている代替アイコンの名前を返しますまたは`null`プライマリ アイコンを使用する場合。
- - `SetAlternameIconName` -このメソッドを使用してアプリのアイコンを指定した代替アイコンに切り替えます。
+- `ApplicationIconBadgeNumber` -を取得します。 または、スプリング ボードで、アプリ アイコンのバッジを設定します。
+- `SupportsAlternateIcons` If`true`アプリには、別のアイコンのセット。
+- `AlternateIconName` -現在選択されている代替アイコンの名前を返しますまたは`null`プライマリ アイコンを使用する場合。
+- `SetAlternameIconName` -このメソッドを使用してアプリのアイコンを指定した代替アイコンに切り替えます。
 
 詳細については、次を参照してください、[代替アプリ アイコン](~/ios/app-fundamentals/images-icons/alternate-app-icons.md)ガイド。
-
 
 ## <a name="introduction-to-callkit"></a>CallKit の概要
 
@@ -133,7 +125,7 @@ iOS 10 では、事前に提示する役に立つ情報に自動的にユーザ�
 - CarPlay
 - マップ
 - Siri の相互作用
-- QuickType 提案 
+- QuickType 提案
 
 アプリなどのテクノロジのコレクションを使用して、システムには、この機能を公開[NSUserActivity](xref:Foundation.NSUserActivity)、コア スポット ライト、MapKit、Media Player、UIKit、web マークアップ。
 
@@ -228,7 +220,7 @@ IOS 10 では、次の Api が廃止されました。
 
 - `CKDiscoverAllContactsOperation`、 `CKDiscoveredUserInfo`、`CKDiscoverUserInfosOperation`と`CKFetchRecordChangesOperation`クラス CloudKit で iOS 10 の廃止されました。 使用して、 [CKDiscoverAllUserIdentitiesOperation](xref:CloudKit.CKDiscoverUserIdentitiesOperation)、 [CKUserIdentity](xref:CloudKit.CKUserIdentity)と[CKFetchRecordZoneChangesOperation](xref:CloudKit.CKFetchRecordZoneChangesOperation)クラス (レコードの共有をサポート) を代わりにします。
 - いくつか[CKSubscription](https://developer.apple.com/reference/cloudkit/cksubscription) (ゾーンおよびクエリ ベース サブスクリプション) などの Api が非推奨とされました。 使用して、 [CKRecordZoneSubscription](xref:CloudKit.CKRecordZoneSubscription)と[CKQuerySubscription](xref:CloudKit.CKQuerySubscription) Api 代わりにします。
-- [NSPersistentStoreCoordnator](xref:CoreData.NSPersistentStoreCoordinator)ユビキタス コンテンツに関連するシンボルが非推奨とされました。
+- [NSPersistentStoreCoordinator](xref:CoreData.NSPersistentStoreCoordinator)ユビキタス コンテンツに関連するシンボルが非推奨とされました。
 - `ADBannerView`、`ADInterstitialAd`内のシンボルに関連し、 [UIViewController](xref:UIKit.UIViewController)クラスが推奨されていません。
 - [SKUniform](https://developer.apple.com/reference/spritekit/skuniform)浮動小数点値に関連するシンボルが非推奨とされました。
 - `UILocalNotification`、 `UIMutableUserNotificationAction`、 `UIMutableUserNotificationCategory`、 `UIUserNotificationAction`、`UIUserNotificationCategory`と`UIUserNotificationSettings`UIKit のクラスが非推奨とされました。 使用して、[ユーザー通知](#user-notifications)framework 代わりにします。
@@ -238,9 +230,6 @@ IOS 10 では、次の Api が廃止されました。
 
 Apple を参照してください。 [iOS 10.0 API の相違点を iOS 9.3](https://developer.apple.com/library/prerelease/content/releasenotes/General/iOS10APIDiffs/index.html)廃止された機能の完全な一覧についてはドキュメントです。
 
-
-
 ## <a name="related-links"></a>関連リンク
 
 - [iOS 10 のサンプル](https://developer.xamarin.com/samples/ios/iOS10/)
-- [IOS 10 の新機能新機能](https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewIniOS/Articles/iOS10.html#//apple_ref/doc/uid/TP40017084-SW1)

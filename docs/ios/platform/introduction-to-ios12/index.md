@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/08/2018
-ms.openlocfilehash: 99f2b98614c2b8d558dd8744b31a62b787fc955c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 5ac19571bc1f1163539a48ea2689c743445d8047
+ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61035992"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67268866"
 ---
 # <a name="introduction-to-ios-12"></a>iOS 12 の概要
 
@@ -42,7 +42,7 @@ IOS 12 で通知コンテンツの拡張機能により、カスタム ユーザ
 
 自然言語、フレームワークは、アプリケーションをさまざまな種類の言語分析を実行できます。 たとえば、品詞を識別およびテキストのブロックで表される言語を決定できます。
 
-## <a name="vision-framework"></a>ビジョン フレームワーク
+## <a name="vision-frameworkiosplatformintroduction-to-ios11visionmd"></a>[ビジョン フレームワーク](~/ios/platform/introduction-to-ios11/vision.md)
 
 ビジョン フレームワークには、さまざまな方向に顔を検出できる強化された顔検出機能が含まれています。 また、要求のリビジョンはビジョン framework アルゴリズムの特定のリビジョンを選択できます。
 
@@ -81,7 +81,3 @@ Ios 12、Apple が非推奨とされます。
 
 - OpenGL ES[開発者](https://developer.apple.com/ios/whats-new/)メタルを採用します。
 - [`UIWebView`](xref:UIKit.UIWebView)、[簡素`WKWebView`](https://developer.apple.com/documentation/webkit/wkwebview?language=objc)します。
-
-## <a name="related-links"></a>関連リンク
-
-- [IOS (Apple) の 12 の準備](https://developer.apple.com/ios/)

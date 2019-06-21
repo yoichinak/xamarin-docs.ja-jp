@@ -1,5 +1,5 @@
 ---
-title: iOS プラットフォーム機能
+title: iOS プラットフォームの機能の概要
 description: このドキュメントは、iOS のさまざまなバージョンで導入された機能とその他の iOS プラットフォーム機能を記述するさまざまなガイドにリンクしています。
 ms.prod: xamarin
 ms.assetid: 9F6A27E5-8A87-ADE2-D1EF-5684E7B8C999
@@ -7,50 +7,32 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/25/2018
-ms.openlocfilehash: fff6620732ffcaccd13dde7ae31ab03a5106da16
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 9628821be5a979777614eb4f7ad8605087093ed3
+ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61364420"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67268843"
 ---
-# <a name="ios-platform-features"></a>iOS プラットフォーム機能
+# <a name="ios-platform-features-overview"></a>iOS プラットフォームの機能の概要
 
-## <a name="introduction-to-ios-12iosplatformintroduction-to-ios12indexmd"></a>[iOS 12 の概要](~/ios/platform/introduction-to-ios12/index.md)
+最近使用した iOS の解放 Apple のフレームワークの一部を強調表示とこのページの一覧に Xamarin.iOS でアクセスできます。
 
-このドキュメントでは、Xamarin.iOS アプリケーションを構築するときに、iOS 12 の機能が使用可能ながについて説明します。
+## <a name="ios-releases"></a>iOS リリース
 
-## <a name="introduction-to-ios-11iosplatformintroduction-to-ios11indexmd"></a>[iOS 11 の概要](~/ios/platform/introduction-to-ios11/index.md)
-
-このドキュメントでは、iOS 11、および ARKit、Core ML、Core NFC、ドラッグ アンド ドロップ、MapKit、PDFKit、SiriKit、やビジョンなどの Xcode 9 で新規および更新された機能について説明します。 Xamarin.iOS でこれらの機能を使用する方法を説明するガイドにリンクします。
-
-## <a name="introduction-to-ios-10iosplatformintroduction-to-ios10indexmd"></a>[iOS 10 の概要](~/ios/platform/introduction-to-ios10/index.md)
-
-iOS 10 では、いくつかの新しい Api や新しい機能および機能を備えたアプリを開発するためのサービスが含まれています。 10、iOS では、アプリは、マップ、メッセージ、電話および Siri を拡張するなどの新機能をあります。 このセクションでは、Xamarin.iOS アプリでこれらの機能を利用する方法を示します。
-
-## <a name="introduction-to-ios-9iosplatformintroduction-to-ios9indexmd"></a>[iOS 9 の概要](~/ios/platform/introduction-to-ios9/index.md)
-
-このセクションでは、Xamarin.iOS アプリでこれらの機能を使用する方法と iOS 8 からアップグレードする場合は、iOS 9 で行った変更を定義します。
-
-## <a name="introduction-to-ios-8iosplatformintroduction-to-ios8md"></a>[iOS 8 の概要](~/ios/platform/introduction-to-ios8.md)
-
-iOS 8 には、iOS 7 からオペレーティング システムに多数の変更が行われます。 ここでは何か、およびその使用方法を紹介します。
-
-## <a name="introduction-to-ios-7iosplatformintroduction-to-ios7indexmd"></a>[iOS 7 の概要](~/ios/platform/introduction-to-ios7/index.md)
-
-IOS 7 で導入された主要な新しい Api をに関するなどのビュー コント ローラーへの移行 UIView アニメーション、UIKit Dynamics、およびテキスト キットの機能強化。
-
-## <a name="introduction-to-ios-6iosplatformintroduction-to-ios6indexmd"></a>[iOS 6 の概要](~/ios/platform/introduction-to-ios6/index.md)
-
-IOS 6、コレクション ビュー、渡すキット、イベント キット、およびソーシャル フレームワークなどで導入された機能について説明します。
+|  |  |
+|-------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [iOS 12 の概要](~/ios/platform/introduction-to-ios12/index.md) | このドキュメントは iOS 12 を説明するときに使用できる機能が使用 buildingXamarin.iOS アプリケーション。|
+| [iOS 11 の概要](~/ios/platform/introduction-to-ios11/index.md) | このドキュメントでは、iOS 11、および ARKit、Core ML、Core NFC、ドラッグ アンド ドロップ、MapKit、PDFKit、SiriKit、やビジョンなどの Xcode 9 で新規および更新された機能について説明します。 これらの featureswith Xamarin.iOS を使用する方法を説明するガイドにリンクします。 |
+| [iOS 10 の概要](~/ios/platform/introduction-to-ios10/index.md) | iOS 10 では、いくつかの新しい Api や新しい機能および機能を備えたアプリを開発するためのサービスが含まれています。 10、iOS では、アプリは、マップ、メッセージ、電話および Siri を拡張するなどの新機能をあります。 このセクションでは、Xamarin.iOS アプリでこれらの機能を利用する方法を示します。 |
+| [iOS 9 の概要](~/ios/platform/introduction-to-ios9/index.md)   | このセクションでは、Xamarin.iOS アプリでこれらの機能を使用する方法と iOS 8 からアップグレードする場合は、iOS 9 で行った変更を定義します。 |
+| [iOS 8 の概要](~/ios/platform/introduction-to-ios8.md)         | iOS 8 には、iOS 7 からオペレーティング システムに多数の変更が行われます。 ここでは何か、およびその使用方法を紹介します。 |
+| [iOS 7 の概要](~/ios/platform/introduction-to-ios7/index.md)   | IOS 7 で導入された主要な新しい Api をに関するなどのビュー コント ローラーへの移行 UIView アニメーション、UIKit Dynamics、およびテキスト キットの機能強化。 |
+| [iOS 6 の概要](~/ios/platform/introduction-to-ios6/index.md)   | IOS 6、コレクション ビュー、渡すキット、イベント キット、およびソーシャル フレームワークなどで導入された機能について説明します。 |
 
 ## <a name="apple-payiosplatformapple-paymd"></a>[Apple Pay](~/ios/platform/apple-pay.md)
 
 Apple Pay が導入されましたと共に iOS 8、食品、エンターテイメント、自分の iOS デバイスを使用してメンバーシップなどの物理的な商品の支払いにユーザーを有効にします。 IPhone 6 および iPhone 6 では利用また、ストア内での購入の Apple Watch とペアにもなりますが。 IPhone で使用すると、確認し、ユーザーのクレジット_カードまたはデビット カードにトランザクションを承認する方法として Touch ID を使用します。
-
-## <a name="3d-touchiosplatform3d-touchmd"></a>[3D Touch](~/ios/platform/3d-touch.md)
-
-この記事では説明し、6 s と iPhone 6 s 新しい iPhone で実行されている Xamarin.iOS アプリに負荷の機密性の高いジェスチャを追加する新しい 3D タッチ Api の使用の概要についてさらにデバイス。
 
 ## <a name="callkitiosplatformcallkitmd"></a>[CallKit](~/ios/platform/callkit.md)
 
@@ -138,6 +120,10 @@ iOS 10 には、アプリを継続的な音声認識をサポートし、議事�
 
 テキストのキットは、強力なテキスト レイアウトとレンダリングの機能を提供する新しい API です。 低レベルの主要なテキストのフレームワーク上に構築されますが、使用する主要なテキストよりもはるかに簡単です。
 
+## <a name="3d-touchiosplatform3d-touchmd"></a>[3D Touch](~/ios/platform/3d-touch.md)
+
+この記事では説明し、6 s と iPhone 6 s 新しい iPhone で実行されている Xamarin.iOS アプリに負荷の機密性の高いジェスチャを追加する新しい 3D タッチ Api の使用の概要についてさらにデバイス。
+
 ## <a name="touch-idiosplatformtouchidmd"></a>[タッチ ID](~/ios/platform/touchid.md)
 
 Touch ID は、ユーザーのパスコードのような認証の手段として、iOS 7 で導入されました。 ただし、デバイスのロックを解除、App Store を使用して、iTunes を使用して、iCloud キーチェーンのみの認証に制限されていました。
@@ -152,16 +138,12 @@ iOS 10 デバイスと macOS Sierra 拡張範囲のピクセル形式とコア �
 
 ## <a name="binding-objective-cbinding-objective-cindexmd"></a>[Objective-C のバインド](binding-objective-c/index.md)
 
-IOS での作業時に、サード パーティ製の Objective C ライブラリを使用する必要がある場合があります。 これらの状況では、ネイティブの OBJECTIVE-C ライブラリを c# バインディングを作成するのに MonoTouch のバインド プロジェクトを使用できます。 プロジェクトでは、c# を iOS Api を使用する同じツールを使用します。&nbsp;Objective C Api をバインドする方法を説明します。
+IOS での作業時に、サード パーティ製の Objective C ライブラリを使用する必要がある場合があります。 これらの状況では、ネイティブの OBJECTIVE-C ライブラリを c# バインディングを作成するのに MonoTouch のバインド プロジェクトを使用できます。 プロジェクトが iOS Api を使用する同じツールを使用するC#します。 このドキュメントでは、Objective C Api をバインドする方法について説明します。
 
 ## <a name="referencing-native-librariesnative-interopmd"></a>[ネイティブ ライブラリを参照します。](native-interop.md)
 
-Xamarin.iOS では、ネイティブの C ライブラリと OBJECTIVE-C ライブラリの両方とのリンクをサポートしています。 このドキュメントでは、Xamarin.iOS プロジェクト、ネイティブの C ライブラリにリンクする方法について説明します。 
+Xamarin.iOS では、ネイティブの C ライブラリと OBJECTIVE-C ライブラリの両方とのリンクをサポートしています。 このドキュメントでは、Xamarin.iOS プロジェクト、ネイティブの C ライブラリにリンクする方法について説明します。
 
 ## <a name="embedded-frameworksembedded-frameworksmd"></a>[埋め込みフレームワーク](embedded-frameworks.md)
 
 Objective C のユーザーのフレームワークを Xamarin.iOS アプリに埋め込む方法について説明します。
-
-## <a name="exception-marshalingexception-marshalingmd"></a>[例外のマーシャ リング](exception-marshaling.md)
-
-OBJECTIVE-C とマネージ例外はネイティブおよびマネージ フレーム間マーシャ リングする方法について説明します。
