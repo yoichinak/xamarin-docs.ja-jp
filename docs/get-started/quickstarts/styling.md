@@ -9,12 +9,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/02/2019
-ms.openlocfilehash: 56f8632c9cc7d170b4c6594fd51e6aa3e92ad02b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 53d2a0aae3398ea31676fbc3dab95d500dfe2104
+ms.sourcegitcommit: e45f0cd6d7d4a77dba5ecaad4d7894025005a2dc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61191238"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67309501"
 ---
 # <a name="style-a-cross-platform-xamarinforms-application"></a>スタイルのクロスプラット フォーム-Xamarin.Forms アプリケーション
 
@@ -120,7 +120,7 @@ ms.locfileid: "61191238"
 
     変更を保存**NotesPage.xaml**キーを押して**CTRL + S**ファイルを閉じます。
 
-5. **Solution Pad**の**ノート**プロジェクトで、ダブルクリックして**NoteEntryPage.xaml**を開きます。 既存のコードを次のコードに置き換えます。
+5. **ソリューション エクスプ ローラー**の**ノート**プロジェクトで、ダブルクリックして**NoteEntryPage.xaml**を開きます。 既存のコードを次のコードに置き換えます。
 
     ```xaml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -222,7 +222,7 @@ ms.locfileid: "61191238"
 
     変更を保存**App.xaml**を選択して**ファイル > 保存**(またはキーを押して **&#8984; + S**)、ファイルを閉じます。
 
-3. **ソリューション エクスプ ローラー**の**ノート**プロジェクトで、ダブルクリックして**NotesPage.xaml**を開きます。 既存のコードを次のコードに置き換えます。
+3. **Solution Pad**の**ノート**プロジェクトで、ダブルクリックして**NotesPage.xaml**を開きます。 既存のコードを次のコードに置き換えます。
 
     ```xaml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -261,7 +261,7 @@ ms.locfileid: "61191238"
 
     変更を保存**NotesPage.xaml**を選択して**ファイル > 保存**(またはキーを押して **&#8984; + S**)、ファイルを閉じます。
 
-5. **ソリューション エクスプ ローラー**の**ノート**プロジェクトで、ダブルクリックして**NoteEntryPage.xaml**を開きます。 既存のコードを次のコードに置き換えます。
+5. **Solution Pad**の**ノート**プロジェクトで、ダブルクリックして**NoteEntryPage.xaml**を開きます。 既存のコードを次のコードに置き換えます。
 
     ```xaml
     <?xml version="1.0" encoding="UTF-8"?>

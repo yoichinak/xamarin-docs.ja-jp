@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: 75d3c628a513b81af9dea7308ca49c2b490c4aff
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 60add066d581afffeaa200769efcdff9e0644535
+ms.sourcegitcommit: e45f0cd6d7d4a77dba5ecaad4d7894025005a2dc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61407655"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67309509"
 ---
 # <a name="part-2-essential-xaml-syntax"></a>第 2 部です。 重要な XAML 構文
 
@@ -384,7 +384,7 @@ if (Device.RuntimePlatform == Device.iOS)
 }
 ```
 
-以下のように XAML を使用して行うこともできます、`OnPlatform`と`On`クラス。 最初のプロパティ要素を含める、`Padding`ページの上部付近のプロパティ。
+以下のように XAML を使用して行うこともできます、 [ `OnPlatform` ](xref:Xamarin.Forms.OnPlatform`1)と[ `On` ](xref:Xamarin.Forms.On)クラス。 最初のプロパティ要素を含める、`Padding`ページの上部付近のプロパティ。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -523,11 +523,12 @@ Android、UWP は、の既定値に設定されているため`Padding`タグを
 </ContentPage>
 ```
 
+> [!NOTE]
+> `OnPlatform`プラットフォームごとに UI の外観をカスタマイズする XAML のマークアップ拡張機能が使用もできます。 同じ機能を提供します、`OnPlatform`と`On`クラスがより簡潔な表現。 詳細については、次を参照してください。 [OnPlatform マークアップ拡張機能](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform)します。
+
 ## <a name="summary"></a>まとめ
 
 プロパティ要素と添付プロパティの場合は、基本的な XAML 構文の多くが確立されました。 ただし、場合によってオブジェクトに間接的な方法で、たとえば、リソース ディクショナリからプロパティを設定する必要があります。 この方法については、次の部分の一部で[3。XAML マークアップ拡張機能](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)します。
-
-
 
 ## <a name="related-links"></a>関連リンク
 
