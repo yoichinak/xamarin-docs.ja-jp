@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: a4c842ea7fd37ade9be0a9cb3e3ff7e50a6d1491
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 163b82590e95a1587836502883cd5f9f2afbe19c
+ms.sourcegitcommit: 6e04246207aa743820029e8c217a43cfdd24f991
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61328191"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67352110"
 ---
 # <a name="consuming-web-services"></a>Web サービスの使用
 
-提供する別の web サービスと通信する方法を示します (_t) ガイドを作成、読み取り、更新、および削除 (CRUD) の機能を Xamarin.Forms アプリケーション。 ASMX サービス、WCF サービス、REST サービス、および Azure Mobile Apps との通信について書かれています。
+_このガイドが提供する別の web サービスと通信する方法を示します作成、読み取り、更新、および Xamarin.Forms アプリケーションに (CRUD) の機能を削除します。ASMX サービス、WCF サービス、REST サービス、および Azure Mobile Apps との通信について書かれています。_
 
 ## <a name="consuming-an-aspnet-web-service-asmxxamarin-formsdata-cloudconsumingasmxmd"></a>[ASP.NET Web サービス (ASMX) の使用](~/xamarin-forms/data-cloud/consuming/asmx.md)
 
