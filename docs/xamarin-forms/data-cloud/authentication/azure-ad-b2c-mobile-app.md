@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/22/2019
-ms.openlocfilehash: 4c3cc489f7c65636ad9f2b5541e552665b10980e
-ms.sourcegitcommit: 0cb62b02a7efb5426f2356d7dbdfd9afd85f2f4a
+ms.openlocfilehash: 2f9cfceee4765dea946dfdac974ac2d56595ef94
+ms.sourcegitcommit: 9aaae4f0af096cd136b3dcfbb9af591ba307dc25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/13/2019
-ms.locfileid: "65557271"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67398692"
 ---
 # <a name="integrating-azure-active-directory-b2c-with-azure-mobile-apps"></a>Azure Active Directory B2C を Azure Mobile Apps に統合する
 
@@ -31,7 +31,7 @@ Azure Active Directory B2C はコンシューマーを許可するコンシュ�
 
 Azure Active Directory B2C の詳細については、[Azure Active Directory B2C のユーザー認証](~/xamarin-forms/data-cloud/authentication/azure-ad-b2c.md) を参照してください。
 
-Azure Active Directory B2C は、Azure Mobile App の認証ワークフローの管理に使用できます。  この方法では、クラウド id 管理を構成し、により、アプリケーション コードを変更することがなく変更。
+Azure Active Directory B2C は、Azure Mobile App の認証ワークフローの管理に使用できます。 この方法では、クラウド id 管理を構成し、により、アプリケーション コードを変更することがなく変更。
 
 
 Azure Active Directory B2C での azure の Mobile Apps は、2 つの認証方法を使用できます。
@@ -115,9 +115,9 @@ public async Task<bool> LoginAsync(bool useSilent = false)
     ...
 
     var payload = new JObject();
-    if (authenticationResult != null && !string.IsNullOrWhiteSpace(authenticationResult.IdToken))
+    if (authenticationResult != null && !string.IsNullOrWhiteSpace(authenticationResult.AccessToken))
     {
-        payload["access_token"] = authenticationResult.IdToken;
+        payload["access_token"] = authenticationResult.AccessToken;
     }
 
     User = await TodoItemManager.DefaultManager.CurrentClient.LoginAsync(
@@ -131,9 +131,9 @@ public async Task<bool> LoginAsync(bool useSilent = false)
 
 Microsoft Authentication Library (MSAL) は、Azure Active Directory B2C テナントの認証ワークフローの開始に使用されます。 `AcquireTokenAsync`メソッドは、デバイスの web ブラウザーを起動し、`Constants.AuthoritySignin` 定数を通じて参照されたポリシーによって指定されている Azure Active Directory B2C ポリシーで定義済みの認証オプションを表示します。 このポリシーは、ユーザーのサインインとサインアップのエクスペリエンスと認証が成功すると、アプリケーションが受信要求を定義します。
 
-`AcquireTokenAsync` メソッドの呼び出しの結果は、`AuthenticationResult` インスタンスを返します。 認証が成功した場合、`AuthenticationResult` インスタンスには ID トークンが含まれ、それはローカルにキャッシュされます。 認証が失敗した場合、`AuthenticationResult` インスタンスには、認証が失敗した理由を示すデータが含まれます。 MSAL を使用して、Azure Active Directory B2C テナントと通信する方法については、[Azure Active Directory B2C のユーザー認証](~/xamarin-forms/data-cloud/authentication/azure-ad-b2c.md) を参照してください。
+`AcquireTokenAsync` メソッドの呼び出しの結果は、`AuthenticationResult` インスタンスを返します。 認証が成功した場合、`AuthenticationResult`インスタンスがローカルにキャッシュされているアクセス トークンを格納します。 認証が失敗した場合、`AuthenticationResult` インスタンスには、認証が失敗した理由を示すデータが含まれます。 MSAL を使用して、Azure Active Directory B2C テナントと通信する方法については、[Azure Active Directory B2C のユーザー認証](~/xamarin-forms/data-cloud/authentication/azure-ad-b2c.md) を参照してください。
 
-`CurrentClient.LoginAsync` メソッドが呼び出されると、Azure Mobile Apps インスタンスは、`JObject` でラップされた id トークンを受信します。 Azure Mobile Apps のインスタンスが、独自の OAuth 2.0 認証フローを開始する必要があることを意味有効なトークンの存在します。 その代わりに、`CurrentClient.LoginAsync`メソッドは、`MobileServiceClient.CurrentUser` プロパティに格納されている`MobileServiceUser` インスタンスを返します。 このプロパティは、`UserId` と `MobileServiceAuthenticationToken` プロパティを提供します。 認証されたユーザーおよび有効期限が切れるまでに使用できるトークンを表します。 認証トークンは、Xamarin.Forms アプリケーションを認証されたユーザーのアクセス許可を必要とするアクションを実行することにより、Azure Mobile Apps インスタンスに加えられたすべての要求に含まれます。
+ときに、`CurrentClient.LoginAsync`メソッドが呼び出される、Azure Mobile Apps のインスタンスでラップされたアクセス トークンを受け取る、`JObject`します。 Azure Mobile Apps のインスタンスが、独自の OAuth 2.0 認証フローを開始する必要があることを意味有効なトークンの存在します。 その代わりに、`CurrentClient.LoginAsync`メソッドは、`MobileServiceClient.CurrentUser` プロパティに格納されている`MobileServiceUser` インスタンスを返します。 このプロパティは、`UserId` と `MobileServiceAuthenticationToken` プロパティを提供します。 認証されたユーザーおよび有効期限が切れるまでに使用できるトークンを表します。 認証トークンは、Xamarin.Forms アプリケーションを認証されたユーザーのアクセス許可を必要とするアクションを実行することにより、Azure Mobile Apps インスタンスに加えられたすべての要求に含まれます。
 
 ### <a name="signing-out"></a>サインアウト
 
