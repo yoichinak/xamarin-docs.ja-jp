@@ -1,12 +1,14 @@
 ---
-ms.openlocfilehash: a7b23e47269ecca4d36a344ce3589443a4a85e31
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 8957a75ac693874bfbea738d17fbdd7e013c3199
+ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61382558"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67277327"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+
+このチュートリアルを完了するには、 **.NET によるモバイル開発**ワークロードがインストールされた、Visual Studio 2019 (最新リリース) が必要です。 さらに、iOS でチュートリアル アプリケーションを構築するには、ペアリング済みの Mac が必要になります。 Xamarin プラットフォームのインストールについては、「[Xamarin のインストール](~/get-started/installation/index.md)」を参照してください。 Mac ビルド ホストへの Visual Studio 2019 の接続については、「[Xamarin.iOS 開発のために Mac とペアリングする](~/ios/get-started/installation/windows/connecting-to-mac/index.md)」を参照してください。
 
 1. Visual Studio を起動し、**StackLayoutTutorial** という名前の新しい空の Xamarin.Forms アプリを作成します。 共有コード メカニズムとして .NET Standard がアプリで使用されていることを確認します。
 
@@ -15,7 +17,7 @@ ms.locfileid: "61382558"
 
     作成される .NET Standard ライブラリの詳細については、[Xamarin.Forms クイック スタート Deep Dive](~/get-started/first-app/index.md) の [Xamarin.Forms アプリケーションの構造](~/get-started/first-app/index.md)に関するページを参照してください。
 
-1. **ソリューション エクスプローラー**の **[StackLayoutTutorial]** プロジェクトで、**[MainPage.xaml]** をダブルクリックして開きます。 次に、**[MainPage.xaml]** のテンプレート コードをすべて削除し、次のコードに置き換えます。
+1. **ソリューション エクスプローラー**の **[StackLayoutTutorial]** プロジェクトで、 **[MainPage.xaml]** をダブルクリックして開きます。 次に、 **[MainPage.xaml]** のテンプレート コードをすべて削除し、次のコードに置き換えます。
 
     ```xaml
     <?xml version="1.0" encoding="utf-8"?>
@@ -35,13 +37,15 @@ ms.locfileid: "61382558"
     > [!NOTE]
     > [`Margin`](xref:Xamarin.Forms.View.Margin) プロパティに加え、[`Padding`](xref:Xamarin.Forms.Layout.Padding) および [`Spacing`](xref:Xamarin.Forms.StackLayout.Spacing) プロパティを [`StackLayout`](xref:Xamarin.Forms.StackLayout) に設定することもできます。 [`Padding`](xref:Xamarin.Forms.Layout.Padding) プロパティの値では、`StackLayout` のビュー間の距離を指定し、[`Spacing`](xref:Xamarin.Forms.StackLayout.Spacing) プロパティの値では、`StackLayout` の各子要素の間のスペース量を指定します。 詳細については「[Margin and Padding](~/xamarin-forms/user-interface/layouts/margin-and-padding.md)」 (余白とスペース) を参照してください。
 
-1. Visual Studio ツール バーで、**[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択したリモート iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
+1. Visual Studio ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択したリモート iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
     [![iOS と Android での StackLayout の子ビューのスクリーンショット](../images/create-stacklayout.png "Label インスタンスを含む StackLayout")](../images/create-stacklayout-large.png#lightbox "Label インスタンスを含む StackLayout")
 
     [`StackLayout`](xref:Xamarin.Forms.StackLayout) の詳細については、「[Xamarin.Forms StackLayout](~/xamarin-forms/user-interface/layouts/stack-layout.md)」 (Xamarin.Forms の StackLayout) を参照してください。
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+
+このチュートリアルを完了するには、iOS と Android のプラットフォームのサポートがインストールされた Visual Studio for Mac (最新リリース) が必要です。 さらに、Xcode (最新リリース) も必要になります。 Xamarin プラットフォームのインストールについて詳しくは、「[Xamarin のインストール](~/get-started/installation/index.md)」を参照してください。
 
 1. Visual Studio for Mac を起動し、**StackLayoutTutorial** という名前の新しい空の Xamarin.Forms アプリを作成します。 共有コード メカニズムとして .NET Standard がアプリで使用されていることを確認します。
 
@@ -50,7 +54,7 @@ ms.locfileid: "61382558"
 
     作成される .NET Standard ライブラリの詳細については、[Xamarin.Forms クイック スタート Deep Dive](~/get-started/first-app/index.md) の [Xamarin.Forms アプリケーションの構造](~/get-started/first-app/index.md)に関するページを参照してください。
 
-1. **Solution Pad** の **StackLayoutTutorial** プロジェクトで、**[MainPage.xaml]** をダブルクリックして開きます。 次に、**[MainPage.xaml]** のテンプレート コードをすべて削除し、次のコードに置き換えます。
+1. **Solution Pad** の **StackLayoutTutorial** プロジェクトで、 **[MainPage.xaml]** をダブルクリックして開きます。 次に、 **[MainPage.xaml]** のテンプレート コードをすべて削除し、次のコードに置き換えます。
 
     ```xaml
     <?xml version="1.0" encoding="utf-8"?>
@@ -70,7 +74,7 @@ ms.locfileid: "61382558"
     > [!NOTE]
     > [`Margin`](xref:Xamarin.Forms.View.Margin) プロパティに加え、[`Padding`](xref:Xamarin.Forms.Layout.Padding) および [`Spacing`](xref:Xamarin.Forms.StackLayout.Spacing) プロパティを [`StackLayout`](xref:Xamarin.Forms.StackLayout) に設定することもできます。 [`Padding`](xref:Xamarin.Forms.Layout.Padding) プロパティの値では、`StackLayout` のビュー間の距離を指定し、[`Spacing`](xref:Xamarin.Forms.StackLayout.Spacing) プロパティの値では、`StackLayout` の各子要素の間のスペース量を指定します。 詳細については「[Margin and Padding](~/xamarin-forms/user-interface/layouts/margin-and-padding.md)」 (余白とスペース) を参照してください。
 
-1. Visual Studio for Mac ツール バーで、**[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
+1. Visual Studio for Mac ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
     [![iOS と Android での StackLayout の子ビューのスクリーンショット](../images/create-stacklayout.png "Label インスタンスを含む StackLayout")](../images/create-stacklayout-large.png#lightbox "Label インスタンスを含む StackLayout")
 

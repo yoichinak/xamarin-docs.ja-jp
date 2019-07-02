@@ -1,11 +1,19 @@
 ---
-ms.openlocfilehash: 32b9941aa700d5834616a04f8b3e15054c6137d9
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 164befeb08d7cb6691cb037b1f6b7f31c390afea
+ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61037576"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67277315"
 ---
+このチュートリアルを試行する前に、以下を正常に完了しておく必要があります。
+
+- [最初の Xamarin.Forms アプリのビルド](~/get-started/first-app/index.md)のクイック スタート。
+- [StackLayout](~/get-started/tutorials/stacklayout/index.yml) のチュートリアル。
+- [Grid](~/get-started/tutorials/grid/index.yml) のチュートリアル。
+- [Label](~/get-started/tutorials/label/index.yml) のチュートリアル。
+- [Image](~/get-started/tutorials/image/index.yml) のチュートリアル。
+
 このチュートリアルでは、次の作業を行う方法について説明します。
 
 > [!div class="checklist"]
@@ -14,30 +22,6 @@ ms.locfileid: "61037576"
 > - 選択されている `ListView` 項目に応答する。
 > - `ListView` セルの外観をカスタマイズする。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+[`ListView`](xref:Xamarin.Forms.ListView) の外観をカスタマイズする方法を示す簡単なアプリケーションを作成するには、Visual Studio 2019 または Visual Studio for Mac を使用します。 次のスクリーンショットは、最終的なアプリケーションです。
 
-### <a name="prerequisites"></a>必須コンポーネント
-
-このチュートリアルを完了するには、**.NET によるモバイル開発**ワークロードがインストールされた、Visual Studio 2017 (最新リリース) が必要です。 さらに、iOS でチュートリアル アプリケーションを構築するには、ペアリング済みの Mac が必要になります。 Xamarin プラットフォームのインストールについては、「[Xamarin のインストール](~/get-started/installation/index.md)」を参照してください。 Mac ビルド ホストへの Visual Studio 2017 の接続については、「[Xamarin.iOS 開発のために Mac とペアリングする](~/ios/get-started/installation/windows/connecting-to-mac/index.md)」を参照してください。
-
-このチュートリアルを試行する前に、以下を正常に完了しておく必要があります。
-
-- [最初の Xamarin.Forms アプリのビルド](~/get-started/first-app/index.md)のクイック スタート。
-- [StackLayout](~/get-started/tutorials/stacklayout/index.yml) のチュートリアル。
-- [Grid](~/get-started/tutorials/grid/index.yml) のチュートリアル。
-- [Label](~/get-started/tutorials/label/index.yml) のチュートリアル。
-- [Image](~/get-started/tutorials/image/index.yml) のチュートリアル。
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-### <a name="prerequisites"></a>必須コンポーネント
-
-このチュートリアルを完了するには、iOS と Android のプラットフォームのサポートがインストールされた Visual Studio for Mac (最新リリース) が必要です。 さらに、Xcode (最新リリース) も必要になります。 Xamarin プラットフォームのインストールについて詳しくは、「[Xamarin のインストール](~/get-started/installation/index.md)」を参照してください。
-
-このチュートリアルを試行する前に、以下を正常に完了しておく必要があります。
-
-- [最初の Xamarin.Forms アプリのビルド](~/get-started/first-app/index.md)のクイック スタート。
-- [StackLayout](~/get-started/tutorials/stacklayout/index.yml) のチュートリアル。
-- [Grid](~/get-started/tutorials/grid/index.yml) のチュートリアル。
-- [Label](~/get-started/tutorials/label/index.yml) のチュートリアル。
-- [Image](~/get-started/tutorials/image/index.yml) のチュートリアル。
+[![項目がデータ テンプレートでテンプレート化された ListView のスクリーンショット](../images/customize-cell-appearance-reduced.png "テンプレート化されたデータを表示する ListView")](../images/customize-cell-appearance-large.png#lightbox "テンプレート化されたデータを表示する ListView")

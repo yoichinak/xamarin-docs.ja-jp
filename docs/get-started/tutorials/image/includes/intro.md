@@ -1,36 +1,23 @@
 ---
-ms.openlocfilehash: 69e1a1f9c54c032e25a69df17789ed376a059f00
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 9bda76a477973bb06eb018abbf4ad53dc3e8c1e7
+ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61384571"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67277308"
 ---
+このチュートリアルを試行する前に、以下を正常に完了しておく必要があります。
+
+- [最初の Xamarin.Forms アプリのビルド](~/get-started/first-app/index.md)のクイック スタート。
+- [StackLayout](~/get-started/tutorials/stacklayout/index.yml) のチュートリアル。
+
 このチュートリアルでは、次の作業を行う方法について説明します。
 
 > [!div class="checklist"]
 > - XAML で Xamarin.Forms [`Image`](xref:Xamarin.Forms.Image) を作成する。
 > - `Image` の外観をカスタマイズする。
-> - 各プラットフォーム プロジェクトからローカルの画像ファイルを表示する。
+> - 各プラットフォーム プロジェクトからローカルのイメージ ファイルを表示する。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+画像を表示し、その外観をカスタマイズする方法を示す簡単なアプリケーションを作成するには、Visual Studio 2019 または Visual Studio for Mac を使用します。 次のスクリーンショットは、最終的なアプリケーションです。
 
-### <a name="prerequisites"></a>必須コンポーネント
-
-このチュートリアルを完了するには、**.NET によるモバイル開発**ワークロードがインストールされた、Visual Studio 2017 (最新リリース) が必要です。 さらに、iOS でチュートリアル アプリケーションを構築するには、ペアリング済みの Mac が必要になります。 Xamarin プラットフォームのインストールについては、「[Xamarin のインストール](~/get-started/installation/index.md)」を参照してください。 Mac ビルド ホストへの Visual Studio 2017 の接続については、「[Xamarin.iOS 開発のために Mac とペアリングする](~/ios/get-started/installation/windows/connecting-to-mac/index.md)」を参照してください。
-
-このチュートリアルを試行する前に、以下を正常に完了しておく必要があります。
-
-- [最初の Xamarin.Forms アプリのビルド](~/get-started/first-app/index.md)のクイック スタート。
-- [StackLayout](~/get-started/tutorials/stacklayout/index.yml) のチュートリアル。
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-### <a name="prerequisites"></a>必須コンポーネント
-
-このチュートリアルを完了するには、iOS と Android のプラットフォームのサポートがインストールされた Visual Studio for Mac (最新リリース) が必要です。 さらに、Xcode (最新リリース) も必要になります。 Xamarin プラットフォームのインストールについて詳しくは、「[Xamarin のインストール](~/get-started/installation/index.md)」を参照してください。
-
-このチュートリアルを試行する前に、以下を正常に完了しておく必要があります。
-
-- [最初の Xamarin.Forms アプリのビルド](~/get-started/first-app/index.md)のクイック スタート。
-- [StackLayout](~/get-started/tutorials/stacklayout/index.yml) のチュートリアル。
+[![iOS および Android でのローカル イメージを表示するイメージ ビューのスクリーンショット](../images/local-file.png "ローカル イメージを表示するイメージ ビュー")](../images/local-file-large.png#lightbox "ローカル イメージを表示するイメージ ビュー")

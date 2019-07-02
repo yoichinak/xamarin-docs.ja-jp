@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 846ff203a26f38fdaabe5a5dd6eff1c6a6b39b08
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 3130c20d39e0140695eed92ffa4941d6bafe796e
+ms.sourcegitcommit: b4c9c574b771ae0265171ca5e938aed1c5e35028
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61343466"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67394546"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -16,9 +16,9 @@ ms.locfileid: "61343466"
            Completed="OnEntryCompleted" />
     ```
 
-    このコードでは、[`TextChanged`](xref:Xamarin.Forms.Entry.TextChanged) イベントを `OnEntryTextChanged` という名前のイベント ハンドラーに設定し、[`Completed`](xref:Xamarin.Forms.Entry.Completed) イベントを `OnEntryCompleted` という名前のイベント ハンドラーに設定します。 両方のイベント ハンドラーは次の手順で作成します。
+    このコードでは、[`TextChanged`](xref:Xamarin.Forms.Entry.TextChanged) イベントを `OnEntryTextChanged` という名前のイベント ハンドラーに設定し、[`Completed`](xref:Xamarin.Forms.Entry.Completed) イベントを `OnEntryCompleted` という名前のイベント ハンドラーに設定します。 どちらのイベント ハンドラーも次の手順で作成されます。
 
-1. **ソリューション エクスプローラー**の **LabelTutorial** プロジェクトで **[MainPage.xaml]** を展開し、**[MainPage.xaml.cs]** をダブルクリックして開きます。 次に、**MainPage.xaml.cs** で、`OnEntryTextChanged` と `OnEntryCompleted` のイベント ハンドラーをクラスに追加します。
+1. **ソリューション エクスプローラー**の **EntryTutorial** プロジェクトで **[MainPage.xaml]** を展開し、 **[MainPage.xaml.cs]** をダブルクリックして開きます。 次に、 **[MainPage.xaml.cs]** で、`OnEntryTextChanged` と `OnEntryCompleted` のイベント ハンドラーをクラスに追加します。
 
     ```csharp
     void OnEntryTextChanged(object sender, TextChangedEventArgs e)
@@ -40,7 +40,7 @@ ms.locfileid: "61343466"
     > [!IMPORTANT]
     > [`Entry`](xref:Xamarin.Forms.Entry) に入力されたテキストはすべて [`Text`](xref:Xamarin.Forms.Entry.Text) プロパティに格納されます。
 
-1. Visual Studio ツール バーで、**[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択したリモート iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
+1. Visual Studio ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択したリモート iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
     [![iOS および Android でのテキストを含むエントリのスクリーン ショット](../images/text-changes.png "テキストを含むエントリ")](../images/text-changes-large.png#lightbox "テキストを含むエントリ")
 
@@ -58,9 +58,9 @@ ms.locfileid: "61343466"
            Completed="OnEntryCompleted" />
     ```
 
-    このコードでは、[`TextChanged`](xref:Xamarin.Forms.Entry.TextChanged) イベントを `OnEntryTextChanged` という名前のイベント ハンドラーに設定し、[`Completed`](xref:Xamarin.Forms.Entry.Completed) イベントを `OnEntryCompleted` という名前のイベント ハンドラーに設定します。 両方のイベント ハンドラーは次の手順で作成します。
+    このコードでは、[`TextChanged`](xref:Xamarin.Forms.Entry.TextChanged) イベントを `OnEntryTextChanged` という名前のイベント ハンドラーに設定し、[`Completed`](xref:Xamarin.Forms.Entry.Completed) イベントを `OnEntryCompleted` という名前のイベント ハンドラーに設定します。 どちらのイベント ハンドラーも次の手順で作成されます。
 
-1. **Solution Pad** の **LabelTutorial** プロジェクトで **[MainPage.xaml]** を展開し、**[MainPage.xaml.cs]** をダブルクリックして開きます。 次に、**MainPage.xaml.cs** で、`OnEntryTextChanged` と `OnEntryCompleted` のイベント ハンドラーをクラスに追加します。
+1. **Solution Pad** の **EntryTutorial** プロジェクトで **[MainPage.xaml]** を展開し、 **[MainPage.xaml.cs]** をダブルクリックして開きます。 次に、 **[MainPage.xaml.cs]** で、`OnEntryTextChanged` と `OnEntryCompleted` のイベント ハンドラーをクラスに追加します。
 
     ```csharp
     void OnEntryTextChanged(object sender, TextChangedEventArgs e)
@@ -82,7 +82,7 @@ ms.locfileid: "61343466"
     > [!IMPORTANT]
     > [`Entry`](xref:Xamarin.Forms.Entry) に入力されたテキストはすべて [`Text`](xref:Xamarin.Forms.Entry.Text) プロパティに格納されます。
 
-1. Visual Studio for Mac ツール バーで、**[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
+1. Visual Studio for Mac ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
     [![iOS および Android でのテキストを含むエントリのスクリーン ショット](../images/text-changes.png "テキストを含むエントリ")](../images/text-changes-large.png#lightbox "テキストを含むエントリ")
 
