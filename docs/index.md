@@ -8,12 +8,12 @@ ms.author: crdun
 ms.date: 02/12/2019
 featureFlags:
 - clicktale
-ms.openlocfilehash: 333e35a4d015586ed33045c3f91e21fdced496b0
-ms.sourcegitcommit: b4a12607ca944de10fd166139765241a4501831c
+ms.openlocfilehash: 5a2df045ae0d7cb433060cee27d2546ad5b6e86e
+ms.sourcegitcommit: 00deecefc17a98210bed12b4ef99ecca710275f1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66687041"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67493388"
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -95,10 +95,11 @@ ms.locfileid: "66687041"
                                                 <h3>Xamarin について学習する</h3>
                                                 <h4>Windows および macOS 上の Visual Studio で C# と .NET を使用し、Xamarin.Forms でクロスプラットフォームの Android および iOS アプリを構築します。</h4>
                                                 <ul class="noBullet">
-                                                    <li><a class="barLink" href="~/cross-platform/get-started/introduction-to-mobile-development.md"><img  src="https://docs.microsoft.com/media/logos/logo_xamarin.svg" alt="" />Xamarin アプリがネイティブである</a></li>
-                                                    <li><a class="barLink" href="~/cross-platform/desktop/index.md"><img  src="https://docs.microsoft.com/media/logos/logo_NET.svg" alt="" />.NET デスクトップ開発者向け Xamarin</a></li>
-                                                    <li><a class="barLink" href="~/android/get-started/java-developers.md"><img  src="https://docs.microsoft.com/media/logos/logo_java.svg" alt="" />Java 開発者向け Xamarin</a></li>
-                                                    <li><a class="barLink" href="~/ios/get-started/objective-c-developers/index.md"><img  src="https://docs.microsoft.com/media/logos/logo_xcode.svg" alt=" icon" />Objective-C 開発者向け Xamarin</a></li>
+                                                    <li><a class="barLink" href="~/cross-platform/get-started/introduction-to-mobile-development.md"><img  src="https://docs.microsoft.com/media/logos/logo_xamarin.svg" alt="" />Xamarin とは</a></li>
+                                                    <li><a class="barLink" href="~/xamarin-forms/index.yml"><img  src="https://docs.microsoft.com/media/logos/logo_xamarin.svg" alt="" />Xamarin.Forms</a></li>
+                                                    <li><a class="barLink" href="~/android/index.yml"><img  src="https://docs.microsoft.com/media/logos/logo_android.svg" alt="" />Xamarin.Android</a></li>
+                                                    <li><a class="barLink" href="~/ios/index.yml"><img  src="https://docs.microsoft.com/media/common/i_web-apps.svg" alt=" icon" />Xamarin.iOS</a></li>
+                                                    <li><a class="barLink" href="~/mac/index.yml"><img  src="https://docs.microsoft.com/media/common/i_xplat-code.svg" alt=" icon" />Xamarin.Mac</a></li>
                                                     <li><a class="barLink" href="~/xamarin-forms/data-cloud/index.md"><img  src="https://docs.microsoft.com/media/logos/logo_azure.svg" alt="" />Xamarin を使用した Azure</a></li>
                                                 </ul>
                                             </div>
@@ -216,7 +217,7 @@ Grid レイアウト </a>
                                                                     <a class="barLink" href="~/get-started/tutorials/pop-ups/index.yml">
                                                                         <img src="https://docs.microsoft.com/media/common/i_alert.svg" alt="">
 ポップアップ </a>
-                                                                </li>                                                                
+                                                                </li>
                                                                 <li>
                                                                     <a class="barLink" href="~/get-started/tutorials/app-lifecycle/index.yml">
                                                                         <img src="https://docs.microsoft.com/media/common/i_agile.svg" alt="">
@@ -249,26 +250,26 @@ Web サービス </a>
                                     <div class="cardPadding">
                                         <div class="card">
                                             <div class="cardText">
-                                                <h3>単一プラットフォームの Xamarin アプリを構築する</h3>
-                                                <h4>すべての Xamarin アプリでは、Xamarin.Forms 機能を組み込むだけでなく、コードを相互に、また、他の .NET プラットフォームと共有することができます。</h4>
+                                                <h3>既存の知識を活用する</h3>
+                                                <h4>Xamarin プロジェクトでは、現在のスキルを Android や iOS のアプリの構築に適用できます。 詳細については、お好みのプラットフォームを選択してください。</h4>
                                                  <table cellpadding="0" cellspacing="0" border="0"><tr><td style="border-top-color:transparent!important;padding-left:0;">
                                                 <ul class="noBullet">
                                                     <li>
-                                                        <a class="barLink" href="~/android/index.yml">
-                                                            <img src="https://docs.microsoft.com/media/logos/logo_android.svg" alt="Android logo">
-Android</a>
+                                                        <a class="barLink" href="~/cross-platform/desktop/index.md">
+                                                            <img src="https://docs.microsoft.com/media/logos/logo_NET.svg" alt="">
+.NET デスクトップ (UWP、WPF、WinForms)</a>
                                                     </li>
                                                     </ul></td><td style="border-top-color:transparent!important;padding-left:0;"><ul class="noBullet">
                                                     <li>
-                                                        <a class="barLink" href="~/ios/index.yml">
-                                                            <img src="https://docs.microsoft.com/media/common/i_web-apps.svg" alt="iOS logo">
-iOS</a>
+                                                        <a class="barLink" href="~/android/get-started/java-developers.md">
+                                                            <img src="https://docs.microsoft.com/media/logos/logo_java.svg" alt="">
+Android と Java</a>
                                                     </li>
                                                     </ul></td><td style="border-top-color:transparent!important;padding-left:0;"><ul class="noBullet">
                                                     <li>
-                                                        <a class="barLink" href="~/mac/index.yml">
-                                                            <img src="https://docs.microsoft.com/media/common/i_xplat-code.svg" alt="Mac">
-Mac</a>
+                                                        <a class="barLink" href="~/ios/get-started/objective-c-developers/index.md">
+                                                            <img src="https://docs.microsoft.com/media/logos/logo_xcode.svg" alt="">
+iOS と Objective-C</a>
                                                     </li>
                                                 </ul></td></tr></table>
                                             </div>
@@ -286,7 +287,14 @@ Mac</a>
                     <li>
                         <a href="#XamarinForms"> </a>
                         <ul id="XamarinForms" class="cardsC">
-                            <!--li>
+                            <li>
+                                <div class="container intro">
+                                    <p>
+Xamarin.Forms は C# と .NET を使用する Android、iOS、Mac、Windows のクロスプラットフォーム ツールキットです。 ユーザー インターフェイス コードとアプリ ロジック コードをすべてのプラットフォームで共有します。
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
                                 <a href="~/xamarin-forms/get-started/index.md">
                                     <div class="cardSize">
                                         <div class="cardPadding">
@@ -297,14 +305,14 @@ Mac</a>
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Getting Started</h3>
-                                                    <p>Tutorials to get you up and running with Xamarin.Forms. Make sure everything is installed correctly, and build your first app.</p>
+                                                    <h3>Xamarin.Forms とは</h3>
+                                                    <p>Xamarin.Forms とは何か、そしてそれが Android および iOS のアプリの構築と展開にどのように役立つのかについて説明します。</p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </a>
-                            </li-->
+                            </li>
                             <li>
                                 <a href="~/xamarin-forms/app-fundamentals/index.md">
                                     <div class="cardSize">
@@ -743,7 +751,7 @@ Mac</a>
         <h2>コミュニケーションを取るには</h2>
         <ul class="links">
            <li>
-                <a href="https://blog.xamarin.com/"> ブログ </a>
+                <a href="https://devblogs.microsoft.com/xamarin/"> ブログ </a>
             </li>
             <li>
                 <a href="https://forums.xamarin.com/"> フォーラム</a>
