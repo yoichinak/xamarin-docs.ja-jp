@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/07/2019
-ms.openlocfilehash: 625a860469c82da6e6986b03b8c3e55503433e67
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: d09188373d11b33f3b3d78b92faa46bf754797f6
+ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926677"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67268990"
 ---
 # <a name="implementing-a-hybridwebview"></a>HybridWebView の実装
 
@@ -172,22 +172,24 @@ protected override void OnElementChanged (ElementChangedEventArgs<NativeListView
 {
   base.OnElementChanged (e);
 
-  if (Control == null) {
-    // Instantiate the native control and assign it to the Control property with
-    // the SetNativeControl method
-  }
-
   if (e.OldElement != null) {
     // Unsubscribe from event handlers and cleanup any resources
   }
 
   if (e.NewElement != null) {
+    if (Control == null) {
+      // Instantiate the native control and assign it to the Control property with
+      // the SetNativeControl method
+    }
     // Configure the control and subscribe to event handlers
   }
 }
 ```
 
-新しいネイティブ コントロールは、`Control` プロパティが `null` のとき、1 回だけインスタンス化します。 カスタム レンダラーが新しい Xamarin.Forms 要素に関連付けられるときにのみ、コントロールを設定し、イベント ハンドラーをサブスクライブします。 同様に、レンダラーが関連付けられている要素が変わるときにのみ、サブスクライブしていたイベント ハンドラーを登録解除します。 この手法を採用すると、メモリ リークが発生しない効率的なカスタム レンダラーを作成できます。
+新しいネイティブ コントロールは、`Control` プロパティが `null` のとき、1 回だけインスタンス化します。  さらに、カスタム レンダラーが新しい Xamarin.Forms 要素に関連付けられるときにのみ、コントロールを作成および構成し、イベント ハンドラーを登録する必要があります。 同様に、レンダラーが関連付けられている要素が変わるときにのみ、サブスクライブしていたイベント ハンドラーを登録解除します。 この手法を採用すると、メモリ リークが発生しない効率的なカスタム レンダラーを作成できます。
+
+> [!IMPORTANT]
+> `SetNativeControl` メソッドは、`e.NewElement` が `null` ではない場合にのみ、呼び出す必要があります。
 
 各カスタム レンダラー クラスは、レンダラーを Xamarin.Forms に登録する `ExportRenderer` 属性で修飾されます。 この属性は、レンダリングされている Xamarin.Forms カスタム コントロールの種類名と、カスタム レンダラーの種類名という 2 つのパラメーターを受け取ります。 属性の `assembly` プレフィックスは、属性がアセンブリ全体に適用されることを指定します。
 
@@ -271,16 +273,6 @@ namespace CustomRenderer.iOS
         {
             base.OnElementChanged (e);
 
-            if (Control == null) {
-                userController = new WKUserContentController ();
-                var script = new WKUserScript (new NSString (JavaScriptFunction), WKUserScriptInjectionTime.AtDocumentEnd, false);
-                userController.AddUserScript (script);
-                userController.AddScriptMessageHandler (this, "invokeAction");
-
-                var config = new WKWebViewConfiguration { UserContentController = userController };
-                var webView = new WKWebView (Frame, config);
-                SetNativeControl (webView);
-            }
             if (e.OldElement != null) {
                 userController.RemoveAllUserScripts ();
                 userController.RemoveScriptMessageHandler ("invokeAction");
@@ -288,6 +280,16 @@ namespace CustomRenderer.iOS
                 hybridWebView.Cleanup ();
             }
             if (e.NewElement != null) {
+                if (Control == null) {
+                    userController = new WKUserContentController ();
+                    var script = new WKUserScript (new NSString (JavaScriptFunction), WKUserScriptInjectionTime.AtDocumentEnd, false);
+                    userController.AddUserScript (script);
+                    userController.AddScriptMessageHandler (this, "invokeAction");
+
+                    var config = new WKWebViewConfiguration { UserContentController = userController };
+                    var webView = new WKWebView (Frame, config);
+                    SetNativeControl (webView);
+                }
                 string fileName = Path.Combine (NSBundle.MainBundle.BundlePath, string.Format ("Content/{0}", Element.Uri));
                 Control.LoadRequest (new NSUrlRequest (new NSUrl (fileName, false)));
             }
@@ -305,14 +307,14 @@ namespace CustomRenderer.iOS
 
 この関数は、次のように実現されます。
 
-- `Control` プロパティが `null` の場合、次の操作が実行されます。
-  - [`WKUserContentController`](xref:WebKit.WKUserContentController) インスタンスが作成され、メッセージの投稿とユーザー スクリプトの Web ページへの挿入が可能になります。
-  - Web ページが読み込まれた後、`invokeCSharpAction` JavaScript 関数を Web ページに挿入する [`WKUserScript`](xref:WebKit.WKUserScript) インスタンスが作成されます。
-  - [`WKUserContentController.AddUserScript`](xref:WebKit.WKUserContentController.AddUserScript(WebKit.WKUserScript)) メソッドによって、コンテンツ コントローラーに [`WKUserScript`](xref:WebKit.WKUserScript) インスタンスが追加されます。
-  - [`WKUserContentController.AddScriptMessageHandler`](xref:WebKit.WKUserContentController.AddScriptMessageHandler(WebKit.IWKScriptMessageHandler,System.String)) メソッドによって、[`WKUserContentController`](xref:WebKit.WKUserContentController) インスタンスに `invokeAction` というスクリプト メッセージ ハンドラーが追加されます。その結果、`WKUserContentController` インスタンスを使用するすべての Web ビューのすべてのフレームで JavaScript 関数 `window.webkit.messageHandlers.invokeAction.postMessage(data)` が定義されます。
-  - [`WKUserContentController`](xref:WebKit.WKUserContentController) インスタンスがコンテンツ コントローラーとして設定されている [`WKWebViewConfiguration`](xref:WebKit.WKWebViewConfiguration) インスタンスが作成されます。
-  - [`WKWebView`](xref:WebKit.WKWebView) コントロールがインスタンス化され、`WKWebView` コントロールへの参照を `Control` プロパティに割り当てる `SetNativeControl` メソッドが呼び出されます。
 - カスタム レンダラーが新しい Xamarin.Forms 要素にアタッチされている場合:
+  - `Control` プロパティが `null` の場合、次の操作が実行されます。
+    - [`WKUserContentController`](xref:WebKit.WKUserContentController) インスタンスが作成され、メッセージの投稿とユーザー スクリプトの Web ページへの挿入が可能になります。
+    - Web ページが読み込まれた後、`invokeCSharpAction` JavaScript 関数を Web ページに挿入する [`WKUserScript`](xref:WebKit.WKUserScript) インスタンスが作成されます。
+    - [`WKUserContentController.AddUserScript`](xref:WebKit.WKUserContentController.AddUserScript(WebKit.WKUserScript)) メソッドによって、コンテンツ コントローラーに [`WKUserScript`](xref:WebKit.WKUserScript) インスタンスが追加されます。
+    - [`WKUserContentController.AddScriptMessageHandler`](xref:WebKit.WKUserContentController.AddScriptMessageHandler(WebKit.IWKScriptMessageHandler,System.String)) メソッドによって、[`WKUserContentController`](xref:WebKit.WKUserContentController) インスタンスに `invokeAction` というスクリプト メッセージ ハンドラーが追加されます。その結果、`WKUserContentController` インスタンスを使用するすべての Web ビューのすべてのフレームで JavaScript 関数 `window.webkit.messageHandlers.invokeAction.postMessage(data)` が定義されます。
+    - [`WKUserContentController`](xref:WebKit.WKUserContentController) インスタンスがコンテンツ コントローラーとして設定されている [`WKWebViewConfiguration`](xref:WebKit.WKWebViewConfiguration) インスタンスが作成されます。
+    - [`WKWebView`](xref:WebKit.WKWebView) コントロールがインスタンス化され、`WKWebView` コントロールへの参照を `Control` プロパティに割り当てる `SetNativeControl` メソッドが呼び出されます。
   - [`WKWebView.LoadRequest`](xref:WebKit.WKWebView.LoadRequest(Foundation.NSUrlRequest)) メソッドによって、`HybridWebView.Uri` プロパティにより指定されている HTML ファイルが読み込まれます。 このコードにより、ファイルがプロジェクトの `Content` フォルダーに格納されることが指定されます。 Web ページが表示されると、`invokeCSharpAction` JavaScript 関数が Web ページに挿入されます。
 - レンダラーがアタッチされている要素が変更された場合:
   - リソースがリリースされます。
@@ -352,13 +354,6 @@ namespace CustomRenderer.Droid
         {
             base.OnElementChanged(e);
 
-            if (Control == null)
-            {
-                var webView = new Android.Webkit.WebView(_context);
-                webView.Settings.JavaScriptEnabled = true;
-                webView.SetWebViewClient(new JavascriptWebViewClient($"javascript: {JavascriptFunction}"));
-                SetNativeControl(webView);
-            }
             if (e.OldElement != null)
             {
                 Control.RemoveJavascriptInterface("jsBridge");
@@ -367,6 +362,13 @@ namespace CustomRenderer.Droid
             }
             if (e.NewElement != null)
             {
+                if (Control == null)
+                {
+                    var webView = new Android.Webkit.WebView(_context);
+                    webView.Settings.JavaScriptEnabled = true;
+                    webView.SetWebViewClient(new JavascriptWebViewClient($"javascript: {JavascriptFunction}"));
+                    SetNativeControl(webView);
+                }
                 Control.AddJavascriptInterface(new JSBridge(this), "jsBridge");
                 Control.LoadUrl($"file:///android_asset/Content/{Element.Uri}");
             }
@@ -397,10 +399,10 @@ public class JavascriptWebViewClient : WebViewClient
 
 ユーザーが名前を入力して HTML `button` 要素をクリックすると、`invokeCSharpAction` JavaScript 関数が実行されます。 この関数は、次のように実現されます。
 
-- `Control` プロパティが `null` の場合、次の操作が実行されます。
-  - ネイティブの [`WebView`](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) インスタンスが作成され、JavaScript がコントロールで有効になり、`JavascriptWebViewClient` インスタンスが `WebViewClient` の実装として設定されます。
-  - ネイティブの [`WebView`](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) コントロールへの参照を `Control` プロパティに割り当てる `SetNativeControl` メソッドが呼び出されます。
 - カスタム レンダラーが新しい Xamarin.Forms 要素にアタッチされている場合:
+  - `Control` プロパティが `null` の場合、次の操作が実行されます。
+    - ネイティブの [`WebView`](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) インスタンスが作成され、JavaScript がコントロールで有効になり、`JavascriptWebViewClient` インスタンスが `WebViewClient` の実装として設定されます。
+    - ネイティブの [`WebView`](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) コントロールへの参照を `Control` プロパティに割り当てる `SetNativeControl` メソッドが呼び出されます。
   - [`WebView.AddJavascriptInterface`](https://developer.xamarin.com/api/member/Android.Webkit.WebView.AddJavascriptInterface/p/Java.Lang.Object/System.String/) メソッドによって、新しい `JSBridge` インスタンスが WebView の JavaScript コンテキストのメイン フレームに挿入され、`jsBridge` と名前が付けられます。 これにより、JavaScript から `JSBridge` クラスのメソッドにアクセスできるようになります。
   - [`WebView.LoadUrl`](https://developer.xamarin.com/api/member/Android.Webkit.WebView.LoadUrl/p/System.String/) メソッドによって、`HybridWebView.Uri` プロパティに指定された HTML ファイルが読み込まれます。 このコードにより、ファイルがプロジェクトの `Content` フォルダーに格納されることが指定されます。
   - `JavascriptWebViewClient` クラスでは、Web ページの読み込みが完了すると、`invokeCSharpAction` JavaScript 関数がページに挿入されます。
@@ -456,10 +458,6 @@ namespace CustomRenderer.UWP
         {
             base.OnElementChanged(e);
 
-            if (Control == null)
-            {
-                SetNativeControl(new Windows.UI.Xaml.Controls.WebView());
-            }
             if (e.OldElement != null)
             {
                 Control.NavigationCompleted -= OnWebViewNavigationCompleted;
@@ -467,6 +465,10 @@ namespace CustomRenderer.UWP
             }
             if (e.NewElement != null)
             {
+                if (Control == null)
+                {
+                    SetNativeControl(new Windows.UI.Xaml.Controls.WebView());
+                }
                 Control.NavigationCompleted += OnWebViewNavigationCompleted;
                 Control.ScriptNotify += OnWebViewScriptNotify;
                 Control.Source = new Uri(string.Format("ms-appx-web:///Content//{0}", Element.Uri));
@@ -494,9 +496,9 @@ namespace CustomRenderer.UWP
 
 この関数は、次のように実現されます。
 
-- `Control` プロパティが `null` の場合、次の操作が実行されます。
-  - `SetNativeControl` メソッドは、新しいネイティブの `WebView` コントロールをインスタンス化し、それに対する参照を `Control` プロパティに割り当てるために呼び出されます。
 - カスタム レンダラーが新しい Xamarin.Forms 要素にアタッチされている場合:
+  - `Control` プロパティが `null` の場合、次の操作が実行されます。
+    - `SetNativeControl` メソッドは、新しいネイティブの `WebView` コントロールをインスタンス化し、それに対する参照を `Control` プロパティに割り当てるために呼び出されます。
   - `NavigationCompleted` および `ScriptNotify` イベントのイベント ハンドラーが登録されています。 `NavigationCompleted` イベントは、ネイティブの `WebView` コントロールが現在のコンテンツの読み込みを完了したとき、またはナビゲーションが失敗したときに発生します。 `ScriptNotify`イベントは、ネイティブの `WebView` コントロールのコンテンツが JavaScript を使用して文字列をアプリケーションに渡したときに発生します。 Web ページは、`string` パラメーターを渡しながら `window.external.notify` を呼び出して `ScriptNotify` イベントを発生させます。
   - `WebView.Source` プロパティは、`HybridWebView.Uri` プロパティに指定された HTML ファイルの URI に設定されます。 このコードでは、ファイルがプロジェクトの `Content` フォルダーに格納されることを想定しています。 Web ページが表示されると、`NavigationCompleted` イベントが発生し、`OnWebViewNavigationCompleted` メソッドが呼び出されます。 ナビゲーションが正常に完了した場合、`WebView.InvokeScriptAsync` メソッドを使用して `invokeCSharpAction` JavaScript 関数が Web ページに挿入されます。
 - レンダラーがアタッチされている要素が変更された場合:
