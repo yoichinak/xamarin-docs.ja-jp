@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
-ms.openlocfilehash: b026bd181571d689d3e19f2a815a52406f6f9da4
-ms.sourcegitcommit: 0596004d4a0e599c1da1ddd75a6ac928f21191c2
+ms.openlocfilehash: dc01cf6bea9fe614cbfb53dcc4417ffb0e602c6f
+ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66005297"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67512756"
 ---
 # <a name="xamarinforms-collectionview-selection"></a>Xamarin.Forms CollectionView の選択
 
@@ -23,12 +23,12 @@ ms.locfileid: "66005297"
 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 項目の選択を制御する次のプロパティを定義します。
 
 - [`SelectionMode`](xref:Xamarin.Forms.SelectableItemsView.SelectionMode)、型の[ `SelectionMode` ](xref:Xamarin.Forms.SelectionMode)、選択モード。
-- [`SelectedItem`](xref:Xamarin.Forms.SelectableItemsView.SelectedItem)、型の`object`、一覧で選択された項目。 このプロパティは、`null`項目が選択されていないときの値します。
-- [`SelectedItems`](xref:Xamarin.Forms.SelectableItemsView.SelectedItems)、型の`IList<object>`、一覧で項目を選択します。 このプロパティは読み取り専用であり、`null`項目が選択されていないときの値します。
+- [`SelectedItem`](xref:Xamarin.Forms.SelectableItemsView.SelectedItem)、型の`object`、一覧で選択された項目。 このプロパティの既定のバインド モードは、`TwoWay`であり、`null`項目が選択されていないときの値します。
+- [`SelectedItems`](xref:Xamarin.Forms.SelectableItemsView.SelectedItems)、型の`IList<object>`、一覧で項目を選択します。 このプロパティの既定のバインド モードは、`OneWay`であり、`null`項目が選択されていないときの値します。
 - [`SelectionChangedCommand`](xref:Xamarin.Forms.SelectableItemsView.SelectionChangedCommand)、型の`ICommand`、選択した項目が変更されたときに実行されます。
 - [`SelectionChangedCommandParameter`](xref:Xamarin.Forms.SelectableItemsView.SelectionChangedCommandParameter)、型の`object`、に渡されるパラメーターは、`SelectionChangedCommand`します。
 
-これらすべてのプロパティに支えは[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)オブジェクトで、このプロパティはデータ バインドの対象であることを意味します。
+これらのプロパティはすべて、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトを基盤としています。つまり、プロパティはデータ バインディングの対象にすることができます。
 
 既定では、 [ `CollectionView` ](xref:Xamarin.Forms.CollectionView)選択が無効になっています。 この動作を変更して、設定して、ただし、 [ `SelectionMode` ](xref:Xamarin.Forms.SelectableItemsView.SelectionMode)プロパティの値のいずれかを[ `SelectionMode` ](xref:Xamarin.Forms.SelectionMode)列挙型メンバー。
 
@@ -134,7 +134,7 @@ void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}"
                 SelectionMode="Single"
-                SelectedItem="{Binding SelectedMonkey, Mode=TwoWay}">
+                SelectedItem="{Binding SelectedMonkey}">
     ...
 </CollectionView>
 ```
@@ -147,10 +147,13 @@ CollectionView collectionView = new CollectionView
     SelectionMode = SelectionMode.Single
 };
 collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
-collectionView.SetBinding(SelectableItemsView.SelectedItemProperty, "SelectedMonkey", BindingMode.TwoWay);
+collectionView.SetBinding(SelectableItemsView.SelectedItemProperty, "SelectedMonkey");
 ```
 
-[ `SelectedItem` ](xref:Xamarin.Forms.SelectableItemsView.SelectedItem)プロパティ データにバインド、`SelectedMonkey`プロパティの種類は、接続されているビュー モデルの`Monkey`します。 A`TwoWay`バインドを使用する場合に、ユーザーが、選択した項目の値を変更するため、`SelectedMonkey`プロパティの設定に、選択した`Monkey`オブジェクト。 `SelectedMonkey`でプロパティが定義されている、`MonkeysViewModel`クラスし、の 4 番目の項目に設定されている、`Monkeys`コレクション。
+> [!NOTE]
+> [ `SelectedItem` ](xref:Xamarin.Forms.SelectableItemsView.SelectedItem)プロパティの既定のバインド モードは、`TwoWay`します。
+
+[ `SelectedItem` ](xref:Xamarin.Forms.SelectableItemsView.SelectedItem)プロパティ データにバインド、`SelectedMonkey`プロパティの種類は、接続されているビュー モデルの`Monkey`します。 既定を`TwoWay`バインドを使用する場合に、ユーザーが、選択した項目の値を変更するため、`SelectedMonkey`プロパティの設定に、選択した`Monkey`オブジェクト。 `SelectedMonkey`でプロパティが定義されている、`MonkeysViewModel`クラスし、の 4 番目の項目に設定されている、`Monkeys`コレクション。
 
 ```csharp
 public class MonkeysViewModel : INotifyPropertyChanged
@@ -194,7 +197,8 @@ public class MonkeysViewModel : INotifyPropertyChanged
 ```xaml
 <CollectionView x:Name="collectionView"
                 ItemsSource="{Binding Monkeys}"
-                SelectionMode="Multiple">
+                SelectionMode="Multiple"
+                SelectedItems="{Binding SelectedMonkeys}">
     ...
 </CollectionView>
 ```
@@ -207,22 +211,56 @@ CollectionView collectionView = new CollectionView
     SelectionMode = SelectionMode.Multiple
 };
 collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
-```
-
-複数の項目、 [ `CollectionView` ](xref:Xamarin.Forms.CollectionView)追加することによってあらかじめ選択されて、 [ `SelectedItems` ](xref:Xamarin.Forms.SelectableItemsView.SelectedItems)プロパティ。
-
-```csharp
-collectionView.SelectedItems.Add(viewModel.Monkeys.Skip(1).FirstOrDefault());
-collectionView.SelectedItems.Add(viewModel.Monkeys.Skip(3).FirstOrDefault());
-collectionView.SelectedItems.Add(viewModel.Monkeys.Skip(4).FirstOrDefault());
+collectionView.SetBinding(SelectableItemsView.SelectedItemsProperty, "SelectedMonkeys");
 ```
 
 > [!NOTE]
-> [ `SelectedItems` ](xref:Xamarin.Forms.SelectableItemsView.SelectedItems)プロパティが読み取り専用、およびため双方向のデータが事前に項目を選択するバインディングを使用することはできません。
+> [ `SelectedItems` ](xref:Xamarin.Forms.SelectableItemsView.SelectedItems)プロパティの既定のバインド モードは、`OneWay`します。
+
+[ `SelectedItems` ](xref:Xamarin.Forms.SelectableItemsView.SelectedItems)プロパティ データにバインド、`SelectedMonkeys`プロパティの種類は、接続されているビュー モデルの`ObservableCollection<object>`します。 `SelectedMonkeys`でプロパティが定義されている、`MonkeysViewModel`クラス、および 2 番目、4 番目、および 5 分に設定されている項目を`Monkeys`コレクション。
+
+```csharp
+namespace CollectionViewDemos.ViewModels
+{
+    public class MonkeysViewModel : INotifyPropertyChanged
+    {
+        ...
+        ObservableCollection<object> selectedMonkeys;
+        public ObservableCollection<object> SelectedMonkeys
+        {
+            get
+            {
+                return selectedMonkeys;
+            }
+            set
+            {
+                if (selectedMonkeys != value)
+                {
+                    selectedMonkeys = value;
+                }
+            }
+        }
+
+        public MonkeysViewModel()
+        {
+            ...
+            SelectedMonkeys = new ObservableCollection<object>()
+            {
+                Monkeys[1], Monkeys[3], Monkeys[4]
+            };
+        }
+        ...
+    }
+}
+```
 
 そのため、ときに、 [ `CollectionView` ](xref:Xamarin.Forms.CollectionView)が表示されたら、2 番目、4 番目に、リスト内の 5 番目の項目があらかじめ選択と。
 
 [![IOS と Android での複数の事前選択 CollectionView 垂直方向の一覧のスクリーン ショット](selection-images/multiple-pre-selection.png "CollectionView 垂直方向に一覧で複数の事前選択")](selection-images/multiple-pre-selection-large.png#lightbox "CollectionView 垂直複数の事前選択されたリスト")
+
+## <a name="clearing-selections"></a>選択内容をクリアします。
+
+[ `SelectedItem` ](xref:Xamarin.Forms.SelectableItemsView.SelectedItem)と[ `SelectedItems` ](xref:Xamarin.Forms.SelectableItemsView.SelectedItems) 、またはにバインドするオブジェクトを設定してプロパティをクリアできます`null`します。
 
 ## <a name="change-selected-item-color"></a>選択した項目の色を変更します。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/22/2019
-ms.openlocfilehash: f77b2346808f78e182edc59f9ea92d0a8a99344f
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: 7aa9d298c2219dff60ca8ca1f917c72194ad21ca
+ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65971019"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67512677"
 ---
 # <a name="ios-platform-features-in-xamarinforms"></a>Xamarin.Forms での iOS プラットフォーム機能
 
@@ -56,6 +56,7 @@ IOS で Xamarin.Forms のレイアウトでは、次のプラットフォーム�
 
 Xamarin.Forms のプラットフォーム固有の次の機能が提供される[ `Application` ](xref:Xamarin.Forms.Application) iOS 上のクラス。
 
+- ユーザー補助の名前付きのフォント サイズのスケーリングを無効にします。 詳細については、次を参照してください。 [iOS でのフォント サイズのという名前のスケーリングをアクセシビリティ](named-font-size-scaling.md)します。
 - コントロールのレイアウトを有効にして、メイン スレッドで実行される更新プログラムを表示します。 詳細については、次を参照してください。 [iOS でのメイン スレッド コントロール更新](main-thread-updates-ui.md)します。
 - 有効にすると、 [ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer)でスクロールして表示をキャプチャし、スクロール ビューとパン ジェスチャを共有します。 詳細については、次を参照してください。 [iOS での同時パン ジェスチャ認識](application-pan-gesture.md)します。
 

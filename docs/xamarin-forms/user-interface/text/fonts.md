@@ -6,13 +6,13 @@ ms.assetid: 49DD2249-C575-41AE-AE06-08F890FD6031
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/04/2019
-ms.openlocfilehash: 530fcf638454373ae68391e4e11bca85dd2fff63
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 06/28/2019
+ms.openlocfilehash: de77be818abbe1250946ee2ce1599235b79d8c01
+ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61093707"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67512981"
 ---
 # <a name="fonts-in-xamarinforms"></a>Xamarin.Forms でのフォント
 
@@ -50,18 +50,7 @@ var about = new Label {
 label.FontSize = 24;
 ```
 
-4つの組み込みオプションを持つ `NamedSize` 列挙体を使用することもできます。 Xamarin.Forms は、各プラットフォームに最適なサイズを選択します。
-
--  **Micro**
--  **Small**
--  **[Medium]**
--  **Large**
-
-`FontSize`は、`Device.GetNamedSize`メソッドを使用して、`NamedSize`列挙体の値を`double`に変換することで指定できます:
-
-```csharp
-label.FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Label));
-```
+Xamarin.Forms は、内のフィールドも定義されています。、 [ `NamedSize` ](xref:Xamarin.Forms.NamedSize)特定のフォント サイズを表す列挙体。 名前付きのフォント サイズの詳細については、次を参照してください。[という名前のフォント サイズ](#named-font-sizes)します。
 
 <a name="FontAttributes" />
 
@@ -111,7 +100,7 @@ XAML には、すべてのフォント設定を文字列値として表現でき
 <Label Text="Use size 72" FontSize="72" />
 ```
 
-[`Device.RuntimePlatform`](~/xamarin-forms/platform/device.md#providing-platform-values)を XAML で使用して、各プラットフォームで異なるフォントをレンダリングすることもできます。 以下の例では、iOS（<span style="font-family:MarkerFelt-Thin">MarkerFelt-Thin</span>）ではカスタムフォントフェイスを使用し、他のプラットフォームではサイズと属性のみを指定しています。
+[`Device.RuntimePlatform`](~/xamarin-forms/platform/device.md#providing-platform-specific-values)を XAML で使用して、各プラットフォームで異なるフォントをレンダリングすることもできます。 以下の例では、iOS（<span style="font-family:MarkerFelt-Thin">MarkerFelt-Thin</span>）ではカスタムフォントフェイスを使用し、他のプラットフォームではサイズと属性のみを指定しています。
 
 ```xaml
 <Label Text="Hello Forms with XAML">
@@ -126,6 +115,32 @@ XAML には、すべてのフォント設定を文字列値として表現でき
 ```
 
 カスタムフォントフェースを指定するときは、すべてのプラットフォームで利用可能なフォントを見つけるのが難しいため、常に`OnPlatform`を使用することをお勧めします。
+
+## <a name="named-font-sizes"></a>名前付きのフォント サイズ
+
+Xamarin.Forms でフィールドを定義する、 [ `NamedSize` ](xref:Xamarin.Forms.NamedSize)特定のフォント サイズを表す列挙体。 次の表は、`NamedSize`メンバー、および iOS、Android、およびユニバーサル Windows プラットフォーム (UWP) 上の既定のサイズ。
+
+| メンバー | iOS | Android | UWP |
+| --- | --- | --- | --- |
+| `Default` | 16 | 14 | 14 |
+| `Micro` | 11 | 10 | 15.667 |
+| `Small` | 13 | 14 | 18.667 |
+| `Medium` | 16 | 17 | 22.667 |
+| `Large` | 20 | 22 | 32 |
+| `Body` | 17 | 16 | 14 |
+| `Header` | 17 | 96 | 46 |
+| `Title` | 28 | 24 | 24 |
+| `Subtitle` | 22 | 16 | 20 |
+| `Caption` | 12 | 12 | 12 |
+
+名前付きのフォント サイズは、XAML とコードの両方で設定できます。 さらに、`Device.GetNamedSize`を返すメソッドを呼び出すことができます、`double`名前付きのフォント サイズを表します。
+
+```csharp
+label.FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Label));
+```
+
+> [!NOTE]
+> IOS と Android では、名前付きのフォント サイズはオペレーティング システムのユーザー補助のオプションに基づく自動スケールされます。 プラットフォーム固有の iOS では、この動作を無効にできます。 詳細については、次を参照してください。 [iOS でのフォント サイズのという名前のスケーリングをアクセシビリティ](~/xamarin-forms/platform/ios/named-font-size-scaling.md)します。
 
 <a name="Using_a_Custom_Font" />
 
@@ -185,7 +200,7 @@ new Label
 
 ### <a name="xaml"></a>XAML
 
-XAML で[ `Device.RuntimePlatform` ](~/xamarin-forms/platform/device.md#providing-platform-values)を使用してカスタムフォントをレンダリングすることもできます。
+XAML で[ `Device.RuntimePlatform` ](~/xamarin-forms/platform/device.md#interact-with-the-ui-from-background-threads)を使用してカスタムフォントをレンダリングすることもできます。
 
 ```xaml
 <Label Text="Hello Forms with XAML">
@@ -225,7 +240,7 @@ XAML で[ `Device.RuntimePlatform` ](~/xamarin-forms/platform/device.md#providin
 </Image>
 ```
 
-このコードで Ionicons フォント ファミリから、XBox アイコンが表示されます、 [ `Image` ](xref:Xamarin.Forms.Image)ビュー。 Unicode 文字のこのアイコンは、のことに注目`\uf30c`、XAML でエスケープする必要があり、したがってようになります`&#xf30c;`します。 同等の C# コードは以下のとおりです。
+このコードで Ionicons フォント ファミリから、XBox アイコンが表示されます、 [ `Image` ](xref:Xamarin.Forms.Image)ビュー。 Unicode 文字のこのアイコンは、のことに注目`\uf30c`、XAML でエスケープする必要があり、したがってようになります`&#xf30c;`します。 同等のコードをC#で示します。
 
 ```csharp
 Image image = new Image { BackgroundColor = Color.FromHex("#D1D1D1") };

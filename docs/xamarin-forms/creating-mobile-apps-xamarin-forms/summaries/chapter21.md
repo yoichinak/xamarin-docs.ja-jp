@@ -7,12 +7,12 @@ ms.assetid: 3642F112-C7FA-4A74-9000-F9087BA89AD9
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 56c4345dffe71f79e9d89c64478a9c6c38fc1d84
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 313348952b87d94db63d1682f8e1b9413d56714d
+ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61335279"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67513016"
 ---
 # <a name="summary-of-chapter-21-transforms"></a>第 21 章の概要です。 変換
 
@@ -39,7 +39,7 @@ Xamarin.Forms では、スケーリング アイソトロ ピック; は幅と�
 - [`AnchorX`](xref:Xamarin.Forms.VisualElement.AnchorX)
 - [`AnchorY`](xref:Xamarin.Forms.VisualElement.AnchorY)
 
-これらすべてのプロパティは、バインド可能なプロパティでサポートされます。 データ バインディングのターゲットにする、スタイルを設定します。 [**第 22 章です。アニメーション**](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter22.md)どのようにこれらのプロパティをアニメーション化できるを示しますが、この章では一部のサンプルの表示、Xamarin.Forms を使用してアニメーション化[タイマー](~/xamarin-forms/platform/device.md#Device_StartTimer)します。
+これらすべてのプロパティは、バインド可能なプロパティでサポートされます。 データ バインディングのターゲットにする、スタイルを設定します。 [**第 22 章です。アニメーション**](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter22.md)どのようにこれらのプロパティをアニメーション化できるを示しますが、この章では一部のサンプルの表示、Xamarin.Forms を使用してアニメーション化[タイマー](~/xamarin-forms/platform/device.md#devicestarttimer)します。
 
 プロパティは、要素が表示され、は方法だけで変換*いない*レイアウトで要素を認識する方法に影響します。
 

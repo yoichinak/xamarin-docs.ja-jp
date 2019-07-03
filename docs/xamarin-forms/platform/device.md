@@ -6,13 +6,13 @@ ms.assetid: 2F304AEC-8612-4833-81E5-B2F3F469B2DF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 08/01/2018
-ms.openlocfilehash: 4ba4bd7528b635d099868f093268d2d83e44dae0
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 06/12/2019
+ms.openlocfilehash: 671abb0f61a5582a99165aa16c6b99db2ee8b1ee
+ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61359883"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67512879"
 ---
 # <a name="xamarinforms-device-class"></a>Xamarin.Forms のデバイス クラス
 
@@ -20,9 +20,7 @@ ms.locfileid: "61359883"
 
 [ `Device` ](xref:Xamarin.Forms.Device)クラスには、さまざまなプロパティとレイアウトと、プラットフォームごとに機能をカスタマイズする開発者を支援するメソッドが含まれています。
 
-ターゲットのコードでは、特定のハードウェアの種類とサイズ、するメソッドとプロパティだけでなく、`Device`クラスが含まれています、 [BeginInvokeOnMainThread](#Device_BeginInvokeOnMainThread)からコントロールを UI と対話する際に使用する必要があるメソッドバック グラウンド スレッドです。
-
-<a name="providing-platform-values" />
+ターゲットのコードでは、特定のハードウェアの種類とサイズ、するメソッドとプロパティだけでなく、`Device`クラスには、バック グラウンド スレッドから UI コントロールとの対話に使用できるメソッドが含まれています。 詳細については、次を参照してください。[バック グラウンド スレッドから UI を使用した対話](#interact-with-the-ui-from-background-threads)します。
 
 ## <a name="providing-platform-specific-values"></a>プラットフォーム固有の値を提供します。
 
@@ -68,8 +66,6 @@ layout.Margin = new Thickness(5, top, 5, 0);
 > 提供が不適切な`Platform`属性の値、`On`クラスは、エラーは発生しません。 代わりに、コードは、適用されているプラットフォームに固有の値を指定せずに実行されます。
 
 または、`OnPlatform`プラットフォームごとに UI の外観をカスタマイズするには、XAML マークアップ拡張機能を使用できます。 詳細については、次を参照してください。 [OnPlatform マークアップ拡張機能](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform)します。
-
-<a name="Device_Idiom" />
 
 ## <a name="deviceidiom"></a>Device.Idiom
 
@@ -135,8 +131,6 @@ this.FlowDirection = Device.FlowDirection;
 
 フローの方向に関する詳細については、次を参照してください。[右から左のローカリゼーション](~/xamarin-forms/app-fundamentals/localization/right-to-left.md)します。
 
-<a name="Device_Styles" />
-
 ## <a name="devicestyles"></a>Device.Styles
 
 [ `Styles`プロパティ](~/xamarin-forms/user-interface/styles/index.md)一部のコントロールに適用できる組み込みのスタイル定義が含まれます (など`Label`)`Style`プロパティ。 使用可能なスタイルは次のとおりです。
@@ -147,8 +141,6 @@ this.FlowDirection = Device.FlowDirection;
 * ListItemTextStyle
 * SubtitleStyle
 * TitleStyle
-
-<a name="Device_GetNamedSize" />
 
 ## <a name="devicegetnamedsize"></a>Device.GetNamedSize
 
@@ -163,8 +155,6 @@ someLabel.FontSize = Device.OnPlatform (
 );
 ```
 
-<a name="Device_OpenUri" />
-
 ## <a name="deviceopenuri"></a>Device.OpenUri
 
 `OpenUri`基になるプラットフォームでネイティブの web ブラウザーで URL を開くなどの操作をトリガーするメソッドを使用できます (**Safari** iOS 上または**インターネット**Android 上)。
@@ -176,8 +166,6 @@ Device.OpenUri(new Uri("https://evolve.xamarin.com/"));
 [WebView サンプル](https://github.com/xamarin/xamarin-forms-samples/blob/master/WorkingWithWebview/WorkingWithWebview/WebAppPage.cs)使用例が含まれています。`OpenUri`を Url を開き、また電話呼び出しをトリガーします。
 
 [マップのサンプル](https://github.com/xamarin/xamarin-forms-samples/blob/master/WorkingWithMaps/WorkingWithMaps/MapAppPage.cs)では`Device.OpenUri`地図と道順ネイティブを使用して表示する**マップ**iOS と Android アプリ。
-
-<a name="Device_StartTimer" />
 
 ## <a name="devicestarttimer"></a>Device.StartTimer
 
@@ -192,26 +180,31 @@ Device.StartTimer (new TimeSpan (0, 0, 60), () => {
 
 タイマーの内部コードがユーザー インターフェイスとやり取りするかどうか (のテキストを設定するなど、`Label`または通知を表示する) 内で行う必要がありますが、`BeginInvokeOnMainThread`式 (下記参照)。
 
-<a name="Device_BeginInvokeOnMainThread" />
+## <a name="interact-with-the-ui-from-background-threads"></a>バック グラウンド スレッドから UI との対話します。
 
-## <a name="devicebegininvokeonmainthread"></a>Device.BeginInvokeOnMainThread
+IOS、Android、およびユニバーサル Windows プラットフォームを含む、ほとんどのオペレーティング システムでは、ユーザー インターフェイスに関連するコードにシングル スレッド モデルを使用します。 このスレッドが多くの場合と呼ばれる、*メイン スレッド*または*UI スレッド*します。 このモデルの結果には、アプリケーションのメイン スレッドでのユーザー インターフェイス要素にアクセスするすべてのコードを実行する必要があります。
 
-ユーザー インターフェイス要素は、タイマーまたは web 要求などの非同期操作の完了ハンドラーで実行されるコードなどのバック グラウンド スレッドによってアクセスすることことはありません。 ユーザー インターフェイスを更新する必要がある任意のバック グラウンド コード内でラップする必要があります[ `BeginInvokeOnMainThread`](xref:Xamarin.Forms.Device.BeginInvokeOnMainThread(System.Action))します。 これは、相当の`InvokeOnMainThread`ios では、 `RunOnUiThread` android と`Dispatcher.RunAsync`ユニバーサル Windows プラットフォームで。
+アプリケーションは、バック グラウンド スレッドを使用して web サービスからのデータの取得などの実行時間の長い可能性がある操作を実行することがあります。 をバック グラウンド スレッドで実行されているコードがユーザー インターフェイス要素にアクセスする必要がある場合は、そのコードをメイン スレッドで実行があります。
 
-Xamarin.Forms コードです。
+`Device`クラスには、次が含まれています。`static`ユーザーとの対話に使用できるメソッドをインターフェイスの背景のスレッドからの要素。
+
+| メソッド | 引数 | 戻り値 | 目的 |
+|---|---|---|---|
+| `BeginInvokeOnMainThread` | `Action` | `void` | 呼び出す、`Action`のメイン スレッドで完了するを待ちませんとします。 |
+| `InvokeOnMainThreadAsync<T>` | `Func<T>` | `Task<T>` | 呼び出す、`Func<T>`メイン スレッドで完了するまで待機します。 |
+| `InvokeOnMainThreadAsync` | `Action` | `Task` | 呼び出す、`Action`メイン スレッドで完了するまで待機します。 |
+| `InvokeOnMainThreadAsync<T>`| `Func<Task<T>>` | `Task<T>` | 呼び出す、`Func<Task<T>>`メイン スレッドで完了するまで待機します。 |
+| `InvokeOnMainThreadAsync` | `Func<Task>` | `Task` | 呼び出す、`Func<Task>`メイン スレッドで完了するまで待機します。 |
+| `GetMainThreadSynchronizationContextAsync` | | `Task<SynchronizationContext>` | 返します、`SynchronizationContext`メイン スレッドにします。 |
+
+次のコードを使用する例を示しています、`BeginInvokeOnMainThread`メソッド。
 
 ```csharp
-Device.BeginInvokeOnMainThread ( () => {
-  // interact with UI elements
+Device.BeginInvokeOnMainThread (() =>
+{
+    // interact with UI elements
 });
 ```
-
-メモを使用してそのメソッド`async/await`を使用する必要はありません`BeginInvokeOnMainThread`メイン UI スレッドから実行されている場合。
-
-## <a name="summary"></a>まとめ
-
-Xamarin.Forms`Device`クラスは、プラットフォームごとの機能とレイアウトの詳細に制御を使用できます。-コード (.NET Standard ライブラリ プロジェクトまたは共有プロジェクト) でも共通します。
-
 
 ## <a name="related-links"></a>関連リンク
 

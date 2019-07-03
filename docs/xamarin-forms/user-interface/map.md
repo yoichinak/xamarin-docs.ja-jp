@@ -6,13 +6,13 @@ ms.assetid: 59CD1344-8248-406C-9144-0C8A67141E5B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 02/27/2018
-ms.openlocfilehash: 166927f2168015cb4786502d841e01b2faeb0c51
-ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
+ms.date: 06/13/2019
+ms.openlocfilehash: 60d78797406f2e69c435fb597e36775d906852f9
+ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66741010"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67513109"
 ---
 # <a name="xamarinforms-map"></a>Xamarin.Forms のマップ
 
@@ -31,7 +31,7 @@ Xamarin.Forms.Maps は、各プラットフォームでネイティブ マップ
 
 <a name="Maps_Initialization" />
 
-## <a name="maps-initialization"></a>マップの初期化
+## <a name="map-initialization"></a>マップの初期化
 
 Xamarin.Forms アプリケーションにマップを追加するときに**Xamarin.Forms.Maps**個別の NuGet パッケージ、ソリューション内のすべてのプロジェクトに追加する必要があります。
 Android では、これもに依存している Xamarin.Forms.Maps を追加するときに自動的にダウンロードされる GooglePlayServices (別の NuGet)。
@@ -146,7 +146,7 @@ Android プロジェクトを右クリックして適切なアクセス許可を
 
 <a name="Using_Maps" />
 
-## <a name="using-maps"></a>マップを使用します。
+## <a name="map-configuration"></a>マップの構成
 
 参照してください、 [MapPage.cs](https://github.com/xamarin/xamarin-forms-samples/blob/master/MobileCRM/MobileCRM.Shared/Pages/MapPage.cs) MobileCRM サンプル コードで、マップ コントロールの使用方法の例についてはします。 単純な`MapPage`クラスは、この通知のようになりますが、新しい`MapSpan`マップのビューを配置が作成されます。
 
@@ -218,18 +218,35 @@ var pin = new Pin {
 map.Pins.Add(pin);
 ```
 
- `PinType` (プラットフォーム) に応じて、暗証番号 (pin) の表示方法に影響を与える可能性があります、次の値のいずれかに設定できます。
+`PinType` (プラットフォーム) に応じて、暗証番号 (pin) の表示方法に影響を与える可能性があります、次の値のいずれかに設定できます。
 
 -  ジェネリック
 -  場所
 -  SavedPin
 -  SearchResult
 
+### <a name="map-clicks"></a>マップをクリックします。
+
+`Map` 定義、`MapClicked`マップがタップされたときに発生するイベントです。 `MapClickedEventArgs`に付属しているオブジェクト、`MapClicked`イベントという名前の 1 つのプロパティには、 `Position`、型の`Position`します。 ときにイベントが発生しての値、`Position`プロパティがタップされたマップの地域に設定されます。
+
+次のコード例のイベント ハンドラーを示しています、`MapClicked`イベント。
+
+```csharp
+map.MapClicked += OnMapClicked;
+
+void OnMapClicked(object sender, MapClickedEventArgs e)
+{
+    System.Diagnostics.Debug.WriteLine($"MapClick: {e.Position.Latitude}, {e.Position.Longitude}");
+}
+```
+
+この例で、`OnMapClicked`イベント ハンドラーは、緯度と経度マップがタップされた位置を表すを出力します。
+
 <a name="Using_Xaml" />
 
-## <a name="using-xaml"></a>XAML を使用します。
+### <a name="create-a-map-in-xaml"></a>XAML でマップを作成します。
 
-このスニペットで示すように、マップを XAML レイアウトの配置もできます。
+この例で示すように、XAML でマップを作成もできます。
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -238,8 +255,10 @@ map.Pins.Add(pin);
              xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
              x:Class="MapDemo.MapPage">
     <StackLayout VerticalOptions="StartAndExpand" Padding="30">
-        <maps:Map WidthRequest="320" HeightRequest="200"
-                  x:Name="MyMap"
+        <maps:Map x:Name="MyMap"
+                  Clicked="OnMapClicked"
+                  WidthRequest="320"
+                  HeightRequest="200"                  
                   IsShowingUser="true"
                   MapType="Hybrid" />
     </StackLayout>
@@ -249,7 +268,7 @@ map.Pins.Add(pin);
 > [!NOTE]
 > 追加`xmlns`Xamarin.Forms.Maps コントロールを参照する名前空間の定義が必要です。
 
-`MapRegion`と`Pins`を使用してコードで設定できる、`MyMap`参照 (または、マップの名前は任意)。
+`MapRegion`と`Pins`の名前付き参照を使用してコードで設定することができます、 `Map`:
 
 ```csharp
 MyMap.MoveToRegion(
@@ -257,14 +276,18 @@ MyMap.MoveToRegion(
         new Position(37,-122), Distance.FromMiles(1)));
 ```
 
-## <a name="populating-a-map-with-data-using-data-binding"></a>データ バインディングを使用してデータをマップを設定
+## <a name="populate-a-map-with-data-using-data-binding"></a>データ バインディングを使用してデータをマップを設定します。
 
 [ `Map` ](xref:Xamarin.Forms.Maps.Map)クラスには、次のプロパティも公開します。
 
 - `ItemsSource` – のコレクションを指定`IEnumerable`表示する項目。
 - `ItemTemplate` – を指定します、 [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)表示されている項目のコレクション内の各項目に適用します。
+- `ItemTemplateSelector` – を指定します、 [ `DataTemplateSelector` ](xref:Xamarin.Forms.DataTemplateSelector)選択に使用される、 [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)のランタイムにある項目。
 
-そのため、 [ `Map` ](xref:Xamarin.Forms.Maps.Map)にバインドするデータ バインディングを使用してデータを設定することができます、`ItemsSource`プロパティを`IEnumerable`コレクション。
+> [!NOTE]
+> `ItemTemplate`プロパティが優先と両方、`ItemTemplate`と`ItemTemplateSelector`プロパティを設定します。
+
+A [ `Map` ](xref:Xamarin.Forms.Maps.Map)にバインドするデータ バインディングを使用してデータを設定することができます、`ItemsSource`プロパティを`IEnumerable`コレクション。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -296,8 +319,65 @@ MyMap.MoveToRegion(
 
 [![マップにデータのスクリーン ショットには、iOS と Android でのピンがバインドされている](map-images/pins-itemssource.png "ピンがバインドされたデータとマップ")](map-images/pins-itemssource-large.png#lightbox "ピンがバインドされたデータとマップ")
 
+### <a name="choose-item-appearance-at-runtime"></a>実行時に項目の外観を選択します。
+
+内の各項目の外観、`IEnumerable`コレクションを設定して、項目の値に基づいて、実行時に選択できる、`ItemTemplateSelector`プロパティを[ `DataTemplateSelector` ](xref:Xamarin.Forms.DataTemplateSelector):
+
+```xaml
+<ContentPage ...
+             xmlns:local="clr-namespace:WorkingWithMaps"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps">
+    <ContentPage.Resources>
+        <local:MapItemTemplateSelector x:Key="MapItemTemplateSelector">
+            <local:MapItemTemplateSelector.DefaultTemplate>
+                <DataTemplate>
+                    <maps:Pin Position="{Binding Position}"
+                              Address="{Binding Address}"
+                              Label="{Binding Description}" />
+                </DataTemplate>
+            </local:MapItemTemplateSelector.DefaultTemplate>
+            <local:MapItemTemplateSelector.XamarinTemplate>
+                <DataTemplate>
+                    <maps:Pin Position="{Binding Position}"
+                              Address="{Binding Address}"
+                              Label="Xamarin!" />
+                </DataTemplate>
+            </local:MapItemTemplateSelector.XamarinTemplate>    
+        </local:MapItemTemplateSelector>
+    </ContentPage.Resources>
+
+    <Grid>
+        ...
+        <maps:Map x:Name="map"
+                  ItemsSource="{Binding Locations}"
+                  ItemTemplateSelector="{StaticResource MapItemTemplateSelector}" />
+        ...
+    </Grid>
+</ContentPage>
+```
+
+次の例は、`MapItemTemplateSelector`クラス。
+
+```csharp
+public class MapItemTemplateSelector : DataTemplateSelector
+{
+    public DataTemplate DefaultTemplate { get; set; }
+    public DataTemplate XamarinTemplate { get; set; }
+
+    protected override DataTemplate OnSelectTemplate(object item, BindableObject container)
+    {
+        return ((Location)item).Address.Contains("San Francisco") ? XamarinTemplate : DefaultTemplate;
+    }
+}
+```
+
+`MapItemTemplateSelector`クラス定義`DefaultTemplate`と`XamarinTemplate` [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)さまざまなデータ テンプレートに設定されているプロパティ。 `OnSelectTemplate`メソッドを返します。、 `XamarinTemplate`、ときにラベルとして"Xamarin"を表示する、`Pin`アイテムが"サンフランシスコ"を含むアドレスがあるときに、タップします。 項目は、「サンフランシスコ」を含むアドレスを持っていない場合、`OnSelectTemplate`メソッドが返す、`DefaultTemplate`します。
+
+データ テンプレート セレクターの詳細については、次を参照してください。[作成 Xamarin.Forms DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)します。
+
 ## <a name="related-links"></a>関連リンク
 
 - [MapsSample](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithMaps/)
 - [カスタム レンダラーをマップします。](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md)
 - [Xamarin.Forms のサンプル](https://developer.xamarin.com/samples/xamarin-forms/all/)
+- [Xamarin.Forms DataTemplateSelector を作成します。](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/20/2018
-ms.openlocfilehash: a3704552c8fc147588919ecdde2813e831237d89
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e6d8ccea7331f53d2e7262630689075a8b9a1ff1
+ms.sourcegitcommit: 450106d5f05b4473bf7f5b9100b2eaf18c9110de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61019349"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67522968"
 ---
 # <a name="httpclient-stack-and-ssltls-implementation-selector-for-android"></a>HttpClient スタックと SSL/TLS の実装セレクター for Android
 
@@ -112,7 +112,7 @@ HttpClient client = new HttpClient(new Xamarin.Android.Net.AndroidClientHandler 
 ```
 
 > [!NOTE]
-> 基になる Android デバイスが TLS 1.2 (つまりをサポートする必要があります。Android 4.1 以降)
+> 基になる Android デバイスが TLS 1.2 (つまりをサポートする必要があります。Android 4.1 以降)。 TLS 1.2 の公式のサポートは、Android 5.0 以降でことに注意してください。 ただし一部のデバイスは、Android 4.1 + で TLS 1.2 をサポートします。
 
 
 ## <a name="ssltls-implementation-build-option"></a>SSL/TLS 実装ビルド オプション
@@ -129,13 +129,13 @@ HttpClient client = new HttpClient(new Xamarin.Android.Net.AndroidClientHandler 
 
 -----
 
-例:
+例えば:
 
 ```csharp
 var client = new HttpClient();
 ```
 
-HttpClient 実装に設定された場合**マネージ**に設定されている TLS の実装と**ネイティブ TLS 1.2 +**、`client`オブジェクトが、管理対象に自動的には使用`HttpClientHandler`と用に TLS 1.2 (BoringSSL ライブラリによって提供される) その HTTP 要求。
+HttpClient 実装に設定された場合**マネージ**に設定されている TLS の実装と**ネイティブ TLS 1.2 +** 、`client`オブジェクトが、管理対象に自動的には使用`HttpClientHandler`と用に TLS 1.2 (BoringSSL ライブラリによって提供される) その HTTP 要求。
 
 ただし場合、 **HttpClient 実装**に設定されている`AndroidHttpClient`、し、すべて`HttpClient`オブジェクトが基になる Java クラスを使用して`java.net.URLConnection`と影響を受けることはできません、 **TLS/SSLの実装**値。 `WebRequest` オブジェクトでは、BoringSSL ライブラリを使用します。
 

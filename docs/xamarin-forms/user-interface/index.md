@@ -6,13 +6,13 @@ ms.assetid: 391B4A77-7CAC-42D2-9E77-BD8E170E9BE6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 11/14/2018
-ms.openlocfilehash: 7c3a26854c65de260aa9b3c8ed00966749eb4d9c
-ms.sourcegitcommit: 6ad272c2c7b0c3c30e375ad17ce6296ac1ce72b2
+ms.date: 06/11/2019
+ms.openlocfilehash: c98e1cd9f4095e8310150ceeebd994af2c9b7f87
+ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66178074"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67512930"
 ---
 # <a name="xamarinforms-user-interface-views"></a>Xamarin.Forms のユーザー インターフェイス ビュー
 
@@ -31,6 +31,10 @@ Xamarin.Forms には、複雑なアニメーションを作成するのに十分
 ## <a name="buttonbuttonmd"></a>[Button](button.md)
 
 `Button`タップまたは特定のタスクを実行するためにアプリケーションに指示するクリックに応答します。
+
+## <a name="checkboxcheckboxmd"></a>[CheckBox](checkbox.md)
+
+`CheckBox`かボタンの種類が checked または空にするには。 チェック ボックスをオンにした場合は、上にある見なしています。 チェック ボックスが空の場合は、オフになって見なしています。
 
 ## <a name="collectionviewcollectionviewindexmd"></a>[CollectionView](collectionview/index.md)
 
@@ -52,7 +56,7 @@ DataPages の迅速かつ簡単に構築済みのビューにデータ ソース
 
 `DatePicker`により、ユーザーが、指定した範囲内の日付を選択します。 アプリケーションが実行される特定のプラットフォームでサポートされている日付の選択を使用して実装されます。
 
-## <a name="display-pop-upspop-upsmd"></a>[ポップアップを表示します。](pop-ups.md)
+## <a name="display-pop-upspop-upsmd"></a>[ポップアップを表示する](pop-ups.md)
 
 Xamarin.Forms には、ポップアップに似た 2 つのユーザー インターフェイス要素、アラートとアクション シートが用意されています。 ユーザーの簡単な質問とタスクによる確認 ダイアログ ボックスを表示する、これらのインターフェイス要素を使用できます。
 

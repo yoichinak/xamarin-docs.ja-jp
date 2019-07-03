@@ -6,13 +6,13 @@ ms.assetid: AC070686-A423-4A98-8BB6-0B9F94C062CC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/21/2019
-ms.openlocfilehash: 258468b836a4c1243b9123022ebbf1d55430321e
-ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
+ms.date: 06/11/2019
+ms.openlocfilehash: 6fbe1104d238929d0c6c6978a9145cd51d52cb6c
+ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66740968"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67513094"
 ---
 # <a name="xamarinforms-views"></a>Xamarin.Forms のビュー
 
@@ -90,6 +90,13 @@ _Xamarin.Forms のビューとは、クロス プラットフォーム モバイ
 |     |     |
 
 ## <a name="views-for-setting-values"></a>値の設定のビュー
+
+### <a name="checkbox"></a>CheckBox
+
+|     |     |
+| --- | --- |
+| `CheckBox` チェック アウトか、または空のボタンの種類を使用してブール値を選択できます。 `IsChecked`プロパティの状態は、 `CheckBox`、および`CheckedChanged`状態が変更されたときに発生します。<br /><br />API のドキュメント/[ガイド](~/xamarin-forms/user-interface/checkbox.md) / [サンプル](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/CheckBoxDemos) | [![チェック ボックスをオン例](views-images/CheckBox.png "例のチェック ボックスをオン")](views-images/CheckBox-Large.png#lightbox "チェック ボックスの例")<br />[このページの C# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/CheckBoxDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/CheckBoxDemoPage.xaml) |
+|     |     |
 
 ### <a name="slider"></a>スライダー
 

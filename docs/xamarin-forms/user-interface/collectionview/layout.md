@@ -6,13 +6,13 @@ ms.assetid: 5FE78207-1BD6-4706-91EF-B13932321FC9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/06/2019
-ms.openlocfilehash: a64a54d763edc4f02383af686fc8e9386daad572
-ms.sourcegitcommit: 0596004d4a0e599c1da1ddd75a6ac928f21191c2
+ms.date: 07/01/2019
+ms.openlocfilehash: 786cea04718022847bba2ecffed8f377dd49bd8b
+ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66005246"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67512818"
 ---
 # <a name="xamarinforms-collectionview-layout"></a>Xamarin.Forms CollectionView レイアウト
 
@@ -47,9 +47,15 @@ ms.locfileid: "66005246"
 - `Vertical` 示します、 [ `CollectionView` ](xref:Xamarin.Forms.CollectionView)項目が追加されると、垂直方向に展開されます。
 - `Horizontal` 示します、 [ `CollectionView` ](xref:Xamarin.Forms.CollectionView)項目が追加されると水平方向に展開されます。
 
-[ `ListItemsLayout` ](xref:Xamarin.Forms.ListItemsLayout)クラスから継承、 [ `ItemsLayout` ](xref:Xamarin.Forms.ItemsLayout)クラスし、静的な定義`VerticalList`と`HorizontalList`メンバー。 これらのメンバーを使って、垂直または水平方向のリストをそれぞれ作成することができます。 または、`ListItemsLayout`を指定するオブジェクトを作成できる、 [ `ItemsLayoutOrientation` ](xref:Xamarin.Forms.ItemsLayoutOrientation)を引数として列挙型メンバー。
+[ `ListItemsLayout` ](xref:Xamarin.Forms.ListItemsLayout)クラスから継承、 [ `ItemsLayout` ](xref:Xamarin.Forms.ItemsLayout)クラスを定義しますを`ItemSpacing`型のプロパティ、 `double`、各アイテムの周囲の空白部分を表します。 このプロパティの既定値は 0、およびその値が 0 以上にある常に必要があります。 `ListItemsLayout`クラスには静的な定義も`Vertical`と`Horizontal`メンバー。 これらのメンバーを使って、垂直または水平方向のリストをそれぞれ作成することができます。 または、`ListItemsLayout`を指定するオブジェクトを作成できる、 [ `ItemsLayoutOrientation` ](xref:Xamarin.Forms.ItemsLayoutOrientation)を引数として列挙型メンバー。
 
-[ `GridItemsLayout` ](xref:Xamarin.Forms.GridItemsLayout)クラスから継承、 [ `ItemsLayout` ](xref:Xamarin.Forms.ItemsLayout)クラスを定義しますを`Span`型のプロパティ、 `int`、表示する行または列の数を表すグリッド。 `Span` プロパティの既定値は 1 で、その値は常に1 以上でなければなりません。
+[ `GridItemsLayout` ](xref:Xamarin.Forms.GridItemsLayout)クラスから継承、 [ `ItemsLayout` ](xref:Xamarin.Forms.ItemsLayout)クラスし、次のプロパティを定義します。
+
+- `VerticalItemSpacing`、型の`double`、各アイテムの周囲の垂直方向の空白を表します。 このプロパティの既定値は 0、およびその値が 0 以上にある常に必要があります。
+- `HorizontalItemSpacing`、型の`double`、各項目の水平方向の空白を表します。 このプロパティの既定値は 0、およびその値が 0 以上にある常に必要があります。
+- `Span`、型の`int`、グリッドに表示する行または列の数を表します。 このプロパティの既定値は 1 であり、その値が 1 以上にある常に必要があります。
+
+これらのプロパティは、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトでサポートされます。つまり、このプロパティはデータ バインドの対象となることを意味します。
 
 > [!NOTE]
 > [`CollectionView`](xref:Xamarin.Forms.CollectionView) ネイティブのレイアウト エンジンを使用すると、レイアウトを実行します。
@@ -90,11 +96,11 @@ ms.locfileid: "66005246"
 </CollectionView>
 ```
 
-ただし、完全を期すのため、 [ `CollectionView` ](xref:Xamarin.Forms.CollectionView)その項目を設定して、垂直方向に一覧表示に設定することができます、 [ `ItemsLayout` ](xref:Xamarin.Forms.ItemsView.ItemsLayout)プロパティを静的な`ListItemsLayout.VerticalList`メンバー。
+ただし、完全を期すのため、 [ `CollectionView` ](xref:Xamarin.Forms.CollectionView)その項目を設定して、垂直方向に一覧表示に設定することができます、 [ `ItemsLayout` ](xref:Xamarin.Forms.ItemsView.ItemsLayout)プロパティを`VerticalList`:
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}"
-                ItemsLayout="{x:Static ListItemsLayout.VerticalList}">
+                ItemsLayout="VerticalList">
     ...
 </CollectionView>
 ```
@@ -120,7 +126,7 @@ ms.locfileid: "66005246"
 CollectionView collectionView = new CollectionView
 {
     ...
-    ItemsLayout = ListItemsLayout.VerticalList
+    ItemsLayout = ListItemsLayout.Vertical
 };
 ```
 
@@ -130,11 +136,11 @@ CollectionView collectionView = new CollectionView
 
 ## <a name="horizontal-list"></a>水平方向リスト
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView) 水平方向のリストに設定してそのアイテムを表示できます、 [ `ItemsLayout` ](xref:Xamarin.Forms.ItemsView.ItemsLayout)プロパティを静的な`ListItemsLayout.HorizontalList`メンバー。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) 水平方向のリストに設定してそのアイテムを表示できます、 [ `ItemsLayout` ](xref:Xamarin.Forms.ItemsView.ItemsLayout)プロパティを`HorizontalList`:
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}"
-                ItemsLayout="{x:Static ListItemsLayout.HorizontalList}">
+                ItemsLayout="HorizontalList">
     <CollectionView.ItemTemplate>
         <DataTemplate>
             <Grid Padding="10">
@@ -188,7 +194,7 @@ CollectionView collectionView = new CollectionView
 CollectionView collectionView = new CollectionView
 {
     ...
-    ItemsLayout = ListItemsLayout.HorizontalList
+    ItemsLayout = ListItemsLayout.Horizontal
 };
 ```
 
@@ -308,6 +314,80 @@ CollectionView collectionView = new CollectionView
 
 [![IOS と Android での CollectionView 水平グリッド レイアウトのスクリーン ショット](layout-images/horizontal-grid.png "CollectionView 水平グリッド レイアウト")](layout-images/horizontal-grid-large.png#lightbox "CollectionView 水平グリッド レイアウト")
 
+## <a name="item-spacing"></a>アイテム間の間隔
+
+既定では、各項目を[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)周囲の空白部分はありません。 プロパティで使用される項目のレイアウトを設定してこの動作を変更することができます、`CollectionView`します。
+
+ときに、 [ `CollectionView` ](xref:Xamarin.Forms.CollectionView)設定その[ `ItemsLayout` ](xref:Xamarin.Forms.ItemsView.ItemsLayout)プロパティを[ `ListItemsLayout` ](xref:Xamarin.Forms.ListItemsLayout)オブジェクト、`ListItemsLayout.ItemSpacing`にプロパティを設定することができます、 `double`各アイテムの周囲の空白部分を表す値。
+
+```xaml
+<CollectionView ItemsSource="{Binding Monkeys}">
+    <CollectionView.ItemsLayout>
+        <ListItemsLayout ItemSpacing="20">
+            <x:Arguments>
+                <ItemsLayoutOrientation>Vertical</ItemsLayoutOrientation>    
+            </x:Arguments>
+        </ListItemsLayout>
+    </CollectionView.ItemsLayout>
+    ...
+</CollectionView>
+```
+
+> [!NOTE]
+> `ListItemsLayout.ItemSpacing`プロパティがプロパティの値が 0 以上では常にことにより、検証コールバック セット。
+
+同等のコードをC#で示します。
+
+```csharp
+CollectionView collectionView = new CollectionView
+{
+    ...
+    ItemsLayout = new ListItemsLayout(ItemsLayoutOrientation.Vertical)
+    {
+        ItemSpacing = 20
+    }
+};
+```
+
+このコードは、各アイテムの周囲の 20 の空白文字のある垂直方向の 1 つの列リストが得られます。
+
+[![IOS と Android でのアイテム間の間隔での CollectionView のスクリーン ショット](layout-images/vertical-list-spacing.png "CollectionView アイテム間の間隔")](layout-images/vertical-list-spacing-large.png#lightbox "CollectionView アイテム間の間隔")
+
+ときに、 [ `CollectionView` ](xref:Xamarin.Forms.CollectionView)設定その[ `ItemsLayout` ](xref:Xamarin.Forms.ItemsView.ItemsLayout)プロパティを[ `GridItemsLayout` ](xref:Xamarin.Forms.GridItemsLayout)オブジェクト、`GridItemsLayout.VerticalItemSpacing`と`GridItemsLayout.HorizontalItemSpacing`プロパティを指定できます設定`double`を各項目垂直方向および水平方向に空の領域を表す値。
+
+```xaml
+<CollectionView ItemsSource="{Binding Monkeys}">
+    <CollectionView.ItemsLayout>
+       <GridItemsLayout Orientation="Vertical"
+                        Span="2"
+                        VerticalItemSpacing="20"
+                        HorizontalItemSpacing="30" />
+    </CollectionView.ItemsLayout>
+    ...
+</CollectionView>
+```
+
+> [!NOTE]
+> `GridItemsLayout.VerticalItemSpacing`と`GridItemsLayout.HorizontalItemSpacing`プロパティがある検証コールバックを設定すると、プロパティの値が 0 以上では常にあることを確認します。
+
+同等のコードをC#で示します。
+
+```csharp
+CollectionView collectionView = new CollectionView
+{
+    ...
+    ItemsLayout = new GridItemsLayout(2, ItemsLayoutOrientation.Vertical)
+    {
+        VerticalItemSpacing = 20,
+        HorizontalItemSpacing = 30
+    }
+};
+```
+
+このコードは、各項目、20 の上下の間隔と各アイテムの周囲の 30 の左右の間隔を持つ垂直の 2 つの列グリッドが得られます。
+
+[![IOS と Android でのアイテム間の間隔での CollectionView のスクリーン ショット](layout-images/vertical-grid-spacing.png "CollectionView アイテム間の間隔")](layout-images/vertical-grid-spacing-large.png#lightbox "CollectionView アイテム間の間隔")
+
 ## <a name="item-sizing"></a>項目のサイズ変更
 
 既定では、各項目を[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)は個別に測定し、サイズ、内の UI 要素を提供する、 [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)固定サイズを指定しません。 この動作は、変更できますがで指定された、 [ `CollectionView.ItemSizingStrategy` ](xref:Xamarin.Forms.ItemsView.ItemSizingStrategy)プロパティの値。 このプロパティの値は、のいずれかに設定することができます、 [ `ItemSizingStrategy` ](xref:Xamarin.Forms.ItemSizingStrategy)列挙型メンバー。
@@ -336,9 +416,6 @@ CollectionView collectionView = new CollectionView
     ItemSizingStrategy = ItemSizingStrategy.MeasureFirstItem
 };
 ```
-
-> [!NOTE]
-> 戦略をサイズ変更項目は、現在で実装されている iOS のみです。
 
 ## <a name="dynamic-resizing-of-items"></a>項目の動的なサイズ変更
 
