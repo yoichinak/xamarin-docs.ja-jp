@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/25/2018
-ms.openlocfilehash: 9628821be5a979777614eb4f7ad8605087093ed3
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.openlocfilehash: 6703e922a628504e0afdcf56533d74741131581a
+ms.sourcegitcommit: a6ba6ed086bcde4f52fb05f83c59c68e8aa5e436
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67268843"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67540151"
 ---
 # <a name="ios-platform-features-overview"></a>iOS プラットフォームの機能の概要
 
@@ -22,8 +22,9 @@ ms.locfileid: "67268843"
 
 |  |  |
 |-------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [iOS 12 の概要](~/ios/platform/introduction-to-ios12/index.md) | このドキュメントは iOS 12 を説明するときに使用できる機能が使用 buildingXamarin.iOS アプリケーション。|
-| [iOS 11 の概要](~/ios/platform/introduction-to-ios11/index.md) | このドキュメントでは、iOS 11、および ARKit、Core ML、Core NFC、ドラッグ アンド ドロップ、MapKit、PDFKit、SiriKit、やビジョンなどの Xcode 9 で新規および更新された機能について説明します。 これらの featureswith Xamarin.iOS を使用する方法を説明するガイドにリンクします。 |
+| [IOS 13 の概要をプレビューします。](~/ios/platform/ios13/index.md) | このドキュメントでは、Xamarin.iOS 13 プレビューについて説明します。|
+| [iOS 12 の概要](~/ios/platform/introduction-to-ios12/index.md) | このドキュメントでは、Xamarin.iOS アプリケーションを構築するときに、iOS 12 の機能が使用可能ながについて説明します。|
+| [iOS 11 の概要](~/ios/platform/introduction-to-ios11/index.md) | このドキュメントでは、iOS 11、および ARKit、Core ML、Core NFC、ドラッグ アンド ドロップ、MapKit、PDFKit、SiriKit、やビジョンなどの Xcode 9 で新規および更新された機能について説明します。 Xamarin.iOS でこれらの機能を使用する方法を説明するガイドにリンクします。 |
 | [iOS 10 の概要](~/ios/platform/introduction-to-ios10/index.md) | iOS 10 では、いくつかの新しい Api や新しい機能および機能を備えたアプリを開発するためのサービスが含まれています。 10、iOS では、アプリは、マップ、メッセージ、電話および Siri を拡張するなどの新機能をあります。 このセクションでは、Xamarin.iOS アプリでこれらの機能を利用する方法を示します。 |
 | [iOS 9 の概要](~/ios/platform/introduction-to-ios9/index.md)   | このセクションでは、Xamarin.iOS アプリでこれらの機能を使用する方法と iOS 8 からアップグレードする場合は、iOS 9 で行った変更を定義します。 |
 | [iOS 8 の概要](~/ios/platform/introduction-to-ios8.md)         | iOS 8 には、iOS 7 からオペレーティング システムに多数の変更が行われます。 ここでは何か、およびその使用方法を紹介します。 |

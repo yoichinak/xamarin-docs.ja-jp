@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: ddc33d28aad4e00c9259893c0f8e7a1ab40ee429
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 9848d2b832990032bc7eb7f2e3a93c896457134c
+ms.sourcegitcommit: e95296f9e516975f5f32d822c323a71fd84007b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61381877"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67538696"
 ---
 # <a name="communicating-between-loosely-coupled-components"></a>疎結合コンポーネント間の通信
 
@@ -43,7 +43,7 @@ EShopOnContainers のモバイル アプリでは、 [ `MessagingCenter` ](xref:
 > [!NOTE]
 > 中に、 [ `MessagingCenter` ](xref:Xamarin.Forms.MessagingCenter)クラス疎結合のクラス間の通信を許可する、この問題にのみアーキテクチャのソリューションを提供しません。 たとえば、ビュー モデルとビュー間の通信は、バインディング エンジンとプロパティの変更通知にも実現できます。 さらに、2 つのビュー モデル間の通信は、ナビゲーション中にデータを渡すことによっても実現できます。
 
-EShopOnContainers のモバイル アプリで[`MessagingCenter` ](xref:Xamarin.Forms.MessagingCenter)別のクラスで発生している、アクションに対する応答では、UI の更新に使用されます。 そのため、メッセージは、同じスレッドでメッセージを受信するサブスクライバーで、UI スレッドで発行されます。
+EShopOnContainers のモバイル アプリで[ `MessagingCenter` ](xref:Xamarin.Forms.MessagingCenter)別のクラスで発生している、アクションに対する応答では、UI の更新に使用されます。 そのため、メッセージは、同じスレッドでメッセージを受信するサブスクライバーで、UI スレッドで発行されます。
 
 > [!TIP]
 > 更新プログラムの UI を実行するときに、UI スレッドにマーシャ リングします。 バック グラウンド スレッドから送信されるメッセージが UI を更新する必要な場合は、呼び出すことによって、サブスクライバーで、UI スレッドでメッセージを処理、 [ `Device.BeginInvokeOnMainThread` ](xref:Xamarin.Forms.Device.BeginInvokeOnMainThread(System.Action))メソッド。
