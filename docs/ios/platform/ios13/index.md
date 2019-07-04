@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 07/01/2019
-ms.openlocfilehash: ab50bfb2b3f46a6fac37fced5004e2c530d3343c
-ms.sourcegitcommit: a6ba6ed086bcde4f52fb05f83c59c68e8aa5e436
+ms.openlocfilehash: eaa479f220c9cd0115fd2d4496fbfb1202fb3aa0
+ms.sourcegitcommit: 8ecfa339d0f3e7687977bfe4fc96448942690183
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 07/03/2019
-ms.locfileid: "67540428"
+ms.locfileid: "67558710"
 ---
 # <a name="introduction-to-ios-13"></a>IOS 13 の概要
 
@@ -45,3 +45,7 @@ IPadOS、PencilKit を新しいジェスチャを使用して Apple 鉛筆を使
 ## <a name="privacy-and-security"></a>プライバシーとセキュリティ
 
 iOS 13 は、サインインの対象外の個人情報をより確実にできるように、Apple のデバイスを使用してアプリにサインインするための新しい機能を提供します盗まれたり、提供される、2 fa の利点と制限のセットを取得して何らかの方法で収集。情報。
+
+## <a name="related-links"></a>関連リンク
+
+- [Xamarin.iOS リリース ノートのプレビュー](/xamarin/ios/release-notes/12/12.99)

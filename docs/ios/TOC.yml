@@ -136,7 +136,7 @@
               href: app-fundamentals/touch/touch-tracking.md
         - name: ユーザーの既定値
           href: app-fundamentals/user-defaults.md
-    - name: '[ユーザー インターフェイス]'
+    - name: ユーザー インターフェイス
       items:
         - name: 概要
           href: user-interface/index.md
@@ -533,7 +533,7 @@
           href: ~/essentials/phone-dialer.md?context=xamarin/ios
         - name: プラットフォームの拡張機能 (サイズ、四角形、ポイント)
           href: ~/essentials/platform-extensions.md?context=xamarin/ios
-        - name: '[Preferences]'
+        - name: Preferences
           href: ~/essentials/preferences.md?context=xamarin/ios
         - name: セキュリティで保護されたストレージ
           href: ~/essentials/secure-storage.md?context=xamarin/ios

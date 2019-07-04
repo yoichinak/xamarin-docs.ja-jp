@@ -430,7 +430,7 @@
           href: ~/essentials/phone-dialer.md?context=xamarin/android
         - name: プラットフォームの拡張機能 (サイズ、四角形、ポイント)
           href: ~/essentials/platform-extensions.md?context=xamarin/android
-        - name: '[Preferences]'
+        - name: Preferences
           href: ~/essentials/preferences.md?context=xamarin/android
         - name: セキュリティで保護されたストレージ
           href: ~/essentials/secure-storage.md?context=xamarin/android
