@@ -382,7 +382,7 @@
           href: platform/photokit.md
         - name: ネイティブ ライブラリの参照
           href: platform/native-interop.md
-        - name: API の検索
+        - name: 検索 API
           items:
             - name: 概要
               href: platform/search/index.md
@@ -563,7 +563,7 @@
               items:
                 - name: 手順 1. 登録
                   href: ~/cross-platform/data-cloud/active-directory/get-started/register.md?context=xamarin/ios
-                - name: 手順 2. を構成する。
+                - name: 手順 2. 構成
                   href: ~/cross-platform/data-cloud/active-directory/get-started/configure.md?context=xamarin/ios
             - name: Graph API へのアクセス
               href: ~/cross-platform/data-cloud/active-directory/graph.md?context=xamarin/ios

@@ -1,18 +1,18 @@
 ---
 title: IOS 13、iPadOS 13、13、tvOS、watchOS 6 の概要します。
-description: このドキュメントでは、最大ビルド iOS 13、iPadOS 13、13、tvOS、および Xamarin を使った watchOS 6 アプリ設定を取得する方法について説明します。 これには、Xcode 11 をダウンロードし、Mac および Visual Studio 2019 用 Visual Studio を更新する方法について説明します。
+description: このドキュメントでは、最大ビルド iOS 13、iPadOS 13、13、tvOS、および Xamarin を使った watchOS 6 アプリ設定を取得する方法について説明します。 Xcode 11 をダウンロードして for mac。 Visual Studio を更新する方法について説明します
 ms.prod: xamarin
 ms.assetid: 97414545-85D2-433C-9246-63B6763F488A
 ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 07/01/2019
-ms.openlocfilehash: d2bb69394d8e9bfeb949a734291179a3e6f5a495
-ms.sourcegitcommit: a6ba6ed086bcde4f52fb05f83c59c68e8aa5e436
+ms.openlocfilehash: 554cddf5717401f912cab38c78a6af17659a0cf7
+ms.sourcegitcommit: 8ecfa339d0f3e7687977bfe4fc96448942690183
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 07/03/2019
-ms.locfileid: "67540438"
+ms.locfileid: "67558690"
 ---
 # <a name="get-started-with-ios-13"></a>IOS 13 を概要します。
 
@@ -44,3 +44,4 @@ ms.locfileid: "67540438"
 ## <a name="related-links"></a>関連リンク
 
 - [Xcode をダウンロードします。](https://developer.apple.com/download/)
+- [Xamarin.iOS リリース ノートのプレビュー](/xamarin/ios/release-notes/12/12.99)
