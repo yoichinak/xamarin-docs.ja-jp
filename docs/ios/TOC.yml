@@ -244,6 +244,14 @@
       items:
         - name: 概要
           href: platform/index.md
+        - name: iOS 13 プレビュー
+          items:
+            - name: iOS 13 の概要
+              href: platform/ios13/index.md
+            - name: 作業開始
+              href: platform/ios13/get-started.md
+            - name: トラブルシューティング
+              href: platform/ios13/troubleshooting/index.md
         - name: iOS 12
           items:
             - name: iOS 12 の概要
@@ -776,8 +784,6 @@
           href: troubleshooting/index.md
         - name: トラブルシューティングのヒント
           href: troubleshooting/troubleshooting.md
-        - name: Xcode 11 のプレビュー
-          href: ~/ios/platform/ios13/troubleshooting/index.md
         - name: Xamarin.iOS の分析規則
           href: troubleshooting/xamarin-ios-analysis.md
         - name: エラー メッセージ (mtouch)

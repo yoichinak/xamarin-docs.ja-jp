@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 8957a75ac693874bfbea738d17fbdd7e013c3199
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.openlocfilehash: 4ea10a3cc4eca0708d1de1aee68bed74c960cbc2
+ms.sourcegitcommit: 8ecfa339d0f3e7687977bfe4fc96448942690183
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67277327"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67560005"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -79,3 +79,8 @@ ms.locfileid: "67277327"
     [![iOS と Android での StackLayout の子ビューのスクリーンショット](../images/create-stacklayout.png "Label インスタンスを含む StackLayout")](../images/create-stacklayout-large.png#lightbox "Label インスタンスを含む StackLayout")
 
     [`StackLayout`](xref:Xamarin.Forms.StackLayout) の詳細については、「[Xamarin.Forms StackLayout](~/xamarin-forms/user-interface/layouts/stack-layout.md)」 (Xamarin.Forms の StackLayout) を参照してください。
+
+-----
+
+> [!div class="nextstepaction"]
+> [問題が発生しました](https://github.com/MicrosoftDocs/xamarin-docs/issues/new?title=StackLayout+Tutorial+Step+1+Feedback&template=tutorial_template.md)
