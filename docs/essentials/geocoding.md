@@ -51,7 +51,7 @@ Platform.MapServiceToken = "YOUR-KEY-HERE";
 using Xamarin.Essentials;
 ```
 
-住所の[場所](xref:Xamarin.Essentials.Location)の座標の収録:
+住所の[場所](xref:Xamarin.Essentials.Location)の座標の取得:
 
 ```csharp
 try
