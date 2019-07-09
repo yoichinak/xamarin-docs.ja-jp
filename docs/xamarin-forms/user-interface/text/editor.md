@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/26/2018
-ms.openlocfilehash: bf7a1461a26a860c77a913edabb94d76b4ca2a6a
-ms.sourcegitcommit: 00deecefc17a98210bed12b4ef99ecca710275f1
+ms.openlocfilehash: 97bb5ec954f36e48d8ae115baf8738862e5a8358
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67493342"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67649547"
 ---
 # <a name="xamarinforms-editor"></a>Xamarin.Forms のエディター
 
@@ -264,7 +264,7 @@ public partial class EditorPage : ContentPage
 
 ### <a name="completed"></a>完了
 
-`Completed`とのやり取りの完了に反応するイベントを使用する`Editor`します。 `Completed` キーボードの戻り値のキーを入力して、ユーザーが終了する入力フィールドを持つ場合に発生します。 イベントのハンドラーは、送信者を取得、汎用イベント ハンドラーと`EventArgs`:
+`Completed`とのやり取りの完了に反応するイベントを使用する`Editor`します。 `Completed` キーボードの戻り値のキーを入力して (または UWP の Tab キーを押して)、ユーザーがフィールドに入力を終了したときに発生します。 イベントのハンドラーは、送信者を取得、汎用イベント ハンドラーと`EventArgs`:
 
 ```csharp
 void EditorCompleted (object sender, EventArgs e)

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/11/2019
-ms.openlocfilehash: c98e1cd9f4095e8310150ceeebd994af2c9b7f87
-ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
+ms.openlocfilehash: fa53d7253862e696d23289fe3c57f215b29da6c5
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67512930"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67649563"
 ---
 # <a name="xamarinforms-user-interface-views"></a>Xamarin.Forms のユーザー インターフェイス ビュー
 
@@ -99,6 +99,10 @@ Xamarin.Forms は、スクロール行のデータを表示するリスト ビ�
 ## <a name="stylesstylesindexmd"></a>[スタイル](styles/index.md)
 
 フォント、色、およびその他の属性は、コントロール、レイアウト、または ResourceDictionaries を使用してアプリケーション全体で共有できるスタイルにグループ化することができます。
+
+## <a name="switchswitchmd"></a>[スイッチ](switch.md)
+
+`Switch`はオンとオフの状態の間で切り替え可能なボタンの一種です。
 
 ## <a name="tableviewtableviewmd"></a>[TableView](tableview.md)
 

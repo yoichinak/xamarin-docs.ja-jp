@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/11/2019
-ms.openlocfilehash: 6fbe1104d238929d0c6c6978a9145cd51d52cb6c
-ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
+ms.openlocfilehash: 4d0fc5c4ee3947de74a62e8c42fedb8aeedbfdd9
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67513094"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67650615"
 ---
 # <a name="xamarinforms-views"></a>Xamarin.Forms のビュー
 
@@ -116,7 +116,7 @@ _Xamarin.Forms のビューとは、クロス プラットフォーム モバイ
 
 |     |     |
 | --- | --- |
-| [`Switch`](xref:Xamarin.Forms.Switch) ブール値を選択できるようにするオン/オフ スイッチの形式をとります。 [ `IsToggled` ](xref:Xamarin.Forms.Switch.IsToggled)プロパティは、スイッチの状態と[ `Toggled` ](xref:Xamarin.Forms.Switch.Toggled)状態が変更されたときに発生します。<br /><br />[API ドキュメント](xref:Xamarin.Forms.Switch) | [![例を切り替える](views-images/Switch.png "例を切り替える")](views-images/Switch-Large.png#lightbox "スイッチの例")<br />[このページの C# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SwitchDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SwitchDemoPage.xaml) |
+| [`Switch`](xref:Xamarin.Forms.Switch) ブール値を選択できるようにするオン/オフ スイッチの形式をとります。 [ `IsToggled` ](xref:Xamarin.Forms.Switch.IsToggled)プロパティは、スイッチの状態と[ `Toggled` ](xref:Xamarin.Forms.Switch.Toggled)状態が変更されたときに発生します。<br /><br />[API ドキュメント](xref:Xamarin.Forms.Switch) / [ガイド](~/xamarin-forms/user-interface/switch.md) / [サンプル](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/SwitchDemos) | [![例を切り替える](views-images/Switch.png "例を切り替える")](views-images/Switch-Large.png#lightbox "スイッチの例")<br />[このページの C# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SwitchDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SwitchDemoPage.xaml) |
 |     |     |
 
 ### <a name="datepicker"></a>DatePicker

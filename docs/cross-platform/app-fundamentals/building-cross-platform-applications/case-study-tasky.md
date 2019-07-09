@@ -6,12 +6,12 @@ ms.assetid: B581B2D0-9890-C383-C654-0B0E12DAD5A6
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 23deddae61452d532a87c51cc1ec3bc53eb91c9f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 15b4154ad6e95aabb5e88784660a93bb53c0b252
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61279119"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67650207"
 ---
 # <a name="cross-platform-app-case-study-tasky"></a>クロス プラットフォーム アプリのケース スタディ:Tasky
 
@@ -123,7 +123,7 @@ Tasky 依存 (Frank Kreuger によって発行された) Sqlite net nuget パッ
 
 #### <a name="sqlite-on-windows-phone"></a>Windows Phone での SQLite
 
-IOS と Android が付属していますオペレーティング システムの一部としての SQLite の使用中に Windows Phone では、互換性のあるデータベース エンジンは含まれません。 3 つすべてのプラットフォームでコードを共有するには、Windows Phone のネイティブ バージョンの SQLite が必要です。 参照してください[ローカル Database](~/xamarin-forms/app-fundamentals/databases.md) Sqlite for Windows Phone プロジェクトの設定の詳細について。
+IOS と Android が付属していますオペレーティング システムの一部としての SQLite の使用中に Windows Phone では、互換性のあるデータベース エンジンは含まれません。 3 つすべてのプラットフォームでコードを共有するには、Windows Phone のネイティブ バージョンの SQLite が必要です。 参照してください[ローカル Database](~/xamarin-forms/data-cloud/data/databases.md) Sqlite for Windows Phone プロジェクトの設定の詳細について。
 
  <a name="Using_an_Interface_to_Generalize_Data_Access" />
 

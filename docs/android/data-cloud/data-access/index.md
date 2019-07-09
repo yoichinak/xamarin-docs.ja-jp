@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 08720734de73af12d8a7383fa7d523dc350c4462
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6858e290d93007d6054ba0ef63dce86e6e2e53e3
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61011356"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67649615"
 ---
 # <a name="xamarinandroid-data-access"></a>Xamarin.Android Data Access
 
@@ -35,7 +35,7 @@ Xamarin.Android などのデータベース アクセス Api をサポートし�
 
 両方のサンプル ソリューションには、iOS と Android のサンプル アプリケーションのプロジェクトが含まれます。
 
-Xamarin.Forms アプリケーションでは、読み取る[データベースでの作業](~/xamarin-forms/app-fundamentals/databases.md)PCL ライブラリを Xamarin.Forms での SQLite を使用する方法を説明しています。
+Xamarin.Forms アプリケーションでは、読み取る[データベースでの作業](~/xamarin-forms/data-cloud/data/databases.md)PCL ライブラリを Xamarin.Forms での SQLite を使用する方法を説明しています。
 
 このセクションのトピックでは、データベース エンジンに SQLite を使用して Xamarin.Android でのデータ アクセスについて説明します。 ADO.NET の構文を使用して「直接」、データベースにアクセスしたり、SQLite.NET ORM を追加し、c# でのデータの操作を実行できます。
 
@@ -49,4 +49,4 @@ Xamarin.Forms アプリケーションでは、読み取る[データベース�
 - [DataAccess Basic (サンプル)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
 - [データ アクセスの詳細 (サンプル)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
 - [Android のデータのレシピ](https://github.com/xamarin/recipes/tree/master/Recipes/android/data)
-- [Xamarin.Forms のデータ アクセス](~/xamarin-forms/app-fundamentals/databases.md)
+- [Xamarin.Forms のデータ アクセス](~/xamarin-forms/data-cloud/data/databases.md)
