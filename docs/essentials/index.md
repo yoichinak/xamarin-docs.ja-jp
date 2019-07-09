@@ -34,7 +34,7 @@ Android、iOS、UWP では独自のオペレーティング システムとプ�
 * [色の変換機能](color-converters.md?context=xamarin/xamarin-forms) – System.Drawing.Color のヘルパー メソッド。
 * [コンパス](compass.md?context=xamarin/xamarin-forms) – 変化のコンパスを監視します。
 * [接続](connectivity.md?context=xamarin/xamarin-forms) – 接続状態を確認し、変更を検出します。
-* [Detect Shake](detect-shake.md?context=xamarin/xamarin-forms) – デバイスを振る動きを検出します。
+* [シェイクの検出](detect-shake.md?context=xamarin/xamarin-forms) – デバイスを振る動きを検出します。
 * [デバイス ディスプレイ情報](device-display.md?context=xamarin/xamarin-forms) – デバイスの画面のメトリックと向きを取得します。
 * [デバイス情報](device-information.md?context=xamarin/xamarin-forms) – デバイスの詳細を簡単に確認します。
 * [電子メール](email.md?context=xamarin/xamarin-forms) – 電子メール メッセージを簡単に送信します。
