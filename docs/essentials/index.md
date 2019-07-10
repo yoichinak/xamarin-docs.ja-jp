@@ -53,7 +53,7 @@ Android、iOS、UWP では独自のオペレーティング システムとプ�
 * [プラットフォーム拡張](platform-extensions.md?context=xamarin/xamarin-forms) – Rect、Size、Point を変換するためのヘルパー メソッド。
 * [ユーザー設定](preferences.md?context=xamarin/xamarin-forms) – 永続的なユーザー設定をすばやく簡単に追加します。
 * [セキュリティで保護されたストレージ](secure-storage.md?context=xamarin/xamarin-forms) – データを安全に格納します。
-* [Share](share.md?context=xamarin/xamarin-forms) – 他のアプリにテキストや Web サイトの URI を送信します。
+* [共有](share.md?context=xamarin/xamarin-forms) – 他のアプリにテキストや Web サイトの URI を送信します。
 * [SMS](sms.md?context=xamarin/xamarin-forms) – 送信用の SMS メッセージを作成します。
 * [音声合成](text-to-speech.md?context=xamarin/xamarin-forms) – デバイス上のテキストを音声化します。
 * [単位変換機能](unit-converters.md?context=xamarin/xamarin-forms) – 単位を変換するためのヘルパー メソッド。
