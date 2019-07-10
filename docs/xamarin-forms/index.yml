@@ -87,11 +87,11 @@ sections:
               href: ~/essentials/index.md?context=xamarin/xamarin-forms
             title: Xamarin.Essentials
           - href: ~/xamarin-forms/data-cloud/
-            html: ローカル データとリモートデータの格納と取得、その他のクラウド ベースのサービスについて説明します。
+            html: ローカル データとリモートデータの格納と取得、およびその他の Azure のクラウド ベース サービス。
             image:
               src: ~/media/icons/i_data-cloud.svg
               href: ~/xamarin-forms/data-cloud/
-            title: データとクラウド サービス
+            title: データと Azure Cloud Services
           - href: ~/xamarin-forms/deploy-test/
             html: アプリを構築して配置する手順と、事前にテストする場合のヒントについて説明します。
             image:

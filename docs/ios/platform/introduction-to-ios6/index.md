@@ -7,13 +7,18 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
+ms.openlocfilehash: be017103c5a3a2c890f49e4a510d20fcd0c03094
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67675099"
 ---
-
 # <a name="introduction-to-ios-6"></a>iOS 6 の概要
 
 _iOS 6 には、さまざまな Xamarin.iOS 6 を提供するには、アプリを開発するための新しいテクノロジが含まれていますC#開発者。_
 
-[ ![](images/ios6-large.jpg "IOS 6 ロゴ")](images/ios6-large.jpg#lightbox)
+[![](images/ios6-large.jpg "IOS 6 ロゴ")](images/ios6-large.jpg#lightbox)
 
 開発者で、iOS 6 と Xamarin.iOS 6 を含め、iOS アプリケーションを作成するには、そのターゲット iPhone 5 を最大限豊富な機能があるようになりました。
 このドキュメントでは、利用できるより魅力的な新しい機能とこのトピックでは、次の各記事へのリンクの一部を示します。 さらに重要なは、iOS 6 および iPhone 5 の新しい解像度に移行する開発者となるいくつかの変更に当てはめます。

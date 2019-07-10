@@ -54,7 +54,7 @@ sections:
         items:
           - title: Xamarin.Forms
             href: ~/xamarin-forms/index.md
-            html: <p><a href="~/get-started/quickstarts/index.md">開始するには</a><br /><a href="~/xamarin-forms/app-fundamentals/index.md">アプリの基礎</a><br /><a href="~/xamarin-forms/user-interface/index.md">ユーザー インターフェイス</a><br /><a href="~/xamarin-forms/platform/index.md">プラットフォーム機能</a><br /><a href="~/xamarin-forms/deploy-test/index.md">配置とテスト</a><br /><a href="~/xamarin-forms/xaml/index.md">XAML</a><br /><a href="~/xamarin-forms/data-cloud/index.md">データとクラウド サービス</a><br /><a href="~/xamarin-forms/internals/index.md">高度な概念と内部構造</a></p>
+            html: <p><a href="~/get-started/quickstarts/index.md">開始するには</a><br /><a href="~/xamarin-forms/app-fundamentals/index.md">アプリの基礎</a><br /><a href="~/xamarin-forms/user-interface/index.md">ユーザー インターフェイス</a><br /><a href="~/xamarin-forms/platform/index.md">プラットフォーム機能</a><br /><a href="~/xamarin-forms/deploy-test/index.md">配置とテスト</a><br /><a href="~/xamarin-forms/xaml/index.md">XAML</a><br /><a href="~/xamarin-forms/data-cloud/index.md">データと Azure Cloud Services</a><br /><a href="~/xamarin-forms/internals/index.md">高度な概念と内部構造</a></p>
           - title: Android
             href: ~/android/index.md
             html: <p><a href="~/android/get-started/index.md">開始するには</a><br /><a href="~/android/app-fundamentals/index.md">アプリの基礎</a><br /><a href="~/android/user-interface/index.md">ユーザー インターフェイス</a><br /><a href="~/android/platform/index.md">プラットフォーム機能</a><br /><a href="~/android/deploy-test/index.md">配置とテスト</a><br /><a href="~/android/data-cloud/index.md">データとクラウド サービス</a><br /><a href="~/android/internals/index.md">高度な概念と内部構造</a></p>

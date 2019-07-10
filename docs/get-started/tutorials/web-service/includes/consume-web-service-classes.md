@@ -1,16 +1,16 @@
 ---
-ms.openlocfilehash: fe38e13ff4b6c89905769d5ef0e5163a538e1e86
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c92a97b336e89214bbd95021ad8fb9a56f64cc8c
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61388890"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67659847"
 ---
 この演習では、`RestService` クラスを使用し、その後、[OpenWeatherMap](https://openweathermap.org/) Web API からデータを取得するためのユーザー インターフェイスを作成します。
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-1. **ソリューション エクスプローラー**の **[WebServiceTutorial]** プロジェクトで、**[MainPage.xaml]** をダブルクリックして開きます。 次に、**[MainPage.xaml]** のテンプレート コードをすべて削除し、次のコードに置き換えます。
+1. **ソリューション エクスプローラー**の **[WebServiceTutorial]** プロジェクトで、 **[MainPage.xaml]** をダブルクリックして開きます。 次に、 **[MainPage.xaml]** のテンプレート コードをすべて削除し、次のコードに置き換えます。
 
     ```xaml
     <?xml version="1.0" encoding="utf-8"?>
@@ -71,7 +71,7 @@ ms.locfileid: "61388890"
 
     また、[`Entry`](xref:Xamarin.Forms.Entry) には `x:Name` 属性で指定された名前があります。 これにより、分離コード ファイルは、割り当てられた名前を使用してオブジェクトにアクセスできます。
 
-1. **ソリューション エクスプローラー**の **[WebServiceTutorial]** プロジェクトで **[MainPage.xaml]** を展開し、**[MainPage.xaml.cs]** をダブルクリックして開きます。 次に、**[MainPage.xaml.cs]** のテンプレート コードをすべて削除し、次のコードに置き換えます。
+1. **ソリューション エクスプローラー**の **[WebServiceTutorial]** プロジェクトで **[MainPage.xaml]** を展開し、 **[MainPage.xaml.cs]** をダブルクリックして開きます。 次に、 **[MainPage.xaml.cs]** のテンプレート コードをすべて削除し、次のコードに置き換えます。
 
     ```csharp
     using System;
@@ -121,7 +121,7 @@ ms.locfileid: "61388890"
     > [!IMPORTANT]
     > [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) プロパティはビジュアル ツリーを介して継承されます。 したがって、それが [`ContentPage`](xref:Xamarin.Forms.ContentPage) オブジェクトに設定されているため、`ContentPage` の子オブジェクトは [`Label`](xref:Xamarin.Forms.Label) インスタンスを含むその値を継承します。
 
-1. Visual Studio ツール バーで、**[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択したリモート iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。 [`Button`](xref:Xamarin.Forms.Button) をタップして、Seattle の現在の気象データを取得します。
+1. Visual Studio ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択したリモート iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。 [`Button`](xref:Xamarin.Forms.Button) をタップして、Seattle の現在の気象データを取得します。
 
     [![iOS および Android での、Seattle の気象データのスクリーンショット](../images/consume-web-service.png "Seattle の気象データ")](../images/consume-web-service-large.png#lightbox "Seattle の気象データ")
 
@@ -130,7 +130,7 @@ ms.locfileid: "61388890"
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-1. **Solution Pad** の **[WebServiceTutorial]** プロジェクトで、**[MainPage.xaml]** をダブルクリックして開きます。 次に、**[MainPage.xaml]** のテンプレート コードをすべて削除し、次のコードに置き換えます。
+1. **Solution Pad** の **[WebServiceTutorial]** プロジェクトで、 **[MainPage.xaml]** をダブルクリックして開きます。 次に、 **[MainPage.xaml]** のテンプレート コードをすべて削除し、次のコードに置き換えます。
 
     ```xaml
     <?xml version="1.0" encoding="utf-8"?>
@@ -191,9 +191,9 @@ ms.locfileid: "61388890"
 
     また、[`Entry`](xref:Xamarin.Forms.Entry) には `x:Name` 属性で指定された名前があります。 これにより、分離コード ファイルは、割り当てられた名前を使用してオブジェクトにアクセスできます。
 
-    Xamarin.Forms での REST ベース Web サービスの使用について詳しくは、[RESTful Web サービスの使用 (ガイド)](~/xamarin-forms/data-cloud/consuming/rest.md) に関するページを参照してください。
+    Xamarin.Forms での REST ベース Web サービスの使用について詳しくは、[RESTful Web サービスの使用 (ガイド)](~/xamarin-forms/data-cloud/web-services/rest.md) に関するページを参照してください。
 
-1. **Solution Pad** の **[WebServiceTutorial]** プロジェクトで **[MainPage.xaml]** を展開し、**[MainPage.xaml.cs]** をダブルクリックして開きます。 次に、**[MainPage.xaml.cs]** のテンプレート コードをすべて削除し、次のコードに置き換えます。
+1. **Solution Pad** の **[WebServiceTutorial]** プロジェクトで **[MainPage.xaml]** を展開し、 **[MainPage.xaml.cs]** をダブルクリックして開きます。 次に、 **[MainPage.xaml.cs]** のテンプレート コードをすべて削除し、次のコードに置き換えます。
 
     ```csharp
     using System;
@@ -243,11 +243,11 @@ ms.locfileid: "61388890"
     > [!IMPORTANT]
     > [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) プロパティはビジュアル ツリーを介して継承されます。 したがって、それが [`ContentPage`](xref:Xamarin.Forms.ContentPage) オブジェクトに設定されているため、`ContentPage` の子オブジェクトは [`Label`](xref:Xamarin.Forms.Label) インスタンスを含むその値を継承します。
 
-1. Visual Studio for Mac ツール バーで、**[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。 [`Button`](xref:Xamarin.Forms.Button) をタップして、Seattle の現在の気象データを取得します。
+1. Visual Studio for Mac ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。 [`Button`](xref:Xamarin.Forms.Button) をタップして、Seattle の現在の気象データを取得します。
 
     [![iOS および Android での、Seattle の気象データのスクリーンショット](../images/consume-web-service.png "Seattle の気象データ")](../images/consume-web-service-large.png#lightbox "Seattle の気象データ")
 
     > [!IMPORTANT]
     > 個人用 OpenWeatherMap API キーは、`Constants` クラスの `OpenWeatherMapAPIKey` 定数値として設定する必要があります。
 
-    Xamarin.Forms での REST ベース Web サービスの使用について詳しくは、[RESTful Web サービスの使用 (ガイド)](~/xamarin-forms/data-cloud/consuming/rest.md) に関するページを参照してください。
+    Xamarin.Forms での REST ベース Web サービスの使用について詳しくは、[RESTful Web サービスの使用 (ガイド)](~/xamarin-forms/data-cloud/web-services/rest.md) に関するページを参照してください。
