@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 9425b26b5cc8fcd9b8a80df422d932c96d52889b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 5417050daa84197dd7dc2a270ae054a3a73fd3bc
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61037499"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67675074"
 ---
 # <a name="xamarinios-api-design"></a>Xamarin.iOS API の設計
 
@@ -113,7 +113,7 @@ Api のバインドの詳細については、次を参照してください。�
 
 Mono は、オブジェクトのすべてのガベージ コレクションを提供中に、`Foundation.NSObject`実装、 [System.IDisposable](xref:System.IDisposable)インターフェイス。 これは、ガベージ コレクターでは、開始を待機することがなく任意指定 NSObject のリソースを明示的に解放できることを意味します。 これは、機能は、負荷の高い NSObjects、大量のデータ ブロックへのポインターを保持する可能性があります UIImages などを使用しているときに重要です。
 
-を、型が確定的なファイナライズを実行する必要がある場合は、オーバーライド、 [NSObject.Dispose(bool) メソッド](xref:Foundation.NSObject.Dispose(System.Boolean))が Dispose にパラメーターが"bool disposing"、設定が true に場合ため、Dispose メソッドが呼び出されることと、ユーザーオブジェクトで明示的に呼び出す Dispose ()。 値が false の場合は、Dispose (bool disposing) メソッドがファイナライザーから、ファイナライザー スレッドで呼び出されることを意味します。 []()
+を、型が確定的なファイナライズを実行する必要がある場合は、オーバーライド、 [NSObject.Dispose(bool) メソッド](xref:Foundation.NSObject.Dispose(System.Boolean))が Dispose にパラメーターが"bool disposing"、設定が true に場合ため、Dispose メソッドが呼び出されることと、ユーザーオブジェクトで明示的に呼び出す Dispose ()。 値が false の場合は、Dispose (bool disposing) メソッドがファイナライザーから、ファイナライザー スレッドで呼び出されることを意味します。
 
 
 ##### <a name="categories"></a>カテゴリ

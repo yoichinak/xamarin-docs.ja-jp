@@ -6,16 +6,16 @@ ms.assetid: 7b9aa8d9-c181-4c33-8ab0-2f56e4dbfc04
 author: asb3993
 ms.author: amburns
 ms.date: 10/09/2017
-ms.openlocfilehash: 25eec247a0cb664897541a0e6e818a77018fda43
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: dd211fecad0bff58cb9ff6c6a99ae6a15c60eb7b
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61187786"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67674982"
 ---
 # <a name="microsoft-azure-and-xamarin"></a>Microsoft Azure と Xamarin
 
-[ ![](images/evolve-mikej-azure-sml.png "Azure App Services の機能はクラウド データ ストレージおよびクロス プラットフォームのプッシュ通知を含む、Xamarin アプリに簡単に追加")](https://evolve.xamarin.com/session/56ec886fde91c6253c277bc6)
+[![](images/evolve-mikej-azure-sml.png "Azure App Services の機能はクラウド データ ストレージおよびクロス プラットフォームのプッシュ通知を含む、Xamarin アプリに簡単に追加")](https://evolve.xamarin.com/session/56ec886fde91c6253c277bc6)
 
 [Evolve 2016:Azure と Xamarin を使用して接続されているアプリの開発](https://evolve.xamarin.com/session/56ec886fde91c6253c277bc6)
 
@@ -28,7 +28,7 @@ ms.locfileid: "61187786"
 コレクションがある[Azure Mobile Apps ドキュメント](~/cross-platform/data-cloud/mobile-apps.md)を実装するプロセスをガイドする、 [Azure Mobile クライアント](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/)します。
 Xamarin 用の Azure メッセージングの NuGet パッケージにもは[iOS](https://www.nuget.org/packages/Xamarin.Azure.NotificationHubs.iOS/)と[Android](https://www.nuget.org/packages/Xamarin.Azure.NotificationHubs.Android/)プラットフォーム間でプッシュ通知を実装するのに役立つ。
 
-アプリの構成、 [Azure App Service ポータル](https://portal.azure.com/)Mobile Apps、Web Api、ストレージ、およびその他にアクセスします。 について[アプリ サービスのさまざまな方法](http://azure.microsoft.com/updates/whats-new-with-azure-app-service/)で見ると[Microsoft からこれらのビデオ](http://azure.microsoft.com/campaigns/azure-march-announcement/)します。
+アプリの構成、 [Azure App Service ポータル](https://portal.azure.com/)Mobile Apps、Web Api、ストレージ、およびその他にアクセスします。 について[アプリ サービスのさまざまな方法](https://azure.microsoft.com/updates/whats-new-with-azure-app-service/)で見ると[Microsoft からこれらのビデオ](https://azure.microsoft.com/campaigns/azure-march-announcement/)します。
 
 ## <a name="active-directory-authentication"></a>Active Directory 認証
 
@@ -61,5 +61,5 @@ Microsoft の Web API は、Xamarin アプリケーションで簡単に使用�
 ## <a name="related-links"></a>関連リンク
 
 - [Azure の PCL の例 (によって@paulbatum) (サンプル)](https://github.com/paulbatum/mobile-services-xamarin-pcl)
-- [Azure portal](http://azure.microsoft.com/)
+- [Azure portal](https://azure.microsoft.com/)
 - [Xamarin (NuGet) のモバイル クライアント](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/)

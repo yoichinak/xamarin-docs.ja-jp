@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/09/2018
-ms.openlocfilehash: d42cec1ee0939bead9ede83a042f5b6cbb5298cd
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 518c13aea431a8e973579768cc70b8281a31acac
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61153607"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67674731"
 ---
 # <a name="edit-text"></a>テキストの編集
 
@@ -64,7 +64,7 @@ using Android.Views;
 
 [![EditText にテキストを入力の例](edit-text-images/edit-text-sml.png)](edit-text-images/edit-text.png#lightbox)
 
-*このページの部分が作成された作業に基づいた変更と* [ *Android オープン ソース プロジェクトで共有*](http://code.google.com/policies.html) *で説明されている条項にしたがって使用* [ *2.5 の creative Commons Attribution License* ](http://creativecommons.org/licenses/by/2.5/) *します。このチュートリアルがに基づいて、* [ *フォーム Stuff の Android チュートリアル*](https://developer.android.com/resources/tutorials/views/hello-formstuff.html) *します。*
+*このページの部分が作成された作業に基づいた変更と* [ *Android オープン ソース プロジェクトで共有*](http://code.google.com/policies.html) *で説明されている条項にしたがって使用* [ *2.5 の creative Commons Attribution License* ](http://creativecommons.org/licenses/by/2.5/) *します。このチュートリアルがに基づいて、* [*フォーム Stuff の Android チュートリアル*](https://developer.android.com/resources/tutorials/views/hello-formstuff.html) *します。*
 
 
 ## <a name="related-links"></a>関連リンク

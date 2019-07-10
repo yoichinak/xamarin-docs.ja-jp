@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: e762a286069d5ef1db90f3c45808eee0a7a04a7f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c10935f4623fd4455ec5cf8a80c6473c0f69d9b9
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60954286"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67674682"
 ---
 # <a name="xamarinandroid-api-design-principles"></a>Xamarin.Android の API の設計原則
 
@@ -193,7 +193,7 @@ Java の静的な入れ子になったクラスは、C# の入れ子になった
 
 1. コンテナーの型に暗黙の参照は、コンス トラクター パラメーターとして明示的に指定する必要があります。
 
-1. 内側のクラスと内部クラスから継承する場合*する必要があります*型の中で入れ子にする基本の内部クラスを含む型から継承して、派生型は、C# と同じ型のコンス トラクターを指定する必要がありますの種類を格納しています。
+1. 内側のクラスと内部クラスから継承する場合*する必要があります*型の中で入れ子にする基本の内部クラスを含む型から継承して、派生型は、C# と同じ型のコンストラクターを指定する必要がありますの種類を格納しています。
 
 
 たとえば、 [Android.Service.Wallpaper.WallpaperService.Engine](https://developer.xamarin.com/api/type/Android.Service.Wallpaper.WallpaperService+Engine/)内部クラス。 内部のクラスであるため、 [WallpaperService.Engine() コンス トラクター](https://developer.xamarin.com/api/constructor/Android.Service.Wallpaper.WallpaperService+Engine.Engine/p/Android.Service.Wallpaper.WallpaperService/)への参照を受け取り、 [WallpaperService](https://developer.xamarin.com/api/type/Android.Service.Wallpaper.WallpaperService/)インスタンス (比較して、java [WallpaperService.Engine () コンス トラクター](https://developer.xamarin.com/api/type/Android.Service.Wallpaper.WallpaperService+Engine/)するパラメーターを受け取らない)。
@@ -240,7 +240,7 @@ Java インターフェイスは、2 つの型に変換されます。
 
 たとえば、 [android.os.Parcelable](https://developer.xamarin.com/api/type/Android.OS.Parcelable/)インターフェイス。
 *Parcelable*インターフェイスには、メソッド、入れ子にされた型、および定数が含まれています。 *Parcelable*インターフェイス メソッドに格納され、 [Android.OS.IParcelable](https://developer.xamarin.com/api/type/Android.OS.IParcelable/)インターフェイス。
-*Parcelable*インターフェイス定数がまとめて、 [Android.OS.ParcelableConsts](https://developer.xamarin.com/api/type/Android.OS.ParcelableConsts/)型。 入れ子になった[android.os.Parcelable.ClassLoaderCreator <t> </t> ](https://developer.android.com/reference/android/os/Parcelable.ClassLoaderCreator.html)と[android.os.Parcelable.Creator <t> </t> ](https://developer.android.com/reference/android/os/Parcelable.Creator.html)型では現在ありませんは、ジェネリックのサポートの制限のためのバインドとして記述すると、それらがサポートされている場合、 *Android.OS.IParcelableClassLoaderCreator*と*Android.OS.IParcelableCreator*インターフェイス。 たとえば、入れ子になった[android.os.IBinder.DeathRecpient](https://developer.android.com/reference/android/os/IBinder.DeathRecipient.html)インターフェイスとしてバインドされている、 [Android.OS.IBinderDeathRecipient](https://developer.xamarin.com/api/type/Android.OS.IBinderDeathRecipient/)インターフェイス。
+*Parcelable*インターフェイス定数がまとめて、 [Android.OS.ParcelableConsts](https://developer.xamarin.com/api/type/Android.OS.ParcelableConsts/)型。 入れ子になった[android.os.Parcelable.ClassLoaderCreator <t> </t> ](https://developer.android.com/reference/android/os/Parcelable.ClassLoaderCreator.html)と[android.os.Parcelable.Creator <t> </t> ](https://developer.android.com/reference/android/os/Parcelable.Creator.html)型では現在ありませんは、ジェネリックのサポートの制限のためのバインドとして記述すると、それらがサポートされている場合、 *Android.OS.IParcelableClassLoaderCreator*と*Android.OS.IParcelableCreator*インターフェイス。 たとえば、入れ子になった[android.os.IBinder.DeathRecipient](https://developer.android.com/reference/android/os/IBinder.DeathRecipient.html)インターフェイスとしてバインドされている、 [Android.OS.IBinderDeathRecipient](https://developer.xamarin.com/api/type/Android.OS.IBinderDeathRecipient/)インターフェイス。
 
 
 > [!NOTE]
@@ -259,8 +259,8 @@ Java インターフェイスは、2 つの型に変換されます。
 
 *Android.os.Parcelable*インターフェイス、つまりがここであること、 [ *Android.OS.Parcelable* ](https://developer.xamarin.com/api/type/Android.OS.Parcelable/)定数を格納する型。 たとえば、 [Parcelable.CONTENTS_FILE_DESCRIPTOR](https://developer.android.com/reference/android/os/Parcelable.html#CONTENTS_FILE_DESCRIPTOR)定数としてバインドされる、 [ *Parcelable.ContentsFileDescriptor* ](https://developer.xamarin.com/api/field/Android.OS.Parcelable.ContentsFileDescriptor/) としての代わりに定数*ParcelableConsts.ContentsFileDescriptor*定数。
 
-定数を格納している他のインターフェイスを実装しているまだは定数を格納しているインターフェイスでは、すべての定数の和集合が生成されるようになりました。 たとえば、 [android.provider.MediaStore.Video.VideoColumns](https://developer.android.com/reference/android/provider/MediaStore.Video.VideoColumns.html)インターフェイスの実装、 [android.provider.MediaStore.MediaColumns](https://developer.xamarin.com/api/type/Android.Provider.MediaStore+MediaColumns/)インターフェイス。 1.9 より前、ただし、 [Android.Provider.MediaStore.Video.VideoColumnsConsts](https://developer.xamarin.com/api/type/Android.Provider.MediaStore+Video+VideoColumnsConsts/)型で宣言された定数にアクセスする方法を持たない[Android.Provider.MediaStore.MediaColumnsConsts](https://developer.xamarin.com/api/type/Android.Provider.MediaStore+MediaColumnsConsts/)します。
-その結果、Java 式*MediaStore.Video.VideoColumns.TITLE* C# の式にバインドする必要がある*MediaStore.Video.MediaColumnsConsts.Title*は読まず見つけにくい多数の Java のドキュメント。 同等の C# 式がある、1.9 で[ *MediaStore.Video.VideoColumns.Title*](https://developer.xamarin.com/api/field/Android.Provider.MediaStore+Video+VideoColumns.Title/)します。
+定数を格納している他のインターフェイスを実装しているまだは定数を格納しているインターフェイスでは、すべての定数の和集合が生成されるようになりました。 たとえば、 [android.provider.MediaStore.Video.VideoColumns](https://developer.android.com/reference/android/provider/MediaStore.Video.VideoColumns.html)インターフェイスの実装、 [android.provider.MediaStore.MediaColumns](https://developer.xamarin.com/api/type/Android.Provider.MediaStore+MediaColumns/)インターフェイス。 1\.9 より前、ただし、 [Android.Provider.MediaStore.Video.VideoColumnsConsts](https://developer.xamarin.com/api/type/Android.Provider.MediaStore+Video+VideoColumnsConsts/)型で宣言された定数にアクセスする方法を持たない[Android.Provider.MediaStore.MediaColumnsConsts](https://developer.xamarin.com/api/type/Android.Provider.MediaStore+MediaColumnsConsts/)します。
+その結果、Java 式*MediaStore.Video.VideoColumns.TITLE* C# の式にバインドする必要がある*MediaStore.Video.MediaColumnsConsts.Title*は読まず見つけにくい多数の Java のドキュメント。 1\.9 と同等のC#式[ *MediaStore.Video.VideoColumns.Title*](https://developer.xamarin.com/api/field/Android.Provider.MediaStore+Video+VideoColumns.Title/)します。
 
 さらに、検討してください、 [android.os.Bundle](https://developer.xamarin.com/api/type/Android.OS.Bundle/) 、Java の実装の種類*Parcelable*インターフェイス。 そのインターフェイスのすべての定数は例:「から」バンドルの種類、アクセスできる、インターフェイスを実装しているため*Bundle.CONTENTS_FILE_DESCRIPTOR* Java 式を完全に有効です。
 以前は、この式に移植するC#種類に実装されているすべてのインターフェイスを確認する必要があります、 *CONTENTS_FILE_DESCRIPTOR*から。 Xamarin.Android 1.9 以降、定数が含まれている Java インターフェイスを実装するクラスが入れ子になった*InterfaceConsts*型、継承されたインターフェイスのすべての定数が含まれます。 変換することにより、この*Bundle.CONTENTS_FILE_DESCRIPTOR*に[ *Bundle.InterfaceConsts.ContentsFileDescriptor*](https://developer.xamarin.com/api/field/Android.OS.Bundle+InterfaceConsts.ContentsFileDescriptor/)します。

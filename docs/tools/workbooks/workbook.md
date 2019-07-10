@@ -6,12 +6,12 @@ ms.assetid: B79E5DE9-5389-4691-9AA3-FF4336CE294E
 author: lobrien
 ms.author: laobri
 ms.date: 03/30/2017
-ms.openlocfilehash: 71f46535ffd0a99ad78acb8f0e3bbc5870abf33e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a900d427ad6ac2a0e211ef4f00d2f014b13e5d1c
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61197946"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67674418"
 ---
 # <a name="interactive-workbooks"></a>対話型 Workbooks
 
@@ -27,7 +27,7 @@ Workbooks アプリが既に実行されている場合を参照して、新し�
 
 コード編集ウィンドウでは、コード補完、構文の色分け表示、インラインのライブの診断、および複数行ステートメントのサポートを提供します。
 
-[ ![](workbook-images/inspector-0.6.0-repl-small.png "コード編集ウィンドウでは、コード補完、構文の色分け表示、インラインのライブの診断、および複数行ステートメントのサポートを提供します。")](workbook-images/inspector-0.6.0-repl.png#lightbox)
+[![](workbook-images/inspector-0.6.0-repl-small.png "コード編集ウィンドウでは、コード補完、構文の色分け表示、インラインのライブの診断、および複数行ステートメントのサポートを提供します。")](workbook-images/inspector-0.6.0-repl.png#lightbox)
 
 Xamarin Workbooks に保存されます、`.workbook`ファイルで、上部にあるいくつかのメタデータを持つ CommonMark ファイル (を参照してください[ブック ファイルの種類](#workbooks-files-types)ブックを保存する方法の詳細については)。
 
@@ -63,7 +63,7 @@ Xamarin Workbooks に保存されます、`.workbook`ファイルで、上部に
 
 なお、CommonMark 拡張機能のために使用するブック ファイル内の YAML メタデータを有効にする`---`目的のために予約されています。 作成する場合[歳入区切り](http://spec.commonmark.org/0.27/#thematic-break)したり、テキストに使用する必要があります`***`または`___`代わりにします。 ブック 1.2 では保存中にバグが原因前は、このような区切りを避ける必要があります。
 
-### <a name="improvements-in-workbooks-13"></a>1.3 のブックでの機能強化
+### <a name="improvements-in-workbooks-13"></a>1\.3 のブックでの機能強化
 
 プレゼンテーションを向上させるために少しマークダウン ブロック引用構文も追加しました。 絵文字を追加すると、ブロック引用の最初の文字として、見積もりの背景色を与えることができます。
 

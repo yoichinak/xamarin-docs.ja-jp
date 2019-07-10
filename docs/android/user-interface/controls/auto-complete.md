@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/31/2018
-ms.openlocfilehash: cf2221380e5ddbd8278cc2d387c6eb185d990c1a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: bcbab6deddf5e1a4782cd382623f22281a0823e6
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61036545"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67674851"
 ---
 # <a name="auto-complete"></a>オートコンプリート
 
@@ -197,13 +197,13 @@ var adapter = new ArrayAdapter<String> (this, Resource.layout.list_item, countri
 ```
 
 
-### <a name="references"></a>参照
+### <a name="references"></a>関連項目
 
 -   [AutoCompleteTextView レシピ](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/autocomplete_text_view/add_an_autocomplete_text_input)&ndash;用の Xamarin.Android サンプル プロジェクト、`AutoCompleteTextView`します。
 -   [`ArrayAdapter`](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter/)
 -   [`AutoCompleteTextView`](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/)
 
 *このページの部分が作成および Android のオープン ソース プロジェクトで共有し、の条項に従って使用作業に基づいた変更、* 
- [ *Creative Commons 2.5 Attribution License*](http://creativecommons.org/licenses/by/2.5/) *.このチュートリアルがに基づいて、* 
- [ *Android 自動の完全なチュートリアル*](https://developer.android.com/resources/tutorials/views/hello-autocomplete.html)
+[*Creative Commons 2.5 Attribution License*](http://creativecommons.org/licenses/by/2.5/) *.このチュートリアルがに基づいて、* 
+[*Android 自動の完全なチュートリアル*](https://developer.android.com/resources/tutorials/views/hello-autocomplete.html)
 *します。*

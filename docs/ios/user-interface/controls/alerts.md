@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 16d3dfaa0169e3a02fcdee0318dc150994c7e59b
-ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
+ms.openlocfilehash: 576de9a46fc89fe01c564c05568d4331a32dbd96
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66827878"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67674400"
 ---
 # <a name="displaying-alerts-in-xamarinios"></a>Xamarin.iOS でのアラートの表示
 
@@ -30,7 +30,7 @@ UIAlertController とは異なり、このクラスに置き換え、UIView の�
 アラートのコント ローラーの作成時に実行するために必要な 3 つの手順があります。
 
 - 作成し、アラートを a: 構成
-    * タイトル
+    * title
     * message
     * preferredStyle
     
@@ -60,7 +60,7 @@ okayButton.TouchUpInside += (sender, e) => {
 
 複数のオプションを使用して通知を表示する同様の方法で行われますが、2 つのアクションを追加します。 たとえば、次のスクリーン ショットでは、2 つのボタンでアラートが表示されます。
 
- ![ 2 つのボタンをアラートします。](alerts-images/alert2.png)
+ ![2 つのボタンをアラートします。](alerts-images/alert2.png)
 
 ```csharp
 okayCancelButton.TouchUpInside += ((sender, e) => {
