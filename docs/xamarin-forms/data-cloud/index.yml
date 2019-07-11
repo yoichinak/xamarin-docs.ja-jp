@@ -86,7 +86,7 @@ sections:
               href: azure-cognitive-services/index.md
             title: はじめに
           - href: azure-cognitive-services/speech-recognition.md
-            html: Xamarin.Forms アプリケーションで Microsoft 音声認識 REAT API を使用して音声をテキストに変換する方法について説明します。
+            html: Xamarin.Forms アプリケーションで Microsoft 音声認識 REST API を使用して音声をテキストに変換する方法について説明します。
             image:
               src: 'https://docs.microsoft.com/media/common/i_blog.svg'
               href: azure-cognitive-services/speech-recognition.md
