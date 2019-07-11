@@ -28,7 +28,7 @@ ms.locfileid: "52899006"
 
 ## <a name="running-code-on-the-main-thread"></a>メイン スレッドでのコードの実行
 
-自分のクラスの Xamarin.Essentials に参照を追加します。
+自分のクラスに Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
