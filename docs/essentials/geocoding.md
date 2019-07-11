@@ -45,7 +45,7 @@ Platform.MapServiceToken = "YOUR-KEY-HERE";
 
 ## <a name="using-geocoding"></a>Geocoding の使用
 
-自分のクラスの Xamarin.Essentials に参照を追加します。
+自分のクラスに Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
