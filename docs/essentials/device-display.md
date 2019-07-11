@@ -22,7 +22,7 @@ ms.locfileid: "55986238"
 
 ## <a name="using-devicedisplay"></a>DeviceDisplay の使用
 
-自分のクラスの Xamarin.Essentials に参照を追加します。
+自分のクラスに Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
