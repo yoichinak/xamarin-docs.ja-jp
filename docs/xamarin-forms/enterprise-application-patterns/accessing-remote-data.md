@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 3a46b939fa87cd6535c9f86c46981c098542e7c9
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a4c58139b0ddbaaedf5769eeac6585bac4c013e4
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61277975"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832107"
 ---
 # <a name="accessing-remote-data"></a>リモート データへのアクセス
 
@@ -154,7 +154,7 @@ JSON のコレクションが書式設定し、このメソッドは、EntityFra
 
 #### <a name="making-a-post-request"></a>POST 要求を行う
 
-`BasketService`バスケット マイクロ サービスでの更新プロセスをデータの取得を管理するクラスを使用します。 `RegisterDependencies`メソッドで、`ViewModelLocator`クラス、`BasketService`に対して型マッピングとクラスが登録されて、 `IBasketService` Autofac 依存関係の注入コンテナーを持つ型。 その後のインスタンス、`BasketViewModel`クラスを作成すると、そのコンス トラクターを受け入れる、`IBasketService`型のインスタンスを返す、Autofac を解決する、`BasketService `クラス。 依存関係の挿入の詳細については、次を参照してください。[依存関係の挿入の概要](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#introduction_to_dependency_injection)します。
+`BasketService`バスケット マイクロ サービスでの更新プロセスをデータの取得を管理するクラスを使用します。 `RegisterDependencies`メソッドで、`ViewModelLocator`クラス、`BasketService`に対して型マッピングとクラスが登録されて、 `IBasketService` Autofac 依存関係の注入コンテナーを持つ型。 その後のインスタンス、`BasketViewModel`クラスを作成すると、そのコンス トラクターを受け入れる、`IBasketService`型のインスタンスを返す、Autofac を解決する、`BasketService`クラス。 依存関係の挿入の詳細については、次を参照してください。[依存関係の挿入の概要](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#introduction_to_dependency_injection)します。
 
 図 10-2 で表示されるバスケット データを送信するクラスの相互作用を示しています、 `BasketView`、バスケット マイクロ サービスにします。
 

@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 60b54ffdce5f6bda2324c08bd3159eefeb5bc7f8
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6830df267aa0b9c4f12fbd53520206ea94fc8a38
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61270251"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831890"
 ---
 # <a name="troubleshooting-tvos-apps-built-with-xamarin"></a>Xamarin でビルドされた tvOS アプリのトラブルシューティング
 
@@ -80,7 +80,7 @@ Section
 
 確認する必要がありますも静的、サード パーティ (`.a`) tvOS ライブラリ (iOS ライブラリではない) に対してビルドされたライブラリを使用して、bitcode 情報も含まれますが、します。
 
-アプリまたは有効なビットコードが含まれているライブラリ、 `size` 1 よりも大きくなります。 場所ライブラリできます bitcode マーカーをまだ有効なビットコードが含まれていない場合があります。 例:
+アプリまたは有効なビットコードが含まれているライブラリ、 `size` 1 よりも大きくなります。 場所ライブラリできます bitcode マーカーをまだ有効なビットコードが含まれていない場合があります。 例えば:
 
 **無効な Bitcode**
 
@@ -184,7 +184,7 @@ Xamarin.tvOS プロジェクトにポータブル クラス ライブラリ (PCL
 
 _互換性のないターゲット フレームワーク: です。NetPortable、バージョン = v4.5、プロファイル Profile78 を =_
 
-この問題を解決すると呼ばれる XML ファイルを追加` Xamarin.TVOS.xml`次の内容。
+この問題を解決すると呼ばれる XML ファイルを追加`Xamarin.TVOS.xml`次の内容。
 
 ```xml
 <Framework Identifier="Xamarin.TVOS" MinimumVersion="1.0" Profile="*" DisplayName="Xamarin.TVOS"/>

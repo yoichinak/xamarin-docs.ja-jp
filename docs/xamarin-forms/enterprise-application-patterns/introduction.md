@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 9deb685c92092ceb0e1c775a1e53ac1bce5a4a57
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4fbb4047b95fd70f829cd79e4ea26b2958273297
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61299993"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831174"
 ---
 # <a name="introduction-to-enterprise-app-development"></a>エンタープライズ アプリの開発の概要
 
@@ -72,7 +72,7 @@ ms.locfileid: "61299993"
 -   Angular 2 と Typescript を使用して、シングル ページ アプリケーション (SPA) 開発します。 各操作で、サーバーへのラウンド トリップを実行する web アプリケーションには、このアプローチを回避できます。
 -   IOS、Android、およびユニバーサル Windows プラットフォーム (UWP) をサポートする Xamarin.Forms を使用してモバイル アプリを開発しました。
 
-Web アプリケーションについては、次を参照してください。 [Architecting と ASP.NET Core と Microsoft Azure で最新の Web アプリケーションの開発](http://aka.ms/WebAppEbook)します。
+Web アプリケーションについては、次を参照してください。 [Architecting と ASP.NET Core と Microsoft Azure で最新の Web アプリケーションの開発](https://aka.ms/WebAppEbook)します。
 
 サンプル アプリケーションには、次のバックエンド サービスが含まれます。
 
@@ -99,10 +99,10 @@ EShopOnContainers のモバイル アプリでは、Xamarin.Forms の次の機�
 
 -   XAML
 -   コントロール
--   バインディング
+-   バインド
 -   コンバーター
 -   スタイル
--   Animations
+-   アニメーション
 -   コマンド
 -   ビヘイビアー
 -   トリガー
@@ -138,7 +138,7 @@ EShopOnContainers.Core PCL プロジェクトには、次のフォルダーが�
 
 |フォルダー|説明|
 |--- |--- |
-|Animations|XAML で使用するアニメーションを有効にするクラスが含まれています。|
+|アニメーション|XAML で使用するアニメーションを有効にするクラスが含まれています。|
 |ビヘイビアー|クラスを表示するのには、動作が含まれています。|
 |コントロール|アプリで使用されるカスタム コントロールが含まれています。|
 |コンバーター|バインディングにカスタム ロジックを適用する値コンバーターが含まれています。|
@@ -147,7 +147,7 @@ EShopOnContainers.Core PCL プロジェクトには、次のフォルダーが�
 |拡張機能|拡張メソッドを格納、`VisualElement`と`IEnumerable`クラス。|
 |ヘルパー|アプリのヘルパー クラスが含まれています。|
 |モデル|アプリのモデル クラスが含まれています。|
-|プロパティ|含む`AssemblyInfo.cs`、.NET アセンブリのメタデータ ファイル。|
+|Properties|含む`AssemblyInfo.cs`、.NET アセンブリのメタデータ ファイル。|
 |Services|アプリに提供されるサービスを実装するインターフェイスとクラスが含まれています。|
 |トリガー|含まれています、`BeginAnimation`トリガーで、XAML でアニメーションを起動するために使用します。|
 |検証|データ入力の検証に関連するクラスが含まれています。|

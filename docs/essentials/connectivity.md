@@ -41,7 +41,7 @@ ms.locfileid: "54114967"
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 ```
 
-または、Android プロジェクトを右クリックし、プロジェクトのプロパティを開きます。 **[Android マニフェスト]** の下で **[必要なアクセス許可:]** 領域を探し、**[Access Network State]\(ネットワーク アクセスの状態\)** アクセス許可を確認します。 これにより、**AndroidManifest.xml** ファイルが自動的に更新されます。
+または、Android プロジェクトを右クリックし、プロジェクトのプロパティを開きます。 **[Android マニフェスト]** の下で **[必要なアクセス許可:]** 領域を探し、 **[Access Network State]\(ネットワーク アクセスの状態\)** アクセス許可を確認します。 これにより、**AndroidManifest.xml** ファイルが自動的に更新されます。
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 

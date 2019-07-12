@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 4ee07e4b47ed9e1bdca0efc814ad44e513f68e80
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a9cf3dab9c112bf7ff99cbc0dd9541c3c1e35142
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61076618"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830136"
 ---
 # <a name="search-with-web-markup-in-xamarinios"></a>Xamarin.iOS での Web マークアップの検索
 
@@ -63,7 +63,7 @@ Apple のアプリの web サイトを検索する最も簡単な方法がいず
 
 ## <a name="using-twitter-cards"></a>Twitter のカードを使用します。
 
-Twitter のカードを使用して、アプリのコンテンツへのディープ リンクを行うことができます。 例:
+Twitter のカードを使用して、アプリのコンテンツへのディープ リンクを行うことができます。 例えば:
 
 ```xml
 <meta name="twitter:app:name:iphone" content="AppName">
@@ -75,7 +75,7 @@ Twitter のカードを使用して、アプリのコンテンツへのディー
 
 ## <a name="using-facebook-app-links"></a>Facebook アプリへのリンクを使用します。
 
-Facebook アプリのリンクを使用して、アプリのコンテンツへのディープ リンクを行うことができます。 例:
+Facebook アプリのリンクを使用して、アプリのコンテンツへのディープ リンクを行うことができます。 例えば:
 
 ```xml
 <meta property="al:ios:app_name" content="AppName">
@@ -87,7 +87,7 @@ Facebook アプリのリンクを使用して、アプリのコンテンツへ�
 
 ## <a name="opening-deep-links"></a>ディープ リンクを開く
 
-開くと、Xamarin.iOS アプリでのディープ リンクの表示のサポートを追加する必要があります。 編集、 **AppDelegate.cs**オーバーライド ファイルを開き、`OpenURL`カスタムの URL 形式を処理するメソッド。 例:
+開くと、Xamarin.iOS アプリでのディープ リンクの表示のサポートを追加する必要があります。 編集、 **AppDelegate.cs**オーバーライド ファイルを開き、`OpenURL`カスタムの URL 形式を処理するメソッド。 例えば:
 
 ```csharp
 public override bool OpenUrl (UIApplication application, NSUrl url, string sourceApplication, NSObject annotation)
@@ -158,14 +158,14 @@ Schema.org の %ld 個の JSON 形式では、同じ情報を表示すること�
 
 Apple は、現在 schema.org 次のスキーマの種類をサポートします。
 
- - AggregateRating
- - ImageObject
- - InteractionCount
- - 提供しています
- - 組織
- - PriceRange
- - レシピ
- - SearchAction
+- AggregateRating
+- ImageObject
+- InteractionCount
+- 提供しています
+- 組織
+- PriceRange
+- レシピ
+- SearchAction
 
 これらのスキームの種類の詳細についてを参照してください[schema.org](http://schema.org)します。
 
@@ -173,9 +173,9 @@ Apple は、現在 schema.org 次のスキーマの種類をサポートしま�
 
 特定の種類の構造化データには、エンドユーザーが対処できる検索結果をことができます。 現在、次の操作がサポートされています。
 
- - 電話番号をダイヤルします。
- - 指定されたアドレスにマップの方向を取得します。
- - オーディオまたはビデオ ファイルを再生します。
+- 電話番号をダイヤルします。
+- 指定されたアドレスにマップの方向を取得します。
+- オーディオまたはビデオ ファイルを再生します。
 
 たとえば、電話番号をダイヤルするアクションを定義するは、次のようになります可能性があります。
 

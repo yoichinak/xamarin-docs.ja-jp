@@ -6,12 +6,12 @@ ms.assetid: AD0A7971-51B1-4E38-B412-7907CE43CDDF
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: d9c73dfcee6321ecb314ca229db407c6d0438977
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4a72effc85657b4722b17eae486e81db5992a1da
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61342595"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832255"
 ---
 # <a name="using-the-model-class"></a>モデル クラスを使用します。
 
@@ -44,7 +44,7 @@ MonoGame API には、`Model`レンダリングを実行して、コンテンツ
 
 .Xnb ファイルの形式がビルドされたコンテンツを標準の拡張機能 (で作成されたコンテンツ、 [MonoGame パイプライン ツール](http://www.monogame.net/documentation/?page=Pipeline))。 組み込みのすべてのコンテンツは、ソース ファイル (つまり、モデルの場合、.fbx ファイル) および変換先のファイル (.xnb ファイル) を持ちます。 .Fbx 形式などのアプリケーションで作成できる一般的な 3D モデル形式[Maya](http://www.autodesk.com/products/maya/overview)と[Blender](http://www.blender.org/)します。 
 
-`Model`ファイルを読み込んで .xnb 3D ジオメトリ データが含まれているディスクからクラスを作成できます。   コンテンツ プロジェクトを通じてこの .xnb ファイルが作成されます。 自動的に、Monogame テンプレートには、当社の Content フォルダのコンテンツ (拡張子 .mgcp) を含むプロジェクトが含まれます。 MonoGame パイプライン ツールの詳細については、次を参照してください。、[コンテンツ パイプライン ガイド](~/graphics-games/cocossharp/content-pipeline/index.md)します。
+`Model`ファイルを読み込んで .xnb 3D ジオメトリ データが含まれているディスクからクラスを作成できます。   コンテンツ プロジェクトを通じてこの .xnb ファイルが作成されます。 自動的に、Monogame テンプレートには、当社の Content フォルダのコンテンツ (拡張子 .mgcp) を含むプロジェクトが含まれます。 MonoGame パイプライン ツールの詳細については、次を参照してください。、[コンテンツ パイプライン ガイド](https://github.com/xamarin/docs-archive/blob/master/Docs/CocosSharp/content-pipeline/introduction.md)します。
 
 MonoGame パイプラインを使用して経由では省略しますこのガイドは、ツールを使用します。ここに含まれる XNB ファイル。 なお、します。XNB ファイル プラットフォームごとに異なるため、XNB ファイルの正しいセットを使用しているいずれのプラットフォームを使用してください。
 

@@ -6,22 +6,22 @@ ms.assetid: E6C5B86C-3756-49DF-843B-0B3D981E1C01
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: c008711a12729779312ae41388495e2058b4f27b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 06f1372d712f23078d120be824a01627d657d0a1
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61288493"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832565"
 ---
 # <a name="urhosharp---3d2d-engine"></a>UrhoSharp の 3D/2 D エンジン
 
-_UrhoSharp は、クロスプラット フォームで高度な 3D および 2D エンジンのジオメトリで素材、ライトとカメラを使用して、アプリケーションのアニメーションが 2D と 3D のシーンを作成するために使用できます。_
+_UrhoSharp は、クロスプラット フォームで高度な 3D が 2D とエンジンが 2D と 3D のシーンがアニメーション化されたジオメトリ、素材、ライト、およびカメラを使用してアプリケーションを作成するために使用できます。_
 
 ![UrhoSharp のゲームをサンプルします。](images/video.gif)
 
 UrhoSharp for Mac に Visual Studio または Visual Studio のいずれかでインストールできますし、次のプラットフォームのいずれかをターゲットに使用できる NuGet パッケージとして配布されます。Android、MacOS、iOS、tvOS、および Windows。
 
-## <a name="an-introduction-to-urhosharpgraphics-gamesurhosharpintroductionmd"></a>[UrhoSharp の概要](~/graphics-games/urhosharp/introduction.md)
+## <a name="introduction-to-urhosharpgraphics-gamesurhosharpintroductionmd"></a>[UrhoSharp の概要](~/graphics-games/urhosharp/introduction.md)
 
 この記事では、UrhoSharp および 3D 視覚化、および単純な 3D ゲームで使用するためにその機能の概要を提供します。
 
@@ -33,13 +33,9 @@ UrhoSharp for Mac に Visual Studio または Visual Studio のいずれかで�
 
 これらのガイドでは、各ターゲット プラットフォーム Urho のセットアップ手順を説明し、Urho を既存の Android や iOS アプリケーションと統合する方法について説明します。
 
-## <a name="programming-urhosharp-with-fgraphics-gamesurhosharpfsharpmd"></a>[による UrhoSharp のプログラミングF#](~/graphics-games/urhosharp/fsharp.md)
+## <a name="programming-urhosharp-with-fgraphics-gamesurhosharpfsharpmd"></a>[F# による UrhoSharp のプログラミング](~/graphics-games/urhosharp/fsharp.md)
 
 このガイドは、単純な「こんにちは, World!」の作成手順について説明します UrhoSharp のソリューションを使用してF#と Visual Studio for mac。
-
-## <a name="api-documentationhttpsdeveloperxamarincomapirooturho"></a>[API ドキュメント](https://developer.xamarin.com/api/root/Urho/)
-
-参照することができます、 [UrhoSharp の API ドキュメント](https://developer.xamarin.com/api/root/Urho/)web サイト。
 
 ## <a name="samples"></a>サンプル
 
@@ -57,7 +53,6 @@ UrhoSharp for Mac に Visual Studio または Visual Studio のいずれかで�
 
 このドキュメントは、Xamarin Inc から元のコンテンツが含まれていますが、Urho3D プロジェクトのオープン ソース ドキュメントから幅広くを描画し、Cocos2D プロジェクトのスクリーン ショットが含まれています。
 
-## <a name="license"></a>ライセンス
+## <a name="license"></a>License
 
 UrhoSharp のライセンスは、 [http://download.xamarin.com/content/licenses/URHO.LICENSE](http://download.xamarin.com/content/licenses/URHO.LICENSE)
-

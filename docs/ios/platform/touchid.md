@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 2d67bc71361e335515cfba8b5a20e157ed6b6b05
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 25ace6d7febe495164378b3633f06371806e2f82
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61087857"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832306"
 ---
 # <a name="touch-id-in-xamarinios"></a>Xamarin.iOS で touch ID
 
@@ -81,10 +81,10 @@ Touch ID とその分を完全に理解をする必要があります Keychain �
 
 キーチェーンで ACL を使用する場合に注意してください多くのことがあるし、これらのいくつか以下に示します。
 
--   バック グラウンド スレッドが、呼び出しは失敗でキーチェーン操作を呼び出す場合は、フォア グラウンド アプリケーションでのみ使用します。
--   キーチェーンの項目の更新の追加とは、認証を必要があります。
--   場合は、要求は、キーチェーンに複数の一致する項目を返します、認証が必要な場合があります。
--   ACL で保護された項目はデバイスのみ、そのため同期やではなくバックアップします。
+- バック グラウンド スレッドが、呼び出しは失敗でキーチェーン操作を呼び出す場合は、フォア グラウンド アプリケーションでのみ使用します。
+- キーチェーンの項目の更新の追加とは、認証を必要があります。
+- 場合は、要求は、キーチェーンに複数の一致する項目を返します、認証が必要な場合があります。
+- ACL で保護された項目はデバイスのみ、そのため同期やではなくバックアップします。
 
 ### <a name="using-local-authentication-without-keychain-services"></a>Keychain サービスせずローカル認証を使用します。
 
@@ -180,7 +180,7 @@ Touch ID とその分を完全に理解をする必要があります Keychain �
 
 [![](touchid-images/image11.png "PerformSegue メソッドを呼び出して、MasterViewController への移行")](touchid-images/image11.png#lightbox)
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 このガイドでは、キーチェーンと iOS でのこのしくみを説明しました。 ACL、キーチェーンについても学習しましたし、iOS でこれを変更します。 次に、iOS 8 の新機能であり、アプリケーションで Touch ID の認証の実装について説明しましたが、ローカル認証フレームワークを参照してくださいをしました。
 
 ## <a name="related-links"></a>関連リンク

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: f24be635afcba181efcab85d81a984d93dae4bc8
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 5c3c9714cb4d6cd077f898778f4388d63018fa00
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61429088"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831695"
 ---
 # <a name="introduction-to-storyboards-in-xamarinios"></a>Xamarin.iOS でストーリー ボードの概要
 
@@ -68,7 +68,7 @@ A*セグエ*、または*セグエ オブジェクト*シーンの間の遷移�
 
 -  **表示/プッシュ**– プッシュ セグエ ビュー コント ローラーをナビゲーション スタックに追加します。 元のプッシュ ビュー コント ローラーは、スタックに追加されているビュー コント ローラーとして同じナビゲーション コント ローラーの一部と見なします。 これと同じもの`pushViewController`、通常、画面上のデータ間のリレーションシップがあるときに使用するとします。 セグエ、プッシュを使用して、ナビゲーション バー [戻る] ボタンとナビゲーション ビュー階層をドリルダウンできるように、スタック上の各ビューに追加するタイトルを使用する余裕ができます。
 -  **モーダル**– モーダル セグエは、表示されているアニメーションの遷移のオプションを使用して、プロジェクト内の任意の 2 つのビュー コント ローラー間のリレーションシップを作成します。 親ビューのコント ローラーのビューに読み込まれると完全に子ビュー コント ローラーの邪魔になります。 セグエをプッシュとは異なりを使用します。 [戻る] ボタンを追加します。いつ、セグエ モーダルを使用して`DismissViewController`前のビュー コント ローラーに返すために使用する必要があります。
--  **カスタム**– custom 任意のサブクラスとしてセグエを作成できます` UIStoryboardSegue`します。
+-  **カスタム**– custom 任意のサブクラスとしてセグエを作成できます`UIStoryboardSegue`します。
 -  **アンワインド**– アンワインド セグエ プッシュまたはモーダルを後方に移動することできますセグエ – たとえば、モーダルとして表示されるビュー コント ローラーを閉じる。 さらに、1 つだけでなくをアンワインドできますが、一連のプッシュとモーダル セグエしアクションのアンワインドを 1 つのナビゲーション階層内の複数の手順を戻っています。 読み取り、iOS でアンワインド セグエを使用する方法を理解する、[セグエ アンワインド作成](https://github.com/xamarin/recipes/tree/master/Recipes/ios/general/storyboard/unwind_segue)レシピです。
 -  **ソースレス**– ソースレス セグエ初期ビュー コント ローラーを含むシーンを示し、したがってユーザーがどのビューが最初に表示します。 次に示すセグエによって表されます。  
 

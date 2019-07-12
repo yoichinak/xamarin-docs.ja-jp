@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/22/2018
-ms.openlocfilehash: 1a98cf854ffdd1d4904981f85fd8e33ad486743c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 38c0ece3e8f0361f3c891713e53b033351512f94
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61417375"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829921"
 ---
 # <a name="troubleshooting-tips-for-xamarinios"></a>Xamarin.iOS のトラブルシューティングのヒント 
 
@@ -109,7 +109,7 @@ IntPtr ハンドルを持つコンス トラクターは、アンマネージ表
 ```csharp
 public Bar (IntPtr handle) : base (handle) { }
 ```
-## <a name="type-foo--does-not-contain-a-definition-for-getnativefield-and-no-extension-method-getnativefield-of-type-foo-could-be-found"></a>型 {0} Foo} の定義が含まれていない`GetNativeField' and no extension method `GetNativeField' 型の {Foo} が見つかりませんでした
+## <a name="type-foo--does-not-contain-a-definition-for-getnativefield-and-no-extension-method-getnativefield-of-type-foo-could-be-found"></a>型 {0} Foo} の定義が含まれていない`GetNativeField`拡張メソッド`GetNativeField`型の {Foo} が見つかりませんでした
 
 生成されたデザイナーのファイルでこのエラーが発生したかどうか (*. xib.designer.cs)、次の 2 つのいずれかになります。
 
@@ -184,7 +184,7 @@ Stacktrace:
     at (wrapper runtime-invoke) object.runtime_invoke_dynamic (intptr,intptr,intptr,intptr) <0xffffffff>`
 ```
 
-プロジェクトに thumb コードでコンパイルされた静的ライブラリをリンクしていることを意味します。 3.1 (またはこの記事の執筆時に高い) に iPhone SDK のリリースの時点で非 Thumb コード (Xamarin.iOS) と Thumb コード (スタティック ライブラリ) をリンクするときに、Apple は、リンカーのバグを導入しました。この問題を軽減するスタティック ライブラリの Thumb 以外のバージョンとリンクする必要があります。
+プロジェクトに thumb コードでコンパイルされた静的ライブラリをリンクしていることを意味します。 3\.1 (またはこの記事の執筆時に高い) に iPhone SDK のリリースの時点で非 Thumb コード (Xamarin.iOS) と Thumb コード (スタティック ライブラリ) をリンクするときに、Apple は、リンカーのバグを導入しました。この問題を軽減するスタティック ライブラリの Thumb 以外のバージョンとリンクする必要があります。
 
 ## <a name="systemexecutionengineexception-attempting-to-jit-compile-method-wrapper-managed-to-managed-foosystemcollectionsgenericicollection1getcount-"></a>System.ExecutionEngineException:Attempting to JIT compile method (wrapper managed-to-managed) Foo[]:System.Collections.Generic.ICollection`1.get_Count ()
 
@@ -355,18 +355,18 @@ actionSheet.Clicked += delegate (sender, args){
 
 ## <a name="project-always-runs-in-the-ipad-simulator"></a>プロジェクト常に実行 iPad シミュレーター内
 
-IPhone SDK 4.0 インストーラーには、-iPad 専用のアプリを構築するため、3.2、SDK と 4.0 の SDK では、iPhone とユニバーサル アプリを構築するための 2 つの Sdk がインストールされます。 3.2 シミュレーターが含まれ、iPad のみをシミュレートし、iPhone または iPhone 4 をシミュレートする 4.0 シミュレーターもインストールされます。 古い Sdk とシミュレーターのすべてが削除されます。
+IPhone SDK 4.0 インストーラーには、-iPad 専用のアプリを構築するため、3.2、SDK と 4.0 の SDK では、iPhone とユニバーサル アプリを構築するための 2 つの Sdk がインストールされます。 3\.2 シミュレーターが含まれ、iPad のみをシミュレートし、iPhone または iPhone 4 をシミュレートする 4.0 シミュレーターもインストールされます。 古い Sdk とシミュレーターのすべてが削除されます。
 
 Visual Studio for Mac iPhone プロジェクトのビルド オプションでは、アプリのビルドで使用される SDK バージョンの設定が含まれます。 この設定が記載されて**プロジェクト オプション]、ビルドを [iPhone ビルド]-> [** します。
 
 Visual Studio for Mac で新しいプロジェクトの既定の SDK 設定として、最も古いインストールされている SDK を使用して、Visual Studio for Mac が最も近いアプリケーションを作成することを参照して使用して指定されている SDK が存在しない場合。 これは、プロジェクトは常に必要としないように、最新の SDK で行われました。 ただし、この現在結果、3.2、SDK が使用されている iPad シミュレーターで結果を使用します。
 
-4.0 の SDK を使用してこれを解決するには**プロジェクト オプション]、ビルドを [iPhone ビルド]-> [**> SDK 値をドロップダウン ボックスを使用して「4.0」に変更します。 これは、構成およびアクセス パネルの上部にあるドロップダウン リストを使用して、プラットフォームの組み合わせごとに行う必要があります。
+4\.0 の SDK を使用してこれを解決するには**プロジェクト オプション]、ビルドを [iPhone ビルド]-> [** > SDK 値をドロップダウン ボックスを使用して「4.0」に変更します。 これは、構成およびアクセス パネルの上部にあるドロップダウン リストを使用して、プラットフォームの組み合わせごとに行う必要があります。
 
 SDK のバージョンの「最小 OS バージョン」の設定とを混同しないでください。
 この値は SDK のバージョンの値と一致する必要はありません - 以前の OS に存在するか、ランタイムの OS バージョン チェックを使用して新しい機能の使用を保護する Api のみを使用すると、SDK より古くなる可能性、アプリのインストール、OS の最小バージョンに影響を与えるks します。 アプリをテストする最も古い OS バージョンに設定する必要があります。
 
-なお、**プロジェクト]、[iPhone シミュレーター ターゲット**> プロジェクトの実行/デバッグするときに、既定で使用するシミュレーターを選択するメニューを使用できます。 さらに、**実行で実行]-> [**> を実行する特定のシミュレーターを選択するメニューを使用できます
+なお、**プロジェクト]、[iPhone シミュレーター ターゲット**> プロジェクトの実行/デバッグするときに、既定で使用するシミュレーターを選択するメニューを使用できます。 さらに、**実行で実行]-> [** > を実行する特定のシミュレーターを選択するメニューを使用できます
 
 ## <a name="ibtool-returns-error-133"></a>ibtool エラー 133 を返します
 
@@ -389,7 +389,8 @@ IPhone ではないプロジェクトから iPhone UI を作成しようとす�
 ```
 .. 後、シミュレーターのアプリケーション ディレクトリに 1 つ (以上) の古いアセンブリがある可能性があります。 このようなアセンブリは、Apple iOS シミュレーターが追加され、更新ファイルしますが、それらを削除するために存在する可能性があります。 これは最も簡単なソリューションで発生し場合は、シミュレーターのメニューから [リセットおよびコンテンツと設定] を選択するは。   
 
-**警告:** これシミュレーターからすべてのファイル、アプリケーション、データが削除されます。   アプリケーションの実行時に [次へ] は、Visual Studio for Mac を使用すると、シミュレーターに配置され、古い、古いアセンブリ、クラッシュが発生することはありません。
+> [!WARNING]
+> すべてのファイル、アプリケーション、データは、シミュレーターからこの削除されます。   アプリケーションの実行時に [次へ] は、Visual Studio for Mac を使用すると、シミュレーターに配置され、古い、古いアセンブリ、クラッシュが発生することはありません。
 
 ## <a name="simulator-hangs-during-application-installation"></a>アプリケーションのインストール中にシミュレーターがハングします。
 

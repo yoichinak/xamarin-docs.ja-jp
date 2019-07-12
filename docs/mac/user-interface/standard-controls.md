@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 4e236f2517482665406008d0b86af487e2d799dd
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 26ab7880b3c4b6176c806783fec7a499d68511c3
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61212501"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831902"
 ---
 # <a name="standard-controls-in-xamarinmac"></a>Xamarin.Mac で標準のコントロール
 
@@ -257,7 +257,7 @@ AppKit.NSSplitView SplitView { get; set; }
 @property (nonatomic, retain) IBOutlet NSSplitView *SplitView;
 ```
 
-Visual Studio for Mac がの変更をリッスンするよう、`.h`ファイルを開き、それぞれでこれらの変更を自動的に同期`.designer.cs`ファイル、アプリケーションに公開します。 場合もあります`SplitViewController.designer.cs`部分クラスは、Visual Studio for Mac は、変更する必要があるないように`SplitViewController.cs `クラスに加え変更を上書きします。
+Visual Studio for Mac がの変更をリッスンするよう、`.h`ファイルを開き、それぞれでこれらの変更を自動的に同期`.designer.cs`ファイル、アプリケーションに公開します。 場合もあります`SplitViewController.designer.cs`部分クラスは、Visual Studio for Mac は、変更する必要があるないように`SplitViewController.cs`クラスに加え変更を上書きします。
 
 通常必要はありませんを開く、 `SplitViewController.designer.cs` 、自分でこれがここで紹介教育目的のみ。
 

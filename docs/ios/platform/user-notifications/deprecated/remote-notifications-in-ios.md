@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 8ad742607e506df436a5526d31621ac7636ac29b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 22ac6a3776e5fa5de2fc238efe90c435190e8005
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61087048"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832070"
 ---
 # <a name="push-notifications-in-ios"></a>IOS でプッシュ通知
 
@@ -67,7 +67,7 @@ Apple APNS の 2 つの環境の保持: を*サンド ボックス*と*運用*�
 
     [![](remote-notifications-in-ios-images/image10new.png "アプリ ID の証明書を作成します。")](remote-notifications-in-ios-images/image8.png#lightbox)
 
-4.  開発または実稼働の証明書を使用したいかどうかを選択します。
+4. 開発または実稼働の証明書を使用したいかどうかを選択します。
 
     [![](remote-notifications-in-ios-images/image11new.png "開発または実稼働の証明書を選択します。")](remote-notifications-in-ios-images/image11new.png#lightbox)
 
@@ -171,7 +171,7 @@ APNS を提供するために使用する*フィードバック サービス*-HT
 >
 > デバイスは、プロバイダーとそれ以降のタイムスタンプを持つトークンを登録するまでのプッシュ通知を停止します。
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
 このセクションでは、iOS でプッシュ通知に関連する主要な概念を紹介します。 ロールの Apple プッシュ通知ゲートウェイ サービス (APNS) がについて説明します。 また、作成し、APNS に不可欠なセキュリティ証明書を使用し、について説明します。 このドキュメントのアプリケーション サーバーの使用方法についての完了最後に、*フィードバック Services*期限切れのデバイス トークンの追跡の停止にします。
 

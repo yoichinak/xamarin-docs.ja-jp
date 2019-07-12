@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/08/2017
-ms.openlocfilehash: edab6b7edd5ca95cb5abe5fc2caccb5714efda56
-ms.sourcegitcommit: a6ba6ed086bcde4f52fb05f83c59c68e8aa5e436
+ms.openlocfilehash: efaea24e559aa2f3bdfd87c1c083ce1d777dbb3f
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67540408"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832162"
 ---
 # <a name="authentication-and-authorization"></a>認証と承認
 
@@ -97,7 +97,8 @@ public void ConfigureServices(IServiceCollection services)
 -   要求トークンに接続するクライアント。
 -   ASP.NET Core Identity です。
 
->💡 **ヒント:** :IdentityServer 4 構成を動的に読み込みます。 IdentityServer 4 の Api では、構成オブジェクトのメモリ内のリストから IdentityServer を構成できます。 EShopOnContainers 参照アプリケーションで、これらのメモリ内コレクションは、アプリケーションにハードコーディングします。 ただし、運用環境シナリオでできる読み込まれて動的に構成ファイルから、またはデータベースからです。
+> [!TIP]
+> IdentityServer 4 構成を動的に読み込みます。 IdentityServer 4 の Api では、構成オブジェクトのメモリ内のリストから IdentityServer を構成できます。 EShopOnContainers 参照アプリケーションで、これらのメモリ内コレクションは、アプリケーションにハードコーディングします。 ただし、運用環境シナリオでできる読み込まれて動的に構成ファイルから、またはデータベースからです。
 
 ASP.NET Core Identity を使用する IdentityServer の構成方法の詳細については、次を参照してください。[を使用して ASP.NET Core Identity](https://identityserver4.readthedocs.io/en/latest/quickstarts/8_aspnet_identity.html) IdentityServer ドキュメント。
 
@@ -317,7 +318,8 @@ private async Task NavigateAsync(string url)
 
 このメソッドは、戻り値の URI に含まれている認証の応答を解析し、IdentityServer には有効な承認コードが存在する、要求[トークン エンドポイント](https://identityserver4.readthedocs.io/en/latest/endpoints/token.html)、認証コードを渡すこと、PKCE シークレットの検証方法、およびその他の必須パラメーターです。 トークン エンドポイントが、 `/connect/token` 5105 ユーザー設定として公開される基本のエンドポイントのポートします。 ユーザー設定の詳細については、次を参照してください。[構成管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)します。
 
->💡 **ヒント:** :戻り値の Uri を検証します。 ただし、eShopOnContainers のモバイル アプリでは、戻り値の URI を検証しませんは、戻り値の URI がオープン リダイレクト攻撃を防ぐための既知の場所を指すことを検証することをお勧めします。
+> [!TIP]
+> 戻り値の Uri を検証します。 ただし、eShopOnContainers のモバイル アプリでは、戻り値の URI を検証しませんは、戻り値の URI がオープン リダイレクト攻撃を防ぐための既知の場所を指すことを検証することをお勧めします。
 
 トークン エンドポイントでは、有効な承認コードと PKCE シークレットの検証を受信する場合は、アクセス トークン、id トークン、更新トークンと応答します。 (これは、API リソースへのアクセスを許可するには) アクセス トークンと id トークンは、アプリケーション設定として格納し、ページ ナビゲーションを実行します。 そのため、これは eShopOnContainers のモバイル アプリでの全体的な結果: に移動されるときのユーザーが、IdentityServer で正常に認証することに、 `MainView`  ページで、これは、 [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage)表示する、`CatalogView`として選択されているそのタブ。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 260d01d6aa8344dd3cf107f1ffc34167c457a491
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6bad05f62fa9168818aa9a2e73cc1e2830af03b3
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61269326"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830036"
 ---
 # <a name="introduction-to-tvos-10"></a>tvOS 10 の概要
 
@@ -56,10 +56,10 @@ tvOS 10 では、拡張範囲のピクセル形式とコア グラフィック�
 
 Apple は、さまざまな色を使用する場合、次のベスト プラクティスを提供します。
 
- - `UIColor` これは、sRGB 色空間となることはありませんクランプする値、`0.0`に`1.0`範囲。 アプリは、以前のクランプ動作に依存する場合は、tvOS 10 に変更する必要があります。
- - アプリでのカスタム レンダリングを実行する場合`UIImages`、使用して、新しい[UIGraphicsImageRender](https://developer.apple.com/reference/uikit/uigraphicsimagerenderer)拡張範囲または範囲の標準形式の使用を指定するクラス。
- - コア グラフィックスや金属などの低レベルの API を使用して、イメージの処理を提供する、アプリは、16 ビット浮動小数点値をサポートする拡張範囲の色領域とピクセル形式を使用する必要があります。 必要に応じて、アプリが色コンポーネントの値を手動でクランプする必要があります。
- - コア グラフィックス、Core イメージおよび金属パフォーマンス シェーダーは、2 つのカラー スペース間で変換するための新しいメソッドを提供します。
+- `UIColor` これは、sRGB 色空間となることはありませんクランプする値、`0.0`に`1.0`範囲。 アプリは、以前のクランプ動作に依存する場合は、tvOS 10 に変更する必要があります。
+- アプリでのカスタム レンダリングを実行する場合`UIImages`、使用して、新しい[UIGraphicsImageRender](https://developer.apple.com/reference/uikit/uigraphicsimagerenderer)拡張範囲または範囲の標準形式の使用を指定するクラス。
+- コア グラフィックスや金属などの低レベルの API を使用して、イメージの処理を提供する、アプリは、16 ビット浮動小数点値をサポートする拡張範囲の色領域とピクセル形式を使用する必要があります。 必要に応じて、アプリが色コンポーネントの値を手動でクランプする必要があります。
+- コア グラフィックス、Core イメージおよび金属パフォーマンス シェーダーは、2 つのカラー スペース間で変換するための新しいメソッドを提供します。
 
 詳細については、次を参照してください、[色の概要](~/ios/platform/wide-color.md)ガイド。
 
@@ -67,12 +67,12 @@ Apple は、さまざまな色を使用する場合、次のベスト プラク�
 
 IOS (および tvOS ではない) で使用可能になったいくつかのフレームワークが加えられました tvOS 10 の使用など。
 
- - ExternalAccessory
- - HomeKit
- - MultipeerConnectivity
- - 写真
- - ReplayKit
- - UserNotification
+- ExternalAccessory
+- HomeKit
+- MultipeerConnectivity
+- フォト
+- ReplayKit
+- UserNotification
 
 ## <a name="additional-framework-changes"></a>その他のフレームワークの変更
 

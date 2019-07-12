@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 6a9c66720aeb97c5b894cbea42c6cc0c5285c67d
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 888e00fbdbf30b5b2842bc30822a55f57372eb34
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64978621"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831808"
 ---
 # <a name="multitasking-for-ipad-in-xamarinios"></a>Xamarin.iOS で iPad のマルチタス キング
 
@@ -48,10 +48,10 @@ iOS 9 iPad の特定のハードウェア上で同時に 2 つのアプリを実
 
 サポートするために**スライド上**または**分割ビュー**アプリは、次を実行する必要があります。
 
- - IOS 9 (またはそれ以上) をビルドします。
- - 起動画面のストーリー ボードを使用して (およびイメージ アセットがありません)。
- - 自動レイアウトとサイズ クラス、UI のストーリー ボードを使用します。
- - すべて 4 iOS デバイスの向き (縦向き、上下の縦向き、ランドス ケープの左、横の右) をサポートします。
+- IOS 9 (またはそれ以上) をビルドします。
+- 起動画面のストーリー ボードを使用して (およびイメージ アセットがありません)。
+- 自動レイアウトとサイズ クラス、UI のストーリー ボードを使用します。
+- すべて 4 iOS デバイスの向き (縦向き、上下の縦向き、ランドス ケープの左、横の右) をサポートします。
 
 <a name="Multitasking" />
 
@@ -242,13 +242,13 @@ Apple では、すべての iOS 9 アプリがマルチタスクをサポート�
 
 PIP のビデオ再生をオプトアウトするには、アプリでは、次を実行します。
 
- - 使用する場合、`AVPlayerViewController`ビデオを表示するには、設定、`AllowsPictureInPicturePlayback`プロパティを`false`します。
- - 使用する場合、`AVPlayerLayer`ビデオを表示するのインスタンスを作成しない、`AVPictureInPictureController`します。
- - 使用する場合、`WKWebView`ビデオを表示するには、設定、`AllowsPictureInPictureMediaPlayback`プロパティを`false`します。
+- 使用する場合、`AVPlayerViewController`ビデオを表示するには、設定、`AllowsPictureInPicturePlayback`プロパティを`false`します。
+- 使用する場合、`AVPlayerLayer`ビデオを表示するのインスタンスを作成しない、`AVPictureInPictureController`します。
+- 使用する場合、`WKWebView`ビデオを表示するには、設定、`AllowsPictureInPictureMediaPlayback`プロパティを`false`します。
 
 <a name="Summary" />
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
 この記事では、Xamarin.iOS アプリが実行され、Ipad 用の iOS 9 の新しいマルチタスク機能で正しく機能することを確認するための手順について説明しました。 さらに、アプリが適合のマルチタス キングのオプトイン アウトがについて説明します。
 

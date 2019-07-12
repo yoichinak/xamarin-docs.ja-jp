@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/13/2016
-ms.openlocfilehash: c900ab714fed2bb1e02367ba39ad3c5a0a76121e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 60eaad98e2d5469e9c43e6b4ad889080e1aa63ba
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61408350"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832057"
 ---
 # <a name="watchos-project-references-in-xamarin"></a>watchOS で Xamarin プロジェクトの参照
 
@@ -26,16 +26,16 @@ WatchOS ソリューションの 3 つのプロジェクトは*自動的に構�
 
 - **iPhone アプリ**参照**Watch アプリ**
 
-![](project-references-images/catalog-reference1.png "iPhone アプリは、Watch アプリを参照します。")
+  ![](project-references-images/catalog-reference1.png "iPhone アプリは、Watch アプリを参照します。")
 
 - **アプリを見る**参照**Watch アプリの拡張機能**
 
-![](project-references-images/catalog-reference2.png "iPhone アプリは、Watch アプリを参照します。")
+  ![](project-references-images/catalog-reference2.png "iPhone アプリは、Watch アプリを参照します。")
 
 
- - **Watch アプリの拡張機能**他のプロジェクトのいずれかを参照していません
+- **Watch アプリの拡張機能**他のプロジェクトのいずれかを参照していません
 
-![](project-references-images/catalog-reference3.png "Watch アプリの拡張機能は、他のプロジェクトを参照していません")
+  ![](project-references-images/catalog-reference3.png "Watch アプリの拡張機能は、他のプロジェクトを参照していません")
 
 
 
@@ -44,17 +44,17 @@ WatchOS ソリューションの 3 つのプロジェクトは*自動的に構�
 確認する必要がありますも、**バンドル識別子**が正しい。
 次の 3 つのすべてのプロジェクトがあります、*同じ*定義済みの拡張機能のある 2 つのウォッチ プロジェクトで、識別子のプレフィックス`watchkitextension`と`watchkitapp`、次のように (用、 **WatchKitCatalog**例):
 
- - Xamarin.iOS 統合プロジェクト- `com.xamarin.WatchKitCatalog`
+- Xamarin.iOS 統合プロジェクト- `com.xamarin.WatchKitCatalog`
 
- - WatchKit 拡張機能プロジェクト- `com.xamarin.WatchKitCatalog.watchkitextension`
+- WatchKit 拡張機能プロジェクト- `com.xamarin.WatchKitCatalog.watchkitextension`
 
- - Watch アプリ プロジェクトの場合- `com.xamarin.WatchKitCatalog.watchkitapp`
+- Watch アプリ プロジェクトの場合- `com.xamarin.WatchKitCatalog.watchkitapp`
 
 確認これら**Info.plist**設定が正しい。
 
- - Watch アプリ プロジェクトの`WKCompanionAppBundleIdentifier`親/コンテナー アプリのバンドル ID と一致する (ie。 iPhone で実行されている 1 つ)。
+- Watch アプリ プロジェクトの`WKCompanionAppBundleIdentifier`親/コンテナー アプリのバンドル ID と一致する (ie。 iPhone で実行されている 1 つ)。
 
- - ウォッチ キットの拡張機能プロジェクトの**WKApp バンドル ID** Watch アプリ プロジェクトのバンドル ID と一致
+- ウォッチ キットの拡張機能プロジェクトの**WKApp バンドル ID** Watch アプリ プロジェクトのバンドル ID と一致
 
 ダブルクリックすると、識別子を編集することができます、 **Info.plist**各プロジェクト ファイル。
 

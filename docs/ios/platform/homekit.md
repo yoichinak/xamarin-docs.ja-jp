@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 6793190fa3278455a00d7ea08ab52a643c369a35
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a5402bb3b10387644282301075f63644149fcdc6
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61371543"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831543"
 ---
 # <a name="homekit-in-xamarinios"></a>Xamarin.iOS で HomeKit
 
@@ -104,7 +104,7 @@ HomeKit アクセサリ シミュレーターを開始し、いくつかの仮�
 1. [アプリケーション] フォルダーには、HomeKit アクセサリ シミュレーターを開始します。 
 
     [![](homekit-images/simulator02.png "HomeKit アクセサリ シミュレーター")](homekit-images/simulator02.png#lightbox)
-2. をクリックして、 **+** ボタンをクリックし、選択**新しいアクセサリ.**: 
+2. をクリックして、 **+** ボタンをクリックし、選択**新しいアクセサリ.** : 
 
     [![](homekit-images/simulator03.png "新しいアクセサリを追加します。")](homekit-images/simulator03.png#lightbox)
 3. 新しいアクセサリについての情報を入力し、クリックして、**完了**ボタンをクリックします。 
@@ -285,7 +285,7 @@ ThisApp.HomeManager.AddHome(HomeName.Text,(home,error) =>{
 
 [![](homekit-images/accessory01.png "新しいアクセサリの検索")](homekit-images/accessory01.png#lightbox)
 
-呼び出す、`AddAccessory`ホームのコレクションを選択したアクセサリを追加するメソッド。 例:
+呼び出す、`AddAccessory`ホームのコレクションを選択したアクセサリを追加するメソッド。 例えば:
 
 ```csharp
 // Add the requested accessory to the home
@@ -318,7 +318,7 @@ ThisApp.HomeManager.PrimaryHome.AddAccessory (_controller.AccessoryBrowser.Disco
 
 この例でを保存するモ ノ シンプルかつルームまたはゾーンに編成ではなく自宅のアクセサリを直接と連携します。
 
-`HMHome`オブジェクトでユーザーに表示することが割り当てられた付属品の一覧が含まれています。 その`Accessories`プロパティ。 例:
+`HMHome`オブジェクトでユーザーに表示することが割り当てられた付属品の一覧が含まれています。 その`Accessories`プロパティ。 例えば:
 
 [![](homekit-images/accessory04.png "例アクセサリ")](homekit-images/accessory04.png#lightbox)
 
@@ -384,77 +384,77 @@ ThisApp.HomeManager.PrimaryHome.AddAccessory (_controller.AccessoryBrowser.Disco
 
 `HMCharacteristicType`列挙型が定義されているまたは次のように変更できる特性のメタデータ値のセットを提供します。
 
- - AdminOnlyAccess
- - AirParticulateDensity
- - AirParticulateSize
- - AirQuality
- - AudioFeedback
- - BatteryLevel
- - [明るさ]
- - CarbonDioxideDetected
- - CarbonDioxideLevel
- - CarbonDioxidePeakLevel
- - CarbonMonoxideDetected
- - CarbonMonoxideLevel
- - CarbonMonoxidePeakLevel
- - ChargingState
- - ContactState
- - CoolingThreshold
- - CurrentDoorState
- - CurrentHeatingCooling
- - CurrentHorizontalTilt
- - CurrentLightLevel
- - CurrentLockMechanismState
- - CurrentPosition
- - CurrentRelativeHumidity
- - CurrentSecuritySystemState
- - CurrentTemperature
- - CurrentVerticalTilt
- - FirmwareVersion
- - HardwareVersion
- - HeatingCoolingStatus
- - HeatingThreshold
- - HoldPosition
- - [色合い]
- - Identify
- - InputEvent
- - LeakDetected
- - LockManagementAutoSecureTimeout
- - LockManagementControlPoint
- - LockMechanismLastKnownAction
- - ログ
- - 製造元
- - モデル
- - MotionDetected
- - 名前
- - ObstructionDetected
- - OccupancyDetected
- - OutletInUse
- - OutputState
- - PositionState
- - PowerState
- - RotationDirection
- - RotationSpeed
- - [彩度]
- - シリアル番号
- - SmokeDetected
- - SoftwareVersion
- - StatusActive
- - StatusFault
- - StatusJammed
- - StatusLowBattery
- - StatusTampered
- - TargetDoorState
- - TargetHeatingCooling
- - TargetHorizontalTilt
- - TargetLockMechanismState
- - TargetPosition
- - TargetRelativeHumidity
- - TargetSecuritySystemState
- - TargetTemperature
- - TargetVerticalTilt
- - TemperatureUnits
- - Version
+- AdminOnlyAccess
+- AirParticulateDensity
+- AirParticulateSize
+- AirQuality
+- AudioFeedback
+- BatteryLevel
+- [明るさ]
+- CarbonDioxideDetected
+- CarbonDioxideLevel
+- CarbonDioxidePeakLevel
+- CarbonMonoxideDetected
+- CarbonMonoxideLevel
+- CarbonMonoxidePeakLevel
+- ChargingState
+- ContactState
+- CoolingThreshold
+- CurrentDoorState
+- CurrentHeatingCooling
+- CurrentHorizontalTilt
+- CurrentLightLevel
+- CurrentLockMechanismState
+- CurrentPosition
+- CurrentRelativeHumidity
+- CurrentSecuritySystemState
+- CurrentTemperature
+- CurrentVerticalTilt
+- FirmwareVersion
+- HardwareVersion
+- HeatingCoolingStatus
+- HeatingThreshold
+- HoldPosition
+- [色合い]
+- Identify
+- InputEvent
+- LeakDetected
+- LockManagementAutoSecureTimeout
+- LockManagementControlPoint
+- LockMechanismLastKnownAction
+- ログ
+- 製造元
+- モデル
+- MotionDetected
+- Name
+- ObstructionDetected
+- OccupancyDetected
+- OutletInUse
+- OutputState
+- PositionState
+- PowerState
+- RotationDirection
+- RotationSpeed
+- [彩度]
+- シリアル番号
+- SmokeDetected
+- SoftwareVersion
+- StatusActive
+- StatusFault
+- StatusJammed
+- StatusLowBattery
+- StatusTampered
+- TargetDoorState
+- TargetHeatingCooling
+- TargetHorizontalTilt
+- TargetLockMechanismState
+- TargetPosition
+- TargetRelativeHumidity
+- TargetSecuritySystemState
+- TargetTemperature
+- TargetVerticalTilt
+- TemperatureUnits
+- Version
 
 ### <a name="working-with-a-characteristics-value"></a>特徴の値の操作
 
@@ -667,7 +667,7 @@ HomeKit アクセサリのシミュレーターでのライトの状態を変更
 この記事では、Xamarin.iOS アプリで HomeKit アクセサリを操作するために必要な基本的な機能について説明しました。 ただし、HomeKit の概要で取り上げられていないいくつかの高度な機能があります。
 
 - **ルーム**-有効になっている HomeKit アクセサリが、エンドユーザーがルームに整理できます必要に応じて。 これにより、ユーザーの理解し、作業を簡単な方法である [アクセサリ] を HomeKit です。 作成して、ルームを管理する方法の詳細については、Apple を参照してください[HMRoom](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMRoom_Class/index.html#//apple_ref/occ/cl/HMRoom)ドキュメント。
-- **ゾーン**-エンドユーザーがゾーンにルームが整理必要に応じてできます。 ゾーンは、ユーザーが 1 つの単位として扱うことがありますルームのコレクションを表します。 例:Downstairs または地下室上。 ここでも、これにより、HomeKit 存在し、[アクセサリ]、エンドユーザーにとって意味のある方法で使用します。 作成して、ゾーンを管理する方法の詳細については、Apple を参照してください[HMZone](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMZone_Class/index.html#//apple_ref/occ/cl/HMZone)ドキュメント。
+- **ゾーン**-エンドユーザーがゾーンにルームが整理必要に応じてできます。 ゾーンは、ユーザーが 1 つの単位として扱うことがありますルームのコレクションを表します。 例えば:Downstairs または地下室上。 ここでも、これにより、HomeKit 存在し、[アクセサリ]、エンドユーザーにとって意味のある方法で使用します。 作成して、ゾーンを管理する方法の詳細については、Apple を参照してください[HMZone](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMZone_Class/index.html#//apple_ref/occ/cl/HMZone)ドキュメント。
 - **アクションおよびアクション設定**-アクションは、アクセサリのサービスの特性を変更して、セットにグループ化することができます。 アクションのセットは、[アクセサリ] のグループを制御し、そのアクションを調整するためのスクリプトとして機能します。 たとえば、「テレビ番組を見る」スクリプト可能性があります、ブラインド、dim ライト、閉じ、テレビとそのサウンド システムを有効にします。 作成して、アクションとアクションのセットを維持する方法の詳細については、Apple を参照してください[HMAction](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMAction_Class/index.html#//apple_ref/occ/cl/HMAction)と[HMActionSet](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMActionSet_Class/index.html#//apple_ref/occ/cl/HMActionSet)ドキュメント。
 - **トリガー** - いずれかのトリガーをアクティブ化または詳細アクション設定時に指定された一連の条件を満たしています。 など、portch 光を有効にし、外暗くときに、すべての外部のドアをロックします。 作成してトリガーを管理する方法の詳細については、Apple を参照してください[HMTrigger](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMTrigger_Class/index.html#//apple_ref/occ/cl/HMTrigger)ドキュメント。
 
@@ -677,9 +677,9 @@ HomeKit アクセサリのシミュレーターでのライトの状態を変更
 
 ITunes Connect の iTunes App Store にリリースする Xamarin.iOS アプリを有効になっているは、HomeKit を送信する前に、HomeKit を有効になっているアプリの Apple のガイドラインに従うことを確認します。
 
- - アプリの主な目的_する必要があります_HomeKit フレームワークを使用する場合は、ホーム オートメーションをします。
- - HomeKit が使用されていること、およびプライバシー ポリシーを指定する必要があります、アプリのマーケティングのテキストはユーザーに通知する必要があります。
- - ユーザー情報を収集または広告のための HomeKit の使用は固く禁止されています。
+- アプリの主な目的_する必要があります_HomeKit フレームワークを使用する場合は、ホーム オートメーションをします。
+- HomeKit が使用されていること、およびプライバシー ポリシーを指定する必要があります、アプリのマーケティングのテキストはユーザーに通知する必要があります。
+- ユーザー情報を収集または広告のための HomeKit の使用は固く禁止されています。
 
 完全なガイドラインを確認して、Apple を参照してください[App Store レビューに関するガイドライン](https://developer.apple.com/app-store/review/guidelines/)します。
 
@@ -702,7 +702,7 @@ Apple が行われて、次の変更と追加 HomeKit を iOS 9。
 
 IOS 9 で HomeKit の新機能の詳細については、Apple を参照してください[HomeKit インデックス](https://developer.apple.com/homekit/)と[HomeKit で新](https://developer.apple.com/videos/wwdc/2015/?id=210)ビデオ。
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
 この記事には、Apple の HomeKit ホーム オートメーション フレームワークが導入されています。 セットアップおよび HomeKit アクセサリ シミュレーターを使用してテスト デバイスを構成する方法と検出との通信および HomeKit を使用して、ホーム オートメーション デバイスを制御する単純な Xamarin.iOS アプリを作成する方法を示しました。
 

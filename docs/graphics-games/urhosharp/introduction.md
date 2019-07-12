@@ -6,14 +6,14 @@ ms.assetid: 18041443-5093-4AF7-8B20-03E00478EF35
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: a3e14ebca961e828fc578035adaca5ba2a809438
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 441a3cc19b4246fb2bdea54508142a894af5c051
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61288519"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832541"
 ---
-# <a name="an-introduction-to-urhosharp"></a>UrhoSharp の概要
+# <a name="introduction-to-urhosharp"></a>UrhoSharp の概要
 
 ![UrhoSharp のロゴ](introduction-images/urhosharp-icon.png)
 
@@ -24,19 +24,19 @@ UrhoSharp は、Xamarin と .NET の開発者向けの強力な 3D ゲーム エ
 UrhoSharp では、多くの機能をすぐにゲーム エンジンを示します。
 
 - 強力な 3D グラフィックのレンダリング
-- [シミュレーションの物理運動](https://developer.xamarin.com/api/namespace/Urho.Physics/)(行頭文字ライブラリを使用)
-- [シーンの処理](https://developer.xamarin.com/api/type/Urho.Scene/)
+- 物理運動のシミュレーション (行頭文字ライブラリを使用)
+- シーンの処理
 - Await/非同期サポート
-- [わかりやすい操作 API](https://developer.xamarin.com/api/namespace/Urho.Actions/)
-- [3D シーンを 2D の統合](https://developer.xamarin.com/api/namespace/Urho.Urho2D/)
-- [FreeType を使用したフォントのレンダリング](https://developer.xamarin.com/api/type/Urho.Gui.FontFaceFreeType/)
-- [クライアントとサーバーのネットワーク機能](https://developer.xamarin.com/api/namespace/Urho.Network/)
-- [さまざまなアセットをインポート](https://developer.xamarin.com/api/namespace/Urho.Resources/)(で開いているアセット ライブラリ)
-- [ナビゲーションのメッシュと pathfinding](https://developer.xamarin.com/api/namespace/Urho.Navigation/) (再キャスト/迂回を使用)
-- [衝突検出の凸包生成](https://developer.xamarin.com/api/type/Urho.Physics.CollisionShape/)(StanHull を使用)
-- [オーディオ再生](https://developer.xamarin.com/api/namespace/Urho.Audio/)(で**libvorbis**)
+- わかりやすい操作 API
+- 3D シーンを 2D の統合
+- FreeType を使用したフォントのレンダリング
+- クライアントとサーバーのネットワーク機能
+- さまざまな (アセット ライブラリを開く) を使用した資産のインポートします。
+- ナビゲーションのメッシュと pathfinding (再キャスト/迂回を使用)
+- 競合の検出 (StanHull を使用) の凸包生成
+- オーディオの再生 (で**libvorbis**)
 
-## <a name="getting-started"></a>作業の開始
+## <a name="get-started"></a>作業開始
 
 UrhoSharp は便利なこととして配布される、 [NuGet パッケージ](https://www.nuget.org/)に追加することができ、C#またはF#Windows、Mac、Android または iOS を対象とするプロジェクト。  NuGet のエンジンによって使用される基本的な資産 (CoreData) だけでなく、プログラムの実行に必要なライブラリが付属します。
 
@@ -68,8 +68,7 @@ Urho の機能を体験からサンプル ソリューションを Visual Studio
 
 ## <a name="basic-structure"></a>基本構造
 
-ゲームにサブクラス化する必要があります、 [`Application`](https://developer.xamarin.com/api/type/Urho.Application/)
-クラスは、これは、ゲームがセットアップ (上、 [ `Setup` ](https://developer.xamarin.com/api/member/Urho.Application.Setup/)メソッド) ゲームを開始して (で、 [ `Start` ](https://developer.xamarin.com/api/member/Urho.Application.Start)メソッド)。  メイン ユーザー インターフェイスを構築します。  セットアップの 3D シーン、一部の UI 要素とすると、単純な動作をアタッチする Api を示す小規模なサンプルについて説明するでしょう。
+ゲームにサブクラス化する必要があります、`Application`クラス、これは、ゲームがセットアップ (上、`Setup`メソッド) ゲームを開始して (で、`Start`メソッド)。  メイン ユーザー インターフェイスを構築します。  セットアップの 3D シーン、一部の UI 要素とすると、単純な動作をアタッチする Api を示す小規模なサンプルについて説明するでしょう。
 
 ```csharp
 class MySample : Application {
@@ -157,11 +156,11 @@ helloText.SetFont(
 UI.Root.AddChild(helloText);
 ```
 
-UI フレームワークがある、非常に単純なゲーム内のユーザー インターフェイスを提供して、その機能に新しいノードを追加することで、 [ `UI.Root` ](https://developer.xamarin.com/api/property/Urho.Gui.UI.Root/)ノード。
+UI フレームワークがある、非常に単純なゲーム内のユーザー インターフェイスを提供して、その機能に新しいノードを追加することで、`UI.Root`ノード。
 
 2 番目の部分、セットアップのサンプルのメインのシーンです。  これには、複数シーンを作成する、3 D、画面で、3 D のボックスを作成、ライト、カメラ、および、ビューポートに追加する手順にはが含まれます。  セクションで詳しく解説しています[シーン、ノード、コンポーネント、およびカメラ](~/graphics-games/urhosharp/using.md#scenenodescomponentsandcameras)します。
 
-サンプルの 3 番目の部分では、いくつかのアクションをトリガーします。  操作は、特定の効果を記述し、それらを 1 回作成するためのレシピを呼び出すことによってオンデマンドでのノードによって実行されることができます、 [ `RunActionAsync` ](https://developer.xamarin.com/api/member/Urho.Node.RunActionsAsync)メソッドを`Node`します。
+サンプルの 3 番目の部分では、いくつかのアクションをトリガーします。  操作は、特定の効果を記述し、それらを 1 回作成するためのレシピを呼び出すことによってオンデマンドでのノードによって実行されることができます、`RunActionAsync`メソッドを`Node`します。
 
 最初のアクションは、跳ね返り効果が適用されたボックスを拡大または縮小し、2 つ目は、ボックスを永久に回転します。
 
@@ -170,7 +169,7 @@ await boxNode.RunActionsAsync(
     new EaseBounceOut(new ScaleTo(duration: 1f, scale: 1)));
 ```
 
-最初のアクションを作成するは、上記を示しています、 [ `ScaleTo` ](https://developer.xamarin.com/api/type/Urho.Actions.ScaleTo/)アクションでは、これは、いずれかの値に対する 2 番目のノードのスケールのプロパティをスケールすることを示すレシピだけです。  このアクションは、イージング アクションにラップ順番される、 [ `EaseBounceOut` ](https://developer.xamarin.com/api/type/Urho.Actions.EaseBounceInOut/)アクション。  イージング アクション、アクションの実行に線形の変形し、効果を適用、この場合、アウト バウンド効果を提供します。
+最初のアクションを作成するは、上記を示しています、`ScaleTo`アクションでは、これは、いずれかの値に対する 2 番目のノードのスケールのプロパティをスケールすることを示すレシピだけです。  このアクションは、イージング アクションにラップ順番される、`EaseBounceOut`アクション。  イージング アクション、アクションの実行に線形の変形し、効果を適用、この場合、アウト バウンド効果を提供します。
 したがって、レシピもとしてを記述できます。
 
 ```csharp
@@ -190,4 +189,3 @@ Await には、ことを示しますは、アクションが完了すると、�
 ## <a name="copyrights"></a>著作権
 
 このドキュメントは、Xamarin Inc から元のコンテンツが含まれていますが、Urho3D プロジェクトのオープン ソース ドキュメントから幅広くを描画し、Cocos2D プロジェクトのスクリーン ショットが含まれています。
-

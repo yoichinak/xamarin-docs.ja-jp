@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 329984d44318b2204f2f5ee253402eb158c85b9f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a3bb6674baed293f95eb50fbca5792b288aa9239
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61283464"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832512"
 ---
 # <a name="dialogs-in-xamarinmac"></a>Xamarin.Mac でダイアログ ボックス
 
@@ -413,7 +413,7 @@ public override void PrepareForSegue (NSStoryboardSegue segue, NSObject sender)
 
 ## <a name="creating-a-preferences-dialog"></a>ユーザー設定 ダイアログを作成します。
 
-インターフェイス ビルダーで基本設定の表示、レイアウト前に、基本設定の切り替えを処理するためにカスタムのセグエの種類を追加する必要になります。 新しいクラスをプロジェクトに追加し、それを呼び出す`ReplaceViewSeque `します。 クラスを編集し、次のようになります。
+インターフェイス ビルダーで基本設定の表示、レイアウト前に、基本設定の切り替えを処理するためにカスタムのセグエの種類を追加する必要になります。 新しいクラスをプロジェクトに追加し、それを呼び出す`ReplaceViewSeque`します。 クラスを編集し、次のようになります。
 
 ```csharp
 using System;
@@ -503,7 +503,7 @@ namespace MacWindows
 9. 新しいセグエを選択し、設定、**クラス**に`ReplaceViewSegue`:
 
     [![](dialog-images/pref08.png "セグエ クラスの設定")](dialog-images/pref08.png#lightbox)
-10. **メニュー バーのデザイナー**デザイン画面で、[アプリケーション] メニューから選択**設定しています.**、コントロールのクリック、および作成の基本設定ウィンドウにドラッグ、**表示**セグエします。
+10. **メニュー バーのデザイナー**デザイン画面で、[アプリケーション] メニューから選択**設定しています.** 、コントロールのクリック、および作成の基本設定ウィンドウにドラッグ、**表示**セグエします。
 
     [![](dialog-images/pref09.png "セグエの種類の設定")](dialog-images/pref09.png#lightbox)
 11. 変更を保存し、Visual Studio for Mac を同期に戻ります。

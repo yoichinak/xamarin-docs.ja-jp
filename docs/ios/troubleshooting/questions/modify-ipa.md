@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/03/2018
-ms.openlocfilehash: bf135755f64e4d17db2c187d58572c525dfee559
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: bc9396a8cb667b8170c4b3511b9fe8423741e6b1
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61420893"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829926"
 ---
 # <a name="can-i-add-files-to-or-remove-files-from-an-ipa-file-after-building-it-in-visual-studio"></a>ファイルを追加または Visual Studio でビルドした後で IPA ファイルからファイルを削除できますか。
 
@@ -32,7 +32,7 @@ ms.locfileid: "61420893"
 
 4.  新しく開きます`Terminal.app`ウィンドウ。
 
-5.  型`cd `に Terminal.app ウィンドウと、ドラッグ アンド ドロップ、`generated session id`フォルダーに、`Terminal.app`ウィンドウ。
+5.  型`cd`に Terminal.app ウィンドウと、ドラッグ アンド ドロップ、`generated session id`フォルダーに、`Terminal.app`ウィンドウ。
 
     ![](modify-ipa-images/session-id-folder.png "Finder で生成されるセッション id のフォルダーを検索します。")
 
@@ -52,7 +52,7 @@ ms.locfileid: "61420893"
 
 12.  含む行を見つけて`tool /usr/bin/codesign execution started with arguments: -v --force --sign`します。
 
-13.  型`/usr/bin/codesign `手順 8. Terminal.app ウィンドウにします。
+13.  型`/usr/bin/codesign`手順 8. Terminal.app ウィンドウにします。
 
 14.  以降では、引数をすべてコピー`-v`行では、手順 12 と Terminal.app ウィンドウに貼り付けます。
 

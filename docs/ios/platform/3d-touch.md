@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 6a12d157b3de7c3841f5d69d209c01fbc612f79b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: abd9fe85be412539fd51d0e6164c79ce346377a7
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61279178"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832105"
 ---
 # <a name="introduction-to-3d-touch-in-xamarinios"></a>Xamarin.iOS で 3D Touch の概要
 
@@ -105,7 +105,7 @@ public override void TraitCollectionDidChange(UITraitCollection previousTraitCol
 
 ### <a name="handling-peek-and-pop"></a>処理のピークと Pop
 
-3D タッチを処理できる iOS デバイスでは、インスタンスを使用できます、`UIViewControllerPreviewingDelegate`クラスの表示を処理する**ピーク**と**ポップ**項目の詳細。 などがある場合、テーブル ビュー コント ローラーが呼び出されます`MasterViewController `をサポートする次のコードを使用してでした**ピーク**と**ポップ**:。
+3D タッチを処理できる iOS デバイスでは、インスタンスを使用できます、`UIViewControllerPreviewingDelegate`クラスの表示を処理する**ピーク**と**ポップ**項目の詳細。 などがある場合、テーブル ビュー コント ローラーが呼び出されます`MasterViewController`をサポートする次のコードを使用してでした**ピーク**と**ポップ**:。
 
 ```csharp
 using System;
@@ -443,7 +443,7 @@ Force Touch で互換性のある Mac で Xcode と iOS シミュレーターの
 
 アクティブなこの機能をキー困難を Mac のトラック パッドすると、実際の iPhone ハードウェア上と同じように 3D タッチを有効にします。
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
 この記事では加えられて、新しい 3D タッチ Api iOS 9 iPhone 6 s と iPhone 6 s で利用できるとします。 アプリに追加の筆圧対応機能を説明しましたPeek と Pop を使用して、ナビゲーション; せず、現在のコンテキストからのアプリ内の情報をすばやく表示するには機能を最もよく使用クイック アクションを使用して、アプリへのショートカットを提供します。
 

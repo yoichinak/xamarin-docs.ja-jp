@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: a93de9d60a515b6089b35a64eb8832c456c96557
-ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
+ms.openlocfilehash: 890c11908b11b18d6ca626820f1a835d817870da
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66827348"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829862"
 ---
 # <a name="collection-views-in-xamarinios"></a>Xamarin.iOS でのコレクション ビュー
 
@@ -739,10 +739,10 @@ public override void ViewDidLoad ()
 
 ここで実装し、ドラッグ操作を制御するコレクション ビューに追加されたいくつかの新しいメソッドを使用しているしました。
 
- - `BeginInteractiveMovementForItem` -移動操作の開始をマークします。
- - `UpdateInteractiveMovementTargetPosition` -項目の位置が更新されると、送信です。
- - `EndInteractiveMovement` 項目の移動の末尾をマークします。
- - `CancelInteractiveMovement` -ユーザーの移動操作をキャンセルをマークします。
+- `BeginInteractiveMovementForItem` -移動操作の開始をマークします。
+- `UpdateInteractiveMovementTargetPosition` -項目の位置が更新されると、送信です。
+- `EndInteractiveMovement` 項目の移動の末尾をマークします。
+- `CancelInteractiveMovement` -ユーザーの移動操作をキャンセルをマークします。
 
 アプリケーションを実行すると、ドラッグ操作は、既定のコレクション ビューに付属しているジェスチャ レコグナイザーをドラッグするとまったく同じ動作が。
 
@@ -1217,78 +1217,78 @@ Xamarin.iOS アプリをもう一度実行している場合、コレクショ�
 
 次の変更または追加機能に加え、 `UICollectionView` iOS 9 のクラス。
 
- - `BeginInteractiveMovementForItem` – ドラッグ操作の開始をマークします。
- - `CancelInteractiveMovement` – コレクションの通知、ユーザーがドラッグ操作をキャンセルを表示します。
- - `EndInteractiveMovement` – コレクションの通知、ユーザーがドラッグ操作を完了したことを表示します。
- - `GetIndexPathsForVisibleSupplementaryElements` – を返します、`indexPath`のヘッダーまたはフッター コレクション ビューのセクションでします。
- - `GetSupplementaryView` – 特定のヘッダーまたはページ フッターを返します。
- - `GetVisibleSupplementaryViews` – すべての表示のヘッダーとフッターの一覧を返します。
- - `UpdateInteractiveMovementTargetPosition` – コレクションの通知、ユーザーが移動されたか、移動は、ドラッグ操作中にアイテムを表示します。
+- `BeginInteractiveMovementForItem` – ドラッグ操作の開始をマークします。
+- `CancelInteractiveMovement` – コレクションの通知、ユーザーがドラッグ操作をキャンセルを表示します。
+- `EndInteractiveMovement` – コレクションの通知、ユーザーがドラッグ操作を完了したことを表示します。
+- `GetIndexPathsForVisibleSupplementaryElements` – を返します、`indexPath`のヘッダーまたはフッター コレクション ビューのセクションでします。
+- `GetSupplementaryView` – 特定のヘッダーまたはページ フッターを返します。
+- `GetVisibleSupplementaryViews` – すべての表示のヘッダーとフッターの一覧を返します。
+- `UpdateInteractiveMovementTargetPosition` – コレクションの通知、ユーザーが移動されたか、移動は、ドラッグ操作中にアイテムを表示します。
 
 ### <a name="uicollectionviewcontroller"></a>UICollectionViewController
 
 次の変更または追加機能に加え、 `UICollectionViewController` iOS 9 のクラス。
 
- - `InstallsStandardGestureForInteractiveMovement` –`true`自動的にドラッグの並べ替えをサポートしている新しいジェスチャ認識エンジンが使用されます。
- - `CanMoveItem` – 特定の項目がドラッグの順序を変更できる場合は、コレクション ビューに通知します。
- - `GetTargetContentOffset` – 特定のコレクション ビューのアイテムのオフセットを取得するために使用します。
- - `GetTargetIndexPathForMove` 取得、`indexPath`のドラッグ操作の特定の項目。
- - `MoveItem` – 特定の項目の順序を一覧に移動します。
+- `InstallsStandardGestureForInteractiveMovement` –`true`自動的にドラッグの並べ替えをサポートしている新しいジェスチャ認識エンジンが使用されます。
+- `CanMoveItem` – 特定の項目がドラッグの順序を変更できる場合は、コレクション ビューに通知します。
+- `GetTargetContentOffset` – 特定のコレクション ビューのアイテムのオフセットを取得するために使用します。
+- `GetTargetIndexPathForMove` 取得、`indexPath`のドラッグ操作の特定の項目。
+- `MoveItem` – 特定の項目の順序を一覧に移動します。
 
 
 ### <a name="uicollectionviewdatasource"></a>UICollectionViewDataSource
 
 次の変更または追加機能に加え、 `UICollectionViewDataSource` iOS 9 のクラス。
 
- - `CanMoveItem` – 特定の項目がドラッグの順序を変更できる場合は、コレクション ビューに通知します。
- - `MoveItem` – 特定の項目の順序を一覧に移動します。
+- `CanMoveItem` – 特定の項目がドラッグの順序を変更できる場合は、コレクション ビューに通知します。
+- `MoveItem` – 特定の項目の順序を一覧に移動します。
 
 ### <a name="uicollectionviewdelegate"></a>UICollectionViewDelegate
 
 次の変更または追加機能に加え、 `UICollectionViewDelegate` iOS 9 のクラス。
 
- - `GetTargetContentOffset` – 特定のコレクション ビューのアイテムのオフセットを取得するために使用します。
- - `GetTargetIndexPathForMove` 取得、`indexPath`のドラッグ操作の特定の項目。
+- `GetTargetContentOffset` – 特定のコレクション ビューのアイテムのオフセットを取得するために使用します。
+- `GetTargetIndexPathForMove` 取得、`indexPath`のドラッグ操作の特定の項目。
 
 ### <a name="uicollectionviewflowlayout"></a>UICollectionViewFlowLayout
 
 次の変更または追加機能に加え、 `UICollectionViewFlowLayout` iOS 9 のクラス。
 
- - `SectionFootersPinToVisibleBounds` – セクション フッターが表示されるコレクション ビューの範囲に戻らない。
- - `SectionHeadersPinToVisibleBounds` – スティック セクション ヘッダーに表示されるコレクション ビューの境界。
+- `SectionFootersPinToVisibleBounds` – セクション フッターが表示されるコレクション ビューの範囲に戻らない。
+- `SectionHeadersPinToVisibleBounds` – スティック セクション ヘッダーに表示されるコレクション ビューの境界。
 
 ### <a name="uicollectionviewlayout"></a>UICollectionViewLayout
 
 次の変更または追加機能に加え、 `UICollectionViewLayout` iOS 9 のクラス。
 
- - `GetInvalidationContextForEndingInteractiveMovementOfItems` – ユーザーは、ドラッグを終了するかキャンセルすると、ドラッグ操作の最後に、無効化のコンテキストを返します。
- - `GetInvalidationContextForInteractivelyMovingItems` – ドラッグ操作の開始時の無効化のコンテキストを返します。
- - `GetLayoutAttributesForInteractivelyMovingItem` – 項目をドラッグするときに特定の項目のレイアウト属性を取得します。
- - `GetTargetIndexPathForInteractivelyMovingItem` – を返します、`indexPath`の項目をドラッグしたときに特定の時点になっている項目。
+- `GetInvalidationContextForEndingInteractiveMovementOfItems` – ユーザーは、ドラッグを終了するかキャンセルすると、ドラッグ操作の最後に、無効化のコンテキストを返します。
+- `GetInvalidationContextForInteractivelyMovingItems` – ドラッグ操作の開始時の無効化のコンテキストを返します。
+- `GetLayoutAttributesForInteractivelyMovingItem` – 項目をドラッグするときに特定の項目のレイアウト属性を取得します。
+- `GetTargetIndexPathForInteractivelyMovingItem` – を返します、`indexPath`の項目をドラッグしたときに特定の時点になっている項目。
 
 ### <a name="uicollectionviewlayoutattributes"></a>UICollectionViewLayoutAttributes
 
 次の変更または追加機能に加え、 `UICollectionViewLayoutAttributes` iOS 9 のクラス。
 
- - `CollisionBoundingPath` – ドラッグ操作中に 2 つの項目の衝突パスを返します。
- - `CollisionBoundsType` – 衝突の型を返します (として、 `UIDynamicItemCollisionBoundsType`) が、ドラッグ操作中に発生しました。
+- `CollisionBoundingPath` – ドラッグ操作中に 2 つの項目の衝突パスを返します。
+- `CollisionBoundsType` – 衝突の型を返します (として、 `UIDynamicItemCollisionBoundsType`) が、ドラッグ操作中に発生しました。
 
 ### <a name="uicollectionviewlayoutinvalidationcontext"></a>UICollectionViewLayoutInvalidationContext
 
 次の変更または追加機能に加え、 `UICollectionViewLayoutInvalidationContext` iOS 9 のクラス。
 
- - `InteractiveMovementTarget` – ドラッグ操作のターゲット項目を返します。
- - `PreviousIndexPathsForInteractivelyMovingItems` – を返します、`indexPaths`ドラッグすると、操作の順序を変更に関連するその他の項目。
- - `TargetIndexPathsForInteractivelyMovingItems` – を返します、`indexPaths`の項目をドラッグの順序を変更する操作の結果として並べ替えられます。
+- `InteractiveMovementTarget` – ドラッグ操作のターゲット項目を返します。
+- `PreviousIndexPathsForInteractivelyMovingItems` – を返します、`indexPaths`ドラッグすると、操作の順序を変更に関連するその他の項目。
+- `TargetIndexPathsForInteractivelyMovingItems` – を返します、`indexPaths`の項目をドラッグの順序を変更する操作の結果として並べ替えられます。
 
 ### <a name="uicollectionviewsource"></a>UICollectionViewSource
 
 次の変更または追加機能に加え、 `UICollectionViewSource` iOS 9 のクラス。
 
- - `CanMoveItem` – 特定の項目がドラッグの順序を変更できる場合は、コレクション ビューに通知します。
- - `GetTargetContentOffset` – ドラッグの順序を変更する操作で移動するアイテムのオフセットを返します。
- - `GetTargetIndexPathForMove` – を返します、`indexPath`のドラッグの順序を変更する操作中に移動する項目。
- - `MoveItem` – 特定の項目の順序を一覧に移動します。
+- `CanMoveItem` – 特定の項目がドラッグの順序を変更できる場合は、コレクション ビューに通知します。
+- `GetTargetContentOffset` – ドラッグの順序を変更する操作で移動するアイテムのオフセットを返します。
+- `GetTargetIndexPathForMove` – を返します、`indexPath`のドラッグの順序を変更する操作中に移動する項目。
+- `MoveItem` – 特定の項目の順序を一覧に移動します。
 
 ## <a name="summary"></a>まとめ
 

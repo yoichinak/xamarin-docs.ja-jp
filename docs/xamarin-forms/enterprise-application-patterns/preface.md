@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: fd085d2fb12e82233f6d3be2e2773a84539f837b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 82f1455ff5e5ac06b50664e1d4d533d4964b7a0e
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61298884"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831125"
 ---
 # <a name="preface-to-enterprise-app-development"></a>エンタープライズアプリケーションの開発にあたって
 
@@ -26,7 +26,7 @@ ms.locfileid: "61298884"
 
 このガイドは、既に Xamarin.Forms について熟知している読者を対象としています。 Xamarin.Forms の詳細な概要については [Xamarin.Forms ドキュメント](~/xamarin-forms/index.yml)、および[Xamarin.Forms を使用したモバイル アプリを作成する](https://aka.ms/xamebook)を参照してください。
 
-このガイドでは、補完するもの[.NET マイクロ サービス。コンテナー化された .NET アプリケーション アーキテクチャ](https://aka.ms/microservicesebook)、開発とコンテナー化されたマイクロ サービスの配置に重点を置いていますが。 その他の関連ドキュメントとして[ASP.NET Core と Microsoft Azure を使用したモダン Web アプリケーションの設計と開発](http://aka.ms/WebAppEbook)、 [Microsoft プラットフォームとツールを使用したコンテナー化された Docker アプリケーションのライフサイクル](http://aka.ms/dockerlifecycleebook)、および[モバイル アプリ開発用の Microsoft プラットフォームとツール](http://aka.ms/MobAppDev/StndPDF)があります。
+このガイドでは、補完するもの[.NET マイクロ サービス。コンテナー化された .NET アプリケーション アーキテクチャ](https://aka.ms/microservicesebook)、開発とコンテナー化されたマイクロ サービスの配置に重点を置いていますが。 その他の関連ドキュメントとして[ASP.NET Core と Microsoft Azure を使用したモダン Web アプリケーションの設計と開発](https://aka.ms/WebAppEbook)、 [Microsoft プラットフォームとツールを使用したコンテナー化された Docker アプリケーションのライフサイクル](https://aka.ms/dockerlifecycleebook)、および[モバイル アプリ開発用の Microsoft プラットフォームとツール](https://aka.ms/MobAppDev/StndPDF)があります。
 
 ## <a name="who-should-use-this-guide"></a>対象読者
 

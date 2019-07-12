@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 02/02/2018
-ms.openlocfilehash: 8c8bf3f86091f49633913b37ef5108ddbae6d276
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6b404d7c27fba38c53ff07207003849445d51118
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60951772"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832476"
 ---
 # <a name="hello-tvos-quick-start-guide"></a>はじめての tvOS クイック スタート ガイド
 
@@ -415,7 +415,7 @@ public override void ViewDidLoad ()
 }
 ```
 
-使用する必要があります`ViewDidLoad `などの別のメソッドではなく`Initialize`ため、`ViewDidLoad `呼びます*後*、OS が読み込まれ、ユーザー インターフェイスをインスタンス化、`.storyboard`ファイル。 ラベル コントロールにする前にアクセスしようとした場合、`.storyboard`なります、ファイルが完全に読み込まれ、インスタンス化、`NullReferenceException`エラー ラベル コントロールはまだ作成されていないためです。
+使用する必要があります`ViewDidLoad`などの別のメソッドではなく`Initialize`ため、`ViewDidLoad`呼びます*後*、OS が読み込まれ、ユーザー インターフェイスをインスタンス化、`.storyboard`ファイル。 ラベル コントロールにする前にアクセスしようとした場合、`.storyboard`なります、ファイルが完全に読み込まれ、インスタンス化、`NullReferenceException`エラー ラベル コントロールはまだ作成されていないためです。
 
 次に、ユーザーがボタンをクリックしてに応答するコードを追加する必要があります。 次の部分に追加クラスを作成しました。
 

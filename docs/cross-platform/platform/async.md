@@ -6,12 +6,12 @@ ms.assetid: F87BF587-AB64-4C60-84B1-184CAE36ED65
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 0a72dead1b6c001f1514f1a089df9b407eb90644
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: cca147f0c5dd1a217f464ffbed2a1ad2618c9b80
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61037381"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830191"
 ---
 # <a name="async-support-overview"></a>非同期サポートの概要
 
@@ -23,7 +23,7 @@ Xamarin の非同期サポートは Mono 3.0 基盤上に構築し、API プロ�
 
 このドキュメントでは、新しい非同期を紹介し、await のキーワード、Xamarin.iOS および Xamarin.Android での非同期メソッドを実装する簡単な例を見ていきます。
 
-新しい非同期機能の詳細な説明のC#MSDN ドキュメントを参照してください (多くのサンプルとさまざまな使用シナリオを含む) 5 [Async および Await を使用した非同期プログラミング](https://msdn.microsoft.com/library/vstudio/hh191443.aspx)します。
+新しい非同期機能の詳細な説明のC#、情報の記事を参照してください (多くのサンプルとさまざまな使用シナリオを含む) 5[非同期プログラミング](https://docs.microsoft.com/dotnet/csharp/async)します。
 
 サンプル アプリケーションでは、(メイン スレッドをブロック) なしで単純な非同期 web 要求を作成し、ダウンロードした html および文字数で UI を更新します。
 
@@ -69,7 +69,7 @@ Await を使用して、呼び出し元のスレッド – をブロックしま
 
 タスクが完了したら、同じ時点で、コードを実行するメソッドを再開します。 これは、(1 つが存在する) 場合は、try – catch – finally ブロックの try スコープに戻るが含まれます。 await finally ブロックまたは catch で使用できません。
 
-詳細をご覧ください[msdn await](https://msdn.microsoft.com/library/vstudio/hh156528.aspx)します。
+詳細をご覧ください[await](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/await) Microsoft Docs でします。
 
 ## <a name="exception-handling"></a>例外処理
 
@@ -85,7 +85,7 @@ Await を使用して、呼び出し元のスレッド – をブロックしま
 
 タスクは自体をキャンセルし、キャンセルを確認します。
 
-キャンセルの詳細については、次を参照してください。[非同期タスクを取り消す方法](https://msdn.microsoft.com/library/vstudio/jj155761.aspx)msdn です。
+取り消しの詳細については、「[Fine Tuning Your Async Application (C#) (非同期アプリケーションの微調整 (C#))](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/async/fine-tuning-your-async-application)」を参照してください。
 
 ## <a name="example"></a>例
 
@@ -201,10 +201,9 @@ async void HandleTouchUpInside (object sender, EventArgs e)
 - [データ (iOS) (サンプル)](https://developer.xamarin.com/samples/monotouch/Data/)
 - [HttpClient (iOS) (サンプル)](https://developer.xamarin.com/samples/monotouch/HttpClient/)
 - [MapKitSearch (iOS) (サンプル)](https://github.com/xamarin/monotouch-samples/tree/master/MapKitSearch)
-- [ウェビナー:C#IOS と Android (ビデオ) での非同期](http://xamarin.wistia.com/medias/k27mc627xz)
-- [非同期を使用した非同期プログラミングと Await (MSDN)](https://msdn.microsoft.com/library/vstudio/hh191443.aspx)
-- [(MSDN) 非同期アプリケーションの微調整](https://msdn.microsoft.com/library/vstudio/jj155761.aspx)
-- [Await と UI、およびデッドロック!あらららら！(MSDN)](http://blogs.msdn.com/b/pfxteam/archive/2011/01/13/10115163.aspx)
-- [(MSDN) を完了するタスクの処理](http://blogs.msdn.com/b/pfxteam/archive/2012/08/02/processing-tasks-as-they-complete.aspx)
+- [非同期プログラミング](https://docs.microsoft.com/dotnet/csharp/async)
+- [非同期アプリケーションの微調整 (C#)](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/async/fine-tuning-your-async-application)
+- [Await と UI、およびデッドロック!あらららら！](https://devblogs.microsoft.com/pfxteam/await-and-ui-and-deadlocks-oh-my/)
+- [完了時にタスクを処理)](https://devblogs.microsoft.com/pfxteam/processing-tasks-as-they-complete/)
 - [タスク ベースの非同期パターン (TAP)](https://msdn.microsoft.com/library/hh873175.aspx)
 - [非同期性C#キーワードの導入について 5 (Eric Lippert のブログ)。](http://blogs.msdn.com/b/ericlippert/archive/2010/11/11/whither-async.aspx)

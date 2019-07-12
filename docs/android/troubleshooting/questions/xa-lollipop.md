@@ -7,16 +7,17 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 7e31f9ad46a04b648a6a1f24c075426f7d98a663
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: db0cb221ee18998fbb98449ae03c442c84bcfcd7
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61228261"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829714"
 ---
 # <a name="what-version-of-xamarinandroid-added-lollipop-support"></a>Lollipop のサポートが追加された Xamarin.Android のバージョンを教えてください
 
-**注:** このガイドは、Android L プレビュー用に作成されたでした。
+> [!NOTE]
+> このガイドは、Android L プレビュー用に作成されたでした。
 
 -   [Xamarin.Android 4.17](https://developer.xamarin.com/releases/android/xamarin.android_4/xamarin.android_4.17/) Android L プレビューのサポートが追加されました。
 -   [Xamarin.Android 4.20](https://developer.xamarin.com/releases/android/xamarin.android_4/xamarin.android_4.20/) Android Lollipop のサポートが追加されました。
@@ -33,7 +34,7 @@ Xamarin には、現在の安定したリリースの Xamarin ツールのみア
 Error 1 Could not find android.jar for API Level 21.
 ```
 
-このメッセージは、API レベル 21 用、Android SDK プラットフォームがインストールされていないことを意味します。 Android SDK Manager をインストールするか (**ツール > Android SDK マネージャーを開く.**)、またはインストールされている API バージョンを対象とする Xamarin.Android プロジェクトを変更します。
+このメッセージは、API レベル 21 用、Android SDK プラットフォームがインストールされていないことを意味します。 Android SDK Manager をインストールするか (**ツール > Android SDK マネージャーを開く.** )、またはインストールされている API バージョンを対象とする Xamarin.Android プロジェクトを変更します。
 
 この問題のいくつかの回避策があります。
 

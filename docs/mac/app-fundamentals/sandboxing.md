@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 6bf2f63e944e178d80f76fe363ef24410ff052ce
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c51960a24e1277b3faec0905da3b9a5986359681
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61237104"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830670"
 ---
 # <a name="sandboxing-a-xamarinmac-app"></a>Xamarin.Mac アプリのサンド ボックス化
 
@@ -460,7 +460,7 @@ Xamarin.Mac アプリを実行するの Apple の署名されたバージョン�
 
 1. ターミナル アプリを開きます (で`/Applications/Utilities`)。
 2. Xamarin.Mac アプリの Apple の署名されたバージョンを Finder ウィンドウを開きます。
-3. 型`asctl container acl add -file `ターミナル ウィンドウでします。
+3. 型`asctl container acl add -file`ターミナル ウィンドウでします。
 4. Xamarin.Mac アプリのアイコンをこの Finder ウィンドウからドラッグし、ターミナル ウィンドウにドロップします。
 5. ファイルへの完全パスは、ターミナル、コマンドに追加されます。
 6. キーを押して**Enter**コマンドを実行します。
