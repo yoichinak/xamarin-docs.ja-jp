@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: a3bb6674baed293f95eb50fbca5792b288aa9239
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: f53c1afd7c3f835bff2aae507b9937067bde4bec
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832512"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865732"
 ---
 # <a name="dialogs-in-xamarinmac"></a>Xamarin.Mac でダイアログ ボックス
 
@@ -127,10 +127,10 @@ macOS は、標準的な印刷を使用しているすべてのアプリケー�
 6. 作成、**モーダル セグエ**ダイアログのウィンドウにダイアログ ボックスが開きますされる UI 要素のコントロールをドラッグして新しいビュー コント ローラーへのアプリのメイン ウィンドウから。 割り当てる、**識別子** `ModalSegue`: 
 
     [![](dialog-images/new06.png "モーダルのセグエ")](dialog-images/new06.png#lightbox)
-6. いずれかのワイヤ アップ**アクション**と**Outlet**: 
+7. いずれかのワイヤ アップ**アクション**と**Outlet**: 
 
     [![](dialog-images/new04.png "アクションを設定します。")](dialog-images/new04.png#lightbox)
-6. 変更を保存し、Visual Studio for Mac は Xcode と同期に戻ります。
+8. 変更を保存し、Visual Studio for Mac は Xcode と同期に戻ります。
 
 ように、`CustomDialogController.cs`ファイルの次のようになります。
 
@@ -265,19 +265,19 @@ Xamarin.Mac でカスタムのシートを作成するには次の操作して�
 2. 新しいドラッグ**ビュー コント ローラー**デザイン サーフェイスに。
 
     [![](dialog-images/new01.png "ビュー コント ローラーをライブラリから選択します。")](dialog-images/new01.png#lightbox)
-2. ユーザー インターフェイスを設計するには。
+3. ユーザー インターフェイスを設計するには。
 
     [![](dialog-images/sheet01.png "UI の設計")](dialog-images/sheet01.png#lightbox)
-3. 作成、**シート セグエ**メイン ウィンドウに新しいビュー コント ローラーから。 
+4. 作成、**シート セグエ**メイン ウィンドウに新しいビュー コント ローラーから。 
 
     [![](dialog-images/sheet02.png "シート セグエの種類の選択")](dialog-images/sheet02.png#lightbox)
-4. **Identity Inspector**、ビュー コント ローラーの名前を**クラス** `SheetViewController`: 
+5. **Identity Inspector**、ビュー コント ローラーの名前を**クラス** `SheetViewController`: 
 
     [![](dialog-images/sheet03.png "クラス名を設定します。")](dialog-images/sheet03.png#lightbox)
-5. 必要な定義**Outlet**と**アクション**: 
+6. 必要な定義**Outlet**と**アクション**: 
 
     [![](dialog-images/sheet04.png "必要な Outlet と Action を定義します。")](dialog-images/sheet04.png#lightbox)
-6. 変更を保存し、Visual Studio for Mac を同期に戻ります。
+7. 変更を保存し、Visual Studio for Mac を同期に戻ります。
 
 次に、編集、`SheetViewController.cs`ファイルを開き、次のようになります。
 

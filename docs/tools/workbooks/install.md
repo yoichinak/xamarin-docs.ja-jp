@@ -6,12 +6,12 @@ ms.assetid: 9D4E10E8-A288-4C6C-9475-02969198C119
 author: lobrien
 ms.author: laobri
 ms.date: 06/19/2018
-ms.openlocfilehash: a1001163d89a9a9cda16a7ee5e644307fcc9875c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: cb79323c416c107c35c465bc2a8815ab267cc451
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61218589"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865947"
 ---
 # <a name="workbooks-installation-and-requirements"></a>Workbooks のインストールと要件
 
@@ -35,7 +35,7 @@ ms.locfileid: "61218589"
 
 ## <a name="requirements"></a>必要条件
 
-#### <a name="supported-operating-systems"></a>Supported Operating Systems
+#### <a name="supported-operating-systems"></a>サポートされるオペレーティング システム
 
 - **Mac** -OS X 10.11 以降
 - **Windows** -Windows 7 以上 (Internet Explorer 11 以降と .NET 4.6.1 以降)
@@ -96,7 +96,7 @@ Visual Studio
 
 アタッチするか、またはリンクする場合、 **.workbooks**バグをより迅速に解決に役立つ可能性があるファイルが使用すると、問題があります。
 
-### <a name="devices"></a>デバイス
+### <a name="devices"></a>[デバイス]
 
 IOS または Android のブックの接続に問題があるため、既にオンになっている場合[、トラブルシューティングのページ](~/tools/workbooks/troubleshooting/index.md)を把握する必要があります。
 
@@ -111,7 +111,7 @@ IOS または Android のブックの接続に問題があるため、既にオ�
 
 [bugs]: https://github.com/Microsoft/workbooks/issues/new
 
-## <a name="uninstall"></a>[アンインストール]
+## <a name="uninstall"></a>Uninstall
 
 ### <a name="windows"></a>Windows
 
@@ -149,8 +149,8 @@ sudo /Library/Frameworks/Xamarin.Interactive.framework/Versions/Current/uninstal
 
 1. `"/Applications/Xamarin Workbooks.app"` の Workbooks アプリを削除します
 2. `"Applications/Xamarin Inspector.app"` の Inspector アプリを削除します
-2. アドイン `"~/Library/Application Support/XamarinStudio-6.0/LocalInstall/Addins/Xamarin.Interactive"` と `"~/Library/Application Support/XamarinStudio-6.0/LocalInstall/Addins/Xamarin.Inspector"` を削除します
-3. `/Library/Frameworks/Xamarin.Interactive.framework` および `/Library/Frameworks/Xamarin.Inspector.framework` にある Inspector のファイルとサポート ファイルを削除します
+3. アドイン `"~/Library/Application Support/XamarinStudio-6.0/LocalInstall/Addins/Xamarin.Interactive"` と `"~/Library/Application Support/XamarinStudio-6.0/LocalInstall/Addins/Xamarin.Inspector"` を削除します
+4. `/Library/Frameworks/Xamarin.Interactive.framework` および `/Library/Frameworks/Xamarin.Inspector.framework` にある Inspector のファイルとサポート ファイルを削除します
 
 ## <a name="downgrading"></a>ダウン グレード
 
@@ -158,7 +158,7 @@ sudo /Library/Frameworks/Xamarin.Interactive.framework/Versions/Current/uninstal
 
 古いインストーラーでのバグにより、1.3.2 または古いインストーラーを使用して 1.4 以降のリリースをダウン グレードすることはできません。
 
-1.4 または 1.3.2 に新しいまたは古いからダウン グレードします。
+1\.4 または 1.3.2 に新しいまたは古いからダウン グレードします。
 
 1. [Workbooks と Inspector を手動でアンインストールします。](#uninstall-macos)
 2. 実行、1.3.2 以前`.pkg`インストーラー

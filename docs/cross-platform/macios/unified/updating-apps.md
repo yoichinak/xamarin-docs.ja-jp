@@ -6,12 +6,12 @@ ms.assetid: 8A654C95-5DCA-4BB5-A582-F96C2BECC81C
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 62b8e82a1191f3213453e9a213ea615e476662d5
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 7730d19e4f261a0e414e4946fd0add5312f5d030
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64978222"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864355"
 ---
 # <a name="updating-existing-apps-to-the-unified-api"></a>Unified API への既存のアプリの更新
 
@@ -36,11 +36,11 @@ ms.locfileid: "64978222"
 
 For mac。 Visual Studio に組み込まれている自動移行ツールを使用して、Unified API に既存の Xamarin.iOS アプリを更新できます。 いくつか追加の修正は次の必要な場合で説明したよう[手順](~/cross-platform/macios/unified/updating-ios-apps.md)と[ヒント](~/cross-platform/macios/unified/updating-tips.md)します。
 
-###  <a name="xamarinmac-appscross-platformmaciosunifiedupdating-mac-appsmd"></a>[Xamarin.Mac アプリ](~/cross-platform/macios/unified/updating-mac-apps.md)
+### <a name="xamarinmac-appscross-platformmaciosunifiedupdating-mac-appsmd"></a>[Xamarin.Mac アプリ](~/cross-platform/macios/unified/updating-mac-apps.md)
 
 For mac。 Visual Studio に組み込まれている自動移行ツールを使用して、Unified API に既存の Xamarin.Mac アプリを更新できます。 いくつか追加の修正は次の必要な場合で説明したよう[手順](~/cross-platform/macios/unified/updating-mac-apps.md)と[ヒント](~/cross-platform/macios/unified/updating-tips.md)します。
 
-###  <a name="xamarinforms-appscross-platformmaciosunifiedupdating-xamarin-forms-appsmd"></a>[Xamarin.Forms アプリ](~/cross-platform/macios/unified/updating-xamarin-forms-apps.md)
+### <a name="xamarinforms-appscross-platformmaciosunifiedupdating-xamarin-forms-appsmd"></a>[Xamarin.Forms アプリ](~/cross-platform/macios/unified/updating-xamarin-forms-apps.md)
 
 Unified API を使用して、iOS プロジェクトで既存の Xamarin.Forms ソリューションを更新する次の手順に従います。 統一された API のサポートは Xamarin.Forms 1.3 で使用できる以降のみように[指示](~/cross-platform/macios/unified/updating-xamarin-forms-apps.md)バージョン 1.3 に Xamarin.Forms アプリを更新する方法についても説明します。 これら[ヒント](~/cross-platform/macios/unified/updating-tips.md)カスタム レンダラーまたは依存関係サービスで、ネイティブ iOS コードの更新に役立つ場合があります。
 

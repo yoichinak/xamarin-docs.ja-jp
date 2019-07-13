@@ -6,12 +6,12 @@ ms.assetid: 8A14A457-F72E-4B08-B4B6-801F7619F893
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 6135740095395d5cd7bde9abc1cbbab1e1072161
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: e0015316b7be3462982ee0959862250c0c27dc74
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832240"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864656"
 ---
 # <a name="step-2-configure-service-access-for-mobile-application"></a>手順 2. モバイル アプリケーションのサービスへのアクセスを構成します。
 
@@ -19,15 +19,15 @@ ms.locfileid: "67832240"
 
 1. **構成**タブで、**他のアプリケーションに対するアクセス許可**セクション。
 
-  ![](configure-images/2.1-configure.png "[構成] タブで、他のアプリケーション セクションへのアクセス許可を見つける")
+   ![](configure-images/2.1-configure.png "[構成] タブで、他のアプリケーション セクションへのアクセス許可を見つける")
 
 2. をクリックして**アプリケーションを追加**ボタンをクリックします。 ポップアップの次の画面では、Azure Active Directory によってセキュリティで保護されているすべてのアプリケーションの一覧が表示されます。 モバイル アプリケーションからアクセスする必要があるアプリケーションを選択します。
 
-  ![](configure-images/2.2-add-application.png "モバイル アプリケーションからアクセスする必要があるアプリケーションを選択します。")
+   ![](configure-images/2.2-add-application.png "モバイル アプリケーションからアクセスする必要があるアプリケーションを選択します。")
 
 3. アプリケーションを選択するで新しく追加されたアプリケーションをもう一度選択**他のアプリケーションに対するアクセス許可**セクションし、適切な権限を付与します。
 
-  ![](configure-images/2.3-permissions.png "アプリケーションを選択すると、もう一度その他のアプリケーション セクションへのアクセス許可で新しく追加されたアプリケーションを選択し、適切な権限を与える")
+   ![](configure-images/2.3-permissions.png "アプリケーションを選択すると、もう一度その他のアプリケーション セクションへのアクセス許可で新しく追加されたアプリケーションを選択し、適切な権限を与える")
 
 4. 最後に、**保存**構成します。 これらのサービスがモバイル アプリケーションで使用可能になります。
 

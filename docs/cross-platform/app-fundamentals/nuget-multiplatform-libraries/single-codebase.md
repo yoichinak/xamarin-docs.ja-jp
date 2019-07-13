@@ -6,12 +6,12 @@ ms.assetid: E7B55354-9BBE-4122-BCE3-3506B79090DD
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 6d695df9c59a5f95441092d6d7b44d5feda941bd
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6371c2af15eab9c5124212eefd9cf70d07b945d4
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61267754"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864717"
 ---
 # <a name="creating-a-new-multiplatform-library-for-nuget"></a>NuGet の新しいマルチプラット フォーム ライブラリを作成します。
 
@@ -30,25 +30,25 @@ PCL を使用するマルチプラット フォーム ライブラリ プロジ�
 
 2. 選択**マルチプラット フォーム ライブラリ**から、**マルチプラット フォーム > ライブラリ**セクション。
 
-  [![](single-codebase-images/mulitplatform-library-sml.png "1 つのコード ベースのマルチプラット フォーム ライブラリを構成します。")](single-codebase-images/mulitplatform-library.png#lightbox)
+   [![](single-codebase-images/mulitplatform-library-sml.png "1 つのコード ベースのマルチプラット フォーム ライブラリを構成します。")](single-codebase-images/mulitplatform-library.png#lightbox)
 
 3. 入力、**名前**と**説明**、選択**すべてのプラットフォームの 1 つ**:
 
-  [![](single-codebase-images/single-configure-sml.png "1 つのコード ベースのマルチプラット フォーム ライブラリを構成します。")](single-codebase-images/single-configure.png#lightbox)
+   [![](single-codebase-images/single-configure-sml.png "1 つのコード ベースのマルチプラット フォーム ライブラリを構成します。")](single-codebase-images/single-configure.png#lightbox)
 
 4. ウィザードを完了します。 1 つのライブラリ プロジェクトは、ソリューションに作成されます。
 
 5. 新しいライブラリ プロジェクトを右クリックし、**オプション**します。 **ビルド > 全般**セクションでは、**ターゲット フレームワーク**設定 – .NET ポータブル PCL プロファイルまたは .NET Standard バージョンを選択。
 
-  [![](single-codebase-images/single-choose-type-sml.png "PCL または .NET Standard ライブラリの種類を選択します。")](single-codebase-images/single-choose-type.png#lightbox)
+   [![](single-codebase-images/single-choose-type-sml.png "PCL または .NET Standard ライブラリの種類を選択します。")](single-codebase-images/single-choose-type.png#lightbox)
 
 6. また、**プロジェクト オプション**ウィンドウを開いて、 **NuGet パッケージ > メタデータ**セクションし、入力、[必要なメタデータ](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md)(省略可能なメタデータ) と同様に。
 
-  [![](single-codebase-images/single-metadata-sml.png "必要なメタデータを入力します。")](single-codebase-images/single-metadata.png#lightbox)
+   [![](single-codebase-images/single-metadata-sml.png "必要なメタデータを入力します。")](single-codebase-images/single-metadata.png#lightbox)
 
 7. ライブラリ プロジェクトを右クリックし、選択**NuGet パッケージの作成**(またはビルドまたはソリューションを展開する) および **.nupkg** NuGet パッケージのファイルに保存されます、 **/bin/** フォルダー (デバッグまたはリリースでは、構成に応じて):
 
-  ![](single-codebase-images/create-nuget-package.png "NuGet パッケージのファイルが保存 bin フォルダーにデバッグまたはリリースでは、構成に応じて")
+   ![](single-codebase-images/create-nuget-package.png "NuGet パッケージのファイルが保存 bin フォルダーにデバッグまたはリリースでは、構成に応じて")
 
 
 ## <a name="verifying-the-output"></a>出力を確認しています
@@ -65,7 +65,7 @@ NuGet パッケージは、ZIP ファイルではもおり、生成されたパ�
 
 PCL ベースのプロジェクトと .NET Standard ベースのプロジェクト (iOS、Android の機能) などのプラットフォームに固有の参照を含めることはできません。
 
-プロジェクトを右クリックして完了場合、既存の PCL プロジェクトまたは .NET Standard プロジェクトを展開すると、プラットフォーム固有のコードを含める必要がある、この**追加 > プラットフォームの実装を追加しています.**:
+プロジェクトを右クリックして完了場合、既存の PCL プロジェクトまたは .NET Standard プロジェクトを展開すると、プラットフォーム固有のコードを含める必要がある、この**追加 > プラットフォームの実装を追加しています.** :
 
 [![](single-codebase-images/add-later-sml.png "プラットフォームの実装 メニューを追加します。")](single-codebase-images/add-later.png#lightbox)
 

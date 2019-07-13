@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 1362767bf9a80af1eac37d316bd99a6ab364063f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: bed8180c513eefd5765be767a5dca7cecefa6101
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61414038"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865962"
 ---
 # <a name="working-with-watchos-localization-in-xamarin"></a>WatchOS で Xamarin のローカライズの操作
 
@@ -87,7 +87,7 @@ Watch でストーリー ボードが表示されると、正しい値に自動�
 
 #### <a name="storyboard-images"></a>ストーリー ボードの画像
 
-ソリューションの例も含まれています、 **gradient@2x.png**各言語のフォルダー内のイメージ。 この画像はあるが言語ごとに異なる (例です。 、変換に必要なテキストが埋め込まれている可能性があります。 またはローカライズされたリモコンを使用)。
+ソリューションの例も含まれています、 **gradient@2x.png** 各言語のフォルダー内のイメージ。 この画像はあるが言語ごとに異なる (例です。 、変換に必要なテキストが埋め込まれている可能性があります。 またはローカライズされたリモコンを使用)。
 
 イメージの設定**イメージ**ストーリー ボードと適切なイメージのプロパティは、ユーザーが選択した言語に従ってウォッチに表示されます。
 
@@ -127,19 +127,19 @@ displayText.SetText (localizedDisplay);
 
 1. 変更することができます、`Image`その値に設定して、イメージの文字列名を既にコントロールが次のような Watch アプリに存在します
 
-  ```csharp
-  displayImage.SetImage("gradient"); // image in Watch App (as shown above)
-  ```
+    ```csharp
+    displayImage.SetImage("gradient"); // image in Watch App (as shown above)
+    ```
 
-2. 拡張機能からイメージを移動するには、watch を使用する`FromBundle`と、アプリは、ユーザーの言語の選択の適切なイメージを自動的に選択します。 ソリューションの例では、イメージ**language@2x.png**各言語で、フォルダーとそのに表示される`DetailController`次のコードを使用します。
+2. 拡張機能からイメージを移動するには、watch を使用する`FromBundle`と、アプリは、ユーザーの言語の選択の適切なイメージを自動的に選択します。 ソリューションの例では、イメージ **language@2x.png** 各言語で、フォルダーとそのに表示される`DetailController`次のコードを使用します。
 
-  ```csharp
-  using (var image = UIImage.FromBundle ("language")) {
-    displayImage.SetImage (image);
-  }
-  ```
+    ```csharp
+    using (var image = UIImage.FromBundle ("language")) {
+        displayImage.SetImage (image);
+    }
+    ```
 
-  指定する必要はありませんが、 **@2x** イメージのファイル名を参照する場合。
+    指定する必要はありませんが、 **@2x** イメージのファイル名を参照する場合。
 
 2 番目のメソッドも watch; で表示するためにリモート サーバーからイメージをダウンロードする場合は、適用できます。ただしここで行う必要があります、ユーザーの設定に従い、イメージをダウンロードすることが正しくローカライズされています。
 

@@ -6,12 +6,12 @@ ms.assetid: 7b9aa8d9-c181-4c33-8ab0-2f56e4dbfc04
 author: asb3993
 ms.author: amburns
 ms.date: 10/09/2017
-ms.openlocfilehash: dd211fecad0bff58cb9ff6c6a99ae6a15c60eb7b
-ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
+ms.openlocfilehash: 723970a4ad7e2ced85147dbcc6c22f9a45519121
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67674982"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864602"
 ---
 # <a name="microsoft-azure-and-xamarin"></a>Microsoft Azure と Xamarin
 
@@ -41,7 +41,7 @@ Microsoft の Web API は、Xamarin アプリケーションで簡単に使用�
 簡単にスピン アップできる、 [Azure web サイト](https://trywebsites.azurewebsites.net/)Xamarin アプリに接続する web Api ベースのアプリケーションを作成します。
 
 
-###  <a name="introduction-to-web-servicescross-platformdata-cloudweb-servicesindexmd"></a>[Web サービスの概要](~/cross-platform/data-cloud/web-services/index.md)
+### <a name="introduction-to-web-servicescross-platformdata-cloudweb-servicesindexmd"></a>[Web サービスの概要](~/cross-platform/data-cloud/web-services/index.md)
 
 このチュートリアルで、残りの部分を統合する方法は、WCF と SOAP web サービス テクノロジで Xamarin モバイル アプリケーション。 さまざまなサービスの実装を調べ、評価に使用できるツールと、それらを統合するライブラリおよびサービスのデータを使用するためのサンプルのパターンを提供します。 最後に、Xamarin モバイル アプリケーションで消費の RESTful web サービスを作成する基本的な概要を提供します。
 

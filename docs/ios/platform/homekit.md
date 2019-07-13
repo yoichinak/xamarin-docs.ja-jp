@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: a5402bb3b10387644282301075f63644149fcdc6
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 9daedbe9bba5a2923a247104c4e69ae2e1b635aa
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67831543"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865772"
 ---
 # <a name="homekit-in-xamarinios"></a>Xamarin.iOS で HomeKit
 
@@ -59,20 +59,20 @@ HomeKit によるセキュリティ要件、により HomeKit フレームワー
 
     [![](homekit-images/provision01.png "指定した ID の HomeKit のサービスを有効にします。")](homekit-images/provision01.png#lightbox)
 5. 変更内容を保存します。
-4. をクリックして**プロビジョニング プロファイル** > **開発**し、新しい開発プロビジョニング プロファイル、アプリを作成します。 
+6. をクリックして**プロビジョニング プロファイル** > **開発**し、新しい開発プロビジョニング プロファイル、アプリを作成します。 
 
     [![](homekit-images/provision02.png "新しい開発プロビジョニング プロファイル、アプリの作成します。")](homekit-images/provision02.png#lightbox)
-5. ダウンロードして、新しいプロビジョニング プロファイルをインストールするまたは、Xcode を使用してダウンロードし、プロファイルをインストールしています。
-6. Xamarin.iOS プロジェクトのオプションを編集し、先ほど作成したプロビジョニング プロファイルを使用していることを確認します。 
+7. ダウンロードして、新しいプロビジョニング プロファイルをインストールするまたは、Xcode を使用してダウンロードし、プロファイルをインストールしています。
+8. Xamarin.iOS プロジェクトのオプションを編集し、先ほど作成したプロビジョニング プロファイルを使用していることを確認します。 
 
     [![](homekit-images/provision03.png "先ほど作成したプロビジョニング プロファイルを選択します。")](homekit-images/provision03.png#lightbox)
-7. 次に、編集、 **Info.plist**ファイルし、プロビジョニング プロファイルの作成に使用されたアプリ ID を使用していることを確認します。 
+9. 次に、編集、 **Info.plist**ファイルし、プロビジョニング プロファイルの作成に使用されたアプリ ID を使用していることを確認します。 
 
     [![](homekit-images/provision04.png "アプリ ID を設定します。 ")](homekit-images/provision04.png#lightbox)
-8. 最後に、編集、 **Entitlements.plist**ファイルし、いることを確認、 **HomeKit**権利が選択されています。 
+10. 最後に、編集、 **Entitlements.plist**ファイルし、いることを確認、 **HomeKit**権利が選択されています。 
 
     [![](homekit-images/provision05.png "HomeKit の利用資格を有効にします。")](homekit-images/provision05.png#lightbox)
-9. すべてのファイルに変更を保存します。
+11. すべてのファイルに変更を保存します。
 
 これら設定した状態で、アプリケーションは、HomeKit フレームワークの Api にアクセスする準備がようになりました。 プロビジョニングの詳細についてを参照してください、 [Device Provisioning](~/ios/get-started/installation/device-provisioning/index.md)と[アプリのプロビジョニング](~/ios/get-started/installation/device-provisioning/index.md)ガイド。
 
@@ -426,7 +426,7 @@ ThisApp.HomeManager.PrimaryHome.AddAccessory (_controller.AccessoryBrowser.Disco
 - 製造元
 - モデル
 - MotionDetected
-- Name
+- 名前
 - ObstructionDetected
 - OccupancyDetected
 - OutletInUse

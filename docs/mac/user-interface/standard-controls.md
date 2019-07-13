@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 26ab7880b3c4b6176c806783fec7a499d68511c3
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 696432fb51060a236780eedee0b60661e3a86712
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67831902"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865193"
 ---
 # <a name="standard-controls-in-xamarinmac"></a>Xamarin.Mac で標準のコントロール
 
@@ -603,16 +603,16 @@ AppKit では、いくつかの種類のユーザー インターフェイスの
 2. ドラッグ、**コント ローラー表示**から、**ライブラリ インスペクター**上に、**インターフェイス エディター**: 
 
     [![](standard-controls-images/content02.png "ビュー コント ローラーをライブラリから選択します。")](standard-controls-images/content02.png#lightbox)
-4. サイズとレイアウトの定義、**カスタム ビュー**: 
+3. サイズとレイアウトの定義、**カスタム ビュー**: 
 
     [![](standard-controls-images/content04.png "レイアウトの編集")](standard-controls-images/content04.png#lightbox)
-5. コントロールをクリックし、上にポップアップのソースからドラッグして、**ビュー コント ローラー**: 
+4. コントロールをクリックし、上にポップアップのソースからドラッグして、**ビュー コント ローラー**: 
 
     [![](standard-controls-images/content05.png "ドラッグしてセグエを作成するには")](standard-controls-images/content05.png#lightbox)
-6. 選択**ポップ オーバー**ポップアップ メニューから。 
+5. 選択**ポップ オーバー**ポップアップ メニューから。 
 
     [![](standard-controls-images/content06.png "セグエの種類の設定")](standard-controls-images/content06.png#lightbox)
-7. 変更を保存し、Visual Studio for Mac は Xcode と同期に戻ります。
+6. 変更を保存し、Visual Studio for Mac は Xcode と同期に戻ります。
 
 <a name="Tab_Views" />
 

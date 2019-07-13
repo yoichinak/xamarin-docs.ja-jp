@@ -6,12 +6,12 @@ ms.assetid: 67246203-D78E-4DCC-9E55-7D3D93968E54
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: b40758fa562e57415cd3c0818763ef0a7ce5dcca
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c30d70d8a36c0e5a9b9ff6ddc74710dec4fb86a4
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61199768"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864398"
 ---
 # <a name="apple-platform-ios-and-mac"></a>Apple プラットフォーム (iOS と Mac)
 
@@ -21,7 +21,7 @@ ms.locfileid: "61199768"
 
 ユーザー インターフェイスの操作を行う必要のあるコードを共有したいを使用する必要があります[共有プロジェクト](~/cross-platform/app-fundamentals/shared-projects.md)1 つのプロジェクトで共有して、それを参照したときに、iOS と Mac の両方でコンパイルするコードを配置できます。
 
-##  <a name="unified-apiunifiedindexmd"></a>[Unified API](unified/index.md)
+## <a name="unified-apiunifiedindexmd"></a>[Unified API](unified/index.md)
 
 IOS と Mac のプロジェクトの Unified API は、同じコード ファイルは、シームレスなコード共有の両方のプラットフォームで使用できるように、フレームワークを同じ名前空間を使用します。 32 と 64 ビットのビルドもできます。 Unified API は、2015 年前半から既定のテンプレートが経ちあり - すべての新しいプロジェクトはお勧め*のみ*Unified API プロジェクトを App Store に送信することができます。
 
@@ -47,11 +47,11 @@ Xamarin では、バインドと、アプリにネイティブ ライブラリ�
 
 ## <a name="native-referencesnative-referencesmd"></a>[ネイティブ参照](native-references.md)
 
-##  <a name="macios-native-typesnativetypesmd"></a>[Mac と iOS のネイティブ型](nativetypes.md)
+## <a name="macios-native-typesnativetypesmd"></a>[Mac と iOS のネイティブ型](nativetypes.md)
 
 透過的に 32 ビットおよび 64 ビットのコードをサポートするためにC#とF#、新しいデータ型が導入されています。   ここで詳細を確認します。
 
-##  <a name="building-32-and-64-bit-apps32-and-64indexmd"></a>[32 ビットおよび 64 ビット アプリの構築](32-and-64/index.md)
+## <a name="building-32-and-64-bit-apps32-and-64indexmd"></a>[32 ビットおよび 64 ビット アプリの構築](32-and-64/index.md)
 
 32 ビットおよび 64 ビット アプリケーションをサポートするために理解するために必要もの。
 

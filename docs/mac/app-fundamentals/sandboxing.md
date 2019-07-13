@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: c51960a24e1277b3faec0905da3b9a5986359681
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: e38ca07aeef1cbd8e121421ebcbad2207a1bb823
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67830670"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865982"
 ---
 # <a name="sandboxing-a-xamarinmac-app"></a>Xamarin.Mac アプリのサンド ボックス化
 
@@ -87,13 +87,13 @@ App Sandbox を採用する場合でも、アプリケーションが使用す�
 8. 次の追加ステートメントを使用します。 `using WebKit;`
 9. ように、`ViewDidLoad`メソッドの次のようになります。 
 
-```csharp
-public override void AwakeFromNib ()
-{
-    base.AwakeFromNib ();
-    webView.MainFrame.LoadRequest(new NSUrlRequest(new NSUrl("http://www.apple.com")));
-}
-```
+    ```csharp
+    public override void AwakeFromNib ()
+    {
+        base.AwakeFromNib ();
+        webView.MainFrame.LoadRequest(new NSUrlRequest(new NSUrl("http://www.apple.com")));
+    }
+    ```
 
 10. 変更内容を保存します。
 
@@ -164,14 +164,14 @@ public override void AwakeFromNib ()
 3. 次をダブルクリック、 **Entitlements.plist**ファイルを確認します、 **iCloud のキー値ストア**と**iCloud コンテナー**上で作成したアプリ ID は、すべて一致 (例。`com.appracatappra.MacSandbox`): 
 
     [![Entitlements.plist ファイルを編集](sandboxing-images/sign17.png "Entitlements.plist ファイルを編集")](sandboxing-images/sign17-large.png#lightbox)
-3. 変更内容を保存します。
-4. **Solution Pad**、編集するためのオプションを開くプロジェクト ファイルをダブルクリックします。  
+4. 変更内容を保存します。
+5. **Solution Pad**、編集するためのオプションを開くプロジェクト ファイルをダブルクリックします。  
 
     ![Editign ソリューションのオプション](sandboxing-images/sign14.png "Editign ソリューションのオプション")
-5. 選択**Mac 署名**、し確認**アプリケーション バンドルに署名**と**インストーラー パッケージに署名**します。 **プロビジョニング プロファイル**、上記で作成した 1 つを選択します。 
+6. 選択**Mac 署名**、し確認**アプリケーション バンドルに署名**と**インストーラー パッケージに署名**します。 **プロビジョニング プロファイル**、上記で作成した 1 つを選択します。 
 
     ![プロビジョニング プロファイルを設定して](sandboxing-images/sign15.png "プロビジョニング プロファイルの設定")
-6. をクリックして、**完了**ボタンをクリックします。
+7. をクリックして、**完了**ボタンをクリックします。
 
 > [!IMPORTANT]
 > 終了し、新しいアプリ ID と Xcode によってインストールされたプロビジョニング プロファイルを認識する場合は、Visual Studio for Mac を再起動する必要があります。

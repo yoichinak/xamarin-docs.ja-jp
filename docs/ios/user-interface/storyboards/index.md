@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 5c3c9714cb4d6cd077f898778f4388d63018fa00
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 79c1d7852cdde9b557965931706fcd24e43954f7
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67831695"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865215"
 ---
 # <a name="introduction-to-storyboards-in-xamarinios"></a>Xamarin.iOS でストーリー ボードの概要
 
@@ -327,7 +327,7 @@ public partial class MainViewController : UIViewController
         - 色：赤
         - 配置:中央揃え
         - 行:2
-        - 'Hidden' チェック ボックスはオン 
+        - 'Hidden' チェック ボックスはオン    
         
     [![](images/passwordvc.png "中心線")](images/passwordvc.png#lightbox)
     
@@ -424,25 +424,25 @@ Storyboards.Conditional ソリューションを参照してください、[手�
 
     [![](images/ref08.png "新しいシーン ビュー コント ローラーのストーリー ボード ID を入力します。")](images/ref08.png#lightbox)
     
-3. IOS Designer への参照を追加すること、ストーリー ボードを開きます。
+4. IOS Designer への参照を追加すること、ストーリー ボードを開きます。
 
-4. ドラッグ、**の参照をストーリー ボード**から、**ツールボックス**デザイン サーフェイスに。 
+5. ドラッグ、**の参照をストーリー ボード**から、**ツールボックス**デザイン サーフェイスに。 
 
     [![](images/ref03.png "ストーリー ボードの参照")](images/ref03.png#lightbox)
     
-5. **ウィジェット**のタブ、**プロパティ エクスプ ローラー**の名前を選択、**ストーリー ボード**と**参照 ID** (ストーリー ボード ID) の上記で作成したシーンの場合: 
+6. **ウィジェット**のタブ、**プロパティ エクスプ ローラー**の名前を選択、**ストーリー ボード**と**参照 ID** (ストーリー ボード ID) の上記で作成したシーンの場合: 
 
     [![](images/ref09.png "[ウィジェット] タブ ")](images/ref09.png#lightbox)
     
-6. (ボタン) のように既存のシーンでの UI ウィジェットをコントロール クリックしを新しいセグエを作成、**ストーリー ボードにリファレンス**作成しました。 
+7. (ボタン) のように既存のシーンでの UI ウィジェットをコントロール クリックしを新しいセグエを作成、**ストーリー ボードにリファレンス**作成しました。 
 
     [![](images/ref10.png "セグエを作成します。")](images/ref10.png#lightbox) 
     
-7. ポップアップ メニューから選択**表示**セグエを完了します。 
+8. ポップアップ メニューから選択**表示**セグエを完了します。 
 
     [![](images/ref06.png "セグエを完了するの表示 を選択")](images/ref06.png#lightbox) 
     
-8. ストーリー ボードに変更を保存します。
+9. ストーリー ボードに変更を保存します。
 
 セグエをシーンにから作成した UI 要素をクリックする、アプリが実行され、ユーザー、特定**ストーリー ボード ID**からストーリー ボードの参照で指定された外部のストーリー ボードが表示されます。
 
@@ -462,9 +462,9 @@ Storyboards.Conditional ソリューションを参照してください、[手�
 
     [![](images/ref12.png "[ウィジェット] タブ")](images/ref12.png#lightbox)
     
-3. ドラッグ、**の参照をストーリー ボード**から、**ツールボックス**デザイン サーフェイスに。 
+4. ドラッグ、**の参照をストーリー ボード**から、**ツールボックス**デザイン サーフェイスに。 
 
-    [![](images/ref03.png "ストーリー ボードの参照")](images/ref03.png#lightbox)
+   [![](images/ref03.png "ストーリー ボードの参照")](images/ref03.png#lightbox)
     
 5. **ウィジェット**のタブ、**プロパティ エクスプ ローラー**を選択します**参照 ID** (ストーリー ボード ID) 上で作成したシーンの。 
 

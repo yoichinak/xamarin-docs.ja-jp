@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 1a5cc9f06fdca5944a9a3201ac15d63ca7f15453
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 084b9924af467459a017413a958ec2e46ff219fc
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61385585"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865305"
 ---
 # <a name="handoff-in-xamarinios"></a>Xamarin.iOS でハンドオフ
 
@@ -117,20 +117,20 @@ Handoff によって課されるセキュリティ要件、によりハンドオ
 
     [![](handoff-images/provision01.png "指定した ID の iCloud サービスを有効にします。")](handoff-images/provision01.png#lightbox)
 5. 変更内容を保存します。
-4. をクリックして**Provisioning Profiles** > **開発**とアプリを作成するには、新しい開発のプロビジョニング プロファイル。
+6. をクリックして**Provisioning Profiles** > **開発**とアプリを作成するには、新しい開発のプロビジョニング プロファイル。
 
     [![](handoff-images/provision02.png "新しい開発プロビジョニング プロファイル、アプリの作成します。")](handoff-images/provision02.png#lightbox)
-5. ダウンロードして、新しいプロビジョニング プロファイルをインストールするまたは、Xcode を使用してダウンロードし、プロファイルをインストールしています。
-6. Xamarin.iOS プロジェクトのオプションを編集し、先ほど作成したプロビジョニング プロファイルを使用していることを確認します。
+7. ダウンロードして、新しいプロビジョニング プロファイルをインストールするまたは、Xcode を使用してダウンロードし、プロファイルをインストールしています。
+8. Xamarin.iOS プロジェクトのオプションを編集し、先ほど作成したプロビジョニング プロファイルを使用していることを確認します。
 
     [![](handoff-images/provision03.png "先ほど作成したプロビジョニング プロファイルを選択します。")](handoff-images/provision03.png#lightbox)
-7. 次に、編集、 **Info.plist**ファイルし、プロビジョニング プロファイルの作成に使用されたアプリ ID を使用していることを確認します。
+9. 次に、編集、 **Info.plist**ファイルし、プロビジョニング プロファイルの作成に使用されたアプリ ID を使用していることを確認します。
 
     [![](handoff-images/provision04.png "アプリ ID を設定します。")](handoff-images/provision04.png#lightbox)
-8. スクロールして、**バック グラウンド モード**セクションし、次のものを確認してください。
+10. スクロールして、**バック グラウンド モード**セクションし、次のものを確認してください。
 
     [![](handoff-images/provision05.png "必要なバック グラウンド モードを有効にします。")](handoff-images/provision05.png#lightbox)
-9. すべてのファイルに変更を保存します。
+11. すべてのファイルに変更を保存します。
 
 これら設定した状態でのアプリケーションがハンドオフ フレームワークの Api にアクセスする準備ができてようになりました。 プロビジョニングの詳細についてを参照してください、 [Device Provisioning](~/ios/get-started/installation/device-provisioning/index.md)と[アプリのプロビジョニング](~/ios/get-started/installation/device-provisioning/index.md)ガイド。
 
@@ -403,13 +403,13 @@ public void PerformHandoff(NSUserActivity activity) {
 }
 ```
 
-`ContinueUserActivity`メソッドが含まれています、`UIApplicationRestorationHandler`ベース アクティビティの再開のドキュメントまたは応答側を呼び出すことです。 渡す必要があります、`NSArray`または復元のハンドラーが呼び出されたときに、復元可能なオブジェクト。 例:
+`ContinueUserActivity`メソッドが含まれています、`UIApplicationRestorationHandler`ベース アクティビティの再開のドキュメントまたは応答側を呼び出すことです。 渡す必要があります、`NSArray`または復元のハンドラーが呼び出されたときに、復元可能なオブジェクト。 例えば:
 
 ```csharp
 completionHandler (new NSObject[]{Tab4});
 ```
 
-各オブジェクトが渡されると、その`RestoreUserActivityState`メソッドが呼び出されます。 各オブジェクトにデータを使用し、`UserInfo`が自身の状態を復元するためのディクショナリ。 例:
+各オブジェクトが渡されると、その`RestoreUserActivityState`メソッドが呼び出されます。 各オブジェクトにデータを使用し、`UserInfo`が自身の状態を復元するためのディクショナリ。 例えば:
 
 ```csharp
 public override void RestoreUserActivityState (NSUserActivity activity)
@@ -427,7 +427,7 @@ public override void RestoreUserActivityState (NSUserActivity activity)
 
 ハンドオフは、コレクションが疎に接続されている iOS および OS X デバイスの間で情報の送信に依存するので、転送プロセスされない場合があります。 このようなエラーを適切に処理し、発生する状況がすべてのユーザーに通知、アプリを設計する必要があります。
 
-障害が発生した場合、`DidFailToContinueUserActivitiy`のメソッド、`AppDelegate`が呼び出されます。 例:
+障害が発生した場合、`DidFailToContinueUserActivitiy`のメソッド、`AppDelegate`が呼び出されます。 例えば:
 
 ```csharp
 public override void DidFailToContinueUserActivitiy (UIApplication application, string userActivityType, NSError error)
@@ -464,7 +464,7 @@ public override void DidFailToContinueUserActivitiy (UIApplication application, 
 }
 ```
 
-JSON ファイルに署名する (正しいことがあるできるように`Content-Type`の`application/pkcs7-mime`)、使用、**ターミナル**アプリと`openssl`証明書とキーは iOS によって信頼された証明書機関によって発行されたコマンド (を参照してください[https://support.apple.com/kb/ht5012 ](https://support.apple.com/kb/ht5012)一覧については)。 例:
+JSON ファイルに署名する (正しいことがあるできるように`Content-Type`の`application/pkcs7-mime`)、使用、**ターミナル**アプリと`openssl`証明書とキーは iOS によって信頼された証明書機関によって発行されたコマンド (を参照してください[https://support.apple.com/kb/ht5012 ](https://support.apple.com/kb/ht5012)一覧については)。 例えば:
 
 ```csharp
 echo '{"activitycontinuation":{"apps":["YWBN8XTPBJ.com.company.FirstApp",
@@ -477,7 +477,7 @@ cat json.txt | openssl smime -sign -inkey company.com.key
 -outform DER > apple-app-site-association
 ```
 
-`openssl`コマンドは、web サイトに設置する署名付き JSON ファイルを出力、 **apple アプリ サイト関連付け**URL。 例:
+`openssl`コマンドは、web サイトに設置する署名付き JSON ファイルを出力、 **apple アプリ サイト関連付け**URL。 例えば:
 
 ```csharp
 https://example.com/apple-app-site-association.
@@ -487,7 +487,7 @@ https://example.com/apple-app-site-association.
 
 ## <a name="supporting-handoff-in-document-based-apps"></a>ドキュメント ベースのアプリでのハンドオフのサポート
 
-IOS および OS X で、前述のようドキュメント ベースのアプリは自動的にサポート ハンドオフ iCloud ベースのドキュメントの場合、アプリの**Info.plist**ファイルが含まれています、`CFBundleDocumentTypes`のキー`NSUbiquitousDocumentUserActivityType`します。 例:
+IOS および OS X で、前述のようドキュメント ベースのアプリは自動的にサポート ハンドオフ iCloud ベースのドキュメントの場合、アプリの**Info.plist**ファイルが含まれています、`CFBundleDocumentTypes`のキー`NSUbiquitousDocumentUserActivityType`します。 例えば:
 
 ```xml
 <key>CFBundleDocumentTypes</key>
@@ -523,7 +523,7 @@ IOS および OS X で、前述のようドキュメント ベースのアプリ
 
 場合、アクティビティの続行に必要な情報量効率的に転送できません、初期のハンドオフ ペイロードでもあるでしょう。 このような場合は、受信側のアプリは、それ自体と、元のアプリ データを転送する間、1 つまたは複数のストリームを確立できます。
 
-元のアプリの設定、`SupportsContinuationStreams`のプロパティ、`NSUserActivity`インスタンス`true`します。 例:
+元のアプリの設定、`SupportsContinuationStreams`のプロパティ、`NSUserActivity`インスタンス`true`します。 例えば:
 
 ```csharp
 // Create a new user Activity to support this tab
@@ -542,7 +542,7 @@ UserActivity.AddUserInfoEntries (userInfo);
 UserActivity.BecomeCurrent ();
 ```
 
-受信側のアプリを呼び出して、`GetContinuationStreams`のメソッド、`NSUserActivity`でその`AppDelegate`ストリームを確立するためにします。 例:
+受信側のアプリを呼び出して、`GetContinuationStreams`のメソッド、`NSUserActivity`でその`AppDelegate`ストリームを確立するためにします。 例えば:
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)

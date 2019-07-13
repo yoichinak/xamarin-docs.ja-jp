@@ -6,12 +6,12 @@ ms.assetid: 71388B83-699B-4E42-8CBF-8557A4A3CABF
 author: asb3993
 ms.author: amburns
 ms.date: 05/06/2018
-ms.openlocfilehash: 8617d6e0c0930f581c45dbb461dfcb5d85a2becc
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 28a7d299e78a7fa6837ba9285795d380760f13b7
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61206230"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864645"
 ---
 # <a name="apple-account-management"></a>Apple のアカウント管理
 
@@ -54,17 +54,17 @@ Apple アカウントの管理は、Visual Studio for Mac、Visual Studio 2019�
 
     ![fastlane ダイアログ。](apple-account-management-images/image2.png)
 
-4. Apple ID とパスワードを入力し、クリックして、**サインイン**ボタンをクリックします。 このコンピューターで、資格情報をセキュリティで保護されたキーチェーンにこれは、保存されます。 [fastlane](~/ios/deploy-test/provisioning/fastlane/index.md)資格情報を安全に処理して、Apple の開発者ポータルに渡したりするために使用します。
+3. Apple ID とパスワードを入力し、クリックして、**サインイン**ボタンをクリックします。 このコンピューターで、資格情報をセキュリティで保護されたキーチェーンにこれは、保存されます。 [fastlane](~/ios/deploy-test/provisioning/fastlane/index.md)資格情報を安全に処理して、Apple の開発者ポータルに渡したりするために使用します。
  
-5. 選択**常に許可する**アラート ダイアログに Visual Studio、資格情報を使用することを許可します。
+4. 選択**常に許可する**アラート ダイアログに Visual Studio、資格情報を使用することを許可します。
 
     ![アラート ダイアログを常に許可します。](apple-account-management-images/image4.png)
 
-6. 自分のアカウントを正常に追加された後は、Apple ID と、Apple ID の一部である任意のチームを確認します。
+5. 自分のアカウントを正常に追加された後は、Apple ID と、Apple ID の一部である任意のチームを確認します。
 
     ![Apple 開発者アカウントのダイアログ ボックスがアカウントの追加](apple-account-management-images/image5.png)
 
-7. チームおよびキーを押して選択、**の詳細を表示しています.** を追加します。 これにより、すべての署名 Id と、コンピューターにインストールされているプロビジョニング プロファイルの一覧が表示されます。
+6. チームおよびキーを押して選択、**の詳細を表示しています.** を追加します。 これにより、すべての署名 Id と、コンピューターにインストールされているプロビジョニング プロファイルの一覧が表示されます。
 
     ![署名 id とプロビジョニング プロファイルがコンピューターにビューの詳細画面が表示されました。](apple-account-management-images/image6.png)
 
