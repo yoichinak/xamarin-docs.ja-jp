@@ -35,7 +35,7 @@ UrhoSharp for Mac に Visual Studio または Visual Studio のいずれかで�
 
 ## <a name="programming-urhosharp-with-fgraphics-gamesurhosharpfsharpmd"></a>[F# による UrhoSharp のプログラミング](~/graphics-games/urhosharp/fsharp.md)
 
-このガイドは、単純な「こんにちは, World!」の作成手順について説明します UrhoSharp のソリューションを使用してF#と Visual Studio for mac。
+このガイドは、単純な"Hello, world!"の作成手順について説明します UrhoSharp のソリューションを使用してF#と Visual Studio for mac。
 
 ## <a name="samples"></a>サンプル
 
