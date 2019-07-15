@@ -6,12 +6,12 @@ ms.assetid: 5E2A3251-D17F-4F9C-9EA0-6321FEBE8577
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 2d57f27bf0d3aaa2a7ba14f23481a8f2bb2d87f2
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: f081ccda507fe3fe65af0e2fb50841aecd7b3c23
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61261153"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830466"
 ---
 # <a name="migrating-a-binding-to-the-unified-api"></a>バインドの Unified API への移行
 
@@ -27,8 +27,8 @@ _この記事では、Xamarin.IOS および Xamarin.Mac アプリケーション
 
 この記事で紹介する手順を完了する、次が必要。
 
- -  **Visual Studio for Mac** -Visual Studio for Mac の最新バージョンがインストールされており、開発用コンピューターで構成されています。
- -  **Apple Mac** - Apple の iOS 用のバインドのプロジェクトをビルドするには mac が必要とファルダ
+- **Visual Studio for Mac** -Visual Studio for Mac の最新バージョンがインストールされており、開発用コンピューターで構成されています。
+- **Apple Mac** - Apple の iOS 用のバインドのプロジェクトをビルドするには mac が必要とファルダ
 
 バインド プロジェクトは Windows マシン上の Visual studio ではサポートされていません。
 

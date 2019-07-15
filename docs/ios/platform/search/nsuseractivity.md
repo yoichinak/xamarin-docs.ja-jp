@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: b853bd3bc55a2d4cb613a9f0079aebae9f57027b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a3a8872ae54d7b1efb55ee71286ca5ea479616e0
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61357043"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830164"
 ---
 # <a name="search-with-nsuseractivity-in-xamarinios"></a>Xamarin.iOS で NSUserActivity で検索
 
@@ -27,14 +27,14 @@ IOS 9 に新しい`NSUserActivity`(パブリックとプライベートの両方
 
 次のプロパティの`NSUserActivity`アプリの検索をサポートするために使用されます。
 
- - `EligibleForHandoff` – `true`、ハンドオフ操作でこのアクティビティを使用できます。
- - `EligibleForSearch` – `true`、このアクティビティは、デバイス上のインデックスに追加し、検索結果に表示されます。
- - `EligibleForPublicIndexing` – `true`、このアクティビティが Apple のクラウド ベースのインデックスに追加し、まだインストールしていないアプリ、iOS デバイスで (検索) 経由でユーザーに表示されます。 参照してください、[パブリック検索インデックス作成](#public-search-indexing)詳細については後述します。
- - `Title` -アクティビティのタイトルを提供する、検索結果に表示されます。 ユーザーがそれ自体のタイトルのテキストの検索もできます。
- - `Keywords` – をインデックス化し、エンドユーザーが、検索可能には、アクティビティの記述に使用される文字列の配列です。
- - `ContentAttributeSet` – は、`CSSearchableItemAttributeSet`さらに、アクティビティの詳細を説明し、検索結果のリッチ コンテンツを提供するために使用します。
- - `ExpirationDate` 特定の日付にのみ表示されるアクティビティをする場合は、ここで、その日付を行うことができます。
- - `WebpageURL` – アクティビティは、web で表示できる場合、または、アプリは、Safari のディープ リンクをサポートしている場合は、ここにアクセスしてへのリンクを設定できます。
+- `EligibleForHandoff` – `true`、ハンドオフ操作でこのアクティビティを使用できます。
+- `EligibleForSearch` – `true`、このアクティビティは、デバイス上のインデックスに追加し、検索結果に表示されます。
+- `EligibleForPublicIndexing` – `true`、このアクティビティが Apple のクラウド ベースのインデックスに追加し、まだインストールしていないアプリ、iOS デバイスで (検索) 経由でユーザーに表示されます。 参照してください、[パブリック検索インデックス作成](#public-search-indexing)詳細については後述します。
+- `Title` -アクティビティのタイトルを提供する、検索結果に表示されます。 ユーザーがそれ自体のタイトルのテキストの検索もできます。
+- `Keywords` – をインデックス化し、エンドユーザーが、検索可能には、アクティビティの記述に使用される文字列の配列です。
+- `ContentAttributeSet` – は、`CSSearchableItemAttributeSet`さらに、アクティビティの詳細を説明し、検索結果のリッチ コンテンツを提供するために使用します。
+- `ExpirationDate` 特定の日付にのみ表示されるアクティビティをする場合は、ここで、その日付を行うことができます。
+- `WebpageURL` – アクティビティは、web で表示できる場合、または、アプリは、Safari のディープ リンクをサポートしている場合は、ここにアクセスしてへのリンクを設定できます。
 
 ## <a name="nsuseractivity-quickstart"></a>NSUserActivity クイック スタート
 
@@ -96,7 +96,7 @@ activity.BecomeCurrent();
 
 ## <a name="responding-to-an-activity"></a>アクティビティへの応答
 
-検索結果をタップすると、ユーザーに応答する (`NSUserActivity`)、アプリでは、編集、 **AppDelegate.cs**オーバーライド ファイルを開き、`ContinueUserActivity`メソッド。 例:
+検索結果をタップすると、ユーザーに応答する (`NSUserActivity`)、アプリでは、編集、 **AppDelegate.cs**オーバーライド ファイルを開き、`ContinueUserActivity`メソッド。 例えば:
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)

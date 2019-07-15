@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/11/2019
-ms.openlocfilehash: 4d0fc5c4ee3947de74a62e8c42fedb8aeedbfdd9
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: cc673077502e15894ce4c4519df051174feb7e8e
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67650615"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830911"
 ---
 # <a name="xamarinforms-views"></a>Xamarin.Forms のビュー
 
@@ -56,7 +56,7 @@ _Xamarin.Forms のビューとは、クロス プラットフォーム モバイ
 
 |     |     |
 | --- | --- |
-| [`OpenGLView`](xref:Xamarin.Forms.OpenGLView) iOS と Android プロジェクトでは、OpenGL のグラフィックスを表示します。 ユニバーサル Windows プラットフォームのサポートはありません。 IOS と Android プロジェクトへの参照が必要、 **OpenTK 1.0**アセンブリまたは**OpenTK**バージョン 1.0.0.0 アセンブリ。 `OpenGLView` 共有プロジェクトで使用する方が簡単です.NET Standard ライブラリで使用されている場合は、依存関係サービスが (サンプル コードで示す) のように必要にもなります。<br /><br />これは、Xamarin.Forms に組み込まれている唯一のグラフィックス機能は、Xamarin.Forms アプリケーションは、グラフィックスを使用しても表示できる[ `CocosSharp` ](~/xamarin-forms/user-interface/graphics/cocossharp.md)、 [ `SkiaSharp` ](~/xamarin-forms/user-interface/graphics/skiasharp/index.md)、または[ `UrhoSharp`](~/xamarin-forms/user-interface/graphics/urhosharp.md).<br /><br />[API ドキュメント](xref:Xamarin.Forms.OpenGLView)<br /><br /> | [![OpenGLView 例](views-images/OpenGLView.png "OpenGLView 例")](views-images/OpenGLView-Large.png#lightbox "OpenGLView 例")<br />[このページの C# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/OpenGLViewDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/OpenGLViewDemoPage.xaml)で[分離コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/OpenGLViewDemoPage.xaml.cs) |
+| [`OpenGLView`](xref:Xamarin.Forms.OpenGLView) iOS と Android プロジェクトでは、OpenGL のグラフィックスを表示します。 ユニバーサル Windows プラットフォームのサポートはありません。 IOS と Android プロジェクトへの参照が必要、 **OpenTK 1.0**アセンブリまたは**OpenTK**バージョン 1.0.0.0 アセンブリ。 `OpenGLView` 共有プロジェクトで使用する方が簡単です.NET Standard ライブラリで使用されている場合は、依存関係サービスが (サンプル コードで示す) のように必要にもなります。<br /><br />これは、Xamarin.Forms に組み込まれている唯一のグラフィックス機能は、Xamarin.Forms アプリケーションは、グラフィックスを使用しても表示できる[ `SkiaSharp` ](~/xamarin-forms/user-interface/graphics/skiasharp/index.md)、または[ `UrhoSharp`](~/xamarin-forms/user-interface/graphics/urhosharp.md)します。<br /><br />[API ドキュメント](xref:Xamarin.Forms.OpenGLView)<br /><br /> | [![OpenGLView 例](views-images/OpenGLView.png "OpenGLView 例")](views-images/OpenGLView-Large.png#lightbox "OpenGLView 例")<br />[このページの C# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/OpenGLViewDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/OpenGLViewDemoPage.xaml)で[分離コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/OpenGLViewDemoPage.xaml.cs) |
 |     |     |
 
 ### <a name="map"></a>マップ
@@ -163,7 +163,7 @@ _Xamarin.Forms のビューとは、クロス プラットフォーム モバイ
 
 |     |     |
 | --- | --- |
-| [`ActivityIndicator`](xref:Xamarin.Forms.ActivityIndicator) アニメーションを使用して、進行状況の情報を与えることがなく、時間がかかる作業で、アプリケーションが進行中ことを示します。 [ `IsRunning` ](xref:Xamarin.Forms.ActivityIndicator.IsRunning)プロパティは、アニメーションを制御します。<br /><br />アクティビティの進行状況がわかっている場合は、使用、 [ `ProgressBar` ](#progressbar)代わりにします。<br /><br />[API ドキュメント](xref:Xamarin.Forms.ActivityIndicator) | [![ActivityIndicator 例](views-images/ActivityIndicator.png "ActivityIndicator 例")](views-images/ActivityIndicator-Large.png#lightbox "ActivityIndicator 例")<br />[このページの C# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ActivityIndicatorDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ActivityIndicatorDemoPage.xaml) |
+| [`ActivityIndicator`](xref:Xamarin.Forms.ActivityIndicator) アニメーションを使用して、進行状況の情報を与えることがなく、時間がかかる作業で、アプリケーションが進行中ことを示します。 [ `IsRunning` ](xref:Xamarin.Forms.ActivityIndicator.IsRunning)プロパティは、アニメーションを制御します。<br /><br />アクティビティの進行状況がわかっている場合は、使用、 [ `ProgressBar` ](#progressbar)代わりにします。<br /><br />[API ドキュメント](xref:Xamarin.Forms.ActivityIndicator) / [ガイド](~/xamarin-forms/user-interface/activityindicator.md) / [サンプル](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ActivityIndicatorDemos) | [![ActivityIndicator 例](views-images/ActivityIndicator.png "ActivityIndicator 例")](views-images/ActivityIndicator-Large.png#lightbox "ActivityIndicator 例")<br />[このページの C# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ActivityIndicatorDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ActivityIndicatorDemoPage.xaml) |
 |     |     |
 
 <a name="progressbar" />
@@ -172,7 +172,7 @@ _Xamarin.Forms のビューとは、クロス プラットフォーム モバイ
 
 |     |     |
 | --- | --- |
-| [`ProgressBar`](xref:Xamarin.Forms.ProgressBar) アニメーションを使用して、時間がかかる作業を通じて、アプリケーションの進行状況を表示します。 設定、 [ `Progress` ](xref:Xamarin.Forms.ProgressBar.Progress)プロパティを 0 ~ 1 に、進行状況を示す値。<br /><br />アクティビティの進行状況が不明である場合は、使用、 [ `ActivityIndicator` ](#activityindicator)代わりにします。<br /><br />[API ドキュメント](xref:Xamarin.Forms.ProgressBar) | [![ProgressBar の使用例](views-images/ProgressBar.png "ProgressBar 例")](views-images/ProgressBar-Large.png#lightbox "ProgressBar の例")<br />[このページの C# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ProgressBarDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ProgressBarDemoPage.xaml)で[分離コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ProgressBarDemoPage.xaml.cs) |
+| [`ProgressBar`](xref:Xamarin.Forms.ProgressBar) アニメーションを使用して、時間がかかる作業を通じて、アプリケーションの進行状況を表示します。 設定、 [ `Progress` ](xref:Xamarin.Forms.ProgressBar.Progress)プロパティを 0 ~ 1 に、進行状況を示す値。<br /><br />アクティビティの進行状況が不明である場合は、使用、 [ `ActivityIndicator` ](#activityindicator)代わりにします。<br /><br />[API ドキュメント](xref:Xamarin.Forms.ProgressBar) / [ガイド](~/xamarin-forms/user-interface/progressbar.md) / [サンプル](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ProgressBarDemos) | [![ProgressBar の使用例](views-images/ProgressBar.png "ProgressBar 例")](views-images/ProgressBar-Large.png#lightbox "ProgressBar の例")<br />[このページの C# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ProgressBarDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ProgressBarDemoPage.xaml)で[分離コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ProgressBarDemoPage.xaml.cs) |
 |     |     |
 
 ## <a name="views-that-display-collections"></a>コレクションを表示するビュー

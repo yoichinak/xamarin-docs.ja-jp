@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/09/2018
-ms.openlocfilehash: b79d3683c8e4979cbbd13550f3df86c39622ad2b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 86f41bf227b97ef24651f482ff133a065226ee14
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61035881"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830402"
 ---
 # <a name="limitations-of-xamarinios"></a>Xamarin.iOS の制限事項
 
@@ -36,7 +36,7 @@ Mono の[AOT の完全な](https://www.mono-project.com/docs/advanced/aot/#full-
 
 ### <a name="generic-subclasses-of-nsobjects-are-limited"></a>ジェネリック NSObjects サブクラスは制限されています
 
-Xamarin.iOS には、現在の状態で、ジェネリック メソッドのサポートなしなど、NSObject クラスの汎用サブクラスを作成するためのサポートが限られています。 7.2.1、時点では、NSObjects の汎用サブクラスを使用可能であれば、次のようなです。
+Xamarin.iOS には、現在の状態で、ジェネリック メソッドのサポートなしなど、NSObject クラスの汎用サブクラスを作成するためのサポートが限られています。 7\.2.1、時点では、NSObjects の汎用サブクラスを使用可能であれば、次のようなです。
 
 ```csharp
 class Foo<T> : UIView {
@@ -74,7 +74,8 @@ System.Reflection の欠如。 **出力**ランタイム コードの生成に�
 -  リモート処理の TransparentProxy、またはその他のコードを動的に生成する実行時になるもの。 
 
 
- **重要:** 混同しないでください**Reflection.Emit**で**リフレクション**します。 Reflection.Emit はコードを動的に生成する詳細については、その jit 処理コードとネイティブにコンパイルされたコードがあります。 IOS (JIT コンパイルなし) で制限があるためこれはサポートされていません。
+  > [!IMPORTANT]
+  > 混同しないでください**Reflection.Emit**で**リフレクション**します。 Reflection.Emit はコードを動的に生成する詳細については、その jit 処理コードとネイティブにコンパイルされたコードがあります。 IOS (JIT コンパイルなし) で制限があるためこれはサポートされていません。
 
 全体のリフレクション API など Type.GetType ("someClass") を一覧表示するメソッド、プロパティを一覧表示する属性と値をフェッチしていますが問題なく動作します。
 

@@ -7,12 +7,12 @@ ms.assetid: 9E6C986F-3FBA-4599-8367-FB0C565C0ADE
 author: asb3993
 ms.author: amburns
 ms.date: 04/18/2018
-ms.openlocfilehash: 70ca9a73c83bed5233b77a6f7be80a13f04f2bcb
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: fbef8f60a31511be926ee2adf5e239ad8955b208
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61360798"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864521"
 ---
 # <a name="updating-component-references-to-nuget"></a>NuGet へのコンポーネント参照の更新
 
@@ -39,7 +39,7 @@ Visual Studio からプロジェクトを読み込む場合必要があります
 
 1. 開く、 **.csproj**ファイル。 これを行うには、プロジェクト名を右クリックし、**プロジェクトのアンロード**を選択します 
 
-2. アンロードされたプロジェクトを再度右クリックし、**{プロジェクト名には、} .csproj の編集**を選択しま。
+2. アンロードされたプロジェクトを再度右クリックし、 **{プロジェクト名には、} .csproj の編集**を選択しま。
 
 3. ファイル内の参照`XamarinComponentReference`を探します。 次の例のようになっています。 次の例のようにする必要があります。
 
@@ -177,10 +177,10 @@ _NuGet の依存関係を含めることができますが、これらは無視�
 
 #### <a name="add-the-nuget-package"></a>NuGet パッケージを追加します。
 
-1. 右クリックし、**パッケージ**ノード選択**パッケージを追加しています.**.
+1. 右クリックし、**パッケージ**ノード選択**パッケージを追加しています.** .
 2. 名前または作成者 NuGet 置換を検索します。
 
-  ![](component-nuget-images/nuget-search-sml.png)
+    ![](component-nuget-images/nuget-search-sml.png)
 
 3. キーを押して**パッケージを追加**します。
 

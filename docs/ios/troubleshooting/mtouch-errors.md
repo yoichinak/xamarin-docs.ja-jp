@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/06/2018
-ms.openlocfilehash: e6e3a989db922dc2941cca4c888c862ffe159241
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6d7684df771f24ecf9126f472e7d799eea4a5431
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61422053"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832695"
 ---
 # <a name="xamarinios-errors"></a>Xamarin.iOS のエラー
 
@@ -388,7 +388,7 @@ Xamarin.iOS は、Unified API を使用する場合のみ埋め込みフレー�
 
 Xamarin.iOS は、(以前のバージョンの iOS では、埋め込みのフレームワークをサポートしていない) ため、配置ターゲットが 8.0 以上でのみ埋め込みフレームワークをサポートします。
 
-8.0 以上のプロジェクトの Info.plist で配置ターゲットを更新してください。
+8\.0 以上のプロジェクトの Info.plist で配置ターゲットを更新してください。
 
 <a name="MT0066" />
 
@@ -557,7 +557,7 @@ Xamarin.iOS では、アプリケーションの開発に、エラー メッセ�
 
 <a name="MT0099" />
 
-### <a name="mt0099-internal-error--please-file-a-bug-report-with-a-test-case-httpbugzillaxamarincom"></a>MT0099:内部エラー *。 テスト_ケースとバグの報告を提出してください (http://bugzilla.xamarin.com)します。
+### <a name="mt0099-internal-error--please-file-a-bug-report-with-a-test-case-httpbugzillaxamarincom"></a>MT0099:内部エラー *。 テスト_ケースとバグの報告を提出してください (http://bugzilla.xamarin.com) します。
 
 Xamarin.iOS で内部整合性チェックが失敗した場合、このエラー メッセージが報告されます。
 
@@ -565,7 +565,7 @@ Xamarin.iOS で内部整合性チェックが失敗した場合、このエラ�
 
 <a name="MT0100" />
 
-### <a name="mt0100-invalid-assembly-build-target--please-file-a-bug-report-with-a-test-case-httpbugzillaxamarincom"></a>MT0100:無効なアセンブリのビルド ターゲット: ' *'。 テスト_ケースとバグの報告を提出してください (http://bugzilla.xamarin.com)します。
+### <a name="mt0100-invalid-assembly-build-target--please-file-a-bug-report-with-a-test-case-httpbugzillaxamarincom"></a>MT0100:無効なアセンブリのビルド ターゲット: ' *'。 テスト_ケースとバグの報告を提出してください (http://bugzilla.xamarin.com) します。
 
 Xamarin.iOS で内部整合性チェックが失敗した場合、このエラー メッセージが報告されます。
 
@@ -838,7 +838,7 @@ Xamarin.iOS のこのバージョンは常にプロジェクトをビルド複�
 
 (これは部分的なビルドが正しく行われることを確認するには、実行されます) ファイルに触れたときにエラーが発生しました。
 
-この警告は無視できます可能性があります。問題があった場合に、バグをファイル (https://bugzilla.xamarin.com] (https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS))および調査されます。
+この警告は無視できます可能性があります。問題があった場合に、バグをファイル (https://bugzilla.xamarin.com ] (https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)) および調査されます。
 
 ## <a name="mt1xxx-project-related-error-messages"></a>MT1xxx:プロジェクトの関連するエラー メッセージ
 
@@ -990,7 +990,7 @@ sudo chmod 0644 /Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/m
 
 * デバイスからアプリケーションを削除してからやり直してください。
 * デバイスを切断して再接続します。
-* デバイスを再起動します。
+* デバイスを再起動する。
 * Mac を再起動します。
 
 <a name="MT1024" />
@@ -1011,7 +1011,7 @@ sudo chmod 0644 /Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/m
 
 * デバイスからアプリケーションを削除してからやり直してください。
 * デバイスを切断して再接続します。
-* デバイスを再起動します。
+* デバイスを再起動する。
 * Mac を再起動します。
 * (これは、クラッシュ レポート デバイスから削除) iTunes でデバイスを同期します。
 
@@ -1025,7 +1025,7 @@ sudo chmod 0644 /Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/m
 
 * デバイスからアプリケーションを削除してからやり直してください。
 * デバイスを切断して再接続します。
-* デバイスを再起動します。
+* デバイスを再起動する。
 * Mac を再起動します。
 * (これは、クラッシュ レポート デバイスから削除) iTunes でデバイスを同期します。
 
@@ -1283,7 +1283,7 @@ WatchOS シミュレーターで WatchOS アプリを起動するときに、ペ
 
 <a name="MT1305" />
 
-### <a name="mt1305-the-binding-library--contains-a-user-framework--but-embedded-user-frameworks-require-ios-80-the-current-deployment-target-is--please-set-the-deployment-target-in-the-infoplist-file-to-at-least-80"></a>MT1305:バインディング ライブラリ '\*' ユーザー フレームワークが含まれています (\*)、埋め込みユーザー フレームワークには、iOS 8.0 が必要がありますが、(現在の配置ターゲットは *)。 8.0 以上を Info.plist ファイルの配置ターゲットを設定してください。
+### <a name="mt1305-the-binding-library--contains-a-user-framework--but-embedded-user-frameworks-require-ios-80-the-current-deployment-target-is--please-set-the-deployment-target-in-the-infoplist-file-to-at-least-80"></a>MT1305:バインディング ライブラリ '\*' ユーザー フレームワークが含まれています (\*)、埋め込みユーザー フレームワークには、iOS 8.0 が必要がありますが、(現在の配置ターゲットは *)。 8\.0 以上を Info.plist ファイルの配置ターゲットを設定してください。
 
 指定したバインディング ライブラリには、埋め込みのフレームワークが含まれていますが、Xamarin.iOS では、iOS 8.0 以降で埋め込みフレームワークのみがサポートしています。
 
@@ -1305,7 +1305,7 @@ WatchOS シミュレーターで WatchOS アプリを起動するときに、ペ
 
 * デバイスからアプリケーションを削除してからやり直してください。
 * デバイスを切断して再接続します。
-* デバイスを再起動します。
+* デバイスを再起動する。
 * Mac を再起動します。
 * (これは、クラッシュ レポート デバイスから削除) iTunes でデバイスを同期します。
 
@@ -1319,7 +1319,7 @@ WatchOS シミュレーターで WatchOS アプリを起動するときに、ペ
 
 * デバイスからアプリケーションを削除してからやり直してください。
 * デバイスを切断して再接続します。
-* デバイスを再起動します。
+* デバイスを再起動する。
 * Mac を再起動します。
 * (これは、クラッシュ レポート デバイスから削除) iTunes でデバイスを同期します。
 
@@ -1333,7 +1333,7 @@ WatchOS シミュレーターで WatchOS アプリを起動するときに、ペ
 
 * デバイスからアプリケーションを削除してからやり直してください。
 * デバイスを切断して再接続します。
-* デバイスを再起動します。
+* デバイスを再起動する。
 * Mac を再起動します。
 * (これは、クラッシュ レポート デバイスから削除) iTunes でデバイスを同期します。
 
@@ -1347,7 +1347,7 @@ WatchOS シミュレーターで WatchOS アプリを起動するときに、ペ
 
 * デバイスからアプリケーションを削除してからやり直してください。
 * デバイスを切断して再接続します。
-* デバイスを再起動します。
+* デバイスを再起動する。
 * Mac を再起動します。
 * (これは、クラッシュ レポート デバイスから削除) iTunes でデバイスを同期します。
 
@@ -1361,7 +1361,7 @@ WatchOS シミュレーターで WatchOS アプリを起動するときに、ペ
 
 * デバイスからアプリケーションを削除してからやり直してください。
 * デバイスを切断して再接続します。
-* デバイスを再起動します。
+* デバイスを再起動する。
 * Mac を再起動します。
 * (これは、クラッシュ レポート デバイスから削除) iTunes でデバイスを同期します。
 
@@ -1375,7 +1375,7 @@ WatchOS シミュレーターで WatchOS アプリを起動するときに、ペ
 
 * デバイスからアプリケーションを削除してからやり直してください。
 * デバイスを切断して再接続します。
-* デバイスを再起動します。
+* デバイスを再起動する。
 * Mac を再起動します。
 * (これは、クラッシュ レポート デバイスから削除) iTunes でデバイスを同期します。
 
@@ -1389,7 +1389,7 @@ WatchOS シミュレーターで WatchOS アプリを起動するときに、ペ
 
 * デバイスからアプリケーションを削除してからやり直してください。
 * デバイスを切断して再接続します。
-* デバイスを再起動します。
+* デバイスを再起動する。
 * Mac を再起動します。
 * (これは、クラッシュ レポート デバイスから削除) iTunes でデバイスを同期します。
 
@@ -1840,7 +1840,7 @@ Xamarin.iOS は、問題の型をサポートする必要がありますと思�
 
 <a name="MT4117" />
 
-### <a name="mt4117-the-registrar-found-a-signature-mismatch-in-the-method----the-selector-indicates-the-method-takes--parameters-while-the-managed-method-has--parameters"></a>MT4117:レジストラーが、メソッドの署名の不一致を検出 '*.*'-メソッドには、セレクターの表示 * パラメーターは、マネージ メソッドがあるときに * パラメーター。
+### <a name="mt4117-the-registrar-found-a-signature-mismatch-in-the-method----the-selector-indicates-the-method-takes--parameters-while-the-managed-method-has--parameters"></a>MT4117:レジストラーが、メソッドの署名の不一致を検出 ' *.* '-メソッドには、セレクターの表示 * パラメーターは、マネージ メソッドがあるときに * パラメーター。
 
 <a name="MT4118" />
 
@@ -1934,7 +1934,7 @@ Xamarin.iOS は、問題の型をサポートする必要がありますと思�
 
 <a name="MT4140" />
 
-### <a name="mt4140-the-registrar-found-a-signature-mismatch-in-the-method----the-selector-indicates-the-variadic-method-takes--parameters-while-the-managed-method-has--parameters"></a>MT4140:レジストラーが、メソッドの署名の不一致を検出 '*.*'-可変個引数メソッドには、セレクターの表示 * パラメーターは、マネージ メソッドがあるときに * パラメーター。
+### <a name="mt4140-the-registrar-found-a-signature-mismatch-in-the-method----the-selector-indicates-the-variadic-method-takes--parameters-while-the-managed-method-has--parameters"></a>MT4140:レジストラーが、メソッドの署名の不一致を検出 ' *.* '-可変個引数メソッドには、セレクターの表示 * パラメーターは、マネージ メソッドがあるときに * パラメーター。
 
 <a name="MT4141" />
 
@@ -2141,7 +2141,7 @@ BindAs 属性の型にアタッチされているメンバーの種類に対応�
 
 レジストラーはこれらのコンテンツ タイプ間の変換をサポートしていません。
 
-これは、対象の API は、Xamarin.iOS; によって提供される場合の Xamarin.iOS のバグバグを送信してください [http://bugzilla.xamarin.com][1]です。
+これは、該当する API が Xamarin.iOS; によって提供される場合の Xamarin.iOS のバグバグを提出してください[ http://bugzilla.xamarin.com][1]します。
 
 ネイティブ ライブラリのバインド プロジェクトの開発中に、これを実行する場合は、型の新しい組み合わせのサポートを追加する open いたします。 拡張機能の要求を提出してください、ケースの場合は、([http://bugzilla.xamarin.com][2]) と、テスト ケースとを評価しますが。
 
@@ -2322,9 +2322,9 @@ class MyImports {
 
 これには、いくつかの考えられる解決策があります。
 
-  -  ソース コードから P/invoke の問題を削除します。
-  -  (これは、プロジェクトの ios ビルド オプションでは、「すべてのアセンブリ」を「リンカーの動作」を設定する) すべてのアセンブリのマネージ リンカーを有効にします。 使用しないすべての P/invoke アプリから効果的に削除します (自動的には、代わりに手動でなどの以前の時点)。 欠点は、シミュレーターのビルドを少し遅くなりますが、このようにして、リフレクションを使用している場合、リンカーの詳細についてを参照して、アプリを壊す可能性があることを[ここ](~/ios/deploy-test/linker.md))
-  -  不足しているネイティブのシンボルを含む 2 つ目のネイティブ ライブラリを作成します。 問題を回避するだけでは、このことに注意してください (これらの関数を呼び出すしようとする場合は、アプリがクラッシュ)。
+- ソース コードから P/invoke の問題を削除します。
+- (これは、プロジェクトの ios ビルド オプションでは、「すべてのアセンブリ」を「リンカーの動作」を設定する) すべてのアセンブリのマネージ リンカーを有効にします。 使用しないすべての P/invoke アプリから効果的に削除します (自動的には、代わりに手動でなどの以前の時点)。 欠点は、シミュレーターのビルドを少し遅くなりますが、このようにして、リフレクションを使用している場合、リンカーの詳細についてを参照して、アプリを壊す可能性があることを[ここ](~/ios/deploy-test/linker.md))
+- 不足しているネイティブのシンボルを含む 2 つ目のネイティブ ライブラリを作成します。 問題を回避するだけでは、このことに注意してください (これらの関数を呼び出すしようとする場合は、アプリがクラッシュ)。
 
 <a name="MT5215" />
 
@@ -2919,7 +2919,7 @@ Xamarin.iOS を使用してこのようなシンボルを保持するネイテ�
 
 <a name="MT8009" />
 
-### <a name="mt8009-unable-to-locate-the-block-to-delegate-conversion-method-for-the-method-s-parameter--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8009:メソッドの変換メソッドをデリゲートするブロックが見つかりません *.*'s パラメーター # *。 バグを送信してください http://bugzilla.xamarin.com です。
+### <a name="mt8009-unable-to-locate-the-block-to-delegate-conversion-method-for-the-method-s-parameter--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8009:メソッドの変換メソッドをデリゲートするブロックが見つかりません *.* 's パラメーター # *。 バグを送信してください http://bugzilla.xamarin.com です。
 
 これは、API が正しくバインドされているを示します。 Xamarin によって公開される API の場合は、当社 bugzilla でバグを提出してください ([http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS))、サード パーティのバインドでは、場合、製造元に問い合わせてください。
 
@@ -2939,7 +2939,7 @@ Xamarin.iOS は、(ブロックをデリゲートに変換) を実行時に必�
 
 <a name="MT8012" />
 
-### <a name="mt8012-invalid-delegateproxyattribute-for-the-return-value-for-the-method--delegatetype-is-null-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8012:メソッドの戻り値の無効な DelegateProxyAttribute *.*:DelegateType が null です。 バグを送信してください http://bugzilla.xamarin.com です。
+### <a name="mt8012-invalid-delegateproxyattribute-for-the-return-value-for-the-method--delegatetype-is-null-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8012:メソッドの戻り値の無効な DelegateProxyAttribute *.* :DelegateType が null です。 バグを送信してください http://bugzilla.xamarin.com です。
 
 該当するメソッドの DelegateProxy 属性が無効です。
 
@@ -2947,7 +2947,7 @@ Xamarin.iOS は、(ブロックをデリゲートに変換) を実行時に必�
 
 <a name="MT8013" />
 
-### <a name="mt8013-invalid-delegateproxyattribute-for-the-return-value-for-the-method--delegatetype-2-specifies-a-type-without-a-handler-field-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8013:メソッドの戻り値の無効な DelegateProxyAttribute *.*:DelegateType ({2}) なし 'Handler' フィールドの種類を指定します。 バグを送信してください http://bugzilla.xamarin.com です。
+### <a name="mt8013-invalid-delegateproxyattribute-for-the-return-value-for-the-method--delegatetype-2-specifies-a-type-without-a-handler-field-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8013:メソッドの戻り値の無効な DelegateProxyAttribute *.* :DelegateType ({2}) なし 'Handler' フィールドの種類を指定します。 バグを送信してください http://bugzilla.xamarin.com です。
 
 該当するメソッドの DelegateProxy 属性が無効です。
 
@@ -2955,7 +2955,7 @@ Xamarin.iOS は、(ブロックをデリゲートに変換) を実行時に必�
 
 <a name="MT8014" />
 
-### <a name="mt8014-invalid-delegateproxyattribute-for-the-return-value-for-the-method--the-delegatetypes-2-handler-field-is-null-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8014:メソッドの戻り値の無効な DelegateProxyAttribute *.*:DelegateType の ({2}) 'Handler' フィールドが null です。 バグを送信してください http://bugzilla.xamarin.com です。
+### <a name="mt8014-invalid-delegateproxyattribute-for-the-return-value-for-the-method--the-delegatetypes-2-handler-field-is-null-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8014:メソッドの戻り値の無効な DelegateProxyAttribute *.* :DelegateType の ({2}) 'Handler' フィールドが null です。 バグを送信してください http://bugzilla.xamarin.com です。
 
 該当するメソッドの DelegateProxy 属性が無効です。
 
@@ -2963,7 +2963,7 @@ Xamarin.iOS は、(ブロックをデリゲートに変換) を実行時に必�
 
 <a name="MT8015" />
 
-### <a name="mt8015-invalid-delegateproxyattribute-for-the-return-value-for-the-method--the-delegatetypes-2-handler-field-is-not-a-delegate-its-a--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8015:メソッドの戻り値の無効な DelegateProxyAttribute *.*:DelegateType の ({2}) 'Handler' フィールドは、デリゲートは、*。 バグを送信してください http://bugzilla.xamarin.com です。
+### <a name="mt8015-invalid-delegateproxyattribute-for-the-return-value-for-the-method--the-delegatetypes-2-handler-field-is-not-a-delegate-its-a--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8015:メソッドの戻り値の無効な DelegateProxyAttribute *.* :DelegateType の ({2}) 'Handler' フィールドは、デリゲートは、*。 バグを送信してください http://bugzilla.xamarin.com です。
 
 該当するメソッドの DelegateProxy 属性が無効です。
 

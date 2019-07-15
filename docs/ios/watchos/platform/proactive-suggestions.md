@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 979b103db478e3888d3a3c20df6afbd91d0c37d8
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 0c0bf6058b2ec7a8e3ef606bef9f725a476abffe
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61386540"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865914"
 ---
 # <a name="watchos-proactive-suggestions-in-xamarin"></a>プロアクティブな候補 Xamarin で watchOS
 
@@ -132,7 +132,7 @@ activity.WebPageUrl = new NSUrl("http://xamarin.com/platform");
 
 ### <a name="restoring-an-activity"></a>アクティビティを復元します。
 
-検索結果をタップすると、ユーザーに応答する (`NSUserActivity`) アプリでは、編集、 **AppDelegate.cs**オーバーライド ファイルを開き、`ContinueUserActivity`メソッド。 例:
+検索結果をタップすると、ユーザーに応答する (`NSUserActivity`) アプリでは、編集、 **AppDelegate.cs**オーバーライド ファイルを開き、`ContinueUserActivity`メソッド。 例えば:
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)
@@ -169,9 +169,9 @@ public override bool ContinueUserActivity (UIApplication application, NSUserActi
 上記のレストラン検索アプリの例を実行します。 これが実装されている場合`NSUserActivity`正しくすべてのメタデータと属性、ユーザーは、次の操作を実行できます。
 
 1. フレンドを満たすために扱おうとするアプリであるレストランを検索します。
-4. 場合は、ユーザーは、マップ アプリに切り替え、レストランのアドレスが自動的に変換先としてお勧めします。
-5. これでもサード パーティ製アプリの機能 (サポートする`NSUserActivity`) ため、ユーザーは、ライドシェア アプリに切り替えることができますおよびレストランのアドレスが自動的に提案が宛先としてもします。
-6. それも提供していますコンテキスト Siri、ユーザーがレストランのアプリ内で Siri を呼び出すし、確認できるように *「... の方向を取得」* Siri ユーザーが表示してレストランへの道順が提供されます。
+2. 場合は、ユーザーは、マップ アプリに切り替え、レストランのアドレスが自動的に変換先としてお勧めします。
+3. これでもサード パーティ製アプリの機能 (サポートする`NSUserActivity`) ため、ユーザーは、ライドシェア アプリに切り替えることができますおよびレストランのアドレスが自動的に提案が宛先としてもします。
+4. それも提供していますコンテキスト Siri、ユーザーがレストランのアプリ内で Siri を呼び出すし、確認できるように *「... の方向を取得」* Siri ユーザーが表示してレストランへの道順が提供されます。
 
 1 つを共通に上記の機能のすべては、候補の当初からの場所を示すすべて。 上記の例の場合は、架空のレストランのレビューのアプリを勧めします。
 
@@ -297,7 +297,7 @@ Apple は、アクティビティを使用する場合、次のベスト プラ�
 - 処理を MapKit でアプリを起動する`MKDirectionsRequest`オブジェクト。
 - WatchOS ユーザー エンゲージメントに基づいてアプリの提案する方法を説明する機能を提供します。
 
-MapKit で、アプリの起動時に`MKDirectionsRequest`オブジェクトの場合に自動的に始めると、要求された場所にユーザーの指示またはを指示の取得を開始するユーザーを容易にする UI を表示する必要があります。 例:
+MapKit で、アプリの起動時に`MKDirectionsRequest`オブジェクトの場合に自動的に始めると、要求された場所にユーザーの指示またはを指示の取得を開始するユーザーを容易にする UI を表示する必要があります。 例えば:
 
 
 ```csharp

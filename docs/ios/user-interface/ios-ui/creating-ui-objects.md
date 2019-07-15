@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 65ebbddfa1a315a478ceb43162b3c80eba2d8cc1
-ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
+ms.openlocfilehash: a80bf876e239e1788a371a1f09d36d73247d4611
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66827803"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865010"
 ---
 # <a name="creating-user-interface-objects-in-xamarinios"></a>Xamarin.iOS でのユーザー インターフェイス オブジェクトの作成
 
@@ -88,7 +88,7 @@ Xcode で開くストーリー ボードには、右クリックしてストー�
 
 Visual Studio と Mac の Xcode の Interface Builder の統合の詳細についてを参照してください、 [Xib コードの生成](~/ios/internals/xib-code-generation.md#generated)ドキュメント。
 
-##  <a name="using-c"></a>使用してください。C#
+## <a name="using-c"></a>使用してください。C#
 
 プログラムで使用するユーザー インターフェイス オブジェクトを作成する場合C#(でビューや例については、ビュー コント ローラー)、次の手順に従います。
 

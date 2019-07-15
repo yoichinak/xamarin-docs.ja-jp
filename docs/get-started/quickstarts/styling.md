@@ -9,12 +9,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/02/2019
-ms.openlocfilehash: 53d2a0aae3398ea31676fbc3dab95d500dfe2104
-ms.sourcegitcommit: e45f0cd6d7d4a77dba5ecaad4d7894025005a2dc
+ms.openlocfilehash: 1b68afc1f3d3c57a5c336e9d30c97ce2375acb9f
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67309501"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864343"
 ---
 # <a name="style-a-cross-platform-xamarinforms-application"></a>スタイルのクロスプラット フォーム-Xamarin.Forms アプリケーション
 
@@ -120,7 +120,7 @@ ms.locfileid: "67309501"
 
     変更を保存**NotesPage.xaml**キーを押して**CTRL + S**ファイルを閉じます。
 
-5. **ソリューション エクスプ ローラー**の**ノート**プロジェクトで、ダブルクリックして**NoteEntryPage.xaml**を開きます。 既存のコードを次のコードに置き換えます。
+4. **ソリューション エクスプ ローラー**の**ノート**プロジェクトで、ダブルクリックして**NoteEntryPage.xaml**を開きます。 既存のコードを次のコードに置き換えます。
 
     ```xaml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -169,7 +169,7 @@ ms.locfileid: "67309501"
 
     変更を保存**NoteEntryPage.xaml**キーを押して**CTRL + S**ファイルを閉じます。
 
-6. 構築し、各プラットフォームで、プロジェクトを実行します。 詳細については、次を参照してください。[クイック スタートを構築](single-page.md#building-the-quickstart)します。
+5. 構築し、各プラットフォームで、プロジェクトを実行します。 詳細については、次を参照してください。[クイック スタートを構築](single-page.md#building-the-quickstart)します。
 
     **NotesPage**キーを押して、 **+** に移動するボタン、 **NoteEntryPage**メモを入力します。 各ページで、前のクイック スタートからのスタイルがどのように変更されたかを確認します。
 
@@ -261,7 +261,7 @@ ms.locfileid: "67309501"
 
     変更を保存**NotesPage.xaml**を選択して**ファイル > 保存**(またはキーを押して **&#8984; + S**)、ファイルを閉じます。
 
-5. **Solution Pad**の**ノート**プロジェクトで、ダブルクリックして**NoteEntryPage.xaml**を開きます。 既存のコードを次のコードに置き換えます。
+4. **Solution Pad**の**ノート**プロジェクトで、ダブルクリックして**NoteEntryPage.xaml**を開きます。 既存のコードを次のコードに置き換えます。
 
     ```xaml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -310,7 +310,7 @@ ms.locfileid: "67309501"
 
     変更を保存**NoteEntryPage.xaml**を選択して**ファイル > 保存**(またはキーを押して **&#8984; + S**)、ファイルを閉じます。
 
-6. 構築し、各プラットフォームで、プロジェクトを実行します。 詳細については、次を参照してください。[クイック スタートを構築](single-page.md#building-the-quickstart)します。
+5. 構築し、各プラットフォームで、プロジェクトを実行します。 詳細については、次を参照してください。[クイック スタートを構築](single-page.md#building-the-quickstart)します。
 
     **NotesPage**キーを押して、 **+** に移動するボタン、 **NoteEntryPage**メモを入力します。 各ページで、前のクイック スタートからのスタイルがどのように変更されたかを確認します。
 

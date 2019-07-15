@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 232fcd1d369eba1daad170986f2e2c4c913a3649
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 816ec5c861b5889e1735eab6293ed10318c53644
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61307864"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831880"
 ---
 # <a name="debug-on-a-wear-device"></a>Wear デバイスでのデバッグ
 
@@ -77,7 +77,8 @@ Wear デバイスを携帯電話に接続するのにには、次の手順を使
 
     ポート 4444 が使用できない場合は、アクセス権があるその他の使用可能なポートを使用することができます。 
 
-    **注**:Visual Studio または Visual Studio for Mac を再起動する場合は、Wear デバイスへの接続をセットアップするには、もう一度これらのコマンドを実行する必要があります。
+    > [!NOTE]
+    > Visual Studio または Visual Studio for Mac を再起動する場合は、Wear デバイスへの接続をセットアップするには、もう一度これらのコマンドを実行する必要があります。
 
 5.  Wear デバイスが表示されたら、許可することを確認**ADB デバッグ**します。 Android Wear アプリで、変更の状態が表示されます。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: ec907e71074a97bd5d1714e79dd504013f5c8a4b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: f23a506acda385b53942661244bcd7a8510c8c7f
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61240840"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865998"
 ---
 # <a name="windows-in-xamarinmac"></a>Xamarin.Mac での Windows
 
@@ -221,13 +221,13 @@ C# コードに UI 要素を公開する Outlet と Action を作成できるよ
 作成し、Xamarin.Mac アプリケーションで使用されるウィンドウで、プロセスは基本的にだけ作業上と同じ。
 
 1. プロジェクトに自動的に追加の既定ではない新しい windows の場合は、プロジェクトに新しいウィンドウの定義を追加します。 これについては、以下で詳しく説明します。
-2. ダブルクリックして、 `Main.storyboard` Xcode の Interface Builder で編集するためのウィンドウのデザインを開くファイル。
-3. ユーザー インターフェイスの設計に新しいウィンドウをドラッグし、ウィンドウのメイン ウィンドウを使用してフック_Segues_ (詳細については、次を参照してください、 [Segues](~/mac/platform/storyboards/indepth.md#Segues)のセクション、 [ストーリーボードの使用。](~/mac/platform/storyboards/indepth.md)ドキュメント)。
-3. ウィンドウの必要なプロパティを設定、**属性インスペクター**と**サイズ インスペクター**します。
-4. インターフェイスを構築および構成に必要なコントロールでドラッグして、**属性インスペクター**します。
-5. 使用して、**サイズ インスペクター** UI 要素のサイズ変更を処理します。
-6. C# を使用してコードに、ウィンドウの UI 要素を公開**Outlet**と**アクション**します。
-7. 変更を保存し、Visual Studio for Mac は Xcode と同期に戻ります。
+1. ダブルクリックして、 `Main.storyboard` Xcode の Interface Builder で編集するためのウィンドウのデザインを開くファイル。
+1. ユーザー インターフェイスの設計に新しいウィンドウをドラッグし、ウィンドウのメイン ウィンドウを使用してフック_Segues_ (詳細については、次を参照してください、 [Segues](~/mac/platform/storyboards/indepth.md#Segues)のセクション、 [ストーリーボードの使用。](~/mac/platform/storyboards/indepth.md)ドキュメント)。
+1. ウィンドウの必要なプロパティを設定、**属性インスペクター**と**サイズ インスペクター**します。
+1. インターフェイスを構築および構成に必要なコントロールでドラッグして、**属性インスペクター**します。
+1. 使用して、**サイズ インスペクター** UI 要素のサイズ変更を処理します。
+1. C# を使用してコードに、ウィンドウの UI 要素を公開**Outlet**と**アクション**します。
+1. 変更を保存し、Visual Studio for Mac は Xcode と同期に戻ります。
 
 作成された基本的なウィンドウが作成できた見て一般的なプロセス、Xamarin.Mac アプリケーションで windows を使用する場合。 
 
@@ -259,7 +259,7 @@ public override void ViewWillAppear ()
     // Set Window Title
     this.View.Window.Title = "untitled";
 }
-``` 
+```    
 
 > [!NOTE]
 > ウィンドウの値を設定しています`Title`プロパティ、`ViewWillAppear`メソッドの代わりに、`ViewDidLoad`メソッド ビューは、メモリに読み込まれることが、中に、まだ完全にインスタンス化されないためです。 アクセスしようとすると、`Title`プロパティ、`ViewDidLoad`メソッドは、`null`ウィンドウいないされて構築およびワイヤード (有線) アップ プロパティにまだため例外。
@@ -711,14 +711,14 @@ void OpenDialog (NSObject sender)
 3. **Identity Inspector**、入力`PreferencesWindow`の**ストーリー ボード ID**: 
 
     [![](window-images/new02.png "ストーリー ボード ID の設定")](window-images/new02.png#lightbox)
-5. インターフェイスを設計するには。 
+4. インターフェイスを設計するには。 
 
     [![](window-images/new03.png "UI の設計")](window-images/new03.png#lightbox)
-6. アプリのメニューを開きます (`MacWindows`) を選択します**設定しています.** コントロールを右クリックして新しいウィンドウにドラッグします。 
+5. アプリのメニューを開きます (`MacWindows`) を選択します**設定しています.** コントロールを右クリックして新しいウィンドウにドラッグします。 
 
     [![](window-images/new05.png "セグエを作成します。")](window-images/new05.png#lightbox)
-7. 選択**表示**ポップアップ メニュー。
-6. 変更を保存し、Visual Studio for Mac は Xcode と同期に戻ります。
+6. 選択**表示**ポップアップ メニュー。
+7. 変更を保存し、Visual Studio for Mac は Xcode と同期に戻ります。
 
 コードを実行すると選択、**設定しています.** から、**アプリケーション メニュー**ウィンドウが表示されます。
 
@@ -734,7 +734,7 @@ void OpenDialog (NSObject sender)
 
 1. 新しいウィンドウの定義をプロジェクトに追加します。
 2. ダブルクリックして、 `.xib` Xcode の Interface Builder で編集するためのウィンドウのデザインを開くファイル。
-2. ウィンドウの必要なプロパティを設定、**属性インスペクター**と**サイズ インスペクター**します。
+3. ウィンドウの必要なプロパティを設定、**属性インスペクター**と**サイズ インスペクター**します。
 4. インターフェイスを構築および構成に必要なコントロールでドラッグして、**属性インスペクター**します。
 5. 使用して、**サイズ インスペクター** UI 要素のサイズ変更を処理します。
 6. C# を使用してコードに、ウィンドウの UI 要素を公開**Outlet**と**アクション**します。
@@ -751,11 +751,11 @@ void OpenDialog (NSObject sender)
 
 新しいパネルを追加するには、次の操作を行います。
 
-1. **ソリューション エクスプ ローラー**プロジェクトを右クリックし、選択、**追加** > **新しいファイル.**.
+1. **ソリューション エクスプ ローラー**プロジェクトを右クリックし、選択、**追加** > **新しいファイル.** .
 2. 新しいファイル] ダイアログ ボックスで、[ **Xamarin.Mac** > **Cocoa ウィンドウ コント ローラーと**:
 
     [![](window-images/panels00.png "新しいウィンドウ コント ローラーの追加")](window-images/panels00.png#lightbox)
-3. **[名前]** に「`DocumentPanel`」と入力し、**[新規]** ボタンをクリックします。
+3. **[名前]** に「`DocumentPanel`」と入力し、 **[新規]** ボタンをクリックします。
 4. ダブルクリックして、`DocumentPanel.xib`ファイルを開き、Interface Builder での編集します。 
 
     [![](window-images/new02.png "編集パネル")](window-images/new02.png#lightbox)
@@ -768,11 +768,11 @@ void OpenDialog (NSObject sender)
 7. 切り替えて、 **Identity Inspector**パネルのクラスを設定および`DocumentPanel`: 
 
     [![](window-images/panels03.png "パネルのクラスの設定")](window-images/panels03.png#lightbox)
-6. 変更を保存し、Visual Studio for Mac は Xcode と同期に戻ります。
-7. 編集、`DocumentPanel.cs`ファイルを開き、次のクラス定義を変更します。 
+8. 変更を保存し、Visual Studio for Mac は Xcode と同期に戻ります。
+9. 編集、`DocumentPanel.cs`ファイルを開き、次のクラス定義を変更します。 
 
     `public partial class DocumentPanel : NSPanel`
-8. 変更内容をファイルに保存します。
+10. 変更内容をファイルに保存します。
 
 編集、`AppDelegate.cs`ファイル、`DidFinishLaunching`メソッドの次のようになります。
 

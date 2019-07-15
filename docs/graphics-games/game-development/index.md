@@ -6,12 +6,12 @@ ms.assetid: 0E3CDCD2-FBE4-49F5-A70E-8A7B937BAF1D
 author: conceptdev
 ms.author: crdun
 ms.date: 03/24/2017
-ms.openlocfilehash: 314bedcb6bb2d7ebf9d8f98428b6a7cad059f73b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 0fa4dbbf256e005fe17841f06acf1338197784b0
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61382060"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832279"
 ---
 # <a name="introduction-to-game-development-with-xamarin"></a>Xamarin を使用したゲーム開発の概要
 
@@ -55,9 +55,9 @@ ms.locfileid: "61382060"
 
 手動で読み込みおよびアンロード (破棄) のコンテンツは開発で使用するテクノロジに応じて必要あります。 手動で読み込むと、資産のアンロードはさまざまな理由のために必要な可能性があります。
 
- - 資産を読み込む 1 つのフレームの長さに関連した時間がかかる場合があります。 一部の資産は、mid ゲームプレイを読み込まれている場合、エクスペリエンスが中断される重大を読み込むには、秒をもかかる場合があります。 読み込み時間が長い (2 秒以上、2 つなど) の場合は、アニメーション化された表示たい画面または進行状況バーをロードします。
- - 資産は、大量のゲームのターゲット プラットフォームで提供されているものに収まるように読み込まれる内容のアクティブな管理を必要とする RAM を使用できます。
- - ゲームは、RAM 内に収まるよりも多くの資産を表示する必要があります。 多くの場合、「開いている World」のゲームには、プレイヤーがシームレスにナビゲートできます – しない読み込み画面を作成するが、大規模な環境が含まれます。 ここでは、ストリーミング コンテンツのカスタム システムと管理のメモリ使用量を作成する必要があります。
+- 資産を読み込む 1 つのフレームの長さに関連した時間がかかる場合があります。 一部の資産は、mid ゲームプレイを読み込まれている場合、エクスペリエンスが中断される重大を読み込むには、秒をもかかる場合があります。 読み込み時間が長い (2 秒以上、2 つなど) の場合は、アニメーション化された表示たい画面または進行状況バーをロードします。
+- 資産は、大量のゲームのターゲット プラットフォームで提供されているものに収まるように読み込まれる内容のアクティブな管理を必要とする RAM を使用できます。
+- ゲームは、RAM 内に収まるよりも多くの資産を表示する必要があります。 多くの場合、「開いている World」のゲームには、プレイヤーがシームレスにナビゲートできます – しない読み込み画面を作成するが、大規模な環境が含まれます。 ここでは、ストリーミング コンテンツのカスタム システムと管理のメモリ使用量を作成する必要があります。
 
 カスタム ファイル形式は、読み込み時に処理がカスタムの読み込みコードを必要とする必要があります。
 
@@ -109,25 +109,11 @@ ms.locfileid: "61382060"
 
 Xamarin.Android と Xamarin.iOS を使用している開発者があるさまざまなテクノロジを利用できるように、ゲーム開発を支援します。 このセクションではいくつかの最も人気のあるクロスプラット フォーム ソリューションについて説明します。
 
-### <a name="cocossharp"></a>CocosSharp
-
-CocosSharp は、Cocos 2D ゲーム エンジンのオープン ソースのクロスプラット フォーム対応バージョンです。 エンジンは、Android、iOS、Mac OS X、Windows デスクトップ、Windows RT および Windows Phone へのアクセスを提供します。
-
-CocosSharp の 2D ゲーム開発用の単純なプログラマ API について説明します。 趣味と同様の商用のプロジェクトの実行可能なテクノロジを CocosSharp よう、2 D ゲーム開発の普及を reignite をモバイル デバイスでのゲームで成長してきました。 (これは NuGet から入手可能) ソース コードまたは .dll ファイルとして提供されますが、ビジュアル エディター; は提供されません。そのため、CocosSharp エンジンとの対話には、プログラミングの知識が必要です。
-
-CocosSharp による開始をチェック アウト、 [CocosSharp ガイド](~/graphics-games/cocossharp/index.md)します。
-
-ゲーム、CocosSharp による怒りの ninja オブジェクトが作成され、複数のプラットフォームを既に実行中のゲームを探している場合の出発点として適してできます。
-
-![](images/image3.png "怒りの ninja オブジェクトを作成して CocosSharp によるゲーム")
-
-これをダウンロードして取得の詳細については、 [AngryNinjas Github ページ](https://github.com/xamarin/AngryNinjas)します。
-
 ### <a name="monogame"></a>MonoGame
 
 MonoGame は、オープン ソースのクロス プラットフォームのバージョンの Microsoft の XNA API です。 MonoGame を iOS、Android、Mac OS X、Linux、Windows、Windows RT、PS4、PSVita、Xbox One、およびスイッチ用のゲームを作成できます。
 
-異なり、CocosSharp MonoGame は技術的にはないゲーム エンジンをゲームの開発 API ではなくです。 これは、直接ゲーム オブジェクトの管理、手動でオブジェクトを描画、およびカメラなどの一般的なオブジェクトの実装に MonoGame を使用した作業が必要であることを意味し、*シーン グラフ*(親子階層のゲーム オブジェクトとの間)。 違いを理解するには、CocosSharp が MonoGame の上に構築されたことを検討してください。 MonoGame を一般化グラフィック、レンダリング、および、オーディオなどのプラットフォーム固有のテクノロジのいくつか CocosSharp 整理し、ゲーム ロジックを実装するコードを提供します。
+MonoGame は技術的にはないゲーム エンジンをゲームの開発 API ではなくです。 これは、直接ゲーム オブジェクトの管理、手動でオブジェクトを描画、およびカメラなどの一般的なオブジェクトの実装に MonoGame を使用した作業が必要であることを意味し、*シーン グラフ*(親子階層のゲーム オブジェクトとの間)。
 
 MonoGame は、MonoGame を使用した作業は、プログラミングの知識が必要ですので、標準的なビジュアル開発環境を提供しません。
 
@@ -161,6 +147,5 @@ UrhoSharp は、クロスプラット フォームで高度な 3D および 2D �
 
 ## <a name="related-links"></a>関連リンク
 
-- [CocosSharp のガイド](~/graphics-games/cocossharp/index.md)
 - [MonoGame ガイド](~/graphics-games/monogame/index.md)
 - [UrhoSharp のガイド](~/graphics-games/urhosharp/index.md)

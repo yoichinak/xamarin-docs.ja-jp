@@ -6,12 +6,12 @@ ms.assetid: 9EE288C5-8952-C5A9-E542-0BD847300EC6
 author: asb3993
 ms.author: amburns
 ms.date: 11/25/2015
-ms.openlocfilehash: ec173c0ed7881439ecbe2b5cf83c8f5484c7e5aa
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 93f90d2dad140f021c7e575afed44da1c5351eda
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64977628"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830512"
 ---
 # <a name="overview-of-objective-c-bindings"></a>OBJECTIVE-C バインディングの概要
 
@@ -24,9 +24,10 @@ Xamarin で使用するため、OBJECTIVE-C ライブラリのバインドは、
 2. 「API の定義」を作成するとC#、「バインド」アセンブリを生成するためにコンパイルします。 これで実行することができます、 [**コマンドライン**](#commandline)またはを使用して、 [**バインド プロジェクト**](#bindingproject) Visual Studio for Mac または Visual Studio でします。
 
 3. その「バインド」アセンブリは、定義した API を使用して、ネイティブ機能にアクセスできるように、Xamarin アプリケーション プロジェクトに追加されます。
-  バインド プロジェクトは、アプリケーション プロジェクトから完全に分離します。
+   バインド プロジェクトは、アプリケーション プロジェクトから完全に分離します。
 
-**注:** 手順 1 のサポートで自動化できる[**目標油性**](#objectivesharpie)します。 Objective C API を確認し、提案された生成C#「API の定義」。 目標油性によって作成されたファイルをカスタマイズして、バインド プロジェクト (または、コマンドラインで) 使用することができます、バインド アセンブリを作成します。 目標油性が単独でバインドを作成していないより大きなプロセスのオプションの一部だけです。
+   > [!NOTE]
+   > 手順 1 のサポートで自動化できる[**目標油性**](#objectivesharpie)します。 Objective C API を確認し、提案された生成C#「API の定義」。 目標油性によって作成されたファイルをカスタマイズして、バインド プロジェクト (または、コマンドラインで) 使用することができます、バインド アセンブリを作成します。 目標油性が単独でバインドを作成していないより大きなプロセスのオプションの一部だけです。
 
 技術的な詳細を参照することもできます。[しくみ](#howitworks)、を理解できると、バインドを作成します。
 

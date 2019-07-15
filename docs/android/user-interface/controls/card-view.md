@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: cdb75207bff3f15a54d0cdd90fa0833da9c145e6
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: d145a8a3cd8bc321f0fce76a8831fca681ad29a0
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61077970"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830573"
 ---
 # <a name="cardview"></a>CardView
 
@@ -49,7 +49,7 @@ _Cardview ウィジェットは、カードのようにビューのテキスト�
 
 追加する、 `Xamarin.Android.Support.v7.CardView` Visual Studio でパッケージ。
 
-1. プロジェクトを開き、右クリックし、**参照**ノード (で、**ソリューション エクスプ ローラー**ウィンドウ) を選択して**NuGet パッケージの管理.**.
+1. プロジェクトを開き、右クリックし、**参照**ノード (で、**ソリューション エクスプ ローラー**ウィンドウ) を選択して**NuGet パッケージの管理.** .
 
 2. ときに、 **NuGet パッケージの管理**ダイアログが表示されたら、入力**CardView**検索ボックスにします。
 
@@ -174,8 +174,8 @@ NuGet パッケージのインストールの詳細については、次を参�
 
 
 #### <a name="padding"></a>[間隔]
-`
-CardView` カード内のコンテンツを配置する 5 つの埋め込み属性を提供します。 XML のレイアウトに設定することができますか、コード内と同様のメソッドを呼び出すことができます。
+
+`CardView` カード内のコンテンツを配置する 5 つの埋め込み属性を提供します。 XML のレイアウトに設定することができますか、コード内と同様のメソッドを呼び出すことができます。
 
 [![埋め込み属性 CardView のダイアグラム](card-view-images/05-padding-sml.png)](card-view-images/05-padding.png#lightbox)
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/16/2018
-ms.openlocfilehash: 362041efc5a19dfb70430054f3e4636d4fdfbd7e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c36b31e28011bea287903ee0681a316209abd22d
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61021816"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829994"
 ---
 <a name="compatibility"></a>
 
@@ -84,7 +84,8 @@ Android には、通知を並べ替えるし、適切に表示されるように
 
 -   **カテゴリ**&ndash;でデバイスの場合など、さまざまな状況で通知を処理する方法をシステムに通知*不可*モード。
 
-**注:** **可視性** と **カテゴリ** Android 5.0 およびそれ以前のバージョンの Android では使用できないで導入されました。 Android 8.0 以降[通知チャネル](#notif-chan)をユーザーに通知を表示する方法を制御するために使用します。
+> [!NOTE]
+> **可視性** と **カテゴリ** Android 5.0 およびそれ以前のバージョンの Android では使用できないで導入されました。 Android 8.0 以降[通知チャネル](#notif-chan)をユーザーに通知を表示する方法を制御するために使用します。
 
 
 ### <a name="expanded-layouts"></a>展開されたレイアウト

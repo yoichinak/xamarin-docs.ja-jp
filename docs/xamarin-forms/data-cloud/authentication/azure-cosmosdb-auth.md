@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: 52f4e33e051c99b7002120c055c79036828d60dd
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 6e55b3b9b0f204992de684ba09f3d9ff2552ce00
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67658869"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832362"
 ---
 # <a name="authenticate-users-with-an-azure-cosmos-db-document-database-and-xamarinforms"></a>Azure Cosmos DB ドキュメント データベースと Xamarin.Forms でユーザーを認証します。
 
@@ -96,9 +96,9 @@ Azure App Service でリソース トークン ブローカーをホストする
 1. Facebook アプリを作成します。 詳細については、次を参照してください。[登録とアプリを構成する](https://developers.facebook.com/docs/apps/register)Facebook デベロッパー センターでします。
 1. アプリに Facebook ログイン製品を追加します。 詳細については、次を参照してください。[アプリまたは web サイトを Facebook ログインを追加](https://developers.facebook.com/docs/facebook-login)Facebook デベロッパー センターでします。
 1. Facebook ログインを次のように構成します。
-  - クライアントの OAuth ログインを有効にします。
-  - Web の OAuth ログインを有効にします。
-  - 有効な OAuth リダイレクト URI、App Service web アプリの URI を使用して設定`/.auth/login/facebook/callback`追加されます。
+   - クライアントの OAuth ログインを有効にします。
+   - Web の OAuth ログインを有効にします。
+   - 有効な OAuth リダイレクト URI、App Service web アプリの URI を使用して設定`/.auth/login/facebook/callback`追加されます。
 
   次のスクリーン ショットは、この構成を示しています。
 
@@ -114,12 +114,12 @@ App Service の簡単な認証を構成するためのプロセスは次のと�
 
 1. Azure ポータルでは、App Service の web アプリに移動します。
 1. Azure portal でのオープン、認証/承認 ブレードと、次の構成を実行します。
-  - App Service の認証を有効にする必要があります。
-  - 要求が認証されていない場合に実行するアクションを設定する必要があります**Facebook を使用したログイン**します。
+    - App Service の認証を有効にする必要があります。
+    - 要求が認証されていない場合に実行するアクションを設定する必要があります**Facebook を使用したログイン**します。
 
-  次のスクリーン ショットは、この構成を示しています。
+    次のスクリーン ショットは、この構成を示しています。
 
-  [![](azure-cosmosdb-auth-images/app-service-authentication-settings.png "App Service Web アプリの認証設定")](azure-cosmosdb-auth-images/app-service-authentication-settings-large.png#lightbox "App Service Web アプリの認証設定")
+    [![](azure-cosmosdb-auth-images/app-service-authentication-settings.png "App Service Web アプリの認証設定")](azure-cosmosdb-auth-images/app-service-authentication-settings-large.png#lightbox "App Service Web アプリの認証設定")
 
 App Service の web アプリは、認証フローを有効にする、Facebook アプリとの通信にも構成する必要があります。 これは、Facebook id プロバイダーを選択し、入力によって実現できます、**アプリ ID**と**アプリ シークレット**Facebook のデベロッパー センターで Facebook アプリ設定の値。 詳細については、次を参照してください。 [Facebook の追加については、アプリケーションに](/azure/app-service-mobile/app-service-mobile-how-to-configure-facebook-authentication#a-namesecrets-aadd-facebook-information-to-your-application)します。
 
@@ -131,10 +131,10 @@ Xamarin.Forms のサンプル アプリケーションを構成するための�
 
 1. Xamarin.Forms ソリューションを開きます。
 1. 開いている`Constants.cs`し、次の定数の値を更新します。
-  - `EndpointUri` – 値は、Cosmos DB アカウントの [キー] ブレードから Cosmos DB アカウントの URL を指定する必要があります。
-  - `DatabaseName` – 値は、ドキュメント データベースの名前を指定する必要があります。
-  - `CollectionName` – 値は、ドキュメント データベースのコレクションの名前を指定する必要があります (この場合、 `UserItems`)。
-  - `ResourceTokenBrokerUrl` – 値は、App Service のアカウントの概要ブレードからリソース トークン ブローカーの web アプリの URL を指定する必要があります。
+    - `EndpointUri` – 値は、Cosmos DB アカウントの [キー] ブレードから Cosmos DB アカウントの URL を指定する必要があります。
+    - `DatabaseName` – 値は、ドキュメント データベースの名前を指定する必要があります。
+    - `CollectionName` – 値は、ドキュメント データベースのコレクションの名前を指定する必要があります (この場合、 `UserItems`)。
+    - `ResourceTokenBrokerUrl` – 値は、App Service のアカウントの概要ブレードからリソース トークン ブローカーの web アプリの URL を指定する必要があります。
 
 ## <a name="initiating-login"></a>ログインを開始します。
 

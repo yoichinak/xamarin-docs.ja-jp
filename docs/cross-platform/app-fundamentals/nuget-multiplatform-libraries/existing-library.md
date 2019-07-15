@@ -6,12 +6,12 @@ ms.assetid: EDAC3E5E-DB7D-40A9-AE28-45C52ADA854E
 author: asb3993
 ms.author: amburns
 ms.date: 04/20/2017
-ms.openlocfilehash: 7f407b22d1793d585ae40aeae8c2d9b7616784e6
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6e043334d3ca45a573423ebdfdf1ec9149167b55
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61267818"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864690"
 ---
 # <a name="creating-a-nuget-from-existing-library-projects"></a>既存のライブラリ プロジェクトから NuGet を作成します。
 
@@ -21,13 +21,13 @@ ms.locfileid: "61267818"
 
 2. 移動して、 **NuGet パッケージ > メタデータ**セクションし、すべてを入力、[必須情報](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md)で、**全般** タブ。
 
-  [![](existing-library-images/existing-metadata-sml.png "必要なメタデータを入力します。")](existing-library-images/existing-metadata.png#lightbox)
+   [![](existing-library-images/existing-metadata-sml.png "必要なメタデータを入力します。")](existing-library-images/existing-metadata.png#lightbox)
 
 3. 必要に応じて、[メタデータを追加](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md)で、**詳細**タブ。
 
 4. メタデータを構成すると、プロジェクトを右クリックして選択**NuGet パッケージの作成**と **.nupkg** NuGet パッケージのファイルに保存されます、 **/bin/** フォルダー (デバッグまたはリリースでは、構成によって異なります)。
 
-  ![](existing-library-images/create-nuget-package.png "NuGet パッケージの作成を右クリック メニューから選択します。")
+   ![](existing-library-images/create-nuget-package.png "NuGet パッケージの作成を右クリック メニューから選択します。")
 
 5. NuGet パッケージを作成する_すべて_ビルドまたは配置に移動して、 **NuGet パッケージ > ビルド**セクションとティック**プロジェクトのビルド時に NuGet パッケージを作成**:
 

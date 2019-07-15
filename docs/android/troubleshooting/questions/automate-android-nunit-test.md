@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2018
-ms.openlocfilehash: b785ef171d2cb00d4f8f5a17f37d49de17fd3da9
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 0837deccdb535c178e8b00b052efeb7c9bd49679
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61153296"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864129"
 ---
 # <a name="how-do-i-automate-an-android-nunit-test-project"></a>Android NUnit テスト プロジェクトを自動化する方法を教えてください
 
@@ -58,7 +58,7 @@ adb shell am instrument
 
 2.  実装、 [TestInstrumentation](https://developer.xamarin.com/api/constructor/Xamarin.Android.NUnitLite.TestSuiteInstrumentation.TestSuiteInstrumentation/p/System.IntPtr/Android.Runtime.JniHandleOwnership/)コンス トラクターと[AddTests](https://developer.xamarin.com/api/member/Xamarin.Android.NUnitLite.TestSuiteInstrumentation.AddTests%28%29)メソッド。 `AddTests`メソッドのコントロールが実際にテストを実行します。
 
-3.  変更、`.csproj`ファイルを追加する**TestInstrumentation.cs**します。 例:
+3.  変更、`.csproj`ファイルを追加する**TestInstrumentation.cs**します。 例えば:
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -74,13 +74,13 @@ adb shell am instrument
     </Project>
     ```
 
-3.  単体テストを実行するのにには、次のコマンドを使用します。 置換`PACKAGE_NAME`アプリのパッケージ名を持つ (アプリのパッケージ名が見つかりません`/manifest/@package`属性にある**AndroidManifest.xml**)。
+4.  単体テストを実行するのにには、次のコマンドを使用します。 置換`PACKAGE_NAME`アプリのパッケージ名を持つ (アプリのパッケージ名が見つかりません`/manifest/@package`属性にある**AndroidManifest.xml**)。
 
     ```shell
     adb shell am instrument -w PACKAGE_NAME/app.tests.TestInstrumentation
     ```
 
-4.  必要に応じて変更することができます、`.csproj`を追加するファイル、 `RunTests` MSBuild ターゲット。 これにより、次のようなコマンドを使用して単体テストを起動できるようにします。
+5.  必要に応じて変更することができます、`.csproj`を追加するファイル、 `RunTests` MSBuild ターゲット。 これにより、次のようなコマンドを使用して単体テストを起動できるようにします。
 
     ```shell
     msbuild /t:RunTests Project.csproj

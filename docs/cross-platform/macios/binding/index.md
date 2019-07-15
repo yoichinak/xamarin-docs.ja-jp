@@ -6,27 +6,27 @@ ms.assetid: DBBAA086-BB0F-8161-DF44-632F4F5DFE5D
 author: asb3993
 ms.author: amburns
 ms.date: 01/25/2016
-ms.openlocfilehash: bdf284d66539da3eca35e79d761712012674de0d
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 923ec41443feff67d851a0c2f3cba1b948aed580
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64978455"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864409"
 ---
 # <a name="binding-objective-c"></a>Objective-C のバインド
 
 このセクションには、さまざまなから呼び出せるように、Objective C のライブラリを作成するバインドをカバーするドキュメントが含まれていますC#Xamarin.iOS または Xamarin.Mac で作成されたアプリケーション。
 
-##  <a name="overviewcross-platformmaciosbindingoverviewmd"></a>[概要](~/cross-platform/macios/binding/overview.md)
+## <a name="overviewcross-platformmaciosbindingoverviewmd"></a>[概要](~/cross-platform/macios/binding/overview.md)
 
 このドキュメントには、バインディングが行われる方法の内部の一部が含まれます。 技術情報についてはいくつかの高度なドキュメントです。
 
-##  <a name="binding-objective-c-librariescross-platformmaciosbindingobjective-c-librariesmd"></a>[Objective-C ライブラリのバインド](~/cross-platform/macios/binding/objective-c-libraries.md)
+## <a name="binding-objective-c-librariescross-platformmaciosbindingobjective-c-librariesmd"></a>[Objective-C ライブラリのバインド](~/cross-platform/macios/binding/objective-c-libraries.md)
 
 このドキュメントの作成に使用するプロセスを説明しますC#Objective C Api および Objective C での表現方法を .NET で使用されている表現形式にマップする方法のバインド。
 C Api だけをバインドする場合は、これは、P/invoke framework 標準 .NET メカニズムを使用する必要があります。
 
-##  <a name="binding-definition-reference-guidecross-platformmaciosbindingbinding-types-referencemd"></a>[バインドの定義のリファレンス ガイド](~/cross-platform/macios/binding/binding-types-reference.md)
+## <a name="binding-definition-reference-guidecross-platformmaciosbindingbinding-types-referencemd"></a>[バインドの定義のリファレンス ガイド](~/cross-platform/macios/binding/binding-types-reference.md)
 
 これは、すべてのバインドの生成プロセスを促進するバインディングの作成者に使用可能な属性を説明するリファレンス ガイドです。
 

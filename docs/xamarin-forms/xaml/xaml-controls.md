@@ -7,13 +7,13 @@ ms.assetid: 639BD392-1496-41BB-BB09-7652273AC9D8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/03/2019
-ms.openlocfilehash: 8217c6436cc8cfe8f4b9c6cc3445157319e8c0bf
-ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
+ms.date: 07/10/2019
+ms.openlocfilehash: dc903cf4ff8eaced18df3271e5e4dbdde6845b6a
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66741112"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832633"
 ---
 # <a name="xaml-controls"></a>XAML コントロール
 
@@ -47,9 +47,10 @@ ms.locfileid: "66741112"
 
 |     |     |
 | --- | --- |
+| <h3>CheckBox</h3>選択できるように、`boolean`値。<p align="center">![チェック ボックスのスクリーン ショット](xaml-controls-images/CheckBox.png "チェック ボックス")</p> [ガイド](~/xamarin-forms/user-interface/checkbox.md) | <p valign="center"><pre>&lt;CheckBox IsChecked="true"<br />          HorizontalOptions="Center"<br />          VerticalOptions="CenterAndExpand" /&gt;</pre></p> |
 | <h3>スライダー</h3>選択できるように、`double`を連続する範囲の値。<p align="center">![スライダーのスクリーン ショット](xaml-controls-images/Slider.png "スライダー")</p>[API](xref:Xamarin.Forms.Slider) / [ガイド](~/xamarin-forms/user-interface/slider.md) | <p valign="center"><pre>&lt;Slider Minimum="0"<br />        Maximum="100"<br />        VerticalOptions="CenterAndExpand" /&gt;</pre></p> |
 | <h3>ステッパ</h3>選択できるように、`double`増分の範囲からの値。<p align="center">![スクリーン ショット、ステッパの](xaml-controls-images/Stepper.png "ステッパ")</p>[API](xref:Xamarin.Forms.Stepper) / [ガイド](~/xamarin-forms/user-interface/stepper.md) | <p valign="center"><pre>&lt;Stepper Minimum="0"<br />         Maximum="10"<br />         Increment="0.1"<br />         HorizontalOptions="Center"<br />         VerticalOptions="CenterAndExpand" /&gt;</pre></p> |
-| <h3>切り替え</h3>選択できるように、`boolean`値。<p align="center">![スイッチのスクリーン ショット](xaml-controls-images/Switch.png "スイッチ")</p>[API](xref:Xamarin.Forms.Switch) | <p valign="center"><pre>&lt;Switch IsToggled="false"<br />        HorizontalOptions="Center"<br />        VerticalOptions="CenterAndExpand" /&gt;</pre></p> |
+| <h3>Switch</h3>選択できるように、`boolean`値。<p align="center">![スイッチのスクリーン ショット](xaml-controls-images/Switch.png "スイッチ")</p>[API](xref:Xamarin.Forms.Switch) / [ガイド](~/xamarin-forms/user-interface/switch.md)| <p valign="center"><pre>&lt;Switch IsToggled="false"<br />        HorizontalOptions="Center"<br />        VerticalOptions="CenterAndExpand" /&gt;</pre></p> |
 | <h3>DatePicker</h3>日付を選択をできます。<p align="center">![スクリーン ショット、DatePicker の](xaml-controls-images/DatePicker.png "DatePicker")</p>[API](xref:Xamarin.Forms.DatePicker) / [ガイド](~/xamarin-forms/user-interface/datepicker.md) | <p valign="center"><pre>&lt;DatePicker Format="D"<br/>            VerticalOptions="CenterAndExpand" /&gt;</pre></p> |
 | <h3>TimePicker</h3>一度に選択できます。<p align="center">![スクリーン ショット、TimePicker の](xaml-controls-images/TimePicker.png "TimePicker")</p>[API](xref:Xamarin.Forms.TimePicker) / [ガイド](~/xamarin-forms/user-interface/timepicker.md) | <p valign="center"><pre>&lt;TimePicker Format="T"<br />            VerticalOptions="CenterAndExpand" /&gt;</pre></p> |
 |     |     |

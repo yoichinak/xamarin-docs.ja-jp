@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/08/2018
-ms.openlocfilehash: 1e40b0a71317d8c9cb3de391a0b941a5bb081956
-ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
+ms.openlocfilehash: 61d9c5b1c7b81bfc8a20932ce1d188cd0cb0f980
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65048151"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67650438"
 ---
 # <a name="xamarinforms-application-fundamentals"></a>Xamarin.Forms のアプリケーションの基礎
 
@@ -52,10 +52,6 @@ ms.locfileid: "65048151"
 
 効果を使用すると、各プラットフォーム上のネイティブ コントロールをカスタマイズできます。通常は、小規模なスタイル変更のために使用します。
 
-## <a name="filesfilesmd"></a>[ファイル](files.md)
-
-Xamarin.Forms を使ったファイルの処理は、.NET Standard ライブラリにあるコードを使うか、埋め込みリソースを使うことで実現できます。
-
 ## <a name="gesturesgesturesindexmd"></a>[ジェスチャ](gestures/index.md)
 
 Xamarin.Forms の [`GestureRecognizer`](xref:Xamarin.Forms.GestureRecognizer) クラスでは、ユーザー インターフェイス コントロール上でのタップ、ピンチ、およびパンのジェスチャがサポートされています。
@@ -63,10 +59,6 @@ Xamarin.Forms の [`GestureRecognizer`](xref:Xamarin.Forms.GestureRecognizer) �
 ## <a name="localizationlocalizationindexmd"></a>[ローカリゼーション](localization/index.md)
 
 組み込みの .NET ローカライズ フレームワークを使って、Xamarin.Forms を使ったクロスプラットフォームの多言語アプリケーションを構築できます。
-
-## <a name="local-databasesdatabasesmd"></a>[ローカル データベース](databases.md)
-
-Xamarin.Forms では、SQLite データベース エンジンを使ったデータベース駆動型アプリケーションがサポートされています。これにより、共有コードでのオブジェクトの読み込みと保存が可能になります。
 
 ## <a name="messaging-centermessaging-centermd"></a>[メッセージング センター](messaging-center.md)
 

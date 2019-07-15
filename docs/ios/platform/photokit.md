@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/14/2017
-ms.openlocfilehash: d59cac9403a244ce553d84e0590b8a9c3d4d2f30
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 78646a0a420820218a8c61ea34ecc5db4438a91d
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61365877"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832737"
 ---
 # <a name="photokit-in-xamarinios"></a>Xamarin.iOS で PhotoKit
 
@@ -71,9 +71,9 @@ PhotoKit 簡単にクエリ モデルのデータのさまざまなフェッチ�
     
 アプリケーションからの変更を戻す書き込む実際には、するには、変更要求を作成します。 各モデル クラスには、関連付けられている変更要求クラス。 たとえば、PHAsset を変更するを PHAssetChangeRequest を作成します。 フォト ライブラリに書き戻されるされ、上記のようなオブザーバーに送信される変更を実行する手順は次のとおりです。
 
--   編集操作を実行します。
--   PHContentEditingOutput インスタンスにフィルター選択された画像データを保存します。
--   変更のフォームの編集の出力を発行する変更要求を行います。
+- 編集操作を実行します。
+- PHContentEditingOutput インスタンスにフィルター選択された画像データを保存します。
+- 変更のフォームの編集の出力を発行する変更要求を行います。
 
 コア イメージ noir フィルターが適用されるイメージへの変更を書き込む例を次に示します。
 

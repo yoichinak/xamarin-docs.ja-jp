@@ -6,12 +6,12 @@ ms.assetid: 91B3206E-B2A5-4660-A6E5-B924B8FE69A7
 author: lobrien
 ms.author: laobri
 ms.date: 06/19/2018
-ms.openlocfilehash: 2bd68def0a29d4bb94f8cc66c8cbfa00add1700d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 2def0a01bdd28af5eefb76afc19a0e49fd1df355
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60948156"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831549"
 ---
 # <a name="inspecting-live-applications"></a>Live アプリケーションの検査
 
@@ -46,8 +46,8 @@ ms.locfileid: "60948156"
 
 ## <a name="known-limitations"></a>既知の制限事項
 
- - ビューの選択は、メイン ディスプレイにのみサポートされます。
- - プロパティ グリッドの編集 for Mac ではないし、Windows では、いくつかのデータ型に制限されます。 強力な編集のためには、REPL を使用します。
- - Inspector addin/拡張機能がインストールされ、お使いの IDE で有効になって、限りをアプリにコードを挿入して、デバッグ モードで起動するたびには。 アプリで動作する場合は、お試しに無効にすると、インスペクター addin/拡張機能をアンインストールまたは IDE を再起動、および再確認してください。 してください[バグ報告](~/tools/inspector/install.md#reporting-bugs)知らせです。
- - UI 要素を検査すると、そのままで変更、ください[お知らせ](~/tools/inspector/install.md#reporting-bugs)バグを示す可能性があります。
+- ビューの選択は、メイン ディスプレイにのみサポートされます。
+- プロパティ グリッドの編集 for Mac ではないし、Windows では、いくつかのデータ型に制限されます。 強力な編集のためには、REPL を使用します。
+- Inspector addin/拡張機能がインストールされ、お使いの IDE で有効になって、限りをアプリにコードを挿入して、デバッグ モードで起動するたびには。 アプリで動作する場合は、お試しに無効にすると、インスペクター addin/拡張機能をアンインストールまたは IDE を再起動、および再確認してください。 してください[バグ報告](~/tools/inspector/install.md#reporting-bugs)知らせです。
+- UI 要素を検査すると、そのままで変更、ください[お知らせ](~/tools/inspector/install.md#reporting-bugs)バグを示す可能性があります。
 

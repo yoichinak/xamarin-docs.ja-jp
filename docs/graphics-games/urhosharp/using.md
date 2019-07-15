@@ -6,12 +6,12 @@ ms.assetid: D9BEAD83-1D9E-41C3-AD4B-3D87E13674A0
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 5e5c4f1545d39befde6574338ec4c1ca4037ad8b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 7307f7dcfcc6b5e2576ce4b425879ae05c5a6056
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61352121"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832673"
 ---
 # <a name="using-urhosharp-to-build-a-3d-game"></a>UrhoSharp を使用して 3D ゲームをビルドするには
 
@@ -21,11 +21,11 @@ ms.locfileid: "61352121"
 
 ## <a name="scenes-nodes-components-and-cameras"></a>シーン、ノード、コンポーネント、およびカメラ
 
-シーンのモデルは、コンポーネント ベースのシーン グラフとして記述できます。 シーンは、シーン全体を表すもルート ノードからシーンのノードの階層で構成されます。 各[ `Node` ](https://developer.xamarin.com/api/type/Urho.Node/)は 3D 変換 (位置、回転、およびスケール)、名前、ID、およびコンポーネントの任意の数。  コンポーネントをノードを実現する、視覚的表現の追加を行えるように ([`StaticModel`](https://developer.xamarin.com/api/type/Urho.StaticModel))、サウンドを出力することができます ([`SoundSource`](https://developer.xamarin.com/api/type/Urho.Audio.SoundSource))、これに衝突境界を提供できます。
+シーンのモデルは、コンポーネント ベースのシーン グラフとして記述できます。 シーンは、シーン全体を表すもルート ノードからシーンのノードの階層で構成されます。 各`Node`は 3D 変換 (位置、回転、およびスケール)、名前、ID、およびコンポーネントの任意の数。  コンポーネントをノードを実現する、視覚的表現の追加を行えるように (`StaticModel`)、サウンドを出力することができます (`SoundSource`)、これに衝突境界を提供できます。
 
 セットアップのノードを使用して、シーンを作成することができます、 [Urho エディター](#urhoeditor)、または c# コードから操作を実行できます。  このドキュメントで紹介設定、コードを使用して作業を画面に表示させるために必要な要素について説明するよう
 
-セットアップに必要なシーンを設定するだけでなく、 [ `Camera` ](https://developer.xamarin.com/api/type/Urho.Camera/)、これは、どのようにして決まります内容は、ユーザーに表示を取得します。
+セットアップに必要なシーンを設定するだけでなく、 `Camera`、これは、どのようにして決まります内容は、ユーザーに表示を取得します。
 
 ### <a name="setting-up-your-scene"></a>シーンの設定
 
@@ -53,7 +53,7 @@ planeObject.SetMaterial(ResourceCache.GetMaterial("Materials/StoneTiled.xml"));
 
 ### <a name="components"></a>コンポーネント
 
-3D オブジェクトのレンダリング、サウンドの再生、物理運動およびスクリプト化されたロジックの更新はすべて有効に呼び出すことによって、ノードにさまざまなコンポーネントを作成して[ `CreateComponent<T>()`](https://developer.xamarin.com/api/member/Urho.Node.CreateComponent%3CT%3E/p/Urho.CreateMode/System.UInt32/)します。  たとえば、ノード、次のようにライトのコンポーネントをセットアップします。
+3D オブジェクトのレンダリング、サウンドの再生、物理運動およびスクリプト化されたロジックの更新はすべて有効に呼び出すことによって、ノードにさまざまなコンポーネントを作成して`CreateComponent<T>()`します。  たとえば、ノード、次のようにライトのコンポーネントをセットアップします。
 
 ```csharp
 // Create a directional light to the world so that we can see something. The
@@ -65,7 +65,7 @@ var lightNode = scene.CreateChild("DirectionalLight");
 lightNode.SetDirection (new Vector3(0.6f, -1.0f, 0.8f));
 ```
 
-名前のノードが作成した"`DirectionalLight`"し、それが他に何も、方向を設定します。  ここで変えることができます、上記のノード light 出力のノードでは、アタッチすることにより、 [ `Light` ](https://developer.xamarin.com/api/type/Urho.Light/) 、コンポーネントで`CreateComponent`:
+名前のノードが作成した"`DirectionalLight`"し、それが他に何も、方向を設定します。  ここで変えることができます、上記のノード light 出力のノードでは、アタッチすることにより、 `Light` 、コンポーネントで`CreateComponent`:
 
 ```csharp
 var light = lightNode.CreateComponent<Light>();
@@ -73,12 +73,12 @@ var light = lightNode.CreateComponent<Light>();
 
 作成されたコンポーネント、`Scene`自体が特別なロールを持っている。 シーン全体の機能を実装します。 これらは、他のすべてのコンポーネントの前に作成する必要があり、次のとおり。
 
-* [`Octree`](https://developer.xamarin.com/api/type/Urho.Octree/): 空間パーティション分割を実装し、可視性のクエリを高速化します。 この 3D せず、オブジェクトを表示しないことができます。
-* [`PhysicsWorld`](https://developer.xamarin.com/api/type/Urho.Physics.PhysicsWorld/): 物理学のシミュレーションを実装します。 などのコンポーネントの物理運動[ `RigidBody` ](https://developer.xamarin.com/api/type/Urho.Physics.RigidBody/)または[ `CollisionShape` ](https://developer.xamarin.com/api/type/Urho.Physics.CollisionShape/)これを行わないは正しく機能しないことができます。
-* [`DebugRenderer`](https://developer.xamarin.com/api/type/Urho.DebugRenderer/): 実装が geometry のレンダリングをデバッグします。
+ `Octree`: 空間パーティション分割を実装し、可視性のクエリを高速化します。 この 3D せず、オブジェクトを表示しないことができます。
+ `PhysicsWorld`: 物理学のシミュレーションを実装します。 などのコンポーネントの物理運動`RigidBody`または`CollisionShape`これを行わないは正しく機能しないことができます。
+ `DebugRenderer`: 実装が geometry のレンダリングをデバッグします。
 
-などの通常のコンポーネント[ `Light` ](https://developer.xamarin.com/api/type/Urho.Light)、 [ `Camera` ](https://developer.xamarin.com/api/type/Urho.Camera)または [`StaticModel`](https://developer.xamarin.com/api/type/Urho.StaticModel)
-直接作成しないように、 [ `Scene`](https://developer.xamarin.com/api/type/Urho.Scene)が子ノードの代わりにします。
+などの通常のコンポーネント`Light`、`Camera`または `StaticModel`
+直接作成しないように、`Scene`が子ノードの代わりにします。
 
 ライブラリが付属するさまざまな有効期間に、ノードにアタッチできるコンポーネント: ユーザーに表示される要素 (モデル)、サウンド、剛体、衝突図形、カメラ、光源、パーティクル エミッタおよびなど。
 
@@ -88,7 +88,7 @@ var light = lightNode.CreateComponent<Light>();
 
 ### <a name="camera-and-viewport"></a>カメラとビューポート
 
-カメラは、コンポーネントを光と同様、ノードにコンポーネントをアタッチする必要があります、これは、次のように。
+光と同じようにカメラは、コンポーネント、コンポーネントを次のように、ノードにアタッチする必要があります。
 
 ```csharp
 var CameraNode = scene.CreateChild ("camera");
@@ -106,33 +106,33 @@ Renderer.SetViewPort (0, new Viewport (Context, scene, camera, null))
 
 ### <a name="identification-and-scene-hierarchy"></a>識別とシーンの階層
 
-ノードとは異なりコンポーネント名がありません。同じノード内のコンポーネントが、種類、および作成順序が格納されるノードのコンポーネント一覧内のインデックスによって識別されるのみで、たとえば、取得、 [ `Light` ](https://developer.xamarin.com/api/type/Urho.Light)コンポーネントのうち、`lightNode`オブジェクト上記の次のようにします。
+ノードとは異なりコンポーネント名がありません。同じノード内のコンポーネントが、種類、および作成順序が格納されるノードのコンポーネント一覧内のインデックスによって識別されるのみで、たとえば、取得、`Light`コンポーネントのうち、`lightNode`このようなオブジェクトします。
 
 ```csharp
 var myLight = lightNode.GetComponent<Light>();
 ```
 
-取得することによって、すべてのコンポーネントの一覧を取得することもできます、 [ `Components` ](https://developer.xamarin.com/api/property/Urho.Node.Components/)を返すプロパティ、`IList<Component>`使用することができます。
+取得することによって、すべてのコンポーネントの一覧を取得することもできます、`Components`を返すプロパティ、`IList<Component>`使用することができます。
 
-作成されると、ノードとコンポーネントの両方は、シーンにグローバルな整数 Id を取得します。 関数を使用して、シーンからクエリできる[ `GetNode(uint id)` ](https://developer.xamarin.com/api/member/Urho.Scene.GetNode/p/System.UInt32/)と[ `GetComponent(uint id)`](https://developer.xamarin.com/api/member/Urho.Scene.GetComponent/p/System.UInt32/)します。 これは、たとえば再帰的な名前に基づくシーン ノードのクエリの実行より高速です。
+作成されると、ノードとコンポーネントの両方は、シーンにグローバルな整数 Id を取得します。 関数を使用して、シーンからクエリできる`GetNode(uint id)`と`GetComponent(uint id)`します。 これは、たとえば再帰的な名前に基づくシーン ノードのクエリの実行より高速です。
 
-エンティティまたは; ゲーム オブジェクトの組み込みの概念はありません。はなく、ノード階層を決定するには、プログラマの責任と、スクリプトのロジックを配置するには、どのノードになります。 通常、ルート ノードの子として、3 D ワールドで無料の移動オブジェクトを作成するは。 または名前を使用せずにノードを作成できる[ `CreateChild()`](https://developer.xamarin.com/api/member/Urho.Node.CreateChild/p/System.String/Urho.CreateMode/System.UInt32/)します。 ノード名の一意性は適用されません。
+エンティティまたは; ゲーム オブジェクトの組み込みの概念はありません。はなく、ノード階層を決定するには、プログラマの責任と、スクリプトのロジックを配置するには、どのノードになります。 通常、ルート ノードの子として、3 D ワールドで無料の移動オブジェクトを作成するは。 または名前を使用せずにノードを作成できる`CreateChild`します。 ノード名の一意性は適用されません。
 
 推奨される (および、コンポーネントには、独自の 3D 変換があるないため、実際に必要) がいくつかの階層の構成があるときに子ノードを作成します。
 
-たとえば、オブジェクトが独自のノードでは、文字のハンド ボーンに親が文字では、自分の手でオブジェクトを保持していた場合、(も、 [ `Node` ](https://developer.xamarin.com/api/type/Urho.Node/))。  例外は、物理運動[ `CollisionShape` ](https://developer.xamarin.com/api/type/Urho.Physics.CollisionShape)、offsetted なり、ノードに対して個別に回転した可能性があります。
+たとえば、オブジェクトが独自のノードでは、文字のハンド ボーンに親が文字では、自分の手でオブジェクトを保持していた場合、(も、 `Node`)。  例外は、物理運動`CollisionShape`、offsetted なり、ノードに対して個別に回転した可能性があります。
 
-なお[ `Scene`](https://developer.xamarin.com/api/type/Urho.Node/)の子ノードの派生ワールド変換を計算するときに、変換は、最適化として無視意図的、効果がないので変更すること、および (回転のない、元の位置にあるために残してください、スケール変換はできません。)
+なお`Scene`の子ノードの派生ワールド変換を計算するときに、変換は、最適化として無視意図、効果がないので変更すること、および (配信元、回転のない、スケーリングなしでの位置) があるために残してください。
 
-[`Scene`](https://developer.xamarin.com/api/type/Urho.Node/) ノードは自由に親を再指定します。 これに対しコンポーネントはに接続されているし、ノード間を移動しないことができますが、ノードに常に属しています。 ノードおよびコンポーネントの両方を提供、 [ `Remove()` ](https://developer.xamarin.com/api/member/Urho.Node.Remove()/)親を経由することがなくこれを実現する関数。 ノードが削除されると、ノードまたは対象のコンポーネントに対する操作がないセーフその関数を呼び出した後です。
+`Scene` ノードは自由に親を再指定します。 これに対しコンポーネントはに接続されているし、ノード間を移動しないことができますが、ノードに常に属しています。 ノードおよびコンポーネントの両方を提供、`Remove`親を経由することがなくこれを実現する関数。 ノードが削除されると、ノードまたは対象のコンポーネントに対する操作がないセーフその関数を呼び出した後です。
 
 作成することも、`Node`シーンに含まれない。 これは便利ですたとえばために読み込まれたまたは保存すると、シーン内の移動カメラで、カメラは実際のシーンと共には保存されませんシーンが読み込まれるときに破棄されません。 ただし、結び付けられていないノードでは、geometry、物理運動またはスクリプト コンポーネントを作成して、後で、シーンを移動によってそれらのコンポーネントが正常に動作しないによってことに注意してください。
 
 ### <a name="scene-updates"></a>シーンの更新プログラム
 
-更新が有効になっているシーン (既定値) はメイン ループ反復ごとに自動的に更新されます。  アプリケーションの[ `SceneUpdate` ](https://developer.xamarin.com/api/event/Urho.Scene.SceneUpdate/)にイベント ハンドラーが呼び出されます。
+更新が有効になっているシーン (既定値) はメイン ループ反復ごとに自動的に更新されます。  アプリケーションの`SceneUpdate`にイベント ハンドラーが呼び出されます。
 
-ノードおよびコンポーネントは、無効にすることで、シーンの更新プログラムから除外することができますを参照してください[ `Enabled`](https://developer.xamarin.com/api/member/Urho.Node.Enabled)します。  動作は特定のコンポーネントに依存が、たとえば描画可能なコンポーネントを無効にすることもできます、非表示、ミュート、サウンドの変換元コンポーネントを無効にするときに。 ノードが無効になっている場合は、独自の有効/無効状態に関係なく無効になっているすべてのコンポーネント扱われます。
+ノードおよびコンポーネントは、無効にすることで、シーンの更新プログラムから除外することができますを参照してください`Enabled`します。  動作は特定のコンポーネントに依存が、たとえば描画可能なコンポーネントを無効にすることもできます、非表示、ミュート、サウンドの変換元コンポーネントを無効にするときに。 ノードが無効になっている場合は、独自の有効/無効状態に関係なく無効になっているすべてのコンポーネント扱われます。
 
 ## <a name="adding-behavior-to-your-components"></a>コンポーネントの動作を追加します。
 
@@ -180,25 +180,25 @@ await cloud.RunActionsAsync (
 
 上記の例では、クラウドは移動し、同時にフェードアウトします。
 
-これらを使用している c# わかります await、直線的に動作を実現するために考慮することができます。
+これらを使用していることを確認はC# `await`、直線的に動作を実現するために考慮することができます。
 
 ### <a name="basic-actions"></a>基本的な操作
 
 UrhoSharp でサポートされているアクションを次に示します。
 
-* ノードの移動: [ `MoveTo` ](https://developer.xamarin.com/api/type/Urho.Actions.MoveTo)、 [ `MoveBy` ](https://developer.xamarin.com/api/type/Urho.Actions.MoveBy)、 [ `Place` ](https://developer.xamarin.com/api/type/Urho.Actions.Place)、 [ `BezierTo` ](https://developer.xamarin.com/api/type/Urho.Actions.BezierTo)、 [ `BezierBy` ](https://developer.xamarin.com/api/type/Urho.Actions.BezierBy), [`JumpTo`](https://developer.xamarin.com/api/type/Urho.Actions.JumpTo), [`JumpBy`](https://developer.xamarin.com/api/type/Urho.Actions.JumpBy)
-* ノードの回転: [ `RotateTo` ](https://developer.xamarin.com/api/type/Urho.Actions.RotateTo)、 [`RotateBy`](https://developer.xamarin.com/api/type/Urho.Actions.RotateBy)
-* ノードのスケール: [ `ScaleTo` ](https://developer.xamarin.com/api/type/Urho.Actions.ScaleTo)、 [`ScaleBy`](https://developer.xamarin.com/api/type/Urho.Actions.ScaleBy)
-* ノードのフェード: [ `FadeIn` ](https://developer.xamarin.com/api/type/Urho.Actions.FadeIn)、 [ `FadeTo` ](https://developer.xamarin.com/api/type/Urho.Actions.FadeTo)、 [ `FadeOut` ](https://developer.xamarin.com/api/type/Urho.Actions.FadeOut)、 [ `Hide` ](https://developer.xamarin.com/api/type/Urho.Actions.Hide)、 [`Blink`](https://developer.xamarin.com/api/type/Urho.Actions.Blink)
-* 濃淡: [ `TintTo` ](https://developer.xamarin.com/api/type/Urho.Actions.TintTo)、 [`TintBy`](https://developer.xamarin.com/api/type/Urho.Actions.TintBy)
-* 時点: [ `Hide` ](https://developer.xamarin.com/api/type/Urho.Actions.Hide)、 [ `Show` ](https://developer.xamarin.com/api/type/Urho.Actions.Show)、 [ `Place` ](https://developer.xamarin.com/api/type/Urho.Actions.Place)、 [ `RemoveSelf` ](https://developer.xamarin.com/api/type/Urho.Actions.RemoveSelf)、 [`ToggleVisibility`](https://developer.xamarin.com/api/type/Urho.Actions.ToggleVisibility)
-* ループ: [ `Repeat` ](https://developer.xamarin.com/api/type/Urho.Actions.Repeat)、 [ `RepeatForever` ](https://developer.xamarin.com/api/type/Urho.Actions.RepeatForever)、 [`ReverseTime`](https://developer.xamarin.com/api/type/Urho.Actions.ReverseTime)
+- ノードの移動: `MoveTo`、 `MoveBy`、 `Place`、 `BezierTo`、 `BezierBy`、 `JumpTo`、 `JumpBy`
+- ノードの回転: `RotateTo`、 `RotateBy`
+- ノードのスケール: `ScaleTo`、 `ScaleBy`
+- ノードのフェード: `FadeIn`、 `FadeTo`、 `FadeOut`、 `Hide`、 `Blink`
+- 濃淡: `TintTo`、 `TintBy`
+- 時点: `Hide`、 `Show`、 `Place`、 `RemoveSelf`、 `ToggleVisibility`
+- ループ: `Repeat`、 `RepeatForever`、 `ReverseTime`
 
-その他の高度な機能の組み合わせを含める、 [ `Spawn` ](https://developer.xamarin.com/api/type/Urho.Actions.Spawn)と[ `Sequence` ](https://developer.xamarin.com/api/type/Urho.Actions.Sequence)アクション。
+その他の高度な機能の組み合わせを含める、`Spawn`と`Sequence`アクション。
 
 ### <a name="easing---controlling-the-speed-of-your-actions"></a>イージング - 操作の速度を制御します。
 
-簡略化、アニメーションが展開されより快適なアニメーションをことができますの方法を指示することができます。  既定では、アクションが線形の動作など、 [ `MoveTo` ](https://developer.xamarin.com/api/type/Urho.Actions.MoveTo)アクションが非常にロボットの移動が必要があります。  緩やかに変化、移動の開始、加速および緩やかに変化最後に到達する 1 つの動作を変更するイージング アクションに操作をラップすることができます ([`EasyInOut`](https://developer.xamarin.com/api/type/Urho.Actions.EasyInOut))。
+簡略化、アニメーションが展開されより快適なアニメーションをことができますの方法を指示することができます。  既定では、アクションが線形の動作など、`MoveTo`アクションが非常にロボットの移動が必要があります。  緩やかに変化、移動の開始、加速および緩やかに変化最後に到達する 1 つの動作を変更するイージング アクションに操作をラップすることができます (`EasyInOut`)。
 
 たとえばイージング操作では、既存の操作をラップすることによって行います。
 
@@ -212,9 +212,9 @@ await cloud.RunActionAsync (
 
 ![モードのイージング](using-images/easing.png "このグラフは、時間の期間にわたってそれらを管理しているオブジェクトの値に、さまざまなイージングの種類とその動作を示しています。")
 
-### <a name="using-actions-and-async-code"></a>操作と非同期コードを使用してください。
+### <a name="using-actions-and-async-code"></a>操作と非同期コードを使用します。
 
-[ `Component` ](https://developer.xamarin.com/api/type/Urho.Component/)サブクラスでは、コンポーネントの動作を準備し、そのドライブの機能を非同期メソッドを導入する必要があります。
+`Component`サブクラスでは、コンポーネントの動作を準備し、そのドライブの機能を非同期メソッドを導入する必要があります。
 C# を使用してこのメソッドを呼び出すよう、 `await` 、プログラムの別の部分からキーワードか、`Application.Start`メソッドや、アプリケーションのユーザーまたはストーリー ポイントへの応答。
 
 例:
@@ -269,7 +269,7 @@ class Robot : Component {
 
 ### <a name="frame-based-behavior-programming"></a>フレーム ベースの動作のプログラミング
 
-オーバーライドすることでアクションを使用する代わりに、フレームごとに、コンポーネントの動作を制御する場合は、このようなです、 [ `OnUpdate` ](https://developer.xamarin.com/api/member/Urho.Component.OnUpdate)のメソッド、 [ `Component` ](https://developer.xamarin.com/api/type/Urho.Component)サブクラスです。  このメソッドは、フレームごとに 1 回呼び出される、ReceiveSceneUpdates プロパティを true に設定する場合にのみ呼び出されます。
+オーバーライドすることでアクションを使用する代わりに、フレームごとに、コンポーネントの動作を制御する場合は、このようなです、`OnUpdate`のメソッド、`Component`サブクラスです。  このメソッドは、フレームごとに 1 回呼び出される、ReceiveSceneUpdates プロパティを true に設定する場合にのみ呼び出されます。
 
 作成する方法を次に示します、`Rotator`を回転するノードのノードに、関連付けられているコンポーネント。
 
@@ -283,9 +283,9 @@ class Rotator : Component {
     protected override void OnUpdate(float timeStep)
     {
         Node.Rotate(new Quaternion(
-            RotationSpeed.X * timeStep,
-            RotationSpeed.Y * timeStep,
-            RotationSpeed.Z * timeStep),
+            RotationSpeed.X  timeStep,
+            RotationSpeed.Y  timeStep,
+            RotationSpeed.Z  timeStep),
             TransformSpace.Local);
     }
 }
@@ -318,11 +318,11 @@ boxNode.AddComponent (rotator);
 
 ## <a name="loading-and-saving-scenes"></a>読み込みとシーンの保存
 
-シーンがロードされ、XML 形式で保存することができます。関数を参照してください。 [ `LoadXml` ](https://developer.xamarin.com/api/member/Urho.Scene.LoadXml)と[ `SaveXML()`](https://developer.xamarin.com/api/member/Urho.Scene.SaveXml)します。 シーンが読み込まれるときに、まず (子ノードおよびコンポーネント) がすべての既存のコンテンツが削除されます。 ノードおよび一時とマークされているコンポーネント、`Temporary`プロパティは保存されません。 シリアライザーは、すべての組み込みのコンポーネントとプロパティを処理するが、カスタム プロパティと、コンポーネントのサブクラスで定義されているフィールドを処理するのに十分なスマートはありません。 ただし、この 2 つの仮想メソッドを提供します。
+シーンがロードされ、XML 形式で保存することができます。関数を参照してください。`LoadXml`と`SaveXML`します。 シーンが読み込まれるときに、まず (子ノードおよびコンポーネント) がすべての既存のコンテンツが削除されます。 ノードおよび一時とマークされているコンポーネント、`Temporary`プロパティは保存されません。 シリアライザーは、すべての組み込みのコンポーネントとプロパティを処理するが、カスタム プロパティと、コンポーネントのサブクラスで定義されているフィールドを処理するのに十分なスマートはありません。 ただし、この 2 つの仮想メソッドを提供します。
 
-* [`OnSerialize`](https://developer.xamarin.com/api/member/Urho.Component.OnSerialize) 登録していることができますをカスタムの状態のシリアル化
+ `OnSerialize` 登録していることができますをカスタムの状態のシリアル化
 
-* [`OnDeserialized`](https://developer.xamarin.com/api/member/Urho.Component.OnDeserialize) 保存された、カスタム状態を入手できます。
+ `OnDeserialized` 保存された、カスタム状態を入手できます。
 
 通常、カスタム コンポーネントは、次のようになります。
 
@@ -359,11 +359,11 @@ class MyComponent : Component {
 
 だけの読み込みまたはシーン全体を保存していますがゲームの十分な柔軟性の新しいオブジェクトを動的に作成する必要があります。 その一方で、複雑なオブジェクトを作成して、コードでそのプロパティの設定もなります面倒です。 このため、その子ノード、コンポーネント、および属性が含まれるシーン ノードを保存することがもできます。 これらは、グループとして後で簡単にロードできます。  このような保存されているオブジェクトはプレハブとも呼ばれます。 これには、次の 3 つの方法があります。
 
-- 呼び出すコードの中で[ `Node.SaveXml` ](https://developer.xamarin.com/api/member/Urho.Node.SaveXml)ノード
+- 呼び出すコードの中で`Node.SaveXml`ノード
 - エディターで、[階層] ウィンドウで、ノードを選択して、「保存ノードとして」[ファイル] メニューから。
 - 「ノード」コマンドを使用して`AssetImporter`シーン ノード階層を保存するが、すべてのモデルが (たとえば、入力資産に含まれる Collada ファイル)
 
-シーンには、保存されているノードをインスタンス化するには、呼び出す[ `InstantiateXml()`](https://developer.xamarin.com/api/member/Urho.Scene.InstantiateXml)します。 ノードは、シーンの子として作成されますは自由に親を再指定を後。 位置と、ノードを配置するための回転を指定する必要があります。 次のコードが、プレハブのインスタンスを作成する方法を示して`Ninja.xm`目的の位置と回転をシーンに。
+シーンには、保存されているノードをインスタンス化するには、呼び出す`InstantiateXml`します。 ノードは、シーンの子として作成されますは自由に親を再指定を後。 位置と、ノードを配置するための回転を指定する必要があります。 次のコードが、プレハブのインスタンスを作成する方法を示して`Ninja.xm`目的の位置と回転をシーンに。
 
 ```csharp
 var prefabPath = Path.Combine (FileSystem.ProgramDir,"Data/Objects/Ninja.xml");
@@ -449,13 +449,13 @@ protected override void OnUpdate(float timeStep)
     // Read WASD keys and move the camera scene node to the
     // corresponding direction if they are pressed
     if (input.GetKeyDown(Key.W))
-        CameraNode.Translate(Vector3.UnitY * moveSpeed * timeStep, TransformSpace.Local);
+        CameraNode.Translate(Vector3.UnitY  moveSpeed  timeStep, TransformSpace.Local);
     if (input.GetKeyDown(Key.S))
-        CameraNode.Translate(new Vector3(0.0f, -1.0f, 0.0f) * moveSpeed * timeStep, TransformSpace.Local);
+        CameraNode.Translate(new Vector3(0.0f, -1.0f, 0.0f)  moveSpeed  timeStep, TransformSpace.Local);
     if (input.GetKeyDown(Key.A))
-        CameraNode.Translate(new Vector3(-1.0f, 0.0f, 0.0f) * moveSpeed * timeStep, TransformSpace.Local);
+        CameraNode.Translate(new Vector3(-1.0f, 0.0f, 0.0f)  moveSpeed  timeStep, TransformSpace.Local);
     if (input.GetKeyDown(Key.D))
-        CameraNode.Translate(Vector3.UnitX * moveSpeed * timeStep, TransformSpace.Local);
+        CameraNode.Translate(Vector3.UnitX  moveSpeed  timeStep, TransformSpace.Local);
 }
 ```
 
@@ -463,20 +463,20 @@ protected override void OnUpdate(float timeStep)
 
 リソースには、初期化またはランタイム中に、大容量記憶装置から読み込まれた UrhoSharp のほとんどの機能が含まれます。
 
-- [`Animation`](https://developer.xamarin.com/api/type/Urho.Animation/) -骨格アニメーションの使用
-- [`Image`](https://developer.xamarin.com/api/type/Urho.Resources.Image) -さまざまなグラフィック形式で格納されているイメージを表します
-- [`Model`](https://developer.xamarin.com/api/type/Urho.Model/) -3D モデル
-- [`Material`](https://developer.xamarin.com/api/type/Urho.Material) -モデルを表示するために使用される素材です。
-- [`ParticleEffect`](https://developer.xamarin.com/api/type/Urho.ParticleEffect)- [説明](http://urho3d.github.io/documentation/1.4/_particles.html)パーティクル エミッタのしくみを参照してください"[パーティクル](#particles)"の下。
-- [`Shader`](https://developer.xamarin.com/api/type/Urho.Shader) -カスタムのシェーダー
-- [`Sound`](https://developer.xamarin.com/api/type/Urho.Audio.Sound) サウンドを再生するを参照してください"[サウンド](#sound)"の下。
-- [`Technique`](https://developer.xamarin.com/api/type/Urho.Technique/) -素材のレンダリング テクニック
-- [`Texture2D`](https://developer.xamarin.com/api/type/Urho.Urho2D.Texture2D/) -2 D テクスチャ
-- [`Texture3D`](https://developer.xamarin.com/api/type/Urho.Texture3D/) -3D テクスチャ
-- [`TextureCube`](https://developer.xamarin.com/api/type/Urho.TextureCube/) のキューブ テクスチャ
+- `Animation` -骨格アニメーションの使用
+- `Image` -さまざまなグラフィック形式で格納されているイメージを表します
+- `Model` -3D モデル
+- `Material` -モデルを表示するために使用される素材です。
+- `ParticleEffect`- [説明](http://urho3d.github.io/documentation/1.4/_particles.html)パーティクル エミッタのしくみを参照してください"[パーティクル](#particles)"の下。
+- `Shader` -カスタムのシェーダー
+- `Sound` サウンドを再生するを参照してください"[サウンド](#sound)"の下。
+- `Technique` -素材のレンダリング テクニック
+- `Texture2D` -2 D テクスチャ
+- `Texture3D` -3D テクスチャ
+- `TextureCube` のキューブ テクスチャ
 - `XmlFile`
 
-これらの管理し、によって読み込まれる、 [ `ResourceCache` ](https://developer.xamarin.com/api/type/Urho.Resources.ResourceCache/)サブシステム (として利用可能な[ `Application.ResourceCache` ](https://developer.xamarin.com/api/property/Urho.Application.ResourceCache/))。
+これらの管理し、によって読み込まれる、`ResourceCache`サブシステム (として利用可能な`Application.ResourceCache`)。
 
 リソース自体は、登録済みのリソース ディレクトリまたはファイルのパッケージ関連のファイル パスによって識別されます。 既定では、エンジンは、リソース ディレクトリを登録します`Data`と`CoreData`、またはパッケージ`Data.pak`と`CoreData.pak`存在する場合。
 
@@ -494,7 +494,7 @@ healthBar.SetTexture(ResourceCache.GetTexture2D("Textures/HealthBarBorder.png"))
 
 ### <a name="bringing-3d-models-and-images"></a>3D モデルおよびイメージ
 
-可能であれば、既存のファイル形式を使用し、モデルのようにどうしても必要な場合にのみ、カスタム ファイル形式を定義しようと Urho3D (*.mdl) とアニメーションの (*.ani)。 Urho がのコンバーターを提供するこれらの種類の資産の[AssetImporter](http://urho3d.github.io/documentation/1.4/_tools.html) fbx、dae、3 ds、および obj など、多くの一般的な 3D 形式を使用することができます。
+Urho3D しようと可能な限り、既存のファイル形式を使用し、カスタム ファイル形式のモデル (.mdl) とアニメーション (.ani) のように絶対に必要な場合にのみを定義します。 Urho がのコンバーターを提供するこれらの種類の資産の[AssetImporter](http://urho3d.github.io/documentation/1.4/_tools.html) fbx、dae、3 ds、および obj など、多くの一般的な 3D 形式を使用することができます。
 
 便利なアドインの Blender も[ https://github.com/reattiva/Urho3D-Blender ](https://github.com/reattiva/Urho3D-Blender) Urho3D に適した形式で、Blender 資産をエクスポートすることができます。
 
@@ -502,9 +502,9 @@ healthBar.SetTexture(ResourceCache.GetTexture2D("Textures/HealthBarBorder.png"))
 
 通常のいずれかを使用してリソースを要求するときに、`ResourceCache`の`Get`メソッドでは、すべての必要な手順については、数ミリ秒かかります、メイン スレッドですぐに読み込まれる (ディスクからファイルを読み込んで、データの解析、GPU にアップロードするために必要な場合) と、その結果、フレーム レートが低下します。
 
-事前にどのようなリソース必要がある場合は、呼び出すことによって、バック グラウンド スレッドに読み込まれることを要求できます`BackgroundLoadResource()`します。 バック グラウンド読み込みイベントを購読するを使用して、`SubscribeToResourceBackgroundLoaded`メソッド。 読み込みが成功または失敗に実際には通知されます。 バック グラウンド スレッドに移動することがあります、読み込みプロセスの一部のみ、リソースによっては、たとえばフィニッシュの GPU のアップロード手順が常にメイン スレッドで発生する必要です。 バック グラウンド読み込みがキューにリソースのメソッドを読み込み、リソースのいずれかを呼び出した場合、メイン スレッドが停止の読み込みが完了するまでに注意してください。
+事前にどのようなリソース必要がある場合は、呼び出すことによって、バック グラウンド スレッドに読み込まれることを要求できます`BackgroundLoadResource`します。 バック グラウンド読み込みイベントを購読するを使用して、`SubscribeToResourceBackgroundLoaded`メソッド。 読み込みが成功または失敗に実際には通知されます。 バック グラウンド スレッドに移動することがあります、読み込みプロセスの一部のみ、リソースによっては、たとえばフィニッシュの GPU のアップロード手順が常にメイン スレッドで発生する必要です。 バック グラウンド読み込みがキューにリソースのメソッドを読み込み、リソースのいずれかを呼び出した場合、メイン スレッドが停止の読み込みが完了するまでに注意してください。
 
-機能を読み込む非同期シーン`LoadAsync()`と`LoadAsyncXML()`シーンの内容を読み込むより前のリソースをバック グラウンド読み込みオプションがあります。 のみを指定して、シーンを変更することがなく、リソースの読み込みにも使用できます、`LoadMode.ResourcesOnly`します。 これにより、高速なインスタンス化用のシーンまたはオブジェクトのプレハブ ファイルを準備します。
+機能を読み込む非同期シーン`LoadAsync`と`LoadAsyncXML`シーンの内容を読み込むより前のリソースをバック グラウンド読み込みオプションがあります。 のみを指定して、シーンを変更することがなく、リソースの読み込みにも使用できます、`LoadMode.ResourcesOnly`します。 これにより、高速なインスタンス化用のシーンまたはオブジェクトのプレハブ ファイルを準備します。
 
 最大時間 (ミリ秒) を各フレームに費やされた最後に読み込まれたリソースを設定して構成できるバック グラウンドの終了、`FinishBackgroundResourcesMs`プロパティを`ResourceCache`します。
 
@@ -512,8 +512,8 @@ healthBar.SetTexture(ResourceCache.GetTexture2D("Textures/HealthBarBorder.png"))
 
 ## <a name="sound"></a>サウンド
 
-サウンドがゲームのプレイの重要な部分と UrhoSharp フレームワークは、ゲームでサウンドの再生方法を提供します。  アタッチすることでサウンドを再生します。 [`SoundSource`](https://developer.xamarin.com/api/type/Urho.Audio.SoundSource/)
-コンポーネントを[ `Node` ](https://developer.xamarin.com/api/type/Urho.Node)とし、リソースの名前付きのファイルを再生します。
+サウンドがゲームのプレイの重要な部分と UrhoSharp フレームワークは、ゲームでサウンドの再生方法を提供します。  アタッチすることでサウンドを再生します。 `SoundSource`
+コンポーネントを`Node`とし、リソースの名前付きのファイルを再生します。
 
 これは、これをどのようにです。
 
@@ -562,11 +562,11 @@ public async void Explode (Component target)
 
 ![ボックス テクスチャ パーティクル](using-images/image-2.png "これは、どの色むらテクスチャを使用する場合")
 
-## <a name="multithreading-support"></a>マルチ スレッドのサポート
+## <a name="multi-threading-support"></a>マルチ スレッドのサポート
 
 UrhoSharp は、シングル スレッド ライブラリです。  つまり、バック グラウンド スレッドから UrhoSharp のメソッドの呼び出しをしないようにするには、またはリスクのアプリケーションの状態が破損し、アプリケーションがクラッシュする可能性があります。
 
-使用することができます、バック グラウンドでいくつかのコードを実行し、メイン UI に Urho コンポーネントを更新する場合、 [`Application.InvokeOnMain(Action)`](https://developer.xamarin.com/api/member/Urho.Application.InvokeOnMain)
+使用することができます、バック グラウンドでいくつかのコードを実行し、メイン UI に Urho コンポーネントを更新する場合、 `Application.InvokeOnMain(Action)`
 メソッドをオーバーライドします。  さらに、await (C#) を使用し、.NET のタスクが、コードを適切なスレッドで実行されることを確認するための Api。
 
 ## <a name="urhoeditor"></a>UrhoEditor

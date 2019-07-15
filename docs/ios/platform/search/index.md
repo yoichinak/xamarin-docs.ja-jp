@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: b2968399279fe3e9d160471bbcae08ae091be93e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 87f7689a082c891bc199f4221e68ed7ab19adf85
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61075667"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832714"
 ---
 # <a name="search-apis-in-xamarinios"></a>Xamarin.iOS での search Api
 
@@ -36,7 +36,7 @@ _この記事では、iOS 9 で提供されるアプリの検索 Api を使用�
 
 これらのメソッドを実装するを決定は、アプリによって提供される対話の種類とコンテンツの表示の種類によって異なります。
 
-次のガイドラインに従います。
+次のガイドラインに従ってください。
 
 - [**NSUserActivity** ](nsuseractivity.md) – このフレームワークを使用して、パブリックおよびプライベートのコンテンツ両方と、アプリ内でのナビゲーションのポイントの検索機能の検索機能を提供します。
 
@@ -55,9 +55,9 @@ _この記事では、iOS 9 で提供されるアプリの検索 Api を使用�
 
 Apple では、アプリでの検索インデックスを提供するどのようなコンテンツと操作に関して次の推奨事項を提供します。
 
- - 任意のコンテンツは、表示、作成またはアプリ内からユーザーが管理します。
- - ナビゲーションのポイントとアプリ内で機能します。
- - 新しいメッセージやコンテンツなど、デバイスを最近ダウンロードされたアプリで表示される項目の種類をなど。
+- 任意のコンテンツは、表示、作成またはアプリ内からユーザーが管理します。
+- ナビゲーションのポイントとアプリ内で機能します。
+- 新しいメッセージやコンテンツなど、デバイスを最近ダウンロードされたアプリで表示される項目の種類をなど。
 
 ## <a name="app-search-enhancements"></a>アプリ検索の機能強化
 

@@ -6,12 +6,12 @@ ms.assetid: 303C36A8-CBF4-48C0-9412-387E95024CAB
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 4d506232903d4a94ac20a1fb9f93a39884d9099c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4e471aaca2a7a5f247b21dd1c1863a01b062a716
+ms.sourcegitcommit: afe9d93373d66eb45d82cabefca83b5733969634
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61213715"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67855753"
 ---
 # <a name="updating-existing-ios-apps"></a>既存の iOS アプリを更新しています
 
@@ -31,7 +31,7 @@ Xamarin は Visual Studio for Mac と Visual Studio の両方がクラシック 
 
 ## <a name="automated-updating"></a>自動更新
 
-For Mac または Visual Studio Visual Studio で既存の iOS プロジェクトを選択して、警告が解決されると後、 **Xamarin.iOS Unified API への移行**から、**プロジェクト**メニュー。 例:
+For Mac または Visual Studio Visual Studio で既存の iOS プロジェクトを選択して、警告が解決されると後、 **Xamarin.iOS Unified API への移行**から、**プロジェクト**メニュー。 例えば:
 
 ![](updating-ios-apps-images/beta-tool1.png "[プロジェクト] メニューから Xamarin.iOS Unified API に移行を選択します。")
 
@@ -45,7 +45,7 @@ For Mac または Visual Studio Visual Studio で既存の iOS プロジェク�
 
 ここでも、したら、警告が解決されて、新しい Unified API を使用して Xamarin.iOS アプリを手動で更新するこれらの手順に従います。
 
-### <a name="1-update-project-type--build-target"></a>1.ビルドのターゲット (&)、プロジェクトの更新の種類
+### <a name="1-update-project-type--build-target"></a>1. ビルドのターゲット (&)、プロジェクトの更新の種類
 
 プロジェクト フレーバーの変更、 **csproj**ファイルから`6BC8ED88-2882-458C-8E55-DFD12B67127B`に`FEACFBD2-3405-455C-9665-78FE426C6842`します。 編集、 **csproj**ファイルの最初の項目を置き換え、テキスト エディターで、`<ProjectTypeGuids>`よう要素。
 
@@ -55,7 +55,7 @@ For Mac または Visual Studio Visual Studio で既存の iOS プロジェク�
 
 ![](updating-ios-apps-images/csproj2.png "示すように Xamarin.iOS.CSharp.targets Xamarin.MonoTouch.CSharp.targets を含むインポート要素を変更します。")
 
-### <a name="2-update-project-references"></a>2.プロジェクト参照を更新します。
+### <a name="2-update-project-references"></a>2. プロジェクト参照を更新します。
 
 IOS アプリケーション プロジェクトの展開**参照**ノード。 最初に表示されます、* 壊れた - **monotouch**参照 (プロジェクトの種類を変更した) ため、このスクリーン ショット。
 
@@ -75,17 +75,17 @@ IOS アプリケーション プロジェクトを右クリックして**参照�
 
 削除、 **MonoTouch**プレフィックスで名前空間から`using`ステートメントまたは任意の場所、クラス名がされて完全修飾 (例。 `MonoTouch.UIKit` 単なる`UIKit`)。
 
-### <a name="4-remap-types"></a>4.型を再マップします。
+### <a name="4-remap-types"></a>4。型を再マップします。
 
 [ネイティブ型](~/cross-platform/macios/nativetypes.md)されている使用されていたなどのインスタンスをいくつかの型に置き換わるものですが導入された`System.Drawing.RectangleF`で`CoreGraphics.CGRect`(など)。 型の完全な一覧で確認できます、[ネイティブ型](~/cross-platform/macios/nativetypes.md)ページ。
 
-### <a name="5-fix-method-overrides"></a>5.メソッドのオーバーライドを修正します。
+### <a name="5-fix-method-overrides"></a>5。メソッドのオーバーライドを修正します。
 
 いくつか`UIKit`メソッド シグネチャに、新しい変更があった[ネイティブ型](~/cross-platform/macios/nativetypes.md)(など`nint`)。 カスタムのサブクラスは、これらのメソッドをオーバーライドする場合、署名と一致しなくなり、エラーが発生します。 ネイティブ型を使用して、新しいシグネチャに一致するサブクラスを変更することで、これらのメソッド オーバーライドを修正します。
 
 例としては、変更する`public override int NumberOfSections (UITableView tableView)`を返す`nint`型とパラメーターの型を返す両方を変更して`public override int RowsInSection (UITableView tableView, int section)`に`nint`します。
 
-## <a name="considerations"></a>注意事項
+## <a name="considerations"></a>考慮事項
 
 次の考慮事項は、そのアプリが 1 つ以上のコンポーネントまたは NuGet パッケージに依存する場合は、新しい Unified API にクラシック API から既存の Xamarin.iOS プロジェクトを変換するときに考慮する必要があります。
 
@@ -115,4 +115,3 @@ Unified API に変換されている Xamarin.iOS モバイル アプリケーシ
 - [コードを Unified API に更新する場合のヒント](~/cross-platform/macios/unified/updating-tips.md)
 - [クロスプラットフォーム アプリでのネイティブ型の使用](~/cross-platform/macios/native-types-cross-platform.md)
 - [クラシックと Unified API の相違点](https://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)
-- [(ビデオ) の Unified API への移行](http://university.xamarin.com/lightninglectures/migrating-to-the-unified-api)

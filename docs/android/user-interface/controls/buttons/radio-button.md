@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: be473580b24dba6b4f08384771e2097d368f8dc8
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: ea8af3c84bb53434489d230d159a27b6b9d500d8
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61276631"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830250"
 ---
 # <a name="radiobutton"></a>RadioButton
 
@@ -70,9 +70,10 @@ radio_blue.Click += RadioButtonClick;
 
 アプリケーションを実行します。
 
-**ヒント:** 自分で状態を変更する必要がある場合 (場合など、保存された読み込み[ `CheckBoxPreference` ](https://developer.xamarin.com/api/type/Android.Preferences.CheckBoxPreference/)) を使用して、 [`Checked`](https://developer.xamarin.com/api/property/Android.Widget.CompoundButton.Checked/)
-プロパティ set アクセス操作子または [`Toggle()`](https://developer.xamarin.com/api/member/Android.Widget.CompoundButton.Toggle/)
-メソッドをオーバーライドします。
+> [!TIP]
+> 自分で状態を変更する必要がある場合 (場合など、保存された読み込み[ `CheckBoxPreference` ](https://developer.xamarin.com/api/type/Android.Preferences.CheckBoxPreference/)) を使用して、 [`Checked`](https://developer.xamarin.com/api/property/Android.Widget.CompoundButton.Checked/)
+> プロパティ set アクセス操作子または [`Toggle()`](https://developer.xamarin.com/api/member/Android.Widget.CompoundButton.Toggle/)
+> メソッドをオーバーライドします。
 
-*このページの部分が作成および Android のオープン ソース プロジェクトで共有し、の条項に従って使用作業に基づいた変更、*
+*このページの部分が作成および Android のオープン ソース プロジェクトで共有し、の条項に従って使用作業に基づいた変更、* 
 [*Creative Commons 2.5 Attribution License*](http://creativecommons.org/licenses/by/2.5/). 

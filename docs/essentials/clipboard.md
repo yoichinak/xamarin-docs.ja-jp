@@ -23,7 +23,7 @@ ms.locfileid: "67352123"
 
 ## <a name="using-clipboard"></a>Clipboard の使用
 
-自分のクラスの Xamarin.Essentials に参照を追加します。
+自分のクラスに Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;

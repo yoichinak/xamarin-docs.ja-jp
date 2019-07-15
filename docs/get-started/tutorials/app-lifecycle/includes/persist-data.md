@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 2c6c71f5ed46cc1cae66c5d1f412898825805cc6
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 16ceaba572ca932777bb366d9f7c58f6dcb24f70
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61187519"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67841489"
 ---
 [`Application`](xref:Xamarin.Forms.Application) サブクラスには、ライフサイクルの状態の変化を通してデータを格納するために使用できる静的 [`Properties`](xref:Xamarin.Forms.Application.Properties) ディクショナリがあります。 このディクショナリでは、`string` キーが使用され、`object` 値が格納されます。 このディクショナリはデバイスに自動的に保存され、アプリケーションの再起動時にデータが再作成されます。
 
@@ -15,14 +15,12 @@ ms.locfileid: "61187519"
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-1. **ソリューション エクスプローラー**の **[AppLifecycleTutorial]** プロジェクトで、**[App.xaml]** を展開し、**[App.xaml.cs]** をダブルクリックして開きます。 次に、**App.xaml.cs** のテンプレート コードをすべて削除し、次のコードに置き換えます。
+1. **ソリューション エクスプローラー**の **[AppLifecycleTutorial]** プロジェクトで、 **[App.xaml]** を展開し、 **[App.xaml.cs]** をダブルクリックして開きます。 次に、**App.xaml.cs** のテンプレート コードをすべて削除し、次のコードに置き換えます。
 
     ```csharp
     using System;
     using Xamarin.Forms;
-    using Xamarin.Forms.Xaml;
 
-    [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
     namespace AppLifecycleTutorial
     {
         public partial class App : Application
@@ -69,7 +67,7 @@ ms.locfileid: "61187519"
 
     `OnResume` メソッドのオーバーロードで [`Properties`](xref:Xamarin.Forms.Application.Properties) ディクショナリからデータを復元する必要はありません。 これは、アプリケーションがバックグラウンド化されても、アプリケーションとその状態はまだメモリに保持されているためです。
 
-1. **ソリューション エクスプローラー**の **AppLifecycleTutorial** プロジェクトで、**[MainPage.xaml]** をダブルクリックして開きます。 次に、**MainPage.xaml** のテンプレート コードをすべて削除し、次のコードに置き換えます。
+1. **ソリューション エクスプローラー**の **AppLifecycleTutorial** プロジェクトで、 **[MainPage.xaml]** をダブルクリックして開きます。 次に、**MainPage.xaml** のテンプレート コードをすべて削除し、次のコードに置き換えます。
 
     ```xaml
     <?xml version="1.0" encoding="utf-8"?>
@@ -86,7 +84,7 @@ ms.locfileid: "61187519"
 
     このコードは、[`StackLayout`](xref:Xamarin.Forms.StackLayout) の中の [`Entry`](xref:Xamarin.Forms.Entry) から構成されるページのユーザー インターフェイスを宣言によって定義します。 [`Entry.Placeholder`](xref:Xamarin.Forms.Entry.Placeholder) プロパティは、`Entry` が最初に表示されたときに表示されるプレースホルダー テキストを指定し、`OnEntryCompleted` という名前のイベント ハンドラーが [`Completed`](xref:Xamarin.Forms.Entry.Completed) イベントに登録されます。 また、`Entry` には `x:Name` 属性で指定された名前があります。 これにより、分離コード ファイルは、割り当てられた名前を使用して `Entry` オブジェクトにアクセスできます。
 
-1. **ソリューション エクスプローラー**の **AppLifecycleTutorial** プロジェクトで **[MainPage.xaml]** を展開し、**[MainPage.xaml.cs]** をダブルクリックして開きます。 次に、**MainPage.xaml.cs** で、`OnAppearing` メソッドのオーバーライドと `OnEntryCompleted` イベント ハンドラーをクラスに追加します。
+1. **ソリューション エクスプローラー**の **AppLifecycleTutorial** プロジェクトで **[MainPage.xaml]** を展開し、 **[MainPage.xaml.cs]** をダブルクリックして開きます。 次に、**MainPage.xaml.cs** で、`OnAppearing` メソッドのオーバーライドと `OnEntryCompleted` イベント ハンドラーをクラスに追加します。
 
     ```csharp
     protected override void OnAppearing()
@@ -109,7 +107,7 @@ ms.locfileid: "61187519"
 
     テキストが [`Entry`](xref:Xamarin.Forms.Entry) で終了したら、Return キーで `OnEntryCompleted` メソッドを実行します。`Entry` テキストが `App.DisplayText` プロパティに格納されます。
 
-1. Visual Studio ツール バーで、**[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択したリモート iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
+1. Visual Studio ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択したリモート iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
     [`Entry`](xref:Xamarin.Forms.Entry) にテキストを入力してReturn キーを押します。 次に、[ホーム] ボタンをタップして `OnSleep` メソッドを呼び出してアプリケーションをバックグラウンドにします。
 
@@ -121,14 +119,12 @@ ms.locfileid: "61187519"
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-1. **Solution Pad** の **[AppLifecycleTutorial]** プロジェクトで、**[App.xaml]** を展開し、**[App.xaml.cs]** をダブルクリックして開きます。 次に、**App.xaml.cs** のテンプレート コードをすべて削除し、次のコードに置き換えます。
+1. **Solution Pad** の **[AppLifecycleTutorial]** プロジェクトで、 **[App.xaml]** を展開し、 **[App.xaml.cs]** をダブルクリックして開きます。 次に、**App.xaml.cs** のテンプレート コードをすべて削除し、次のコードに置き換えます。
 
     ```csharp
     using System;
     using Xamarin.Forms;
-    using Xamarin.Forms.Xaml;
 
-    [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
     namespace AppLifecycleTutorial
     {
         public partial class App : Application
@@ -175,7 +171,7 @@ ms.locfileid: "61187519"
 
     `OnResume` メソッドのオーバーロードで [`Properties`](xref:Xamarin.Forms.Application.Properties) ディクショナリからデータを復元する必要はありません。 これは、アプリケーションがバックグラウンド化されても、アプリケーションとその状態はまだメモリに保持されているためです。
 
-1. **Solution Pad** の **AppLifecycleTutorial** プロジェクトで、**[MainPage.xaml]** をダブルクリックして開きます。 次に、**MainPage.xaml** のテンプレート コードをすべて削除し、次のコードに置き換えます。
+1. **Solution Pad** の **AppLifecycleTutorial** プロジェクトで、 **[MainPage.xaml]** をダブルクリックして開きます。 次に、**MainPage.xaml** のテンプレート コードをすべて削除し、次のコードに置き換えます。
 
     ```xaml
     <?xml version="1.0" encoding="utf-8"?>
@@ -192,7 +188,7 @@ ms.locfileid: "61187519"
 
     このコードは、[`StackLayout`](xref:Xamarin.Forms.StackLayout) の中の [`Entry`](xref:Xamarin.Forms.Entry) から構成されるページのユーザー インターフェイスを宣言によって定義します。 [`Entry.Placeholder`](xref:Xamarin.Forms.Entry.Placeholder) プロパティは、`Entry` が最初に表示されたときに表示されるプレースホルダー テキストを指定し、`OnEntryCompleted` という名前のイベント ハンドラーが [`Completed`](xref:Xamarin.Forms.Entry.Completed) イベントに登録されます。 また、`Entry` には `x:Name` 属性で指定された名前があります。 これにより、分離コード ファイルは、割り当てられた名前を使用して `Entry` オブジェクトにアクセスできます。
 
-1. **Solution Pad** の **[AppLifecycleTutorial]** プロジェクトで、**[MainPage.xaml]** を展開し、**[MainPage.xaml.cs]** をダブルクリックして開きます。 次に、**MainPage.xaml.cs** で、`OnAppearing` メソッドのオーバーライドと `OnEntryCompleted` イベント ハンドラーをクラスに追加します。
+1. **Solution Pad** の **[AppLifecycleTutorial]** プロジェクトで、 **[MainPage.xaml]** を展開し、 **[MainPage.xaml.cs]** をダブルクリックして開きます。 次に、**MainPage.xaml.cs** で、`OnAppearing` メソッドのオーバーライドと `OnEntryCompleted` イベント ハンドラーをクラスに追加します。
 
     ```csharp
     protected override void OnAppearing()
@@ -215,7 +211,7 @@ ms.locfileid: "61187519"
 
     テキストが [`Entry`](xref:Xamarin.Forms.Entry) で終了したら、Return キーで `OnEntryCompleted` メソッドを実行します。`Entry` テキストが `App.DisplayText` プロパティに格納されます。
 
-1. Visual Studio for Mac ツール バーで、**[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
+1. Visual Studio for Mac ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
     [`Entry`](xref:Xamarin.Forms.Entry) にテキストを入力してReturn キーを押します。 次に、[ホーム] ボタンをタップして `OnSleep` メソッドを呼び出してアプリケーションをバックグラウンドにします。
 

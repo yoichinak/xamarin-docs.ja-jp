@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/31/2018
-ms.openlocfilehash: 0c84f530f759285c2cfc71f60d7b6f80fba6a03d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a50a2014e28becacb2c9f4965b7f3377be57ab16
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61018941"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830317"
 ---
 # <a name="remote-notifications-with-firebase-cloud-messaging"></a>リモート通知 firebase Cloud Messaging
 
@@ -88,7 +88,7 @@ Firebase Cloud Messaging、Google play 開発者サービス、依存してい�
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1.  Visual Studio で、右クリックして**参照 > NuGet パッケージの管理.**.
+1.  Visual Studio で、右クリックして**参照 > NuGet パッケージの管理.** .
 
 2.  をクリックして、**参照**タブし、検索**Xamarin.GooglePlayServices.Base**します。
 
@@ -98,7 +98,7 @@ Firebase Cloud Messaging、Google play 開発者サービス、依存してい�
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1.  Visual Studio for Mac では、右クリックして**パッケージ > パッケージを追加しています.**.
+1.  Visual Studio for Mac では、右クリックして**パッケージ > パッケージを追加しています.** .
 
 2.  検索**Xamarin.GooglePlayServices.Base**します。
 
@@ -125,7 +125,7 @@ FCM からメッセージを受信する、[メッセージング - Xamarin Fire
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1.  Visual Studio で、右クリックして**参照 > NuGet パッケージの管理.**.
+1.  Visual Studio で、右クリックして**参照 > NuGet パッケージの管理.** .
 
 2. 検索**Xamarin.Firebase.Messaging**します。
 
@@ -135,7 +135,7 @@ FCM からメッセージを受信する、[メッセージング - Xamarin Fire
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1.  Visual Studio for Mac では、右クリックして**パッケージ > パッケージを追加しています.**.
+1.  Visual Studio for Mac では、右クリックして**パッケージ > パッケージを追加しています.** .
 
 2.  検索**Xamarin.Firebase.Messaging**します。
 
@@ -682,6 +682,7 @@ using System.Collections.Generic;
 次のメソッドを追加`MyFirebaseMessagingService`:
 
 <a name="sendnotification-method"></a>
+
 ```csharp
 void SendNotification(string messageBody, IDictionary<string, string> data)
 {
@@ -711,7 +712,7 @@ void SendNotification(string messageBody, IDictionary<string, string> data)
 
 バック グラウンド通知からこの通知を区別するためには、このコードは、アプリケーション アイコンとは異なるアイコンが表示された通知をマークします。 ファイルを追加する[ic\_stat\_ic\_notification.png](remote-notifications-with-fcm-images/ic-stat-ic-notification.png)に**リソース/drawable**し、含めることで、 **FCMClient**プロジェクト.
 
-`SendNotification`メソッドは` NotificationCompat.Builder`、通知を作成して`NotificationManagerCompat`通知を起動するために使用します。 通知を保持する`PendingIntent`は、アプリを開きに渡された文字列の内容を表示するユーザーに許可する`messageBody`。 詳細については`NotificationCompat.Builder`を参照してください[ローカル通知](~/android/app-fundamentals/notifications/local-notifications.md)します。
+`SendNotification`メソッドは`NotificationCompat.Builder`、通知を作成して`NotificationManagerCompat`通知を起動するために使用します。 通知を保持する`PendingIntent`は、アプリを開きに渡された文字列の内容を表示するユーザーに許可する`messageBody`。 詳細については`NotificationCompat.Builder`を参照してください[ローカル通知](~/android/app-fundamentals/notifications/local-notifications.md)します。
 
 呼び出す、`SendNotification`メソッドの最後に、`OnMessageReceived`メソッド。
 

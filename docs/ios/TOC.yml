@@ -491,6 +491,8 @@
           href: ~/essentials/index.md?context=xamarin/ios
         - name: 開始するには
           href: ~/essentials/get-started.md?context=xamarin/ios
+        - name: プラットフォームと機能のサポート
+          href: ~/essentials/platform-feature-support.md?context=xamarin/ios
         - name: 加速度計
           href: ~/essentials/accelerometer.md?context=xamarin/ios
         - name: アプリ情報
@@ -912,6 +914,58 @@
               href: watchos/platform/quick-interaction-techniques.md
             - name: トレーニング アプリの拡張機能
               href: watchos/platform/workout-apps.md
+        - name: watchOS 向け Xamarin.Essentials
+          items:
+            - name: Xamarin.Essentials の概要
+              href: ~/essentials/index.md?context=xamarin/watchos
+            - name: 開始するには
+              href: ~/essentials/get-started.md?context=xamarin/watchos
+            - name: プラットフォームと機能のサポート
+              href: ~/essentials/platform-feature-support.md?context=xamarin/watchos
+            - name: 加速度計
+              href: ~/essentials/accelerometer.md?context=xamarin/watchos
+            - name: アプリ情報
+              href: ~/essentials/app-information.md?context=xamarin/watchos
+            - name: バロメーター
+              href: ~/essentials/barometer.md?context=xamarin/watchos
+            - name: バッテリ
+              href: ~/essentials/battery.md?context=xamarin/watchos
+            - name: 色のコンバーター
+              href: ~/essentials/color-converters.md?context=xamarin/watchos
+            - name: 接続
+              href: ~/essentials/connectivity.md?context=xamarin/watchos
+            - name: シェイクの検出
+              href: ~/essentials/detect-shake.md?context=xamarin/watchos
+            - name: デバイス情報
+              href: ~/essentials/device-information.md?context=xamarin/watchos
+            - name: ファイル システム ヘルパー
+              href: ~/essentials/file-system-helpers.md?context=xamarin/watchos
+            - name: ジオコーディング
+              href: ~/essentials/geocoding.md?context=xamarin/watchos
+            - name: ジャイロスコープ
+              href: ~/essentials/gyroscope.md?context=xamarin/watchos
+            - name: 磁力計
+              href: ~/essentials/magnetometer.md?context=xamarin/watchos
+            - name: メイン スレッド
+              href: ~/essentials/main-thread.md?context=xamarin/watchos
+            - name: マップ
+              href: ~/essentials/maps.md?context=xamarin/watchos
+            - name: 向きセンサー
+              href: ~/essentials/orientation-sensor.md?context=xamarin/watchos
+            - name: プラットフォームの拡張機能 (サイズ、四角形、ポイント)
+              href: ~/essentials/platform-extensions.md?context=xamarin/watchos
+            - name: Preferences
+              href: ~/essentials/preferences.md?context=xamarin/watchos
+            - name: セキュリティで保護されたストレージ
+              href: ~/essentials/secure-storage.md?context=xamarin/watchos
+            - name: 音声合成
+              href: ~/essentials/text-to-speech.md?context=xamarin/watchos
+            - name: 単位コンバーター
+              href: ~/essentials/unit-converters.md?context=xamarin/watchos
+            - name: バージョンの追跡
+              href: ~/essentials/version-tracking.md?context=xamarin/watchos
+            - name: トラブルシューティング
+              href: ~/essentials/troubleshooting.md?context=xamarin/watchos
         - name: 配置とテスト
           href: watchos/deploy-test/index.md
           items:
@@ -963,6 +1017,42 @@
               href: tvos/platform/remote-bluetooth.md
             - name: ユーザー インターフェイスのスタイル
               href: tvos/platform/user-interface-styles.md
+        - name: tvOS 向け Xamarin.Essentials
+          items:
+            - name: Xamarin.Essentials の概要
+              href: ~/essentials/index.md?context=xamarin/tvos
+            - name: 開始するには
+              href: ~/essentials/get-started.md?context=xamarin/tvos
+            - name: プラットフォームと機能のサポート
+              href: ~/essentials/platform-feature-support.md?context=xamarin/tvos
+            - name: アプリ情報
+              href: ~/essentials/app-information.md?context=xamarin/tvos
+            - name: 色のコンバーター
+              href: ~/essentials/color-converters.md?context=xamarin/tvos
+            - name: 接続
+              href: ~/essentials/connectivity.md?context=xamarin/tvos
+            - name: デバイス情報
+              href: ~/essentials/device-information.md?context=xamarin/tvos
+            - name: ファイル システム ヘルパー
+              href: ~/essentials/file-system-helpers.md?context=xamarin/tvos
+            - name: ジオコーディング
+              href: ~/essentials/geocoding.md?context=xamarin/tvos
+            - name: メイン スレッド
+              href: ~/essentials/main-thread.md?context=xamarin/tvos
+            - name: プラットフォームの拡張機能 (サイズ、四角形、ポイント)
+              href: ~/essentials/platform-extensions.md?context=xamarin/tvos
+            - name: Preferences
+              href: ~/essentials/preferences.md?context=xamarin/tvos
+            - name: セキュリティで保護されたストレージ
+              href: ~/essentials/secure-storage.md?context=xamarin/tvos
+            - name: 音声合成
+              href: ~/essentials/text-to-speech.md?context=xamarin/tvos
+            - name: 単位コンバーター
+              href: ~/essentials/unit-converters.md?context=xamarin/tvos
+            - name: バージョンの追跡
+              href: ~/essentials/version-tracking.md?context=xamarin/tvos
+            - name: トラブルシューティング
+              href: ~/essentials/troubleshooting.md?context=xamarin/tvos
         - name: ユーザー インターフェイス
           href: tvos/user-interface/index.md
           items:
@@ -1007,7 +1097,7 @@
           items:
             - name: アセンブリ
               href: tvos/internals/assemblies.md
-            - name: フレームワーク
+            - name: Frameworks
               href: tvos/internals/frameworks.md
     - name: リリース ノート
       href: 'https://docs.microsoft.com/xamarin/ios/release-notes/'

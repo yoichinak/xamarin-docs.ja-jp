@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: c1f488213f9b3be945fd98e09f630c243d0b0d62
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 8af7474036eb0fd6e2236cf52e96b8d12c8bc44e
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61382839"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865713"
 ---
 # <a name="speech-recognition-in-xamarinios"></a>Xamarin.iOS での音声認識
 
@@ -105,21 +105,21 @@ IOS アプリでの音声認識を採用する開発者が行う必要のある 
 2. 切り替えて、**ソース**ビュー。 
 
     [![](speech-images/speech02.png "ソース ビュー")](speech-images/speech02.png#lightbox)
-3. をクリックして**新しいエントリの追加**、入力`NSSpeechRecognitionUsageDescription`の**プロパティ**、`String`の**型**と**利用状況の説明**として、**値**します。 例: 
+3. をクリックして**新しいエントリの追加**、入力`NSSpeechRecognitionUsageDescription`の**プロパティ**、`String`の**型**と**利用状況の説明**として、**値**します。 例えば: 
 
     [![](speech-images/speech03.png "NSSpeechRecognitionUsageDescription を追加します。")](speech-images/speech03.png#lightbox)
 4. アプリがライブ オーディオ トラン スクリプトを処理する場合が、マイクの利用状況の説明も必要です。 をクリックして**新しいエントリの追加**、入力`NSMicrophoneUsageDescription`の**プロパティ**、`String`の**型**と**利用状況の説明**として、**値**します。 例えば: 
 
     [![](speech-images/speech04.png "NSMicrophoneUsageDescription を追加します。")](speech-images/speech04.png#lightbox)
-4. 変更内容をファイルに保存します。
+5. 変更内容をファイルに保存します。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. ダブルクリックして、`Info.plist`ファイルを開き、編集します。
-3. をクリックして**新しいエントリの追加**、入力`NSSpeechRecognitionUsageDescription`の**プロパティ**、`String`の**型**と**利用状況の説明**として、**値**します。 例: 
+2. をクリックして**新しいエントリの追加**、入力`NSSpeechRecognitionUsageDescription`の**プロパティ**、`String`の**型**と**利用状況の説明**として、**値**します。 例えば: 
 
     [![](speech-images/speech03w.png "NSSpeechRecognitionUsageDescription を追加します。")](speech-images/speech03w.png#lightbox)
-4. アプリがライブ オーディオ トラン スクリプトを処理する場合が、マイクの利用状況の説明も必要です。 をクリックして**新しいエントリの追加**、入力`NSMicrophoneUsageDescription`の**プロパティ**、`String`の**型**と**利用状況の説明**として、**値**します。 例: 
+3. アプリがライブ オーディオ トラン スクリプトを処理する場合が、マイクの利用状況の説明も必要です。 をクリックして**新しいエントリの追加**、入力`NSMicrophoneUsageDescription`の**プロパティ**、`String`の**型**と**利用状況の説明**として、**値**します。 例えば: 
 
     [![](speech-images/speech04w.png "NSMicrophoneUsageDescription を追加します。")](speech-images/speech04w.png#lightbox)
 4. 変更内容をファイルに保存します。
@@ -243,7 +243,7 @@ A`SFSpeechUrlRecognitionRequest`から作成された、 `NSUrl` iOS デバイ�
 
 ### <a name="recognizing-live-speech"></a>ライブ音声を認識します。
 
-アプリは、ライブの音声を認識する必要がある場合、プロセスは録音済み音声の認識によく似ています。 例:
+アプリは、ライブの音声を認識する必要がある場合、プロセスは録音済み音声の認識によく似ています。 例えば:
 
 ```csharp
 using System;

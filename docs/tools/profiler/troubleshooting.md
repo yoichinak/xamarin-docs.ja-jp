@@ -6,12 +6,12 @@ ms.assetid: 0060E9D1-C003-4E4C-ADE8-B406978FE891
 author: lobrien
 ms.author: laobri
 ms.date: 10/27/2017
-ms.openlocfilehash: f9b4da5b6dfe3f0254340d9175b08198bd52a45a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e4a4376291ff56433c8cd9785989af2983a80c1c
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61160564"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832146"
 ---
 # <a name="xamarin-profiler-troubleshooting"></a>Xamarin Profiler のトラブルシューティング
 
@@ -56,7 +56,7 @@ Windows 上に保存されます`%appdata%Local//Xamarin/Log/Xamarin.Profiler/Pr
 共通の潜在的な問題、回避策、およびヒントとテクニックについて、Profiler を使用して、次の一覧が表示されます。
 
 > [!NOTE]
-> **注**: Visual Studio を使用する必要があります**Enterprise** for mac で Windows のいずれかの Visual Studio Enterprise または Visual Studio でこの機能のロックを解除するサブスクライバー
+> Visual Studio を使用する必要があります**Enterprise** for mac で Windows のいずれかの Visual Studio Enterprise または Visual Studio でこの機能のロックを解除するサブスクライバー
 
 #### <a name="i-cant-see-the-ios-profiler-option-or-it-is-greyed-out-visual-studio-and-visual-studio-for-mac"></a>IOS プロファイラー オプションを表示できないまたはグレー [Visual Studio と Visual Studio for Mac]
 

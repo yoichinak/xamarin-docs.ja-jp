@@ -8,12 +8,12 @@ ms.author: crdun
 ms.date: 02/12/2019
 featureFlags:
 - clicktale
-ms.openlocfilehash: 5a2df045ae0d7cb433060cee27d2546ad5b6e86e
-ms.sourcegitcommit: 00deecefc17a98210bed12b4ef99ecca710275f1
+ms.openlocfilehash: 4613eec9db017f27f6ab890522867ab4d68b4684
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67493388"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830843"
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -100,7 +100,7 @@ ms.locfileid: "67493388"
                                                     <li><a class="barLink" href="~/android/index.yml"><img  src="https://docs.microsoft.com/media/logos/logo_android.svg" alt="" />Xamarin.Android</a></li>
                                                     <li><a class="barLink" href="~/ios/index.yml"><img  src="https://docs.microsoft.com/media/common/i_web-apps.svg" alt=" icon" />Xamarin.iOS</a></li>
                                                     <li><a class="barLink" href="~/mac/index.yml"><img  src="https://docs.microsoft.com/media/common/i_xplat-code.svg" alt=" icon" />Xamarin.Mac</a></li>
-                                                    <li><a class="barLink" href="~/xamarin-forms/data-cloud/index.md"><img  src="https://docs.microsoft.com/media/logos/logo_azure.svg" alt="" />Xamarin を使用した Azure</a></li>
+                                                    <li><a class="barLink" href="~/xamarin-forms/data-cloud/index.yml"><img  src="https://docs.microsoft.com/media/logos/logo_azure.svg" alt="" />Xamarin を使用した Azure</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -409,7 +409,7 @@ Xamarin.Forms は C# と .NET を使用する Android、iOS、Mac、Windows の�
                                 </a>
                             </li>
                             <li>
-                                <a href="~/xamarin-forms/data-cloud/index.md">
+                                <a href="~/xamarin-forms/data-cloud/index.yml">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -419,8 +419,8 @@ Xamarin.Forms は C# と .NET を使用する Android、iOS、Mac、Windows の�
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>データとクラウド サービス</h3>
-                                                    <p>データの格納とクラウド サービスへのアクセスについて説明します。</p>
+                                                    <h3>データと Azure Cloud Services</h3>
+                                                    <p>データの格納と Azure Cloud Services へのアクセス。</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -472,7 +472,7 @@ Xamarin.Forms は C# と .NET を使用する Android、iOS、Mac、Windows の�
                                             <div class="card">
                                                 <div class="cardImageOuter x-hidden-focus">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img alt="Samples" src="https://docs.microsoft.com/en-us/media/illustrations/team-services-dev-ops-test.svg" data-linktype="external">
+                                                        <img alt="Samples" src="https://docs.microsoft.com/media/illustrations/team-services-dev-ops-test.svg" data-linktype="external">
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
@@ -672,7 +672,7 @@ Xamarin.Forms は C# と .NET を使用する Android、iOS、Mac、Windows の�
                                             <div class="card">
                                                 <div class="cardImageOuter">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img src="https://docs.microsoft.com/en-us/media/illustrations/teams-fast-track.svg" alt="Continuous Integration" />
+                                                        <img src="https://docs.microsoft.com/media/illustrations/teams-fast-track.svg" alt="Continuous Integration" />
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
@@ -697,25 +697,6 @@ Xamarin.Forms は C# と .NET を使用する Android、iOS、Mac、Windows の�
                                                 <div class="cardText">
                                                     <h3>UrhoSharp</h3>
                                                     <p>クロスプラットフォームの 3D グラフィックスとゲーム。</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="~/graphics-games/cocossharp/index.md">
-                                    <div class="cardSize">
-                                        <div class="cardPadding">
-                                            <div class="card">
-                                                <div class="cardImageOuter">
-                                                    <div class="cardImage bgdAccent1">
-                                                        <img src="~/media/index/xamarin-graphics-cocos.svg?branch=master" alt="CocosSharp" />
-                                                    </div>
-                                                </div>
-                                                <div class="cardText">
-                                                    <h3>CocosSharp</h3>
-                                                    <p>モバイル デバイス用のクロスプラットフォーム 2D ゲームを構築します。</p>
                                                 </div>
                                             </div>
                                         </div>

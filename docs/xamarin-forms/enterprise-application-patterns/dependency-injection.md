@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: fb225349b9ffb1c950486a817897b3c26c6ffbe4
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 97b95ccb3e756f02c945adc63b9e173a9f9e0226
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61300265"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832683"
 ---
 # <a name="dependency-injection"></a>依存関係の挿入
 
@@ -139,11 +139,12 @@ _container = builder.Build();
 
 呼び出す、`Build`メソッドを`ContainerBuilder`インスタンスが行われた登録を含む新しい依存関係注入コンテナーをビルドします。
 
->💡 **ヒント:**:検討してください、`IContainer`が変更可能なものとして。 Autofac を提供しますが、`Update`可能であれば、このメソッドを呼び出して、既存のコンテナーでの登録を更新する方法は避ける必要があります。 コンテナーが使用されている場合に特に構築されていますが、後にコンテナーを変更するリスクがあります。 詳細については、次を参照してください。[変更不可としてのコンテナーを検討してください。](http://docs.autofac.org/en/latest/best-practices/#consider-a-container-as-immutable) readthedocs.io します。
+> [!TIP]
+> 検討してください、`IContainer`が変更可能なものとして。 Autofac を提供しますが、`Update`可能であれば、このメソッドを呼び出して、既存のコンテナーでの登録を更新する方法は避ける必要があります。 コンテナーが使用されている場合に特に構築されていますが、後にコンテナーを変更するリスクがあります。 詳細については、次を参照してください。[変更不可としてのコンテナーを検討してください。](http://docs.autofac.org/en/latest/best-practices/#consider-a-container-as-immutable) readthedocs.io します。
 
 <a name="resolution" />
 
-## <a name="resolution"></a>解像度
+## <a name="resolution"></a>解決方法
 
 型が登録されると、解決または依存関係として挿入することができます。 型が解決されると、コンテナーが新しいインスタンスを作成する必要があるのインスタンスにすべての依存関係を挿入します。
 
@@ -191,7 +192,7 @@ builder.RegisterType<NavigationService>().As<INavigationService>().SingleInstanc
 
 Autofac には、追加のインスタンスのスコープが含まれています。 詳細については、次を参照してください。[インスタンス スコープ](http://autofac.readthedocs.io/en/latest/lifetime/instance-scope.html)readthedocs.io します。
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
 依存関係の挿入は、これらの型に依存するコードの具体的な種類の分離を使用できます。 通常、登録とインターフェイスと抽象型は、間のマッピングの一覧を保持するコンテナーと実装またはこれらの型を拡張する具象型を使用します。
 

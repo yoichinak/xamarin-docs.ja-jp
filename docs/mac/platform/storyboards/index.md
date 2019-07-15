@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 166a50021c22aa09be3eecdb8b745a70e75c3d51
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 8a5a2f87c16a5dd040cefb2fbc615b01431ebcf5
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61031485"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832300"
 ---
 # <a name="introduction-to-storyboards-in-xamarinmac"></a>Xamarin.Mac でストーリー ボードの概要
 
@@ -56,9 +56,9 @@ _この記事では、Xamarin.Mac アプリでストーリー ボードの使用
 
 所定のシーン内で、すべての個人によって処理された通常は、操作を実行できます`.xib`ファイル。 
 
- - Subviews し、(ボタンやテキスト ボックス) を制御します。
- - 要素の位置と自動レイアウトの制約を定義します。
- - ワイヤ アップのアクションとアウトレットをコードに UI 要素を公開します。
+- Subviews し、(ボタンやテキスト ボックス) を制御します。
+- 要素の位置と自動レイアウトの制約を定義します。
+- ワイヤ アップのアクションとアウトレットをコードに UI 要素を公開します。
 
 <a name="Working-with-Segues" />
 
@@ -108,7 +108,7 @@ SourceWriter コード全体に詳細なコメントが付いていて、可能�
 
 <a name="Summary" />
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
 この記事では、Xamarin.Mac アプリでストーリー ボードの使用の概要を取得しました。 ストーリー ボードを使用して新しいアプリを作成する方法と、ユーザー インターフェイスを定義する方法を説明しました。 また別のウィンドウ間を移動する方法を説明しましたしを使用して、ビュー ステートのセグエします。
 

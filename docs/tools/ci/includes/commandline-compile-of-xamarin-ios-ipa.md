@@ -1,15 +1,15 @@
 ---
-ms.openlocfilehash: 05f1017f8c4b306996d3e8e165511ff9062a1026
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: ef16224b9ef060ff8643211b8e1f0c767c518bdf
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61047859"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67841379"
 ---
 
 以下のコマンドラインは、iPhone 用の **SOLUTION_FILE.sln** というソリューションのリリースビルドを指定するものです。 指定することで、IPA の場所を設定することができます、`IpaPackageDir`コマンドラインでのプロパティ。
 
- - Mac における **xbuild** の使用:
+- Mac における **xbuild** の使用:
 
         xbuild /p:Configuration="Release" \ 
            /p:Platform="iPhone" \ 
@@ -18,7 +18,7 @@ ms.locfileid: "61047859"
 
 **Xbuild** コマンドは、通常 **/Library/Frameworks/Mono.framework/Commands** ディレクトリにあります。
 
- - Windows における **msbuild** の使用:
+- Windows における **msbuild** の使用:
 
         msbuild /p:Configuration="Release" 
             /p:Platform="iPhone" 

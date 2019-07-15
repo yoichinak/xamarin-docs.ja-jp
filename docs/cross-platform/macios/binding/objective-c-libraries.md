@@ -6,12 +6,12 @@ ms.assetid: 8A832A76-A770-1A7C-24BA-B3E6F57617A0
 author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: 306cce581eb1506e770222ea10e160c4fdbe1b29
-ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
+ms.openlocfilehash: 206379b162c7778663ee2baf64dfeb1d33666ab4
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66827487"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831465"
 ---
 # <a name="binding-objective-c-libraries"></a>OBJECTIVE-C ライブラリのバインド
 
@@ -267,7 +267,7 @@ string Text { get; [NullAllowed] set; }
 カスタム コントロールのバインドを設定する場合は、次の注意事項を検討してください。
 
 1. **バインドのプロパティは、静的にする必要があります**- プロパティのバインドを定義する場合、 [ `[Static]` ](~/cross-platform/macios/binding/binding-types-reference.md#StaticAttribute)属性を使用する必要があります。
- 2. **プロパティ名が正確に一致する必要があります**-プロパティをバインドするための名前は、カスタム コントロールのプロパティの名前を正確に一致する必要があります。
+2. **プロパティ名が正確に一致する必要があります**-プロパティをバインドするための名前は、カスタム コントロールのプロパティの名前を正確に一致する必要があります。
 3. **プロパティの型が正確に一致する必要があります**-プロパティをバインドするために使用する変数の型では、カスタム コントロールのプロパティの型を正確に一致する必要があります。
 4. **ブレークポイントと getter と setter** - ブレークポイントは、get アクセス操作子に配置またはプロパティの setter メソッドに到達しません。
 5. **コールバックを観察**-カスタム コントロールのプロパティの値の変更の通知を受け取る監視のコールバックを使用する必要があります。

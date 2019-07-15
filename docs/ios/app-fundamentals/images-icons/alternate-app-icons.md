@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/29/2017
-ms.openlocfilehash: cc5052c8988a27605cf7680a3853f80e7afd38b7
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: fc4ef6eb16893cc1df0d980d27af8589a280e933
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61171012"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832429"
 ---
 # <a name="alternate-app-icons-in-xamarinios"></a>Xamarin.iOS での代替アプリ アイコン
 
@@ -20,10 +20,10 @@ _この記事では、Xamarin.iOS での代替アプリ アイコンの使用に
 
 Apple には、そのアイコンを管理するアプリを許可する iOS 10.3 にいくつかの機能強化が追加されます。
 
- - `ApplicationIconBadgeNumber` -を取得します。 または、スプリング ボードで、アプリ アイコンのバッジを設定します。
- - `SupportsAlternateIcons` If`true`アプリには、別のアイコンのセット。
- - `AlternateIconName` -現在選択されている代替アイコンの名前を返しますまたは`null`プライマリ アイコンを使用する場合。
- - `SetAlternameIconName` -このメソッドを使用してアプリのアイコンを指定した代替アイコンに切り替えます。
+- `ApplicationIconBadgeNumber` -を取得します。 または、スプリング ボードで、アプリ アイコンのバッジを設定します。
+- `SupportsAlternateIcons` If`true`アプリには、別のアイコンのセット。
+- `AlternateIconName` -現在選択されている代替アイコンの名前を返しますまたは`null`プライマリ アイコンを使用する場合。
+- `SetAlternameIconName` -このメソッドを使用してアプリのアイコンを指定した代替アイコンに切り替えます。
 
 ![](alternate-app-icons-images/icons04.png "アプリのアイコンの変更されたときにアラートの例")
 
@@ -119,7 +119,7 @@ PrimaryIconButton.Enabled = UIApplication.SharedApplication.SupportsAlternateIco
 AlternateIconButton.Enabled = UIApplication.SharedApplication.SupportsAlternateIcons;
 ```
 
-`ApplicationIconBadgeNumber`のプロパティ、`UIApplication`クラスにより、開発者は取得、または、スプリング ボードで現在のアプリ アイコンのバッジの数を設定します。 既定値は 0 です。 例:
+`ApplicationIconBadgeNumber`のプロパティ、`UIApplication`クラスにより、開発者は取得、または、スプリング ボードで現在のアプリ アイコンのバッジの数を設定します。 既定値は 0 です。 例えば:
 
 ```csharp
 // Set the badge number to 1
@@ -166,7 +166,7 @@ partial void UseAlternateIcon (Foundation.NSObject sender)
 
 <a name="Summary" />
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
 この記事では、代替アプリ アイコンを Xamarin.iOS プロジェクトに追加して、アプリ内でそれらを使用してについて説明しました。
 

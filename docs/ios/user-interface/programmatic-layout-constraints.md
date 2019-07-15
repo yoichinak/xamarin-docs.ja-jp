@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 3d8e69af7f790415343abf464ea2bb22e879e025
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 089ada051b6780a15acfcdd7f9e32ddda1384d05
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61170774"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832049"
 ---
 # <a name="programmatic-layout-constraints-in-xamarinios"></a>Xamarin.iOS でプログラムによるレイアウトの制約
 
@@ -51,7 +51,7 @@ _このガイドは iOS の操作での自動レイアウトの制約C#iOS Desig
 - **ConstraintGreaterThanOrEqualTo** -のリレーションシップを定義、`first attribute >= second attribute + [constant]`をオプションで指定された`constant`オフセット値。
 - **ConstraintLessThanOrEqualTo** -のリレーションシップを定義、`first attribute <= second attribute + [constant]`をオプションで指定された`constant`オフセット値。
 
-例:
+例えば:
 
 ```csharp
 // Get the parent view's layout
@@ -95,7 +95,7 @@ PurpleView.LeadingAnchor.ConstraintEqualTo (OrangeView.TrailingAnchor, 10).Activ
 
 ### <a name="layout-constraints"></a>レイアウトの制約
 
-自動レイアウトの制約を手動で追加するには直接作成することにより、`NSLayoutConstraint`でC#コード。 レイアウトのアンカーを使用するとは異なり、定義されている制約に影響はない場合でも、すべてのパラメーターの値を指定する必要があります。 その結果、非常に長い時間、読み取り、定型コードを生成することになります。 例:
+自動レイアウトの制約を手動で追加するには直接作成することにより、`NSLayoutConstraint`でC#コード。 レイアウトのアンカーを使用するとは異なり、定義されている制約に影響はない場合でも、すべてのパラメーターの値を指定する必要があります。 その結果、非常に長い時間、読み取り、定型コードを生成することになります。 例えば:
 
 ```csharp
 //// Pin the leading edge of the view to the margin
@@ -119,10 +119,10 @@ NSLayoutConstraint.Create (OrangeView, NSLayoutAttribute.Height, NSLayoutRelatio
 Visual 言語の形式を使用すると、作成される制約の視覚的表現を提供する文字列のような ASCII アートを使用して制約を定義できます。 これは、次の長所と短所があります。
 
 - Visual 言語の形式は、有効な制約のみの作成を強制します。
- - 自動レイアウトでは、デバッグ メッセージの制約を作成するために使用するコードのようになりますので、ビジュアルの書式の言語を使用してコンソールに制約を出力します。
- - Visual 言語の形式を使用すると、非常にコンパクトな表現で同時に複数の制約を作成できます。
- - Visual 言語の書式設定文字列のコンパイル側の検証がないため、問題は実行時にのみ検出できます。
- - Visual 言語の形式は、完全を期すために視覚化を強調ために、比率) などをいくつかの制約の種類を作成することはできません。
+- 自動レイアウトでは、デバッグ メッセージの制約を作成するために使用するコードのようになりますので、ビジュアルの書式の言語を使用してコンソールに制約を出力します。
+- Visual 言語の形式を使用すると、非常にコンパクトな表現で同時に複数の制約を作成できます。
+- Visual 言語の書式設定文字列のコンパイル側の検証がないため、問題は実行時にのみ検出できます。
+- Visual 言語の形式は、完全を期すために視覚化を強調ために、比率) などをいくつかの制約の種類を作成することはできません。
 
 Visual 言語の形式を使用して制約を作成するときに、次の手順を実行します。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/13/2017
-ms.openlocfilehash: 45886d787ecc40c9e11ce0c713ffa22819e29db2
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e28ba19fdc972b962f0dcd2757f1ba9087ac5c27
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61227488"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831774"
 ---
 # <a name="watchos-background-tasks-in-xamarin"></a>watchOS Xamarin でのバック グラウンド タスク
 
@@ -141,7 +141,7 @@ WatchOS 3、Apple ドッキング ステーション ユーザーが、お気に
 アプリをマークすると、`WKSnapshotRefreshBackgroundTask`完了すると、システムは自動的に取得、アプリの UI のスナップショット。
 
 > [!IMPORTANT]
-> 常にスケジュールを設定することが重要な` WKSnapshotRefreshBackgroundTask`後、アプリが新しいデータを受信して、ユーザー インターフェイスを更新またはユーザーが変更された情報は表示されません。
+> 常にスケジュールを設定することが重要な`WKSnapshotRefreshBackgroundTask`後、アプリが新しいデータを受信して、ユーザー インターフェイスを更新またはユーザーが変更された情報は表示されません。
 
 
 
@@ -697,7 +697,7 @@ Apple では、次の推奨事項があります。
 
 <a name="Summary" />
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
 この記事では、Apple は watchOS とそれらを使用して watch アプリを最新に保つ方法に対する機能強化について説明しました。 最初に、新しい内容をすべて説明バック グラウンド タスクの Apple は watchOS 3 に追加します。 次に、バック グラウンド API ライフ サイクルと Xamarin の watchOS アプリでバック グラウンド タスクを実装する方法について説明します。 最後に、スケジュールする方法を説明し、いくつかのベスト プラクティスを提供しました。
 
