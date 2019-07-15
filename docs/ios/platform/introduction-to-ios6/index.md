@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: be017103c5a3a2c890f49e4a510d20fcd0c03094
-ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
+ms.openlocfilehash: f0cfeaa049355c2b524ead748696eafd884a1c54
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67675099"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865699"
 ---
 # <a name="introduction-to-ios-6"></a>iOS 6 の概要
 
@@ -34,17 +34,17 @@ _iOS 6 には、さまざまな Xamarin.iOS 6 を提供するには、アプリ�
 PassKit framework Passbook アプリで管理されているデジタルのパスとの対話を可能です。 詳細については、次を参照してください。、[渡すキット ガイドの概要](~/ios/platform/passkit.md)します。
 
 
-##  <a name="introduction-to-eventkitiosplatformeventkitmd"></a>[EventKit の概要](~/ios/platform/eventkit.md)
+## <a name="introduction-to-eventkitiosplatformeventkitmd"></a>[EventKit の概要](~/ios/platform/eventkit.md)
 
 EventKit フレームワークでは、予定表、予定表イベント、およびカレンダーのデータベースに保存されるアラーム データにアクセスする手段を提供します。 アクセスの予定表、予定表をイベントでしたが使用可能な iOS 4 以降、iOS 6 は今すぐアラーム データへのアクセスを公開します。 詳細については、次を参照してください。、[は](~/ios/platform/eventkit.md) [EventKit 概要](~/ios/platform/eventkit.md)ガイド。
 
 
-##  <a name="introduction-to-the-social-frameworkiosplatformsocial-frameworkmd"></a>[ソーシャル フレームワークの概要](~/ios/platform/social-framework.md)
+## <a name="introduction-to-the-social-frameworkiosplatformsocial-frameworkmd"></a>[ソーシャル フレームワークの概要](~/ios/platform/social-framework.md)
 
 ソーシャル フレームワークは、中国でのユーザーの Twitter および Facebook、ほか SinaWeibo をなどのソーシャル ネットワークと対話するための統一された API を提供します。 詳細については、次を参照してください。、[ソーシャル フレームワークの概要](~/ios/platform/social-framework.md)ガイド。
 
 
-##  <a name="changes-to-storekitchanges-to-storekitmd"></a>[StoreKit の変更点](changes-to-storekit.md)
+## <a name="changes-to-storekitchanges-to-storekitmd"></a>[StoreKit の変更点](changes-to-storekit.md)
 
 Apple がストア キットの 2 つの新しい機能を導入しました。 購入と iTunes または、アプリ内からアプリ ストアのコンテンツをダウンロードし、アプリ内購入のコンテンツ ファイルをホストしています。 詳細については、次を参照してください。、[ストア キットへの変更](changes-to-storekit.md)ガイド。
 
