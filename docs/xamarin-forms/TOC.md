@@ -278,6 +278,7 @@
 
 ## [Xamarin.Essentials](~/essentials/index.md?context=xamarin/xamarin-forms)
 ### [開始するには](~/essentials/get-started.md?context=xamarin/xamarin-forms)
+### [プラットフォームと機能のサポート](~/essentials/platform-feature-support.md?context=xamarin/xamarin-forms)
 ### [加速度計](~/essentials/accelerometer.md?context=xamarin/xamarin-forms)
 ### [アプリ情報](~/essentials/app-information.md?context=xamarin/xamarin-forms)
 ### [バロメーター](~/essentials/barometer.md?context=xamarin/xamarin-forms)
