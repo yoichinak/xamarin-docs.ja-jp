@@ -20,10 +20,12 @@ sections:
         className: cardsB
         items:
           - href: 2019-07.md
-            html: 'Xamarin ドキュメントの 2019 年 7 月の新着記事:Xamarin.Forms 4.1 がリリースされ、データとクラウドのサービスが更新され、その他の更新が行われました。'
+
+            html: "Xamarin ドキュメントの 2019 年 7 月の新着記事: Xamarin.Forms 4.1 がリリースされ、データとクラウドのサービスが新しくなり、その他の更新がありました。"
             image:
               src: 'https://docs.microsoft.com/media/common/i_article.svg'
-              href: 2019-06.md
+              href: 2019-07.md
+
             title: 2019 年 7 月
           - href: 2019-06.md
             html: 'Xamarin ドキュメントの 2019 年 6 月の新着記事:Xamarin.Forms 4.0 がリリースされ、データとクラウドのサービスが新しくなり、API ドキュメントが docs.microsoft.com で使用できるようになりました。'
