@@ -1,5 +1,5 @@
 ---
-title: による UrhoSharp のプログラミングF#
+title: F＃ を使った UrhoSharp のプログラミング
 description: このドキュメントは、単純な hello world UrhoSharp を使用してアプリケーションを作成する方法を説明しますF#Visual studio for mac。
 ms.prod: xamarin
 ms.assetid: F976AB09-0697-4408-999A-633977FEFF64
@@ -13,9 +13,9 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 07/11/2019
 ms.locfileid: "67832315"
 ---
-# <a name="programming-urhosharp-with-f"></a>による UrhoSharp のプログラミングF#
+# <a name="programming-urhosharp-with-f"></a>F＃ を使った UrhoSharp のプログラミング
 
-UrhoSharp をプログラミングできるF#同じライブラリとによって使用される概念を使用してC#プログラマです。 [を使用して UrhoSharp](~/graphics-games/urhosharp/using.md)記事 UrhoSharp エンジンの概要を説明し、この記事の前に読む必要があります。
+UrhoSharpは、C＃プログラマーによって使用されるのと同じライブラリーおよび概念を使用して F＃ でプログラムすることができます。 [UrhoSharp の使用](~/graphics-games/urhosharp/using.md) の記事は UrhoSharp エンジンの概要を説明しているので、この記事の前に読むことをお勧めします。
 
 C++ の世界で発生した多くのライブラリと同様には、多くの UrhoSharp 関数は、ブール値または整数の成功または失敗を示す値を返します。 使用する必要があります`|> ignore`をこれらの値を無視します。
 
