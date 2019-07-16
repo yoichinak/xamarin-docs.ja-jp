@@ -1,36 +1,29 @@
 ---
 title: Xamarin.Forms の DependencyService
-description: 開発者は Xamarin.Forms を使って、プラットフォーム固有のプロジェクトで動作を定義できます。 その後、DependencyService によって適切なプラットフォームの実装が検索され、共有コードでネイティブ機能にアクセスできるようになります。
+description: Xamarin.Forms の DependencyService クラスは、Xamarin.Forms アプリケーションで共有コードからネイティブ プラットフォームの機能を起動できるようにするサービス ロケーターです。
 ms.prod: xamarin
 ms.assetid: 403479F2-6751-41F2-ADCE-3AF595062FE4
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/06/2017
-ms.openlocfilehash: 8a56ca7fcb6bfb6d463d1830e53210cf46fa499a
-ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
+ms.date: 06/05/2019
+ms.openlocfilehash: ea259d1ee9dc4a94322c38b3e96bee654197bb87
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66741030"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67650454"
 ---
 # <a name="xamarinforms-dependencyservice"></a>Xamarin.Forms の DependencyService
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/UsingDependencyService/)
+## <a name="introductionintroductionmd"></a>[はじめに](introduction.md)
 
-_開発者は Xamarin.Forms を使って、プラットフォーム固有のプロジェクトで動作を定義できます。その後、DependencyService によって適切なプラットフォームの実装が検索され、共有コードでネイティブ機能にアクセスできるようになります。_
+[`DependencyService`](xref:Xamarin.Forms.DependencyService) クラスは、Xamarin.Forms アプリケーションで共有コードからネイティブ プラットフォームの機能を起動できるようにするサービス ロケーターです。
 
-このガイドは次の記事で構成されています。
+## <a name="registration-and-resolutionregistration-and-resolutionmd"></a>[登録と解決](registration-and-resolution.md)
 
-- **[概要](introduction.md)** &ndash; `DependencyService` という概念の全体的なアーキテクチャについて紹介します。
-- **[音声合成の実装](text-to-speech.md)** &ndash; 各プラットフォームのネイティブ音声合成システムの使用例について説明します。
-- **[デバイスの向きのチェック](device-orientation.md)** &ndash; デバイスの向きを判断するための、プラットフォームのネイティブ API の使用例について説明します。
-- **[バッテリ情報の取得](battery-info.md)** &ndash; バッテリの状態に関する情報を取得するためのネイティブ API の使用例について説明します。
-- **[ライブラリからの写真の選択](photo-picker.md)** &ndash; 電話の画像ライブラリから写真を選択するための、ネイティブ API の使用例について説明します。
+プラットフォームの実装を [`DependencyService`](xref:Xamarin.Forms.DependencyService) に登録し、共有コードから解決してそれらを呼び出す必要があります。
 
+## <a name="picking-a-photo-from-the-libraryphoto-pickermd"></a>[ライブラリから写真を選択する](photo-picker.md)
 
-## <a name="related-links"></a>関連リンク
-
-- [DependencyService の使用 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UsingDependencyService/)
-- [DependencyService (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/DependencyService/)
-- [Xamarin.Forms のサンプル](https://github.com/xamarin/xamarin-forms-samples)
+この記事では、Xamarin.Forms の [`DependencyService`](xref:Xamarin.Forms.DependencyService) クラスを使用して、電話の画像ライブラリから写真を選択する方法について説明します。
