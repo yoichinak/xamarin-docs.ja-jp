@@ -15,7 +15,7 @@ ms.locfileid: "67832315"
 ---
 # <a name="programming-urhosharp-with-f"></a>F＃ を使った UrhoSharp のプログラミング
 
-UrhoSharp をプログラミングできるF#同じライブラリとによって使用される概念を使用してC#プログラマです。 [UrhoSharp を使用して](~/graphics-games/urhosharp/using.md)記事 UrhoSharp エンジンの概要を説明し、この記事の前に読む必要があります。
+UrhoSharpは、C＃プログラマーによって使用されるのと同じライブラリーおよび概念を使用して F＃ でプログラムすることができます。 [UrhoSharp の使用](~/graphics-games/urhosharp/using.md) の記事は UrhoSharp エンジンの概要を説明しているので、この記事の前に読むことをお勧めします。
 
 C++ の世界で発生した多くのライブラリと同様には、多くの UrhoSharp 関数は、ブール値または整数の成功または失敗を示す値を返します。 使用する必要があります`|> ignore`をこれらの値を無視します。
 
