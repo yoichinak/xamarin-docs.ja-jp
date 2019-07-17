@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/03/2019
-ms.openlocfilehash: f0ad4e3271ac8c1f8d30a0440b38d8a46c57783e
-ms.sourcegitcommit: b4a12607ca944de10fd166139765241a4501831c
+ms.openlocfilehash: 9c427dc48f6fe19098c312bad16d9630bb480264
+ms.sourcegitcommit: 32c7cf8b0d00464779e4b0ea43e2fd996632ebe0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66687127"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68290157"
 ---
 # <a name="xamarinforms-in-xamarin-native-projects"></a>Xamarin Native プロジェクトで Xamarin.Forms
 
@@ -119,6 +119,9 @@ public void NavigateToNoteEntryPage(Note note)
 [![UI を使用する Xamarin.iOS アプリケーションのスクリーン ショットは、XAML で定義されている](native-forms-images/ios-noteentrypage.png "XAML UI を使用した Xamarin.iOS アプリ")](native-forms-images/ios-noteentrypage-large.png#lightbox "XAML UI を使用した xamarin ios アプリ")
 
 ときに、`NoteEntryPage`背面をタップして、表示される矢印が表示されます、`UIViewController`の`NoteEntryPage`クラスから、 `UINavigationController`、ユーザーを返す、`UIViewController`の`NotesPage`クラス。
+
+> [!WARNING]
+> Popping、`UIViewController`から iOS ネイティブ ナビゲーション スタックは自動的に破棄しないの`UIViewController`秒。 いずれかのように、開発者の役目です`UIViewController`を不要になったがその`Dispose()`それ以外の場合メソッドが呼び出されると、`UIViewController`とアタッチされた`Page`孤立して、ガベージ コレクターによって収集されませんその結果、メモリ リークが発生します。
 
 ## <a name="android"></a>Android
 
