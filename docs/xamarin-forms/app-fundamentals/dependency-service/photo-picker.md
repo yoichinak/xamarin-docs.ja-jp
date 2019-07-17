@@ -7,30 +7,22 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/06/2017
-ms.openlocfilehash: 5c4d43723bc23d8a16be8fec0a895a31ab8bcfdc
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: 36601b02bb2984d9350166dedac0d650d9642f91
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233966"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67650642"
 ---
 # <a name="picking-a-photo-from-the-picture-library"></a>画像ライブラリから写真を選択する
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/DependencyService/DependencyServiceSample)
 
-この記事では、ユーザーが電話の画像ライブラリから写真を選択できるアプリケーションを作成する手順について説明します。 Xamarin.Forms にはこの機能は含まれていないため、[`DependencyService`](xref:Xamarin.Forms.DependencyService) を使用して各プラットフォームのネイティブ API にアクセスする必要があります。  この記事では、このタスクのために `DependencyService` を使用する以下の手順について説明します。
-
-- **[インターフェイスの作成](#Creating_the_Interface)** &ndash; 共有コードでインターフェイスを作成する方法を理解します。
-- **[iOS での実装](#iOS_Implementation)** &ndash; iOS 用のネイティブ コード内にインターフェイスを実装する方法を学習します。
-- **[Android での実装](#Android_Implementation)** &ndash; Android 用のネイティブ コード内にインターフェイスを実装する方法を学習します。
-- **[ユニバーサル Windows プラットフォームでの実装](#UWP_Implementation)** &ndash; ユニバーサル Windows プラットフォーム (UWP) 用のネイティブ コード内にインターフェイスを実装する方法を学習します。
-- **[共有コードでの実装](#Implementing_in_Shared_Code)** &ndash; `DependencyService` を使用して共有コードからネイティブ実装を呼び出す方法を学習します。
-
-<a name="Creating_the_Interface" />
+この記事では、ユーザーが電話の画像ライブラリから写真を選択できるアプリケーションを作成する手順について説明します。 Xamarin.Forms にはこの機能は含まれていないため、[`DependencyService`](xref:Xamarin.Forms.DependencyService) を使用して各プラットフォームのネイティブ API にアクセスする必要があります。
 
 ## <a name="creating-the-interface"></a>インターフェイスの作成
 
-最初に、目的の機能を表すインターフェイスを共有コードで作成します。 写真選択アプリケーションの場合、必要なメソッドは 1 つだけです。 これは、サンプル コードの .NET Standard ライブラリの [`IPicturePicker`](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/DependencyServiceSample/IPicturePicker.cs) インターフェイスで定義されています。
+最初に、目的の機能を表すインターフェイスを共有コード内に作成します。 写真選択アプリケーションの場合、必要なメソッドは 1 つだけです。 これは、サンプル コードの .NET Standard ライブラリの [`IPicturePicker`](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/DependencyServiceSample/IPicturePicker.cs) インターフェイスで定義されています。
 
 ```csharp
 namespace DependencyServiceSample
@@ -45,8 +37,6 @@ namespace DependencyServiceSample
 `GetImageStreamAsync` メソッドは、すぐに戻る必要がありますが、ユーザーが画像ライブラリを参照して写真を選択するまで、選択された写真の `Stream` オブジェクトを返すことができないため、非同期として定義されます。
 
 このインターフェイスは、すべてのプラットフォームにおいてプラットフォーム固有のコードを使用して実装されます。
-
-<a name="iOS_Implementation" />
 
 ## <a name="ios-implementation"></a>iOS での実装
 
@@ -153,9 +143,6 @@ iOS アプリケーションが電話のフォト ライブラリにアクセス
 <string>Picture Picker uses photo library</string>
 ```
 
-
-<a name="Android_Implementation" />
-
 ## <a name="android-implementation"></a>Android での実装
 
 Android での実装では、[**イメージ選択**](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/pick_image)レシピと[サンプル コード](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/pick_image)で説明されている手法が使用されます。 ただし、ユーザーが画像ライブラリから画像を選択したときに呼び出されるメソッドは、`OnActivityResult` の派生クラスでの `Activity` のオーバーライドです。 このため、Android プロジェクトの通常の [`MainActivity`](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/Droid/MainActivity.cs) クラスは、フィールド、プロパティ、および `OnActivityResult` メソッドのオーバーライドで補完されています。
@@ -228,8 +215,6 @@ namespace DependencyServiceSample.Droid
 
 このメソッドでは、`Instance` プロパティ、`PickImageId` フィールド、`TaskCompletionSource` プロパティ、`StartActivityForResult` の呼び出しなど、複数の目的で `MainActivity` クラスがアクセスされます。 このメソッドは、`MainActivity` の基底クラスである `FormsAppCompatActivity` クラスによって定義されています。
 
-<a name="UWP_Implementation" />
-
 ## <a name="uwp-implementation"></a>UWP での実装
 
 iOS や Android での実装とは異なり、ユニバーサル Windows プラットフォーム用の写真ピッカーの実装では、`TaskCompletionSource` クラスは必要ありません。 [`PicturePickerImplementation`](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/UWP/PicturePickerImplementation.cs) クラスでは、[`FileOpenPicker`](/uwp/api/Windows.Storage.Pickers.FileOpenPicker/) クラスを使用してフォト ライブラリへのアクセスが取得されます。 `FileOpenPicker` の `PickSingleFileAsync` メソッド自体が非同期なので、`GetImageStreamAsync` メソッドでは、そのメソッド (および他の非同期メソッド) で `await` を単に使用して、`Stream` オブジェクトを返すことができます。
@@ -269,8 +254,6 @@ namespace DependencyServiceSample.UWP
     }
 }
 ```
-
-<a name="Implementing_in_Shared_Code" />
 
 ## <a name="implementing-in-shared-code"></a>共有コードでの実装
 
@@ -322,7 +305,6 @@ pickPictureButton.Clicked += async (sender, e) =>
 ```
 
 `Image` 要素をタップすると、ページは通常に戻ります。
-
 
 ## <a name="related-links"></a>関連リンク
 

@@ -6,14 +6,14 @@
       href: get-started/index.md
       expanded: true
       items:
-        - name: 要件
+        - name: 必要条件
           displayName: System requirements
           href: get-started/requirements.md
-        - name: モバイル開発の概要
+        - name: Xamarin とは
           href: get-started/introduction-to-mobile-development.md
-        - name: モバイル SDLC の概要
+        - name: モバイル ソフトウェア開発ライフ サイクル
           href: get-started/introduction-to-mobile-sdlc.md
-        - name: クロスプラットフォーム アプリケーションの構築
+        - name: クロス プラットフォーム アプリの構築チュートリアル
           href: app-fundamentals/building-cross-platform-applications/index.md
           items:
             - name: 概要
@@ -75,10 +75,10 @@
               href: platform/fsharp/overview.md
             - name: 'F# のサンプル'
               href: platform/fsharp/samples.md
-        - name: Visual Basic.NET
+        - name: Visual Basic
           href: platform/visual-basic/index.md
           items:
-            - name: Xamarin iOS と Android
+            - name: Xamarin Android および iOS
               href: platform/visual-basic/native-apps.md
             - name: Xamarin.Forms
               href: platform/visual-basic/xamarin-forms.md

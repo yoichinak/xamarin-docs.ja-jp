@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: b34ac82cf240b892e60707d76c82da64ff232a20
-ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
+ms.openlocfilehash: 8c79075c9e01ef5da73255b152b4cbbd676b4f4e
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66827417"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67674743"
 ---
 # <a name="building-abi-specific-apks"></a>ABI 固有の APK のビルド
 
@@ -174,7 +174,7 @@ rake タスクが完了すると、ファイル `xamarin.helloworld.apk` を含�
 
 
 > [!NOTE]
-> このガイドで概説されているビルド プロセスは、さまざまなビルド システムのいずれかに実装できます。 事前に記述した例はありませんが、これは [Powershell](http://technet.microsoft.com/scriptcenter/powershell.aspx) / [psake](https://github.com/psake/psake) または [Fake](http://fsharp.github.io/FAKE/) でも可能です。
+> このガイドで概説されているビルド プロセスは、さまざまなビルド システムのいずれかに実装できます。 事前に記述した例はありませんが、これは [Powershell](https://technet.microsoft.com/scriptcenter/powershell.aspx) / [psake](https://github.com/psake/psake) または [Fake](http://fsharp.github.io/FAKE/) でも可能です。
 
 
 ## <a name="summary"></a>まとめ

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/23/2019
-ms.openlocfilehash: cd3bfd9186c87594fc42702e2d62b33e68973db6
-ms.sourcegitcommit: 10b4ccbfcf182be940899c00fc0fecae1e199c5b
+ms.openlocfilehash: 365e580d7d1182cca55a53a714ebb2b9be45ce35
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66252289"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67650737"
 ---
 # <a name="xamarinforms-shell-tabs"></a>Xamarin.Forms シェルのタブ
 
@@ -23,7 +23,7 @@ ms.locfileid: "66252289"
 または、アプリケーションのナビゲーション パターンを下部のタブから始めて、ポップアップを使用しないようにすることができます。 このシナリオでは、`Shell` オブジェクトの子を、下部のタブ バーを表す `TabBar` オブジェクトにする必要があります。
 
 > [!NOTE]
-> `TabBar` 型は、ポップアップを無効にします。
+> `TabBar` 型では、ポップアップが無効になります。
 
 各 `FlyoutItem` または `TabBar` オブジェクトには 1 つ以上の `Tab` オブジェクトを含めることができ、各 `Tab` オブジェクトは下部のタブ バー上の 1 つのタブを表します。 各 `Tab` オブジェクトには 1 つ以上の `ShellContent` オブジェクトを含めることができ、各 `ShellContent` オブジェクトにより 1 つの [`ContentPage`](xref:Xamarin.Forms.ContentPage) オブジェクトが表示されます。 複数の `ShellContent` オブジェクトが `Tab` オブジェクト内にある場合は、上部タブから `ContentPage` オブジェクトをナビゲートできます。
 
@@ -70,7 +70,7 @@ ms.locfileid: "66252289"
 この暗黙的な変換では、[`ContentPage`](xref:Xamarin.Forms.ContentPage) オブジェクトが自動的に `ShellContent` オブジェクトでラップされ、それが `Tab` オブジェクトでラップされ、それが `FlyoutItem` オブジェクトでラップされます。 シングル ページ アプリケーションではポップアップは不要です。そのため、`Shell.FlyoutBehavior` プロパティを `Disabled` に設定しています。
 
 > [!IMPORTANT]
-> シェル アプリケーションでは、`ShellContent` オブジェクトの子である各 [`ContentPage`](xref:Xamarin.Forms.ContentPage) は、アプリケーションの起動中に作成されます。 この手法を利用して追加の `ShellContent` オブジェクトを付け加えると、アプリケーションの起動時に追加のページが作成され、起動エクスペリエンスの低下を引き起こす場合があります。 ただし、シェルでは、ナビゲーションに応答して、必要に応じてページを作成することも可能です。 詳細については、「[効率的なページの読み込み](tabs.md#efficient-page-loading)」をご覧ください。
+> シェル アプリケーションでは、`ShellContent` オブジェクトの子である各 [`ContentPage`](xref:Xamarin.Forms.ContentPage) は、アプリケーションの起動中に作成されます。 この手法を利用してその他の `ShellContent` オブジェクトを追加すると、アプリケーションの起動時に追加のページが作成され、起動エクスペリエンスの低下を引き起こす場合があります。 ただし、シェルでは、ナビゲーションに応答して、必要に応じてページを作成することも可能です。 詳細については、「[効率的なページの読み込み](tabs.md#efficient-page-loading)」をご覧ください。
 
 ## <a name="bottom-tabs"></a>下部のタブ
 
@@ -119,7 +119,7 @@ ms.locfileid: "66252289"
 この暗黙的な変換では、各 [`ContentPage`](xref:Xamarin.Forms.ContentPage) オブジェクトが自動的に `ShellContent` オブジェクトでラップされ、今度はそれが両方とも `Tab` オブジェクトでラップされます。
 
 > [!IMPORTANT]
-> シェル アプリケーションでは、`ShellContent` オブジェクトの子である各 [`ContentPage`](xref:Xamarin.Forms.ContentPage) は、アプリケーションの起動中に作成されます。 この手法を利用して追加の `ShellContent` オブジェクトを付け加えると、アプリケーションの起動時に追加のページが作成され、起動エクスペリエンスの低下を引き起こす場合があります。 ただし、シェルでは、ナビゲーションに応答して、必要に応じてページを作成することも可能です。 詳細については、「[効率的なページの読み込み](tabs.md#efficient-page-loading)」をご覧ください。
+> シェル アプリケーションでは、`ShellContent` オブジェクトの子である各 [`ContentPage`](xref:Xamarin.Forms.ContentPage) は、アプリケーションの起動中に作成されます。 この手法を利用してその他の `ShellContent` オブジェクトを追加すると、アプリケーションの起動時に追加のページが作成され、起動エクスペリエンスの低下を引き起こす場合があります。 ただし、シェルでは、ナビゲーションに応答して、必要に応じてページを作成することも可能です。 詳細については、「[効率的なページの読み込み](tabs.md#efficient-page-loading)」をご覧ください。
 
 ### <a name="tab-class"></a>Tab クラス
 
