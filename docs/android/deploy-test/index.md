@@ -7,27 +7,27 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 4c9ab8c14db131427329cef51e7b74e982a1c7b8
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 86447c2338b8dd43e37170fa547883e47cbf6b4c
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103687"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864213"
 ---
 # <a name="deployment-and-testing"></a>配置とテスト
 
 このセクションには、アプリケーションをテストしたり、アプリケーションのパフォーマンスを最適化したり、リリース用にそれを準備したり、証明書で署名したり、それをアプリ ストアに公開する方法のガイドが含まれています。
 
 
-##  <a name="application-package-sizesapp-package-sizemd"></a>[アプリケーション パッケージのサイズ](app-package-size.md)
+## <a name="application-package-sizesapp-package-sizemd"></a>[アプリケーション パッケージのサイズ](app-package-size.md)
 
 この記事では Xamarin.Android アプリケーション パッケージの構成部分と、開発のデバッグおよびリリース段階で効果的なパッケージ開発を行うために使用できる関連の戦略について検証します。
 
-##  <a name="building-appsbuilding-appsindexmd"></a>[アプリのビルド](building-apps/index.md)
+## <a name="building-appsbuilding-appsindexmd"></a>[アプリのビルド](building-apps/index.md)
 
 このセクションでは、ビルド プロセスのしくみと、ABI 固有の APK のビルド方法について説明します。
 
-##  <a name="command-line-emulatorcommand-line-emulatormd"></a>[コマンド ライン エミュレーター](command-line-emulator.md)
+## <a name="command-line-emulatorcommand-line-emulatormd"></a>[コマンド ライン エミュレーター](command-line-emulator.md)
 
 この記事ではコマンド ラインを使用したエミュレーターの起動について簡単に説明します。
 
@@ -35,23 +35,23 @@ ms.locfileid: "50103687"
 
 このセクションのガイドは、Android エミュレーター、実際の Android デバイス、およびデバッグ ログを使用してアプリをデバッグするときに役立ちます。
 
-##  <a name="setting-the-debuggable-attributeandroiddeploy-testdebuggable-attributemd"></a>[デバッグできる属性の設定](~/android/deploy-test/debuggable-attribute.md)
+## <a name="setting-the-debuggable-attributeandroiddeploy-testdebuggable-attributemd"></a>[デバッグできる属性の設定](~/android/deploy-test/debuggable-attribute.md)
 
 この記事では `adb` などのツールが JVM と通信できるように、デバッグできる属性を設定する方法について説明します。
 
-##  <a name="environmentenvironmentmd"></a>[環境](environment.md)
+## <a name="environmentenvironmentmd"></a>[環境](environment.md)
 
 この記事では Xamarin.Android の実行環境と、プログラムの実行に影響を与える Android システムのプロパティについて説明します。
 
-##  <a name="gdbgdbmd"></a>[GDB](gdb.md)
+## <a name="gdbgdbmd"></a>[GDB](gdb.md)
 
 この記事では、`gdb` を使用して Xamarin.Android アプリケーションをデバッグする方法について説明します。
 
-##  <a name="installing-a-system-appinstall-system-appmd"></a>[システム アプリのインストール](install-system-app.md)
+## <a name="installing-a-system-appinstall-system-appmd"></a>[システム アプリのインストール](install-system-app.md)
 
 このガイドでは、システム アプリケーションとして Android デバイスまたはカスタム ROM の一部として Xamarin.Android アプリをインストールする方法について説明します。
 
-##  <a name="linking-on-androidlinkermd"></a>[Android でのリンク](linker.md)
+## <a name="linking-on-androidlinkermd"></a>[Android でのリンク](linker.md)
 
 この記事ではアプリケーションの最終的なサイズを削減するために Xamarin.Android で使用されるリンク プロセスについて説明します。 実行できるさまざまなレベルのリンクについて説明し、リンカーの使用が原因のエラーを軽減するためのガイダンスやトラブルシューティングのアドバイスを提供します。
 

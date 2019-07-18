@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/15/2017
-ms.openlocfilehash: 3dc68d0879d3ce4d5dd9b658a3bce7a00c348c09
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 0ae5dd86341912354938a8509668c843d412367b
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121244"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832577"
 ---
 # <a name="wallet-capabilities-in-xamarinios"></a>Xamarin.iOS のウォレット機能
 
@@ -32,21 +32,21 @@ _アプリケーションに機能を追加するには、多くの場合、追�
 
 ウォレットに使用する新しいプロビジョニング プロファイルを作成するには、次の手順を実行します。
 
-1.  Apple Developer Portal の [[Certificates, Identifiers, and Profiles]](https://developer.apple.com/account/ios/certificate/)\(証明書、ID、プロファイル\) セクションに移動します。
-2.  **[Identifiers]** \(ID\) の **[App IDs]** \(アプリ ID\) を参照します。 
+1. Apple Developer Portal の [[Certificates, Identifiers, and Profiles]](https://developer.apple.com/account/ios/certificate/)\(証明書、ID、プロファイル\) セクションに移動します。
+2. **[Identifiers]** \(ID\) の **[App IDs]** \(アプリ ID\) を参照します。 
     
     ![アプリ ID の選択](wallet-capabilities-images/image17.png)
 
-3.  ページの右上にある **+** アイコンをクリックします。
-4.  **[Name]** とバンドル識別子を指定して新しいアプリ ID を登録します (このバンドル識別子は、プロジェクトのバンドル ID と一致する必要があります)。
+3. ページの右上にある **+** アイコンをクリックします。
+4. **[Name]** とバンドル識別子を指定して新しいアプリ ID を登録します (このバンドル識別子は、プロジェクトのバンドル ID と一致する必要があります)。
    
     ![アプリ ID の詳細を追加する](wallet-capabilities-images/image18.png)
 
-5.  サービスの一覧から **[Wallet]** App Service を選択します。
+5. サービスの一覧から **[Wallet]** App Service を選択します。
     
     ![サービスの選択画面](wallet-capabilities-images/image19.png)
 
-6.  **[Continue]**、**[Register]** の順に押してアプリ ID を作成します。
+6. **[Continue]** 、 **[Register]** の順に押してアプリ ID を作成します。
 
 必要に応じて、既存のアプリ ID を編集してウォレット機能を追加できます。
 
@@ -65,6 +65,6 @@ _アプリケーションに機能を追加するには、多くの場合、追�
 
 * アプリでフレームワークの名前空間を使用します。
 * アプリに必要な権利を追加します。 必要な権利とその追加方法については、[権利の使用](~/ios/deploy-test/provisioning/entitlements.md)に関するガイドを参照してください。
-* アプリの  **[iOS バンドル署名]** で、 **[カスタムの権利]** が **Entitlements.plist** に確実に設定されているようにします。 これは、デバッグと iOS シミュレーターのビルドに対する既定の設定では _"ありません"_ 。
+* アプリの  **[iOS バンドル署名]** で、 **[カスタムの権利]** が **Entitlements.plist** に確実に設定されているようにします。 これは、デバッグと iOS シミュレーターのビルドに対する既定の設定では _"ありません"_  。
 
 App Services で問題が発生した場合は、メイン ガイドの[トラブルシューティング](~/ios/deploy-test/provisioning/capabilities/index.md)のセクションを参照してください。

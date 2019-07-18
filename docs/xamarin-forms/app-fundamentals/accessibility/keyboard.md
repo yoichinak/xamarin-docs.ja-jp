@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/09/2019
-ms.openlocfilehash: 66cd9f9de712583ea4e8fb9304a9f1642e7e3ee1
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: 7f469dab92793eeaa38bd2b73e9d94b138495379
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65971262"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830345"
 ---
 # <a name="keyboard-accessibility-in-xamarinforms"></a>Xamarin.Forms でのキーボードアクセシビリティ
 
@@ -66,10 +66,10 @@ ms.locfileid: "65971262"
 
 既定のタブ オーダーを使用するとき、または `TabIndex` プロパティを設定するときは、次の規則が適用されます。
 
- - `TabIndex` が 0 に設定されている [`VisualElement`](xref:Xamarin.Forms.VisualElement) インスタンスは、XAML または子コレクションでの宣言の順序に基づいて、タブ オーダーに追加されます。
- - `TabIndex` に 0 より大きい値が設定されている [`VisualElement`](xref:Xamarin.Forms.VisualElement) インスタンスは、`TabIndex` の値に基づいてタブ オーダーに追加されます。
- - `TabIndex` に 0 より小さい値が設定されている [`VisualElement`](xref:Xamarin.Forms.VisualElement) インスタンスは、値が 0 のすべてのものより前のタブ オーダーに追加されて表示されます。
- - `TabIndex` が競合する場合は、宣言の順序によって解決されます。
+- `TabIndex` が 0 に設定されている [`VisualElement`](xref:Xamarin.Forms.VisualElement) インスタンスは、XAML または子コレクションでの宣言の順序に基づいて、タブ オーダーに追加されます。
+- `TabIndex` に 0 より大きい値が設定されている [`VisualElement`](xref:Xamarin.Forms.VisualElement) インスタンスは、`TabIndex` の値に基づいてタブ オーダーに追加されます。
+- `TabIndex` に 0 より小さい値が設定されている [`VisualElement`](xref:Xamarin.Forms.VisualElement) インスタンスは、値が 0 のすべてのものより前のタブ オーダーに追加されて表示されます。
+- `TabIndex` が競合する場合は、宣言の順序によって解決されます。
 
 タブ オーダーが定義された後、Tab キーを押すと、フォーカスは `TabIndex` の昇順でコントロール間を移動し、最後のコントロールに達すると先頭に戻ります。
 

@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/05/2019
-ms.openlocfilehash: a295c04d3b8819864b80ff56e215d22cc6ec0765
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: aab5f56594f9b9b81acb9c447eee238d151bd533
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67658285"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832192"
 ---
 # <a name="xamarinforms-dependencyservice-registration-and-resolution"></a>Xamarin.Forms の DependencyService の登録と解決
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/DependencyServiceDemos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-samples/tree/master/DependencyService)
 
 Xamarin.Forms の [`DependencyService`](xref:Xamarin.Forms.DependencyService) を使用してネイティブ プラットフォームの機能を呼び出す場合、プラットフォームの実装を `DependencyService` に登録してから、共有コードから解決してそれらを呼び出す必要があります。
 
@@ -175,5 +175,5 @@ using (service as IDisposable)
 
 ## <a name="related-links"></a>関連リンク
 
-- [DependencyService のデモ (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/DependencyServiceDemos)
+- [DependencyService のデモ (サンプル)](https://github.com/xamarin/xamarin-forms-samples/tree/master/DependencyService)
 - [Xamarin.Forms での依存関係の解決](~/xamarin-forms/internals/dependency-resolution.md)

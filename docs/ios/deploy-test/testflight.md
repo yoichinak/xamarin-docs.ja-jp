@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 87be250bdc425558a8e386a8209596e18f13b3ed
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 27fd8cac85cdf139278d3824ebf71e54cdc7d140
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120522"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865580"
 ---
 # <a name="using-testflight-to-distribute-xamarinios-apps"></a>TestFlight を使用して Xamarin.iOS アプリを配布する
 
@@ -23,7 +23,7 @@ _Apple が所有するようになった TestFlight は、Xamarin.iOS アプリ�
 TestFlight は Apple の iOS アプリ用ベータ テスト サービスであり、[iTunes Connect](https://itunesconnect.apple.com/) を介してのみアクセスできます。 現在は、iOS 8.0 以降のアプリに利用できます。 TestFlight は内部ユーザーと外部ユーザー両方のベータ テストに対応しており、外部ユーザー向けのベータ アプリ レビューにより、App Store に発行するときの最終レビューのプロセスが簡単になります。
 
 
-以前は、テスト担当者に配布するには、Visual Studio for Mac でバイナリを生成し、TestFlightApp Web サイトにアップロードする必要がありました。 新しいプロセスは多くの点が改善されており、高品質で十分にテストされたアプリを App Store に公開できます。 例:
+以前は、テスト担当者に配布するには、Visual Studio for Mac でバイナリを生成し、TestFlightApp Web サイトにアップロードする必要がありました。 新しいプロセスは多くの点が改善されており、高品質で十分にテストされたアプリを App Store に公開できます。 次に例を示します。
 
 
 - 外部テストに必要なベータ アプリ レビューは、最終 App Store レビュー成功の可能性を高くします。どちらも、Apple のガイドラインに準拠している必要があります。
@@ -77,7 +77,7 @@ TestFlight でビルドをテストするには、新しいベータ資格で "*
 
 
 
-###  <a name="completing-the-new-ios-app-submission-form"></a>新しい iOS アプリ送信フォームの設定
+### <a name="completing-the-new-ios-app-submission-form"></a>新しい iOS アプリ送信フォームの設定
 
 このフォームはアプリの Info.plist ファイルとまったく同じ情報にする必要があります (下図参照)。
 
@@ -100,35 +100,35 @@ iTunes Connect レコードが作成されたら、新しいビルドをアッ�
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-###  <a name="create-an-archive"></a>アーカイブを作成する
+### <a name="create-an-archive"></a>アーカイブを作成する
 
- Visual Studio for Mac でバイナリをビルドするには、"_アーカイブ_" 機能を使う必要があります。 プロジェクトを右クリックし、**[発行のためのアーカイブ]** を選びます (下図参照)。
+ Visual Studio for Mac でバイナリをビルドするには、"_アーカイブ_" 機能を使う必要があります。 プロジェクトを右クリックし、 **[発行のためのアーカイブ]** を選びます (下図参照)。
 
  [![](testflight-images/new-archive.png "[発行のためのアーカイブ] を選択します")](testflight-images/new-archive.png#lightbox)
 
 
  詳しくは、「[Building the Distributable](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)」(配布可能アプリのビルド) ガイドをご覧ください。
 
-###  <a name="sign-and-distribute-your-app"></a>アプリに署名して配布する
+### <a name="sign-and-distribute-your-app"></a>アプリに署名して配布する
 
- アーカイブを作成すると**アーカイブ ビュー**が自動的に開き、アーカイブされているすべてのプロジェクトがソリューション別にグループ化されて表示されます。 アプリに署名して配布の準備をするには、**[署名と配布...]** を選びます (下図参照)。
+ アーカイブを作成すると**アーカイブ ビュー**が自動的に開き、アーカイブされているすべてのプロジェクトがソリューション別にグループ化されて表示されます。 アプリに署名して配布の準備をするには、 **[署名と配布...]** を選びます (下図参照)。
 
 [![](testflight-images/archive-view.png "アーカイブを作成するとアーカイブ ビューが自動的に開きます")](testflight-images/archive-view.png#lightbox)
 
- これにより、発行ウィザードが開きます。 **[App Store]** 配布チャネルを選んでパッケージを作成し、アプリケーション ローダーを開きます。 [プロビジョニング プロファイル] 画面で、署名 ID とプロビジョニング プロファイルを選ぶか、別の ID で再署名します。 パッケージの詳細を確認し、**[発行]** をクリックして `.ipa` を保存します。
+ これにより、発行ウィザードが開きます。 **[App Store]** 配布チャネルを選んでパッケージを作成し、アプリケーション ローダーを開きます。 [プロビジョニング プロファイル] 画面で、署名 ID とプロビジョニング プロファイルを選ぶか、別の ID で再署名します。 パッケージの詳細を確認し、 **[発行]** をクリックして `.ipa` を保存します。
 
 [![](testflight-images/group.png "署名 ID とプロビジョニング プロファイルを選ぶか、別の ID で再署名します")](testflight-images/group.png#lightbox)
 
  手順について詳しくは、「[Submitting your App to Apple](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)」(Apple へのアプリの送信) セクションをご覧ください。
 
-###  <a name="submitting-your-build"></a>ビルドを送信する
+### <a name="submitting-your-build"></a>ビルドを送信する
  iTunes Connect にビルドをアップロードするためのアプリケーション ローダー プログラムが開きます。 **[Deliver Your App]\(アプリの配信\)** オプションを選び、前に作成した `.ipa` ファイルをアップロードします。 アプリケーション ローダーがビルドを検証して iTunes Connect にアップロードします。
 
  手順について詳しくは、「[Submitting your App to Apple](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)」(Apple へのアプリの送信) セクションをご覧ください。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-###  <a name="building-your-final-distributable"></a>最終的な配布可能アプリをビルドする
+### <a name="building-your-final-distributable"></a>最終的な配布可能アプリをビルドする
  Visual Studio 用 Xamarin プラグインは App Store に発行するための Xamarin.iOS アプリのアーカイブをサポートしていないので、Visual Studio から iOS アプリケーションを発行するには 2 つのオプションがあります。 これらの数値は、次のとおりです。
 
 1. [Build Adhoc IPA]\(アドホック IPA のビルド\) コマンドを使って作成した IPA をアップロードします。
@@ -136,10 +136,10 @@ iTunes Connect レコードが作成されたら、新しいビルドをアッ�
 
  「[Building the Distributable](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)」(配布可能アプリのビルド) ガイドでは、両方のオプションが説明されています。
 
-###  <a name="submitting-your-build"></a>ビルドを送信する
+### <a name="submitting-your-build"></a>ビルドを送信する
  Apple にアプリを送信するには、ビルド ホストに移動し、アプリケーション ローダー プログラムを使う必要があります。このプログラムは、Xcode の一部としてインストールされます。 アプリケーション ローダーへのアクセスの詳細については、Apple の「[Access Application Loader (アプリケーション ローダーにアクセスする)](http://help.apple.com/itc/apploader/#/apdATD1E927-D1E1A1303-D1E927A1126)」ガイドをご覧ください。
 
-開いたら、**[Deliver Your App]\(アプリの配信\)** オプションを選び、前に作成した zip または `.ipa` ファイルをアップロードします。 アプリケーション ローダーがビルドを検証して iTunes Connect にアップロードします。
+開いたら、 **[Deliver Your App]\(アプリの配信\)** オプションを選び、前に作成した zip または `.ipa` ファイルをアップロードします。 アプリケーション ローダーがビルドを検証して iTunes Connect にアップロードします。
 
  手順について詳しくは、「[Submitting your App to Apple](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)」(Apple へのアプリの送信) セクションをご覧ください。
 
@@ -180,7 +180,7 @@ TestFlight を使い始めるには、アプリの **[Prerelease]\(プレリリ�
 
 [![](testflight-images/turn-on-testing.png "[TestFlight Beta Testing] スイッチをオンにします")](testflight-images/turn-on-testing.png#lightbox)
 
-各ビルドは、[TestFlight Beta Testing]\(TestFlight ベータ テスト\) をオンにしてから **60 日**間アクティブになります。 各ビルドの残り日数は、**[Test Information]\(テスト情報\)** ページで確認できます。
+各ビルドは、[TestFlight Beta Testing]\(TestFlight ベータ テスト\) をオンにしてから **60 日**間アクティブになります。 各ビルドの残り日数は、 **[Test Information]\(テスト情報\)** ページで確認できます。
 
 [![](testflight-images/daysleft.png "テスト情報ページ")](testflight-images/daysleft.png#lightbox)
 
@@ -200,11 +200,11 @@ TestFlight を使い始めるには、アプリの **[Prerelease]\(プレリリ�
 
 [![](testflight-images/users-and-roles.png "iTunes Connect メイン画面の [Users and Roles]\(ユーザーとロール\)")](testflight-images/users-and-roles.png#lightbox)
 
-既存の iTunes Connect ユーザーが一覧に表示されます。 ユーザーを選ぶには、名前をクリックし、**[Internal Tester]\(内部テスト担当者\)** スイッチをオンにして、**[Save]\(保存\)** をクリックします。
+既存の iTunes Connect ユーザーが一覧に表示されます。 ユーザーを選ぶには、名前をクリックし、 **[Internal Tester]\(内部テスト担当者\)** スイッチをオンにして、 **[Save]\(保存\)** をクリックします。
 
 [![](testflight-images/internal-tester.png "[Internal Tester] \(内部テスト担当者\) スイッチをオンにします")](testflight-images/internal-tester.png#lightbox)
 
-一覧にないユーザーを追加するには、*[Users]\(ユーザー\)* の横の **[+]** を選び、名、姓、メール アドレスを指定してアカウントを作成します。 アカウントをアクティブ化するには、ユーザーがメールを確認する必要があります。
+一覧にないユーザーを追加するには、 *[Users]\(ユーザー\)* の横の **[+]** を選び、名、姓、メール アドレスを指定してアカウントを作成します。 アカウントをアクティブ化するには、ユーザーがメールを確認する必要があります。
 
 [![](testflight-images/add-new-user.png "ユーザーの追加")](testflight-images/add-new-user.png#lightbox)
 
@@ -233,7 +233,7 @@ TestFlight を使い始めるには、アプリの **[Prerelease]\(プレリリ�
 
 [![](testflight-images/add-external.png "テスターを招待します")](testflight-images/add-external.png#lightbox)
 
-外部テスト担当者の数が多い場合は、**[Import File]\(ファイルのインポート\)** リンクを使い、次のような形式の行を含む `CSV` ファイルをインポートできます。
+外部テスト担当者の数が多い場合は、 **[Import File]\(ファイルのインポート\)** リンクを使い、次のような形式の行を含む `CSV` ファイルをインポートできます。
 
 ``` 
 first name, last name, email address
@@ -241,13 +241,13 @@ first name, last name, email address
 
 また、外部テスト担当者を異なるグループに追加して、テスト担当者を整理することもできます。
 
-外部テスト担当者の詳細を入力した後、**[Add]\(追加\)** をクリックして、招待に対するユーザーの同意があることを確認します。
+外部テスト担当者の詳細を入力した後、 **[Add]\(追加\)** をクリックして、招待に対するユーザーの同意があることを確認します。
 
 [![](testflight-images/confirm-consent.png "招待に対するユーザーの同意があることを確認します")](testflight-images/confirm-consent.png#lightbox)
 
-ベータ アプリ レビューが正常に行われた後でのみ、外部テスト担当者に招待を送信できます。 この時点で、ビルド ページの **[External]\(外部\)** の下のテキストが、**[Send Invites]\(招待の送信\)** に変わります。 これをクリックして、既に追加しているすべてのテスト担当者に招待を送信します。
+ベータ アプリ レビューが正常に行われた後でのみ、外部テスト担当者に招待を送信できます。 この時点で、ビルド ページの **[External]\(外部\)** の下のテキストが、 **[Send Invites]\(招待の送信\)** に変わります。 これをクリックして、既に追加しているすべてのテスト担当者に招待を送信します。
 
-アプリが却下された場合は、**[Resolution Center]\(解決センター\)** で示されている問題を修正し、更新されたバイナリ全体をレビューのために再送信する必要があります。
+アプリが却下された場合は、 **[Resolution Center]\(解決センター\)** で示されている問題を修正し、更新されたバイナリ全体をレビューのために再送信する必要があります。
 
 ## <a name="as-a-beta-tester"></a>ベータ テスト担当者として
 

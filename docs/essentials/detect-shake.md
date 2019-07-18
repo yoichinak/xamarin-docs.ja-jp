@@ -6,12 +6,12 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/28/2019
 ms.custom: video
-ms.openlocfilehash: 8aa1062c7948a57a21d59a785d6359056351245d
-ms.sourcegitcommit: 4a1520dee7759f8355ea65c8bb3d1bac8ba58122
+ms.openlocfilehash: d2aef2c32b3fe2815f1176779a8c28ae8d421ed1
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66354055"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832590"
 ---
 # <a name="xamarinessentials-detect-shake"></a>Xamarin.Essentials:Detect Shake
 
@@ -29,7 +29,7 @@ ms.locfileid: "66354055"
 using Xamarin.Essentials;
 ```
 
-デバイスの揺れを検出するには、Accelerometer 機能を使用する必要があります。具体的には、`Start` メソッドと `Stop` メソッドを呼び出すことで、加速の変化を待ち受け、揺れを検出します。 揺れが検出されるたびに `ShakeDetected ` イベントが始動します。 `SensorSpeed` には `Game` またはそれより高速を使うことをお勧めします。 以下がサンプルの使用方法です。
+デバイスの揺れを検出するには、Accelerometer 機能を使用する必要があります。具体的には、`Start` メソッドと `Stop` メソッドを呼び出すことで、加速の変化を待ち受け、揺れを検出します。 揺れが検出されるたびに `ShakeDetected` イベントが始動します。 `SensorSpeed` には `Game` またはそれより高速を使うことをお勧めします。 以下がサンプルの使用方法です。
 
 ```csharp
 

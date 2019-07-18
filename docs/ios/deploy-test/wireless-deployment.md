@@ -8,12 +8,12 @@ author: lobrien
 ms.author: laobri
 ms.custom: video
 ms.date: 01/22/2019
-ms.openlocfilehash: 82bdd2c160572b0d813fb87d81b09c00996cef18
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: 0e7516f030955c9b0f89db6db11b93afd9b358de
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58854835"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865501"
 ---
 # <a name="wireless-deployment-for-xamarinios-and-tvos-apps"></a>Xamarin.iOS および tvOS アプリのワイヤレス展開
 
@@ -21,7 +21,7 @@ ms.locfileid: "58854835"
 
 このガイドでは、ネットワーク経由でデバイスとペアリングし、そのデバイスに展開する方法を詳しく説明します。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 ワイヤレス展開は、Visual Studio for Mac と Visual Studio の両方の機能として利用できます。
 
@@ -57,17 +57,17 @@ Mac ビルド ホストでは、次のコンポーネントをインストール
 
 ### <a name="pairing-an-ios-device-with-xcode"></a>Xcode と iOS デバイスをペアリングする
 
-1. Xcode を開き、**[Window] > [Devices and Simulators]** に移動します。
+1. Xcode を開き、 **[Window] > [Devices and Simulators]** に移動します。
 2. ライトニング ケーブルを使用して、iOS デバイスを Mac に接続します。 デバイスで **[このコンピューターを信頼する]** を選択する必要がある場合もあります。
-3. ご使用のデバイスを選択し、**[Connect via network]** チェックボックスをオンにしてデバイスをペアリングします:![[Connect via network] オプションが表示されている [Device and Simulator] ウィンドウ](wireless-deployment-images/image2.png)
+3. ご使用のデバイスを選択し、 **[Connect via network]** チェックボックスをオンにしてデバイスをペアリングします:![[Connect via network] オプションが表示されている [Device and Simulator] ウィンドウ](wireless-deployment-images/image2.png)
 
 ### <a name="pairing-an-apple-tv-with-xcode"></a>Apple TV と Xcode をペアリングする
 
 1. Mac と Apple TV が同じネットワークに接続していることを確認します。
 
-2. Xcode を開き、**[Window] > [Devices and Simulators]** に移動します。
+2. Xcode を開き、 **[Window] > [Devices and Simulators]** に移動します。
 
-3. Apple TV で、**[設定] > [リモコンとデバイス] > [Remote App とデバイス]** に移動します。
+3. Apple TV で、 **[設定] > [リモコンとデバイス] > [Remote App とデバイス]** に移動します。
 
 4. Xcode の **[Discovered]** エリアで Apple TV を選択し、Apple TV に表示される確認コードを入力します。
 
@@ -85,7 +85,7 @@ iOS または tvOS デバイスに展開するには、次のステップを実�
 
 2. 使用するデバイスをターゲット デバイスの一覧から選択し、アプリケーションを実行します。
 
-2. デバイスがロックされている場合、デバイスのロック解除を求めるメッセージが表示されます。 デバイスのロックを解除すると、アプリがデバイスに展開されます。
+3. デバイスがロックされている場合、デバイスのロック解除を求めるメッセージが表示されます。 デバイスのロックを解除すると、アプリがデバイスに展開されます。
 
 ワイヤレス展開後にワイヤレス デバッグが自動的に有効になるので、以前に設定したブレークポイントを使用し、これまでどおりにワークフローのデバッグを行えます。
 

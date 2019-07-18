@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 11/10/2017
-ms.openlocfilehash: 73f652be32c72ef51170f44c28ce1590e6a0e92b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: dd42de4dda4b5d5b09156898fd7a8bab331adf88
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106847"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865908"
 ---
 # <a name="xamarinmac-linker-options"></a>Xamarin.Mac リンカー オプション
 
@@ -46,10 +46,10 @@ Xamarin.Mac.dll 型にリフレクションを実行しないすべてのアプ�
 Xamarin.Mac プロジェクトのリンカー構成に変更するには、次の操作を行います。
 
 1. Visual Studio for Mac で Xamarin.Mac プロジェクトを開きます。
-2. **ソリューション エクスプローラー**で、プロジェクト ファイルをダブルクリックし、**[プロジェクト オプション]** ダイアログ ボックスを開きます。
+2. **ソリューション エクスプローラー**で、プロジェクト ファイルをダブルクリックし、 **[プロジェクト オプション]** ダイアログ ボックスを開きます。
 3. **[Mac ビルド]** タブで、アプリケーションのニーズに適した **[リンカーの動作]** の種類を選択します。
 
-  ![使用するリンカーの動作を選択する](linker-images/link-behavior.png "使用するリンカーの動作を選択する")
+    ![使用するリンカーの動作を選択する](linker-images/link-behavior.png "使用するリンカーの動作を選択する")
 
 4. Full のターゲット フレームワークのプラットフォーム リンクは、今後更新されるまで IDE に表示されません。 それまでは、代わりに `--linkplatform` を **追加の mmp 引数**に追加します。
 5. **[OK]** をクリックして変更内容を保存します。

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: f56f2c58195e51e9294948dad85a475e181f99b2
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 864c801597f251940e55232e8c59d3a6ea19c392
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64978537"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865797"
 ---
 # <a name="connection-troubleshooting-for-a-xamarinios-build-host"></a>Xamarin.iOS ビルド ホストの接続のトラブルシューティング
 
@@ -35,8 +35,8 @@ _このガイドでは、新しい接続マネージャーの使用中に発生�
 
 > [!IMPORTANT]
 > 以下のトラブルシューティング手順は、新しいシステムの初回セットアップ中に発生する問題を主に対象としています。  以前に特定の環境で接続を正常に使用しており、接続が突然または断続的に動作を停止するようになった場合は、(ほとんどの場合に) 次のいずれかが役に立つかどうかの確認に直接進むことができます。 
->   * 下の[既存のビルド ホスト プロセスに起因するエラー](#errors)の説明に従って、残っているプロセスを中止します。 
->   * 下の[ブローカー、IDB、ビルド、デザイナー エージェントの消去](#clearing)の説明に従ってエージェントをクリアしてから、有線インターネット接続を使用して、「[MacBuildHost.local に接続できませんでした。もう一度お試しください。](#tryagain)」の説明に従って IP アドレスを使用して直接接続します。  
+> * 下の[既存のビルド ホスト プロセスに起因するエラー](#errors)の説明に従って、残っているプロセスを中止します。 
+> * 下の[ブローカー、IDB、ビルド、デザイナー エージェントの消去](#clearing)の説明に従ってエージェントをクリアしてから、有線インターネット接続を使用して、「[MacBuildHost.local に接続できませんでした。もう一度お試しください。](#tryagain)」の説明に従って IP アドレスを使用して直接接続します。  
 > 以上のどの方法でも問題が解決されない場合は、[手順 9](#stepnine) の指示に従い、新しいバグ報告を提出してください。
 
 1. 互換性のあるバージョンの Xamarin.iOS が Mac にインストールされていることを確認します。 Visual Studio 2017 の場合は、Visual Studio for Mac の**安定**配布チャネルであることを確認します。 Visual Studio 2015 以前の場合、両方の IDE で配布チャネルが同じであることを確認します。
@@ -162,23 +162,23 @@ _このガイドでは、新しい接続マネージャーの使用中に発生�
 
         [![](troubleshooting-images/troubleshooting-image18.png "ターミナルでの \"ls /etc/ssh/sshd_config\" と \"ls /etc/sshd_config\" の実行")](troubleshooting-images/troubleshooting-image18.png#lightbox)
 
-    3. ターミナルで `cp /etc/ssh/sshd_config "$HOME/Desktop/"` を実行し、デスクトップにファイルをコピーします。
+    2. ターミナルで `cp /etc/ssh/sshd_config "$HOME/Desktop/"` を実行し、デスクトップにファイルをコピーします。
 
-    4. デスクトップのファイルをテキスト エディターで開きます。 たとえば、ターミナルで `open -a TextEdit "$HOME/Desktop/sshd_config"` を実行できます。
+    3. デスクトップのファイルをテキスト エディターで開きます。 たとえば、ターミナルで `open -a TextEdit "$HOME/Desktop/sshd_config"` を実行できます。
 
-    5. ファイルの一番下に次の行を追加します。
+    4. ファイルの一番下に次の行を追加します。
 
         ```
         UseDNS no
         ```
-        
-    6. `UseDNS yes` という行があればそれを削除し、新しい設定が適用されるようにします。
 
-    7. ファイルを保存します。
+    5. `UseDNS yes` という行があればそれを削除し、新しい設定が適用されるようにします。
 
-    8. ターミナルで `sudo cp "$HOME/Desktop/sshd_config" /etc/ssh/sshd_config` を実行し、編集したファイルを元の場所にコピーします。 入力が求められた場合、パスワードを入力します。
+    6. ファイルを保存します。
 
-    9. **[システム環境設定]&gt;[共有]&gt;[リモート ログイン]** の順にアクセスして**リモート ログイン**を無効にし、再度有効にして、SSH サーバーを再起動します。
+    7. ターミナルで `sudo cp "$HOME/Desktop/sshd_config" /etc/ssh/sshd_config` を実行し、編集したファイルを元の場所にコピーします。 入力が求められた場合、パスワードを入力します。
+
+    8. **[システム環境設定]&gt;[共有]&gt;[リモート ログイン]** の順にアクセスして**リモート ログイン**を無効にし、再度有効にして、SSH サーバーを再起動します。
 
 <a name="clearing" />
 

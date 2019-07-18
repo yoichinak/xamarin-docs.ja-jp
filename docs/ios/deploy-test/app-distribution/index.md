@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 1bd61474daedd8bd330c0370948d6dee6f8ea50e
-ms.sourcegitcommit: 215b507b2e5a44bb023abc2c804c824b1a6190d8
+ms.openlocfilehash: d533996a9c4e86efa360bf2ed71165571c7ca260
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67194952"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865832"
 ---
 # <a name="xamarinios-app-distribution-overview"></a>Xamarin.iOS アプリの配布の概要
 
@@ -27,8 +27,8 @@ Xamarin.iOS アプリを開発したら、ソフトウェア開発ライフサ�
 Apple は、次のように Xamarin.iOS でサポートされる iOS アプリケーションを配布する方法を提供しています。
 
 1. [**App Store**](#App_Store_Distribution)
-2. [**社内 (エンタープライズ)**](#In-House_Distribution)
-2. [**アドホック**](#Ad_Hoc_Distribution)
+2. [**社内 (エンタープライズ)** ](#In-House_Distribution)
+3. [**アドホック**](#Ad_Hoc_Distribution)
 
 これらいずれのシナリオでも、適切な*プロビジョニング プロファイル*を使用してアプリケーションをプロビジョニングする必要があります。 プロビジョニング プロファイルは、コード署名情報だけでなく、アプリケーションの ID と使用する配布メカニズムも含むファイルです。 App Store 以外の配布には、アプリを展開できるデバイスに関する情報も含まれています。
 

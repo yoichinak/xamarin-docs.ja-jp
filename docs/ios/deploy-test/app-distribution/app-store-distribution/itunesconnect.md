@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: ff4c72eaaf856083ab8e2e240ac8ce3eff37470c
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 24cf255d5cf9269a7d0d485ad8a88abe6842b07a
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669641"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865608"
 ---
 # <a name="configuring-an-app-in-itunes-connect"></a>iTunes Connect でのアプリの構成
 
@@ -64,7 +64,7 @@ iOS アプリケーションを iTunes Connect に追加するには、**チー�
 1. **[My Apps]\(マイ App\)** をクリックします。
 
     [![](itunesconnect-images/add01.png "[My Apps] をクリックします")](itunesconnect-images/add01.png#lightbox)
-2. 左上隅の **+** をクリックして、**[New iOS App]\(\新規 iOS アプリ)** を選択します。
+2. 左上隅の **+** をクリックして、 **[New iOS App]\(\新規 iOS アプリ)** を選択します。
 
     [![](itunesconnect-images/add02.png "新規 iOS アプリの追加")](itunesconnect-images/add02.png#lightbox)
 3. iTunes Connect で **[New iOS App]\(\新規 iOS アプリ)** ダイアログが表示されます。
@@ -148,9 +148,9 @@ Apple では、アプリケーションの説明の記述について、次の�
 - より読みやすくするため、改行と箇条書きを使用する。
 - 各デバイスの種類で App Store にアプリの説明がどのように表示されるかに注意して、説明の中で最も重要な文章が見やすく表示されることを確認する。
 
-### <a name="whats-new"></a>新機能
+### <a name="whats-new"></a>新着記事
 
-アプリケーションの新しいバージョンをアップロードするときに、**[What’s New in this Version]\(このバージョンの新機能\)** フィールドが使用できます。慎重に熟考したうえで記入します。
+アプリケーションの新しいバージョンをアップロードするときに、 **[What’s New in this Version]\(このバージョンの新機能\)** フィールドが使用できます。慎重に熟考したうえで記入します。
 
 Apple では、新機能の情報を入力する際に、次のガイドラインを示しています。
 
@@ -251,10 +251,10 @@ Apple では、アプリケーションの著作権情報を提供すること�
 5. 必要なすべての情報を入力します。
 
     [![](itunesconnect-images/general01.png "iTunes Connect での一般的なアプリ情報の編集")](itunesconnect-images/general01.png#lightbox)
-6. **[Edit]\(編集\)** ボタンをクリックして、**[Rating]\(レーティング\)** で評価情報を設定します。
+6. **[Edit]\(編集\)** ボタンをクリックして、 **[Rating]\(レーティング\)** で評価情報を設定します。
 
     [![](itunesconnect-images/general02.png "評価の編集")](itunesconnect-images/general02.png#lightbox)
-6. 画面の上部にある **[Save]\(保存\)** ボタンをクリックして、変更を保存します。
+7. 画面の上部にある **[Save]\(保存\)** ボタンをクリックして、変更を保存します。
 
 > [!NOTE]
 > メモ: カテゴリまたは評価がアプリケーションの現在の機能と一致しない場合は、Apple によって提出が拒否されます。
@@ -274,10 +274,10 @@ Apple の Game Center をサポートする iOS ゲーム アプリケーショ�
 3. **[Versions]\(バージョン\)** タブを選択します。
 4. **[Game Center]** セクションにスクロールします。
 5. **[Game Center]** セクションのスイッチを、**オン**の位置にします。
-5. 必要なすべての情報を入力します。
+6. 必要なすべての情報を入力します。
 
     [![](itunesconnect-images/gamecenter01.png "iTunes Connect での Game Center 情報の編集")](itunesconnect-images/gamecenter01.png#lightbox)
-6. 画面の上部にある **[Save]\(保存\)** ボタンをクリックして、変更を保存します。
+7. 画面の上部にある **[Save]\(保存\)** ボタンをクリックして、変更を保存します。
 
 **[Game Center]** タブを使用して Game Center をアクティブにし、このアプリケーションに使用可能な **Leaderboards** または **Achievements** を保持します。
 
@@ -303,7 +303,7 @@ Apple の Game Center をサポートする iOS ゲーム アプリケーショ�
 6. アプリケーションのレビューが問題なく終了したら、App Store にどのようにリリースするかを選択します。
 
     [![](itunesconnect-images/review02.png "iTunes Connect でのリリース情報の編集")](itunesconnect-images/review02.png#lightbox)
-6. 画面の上部にある **[Save]\(保存\)** ボタンをクリックして、変更を保存します。
+7. 画面の上部にある **[Save]\(保存\)** ボタンをクリックして、変更を保存します。
 
 
 ## <a name="maintaining-pricing-information"></a>価格情報の保持
@@ -333,9 +333,9 @@ Apple の Game Center をサポートする iOS ゲーム アプリケーショ�
     [![](itunesconnect-images/price02.png "iTunes Connect での価格情報の編集")](itunesconnect-images/price02.png#lightbox)
 4. **[Availability Date]\(公開日\)** を選択します。
 5. **[Price Tier]\(価格\)** ドロップダウン リストから希望価格を選択します。
-5. 必要に応じて**教育機関への割引**を有効にします。
-6. 必要に応じて、アプリケーションを**カスタム B2B アプリケーション**として定義します。
-6. **[Save]\(保存\)** ボタンをクリックして変更内容を保存します。
+6. 必要に応じて**教育機関への割引**を有効にします。
+7. 必要に応じて、アプリケーションを**カスタム B2B アプリケーション**として定義します。
+8. **[Save]\(保存\)** ボタンをクリックして変更内容を保存します。
 
 <a name="iap" />
 

@@ -9,12 +9,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: 2c05e46309fb2a38b6b3c1542051e7115a58d13c
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 849c60507fe0ff7b8bf1743be5bbf89ca94b9d6f
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57668834"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865561"
 ---
 # <a name="hello-ios-multiscreen--quickstart"></a>Hello, iOS マルチスクリーン – クイック スタート
 
@@ -24,7 +24,7 @@ ms.locfileid: "57668834"
 
 [後半の詳細のページ](~/ios/get-started/hello-ios-multiscreen/hello-ios-multiscreen-deepdive.md)では、ビルドしたアプリケーションを確認し、アーキテクチャ、ナビゲーション、およびその過程で遭遇したその他の新しい iOS の概念について説明します。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 このガイドは、「Hello, iOS」ドキュメントを中断した箇所から再開するため、「[Hello, iOS クイック スタート](~/ios/get-started/hello-ios/index.md)」を完了する必要があります。 Phoneword アプリの完成版は、[Hello, iOS のサンプル](https://developer.xamarin.com/samples/monotouch/Hello_iOS/) ページからダウンロードできます。
 
@@ -73,13 +73,13 @@ ms.locfileid: "57668834"
 
     ![](hello-ios-multiscreen-quickstart-images/10new.png "新しいボタンを通話ボタンと同じ幅にします")
 
-10. **Properties Pad** で、ボタンの **[名前]** を **CallHistoryButton** に変更し、**[タイトル]** を**通話履歴**に変更します。
+10. **Properties Pad** で、ボタンの **[名前]** を **CallHistoryButton** に変更し、 **[タイトル]** を**通話履歴**に変更します。
 
     ![](hello-ios-multiscreen-quickstart-images/11new.png "ボタンの [名前] を CallHistoryButton に変更し、[タイトル]を通話履歴に変更します")
 
 11. **通話履歴**画面を作成します。 **[ツールボックス]** から、**テーブル ビュー コントローラー**をデザイン サーフェイスにドラッグします。
 
-   ![](hello-ios-multiscreen-quickstart-images/12new.png "テーブル ビュー コントローラーをデザイン サーフェイスにドラッグします")
+    ![](hello-ios-multiscreen-quickstart-images/12new.png "テーブル ビュー コントローラーをデザイン サーフェイスにドラッグします")
 
 12. 次に、シーンの下部にある黒いバーをクリックして、**テーブル ビュー コントローラー**を選択します。 **Properties Pad** で、**テーブル ビュー コントローラー**のクラスを `CallHistoryController` に変更し、**Enter** キーを押します。
 
@@ -146,7 +146,7 @@ ms.locfileid: "57668834"
 
     ![](hello-ios-multiscreen-quickstart-images/15.png "ボタンから通話履歴シーンに Ctrl キーを押しながらドラッグします")
 
-    **[Action Segue]\(アクション セグエ\)** ポップオーバーから、**[表示]** を選択します
+    **[Action Segue]\(アクション セグエ\)** ポップオーバーから、 **[表示]** を選択します
 
     iOS Designer は次の 2 つのシーン間にセグエを追加します。
 
@@ -262,7 +262,7 @@ ms.locfileid: "57668834"
 
     アプリケーションを保存してビルドし、エラーがないことを確認します。
 
-20. **[開始]** ボタンを押して、**iOS シミュレーター**内でアプリケーションを起動します。
+18. **[開始]** ボタンを押して、**iOS シミュレーター**内でアプリケーションを起動します。
 
     ![](hello-ios-multiscreen-quickstart-images/19.png "[開始] ボタンを押して、iOS シミュレーター内でアプリケーションを起動します")
 
@@ -386,7 +386,7 @@ ms.locfileid: "57668834"
 
     ![](hello-ios-multiscreen-quickstart-images/image13.png "ボタンから通話履歴シーンに Ctrl キーを押しながらドラッグします")
 
-    **[Action Segue]\(アクション セグエ\)** ポップオーバーから、**[表示]** を選択します。
+    **[Action Segue]\(アクション セグエ\)** ポップオーバーから、 **[表示]** を選択します。
 
     ![](hello-ios-multiscreen-quickstart-images/image14.png "セグエの種類として [表示] を選択します")
 
@@ -505,7 +505,7 @@ ms.locfileid: "57668834"
 
     アプリケーションを保存してビルドし、エラーがないことを確認します。
 
-20. **[開始]** ボタンを押して、**iOS シミュレーター**内でアプリケーションを起動します。
+18. **[開始]** ボタンを押して、**iOS シミュレーター**内でアプリケーションを起動します。
 
     ![](hello-ios-multiscreen-quickstart-images/19.png "サンプル アプリの最初の画面")
 

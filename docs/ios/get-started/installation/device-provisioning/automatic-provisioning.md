@@ -8,18 +8,18 @@ author: asb3993
 ms.author: amburns
 ms.custom: video
 ms.date: 01/22/2019
-ms.openlocfilehash: 4d4c9980dd4c7be4ed18f1b6ce015d73b3caf836
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: d4bb117273e669cc3c520c42451296e16b6023eb
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58855173"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865318"
 ---
 # <a name="automatic-provisioning-for-xamarinios"></a>Xamarin.iOS の自動プロビジョニング
 
 _Xamarin.iOS が正常にインストールされたら、iOS 開発の次の手順は、iOS デバイスをプロビジョニングすることです。このガイドでは、自動署名を使用して、開発証明書とプロファイルを要求する方法について説明します。_
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -48,7 +48,7 @@ _Xamarin.iOS が正常にインストールされたら、iOS 開発の次の手
 > "authType" : "sa"
 > }
 > ```
-> または
+> or
 > ```
 > Authentication Service Is Unavailable
 > ```
@@ -61,13 +61,13 @@ iOS デバイスで開発のためにアプリに自動的に署名するには�
 
 2. **Info.plist** ファイルを開きます。
 
-3. **[署名]** セクションで、**[自動プロビジョニング]** を選択します。
+3. **[署名]** セクションで、 **[自動プロビジョニング]** を選択します。
 
     ![チーム セレクターのドロップダウン](automatic-provisioning-images/image2.png)
 
 4. **[チーム]** ドロップダウンからチームを選択します。
 
-6. 数秒後に、署名証明書とプロビジョニング プロファイルが作成されます。
+5. 数秒後に、署名証明書とプロビジョニング プロファイルが作成されます。
 
     ![証明書とプロファイルが正常に作成されました](automatic-provisioning-images/image5.png)
 
@@ -77,7 +77,7 @@ iOS デバイスで開発のためにアプリに自動的に署名するには�
 
 1. 「[Mac とペアリング](~/ios/get-started/installation/windows/connecting-to-mac/index.md)」ガイドに基づき、Visual Studio 2019 と Mac をペアリングします。
 
-2. **ソリューション エクスプローラー**でプロジェクト名を右クリックし、**[プロパティ]** を選択します. 次に、**[iOS バンドル署名]** タブに移動します。
+2. **ソリューション エクスプローラー**でプロジェクト名を右クリックし、 **[プロパティ]** を選択します. 次に、 **[iOS バンドル署名]** タブに移動します。
 
 3. **[自動プロビジョニング]** スキームを選択します。
 
@@ -87,7 +87,7 @@ iOS デバイスで開発のためにアプリに自動的に署名するには�
 
     ![チームの選択](automatic-provisioning-images/prov3.png)
 
-4. これで自動署名プロセスが始まります。 次に、Visual Studio によって App ID の生成が試行されます。プロファイルとこれらの成果物を署名に使用するための署名 ID がプロビジョニングされます。 ビルド出力で生成プロセスを確認できます。
+5. これで自動署名プロセスが始まります。 次に、Visual Studio によって App ID の生成が試行されます。プロファイルとこれらの成果物を署名に使用するための署名 ID がプロビジョニングされます。 ビルド出力で生成プロセスを確認できます。
 
     ![ビルド出力で確認できる成果物の生成](automatic-provisioning-images/prov5.png)
 

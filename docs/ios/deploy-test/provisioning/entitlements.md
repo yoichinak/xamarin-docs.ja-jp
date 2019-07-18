@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/13/2018
-ms.openlocfilehash: 5ce778d0e6c2d023362ca5c9c691d77548dd7383
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 0314ec958b2c38e702c56ef64d1cc2bba1383060
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672600"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865846"
 ---
 # <a name="working-with-entitlements-in-xamarinios"></a>Xamarin.iOS での権利の使用
 
@@ -44,7 +44,7 @@ Visual Studio for Mac で権利を構成するには、次の操作を行いま�
 1. **ソリューション エクスプローラー**で、**Info.plist** ファイルをダブルクリックして開き、編集します。
 2. **[iOS アプリケーションのターゲット]** セクションで、アプリケーションの名前を入力し、アプリ ID が定義されたときに作成された**バンドル ID** を入力します。
 
-  ![](entitlements-images/servicexs01.png "バンドル ID を入力します")
+    ![](entitlements-images/servicexs01.png "バンドル ID を入力します")
 
 3. 変更内容を **Info.plist** ファイルに保存します。
 4. **ソリューション エクスプローラー**で、**Entitlements.plist** ファイルをダブルクリックして開き、編集します。
@@ -58,13 +58,13 @@ Visual Studio for Mac で権利を構成するには、次の操作を行いま�
 
 Visual Studio で権利を構成するには、次の操作を行います。
 
-1. **ソリューション エクスプローラー**で、**Info.plist** を右クリックし、**[プログラムから開く]** を選択し、 **[プロパティ一覧エディター]** ファイルを選択して開き、編集します。
+1. **ソリューション エクスプローラー**で、**Info.plist** を右クリックし、 **[プログラムから開く]** を選択し、 **[プロパティ一覧エディター]** ファイルを選択して開き、編集します。
 2. **[iOS アプリケーションのターゲット]** セクションで、アプリケーションの名前を入力し、アプリ ID が定義されたときに作成された**バンドル ID** を入力します。
 
-  ![](entitlements-images/servicevs01.png "バンドル ID の設定")
+    ![](entitlements-images/servicevs01.png "バンドル ID の設定")
 
 3. 変更内容を **Info.plist** ファイルに保存します。
-4. **ソリューション エクスプローラー**で、**Entitlements.plist** ファイルを右クリックし、**[プログラムから開く]** を選択し、 **[プロパティ一覧エディター]** を選択して開き、編集します。
+4. **ソリューション エクスプローラー**で、**Entitlements.plist** ファイルを右クリックし、 **[プログラムから開く]** を選択し、 **[プロパティ一覧エディター]** を選択して開き、編集します。
 
     ![](entitlements-images/servicevs02.png "権利の編集")
 
@@ -81,10 +81,10 @@ Visual Studio で権利を構成するには、次の操作を行います。
 
 Xamarin.iOS に Entitlements.plist ファイルを追加するには、次の操作を行います。
 
-1.  プロジェクト ファイルを右クリックし、**[追加]、[新しいファイル...]** の順に参照します。
+1. プロジェクト ファイルを右クリックし、 **[追加]、[新しいファイル...]** の順に参照します。
 
     ![[ファイルの追加] コンテキスト メニュー](entitlements-images/image1.png)
-2.  [新しいファイル] ダイアログで、**[iOS]、[プロパティ一覧]** の順に選択し、Entitlements という名前を付けます。
+2. [新しいファイル] ダイアログで、 **[iOS]、[プロパティ一覧]** の順に選択し、Entitlements という名前を付けます。
 
     ![[新しいファイル] ダイアログ](entitlements-images/image2.png)
 
@@ -119,7 +119,7 @@ Entitlements.plist エディターの [ソース] パネルを使用して、権
         - **文字列**: `$(TeamIdentifierPrefix)$(CFBundleIdentifier)`
 
 * **注**:
-    - `$(TeamIdentifierPrefix)` 文字列は、developer.apple.com にログインし、**[メンバー センター]、[あなたのアカウント]、[開発者アカウントの概要]** の順に移動して、チーム ID (または開発者の個別の ID) を取得することで確認できます。 これは 10 桁の文字列 (A93A5CM278 など) になります。
+    - `$(TeamIdentifierPrefix)` 文字列は、developer.apple.com にログインし、 **[メンバー センター]、[あなたのアカウント]、[開発者アカウントの概要]** の順に移動して、チーム ID (または開発者の個別の ID) を取得することで確認できます。 これは 10 桁の文字列 (A93A5CM278 など) になります。
     - `$(CFBundleIdentifier)` 文字列は `iCloud` で始まり、iCloud コンテナーは「[機能の使用](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md)」ガイドの手順に従って作成されるときに設定されます。
     - $`(TeamIdentifierPrefix)` および `$(CFBundleIdentifier)` プレースホルダーを使用することができ、ビルド時に適切な値に置き換えられます。
 
