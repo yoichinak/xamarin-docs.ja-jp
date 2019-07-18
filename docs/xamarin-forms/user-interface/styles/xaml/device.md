@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: fd5181040c1805d3fdabdae4803bbe32c6bb6652
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.openlocfilehash: 05e8fb9ef26f2a2a0b812b25853e4f61e658fa46
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55292234"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65970562"
 ---
 # <a name="device-styles-in-xamarinforms"></a>Xamarin.Forms でのデバイスのスタイル
 
@@ -29,12 +29,12 @@ _Xamarin.Forms には、Device.Styles クラスで、デバイスのスタイル
 - [`SubtitleStyle`](xref:Xamarin.Forms.Device.Styles.SubtitleStyle)
 - [`TitleStyle`](xref:Xamarin.Forms.Device.Styles.TitleStyle)
 
-6 つのすべてのスタイルにのみ適用[ `Label` ](xref:Xamarin.Forms.Label)インスタンス。 など、`Label`段落の本文が表示されている設定がその[ `Style` ](xref:Xamarin.Forms.VisualElement.Style)プロパティを[ `BodyStyle`](xref:Xamarin.Forms.Device.Styles.BodyStyle)します。
+6 つのすべてのスタイルにのみ適用[ `Label` ](xref:Xamarin.Forms.Label)インスタンス。 など、`Label`段落の本文が表示されている設定がその[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)プロパティを[ `BodyStyle`](xref:Xamarin.Forms.Device.Styles.BodyStyle)します。
 
 次のコード例に示しますを使用して、*デバイス*XAML ページのスタイル。
 
 ```xaml
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.DeviceStylesPage" Title="Device" Icon="xaml.png">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.DeviceStylesPage" Title="Device" IconImageSource="xaml.png">
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="myBodyStyle" TargetType="Label"
@@ -89,7 +89,7 @@ public class DeviceStylesPageCS : ContentPage
         };
 
         Title = "Device";
-        Icon = "csharp.png";
+        IconImageSource = "csharp.png";
         Padding = new Thickness (0, 20, 0, 0);
 
         Content = new StackLayout {
@@ -109,7 +109,7 @@ public class DeviceStylesPageCS : ContentPage
 }
 ```
 
-[ `Style` ](xref:Xamarin.Forms.VisualElement.Style)の各プロパティ[ `Label` ](xref:Xamarin.Forms.Label)インスタンスから適切なプロパティに設定されて、 [ `Devices.Styles` ](xref:Xamarin.Forms.Device.Styles)クラス。
+[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)の各プロパティ[ `Label` ](xref:Xamarin.Forms.Label)インスタンスから適切なプロパティに設定されて、 [ `Devices.Styles` ](xref:Xamarin.Forms.Device.Styles)クラス。
 
 ## <a name="accessibility"></a>ユーザー補助
 

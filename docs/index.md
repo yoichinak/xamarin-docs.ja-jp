@@ -8,12 +8,12 @@ ms.author: crdun
 ms.date: 02/12/2019
 featureFlags:
 - clicktale
-ms.openlocfilehash: ee92a3430fcce5bcd389d2bfa78762b71d1d5be9
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4613eec9db017f27f6ab890522867ab4d68b4684
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61031014"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830843"
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -57,18 +57,18 @@ ms.locfileid: "61031014"
                 </a>
             </li>
              <li>
-                <a href="https://university.xamarin.com">
+                <a href="~/whats-new/index.yml">
                     <div class="cardSize">
                         <div class="cardPadding">
                             <div class="card">
                                 <div class="cardImageOuter">
-                                    <div class="cardImage" style='background-position: 0px 0px; background-image: url("https://docs.microsoft.com/media/common/i_virtual-training.svg"); background-size: cover;'>
-                                        <img style="display: none;" alt="Xamarin University" src="https://docs.microsoft.com/media/common/i_virtual-training.svg" data-linktype="external" data-hoverimage="https://docs.microsoft.com/media/common/i_virtual-training.svg">
+                                    <div class="cardImage" style='background-position: 0px 0px; background-image: url("https://docs.microsoft.com/media/common/i_whats-new.svg"); background-size: cover;'>
+                                        <img style="display: none;" alt="What's New?" src="https://docs.microsoft.com/media/media/common/i_whats-new.svg" data-linktype="external" data-hoverimage="https://docs.microsoft.com/media/common/i_whats-new.svg">
                                     </div>
                                 </div>
                                 <div class="cardText">
-                                    <h3 class="x-hidden-focus">Xamarin University</h3>
-                                    <p>無料のセルフガイド学習を利用してオンラインで学習します。</p>
+                                    <h3 class="x-hidden-focus">新機能</h3>
+                                    <p>Xamarin ドキュメントの新機能をご紹介します。</p>
                                 </div>
                             </div>
                         </div>
@@ -95,11 +95,12 @@ ms.locfileid: "61031014"
                                                 <h3>Xamarin について学習する</h3>
                                                 <h4>Windows および macOS 上の Visual Studio で C# と .NET を使用し、Xamarin.Forms でクロスプラットフォームの Android および iOS アプリを構築します。</h4>
                                                 <ul class="noBullet">
-                                                    <li><a class="barLink" href="~/cross-platform/get-started/introduction-to-mobile-development.md"><img  src="https://docs.microsoft.com/media/logos/logo_xamarin.svg" alt="" />Xamarin アプリがネイティブである</a></li>
-                                                    <li><a class="barLink" href="~/cross-platform/desktop/index.md"><img  src="https://docs.microsoft.com/media/logos/logo_NET.svg" alt="" />.NET デスクトップ開発者向け Xamarin</a></li>
-                                                    <li><a class="barLink" href="~/android/get-started/java-developers.md"><img  src="https://docs.microsoft.com/media/logos/logo_java.svg" alt="" />Java 開発者向け Xamarin</a></li>
-                                                    <li><a class="barLink" href="~/ios/get-started/objective-c-developers/index.md"><img  src="https://docs.microsoft.com/media/logos/logo_xcode.svg" alt=" icon" />Objective-C 開発者向け Xamarin</a></li>
-                                                    <li><a class="barLink" href="~/xamarin-forms/data-cloud/index.md"><img  src="https://docs.microsoft.com/media/logos/logo_azure.svg" alt="" />Xamarin を使用した Azure</a></li>
+                                                    <li><a class="barLink" href="~/cross-platform/get-started/introduction-to-mobile-development.md"><img  src="https://docs.microsoft.com/media/logos/logo_xamarin.svg" alt="" />Xamarin とは</a></li>
+                                                    <li><a class="barLink" href="~/xamarin-forms/index.yml"><img  src="https://docs.microsoft.com/media/logos/logo_xamarin.svg" alt="" />Xamarin.Forms</a></li>
+                                                    <li><a class="barLink" href="~/android/index.yml"><img  src="https://docs.microsoft.com/media/logos/logo_android.svg" alt="" />Xamarin.Android</a></li>
+                                                    <li><a class="barLink" href="~/ios/index.yml"><img  src="https://docs.microsoft.com/media/common/i_web-apps.svg" alt=" icon" />Xamarin.iOS</a></li>
+                                                    <li><a class="barLink" href="~/mac/index.yml"><img  src="https://docs.microsoft.com/media/common/i_xplat-code.svg" alt=" icon" />Xamarin.Mac</a></li>
+                                                    <li><a class="barLink" href="~/xamarin-forms/data-cloud/index.yml"><img  src="https://docs.microsoft.com/media/logos/logo_azure.svg" alt="" />Xamarin を使用した Azure</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -216,7 +217,7 @@ Grid レイアウト </a>
                                                                     <a class="barLink" href="~/get-started/tutorials/pop-ups/index.yml">
                                                                         <img src="https://docs.microsoft.com/media/common/i_alert.svg" alt="">
 ポップアップ </a>
-                                                                </li>                                                                
+                                                                </li>
                                                                 <li>
                                                                     <a class="barLink" href="~/get-started/tutorials/app-lifecycle/index.yml">
                                                                         <img src="https://docs.microsoft.com/media/common/i_agile.svg" alt="">
@@ -249,26 +250,26 @@ Web サービス </a>
                                     <div class="cardPadding">
                                         <div class="card">
                                             <div class="cardText">
-                                                <h3>単一プラットフォームの Xamarin アプリを構築する</h3>
-                                                <h4>すべての Xamarin アプリでは、Xamarin.Forms 機能を組み込むだけでなく、コードを相互に、また、他の .NET プラットフォームと共有することができます。</h4>
+                                                <h3>既存の知識を活用する</h3>
+                                                <h4>Xamarin プロジェクトでは、現在のスキルを Android や iOS のアプリの構築に適用できます。 詳細については、お好みのプラットフォームを選択してください。</h4>
                                                  <table cellpadding="0" cellspacing="0" border="0"><tr><td style="border-top-color:transparent!important;padding-left:0;">
                                                 <ul class="noBullet">
                                                     <li>
-                                                        <a class="barLink" href="~/android/index.yml">
-                                                            <img src="https://docs.microsoft.com/media/logos/logo_android.svg" alt="Android logo">
-Android</a>
+                                                        <a class="barLink" href="~/cross-platform/desktop/index.md">
+                                                            <img src="https://docs.microsoft.com/media/logos/logo_NET.svg" alt="">
+.NET デスクトップ (UWP、WPF、WinForms)</a>
                                                     </li>
                                                     </ul></td><td style="border-top-color:transparent!important;padding-left:0;"><ul class="noBullet">
                                                     <li>
-                                                        <a class="barLink" href="~/ios/index.yml">
-                                                            <img src="https://docs.microsoft.com/media/common/i_web-apps.svg" alt="iOS logo">
-iOS</a>
+                                                        <a class="barLink" href="~/android/get-started/java-developers.md">
+                                                            <img src="https://docs.microsoft.com/media/logos/logo_java.svg" alt="">
+Android と Java</a>
                                                     </li>
                                                     </ul></td><td style="border-top-color:transparent!important;padding-left:0;"><ul class="noBullet">
                                                     <li>
-                                                        <a class="barLink" href="~/mac/index.yml">
-                                                            <img src="https://docs.microsoft.com/media/common/i_xplat-code.svg" alt="Mac">
-Mac</a>
+                                                        <a class="barLink" href="~/ios/get-started/objective-c-developers/index.md">
+                                                            <img src="https://docs.microsoft.com/media/logos/logo_xcode.svg" alt="">
+iOS と Objective-C</a>
                                                     </li>
                                                 </ul></td></tr></table>
                                             </div>
@@ -286,7 +287,14 @@ Mac</a>
                     <li>
                         <a href="#XamarinForms"> </a>
                         <ul id="XamarinForms" class="cardsC">
-                            <!--li>
+                            <li>
+                                <div class="container intro">
+                                    <p>
+Xamarin.Forms は C# と .NET を使用する Android、iOS、Mac、Windows のクロスプラットフォーム ツールキットです。 ユーザー インターフェイス コードとアプリ ロジック コードをすべてのプラットフォームで共有します。
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
                                 <a href="~/xamarin-forms/get-started/index.md">
                                     <div class="cardSize">
                                         <div class="cardPadding">
@@ -297,14 +305,14 @@ Mac</a>
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Getting Started</h3>
-                                                    <p>Tutorials to get you up and running with Xamarin.Forms. Make sure everything is installed correctly, and build your first app.</p>
+                                                    <h3>Xamarin.Forms とは</h3>
+                                                    <p>Xamarin.Forms とは何か、そしてそれが Android および iOS のアプリの構築と展開にどのように役立つのかについて説明します。</p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </a>
-                            </li-->
+                            </li>
                             <li>
                                 <a href="~/xamarin-forms/app-fundamentals/index.md">
                                     <div class="cardSize">
@@ -401,7 +409,7 @@ Mac</a>
                                 </a>
                             </li>
                             <li>
-                                <a href="~/xamarin-forms/data-cloud/index.md">
+                                <a href="~/xamarin-forms/data-cloud/index.yml">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -411,8 +419,8 @@ Mac</a>
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>データとクラウド サービス</h3>
-                                                    <p>データの格納とクラウド サービスへのアクセスについて説明します。</p>
+                                                    <h3>データと Azure Cloud Services</h3>
+                                                    <p>データの格納と Azure Cloud Services へのアクセス。</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -464,7 +472,7 @@ Mac</a>
                                             <div class="card">
                                                 <div class="cardImageOuter x-hidden-focus">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img alt="Samples" src="https://docs.microsoft.com/en-us/media/illustrations/team-services-dev-ops-test.svg" data-linktype="external">
+                                                        <img alt="Samples" src="https://docs.microsoft.com/media/illustrations/team-services-dev-ops-test.svg" data-linktype="external">
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
@@ -664,7 +672,7 @@ Mac</a>
                                             <div class="card">
                                                 <div class="cardImageOuter">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img src="https://docs.microsoft.com/en-us/media/illustrations/teams-fast-track.svg" alt="Continuous Integration" />
+                                                        <img src="https://docs.microsoft.com/media/illustrations/teams-fast-track.svg" alt="Continuous Integration" />
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
@@ -689,25 +697,6 @@ Mac</a>
                                                 <div class="cardText">
                                                     <h3>UrhoSharp</h3>
                                                     <p>クロスプラットフォームの 3D グラフィックスとゲーム。</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="~/graphics-games/cocossharp/index.md">
-                                    <div class="cardSize">
-                                        <div class="cardPadding">
-                                            <div class="card">
-                                                <div class="cardImageOuter">
-                                                    <div class="cardImage bgdAccent1">
-                                                        <img src="~/media/index/xamarin-graphics-cocos.svg?branch=master" alt="CocosSharp" />
-                                                    </div>
-                                                </div>
-                                                <div class="cardText">
-                                                    <h3>CocosSharp</h3>
-                                                    <p>モバイル デバイス用のクロスプラットフォーム 2D ゲームを構築します。</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -743,7 +732,7 @@ Mac</a>
         <h2>コミュニケーションを取るには</h2>
         <ul class="links">
            <li>
-                <a href="https://blog.xamarin.com/"> ブログ </a>
+                <a href="https://devblogs.microsoft.com/xamarin/"> ブログ </a>
             </li>
             <li>
                 <a href="https://forums.xamarin.com/"> フォーラム</a>

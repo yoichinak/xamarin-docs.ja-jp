@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 9d9bef6d1a0817abc12b5a9bd266b1e1e7d38348
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 95ebcc8ef436c90e807045bd009b35ff1c3e9c1f
+ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57667552"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66740798"
 ---
 # <a name="actionbar"></a>ActionBar
 
@@ -51,7 +51,7 @@ class SampleTabFragment: Fragment
         ViewGroup container, Bundle savedInstanceState)
     {
         base.OnCreateView (inflater, container, savedInstanceState);
-       
+
         var view = inflater.Inflate (
             Resource.Layout.Tab, container, false);
 
@@ -123,7 +123,7 @@ this.ActionBar.AddTab (tab);
 public override bool OnCreateOptionsMenu (IMenu menu)
 {
     MenuInflater.Inflate (Resource.Menu.ActionBarMenu, menu);       
-           
+
     var shareMenuItem = menu.FindItem (Resource.Id.shareMenuItem);           
     var shareActionProvider =
        (ShareActionProvider)shareMenuItem.ActionProvider;
@@ -153,7 +153,7 @@ Intent CreateIntent ()
 
 ## <a name="related-links"></a>関連リンク
 
-- [こんにちはタブ ICS (サンプル)](https://developer.xamarin.com/samples/HelloTabsICS/)
+- [こんにちはタブ ICS (サンプル)](https://developer.xamarin.com/samples/monodroid/HelloTabsICS/)
 - [ShareActionProvider デモ (サンプル)](https://developer.xamarin.com/samples/monodroid/ShareActionProviderDemo/)
 - [Ice Cream Sandwich の概要](http://www.android.com/about/ice-cream-sandwich/)
 - [Android 4.0 プラットフォーム](https://developer.android.com/sdk/android-4.0.html)

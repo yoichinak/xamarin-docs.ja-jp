@@ -7,11 +7,11 @@ author: asb3993
 ms.author: amburns
 ms.date: 05/08/2018
 ms.openlocfilehash: 06aa6569301d1bfdbf9f6fd1e7397a38a9beb6f6
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39350821"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61157194"
 ---
 # <a name="general-frequently-asked-questions"></a>[全般] よく寄せられる質問
 
@@ -23,7 +23,7 @@ ms.locfileid: "39350821"
 ### <a name="pcl-reflection-apipcl-reflectionmd"></a>[PCL Reflection API](pcl-reflection.md)
 Microsoft は、ポータブル クラス ライブラリで使用するための新しいリフレクション API を開発しました。 PCL に移動したい既存のリフレクション コードがあれば、これが機能しません。
 
-### <a name="pcl-case-study-how-can-i-resolve-problems-related-to-systemdiagnosticstracing-for-the-microsoft-tpl-dataflow-nuget-packagepcl-case-studymd"></a>[PCL のケース スタディ: Microsoft TPL Dataflow NuGet パッケージの System.Diagnostics.Tracing に関連する問題の解決方法](pcl-case-study.md)
+### <a name="pcl-case-study-how-can-i-resolve-problems-related-to-systemdiagnosticstracing-for-the-microsoft-tpl-dataflow-nuget-packagepcl-case-studymd"></a>[PCL のケース スタディ:Microsoft TPL Dataflow NuGet パッケージの System.Diagnostics.Tracing に関連する問題を解決する方法](pcl-case-study.md)
 Xamarin.iOS および Xamarin.Android では、参照として、すべての PCL プロファイルの 100% は実装されていません。 Visual Studio for Mac、Visual Studio、および NuGet パッケージ マネージャーで実用的な利便性のためは、Xamarin プロジェクトは、不完全な実装のみを持ついくつかのプロファイルの使用を許可します。 たとえば、Xamarin.iOS と Xamarin.Android のどちらも現在が含まれます内の型の完全な実装には、 `System.Diagnostics.Tracing` PCL 名前空間。 ポータブル net45 + win8 + wp8 + wpa81 に参照するアプリのプロジェクトを切り替えることでこの問題を回避機能は、TPL データフロー ライブラリのバージョン。
 
 ## <a name="nuget-packages--xamarin-components"></a>NuGet パッケージと Xamarin コンポーネント

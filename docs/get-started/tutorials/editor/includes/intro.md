@@ -1,11 +1,16 @@
 ---
-ms.openlocfilehash: f0a7a0f66f78739ce191c257de91e4770e65282c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: ab8d29e876b96049cd4cfeb734b33724cba30624
+ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61373438"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67277310"
 ---
+このチュートリアルを試行する前に、以下を正常に完了しておく必要があります。
+
+- [最初の Xamarin.Forms アプリのビルド](~/get-started/first-app/index.md)のクイック スタート。
+- [StackLayout](~/get-started/tutorials/stacklayout/index.yml) のチュートリアル。
+
 このチュートリアルでは、次の作業を行う方法について説明します。
 
 > [!div class="checklist"]
@@ -13,24 +18,6 @@ ms.locfileid: "61373438"
 > - `Editor` の変更中にテキストに応答する。
 > - `Editor` の動作をカスタマイズする。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+[`Editor`](xref:Xamarin.Forms.Editor) の動作をカスタマイズする方法を示す簡単なアプリケーションを作成するには、Visual Studio 2019 または Visual Studio for Mac を使用します。 次のスクリーンショットは、最終的なアプリケーションです。
 
-### <a name="prerequisites"></a>必須コンポーネント
-
-このチュートリアルを完了するには、**.NET によるモバイル開発**ワークロードがインストールされた、Visual Studio 2017 (最新リリース) が必要です。 さらに、iOS でチュートリアル アプリケーションを構築するには、ペアリング済みの Mac が必要になります。 Xamarin プラットフォームのインストールについては、「[Xamarin のインストール](~/get-started/installation/index.md)」を参照してください。 Mac ビルド ホストへの Visual Studio 2017 の接続については、「[Xamarin.iOS 開発のために Mac とペアリングする](~/ios/get-started/installation/windows/connecting-to-mac/index.md)」を参照してください。
-
-このチュートリアルを試行する前に、以下を正常に完了しておく必要があります。
-
-- [最初の Xamarin.Forms アプリのビルド](~/get-started/first-app/index.md)のクイック スタート。
-- [StackLayout](~/get-started/tutorials/stacklayout/index.yml) のチュートリアル。
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-### <a name="prerequisites"></a>必須コンポーネント
-
-このチュートリアルを完了するには、iOS と Android のプラットフォームのサポートがインストールされた Visual Studio for Mac (最新リリース) が必要です。 さらに、Xcode (最新リリース) も必要になります。 Xamarin プラットフォームのインストールについて詳しくは、「[Xamarin のインストール](~/get-started/installation/index.md)」を参照してください。
-
-このチュートリアルを試行する前に、以下を正常に完了しておく必要があります。
-
-- [最初の Xamarin.Forms アプリのビルド](~/get-started/first-app/index.md)のクイック スタート。
-- [StackLayout](~/get-started/tutorials/stacklayout/index.yml) のチュートリアル。
+[![iOS および Android での、自動サイズ調整 Editor のスクリーンショット](../images/customize-behavior.png "自動サイズ調整 Editor")](../images/customize-behavior-large.png#lightbox "自動サイズ調整 Editor")

@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
 ms.openlocfilehash: 98a770d05014e0498b805ed9ffa0c84314efc765
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107123"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61375037"
 ---
 # <a name="working-with-tvos-segmented-controls-in-xamarin"></a>Xamarin で tvOS のセグメント化されたコントロールの操作
 
@@ -42,7 +42,7 @@ Apple では、検索の虫眼鏡などのセグメントのアイコンのシ�
 
 Apple では、セグメントのテキストを操作する次の推奨事項。
 
-- **短く、わかりやすい名詞を使用して、** -、セグメントのタイトルは、特定のセグメントを選択するときに期待されるコンテンツの種類を明確に記述する必要があります。 例: 音楽またはビデオ。
+- **短く、わかりやすい名詞を使用して、** -、セグメントのタイトルは、特定のセグメントを選択するときに期待されるコンテンツの種類を明確に記述する必要があります。 例:音楽またはビデオ。
 - **タイトル文字の大文字と小文字を使用して、** -記事、接続詞前置詞より小さい 4 つの文字を除くセグメントのタイトルのすべての単語を大文字にする必要があります。
 - **使用して、簡単に言えば、フォーカスされたタイトル**-タイトル、短期保存とセグメントが選択されているときに想定されるコンテンツの種類に焦点を保持します。
 
@@ -65,7 +65,7 @@ Xamarin.tvOS アプリでのセグメントのコントロールを操作する�
     [![](segmented-controls-images/segment03.png "[ウィジェット] タブ")](segmented-controls-images/segment03.png#lightbox)
 1. 使用して、**セグメント**フィールドをコント ローラー内のセグメントの数を制御します。
 1. 特定のセグメントを選択、**セグメント ドロップダウン**などの個々 のプロパティを調整する**タイトル**または**イメージ**場合は、特定のセグメントを制御する**有効になっている**または**選択**コントロールが表示されます。
-1. 最後に、割り当てる**名**コントロール内に応答できるようにC#コード。 例えば: 
+1. 最後に、割り当てる**名**コントロール内に応答できるようにC#コード。 例: 
 
     [![](segmented-controls-images/segment04.png "名前を割り当てる")](segmented-controls-images/segment04.png#lightbox)
 1. 変更内容を保存します。
@@ -81,7 +81,7 @@ Xamarin.tvOS アプリでのセグメントのコントロールを操作する�
     [![](segmented-controls-images/segment03-vs.png "[ウィジェット] タブ")](segmented-controls-images/segment03-vs.png#lightbox)
 1. 使用して、**セグメント**フィールドをコント ローラー内のセグメントの数を制御します。
 1. 特定のセグメントを選択、**セグメント ドロップダウン**などの個々 のプロパティを調整する**タイトル**または**イメージ**場合は、特定のセグメントを制御する**有効になっている**または**選択**コントロールが表示されます。
-1. 最後に、割り当てる**名**コントロール内に応答できるようにC#コード。 例えば: 
+1. 最後に、割り当てる**名**コントロール内に応答できるようにC#コード。 例: 
 
     [![](segmented-controls-images/segment04-vs.png "名前を割り当てる")](segmented-controls-images/segment04-vs.png#lightbox)
 1. 変更内容を保存します。

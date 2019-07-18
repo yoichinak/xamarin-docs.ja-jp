@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/29/2017
-ms.openlocfilehash: a1027b1fd738c80cf5917effc66957f77a337ecf
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 56f7a5308d15425bdedd7d9098882a072d90d1f7
+ms.sourcegitcommit: 864f47c4f79fa588b65ff7f721367311ff2e8f8e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53054568"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "64347053"
 ---
 # <a name="creating-a-custom-layout"></a>カスタム レイアウトの作成
 
@@ -65,27 +65,27 @@ Invalidation は、ページ上の要素の変更によって新しいレイア�
 
 [ `Layout` ](xref:Xamarin.Forms.Layout)クラスも定義、 [ `InvalidateLayout` ](xref:Xamarin.Forms.Layout.InvalidateLayout)メソッドへのような目的を持つ、 [ `InvalidateMeasure` ](xref:Xamarin.Forms.VisualElement.InvalidateMeasure)メソッド。 `InvalidateLayout`レイアウトの配置し、その子のサイズに影響する変更が加えられるたびに、メソッドを呼び出す必要があります。 たとえば、`Layout`クラスを呼び出す、`InvalidateLayout`メソッドの子が追加またはレイアウトから削除されるたびにします。
 
-[ `InvalidateLayout` ](xref:Xamarin.Forms.Layout.InvalidateLayout)の反復的な呼び出しを最小限に抑えるのキャッシュ実装をオーバーライドする、 [ `Measure` ](xref:Xamarin.Forms.VisualElement.Measure(System.Double,System.Double,Xamarin.Forms.MeasureFlags))レイアウトの子のメソッド。 オーバーライドする、`InvalidateLayout`メソッドの子を追加またはレイアウトから削除するときに通知を提供します。 同様に、 [ `OnChildMeasureInvalidated` ](xref:Xamarin.Forms.Layout.OnChildMeasureInvalidated)レイアウトの子のいずれかのサイズが変更されたときに通知を提供するメソッドをオーバーライドすることができます。 両方のメソッド オーバーライドのカスタム レイアウト キャッシュをクリアして応答します。 詳細については、[計算とデータのキャッシュ](#caching)を参照してください。
+[ `InvalidateLayout` ](xref:Xamarin.Forms.Layout.InvalidateLayout)の反復的な呼び出しを最小限に抑えるのキャッシュ実装をオーバーライドする、 [ `Measure` ](xref:Xamarin.Forms.VisualElement.Measure(System.Double,System.Double,Xamarin.Forms.MeasureFlags))レイアウトの子のメソッド。 オーバーライドする、`InvalidateLayout`メソッドの子を追加またはレイアウトから削除するときに通知を提供します。 同様に、 [ `OnChildMeasureInvalidated` ](xref:Xamarin.Forms.Layout.OnChildMeasureInvalidated)レイアウトの子のいずれかのサイズが変更されたときに通知を提供するメソッドをオーバーライドすることができます。 両方のメソッド オーバーライドのカスタム レイアウト キャッシュをクリアして応答します。 詳細については、次を参照してください。[計算とデータのキャッシュ](#caching)します。
 
 ## <a name="creating-a-custom-layout"></a>カスタム レイアウトの作成
 
 カスタム レイアウトを作成するプロセスは次のとおりです。
 
-1. `Layout<View>` クラスから派生するクラスを作成します。 詳細については、[作成、WrapLayout](#creating)を参照してください。
-1. [*省略可能な*] レイアウト クラスで設定するパラメーターのバインド可能なプロパティでサポートされるプロパティを追加します。 詳細については、[プロパティはバインド可能なプロパティでサポートを追加する](#adding_properties)を参照してください。
-1. 上書き、 [ `OnMeasure` ](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double))メソッドを呼び出す、 [ `Measure` ](xref:Xamarin.Forms.VisualElement.Measure(System.Double,System.Double,Xamarin.Forms.MeasureFlags))レイアウトのすべての子、および戻り値の要求サイズ、レイアウトのメソッド。 詳細については、[OnMeasure メソッドをオーバーライドする](#onmeasure)を参照してください。
-1. 上書き、 [ `LayoutChildren` ](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double))メソッドを呼び出す、 [ `Layout` ](xref:Xamarin.Forms.VisualElement.Layout(Xamarin.Forms.Rectangle))レイアウトのすべての子のメソッド。 呼び出しに失敗し、 [ `Layout` ](xref:Xamarin.Forms.VisualElement.Layout(Xamarin.Forms.Rectangle))レイアウトでそれぞれの子のメソッドが適切なサイズまたは位置を受信しない子になります、そのため、子なりませんページに表示します。 詳細については、[LayoutChildren メソッドをオーバーライドする](#layoutchildren)を参照してください。
+1. `Layout<View>` クラスから派生するクラスを作成します。 詳細については、次を参照してください。[作成、WrapLayout](#creating)します。
+1. [*省略可能な*] レイアウト クラスで設定するパラメーターのバインド可能なプロパティでサポートされるプロパティを追加します。 詳細については、次を参照してください。[プロパティはバインド可能なプロパティでサポートを追加する](#adding_properties)します。
+1. 上書き、 [ `OnMeasure` ](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double))メソッドを呼び出す、 [ `Measure` ](xref:Xamarin.Forms.VisualElement.Measure(System.Double,System.Double,Xamarin.Forms.MeasureFlags))レイアウトのすべての子、および戻り値の要求サイズ、レイアウトのメソッド。 詳細については、次を参照してください。 [OnMeasure メソッドをオーバーライドする](#onmeasure)します。
+1. 上書き、 [ `LayoutChildren` ](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double))メソッドを呼び出す、 [ `Layout` ](xref:Xamarin.Forms.VisualElement.Layout(Xamarin.Forms.Rectangle))レイアウトのすべての子のメソッド。 呼び出しに失敗し、 [ `Layout` ](xref:Xamarin.Forms.VisualElement.Layout(Xamarin.Forms.Rectangle))レイアウトでそれぞれの子のメソッドが適切なサイズまたは位置を受信しない子になります、そのため、子なりませんページに表示します。 詳細については、次を参照してください。 [LayoutChildren メソッドをオーバーライドする](#layoutchildren)します。
 
   > [!NOTE]
 >  内の子を列挙するときに、 [ `OnMeasure` ](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double))と[ `LayoutChildren` ](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double))オーバーライド、すべての子のスキップを[ `IsVisible` ](xref:Xamarin.Forms.VisualElement.IsVisible) に設定されて`false`. カスタム レイアウトが非表示の子の余地を残すされないようになります。
 
-1. [*省略可能な*] オーバーライド、 [ `InvalidateLayout` ](xref:Xamarin.Forms.Layout.InvalidateLayout)に子が追加またはレイアウトから削除するときに通知するメソッド。 詳細については、[InvalidateLayout メソッドをオーバーライドする](#invalidatelayout)を参照してください。
-1. [*省略可能な*] オーバーライド、 [ `OnChildMeasureInvalidated` ](xref:Xamarin.Forms.Layout.OnChildMeasureInvalidated)レイアウトの子のいずれかのサイズが変更されたときに通知を受け取るメソッド。 詳細については、[OnChildMeasureInvalidated メソッドをオーバーライドする](#onchildmeasureinvalidated)を参照してください。
+1. [*省略可能な*] オーバーライド、 [ `InvalidateLayout` ](xref:Xamarin.Forms.Layout.InvalidateLayout)に子が追加またはレイアウトから削除するときに通知するメソッド。 詳細については、次を参照してください。 [InvalidateLayout メソッドをオーバーライドする](#invalidatelayout)します。
+1. [*省略可能な*] オーバーライド、 [ `OnChildMeasureInvalidated` ](xref:Xamarin.Forms.Layout.OnChildMeasureInvalidated)レイアウトの子のいずれかのサイズが変更されたときに通知を受け取るメソッド。 詳細については、次を参照してください。 [OnChildMeasureInvalidated メソッドをオーバーライドする](#onchildmeasureinvalidated)します。
 
 > [!NOTE]
-> なお、 [ `OnMeasure` ](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double))レイアウトのサイズがその子ではなく、その親によって拘束される場合、オーバーライドは呼び出されなくなっています。 制約の一方または両方が有限でない場合、またはレイアウトのクラスがある既定ではない場合、オーバーライドが呼び出される、 [ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions)または[ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions)プロパティの値。 このため、 [ `LayoutChildren` ](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double))オーバーライドは、中に取得された子のサイズに依存できない、 [ `OnMeasure` ](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double))メソッドの呼び出し。 代わりに、`LayoutChildren`呼び出す必要があります、 [ `Measure` ](xref:Xamarin.Forms.VisualElement.Measure(System.Double,System.Double,Xamarin.Forms.MeasureFlags))メソッドを呼び出す前に、レイアウトの子を[ `Layout` ](xref:Xamarin.Forms.VisualElement.Layout(Xamarin.Forms.Rectangle))メソッド。 子のサイズを取得する代わりに、`OnMeasure`オーバーライドは、後で回避するためにキャッシュできる`Measure`で呼び出し、`LayoutChildren`のオーバーライドでは、レイアウトのクラスは、サイズをもう一度取得する必要がある場合を把握する必要があります。 詳細については、[計算とレイアウトのデータをキャッシュ](#caching)を参照してください。
+> なお、 [ `OnMeasure` ](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double))レイアウトのサイズがその子ではなく、その親によって拘束される場合、オーバーライドは呼び出されなくなっています。 制約の一方または両方が有限でない場合、またはレイアウトのクラスがある既定ではない場合、オーバーライドが呼び出される、 [ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions)または[ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions)プロパティの値。 このため、 [ `LayoutChildren` ](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double))オーバーライドは、中に取得された子のサイズに依存できない、 [ `OnMeasure` ](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double))メソッドの呼び出し。 代わりに、`LayoutChildren`呼び出す必要があります、 [ `Measure` ](xref:Xamarin.Forms.VisualElement.Measure(System.Double,System.Double,Xamarin.Forms.MeasureFlags))メソッドを呼び出す前に、レイアウトの子を[ `Layout` ](xref:Xamarin.Forms.VisualElement.Layout(Xamarin.Forms.Rectangle))メソッド。 子のサイズを取得する代わりに、`OnMeasure`オーバーライドは、後で回避するためにキャッシュできる`Measure`で呼び出し、`LayoutChildren`のオーバーライドでは、レイアウトのクラスは、サイズをもう一度取得する必要がある場合を把握する必要があります。 詳細については、次を参照してください。[計算とレイアウトのデータをキャッシュ](#caching)します。
 
-レイアウトのクラスに追加することで使用できます、 [ `Page`](xref:Xamarin.Forms.Page)レイアウトに子を追加するとします。 詳細については、[消費、WrapLayout](#consuming)を参照してください。
+レイアウトのクラスに追加することで使用できます、 [ `Page`](xref:Xamarin.Forms.Page)レイアウトに子を追加するとします。 詳細については、次を参照してください。[消費、WrapLayout](#consuming)します。
 
 <a name="creating" />
 
@@ -226,7 +226,7 @@ public static readonly BindableProperty RowSpacingProperty = BindableProperty.Cr
   });
 ```
 
-各バインド可能なプロパティのプロパティ変更ハンドラーを呼び出す、`InvalidateLayout`新しいレイアウトをトリガーするメソッドのオーバーライドを渡す、`WrapLayout`します。 詳細については、[InvalidateLayout メソッドをオーバーライドする](#invalidatelayout)と[OnChildMeasureInvalidated メソッドをオーバーライドする](#onchildmeasureinvalidated)を参照してください。
+各バインド可能なプロパティのプロパティ変更ハンドラーを呼び出す、`InvalidateLayout`新しいレイアウトをトリガーするメソッドのオーバーライドを渡す、`WrapLayout`します。 詳細については、次を参照してください。 [InvalidateLayout メソッドをオーバーライドする](#invalidatelayout)と[OnChildMeasureInvalidated メソッドをオーバーライドする](#onchildmeasureinvalidated)します。
 
 <a name="onmeasure" />
 
@@ -380,27 +380,36 @@ public class ImageWrapLayoutPageCS : ContentPage
 ```csharp
 protected override async void OnAppearing()
 {
-  base.OnAppearing();
+    base.OnAppearing();
 
-  var images = await GetImageListAsync();
-  foreach (var photo in images.Photos)
-  {
-    var image = new Image
+    var images = await GetImageListAsync();
+    if (images != null)
     {
-      Source = ImageSource.FromUri(new Uri(photo + string.Format("?width={0}&height={0}&mode=max", Device.RuntimePlatform == Device.UWP ? 120 : 240)))
-    };
-    wrapLayout.Children.Add(image);
-  }
+        foreach (var photo in images.Photos)
+        {
+            var image = new Image
+            {
+                Source = ImageSource.FromUri(new Uri(photo))
+            };
+            wrapLayout.Children.Add(image);
+        }
+    }
 }
 
 async Task<ImageList> GetImageListAsync()
 {
-  var requestUri = "https://docs.xamarin.com/demo/stock.json";
-  using (var client = new HttpClient())
-  {
-    var result = await client.GetStringAsync(requestUri);
-    return JsonConvert.DeserializeObject<ImageList>(result);
-  }
+    try
+    {
+        string requestUri = "https://raw.githubusercontent.com/xamarin/docs-archive/master/Images/stock/small/stock.json";
+        string result = await _client.GetStringAsync(requestUri);
+        return JsonConvert.DeserializeObject<ImageList>(result);
+    }
+    catch (Exception ex)
+    {
+        Debug.WriteLine($"\tERROR: {ex.Message}");
+    }
+
+    return null;
 }
 ```
 
@@ -415,11 +424,6 @@ async Task<ImageList> GetImageListAsync()
 ![](custom-images/landscape-uwp.png "サンプル UWP アプリケーションの横のスクリーン ショット")
 
 各行の列の数は、写真のサイズ、画面の幅、およびデバイスに依存しない単位あたりのピクセルの数によって異なります。 [ `Image` ](xref:Xamarin.Forms.Image)要素は、写真を非同期的に読み込むため、`WrapLayout`クラスの呼び出し頻度を受け取りますその[ `LayoutChildren` ](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double))メソッドとして各`Image`。要素は、読み込まれた写真に基づく新しいサイズを受け取ります。
-
-## <a name="summary"></a>まとめ
-
-この記事では、カスタム レイアウト クラスを作成する方法について説明し、印刷の向き区別を示す`WrapLayout`クラスを追加の行に後続の子の表示をラップし、ページ間で、その子を水平方向に整列します。
-
 
 ## <a name="related-links"></a>関連リンク
 

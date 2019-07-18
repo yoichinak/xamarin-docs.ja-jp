@@ -14,7 +14,7 @@ ms.locfileid: "58870054"
 ---
 # <a name="xamarinessentials-launcher"></a>Xamarin.Essentials:ランチャー
 
-**Launcher** クラスを使用すると、アプリケーションがシステムで URI を開くことができるようになります。 これは多くの場合、他のアプリケーションのカスタム URI スキームへのディープ リンクを設定するときに使用されます。 ブラウザーで Web サイトを開く場合は、**[Browser](open-browser.md)** API を参照する必要があります。
+**Launcher** クラスを使用すると、アプリケーションがシステムで URI を開くことができるようになります。 これは多くの場合、他のアプリケーションのカスタム URI スキームへのディープ リンクを設定するときに使用されます。 ブラウザーで Web サイトを開く場合は、 **[Browser](open-browser.md)** API を参照する必要があります。
 
 ## <a name="get-started"></a>作業開始
 
@@ -22,7 +22,7 @@ ms.locfileid: "58870054"
 
 ## <a name="using-launcher"></a>ランチャーの使用
 
-自分のクラスの Xamarin.Essentials に参照を追加します。
+自分のクラスに Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;

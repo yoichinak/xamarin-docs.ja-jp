@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: e599d4f99877e24e06de2c26ed2cafe48526f6f5
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 8c4dcbe0baf74479e94f8663280e7654b4d58a9d
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122999"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978151"
 ---
 # <a name="binding-ios-libraries"></a>IOS ライブラリのバインド
 
@@ -38,15 +38,13 @@ Objective C ライブラリと CocoaPods を Xamarin.iOS および Xamarin.Mac �
 このページは、オープン ソースを使用して iOS バインド プロジェクトの作成のステップ バイ ステップ チュートリアルを提供します。 [ **InfColorPicker** ](https://github.com/InfinitApps/InfColorPicker)例として Objective C のプロジェクト。 **InfColorPicker**ライブラリには、ユーザーよりユーザー フレンドリな色の選択を行う、HSB 形式に基づいて色を選択できる再利用可能なビュー コント ローラーが用意されています。
 油性の目標は、バインディング プロセスを支援するために使用されます。
 
-## <a name="xamarin-university-lightning-lecture"></a>Xamarin University Lightning Lecture
+## <a name="video"></a>ビデオ
 
 > [!VIDEO https://youtube.com/embed/ZUoPLcmnf1o]
 
-**iOS C および C++ でのバインドによって[Xamarin University](https://university.xamarin.com/)**
+**iOS では C でバインド/C++ビデオ**
 
 ## <a name="related-links"></a>関連リンク
 
 - [Objective-C のバインド](~/cross-platform/macios/binding/index.md)
 - [Mac のバインド](~/mac/platform/binding.md)
-- [Xamarin University のコース: OBJECTIVE-C のバインド ライブラリをビルドします。](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin University のコース: 目標油性、OBJECTIVE-C のバインド ライブラリをビルドします。](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

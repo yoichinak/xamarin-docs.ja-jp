@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 2ed14752cc5906b68d277b4f492875f7e281b053
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 7b66005ff64763d68dc6101985e514fa56cf896d
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57671456"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827366"
 ---
 # <a name="sliders-switches-and-segmented-controls-in-xamarinios"></a>スライダー、スイッチ、および Xamarin.iOS でセグメント付きコントロール
 
@@ -95,5 +95,5 @@ switch1.On = true;
 
 ## <a name="related-links"></a>関連リンク
 
-- [コントロール (サンプル)](https://developer.xamarin.com/samples/Controls/)
+- [コントロール (サンプル)](https://developer.xamarin.com/samples/monotouch/Controls/)
 - [アラートのコント ローラー](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/alertcontroller)

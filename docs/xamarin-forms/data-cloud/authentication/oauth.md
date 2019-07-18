@@ -1,5 +1,5 @@
 ---
-title: Id プロバイダーでユーザーを認証します。
+title: Id プロバイダーで AuthenticateUsers
 description: この記事では、Xamarin.Auth を使用して、Xamarin.Forms アプリケーションの認証プロセスを管理する方法について説明します。
 ms.prod: xamarin
 ms.assetid: D44745D5-77BB-4596-9B8C-EC75C259157C
@@ -7,14 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/19/2017
-ms.openlocfilehash: 786f1503fcc0cc07f76a7cdc55731d341607429f
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 006e403b50a452265a40a0e95d17769fa0446a1a
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53053198"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67650412"
 ---
-# <a name="authenticating-users-with-an-identity-provider"></a>Id プロバイダーでユーザーを認証します。
+# <a name="authenticate-users-with-an-identity-provider"></a>Id プロバイダーでユーザーを認証します。
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/WebServices/OAuthNativeFlow/)
 
@@ -32,8 +32,8 @@ OAuth id プロバイダーを使用するときに、認証フローの概要�
 サンプル アプリケーションでは、Xamarin.Auth を使用して Google に対してネイティブ認証フローを実装する方法を示します。 このトピックでは、id プロバイダーとして Google を使用すると、方法は他の id プロバイダーに等しく適用できます。 Google の OAuth 2.0 エンドポイントを使用する認証の詳細については、次を参照してください。 [Google Api へのアクセスに oauth 2.0 を使用して](https://developers.google.com/identity/protocols/OAuth2)Google の web サイト。
 
 > [!NOTE]
-> iOS 9 以降では、アプリのトランスポート セキュリティ (ATS) は、機密情報の誤った情報開示を回避をセキュリティで保護された接続 (アプリのバック エンド サーバーなど) のインターネット リソースと、アプリの間に強制します。   ATS が iOS 9 用にビルドされたアプリで既定で有効になるために、すべての接続は ATS セキュリティ要件に応じたされます。 接続はこれらの要件を満たしていない場合は、例外で失敗します。
-> 使用することができない場合の ATS を選択することができます、`HTTPS`プロトコルし、インターネット リソースのための通信をセキュリティで保護します。 これは、アプリの更新することで実現できます**Info.plist**ファイル。 詳細については、[アプリ トランスポート セキュリティ](~/ios/app-fundamentals/ats.md)を参照してください。
+> iOS 9 以降では、アプリのトランスポート セキュリティ (ATS) は、機密情報の誤った情報開示を回避をセキュリティで保護された接続 (アプリのバック エンド サーバーなど) のインターネット リソースと、アプリの間に強制します。 ATS が iOS 9 用にビルドされたアプリで既定で有効になるために、すべての接続は ATS セキュリティ要件に応じたされます。 接続はこれらの要件を満たしていない場合は、例外で失敗します。
+> 使用することができない場合の ATS を選択することができます、`HTTPS`プロトコルし、インターネット リソースのための通信をセキュリティで保護します。 これは、アプリの更新することで実現できます**Info.plist**ファイル。 詳細については、次を参照してください。[アプリ トランスポート セキュリティ](~/ios/app-fundamentals/ats.md)します。
 
 ## <a name="using-xamarinauth-to-authenticate-users"></a>Xamarin.Auth を使用してユーザーを認証するには
 
@@ -238,7 +238,7 @@ if (response != null)
 
 HTTP メソッドと、API URL、`OAuth2Request`インスタンスも指定します、`Account`インスタンスで指定された URL への要求に署名するアクセス トークンを含む、`Constants.UserInfoUrl`プロパティ。 Id プロバイダーは、アクセス トークン有効期間として認識されているユーザーの名前と電子メール アドレスを含む、JSON の応答としてし、基本的なユーザー データを返します。 JSON 応答は読み取りとに逆シリアル化し、`user`変数。
 
-詳細については、[Google API を呼び出す](https://developers.google.com/identity/protocols/OAuth2InstalledApp#callinganapi)Google 開発者ポータルにを参照してください。
+詳細については、次を参照してください。 [Google API を呼び出す](https://developers.google.com/identity/protocols/OAuth2InstalledApp#callinganapi)Google 開発者ポータルにします。
 
 ### <a name="storing-and-retrieving-account-information-on-devices"></a>格納して、デバイスのアカウント情報の取得
 

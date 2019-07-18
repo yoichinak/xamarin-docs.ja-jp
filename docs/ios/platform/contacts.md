@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
 ms.openlocfilehash: e3f1533605d08df58d8d257714dd8135690c0e5d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105455"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61388980"
 ---
 # <a name="contacts-and-contactsui-in-xamarinios"></a>連絡先と ContactsUI Xamarin.iOS で
 
@@ -111,7 +111,7 @@ else
 }
 ```
 
-このコードは、iOS 9 デバイスで実行される場合は、ユーザーのコレクションに新しい連絡先が追加されます。 例えば:
+このコードは、iOS 9 デバイスで実行される場合は、ユーザーのコレクションに新しい連絡先が追加されます。 例:
 
 [![](contacts-images/add01.png "ユーザーのコレクションに追加された新しい連絡先")](contacts-images/add01.png#lightbox)
 
@@ -124,7 +124,7 @@ Console.WriteLine(CNContactFormatter.GetStringFrom(contact, CNContactFormatterSt
 Console.WriteLine(CNPostalAddressFormatter.GetStringFrom(workAddress, CNPostalAddressFormatterStyle.MailingAddress));
 ```
 
-アプリケーションの UI を表示するプロパティのラベル、連絡先のフレームワークもこれらの文字列をローカライズするためのメソッドを持っています。 ここでも、アプリで実行されている iOS デバイスの現在のロケールに基づきます。 例えば:
+アプリケーションの UI を表示するプロパティのラベル、連絡先のフレームワークもこれらの文字列をローカライズするためのメソッドを持っています。 ここでも、アプリで実行されている iOS デバイスの現在のロケールに基づきます。 例:
 
 ```csharp
 // Localized properties
@@ -176,7 +176,7 @@ var contacts = store.GetUnifiedContacts(predicate, fetchKeys, out error);
 
 A_部分にお問い合わせください_の連絡先ストアから利用可能なプロパティの一部のみがフェッチされる連絡先。 以前フェッチされていないプロパティにアクセスしようとすると、例外になります。
 
-いずれかを使用して、必要なプロパティが指定された連絡先が含まれている簡単に確認することができます、`IsKeyAvailable`または`AreKeysAvailable`のメソッド、`CNContact`インスタンス。 例えば:
+いずれかを使用して、必要なプロパティが指定された連絡先が含まれている簡単に確認することができます、`IsKeyAvailable`または`AreKeysAvailable`のメソッド、`CNContact`インスタンス。 例:
 
 ```csharp
 // Does the contact contain the requested key?

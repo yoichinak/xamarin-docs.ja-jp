@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 202f044ebd7dd5b110b94d2aa60eeb7151150607
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 682e3bd0ac4cdd651203496dd28586db2cef3165
+ms.sourcegitcommit: c2bba24233624c2ec0e9ee9827310ca022212a2c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38994729"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66835265"
 ---
 # <a name="xamarinforms-navigation"></a>Xamarin.Forms のナビゲーション
 
@@ -20,13 +20,15 @@ _Xamarin.Forms には、使用するページの種類に応じたさまざま�
 
 ![](images/page-types.png "Xamarin.Forms のページの種類")
 
+または、Xamarin.Forms シェル アプリケーションでは、設定されたナビゲーション階層を適用しない URI ベースのナビゲーション エクスペリエンスが使われます。 詳細については、「[Xamarin.Forms シェルのナビゲーション](~/xamarin-forms/app-fundamentals/shell/navigation.md)」をご覧ください。
+
 ## <a name="hierarchical-navigationhierarchicalmd"></a>[階層ナビゲーション](hierarchical.md)
 
 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) クラスは、ユーザーが前後を希望どおりにページを移動することができる階層ナビゲーション エクスペリエンスを提供します。 このクラスは、[`Page`](xref:Xamarin.Forms.Page) オブジェクトの後入れ先出し (LIFO) スタックとしてナビゲーションを提供します。
 
 ## <a name="tabbedpagetabbed-pagemd"></a>[TabbedPage](tabbed-page.md)
 
-Xamarin.Form の [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) は、タブのリストと大きい詳細領域で構成されていて、各タブによって詳細領域にコンテンツが読み込まれます。
+Xamarin.Form の [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) は、タブのリストと大きい詳細エリアで構成されており、各タブでは、コンテンツが詳細エリアに読み込まれます。
 
 ## <a name="carouselpagecarousel-pagemd"></a>[CarouselPage](carousel-page.md)
 
@@ -39,7 +41,3 @@ Xamarin.Forms の [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) は�
 ## <a name="modal-pagesmodalmd"></a>[モーダル ページ](modal.md)
 
 Xamarin.Forms ではモーダル ページもサポートされています。 モーダル ページは、そのタスクが完了するかキャンセルされるまで、他の操作ができない自己完結型のタスクを完了させるようユーザーに促します。
-
-## <a name="displaying-pop-upspop-upsmd"></a>[ポップアップを表示します。](pop-ups.md)
-
-Xamarin.Forms には、ポップアップに似た 2 つのユーザー インターフェイス要素、アラートとアクション シートが用意されています。 これらのインターフェイス要素を使って、ユーザーに簡単な質問をしたり、タスクの手順をユーザーに示したりできます。

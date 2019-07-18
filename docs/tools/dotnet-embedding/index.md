@@ -1,13 +1,18 @@
 ---
 title: .NET Embedding
-description: '.NET の埋め込みにより、既存の .NET コード (c#、f#、および他のユーザー) 他のプログラミング言語で記述されたコードによって使用されます。'
+description: .NET の埋め込みにより、既存の .NET コード (C#、 F#、およびその他の) 他のプログラミング言語で記述されたコードによって使用されます。
 ms.prod: xamarin
 ms.assetid: 617C38CA-B921-4A76-8DFC-B0A3DF90E48A
 author: lobrien
 ms.author: laobri
 ms.date: 11/14/2017
+ms.openlocfilehash: 23233ea8b06e0db580ba99edf2705e3dae5b931f
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61363548"
 ---
-
 # <a name="net-embedding"></a>.NET Embedding
 
 ![[プレビュー]](~/media/shared/preview.png)

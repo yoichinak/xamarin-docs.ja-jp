@@ -6,12 +6,12 @@ ms.assetid: 328D042A-FF78-A7B6-1574-B5AF49A1AADB
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 9fbbe7d33428c1274d78ed882ced3985b8459072
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: f374da4a541b81bb1bcf84f2b9342785551c15a4
+ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57671482"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67512962"
 ---
 # <a name="part-5---practical-code-sharing-strategies"></a>パート 5 - 実践的なコード共有戦略
 
@@ -422,7 +422,7 @@ public class DispatchAdapter : IDispatchOnUIThread {
 }
 ```
 
-Xamarin.Forms の開発を使用する必要があります[ `Device.BeginInvokeOnMainThread` ](~/xamarin-forms/platform/device.md#Device_BeginInvokeOnMainThread)一般的なコード (共有プロジェクトまたは PCL) にします。
+Xamarin.Forms の開発を使用する必要があります[ `Device.BeginInvokeOnMainThread` ](~/xamarin-forms/platform/device.md#interact-with-the-ui-from-background-threads)一般的なコード (共有プロジェクトまたは PCL) にします。
 
  <a name="Platform_and_Device_Capabilities_and_Degradation" />
 

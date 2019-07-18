@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: b35149028763691c17fe526673d023cc9b707c28
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 1bcced2f43328bf5e7d1ebb171b3c92c9ec22493
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116655"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827756"
 ---
 # <a name="layout-options-in-xamarinios"></a>Xamarin.iOS でのレイアウト オプション
 
@@ -70,4 +70,4 @@ imageview1.AutoresizingMask = UIViewAutoresizing.FlexibleTopMargin | UIViewAutor
 
 ## <a name="related-links"></a>関連リンク
 
-- [コントロール (サンプル)](https://developer.xamarin.com/samples/Controls/)
+- [コントロール (サンプル)](https://developer.xamarin.com/samples/monotouch/Controls/)

@@ -1,0 +1,1105 @@
+- name: Xamarin.iOS
+  href: index.yml
+  expanded: true
+  items:
+    - name: 作業開始
+      items:
+        - name: Xamarin.iOS の概要
+          href: get-started/index.md
+        - name: セットアップとインストール
+          items:
+            - name: Xamarin.iOS のインストール
+              href: get-started/installation/index.md
+            - name: Mac
+              href: get-started/installation/mac.md
+            - name: Windows
+              items:
+                - name: Windows に Xamarin.iOS をインストールする
+                  href: get-started/installation/windows/index.md
+                - name: Mac とペアリング
+                  items:
+                    - name: Xamarin.iOS 開発のために Mac とペアリングする
+                      href: get-started/installation/windows/connecting-to-mac/index.md
+                    - name: 接続のトラブルシューティング
+                      href: get-started/installation/windows/connecting-to-mac/troubleshooting.md
+                - name: Xamarin.iOS for Visual Studio の概要
+                  href: get-started/installation/windows/introduction-to-xamarin-ios-for-visual-studio.md
+                - name: Visual Studio の構成
+                  href: get-started/installation/windows/config-options.md
+            - name: 開発用のデバイスの設定
+              items:
+                - name: Xamarin.iOS のデバイス プロビジョニング
+                  href: get-started/installation/device-provisioning/index.md
+                - name: 自動プロビジョニング
+                  href: get-started/installation/device-provisioning/automatic-provisioning.md
+                - name: 手動プロビジョニング
+                  href: get-started/installation/device-provisioning/manual-provisioning.md
+                - name: 無料プロビジョニング
+                  href: get-started/installation/device-provisioning/free-provisioning.md
+        - name: 最初のアプリをビルドする
+          items:
+            - name: 'Hello, iOS'
+              href: get-started/hello-ios/index.md
+            - name: 'パート 1: クイック スタート'
+              href: get-started/hello-ios/hello-ios-quickstart.md
+            - name: 'パート 2: 深い分析'
+              href: get-started/hello-ios/hello-ios-deepdive.md
+        - name: 最初のアプリを拡張する
+          items:
+            - name: 'Hello, iOS マルチスクリーン'
+              href: get-started/hello-ios-multiscreen/index.md
+            - name: 'パート 1: クイック スタート'
+              href: get-started/hello-ios-multiscreen/hello-ios-multiscreen-quickstart.md
+            - name: 'パート 2: 深い分析'
+              href: get-started/hello-ios-multiscreen/hello-ios-multiscreen-deepdive.md
+        - name: Objective-C 開発者
+          items:
+            - name: Objective-C 開発者向け Xamarin
+              href: get-started/objective-c-developers/index.md
+            - name: 'Objective-C 開発者向けの C# Primer'
+              href: get-started/objective-c-developers/primer.md
+    - name: アプリケーションの基礎
+      items:
+        - name: 概要
+          href: app-fundamentals/index.md
+        - name: ユーザー補助
+          href: app-fundamentals/accessibility.md
+        - name: アプリケーション トランスポート セキュリティ
+          href: app-fundamentals/ats.md
+        - name: バックグラウンド処理
+          href: app-fundamentals/backgrounding/index.md
+          items:
+            - name: iOS におけるバックグラウンド処理の概要
+              href: app-fundamentals/backgrounding/introduction-to-backgrounding-in-ios.md
+            - name: アプリケーション ライフサイクルのデモ
+              href: app-fundamentals/backgrounding/application-lifecycle-demo.md
+            - name: iOS バックグラウンド処理のテクニック
+              href: app-fundamentals/backgrounding/ios-backgrounding-techniques/index.md
+              items:
+                - name: タスクを使用した iOS バックグラウンド処理
+                  href: app-fundamentals/backgrounding/ios-backgrounding-techniques/ios-backgrounding-with-tasks.md
+                - name: バックグラウンド実行するアプリケーションの登録
+                  href: app-fundamentals/backgrounding/ios-backgrounding-techniques/registering-applications-to-run-in-background.md
+                - name: アプリケーションのバックグラウンド更新
+                  href: app-fundamentals/backgrounding/ios-backgrounding-techniques/updating-an-application-in-the-background.md
+            - name: 'チュートリアル: iOS でのバックグラウンド処理'
+              href: app-fundamentals/backgrounding/ios-backgrounding-walkthroughs/index.md
+              items:
+                - name: 'チュートリアル: バックグラウンドの場所'
+                  href: app-fundamentals/backgrounding/ios-backgrounding-walkthroughs/location-walkthrough.md
+                - name: 'チュートリアル: バックグラウンド転送と NSURLSession'
+                  href: app-fundamentals/backgrounding/ios-backgrounding-walkthroughs/background-transfer-walkthrough.md
+            - name: iOS バックグラウンド処理のガイダンス
+              href: app-fundamentals/backgrounding/ios-backgrounding-guidance.md
+        - name: コードでの iOS UI の作成
+          href: app-fundamentals/ios-code-only.md
+        - name: 例外のマーシャリング
+          href: platform/exception-marshaling.md
+        - name: イベント、プロトコル、デリゲート
+          href: app-fundamentals/delegates-protocols-and-events.md
+        - name: ファイル システム
+          href: app-fundamentals/file-system.md
+        - name: イメージとアイコン
+          href: app-fundamentals/images-icons/index.md
+          items:
+            - name: イメージの表示
+              href: app-fundamentals/images-icons/displaying-an-image.md
+            - name: アプリケーション アイコン
+              href: app-fundamentals/images-icons/app-icons.md
+            - name: App Store アイコン
+              href: app-fundamentals/images-icons/app-store-icon.md
+            - name: 代替アプリ アイコン
+              href: app-fundamentals/images-icons/alternate-app-icons.md
+            - name: 起動画面
+              href: app-fundamentals/images-icons/launch-screens.md
+            - name: カスタム ドキュメント タイプ
+              href: app-fundamentals/images-icons/custom-document-types.md
+        - name: ローカリゼーション
+          href: app-fundamentals/localization/index.md
+          items:
+            - name: 国際化エンコーディング
+              href: app-fundamentals/localization/encodings.md
+        - name: プロパティ リスト
+          href: app-fundamentals/property-lists.md
+        - name: セキュリティとプライバシーの機能
+          href: app-fundamentals/security-privacy.md
+        - name: スレッド
+          href: app-fundamentals/threading.md
+        - name: タッチ
+          href: app-fundamentals/touch/index.md
+          items:
+            - name: iOS でのタッチ
+              href: app-fundamentals/touch/touch-in-ios.md
+            - name: 'チュートリアル: iOS でのタッチの使用'
+              href: app-fundamentals/touch/ios-touch-walkthrough.md
+            - name: マルチタッチ追跡
+              href: app-fundamentals/touch/touch-tracking.md
+        - name: ユーザーの既定値
+          href: app-fundamentals/user-defaults.md
+    - name: ユーザー インターフェイス
+      items:
+        - name: 概要
+          href: user-interface/index.md
+        - name: iOS Designer
+          href: user-interface/designer/index.md
+          items:
+            - name: iOS Designer の基本
+              href: user-interface/designer/introduction.md
+            - name: iOS Designer のカスタム コントロール
+              href: user-interface/designer/ios-designable-controls-overview.md
+            - name: 'チュートリアル: iOS Designer でのカスタム コントロールの使用'
+              href: user-interface/designer/ios-designable-controls-walkthrough.md
+            - name: iOS Designer での自動レイアウト
+              href: user-interface/designer/designer-auto-layout.md
+        - name: ストーリーボード
+          href: user-interface/storyboards/index.md
+          items:
+            - name: 統合ストーリーボード
+              href: user-interface/storyboards/unified-storyboards.md
+        - name: iOS のユーザー インターフェイス
+          href: user-interface/ios-ui/index.md
+          items:
+            - name: 外観 API
+              href: user-interface/ios-ui/introduction-to-the-appearance-api.md
+            - name: ユーザー インターフェイス オブジェクトの作成
+              href: user-interface/ios-ui/creating-ui-objects.md
+            - name: レイアウト オプション
+              href: user-interface/ios-ui/layout-options.md
+            - name: Haptic フィードバックの提供
+              href: user-interface/ios-ui/haptic-feedback.md
+            - name: UI スレッドの操作
+              href: user-interface/ios-ui/ui-thread.md
+            - name: ビュー コント ローラーの概要
+              href: user-interface/ios-ui/view-controllers/index.md
+              items:
+                - name: ビュー コントローラーの切り替え
+                  href: user-interface/ios-ui/view-controllers/transitions.md
+        - name: コントロール
+          href: user-interface/controls/index.md
+          items:
+            - name: アラート
+              href: user-interface/controls/alerts.md
+            - name: ボタン
+              href: user-interface/controls/buttons.md
+            - name: コレクション ビュー
+              href: user-interface/controls/uicollectionview.md
+            - name: イメージ
+              href: user-interface/controls/image.md
+            - name: 手動カメラ コントロール
+              href: user-interface/controls/intro-to-manual-camera-controls.md
+            - name: マップ
+              href: user-interface/controls/ios-maps/index.md
+              items:
+                - name: 注釈とオーバーレイ
+                  href: user-interface/controls/ios-maps/ios-maps-walkthrough.md
+            - name: ラベル
+              href: user-interface/controls/labels.md
+            - name: ピッカー
+              href: user-interface/controls/picker.md
+            - name: 進行状況とアクティビティのインジケーター
+              href: user-interface/controls/progress-activity-indicator.md
+            - name: SearchBar
+              href: user-interface/controls/searchbar.md
+            - name: スライダー、スイッチ、およびセグメント付きコントロール
+              href: user-interface/controls/slider-switch-segmented-controls.md
+            - name: スタック ビュー
+              href: user-interface/controls/uistackview.md
+            - name: テーブルとセル
+              href: user-interface/controls/tables/index.md
+              items:
+                - name: テーブルのパーツと機能
+                  href: user-interface/controls/tables/table-parts-and-functionality.md
+                - name: テーブルへのデータの読み込み
+                  href: user-interface/controls/tables/populating-a-table-with-data.md
+                - name: テーブルの外観のカスタマイズ
+                  href: user-interface/controls/tables/customizing-table-appearance.md
+                - name: 編集
+                  href: user-interface/controls/tables/editing.md
+                - name: 行アクションの操作
+                  href: user-interface/controls/tables/row-action.md
+                - name: iOS Designer でのテーブルの操作
+                  href: user-interface/controls/tables/creating-tables-in-a-storyboard.md
+                - name: 行の高さの自動サイズ変更
+                  href: user-interface/controls/tables/autosizing-row-height.md
+            - name: タブ バーとタブ バー コント ローラー
+              href: user-interface/controls/creating-tabbed-applications.md
+            - name: テキスト入力
+              href: user-interface/controls/text-input.md
+            - name: Web ビュー
+              href: user-interface/controls/uiwebview.md
+        - name: プログラムによるレイアウトの制約
+          href: user-interface/programmatic-layout-constraints.md
+        - name: MonoTouch.Dialog
+          href: user-interface/monotouch.dialog/index.md
+          items:
+            - name: 'チュートリアル: 要素 API を使用したアプリケーションの作成'
+              href: user-interface/monotouch.dialog/elements-api-walkthrough.md
+            - name: 'チュートリアル: JSON を使用したユーザー インターフェイスの作成'
+              href: user-interface/monotouch.dialog/json-element-walkthrough.md
+            - name: MonoTouch.Dialog Json マークアップ
+              href: user-interface/monotouch.dialog/monotouch.dialog-json-markup.md
+            - name: 'チュートリアル: リフレクション API を使用したアプリケーションの作成'
+              href: user-interface/monotouch.dialog/reflection-api-walkthrough.md
+    - name: プラットフォーム機能
+      items:
+        - name: 概要
+          href: platform/index.md
+        - name: iOS 13 プレビュー
+          items:
+            - name: iOS 13 の概要
+              href: platform/ios13/index.md
+            - name: 作業開始
+              href: platform/ios13/get-started.md
+            - name: トラブルシューティング
+              href: platform/ios13/troubleshooting/index.md
+        - name: iOS 12
+          items:
+            - name: iOS 12 の概要
+              href: platform/introduction-to-ios12/index.md
+            - name: 作業開始
+              href: platform/introduction-to-ios12/get-started.md
+            - name: トラブルシューティング
+              href: platform/introduction-to-ios12/troubleshooting.md
+        - name: iOS 11
+          items:
+            - name: iOS 11 の概要
+              href: platform/introduction-to-ios11/index.md
+            - name: アプリを iOS 11 に更新する
+              href: platform/introduction-to-ios11/updating-your-app/index.md
+              items:
+                - name: アーキテクチャの変更点
+                  href: platform/introduction-to-ios11/updating-your-app/architecture-changes.md
+                - name: ビジュアル デザインの更新
+                  href: platform/introduction-to-ios11/updating-your-app/visual-design.md
+                - name: App Store の変更点
+                  href: platform/introduction-to-ios11/updating-your-app/app-store-changes.md
+            - name: トラブルシューティング
+              href: platform/introduction-to-ios11/troubleshooting.md
+        - name: iOS 10
+          items:
+            - name: iOS 10 の概要
+              href: platform/introduction-to-ios10/index.md
+            - name: iOS 10 フレームワークのその他の変更点
+              href: platform/introduction-to-ios10/additional-framework-changes.md
+        - name: iOS 9
+          items:
+            - name: iOS 9 の概要
+              href: platform/introduction-to-ios9/index.md
+            - name: iOS 9 の互換性
+              href: platform/introduction-to-ios9/ios9.md
+            - name: iOS 9 フレームワークのその他の変更点
+              href: platform/introduction-to-ios9/additional-framework-changes.md
+            - name: トラブルシューティング
+              href: platform/introduction-to-ios9/troubleshooting.md
+        - name: iOS 8
+          href: platform/introduction-to-ios8.md
+        - name: iOS 7
+          items:
+            - name: iOS 7 の概要
+              href: platform/introduction-to-ios7/index.md
+            - name: iOS 7 ユーザー インターフェイスの概要
+              href: platform/introduction-to-ios7/ios7-ui.md
+        - name: iOS 6
+          href: platform/introduction-to-ios6/index.md
+        - name: Apple Pay
+          href: platform/apple-pay.md
+        - name: ARKit
+          items:
+            - name: iOS 11 の ARKit
+              href: platform/introduction-to-ios11/arkit/index.md
+            - name: ARKit 2
+              href: platform/introduction-to-ios12/arkit2.md
+            - name: ARKit と UrhoSharp
+              href: platform/introduction-to-ios11/arkit/urhosharp.md
+        - name: Objective-C のバインディング
+          href: platform/binding-objective-c/index.md
+          items:
+            - name: 'チュートリアル: iOS Objective-C ライブラリのバインド'
+              href: platform/binding-objective-c/walkthrough.md
+        - name: CallKit
+          href: platform/callkit.md
+        - name: 連絡先と ContactsUI
+          href: platform/contacts.md
+        - name: CoreML
+          items:
+            - name: iOS 11 の CoreML
+              href: platform/introduction-to-ios11/coreml.md
+            - name: Core ML 2
+              href: platform/introduction-to-ios12/coreml.md
+        - name: CoreNFC
+          href: platform/introduction-to-ios11/corenfc.md
+        - name: ドキュメント ピッカー
+          href: platform/document-picker.md
+        - name: ドラッグ アンド ドロップ
+          href: platform/introduction-to-ios11/drag-and-drop.md
+        - name: EventKit
+          href: platform/eventkit.md
+        - name: iOS の拡張機能
+          href: platform/extensions.md
+        - name: 埋め込みフレームワーク
+          href: platform/embedded-frameworks.md
+        - name: ファイル圧縮
+          href: platform/file-compression.md
+        - name: iOS のグラフィックスとアニメーション
+          items:
+            - name: 概要
+              displayName: Graphics and animation in iOS overview
+              href: platform/graphics-animation-ios/index.md
+            - name: CoreImage
+              href: platform/graphics-animation-ios/introduction-to-coreimage.md
+            - name: コア グラフィックス
+              href: platform/graphics-animation-ios/core-graphics.md
+            - name: コア アニメーション
+              href: platform/graphics-animation-ios/core-animation.md
+            - name: ビジョン
+              href: platform/introduction-to-ios11/vision.md
+            - name: 'チュートリアル: グラフィックスとアニメーション'
+              href: platform/graphics-animation-ios/graphics-animation-walkthrough.md
+        - name: Handoff
+          href: platform/handoff.md
+        - name: HealthKit
+          href: platform/healthkit.md
+        - name: HomeKit
+          href: platform/homekit.md
+        - name: iOS ゲーム API
+          items:
+            - name: 概要
+              displayName: iOS Gaming API overview
+              href: platform/gaming/index.md
+            - name: SceneKit
+              href: platform/gaming/scenekit.md
+            - name: SpriteKit
+              href: platform/gaming/spritekit.md
+        - name: MapKit
+          href: platform/introduction-to-ios11/mapkit.md
+        - name: メッセージ アプリの統合
+          items:
+            - name: 概要
+              href: platform/message-app-integration/index.md
+            - name: メッセージ アプリ拡張機能の基本
+              href: platform/message-app-integration/intro-to-message-app-extensions.md
+            - name: 高度なメッセージ アプリ拡張機能
+              href: platform/message-app-integration/advanced-message-app-extensions.md
+        - name: iPad のマルチタスキング
+          href: platform/multitasking.md
+        - name: 自然言語
+          href: platform/introduction-to-ios12/natural-language.md
+        - name: PassKit
+          href: platform/passkit.md
+        - name: PhotoKit
+          href: platform/photokit.md
+        - name: ネイティブ ライブラリの参照
+          href: platform/native-interop.md
+        - name: 検索 API
+          items:
+            - name: 概要
+              href: platform/search/index.md
+            - name: NSUserActivity
+              href: platform/search/nsuseractivity.md
+            - name: コア スポットライト
+              href: platform/search/corespotlight.md
+            - name: Web マークアップ
+              href: platform/search/web-markup.md
+            - name: アプリ検索の機能強化
+              href: platform/search/app-search-enhancements.md
+            - name: プロアクティブな候補
+              href: platform/search/proactive-suggestions.md
+            - name: 検索とホーム画面ウィジェットの機能強化
+              href: platform/search/widgets.md
+        - name: SiriKit
+          items:
+            - name: 概要
+              href: platform/sirikit/index.md
+            - name: SiriKit の概念の理解
+              href: platform/sirikit/understanding-sirikit.md
+            - name: SiriKit の実装
+              href: platform/sirikit/implementing-sirikit.md
+            - name: iOS 11 の SiriKit の更新プログラム
+              href: platform/introduction-to-ios11/sirikit.md
+            - name: iOS 12 の Siri のショートカット
+              href: platform/introduction-to-ios12/siri-shortcuts.md
+        - name: ソーシャル フレームワーク
+          href: platform/social-framework.md
+        - name: 音声認識
+          href: platform/speech.md
+        - name: StoreKit とアプリ内購入
+          items:
+            - name: 概要
+              displayName: In-App Purchasing overview
+              href: platform/in-app-purchasing/index.md
+            - name: アプリ内購入の基本と構成
+              href: platform/in-app-purchasing/in-app-purchase-basics-and-configuration.md
+            - name: ストア キットの概要と製品情報の取得
+              href: platform/in-app-purchasing/store-kit-overview-and-retreiving-product-information.md
+            - name: コンシューマブル製品の購入
+              href: platform/in-app-purchasing/purchasing-consumable-products.md
+            - name: 非コンシューマブル製品の購入
+              href: platform/in-app-purchasing/purchasing-non-consumable-products.md
+            - name: トランザクションと検証
+              href: platform/in-app-purchasing/transactions-and-verification.md
+            - name: アプリ レビューの要求
+              href: platform/request-app-review.md
+            - name: サブスクリプションとレポート
+              href: platform/in-app-purchasing/subscriptions-and-reporting.md
+            - name: iOS 6 の StoreKit の変更点
+              href: platform/introduction-to-ios6/changes-to-storekit.md
+        - name: TextKit
+          href: platform/textkit.md
+        - name: 3D Touch
+          href: platform/3d-touch.md
+        - name: タッチ ID
+          href: platform/touchid.md
+        - name: ユーザー通知フレームワーク
+          items:
+            - name: 概要
+              href: platform/user-notifications/index.md
+            - name: 強化されたユーザー通知
+              href: platform/user-notifications/enhanced-user-notifications.md
+            - name: 高度なユーザー通知
+              href: platform/user-notifications/advanced-user-notifications.md
+            - name: iOS 12 の通知の更新プログラム
+              href: platform/introduction-to-ios12/notifications/index.md
+              items:
+                - name: 重要なアラート
+                  href: platform/introduction-to-ios12/notifications/critical-alerts.md
+                - name: 動的な通知アクション ボタン
+                  href: platform/introduction-to-ios12/notifications/dynamic-actions.md
+                - name: グループ化された通知
+                  href: platform/introduction-to-ios12/notifications/grouped.md
+                - name: 対話型通知
+                  href: platform/introduction-to-ios12/notifications/interactive.md
+                - name: 通知の管理
+                  href: platform/introduction-to-ios12/notifications/management.md
+                - name: 一時的な通知
+                  href: platform/introduction-to-ios12/notifications/provisional.md
+            - name: 非推奨の通知テクノロジ
+              href: platform/user-notifications/deprecated/index.md
+              items:
+                - name: ローカル通知
+                  href: platform/user-notifications/deprecated/local-notifications-in-ios.md
+                - name: 'チュートリアル: Xamarin.iOS でのローカル通知の使用'
+                  href: platform/user-notifications/deprecated/local-notifications-in-ios-walkthrough.md
+                - name: リモート通知
+                  href: platform/user-notifications/deprecated/remote-notifications-in-ios.md
+        - name: WebKit と Safari
+          href: platform/introduction-to-ios11/web.md
+        - name: 広色域
+          href: platform/wide-color.md
+    - name: Xamarin.Essentials
+      items:
+        - name: Xamarin.Essentials の概要
+          href: ~/essentials/index.md?context=xamarin/ios
+        - name: 開始するには
+          href: ~/essentials/get-started.md?context=xamarin/ios
+        - name: プラットフォームと機能のサポート
+          href: ~/essentials/platform-feature-support.md?context=xamarin/ios
+        - name: 加速度計
+          href: ~/essentials/accelerometer.md?context=xamarin/ios
+        - name: アプリ情報
+          href: ~/essentials/app-information.md?context=xamarin/ios
+        - name: バロメーター
+          href: ~/essentials/barometer.md?context=xamarin/ios
+        - name: バッテリ
+          href: ~/essentials/battery.md?context=xamarin/ios
+        - name: クリップボードのトピック
+          href: ~/essentials/clipboard.md?context=xamarin/ios
+        - name: 色のコンバーター
+          href: ~/essentials/color-converters.md?context=xamarin/ios
+        - name: コンパス
+          href: ~/essentials/compass.md?context=xamarin/ios
+        - name: 接続
+          href: ~/essentials/connectivity.md?context=xamarin/ios
+        - name: シェイクの検出
+          href: ~/essentials/detect-shake.md?context=xamarin/ios
+        - name: デバイス ディスプレイ情報
+          href: ~/essentials/device-display.md?context=xamarin/ios
+        - name: デバイス情報
+          href: ~/essentials/device-information.md?context=xamarin/ios
+        - name: 電子メール
+          href: ~/essentials/email.md?context=xamarin/ios
+        - name: ファイル システム ヘルパー
+          href: ~/essentials/file-system-helpers.md?context=xamarin/ios
+        - name: 懐中電灯
+          href: ~/essentials/flashlight.md?context=xamarin/ios
+        - name: ジオコーディング
+          href: ~/essentials/geocoding.md?context=xamarin/ios
+        - name: 位置情報
+          href: ~/essentials/geolocation.md?context=xamarin/ios
+        - name: ジャイロスコープ
+          href: ~/essentials/gyroscope.md?context=xamarin/ios
+        - name: ランチャー
+          href: ~/essentials/launcher.md?context=xamarin/ios
+        - name: 磁力計
+          href: ~/essentials/magnetometer.md?context=xamarin/ios
+        - name: メイン スレッド
+          href: ~/essentials/main-thread.md?context=xamarin/ios
+        - name: マップ
+          href: ~/essentials/maps.md?context=xamarin/ios
+        - name: ブラウザーを開く
+          href: ~/essentials/open-browser.md?context=xamarin/ios
+        - name: 向きセンサー
+          href: ~/essentials/orientation-sensor.md?context=xamarin/ios
+        - name: ダイヤラー
+          href: ~/essentials/phone-dialer.md?context=xamarin/ios
+        - name: プラットフォームの拡張機能 (サイズ、四角形、ポイント)
+          href: ~/essentials/platform-extensions.md?context=xamarin/ios
+        - name: Preferences
+          href: ~/essentials/preferences.md?context=xamarin/ios
+        - name: セキュリティで保護されたストレージ
+          href: ~/essentials/secure-storage.md?context=xamarin/ios
+        - name: 共有
+          href: ~/essentials/share.md?context=xamarin/ios
+        - name: SMS
+          href: ~/essentials/sms.md?context=xamarin/ios
+        - name: 音声合成
+          href: ~/essentials/text-to-speech.md?context=xamarin/ios
+        - name: 単位コンバーター
+          href: ~/essentials/unit-converters.md?context=xamarin/ios
+        - name: バージョンの追跡
+          href: ~/essentials/version-tracking.md?context=xamarin/ios
+        - name: バイブレーション
+          href: ~/essentials/vibrate.md?context=xamarin/ios
+        - name: トラブルシューティング
+          href: ~/essentials/troubleshooting.md?context=xamarin/ios
+    - name: データとクラウド サービス
+      items:
+        - name: 概要
+          href: data-cloud/index.md
+        - name: Azure Active Directory
+          href: ~/cross-platform/data-cloud/active-directory/index.md?context=xamarin/ios
+          items:
+            - name: 作業の開始
+              href: ~/cross-platform/data-cloud/active-directory/get-started/index.md?context=xamarin/ios
+              items:
+                - name: 手順 1. 登録
+                  href: ~/cross-platform/data-cloud/active-directory/get-started/register.md?context=xamarin/ios
+                - name: 手順 2. 構成
+                  href: ~/cross-platform/data-cloud/active-directory/get-started/configure.md?context=xamarin/ios
+            - name: Graph API へのアクセス
+              href: ~/cross-platform/data-cloud/active-directory/graph.md?context=xamarin/ios
+        - name: Azure Mobile Apps
+          href: ~/cross-platform/data-cloud/mobile-apps.md
+        - name: データ アクセス
+          href: data-cloud/data/index.md
+          items:
+            - name: はじめに
+              href: data-cloud/data/introduction.md
+            - name: 構成
+              href: data-cloud/data/configuration.md
+            - name: SQLite.NET ORM の使用
+              href: data-cloud/data/using-sqlite-orm.md
+            - name: ADO.NET の使用
+              href: data-cloud/data/using-adonet.md
+            - name: アプリでのデータの使用
+              href: data-cloud/data/using-data-in-an-app.md
+        - name: System.Data
+          href: data-cloud/system.data.md
+        - name: iCloud
+          href: data-cloud/introduction-to-icloud.md
+        - name: CloudKit
+          href: data-cloud/intro-to-cloudkit.md
+        - name: Web サービスの概要
+          href: ~/cross-platform/data-cloud/web-services/index.md?context=xamarin/ios
+    - name: 配置とテスト
+      items:
+        - name: 概要
+          href: deploy-test/index.md
+        - name: アプリの配布
+          href: deploy-test/app-distribution/index.md
+          items:
+            - name: App Store 配布
+              href: deploy-test/app-distribution/app-store-distribution/index.md
+              items:
+                - name: iTunes Connect でのアプリの構成
+                  href: deploy-test/app-distribution/app-store-distribution/itunesconnect.md
+                - name: App Store への発行
+                  href: deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md
+            - name: 社内 (エンタープライズ) 配布
+              href: deploy-test/app-distribution/in-house-distribution.md
+            - name: アドホック配布
+              href: deploy-test/app-distribution/ad-hoc-distribution.md
+            - name: iTunesMetadata.plist ファイル
+              href: deploy-test/app-distribution/itunesmetadata.md
+            - name: IPA のサポート
+              href: deploy-test/app-distribution/ipa-support.md
+        - name: コード署名とプロビジョニング
+          href: deploy-test/provisioning/index.md
+          items:
+            - name: 機能の使用
+              href: deploy-test/provisioning/capabilities/index.md
+              items:
+                - name: ウォレットの機能
+                  href: deploy-test/provisioning/capabilities/wallet-capabilities.md
+                - name: iCloud 機能
+                  href: deploy-test/provisioning/capabilities/icloud-capabilities.md
+                - name: Apple Pay 機能
+                  href: deploy-test/provisioning/capabilities/apple-pay-capabilities.md
+                - name: アプリ グループ機能
+                  href: deploy-test/provisioning/capabilities/app-groups-capabilities.md
+            - name: 権利の使用
+              href: deploy-test/provisioning/entitlements.md
+            - name: Info.plist キー/値のリファレンス
+              href: deploy-test/provisioning/infoplist-reference.md
+            - name: Fastlane
+              href: deploy-test/provisioning/fastlane/index.md
+              items:
+                - name: cert
+                  href: deploy-test/provisioning/fastlane/cert.md
+                - name: sigh
+                  href: deploy-test/provisioning/fastlane/sigh.md
+                - name: match
+                  href: deploy-test/provisioning/fastlane/match.md
+        - name: 各種デバイス向けコンパイル
+          href: deploy-test/compiling-for-different-devices.md
+        - name: 環境
+          href: deploy-test/environment.md
+        - name: iOS ビルドのしくみ
+          href: deploy-test/ios-build-mechanics.md
+        - name: mtouch
+          href: deploy-test/mtouch.md
+        - name: リンカー
+          href: deploy-test/linker.md
+        - name: ワイヤレス展開
+          href: deploy-test/wireless-deployment.md
+        - name: TestFlight
+          href: deploy-test/testflight.md
+        - name: デバッグ
+          href: deploy-test/debugging-in-xamarin-ios.md
+        - name: 単体テスト
+          href: deploy-test/touch.unit.md
+        - name: Instruments を使用した Xamarin.iOS アプリケーションのプロファイリング
+          href: deploy-test/using-instruments-to-detect-native-leaks-using-markheap.md
+        - name: 'チュートリアル: Apple の Instruments ツールの使用'
+          href: deploy-test/walkthrough-apples-instrument.md
+        - name: パフォーマンス
+          href: deploy-test/performance.md
+        - name: トラブルシューティング
+          href: deploy-test/troubleshooting.md
+    - name: Apple プラットフォーム
+      items:
+        - name: iOS と macOS の概要
+          href: ~/cross-platform/macios/index.md?context=xamarin/ios
+        - name: Apple のアカウント管理
+          href: ~/cross-platform/macios/apple-account-management.md?context=xamarin/ios
+        - name: Unified API
+          href: ~/cross-platform/macios/unified/index.md?context=xamarin/ios
+          items:
+            - name: 概要
+              href: ~/cross-platform/macios/unified/overview.md?context=xamarin/ios
+            - name: 既存のアプリの更新
+              href: ~/cross-platform/macios/unified/updating-apps.md?context=xamarin/ios
+            - name: 既存の iOS アプリの更新
+              href: ~/cross-platform/macios/unified/updating-ios-apps.md?context=xamarin/ios
+            - name: 既存の Mac アプリの更新
+              href: ~/cross-platform/macios/unified/updating-mac-apps.md?context=xamarin/ios
+            - name: 既存の Xamarin.Forms アプリの更新
+              href: ~/cross-platform/macios/unified/updating-xamarin-forms-apps.md?context=xamarin/ios
+            - name: バインドの Unified API への移行
+              href: ~/cross-platform/macios/unified/update-binding.md?context=xamarin/ios
+            - name: コードを Unified API に更新する場合のヒント
+              href: ~/cross-platform/macios/unified/updating-tips.md?context=xamarin/ios
+        - name: Objective-C のバインディング
+          href: ~/cross-platform/macios/binding/index.md?context=xamarin/ios
+          items:
+            - name: 概要
+              href: ~/cross-platform/macios/binding/overview.md?context=xamarin/ios
+            - name: Objective-C ライブラリのバインド
+              href: ~/cross-platform/macios/binding/objective-c-libraries.md?context=xamarin/ios
+            - name: 型のバインド リファレンス
+              href: ~/cross-platform/macios/binding/binding-types-reference.md?context=xamarin/ios
+            - name: Objective Sharpie
+              href: ~/cross-platform/macios/binding/objective-sharpie/index.md?context=xamarin/ios
+              items:
+                - name: 作業の開始
+                  href: ~/cross-platform/macios/binding/objective-sharpie/get-started.md?context=xamarin/ios
+                - name: ツールとコマンド
+                  href: ~/cross-platform/macios/binding/objective-sharpie/tools.md?context=xamarin/ios
+                - name: フィーチャー
+                  href: ~/cross-platform/macios/binding/objective-sharpie/platform/index.md?context=xamarin/ios
+                  items:
+                    - name: ApiDefinitions と StructsAndEnums
+                      href: ~/cross-platform/macios/binding/objective-sharpie/platform/apidefinitions-structsandenums.md?context=xamarin/ios
+                    - name: ネイティブ フレームワークのバインド
+                      href: ~/cross-platform/macios/binding/objective-sharpie/platform/native-frameworks.md?context=xamarin/ios
+                    - name: 属性の検証
+                      href: ~/cross-platform/macios/binding/objective-sharpie/platform/verify.md?context=xamarin/ios
+                - name: 使用例
+                  href: ~/cross-platform/macios/binding/objective-sharpie/examples/index.md?context=xamarin/ios
+                  items:
+                    - name: Xcode
+                      href: ~/cross-platform/macios/binding/objective-sharpie/examples/xcode.md?context=xamarin/ios
+                    - name: CocoaPod
+                      href: ~/cross-platform/macios/binding/objective-sharpie/examples/cocoapod.md?context=xamarin/ios
+                    - name: 高度 (手動)
+                      href: ~/cross-platform/macios/binding/objective-sharpie/examples/advanced.md?context=xamarin/ios
+                - name: リリース履歴
+                  href: ~/cross-platform/macios/binding/objective-sharpie/releases.md?context=xamarin/ios
+            - name: トラブルシューティング
+              href: ~/cross-platform/macios/binding/troubleshooting.md?context=xamarin/ios
+        - name: ネイティブ参照
+          href: ~/cross-platform/macios/native-references.md?context=xamarin/ios
+        - name: ネイティブ型
+          href: ~/cross-platform/macios/nativetypes.md?context=xamarin/ios
+        - name: 32 ビットおよび 64 ビット プラットフォームの考慮事項
+          href: ~/cross-platform/macios/32-and-64/index.md?context=xamarin/ios
+          items:
+            - name: Xamarin.Mac 統合アプリの 64 ビットへの更新
+              href: ~/cross-platform/macios/32-and-64/mac-64-bit.md?context=xamarin/ios
+        - name: クロスプラットフォーム アプリでのネイティブ型の使用
+          href: ~/cross-platform/macios/native-types-cross-platform.md?context=xamarin/ios
+        - name: HttpClient と SSL/TLS の実装セレクター
+          href: ~/cross-platform/macios/http-stack.md?context=xamarin/ios
+        - name: ビルドの最適化
+          href: ~/cross-platform/macios/optimizations.md?context=xamarin/ios
+    - name: 高度な概念と内部構造
+      items:
+        - name: 概要
+          href: internals/index.md
+        - name: API
+          href: internals/api.md
+        - name: API の設計
+          href: internals/api-design/index.md
+          items:
+            - name: NSString
+              href: internals/api-design/nsstring.md
+            - name: NSObject の汎用サブクラス
+              href: internals/api-design/nsobject-generics.md
+        - name: 使用できるアセンブリ
+          href: ~/cross-platform/internals/available-assemblies.md?context=xamarin/ios
+        - name: 浮動小数点数
+          href: internals/floating-point.md
+        - name: XIB コードの生成
+          href: internals/xib-code-generation.md
+        - name: iOS のアーキテクチャ
+          href: internals/architecture.md
+        - name: 制限事項
+          href: internals/limitations.md
+        - name: 新しい refcount
+          href: internals/newrefcount.md
+        - name: Objective-C セレクター
+          href: internals/objective-c-selectors.md
+        - name: レジストラー
+          href: internals/registrar.md
+    - name: トラブルシューティング
+      items:
+        - name: 概要
+          href: troubleshooting/index.md
+        - name: トラブルシューティングのヒント
+          href: troubleshooting/troubleshooting.md
+        - name: Xamarin.iOS の分析規則
+          href: troubleshooting/xamarin-ios-analysis.md
+        - name: エラー メッセージ (mtouch)
+          href: troubleshooting/mtouch-errors.md
+        - name: よく寄せられる質問
+          href: troubleshooting/questions/index.md
+          items:
+            - name: 以前のバージョンの Xcode を使用できますか?
+              href: troubleshooting/questions/old-version-xcode.md
+            - name: Xcode でのデバッグ
+              href: troubleshooting/questions/debugging-with-xcode.md
+            - name: Xamarin で Mac VM を使用できますか。
+              href: troubleshooting/questions/mac-vm.md
+            - name: Xcode の以前のバージョンのダウンロード
+              href: troubleshooting/questions/previous-xcode.md
+            - name: iOS SDK の場所はどこで設定できますか。
+              href: troubleshooting/questions/ios-sdk.md
+            - name: iOS の更新後に開発者オプションを再度有効にする
+              href: troubleshooting/questions/update-developer-options.md
+            - name: iOS 8 でユーザーの場所が機能しません
+              href: troubleshooting/questions/ios8-user-location.md
+            - name: iOS クラッシュ ログにシンボル名を付加するための .dSYM ファイルはどこで入手できますか。
+              href: troubleshooting/questions/symbolicate-ios-crash.md
+            - name: Invalid Bundle - Options not allowed to be embedded in bitcode are detected in the submission (無効なバンドル - 送信でビットコードに埋め込めないオプションが検出されました)
+              href: troubleshooting/questions/invalid-bundle-bitcode.md
+            - name: IPA ファイルの出力パスを変更する
+              href: troubleshooting/questions/ipa-output-path.md
+            - name: IPA 出力ファイルを TFS 格納フォルダーにコピーする
+              href: troubleshooting/questions/ipa-tfs.md
+            - name: IPA ファイルを Visual Studio でビルドした後でファイルを追加または削除する
+              href: troubleshooting/questions/modify-ipa.md
+            - name: Visual Studio から .xcarchive アーカイブを作成する
+              href: troubleshooting/questions/create-xcarchive.md
+            - name: アプリの送信が失敗して "Disallowed paths ( "iTunesMetadata.plist" ) found at ..." (許可されないパス ( "iTunesMetadata.plist" ) が ... で見つかりました) と表示されるのはなぜですか。
+              href: troubleshooting/questions/itunesmetadata-disallowed-paths.md
+            - name: RegisterServicePort での iOS Designer エラー
+              href: troubleshooting/questions/error-registerserviceport.md
+            - name: iOS のビルドが失敗して "no valid iPhone code signing keys found in keychain" (キーチェーンに有効な iPhone コード署名キーがありません) と表示されるのはなぜですか。
+              href: troubleshooting/questions/no-codesigning-keys.md
+            - name: 'iOS 9 アプリが失敗して "System.Exception: Failed to marshal the Objective-C object" (System.Exception: Objective-C object をマーシャリングできませんでした) と表示されるのはなぜですか。'
+              href: troubleshooting/questions/exception-marshal-obj-c.md
+            - name: 'ランタイム エラー: "Runtime error: The assembly mscorlib.dll was not found or could not be loaded" (アセンブリ mscorlib.dll が見つからないか、読み込めませんでした)'
+              href: troubleshooting/questions/error-mscorlib-not-found.md
+            - name: IPA ファイルが 0 バイトです
+              href: troubleshooting/questions/ipa-zero-bytes.md
+            - name: 'IBTool エラー: "The operation couldn’t be completed." (操作を完了できませんでした。)'
+              href: troubleshooting/questions/error-ibtool.md
+            - name: 'エラー MT1009: "Could not copy the assembly" (アセンブリをコピーできませんでした)'
+              href: troubleshooting/questions/error-mt1009.md
+            - name: System.Exception AMDeviceNotificationSubscribe returned ... (System.Exception AMDeviceNotificationSubscribe が ... を返しました)
+              href: troubleshooting/questions/exception-amddevicenotificationsubscribe.md
+            - name: MDocArchiveToMsxDocConverter.exe not found rver.BaseCommand.OnRequest (MDocArchiveToMsxDocConverter.exe が rver.BaseCommand.OnRequest に見つかりません)
+              href: troubleshooting/questions/mdocarchivetomsxdocconverter-not-found.md
+            - name: Xamarin Studio で iOS プロジェクトの Mono ランタイム環境変数を設定する方法を教えてください。
+              href: troubleshooting/questions/xs-mono-runtime.md
+    - name: watchOS
+      items:
+        - name: 概要
+          href: watchos/index.md
+        - name: 作業の開始
+          href: watchos/get-started/index.md
+          items:
+            - name: watchOS の概要
+              href: watchos/get-started/intro-to-watchos.md
+            - name: セットアップとインストール
+              href: watchos/get-started/installation.md
+            - name: はじめての watchOS
+              href: watchos/get-started/hello-watch.md
+            - name: プロジェクト参照
+              href: watchos/get-started/project-references.md
+        - name: アプリケーションの基礎
+          href: watchos/app-fundamentals/index.md
+          items:
+            - name: 親アプリ
+              href: watchos/app-fundamentals/parent-app.md
+            - name: アプリ グループ
+              href: watchos/app-fundamentals/app-groups.md
+            - name: アイコン
+              href: watchos/app-fundamentals/icons.md
+            - name: レイアウト
+              href: watchos/app-fundamentals/layout.md
+            - name: ローカリゼーション
+              href: watchos/app-fundamentals/localization.md
+            - name: ナビゲーション
+              href: watchos/app-fundamentals/navigation.md
+            - name: 画面サイズ
+              href: watchos/app-fundamentals/screen-sizes.md
+            - name: 設定
+              href: watchos/app-fundamentals/settings.md
+        - name: ユーザー インターフェイス
+          href: watchos/user-interface/index.md
+          items:
+            - name: イメージ
+              href: watchos/user-interface/image.md
+            - name: テーブル
+              href: watchos/user-interface/table.md
+            - name: メニュー (Force Touch)
+              href: watchos/user-interface/menu.md
+            - name: テキスト入力
+              href: watchos/user-interface/text-input.md
+        - name: プラットフォーム機能
+          href: watchos/platform/index.md
+          items:
+            - name: watchOS 5 の概要
+              href: watchos/platform/introduction-to-watchos5/index.md
+            - name: watchOS 4 の概要
+              href: watchos/platform/introduction-to-watchos4.md
+            - name: watchOS 3 の概要
+              href: watchos/platform/introduction-to-watchos3/index.md
+              items:
+                - name: watchOS 3 フレームワークのその他の変更点
+                  href: watchos/platform/introduction-to-watchos3/additional-framework-changes.md
+                - name: トラブルシューティング
+                  href: watchos/platform/introduction-to-watchos3/troubleshooting.md
+            - name: Apple Pay
+              href: watchos/platform/apple-pay.md
+            - name: バックグラウンド タスク
+              href: watchos/platform/background-tasks.md
+            - name: 通知
+              href: watchos/platform/notifications.md
+            - name: 問題点
+              href: watchos/platform/complications.md
+            - name: プロアクティブな候補
+              href: watchos/platform/proactive-suggestions.md
+            - name: クイック操作のテクニック
+              href: watchos/platform/quick-interaction-techniques.md
+            - name: トレーニング アプリの拡張機能
+              href: watchos/platform/workout-apps.md
+        - name: watchOS 向け Xamarin.Essentials
+          items:
+            - name: Xamarin.Essentials の概要
+              href: ~/essentials/index.md?context=xamarin/watchos
+            - name: 開始するには
+              href: ~/essentials/get-started.md?context=xamarin/watchos
+            - name: プラットフォームと機能のサポート
+              href: ~/essentials/platform-feature-support.md?context=xamarin/watchos
+            - name: 加速度計
+              href: ~/essentials/accelerometer.md?context=xamarin/watchos
+            - name: アプリ情報
+              href: ~/essentials/app-information.md?context=xamarin/watchos
+            - name: バロメーター
+              href: ~/essentials/barometer.md?context=xamarin/watchos
+            - name: バッテリ
+              href: ~/essentials/battery.md?context=xamarin/watchos
+            - name: 色のコンバーター
+              href: ~/essentials/color-converters.md?context=xamarin/watchos
+            - name: 接続
+              href: ~/essentials/connectivity.md?context=xamarin/watchos
+            - name: シェイクの検出
+              href: ~/essentials/detect-shake.md?context=xamarin/watchos
+            - name: デバイス情報
+              href: ~/essentials/device-information.md?context=xamarin/watchos
+            - name: ファイル システム ヘルパー
+              href: ~/essentials/file-system-helpers.md?context=xamarin/watchos
+            - name: ジオコーディング
+              href: ~/essentials/geocoding.md?context=xamarin/watchos
+            - name: ジャイロスコープ
+              href: ~/essentials/gyroscope.md?context=xamarin/watchos
+            - name: 磁力計
+              href: ~/essentials/magnetometer.md?context=xamarin/watchos
+            - name: メイン スレッド
+              href: ~/essentials/main-thread.md?context=xamarin/watchos
+            - name: マップ
+              href: ~/essentials/maps.md?context=xamarin/watchos
+            - name: 向きセンサー
+              href: ~/essentials/orientation-sensor.md?context=xamarin/watchos
+            - name: プラットフォームの拡張機能 (サイズ、四角形、ポイント)
+              href: ~/essentials/platform-extensions.md?context=xamarin/watchos
+            - name: Preferences
+              href: ~/essentials/preferences.md?context=xamarin/watchos
+            - name: セキュリティで保護されたストレージ
+              href: ~/essentials/secure-storage.md?context=xamarin/watchos
+            - name: 音声合成
+              href: ~/essentials/text-to-speech.md?context=xamarin/watchos
+            - name: 単位コンバーター
+              href: ~/essentials/unit-converters.md?context=xamarin/watchos
+            - name: バージョンの追跡
+              href: ~/essentials/version-tracking.md?context=xamarin/watchos
+            - name: トラブルシューティング
+              href: ~/essentials/troubleshooting.md?context=xamarin/watchos
+        - name: 配置とテスト
+          href: watchos/deploy-test/index.md
+          items:
+            - name: Apple Watch
+              href: watchos/deploy-test/device.md
+            - name: App Store
+              href: watchos/deploy-test/appstore.md
+        - name: トラブルシューティング
+          href: watchos/troubleshooting.md
+    - name: tvOS
+      items:
+        - name: 概要
+          href: tvos/index.md
+        - name: 作業の開始
+          href: tvos/get-started/index.md
+          items:
+            - name: tvOS のインストールのサポート
+              href: tvos/get-started/installation.md
+            - name: はじめての tvOS クイック スタート ガイド
+              href: tvos/get-started/hello-tvos.md
+        - name: アプリケーションの基礎
+          href: tvos/app-fundamentals/index.md
+          items:
+            - name: アイコンとイメージの使用
+              href: tvos/app-fundamentals/icons-images.md
+            - name: ナビゲーションとフォーカスの使用
+              href: tvos/app-fundamentals/navigation-focus.md
+            - name: リソースとデータ ストレージ
+              href: tvos/app-fundamentals/resources-data-storage.md
+            - name: AVAudioPlayer でのサウンドの再生
+              href: tvos/app-fundamentals/sounds.md
+        - name: プラットフォーム機能
+          href: tvos/platform/index.md
+          items:
+            - name: tvOS 12 の概要
+              href: tvos/platform/introduction-to-tvos12/index.md
+            - name: tvOS 11 の概要
+              href: tvos/platform/introduction-to-tvos11.md
+            - name: tvOS 10 の概要
+              href: tvos/platform/introduction-to-tvos10/index.md
+              items:
+                - name: iOS 10 フレームワークのその他の変更点
+                  href: tvos/platform/introduction-to-tvos10/additional-framework-changes.md
+                - name: トラブルシューティング
+                  href: tvos/platform/introduction-to-tvos10/troubleshooting.md
+            - name: tvOS 9 の概要
+              href: tvos/platform/tvos9.md
+            - name: Siri のリモート コントローラーと Bluetooth コントローラー
+              href: tvos/platform/remote-bluetooth.md
+            - name: ユーザー インターフェイスのスタイル
+              href: tvos/platform/user-interface-styles.md
+        - name: tvOS 向け Xamarin.Essentials
+          items:
+            - name: Xamarin.Essentials の概要
+              href: ~/essentials/index.md?context=xamarin/tvos
+            - name: 開始するには
+              href: ~/essentials/get-started.md?context=xamarin/tvos
+            - name: プラットフォームと機能のサポート
+              href: ~/essentials/platform-feature-support.md?context=xamarin/tvos
+            - name: アプリ情報
+              href: ~/essentials/app-information.md?context=xamarin/tvos
+            - name: 色のコンバーター
+              href: ~/essentials/color-converters.md?context=xamarin/tvos
+            - name: 接続
+              href: ~/essentials/connectivity.md?context=xamarin/tvos
+            - name: デバイス情報
+              href: ~/essentials/device-information.md?context=xamarin/tvos
+            - name: ファイル システム ヘルパー
+              href: ~/essentials/file-system-helpers.md?context=xamarin/tvos
+            - name: ジオコーディング
+              href: ~/essentials/geocoding.md?context=xamarin/tvos
+            - name: メイン スレッド
+              href: ~/essentials/main-thread.md?context=xamarin/tvos
+            - name: プラットフォームの拡張機能 (サイズ、四角形、ポイント)
+              href: ~/essentials/platform-extensions.md?context=xamarin/tvos
+            - name: Preferences
+              href: ~/essentials/preferences.md?context=xamarin/tvos
+            - name: セキュリティで保護されたストレージ
+              href: ~/essentials/secure-storage.md?context=xamarin/tvos
+            - name: 音声合成
+              href: ~/essentials/text-to-speech.md?context=xamarin/tvos
+            - name: 単位コンバーター
+              href: ~/essentials/unit-converters.md?context=xamarin/tvos
+            - name: バージョンの追跡
+              href: ~/essentials/version-tracking.md?context=xamarin/tvos
+            - name: トラブルシューティング
+              href: ~/essentials/troubleshooting.md?context=xamarin/tvos
+        - name: ユーザー インターフェイス
+          href: tvos/user-interface/index.md
+          items:
+            - name: アラート
+              href: tvos/user-interface/alerts.md
+            - name: ボタン
+              href: tvos/user-interface/buttons.md
+            - name: コレクション ビュー
+              href: tvos/user-interface/collection-views.md
+            - name: ナビゲーション バー
+              href: tvos/user-interface/navigation-bars.md
+            - name: ページ コントロール
+              href: tvos/user-interface/page-controls.md
+            - name: 進行状況インジケーター
+              href: tvos/user-interface/progress-indicators.md
+            - name: セグメント付きコントロール
+              href: tvos/user-interface/segmented-controls.md
+            - name: 分割ビュー
+              href: tvos/user-interface/split-views.md
+            - name: スタック ビュー
+              href: tvos/user-interface/stacked-views.md
+            - name: タブ バー
+              href: tvos/user-interface/tab-bars.md
+            - name: テーブル ビュー
+              href: tvos/user-interface/table-views.md
+            - name: テキスト フィールドと検索フィールド
+              href: tvos/user-interface/text-fields-and-search.md
+        - name: 配置とテスト
+          href: tvos/deploy-test/index.md
+          items:
+            - name: アプリの配布
+              href: tvos/deploy-test/app-distribution/index.md
+              items:
+                - name: iTunes Connect での tvOS アプリの構成
+                  href: tvos/deploy-test/app-distribution/itunes-connect.md
+                - name: Apple TV App Store への発行
+                  href: tvos/deploy-test/app-distribution/app-store-publishing.md
+        - name: トラブルシューティング
+          href: tvos/troubleshooting.md
+        - name: 内部構造
+          href: tvos/internals/index.md
+          items:
+            - name: アセンブリ
+              href: tvos/internals/assemblies.md
+            - name: Frameworks
+              href: tvos/internals/frameworks.md
+    - name: リリース ノート
+      href: 'https://docs.microsoft.com/xamarin/ios/release-notes/'
+    - name: サンプル
+      href: samples/index.yml

@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
 ms.openlocfilehash: a51a441aeacf265093b82ddb65237887b0a30719
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53053835"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61382453"
 ---
 # <a name="the-translate-transform"></a>平行移動変換
 
@@ -136,7 +136,7 @@ using (SKPaint textPaint = new SKPaint())
 
 2 番目の例では、 [ `ResetMatrix`](xref:SkiaSharp.SKCanvas.ResetMatrix)します。 これにより、すべての変換の既定の状態に戻ります。
 
-3 番目の例の状態を保存する、`SKCanvas`オブジェクトへの呼び出しで[ `Save` ](xref:SkiaSharp.SKCanvas.Save)への呼び出しで状態を復元[ `Restore`](xref:SkiaSharp.SKCanvas.Restore)します。 これは、最も汎用的な描画操作の一連の変換を操作する方法です。 これら`Save`と`Restore`スタックのように関数を呼び出します: 呼び出すことができます`Save`複数の時刻、および 呼び出し`Restore`で以前の状態を返すシーケンスを反転します。 `Save`メソッドは、整数を返し、その整数を渡すことができます[ `RestoreToCount` ](xref:SkiaSharp.SKCanvas.RestoreToCount*)を効果的に呼び出す`Restore`複数回です。 [ `SaveCount` ](xref:SkiaSharp.SKCanvas.SaveCount)プロパティがスタックに現在保存されている状態の数を返します。
+3 番目の例の状態を保存する、`SKCanvas`オブジェクトへの呼び出しで[ `Save` ](xref:SkiaSharp.SKCanvas.Save)への呼び出しで状態を復元[ `Restore`](xref:SkiaSharp.SKCanvas.Restore)します。 これは、最も汎用的な描画操作の一連の変換を操作する方法です。 これら`Save`と`Restore`スタックのように関数を呼び出します。呼び出すことができます`Save`複数の時刻、およびし呼び出し`Restore`逆を以前の状態を返すシーケンス。 `Save`メソッドは、整数を返し、その整数を渡すことができます[ `RestoreToCount` ](xref:SkiaSharp.SKCanvas.RestoreToCount*)を効果的に呼び出す`Restore`複数回です。 [ `SaveCount` ](xref:SkiaSharp.SKCanvas.SaveCount)プロパティがスタックに現在保存されている状態の数を返します。
 
 使用することも、 [ `SKAutoCanvasRestore` ](xref:SkiaSharp.SKAutoCanvasRestore)キャンバスの状態を復元するためのクラス。 このクラスのコンス トラクターで呼び出されるものでは、`using`ステートメントでは、キャンバスの最後に状態が自動的に復元、`using`ブロックします。 
 

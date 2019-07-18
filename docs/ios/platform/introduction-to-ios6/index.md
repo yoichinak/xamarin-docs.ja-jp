@@ -1,5 +1,5 @@
 ---
-title: IOS 6 の概要
+title: iOS 6 の概要
 description: このドキュメントは、iOS 6 で導入された機能について説明するガイドにリンクしています。 コレクション ビュー、PassKit、ソーシャル フレームワーク、および StoreKit の変更内容はすべて説明します。
 ms.prod: xamarin
 ms.assetid: 242DA7E3-8FD8-5F20-285D-603259CA622D
@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 25926d82e060b91b007da9c2295b328cb049e8df
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f0cfeaa049355c2b524ead748696eafd884a1c54
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103869"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865699"
 ---
-# <a name="introduction-to-ios-6"></a>IOS 6 の概要
+# <a name="introduction-to-ios-6"></a>iOS 6 の概要
 
 _iOS 6 には、さまざまな Xamarin.iOS 6 を提供するには、アプリを開発するための新しいテクノロジが含まれていますC#開発者。_
 
-[ ![](images/ios6-large.jpg "IOS 6 ロゴ")](images/ios6-large.jpg#lightbox)
+[![](images/ios6-large.jpg "IOS 6 ロゴ")](images/ios6-large.jpg#lightbox)
 
 開発者で、iOS 6 と Xamarin.iOS 6 を含め、iOS アプリケーションを作成するには、そのターゲット iPhone 5 を最大限豊富な機能があるようになりました。
 このドキュメントでは、利用できるより魅力的な新しい機能とこのトピックでは、次の各記事へのリンクの一部を示します。 さらに重要なは、iOS 6 および iPhone 5 の新しい解像度に移行する開発者となるいくつかの変更に当てはめます。
@@ -31,20 +31,20 @@ _iOS 6 には、さまざまな Xamarin.iOS 6 を提供するには、アプリ�
 
 ## <a name="introduction-to-passkitiosplatformpasskitmd"></a>[PassKit の概要](~/ios/platform/passkit.md)
 
-PassKit framework Passbook アプリで管理されているデジタルのパスとの対話を可能です。 詳細については、、[渡すキット ガイドの概要](~/ios/platform/passkit.md)を参照してください。
+PassKit framework Passbook アプリで管理されているデジタルのパスとの対話を可能です。 詳細については、次を参照してください。、[渡すキット ガイドの概要](~/ios/platform/passkit.md)します。
 
 
-##  <a name="introduction-to-eventkitiosplatformeventkitmd"></a>[EventKit の概要](~/ios/platform/eventkit.md)
+## <a name="introduction-to-eventkitiosplatformeventkitmd"></a>[EventKit の概要](~/ios/platform/eventkit.md)
 
 EventKit フレームワークでは、予定表、予定表イベント、およびカレンダーのデータベースに保存されるアラーム データにアクセスする手段を提供します。 アクセスの予定表、予定表をイベントでしたが使用可能な iOS 4 以降、iOS 6 は今すぐアラーム データへのアクセスを公開します。 詳細については、次を参照してください。、[は](~/ios/platform/eventkit.md) [EventKit 概要](~/ios/platform/eventkit.md)ガイド。
 
 
-##  <a name="introduction-to-the-social-frameworkiosplatformsocial-frameworkmd"></a>[ソーシャル フレームワークの概要](~/ios/platform/social-framework.md)
+## <a name="introduction-to-the-social-frameworkiosplatformsocial-frameworkmd"></a>[ソーシャル フレームワークの概要](~/ios/platform/social-framework.md)
 
 ソーシャル フレームワークは、中国でのユーザーの Twitter および Facebook、ほか SinaWeibo をなどのソーシャル ネットワークと対話するための統一された API を提供します。 詳細については、次を参照してください。、[ソーシャル フレームワークの概要](~/ios/platform/social-framework.md)ガイド。
 
 
-##  <a name="changes-to-storekitchanges-to-storekitmd"></a>[StoreKit の変更点](changes-to-storekit.md)
+## <a name="changes-to-storekitchanges-to-storekitmd"></a>[StoreKit の変更点](changes-to-storekit.md)
 
 Apple がストア キットの 2 つの新しい機能を導入しました。 購入と iTunes または、アプリ内からアプリ ストアのコンテンツをダウンロードし、アプリ内購入のコンテンツ ファイルをホストしています。 詳細については、次を参照してください。、[ストア キットへの変更](changes-to-storekit.md)ガイド。
 

@@ -6,12 +6,12 @@ ms.assetid: FC69E69B-04D4-45DF-9BBF-2A6CDEAD9B2F
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: 82b1408cafedf98a8619e8e039ba00b332f74516
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: c8ef426c742f875e26fc0fcf88a9468e1618e30f
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "33921990"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832525"
 ---
 # <a name="part-1--creating-a-cross-platform-monogame"></a>パート 1-クロスプラット フォーム MonoGame の作成
 
@@ -30,13 +30,13 @@ MonoGame として追加できる追加の Visual studio for mac。 Mac で次�
 ![MonoGame を選択すると、Mac の拡張機能ギャラリーの visual Studio](part1-images/image2.png)
 
 > [!IMPORTANT]
-> **注**: 場合、**ゲーム開発**セクションがない、アドイン マネージャーから、手動でダウンロードし、ここから最新バージョンをインストールできます: http://www.monogame.net/downloads/ です。 Visual Studio に表示されるテンプレート用の Mac を再起動する必要があります。
+> 場合、**ゲーム開発**アドイン マネージャーにセクションがない場合、手動でダウンロードし、ここから最新のバージョンをインストールすることができます: http://www.monogame.net/downloads/ します。 Visual Studio に表示されるテンプレート用の Mac を再起動する必要があります。
 
 インストールされると、次のセクションで紹介するよう MonoGame テンプレートは for Mac、Visual Studio で表示します。
 
 ## <a name="creating-a-new-solution"></a>新しいソリューションを作成します。
 
-Visual studio for Mac 選択**ファイル > 新しいソリューション**します。 **新しいプロジェクト**ダイアログ ボックスで、をクリック **[その他]**、までスクロール、**全般** セクションで、選択、* * ユニバーサル MonoGame モバイル アプリケーション * * オンにして、[次へ] をクリックします。
+Visual studio for Mac 選択**ファイル > 新しいソリューション**します。 **新しいプロジェクト**ダイアログ ボックスで、をクリック **[その他]** 、までスクロール、**全般** セクションで、選択、* * ユニバーサル MonoGame モバイル アプリケーション * * オンにして、[次へ] をクリックします。
 
 ![MonoGame アプリケーションを作成する新しいプロジェクト ダイアログ ボックス](part1-images/image3.png)
 
@@ -63,7 +63,7 @@ protected override void OnCreate (Bundle bundle)
 }
 ```
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
 このチュートリアルは、Visual Studio for mac を使用、クロスプラット フォーム MonoGame プロジェクトを作成する方法を説明しました この結果は、空のブルー スクリーンです。 このプロジェクトは、iOS または Android ゲームの開始点として使用できます。
 

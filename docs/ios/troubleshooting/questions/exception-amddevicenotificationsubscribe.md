@@ -1,5 +1,5 @@
 ---
-title: System.Exception AMDeviceNotificationSubscribe returned...
+title: System.Exception AMDeviceNotificationSubscribe returned ... (System.Exception AMDeviceNotificationSubscribe が ... を返しました)
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 7E4ACC7E-F4FB-46C1-8837-C7FBAAFB2DC7
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
 ms.openlocfilehash: 4fb0712366422e8810a2db60d40c3b85d9f4cd82
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119255"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61421945"
 ---
-# <a name="systemexception-amdevicenotificationsubscribe-returned-"></a>System.Exception AMDeviceNotificationSubscribe returned...
+# <a name="systemexception-amdevicenotificationsubscribe-returned-"></a>System.Exception AMDeviceNotificationSubscribe returned ... (System.Exception AMDeviceNotificationSubscribe が ... を返しました)
 
 > [!IMPORTANT]
 > Xamarin の最近のバージョンでは、この問題を解決されています。 ただし、ソフトウェアの最新バージョンで問題が発生した場合を提出してください、[新しいバグ](~/cross-platform/troubleshooting/questions/howto-file-bug.md)完全なバージョン管理情報と完全のビルド ログ出力します。
@@ -63,4 +63,4 @@ For Mac、または初めて Visual Studio を起動すると、このメッセ�
 
 ## <a name="references"></a>参照
 
-*   [バグ 11789 - MonoTouch.MobileDevice.MobileDeviceException: AMDeviceNotificationSubscribe returned: 0xe8000063 [解決済み既定値は 20]](https://bugzilla.xamarin.com/show_bug.cgi?id=11789)
+*   [バグ 11789 - MonoTouch.MobileDevice.MobileDeviceException:AMDeviceNotificationSubscribe が返されます。0XE8000063 [解決済み既定値は 20]](https://bugzilla.xamarin.com/show_bug.cgi?id=11789)

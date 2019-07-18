@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: 8ad2dde701814c0977e25e6e58272c0aa01ca4ca
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: aa2e2ac96b37bc781f2e4a3778ea0aaf970649ec
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672847"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67674605"
 ---
 # <a name="working-with-jni"></a>JNI の使用
 

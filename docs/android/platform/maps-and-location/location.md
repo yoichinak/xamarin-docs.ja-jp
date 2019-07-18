@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/22/2018
-ms.openlocfilehash: 05a2187a5e8dc010f04e89757b566eaf44cb5fd6
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 76f98f1e660f22ec25c48407f2e87cec60ff12ef
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57668942"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827687"
 ---
 # <a name="location-services"></a>位置情報サービス
 
@@ -46,7 +46,7 @@ Android では、セル tower 場所、Wi-fi、GPS などのさまざまな場�
 2 つのアクセス許可がある使用可能な&ndash;をアプリケーションの要件と API の好みに応じてができるようにする 1 つ。
 
 -   `ACCESS_FINE_LOCATION` &ndash; GPS をアプリケーションのアクセスを許可します。
-    必要な*GPS プロバイダー*と*パッシブ プロバイダー*オプション (*パッシブ プロバイダーには、別のアプリケーションまたはサービスによって収集された GPS データにアクセスする許可が必要です。*)。 省略可能なアクセス許可、*ネットワーク プロバイダー*します。
+    必要な*GPS プロバイダー*と*パッシブ プロバイダー*オプション (*パッシブ プロバイダーには、別のアプリケーションまたはサービスによって収集された GPS データにアクセスする許可が必要です。* )。 省略可能なアクセス許可、*ネットワーク プロバイダー*します。
 
 -   `ACCESS_COARSE_LOCATION` &ndash; 携帯電話と Wi-fi の場所にアプリケーションのアクセスを許可します。 必要な*ネットワーク プロバイダー*場合`ACCESS_FINE_LOCATION`が設定されていません。
 
@@ -355,8 +355,8 @@ else
 
 ## <a name="related-links"></a>関連リンク
 
-- [場所 (サンプル)](https://developer.xamarin.com/samples/Location/)
-- [FusedLocationProvider (サンプル)](https://developer.xamarin.com/samples/FusedLocationProvider/)
+- [場所 (サンプル)](https://developer.xamarin.com/samples/monodroid/Location/)
+- [FusedLocationProvider (サンプル)](https://developer.xamarin.com/samples/monodroid/FusedLocationProvider/)
 - [Google play 開発者サービスします。](https://developer.android.com/google/play-services/index.html)
 - [条件のクラス](https://developer.xamarin.com/api/type/Android.Locations.Criteria/)
 - [LocationManager クラス](https://developer.xamarin.com/api/type/Android.Locations.LocationManager/)

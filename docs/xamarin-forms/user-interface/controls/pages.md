@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: ce10a2e6ac91f67f8b4f664c232de2a3c97a5ba6
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.openlocfilehash: 7b99e876c666160bdfd4392915901ea6535e68e1
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55292000"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67674823"
 ---
 # <a name="xamarinforms-pages"></a>Xamarin.Forms のページ
 
@@ -22,7 +22,7 @@ _Xamarin.Forms のページでは、クロス プラットフォーム モバイ
 
 以下に説明するすべてのページの種類は、Xamarin.Forms から派生[ `Page` ](xref:Xamarin.Forms.Page)クラス。 これらのビジュアル要素は、すべてまたはほとんどの画面が入ります。 A`Page`オブジェクトが表す、 `ViewController` ios と`Page`ユニバーサル Windows プラットフォームにします。 Android では、各ページは、画面のように、 `Activity`、Xamarin.Forms のページが、*いない*`Activity`オブジェクト。
 
-[ ![](pages-images/pages-sml.png "Xamarin.Forms のページの種類")](pages-images/pages.png#lightbox "Xamarin.Forms ページの種類")
+[![](pages-images/pages-sml.png "Xamarin.Forms のページの種類")](pages-images/pages.png#lightbox "Xamarin.Forms ページの種類")
 
 ## <a name="pages"></a>ページ数
 
@@ -48,7 +48,7 @@ Xamarin.Forms には、次のページの種類がサポートされています
 
 |     |     |
 | --- | --- |
-| [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)スタック ベースのアーキテクチャを使用して他のページ間のナビゲーションを管理します。 コンス トラクターにページ ナビゲーションをアプリケーションで使用する場合、ホーム ページのインスタンスを渡す必要があります、`NavigationPage`オブジェクト。<br /><br />[API ドキュメント](xref:Xamarin.Forms.NavigationPage) / [ガイド](~/xamarin-forms/app-fundamentals/navigation/hierarchical.md) / [サンプル 1](https://developer.xamarin.com/samples/xamarin-forms/Navigation/Hierarchical/)、 [2](https://developer.xamarin.com/samples/xamarin-forms/Navigation/PassingData/)、および[3](https://developer.xamarin.com/samples/xamarin-forms/Navigation/LoginFlow/)  | [![NavigationPage 例](pages-images/NavigationPage.png "NavigationPage 例")](pages-images/NavigationPage-Large.png#lightbox "NavigationPage の例")<br />[このページの C# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/NavigationPageDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/NavigationPageDemoPage.xaml)で[コードの背後にある =](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/NavigationPageDemoPage.xaml.cs) |
+| [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)スタック ベースのアーキテクチャを使用して他のページ間のナビゲーションを管理します。 コンストラクターにページ ナビゲーションをアプリケーションで使用する場合、ホーム ページのインスタンスを渡す必要があります、`NavigationPage`オブジェクト。<br /><br />[API ドキュメント](xref:Xamarin.Forms.NavigationPage) / [ガイド](~/xamarin-forms/app-fundamentals/navigation/hierarchical.md) / [サンプル 1](https://developer.xamarin.com/samples/xamarin-forms/Navigation/Hierarchical/)、 [2](https://developer.xamarin.com/samples/xamarin-forms/Navigation/PassingData/)、および[3](https://developer.xamarin.com/samples/xamarin-forms/Navigation/LoginFlow/)  | [![NavigationPage 例](pages-images/NavigationPage.png "NavigationPage 例")](pages-images/NavigationPage-Large.png#lightbox "NavigationPage の例")<br />[このページの C# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/NavigationPageDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/NavigationPageDemoPage.xaml)で[コードの背後にある =](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/NavigationPageDemoPage.xaml.cs) |
 |     |     |
 
 ### <a name="tabbedpage"></a>TabbedPage
@@ -74,6 +74,6 @@ Xamarin.Forms には、次のページの種類がサポートされています
 
 ## <a name="related-links"></a>関連リンク
 
-- [Xamarin.Forms FormsGallery サンプル](https://developer.xamarin.com/samples/FormsGallery/)
+- [Xamarin.Forms FormsGallery サンプル](https://developer.xamarin.com/samples/xamarin-forms/FormsGallery/)
 - [Xamarin.Forms のサンプル](https://developer.xamarin.com/samples/xamarin-forms/all/)
 - [Xamarin.Forms API ドキュメント](https://docs.microsoft.com/dotnet/api/xamarin.forms?view=xamarin-forms)

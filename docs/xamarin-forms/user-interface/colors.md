@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: 43854929cfc232b24cad18e276b3ba51d1e5dece
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: a1d49639d28e677ebbe2d7cf870a6e91dfff8575
+ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53058412"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66740916"
 ---
 # <a name="colors-in-xamarinforms"></a>Xamarin.Forms での色
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/WorkingWithColors)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithColors)
 
 _Xamarin.Forms は、柔軟なクロスプラット フォーム対応の色クラスを提供します。_
 
@@ -25,7 +25,7 @@ _Xamarin.Forms は、柔軟なクロスプラット フォーム対応の色ク�
 `Color`クラスは、さまざまな色のインスタンスを作成するメソッドを提供します。
 
 -  **名前付きの色**-一般的な名前付きの色などのコレクション`Red`、 `Green`、および`Blue`します。
--  **FromHex** -文字列値を HTML では、次のような"00FF00"で使用される構文に似ています。 アルファは、最初の文字 ("CC00FF00") のペアとして必要に応じて指定できます。
+-  **FromHex** -文字列値を HTML、たとえば"00FF00"で使用される構文に似ています。 アルファは、最初の文字 ("CC00FF00") のペアとしてオプションで指定できます。
 -  **FromHsla** -色相、彩度と輝度`double`アルファ値は省略可能な (0.0 ~ 1.0) の値。
 -  **FromRgb** -赤、緑、および青`int`値 (0 ~ 255)。
 -  **FromRgba** -赤、緑、青、およびアルファ`int`値 (0 ~ 255)。
@@ -124,5 +124,5 @@ Xamarin.Forms`Color`プラットフォームに対応した色の参照を作成
 
 ## <a name="related-links"></a>関連リンク
 
-- [ColorsSample](https://developer.xamarin.com/samples/WorkingWithColors)
+- [ColorsSample](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithColors)
 - [バインド可能なピッカー (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BindablePicker/)

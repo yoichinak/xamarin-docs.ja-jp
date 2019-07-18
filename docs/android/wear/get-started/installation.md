@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 96fd6d32f37dd90422f05caf33cfda9a65683fd2
-ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
+ms.openlocfilehash: 0bae98a204ba3478834894d6c093259a8b2139b2
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58071035"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827721"
 ---
 # <a name="setup-and-installation"></a>セットアップとインストール
 
@@ -99,12 +99,12 @@ Android Wear エミュレーターを使用するを使用して、Android Wear 
 
 -----
 
-Android Wear エミュレーターの設定に関する詳細については、[エミュレーターで Android Wear をデバッグ](~/android/wear/deploy-test/debug-on-emulator.md)を参照してください。
+Android Wear エミュレーターの設定に関する詳細については、次を参照してください。[エミュレーターで Android Wear をデバッグ](~/android/wear/deploy-test/debug-on-emulator.md)します。
 
 
 ### <a name="android-wear-device"></a>Android Wear デバイス
 
-Android Wear デバイス、Android Wear スマートウォッチなどを使っている場合は、エミュレーターを使用する代わりにこのデバイスでアプリをデバッグできます。 Wear デバイスでの開発方法の詳細については、[Wear デバイスでのデバッグ](~/android/wear/deploy-test/debug-on-device.md)を参照してください。
+Android Wear デバイス、Android Wear スマートウォッチなどを使っている場合は、エミュレーターを使用する代わりにこのデバイスでアプリをデバッグできます。 Wear デバイスでの開発方法の詳細については、次を参照してください。 [Wear デバイスでのデバッグ](~/android/wear/deploy-test/debug-on-device.md)します。
 
 
 ## <a name="create-your-first-android-wear-app"></a>最初の Android Wear アプリを作成します。
@@ -118,9 +118,9 @@ Android wear のアプリケーションは、付属の Android フォン アプ
 
 Android Wear アプリケーションをメインの Android アプリへの参照として追加する場合は自動的に、Android Wear のプロジェクトと見なされます、必要なすべての XML とメタデータを生成します。 さらに、Google Play にアプリを簡単に出荷できるようにパッケージとバージョン番号が一致することを確認します。 
 
-Wear アプリをパッケージ化の詳細については、[パッケージ化操作](~/android/wear/deploy-test/packaging.md)を参照してください。
+Wear アプリをパッケージ化の詳細については、次を参照してください。[パッケージ化操作](~/android/wear/deploy-test/packaging.md)します。
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkeletonWear (サンプル)](https://developer.xamarin.com/samples/SkeletonWear/)
+- [SkeletonWear (サンプル)](https://developer.xamarin.com/samples/monodroid/wear/SkeletonWear/)

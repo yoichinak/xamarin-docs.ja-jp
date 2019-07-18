@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: 8c831dfa45c5028e4f1422467bf3be9210452335
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: 840fa1b40858ccf3bff15f7027735ce98081d23c
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59019374"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65925133"
 ---
 # <a name="reusable-effectbehavior"></a>再利用可能な EffectBehavior
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/behaviors/effectbehavior/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/Behaviors/EffectBehavior/)
 
 _ビヘイビアーは、コントロールにエフェクトを追加するために役立つ方法です。エフェクトを処理する定型コードを分離コード ファイルから削除します。この記事では、Xamarin.Forms のビヘイビアーを作成および使用して、コントロールにエフェクトを追加する方法を示します。_
 
@@ -32,7 +32,7 @@ _ビヘイビアーは、コントロールにエフェクトを追加するた�
 エフェクトの詳細については、[エフェクト](~/xamarin-forms/app-fundamentals/effects/index.md)に関するページを参照してください。
 
 > [!NOTE]
-> `EffectBehavior` は、[エフェクト ビヘイビアー サンプル](https://developer.xamarin.com/samples/xamarin-forms/behaviors/effectbehavior/)に配置できるカスタム クラスであり、Xamarin.Forms の一部ではありません。
+> `EffectBehavior` は、[エフェクト ビヘイビアー サンプル](https://developer.xamarin.com/samples/xamarin-forms/Behaviors/EffectBehavior/)に配置できるカスタム クラスであり、Xamarin.Forms の一部ではありません。
 
 ## <a name="creating-the-behavior"></a>ビヘイビアーの作成
 
@@ -169,6 +169,6 @@ label.Behaviors.Add (new EffectBehavior {
 ## <a name="related-links"></a>関連リンク
 
 - [エフェクト](~/xamarin-forms/app-fundamentals/effects/index.md)
-- [エフェクト ビヘイビアー (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/behaviors/effectbehavior/)
+- [エフェクト ビヘイビアー (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/Behaviors/EffectBehavior/)
 - [Behavior](xref:Xamarin.Forms.Behavior)
 - [Behavior&lt;T&gt;](xref:Xamarin.Forms.Behavior`1)

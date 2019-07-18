@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: a0efc30fd9814e4da858c4e3e4e99990eccf102e
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 7ac4d0effc1067b065bad114160dc8648e998dad
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119871"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830790"
 ---
 # <a name="working-with-tvos-tab-bar-controllers-in-xamarin"></a>TvOS Xamarin でのタブ バー コント ローラーの操作
 
@@ -111,7 +111,7 @@ Xamarin.tvOS アプリでタブ バーを使用する最も簡単な方法では
 -----
 
 > [!IMPORTANT]
-> などのイベントを割り当てることはできますが`TouchUpInside`UI 要素に (など、 `UIButton`)、ios デザイナーには呼び出されません Apple TV がタッチ画面またはタッチ イベントをサポートしていないためです。 常に使用する必要があります、 `Primary Action ` tvOS 用のイベント ハンドラーのユーザー インターフェイス要素を作成するときにイベント。
+> などのイベントを割り当てることはできますが`TouchUpInside`UI 要素に (など、 `UIButton`)、ios デザイナーには呼び出されません Apple TV がタッチ画面またはタッチ イベントをサポートしていないためです。 常に使用する必要があります、 `Primary Action` tvOS 用のイベント ハンドラーのユーザー インターフェイス要素を作成するときにイベント。
 
 ストーリー ボードの操作方法の詳細についてを参照してください、[はじめての tvOS クイック スタート ガイド](~/ios/tvos/get-started/hello-tvos.md)します。 
 
@@ -141,7 +141,7 @@ TabBar.Items [2].BadgeValue = "10";
 
 <a name="Summary" />
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
 この記事では、設計とタブ バー コント ローラー Xamarin.tvOS アプリ内での操作について説明しました。
 

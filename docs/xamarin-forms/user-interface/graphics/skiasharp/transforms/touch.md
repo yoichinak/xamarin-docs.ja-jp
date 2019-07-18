@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 09/14/2018
 ms.openlocfilehash: d525725b58a961afb9c4c5d80962d05f8d08b83e
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53061269"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60876867"
 ---
 # <a name="touch-manipulations"></a>タッチ操作
 
@@ -273,7 +273,7 @@ public partial class BitmapScalingPage : ContentPage
 
 このプログラムでは最初の大きな違いは、ヒット テストのロジックです。 以前に使用されるプログラム、`Contains`メソッドの`SKRect`ビットマップに対応する変換された四角形が、タッチ ポイントを判断します。 ように、ユーザーは、ビットマップを操作する、ビットマップがありますが、回転、および`SKRect`正しく回転した四角形を表すことはできません。 ヒット テストのロジックがその場合ではなく複雑な分析のジオメトリを実装する必要があることを心配可能性があります。
 
-ただし、ショートカットは、使用可能な。 逆の変換されたポイントが 未変換四角形の境界内に存在するかどうかと同じでは、変換された四角形の境界内に点があるかどうか。 くらい簡単に計算され、ロジックを引き続き使用できます、便利な`Contains`メソッド。
+ただし、ショートカットがあります。変換された四角形の境界内に点がある場合を判断すると、逆の変換されたポイントが 未変換四角形の境界内に存在するかどうかと同じです。 くらい簡単に計算され、ロジックを引き続き使用できます、便利な`Contains`メソッド。
 
 ```csharp
 public partial class BitmapRotationPage : ContentPage
@@ -703,7 +703,7 @@ class TouchManipulationBitmap
 
 `Moved`と`Released`イベント、メソッド呼び出し`Manipulate`します。 次の日時、 `touchDictionary` 1 つ以上含む`TouchManipulationInfo`オブジェクト。 場合、 `touchDictionary` 1 つ含まれる可能性は、項目を`PreviousPoint`と`NewPoint`値を本の指の動きを表す値が等しくないです。 複数の指がビットマップ触れることは、1 つ以上の項目がディクショナリに含まれていますが、これらの項目の 1 つだけが異なる`PreviousPoint`と`NewPoint`値。 残りの部分すべてと等しい`PreviousPoint`と`NewPoint`値。
 
-これは重要です。、`Manipulate`メソッドでは、1 つだけの指の動きを処理していると想定できます。 この呼び出しの時点で、その他の本の指のいずれも、移動は、本当に移動している (と可能性があります)、それらの動きが以降の呼び出しで処理されます`Manipulate`します。
+これは重要です。`Manipulate`メソッドでは、1 つだけの指の動きを処理するいると想定できます。 この呼び出しの時点で、その他の本の指のいずれも、移動は、本当に移動している (と可能性があります)、それらの動きが以降の呼び出しで処理されます`Manipulate`します。
 
 `Manipulate`メソッドはまず、利便性のための配列にディクショナリをコピーします。 最初の 2 つのエントリ以外は無視されます。 複数の 2 本の指をビットマップを操作しようとしている、他は無視されます。 `Manipulate` 最後のメンバーは、 `TouchManipulationBitmap`:
 

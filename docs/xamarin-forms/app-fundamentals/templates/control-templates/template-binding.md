@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 49f66164c707f91f298b2e5cb09b35f1767186cf
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: e4e67ba63d2040bff264498bc9c00124dfd22164
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53051582"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926339"
 ---
 # <a name="binding-from-a-xamarinforms-controltemplate"></a>Xamarin.Forms ControlTemplate からのバインド
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/templates/controltemplates/simplethemewithtemplatebinding/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/Templates/ControlTemplates/SimpleThemeWithTemplateBinding/)
 
 _テンプレートのバインドを使うと、コントロール テンプレート内のコントロールをパブリック プロパティにデータ バインドでき、そのコントロール テンプレート内のコントロール上のプロパティ値が変更しやすくなります。この記事では、テンプレートのバインドを使ってコントロール テンプレートからデータ バインディングを実行する方法を示します。_
 
@@ -181,7 +181,7 @@ ViewModel へのデータ バインドの詳細については、[データ バ�
 
 - [データ バインディングの基礎](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)
 - [データ バインディングから MVVM まで](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)
-- [テンプレートのバインドを含むシンプルなテーマ (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/templates/controltemplates/simplethemewithtemplatebinding/)
+- [テンプレートのバインドを含むシンプルなテーマ (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/Templates/ControlTemplates/SimpleThemeWithTemplateBinding/)
 - [テンプレートのバインドと ViewModel を含むシンプルなテーマ (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/templates/controltemplates/simplethemewithtemplatebindingandviewmodel/)
 - [TemplateBinding](xref:Xamarin.Forms.TemplateBinding)
 - [ControlTemplate](xref:Xamarin.Forms.ControlTemplate)

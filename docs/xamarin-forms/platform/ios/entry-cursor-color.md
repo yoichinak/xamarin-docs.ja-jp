@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 4e77ddd1988e65f4b4548c2369de520302d3d732
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.openlocfilehash: 6d075f782778313fafff3f26760152a1efbd84c8
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54209637"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65971030"
 ---
 # <a name="entry-cursor-color-on-ios"></a>IOS でエントリのカーソルの色
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
 
-このプラットフォームに固有のカーソルの色の設定、 [ `Entry` ](xref:Xamarin.Forms.Entry)指定した色にします。 XAML で設定して使用される、 [ `Entry.CursorColor` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.CursorColorProperty)バインド可能なプロパティを[ `Color` ](xref:Xamarin.Forms.Color):
+この iOS プラットフォームに固有のカーソルの色の設定、 [ `Entry` ](xref:Xamarin.Forms.Entry)指定した色にします。 XAML で設定して使用される、 [ `Entry.CursorColor` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.CursorColorProperty)バインド可能なプロパティを[ `Color` ](xref:Xamarin.Forms.Color):
 
 ```xaml
 <ContentPage ...
@@ -29,7 +29,7 @@ ms.locfileid: "54209637"
 </ContentPage>
 ```
 
-代わりに、fluent API を使用して c# から使用できます。
+代わりに、fluent API を使用して C# から使用できます。
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -48,6 +48,6 @@ entry.On<iOS>().SetCursorColor(Color.LimeGreen);
 
 ## <a name="related-links"></a>関連リンク
 
-- [プラットフォーム仕様 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+- [プラットフォーム仕様 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
 - [プラットフォーム仕様の作成](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: c1f488213f9b3be945fd98e09f630c243d0b0d62
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 8af7474036eb0fd6e2236cf52e96b8d12c8bc44e
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122765"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865713"
 ---
 # <a name="speech-recognition-in-xamarinios"></a>Xamarin.iOS での音声認識
 
@@ -60,13 +60,13 @@ Apple は、次のキーボード ディクテーションの統計情報 (2011 
 - アプリでは、オーディオ録音プロセスをカスタマイズできません。
 - 信頼性とタイミングなどの情報が不足している非常に簡易結果セットを提供します。
 
-### <a name="speech-recognition-api"></a>音声認識 API
+### <a name="speech-recognition-api"></a>Speech Recognition API
 
 新しい ios 10 で、Apple の音声認識を実装するために iOS アプリのより強力な方法を提供する音声認識 API がリリースされました。 この API は、Apple は Siri とキーボード ディクテーションの両方の電源を使用しているものと同じとは、最新の精度で高速の議事録を提供できます。
 
 音声認識 API によって提供される結果は、アプリを収集したり、プライベート ユーザー データにアクセスすることがなく個別のユーザーに透過的にカスタマイズされます。
 
-Speech Recognition API では、呼び出し元のアプリに結果をほぼリアルタイムように、ユーザーが言うと、変換の結果に関する詳細については単なるテキストよりも提供を提供します。 次の設定があります。
+Speech Recognition API では、呼び出し元のアプリに結果をほぼリアルタイムように、ユーザーが言うと、変換の結果に関する詳細については単なるテキストよりも提供を提供します。 不足している機能には次が含まれます。
 
 - どのようなユーザーの複数の解釈と呼ばれます。
 - 個々 の翻訳の信頼レベル。
@@ -111,15 +111,15 @@ IOS アプリでの音声認識を採用する開発者が行う必要のある 
 4. アプリがライブ オーディオ トラン スクリプトを処理する場合が、マイクの利用状況の説明も必要です。 をクリックして**新しいエントリの追加**、入力`NSMicrophoneUsageDescription`の**プロパティ**、`String`の**型**と**利用状況の説明**として、**値**します。 例えば: 
 
     [![](speech-images/speech04.png "NSMicrophoneUsageDescription を追加します。")](speech-images/speech04.png#lightbox)
-4. 変更内容をファイルに保存します。
+5. 変更内容をファイルに保存します。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. ダブルクリックして、`Info.plist`ファイルを開き、編集します。
-3. をクリックして**新しいエントリの追加**、入力`NSSpeechRecognitionUsageDescription`の**プロパティ**、`String`の**型**と**利用状況の説明**として、**値**します。 例えば: 
+2. をクリックして**新しいエントリの追加**、入力`NSSpeechRecognitionUsageDescription`の**プロパティ**、`String`の**型**と**利用状況の説明**として、**値**します。 例えば: 
 
     [![](speech-images/speech03w.png "NSSpeechRecognitionUsageDescription を追加します。")](speech-images/speech03w.png#lightbox)
-4. アプリがライブ オーディオ トラン スクリプトを処理する場合が、マイクの利用状況の説明も必要です。 をクリックして**新しいエントリの追加**、入力`NSMicrophoneUsageDescription`の**プロパティ**、`String`の**型**と**利用状況の説明**として、**値**します。 例えば: 
+3. アプリがライブ オーディオ トラン スクリプトを処理する場合が、マイクの利用状況の説明も必要です。 をクリックして**新しいエントリの追加**、入力`NSMicrophoneUsageDescription`の**プロパティ**、`String`の**型**と**利用状況の説明**として、**値**します。 例えば: 
 
     [![](speech-images/speech04w.png "NSMicrophoneUsageDescription を追加します。")](speech-images/speech04w.png#lightbox)
 4. 変更内容をファイルに保存します。

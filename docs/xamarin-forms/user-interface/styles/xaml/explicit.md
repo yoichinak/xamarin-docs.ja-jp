@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: fcbdeac5ebceccddee68fcca635a3935944ecac8
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.openlocfilehash: 7a149a41a6e50d3b18da166d9c7cb61e36f2d0e7
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55291935"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65970464"
 ---
 # <a name="explicit-styles-in-xamarinforms"></a>Xamarin.Forms での明示的なスタイル
 
@@ -22,12 +22,12 @@ _明示的なスタイルでは、コントロールにスタイル プロパテ
 
 ## <a name="create-an-explicit-style-in-xaml"></a>XAML での明示的なスタイルを作成します。
 
-宣言する、 [ `Style` ](xref:Xamarin.Forms.Style)ページ レベル、 [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)ページと、1 つ以上を追加する必要があります`Style`に宣言を含めることができます、`ResourceDictionary`します。 A`Style`される*明示的な*宣言の提供することにより、 `x:Key` 、属性のわかりやすいキーを与える、 `ResourceDictionary`。 *明示的な*を設定して固有のビジュアル要素にスタイルが適用しする必要があります、 [ `Style` ](xref:Xamarin.Forms.VisualElement.Style)プロパティ。
+宣言する、 [ `Style` ](xref:Xamarin.Forms.Style)ページ レベル、 [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)ページと、1 つ以上を追加する必要があります`Style`に宣言を含めることができます、`ResourceDictionary`します。 A`Style`される*明示的な*宣言の提供することにより、 `x:Key` 、属性のわかりやすいキーを与える、 `ResourceDictionary`。 *明示的な*を設定して固有のビジュアル要素にスタイルが適用しする必要があります、 [ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)プロパティ。
 
 次のコード例に示す*明示的な*スタイルがページの XAML で宣言された`ResourceDictionary`をページの適用と[ `Label` ](xref:Xamarin.Forms.Label)インスタンス。
 
 ```xaml
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.ExplicitStylesPage" Title="Explicit" Icon="xaml.png">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.ExplicitStylesPage" Title="Explicit" IconImageSource="xaml.png">
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="labelRedStyle" TargetType="Label">
@@ -64,7 +64,7 @@ _明示的なスタイルでは、コントロールにスタイル プロパテ
 </ContentPage>
 ```
 
-[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)定義 3*明示的な*をページの適用されるスタイル[ `Label` ](xref:Xamarin.Forms.Label)インスタンス。 各`Style`も、フォント サイズと水平方向および垂直方向のレイアウト オプションを設定中には、異なる色でテキストを表示するために使用します。 各`Style`別に適用される`Label`を設定してその[ `Style` ](xref:Xamarin.Forms.VisualElement.Style)プロパティを使用して、`StaticResource`マークアップ拡張機能。 次のスクリーン ショットに示すように外観が発生します。
+[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)定義 3*明示的な*をページの適用されるスタイル[ `Label` ](xref:Xamarin.Forms.Label)インスタンス。 各`Style`も、フォント サイズと水平方向および垂直方向のレイアウト オプションを設定中には、異なる色でテキストを表示するために使用します。 各`Style`別に適用される`Label`を設定してその[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)プロパティを使用して、`StaticResource`マークアップ拡張機能。 次のスクリーン ショットに示すように外観が発生します。
 
 [![](explicit-images/explicit-styles.png "明示的なスタイル例")](explicit-images/explicit-styles-large.png#lightbox "明示的なスタイルの例")
 
@@ -75,7 +75,7 @@ _明示的なスタイルでは、コントロールにスタイル プロパテ
 作成するだけでなく*明示的な*ページ レベルでスタイルを作成することも制御レベルでは、次のコード例に示すようにします。
 
 ```xaml
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.ExplicitStylesPage" Title="Explicit" Icon="xaml.png">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.ExplicitStylesPage" Title="Explicit" IconImageSource="xaml.png">
     <ContentPage.Content>
         <StackLayout Padding="0,20,0,0">
             <StackLayout.Resources>
@@ -147,9 +147,9 @@ public class ExplicitStylesPageCS : ContentPage
 }
 ```
 
-3 つのコンス トラクターが定義*明示的な*をページの適用されるスタイル[ `Label` ](xref:Xamarin.Forms.Label)インスタンス。 各*明示的な* [ `Style` ](xref:Xamarin.Forms.Style)に追加されます、 [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)を使用して、 [ `Add` ](xref:Xamarin.Forms.ResourceDictionary.Add(System.String,System.Object))メソッドを指定する、`key`を参照する文字列、`Style`インスタンス。 各`Style`別に適用される`Label`を設定して、 [ `Style` ](xref:Xamarin.Forms.VisualElement.Style)プロパティ。
+3 つのコンストラクターが定義*明示的な*をページの適用されるスタイル[ `Label` ](xref:Xamarin.Forms.Label)インスタンス。 各*明示的な* [ `Style` ](xref:Xamarin.Forms.Style)に追加されます、 [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)を使用して、 [ `Add` ](xref:Xamarin.Forms.ResourceDictionary.Add(System.String,System.Object))メソッドを指定する、`key`を参照する文字列、`Style`インスタンス。 各`Style`別に適用される`Label`を設定して、 [ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)プロパティ。
 
-ただし、使用する利点はありません、 [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)ここです。 代わりに、 [ `Style` ](xref:Xamarin.Forms.Style)インスタンスに直接割り当てることができる、 [ `Style` ](xref:Xamarin.Forms.VisualElement.Style) 、必要なビジュアル要素のプロパティと`ResourceDictionary`次に示すように、削除することができますコード例:
+ただし、使用する利点はありません、 [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)ここです。 代わりに、 [ `Style` ](xref:Xamarin.Forms.Style)インスタンスに直接割り当てることができる、 [ `Style` ](xref:Xamarin.Forms.NavigableElement.Style) 、必要なビジュアル要素のプロパティと`ResourceDictionary`次に示すように、削除することができますコード例:
 
 ```csharp
 public class ExplicitStylesPageCS : ContentPage
@@ -179,7 +179,7 @@ public class ExplicitStylesPageCS : ContentPage
 }
 ```
 
-3 つのコンス トラクターが定義*明示的な*をページの適用されるスタイル[ `Label` ](xref:Xamarin.Forms.Label)インスタンス。 各`Style`も、フォント サイズと水平方向および垂直方向のレイアウト オプションを設定中には、異なる色でテキストを表示するために使用します。 各`Style`別に適用される`Label`を設定してその[ `Style` ](xref:Xamarin.Forms.VisualElement.Style)プロパティ。 さらに、最終的な`Label`が、`Style`それに適用されますもオーバーライド、`TextColor`プロパティを異なる`Color`値。
+3 つのコンストラクターが定義*明示的な*をページの適用されるスタイル[ `Label` ](xref:Xamarin.Forms.Label)インスタンス。 各`Style`も、フォント サイズと水平方向および垂直方向のレイアウト オプションを設定中には、異なる色でテキストを表示するために使用します。 各`Style`別に適用される`Label`を設定してその[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)プロパティ。 さらに、最終的な`Label`が、`Style`それに適用されますもオーバーライド、`TextColor`プロパティを異なる`Color`値。
 
 ## <a name="related-links"></a>関連リンク
 

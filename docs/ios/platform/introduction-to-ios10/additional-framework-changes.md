@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/29/2017
-ms.openlocfilehash: a7b029aad69e65192d48d969dba2b9bb9a0d7a50
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: ac255baf44951518b29112d2903950039a80ee53
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233901"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831222"
 ---
 # <a name="additional-ios-10-frameworks-changes"></a>追加の iOS 10 フレームワークの変更
 
@@ -132,10 +132,10 @@ IOS 10 で金属製のフレームワークには、次の機能強化が施さ�
 
 IOS 10 で ModelIO フレームワークには、次の機能強化が施されました。
 
- - 米国ドルのファイル形式はサポートされています。
- - サポートが追加された距離のフィールドの署名、 [MDLVoxelArray](https://developer.apple.com/reference/modelio/mdlvoxelarray)クラス。
- - 使用して、新しい`MDLLightProbeIrradianceDataSource`光のプローブの配置を支援するクラス。
- - 使用して、新しい`MDLMaterialPropertyGraph`を簡単にランタイムをサポートするクラスがモデルに変更します。
+- 米国ドルのファイル形式はサポートされています。
+- サポートが追加された距離のフィールドの署名、 [MDLVoxelArray](https://developer.apple.com/reference/modelio/mdlvoxelarray)クラス。
+- 使用して、新しい`MDLLightProbeIrradianceDataSource`光のプローブの配置を支援するクラス。
+- 使用して、新しい`MDLMaterialPropertyGraph`を簡単にランタイムをサポートするクラスがモデルに変更します。
 
 ## <a name="photos-enhancements"></a>写真の機能強化
 

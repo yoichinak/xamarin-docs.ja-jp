@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/01/2017
-ms.openlocfilehash: 1c5b2635dca6aa74fd0dfb92d7e62e6da3140538
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 9a34cfab0c3ed045968f48ac6c67b2f4b66990cc
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53051109"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832449"
 ---
 # <a name="xamarinforms-themes"></a>Xamarin.Forms のテーマ
 
@@ -26,7 +26,8 @@ Xamarin.Forms のテーマの進化 2016年で発表されたおよびフィー�
 
 参照してください、[ライト テーマ](light.md)と[ダーク テーマ](dark.md)確認したり、アプリに追加する方法についてのページ、[例のカスタム テーマ](custom.md)します。
 
-**重要:** する手順を行う必要があります[テーマ アセンブリ (下記) を読み込む](#loadtheme)iOS に一部の定型コードを追加して`AppDelegate`と Android`MainActivity`します。 これは、将来のプレビュー リリースで改善されます。
+> [!IMPORTANT]
+> 手順を行う必要があります[テーマ アセンブリ (下記) を読み込む](#loadtheme)iOS に一部の定型コードを追加して`AppDelegate`と Android`MainActivity`します。 これは、将来のプレビュー リリースで改善されます。
 
 
 ## <a name="control-appearance"></a>コントロールの外観

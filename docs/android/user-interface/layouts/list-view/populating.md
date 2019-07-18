@@ -1,19 +1,19 @@
 ---
-title: データの ListView の設定
+title: ListView にデータを読み込む
 ms.prod: xamarin
 ms.assetid: AC4F95C8-EC3F-D960-7D44-8D55D0E4F1B6
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2017
-ms.openlocfilehash: 57c69223a01074ed15714026b7e9ec4e995808e0
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f3162c4da092048cd409f7b32438bc85dcedff19
+ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103180"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66740807"
 ---
-# <a name="populating-a-listview-with-data"></a>データの ListView の設定
+# <a name="populating-a-listview-with-data"></a>ListView にデータを読み込む
 
 
 ## <a name="overview"></a>概要
@@ -222,6 +222,6 @@ public int GetSectionForPosition(int position)
 
 ## <a name="related-links"></a>関連リンク
 
-- [BasicTableAndroid (サンプル)](https://developer.xamarin.com/samples/BasicTableAndroid/)
-- [BasicTableAdapter (サンプル)](https://developer.xamarin.com/samples/BasicTableAdapter/)
-- [FastScroll (サンプル)](https://developer.xamarin.com/samples/FastScroll/)
+- [BasicTableAndroid (サンプル)](https://developer.xamarin.com/samples/monodroid/BasicTableAndroid/)
+- [BasicTableAdapter (サンプル)](https://developer.xamarin.com/samples/monodroid/BasicTableAdapter/)
+- [FastScroll (サンプル)](https://developer.xamarin.com/samples/monodroid/FastScroll/)

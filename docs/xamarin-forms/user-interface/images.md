@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: 5c1d73acfef7a4384db7220daf7319251eb61f85
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 996e6469347a50523964a5b855804b0041ff8d21
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57670988"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65970979"
 ---
 # <a name="images-in-xamarinforms"></a>Xamarin.Forms でのイメージ
 
@@ -65,7 +65,7 @@ Xamarin.Forms を使用して、 [ `Image` ](xref:Xamarin.Forms.Image)をペー�
 <Image Source="waterfront.jpg" />
 ```
 
-同等の c# コードは次のとおりです。
+同等の C# コードは次のとおりです。
 
 ```csharp
 var image = new Image { Source = "waterfront.jpg" };
@@ -102,13 +102,13 @@ Android の代替解像度のイメージを配置する必要があります[�
 
 一部のコントロールでは、イメージを表示するプロパティがあります。
 
-- [`Page`](xref:Xamarin.Forms.Page) -すべてのページから派生した型`Page`が[ `Icon` ](xref:Xamarin.Forms.Page.Icon)と[ `BackgroundImage` ](xref:Xamarin.Forms.Page.BackgroundImage)プロパティは、ローカル ファイルの参照を割り当てることができます。 場合など、特定の状況で、 [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)が表示されて、 [ `ContentPage`](xref:Xamarin.Forms.ContentPage)プラットフォームでサポートされている場合、アイコンが表示されます。
+- [`Page`](xref:Xamarin.Forms.Page) -すべてのページから派生した型`Page`が[ `IconImageSource` ](xref:Xamarin.Forms.Page.IconImageSource)と[ `BackgroundImageSource` ](xref:Xamarin.Forms.Page.BackgroundImageSource)プロパティは、ファイル、埋め込みリソース、URI、またはストリームに割り当てることができます。 場合など、特定の状況で、 [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)が表示されて、 [ `ContentPage`](xref:Xamarin.Forms.ContentPage)プラットフォームでサポートされている場合、アイコンが表示されます。
 
   > [!IMPORTANT]
-  > Ios では、 [ `Page.Icon` ](xref:Xamarin.Forms.Page.Icon)資産カタログの画像セット内のイメージからプロパティを設定することはできません。 代わりのアイコン イメージを読み込む、`Page.Icon`プロパティから、**リソース**iOS プロジェクトのフォルダー。
+  > Ios では、 [ `Page.IconImageSource` ](xref:Xamarin.Forms.Page.IconImageSource)資産カタログの画像セット内のイメージからプロパティを設定することはできません。 代わりのアイコン イメージを読み込み、`Page.IconImageSource`ファイル、埋め込みリソース、URI、またはストリームからのプロパティ。
 
-- [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem) は、 [ `Icon` ](xref:Xamarin.Forms.MenuItem.Icon)ローカル ファイルの参照を設定できるプロパティです。
-- [`ImageCell`](xref:Xamarin.Forms.ImageCell) -は、 [ `ImageSource` ](xref:Xamarin.Forms.ImageCell.ImageSource)ローカル ファイル、埋め込みリソース、または URI からイメージを設定できるプロパティを取得します。
+- [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem) は、 [ `IconImageSource` ](xref:Xamarin.Forms.MenuItem.IconImageSource)ファイル、埋め込みリソース、URI、またはストリームから読み込まれたイメージを設定できるプロパティです。
+- [`ImageCell`](xref:Xamarin.Forms.ImageCell) は、 [ `ImageSource` ](xref:Xamarin.Forms.ImageCell.ImageSource)ファイル、埋め込みリソース、URI、またはストリームからイメージを設定できるプロパティを取得します。
 
 ## <a name="embedded-images"></a>[埋め込み画像]
 
@@ -244,7 +244,7 @@ var imageSource = ImageSource.FromResource("filename.png", typeof(MyClass).GetTy
 </ContentPage>
 ```
 
-同等の c# コードは次のとおりです。
+同等の C# コードは次のとおりです。
 
 ```csharp
 var webImage = new Image { Source = ImageSource.FromUri(new Uri("https://xamarin.com/content/images/pages/forms/example-app.png")) };

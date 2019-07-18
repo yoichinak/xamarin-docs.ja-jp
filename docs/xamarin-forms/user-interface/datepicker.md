@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 06/04/2018
 ms.openlocfilehash: 263cbb4aed47794a09341bb8c78c4835510e50c0
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059575"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61408101"
 ---
 # <a name="xamarinforms-datepicker"></a>Xamarin.Forms DatePicker
 
@@ -73,7 +73,7 @@ DatePicker datePicker = new DatePicker
 
 場合、`DatePicker`でバインドが含まれていないその`Date`プロパティ、アプリケーションはハンドラーをアタッチする必要があります、`DateSelected`するイベント通知、ユーザーが新しい日付を選択するとします。
 
-フォントのプロパティの設定については、[フォント](~/xamarin-forms/user-interface/text/fonts.md)を参照してください。
+フォントのプロパティの設定については、次を参照してください。[フォント](~/xamarin-forms/user-interface/text/fonts.md)します。
 
 ## <a name="datepicker-and-layout"></a>DatePicker とレイアウト
 

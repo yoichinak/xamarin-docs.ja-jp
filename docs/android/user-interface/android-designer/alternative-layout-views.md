@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 07/25/2018
 ms.openlocfilehash: 03b80d3fb1ed7c8db108f86b3b3923c20e1d908f
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109979"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61089993"
 ---
 # <a name="alternative-layout-views"></a>代替レイアウト ビュー
 
@@ -79,7 +79,7 @@ _このトピックでは、リソース修飾子を使用して、バージョ�
 
 ## <a name="handling-conflicts"></a>競合の処理 
 
-内のテキストの色を変更する場合、**既定**緑にレイアウトをリンクのレイアウトに表示される警告アイコンが表示されます。 そのレイアウト をクリックすると、競合を表示するレイアウトが開きます。 赤のフレームを使用して、競合の原因となったウィジェットが強調表示され、次のメッセージが表示されます:*最近の変更がこの代替レイアウトで競合の原因となった*します。 
+内のテキストの色を変更する場合、**既定**緑にレイアウトをリンクのレイアウトに表示される警告アイコンが表示されます。 そのレイアウト をクリックすると、競合を表示するレイアウトが開きます。 赤枠で競合の原因となったウィジェットが強調表示し、次のメッセージが表示されます。*最近の変更がこの代替レイアウトで競合の原因となった*します。 
 
 [![競合する変更](alternative-layout-views-images/vs/11-conflicting-change-sml.png "競合する変更")](alternative-layout-views-images/vs/11-conflicting-change.png#lightbox)
  
@@ -101,7 +101,7 @@ A*競合ボックス*が競合を説明する、ウィジェットの右側に�
 
 [![競合のチェック ボックスをオン](alternative-layout-views-images/vs/13-checkbox-conflict-sml.png "競合のチェック ボックス")](alternative-layout-views-images/vs/13-checkbox-conflict.png#lightbox)
  
-クリックすると、**大きな land**レイアウトが、競合が表示されます。 次のメッセージが表示されます:*最近の変更がこの代替レイアウトで競合の原因となった*: 
+クリックすると、**大きな land**レイアウトが、競合が表示されます。 次のメッセージが表示されます。*最近の変更がこの代替レイアウトで競合の原因となった*: 
 
 [![Alt レイアウト競合](alternative-layout-views-images/vs/14-alt-layout-conflict-sml.png "Alt レイアウトの競合")](alternative-layout-views-images/vs/14-alt-layout-conflict.png#lightbox)
 
@@ -179,7 +179,7 @@ A*競合ボックス*が競合を説明する、ウィジェットの右側に�
 
 ## <a name="handling-conflicts"></a>競合の処理 
 
-内のテキストの色を変更する場合、**既定**緑にレイアウトをリンクのレイアウトに表示される警告アイコンが表示されます。 そのレイアウト をクリックすると、競合を表示するレイアウトが開きます。 赤のフレームを使用して、競合の原因となったウィジェットが強調表示され、次のメッセージが表示されます:*最近の変更がこの代替レイアウトで競合の原因となった*します。 
+内のテキストの色を変更する場合、**既定**緑にレイアウトをリンクのレイアウトに表示される警告アイコンが表示されます。 そのレイアウト をクリックすると、競合を表示するレイアウトが開きます。 赤枠で競合の原因となったウィジェットが強調表示し、次のメッセージが表示されます。*最近の変更がこの代替レイアウトで競合の原因となった*します。 
 
 [![変更が競合しています。](alternative-layout-views-images/xs/10-conflict-sml.png)](alternative-layout-views-images/xs/10-conflict.png#lightbox)
 
@@ -201,7 +201,7 @@ A*競合ボックス*が競合を説明する、ウィジェットの右側に�
 
 [![競合のチェック ボックス](alternative-layout-views-images/xs/13-checkbox-conflict-sml.png)](alternative-layout-views-images/xs/13-checkbox-conflict.png#lightbox)
  
-クリックすると、**大きな land**レイアウトが、競合が表示されます。 次のメッセージが表示されます:*最近の変更がこの代替レイアウトで競合の原因となった*します。 
+クリックすると、**大きな land**レイアウトが、競合が表示されます。 次のメッセージが表示されます。*最近の変更がこの代替レイアウトで競合の原因となった*します。 
 
 [![Alt レイアウトの競合](alternative-layout-views-images/xs/14-alt-layout-conflict-sml.png)](alternative-layout-views-images/xs/14-alt-layout-conflict.png#lightbox)
  

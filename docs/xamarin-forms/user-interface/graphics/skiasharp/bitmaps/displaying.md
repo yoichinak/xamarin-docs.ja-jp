@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
 ms.openlocfilehash: 73fdccf1f6ccee4f6610c1078f5aab14c2be3d78
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53054921"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61204872"
 ---
 # <a name="displaying-skiasharp-bitmaps"></a>SkiaSharp のビットマップの表示
 
@@ -73,7 +73,7 @@ catch
 
 注意、`Stream`オブジェクトから取得`GetStreamAsync`にコピーされます、`MemoryStream`します。 Android ではできません、`Stream`から`HttpClient`を非同期メソッドでは、メイン スレッド以外で処理できます。 
 
-[ `SKBitmap.Decode` ](xref:SkiaSharp.SKBitmap.Decode(System.IO.Stream))は多くの作業:`Stream`に渡されたオブジェクトは、一般的なビットマップ ファイル形式、通常、JPEG、PNG、または GIF のいずれかでビットマップ全体を格納しているメモリのブロックを参照します。 `Decode`メソッドが、形式が決定し、SkiaSharp の内部ビットマップ形式にビットマップ ファイルをデコードする必要があります。
+[ `SKBitmap.Decode` ](xref:SkiaSharp.SKBitmap.Decode(System.IO.Stream))多くの作業には。`Stream`に渡されたオブジェクトは、一般的なビットマップ ファイル形式、通常、JPEG、PNG、または GIF のいずれかでビットマップ全体を格納しているメモリのブロックを参照します。 `Decode`メソッドが、形式が決定し、SkiaSharp の内部ビットマップ形式にビットマップ ファイルをデコードする必要があります。
 
 コードの呼び出し後`SKBitmap.Decode`、おそらくが無効になります、`CanvasView`ように、`PaintSurface`ハンドラーが新しく読み込まれたビットマップを表示できます。
 

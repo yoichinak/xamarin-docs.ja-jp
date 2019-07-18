@@ -6,19 +6,23 @@ ms.assetid: 391B4A77-7CAC-42D2-9E77-BD8E170E9BE6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 11/14/2018
-ms.openlocfilehash: f2b569b3e38284db15eac0f4e182dfb38796cce9
-ms.sourcegitcommit: 5d4e6677224971e2bc0268f405d192d0358c74b8
+ms.date: 06/11/2019
+ms.openlocfilehash: 0fff9b7ce4b78e29409d1cc7a55e7f447baf722c
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58329210"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831100"
 ---
 # <a name="xamarinforms-user-interface-views"></a>Xamarin.Forms のユーザー インターフェイス ビュー
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/FormsGallery/)
 
 _では、Xamarin.Forms が提供されているビューを使用する方法_
+
+## <a name="activityindicatoractivityindicatormd"></a>[ActivityIndicator](activityindicator.md)
+
+`ActivityIndicator`アニメーション化されたコントロールをユーザーに進行状況の情報を与えることがなく時間がかかる作業では、アプリケーションは関与していることを示します。
 
 ## <a name="animationanimationindexmd"></a>[アニメーション](animation/index.md)
 
@@ -32,9 +36,13 @@ Xamarin.Forms には、複雑なアニメーションを作成するのに十分
 
 `Button`タップまたは特定のタスクを実行するためにアプリケーションに指示するクリックに応答します。
 
+## <a name="checkboxcheckboxmd"></a>[CheckBox](checkbox.md)
+
+`CheckBox`かボタンの種類が checked または空にするには。 チェック ボックスをオンにした場合は、上にある見なしています。 チェック ボックスが空の場合は、オフになって見なしています。
+
 ## <a name="collectionviewcollectionviewindexmd"></a>[CollectionView](collectionview/index.md)
 
-`CollectionView`は別のレイアウトの仕様を使用してデータのリストを表示するための柔軟性とパフォーマンスの高いビューです。
+[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)は別のレイアウトの仕様を使用してデータのリストを表示するための柔軟性とパフォーマンスの高いビューです。
 
 ## <a name="colorscolorsmd"></a>[色](colors.md)
 
@@ -51,6 +59,10 @@ DataPages の迅速かつ簡単に構築済みのビューにデータ ソース
 ## <a name="datepickerdatepickermd"></a>[DatePicker](datepicker.md)
 
 `DatePicker`により、ユーザーが、指定した範囲内の日付を選択します。 アプリケーションが実行される特定のプラットフォームでサポートされている日付の選択を使用して実装されます。
+
+## <a name="display-pop-upspop-upsmd"></a>[ポップアップを表示する](pop-ups.md)
+
+Xamarin.Forms には、ポップアップに似た 2 つのユーザー インターフェイス要素、アラートとアクション シートが用意されています。 ユーザーの簡単な質問とタスクによる確認 ダイアログ ボックスを表示する、これらのインターフェイス要素を使用できます。
 
 ## <a name="graphics-with-skiasharpgraphicsskiasharpindexmd"></a>[SkiaSharp を使用したグラフィックス](graphics/skiasharp/index.md)
 
@@ -80,7 +92,11 @@ Xamarin.Forms は、スクロール行のデータを表示するリスト ビ�
 
 [ `Picker` ](xref:Xamarin.Forms.Picker)ビューは、データの一覧から、テキスト項目を選択するコントロール。
 
-## <a name="sliderslidermd"></a>[Slider](slider.md)
+## <a name="progressbarprogressbarmd"></a>[ProgressBar](progressbar.md)
+
+[ `ProgressBar` ](xref:Xamarin.Forms.ProgressBar)水平バーとして設定されている float プロパティに基づいて進行状況を視覚的に表すコントロールです。
+
+## <a name="sliderslidermd"></a>[スライダー](slider.md)
 
 `Slider`を継続的な範囲から数値を選択できます。
 
@@ -91,6 +107,10 @@ Xamarin.Forms は、スクロール行のデータを表示するリスト ビ�
 ## <a name="stylesstylesindexmd"></a>[スタイル](styles/index.md)
 
 フォント、色、およびその他の属性は、コントロール、レイアウト、または ResourceDictionaries を使用してアプリケーション全体で共有できるスタイルにグループ化することができます。
+
+## <a name="switchswitchmd"></a>[スイッチ](switch.md)
+
+`Switch`はオンとオフの状態の間で切り替え可能なボタンの一種です。
 
 ## <a name="tableviewtableviewmd"></a>[TableView](tableview.md)
 

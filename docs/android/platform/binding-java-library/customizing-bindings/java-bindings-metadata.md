@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
 ms.openlocfilehash: 06a7a3b00934b7a2f3eeb4fcfa6fc90071901ba0
-ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58070905"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60955674"
 ---
 # <a name="java-bindings-metadata"></a>Java バインド メタデータ
 
@@ -21,7 +21,7 @@ _C#Xamarin.Android でのコードでは、バインドは、Java ネイティ�
 
 ## <a name="overview"></a>概要
 
-Xamarin.Android **Java バインディング ライブラリ**とも呼ばれるツールのヘルプで既存の Android ライブラリをバインドするために必要な作業の多くが自動化しようとする、_バインディング ジェネレーター_します。 Java ライブラリをバインドするときに、Xamarin.Android は Java のクラスを検査し、すべてのパッケージ、型、およびメンバーの一覧を生成すると、バインドします。 含まれる XML ファイルにこの Api の一覧が格納されている **\{プロジェクト directory}\obj\Release\api.xml** の **リリース** ビルドで **\{プロジェクトdirectory}\obj\Debug\api.xml** の **デバッグ** を構築します。
+Xamarin.Android **Java バインディング ライブラリ**とも呼ばれるツールのヘルプで既存の Android ライブラリをバインドするために必要な作業の多くが自動化しようとする、_バインディング ジェネレーター_します。 Java ライブラリをバインドするときに、Xamarin.Android は Java のクラスを検査し、すべてのパッケージ、型、およびメンバーの一覧を生成すると、バインドします。 含まれる XML ファイルにこの API の一覧が格納されている **\{プロジェクト directory}\obj\Release\api.xml** の **リリース** ビルドで **\{プロジェクトdirectory}\obj\Debug\api.xml** の **デバッグ** を構築します。
 
 ![Obj/デバッグ フォルダーで api.xml ファイルの場所](java-bindings-metadata-images/java-bindings-metadata-01.png)
 
@@ -79,9 +79,9 @@ Xamarin.Android **Java バインディング ライブラリ**とも呼ばれる
 既に学習した、ファイルと**Metadata.xml**バインド アセンブリの作成に影響するバインディング ジェネレーターによって使用されます。
 メタデータ形式を使用して[XPath](https://www.w3.org/TR/xpath/)構文とほぼ同一である、 *GAPI メタデータ*で説明されている[GAPI メタデータ](https://www.mono-project.com/docs/gui/gtksharp/gapi/#metadata)ガイド。 この実装では、XPath 1.0 のほぼ完全な実装ですし、したがって 1.0 標準で項目をサポートします。 このファイルは、変更、追加、非表示にする、または API ファイルで任意の要素または属性に移動する強力な XPath ベースのメカニズムです。 すべてのメタデータの仕様の規則要素には、ルールが適用されるノードを識別するパス属性が含まれます。 ルールは、次の順序で適用されます。
 
-* **ノードの追加**&ndash;パス属性で指定されたノードに子ノードを追加します。
+* **add-node**&ndash;パス属性で指定されたノードに子ノードを追加します。
 * **attr** &ndash;パス属性で指定された要素の属性の値を設定します。
-* **ノードを削除**&ndash;指定された XPath と一致するノードを削除します。
+* **remove-node**&ndash;指定された XPath と一致するノードを削除します。
 
 例を次に、 **Metadata.xml**ファイル。
 
@@ -192,7 +192,7 @@ NavigationManager.2DSignNextManueverEventArgs
 
 ## <a name="supported-attributes"></a>サポートされている属性
 
-次のセクションでは、Java Api を変換するための属性について説明します。
+次のセクションでは、Java API を変換するための属性について説明します。
 
 ### <a name="argstype"></a>argsType
 

@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/07/2018
-ms.openlocfilehash: 7626c49b2267cbd087a16c310f1b85aea7139823
-ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
+ms.openlocfilehash: 512aa2b54ec22acf8308b3452bfeee2318097b57
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "57981732"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978144"
 ---
 # <a name="the-xamarinforms-flexlayout"></a>Xamarin.Forms FlexLayout
 
@@ -143,17 +143,12 @@ public partial class PhotoWrappingPage : ContentPage
 
     async void LoadBitmapCollection()
     {
-        int imageDimension = Device.RuntimePlatform == Device.iOS ||
-                             Device.RuntimePlatform == Device.Android ? 240 : 120;
-
-        string urlSuffix = String.Format("?width={0}&height={0}&mode=max", imageDimension);
-
         using (WebClient webClient = new WebClient())
         {
             try
             {
                 // Download the list of stock photos
-                Uri uri = new Uri("http://docs.xamarin.com/demo/stock.json");
+                Uri uri = new Uri("https://raw.githubusercontent.com/xamarin/docs-archive/master/Images/stock/small/stock.json");
                 byte[] data = await webClient.DownloadDataTaskAsync(uri);
 
                 // Convert to a Stream object
@@ -168,7 +163,7 @@ public partial class PhotoWrappingPage : ContentPage
                     {
                         Image image = new Image
                         {
-                            Source = ImageSource.FromUri(new Uri(filepath + urlSuffix))
+                            Source = ImageSource.FromUri(new Uri(filepath))
                         };
                         flexLayout.Children.Add(image);
                     }
@@ -743,7 +738,7 @@ button {
 
 > [!VIDEO https://youtube.com/embed/Ng3sel_5D_0]
 
-**Xamarin.Forms 3.0 Flex Layout, by [Xamarin University](https://university.xamarin.com/)**
+**Xamarin.Forms 3.0 Flex レイアウトのビデオ**
 
 ## <a name="related-links"></a>関連リンク
 

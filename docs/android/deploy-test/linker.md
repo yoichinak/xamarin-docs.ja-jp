@@ -6,18 +6,18 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/30/2018
-ms.openlocfilehash: 07f1fbae6c4fbfcfad45fc96970339e34b5de040
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 3f22556948fc87dc604870f5a8625b80a4a0b29d
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50102842"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827200"
 ---
 # <a name="linking-on-android"></a>Android でのリンク
 
 Xamarin.Android アプリケーションは、"*リンカー*" を使ってアプリケーションのサイズを小さくします。 リンカーは、アプリケーションのスタティック分析を利用して、実際に使われているアセンブリ、型、メンバーを判別します。 その後、リンカーは "*ガベージ コレクター*" のように動作して、参照されているアセンブリ、型、メンバーのクロージャ全体が見つかるまで、参照されているアセンブリ、型、メンバーを継続的に検索します。 そして、このクロージャの外部にあるものはすべて "*破棄*" されます。
 
-たとえば、[Hello, Android](https://developer.xamarin.com/samples/HelloM4A/) の例を次に示します。
+たとえば、[Hello, Android](https://developer.xamarin.com/samples/monodroid/HelloM4A/) の例を次に示します。
 
 |構成|1.2.0 のサイズ|4.0.1 のサイズ|
 |---|---|---|
@@ -53,7 +53,7 @@ public class MyActivity {
 
 ### <a name="linker-behavior"></a>リンカーの動作
 
-リンカーを制御する主要なメカニズムは、**[プロジェクト オプション]** ダイアログ ボックスの **[リンカーの動作]** (Visual Studio では *[リンク]*) ドロップダウンです。 次の 3 つのオプションがあります。
+リンカーを制御する主要なメカニズムは、 **[プロジェクト オプション]** ダイアログ ボックスの **[リンカーの動作]** (Visual Studio では *[リンク]* ) ドロップダウンです。 次の 3 つのオプションがあります。
 
 1.  **リンクしない** (Visual Studio では "*なし*")
 1.  **SDK アセンブリのみをリンクする** ("*SDK アセンブリのみ*")
@@ -67,7 +67,7 @@ public class MyActivity {
 
 **[すべてのアセンブリをリンクする]** オプションはすべてのアセンブリをリンクし、静的参照が存在しない場合はユーザーのコードも削除される可能性があることを意味します。
 
-上の例は、*[リンクしない]* オプションと *[SDK アセンブリのみをリンクする]* オプションでは動作しますが、*[すべてのアセンブリをリンクする]* 動作では失敗して、次のようなエラーが発生します。
+上の例は、 *[リンクしない]* オプションと *[SDK アセンブリのみをリンクする]* オプションでは動作しますが、 *[すべてのアセンブリをリンクする]* 動作では失敗して、次のようなエラーが発生します。
 
 ```shell
 E/mono    (17755): [0xafd4d440:] EXCEPTION handling: System.MissingMethodException: Default constructor not found for type ExampleLibrary.Example.
@@ -90,7 +90,7 @@ E/mono    (17755):   at (wrapper dynamic-method) object:95bb4fbe-bef8-4e5b-8e99-
 
 ### <a name="preserving-code"></a>コードの維持
 
-残しておきたいコードがリンカーによって削除される場合があります。 例:
+残しておきたいコードがリンカーによって削除される場合があります。 次に例を示します。
 
 -   `System.Reflection.MemberInfo.Invoke` を使って直接呼び出しているコードがある場合。
 

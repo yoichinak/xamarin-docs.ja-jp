@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 07/03/2017
 ms.openlocfilehash: 85b0c9b0688e9fb310a8f427018a02fe629404bb
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117747"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61225547"
 ---
 # <a name="watchos-complications-in-xamarin"></a>watchOS で Xamarin には、複雑な問題
 
@@ -24,7 +24,7 @@ WatchOS アプリケーションごとに 1 つコンプリケーションはし
 
 まず[Apple のドキュメント](https://developer.apple.com/library/watchos/documentation/General/Conceptual/WatchKitProgrammingGuide/ManagingComplications.html)アプリが厄介に適しているかどうかを判断します。 5 は`CLKComplicationFamily`から選択するためにディスプレイの種類。
 
-[![](complications-images/all-complications-sml.png "使用できる 5 CLKComplicationFamily 型: 循環小さな、小さなモジュール、モジュールの大きな、実利小さな、実利大規模")](complications-images/all-complications.png#lightbox)
+[![](complications-images/all-complications-sml.png "5 CLKComplicationFamily 可能な型:円形-小、モジュラー (小)、モジュラー (小)、大規模で実利的な大規模な実利")](complications-images/all-complications.png#lightbox)
 
 1 つだけのスタイル、または 5 つすべて、表示されているデータに応じて、アプリを実装できます。
 過去または将来の時刻の値を提供するように、ユーザーがデジタル クラウンのタイム トラベルもサポートできます。

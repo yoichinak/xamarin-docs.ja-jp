@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/27/2018
 ms.openlocfilehash: 517ebfb529dd26236ba157d40168fa7c75288d27
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53050375"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61290205"
 ---
 # <a name="skiasharp-image-filters"></a>SkiaSharp の画像のフィルター
 
@@ -28,7 +28,7 @@ ms.locfileid: "53050375"
 
 ## <a name="blurring-vector-graphics-and-bitmaps"></a>ベクター グラフィックスとビットマップにぼかし効果
 
-によって作成されたぼかし効果、 [ `SKImageFilter.CreateBlur` ](xref:SkiaSharp.SKImageFilter.CreateBlur*)静的メソッドでぼかしメソッドに優る大きな利点が、 [ `SKMaskFilter` ](xref:SkiaSharp.SKMaskFilter)クラス: イメージ フィルターは、ビットマップ全体をぼかすことができます。 メソッドでは、次の構文があります。
+によって作成されたぼかし効果、 [ `SKImageFilter.CreateBlur` ](xref:SkiaSharp.SKImageFilter.CreateBlur*)静的メソッドでぼかしメソッドに優る大きな利点が、 [ `SKMaskFilter` ](xref:SkiaSharp.SKMaskFilter)クラス。イメージ フィルターは、ビットマップ全体をぼかすことができます。 メソッドでは、次の構文があります。
 
 ```csharp
 public static SkiaSharp.SKImageFilter CreateBlur (float sigmaX, float sigmaY,
@@ -427,7 +427,7 @@ public partial class DistantLightExperimentPage : ContentPage
 }
 ```
 
-最初の引数`SKImageFilter.CreateDistantLitDiffuse`光の方向です。 正の X と Y 座標は、光が、右、下に鋭くであることを示します。 正の Z 座標が画面に位置します。 XAML ファイルでは、負の Z 値を選択できますが、確認するためにのみの動作: 概念的には、負の Z 座標が、画面の手前ポイント ライトを発生します。 何かの他、小さい負の値では、照明効果の動作が停止します。
+最初の引数`SKImageFilter.CreateDistantLitDiffuse`光の方向です。 正の X と Y 座標は、光が、右、下に鋭くであることを示します。 正の Z 座標が画面に位置します。 XAML ファイルでは、負の Z 値を選択できます。 ですが確認できるようにのみでしょう。概念的には、負の Z 座標は画面の手前ポイント ライトを発生します。 何かの他、小さい負の値では、照明効果の動作が停止します。
 
 `surfaceScale`引数の 1 に範囲は – 1。 (高いまたは低い値にはそれ以上影響をあるありません)。これらは、キャンバスの画面から (この例では、テキスト文字列) では、グラフィカル オブジェクトの移動距離を示す Z 軸方向の相対値です。 キャンバスの画面上のテキスト文字列を生成する負の値とそれをキャンバスにオブジェクトに正の値を使用します。
 
@@ -439,7 +439,7 @@ public partial class DistantLightExperimentPage : ContentPage
 
 Android のスクリーン ショットでは、0 で、し、右下にのみ、光が指していることを意味の Z 値があります。 バック グラウンドが点灯はありませんし、画面のテキスト文字列のない点灯しているか。 光は、テキストの端を非常に微妙な効果にのみ影響します。
 
-エンボスと浮き彫りテキストを別のアプローチは、情報の記事で示した[、変換の変換](../transforms/translate.md): 互いに若干異なる色のオフセットを 2 回で、テキスト文字列が表示されます。
+エンボスと浮き彫りテキストを別のアプローチは、情報の記事で示した[、変換の変換](../transforms/translate.md):互いに若干異なる色のオフセットを 2 回では、テキスト文字列が表示されます。
 
 ## <a name="related-links"></a>関連リンク
 

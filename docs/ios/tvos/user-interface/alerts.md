@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
 ms.openlocfilehash: 13c5ae3fac76ec1ec1a0ade135d5919403066226
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111292"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61409835"
 ---
 # <a name="working-with-tvos-alerts-in-xamarin"></a>Xamarin で tvOS のアラートの使用
 
@@ -59,7 +59,7 @@ Apple では、アラートにボタンを追加するための次の提案が�
 
 <a name="Displaying-an-Alert" />
 
-## <a name="displaying-an-alert"></a>通知を表示します。
+## <a name="displaying-an-alert"></a>アラートの表示
 
 インスタンスを作成するアラートを表示する、`UIAlertViewController`とアクション (ボタン) を追加して、アラートのスタイルを選択してアプリケーションを構成します。 たとえば、次のコードでは、[ok]/[キャンセル] アラートが表示されます。
 
@@ -160,7 +160,7 @@ alert.AddAction(UIAlertAction.Create("OK",UIAlertActionStyle.Default,(actionOK) 
 controller.PresentViewController(alert,true,null);
 ```
 
-`AddTextField`メソッドは、テキスト (フィールドが空のときに表示されるテキスト)、既定のテキスト値、およびキーボードの種類など、プレース ホルダーのプロパティを設定して構成することができますし、アラートに新しいテキスト フィールドを追加します。 例えば:
+`AddTextField`メソッドは、テキスト (フィールドが空のときに表示されるテキスト)、既定のテキスト値、およびキーボードの種類など、プレース ホルダーのプロパティを設定して構成することができますし、アラートに新しいテキスト フィールドを追加します。 例:
 
 ```csharp
 // Initialize field

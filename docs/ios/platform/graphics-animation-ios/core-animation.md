@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
 ms.openlocfilehash: a40d0911b7dabc900a4c6e50c692e4f091f22be9
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233628"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61206354"
 ---
 # <a name="core-animation-in-xamarinios"></a>Xamarin.iOS でコア アニメーション
 
@@ -45,7 +45,7 @@ UIKit では、アプリケーションにアニメーションを追加しや�
 -  ビュー プロパティのアニメーション
 
 
-### <a name="view-controller-transitions"></a>ビュー コント ローラーの切り替え
+### <a name="view-controller-transitions"></a>ビュー コントローラーの切り替え
 
  `UIViewController` を介してビュー コント ローラー間で移行の組み込みサポートを提供します、`PresentViewController`メソッド。 使用する場合`PresentViewController`、2 番目のコント ローラーへの移行は必要に応じてアニメーション化されることができます。
 

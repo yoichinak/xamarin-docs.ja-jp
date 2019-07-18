@@ -6,12 +6,12 @@ ms.assetid: 72627B90-586A-02B6-E231-F7CE015A1B97
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: afebe7f491855844e18bf054d665cf8d54e8f353
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: b8edc0141807ead60170ec78b3f6348723ab8e18
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672392"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67650136"
 ---
 # <a name="introduction-to-web-services"></a>Web サービスの概要
 
@@ -19,11 +19,11 @@ _このガイドでは、別の web サービス テクノロジを使用する�
 
 正常に機能は多くのモバイル アプリケーションは、クラウドに依存し、一般的なシナリオは、モバイル アプリケーションに web サービスを統合するためです。 Xamarin プラットフォームは別の web サービス テクノロジの使用をサポートし、RESTful、ASMX、および Windows Communication Foundation (WCF) サービスを使用するための組み込みとサード パーティのサポートが含まれています。
 
-Xamarin.Forms を使用してお客様の場合は、それぞれでこれらのテクノロジを使用して完全な例は、 [Xamarin.Forms Web Services](~/xamarin-forms/data-cloud/index.md)ドキュメント。
+Xamarin.Forms を使用してお客様の場合は、それぞれでこれらのテクノロジを使用して完全な例は、 [Xamarin.Forms Web Services](~/xamarin-forms/data-cloud/index.yml)ドキュメント。
 
 > [!IMPORTANT]
 > Ios 9 では、App Transport Security (ATS) は、機密情報の偶発的漏えいを防ぐをセキュリティで保護された接続 (アプリのバック エンド サーバーの場合) などのインターネット リソースと、アプリの間に適用されます。
->  ATS が iOS 9 用にビルドされたアプリで既定で有効になるために、すべての接続は ATS セキュリティ要件に応じたされます。 接続はこれらの要件を満たしていない場合は、例外で失敗します。
+> ATS が iOS 9 用にビルドされたアプリで既定で有効になるために、すべての接続は ATS セキュリティ要件に応じたされます。 接続はこれらの要件を満たしていない場合は、例外で失敗します。
 
 できますオプトアウトする ATS の場合、使用することはできません、`HTTPS`プロトコルし、インターネット リソースのための通信をセキュリティで保護します。 これは、アプリの更新することで実現できます**Info.plist**ファイル。 詳細については、[アプリ トランスポート セキュリティ](~/ios/app-fundamentals/ats.md)を参照してください。
 
@@ -47,7 +47,7 @@ REST の簡潔さが、モバイル アプリケーションの web サービス
 
 ## <a name="consuming-rest-services"></a>REST サービスの使用
 
-さまざまなライブラリと REST サービスを利用するために使用できるクラスがあるし、次のサブセクションでは、それらについて説明します。 REST サービスの使用に関する詳細については、[RESTful Web サービスの使用](~/xamarin-forms/data-cloud/consuming/rest.md)を参照してください。
+さまざまなライブラリと REST サービスを利用するために使用できるクラスがあるし、次のサブセクションでは、それらについて説明します。 REST サービスの使用に関する詳細については、次を参照してください。 [RESTful Web サービスの使用](~/xamarin-forms/data-cloud/web-services/rest.md)します。
 
 ### <a name="httpclient"></a>HttpClient
 
@@ -55,7 +55,7 @@ REST の簡潔さが、モバイル アプリケーションの web サービス
 
 `HttpResponseMessage`クラスは、HTTP 要求が行われた後に、web サービスから受信した HTTP 応答メッセージを表します。 応答にステータス コード、ヘッダー、本文などに関する情報が含まれています。 `HttpContent`クラスなどを表します HTTP 本体およびコンテンツ ヘッダーは、`Content-Type`と`Content-Encoding`します。 いずれかを使用して、コンテンツを読み取ることができます、`ReadAs`メソッドなど`ReadAsStringAsync`と`ReadAsByteArrayAsync`データの形式に応じて、します。
 
-詳細については、`HttpClient`クラスを参照してください[HTTPClient オブジェクトを作成する](~/xamarin-forms/data-cloud/consuming/rest.md)します。
+詳細については、`HttpClient`クラスを参照してください[HTTPClient オブジェクトを作成する](~/xamarin-forms/data-cloud/web-services/rest.md)します。
 
 <a name="Using_HTTPWebRequest" />
 
@@ -327,9 +327,9 @@ public async Task<List<TodoItem>> RefreshDataAsync ()
 
 タスク並列ライブラリ (TPL) は、同じ非同期操作をカプセル化して APM 開始/終了メソッドのペアを利用する場合のプロセスを簡略化できます`Task`オブジェクト。 このカプセル化が複数のオーバー ロードによって提供される、`Task.Factory.FromAsync`メソッド。 このメソッドを作成、`Task`を実行する、`TodoService.EndGetTodoItems`メソッドを 1 回、`TodoService.BeginGetTodoItems`メソッドが完了したらで、`null`パラメーターにデータが渡されていないことを示す、`BeginGetTodoItems`を委任します。 値では、最後に、`TaskCreationOptions`列挙型の作成とタスクの実行の既定の動作を使用することを指定します。
 
-APM の詳細については、[非同期プログラミング モデル](https://msdn.microsoft.com/library/ms228963(v=vs.110).aspx)と[TPL と従来の .NET Framework 非同期プログラミング](https://msdn.microsoft.com/library/dd997423(v=vs.110).aspx)msdn を参照してください。
+APM の詳細については、次を参照してください。[非同期プログラミング モデル](https://msdn.microsoft.com/library/ms228963(v=vs.110).aspx)と[TPL と従来の .NET Framework 非同期プログラミング](https://msdn.microsoft.com/library/dd997423(v=vs.110).aspx)msdn です。
 
-ASMX サービスの使用に関する詳細については、[ASP.NET Web サービス (ASMX) を消費して](~/xamarin-forms/data-cloud/consuming/asmx.md)を参照してください。
+ASMX サービスの使用に関する詳細については、次を参照してください。 [ASP.NET Web サービス (ASMX) を消費する](~/xamarin-forms/data-cloud/web-services/asmx.md)します。
 
 <a name="wcf" />
 
@@ -405,9 +405,9 @@ public async Task<List<TodoItem>> RefreshDataAsync ()
 
 タスク並列ライブラリ (TPL) は、同じ非同期操作をカプセル化して APM 開始/終了メソッドのペアを利用する場合のプロセスを簡略化できます`Task`オブジェクト。 このカプセル化が複数のオーバー ロードによって提供される、`Task.Factory.FromAsync`メソッド。 このメソッドを作成、`Task`を実行する、`TodoServiceClient.EndGetTodoItems`メソッドを 1 回、`TodoServiceClient.BeginGetTodoItems`メソッドが完了したらで、`null`パラメーターにデータが渡されていないことを示す、`BeginGetTodoItems`を委任します。 値では、最後に、`TaskCreationOptions`列挙型の作成とタスクの実行の既定の動作を使用することを指定します。
 
-APM の詳細については、[非同期プログラミング モデル](https://msdn.microsoft.com/library/ms228963(v=vs.110).aspx)と[TPL と従来の .NET Framework 非同期プログラミング](https://msdn.microsoft.com/library/dd997423(v=vs.110).aspx)msdn を参照してください。
+APM の詳細については、次を参照してください。[非同期プログラミング モデル](https://msdn.microsoft.com/library/ms228963(v=vs.110).aspx)と[TPL と従来の .NET Framework 非同期プログラミング](https://msdn.microsoft.com/library/dd997423(v=vs.110).aspx)msdn です。
 
-WCF サービスの使用に関する詳細については、[Windows Communication Foundation (WCF) Web サービスの使用](~/xamarin-forms/data-cloud/consuming/wcf.md)を参照してください。
+WCF サービスの使用に関する詳細については、次を参照してください。 [Windows Communication Foundation (WCF) Web サービスの使用](~/xamarin-forms/data-cloud/web-services/wcf.md)します。
 
 <a name="Calling_a_WCF_Service_with_Transport_Security" />
 
@@ -420,7 +420,7 @@ System.Net.ServicePointManager.ServerCertificateValidationCallback +=
 (se, cert, chain, sslerror) => { return true; };
 ```
 
-これにより、サーバー側の証明書の検証を無視しているときに、トランスポートの暗号化が維持されます。 ただし、この方法は効果的に証明書に関連付けられている信頼の懸念事項を無視し、適切なことができない可能性があります。 詳細については、[信頼されたルート Respectfully を使用して](https://www.mono-project.com/UsingTrustedRootsRespectfully)で[mono project.com](https://www.mono-project.com)を参照してください。
+これにより、サーバー側の証明書の検証を無視しているときに、トランスポートの暗号化が維持されます。 ただし、この方法は効果的に証明書に関連付けられている信頼の懸念事項を無視し、適切なことができない可能性があります。 詳細については、次を参照してください。[信頼されたルート Respectfully を使用して](https://www.mono-project.com/UsingTrustedRootsRespectfully)で[mono project.com](https://www.mono-project.com)します。
 
 <a name="Calling_a_WCF_Service_with_Client_Credential_Security" />
 
@@ -445,6 +445,6 @@ HTTP 基本認証での詳細については、REST web サービスのコンテ
 
 ## <a name="related-links"></a>関連リンク
 
-- [Xamarin.Forms での web サービス](~/xamarin-forms/data-cloud/index.md)
+- [Xamarin.Forms での web サービス](~/xamarin-forms/data-cloud/index.yml)
 - [ServiceModel メタデータ ユーティリティ ツール (svcutil.exe)](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)
 - [BasicHttpBinding](https://msdn.microsoft.com/library/system.servicemodel.basichttpbinding.aspx)

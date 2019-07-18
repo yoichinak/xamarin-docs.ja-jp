@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
 ms.openlocfilehash: e4446abc73817eb0672cd10a69ff6f738de0c1e1
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116473"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61029115"
 ---
 # <a name="auto-sizing-row-height-in-xamarinios"></a>Xamarin.iOS での自動サイズ変更行の高さ
 
@@ -49,7 +49,7 @@ IOS Designer での行の自動サイズ変更用にするテーブル ビュー
 > [!IMPORTANT]
 > テーブルには、1 つ以上のセルの種類が含まれている場合 (**プロトタイプ**)、各種類には、独自の一意なことを確認する必要がある`Identifier`自動させる行のサイズ変更します。
 
-を、セルのプロトタイプの各要素に割り当てる、**名前**にこれを公開するC#コード。 例えば:
+を、セルのプロトタイプの各要素に割り当てる、**名前**にこれを公開するC#コード。 例:
 
 [![](autosizing-row-height-images/table05.png "公開するための名前を割り当てるC#コード")](autosizing-row-height-images/table05.png#lightbox)
 
@@ -65,7 +65,7 @@ UI が定義されているを使用した自動行の高さのサイズ変更�
 
 ## <a name="enabling-auto-resizing-height"></a>高さの自動サイズ変更を有効にします。
 
-いずれかで、テーブル ビューのデータ ソース (`UITableViewDatasource`) またはソース (`UITableViewSource`) を使用する必要があります。 セルをデキューしましたときに、、 `Identifier` 、デザイナーで定義しました。 例えば:
+いずれかで、テーブル ビューのデータ ソース (`UITableViewDatasource`) またはソース (`UITableViewSource`) を使用する必要があります。 セルをデキューしましたときに、、 `Identifier` 、デザイナーで定義しました。 例:
 
 ```csharp
 public string CellID {
@@ -105,7 +105,7 @@ public override void ViewWillAppear (bool animated)
 
 この見積もりは、正確ではありません、テーブル ビューの各行の高さの平均値の大まかな推定だけです。
 
-配置でこのコードでは、アプリを実行すると、各行の圧縮をセル プロトタイプで最後のラベルの高さに基づいて、拡張します。 例えば:
+配置でこのコードでは、アプリを実行すると、各行の圧縮をセル プロトタイプで最後のラベルの高さに基づいて、拡張します。 例:
 
 [![](autosizing-row-height-images/table07.png "実行のサンプル テーブル")](autosizing-row-height-images/table07.png#lightbox)
 

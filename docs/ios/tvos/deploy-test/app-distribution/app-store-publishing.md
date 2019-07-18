@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: b941bcc8588e7fb0377430cca2829ad72ecbc8c6
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 73ee7fc3c28fc7a8476010e8bf7567b3e5ef590d
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122401"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865083"
 ---
 # <a name="publishing-to-the-apple-tv-app-store"></a>Apple TV App Store への発行
 
@@ -111,7 +111,7 @@ tvOS を使用して*プロビジョニング プロファイル*を特定のア
 
 プロビジョニングには、Apple の Web ベース iOS プロビジョニング プロファイルを使用する以下の手順が必要です。
 
-1.  **[プロビジョニング]** > **[配布]** の順に選択します。
+1.  **[プロビジョニング]**  >  **[配布]** の順に選択します。
 2.  をクリックして、 **+** ボタンをクリックし、として作成する配布プロファイルの種類を選択**Apple TV App Store**します。
 3.  配布プロファイルを作成する**アプリ ID** をドロップダウン リストから選択します。
 4.  アプリケーションの署名に必要な証明書を選択します。
@@ -153,19 +153,19 @@ Xamarin.tvOS アプリを正しく構成されている、審査およびリリ�
 2. **[ビルド]** メニューから **[発行のためのアーカイブ]** を選択します。
 
     [![](app-store-publishing-images/buildxs02new.png "[発行のためのアーカイブ] を選択します")](app-store-publishing-images/buildxs02new.png#lightbox)
-3. アーカイブが作成されると、**[アーカイブ]** ビューが表示されます。
+3. アーカイブが作成されると、 **[アーカイブ]** ビューが表示されます。
 
     [![](app-store-publishing-images/buildxs03new.png "[アーカイブ] ビュー")](app-store-publishing-images/buildxs03new.png#lightbox)
 
 ### <a name="sign-and-distribute-your-app"></a>アプリに署名して配布する
 
-アーカイブのためにアプリケーションをビルドするたびに、*アーカイブ ビュー*が自動的に開き、アーカイブされているすべてのプロジェクトがソリューション別にグループ化されて表示されます。 既定では、このビューには現在開いているソリューションのみが表示されます。 アーカイブのあるソリューションをすべて表示するには、**[アーカイブをすべて表示]** オプションをクリックします。
+アーカイブのためにアプリケーションをビルドするたびに、*アーカイブ ビュー*が自動的に開き、アーカイブされているすべてのプロジェクトがソリューション別にグループ化されて表示されます。 既定では、このビューには現在開いているソリューションのみが表示されます。 アーカイブのあるソリューションをすべて表示するには、 **[アーカイブをすべて表示]** オプションをクリックします。
 
 (App Store 展開またはエンタープライズ展開で) 顧客に展開したアーカイブは保存しておくことをお勧めします。そうすれば、デバッグ情報が生成された場合、後でそれを記号で表すことができます。
 
 アプリに署名し、配布の準備をするには、次のようにします。
 
-1. 選択、**署名し、配布しています.**、以下を参照します。
+1. 選択、**署名し、配布しています.** 、以下を参照します。
 
     [![](app-store-publishing-images/buildxs04new.png "、TheSign と配布を選択しています.")](app-store-publishing-images/buildxs04new.png#lightbox)
 2. これにより、発行ウィザードが開きます。 **[App Store]** 配布チャネルを選択してパッケージを作成し、アプリケーション ローダーを開きます。
@@ -174,7 +174,7 @@ Xamarin.tvOS アプリを正しく構成されている、審査およびリリ�
 3. プロビジョニング プロファイル 画面で、署名 id と対応するプロビジョニング プロファイルを選択するか、別の id で再署名します。
 
     [![](app-store-publishing-images/distribute02.png "署名 id と対応するプロビジョニング プロファイルを選択します。")](app-store-publishing-images/distribute02.png#lightbox)
-4. パッケージの詳細を確認し、**[発行]** をクリックして `.ipa` パッケージを保存します。
+4. パッケージの詳細を確認し、 **[発行]** をクリックして `.ipa` パッケージを保存します。
 
     [![](app-store-publishing-images/distribute03.png "パッケージの詳細を確認します")](app-store-publishing-images/distribute03.png#lightbox)
 5. `.ipa` が保存されたら、アプリケーション ローダーを使用して、アプリを iTunes Connect にアップロードできます。
@@ -192,19 +192,19 @@ Xamarin.tvOS アプリを正しく構成されている、審査およびリリ�
 
 Visual Studio for Mac でのアーカイブ ワークフローは Application Loader を自動的に開く、保存した後、 `.ipa`:
 
-2. *[Deliver Your App]\(アプリの配信\)* を選択して、*[選択]* ボタンをクリックします。
+1. *[Deliver Your App]\(アプリの配信\)* を選択して、 *[選択]* ボタンをクリックします。
 
     [![](app-store-publishing-images/publishvs01.png "[Deliver Your App]\(アプリの配信\) を選択します")](app-store-publishing-images/publishvs01.png#lightbox)
 
-3. 前の手順で作成した IPA ファイルまたは zip ファイルを選択し、**[OK]** ボタンをクリックします。
-4. アプリケーション ローダーはファイルを検証します。
+2. 前の手順で作成した IPA ファイルまたは zip ファイルを選択し、 **[OK]** ボタンをクリックします。
+3. アプリケーション ローダーはファイルを検証します。
 
     [![](app-store-publishing-images/publishvs02.png "アプリケーション ローダーの検証画面")](app-store-publishing-images/publishvs02.png#lightbox)
-5. *[次へ]* ボタンをクリックすると、アプリケーションは App Store に対して検証されます。
+4. *[次へ]* ボタンをクリックすると、アプリケーションは App Store に対して検証されます。
 
     [![](app-store-publishing-images/publishvs03.png "App Store に対して検証されるアプリケーション")](app-store-publishing-images/publishvs03.png#lightbox)
-6. **[送信]** ボタンをクリックして、審査のために Apple にアプリケーションを送信します。
-7. アプリケーション ローダーは、ファイルが正常にアップロードされたときに通知します。
+5. **[送信]** ボタンをクリックして、審査のために Apple にアプリケーションを送信します。
+6. アプリケーション ローダーは、ファイルが正常にアップロードされたときに通知します。
 
 <a name="iTunes_Connect_Status" />
 
@@ -222,7 +222,7 @@ Xamarin.tvOS、Apple TV App Store にアプリの提出に関する問題が発�
 
 <a name="Summary" />
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
 この記事では、構成、構築、および Apple TV App Store アプリを送信するためのステップ バイ ステップ ガイドを示しました。 最初に、配布プロビジョニング プロファイルの作成とインストールに必要な手順を説明しました。 次に、Visual Studio for Mac を使用して配布ビルドを作成する方法を説明しました。 最後に、その方法を示しました iTunes Connect と Xcode のアーカイブ ツールを使用して、Apple TV App Store にアプリケーションを提出します。
 

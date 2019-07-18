@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
 ms.openlocfilehash: cfdd639672f7fa624c7c8e30f17fbfc9dad403af
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53060162"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61075482"
 ---
 # <a name="xaml-markup-extensions"></a>XAML マークアップ拡張機能
 
@@ -36,7 +36,7 @@ XAML マークアップ拡張機能では、リテラル テキスト文字列�
 
 設定する方が、`Color`属性、リソース ディクショナリに格納されている値か、作成したクラスの静的プロパティの値または型のプロパティから`Color` ページで、別の要素から構築された、または色合い、鮮やかさ、および明るさの値を区切ります。
 
-これらすべてのオプションは、XAML マークアップ拡張機能を使用できます。 しかし、語句「マークアップ拡張機能」を恐ろしい: XAML マークアップ拡張機能は*いない*to XML 拡張機能。 XAML マークアップ拡張機能でも XAML は常に有効な XML です。
+これらすべてのオプションは、XAML マークアップ拡張機能を使用できます。 しかし、語句「マークアップ拡張機能」がコンピューターを保護します。XAML マークアップ拡張機能は*いない*to XML 拡張機能。 XAML マークアップ拡張機能でも XAML は常に有効な XML です。
 
 マークアップ拡張機能は、要素の属性を表現する別の方法にすぎません。 XAML マークアップ拡張機能は、通常は、中かっこで囲まれた属性の設定で識別できます。
 

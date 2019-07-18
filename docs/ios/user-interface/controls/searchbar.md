@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/11/2017
-ms.openlocfilehash: 3c46aa1244699671d46560b0029197981a86d005
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: 75abb943dbc56d7b4213e0c36c19ff338182ae8a
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233329"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67674867"
 ---
 # <a name="search-bars-in-xamarinios"></a>Xamarin.iOS での検索バー
 

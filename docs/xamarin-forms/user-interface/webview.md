@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/29/2019
-ms.openlocfilehash: 658ce23b0aaced8e195461a485f3e846900c2026
-ms.sourcegitcommit: 236a346838c421c7d8951f50abbf4f5365559372
+ms.openlocfilehash: 6410be4019772ad11cd97d27c5de3c0300d58519
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58641453"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67649628"
 ---
 # <a name="xamarinforms-webview"></a>Xamarin.Forms の WebView
 
@@ -109,6 +109,9 @@ browser.Source = htmlSource;
 
 上記のコードで`@`リテラル、つまりすべての通常のエスケープ文字は無視されますを文字列として、HTML を示すために使用します。
 
+> [!NOTE]
+> 設定する必要があります、`WidthRequest`と`HeightRequest`のプロパティ、 [ `WebView` ](xref:Xamarin.Forms.WebView)レイアウトに応じて、HTML コンテンツを表示する、`WebView`の子です。 たとえば、これは、必要で、 [ `StackLayout`](xref:Xamarin.Forms.StackLayout)します。
+
 ### <a name="local-html-content"></a>ローカルの HTML コンテンツ
 
 WebView は、HTML、CSS からのコンテンツを表示でき、アプリ内で Javascript が埋め込まれています。 例:
@@ -140,7 +143,7 @@ body,p,h1 {
 
 上記の CSS で指定したフォントは、すべてのプラットフォームに同じフォントをプラットフォームごとにカスタマイズする必要に注意してください。
 
-表示のローカル コンテンツを使用してに、 `WebView`、するなど、他の HTML ファイルを開きに文字列として内容を読み込む必要があります、`Html`のプロパティ、`HtmlWebViewSource`します。 開く、ファイルの詳細については、[ファイルを扱う](~/xamarin-forms/app-fundamentals/files.md)を参照してください。
+表示のローカル コンテンツを使用してに、 `WebView`、するなど、他の HTML ファイルを開きに文字列として内容を読み込む必要があります、`Html`のプロパティ、`HtmlWebViewSource`します。 開く、ファイルの詳細については、[ファイルを扱う](~/xamarin-forms/data-cloud/data/files.md)を参照してください。
 
 次のスクリーン ショットは、ローカル コンテンツを表示する各プラットフォームでの結果を表示します。
 

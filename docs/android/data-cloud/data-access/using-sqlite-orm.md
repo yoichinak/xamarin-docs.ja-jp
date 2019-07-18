@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/18/2018
-ms.openlocfilehash: 6525cb321537a7cefb24feb1e77b532068b098ef
-ms.sourcegitcommit: d8edb1b9e7fd61979014d5f5f091ee135ab70e34
+ms.openlocfilehash: 27d2d68243c5b25a3ecfc0ce333dca183ba090ec
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55712086"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67649536"
 ---
 # <a name="using-sqlitenet-with-android"></a>Android での SQLite.NET の使用
 
@@ -237,10 +237,10 @@ Android のバージョンの SQLite では、さらに、いくつかの手順�
     sqlite3_initialize();
     ```
 
-この回避策にも適して、`Mono.Data.Sqlite`ライブラリ。 SQLite とマルチ スレッドの詳細については、[SQLite と複数のスレッド](https://www.sqlite.org/threadsafe.html)を参照してください。
+この回避策にも適して、`Mono.Data.Sqlite`ライブラリ。 SQLite とマルチ スレッドの詳細については、次を参照してください。 [SQLite と複数のスレッド](https://www.sqlite.org/threadsafe.html)します。
 
 ## <a name="related-links"></a>関連リンク
 
 - [DataAccess Basic (サンプル)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
 - [データ アクセスの詳細 (サンプル)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
-- [Xamarin.Forms のデータ アクセス](~/xamarin-forms/app-fundamentals/databases.md)
+- [Xamarin.Forms のデータ アクセス](~/xamarin-forms/data-cloud/data/databases.md)

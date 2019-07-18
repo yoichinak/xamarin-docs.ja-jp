@@ -1,5 +1,5 @@
 ---
-title: Visual Studio XAML デザイナーが Xamarin.Forms XAML ファイルの動作しません。
+title: Visual Studio XAML デザイナーが Xamarin.Forms XAML ファイルに有効でない理由を教えてください。
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: cab2eefb-c52f-4d81-866e-8f1feabbdd64
@@ -8,20 +8,20 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 04/25/2017
 ms.openlocfilehash: 43088beba6c6a86330cac164856be98d88f07fe2
-ms.sourcegitcommit: 4f646dc5c51db975b2936169547d625c78a22b30
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/25/2018
-ms.locfileid: "34546152"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61247803"
 ---
-# <a name="why-doesnt-the-visual-studio-xaml-designer-work-for-xamarinforms-xaml-files"></a>Visual Studio XAML デザイナーが Xamarin.Forms XAML ファイルの動作しません。
+# <a name="why-doesnt-the-visual-studio-xaml-designer-work-for-xamarinforms-xaml-files"></a>Visual Studio XAML デザイナーが Xamarin.Forms XAML ファイルに有効でない理由を教えてください。
 
-Xamarin.Forms は XAML ファイルのビジュアルなデザイナーをサポートされていません。 このためで、Visual Studio のフォームの XAML ファイルを開こうとしたとき*XAML UI のデザイナー*または*エンコード付き XAML UI のデザイナー*、次のエラー メッセージがスローされます。
+Xamarin.Forms は XAML ファイルのビジュアル デザイナーをサポートされていません。 このため、いずれかの Visual studio のフォームの XAML ファイルを開こうとしたときに*XAML UI デザイナー*または*エンコード付き XAML UI デザイナー*、次のエラー メッセージがスローされます。
 
-> "ファイルは、選択されたエディターで開くことができません。 選択してください別のエディターです。"
+> "ファイルは、選択されたエディターで開くことができません。 選択してください別のエディター。"
 
-この制限については、「、[概要](~/xamarin-forms/xaml/xaml-basics/index.md#Overview)のセクションで、 [Xamarin.Forms XAML 基礎](~/xamarin-forms/xaml/xaml-basics/index.md)ガイド。
+この制限が記載されて、[概要](~/xamarin-forms/xaml/xaml-basics/index.md#Overview)のセクション、 [Xamarin.Forms XAML の基礎](~/xamarin-forms/xaml/xaml-basics/index.md)ガイド。
 
-> 「がまだ Xamarin.Forms アプリケーションで XAML を生成するため、ビジュアル デザイナーでは、すべての XAML する必要があります手動で作成します。」
+> 「がまだ Xamarin.Forms アプリケーションで XAML を生成するためのビジュアル デザイナー、XAML がすべて必要があります手作業で記述された」。
 
-Xamarin.Forms XAML プレビュー用のプログラムを表示してを選択して、ただし、**ビュー > その他のウィンドウ > Xamarin.Forms プレビューアー**メニュー オプション。
+ただしを選択して、Xamarin.Forms XAML プレビューアーを表示できる、**ビュー > その他の Windows > Xamarin.Forms プレビューアー**メニュー オプション。

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: bff4d46ac9d5fe893cbb0a2dfa032e1b9f6daa0e
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: abcd89a6c4547680df0b96d235531312d3b21c52
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121556"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864333"
 ---
 # <a name="walkthrough-using-touch-in-xamarinios"></a>チュートリアル: Xamarin.iOS でのタッチの使用
 
@@ -176,7 +176,7 @@ ms.locfileid: "50121556"
 
 <a name="Gesture_Recognizer_Samples" />
 
-##  <a name="gesture-recognizer-samples"></a>ジェスチャ認識エンジンのサンプル
+## <a name="gesture-recognizer-samples"></a>ジェスチャ認識エンジンのサンプル
 
 [前のセクション](#Touch_Samples)タッチ イベントを使用して、画面を中心にオブジェクトをドラッグする方法を示しました。
 ここでは、タッチ イベントの削除はし、次のジェスチャ レコグナイザーを使用する方法について説明します。

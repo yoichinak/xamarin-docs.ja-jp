@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/27/2018
 ms.openlocfilehash: d68153cdaad67b407def3ed5bfaddf928ef98bb4
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53060408"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61289112"
 ---
 # <a name="skiasharp-mask-filters"></a>SkiaSharp マスク フィルター
 
@@ -180,9 +180,9 @@ paint.MaskFilter = SKMaskFilter.CreateBlur(blurStyle, sigma);
 
 [![ぼかしの実験をマスク](mask-filters-images/MaskBlurExperiment.png "ぼかし実験のマスク")](mask-filters-images/MaskBlurExperiment-Large.png#lightbox)
 
-IOS のスクリーン ショットに示す、`Solid`スタイル: テキストの文字が実線の黒い線としてまだ存在して、ぼかしがこれらのテキスト文字の外側に追加されます。 
+IOS のスクリーン ショットに示す、`Solid`スタイル。テキスト文字が実線の黒い線としてまだ存在して、ぼかしがこれらのテキスト文字の外側に追加されます。 
 
-Android のスクリーン ショットの中間に示す、`Outer`スタイル: (現状、ビットマップ) に文字ストローク自体が排除され、テキスト文字が 1 回表示された空の領域を囲むぼかし。 
+Android のスクリーン ショットの中間に示す、`Outer`スタイル。など、ビットマップは) 文字ストローク自体は削除し、ぼかしが 1 回、テキスト文字が表示された空の領域を囲みます。 
 
 適切な番組で UWP スクリーン ショット、`Inner`スタイル。 ぼかしは、通常、テキスト文字が占める領域に限定されます。
 

@@ -5,12 +5,12 @@ description: Visual Studio for Mac ができますをビルドし、iOS、Androi
 author: mikeparker104
 ms.author: miparker
 ms.date: 12/17/2018
-ms.openlocfilehash: a235a24d544e938d4bf29e6569564aface2f6972
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: 695714331f1056ab51b36d106a30deacd3a629a8
+ms.sourcegitcommit: be9658de032f3893741261f16162a664952ce178
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58866385"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64987001"
 ---
 # <a name="use-cc-libraries-with-xamarin"></a>Xamarin を使用した C と C++ のライブラリを使用します。
 
@@ -34,22 +34,20 @@ C/C++ はクロスプラット フォーム対応の言語と見なされます�
 
 次の図は、クロス プラットフォーム Xamarin ライブラリは NuGet 経由で共有し、Xamarin.Forms アプリで使用される、C/C++ ソース コードに変換するために使用する 4 段階のアプローチを表します。
  
-
 ![Xamarin を C と C++ を使用するための高レベルの方法](images/cpp-steps.jpg)
 
 4 つの段階は次のとおりです。
 
-1.  プラットフォーム固有のネイティブ ライブラリに C と C++ のソース コードをコンパイルします。
-2.  Visual Studio ソリューションを含むネイティブ ライブラリをラップします。
-3.  梱包し、.NET ラッパー用の NuGet パッケージをプッシュします。
-4.  Xamarin アプリから NuGet パッケージを使用します。
+1. プラットフォーム固有のネイティブ ライブラリに C と C++ のソース コードをコンパイルします。
+2. Visual Studio ソリューションを含むネイティブ ライブラリをラップします。
+3. 梱包し、.NET ラッパー用の NuGet パッケージをプッシュします。
+4. Xamarin アプリから NuGet パッケージを使用します。
 
 ### <a name="stage-1-compiling-the-cc-source-code-into-platform-specific-native-libraries"></a>第 1 段階:プラットフォーム固有のネイティブ ライブラリに C と C++ ソース コードのコンパイル
 
 このステージの目標は、呼び出すことができるネイティブ ライブラリを作成する、C#ラッパー。 これは、状況に応じて関連することができない可能性がありますもかまいません。 多くのツールとプロセスにこの一般的なシナリオに移動することができますは、この記事の範囲を超えています。 重要な考慮事項は、C と C++ のコードベースを任意のネイティブ ラッパー コード、十分な単体テストとの同期を管理することでビルドの自動化。 
 
-付随するシェル スクリプトを使用して Visual Studio Code を使用して、チュートリアルでは、ライブラリが作成されています。 このチュートリアルの拡張バージョンが記載されて、 [Mobile CAT GitHub リポジトリ](https://github.com/xamarin/mobcat/blob/dev/samples/cppwithxamarin/README.md)さらに詳しくサンプルのこの部分をについて説明します。 ネイティブ ライブラリ中として扱われます、サードパーティの依存関係ここでが、コンテキストのこのステージを示します。
-
+付随するシェル スクリプトを使用して Visual Studio Code を使用して、チュートリアルでは、ライブラリが作成されています。 このチュートリアルの拡張バージョンが記載されて、 [Mobile CAT GitHub リポジトリ](https://github.com/xamarin/mobcat/blob/dev/samples/cpp_with_xamarin/)さらに詳しくサンプルのこの部分をについて説明します。 ネイティブ ライブラリ中として扱われます、サードパーティの依存関係ここでが、コンテキストのこのステージを示します。
 
 わかりやすくするため、このチュートリアルには、アーキテクチャのサブセットのみが対象とします。 Ios の場合は、個々 のアーキテクチャに固有のバイナリから 1 つの fat バイナリを作成するのに lipo ユーティリティを使用します。 Android では、動的なバイナリは .so 拡張機能を使用し、iOS では、静的 fat バイナリは .a 拡張機能を使用します。 
 
@@ -83,9 +81,9 @@ C/C++ はクロスプラット フォーム対応の言語と見なされます�
 
 作業を進めるにするには、開発者は必要があります。
 
--   [NuGet コマンドライン (CLI)](https://docs.microsoft.com/nuget/tools/nuget-exe-cli-reference#macoslinux)
+- [NuGet コマンドライン (CLI)](https://docs.microsoft.com/nuget/tools/nuget-exe-cli-reference#macoslinux)
 
--   [*Visual Studio* *for Mac*](https://visualstudio.microsoft.com/downloads)
+- [*Visual Studio* *for Mac*](https://visualstudio.microsoft.com/downloads)
 
 > [!NOTE]
 > アクティブな[ **Apple 開発者アカウント**](https://developer.apple.com/)が iphone アプリを展開するために必要です。
@@ -98,7 +96,7 @@ C/C++ はクロスプラット フォーム対応の言語と見なされます�
 
 ### <a name="working-with-the-native-library"></a>ネイティブ ライブラリの操作
 
-元の*MathFuncsLib*例には次の定義の MyMathFuncs と呼ばれる 1 つのクラスが含まれています。 
+元の*MathFuncsLib*例にはと呼ばれる 1 つのクラスが含まれています`MyMathFuncs`を次の定義。
 
 ```cpp
 namespace MathFuncs
@@ -114,7 +112,7 @@ namespace MathFuncs
 }
 ```
 
-追加のクラスは、.NET コンシューマーを作成、破棄、および基になるネイティブの MyMathFuncs クラスとの対話を許可するラッパー関数を定義します。
+追加のクラス定義を作成、破棄、および基になるネイティブと対話する .NET コンシューマーを許可するラッパー関数`MyMathFuncs`クラス。
 
 ```cpp
 #include "MyMathFuncs.h"
@@ -134,7 +132,7 @@ extern "C" {
 
 ## <a name="wrapping-the-native-library-stage-2"></a>折り返しのネイティブ ライブラリ (ステージ 2)
 
-このステージが必要です、[ライブラリをプリコンパイル済み](https://github.com/xamarin/mobcat/tree/master/samples/cpp_with_xamarin/Sample/Artefacts)で説明されている、[前のセクション](https://docs.microsoft.com/xamarin/cross-platform/cpp/index)します。
+このステージが必要です、[ライブラリをプリコンパイル済み](https://github.com/xamarin/mobcat/tree/master/samples/cpp_with_xamarin/Sample/Artefacts)で説明されている、[前のセクション](##creating-the-native-libraries-stage-1)します。
 
 ### <a name="creating-the-visual-studio-solution"></a>Visual Studio ソリューションを作成します。
 
@@ -203,7 +201,7 @@ extern "C" {
 
 3. フォルダー構造を確認します。  
 
-    ```
+    ```folders
     - lib
         - arm64-v8a
         - armeabi-v7a
@@ -228,15 +226,15 @@ extern "C" {
 
 これで、 **libs**フォルダーが次のように表示されます。
 
-```bash
+```folders
 - lib
     - arm64-v8a
         - libMathFuncs.so
     - armeabi-v7a
         - libMathFuncs.so
-    - x86 
+    - x86
         - libMathFuncs.so
-    - x86_64 
+    - x86_64
         - libMathFuncs.so
 ```
 
@@ -246,15 +244,15 @@ extern "C" {
 2. 選択、 **libMathFuncs.a**ライブラリ (libs/ios 下から、 **PrecompiledLibs**ディレクトリ) をクリックし、**開く** 
 3. **コントロール + をクリックします**上、 **libMathFuncs**ファイル (内で、**ネイティブ参照**フォルダーを選択し、**プロパティ**メニューのオプションを  
 4. 構成、**ネイティブ参照**プロパティ (チェック マーク アイコンを表示) チェックするために、**プロパティ**パッド。
-        
+
     - 強制読み込み
     - C++ には
-    - スマート リンク 
+    - スマート リンク
 
     > [!NOTE]
-    > と共にバインド ライブラリ プロジェクトの種類を使用して、[ネイティブ参照](https://docs.microsoft.com/xamarin/cross-platform/macios/native-references)スタティック ライブラリを埋め込むし、(NuGet パッケージに含まれる) 場合でも、それを参照する Xamarin.iOS アプリに自動的にリンクするため、使用できます。 
+    > と共にバインド ライブラリ プロジェクトの種類を使用して、[ネイティブ参照](https://docs.microsoft.com/xamarin/cross-platform/macios/native-references)スタティック ライブラリを埋め込むし、(NuGet パッケージに含まれる) 場合でも、それを参照する Xamarin.iOS アプリに自動的にリンクするため、使用できます。
 
-5. 開いている**ApiDefinition.cs**、コメント付きコードをテンプレートを削除しています (だけ、 **MathFuncs**名前空間) の同じ手順を実行し、 **Structs.cs** 
+5. 開いている**ApiDefinition.cs**、コメント付きコードをテンプレートを削除しています (だけ、`MathFuncs`名前空間) の同じ手順を実行し、 **Structs.cs** 
 
     > [!NOTE]
     > バインディング ライブラリ プロジェクトには、これらのファイルが必要です (で、 *ObjCBindingApiDefinition*と*ObjCBindingCoreSource*ビルド アクション) を構築するためにします。 ただし、標準的な P/invoke を使用して Android と iOS の両方のライブラリ ターゲット間で共有できる方法でこれらのファイルの外部で、ネイティブ ライブラリを呼び出す、コードを記述します。
@@ -394,11 +392,14 @@ extern "C" {
     ```
 
 #### <a name="completing-the-mymathfuncssafehandle-class"></a>MyMathFuncsSafeHandle クラスの完了
+
 1. 開く、 **MyMathFuncsSafeHandle**クラスは、プレース ホルダーに移動**TODO**内でコメント、 **ReleaseHandle**メソッド。
+
     ```csharp
     // TODO: Release the handle here
     ```
-2. 置換、 **TODO**行。
+
+1. 置換、 **TODO**行。
 
     ```csharp
     MyMathFuncsWrapper.DisposeMyMathFuncs(this);
@@ -476,11 +477,10 @@ extern "C" {
 
 ライブラリをパッケージ化され、NuGet 経由で配布するために、ソリューションが必要な**nuspec**ファイル。 これにより、サポートされているプラットフォームごとに生成されたアセンブリの対象は、識別します。
 
-1.  **コントロール + をクリックします**ソリューション**MathFuncs**を選択し、**ソリューション フォルダーの追加**から、**追加** メニューの名前を付け、 **SolutionItems**.
-2.  **コントロール + をクリックします**上、 **SolutionItems**フォルダーを選択し、**新しいファイル.** から、**追加**メニュー。
-3.  選択**空の XML ファイル**から、**新しいファイル**ウィンドウで、名前を付けます**MathFuncs.nuspec**順にクリックします**新規**します。
-4.  Update **MathFuncs.nuspec**に表示する基本的なパッケージ メタデータ、 **NuGet**コンシューマー。 例:
-
+1. **コントロール + をクリックします**ソリューション**MathFuncs**を選択し、**ソリューション フォルダーの追加**から、**追加** メニューの名前を付け、 **SolutionItems**.
+2. **コントロール + をクリックします**上、 **SolutionItems**フォルダーを選択し、**新しいファイル.** から、**追加**メニュー。
+3. 選択**空の XML ファイル**から、**新しいファイル**ウィンドウで、名前を付けます**MathFuncs.nuspec**順にクリックします**新規**します。
+4. Update **MathFuncs.nuspec**に表示する基本的なパッケージ メタデータ、 **NuGet**コンシューマー。 例:
 
     ```xml
     <?xml version="1.0"?>
@@ -497,7 +497,7 @@ extern "C" {
     ```
 
     > [!NOTE]
-    >  参照してください、 [nuspec リファレンス](https://docs.microsoft.com/nuget/reference/nuspec)の詳細については、このマニフェストで使用されるスキーマのドキュメント。
+    > 参照してください、 [nuspec リファレンス](https://docs.microsoft.com/nuget/reference/nuspec)の詳細については、このマニフェストで使用されるスキーマのドキュメント。
 
 5. 追加、`<files>`要素の子として、`<package>`要素 (真下`<metadata>`)、個別に各ファイルを識別する`<file>`要素。
 
@@ -506,7 +506,7 @@ extern "C" {
 
         <!-- Android -->
 
-        <!-- iOS -->        
+        <!-- iOS -->
 
         <!-- netstandard2.0 -->
 
@@ -551,7 +551,7 @@ extern "C" {
         <copyright>Copyright 2018</copyright>
     </metadata>
     <files>
-    
+
         <!-- Android -->
         <file src="MathFuncs.Android/bin/Release/MathFuncs.dll" target="lib/MonoAndroid81/MathFuncs.dll" />
         <file src="MathFuncs.Android/bin/Release/MathFuncs.pdb" target="lib/MonoAndroid81/MathFuncs.pdb" />
@@ -581,14 +581,14 @@ extern "C" {
 
 NuGet フィードの最も単純な形式では、ローカル ディレクトリを示します。
 
-1.  **Finder**、便利なディレクトリに移動します。 たとえば、 **"/users"** します。
-2.  選択**新しいフォルダー**から、**ファイル**などのわかりやすい名前を提供するメニュー**ローカル nuget フィード**します。
+1. **Finder**、便利なディレクトリに移動します。 たとえば、 **"/users"** します。
+2. 選択**新しいフォルダー**から、**ファイル**などのわかりやすい名前を提供するメニュー**ローカル nuget フィード**します。
 
 ### <a name="creating-the-package"></a>パッケージを作成します。
 
-1.  設定、**ビルド構成**に**リリース**を使用してビルドを実行および**コマンド + B**します。
-2.  開いている**ターミナル**を含むフォルダーにディレクトリを変更し、 **nuspec**ファイル。
-3.  **ターミナル**、実行、 **nuget パック**コマンドを指定する、 **nuspec**ファイル、**バージョン**(例: 1.0.0) と、 **OutputDirectory**で作成したフォルダーを使用して、[前の手順](https://docs.microsoft.com/xamarin/cross-platform/cpp/index#creating-a-local-nuget-feed)、つまり**ローカル nuget フィード**します。 例:
+1. 設定、**ビルド構成**に**リリース**を使用してビルドを実行および**コマンド + B**します。
+2. 開いている**ターミナル**を含むフォルダーにディレクトリを変更し、 **nuspec**ファイル。
+3. **ターミナル**、実行、 **nuget パック**コマンドを指定する、 **nuspec**ファイル、**バージョン**(例: 1.0.0) と、 **OutputDirectory**で作成したフォルダーを使用して、[前の手順](https://docs.microsoft.com/xamarin/cross-platform/cpp/index#creating-a-local-nuget-feed)、つまり**ローカル nuget フィード**します。 例:
 
     ```bash
     nuget pack MathFuncs.nuspec -Version 1.0.0 -OutputDirectory ~/local-nuget-feed
@@ -603,6 +603,7 @@ NuGet フィードの最も単純な形式では、ローカル ディレクト�
 このワークフローを完全に例を使用して自動化することをお勧め[Azure パイプライン](https://docs.microsoft.com/azure/devops/pipelines/index?view=vsts)します。 詳細については、次を参照してください。 [Azure パイプラインの概要](https://docs.microsoft.com/azure/devops/pipelines/get-started/index?view=vsts)します。
 
 ## <a name="consuming-the-net-wrapper-from-a-xamarinforms-app"></a>Xamarin.Forms アプリから .NET ラッパーの使用
+
 このチュートリアルを完了するには作成、 **Xamarin.Forms**だけパッケージを使用するアプリケーションをローカルに発行**NuGet**フィードします。
 
 ### <a name="creating-the-xamarinforms-project"></a>作成、 **Xamarin.Forms**プロジェクト
@@ -662,8 +663,8 @@ NuGet フィードの最も単純な形式では、ローカル ディレクト�
 
 ここを参照する、 **MathFuncs**関数は、プロジェクトの各パッケージが利用できる、C#コード。
 
-1.  開いている**MainPage.xaml.cs**内から、 **MathFuncsApp**共通**Xamarin.Forms**プロジェクト (両方で参照されている**MathFuncsApp.Android**と**MathFuncsApp.iOS**)。
-2.  追加**を使用して**ステートメント**System.Diagnostics**と**MathFuncs**ファイルの上部にあります。
+1. 開いている**MainPage.xaml.cs**内から、 **MathFuncsApp**共通**Xamarin.Forms**プロジェクト (両方で参照されている**MathFuncsApp.Android**と**MathFuncsApp.iOS**)。
+2. 追加**を使用して**ステートメント**System.Diagnostics**と**MathFuncs**ファイルの上部にあります。
 
     ```csharp
     using System.Diagnostics;

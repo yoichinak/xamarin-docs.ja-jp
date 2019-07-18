@@ -6,12 +6,12 @@ ms.assetid: 7C65A55C-71FA-46C5-A1B4-955B82559844
 author: asb3993
 ms.author: amburns
 ms.date: 10/19/2016
-ms.openlocfilehash: fcdd712313becd1335479013f44886086dde7bff
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 686ce3b46f268b650c63cace2a29b9d501a4063c
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57668063"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64977592"
 ---
 # <a name="binding-troubleshooting"></a>バインドのトラブルシューティング
 
@@ -55,9 +55,4 @@ GitHub の問題はすべて公開されています。 コメントまたは添
 
 - 問題を再現する簡単な例。 これは**重要**です (可能な場合)。 
 - クラッシュの完全なスタック トレース。
-- クラッシュの周囲の C# コード。 
-
-## <a name="related-links"></a>関連リンク
-
-- [Xamarin University のコース:OBJECTIVE-C バインディング ライブラリをビルド](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin University のコース:目標油性で、OBJECTIVE-C のバインド ライブラリをビルドします。](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)
+- クラッシュの周囲の C# コード。

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/11/2016
-ms.openlocfilehash: 06fd77293302a3d6d5d44def9d0a83e3f1a57ede
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 5df001926512b182c19ccfcf896057e88f5a597a
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104623"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67650245"
 ---
 # <a name="introduction-to-data-storage-in-xamarinios-apps"></a>Xamarin.iOS アプリ内のデータ ストレージの概要
 
@@ -73,4 +73,4 @@ SQLite の詳細 - web サイトについては、 [SQLite.org](http://SQLite.or
 - [DataAccess Basic (サンプル)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
 - [データ アクセスの詳細 (サンプル)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
 - [iOS データ レシピ](https://github.com/xamarin/recipes/tree/master/Recipes/ios/data/sqlite)
-- [Xamarin.Forms のデータ アクセス](~/xamarin-forms/app-fundamentals/databases.md)
+- [Xamarin.Forms のデータ アクセス](~/xamarin-forms/data-cloud/data/databases.md)

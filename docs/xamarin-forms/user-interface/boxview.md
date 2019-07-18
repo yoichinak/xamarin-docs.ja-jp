@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/26/2018
 ms.openlocfilehash: 85edbf657382b7c85ab2c5af543431fb51fb0d4e
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53053874"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61019613"
 ---
 # <a name="xamarinforms-boxview"></a>Xamarin.Forms BoxView
 
@@ -52,7 +52,7 @@ Xamarin.Forms には、組み込みのベクター グラフィックス シス�
 
 `WidthRequest`と`HeightRequest`プロパティが無視される場合、`BoxView`は*制約付き*をレイアウト コンテナーの場合に独自のサイズを課すレイアウトでは、`BoxView`します。
 
-A `BoxView` 1 つのディメンションでは制限し、制約、それ以外のことができます。 たとえば場合、`BoxView`垂直方向の子である`StackLayout`の垂直方向、`BoxView`は制約し、水平方向は一般に制約付き。 水平方向の例外もありますが、: 場合、`BoxView`がその`HorizontalOptions`プロパティ以外に何か設定`LayoutOptions.Fill`、水平方向にも制約付きはできません。 ことも、`StackLayout`自体に制約なしの水平方向、その場合、`BoxView`も水平方向に制約されません。
+A `BoxView` 1 つのディメンションでは制限し、制約、それ以外のことができます。 たとえば場合、`BoxView`垂直方向の子である`StackLayout`の垂直方向、`BoxView`は制約し、水平方向は一般に制約付き。 その水平方向に例外があります。場合、`BoxView`がその`HorizontalOptions`プロパティ以外に何か設定`LayoutOptions.Fill`、水平方向にも制約付きはできません。 ことも、`StackLayout`自体に制約なしの水平方向、その場合、`BoxView`も水平方向に制約されません。
 
 [ **BasicBoxView** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BasicBoxView)サンプル表示を 1 インチの正方形無制限`BoxView`そのページの中央に。
 
@@ -776,7 +776,7 @@ public partial class MainPage : ContentPage
 }
 ```
 
-2 番目の手札が少し異なる方法で扱われる: スムーズではなく機械的なと思われる移動するイージング機能、アニメーションを適用します。 刻みごとに、2 番目の手札を少し戻るをプルし、送信先を所定します。 この少しのコードは、動きのリアリティをたくさん追加します。
+2 番目の手札が少し異なる方法で扱われます。イージング機能アニメーションは、ことと思われる移動をスムーズではなく機械的に適用されます。 刻みごとに、2 番目の手札を少し戻るをプルし、送信先を所定します。 この少しのコードは、動きのリアリティをたくさん追加します。
 
 ## <a name="conclusion"></a>まとめ
 

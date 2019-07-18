@@ -1,5 +1,5 @@
 ---
-title: XAML スタイルを使用して Xamarin.Forms アプリのスタイル設定
+title: XAML スタイルを使用した Xamarin.Forms アプリのスタイル設定
 description: このガイドでは、XAML スタイルを使用して、Xamarin.Forms アプリケーションの外観をカスタマイズする方法について説明します。
 ms.prod: xamarin
 ms.assetid: 344A34AA-B19A-4765-BC8A-875D9A6B5EA8
@@ -7,14 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/30/2019
-ms.openlocfilehash: ec41955ac15ab23579a5e63b9e17eed61a74e86f
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.openlocfilehash: adafcb85f4e3d3bd93f7b2afe69c0ca0bb37f3d0
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55291987"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926607"
 ---
-# <a name="styling-xamarinforms-apps-using-xaml-styles"></a>XAML スタイルを使用して Xamarin.Forms アプリのスタイル設定
+# <a name="styling-xamarinforms-apps-using-xaml-styles"></a>XAML スタイルを使用した Xamarin.Forms アプリのスタイル設定
 
 ## <a name="introductionintroductionmd"></a>[はじめに](introduction.md)
 
@@ -22,7 +22,7 @@ Xamarin.Forms アプリケーションには、複数のコントロール同一
 
 ## <a name="explicit-stylesexplicitmd"></a>[明示的なスタイル](explicit.md)
 
-*明示的な*スタイルがコントロールに設定して選択的に適用される 1 つ、 [ `Style` ](xref:Xamarin.Forms.VisualElement.Style)プロパティ。
+*明示的な*スタイルがコントロールに設定して選択的に適用される 1 つ、 [ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)プロパティ。
 
 ## <a name="implicit-stylesimplicitmd"></a>[暗黙的なスタイル](implicit.md)
 

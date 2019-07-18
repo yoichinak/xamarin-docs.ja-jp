@@ -1,5 +1,5 @@
 ---
-title: ITunes Connect で tvOS アプリを構成します。
+title: iTunes Connect での tvOS アプリの構成
 description: この記事では、iOS、tvOS の特定の構成は、iTunes Connect でアプリの構成に補足的なガイドを提供します。
 ms.prod: xamarin
 ms.assetid: 86C7C5BD-C97D-4F1D-B611-A7694557BFDF
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
 ms.openlocfilehash: 3f4ef00cfe990de2d5afd461d7a110d32bc4a236
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108820"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61413235"
 ---
-# <a name="configure-your-tvos-app-in-itunes-connect"></a>ITunes Connect で tvOS アプリを構成します。
+# <a name="configure-your-tvos-app-in-itunes-connect"></a>iTunes Connect での tvOS アプリの構成
 
 _この記事では、iOS、tvOS の特定の構成は、iTunes Connect でアプリの構成に補足的なガイドを提供します。_
 

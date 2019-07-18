@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: 5ef1aba847954ccdeb230acd82ebbc5015ebd6b7
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.openlocfilehash: c4d73f131b8b20f17c5a3df13a3c4590f4ca926c
+ms.sourcegitcommit: 4f8dc5298a95d591a59e97cdd347fd82858a1019
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55292299"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66469498"
 ---
 # <a name="xamarinforms-cells"></a>Xamarin.Forms のセル
 
@@ -48,7 +48,7 @@ Xamarin.Forms には、次のセルの種類がサポートされています。
 
 |     |     |
 | --- | --- |
-| [ `SwitchCell` ](xref:Xamarin.Forms.SwitchCell)で設定されたテキストが含まれています、 [ `Text`'](xref:Xamarin.Forms.SwitchCell.Text)プロパティとのオン/オフ スイッチと、ブール値の初期設定[ `On` ](xref:Xamarin.Forms.SwitchCell.On)プロパティ。 処理、 [ `OnChanged` ](xref:Xamarin.Forms.SwitchCell.OnChanged)イベント時に通知が、`On`プロパティの変更。<br /><br />[API ドキュメント](xref:Xamarin.Forms.SwitchCell) / [ガイド](~/xamarin-forms/user-interface/tableview.md#switchcell) | [![SwitchCell 例](cells-images/SwitchCell.png "SwitchCell 例")](cells-images/SwitchCell-Large.png#lightbox "SwitchCell 例")<br />[このページの C# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SwitchCellDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SwitchCellDemoPage.xaml) |
+| [ `SwitchCell` ](xref:Xamarin.Forms.SwitchCell)で設定されたテキストが含まれています、 [ `Text` ](xref:Xamarin.Forms.SwitchCell.Text)プロパティとオン/オフ スイッチが最初に、ブール値を設定[ `On` ](xref:Xamarin.Forms.SwitchCell.On)プロパティ。 処理、 [ `OnChanged` ](xref:Xamarin.Forms.SwitchCell.OnChanged)イベント時に通知が、`On`プロパティの変更。<br /><br />[API ドキュメント](xref:Xamarin.Forms.SwitchCell) / [ガイド](~/xamarin-forms/user-interface/tableview.md#switchcell) | [![SwitchCell 例](cells-images/SwitchCell.png "SwitchCell 例")](cells-images/SwitchCell-Large.png#lightbox "SwitchCell 例")<br />[このページの C# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SwitchCellDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SwitchCellDemoPage.xaml) |
 |     |     |
 
 ### <a name="entrycell"></a>EntryCell

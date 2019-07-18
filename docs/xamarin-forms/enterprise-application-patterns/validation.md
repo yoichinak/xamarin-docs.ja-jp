@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
 ms.openlocfilehash: 22b5fe703486f0ded3a5b91241e3fe5ce41bbc98
-ms.sourcegitcommit: a7170494e1975f0f1be547a45444752fd8e57819
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58507098"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61298944"
 ---
 # <a name="validation-in-enterprise-apps"></a>エンタープライズ アプリの検証
 
@@ -206,7 +206,7 @@ public bool Validate()
 
 [ `Entry` ](xref:Xamarin.Forms.Entry)コントロールがバインド、`UserName.Value`のプロパティ、`ValidatableObject<T>`インスタンス、およびコントロールの`Behaviors`コレクションには、`EventToCommandBehavior`インスタンスを追加します。 この動作を実行、`ValidateUserNameCommand`への応答で、[`TextChanged`] イベントの発生、`Entry`を発生する状況内のテキスト、`Entry`変更。 さらに、`ValidateUserNameCommand`デリゲートの実行、`ValidateUserName`メソッドで、実行、`Validate`メソッドを`ValidatableObject<T>`インスタンス。 そのため、毎回ユーザーが入力内の文字、`Entry`ユーザー名、入力されたデータの検証コントロールを実行します。
 
-動作の詳細については、[動作を実装する](~/xamarin-forms/enterprise-application-patterns/mvvm.md#implementing_behaviors)を参照してください。
+動作の詳細については、次を参照してください。[動作を実装する](~/xamarin-forms/enterprise-application-patterns/mvvm.md#implementing_behaviors)します。
 
 <a name="displaying_validation_errors" />
 
@@ -283,7 +283,7 @@ public static class LineColorBehavior
 }
 ```
 
-このメソッドのパラメーターは、動作は、関連付けられているコントロールのインスタンスとの新旧の値を指定、`ApplyLineColor`添付プロパティ。 `EntryLineColorEffect`をコントロールのクラスを追加[ `Effects` ](xref:Xamarin.Forms.Element.Effects)コレクション場合、`ApplyLineColor`添付プロパティは`true`、それ以外の場合、コントロールから削除されます`Effects`コレクション。 動作の詳細については、[動作を実装する](~/xamarin-forms/enterprise-application-patterns/mvvm.md#implementing_behaviors)を参照してください。
+このメソッドのパラメーターは、動作は、関連付けられているコントロールのインスタンスとの新旧の値を指定、`ApplyLineColor`添付プロパティ。 `EntryLineColorEffect`をコントロールのクラスを追加[ `Effects` ](xref:Xamarin.Forms.Element.Effects)コレクション場合、`ApplyLineColor`添付プロパティは`true`、それ以外の場合、コントロールから削除されます`Effects`コレクション。 動作の詳細については、次を参照してください。[動作を実装する](~/xamarin-forms/enterprise-application-patterns/mvvm.md#implementing_behaviors)します。
 
 `EntryLineColorEffect`サブクラス、 [ `RoutingEffect` ](xref:Xamarin.Forms.RoutingEffect)クラスし、次のコード例に示します。
 
@@ -407,7 +407,7 @@ namespace eShopOnContainers.iOS.Effects
 
 内の行、 [ `Entry` ](xref:Xamarin.Forms.Entry)入力されたデータが有効な間に、コントロールが赤いまま、それ以外の場合、入力したデータが有効であることを示す黒に変更されます。
 
-トリガーの詳細については、[トリガー](~/xamarin-forms/app-fundamentals/triggers.md)を参照してください。
+トリガーの詳細については、次を参照してください。[トリガー](~/xamarin-forms/app-fundamentals/triggers.md)します。
 
 ### <a name="displaying-error-messages"></a>エラー メッセージを表示します。
 

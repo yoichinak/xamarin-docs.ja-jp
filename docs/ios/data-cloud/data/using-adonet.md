@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 9314e1b69df4a5965dfd045d0b4ca3e44f1b9de6
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 293ccc66395edbe18399717caf632292ff760b0b
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122297"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67650185"
 ---
 # <a name="using-adonet-with-xamarinios"></a>Xamarin.iOS で ADO.NET を使用します。
 
@@ -219,4 +219,4 @@ using (var contents = connection.CreateCommand ()) {
 - [DataAccess Basic (サンプル)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
 - [データ アクセスの詳細 (サンプル)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
 - [iOS データ レシピ](https://github.com/xamarin/recipes/tree/master/Recipes/ios/data/sqlite)
-- [Xamarin.Forms のデータ アクセス](~/xamarin-forms/app-fundamentals/databases.md)
+- [Xamarin.Forms のデータ アクセス](~/xamarin-forms/data-cloud/data/databases.md)

@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: ef7e0e0e0874857786196452de83d7532b80c347
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61079272"
+---
 |ジャンル ID|ジャンル名|
 |---|---|
 |6000|会社住所|
@@ -6,7 +14,7 @@
 |6003|旅行|
 |6004|スポーツ|
 |6005|ソーシャル ネットワーキング|
-|6006|参照|
+|6006|関連項目|
 |6007|生産性|
 |6008|写真/ビデオ|
 |6009|ニュース|

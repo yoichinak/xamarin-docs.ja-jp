@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: d5b7d4a372704079343a357c1d341a5260fcf583
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: fab653eb24b504fa17e6f2eac32915fd88580817
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233277"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827829"
 ---
 # <a name="user-interface-controls-in-xamarinios"></a>Xamarin.iOS でのユーザー インターフェイス コントロール
 
@@ -86,4 +86,4 @@ iOS では、アプリでの進行状況を示す 2 つの主な方法が用意�
 
 ## <a name="related-links"></a>関連リンク
 
-- [コントロール (サンプル)](https://developer.xamarin.com/samples/Controls/)
+- [コントロール (サンプル)](https://developer.xamarin.com/samples/monotouch/Controls/)

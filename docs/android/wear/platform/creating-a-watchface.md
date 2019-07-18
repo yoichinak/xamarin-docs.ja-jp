@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 08/23/2018
 ms.openlocfilehash: 067a39838fbfe3f1b33ac0d30b5069366b11e407
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52172003"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61287219"
 ---
 # <a name="creating-a-watch-face"></a>ウォッチの文字盤を作成する
 
@@ -39,7 +39,7 @@ _このガイドでは、Android Wear 1.0 用のカスタム ウォッチ face �
 
 -   [Xamarin Android Wear サポート ライブラリ](https://www.nuget.org/packages/Xamarin.Android.Wear)Xamarin.Android プロジェクトに追加する必要があります。
 
-Android 5.0 は、最小の API を Android 5.1、ウォッチ face サービスの実装のレベルがまたは後でお勧めします。 Android Wear Android 5.1 (API 22) を実行しているデバイスまたはデバイスが低電力の間に、画面に表示される内容を制御する Wear アプリを許可する以上*アンビエント*モード。 デバイスから離したときに低電力*アンビエント*では、モード、*対話型*モード。 詳細については、これらのモードは、[維持 Your App 表示](https://developer.android.com/training/wearables/apps/always-on.html)を参照してください。
+Android 5.0 は、最小の API を Android 5.1、ウォッチ face サービスの実装のレベルがまたは後でお勧めします。 Android Wear Android 5.1 (API 22) を実行しているデバイスまたはデバイスが低電力の間に、画面に表示される内容を制御する Wear アプリを許可する以上*アンビエント*モード。 デバイスから離したときに低電力*アンビエント*では、モード、*対話型*モード。 詳細については、これらのモードは、次を参照してください。[維持 Your App 表示](https://developer.android.com/training/wearables/apps/always-on.html)します。
 
 
 ## <a name="start-an-app-project"></a>アプリ プロジェクトを開始します。

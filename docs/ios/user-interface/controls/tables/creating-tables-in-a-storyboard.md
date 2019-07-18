@@ -1,5 +1,5 @@
 ---
-title: IOS Designer のテーブルの操作
+title: iOS Designer でのテーブルの操作
 description: 前のセクションでテーブルを使用した開発について学習しました。 これは、5 番目と最後のセクションはこれまでに学習した内容を集計し、ストーリー ボードを使用して基本的な面倒な作業一覧アプリケーションを作成します。
 ms.prod: xamarin
 ms.assetid: D8416E10-481A-0B6E-4081-B146E6358004
@@ -8,17 +8,17 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
 ms.openlocfilehash: 303c96ae6cdbc9f5b327c971f962d6eac75a6fa1
-ms.sourcegitcommit: f541a92b4f896474f6a5467ccff2028dafa6fee7
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "50983615"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61227554"
 ---
-# <a name="working-with-tables-in-the-ios-designer"></a>IOS Designer のテーブルの操作
+# <a name="working-with-tables-in-the-ios-designer"></a>iOS Designer でのテーブルの操作
 
 ストーリー ボードは、WYSIWYG iOS アプリケーションを作成する方法および Mac および Windows で Visual Studio 内でサポートされます。 ストーリー ボードの詳細についてを参照してください、[の概要をストーリー ボード](~/ios/user-interface/storyboards/index.md)ドキュメント。 ストーリー ボードのセルのレイアウトを編集することも*で*テーブルでは、テーブルとセルを使用した開発を簡略化
 
-IOS Designer のテーブル ビューのプロパティを構成するときに 2 種類のセルのコンテンツから選択することができます:**動的**または**静的**プロトタイプ コンテンツ。
+IOS Designer のテーブル ビューのプロパティを構成するときに、セルの内容から選択することができますの 2 つの種類があります。**動的**または**静的**プロトタイプ コンテンツ。
 
 <a name="Prototype_Content" />
 
@@ -79,11 +79,11 @@ Visual Studio を使用して新しいソリューションを作成 **(作成) 
 
 5. 次を選択し、[プロパティ] タブを使用して 2 つのテーブル ビューを構成します。 ビューとビュー コント ローラー以外を選択してください – 選択を支援するドキュメント アウトラインを使用することができます。
 
-6.  変更するルート ビュー コント ローラー**コンテンツ: 動的なプロトタイプ**(デザイン サーフェイス上のビューがラベル付けする**プロトタイプ コンテンツ**)。
+6.  変更するルート ビュー コント ローラー**コンテンツ。動的なプロトタイプ**(デザイン サーフェイス上のビューがラベル付けする**プロトタイプ コンテンツ**)。
 
     [![動的なプロトタイプへのコンテンツのプロパティの設定](creating-tables-in-a-storyboard-images/image17a.png)](creating-tables-in-a-storyboard-images/image17a.png#lightbox)
 
-7.  新しい変更**UITableViewController**する**コンテンツ: 静的セル**します。 
+7.  新しい変更**UITableViewController**する**コンテンツ。静的セル**します。 
 
 
 8. 新しい UITableViewController は、そのクラスの名前と識別子の設定が必要です。 ビュー コント ローラーと種類を選択_TaskDetailViewController_の**クラス**で、 **Properties Pad** – これは、新しい作成`TaskDetailViewController.cs`ソリューション内のファイルパッドのです。 入力、 **StoryboardID**として_詳細_次の例で示すようにします。 これは、後で使用では、このビューを読み込むC#コード。  
@@ -115,7 +115,7 @@ Visual Studio を使用して新しいソリューションを作成 **(作成) 
 次の手順で行います。 
 
 -  ドラッグ、**バー ボタンの項目**をツールボックスから、_のナビゲーション バーの右側にある_します。
--  **Properties Pad** **バー ボタンの項目** 選択 **識別子: 追加** (させる、 *+* ボタン)。 
+-  **Properties Pad** **バー ボタンの項目**選択**識別子。追加**(させる、 *+* + ボタン)。 
 -  コードの後の段階で識別できるように、これに名前を付けます。 ルート ビュー コント ローラー クラス名を提供する必要がありますに注意してください (たとえば**ItemViewController**) バー ボタンの項目の名前を設定するようにします。
 
 
@@ -129,10 +129,10 @@ Visual Studio を使用して新しいソリューションを作成 **(作成) 
 
 テーブル ビューを選択し、開く、**プロパティ パッド**します。 次のプロパティを更新します。
 
--  **セクション**: _2_ 
--  **スタイル**:_別にグループ化_
--  **区切り記号**:_なし_
--  **選択範囲**:_選択なし_
+-  **セクション**:_2_ 
+-  **スタイル**:_グループ化_
+-  **区切り記号**:_[なし]_
+-  **選択**:_選択されていません_
 
 最上部のセクションを選択し、**プロパティ > テーブルのビュー セクション**変更**行**に_3_以下に示すように。
 
@@ -141,8 +141,8 @@ Visual Studio を使用して新しいソリューションを作成 **(作成) 
 
 開いている各セルの**Properties Pad**設定。
 
--  **スタイル**:_カスタム_
--  **識別子**: (例: 各セルの一意の識別子を選択 "_タイトル_「,」_ノート_「,」_完了_")。
+-  **スタイル**:_Custom_
+-  **識別子**:(例: 各セルの一意の識別子を選択します。 "_タイトル_「,」_ノート_「,」_完了_")。
 -  スクリーン ショットに示すようにレイアウトを生成するために必要なコントロールをドラッグします (配置**UILabel**、 **UITextField**と**UISwitch**正しいのセルとラベルを設定適切に、ie します。タイトル、ノートと完了)。
 
 
@@ -160,11 +160,11 @@ Visual Studio を使用して新しいソリューションを作成 **(作成) 
 
 ストーリー ボードを作成するのには、最後のいくつかの手順があります。 最初名前を付けてください、コントロールの各  **Identity > 名**後でコードで使用できるようにします。 次のように、これら名前を付けます。
 
--  **タイトルの UITextField** : _TitleText_
--  **ノート UITextField** : _NotesText_
--  **UISwitch** : _DoneSwitch_
--  **削除 UIButton** : _DeleteButton_
--  **保存 UIButton** : _SaveButton_
+-  **タイトルの UITextField** :_TitleText_
+-  **ノート UITextField** :_NotesText_
+-  **UISwitch** :_DoneSwitch_
+-  **削除 UIButton** :_DeleteButton_
+-  **保存 UIButton** :_SaveButton_
 
 
 <a name="Adding_Code" />

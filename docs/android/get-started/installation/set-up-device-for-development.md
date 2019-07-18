@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/22/2018
-ms.openlocfilehash: d1e43d211f639c422bbed3a6afad9f2136551071
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: a2b69152ab616e74761d9acf6a74d30144fe43b3
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59690291"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65925057"
 ---
 # <a name="set-up-device-for-development"></a>開発用のデバイスの設定
 
@@ -46,7 +46,7 @@ Android 4.0.x から Android 4.1.x の場合は、以下の手順に従ってデ
 
 ### <a name="android-42-and-higher"></a>Android 4.2 以降
 
-Android 4.2 以降では、**[開発者向けオプション]** は既定で非表示になります。 これを使用可能にするには、**[設定]、[端末情報]** の順に移動し、**[ビルド番号]** 項目を 7 回タップして **[開発者向けオプション]** タブを表示します。
+Android 4.2 以降では、 **[開発者向けオプション]** は既定で非表示になります。 これを使用可能にするには、 **[設定]、[端末情報]** の順に移動し、 **[ビルド番号]** 項目を 7 回タップして **[開発者向けオプション]** タブを表示します。
 
 [![ビルド番号項目](set-up-device-for-development-images/about-phone-sml.png)](set-up-device-for-development-images/about-phone.png#lightbox)
 
@@ -78,7 +78,7 @@ Android SDK マネージャーを起動し、以下のスクリーン ショッ�
 
 [![選択されている Google USB ドライバー パッケージ](set-up-device-for-development-images/usbdriverpackage.png)](set-up-device-for-development-images/usbdriverpackage.png#lightbox)
 
-**[Google USB Driver]\(Google USB ドライバー\)** ボックスをオンにして、**[インストール]** ボタンをクリックします。
+**[Google USB Driver]\(Google USB ドライバー\)** ボックスをオンにして、 **[インストール]** ボタンをクリックします。
 次の場所にドライバー ファイルがダウンロードされます。
 
 `[Android SDK install path]\extras\google\usb\_driver`
@@ -94,16 +94,16 @@ Windows 7 でドライバーをインストールする場合は、次のよう�
 
 1. USB ケーブルでデバイスをコンピューターに接続します。
 
-2. デスクトップまたは Windows エクスプローラーでコンピューターを右クリックして、**[管理]** を選択します。
+2. デスクトップまたは Windows エクスプローラーでコンピューターを右クリックして、 **[管理]** を選択します。
 
 3. 左側のウィンドウで **[デバイス]** を選択します。
 
 4. 右側のウィンドウで **[その他のデバイス]** を見つけて展開します。
 
-5. デバイス名を右クリックして、**[ドライバー ソフトウェアの更新]** を選択します。
+5. デバイス名を右クリックして、 **[ドライバー ソフトウェアの更新]** を選択します。
     これで、ハードウェアの更新ウィザードが起動します。
 
-6. **[コンピューターを参照してドライバー ソフトウェアを検索します**] を選択して、**[次へ]** をクリックします。
+6. **[コンピューターを参照してドライバー ソフトウェアを検索します**] を選択して、 **[次へ]** をクリックします。
 
 7. **[参照]** をクリックして、USB ドライバー フォルダーを見つけます (Google USB ドライバーは **[Android SDK のインストール パス]\extras\google\usb_driver** にあります)。
 
@@ -135,9 +135,9 @@ Windows 8 で未確認のドライバーをインストールするには、追�
 
 ### <a name="connecting-over-wifi"></a>WiFi 経由の接続
 
-既定では、[Android Debug Bridge](https://developer.android.com/tools/help/adb.html) (*ADB*) は USB 経由で Android デバイスと通信するように構成されます。 USB の代わりに TCP/IP を使用するように再構成することができます。 これを行うには、デバイスとコンピューターの両方が同じ WiFi ネットワーク上にある必要があります。 WiFi 経由でデバッグを行うために環境を設定するには、コマンド ラインを使用して以下の手順を実行します。
+既定では、[Android Debug Bridge](https://developer.android.com/tools/help/adb.html) (*ADB*) は USB 経由で Android デバイスと通信するように構成されます。 USB の代わりに TCP/IP を使用するように再構成することができます。 これを行うには、デバイスとコンピューターの両方が同じ WiFi ネットワーク上にある必要があります。 WiFi 経由でデバッグを行うために環境を設定するには、コマンド ラインを使用して以下の手順を行います。
 
-1. Android デバイスの IP アドレスを決定します。 IP アドレスを見つける 1 つの方法は、**[設定]、[Wi-Fi]** で確認し、デバイスが接続されている WiFi ネットワークをタップすることです。 これで、設定画面が表示され、以下のスクリーン ショットのような、ネットワーク接続に関する情報が示されます。
+1. Android デバイスの IP アドレスを決定します。 IP アドレスを見つける 1 つの方法は、 **[設定]、[Wi-Fi]** で確認し、デバイスが接続されている WiFi ネットワークをタップすることです。 これで、設定画面が表示され、以下のスクリーン ショットのような、ネットワーク接続に関する情報が示されます。
 
     ![IP アドレス](set-up-device-for-development-images/ip-settings.png)
 

@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
 ms.openlocfilehash: dd4ba236df8e5993c7f7ed86393eb66ce01db595
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111266"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60956166"
 ---
 # <a name="app-linking-in-android"></a>Android でのアプリ リンク
 
@@ -177,7 +177,7 @@ https://digitalassetlinks.googleapis.com/v1/statements:list?source.web.site=
     * **`Domain`** &ndash; Web リンクを持つアプリケーションによって処理されるドメイン (スペースで区切られた)
     * **`Status`** &ndash; これは、アプリの現在のリンク処理状態です。 値**常に**、アプリケーションがつまり`android:autoVerify=true`宣言され、システムの検証に合格します。 Android システムのレコードの優先順位を表す 16 進数が続いています。
 
-    例えば:
+    例:
 
     ```shell
     $ adb shell dumpsys package domain-preferred-apps

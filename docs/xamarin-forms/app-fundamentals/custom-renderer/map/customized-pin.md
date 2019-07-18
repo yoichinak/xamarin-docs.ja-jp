@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 54509d0a1133d86727317366b0d229bc218cb263
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: 0ed4d86054ada0918feccb123ac3a0de8ccf899b
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58870301"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926721"
 ---
 # <a name="customizing-a-map-pin"></a>マップ ピンのカスタマイズ
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/pin/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/Map/Pin/)
 
 _この記事では、各プラットフォーム上でカスタマイズされたピンとピン データのカスタマイズされたビューを含むネイティブ マップを表示する、マップ コントロール用のカスタム レンダラーを作成する方法を示します。_
 
@@ -663,4 +663,4 @@ private async void OnInfoButtonTapped(object sender, TappedRoutedEventArgs e)
 - [マップ コントロール](~/xamarin-forms/user-interface/map.md)
 - [iOS のマップ](~/ios/user-interface/controls/ios-maps/index.md)
 - [Maps API](~/android/platform/maps-and-location/maps/maps-api.md)
-- [カスタマイズされたピン (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/pin/)
+- [カスタマイズされたピン (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/Map/Pin/)

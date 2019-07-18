@@ -7,12 +7,12 @@ ms.assetid: CF386485-EAB0-4B9E-AA17-CB1B6462E505
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: ee4b39aed64d7339bd561cccc49a2959a6daba5c
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: e389bc33538ec3c3d36eb749c746f5a4723aab3c
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57668310"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830356"
 ---
 # <a name="where-can-i-find-my-version-information-and-logs"></a>バージョン情報とログはどこにありますか
 
@@ -170,14 +170,14 @@ Reference: [/Log (devenv.exe)](https://msdn.microsoft.com/library/ms241272.aspx)
 
 1. **ツール > Android > Android Adb コマンド プロンプトを起動**
 2. ログをクリーンアップするには。 `adb logcat -c`
-3. この問題を再現します。
+3. 問題を再現します。
 4. ログを出力します。 `adb logcat -vtime -d > "%USERPROFILE%\Desktop\android_logcat.txt"`
 
 #### <a name="visual-studio-for-mac"></a>Visual Studio for Mac
 
 1. **ツール > Android SDK コマンド プロンプトを開く**
 2. ログをクリーンアップするには。 `adb logcat -c`
-3. この問題を再現します。
+3. 問題を再現します。
 4. ログを出力します。 `adb logcat -vtime -d > ~/Desktop/android_logcat.txt`
 
 ### <a name="a-idios-simulator-logs-nameios-simulator-logs-ios-simulator-logs-on-mac"></a><a id="ios-simulator-logs" name="ios-simulator-logs" />iOS シミュレーター (Mac) でログに記録します。

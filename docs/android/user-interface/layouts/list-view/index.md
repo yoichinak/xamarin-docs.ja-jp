@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: a30256722647bbea482970d0c4a751954810d99e
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 2560a451f3a6e7dd09b687f9db8c0c070598def6
+ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122648"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66740659"
 ---
 # <a name="listview"></a>ListView
 
@@ -29,7 +29,7 @@ Android アプリケーションの最も基本的な構成要素には、リス
 
 
 > [!NOTE]
-> `RecyclerView`ウィジェットより高度で柔軟性のあるバージョンの`ListView`します。 `RecyclerView`後継は、 `ListView` (と`GridView`)、使用することをお勧めします。`RecyclerView`なく`ListView`新しいアプリの開発。 詳細については、[RecyclerView](~/android/user-interface/layouts/recycler-view/index.md)を参照してください。
+> `RecyclerView`ウィジェットより高度で柔軟性のあるバージョンの`ListView`します。 `RecyclerView`後継は、 `ListView` (と`GridView`)、使用することをお勧めします。`RecyclerView`なく`ListView`新しいアプリの開発。 詳細については、次を参照してください。 [RecyclerView](~/android/user-interface/layouts/recycler-view/index.md)します。
 
 
 
@@ -227,15 +227,15 @@ ListAdapter = new ArrayAdapter<string> (this, Resource.Layout.list_item, countri
 
 ## <a name="related-links"></a>関連リンク
 
-- [AccessoryViews (サンプル)](https://developer.xamarin.com/samples/AccessoryViews/)
-- [BasicTableAndroid (サンプル)](https://developer.xamarin.com/samples/BasicTableAndroid/)
-- [BasicTableAdapter (サンプル)](https://developer.xamarin.com/samples/BasicTableAdapter/)
-- [BuiltInViews (サンプル)](https://developer.xamarin.com/samples/BuiltInViews/)
-- [CustomRowView (サンプル)](https://developer.xamarin.com/samples/CustomRowView/)
-- [FastScroll (サンプル)](https://developer.xamarin.com/samples/FastScroll/)
-- [SectionIndex (サンプル)](https://developer.xamarin.com/samples/SectionIndex/)
-- [SimpleCursorTableAdapter (サンプル)](https://developer.xamarin.com/samples/SimpleCursorTableAdapter/)
-- [CursorTableAdapter (サンプル)](https://developer.xamarin.com/samples/CursorTableAdapter/)
+- [AccessoryViews (サンプル)](https://developer.xamarin.com/samples/monodroid/AccessoryViews/)
+- [BasicTableAndroid (サンプル)](https://developer.xamarin.com/samples/monodroid/BasicTableAndroid/)
+- [BasicTableAdapter (サンプル)](https://developer.xamarin.com/samples/monodroid/BasicTableAdapter/)
+- [BuiltInViews (サンプル)](https://developer.xamarin.com/samples/monodroid/BuiltInViews/)
+- [CustomRowView (サンプル)](https://developer.xamarin.com/samples/monodroid/CustomRowView/)
+- [FastScroll (サンプル)](https://developer.xamarin.com/samples/monodroid/FastScroll/)
+- [SectionIndex (サンプル)](https://developer.xamarin.com/samples/monodroid/SectionIndex/)
+- [SimpleCursorTableAdapter (サンプル)](https://developer.xamarin.com/samples/monodroid/SimpleCursorTableAdapter/)
+- [CursorTableAdapter (サンプル)](https://developer.xamarin.com/samples/monodroid/CursorTableAdapter/)
 - [アクティビティ ライフ サイクルのチュートリアル](~/android/app-fundamentals/activity-lifecycle/index.md)
 - [テーブルおよびセル (Xamarin.iOS) の使用](~/ios/user-interface/controls/tables/index.md)
 - [ListView クラスのリファレンス](https://developer.xamarin.com/api/type/Android.Widget.ListView/)

@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 06/05/2018
 ms.openlocfilehash: b59fd7c1a9e5f528878b90e1a76fabe5a79bab81
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108243"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60946825"
 ---
 # <a name="embedded-frameworks-in-xamarinios"></a>Xamarin.iOS で埋め込みフレームワーク
 
@@ -20,7 +20,7 @@ _このドキュメントでは、アプリケーション開発者が自分の�
 
 8.0 Apple は iOS で行ったアプリ拡張機能と Xcode でメイン アプリケーションの間のコードを共有する埋め込みのフレームワークを作成することです。
 
-Xamarin.iOS 9.0 では、Xamarin.iOS アプリでこれらの組み込みフレームワーク (Xcode で作成された) を使用するためのサポートを追加します。 ***いない**Xamarin.iOS プロジェクトの任意の型から埋め込みフレームワークを作成するには、既存のネイティブ (OBJECTIVE-C) フレームワークにのみ使用できます。*
+Xamarin.iOS 9.0 では、Xamarin.iOS アプリでこれらの組み込みフレームワーク (Xcode で作成された) を使用するためのサポートを追加します。 **いない** *Xamarin.iOS プロジェクトの任意の型から埋め込みフレームワークを作成するには、既存のネイティブ (OBJECTIVE-C) フレームワークにのみ使用できます*。
 
 Xamarin.iOS でフレームワークを使用する 2 つの方法はあります。
 
@@ -70,8 +70,8 @@ Xamarin.iOS でフレームワークを使用する 2 つの方法はありま�
 
 この動作は、プロジェクトの iOS ビルド オプションでその他の mtouch 引数として、次を追加することで、アプリ開発者によってオーバーライドできます。
 
-- `--mono:static`: 静的に Mono ランタイムとリンクします。
-- `--mono:framework`: リンク、Mono ランタイム、フレームワークとして使用します。
+- `--mono:static`:Mono ランタイムと静的にリンクします。
+- `--mono:framework`:Mono ランタイム、フレームワークとしてのリンクを示します。
 
 拡張子のないアプリの場合でもフレームワークとして、Mono ランタイムとのリンクの 1 つのシナリオは、Apple が強制実行可能ファイルのサイズ制限を克服するために、実行可能ファイルのサイズを小さくです。 リファレンスについては、Mono ランタイムは、(Xamarin.iOS 8.12 のしかし彼は異なります、リリース間とアプリ間であっても)、アーキテクチャごとに約 1.7 MB を追加します。 Mono フレームワークは、約 2.3 MB アーキテクチャは、任意の拡張子のない単一アーキテクチャ アプリのことを意味、アプリのリンクを作成を追加します Mono ランタイムとフレームワークは ~1.7MB、で実行可能ファイルの圧縮が、~2.3MB フレームワークを追加、がその結果。で ~0.6MB 大きなアプリか。
 

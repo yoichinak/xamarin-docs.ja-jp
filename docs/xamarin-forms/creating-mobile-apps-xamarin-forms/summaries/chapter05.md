@@ -1,6 +1,6 @@
 ---
 title: 第 5 章の概要です。 サイズの処理
-description: 'Xamarin.Forms によるモバイル アプリの作成: 第 5 章の概要。 サイズの処理'
+description: Xamarin.Forms によるモバイル アプリの作成。第 5 章の概要です。 サイズの処理
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 486800E9-C09F-4B95-9AC2-C0F8FE563BCF
@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
 ms.openlocfilehash: fd6694de756938ff564bed0923427fe62153116a
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53056085"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61334392"
 ---
 # <a name="summary-of-chapter-5-dealing-with-sizes"></a>第 5 章の概要です。 サイズの処理
 
@@ -80,7 +80,7 @@ Windows のスマート フォンとモバイル デバイスでは、160 のデ
 
 ## <a name="accessibility-issues"></a>アクセシビリティの問題
 
-**EstimatedFontSize**プログラムと**FitToSizeClock**両方のプログラムには微妙な欠陥が含まれている: ユーザーが Android や Windows 10 Mobile、不要になったプログラム上、電話のユーザー補助の設定を変更するかどうか見積もることができます、テキストのレンダリング方法に大きなフォント サイズに基づいています。 [ **AccessibilityTest** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/AccessibilityTest)サンプルは、この問題を示します。
+**EstimatedFontSize**プログラムと**FitToSizeClock**両方のプログラムには微妙な欠陥が含まれています。ユーザーは、Android または Windows 10 Mobile のスマート フォンのユーザー補助の設定を変更する場合、プログラムされなく見積もることができますサイズ、テキストのレンダリング フォント サイズに基づいています。 [ **AccessibilityTest** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/AccessibilityTest)サンプルは、この問題を示します。
 
 ## <a name="empirically-fitting-text"></a>経験的調整テキスト
 

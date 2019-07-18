@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/29/2018
-ms.openlocfilehash: 9456686157f10d81e36b908cb0a2441e64d47663
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: e77a5d7863428d743c536b5aa7b2bb88d12cffc0
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58855147"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978326"
 ---
 # <a name="pair-to-mac-for-xamarinios-development"></a>Xamarin.iOS 開発のために Mac とペアリングする
 
@@ -54,7 +54,7 @@ Visual Studio 2019 の [Mac とペアリング] 機能は、Windows ベースの
 
 Mac ビルド ホストを設定するには、まずリモート ログインを有効にします。
 
-1. Mac で、[システム環境設定] を開き、**[共有]** ウィンドウに移動します。
+1. Mac で、[システム環境設定] を開き、 **[共有]** ウィンドウに移動します。
 
 2. **[サービス]** リストの **[リモート ログイン]** オプションをオンにします
 
@@ -72,7 +72,7 @@ Mac ビルド ホストを設定するには、まずリモート ログイン�
 
 リモート ログインが有効になったので、Visual Studio 2019 を Mac に接続します。
 
-1. Visual Studio 2019 で、既存の iOS プロジェクトを開くか、**[ファイル] > [新規] > [プロジェクト]** の順に選択し、iOS プロジェクト テンプレートを選択して、新しいプロジェクトを作成します。
+1. Visual Studio 2019 で、既存の iOS プロジェクトを開くか、 **[ファイル] > [新規] > [プロジェクト]** の順に選択し、iOS プロジェクト テンプレートを選択して、新しいプロジェクトを作成します。
 
 2. **[Mac とペアリング]** ダイアログを開きます。 
 
@@ -80,7 +80,7 @@ Mac ビルド ホストを設定するには、まずリモート ログイン�
 
         ![[Mac とペアリング] ボタンが強調表示されている [iOS] ツール バー](images/ios-toolbar.png "[Mac とペアリング] ボタンが強調表示されている [iOS] ツール バー")
 
-    - または、**[ツール] > [iOS] > [Mac とペアリング]** の順に選択します。
+    - または、 **[ツール] > [iOS] > [Mac とペアリング]** の順に選択します。
 
     - **[Mac とペアリング]** ダイアログに、以前に接続したことがあって現在使用可能なすべての Mac ビルド ホストの一覧が表示されます。
 
@@ -105,14 +105,14 @@ Mac ビルド ホストを設定するには、まずリモート ログイン�
 
 6. 接続状態アイコンを確認します。
 
-    - Visual Studio 2019 が Mac に接続されていると、**[Mac とペアリング]** ダイアログのその Mac の項目に、現在接続されていることを示すアイコンが表示されます。
+    - Visual Studio 2019 が Mac に接続されていると、 **[Mac とペアリング]** ダイアログのその Mac の項目に、現在接続されていることを示すアイコンが表示されます。
 
         ![接続された Mac](images/connected.png "接続された Mac")
 
       接続できる Mac は一度に 1 台だけです。
 
       > [!TIP]
-      > **[Mac とペアリング]** の一覧で Mac を右クリックすると表示されるコンテキスト メニューでは、**[接続...]**、**[この Mac を記憶しない]**、**[切断]** を選択できます。
+      > **[Mac とペアリング]** の一覧で Mac を右クリックすると表示されるコンテキスト メニューでは、 **[接続...]** 、 **[この Mac を記憶しない]** 、 **[切断]** を選択できます。
       >
       > ![[Mac とペアリング] のコンテキスト メニュー](images/contextmenu.png "[Mac とペアリング] のコンテキスト メニュー")
       >
@@ -141,11 +141,11 @@ Mac とペアリングできない場合は、[Mac を手動で追加](#manually
 
       ネットワークの構成によっては、`en0` ではなくインターフェイス名を使用する必要があります。 たとえば、`en1`、`en2` などです。
 
-2. Visual Studio 2019 の **[Mac とペアリング]** ダイアログで、**[Mac の追加]** を選びます。
+2. Visual Studio 2019 の **[Mac とペアリング]** ダイアログで、 **[Mac の追加]** を選びます。
 
     [![[Mac とペアリング] ダイアログの [Mac の追加] ボタン](images/addtomac.png "[Mac とペアリング] ダイアログの [Mac の追加] ボタン")](images/addtomac-large.png#lightbox)
 
-3. Mac の IP アドレスを入力して、**[追加]** をクリックします。
+3. Mac の IP アドレスを入力して、 **[追加]** をクリックします。
 
     ![Mac の IP アドレスの入力](images/enteripaddress.png "Mac の IP アドレスの入力")
 
@@ -216,7 +216,7 @@ Visual Studio 2017 が [Mac に接続している](#connect-to-the-mac-from-visu
 
 ### <a name="troubleshooting-automatic-mac-provisioning"></a>Mac の自動プロビジョニングのトラブルシューティング
 
-Mac の自動プロビジョニングを使用していて問題が発生した場合は、Visual Studio 2019 IDE ログ (**%LOCALAPPDATA%\Xamarin\Logs\15.0**) を確認してください。 これらのログには、障害を診断したりサポートを受けたりするときに役立つエラー メッセージが含まれる可能性があります。
+Mac の自動プロビジョニングを使用していて問題が発生した場合は、Visual Studio 2019 IDE ログ ( **%LOCALAPPDATA%\Xamarin\Logs\15.0**) を確認してください。 これらのログには、障害を診断したりサポートを受けたりするときに役立つエラー メッセージが含まれる可能性があります。
 
 ## <a name="build-ios-apps-from-the-windows-command-line"></a>Windows コマンド ラインから iOS アプリをビルドする
 
@@ -236,7 +236,7 @@ C:\samples\App1>msbuild App1.sln /p:ServerAddress=10.211.55.2 /p:ServerUser=xamU
 > [!NOTE]
 > Visual Studio 2019 では次のディレクトリに `msbuild` を格納します。**C:\Program Files (x86)\Microsoft Visual Studio\2017\\&lt;Version&gt;\MSBuild\15.0\Bin**
 
-[Mac とペアリング] は、Visual Studio 2019 またはコマンド ラインから特定の Mac ビルド ホストに初めてログインするときに、SSH キーを設定します。 これらのキーがあると、将来のログインではユーザー名またはパスワードは必要ありません。 新しく作成されたキーは、**%LOCALAPPDATA%\Xamarin\MonoTouch** に格納されます。
+[Mac とペアリング] は、Visual Studio 2019 またはコマンド ラインから特定の Mac ビルド ホストに初めてログインするときに、SSH キーを設定します。 これらのキーがあると、将来のログインではユーザー名またはパスワードは必要ありません。 新しく作成されたキーは、 **%LOCALAPPDATA%\Xamarin\MonoTouch** に格納されます。
 
 コマンド ラインでのビルドの呼び出しで `ServerPassword` パラメーターを省略すると、[Mac とペアリング] は保存されている SSH キーを使って Mac ビルド ホストへのログインを試みます。
 
@@ -247,7 +247,7 @@ C:\samples\App1>msbuild App1.sln /p:ServerAddress=10.211.55.2 /p:ServerUser=xamU
 ## <a name="next-steps"></a>次の手順
 
 - [接続のトラブルシューティング](~/ios/get-started/installation/windows/connecting-to-mac/troubleshooting.md)
-- [Xamarin Mac ビルド エージェント - Xamarin University Lightning Lecture](https://www.youtube.com/watch?v=MBAPBtxkjFQ)
+- [Xamarin Mac ビルド エージェントのビデオ](https://www.youtube.com/watch?v=MBAPBtxkjFQ)
 - [Xamarin.iOS for Visual Studio の概要](~/ios/get-started/installation/windows/introduction-to-xamarin-ios-for-visual-studio.md)
 - [リモートの iOS シミュレーターWindows用](~/tools/ios-simulator/index.md)
 - [ワイヤレス展開](~/ios/deploy-test/wireless-deployment.md)

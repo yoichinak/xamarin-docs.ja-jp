@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 05/18/2016
 ms.openlocfilehash: aa3e15797ae1dac621ea8a78345044be1387ebaa
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108900"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61179607"
 ---
 # <a name="accessibility-on-ios"></a>IOS でユーザー補助
 
@@ -112,7 +112,7 @@ notesText.AccessibilityHint = NSBundle.MainBundle.LocalizedString ("Provide more
 
 <a name="testing" />
 
-## <a name="testing-accessibility"></a>ユーザー補助のテスト
+## <a name="testing-accessibility"></a>アクセシビリティのテスト
 
 ボイスが有効になっている、**設定**アプリに移動して**全般 > アクセシビリティ > VoiceOver**:
 
@@ -140,6 +140,6 @@ notesText.AccessibilityHint = NSBundle.MainBundle.LocalizedString ("Provide more
 
 ## <a name="related-links"></a>関連リンク
 
-- [クロス プラットフォームのユーザー補助機能](~/cross-platform/app-fundamentals/accessibility.md)
+- [クロスプラットフォームのアクセシビリティ](~/cross-platform/app-fundamentals/accessibility.md)
 - [iOS (Apple) のユーザー補助機能](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Accessibility_on_iPhone/Accessibility_on_iPhone.html)
 - [iOS VoiceOver](http://www.apple.com/accessibility/ios/voiceover/)

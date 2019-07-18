@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2016
-ms.openlocfilehash: 1baad2e2edfb661fff9f3ef0ccf52c9922e9f351
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: b00452d348072060ab0e31a64fdb8cd4eb177471
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53051825"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926972"
 ---
 # <a name="passing-arguments-in-xaml"></a>XAML で引数の受け渡し
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/xaml/passingconstructorarguments/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/XAML/PassingConstructorArguments/)
 
 _この記事では、工場出荷時のメソッドを呼び出すと、ジェネリック引数の型を指定する既定以外のコンス トラクターに引数を渡すに使用できる XAML 属性の使用を示します。_
 
@@ -24,10 +24,10 @@ _この記事では、工場出荷時のメソッドを呼び出すと、ジェ�
 
 引数を必要とするコンス トラクターまたは静的作成メソッドを呼び出してオブジェクトをインスタンス化する必要があります。 これを使用して XAML で実現できる、`x:Arguments`と`x:FactoryMethod`属性。
 
-- `x:Arguments`属性は、既定ではないコンス トラクターまたはファクトリ メソッドのオブジェクトの宣言にコンス トラクター引数を指定するために使用します。 詳細については、[コンス トラクターの引数を渡す](#constructor_arguments)を参照してください。
-- `x:FactoryMethod`オブジェクトを初期化するために使用できるファクトリ メソッドを指定する属性を使用します。 詳細については、[ファクトリ メソッドを呼び出す](#factory_methods)を参照してください。
+- `x:Arguments`属性は、既定ではないコンス トラクターまたはファクトリ メソッドのオブジェクトの宣言にコンス トラクター引数を指定するために使用します。 詳細については、次を参照してください。[コンス トラクターの引数を渡す](#constructor_arguments)します。
+- `x:FactoryMethod`オブジェクトを初期化するために使用できるファクトリ メソッドを指定する属性を使用します。 詳細については、次を参照してください。[ファクトリ メソッドを呼び出す](#factory_methods)します。
 
-さらに、`x:TypeArguments`属性を使用して、ジェネリック型のコンス トラクターにジェネリック型引数を指定することができます。 詳細については、[ジェネリック型引数を指定する](#generic_type_arguments)を参照してください。
+さらに、`x:TypeArguments`属性を使用して、ジェネリック型のコンス トラクターにジェネリック型引数を指定することができます。 詳細については、次を参照してください。[ジェネリック型引数を指定する](#generic_type_arguments)します。
 
 <a name="constructor_arguments" />
 
@@ -173,5 +173,5 @@ _この記事では、工場出荷時のメソッドを呼び出すと、ジェ�
 ## <a name="related-links"></a>関連リンク
 
 - [XAML 名前空間](~/xamarin-forms/xaml/namespaces.md)
-- [コンス トラクター引数の受け渡し (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/xaml/passingconstructorarguments/)
+- [コンス トラクター引数の受け渡し (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/XAML/PassingConstructorArguments/)
 - [ファクトリ メソッドを呼び出す (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/xaml/callingfactorymethods/)

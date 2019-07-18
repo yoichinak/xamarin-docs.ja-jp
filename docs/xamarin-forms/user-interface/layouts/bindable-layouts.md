@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/18/2018
-ms.openlocfilehash: b0e2d5e3c7923e5c3cf2adcc1dd104a97b78e727
-ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
+ms.openlocfilehash: 28846e6e9590d2adf56114fce8bc6056c0112ac1
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55832244"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65970963"
 ---
 # <a name="bindable-layouts-in-xamarinforms"></a>Xamarin.Forms でのバインド可能なレイアウト
 
@@ -29,10 +29,12 @@ ms.locfileid: "55832244"
 > [!NOTE]
 > `ItemTemplate`プロパティが優先と両方、`ItemTemplate`と`ItemTemplateSelector`プロパティを設定します。
 
-`Layout<T>`クラスでは、 [ `Children` ](xref:Xamarin.Forms.Layout`1.Children)レイアウトの子要素を追加するコレクション。 ときに、`BinableLayout.ItemsSource`プロパティが項目のコレクションに設定されに接続されている、 [ `Layout<T>` ](xref:Xamarin.Forms.Layout`1)-クラスの派生、コレクション内の各項目を追加、`Layout<T>.Children`レイアウトで表示するためのコレクション。 `Layout<T>`の基になるコレクションが変更されたときに、派生クラスはその子ビューを更新し、されます。 Xamarin.Forms のレイアウト サイクルの詳細については、[カスタム レイアウトを作成する](~/xamarin-forms/user-interface/layouts/custom.md)を参照してください。
+`Layout<T>`クラスでは、 [ `Children` ](xref:Xamarin.Forms.Layout`1.Children)レイアウトの子要素を追加するコレクション。 ときに、`BinableLayout.ItemsSource`プロパティが項目のコレクションに設定されに接続されている、 [ `Layout<T>` ](xref:Xamarin.Forms.Layout`1)-クラスの派生、コレクション内の各項目を追加、`Layout<T>.Children`レイアウトで表示するためのコレクション。 `Layout<T>`の基になるコレクションが変更されたときに、派生クラスはその子ビューを更新し、されます。 Xamarin.Forms のレイアウト サイクルの詳細については、次を参照してください。[カスタム レイアウトを作成する](~/xamarin-forms/user-interface/layouts/custom.md)します。
+
+バインド可能なレイアウトは、表示する項目のコレクションが小さいと、スクロールと選択が必要ない場合にのみ使用する必要があります。 バインド可能なレイアウトの折り返しによって提供されることのスクロール中に、 [ `ScrollView` ](xref:Xamarin.Forms.ScrollView)、これはお勧めしませんバインド可能なレイアウトが UI の仮想化がないです。 スクロールが必要な場合、UI の仮想化にはなどが含まれているスクロール可能なビュー [ `ListView` ](xref:Xamarin.Forms.ListView)または[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)、使用する必要があります。 この推奨事項を確認するエラーは、パフォーマンスの問題につながります。
 
 > [!IMPORTANT]
-> バインド可能なレイアウトは、表示する項目のコレクションが小さいと、スクロールと選択が必要ない場合にのみ使用する必要があります。 バインド可能なレイアウトの折り返しによって提供されることのスクロール中に、 [ `ScrollView` ](xref:Xamarin.Forms.ScrollView)、これはお勧めしませんバインド可能なレイアウトが UI の仮想化がないです。 スクロールが必要な場合、UI の仮想化にはなどが含まれているスクロール可能なビュー [ `ListView` ](xref:Xamarin.Forms.ListView)または`CollectionView`、使用する必要があります。 この推奨事項を確認するエラーは、パフォーマンスの問題につながります。
+>技術的には、レイアウトから派生するクラスにバインド可能なレイアウトをアタッチすることはできますが、 [ `Layout<T>` ](xref:Xamarin.Forms.Layout`1)クラス、実用的ではない常には、特に、 [ `AbsoluteLayout` ](xref:Xamarin.Forms.AbsoluteLayout)、 [ `Grid` ](xref:Xamarin.Forms.Grid)、および[ `RelativeLayout` ](xref:Xamarin.Forms.RelativeLayout)クラス。 などのデータのコレクションを表示しようとしている場合を考えてみます、 [ `Grid` ](xref:Xamarin.Forms.Grid)バインド可能なレイアウトを使用して、コレクション内の各項目がオブジェクトを複数のプロパティを格納しています。 内の行ごと、`Grid`内の各列に基づいて、コレクションからオブジェクトを表示する必要があります、`Grid`オブジェクトのプロパティのいずれかを表示します。 [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)特定で表示するオブジェクトのプロパティのいずれかをそれぞれ複数のビューを含むレイアウトクラスには、そのオブジェクトに必要なバインド可能なレイアウトには、1つのオブジェクトのみ含めることができますには`Grid`列。 親が生成中に、このシナリオは、バインド可能なレイアウトと格闘ことができます、`Grid`子を含む`Grid`の高度に非効率的なと問題のある使用は、バインドされたコレクション内の各項目に対する、`Grid`レイアウト。
 
 ## <a name="populating-a-bindable-layout-with-data"></a>データ バインド可能なレイアウトの作成
 
@@ -85,7 +87,7 @@ BindableLayout.SetItemTemplate(stackLayout, circleImageTemplate);
 
 ![DataTemplate でバインド可能なレイアウト](bindable-layouts-images/top-followers.png "データ テンプレートを使用してバインド可能なレイアウト")
 
-データ テンプレートの詳細については、[Xamarin.Forms データ テンプレート](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)を参照してください。
+データ テンプレートについて詳しくは「[Xamarin.Forms Data Templates](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)」(Xamarin.Forms のデータ テンプレート) をご覧ください。
 
 ## <a name="choosing-item-appearance-at-runtime"></a>実行時に項目の外観を選択します。
 
@@ -125,7 +127,7 @@ public class TechItemTemplateSelector : DataTemplateSelector
 
 ![バインド可能なレイアウト、DataTemplateSelector](bindable-layouts-images/favorite-tech.png "データ テンプレート セレクターにバインド可能なレイアウト")
 
-データ テンプレート セレクターの詳細については、[作成 Xamarin.Forms DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)を参照してください。
+データ テンプレート セレクターの詳細については、次を参照してください。[作成 Xamarin.Forms DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)します。
 
 ## <a name="related-links"></a>関連リンク
 

@@ -7,24 +7,24 @@ author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
 ms.openlocfilehash: ea66cda0e2a1935a430c064c9cebd4134d295729
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669233"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60954265"
 ---
 # <a name="architecture"></a>アーキテクチャ
 
 Xamarin.Android アプリケーションは、Mono 実行環境内で実行されます。
-この実行環境の実行のサイド Android ランタイム (アート) 仮想マシンとします。 両方のランタイム環境では、Linux カーネル上で実行し、開発者が基になるシステムにアクセスできるユーザー コードにさまざまな Api を公開します。 Mono ランタイムは、C 言語で記述されます。
+この実行環境の実行のサイド Android ランタイム (アート) 仮想マシンとします。 両方のランタイム環境では、Linux カーネル上で実行し、開発者が基になるシステムにアクセスできるユーザー コードにさまざまな API を公開します。 Mono ランタイムは、C 言語で記述されます。
 
 使用すること、[システム](xref:System)、 [System.IO](xref:System.IO)、 [System.Net](xref:System.Net)および .NET の残りの部分クラス ライブラリを基になる Linux オペレーティング システムの機能にアクセスします。
 
-Android では、オーディオ、画像、OpenGL、およびテレフォニーのようなシステム機能のほとんどはネイティブ アプリケーションを直接使用できませんのいずれかに存在するランタイムの Android Java Api を介してのみ公開されている、 [Java](https://developer.xamarin.com/api/namespace/Java.Lang/)*。名前空間または[Android](https://developer.xamarin.com/api/namespace/Android/)。 * 名前空間。 アーキテクチャは、このような約です。
+Android では、オーディオ、画像、OpenGL、およびテレフォニーのようなシステム機能のほとんどはネイティブ アプリケーションを直接使用できませんのいずれかに存在するランタイムの Android Java API を介してのみ公開されている、 [Java](https://developer.xamarin.com/api/namespace/Java.Lang/)*。名前空間または[Android](https://developer.xamarin.com/api/namespace/Android/)。 * 名前空間。 アーキテクチャは、このような約です。
 
 [![Mono とアートのカーネル上と下、.NET と Java + バインディング ダイアグラム](architecture-images/architecture1.png)](architecture-images/architecture1.png#lightbox)
 
-Xamarin.Android 開発者アクセス (の低レベルのアクセス許可) がわかっている .NET Api を呼び出すかによって公開されている Java Api へのブリッジを提供する Android 名前空間で公開されているクラスを使用して、オペレーティング システムのさまざまな機能Android ランタイム。
+Xamarin.Android 開発者アクセス (の低レベルのアクセス許可) がわかっている .NET API を呼び出すかによって公開されている Java API へのブリッジを提供する Android 名前空間で公開されているクラスを使用して、オペレーティング システムのさまざまな機能Android ランタイム。
 
 Android のクラスが Android ランタイム クラスを通信する方法の詳細については、次を参照してください。、 [API の設計](~/android/internals/api-design.md)ドキュメント。
 

@@ -8,11 +8,11 @@ ms.author: crdun
 ms.custom: video
 ms.date: 07/18/2018
 ms.openlocfilehash: d07b248b36feee909db9c863eb17f1a900f58e60
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105832"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61191361"
 ---
 # <a name="net-standard-library-code-sharing"></a>.NET standard ライブラリ コードの共有
 
@@ -52,7 +52,7 @@ ms.locfileid: "50105832"
 
 バージョンを変更する内部`netstandard`変更することで、`Target Framework`ドロップダウンの値。
 
-**さらに:** `.csproj`を直接編集してこの値を変更できます。
+**かつ：** 編集することができます、`.csproj`この値を変更するには、直接します。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -78,7 +78,7 @@ ms.locfileid: "50105832"
 
 ![プロジェクトのプロパティでの .NET standard のターゲット フレームワークを編集](net-standard-images/vs03-w157.png "他のプロジェクトと同じように、.NET Standard ライブラリを参照")
 
-**さらに:** を編集することができます、`.csproj`を直接編集する、`TargetFramework`要素で変更されているバージョン (例: 対象となります。 `<TargetFramework>netstandard2.0</TargetFramework>`)
+**かつ：** 編集することができます、`.csproj`を直接編集する、`TargetFramework`要素で変更されているバージョン (例: 対象となります。 `<TargetFramework>netstandard2.0</TargetFramework>`)
 
 ### <a name="using-a-net-standard-library-project"></a>.NET Standard ライブラリ プロジェクトを使用します。
 

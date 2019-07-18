@@ -1,6 +1,6 @@
 ---
 title: 第 11 章の概要です。 バインド可能なインフラストラクチャ
-description: 'Xamarin.Forms によるモバイル アプリの作成: 第 11 章の概要。 バインド可能なインフラストラクチャ'
+description: Xamarin.Forms によるモバイル アプリの作成。第 11 章の概要です。 バインド可能なインフラストラクチャ
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 34671C48-0ED4-4B76-A33D-D6505390DC5B
@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
 ms.openlocfilehash: f9e3326c0f55469cfa84a019a674679d82dfc007
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53054237"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61334365"
 ---
 # <a name="summary-of-chapter-11-the-bindable-infrastructure"></a>第 11 章の概要です。 バインド可能なインフラストラクチャ
 
@@ -20,7 +20,7 @@ ms.locfileid: "53054237"
 
 すべての c# のプログラマが c# に精通して*プロパティ*します。 プロパティが含まれる、*設定*アクセサーおよび*取得*アクセサー。 多くの場合と呼ばれる*CLR プロパティ*共通言語ランタイム。
 
-Xamarin.Forms という拡張プロパティ定義を定義する、*バインド可能なプロパティ*によってカプセル化、 [ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)クラスをサポートし、 [ `BindableObject` ](xref:Xamarin.Forms.BindableObject)クラス。 これらのクラスは関連がかなり異なります。`BindableProperty`プロパティ自体を定義するために使用`BindableObject`などは`object`バインド可能なプロパティを定義するクラスの基本クラスです。
+Xamarin.Forms という拡張プロパティ定義を定義する、*バインド可能なプロパティ*によってカプセル化、 [ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)クラスをサポートし、 [ `BindableObject` ](xref:Xamarin.Forms.BindableObject)クラス。 これらのクラスは、関連するが非常に個別には。`BindableProperty`プロパティ自体を定義するために使用`BindableObject`などは`object`バインド可能なプロパティを定義するクラスの基本クラスです。
 
 ## <a name="the-xamarinforms-class-hierarchy"></a>Xamarin.Forms のクラス階層
 

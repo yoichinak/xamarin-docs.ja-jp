@@ -1,5 +1,5 @@
 ---
-title: ツールバーの互換性
+title: ツール バーの互換性
 ms.prod: xamarin
 ms.assetid: A0798CA1-2C7D-43B6-9E91-4435CC7B6683
 ms.technology: xamarin-android
@@ -7,13 +7,13 @@ author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
 ms.openlocfilehash: 12c19cf1024b78e8be30b7c9f2652019e9854375
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50110330"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61300358"
 ---
-# <a name="toolbar-compatibility"></a>ツールバーの互換性
+# <a name="toolbar-compatibility"></a>ツール バーの互換性
 
 
 ## <a name="overview"></a>概要
@@ -40,7 +40,7 @@ ms.locfileid: "50110330"
 
 API レベル 21 以上、アプリのターゲット フレームワークを設定する必要があります。 またはアプリが正常に展開できなくなります。 場合など、エラー**リソース識別子の検出されない属性 'tileModeX' パッケージ 'android' で**表示されるアプリをデプロイするときにこれは、ターゲット フレームワークに設定されていないためは**Android 5.0 (API レベル 21 - ロリポップ)** 以上。 
 
-API レベル 21 レベル以上のターゲット フレームワークを設定し、Android API レベルのプロジェクトの設定をサポートするために、アプリがある最小の Android バージョンに設定します。 Android API レベルを設定する方法についての詳細については、[Understanding Android API Levels](~/android/app-fundamentals/android-api-levels.md)を参照してください。 `ToolbarFun`例では、最小 Android バージョンは、KitKat (API レベル 4.4) に設定されています。 
+API レベル 21 レベル以上のターゲット フレームワークを設定し、Android API レベルのプロジェクトの設定をサポートするために、アプリがある最小の Android バージョンに設定します。 Android API レベルを設定する方法についての詳細については、次を参照してください。 [Understanding Android API Levels](~/android/app-fundamentals/android-api-levels.md)します。 `ToolbarFun`例では、最小 Android バージョンは、KitKat (API レベル 4.4) に設定されています。 
 
 
 ## <a name="install-the-appcompat-nuget-package"></a>AppCompat NuGet パッケージをインストールします。
@@ -49,7 +49,7 @@ API レベル 21 レベル以上のターゲット フレームワークを設�
 
 [![NuGet パッケージの管理で選択されているスクリーン ショットの V7 Appcompat パッケージ](toolbar-compatibility-images/01-appcompat-nuget-sml.png)](toolbar-compatibility-images/01-appcompat-nuget.png#lightbox)
 
-この NuGet がインストールされているときにその他のいくつかの NuGet パッケージがインストールされていることもまだ存在しない場合 (など**Xamarin.Android.Support.Animated.Vector.Drawable**、 **Xamarin.Android.Support.v4**、**Xamarin.Android.Support.Vector.Drawable**)。 NuGet パッケージのインストールの詳細については、[チュートリアル: NuGet でプロジェクトを含む](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)を参照してください。 
+この NuGet がインストールされているときにその他のいくつかの NuGet パッケージがインストールされていることもまだ存在しない場合 (など**Xamarin.Android.Support.Animated.Vector.Drawable**、 **Xamarin.Android.Support.v4**、**Xamarin.Android.Support.Vector.Drawable**)。 NuGet パッケージのインストールの詳細については、次を参照してください。[チュートリアル。NuGet をプロジェクトに含める](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)します。 
 
 
 ## <a name="use-an-appcompat-theme-and-toolbar"></a>AppCompat テーマとツールバーを使用します。

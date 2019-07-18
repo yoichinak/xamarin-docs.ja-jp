@@ -1,5 +1,5 @@
 ---
-title: バインドします。JAR
+title: .JAR のバインド
 description: このチュートリアルでは、Android から Xamarin.Android Java バインド ライブラリを作成する手順が説明します。JAR ファイル。
 ms.prod: xamarin
 ms.assetid: 93F1D5C5-E2AF-46EA-8460-485A0860C176
@@ -8,13 +8,13 @@ author: conceptdev
 ms.author: crdun
 ms.date: 04/11/2018
 ms.openlocfilehash: 3c84b29807fd4a181ed867095645005bf9ba4df0
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120009"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60957334"
 ---
-# <a name="binding-a-jar"></a>バインドします。JAR
+# <a name="binding-a-jar"></a>.JAR のバインド
 
 _このチュートリアルでは、Android から Xamarin.Android Java バインド ライブラリを作成する手順が説明します。JAR ファイル。_
 
@@ -31,7 +31,7 @@ Xamarin ツールは、1 つまたは複数の入力からバインド ライブ
 MCW に生成されたコードでは、API の呼び出しを転送する JNI (Java ネイティブ インターフェイス) を使用して、基になります。JAR ファイル。 バインディング ライブラリは、いずれかを作成できます。Android (Xamarin ツールが非 Android Java ライブラリのバインドを現在サポートしていないことに注意してください) で使用する本来の目的を JAR ファイルです。 内容を含めずに、バインド ライブラリを構築することもできます、します。JAR ファイルを DLL に依存しているようにします。実行時に JAR です。
 
 このガイドでは、1 つのバインド ライブラリの作成の基礎を手順説明します。JAR ファイル。 すべてが適切な例について説明します&ndash;は、カスタマイズなしまたはバインドのデバッグが必要な場合。 
-[バインドを使用してメタデータを作成する](~/android/platform/binding-java-library/customizing-bindings/java-bindings-metadata.md)バインド プロセスが完全に自動化し一定の手動による介入が必要です。 より高度なシナリオの例を示します。 Java ライブラリによるバインディングの一般 (基本的なコード例では) の概要については、[Java ライブラリのバインド](~/android/platform/binding-java-library/index.md)を参照してください。 
+[バインドを使用してメタデータを作成する](~/android/platform/binding-java-library/customizing-bindings/java-bindings-metadata.md)バインド プロセスが完全に自動化し一定の手動による介入が必要です。 より高度なシナリオの例を示します。 Java ライブラリによるバインディングの一般 (基本的なコード例では) の概要については、次を参照してください。 [Java ライブラリのバインド](~/android/platform/binding-java-library/index.md)します。 
 
  
 ## <a name="walkthrough"></a>チュートリアル
@@ -91,7 +91,7 @@ Picasso.With (this)
 
 [![Jar ファイルを選択し、[追加] をクリックしてください](binding-a-jar-images/03-select-jar-file-sml.png)](binding-a-jar-images/03-select-jar-file.png#lightbox)
 
-いることを確認、**ピカソ 2.x.x.jar**ファイルがプロジェクトに正常に追加します。 
+いることを確認、**picasso-2.x.x.jar**ファイルがプロジェクトに正常に追加します。 
 
 [![Jar をプロジェクトに追加](binding-a-jar-images/04-jar-added-sml.png)](binding-a-jar-images/04-jar-added.png#lightbox)
 
@@ -114,7 +114,7 @@ Picasso.With (this)
 [![ターゲット API レベル API 19 に設定](binding-a-jar-images/06-set-target-framework-sml.png)](binding-a-jar-images/06-set-target-framework.png#lightbox)
 
 
-最後に、バインド ライブラリをビルドします。 一部の警告メッセージが表示されますが、バインド ライブラリ プロジェクトは正常にビルドされ、出力が生成する必要があります。次の場所に DLL: **JarBinding/bin/Debug/JarBinding.dll**
+最後に、バインド ライブラリをビルドします。 一部の警告メッセージが表示されますが、バインド ライブラリ プロジェクトは正常にビルドされ、出力が生成する必要があります。次の場所に DLL:**JarBinding/bin/Debug/JarBinding.dll**
     
 
 

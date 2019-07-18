@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
 ms.openlocfilehash: 9e76558597928bafa25f6a217c6f0055657e4c22
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53053079"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61401600"
 ---
 # <a name="creating-and-drawing-on-skiasharp-bitmaps"></a>作成して、SkiaSharp ビットマップの描画
 
@@ -121,7 +121,7 @@ public partial class HelloBitmapPage : ContentPage
 
 表示、**こんにちはビットマップ**ページは、ビットマップを作成するプログラムが透明こと黒色の文字を除くを示します。 理由を画面の色を水色を示しています。
 
-ドキュメント、`Clear`メソッドの`SKCanvas`ステートメントを使用してそれらをについて説明します"キャンバスの現在のクリップ内のすべてのピクセルを置き換えます。"。 「置換」という単語の使用がこれらのメソッドの重要な特性が表示されます: すべての描画メソッドの`SKCanvas`何か、既存の画面に追加します。 `Clear`メソッド_置換_は既に存在します。
+ドキュメント、`Clear`メソッドの`SKCanvas`ステートメントを使用してそれらをについて説明します。「キャンバスの現在のクリップ内のすべてのピクセルを置き換えます。」 「置換」という単語の使用には、これらのメソッドの重要な特性が表示されます。すべての描画メソッド`SKCanvas`何か、既存の画面に追加します。 `Clear`メソッド_置換_は既に存在します。
 
 `Clear` 2 つのバージョンに存在します。 
 
@@ -131,7 +131,7 @@ public partial class HelloBitmapPage : ContentPage
 
 呼び出す`Clear`新しいビットマップを引数なしで完全に透過的にするビットマップ全体を初期化します。 非透過または部分的に非透過的なビットマップの描画後何も通常なります。
 
-試すものを次に示します: で、**こんにちはビットマップ** ページで、置換、`Clear`メソッドに適用される、`bitmapCanvas`をこのデータセット。
+何かを次に示します。**こんにちはビットマップ** ページで、置換、`Clear`メソッドに適用される、`bitmapCanvas`をこのデータセット。
 
 ```csharp
 bitmapCanvas.Clear(new SKColor(255, 0, 0, 128));

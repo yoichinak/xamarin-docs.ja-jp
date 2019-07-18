@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/03/2018
-ms.openlocfilehash: 2c3bddc89348b46c9bba277580071cb8ac3d6943
-ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
+ms.openlocfilehash: 7fc675b69132ac41ffa9d87f4b3264de431b11bd
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/30/2019
-ms.locfileid: "58678055"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865676"
 ---
 # <a name="implementing-sirikit-in-xamarinios"></a>Xamarin.iOS で SiriKit の実装
 
@@ -46,7 +46,7 @@ MonkeyChat ユーザーの友人の連絡先独自書籍を保持する、各 (B
 不足している機能には次が含まれます。
 
 1. **Intents の拡張機能**-ユーザーの応答を検証、ことを確認、アプリは、要求を処理でき、実際には、ユーザーの要求を満たすためにタスクを実行します。
-2. **Intents UI 拡張機能** - *(省略可能)*、Siri 環境で応答するためのカスタム UI を提供します。 ユーザーのエクスペリエンスを強化するための Siri にブランド化およびとアプリの UI を取り込むことができます。
+2. **Intents UI 拡張機能** -  *(省略可能)* 、Siri 環境で応答するためのカスタム UI を提供します。 ユーザーのエクスペリエンスを強化するための Siri にブランド化およびとアプリの UI を取り込むことができます。
 3. **アプリ**-Siri が作業を支援するために特定のボキャブラリをユーザーにアプリを提供します。 
 
 すべてのこれらの要素と、アプリに含める手順は、以下のセクションで詳しく説明されます。
@@ -71,7 +71,7 @@ MonkeyChat 例アプリの場合に、データ モデルとネットワーク�
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. Mac の Visual Studio を起動し、MonkeyChat アプリを開きます。
-2. ソリューション名を右クリックし、 **Solution Pad**選択**追加** > **新しいプロジェクト.**: 
+2. ソリューション名を右クリックし、 **Solution Pad**選択**追加** > **新しいプロジェクト.** : 
 
     [![](implementing-sirikit-images/prep01.png "新しいプロジェクトを追加します。")](implementing-sirikit-images/prep01.png#lightbox)
 3. 選択**iOS** > **ライブラリ** > **クラス ライブラリ** をクリックし、**次**ボタン。 
@@ -80,7 +80,7 @@ MonkeyChat 例アプリの場合に、データ モデルとネットワーク�
 4. 入力`MonkeyChatCommon`の**名前** をクリックし、**作成**ボタン。 
 
     [![](implementing-sirikit-images/prep03.png "名前の MonkeyChatCommon を入力します。")](implementing-sirikit-images/prep03.png#lightbox)
-5. 右クリックし、**参照**でメイン アプリケーションのフォルダー、**ソリューション エクスプ ローラー**選択**参照の編集.**.チェック、 **MonkeyChatCommon**プロジェクトをクリックして、 **OK**ボタン。 
+5. 右クリックし、**参照**でメイン アプリケーションのフォルダー、**ソリューション エクスプ ローラー**選択**参照の編集.** .チェック、 **MonkeyChatCommon**プロジェクトをクリックして、 **OK**ボタン。 
 
     [![](implementing-sirikit-images/prep05.png "MonkeyChatCommon プロジェクトを確認してください。")](implementing-sirikit-images/prep05.png#lightbox)
 6. **ソリューション エクスプ ローラー**、共通の共有コードをメイン アプリケーションからネイティブ ライブラリにドラッグします。
@@ -91,12 +91,12 @@ MonkeyChat 例アプリの場合に、データ モデルとネットワーク�
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. Visual Studio を起動し、MonkeyChat アプリを開きます。
-2. ソリューション名を右クリックし、**ソリューション エクスプ ローラー**選択**追加** > **新しいプロジェクト.**.
+2. ソリューション名を右クリックし、**ソリューション エクスプ ローラー**選択**追加** > **新しいプロジェクト.** .
 3. 選択**Visual C#**   > **共有プロジェクト** をクリックし、**次**ボタン。 
 
     [![](implementing-sirikit-images/prep02.w157-sml.png "クラス ライブラリを選択します。")](implementing-sirikit-images/prep02.w157.png#lightbox)
 4. 入力`MonkeyChatCommon`の**名前** をクリックし、**作成**ボタン。
-5. 右クリックし、**参照**でメイン アプリケーションのフォルダー、**ソリューション エクスプ ローラー**選択**参照の編集.**.チェック、 **MonkeyChatCommon**プロジェクトをクリックして、 **OK**ボタン。 
+5. 右クリックし、**参照**でメイン アプリケーションのフォルダー、**ソリューション エクスプ ローラー**選択**参照の編集.** .チェック、 **MonkeyChatCommon**プロジェクトをクリックして、 **OK**ボタン。 
 
     [![](implementing-sirikit-images/prep05w.png "MonkeyChatCommon プロジェクトを確認してください。")](implementing-sirikit-images/prep05w.png#lightbox)
 6. **ソリューション エクスプ ローラー**、共通の共有コードをメイン アプリケーションから共有プロジェクトにドラッグします。
@@ -181,12 +181,12 @@ SiriKit の統合を含むすべての Xamarin.iOS アプリする必要があ�
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. ダブルクリックして、`Entitlements.plist`ファイル、**ソリューション エクスプ ローラー**編集用に開きます。
-3. 追加、 `com.apple.developer.siri` **プロパティ**、設定、**型**に`Boolean`と**値**に`Yes`: 
+2. 追加、 `com.apple.developer.siri` **プロパティ**、設定、**型**に`Boolean`と**値**に`Yes`: 
 
     [![](implementing-sirikit-images/setup01w.png "Com.apple.developer.siri プロパティを追加します。")](implementing-sirikit-images/setup01w.png#lightbox)
-4. 変更内容をファイルに保存します。
-5. ダブルクリックして、**プロジェクト ファイル**で、**ソリューション エクスプ ローラー**編集用に開きます。
-6. 選択**iOS バンドル署名**いることを確認し、`Entitlements.plist`でファイルを選択、**カスタム権利**フィールド。
+3. 変更内容をファイルに保存します。
+4. ダブルクリックして、**プロジェクト ファイル**で、**ソリューション エクスプ ローラー**編集用に開きます。
+5. 選択**iOS バンドル署名**いることを確認し、`Entitlements.plist`でファイルを選択、**カスタム権利**フィールド。
 
 -----
 
@@ -233,15 +233,15 @@ Mac では、次の操作を行います。
 16. いることを確認、**プロビジョニング プロファイル**作成以降がインストールされている Xcode でします。
 17. Visual studio for mac。 SiriKit サポートを追加するプロジェクトを開く
 18. ダブルクリックして、`Info.plist`ファイル、**ソリューション エクスプ ローラー**します。
-18. いることを確認、**バンドル識別子**上記の Apple の開発者ポータルで作成したものと一致します。 
+19. いることを確認、**バンドル識別子**上記の Apple の開発者ポータルで作成したものと一致します。 
 
     [![](implementing-sirikit-images/setup06.png "バンドル識別子")](implementing-sirikit-images/setup06.png#lightbox)
-18. **ソリューション エクスプ ローラー**を選択、**プロジェクト**します。
-19. プロジェクトを右クリックして**オプション**します。
-21. 選択**iOS バンドル署名**を選択、**署名 Id**と**プロビジョニング プロファイル**上記で作成しました。 
+20. **ソリューション エクスプ ローラー**を選択、**プロジェクト**します。
+21. プロジェクトを右クリックして**オプション**します。
+22. 選択**iOS バンドル署名**を選択、**署名 Id**と**プロビジョニング プロファイル**上記で作成しました。 
 
     [![](implementing-sirikit-images/setup07.png "署名 Id とプロビジョニング プロファイルを選択します。")](implementing-sirikit-images/setup07.png#lightbox)
-22. **[OK]** ボタンをクリックして、変更を保存します。
+23. **[OK]** ボタンをクリックして、変更を保存します。
 
 > [!IMPORTANT]
 > SiriKit のテストでのみ機能し、実際の iOS 10 のハードウェア デバイス、iOS 10 ではなくシミュレーター。 Xamarin.iOS アプリを実際のハードウェアが有効な問題、SiriKit をインストールする場合は、必要な権利をアプリ ID、識別子の署名とプロビジョニング プロファイルが構成されている正しく Apple の開発者ポータルと Visual Studio の両方で for mac。 ことを確認します。
@@ -300,7 +300,7 @@ public override bool FinishedLaunching (UIApplication application, NSDictionary 
 
 ### <a name="localization-and-siri"></a>ローカリゼーションと Siri
 
-IOS デバイスで、ユーザーは Siri とは異なるシステムの既定の言語を選択できます。 ローカライズされたデータを使用する場合、アプリが使用する必要があります、`SiriLanguageCode`のメソッド、 `INPreferences` Siri から言語のコードを取得するクラス。 例:
+IOS デバイスで、ユーザーは Siri とは異なるシステムの既定の言語を選択できます。 ローカライズされたデータを使用する場合、アプリが使用する必要があります、`SiriLanguageCode`のメソッド、 `INPreferences` Siri から言語のコードを取得するクラス。 例えば:
 
 ```csharp
 var language = INPreferences.SiriLanguageCode();
@@ -324,7 +324,7 @@ if (language == "en-US") {
 
 カスタム語彙として登録する用語を選択する場合は、用語のみを選択して、アプリに慣れていないユーザーを誤解される可能性があります。 決して登録する一般的な用語「My トレーニング」または「My アルバム」など。 たとえば、MonkeyChat アプリは、各連絡先ユーザーのアドレス帳に関連付けられているニックネームを登録します。
 
-アプリが呼び出すことによってユーザーの特定の語彙を提供します、`SetVocabularyStrings`のメソッド、`INVocabulary`クラスを渡して、`NSOrderedSet`メイン アプリから収集します。 アプリは常に呼び出す必要があります、`RemoveAllVocabularyStrings`メソッド最初は、新しいものを追加する前に、既存の用語を削除します。 例:
+アプリが呼び出すことによってユーザーの特定の語彙を提供します、`SetVocabularyStrings`のメソッド、`INVocabulary`クラスを渡して、`NSOrderedSet`メイン アプリから収集します。 アプリは常に呼び出す必要があります、`RemoveAllVocabularyStrings`メソッド最初は、新しいものを追加する前に、既存の用語を削除します。 例えば:
 
 ```csharp
 using System;
@@ -608,7 +608,7 @@ Intents の拡張機能をソリューションに追加するには、次の操
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 右クリックし、**ソリューション名**で、 **Solution Pad**選択**追加** > **新しいプロジェクトの追加.**.
+1. 右クリックし、**ソリューション名**で、 **Solution Pad**選択**追加** > **新しいプロジェクトの追加.** .
 2. ダイアログ ボックスから選択**iOS** > **拡張機能** > **目的とした拡張機能** をクリックし、**次**ボタンをクリックします。 
 
     [![](implementing-sirikit-images/intents05.png "インテントの拡張機能を選択します。")](implementing-sirikit-images/intents05.png#lightbox)
@@ -624,12 +624,12 @@ Intents の拡張機能をソリューションに追加するには、次の操
     
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. 右クリックし、**ソリューション名**で、**ソリューション エクスプ ローラー**選択**追加** > **新しいプロジェクトの追加.**.
+1. 右クリックし、**ソリューション名**で、**ソリューション エクスプ ローラー**選択**追加** > **新しいプロジェクトの追加.** .
 2. ダイアログ ボックスから選択**Visual C# > iOS 拡張機能 > 目的の拡張機能** をクリックし、 **次へ**ボタン。
 
     [![](implementing-sirikit-images/intents05.w157-sml.png "インテントの拡張機能を選択します。")](implementing-sirikit-images/intents05.w157.png#lightbox)
 3. 次を入力、**名前**目的とした拡張機能をクリックして、 **OK**ボタン。
-1. **ソリューション エクスプ ローラー**を右クリックし、**参照**フォルダーを新しく作成された Intents 拡張機能の選択と**追加 > 参照**。 (上記で作成したアプリ) を共通の共有コード ライブラリ プロジェクトの名前を確認し、 **OK**ボタン。
+4. **ソリューション エクスプ ローラー**を右クリックし、**参照**フォルダーを新しく作成された Intents 拡張機能の選択と**追加 > 参照**。 (上記で作成したアプリ) を共通の共有コード ライブラリ プロジェクトの名前を確認し、 **OK**ボタン。
 
     [![](implementing-sirikit-images/intents08w.png "共通の共有コード ライブラリ プロジェクトの名前を選択します。")](implementing-sirikit-images/intents08w.png#lightbox)
     
@@ -689,7 +689,7 @@ Intents の拡張機能をソリューションに追加するには、次の操
 
 ### <a name="configuring-the-main-class"></a>メイン クラスを構成します。
 
-次に、開発者は Siri を目的とした拡張機能のメイン エントリ ポイントとして機能するメイン クラスを構成する必要があります。 サブクラス化する必要があります`INExtension`に準拠している`IINIntentHandler`を委任します。 例:
+次に、開発者は Siri を目的とした拡張機能のメイン エントリ ポイントとして機能するメイン クラスを構成する必要があります。 サブクラス化する必要があります`INExtension`に準拠している`IINIntentHandler`を委任します。 例えば:
 
 ```csharp
 using System;
@@ -872,7 +872,7 @@ Intents UI 拡張機能をソリューションに追加するには、次の操
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 右クリックし、**ソリューション名**で、 **Solution Pad**選択**追加** > **新しいプロジェクトの追加.**.
+1. 右クリックし、**ソリューション名**で、 **Solution Pad**選択**追加** > **新しいプロジェクトの追加.** .
 2. ダイアログ ボックスから選択**iOS** > **拡張機能** > **UI 拡張機能を目的とした** をクリックし、 **次へ**ボタンをクリックします。 
 
     [![](implementing-sirikit-images/intents11.png "インテント UI 拡張機能を選択します。")](implementing-sirikit-images/intents11.png#lightbox)
@@ -891,7 +891,7 @@ Intents UI 拡張機能をソリューションに追加するには、次の操
 1. 右クリックし、**ソリューション名**で、**ソリューション エクスプ ローラー**選択**追加** > **新しいプロジェクトの追加.**
 2. ダイアログ ボックスから選択**iOS** > **拡張機能** > **UI 拡張機能を目的とした** をクリックし、 **次へ**ボタンをクリックします。
 3. 次を入力、**名前**目的とした拡張機能をクリックして、 **OK**ボタン。
-5. **ソリューション エクスプ ローラー**を右クリックし、**参照**新しく作成した目的の拡張機能のフォルダー。 (上記で作成したアプリ) を共通の共有コード ライブラリ プロジェクトの名前を確認し、 **OK**ボタンをクリックします。
+4. **ソリューション エクスプ ローラー**を右クリックし、**参照**新しく作成した目的の拡張機能のフォルダー。 (上記で作成したアプリ) を共通の共有コード ライブラリ プロジェクトの名前を確認し、 **OK**ボタンをクリックします。
     
 -----
 
@@ -935,7 +935,7 @@ Intents UI 拡張機能の構成`Info.plist`ファイルをアプリで動作し
 
 ### <a name="configuring-the-main-class"></a>メイン クラスを構成します。
 
-Siri を目的とした UI の拡張機能のメイン エントリ ポイントとして機能するメイン クラスを構成します。 サブクラス化する必要があります`UIViewController`に準拠している`IINUIHostedViewController`インターフェイス。 例:
+Siri を目的とした UI の拡張機能のメイン エントリ ポイントとして機能するメイン クラスを構成します。 サブクラス化する必要があります`UIViewController`に準拠している`IINUIHostedViewController`インターフェイス。 例えば:
 
 ```csharp
 using System;
@@ -1053,7 +1053,7 @@ public bool DisplaysMessage {
 }
 ```
 
-### <a name="considerations"></a>注意事項
+### <a name="considerations"></a>考慮事項
 
 Apple では、開発者が設計と目的の UI 拡張機能を実装するときに、以下の点を実行することを示しています。
 
@@ -1061,7 +1061,7 @@ Apple では、開発者が設計と目的の UI 拡張機能を実装すると�
 - **最小値と最大のビューのサイズを検討してください**-目的の UI 拡張機能がすべての iOS デバイスの種類、サイズと向きを気に入ったことを確認します。 さらに、目的のサイズ、アプリから Siri に返される可能性がありますを許可することができません。
 - **優れた柔軟性とアダプティブのレイアウトのパターンを使用して、** - もう一度、UI がないすべてのデバイスで優れたいることを確認します。
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
 この記事では、SiriKit をカバーし、iOS デバイスで Siri とマップ アプリを使用してユーザーがアクセスできるサービスを提供する Xamarin.iOS アプリに追加する方法を示すは。
 

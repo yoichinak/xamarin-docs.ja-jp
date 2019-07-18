@@ -8,13 +8,13 @@ ms.technology: xamarin-forms
 ms.custom: video
 author: conceptdev
 ms.author: crdun
-ms.date: 04/02/2019
-ms.openlocfilehash: 5dc37212facbc5b58b807d3fbcba8650a5b065f8
-ms.sourcegitcommit: 34819671c7910d29f018bdb394ddd4a4b0cd3a31
+ms.date: 05/23/2019
+ms.openlocfilehash: 3b25be2c929e0f072af2ff563d49ceaf07cae058
+ms.sourcegitcommit: 10b4ccbfcf182be940899c00fc0fecae1e199c5b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59675817"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66252340"
 ---
 # <a name="build-your-first-xamarinforms-app"></a>最初の Xamarin.Forms アプリのビルド
 
@@ -22,7 +22,7 @@ _このビデオを視聴し、作業を進めて、Xamarin.Forms による最�
 
 ::: zone pivot="windows"
 
-> [!Video https://channel9.msdn.com/Shows/XamarinShow/Building-Your-First-Android--iOS-App-in-Visual-Studio-2017/player]
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Build-Your-First-Android-App-with-Visual-Studio-2019-and-Xamarin/player]
 
 ## <a name="step-by-step-instructions-for-windows"></a>Windows での手順の詳細
 
@@ -73,6 +73,12 @@ _このビデオを視聴し、作業を進めて、Xamarin.Forms による最�
 
     > [!TIP]
     > ネットワーク接続された Mac コンピューターで Visual Studio から iOS アプリをビルドし、デバッグすることができます。 詳細については、[セットアップ手順](~/ios/get-started/installation/windows/index.md)を参照してください。
+
+## <a name="build-an-ios-app-in-visual-studio-2019"></a>Visual Studio 2019 で iOS アプリをビルドします。
+
+このビデオでは、構築および Windows で Visual Studio 2019 を使用して iOS アプリのテストのプロセスについて説明します。
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Build-Your-First-iOS-App-with-Visual-Studio-2019-and-Xamarin/player]
 
 ::: zone-end
 ::: zone pivot="win-vs2017"

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 8ad742607e506df436a5526d31621ac7636ac29b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f6d059e5a30e7e3dac92a2c4e0e6079222e66b22
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50110018"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865207"
 ---
 # <a name="push-notifications-in-ios"></a>IOS でプッシュ通知
 
@@ -22,7 +22,7 @@ ms.locfileid: "50110018"
 プッシュ通知は、簡単に保持する必要がありが更新プログラムのサーバー アプリケーションを接続する必要がありますが、モバイル アプリケーションに通知するための十分なデータだけを格納します。 たとえば、新しい電子メールが到着すると、サーバー アプリケーションは新しい電子メールが到着したモバイル アプリケーションは通知のみです。 通知には、新しい電子メール自体が含まれていません。 モバイル アプリケーションは、適切な時に、サーバーから新しい電子メールを取得
 
 IOS での通知は、プッシュの中央にある、 *Apple プッシュ通知ゲートウェイ サービス (APNS)* します。 これは、アプリケーション サーバーから iOS デバイスへの通知のルーティングを担当する Apple によって提供されるサービスです。
-次の図は、iOS のプッシュ通知のトポロジを示しています。: ![](remote-notifications-in-ios-images/image4.png "このイメージは、iOS のプッシュ通知のトポロジを示しています。")
+次の図は、iOS のプッシュ通知のトポロジを示しています。![](remote-notifications-in-ios-images/image4.png "このイメージは、iOS のプッシュ通知のトポロジを示しています。")
 
 リモート通知自体は JSON 形式の文字列形式に準拠しているで指定されたプロトコル[、通知ペイロード](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/CreatingtheNotificationPayload.html#//apple_ref/doc/uid/TP40008194-CH10-SW1)のセクション、[ローカルおよびプッシュ通知プログラミング ガイド](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/)で、 [iOS 開発者向けドキュメント](https://developer.apple.com/devcenter/ios/index.action)します。
 
@@ -55,36 +55,36 @@ Apple APNS の 2 つの環境の保持: を*サンド ボックス*と*運用*�
 
 4. 選択することを確認**明示的なアプリ ID**およびバンドル Id で終わるわけで、`*`します。 これは、複数のアプリケーションの適切な識別子が作成され、1 つのアプリケーションのプッシュ通知証明書がある必要があります。
 
-1. [アプリ サービス]、次のように選択します**Push Notifications**:。
+5. [アプリ サービス]、次のように選択します**Push Notifications**:。
 
     [![](remote-notifications-in-ios-images/image8new.png "プッシュ通知を選択します。")](remote-notifications-in-ios-images/image8new.png#lightbox)
 
-2. キーを押します**送信**を新しいアプリ ID の登録を確認します。
+6. キーを押します**送信**を新しいアプリ ID の登録を確認します。
 
     [![](remote-notifications-in-ios-images/image9new.png "新しいアプリ ID の登録を確認します。")](remote-notifications-in-ios-images/image9new.png#lightbox)
 
-3.  次に、アプリ ID の証明書を作成する必要があります。 左側のナビゲーションで**証明書 > すべて**を選択し、 `+`  ボタン、次のスクリーン ショットに示すように。
+7.  次に、アプリ ID の証明書を作成する必要があります。 左側のナビゲーションで**証明書 > すべて**を選択し、 `+`  ボタン、次のスクリーン ショットに示すように。
 
     [![](remote-notifications-in-ios-images/image10new.png "アプリ ID の証明書を作成します。")](remote-notifications-in-ios-images/image8.png#lightbox)
 
-4.  開発または実稼働の証明書を使用したいかどうかを選択します。
+8. 開発または実稼働の証明書を使用したいかどうかを選択します。
 
     [![](remote-notifications-in-ios-images/image11new.png "開発または実稼働の証明書を選択します。")](remote-notifications-in-ios-images/image11new.png#lightbox)
 
-5. 先ほど作成した新しいアプリ ID を選択します。
+9. 先ほど作成した新しいアプリ ID を選択します。
 
     [![](remote-notifications-in-ios-images/image12new.png "先ほど作成した新しいアプリ ID を選択します。")](remote-notifications-in-ios-images/image12new.png#lightbox)
 
-6.  これを作成するプロセスを実行する命令が表示されます、*証明書署名要求*を使用して、 **Keychain Access** mac アプリケーション
+10.  これを作成するプロセスを実行する命令が表示されます、*証明書署名要求*を使用して、 **Keychain Access** mac アプリケーション
 
-7.  証明書を作成するは、ことで APNs に登録することができるように、アプリケーションの署名にビルド プロセスの一環としてに使用する必要があります。 これは、作成し、証明書を使用するプロビジョニング プロファイルのインストールが必要です。
+11.  証明書を作成するは、ことで APNs に登録することができるように、アプリケーションの署名にビルド プロセスの一環としてに使用する必要があります。 これは、作成し、証明書を使用するプロビジョニング プロファイルのインストールが必要です。
 
-8.  開発プロビジョニング プロファイルを作成するに移動、 **Provisioning Profiles**セクションし、先ほど作成したアプリ Id を使用してこれを作成する手順に従います。
+12.  開発プロビジョニング プロファイルを作成するに移動、 **Provisioning Profiles**セクションし、先ほど作成したアプリ Id を使用してこれを作成する手順に従います。
 
-9.  プロビジョニング プロファイルを作成したら、開く**Xcode オーガナイザー**し、それを更新します。 プロビジョニング プロファイルを作成した場合は表示されません、プロファイルを iOS プロビジョニング ポータルからダウンロードし、手動でインポートする必要があります。 次のスクリーン ショットは、プロビジョニング プロファイルを追加、オーガナイザーの例を示します。  
+13.  プロビジョニング プロファイルを作成したら、開く**Xcode オーガナイザー**し、それを更新します。 プロビジョニング プロファイルを作成した場合は表示されません、プロファイルを iOS プロビジョニング ポータルからダウンロードし、手動でインポートする必要があります。 次のスクリーン ショットは、プロビジョニング プロファイルを追加、オーガナイザーの例を示します。  
     [![](remote-notifications-in-ios-images/image13new.png "このスクリーン ショットがプロビジョニング プロファイルを追加、オーガナイザーの例を示します")](remote-notifications-in-ios-images/image13new.png#lightbox)
 
-10.  この時点でこの新しく作成されたプロビジョニング プロファイルを使用する Xamarin.iOS プロジェクトを構成する必要があります。 これから**プロジェクト オプション**ダイアログ **[iOS バンドル署名]** タブで、次のスクリーン ショットに示すように。  
+14.  この時点でこの新しく作成されたプロビジョニング プロファイルを使用する Xamarin.iOS プロジェクトを構成する必要があります。 これから**プロジェクト オプション**ダイアログ **[iOS バンドル署名]** タブで、次のスクリーン ショットに示すように。  
     [![](remote-notifications-in-ios-images/image11.png "この新しく作成されたプロビジョニング プロファイルを使用する Xamarin.iOS プロジェクトを構成します。")](remote-notifications-in-ios-images/image11.png#lightbox)
 
 この時点でアプリケーションがプッシュ通知と連携するように構成します。 ただし、証明書に必要ないくつかの手順がまだです。 この証明書では、DER 形式では、Personal Information Exchange (PKCS12) 証明書を必要とする、PushSharp と互換性がありません。 PushSharp で使用できるように、証明書を変換するには、最後の手順を実行します。

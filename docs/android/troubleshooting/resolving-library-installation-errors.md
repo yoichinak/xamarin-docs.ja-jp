@@ -9,11 +9,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2018
 ms.openlocfilehash: 2ef81cfda92a6497e69f27b0584a97996094b1a4
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107124"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61093370"
 ---
 # <a name="resolving-library-installation-errors"></a>ライブラリ インストール エラーの解決
 
@@ -105,7 +105,7 @@ Download failed. Please download https://dl-ssl.google.com/android/repository/an
 
     -   [android\_m2repository\_r16.zip](https://dl-ssl.google.com/android/repository/android_m2repository_r16.zip) &ndash; 0595E577D19D31708195A83087881EE6
 
-    場合、 **m2repository**ダウンロード URL を作成するには前に付加して、このテーブルにアーカイブが表示されていない**https://dl-ssl.google.com/android/repository/** の名前に、 **m2repository**をダウンロードします。 たとえば、使用して**https://dl-ssl.google.com/android/repository/android\_m2repository\_r10.zip**をダウンロードする**android\_m2repository\_r10.zip**します。
+    場合、 **m2repository**ダウンロード URL を作成するには前に付加して、このテーブルにアーカイブが表示されていない**https://dl-ssl.google.com/android/repository/** の名前に、 **m2repository**をダウンロードします。 たとえば、使用して **https://dl-ssl.google.com/android/repository/android\_m2repository\_r10.zip** をダウンロードする **android\_m2repository\_r10.zip** します。
 
 2.  上記の表に示すように、ダウンロード URL の対応する MD5 ハッシュをファイルの名前を変更します。 たとえば、ダウンロードした**android\_m2repository\_r25.zip**、名前を変更する**0B3F1796C97C707339FB13AE8507AF50.zip**。 表に、ダウンロードしたファイルのダウンロード URL の MD5 ハッシュが表示されない場合は使用できます、[オンライン MD5 ジェネレーター](http://www.webconfs.com/online-md5-generator.php) URL を MD5 ハッシュ文字列に変換します。 
 

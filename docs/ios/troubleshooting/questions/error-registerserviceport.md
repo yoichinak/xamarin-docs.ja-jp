@@ -1,5 +1,5 @@
 ---
-title: iOS Designer エラー RegisterServicePort で
+title: RegisterServicePort での iOS Designer エラー
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 929A0080-B126-4744-BF88-A4A1EFBB6CC2
@@ -8,16 +8,16 @@ author: lobrien
 ms.author: laobri
 ms.date: 04/03/2018
 ms.openlocfilehash: fc4c143d6b5f7c211d24e6e3ed2ed3bb8d264410
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104728"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61421971"
 ---
-# <a name="ios-designer-error-with-registerserviceport"></a>iOS Designer エラー RegisterServicePort で
+# <a name="ios-designer-error-with-registerserviceport"></a>RegisterServicePort での iOS Designer エラー
 
 ## <a name="sample-error"></a>エラーの例
-> System.AggregateException: System.SystemException---> に 1 つまたは複数のエラーが発生しました: (com.xamarin.MTHosting.2a0b1、com.apple.PowerManagement.control) RegisterServicePort: 返されるカーネル:-308 (-308): 亡くなった (ipc/mig) サーバー
+> System.AggregateException:System.SystemException---> 1 つまたは複数のエラーが発生しました。RegisterServicePort (com.xamarin.MTHosting.2a0b1、com.apple.PowerManagement.control):返されるカーネル:-308 (-308): 亡くなった (ipc/mig) サーバー
 
 ## <a name="explanation"></a>説明
 エラーの`RegisterServicePort`上などのようなエラー メッセージは通常、コンピューターにスパイウェア/マルウェアの問題があるとします。 検討してください、[このバグ レポートにコメント](https://bugzilla.xamarin.com/show_bug.cgi?id=21907#c4)詳細についてへのリンクと共に、 [Apple フォーラム ディスカッション](https://discussions.apple.com/thread/5596008)考えられる感染を削除する方法の。 

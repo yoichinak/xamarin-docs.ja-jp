@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/31/2018
-ms.openlocfilehash: 0c84f530f759285c2cfc71f60d7b6f80fba6a03d
-ms.sourcegitcommit: f890b5ec9b7c2702875070859e1a8cbf6e870e46
+ms.openlocfilehash: a50a2014e28becacb2c9f4965b7f3377be57ab16
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "53814038"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830317"
 ---
 # <a name="remote-notifications-with-firebase-cloud-messaging"></a>リモート通知 firebase Cloud Messaging
 
@@ -42,11 +42,11 @@ _このチュートリアルでは、Xamarin.Android アプリケーションで
 このチュートリアルを続行するには、Google の FCM サーバーを使用するために必要な資格情報を取得する必要があります。このプロセスについては[Firebase Cloud Messaging](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md#setup_fcm)します。
 具体的には、ダウンロードする必要があります、 **google-services.json**このチュートリアルで説明するコード例で使用するファイル。 かどうかはまだ作成していないプロジェクトで、Firebase コンソール (まだダウンロードしていない場合や、 **google-services.json**ファイル) を参照してください[Firebase Cloud Messaging](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md)します。
 
-例のアプリを実行するには、テストの Android デバイスまたは firebase の互換性のあるエミュレーターを必要があります。 Firebase Cloud Messaging で Android 4.0 以降を実行しているクライアントをサポートしているし、これらのデバイスには、Google Play ストア アプリがインストールされている必要があります (Google Play Services 9.2.1 または以降が必要です)。 デバイスにインストールされている Google Play ストア アプリがあるまだない場合は、、 [Google Play](https://support.google.com/googleplay) web サイトをダウンロードしてインストールを参照してください。 または、テスト デバイス (Android SDK エミュレーターを使用している場合は、Google Play ストアをインストールする必要はありません) の代わりにインストールされている Google play 開発者サービスで、Android SDK エミュレーターを使用できます。
+例のアプリを実行するには、テストの Android デバイスまたは firebase の互換性のあるエミュレーターを必要があります。 Firebase Cloud Messaging で Android 4.0 以降を実行しているクライアントをサポートしているし、これらのデバイスには、Google Play ストア アプリがインストールされている必要があります (Google Play Services 9.2.1 または以降が必要です)。 デバイスにインストールされている Google Play ストア アプリがあるまだない場合は、次を参照してください。、 [Google Play](https://support.google.com/googleplay) web サイトをダウンロードしてインストールします。 または、テスト デバイス (Android SDK エミュレーターを使用している場合は、Google Play ストアをインストールする必要はありません) の代わりにインストールされている Google play 開発者サービスで、Android SDK エミュレーターを使用できます。
 
 ## <a name="start-an-app-project"></a>アプリ プロジェクトを開始します。
 
-という名前の新しい空の Xamarin.Android プロジェクトの作成を開始する**FCMClient**します。 Xamarin.Android プロジェクトの作成に慣れていない場合は、[Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md)を参照してください。
+という名前の新しい空の Xamarin.Android プロジェクトの作成を開始する**FCMClient**します。 Xamarin.Android プロジェクトの作成に慣れていない場合は、次を参照してください。 [Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md)します。
 新しいアプリを作成した後、次の手順は、パッケージ名を設定し、FCM との通信に使用されるいくつかの NuGet パッケージをインストールするのには。
 
 ### <a name="set-the-package-name"></a>パッケージ名を設定します。
@@ -88,7 +88,7 @@ Firebase Cloud Messaging、Google play 開発者サービス、依存してい�
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1.  Visual Studio で、右クリックして**参照 > NuGet パッケージの管理.**.
+1.  Visual Studio で、右クリックして**参照 > NuGet パッケージの管理.** .
 
 2.  をクリックして、**参照**タブし、検索**Xamarin.GooglePlayServices.Base**します。
 
@@ -98,7 +98,7 @@ Firebase Cloud Messaging、Google play 開発者サービス、依存してい�
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1.  Visual Studio for Mac では、右クリックして**パッケージ > パッケージを追加しています.**.
+1.  Visual Studio for Mac では、右クリックして**パッケージ > パッケージを追加しています.** .
 
 2.  検索**Xamarin.GooglePlayServices.Base**します。
 
@@ -125,7 +125,7 @@ FCM からメッセージを受信する、[メッセージング - Xamarin Fire
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1.  Visual Studio で、右クリックして**参照 > NuGet パッケージの管理.**.
+1.  Visual Studio で、右クリックして**参照 > NuGet パッケージの管理.** .
 
 2. 検索**Xamarin.Firebase.Messaging**します。
 
@@ -135,7 +135,7 @@ FCM からメッセージを受信する、[メッセージング - Xamarin Fire
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1.  Visual Studio for Mac では、右クリックして**パッケージ > パッケージを追加しています.**.
+1.  Visual Studio for Mac では、右クリックして**パッケージ > パッケージを追加しています.** .
 
 2.  検索**Xamarin.Firebase.Messaging**します。
 
@@ -532,7 +532,7 @@ Android デバイス (またはエミュレーターで)、Android をタップ�
 
 ## <a name="handle-topic-messages"></a>トピックのメッセージを処理します。
 
-これまでに記述されたコードでは、登録トークンを処理し、リモート通知機能をアプリに追加します。 次の例では、リッスンするコードを追加します*トピック メッセージ*し、ユーザーにリモートとして通知を転送します。 トピックのメッセージは、特定のトピックにサブスクライブする 1 つまたは複数のデバイスに送信される FCM メッセージです。 トピックのメッセージの詳細については、[トピック メッセージング](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md)を参照してください。
+これまでに記述されたコードでは、登録トークンを処理し、リモート通知機能をアプリに追加します。 次の例では、リッスンするコードを追加します*トピック メッセージ*し、ユーザーにリモートとして通知を転送します。 トピックのメッセージは、特定のトピックにサブスクライブする 1 つまたは複数のデバイスに送信される FCM メッセージです。 トピックのメッセージの詳細については、次を参照してください。[トピック メッセージング](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md)します。
 
 ### <a name="subscribe-to-a-topic"></a>トピックをサブスクライブします。
 
@@ -682,6 +682,7 @@ using System.Collections.Generic;
 次のメソッドを追加`MyFirebaseMessagingService`:
 
 <a name="sendnotification-method"></a>
+
 ```csharp
 void SendNotification(string messageBody, IDictionary<string, string> data)
 {
@@ -711,7 +712,7 @@ void SendNotification(string messageBody, IDictionary<string, string> data)
 
 バック グラウンド通知からこの通知を区別するためには、このコードは、アプリケーション アイコンとは異なるアイコンが表示された通知をマークします。 ファイルを追加する[ic\_stat\_ic\_notification.png](remote-notifications-with-fcm-images/ic-stat-ic-notification.png)に**リソース/drawable**し、含めることで、 **FCMClient**プロジェクト.
 
-`SendNotification`メソッドは` NotificationCompat.Builder`、通知を作成して`NotificationManagerCompat`通知を起動するために使用します。 通知を保持する`PendingIntent`は、アプリを開きに渡された文字列の内容を表示するユーザーに許可する`messageBody`。 詳細については`NotificationCompat.Builder`を参照してください[ローカル通知](~/android/app-fundamentals/notifications/local-notifications.md)します。
+`SendNotification`メソッドは`NotificationCompat.Builder`、通知を作成して`NotificationManagerCompat`通知を起動するために使用します。 通知を保持する`PendingIntent`は、アプリを開きに渡された文字列の内容を表示するユーザーに許可する`messageBody`。 詳細については`NotificationCompat.Builder`を参照してください[ローカル通知](~/android/app-fundamentals/notifications/local-notifications.md)します。
 
 呼び出す、`SendNotification`メソッドの最後に、`OnMessageReceived`メソッド。
 

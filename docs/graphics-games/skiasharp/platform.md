@@ -7,16 +7,16 @@ ms.assetid: 1D90E0B3-A3A8-4286-BC54-9D67188A1C6C
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/03/2018
-ms.openlocfilehash: 5d6cf6b36d4f454d3124a33ab9cb289e40e0e1ed
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.openlocfilehash: ed80a423506f96972ddf80075379ed6e6dccd0a1
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "39615809"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67675128"
 ---
 # <a name="skiasharp-platform-specific-notes"></a>SkiaSharp のプラットフォーム固有の注意事項
 
-次の例は、イメージのバッファーを手動で割り当てる、これは、プラットフォームによって提供される既存 RBGA バッファーに描画するためにはプラットフォームの一般的なパターンを説明するために行われます。
+次の例は、イメージのバッファーを手動で割り当てる、これは、プラットフォームによって提供される既存の RGBA バッファーに描画するためにはプラットフォームの一般的なパターンを説明するために行われます。
 
 たくない場合は、この手法を使用する必要はありません。  作成され、イメージのバックアップ用ストレージを管理するをオーバー ロードがあります。
 

@@ -6,12 +6,12 @@ ms.assetid: FBCEF258-D3D8-A420-79ED-3AAB4A7308E4
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: f5008d4986baa0575030e077b66b69ec0a4fad00
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: c7c0f582ac4a7dc8571fbc607dba9b0ad97d49e1
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58854419"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67674842"
 ---
 # <a name="part-1--understanding-the-xamarin-mobile-platform"></a>パート 1-Xamarin モバイル プラットフォームを理解します。
 
@@ -116,7 +116,7 @@ Xamarin を使用しての主な利点は、アプリケーション ユーザ�
 
 これらのスクリーン ショットは、各プラットフォームで利用可能な画面のビジュアル デザイナーを示します。
 
- [ ![](understanding-the-xamarin-mobile-platform-images/designer-all1.png "これらのスクリーン ショットは、各プラットフォームで使用可能な visual 画面デザイナーを示します")](understanding-the-xamarin-mobile-platform-images/designer-all1.png#lightbox)
+ [![](understanding-the-xamarin-mobile-platform-images/designer-all1.png "これらのスクリーン ショットは、各プラットフォームで使用可能な visual 画面デザイナーを示します")](understanding-the-xamarin-mobile-platform-images/designer-all1.png#lightbox)
 
 すべてのケースでは、コードで視覚的に作成された要素を参照できます。
 

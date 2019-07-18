@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 09/25/2017
 ms.openlocfilehash: 6d41f37d4a63db710bb04e35e6e1a4be0dd4f7a4
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105910"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61408282"
 ---
 # <a name="working-with-row-actions-in-xamarinios"></a>Xamarin.iOS での行のアクションの使用
 
@@ -119,7 +119,7 @@ public UIContextualAction ContextualFlagAction(int row)
 
 ## <a name="uitableviewrowaction"></a>UITableViewRowAction
 
-1 つまたは複数の行のカスタム アクションを定義する、`UITableView`のインスタンスを作成する必要があります、`UITableViewDelegate`クラスし、オーバーライド、`EditActionsForRow`メソッド。 例えば:
+1 つまたは複数の行のカスタム アクションを定義する、`UITableView`のインスタンスを作成する必要があります、`UITableViewDelegate`クラスし、オーバーライド、`EditActionsForRow`メソッド。 例:
 
 ```csharp
 using System;
@@ -163,7 +163,7 @@ namespace BasicTable
 }
 ```
 
-静的な`UITableViewRowAction.Create`メソッドは、新たに作成するために使用`UITableViewRowAction`を表示する、 **Hi**ユーザー カードは、テーブル内の行を水平方向にままにするとボタンをクリックします。 後での新しいインスタンス、`TableDelegate`が作成されに接続されている、`UITableView`します。 例えば:
+静的な`UITableViewRowAction.Create`メソッドは、新たに作成するために使用`UITableViewRowAction`を表示する、 **Hi**ユーザー カードは、テーブル内の行を水平方向にままにするとボタンをクリックします。 後での新しいインスタンス、`TableDelegate`が作成されに接続されている、`UITableView`します。 例:
 
 ```csharp
 TableDelegate tableDelegate;

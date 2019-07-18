@@ -9,12 +9,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/01/2019
-ms.openlocfilehash: 7b13ab5a4cc0d8e66e260329b5a53397778cb179
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: 83c71962ceb4a30c2e05d44fffe4d64b54e4883d
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58855121"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831938"
 ---
 # <a name="create-a-single-page-xamarinforms-application"></a>ページの 1 つの Xamarin.Forms アプリケーションを作成します。
 
@@ -38,7 +38,7 @@ ms.locfileid: "58855121"
 - サポート技術情報のC#します。
 - (省略可能)Ios アプリケーションの構築にペアリングした Mac。
 
-これらの前提条件の詳細については、次を参照してください。[インストール Xamarin](~/get-started/installation/index.md)します。 Visual Studio 2019 を Mac ビルド ホストに接続する方法については、次を参照してください。 [Xamarin.iOS 開発用 Mac とペアリング](~/ios/get-started/installation/windows/connecting-to-mac/index.md)します。
+これらの前提条件の詳細については、次を参照してください。[インストール Xamarin](~/get-started/installation/index.md)します。 Mac ビルド ホストへの Visual Studio 2019 の接続については、「[Xamarin.iOS 開発のために Mac とペアリングする](~/ios/get-started/installation/windows/connecting-to-mac/index.md)」を参照してください。
 
 ## <a name="get-started-with-visual-studio-2019"></a>Visual Studio 2019 を概要します。
 
@@ -63,9 +63,9 @@ ms.locfileid: "58855121"
 
     作成される .NET Standard ライブラリの詳細については、[Xamarin.Forms クイック スタート Deep Dive](deepdive.md) の [Xamarin.Forms アプリケーションの構造](deepdive.md#anatomy-of-a-xamarinforms-application)に関するページを参照してください。
 
-5. **ソリューション エクスプローラー**の **Notes** プロジェクトで、**[MainPage.xaml]** をダブルクリックして開きます。
+5. **ソリューション エクスプローラー**の **Notes** プロジェクトで、 **[MainPage.xaml]** をダブルクリックして開きます。
 
-    ![](single-page-images/vs/open-mainpage-xaml.png "MainPage.xaml を開く")
+    ![](single-page-images/vs/open-mainpage-xaml-2019.png "MainPage.xaml を開く")
 
 6. **MainPage.xaml** のテンプレート コードをすべて削除し、次のコードに置き換えます。
 
@@ -100,9 +100,9 @@ ms.locfileid: "58855121"
 
     **CTRL + S** を押し、**MainPage.xaml** への変更内容を保存してから、ファイルを閉じます。
 
-7. **ソリューション エクスプローラー**の **Notes** プロジェクトで **[MainPage.xaml]** を展開し、**[MainPage.xaml.cs]** をダブルクリックして開きます。
+7. **ソリューション エクスプローラー**の **Notes** プロジェクトで **[MainPage.xaml]** を展開し、 **[MainPage.xaml.cs]** をダブルクリックして開きます。
 
-    ![](single-page-images/vs/open-mainpage-codebehind.png "MainPage.xaml.cs を開く")
+    ![](single-page-images/vs/open-mainpage-codebehind-2019.png "MainPage.xaml.cs を開く")
 
 8. **MainPage.xaml.cs** で、テンプレート コードをすべて削除し、次のコードに置き換えます。
 
@@ -150,13 +150,13 @@ ms.locfileid: "58855121"
 
 ### <a name="building-the-quickstart"></a>クイック スタートのビルド
 
-1. Visual Studio で、**[ビルド]、[ソリューションのビルド]** メニュー項目の順に選択します (または F6 キーを押します)。 ソリューションがビルドされ、Visual Studio のステータス バーに成功のメッセージが表示されます。
+1. Visual Studio で、 **[ビルド]、[ソリューションのビルド]** メニュー項目の順に選択します (または F6 キーを押します)。 ソリューションがビルドされ、Visual Studio のステータス バーに成功のメッセージが表示されます。
 
       ![](single-page-images/vs/build-succeeded.png "ビルドに成功しました")
 
     エラーがある場合は、ソリューションが正常にビルドされるまで、前の手順を繰り返して誤りを修正します。
 
-2. Visual Studio ツール バーで、**[開始]** ボタン ([再生] ボタンのような三角形のボタン) を押し、選択した Android エミュレーターでアプリケーションを起動します。
+2. Visual Studio ツール バーで、 **[開始]** ボタン ([再生] ボタンのような三角形のボタン) を押し、選択した Android エミュレーターでアプリケーションを起動します。
 
     ![](single-page-images/vs/android-start.png "Visual Studio Android ツール バー")
 
@@ -169,11 +169,11 @@ ms.locfileid: "58855121"
     > [!NOTE]
     > 次の手順は、Xamarin.Forms 開発のシステム要件を満たしている、[ペアリングされた Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md) がある場合にのみ実行する必要があります。
 
-3. Visual Studio ツール バーで、**[Notes.iOS]** プロジェクトを右クリックして、**[スタートアップ プロジェクトに設定]** を選択します。
+3. Visual Studio ツール バーで、 **[Notes.iOS]** プロジェクトを右クリックして、 **[スタートアップ プロジェクトに設定]** を選択します。
 
       ![](single-page-images/vs/set-as-startup-project-ios.png "iOS をスタートアップ プロジェクトとして設定")
 
-4. Visual Studio ツール バーで、**[開始]** ボタン ([再生] ボタンのような三角形のボタン) を押し、選択した [iOS リモート シミュレーター](~/tools/ios-simulator/index.md)でアプリケーションを起動します。
+4. Visual Studio ツール バーで、 **[開始]** ボタン ([再生] ボタンのような三角形のボタン) を押し、選択した [iOS リモート シミュレーター](~/tools/ios-simulator/index.md)でアプリケーションを起動します。
 
     ![](single-page-images/vs/ios-start.png "Visual Studio iOS ツール バー")
 
@@ -192,7 +192,7 @@ ms.locfileid: "58855121"
 - サポート技術情報のC#します。
 - (省略可能)Ios アプリケーションの構築にペアリングした Mac。
 
-これらの前提条件の詳細については、次を参照してください。[インストール Xamarin](~/get-started/installation/index.md)します。 Visual Studio 2019 を Mac ビルド ホストに接続する方法については、次を参照してください。 [Xamarin.iOS 開発用 Mac とペアリング](~/ios/get-started/installation/windows/connecting-to-mac/index.md)します。
+これらの前提条件の詳細については、次を参照してください。[インストール Xamarin](~/get-started/installation/index.md)します。 Mac ビルド ホストへの Visual Studio 2019 の接続については、「[Xamarin.iOS 開発のために Mac とペアリングする](~/ios/get-started/installation/windows/connecting-to-mac/index.md)」を参照してください。
 
 ## <a name="get-started-with-visual-studio-2017"></a>Visual Studio 2017 を概要します。
 
@@ -200,20 +200,20 @@ ms.locfileid: "58855121"
 
     ![](single-page-images/vs/new-solution.png "新しいプロジェクト")
 
-2. **[新しいプロジェクト]** ダイアログで、**[クロスプラットフォーム]** をクリックして、**[モバイル アプリ (Xamarin.Forms)]** テンプレートを選択し、[名前] を「**Notes**」に設定し、プロジェクトの適切な場所を選んで **[OK]** ボタンをクリックします。
+2. **[新しいプロジェクト]** ダイアログで、 **[クロスプラットフォーム]** をクリックして、 **[モバイル アプリ (Xamarin.Forms)]** テンプレートを選択し、[名前] を「**Notes**」に設定し、プロジェクトの適切な場所を選んで **[OK]** ボタンをクリックします。
 
     ![](single-page-images/vs/new-project.png "クロスプラットフォームのプロジェクト テンプレート")
 
     > [!IMPORTANT]
     > このクイックスタートの C# スニペットと XAML スニペットでは、**Notes** という名前のソリューションが必要です。 別の名前を使用すると、コードをこのクイック スタートからソリューションにコピーするときに、ビルド エラーが発生します。
 
-3. **[新しいクロスプラットフォーム アプリ]** ダイアログで、**[空のアプリケーション]** をクリックして、コード共有方法として **[.NET Standard]** を選択し、**[OK]** ボタンをクリックします。
+3. **[新しいクロスプラットフォーム アプリ]** ダイアログで、 **[空のアプリケーション]** をクリックして、コード共有方法として **[.NET Standard]** を選択し、 **[OK]** ボタンをクリックします。
 
     ![](single-page-images/vs/new-app.png "新しいクロスプラット フォーム アプリ")
 
     作成される .NET Standard ライブラリの詳細については、[Xamarin.Forms クイック スタート Deep Dive](deepdive.md) の [Xamarin.Forms アプリケーションの構造](deepdive.md#anatomy-of-a-xamarinforms-application)に関するページを参照してください。
 
-4. **ソリューション エクスプローラー**の **Notes** プロジェクトで、**[MainPage.xaml]** をダブルクリックして開きます。
+4. **ソリューション エクスプローラー**の **Notes** プロジェクトで、 **[MainPage.xaml]** をダブルクリックして開きます。
 
     ![](single-page-images/vs/open-mainpage-xaml.png "MainPage.xaml を開く")
 
@@ -250,7 +250,7 @@ ms.locfileid: "58855121"
 
     **CTRL + S** を押し、**MainPage.xaml** への変更内容を保存してから、ファイルを閉じます。
 
-6. **ソリューション エクスプローラー**の **Notes** プロジェクトで **[MainPage.xaml]** を展開し、**[MainPage.xaml.cs]** をダブルクリックして開きます。
+6. **ソリューション エクスプローラー**の **Notes** プロジェクトで **[MainPage.xaml]** を展開し、 **[MainPage.xaml.cs]** をダブルクリックして開きます。
 
     ![](single-page-images/vs/open-mainpage-codebehind.png "MainPage.xaml.cs を開く")
 
@@ -300,13 +300,13 @@ ms.locfileid: "58855121"
 
 ### <a name="building-the-quickstart"></a>クイック スタートのビルド
 
-1. Visual Studio で、**[ビルド]、[ソリューションのビルド]** メニュー項目の順に選択します (または F6 キーを押します)。 ソリューションがビルドされ、Visual Studio のステータス バーに成功のメッセージが表示されます。
+1. Visual Studio で、 **[ビルド]、[ソリューションのビルド]** メニュー項目の順に選択します (または F6 キーを押します)。 ソリューションがビルドされ、Visual Studio のステータス バーに成功のメッセージが表示されます。
 
       ![](single-page-images/vs/build-succeeded.png "ビルドに成功しました")
 
     エラーがある場合は、ソリューションが正常にビルドされるまで、前の手順を繰り返して誤りを修正します。
 
-2. Visual Studio ツール バーで、**[開始]** ボタン ([再生] ボタンのような三角形のボタン) を押し、選択した Android エミュレーターでアプリケーションを起動します。
+2. Visual Studio ツール バーで、 **[開始]** ボタン ([再生] ボタンのような三角形のボタン) を押し、選択した Android エミュレーターでアプリケーションを起動します。
 
     ![](single-page-images/vs/android-start.png "Visual Studio Android ツール バー")
 
@@ -319,11 +319,11 @@ ms.locfileid: "58855121"
     > [!NOTE]
     > 次の手順は、Xamarin.Forms 開発のシステム要件を満たしている、[ペアリングされた Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md) がある場合にのみ実行する必要があります。
 
-3. Visual Studio ツール バーで、**[Notes.iOS]** プロジェクトを右クリックして、**[スタートアップ プロジェクトに設定]** を選択します。
+3. Visual Studio ツール バーで、 **[Notes.iOS]** プロジェクトを右クリックして、 **[スタートアップ プロジェクトに設定]** を選択します。
 
       ![](single-page-images/vs/set-as-startup-project-ios.png "iOS をスタートアップ プロジェクトとして設定")
 
-4. Visual Studio ツール バーで、**[開始]** ボタン ([再生] ボタンのような三角形のボタン) を押し、選択した [iOS リモート シミュレーター](~/tools/ios-simulator/index.md)でアプリケーションを起動します。
+4. Visual Studio ツール バーで、 **[開始]** ボタン ([再生] ボタンのような三角形のボタン) を押し、選択した [iOS リモート シミュレーター](~/tools/ios-simulator/index.md)でアプリケーションを起動します。
 
     ![](single-page-images/vs/ios-start.png "Visual Studio iOS ツール バー")
 
@@ -350,15 +350,15 @@ ms.locfileid: "58855121"
 
     ![](single-page-images/vsmac/new-project.png "新しいソリューション")
 
-2. **[新しいプロジェクト用のテンプレートを選びます]** ダイアログで、**[マルチプラットフォーム]、[アプリ]** の順にクリックし、**[空白フォームのアプリ]** テンプレートを選択して、**[次へ]** ボタンをクリックします。
+2. **[新しいプロジェクト用のテンプレートを選びます]** ダイアログで、 **[マルチプラットフォーム]、[アプリ]** の順にクリックし、 **[空白フォームのアプリ]** テンプレートを選択して、 **[次へ]** ボタンをクリックします。
 
     ![](single-page-images/vsmac/choose-template.png "テンプレートを選択します")
 
-3. **[Configure your Blank Forms app]\(空白フォームのアプリの構成\)** ダイアログで、新しいアプリに **Notes** という名前を付け、**[.NET Standard を使用する]** ラジオ ボタンがオンになっていることを確認し、**[次へ]** ボタンをクリックします。    
+3. **[Configure your Blank Forms app]\(空白フォームのアプリの構成\)** ダイアログで、新しいアプリに **Notes** という名前を付け、 **[.NET Standard を使用する]** ラジオ ボタンがオンになっていることを確認し、 **[次へ]** ボタンをクリックします。    
 
     ![](single-page-images/vsmac/configure-app.png "フォーム アプリケーションの構成")
 
-4. **[Configure your new Blank Forms app]\(新しい空白フォームのアプリの構成\)** ダイアログでは、ソリューションとプロジェクトの名前は **Notes** に設定したままにし、プロジェクトに適切な場所を選択し、**[作成]** をクリックしてプロジェクトを作成します。
+4. **[Configure your new Blank Forms app]\(新しい空白フォームのアプリの構成\)** ダイアログでは、ソリューションとプロジェクトの名前は **Notes** に設定したままにし、プロジェクトに適切な場所を選択し、 **[作成]** をクリックしてプロジェクトを作成します。
 
     ![](single-page-images/vsmac/configure-project.png "フォーム プロジェクトの構成")
 
@@ -367,7 +367,7 @@ ms.locfileid: "58855121"
 
     作成される .NET Standard ライブラリの詳細については、[Xamarin.Forms クイック スタート Deep Dive](deepdive.md) の [Xamarin.Forms アプリケーションの構造](deepdive.md#anatomy-of-a-xamarinforms-application)に関するページを参照してください。
 
-5. **Solution Pad** の **Notes** プロジェクトで、**[MainPage.xaml]** をダブルクリックして開きます。
+5. **Solution Pad** の **Notes** プロジェクトで、 **[MainPage.xaml]** をダブルクリックして開きます。
 
     ![](single-page-images/vsmac/mainpage-xaml.png "MainPage.xaml")
 
@@ -404,7 +404,7 @@ ms.locfileid: "58855121"
 
     **[ファイル]、[保存]** の順に選択し (または **&#8984; + S** キーを押し)、**MainPage.xaml** への変更内容を保存してから、ファイルを閉じます。
 
-7. **Solution Pad** の **Notes** プロジェクトで、**[MainPage.xaml]** を展開し、**[MainPage.xaml.cs]** をダブルクリックして開きます。
+7. **Solution Pad** の **Notes** プロジェクトで、 **[MainPage.xaml]** を展開し、 **[MainPage.xaml.cs]** をダブルクリックして開きます。
 
     ![](single-page-images/vsmac/mainpage-xaml-cs.png "MainPage.xaml.cs")
 
@@ -454,7 +454,7 @@ ms.locfileid: "58855121"
 
 ### <a name="building-the-quickstart"></a>クイック スタートのビルド
 
-1. Visual Studio for Mac で、**[ビルド]、[すべてビルド]** の順にメニュー項目を選択します (または **&#8984; + B** キーを押します)。 プロジェクトがビルドされ、Visual Studio for Mac のツール バーに成功のメッセージが表示されます。
+1. Visual Studio for Mac で、 **[ビルド]、[すべてビルド]** の順にメニュー項目を選択します (または **&#8984; + B** キーを押します)。 プロジェクトがビルドされ、Visual Studio for Mac のツール バーに成功のメッセージが表示されます。
 
       ![](single-page-images/vsmac/build-successful.png "ビルドに成功しました")
 
@@ -464,7 +464,7 @@ ms.locfileid: "58855121"
 
       ![](single-page-images/vsmac/set-startup-project-ios.png "iOS をスタートアップ プロジェクトとして設定")
 
-3. Visual Studio for Mac ツール バーで、**[開始]** ボタン ([再生] ボタンのような三角形のボタン) を押し、選択した iOS シミュレーター内でアプリケーションを起動します。
+3. Visual Studio for Mac ツール バーで、 **[開始]** ボタン ([再生] ボタンのような三角形のボタン) を押し、選択した iOS シミュレーター内でアプリケーションを起動します。
 
       ![](single-page-images/vsmac/start.png "Visual Studio for Mac ツール バー")
 
@@ -478,7 +478,7 @@ ms.locfileid: "58855121"
 
       ![](single-page-images/vsmac/set-startup-project-android.png "Android をスタートアップ プロジェクトとして設定")
 
-5. Visual Studio for Mac ツール バーで、**[開始]** ボタン ([再生] ボタンのような三角形のボタン) を押し、選択した Android エミュレーター内でアプリケーションを起動します。
+5. Visual Studio for Mac ツール バーで、 **[開始]** ボタン ([再生] ボタンのような三角形のボタン) を押し、選択した Android エミュレーター内でアプリケーションを起動します。
 
       [![](single-page-images/vsmac/notes-android.png "Android エミュレーターでのノート")](single-page-images/vsmac/notes-android-large.png#lightbox "Notes in the Android Simulator")
 

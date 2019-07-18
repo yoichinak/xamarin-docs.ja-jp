@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: cdb75207bff3f15a54d0cdd90fa0833da9c145e6
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: d145a8a3cd8bc321f0fce76a8831fca681ad29a0
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57670650"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830573"
 ---
 # <a name="cardview"></a>CardView
 
@@ -49,7 +49,7 @@ _Cardview ウィジェットは、カードのようにビューのテキスト�
 
 追加する、 `Xamarin.Android.Support.v7.CardView` Visual Studio でパッケージ。
 
-1. プロジェクトを開き、右クリックし、**参照**ノード (で、**ソリューション エクスプ ローラー**ウィンドウ) を選択して**NuGet パッケージの管理.**.
+1. プロジェクトを開き、右クリックし、**参照**ノード (で、**ソリューション エクスプ ローラー**ウィンドウ) を選択して**NuGet パッケージの管理.** .
 
 2. ときに、 **NuGet パッケージの管理**ダイアログが表示されたら、入力**CardView**検索ボックスにします。
 
@@ -94,7 +94,7 @@ NuGet パッケージのインストールの詳細については、次を参�
 
 [![白の背景とテキストの行で CardView のスクリーン ショット](card-view-images/02-basic-cardview-sml.png)](card-view-images/02-basic-cardview.png#lightbox)
 
-ライト テーマのマテリアルに設定されているアプリのスタイルでは、この例では、(`Theme.Material.Light`) ように、 `CardView` shadows とエッジが見やすくなります。 Android 5.0 のテーマのアプリの詳細については、[マテリアル テーマ](~/android/user-interface/material-theme.md)を参照してください。 次のセクションでカスタマイズする方法について説明します`CardView`アプリケーション。
+ライト テーマのマテリアルに設定されているアプリのスタイルでは、この例では、(`Theme.Material.Light`) ように、 `CardView` shadows とエッジが見やすくなります。 Android 5.0 のテーマのアプリの詳細については、次を参照してください。[マテリアル テーマ](~/android/user-interface/material-theme.md)します。 次のセクションでカスタマイズする方法について説明します`CardView`アプリケーション。
 
 
 ## <a name="customizing-cardview"></a>CardView をカスタマイズします。
@@ -174,8 +174,8 @@ NuGet パッケージのインストールの詳細については、次を参�
 
 
 #### <a name="padding"></a>[間隔]
-`
-CardView` カード内のコンテンツを配置する 5 つの埋め込み属性を提供します。 XML のレイアウトに設定することができますか、コード内と同様のメソッドを呼び出すことができます。
+
+`CardView` カード内のコンテンツを配置する 5 つの埋め込み属性を提供します。 XML のレイアウトに設定することができますか、コード内と同様のメソッドを呼び出すことができます。
 
 [![埋め込み属性 CardView のダイアグラム](card-view-images/05-padding-sml.png)](card-view-images/05-padding.png#lightbox)
 
@@ -244,7 +244,7 @@ CardView` カード内のコンテンツを配置する 5 つの埋め込み属�
 
 -   `cardUseCompatPadding` &ndash; この属性を設定して`true`のバージョンの API レベル 21 以上に Android アプリの実行時に、パディングを追加します。 使用する場合`CardView`前ロリポップ デバイスでの見た目は同じ Lollipop で (またはそれ以降)、この属性を設定すること`true`します。 この属性を有効にすると、`CardView`前ロリポップ デバイスで実行時に影を描画するために追加の埋め込みを追加します。 これにより、事前 Lollipop のプログラムによるシャドウの実装が有効なときに導入されている埋め込みの相違を克服するためにします。
 
-Android の旧バージョンとの互換性を維持する詳細については、[互換性の維持](https://developer.android.com/training/material/compatibility.html)を参照してください。
+Android の旧バージョンとの互換性を維持する詳細については、次を参照してください。[互換性の維持](https://developer.android.com/training/material/compatibility.html)します。
 
 
 ## <a name="summary"></a>まとめ

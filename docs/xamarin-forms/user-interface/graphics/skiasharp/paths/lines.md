@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
 ms.openlocfilehash: 85d863b19c3bf0302464e371738a2926cc80e8ce
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059718"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61290784"
 ---
 # <a name="lines-and-stroke-caps"></a>線とストローク キャップ
 
@@ -30,7 +30,7 @@ SkiaSharp、1 行のレンダリングは、一連の接続された直線のレ
 canvas.DrawLine (x0, y0, x1, y1, paint);
 ```
 
-既定で、 [ `StrokeWidth` ](xref:SkiaSharp.SKPaint.StrokeWidth)新しくインスタンス化のプロパティ`SKPaint`オブジェクトが 0 で、太さで 1 ピクセルの行の表示では 1 の値と同じ効果があります。 これは表示を設定する可能性がありますので、携帯電話などの高解像度のデバイスで非常に軽量、`StrokeWidth`より大きい値にします。 別の問題が発生しますがかなり大きな太さの線を描画を開始すると: を開始し、これら太い線の両端表示する方法でしょうか。
+既定で、 [ `StrokeWidth` ](xref:SkiaSharp.SKPaint.StrokeWidth)新しくインスタンス化のプロパティ`SKPaint`オブジェクトが 0 で、太さで 1 ピクセルの行の表示では 1 の値と同じ効果があります。 これは表示を設定する可能性がありますので、携帯電話などの高解像度のデバイスで非常に軽量、`StrokeWidth`より大きい値にします。 別の問題が発生するかなり大きな太さの線を描画を開始するとします。開始し、これら太い線の両端表示する方法でしょうか。
 
 開始と終了行の外観と呼ばれる、*ライン キャップ*または Skia、*ストローク キャップ*します。 このコンテキストでは、「上限」という単語がある種の hat を指す&mdash;行の末尾に位置するものです。 設定する、 [ `StrokeCap` ](xref:SkiaSharp.SKPaint.StrokeCap)のプロパティ、`SKPaint`オブジェクトの次のメンバーのいずれかに、 [ `SKStrokeCap` ](xref:SkiaSharp.SKStrokeCap)列挙体。
 

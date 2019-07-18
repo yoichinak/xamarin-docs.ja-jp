@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 01/18/2017
 ms.openlocfilehash: 3ab31fb7cac97fbae3315f51daf3dd4b1edbcc1d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112398"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61085293"
 ---
 # <a name="java-integration-overview"></a>Java 統合の概要
 
@@ -27,7 +27,7 @@ Xamarin.Android アプリケーションでの Java ライブラリを再利用�
 
 -   **Java バインド ライブラリを作成する**&ndash;を作成するこの手法では、Xamarin.Android プロジェクトが使用されるC#Java 型を囲むラッパー。 Xamarin.Android アプリケーションを参照できます、C#ラッパーによって、このプロジェクトを作成し、使用、`.jar`ファイル。 
 
--   **Java ネイティブ インターフェイス** &ndash; 、 *Java ネイティブ**インターフェイス*(JNI) は非 Java コードを可能にするフレームワーク (C++ などまたはC#) を呼び出すか、実行中の Java コードによって呼び出されるJVM の内部。 
+-   **Java ネイティブ インターフェイス** &ndash; 、 *Java ネイティブ* *インターフェイス* (JNI) は非 Java コードを可能にするフレームワーク (C++ などまたはC#) を呼び出すか、実行中の Java コードによって呼び出されるJVM の内部。 
 
 -   **コードの移植**&ndash;この方法では、Java ソース コードに変換し、C#します。 これは、手動、またはシャープなどの自動化されたツールを使用して実行できます。 
 

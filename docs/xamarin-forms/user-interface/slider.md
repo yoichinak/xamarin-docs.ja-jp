@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/27/2019
-ms.openlocfilehash: fa339d9fd404cf74aa603d853abde5f9128e57b5
-ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
+ms.openlocfilehash: 6e65124df4b20a50091ad93e18621f8e6707ebbe
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57557309"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65970545"
 ---
 # <a name="xamarinforms-slider"></a>Xamarin.Forms のスライダー
 
@@ -49,14 +49,14 @@ Xamarin.Forms [ `Slider` ](xref:Xamarin.Forms.Slider)水平のバーを選択す
 - [`MinimumTrackColor`](xref:Xamarin.Forms.Slider.MinimumTrackColorProperty) バーのつまみの左側にある色です。
 - [`MaximumTrackColor`](xref:Xamarin.Forms.Slider.MaximumTrackColorProperty) バーのつまみの右側にある色です。
 - [`ThumbColor`](xref:Xamarin.Forms.Slider.ThumbColorProperty) つまみの色です。
-- [`ThumbImage`](xref:Xamarin.Forms.Slider.ThumbImageProperty) 一般的に、型に使用するイメージ[ `FileImageSource`](xref:Xamarin.Forms.FileImageSource)します。
+- [`ThumbImageSource`](xref:Xamarin.Forms.Slider.ThumbImageSourceProperty) 一般的に、型に使用するイメージ[ `ImageSource`](xref:Xamarin.Forms.ImageSource)します。
 
 > [!NOTE]
-> `ThumbColor`と`ThumbImage`プロパティは相互に排他的です。 両方のプロパティが設定されている場合、`ThumbImage`プロパティが優先されます。
+> `ThumbColor`と`ThumbImageSource`プロパティは相互に排他的です。 両方のプロパティが設定されている場合、`ThumbImageSource`プロパティが優先されます。
 
 ## <a name="basic-slider-code-and-markup"></a>スライダーの基本的なコードとマークアップ
 
-[ **SliderDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos)サンプル機能的に同等ですが、さまざまな方法で実装されている 3 つのページから始まります。 最初のページは、c# コードを使用して、2 つ目は、コードでは、イベント ハンドラーで XAML を使用して、3 番目は、XAML ファイルでデータ バインディングを使用して、イベント ハンドラーを回避すること。
+[ **SliderDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos)サンプル機能的に同等ですが、さまざまな方法で実装されている 3 つのページから始まります。 最初のページは、C# コードを使用して、2 つ目は、コードでは、イベント ハンドラーで XAML を使用して、3 番目は、XAML ファイルでデータ バインディングを使用して、イベント ハンドラーを回避すること。
 
 ### <a name="creating-a-slider-in-code"></a>コードで、スライダーの作成
 
@@ -205,7 +205,7 @@ double value = slider.Value;
 </ContentPage>
 ```
 
-`Rotation`最初の`Label`にバインドされて、`Value`のプロパティ、`Slider`は、`Text`プロパティは、2 つ目の`Label`で、`StringFormat`仕様。 **スライダーの基本的なバインディング**ページ関数を少し異なる方法で 2 つの前のページから。ページが最初に表示される、2 番目の`Label`値を持つテキスト文字列が表示されます。 データ バインディングを使用すると便利です。 データ バインドせずにテキストを表示する、具体的には初期化する必要があるが、`Text`のプロパティ、`Label`またはの起動処理をシミュレートする、`ValueChanged`クラス コンス トラクターからイベント ハンドラーを呼び出すことによってイベント。
+`Rotation`最初の`Label`にバインドされて、`Value`のプロパティ、`Slider`は、`Text`プロパティは、2 つ目の`Label`で、`StringFormat`仕様。 **スライダーの基本的なバインディング**ページ関数を少し異なる方法で 2 つの前のページから。ページが最初に表示される、2 番目の`Label`値を持つテキスト文字列が表示されます。 データ バインディングを使用すると便利です。 データ バインドせずにテキストを表示する、具体的には初期化する必要があるが、`Text`のプロパティ、`Label`またはの起動処理をシミュレートする、`ValueChanged`クラス コンストラクターからイベント ハンドラーを呼び出すことによってイベント。
 
 <a name="precautions" />
 

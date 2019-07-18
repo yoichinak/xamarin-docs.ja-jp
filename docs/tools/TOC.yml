@@ -9,7 +9,7 @@
           href: ios-simulator/deploy.md
         - name: リリース ノート
           href: /xamarin/tools/ios-simulator/release-notes/?context=xamarin/tools
-    - name: Inspector
+    - name: インスペクター
       href: inspector/index.md
       items:
         - name: インストールと要件
@@ -19,9 +19,10 @@
         - name: リリース ノート
           href: /xamarin/tools/inspector/release-notes/
     - name: Live Player
-      href: live-player/index.md
       items:
-        - name: セットアップ
+        - name: Xamarin Live Player のプレビューについて
+          href: live-player/index.md
+        - name: Visual Studio の構成
           href: live-player/install.md
         - name: Xamarin Live Player アプリ
           href: live-player/player.md
@@ -34,7 +35,7 @@
           href: profiler/troubleshooting.md
         - name: リリース ノート
           href: /xamarin/tools/profiler/release-notes/
-    - name: ブック
+    - name: Workbooks
       href: workbooks/index.md
       items:
         - name: インストールと要件
@@ -73,7 +74,7 @@
     - name: .NET Embedding
       href: dotnet-embedding/index.md
       items:
-        - name: 作業の開始
+        - name: Getting Started (概要)
           href: dotnet-embedding/get-started/index.md
           items:
             - name: インストール

@@ -6,16 +6,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/02/2018
-ms.openlocfilehash: 81bb4e302f81b58eec91ea2a2aef985adbf72e2c
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 12e7e31cda9818a3cb2e2efc331a0be5d0c334e5
+ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57670923"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66740855"
 ---
 # <a name="gridviewpager"></a>GridViewPager
 
-[GridViewPager](https://developer.xamarin.com/samples/GridViewPager/) Android Wear の 2D ピッカーのナビゲーション パターンを実装する方法を示します。
+[GridViewPager](https://developer.xamarin.com/samples/monodroid/wear/GridViewPager/) Android Wear の 2D ピッカーのナビゲーション パターンを実装する方法を示します。
 
 ![正方形の表示で GridViewPager の例のスクリーン ショット](gridviewpager-images/gridviewpager.png)
 
@@ -49,4 +49,4 @@ pager.Adapter = new SimpleGridPagerAdapter (this, FragmentManager);
 
 - [Google の 2D ピッカー ドキュメント](https://developer.android.com/training/wearables/ui/2d-picker.html)
 - [android.support.wearable docs](https://developer.android.com/reference/android/support/wearable/view/package-summary.html)
-- [GridViewPager (sample)](https://developer.xamarin.com/samples/GridViewPager/)
+- [GridViewPager (sample)](https://developer.xamarin.com/samples/monodroid/wear/GridViewPager/)

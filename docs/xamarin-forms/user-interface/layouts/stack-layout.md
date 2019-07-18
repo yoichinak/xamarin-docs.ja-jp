@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: bdc03721569682cd5b4f72908fcab1e4a567b83c
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 4e462346c2c0130c972d098aa2c988bdd61fc360
+ms.sourcegitcommit: 0c823f5439f4279a35af23dd466e7a0483e65d50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53055803"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65804892"
 ---
 # <a name="xamarinforms-stacklayout"></a>Xamarin.Forms の StackLayout
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
 
-`StackLayout` 水平方向または垂直方向には、1 次元の行 (「スタック」) でビューを整理します。 ビューで、`StackLayout`レイアウト オプションを使用して、レイアウト領域に基づくサイズ設定することができます。 配置は、ビューは、レイアウトとビューのレイアウト オプションに追加された順序によって決まります。
+[StackLayout](xref:Xamarin.Forms.StackLayout)水平方向または垂直方向には、1 次元の行 (「スタック」) でビューを整理します。 ビューで、`StackLayout`レイアウト オプションを使用して、レイアウト領域に基づくサイズ設定することができます。 配置は、ビューは、レイアウトとビューのレイアウト オプションに追加された順序によって決まります。
 
 [![](stack-layout-images/layouts-sml.png "Xamarin.Forms のレイアウト")](stack-layout-images/layouts.png#lightbox "Xamarin.Forms のレイアウト")
 
@@ -97,7 +97,7 @@ StackLayout 内でビューのサイズは、高さと幅の要求とレイア�
 - **FillAndExpand** &ndash;余白がありませんし、レイアウトが指定されます限り多くの領域を占有するように、ビューを配置します。
 - **StartAndExpand** &ndash;レイアウトの開始時、ビューを配置し、親は、限り多くの領域を占有します。
 
-詳細については、[拡張](~/xamarin-forms/user-interface/layouts/layout-options.md#expansion)を参照してください。
+詳細については、次を参照してください。[拡張](~/xamarin-forms/user-interface/layouts/layout-options.md#expansion)します。
 
 ### <a name="positioning"></a>配置
 
@@ -156,7 +156,7 @@ public class StackLayoutCode : ContentPage
 }
 ```
 
-詳細については、[配置](~/xamarin-forms/user-interface/layouts/layout-options.md#alignment)を参照してください。
+詳細については、次を参照してください。[配置](~/xamarin-forms/user-interface/layouts/layout-options.md#alignment)します。
 
 ## <a name="exploring-a-complex-layout"></a>複雑なレイアウトの調査
 

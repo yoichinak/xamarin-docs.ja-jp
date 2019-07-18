@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 1c3c3a63de40a63f040870505b086d67fe160773
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 8b0686a91f18b41aa8e2e7db071123c0d96723a0
+ms.sourcegitcommit: 32c7cf8b0d00464779e4b0ea43e2fd996632ebe0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113749"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68290103"
 ---
 # <a name="can-i-change-the-output-path-of-the-ipa-file"></a>IPA ファイルの出力パスを変更することができますか。
 
@@ -45,7 +45,7 @@ ms.locfileid: "50113749"
 2. 目的の出力フォルダーに、DestinationFolder を設定します。 通常どおり (する場合は、この引数内 $(OutputPath)) などの MSBuild プロパティを使用することがあります。
 
 ## <a name="notes"></a>メモ
-- `CreateIpaDependsOn`でプロパティが定義されている、`Xamarin.iOS.Common.targets`されている Xamarin.iOS の一部のファイルします。 」の説明どおりに動作 *'DependsOn' プロパティのオーバーライド*で[ https://msdn.microsoft.com/library/ms366724.aspx](https://msdn.microsoft.com/library/ms366724.aspx)します。
+- `CreateIpaDependsOn`でプロパティが定義されている、`Xamarin.iOS.Common.targets`されている Xamarin.iOS の一部のファイルします。 動作」の説明に従って、[定義済みのターゲットをオーバーライドする](https://docs.microsoft.com/visualstudio/msbuild/how-to-extend-the-visual-studio-build-process#overriding-predefined-targets)、記事の「[方法。Visual Studio ビルド処理を拡張](https://docs.microsoft.com/visualstudio/msbuild/how-to-extend-the-visual-studio-build-process)します。
 
 - 使って、**移動**タスクではなく**コピー**タスクの優先する場合は。 Windows のオプションをビルドする場合は、タスクの完全修飾名を使用する必要があります。 `<Microsoft.Build.Tasks.Move>` 、XamarinVS であいまいさを回避するためには、ビルドのタスク。
 
@@ -79,6 +79,6 @@ ms.locfileid: "50113749"
 2. 設定、`DestinationFolder`目的の出力フォルダーにします。 通常どおりに MSBuild プロパティを使用することがあります (など`$(OutputPath)`) する場合は、この引数にします。
 
 ## <a name="notes"></a>メモ
-- `CreateIpaDependsOn`でプロパティが定義されている、`Xamarin.iOS.Common.targets`されている Xamarin.iOS の一部のファイルします。 」の説明どおりに動作 *"DependsOn"プロパティのオーバーライド*で[ https://msdn.microsoft.com/library/ms366724.aspx](https://msdn.microsoft.com/library/ms366724.aspx)します。
+- `CreateIpaDependsOn`でプロパティが定義されている、`Xamarin.iOS.Common.targets`されている Xamarin.iOS の一部のファイルします。 t の動作」の説明に従って、[定義済みのターゲットをオーバーライドする](https://docs.microsoft.com/visualstudio/msbuild/how-to-extend-the-visual-studio-build-process#overriding-predefined-targets)、記事の「[方法。Visual Studio ビルド処理を拡張](https://docs.microsoft.com/visualstudio/msbuild/how-to-extend-the-visual-studio-build-process)します。
 
 - 使って、**移動**タスクではなく**コピー**タスクの優先する場合は。 Windows のオプションをビルドする場合は、タスクの完全修飾名を使用する必要があります。 `<Microsoft.Build.Tasks.Move>` 、XamarinVS であいまいさを回避するためには、ビルドのタスク。

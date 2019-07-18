@@ -1,28 +1,31 @@
 ---
 title: C#6 の新機能の概要
-description: 最新バージョンのC#言語 – バージョン 6 – は少ない定型、明確さの向上、および一貫性のある言語の進化を続けています。 クリーナーの初期化構文を使用する機能は、catch、finally ブロック、および null 条件で待機しますか。 演算子は、特に便利です。
+description: バージョン 6、C#言語は定型コードが少なく、明確さの向上、および一貫性のある言語の進化を続けています。 クリーナーの初期化構文を使用する機能は、catch、finally ブロック、および null 条件で待機しますか。 演算子は、特に便利です。
 ms.prod: xamarin
 ms.assetid: 4B4E41A8-68BA-4E2B-9539-881AC19971B
 ms.custom: xamu-video
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: b69fe417bb521781453042269b9b52609d8e00a0
-ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
+ms.openlocfilehash: 0fd7f4e9972f7bf762a44c9edf30fa13f9d989bc
+ms.sourcegitcommit: 0845ed2daa65468b6fe12ac4e9386f3315d72f4d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58070957"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67850950"
 ---
 # <a name="c-6-new-features-overview"></a>C#6 の新機能の概要
 
-_最新バージョンのC#言語 – バージョン 6 – は少ない定型、明確さの向上、および一貫性のある言語の進化を続けています。クリーナーの初期化構文を使用する機能は、catch、finally ブロック、および null 条件で待機しますか。演算子は、特に便利です。_
+_バージョン 6、C#言語は定型コードが少なく、明確さの向上、および一貫性のある言語の進化を続けています。クリーナーの初期化構文を使用する機能は、catch、finally ブロック、および null 条件で待機しますか。演算子は、特に便利です。_
+
+> [!NOTE]
+> 最新バージョンについては、 C# 、情報の記事を参照してください言語 – バージョン 7 –[新C#7.0](/dotnet/csharp/whats-new/csharp-7)
 
 このドキュメントの新しい機能を紹介するC#6。 Mono コンパイラで完全にサポートされているし、開発者が Xamarin のすべてのターゲット プラットフォームでの新機能の使用を開始することができます。
 
 > [!VIDEO https://youtube.com/embed/7UdV7zGPfMU]
 
-**新C#6 により、 [Xamarin University](https://university.xamarin.com/)**
+**新C#6 ビデオ**
 
 ## <a name="using-c-6"></a>使用してC#6
 

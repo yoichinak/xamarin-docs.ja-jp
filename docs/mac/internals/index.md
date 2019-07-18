@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 11/10/2017
 ms.openlocfilehash: 872f26febf3abbe4d659773d2bf2d27348c64513
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118774"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61033244"
 ---
 # <a name="under-the-hood-in-xamarinmac"></a>Xamarin.Mac で内部的には
 
@@ -24,6 +24,6 @@ ms.locfileid: "50118774"
 
 Objective-c、コンパイル、セレクター、レジストラー、アプリの起動、およびコード ジェネレーターなどの概念を含む Xamarin.Mac のリレーションシップです。
 
-## <a name="xamarinmac-registrarregistrarmd"></a>[Xamarin.Mac レジストラー](registrar.md)
+## <a name="xamarinmac-registrarregistrarmd"></a>[Xamarin.Mac registrar](registrar.md)
 
 Xamarin.Mac は、マネージ環境とアンマネージの OBJECTIVE-C クラスを呼び出し、イベントが発生したときに呼び出されるマネージ クラスを許可する、Cocoa のランタイム間のギャップを橋渡しします。 この「マジック」作業の実行に必要な作業は、レジストラーによって処理されますが、"内部で"何が起こってを理解することもできます。

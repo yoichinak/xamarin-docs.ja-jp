@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: 2bd45c5482a8f0367bffa21f301bb631c3429a21
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: bc6842871a2f59c9851e90adbc6609707a7ecd1f
+ms.sourcegitcommit: 85c45dc28ab3625321c271804768d8e4fce62faf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58870132"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67039660"
 ---
 # <a name="monotouchdialog-json-markup"></a>MonoTouch.Dialog Json マークアップ
 
@@ -20,58 +20,58 @@ ms.locfileid: "58870132"
 
 例を使用して開始しましょう。 次は JsonElement に渡すことができる完全な Json ファイルです。
 
-```csharp
+```json
 {     
-  "title": "Json Sample",
-  "sections": [ 
-      {
-          "header": "Booleans",
-          "footer": "Slider or image-based",
-          "id": "first-section",
-          "elements": [
-              { 
-                  "type" : "boolean",
-                  "caption" : "Demo of a Boolean",
-                  "value"   : true
-              }, {
-                  "type": "boolean",
-                  "caption" : "Boolean using images",
-                  "value"   : false,
-                  "on"      : "favorite.png",
-                  "off"     : "~/favorited.png"
-              }, {
-                      "type": "root",
-                      "title": "Tap for nested controller",
-                      "sections": [ {
-                         "header": "Nested view!",
-                         "elements": [
-                           {
-                             "type": "boolean",
-                             "caption": "Just a boolean",
-                             "id": "the-boolean",
-                             "value": false
-                           },
-                           {
-                             "type": "string",
-                             "caption": "Welcome to the nested controller"
-                           }
-                         ]
-                       }
-                     ]
-                   }
-          ]
-      }, {
-          "header": "Entries",
-          "elements" : [
-              {
-                  "type": "entry",
-                  "caption": "Username",
-                  "value": "",
-                  "placeholder": "Your account username"
-              }
-          ]
-      }
-  ]
+    "title": "Json Sample",
+    "sections": [ 
+        {
+            "header": "Booleans",
+            "footer": "Slider or image-based",
+            "id": "first-section",
+            "elements": [
+                { 
+                    "type": "boolean",
+                    "caption": "Demo of a Boolean",
+                    "value": true
+                }, {
+                    "type": "boolean",
+                    "caption": "Boolean using images",
+                    "value": false,
+                    "on": "favorite.png",
+                    "off": "~/favorited.png"
+                }, {
+                    "type": "root",
+                    "title": "Tap for nested controller",
+                    "sections": [
+                        {
+                            "header": "Nested view!",
+                            "elements": [
+                                {
+                                    "type": "boolean",
+                                    "caption": "Just a boolean",
+                                    "id": "the-boolean",
+                                    "value": false
+                                }, {
+                                    "type": "string",
+                                    "caption": "Welcome to the nested controller"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }, {
+            "header": "Entries",
+            "elements" : [
+                {
+                    "type": "entry",
+                    "caption": "Username",
+                    "value": "",
+                    "placeholder": "Your account username"
+                }
+            ]
+        }
+    ]
 }
 ```
 
@@ -86,7 +86,7 @@ var jsonElement = JsonElement.FromFile ("demo.json");
 
 var firstSection = jsonElement ["first-section"] as Section;
 
-var theBoolean = jsonElement ["the-boolean"] as BooleanElement
+var theBoolean = jsonElement ["the-boolean"] as BooleanElement;
 ```
 
  <a name="Root_Element_Syntax" />
@@ -133,7 +133,7 @@ var theBoolean = jsonElement ["the-boolean"] as BooleanElement
  <a name="type" />
 
 
-### <a name="type"></a>種類
+### <a name="type"></a>型
 
 設定する必要があります`"root"`とき (これは入れ子にコント ローラーを使用) セクションに表示されます。
 
@@ -192,38 +192,38 @@ var theBoolean = jsonElement ["the-boolean"] as BooleanElement
 
 レンダリング要素がに基づいて、 C# StringElement と StyledStringElement およびそれらがさまざまな方法で情報を表示し、さまざまな方法でそれらをレンダリングすることができます。 最も単純な要素は、次のように作成できます。
 
-```csharp
+```json
 {
-        "type": "string",
-        "caption": "Json Serializer",
+    "type": "string",
+    "caption": "Json Serializer"
 }
 ```
 
 これで、既定値のすべての単純な文字列が表示されます。 フォント、背景、テキストの色と飾り。 これらの要素への操作をフックし、設定してボタンのように動作できるようにすることは、`"ontap"`プロパティまたは`"onaccessorytap"`プロパティ。
 
-```csharp
+```json
 {
-    "type":    "string",
-        "caption": "View Photos",
-        "ontap:    "Acme.PhotoLibrary.ShowPhotos"
+    "type": "string",
+    "caption": "View Photos",
+    "ontap": "Acme.PhotoLibrary.ShowPhotos"
 }
 ```
 
 上記はクラス"Acme.PhotoLibrary"の"ShowPhotos"メソッドを呼び出します。 `"onaccessorytap"`も同様ですが、ユーザーがセルをタップする代わりのアクセサリをタップした場合のみ呼び出されます。 これを有効にするには、アクセサリを設定することも必要があります。
 
-```csharp
+```json
 {
-    "type":     "string",
-        "caption":  "View Photos",
-        "ontap:     "Acme.PhotoLibrary.ShowPhotos",
-        "accessory: "detail-disclosure",
-        "onaccessorytap": "Acme.PhotoLibrary.ShowStats"
+    "type": "string",
+    "caption": "View Photos",
+    "ontap": "Acme.PhotoLibrary.ShowPhotos",
+    "accessory": "detail-disclosure",
+    "onaccessorytap": "Acme.PhotoLibrary.ShowStats"
 }
 ```
 
 要素をレンダリングできる 2 つの文字列を一度に表示、1 つは、キャプション、およびもう 1 つは、値。 これらの文字列がレンダリングされる方法スタイルに依存して設定できる、これを使用して、`"style"`プロパティ。 既定で、左側と右側の値、キャプションが表示されます。 詳細については、スタイル セクションを参照してください。 色は、'#' 記号の後に赤、緑、青、おそらくアルファ値の値を表す 16 進数でエンコードされます。 RGB または RGBA のいずれかの値を表す短い形式 (3 または 4 16 進数です) では、内容をエンコードすることができます。 または RGB または RGBA のいずれかの値を表す long フォーム (6 か月または 8 桁) です。 短いバージョンは、同じの 16 進数字を 2 回記述する短縮形です。 "#1bc"定数が red としてなどでは、パターン、緑の = = 0 xbb です青 = 0 xcc します。 アルファ値が存在しない場合はカラーが不透明にします。 以下に、いくつかの例を示します。
 
-```csharp
+```json
 "background": "#f00"
 "background": "#fa08f880"
 ```
@@ -362,28 +362,28 @@ class Foo {
 
 ## <a name="boolean-elements"></a>ブール型要素
 
-ブール型要素に型を設定する必要があります`"bool"`、含めることができます、`"caption"`を表示して、 `"value"` true または false に設定されます。 場合、`"on"`と`"off"`プロパティを設定、イメージをしたと見なされます。 イメージは、アプリケーションでは、現在の作業ディレクトリを基準として解決されます。 バンドルの相対ファイルを参照する場合は、使用、`"~"`アプリケーション バンドル ディレクトリ表してへのショートカットとして。 たとえば`"~/favorite.png"`バンドル ファイルに含まれる favorite.png になります。 例えば:
+ブール型要素に型を設定する必要があります`"bool"`、含めることができます、`"caption"`を表示して、 `"value"` true または false に設定されます。 場合、`"on"`と`"off"`プロパティを設定、イメージをしたと見なされます。 イメージは、アプリケーションでは、現在の作業ディレクトリを基準として解決されます。 バンドルの相対ファイルを参照する場合は、使用、`"~"`アプリケーション バンドル ディレクトリ表してへのショートカットとして。 たとえば`"~/favorite.png"`バンドル ファイルに含まれる favorite.png になります。 例:
 
-```csharp
+```json
 { 
-    "type" : "boolean",
-    "caption" : "Demo of a Boolean",
-    "value"   : true
+    "type": "boolean",
+    "caption": "Demo of a Boolean",
+    "value": true
 },
 
 {
     "type": "boolean",
-    "caption" : "Boolean using images",
-    "value"   : false,
-    "on"      : "favorite.png",
-    "off"     : "~/favorited.png"
+    "caption": "Boolean using images",
+    "value": false,
+    "on": "favorite.png",
+    "off": "~/favorited.png"
 }
 ```
 
  <a name="type" />
 
 
-### <a name="type"></a>種類
+### <a name="type"></a>型
 
 種類はいずれかに設定できます`"boolean"`または`"checkbox"`します。 かどうかはブール値に設定はまたはを使用して、UISlider イメージ (両方`"on"`と`"off"`設定されます)。 かどうかはチェック ボックスをオンに設定すると、それはチェック ボックスを使用します。 `"group"`プロパティは、特定のグループに属するものとしてブール型の要素のタグを使用できます。 コンテナーのルートもある場合に役立ちます。 これは、`"group"`ルートとしてのプロパティは、同じグループに属しているすべてのブール値 (またはチェック ボックス) の数は、結果を集計します。
 
@@ -394,30 +394,30 @@ class Foo {
 
 データを入力するのにユーザーを許可するのにには、エントリの要素を使用します。 エントリの要素の型は`"entry"`または`"password"`します。 `"caption"`プロパティは、右側に表示するテキストに設定し、`"value"`エントリを設定する初期値に設定されています。 `"placeholder"` (灰色に表示されます) 空のエントリをユーザーにヒントを表示するために使用します。 次にいくつかの例を示します。
 
-```csharp
+```json
 {
-        "type": "entry",
-        "caption": "Username",
-        "value": "",
-        "placeholder": "Your account username"
+    "type": "entry",
+    "caption": "Username",
+    "value": "",
+    "placeholder": "Your account username"
 }, {
-        "type": "password",
-        "caption": "Password",
-        "value": "",
-        "placeholder": "You password"
+    "type": "password",
+    "caption": "Password",
+    "value": "",
+    "placeholder": "You password"
 }, {
-        "type": "entry",
-        "caption": "Zip Code",
-        "value": "01010",
-        "placeholder": "your zip code",
-        "keyboard": "numbers"
+    "type": "entry",
+    "caption": "Zip Code",
+    "value": "01010",
+    "placeholder": "your zip code",
+    "keyboard": "numbers"
 }, {
-        "type": "entry",
-        "return-key": "route",
-        "caption": "Entry with 'route'",
-        "placeholder": "captialization all + no corrections",
-        "capitalization": "all",
-        "autocorrect": "no"
+    "type": "entry",
+    "return-key": "route",
+    "caption": "Entry with 'route'",
+    "placeholder": "captialization all + no corrections",
+    "capitalization": "all",
+    "autocorrect": "no"
 }
 ```
 
@@ -515,22 +515,22 @@ class Foo {
 
 要素の型`"datetime"`、`"date"`と`"time"`時刻と日付、日付または時刻を表示するために使用します。 これらの要素は、キャプションと値をパラメーターとして取得します。 値は、.NET DateTime.Parse 関数でサポートされている任意の形式で記述できます。 例:
 
-```csharp
+```json
 "header": "Dates and Times",
 "elements": [
-        {
-                "type": "datetime",
-                "caption": "Date and Time",
-                "value": "Sat, 01 Nov 2008 19:35:00 GMT"
-        }, {
-                "type": "date",
-                "caption": "Date",
-                "value": "10/10"
-        }, {
-                "type": "time",
-                "caption": "Time",
-                "value": "11:23"
-                }                       
+    {
+        "type": "datetime",
+        "caption": "Date and Time",
+        "value": "Sat, 01 Nov 2008 19:35:00 GMT"
+    }, {
+        "type": "date",
+        "caption": "Date",
+        "value": "10/10"
+    }, {
+        "type": "time",
+        "caption": "Time",
+        "value": "11:23"
+    }                       
 ]
 ```
 
@@ -541,10 +541,10 @@ class Foo {
 
 セルを作成できますがタップされたときに、指定した URL のコンテンツをレンダリングする UIWebView の埋め込みがローカルまたはリモートのいずれかを使用して、`"html"`型。 この要素の 2 つのプロパティは`"caption"`と`"url"`:
 
-```csharp
+```json
 {
-        "type": "html",
-        "caption": "Miguel's blog",
-        "url": "https://tirania.org/blog" 
+    "type": "html",
+    "caption": "Miguel's blog",
+    "url": "https://tirania.org/blog" 
 }
 ```

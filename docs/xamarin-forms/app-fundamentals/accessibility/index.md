@@ -6,13 +6,14 @@ ms.assetid: 99B8A8E8-6F5E-46BC-9639-1C4A6D301049
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/15/2018
-ms.openlocfilehash: ac0ffbdce6b0c55e8ad9d774d80e3d9b8bf84089
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.date: 05/28/2019
+ms.custom: video
+ms.openlocfilehash: 2aaa61400d3775c4d622b805d24ff0b338017de5
+ms.sourcegitcommit: 4a1520dee7759f8355ea65c8bb3d1bac8ba58122
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116447"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66354041"
 ---
 # <a name="xamarinforms-accessibility"></a>Xamarin.Forms のアクセシビリティ
 
@@ -24,7 +25,7 @@ Xamarin.Forms アプリケーションにアクセシビリティを備えると
 
 現在、Xamarin.Forms には、基になる各プラットフォーム上で使用できるアクセシビリティ API のすべてに対する "*組み込み*" のサポートが含まれているわけではありません。 ただし、ユーザー インターフェイス要素上でのオートメーション プロパティの設定がサポートされ、スクリーン リーダーとナビゲーション支援ツールがサポートされます。これは、アクセシビリティを備えたアプリケーション構築における最も重要な部分の 1 つです。 詳細については、[オートメーション プロパティ](~/xamarin-forms/app-fundamentals/accessibility/automation-properties.md)に関するページをご覧ください。
 
-Xamarin.Forms アプリケーションでは、コントロールのタブ オーダーを指定することもできます。 詳細については、[キーボード ナビゲーション](~/xamarin-forms/app-fundamentals/accessibility/keyboard.md)に関するページをご覧ください。
+Xamarin.Forms アプリケーションでは、指定したコントロールのタブ オーダーを指定して、ユーザビリティとアクセシビリティを改善することもできます。 詳細については、[キーボード アクセシビリティ](~/xamarin-forms/app-fundamentals/accessibility/keyboard.md)に関するページをご覧ください。
 
 その他のアクセシビリティ API ([iOS での PostNotification](~/ios/app-fundamentals/accessibility.md) など) については、[`DependencyService`](~/xamarin-forms/app-fundamentals/dependency-service/index.md) または [カスタム レンダラー](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)の実装の方が適している可能性があります。 これらについては、このガイドでは説明しません。
 
@@ -34,10 +35,16 @@ Xamarin.Forms アプリケーションでは、コントロールのタブ オ�
 
 - [**iOS のテスト**](~/ios/app-fundamentals/accessibility.md)
 - [**Android のテスト**](~/android/app-fundamentals/accessibility.md)
-- [**Windows AccScope (MSDN)**](https://msdn.microsoft.com/library/windows/desktop/dn433239)
+- [**Windows AccScope (MSDN)** ](https://msdn.microsoft.com/library/windows/desktop/dn433239)
 
 ## <a name="related-links"></a>関連リンク
 
 - [クロスプラットフォームのアクセシビリティ](~/cross-platform/app-fundamentals/accessibility.md)
 - [オートメーションのプロパティ](~/xamarin-forms/app-fundamentals/accessibility/automation-properties.md)
 - [キーボード アクセシビリティ](~/xamarin-forms/app-fundamentals/accessibility/keyboard.md)
+
+## <a name="related-video"></a>関連ビデオ
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Making-Mobile-Apps-Accessible/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

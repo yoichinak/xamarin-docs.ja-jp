@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Essentials:[Preferences]
+title: Xamarin.Essentials:Preferences
 description: このドキュメントで説明する Xamarin.Essentials の Preferences クラスでは、アプリケーションのユーザー設定がキー/値ストアに保存されます。 クラスの使用方法と、格納できるデータの種類について説明します。
 ms.assetid: AA81BCBD-79BA-448F-942B-BA4415CA50FF
 author: jamesmontemagno
@@ -13,7 +13,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 01/15/2019
 ms.locfileid: "54317883"
 ---
-# <a name="xamarinessentials-preferences"></a>Xamarin.Essentials:[Preferences]
+# <a name="xamarinessentials-preferences"></a>Xamarin.Essentials:Preferences
 
 **Preferences** クラスを使用すると、アプリケーションのユーザー設定をキー/値ストアに保存できます。
 
@@ -23,7 +23,7 @@ ms.locfileid: "54317883"
 
 ## <a name="using-preferences"></a>Preferences の使用
 
-自分のクラスの Xamarin.Essentials に参照を追加します。
+自分のクラスに Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;

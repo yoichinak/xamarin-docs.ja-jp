@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/15/2017
 ms.openlocfilehash: b9bf0e1ba14f4e8584bfd8492776ac7c8668df87
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563323"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61175179"
 ---
 # <a name="xaml-standard-preview-controls"></a>XAML Standard (プレビュー) のコントロール
 
@@ -46,7 +46,7 @@ XAML Standard で新しいプロパティと列挙型の名前を持つコント
 |ボタン|BorderWidth|BorderThickness|
 |ProgressBar|進行状況|[値]|
 |ボタン、エントリ、ラベル、エディター、SearchBar、スパン、フォント|FontAttributesBold、斜体、なし|通常、FontStyleItalic|
-|ボタン、エントリ、ラベル、エディター、SearchBar、スパン、フォント|FontAttributes|FontWeights * 太字、標準|
+|ボタン、エントリ、ラベル、エディター、SearchBar、スパン、フォント|FontAttributes|FontWeights *Bold, Normal|
 |InputView|電子メール KeyboardDefault、Url、番号、電話、テキスト、チャット、|InputScopeNameValue * 既定、Url、数値、TelephoneNumber、テキスト、チャット、EmailNameOrAddress|
 |StackPanel|StackOrientation|印刷の向き *|
 

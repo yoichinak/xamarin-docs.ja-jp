@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/22/2018
 ms.openlocfilehash: 9567f3ad8d748a94a03cd1c86254072d4ba3bbdc
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563525"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61075128"
 ---
 # <a name="xaml-compilation-in-xamarinforms"></a>Xamarin.Forms の XAML のコンパイル
 
@@ -58,7 +58,7 @@ public class HomePage : ContentPage
 この例では、コンパイル時に XAML のチェックでは、`HomePage`クラスが実行され、エラーは、コンパイル プロセスの一部として報告します。
 
 > [!NOTE]
-> Xamarin.Forms アプリケーションのデータ バインディングのパフォーマンスを向上させるためには、コンパイル済みのバインドを有効にすることができます。 詳細については、[コンパイル バインド](~/xamarin-forms/app-fundamentals/data-binding/compiled-bindings.md)を参照してください。
+> Xamarin.Forms アプリケーションのデータ バインディングのパフォーマンスを向上させるために、コンパイル済みのバインドを有効にすることができます。 詳細については、[コンパイル済みバインディング](~/xamarin-forms/app-fundamentals/data-binding/compiled-bindings.md) を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 

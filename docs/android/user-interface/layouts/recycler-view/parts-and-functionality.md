@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 07/13/2018
 ms.openlocfilehash: 13678d3b1bca102e6f608ad1c11838db1f14cd08
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105000"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61309185"
 ---
 # <a name="recyclerview-parts-and-functionality"></a>RecyclerView のパーツと機能
 
@@ -94,7 +94,7 @@ Item ビューを再利用、に加えて`RecyclerView`も別の効率性の最�
 
 レイアウト マネージャーを指定する、選択したレイアウト マネージャーをインスタンス化に渡すと、`SetLayoutManager`メソッド。 メモした*する必要があります*レイアウト マネージャーを指定&ndash;`RecyclerView`デフォルトで、定義済みのレイアウト マネージャーを選択できません。
 
-レイアウト マネージャーの詳細については、、 [RecyclerView.LayoutManager クラス参照](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.LayoutManager.html)を参照してください。
+レイアウト マネージャーの詳細については、次を参照してください。、 [RecyclerView.LayoutManager クラス参照](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.LayoutManager.html)します。
 
 
 ### <a name="the-view-holder"></a>ビューの所有者
@@ -152,7 +152,7 @@ Item ビューを再利用、に加えて`RecyclerView`も別の効率性の最�
 
 -  **`NotifyDataSetChanged`** &ndash; データ セットが変更されたことを通知 (完全な更新を強制する)。
 
-データ セットが変更されたか正確にわかっている場合は、更新には、上の適切なメソッドを呼び出すことができます`RecyclerView`最も効率的な方法でします。 データ セットが変更されたか正確にわからない場合は、呼び出す`NotifyDataSetChanged`、あまり効率的であるため、`RecyclerView`をユーザーに表示されているすべてのビューを更新する必要があります。 これらのメソッドの詳細については、[RecyclerView.Adapter](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.Adapter.html)を参照してください。
+データ セットが変更されたか正確にわかっている場合は、更新には、上の適切なメソッドを呼び出すことができます`RecyclerView`最も効率的な方法でします。 データ セットが変更されたか正確にわからない場合は、呼び出す`NotifyDataSetChanged`、あまり効率的であるため、`RecyclerView`をユーザーに表示されているすべてのビューを更新する必要があります。 これらのメソッドの詳細については、次を参照してください。 [RecyclerView.Adapter](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.Adapter.html)します。
 
 次のトピックで[A Basic RecyclerView の例](~/android/user-interface/layouts/recycler-view/recyclerview-example.md)アプリの例は部分と上記で説明した機能の実際のコード例を示すために実装されます。
 

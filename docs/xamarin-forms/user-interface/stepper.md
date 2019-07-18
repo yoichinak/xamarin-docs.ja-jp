@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/17/2018
 ms.openlocfilehash: a224d82ed7bb993f51be6cca6ccf09b5331cfac0
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53052207"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61250580"
 ---
 # <a name="xamarinforms-stepper"></a>Xamarin.Forms ステッパ
 
@@ -182,7 +182,7 @@ double value = stepper.Value;
 </ContentPage>
 ```
 
-[ `Rotation` ](xref:Xamarin.Forms.VisualElement.Rotation)最初の[ `Label` ](xref:Xamarin.Forms.Label)にバインドされて、 [ `Value` ](xref:Xamarin.Forms.Stepper.Value)のプロパティ、 [ `Stepper` ](xref:Xamarin.Forms.Stepper)現状、 [ `Text` ](xref:Xamarin.Forms.Label.Text)プロパティは、2 つ目の`Label`で、`StringFormat`仕様。 **ステッパの基本的なバインディング**ページ関数を少し異なる方法で 2 つの前のページから: ページが最初に表示される、2 番目の`Label`値を持つテキスト文字列が表示されます。 データ バインディングを使用すると便利です。 データ バインドせずにテキストを表示する、具体的には初期化する必要があるが、`Text`のプロパティ、`Label`またはの起動処理をシミュレートする、 [ `ValueChanged` ](xref:Xamarin.Forms.Stepper.ValueChanged)クラス コンス トラクターからイベント ハンドラーを呼び出すことによってイベント.
+[ `Rotation` ](xref:Xamarin.Forms.VisualElement.Rotation)最初の[ `Label` ](xref:Xamarin.Forms.Label)にバインドされて、 [ `Value` ](xref:Xamarin.Forms.Stepper.Value)のプロパティ、 [ `Stepper` ](xref:Xamarin.Forms.Stepper)現状、 [ `Text` ](xref:Xamarin.Forms.Label.Text)プロパティは、2 つ目の`Label`で、`StringFormat`仕様。 **ステッパの基本的なバインディング**ページ関数を少し異なる方法で 2 つの前のページから。ページが最初に表示される、2 番目の`Label`値を持つテキスト文字列が表示されます。 データ バインディングを使用すると便利です。 データ バインドせずにテキストを表示する、具体的には初期化する必要があるが、`Text`のプロパティ、`Label`またはの起動処理をシミュレートする、 [ `ValueChanged` ](xref:Xamarin.Forms.Stepper.ValueChanged)クラス コンス トラクターからイベント ハンドラーを呼び出すことによってイベント.
 
 ## <a name="precautions"></a>注意事項
 

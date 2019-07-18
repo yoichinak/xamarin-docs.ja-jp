@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 1f3e6dcc81c75d12a1dbba8fefc62a85178c8c24
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: f6a7f8859340dcc8e48b6a4e6f56847168f4b71e
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57670665"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829761"
 ---
 # <a name="android-localization"></a>Android のローカライズ
 
@@ -192,7 +192,7 @@ var translated = Resources.GetQuantityString (
 
 詳細に記述している、 [Android docs](https://developer.android.com/guide/topics/resources/string-resource.html#Plurals)します。'特別な' を処理するものを特定の言語が必要ない場合`quantity`文字列は無視されます (たとえば、英語ののみを使用`one`と`other`指定する、`zero`文字列には効果はありません、これは使用されません)。
 
-### <a name="images"></a>イメージ
+### <a name="images"></a>画像
 
 イメージのローカライズされた文字列ファイルと同じ規則に従います: に、アプリケーションで参照されているすべてのイメージを配置する必要があります**drawable**ディレクトリがフォールバックします。
 
@@ -252,10 +252,12 @@ adb shell setprop persist.sys.locale fr-CA;stop;sleep 5;start
 ### <a name="device-testing"></a>デバイスのテスト
 
 デバイスをテストするには、言語を変更、**設定**アプリ。
-**ヒント:** ようにをメモして、アイコンとメニュー項目の場所、言語設定を元に戻すことができます。
+
+> [!TIP]
+> ようにをメモして、アイコンとメニュー項目の場所、言語設定を元に戻すことができます。
 
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
 この記事では、組み込みのリソースの処理を使用して Android アプリケーションのローカライズの基本について説明します。 IOS、Android、および (Xamarin.Forms) を含むクロス プラットフォーム アプリでの i18n および L10n の詳細を学習できます[このクロスプラット フォーム対応ガイド](~/cross-platform/app-fundamentals/localization.md)します。
 

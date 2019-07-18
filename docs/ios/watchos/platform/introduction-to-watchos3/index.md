@@ -1,5 +1,5 @@
 ---
-title: WatchOS 3 の概要
+title: watchOS 3 の概要
 description: この記事では、Xamarin 開発者向けのすべての新規および変更した Api と watchOS 3 で使用できる機能を紹介します。
 ms.prod: xamarin
 ms.assetid: B8ABE1E1-8688-4262-BE66-A16813C2D671
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 10/07/2017
 ms.openlocfilehash: 0428a0df157e359ab34a6a71dbba31bdeb6962fa
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121933"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61224063"
 ---
-# <a name="introduction-to-watchos-3"></a>WatchOS 3 の概要
+# <a name="introduction-to-watchos-3"></a>watchOS 3 の概要
 
 _この記事では、Xamarin 開発者向けのすべての新規および変更した Api と watchOS 3 で使用できる機能を紹介します。_
 
@@ -151,7 +151,7 @@ watchOS 3 には、WatchKit フレームワークを次のようにいくつか�
 - アプリはデジタル クラウンの状態を取得できます、new を使用して[WKCrownSequencer](https://developer.apple.com/reference/watchkit/wkcrownsequencer)クラスし、ユーザーを使用して、クラウンを回転したときに、更新プログラムを受信、 [WKCrownDelegate](https://developer.apple.com/reference/watchkit/wkcrowndelegate)クラス。
 - [WKExtension](https://developer.apple.com/reference/watchkit/wkextension)クラスが含まれています、`ApplicationState`メソッドと[WKApplicationState](https://developer.apple.com/reference/watchkit/wkapplicationstate)アプリがアプリのランタイム状態を追跡するために使用できる定数。 `WKExtension` バック グラウンド タスクをスケジュールするために使用する 2 つの新しいメソッドを提供します。
 - [WKExtensionDelegate](https://developer.apple.com/reference/watchkit/wkextensiondelegate)新しいが含まれています`ApplicationWillEnterForeground`、`ApplicationDidEnterBackground`と`HandleBackgroundTasks`アプリの状態の変化を監視して、バック グラウンド タスクの更新を処理するメソッド。
-- 新しい[WKGestureRecognizer](https://developer.apple.com/reference/watchkit/wkgesturerecognizer) watch アプリへのジェスチャ認識の次の型を提供するクラスが追加されました: [WKLongPressGestureRecognizer](https://developer.apple.com/reference/watchkit/wklongpressgesturerecognizer)、 [WKPanGestureRecognizer](https://developer.apple.com/reference/watchkit/wkpangesturerecognizer)、 [WKSwipeGestureRecognizer](https://developer.apple.com/reference/watchkit/wkswipegesturerecognizer)と[WKTapGestureRecognizer](https://developer.apple.com/reference/watchkit/wktapgesturerecognizer)します。
+- 新しい[WKGestureRecognizer](https://developer.apple.com/reference/watchkit/wkgesturerecognizer) watch アプリへのジェスチャ認識の次の型を提供するクラスが追加されました。[WKLongPressGestureRecognizer](https://developer.apple.com/reference/watchkit/wklongpressgesturerecognizer)、 [WKPanGestureRecognizer](https://developer.apple.com/reference/watchkit/wkpangesturerecognizer)、 [WKSwipeGestureRecognizer](https://developer.apple.com/reference/watchkit/wkswipegesturerecognizer)と[WKTapGestureRecognizer](https://developer.apple.com/reference/watchkit/wktapgesturerecognizer)します。
 - 新しい[WKinterfaceHMCamera](https://developer.apple.com/reference/watchkit/wkinterfacehmcamera)任意 HomeKit IP カメラを接続クラスがインターフェイスを提供します。
 - 新しい[WKInterfaceInlineMovie](https://developer.apple.com/reference/watchkit/wkinterfaceinlinemovie)クラスは、ムービーが、ユーザーがタップすると、実行中のムービーで置き換えられる「ポスター」を表示するアプリを使用できます。
 - 新しい[WKInterfacePaymentButton](https://developer.apple.com/reference/watchkit/wkinterfacepaymentbutton)クラスがタップされたときに、支払い要求を開始する UI で、Apple Pay のボタンを表示するアプリを使用できます。

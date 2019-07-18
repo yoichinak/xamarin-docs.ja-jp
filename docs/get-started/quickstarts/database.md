@@ -9,12 +9,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/01/2019
-ms.openlocfilehash: 5c3daf04c08e2109c46b24c198fef8e71fac2f3d
-ms.sourcegitcommit: e7f27ba75cae5099ef053b819b84132a77d4f9e7
+ms.openlocfilehash: e9aed82ef0db9de35bd4cffe7daebcaa9389e42e
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "58854991"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832137"
 ---
 # <a name="store-data-in-a-local-sqlitenet-database"></a>SQLite.NET のローカル データベースにデータを格納します。
 
@@ -40,11 +40,11 @@ ms.locfileid: "58854991"
 
 1. Visual Studio を起動し、ノートのソリューションを開きます。
 
-2. **ソリューション エクスプ ローラー**を選択、**ノート**プロジェクトを右クリックし、 **NuGet パッケージの管理.**:
+2. **ソリューション エクスプ ローラー**を選択、**ノート**プロジェクトを右クリックし、 **NuGet パッケージの管理.** :
 
     ![](database-images/vs/add-nuget-packages.png "NuGet パッケージを追加します")    
 
-3. **NuGet パッケージ マネージャー**で、**[参照]** タブを選択し、**pcl-sqlite-net** NuGet パッケージを検索して選択し、**[インストール]** ボタンをクリックしてプロジェクトに追加します。
+3. **NuGet パッケージ マネージャー**で、 **[参照]** タブを選択し、**pcl-sqlite-net** NuGet パッケージを検索して選択し、 **[インストール]** ボタンをクリックしてプロジェクトに追加します。
 
     ![](database-images/vs/add-package.png "パッケージを追加します。")
 
@@ -177,7 +177,21 @@ ms.locfileid: "58854991"
                 InitializeComponent();
                 MainPage = new NavigationPage(new NotesPage());
             }
-            ...
+
+            protected override void OnStart()
+            {
+                // Handle when your app starts
+            }
+
+            protected override void OnSleep()
+            {
+                // Handle when your app sleeps
+            }
+
+            protected override void OnResume()
+            {
+                // Handle when your app resumes
+            }
         }
     }
     ```
@@ -243,11 +257,11 @@ ms.locfileid: "58854991"
 
 1. Visual Studio for Mac 起動し、ノートのプロジェクトを開きます。
 
-2. **Solution Pad**を選択、**ノート**プロジェクトを右クリックし、**追加 > NuGet パッケージを追加しています.**:
+2. **Solution Pad**を選択、**ノート**プロジェクトを右クリックし、**追加 > NuGet パッケージを追加しています.** :
 
     ![](database-images/vsmac/add-nuget-packages.png "NuGet パッケージを追加します")    
 
-3. **[パッケージを追加]** ウィンドウで、**sqlite-net-pcl** NuGet パッケージを検索して選択し、**[パッケージを追加]** ボタンをクリックしてプロジェクトに追加します。
+3. **[パッケージを追加]** ウィンドウで、**sqlite-net-pcl** NuGet パッケージを検索して選択し、 **[パッケージを追加]** ボタンをクリックしてプロジェクトに追加します。
 
     ![](database-images/vsmac/add-package.png "パッケージを追加します。")
 
@@ -380,7 +394,21 @@ ms.locfileid: "58854991"
                 InitializeComponent();
                 MainPage = new NavigationPage(new NotesPage());
             }
-            ...
+
+            protected override void OnStart()
+            {
+                // Handle when your app starts
+            }
+
+            protected override void OnSleep()
+            {
+                // Handle when your app sleeps
+            }
+
+            protected override void OnResume()
+            {
+                // Handle when your app resumes
+            }
         }
     }
     ```

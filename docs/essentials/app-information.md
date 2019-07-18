@@ -23,7 +23,7 @@ ms.locfileid: "55233212"
 
 ## <a name="using-appinfo"></a>AppInfo の使用
 
-自分のクラスの Xamarin.Essentials に参照を追加します。
+自分のクラスに Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;

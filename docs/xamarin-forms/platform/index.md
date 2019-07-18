@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/08/2018
-ms.openlocfilehash: 3f0156926f8d7a31e2e80318d7b05a909f158653
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.openlocfilehash: cc19e2a4ea85391f585120f85b222b95ef63543f
+ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54207727"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67512848"
 ---
 # <a name="xamarinforms-platform-features"></a>Xamarin.Forms のプラットフォーム機能
 
@@ -24,7 +24,7 @@ Xamarin.Forms は拡張可能なとを使用してプラットフォーム固有
 
 ## <a name="device-classdevicemd"></a>[デバイス クラス](device.md)
 
-使用する方法、`Device`共有コードとユーザー インターフェイス (XAML を使用してを含む) でプラットフォーム固有の動作を作成するクラス。 についても説明します`BeginInvokeOnMainThread`バック グラウンド スレッドから UI コントロールを変更する場合に、このことが不可欠です。
+このガイドは、使用する方法をについて説明します、`Device`共有コードとユーザー インターフェイス (などの XAML を使用して)、およびバック グラウンド スレッドから UI コントロールと対話する方法でプラットフォーム固有の動作を作成するクラス。
 
 ## <a name="iosiosindexmd"></a>[iOS](ios/index.md)
 

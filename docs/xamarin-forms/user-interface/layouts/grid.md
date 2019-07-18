@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: 0d5df986caa01bba69b03d6502682889e78ecbc7
-ms.sourcegitcommit: ee464f165eee7b4485266c11f167be557a0bacb2
+ms.openlocfilehash: 1d445e3ef8869c74f052eb1153774dfab51ffd45
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58222316"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67649596"
 ---
 # <a name="xamarinforms-grid"></a>Xamarin.Forms のグリッド
 
@@ -54,7 +54,7 @@ ms.locfileid: "58222316"
 - **絶対**&ndash;列と、特定の固定の高さと幅の値を持つ行のサイズを設定します。 値として指定し、 `GridUnitType.Absolute` (C#) と`#`、XAML で`#`目的の値をされています。
 
 > [!NOTE]
-> 列の幅の値として設定`*`Xamarin.Forms で既定では、することにより、列が使用可能なスペースを埋めることです。 行の高さの値として設定されて`*`既定。 
+> 列の幅の値として設定`*`Xamarin.Forms で既定では、することにより、列が使用可能なスペースを埋めることです。 行の高さの値として設定されて`*`既定。
 
 次の 3 つの行と 2 つの列が必要なアプリケーションを考えてみます。 一番下の行を正確に 200px (縦) をある必要があり、一番上の行は、中央の行と高さが同じである 2 回必要があります。 左側の列に合わせたコンテンツ幅にする必要があるし、右側の列は、残りのスペースを埋める必要があります。
 
@@ -77,11 +77,12 @@ ms.locfileid: "58222316"
 C# の場合:
 
 ```csharp
-var grid = new Grid();
+Grid grid = new Grid();
 grid.RowDefinitions.Add (new RowDefinition { Height = new GridLength(2, GridUnitType.Star) });
 grid.RowDefinitions.Add (new RowDefinition { Height = new GridLength (1, GridUnitType.Star) });
 grid.RowDefinitions.Add (new RowDefinition { Height = new GridLength(200)});
 grid.ColumnDefinitions.Add (new ColumnDefinition{ Width = new GridLength (200) });
+grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Auto) });
 ```
 
 ### <a name="placing-views-in-a-grid"></a>グリッド ビューを配置します。
@@ -164,8 +165,8 @@ grid.Children.Add(bottomRight, 1, 2, 1, 2);
 ```xaml
 <Grid ColumnSpacing="5">
   <Grid.ColumnDefinitions>
-    <ColumnDefinitions Width="*" />
-    <ColumnDefinitions Width="*" />
+    <ColumnDefinition Width="*" />
+    <ColumnDefinition Width="*" />
   </Grid.ColumnDefinitions>
 </Grid>
 ```

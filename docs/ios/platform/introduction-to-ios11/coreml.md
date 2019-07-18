@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 08/30/2017
 ms.openlocfilehash: 3a00a7256cace9cbcff3478d866646d48cfdc50b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120074"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61385080"
 ---
 # <a name="introduction-to-coreml-in-xamarinios"></a>Xamarin.iOS で CoreML の概要
 
@@ -37,7 +37,7 @@ CoreML モデルの追加 (ファイル、 **.mlmodel**拡張機能) を**リソ
 
 モデル ファイルのプロパティでは、その**ビルド アクション**に設定されている**CoreMLModel**します。 つまり、コンパイルには、 **.mlmodelc**ファイル、アプリケーションのビルド時にします。
 
-### <a name="2-load-the-model"></a>2.モデルを読み込む
+### <a name="2-load-the-model"></a>2.モデルを読み込みます
 
 使用して、モデルを読み込み、`MLModel.Create`静的メソッド。
 
@@ -175,7 +175,7 @@ void HandleClassification(VNRequest request, NSError error){
 
 * [Vision & CoreML サンプル](https://developer.xamarin.com/samples/monotouch/ios11/CoreMLVision/)イメージ パラメーターを受け取り、1 桁の数字を認識する CoreML モデルに渡される画像の正方形の領域を識別するビジョン フレームワークを使用します。
 
-* 最後に、 [CoreML 画像認識のサンプル](https://developer.xamarin.com/samples/monotouch/ios11/CoreMLImageRecognition/)CoreML を写真で機能を識別するために使用します。 既定では、小さい**SqueezeNet**モデル (5 MB) が、書き込まれたダウンロードされ、大きい方を組み込むように**VGG16**モデル (553 MB)。 詳細については、、[サンプルの readme](https://github.com/xamarin/ios-samples/blob/master/ios11/CoreMLImageRecognition/CoreMLImageRecognition/README.md)を参照してください。
+* 最後に、 [CoreML 画像認識のサンプル](https://developer.xamarin.com/samples/monotouch/ios11/CoreMLImageRecognition/)CoreML を写真で機能を識別するために使用します。 既定では、小さい**SqueezeNet**モデル (5 MB) が、書き込まれたダウンロードされ、大きい方を組み込むように**VGG16**モデル (553 MB)。 詳細については、次を参照してください。、[サンプルの readme](https://github.com/xamarin/ios-samples/blob/master/ios11/CoreMLImageRecognition/CoreMLImageRecognition/README.md)します。
 
 ## <a name="related-links"></a>関連リンク
 

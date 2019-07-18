@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 6bf2f63e944e178d80f76fe363ef24410ff052ce
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: e38ca07aeef1cbd8e121421ebcbad2207a1bb823
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50123779"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865982"
 ---
 # <a name="sandboxing-a-xamarinmac-app"></a>Xamarin.Mac アプリのサンド ボックス化
 
@@ -26,7 +26,7 @@ Xamarin.Mac アプリケーションで c# と .NET を使用する場合、OBJE
 
 この記事では、Xamarin.Mac アプリケーションと、サンド ボックスに移動する要素のすべてのサンド ボックス化操作の基本を説明します。 コンテナー ディレクトリ、権利、ユーザー指定のアクセス許可、特権の分離、およびカーネルの強制実行します。 作業することを強くお勧め、[こんにちは, Mac](~/mac/get-started/hello-mac.md)具体的には、最初の記事、 [Xcode と Interface Builder の概要](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)と[Outlet と Action](~/mac/get-started/hello-mac.md#outlets-and-actions)ほどのセクションでは、主要な概念と、この記事で使用する方法について説明します。
 
-確認することも、 [c# を公開するクラス/Objective-C メソッド](~/mac/internals/how-it-works.md)のセクション、 [Xamarin.Mac 内部](~/mac/internals/how-it-works.md)が説明されても、ドキュメント、`Register`と`Export`属性ネットワーク上での c# クラスを Objective-C オブジェクトと UI への要素に使用されます。
+確認することも、 [C# を公開するクラス/Objective-C メソッド](~/mac/internals/how-it-works.md)のセクション、 [Xamarin.Mac 内部](~/mac/internals/how-it-works.md)が説明されても、ドキュメント、`Register`と`Export`属性ネットワーク上での C# クラスを Objective-C オブジェクトと UI への要素に使用されます。
 
 ## <a name="about-the-app-sandbox"></a>アプリのサンド ボックスについて
 
@@ -87,13 +87,13 @@ App Sandbox を採用する場合でも、アプリケーションが使用す�
 8. 次の追加ステートメントを使用します。 `using WebKit;`
 9. ように、`ViewDidLoad`メソッドの次のようになります。 
 
-```csharp
-public override void AwakeFromNib ()
-{
-    base.AwakeFromNib ();
-    webView.MainFrame.LoadRequest(new NSUrlRequest(new NSUrl("http://www.apple.com")));
-}
-```
+    ```csharp
+    public override void AwakeFromNib ()
+    {
+        base.AwakeFromNib ();
+        webView.MainFrame.LoadRequest(new NSUrlRequest(new NSUrl("http://www.apple.com")));
+    }
+    ```
 
 10. 変更内容を保存します。
 
@@ -164,14 +164,14 @@ public override void AwakeFromNib ()
 3. 次をダブルクリック、 **Entitlements.plist**ファイルを確認します、 **iCloud のキー値ストア**と**iCloud コンテナー**上で作成したアプリ ID は、すべて一致 (例。`com.appracatappra.MacSandbox`): 
 
     [![Entitlements.plist ファイルを編集](sandboxing-images/sign17.png "Entitlements.plist ファイルを編集")](sandboxing-images/sign17-large.png#lightbox)
-3. 変更内容を保存します。
-4. **Solution Pad**、編集するためのオプションを開くプロジェクト ファイルをダブルクリックします。  
+4. 変更内容を保存します。
+5. **Solution Pad**、編集するためのオプションを開くプロジェクト ファイルをダブルクリックします。  
 
     ![Editign ソリューションのオプション](sandboxing-images/sign14.png "Editign ソリューションのオプション")
-5. 選択**Mac 署名**、し確認**アプリケーション バンドルに署名**と**インストーラー パッケージに署名**します。 **プロビジョニング プロファイル**、上記で作成した 1 つを選択します。 
+6. 選択**Mac 署名**、し確認**アプリケーション バンドルに署名**と**インストーラー パッケージに署名**します。 **プロビジョニング プロファイル**、上記で作成した 1 つを選択します。 
 
     ![プロビジョニング プロファイルを設定して](sandboxing-images/sign15.png "プロビジョニング プロファイルの設定")
-6. をクリックして、**完了**ボタンをクリックします。
+7. をクリックして、**完了**ボタンをクリックします。
 
 > [!IMPORTANT]
 > 終了し、新しいアプリ ID と Xcode によってインストールされたプロビジョニング プロファイルを認識する場合は、Visual Studio for Mac を再起動する必要があります。
@@ -460,7 +460,7 @@ Xamarin.Mac アプリを実行するの Apple の署名されたバージョン�
 
 1. ターミナル アプリを開きます (で`/Applications/Utilities`)。
 2. Xamarin.Mac アプリの Apple の署名されたバージョンを Finder ウィンドウを開きます。
-3. 型`asctl container acl add -file `ターミナル ウィンドウでします。
+3. 型`asctl container acl add -file`ターミナル ウィンドウでします。
 4. Xamarin.Mac アプリのアイコンをこの Finder ウィンドウからドラッグし、ターミナル ウィンドウにドロップします。
 5. ファイルへの完全パスは、ターミナル、コマンドに追加されます。
 6. キーを押して**Enter**コマンドを実行します。

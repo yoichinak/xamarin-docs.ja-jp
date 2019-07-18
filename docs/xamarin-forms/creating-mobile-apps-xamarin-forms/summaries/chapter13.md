@@ -1,6 +1,6 @@
 ---
 title: 第 13 章の概要です。 ビットマップ
-description: 'Xamarin.Forms によるモバイル アプリの作成: 第 13 章の概要。 ビットマップ'
+description: Xamarin.Forms によるモバイル アプリの作成。第 13 章の概要です。 ビットマップ
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 5D153857-B6B7-4A14-8FB9-067DE198C2C7
@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2018
 ms.openlocfilehash: 737e242e14778f38405845541b2ca30d27c3cf5a
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059601"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61334620"
 ---
 # <a name="summary-of-chapter-13-bitmaps"></a>第 13 章の概要です。 ビットマップ
 
@@ -173,8 +173,8 @@ UWP プロジェクトには、ビットマップの名前付けスキームで�
 
 プラットフォームのプロジェクトにビットマップを追加するときに、**ビルド アクション**する必要があります。
 
-- iOS: **BundleResource**
-- Android: **AndroidResource**
+- iOS の場合:**BundleResource**
+- Android:**AndroidResource**
 - UWP:**コンテンツ**
 
 [ **ImageTap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ImageTap)サンプルから成る 2 つのボタンのようなオブジェクトを作成します`Image`を持つ要素を`TapGestureRecognizer`をインストールします。 オブジェクトが 1 インチの四角形をすることが目的です。 `Source`プロパティの`Image`を使用して設定されている`OnPlatform`と`On`プラットフォームで可能性のあるさまざまなファイル名を参照するオブジェクト。 ビットマップ イメージには、どのサイズ ビットマップが取得され、表示を表示できるように、ピクセル サイズを示す番号が含まれます。

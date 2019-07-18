@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 32c3651734fcc94dd75372f0c47f0ffb22b4a4ee
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.openlocfilehash: 4587bb89ddfe43873e666a07514075f1a952e985
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54209707"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926787"
 ---
 # <a name="simultaneous-pan-gesture-recognition-on-ios"></a>IOS での同時パン ジェスチャ認識
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
 
 ときに、 [ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer)がすべてのジェスチャがによってキャプチャされた pan のスクロール ビュー内のビューにアタッチされている、`PanGestureRecognizer`は、スクロール ビューに渡されます。 そのため、スクロール ビュー不要になったスクロールします。
 
@@ -30,7 +30,7 @@ ms.locfileid: "54209707"
 </Application>
 ```
 
-代わりに、fluent API を使用して c# から使用できます。
+代わりに、fluent API を使用して C# から使用できます。
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -46,6 +46,6 @@ Xamarin.Forms.Application.Current.On<iOS>().SetPanGestureRecognizerShouldRecogni
 
 ## <a name="related-links"></a>関連リンク
 
-- [プラットフォーム仕様 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+- [プラットフォーム仕様 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
 - [プラットフォーム仕様の作成](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

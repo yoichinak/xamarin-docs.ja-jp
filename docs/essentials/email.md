@@ -5,12 +5,12 @@ ms.assetid: 5FBB6FF0-0E7B-4C29-8F06-91642AF12629
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 04/02/2019
-ms.openlocfilehash: 06b4f4b612d0cb44e467a9da6dbee3194338027d
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: 5ddbb6f3d1c1ebf16ca5534b7effd1993c3d8b26
+ms.sourcegitcommit: 0c823f5439f4279a35af23dd466e7a0483e65d50
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58869963"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65804912"
 ---
 # <a name="xamarinessentials-email"></a>Xamarin.Essentials:電子メール
 
@@ -20,9 +20,12 @@ ms.locfileid: "58869963"
 
 [!include[](~/essentials/includes/get-started.md)]
 
+> [!TIP]
+> iOS で Email API を使用するには、物理デバイスで実行されている必要があります。それ以外の場合、例外がスローされます。
+
 ## <a name="using-email"></a>Email の使用
 
-自分のクラスの Xamarin.Essentials に参照を追加します。
+自分のクラスに Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;

@@ -1,5 +1,5 @@
 ---
-title: IOS 11 の概要
+title: iOS 11 の概要
 description: このドキュメントは、iOS 11、ARKit や CoreML、MapKit、PDFKit、SiriKit、ビジョン フレームワークなどの機能を記述するさまざまなガイドにリンクしています。
 ms.prod: xamarin
 ms.assetid: 22C38EA6-6DA9-4B92-B41B-814E589033F6
@@ -7,19 +7,14 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/19/2017
-ms.openlocfilehash: 5e75a7872081d82c289db0312bbc7d84bce77b4e
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 1542ae5d7dbdf008dd5b300dfb5820c3f04ae682
+ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116720"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67268894"
 ---
-# <a name="introduction-to-ios-11"></a>IOS 11 の概要
-
-_新しい iOS 11 をお試しください。 Xamarin を使用した Api です。_
-
-> [!NOTE]
-> 開始する前に確認して、[概要](get-started.md)Xcode 9 をインストールする方法についてのページ。
+# <a name="introduction-to-ios-11"></a>iOS 11 の概要
 
 ![ARKit 例](images/arkit.png) ![AR を配置するオブジェクト](images/arkit2.png) ![CoreML 例](images/coreml.png) ![MapKit の例](images/mapkit.png) ![ビジョンの四角形の例](images/vision1.png) ![ビジョンの顔の例](images/vision2.png) ![ドラッグ アンド ドロップの例](images/drag-drop.png) ![ドラッグ アンド ドロップの例](images/drag-drop2.png) ![SiriKit の例](images/sirikit.png)
 
@@ -86,12 +81,6 @@ C# の数値がある[サンプル](https://developer.xamarin.com/samples/ios/iO
 * [PDKFit ウィジェットのサンプル](https://developer.xamarin.com/samples/monotouch/ios11/PDFAnnotationWidgetsAdvanced)
 * [PDFKit 透かしのサンプル](https://developer.xamarin.com/samples/monotouch/ios11/PDFDocumentWatermark)
 
-## <a name="more-information"></a>説明
-
-IOS 11 の詳細については、Apple を参照してください。 [iOS 11 で新](https://developer.apple.com/ios/)ドキュメント。
-
-
 ## <a name="related-links"></a>関連リンク
 
-- [IOS 11 (Apple) で新します。](https://developer.apple.com/ios/)
 - [Xamarin iOS 11 のサンプル](https://developer.xamarin.com/samples/ios/iOS11/)

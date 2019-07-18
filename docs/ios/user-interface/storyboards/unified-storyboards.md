@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 26aeaa3d230a5c104014edd899b8d9231ced31e9
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: c9d98d9d3052f52dc7860ba513756e3a33d1dc58
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108523"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831915"
 ---
 # <a name="unified-storyboards-in-xamarinios"></a>Xamarin.iOS で統一されたストーリー ボード
 
@@ -114,9 +114,9 @@ Apple が特徴であるコレクションとして参照するコンテナー�
 
 開発者は、iPhone で表示される一般的な特徴であるコレクションを次に示します。
 
-|プロパティ|[値]|
+|プロパティ|値|
 |--- |--- |
-|`HorizontalSizeClass`|Compact|
+|`HorizontalSizeClass`|コンパクト|
 |`VerticalSizeClass`|Regular|
 |`UserInterfaceIdom`|電話番号|
 |`DisplayScale`|2.0|
@@ -125,12 +125,12 @@ Apple が特徴であるコレクションとして参照するコンテナー�
 
 その値の一部が不足している特徴であるコレクションが存在することも (Apple として参照する*未指定*)。
 
-|プロパティ|[値]|
+|プロパティ|値|
 |--- |--- |
-|`HorizontalSizeClass`|Compact|
-|`VerticalSizeClass`|指定されていません。|
-|`UserInterfaceIdom`|指定されていません。|
-|`DisplayScale`|指定されていません。|
+|`HorizontalSizeClass`|コンパクト|
+|`VerticalSizeClass`|[未指定]|
+|`UserInterfaceIdom`|[未指定]|
+|`DisplayScale`|[未指定]|
 
 一般に、ただし、開発者では、その特徴であるコレクションの特徴である環境が表示されたらがコレクションを返す完全修飾の上記の例に示す。
 
@@ -216,7 +216,7 @@ A`UIView`が分割ビュー コント ローラーの親として設定し、`Se
 
 iOS 8 では、次の表に示すように、特徴の変更に参加する、開発者が使用できるいくつかのコールバックを提供します。
 
-|Phase|コールバック|説明|
+|フェーズ|コールバック|説明|
 |--- |--- |--- |
 |セットアップ|<ul><li>`WillTransitionToTraitCollection`</li><li>`TraitCollectionDidChange`</li></ul>|<ul><li>特徴であるコレクションは、その新しい値に設定を取得する前に、特徴の変更の先頭にこのメソッドが呼び出されます。</li><li>メソッドは、アニメーションの実行前に、特徴であるコレクションの値が変更されたときに呼び出されます。</li></ul>|
 |アニメーション|`WillTransitionToTraitCollection`|このメソッドに渡される遷移のコーディネーターが、`AnimateAlongside`により、開発者は、既定のアニメーションと共に実行されるアニメーションを追加するプロパティ。|
@@ -552,7 +552,7 @@ public override void ViewDidLoad ()
 
 アダプティブ写真アプリケーション サイズ クラスがすべての方法を詳しく見て、特徴のコレクションとアダプティブのビュー コント ローラーを使用して、Xamarin.iOS で簡単に統合されたアプリケーションを作成します。
 
-## <a name="unified-storyboards"></a>統合ストーリー ボード
+## <a name="unified-storyboards"></a>統合ストーリーボード
 
 新しい ios 8、Unified ストーリー ボードがサイズ クラスの複数ターゲットとする、iPhone と iPad の両方のデバイスで表示できるストーリー ボード ファイルをユニファイド開発者が、1 つを作成できるようにします。 Unified ストーリー ボードを使用すると、開発者は、小さい UI 固有のコードを記述しが 1 つだけのインターフェイスのデザインを作成および管理します。
 
@@ -625,7 +625,7 @@ Iphone 縦向きの用紙のレイアウトを編集するには、左下隅で�
 
 ### <a name="adaptive-segue-types"></a>アダプティブ セグエの種類
 
-かどうか、開発者が前に、ストーリー ボードを使用しの既存のセグエの種類に精通することが**プッシュ**、**モーダル**と**ポップ オーバー**します。 次アダプティブ セグエの種類 (上で説明した新しいビュー コント ローラー API に対応) が可能サイズ クラスは、Unified ストーリー ボード ファイルに有効な場合は、:**表示**と**詳細の表示**.
+かどうか、開発者が前に、ストーリー ボードを使用しの既存のセグエの種類に精通することが**プッシュ**、**モーダル**と**ポップ オーバー**します。 サイズ クラスは、Unified ストーリー ボード ファイルに有効な場合は、次アダプティブ セグエの種類 (上で説明した新しいビュー コント ローラー API に対応) が提供されます。**表示**と**詳細を表示する**します。
 
 > [!IMPORTANT]
 > サイズ クラスを有効にするをセグエ既存のすべての新しい型に変換します。
@@ -693,12 +693,12 @@ Unified ストーリー ボードの実装を確認するを参照、`UnifiedSto
 
 動的な起動画面は、次の制限事項と考慮事項があります。
 
- - のみを使用して`UIKit`クラス。
- - 単一のルート ビューを使用して、`UIView`または`UIViewController`オブジェクト。
- - アプリケーションのコードへの接続を作成しない (追加しないでください**アクション**または**Outlet**)。
- - 追加しない`UIWebView`オブジェクト。
- - 任意のカスタム クラスを使用しないでください。
- - ランタイムの属性を使用しないでください。
+- のみを使用して`UIKit`クラス。
+- 単一のルート ビューを使用して、`UIView`または`UIViewController`オブジェクト。
+- アプリケーションのコードへの接続を作成しない (追加しないでください**アクション**または**Outlet**)。
+- 追加しない`UIWebView`オブジェクト。
+- 任意のカスタム クラスを使用しないでください。
+- ランタイムの属性を使用しないでください。
 
 上記のガイドラインを考慮してでは、既存の Xamarin iOS 8 のプロジェクトに動的な起動画面の追加を見てみましょう。
 
@@ -708,7 +708,7 @@ Unified ストーリー ボードの実装を確認するを参照、`UnifiedSto
 2. **ソリューション エクスプ ローラー**を右クリックし、`MainStoryboard.storyboard`ファイルおよび選択**プログラムから開く** > **Xcode の Interface Builder**:
 
     [![](unified-storyboards-images/dls01.png "Xcode インターフェイス ビルダーで開く")](unified-storyboards-images/dls01.png#lightbox)
-3. Xcode で次のように選択します**ファイル** > **新規** > **ファイル...**:
+3. Xcode で次のように選択します**ファイル** > **新規** > **ファイル...** :
 
     [![](unified-storyboards-images/dls02.png "ファイルを選択/新規")](unified-storyboards-images/dls02.png#lightbox)
 4. 選択**iOS** > **ユーザー インターフェイス** > **起動画面** をクリックし、**次**ボタン。
@@ -732,7 +732,7 @@ Unified ストーリー ボードの実装を確認するを参照、`UnifiedSto
     [![](unified-storyboards-images/dls08.png "選択、LaunchScreen.xib")](unified-storyboards-images/dls08.png#lightbox)
 11. ファイルに変更を保存し、Visual studio for mac を返す
 12. Visual Studio for Mac、Xcode で変更の同期を完了するまで待ちます。
-13. **ソリューション エクスプ ローラー**を右クリックし、**リソース**フォルダーと選択**追加** > **ファイルを追加しています.**:
+13. **ソリューション エクスプ ローラー**を右クリックし、**リソース**フォルダーと選択**追加** > **ファイルを追加しています.** :
 
     [![](unified-storyboards-images/dls09.png "選択は、追加/ファイルを追加しています.")](unified-storyboards-images/dls09.png#lightbox)
 14. 選択、`LaunchScreen.xib`上記で作成したファイルをクリックして、**オープン**ボタン。
@@ -758,7 +758,7 @@ IOS 7 との下位互換性を維持するために含めるだけです、通�
 
 Xamarin で動的起動画面の実装を確認するを参照、[動的起動画面](https://developer.xamarin.com/samples/monotouch/ios8/DynamicLaunchScreen/)サンプル iOS 8 アプリケーションがこのドキュメントにアタッチします。
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
 この記事では、サイズのクラスと iPhone および iPad デバイスでのレイアウトへの影響を簡単に見てかかりました。 これは、統合インターフェイスを作成するサイズ クラスの特徴、特徴環境および特徴のコレクションを使用する方法について説明します。 アダプティブのビュー コント ローラーの概要と統一インターフェイスの内部サイズ クラスとそのしくみがかかりました。 サイズ クラスとから完全に統合されたインターフェイスの実装に見えましたC#Xamarin iOS 8 のアプリケーション内のコード。
 

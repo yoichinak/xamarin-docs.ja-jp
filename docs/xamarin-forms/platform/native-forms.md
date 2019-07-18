@@ -6,21 +6,19 @@ ms.assetid: f343fc21-dfb1-4364-a332-9da6705d36bc
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 11/09/2018
-ms.openlocfilehash: e02c04afe656b0eca3b7ae12b8b30f35836b9368
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.date: 06/03/2019
+ms.openlocfilehash: 9c427dc48f6fe19098c312bad16d9630bb480264
+ms.sourcegitcommit: 32c7cf8b0d00464779e4b0ea43e2fd996632ebe0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53054814"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68290157"
 ---
 # <a name="xamarinforms-in-xamarin-native-projects"></a>Xamarin Native プロジェクトで Xamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/Native2Forms/)
 
-_ネイティブ フォームは、ネイティブの Xamarin.iOS、Xamarin.Android、およびユニバーサル Windows プラットフォーム (UWP) プロジェクトで使用する Xamarin.Forms ContentPage から派生したページを使用します。ネイティブ プロジェクトは、プロジェクト、または .NET Standard ライブラリ、.NET Standard ライブラリ、または共有プロジェクトから直接追加される ContentPage から派生したページを使用できます。この記事では、ネイティブのプロジェクトに直接追加される ContentPage から派生したページを使用する方法とそれらの間を移動する方法について説明します。_
-
-通常、Xamarin.Forms アプリケーションから派生した 1 つまたは複数のページが含まれます。 [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)、これらのページは、.NET Standard ライブラリ プロジェクトまたは共有プロジェクトのすべてのプラットフォームによって共有されます。 ただし、ネイティブのフォームでは、 `ContentPage`-Xamarin.iOS、Xamarin.Android、および UWP のネイティブ アプリケーションに直接追加するページを派生します。 使用するネイティブ プロジェクトを持つと比較して`ContentPage`-派生ページから、.NET Standard ライブラリ プロジェクトまたは共有プロジェクト、ネイティブ プロジェクトに直接ページの追加の利点は、ネイティブ ビューでページを拡張することができます。 XAML でのネイティブ ビューを付けることができますし、`x:Name`分離コードから参照されているとします。 ネイティブ ビューの詳細については、[ネイティブ ビュー](~/xamarin-forms/platform/native-views/index.md)を参照してください。
+通常、Xamarin.Forms アプリケーションから派生した 1 つまたは複数のページが含まれます。 [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)、これらのページは、.NET Standard ライブラリ プロジェクトまたは共有プロジェクトのすべてのプラットフォームによって共有されます。 ただし、ネイティブのフォームでは、 `ContentPage`-Xamarin.iOS、Xamarin.Android、および UWP のネイティブ アプリケーションに直接追加するページを派生します。 使用するネイティブ プロジェクトを持つと比較して`ContentPage`-派生ページから、.NET Standard ライブラリ プロジェクトまたは共有プロジェクト、ネイティブ プロジェクトに直接ページの追加の利点は、ネイティブ ビューでページを拡張することができます。 XAML でのネイティブ ビューを付けることができますし、`x:Name`分離コードから参照されているとします。 ネイティブ ビューの詳細については、次を参照してください。[ネイティブ ビュー](~/xamarin-forms/platform/native-views/index.md)します。
 
 Xamarin.Forms を使用するためのプロセス[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-ネイティブ プロジェクト内の派生のページを次に示します。
 
@@ -45,6 +43,8 @@ Ios では、`FinishedLaunching`で上書き、`AppDelegate`クラスは、ア�
 [Register("AppDelegate")]
 public class AppDelegate : UIApplicationDelegate
 {
+    public static string FolderPath { get; private set; }
+
     public static AppDelegate Instance;
 
     UIWindow _window;
@@ -62,8 +62,9 @@ public class AppDelegate : UIApplicationDelegate
             TextColor = UIColor.Black
         });
 
-        var mainPage = new PhonewordPage().CreateViewController();
-        mainPage.Title = "Phoneword";
+        FolderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData));
+        UIViewController mainPage = new NotesPage().CreateViewController();
+        mainPage.Title = "Notes";
 
         _navigation = new UINavigationController(mainPage);
         _window.RootViewController = _navigation;
@@ -80,40 +81,47 @@ public class AppDelegate : UIApplicationDelegate
 - Xamarin.Forms は呼び出すことによって初期化、`Forms.Init`メソッド。
 - 参照、`AppDelegate`でクラスが格納されている、 `static` `Instance`フィールド。 これは他のクラスで定義されているメソッドを呼び出すためのメカニズムを提供する、`AppDelegate`クラス。
 - `UIWindow`、これは、ネイティブの iOS アプリケーションでのビューのメイン コンテナーを作成します。
-- `PhonewordPage`クラスは、これは、Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-派生ページの XAML で定義されている、作成され、変換、`UIViewController`を使用して、`CreateViewController`拡張メソッド。
+- `FolderPath`注データが格納されるデバイス上のパスにプロパティを初期化します。
+- `NotesPage`クラスは、これは、Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-派生ページの XAML で定義されている、作成され、変換、`UIViewController`を使用して、`CreateViewController`拡張メソッド。
 - `Title`のプロパティ、`UIViewController`に表示される設定、`UINavigationBar`します。
 - A`UINavigationController`階層型ナビゲーションを管理するために作成されます。 `UINavigationController`クラスはビュー コント ローラーのスタックを管理し、`UIViewController`に渡されるコンス トラクターがときに表示する最初に、`UINavigationController`が読み込まれます。
 - `UINavigationController`インスタンスは、最上位レベルとして設定`UIViewController`の`UIWindow`と`UIWindow`キー、アプリケーション ウィンドウとして設定されが表示されます。
 
-1 回、`FinishedLaunching`メソッドの実行が、UI は、Xamarin.Forms で定義されている`PhonewordPage`次のスクリーン ショットに示すようにクラスが表示されます。
+1 回、`FinishedLaunching`メソッドの実行が、UI は、Xamarin.Forms で定義されている`NotesPage`次のスクリーン ショットに示すようにクラスが表示されます。
 
-[![](native-forms-images/ios-phonewordpage.png "iOS PhonewordPage")](native-forms-images/ios-phonewordpage-large.png#lightbox "iOS PhonewordPage")
+[![UI を使用する Xamarin.iOS アプリケーションのスクリーン ショットは、XAML で定義されている](native-forms-images/ios-notespage.png "XAML UI を使用した Xamarin.iOS アプリ")](native-forms-images/ios-notespage-large.png#lightbox "XAML UI を使用した xamarin ios アプリ")
 
-タップしてなど、UI との対話、 [ `Button` ](xref:Xamarin.Forms.Button)、内のイベント ハンドラーになります、`PhonewordPage`分離コードを実行します。 たとえば、ときにユーザーがタップ、**通話履歴**ボタンでは、次のイベント ハンドラーの実行します。
+タップしてなど、UI との対話、 **+** [ `Button` ](xref:Xamarin.Forms.Button)、次のイベント ハンドラーになります、`NotesPage`分離コードを実行します。
 
 ```csharp
-void OnCallHistory(object sender, EventArgs e)
+void OnNoteAddedClicked(object sender, EventArgs e)
 {
-    AppDelegate.Instance.NavigateToCallHistoryPage();
+    AppDelegate.Instance.NavigateToNoteEntryPage(new Note());
 }
 ```
 
-`static` `AppDelegate.Instance`フィールドを使用できます、`AppDelegate.NavigateToCallHistoryPage`の次のコード例に示すメソッドが呼び出されます。
+`static` `AppDelegate.Instance`フィールドを使用できます、`AppDelegate.NavigateToNoteEntryPage`の次のコード例に示すメソッドが呼び出されます。
 
 ```csharp
-public void NavigateToCallHistoryPage()
+public void NavigateToNoteEntryPage(Note note)
 {
-    var callHistoryPage = new CallHistoryPage().CreateViewController();
-    callHistoryPage.Title = "Call History";
-    _navigation.PushViewController(callHistoryPage, true);
+    UIViewController noteEntryPage = new NoteEntryPage
+    {
+        BindingContext = note
+    }.CreateViewController();
+    noteEntryPage.Title = "Note Entry";
+    _navigation.PushViewController(noteEntryPage, true);
 }
 ```
 
-`NavigateToCallHistoryPage`メソッドは、Xamarin.Forms を変換[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-派生にページ、`UIViewController`で、`CreateViewController`拡張メソッド、およびセット、`Title`のプロパティ、`UIViewController`です。 `UIViewController`しプッシュ`UINavigationController`によって、`PushViewController`メソッド。 そのため、UI を Xamarin.Forms で定義されている`CallHistoryPage`次のスクリーン ショットに示すようにクラスが表示されます。
+`NavigateToNoteEntryPage`メソッドは、Xamarin.Forms を変換[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-派生にページ、`UIViewController`で、`CreateViewController`拡張メソッド、およびセット、`Title`のプロパティ、`UIViewController`です。 `UIViewController`しプッシュ`UINavigationController`によって、`PushViewController`メソッド。 そのため、UI を Xamarin.Forms で定義されている`NoteEntryPage`次のスクリーン ショットに示すようにクラスが表示されます。
 
-[![](native-forms-images/ios-callhistorypage.png "iOS CallHistoryPage")](native-forms-images/ios-callhistorypage-large.png#lightbox "iOS CallHistoryPage")
+[![UI を使用する Xamarin.iOS アプリケーションのスクリーン ショットは、XAML で定義されている](native-forms-images/ios-noteentrypage.png "XAML UI を使用した Xamarin.iOS アプリ")](native-forms-images/ios-noteentrypage-large.png#lightbox "XAML UI を使用した xamarin ios アプリ")
 
-ときに、`CallHistoryPage`背面をタップして、表示される矢印が表示されます、`UIViewController`の`CallHistoryPage`クラスから、 `UINavigationController`、ユーザーを返す、`UIViewController`の`PhonewordPage`クラス。
+ときに、`NoteEntryPage`背面をタップして、表示される矢印が表示されます、`UIViewController`の`NoteEntryPage`クラスから、 `UINavigationController`、ユーザーを返す、`UIViewController`の`NotesPage`クラス。
+
+> [!WARNING]
+> Popping、`UIViewController`から iOS ネイティブ ナビゲーション スタックは自動的に破棄しないの`UIViewController`秒。 いずれかのように、開発者の役目です`UIViewController`を不要になったがその`Dispose()`それ以外の場合メソッドが呼び出されると、`UIViewController`とアタッチされた`Page`孤立して、ガベージ コレクターによって収集されませんその結果、メモリ リークが発生します。
 
 ## <a name="android"></a>Android
 
@@ -122,6 +130,8 @@ Android では、`OnCreate`で上書き、`MainActivity`クラスは、アプリ
 ```csharp
 public class MainActivity : AppCompatActivity
 {
+    public static string FolderPath { get; private set; }
+
     public static MainActivity Instance;
 
     protected override void OnCreate(Bundle bundle)
@@ -134,9 +144,10 @@ public class MainActivity : AppCompatActivity
         SetContentView(Resource.Layout.Main);
         var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
         SetSupportActionBar(toolbar);
-        SupportActionBar.Title = "Phoneword";
+        SupportActionBar.Title = "Notes";
 
-        var mainPage = new PhonewordPage().CreateSupportFragment(this);
+        FolderPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData));
+        Android.Support.V4.App.Fragment mainPage = new NotesPage().CreateSupportFragment(this);
         SupportFragmentManager
             .BeginTransaction()
             .Replace(Resource.Id.fragment_frame_layout, mainPage)
@@ -153,45 +164,49 @@ public class MainActivity : AppCompatActivity
 - 参照、`MainActivity`でクラスが格納されている、 `static` `Instance`フィールド。 これは他のクラスで定義されているメソッドを呼び出すためのメカニズムを提供する、`MainActivity`クラス。
 - `Activity`レイアウト リソースからコンテンツを設定します。 レイアウトは、サンプル アプリケーションで、`LinearLayout`を格納している、 `Toolbar`、および`FrameLayout`フラグメントのコンテナーとして機能します。
 - `Toolbar`が取得され、設定の操作バーとして、 `Activity`、操作バーのタイトルを設定します。
-- `PhonewordPage`クラスは、これは、Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-派生ページの XAML で定義されている、作成され、変換、`Fragment`を使用して、`CreateSupportFragment`拡張メソッド。
-- `SupportFragmentManager`クラスを作成し、置換するトランザクションのコミット、`FrameLayout`インスタンス、`Fragment`の`PhonewordPage`クラス。
+- `FolderPath`注データが格納されるデバイス上のパスにプロパティを初期化します。
+- `NotesPage`クラスは、これは、Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-派生ページの XAML で定義されている、作成され、変換、`Fragment`を使用して、`CreateSupportFragment`拡張メソッド。
+- `SupportFragmentManager`クラスを作成し、置換するトランザクションのコミット、`FrameLayout`インスタンス、`Fragment`の`NotesPage`クラス。
 
-フラグメントの詳細については、[フラグメント](~/android/platform/fragments/index.md)を参照してください。
+フラグメントの詳細については、次を参照してください。[フラグメント](~/android/platform/fragments/index.md)します。
 
-1 回、`OnCreate`メソッドの実行が、UI は、Xamarin.Forms で定義されている`PhonewordPage`次のスクリーン ショットに示すようにクラスが表示されます。
+1 回、`OnCreate`メソッドの実行が、UI は、Xamarin.Forms で定義されている`NotesPage`次のスクリーン ショットに示すようにクラスが表示されます。
 
-[![](native-forms-images/android-phonewordpage.png "Android PhonewordPage")](native-forms-images/android-phonewordpage-large.png#lightbox "Android PhonewordPage")
+[![UI を使用する Xamarin.Android アプリケーションのスクリーン ショットは、XAML で定義されている](native-forms-images/android-notespage.png "XAML の UI で Xamarin.Android アプリ")](native-forms-images/android-notespage-large.png#lightbox "XAML の UI で Xamarin.Android アプリ")
 
-タップしてなど、UI との対話、 [ `Button` ](xref:Xamarin.Forms.Button)、内のイベント ハンドラーになります、`PhonewordPage`分離コードを実行します。 たとえば、ときにユーザーがタップ、**通話履歴**ボタンでは、次のイベント ハンドラーの実行します。
+タップしてなど、UI との対話、 **+** [ `Button` ](xref:Xamarin.Forms.Button)、次のイベント ハンドラーになります、`NotesPage`分離コードを実行します。
 
 ```csharp
-void OnCallHistory(object sender, EventArgs e)
+void OnNoteAddedClicked(object sender, EventArgs e)
 {
-    MainActivity.Instance.NavigateToCallHistoryPage();
+    MainActivity.Instance.NavigateToNoteEntryPage(new Note());
 }
 ```
 
-`static` `MainActivity.Instance`フィールドを使用できます、`MainActivity.NavigateToCallHistoryPage`の次のコード例に示すメソッドが呼び出されます。
+`static` `MainActivity.Instance`フィールドを使用できます、`MainActivity.NavigateToNoteEntryyPage`の次のコード例に示すメソッドが呼び出されます。
 
 ```csharp
-public void NavigateToCallHistoryPage()
+public void NavigateToNoteEntryPage(Note note)
 {
-    var callHistoryPage = new CallHistoryPage().CreateSupportFragment(this);
+    Android.Support.V4.App.Fragment noteEntryPage = new NoteEntryPage
+    {
+        BindingContext = note
+    }.CreateSupportFragment(this);
     SupportFragmentManager
         .BeginTransaction()
         .AddToBackStack(null)
-        .Replace(Resource.Id.fragment_frame_layout, callHistoryPage)
+        .Replace(Resource.Id.fragment_frame_layout, noteEntryPage)
         .Commit();
 }
 ```
 
-`NavigateToCallHistoryPage`メソッドは、Xamarin.Forms を変換します。 [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-派生にページ、`Fragment`で、`CreateSupportFragment`拡張メソッドを追加し、`Fragment`フラグメント バック スタック。 そのため、UI を Xamarin.Forms で定義されている`CallHistoryPage`次のスクリーン ショットに示すように表示されます。
+`NavigateToNoteEntryPage`メソッドは、Xamarin.Forms を変換します。 [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-派生にページ、`Fragment`で、`CreateSupportFragment`拡張メソッドを追加し、`Fragment`フラグメント バック スタック。 そのため、UI を Xamarin.Forms で定義されている`NoteEntryPage`次のスクリーン ショットに示すように表示されます。
 
-[![](native-forms-images/android-callhistorypage.png "Android CallHistoryPage")](native-forms-images/android-callhistorypage-large.png#lightbox "Android CallHistoryPage")
+[![UI を使用する Xamarin.Android アプリケーションのスクリーン ショットは、XAML で定義されている](native-forms-images/android-noteentrypage.png "XAML の UI で Xamarin.Android アプリ")](native-forms-images/android-noteentrypage-large.png#lightbox "XAML の UI で Xamarin.Android アプリ")
 
-ときに、`CallHistoryPage`背面をタップして、表示される矢印が表示されます、`Fragment`の`CallHistoryPage`フラグメントのバック スタックからユーザーを返す、`Fragment`の`PhonewordPage`クラス。
+ときに、`NoteEntryPage`背面をタップして、表示される矢印が表示されます、`Fragment`の`NoteEntryPage`フラグメントのバック スタックからユーザーを返す、`Fragment`の`NotesPage`クラス。
 
-### <a name="enabling-back-navigation-support"></a>ナビゲーションのサポートを有効にします。
+### <a name="enable-back-navigation-support"></a>ナビゲーションのサポートを有効にします。
 
 `SupportFragmentManager`クラスには、`BackStackChanged`フラグメント戻るスタックのコンテンツが変更されるたびに発生するイベントです。 `OnCreate`メソッドで、`MainActivity`クラスには、このイベントの匿名のイベント ハンドラーが含まれています。
 
@@ -201,7 +216,7 @@ SupportFragmentManager.BackStackChanged += (sender, e) =>
     bool hasBack = SupportFragmentManager.BackStackEntryCount > 0;
     SupportActionBar.SetHomeButtonEnabled(hasBack);
     SupportActionBar.SetDisplayHomeAsUpEnabled(hasBack);
-    SupportActionBar.Title = hasBack ? "Call History" : "Phoneword";
+    SupportActionBar.Title = hasBack ? "Note Entry" : "Notes";
 };
 ```
 
@@ -228,7 +243,7 @@ public override bool OnOptionsItemSelected(Android.Views.IMenuItem item)
 - 値`Xamarin.Forms.Color.Accent`から取得されます、`Activity`という、`Forms.Init`メソッド。
 - 値`Xamarin.Forms.Application.Current`に関連付けられた、`Activity`という、`Forms.Init`メソッド。
 
-### <a name="choosing-a-file"></a>ファイルを選択します。
+### <a name="choose-a-file"></a>ファイルを選択します。
 
 埋め込み時、 [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-派生を使用するページ、 [ `WebView` ](xref:Xamarin.Forms.WebView)する必要がある HTML"Choose File"をサポートするボタン、`Activity`をオーバーライドする必要があります、 `OnActivityResult`方法:
 
@@ -251,12 +266,15 @@ public sealed partial class MainPage : Page
 {
     public static MainPage Instance;
 
+    public static string FolderPath { get; private set; }
+
     public MainPage()
     {
         this.InitializeComponent();
         this.NavigationCacheMode = NavigationCacheMode.Enabled;
         Instance = this;
-        this.Content = new Phoneword.UWP.Views.PhonewordPage().CreateFrameworkElement();
+        FolderPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData));
+        this.Content = new Notes.UWP.Views.NotesPage().CreateFrameworkElement();
     }
     ...
 }
@@ -266,37 +284,41 @@ public sealed partial class MainPage : Page
 
 - ページのキャッシュが有効になっているように、新しい`MainPage`のページに戻るユーザーが移動したときに構成されていません。
 - 参照、`MainPage`でクラスが格納されている、 `static` `Instance`フィールド。 これは他のクラスで定義されているメソッドを呼び出すためのメカニズムを提供する、`MainPage`クラス。
-- `PhonewordPage`クラスは、これは、Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-派生ページの XAML で定義されているが構築されに変換、`FrameworkElement`を使用して、`CreateFrameworkElement`拡張メソッドとのコンテンツとして設定します`MainPage`クラスです。
+- `FolderPath`注データが格納されるデバイス上のパスにプロパティを初期化します。
+- `NotesPage`クラスは、これは、Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-派生ページの XAML で定義されているが構築されに変換、`FrameworkElement`を使用して、`CreateFrameworkElement`拡張メソッドとのコンテンツとして設定します`MainPage`クラスです。
 
-1 回、`MainPage`コンス トラクターが実行される、Xamarin.Forms で定義されている UI`PhonewordPage`次のスクリーン ショットに示すようにクラスが表示されます。
+1 回、`MainPage`コンス トラクターが実行される、Xamarin.Forms で定義されている UI`NotesPage`次のスクリーン ショットに示すようにクラスが表示されます。
 
-[![](native-forms-images/uwp-phonewordpage.png "UWP PhonewordPage")](native-forms-images/uwp-phonewordpage-large.png#lightbox "UWP PhonewordPage")
+[![UI を使用する UWP アプリケーションのスクリーン ショットは、Xamarin.Forms の XAML で定義されている](native-forms-images/uwp-notespage.png "Xamarin.Forms XAML の UI を使用した UWP アプリ")](native-forms-images/uwp-notespage-large.png#lightbox "Xamarin.Forms XAML の UI を使用した UWP アプリ")
 
-タップしてなど、UI との対話、 [ `Button` ](xref:Xamarin.Forms.Button)、内のイベント ハンドラーになります、`PhonewordPage`分離コードを実行します。 たとえば、ときにユーザーがタップ、**通話履歴**ボタンでは、次のイベント ハンドラーの実行します。
+タップしてなど、UI との対話、 **+** [ `Button` ](xref:Xamarin.Forms.Button)、次のイベント ハンドラーになります、`NotesPage`分離コードを実行します。
 
 ```csharp
-void OnCallHistory(object sender, EventArgs e)
+void OnNoteAddedClicked(object sender, EventArgs e)
 {
-    Phoneword.UWP.MainPage.Instance.NavigateToCallHistoryPage();
+    MainPage.Instance.NavigateToNoteEntryPage(new Note());
 }
 ```
 
-`static` `MainPage.Instance`フィールドを使用できます、`MainPage.NavigateToCallHistoryPage`の次のコード例に示すメソッドが呼び出されます。
+`static` `MainPage.Instance`フィールドを使用できます、`MainPage.NavigateToNoteEntryPage`の次のコード例に示すメソッドが呼び出されます。
 
 ```csharp
-public void NavigateToCallHistoryPage()
+public void NavigateToNoteEntryPage(Note note)
 {
-    this.Frame.Navigate(new CallHistoryPage());
+    this.Frame.Navigate(new NoteEntryPage
+    {
+        BindingContext = note
+    });
 }
 ```
 
-UWP でのナビゲーションは、通常の実行、`Frame.Navigate`を受け取るメソッドを`Page`引数。 Xamarin.Forms の定義、`Frame.Navigate`拡張メソッドを受け取る、 [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-派生ページ インスタンス。 したがって、ときに、`NavigateToCallHistoryPage`メソッドが実行される、Xamarin.Forms で定義されている UI`CallHistoryPage`次のスクリーン ショットに示すように表示されます。
+UWP でのナビゲーションは、通常の実行、`Frame.Navigate`を受け取るメソッドを`Page`引数。 Xamarin.Forms の定義、`Frame.Navigate`拡張メソッドを受け取る、 [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-派生ページ インスタンス。 したがって、ときに、`NavigateToNoteEntryPage`メソッドが実行される、Xamarin.Forms で定義されている UI`NoteEntryPage`次のスクリーン ショットに示すように表示されます。
 
-[![](native-forms-images/uwp-callhistorypage.png "UWP CallHistoryPage")](native-forms-images/uwp-callhistorypage-large.png#lightbox "UWP CallHistoryPage")
+[![UI を使用する UWP アプリケーションのスクリーン ショットは、Xamarin.Forms の XAML で定義されている](native-forms-images/uwp-noteentrypage.png "Xamarin.Forms XAML の UI を使用した UWP アプリ")](native-forms-images/uwp-noteentrypage-large.png#lightbox "Xamarin.Forms XAML の UI を使用した UWP アプリ")
 
-ときに、`CallHistoryPage`背面をタップして、表示される矢印が表示されます、`FrameworkElement`の`CallHistoryPage`アプリ内のバック スタックからユーザーを返す、`FrameworkElement`の`PhonewordPage`クラス。
+ときに、`NoteEntryPage`背面をタップして、表示される矢印が表示されます、`FrameworkElement`の`NoteEntryPage`アプリ内のバック スタックからユーザーを返す、`FrameworkElement`の`NotesPage`クラス。
 
-### <a name="enabling-back-navigation-support"></a>ナビゲーションのサポートを有効にします。
+### <a name="enable-back-navigation-support"></a>ナビゲーションのサポートを有効にします。
 
 UWP では、アプリケーションが別のデバイス フォーム ファクターのすべてのハードウェアとソフトウェア戻るボタン、ナビゲーションを有効にする必要があります。 これは、イベント ハンドラーを登録することによって実現できます、`BackRequested`イベントで実行できますが、`OnLaunched`ネイティブ メソッド`App`クラス。
 
@@ -331,9 +353,9 @@ void OnBackRequested(object sender, BackRequestedEventArgs e)
 }
 ```
 
-`OnBackRequested`イベント ハンドラーの呼び出し、`GoBack`セット、アプリケーションのルート フレームのメソッド、`BackRequestedEventArgs.Handled`プロパティを`true`イベントを処理済みとしてマークします。 (モバイル デバイス ファミリ) 上のアプリケーションから移動または (デスクトップ デバイス ファミリ) では、イベントを無視して、システム障害イベントを処理済みとしてマークする可能性があります。
+`OnBackRequested`イベント ハンドラーの呼び出し、`GoBack`セット、アプリケーションのルート フレームのメソッド、`BackRequestedEventArgs.Handled`プロパティを`true`イベントを処理済みとしてマークします。 イベントを処理済みとしてマークする障害は、無視されているイベントのなる可能性があります。
 
-アプリケーションは、スマート フォンで提供されるシステムの戻るボタンに依存していますが、デスクトップ デバイス上のタイトル バーに [戻る] ボタンを表示するかどうかを選択します。 これを設定することで実現されます、`AppViewBackButtonVisibility`プロパティのいずれかを`AppViewBackButtonVisibility`列挙値。
+アプリケーションでは、タイトル バーで、[戻る] ボタンを表示するかどうかを選択します。 これを設定することで実現されます、`AppViewBackButtonVisibility`プロパティのいずれかを`AppViewBackButtonVisibility`列挙値。
 
 ```csharp
 void OnNavigated(object sender, NavigationEventArgs e)
@@ -345,12 +367,7 @@ void OnNavigated(object sender, NavigationEventArgs e)
 
 `OnNavigated`への応答に実行されるイベント ハンドラー、`Navigated`イベントの発生は、ページ ナビゲーションが発生した場合に、タイトル バーの [戻る] ボタンの可視性を更新します。 これにより、タイトル バーの [戻る] ボタンが表示されるは、アプリに戻るスタックが空でない場合は、または、アプリに戻るスタックが空の場合は、タイトル バーから削除します。
 
-UWP の戻るナビゲーション サポートの詳細については、[ナビゲーション履歴内を後方に向かってと UWP アプリのナビゲーション](/windows/uwp/design/basics/navigation-history-and-backwards-navigation/)を参照してください。
-
-## <a name="summary"></a>まとめ
-
-ネイティブ フォームは、Xamarin.Forms を使用する[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-ネイティブ Xamarin.iOS、Xamarin.Android、およびユニバーサル Windows プラットフォーム (UWP) プロジェクトで使用するページを派生します。 ネイティブ プロジェクトで利用可能`ContentPage`-は、プロジェクト、または .NET Standard ライブラリ プロジェクトまたは共有プロジェクトから直接追加するページを派生します。 この記事では、使用する方法を説明しました。 `ContentPage`-ネイティブ プロジェクトは、およびそれらの間を移動する方法に直接追加されるページを派生します。
-
+UWP の戻るナビゲーション サポートの詳細については、次を参照してください。[ナビゲーション履歴内を後方に向かってと UWP アプリのナビゲーション](/windows/uwp/design/basics/navigation-history-and-backwards-navigation/)します。
 
 ## <a name="related-links"></a>関連リンク
 

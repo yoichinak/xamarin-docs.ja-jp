@@ -6,11 +6,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 11/14/2017
 ms.openlocfilehash: c6eaf4dd90b172053b4b87e3427cfe35213c6727
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117162"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61215879"
 ---
 # <a name="callbacks-on-android"></a>Android コールバック
 
@@ -157,7 +157,7 @@ Java の相互運用機能について詳しくは、参照、優れた[Xamarin.
 
 ## <a name="interfaces"></a>インターフェイス
 
-インターフェイスは、1 つの詳細を除く、抽象クラスとほぼ同じ: Xamarin.Android には、それらの Java は生成されません。 これは、前に、.NET の埋め込みが含まれていない Java が実装は多くのシナリオのため、C#インターフェイス。
+インターフェイスは 1 つの詳細を除く、抽象クラスとほぼ同じです。Xamarin.Android では、それらの Java は生成されません。 これは、前に、.NET の埋め込みが含まれていない Java が実装は多くのシナリオのため、C#インターフェイス。
 
 たとえば、次C#インターフェイス。
 
@@ -264,7 +264,7 @@ public class VirtualClass : Java.Lang.Object
 }
 ```
 
-実行した場合、 `abstract` 1 つの詳細を除く上記クラスの例で使用: _Xamarin.Android を検索しません、 `Invoker`_ します。
+実行した場合、 `abstract` 1 つの詳細を除く上記クラスの例で使用します。_Xamarin.Android は参照されません、 `Invoker`_ します。
 
 これを解決するには、変更、C#クラスを作成できる`abstract`:
 

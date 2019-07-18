@@ -5,12 +5,12 @@ ms.assetid: AEEF03AE-A047-4DF0-B0E8-CC8D9A7B8351
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: 35ef922553cb91aa915c08df03414d1e5f3034cb
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: 6d89f70a8b7f6229297f86deb3cb83cf940fa7df
+ms.sourcegitcommit: 4f8dc5298a95d591a59e97cdd347fd82858a1019
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59239928"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66469478"
 ---
 # <a name="xamarinessentials-text-to-speech"></a>Xamarin.Essentials:音声合成
 
@@ -22,7 +22,7 @@ ms.locfileid: "59239928"
 
 ## <a name="using-text-to-speech"></a>音声合成の使用
 
-自分のクラスの Xamarin.Essentials に参照を追加します。
+自分のクラスに Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
@@ -60,9 +60,10 @@ public async Task SpeakNowDefaultSettings()
     // This method will block until utterance finishes.
 }
 
+// Cancel speech if a cancellation token exists & hasn't been already requested.
 public void CancelSpeech()
 {
-    if (cts?.IsCancellationRequested ?? false)
+    if (cts?.IsCancellationRequested ?? true)
         return;
 
     cts.Cancel();

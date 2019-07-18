@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/01/2017
 ms.openlocfilehash: 366a6e9585817c5a47ba5bec14fb2f238ab23a6b
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53050201"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61022037"
 ---
 # <a name="paths-and-text-in-skiasharp"></a>パスと SkiaSharp 内のテキスト
 
@@ -30,7 +30,7 @@ _パスとテキストの交差部分を調べる_
 
 前の記事で[**パスの効果**](effects.md)、見た方法、 [ `GetFillPath` ](xref:SkiaSharp.SKPaint.GetFillPath(SkiaSharp.SKPath,SkiaSharp.SKPath,SkiaSharp.SKRect,System.Single))メソッドの`SKPaint`ストロークのパスのアウトラインを取得できます。 文字アウトラインから派生したパスにこのメソッドを使用することもできます。
 
-最後に、この記事ではパスとテキストのもう 1 つの交差部分を示します。 [ `DrawTextOnPath` ](xref:SkiaSharp.SKCanvas.DrawTextOnPath(System.String,SkiaSharp.SKPath,System.Single,System.Single,SkiaSharp.SKPaint))メソッドの`SKCanvas`テキストのベースラインに依存して、曲線のパスをテキスト文字列を表示することができます。
+最後に、この記事では、パスとテキストのもう 1 つの交差部分を示しています。[ `DrawTextOnPath` ](xref:SkiaSharp.SKCanvas.DrawTextOnPath(System.String,SkiaSharp.SKPath,System.Single,System.Single,SkiaSharp.SKPaint))メソッドの`SKCanvas`テキストのベースラインに依存して、曲線のパスをテキスト文字列を表示することができます。
 
 ## <a name="text-to-path-conversion"></a>テキスト パスへの変換から
 
@@ -128,7 +128,7 @@ public class ClippingTextPage : ContentPage
 
 [![](text-paths-images/textpatheffect-small.png "パスのテキスト効果のページのスクリーン ショットをトリプル")](text-paths-images/textpatheffect-large.png#lightbox "パスのテキスト効果のページの 3 倍になるスクリーン ショット")
 
-作業の量、 [ `TextPathEffectPath` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TextPathEffectPage.cs)クラスは、フィールドとコンス トラクターで発生します。 2 つ`SKPaint`フィールドは、2 つの異なる目的で使用するように定義されたオブジェクト: 最初の (という名前`textPathPaint`) でアンパサンドを変換するために使用、 `TextSize` 1d パス効果のパスに 50 の。 2 番目 (`textPaint`) パスの影響はそのアンパサンドの拡大版を表示するために使用します。 そのため、`Style`この 2 つ目のペイントのオブジェクトに設定`Stroke`が、 `StrokeWidth` 1d パスの効果を使用する場合、そのプロパティが必要はありませんので、プロパティが設定されていません。
+作業の量、 [ `TextPathEffectPath` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TextPathEffectPage.cs)クラスは、フィールドとコンス トラクターで発生します。 2 つ`SKPaint`フィールドは、2 つの異なる目的で使用するように定義されているオブジェクト。最初の (という名前の`textPathPaint`) でアンパサンドを変換するために使用、 `TextSize` 1d パス効果のパスに 50。 2 番目 (`textPaint`) パスの影響はそのアンパサンドの拡大版を表示するために使用します。 そのため、`Style`この 2 つ目のペイントのオブジェクトに設定`Stroke`が、 `StrokeWidth` 1d パスの効果を使用する場合、そのプロパティが必要はありませんので、プロパティが設定されていません。
 
 ```csharp
 public class TextPathEffectPage : ContentPage
@@ -285,7 +285,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 public Void DrawTextOnPath (String text, SKPath path, Single hOffset, Single vOffset, SKPaint paint)
 ```
 
-最初の引数で指定したテキストが 2 番目の引数として指定されたパスに沿って実行しようとしています。 テキストを使用してパスの先頭からのオフセットを開始することができます、`hOffset`引数。 通常、テキストのベースラインのフォームのパス: テキスト アセンダーが、パスの 1 つの側があり、もう一方がテキスト ディセンダーします。 使用してパスからテキストのベースラインを補うことができますが、`vOffset`引数。
+最初の引数で指定したテキストが 2 番目の引数として指定されたパスに沿って実行しようとしています。 テキストを使用してパスの先頭からのオフセットを開始することができます、`hOffset`引数。 通常、パスは、テキストのベースラインを形成します。テキスト アセンダーは、パスの 1 つの側にあり、テキスト ディセンダーが他の。 使用してパスからテキストのベースラインを補うことができますが、`vOffset`引数。
 
 このメソッドの設定に関するガイダンスを提供する機能はありません、`TextSize`プロパティの`SKPaint`テキストをパスの先頭から最後まで実行を完全にサイズします。 自分でそのテキストのサイズを確認できる場合があります。 それ以外の場合に、次の記事で説明するパス測定関数を使用する必要があります[**パス情報と列挙**](information.md)します。
 
@@ -326,7 +326,7 @@ public class CircularTextPage : ContentPage
 
 [![](text-paths-images/circulartext-small.png "循環テキスト ページのスクリーン ショットをトリプル")](text-paths-images/circulartext-large.png#lightbox "循環テキスト ページの 3 倍になるスクリーン ショット")
 
-多少循環テキスト自体が選択されました:"circle"という単語が両方の文の件名と前置詞句のオブジェクト。
+多少循環テキスト自体が選択されました。"Circle"という単語は、文のサブジェクトと前置詞句のオブジェクトの両方です。
 
 ## <a name="related-links"></a>関連リンク
 

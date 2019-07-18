@@ -1,5 +1,5 @@
 ---
-title: 'チュートリアル: IOS OBJECTIVE-C ライブラリのバインド'
+title: 'チュートリアル: iOS Objective-C ライブラリのバインド'
 description: この記事では、既存の OBJECTIVE-C ライブラリ、InfColorPicker の Xamarin.iOS バインディングを作成する実践的なチュートリアルを示します。 静的 OBJECTIVE-C ライブラリのコンパイル、バインドすることで、Xamarin.iOS アプリケーションでバインドを使用してなどのトピックについて説明します。
 ms.prod: xamarin
 ms.assetid: D3F6FFA0-3C4B-4969-9B83-B6020B522F57
@@ -7,14 +7,14 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
-ms.openlocfilehash: fcf4e6d9b281eaac4be888c499e537f7397528a0
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 2897129779b698eae60338d44f9af19b6a2761bc
+ms.sourcegitcommit: 10b4ccbfcf182be940899c00fc0fecae1e199c5b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669272"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66252353"
 ---
-# <a name="walkthrough-binding-an-ios-objective-c-library"></a>チュートリアル: IOS OBJECTIVE-C ライブラリのバインド
+# <a name="walkthrough-binding-an-ios-objective-c-library"></a>チュートリアル: iOS Objective-C ライブラリのバインド
 
 _この記事では、既存の OBJECTIVE-C ライブラリ、InfColorPicker の Xamarin.iOS バインディングを作成する実践的なチュートリアルを示します。静的 OBJECTIVE-C ライブラリのコンパイル、バインドすることで、Xamarin.iOS アプリケーションでバインドを使用してなどのトピックについて説明します。_
 
@@ -123,7 +123,7 @@ InfColorPicker プロジェクトをダウンロードしましょう[GitHub](ht
 最初の手順は、スタティック ライブラリに InfoColorPicker のソース コードを追加するためです。 それではこれを実現するために、次の操作を行います。
 
 1. Xcode を起動します。
-2. **ファイル**メニューの **新規** > **プロジェクト.**:
+2. **ファイル**メニューの **新規** > **プロジェクト.** :
 
     [![](walkthrough-images/image04.png "新しいプロジェクトを開始")](walkthrough-images/image04.png#lightbox)
 3. 選択**フレームワークとライブラリ**、 **Cocoa Touch のスタティック ライブラリ**テンプレートをクリックして、**次**ボタン。
@@ -172,7 +172,7 @@ InfColorPicker プロジェクトをダウンロードしましょう[GitHub](ht
 
 ### <a name="creating-a-fat-binary"></a>Fat バイナリを作成します。
 
-すべての iOS デバイスでは、ARM アーキテクチャを搭載した時間の経過と共に開発したプロセッサを搭載します。 各新しいアーキテクチャは、下位互換性を保ちながら新しい手順とその他の改善を追加します。 IOS デバイスである、armv6、armv7、armv7s arm64 命令セットが[armv6 にアンドリュー](~/ios/deploy-test/compiling-for-different-devices.md)します。 IOS シミュレーターでは、ARM によってが入っていないと、istead は、x86、x86_64 電源シミュレーター。 各命令でライブラリを提供する必要がありますが私たちにとっては意味を設定します。
+すべての iOS デバイスでは、ARM アーキテクチャを搭載した時間の経過と共に開発したプロセッサを搭載します。 各新しいアーキテクチャは、下位互換性を保ちながら新しい手順とその他の改善を追加します。 iOS デバイスがある、armv6、armv7、armv7s arm64 命令セットが[かどうかを使用しない armv6](~/ios/deploy-test/compiling-for-different-devices.md)します。 IOS シミュレーターでは、ARM によってが入っていないと、x86、x86_64 の電源をシミュレーターではなく。 つまり、ライブラリは、各命令セットを指定する必要があります。
 
 Fat ライブラリは`.a`サポートされているすべてのアーキテクチャを含むファイル。
 
@@ -182,9 +182,9 @@ Fat バイナリの作成は、次の 3 ステップ プロセスです。
 - スタティック ライブラリの x86 および x84_64 バージョンをコンパイルします。
 - 使用して、`lipo`コマンド ライン ツールを 2 つの静的ライブラリを 1 つに結合します。
 
-これら 3 つの手順は、比較的簡単な OBJECTIVE-C ライブラリの更新プログラムを受信するとき、またはバグの修正が必要な場合、後で繰り返す必要があります。 次の手順を自動化する場合は、将来のメンテナンスとバインドの iOS プロジェクトのサポートによって簡略化されます。
+これら 3 つの手順は比較的簡単な OBJECTIVE-C ライブラリの更新プログラムまたはバグの修正が必要なかどうかを受信すると、将来的に繰り返す必要があります。 次の手順を自動化する場合は、将来のメンテナンスとバインドの iOS プロジェクトのサポートによって簡略化されます。
 
-シェル スクリプトでは、このようなタスクの自動化に使用できる多くのツールがある[rake](http://rake.rubyforge.org/)、 [xbuild](https://www.mono-project.com/docs/tools+libraries/tools/xbuild/)、および[ように](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/make.1.html)します。 ここには、Xcode コマンド ライン ツールがインストールされている、ときにして、このチュートリアルで使用されるビルド システムができるのでもインストールします。 ここでは、**メイクファイル**iOS デバイスと、任意のライブラリ用のシミュレーターで動作するマルチ アーキテクチャの共有ライブラリの作成に使用できます。
+シェル スクリプトでは、このようなタスクの自動化に使用できる多くのツールがある[rake](http://rake.rubyforge.org/)、 [xbuild](https://www.mono-project.com/docs/tools+libraries/tools/xbuild/)、および[ように](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/make.1.html)します。 Xcode コマンド ライン ツールがインストールされている`make`もインストールされている、このチュートリアルで使用されるビルド システムです。 ここでは、**メイクファイル**iOS デバイスとシミュレーターのすべてのライブラリで動作するマルチ アーキテクチャの共有ライブラリを作成に使用できます。
 
 ```bash
 XBUILD=/Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild
@@ -213,7 +213,7 @@ clean:
     -rm -f *.a *.dll
 ```
 
-入力、**メイクファイル**任意のプレーン テキスト エディターでのコマンドのセクションを更新し、 **YOUR、プロジェクトの名前**プロジェクトの名前に置き換えます。 いることを確認する重要な手順については、内のタブが維持されていること、上記の手順を貼り付けています。
+入力、**メイクファイル**任意のプレーン テキスト エディターでのコマンドのセクションを更新し、 **YOUR、プロジェクトの名前**プロジェクトの名前に置き換えます。 重要上記の手順は保持命令内のタブで、正確に貼り付けることもできます。
 
 名前のファイルを保存**メイクファイル**上で作成した InfColorPicker Xcode スタティック ライブラリと同じ場所に。
 
@@ -252,7 +252,7 @@ Xcode と、Xcode コマンド ライン ツールを使用してスタティッ
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. Visual Studio for mac の起動
-1. **ファイル**メニューの **新規** > **ソリューション.**:
+1. **ファイル**メニューの **新規** > **ソリューション.** :
 
     ![](walkthrough-images/bind01.png "新しいソリューションの開始")
 
@@ -276,11 +276,11 @@ Xcode と、Xcode コマンド ライン ツールを使用してスタティッ
 
 1. Visual Studio を起動します。
 
-1. **ファイル**メニューの **新規** > **プロジェクト.**:
+1. **ファイル**メニューの **新規** > **プロジェクト.** :
 
     ![新しいプロジェクトを開始](walkthrough-images/bind01vs.png "新しいプロジェクトを開始")
 
-1. 新しいプロジェクト ダイアログ ボックスで次のように選択します**Visual C# > iPhone と iPad > iOS バインド ライブラリ (Xamarin)**:。
+1. 新しいプロジェクト ダイアログ ボックスで次のように選択します**Visual C# > iPhone と iPad > iOS バインド ライブラリ (Xamarin)** :。
 
     [![IOS バインド ライブラリを選択します。](walkthrough-images/bind02.w157-sml.png)](walkthrough-images/bind02.w157.png#lightbox)
 
@@ -320,7 +320,7 @@ Fat バイナリを上記で作成したライブラリを追加する必要が�
 
 1. コピー、`libInfColorPickerSDK.a`から、 **Mac Build Host**バインド プロジェクトに貼り付けます。
 
-1. プロジェクトを右クリックし、選択**追加 > 既存の項目.**:
+1. プロジェクトを右クリックし、選択**追加 > 既存の項目.** :
 
     ![](walkthrough-images/bind04vs.png "既存のファイルを追加します。")
 
@@ -566,7 +566,7 @@ Europa:Resources kmullins$
 
 ### <a name="protocols-and-xamarinios"></a>プロトコルと Xamarin.iOS
 
-メソッド (またはメッセージ)、OBJECTIVE-C でプロトコルを定義する特定の状況で使用できます。 内のインターフェイスとよく似ている概念的には、C#します。 1 つの主な違い、OBJECTIVE-C プロトコルとC#インターフェイスは、プロトコルは省略可能なメソッドのクラスが実装する必要はありませんメソッドであることができます。 Objective C を使用して、@optionalが省略可能な方法を示すキーワードを使用します。 プロトコルの詳細については、[イベント、プロトコル、デリゲート](~/ios/app-fundamentals/delegates-protocols-and-events.md)を参照してください。
+メソッド (またはメッセージ)、OBJECTIVE-C でプロトコルを定義する特定の状況で使用できます。 内のインターフェイスとよく似ている概念的には、C#します。 1 つの主な違い、OBJECTIVE-C プロトコルとC#インターフェイスは、プロトコルは省略可能なメソッドのクラスが実装する必要はありませんメソッドであることができます。 Objective C を使用して、@optionalが省略可能な方法を示すキーワードを使用します。 プロトコルの詳細については、次を参照してください。[イベント、プロトコル、デリゲート](~/ios/app-fundamentals/delegates-protocols-and-events.md)します。
 
 **InfColorPickerController**が次のコード スニペットに示すように、このような 1 つのプロトコル。
 
@@ -734,5 +734,3 @@ public void ColorPickerControllerDidFinish (InfColorPickerController controller)
 - [バインドの種類のリファレンス ガイド](~/cross-platform/macios/binding/binding-types-reference.md)
 - [Objective-C 開発者向けの Xamarin](~/ios/get-started/objective-c-developers/index.md)
 - [フレームワーク デザインのガイドライン](https://msdn.microsoft.com/library/ms229042.aspx)
-- [Xamarin University のコース:OBJECTIVE-C バインディング ライブラリをビルド](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin University のコース:目標油性で、OBJECTIVE-C のバインド ライブラリをビルドします。](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

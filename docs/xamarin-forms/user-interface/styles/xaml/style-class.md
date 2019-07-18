@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/30/2019
-ms.openlocfilehash: dd749a4a78adbab5317f1ae5ca6334caa009b9b3
-ms.sourcegitcommit: 9dcb7377dc92ad921285fbb857b0be13030bbea3
+ms.openlocfilehash: a3ef0f96bcc955dcac4231f9eb9cf1ab16ee61aa
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55668551"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65925291"
 ---
 # <a name="xamarinforms-style-classes"></a>Xamarin.Forms のスタイル クラス
 
@@ -76,7 +76,7 @@ _Xamarin.Forms のスタイル クラスには、スタイルの継承を使用�
 
 `Separator`、 `Rounded`、および`Circle`スタイル クラスの各セット[ `BoxView` ](xref:Xamarin.Forms.BoxView)プロパティを特定の値にします。
 
-`Rotated`スタイル クラスには、 [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)の[ `VisualElement` ](xref:Xamarin.Forms.VisualElement)、つまりのみに適用できる`VisualElement`インスタンス。 ただし、その[ `ApplyToDerivedTypes` ](xref:Xamarin.Forms.Style.ApplyToDerivedTypes)プロパティに設定されて`true`から派生したコントロールに適用できることが保証`VisualElement`など[ `BoxView`](xref:Xamarin.Forms.BoxView)します。 派生型にスタイルを適用する方法についての詳細については、[派生型にスタイルを適用](implicit.md#apply-a-style-to-derived-types)を参照してください。
+`Rotated`スタイル クラスには、 [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)の[ `VisualElement` ](xref:Xamarin.Forms.VisualElement)、つまりのみに適用できる`VisualElement`インスタンス。 ただし、その[ `ApplyToDerivedTypes` ](xref:Xamarin.Forms.Style.ApplyToDerivedTypes)プロパティに設定されて`true`から派生したコントロールに適用できることが保証`VisualElement`など[ `BoxView`](xref:Xamarin.Forms.BoxView)します。 派生型にスタイルを適用する方法についての詳細については、次を参照してください。[派生型にスタイルを適用](implicit.md#apply-a-style-to-derived-types)します。
 
 同等の C# コードに示します。
 
@@ -180,7 +180,7 @@ Resources = new ResourceDictionary
 
 ## <a name="consume-style-classes"></a>スタイル クラスを使用します。
 
-設定でスタイル クラスを使用できる、 [ `StyleClass` ](xref:Xamarin.Forms.VisualElement.StyleClass)プロパティの型であるコントロールの`IList<string>`、スタイル クラス名の一覧にします。 コントロールの型と一致すること、スタイル クラスが適用されます、 [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)スタイルのクラス。
+設定でスタイル クラスを使用できる、 [ `StyleClass` ](xref:Xamarin.Forms.NavigableElement.StyleClass)プロパティの型であるコントロールの`IList<string>`、スタイル クラス名の一覧にします。 コントロールの型と一致すること、スタイル クラスが適用されます、 [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)スタイルのクラス。
 
 次の例では 3 つ[ `BoxView` ](xref:Xamarin.Forms.BoxView)インスタンスでは、それぞれ異なるスタイル クラスに設定します。
 
@@ -206,7 +206,7 @@ Resources = new ResourceDictionary
 ![](style-class-images/boxviews.png "BoxViews スタイル クラスのスタイル設定")
 
 > [!IMPORTANT]
-> コントロールに複数のスタイル クラスを適用できます、 [ `StyleClass` ](xref:Xamarin.Forms.VisualElement.StyleClass)プロパティの型は`IList<string>`します。 この場合、一覧の順序の昇順でスタイル クラスが適用されます。 そのため、複数のスタイル クラスでは、同じプロパティを設定するときに最高のリストの位置にあるスタイル クラスでプロパティが優先されます。
+> コントロールに複数のスタイル クラスを適用できます、 [ `StyleClass` ](xref:Xamarin.Forms.NavigableElement.StyleClass)プロパティの型は`IList<string>`します。 この場合、一覧の順序の昇順でスタイル クラスが適用されます。 そのため、複数のスタイル クラスでは、同じプロパティを設定するときに最高のリストの位置にあるスタイル クラスでプロパティが優先されます。
 
 同等の C# コードに示します。
 

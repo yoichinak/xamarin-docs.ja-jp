@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 0a14e3e3eb58b264d1909b6576bbbc4f7e8f4068
-ms.sourcegitcommit: 650fd5813e243d67eea13c4bc76683c0f8134123
+ms.openlocfilehash: 1f2b0c9ee46634ad7395fadfb770dd2da796ada2
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50737207"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67675158"
 ---
 # <a name="menus-in-xamarinmac"></a>Xamarin.Mac のメニュー
 
@@ -862,7 +862,7 @@ FormattingCommands.Add (Headings);
 FormattingCommands.Add(new LanguageFormatCommand ());
 FormattingCommands.Add(new LanguageFormatCommand("Link","[","]()"));
 FormattingCommands.Add(new LanguageFormatCommand("Image","![](",")"));
-FormattingCommands.Add(new LanguageFormatCommand("Image Link","[ ![](",")](LinkImageHere)"));
+FormattingCommands.Add(new LanguageFormatCommand("Image Link","[![](",")](LinkImageHere)"));
 ```
 
 渡されたコレクションと、`AssembleMenu`関数 (で、**形式**メニューは、ベースとして設定)、次の動的メニューとメニュー項目が作成されます。
@@ -1011,7 +1011,7 @@ public override void DidFinishLaunching (NSNotification notification)
 1. Visual Studio for Mac で、アプリケーションのプロジェクトと選択を右クリックして**追加** > **新しいファイル.** 新しいファイル ダイアログ ボックスで、次のように選択します**Xamarin.Mac** > **空のインターフェイス定義**、の"DockMenu"を使用して、**名前** をクリックし、**新規。** 新しいを作成するボタン**DockMenu.xib**ファイル。
 
     ![空のインターフェイス定義を追加する](menu-images/dock02.png "空のインターフェイス定義を追加します。")
-2. **Solution Pad**をダブルクリック、 **DockMenu.xib**ファイルを開き、Xcode で編集します。 新規作成**メニュー**次の項目を含む:**アドレス**、**日付**、 **Greeting**、および**署名** 
+2. **Solution Pad**をダブルクリック、 **DockMenu.xib**ファイルを開き、Xcode で編集します。 新規作成**メニュー**次のものとします。**アドレス**、**日付**、 **Greeting**、および**署名** 
 
     [![UI レイアウト](menu-images/dock03.png "UI のレイアウト")](menu-images/dock03-large.png#lightbox)
 3. 次に、当社で、カスタム メニュー用に作成した既存のアクションを新しいメニュー項目を接続しましょう、[追加、編集および削除するメニュー](#Adding,_Editing_and_Deleting_Menus)前のセクション。 切り替えて、**接続インスペクター**を選択し、**最初レスポンダー**で、**インターフェイス階層**。 下にスクロールし、検索、`phraseAddress:`アクション。 そのアクションの円から線をドラッグ、**アドレス**メニュー項目。
@@ -1051,7 +1051,7 @@ public override void DidFinishLaunching (NSNotification notification)
 1. 編集、 **Main.storyboard** Xcode とドラッグでファイルを**ショートカット ボタン**から、**ライブラリ インスペクター**上に、**パネル**で作成したウィンドウ[コンテキスト メニュー](#Contextual_Menus)セクション。 
 
     [![ポップアップのボタンの追加](menu-images/popup01.png "ポップアップ ボタンの追加")](menu-images/popup01-large.png#lightbox)
-2. 新しいメニュー項目を追加し、項目のタイトルを設定するためにポップアップで:**アドレス**、**日付**、 **Greeting**、および**署名** 
+2. 新しいメニュー項目を追加し、ポップアップをで項目のタイトルを設定します。**アドレス**、**日付**、 **Greeting**、および**署名** 
 
     [![メニュー項目を構成する](menu-images/popup02.png "メニュー項目を構成します。")](menu-images/popup02-large.png#lightbox)
 3. 次で、カスタム メニュー用に作成した既存のアクションを新しいメニュー項目を接続しましょう、[追加、編集および削除するメニュー](#Adding,_Editing_and_Deleting_Menus)前のセクション。 切り替えて、**接続インスペクター**を選択し、**最初レスポンダー**で、**インターフェイス階層**。 下にスクロールし、検索、`phraseAddress:`アクション。 そのアクションの円から線をドラッグ、**アドレス**メニュー項目。 

@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 02/05/2018
 ms.openlocfilehash: 5e354f8271257ab21a855bdf5d576ce3062fadc7
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57668245"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60957393"
 ---
 # <a name="working-with-the-android-manifest"></a>Android マニフェストの使用
 
@@ -104,7 +104,7 @@ public class MyActivity : Activity
 
 ### <a name="launchable-from-application-chooser"></a>アプリケーションの選択 ダイアログ ボックスから起動可能
 
-既定では、アクティビティは表示されませんで Android のアプリケーションの起動画面。 これは、存在する可能性は多くのアクティビティで、アプリケーションでは、1 つにつき、アイコンが必要ないためです。 アプリケーション起動プログラムから起動可能なものがありますを指定するには、使用、 [ `MainLauncher` ](https://developer.xamarin.com/api/property/Android.App.ActivityAttribute.MainLauncher/)プロパティ。 例: 
+既定では、アクティビティは表示されませんで Android のアプリケーションの起動画面。 これは、存在する可能性は多くのアクティビティで、アプリケーションでは、1 つにつき、アイコンが必要ないためです。 アプリケーション起動プログラムから起動可能なものがありますを指定するには、使用、 [ `MainLauncher` ](https://developer.xamarin.com/api/property/Android.App.ActivityAttribute.MainLauncher/)プロパティ。 例えば: 
 
 ```csharp
 [Activity (Label="Awesome Demo App", MainLauncher=true)] 
@@ -181,7 +181,7 @@ Android マニフェストにアクセス許可を追加すると (」の説明�
 Android マニフェストでは、アクティビティの機能を記述するための手段を提供します。 使用してこれには[インテント](https://developer.android.com/guide/topics/manifest/intent-filter-element.html)と [`[IntentFilter]`](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/) 
 カスタム属性です。 アクティビティの適切なアクションを指定することができます、 [`IntentFilter`](https://developer.xamarin.com/api/constructor/Android.App.IntentFilterAttribute.IntentFilterAttribute/p/System.String[]/) 
 コンス トラクター、および対象のカテゴリは適切な [`Categories`](https://developer.xamarin.com/api/property/Android.App.IntentFilterAttribute.Categories/) 
-プロパティを使用する方法を示します。 少なくとも 1 つのアクティビティには、(これは、コンス トラクターでアクティビティが提供されているためにです) を提供する必要があります。 `[IntentFilter]` 複数回、および使用するたびの個別の結果に用意できる`<intent-filter/>`内の要素、`<activity/>`します。 例えば:
+プロパティを使用する方法を示します。 少なくとも 1 つのアクティビティには、(これは、コンス トラクターでアクティビティが提供されているためにです) を提供する必要があります。 `[IntentFilter]` 複数回、および使用するたびの個別の結果に用意できる`<intent-filter/>`内の要素、`<activity/>`します。 例:
 
 ```csharp
 [Activity (Label="Awesome Demo App", MainLauncher=true, Icon="@drawable/myicon")] 

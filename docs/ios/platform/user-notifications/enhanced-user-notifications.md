@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
-ms.openlocfilehash: 0f77f9014cf7bfad510927f0f12a3e70b387036f
-ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
+ms.openlocfilehash: afa20a264e2509a5658cd0d8f90da3148315e803
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57557322"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865719"
 ---
 # <a name="enhanced-user-notifications-in-xamarinios"></a>Xamarin.iOS で強化されたユーザー通知
 
@@ -150,7 +150,7 @@ public override bool FinishedLaunching (UIApplication application, NSDictionary 
 // Get current notification settings
 UNUserNotificationCenter.Current.GetNotificationSettings ((settings) => {
     var alertsAllowed = (settings.AlertSetting == UNNotificationSetting.Enabled);
-}); 
+});    
 ``` 
 
 ### <a name="configuring-the-remote-notifications-environment"></a>リモート通知環境の構成
@@ -176,11 +176,11 @@ UNUserNotificationCenter.Current.GetNotificationSettings ((settings) => {
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. ダブルクリックして、`Entitlements.plist`ファイル、**ソリューション エクスプ ローラー**編集用に開きます。
-3. をクリックして、 **+** 新しいキーを追加するボタンをクリックします。
-4. 入力`aps-environment`の**プロパティ**、ままにして、**型**として`String`いずれかの入力と`development`または`production`の**値**: 
+2. をクリックして、 **+** 新しいキーを追加するボタンをクリックします。
+3. 入力`aps-environment`の**プロパティ**、ままにして、**型**として`String`いずれかの入力と`development`または`production`の**値**: 
 
     [![](enhanced-user-notifications-images/setup02w.png "Aps 環境プロパティ")](enhanced-user-notifications-images/setup02.png#lightbox)
-5. 変更内容をファイルに保存します。
+4. 変更内容をファイルに保存します。
 
 -----
 
@@ -274,7 +274,7 @@ UNUserNotificationCenter.Current.AddNotificationRequest (request, (err) => {
 
 ## <a name="handling-foreground-app-notifications"></a>フォア グラウンド アプリの通知の処理
 
-新しい ios 10 では、アプリ通知を処理できる異なる方法で、フォア グラウンドであり、通知がトリガーされた場合にします。 提供することで、`UNUserNotificationCenterDelegate`を実装して、`WillPresentNotification`メソッドでは、アプリ引き継ぐことができます、通知を表示するための責任です。 例:
+新しい ios 10 では、アプリ通知を処理できる異なる方法で、フォア グラウンドであり、通知がトリガーされた場合にします。 提供することで、`UNUserNotificationCenterDelegate`を実装して、`WillPresentNotification`メソッドでは、アプリ引き継ぐことができます、通知を表示するための責任です。 例えば:
 
 ```csharp
 using System;
@@ -431,7 +431,7 @@ UNUserNotificationCenter.Current.SetNotificationCategories (new NSSet<UNNotifica
 
 一連のカスタム動作とカテゴリを作成し、システムに登録されていますは、ローカルまたはリモート通知から表示できます。
 
-リモート通知は、設定、`category`上記で作成したカテゴリのいずれかに一致するリモートの通知ペイロードでします。 例:
+リモート通知は、設定、`category`上記で作成したカテゴリのいずれかに一致するリモートの通知ペイロードでします。 例えば:
 
 ```csharp
 {
@@ -550,7 +550,7 @@ Xamarin.iOS アプリでサービスの拡張機能を実装するには、次�
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. Visual Studio で、アプリのソリューションを開きます。
-2. ソリューション名を右クリックし、**ソリューション エクスプ ローラー**選択**追加 > 新しいプロジェクト.**.
+2. ソリューション名を右クリックし、**ソリューション エクスプ ローラー**選択**追加 > 新しいプロジェクト.** .
 3. 選択**Visual C# > iOS 拡張機能 > Notification Service 拡張機能**:
 
     [![](enhanced-user-notifications-images/extension01.w157-sml.png "通知サービスの拡張機能を選択します。")](enhanced-user-notifications-images/extension01.w157.png#lightbox)
@@ -561,7 +561,7 @@ Xamarin.iOS アプリでサービスの拡張機能を実装するには、次�
 > [!IMPORTANT]
 > サービス拡張機能のバンドル識別子がでメイン アプリケーションのバンドル識別子と一致する必要があります`.appnameserviceextension`末尾に追加されます。 たとえば、メイン アプリケーションがある、バンドル識別子が`com.xamarin.monkeynotify`、サービス拡張機能のバンドル識別子が必要`com.xamarin.monkeynotify.monkeynotifyserviceextension`します。 これは自動的に、ソリューションに、拡張機能が追加されたときに設定する必要があります。 
 
-必要な機能を提供するように変更する必要のある Notification Service 拡張機能では、1 つのメイン クラスです。 例:
+必要な機能を提供するように変更する必要のある Notification Service 拡張機能では、1 つのメイン クラスです。 例えば:
 
 ```csharp
 using System;
@@ -616,7 +616,7 @@ namespace MonkeyChatServiceExtension
 
 ### <a name="triggering-a-service-extension"></a>サービスの拡張機能をトリガーします。
 
-作成され、アプリで提供されるサービスの拡張子を持つデバイスに送信されるリモート通知ペイロードを変更することでトリガーできます。 例:
+作成され、アプリで提供されるサービスの拡張子を持つデバイスに送信されるリモート通知ペイロードを変更することでトリガーできます。 例えば:
 
 ```csharp
 {

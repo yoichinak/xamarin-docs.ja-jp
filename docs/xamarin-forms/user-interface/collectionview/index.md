@@ -6,54 +6,38 @@ ms.assetid: 2BC9B223-2D5C-4B09-849C-B9D578954557
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/15/2019
-ms.openlocfilehash: b22449659d2d4b7791328d53ed2d2b29d405ffc8
-ms.sourcegitcommit: 5d4e6677224971e2bc0268f405d192d0358c74b8
+ms.date: 05/06/2019
+ms.openlocfilehash: 79af2bb2ecda8d3d8df9ee9ec40276b0c59b6864
+ms.sourcegitcommit: 0596004d4a0e599c1da1ddd75a6ac928f21191c2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58329945"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66005308"
 ---
 # <a name="xamarinforms-collectionview"></a>Xamarin.Forms CollectionView
 
-![[プレビュー]](~/media/shared/preview.png)
+![](~/media/shared/preview.png "この API は、現在プレリリースです")
 
-> [!IMPORTANT]
-> `CollectionView`は現在プレビュー段階で、計画されている機能の一部が不足しています。 さらに、実装が完了すると、API が変更されることがあります。
+## <a name="introductionintroductionmd"></a>[はじめに](introduction.md)
 
-`CollectionView` は、異なるレイアウト仕様を使用してデータのリストを表示するためのビューです。 これは [ `ListView`](xref:Xamarin.Forms.ListView) の代わりとして、より柔軟でより高パフォーマンスを提供することを目的にしています。 `CollectionView` と `ListView` の API は似ていますが、注意すべきいくつかの違いがあります。
+[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)は別のレイアウトの仕様を使用してデータのリストを表示するための柔軟性とパフォーマンスの高いビューです。
 
-- `CollectionView` は柔軟なレイアウトモデルを持ち、データをリストまたはグリッドに、垂直方向または水平方向に表示することが可能です。
-- `CollectionView` にはセルの概念はありません。 代わりに、データテンプレートを使用して、リストのデータの各アイテムの外観を定義します。
-- `CollectionView` は基になるネイティブ コントロールによって提供される仮想化を自動的に利用します。
-- `CollectionView` は [ `ListView`](xref:Xamarin.Forms.ListView) の外観に関する API を減らしています。 `ListView` の多くのプロパティおよびイベントは、 `CollectionView` では存在しません。
-- `CollectionView` には組み込みの区切り線は含まれません。
+## <a name="datapopulate-datamd"></a>[データ](populate-data.md)
 
-`CollectionView` は、Xamarin.Forms 4.0 プレリリースで使用できます。 ただし、現在試験段階で、`Forms.Init` を呼ぶ前に、Android では `MainActivity` クラス、iOS では `AppDelegate` クラスに以下の1行を加えることによってのみ使用できます。:
+A [ `CollectionView` ](xref:Xamarin.Forms.CollectionView)設定によってデータが読み込まれて、 [ `ItemsSource` ](xref:Xamarin.Forms.ItemsView.ItemsSource)プロパティを実装するコレクションを`IEnumerable`します。 設定して、リストの各項目の外観を定義することができます、 [ `ItemTemplate` ](xref:Xamarin.Forms.ItemsView.ItemTemplate)プロパティを[ `DataTemplate`](xref:Xamarin.Forms.DataTemplate)します。
 
-```csharp
-Forms.SetFlags("CollectionView_Experimental");
-```
+## <a name="layoutlayoutmd"></a>[レイアウト](layout.md)
 
-> [!NOTE]
-> `CollectionView` は iOS と Android でのみ利用できます。
+既定で、 [ `CollectionView` ](xref:Xamarin.Forms.CollectionView)を垂直方向に一覧の項目が表示されます。 垂直および水平方向のリストとグリッドを指定することができます。
 
-## <a name="populate-collectionview-with-datapopulate-datamd"></a>[ CollectionView にデータを挿入する ](populate-data.md)
+## <a name="selectionselectionmd"></a>[選択内容](selection.md)
 
-`CollectionView` は、`ItemsSource` プロパティに `IEnumerable` を実装した任意のコレクションを設定することで、データが挿入されます。 リストの各項目の外観は、`ItemTemplate` プロパティに[ `DataTemplate`](xref:Xamarin.Forms.DataTemplate) を設定することで定義することができます。
+既定では、 [ `CollectionView` ](xref:Xamarin.Forms.CollectionView)選択が無効になっています。 単一または複数選択を有効にすることができます。
 
-## <a name="specify-collectionview-layoutlayoutmd"></a>[CollectionView にレイアウトを指定する ](layout.md)
+## <a name="empty-viewsemptyviewmd"></a>[空のビュー](emptyview.md)
 
-既定では、`CollectionView` は、垂直方向のリストに項目を表示しますが、垂直および水平方向のリストとグリッドを指定することができます。
+[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)、表示できるデータがない場合、ユーザーにフィードバックを提供する空のビューを指定することができます。 `EmptyView` には、文字列、ビュー、または複数のビューが使用できます。
 
-## <a name="set-collectionview-selection-modeselectionmd"></a>[CollectionView の選択モードを設定する ](selection.md)
+## <a name="scrollingscrollingmd"></a>[スクロール](scrolling.md)
 
-既定では、`CollectionView` の選択は無効になっていますが、単一または複数選択を有効にすることができます。
-
-## <a name="display-an-emptyview-when-data-is-unavailableemptyviewmd"></a>[データが利用できない場合に、EmptyView を表示する ](emptyview.md)
-
-`CollectionView` では、表示できるデータがない場合、ユーザーにフィードバックを提供するための `EmptyView` を指定することができます。 `EmptyView` には、文字列、ビュー、または複数のビューが使用できます。
-
-## <a name="scroll-an-item-into-viewscrollingmd"></a>[項目をビューにスクロールします。](scrolling.md)
-
-ユーザーが、スクロールを開始するためにスワイプした場合に、項目が完全に表示されるように、スクロールの終了位置を制御することができます。 さらに、 `CollectionView` には、2 つの `ScrollTo` メソッドが定義されており、プログラムでビューの項目にスクロールできます。 オーバーロードの 1 つは、ビュー内の指定したインデックスにある項目にスクロールし、もう一つは、ビュー内の指定した項目にスクロールします。
+ユーザーが、スクロールを開始するためにスワイプした場合に、項目が完全に表示されるように、スクロールの終了位置を制御することができます。 さらに、 [ `CollectionView` ](xref:Xamarin.Forms.CollectionView) 2 つ定義する[ `ScrollTo` ](xref:Xamarin.Forms.ItemsView.ScrollTo*)メソッドは、プログラムで項目をビューにスクロールします。 オーバーロードの 1 つは、ビュー内の指定したインデックスにある項目にスクロールし、もう一つは、ビュー内の指定した項目にスクロールします。

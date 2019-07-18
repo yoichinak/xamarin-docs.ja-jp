@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: cfc4ecc5bf7ebc5e4c4dae8094fe3eb4ece34068
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f56f2c58195e51e9294948dad85a475e181f99b2
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112502"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978537"
 ---
 # <a name="connection-troubleshooting-for-a-xamarinios-build-host"></a>Xamarin.iOS ビルド ホストの接続のトラブルシューティング
 
@@ -40,8 +40,8 @@ _このガイドでは、新しい接続マネージャーの使用中に発生�
 > 以上のどの方法でも問題が解決されない場合は、[手順 9](#stepnine) の指示に従い、新しいバグ報告を提出してください。
 
 1. 互換性のあるバージョンの Xamarin.iOS が Mac にインストールされていることを確認します。 Visual Studio 2017 の場合は、Visual Studio for Mac の**安定**配布チャネルであることを確認します。 Visual Studio 2015 以前の場合、両方の IDE で配布チャネルが同じであることを確認します。
-    * Visual Studio for Mac で、**[Visual Studio for Mac] > [更新の確認...]** の順に進み、**[更新チャネル]** を表示、または変更します。
-    * Visual Studio 2015 以前の場合、**[ツール]、[オプション]、[Xamarin]、[その他]** の順に選択し、配布チャネルを確認します。
+    * Visual Studio for Mac で、 **[Visual Studio for Mac] > [更新の確認...]** の順に進み、 **[更新チャネル]** を表示、または変更します。
+    * Visual Studio 2015 以前の場合、 **[ツール]、[オプション]、[Xamarin]、[その他]** の順に選択し、配布チャネルを確認します。
 
 2. Mac で **[リモート ログイン]** が有効になっていることを確認します。 **[対象ユーザーのみ]** にアクセスを設定し、Mac ユーザーがリストまたはグループに含まれていることを確認します。
 
@@ -66,7 +66,7 @@ _このガイドでは、新しい接続マネージャーの使用中に発生�
     [![](troubleshooting-images/troubleshooting-image5a.png "ターミナル アプリからのアカウント名の取得")](troubleshooting-images/troubleshooting-image5a.png#lightbox)
 
 
-6. Mac に使用している IP アドレスが正しいことを確認します。 Mac で IP アドレスを見つけるには、**[システム環境設定]、[共有]、[リモート ログイン]** の順に選択します。
+6. Mac に使用している IP アドレスが正しいことを確認します。 Mac で IP アドレスを見つけるには、 **[システム環境設定]、[共有]、[リモート ログイン]** の順に選択します。
 
     [![](troubleshooting-images/troubleshooting-image17.png "[システム環境設定] アプリの IP アドレス")](troubleshooting-images/troubleshooting-image17.png#lightbox)
 
@@ -103,7 +103,7 @@ _このガイドでは、新しい接続マネージャーの使用中に発生�
 
     - OS X ファイアウォール設定で接続を禁止しています。 手順 3 をもう一度確認してください。
 
-        OS X ファイアウォールをアプリ別に構成した結果、無効な状態になることがあります。[システム環境設定] に表示される設定が実際の動作を反映していません。 構成ファイル (**/Library/Preferences/com.apple.alf.plist**) を削除し、コンピューターを再起動すると、既定の動作が復元されることがあります。 このファイルを削除する 1 つの方法は、Finder で **[移動]&gt;[フォルダーへ移動]** の順に選択して **/Library/Preferences** に入り、**com.apple.alf.plist** ファイルをごみ箱に移動することです。
+        OS X ファイアウォールをアプリ別に構成した結果、無効な状態になることがあります。[システム環境設定] に表示される設定が実際の動作を反映していません。 構成ファイル ( **/Library/Preferences/com.apple.alf.plist**) を削除し、コンピューターを再起動すると、既定の動作が復元されることがあります。 このファイルを削除する 1 つの方法は、Finder で **[移動]&gt;[フォルダーへ移動]** の順に選択して **/Library/Preferences** に入り、**com.apple.alf.plist** ファイルをごみ箱に移動することです。
 
     - Mac と Windows コンピューターの間にあるルーターの 1 つのファイアウォール設定が接続をブロックしています。
 
@@ -124,17 +124,17 @@ _このガイドでは、新しい接続マネージャーの使用中に発生�
 
 既知の原因:
 
-- **制限** – このエラーは、名前にアクセント記号付きの文字が含まれるとき、アカウントの_氏名_でビルド ホストにログインしようとすると表示されることがあります。 これは、Xamarin が SSH 接続に利用する [SSH.NET ライブラリ](https://sshnet.codeplex.com/)の制限です。 **回避策**: 上の手順 5 をご覧ください。
+- **制限** – このエラーは、名前にアクセント記号付きの文字が含まれるとき、アカウントの_氏名_でビルド ホストにログインしようとすると表示されることがあります。 これは、Xamarin が SSH 接続に利用する [SSH.NET ライブラリ](https://sshnet.codeplex.com/)の制限です。 **対応策**: 上記の手順 5 を参照してください。
 
 #### <a name="unable-to-authenticate-with-ssh-keys-please-try-to-log-in-with-credentials-first"></a>"SSH キーで認証できませんでした。 最初に資格情報でログインしてください。"
 
 既知の原因:
 
-- **SSH セキュリティの制限** – このメッセージは多くの場合、Mac の完全修飾パス **$HOME/.ssh/authorized\_keys** にあるファイルまたはディレクトリの 1 つで _[その他]_ メンバーまたは _[グループ]_ メンバーに対して書き込みアクセス許可が有効になっていることを意味します。 **一般的な修正方法**: Mac のターミナル コマンド プロンプトで `chmod og-w "$HOME"` を実行します。 特定のファイルまたはディレクトリが問題を引き起こしている場合の詳細については、ターミナルで `grep sshd /var/log/system.log > "$HOME/Desktop/sshd.log"` を実行し、デスクトップから **sshd.log** ファイルを開き、"Authentication refused: bad ownership or modes" を探します。
+- **SSH セキュリティの制限** – このメッセージは多くの場合、Mac の完全修飾パス **$HOME/.ssh/authorized\_keys** にあるファイルまたはディレクトリの 1 つで _[その他]_ メンバーまたは _[グループ]_ メンバーに対して書き込みアクセス許可が有効になっていることを意味します。 **一般的な修正方法**:Mac 上のターミナル コマンド プロンプトで `chmod og-w "$HOME"` を実行します。 特定のファイルまたはディレクトリが問題を引き起こしている場合の詳細については、ターミナルで `grep sshd /var/log/system.log > "$HOME/Desktop/sshd.log"` を実行し、デスクトップから **sshd.log** ファイルを開き、"Authentication refused: bad ownership or modes" を探します。
 
 #### <a name="trying-to-connect-never-completes"></a>"接続しようとしています..." が完了しない
 
-- **バグ [#52264](https://bugzilla.xamarin.com/show_bug.cgi?id=52264)** – この問題は、**[システム環境設定] の [ユーザーとグループ]** で Mac ユーザーの **[詳細オプション]** コンテキスト メニューの **[ログイン シェル]** が **/bin/bash** 以外の値に設定されている場合に Xamarin 4.1 で発生することがあります。 (Xamarin 4.2 以降では、このシナリオは、このバグではなく "接続できませんでした" というエラー メッセージにつながります。)**回避策**: **ログイン シェル**を既定の **/bin/bash** に戻します。
+- **バグ [#52264](https://bugzilla.xamarin.com/show_bug.cgi?id=52264)** – この問題は、 **[システム環境設定] の [ユーザーとグループ]** で Mac ユーザーの **[詳細オプション]** コンテキスト メニューの **[ログイン シェル]** が **/bin/bash** 以外の値に設定されている場合に Xamarin 4.1 で発生することがあります。 (Xamarin 4.2 以降では、このシナリオは、このバグではなく "接続できませんでした" というエラー メッセージにつながります。)**対応策**: **ログイン シェル**を元の既定の **/bin/bash** に戻します。
 
 <a name="tryagain" />
 
@@ -142,19 +142,19 @@ _このガイドでは、新しい接続マネージャーの使用中に発生�
 
 報告されている原因:
 
-- **バグ** – "An unexpected error occurred while configuring SSH for the user ...Session operation has timed out" (ユーザー ... の SSH を構成中に予期しないエラーが発生しました。セッションはタイムアウトになりました。) にさらに詳しいエラーが表示されたとの報告を受けています。 **回避策:** ローカル ユーザー アカウントでビルド ホストにログインします。
+- **バグ** – "An unexpected error occurred while configuring SSH for the user ...Session operation has timed out" (ユーザー ... の SSH を構成中に予期しないエラーが発生しました。セッションはタイムアウトになりました。) にさらに詳しいエラーが表示されたとの報告を受けています。 **回避策:** 代わりにローカル ユーザー アカウントを使用して、ビルド ホストにログインします。
 
-- **バグ** – 接続ダイアログで Mac の名前をダブルクリックしてビルド ホストに接続しようとしたとき、このエラーが発生したとの報告を受けています。 **考えられる回避策**: IP アドレスを利用し、[Mac を手動で追加](~/ios/get-started/installation/windows/connecting-to-mac/index.md#manually-add-a-mac)します。
+- **バグ** – 接続ダイアログで Mac の名前をダブルクリックしてビルド ホストに接続しようとしたとき、このエラーが発生したとの報告を受けています。 **考えられる回避策**:IP アドレスを使用して、[Mac を手動で追加](~/ios/get-started/installation/windows/connecting-to-mac/index.md#manually-add-a-mac)します。
 
-- **バグ [#35971](https://bugzilla.xamarin.com/show_bug.cgi?id=35971)** – Mac ビルド ホストと Windows の間で無線ネットワーク接続を利用したとき、このエラーが発生したとの報告を受けています。 **考えられる回避策**: 両方のコンピューターを有線ネットワーク接続に移します。
+- **バグ [#35971](https://bugzilla.xamarin.com/show_bug.cgi?id=35971)** – Mac ビルド ホストと Windows の間で無線ネットワーク接続を利用したとき、このエラーが発生したとの報告を受けています。 **考えられる回避策**:両方のコンピューターを有線ネットワーク接続に移動します。
 
-- **バグ [#36642](https://bugzilla.xamarin.com/show_bug.cgi?id=36642)** – Xamarin 4.0 で、Mac の **$HOME/.bashrc** ファイルにエラーがあるとき、このメッセージが必ず表示されます。 (Xamarin 4.1 以降では、**.bashrc** ファイルのエラーは接続プロセスに影響を与えません。)**回避策**: **.bashrc** ファイルをバックアップの場所に移します (あるいは、必要ないことがわかっている場合、削除します)。
+- **バグ [#36642](https://bugzilla.xamarin.com/show_bug.cgi?id=36642)** – Xamarin 4.0 で、Mac の **$HOME/.bashrc** ファイルにエラーがあるとき、このメッセージが必ず表示されます。 (Xamarin 4.1 以降では、 **.bashrc** ファイルのエラーは接続プロセスに影響を与えません。)**回避策**: **.bashrc** ファイルをバックアップの場所に移動します (あるいは、必要ないことがわかっている場合、削除します)。
 
-- **バグ [#52264](https://bugzilla.xamarin.com/show_bug.cgi?id=52264)** – このエラーは、**[システム環境設定] の [ユーザーとグループ]** で Mac ユーザーの **[詳細オプション]** コンテキスト メニューの **[ログイン シェル]** が **/bin/bash** 以外の値に設定されている場合に発生することがあります。 **回避策**: **ログイン シェル**を既定の **/bin/bash** に戻します。
+- **バグ [#52264](https://bugzilla.xamarin.com/show_bug.cgi?id=52264)** – このエラーは、 **[システム環境設定] の [ユーザーとグループ]** で Mac ユーザーの **[詳細オプション]** コンテキスト メニューの **[ログイン シェル]** が **/bin/bash** 以外の値に設定されている場合に発生することがあります。 **対応策**: **ログイン シェル**を元の既定の **/bin/bash** に戻します。
 
 - **制限** – このエラーは、インターネットにアクセスできないルーターに Mac ビルド ホストが接続されている場合に (あるいは、Windows コンピューターの DNS 逆引き参照を要求されるとタイムアウトする DNS サーバーを Mac が使用している場合に) 発生することがあります。 Visual Studio は、SSH フィンガープリントを取得し、結局は接続に失敗するのに約 30 秒かかります。
 
-    **考えられる回避策**: "UseDNS no" を **sshd\_config** ファイルに追加します。 変更前にこの SSH 設定についてお読みください。 たとえば、[unix.stackexchange.com/questions/56941/what-is-the-point-of-sshd-usedns-option](http://unix.stackexchange.com/questions/56941/what-is-the-point-of-sshd-usedns-option) をご覧ください。
+    **考えられる回避策**:"UseDNS no" を **sshd\_config** ファイルに追加します。 変更前にこの SSH 設定についてお読みください。 たとえば、[unix.stackexchange.com/questions/56941/what-is-the-point-of-sshd-usedns-option](http://unix.stackexchange.com/questions/56941/what-is-the-point-of-sshd-usedns-option) をご覧ください。
 
     次の手順は、設定を変更する方法の 1 つです。 手順を完了するには、Mac で管理者アカウントにログインする必要があります。
 
@@ -192,7 +192,7 @@ Mac エージェントの "インストール"、"アップロード"、"起動"
     open "$HOME/Library/Caches/Xamarin"
     ```
     
-2. **XMA** フォルダーをコントロール クリックし、**[ごみ箱に入れる]** を選択します。
+2. **XMA** フォルダーをコントロール クリックし、 **[ごみ箱に入れる]** を選択します。
 
     [![](troubleshooting-images/troubleshooting-image8.png "XMA フォルダーをごみ箱に移動します")](troubleshooting-images/troubleshooting-image8.png#lightbox)
 
@@ -210,7 +210,7 @@ Mac エージェントの "インストール"、"アップロード"、"起動"
 
 Mac と Windows の両方が同じ Xamarin 配布チャネルに更新されることを確定している限り、この警告は無視できます。
 
-#### <a name="failed-to-execute-ls-usrbinmono-exitstatus1"></a>"'ls /usr/bin/mono': ExitStatus=1 の実行に失敗しました"
+#### <a name="failed-to-execute-ls-usrbinmono-exitstatus1"></a>"'ls /usr/bin/mono': ExitStatus=1 の実行に失敗しました":
 
 Mac で OS X 10.11 (El Capitan) 以降を実行している限り、このメッセージは無視できます。 このメッセージは OS X 10.11 では問題ではありません。Xamarin は **/usr/local/bin/mono** も確認するためです。これは OS X 10.11 で `mono` に求められる正しい場所です。
 
@@ -230,7 +230,7 @@ Mac で OS X 10.11 (El Capitan) 以降を実行している限り、このメッ
 
 出力ウィンドウから始めることが推奨されます。 主要な接続手順とエラーに関するメッセージが表示されます。 出力ウィンドウで Xamarin メッセージを表示するには:
 
-1. メニューで **[表示]、[出力]** の順に選択するか、**[出力]** タブをクリックします。
+1. メニューで **[表示]、[出力]** の順に選択するか、 **[出力]** タブをクリックします。
 2. **[出力元の表示]** ドロップダウン メニューをクリックします。
 3. **[Xamarin]** を選択します。
 
@@ -247,17 +247,17 @@ Mac で OS X 10.11 (El Capitan) 以降を実行している限り、このメッ
 
 2. ビルド ホストに接続してみます。
 
-3. Visual Studio で接続エラーが表示されたら、**[ヘルプ]、[Xamarin]、[ログの Zip]** の順に選択し、ログを収集します。
+3. Visual Studio で接続エラーが表示されたら、 **[ヘルプ]、[Xamarin]、[ログの Zip]** の順に選択し、ログを収集します。
 
     [![](troubleshooting-images/troubleshooting-image12.png "[ヘルプ]、[Xamarin]、[ログの Zip] の順に選択し、ログを収集します")](troubleshooting-images/troubleshooting-image12.png#lightbox)
 
 4. .zip ファイルを開くと、下のサンプルのようなファイルの一覧が表示されます。 接続エラーの場合、最も重要なファイルは **\*Ide.log** ファイルと **\*Ide.svclog** ファイルです。 このファイルには、同じメッセージが微妙に異なる 2 つの形式で入っています。 **.svclog** は XML であり、メッセージを拾い読みする場合に便利です。 **.log** はプレーン テキストであり、コマンド ライン ツールでメッセージをフィルター処理する場合に便利です。
 
-    すべてのメッセージに目を通すには、**.svclog** ファイルを選択し、開きます。
+    すべてのメッセージに目を通すには、 **.svclog** ファイルを選択し、開きます。
 
     [![](troubleshooting-images/troubleshooting-image13.png "svclog ファイルを選択します")](troubleshooting-images/troubleshooting-image13.png#lightbox)
 
-5. **.svclog** ファイルを **Microsoft Service Trace Viewer** で開きます。 メッセージの関連グループを見るには、スレッド別にメッセージを参照します。 スレッド別に閲覧するには、最初に **[グラフ]** タブを選択し、**[レイアウト モード]** ドロップダウン メニューをクリックし、**[スレッド]** を選択します。
+5. **.svclog** ファイルを **Microsoft Service Trace Viewer** で開きます。 メッセージの関連グループを見るには、スレッド別にメッセージを参照します。 スレッド別に閲覧するには、最初に **[グラフ]** タブを選択し、 **[レイアウト モード]** ドロップダウン メニューをクリックし、 **[スレッド]** を選択します。
 
     [![](troubleshooting-images/troubleshooting-image14.png "[レイアウト モード] ドロップダウン メニューをクリックし、[スレッド] を選択します")](troubleshooting-images/troubleshooting-image14.png#lightbox)
 
@@ -279,7 +279,7 @@ Mac で OS X 10.11 (El Capitan) 以降を実行している限り、このメッ
 
 4. Visual Studio からビルド ホストに接続してみます。
 
-5. Visual Studio で接続エラーが表示されたら、**[ヘルプ]、[Xamarin]、[ログの Zip]** の順に選択し、ログを収集します。
+5. Visual Studio で接続エラーが表示されたら、 **[ヘルプ]、[Xamarin]、[ログの Zip]** の順に選択し、ログを収集します。
 
 6. Mac のターミナルで次のコマンドを実行し、最近のログ メッセージがあれば、それを SSH サーバーからデスクトップ上のファイルにコピーします。
 
@@ -293,7 +293,7 @@ Mac で OS X 10.11 (El Capitan) 以降を実行している限り、このメッ
 
 ### <a name="ide-log-files"></a>IDE ログ ファイル
 
-[Mac の自動プロビジョニング](~/ios/get-started/installation/windows/connecting-to-mac/index.md#automatic-mac-provisioning)を使用していて問題が発生した場合は、Visual Studio 2017 IDE ログ (**%LOCALAPPDATA%\Xamarin\Logs\15.0**) を確認してください。
+[Mac の自動プロビジョニング](~/ios/get-started/installation/windows/connecting-to-mac/index.md#automatic-mac-provisioning)を使用していて問題が発生した場合は、Visual Studio 2017 IDE ログ ( **%LOCALAPPDATA%\Xamarin\Logs\15.0**) を確認してください。
 
 ## <a name="troubleshooting-build-and-deployment-errors"></a>ビルドと配置エラーの解決
 
@@ -305,7 +305,7 @@ Mac で OS X 10.11 (El Capitan) 以降を実行している限り、このメッ
 
 - **Xamarin 4.1 セキュリティ機能** – このエラーは、Xamarin 4.1 以降の使用後に Xamarin 4.0 にダウングレードした場合に_発生します_。 この場合、このエラーと共に "Private key is encrypted but passphrase is empty" (秘密キーが暗号化されていますが、パスフレーズが空です) という警告も表示されます。 これは Xamarin 4.1 の新しいセキュリティ機能に起因する_意図的な_変更です。 **推奨される解決策**: **%LOCALAPPDATA%\Xamarin\MonoTouch** から **id\_rsa** と **id\_rsa.pub** を削除し、Mac ビルド ホストに再接続します。
 
-- **SSH セキュリティの制限** – このメッセージと共に "Could not authenticate the user using the existing ssh keys" (既存の ssh キーでユーザーを認証できませんでした) という警告も表示されるとき、それは多くの場合、Mac の完全修飾パス **$HOME/.ssh/authorized\_keys** にあるファイルまたはディレクトリの 1 つで _[その他]_ メンバーまたは _[グループ]_ メンバーに対して書き込みアクセス許可が有効になっていることを意味します。 **一般的な修正方法**: Mac のターミナル コマンド プロンプトで `chmod og-w "$HOME"` を実行します。 特定のファイルまたはディレクトリが問題を引き起こしている場合の詳細については、ターミナルで `grep sshd /var/log/system.log > "$HOME/Desktop/sshd.log"` を実行し、デスクトップから **sshd.log** ファイルを開き、"Authentication refused: bad ownership or modes" を探します。
+- **SSH セキュリティの制限** – このメッセージと共に "Could not authenticate the user using the existing ssh keys" (既存の ssh キーでユーザーを認証できませんでした) という警告も表示されるとき、それは多くの場合、Mac の完全修飾パス **$HOME/.ssh/authorized\_keys** にあるファイルまたはディレクトリの 1 つで _[その他]_ メンバーまたは _[グループ]_ メンバーに対して書き込みアクセス許可が有効になっていることを意味します。 **一般的な修正方法**:Mac 上のターミナル コマンド プロンプトで `chmod og-w "$HOME"` を実行します。 特定のファイルまたはディレクトリが問題を引き起こしている場合の詳細については、ターミナルで `grep sshd /var/log/system.log > "$HOME/Desktop/sshd.log"` を実行し、デスクトップから **sshd.log** ファイルを開き、"Authentication refused: bad ownership or modes" を探します。
 
 ### <a name="solutions-cannot-be-loaded-from-a-network-share"></a>ネットワーク共有からソリューションを読み込めない
 
@@ -369,7 +369,7 @@ killall mono
     open "$HOME/Library/Caches/Xamarin"
     ```
 
-2. **mtbs** フォルダーをコントロール クリックし、**[ごみ箱に入れる]** を選択します。
+2. **mtbs** フォルダーをコントロール クリックし、 **[ごみ箱に入れる]** を選択します。
 
     [![](troubleshooting-images/troubleshooting-image9.png "mtbs フォルダーをごみ箱に移動します")](troubleshooting-images/troubleshooting-image9.png#lightbox)
 
@@ -377,4 +377,4 @@ killall mono
 ## <a name="related-links"></a>関連リンク
 
 - [Mac とペアリング](~/ios/get-started/installation/windows/connecting-to-mac/index.md)
-- [Xamarin Mac ビルド エージェント - Xamarin University Lightning Lecture](https://www.youtube.com/watch?v=MBAPBtxkjFQ)
+- [Xamarin Mac ビルド エージェントのビデオ](https://www.youtube.com/watch?v=MBAPBtxkjFQ)

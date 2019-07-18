@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 854b3fdbd34444cfb052d36287cf5cd47a36a2e0
-ms.sourcegitcommit: 0044d04990faa0b144b8626a4fceea0fdff95cfe
+ms.openlocfilehash: c60eecd5ebd0f518514cd77d8dd963568d1a1d43
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56666910"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65970914"
 ---
 # <a name="xamarinforms-master-detail-page"></a>Xamarin.Forms のマスター詳細ページ
 
@@ -111,7 +111,7 @@ public class MainPageCS : MasterDetailPage
              xmlns:local="using:MasterDetailPageNavigation"
              x:Class="MasterDetailPageNavigation.MasterPage"
              Padding="0,40,0,0"
-             Icon="hamburger.png"
+             IconImageSource="hamburger.png"
              Title="Personal Organiser">
     <StackLayout>
         <ListView x:Name="listView" x:FieldModifier="public">
@@ -145,7 +145,7 @@ public class MainPageCS : MasterDetailPage
 
 各 `MasterPageItem` を表示するため、[`DataTemplate`](xref:Xamarin.Forms.DataTemplate) が [`ListView.ItemTemplate`](xref:Xamarin.Forms.ItemsView`1.ItemTemplate) プロパティに割り当てられます。 `DataTemplate` には、[`Image`](xref:Xamarin.Forms.Image) と [`Label`](xref:Xamarin.Forms.Label) で構成される [`ViewCell`](xref:Xamarin.Forms.ViewCell) が含まれます。 各 `MasterPageItem` について、[`Image`](xref:Xamarin.Forms.Image) では `IconSource` プロパティの値が表示され、[`Label`](xref:Xamarin.Forms.Label) では `Title` プロパティの値が表示されます。
 
-ページでは、[`Title`](xref:Xamarin.Forms.Page.Title) プロパティと [`Icon`](xref:Xamarin.Forms.Page.Icon) プロパティが設定されます。 詳細ページにタイトル バーがある場合は、アイコンが詳細ページに表示されます。 iOS では、詳細ページのインスタンスを [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) インスタンスにラップすることによって、これを有効にする必要があります。
+ページでは、[`Title`](xref:Xamarin.Forms.Page.Title) プロパティと [`IconImageSource`](xref:Xamarin.Forms.Page.IconImageSource) プロパティが設定されます。 詳細ページにタイトル バーがある場合は、アイコンが詳細ページに表示されます。 iOS では、詳細ページのインスタンスを [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) インスタンスにラップすることによって、これを有効にする必要があります。
 
 > [!NOTE]
 > [`MasterDetailPage.Master`](xref:Xamarin.Forms.MasterDetailPage.Master) ページではその [`Title`](xref:Xamarin.Forms.Page.Title) プロパティを設定する必要があります。設定しないと例外が発生します。
@@ -198,7 +198,7 @@ public class MasterPageCS : ContentPage
       SeparatorVisibility = SeparatorVisibility.None
     };
 
-    Icon = "hamburger.png";
+    IconImageSource = "hamburger.png";
     Title = "Personal Organiser";
     Content = new StackLayout
     {
@@ -239,7 +239,7 @@ public partial class MainPage : MasterDetailPage
 
 `OnItemSelected` メソッドでは、次の操作が実行されます。
 
-- [`ListView`](xref:Xamarin.Forms.ListView) のインスタンスから [`SelectedItem`](xref:Xamarin.Forms.ListView.SelectedItem) を取得し、それが `null` でない場合は、詳細ページに、`MasterPageItem` の `TargetType` プロパティに格納されているページ種類の新しいインスタンスを設定します。 `MasterPage` の [`Icon`](xref:Xamarin.Forms.Page.Icon) プロパティを通して参照されているアイコンが iOS の詳細ページに表示されるように、ページの種類を [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) のインスタンス内にラップします。
+- [`ListView`](xref:Xamarin.Forms.ListView) のインスタンスから [`SelectedItem`](xref:Xamarin.Forms.ListView.SelectedItem) を取得し、それが `null` でない場合は、詳細ページに、`MasterPageItem` の `TargetType` プロパティに格納されているページ種類の新しいインスタンスを設定します。 `MasterPage` の [`IconImageSource`](xref:Xamarin.Forms.Page.IconImageSource) プロパティを通して参照されているアイコンが iOS の詳細ページに表示されるように、ページの種類を [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) のインスタンス内にラップします。
 - 次に `MasterPage` が表示されるときにどの `ListView` 項目も選択されていないように、[`ListView`](xref:Xamarin.Forms.ListView) の選択済み項目を `null` に設定します。
 - [`MasterDetailPage.IsPresented`](xref:Xamarin.Forms.MasterDetailPage.IsPresented) プロパティを `false` に設定することにより、ユーザーに詳細ページを表示します。 このプロパティは、マスター ページまたは詳細ページが表示されるかどうかを制御します。 マスター ページを表示するには `true` に、詳細ページを表示するには `false` に、設定する必要があります。
 

@@ -1,11 +1,15 @@
 ---
-ms.openlocfilehash: 86c9ce71b72f88b8b920784f72ae572d7f629776
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: f171a3f56c7fc516d409400aefa7e097e6ccbff6
+ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61382571"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67277325"
 ---
+このチュートリアルを試行する前に、以下を正常に完了しておく必要があります。
+
+- [最初の Xamarin.Forms アプリのビルド](~/get-started/first-app/index.md)のクイック スタート。
+
 このチュートリアルでは、次の作業を行う方法について説明します。
 
 > [!div class="checklist"]
@@ -13,22 +17,6 @@ ms.locfileid: "61382571"
 > - `StackLayout` の向きを指定する。
 > - `StackLayout` 内での子ビューの配置と展開を制御する。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+[`StackLayout`](xref:Xamarin.Forms.StackLayout) 内にコントロールを配置する方法を示す簡単なアプリケーションを作成するには、Visual Studio 2019 または Visual Studio for Mac を使用します。 次のスクリーンショットは、最終的なアプリケーションです。
 
-### <a name="prerequisites"></a>必須コンポーネント
-
-このチュートリアルを完了するには、**.NET によるモバイル開発**ワークロードがインストールされた、Visual Studio 2017 (最新リリース) が必要です。 さらに、iOS でチュートリアル アプリケーションを構築するには、ペアリング済みの Mac が必要になります。 Xamarin プラットフォームのインストールについては、「[Xamarin のインストール](~/get-started/installation/index.md)」を参照してください。 Mac ビルド ホストへの Visual Studio 2017 の接続については、「[Xamarin.iOS 開発のために Mac とペアリングする](~/ios/get-started/installation/windows/connecting-to-mac/index.md)」を参照してください。
-
-このチュートリアルを試行する前に、以下を正常に完了しておく必要があります。
-
-- [最初の Xamarin.Forms アプリのビルド](~/get-started/first-app/index.md)のクイック スタート。
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-### <a name="prerequisites"></a>必須コンポーネント
-
-このチュートリアルを完了するには、iOS と Android のプラットフォームのサポートがインストールされた Visual Studio for Mac (最新リリース) が必要です。 さらに、Xcode (最新リリース) も必要になります。 Xamarin プラットフォームのインストールについて詳しくは、「[Xamarin のインストール](~/get-started/installation/index.md)」を参照してください。
-
-このチュートリアルを試行する前に、以下を正常に完了しておく必要があります。
-
-- [最初の Xamarin.Forms アプリのビルド](~/get-started/first-app/index.md)のクイック スタート。
+[![iOS および Android 上の、配置オプションと展開オプションを設定した StackLayout の子ビューのスクリーンショット](../images/alignment-expansion-reduced.png "配置と展開を設定した、Label インスタンスを含む StackLayout") ](../images/alignment-expansion-large.png#lightbox "配置と展開を設定した、Label インスタンスを含む StackLayout")

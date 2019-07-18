@@ -6,12 +6,12 @@ ms.assetid: 8409BD81-B1A6-4F5D-AE11-6BBD3F7C6327
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: e7371fa85fd5955e9a0fd285adb32844001821b3
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 3377602b8d793be8274ed150ebbd124c9d165e82
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105436"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832492"
 ---
 # <a name="urhosharp-android-support"></a>UrhoSharp Android サポート
 
@@ -25,7 +25,7 @@ Urho は、ポータブル クラス ライブラリであり、ゲーム ロジ
 
 **サポートされているアーキテクチャ**: x86、armeabi、armeabi v7a
 
-## <a name="create-a-project"></a>プロジェクトの作成
+## <a name="create-a-project"></a>プロジェクトを作成する
 
 Android プロジェクトを作成し、UrhoSharp の NuGet パッケージを追加します。
 
@@ -121,4 +121,3 @@ public class MainActivity : Activity
     }
 }
 ```
-

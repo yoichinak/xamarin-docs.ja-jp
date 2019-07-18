@@ -7,11 +7,11 @@ author: asb3993
 ms.author: amburns
 ms.date: 04/20/2018
 ms.openlocfilehash: fd48c7148aadd8d156544113e2d719295294bf40
-ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "40251001"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61261286"
 ---
 # <a name="httpclient-and-ssltls-implementation-selector-for-iosmacos"></a>IOS と macOS の HttpClient と SSL/TLS の実装セレクター
 
@@ -30,7 +30,7 @@ ms.locfileid: "40251001"
 
 1. ダブルクリックして、**プロジェクト名**で、**ソリューション エクスプ ローラー**プロジェクト オプション を開きます。
 2. 切り替えて、**ビルド**プロジェクトの設定 (たとえば、 **iOS ビルド**Xamarin.iOS アプリの)。
-3. **HttpClient 実装**] ドロップダウンで、[、`HttpClient`型として、次のいずれか: **NSUrlSession** (推奨)、 **CFNetwork**、または**マネージ**します。
+3. **HttpClient 実装**] ドロップダウンで、[、`HttpClient`として、次のいずれかを入力します。**NSUrlSession** (推奨)、 **CFNetwork**、または**マネージ**します。
 
 [![管理されている、CFNetwork、または NSUrlSession から HttpClient の実装を選択します。](http-stack-images/http-xs-sml.png)](http-stack-images/http-xs.png#lightbox)
 
@@ -104,8 +104,8 @@ HttpClient client = new HttpClient(new NSUrlSessionHandler());
 SSL (Secure Socket Layer) とその後継の TLS (トランスポート層セキュリティ)、HTTP およびその他のネットワーク接続経由でのサポートを提供します。`System.Net.Security.SslStream`します。 Xamarin.iOS など Xamarin.tvOS Xamarin.Mac の`System.Net.Security.SslStream`実装は Mono で提供されるマネージ実装を使用する代わりに、Apple のネイティブの SSL/TLS 実装を呼び出します。 Apple のネイティブ実装では、TLS 1.2 をサポートします。
 
 > [!WARNING]
-> Xamarin.Mac 4.8 の今後のリリースは、macOS 10.9 以降のみをサポートします。
-> Xamarin.Mac の以前のバージョンには、macOS 10.7 以上がサポートされていますが、これらの古い macOS バージョンが TLS 1.2 をサポートするための十分な TLS インフラストラクチャがないです。 対象の macOS 10.7 または macOS 10.8、Xamarin.Mac 4.6 以前を使用します。
+> 今度の Xamarin.Mac 4.8 リリースでは、macOS 10.9 以降のみをサポートします。
+> 以前のバージョンの Xamarin.Mac では macOS 10.7 以降をサポートしていましたが、これらの古い macOS バージョンは TLS 1.2 をサポートするための十分な TLS インフラストラクチャがありませんでした。 macOS 10.7 または macOS 10.8 をターゲットにするには、Xamarin.Mac 4.6 以前を使用してください。
 
 ## <a name="app-transport-security"></a>アプリケーション トランスポート セキュリティ
 

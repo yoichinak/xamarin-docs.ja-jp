@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/15/2017
 ms.openlocfilehash: e61cb20f12f6373ef57beb759b933d3dd9b6e76e
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50110584"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61408136"
 ---
 # <a name="app-search-enhancements-in-xamarinios"></a>Xamarin.iOS でのアプリの検索の機能強化
 
@@ -64,7 +64,7 @@ IOS 10 Apple は、ユーザーをスポット ライトや、Safari で検索�
 
 -----
 
-検索結果を引き続きユーザーに応答する (`NSUserActivity`)、編集、`AppDelegate.cs`オーバーライド ファイルを開き、`ContinueUserActivity`メソッド。 例えば:
+検索結果を引き続きユーザーに応答する (`NSUserActivity`)、編集、`AppDelegate.cs`オーバーライド ファイルを開き、`ContinueUserActivity`メソッド。 例:
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)

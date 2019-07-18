@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/19/2018
-ms.openlocfilehash: 3b23a1a07741cd048ea034b2b39b5f9cde902dc6
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: d32ef0176f0eff5981720d9e83568a7a40d0a396
+ms.sourcegitcommit: b4a12607ca944de10fd166139765241a4501831c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672769"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66687146"
 ---
 # <a name="xamarinforms-button"></a>Xamarin.Forms のボタン
 
@@ -124,7 +124,7 @@ public class CodeButtonClickPage : ContentPage
 }
 ```
 
-クラスのコンス トラクターでは、すべて行われます。 `Clicked`ハンドラーが長い 1 つだけのステートメントで、非常に単純に、イベントにアタッチできます。
+クラスのコンストラクターでは、すべて行われます。 `Clicked`ハンドラーが長い 1 つだけのステートメントで、非常に単純に、イベントにアタッチできます。
 
 ```csharp
 button.Clicked += async (sender, args) => await label.RelRotateTo(360, 1000);
@@ -192,7 +192,7 @@ class CommandDemoViewModel : INotifyPropertyChanged
 }
 ```
 
-2 つ`ICommand`プロパティは型の 2 つのオブジェクト クラスのコンス トラクターで初期化される`Command`します。 `Command`コンス トラクターは、少し関数を含める (と呼ばれる、`execute`コンス トラクターの引数) を 2 倍にするとき、または部分が、`Number`プロパティ。
+2 つ`ICommand`プロパティは型の 2 つのオブジェクト クラスのコンストラクターで初期化される`Command`します。 `Command`コンストラクターは、少し関数を含める (と呼ばれる、`execute`コンストラクターの引数) を 2 倍にするとき、または部分が、`Number`プロパティ。
 
 **BasicButtonCommand.xaml**ファイルのセット、`BindingContext`のインスタンスに`CommandDemoViewModel`します。 `Label`要素と 2 つ`Button`要素は、3 つのプロパティへのバインドを保持`CommandDemoViewModel`:
 
@@ -232,7 +232,7 @@ class CommandDemoViewModel : INotifyPropertyChanged
 
 経由でこのアプローチの利点`Clicked`ハンドラーは、このページの機能に関連するすべてのロジックがある、分離コード ファイルではなく、ViewModel でビジネス ロジックからユーザー インターフェイスの優れた分離を実現します。
 
-ことも、`Command`を有効にしての無効化を制御するオブジェクト、`Button`要素。 たとえば、2 の間の数値の値の範囲を制限する<sup>10</sup>と 2 つ<sup>&ndash;10</sup>します。 コンス トラクターに別の関数を追加することができます (と呼ばれる、`canExecute`引数) を返す`true`場合、`Button`有効にする必要があります。 変更をここでは、`CommandDemoViewModel`コンス トラクター。
+ことも、`Command`を有効にしての無効化を制御するオブジェクト、`Button`要素。 たとえば、2 の間の数値の値の範囲を制限する<sup>10</sup>と 2 つ<sup>&ndash;10</sup>します。 コンストラクターに別の関数を追加することができます (と呼ばれる、`canExecute`引数) を返す`true`場合、`Button`有効にする必要があります。 変更をここでは、`CommandDemoViewModel`コンストラクター。
 
 ```csharp
 class CommandDemoViewModel : INotifyPropertyChanged
@@ -338,9 +338,9 @@ public partial class MainPage : ContentPage
 }
 ```
 
-コンス トラクターによって初期化、`NavigateCommand`プロパティを`Command<Type>`オブジェクト`Type`の種類、 `CommandParameter` XAML ファイル内のオブジェクト セットします。 つまり、`execute`メソッドが型の引数`Type`これに対応する`CommandParameter`オブジェクト。 関数では、ページをインスタンス化し、し、それに移動します。
+コンストラクターによって初期化、`NavigateCommand`プロパティを`Command<Type>`オブジェクト`Type`の種類、 `CommandParameter` XAML ファイル内のオブジェクト セットします。 つまり、`execute`メソッドが型の引数`Type`これに対応する`CommandParameter`オブジェクト。 関数では、ページをインスタンス化し、し、それに移動します。
 
-通知を設定して、コンス トラクターが最後にあるその`BindingContext`自体にします。 これは、プロパティにバインドする XAML ファイルに必要な`NavigateCommand`プロパティ。
+通知を設定して、コンストラクターが最後にあるその`BindingContext`自体にします。 これは、プロパティにバインドする XAML ファイルに必要な`NavigateCommand`プロパティ。
 
 ## <a name="pressing-and-releasing-the-button"></a>キーを押すと、ボタンを放す
 
@@ -429,7 +429,7 @@ public partial class PressAndReleaseButtonPage : ContentPage
 > [!NOTE]
 > `Button`クラスもあります[ `Margin` ](xref:Xamarin.Forms.View.Margin)と[ `Padding` ](xref:Xamarin.Forms.Button.Padding)のレイアウト動作を制御するプロパティ、`Button`します。 詳細については、[余白やパディング](~/xamarin-forms/user-interface/layouts/margin-and-padding.md)を参照してください。
 
-これらのプロパティの 6 つの効果 (を除く`FontFamily`と`FontAttributes`) で説明されています、**ボタンの外観**ページ。 別のプロパティ、 [ `Image`](xref:Xamarin.Forms.Button.Image)は、セクションで説明[**ボタンにビットマップを使用して**](#image-button)します。
+これらのプロパティの 6 つの効果 (を除く`FontFamily`と`FontAttributes`) で説明されています、**ボタンの外観**ページ。 別のプロパティ、 [ `Image`](xref:Xamarin.Forms.Button.ImageSource)は、セクションで説明[**ボタンにビットマップを使用して**](#image-button)します。
 
 すべてのビューとデータ バインドで、**ボタンの外観**ページは、XAML ファイルで定義されています。
 
@@ -626,7 +626,7 @@ class ToggleButton : Button
 }
 ```
 
-`ToggleButton`コンス トラクターにハンドラーをアタッチする、`Clicked`イベントの値を変更できるように、`IsToggled`プロパティ。 `OnIsToggledChanged`メソッドの起動、`Toggled`イベント。
+`ToggleButton`コンストラクターにハンドラーをアタッチする、`Clicked`イベントの値を変更できるように、`IsToggled`プロパティ。 `OnIsToggledChanged`メソッドの起動、`Toggled`イベント。
 
 最後の行、`OnIsToggledChanged`メソッドは、静的な`VisualStateManager.GoToState`メソッドを 2 つのテキスト文字列"ToggledOn"と"ToggledOff"。 読み取ることができますこのメソッドと、アプリケーションが、記事の表示状態に応答方法に関する[ **、Xamarin.Forms Visual State Manager**](~/xamarin-forms/user-interface/visual-state-manager.md)します。
 
@@ -748,9 +748,9 @@ IOS、Android、および UWP で実行されているプログラムを次に�
 
 ## <a name="using-bitmaps-with-buttons"></a>ボタンにビットマップを使用します。
 
-`Button`クラスを定義、 [ `Image` ](xref:Xamarin.Forms.Button.Image)プロパティにビットマップ イメージを表示することができる`Button`、単独または組み合わせてテキスト。 テキストとイメージの配置方法を指定することもできます。
+`Button`クラスを定義、 [ `ImageSource` ](xref:Xamarin.Forms.Button.Image)プロパティにビットマップ イメージを表示することができる`Button`、単独または組み合わせてテキスト。 テキストとイメージの配置方法を指定することもできます。
 
-`Image`プロパティの型は[ `FileImageSource` ](xref:Xamarin.Forms.FileImageSource)、つまり、や .NET Standard ライブラリ プロジェクトではなく、個々 のプラットフォームのプロジェクト内のリソースとして、ビットマップを格納する必要があります。
+`ImageSource`プロパティの型は[ `ImageSource` ](xref:Xamarin.Forms.ImageSource)、つまり、ビットマップは、ファイル、埋め込みリソース、URI、またはストリームから読み込むことができます。
 
 Xamarin.Forms でサポートされている各プラットフォームで、アプリケーションが実行するさまざまなデバイスのさまざまなピクセルの解像度の複数のサイズに格納されるイメージできます。 これら複数のビットマップをという名前またはデバイスのビデオに、オペレーティング システムが最適な一致を選択できますように格納されている画面の解像度。
 
@@ -781,7 +781,7 @@ UWP プロジェクトでのビットマップに格納できる任意の場所�
 
 これらがすべて与え、**ビルド アクション**の**コンテンツ**します。
 
-指定できますが、どのように`Text`と`Image`プロパティ上に配置されます、`Button`を使用して、 [ `ContentLayout` ](xref:Xamarin.Forms.Button.ContentLayout)のプロパティ`Button`。 このプロパティの型は[ `ButtonContentLayout` ](xref:Xamarin.Forms.Button.ButtonContentLayout)、これは埋め込みクラスに`Button`します。 [コンス トラクター](xref:Xamarin.Forms.Button.ButtonContentLayout.%23ctor(Xamarin.Forms.Button.ButtonContentLayout.ImagePosition,System.Double))に 2 つの引数があります。
+指定できますが、どのように`Text`と`ImageSource`プロパティ上に配置されます、`Button`を使用して、 [ `ContentLayout` ](xref:Xamarin.Forms.Button.ContentLayout)のプロパティ`Button`。 このプロパティの型は[ `ButtonContentLayout` ](xref:Xamarin.Forms.Button.ButtonContentLayout)、これは埋め込みクラスに`Button`します。 [コンストラクター](xref:Xamarin.Forms.Button.ButtonContentLayout.%23ctor(Xamarin.Forms.Button.ButtonContentLayout.ImagePosition,System.Double))に 2 つの引数があります。
 
 - メンバー、 [ `ImagePosition` ](xref:Xamarin.Forms.Button.ButtonContentLayout.ImagePosition)列挙: `Left`、 `Top`、 `Right`、または`Bottom`テキストの基準としたビットマップがどのように表示されるかを示します。
 - A`double`ビットマップとテキスト間の間隔の値。
@@ -794,7 +794,7 @@ UWP プロジェクトでのビットマップに格納できる任意の場所�
 Button button = new Button
 {
     Text = "button text",
-    Image = new FileImageSource
+    ImageSource = new FileImageSource
     {
         File = "image filename"
     },
@@ -806,7 +806,7 @@ XAML では、列挙型のメンバーまたは間隔を指定する必要があ
 
 ```xaml
 <Button Text="button text"
-        Image="image filename"
+        ImageSource="image filename"
         ContentLayout="Right, 20" />
 ```
 
@@ -816,22 +816,22 @@ XAML では、列挙型のメンバーまたは間隔を指定する必要があ
 
 ```xaml
 <Button>
-    <Button.Image>
-        <OnPlatform x:TypeArguments="FileImageSource">
+    <Button.ImageSource>
+        <OnPlatform x:TypeArguments="ImageSource">
             <On Platform="iOS, Android" Value="MonkeyFace.png" />
             <On Platform="UWP" Value="Assets/MonkeyFace.png" />
         </OnPlatform>
-    </Button.Image>
+    </Button.ImageSource>
 </Button>
 ```
 
 UWP のビットマップが、プロジェクトのルート ディレクトリに格納されている場合は、このマークアップをかなり簡略します。
 
 ```xaml
-<Button Image="MonkeyFace.png" />
+<Button ImageSource="MonkeyFace.png" />
 ```
 
-多くのマークアップを繰り返し実行するを回避するために、 **ImageButtonDemo.xaml**ファイル、暗黙的な`Style`設定にも定義されています、`Image`プロパティ。 これは、`Style`を他の 5 つが自動的に適用`Button`要素。 完全な XAML ファイルを次に示します。
+多くのマークアップを繰り返し実行するを回避するために、 **ImageButtonDemo.xaml**ファイル、暗黙的な`Style`設定にも定義されています、`ImageSource`プロパティ。 これは、`Style`を他の 5 つが自動的に適用`Button`要素。 完全な XAML ファイルを次に示します。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -844,8 +844,8 @@ UWP のビットマップが、プロジェクトのルート ディレクトリ
 
         <FlexLayout.Resources>
             <Style TargetType="Button">
-                <Setter Property="Image">
-                    <OnPlatform x:TypeArguments="FileImageSource">
+                <Setter Property="ImageSource">
+                    <OnPlatform x:TypeArguments="ImageSource">
                         <On Platform="iOS, Android" Value="MonkeyFace.png" />
                         <On Platform="UWP" Value="Assets/MonkeyFace.png" />
                     </OnPlatform>
@@ -854,12 +854,12 @@ UWP のビットマップが、プロジェクトのルート ディレクトリ
         </FlexLayout.Resources>
 
         <Button>
-            <Button.Image>
-                <OnPlatform x:TypeArguments="FileImageSource">
+            <Button.ImageSource>
+                <OnPlatform x:TypeArguments="ImageSource">
                     <On Platform="iOS, Android" Value="MonkeyFace.png" />
                     <On Platform="UWP" Value="Assets/MonkeyFace.png" />
                 </OnPlatform>
-            </Button.Image>
+            </Button.ImageSource>
         </Button>
 
         <Button Text="Default" />

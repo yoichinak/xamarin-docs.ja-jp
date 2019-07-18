@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2018
-ms.openlocfilehash: c5a4247b2e10706014c9f92a487803e4a718c1a6
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 09466cc9eed4899ef0aa1198ff0aee5cd420e110
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57671978"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67674634"
 ---
 # <a name="garbage-collection"></a>ガベージ コレクション
 

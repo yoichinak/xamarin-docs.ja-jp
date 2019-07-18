@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/23/2017
-ms.openlocfilehash: 155847b4f5f6b3e6070f1afb6219db2d3789a075
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 7520d3984a204dbceb67ef5310a10b1571f03127
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57668466"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827386"
 ---
 # <a name="custom-document-icons-in-xamarinios"></a>Xamarin.iOS でのカスタム ドキュメント アイコン
 
@@ -49,6 +49,6 @@ Visual Studio でこれらの値を割り当てるには、使用、**ドキュ�
 
 ## <a name="related-links"></a>関連リンク
 
-- [画像 (サンプル) の操作](https://developer.xamarin.com/samples/WorkingWithImages/)
+- [画像 (サンプル) の操作](https://developer.xamarin.com/samples/monotouch/WorkingWithImages/)
 - [Hello, iPhone](~/ios/get-started/hello-ios/index.md)
 - [カスタム アイコンとイメージの作成のガイドライン](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html)

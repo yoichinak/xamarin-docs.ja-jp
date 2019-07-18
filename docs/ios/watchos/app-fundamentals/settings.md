@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 36164e1e9f92b5a5520d10f769f3953cfa2ceb85
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: a8fe2c2765676db52c23fd7c475f218f14697caf
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106352"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67675229"
 ---
 # <a name="working-with-watchos-settings-in-xamarin"></a>WatchOS で Xamarin の設定の操作
 
@@ -36,7 +36,7 @@ Apple Watch アプリは iOS アプリと同じ設定機能を使用すること
 
 3. 新しいキーを追加`ApplicationGroupContainerIdentifier`を**Root.plist**値 (例: を構成したアプリ グループを設定して `group.com.xamarin.WatchSettings` サンプル)。
 
-   [ ![](settings-images/settings-appgroup-sml.png "Root.plist ApplicationGroupContainerIdentifier キーを追加します。")](settings-images/settings-appgroup.png#lightbox)
+   [![](settings-images/settings-appgroup-sml.png "Root.plist ApplicationGroupContainerIdentifier キーを追加します。")](settings-images/settings-appgroup.png#lightbox)
 
 4. 編集、 **Settings-Watch.bundle/Root.plist**テンプレート ファイルには - 使用するオプションを格納するには、グループが含まれています。
   テキスト フィールド、トグル スイッチおよびスライダーが既定で (これを削除して、独自の設定に置き換えてください)。

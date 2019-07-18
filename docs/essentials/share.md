@@ -23,7 +23,7 @@ ms.locfileid: "58869378"
 
 ## <a name="using-share"></a>Share の使用
 
-自分のクラスの Xamarin.Essentials に参照を追加します。
+自分のクラスに Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;

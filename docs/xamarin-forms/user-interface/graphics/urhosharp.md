@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/11/2016
-ms.openlocfilehash: b251fa13c4b436a837f71b5362ae85dffd245092
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: fc316a9e6ab4261eaa956a987b47aeaf546344a2
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53058718"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67675269"
 ---
 # <a name="using-urhosharp-in-xamarinforms"></a>Xamarin.Forms で urhosharp の使用
 
@@ -33,7 +33,7 @@ UrhoSharp は、Xamarin.Forms アプリケーションでグラフィックス�
 UrhoSharp を使用する前に、開発者は、そのソリューションに UrhoSharp の Nuget パッケージを追加する必要があります。 このガイドでは、Xamarin.Forms プロジェクトで、iOS、Android、および .NET Standard ライブラリ プロジェクト。 すべてのコードは、.NET Standard ライブラリ プロジェクトで出力されます。ただし、UrhoSharp の Nuget をも iOS と Android プロジェクトに追加する必要があります。
 
 UrhoSharp.Forms Nuget パッケージには、すべての UrhoSharp のオブジェクトを作成するために必要なオブジェクトが含まれます。 UrhoSharp.Forms の nuget パッケージに含まれる、`UrhoSurface`クラスは、Xamarin.Forms で UrhoSharp をホストするために使用します。
-最初を右クリックし、**パッケージ**フォルダーをクリックし、.NET Standard ライブラリ プロジェクトで**パッケージを追加しています.**.検索語句を入力します。 **UrhoSharp.Forms**を選択します**Xamarin.Forms 用 UrhoSharp**、順にクリックします**パッケージの追加**します。
+最初を右クリックし、**パッケージ**フォルダーをクリックし、.NET Standard ライブラリ プロジェクトで**パッケージを追加しています.** .検索語句を入力します。 **UrhoSharp.Forms**を選択します**Xamarin.Forms 用 UrhoSharp**、順にクリックします**パッケージの追加**します。
 
 [![](urhosharp-images/add-package-sml.png "[追加] ダイアログのパッケージ")](urhosharp-images/add-package.png#lightbox "追加パッケージ ダイアログ ボックス")
 
@@ -43,7 +43,7 @@ UrhoSharp.Forms NuGet パッケージをプロジェクトに追加されます�
 
 プラットフォーム固有プロジェクト (iOS と Android) などの上記の手順を繰り返します。
 
-## <a name="walkthrough-adding-urhosharp-to-a-xamarinforms-app"></a>チュートリアル: UrhoSharp を Xamarin.Forms アプリに追加します。
+## <a name="walkthrough-adding-urhosharp-to-a-xamarinforms-app"></a>チュートリアル: UrhoSharp の Xamarin.Forms アプリへの追加
 
 次の手順では、Xamarin.Forms UrhoSharp のサンプル コードについて説明します。
 
@@ -218,7 +218,7 @@ selectedBarSlider = new Slider(0, 5, 2.5);
 selectedBarSlider.ValueChanged += OnValuesSliderValueChanged;
 ```
 
-アニメーションを[ページのトップ](#)実行されているサンプルを表示します。
+アニメーションを[ページのトップ](#what-is-urhosharp)実行されているサンプルを表示します。
 
 ## <a name="summary"></a>まとめ
 

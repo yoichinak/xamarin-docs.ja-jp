@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: a4cf63b84d0686bc28b02b18a6266908251bdf6f
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: a80bf876e239e1788a371a1f09d36d73247d4611
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121920"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865010"
 ---
 # <a name="creating-user-interface-objects-in-xamarinios"></a>Xamarin.iOS でのユーザー インターフェイス オブジェクトの作成
 
@@ -32,7 +32,7 @@ UI コントロールと 3 つの方法でレイアウトを編集すること�
 -  **Xcode の Interface Builder** – インターフェイス ビルダーでは、画面のレイアウトにコントロールをドラッグします。 ファイルを右クリックして、Xcode でストーリー ボードまたは XIB ファイルを開く、 **Solution Pad**を選択して**プログラムから開く > Xcode の Interface Builder**します。
 -  **使用してC#**  – コントロールもプログラムでコードを使用して構築でき、ビュー階層に追加します。
 
-IOS プロジェクトを右クリックして新しいストーリー ボードと XIB ファイルを追加できる**追加 > 新しいファイル.**.
+IOS プロジェクトを右クリックして新しいストーリー ボードと XIB ファイルを追加できる**追加 > 新しいファイル.** .
 
 どちらの方法を使用すると、コントロールのプロパティおよびイベント操作は可能でC#アプリケーション ロジックにします。
 
@@ -80,7 +80,7 @@ Xcode で開くストーリー ボードには、右クリックしてストー�
 
  [![](creating-ui-objects-images/image6a.png "アシスタント エディター ボタン")](creating-ui-objects-images/image6a.png#lightbox)
 
-ユーザー インターフェイス オブジェクトでは; をクリックします。**コントロールのドラッグ**.h ファイルにします。 * * コントロール ドラッグ * コントロール キーを押しながら をクリックし、ユーザー インターフェイス オブジェクト上でのコンセント (またはアクション) を作成します。 保持コントロール キーを押しながらヘッダー ファイルにドラッグします。 [完了] の下にドラッグ、`@interface`定義します。 青い線は、次のスクリーン ショットに示すように、キャプションの挿入のコンセントまたはコンセントのコレクションで表示されます。
+ユーザー インターフェイス オブジェクトでは; をクリックします。**コントロールのドラッグ**.h ファイルにします。 **コントロールのドラッグ**コントロール キーを押しながら、し、をクリックしておよびのコンセント (またはアクション) を作成しているユーザー インターフェイス オブジェクトの上に保持します。 保持コントロール キーを押しながらヘッダー ファイルにドラッグします。 [完了] の下にドラッグ、`@interface`定義します。 青い線は、次のスクリーン ショットに示すように、キャプションの挿入のコンセントまたはコンセントのコレクションで表示されます。
 
 作成するために使用すると、出口の名前を指定するメッセージが表示されます をクリックをリリースするときに、C#プロパティをコードで参照できます。
 
@@ -88,7 +88,7 @@ Xcode で開くストーリー ボードには、右クリックしてストー�
 
 Visual Studio と Mac の Xcode の Interface Builder の統合の詳細についてを参照してください、 [Xib コードの生成](~/ios/internals/xib-code-generation.md#generated)ドキュメント。
 
-##  <a name="using-c"></a>使用してください。C#
+## <a name="using-c"></a>使用してください。C#
 
 プログラムで使用するユーザー インターフェイス オブジェクトを作成する場合C#(でビューや例については、ビュー コント ローラー)、次の手順に従います。
 
@@ -173,4 +173,4 @@ public override void ViewDidLoad () {
 
 ## <a name="related-links"></a>関連リンク
 
-- [コントロール (サンプル)](https://developer.xamarin.com/samples/Controls/)
+- [コントロール (サンプル)](https://developer.xamarin.com/samples/monotouch/Controls/)

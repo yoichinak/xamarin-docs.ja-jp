@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
 ms.openlocfilehash: b2f4cc71c1993e51ed55b51edd7c50d393e60873
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117500"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61412909"
 ---
 # <a name="working-with-watchos-screen-sizes-in-xamarin"></a>WatchOS で Xamarin の画面サイズの使用
 
@@ -32,7 +32,7 @@ Apple Watch の 2 つの画面サイズで提供されています。
 
 ![](screen-sizes-images/screen-any-sml.png "デザイナーが表示されますが、Apple Watch でのインターフェイス コント ローラーをご覧ください。")
 
-サイズ メニューを使用して、編集し、プレビューで利用可能な画面サイズのいずれかのストーリー ボード: **38 mm**または**42 mm**:
+編集およびプレビューで利用可能な画面サイズのいずれかのストーリー ボード メニューのサイズを使用します。**38 mm**または**42 mm**:
 
 ![](screen-sizes-images/screen-menu-sml.png "38 mm または 42 mm のサイズを選択します。")
 

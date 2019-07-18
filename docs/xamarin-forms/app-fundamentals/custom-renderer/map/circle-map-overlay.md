@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: ed671063aad55cb6c4730494f024a2ec2a016de1
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: f5a7dd9cca006157589f6fc43b41764129d90c86
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53051932"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926655"
 ---
 # <a name="highlighting-a-circular-area-on-a-map"></a>マップ上での円形の領域の強調表示
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/circle/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/Map/Circle/)
 
 "_この記事では、円形のオーバーレイをマップに追加して、マップの円形の領域を強調表示する方法について説明します。_"
 
@@ -335,6 +335,6 @@ List<Position> GenerateCircleCoordinates(Position position, double radius)
 
 ## <a name="related-links"></a>関連リンク
 
-- [円形のマップのオーバーレイ (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/circle/)
+- [円形のマップのオーバーレイ (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/Map/Circle/)
 - [マップ ピンのカスタマイズ](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md)
 - [Xamarin.Forms.Maps](xref:Xamarin.Forms.Maps)

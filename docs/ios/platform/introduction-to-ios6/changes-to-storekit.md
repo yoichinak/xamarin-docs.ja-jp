@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 5d1bb5ab636cd7527a560332a9890e9907fac454
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 35bac91e54181753bd1f3fd8b4cf0b851bfa1882
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118319"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827494"
 ---
 # <a name="changes-to-storekit-in-ios-6"></a>IOS 6 で StoreKit の変更
 
@@ -204,7 +204,7 @@ App Store を使用して、アプリ内購入を提供する*でコンテンツ
 
  [![](changes-to-storekit-images/image5.png "アプリは前に、最中、購入後にこのような検索します。")](changes-to-storekit-images/image5.png#lightbox)
 
-テキスト ファイルとイメージがダウンロードして、アプリケーションの Documents ディレクトリにコピーします。 アプリケーション ストレージに使用できる別のディレクトリの詳細については、、[ファイル システムのマニュアル](~/ios/app-fundamentals/file-system.md)を参照してください。
+テキスト ファイルとイメージがダウンロードして、アプリケーションの Documents ディレクトリにコピーします。 アプリケーション ストレージに使用できる別のディレクトリの詳細については、次を参照してください。、[ファイル システムのマニュアル](~/ios/app-fundamentals/file-system.md)します。
 
 ## <a name="itunes-connect"></a>iTunes Connect
 
@@ -522,7 +522,7 @@ Apple の iCloud のバックアップ ガイドラインを提案する非ユ�
 
 ## <a name="related-links"></a>関連リンク
 
-- [StoreKit (サンプル)](https://developer.xamarin.com/samples/StoreKit/)
+- [StoreKit (サンプル)](https://developer.xamarin.com/samples/monotouch/StoreKit/)
 - [アプリ内購入](~/ios/platform/in-app-purchasing/index.md)
 - [StoreKit のフレームワーク参照](https://developer.apple.com/library/prerelease/ios/#documentation/StoreKit/Reference/StoreKit_Collection/_index.html)
 - [SKStoreProductViewController クラスのリファレンス](https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKITunesProductViewController_Ref/SKStoreProductViewController.html)
@@ -530,4 +530,4 @@ Apple の iCloud のバックアップ ガイドラインを提案する非ユ�
 - [SKDownload](https://developer.apple.com/library/prerelease/ios/#documentation/StoreKit/Reference/SKDownload_Ref/Introduction/Introduction.html)
 - [SKPaymentQueue](https://developer.apple.com/library/prerelease/ios/documentation/StoreKit/Reference/SKPaymentQueue_Class/Reference/Reference.html#/apple_ref/occ/instm/SKPaymentQueue/cancelDownloads:)
 - [SKProduct](https://developer.apple.com/library/prerelease/ios/documentation/StoreKit/Reference/SKProduct_Reference/Reference/Reference.html#/apple_ref/occ/instp/SKProduct/downloadable)
-- [ストア キットで製品を販売して WWDC ビデオ。](https://developer.apple.com/videos/wwdc/2012/?include=302#302)
+- [WWDC ビデオ:ストア キットで製品を販売](https://developer.apple.com/videos/wwdc/2012/?include=302#302)

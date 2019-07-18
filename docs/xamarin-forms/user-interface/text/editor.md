@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/26/2018
-ms.openlocfilehash: 3131963efa3d4ba4de9ff63c741c276a62e9d12d
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 97bb5ec954f36e48d8ae115baf8738862e5a8358
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57670416"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67649547"
 ---
 # <a name="xamarinforms-editor"></a>Xamarin.Forms のエディター
 
@@ -69,7 +69,7 @@ var editor = new Editor { Placeholder = "Enter text here", PlaceholderColor = Co
 ```
 
 ```csharp
-var editor= new Editor { Text = "This is a read-only Editor", IsReadOnly = true });
+var editor = new Editor { Text = "This is a read-only Editor", IsReadOnly = true });
 ```
 
 > [!NOTE]
@@ -130,7 +130,7 @@ var editor = new Editor { Text = "Enter text here", AutoSize = EditorAutoSizeOpt
 <Editor Keyboard="Chat" />
 ```
 
-同等の c# コードに示します。
+同等の C# コードに示します。
 
 ```csharp
 var editor = new Editor { Keyboard = Keyboard.Chat };
@@ -163,7 +163,7 @@ var editor = new Editor { Keyboard = Keyboard.Chat };
 </Editor>
 ```
 
-同等の c# コードに示します。
+同等の C# コードに示します。
 
 ```csharp
 var editor = new Editor();
@@ -264,7 +264,7 @@ public partial class EditorPage : ContentPage
 
 ### <a name="completed"></a>完了
 
-`Completed`とのやり取りの完了に反応するイベントを使用する`Editor`します。 `Completed` キーボードの戻り値のキーを入力して、ユーザーが終了する入力フィールドを持つ場合に発生します。 イベントのハンドラーは、送信者を取得、汎用イベント ハンドラーと`EventArgs`:
+`Completed`とのやり取りの完了に反応するイベントを使用する`Editor`します。 `Completed` キーボードの戻り値のキーを入力して (または UWP の Tab キーを押して)、ユーザーがフィールドに入力を終了したときに発生します。 イベントのハンドラーは、送信者を取得、汎用イベント ハンドラーと`EventArgs`:
 
 ```csharp
 void EditorCompleted (object sender, EventArgs e)

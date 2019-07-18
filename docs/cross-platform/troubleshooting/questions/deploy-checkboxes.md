@@ -7,11 +7,11 @@ author: asb3993
 ms.author: amburns
 ms.date: 12/02/2016
 ms.openlocfilehash: 35efb00a721062ad3217300f7e3a5430b1bd1560
-ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51528144"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61357765"
 ---
 # <a name="deploy-checkboxes-disabled-in-configuration-manager"></a>構成マネージャーで無効になっているチェック ボックスを配置する
 
@@ -23,4 +23,4 @@ Xamarin の 3.5 から Xamarin.iOS プロジェクトを展開に自動的にキ
 
 この変更により、エラーを展開する Xamarin.iOS アプリ プロジェクトが設定されていない場合、Xamarin (バージョン 3.3 以前) の旧バージョンで表示される可能性があります。
 
-![](deploy-checkboxes-images/error.png "エラー ダイアログ ボックス: プロジェクト iPhoneApp1 を開始する前に配置する必要があります。ソリューションの Configuration Manager でデプロイするプロジェクトが選択されていることを確認します。")
+![](deploy-checkboxes-images/error.png "エラー ダイアログ ボックス:プロジェクト iPhoneApp1 を開始する前に配置する必要があります。ソリューションの Configuration Manager でデプロイするプロジェクトが選択されていることを確認します。")

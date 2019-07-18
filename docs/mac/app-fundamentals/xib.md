@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
 ms.openlocfilehash: 45eeee745b133646aef0f775bc879fa6a5d867c7
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109433"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61062910"
 ---
 # <a name="xib-files-in-xamarinmac"></a>Xamarin.Mac で .xib ファイル
 
@@ -23,7 +23,7 @@ _この記事では、.xib ファイルを作成して、Xamarin.Mac アプリ�
 
 ## <a name="overview"></a>概要
 
-同じユーザー インターフェイス要素にアクセスし、ツールで作業する開発者 Xamarin.Mac アプリケーションでは、c# と .NET で作業するとき*Objective-C*と*Xcode*はします。 Xamarin.Mac は直接 Xcode と統合、ためには、Xcode を使用して_Interface Builder_を作成し、ユーザー インターフェイスを維持 (またはに応じて c# コードで直接作成する)。
+同じユーザー インターフェイス要素にアクセスし、ツールで作業する開発者 Xamarin.Mac アプリケーションでは、C# と .NET で作業するとき*Objective-C*と*Xcode*はします。 Xamarin.Mac は直接 Xcode と統合、ためには、Xcode を使用して_Interface Builder_を作成し、ユーザー インターフェイスを維持 (またはに応じて c# コードで直接作成する)。
 
 .Xib ファイルは、Xcode の Interface Builder で作成および管理される (メニューの Windows、ビュー、ラベル、テキスト フィールド) など、アプリケーションのユーザー インターフェイスの要素をグラフィカルに定義する macOS によって使用されます。
 
@@ -31,7 +31,7 @@ _この記事では、.xib ファイルを作成して、Xamarin.Mac アプリ�
 
 この記事では、Xamarin.Mac アプリケーションで .xib ファイルの操作の基礎を取り上げます。 作業することを強くお勧め、[こんにちは, Mac](~/mac/get-started/hello-mac.md)主な概念と、この記事で使用する方法については、最初に、記事。
 
-確認することも、 [c# を公開するクラス/Objective-C メソッド](~/mac/internals/how-it-works.md)のセクション、 [Xamarin.Mac 内部](~/mac/internals/how-it-works.md)が説明されても、ドキュメント、`Register`と`Export`属性ネットワーク上での c# クラスを Objective-C オブジェクトと UI への要素に使用されます。
+確認することも、 [C# を公開するクラス/Objective-C メソッド](~/mac/internals/how-it-works.md)のセクション、 [Xamarin.Mac 内部](~/mac/internals/how-it-works.md)が説明されても、ドキュメント、`Register`と`Export`属性ネットワーク上での C# クラスを Objective-C オブジェクトと UI への要素に使用されます。
 
 
 ## <a name="introduction-to-xcode-and-interface-builder"></a>Xcode と Interface Builder の概要

@@ -1,5 +1,5 @@
 ---
-title: TvOS 11 の概要
+title: tvOS 11 の概要
 description: このドキュメントでは、tvOS 11 と Apple のリリース ノートへのリンクでの Xamarin の開発者に使用できる新機能の概要を提供します。
 ms.prod: xamarin
 ms.assetid: 5258F7A1-3388-4482-978C-DC33AAAEFBE6
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 02/08/2018
 ms.openlocfilehash: 4da83d5ecc7a54bcd692751e07c81e8e5bb0d94a
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106521"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60932563"
 ---
-# <a name="introduction-to-tvos-11"></a>TvOS 11 の概要
+# <a name="introduction-to-tvos-11"></a>tvOS 11 の概要
 
 _Xamarin を使用して、tvOS 11 の開発者が利用できる新機能_
 

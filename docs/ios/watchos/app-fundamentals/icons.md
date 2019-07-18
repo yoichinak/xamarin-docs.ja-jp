@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/26/2018
-ms.openlocfilehash: 435af10484827826d53b767c2738e3945e0bae42
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 75b5d1f941921a84d96579a4b0d0666ae0c2522d
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121374"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864981"
 ---
 # <a name="working-with-watchos-icons-in-xamarin"></a>WatchOS で Xamarin のアイコンの使用
 
@@ -53,30 +53,30 @@ Watch アプリで横に表示される文字列、 [Apple Watch の設定 ア�
 
 1 回、[親アプリ](~/ios/watchos/app-fundamentals/parent-app.md)watch アプリにアプリケーション アイコンのアセット カタログを追加する必要がありますが、アイコンが構成されます。
 
-1. Watch アプリのプロジェクトを右クリックし、選択**ファイル > 追加 > 新しいファイル... > iOS > 資産カタログ**アセット カタログをプロジェクトに追加します。
+1. Watch アプリのプロジェクトを右クリックし、選択**ファイル > 追加 > 新しいファイル.> iOS > 資産カタログ**アセット カタログをプロジェクトに追加します。
 
- ![](icons-images/newasset.png "アセット カタログをプロジェクトに追加します。")
+    ![](icons-images/newasset.png "アセット カタログをプロジェクトに追加します。")
 
 2. ダブルクリックして、 **AppIcon.appiconset/Contents.json**ファイル
 
-  ![](icons-images/xcassets-iconset-sml.png "AppIcon 内容")
+    ![](icons-images/xcassets-iconset-sml.png "AppIcon 内容")
 
 3. このスクリーン ショットで示すように、すべての watchOS イメージを追加します。
 
-  [![](icons-images/appicons-sml.png "このスクリーン ショットで示すように、すべての watchOS イメージを追加します。")](icons-images/appicons.png#lightbox)
+    [![](icons-images/appicons-sml.png "このスクリーン ショットで示すように、すべての watchOS イメージを追加します。")](icons-images/appicons.png#lightbox)
 
-  参照してください[Apple のアイコンのガイドライン](https://developer.apple.com/design/human-interface-guidelines/watchos/icons-and-images/menu-icons/)(寸法が画面の表示も)、必要なサイズにします。 円で表示するためにこれらのアイコンを自動的にクリップすることに注意してください。
+    参照してください[Apple のアイコンのガイドライン](https://developer.apple.com/design/human-interface-guidelines/watchos/icons-and-images/menu-icons/)(寸法が画面の表示も)、必要なサイズにします。 円で表示するためにこれらのアイコンを自動的にクリップすることに注意してください。
 
-  アイコンの一覧は、次のようになります。
+    アイコンの一覧は、次のようになります。
 
-  ![](icons-images/xcassets-complete-sml.png "ソリューション エクスプ ローラーでアイコンの一覧")
+    ![](icons-images/xcassets-complete-sml.png "ソリューション エクスプ ローラーでアイコンの一覧")
 
 4. 資産カタログが、アプリに含まれることを確認するには、次のキーを追加し、値を**Watch アプリの Info.plist**:
 
-```xml
-<key>XSAppIconAssets</key>
-<string>Images.xcassets/AppIcon.appiconset</string>
-```
+    ```xml
+    <key>XSAppIconAssets</key>
+    <string>Images.xcassets/AppIcon.appiconset</string>
+    ```
 
 アイコンがチェックして適切な構成を確認することができます、 [Apple Watch の設定 アプリ](~/ios/watchos/app-fundamentals/settings.md)iPhone シミュレーターで生成するか、[通知](~/ios/watchos/platform/notifications.md)通知に表示されるアイコンを確認します。画面。
 

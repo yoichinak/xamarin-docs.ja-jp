@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/02/2018
-ms.openlocfilehash: 9c564789f704180e9acc9f96dcba5e7d6eb20634
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.openlocfilehash: c42be49aff56453bb1bc3b3c732cad151ccd62e0
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617242"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67674454"
 ---
 # <a name="adjusting-java-memory-parameters-for-the-android-designer"></a>Android Designer の Java メモリ パラメーターの調整
 
@@ -35,7 +35,7 @@ Xamarin Studio 5.7.2.7 (および以降では、Visual Studio for Mac) を開始
 
 1.  Visual Studio でソリューションを開きます。
 
-2.  ソリューション エクスプ ローラーで 1 つずつ Android プロジェクトを選択し、をクリックして[すべてのファイル](https://docs.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2008/4afxey9h(v=vs.90))プロジェクトごとに 2 回クリックします。 いずれか含まれていないプロジェクトをスキップする`.axml`レイアウト ファイルです。 この手順は、各プロジェクトのディレクトリが含まれていることを確認、`.csproj.user`ファイル。
+2.  ソリューション エクスプ ローラーで 1 つずつ Android プロジェクトを選択し、をクリックして[すべてのファイル](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/4afxey9h(v=vs.90))プロジェクトごとに 2 回クリックします。 いずれか含まれていないプロジェクトをスキップする`.axml`レイアウト ファイルです。 この手順は、各プロジェクトのディレクトリが含まれていることを確認、`.csproj.user`ファイル。
 
 3.  Visual Studio を終了します。
 
@@ -73,7 +73,7 @@ Xamarin Studio 5.7.2.7 (および以降では、Visual Studio for Mac) を開始
 
 4.  編集、`.userprefs`テキスト エディターでファイル。
 
-5.  次の形式で既存の XML 要素を探します。 この要素名の最後の部分は、プロジェクトの名前に一致します。 この例では、"AndroidApplication1"。
+5.  次の形式で既存の XML 要素を探します。 この要素名の最後の部分には、プロジェクトの名前が一致します。"この例では"AndroidApplication1:
 
     ```xml
     <MonoDevelop.Ide.ItemProperties.AndroidApplication1 ... >

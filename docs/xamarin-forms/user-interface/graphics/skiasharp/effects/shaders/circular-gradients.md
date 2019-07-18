@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
 ms.openlocfilehash: a17ddf438856600870c9bb3da60a5f4667128d57
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53056046"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61218184"
 ---
 # <a name="the-skiasharp-circular-gradients"></a>SkiaSharp の円形グラデーション
 
@@ -140,7 +140,7 @@ public partial class RadialGradientPage : ContentPage
 
 [![放射状グラデーション](circular-gradients-images/RadialGradient.png "放射状グラデーション")](circular-gradients-images/RadialGradient-Large.png#lightbox)
 
-すべての 3 つのケースでは、グラデーションは、キャンバスを塗りつぶします。 左側にある iOS の画面では、半径を超えるグラデーションは、最後の色は白を続行します。 結果である`SKShaderTileMode.Clamp`します。 Android の画面は、の効果を示しています。 `SKShaderTileMode.Repeat`: センターからに 100 ピクセル、グラデーションが再び開始の最初の色は黒です。 グラデーションは、radius のすべての 100 ピクセルが繰り返されます。 
+すべての 3 つのケースでは、グラデーションは、キャンバスを塗りつぶします。 左側にある iOS の画面では、半径を超えるグラデーションは、最後の色は白を続行します。 結果である`SKShaderTileMode.Clamp`します。 Android の画面は、の効果を示しています`SKShaderTileMode.Repeat`:。中心から 100 ピクセルで、グラデーションは最初の色は黒でもう一度開始します。 グラデーションは、radius のすべての 100 ピクセルが繰り返されます。 
 
 ユニバーサル Windows プラットフォーム画面の右に示す方法`SKShaderTileMode.Mirror`代替方向にグラデーションをによりします。 最初のグラデーションは、中央の黒から白に半径が 100 ピクセルのです。 次は、200 ピクセルの半径を黒に 100 ピクセル radius から白し、もう一度 [次へ] のグラデーションを反転します。
 

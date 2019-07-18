@@ -6,14 +6,14 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/08/2018
-ms.openlocfilehash: e9af8df3cbe6f125788f298be6a181472c1cd27d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 7d402e6f665baa8db68d571945490a8d1ae18881
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108289"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67649554"
 ---
-# <a name="using-data-in-an-app"></a>アプリでデータを使用
+# <a name="using-data-in-an-app"></a>アプリでのデータの使用
 
 **DataAccess_Adv**サンプルにより、ユーザー入力とデータベース機能の CRUD (作成、読み取り、更新、削除) する作業アプリケーションを示しています。 アプリケーションは、2 つの画面で構成されています。 一覧と、データ エントリ フォーム。 すべてのデータ アクセス コードは変更しなくても iOS と Android で再利用できます。
 
@@ -140,4 +140,4 @@ public class YourAndroidApp : Application {
 - [DataAccess Basic (サンプル)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
 - [データ アクセスの詳細 (サンプル)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
 - [Android のデータのレシピ](https://github.com/xamarin/recipes/tree/master/Recipes/android/data)
-- [Xamarin.Forms のデータ アクセス](~/xamarin-forms/app-fundamentals/databases.md)
+- [Xamarin.Forms のデータ アクセス](~/xamarin-forms/data-cloud/data/databases.md)

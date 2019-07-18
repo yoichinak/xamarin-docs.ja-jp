@@ -1,5 +1,5 @@
 ---
-title: TvOS 9 の概要
+title: tvOS 9 の概要
 description: この記事では、Xamarin.tvOS 開発者向けのすべての新規および変更した Api と tvOS 9 で使用できる機能を紹介します。
 ms.prod: xamarin
 ms.assetid: A7E738E1-9F94-489B-918F-7DF8F0810987
@@ -7,14 +7,14 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/07/2016
-ms.openlocfilehash: dda197f71b2a2ab3e0d61a838ab85d79b7a078c7
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: c4aea5a35fd5db46c9e7ca245b852c988e82f53e
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104311"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830507"
 ---
-# <a name="introduction-to-tvos-9"></a>TvOS 9 の概要
+# <a name="introduction-to-tvos-9"></a>tvOS 9 の概要
 
 _この記事では、Xamarin.tvOS 開発者向けのすべての新規および変更した Api と tvOS 9 で使用できる機能を紹介します。_
 
@@ -32,28 +32,28 @@ Xamarin.iOS の開発に詳しい場合は、非常に単純な tvOS への移�
 
 tvOS アプリの Apple TV で実行されているが、次のサポート機能と機能。
 
- - アプリ グループ
- - バックグラウンド モード
- - データの保護
- - Game Center
- - ゲーム コント ローラー
- - iCloud
- - アプリ内購入
- - キーチェーンの共有
+- アプリ グループ
+- バックグラウンド モード
+- データ保護
+- Game Center
+- ゲーム コント ローラー
+- iCloud
+- アプリ内購入
+- キーチェーンの共有
 
 次の機能と機能がサポートされていません。
 
- - Apple Pay
- - アプリのサンド ボックス
- - 関連付けられているドメイン
- - HealthKit
- - HomeKit
- - Inter-App オーディオ
- - マップ
- - 個人の VPN
- - プッシュ通知
- - ウォレット
- - Wireless Accessory Configuration
+- Apple Pay
+- アプリのサンド ボックス
+- 関連付けられているドメイン
+- HealthKit
+- HomeKit
+- Inter-App オーディオ
+- マップ
+- 個人の VPN
+- プッシュ通知
+- ウォレット
+- Wireless Accessory Configuration
 
 参照してください、[サポートされているアセンブリ](~/ios/tvos/internals/assemblies.md)と[フレームワークのサポートされている](~/ios/tvos/internals/frameworks.md)詳細についてはドキュメントです。
 
@@ -63,30 +63,30 @@ tvOS アプリの Apple TV で実行されているが、次のサポート機�
 
 新しい Apple TV では、次のハードウェアの仕様があります。
 
- - 64 ビットの A8 プロセッサ
- - 32 GB または 64 GB のストレージ
- - 2 GB の RAM
- - 10/100 mbps イーサネット
- - WiFi 802.11a/b/g/n/ac
- - 1080p の解像度
- - HDMI
- - (開発者と診断の使用のみ) 用の USB C ポート
- - 新しい Siri のリモートまたは Apple TV リモートの (リージョンに基づく)
+- 64 ビットの A8 プロセッサ
+- 32 GB または 64 GB のストレージ
+- 2 GB の RAM
+- 10/100 mbps イーサネット
+- WiFi 802.11a/b/g/n/ac
+- 1080p の解像度
+- HDMI
+- (開発者と診断の使用のみ) 用の USB C ポート
+- 新しい Siri のリモートまたは Apple TV リモートの (リージョンに基づく)
 
 ### <a name="siri-remote"></a>Siri のリモート
 
-リージョンに基づき、指定された Apple TV リモートになるいずれか 1 つの構成: Siri のリモートまたは Apple TV リモートです。
+リージョンに基づき、指定された Apple TV リモートになるいずれか 1 つの構成。Siri のリモートまたは Apple TV リモートです。
 
 Siri のリモートは、次の国で現在使用できません。
 
- - オーストラリア
- - カナダ
- - フランス
- - ドイツ
- - 日本
- - スペイン
- - 英国
- - 米国
+- オーストラリア
+- カナダ
+- フランス
+- ドイツ
+- 日本
+- スペイン
+- イギリス
+- 米国
 
 その他すべての国、Apple TV リモート Siri ボタンに置き換えるを検索するためのテキスト入力の既定の検索画面を表示する検索 ボタンが表示されます。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 3815790cfb73f93f399c14d3da44aa3210725388
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 97cfe7220f8b351ec30a9f2c7a7347d318378fbc
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119997"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830485"
 ---
 # <a name="troubleshooting-tvos-10-apps-built-with-xamarin"></a>TvOS 10 のトラブルシューティング、Xamarin でビルドされたアプリ
 
@@ -32,8 +32,8 @@ ms.locfileid: "50119997"
 
 既知の問題:
 
- - サンド ボックス環境でアプリ内購入をテストするときに認証ダイアログ ボックスが 2 回表示されます。
- - サンド ボックス環境でホストされているコンテンツをアプリ内購入をテストするときに、コンテンツのダウンロードが完了するまで、アプリがフォア グラウンドに移動するたびにパスワード ダイアログ ボックスが表示されます。
+- サンド ボックス環境でアプリ内購入をテストするときに認証ダイアログ ボックスが 2 回表示されます。
+- サンド ボックス環境でホストされているコンテンツをアプリ内購入をテストするときに、コンテンツのダウンロードが完了するまで、アプリがフォア グラウンドに移動するたびにパスワード ダイアログ ボックスが表示されます。
 
 <a name="Binary-Compatibility" />
 
@@ -41,11 +41,11 @@ ms.locfileid: "50119997"
 
 既知の問題:
 
- - 呼び出す`NSObject.ValueForKey`は、`null`キー、例外が発生します。
- - 呼び出すときに、フォントを名前で参照する`UIFont.WithName`クラッシュが発生します。
- - 両方`NSURLSession`と NSURLConnection` no longer RC4 cipher suites during the TLS handshake for `http://' Url。
- - いずれかでスーパー ビューのジオメトリを変更した場合、アプリがハング、`ViewWillLayoutSubviews`または`LayoutSubviews`メソッド。
- - すべての SSL/TLS 接続の RC4 対称暗号は既定で無効になりました。 さらに、トランスポートのセキュリティで保護された API が SSLv3 がサポートされなくされ、アプリでは、SHA 1 および 3 des 暗号化を使用して、できるだけ早く停止するをお勧めします。
+- 呼び出す`NSObject.ValueForKey`は、`null`キー、例外が発生します。
+- 呼び出すときに、フォントを名前で参照する`UIFont.WithName`クラッシュが発生します。
+- 両方`NSURLSession`と`NSURLConnection`の TLS ハンドシェイク中に RC4 暗号スイートされなく`http://`Url。
+- いずれかでスーパー ビューのジオメトリを変更した場合、アプリがハング、`ViewWillLayoutSubviews`または`LayoutSubviews`メソッド。
+- すべての SSL/TLS 接続の RC4 対称暗号は既定で無効になりました。 さらに、トランスポートのセキュリティで保護された API が SSLv3 がサポートされなくされ、アプリでは、SHA 1 および 3 des 暗号化を使用して、できるだけ早く停止するをお勧めします。
 
 <a name="CFNetwork-HTTP-Protocol" />
 
@@ -77,12 +77,12 @@ ms.locfileid: "50119997"
 
 既知の問題:
 
- - 背景の外観を変更`UINavigationBar`、`UITabBar`または`UIToolBar`新しい外観を解決するのには、レイアウト パスがあります。 内のこれらの外観を変更しようとして、 `LayoutSubviews`、 `UpdateConstraints`、`WillLayoutSubviews`または`DidUpdateSubviews`イベントがループに無限のレイアウトになることができます。
- - TvOS 10、呼び出すことで、`RemoveGestureRecognizer`のメソッドを`UIView`オブジェクトが明示的に任意の実行中のジェスチャ レコグナイザーを取り消します。
- - ビュー コント ローラーが表示されるステータス バーの外観を変更できます。
- - tvOS 10 を呼び出す開発者を要求する`base.AwakeFromNib`をサブクラス化する`UIViewController`をオーバーライドして、`AwakeFromNib`メソッド。
- - ユーザー設定を使用したアプリ`UIView`オーバーライド サブクラス`LayoutSubviews`呼び出す前にレイアウトをダーティと`base.LayoutSubviews`tvOS 10 で、レイアウトの無限ループをトリガーする可能性があります。
- - 割り当てられたときの回転を要求している特定の方向または flippable イメージ資産はありません`UIButton`オブジェクト。
+- 背景の外観を変更`UINavigationBar`、`UITabBar`または`UIToolBar`新しい外観を解決するのには、レイアウト パスがあります。 内のこれらの外観を変更しようとして、 `LayoutSubviews`、 `UpdateConstraints`、`WillLayoutSubviews`または`DidUpdateSubviews`イベントがループに無限のレイアウトになることができます。
+- TvOS 10、呼び出すことで、`RemoveGestureRecognizer`のメソッドを`UIView`オブジェクトが明示的に任意の実行中のジェスチャ レコグナイザーを取り消します。
+- ビュー コント ローラーが表示されるステータス バーの外観を変更できます。
+- tvOS 10 を呼び出す開発者を要求する`base.AwakeFromNib`をサブクラス化する`UIViewController`をオーバーライドして、`AwakeFromNib`メソッド。
+- ユーザー設定を使用したアプリ`UIView`オーバーライド サブクラス`LayoutSubviews`呼び出す前にレイアウトをダーティと`base.LayoutSubviews`tvOS 10 で、レイアウトの無限ループをトリガーする可能性があります。
+- 割り当てられたときの回転を要求している特定の方向または flippable イメージ資産はありません`UIButton`オブジェクト。
 
 ## <a name="related-links"></a>関連リンク
 

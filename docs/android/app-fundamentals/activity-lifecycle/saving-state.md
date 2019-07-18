@@ -1,5 +1,5 @@
 ---
-title: チュートリアル - アクティビティの状態を保存しています
+title: チュートリアル - アクティビティの状態を保存する
 description: アクティビティのライフ サイクル ガイド; の状態を保存する理論をについて説明しました次に例を見てみましょう。
 ms.prod: xamarin
 ms.assetid: A6090101-67C6-4BDD-9416-F2FB74805A87
@@ -8,13 +8,13 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
 ms.openlocfilehash: c8f92e55648dff469227cc3bad981ad5f6e6d0ac
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122128"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61019157"
 ---
-# <a name="walkthrough---saving-the-activity-state"></a>チュートリアル - アクティビティの状態を保存しています
+# <a name="walkthrough---saving-the-activity-state"></a>チュートリアル - アクティビティの状態を保存する
 
 _アクティビティのライフ サイクル ガイド; の状態を保存する理論をについて説明しました次に例を見てみましょう。_
 

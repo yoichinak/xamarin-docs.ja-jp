@@ -6,12 +6,12 @@ ms.assetid: 8A832A76-A770-1A7C-24BA-B3E6F57617A0
 author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: e97b211fe6a92ee0df3beed2301cf00c3d42c8f8
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 206379b162c7778663ee2baf64dfeb1d33666ab4
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57671807"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831465"
 ---
 # <a name="binding-objective-c-libraries"></a>OBJECTIVE-C ライブラリのバインド
 
@@ -44,7 +44,7 @@ IOS と Mac ライブラリの両方のバインドを構築できます。
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 バインディングを作成する最も簡単な方法では、Xamarin.iOS のバインド プロジェクトを作成します。
-これを行う Windows 上の Visual Studio から、プロジェクトの種類を選択して**Visual C# > iOS > バインド ライブラリ (iOS)**:
+これを行う Windows 上の Visual Studio から、プロジェクトの種類を選択して**Visual C# > iOS > バインド ライブラリ (iOS)** :
 
 [![](objective-c-libraries-images/00vs-sml.png "iOS バインド ライブラリ iOS")](objective-c-libraries-images/00vs.png#lightbox)
 
@@ -267,7 +267,7 @@ string Text { get; [NullAllowed] set; }
 カスタム コントロールのバインドを設定する場合は、次の注意事項を検討してください。
 
 1. **バインドのプロパティは、静的にする必要があります**- プロパティのバインドを定義する場合、 [ `[Static]` ](~/cross-platform/macios/binding/binding-types-reference.md#StaticAttribute)属性を使用する必要があります。
- 2. **プロパティ名が正確に一致する必要があります**-プロパティをバインドするための名前は、カスタム コントロールのプロパティの名前を正確に一致する必要があります。
+2. **プロパティ名が正確に一致する必要があります**-プロパティをバインドするための名前は、カスタム コントロールのプロパティの名前を正確に一致する必要があります。
 3. **プロパティの型が正確に一致する必要があります**-プロパティをバインドするために使用する変数の型では、カスタム コントロールのプロパティの型を正確に一致する必要があります。
 4. **ブレークポイントと getter と setter** - ブレークポイントは、get アクセス操作子に配置またはプロパティの setter メソッドに到達しません。
 5. **コールバックを観察**-カスタム コントロールのプロパティの値の変更の通知を受け取る監視のコールバックを使用する必要があります。
@@ -1403,6 +1403,4 @@ Xamarin.iOS の v3.2 時点でサポートされていますが付いている�
 
 ## <a name="related-links"></a>関連リンク
 
-- [バインドのサンプル](https://developer.xamarin.com/samples/BindingSample/)
-- [Xamarin University のコース:OBJECTIVE-C バインディング ライブラリをビルド](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin University のコース:目標油性で、OBJECTIVE-C のバインド ライブラリをビルドします。](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)
+- [バインドのサンプル](https://developer.xamarin.com/samples/monotouch/BindingSample/)

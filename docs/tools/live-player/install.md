@@ -1,41 +1,33 @@
 ---
-title: Xamarin Live Player のセットアップ
-description: このドキュメントでは、Xamarin Live Player を設定し、実行中のアプリケーションにライブ編集を加えるを使用する方法について説明します。
+title: Xamarin Live Player Visual Studio の構成
+description: このドキュメントでは、Xamarin Live Player を使用して、ライブ編集を実行中のアプリケーションを作成する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 5DDF9203-8826-4B04-93F5-B8D07EDE3873
 author: lobrien
 ms.author: laobri
-ms.date: 08/08/2018
-ms.openlocfilehash: f9cfc69c2cd711460233e609d63bcbb8eb172ccf
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.date: 06/13/2019
+ms.openlocfilehash: a29a637526c2829b44ae89d505dac37a648dee77
+ms.sourcegitcommit: 93b1e2255d59c8ca6674485938f26bd425740dd1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58854757"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67157744"
 ---
-# <a name="xamarin-live-player-setup"></a>Xamarin Live Player のセットアップ
-
-Xamarin Live Player では、アプリへのライブ編集を行うことができ、それらの変更反映ライブ デバイス。 エミュレーターを設定する、またはケーブルを使用してデプロイする必要はありません – Xamarin Live Player アプリ内で、コードが実行されます。 この記事では、Xamarin Live Player を設定する方法について説明します。
+# <a name="xamarin-live-player-visual-studio-configuration"></a>Xamarin Live Player Visual Studio の構成
 
 ![プレビュー機能](~/media/shared/preview.png)
 
-> [!NOTE]
-> Live Player のプレビューには、Visual Studio 2017 ではできるだけです。
+> [!WARNING]
+> Xamarin Live Player のプレビューが終了しました。 アプリが使用できなくします。 以下の手順は、Visual Studio 2017 のプレビューを使用して引き続きお客様に提供されます。
 
-## <a name="1-get-the-android-app"></a>1.Android アプリを入手します。
+> [!TIP]
+> 使用することができます、 [XAML プレビューアー](~/xamarin-forms/xaml/xaml-previewer/index.md)でそれらを編集すると、画面のデザインを表示するには、Visual Studio 2019 または Visual Studio for Mac。
 
-Xamarin Live Player は for Android によって直接 intalling [HockeyApp](https://aka.ms/xlp-hockeyapp)します。
+# <a name="visual-studio-2017tabwindows"></a>[Visual Studio 2017](#tab/windows)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+## <a name="using-xamarin-live-player"></a>Xamarin Live Player を使用します。
 
-## <a name="2-get-visual-studio-2017"></a>2.Visual Studio 2017 を取得します。
-
-Xamarin Live Player が必要です。
-
-- Visual Studio 2017 15.4年以降。
-- Visual Studio コンピューターとが同じ WiFi ネットワーク上のデバイス。
-
-## <a name="3-using-xamarin-live-player-for-the-first-time"></a>3.Xamarin Live Player を使用する最初の時間
+Xamarin Live Player アプリは、デバイスで既にが必要です。 ダウンロード可能なが不要になったです。
 
 1. 開いている**Visual Studio 2017**します。
 2. 移動して**ツール > オプション.** を選択し、 **Xamarin > その他の**タブ。
@@ -68,15 +60,9 @@ Xamarin Live Player が必要です。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-## <a name="2-get-visual-studio-for-mac"></a>2.Visual Studio for Mac を入手します。
+## <a name="using-xamarin-live-player"></a>Xamarin Live Player を使用します。
 
-Xamarin Live Player が必要です。
-
-- OS X 10.11、macOS 10.12、またはそれ以上
-- Visual Studio for Mac
-- Mac とが同じ WiFi ネットワーク上のデバイス
-
-## <a name="3-using-xamarin-live-player-for-the-first-time"></a>3.Xamarin Live Player を使用する最初の時間
+Xamarin Live Player アプリは、デバイスで既にが必要です。 ダウンロード可能なが不要になったです。
 
 1. 開いている**Visual Studio for Mac**します。
 2. 移動して**Visual Studio > の基本設定.** を選択し、**プロジェクト > Xamarin Live Player (プレビュー)** タブ。
@@ -117,5 +103,4 @@ Xamarin Live Player が必要です。
 
 ## <a name="related-links"></a>関連リンク
 
-- [Live Player を使用するサンプル](https://developer.xamarin.com/samples/xamarin-live-player/all/)
 - [トラブルシューティング](~/tools/live-player/troubleshooting.md)

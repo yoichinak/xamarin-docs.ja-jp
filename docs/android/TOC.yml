@@ -380,6 +380,8 @@
       items:
         - name: 作業の開始
           href: ~/essentials/get-started.md?context=xamarin/android
+        - name: プラットフォームと機能のサポート
+          href: ~/essentials/platform-feature-support.md?context=xamarin/android
         - name: 加速度計
           href: ~/essentials/accelerometer.md?context=xamarin/android
         - name: アプリ情報
@@ -430,7 +432,7 @@
           href: ~/essentials/phone-dialer.md?context=xamarin/android
         - name: プラットフォームの拡張機能 (サイズ、四角形、ポイント)
           href: ~/essentials/platform-extensions.md?context=xamarin/android
-        - name: '[Preferences]'
+        - name: Preferences
           href: ~/essentials/preferences.md?context=xamarin/android
         - name: セキュリティで保護されたストレージ
           href: ~/essentials/secure-storage.md?context=xamarin/android
@@ -459,7 +461,7 @@
               items:
                 - name: 手順 1. 登録
                   href: ~/cross-platform/data-cloud/active-directory/get-started/register.md?context=xamarin/android
-                - name: 手順 2. を構成する。
+                - name: 手順 2. 構成
                   href: ~/cross-platform/data-cloud/active-directory/get-started/configure.md?context=xamarin/android
             - name: Graph API へのアクセス
               href: ~/cross-platform/data-cloud/active-directory/graph.md?context=xamarin/android

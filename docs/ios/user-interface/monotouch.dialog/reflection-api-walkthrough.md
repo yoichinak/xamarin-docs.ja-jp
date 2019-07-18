@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: ecbda48ac7b175503701aa64f001c0138cfb423a
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: fac19cd7273b5b396946fc1867049db19348c853
+ms.sourcegitcommit: 85c45dc28ab3625321c271804768d8e4fce62faf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57671508"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67039685"
 ---
 # <a name="creating-a-xamarinios-application-using-the-reflection-api"></a>リフレクション API を使用して Xamarin.iOS アプリケーションを作成します。
 
@@ -42,19 +42,19 @@ MT.D は、Xamarin.iOS で分散されます。 これを使用するを右ク�
 ```csharp
 public class Expense
 {
-        [Section("Expense Entry")]
+    [Section("Expense Entry")]
 
-        [Entry("Enter expense name")]
-        public string Name;
+    [Entry("Enter expense name")]
+    public string Name;
         
-        [Section("Expense Details")]
+    [Section("Expense Details")]
   
-        [Caption("Description")]
-        [Entry]
-        public string Details;
+    [Caption("Description")]
+    [Entry]
+    public string Details;
         
-        [Checkbox]
-        public bool IsApproved = true;
+    [Checkbox]
+    public bool IsApproved = true;
 }
 ```
 
@@ -79,20 +79,18 @@ var bctx = new BindingContext (null, expense, "Create a task");
 ```csharp
 UIWindow window;
 
-public override bool FinishedLaunching (UIApplication app, 
-        NSDictionary options)
-{
-   
-        window = new UIWindow (UIScreen.MainScreen.Bounds);
+public override bool FinishedLaunching (UIApplication app, NSDictionary options)
+{   
+    window = new UIWindow (UIScreen.MainScreen.Bounds);
             
-        var expense = new Expense ();
-        var bctx = new BindingContext (null, expense, "Create a task");
-        var dvc = new DialogViewController (bctx.Root);
+    var expense = new Expense ();
+    var bctx = new BindingContext (null, expense, "Create a task");
+    var dvc = new DialogViewController (bctx.Root);
             
-        window.RootViewController = dvc;
-        window.MakeKeyAndVisible ();
+    window.RootViewController = dvc;
+    window.MakeKeyAndVisible ();
             
-        return true;
+    return true;
 }
 ```
 
@@ -116,17 +114,17 @@ window.RootViewController = nav;
 ```csharp
 public enum Category
 {
-        Travel,
-        Lodging,
-        Books
+    Travel,
+    Lodging,
+    Books
 }
         
 public class Expense
 {
-        …
+    …
 
-        [Caption("Category")]
-        public Category ExpenseCategory;
+    [Caption("Category")]
+    public Category ExpenseCategory;
 }
 ```
 
@@ -148,9 +146,7 @@ public class Expense
 
 ## <a name="related-links"></a>関連リンク
 
-- [MTDReflectionWalkthrough (サンプル)](https://developer.xamarin.com/samples/MTDReflectionWalkthrough/)
-- [MonoTouch.Dialog とスクリーン キャスト - Miguel de Icaza の作成、iOS のログイン画面](http://youtu.be/3butqB1EG0c)
-- [スクリーン キャスト - MonoTouch.Dialog で iOS ユーザー インターフェイスを簡単に作成](http://youtu.be/j7OC5r8ZkYg)
+- [MTDReflectionWalkthrough (サンプル)](https://developer.xamarin.com/samples/monotouch/MTDReflectionWalkthrough/)
 - [MonoTouch ダイアログの概要](~/ios/user-interface/monotouch.dialog/index.md)
 - [要素の API のチュートリアル](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md)
 - [JSON 要素のチュートリアル](~/ios/user-interface/monotouch.dialog/monotouch.dialog-json-markup.md)

@@ -1,5 +1,5 @@
 ---
-title: リソース修飾子と視覚化オプション
+title: リソース修飾子と視覚化のオプション
 description: このトピックでは、いくつかの修飾子の値が一致する場合にのみ使用されるリソースを定義する方法について説明します。 簡単な例は、文字列の言語で修飾されたリソースです。 その他の言語に使用する定義されているその他の代替のリソースで、既定値として文字列リソースを定義できます。 レイアウトの種類を含む、すべてのリソースの種類を修飾できます。
 ms.prod: xamarin
 ms.assetid: 2111C18A-3EDA-3787-25E1-3869FF4BE441
@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 07/25/2018
 ms.openlocfilehash: 9d99e6a59b57b59d585b32befdadc0890d41448c
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50115634"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60951058"
 ---
 # <a name="resource-qualifiers-and-visualization-options"></a>リソース修飾子と視覚化オプション
 
@@ -60,8 +60,8 @@ _このトピックでは、いくつかの修飾子の値が一致する場合�
 
 この一覧の下では、夜モード**ない夜**と**夜**レイアウトの方向と、その後**左から右に**と**右から左に**(について**左から右に**と**右から左に**オプションを参照してください[LayoutDirection](https://developer.xamarin.com/api/type/Android.Util.LayoutDirection/))。
 内の最後の項目、**リソース修飾子のオプション**ダイアログ ボックスは、**ラウンド画面**(用、Android Wear で使用) または**いませんラウンド画面**します。
-Round と非ラウンド画面の詳細については、[レイアウト](https://developer.android.com/training/wearables/ui/layouts.html)を参照してください。
-Android の UI モードの詳細については、[UiModeManager](https://developer.xamarin.com/api/type/Android.App.UiModeManager/)を参照してください。
+Round と非ラウンド画面の詳細については、次を参照してください。[レイアウト](https://developer.android.com/training/wearables/ui/layouts.html)します。
+Android の UI モードの詳細については、次を参照してください。 [UiModeManager](https://developer.xamarin.com/api/type/Android.App.UiModeManager/)します。
 
 ## <a name="action-bar-settings"></a>アクション バーの設定
 
@@ -93,11 +93,11 @@ Android**バージョン**セレクターは、デザイナーでレイアウト
 
 ![Android のバージョンの一覧](resource-qualifiers-images/vs/17-android-version.png "一覧の Android バージョン")
 
-ターゲット フレームワークのバージョンは、プロジェクトの設定で設定できます**プロパティ > アプリケーション > Android バージョンを使用してコンパイル**します。 ターゲット フレームワークのバージョンの詳細については、[Understanding Android API Levels](~/android/app-fundamentals/android-api-levels.md)を参照してください。
+ターゲット フレームワークのバージョンは、プロジェクトの設定で設定できます**プロパティ > アプリケーション > Android バージョンを使用してコンパイル**します。 ターゲット フレームワークのバージョンの詳細については、次を参照してください。 [Understanding Android API Levels](~/android/app-fundamentals/android-api-levels.md)します。
 
 ツールボックスで使用可能なウィジェットのセットは、プロジェクトのターゲット フレームワークのバージョンによって決定されます。 使用できるプロパティの場合は true。 これはまた、**プロパティ ウィンドウ**します。 ウィジェットの使用可能な一覧は*いない*で選択した値によって決定されます、**バージョン**ツールバーのセレクター。 たとえば、Android 4.4 をプロジェクトのターゲット バージョンを設定した場合で Android 6.0 では、プロジェクトがどのように表示するツールバー バージョン セレクターで Android 6.0 を選択できますが、Android 6.0 に固有のウィジェットを追加することはできません&ndash; Android 4.4 で使用できるウィジェットに制限があります。
 
-リソースの種類の詳細については、[Android リソース](~/android/app-fundamentals/resources-in-android/index.md)を参照してください。
+リソースの種類の詳細については、次を参照してください。 [Android リソース](~/android/app-fundamentals/resources-in-android/index.md)します。
 
 
 
@@ -141,7 +141,7 @@ Android**バージョン**セレクターは、デザイナーでレイアウト
 
 この一覧の下では、夜モード**ない夜**と**夜**レイアウトの方向と、その後**左から右に**と**右から左に**します。 オプションの最後の組み合わせでは、いずれかを選択できます。**ラウンド画面**または**四角形の画面**(デバイスの Android Wear のに便利です)。
 
-Android の UI モードの詳細については、[UiModeManager](https://developer.xamarin.com/api/type/Android.App.UiModeManager/)を参照してください。
+Android の UI モードの詳細については、次を参照してください。 [UiModeManager](https://developer.xamarin.com/api/type/Android.App.UiModeManager/)します。
 について**左から右に**と**右から左に**オプションを参照してください[LayoutDirection](https://developer.xamarin.com/api/type/Android.Util.LayoutDirection/)します。
 
 
@@ -175,10 +175,10 @@ Android**バージョン**セレクターは、デザイナーでレイアウト
 
 [![Android のバージョンの一覧](resource-qualifiers-images/xs/16-android-version-m75-sml.png)](resource-qualifiers-images/xs/16-android-version-m75.png#lightbox)
 
-プロジェクトの設定でターゲット フレームワークのバージョンを設定することができます、**プロジェクト オプション > ビルド > 全般**セクション。 ターゲット フレームワークのバージョンの詳細については、[Understanding Android API Levels](~/android/app-fundamentals/android-api-levels.md)を参照してください。
+プロジェクトの設定でターゲット フレームワークのバージョンを設定することができます、**プロジェクト オプション > ビルド > 全般**セクション。 ターゲット フレームワークのバージョンの詳細については、次を参照してください。 [Understanding Android API Levels](~/android/app-fundamentals/android-api-levels.md)します。
 
 ツールボックスで使用可能なウィジェットのセットは、プロジェクトのターゲット フレームワークのバージョンによって決定されます。 使用できるプロパティの場合は true。 これはまた、**プロパティ パッド**します。 ウィジェットの使用可能な一覧は*いない*で選択した値によって決定されます、**バージョン**ツールバーのセレクター。 たとえば、Android 4.4 をプロジェクトのターゲット バージョンを設定した場合で Android 6.0 では、プロジェクトがどのように表示するツールバー バージョン セレクターで Android 6.0 を選択できますが、Android 6.0 に固有のウィジェットを追加することはできません&ndash; Android 4.4 で使用できるウィジェットに制限があります。
 
-リソースの種類の詳細については、[Android リソース](~/android/app-fundamentals/resources-in-android/index.md)を参照してください。
+リソースの種類の詳細については、次を参照してください。 [Android リソース](~/android/app-fundamentals/resources-in-android/index.md)します。
 
 -----

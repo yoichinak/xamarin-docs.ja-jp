@@ -9,12 +9,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/01/2019
-ms.openlocfilehash: 855962560897789dadba535f69c4a7da42bb4742
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: 886527f6d4338ffbe7026bec536716bf844e3701
+ms.sourcegitcommit: 4b7a0ac33fc64516dd3d70bb68d9aa50e46b2dc5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58854978"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "65997117"
 ---
 # <a name="perform-navigation-in-a-multi-page-xamarinforms-application"></a>複数ページの Xamarin.Forms アプリケーションでのナビゲーションを実行します。
 
@@ -298,6 +298,7 @@ ms.locfileid: "58854978"
                 FolderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData));
                 MainPage = new NavigationPage(new NotesPage());
             }
+            // ...
         }
     }
     ```
@@ -580,7 +581,7 @@ ms.locfileid: "58854978"
                 FolderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData));
                 MainPage = new NavigationPage(new NotesPage());
             }
-            ...
+            // ...
         }
     }
     ```

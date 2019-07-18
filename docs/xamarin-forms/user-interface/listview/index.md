@@ -7,21 +7,21 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2015
-ms.openlocfilehash: 540e787b476fc2b249bfbe487e45ac61f2e7405a
-ms.sourcegitcommit: 5d4e6677224971e2bc0268f405d192d0358c74b8
+ms.openlocfilehash: f9a3f6301005210d221f3223607e82adc0971a32
+ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58329352"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66741018"
 ---
 # <a name="xamarinforms-listview"></a>Xamarin.Forms ListView
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/WorkingWithListview)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithListview)
 
 [`ListView`](xref:Xamarin.Forms.ListView) 特に長い一覧をスクロールを必要とするデータの一覧を表示するためのビューです。
 
 > [!IMPORTANT]
-> `CollectionView` 別のレイアウトの仕様を使用してデータのリストを表示するためのビュー。 目的より柔軟に提供してパフォーマンスの高い代替に[ `ListView`](xref:Xamarin.Forms.ListView)します。 詳細については、[Xamarin.Forms CollectionView](~/xamarin-forms/user-interface/collectionview/index.md)を参照してください。
+> [`CollectionView`](xref:Xamarin.Forms.CollectionView) 別のレイアウトの仕様を使用してデータのリストを表示するためのビュー。 これは [ `ListView`](xref:Xamarin.Forms.ListView) の代わりとして、より柔軟でより高パフォーマンスを提供することを目的にしています。 詳細については、次を参照してください。 [Xamarin.Forms CollectionView](~/xamarin-forms/user-interface/collectionview/index.md)します。
 
 ## <a name="use-cases"></a>ユース ケース
 
@@ -62,7 +62,7 @@ ListView の対話機能の詳細については、[ListView の対話機能 (&)
 
 ## <a name="related-links"></a>関連リンク
 
-- [ListView での操作 (サンプル)](https://developer.xamarin.com/samples/WorkingWithListview)
+- [ListView での操作 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithListview)
 - [2 つの方法 (サンプル) をバインド](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/SwitchEntryTwoBinding)
 - [セルで構築された (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/BuiltInCells)
 - [カスタムのセル (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/CustomCells)

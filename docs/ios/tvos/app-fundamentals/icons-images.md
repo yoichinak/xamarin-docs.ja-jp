@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 96af7fab366c3fd3493cf5adbf183d80b7c1ee26
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: dab1b0f7bf7aabb4dfcfbfdcb5e202baa48e664d
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116460"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865166"
 ---
 # <a name="working-with-tvos-icons-and-images-in-xamarin"></a>アイコンとイメージを Xamarin で tvOS の操作
 
@@ -120,7 +120,7 @@ tvOS では、次の形式でイメージのレイヤーで動作します。
 
 [![](icons-images-images/layered03.png "視差プレビューアー")](icons-images-images/layered03.png#lightbox)
 
-階層化の画像をプレビューするには、中にイメージを回転して視差効果をプレビューするには、マウスを使用できます。 使用して、 **+** (正符号 +) と**-** (マイナス記号) ボタンを追加してレイヤーを削除します。
+階層化の画像をプレビューするには、中にイメージを回転して視差効果をプレビューするには、マウスを使用できます。 使用して、 **+** (正符号 +) と **-** (マイナス記号) ボタンを追加してレイヤーを削除します。
 
 階層型の新しいイメージを作成するときに LSR 形式でエクスポートし、アプリのバンドルに含まれることができます。
 
@@ -181,7 +181,7 @@ TvOS プロジェクトに必要なアプリ アイコンを設定するには�
 5. をクリックして、 **Apple TV エントリ x 1**イメージ ファイルを選択します。
 6. 上記の手順を繰り返して、`Front`と`Middle`資産。
 7. 定義する同じ手順を繰り返して、`App Icon - Large`資産。
-4. 変更内容を保存します。
+8. 変更内容を保存します。
 
 <a name="Top-Shelf-Image" />
 
@@ -218,8 +218,8 @@ TvOS プロジェクトに必要なトップ シェルフのイメージを設�
 3. をクリックして、`Top Shelf Image`資産。 
 
     [![](icons-images-images/asset07.png "トップ シェルフのイメージ アセット")](icons-images-images/asset07.png#lightbox)
-5. をクリックして、 **Apple TV エントリ x 1**イメージ ファイルを選択します。
-6. 変更内容を保存します。
+4. をクリックして、 **Apple TV エントリ x 1**イメージ ファイルを選択します。
+5. 変更内容を保存します。
 
 <a name="Dynamic-Top-Shelf-Content" />
 
@@ -320,7 +320,7 @@ TvOS 9 は、iOS 9 のサブセットであるために、同じ手法を含め�
 
 <a name="Summary" />
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
 この記事では、すべてのイメージの種類と Xamarin.tvOS アプリで使用されるサイズについて説明しました。 最初に、起動イメージ、イメージの階層化、アプリ アイコン、上部シェルフのイメージおよびゲーム センターのイメージについて説明します。 Xamarin.tvOS アプリでのイメージの操作を説明しました。
 

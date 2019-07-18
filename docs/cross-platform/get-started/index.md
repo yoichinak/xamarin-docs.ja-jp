@@ -1,18 +1,18 @@
 ---
 title: Xamarin の概要
-description: このドキュメントはさまざまなガイドにリンクしており、これらのガイドでは、Xamarin の開発を開始する方法について説明しています。 リンクされているコンテンツでは、最初のアプリをビルドする方法について説明し、モバイル開発の概要を提供します。また、Xamarin University でのトレーニングを紹介します。
+description: このドキュメントはさまざまなガイドにリンクしており、これらのガイドでは、Xamarin の開発を開始する方法について説明しています。 リンクされているコンテンツでは、最初のアプリをビルドする方法について説明し、モバイル開発の概要を提供します。
 ms.prod: xamarin
 ms.assetid: 13FCAE14-E73D-C1A4-1D22-A433AD827C07
 ms.custom: xamu-video
 author: asb3993
 ms.author: amburns
 ms.date: 04/10/2017
-ms.openlocfilehash: b9b48d83199f83c69a42785d4d0c4008a5c6a5e1
-ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
+ms.openlocfilehash: da2c927bc7d6943066b6b2541d9af98a560c40b5
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57197395"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978429"
 ---
 # <a name="building-mobile-apps"></a>モバイル アプリの構築
 
@@ -48,11 +48,11 @@ Xamarin を選択し、モバイル アプリケーションの設計時と開�
 
 Visual Studio for Mac (macOS 用の統合開発環境 (IDE)) について説明します。
 
-## <a name="get-started-with-xamarin-university"></a>Xamarin University の概要
+## <a name="get-started-video"></a>ビデオを開始する
 
 > [!VIDEO https://youtube.com/embed/NGvn-pGZFPA]
 
-**Building Your First Xamarin.Forms App with Xamarin for Visual Studio (Xamarin for Visual Studio で最初の Xamarin.Forms アプリを構築する)、by [Xamarin University](https://university.xamarin.com)**
+**Building Your First Xamarin.Forms App with Xamarin for Visual Studio (Xamarin for Visual Studio で最初の Xamarin.Forms アプリを構築する)**
 
 ## <a name="related-links"></a>関連リンク
 

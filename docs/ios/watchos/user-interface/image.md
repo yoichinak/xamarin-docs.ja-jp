@@ -7,22 +7,22 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 6a2b8c99156963ae167aecd29a618d0feeffbdc7
-ms.sourcegitcommit: 2713f2c1d74e3582704c3d0ca65b6651119ed489
+ms.openlocfilehash: 30bb8f096384dd9f76e208fbd3dbef73cf53bb33
+ms.sourcegitcommit: 8ecfa339d0f3e7687977bfe4fc96448942690183
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56321130"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67558699"
 ---
 # <a name="watchos-image-controls-in-xamarin"></a>watchOS Xamarin でのイメージ コントロール
 
 watchOS の提供、 [`WKInterfaceImage`](xref:WatchKit.WKInterfaceImage)イメージや単純なアニメーションを表示するコントロール。 一部のコントロール (ボタン、グループ、およびインターフェイス コント ローラー) などの背景画像をこともできます。
 
-![](image-images/image-walkway.png "Apple Watch の画像の表示") ![](image-images/image-animation.png "単純なアニメーションを使用して、Apple Watch")
+![](image-images/image-walkway.png "Apple Watch を示す図") ![](image-images/image-animation.png "単純なアニメーションを使用して Apple Watch")
 <!-- watch image courtesy of http://infinitapps.com/bezel/ -->
 
 資産カタログのイメージを使用すると、ウォッチ キット アプリにイメージを追加できます。
-のみ **@2x** Retina ディスプレイ デバイスをすべて見るために、バージョンが必要です。 
+のみ **@2x** Retina ディスプレイ デバイスをすべて見るために、バージョンが必要です。
 
 ![](image-images/asset-universal-sml.png "Retina ディスプレイ デバイスをすべて見るために 2 つだけの x バージョンが必要です。")
 
@@ -132,4 +132,4 @@ using (var image = UIImage.FromBundle ("Bumblebee")) {
 ## <a name="related-links"></a>関連リンク
 
 - [WatchKitCatalog (サンプル)](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)
-- [Apple のイメージのドキュメント](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/Images.html)
+- [Apple のイメージのドキュメント](https://developer.apple.com/documentation/watchkit/wkinterfaceimage)

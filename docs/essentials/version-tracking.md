@@ -1,18 +1,19 @@
 ---
-title: 'Xamarin.Essentials: バージョン追跡'
+title: Xamarin.Essentials:バージョンの追跡
 description: Xamarin.Essentials の VersionTracking クラスを使用すると、アプリケーションのバージョンとビルド番号を確認できるだけでなく、アプリケーションの初めての起動か現在のバージョンかや、前回のビルドの情報などの追加情報を見ることができます。
 ms.assetid: 670C7E8A-E882-4AC0-97D2-A53D90ADD6A3
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: 7d3877577523ed17c78fd5d2ad02923bd3d821e2
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.date: 05/28/2019
+ms.custom: video
+ms.openlocfilehash: 3728a209c99712fad6b3dbf9bc59a2c1a3c7bcd5
+ms.sourcegitcommit: 4a1520dee7759f8355ea65c8bb3d1bac8ba58122
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52898832"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66354124"
 ---
-# <a name="xamarinessentials-version-tracking"></a>Xamarin.Essentials: バージョン追跡
+# <a name="xamarinessentials-version-tracking"></a>Xamarin.Essentials:バージョンの追跡
 
 **VersionTracking** クラスを使用すると、アプリケーションのバージョンとビルド番号を確認できるだけでなく、今まで一度も起動されたことのないアプリケーションの初めての起動か、現在のバージョンの起動か、前回のビルドの情報などの追加情報を見ることができます。
 
@@ -22,7 +23,7 @@ ms.locfileid: "52898832"
 
 ## <a name="using-version-tracking"></a>VersionTracking の使用
 
-自分のクラスの Xamarin.Essentials に参照を追加します。
+自分のクラスに Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
@@ -74,9 +75,15 @@ var buildHistory = VersionTracking.BuildHistory;
 
 ## <a name="platform-implementation-specifics"></a>プラットフォームの実装の詳細
 
-すべてのバージョン情報は Xamarin.Essentials の [Preferences](preferences.md) API を使用して格納され、**<アプリ パッケージ ID>.xamarinessentials.versiontracking** というファイル名で保存され、「[ユーザー設定](preferences.md#persistence)」で説明されているのと同じデータ永続化に従います。
+すべてのバージョン情報は Xamarin.Essentials の [Preferences](preferences.md) API を使用して格納され、 **<アプリ パッケージ ID>.xamarinessentials.versiontracking** というファイル名で保存され、「[ユーザー設定](preferences.md#persistence)」で説明されているのと同じデータ永続化に従います。
 
 ## <a name="api"></a>API
 
 - [VersionTracking のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/VersionTracking)
 - [VersionTracking API のドキュメント](xref:Xamarin.Essentials.VersionTracking)
+
+## <a name="related-video"></a>関連ビデオ
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Version-Tracking-XamarinEssentials-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

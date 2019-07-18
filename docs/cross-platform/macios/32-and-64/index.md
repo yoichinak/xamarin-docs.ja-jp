@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
 ms.openlocfilehash: 31eb0bfae58ecdca40548e46d1d9d95828be67b4
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120100"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61347841"
 ---
 # <a name="3264-bit-platform-considerations"></a>32/64 ビットのプラットフォームに関する考慮事項
 
@@ -79,7 +79,7 @@ Apple の確認、さまざまな iOS デバイスの機能の包括的なにつ
 32 ビットと 64 ビットの両方のアーキテクチャを対象とすると、アプリケーションのサイズが大幅に向上します。 ただし、そのため、古いデバイスをサポートしながら、最適化されたコードを実行する新しいデバイスできます。
 
 > [!IMPORTANT]
-> ITunes App Store に iOS アプリケーションを送信するときに、次のメッセージが表示される場合 _"警告 ITMS 9000: 64 ビットのサポートがありません。2015 年 2 月 1 日の新しい iOS の開始、App Store にアップロードされたアプリは 64 ビットのサポートを含める必要があり、8 SDK、Xcode 6 以降に含まれる、iOS のビルドです。有効にするプロジェクトで、64 ビットをお勧め既定の Xcode ビルドの「標準的なアーキテクチャ」の設定を使用して 1 つのバイナリを 32 ビットと 64 ビットの両方のコードをビルドする"。_ サポートされているアーキテクチャを利用可能ないずれかに切り替える必要がある**ARM64**組み合わせ (前述のように)、再コンパイルと再送信します。
+> ITunes App Store に iOS アプリケーションを送信するときに、次のメッセージが表示される場合 _"警告 ITMS 9000。不足している 64 ビットのサポート。2015 年 2 月 1 日の新しい iOS の開始、App Store にアップロードされたアプリは 64 ビットのサポートを含める必要があり、8 SDK、Xcode 6 以降に含まれる、iOS のビルドです。有効にするプロジェクトで、64 ビットをお勧め既定の Xcode ビルドの「標準的なアーキテクチャ」の設定を使用して 1 つのバイナリを 32 ビットと 64 ビットの両方のコードをビルドする"。_ サポートされているアーキテクチャを利用可能ないずれかに切り替える必要がある**ARM64**組み合わせ (前述のように)、再コンパイルと再送信します。
 
 ## <a name="mac"></a>Mac
 
@@ -90,7 +90,7 @@ Apple の確認、さまざまな iOS デバイスの機能の包括的なにつ
 
 異なり iOS、macOS の最新バージョンで導入された新しいフレームワークの多くがのみサポート (CloudKit、EventKit GameController、LocalAuthentication、MediaLibrary、MultipeerConnectivity、NotificationCenter、GLKit、SpriteKit、ソーシャル、64 ビット モードでおよび 他のユーザーの間での MapKit) で変更します。
 
-Unified API を生成するアプリケーションの種類を選択する開発者を許可する: 32 ビットまたは 64 ビット。
+Unified API は、生成するアプリケーションの種類を選択する開発者を許可します。32 ビットまたは 64 ビット。
 
 **32 ビット アプリケーション**は 32 ビットと 64 ビットの両方の Mac コンピューターで実行、アドレス空間を 32 ビットに制限していて、すべてのライブラリが 32 ビットである必要があります。
 

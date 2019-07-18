@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: df0b0e8dd57129917f2d8dab07115551ca675acf
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 8dcb478b303c4c73f7e73dc018ad56b1301389c8
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109225"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830042"
 ---
 # <a name="healthkit-in-xamarinios"></a>Xamarin.iOS で HealthKit
 
@@ -101,7 +101,7 @@ Xamarin iOS 8 プロジェクトを手動で作成するプロセスを説明す
 
 [![](healthkit-images/image07.png "プロビジョニング プロファイルを選択します。")](healthkit-images/image07.png#lightbox)
 
-場合、**プロビジョニング プロファイル**が使用できない再確認、**バンドル識別子**で、 **iOS アプリケーション**パネルで指定されていると、 **iOSデベロッパー センター**ことと、**プロビジョニング プロファイル**がインストールされている (**Xcode > 設定 > アカウント >... 詳細を表示します。**).
+場合、**プロビジョニング プロファイル**が使用できない再確認、**バンドル識別子**で、 **iOS アプリケーション**パネルで指定されていると、 **iOSデベロッパー センター**ことと、**プロビジョニング プロファイル**がインストールされている (**Xcode > 設定 > アカウント >... 詳細を表示します。** ).
 
 ときに正常性のキットが有効な**プロビジョニング プロファイル**が選択されていること、 **ok**プロジェクト オプション ダイアログを閉じます。
 
@@ -142,7 +142,7 @@ Xamarin iOS 8 プロジェクトを手動で作成するプロセスを説明す
 
 正常性のキット データ ストアとは、アプリ間で共有される、ユーザー固有のプライベート データストアです。 正常性に関する情報は機密性の高いためであるため、ユーザーは、データ アクセスを許可する正の手順を実行する必要があります。 このアクセスは、部分的な可能性があります (読み取り、一部の種類のデータが、アクセスではありませんが、書き込みなど) と、いつでも取り消すことがあります。 正常性キットのアプリケーションは、多くのユーザーが、正常性に関する情報を格納するためらわれます理解したうえで防御のため、作成する必要があります。
 
-キット データの正常性に限定されます Apple の種類を指定します。 これらの型が厳密に定義されている: など、一部は、(グラム、カロリー、リットルなど) の測定単位の絶対値を組み合わせる他のユーザーの Apple が提供される列挙体は、特定の値に制限されます。 互換性のある測定単位を共有するデータも含め、によって区別、 `HKObjectType`; たとえば、型システムを格納する、誤った試行をキャッチする、`HKQuantityTypeIdentifier.NumberOfTimesFallen`フィールド予測するように値を`HKQuantityTypeIdentifier.FlightsClimbed`場合でも、両方を使用して、` HKUnit.Count`測定単位。
+キット データの正常性に限定されます Apple の種類を指定します。 これらの型が厳密に定義されている: など、一部は、(グラム、カロリー、リットルなど) の測定単位の絶対値を組み合わせる他のユーザーの Apple が提供される列挙体は、特定の値に制限されます。 互換性のある測定単位を共有するデータも含め、によって区別、 `HKObjectType`; たとえば、型システムを格納する、誤った試行をキャッチする、`HKQuantityTypeIdentifier.NumberOfTimesFallen`フィールド予測するように値を`HKQuantityTypeIdentifier.FlightsClimbed`場合でも、両方を使用して、 `HKUnit.Count`測定単位。
 
 正常性のキット データ ストアに保存の種類は、すべてのサブクラスの`HKObjectType`します。 `HKCharacteristicType` オブジェクトは、生物学上の性別、血中の種類、および生年月日を格納します。 一般的なただしは`HKSampleType`は特定の時刻または期間にわたって、サンプリング データを表すオブジェクト。 
 

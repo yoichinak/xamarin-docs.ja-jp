@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: d8a6044c47c568c7f1e17d01915e2e5a6e888f95
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 115b5dbd0ec7093bf386e569aedfd0bafe5dc906
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57671820"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827652"
 ---
 # <a name="calendar"></a>予定表
 
@@ -285,6 +285,6 @@ long GetDateTimeMS (int yr, int month, int day, int hr, int min)
 
 ## <a name="related-links"></a>関連リンク
 
-- [予定表のデモ (サンプル)](https://developer.xamarin.com/samples/CalendarDemo/)
+- [予定表のデモ (サンプル)](https://developer.xamarin.com/samples/monodroid/CalendarDemo/)
 - [Ice Cream Sandwich の概要](http://www.android.com/about/ice-cream-sandwich/)
 - [Android 4.0 プラットフォーム](https://developer.android.com/sdk/android-4.0.html)

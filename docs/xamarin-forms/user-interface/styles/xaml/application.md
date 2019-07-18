@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 749e9bca87b2c9547b9733248d75718a4443ab88
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.openlocfilehash: 7b13a192f883ea667977f4d9ae3eea41d8c65e24
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55292351"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65971169"
 ---
 # <a name="global-styles-in-xamarinforms"></a>Xamarin.Forms でグローバル スタイル
 
@@ -49,7 +49,7 @@ _スタイル利用できるグローバルに、アプリケーションのリ�
 次のコード例に示します、XAML ページを適用する、`buttonStyle`をページの[ `Button` ](xref:Xamarin.Forms.Button)インスタンス。
 
 ```xaml
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.ApplicationStylesPage" Title="Application" Icon="xaml.png">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.ApplicationStylesPage" Title="Application" IconImageSource="xaml.png">
     <ContentPage.Content>
         <StackLayout Padding="0,20,0,0">
             <Button Text="These buttons" Style="{StaticResource buttonStyle}" />
@@ -71,7 +71,7 @@ _スタイル利用できるグローバルに、アプリケーションのリ�
 スタイルのビュー階層の下位には、アップ以上定義されているものよりも優先されます。 設定など、 [ `Style` ](xref:Xamarin.Forms.Style)設定[ `Button.TextColor` ](xref:Xamarin.Forms.Button.TextColor)に`Red`アプリケーションでレベルを設定 ページのレベルのスタイルによってオーバーライドされます`Button.TextColor`に`Green`. 同様に、ページ レベルのスタイルはコントロールのレベルのスタイルによってオーバーライドされます。 さらに場合、`Button.TextColor`が直接コントロール プロパティにこれは優先任意のスタイルを設定します。 この優先順位は次のコード例について説明します。
 
 ```xaml
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.ApplicationStylesPage" Title="Application" Icon="xaml.png">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.ApplicationStylesPage" Title="Application" IconImageSource="xaml.png">
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="buttonStyle" TargetType="Button">
@@ -126,7 +126,7 @@ public class App : Application
 }
 ```
 
-コンス トラクターは、1 つを定義します。*明示的な*に適用するためのスタイル[ `Button` ](xref:Xamarin.Forms.Button)アプリケーション全体でのインスタンス。 *明示的な* [ `Style` ](xref:Xamarin.Forms.Style)にインスタンスが追加される、 [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)を使用して、 [ `Add` ](xref:Xamarin.Forms.ResourceDictionary.Add(System.String,System.Object)) を指定して、メソッド`key`を参照する文字列、`Style`インスタンス。 `Style`インスタンス、アプリケーションで適切な種類のコントロールに適用できます。 ただし、グローバルなスタイルは、*明示的な*または*暗黙的な*します。
+コンストラクターは、1 つを定義します。*明示的な*に適用するためのスタイル[ `Button` ](xref:Xamarin.Forms.Button)アプリケーション全体でのインスタンス。 *明示的な* [ `Style` ](xref:Xamarin.Forms.Style)にインスタンスが追加される、 [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)を使用して、 [ `Add` ](xref:Xamarin.Forms.ResourceDictionary.Add(System.String,System.Object)) を指定して、メソッド`key`を参照する文字列、`Style`インスタンス。 `Style`インスタンス、アプリケーションで適切な種類のコントロールに適用できます。 ただし、グローバルなスタイルは、*明示的な*または*暗黙的な*します。
 
 次のコード例に示します、C# のページを適用する、`buttonStyle`をページの[ `Button` ](xref:Xamarin.Forms.Button)インスタンス。
 
@@ -148,7 +148,7 @@ public class ApplicationStylesPageCS : ContentPage
 }
 ```
 
-`buttonStyle`に適用される、 [ `Button` ](xref:Xamarin.Forms.Button)インスタンスを設定して、 [ `Style` ](xref:Xamarin.Forms.VisualElement.Style)プロパティの外観を制御し、`Button`インスタンス。
+`buttonStyle`に適用される、 [ `Button` ](xref:Xamarin.Forms.Button)インスタンスを設定して、 [ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)プロパティの外観を制御し、`Button`インスタンス。
 
 ## <a name="related-links"></a>関連リンク
 

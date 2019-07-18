@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 11/10/2017
-ms.openlocfilehash: 15c93126f80917df45a5b80fb84397dc6ef0d5fd
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: e9e20b4966e9e6cb8a4ce3ad6724cf0ba2565c33
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122869"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865860"
 ---
 # <a name="target-framework-for-xamarinmac"></a>Xamarin.Mac 向けのターゲット フレームワーク
 
@@ -41,10 +41,10 @@ _この記事では、Xamarin.Mac の使用可能なターゲット フレーム
 Xamarin.Mac プロジェクトのターゲット フレームワークの型に変更するには、次の操作を行います。
 
 1. Visual Studio for Mac で Xamarin.Mac プロジェクトを開きます。
-2. **ソリューション エクスプローラー**で、プロジェクト ファイルをダブルクリックし、**[プロジェクト オプション]** ダイアログ ボックスを開きます。
+2. **ソリューション エクスプローラー**で、プロジェクト ファイルをダブルクリックし、 **[プロジェクト オプション]** ダイアログ ボックスを開きます。
 3. **全般**の種類を選択 タブで、**ターゲット フレームワーク**アプリケーションのニーズに合った。
 
-  [![プロジェクト オプション ウィンドウを使用して、ターゲット フレームワークを選択する](target-framework-images/select-target-full.png "プロジェクト オプション ウィンドウを使用して、ターゲット フレームワークを選択するには")](target-framework-images/select-target-full-large.png#lightbox)
+    [![プロジェクト オプション ウィンドウを使用して、ターゲット フレームワークを選択する](target-framework-images/select-target-full.png "プロジェクト オプション ウィンドウを使用して、ターゲット フレームワークを選択するには")](target-framework-images/select-target-full-large.png#lightbox)
 
 4. **[OK]** をクリックして変更内容を保存します。
 

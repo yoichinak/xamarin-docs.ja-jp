@@ -1,37 +1,34 @@
 ---
-title: 項目をビューにスクロールします。
-description: ユーザー カードのスクロールを開始するには、ときに項目が完全に表示されるように、スクロールの終了位置を制御できます。 さらに、CollectionView は、プログラムで項目をスクロールして表示する 2 つの ScrollTo メソッドを定義します。
+title: Xamarin.Forms の CollectionView スクロール
+description: ユーザーが、スクロールを開始するためにスワイプした場合に、項目が完全に表示されるように、スクロールの終了位置を制御することができます。 さらに、CollectionView は、プログラムで項目をスクロールして表示する 2 つの ScrollTo メソッドを定義します。
 ms.prod: xamarin
 ms.assetid: 2ED719AF-33D2-434D-949A-B70B479C9BA5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/19/2019
-ms.openlocfilehash: da7f379076b8e193deddc99e9004f051ba006cbb
-ms.sourcegitcommit: 5d4e6677224971e2bc0268f405d192d0358c74b8
+ms.date: 05/06/2019
+ms.openlocfilehash: bd328c307ef5ad243569c294a7256ae9bdb3806a
+ms.sourcegitcommit: 0596004d4a0e599c1da1ddd75a6ac928f21191c2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58329948"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66005265"
 ---
-# <a name="scroll-an-item-into-view"></a>項目をビューにスクロールします。
+# <a name="xamarinforms-collectionview-scrolling"></a>Xamarin.Forms の CollectionView スクロール
 
-![[プレビュー]](~/media/shared/preview.png)
+![](~/media/shared/preview.png "この API は、現在プレリリースです")
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/CollectionViewDemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/CollectionViewDemos/)
 
-> [!IMPORTANT]
-> `CollectionView`は現在プレビュー段階で、その計画的な機能の一部が不足しています。 さらに、実装が完了すると、API を変更することがあります。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) 2 つ定義する[ `ScrollTo` ](xref:Xamarin.Forms.ItemsView.ScrollTo*)メソッドは、項目をビューにスクロールします。 オーバーロードの 1 つは、ビュー内の指定したインデックスにある項目にスクロールし、もう一つは、ビュー内の指定した項目にスクロールします。 両方のオーバー ロードは、スクロールが完了すると、項目の正確な位置を示すために指定できる追加の引数とスクロールをアニメーション化するかどうかがあります。
 
-`CollectionView` 2 つ定義する`ScrollTo`メソッドは、項目をビューにスクロールします。 ビューに指定したインデックス位置にある項目を指定した項目をスクロール、表示中に、オーバー ロードの 1 つスクロールします。 両方のオーバー ロードは、スクロールが完了すると、項目の正確な位置を示すために指定できる追加の引数とスクロールをアニメーション化するかどうかがあります。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) 定義、 [ `ScrollToRequested` ](xref:Xamarin.Forms.ItemsView.ScrollToRequested)ときに発生するイベントの 1 つ、 [ `ScrollTo` ](xref:Xamarin.Forms.ItemsView.ScrollTo*)メソッドが呼び出されます。 [ `ScrollToRequestedEventArgs` ](xref:Xamarin.Forms.ScrollToRequestedEventArgs)に付属しているオブジェクト、`ScrollToRequested`イベントなど、多くのプロパティには、 `IsAnimated`、 `Index`、 `Item`、および`ScrollToPosition`します。 これらのプロパティで指定された引数から設定、`ScrollTo`メソッドの呼び出し。
 
-`CollectionView` 定義、`ScrollToRequested`ときに発生するイベントの 1 つ、`ScrollTo`メソッドが呼び出されます。 `ScrollToRequestedEventArgs`に付属しているオブジェクト、`ScrollToRequested`イベントなど、多くのプロパティには、 `IsAnimated`、 `Index`、 `Item`、および`ScrollToPosition`します。 これらのプロパティで指定された引数から設定、`ScrollTo`メソッドの呼び出し。
-
-ユーザー カードのスクロールを開始するには、ときに項目が完全に表示されるように、スクロールの終了位置を制御できます。 この機能は、項目がスクロールが停止したときの位置に合わせるために、スナップと呼ばれます。 詳細については、[のスナップ ポイント](#snap-points)を参照してください。
+ユーザーが、スクロールを開始するためにスワイプした場合に、項目が完全に表示されるように、スクロールの終了位置を制御することができます。 この機能は、項目がスクロールが停止したときの位置に合わせるために、スナップと呼ばれます。 詳細については、次を参照してください。[のスナップ ポイント](#snap-points)します。
 
 ## <a name="scroll-an-item-at-an-index-into-view"></a>インデックスにある項目をビューにスクロールします。
 
-最初の`ScrollTo`メソッドのオーバー ロードが指定したインデックス位置にある項目をビューにスクロールします。 指定された、`CollectionView`という名前のオブジェクト`collectionView`、次の例では、ビューにインデックス 12 にある項目をスクロールする方法を示しています。
+最初の[ `ScrollTo` ](xref:Xamarin.Forms.ItemsView.ScrollTo*)メソッドのオーバー ロードが指定したインデックス位置にある項目をビューにスクロールします。 指定された、 [ `CollectionView` ](xref:Xamarin.Forms.CollectionView)という名前のオブジェクト`collectionView`、次の例では、ビューにインデックス 12 にある項目をスクロールする方法を示しています。
 
 ```csharp
 collectionView.ScrollTo(12);
@@ -39,7 +36,7 @@ collectionView.ScrollTo(12);
 
 ## <a name="scroll-an-item-into-view"></a>項目をビューにスクロールします。
 
-2 番目の`ScrollTo`メソッドのオーバー ロードが、指定した項目をビューにスクロールします。 指定された、`CollectionView`という名前のオブジェクト`collectionView`、次の例では、指定した項目をスクロールして表示する方法を示しています。
+2 番目の[ `ScrollTo` ](xref:Xamarin.Forms.ItemsView.ScrollTo*)メソッドのオーバー ロードが、指定した項目をビューにスクロールします。 指定された、 [ `CollectionView` ](xref:Xamarin.Forms.CollectionView)という名前のオブジェクト`collectionView`、次の例では、指定した項目をスクロールして表示する方法を示しています。
 
 ```csharp
 MonkeysViewModel viewModel = BindingContext as MonkeysViewModel;
@@ -49,7 +46,7 @@ collectionView.ScrollTo(monkey);
 
 ## <a name="control-scroll-position"></a>コントロールのスクロール位置
 
-スクロール バーが完了した後の項目の正確な位置を指定できます、項目をビューにスクロールするとき、`position`の引数、`ScrollTo`メソッド。 この引数を受け入れる、 [ `ScrollToPosition` ](xref:Xamarin.Forms.ScrollToPosition)列挙型のメンバー。
+スクロール バーが完了した後の項目の正確な位置を指定できます、項目をビューにスクロールするとき、`position`の引数、 [ `ScrollTo` ](xref:Xamarin.Forms.ItemsView.ScrollTo*)メソッド。 この引数を受け入れる、 [ `ScrollToPosition` ](xref:Xamarin.Forms.ScrollToPosition)列挙型のメンバー。
 
 ### <a name="makevisible"></a>MakeVisible
 
@@ -112,40 +109,40 @@ collectionView.ScrollTo(monkey, animate: false);
 
 ## <a name="snap-points"></a>スナップ ポイント
 
-ユーザー カードのスクロールを開始するには、ときに項目が完全に表示されるように、スクロールの終了位置を制御できます。 項目が停止し、次のプロパティによって制御されます、スクロールするときに配置するスナップために、この機能が、スナップと呼ばれる、`ItemsLayout`クラス。
+ユーザーが、スクロールを開始するためにスワイプした場合に、項目が完全に表示されるように、スクロールの終了位置を制御することができます。 項目が停止し、次のプロパティによって制御されます、スクロールするときに配置するスナップために、この機能が、スナップと呼ばれる、 [ `ItemsLayout` ](xref:Xamarin.Forms.ItemsLayout)クラス。
 
-- `SnapPointsType`、型の`SnapPointsType`、スクロールするとき、スナップ ポイントの動作を指定します。
-- `SnapPointsAlignment`、型の`SnapPointsAlignment`、項目を含むのスナップ ポイントを配置する方法を指定します。
+- [`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType)、型の[ `SnapPointsType` ](xref:Xamarin.Forms.SnapPointsType)、スクロールするとき、スナップ ポイントの動作を指定します。
+- [`SnapPointsAlignment`](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment)、型の[ `SnapPointsAlignment` ](xref:Xamarin.Forms.SnapPointsAlignment)、項目を含むのスナップ ポイントを配置する方法を指定します。
 
-これらのプロパティが支え[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)オブジェクトで、このプロパティはデータ バインドの対象であることを意味します。
+これらのプロパティは、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトでサポートされます。つまり、このプロパティはデータ バインドの対象となることを意味します。
 
 > [!NOTE]
 > スナップが発生したときに、方向で実行されます、運動量が少なくを生成します。
 
 ### <a name="snap-points-type"></a>スナップ ポイントの種類
 
-`SnapPointsType`列挙体は、次のメンバーを定義します。
+[ `SnapPointsType` ](xref:Xamarin.Forms.SnapPointsType)列挙体は、次のメンバーを定義します。
 
 - `None` スクロールにスナップしません項目を示します。
 - `Mandatory` コンテンツ、スクロールは自然を停止する、慣性による処理の方向に最も近いスナップイン スナップが常にポイントします。
 - `MandatorySingle` 同じ動作を示す`Mandatory`が、一度に 1 つの項目のみスクロールします。
 
-既定では、`SnapPointsType`プロパティに設定されて`SnapPointsType.None`、これにより、スクロールするにはスナップしません項目では、次のスクリーン ショットに示すようにします。
+既定では、 [ `SnapPointsType` ](xref:Xamarin.Forms.ItemsLayout.SnapPointsType)プロパティに設定されて`SnapPointsType.None`、これにより、スクロールするにはスナップしません項目では、次のスクリーン ショットに示すようにします。
 
 [![IOS と Android でのスナップ ポイントなし CollectionView 垂直方向の一覧のスクリーン ショット](scrolling-images/snappoints-none.png "CollectionView 垂直方向のリストのスナップ ポイントなし")](scrolling-images/snappoints-none-large.png#lightbox "スナップせず CollectionView 垂直方向の一覧ポイント")
 
 ### <a name="snap-points-alignment"></a>スナップ ポイントの配置
 
-`SnapPointsAlignment`列挙体を定義`Start`、 `Center`、および`End`メンバー。
+[ `SnapPointsAlignment` ](xref:Xamarin.Forms.SnapPointsAlignment)列挙体を定義`Start`、 `Center`、および`End`メンバー。
 
 > [!IMPORTANT]
-> 値、`SnapPointsAlignment`プロパティは、のみ適用されるときに、`SnapPointsType`プロパティに設定されて`Mandatory`、または`MandatorySingle`します。
+> 値、 [ `SnapPointsAlignment` ](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment)プロパティは、のみ適用されるときに、 [ `SnapPointsType` ](xref:Xamarin.Forms.ItemsLayout.SnapPointsType)プロパティに設定されて`Mandatory`、または`MandatorySingle`します。
 
 #### <a name="start"></a>[開始]
 
 `SnapPointsAlignment.Start`メンバーは、スナップ ポイントが項目のリーディング エッジに準拠していることを示します。
 
-既定では、`SnapPointsAlignment` プロパティは `SnapPointsAlignment.Start` に設定されます。 ただし、完全を期すため、次の XAML の例はこの列挙体メンバーを設定する方法を示します。
+既定で、 [ `SnapPointsAlignment` ](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment)プロパティに設定されて`SnapPointsAlignment.Start`します。 ただし、完全を期すため、次の XAML の例はこの列挙体メンバーを設定する方法を示します。
 
 ```xaml
 <CollectionView x:Name="collectionView"
@@ -277,4 +274,4 @@ CollectionView collectionView = new CollectionView
 
 ## <a name="related-links"></a>関連リンク
 
-- [CollectionView (サンプル)](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/CollectionViewDemos/)
+- [CollectionView (サンプル)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/CollectionViewDemos/)

@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 02/28/2018
 ms.openlocfilehash: d004b753c89f3995e8dc511877bd115a894396fc
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57671625"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61018621"
 ---
 # <a name="accessibility-on-android"></a>Android でのアクセシビリティ
 
@@ -182,4 +182,4 @@ saveButton.ContentDescription = Resources.GetText (Resource.String.save_info);
 ## <a name="related-links"></a>関連リンク
 
 - [クロスプラットフォームのアクセシビリティ](~/cross-platform/app-fundamentals/accessibility.md)
-- [ユーザー補助の android Api](https://developer.android.com/guide/topics/ui/accessibility/index.html)
+- [AndroidのアクセシビリティAPI](https://developer.android.com/guide/topics/ui/accessibility/index.html)

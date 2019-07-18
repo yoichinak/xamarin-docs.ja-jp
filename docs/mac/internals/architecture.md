@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 04/12/2017
 ms.openlocfilehash: 1ea38b527acaa89b9f25690de4e55664a7afd9e8
-ms.sourcegitcommit: d09391c315336d36496880ef465a72b8974f2ac7
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51579831"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61034154"
 ---
 # <a name="xamarinmac-architecture"></a>Xamarin.Mac のアーキテクチャ
 
@@ -30,7 +30,7 @@ Xamarin.Mac アプリケーションでは、Mono 実行環境内で実行され
 
 Xamarin を開発するときに、用語*ネイティブ*と*管理*コードはよく使用されます。 マネージ コードが .NET Framework 共通言語ランタイム、または Xamarin のケースで管理の実行には: Mono ランタイム。
 
-ネイティブ コードは、(たとえば、OBJECTIVE-C または、ARM チップでのも AOT コンパイル コード) は、特定のプラットフォームでネイティブに実行されるコードです。 このガイドは、マネージ コードが、ネイティブ コードにコンパイルされ、Xamarin.Mac アプリケーションの動作方法について説明しますもアクセスすることができますが、バインドを使用して Apple の Mac Api の使用について説明します。NET の BCL となどの高度な言語C#します。
+ネイティブ コードとは、（例として、　Objective-C はもちろん、ARM チップ上で、AOT コンパイルされたコードも含む）特定のプラットフォームでネイティブに実行されるコードです。 このガイドは、マネージ コードが、ネイティブ コードにコンパイルされ、Xamarin.Mac アプリケーションの動作方法について説明しますもアクセスすることができますが、バインドを使用して Apple の Mac Api の使用について説明します。NET の BCL となどの高度な言語C#します。
 
 ## <a name="requirements"></a>必要条件
 
@@ -54,7 +54,7 @@ Mono は通常、アプリ バンドルに埋め込ま、Xamarin.Mac アプリ�
 
 ## <a name="selectors"></a>セレクター
 
-Xamarin では、.NET と Apple、させる必要がある 2 つの独立したエコシステムがある最終目標は、スムーズなユーザー エクスペリエンスであることを確認することとして、合理的なようにします。 2 つのランタイムが通信する方法、上のセクションで説明した、非常にうまくの用語 'バインド' により、Xamarin で使用されるネイティブの Mac Api 聞いたかもしれませんが。 バインドがで詳しく説明した、 [OBJECTIVE-C バインディング ドキュメント](~/mac/platform/binding.md)ここでは、ため、内部的には、Xamarin.Mac のしくみを見てみましょう。
+Xamarin では、.NET と Apple の 2 つの独立したエコシステムがあり、最終目標であるスムーズなユーザー エクスペリエンスを実現するために、.NET と Apple を出来るだけシームレスに見えるように結びつける必要があります。 2 つのランタイムが通信する方法、上のセクションで説明した、非常にうまくの用語 'バインド' により、Xamarin で使用されるネイティブの Mac Api 聞いたかもしれませんが。 バインドがで詳しく説明した、 [OBJECTIVE-C バインディング ドキュメント](~/mac/platform/binding.md)ここでは、ため、内部的には、Xamarin.Mac のしくみを見てみましょう。
 
 最初に、OBJECTIVE-C を公開する方法がありますがC#、これは、セレクターを使用して行われます。 セレクターは、オブジェクトまたはクラスに送信されるメッセージです。 Objective C を使用してこれには、 [objc_msgSend](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ObjCRuntimeRef/index.html)関数。 セレクターの使用に関する詳細については、iOS を参照してください[OBJECTIVE-C セレクター](~/ios/internals/objective-c-selectors.md)ガイド。 Objective C をマネージ コードについて何も知らないという事実が原因でより複雑なある OBJECTIVE-C では、マネージ コードを公開する方法もありますがあります。 これを回避するには、使用して、[レジストラー](~/mac/internals/registrar.md)します。 これは、次のセクションで詳しく説明します。
 

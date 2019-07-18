@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
 ms.openlocfilehash: ea03c8b382e2de29bd20ab1d696d7abb7733e182
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120230"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61369249"
 ---
 # <a name="eventkit-in-xamarinios"></a>Xamarin.iOS で EventKit
 
@@ -127,7 +127,7 @@ App.Current.EventStore.RequestAccess (EKEntityType.Event,
 
 ### <a name="ekspan"></a>EKSpan
 
-*EKSpan*イベントを繰り返すことができますがあり、2 つの値を変更するときにイベントの期間を表す列挙体は、:*含めた*と*FutureEvents*します。 `ThisEvent` すべての変更のみ行われる、参照される系列の特定のイベントには意味`FutureEvents`はそのイベントとすべての将来の定期的なアイテムに影響します。
+*EKSpan*イベントを繰り返すことができますがあり、2 つの値を変更するときにイベントの期間を表す列挙体には。*このイベント*と*FutureEvents*します。 `ThisEvent` すべての変更のみ行われる、参照される系列の特定のイベントには意味`FutureEvents`はそのイベントとすべての将来の定期的なアイテムに影響します。
 
 ## <a name="tasks"></a>[タスク]
 

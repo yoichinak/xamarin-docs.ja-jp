@@ -7,20 +7,18 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 39faa4670b17cdf4853bfe24ff104765ca541b9f
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 4d2ab7a546925e92bb59f626279dcbf9c3c4ab4f
+ms.sourcegitcommit: 93b1e2255d59c8ca6674485938f26bd425740dd1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106222"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67157704"
 ---
 # <a name="generic-subclasses-of-nsobject-in-xamarinios"></a>Xamarin.iOS での NSObject のジェネリック サブクラス
 
 ## <a name="using-generics-with-nsobjects"></a>NSObjects でジェネリックを使用します。
 
-Xamarin.iOS 7.2.1 以降では、`NSObject` のサブクラス (たとえば [UIView](https://developer.xamarin.com/api/type/UIKit.UIView/)) でジェネリックを使用することができます。
-
-次のようなジェネリック クラスを作成できます。
+サブクラスでジェネリックを使用することは`NSObject`、たとえば[UIView](xref:UIKit.UIView):
 
 ```csharp
 class Foo<T> : UIView {
@@ -36,7 +34,7 @@ class Foo<T> : UIView {
     
 ## <a name="considerations-for-generic-subclasses-of-nsobject"></a>NSObject の汎用サブクラスの考慮事項
 
-このドキュメントの汎用サブクラスの制限付きサポートの制限事項の詳細を`NSObjects`Xamarin.iOS 7.2.1 で導入されました。
+このドキュメントの汎用サブクラスの制限付きサポートの制限事項の詳細を`NSObjects`します。
     
 ### <a name="generic-type-arguments-in-member-signatures"></a>メンバーのシグネチャのジェネリック型引数
 
@@ -54,7 +52,7 @@ class Generic<T> : NSObject where T: NSObject
 }
 ```
 
-**理由**: ジェネリック型パラメーターは、`NSObject`ため、セレクターの署名`myMethod:`OBJECTIVE-C に安全に公開することができます (常に`NSObject`またはそのサブクラス)。
+**理由**:ジェネリック型パラメーターは、`NSObject`ため、セレクターの署名`myMethod:`OBJECTIVE-C に安全に公開することができます (常に`NSObject`またはそのサブクラス)。
 
 **不適切な**:
 
@@ -103,11 +101,11 @@ class Generic<T, U> : NSObject where T: NSObject
     
 ### <a name="instantiations-of-generic-types-from-objective-c"></a>Objective C からのジェネリック型のインスタンス化
 
-Objective C からのジェネリック型のインスタンス化することはできません。 これは通常、xib にマネージ型を使用する場合に発生します。
+Objective C からのジェネリック型のインスタンス化することはできません。 これは通常、マネージ型を xib またはストーリー ボードで使用する場合に発生します。
 
 このクラスの定義を受け取るコンス トラクターを公開するを検討してください、 `IntPtr` (構築の Xamarin.iOS 方法、C#ネイティブ OBJECTIVE-C インスタンスからオブジェクト)。
     
-```
+```csharp
 class Generic<T> : NSObject where T : NSObject
 {
     public Generic () {}
@@ -119,9 +117,9 @@ class Generic<T> : NSObject where T : NSObject
 
 これは Objective C には、ジェネリック型の概念がなく、作成する正確なジェネリック型は指定できないために発生します。
 
-ジェネリック型の特殊なサブクラスを作成してこの問題を回避することができます。   例えば:
+ジェネリック型の特殊なサブクラスを作成してこの問題を回避することができます。 例:
     
-```
+```csharp
 class Generic<T> : NSObject where T : NSObject
 {
     public Generic () {}
@@ -133,7 +131,7 @@ class GenericUIView : Generic<UIView>
 }
 ```
 
-あいまいさになったクラスはありませんので`GenericUIView`xib で使用できます。
+あいまいさになったクラスはありませんので`GenericUIView`xib またはストーリー ボードで使用できます。
 
 ## <a name="no-support-for-generic-methods"></a>ジェネリック メソッドはサポートされていません
 
@@ -151,7 +149,7 @@ class MyClass : NSObject
 }
 ```
 
-**理由**: Xamarin.iOS が型引数を使用する種類を把握していないため、これは`T`Objective C からのメソッドの呼び出し時にします。
+**理由**:Xamarin.iOS が型引数を使用する種類を把握していないため、これは`T`Objective C からのメソッドの呼び出し時にします。
 
 別の方法は、特殊なメソッドを作成し、代わりにエクスポートするには。
 
@@ -188,11 +186,11 @@ class Generic<T> : NSObject where T : NSObject
 }
 ```
 
-**理由:** T. ジェネリック型引数を使用する種類を知ることができる Xamarin.iOS 実行時のニーズ、ジェネリック メソッドと同様
+**理由:** ジェネリック型引数を使用する種類を把握できる必要があります、Xamarin.iOS ランタイム、ジェネリック メソッドと同様`T`します。
 
-インスタンス自体が使用されるメンバーのインスタンス (ジェネリック インスタンスされませんので<T>、ジェネリックは常に<SomeSpecificClass>) が静的メンバーにこの情報が存在しません。
+インスタンス自体が使用されるメンバーのインスタンス (インスタンスされませんので`Generic<T>`、常に`Generic<SomeSpecificClass>`) が静的メンバーにこの情報が存在しません。
 
-任意の方法で問題のメンバーが T 型の引数を使用しない場合でも適用されるこのことに注意してください。
+対象のメンバーが型引数を使用しない場合でも適用されるこのことに注意してください。`T`何らかの方法でします。
 
 特殊なサブクラスを作成する方法はここでは。
 
@@ -206,7 +204,7 @@ class GenericUIView : Generic<UIView>
     }
 
     [Export ("myProperty")]
-    public static UIView MyUIVIewProperty {
+    public static UIView MyUIViewProperty {
         get { return MyProperty; }
         set { MyProperty = value; }
     }
@@ -219,12 +217,6 @@ class Generic<T> : NSObject where T : NSObject
 }
 ```
 
-### <a name="requires-new-static-registrar"></a>新しい静的レジストラーが必要です。
-
-ジェネリックのサポートが必要です、新しい[登録システム](~/ios/internals/registrar.md)します。
-
-以前を使用しようとする場合 (加えて、未定義の動作で正しいコードを生成しません)、ジェネリック型を見つけたときに警告が表示される従来の登録システム。
-    
 ## <a name="performance"></a>パフォーマンス
 
 静的レジストラーは、通常とに、ビルド時のジェネリック型で、エクスポートされたメンバーを解決できません、実行時に検索する必要があります。 つまり、OBJECTIVE-C から、このようなメソッドを呼び出すことは非ジェネリック クラスからメンバーの呼び出しよりもわずかに遅くなります。

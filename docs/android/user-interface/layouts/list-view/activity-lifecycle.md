@@ -1,5 +1,5 @@
 ---
-title: ListView とアクティビティのライフ サイクル
+title: ListView とアクティビティのライフサイクル
 ms.prod: xamarin
 ms.assetid: 40840D03-6074-30A2-74DA-3664703E3367
 ms.technology: xamarin-android
@@ -7,15 +7,15 @@ author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
 ms.openlocfilehash: b2328759b3158920bc8683ec14c2aebefd7a04ae
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117721"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61187074"
 ---
-# <a name="listview-and-the-activity-lifecycle"></a>ListView とアクティビティのライフ サイクル
+# <a name="listview-and-the-activity-lifecycle"></a>ListView とアクティビティのライフサイクル
 
-アクティビティでは、起動など、アプリケーションの実行として特定の状態を移動実行は一時停止中、停止しています。 詳細については、および状態移行の処理に関する具体的なガイドラインは、、[アクティビティ ライフ サイクルのチュートリアル](~/android/app-fundamentals/activity-lifecycle/index.md)を参照してください。
+アクティビティでは、起動など、アプリケーションの実行として特定の状態を移動実行は一時停止中、停止しています。 詳細については、および状態移行の処理に関する具体的なガイドラインは、次を参照してください。、[アクティビティ ライフ サイクルのチュートリアル](~/android/app-fundamentals/activity-lifecycle/index.md)します。
 アクティビティのライフ サイクルと場所を理解することが重要、`ListView`適切な場所でコード。
 
 'セットアップ タスク'、アクティビティの実行の例では、このドキュメントは、すべて`OnCreate`メソッド (必須) の場合とで '分解' を実行`OnDestroy`します。 データをより頻繁に再読み込みする必要はありません、例は一般に、変更されない小さなデータ セットを使用します。

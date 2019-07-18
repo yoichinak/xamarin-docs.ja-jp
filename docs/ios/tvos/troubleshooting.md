@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 60b54ffdce5f6bda2324c08bd3159eefeb5bc7f8
-ms.sourcegitcommit: 4859da8772dbe920fdd653180450e5ddfb436718
+ms.openlocfilehash: 6830df267aa0b9c4f12fbd53520206ea94fc8a38
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50234858"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831890"
 ---
 # <a name="troubleshooting-tvos-apps-built-with-xamarin"></a>Xamarin でビルドされた tvOS アプリのトラブルシューティング
 
@@ -184,7 +184,7 @@ Xamarin.tvOS プロジェクトにポータブル クラス ライブラリ (PCL
 
 _互換性のないターゲット フレームワーク: です。NetPortable、バージョン = v4.5、プロファイル Profile78 を =_
 
-この問題を解決すると呼ばれる XML ファイルを追加` Xamarin.TVOS.xml`次の内容。
+この問題を解決すると呼ばれる XML ファイルを追加`Xamarin.TVOS.xml`次の内容。
 
 ```xml
 <Framework Identifier="Xamarin.TVOS" MinimumVersion="1.0" Profile="*" DisplayName="Xamarin.TVOS"/>

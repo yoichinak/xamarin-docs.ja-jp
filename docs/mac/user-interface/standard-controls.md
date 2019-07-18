@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 4e236f2517482665406008d0b86af487e2d799dd
-ms.sourcegitcommit: d09391c315336d36496880ef465a72b8974f2ac7
+ms.openlocfilehash: 696432fb51060a236780eedee0b60661e3a86712
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51579883"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865193"
 ---
 # <a name="standard-controls-in-xamarinmac"></a>Xamarin.Mac で標準のコントロール
 
@@ -257,7 +257,7 @@ AppKit.NSSplitView SplitView { get; set; }
 @property (nonatomic, retain) IBOutlet NSSplitView *SplitView;
 ```
 
-Visual Studio for Mac がの変更をリッスンするよう、`.h`ファイルを開き、それぞれでこれらの変更を自動的に同期`.designer.cs`ファイル、アプリケーションに公開します。 場合もあります`SplitViewController.designer.cs`部分クラスは、Visual Studio for Mac は、変更する必要があるないように`SplitViewController.cs `クラスに加え変更を上書きします。
+Visual Studio for Mac がの変更をリッスンするよう、`.h`ファイルを開き、それぞれでこれらの変更を自動的に同期`.designer.cs`ファイル、アプリケーションに公開します。 場合もあります`SplitViewController.designer.cs`部分クラスは、Visual Studio for Mac は、変更する必要があるないように`SplitViewController.cs`クラスに加え変更を上書きします。
 
 通常必要はありませんを開く、 `SplitViewController.designer.cs` 、自分でこれがここで紹介教育目的のみ。
 
@@ -603,16 +603,16 @@ AppKit では、いくつかの種類のユーザー インターフェイスの
 2. ドラッグ、**コント ローラー表示**から、**ライブラリ インスペクター**上に、**インターフェイス エディター**: 
 
     [![](standard-controls-images/content02.png "ビュー コント ローラーをライブラリから選択します。")](standard-controls-images/content02.png#lightbox)
-4. サイズとレイアウトの定義、**カスタム ビュー**: 
+3. サイズとレイアウトの定義、**カスタム ビュー**: 
 
     [![](standard-controls-images/content04.png "レイアウトの編集")](standard-controls-images/content04.png#lightbox)
-5. コントロールをクリックし、上にポップアップのソースからドラッグして、**ビュー コント ローラー**: 
+4. コントロールをクリックし、上にポップアップのソースからドラッグして、**ビュー コント ローラー**: 
 
     [![](standard-controls-images/content05.png "ドラッグしてセグエを作成するには")](standard-controls-images/content05.png#lightbox)
-6. 選択**ポップ オーバー**ポップアップ メニューから。 
+5. 選択**ポップ オーバー**ポップアップ メニューから。 
 
     [![](standard-controls-images/content06.png "セグエの種類の設定")](standard-controls-images/content06.png#lightbox)
-7. 変更を保存し、Visual Studio for Mac は Xcode と同期に戻ります。
+6. 変更を保存し、Visual Studio for Mac は Xcode と同期に戻ります。
 
 <a name="Tab_Views" />
 

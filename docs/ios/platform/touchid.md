@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 2d67bc71361e335515cfba8b5a20e157ed6b6b05
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 25ace6d7febe495164378b3633f06371806e2f82
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114341"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832306"
 ---
 # <a name="touch-id-in-xamarinios"></a>Xamarin.iOS で touch ID
 
@@ -63,7 +63,7 @@ Touch ID とその分を完全に理解をする必要があります Keychain �
 
 前のセクションで確立されるとアプリケーションは、デバイスに設定されているセキュリティ ポリシーに準拠しているユーザーを認証するのにローカル認証を使用できます。
 
-API は現時点では、2 つのみの機能を提供します。 まず、新しいキーチェーン アクセス制御リスト (Acl) を使用して既存の Keychain サービスを支援します。 キーチェーンのデータは、ユーザーの指紋認証が成功したロックされていることができます。
+現時点では、API は、2 つだけの機能を提供します。まず、新しいキーチェーン アクセス制御リスト (Acl) を使用して既存の Keychain サービスを支援します。 キーチェーンのデータは、ユーザーの指紋認証が成功したロックされていることができます。
 
 次に、LocalAuthentication は、アプリケーションをローカルで認証する 2 つのメソッドを提供します。 開発者が使用する必要があります`CanEvaluatePolicy`デバイスがタッチの ID を受信できるかどうかが決定し、`EvaluatePolicy`認証操作を開始します。
 
@@ -81,10 +81,10 @@ API は現時点では、2 つのみの機能を提供します。 まず、新�
 
 キーチェーンで ACL を使用する場合に注意してください多くのことがあるし、これらのいくつか以下に示します。
 
--   バック グラウンド スレッドが、呼び出しは失敗でキーチェーン操作を呼び出す場合は、フォア グラウンド アプリケーションでのみ使用します。
--   キーチェーンの項目の更新の追加とは、認証を必要があります。
--   場合は、要求は、キーチェーンに複数の一致する項目を返します、認証が必要な場合があります。
--   ACL で保護された項目はデバイスのみ、そのため同期やではなくバックアップします。
+- バック グラウンド スレッドが、呼び出しは失敗でキーチェーン操作を呼び出す場合は、フォア グラウンド アプリケーションでのみ使用します。
+- キーチェーンの項目の更新の追加とは、認証を必要があります。
+- 場合は、要求は、キーチェーンに複数の一致する項目を返します、認証が必要な場合があります。
+- ACL で保護された項目はデバイスのみ、そのため同期やではなくバックアップします。
 
 ### <a name="using-local-authentication-without-keychain-services"></a>Keychain サービスせずローカル認証を使用します。
 
@@ -180,7 +180,7 @@ API は現時点では、2 つのみの機能を提供します。 まず、新�
 
 [![](touchid-images/image11.png "PerformSegue メソッドを呼び出して、MasterViewController への移行")](touchid-images/image11.png#lightbox)
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 このガイドでは、キーチェーンと iOS でのこのしくみを説明しました。 ACL、キーチェーンについても学習しましたし、iOS でこれを変更します。 次に、iOS 8 の新機能であり、アプリケーションで Touch ID の認証の実装について説明しましたが、ローカル認証フレームワークを参照してくださいをしました。
 
 ## <a name="related-links"></a>関連リンク

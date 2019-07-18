@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/02/2016
-ms.openlocfilehash: 0251d06ff68185990ed8b7acb46389c59c71a99a
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: d3e1c8a2b17ba41e3c9d212948f42023c15205ac
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059861"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926234"
 ---
 # <a name="bindable-properties"></a>バインド可能なプロパティ
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/behaviors/eventtocommandbehavior/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/Behaviors/EventToCommandBehavior/)
 
 _Xamarin.Forms では、共通言語ランタイム (CLR) のプロパティの機能は、バインド可能なプロパティが拡張されます。バインド可能なプロパティは、特殊な種類のプロパティ、プロパティの値が Xamarin.Forms プロパティ システムによって追跡されます。この記事では、バインド可能なプロパティは、概要を示し、作成し、これらを使用する方法を示します。_
 
@@ -70,11 +70,11 @@ public static readonly BindableProperty EventNameProperty =
 必要に応じて、作成するときに、 [ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)インスタンスを次のパラメーターを指定できます。
 
 - バインド モード。 これは、プロパティ値の変更が反映されるまでの方向を指定に使用されます。 既定のバインド モードで変更が反映されます、*ソース*を*ターゲット*します。
-- プロパティの値が設定されている場合に呼び出される検証デリゲート。 詳細については、[検証コールバック](#validation)を参照してください。
-- プロパティは、プロパティの値が変更されたときに呼び出されるデリゲートを変更します。 詳細については、[プロパティ変更の検出](#propertychanges)を参照してください。
+- プロパティの値が設定されている場合に呼び出される検証デリゲート。 詳細については、次を参照してください。[検証コールバック](#validation)します。
+- プロパティは、プロパティの値が変更されたときに呼び出されるデリゲートを変更します。 詳細については、次を参照してください。[プロパティ変更の検出](#propertychanges)します。
 - プロパティの値は変更時に呼び出されるデリゲートを変更するプロパティ。 このデリゲートは、プロパティが変更されたデリゲートとして同じシグニチャを持ちます。
-- プロパティの値が変更されたときに呼び出される強制値デリゲート。 詳細については、[強制値コールバック](#coerce)を参照してください。
-- A`Func`プロパティの既定値を初期化するために使用されます。 詳細については、[Func を既定値を作成する](#defaultfunc)を参照してください。
+- プロパティの値が変更されたときに呼び出される強制値デリゲート。 詳細については、次を参照してください。[強制値コールバック](#coerce)します。
+- A`Func`プロパティの既定値を初期化するために使用されます。 詳細については、次を参照してください。 [Func を既定値を作成する](#defaultfunc)します。
 
 ### <a name="creating-accessors"></a>アクセサーの作成
 
@@ -91,7 +91,7 @@ public string EventName {
 
 ### <a name="consuming-a-bindable-property"></a>バインド可能なプロパティの使用
 
-バインド可能なプロパティが作成されると、XAML またはコードから使用できます。 XAML では、これは、CLR 名前空間の名前および必要に応じて、アセンブリ名を示す名前空間宣言で、プレフィックスを持つ名前空間を宣言することによって実現されます。 詳細については、[XAML 名前空間](~/xamarin-forms/xaml/namespaces.md)を参照してください。
+バインド可能なプロパティが作成されると、XAML またはコードから使用できます。 XAML では、これは、CLR 名前空間の名前および必要に応じて、アセンブリ名を示す名前空間宣言で、プレフィックスを持つ名前空間を宣言することによって実現されます。 詳細については、次を参照してください。 [XAML 名前空間](~/xamarin-forms/xaml/namespaces.md)します。
 
 次のコード例では、カスタムの型を参照しているアプリケーション コードと同じアセンブリ内で定義されているバインド可能なプロパティを含むカスタム型の XAML 名前空間を示しています。
 
@@ -226,7 +226,7 @@ public static readonly BindableProperty SizeProperty =
 ## <a name="related-links"></a>関連リンク
 
 - [XAML 名前空間](~/xamarin-forms/xaml/namespaces.md)
-- [イベントをコマンドの動作 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/behaviors/eventtocommandbehavior/)
+- [イベントをコマンドの動作 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/Behaviors/EventToCommandBehavior/)
 - [検証コールバック (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/xaml/validationcallback/)
 - [強制値コールバック (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/xaml/coercevaluecallback/)
 - [BindableProperty](xref:Xamarin.Forms.BindableProperty)

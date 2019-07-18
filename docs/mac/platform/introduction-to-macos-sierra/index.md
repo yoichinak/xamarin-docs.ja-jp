@@ -1,5 +1,5 @@
 ---
-title: MacOS Sierra の概要
+title: macOS Sierra の概要
 description: この記事では、Xamarin.Mac 開発者向けのすべての新規および変更した Api と macOS Sierra で使用できる機能を紹介します。
 ms.prod: xamarin
 ms.assetid: 71A8A737-F310-4320-BD23-743AA1E9033C
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
 ms.openlocfilehash: 5a944fd8f7dcfdcbb3f025c92b4afac35673416f
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111013"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61031518"
 ---
-# <a name="introduction-to-macos-sierra"></a>MacOS Sierra の概要
+# <a name="introduction-to-macos-sierra"></a>macOS Sierra の概要
 
 新しい macOS Sierra で、開発者は、以前は不可能だった方法で、アプリと web サイトと対話するエンドユーザーに許可する新しい Api の利用できます。 たとえば、Apple できるようになりましたことにより、お客様の支払いに安全に Apple Pay、および金属製フレームワーク ブーストの機能強化を使用して、アプリのグラフィックスとコンピューティングのオプションの web サイト潜在的です。 
 
@@ -119,7 +119,7 @@ macOS Sierra では、新しいコンソール アプリを (アプリケーシ�
 
 <a name="Wide-Color" />
 
-### <a name="wide-color"></a>色
+### <a name="wide-color"></a>広色域
 
 macOS Sierra では、拡張範囲のピクセル形式とコア グラフィックス、Core のイメージ、金属製および AVFoundation などのフレームワークを含めて、システム全体で全体の色域スペースのサポートを拡張します。 ワイド カラー ディスプレイを使用したデバイスのサポートはさらに、全体のグラフィックス スタック全体でこの動作を提供することで緩和されました。
 

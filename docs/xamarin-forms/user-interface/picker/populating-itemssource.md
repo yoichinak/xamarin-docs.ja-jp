@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/26/2019
 ms.openlocfilehash: 2c7daca80a207d0c060fc3a867b1eda03dd65258
-ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57557078"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61082887"
 ---
 # <a name="setting-a-pickers-itemssource-property"></a>ピッカーの ItemsSource プロパティの設定
 
@@ -47,7 +47,7 @@ A [ `Picker` ](xref:Xamarin.Forms.Picker)を設定してデータを設定する
 > [!NOTE]
 > なお、`x:Array`要素が必要です、`Type`配列内の項目の種類を示す属性です。
 
-同等の c# コードは、以下に示します。
+同等の C# コードは、以下に示します。
 
 ```csharp
 var monkeyList = new List<string>();
@@ -76,7 +76,7 @@ A [ `Picker` ](xref:Xamarin.Forms.Picker)が一度に 1 つの項目の選択を
 <Label Text="{Binding Source={x:Reference picker}, Path=SelectedItem}" />
 ```
 
-同等の c# コードは、以下に示します。
+同等の C# コードは、以下に示します。
 
 ```csharp
 var monkeyNameLabel = new Label();
@@ -114,7 +114,7 @@ A [ `Picker` ](xref:Xamarin.Forms.Picker)も設定できますデータにバイ
         ItemDisplayBinding="{Binding Name}" />
 ```
 
-同等の c# コードは、以下に示します。
+同等の C# コードは、以下に示します。
 
 ```csharp
 var picker = new Picker { Title = "Select a monkey", TitleColor = Color.Red };
@@ -152,7 +152,7 @@ public class Monkey
 <Label Text="{Binding SelectedMonkey.Details}" ... />
 ```
 
-同等の c# コードは、以下に示します。
+同等の C# コードは、以下に示します。
 
 ```csharp
 var picker = new Picker { Title = "Select a monkey", TitleColor = Color.Red };

@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
 ms.openlocfilehash: 9551a3b8e093dbb49a55a3761543602c40e81023
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53053582"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61158542"
 ---
 # <a name="the-skiasharp-linear-gradient"></a>SkiaSharp の線形グラデーション
 
@@ -27,7 +27,7 @@ ms.locfileid: "53053582"
 これらのメソッドは、型のオブジェクトを返す[ `SKShader` ](xref:SkiaSharp.SKShader)に設定する、 [ `Shader` ](xref:SkiaSharp.SKPaint.Shader)プロパティの`SKPaint`します。 場合、`Shader`プロパティが null 以外で、オーバーライド、`Color`プロパティ。 すべての行に線を付けるにまたはこれを使用して塗りつぶされる領域`SKPaint`オブジェクトが純色ではなく、グラデーション基づきます。
 
 > [!NOTE]
-> `Shader`に含めるときに、プロパティは無視されます、`SKPaint`オブジェクト、`DrawBitmap`呼び出します。 使用することができます、`Color`プロパティの`SKPaint`ビットマップを表示するための透明度レベルを設定する (、記事の説明に従って[SkiaSharp を表示するビットマップ](../../bitmaps/displaying.md#displaying-in-pixel-dimensions))、使用することはできませんが、`Shader`プロパティを表示するためグラデーションの透明度のビットマップです。 その他の手法は、透明なグラデーションでのビットマップを表示するために使用可能な: これらの記事で説明が[SkiaSharp 円形グラデーション](circular-gradients.md#radial-gradients-for-masking)と[SkiaSharp 合成と blend モード](../blend-modes/porter-duff.md#gradient-transparency-and-transitions)します。
+> `Shader`に含めるときに、プロパティは無視されます、`SKPaint`オブジェクト、`DrawBitmap`呼び出します。 使用することができます、`Color`プロパティの`SKPaint`ビットマップを表示するための透明度レベルを設定する (、記事の説明に従って[SkiaSharp を表示するビットマップ](../../bitmaps/displaying.md#displaying-in-pixel-dimensions))、使用することはできませんが、`Shader`プロパティを表示するためグラデーションの透明度のビットマップです。 その他の手法を透明なグラデーションでのビットマップを表示するために使用できます。これらの記事で説明が[SkiaSharp 円形グラデーション](circular-gradients.md#radial-gradients-for-masking)と[SkiaSharp 合成と blend モード](../blend-modes/porter-duff.md#gradient-transparency-and-transitions)します。
 
 ## <a name="corner-to-corner-gradients"></a>角のグラデーション
 
@@ -477,7 +477,7 @@ public class GradientAnimationPage : ContentPage
 
 `OnTimerTick`メソッドは、計算、`angle`アニメーション化する 0 から 2 π を 3 秒おきの値。 
 
-グラデーションの 2 つの点を計算する方法の 1 つを次に示します。 `SKPoint`という名前の値`vector`を円の半径のポイント、キャンバスの中央からを拡張する計算されます。 このベクトルの方向は、角度の正弦と余弦の値に基づきます。 2 つの反対側のグラデーション ポイントが計算されます。 1 つのポイントが、中心点からベクトルを減算することで計算され、その他のポイントが中心点に、ベクターを加算して計算されます。
+グラデーションの 2 つの点を計算する方法の 1 つを次に示します。 `SKPoint`という名前の値`vector`を円の半径のポイント、キャンバスの中央からを拡張する計算されます。 このベクトルの方向は、角度の正弦と余弦の値に基づきます。 2 つの反対側のグラデーション ポイントは計算されます。1 つのポイントが、中心点からベクトルを減算することで計算され、その他のポイントが中心点に、ベクターを加算して計算されます。
 
 ```csharp
 public class GradientAnimationPage : ContentPage
@@ -617,7 +617,7 @@ public class RainbowGradientPage : ContentPage
 }
 ```
 
-2 つのグラデーションのポイントで、`CreateLinearGradient`方法は 2 つのパスを定義するポイントに基づいています: 両方のポイントは、左上隅の近くにいます。 キャンバスの上端に 1 つ目は、2 番目は、キャンバスの左端にします。 結果を次に示します。
+2 つのグラデーションのポイントで、`CreateLinearGradient`方法は 2 つのパスを定義するポイントに基づいています。どちらも、左上隅の近くにします。 キャンバスの上端に 1 つ目は、2 番目は、キャンバスの左端にします。 結果を次に示します。
 
 [![障害のある虹グラデーション](linear-gradient-images/RainbowGradientFaulty.png "欠陥のある虹グラデーション")](linear-gradient-images/RainbowGradientFaulty-Large.png#lightbox)
 

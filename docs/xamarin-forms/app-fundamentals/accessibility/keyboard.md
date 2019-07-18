@@ -1,26 +1,26 @@
 ---
-title: キーボード ナビゲーション
-description: 既定のタブ シーケンスを使用するのではなく、TabIndex プロパティと IsTapStop プロパティの組み合わせでタブ シーケンスを指定することにより、UI を調整することが必要な場合があります。
+title: キーボード アクセシビリティ
+description: 既定のタブ シーケンスを使用するのではなく、TabIndex プロパティと IsTapStop プロパティの組み合わせでタブ シーケンスを指定することにより、UI のアクセシビリティを調整しなければならない場合があります。
 ms.prod: xamarin
 ms.assetid: 8be8f498-558a-4894-a01f-91a0d3ef927e
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/15/2018
-ms.openlocfilehash: 3e3331489c3b437366f4bdcc6990fe282d213a6a
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.date: 05/09/2019
+ms.openlocfilehash: 66cd9f9de712583ea4e8fb9304a9f1642e7e3ee1
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54207883"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65971262"
 ---
-# <a name="keyboard-navigation-in-xamarinforms"></a>Xamarin.Forms でのキーボード ナビゲーション
+# <a name="keyboard-accessibility-in-xamarinforms"></a>Xamarin.Forms でのキーボードアクセシビリティ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Accessibility/)
 
-ユーザーによっては、適切なキーボード アクセスが提供されていないアプリケーションでは使いづらいことがあります。 コントロールのタブ オーダーを指定することで、キーボード ナビゲーションを可能にし、特定の順序で入力を受け取るようにアプリケーション ページを準備します。
+スクリーン リーダーを使用するユーザーや身体の不自由なユーザーの場合、適切なキーボード アクセスが提供されていないアプリケーションでは使いづらいことがあります。 Xamarin.Forms アプリケーションでは、望ましいタブ オーダーを指定して、ユーザビリティとアクセシビリティを改善することができます。 コントロールのタブ オーダーを指定することで、キーボード ナビゲーションが有効になり、アプリケーション ページが特定の順序で入力を受け取れるようになり、スクリーン リーダーがフォーカス可能な要素をユーザーに対して読み上げられるようになります。
 
-既定では、コントロールのタブ オーダーは、XAML に列記されている順序、またはプログラムで子コレクションに追加された順序と同じです。 この順序はキーボードによるコントロールのナビゲーションの順序であり、多くの場合、この既定の順序が最善の順序です。 ただし、次の XAML コードの例で示すように、既定の順序が望ましい順序と同じではないこともあります。
+既定では、コントロールのタブ オーダーは、XAML に列記されている順序、またはプログラムで子コレクションに追加された順序と同じです。 この順序はキーボードでコントロールをナビゲーションし、スクリーン リーダーが読み上げる順序であり、多くの場合、この既定の順序が最善の順序です。 ただし、次の XAML コードの例で示すように、既定の順序が望ましい順序と同じではないこともあります。
 
 ```xaml
 <Grid>
@@ -113,6 +113,9 @@ ms.locfileid: "54207883"
 ![](keyboard-images/correct-tab-order.png "列ベースのタブ オーダー")
 
 ここでのタブ オーダーは列ベースです。 したがって、Tab キーを押すと、名と姓の [`Entry`](xref:Xamarin.Forms.Entry) ペアの順に移動します。
+
+> [!IMPORTANT]
+> iOS と Android のスクリーン リーダーは画面上のアクセシビリティ対応の要素を読み上げるときに [`VisualElement`](xref:Xamarin.Forms.VisualElement) の `TabIndex` を考慮します。
 
 ## <a name="excluding-controls-from-the-tab-order"></a>タブ オーダーからコントロールを除外する
 

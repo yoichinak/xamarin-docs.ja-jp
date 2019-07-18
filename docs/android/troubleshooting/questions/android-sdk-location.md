@@ -1,5 +1,5 @@
 ---
-title: Android SDK の場所はどこで設定できますか。
+title: Android SDK の場所はどこで設定できますか
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 6A9DE6E9-3E27-4DD2-87D2-34E95E5D401C
@@ -8,13 +8,13 @@ author: conceptdev
 ms.author: crdun
 ms.date: 11/16/2017
 ms.openlocfilehash: c004fb7717f78750e7ac1e8dc1856a32ba808638
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119489"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61227687"
 ---
-# <a name="where-can-i-set-my-android-sdk-locations"></a>Android SDK の場所はどこで設定できますか。
+# <a name="where-can-i-set-my-android-sdk-locations"></a>Android SDK の場所はどこで設定できますか
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -34,7 +34,7 @@ Visual Studio に移動します。**ツール > オプション > Xamarin > And
 
 - Android NDK の場所: 
 
-    **C:\\ProgramData\\Microsoft\\AndroidNDK64\\r13b-android の ndk**
+    **C:\\ProgramData\\Microsoft\\AndroidNDK64\\android-ndk-r13b**
 
 NDK のバージョン番号が異なる場合がありますに注意してください。 例については、代わりに**r13b-android の ndk**、以前のバージョンをなどある可能性があります**r10e-android の ndk**します。
 

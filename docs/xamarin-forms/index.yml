@@ -5,7 +5,7 @@ metadata:
   description: Xamarin.Forms は、モバイル、タブレット、およびデスクトップ アプリを構築する .NET 開発者に、完全にクロスプラットフォームな UI ツールキットを提供します。
   author: conceptdev
   ms.author: crdun
-  ms.date: 07/27/2018
+  ms.date: 04/22/2019
   ms.topic: landing-page
   ms.technology: xamarin-forms
 abstract:
@@ -22,7 +22,7 @@ sections:
   - title: 開始するには
     items:
       - type: paragraph
-        text: 'Android、iOS、およびユニバーサル Windows プラットフォームを対象とする Xamarin.Forms アプリを Xamarin や C# で初めて構築する開発者向けに開発方法を説明します。'
+        text: 'Android および iOS を対象とする最初の Xamarin.Forms アプリを Xamarin と C# を使って構築する方法を学習します。'
       - type: list
         style: icon48
         items:
@@ -87,11 +87,11 @@ sections:
               href: ~/essentials/index.md?context=xamarin/xamarin-forms
             title: Xamarin.Essentials
           - href: ~/xamarin-forms/data-cloud/
-            html: ローカル データとリモートデータの格納と取得、その他のクラウド ベースのサービスについて説明します。
+            html: ローカル データとリモートデータの格納と取得、およびその他の Azure のクラウド ベース サービス。
             image:
               src: ~/media/icons/i_data-cloud.svg
               href: ~/xamarin-forms/data-cloud/
-            title: データとクラウド サービス
+            title: データと Azure Cloud Services
           - href: ~/xamarin-forms/deploy-test/
             html: アプリを構築して配置する手順と、事前にテストする場合のヒントについて説明します。
             image:
@@ -111,7 +111,7 @@ sections:
         className: cardsD
         items:
           - title: API
-            html: '<p><a href="https://docs.microsoft.com/en-us/dotnet/api/?view=xamarin-forms">Xamarin.Forms API ドキュメント</a></p>'
+            html: '<p><a href="https://docs.microsoft.com/dotnet/api/?view=xamarin-forms">Xamarin.Forms API ドキュメント</a></p>'
           - title: サンプル
             html: '<p><a href="https://developer.xamarin.com/samples/xamarin-forms/all/">Xamarin.Forms のサンプル</a></p>'
           - title: ブック

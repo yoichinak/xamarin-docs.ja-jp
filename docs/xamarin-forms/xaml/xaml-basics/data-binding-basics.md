@@ -7,12 +7,12 @@ ms.assetid: 342288C3-BB4C-4924-B178-72E112D777BA
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: 4a24c8dbb9ab4e23afa03de4ae2dbc55ddfb5fa4
-ms.sourcegitcommit: e000cc0765857c1d7f49538df9e62e9d3aa60775
+ms.openlocfilehash: 6d8ed5e2ec4707af2b61e299ee8274402f3a88a4
+ms.sourcegitcommit: e45f0cd6d7d4a77dba5ecaad4d7894025005a2dc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "56334567"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67309525"
 ---
 # <a name="part-4-data-binding-basics"></a>パート 4 です。 データ バインディングの基礎
 
@@ -216,7 +216,7 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 
 カスタムのセルを使用してこれらの項目を作成したい非常に多くの場合、`ViewCell`クラス。 このプロセスがコードでは、やや面倒ですが、XAML でが非常に簡単です。
 
-プロジェクトがという名前のクラスを XamlSamples に含まれる`NamedColor`します。 各`NamedColor`オブジェクトが`Name`と`FriendlyName`型のプロパティ`string`、および`Color`型のプロパティ`Color`します。 さらに、`NamedColor`型の 141 静的読み取り専用のフィールドを持つ`Color`、Xamarin.Forms で定義された色に対応する`Color`クラス。 静的コンス トラクターを作成、`IEnumerable<NamedColor>`を含むコレクション`NamedColor`オブジェクトをこれらの静的フィールドに対応して、そのパブリック静的に割り当てられます`All`プロパティ。
+プロジェクトがという名前のクラスを XamlSamples に含まれる`NamedColor`します。 各`NamedColor`オブジェクトが`Name`と`FriendlyName`型のプロパティ`string`、および`Color`型のプロパティ`Color`します。 さらに、`NamedColor`型の 141 静的読み取り専用のフィールドを持つ`Color`、Xamarin.Forms で定義された色に対応する`Color`クラス。 静的コンストラクターを作成、`IEnumerable<NamedColor>`を含むコレクション`NamedColor`オブジェクトをこれらの静的フィールドに対応して、そのパブリック静的に割り当てられます`All`プロパティ。
 
 静的な設定`NamedColor.All`プロパティを`ItemsSource`の`ListView`簡単を使用して、`x:Static`マークアップ拡張機能。
 
@@ -253,6 +253,9 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
     </ListView.ItemTemplate>
 </ListView>
 ```
+
+> [!NOTE]
+> セルとセルの子のバインディング ソースが、`ListView.ItemsSource`コレクション。
 
 `Label`要素に設定されて、`View`のプロパティ、`ViewCell`します。 (、`ViewCell.View`ため、タグが必要ありません、`View`プロパティは、コンテンツのプロパティの`ViewCell`)。このマークアップの表示、`FriendlyName`の各プロパティ`NamedColor`オブジェクト。
 

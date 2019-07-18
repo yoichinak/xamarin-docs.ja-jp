@@ -1,19 +1,19 @@
 ---
-title: UrhoSharp のプラットフォームのサポート
+title: UrhoSharp プラットフォームのサポート
 description: このドキュメントは、Urho を特定のプラットフォーム用の既存のネイティブ プロジェクトに追加する方法を説明するさまざまなガイドにリンクしています。 これは、Android、iOS、tvOS、macOS、Windows、および Xamarin.Forms について説明します。
 ms.prod: xamarin
 ms.assetid: 6205E430-1036-4CC3-8E97-AA5554E3D468
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 46330fb16be4f3b7be60e1bf72eb6a36fafefe77
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: e52afe94e7890ca995107e2bfa50471cb9102b57
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50123441"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830632"
 ---
-# <a name="urhosharp-platform-support"></a>UrhoSharp のプラットフォームのサポート
+# <a name="urhosharp-platform-support"></a>UrhoSharp プラットフォームのサポート
 
 このセクションで Urho をお使いのプラットフォームの既存のネイティブ プロジェクトに追加する方法とプラットフォームの特定の統合を活用する方法について説明します。
 
@@ -36,4 +36,3 @@ Windows のセットアップ手順と機能します。
 ## <a name="xamarinformsgraphics-gamesurhosharpplatformxamarin-formsmd"></a>[Xamarin.Forms](~/graphics-games/urhosharp/platform/xamarin-forms.md)
 
 Xamarin.Forms のセットアップ手順とサンプル。
-

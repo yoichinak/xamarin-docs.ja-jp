@@ -1,12 +1,14 @@
 ---
-ms.openlocfilehash: aee7c7eb494af76bb450038453c19ee1ed83f2d3
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: cef0b8f56639e7bc8571ab01b820dfd54b074472
+ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61388908"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67277328"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+
+このチュートリアルを完了するには、 **.NET によるモバイル開発**ワークロードがインストールされた、Visual Studio 2019 (最新リリース) が必要です。 さらに、iOS でチュートリアル アプリケーションを構築するには、ペアリング済みの Mac が必要になります。 Xamarin プラットフォームのインストールについては、「[Xamarin のインストール](~/get-started/installation/index.md)」を参照してください。 Mac ビルド ホストへの Visual Studio 2019 の接続については、「[Xamarin.iOS 開発のために Mac とペアリングする](~/ios/get-started/installation/windows/connecting-to-mac/index.md)」を参照してください。
 
 1. Visual Studio を起動し、**WebServiceTutorial** という名前の新しい空の Xamarin.Forms アプリを作成します。 共有コード メカニズムとして .NET Standard がアプリで使用されていることを確認します。
 
@@ -15,11 +17,11 @@ ms.locfileid: "61388908"
 
     作成される .NET Standard ライブラリの詳細については、[Xamarin.Forms クイック スタート Deep Dive](~/get-started/first-app/index.md) の [Xamarin.Forms アプリケーションの構造](~/get-started/first-app/index.md)に関するページを参照してください。
 
-1. **ソリューション エクスプローラー**で、**[WebServiceTutorial]** プロジェクトを選択し、右クリックして **[NuGet パッケージの管理...]** を選びます。
+1. **ソリューション エクスプローラー**で、 **[WebServiceTutorial]** プロジェクトを選択し、右クリックして **[NuGet パッケージの管理...]** を選びます。
 
     ![[Add NuGet Packages...]\(NuGet パッケージの追加...\) メニュー項目が選択されているスクリーンショット](../images/vs/add-nuget-packages.png "[Add NuGet Packages...]\(NuGet パッケージの追加...\) メニュー項目")
 
-1. **NuGet パッケージ マネージャー**で、**[参照]** タブを選択し、**Newtonsoft.Json** NuGet パッケージを検索して選択し、**[インストール]** ボタンをクリックしてプロジェクトに追加します。
+1. **NuGet パッケージ マネージャー**で、 **[参照]** タブを選択し、**Newtonsoft.Json** NuGet パッケージを検索して選択し、 **[インストール]** ボタンをクリックしてプロジェクトに追加します。
 
     ![NuGet パッケージ マネージャーの Newtonsoft.Json NuGet パッケージのスクリーンショット](../images/vs/add-package.png "Newtonsoft.Json NuGet パッケージ")
 
@@ -29,6 +31,8 @@ ms.locfileid: "61388908"
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
+このチュートリアルを完了するには、iOS と Android のプラットフォームのサポートがインストールされた Visual Studio for Mac (最新リリース) が必要です。 さらに、Xcode (最新リリース) も必要になります。 Xamarin プラットフォームのインストールについて詳しくは、「[Xamarin のインストール](~/get-started/installation/index.md)」を参照してください。
+
 1. Visual Studio for Mac を起動し、**WebServiceTutorial** という名前の新しい空の Xamarin.Forms アプリを作成します。 共有コード メカニズムとして .NET Standard がアプリで使用されていることを確認します。
 
     > [!IMPORTANT]
@@ -36,11 +40,11 @@ ms.locfileid: "61388908"
 
     作成される .NET Standard ライブラリの詳細については、[Xamarin.Forms クイック スタート Deep Dive](~/get-started/first-app/index.md) の [Xamarin.Forms アプリケーションの構造](~/get-started/first-app/index.md)に関するページを参照してください。
 
-1. **Solution Pad** で、**[WebServiceTutorial]** プロジェクトを選び、右クリックして **[追加] > [Add NuGet Packages...]\(NuGet パッケージの追加...\)** の順に選択します。
+1. **Solution Pad** で、 **[WebServiceTutorial]** プロジェクトを選び、右クリックして **[追加] > [Add NuGet Packages...]\(NuGet パッケージの追加...\)** の順に選択します。
 
     ![[Add NuGet Packages...]\(NuGet パッケージの追加...\) メニュー項目が選択されているスクリーンショット](../images/vsmac/add-nuget-packages.png "[Add NuGet Packages...]\(NuGet パッケージの追加...\) メニュー項目")
 
-1. **[パッケージを追加]** ウィンドウで、**Newtonsoft.Json** NuGet パッケージを検索して選択し、**[パッケージを追加]** ボタンをクリックしてプロジェクトに追加します。
+1. **[パッケージを追加]** ウィンドウで、**Newtonsoft.Json** NuGet パッケージを検索して選択し、 **[パッケージを追加]** ボタンをクリックしてプロジェクトに追加します。
 
     ![NuGet パッケージ マネージャーの Newtonsoft.Json NuGet パッケージのスクリーンショット](../images/vsmac/add-package.png "Newtonsoft.Json NuGet パッケージ")
 

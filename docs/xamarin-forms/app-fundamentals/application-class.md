@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/19/2016
-ms.openlocfilehash: dbee8d3f55edee9c862b4c883b63b55f98972b48
-ms.sourcegitcommit: 0c2745c1593eee3ecb40ab882e854a13ca72bc86
+ms.openlocfilehash: 85e420933cfeffd00f686b0eea537cd0ad2f4ca5
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56078421"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65971215"
 ---
 # <a name="xamarinforms-app-class"></a>Xamarin.Forms の App クラス
 
@@ -32,7 +32,9 @@ ms.locfileid: "56078421"
 XAML を使用して **App** クラスを作成するには、次のコード例に示すように、既定の **App** クラスを、XAML の **App** クラスとそれに関連する分離コードに置き換える必要があります。
 
 ```xaml
-<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Photos.App">
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Photos.App">
 
 </Application>
 ```
@@ -111,8 +113,6 @@ Xamarin.Forms 1.4 では、`Application` クラスに追加メソッド `SavePro
 
 `Properties` ディクショナリの使用に関する参考資料については、「**Creating Mobile Apps with Xamarin.Forms**」(Xamarin.Forms でモバイル アプリを作成する) の第 [6](https://developer.xamarin.com/r/xamarin-forms/book/chapter06.pdf)、[15](https://developer.xamarin.com/r/xamarin-forms/book/chapter15.pdf)、[20](https://developer.xamarin.com/r/xamarin-forms/book/chapter20.pdf) 章、および関連する[サンプル](https://github.com/xamarin/xamarin-forms-book-preview-2)をご覧ください。
 
-
-
 ## <a name="the-application-class"></a>Application クラス
 
 参考のため、完全な `Application` クラスの実装を次に示します。
@@ -143,7 +143,6 @@ public class App : Xamarin.Forms.Application
         Debug.WriteLine ("OnResume");
     }
 }
-
 ```
 
 このクラスは、各プラットフォーム固有プロジェクトでインスタンス化されて、`LoadApplication` メソッドに渡されます。このメソッドでは、`MainPage` が読み込まれて、ユーザーに表示されます。

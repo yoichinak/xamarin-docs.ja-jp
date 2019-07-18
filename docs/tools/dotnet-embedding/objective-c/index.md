@@ -7,11 +7,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 11/14/2017
 ms.openlocfilehash: 48caa70cf2bd408f8afc673b400f7d5a4369e108
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50110727"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61230849"
 ---
 # <a name="objective-c-support"></a>Objective C のサポート
 
@@ -43,9 +43,9 @@ Api を公開する`System.String`型に変換されます`NSString`します。
 
 渡す`--nativeexception`への引数として`objcgen`Objective C の例外をキャッチおよび処理できるマネージ例外に変換されます。 
 
-### <a name="comparison"></a>条件式
+### <a name="comparison"></a>比較
 
-マネージ型を実装する`IComparable`(またはそのジェネリック バージョン`IComparable<T>`) を返す、OBJECTIVE-C で使いやすいメソッドが生成されます、`NSComparisonResult`を受け入れると、`nil`引数。 これにより、生成済み API の OBJECTIVE-C 開発者向けにわかりやすい。 例えば:
+マネージ型を実装する`IComparable`(またはそのジェネリック バージョン`IComparable<T>`) を返す、OBJECTIVE-C で使いやすいメソッドが生成されます、`NSComparisonResult`を受け入れると、`nil`引数。 これにより、生成済み API の OBJECTIVE-C 開発者向けにわかりやすい。 例:
 
 ```objc
 - (NSComparisonResult)compare:(XAMComparableType * _Nullable)other;
@@ -77,7 +77,7 @@ public static class SomeExtensions {
 
 ### <a name="subscripting"></a>添字演算子 
 
-管理対象のインデックス付きプロパティは、オブジェクトの添字演算子に変換されます。 例えば:
+管理対象のインデックス付きプロパティは、オブジェクトの添字演算子に変換されます。 例:
 
 ```csharp
 public bool this[int index] {

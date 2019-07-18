@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/13/2016
-ms.openlocfilehash: faa52c80fdb776f2c6c7320874b0d08720b4e4ec
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 8da40e5500e5669027f658ec95930e3b3a37530e
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57670455"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67675241"
 ---
 # <a name="introduction-to-watchos"></a>WatchOS の概要
 
@@ -29,7 +29,7 @@ WatchOS アプリのソリューションでは、3 つのプロジェクトが�
 
 WatchOS 1 のアプリで、拡張機能のコードは、iPhone で実行 – Apple Watch は外付けディスプレイを効果的に。 2 および 3 watchOS アプリは、Apple Watch に完全に実行されます。 この違いは、次の図に示されます。
 
-[ ![](intro-to-watchos-images/arch-sml.png "WatchOS 1 と watchOS 2 (以降) の違いは、この図には")](intro-to-watchos-images/arch.png#lightbox)
+[![](intro-to-watchos-images/arch-sml.png "WatchOS 1 と watchOS 2 (以降) の違いは、この図には")](intro-to-watchos-images/arch.png#lightbox)
 
 WatchOS のバージョンを対象とするに関係なく Visual Studio for Mac の Solution Pad で完全なソリューションは次のようします。
 

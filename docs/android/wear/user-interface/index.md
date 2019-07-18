@@ -7,17 +7,17 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: ff78b04ced9f0d62531dbfb022b73b928ce373ff
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 59d62fe7df3538063e28f5a8ff9e45f327d0c6d3
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118020"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864684"
 ---
 # <a name="user-interface"></a>ユーザー インターフェイス
 
 次のセクションでは、さまざまなツールと Android Wear アプリでのユーザー インターフェイスの作成に使用されるビルド ブロックについて説明します。
  
-##  <a name="controlsandroidwearuser-interfacecontrolsindexmd"></a>[コントロール](~/android/wear/user-interface/controls/index.md)
+## <a name="controlsandroidwearuser-interfacecontrolsindexmd"></a>[コントロール](~/android/wear/user-interface/controls/index.md)
 
 Android Wear 固有が制御し、これらのコントロールを使用する方法を示すサンプルへのリンクを提供するについて説明します。

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: a35cb82f4f6d20e91f45a782c73d3ef811947c3a
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 57a521df5fdede2bd92a6b1432f698c822a2b06f
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117786"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67674575"
 ---
 # <a name="introduction-to-android-wear"></a>Android Wear の概要
 
@@ -129,7 +129,7 @@ Xamarin.Android で Wear 2.0 アプリを作成するを追加する必要があ
 Android Wear 2.0 では、2014 年の最初のリリース以降 Android Wear 最大の更新をされています。 次のセクションでは、Android Wear 2.0 の主な機能を強調表示し、リンクが提供するためのアプリでこれらの新機能の使用を開始します。 
 
 
-#### <a name="complications"></a>複雑な問題
+#### <a name="complications"></a>問題点
 
 *コンプリケーション*小さなウォッチをウォッチの文字盤をスワイプすることがなく、ひとめでわかります face ウィジェットは。 複雑な問題はデスクトップ スタイルのダッシュ ボードのウィジェットに似ています天気、バッテリの寿命、予定表イベント、およびアプリケーションへの適合性の統計などの情報を表示します。 
 
@@ -198,7 +198,7 @@ Google の Android Wear のドキュメントをご覧ください。
 
 * [Android Wear について](http://www.android.com/wear/)
 * [Android Wear アプリの設計](https://developer.android.com/design/wear/index.html)
-* [android.support.wearable ライブラリ ](https://developer.android.com/reference/android/support/wearable/view/package-summary.html)
+* [android.support.wearable ライブラリ](https://developer.android.com/reference/android/support/wearable/view/package-summary.html)
 * [Android Wear 2.0](https://developer.android.com/wear/preview/index.html)
 
 

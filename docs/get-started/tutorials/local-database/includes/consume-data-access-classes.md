@@ -1,16 +1,16 @@
 ---
-ms.openlocfilehash: 7fbd2a81c30726bc6c38586186e9334ddd4ea282
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 27a3393e6eda9f26ea15003edc5022246ff4deff
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61193262"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67659845"
 ---
 この演習では、以前に作成したデータ アクセス クラスを使用するためのユーザー インターフェイスを作成します。
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-1. **ソリューション エクスプローラー**の **[LocalDatabaseTutorial]** プロジェクトで、**[MainPage.xaml]** をダブルクリックして開きます。 次に、**[MainPage.xaml]** のテンプレート コードをすべて削除し、次のコードに置き換えます。
+1. **ソリューション エクスプローラー**の **[LocalDatabaseTutorial]** プロジェクトで、 **[MainPage.xaml]** をダブルクリックして開きます。 次に、 **[MainPage.xaml]** のテンプレート コードをすべて削除し、次のコードに置き換えます。
 
     ```xaml
     <?xml version="1.0" encoding="utf-8"?>
@@ -40,7 +40,7 @@ ms.locfileid: "61193262"
 
     さらに、[`Entry`](xref:Xamarin.Forms.Entry) インスタンスと [`ListView`](xref:Xamarin.Forms.ListView) には、`x:Name` 属性で指定された名前があります。 これにより、分離コード ファイルは割り当てられた名前を使用して、これらのオブジェクトにアクセスできます。
 
-1. **ソリューション エクスプローラー**の **[LocalDatabaseTutorial]** プロジェクトで **[MainPage.xaml]** を展開し、**[MainPage.xaml.cs]** をダブルクリックして開きます。 次に、**[MainPage.xaml.cs]** で、`OnAppearing` オーバーライドと `OnButtonClicked` イベント ハンドラーをクラスに追加します。
+1. **ソリューション エクスプローラー**の **[LocalDatabaseTutorial]** プロジェクトで **[MainPage.xaml]** を展開し、 **[MainPage.xaml.cs]** をダブルクリックして開きます。 次に、 **[MainPage.xaml.cs]** で、`OnAppearing` オーバーライドと `OnButtonClicked` イベント ハンドラーをクラスに追加します。
 
     ```csharp
     protected override async void OnAppearing()
@@ -70,17 +70,17 @@ ms.locfileid: "61193262"
     > [!NOTE]
     > `OnAppearing` メソッドのオーバーライドは、[`ContentPage`](xref:Xamarin.Forms.ContentPage) がレイアウトされた後、それが表示される直前に実行されます。 したがって、これは Xamarin.Forms ビューのコンテンツを設定するのに適した場所です。
 
-1. Visual Studio ツール バーで、**[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択したリモート iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
+1. Visual Studio ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択したリモート iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
     データの各項目の [`Button`](xref:Xamarin.Forms.Button) をタップして、データのいくつかの項目を入力します。 これにより、データベースにデータが保存され、[`ListView`](xref:Xamarin.Forms.ListView) にデータベースのすべてのデータが再設定されます。
 
     [![iOS および Android での、ローカル SQLite.NET データベースのデータ永続化のスクリーンショット](../images/consume-data-access-classes.png "ローカル データベースのデータ永続化")](../images/consume-data-access-classes-large.png#lightbox "ローカル データベースのデータ永続化")
 
-    Xamarin.Forms のローカル データベースの詳細については、[Xamarin.Forms のローカル データベース (ガイド)](~/xamarin-forms/app-fundamentals/databases.md) に関するページを参照してください
+    Xamarin.Forms のローカル データベースの詳細については、[Xamarin.Forms のローカル データベース (ガイド)](~/xamarin-forms/data-cloud/data/databases.md) に関するページを参照してください
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-1. **Solution Pad** の **[LocalDatabaseTutorial]** プロジェクトで、**[MainPage.xaml]** をダブルクリックして開きます。 次に、**[MainPage.xaml]** のテンプレート コードをすべて削除し、次のコードに置き換えます。
+1. **Solution Pad** の **[LocalDatabaseTutorial]** プロジェクトで、 **[MainPage.xaml]** をダブルクリックして開きます。 次に、 **[MainPage.xaml]** のテンプレート コードをすべて削除し、次のコードに置き換えます。
 
     ```xaml
     <?xml version="1.0" encoding="utf-8"?>
@@ -110,7 +110,7 @@ ms.locfileid: "61193262"
 
     さらに、[`Entry`](xref:Xamarin.Forms.Entry) インスタンスと [`ListView`](xref:Xamarin.Forms.ListView) には、`x:Name` 属性で指定された名前があります。 これにより、分離コード ファイルは割り当てられた名前を使用して、これらのオブジェクトにアクセスできます。
 
-1. **Solution Pad** の **[LocalDatabaseTutorial]** プロジェクトで **[MainPage.xaml]** を展開し、**[MainPage.xaml.cs]** をダブルクリックして開きます。 次に、**[MainPage.xaml.cs]** で、`OnAppearing` オーバーライドと `OnButtonClicked` イベント ハンドラーをクラスに追加します。
+1. **Solution Pad** の **[LocalDatabaseTutorial]** プロジェクトで **[MainPage.xaml]** を展開し、 **[MainPage.xaml.cs]** をダブルクリックして開きます。 次に、 **[MainPage.xaml.cs]** で、`OnAppearing` オーバーライドと `OnButtonClicked` イベント ハンドラーをクラスに追加します。
 
     ```csharp
     protected override async void OnAppearing()
@@ -140,10 +140,10 @@ ms.locfileid: "61193262"
     > [!NOTE]
     > `OnAppearing` メソッドのオーバーライドは、[`ContentPage`](xref:Xamarin.Forms.ContentPage) がレイアウトされた後、それが表示される直前に実行されます。 したがって、これは Xamarin.Forms ビューのコンテンツを設定するのに適した場所です。
 
-1. Visual Studio for Mac ツール バーで、**[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
+1. Visual Studio for Mac ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
     データの各項目の [`Button`](xref:Xamarin.Forms.Button) をタップして、データのいくつかの項目を入力します。 これにより、データベースにデータが保存され、[`ListView`](xref:Xamarin.Forms.ListView) にデータベースのすべてのデータが再設定されます。
 
     [![iOS および Android での、ローカル SQLite.NET データベースのデータ永続化のスクリーンショット](../images/consume-data-access-classes.png "ローカル データベースのデータ永続化")](../images/consume-data-access-classes-large.png#lightbox "ローカル データベースのデータ永続化")
 
-    Xamarin.Forms のローカル データベースの詳細については、[Xamarin.Forms のローカル データベース (ガイド)](~/xamarin-forms/app-fundamentals/databases.md) に関するページを参照してください
+    Xamarin.Forms のローカル データベースの詳細については、[Xamarin.Forms のローカル データベース (ガイド)](~/xamarin-forms/data-cloud/data/databases.md) に関するページを参照してください

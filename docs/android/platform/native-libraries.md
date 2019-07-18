@@ -7,15 +7,15 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
 ms.openlocfilehash: 1b0771a0ccc2597ebd800468b82044e4020d9d94
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58854614"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61153313"
 ---
 # <a name="using-native-libraries"></a>ネイティブ ライブラリの使用
 
-Xamarin.Android では、標準の PInvoke メカニズムを使用してネイティブ ライブラリの使用をサポートします。 .Apk に OS の一部ではないその他のネイティブ ライブラリをバンドルすることもできます。
+Xamarin.Android では、標準の PInvoke メカニズムを使用してネイティブ ライブラリの使用をサポートします。 .apk に OS の一部ではないその他のネイティブ ライブラリをバンドルすることもできます。
 
 Xamarin.Android アプリケーションでネイティブ ライブラリを展開するには、バイナリのライブラリをプロジェクトに追加し、設定、**ビルド アクション**に**AndroidNativeLibrary**します。
 

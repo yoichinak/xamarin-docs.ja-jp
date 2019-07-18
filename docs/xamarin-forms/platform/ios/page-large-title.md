@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: ad1c7f94467c6f32b9108ab7f6abe85d31679d3a
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.openlocfilehash: 01c5e4f449a1aed84a73b0284ba15e0c03deeed7
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54208987"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65925775"
 ---
 # <a name="large-page-titles-on-ios"></a>IOS での大きいページ タイトル
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
 
 この iOS プラットフォームに固有のナビゲーション バーでの大規模なタイトルとページ タイトルの表示に使用する[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)、iOS 11 以降を使用するデバイス。 大タイトルは左寄せで大きいフォントが使われます。そして画面の領域を効率的に使うために、ユーザーがコンテンツをスクロールした時に、標準のタイトルに移り変わります。 しかし横向きの画面では、コンテンツのレイアウトを最適化するためにタイトルはナビゲーションバーの中央に戻ります。 この機能は XAML で `NavigationPage.PrefersLargeTitles` 添付プロパティを `boolean` 値に設定して使用します。
 
@@ -30,7 +30,7 @@ ms.locfileid: "54208987"
 </NavigationPage>
 ```
 
-または、fluent API を使用して c# から使用できます。
+または、fluent API を使用して C# から使用できます。
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -55,7 +55,7 @@ navigationPage.On<iOS>().SetPrefersLargeTitles(true);
 </ContentPage>
 ```
 
-または、fluent API を使用して、c# からページの動作を上書きできます。
+または、fluent API を使用して、C# からページの動作を上書きできます。
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -102,6 +102,6 @@ switch (On<iOS>().LargeTitleDisplay())
 
 ## <a name="related-links"></a>関連リンク
 
-- [プラットフォーム仕様 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+- [プラットフォーム仕様 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
 - [プラットフォーム仕様の作成](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

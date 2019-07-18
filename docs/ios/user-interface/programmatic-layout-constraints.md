@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 3d8e69af7f790415343abf464ea2bb22e879e025
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 089ada051b6780a15acfcdd7f9e32ddda1384d05
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106962"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832049"
 ---
 # <a name="programmatic-layout-constraints-in-xamarinios"></a>Xamarin.iOS でプログラムによるレイアウトの制約
 
@@ -119,10 +119,10 @@ NSLayoutConstraint.Create (OrangeView, NSLayoutAttribute.Height, NSLayoutRelatio
 Visual 言語の形式を使用すると、作成される制約の視覚的表現を提供する文字列のような ASCII アートを使用して制約を定義できます。 これは、次の長所と短所があります。
 
 - Visual 言語の形式は、有効な制約のみの作成を強制します。
- - 自動レイアウトでは、デバッグ メッセージの制約を作成するために使用するコードのようになりますので、ビジュアルの書式の言語を使用してコンソールに制約を出力します。
- - Visual 言語の形式を使用すると、非常にコンパクトな表現で同時に複数の制約を作成できます。
- - Visual 言語の書式設定文字列のコンパイル側の検証がないため、問題は実行時にのみ検出できます。
- - Visual 言語の形式は、完全を期すために視覚化を強調ために、比率) などをいくつかの制約の種類を作成することはできません。
+- 自動レイアウトでは、デバッグ メッセージの制約を作成するために使用するコードのようになりますので、ビジュアルの書式の言語を使用してコンソールに制約を出力します。
+- Visual 言語の形式を使用すると、非常にコンパクトな表現で同時に複数の制約を作成できます。
+- Visual 言語の書式設定文字列のコンパイル側の検証がないため、問題は実行時にのみ検出できます。
+- Visual 言語の形式は、完全を期すために視覚化を強調ために、比率) などをいくつかの制約の種類を作成することはできません。
 
 Visual 言語の形式を使用して制約を作成するときに、次の手順を実行します。
 
@@ -163,6 +163,6 @@ Apple を参照してください。 [Visual 形式の言語の付録](https://d
 
 - [ストーリーボードの概要](~/ios/user-interface/storyboards/index.md)
 - [iOS デザイン可能なコントロールのチュートリアル](~/ios/user-interface/designer/ios-designable-controls-walkthrough.md)
-- [IOS 用の Xamarin のデザイナーを使用した自動レイアウト](~/ios/user-interface/designer/designer-auto-layout.md#modifying-in-code)
+- [iOS 用の Xamarin のデザイナーを使用した自動レイアウト](~/ios/user-interface/designer/designer-auto-layout.md#modifying-in-code)
 - [Apple の制約をプログラムで作成します。](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/AutolayoutPG/ProgrammaticallyCreatingConstraints.html#//apple_ref/doc/uid/TP40010853-CH16-SW1)
 - [Apple のビジュアルな形式の言語の付録](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/AutolayoutPG/VisualFormatLanguage.html#//apple_ref/doc/uid/TP40010853-CH27-SW1)

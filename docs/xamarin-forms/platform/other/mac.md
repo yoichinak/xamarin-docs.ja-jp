@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/03/2017
-ms.openlocfilehash: 3a488b3a9f729da5d4bee8c1262190b15c2e9240
-ms.sourcegitcommit: 0044d04990faa0b144b8626a4fceea0fdff95cfe
+ms.openlocfilehash: 7ed2cb66524ab3380f65d6d0be74a66c7d01226b
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56666897"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978029"
 ---
 # <a name="mac-platform-setup"></a>Mac プラットフォームのセットアップ
 
@@ -23,7 +23,7 @@ ms.locfileid: "56666897"
 
 > [!VIDEO https://youtube.com/embed/mvQ7jzaNseM]
 
-**Xamarin.Forms での macOS プロジェクトを追加すると、によって[Xamarin University](https://university.xamarin.com/)**
+**Xamarin.Forms のビデオの macOS プロジェクトを追加します。**
 
 ## <a name="adding-a-mac-app"></a>Mac アプリを追加します。
 

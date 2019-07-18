@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 05/02/2018
 ms.openlocfilehash: 0ec1defa29a4fe85c4ae3e809d8733e68cc268ac
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116929"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61087711"
 ---
 # <a name="launch-screens-for-xamarinios-apps"></a>Xamarin.iOS アプリの起動画面
 
@@ -83,7 +83,7 @@ Ios 8 (以降) で、開発者は、1 つまたは複数の静的な起動イメ
 
     ![レイアウトの制約でのイメージ ビュー](launch-screens-images/launch10.png)
 
-    - 制約を追加する方法の詳細については、[iOS 用の Xamarin のデザイナーを使用した自動レイアウト](~/ios/user-interface/designer/designer-auto-layout.md)を参照してください。
+    - 制約を追加する方法の詳細については、次を参照してください。 [iOS 用の Xamarin のデザイナーを使用した自動レイアウト](~/ios/user-interface/designer/designer-auto-layout.md)します。
 
 11. 制約を追加、**ラベル**、水平方向に中央固定に配置して、高さと幅を付けることから、垂直方向に距離、 **Image View**:
 
@@ -166,7 +166,7 @@ Ios 8 (以降) で、開発者は、1 つまたは複数の静的な起動イメ
 
     ![レイアウトの制約でのイメージ ビュー](launch-screens-images/launch13-vs.png) 
 
-    - 制約を追加する方法の詳細については、[iOS 用の Xamarin のデザイナーを使用した自動レイアウト](~/ios/user-interface/designer/designer-auto-layout.md)を参照してください。
+    - 制約を追加する方法の詳細については、次を参照してください。 [iOS 用の Xamarin のデザイナーを使用した自動レイアウト](~/ios/user-interface/designer/designer-auto-layout.md)します。
 
 14. 制約を追加、**ラベル**、水平方向に中央固定に配置して、高さと幅を付けることから、垂直方向に距離、 **Image View**:
     
@@ -231,4 +231,4 @@ Unified ストーリー ボードの起動画面の作成の詳細について�
 - [iOS Designer の基本](~/ios/user-interface/designer/index.md)
 - [資産カタログ イメージに追加するイメージを設定します。](~/ios/app-fundamentals/images-icons/displaying-an-image.md#adding-images-to-an-asset-catalog-image-set)
 - [iOS 用の Xamarin のデザイナーを使用した自動レイアウト](~/ios/user-interface/designer/designer-auto-layout.md)
-- [起動画面のヒューマン インターフェイス ガイドライン:](https://developer.apple.com/ios/human-interface-guidelines/icons-and-images/launch-screen/)
+- [ヒューマン インターフェイス ガイドライン:起動画面](https://developer.apple.com/ios/human-interface-guidelines/icons-and-images/launch-screen/)

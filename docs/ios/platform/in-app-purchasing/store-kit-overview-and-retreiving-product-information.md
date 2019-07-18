@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
 ms.openlocfilehash: 0dcda2e4fd1ca7773668a0a6fdf46e01f2f0841d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118527"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61366965"
 ---
 # <a name="storekit-overview-and-retrieving-product-info-in-xamarinios"></a>StoreKit の概要と Xamarin.iOS で製品情報を取得します。
 
@@ -52,11 +52,11 @@ ms.locfileid: "50118527"
 
 StoreKit のほとんどの操作では、テストの実際のデバイスが必要です。 (つまり製品の情報の取得 価格&amp;説明) は、シミュレーターが発注機能および復元操作はエラーを返します (FailedTransaction コードなど 5002 を = 不明なエラーが発生しました)。
 
-注: StoreKit は、iOS シミュレーターでは動作しません。 IOS シミュレーターでアプリケーションを実行して、支払キューを取得しようとすると、アプリケーション、StoreKit は警告を記録します。 ストアのテストは、実際のデバイスで行う必要があります。   
+メモ:StoreKit は、iOS シミュレーターでは動作しません。 IOS シミュレーターでアプリケーションを実行して、支払キューを取得しようとすると、アプリケーション、StoreKit は警告を記録します。 ストアのテストは、実際のデバイスで行う必要があります。   
    
    
    
- 重要: に署名しない設定 で、テスト アカウントでサインインします。 すべての既存の Apple ID アカウントからの署名を設定アプリケーションを使用することができますし、ダイアログを表示するまで待機する必要があります*アプリ内購入するシーケンス内で*テスト Apple ID を使用してログインするには   
+ 重要 : 設定 アプリケーションのテスト アカウントでサインインしない操作を行います。 すべての既存の Apple ID アカウントからの署名を設定アプリケーションを使用することができますし、ダイアログを表示するまで待機する必要があります*アプリ内購入するシーケンス内で*テスト Apple ID を使用してログインするには   
    
    
    

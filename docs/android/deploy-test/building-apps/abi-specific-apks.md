@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: d5d4274adad64e8555659645533a8e58b845bfa7
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 8c79075c9e01ef5da73255b152b4cbbd676b4f4e
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57667907"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67674743"
 ---
 # <a name="building-abi-specific-apks"></a>ABI 固有の APK のビルド
 
@@ -174,7 +174,7 @@ rake タスクが完了すると、ファイル `xamarin.helloworld.apk` を含�
 
 
 > [!NOTE]
-> このガイドで概説されているビルド プロセスは、さまざまなビルド システムのいずれかに実装できます。 事前に記述した例はありませんが、これは [Powershell](http://technet.microsoft.com/scriptcenter/powershell.aspx) / [psake](https://github.com/psake/psake) または [Fake](http://fsharp.github.io/FAKE/) でも可能です。
+> このガイドで概説されているビルド プロセスは、さまざまなビルド システムのいずれかに実装できます。 事前に記述した例はありませんが、これは [Powershell](https://technet.microsoft.com/scriptcenter/powershell.aspx) / [psake](https://github.com/psake/psake) または [Fake](http://fsharp.github.io/FAKE/) でも可能です。
 
 
 ## <a name="summary"></a>まとめ
@@ -185,6 +185,6 @@ rake タスクが完了すると、ファイル `xamarin.helloworld.apk` を含�
 
 ## <a name="related-links"></a>関連リンク
 
-- [OneABIPerAPK (サンプル)](https://developer.xamarin.com/samples/OneABIPerAPK/)
+- [OneABIPerAPK (サンプル)](https://developer.xamarin.com/samples/monodroid/OneABIPerAPK/)
 - [アプリケーションの発行](~/android/deploy-test/publishing/index.md)
 - [Google Play の複数の APK サポート](https://developer.android.com/google/play/publishing/multiple-apks.html)

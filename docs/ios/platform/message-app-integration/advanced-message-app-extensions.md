@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
 ms.openlocfilehash: baceb59116dd907918b34eca4f44293051190954
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120529"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61155648"
 ---
 # <a name="advanced-message-app-extensions-in-xamarinios"></a>Xamarin.iOS での高度なメッセージ アプリ拡張機能
 
@@ -38,7 +38,7 @@ _この記事では、メッセージ アプリと連携し、新しい機能を
 
 また新しい iOS 10 では、Apple が追加ユーザーを簡単にアプリを検出できるインライン アプリ属性。 たとえば、1 人のユーザーは、2 つ目のユーザーが持っていないアプリから別にコンテンツを送信する場合 (たとえばステッカー) のようにインストールされている送信側のアプリの名前 下にあるメッセージ履歴内のコンテンツ。 ユーザーがアプリのタップした場合の名前、メッセージ アプリ ストアを開くこと、アプリ ストアで選択されています。
 
-メッセージ アプリ拡張機能は、既存の iOS アプリ開発者が使い慣れたを作成して、すべての標準的なフレームワークと標準の iOS アプリの機能へのアクセスことに似ています。 例えば:
+メッセージ アプリ拡張機能は、既存の iOS アプリ開発者が使い慣れたを作成して、すべての標準的なフレームワークと標準の iOS アプリの機能へのアクセスことに似ています。 例:
 
 - アプリ内購入へのアクセスがあります。
 - これらは、Apple Pay にアクセスします。
@@ -181,7 +181,7 @@ public void SendMessage (MSMessage message)
 
 メッセージ アプリ拡張機能は、2 つの異なる表示モードのいずれかで表示できます。
 
-[![](advanced-message-app-extensions-images/interactive08.png "2 つの異なる表示モードで表示されるメッセージ アプリ拡張機能: Compact と展開")](advanced-message-app-extensions-images/interactive08.png#lightbox)
+[![](advanced-message-app-extensions-images/interactive08.png "2 つの異なる表示モードで表示されるメッセージ アプリ拡張:圧縮と展開")](advanced-message-app-extensions-images/interactive08.png#lightbox)
 
 - **Compact** -既定のモードは、このメッセージ アプリ拡張機能が、メッセージ ビューの下部にある 25% を占める場所。 コンパクト モードでアプリにキーボード、水平方向スクロールまたはスワイプ ジェスチャ レコグナイザーへのアクセスはありません。 アプリは入力フィールドへのアクセス権し、するために呼び出す`InsertMessage`はすぐにあるユーザーに表示されます。
 - **展開**-メッセージ アプリ拡張機能をメッセージ ビュー全体を入力します。 入力フィールドへのアクセスはありませんが、キーボード、水平方向スクロールおよびスワイプ ジェスチャ レコグナイザーへのアクセスにが。
@@ -547,7 +547,7 @@ public override void DidSelectMessage (MSMessage message, MSConversation convers
 - 拡張機能は、ユーザーからのメッセージを受信したときの追跡できる送信者の識別子。 同じ送信者の識別子を持つ別のメッセージを受信した場合、拡張機能は同じユーザーからあるを認識します。
 - メッセージ交換内の特定のユーザーを識別できるように、使用できます。
 
-テキスト フィールドのいずれかで送信者の識別子を使用できる、`MSMessageTemplateLayout`によってドル記号を付けます (`$`)。 例えば:
+テキスト フィールドのいずれかで送信者の識別子を使用できる、`MSMessageTemplateLayout`によってドル記号を付けます (`$`)。 例:
 
 ```csharp
 // Pass along the sender identifier

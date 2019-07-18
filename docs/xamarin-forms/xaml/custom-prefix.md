@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/28/2019
 ms.openlocfilehash: 33f18b3f9c9ddb6ab31ca92e2f192ffad783ec0c
-ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57557474"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61075103"
 ---
 # <a name="xaml-namespace-recommended-prefixes-in-xamarinforms"></a>XAML Namespace を Xamarin.Forms でプレフィックスをお勧めします。
 
-`XmlnsPrefixAttribute`クラスは、XAML の使用量の XAML 名前空間に関連付ける推奨プレフィックスを指定するコントロールの作成者によって使用できます。 プレフィックスは、XAML へのオブジェクト ツリーのシリアル化をサポートしている場合に役立ちます。 または XAML 編集機能を持つデザイン環境と対話するときにします。 例:
+`XmlnsPrefixAttribute`クラスは、XAML の使用量の XAML 名前空間に関連付ける推奨プレフィックスを指定するコントロールの作成者によって使用できます。 プレフィックスは、XAML へのオブジェクト ツリーのシリアル化をサポートしている場合に役立ちます。 または XAML 編集機能を持つデザイン環境と対話するときにします。 例えば:
 
 - XAML テキスト エディターを使用できます、`XmlnsPrefixAttribute`初期の XAML 名前空間のヒントとして`xmlns`マッピングします。
 - XAML デザイン環境を使用できます、`XmlnsPrefixAttribute`オブジェクトをツールボックスから、およびビジュアル デザイン サーフェイスにドラッグしたときに、XAML にマッピングを追加します。

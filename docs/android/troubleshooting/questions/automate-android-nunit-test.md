@@ -1,5 +1,5 @@
 ---
-title: Android NUnit テスト プロジェクトを自動化する方法は?
+title: Android NUnit テスト プロジェクトを自動化する方法を教えてください
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: EA3CFCC4-2D2E-49D6-A26C-8C0706ACA045
@@ -7,14 +7,14 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2018
-ms.openlocfilehash: b785ef171d2cb00d4f8f5a17f37d49de17fd3da9
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 0837deccdb535c178e8b00b052efeb7c9bd49679
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106859"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864129"
 ---
-# <a name="how-do-i-automate-an-android-nunit-test-project"></a>Android NUnit テスト プロジェクトを自動化する方法は?
+# <a name="how-do-i-automate-an-android-nunit-test-project"></a>Android NUnit テスト プロジェクトを自動化する方法を教えてください
 
 > [!NOTE]
 > このガイドでは、Android NUnit テスト プロジェクトの Xamarin.UITest プロジェクトではないを自動化する方法について説明します。 Xamarin.UITest ガイド[ここ](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/uitest)します。
@@ -74,13 +74,13 @@ adb shell am instrument
     </Project>
     ```
 
-3.  単体テストを実行するのにには、次のコマンドを使用します。 置換`PACKAGE_NAME`アプリのパッケージ名を持つ (アプリのパッケージ名が見つかりません`/manifest/@package`属性にある**AndroidManifest.xml**)。
+4.  単体テストを実行するのにには、次のコマンドを使用します。 置換`PACKAGE_NAME`アプリのパッケージ名を持つ (アプリのパッケージ名が見つかりません`/manifest/@package`属性にある**AndroidManifest.xml**)。
 
     ```shell
     adb shell am instrument -w PACKAGE_NAME/app.tests.TestInstrumentation
     ```
 
-4.  必要に応じて変更することができます、`.csproj`を追加するファイル、 `RunTests` MSBuild ターゲット。 これにより、次のようなコマンドを使用して単体テストを起動できるようにします。
+5.  必要に応じて変更することができます、`.csproj`を追加するファイル、 `RunTests` MSBuild ターゲット。 これにより、次のようなコマンドを使用して単体テストを起動できるようにします。
 
     ```shell
     msbuild /t:RunTests Project.csproj

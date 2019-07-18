@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: b309cbdf37acaa71740a4d5d03e4824efd40f359
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: a4d23984d4fcfd0776fd6b3537d5a257f70e7837
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107496"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827128"
 ---
 # <a name="text-input-in-xamarinios"></a>Xamarin.iOS でのテキスト入力
 
@@ -97,4 +97,4 @@ textview1.DataDetectorTypes = UIDataDetectorType.PhoneNumber | UIDataDetectorTyp
 
 ## <a name="related-links"></a>関連リンク
 
-- [コントロール (サンプル)](https://developer.xamarin.com/samples/Controls/)
+- [コントロール (サンプル)](https://developer.xamarin.com/samples/monotouch/Controls/)

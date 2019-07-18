@@ -1,68 +1,68 @@
 ---
-title: NuGet の新しいプラットフォーム固有のライブラリ プロジェクトを作成します。
-description: このドキュメントでは、複数のプラットフォームのプラットフォーム固有のコードを含む 1 つの NuGet パッケージを作成する方法について説明します。
+title: NuGet の新しいプラットフォームに固有のライブラリ プロジェクトを作成します。
+description: このドキュメントでは、複数のプラットフォームのプラットフォームに固有のコードを含む 1 つの NuGet パッケージを作成する方法について説明します。
 ms.prod: xamarin
 ms.assetid: D8BC4906-805F-4AFB-8D1A-88B7BF87E17F
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 00a02973d6016ad63e4317279515acc2b4e2e81b
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 4be010448d963462ccf06c263ddfad7ba1d9feae
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34780644"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832032"
 ---
-# <a name="creating-new-platform-specific-library-projects-for-nuget"></a>NuGet の新しいプラットフォーム固有のライブラリ プロジェクトを作成します。
+# <a name="creating-new-platform-specific-library-projects-for-nuget"></a>NuGet の新しいプラットフォームに固有のライブラリ プロジェクトを作成します。
 
-IOS や Android などの特定のプラットフォームを対象とするマルチプラット フォームのライブラリ プロジェクトは、共有プロジェクトに最適です。
+IOS や Android などの特定のプラットフォームを対象とするマルチプラット フォーム ライブラリ プロジェクトは、共有プロジェクトに最適です。
 
-NuGet は、.NET コードの両方に共通するだけでなく、iOS および Android に固有のコードを含めることができます。
+NuGet は、iOS と Android 固有のコードと .NET コードの両方に共通の両方に含めることができます。
 
-複数のアセンブリが作成され、1 つの NuGet パッケージに組み込まれています。 NuGet 標準では、Xamarin.iOS および Android のプロジェクトなど、サポートされているプロジェクトのすべての種類にパッケージを追加できることを確認してください。
+複数のアセンブリが作成され、1 つの NuGet パッケージに組み込まれています。 NuGet の標準では、Xamarin.iOS と Android のプロジェクトなど、あらゆる型のサポートされているプロジェクトにパッケージを追加できることを確認します。
 
-## <a name="steps-to-create-a-cross-platform-library-nuget"></a>クロスプラット フォーム ライブラリ NuGet を作成する手順
+## <a name="steps-to-create-a-cross-platform-library-nuget"></a>クロス プラットフォーム ライブラリの NuGet を作成する手順
 
-1. 選択**ファイル > 新しいソリューション**(既存のソリューションを右クリックしを選択または**追加 > 新しいプロジェクト**)。
+1. 選択**ファイル > 新しいソリューション**(または既存のソリューションを右クリックし、選択**追加 > 新しいプロジェクト**)。
 
 2. 選択**マルチプラット フォーム ライブラリ**から、**マルチプラット フォーム > ライブラリ**セクション。
 
-  [![](platform-specific-images/mulitplatform-library-sml.png "1 つのコード ベースのマルチプラット フォーム ライブラリを構成します。")](platform-specific-images/multiplatform-library.png#lightbox)
+    [![](platform-specific-images/mulitplatform-library-sml.png "1 つのコード ベースのマルチプラット フォーム ライブラリを構成します。")](platform-specific-images/multiplatform-library.png#lightbox)
 
-3. 入力、**名前**と**説明**を選択して**プラットフォーム固有**:
+3. 入力、**名前**と**説明**、選択**プラットフォーム固有**:
 
-  [![](platform-specific-images/specific-configure-sml.png "IOS および Android 用のプラットフォーム固有のライブラリを構成します。")](platform-specific-images/specific-configure.png#lightbox)
+    [![](platform-specific-images/specific-configure-sml.png "IOS および Android 用のプラットフォームに固有のライブラリを構成します。")](platform-specific-images/specific-configure.png#lightbox)
 
-4. ウィザードを完了します。 次のプロジェクトがソリューションに追加されます。
+4. ウィザードを完了します。 次のプロジェクトは、ソリューションに追加されます。
 
-  - **Android プロジェクト**– Android 固有のコードは、このプロジェクトに必要に応じて追加できます。
-  - **iOS プロジェクト**– iOS に固有のコードは、このプロジェクトに必要に応じて追加できます。
-  - **NuGet プロジェクト**– コードがこのプロジェクトに追加されません。 他のプロジェクトを参照し、NuGet パッケージの出力のメタデータの構成が含まれています。
-  - **共有プロジェクト**– 一般的なコードは、内のプラットフォーム固有のコードを含む、このプロジェクトに追加する必要があります`#if`コンパイラ ディレクティブです。
+    - **Android プロジェクト**– Android 固有のコードは、このプロジェクトに必要に応じて追加できます。
+    - **iOS プロジェクト**– iOS 固有のコードは、このプロジェクトに必要に応じて追加できます。
+    - **NuGet プロジェクト**– コードはこのプロジェクトに追加されません。 他のプロジェクトを参照し、NuGet パッケージの出力のメタデータの構成が含まれています。
+    - **共有プロジェクト**– 一般的なコードは、内部でプラットフォーム固有のコードを含む、このプロジェクトに追加する必要があります`#if`コンパイラ ディレクティブ。
 
-5. NuGet のプロジェクトを右クリックし、選択**オプション**を開き、 **NuGet パッケージ > メタデータ**セクションし、入力、[必要なメタデータ](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md)(としてその適切に省略可能なメタデータ):
+5. NuGet プロジェクトを右クリックし、選択**オプション**を開き、 **NuGet パッケージ > メタデータ**セクションし、入力、[必要なメタデータ](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md)(省略可能なあらゆるとしてメタデータ):
 
-  [![](platform-specific-images/specific-metadata-sml.png "必要なメタデータを入力してください。")](platform-specific-images/specific-metadata.png#lightbox)
+    [![](platform-specific-images/specific-metadata-sml.png "必要なメタデータを入力します。")](platform-specific-images/specific-metadata.png#lightbox)
 
-6. また、**プロジェクト オプション**ウィンドウを開いた、**参照アセンブリ**セクションし、共有ライブラリは、「お連絡とり」を通じてサポートするために PCL をプロファイルの選択。
+6. さらに、**プロジェクト オプション**ウィンドウを開いて、**参照アセンブリ**セクションし、「おとり」を使用して、共有ライブラリがサポートされる PCL プロファイルの選択。
 
-  ![](platform-specific-images/specific-reference-assemblies.png "また、プロジェクトのオプション ウィンドウで、参照アセンブリ セクションを開きおとりを通じて共有ライブラリがサポートするために PCL をプロファイル")
+    ![](platform-specific-images/specific-reference-assemblies.png "プロジェクト オプション ウィンドウで、参照アセンブリのセクションを開いてまた bait and スイッチを使用して、共有ライブラリがサポートされる PCL プロファイルを選択")
 
-  > [!NOTE]
-> 「お連絡とり」では、PCL アセンブリが (プラットフォーム固有のコードを含めることはできません) ライブラリによって公開される API にしか含めることを意味します。 NuGet は、Xamarin のプロジェクトに追加するときに、共有ライブラリは、PCL に対してコンパイルされますが、プラットフォーム固有のアセンブリには、実際には、iOS または Android プロジェクトで使用されるコードが含まれています。
+    > [!NOTE]
+    > 「おとり」では、PCL アセンブリでは (プラットフォーム固有のコードを含めることはできません)、ライブラリによって公開される API だけを格納することを意味します。 Xamarin プロジェクトに NuGet を追加するときに共有ライブラリは、PCL に対してコンパイルされますが、プラットフォーム固有のアセンブリには、iOS または Android プロジェクトで実際に使用されるコードが含まれます。
 
-7. プロジェクトを右クリックし、選択**NuGet パッケージの作成**(またはビルドまたはソリューションを展開する) および**これは .nupkg** NuGet パッケージのファイルに保存されます、 **/bin/** フォルダー (Debug または Release、構成によって)。
+7. プロジェクトを右クリックし、選択**NuGet パッケージの作成**(またはビルドまたはソリューションを展開する) および **.nupkg** NuGet パッケージのファイルに保存されます、 **/bin/** フォルダー (デバッグまたはリリースでは、構成に応じて)。
 
-  ![](platform-specific-images/create-nuget-package.png "NuGet パッケージ ファイルは保存されます bin フォルダーにデバッグまたはリリースでは、いずれかの構成によって")
+    ![](platform-specific-images/create-nuget-package.png "NuGet パッケージ ファイルは保存されます bin フォルダーにデバッグまたはリリースでは、構成に応じて")
 
 
 ## <a name="verifying-the-output"></a>出力を確認しています
 
-生成されたパッケージの内部構造を検査することは、NuGet パッケージは ZIP ファイルではもです。
+NuGet パッケージは、ZIP ファイルではもおり、生成されたパッケージの内部構造を検査することができます。
 
-このスクリーン ショットでは iOS と Android をサポートし、2 つの参照アセンブリが存在するプラットフォーム固有の NuGet の内容を選択します。
+このスクリーン ショットでは iOS と Android をサポートし、2 つの参照アセンブリがプラットフォーム固有の NuGet の内容を選択します。
 
-![](platform-specific-images/nuget-output.png "NuGet パッケージに含まれているファイル")
+![](platform-specific-images/nuget-output.png "NuGet パッケージに含まれるファイル")
 
 
 ## <a name="related-links"></a>関連リンク

@@ -6,13 +6,13 @@ ms.assetid: AC070686-A423-4A98-8BB6-0B9F94C062CC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/21/2019
-ms.openlocfilehash: 5b2e58901d4a850863f68b26ce41e1aa4e8daee4
-ms.sourcegitcommit: 6f728aa0c1775224e16c0f3e583cf843d34270f9
+ms.date: 06/11/2019
+ms.openlocfilehash: cc673077502e15894ce4c4519df051174feb7e8e
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59509903"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830911"
 ---
 # <a name="xamarinforms-views"></a>Xamarin.Forms のビュー
 
@@ -56,7 +56,7 @@ _Xamarin.Forms のビューとは、クロス プラットフォーム モバイ
 
 |     |     |
 | --- | --- |
-| [`OpenGLView`](xref:Xamarin.Forms.OpenGLView) iOS と Android プロジェクトでは、OpenGL のグラフィックスを表示します。 ユニバーサル Windows プラットフォームのサポートはありません。 IOS と Android プロジェクトへの参照が必要、 **OpenTK 1.0**アセンブリまたは**OpenTK**バージョン 1.0.0.0 アセンブリ。 `OpenGLView` 共有プロジェクトで使用する方が簡単です.NET Standard ライブラリで使用されている場合は、依存関係サービスが (サンプル コードで示す) のように必要にもなります。<br /><br />これは、Xamarin.Forms に組み込まれている唯一のグラフィックス機能は、Xamarin.Forms アプリケーションは、グラフィックスを使用しても表示できる[ `CocosSharp` ](~/xamarin-forms/user-interface/graphics/cocossharp.md)、 [ `SkiaSharp` ](~/xamarin-forms/user-interface/graphics/skiasharp/index.md)、または[ `UrhoSharp`](~/xamarin-forms/user-interface/graphics/urhosharp.md).<br /><br />[API ドキュメント](xref:Xamarin.Forms.OpenGLView)<br /><br /> | [![OpenGLView 例](views-images/OpenGLView.png "OpenGLView 例")](views-images/OpenGLView-Large.png#lightbox "OpenGLView 例")<br />[このページの C# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/OpenGLViewDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/OpenGLViewDemoPage.xaml)で[分離コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/OpenGLViewDemoPage.xaml.cs) |
+| [`OpenGLView`](xref:Xamarin.Forms.OpenGLView) iOS と Android プロジェクトでは、OpenGL のグラフィックスを表示します。 ユニバーサル Windows プラットフォームのサポートはありません。 IOS と Android プロジェクトへの参照が必要、 **OpenTK 1.0**アセンブリまたは**OpenTK**バージョン 1.0.0.0 アセンブリ。 `OpenGLView` 共有プロジェクトで使用する方が簡単です.NET Standard ライブラリで使用されている場合は、依存関係サービスが (サンプル コードで示す) のように必要にもなります。<br /><br />これは、Xamarin.Forms に組み込まれている唯一のグラフィックス機能は、Xamarin.Forms アプリケーションは、グラフィックスを使用しても表示できる[ `SkiaSharp` ](~/xamarin-forms/user-interface/graphics/skiasharp/index.md)、または[ `UrhoSharp`](~/xamarin-forms/user-interface/graphics/urhosharp.md)します。<br /><br />[API ドキュメント](xref:Xamarin.Forms.OpenGLView)<br /><br /> | [![OpenGLView 例](views-images/OpenGLView.png "OpenGLView 例")](views-images/OpenGLView-Large.png#lightbox "OpenGLView 例")<br />[このページの C# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/OpenGLViewDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/OpenGLViewDemoPage.xaml)で[分離コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/OpenGLViewDemoPage.xaml.cs) |
 |     |     |
 
 ### <a name="map"></a>マップ
@@ -91,6 +91,13 @@ _Xamarin.Forms のビューとは、クロス プラットフォーム モバイ
 
 ## <a name="views-for-setting-values"></a>値の設定のビュー
 
+### <a name="checkbox"></a>CheckBox
+
+|     |     |
+| --- | --- |
+| `CheckBox` チェック アウトか、または空のボタンの種類を使用してブール値を選択できます。 `IsChecked`プロパティの状態は、 `CheckBox`、および`CheckedChanged`状態が変更されたときに発生します。<br /><br />API のドキュメント/[ガイド](~/xamarin-forms/user-interface/checkbox.md) / [サンプル](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/CheckBoxDemos) | [![チェック ボックスをオン例](views-images/CheckBox.png "例のチェック ボックスをオン")](views-images/CheckBox-Large.png#lightbox "チェック ボックスの例")<br />[このページの C# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/CheckBoxDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/CheckBoxDemoPage.xaml) |
+|     |     |
+
 ### <a name="slider"></a>スライダー
 
 |     |     |
@@ -109,7 +116,7 @@ _Xamarin.Forms のビューとは、クロス プラットフォーム モバイ
 
 |     |     |
 | --- | --- |
-| [`Switch`](xref:Xamarin.Forms.Switch) ブール値を選択できるようにするオン/オフ スイッチの形式をとります。 [ `IsToggled` ](xref:Xamarin.Forms.Switch.IsToggled)プロパティは、スイッチの状態と[ `Toggled` ](xref:Xamarin.Forms.Switch.Toggled)状態が変更されたときに発生します。<br /><br />[API ドキュメント](xref:Xamarin.Forms.Switch) | [![例を切り替える](views-images/Switch.png "例を切り替える")](views-images/Switch-Large.png#lightbox "スイッチの例")<br />[このページの C# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SwitchDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SwitchDemoPage.xaml) |
+| [`Switch`](xref:Xamarin.Forms.Switch) ブール値を選択できるようにするオン/オフ スイッチの形式をとります。 [ `IsToggled` ](xref:Xamarin.Forms.Switch.IsToggled)プロパティは、スイッチの状態と[ `Toggled` ](xref:Xamarin.Forms.Switch.Toggled)状態が変更されたときに発生します。<br /><br />[API ドキュメント](xref:Xamarin.Forms.Switch) / [ガイド](~/xamarin-forms/user-interface/switch.md) / [サンプル](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/SwitchDemos) | [![例を切り替える](views-images/Switch.png "例を切り替える")](views-images/Switch-Large.png#lightbox "スイッチの例")<br />[このページの C# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SwitchDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SwitchDemoPage.xaml) |
 |     |     |
 
 ### <a name="datepicker"></a>DatePicker
@@ -156,7 +163,7 @@ _Xamarin.Forms のビューとは、クロス プラットフォーム モバイ
 
 |     |     |
 | --- | --- |
-| [`ActivityIndicator`](xref:Xamarin.Forms.ActivityIndicator) アニメーションを使用して、進行状況の情報を与えることがなく、時間がかかる作業で、アプリケーションが進行中ことを示します。 [ `IsRunning` ](xref:Xamarin.Forms.ActivityIndicator.IsRunning)プロパティは、アニメーションを制御します。<br /><br />アクティビティの進行状況がわかっている場合は、使用、 [ `ProgressBar` ](#progressbar)代わりにします。<br /><br />[API ドキュメント](xref:Xamarin.Forms.ActivityIndicator) | [![ActivityIndicator 例](views-images/ActivityIndicator.png "ActivityIndicator 例")](views-images/ActivityIndicator-Large.png#lightbox "ActivityIndicator 例")<br />[このページの C# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ActivityIndicatorDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ActivityIndicatorDemoPage.xaml) |
+| [`ActivityIndicator`](xref:Xamarin.Forms.ActivityIndicator) アニメーションを使用して、進行状況の情報を与えることがなく、時間がかかる作業で、アプリケーションが進行中ことを示します。 [ `IsRunning` ](xref:Xamarin.Forms.ActivityIndicator.IsRunning)プロパティは、アニメーションを制御します。<br /><br />アクティビティの進行状況がわかっている場合は、使用、 [ `ProgressBar` ](#progressbar)代わりにします。<br /><br />[API ドキュメント](xref:Xamarin.Forms.ActivityIndicator) / [ガイド](~/xamarin-forms/user-interface/activityindicator.md) / [サンプル](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ActivityIndicatorDemos) | [![ActivityIndicator 例](views-images/ActivityIndicator.png "ActivityIndicator 例")](views-images/ActivityIndicator-Large.png#lightbox "ActivityIndicator 例")<br />[このページの C# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ActivityIndicatorDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ActivityIndicatorDemoPage.xaml) |
 |     |     |
 
 <a name="progressbar" />
@@ -165,7 +172,7 @@ _Xamarin.Forms のビューとは、クロス プラットフォーム モバイ
 
 |     |     |
 | --- | --- |
-| [`ProgressBar`](xref:Xamarin.Forms.ProgressBar) アニメーションを使用して、時間がかかる作業を通じて、アプリケーションの進行状況を表示します。 設定、 [ `Progress` ](xref:Xamarin.Forms.ProgressBar.Progress)プロパティを 0 ~ 1 に、進行状況を示す値。<br /><br />アクティビティの進行状況が不明である場合は、使用、 [ `ActivityIndicator` ](#activityindicator)代わりにします。<br /><br />[API ドキュメント](xref:Xamarin.Forms.ProgressBar) | [![ProgressBar の使用例](views-images/ProgressBar.png "ProgressBar 例")](views-images/ProgressBar-Large.png#lightbox "ProgressBar の例")<br />[このページの C# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ProgressBarDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ProgressBarDemoPage.xaml)で[分離コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ProgressBarDemoPage.xaml.cs) |
+| [`ProgressBar`](xref:Xamarin.Forms.ProgressBar) アニメーションを使用して、時間がかかる作業を通じて、アプリケーションの進行状況を表示します。 設定、 [ `Progress` ](xref:Xamarin.Forms.ProgressBar.Progress)プロパティを 0 ~ 1 に、進行状況を示す値。<br /><br />アクティビティの進行状況が不明である場合は、使用、 [ `ActivityIndicator` ](#activityindicator)代わりにします。<br /><br />[API ドキュメント](xref:Xamarin.Forms.ProgressBar) / [ガイド](~/xamarin-forms/user-interface/progressbar.md) / [サンプル](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ProgressBarDemos) | [![ProgressBar の使用例](views-images/ProgressBar.png "ProgressBar 例")](views-images/ProgressBar-Large.png#lightbox "ProgressBar の例")<br />[このページの C# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ProgressBarDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ProgressBarDemoPage.xaml)で[分離コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ProgressBarDemoPage.xaml.cs) |
 |     |     |
 
 ## <a name="views-that-display-collections"></a>コレクションを表示するビュー
@@ -174,7 +181,7 @@ _Xamarin.Forms のビューとは、クロス プラットフォーム モバイ
 
 |     |     |
 | --- | --- |
-| `CollectionView` を別のレイアウトの仕様を使用して、選択可能なデータ項目のスクロール可能な一覧が表示されます。 これは [ `ListView`](xref:Xamarin.Forms.ListView) の代わりとして、より柔軟でより高パフォーマンスを提供することを目的にしています。 設定、`ItemsSource`プロパティ オブジェクト、およびセットのコレクションを`ItemTemplate`プロパティを[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)アイテムの書式設定する方法を記述するオブジェクト。 `SelectionChanged`選択が行われたこと、として利用できるイベントの通知、`SelectedItem`プロパティ。<br /><br />[ガイド](~/xamarin-forms/user-interface/collectionview/index.md) / [サンプル](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/CollectionViewDemos/) | [![CollectionView 例](views-images/CollectionView.png "CollectionView 例")](views-images/CollectionView-Large.png#lightbox "CollectionView 例")<br />[このページの C# コード](https://github.com/xamarin/xamarin-forms-samples/blob/forms40/FormsGallery/FormsGallery/FormsGallery/CodeExamples/CollectionViewDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/forms40/FormsGallery/FormsGallery/FormsGallery/XamlExamples/CollectionViewDemoPage.xaml) |
+| [`CollectionView`](xref:Xamarin.Forms.CollectionView) を別のレイアウトの仕様を使用して、選択可能なデータ項目のスクロール可能な一覧が表示されます。 これは [ `ListView`](xref:Xamarin.Forms.ListView) の代わりとして、より柔軟でより高パフォーマンスを提供することを目的にしています。 設定、`ItemsSource`プロパティ オブジェクト、およびセットのコレクションを`ItemTemplate`プロパティを[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)アイテムの書式設定する方法を記述するオブジェクト。 `SelectionChanged`選択が行われたこと、として利用できるイベントの通知、`SelectedItem`プロパティ。<br /><br />[ガイド](~/xamarin-forms/user-interface/collectionview/index.md) / [サンプル](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/CollectionViewDemos/) | [![CollectionView 例](views-images/CollectionView.png "CollectionView 例")](views-images/CollectionView-Large.png#lightbox "CollectionView 例")<br />[このページの C# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/CollectionViewDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/CollectionViewDemoPage.xaml) |
 |     |     |
 
 <a name="listView" />
@@ -183,7 +190,7 @@ _Xamarin.Forms のビューとは、クロス プラットフォーム モバイ
 
 |     |     |
 | --- | --- |
-| [`ListView`](xref:Xamarin.Forms.ListView) 派生した[ `ItemsView` ](xref:Xamarin.Forms.ItemsView`1)選択可能なデータ項目のスクロール可能な一覧が表示されます。 設定、 [ `ItemsSource` ](xref:Xamarin.Forms.ItemsView`1.ItemsSource)プロパティ オブジェクト、およびセットのコレクションを[ `ItemTemplate` ](xref:Xamarin.Forms.ItemsView`1.ItemTemplate)プロパティを[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)アイテムがどのように記述するオブジェクト書式設定されます。 [ `ItemSelected` ](xref:Xamarin.Forms.ListView.ItemSelected)選択が行われたこと、として利用できるイベントの通知、 [ `SelectedItem` ](xref:Xamarin.Forms.ListView.SelectedItem)プロパティ。<br /><br />[API ドキュメント](xref:Xamarin.Forms.ListView) / [ガイド](~/xamarin-forms/user-interface/listview/index.md) / [サンプル](https://developer.xamarin.com/samples/WorkingWithListview) | [![ListView 例](views-images/ListView.png "ListView 例")](views-images/ListView-Large.png#lightbox "ListView の例")<br />[このページの C# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ListViewDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ListViewDemoPage.xaml) |
+| [`ListView`](xref:Xamarin.Forms.ListView) 派生した[ `ItemsView` ](xref:Xamarin.Forms.ItemsView`1)選択可能なデータ項目のスクロール可能な一覧が表示されます。 設定、 [ `ItemsSource` ](xref:Xamarin.Forms.ItemsView`1.ItemsSource)プロパティ オブジェクト、およびセットのコレクションを[ `ItemTemplate` ](xref:Xamarin.Forms.ItemsView`1.ItemTemplate)プロパティを[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)アイテムがどのように記述するオブジェクト書式設定されます。 [ `ItemSelected` ](xref:Xamarin.Forms.ListView.ItemSelected)選択が行われたこと、として利用できるイベントの通知、 [ `SelectedItem` ](xref:Xamarin.Forms.ListView.SelectedItem)プロパティ。<br /><br />[API ドキュメント](xref:Xamarin.Forms.ListView) / [ガイド](~/xamarin-forms/user-interface/listview/index.md) / [サンプル](https://developer.xamarin.com/samples/WorkingWithListview) | [![ListView の例](views-images/ListView.png "ListView 例")](views-images/ListView-Large.png#lightbox "ListView の例")<br />[このページの C# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ListViewDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ListViewDemoPage.xaml) |
 |     |     |
 
 ### <a name="picker"></a>ピッカー
@@ -204,6 +211,6 @@ _Xamarin.Forms のビューとは、クロス プラットフォーム モバイ
 
 ## <a name="related-links"></a>関連リンク
 
-- [Xamarin.Forms FormsGallery サンプル](https://developer.xamarin.com/samples/FormsGallery/)
+- [Xamarin.Forms FormsGallery サンプル](https://developer.xamarin.com/samples/xamarin-forms/FormsGallery/)
 - [Xamarin.Forms のサンプル](https://developer.xamarin.com/samples/xamarin-forms/all/)
 - [Xamarin.Forms API ドキュメント](https://docs.microsoft.com/dotnet/api/xamarin.forms?view=xamarin-forms)

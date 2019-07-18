@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/13/2018
-ms.openlocfilehash: bb57dbdb87555fb0b3ab8941024e5a84e4723099
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 25c5595fac2ea2aa7a87d6640cc6b5c399ab5e5e
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112638"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827809"
 ---
 # <a name="displaying-images-with-xamarinios"></a>Xamarin.iOS でのイメージを表示します。
 
@@ -84,4 +84,4 @@ imageview1.Image = UIImage.FromBundle("Pics/SF Monkey.png");
 
 ## <a name="related-links"></a>関連リンク
 
-- [コントロール (サンプル)](https://developer.xamarin.com/samples/Controls/)
+- [コントロール (サンプル)](https://developer.xamarin.com/samples/monotouch/Controls/)

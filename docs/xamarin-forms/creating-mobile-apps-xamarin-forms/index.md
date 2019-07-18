@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
 ms.openlocfilehash: c05bc88ef6d182f282decedff3e4fb03b4bb96b1
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57671755"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61334695"
 ---
 # <a name="creating-mobile-apps-with-xamarinforms-book"></a>Xamarin.Forms book で Mobile Apps を作成します。
 
@@ -101,7 +101,7 @@ Xamarin.Forms アプリケーションは通常、異なるプラットフォー
 
 ### <a name="the-role-of-xaml-has-been-elevated"></a>XAML の役割が昇格されました
 
-<i>Xamarin.Forms によるモバイル アプリを作成する</i>まず c# を使用した Xamarin.Forms アプリケーションを作成する方法について説明します。 までに Extensible Application Markup Language (XAML) が導入されていない[第 7 章です。XAML 対コード](summaries/chapter07.md)します。
+<i>Xamarin.Forms によるモバイル アプリを作成する</i>まず C# を使用した Xamarin.Forms アプリケーションを作成する方法について説明します。 までに Extensible Application Markup Language (XAML) が導入されていない[第 7 章です。XAML 対コード](summaries/chapter07.md)します。
 
 XAML で、Xamarin.Forms ではるかに大きな役割できるようになりました。 Visual Studio を使用した分散 Xamarin.Forms ソリューション テンプレートでは、ページの XAML ベースのファイルを作成します。 Xamarin.Forms を使用して、開発者は、できるだけ早く XAML で使い慣れたなります。 [EXtensible Application Markup Language (XAML)](~/xamarin-forms/xaml/index.md) Xamarin.Forms ドキュメントのセクションには、開始するための XAML のいくつかのアーティクルが含まれています。
 

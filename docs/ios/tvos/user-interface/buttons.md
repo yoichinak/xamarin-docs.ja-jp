@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/07/2017
 ms.openlocfilehash: 6d8fc1daaced24dccead78c4f9d0e5d0959b3755
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116343"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61199074"
 ---
 # <a name="working-with-tvos-buttons-in-xamarin"></a>Xamarin で tvOS のボタンを使用
 
@@ -138,7 +138,7 @@ namespace tvRemote
 
 ## <a name="buttons-and-code"></a>ボタンとコード
 
-必要に応じて、`UIButton`で作成できますC#コードおよび tvOS アプリのビューに追加します。 例えば:
+必要に応じて、`UIButton`で作成できますC#コードおよび tvOS アプリのビューに追加します。 例:
 
 ```csharp
 var button = new UIButton(UIButtonType.System);
@@ -203,13 +203,13 @@ tvOS のいくつかのプロパティを提供する、`UIButton`を使用し�
 
 ### <a name="button-titles"></a>ボタンのタイトル
 
-、上記のとおり`UIButtons`ほとんどとは異なる`UIKit`コントロールだけことはできませんので、状態を持ち、タイトルを変更する、この値を変更する必要は、指定された`UIControlState`します。 例えば:
+、上記のとおり`UIButtons`ほとんどとは異なる`UIKit`コントロールだけことはできませんので、状態を持ち、タイトルを変更する、この値を変更する必要は、指定された`UIControlState`します。 例:
 
 ```csharp
 button.SetTitle ("Hello", UIControlState.Normal);
 ```
 
-使用して、ボタンのタイトルの色を設定することができます、`SetTitleColor`メソッド。 例えば:
+使用して、ボタンのタイトルの色を設定することができます、`SetTitleColor`メソッド。 例:
 
 ```csharp
 button.SetTitleColor (UIColor.White, UIControlState.Normal);
@@ -227,7 +227,7 @@ button.SetTitleShadowColor(UIColor.Black, UIControlState.Normal);
 button.ReverseTitleShadowWhenHighlighted = true;
 ```
 
-さらに、ボタンのタイトルとして属性付きのテキストを使用することができます。 例えば:
+さらに、ボタンのタイトルとして属性付きのテキストを使用することができます。 例:
 
 ```csharp
 var normalAttributedTitle = new NSAttributedString (buttonTitle, foregroundColor: UIColor.Blue, strikethroughStyle: NSUnderlineStyle.Single);

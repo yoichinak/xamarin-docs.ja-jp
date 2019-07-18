@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/13/2017
-ms.openlocfilehash: 4609593337cc0d003c5b35ef4570f11e27b14f7b
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 4b37435c9cec7549c04c35a81ec31d3a2236e7c1
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53050401"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65925465"
 ---
 # <a name="layout-compression"></a>レイアウト圧縮
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/userinterface/layoutcompression/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/LayoutCompression/)
 
 _レイアウト圧縮は、ページのレンダリング パフォーマンスを向上させるために、ビジュアル ツリーから指定したレイアウトを削除します。この記事では、レイアウト圧縮を有効にする方法とそれがもたらす利点について説明します。_
 
@@ -124,4 +124,4 @@ Android では、この結果として 14 個のビューの入れ子のビュ�
 
 - [カスタム レイアウトの作成](~/xamarin-forms/user-interface/layouts/custom.md)
 - [高速レンダラー](~/xamarin-forms/internals/fast-renderers.md)
-- [LayoutCompression (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/layoutcompression/)
+- [LayoutCompression (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/LayoutCompression/)

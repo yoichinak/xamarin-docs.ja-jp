@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: 14711f9cc2c34d72765e28db158379bc2a26849b
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 1b4263e37e6d95c03e88905319cfe0ee167cb30b
+ms.sourcegitcommit: 85c45dc28ab3625321c271804768d8e4fce62faf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57670290"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67039695"
 ---
 # <a name="creating-a-xamarinios-application-using-the-elements-api"></a>要素の API を使用して Xamarin.iOS アプリケーションを作成します。
 
@@ -47,21 +47,20 @@ MonoTouch.Dialog のマルチ スクリーン アプリケーションを作成�
 ナビゲーション スタイルのアプリケーションを作成する必要がありますを作成する、 `UINavigationController`、として追加し、`RootViewController`で、`FinishedLaunching`のメソッド、`AppDelegate`します。 させる、`UINavigationController`追加 MonoTouch.Dialog、使用、`DialogViewController`を`UINavigationController`次に示します。
 
 ```csharp
-public override bool FinishedLaunching (UIApplication app, 
-        NSDictionary options)
+public override bool FinishedLaunching (UIApplication app, NSDictionary options)
 {
-        _window = new UIWindow (UIScreen.MainScreen.Bounds);
+    _window = new UIWindow (UIScreen.MainScreen.Bounds);
             
-        _rootElement = new RootElement ("To Do List"){new Section ()};
+    _rootElement = new RootElement ("To Do List"){new Section ()};
 
-        // code to create screens with MT.D will go here …
+    // code to create screens with MT.D will go here …
 
-        _rootVC = new DialogViewController (_rootElement);
-        _nav = new UINavigationController (_rootVC);
-        _window.RootViewController = _nav;
-        _window.MakeKeyAndVisible ();
+    _rootVC = new DialogViewController (_rootElement);
+    _nav = new UINavigationController (_rootVC);
+    _window.RootViewController = _nav;
+    _window.MakeKeyAndVisible ();
             
-        return true;
+    return true;
 }
 ```
 
@@ -88,22 +87,20 @@ _rootVC.NavigationItem.RightBarButtonItem = _addButton;
 作成したときに、`RootElement`以前を渡して、1 つ`Section`インスタンスとしての要素を追加することができるように、 <span class="ui"> + </span>ユーザーがボタンをタップします。 このイベントのボタンのハンドラーを実行するのに次のコードを使用できます。
 
 ```csharp
-_addButton.Clicked += (sender, e) => {
+_addButton.Clicked += (sender, e) => {                
+    ++n;
                 
-        ++n;
+    var task = new Task{Name = "task " + n, DueDate = DateTime.Now};
                 
-        var task = new Task{Name = "task " + n, DueDate = DateTime.Now};
-                
-        var taskElement = new RootElement (task.Name){
-                new Section () {
-                        new EntryElement (task.Name, 
-                                "Enter task description", task.Description)
-                },
-                new Section () {
-                        new DateElement ("Due Date", task.DueDate)
-                }
-        };
-        _rootElement [0].Add (taskElement);
+    var taskElement = new RootElement (task.Name) {
+        new Section () {
+            new EntryElement (task.Name, "Enter task description", task.Description)
+        },
+        new Section () {
+            new DateElement ("Due Date", task.DueDate)
+        }
+    };
+    _rootElement [0].Add (taskElement);
 };
 ```
 
@@ -112,15 +109,15 @@ _addButton.Clicked += (sender, e) => {
 ```csharp
 public class Task
 {   
-        public Task ()
-        {
-        }
+    public Task ()
+    {
+    }
+      
+    public string Name { get; set; }
         
-        public string Name { get; set; }
-        
-        public string Description { get; set; }
+    public string Description { get; set; }
 
-        public DateTime DueDate { get; set; }
+    public DateTime DueDate { get; set; }
 }
 ```
 
@@ -146,9 +143,7 @@ public class Task
 
 ## <a name="related-links"></a>関連リンク
 
-- [MTDWalkthrough (サンプル)](https://developer.xamarin.com/samples/MTDWalkthrough/)
-- [MonoTouch.Dialog とスクリーン キャスト - Miguel de Icaza の作成、iOS のログイン画面](http://youtu.be/3butqB1EG0c)
-- [スクリーン キャスト - MonoTouch.Dialog で iOS ユーザー インターフェイスを簡単に作成](http://youtu.be/j7OC5r8ZkYg)
+- [MTDWalkthrough (サンプル)](https://developer.xamarin.com/samples/monotouch/MTDWalkthrough/)
 - [MonoTouch.Dialog の概要](~/ios/user-interface/monotouch.dialog/index.md)
 - [リフレクション API のチュートリアル](~/ios/user-interface/monotouch.dialog/reflection-api-walkthrough.md)
 - [JSON 要素のチュートリアル](~/ios/user-interface/monotouch.dialog/json-element-walkthrough.md)

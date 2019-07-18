@@ -6,12 +6,12 @@ ms.assetid: 044FF669-0B81-4186-97A5-148C8B56EE9C
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: c4f7f1e9702fb2ee0f5525343a52e3aacd85d68c
-ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
+ms.openlocfilehash: e820a0c208907a95dda4a50427bb4dac27b88964
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37855261"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64977903"
 ---
 # <a name="advanced-manual-real-world-example"></a>(手動) の実際の例の詳細
 
@@ -137,8 +137,3 @@ Done.
 更新が完了したら、これら 2 つのファイルが Mac を Visual Studio でバインド プロジェクトに今すぐ追加するまたはに直接渡される、`btouch`または`bmac`最終的なバインドを生成するツール。
 
 バインディング プロセスの詳細な説明を参照してください、[完全なチュートリアルの手順](~/ios/platform/binding-objective-c/walkthrough.md)します。
-
-## <a name="related-links"></a>関連リンク
-
-- [Xamarin University のコース: OBJECTIVE-C のバインド ライブラリをビルドします。](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin University のコース: 目標油性、OBJECTIVE-C のバインド ライブラリをビルドします。](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

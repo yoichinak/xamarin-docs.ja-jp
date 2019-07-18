@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 4048ec78d48b810b39d46fbcb7708860c478cce3
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 9e5fb0196b67e23a034856ee0dd7b9c7d4846b31
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57667205"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65971107"
 ---
 # <a name="introduction-to-xamarinforms-styles"></a>Xamarin.Forms のスタイルの概要
 
@@ -25,7 +25,7 @@ Xamarin.Forms アプリケーションには、複数のコントロール同一
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="Styles.NoStylesPage"
     Title="No Styles"
-    Icon="xaml.png">
+    IconImageSource="xaml.png">
     <ContentPage.Content>
         <StackLayout Padding="0,20,0,0">
             <Label Text="These labels"
@@ -53,7 +53,7 @@ public class NoStylesPageCS : ContentPage
     public NoStylesPageCS ()
     {
         Title = "No Styles";
-        Icon = "csharp.png";
+        IconImageSource = "csharp.png";
         Padding = new Thickness (0, 20, 0, 0);
 
         Content = new StackLayout {
@@ -107,7 +107,7 @@ public class NoStylesPageCS : ContentPage
 
 各[ `Style` ](xref:Xamarin.Forms.Style)インスタンスは*明示的な*、または*暗黙的な*:
 
-- *明示的な* [ `Style` ](xref:Xamarin.Forms.Style)インスタンスが指定することで定義されている、 [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)と`x:Key`値し、ターゲット要素の設定[`Style` ](xref:Xamarin.Forms.VisualElement.Style)プロパティを`x:Key`参照。 詳細については*明示的な*スタイルを参照してください[明示的なスタイル](~/xamarin-forms/user-interface/styles/explicit.md)します。
+- *明示的な* [ `Style` ](xref:Xamarin.Forms.Style)インスタンスが指定することで定義されている、 [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)と`x:Key`値し、ターゲット要素の設定[`Style` ](xref:Xamarin.Forms.NavigableElement.Style)プロパティを`x:Key`参照。 詳細については*明示的な*スタイルを参照してください[明示的なスタイル](~/xamarin-forms/user-interface/styles/explicit.md)します。
 - *暗黙的な* [ `Style` ](xref:Xamarin.Forms.Style)のみを指定してインスタンスが定義されている、 [ `TargetType`](xref:Xamarin.Forms.Style.TargetType)します。 `Style`は、自動的にその型のすべての要素に適用されますし、インスタンス。 注そのサブクラスの`TargetType`が自動的にない、`Style`適用します。 詳細については*暗黙的な*スタイルを参照してください[暗黙的スタイル](~/xamarin-forms/user-interface/styles/implicit.md)します。
 
 作成するときに、 [ `Style` ](xref:Xamarin.Forms.Style)、 [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)プロパティは常に必要です。 次のコード例は、*明示的な*スタイル (注、 `x:Key`) XAML で作成します。

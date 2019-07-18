@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: a667f952eead5bed8305f4c9f4201fd6235b883a
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: ee8d6966b9eac2dad6a36c215bf7aa5bdf79a867
+ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35239972"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67512997"
 ---
 # <a name="xamarinforms-control-templates"></a>Xamarin.Forms のコントロール テンプレート
 
@@ -22,7 +22,7 @@ _コントロール テンプレートを使うとページの外観とそのコ
 
 Xamarin.Forms のコントロール テンプレートには、実行時にアプリケーション ページを簡単にテーマ設定および再テーマ設定する機能が備わっています。 この記事では、コントロール テンプレートの概要を説明します。
 
-## <a name="creating-a-controltemplatecreatingmd"></a>[ControlTemplate の作成](creating.md)
+## <a name="create-a-controltemplatecreatingmd"></a>[ControlTemplate の作成](creating.md)
 
 コントロール テンプレートは、アプリケーション レベルまたはページ レベルで定義できます。 この記事では、コントロール テンプレートを作成して使用する方法を示します。
 

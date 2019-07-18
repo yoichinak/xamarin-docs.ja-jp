@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/07/2018
-ms.openlocfilehash: 10d62ea050296eb6d36c9861b757ca44d3a2e452
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: d33dc7d789b9a21fd843cd1f7cab8d221145f492
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53058192"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978045"
 ---
 # <a name="the-xamarinforms-visual-state-manager"></a>Xamarin.Forms Visual State Manager
 
@@ -253,17 +253,17 @@ Visual State Manager を使用すると、XAML ファイルに、ビューが通
 
 2 つ目の `Entry` には `Trigger` コレクション の一部として `DataTrigger` が含まれることに注目してください。 これにより、この `Entry` は、3 番目の `Entry` に何かが入力されるまで無効になります。 iOS、Android、およびユニバーサル Windows プラットフォーム (UWP) で実行されている起動時のページを次に示します。
 
-[![VSM on View: 無効](vsm-images/VsmOnViewDisabled.png "VSM on View - disabled")](vsm-images/VsmOnViewDisabled-Large.png#lightbox)
+[![ビューで VSM:無効になっている](vsm-images/VsmOnViewDisabled.png "VSM ビュー - 無効になっています")](vsm-images/VsmOnViewDisabled-Large.png#lightbox)
 
 現在の表示状態が「無効」のため、iOS および Android の画面では、2 番目の `Entry` の背景はピンクになっています。 `Entry` の UWP 実装では、`Entry` が無効の場合に背景色を設定することができません。 
 
 3 つ目の `Entry` にいくつかのテキストを入力すると、2 つ目の `Entry` は「標準」の状態に切り替わり、背景が黄緑色になります。
 
-[![VSM on View: 標準](vsm-images/VsmOnViewNormal.png "VSM on View - normal")](vsm-images/VsmOnViewNormal-Large.png#lightbox)
+[![ビューで VSM:標準](vsm-images/VsmOnViewNormal.png "VSM ビュー - 標準")](vsm-images/VsmOnViewNormal-Large.png#lightbox)
 
 2 つ目の `Entry` に触れると、入力フォーカスを取得します。 これにより、「優先」の状態に切り替わり、高さが 2 倍に拡大されます。
 
-[![VSM on View: 優先](vsm-images/VsmOnViewFocused.png "VSM on view - focused")](vsm-images/VsmOnViewFocused-Large.png#lightbox)
+[![ビューで VSM:重点を置いた](vsm-images/VsmOnViewFocused.png "VSM ビューに重点を置いています")](vsm-images/VsmOnViewFocused-Large.png#lightbox)
 
 `Entry` が入力フォーカスを取得すると、黄緑色の背景は保持されないことに注意してください。 Visual State Manager は、表示状態の間で切り替わるため、以前の状態によって設定されたプロパティはリセットされます。 状態表示は相互に排他的であることを覚えておいてください。 「標準」状態は、`Entry` が単に有効であるというだけではありません。 それは、`Entry` が有効でかつ入力フォーカスがないということを意味します。 
 
@@ -426,7 +426,7 @@ VisualStateManager.GoToState(this, "Focused");
 
 `VisualElement` クラス内で見つけることのできる Visual State Manager のコードはこれだけです。 `GoToState` は、`VisualElement` から派生するすべてのクラスに基づくすべてのオブジェクトのために呼び出されるため、どの `VisualElement` オブジェクトからも Visual State Manager を使用して、変更に対応することができます。
 
-興味深いことに、"CommonStates" という表示状態グループの名前は、`VisualElement` 内で明示的に参照されていません。 グループ名は、Visual State Manager 用の API の一部ではありません。 これまでに示した 2 つのサンプルプログラムの 1 つでは、グループ名を "CommonStates" から別の名前に変更することができ、そのプログラムは引き続き動作します。 グループ名は、単にそのグループ内の状態の一般的な説明にすぎません。 どのグループの表示状態も相互に排他的であるということが暗黙的に認識されます。いつでもただ 1 つの状態だけが現在の状態になります。
+興味深いことに、"CommonStates" という表示状態グループの名前は、`VisualElement` 内で明示的に参照されていません。 グループ名は、Visual State Manager 用の API の一部ではありません。 これまでに示した 2 つのサンプルプログラムの 1 つでは、グループ名を "CommonStates" から別の名前に変更することができ、そのプログラムは引き続き動作します。 グループ名は、単にそのグループ内の状態の一般的な説明にすぎません。 任意のグループの表示状態は相互に排他的であることを暗黙的に理解します。1 つの状態と 1 つだけの状態はいつでも現在です。
 
 独自の表示状態を実装する場合は、コードから `VisualStateManager.GoToState` を呼び出す必要があります。 ほとんどの場合、ページクラスの分離コードファイルからこのメソッドを呼ぶことになるでしょう。
 
@@ -492,11 +492,11 @@ VSM マークアップは、2 番目の (`helpLabel` という名前の) `Label`
 
 `Entry` に有効な電話番号が含まれない場合、現在の状態は「無効」になるので、 2 番目の `Label` が表示され、`Button` は無効になります。
 
-[![VSM Validation: Invalid State](vsm-images/VsmValidationInvalid.png "VSM validation - invalid")](vsm-images/VsmValidationInvalid-Large.png#lightbox)
+[![VSM 検証:無効な状態](vsm-images/VsmValidationInvalid.png "VSM 検証 - が無効です")](vsm-images/VsmValidationInvalid-Large.png#lightbox)
 
 有効な電話番号を入力すると、現在の状態は「有効」になります。 2 番目の `Entry` は消えて、`Button` が有効になります。
 
-[![VSM Validation: Valid State](vsm-images/VsmValidationValid.png "VSM validation - valid")](vsm-images/VsmValidationValid-Large.png#lightbox)
+[![VSM 検証:有効な状態](vsm-images/VsmValidationValid.png "有効な VSM の検証")](vsm-images/VsmValidationValid-Large.png#lightbox)
 
 分離コード ファイルは、役割の処理を担います、`TextChanged`からイベントを`Entry`します。 ハンドラーは、入力文字列が有効かどうかを判断するのに正規表現を使用します。 という名前の分離コード ファイル内のメソッド`GoToState`呼び出す静的`VisualStateManager.GoToState`両方のメソッド`helpLabel`と`submitButton`:
 
@@ -529,7 +529,7 @@ public partial class VsmValidationPage : ContentPage
 
 呼び出すと、これらの表示状態で、分離コード ファイルに影響を受けるページ上のすべてのオブジェクトのアカウントを実行する必要がありますに注意してください。`VisualStateManager.GoToState`のこれらの各オブジェクト。 この例では 2 つのオブジェクト (、 `Label` 、 `Button`)、いくつかが考えられますが、詳細。
 
-疑問に思うかもしれません。 場合は、分離コード ファイルには、これらの表示状態の影響を受けるページのすべてのオブジェクトを参照する必要があります、分離コード ファイルだけにアクセスできない理由オブジェクト直接でしょうか。 これは間違いでした。 ただし、VSM を使用する利点は、どの視覚的要素を制御できることだけで、XAML UI 設計のすべてを 1 つの場所に保持する別の状態に対応します。 視覚的な外観の設定を視覚的要素を分離コードから直接アクセスすることによって回避できます。
+疑問に思うかもしれません。場合は、分離コード ファイルには、これらの表示状態の影響を受けるページのすべてのオブジェクトを参照する必要があります、理由ことはできません、分離コード ファイル単にオブジェクトに直接アクセスしますか。 これは間違いでした。 ただし、VSM を使用する利点は、どの視覚的要素を制御できることだけで、XAML UI 設計のすべてを 1 つの場所に保持する別の状態に対応します。 視覚的な外観の設定を視覚的要素を分離コードから直接アクセスすることによって回避できます。
 
 クラスを派生することが検討される可能性があります`Entry`とおそらく外部検証関数を設定できるプロパティを定義します。 派生したクラス`Entry`を呼び出して、`VisualStateManager.GoToState`メソッド。 このスキームは場合にのみが正常に機能は、`Entry`されたさまざまな視覚的な状態の影響を受ける唯一のオブジェクト。 この例で、`Label`と`Button`も影響します。 VSM マークアップに接続されているために、方法はありません、 `Entry` VSM マークアップでは、ビジュアルの状態に変更を別のオブジェクトから参照するには、その他のオブジェクトをこれらに接続 ページと方法がないその他のオブジェクトを制御します。
 
@@ -543,11 +543,11 @@ public partial class VsmValidationPage : ContentPage
 
 簡単な例は、アプリケーションのコンテンツに影響するボタンの小規模なコレクションを表示するアプリケーションです。 縦モードの場合でこれらのボタンをページ上部にある水平方向の行で表示される可能性があります。
 
-[![VSM アダプティブ レイアウト: 縦](vsm-images/VsmAdaptiveLayoutPortrait.png "VSM アダプティブ レイアウト - 縦")](vsm-images/VsmAdaptiveLayoutPortrait-Large.png#lightbox)
+[![VSM アダプティブ レイアウト:縦](vsm-images/VsmAdaptiveLayoutPortrait.png "VSM アダプティブ レイアウト - 縦")](vsm-images/VsmAdaptiveLayoutPortrait-Large.png#lightbox)
 
 横モードでボタンの配列が 1 つの側に移動され、列に表示。
 
-[![VSM アダプティブ レイアウト: 横](vsm-images/VsmAdaptiveLayoutLandscape.png "VSM アダプティブ レイアウト - 横")](vsm-images/VsmAdaptiveLayoutLandscape-Large.png#lightbox)
+[![VSM アダプティブ レイアウト:ランドス ケープ](vsm-images/VsmAdaptiveLayoutLandscape.png "VSM アダプティブ レイアウト - 横")](vsm-images/VsmAdaptiveLayoutLandscape-Large.png#lightbox)
 
 上から下に、プログラムはユニバーサル Windows プラットフォーム、Android、iOS で実行されています。
 
@@ -712,9 +712,8 @@ public partial class VsmAdaptiveLayoutPage : ContentPage
 
 > [!VIDEO https://youtube.com/embed/qhUHbVP5mIQ]
 
-**Xamarin.Forms 3.0 Visual State Manager、[Xamarin University](https://university.xamarin.com/) 提供**
+**Xamarin.Forms 3.0 Visual State Manager のビデオ**
 
 ## <a name="related-links"></a>関連リンク
 
 - [VsmDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/VsmDemos/)
-

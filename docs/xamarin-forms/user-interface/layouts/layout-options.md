@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/10/2017
-ms.openlocfilehash: a78911a13ca3682a18b0911d020d98445b4f560c
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: afeae9d893b2ebe161943286d348f7a7a1074b0b
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059510"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65925393"
 ---
 # <a name="layout-options-in-xamarinforms"></a>Xamarin.Forms のレイアウト オプション
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/userinterface/layoutoptions/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/LayoutOptions/)
 
 _すべての Xamarin.Forms のビューには、型 LayoutOptions の HorizontalOptions と \-options のプロパティがあります。この記事では、各 LayoutOptions 値が、ビューの拡張と配置に与える影響について説明します。_
 
@@ -160,5 +160,5 @@ Content = new StackLayout
 
 ## <a name="related-links"></a>関連リンク
 
-- [LayoutOptions (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/layoutoptions/)
+- [LayoutOptions (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/LayoutOptions/)
 - [LayoutOptions](xref:Xamarin.Forms.LayoutOptions)

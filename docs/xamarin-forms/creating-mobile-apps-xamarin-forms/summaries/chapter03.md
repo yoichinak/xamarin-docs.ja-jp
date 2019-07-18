@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2018
 ms.openlocfilehash: 11b0a9c5b165df2b0d02bb09fb282cc18290e6ca
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54207849"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61334657"
 ---
 # <a name="summary-of-chapter-3-deeper-into-text"></a>第 3 章の概要です。 テキストに進む
 
@@ -28,7 +28,7 @@ ms.locfileid: "54207849"
 
 ときに、`HorizontalOptions`と`VerticalOptions`プロパティが以外の値に設定されます`LayoutOptions.Fill`、サイズ、`Label`サイズのコンテナーが利用できるようにするまで、テキストのレンダリングに必要な領域に準拠するもの、 `Label`。 `Label`言います*制約のない*し、独自のサイズを決定します。
 
-(注。条件*制約付き*と*制約のない*制約なしのビューは、制約付きのビューよりも概して小さいため、逆があります。 また、これらの用語は使用されません一貫した方法で書籍の前半の章。)
+(メモ: 条件*制約付き*と*制約のない*制約なしのビューは、制約付きのビューよりも概して小さいため、逆があります。 また、これらの用語は使用されません一貫した方法で書籍の前半の章。)
 
 などのビューを`Label`1 つのディメンションでは制限し、制約、それ以外のことができます。 A`Label`水平方向に指定されている場合、複数の行にテキストを折り返すだけされます。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2018
-ms.openlocfilehash: 086ed765781d9297f07574519d2cbc9cf93ac4dd
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 855bbc61fb5e4e653dbd39ddf05fac3e2fb42d8c
+ms.sourcegitcommit: 00deecefc17a98210bed12b4ef99ecca710275f1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059549"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67493355"
 ---
 # <a name="part-1-getting-started-with-xaml"></a>第 1 部です。 XAML の概要
 
@@ -102,7 +102,7 @@ Visual studio for Mac では、次のように選択します。**ファイル >
 </ContentPage>
 ```
 
-2 つの XML 名前空間 ( `xmlns`) の宣言は、Uri、Xamarin の web サイトの見かけ上 1 つ目と Microsoft's で 1 秒間を参照してください。 これらどのような Uri ポイントを確認する必要はありません。 何もありません。 Xamarin と Microsoft によって所有されている Uri だけあり、基本的にバージョンの識別子として機能します。
+2 つの XML 名前空間 (`xmlns`) の宣言は、Uri、Xamarin の web サイトの見かけ上 1 つ目と Microsoft's で 1 秒間を参照してください。 これらどのような Uri ポイントを確認する必要はありません。 何もありません。 Xamarin と Microsoft によって所有されている Uri だけあり、基本的にバージョンの識別子として機能します。
 
 最初の XML 名前空間宣言では、プレフィックスのない XAML ファイル内で定義されているタグがたとえば参照、Xamarin.Forms のクラスにことを意味`ContentPage`します。 2 番目の名前空間宣言のプレフィックスを定義する`x`します。 これは、使用のいくつかの要素とは、XAML に固有の属性と自体が XAML の他の実装でサポートされています。 ただし、これらの要素と属性では、URI に埋め込まれた年によって多少異なります。 Xamarin.Forms には、2009 XAML 仕様が、すべてのサポートしています。
 
@@ -149,7 +149,7 @@ Visual Studio では、プロジェクトをビルド、生成する XAML ファ
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-その他の XAML ベースを追加する`ContentPage`をプロジェクトにクラスを選択、 **XamlSamples** .NET Standard ライブラリ プロジェクトし、呼び出す、**プロジェクト > 新しい項目の追加**メニュー項目。 左側にある、**新しい項目の追加**ダイアログ ボックスで、 **Visual C#** と**Xamarin.Forms**します。 一覧から選択**コンテンツ ページ**(いない**コンテンツ ページ (C#)**、コードのみ ページを作成するまたは**コンテンツ ビュー**、ページではない)。 ページの名前、たとえば、 **HelloXamlPage.xaml**:
+その他の XAML ベースを追加する`ContentPage`をプロジェクトにクラスを選択、 **XamlSamples** .NET Standard ライブラリ プロジェクトし、呼び出す、**プロジェクト > 新しい項目の追加**メニュー項目。 左側にある、**新しい項目の追加**ダイアログ ボックスで、 **Visual C#** と**Xamarin.Forms**します。 一覧から選択**コンテンツ ページ**(いない**コンテンツ ページ (C#)** 、コードのみ ページを作成するまたは**コンテンツ ビュー**、ページではない)。 ページの名前、たとえば、 **HelloXamlPage.xaml**:
 
 ![](get-started-with-xaml-images/win/addnewitemdialog.w157.png "新しい項目 ダイアログ ボックスを追加します。")
 
@@ -203,9 +203,9 @@ Visual Studio では、プロジェクトをビルド、生成する XAML ファ
 
 また、`Title`ルート タグに属性が設定されています。
 
-この時点では、クラス、プロパティ、および XML 間のリレーションシップを明らかにする必要があります。 A Xamarin.Forms クラス (など`ContentPage`または`Label`) XML 要素としての XAML ファイルに表示されます。 そのクラスのプロパティ-など`Title`で`ContentPage`の 7 つのプロパティと`Label`-通常、XML 属性として表示されます。
+現時点では、クラス、プロパティ、および XML 間の関係を明らかになります。Xamarin.Forms クラス (など`ContentPage`または`Label`) XML 要素としての XAML ファイルに表示されます。 そのクラスのプロパティ-など`Title`で`ContentPage`の 7 つのプロパティと`Label`-通常、XML 属性として表示されます。
 
-これらのプロパティの値を設定する多くのショートカットが存在します。 一部のプロパティは基本データ型: など、`Title`と`Text`型のプロパティは、 `String`、`Rotation`の種類は`Double`と`IsVisible`(は`true`既定でし、ここでのみ設定されます図) は型の`Boolean`します。
+これらのプロパティの値を設定する多くのショートカットが存在します。 一部のプロパティは、基本的なデータの種類です。など、`Title`と`Text`型のプロパティは、 `String`、`Rotation`の種類は`Double`と`IsVisible`(は`true`既定では説明のみをここで設定されます) 型`Boolean`.
 
 `HorizontalTextAlignment`プロパティの型は`TextAlignment`、列挙型であります。 列挙型のプロパティ、メンバー名はすべて指定する必要があります。
 

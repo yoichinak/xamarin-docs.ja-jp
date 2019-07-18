@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: bf86759832a1aba0ccc1c144981af6ea4eae8670
-ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
+ms.openlocfilehash: 58e3593dc09c76439a3e128e51f354c169d7e72e
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/30/2019
-ms.locfileid: "58677795"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865974"
 ---
 # <a name="deploying-watchos-apps-to-the-app-store"></a>WatchOS アプリを App Store に展開します。
 
@@ -89,15 +89,15 @@ ITunes Connect でアプリを構成するときに、[ウォッチ] アイコ�
 
 1. IOS アプリがスタートアップ プロジェクトであることを確認します。 ない場合は、右クリックして設定をします。
 
-  ![](appstore-images/xs-startup.png "スタートアップ プロジェクトの設定")
+   ![](appstore-images/xs-startup.png "スタートアップ プロジェクトの設定")
 
 2. 選択、 **AppStore**ビルド構成。
 
-  ![](appstore-images/xs-appstore.png "AppStore のビルド構成")
+   ![](appstore-images/xs-appstore.png "AppStore のビルド構成")
 
 3. 選択、**ビルド > アーカイブ**アーカイブ プロセスを開始するメニュー項目。
 
-  ![](appstore-images/xs-archive.png "[ビルド] メニュー")
+   ![](appstore-images/xs-archive.png "[ビルド] メニュー")
 
 選択することもできます、**ビュー > アーカイブしています.** メニュー項目を以前に作成されたアーカイブを参照してください。
 
@@ -111,21 +111,21 @@ Xcode は Visual studio for mac。 作成されたアーカイブを自動的に
 
 1. Xcode を起動し、選択**ウィンドウ > オーガナイザー**:
 
-  ![](appstore-images/xc-organizer.png "[ウィンドウ] メニュー")
+   ![](appstore-images/xc-organizer.png "[ウィンドウ] メニュー")
 
 2. 切り替えて、**アーカイブ**タブし、for Mac に Visual Studio で作成されたアーカイブを選択します。
 
-  ![](appstore-images/xc-archives.png "[アーカイブ] タブ")
+   ![](appstore-images/xc-archives.png "[アーカイブ] タブ")
 
 3. 必要に応じて**を検証しています.** 、アーカイブを選択し、**送信しています.** アプリを iTunes Connect にアップロードします。
 
 4. (複数のいずれかに属している) 場合は、開発チームを選択し、送信を確定します。
 
-  ![](appstore-images/xc-submit1.png "開発チームのセクション")
+   ![](appstore-images/xc-submit1.png "開発チームのセクション")
 
 5. ITunes Connect は、アップロードしたバイナリを表示するには、もう一度アクセスしてください。 アプリの構成 ページに移動し、選択**プレリリース**、上部のメニューから、**ビルド**一覧。
 
-  [![](appstore-images/itc-prerelease-sml.png "ITunes Connect でアプリの構成 ページ")](appstore-images/itc-prerelease.png#lightbox)
+   [![](appstore-images/itc-prerelease-sml.png "ITunes Connect でアプリの構成 ページ")](appstore-images/itc-prerelease.png#lightbox)
 
 承認用のアプリを送信することができますし、**バージョン**ページ。 参照してください、 [iOS アプリの配布の概要](~/ios/deploy-test/app-distribution/index.md)詳細についてはします。
 

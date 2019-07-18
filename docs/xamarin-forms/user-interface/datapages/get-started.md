@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: e3256787c0bc0852275f663772b8a91a6825a0dd
-ms.sourcegitcommit: 34819671c7910d29f018bdb394ddd4a4b0cd3a31
+ms.openlocfilehash: a77ebd8a6c64d2ee44011e8d51977adf88b52be9
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59675869"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832435"
 ---
 # <a name="getting-started-with-datapages"></a>DataPages の概要
 
@@ -36,7 +36,7 @@ Xamarin.Forms .NET Standard ライブラリとアプリケーション プロジ
 * Xamarin.Forms.Theme.Base
 * テーマの実装を Nuget (例: Xamarin.Forms.Theme.Light)
 
-## <a name="2-add-theme-reference"></a>2.テーマの参照を追加します。
+## <a name="2-add-theme-reference"></a>2. テーマの参照を追加します。
 
 **App.xaml**ファイルに追加し、カスタム`xmlns:mytheme`テーマのテーマがアプリケーションのリソース ディクショナリにマージされるかを確認してください。
 
@@ -51,7 +51,8 @@ Xamarin.Forms .NET Standard ライブラリとアプリケーション プロジ
 </Application>
 ```
 
-**大事な：** 手順を行う必要があります[テーマ アセンブリ (下記) を読み込む](#loadtheme)iOS に一部の定型コードを追加して`AppDelegate`と Android`MainActivity`します。 これは、将来のプレビュー リリースで改善されます。
+> [!IMPORTANT]
+> 手順を行う必要があります[テーマ アセンブリ (下記) を読み込む](#loadtheme)iOS に一部の定型コードを追加して`AppDelegate`と Android`MainActivity`します。 これは、将来のプレビュー リリースで改善されます。
 
 
 ## <a name="3-add-a-xaml-page"></a>3.XAML ページを追加します。
@@ -98,7 +99,8 @@ MainPage = new NavigationPage (new SessionDataPage ());
 
 削除、`Content`要素置き換え、それを`p:ListDataPage.DataSource`データ ページを設定します。 リモート Json 次の例では、データ ファイルを URL から読み込まれています。
 
-**注:** プレビュー*必要があります*、`StyleClass`属性をデータ ソースのレンダリング ヒントを提供します。 `StyleClass="Events"`プレビューでは事前に定義し、スタイルを含むレイアウトを指す*ハードコード*使用されている JSON データ ソースと一致します。
+> [!NOTE]
+> プレビュー*必要があります*、`StyleClass`属性をデータ ソースのレンダリング ヒントを提供します。 `StyleClass="Events"`プレビューでは事前に定義し、スタイルを含むレイアウトを指す*ハードコード*使用されている JSON データ ソースと一致します。
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>

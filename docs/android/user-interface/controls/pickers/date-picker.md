@@ -1,5 +1,5 @@
 ---
-title: 日付の選択
+title: 日付選択
 description: DatePickerDialog と DialogFragment を使用して予定表の日付を選択します。
 ms.prod: xamarin
 ms.assetid: F2BCD8D4-8957-EA53-C5A8-6BB603ADB47B
@@ -8,13 +8,13 @@ author: conceptdev
 ms.author: crdun
 ms.date: 01/22/2018
 ms.openlocfilehash: 9f82317f6041de3952d11b391afffafe6fbd8761
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122973"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61153506"
 ---
-# <a name="date-picker"></a>日付の選択
+# <a name="date-picker"></a>日付選択
 
 ## <a name="overview"></a>概要
 

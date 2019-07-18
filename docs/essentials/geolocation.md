@@ -5,12 +5,12 @@ ms.assetid: 8F66092C-13F0-4FEE-8AA5-901D5F79B357
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 03/13/2019
-ms.openlocfilehash: 93abf62e5d0b1df48606e4515fca6747146c7777
-ms.sourcegitcommit: 64d6da88bb6ba222ab2decd2fdc8e95d377438a6
+ms.openlocfilehash: 2ee4683bce02e95c52235afa823be21b89863208
+ms.sourcegitcommit: 8ecfa339d0f3e7687977bfe4fc96448942690183
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58175357"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67558671"
 ---
 # <a name="xamarinessentials-geolocation"></a>Xamarin.Essentials:位置情報
 
@@ -48,30 +48,30 @@ Coarse および Fine Location アクセス許可が必要であり、Android �
 <uses-feature android:name="android.hardware.location.network" android:required="false" />
 ```
 
-または、Android プロジェクトを右クリックし、プロジェクトのプロパティを開きます。 **[Android マニフェスト]** の下で **[必要なアクセス許可:]** 領域を探し、**[ACCESS_COARSE_LOCATION]** および **[ACCESS_FINE_LOCATION]** アクセス許可をオンにします。 これにより、**AndroidManifest.xml** ファイルが自動的に更新されます。
+または、Android プロジェクトを右クリックし、プロジェクトのプロパティを開きます。 **[Android マニフェスト]** の下で **[必要なアクセス許可:]** 領域を探し、 **[ACCESS_COARSE_LOCATION]** および **[ACCESS_FINE_LOCATION]** アクセス許可をオンにします。 これにより、**AndroidManifest.xml** ファイルが自動的に更新されます。
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
 デバイスの位置情報にアクセスするには、アプリの **Info.plist** に `NSLocationWhenInUseUsageDescription` キーが含まれる必要があります。
 
-plist エディターを開き、**[プライバシー - 位置情報 (使用時) の利用状況の説明]** プロパティを追加して、ユーザーに表示する値を入力します。
+plist エディターを開き、 **[プライバシー - 位置情報 (使用時) の利用状況の説明]** プロパティを追加して、ユーザーに表示する値を入力します。
 
-または、ファイルを手動で編集して、次の内容を追加します。
+または、ファイルを手動で編集し、以下を追加して、根拠を更新します。
 
 ```xml
 <key>NSLocationWhenInUseUsageDescription</key>
-<string>This app needs access location when open.</string>
+<string>Fill in a reason why your app needs access to location.</string>
 ```
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-アプリケーションに `Location` アクセス許可を設定する必要があります。 これは、**Package.appxmanifest** を開き、**[機能]** タブを選択して **[場所]** をオンにすることによって行うことができます。
+アプリケーションに `Location` アクセス許可を設定する必要があります。 これは、**Package.appxmanifest** を開き、 **[機能]** タブを選択して **[場所]** をオンにすることによって行うことができます。
 
 -----
 
 ## <a name="using-geolocation"></a>Geolocation の使用
 
-自分のクラスの Xamarin.Essentials に参照を追加します。
+自分のクラスに Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
@@ -79,7 +79,7 @@ using Xamarin.Essentials;
 
 Geolocation API では、必要に応じてユーザーにアクセス許可も求められます。
 
-`GetLastKnownLocationAsync` メソッドを呼び出すことにより、デバイスの最後の既知の[場所](xref:Xamarin.Essentials.Location)を取得できます。 多くの場合、この方が完全なクエリを行うより速くわかりますが、精度が低下することがあります。
+`GetLastKnownLocationAsync` メソッドを呼び出すことにより、デバイスの最後の既知の[場所](xref:Xamarin.Essentials.Location)を取得できます。 多くの場合、この方が完全なクエリを行うよりも早いですが、精度が低下することがあり、キャッシュされた場所が存在しない場合は `null` が返されることがあります。
 
 ```csharp
 try

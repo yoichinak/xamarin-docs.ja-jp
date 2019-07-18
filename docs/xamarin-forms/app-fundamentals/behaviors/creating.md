@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: be7263ad0c9112aa640a4558d7fdbaf2a16ce079
-ms.sourcegitcommit: 64d6da88bb6ba222ab2decd2fdc8e95d377438a6
+ms.openlocfilehash: 650c341ab4b599a4eaf0cab81ba6f9129699e15d
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57981680"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926027"
 ---
 # <a name="create-xamarinforms-behaviors"></a>Xamarin.Forms のビヘイビアーを登録する
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/behaviors/numericvalidationbehavior/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/Behaviors/NumericValidationBehavior/)
 
 "_Xamarin.Forms のビヘイビアーは、Behavior または Behavior&lt;T&gt; クラスから派生させることで作成されます。この記事では、Xamarin.Forms のビヘイビアーを作成して使用する方法を示します。_"
 
@@ -174,7 +174,7 @@ public class NumericValidationBehavior : Behavior<Entry>
 </Style>
 ```
 
-次に示すように、`StaticResource` マークアップ拡張を使用して [`Style`](xref:Xamarin.Forms.VisualElement.Style) プロパティを `Style` インスタンスに設定することで、[`Style`](xref:Xamarin.Forms.Style) を [`Entry`](xref:Xamarin.Forms.Entry) コントロールに適用できます。
+次に示すように、`StaticResource` マークアップ拡張を使用して [`Style`](xref:Xamarin.Forms.NavigableElement.Style) プロパティを `Style` インスタンスに設定することで、[`Style`](xref:Xamarin.Forms.Style) を [`Entry`](xref:Xamarin.Forms.Entry) コントロールに適用できます。
 
 ```xaml
 <Entry Placeholder="Enter a System.Double" Style="{StaticResource NumericValidationStyle}">
@@ -211,7 +211,7 @@ entry.Behaviors.Clear();
 
 ## <a name="related-links"></a>関連リンク
 
-- [Xamarin.Forms のビヘイビアー (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/behaviors/numericvalidationbehavior/)
-- [スタイルを使用して適用される Xamarin.Forms のビヘイビアー (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/behaviors/numericvalidationbehaviorstyle/)
+- [Xamarin.Forms のビヘイビアー (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/Behaviors/NumericValidationBehavior/)
+- [スタイルを使用して適用される Xamarin.Forms のビヘイビアー (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/Behaviors/NumericValidationBehaviorStyle/)
 - [Behavior](xref:Xamarin.Forms.Behavior)
 - [Behavior<T>](xref:Xamarin.Forms.Behavior`1)

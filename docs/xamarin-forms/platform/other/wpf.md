@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/05/2018
-ms.openlocfilehash: 2bef13e7f465dd213649f88deb572eb661895250
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: a7dbe7ae5bb1162bcbcb58ea1b39df197b8ed916
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58854809"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64977710"
 ---
 # <a name="wpf-platform-setup"></a>WPF プラットフォームのセットアップ
 
@@ -27,7 +27,7 @@ Xamarin.Forms では、Windows Presentation Foundation (WPF) のプレビュー�
 
 > [!VIDEO https://youtube.com/embed/Fy9N6OSxK64]
 
-**Xamarin.Forms 3.0 WPF をサポートして[Xamarin University](https://university.xamarin.com/)**
+**Xamarin.Forms 3.0 の WPF サポートのビデオ**
 
 ## <a name="adding-a-wpf-app"></a>WPF アプリの追加
 

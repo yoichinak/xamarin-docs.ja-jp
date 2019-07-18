@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/08/2018
-ms.openlocfilehash: e37fd88f0d5fcf02ece0ae2f5e3164a507067e29
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: 62b577393a498587ee2e2e899d20bfeec7988c4e
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58869825"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832368"
 ---
 # <a name="siri-shortcuts-in-xamarinios"></a>Xamarin.iOS で Siri ショートカット
 
@@ -218,7 +218,7 @@ Xcode の 10 を使用すると、カスタムのインテントを作成しま�
 - 応答の**プロパティ**ユーザーに通知メッセージをカスタマイズするために使用できます。 **OrderSoup**インテントの応答に**スープ**と**waitTime**プロパティ。
 - **応答テンプレート**を目的のタスクが完了した後に状態を示すために使用できるさまざまな成功と失敗メッセージを指定します。
 - **成功**応答の成功を示すチェック ボックスを選択する必要があります。
- - **OrderSoupIntent**成功応答を使用して、**スープ**と**waitTime**親しみやすく、便利なときに、部品注文は準備ができますを説明するメッセージを提供するプロパティ。
+- **OrderSoupIntent**成功応答を使用して、**スープ**と**waitTime**親しみやすく、便利なときに、部品注文は準備ができますを説明するメッセージを提供するプロパティ。
 
 ### <a name="generating-code-for-the-custom-intent"></a>カスタムの目的のコードを生成します。
 
@@ -645,7 +645,7 @@ public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
 
 - スープ Chef アプリとその拡張機能の間でデータを共有するアプリ グループを作成します。 例: **group.com.yourcompanyname.SoupChef**
 
-- 次の 3 つのアプリ Id を作成する: アプリ自体の 1 つ、Intents の拡張機能の 1 つおよび Intents UI 拡張機能の 1 つ。 例:
+- 次の 3 つのアプリ Id を作成する: アプリ自体の 1 つ、Intents の拡張機能の 1 つおよび Intents UI 拡張機能の 1 つ。 例えば:
 
     - App: **com.yourcompanyname.SoupChef**
         - このアプリ ID に割り当てる、SiriKit と**アプリ グループ**機能します。

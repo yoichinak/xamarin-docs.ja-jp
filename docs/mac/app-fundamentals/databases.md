@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
 ms.openlocfilehash: 465b4a34d54dbee92461669b16c3b8a13188bbde
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122206"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61378344"
 ---
 # <a name="databases-in-xamarinmac"></a>Xamarin.Mac でデータベース
 
@@ -33,7 +33,7 @@ Xamarin.Mac アプリケーションで c# と .NET を使用する場合は、X
 
 私たちは、キー値コーディングとデータ バインドに使用するは後で連携してください、[データ バインディングとキー値コーディング](~/mac/app-fundamentals/databinding.md)手法をコアとしてと概念については説明を最初に、このドキュメントとそのサンプルで使用されます。アプリケーション。
 
-確認することも、 [c# を公開するクラス/Objective-C メソッド](~/mac/internals/how-it-works.md)のセクション、 [Xamarin.Mac 内部](~/mac/internals/how-it-works.md)が説明されても、ドキュメント、`Register`と`Export`属性ネットワーク上での c# クラスを Objective-C オブジェクトと UI への要素に使用されます。
+確認することも、 [C# を公開するクラス/Objective-C メソッド](~/mac/internals/how-it-works.md)のセクション、 [Xamarin.Mac 内部](~/mac/internals/how-it-works.md)が説明されても、ドキュメント、`Register`と`Export`属性ネットワーク上での C# クラスを Objective-C オブジェクトと UI への要素に使用されます。
 
 ## <a name="direct-sqlite-access"></a>SQLite への直接アクセス
 
@@ -552,7 +552,7 @@ for (nuint n = 0; n < People.Count; ++n) {
 }
 ```
 
-#### <a name="updating-a-record"></a>レコードを更新します。
+#### <a name="updating-a-record"></a>レコードを更新する
 
 SQLite データベースの既存のレコードを更新する次のコードが追加されました。
 

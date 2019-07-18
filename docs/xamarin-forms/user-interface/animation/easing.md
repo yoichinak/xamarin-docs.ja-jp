@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/14/2016
-ms.openlocfilehash: 211f56e0d9f96383670be1d60421d3ac28eabe46
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 3532a557c6ed958974326ca79ad160b01e9b5289
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53051997"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926690"
 ---
 # <a name="easing-functions-in-xamarinforms"></a>Xamarin.Forms でのイージング関数
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/userinterface/animation/easing/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Animation/Easing/)
 
 _Xamarin.Forms には、アニメーションの速度または実行されているように遅く、そのコントロールを使用すると、転送関数を指定するイージング クラスが含まれています。この記事では、定義済みのイージング関数を使用する方法とカスタム イージング関数を作成する方法を示します。_
 
@@ -37,7 +37,7 @@ _Xamarin.Forms には、アニメーションの速度または実行されて�
 
 `In`と`Out`サフィックスは、イージング関数によって提供される効果が最後に、またはその両方で、アニメーションの先頭に顕著なを指定します。
 
-さらに、カスタム イージング関数を作成できます。 詳細については、[カスタム イージング関数](#customeasing)を参照してください。
+さらに、カスタム イージング関数を作成できます。 詳細については、次を参照してください。[カスタム イージング関数](#customeasing)します。
 
 ## <a name="consuming-an-easing-function"></a>イージング関数を使用
 
@@ -53,7 +53,7 @@ await image.TranslateTo(0, -200, 2000, Easing.BounceOut);
 
 アニメーションにイージング関数を指定するは、アニメーションの速度は、非線形のようになり、イージング関数によって提供される効果を生成します。 アニメーションを作成するときに、イージング関数を省略すると、既定値を使用するアニメーションが[ `Linear` ](xref:Xamarin.Forms.Easing.Linear)イージング機能で、線形の速度が生成されます。
 
-アニメーションの拡張メソッドを使用しての詳細については、 [ `ViewExtensions` ](xref:Xamarin.Forms.ViewExtensions)クラスを参照してください[単純なアニメーション](~/xamarin-forms/user-interface/animation/simple.md)します。 イージング関数を使用できますが、 [ `Animation` ](xref:Xamarin.Forms.Animation)クラス。 詳細については、[アニメーション](~/xamarin-forms/user-interface/animation/custom.md)を参照してください。
+アニメーションの拡張メソッドを使用しての詳細については、 [ `ViewExtensions` ](xref:Xamarin.Forms.ViewExtensions)クラスを参照してください[単純なアニメーション](~/xamarin-forms/user-interface/animation/simple.md)します。 イージング関数を使用できますが、 [ `Animation` ](xref:Xamarin.Forms.Animation)クラス。 詳細については、次を参照してください。[アニメーション](~/xamarin-forms/user-interface/animation/custom.md)します。
 
 <a name="customeasing" />
 
@@ -112,6 +112,6 @@ await image.TranslateTo (0, 200, 2000, new Easing (t => 1 - Math.Cos (10 * Math.
 ## <a name="related-links"></a>関連リンク
 
 - [非同期サポートの概要](~/cross-platform/platform/async.md)
-- [イージング関数 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/animation/easing/)
+- [イージング関数 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Animation/Easing/)
 - [簡略化](xref:Xamarin.Forms.Easing)
 - [ViewExtensions](xref:Xamarin.Forms.ViewExtensions)

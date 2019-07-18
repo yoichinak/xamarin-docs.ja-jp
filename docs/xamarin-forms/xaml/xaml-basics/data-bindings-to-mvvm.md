@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
 ms.openlocfilehash: c7bf7ca28200004e2383631c68cdaa4299348ecb
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53054034"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61174579"
 ---
 # <a name="part-5-from-data-bindings-to-mvvm"></a>パート 5 です。 MVVM へのデータ バインディングから
 
@@ -35,7 +35,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 <StackLayout BindingContext="{x:Static sys:DateTime.Now}" …>
 ```
 
-`BindingContext` 非常に特殊なプロパティです。 設定すると、`BindingContext`その要素のすべての子要素に継承されます。 つまり、すべての子、`StackLayout`これと同じある`BindingContext`、し、そのオブジェクトのプロパティへの単純なバインドを含めることができます。
+`BindingContext` 非常に特殊なプロパティです。設定すると、`BindingContext`その要素のすべての子要素に継承されます。 つまり、すべての子、`StackLayout`これと同じある`BindingContext`、し、そのオブジェクトのプロパティへの単純なバインドを含めることができます。
 
 **One-Shot DateTime**プログラムは、2 つの子のプロパティへのバインドを保持する`DateTime`バインディング パスが見つからないと思われるバインドを含めることの値はその他の 2 つの子。 つまり、`DateTime`自体の値が使用される、 `StringFormat`:
 
@@ -298,7 +298,7 @@ namespace XamlSamples
 
 ## <a name="commanding-with-viewmodels"></a>Viewmodel のコマンド実行
 
-多くの場合、MVVM パターンはデータ項目の操作に制限されています: ビュー内のユーザー インターフェイス オブジェクトの並列ビューモデル内のデータ オブジェクト。
+多くの場合では、MVVM パターンは、データ項目の操作に限定されます。ビュー内のユーザー インターフェイス オブジェクトの並列ビューモデル内のデータ オブジェクト。
 
 ただし、必要があります、ビュー、ビューモデルでさまざまなアクションをトリガーするボタンが含まれます。 ViewModel が含めることはできませんが、`Clicked`ボタンのハンドラーが特定のユーザー インターフェイスのパラダイムに ViewModel を占有するので。
 
@@ -702,7 +702,7 @@ private async void OnListViewItemSelected(object sender, SelectedItemChangedEven
 
 > [!VIDEO https://youtube.com/embed/DYRLcqG2BAY]
 
-**Xamarin.Forms と Prism で簡単に行う Xamarin Evolve 2016 です: MVVM**
+**Xamarin Evolve 2016 です。Xamarin.Forms と Prism で簡単に行う MVVM**
 
 ## <a name="summary"></a>まとめ
 

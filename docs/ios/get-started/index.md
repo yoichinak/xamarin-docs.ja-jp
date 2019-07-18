@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: c085b515bf6618d110d95dc5a6456df182fa803f
-ms.sourcegitcommit: 9dcb7377dc92ad921285fbb857b0be13030bbea3
+ms.openlocfilehash: b5c11b5db75da22d48b7db265ea013cb600ef02c
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55668577"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978235"
 ---
 # <a name="get-started-with-xamarinios"></a>Xamarin.iOS の概要
 
@@ -49,8 +49,8 @@ Xamarin.iOS をセットアップして、Visual Studio for Mac または Visual
 
 Xamarin プラットフォームに移行している Objective-C 開発者向けの情報を提供します。
 
-## <a name="xamarin-university-video"></a>Xamarin University のビデオ
+## <a name="video"></a>ビデオ
 
 > [!VIDEO https://youtube.com/embed/1ilsDnYC-B8]
 
-**Building Your First iOS App with Xamarin for Visual Studio (Xamarin for Visual Studio で最初の iOS アプリを構築する)、by [Xamarin University](https://university.xamarin.com)**
+**Building Your First iOS App with Xamarin for Visual Studio (Xamarin for Visual Studio を使って最初の iOS アプリを構築する)**

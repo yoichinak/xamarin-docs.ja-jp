@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 02/02/2018
-ms.openlocfilehash: 8c8bf3f86091f49633913b37ef5108ddbae6d276
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 859bbd22640ba3d09324fcd3853cda26e563a1cd
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50115199"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865278"
 ---
 # <a name="hello-tvos-quick-start-guide"></a>はじめての tvOS クイック スタート ガイド
 
@@ -298,20 +298,20 @@ Xamarin.tvOS アプリのデザイン サーフェイスにコントロールを
 9. 完了すると、制約する必要があります Properties pad の [レイアウト] タブと同様になります。
 
     [![](hello-tvos-images/designer11.png "例の制約")](hello-tvos-images/designer11.png#lightbox)
-8. ドラッグ、**ボタン**から、**ツールボックス**し、ラベルの下に配置します。
-9. をクリックして、**タイトル**プロパティ、**プロパティ パッド**ボタンのタイトルを変更および`Click Me`:
+10. ドラッグ、**ボタン**から、**ツールボックス**し、ラベルの下に配置します。
+11. をクリックして、**タイトル**プロパティ、**プロパティ パッド**ボタンのタイトルを変更および`Click Me`:
 
     [![](hello-tvos-images/designer12.png "ここをクリックするボタンのタイトルを変更します。")](hello-tvos-images/designer12.png#lightbox)
-10. 5 ~ 8 tvOS ウィンドウで、ボタンを制限する上記の手順を繰り返します。 ただし、(手順 7) のように、ウィンドウの上部に T ハンドルをドラッグする代わりにドラッグ、ラベルの下。
+12. 5 ~ 8 tvOS ウィンドウで、ボタンを制限する上記の手順を繰り返します。 ただし、(手順 7) のように、ウィンドウの上部に T ハンドルをドラッグする代わりにドラッグ、ラベルの下。
 
     [![](hello-tvos-images/designer14.png "ボタンを制限します。")](hello-tvos-images/designer14.png#lightbox)
-11. ボタンの下に別のラベルをドラッグして、最初のラベルとセットと同じ幅にサイズの**配置**に**Center**:
+13. ボタンの下に別のラベルをドラッグして、最初のラベルとセットと同じ幅にサイズの**配置**に**Center**:
 
     [![](hello-tvos-images/designer15.png "ボタンの下に別のラベルをドラッグして、サイズを幅の最初のラベルと同じであり、アラインメントを中心に設定するには")](hello-tvos-images/designer15.png#lightbox)
-12. 最初のラベルやボタンなどの中心や位置とサイズにピン留めするには、このラベルを設定します。
+14. 最初のラベルやボタンなどの中心や位置とサイズにピン留めするには、このラベルを設定します。
 
     [![](hello-tvos-images/designer16.png "位置とサイズにラベルをピン留め")](hello-tvos-images/designer16.png#lightbox)
-13. ユーザー インターフェイスに変更を保存します。
+15. ユーザー インターフェイスに変更を保存します。
 
 サイズを変更するでコントロールが移動された、する必要がありますにお気付きこと、デザイナーを使用するスナップインを便利なヒントに基づく[Apple TV のヒューマン インターフェイス ガイドライン](https://developer.apple.com/tvos/human-interface-guidelines/)します。 次のガイドラインを高品質なアプリケーションを Apple TV のユーザーの使い慣れたルック アンド フィールを作成できます。
 
@@ -415,7 +415,7 @@ public override void ViewDidLoad ()
 }
 ```
 
-使用する必要があります`ViewDidLoad `などの別のメソッドではなく`Initialize`ため、`ViewDidLoad `呼びます*後*、OS が読み込まれ、ユーザー インターフェイスをインスタンス化、`.storyboard`ファイル。 ラベル コントロールにする前にアクセスしようとした場合、`.storyboard`なります、ファイルが完全に読み込まれ、インスタンス化、`NullReferenceException`エラー ラベル コントロールはまだ作成されていないためです。
+使用する必要があります`ViewDidLoad`などの別のメソッドではなく`Initialize`ため、`ViewDidLoad`呼びます*後*、OS が読み込まれ、ユーザー インターフェイスをインスタンス化、`.storyboard`ファイル。 ラベル コントロールにする前にアクセスしようとした場合、`.storyboard`なります、ファイルが完全に読み込まれ、インスタンス化、`NullReferenceException`エラー ラベル コントロールはまだ作成されていないためです。
 
 次に、ユーザーがボタンをクリックしてに応答するコードを追加する必要があります。 次の部分に追加クラスを作成しました。
 

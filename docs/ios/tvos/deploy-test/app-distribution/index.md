@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 0a40d50d02008439e81d5db19bcda0647203e2da
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: d2f4031eeddbaa206f38b7b1c2bb49d21482c175
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50110701"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864942"
 ---
 # <a name="tvos-app-distribution-overview"></a>tvOS アプリの配布の概要
 
@@ -28,8 +28,8 @@ Xamarin.tvOS アプリの開発が完了するとソフトウェア開発ライ�
 Apple では、Xamarin.tvOS でサポートされている次の tvOS アプリを配布する方法を提供します。
 
 1. [**App Store**](#Apple-TV-App-Store-Distribution)
-2. [**社内 (エンタープライズ)**](#In-House-Distribution) 
-2. [**アドホック**](#Ad_Hoc_Distribution) 
+2. [**社内 (エンタープライズ)** ](#In-House-Distribution) 
+3. [**アドホック**](#Ad_Hoc_Distribution) 
 
 これらいずれのシナリオでも、適切な*プロビジョニング プロファイル*を使用してアプリケーションをプロビジョニングする必要があります。 プロビジョニング プロファイルは、コード署名情報だけでなく、アプリケーションの ID と使用する配布メカニズムも含むファイルです。 App Store 以外の配布には、アプリを展開できるデバイスに関する情報も含まれています。
 
@@ -80,7 +80,7 @@ Xamarin.tvOS アプリは、両方で使用されるアドホック配布を使�
 
 <a name="Summary" />
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
 この記事で Xamarin.tvOS アプリで利用可能な配布メカニズムの概要を説明しました。 導入された Apple TV App Store では、社内およびアドホック展開しより詳細な情報へのリンクを提供します。
 

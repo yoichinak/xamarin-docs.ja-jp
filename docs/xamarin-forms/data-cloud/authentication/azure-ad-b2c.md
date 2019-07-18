@@ -1,77 +1,261 @@
 ---
 title: Azure Active Directory B2C でユーザーを認証します。
-description: Azure Active Directory B2C は、コンシューマー向けの web アプリケーションとモバイル アプリケーションのクラウド ID 管理ソリューションです。 この記事では、Microsoft Authentication Library と Azure Active Directory B2C を使用して、モバイル アプリケーションにコンシューマーの ID 管理を統合する方法を示します。
+description: Azure Active Directory B2C はコンシューマー向け web およびモバイル アプリケーション用のクラウド id 管理を提供します。 この記事では、Azure Active Directory B2C を使用して、Microsoft 認証ライブラリを使用したモバイル アプリケーションに id 管理を統合する方法を示しています。
 ms.prod: xamarin
 ms.assetid: B0A5DB65-0585-4A00-B908-22CCC286E6B6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 11/07/2017
-ms.openlocfilehash: 7c12136a0dad0165c46f1559e7a2d61abaf7af1e
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.date: 04/17/2019
+ms.openlocfilehash: 06f5716c8decb21de39fd46abe734b5fdcd6bd43
+ms.sourcegitcommit: 0f78ec17210b915b43ddab75937de8063e472c70
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059705"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67417948"
 ---
-# <a name="authenticating-users-with-azure-active-directory-b2c"></a>Azure Active Directory B2C でユーザーを認証します。
+# <a name="authenticate-users-with-azure-active-directory-b2c"></a>Azure Active Directory B2C でユーザーを認証します。
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/WebServices/AzureADB2CAuth/)
 
-_Azure Active Directory B2C は、コンシューマー向けの web アプリケーションとモバイル アプリケーションのクラウド id 管理ソリューションです。この記事では、Microsoft Authentication Library と Azure Active Directory B2C を使用して、モバイル アプリケーションにコンシューマーの id 管理を統合する方法を示します。_
-
-![](~/media/shared/preview.png "この API は、現在プレリリースです")
-
-> [!NOTE]
-> [Microsoft Authentication Library](https://www.nuget.org/packages/Microsoft.Identity.Client)は、まだプレビュー段階ですが、運用環境での使用に適しています。 ただし、ライブラリのAPIや内部のキャッシュ形式、およびその他のメカニズムに重大な変更の可能性があり、アプリケーションに多大な影響を与える可能性があります。
+_Azure Active Directory B2C はコンシューマー向け web およびモバイル アプリケーション用のクラウド id 管理を提供します。この記事では、Azure Active Directory B2C を使用して、Microsoft 認証ライブラリを使用したモバイル アプリケーションに id 管理を統合する方法を示しています。_
 
 ## <a name="overview"></a>概要
 
-Azure Active Directory B2C は、コンシューマー向けのアプリケーションのための ID 管理サービスで、コンシューマーがアプリケーションに次のような方法でサインインできるようにします。
-
-- 既存のソーシャル アカウント (Microsoft、Google、Facebook、Amazon、LinkedIn) を使用する。
-- 新しい資格情報 (電子メール アドレスとパスワード、またはユーザー名とパスワード) を作成する。 これらの資格情報は *ローカル* アカウント といわれます。
+Azure Active Directory B2C (ADB2C) は、コンシューマー向けアプリケーションの id 管理サービス。 既存のソーシャル アカウントまたは電子メール アドレスまたはユーザー名とパスワードなどのカスタム資格情報を使用して、アプリケーションにサインインすることができます。 カスタム資格情報のアカウントと呼びます_ローカル_アカウント。
 
 モバイル アプリケーションに Azure Active Directory B2C ID 管理サービスを統合するための手順は次のとおりです。
 
-1. Azure Active Directory B2C テナントを作成します。 詳細については、[Azure ポータルで Azure Active Directory B2C テナントを作成する](/azure/active-directory-b2c/active-directory-b2c-get-started/) を参照してください。
-1. Azure Active Directory B2C テナントに、モバイル アプリケーションを登録します。 登録処理では、アプリケーションを一意に識別する **アプリケーション ID** やアプリケーションへ戻って応答を伝えるために使用できる **リダイレクト URL** を割り当てます。 詳細については、[Azure Active Directory B2C: アプリケーションの登録](/azure/active-directory-b2c/active-directory-b2c-app-registration/) を参照してください。
-1. サインアップとサインインのポリシーを作成します。 このポリシーは、コンシューマーがサインアップとサインインの間に通過するエクスペリエンスを定義し、またアプリケーションがサインアップやサインインの成功で受け取るトークンの内容を指定します。 詳細については、[Azure Active Directory B2C: 組み込みポリシー](/azure/active-directory-b2c/active-directory-b2c-reference-policies/) を参照してください。
-1. [Microsoft Authentication Library](https://www.nuget.org/packages/Microsoft.Identity.Client) (MSAL) をモバイルアプリケーションで使用して、Azure Active Directory B2C テナントを使った認証ワークフローを開始します。
+1. Azure Active Directory B2C テナントを作成します。
+1. モバイル アプリケーションを Azure Active Directory B2C テナントに登録します。
+1. サインアップとサインイン ポリシーを作成し、ユーザー フローのパスワードを忘れた場合
+1. Azure Active Directory B2C テナントを認証ワークフローを開始するのにには、Microsoft Authentication Library (MSAL) を使用します。
 
 > [!NOTE]
-> モバイル アプリケーションへの Azure Active Directory B2C の ID 管理の統合だけでなく、モバイル アプリケーションへの Azure Active Directory の ID 管理の統合にも MSAL を使用することができます。 これは、[アプリケーション登録ポータル](https://apps.dev.microsoft.com/) でモバイル アプリケーションを Azure Active Directory に登録することによって可能です。 登録処理では、アプリケーションを一意に識別する **アプリケーション ID** を割り当て、それを MSAL を使用する際に指定する必要があります。 詳細については、[v2.0 エンドポイントでアプリを登録する方法](/azure/active-directory/develop/active-directory-v2-app-registration/)、および [Microsoft Authentication Library を使ったモバイル アプリ認証](https://blog.xamarin.com/authenticate-mobile-apps-using-microsoft-authentication-library/) Xamarin ブログを参照してください。
+> Azure Active Directory B2C では、Microsoft、GitHub、Facebook、Twitter などを含む複数の id プロバイダーをサポートします。 Azure Active Directory B2C の機能の詳細については、次を参照してください。 [Azure Active Directory B2C のドキュメント](/azure/active-directory-b2c/)します。
+>
+> Microsoft 認証ライブラリは、複数のアプリケーション アーキテクチャとプラットフォームをサポートします。 MSAL の機能については、次を参照してください。 [Microsoft Authentication Library](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki) GitHub でします。
 
-MSAL では、デバイスの web ブラウザーを使用して、認証を行います。 これにより、ユーザーは各デバイスにつき1回のサインインで済むようになるので、アプリケーションのユーザビリティが向上します。またアプリケーションのサインインと認証フローのコンバージョンレートが向上します。 デバイスのブラウザーでは、強化されたセキュリティも提供します。 ユーザーが認証プロセスを完了させると、web ブラウザーのタブからアプリケーションに制御が返されます。これは、認証プロセスから返されるリダイレクト URL にカスタム URL スキームを登録することによって実現されます。そして、その送信されたカスタム URL を検知して処理します。 カスタム URL スキームの選択の詳細については、[ネイティブ アプリのリダイレクト URI を選択する](/azure/active-directory-b2c/active-directory-b2c-app-registration#choosing-a-native-app-redirect-uri/) を参照してください。
+## <a name="configure-an-azure-active-directory-b2c-tenant"></a>Azure Active Directory B2C テナントを構成します。
 
-> [!NOTE]
-> オペレーティング システムにカスタム URL スキームを登録するメカニズムと、そのスキームを処理するためのメカニズムは、各プラットフォームに固有です。
+サンプル プロジェクトを実行するには、Azure Active Directory B2C テナントを作成する必要があります。 詳細については、[Azure ポータルで Azure Active Directory B2C テナントを作成する](/azure/active-directory-b2c/active-directory-b2c-get-started/) を参照してください。
 
-Azure Active Directory B2C テナントに送信される各要求には *ポリシー* を指定します。 ポリシーでは、サインアップまたはサインインなどのコンシューマー ID エクスペリエンスを記述します。 たとえば、サインアップ ポリシーは、Azure Active Directory B2C テナントの動作を次の設定を使用して構成することができます。
+テナントを作成する必要があります、**テナント名**と**テナント ID**モバイル アプリケーションを構成します。 テナント ID と名前は、テナントの URL を作成したときに生成されたドメインで定義されます。 生成されたテナント URL がの場合`https://contoso20190410tenant.onmicrosoft.com/`、**テナント ID**は`contoso20190410tenant.onmicrosoft.com`と**テナント名**は`contoso20190410tenant`します。 クリックして、Azure portal でテナントのドメインを検索、**ディレクトリとサブスクリプション フィルター**上部のメニュー。 次のスクリーン ショットは、Azure ディレクトリとサブスクリプション フィルター をクリックし、テナント ドメインを示しています。
 
-- コンシューマーが、アプリケーションへのサインインに使用できるアカウントの種類。
-- サインアップ中にコンシューマーから収集されるデータ。
-- 多要素認証。
-- [サインアップ] ページのコンテンツ。
-- ポリシーが実行されたときに、モバイル アプリケーションが受け取るトークンの要求。
+[![Azure ディレクトリとサブスクリプション フィルター ビューでのテナント名](azure-ad-b2c-images/azure-tenant-name-cropped.png)](azure-ad-b2c-images/azure-tenant-name.png#lightbox)
 
-Azure Active Directory テナントには、さまざまな種類の複数のポリシーを含めることができ、必要に応じて、アプリケーションで使用することができます。 さらに、ポリシーは、複数のアプリケーションで再利用でき、コードを変更せずにコンシューマー ID エクスペリエンスの定義や変更をすることができます。 ポリシーの詳細については、[Azure Active Directory B2C: 組み込みポリシー](/azure/active-directory-b2c/active-directory-b2c-reference-policies/)を参照してください。
+サンプル プロジェクトでは、編集、 **Constants.cs**を設定するファイル、`tenantName`と`tenantId`フィールド。 次のコードはこれらの値を設定する方法のかどうか、テナントのドメインは`https://contoso20190410tenant.onmicrosoft.com/`、これらの値をポータルからの値に置き換えます。
 
-## <a name="setup"></a>セットアップ
+```csharp
+public static class Constants
+{
+    static readonly string tenantName = "contoso20190410tenant";
+    static readonly string tenantId = "contoso20190410tenant.onmicrosoft.com";
+    ...
+}
+```
 
-Microsoft Authentication Library (MSAL) NuGet ライブラリは、Xamarin.Forms ソリューション内のポータブル クラス ライブラリ (PCL) およびプラットフォーム プロジェクトに追加する必要があります。 次のセクションでは、MSAL を使用して、モバイル アプリケーションから Azure Active Directory B2C テナントに通信するための追加のセットアップ手順を説明します。
+## <a name="register-your-mobile-application-with-azure-active-directory-b2c"></a>Azure Active Directory B2C でのモバイル アプリケーションを登録します。
 
-### <a name="portable-class-library"></a>ポータブル クラス ライブラリ
+接続してユーザーを認証する前に、モバイル アプリケーションをテナントに登録する必要があります。 登録プロセスを一意割り当てます**アプリケーション ID** 、アプリケーションに、**リダイレクト URL**認証後にアプリケーションへの応答を送信します。 詳細については、次を参照してください[Azure Active Directory B2C:。アプリケーションを登録する](/azure/active-directory-b2c/active-directory-b2c-app-registration/)します。 知る必要があります、**アプリケーション ID**プロパティ ビューでアプリケーション名の後に表示される、アプリケーションに割り当てられます。 次のスクリーン ショットでは、アプリケーション ID を検索する場所を示します。
 
-MSAL を使用する PCL には、Profile7 を使用して再ターゲットする必要があります。 PCL の詳細については、「[ポータブル クラス ライブラリの概要](~/cross-platform/app-fundamentals/pcl.md)」(ポータブル クラス ライブラリの概要) を参照してください。
+[![Azure アプリケーションのプロパティ ビュー内のアプリケーション ID](azure-ad-b2c-images/azure-application-id-cropped.png)](azure-ad-b2c-images/azure-application-id.png#lightbox)
+
+Microsoft 認証ライブラリでは、**リダイレクト URL**のようにアプリケーションを**アプリケーション ID**テキスト"msal"プレフィックスおよび後に"auth"と呼ばれるエンドポイント。 完全な URL には、アプリケーション ID が"1234abcd"の場合は、`msal1234abcd://auth`します。 アプリケーションが有効になっていることを確認、 **Native client**を設定し、作成、**カスタム リダイレクト URI**の次のスクリーン ショットに示すように、アプリケーション ID を使用します。
+
+![Azure アプリケーションのプロパティ ビューでのカスタム リダイレクト URI](azure-ad-b2c-images/azure-redirect-uri.png)
+
+Android の両方で後で使用される URL **ApplicationManifest.xml**と iOS **Info.plist**します。
+
+サンプル プロジェクトでは、編集、 **Constants.cs**を設定するファイル、`clientId`フィールドを**アプリケーション ID**します。 次のコードはこの値を設定する方法、アプリケーション ID が`1234abcd`:
+
+```csharp
+public static class Constants
+{
+    static readonly string tenantName = "contoso20190410tenant";
+    static readonly string tenantId = "contoso20190410tenant.onmicrosoft.com";
+    static readonly string clientId = "1234abcd";
+    ...
+}
+```
+
+## <a name="create-sign-up-and-sign-in-policies-and-forgot-password-policies"></a>サインアップとサインイン ポリシーを作成し、パスワード ポリシーを忘れた場合
+
+ポリシーとは、ユーザーがアカウントの作成やパスワードのリセットなどのタスクを完了する前に、体験です。 ポリシーには、経験から、ユーザーが返されるときに、アプリケーションが受け取るトークンの内容も指定します。 サインアップとサインイン アカウントの両方のポリシーを設定し、パスワードをリセットする必要があります。 Azure では、一般的なポリシーの作成を簡略化する組み込みのポリシーがあります。 詳細については、次を参照してください[Azure Active Directory B2C:。組み込みのポリシー](/azure/active-directory-b2c/active-directory-b2c-reference-policies/)します。
+
+ポリシーのセットアップが完了したら、2 つのポリシーを含めるか、**ユーザー フロー (ポリシー)** Azure portal で表示します。 次のスクリーン ショットでは、Azure portal で構成されている 2 つのポリシーを示しています。
+
+![Azure ユーザー フロー (ポリシー) で構成されている 2 つのポリシーの表示します。](azure-ad-b2c-images/azure-application-policies.png)
+
+サンプル プロジェクトでは、編集、 **Constants.cs**を設定するファイル、`policySignin`と`policyPassword`ポリシーのセットアップ時に選択した名前を反映するフィールド。
+
+```csharp
+public static class Constants
+{
+    static readonly string tenantName = "contoso20190410tenant";
+    static readonly string tenantId = "contoso20190410tenant.onmicrosoft.com";
+    static readonly string clientId = "1234abcd";
+    static readonly string policySignin = "B2C_1_signupsignin1";
+    static readonly string policyPassword = "B2C_1_passwordreset";
+    ...
+}
+```
+
+## <a name="use-the-microsoft-authentication-library-msal-for-authentication"></a>認証用の Microsoft Authentication Library (MSAL) の使用します。
+
+Microsoft Authentication Library (MSAL) NuGet パッケージは、共有、.NET Standard プロジェクト、および Xamarin.Forms ソリューションで、プラットフォーム プロジェクトに追加する必要があります。 MSAL が含まれています、`PublicClientApplicationBuilder`に準拠するオブジェクトを構築するクラス、`IPublicClientApplication`インターフェイス。 MSAL を使用して`With`コンス トラクターと認証メソッドに追加のパラメーターを指定する句。
+
+サンプル プロジェクトの分離コードで**App.xaml**という名前の静的プロパティを定義`AuthenticationClient`と`UIParent`、インスタンス化します、`AuthenticationClient`コンス トラクター内のオブジェクト。 `WithIosKeychainSecurityGroup`句は、iOS アプリケーションのセキュリティ グループ名を提供します。 `WithB2CAuthority`句により、既定値**機関**、またはポリシーは、ユーザーを認証するために使用されます。 次の例では、インスタンス化する方法、 `PublicClientApplication`:
+
+```csharp
+public partial class App : Application
+{
+    public static IPublicClientApplication AuthenticationClient { get; private set; }
+
+    public static object UIParent { get; set; } = null;
+
+    public App()
+    {
+        InitializeComponent();
+
+        AuthenticationClient = PublicClientApplicationBuilder.Create(Constants.ClientId)
+            .WithIosKeychainSecurityGroup(Constants.IosKeychainSecurityGroups)
+            .WithB2CAuthority(Constants.AuthoritySignin)
+            .Build();
+
+        MainPage = new NavigationPage(new LoginPage());
+    }
+
+    ...
+```
+
+`OnAppearing`内のイベント ハンドラー、 **LoginPage.xaml.cs**呼び出しの背後にあるコード`AcquireTokenSilentAsync`する前にログオンしたユーザーの認証トークンを更新します。 認証プロセスにリダイレクト、`LogoutPage`成功した場合と、失敗時に何も行われません。 次の例では、サイレント再認証プロセス`OnAppearing`:
+
+```csharp
+public partial class LoginPage : ContentPage
+{
+    ...
+
+    protected override async void OnAppearing()
+    {
+        try
+        {
+            // Look for existing account
+            IEnumerable<IAccount> accounts = await App.AuthenticationClient.GetAccountsAsync();
+
+            AuthenticationResult result = await App.AuthenticationClient
+                .AcquireTokenSilent(Constants.Scopes, accounts.FirstOrDefault())
+                .ExecuteAsync();
+
+            await Navigation.PushAsync(new LogoutPage(result));
+        }
+        catch
+        {
+            // Do nothing - the user isn't logged in
+        }
+        base.OnAppearing();
+    }
+
+    ...
+}
+```
+
+`OnLoginButtonClicked` (ログイン ボタンがクリックされたときに発生する)、イベント ハンドラー呼び出し`AcquireTokenAsync`します。 MSAL ライブラリは自動的にモバイル デバイスのブラウザーを開きし、ログイン ページに移動します。 サインイン URL と呼ばれる、**機関**テナント名の組み合わせであり、ポリシーで定義、 **Constants.cs**ファイル。 ユーザーが選択した場合、パスワードのオプションを忘れた場合、例外を起動すると、アプリに返されます、エクスペリエンスのパスワードを忘れた場合します。 次の例では、認証プロセスを示します。
+
+```csharp
+public partial class LoginPage : ContentPage
+{
+    ...
+
+    async void OnLoginButtonClicked(object sender, EventArgs e)
+    {
+        AuthenticationResult result;
+        try
+        {
+            result = await App.AuthenticationClient
+                .AcquireTokenInteractive(Constants.Scopes)
+                .WithPrompt(Prompt.SelectAccount)
+                .WithParentActivityOrWindow(App.UIParent)
+                .ExecuteAsync();
+    
+            await Navigation.PushAsync(new LogoutPage(result));
+        }
+        catch (MsalException ex)
+        {
+            if (ex.Message != null && ex.Message.Contains("AADB2C90118"))
+            {
+                result = await OnForgotPassword();
+                await Navigation.PushAsync(new LogoutPage(result));
+            }
+            else if (ex.ErrorCode != "authentication_canceled")
+            {
+                await DisplayAlert("An error has occurred", "Exception message: " + ex.Message, "Dismiss");
+            }
+        }
+    }
+
+    ...
+}
+```
+
+`OnForgotPassword`メソッドは、サインイン プロセスに似ていますが、カスタム ポリシーを実装します。 `OnForgotPassword` さまざまなオーバー ロードを使用して`AcquireTokenAsync`、特定の提供することのできる**機関**します。 次の例では、カスタムの提供方法を示しています。**機関**トークンを取得する際に。
+
+```csharp
+public partial class LoginPage : ContentPage
+{
+    ...
+    async Task<AuthenticationResult> OnForgotPassword()
+    {
+        try
+        {
+            return await App.AuthenticationClient
+                .AcquireTokenInteractive(Constants.Scopes)
+                .WithPrompt(Prompt.SelectAccount)
+                .WithParentActivityOrWindow(App.UIParent)
+                .WithB2CAuthority(Constants.AuthorityPasswordReset)
+                .ExecuteAsync();
+        }
+        catch (MsalException)
+        {
+            // Do nothing - ErrorCode will be displayed in OnLoginButtonClicked
+            return null;
+        }
+    }
+}
+```
+
+認証の最後の部分は、サインアウト プロセスです。 `OnLogoutButtonClicked`メソッドは、ユーザーがサインアウト ボタンを押したときに呼び出されます。 すべてのアカウントをループ処理し、により、トークンが無効になりました。 次の例では、サインアウトの実装を示しています。
+
+```csharp
+public partial class LogoutPage : ContentPage
+{
+    ...
+    async void OnLogoutButtonClicked(object sender, EventArgs e)
+    {
+        IEnumerable<IAccount> accounts = await App.AuthenticationClient.GetAccountsAsync();
+
+        while (accounts.Any())
+        {
+            await App.AuthenticationClient.RemoveAsync(accounts.First());
+            accounts = await App.AuthenticationClient.GetAccountsAsync();
+        }
+
+        await Navigation.PopAsync();
+    }
+}
+```
 
 ### <a name="ios"></a>iOS
 
-Ios では、Azure Active Directory B2C に登録されたカスタムの URL スキームに登録する必要があります**Info.plist**の次のスクリーン ショットに示すようにします。
+Ios では、Azure Active Directory B2C に登録されたカスタムの URL スキームに登録する必要があります**Info.plist**します。 MSAL で既に説明した、特定のパターンに従う URL スキームが必要ですが[モバイル アプリケーションを Azure Active Directory B2C に登録](/docs/xamarin-forms/data-cloud/authentication/azure-ad-b2c.md#register-your-mobile-application-with-azure-active-directory-b2c)します。 次のスクリーン ショットでは、カスタムの URL スキーム**Info.plist**します。
 
-![](azure-ad-b2c-images/customurl-ios.png "iOS でカスタム URL スキームを登録する。")
+![「IOS でのカスタム URL スキームを登録」](azure-ad-b2c-images/customurl-ios.png)
 
-Azure Active Directory B2C が認証要求を完了させると、登録されたリダイレクト URL にリダイレクトします。 その URL はカスタム スキームを使用しているため、iOS がモバイル アプリケーションを起動した時に、起動パラメータとしてその URL が渡され、それをアプリケーションの `AppDelegate` クラスの `OpenUrl` メソッドのオーバーライドによって処理するということになります。それを次のコードサンプルで示します。
+MSAL に登録されている ios キーチェーン権利も必要です、 **Entitilements.plist**の次のスクリーン ショットに示すようにします。
+
+![「Ios アプリケーションの権利の設定」](azure-ad-b2c-images/entitlements-ios.png)
+
+Azure Active Directory B2C が認証要求を完了させると、登録されたリダイレクト URL にリダイレクトします。 カスタムの URL スキームの iOS モバイル アプリケーションを起動して、によって処理される、起動パラメーターとして URL を渡して結果、`OpenUrl`のアプリケーションのオーバーライド`AppDelegate`クラス、および MSAL のエクスペリエンスのコントロールを返します。 `OpenUrl`実装を次のコード例に示します。
 
 ```csharp
 using Microsoft.Identity.Client;
@@ -85,161 +269,71 @@ namespace TodoAzure.iOS
         public override bool OpenUrl(UIApplication app, NSUrl url, NSDictionary options)
         {
             AuthenticationContinuationHelper.SetAuthenticationContinuationEventArgs(url);
-            return true;
+            return base.OpenUrl(app, url, options);
         }
     }
 }
 ```
-
-`OpenURL` メソッド内のコードは、認証ワークフローの対話型の部分が終了した後は、MSAL に制御が戻るようにしています。
 
 ### <a name="android"></a>Android
 
-Android では、Azure Active Directory B2C に登録されているカスタム URL スキームを **AndroidManifest.xml** に登録する必要があります。それは、既存の `<application>` 要素内に `<activity>` 要素を追加することによって行います。 `<activity>` 要素には、そのスキームを処理する `Activity` 上の `IntentFilter` を指定します。次の例でそれを示します。
+Android では、Azure Active Directory B2C に登録されたカスタムの URL スキームに登録する必要があります、 **AndroidManifest.xml**します。 MSAL で既に説明した、特定のパターンに従う URL スキームが必要ですが[モバイル アプリケーションを Azure Active Directory B2C に登録](/docs/xamarin-forms/data-cloud/authentication/azure-ad-b2c.md#register-your-mobile-application-with-azure-active-directory-b2c)します。 次の例では、カスタムの URL スキーム、 **AndroidManifest.xml**します。
 
 ```xml
-<application ...>
-  <activity android:name="microsoft.identity.client.BrowserTabActivity">
-    <intent-filter>
-      <action android:name="android.intent.action.VIEW" />
-      <category android:name="android.intent.category.DEFAULT" />
-      <category android:name="android.intent.category.BROWSABLE" />
-      <data android:scheme="INSERT_URL_SCHEME_HERE" android:host="auth" />
-    </intent-filter>
-  </activity>
-</application>
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.xamarin.adb2cauthorization">
+  <uses-sdk android:minSdkVersion="15" />
+  <application android:label="ADB2CAuthorization">
+    <activity android:name="microsoft.identity.client.BrowserTabActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.VIEW" />
+        <category android:name="android.intent.category.DEFAULT" />
+        <category android:name="android.intent.category.BROWSABLE" />
+        <data android:scheme="INSERT_URI_SCHEME_HERE" android:host="auth" />"
+      </intent-filter>
+    </activity>"
+  </application>
+</manifest>
 ```
 
-Azure Active Directory B2C が認証要求を完了させると、登録されたリダイレクト URL にリダイレクトします。 その URL はカスタム スキームを使用しているため、Android がモバイル アプリケーションを起動した時に、起動パラメータとしてその URL が渡され、それを `microsoft.identity.client.BrowserTabActivity` によって処理するということになります。 なお、`data android:scheme` プロパティは、Azure Active Directory B2C のアプリケーションに登録されているカスタム URL スキームを設定する必要があります。
-
-さらに、`MainActivity` クラスは次のコードサンプルのように修正する必要があります。
+`MainActivity`クラスは、提供するように変更する必要があります、`UIParent`中に、アプリケーションのオブジェクト、`OnCreate`呼び出します。 Azure Active Directory B2C では、承認要求が完了したらの登録済みの URL スキームにリダイレクト、 **AndroidManifest.xml**します。 登録済みの URI スキームが Android 呼び出しの結果、`OnActivityResult`メソッドによって処理される、起動パラメーターとして URL を使用して、`SetAuthenticationContinuationEventArgs`メソッド。
 
 ```csharp
-using Microsoft.Identity.Client;
-
-namespace TodoAzure.Droid
+public class MainActivity : FormsAppCompatActivity
 {
-    ...
-    public class MainActivity : FormsAppCompatActivity
+    protected override void OnCreate(Bundle bundle)
     {
-        protected override void OnCreate(Bundle bundle)
-        {
-            base.OnCreate(bundle);
+        TabLayoutResource = Resource.Layout.Tabbar;
+        ToolbarResource = Resource.Layout.Toolbar;
 
-            global::Xamarin.Forms.Forms.Init(this, bundle);
-            Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
-            LoadApplication(new App());
-            App.UiParent = new UIParent(this);
-        }
+        base.OnCreate(bundle);
 
-        protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
-        {
-            base.OnActivityResult(requestCode, resultCode, data);
-            AuthenticationContinuationHelper.SetAuthenticationContinuationEventArgs(requestCode, resultCode, data);
-        }
+        Forms.Init(this, bundle);
+        LoadApplication(new App());
+        App.UIParent = this;
+    }
+
+    protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
+    {
+        base.OnActivityResult(requestCode, resultCode, data);
+        AuthenticationContinuationHelper.SetAuthenticationContinuationEventArgs(requestCode, resultCode, data);
     }
 }
-
 ```
-
-`OnCreate` メソッドは、`App.UiParent` プロパティに `UIParent` インスタンスを割り当てることによって変更します。 これにより、現在のアクティビティのコンテキストで認証フローが発生するようにします。
-
-`OnActivityResult` メソッド内のコードは、認証ワークフローの対話型の部分が終了した後は、MSAL に制御が戻るようにしています。
 
 ### <a name="universal-windows-platform"></a>ユニバーサル Windows プラットフォーム
 
-Universal Windows Platform に MSAL を使用する追加の設定は必要ありません。
+ユニバーサル Windows プラットフォームで MSAL を使用する追加のセットアップは必要ありません。
 
-## <a name="initialization"></a>初期化
+## <a name="run-the-project"></a>プロジェクトを実行する
 
-Microsoft Authentication Library は、`PublicClientApplication` クラスのメンバーを使用して、認証ワークフローを開始します。 サンプル アプリケーションを宣言および初期、`public`という名前のこの型のプロパティ`ADB2CClient`の`AuthenticationProvider`クラス。 次のコードサンプルは、このプロパティを初期化する方法を示しています。
+仮想または物理デバイスでアプリケーションを実行します。 タップすると、**ログイン**ボタンは、ブラウザーを開き、サインインまたはアカウントを作成することができますのページに移動する必要があります。 サインイン プロセスを完了すると、アプリケーションのログアウト ページに返される必要があります。 次のスクリーン ショットは Android および iOS で実行されている画面のユーザーのサインインを示しています。
 
-```csharp
-ADB2CClient = new PublicClientApplication(Constants.ClientID, Constants.Authority);
-```
-
-モバイル アプリケーションを Azure Active Directory B2C テナントに登録したときに、その登録処理で **アプリケーション ID** を割り当てました。 この ID を `PublicClientApplication` のコンストラクタで、実行するための base URL と Azure Active Directory B2C ポリシーで構成された `Authority` 定数と共に指定する必要があります。
-
-## <a name="signing-in"></a>サインイン
-
-次のスクリーン ショットでは、サンプル アプリケーションのサインイン画面を示しています。
-
-![](azure-ad-b2c-images/login.png "ログイン ページ")
-
-ソーシャル id プロバイダーまたはローカル アカウントでのサインインが使用できます。 ソーシャル id プロバイダーとして、上記のようを使用し、Microsoft、Google、Facebook、他の id プロバイダーが使用こともできます。
-
-次のコードサンプルは、サインイン処理を呼び出す方法を示しています。
-
-```csharp
-using Microsoft.Identity.Client;
-
-public async Task<bool> LoginAsync(bool useSilent = false)
-{
-    ...
-    AuthenticationResult authenticationResult = await ADB2CClient.AcquireTokenAsync(
-        Constants.Scopes,
-        GetUserByPolicy(ADB2CClient.Users, Constants.PolicySignUpSignIn),
-        App.UiParent);
-    ...
-}
-
-```
-
-`AcquireTokenAsync`メソッドは、デバイスの web ブラウザーを起動し、`Constants.Authority` 定数を通じて参照されたポリシーによって指定されている Azure Active Directory B2C ポリシーで定義済みの認証オプションを表示します。 このポリシーは、サインアップやサインイン中にコンシューマーが通過するエクスペリエンスやアプリケーションがサインアップまたはサインインに成功したときに受信する要求が定義されています。
-
-`AcquireTokenAsync` メソッドの呼び出しの結果は、`AuthenticationResult` インスタンスを返します。 認証が成功した場合、`AuthenticationResult` インスタンスには ID トークンが含まれ、それはローカルにキャッシュされます。 認証が失敗した場合、`AuthenticationResult` インスタンスには、認証が失敗した理由を示すデータが含まれます。
-
-サンプル アプリケーションでは、認証が成功した場合、`TodoList`ページに移動します。
-
-## <a name="silent-re-authentication"></a>サイレント 再認証
-
-サンプル アプリケーションの `LoginPage` が表示されたとき、認証のユーザーインターフェイスを何も表示せずにユーザートークンを取得しよう試みます。 これは次のコードサンプルで示すように `AcquireTokenSilentAsync` メソッド を使って実現できます。
-
-```csharp
-public async Task<bool> LoginAsync(bool useSilent = false)
-{
-    ...
-    AuthenticationResult authenticationResult;
-
-    if (useSilent)
-    {
-        authenticationResult = await ADB2CClient.AcquireTokenSilentAsync(
-            Constants.Scopes,
-            GetUserByPolicy(ADB2CClient.Users, Constants.PolicySignUpSignIn),
-            Constants.Authority,
-            false);
-    }
-    ...
-}
-```
-
-`AcquireTokenSilentAsync`メソッドは、サインインをユーザーに要求することなく、キャッシュからユーザートークンを取得することを試みます。 これは適切なトークンが前回のセッションから既にキャッシュに存在しているというシナリオを処理します。 トークンの取得に成功した場合、`TodoList` ページに移動します。 トークンの取得に成功しなかった場合は、何も起こらず、ユーザーは新しい認証ワークフローを開始する選択肢を持ちます。
-
-## <a name="signing-out"></a>サインアウト
-
-次のコードサンプルは、サインアウト処理を呼び出す方法を示しています。
-
-```csharp
-public async Task<bool> LogoutAsync()
-{
-    ...
-    foreach (var user in ADB2CClient.Users)
-    {
-        ADB2CClient.Remove(user);
-    }
-    ...
-}
-```
-
-これは、ローカル キャッシュからすべての認証トークンを削除します。
-
-## <a name="summary"></a>まとめ
-
-この記事では、Microsoft Authentication Library (MSAL) と Azure Active Directory B2C を使用して、モバイル アプリケーションにコンシューマーの ID 管理を統合する方法を説明しました。 Azure Active Directory B2C は、コンシューマー向けの web アプリケーションとモバイル アプリケーションのクラウド ID 管理ソリューションです。
-
+![「Azure ADB2C サインイン画面の Android および iOS で」](azure-ad-b2c-images/login.png)
 
 ## <a name="related-links"></a>関連リンク
 
 - [AzureADB2CAuth (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/AzureADB2CAuth/)
 - [Azure Active Directory B2C](/azure/active-directory-b2c/)
 - [Microsoft Authentication Library](https://www.nuget.org/packages/Microsoft.Identity.Client)
+- [Microsoft 認証ライブラリのドキュメント](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki)

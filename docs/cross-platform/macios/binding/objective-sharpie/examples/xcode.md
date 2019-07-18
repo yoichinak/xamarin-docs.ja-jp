@@ -1,17 +1,17 @@
 ---
 title: Xcode プロジェクトを使用して実際の例
-description: このドキュメントでは、Xcode プロジェクトを c# OBJECTIVE-C コードへのバインドを作成するプロセスを簡略化の目的油性を直接入力として使用する方法について説明します。
+description: このドキュメントは Xcode プロジェクトを作成のプロセスを簡略化の目的油性を直接入力として使用する方法を説明しますC#OBJECTIVE-C コードへのバインド。
 ms.prod: xamarin
 ms.assetid: 168AA64C-E181-4937-A1F2-AD095B9A36F2
 author: asb3993
 ms.author: amburns
 ms.date: 01/15/2016
-ms.openlocfilehash: 05c55dc7cd20de2d216d1f267ea5a73631748a0a
-ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
+ms.openlocfilehash: ccfc2f1760d8971e2d824cf65344fa2a5e158c12
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37855248"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978368"
 ---
 # <a name="real-world-example-using-an-xcode-project"></a>Xcode プロジェクトを使用して実際の例
 
@@ -28,7 +28,3 @@ Cloning into 'pop'...
 $ <b>cd pop</b>
 $ <b>sharpie bind pop.xcodeproj -sdk iphoneos9.0</b></pre>
 
-## <a name="related-links"></a>関連リンク
-
-- [Xamarin University のコース: OBJECTIVE-C のバインド ライブラリをビルドします。](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin University のコース: 目標油性、OBJECTIVE-C のバインド ライブラリをビルドします。](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

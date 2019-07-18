@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 329984d44318b2204f2f5ee253402eb158c85b9f
-ms.sourcegitcommit: d09391c315336d36496880ef465a72b8974f2ac7
+ms.openlocfilehash: f53c1afd7c3f835bff2aae507b9937067bde4bec
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51579857"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865732"
 ---
 # <a name="dialogs-in-xamarinmac"></a>Xamarin.Mac でダイアログ ボックス
 
@@ -87,7 +87,7 @@ macOS は、標準的な印刷を使用しているすべてのアプリケー�
 
 ### <a name="save-dialogs"></a>ファイルの保存
 
-[保存] ダイアログ ボックスは、ユーザーがアプリケーションの項目を保存する方法を統一できます。 保存ダイアログに 2 つの状態があります:**最小限**(折りたたまれているとも呼ばれます)。
+[保存] ダイアログ ボックスは、ユーザーがアプリケーションの項目を保存する方法を統一できます。 [保存] ダイアログ ボックスでは、2 つの状態があります。**最小**(折りたたまれているとも呼ばれます)。
 
 [![](dialog-images/save01.png "保存 ダイアログ")](dialog-images/save01.png#lightbox)
 
@@ -127,10 +127,10 @@ macOS は、標準的な印刷を使用しているすべてのアプリケー�
 6. 作成、**モーダル セグエ**ダイアログのウィンドウにダイアログ ボックスが開きますされる UI 要素のコントロールをドラッグして新しいビュー コント ローラーへのアプリのメイン ウィンドウから。 割り当てる、**識別子** `ModalSegue`: 
 
     [![](dialog-images/new06.png "モーダルのセグエ")](dialog-images/new06.png#lightbox)
-6. いずれかのワイヤ アップ**アクション**と**Outlet**: 
+7. いずれかのワイヤ アップ**アクション**と**Outlet**: 
 
     [![](dialog-images/new04.png "アクションを設定します。")](dialog-images/new04.png#lightbox)
-6. 変更を保存し、Visual Studio for Mac は Xcode と同期に戻ります。
+8. 変更を保存し、Visual Studio for Mac は Xcode と同期に戻ります。
 
 ように、`CustomDialogController.cs`ファイルの次のようになります。
 
@@ -265,19 +265,19 @@ Xamarin.Mac でカスタムのシートを作成するには次の操作して�
 2. 新しいドラッグ**ビュー コント ローラー**デザイン サーフェイスに。
 
     [![](dialog-images/new01.png "ビュー コント ローラーをライブラリから選択します。")](dialog-images/new01.png#lightbox)
-2. ユーザー インターフェイスを設計するには。
+3. ユーザー インターフェイスを設計するには。
 
     [![](dialog-images/sheet01.png "UI の設計")](dialog-images/sheet01.png#lightbox)
-3. 作成、**シート セグエ**メイン ウィンドウに新しいビュー コント ローラーから。 
+4. 作成、**シート セグエ**メイン ウィンドウに新しいビュー コント ローラーから。 
 
     [![](dialog-images/sheet02.png "シート セグエの種類の選択")](dialog-images/sheet02.png#lightbox)
-4. **Identity Inspector**、ビュー コント ローラーの名前を**クラス** `SheetViewController`: 
+5. **Identity Inspector**、ビュー コント ローラーの名前を**クラス** `SheetViewController`: 
 
     [![](dialog-images/sheet03.png "クラス名を設定します。")](dialog-images/sheet03.png#lightbox)
-5. 必要な定義**Outlet**と**アクション**: 
+6. 必要な定義**Outlet**と**アクション**: 
 
     [![](dialog-images/sheet04.png "必要な Outlet と Action を定義します。")](dialog-images/sheet04.png#lightbox)
-6. 変更を保存し、Visual Studio for Mac を同期に戻ります。
+7. 変更を保存し、Visual Studio for Mac を同期に戻ります。
 
 次に、編集、`SheetViewController.cs`ファイルを開き、次のようになります。
 
@@ -413,7 +413,7 @@ public override void PrepareForSegue (NSStoryboardSegue segue, NSObject sender)
 
 ## <a name="creating-a-preferences-dialog"></a>ユーザー設定 ダイアログを作成します。
 
-インターフェイス ビルダーで基本設定の表示、レイアウト前に、基本設定の切り替えを処理するためにカスタムのセグエの種類を追加する必要になります。 新しいクラスをプロジェクトに追加し、それを呼び出す`ReplaceViewSeque `します。 クラスを編集し、次のようになります。
+インターフェイス ビルダーで基本設定の表示、レイアウト前に、基本設定の切り替えを処理するためにカスタムのセグエの種類を追加する必要になります。 新しいクラスをプロジェクトに追加し、それを呼び出す`ReplaceViewSeque`します。 クラスを編集し、次のようになります。
 
 ```csharp
 using System;
@@ -503,7 +503,7 @@ namespace MacWindows
 9. 新しいセグエを選択し、設定、**クラス**に`ReplaceViewSegue`:
 
     [![](dialog-images/pref08.png "セグエ クラスの設定")](dialog-images/pref08.png#lightbox)
-10. **メニュー バーのデザイナー**デザイン画面で、[アプリケーション] メニューから選択**設定しています.**、コントロールのクリック、および作成の基本設定ウィンドウにドラッグ、**表示**セグエします。
+10. **メニュー バーのデザイナー**デザイン画面で、[アプリケーション] メニューから選択**設定しています.** 、コントロールのクリック、および作成の基本設定ウィンドウにドラッグ、**表示**セグエします。
 
     [![](dialog-images/pref09.png "セグエの種類の設定")](dialog-images/pref09.png#lightbox)
 11. 変更を保存し、Visual Studio for Mac を同期に戻ります。
@@ -754,7 +754,7 @@ namespace SourceWriter
 }
 ```
 
-このクラスがここでは、2 つのことを行うことに注意してください。 最初に、ヘルパーがある`App`プロパティにアクセスすることを、 **AppDelegate**簡単です。 2 番目、`Preferences`プロパティは、グローバルな公開**AppPreferences**クラスは、このビューにデータ バインディングの UI コントロールを配置します。
+このクラスがここでは、2 つのことを行うことに注意してください。最初に、ヘルパーがある`App`プロパティへのアクセスを**AppDelegate**容易にします。 2 番目、`Preferences`プロパティは、グローバルな公開**AppPreferences**クラスは、このビューにデータ バインディングの UI コントロールを配置します。
 
 次に、Interface Builder で再度開きます (および上だけに行われた変更を参照してください)、ストーリー ボード ファイルをダブルクリックします。 ビューに、基本設定のインターフェイスを構築するために必要な UI コントロールをドラッグします。 各コントロールでは、スイッチ、**バインド インスペクター**の個々 のプロパティにバインドし、 **AppPreference**クラス。
 

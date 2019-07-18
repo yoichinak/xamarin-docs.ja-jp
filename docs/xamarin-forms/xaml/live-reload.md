@@ -9,11 +9,11 @@ ms.author: piboggan
 robots: noindex
 ms.date: 10/26/2018
 ms.openlocfilehash: 21ff09f2af93ee46578b959111bf744ba05a74d7
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617658"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61384934"
 ---
 # <a name="xamarin-live-reload-preview"></a>Xamarin のライブの再読み込み (プレビュー)
 
@@ -119,13 +119,13 @@ Android エミュレーターまたは iOS シミュレーターをデバッグ�
 * アプリ全体にわたるリソースを再読み込み (つまり**App.xaml**またはリソース ディクショナリの共有)、アプリのナビゲーションをリセットします。 
 * 現在 ContentView の再読み込みするには、格納されているページを再読み込みする必要があります。
 * AutomationId を含む要素の再読み込みエラーが発生する可能性があります。
-* ランタイム クラッシュが発生する可能性があります UWP のデバッグ中には、XAML を編集します。 回避策: 使用 **(Ctrl + F5) をデバッグなしで開始**の代わりに**デバッグ (F5) で開始**します。
+* ランタイム クラッシュが発生する可能性があります UWP のデバッグ中には、XAML を編集します。 回避策:使用 **(Ctrl + F5) をデバッグなしで開始**の代わりに**デバッグ (F5) で開始**します。
 
 ## <a name="troubleshooting"></a>トラブルシューティング
 
 ### <a name="error-codes"></a>エラー コード
 
-* **XLR001**: *'Xamarin.LiveReload' NuGet パッケージのバージョン [バージョン] を参照して、現在のプロジェクトが Xamarin Live Reload 拡張機能には、バージョン '[VERSION]' が必要です。*
+* **XLR001**:*現在のプロジェクト参照 'Xamarin.LiveReload' NuGet パッケージのバージョン [バージョン] が、Xamarin Live Reload 拡張機能には、バージョン '[VERSION]' が必要です。*
 
   迅速な反復処理しをライブの再読み込み機能の進化を許可するには、nuget パッケージと Visual Studio 拡張機能に一致します。 Nuget パッケージをインストールした拡張機能の同じバージョンに更新します。
 
@@ -133,11 +133,11 @@ Android エミュレーターまたは iOS シミュレーターをデバッグ�
 
   ときにライブの再読み込みに必要なプロパティは使用できません、コマンドラインから (または継続的インテグレーション) でのビルドとため明示的に指定する必要があります。 
 
-* **XLR003**: *Live Reload nuget パッケージでは、Xamarin Live Reload Visual Studio 拡張機能をインストールする必要があります。*
+* **XLR003**:*ライブの再読み込みの nuget パッケージでは、Xamarin Live Reload Visual Studio 拡張機能をインストールする必要があります。*
 
   ライブの再読み込みの nuget パッケージを参照するプロジェクトをビルドしようとしていますが、ビジュアルの拡張機能がインストールされていません。  
 
-* *アセンブリの読み込み中に例外: System.IO.FileNotFoundException: アセンブリを読み込むことができません ' Xamarin.Live.Reload、バージョン 0.3.27.0、Culture = neutral, PublicKeyToken = ='。*
+* *アセンブリの読み込み中に例外:System.IO.FileNotFoundException:アセンブリを読み込むことができません ' Xamarin.Live.Reload、バージョン = 0.3.27.0、Culture = neutral, PublicKeyToken ='。*
 
   ホスト プロジェクトを使用する必要があります`PackageReference`の代わりに `packages.config`
 

@@ -6,13 +6,13 @@ ms.assetid: CE686893-609C-4EC3-9225-6C68D2A9F79C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 08/01/2018
-ms.openlocfilehash: 965f56f7996cc7cf8a06e4201cc4bcf2ea35fb71
-ms.sourcegitcommit: 93c45e456218746df4f4a03bbe93493da0a90153
+ms.date: 04/10/2019
+ms.openlocfilehash: fd67072953f0fc4e448fee7edeec84760ebbda9a
+ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55760720"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65048322"
 ---
 # <a name="consuming-xaml-markup-extensions"></a>XAML マークアップ拡張機能の使用
 
@@ -27,6 +27,7 @@ XAML マークアップ拡張機能は、さまざまなソースから設定す
 - [`x:Null`](#null) –、属性を設定して、`null`値。
 - [`OnPlatform`](#onplatform) – プラットフォームごとに UI の外観をカスタマイズします。
 - [`OnIdiom`](#onidiom) – で、アプリケーションが実行されているデバイスの表現形式に基づく UI の外観をカスタマイズします。
+- [`DataTemplate`](#datatemplate-markup-extension) -を型に変換する[ `DataTemplate`](xref:Xamarin.Forms.DataTemplate)します。
 
 XAML マークアップ拡張機能を追加では、従来の他の XAML 実装によってサポートされていて、Xamarin.Forms でもサポートされます。 これらは、他の記事で詳しく説明されます。
 
@@ -264,7 +265,7 @@ public partial class MainPage : ContentPage
 }
 ```
 
-`NavigateCommand`プロパティは、`Command`型の引数と execute コマンドを実装するオブジェクト`Type`&mdash;の値`CommandParameter`します。 メソッドを使用して`Activator.CreateInstance`ページをインスタンス化するに移動するとします。 コンス トラクターは、最後に設定して、`BindingContext`これにより、ページ自体への`Binding`で`Command`させる。 参照してください、 [**データ バインディングの**](~/xamarin-forms/app-fundamentals/data-binding/index.md)記事と、特に[ **Commanding** ](~/xamarin-forms/app-fundamentals/data-binding/commanding.md)この種のコードの詳細については資料。
+`NavigateCommand`プロパティは、`Command`型の引数と execute コマンドを実装するオブジェクト`Type`&mdash;の値`CommandParameter`します。 メソッドを使用して`Activator.CreateInstance`ページをインスタンス化するに移動するとします。 コンストラクターは、最後に設定して、`BindingContext`これにより、ページ自体への`Binding`で`Command`させる。 参照してください、 [**データ バインディングの**](~/xamarin-forms/app-fundamentals/data-binding/index.md)記事と、特に[ **Commanding** ](~/xamarin-forms/app-fundamentals/data-binding/commanding.md)この種のコードの詳細については資料。
 
 **X:type デモ**ページに追加して Xamarin.Forms の要素をインスタンス化する同様の手法を使用して、`StackLayout`します。 XAML ファイルには、3 つの最初に`Button`を持つ要素が`Command`プロパティに設定、`Binding`と`CommandParameter`プロパティが 3 つの Xamarin.Forms のビューの種類に設定。
 
@@ -400,7 +401,7 @@ public partial class TypeDemoPage : ContentPage
 <local:HslColor H="0.5" S="1.0" L="0.5" />
 ```
 
-文字列や数値などの一般的な型の配列を定義するときに、記載タグを使用して、 [**コンス トラクターの引数を渡す**](~/xamarin-forms/xaml/passing-arguments.md#constructor_arguments)値を区切るための記事。
+文字列や数値などの一般的な型の配列を定義するときに、記載タグを使用して、 [**コンストラクターの引数を渡す**](~/xamarin-forms/xaml/passing-arguments.md#constructor_arguments)値を区切るための記事。
 
 <a name="null" />
 
@@ -503,7 +504,7 @@ public partial class TypeDemoPage : ContentPage
 
 ## <a name="onidiom-markup-extension"></a>OnIdiom マークアップ拡張機能
 
-`OnIdiom`マークアップ拡張機能でアプリケーションが実行されているデバイスの表現形式に基づく UI の外観をカスタマイズできます。 サポートされている、 [ `OnIdiomExtension` ](xref:Xamarin.Forms.Xaml.OnIdiomExtension)クラスは、次のプロパティを定義します。
+`OnIdiom`マークアップ拡張機能では、アプリケーションがで実行されているデバイスの表現形式に基づく UI の外観をカスタマイズすることができます。 サポートされている、 [ `OnIdiomExtension` ](xref:Xamarin.Forms.Xaml.OnIdiomExtension)クラスは、次のプロパティを定義します。
 
 - `Default` 型の`object`デバイスの表現形式を表すプロパティに適用される、既定値に設定します。
 - `Phone` 型の`object`、携帯電話に適用する値に設定します。
@@ -537,6 +538,25 @@ public partial class TypeDemoPage : ContentPage
 
 [![OnIdiom デモ](consuming-images/onidiomdemo-small.png "OnIdiom デモ")](consuming-images/onidiomdemo-large.png#lightbox "OnIdiom デモ")
 
+## <a name="datatemplate-markup-extension"></a>DataTemplate のマークアップ拡張機能
+
+`DataTemplate`マークアップ拡張機能では、型を変換することができる、 [ `DataTemplate`](xref:Xamarin.Forms.DataTemplate)します。 サポートされている、`DataTemplateExtension`クラスを定義する、`TypeName`型のプロパティ、 `string`、つまりに変換される型の名前に設定、 `DataTemplate`。 `TypeName`プロパティは、コンテンツのプロパティの`DataTemplateExtension`します。 そのため、XAML マークアップの式が中かっこで表された、削除できます、`TypeName=`式の一部です。
+
+> [!NOTE]
+> により、XAML パーサー、`DataTemplateExtension`のように短縮するにはクラス`DataTemplate`します。
+
+このマークアップ拡張機能の一般的な使い方は、次の例に示すようにシェル アプリケーションでは。
+
+```xaml
+<ShellContent Title="Monkeys"
+              Icon="monkey.png"
+              ContentTemplate="{DataTemplate views:MonkeysPage}" />
+```
+
+この例で`MonkeysPage`から変換されたは、 [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)を[ `DataTemplate`](xref:Xamarin.Forms.DataTemplate)の値として設定されています、`ShellContent.ContentTemplate`プロパティ。 これにより`MonkeysPage`はアプリケーションの起動時にはなく、ページ ナビゲーションが発生したときに作成された場合のみです。
+
+シェル アプリケーションの詳細については、次を参照してください。 [Xamarin.Forms シェル](~/xamarin-forms/app-fundamentals/shell/index.md)します。
+
 ## <a name="define-your-own-markup-extensions"></a>独自のマークアップ拡張機能を定義します。
 
 Xamarin.Forms で使用可能でない XAML マークアップ拡張機能の必要性が発生した場合は、[独自に作成](creating.md)です。
@@ -548,3 +568,4 @@ Xamarin.Forms で使用可能でない XAML マークアップ拡張機能の必
 - [リソース ディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [動的なスタイル](~/xamarin-forms/user-interface/styles/dynamic.md)
 - [データ バインディング](~/xamarin-forms/app-fundamentals/data-binding/index.md)
+- [Xamarin.Forms シェル](~/xamarin-forms/app-fundamentals/shell/index.md)します。

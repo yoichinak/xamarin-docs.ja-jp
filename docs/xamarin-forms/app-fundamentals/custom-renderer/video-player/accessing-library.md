@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: dedd2768bfa843e529e2eddcaed3b102c0a2efbd
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: 6845a08a531305468b861a3205e978b379f242bf
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233511"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926154"
 ---
 # <a name="accessing-the-devices-video-library"></a>デバイスのビデオ ライブラリへのアクセス
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)
 
 多くの最新のモバイル デバイスおよびデスクトップ コンピューターには、デバイスのカメラを使用してビデオを録画する機能があります。 ユーザーが作成するビデオは、デバイスにファイルとして格納されます。 これらのファイルは、イメージ ライブラリから取得して、他のビデオと同様、`VideoPlayer` クラスで再生できます。
 
@@ -188,7 +188,7 @@ namespace FormsVideoLibrary.Droid
 }
 ```
 
-`MainActivity` オブジェクトに追加されるのは、`FormsVideoLibrary` クラスをサポートするために通常のアプリケーション コードを変更する必要がある、[**VideoPlayerDemos**](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/) ソリューションのコードのみです。
+`MainActivity` オブジェクトに追加されるのは、`FormsVideoLibrary` クラスをサポートするために通常のアプリケーション コードを変更する必要がある、[**VideoPlayerDemos**](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/) ソリューションのコードのみです。
 
 ### <a name="the-uwp-video-picker"></a>UWP ビデオ ピッカー
 
@@ -229,7 +229,7 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="invoking-the-dependency-service"></a>依存関係サービスの起動
 
-[**VideoPlayerDemos**](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/) プログラムの **Play Library Video** ページは、ビデオ ピッカー依存関係サービスの使用方法の例を示します。 次の XAML ファイルには、`VideoPlayer` インスタンスと、**Show Video Library** というラベルの付いた `Button` が含まれます。
+[**VideoPlayerDemos**](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/) プログラムの **Play Library Video** ページは、ビデオ ピッカー依存関係サービスの使用方法の例を示します。 次の XAML ファイルには、`VideoPlayer` インスタンスと、**Show Video Library** というラベルの付いた `Button` が含まれます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -390,5 +390,5 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="related-links"></a>関連リンク
 
-- [ビデオ プレーヤーのデモ (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
+- [ビデオ プレーヤーのデモ (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)
 - [画像ライブラリから写真を選択する](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/11/2016
-ms.openlocfilehash: 8d2513ba1c2ae2769e81659c98f3897f33d83fbf
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 420f52a055dc1c03a017723ab34c2fc3b5363656
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112820"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67650225"
 ---
 # <a name="xamarinios-data-access"></a>Xamarin.iOS のデータ アクセス
 
@@ -30,7 +30,7 @@ Xamarin.iOS は、次のようなデータベース アクセス Api をサポ�
 
 両方のサンプル ソリューションには、iOS と Android のサンプル アプリケーションのプロジェクトが含まれます。
 
-Xamarin.Forms アプリケーションでは、読み取る[データベースでの作業](~/xamarin-forms/app-fundamentals/databases.md)PCL ライブラリを Xamarin.Forms での SQLite を使用する方法を説明しています。
+Xamarin.Forms アプリケーションでは、読み取る[データベースでの作業](~/xamarin-forms/data-cloud/data/databases.md)PCL ライブラリを Xamarin.Forms での SQLite を使用する方法を説明しています。
 
 ## <a name="sections"></a>セクション
 
@@ -53,4 +53,4 @@ Xamarin.Forms アプリケーションでは、読み取る[データベース�
 - [DataAccess Basic (サンプル)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
 - [データ アクセスの詳細 (サンプル)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
 - [iOS データ レシピ](https://github.com/xamarin/recipes/tree/master/Recipes/ios/data/sqlite)
-- [Xamarin.Forms のデータ アクセス](~/xamarin-forms/app-fundamentals/databases.md)
+- [Xamarin.Forms のデータ アクセス](~/xamarin-forms/data-cloud/data/databases.md)

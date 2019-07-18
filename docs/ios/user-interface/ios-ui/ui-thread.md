@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 6dd55f5c4316ed8f1d4f16d9e282cc2647350518
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: e4485c485b708bdec06f7f1dc22f0bf33e07e982
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104857"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827750"
 ---
 # <a name="working-with-the-ui-thread-in-xamarinios"></a>Xamarin.iOS で UI スレッドの操作
 
@@ -61,7 +61,7 @@ new System.Threading.Thread(new System.Threading.ThreadStart(() => {
 })).Start();
 ```
 
-行う必要がありますしないアプリがネットワーク要求を行う場合に注意する重要な概念は、これが、このドキュメントの例の残りの部分を使用して通知センターまたは別の実行完了ハンドラーを必要とするその他のメソッドを使用します。スレッドです。
+これの例、このドキュメントでは、残りの部分を使用する必要はありませんが、これは重要な通知センターまたは別の実行完了ハンドラーを必要とするその他のメソッドを使用してにアプリがネットワーク要求を行うときに注意してくださいスレッドです。
 
  <a name="Async_Await_Example" />
 
@@ -96,5 +96,5 @@ async partial void button2_TouchUpInside (UIButton sender)
 
 ## <a name="related-links"></a>関連リンク
 
-- [コントロール (サンプル)](https://developer.xamarin.com/samples/Controls/)
+- [コントロール (サンプル)](https://developer.xamarin.com/samples/monotouch/Controls/)
 - [スレッド化](~/ios/app-fundamentals/threading.md)

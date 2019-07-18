@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: maddyleger1
 ms.author: maleger
 ms.date: 03/27/2019
-ms.openlocfilehash: 0ff9f8b5ee6f9468650b6535745706bee8f96536
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: 60074c3c1b69a57d313ad0243246ba6db93dde3d
+ms.sourcegitcommit: 0cb62b02a7efb5426f2356d7dbdfd9afd85f2f4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58866359"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65557437"
 ---
 # <a name="use-design-time-data-with-the-xaml-previewer"></a>XAML プレビューアーでデザイン時のデータを使用します。
 
@@ -22,7 +22,7 @@ _一部のレイアウトでは、データを視覚化する困難です。XAML
 
 デザイン時のデータは、XAML プレビューアーでコントロールを簡単に視覚化できますを設定する偽のデータです。 開始するには、XAML ページのヘッダーに次のコード行を追加します。
 
-```csharp
+```xaml
 xmlns:d="http://xamarin.com/schemas/2014/forms/design"
 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 mc:Ignorable="d"
@@ -32,17 +32,17 @@ mc:Ignorable="d"
 
 たとえば、通常は、データをバインドするラベルにテキストを追加できます。
 
-```csharp
-<Label Text={Binding Name} d:Text="Name" />
+```xaml
+<Label Text="{Binding Name}" d:Text="Name!" />
 ```
 
 [![デザイン時データ ラベルのテキストを](xaml-previewer-images/designtimedata-label-sm.png "デザイン時刻のテキスト データ ラベル")](xaml-previewer-images/designtimedata-label-lg.png#lightbox)
 
- この例でなく`d:Text`、XAML プレビューアーには、ラベルについて何も表示されます。 代わりに、ラベルが実行時に実際のデータをある場所"Name"を示します。
+この例でなく`d:Text`、XAML プレビューアーには、ラベルについて何も表示されます。 代わりに、"Name!"を示します 場所ラベルは、実行時に実際のデータがあります。
 
 使用することができます`d:`色、フォント サイズ、および間隔など、Xamarin.Forms コントロールのすべての属性。 コントロール自体にも追加できます。
 
-```csharp
+```xaml
 <d:Button Text="Design Time Button" />
 ```
 
@@ -54,7 +54,7 @@ mc:Ignorable="d"
 
 ページにバインドされているかに動的に読み込まれているイメージのデザイン時ソースを設定することができます。 Android プロジェクトで、追加する XAML プレビューアーで表示するイメージ、**リソース > ディスプレイ**フォルダー。 IOS プロジェクトで、イメージを追加、**リソース**フォルダー。 デザイン時に XAML プレビューアーでのイメージを表示できます。
 
-```csharp
+```xaml
 <Image Source={Binding ProfilePicture} d:Source="DesignTimePicture.jpg" />
 ```
 [![デザイン時データ イメージを](xaml-previewer-images/designtimedata-image-sm.png "組み込まで時刻のデータの設計")](xaml-previewer-images/designtimedata-image-lg.png#lightbox)
@@ -63,7 +63,7 @@ mc:Ignorable="d"
 
 Listview は、モバイル アプリでデータを表示する一般的な方法です。 ただし、これらはなく実際のデータを視覚化するが困難です。 でそれらをデザイン時のデータを使用するには、ItemsSource として使用するデザイン時の配列を作成する必要があります。 XAML プレビューアーでは、デザイン時に、ListView では、その配列があるものが表示されます。
 
-```csharp
+```xaml
 <StackLayout>
     <ListView ItemsSource="{Binding Items}">
         <d:ListView.ItemsSource>
@@ -87,8 +87,7 @@ Listview は、モバイル アプリでデータを表示する一般的な方�
 
 この例の 3 つ TextCells の ListView を XAML プレビューアーで表示されます。 変更することができます`x:String`プロジェクト内の既存のデータ モデルにします。
 
-参照してください[James Montemagno 氏の Hanselman.Forms アプリ](https://github.com/jamesmontemagno/Hanselman.Forms/blob/vnext/src/Hanselman/Views/Podcasts/PodcastDetailsPage.xaml#L36-L57)より複雑な例です。
-
+参照してください[James Montemagno 氏の Hanselman.Forms アプリ](https://github.com/jamesmontemagno/Hanselman.Forms/blob/vnext/src/Hanselman/Views/Podcasts/PodcastDetailsPage.xaml#L26-L47)より複雑な例です。
 
 ## <a name="alternative-hardcode-a-static-viewmodel"></a>代替方法:静的な ViewModel をハードコーディングします。
 

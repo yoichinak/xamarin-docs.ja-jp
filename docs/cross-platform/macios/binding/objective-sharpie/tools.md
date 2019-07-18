@@ -6,12 +6,12 @@ ms.assetid: A84E209B-8932-4CC1-BAD1-7FD51F798A97
 author: asb3993
 ms.author: amburns
 ms.date: 10/05/2015
-ms.openlocfilehash: 718b5104ddc4593d080b88b062c42d371d9e8e2e
-ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
+ms.openlocfilehash: 51a0b81204b743824e24cfed83bd73308fa8d506
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37855069"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64977663"
 ---
 # <a name="objective-sharpie-tools--commands"></a>目標油性ツールとコマンド
 
@@ -85,8 +85,3 @@ Xcode Options:
 <span class="terminal-blue">sdk:</span> watchos2.0      <span class="terminal-green">arch:</span> armv7</pre>
 
 上記からわかりますがあること、 `iphoneos9.1` SDK は、コンピューターにインストールされているしが`arm64`アーキテクチャ サポート。 このセクションでは、すべてのサンプルについてはこの値が使用されます。 この情報が、最初に Objective C ライブラリ ヘッダー ファイルを解析する準備ができて`ApiDefinition.cs`と`StructsAndEnums.cs`バインド プロジェクト。
-
-## <a name="related-links"></a>関連リンク
-
-- [Xamarin University のコース: OBJECTIVE-C のバインド ライブラリをビルドします。](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin University のコース: 目標油性、OBJECTIVE-C のバインド ライブラリをビルドします。](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

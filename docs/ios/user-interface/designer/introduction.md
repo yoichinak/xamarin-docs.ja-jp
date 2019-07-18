@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 01/31/2018
 ms.openlocfilehash: 2c6409410ecba7df8559c07c3231f5e493c98897
-ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58071079"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61080933"
 ---
 # <a name="ios-designer-basics"></a>iOS Designer の基本
 
@@ -34,7 +34,7 @@ IOS デザイナーは、Visual Studio for Mac と Visual Studio 2017 と後で�
 
 IOS Designer では、アプリケーションのユーザー インターフェイスを視覚的に設計できます。 」の説明に従って、[ストーリー ボードの概要](~/ios/user-interface/storyboards/index.md)ガイド、ストーリー ボード画面について説明します、(コント ローラーの表示)、アプリを構成するこれらのビュー コント ローラーと、アプリの全体的なナビゲーションのフローに格納されて、インターフェイス要素 (ビュー). 
 
-ビュー コント ローラーが 2 つの部分: iOS Designer でビジュアルな表示と関連付けられている C# クラス。
+ビュー コント ローラーが 2 つの部分: iOS Designer でビジュアルな表示と関連付けられている c# クラス。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 

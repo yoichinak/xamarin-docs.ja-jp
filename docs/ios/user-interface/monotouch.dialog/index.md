@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: d5dda3cc22d91248cc31cc526e898a5eabbbefd0
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 6e64f9c7d0fcebbbc92171f92a5e0ac2f18ce451
+ms.sourcegitcommit: 85c45dc28ab3625321c271804768d8e4fce62faf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57670145"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67039704"
 ---
 # <a name="introduction-to-monotouchdialog-for-xamarinios"></a>MonoTouch.Dialog Xamarin.iOS 用の概要
 
@@ -120,16 +120,16 @@ MonoTouch.Dialog プロセスを開始するには少なくとも 1 つ RootElem
 
 ```csharp
 var root = new RootElement ("Meals") {
-    new Section ("Dinner"){
-            new RootElement ("Dessert", new RadioGroup ("dessert", 2)) {
-                new Section () {
-                    new RadioElement ("Ice Cream", "dessert"),
-                    new RadioElement ("Milkshake", "dessert"),
-                    new RadioElement ("Chocolate Cake", "dessert")
-                }
+    new Section ("Dinner") {
+        new RootElement ("Dessert", new RadioGroup ("dessert", 2)) {
+            new Section () {
+                new RadioElement ("Ice Cream", "dessert"),
+                new RadioElement ("Milkshake", "dessert"),
+                new RadioElement ("Chocolate Cake", "dessert")
             }
         }
     }
+};
 ```
 
 上記の例では、「デザート」で、ユーザーがタップしたとき MonoTouch.Dialog は新しいページを作成し、「デザート」されているし、3 つの値のオプション グループのルートに移動します。
@@ -151,14 +151,14 @@ Add メソッドを呼び出すか、c# 4 の初期化子構文を使用して�
 文字列をだけ使用する通常がカスタム Ui を作成するのには、ヘッダーまたはフッターとして任意の UIView を使用できます。 次のように作成するのに文字列を使用することができますか。
 
 ```csharp
-var section = new Section ("Header", "Footer")
+var section = new Section ("Header", "Footer");
 ```
 
 ビューを使用するには、コンス トラクターに、ビューを渡すだけ。
 
 ```csharp
 var header = new UIImageView (Image.FromFile ("sample.png"));
-var section = new Section (header)
+var section = new Section (header);
 ```
 
 ### <a name="getting-notified"></a>通知の取得
@@ -170,8 +170,7 @@ MT.D の表面を`NSAction`コールバックを処理するためのデリゲ�
 
 ```csharp
 new Section () {
-        new StringElement ("Demo Callback", 
-                delegate { Console.WriteLine ("Handled"); })
+    new StringElement ("Demo Callback", delegate { Console.WriteLine ("Handled"); })
 }
 ```
 
@@ -180,18 +179,14 @@ new Section () {
 組み合わせて、`Element.Value`プロパティ、コールバックは、その他の要素で設定された値を取得できます。 次に例を示します。
 
 ```csharp
-var element = new EntryElement (task.Name, "Enter task description",
-        task.Description);
+var element = new EntryElement (task.Name, "Enter task description", task.Description);
                 
-var taskElement = new RootElement (task.Name){
-        new Section () { element },
-        new Section () { 
-                new DateElement ("Due Date", task.DueDate)
-        },
-        new Section ("Demo Retrieving Element Value") {
-                new StringElement ("Output Task Description", 
-                        delegate { Console.WriteLine (element.Value); })
-        }
+var taskElement = new RootElement (task.Name) {
+    new Section () { element },
+    new Section () { new DateElement ("Due Date", task.DueDate) },
+    new Section ("Demo Retrieving Element Value") {
+        new StringElement ("Output Task Description", delegate { Console.WriteLine (element.Value); })
+    }
 };
 ```
 
@@ -223,10 +218,9 @@ A`StringElement`左側にある表のセルとセルの右側にある文字列�
 使用する、`StringElement`ボタンと、デリゲートを指定します。
 
 ```csharp
-new StringElement (
-        "Click me",
-        () => { new UIAlertView("Tapped", "String Element Tapped"
-, null, "ok", null).Show(); })
+new StringElement ("Click me", () => { 
+    new UIAlertView("Tapped", "String Element Tapped", null, "ok", null).Show();
+});
 ```
 
  [![](images/image8.png "ボタンとして、StringElement を使用するには、デリゲートを指定します。")](images/image8.png#lightbox)
@@ -281,7 +275,7 @@ A`StyledStringElement`文字列のいずれかの組み込みのテーブル セ
 A`RadioElement`が必要です、`RadioGroup`で指定する、`RootElement`します。
 
 ```csharp
-mtRoot = new RootElement ("Demos", new RadioGroup("MyGroup", 0))
+mtRoot = new RootElement ("Demos", new RadioGroup("MyGroup", 0));
 ```
 
  [![](images/image14.png "RadioElement が、RadioGroup、RootElement で指定する必要があります。")](images/image14.png#lightbox)
@@ -289,7 +283,7 @@ mtRoot = new RootElement ("Demos", new RadioGroup("MyGroup", 0))
  `RootElements` オプションの要素を調整するためも使用されます。 `RadioElement`メンバーが複数のセクションでは (たとえばリング トーン セレクターとカスタムの個別の着信音に着信音のシステムからのようなものを導入するなど) にまたがることができます。 概要ビューは、現在選択されているオプションの要素に表示されます。 を使用するには、作成、`RootElement`グループ コンス トラクターのようにします。
 
 ```csharp
-var root = new RootElement ("Meals", new RadioGroup ("myGroup", 0))
+var root = new RootElement ("Meals", new RadioGroup ("myGroup", 0));
 ```
 
 内のグループの名前`RadioGroup`(ある場合) に格納されているページで選択した値と値のゼロをここでは、これが最初に選択した項目のインデックスを表示するために使用します。
@@ -359,16 +353,13 @@ DateTimeElement に対応するセルを選択すると、次に示すように 
 
 ```csharp
 public class SampleOwnerDrawnElement : OwnerDrawnElement
- {
+{
     public SampleOwnerDrawnElement (string text) : base(UITableViewCellStyle.Default, "sampleOwnerDrawnElement")
     {
         this.Text = text;
     }
 
-    public string Text
-    {
-        get;set;    
-    }
+    public string Text { get; set; }
 
     public override void Draw (RectangleF bounds, CGContext context, UIView view)
     {
@@ -383,7 +374,7 @@ public class SampleOwnerDrawnElement : OwnerDrawnElement
     {
         return 44.0f;
     }
- }
+}
 ```
 
 ### <a name="json-element"></a>JSON 要素
@@ -453,9 +444,9 @@ MonoTouch.Dialog が組み込まれています、 [TweetStation](https://github
 string uriString = "http://some-server.com/some image url";
 
 var rootElement = new RootElement("Image Loader") {
-        new Section(){
-                new BadgeElement( ImageLoader.DefaultRequestImage( new Uri(uriString), this), "Xamarin")
-        }
+    new Section() {
+        new BadgeElement( ImageLoader.DefaultRequestImage( new Uri(uriString), this), "Xamarin")
+    }
 };
 ```
 
@@ -463,16 +454,15 @@ ImageLoader クラスは、すべてのメモリに現在キャッシュされ�
 
 ## <a name="using-linq-to-create-element-hierarchy"></a>LINQ を使用して、要素の階層を作成するには
 
-LINQ と # の初期化の構文の巧妙な使用法を使用して LINQ を使用して、要素の階層を作成します。 たとえば、次のコードは、一部の文字列配列から画面を作成およびハンドル セルのそれぞれに渡される匿名関数を使用して選択`StringElement`:
+LINQ の優れた使用法を使用して、C#の要素の階層を作成する初期化構文、LINQ を使用できます。 たとえば、次のコードは、一部の文字列配列から画面を作成およびハンドル セルのそれぞれに渡される匿名関数を使用して選択`StringElement`:
 
 ```csharp
 var rootElement = new RootElement ("LINQ root element") {
-from x in new string [] { "one", "two", "three" }
-select new Section (x) {
-from y in "Hello:World".Split (':')
-select (Element) new StringElement (y,
-delegate { Debug.WriteLine("cell tapped"); })
-}
+    from x in new string [] { "one", "two", "three" }
+    select new Section (x) {
+        from y in "Hello:World".Split (':')
+        select (Element) new StringElement (y, delegate { Debug.WriteLine("cell tapped"); })
+    }
 };
 ```
 
@@ -488,38 +478,40 @@ XML データ ストアまたはデータからほぼまったく複雑なアプ
 
 ```csharp
 // To release any heavy resources that you might have
-    void Dispose (bool disposing);
+void Dispose (bool disposing);
 
-    // To retrieve the UITableViewCell for your element
-    // you would need to prepare the cell to be reused, in the
-    // same way that UITableView expects reusable cells to work
-    UITableViewCell GetCell (UITableView tv)
+// To retrieve the UITableViewCell for your element
+// you would need to prepare the cell to be reused, in the
+// same way that UITableView expects reusable cells to work
+UITableViewCell GetCell (UITableView tv);
 
-    // To retrieve a "summary" that can be used with
-    // a root element to render a summary one level up.  
-    string Summary ()
-    // To detect when the user has tapped on the cell
-    void Selected (DialogViewController dvc, UITableView tableView, NSIndexPath path)
-    // If you support search, to probe if the cell matches the user input
-    bool Matches (string text)
+// To retrieve a "summary" that can be used with
+// a root element to render a summary one level up.  
+string Summary ();
+
+// To detect when the user has tapped on the cell
+void Selected (DialogViewController dvc, UITableView tableView, NSIndexPath path);
+
+// If you support search, to probe if the cell matches the user input
+bool Matches (string text);
 ```
 
 実装する必要があります、要素には、変数のサイズを設定できる場合、`IElementSizing`インターフェイスで、1 つのメソッドが含まれています。
 
 ```csharp
 // Returns the height for the cell at indexPath.Section, indexPath.Row
-    float GetHeight (UITableView tableView, NSIndexPath indexPath);
+float GetHeight (UITableView tableView, NSIndexPath indexPath);
 ```
 
 実装する方法を計画している場合、`GetCell`メソッドを呼び出して`base.GetCell(tv)`もオーバーライドする必要が返されるセルのカスタマイズ、および、`CellKey`次のように、要素に一意となるキーを返すプロパティ。
 
 ```csharp
 static NSString MyKey = new NSString ("MyKey");
-    protected override NSString CellKey {
-        get {
-            return MyKey;
-        }
+protected override NSString CellKey {
+    get {
+        return MyKey;
     }
+}
 ```
 
 これは、動作ではなく、ほとんどの要素、`StringElement`と`StyledStringElement`独自キーのセットを使用して、さまざまなレンダリングのシナリオのものとします。 これらのクラスのコードを複製する必要があります。
@@ -533,9 +525,9 @@ static NSString MyKey = new NSString ("MyKey");
 たとえば、次のいずれかにリスト スタイルを変更したい`Grouped`または`Plain`、次のように、コント ローラーを作成するときに、プロパティを変更することで、この値を設定する可能性があります。
 
 ```csharp
-var myController = new DialogViewController (root, true){
-        Style = UITableViewStyle.Grouped;
-    }
+var myController = new DialogViewController (root, true) {
+    Style = UITableViewStyle.Grouped;
+}
 ```
 
 高度なカスタマイズの`DialogViewController`、その背景を設定するなどの場合サブクラスですし、上書き、適切なメソッドは、次の例で示すようにします。
@@ -587,8 +579,6 @@ public override Source CreateSizingSource (bool unevenRows)
 
 ## <a name="related-links"></a>関連リンク
 
-- [MonoTouch.Dialog とスクリーン キャスト - Miguel de Icaza の作成、iOS のログイン画面](http://youtu.be/3butqB1EG0c)
-- [スクリーン キャスト - MonoTouch.Dialog で iOS ユーザー インターフェイスを簡単に作成](http://youtu.be/j7OC5r8ZkYg)
 - [チュートリアル: 要素 API を使用したアプリケーションの作成](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md)
 - [チュートリアル: リフレクション API を使用したアプリケーションの作成](~/ios/user-interface/monotouch.dialog/reflection-api-walkthrough.md)
 - [チュートリアル: JSON 要素を使用して、ユーザー インターフェイスを作成するには](~/ios/user-interface/monotouch.dialog/json-element-walkthrough.md)

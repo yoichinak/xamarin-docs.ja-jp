@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
 ms.openlocfilehash: d6173e1886eaf807decd960b07acc022bb17c04d
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669077"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61177672"
 ---
 # <a name="lollipop-features"></a>ロリポップ機能
 
@@ -70,9 +70,9 @@ Android 5.0 プロジェクトを作成するには、最新のツールおよ�
 
     [![Android SDK Manager で Android 5.0 SDK パッケージをインストールします。](lollipop-images/android-l-sdk-pkgs-sml.png)](lollipop-images/android-l-sdk-pkgs.png#lightbox)
 
-   詳細については、Android SDK Manager を使用して、[SDK Manager](https://developer.android.com/tools/help/sdk-manager.html)を参照してください。
+   詳細については、Android SDK Manager を使用して、次を参照してください。 [SDK Manager](https://developer.android.com/tools/help/sdk-manager.html)します。
 
-4. 新しい Xamarin.Android プロジェクトを作成します。 Xamarin で Android の開発に慣れていない場合は、[Hello, Android](~/android/get-started/hello-android/index.md)を Android プロジェクトを作成する方法について説明を参照してください。 Android プロジェクトを作成するときに、Android 5.0 のバージョンの設定を構成することを確認します。
+4. 新しい Xamarin.Android プロジェクトを作成します。 Xamarin で Android の開発に慣れていない場合は、次を参照してください。 [Hello, Android](~/android/get-started/hello-android/index.md)を Android プロジェクトを作成する方法について説明します。 Android プロジェクトを作成するときに、Android 5.0 のバージョンの設定を構成することを確認します。
    Visual studio for Mac に移動します**プロジェクト オプション&gt;ビルド&gt;全般**設定と**ターゲット フレームワーク**に**Android 5.0 (Lollipop)** または。あとで：
 
     ![ターゲット Framwework を Android 5.0 Lollipop に設定します。](lollipop-images/target-framework.png)
@@ -81,7 +81,7 @@ Android 5.0 プロジェクトを作成するには、最新のツールおよ�
 
     ![最小値とターゲット Android バージョンを自動に設定します。](lollipop-images/minimum-android-version.png)
 
-5. アプリをテストするには、エミュレーターまたは Android デバイスを構成します。 エミュレーターを使用している場合は、[Android Emulator のセットアップ](~/android/get-started/installation/android-emulator/index.md)を Xamarin Studio または Visual Studio を使用するため、Android エミュレーターを構成する方法について説明を参照してください。 Android デバイスを使用している場合は、[the Preview SDK の設定を](https://developer.android.com/preview/setup-sdk.html)を Android 5.0 デバイスを更新する方法について説明を参照してください。 実行していると、Xamarin.Android アプリケーションをデバッグ用に Android デバイスを構成するを参照してください。[開発用デバイスの設定](~/android/get-started/installation/set-up-device-for-development.md)します。
+5. アプリをテストするには、エミュレーターまたは Android デバイスを構成します。 エミュレーターを使用している場合は、次を参照してください。 [Android Emulator のセットアップ](~/android/get-started/installation/android-emulator/index.md)を Xamarin Studio または Visual Studio を使用するため、Android エミュレーターを構成する方法について説明します。 Android デバイスを使用している場合は、次を参照してください。 [the Preview SDK の設定を](https://developer.android.com/preview/setup-sdk.html)を Android 5.0 デバイスを更新する方法について説明します。 実行していると、Xamarin.Android アプリケーションをデバッグ用に Android デバイスを構成するを参照してください。[開発用デバイスの設定](~/android/get-started/installation/set-up-device-for-development.md)します。
 
 メモ:更新する必要がありますが、Android の L プレビューを対象とする既存の Android プロジェクトを更新する場合、**ターゲット フレームワーク**と**Android バージョン**上記で説明した値にします。
 
@@ -99,7 +99,7 @@ Android 5.0 は、Dalvik ではなく、既定のランタイムとして新し�
 
 -   **強化されたアプリのデバッグ**&ndash;アートは、例外の分析に役立つレポートとクラッシュ レポートを詳しく診断します。
 
-アートの下で変更せずに既存のアプリが動作する必要があります&ndash;前 Dalvik 実行時に固有の手法を活用するアプリを除くこれが機能しないアートの下。 これらの変更の詳細については、[アプリの動作を検証する Android ランタイム (アート) で](https://developer.android.com/guide/practices/verifying-apps-art.html)を参照してください。
+アートの下で変更せずに既存のアプリが動作する必要があります&ndash;前 Dalvik 実行時に固有の手法を活用するアプリを除くこれが機能しないアートの下。 これらの変更の詳細については、次を参照してください。[アプリの動作を検証する Android ランタイム (アート) で](https://developer.android.com/guide/practices/verifying-apps-art.html)します。
 
 
 ### <a name="notification-changes"></a>通知の変更
@@ -126,7 +126,7 @@ Android 5.0 は、Dalvik ではなく、既定のランタイムとして新し�
 
 場合は、通知には、トランスポート コントロール、ディスプレイのメディア再生状態が存在するを使用して、 `RemoteControlClient`、呼び出したり`ActivityManager.GetRecentTasks`を参照してください[動作の重要な変更](https://developer.android.com/preview/api-overview.html#Behaviors)詳細については、Android の通知を更新しています5.0 です。
 
-Android で通知を作成する方法の詳細については、[ローカル通知](~/android/app-fundamentals/notifications/local-notifications.md)を参照してください。 [互換性](~/android/app-fundamentals/notifications/local-notifications.md#compatibility)この記事のセクションと互換性のある下向きの通知を作成する方法を説明します。 以前のバージョンの Android です。
+Android で通知を作成する方法の詳細については、次を参照してください。[ローカル通知](~/android/app-fundamentals/notifications/local-notifications.md)します。 [互換性](~/android/app-fundamentals/notifications/local-notifications.md#compatibility)この記事のセクションと互換性のある下向きの通知を作成する方法を説明します。 以前のバージョンの Android です。
 
 
 ## <a name="material-theme"></a>マテリアル テーマ
@@ -141,7 +141,7 @@ Android 5.0 には、左側のようなホーム画面に送られます。 セ�
 
 [![濃いのスクリーン ショット、光、および DarkActionBar テーマ](lollipop-images/three-material-themes-sml.png)](lollipop-images/three-material-themes.png#lightbox)
 
-詳細については、Xamarin.Android アプリの 素材のテーマ機能を使用して、[マテリアル テーマ](~/android/user-interface/material-theme.md)を参照してください。
+詳細については、Xamarin.Android アプリの 素材のテーマ機能を使用して、次を参照してください。[マテリアル テーマ](~/android/user-interface/material-theme.md)します。
 
 
 ## <a name="animations"></a>Animations
@@ -206,7 +206,7 @@ Android 5.0 でフィードバックのアニメーションをタッチの詳�
 
 -   ビューのサイズとスケールの種類を変更します。
 
-詳細については、Android 5.0 でアクティビティの遷移アニメーションは、[アクティビティの遷移をカスタマイズ](https://developer.android.com/training/material/animations.html#Transitions)を参照してください。
+詳細については、Android 5.0 でアクティビティの遷移アニメーションは、次を参照してください。[アクティビティの遷移をカスタマイズ](https://developer.android.com/training/material/animations.html#Transitions)します。
 
 
 ### <a name="view-state-transition-animations"></a>ビュー状態遷移のアニメーション
@@ -217,7 +217,7 @@ Android 5.0 では、アニメーションをビューの状態が変更され�
 
 -   ビューの状態が変更されたときに実行されるアニメーション機能を定義します。 新しい`StateListAnimator`クラスを使用して、ビューの状態が変更されたときに実行されるアニメーターを定義できます。
 
-詳細については、Android 5.0 でのビュー状態遷移のアニメーションは、[ビュー ステートの変更をアニメーション化する](https://developer.android.com/training/material/animations.html#ViewState)を参照してください。
+詳細については、Android 5.0 でのビュー状態遷移のアニメーションは、次を参照してください。[ビュー ステートの変更をアニメーション化する](https://developer.android.com/training/material/animations.html#ViewState)します。
 
 
 ### <a name="reveal-effect"></a>効果を表示します。
@@ -232,7 +232,7 @@ Android 5.0 では、アニメーションをビューの状態が変更され�
 
 表示アニメーションを元に戻すことができます。クリッピング円ことができます、ビューを非表示に圧縮ではなく、ビューを表示すると拡大表示します。
 
-Android 5.0 表示効果の詳細については、[表示効果を使用して、](https://developer.android.com/training/material/animations.html#Reveal)を参照してください。
+Android 5.0 表示効果の詳細については、次を参照してください。[表示効果を使用して、](https://developer.android.com/training/material/animations.html#Reveal)します。
 
 
 ### <a name="curved-motion"></a>曲線のモーション
@@ -245,7 +245,7 @@ Android 5.0 には、これらのアニメーション機能に加えて、ア�
 
 -   **線形\_アウト\_低速\_で**&ndash;ピーク velocity の使用と緩やかに変化値で始まる減速するアニメーションの終了。
 
-新たに使用することができます`PathInterpolator`クラスがアニメーションの補間が行われる方法を指定します。 `PathInterpolator` 指定した制御点とアニメーション曲線に従ってアニメーション パスを通過する補間です。 Android 5.0 の曲線のモーションの設定を指定する方法の詳細については、[使用曲線モーション](https://developer.android.com/training/material/animations.html#CurvedMotion)を参照してください。
+新たに使用することができます`PathInterpolator`クラスがアニメーションの補間が行われる方法を指定します。 `PathInterpolator` 指定した制御点とアニメーション曲線に従ってアニメーション パスを通過する補間です。 Android 5.0 の曲線のモーションの設定を指定する方法の詳細については、次を参照してください。[使用曲線モーション](https://developer.android.com/training/material/animations.html#CurvedMotion)します。
 
 
 ## <a name="view-shadows--elevation"></a>昇格 (&)、ビューのシャドウ
@@ -258,7 +258,7 @@ Android 5.0 で指定できます、*昇格*をビューで、新しい設定の
 
 シャドウ設定の表示 (前述のように) 静的またはビュー、ビューの背景の上の一時的に増加し表示するアニメーションで使用できます。 使用することができます、`ViewPropertyAnimator`ビューの昇格をアニメーション化するクラス。 ビューの昇格がそのレイアウトの合計`elevation`設定と`translationZ`プロパティを使用して設定することができます、`ViewPropertyAnimator`メソッドの呼び出し。
 
-詳細については、ビュー shadows Android 5.0 では、[影の定義、クリッピング ビュー](https://developer.android.com/training/material/shadows-clipping.html)を参照してください。
+詳細については、ビュー shadows Android 5.0 では、次を参照してください。[影の定義、クリッピング ビュー](https://developer.android.com/training/material/shadows-clipping.html)します。
 
 
 ## <a name="color-features"></a>色の機能
@@ -307,7 +307,7 @@ Android 5.0 レイアウト認識、新しい`tint`表示が異なる色にこ�
 
 上記のスクリーン ショットでは、操作バーが抽出された「活気のある光」に設定されてを抽出した「活気のある濃い」設定の色と背景色。 各上記の例では、小規模な色の正方形の行を画像から抽出されたパレットの色を示すために含まれています。
 
-詳細については、Android 5.0 での色の抽出は、[イメージからの抽出の目立つ色](https://developer.android.com/training/material/drawables.html#ColorExtract)を参照してください。
+詳細については、Android 5.0 での色の抽出は、次を参照してください。[イメージからの抽出の目立つ色](https://developer.android.com/training/material/drawables.html#ColorExtract)します。
 
 
 ## <a name="new-ui-widgets"></a>新しい UI ウィジェット
@@ -410,7 +410,7 @@ Android 5.0 は、カメラの拡張機能のいくつかの新しい Api を提
 
 -   `CaptureResult` &ndash; イメージのキャプチャ操作の結果を提供します。
 
-詳細については、新しいカメラ Api を Android 5.0 では、[メディア](https://developer.android.com/about/versions/android-5.0.html#Media)を参照してください。
+詳細については、新しいカメラ Api を Android 5.0 では、次を参照してください。[メディア](https://developer.android.com/about/versions/android-5.0.html#Media)します。
 
 ### <a name="audio-playback"></a>オーディオの再生
 
@@ -434,7 +434,7 @@ Android 5.0 が導入されていますが、新しい`Android.Media.MediaContro
 
 また、使用する新しい`Android.App.Notification.MediaStyle`リッチな通知のコンテンツ (など、抽出およびアルバム アートを表示) とメディア セッションを関連付けるクラス。
 
-詳細については、Android 5.0 で新しいメディア再生コントロール機能は、[メディア](https://developer.android.com/about/versions/android-5.0.html#Media)を参照してください。
+詳細については、Android 5.0 で新しいメディア再生コントロール機能は、次を参照してください。[メディア](https://developer.android.com/about/versions/android-5.0.html#Media)します。
 
 ### <a name="storage"></a>記憶域
 
@@ -446,7 +446,7 @@ Android 5.0 は、アプリケーション ディレクトリとドキュメン�
 
 -   新しい呼び出しをすべての共有記憶域デバイスでメディアのディレクトリへのパスを取得する`Android.Content.Context.GetExternalMediaDirs`メソッド。
 
-詳細については、新しいストレージ Api を Android 5.0 では、[ストレージ](https://developer.android.com/preview/api-overview.html#Storage)を参照してください。
+詳細については、新しいストレージ Api を Android 5.0 では、次を参照してください。[ストレージ](https://developer.android.com/preview/api-overview.html#Storage)します。
 
 ### <a name="wireless--connectivity"></a>ワイヤレスと接続性
 
@@ -458,13 +458,13 @@ Android 5.0 には、ワイヤレスと接続に関する次の API の機能強
 
 -   NFC の機能強化を容易には、他のデバイスとデータを共有する近距離通信機能を使用します。
 
-詳細については、新しいワイヤレスおよび接続 Api を Android 5.0 では、[ワイヤレスおよび接続](https://developer.android.com/preview/api-overview.html#Wireless)を参照してください。
+詳細については、新しいワイヤレスおよび接続 Api を Android 5.0 では、次を参照してください。[ワイヤレスおよび接続](https://developer.android.com/preview/api-overview.html#Wireless)します。
 
 ### <a name="job-scheduling"></a>ジョブのスケジュール設定
 
 Android 5.0 が導入されていますが、新しい`JobScheduler`ユーザーに役立つ API、デバイスが接続されている場合にのみ実行する特定のタスクをスケジュール設定と充電中、バッテリの消耗を最小限に抑えます。 このジョブ スケジューラ機能は、条件は、デバイスが従量制課金接続ではなく、Wi-fi ネットワーク経由で接続されているときに大きなファイルのダウンロードなど、そのタスクをより適切なときに実行するタスクのスケジュールにも使用できます。
 
-詳細については、Android 5.0 での Api のスケジュール設定、新しいジョブは、[ジョブをスケジュール](https://developer.android.com/preview/api-overview.html#JobScheduler)を参照してください。
+詳細については、Android 5.0 での Api のスケジュール設定、新しいジョブは、次を参照してください。[ジョブをスケジュール](https://developer.android.com/preview/api-overview.html#JobScheduler)します。
 
 ## <a name="summary"></a>まとめ
 
