@@ -9,7 +9,7 @@
           href: ios-simulator/deploy.md
         - name: リリース ノート
           href: /xamarin/tools/ios-simulator/release-notes/?context=xamarin/tools
-    - name: インスペクター
+    - name: Inspector
       href: inspector/index.md
       items:
         - name: インストールと要件
@@ -35,7 +35,7 @@
           href: profiler/troubleshooting.md
         - name: リリース ノート
           href: /xamarin/tools/profiler/release-notes/
-    - name: Workbooks
+    - name: ブック
       href: workbooks/index.md
       items:
         - name: インストールと要件
@@ -44,11 +44,6 @@
           href: workbooks/workbook.md
         - name: エディターのキーボード ショートカット
           href: workbooks/keybindings.md
-        - name: サンプル Workbooks
-          href: workbooks/samples/index.md
-          items:
-            - name: TinyRenderer
-              href: workbooks/samples/tinyrenderer.md
         - name: トラブルシューティング
           href: workbooks/troubleshooting/index.md
           items:
@@ -74,7 +69,7 @@
     - name: .NET Embedding
       href: dotnet-embedding/index.md
       items:
-        - name: Getting Started (概要)
+        - name: 作業の開始
           href: dotnet-embedding/get-started/index.md
           items:
             - name: インストール

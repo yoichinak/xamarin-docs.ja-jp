@@ -1,25 +1,25 @@
 ---
 title: Xamarin ファイアウォールの構成手順
-description: このドキュメントでは、企業環境で Xamarin が機能するように、ファイアウォールでホワイトリストに登録する必要があるホストのリストを示します。
+description: このドキュメントでは、企業環境で Xamarin が動作できるように、ファイアウォールで許可する必要があるホストの一覧を示します。
 ms.prod: xamarin
 ms.assetid: 658f699b-8cca-48f7-ae54-fa956384b6d6
 author: asb3993
 ms.author: amburns
-ms.date: 10/05/2018
-ms.openlocfilehash: 68689ce7d92a038d0724e1441f68fddcb1d0bba8
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 07/17/2019
+ms.openlocfilehash: b2509bb99a5caf5b508d34aafc0f0c4862a7e563
+ms.sourcegitcommit: 9a2a21974d35353c3765eb683ef2fd7161c1d94a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61346862"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68329957"
 ---
 # <a name="xamarin-firewall-configuration-instructions"></a>Xamarin ファイアウォールの構成手順
 
-_会社で Xamarin のプラットフォームが機能するように、ファイアウォールでホワイトリストに登録するのに必要なホストのリスト。_
+_会社で Xamarin のプラットフォームが動作できるように、ファイアウォールで許可する必要があるホストの一覧。_
 
-Xamarin 製品をインストールし、製品が正常に動作するには、ソフトウェアに必要なツールと更新プログラムをダウンロードできるように、特定のエンドポイントをアクセス可能にする必要があります。 管理者または会社がファイアウォール設定を厳格にしている場合は、インストール、ライセンス、コンポーネントなどで問題が発生する可能性があります。 このドキュメントでは、Xamarin が動作するためにホワイトリストに登録する必要があるいくつかの既知のエンドポイントについて概要を説明します。 このホワイトリストには、ダウンロードに含まれるすべてのサードパーティ ツールに必要なエンドポイントを含めません。 このリストを使用しても問題が解決しない場合は、Apple または Android のインストールに関するトラブルシューティング ガイドを参照してください。
+Xamarin 製品をインストールし、製品が正常に動作するには、ソフトウェアに必要なツールと更新プログラムをダウンロードできるように、特定のエンドポイントをアクセス可能にする必要があります。 管理者または会社がファイアウォール設定を厳格にしている場合は、インストール、ライセンス、コンポーネントなどで問題が発生する可能性があります。 このドキュメントでは、Xamarin が動作するためにファイアウォールで許可する必要がある既知のエンドポイントのいくつかについて説明します。 このホワイトリストには、ダウンロードに含まれるすべてのサードパーティ ツールに必要なエンドポイントを含めません。 このリストを使用しても問題が解決しない場合は、Apple または Android のインストールに関するトラブルシューティング ガイドを参照してください。
 
-## <a name="endpoints-to-whitelist"></a>ホワイトリストに登録するエンドポイント
+## <a name="endpoints-to-allow"></a>許可するエンドポイント
 
 ### <a name="xamarin-installer"></a>Xamarin インストーラー
 
@@ -39,8 +39,8 @@ Mac を使用していて Xamarin.Android のインストールの問題が発�
 
 NuGet にアクセスするには、次のアドレスを追加する必要があります (Xamarin.Forms は NuGet としてパッケージ化されています)。
 
-- www\.nuget.org (NuGet にアクセスする場合)
-- az320820.vo.msecnd.net (NuGet のダウンロード)
+- www.nuget.org (NuGet にアクセスする場合)
+- globalcdn.nuget.org (NuGet のダウンロード)
 - dl-ssl.google.com (Android および Xamarin.Forms 用 Google コンポーネント)
 
 ### <a name="software-updates"></a>ソフトウェア更新プログラム
@@ -54,7 +54,3 @@ NuGet にアクセスするには、次のアドレスを追加する必要が�
 ## <a name="xamarin-mac-agent"></a>Xamarin Mac エージェント
 
 Xamarin Mac エージェントを使用して Visual Studio を Mac ビルド ホストに接続するには、SSH ポートを開く必要があります。 この既定値は**ポート 22** です。
-
-## <a name="summary"></a>まとめ
-
-このガイドでは、Xamarin 製品をコンピューターに適切にインストールし、更新するためにホワイトリストに登録する必要があるエンドポイントについて説明しました。
