@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 602a530e1c185ffeda2c6ac80a96f7795cec4cae
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: dbf8f85192f9052041fc65367eb2f6c57603b440
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104844"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831421"
 ---
 # <a name="ios-build-mechanics"></a>iOS ビルドのしくみ
 
@@ -32,8 +32,8 @@ Xamarin ビルドのスピードは、パフォーマンスに影響を与える
 Visual Studio for Mac 内で診断用 MSBuild 出力を有効にするには:
 
 1. **[Visual Studio for Mac]、[環境設定]** の順にクリックします。
-2. 左側のツリー ビューで、**[プロジェクト]、[ビルド]** の順に選択します。
-3. 右側のパネルで、次のようにログ詳細度ドロップダウンを **[診断]** に設定します。[![](ios-build-mechanics-images/image2.png "ログ詳細度を設定する")](ios-build-mechanics-images/image2.png#lightbox)
+2. 左側のツリー ビューで、 **[プロジェクト]、[ビルド]** の順に選択します。
+3. 右側のパネルで、ログ詳細度ドロップダウンを **[診断]** に設定します。[![](ios-build-mechanics-images/image2.png "ログ詳細度を設定する")](ios-build-mechanics-images/image2.png#lightbox)
 4. **[OK]** をクリックします。
 5. Visual Studio for Mac を再起動します。
 6. パッケージから不要な要素を取り除き、再ビルドします。
@@ -45,8 +45,8 @@ Visual Studio for Mac 内で診断用 MSBuild 出力を有効にするには:
 Visual Studio 内で診断 MSBuild 出力を有効にするには:
 
 1. **[ツール]、[出力]** の順にクリックします。
-2. 左側のツリー ビューで、**[プロジェクトおよびソリューション]、[ビルド/実行]** の順に選択します。
-3. 右側のパネルで、*MSBuild ビルド出力の詳細度ドロップダウン*を **[診断]** に設定します。 [![](ios-build-mechanics-images/image2-vs.png "MSBuild ビルド出力の詳細度を設定する")](ios-build-mechanics-images/image2-vs.png#lightbox)
+2. 左側のツリー ビューで、 **[プロジェクトおよびソリューション]、[ビルド/実行]** の順に選択します。
+3. 右側のパネルで、*MSBuild ビルド出力の詳細度ドロップダウン*を **[診断]** に設定します。[![](ios-build-mechanics-images/image2-vs.png "MSBuild ビルド出力の詳細度を設定する")](ios-build-mechanics-images/image2-vs.png#lightbox)
 4. **[OK]** をクリックします。
 5. パッケージから不要な要素を取り除き、再ビルドします。
 6. 診断出力は [出力] パネルに表示されます。
@@ -55,7 +55,7 @@ Visual Studio 内で診断 MSBuild 出力を有効にするには:
 
 ## <a name="timing-mtouch"></a>mtouch の時間を調整する
 
-mtouch ビルド プロセス固有の情報を表示するには、**[プロジェクト オプション]** の mtouch 引数に `--time --time` を渡します。 結果は [ビルド出力] にあります。`MTouch` タスクを探してください。
+mtouch ビルド プロセス固有の情報を表示するには、 **[プロジェクト オプション]** の mtouch 引数に `--time --time` を渡します。 結果は [ビルド出力] にあります。`MTouch` タスクを探してください。
 
 ```csharp
 Setup: 36 ms
@@ -111,9 +111,9 @@ Apple は iOS 開発用のシミュレーターを提供しており、互換性
 
 iOS アプリを配置するとき、さまざまなビルド構成が与えられます。 それぞれの構成をよく理解し、最適化するタイミングと理由を知ることが重要です。
 
- - デバッグ
+- デバッグ
   - これはメインの構成であり、アプリの開発中に使用します。そのため、可能な限り短時間で行います。
- - Release
+- 解放
   - リリース ビルドはユーザーに出荷されるビルドであり、パフォーマンスが非常に重視されます。 リリース構成を使用するとき、LLVM 最適化コンパイラを使用し、PNG ファイルを最適化することもできます。
 
  
@@ -169,7 +169,7 @@ iOS アプリを配置するとき、さまざまなビルド構成が与えら�
   - シミュレーター ビルドの場合、[リンクしない] を選択すると (デバイスの AOT ではなく) JIT コンパイルが利用され、ビルドが速くなります。
 - SDK のリンクが既定のオプションです。
 - [すべてをリンクする] は、NuGet やコンポーネントなど、自分で作成したものではないコードを利用する場合は特に、安全ではない可能性があります。 アセンブリをリンクしない場合、これらのサービスからのすべてのコードがアプリケーションによって追加されるため、アプリが大きくなる可能性があります。 
-  - ただし、**[すべてをリンクする]** を選択した場合、特に外部コンポーネントが使用されるとき、アプリケーションがクラッシュすることがあります。 一部のコンポーネントでは、特定の種類にリフレクションが使用されるためです。
+  - ただし、 **[すべてをリンクする]** を選択した場合、特に外部コンポーネントが使用されるとき、アプリケーションがクラッシュすることがあります。 一部のコンポーネントでは、特定の種類にリフレクションが使用されるためです。
   - スタティック分析とリフレクションは一緒に機能しません。 
 
 [`[Preserve]` 属性](~/ios/deploy-test/linker.md)を利用すれば、アプリケーション内にものを保持するようにツールに指示できます。 

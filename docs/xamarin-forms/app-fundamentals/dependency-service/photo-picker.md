@@ -7,27 +7,27 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/06/2017
-ms.openlocfilehash: 36601b02bb2984d9350166dedac0d650d9642f91
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 62e825a497e6d2cb06414a2553ba1cfe2864fca1
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67650642"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832206"
 ---
 # <a name="picking-a-photo-from-the-picture-library"></a>画像ライブラリから写真を選択する
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/DependencyService/DependencyServiceSample)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-samples/tree/master/DependencyService)
 
 この記事では、ユーザーが電話の画像ライブラリから写真を選択できるアプリケーションを作成する手順について説明します。 Xamarin.Forms にはこの機能は含まれていないため、[`DependencyService`](xref:Xamarin.Forms.DependencyService) を使用して各プラットフォームのネイティブ API にアクセスする必要があります。
 
 ## <a name="creating-the-interface"></a>インターフェイスの作成
 
-最初に、目的の機能を表すインターフェイスを共有コード内に作成します。 写真選択アプリケーションの場合、必要なメソッドは 1 つだけです。 これは、サンプル コードの .NET Standard ライブラリの [`IPicturePicker`](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/DependencyServiceSample/IPicturePicker.cs) インターフェイスで定義されています。
+最初に、目的の機能を表すインターフェイスを共有コード内に作成します。 写真選択アプリケーションの場合、必要なメソッドは 1 つだけです。 これは、サンプル コードの .NET Standard ライブラリの [`IPhotoPickerService`](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceDemos/Services/IPhotoPickerService.cs) インターフェイスで定義されています。
 
 ```csharp
-namespace DependencyServiceSample
+namespace DependencyServiceDemos
 {
-    public interface IPicturePicker
+    public interface IPhotoPickerService
     {
         Task<Stream> GetImageStreamAsync();
     }
@@ -40,16 +40,15 @@ namespace DependencyServiceSample
 
 ## <a name="ios-implementation"></a>iOS での実装
 
-iOS での `IPicturePicker` インターフェイスの実装では、「[**Choose a Photo from the Gallery**](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery)」(ギャラリーから写真を選択する) レシピと[サンプル コード](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery)で説明されているように、[`UIImagePickerController`](xref:UIKit.UIImagePickerController) が使用されます。
+iOS での `IPhotoPickerService` インターフェイスの実装では、「[**Choose a Photo from the Gallery**](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery)」(ギャラリーから写真を選択する) レシピと[サンプル コード](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery)で説明されているように、[`UIImagePickerController`](xref:UIKit.UIImagePickerController) が使用されます。
 
-iOS での実装は、サンプル コードの iOS プロジェクト内の [`PicturePickerImplementation`](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/iOS/PicturePickerImplementation.cs) クラスに含まれます。 このクラスを `DependencyService` マネージャーで認識できるようにするには、クラスが `Dependency` 型の [`assembly`] 属性で識別されていて、パブリックとして指定され、`IPicturePicker` インターフェイスを明示的に実装している必要があります。
+iOS での実装は、サンプル コードの iOS プロジェクト内の [`PhotoPickerService`](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceDemos.iOS/Services/PhotoPickerService.cs) クラスに含まれます。 このクラスを `DependencyService` マネージャーで認識できるようにするには、クラスが `Dependency` 型の [`assembly`] 属性で識別されていて、パブリックとして指定され、`IPhotoPickerService` インターフェイスを明示的に実装している必要があります。
 
 ```csharp
-[assembly: Dependency (typeof (PicturePickerImplementation))]
-
-namespace DependencyServiceSample.iOS
+[assembly: Dependency (typeof (PhotoPickerService))]
+namespace DependencyServiceDemos.iOS
 {
-    public class PicturePickerImplementation : IPicturePicker
+    public class PhotoPickerService : IPhotoPickerService
     {
         TaskCompletionSource<Stream> taskCompletionSource;
         UIImagePickerController imagePicker;
@@ -89,9 +88,9 @@ namespace DependencyServiceSample.iOS
 ユーザーが画像を選択すると、`FinishedPickingMedia` イベント ハンドラーが呼び出されます。 ただし、ハンドラーでは `UIImage` オブジェクトが提供されますが、`Task` からは .NET の `Stream` オブジェクトが返される必要があります。 これは 2 つのステップで行われます。最初に `UIImage` オブジェクトがメモリ内で JPEG ファイルに変換されて `NSData` オブジェクトに格納され、次に `NSData` オブジェクトが .NET の `Stream` オブジェクトに変換されます。 `TaskCompletionSource` オブジェクトの `SetResult` メソッドに対する呼び出しでは、`Stream` オブジェクトを提供することによってタスクが完了されます。
 
 ```csharp
-namespace DependencyServiceSample.iOS
+namespace DependencyServiceDemos.iOS
 {
-    public class PicturePickerImplementation : IPicturePicker
+    public class PhotoPickerService : IPhotoPickerService
     {
         TaskCompletionSource<Stream> taskCompletionSource;
         UIImagePickerController imagePicker;
@@ -133,7 +132,6 @@ namespace DependencyServiceSample.iOS
         }
     }
 }
-
 ```
 
 iOS アプリケーションが電話のフォト ライブラリにアクセスするには、ユーザーからのアクセス許可が必要です。 Info.plist ファイルの `dict` セクションに、以下を追加します。
@@ -145,7 +143,7 @@ iOS アプリケーションが電話のフォト ライブラリにアクセス
 
 ## <a name="android-implementation"></a>Android での実装
 
-Android での実装では、[**イメージ選択**](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/pick_image)レシピと[サンプル コード](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/pick_image)で説明されている手法が使用されます。 ただし、ユーザーが画像ライブラリから画像を選択したときに呼び出されるメソッドは、`OnActivityResult` の派生クラスでの `Activity` のオーバーライドです。 このため、Android プロジェクトの通常の [`MainActivity`](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/Droid/MainActivity.cs) クラスは、フィールド、プロパティ、および `OnActivityResult` メソッドのオーバーライドで補完されています。
+Android での実装では、[**イメージ選択**](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/pick_image)レシピと[サンプル コード](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/pick_image)で説明されている手法が使用されます。 ただし、ユーザーが画像ライブラリから画像を選択したときに呼び出されるメソッドは、`OnActivityResult` の派生クラスでの `Activity` のオーバーライドです。 このため、Android プロジェクトの通常の [`MainActivity`](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceDemos.Android/MainActivity.cs) クラスは、フィールド、プロパティ、および `OnActivityResult` メソッドのオーバーライドで補完されています。
 
 ```csharp
 public class MainActivity : FormsAppCompatActivity
@@ -177,19 +175,17 @@ public class MainActivity : FormsAppCompatActivity
         }
     }
 }
-
 ```
 
 `OnActivityResult` のオーバーライドでは選択された画像ファイルが Android の `Uri` オブジェクトで示されていますが、これは、アクティビティの `ContentResolver` プロパティから取得された `ContentResolver` オブジェクトの `OpenInputStream` メソッドを呼び出すことによって、.NET の `Stream` オブジェクトに変換できます。
 
-iOS での実装と同様に、Android での実装では `TaskCompletionSource` を使用してタスク完了時の通知を受け取ります。 この `TaskCompletionSource` オブジェクトは、`MainActivity` クラスでパブリック プロパティとして定義されています。 これにより、Android プロジェクトの [`PicturePickerImplementation`](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/Droid/PicturePickerImplementation.cs) クラスでこのプロパティを参照できます。 これは、`GetImageStreamAsync` メソッドを含むクラスです。
+iOS での実装と同様に、Android での実装では `TaskCompletionSource` を使用してタスク完了時の通知を受け取ります。 この `TaskCompletionSource` オブジェクトは、`MainActivity` クラスでパブリック プロパティとして定義されています。 これにより、Android プロジェクトの [`PhotoPickerService`](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceDemos.Android/Services/PhotoPickerService.cs) クラスでこのプロパティを参照できます。 これは、`GetImageStreamAsync` メソッドを含むクラスです。
 
 ```csharp
-[assembly: Dependency(typeof(PicturePickerImplementation))]
-
-namespace DependencyServiceSample.Droid
+[assembly: Dependency(typeof(PhotoPickerService))]
+namespace DependencyServiceDemos.Droid
 {
-    public class PicturePickerImplementation : IPicturePicker
+    public class PhotoPickerService : IPhotoPickerService
     {
         public Task<Stream> GetImageStreamAsync()
         {
@@ -217,15 +213,14 @@ namespace DependencyServiceSample.Droid
 
 ## <a name="uwp-implementation"></a>UWP での実装
 
-iOS や Android での実装とは異なり、ユニバーサル Windows プラットフォーム用の写真ピッカーの実装では、`TaskCompletionSource` クラスは必要ありません。 [`PicturePickerImplementation`](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/UWP/PicturePickerImplementation.cs) クラスでは、[`FileOpenPicker`](/uwp/api/Windows.Storage.Pickers.FileOpenPicker/) クラスを使用してフォト ライブラリへのアクセスが取得されます。 `FileOpenPicker` の `PickSingleFileAsync` メソッド自体が非同期なので、`GetImageStreamAsync` メソッドでは、そのメソッド (および他の非同期メソッド) で `await` を単に使用して、`Stream` オブジェクトを返すことができます。
+iOS や Android での実装とは異なり、ユニバーサル Windows プラットフォーム用の写真ピッカーの実装では、`TaskCompletionSource` クラスは必要ありません。 [`PhotoPickerService`](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceDemos.UWP/Services/PhotoPickerService.cs) クラスでは、[`FileOpenPicker`](/uwp/api/Windows.Storage.Pickers.FileOpenPicker/) クラスを使用してフォト ライブラリへのアクセスが取得されます。 `FileOpenPicker` の `PickSingleFileAsync` メソッド自体が非同期なので、`GetImageStreamAsync` メソッドでは、そのメソッド (および他の非同期メソッド) で `await` を単に使用して、`Stream` オブジェクトを返すことができます。
 
 
 ```csharp
-[assembly: Dependency(typeof(PicturePickerImplementation))]
-
-namespace DependencyServiceSample.UWP
+[assembly: Dependency(typeof(PhotoPickerService))]
+namespace DependencyServiceDemos.UWP
 {
-    public class PicturePickerImplementation : IPicturePicker
+    public class PhotoPickerService : IPhotoPickerService
     {
         public async Task<Stream> GetImageStreamAsync()
         {
@@ -257,57 +252,34 @@ namespace DependencyServiceSample.UWP
 
 ## <a name="implementing-in-shared-code"></a>共有コードでの実装
 
-各プラットフォーム用のインターフェイスを実装したので、.NET Standard ライブラリのアプリケーションでそれを利用できます。
+各プラットフォーム用のインターフェイスを実装したので、.NET Standard ライブラリの共有コードでそれを利用できます。
 
-[`App`](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/DependencyServiceSample/DependencyServiceSample.cs) クラスでは、写真を選択するための `Button` が作成されます。
+UI には、クリックすると写真を選択できる [`Button`](xref:Xamarin.Forms.Button) が含まれます。
 
-```csharp
-Button pickPictureButton = new Button
-{
-    Text = "Pick Photo",
-    VerticalOptions = LayoutOptions.CenterAndExpand,
-    HorizontalOptions = LayoutOptions.CenterAndExpand
-};
-stack.Children.Add(pickPictureButton);
+```xaml
+<Button Text="Pick Photo"
+        Clicked="OnPickPhotoButtonClicked" />
 ```
 
-`Clicked` ハンドラーでは、`DependencyService` クラスをして `GetImageStreamAsync` が呼び出されます。 これは結果としてプラットフォーム プロジェクトでの呼び出しになります。 メソッドから `Stream` オブジェクトが返される場合、ハンドラーでは `TapGestureRecognizer` によってその画像の `Image` 要素が作成されて、ページ上の `StackLayout` がその `Image` で置き換えられます。
+`Clicked` イベント ハンドラーでは `DependencyService` クラスが使われ、`GetImageStreamAsync` が呼び出されます。 これによって、プラットフォーム プロジェクトが呼び出されます。 メソッドにより `Stream` オブジェクトが返された場合、ハンドラーによって `image` オブジェクトの `Source` プロパティがその `Stream` データに設定されます。
 
 ```csharp
-pickPictureButton.Clicked += async (sender, e) =>
+async void OnPickPhotoButtonClicked(object sender, EventArgs e)
 {
-    pickPictureButton.IsEnabled = false;
-    Stream stream = await DependencyService.Get<IPicturePicker>().GetImageStreamAsync();
+    (sender as Button).IsEnabled = false;
 
+    Stream stream = await DependencyService.Get<IPhotoPickerService>().GetImageStreamAsync();
     if (stream != null)
     {
-        Image image = new Image
-        {
-            Source = ImageSource.FromStream(() => stream),
-            BackgroundColor = Color.Gray
-        };
-
-        TapGestureRecognizer recognizer = new TapGestureRecognizer();
-        recognizer.Tapped += (sender2, args) =>
-        {
-            (MainPage as ContentPage).Content = stack;
-            pickPictureButton.IsEnabled = true;
-        };
-        image.GestureRecognizers.Add(recognizer);
-
-        (MainPage as ContentPage).Content = image;
+        image.Source = ImageSource.FromStream(() => stream);
     }
-    else
-    {
-        pickPictureButton.IsEnabled = true;
-    }
-};
+
+    (sender as Button).IsEnabled = true;
+}
 ```
-
-`Image` 要素をタップすると、ページは通常に戻ります。
 
 ## <a name="related-links"></a>関連リンク
 
+- [DependencyService (サンプル)](https://github.com/xamarin/xamarin-forms-samples/tree/master/DependencyService)
 - [ギャラリーから写真を選択する (iOS)](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery)
 - [画像を選択する (Android)](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/pick_image)
-- [DependencyService (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/DependencyService/DependencyServiceSample)

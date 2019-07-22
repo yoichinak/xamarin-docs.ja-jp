@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: c1e1b2d7bfb43c256c71abb62e7d85a05b096419
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: a2dc974fba7beb70f1caecf8198181193d32e4c2
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103583"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865528"
 ---
 # <a name="in-house-distribution-for-xamarinios-apps"></a>Xamarin.iOS アプリ用の社内配布
 
@@ -72,15 +72,15 @@ Apple Developer Enterprise Program 証明書は、3 年間有効で、プロビ�
 
 または、Xcode の [Preferences]\(環境設定\) ダイアログを使用して証明書を要求することができます。 この操作を行うには、次の手順に従います。
 
-1. 自分のチームを選択し、*[View Details]\(詳細の表示\)* をクリックします。
+1. 自分のチームを選択し、 *[View Details]\(詳細の表示\)* をクリックします。
 
-    [![](in-house-distribution-images/selectteam.png "チームを選択します")](in-house-distribution-images/selectteam.png#lightbox)
+   [![](in-house-distribution-images/selectteam.png "チームを選択します")](in-house-distribution-images/selectteam.png#lightbox)
 
-2. 次に、**[iOS Distribution Certificate]\(iOS 配布証明書\)** の横の **[作成]** ボタンをクリックします。
+2. 次に、 **[iOS Distribution Certificate]\(iOS 配布証明書\)** の横の **[作成]** ボタンをクリックします。
 
    [![](in-house-distribution-images/selectcert.png "iOS 配布証明書を作成します")](in-house-distribution-images/selectcert.png#lightbox)
 
-2.   次に、**プラス (+)** ボタンをクリックして **[iOS App Store]** を選択します。
+3. 次に、**プラス (+)** ボタンをクリックして **[iOS App Store]** を選択します。
 
    [![](in-house-distribution-images/selectcert.png "iOS App Store を選択します")](in-house-distribution-images/selectcert.png#lightbox)
 
@@ -97,13 +97,13 @@ Apple Developer Enterprise Program 証明書は、3 年間有効で、プロビ�
 
 1. [Apple Developer Center](https://developer.apple.com/account/overview.action) で *[Certificate, Identifiers and Profiles]\(証明書、ID、およびプロファイル\)* セクションを参照します。 **[Identifiers]** \(ID\) の下で **[App IDs]** \(App ID\) を選択します。
 2. **+** ボタンをクリックして、ポータルで識別するための**名前**を指定します。
-3. アプリのプレフィックスは、チーム ID として既に設定されており、変更できません。 [Explicit]\(明示的\) または [Wildcard App ID]\(ワイルドカード App ID\) のいずれかを選択し、次のように逆引き DNS 形式でバンドル ID を入力します。**Explicit**: com.[DomainName].[AppName] **Wildcard**:com.[DomainName].*
+3. アプリのプレフィックスは、チーム ID として既に設定されており、変更できません。 明示的またはワイルドカード アプリ ID を選択し、次のように逆引き DNS 形式でバンドル ID を入力します。**明示的**: com.[ドメイン名].[アプリ名] **ワイルドカード**: com.[ドメイン名].*
 4. アプリで必要な任意の [App Services](~/ios/get-started/installation/device-provisioning/index.md#provisioning-for-application-services) を選択します。
 5. **[Continue]\(続行\)** ボタンをクリックし、画面の指示に従って新しいアプリ ID を作成します。
 
 配布プロファイルを作成するのに必要なコンポーネントがそろったら、次の手順に従って配布プロファイルを作成します。
 
-1. Apple Provisioning ポータルに戻り、**[Provisioning]\(プロビジョニング\)** > **[Distribution]\(配布\)** の順に選択します。
+1. Apple Provisioning ポータルに戻り、 **[Provisioning]\(プロビジョニング\)**  >  **[Distribution]\(配布\)** の順に選択します。
 
    [![](in-house-distribution-images/distribute01.png "[Provisioning]、[Distribution] の順に選択します")](in-house-distribution-images/distribute01.png#lightbox)
 
@@ -119,11 +119,11 @@ Apple Developer Enterprise Program 証明書は、3 年間有効で、プロビ�
 
    [ ![](in-house-distribution-images/distribute04.png "アプリケーションに署名するために必要な配布証明書を選択します")](in-house-distribution-images/distribute04.png#lightbox)
 
-6. **[Continue]\(続行\)** ボタンをクリックし、新しい配布プロファイルの**名前**を入力します。
+5. **[Continue]\(続行\)** ボタンをクリックし、新しい配布プロファイルの**名前**を入力します。
 
    [![](in-house-distribution-images/distribute06.png "新しい配布プロファイルの名前を入力します")](in-house-distribution-images/distribute06.png#lightbox)
 
-7. **[Generate]\(生成\)** ボタンをクリックし、新しいプロファイルを作成してプロセスを終了します。
+6. **[Generate]\(生成\)** ボタンをクリックし、新しいプロファイルを作成してプロセスを終了します。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 

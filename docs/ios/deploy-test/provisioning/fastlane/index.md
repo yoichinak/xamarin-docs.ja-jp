@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: e89b8585371ab2560ae510fdb49f284e358818c1
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 23bf62688da4e2e82cb3e0fadc9a3b7c13ab1a7d
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108913"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865511"
 ---
 # <a name="introduction-to-fastlane-for-ios"></a>iOS 向け fastlane の概要
 
@@ -21,7 +21,7 @@ fastlane はオープン ソース プロジェクトであり、iOS および A
 - [deliver](https://github.com/fastlane/fastlane/tree/master/deliver#readme) – スクリーン ショット、メタデータ、およびアプリケーション バンドルを管理し、iTunes Connect にアップロードします。
 - [produce](https://github.com/fastlane/fastlane/tree/master/produce#readme) – iTunes Connect および開発者ポータル (AppID としてよく知られる) でアプリを作成します。 これには、アプリ グループとアプリケーション サービスのサポートも含まれます。
 - [pem](https://github.com/fastlane/fastlane/tree/master/pem#readme) – プッシュ通知とプロビジョニング プロファイルを作成および管理します。
-- [gym](https://github.com/fastlane/fastlane/tree/master/gym#readme) – iOS アプリケーションのビルドと署名に使用できます  (Xamarin アプリでは既に MSBuild を使用して、アプリのビルド、署名、およびアーカイブが行われています)。
+- [gym](https://github.com/fastlane/fastlane/tree/master/gym#readme) – iOS アプリケーションのビルドと署名に使用できます (Xamarin アプリでは既に MSBuild を使用して、アプリのビルド、署名、およびアーカイブが行われています)。
 - [cert](https://github.com/fastlane/fastlane/tree/master/cert#readme) – コード署名証明書を作成および管理します。 
 - [sigh](https://github.com/fastlane/fastlane/tree/master/sigh#readme) – プロビジョニング プロファイルを作成および管理します。
 - [match](https://github.com/fastlane/fastlane/tree/master/match#readme) – 証明書とプロファイルを作成および維持し、git リポジトリに格納して、開発チーム間で同期できるようにします。
@@ -50,35 +50,35 @@ fastlane はさまざまな方法で使用できます。たとえば、ター�
 3. ファイルを解凍して fastlane をインストールし、`install` 実行可能ファイルをダブルクリックします。 "ファイルは不明な開発者からのものであるため、開けない" ことを知らせるエラーが表示された場合は、[OK] を押して次の操作を行ってください。
     - Control キーを押したまま、`install` 実行可能ファイルをクリックします。 これにより、次のダイアログが表示されます。
 
-      ![](images/fastlane-image12.png "[インストール] ダイアログ")
-    
+     ![](images/fastlane-image12.png "[インストール] ダイアログ")
+
     - [OK] を押して、fastlane ツールのインストールを開始します。
 
 4. ターミナルに次のようなダイアログでメッセージが表示されます。 `y` を押します。
 
-  ![](images/fastlane-image13.png "ターミナルのプロンプト")
- 
-4. 初めて fastlane を使用する場合は `which fastlane` を実行します。 パスは次のようになります。 
+   ![](images/fastlane-image13.png "ターミナルのプロンプト")
+
+5. 初めて fastlane を使用する場合は `which fastlane` を実行します。 パスは次のようになります。 
 
     ```bash
     /Users/[user]/.fastlane/bin
     ```
 
-5. パスが上記と一致する場合は、作業を開始する準備ができています。
+6. パスが上記と一致する場合は、作業を開始する準備ができています。
 
-     一致しない場合は、macOS で以下のコマンドを使用して、`.bash_profile` (ホーム ディレクトリ内の非表示のプレーンテキスト ファイル) を開きます。
+     まだ作成していない場合は、以下の作業を行います。macOS で以下のコマンドを使用して、`.bash_profile` (ホーム ディレクトリ内にある非表示のプレーンテキスト ファイル) を開きます。
 
     ```bash
     open ~/.bash_profile
     ```
 
-6. 次の PATH 環境変数を追加し、それを保存します。 
+7. 次の PATH 環境変数を追加し、それを保存します。 
 
     ```bash
     export PATH="$HOME/.fastlane/bin:$PATH"
     ```
 
-7.  もう一度 `which fastlane` を実行し、パスが `/Users/[user]/.fastlane/bin` のようになっていることを確認します。
+8.  もう一度 `which fastlane` を実行し、パスが `/Users/[user]/.fastlane/bin` のようになっていることを確認します。
 
 
 ## <a name="updating-fastlane"></a>fastlane の更新
@@ -107,7 +107,7 @@ cert と sigh では、ローカル コンピューター上での署名証明�
 
 fastlane で署名 ID とプロビジョニング プロファイルを作成したら、Visual Studio for Mac でバンドル署名オプションを簡単に設定できます。ただし、証明書と秘密キーが macOS キーチェーン内にあり、プロビジョニング プロファイルがフォルダー `~/Library/MobileDevice/Provisioning Profiles` 内にあることが前提となります。
 
-Xamarin.iOS アプリケーションのコード署名オプションを設定するには、次のように、プロジェクト名を右クリックし、**[プロジェクト オプション]、[ビルド]、[iOS バンドル署名]** の順に選択して、署名 ID とプロビジョニング プロファイルを明示的に設定します。
+Xamarin.iOS アプリケーションのコード署名オプションを設定するには、次のように、プロジェクト名を右クリックし、 **[プロジェクト オプション]、[ビルド]、[iOS バンドル署名]** の順に選択して、署名 ID とプロビジョニング プロファイルを明示的に設定します。
 
 [![](images/fastlane-image11.png "署名 ID とプロビジョニング プロファイルを明示的に設定します")](images/fastlane-image11.png#lightbox)
 

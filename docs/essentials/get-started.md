@@ -5,35 +5,28 @@ ms.assetid: B2669C48-B659-4854-BD80-FEB0E876F5B9
 author: jamesmontemagno
 ms.author: jamont
 ms.custom: video
-ms.date: 11/04/2018
-ms.openlocfilehash: 7aa918a1aa70910cd05b17916e060e65ca5404bd
-ms.sourcegitcommit: 17376f0e54467d826b8928a11965fd0c879704f2
+ms.date: 07/10/2019
+ms.openlocfilehash: fd4c51714cea370f1d62457931a5820d5f1a5b97
+ms.sourcegitcommit: 0845ed2daa65468b6fe12ac4e9386f3315d72f4d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67131980"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67850936"
 ---
 # <a name="get-started-with-xamarinessentials"></a>Xamarin.Essentials の概要
 
-Xamarin.Essentials には、任意の iOS、Android、または UWP アプリケーションと連携する単一のクロスプラットフォーム API が用意されています。ユーザー インターフェイスの作成方法に関係なく、共有コードからアクセスできます。
-
-## <a name="platform-support"></a>プラットフォームのサポート
-
-Xamarin.Essentials では、次のプラットフォームとオペレーティング システムがサポートされています。
-
-| プラットフォーム | Version |
-| --- | --- |
-| Android | 4.4 (API 19) 以上 |
-| iOS |10.0 以上 |
-| UWP | 10.0.16299.0 以上 |
+Xamarin.Essentials には、任意の iOS、Android、または UWP アプリケーションと連携する単一のクロスプラットフォーム API が用意されています。ユーザー インターフェイスの作成方法に関係なく、共有コードからアクセスできます。 サポートされているオペレーティング システムについて詳しくは、[プラットフォームと機能のサポート ガイド](platform-feature-support.md)に関するページをご覧ください。
 
 ## <a name="installation"></a>インストール
 
 Xamarin.Essentials は NuGet パッケージとして入手可能で、Visual Studio を使用して既存または新規の任意のプロジェクトに追加できます。
 
-1. [Xamarin 用の Visual Studio ツール](~/get-started/installation/index.md)と共に、[Visual Studio](http://visualstudio.com) をダウンロードしてインストールします。
+1. [Xamarin 用の Visual Studio ツール](~/get-started/installation/index.md)と共に、[Visual Studio](https://visualstudio.microsoft.com/) をダウンロードしてインストールします。
 
-2. 既存のプロジェクトを開くか、**Visual Studio C#** (Android、iPhone と iPad、またはクロスプラットフォーム) の下の空のアプリ テンプレートを使用して新しいプロジェクトを作成します。 **重要**: UWP プロジェクトに追加する場合、プロジェクトのプロパティにビルド 16299 以上が設定されていることを確認します。
+2. 既存のプロジェクトを開くか、**Visual Studio C#** (Android、iPhone と iPad、またはクロスプラットフォーム) の下の空のアプリ テンプレートを使用して新しいプロジェクトを作成します。
+
+    > [!IMPORTANT]
+    > UWP プロジェクトに追加する場合、プロジェクトのプロパティにビルド 16299 以上が設定されていることを確認します。
 
 3. 各プロジェクトに [**Xamarin.Essentials**](https://www.nuget.org/packages/Xamarin.Essentials/) の NuGet パッケージを追加します。
 
