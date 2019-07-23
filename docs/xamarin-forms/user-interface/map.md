@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/13/2019
-ms.openlocfilehash: 60d78797406f2e69c435fb597e36775d906852f9
-ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
+ms.openlocfilehash: ec1600f57daf627742db41f7410ef4f49b53c2b3
+ms.sourcegitcommit: 4b6e832d1db5616b657dc8540da67c509b28dc1d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67513109"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68386187"
 ---
 # <a name="xamarinforms-map"></a>Xamarin.Forms のマップ
 
@@ -20,7 +20,7 @@ ms.locfileid: "67513109"
 
 _Xamarin.Forms は、各プラットフォームでネイティブ マップ Api を使用します。_
 
-Xamarin.Forms.Maps は、各プラットフォームでネイティブ マップ Api を使用します。 これにより、ユーザーは、マップの高速で使い慣れたエクスペリエンスを提供しますが、各プラットフォーム API の要件に準拠するいくつかの構成手順が必要であることを意味します。
+Xamarin.Forms.Maps は、各プラットフォームでネイティブ マップ Api を使用します。 これにより、ユーザーのための高速で使い慣れたマップエクスペリエンスが提供されますが、各プラットフォーム API の要件に準拠するためにはいくつかの構成手順が必要になります。
 構成すると、`Map`共通コードでその他の Xamarin.Forms 要素と同様の動作を制御します。
 
 マップ コントロールが使用されて、 [MapsSample](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithMaps/)サンプルは、次のとおりです。
@@ -60,7 +60,7 @@ Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
 -  **Android** -MainActivity.cs ファイルで、`OnCreate`メソッド。
 -  **UWP** -MainPage.xaml.cs ファイルで、`MainPage`コンストラクター。
 
-NuGet パッケージが追加され、各アプリケーション内で初期化メソッドが呼び出された後`Xamarin.Forms.Maps`Api は、一般的な .NET Standard ライブラリ プロジェクトまたは共有プロジェクトのコードで使用できます。
+NuGet パッケージが追加され、各アプリケーション内部で初期化メソッドが呼び出される`Xamarin.Forms.Maps`と、共通の .NET Standard ライブラリプロジェクトまたは共有プロジェクトコードで api を使用できるようになります。
 
 <a name="Platform_Configuration" />
 
@@ -108,7 +108,7 @@ Xamarin ドキュメントの指示に従って[v2 Google マップ API キー�
 </application>
 ```
 
-有効な API キーがない場合は、マップ コントロールは、Android で灰色のボックスとして表示されます。
+有効な API キーがない場合、maps コントロールは Android で灰色のボックスとして表示されます。
 
 > [!NOTE]
 > 注意してください、APK を Google Maps にアクセスするためには、する必要があります sha-1 指紋が含まれますすべてキーストアの (デバッグとリリース)、APK の署名に使用する名前をパッケージ化します。 たとえば、デバッグおよびリリース APK を生成するための別のコンピュータを 1 台のコンピューターを使用する場合を含める必要がありますデバッグ キーストアを最初のコンピューターから、sha-1 証明書フィンガー プリントのリリース キーストアから sha-1 証明書フィンガー プリント2 番目のコンピューター。 場合は、キーの資格情報を編集することも忘れないでアプリの**パッケージ名**変更します。 参照してください[v2 Google マップ API キーを取得する](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)します。
@@ -129,7 +129,7 @@ Android プロジェクトを右クリックして適切なアクセス許可を
 
 アプリケーションにマップ データのダウンロードへのネットワーク接続が必要なために、最後の 2 つが必要です。 Android について[権限](https://developer.android.com/reference/android/Manifest.permission.html)詳細。
 
-さらに、Android 9 では、Apache HTTP クライアント ライブラリは、bootclasspath から削除し、ないので以上 API 28 を対象とするアプリケーションを使用できます。 次の行を追加する必要があります、`application`のノード、 **AndroidManifest.xml**は引き続き 28 またはそれ以降の API を対象とするアプリケーションでの Apache HTTP クライアントを使用するファイル。
+さらに、Android 9 は bootclasspath から Apache HTTP クライアントライブラリを削除したため、API 28 以上を対象とするアプリケーションでは使用できません。 API 28 以降を対象とするアプリケーション`application`で Apache HTTP クライアントを引き続き使用するには、次の行を**androidmanifest .xml**ファイルのノードに追加する必要があります。
 
 ```xml
 <application ...>
@@ -182,7 +182,7 @@ map.MapType == MapType.Street;
 -  サテライト
 -  番地 (既定値)
 
-### <a name="map-region-and-mapspan"></a>マップの領域と MapSpan
+### <a name="map-region-and-mapspan"></a>マップ領域と MapSpan
 
 上記のコード スニペットに示すように指定して、`MapSpan`インスタンス マップ コンストラクターに初期ビューの設定 (ポイントを中心し、ズーム レベル) が読み込まれるときに、マップの。 `MoveToRegion`マップ クラスのメソッドは、マップの位置やズーム レベルを変更し使用できます。 新たに作成する 2 つの方法がある`MapSpan`インスタンス。
 
@@ -203,7 +203,7 @@ slider.ValueChanged += (sender, e) => {
 
  [![マップと zoom](map-images/maps-zoom-sml.png "マップ コントロールのズーム")](map-images/maps-zoom.png#lightbox "マップ コントロールのズーム")
 
-### <a name="map-pins"></a>マップ ピン
+### <a name="map-pins"></a>ピンのマップ
 
 マップ上の場所をマークできます`Pin`オブジェクト。
 
@@ -218,18 +218,18 @@ var pin = new Pin {
 map.Pins.Add(pin);
 ```
 
-`PinType` (プラットフォーム) に応じて、暗証番号 (pin) の表示方法に影響を与える可能性があります、次の値のいずれかに設定できます。
+`PinType`は、次のいずれかの値に設定できます。これは、プラットフォームによっては、pin のレンダリング方法に影響を与える可能性があります。
 
 -  ジェネリック
 -  場所
 -  SavedPin
 -  SearchResult
 
-### <a name="map-clicks"></a>マップをクリックします。
+### <a name="map-clicks"></a>マップのクリック
 
-`Map` 定義、`MapClicked`マップがタップされたときに発生するイベントです。 `MapClickedEventArgs`に付属しているオブジェクト、`MapClicked`イベントという名前の 1 つのプロパティには、 `Position`、型の`Position`します。 ときにイベントが発生しての値、`Position`プロパティがタップされたマップの地域に設定されます。
+`Map`マップが`MapClicked`タップされたときに発生するイベントを定義します。 イベントに`Position` `Position`付随する`MapClickedEventArgs`オブジェクトには、型のという名前のプロパティが1つあります。 `MapClicked` イベントが発生すると、 `Position`プロパティの値が、タップされたマップの場所に設定されます。
 
-次のコード例のイベント ハンドラーを示しています、`MapClicked`イベント。
+次のコード例は、 `MapClicked`イベントのイベントハンドラーを示しています。
 
 ```csharp
 map.MapClicked += OnMapClicked;
@@ -240,13 +240,13 @@ void OnMapClicked(object sender, MapClickedEventArgs e)
 }
 ```
 
-この例で、`OnMapClicked`イベント ハンドラーは、緯度と経度マップがタップされた位置を表すを出力します。
+この例では、 `OnMapClicked`イベントハンドラーは、タップされたマップの場所を表す緯度と経度を出力します。
 
 <a name="Using_Xaml" />
 
-### <a name="create-a-map-in-xaml"></a>XAML でマップを作成します。
+### <a name="create-a-map-in-xaml"></a>XAML でマップを作成する
 
-この例で示すように、XAML でマップを作成もできます。
+次の例に示すように、XAML でマップを作成することもできます。
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -266,9 +266,9 @@ void OnMapClicked(object sender, MapClickedEventArgs e)
 ```
 
 > [!NOTE]
-> 追加`xmlns`Xamarin.Forms.Maps コントロールを参照する名前空間の定義が必要です。
+> 追加`xmlns`の名前空間定義は、Xamarin. Forms. マップコントロールを参照するために必要です。
 
-`MapRegion`と`Pins`の名前付き参照を使用してコードで設定することができます、 `Map`:
+と`MapRegion` は`Pins` 、`Map`の名前付き参照を使用してコードで設定できます。
 
 ```csharp
 MyMap.MoveToRegion(
@@ -276,18 +276,18 @@ MyMap.MoveToRegion(
         new Position(37,-122), Distance.FromMiles(1)));
 ```
 
-## <a name="populate-a-map-with-data-using-data-binding"></a>データ バインディングを使用してデータをマップを設定します。
+## <a name="populate-a-map-with-data-using-data-binding"></a>データバインディングを使用してマップにデータを設定する
 
-[ `Map` ](xref:Xamarin.Forms.Maps.Map)クラスには、次のプロパティも公開します。
+クラス[`Map`](xref:Xamarin.Forms.Maps.Map)では、次のプロパティも公開されます。
 
-- `ItemsSource` – のコレクションを指定`IEnumerable`表示する項目。
-- `ItemTemplate` – を指定します、 [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)表示されている項目のコレクション内の各項目に適用します。
-- `ItemTemplateSelector` – を指定します、 [ `DataTemplateSelector` ](xref:Xamarin.Forms.DataTemplateSelector)選択に使用される、 [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)のランタイムにある項目。
+- `ItemsSource`–表示する項目の`IEnumerable`コレクションを指定します。
+- `ItemTemplate`–表示さ[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)れている項目のコレクション内の各項目に適用するを指定します。
+- `ItemTemplateSelector`–実行時[`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)に項目のを[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)選択するために使用されるを指定します。
 
 > [!NOTE]
-> `ItemTemplate`プロパティが優先と両方、`ItemTemplate`と`ItemTemplateSelector`プロパティを設定します。
+> プロパティ`ItemTemplate` `ItemTemplate`とプロパティ`ItemTemplateSelector`の両方が設定されている場合は、プロパティが優先されます。
 
-A [ `Map` ](xref:Xamarin.Forms.Maps.Map)にバインドするデータ バインディングを使用してデータを設定することができます、`ItemsSource`プロパティを`IEnumerable`コレクション。
+データ[`Map`](xref:Xamarin.Forms.Maps.Map)バインディングを使用してデータを設定し、その`ItemsSource`プロパティを`IEnumerable`コレクションにバインドすることができます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -311,17 +311,17 @@ A [ `Map` ](xref:Xamarin.Forms.Maps.Map)にバインドするデータ バイン
 </ContentPage>
 ```
 
-`ItemsSource`プロパティ データにバインド、`Locations`を返す接続されているビュー モデルのプロパティ、`ObservableCollection`の`Location`、カスタム型であるオブジェクト。 各`Location`オブジェクトを定義します`Address`と`Description`型のプロパティ、 `string`、および`Position`型のプロパティ、 [ `Position` ](xref:Xamarin.Forms.Maps.Position)。
+プロパティ`ItemsSource`データは、接続さ`Locations`れたビュー `ObservableCollection`モデルのプロパティにバインドされます`Location` 。これは、カスタム型のオブジェクトのを返します。 各`Location`オブジェクトは`Address` 、 `Description`型のプロパティ`string`とプロパティ`Position` 、および型[`Position`](xref:Xamarin.Forms.Maps.Position)のプロパティを定義します。
 
-内の各項目の外観、`IEnumerable`を設定してコレクションが定義されている、`ItemTemplate`プロパティを[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)を格納している、 [ `Pin` ](xref:Xamarin.Forms.Maps.Pin)オブジェクトにデータをバインドします。適切なプロパティです。
+`IEnumerable`コレクション内の各項目の外観を定義するには、 `ItemTemplate`適切なプロパティにデータを[`Pin`](xref:Xamarin.Forms.Maps.Pin)バインドするオブジェクトを含むにプロパティ[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)を設定します。
 
-次のスクリーン ショットに示す、 [ `Map` ](xref:Xamarin.Forms.Maps.Map)を表示する、 [ `Pin` ](xref:Xamarin.Forms.Maps.Pin)データ バインディングを使用してコレクション。
+次のスクリーンショットは[`Map`](xref:Xamarin.Forms.Maps.Map) 、データ[`Pin`](xref:Xamarin.Forms.Maps.Pin)バインディングを使用してコレクションを表示する方法を示しています。
 
-[![マップにデータのスクリーン ショットには、iOS と Android でのピンがバインドされている](map-images/pins-itemssource.png "ピンがバインドされたデータとマップ")](map-images/pins-itemssource-large.png#lightbox "ピンがバインドされたデータとマップ")
+データバインドされ[![た pin を使用したマップのスクリーンショット (](map-images/pins-itemssource.png "データバインドされた pin を使用")した iOS および Android マップ)](map-images/pins-itemssource-large.png#lightbox "データバインドされた pin を使用したマップ")
 
-### <a name="choose-item-appearance-at-runtime"></a>実行時に項目の外観を選択します。
+### <a name="choose-item-appearance-at-runtime"></a>実行時に項目の外観を選択する
 
-内の各項目の外観、`IEnumerable`コレクションを設定して、項目の値に基づいて、実行時に選択できる、`ItemTemplateSelector`プロパティを[ `DataTemplateSelector` ](xref:Xamarin.Forms.DataTemplateSelector):
+`IEnumerable`コレクション内の各項目の外観は、 `ItemTemplateSelector`プロパティ[`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)をに設定することにより、項目の値に基づいて実行時に選択できます。
 
 ```xaml
 <ContentPage ...
@@ -356,7 +356,7 @@ A [ `Map` ](xref:Xamarin.Forms.Maps.Map)にバインドするデータ バイン
 </ContentPage>
 ```
 
-次の例は、`MapItemTemplateSelector`クラス。
+クラスの`MapItemTemplateSelector`例を次に示します。
 
 ```csharp
 public class MapItemTemplateSelector : DataTemplateSelector
@@ -371,13 +371,14 @@ public class MapItemTemplateSelector : DataTemplateSelector
 }
 ```
 
-`MapItemTemplateSelector`クラス定義`DefaultTemplate`と`XamarinTemplate` [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)さまざまなデータ テンプレートに設定されているプロパティ。 `OnSelectTemplate`メソッドを返します。、 `XamarinTemplate`、ときにラベルとして"Xamarin"を表示する、`Pin`アイテムが"サンフランシスコ"を含むアドレスがあるときに、タップします。 項目は、「サンフランシスコ」を含むアドレスを持っていない場合、`OnSelectTemplate`メソッドが返す、`DefaultTemplate`します。
+クラス`MapItemTemplateSelector`は、さまざま`XamarinTemplate`なデータテンプレートに設定されるプロパティと[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)プロパティを定義`DefaultTemplate`します。 メソッド`OnSelectTemplate`はを`XamarinTemplate`返します。このメソッドは、 `Pin`がタップされたときに "Xamarin" をラベルとして表示し、項目に "サンフランシスコ" を含むアドレスがある場合はそれを表示します。 "サンフランシスコ" を含むアドレスが項目に含まれていない`OnSelectTemplate`場合、メソッド`DefaultTemplate`はを返します。
 
-データ テンプレート セレクターの詳細については、次を参照してください。[作成 Xamarin.Forms DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)します。
+データテンプレートセレクターの詳細については、「 [DataTemplateSelector の作成](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)」を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 
 - [MapsSample](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithMaps/)
 - [カスタム レンダラーをマップします。](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md)
 - [Xamarin.Forms のサンプル](https://developer.xamarin.com/samples/xamarin-forms/all/)
-- [Xamarin.Forms DataTemplateSelector を作成します。](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)
+- [DataTemplateSelector を作成する](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)
+- [Maps API](xref:Xamarin.Forms.Maps)
