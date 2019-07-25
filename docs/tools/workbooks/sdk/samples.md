@@ -15,7 +15,7 @@ ms.locfileid: "61424604"
 ---
 # <a name="sample-integrations"></a>サンプルの統合
 
-参照してください、[キッチン シンク][ KitchenSink]統合の実施例についてはサンプルです。 構築`KitchenSink.sln`Visual studio for Mac または Visual Studio と順に開いて`KitchenSink.workbook`します。
+参照してください、[キッチン シンク][KitchenSink]統合の実施例についてはサンプルです。 構築`KitchenSink.sln`Visual studio for Mac または Visual Studio と順に開いて`KitchenSink.workbook`します。
 
 [![キッチンのシンクの統合のスクリーン ショット](samples-images/kitchensinkintegrationscreenshot.png)](samples-images/kitchensinkintegrationscreenshot.png#lightbox)
 
@@ -24,7 +24,7 @@ ms.locfileid: "61424604"
 * 表現の部分が使用する方法を示します`RepresentationManager`組み込みの表現を使用してレンダリングを強化するためにします。
 * `Person`オブジェクトとその関連付けられた JavaScript レンダラーは、使用方法をデモンストレーション`ISerializableObject`表現プロバイダーを経由せずにします。
 
-参照してください[SkiaSharp] [ skiasharp]既存を使用する統合環境の実際の例の[表現](~/tools/workbooks/sdk/representations.md)その型を表示するために、Xamarin Workbooks によって提供されます。
+参照してください[SkiaSharp][skiasharp]既存を使用する統合環境の実際の例の[表現](~/tools/workbooks/sdk/representations.md)その型を表示するために、Xamarin Workbooks によって提供されます。
 
 [KitchenSink]: https://github.com/xamarin/Workbooks/tree/master/SDK/Samples/KitchenSink
 [skiasharp]: https://github.com/mono/SkiaSharp/tree/master/source/SkiaSharp.Workbooks
