@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 0ed4d86054ada0918feccb123ac3a0de8ccf899b
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 8e80016e33e8bebba715be4f02060e76086884fc
+ms.sourcegitcommit: 4b6e832d1db5616b657dc8540da67c509b28dc1d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926721"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68386198"
 ---
 # <a name="customizing-a-map-pin"></a>マップ ピンのカスタマイズ
 
@@ -112,7 +112,7 @@ public MapPage ()
     Position = new Position (37.79752, -122.40183),
     Label = "Xamarin San Francisco Office",
     Address = "394 Pacific Ave, San Francisco CA",
-    Id = "Xamarin",
+    MarkerId = "Xamarin",
     Url = "http://xamarin.com/about/"
   };
 
@@ -155,7 +155,7 @@ public MapPage ()
 次のコード例に示すように、`OnElementChanged` メソッドでイベント ハンドラーをサブスクライブする場合は注意が必要です。
 
 ```csharp
-protected override void OnElementChanged (ElementChangedEventArgs<Xamarin.Forms.ListView> e)
+protected override void OnElementChanged (ElementChangedEventArgs<Xamarin.Forms.View> e)
 {
   base.OnElementChanged (e);
 
@@ -254,14 +254,14 @@ protected override MKAnnotationView GetViewForAnnotation(MKMapView mapView, IMKA
         throw new Exception("Custom pin not found");
     }
 
-    annotationView = mapView.DequeueReusableAnnotation(customPin.Id.ToString());
+    annotationView = mapView.DequeueReusableAnnotation(customPin.MarkerId.ToString());
     if (annotationView == null) {
-        annotationView = new CustomMKAnnotationView(annotation, customPin.Id.ToString());
+        annotationView = new CustomMKAnnotationView(annotation, customPin.MarkerId.ToString());
         annotationView.Image = UIImage.FromFile("pin.png");
         annotationView.CalloutOffset = new CGPoint(0, 0);
         annotationView.LeftCalloutAccessoryView = new UIImageView(UIImage.FromFile("monkey.png"));
         annotationView.RightCalloutAccessoryView = UIButton.FromType(UIButtonType.DetailDisclosure);
-        ((CustomMKAnnotationView)annotationView).Id = customPin.Id.ToString();
+        ((CustomMKAnnotationView)annotationView).MarkerId = customPin.MarkerId.ToString();
         ((CustomMKAnnotationView)annotationView).Url = customPin.Url;
     }
     annotationView.CanShowCallout = true;
@@ -274,12 +274,12 @@ protected override MKAnnotationView GetViewForAnnotation(MKMapView mapView, IMKA
 
 1. 注釈のカスタム ピン データを返すために、`GetCustomPin` メソッドが呼び出されます。
 1. メモリを節約するため、[`DequeueReusableAnnotation`](xref:MapKit.MKMapView.DequeueReusableAnnotation*) の呼び出しで再利用できるように注釈のビューがプーリングされます。
-1. `CustomMKAnnotationView` クラスでは、`CustomPin` インスタンスの同じプロパティに対応する `Id` および `Url` プロパティを使用して、`MKAnnotationView` クラスが拡張されます。 注釈が `null` の場合、`CustomMKAnnotationView` の新しいインスタンスが作成されます。
+1. `CustomMKAnnotationView` クラスでは、`CustomPin` インスタンスの同じプロパティに対応する `MarkerId` および `Url` プロパティを使用して、`MKAnnotationView` クラスが拡張されます。 注釈が `null` の場合、`CustomMKAnnotationView` の新しいインスタンスが作成されます。
     - `CustomMKAnnotationView.Image` プロパティは、マップ上の注釈を表すイメージに設定されます。
     - `CustomMKAnnotationView.CalloutOffset` プロパティは `CGPoint` に設定されます。これにより、吹き出しが注釈の上の中央に表示されることが指定されます。
     - `CustomMKAnnotationView.LeftCalloutAccessoryView` プロパティは、注釈のタイトルとアドレスの左側に表示されるサルのイメージに設定されます。
     - `CustomMKAnnotationView.RightCalloutAccessoryView` プロパティは、注釈のタイトルとアドレスの右側に表示される*情報* ボタンに設定されます。
-    - `CustomMKAnnotationView.Id` プロパティは、`GetCustomPin` メソッドによって返される `CustomPin.Id` プロパティに設定されます。 これにより、注釈を識別でき、必要に応じて、その[吹き出しをさらにカスタマイズできる](#Selecting_the_Annotation)ようになります。
+    - `CustomMKAnnotationView.MarkerId` プロパティは、`GetCustomPin` メソッドによって返される `CustomPin.MarkerId` プロパティに設定されます。 これにより、注釈を識別でき、必要に応じて、その[吹き出しをさらにカスタマイズできる](#Selecting_the_Annotation)ようになります。
     - `CustomMKAnnotationView.Url` プロパティは、`GetCustomPin` メソッドによって返される `CustomPin.Url` プロパティに設定されます。 ユーザーが[右側の吹き出しのアクセサリ ビューに表示されるボタンをタップ](#Tapping_on_the_Right_Callout_Accessory_View)したときに、URL にナビゲートされます。
 1. [`MKAnnotationView.CanShowCallout`](xref:MapKit.MKAnnotationView.CanShowCallout*) プロパティは `true` に設定され、注釈がタップされたときに吹き出しが表示されるようになります。
 1. マップに表示される注釈が返されます。
@@ -296,7 +296,7 @@ void OnDidSelectAnnotationView (object sender, MKAnnotationViewEventArgs e)
   var customView = e.View as CustomMKAnnotationView;
   customPinView = new UIView ();
 
-  if (customView.Id == "Xamarin") {
+  if (customView.MarkerId == "Xamarin") {
     customPinView.Frame = new CGRect (0, 0, 200, 84);
     var image = new UIImageView (new CGRect (0, 0, 200, 84));
     image.Image = UIImage.FromFile ("xamarin.png");
@@ -307,7 +307,7 @@ void OnDidSelectAnnotationView (object sender, MKAnnotationViewEventArgs e)
 }
 ```
 
-選択された注釈の `Id` プロパティが `Xamarin` に設定されている場合、このメソッドでは、Xamarin ロゴのイメージを含む既存の吹き出しに `UIView` インスタンスを追加することで、その吹き出し (左側と右側のアクセサリ ビューを含む) を拡張します。 これにより、異なる注釈に対して異なる吹き出しを表示できるシナリオが可能になります。 `UIView` インスタンスは、既存の吹き出しの上の中央に表示されます。
+選択された注釈の `MarkerId` プロパティが `Xamarin` に設定されている場合、このメソッドでは、Xamarin ロゴのイメージを含む既存の吹き出しに `UIView` インスタンスを追加することで、その吹き出し (左側と右側のアクセサリ ビューを含む) を拡張します。 これにより、異なる注釈に対して異なる吹き出しを表示できるシナリオが可能になります。 `UIView` インスタンスは、既存の吹き出しの上の中央に表示されます。
 
 <a name="Tapping_on_the_Right_Callout_Accessory_View" />
 
@@ -447,7 +447,7 @@ public Android.Views.View GetInfoContents (Marker marker)
       throw new Exception ("Custom pin not found");
     }
 
-    if (customPin.Id.ToString() == "Xamarin") {
+    if (customPin.MarkerId.ToString() == "Xamarin") {
       view = inflater.Inflate (Resource.Layout.XamarinMapInfoWindow, null);
     } else {
       view = inflater.Inflate (Resource.Layout.MapInfoWindow, null);
@@ -473,7 +473,7 @@ public Android.Views.View GetInfoContents (Marker marker)
 
 - `LayoutInflater` インスタンスが取得されます。 これは、レイアウト XML ファイルをそれに対応する `View` にインスタンス化するために使用されます。
 - 情報ウィンドウのカスタム ピン データを返すために、`GetCustomPin` メソッドが呼び出されます。
-- `CustomPin.Id` が `Xamarin` と等しい場合、`XamarinMapInfoWindow` レイアウトが拡張されます。 それ以外の場合は、`MapInfoWindow` レイアウトが拡張されます。 これにより、異なるマーカーに対して異なる情報ウィンドウ レイアウトを表示できるシナリオが可能になります。
+- `CustomPin.MarkerId` が `Xamarin` と等しい場合、`XamarinMapInfoWindow` レイアウトが拡張されます。 それ以外の場合は、`MapInfoWindow` レイアウトが拡張されます。 これにより、異なるマーカーに対して異なる情報ウィンドウ レイアウトを表示できるシナリオが可能になります。
 - `InfoWindowTitle` および `InfoWindowSubtitle` リソースは拡張されたレイアウトから取得されます。リソースが `null` でない場合、それらの `Text` プロパティは `Marker` インスタンスの対応するデータに設定されます。
 - マップに表示される `View` インスタンスが返されます。
 
@@ -601,7 +601,7 @@ private void OnMapElementClick(MapControl sender, MapElementClickEventArgs args)
                 throw new Exception("Custom pin not found");
             }
 
-            if (customPin.Id.ToString() == "Xamarin")
+            if (customPin.MarkerId.ToString() == "Xamarin")
             {
                 if (mapOverlay == null)
                 {
@@ -652,11 +652,6 @@ private async void OnInfoButtonTapped(object sender, TappedRoutedEventArgs e)
 このメソッドでは、Web ブラウザーを開き、`CustomPin` インスタンスの `Url` プロパティに格納されているアドレスに移動します。 .NET 標準ライブラリ プロジェクトでの `CustomPin` コレクションの作成時に、アドレスが定義されていることに注意してください。
 
 `MapControl` インスタンスのカスタマイズの詳細については、MSDN の「[地図と位置情報の概要](https://msdn.microsoft.com/library/windows/apps/mt219699.aspx)」を参照してください。
-
-## <a name="summary"></a>まとめ
-
-この記事では、`Map` コントロール用のカスタム レンダラーを作成する方法を示しました。これにより、開発者は既定のネイティブ レンダリングを、各自のプラットフォームに固有のカスタマイズでオーバーライドできるようになります。 Xamarin.Forms.Maps には、プラットフォームごとのネイティブ マップ API を使ったマップ表示用の抽象化がクロスプラットフォームで用意されていて、高速で使い慣れたマップのユーザー エクスペリエンスが提供されます。
-
 
 ## <a name="related-links"></a>関連リンク
 
