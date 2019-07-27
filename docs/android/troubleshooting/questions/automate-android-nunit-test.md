@@ -7,20 +7,20 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2018
-ms.openlocfilehash: 0837deccdb535c178e8b00b052efeb7c9bd49679
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 94a0bddcb3a9a1e7236bed4b4c95fc38e1f9f0dd
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67864129"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510431"
 ---
 # <a name="how-do-i-automate-an-android-nunit-test-project"></a>Android NUnit テスト プロジェクトを自動化する方法を教えてください
 
 > [!NOTE]
-> このガイドでは、Android NUnit テスト プロジェクトの Xamarin.UITest プロジェクトではないを自動化する方法について説明します。 Xamarin.UITest ガイド[ここ](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/uitest)します。
+> このガイドでは、UITest プロジェクトではなく、Android NUnit テストプロジェクトを自動化する方法について説明します。 UITest のガイドについては、[こちら](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/uitest)を参照してください。
 
-作成するときに、**単体テスト アプリ (Android)** Visual Studio でプロジェクト (または**Android 単体テスト**Visual Studio for Mac でプロジェクト)、このプロジェクトは、自動的に既定では、テストを実行します。
-作成することができます、ターゲット デバイスでの NUnit テストを実行する、 [Android.App.Instrumentation](https://developer.xamarin.com/api/type/Android.App.Instrumentation/)によって次のコマンドを使用して開始されたサブクラスです。 
+Visual Studio (または Visual Studio for Mac の**Android 単体テスト**プロジェクト) で**単体テストアプリ (android)** プロジェクトを作成すると、既定では、このプロジェクトによってテストが自動的に実行されません。
+ターゲットデバイスで NUnit テストを実行するには、次のコマンドを使用して起動される[app.xaml](xref:Android.App.Instrumentation)サブクラスを作成します。 
 
 ```shell
 adb shell am instrument 
@@ -28,7 +28,7 @@ adb shell am instrument
 
 次の手順では、このプロセスについて説明します。
 
-1.  という新しいファイルを作成**TestInstrumentation.cs**: 
+1.  **TestInstrumentation.cs**という名前の新しいファイルを作成します。 
 
     ```cs 
     using System;
@@ -54,11 +54,11 @@ adb shell am instrument
         }
     }
     ```
-    このファイルで[Xamarin.Android.NUnitLite.TestSuiteInstrumentation](https://developer.xamarin.com/api/type/Xamarin.Android.NUnitLite.TestSuiteInstrumentation/) (から**Xamarin.Android.NUnitLite.dll**) を作成するサブクラス化は`TestInstrumentation`します。
+    このファイルでは`Xamarin.Android.NUnitLite.TestSuiteInstrumentation` 、( **Xamarin. Android. .dll**から) がサブクラスとして作成`TestInstrumentation`されます。
 
-2.  実装、 [TestInstrumentation](https://developer.xamarin.com/api/constructor/Xamarin.Android.NUnitLite.TestSuiteInstrumentation.TestSuiteInstrumentation/p/System.IntPtr/Android.Runtime.JniHandleOwnership/)コンス トラクターと[AddTests](https://developer.xamarin.com/api/member/Xamarin.Android.NUnitLite.TestSuiteInstrumentation.AddTests%28%29)メソッド。 `AddTests`メソッドのコントロールが実際にテストを実行します。
+2.  `TestInstrumentation` コンストラクター`AddTests`とメソッドを実装します。 メソッド`AddTests`は、実際に実行されるテストを制御します。
 
-3.  変更、`.csproj`ファイルを追加する**TestInstrumentation.cs**します。 例えば:
+3.  TestInstrumentation.cs を追加するようにファイルを変更します。`.csproj` 例えば:
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -74,25 +74,25 @@ adb shell am instrument
     </Project>
     ```
 
-4.  単体テストを実行するのにには、次のコマンドを使用します。 置換`PACKAGE_NAME`アプリのパッケージ名を持つ (アプリのパッケージ名が見つかりません`/manifest/@package`属性にある**AndroidManifest.xml**)。
+4.  次のコマンドを使用して、単体テストを実行します。 を`PACKAGE_NAME`アプリのパッケージ名に置き換えます (パッケージ名は、 **androidmanifest .xml**にあるアプリの`/manifest/@package`属性にあります)。
 
     ```shell
     adb shell am instrument -w PACKAGE_NAME/app.tests.TestInstrumentation
     ```
 
-5.  必要に応じて変更することができます、`.csproj`を追加するファイル、 `RunTests` MSBuild ターゲット。 これにより、次のようなコマンドを使用して単体テストを起動できるようにします。
+5.  必要に応じて`.csproj` 、 `RunTests` MSBuild ターゲットを追加するようにファイルを変更できます。 これにより、次のようなコマンドを使用して単体テストを呼び出すことができます。
 
     ```shell
     msbuild /t:RunTests Project.csproj
     ```
-    (は、この新しいターゲットを使用している必要はありません以前、`adb`の代わりにコマンドを使用できる`msbuild`。)。
+    (この新しいターゲットの使用は必須ではないこと`adb`に注意してください。 `msbuild`の代わりに前のコマンドを使用できます)。
 
-使用しての詳細については、`adb shell am instrument`単体テストを実行し、Android の開発者を参照してくださいコマンド[ADB によるテストの実行](https://developer.android.com/studio/test/command-line.html#RunTestsDevice)トピック。
+`adb shell am instrument`コマンドを使用して単体テストを実行する方法の詳細については、「 [ADB でテストを実行](https://developer.android.com/studio/test/command-line.html#RunTestsDevice)する Android 開発者向けのトピック」を参照してください。
 
 
 > [!NOTE]
-> [Xamarin.Android 5.0](https://developer.xamarin.com/releases/android/xamarin.android_5/xamarin.android_5.1/#Android_Callable_Wrapper_Naming)リリースの場合は、エクスポートされる型のアセンブリ修飾名の md5 チェックサムに基づいて Android 呼び出し可能ラッパーは、既定のパッケージ名。 これにより、2 つの異なるアセンブリから指定して、パッケージのエラーを取得できませんに同じ完全修飾名です。 これを使用することを確認、`Name`プロパティを`Instrumentation`属性が読み取り可能なについて/クラス名を生成します。
+> [Xamarin 5.0](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/android/xamarin.android_5/xamarin.android_5.1/index.md#Android_Callable_Wrapper_Naming)リリースでは、android 呼び出し可能ラッパーの既定のパッケージ名は、エクスポートされる型のアセンブリ修飾名の MD5SUM に基づきます。 これにより、2つの異なるアセンブリから同じ完全修飾名を指定できるようになり、パッケージ化エラーは発生しません。 そのため、 `Name` `Instrumentation`属性のプロパティを使用して、読み取り可能な ACW/クラス名を生成するようにしてください。
 
-_についての名前を使用する必要があります、`adb`上記のコマンド_します。
-名前変更リファクタリング、C#クラスは、変更する必要がありますので、`RunTests`コマンドについての正しい名前を使用します。
+_ACW 名は、上記の`adb`コマンドで使用する必要があり_ます。
+クラスのC#名前を変更したりリファクタリングしたり`RunTests`するには、正しい ACW 名を使用するようにコマンドを変更する必要があります。
 

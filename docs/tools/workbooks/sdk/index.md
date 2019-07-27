@@ -1,47 +1,47 @@
 ---
-title: Xamarin Workbooks SDK の概要
-description: このドキュメントでは、Xamarin Workbooks の統合を開発するために使用できる Xamarin ブック SDK を使用する方法について説明します。
+title: Xamarin Workbooks SDK を使用したはじめに
+description: このドキュメントでは、Xamarin Workbooks の統合を開発するために使用できる Xamarin Workbooks SDK の概要について説明します。
 ms.prod: xamarin
 ms.assetid: FAED4445-9F37-46D8-B408-E694060969B9
 author: lobrien
 ms.author: laobri
 ms.date: 03/30/2017
-ms.openlocfilehash: 5800e98acbff147735ae4a6125979a4b47be2367
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: dd75270b3b14b0b770808bbc3ffc88240f868eae
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61382756"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511004"
 ---
-# <a name="getting-started-with-the-xamarin-workbooks-sdk"></a>Xamarin Workbooks SDK の概要
+# <a name="getting-started-with-the-xamarin-workbooks-sdk"></a>Xamarin Workbooks SDK を使用したはじめに
 
-このドキュメントでは、簡単なガイドを Xamarin Workbooks の統合などの開発の概要を説明します。 安定版の Xamarin Workbooks では、多くが、**ブック 1.3 では NuGet パッケージを使用して統合の読み込みはサポートされてのみ**の執筆時点でアルファ チャネルにします。
+このドキュメントでは、Xamarin Workbooks の統合開発の概要について簡単に説明します。 この多くは安定した Xamarin Workbooks で機能しますが、NuGet パッケージを使用した統合の読み込みは、書き込み時の alpha チャネルの**ブック1.3 でのみサポート**されています。
 
-## <a name="general-overview"></a>[全般] の概要
+## <a name="general-overview"></a>全般の概要
 
-Xamarin Workbooks の統合が小規模のライブラリを使用して、 [ `Xamarin.Workbooks.Integrations` NuGet] [ nuget] SDK Xamarin Workbooks および Inspector と強化されたエクスペリエンスを提供するエージェントを統合します。
+Xamarin Workbooks 統合は、 [ `Xamarin.Workbooks.Integrations` NuGet][nuget] SDK を使用して Xamarin Workbooks およびインスペクターエージェントと統合し、拡張されたエクスペリエンスを提供する小さなライブラリです。
 
-開発、統合の概要を 3 つの主要な手順は、それらをここで説明します。
+統合の開発を開始するための主な手順は3つあります。ここでは、その概要を説明します。
 
-## <a name="creating-the-integration-project"></a>統合プロジェクトを作成します。
+## <a name="creating-the-integration-project"></a>統合プロジェクトの作成
 
-統合ライブラリは、最適なマルチプラット フォーム ライブラリとして作成されます。 すべての使用可能なエージェント、過去、将来の最適な統合を提供するために幅広くサポートされている一連のライブラリを選択します。 「ポータブル ライブラリ」テンプレートを使用して、最も広範なサポートをお勧めします。
+統合ライブラリは、マルチプラットフォームライブラリとして開発することをお勧めします。 使用可能なすべてのエージェント (過去および将来) に最適な統合を提供するため、広範にサポートされているライブラリのセットを選択する必要があります。 最も広範なサポートには、"ポータブルライブラリ" テンプレートを使用することをお勧めします。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-[![ポータブル ライブラリ テンプレートで Visual Studio for Mac](images/xamarin-studio-pcl.png)](images/xamarin-studio-pcl.png#lightbox)
+[![ポータブルライブラリテンプレート Visual Studio for Mac](images/xamarin-studio-pcl.png)](images/xamarin-studio-pcl.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![ポータブル ライブラリ テンプレートの Visual Studio](images/visual-studio-pcl.png)](images/visual-studio-pcl.png#lightbox)
+[![ポータブルライブラリテンプレート Visual Studio](images/visual-studio-pcl.png)](images/visual-studio-pcl.png#lightbox)
 
-Visual Studio では、ポータブル ライブラリの次のターゲット プラットフォームを選択するかどうかを確認する必要があります。
+Visual Studio では、ポータブルライブラリに対して次のターゲットプラットフォームを選択する必要があります。
 
-[![ポータブル ライブラリのプラットフォームの Visual Studio](images/visual-studio-pcl-platforms.png)](images/visual-studio-pcl-platforms.png#lightbox)
+[![ポータブルライブラリプラットフォーム Visual Studio](images/visual-studio-pcl-platforms.png)](images/visual-studio-pcl-platforms.png#lightbox)
 
 -----
 
-参照を追加、ライブラリ プロジェクトを作成すると、 `Xamarin.Workbooks.Integration` NuGet ライブラリ NuGet パッケージ マネージャーを使用しています。
+ライブラリプロジェクトを作成したら、nuget パッケージマネージャーを使用`Xamarin.Workbooks.Integration`して nuget ライブラリへの参照を追加します。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -53,11 +53,11 @@ Visual Studio では、ポータブル ライブラリの次のターゲット �
 
 -----
 
-プロジェクトの一部として作成される空のクラスを削除します-するは必要ありません、このします。 次の手順を完了すると、統合の作成を開始する準備ができました。
+プロジェクトの一部として作成された空のクラスを削除する必要があります。これには必要ありません。 これらの手順を完了すると、統合の構築を開始する準備が整います。
 
-## <a name="building-an-integration"></a>統合環境を構築
+## <a name="building-an-integration"></a>統合の構築
 
-シンプルな統合をビルドします。 本当にぜひ色緑、緑の色の各オブジェクトの表現として追加しますので。 いう新しいクラスを最初に、作成`SampleIntegration`、し、実装、 [ `IAgentIntegration` ] [ integration-type]インターフェイス。
+単純な統合を構築します。 私たちは緑色の色を気に入っているので、各オブジェクトの表現として緑色の色を追加します。 最初に、という名前`SampleIntegration`の新しいクラスを作成し、 `IAgentIntegration`インターフェイスを実装します。
 
 ```csharp
 using Xamarin.Interactive;
@@ -70,7 +70,7 @@ public class SampleIntegration : IAgentIntegration
 }
 ```
 
-実行するには、追加、[表現](~/tools/workbooks/sdk/representations.md)緑の色であるすべてのオブジェクト。 表現のプロバイダーを使用してこれを実行します。 プロバイダーが継承、 [ `RepresentationProvider` ] [ reppr]クラスなど、私たちのだけをオーバーライドする[ `ProvideRepresentations` ] [ prrep]:
+ここでは、緑の色を持つすべてのオブジェクトの[表現](~/tools/workbooks/sdk/representations.md)を追加します。 これを行うには、表現プロバイダーを使用します。 プロバイダーは`RepresentationProvider`クラスから継承します。私たちは、次の`ProvideRepresentations`ようなオーバーライドを行うだけです。
 
 ```csharp
 using Xamarin.Interactive.Representations;
@@ -85,22 +85,22 @@ class SampleRepresentationProvider : RepresentationProvider
 }
 ```
 
-返します、 [ `Color` ] [ color]、既成の SDK での表現の型。
-ここでの戻り値の型は、 `IEnumerable<object>`&mdash;表現の 1 つのプロバイダーは、オブジェクトの多くの表現を返す可能性があります。 渡されるオブジェクトについて何も想定することが重要であるため、すべてのオブジェクトの表現のすべてのプロバイダーと呼びます。
+SDK で事前に`Color`構築された表現型であるを返しています。
+ここでの戻り値の型は`IEnumerable<object>` &mdash;、1つの表現プロバイダーがオブジェクトに対して多くの表現を返す場合があることに注意してください。 すべての表現プロバイダーはすべてのオブジェクトに対して呼び出されるため、どのオブジェクトが渡されているかを想定しないことが重要です。
 
-最後の手順では、実際には、エージェントに、プロバイダーを登録し、統合の種類を検索する場所をブックに指示します。 プロバイダーを登録するには、このコードを追加、`IntegrateWith`メソッドで、`SampleIntegration`以前に作成したクラス。
+最後の手順では、実際にプロバイダーをエージェントに登録し、統合の種類を見つける場所をブックに指示します。 プロバイダーを登録するには、前の手順`IntegrateWith` `SampleIntegration`で作成したクラスのメソッドに次のコードを追加します。
 
 ```csharp
 agent.RepresentationManager.AddProvider (new SampleRepresentationProvider ());
 ```
 
-統合型の設定は、アセンブリ レベル属性を使用して行われます。 AssemblyInfo.cs、または利便性のため、統合型と同じクラスに配置できます。
+統合の種類の設定は、アセンブリ全体の属性を使用して行います。 これは、AssemblyInfo.cs に配置することも、統合の種類と同じクラスで使いやすくすることもできます。
 
 ```csharp
 [assembly: AgentIntegration (typeof (SampleIntegration))]
 ````
 
-開発中は、かもしれませんを使用する方が便利[`AddProvider`オーバー ロード][ addprovider]で`RepresentationManager`ブック内の表現を提供する単純なコールバックを登録することができますそのコードを移動し、`RepresentationProvider`実装が終わるとします。 レンダリングの例を[ `OxyPlot` ] [ oxyplot] `PlotModel`ようになります。
+開発時には、で`AddProvider` `RepresentationManager`オーバーロードを使用する方が便利な場合があります。これにより、簡単なコールバックを登録してブック内に表現`RepresentationProvider`を提供し、そのコードを実装に1回移動できます。完了しました。 を表示[`OxyPlot`][oxyplot] `PlotModel`する例は次のようになります。
 
 ```csharp
 InteractiveAgent.RepresentationManager.AddProvider<PlotModel> (
@@ -111,15 +111,15 @@ InteractiveAgent.RepresentationManager.AddProvider<PlotModel> (
 ```
 
 > [!NOTE]
-> これらの Api を使用すると簡単にセットアップし、実行の入手が全体の統合を配布を使用することのみお勧めできません&mdash;クライアントによって、型を処理する方法のごくわずかな制御を提供します。
+> これらの api を使用すると、すぐに稼働状態にすることができますが、統合全体を使用する&mdash;ことはお勧めしません。これにより、クライアントによる型の処理方法をごくわずかに制御できるようになります。
 
-登録されている表現は、統合している出荷できます。
+この表現が登録されると、統合の準備ができました。
 
-## <a name="shipping-your-integration"></a>配布の統合
+## <a name="shipping-your-integration"></a>統合の配布
 
-統合を出荷するには、NuGet パッケージに追加する必要があります。
-それを出荷するには、既存のライブラリの nuget をまたは新しいパッケージを作成する場合は、開始点としてこのテンプレートの .nuspec ファイルを使用できます。
-統合に関連するセクションでは、記入する必要があります。 最も重要な部分はすべての統合するためのファイル内でなければならないこと、`xamarin.interactive`パッケージのルートにあるディレクトリ。 これにより、既存のパッケージを使用して、または、新しく作成するかどうかに関係なく、統合に関連するすべてのファイルを簡単に見つけることができます。
+統合を配布するには、NuGet パッケージに追加する必要があります。
+既存のライブラリの NuGet を使用して配布することも、新しいパッケージを作成する場合は、この nuspec ファイルを出発点として使用することもできます。
+統合に関連するセクションを入力する必要があります。 最も重要なのは、統合のすべてのファイルが、パッケージのルートに`xamarin.interactive`あるディレクトリに存在する必要があることです。 これにより、既存のパッケージを使用するか、新しいパッケージを作成するかに関係なく、統合に関連するすべてのファイルを簡単に見つけることができます。
 
 ```xml
 <?xml version="1.0"?>
@@ -137,37 +137,30 @@ InteractiveAgent.RepresentationManager.AddProvider<PlotModel> (
 </package>
 ```
 
-NuGet をパックすることができます、.nuspec ファイルを作成したら、次のようにします。
+Nuspec ファイルを作成したら、次のように NuGet をパックできます。
 
 ```csharp
 nuget pack MyIntegration.nuspec
 ```
 
-発行および[NuGet][nugetorg]します。 後ブックからを参照し、動作を確認することができます。 次のスクリーン ショットで、サンプルの統合このドキュメントで構築し、ブックで NuGet パッケージをインストールをパッケージ化したしました。
+その後、 [NuGet][nugetorg]に発行します。 これが完了すると、任意のブックからそれを参照し、動作していることを確認できるようになります。 次のスクリーンショットでは、このドキュメントで構築したサンプル統合をパッケージ化し、ブックに NuGet パッケージをインストールしました。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-[![ブックとの統合](images/mac-workbooks-integrated.png)](images/mac-workbooks-integrated.png#lightbox)
+[![統合されるブック](images/mac-workbooks-integrated.png)](images/mac-workbooks-integrated.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![ブックとの統合](images/windows-workbooks-integrated.png)](images/windows-workbooks-integrated.png#lightbox)
+[![統合されるブック](images/windows-workbooks-integrated.png)](images/windows-workbooks-integrated.png#lightbox)
 
 -----
 
-表示されないことに注意してください`#r`ディレクティブなど、統合を初期化するために、ブックは処理を実行するすべてが、バック グラウンドで!
+統合を初期化するための`#r`ディレクティブや何も表示されないことに注意してください。ブックは、すべての操作をバックグラウンドで実行しています。
 
 ## <a name="next-steps"></a>次の手順
 
-チェック アウト、SDK を構成する動的な部分の詳細については、他のドキュメントと[統合サンプル](~/tools/workbooks/samples/index.md)の追加の処理で実行される javascript のコードを提供するように、統合から行うことができますブックのクライアント。
+SDK の構成要素の詳細については、他のドキュメントを参照してください。また、ブッククライアントで実行されるカスタム JavaScript の提供など、統合によって可能なその他の作業の[サンプル統合](~/tools/workbooks/samples/index.md)もご確認ください。
 
-[integration-type]: https://developer.xamarin.com/api/type/Xamarin.Interactive.IAgentIntegration/
-[repman-api]: https://developer.xamarin.com/api/type/Xamarin.Interactive.Representations.IRepresentationManager/
-[color]: https://developer.xamarin.com/api/type/Xamarin.Interactive.Representations.Color/
-[xir]: https://developer.xamarin.com/api/namespace/Xamarin.Interactive.Representations/
-[reppr]: https://developer.xamarin.com/api/type/Xamarin.Interactive.Representations.RepresentationProvider/
-[prrep]: https://developer.xamarin.com/api/member/Xamarin.Interactive.Representations.RepresentationProvider.ProvideRepresentations/p/System.Object/
 [nugetorg]: https://nuget.org
 [nuget]: https://nuget.org/packages/Xamarin.Workbooks.Integration
-[addprovider]: https://developer.xamarin.com/api/member/Xamarin.Interactive.Representations.IRepresentationManager.AddProvider/
 [oxyplot]: http://www.oxyplot.org/

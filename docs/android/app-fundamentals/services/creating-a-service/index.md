@@ -6,23 +6,23 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/03/2018
-ms.openlocfilehash: 8c2086025ccb5fe41b3ffddc9cd650c1e0c81fbc
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c5348ab754139dbd4012f6bfe9d22068ac16d12b
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61013510"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68509258"
 ---
 # <a name="creating-a-service"></a>サービスの作成
 
-Xamarin.Android サービスは、Android のサービスの 2 つの壊れない規則に従う必要があります。
+Xamarin Android サービスは、次の2つの Android サービスの規則に従う必要があります。
 
-* これらを拡張する必要があります、 [ `Android.App.Service`](https://developer.xamarin.com/api/type/Android.App.Service/)します。
-* 修飾する必要がありますが、 [ `Android.App.ServiceAttribute`](https://developer.xamarin.com/api/type/Android.App.ServiceAttribute/)します。
+* を[`Android.App.Service`](xref:Android.App.Service)拡張する必要があります。
+* これらは、 [`Android.App.ServiceAttribute`](xref:Android.App.ServiceAttribute)で修飾する必要があります。
 
-Android サービスのもう 1 つの要件に登録する必要があります、 **AndroidManifest.xml**一意の名前を指定します。 Xamarin.Android は自動的に登録、サービス マニフェストで必要な XML 属性を持つビルド時にします。
+Android サービスのもう1つの要件は、ユーザーが**Androidmanifest .xml**に登録され、一意の名前が指定されていることです。 Xamarin Android は、ビルド時に必要な XML 属性を使用してサービスをマニフェストに自動的に登録します。
 
-このコード スニペットでは、これら 2 つの要件を満たしている Xamarin.Android でサービスの作成の最も簡単な例を示します。  
+このコードスニペットは、次の2つの要件を満たす、Xamarin. Android でサービスを作成する最も簡単な例です。  
 
 ```csharp
 [Service]
@@ -32,13 +32,13 @@ public class DemoService : Service
 }
 ```
 
-Xamarin.Android には、次の XML 要素を挿入することで、サービスを登録する、コンパイル時**AndroidManifest.xml** (Xamarin.Android にサービスのランダムな名前が生成されることに注意してください)。
+コンパイル時に、Xamarin Android は、次の XML 要素を**Androidmanifest .xml**に挿入することによってサービスを登録します (xamarin android によってサービスに対してランダムな名前が生成されたことに注意してください)。
 
 ```xml
 <service android:name="md5a0cbbf8da641ae5a4c781aaf35e00a86.DemoService" />
 ```
 
-によって、その他の Android アプリケーションとサービスを共有することは_エクスポート_こと。 これは、設定によって実現されます、`Exported`プロパティを`ServiceAttribute`します。 サービスをエクスポートするときに、`ServiceAttribute.Name`プロパティは、サービスの意味のあるパブリック名を指定するも設定する必要があります。 このスニペットでは、サービスの名前をエクスポートする方法を示します。
+_エクスポート_することによって、サービスを他の Android アプリケーションと共有することができます。 これを行うには、 `Exported` `ServiceAttribute`でプロパティを設定します。 サービスをエクスポートする場合は`ServiceAttribute.Name` 、サービスに対して意味のあるパブリック名を提供するようにプロパティを設定する必要もあります。 このスニペットは、サービスをエクスポートして名前を指定する方法を示しています。
 
 ```csharp
 [Service(Exported=true, Name="com.xamarin.example.DemoService")]
@@ -48,15 +48,15 @@ public class DemoService : Service
 }
 ```
 
-**AndroidManifest.xml**ようこのサービスの要素になりますし。
+このサービスの**Androidmanifest**要素は次のようになります。
 
 ```xml
 <service android:exported="true" android:name="com.xamarin.example.DemoService" />
 ```
 
-サービスでは、サービスが作成されると呼び出されるコールバック メソッドで、独自のライフ サイクルがあります。 どのメソッドが呼び出される正確には、サービスの種類によって異なります。 開始されるサービスは、ハイブリッド サービスが開始されるサービスとバインドされているサービスの両方のコールバック メソッドを実装する必要があります、バインドされているサービスより別のライフ サイクル メソッドを実装する必要があります。 これらのメソッドのすべてのメンバーである、`Service`クラスは、サービスを開始する方法が決まりますがどのようなライフ サイクル メソッドが呼び出されます。 これらのライフ サイクル メソッドは、後で詳しく説明されます。
+サービスには、サービスの作成時に呼び出されるコールバックメソッドを含む独自のライフサイクルがあります。 どのメソッドが呼び出されるかは、サービスの種類によって異なります。 開始されるサービスは、バインドされたサービスとは異なるライフサイクルメソッドを実装する必要があります。一方、ハイブリッドサービスは、開始されたサービスとバインドされたサービスの両方に対してコールバックメソッドを実装する必要があります。 これらのメソッドは、 `Service`クラスのすべてのメンバーです。サービスの開始方法によって、どのライフサイクルメソッドが呼び出されるかが決まります。 これらのライフサイクル方法については、後で詳しく説明します。
 
-既定では、サービスは、Android アプリケーションと同じプロセスで開始されます。 設定して、独自のプロセスでサービスを開始することは、`ServiceAttribute.IsolatedProcess`プロパティを true にします。
+既定では、サービスは Android アプリケーションと同じプロセスで開始されます。 `ServiceAttribute.IsolatedProcess`プロパティを true に設定することにより、独自のプロセスでサービスを開始することができます。
 
 ```csharp
 [Service(IsolatedProcess=true)]
@@ -66,16 +66,16 @@ public class DemoService : Service
 }
 ```
 
-次の手順では、サービスを起動し、次の 3 つの異なる種類のサービスを実装する方法を確認する移動する方法について説明します。
+次の手順では、サービスを開始する方法を確認してから、3種類のサービスを実装する方法を確認します。
 
 > [!NOTE]
-> UI スレッドで実行しているサービス、すべての作業が UI をブロックするを実行する場合は、サービスが作業を実行するスレッドを使用する必要があります。
+> サービスは UI スレッドで実行されるので、UI をブロックする処理を実行する場合、サービスはスレッドを使用して作業を実行する必要があります。
 
 ## <a name="starting-a-service"></a>サービスの開始
 
-Android でサービスを開始する最も基本的な方法は、ディスパッチする、`Intent`を含むサービスを開始するかを識別するメタデータ。 サービスを開始するために使用するインテントの 2 つの異なるスタイルがあります。
+Android でサービスを開始する最も基本的な方法は、開始する`Intent`サービスを特定するのに役立つメタデータを含むをディスパッチすることです。 サービスの開始に使用できるインテントには、次の2つの異なるスタイルがあります。
 
--   **明示的インテント** &ndash; 、_明示的インテント_特定のアクションを完了するどのようなサービスを使用する正確に識別されます。 明示的なインテントを特定のアドレスを持つ文字として考えることができます。Android では、目的を明示的に識別されるサービスにルーティングします。 このスニペットは、1 つの例と呼ばれるサービスを開始する明示的なインテントを使用する`DownloadService`:
+-   **明示的なインテント**_明示的なインテント_によって、特定のアクションを完了するために使用する必要があるサービスが正確に特定されます。 &ndash; 明示的なインテントは、特定のアドレスを持つ文字と考えることができます。Android は、明示的に識別されたサービスにインテントをルーティングします。 このスニペットは、明示的なインテントを使用してという名前`DownloadService`のサービスを開始する例の1つです。
 
     ```csharp
     // Example of creating an explicit Intent in an Android Activity
@@ -83,31 +83,31 @@ Android でサービスを開始する最も基本的な方法は、ディスパ
     downloadIntent.data = Uri.Parse(fileToDownload);
     ```
 
--   **暗黙的インテント**&ndash;疎の目的は、この型を識別の操作を実行するが、そのアクションを完了する正確なサービスが不明です。 暗黙的インテントは、ある文字が「To Whom It May 問題…」をアドレス指定、考えることができます。
-    Android は、目的の内容を確認し、目的に一致する既存のサービスがあるかどうかを判断します。
+-   **暗黙的なインテント**&ndash;この種類のインテントは、ユーザーが実行しようとしているアクションのを大まかに特定しますが、その操作を完了するための正確なサービスは不明です。 暗黙のインテントは、"関心のあるユーザー" に対応する文字と考えることができます。
+    Android は目的の内容を調べ、目的に合った既存のサービスがあるかどうかを判断します。
 
-    _インテント フィルター_登録されているサービスの暗黙的な目的を検索するために使用します。 インテントのフィルターに追加される XML 要素は、 **AndroidManifest.xml**暗黙的インテントによるサービスを検索するために必要なメタ データを格納します。
+    _インテントフィルター_を使用して、登録済みサービスとの暗黙的なインテントを照合します。 インテントフィルターは、サービスと暗黙的なインテントを照合するために必要なメタデータを含む**Androidmanifest .xml**に追加される xml 要素です。
 
     ```csharp
     Intent sendIntent = new Intent("common.xamarin.DemoService");
     sendIntent.Data = Uri.Parse(fileToDownload);
     ```
 
-Android の暗黙的なインテントに一致する 1 つ以上の場合は、ユーザー アクションを処理するためにコンポーネントを選択を求める場合があります。
+Android に暗黙的なインテントに関して複数の一致候補がある場合、そのアクションを処理するコンポーネントを選択するようにユーザーに要求することがあります。
 
-![曖昧性除去ダイアログのスクリーン ショット](images/creating-a-service-01.png "曖昧性除去ダイアログのスクリーン ショット")
+![あいまいを解消するダイアログのスクリーンショット](images/creating-a-service-01.png "あいまいを解消するダイアログのスクリーンショット")
 
 > [!IMPORTANT]
-> Android 5.0 (AP レベル 21) 以降では、サービスを開始する暗黙的なインテントは使用できません。
+> Android 5.0 (AP レベル 21) 以降では、暗黙的なインテントを使用してサービスを開始することはできません。
 
-可能であれば、アプリケーションは、サービスを開始するのに明示的なインテントを使用する必要があります。 暗黙的インテントが特定のサービスの開始を要求しない&ndash;は要求を処理するには、デバイスにインストールされているいくつかのサービスの要求。 このあいまいな要求と、要求または別のアプリが不必要に開始 (これは、デバイス上のリソースの負荷が大きくなります) を処理する不適切なサービスがあります。
+可能であれば、アプリケーションは明示的インテントを使用してサービスを開始する必要があります。 暗黙的なインテントは、特定のサービスを開始&ndash;するように要求しません。これは、要求を処理するためにデバイスにインストールされている一部のサービスに対する要求です。 このあいまいな要求によって、要求または別のアプリを不必要に (デバイス上のリソースの負荷が増加する) サービスを正しく処理できないことがあります。
 
-目的をディスパッチする方法と、サービスの種類に依存し、サービスの種類ごとに固有のガイドで後で詳しく説明されます。
+インテントのディスパッチ方法は、サービスの種類によって異なります。詳細については、各サービスの種類に固有のガイドの後半で説明します。
 
 
-### <a name="creating-an-intent-filter-for-implicit-intents"></a>暗黙的インテントのインテントのフィルターを作成します。
+### <a name="creating-an-intent-filter-for-implicit-intents"></a>暗黙的インテントのインテントフィルターを作成する
 
-暗黙的インテントに関連付けるサービスには、Android のアプリは、サービスの機能を識別するいくつかのメタ データを提供する必要があります。 このメタデータがによって提供される_インテント フィルター_します。 インテント フィルターには、アクションまたはサービスを開始するインテントに存在する必要がある、データの型など、いくつかの情報が含まれます。 Xamarin.Android では、インテント フィルターが登録されている**AndroidManifest.xml**サービスを修飾することによって、 [ `IntentFilterAttribute`](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/)します。 たとえば、次のコードは、インテント フィルターとの関連付けられているアクションを追加します`com.xamarin.DemoService`:。
+サービスを暗黙的なインテントに関連付けるには、Android アプリがサービスの機能を識別するためにいくつかのメタデータを提供する必要があります。 このメタデータは、_インテントフィルター_によって提供されます。 インテントフィルターには、サービスを開始する目的で存在する必要がある、アクションやデータの種類など、いくつかの情報が含まれています。 Xamarin Android では、インテントフィルターは、 [`IntentFilterAttribute`](xref:Android.App.IntentFilterAttribute)を使用してサービスを装飾することによって、 **androidmanifest .xml**に登録されます。 たとえば、次のコードでは、に`com.xamarin.DemoService`関連付けられたアクションを使用してインテントフィルターを追加しています。
 
 ```csharp
 [Service]
@@ -117,7 +117,7 @@ public class DemoService : Service
 }
 ```
 
-これは、結果に含まれるエントリ、 **AndroidManifest.xml**ファイル&ndash;次の例に似ていますようにアプリケーションをパッケージ化されているエントリ。
+この結果、次の例のような方法で、アプリケーションでパッケージ化&ndash;されたエントリが**androidmanifest .xml**ファイルに追加されます。
 
 ```xml
 <service android:name="demoservice.DemoService">
@@ -127,12 +127,12 @@ public class DemoService : Service
 </service>
 ```
 
-Xamarin.Android のサービスの基礎、サービスの詳細のさまざまなサブタイプを調べてみましょう。
+Xamarin. Android サービスの基本については、サービスのさまざまなサブタイプについて詳しく説明します。
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [Android.App.Service](https://developer.xamarin.com/api/type/Android.App.Service/)
-- [Android.App.ServiceAttribute](https://developer.xamarin.com/api/type/Android.App.ServiceAttribute/)
-- [Android.App.Intent](https://developer.xamarin.com/api/type/Android.Content.Intent/)
-- [Android.App.IntentFilterAttribute](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/)
+- [Android.App.Service](xref:Android.App.Service)
+- [Android.App.ServiceAttribute](xref:Android.App.ServiceAttribute)
+- [Android... インテント](xref:Android.Content.Intent)
+- [Android.App.IntentFilterAttribute](xref:Android.App.IntentFilterAttribute)

@@ -1,82 +1,82 @@
 ---
-title: コンテンツ プロバイダーの作業
+title: コンテンツプロバイダーのしくみ
 ms.prod: xamarin
 ms.assetid: B9E2EF89-7EBE-45F5-1ED9-7D2C70BE792C
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: df4c2e10e34c308e4fadb44fba9c6a14714ae1b9
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 64a12f4f797630ad37e5821cd04a14a9d561c53e
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60952864"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510679"
 ---
-# <a name="how-content-providers-work"></a>コンテンツ プロバイダーの作業
+# <a name="how-content-providers-work"></a>コンテンツプロバイダーのしくみ
 
-2 つのクラス、`ContentProvider`相互作用します。
+相互作用には、次の`ContentProvider` 2 つのクラスが関係します。
 
-- **ContentProvider** &ndash;標準的な方法でデータのセットを公開する API を実装します。 主な方法は、クエリ、挿入、更新および削除します。
+- **Contentprovider**&ndash;データのセットを標準の方法で公開する API を実装します。 主な方法は、クエリ、挿入、更新、および削除です。
 
-- **ContentResolver** &ndash;と通信するための静的プロキシ、`ContentProvider`または別のアプリケーションから、同じアプリケーション内のいずれかから、そのデータにアクセスします。
+- **Contentresolver**と通信して、同じアプリケーション内または別のアプリケーションからデータにアクセスする静的プロキシ。`ContentProvider` &ndash;
 
-コンテンツ プロバイダーは通常、SQLite データベースでバックアップしますが、API では、基になる SQL について何も知るコードを実行しない必要がないことを意味します。 クエリが Uri を使用して行われます (を基になるデータ構造体への依存関係を減らすため)、列名を参照する定数を使用して、`ICursor`使用側コードを反復処理する場合に返されます。
+通常、コンテンツプロバイダーは SQLite データベースによってサポートされますが、API は、基になる SQL について、コードを使用する必要がないことを意味します。 クエリは、列名を参照するために定数を使用する Uri (基になるデータ構造に対する依存関係`ICursor`を減らすため) を介して実行されます。また、を使用するコードを反復処理するためにが返されます。
 
 
 ## <a name="consuming-a-contentprovider"></a>ContentProvider の使用
 
-`ContentProviders` 登録されている Uri を通じて機能を公開、 **AndroidManifest.xml**のデータを発行するアプリケーション。 Uri と公開されているデータ列ができる場所データにバインドしやすくための定数として、規則があります。 Android の組み込み`ContentProviders`利便性のためのクラス内のデータ構造を参照する定数を使用して提供、 [ `Android.Providers` ](https://developer.xamarin.com/api/namespace/Android.Provider/)名前空間。
+`ContentProviders`データを発行するアプリケーションの**Androidmanifest .xml**に登録されている Uri を使用して機能を公開します。 データに簡単にバインドできるように、公開されている Uri とデータ列を定数として使用できるようにするための規則があります。 Android の組み込みのすべて`ContentProviders`に、 [`Android.Providers`](xref:Android.Provider)名前空間のデータ構造を参照する定数を持つ便利なクラスが用意されています。
 
 
 
-### <a name="built-in-providers"></a>組み込みのプロバイダー
+### <a name="built-in-providers"></a>組み込みプロバイダー
 
-さまざまなシステムとを使用してユーザー データへのアクセスを提供する android `ContentProviders`:
+Android では、次のものを使用して`ContentProviders`広範なシステムおよびユーザーデータにアクセスできます。
 
-- *ブラウザー* &ndash;ブックマークとブラウザーの履歴 (権限が必要です`READ_HISTORY_BOOKMARKS`や`WRITE_HISTORY_BOOKMARKS`)。
+- *ブラウザー*ブックマークとブラウザーの履歴 (アクセス`READ_HISTORY_BOOKMARKS`許可と/ `WRITE_HISTORY_BOOKMARKS`またはが必要です)。 &ndash;
 
-- *CallLog* &ndash;最近の呼び出しが行われたまたは、デバイスで受信しました。
+- *Calllog*&ndash;デバイスで行われた最近の呼び出し。
 
-- *連絡先*&ndash;人、携帯電話、写真、およびグループを含む、ユーザーの連絡先リストからの情報を詳しく説明します。
+- *連絡先*&ndash;ユーザーの連絡先リストに含まれる詳細情報 (ユーザー、電話、写真 & グループなど)。
 
-- *MediaStore* &ndash;ユーザーのデバイスの内容: オーディオ (アルバム、アーティスト、ジャンル、再生リスト)、(縮小表示を含む) の画像とビデオ。
+- *Mediastore*&ndash;ユーザーのデバイスのコンテンツ: オーディオ (アルバム、アーティスト、ジャンル、再生リスト)、画像 (サムネイルを含む) & ビデオ。
 
-- *設定*&ndash;システム全体のデバイスの設定と設定します。
+- *設定*&ndash;システム全体のデバイス設定と設定。
 
-- *UserDictionary* &ndash;予測テキスト入力に使用されるユーザー定義のディクショナリの内容。
+- *Userdictionary*&ndash;予測テキスト入力に使用されるユーザー定義の辞書の内容。
 
-- *ボイスメール*&ndash;ボイスメール メッセージの履歴。
+- *ボイスメール*&ndash;ボイスメールメッセージの履歴。
 
 
 
 ## <a name="classes-overview"></a>クラスの概要
 
-使用する場合に使用されるプライマリ クラス、`ContentProvider`を次に示します。
+を`ContentProvider`操作するときに使用される主なクラスを次に示します。
 
-[![コンテンツ プロバイダーのアプリケーションとアプリケーションの相互作用がかかりますクラス ダイアグラム](how-it-works-images/classdiagram1.png)](how-it-works-images/classdiagram1.png#lightbox)
+[![コンテンツプロバイダーアプリケーションとアプリケーションの対話処理のクラス図](how-it-works-images/classdiagram1.png)](how-it-works-images/classdiagram1.png#lightbox)
 
-この図で、`ContentProvider`クエリを実装し、その他のアプリケーションのデータを検索に使用する URI を登録します。 `ContentResolver`を 'proxy' として機能、 `ContentProvider` (照会、挿入、更新、および Delete の各メソッド)。 `SQLiteOpenHelper`によって使用されるデータが含まれています、`ContentProvider`は、アプリを使用する直接公開されていません。
-`CursorAdapter`によって返されるカーソルを渡す、`ContentResolver`に表示する、`ListView`します。 `UriMatcher`はクエリを処理するときに、Uri を解析するヘルパー クラスです。
+この図では、 `ContentProvider`はクエリを実装し、他のアプリケーションがデータを検索するために使用する URI を登録します。 は`ContentResolver` 、`ContentProvider`に対する "プロキシ" として機能します (クエリ、挿入、更新、および削除の各メソッド)。 には、 `ContentProvider`によって使用されるデータが含まれていますが、アプリの消費に直接公開されることはありません。`SQLiteOpenHelper`
+は、に`ContentResolver`よって返されたカーソルをに`ListView` `CursorAdapter`渡して、に表示します。 は`UriMatcher` 、クエリの処理時に uri を解析するヘルパークラスです。
 
-各クラスの目的は、次に示します。
+各クラスの目的は次のとおりです。
 
-- **ContentProvider** &ndash;データを公開するこの抽象クラスのメソッドを実装します。 API は他のクラスとクラス定義に追加される Uri 属性を使用してアプリケーションに提供されます。
+- **Contentprovider**&ndash;この抽象クラスのメソッドを実装して、データを公開します。 API は、クラス定義に追加された Uri 属性を使用して、他のクラスおよびアプリケーションで使用できるようになります。
 
-- **SQLiteOpenHelper** &ndash;により実装によって公開される SQLite データストア、`ContentProvider`します。
+- **SQLiteOpenHelper**によって公開される SQLite データストアを実装するのに役立ちます。`ContentProvider` &ndash;
 
-- **UriMatcher** &ndash;使用`UriMatcher`で、`ContentProvider`コンテンツをクエリに使用される Uri を管理するために実装します。
+- **UriMatcher**コンテンツのクエリ`ContentProvider`に使用される uri を管理するために、の実装でを使用`UriMatcher`します。 &ndash;
 
-- **ContentResolver** &ndash;コードを使用して、`ContentResolver`にアクセスする、`ContentProvider`インスタンス。 まとめて 2 つのクラスをデータをアプリケーション間で簡単に共有できるように、プロセス間通信の問題の処理します。 作成し、コードを実行しません、`ContentProvider`明示的; クラスによって公開されている Uri に基づいてカーソルを作成して、データにアクセスする代わりに、`ContentProvider`アプリケーション。
+- **Contentresolver**コードを使用する`ContentResolver`には、 `ContentProvider`を使用してインスタンスにアクセスします。 &ndash; 2つのクラスは、プロセス間の通信の問題を処理し、アプリケーション間でデータを簡単に共有できるようにします。 コードを使用する場合`ContentProvider`は、明示的クラスを作成するのではなく、 `ContentProvider`アプリケーションによって公開された Uri に基づいてカーソルを作成することによって、データにアクセスします。
 
-- **CursorAdapter** &ndash;使用`CursorAdapter`または`SimpleCursorAdapter`経由でアクセスされるデータを表示する、`ContentProvider`します。
+- **カーソルアダプター**またはを`SimpleCursorAdapter`使用`CursorAdapter`して、 `ContentProvider`でアクセスされるデータを表示します。 &ndash;
 
-`ContentProvider` API などのさまざまなデータの操作を実行するコンシューマーを使用できます。
+API `ContentProvider`を使用すると、コンシューマーは次のようなデータに対してさまざまな操作を実行できます。
 
--  リストまたは個別のレコードを返すデータのクエリを実行します。
--  個々 のレコードを変更します。
+-  データをクエリして、リストまたは個々のレコードを返します。
+-  個々のレコードを変更します。
 -  新しいレコードを追加します。
 -  レコードを削除します。
 
-このドキュメントには、システム指定の使用例が含まれています。 `ContentProvider`、カスタムを実装する単純な読み取り専用例と`ContentProvider`します。
+このドキュメントには、システム提供`ContentProvider`のを使用する例と、カスタム`ContentProvider`を実装する単純な読み取り専用の例が含まれています。
 

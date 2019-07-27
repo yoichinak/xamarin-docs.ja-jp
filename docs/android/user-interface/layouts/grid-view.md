@@ -6,25 +6,25 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 63164d90419f3a49d9eb52a52d02e05fbee43dbf
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a1bcb83d6057cb7d4a43c510d7b5805b574812e6
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61310258"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510063"
 ---
-# <a name="gridview"></a>GridView
+# <a name="xamarinandroid-gridview"></a>Xamarin Android GridView
 
-[`GridView`](https://developer.xamarin.com/api/type/Android.Widget.GridView/) は、 [`ViewGroup`](https://developer.xamarin.com/api/type/Android.Views.ViewGroup/)
-2 次元のスクロール可能なグリッドの項目が表示されます。 使用して、レイアウトをグリッド項目を挿入する自動的に、 [ `ListAdapter`](https://developer.xamarin.com/api/property/Android.App.ListActivity.ListAdapter/)します。
+[`GridView`](xref:Android.Widget.GridView)はです。[`ViewGroup`](xref:Android.Views.ViewGroup)
+2次元のスクロール可能なグリッドに項目が表示されます。 グリッド項目は、 [`ListAdapter`](xref:Android.App.ListActivity.ListAdapter)を使用してレイアウトに自動的に挿入されます。
 
-このチュートリアルでは、サムネイル画像のグリッドを作成します。 項目を選択すると、トースト メッセージには、イメージの位置が表示されます。
+このチュートリアルでは、イメージサムネイルのグリッドを作成します。 項目を選択すると、トーストメッセージに画像の位置が表示されます。
 
-という名前の新しいプロジェクトを開始**HelloGridView**します。
+**HelloGridView**という名前の新しいプロジェクトを開始します。
 
-を使用するにはいくつかの写真を検索または[これらのサンプル イメージをダウンロード](https://developer.android.com/shareables/sample_images.zip)します。 イメージ ファイルをプロジェクトの追加**リソース/ディスプレイ**ディレクトリ。 **プロパティ**ごとにビルド アクション ウィンドウで、設定**AndroidResource**します。
+使用する写真を検索するか、[これらのサンプルイメージをダウンロード](https://developer.android.com/shareables/sample_images.zip)します。 イメージファイルをプロジェクトの**Resources/アブル**ディレクトリに追加します。 **プロパティ** ウィンドウで、それぞれの ビルド アクションを**Androidresource**に設定します。
 
-開く、 **Resources/Layout/Main.axml**ファイルを開き、次を挿入します。
+**Resources/Layout/Main. axml**ファイルを開き、次のように挿入します。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -41,10 +41,10 @@ ms.locfileid: "61310258"
 />
 ```
 
-これは、 [ `GridView` ](https://developer.xamarin.com/api/type/Android.Widget.GridView/)画面全体を入力します。 属性ではなくわかりやすいです。 有効な属性の詳細については、次を参照してください。、 [ `GridView` ](https://developer.xamarin.com/api/type/Android.Widget.GridView/)参照。
+これ[`GridView`](xref:Android.Widget.GridView)により、画面全体が表示されます。 属性は、わかりやすいものにします。 有効な属性の詳細については[`GridView`](xref:Android.Widget.GridView) 、「」を参照してください。
 
-開いている`HelloGridView.cs`の次のコードを挿入し、 [`OnCreate()`](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/p/Android.OS.Bundle/)
-方法:
+を`HelloGridView.cs`開き、次のコードを挿入します。[`OnCreate()`](xref:Android.App.Activity.OnCreate*)
+b
 
 ```csharp
 protected override void OnCreate (Bundle bundle)
@@ -62,13 +62,13 @@ protected override void OnCreate (Bundle bundle)
 }
 ```
 
-後に、 **Main.axml**コンテンツ ビューのレイアウトが設定されて、 [ `GridView` ](https://developer.xamarin.com/api/type/Android.Widget.GridView/)をレイアウトからキャプチャされた[ `FindViewById`](https://developer.xamarin.com/api/member/Android.App.Activity.FindViewById/)します。 、 [`Adapter`](https://developer.xamarin.com/api/property/Android.Widget.AdapterView.RawAdapter/)
-プロパティは、カスタム アダプターの設定を使用し (`ImageAdapter`)、グリッドに表示されるすべての項目のソースとして。 `ImageAdapter`が次の手順で作成されます。
+コンテンツビュー [`GridView`](xref:Android.Widget.GridView)に対して**メインの axml**レイアウトを設定した後、を使用[`FindViewById`](xref:Android.App.Activity.FindViewById*)してレイアウトからがキャプチャされます。 、[`Adapter`](xref:Android.Widget.AdapterView.RawAdapter)
+次に、プロパティを使用して、グリッド`ImageAdapter`に表示されるすべての項目のソースとしてカスタムアダプター () を設定します。 は`ImageAdapter` 、次の手順で作成します。
 
-匿名デリゲートの購読を行うには何か、グリッド内の項目がクリックされたときに、 [ `ItemClick` ](https://developer.xamarin.com/api/event/Android.Widget.AdapterView.ItemClick/)イベント。
-表示、 [ `Toast` ](https://developer.xamarin.com/api/type/Android.Widget.Toast/)選択された項目のインデックス位置 (0 から始まる) を表示する (実際のシナリオで、位置される可能性があります他のタスクの完全な画像のサイズを取得する)。 .NET イベントではなく、リスナーの Java スタイル クラスを使用できることに注意してください。
+グリッド内の項目がクリックされたときに何かを実行するために、 [`ItemClick`](xref:Android.Widget.AdapterView.ItemClick)匿名デリゲートがイベントにサブスクライブされます。
+これには[`Toast`](xref:Android.Widget.Toast) 、選択した項目のインデックス位置 (0 から始まる) を表示するが表示されます (実際のシナリオでは、その位置を使用して、他のタスクのイメージ全体のサイズを取得できます)。 .NET イベントの代わりに Java スタイルのリスナークラスを使用できることに注意してください。
 
-という新しいクラスを作成`ImageAdapter`をサブクラスとして持つ[ `BaseAdapter` ](https://developer.xamarin.com/api/type/Android.Widget.BaseAdapter/):
+サブクラス`ImageAdapter` [`BaseAdapter`](xref:Android.Widget.BaseAdapter)と呼ばれる新しいクラスを作成します。
 
 ```csharp
 public class ImageAdapter : BaseAdapter
@@ -129,43 +129,42 @@ public class ImageAdapter : BaseAdapter
 }
 ```
 
-継承されるいくつか必要なメソッドを最初に、この実装[ `BaseAdapter`](https://developer.xamarin.com/api/type/Android.Widget.BaseAdapter/)します。 コンス トラクターと[ `Count` ](https://developer.xamarin.com/api/property/Android.Widget.BaseAdapter.Count/)プロパティにはひとめでわかります。 通常であれば [`GetItem(int)`](https://developer.xamarin.com/api/member/Android.Widget.BaseAdapter.GetItem/)
-アダプターで、指定した位置にある実際のオブジェクトを返す必要がありますが、この例では無視されます。 同様に、 [`GetItemId(int)`](https://developer.xamarin.com/api/member/Android.Widget.BaseAdapter.GetItemId/)
-項目の行の id を返す必要がありますが、ここで必要はありません。
+最初に、から継承されたいくつ[`BaseAdapter`](xref:Android.Widget.BaseAdapter)かの必須メソッドを実装します。 コンストラクターと[`Count`](xref:Android.Widget.BaseAdapter.Count)プロパティは、自明です。 通常であれば[`GetItem(int)`](xref:Android.Widget.BaseAdapter.GetItem*)
+は、アダプター内の指定した位置にある実際のオブジェクトを返す必要がありますが、この例では無視されます。 に[`GetItemId(int)`](xref:Android.Widget.BaseAdapter.GetItemId*)
+は項目の行 id を返す必要がありますが、ここでは必要ありません。
 
-必要な最初のメソッドは[ `GetView()`](https://developer.xamarin.com/api/member/Android.Widget.BaseAdapter.GetView/)します。
-このメソッドは、新規作成します [`View`](https://developer.xamarin.com/api/type/Android.Views.View/)
-各イメージに追加の`ImageAdapter`します。 これが呼び出されると、 [`View`](https://developer.xamarin.com/api/type/Android.Views.View/)
-渡される、これは通常、再利用されるオブジェクト (少なくとも 1 回この呼び出された後)、オブジェクトが null かどうかをチェックがあるため、します。 場合、*は*null の場合、 [`ImageView`](https://developer.xamarin.com/api/type/Android.Widget.ImageView/)
-インスタンス化され、イメージのプレゼンテーションの必要なプロパティで構成されています。
+最初に必要なメソッド[`GetView()`](xref:Android.Widget.BaseAdapter.GetView*)はです。
+このメソッドは、新しいを作成します。[`View`](xref:Android.Views.View)
+に追加されたイメージ`ImageAdapter`ごとに。 このが呼び出されると、[`View`](xref:Android.Views.View)
+が渡されます。これは通常、リサイクルされたオブジェクト (少なくとも一度呼び出された後) であるため、オブジェクトが null かどうかを確認します。 *Null の*場合、[`ImageView`](xref:Android.Widget.ImageView)
+は、イメージプレゼンテーションに必要なプロパティを使用してインスタンス化され、構成されます。
 
-- [`LayoutParams`](https://developer.xamarin.com/api/property/Android.Views.View.LayoutParameters/) ビューの高さと幅を設定する&mdash;これにより、drawable のサイズに関係なく各イメージはサイズを変更し、必要に応じて、これらのディメンションに収まるようにトリミングされます。
+- [`LayoutParams`](xref:Android.Views.View.LayoutParameters)ビュー&mdash;の高さと幅を設定します。これにより、描画のサイズに関係なく、各イメージのサイズが変更され、必要に応じてトリミングされます。
 
-- [`SetScaleType()`](https://developer.xamarin.com/api/member/Android.Widget.ImageView.SetScaleType/) (必要な) 場合に、イメージが中央にトリミングされることを宣言します。
+- [`SetScaleType()`](xref:Android.Widget.ImageView.SetScaleType*)必要に応じて、イメージを中心方向にトリミングする必要があることを宣言します。
 
-- [`SetPadding(int, int, int, int)`](https://developer.xamarin.com/api/member/Android.Views.View.SetPadding/) 上下左右の余白を定義します。 (、イメージの縦横比が異なる場合は、し、少ないスペースにより、ImageView に指定されたディメンションが一致しない場合は、イメージの詳細トリミングするために注意してください)。
+- [`SetPadding(int, int, int, int)`](xref:Android.Views.View.SetPadding*)すべての辺の埋め込みを定義します。 (画像の縦横比が異なる場合、画像が ImageView に与えられている寸法と一致しない場合、余白が小さくなると画像がトリミングされることに注意してください)。
 
-場合、 [ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/)に渡される[ `GetView()` ](https://developer.xamarin.com/api/member/Android.Widget.BaseAdapter.GetView/)は*いない*null の場合、次に、ローカル [`ImageView`](https://developer.xamarin.com/api/type/Android.Widget.ImageView/)
-初期化されると、リサイクル[ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/)オブジェクト。
+[`View`](xref:Android.Views.View)に[渡さ`GetView()`](xref:Android.Widget.BaseAdapter.GetView*)れたが null で*ない*場合は、ローカルの[`ImageView`](xref:Android.Widget.ImageView)
+は、リサイクル[`View`](xref:Android.Views.View)されたオブジェクトで初期化されます。
 
-最後に、 [`GetView()`](https://developer.xamarin.com/api/member/Android.Widget.BaseAdapter.GetView/)
-メソッド、`position`からイメージを選択するメソッドに渡される整数が使用される、`thumbIds`のイメージ リソースとして設定されて、配列、 [ `ImageView` ](https://developer.xamarin.com/api/type/Android.Widget.ImageView/)。
+の最後にあります。[`GetView()`](xref:Android.Widget.BaseAdapter.GetView*)
+メソッドは、メソッドに渡された`thumbIds` [`ImageView`](xref:Android.Widget.ImageView)整数を使用して、配列からイメージを選択します。この配列は、のイメージリソースとして設定`position`されます。
 
-あとは、定義する、`thumbIds`ドローアブル リソースの配列。
+残されているのは、 `thumbIds`描画できるリソースの配列を定義することだけです。
 
-アプリケーションを実行します。 グリッド レイアウトは、次のようになります。
+アプリケーションを実行します。 グリッドレイアウトは次のようになります。
 
-[![15 のイメージを表示する GridView の例のスクリーン ショット](grid-view-images/helloviews4.png)](grid-view-images/helloviews4.png#lightbox)
+[![15個の画像を表示している GridView のスクリーンショットの例](grid-view-images/helloviews4.png)](grid-view-images/helloviews4.png#lightbox)
 
-動作を試し、 [ `GridView` ](https://developer.xamarin.com/api/type/Android.Widget.GridView/)と [`ImageView`](https://developer.xamarin.com/api/type/Android.Widget.ImageView/)
-そのプロパティを調整することによって要素。 使用する代わりに、たとえば、 [ `LayoutParams` ](https://developer.xamarin.com/api/property/Android.Views.View.LayoutParameters/)を使用してお試しください[ `SetAdjustViewBounds()`](https://developer.xamarin.com/api/member/Android.Widget.ImageView.SetAdjustViewBounds/)します。
+[`GridView`](xref:Android.Widget.GridView)との動作を試してみてください。[`ImageView`](xref:Android.Widget.ImageView)
+要素のプロパティを調整します。 たとえば、を使用する代わり[`LayoutParams`](xref:Android.Views.View.LayoutParameters)にを[`SetAdjustViewBounds()`](xref:Android.Widget.ImageView.SetAdjustViewBounds*)使用します。
 
+## <a name="references"></a>リファレンス
 
-## <a name="references"></a>参照
+- [`GridView`](xref:Android.Widget.GridView)
+- [`ImageView`](xref:Android.Widget.ImageView)
+- [`BaseAdapter`](xref:Android.Widget.BaseAdapter)
 
--   [`GridView`](https://developer.xamarin.com/api/type/Android.Widget.GridView/) 
--   [`ImageView`](https://developer.xamarin.com/api/type/Android.Widget.ImageView/)
--   [`BaseAdapter`](https://developer.xamarin.com/api/type/Android.Widget.BaseAdapter/).
-
-*このページの部分が作成および Android のオープン ソース プロジェクトで共有し、の条項に従って使用作業に基づいた変更、*
-[*Creative Commons 2.5 Attribution License*](http://creativecommons.org/licenses/by/2.5/).
+*このページの一部は、Android オープンソースプロジェクトによって作成および共有*
+され、[*Creative Commons 2.5 属性*](http://creativecommons.org/licenses/by/2.5/)で説明されている条項に従って使用される作業に基づいて変更されます。

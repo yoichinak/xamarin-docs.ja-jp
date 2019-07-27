@@ -1,44 +1,44 @@
 ---
-title: Xamarin.iOS でのデータのテーブルの作成
-description: このドキュメントでは、Xamarin.iOS アプリケーションでデータを含むテーブルを作成する方法について説明します。 UITableViewSource、セルの再利用、インデックス、およびヘッダーとフッターの追加がについて説明します。
+title: Xamarin のデータを使用してテーブルにデータを読み込む
+description: このドキュメントでは、Xamarin iOS アプリケーションのデータをテーブルに設定する方法について説明します。 ここでは、UITableViewSource、セルの再利用、インデックスの追加、ヘッダーとフッターについて説明します。
 ms.prod: xamarin
 ms.assetid: 6FE64DDF-1029-EB9B-6EEC-1C7DFDFDF3AF
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 5363e3a2210bdcf1efb870ac808ecb37584de6a7
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a7604eebed9c0effdaf7eff62d60666b8727304f
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61037338"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511918"
 ---
-# <a name="populating-a-table-with-data-in-xamarinios"></a>Xamarin.iOS でのデータのテーブルの作成
+# <a name="populating-a-table-with-data-in-xamarinios"></a>Xamarin のデータを使用してテーブルにデータを読み込む
 
-行を追加する、`UITableView`を実装する必要がある、`UITableViewSource`サブクラス化とオーバーライド自体を設定するテーブルを表示するメソッドを呼び出します。
+に`UITableView`行を追加するには、サブクラス`UITableViewSource`を実装し、テーブルビューがそれ自体を設定するために呼び出すメソッドをオーバーライドする必要があります。
 
-このガイドを内容します。
+このガイドの内容は次のとおりです。
 
-- UITableViewSource をサブクラス化
+- UITableViewSource のサブクラス化
 - セルの再利用
-- インデックスを追加します。
+- インデックスの追加
 - ヘッダーとフッターの追加
 
 
 <a name="Subclassing_UITableViewSource" />
 
-## <a name="subclassing-uitableviewsource"></a>UITableViewSource をサブクラス化
+## <a name="subclassing-uitableviewsource"></a>UITableViewSource のサブクラス化
 
-A`UITableViewSource`サブクラスが割り当てられたにすべて`UITableView`します。 テーブル ビューでは、(例、行の数が必要なと、既定と異なる場合、各行の高さ) の自身をレンダリングする方法については、ソース クラスを照会します。 最も重要なは、ソースでは、データが格納されて各セルのビューが用意されています。
+サブ`UITableViewSource`クラスは、すべて`UITableView`のに割り当てられます。 テーブルビューでは、ソースクラスに対してクエリを行い、それ自体をどのようにレンダリングするかを決定します (たとえば、必要な行の数と、既定と異なる場合の各行の高さ)。 最も重要なのは、データが設定された各セルビューがソースによって提供されることです。
 
-データを表示するテーブルの作成に必要な 2 つの必須の方法はあります。
+テーブルにデータを表示するには、次の2つの必須メソッドが必要です。
 
--   **RowsInSection**戻り値 –、 [ `nint` ](https://developer.xamarin.com/guides/cross-platform/macios/nativetypes/)合計数の行のデータ テーブルを表示する必要があります。
--   **GetCell**戻り値 –、`UITableCellView`メソッドに渡される対応する行のインデックスのデータが設定されます。
+-   **Rowsinsection** –テーブルに[`nint`](~/cross-platform/macios/nativetypes.md)表示されるデータ行の合計数を返します。
+-   **Getcell** –メソッドに`UITableCellView`渡される対応する行インデックスのデータが設定されたを返します。
 
 
-BasicTable サンプル ファイル**TableSource.cs**の最もシンプルな実装を持つ`UITableViewSource`します。 テーブルに表示する文字列の配列を受け取るし、各文字列を含む既定のセル スタイルを返しますが、次のコード スニペットで参照できます。
+BasicTable サンプルファイル**TableSource.cs**には、の`UITableViewSource`最も簡単な実装があります。 次のコードスニペットでは、テーブルに表示する文字列の配列を受け取り、各文字列を含む既定のセルスタイルを返しています。
 
 ```csharp
 public class TableSource : UITableViewSource {
@@ -72,9 +72,9 @@ public class TableSource : UITableViewSource {
 }
 ```
 
-A`UITableViewSource`ことができますを使用して、すべてのデータ構造では、単純な文字列の配列から (この例で説明) と一覧 <> またはその他のコレクションをします。 実装`UITableViewSource`メソッドは、基になるデータ構造からテーブルを分離します。
+は`UITableViewSource` 、単純な文字列配列 (この例で示されているように) の任意のデータ構造を、> またはその他のコレクション < リストに使用できます。 メソッドの`UITableViewSource`実装により、基になるデータ構造からテーブルが分離されます。
 
-このサブクラスを使用するには、ソースを構築しのインスタンスに割り当てる文字列の配列を作成`UITableView`:
+このサブクラスを使用するには、ソースを構築する文字列配列を作成して、 `UITableView`のインスタンスに割り当てます。
 
 ```csharp
 public override void ViewDidLoad ()
@@ -87,11 +87,11 @@ public override void ViewDidLoad ()
 }
 ```
 
-結果のテーブルのようになります。
+結果のテーブルは次のようになります。
 
- [![](populating-a-table-with-data-images/image3.png "実行しているサンプル テーブル")](populating-a-table-with-data-images/image3.png#lightbox)
+ [![](populating-a-table-with-data-images/image3.png "実行中のサンプルテーブル")](populating-a-table-with-data-images/image3.png#lightbox)
 
-ほとんどのテーブルには、タッチ、行を選択し、その他のアクション (、曲の再生または連絡先を呼び出すことや、別の画面を表示) を実行するユーザーが可能です。 これを実現するには、は、いくつかを行う必要があります。 最初に、作成、ユーザーに次のコードを追加することで行をクリックするときに、メッセージを表示する、AlertController、`RowSelected`メソッド。
+ほとんどのテーブルでは、ユーザーは行を操作して選択し、他のアクション (楽曲の再生、連絡先の呼び出し、別の画面の表示など) を実行できます。 これを実現するには、いくつかの作業を行う必要があります。 まず、次を`RowSelected`メソッドに追加して、ユーザーが行をクリックしたときにメッセージを表示する alertcontroller を作成します。
 
 ```csharp
 public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
@@ -104,12 +104,12 @@ public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
 }
 ```
 
-次に、ビュー コント ローラーのインスタンスを作成します。
+次に、ビューコントローラーのインスタンスを作成します。
 
 ```csharp
 HomeScreen owner;
 ```
-パラメーターとしてビュー コント ローラーを取得し、フィールドに保存します UITableViewSource クラスにコンス トラクターを追加します。
+ビューコントローラーをパラメーターとして受け取り、それをフィールドに保存する、UITableViewSource クラスにコンストラクターを追加します。
 
 ```csharp
 public TableSource (string[] items, HomeScreen owner)
@@ -119,12 +119,12 @@ public TableSource (string[] items, HomeScreen owner)
 
 }
 ```
-ViewDidLoad メソッドに渡す UITableViewSource クラスが作成される場所を変更、`this`参照。
+Uitableviewsource クラスを作成して`this`参照を渡す ViewDidLoad メソッドを変更します。
 
 ```csharp
 table.Source = new TableSource(tableItems, this);
 ```
-最後に、もう一度、`RowSelected`メソッドを呼び出します`PresentViewController`でキャッシュされたフィールド。
+最後に、 `RowSelected`メソッドに戻り、キャッシュ`PresentViewController`されたフィールドでを呼び出します。
 
 ```csharp
 public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
@@ -137,20 +137,20 @@ public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
 ```
 
 
-ユーザーが行をタッチするようになりましたし、アラートが表示されます。
+これで、ユーザーは行に触れることができ、アラートが表示されます。
 
 
 
- [![](populating-a-table-with-data-images/image4.png "行の選択したアラート")](populating-a-table-with-data-images/image4.png#lightbox)
+ [![](populating-a-table-with-data-images/image4.png "選択された行の警告")](populating-a-table-with-data-images/image4.png#lightbox)
 
 
 ## <a name="cell-reuse"></a>セルの再利用
 
-この例では 6 つのみ項目は、セルの再利用する必要はありません。 数百または数千行を表示するとき、ことが数百または何千もを作成するメモリの無駄使い`UITableViewCell`をいくつかは、一度に画面に収まる場合します。
+この例では、項目が6つだけなので、セルの再利用は必要ありません。 ただし、数百または数千の行を表示する場合は、一度に数百または数`UITableViewCell`千のオブジェクトを作成するために、メモリが無駄になることがあります。
 
-セルがそのビューが再利用のためのキューに格納画面から消えますときは、このような状況を回避します。 ユーザーがスクロールすると、テーブルを呼び出す`GetCell`を表示する – (がない現在表示されている) 既存のセルを再利用する新しいビューを要求を呼び出すだけです、`DequeueReusableCell`メソッド。 セルを再利用が返されます使用できる場合はそれ以外の場合、null が返されます、コード セルの新しいインスタンスを作成する必要があります。
+このような状況を回避するため、セルが画面から見えなくなったときに、そのビューは再利用のためにキューに配置されます。 ユーザーがスクロールすると、テーブルは`GetCell`を呼び出して、表示する新しいビューを要求します。 (現在表示されていない) 既存`DequeueReusableCell`のセルを再利用するには、メソッドを呼び出します。 再利用できるセルがある場合は、それが返されます。それ以外の場合は null が返され、コードで新しいセルインスタンスを作成する必要があります。
 
-この例のコード部分では、パターンを示しています。
+この例のコードスニペットは、次のパターンを示しています。
 
 ```csharp
 // request a recycled cell to save memory
@@ -160,15 +160,15 @@ if (cell == null)
     cell = new UITableViewCell (UITableViewCellStyle.Default, cellIdentifier);
 ```
 
-`cellIdentifier`効果的にさまざまな種類のセルの別のキューを作成します。 この例のすべてのセルになりますので 1 つだけのハードコーディングされた同じ識別子を使用します。 さまざまな種類のセルがある場合はそれぞれに与えるさまざまな id 文字列では、再利用のキューから要求されたときと、両方がインスタンス化されるときにします。
+は`cellIdentifier` 、さまざまな種類のセルに対して個別のキューを効果的に作成します。 この例では、すべてのセルが同じであるため、ハードコードされた識別子を1つだけ使用します。 異なる種類のセルがある場合は、インスタンス化されるときと再利用キューから要求されるタイミングの両方で、それぞれ異なる識別子文字列を持つ必要があります。
 
 ### <a name="cell-reuse-in-ios-6"></a>IOS 6 以降でのセルの再利用
 
-iOS 6 では、コレクション ビューを 1 つの概要と同様のセルの再利用のパターンを追加します。 ただし、上記の既存の再利用パターンは、互換性のため、この新しいパターンはお勧め、セルの null チェックの必要性が削除されるので、引き続きサポートされます。
+iOS 6 では、コレクションビューの概要に似たセル再利用パターンを追加しました。 前に示した既存の再利用パターンは下位互換性のために引き続きサポートされていますが、セルの null チェックが不要になるため、この新しいパターンが推奨されます。
 
-新しいパターンで、アプリケーションを登録、セル クラスまたはいずれかを呼び出すことによって使用される xib`RegisterClassForCellReuse`または`RegisterNibForCellReuse`コント ローラーのコンス トラクターでします。 その後、デキュー セルで、`GetCell`メソッドを呼び出すだけです`DequeueReusableCell`セル クラスまたは xib とインデックスのパスに登録した識別子を渡すことです。
+新しいパターンで`RegisterClassForCellReuse`は、コントローラーのコンストラクターでまたは`RegisterNibForCellReuse`を呼び出すことによって使用されるように、アプリケーションによってセルクラスまたは xib が登録されます。 次に、 `GetCell`メソッド`DequeueReusableCell`内のセルをデキューするときに、セルクラスまたは xib に登録した識別子を渡すか、インデックスパスを渡します。
 
-たとえば、次のコードは、UITableViewController でカスタム セル クラスを登録します。
+たとえば、次のコードは、UITableViewController にカスタムセルクラスを登録します。
 
 ```csharp
 public class MyTableViewController : UITableViewController
@@ -183,7 +183,7 @@ public class MyTableViewController : UITableViewController
 }
 ```
 
-上記の MyCell クラスは、登録されているを使用して、セルでデキューできます、`GetCell`のメソッド、`UITableViewSource`以下に示すように、余分な null チェックの必要はありません。
+Mycell クラスが登録されている場合は、次に`GetCell`示すように`UITableViewSource` 、余分な null チェックを必要とせずに、のメソッドでセルをデキューできます。
 
 ```csharp
 class MyTableSource : UITableViewSource
@@ -201,7 +201,7 @@ class MyTableSource : UITableViewSource
 }
 ```
 
-注意してくださいを受け取るコンス トラクターを実装する必要がありますをカスタム セル クラスを使用して、新しい再利用パターンを使用する場合、 `IntPtr`、次のスニペットに示すように、それ以外の場合 OBJECTIVE-C ことはできません、セル クラスのインスタンスを構築します。
+カスタムセルクラスで新しい再利用パターンを使用する場合は、次のスニペットに示すように、を受け取る`IntPtr`コンストラクターを実装する必要があります。それ以外の場合、目的の C は cell クラスのインスタンスを構築できません。
 
 ```csharp
 public class MyCell : UITableViewCell
@@ -213,17 +213,17 @@ public class MyCell : UITableViewCell
 }
 ```
 
-」で説明したトピックの例を参照できます、 **BasicTable**サンプルは、この記事にリンクさせます。
+上記のトピックの例については、この記事にリンクされている**Basictable**サンプルを参照してください。
 
 <a name="Adding_an_Index" />
 
-## <a name="adding-an-index"></a>インデックスを追加します。
+## <a name="adding-an-index"></a>インデックスの追加
 
-インデックスがインデックスを作成できますが、通常はアルファベット順の長いリストをスクロールして、ユーザーを支援するどのような条件でします。 **BasicTableIndex**サンプルは、インデックスを示すために、ファイルから項目の長いリストを読み込みます。 インデックス内の各項目は、テーブルの 'section' に対応します。
+インデックスは、ユーザーが長いリストをスクロールするのに役立ちます。通常はアルファベット順に並べられていますが、必要な条件によってインデックスを作成することもできます。 **Basictableindex**サンプルは、インデックスを示すために、ファイルからより長い項目のリストを読み込みます。 インデックス内の各項目は、テーブルの ' section ' に対応しています。
 
- [![](populating-a-table-with-data-images/image5.png "インデックスの表示")](populating-a-table-with-data-images/image5.png#lightbox)
+ [![](populating-a-table-with-data-images/image5.png "インデックス表示")](populating-a-table-with-data-images/image5.png#lightbox)
 
-'Sections' BasicTableIndex サンプルを作成するため、グループ化する必要があります、テーブルの背後にあるデータをサポートするために、`Dictionary<>`ディクショナリ キーとして各項目の最初の文字を使用して文字列の配列から。
+' Sections ' をサポートするには、テーブルの背後にあるデータをグループ化する必要があるため`Dictionary<>` 、basictableindex サンプルでは、各項目の最初の文字をディクショナリキーとして使用して、文字列の配列からを作成します。
 
 ```csharp
 indexedTableItems = new Dictionary<string, List<string>>();
@@ -237,14 +237,14 @@ foreach (var t in items) {
 keys = indexedTableItems.Keys.ToArray ();
 ```
 
-`UITableViewSource`サブクラスですが、次のメソッドを追加または使用するように変更し、必要があります、 `Dictionary<>` :
+サブ`UITableViewSource`クラスでは、 `Dictionary<>`を使用するために、次のメソッドを追加または変更する必要があります。
 
--   **NumberOfSections** – このメソッドは省略可能、既定では、テーブルは、1 つのセクションを想定しています。 インデックスを表示するときに、このメソッドは (たとえば、26 インデックスには、英語のアルファベットのすべての文字が含まれている場合) のインデックスで項目の数を返す必要があります。
--   **RowsInSection** – 特定のセクションでは行の数を返します。
--   **SectionIndexTitles** –、インデックスの表示に使用される文字列の配列を返します。 サンプル コードでは、文字の配列を返します。
+-   **Numberofsections** –このメソッドは省略可能です。既定では、テーブルは1つのセクションを前提としています。 インデックスを表示する場合、このメソッドはインデックス内の項目数を返す必要があります (たとえば、インデックスに英語のアルファベットのすべての文字が含まれている場合は26など)。
+-   **Rowsinsection** –指定したセクションの行の数を返します。
+-   **Sectionindextitles** –インデックスを表示するために使用される文字列の配列を返します。 このサンプルコードは、文字の配列を返します。
 
 
-サンプル ファイルで更新されたメソッド**BasicTableIndex/TableSource.cs**ようになります。
+サンプルファイル**Basictableindex/Tableource**の更新されたメソッドは次のようになります。
 
 ```csharp
 public override nint NumberOfSections (UITableView tableView)
@@ -261,25 +261,25 @@ public override string[] SectionIndexTitles (UITableView tableView)
 }
 ```
 
-インデックスは通常、プレーンなテーブル スタイルのみ使用されます。
+通常、インデックスは、Plain table スタイルでのみ使用されます。
 
 
 <a name="Adding_Headers_and_Footers" />
 
 ## <a name="adding-headers-and-footers"></a>ヘッダーとフッターの追加
 
-ヘッダーとフッターは、視覚的に、テーブル内の行をグループに使用できます。 必要なデータ構造のインデックスを追加するとよく似ています、–`Dictionary<>`本当にうまく機能します。 セルのグループにアルファベットを使用する代わりにこの例は植物の種類によって野菜をグループ化します。
+ヘッダーとフッターを使用して、テーブル内の行を視覚的にグループ化することができます。 必要なデータ構造は、インデックスの追加と非常によく`Dictionary<>`似ています。 a は実際にはうまく機能します。 この例では、アルファベットを使用してセルをグループ化するのではなく、植物 type を使用して野菜をグループ化します。
 出力は次のようになります。
 
- [![](populating-a-table-with-data-images/image6.png "サンプルのヘッダーとフッター")](populating-a-table-with-data-images/image6.png#lightbox)
+ [![](populating-a-table-with-data-images/image6.png "サンプルヘッダーとフッター")](populating-a-table-with-data-images/image6.png#lightbox)
 
-ヘッダーとフッターを表示する、`UITableViewSource`サブクラスには、これらの追加メソッドが必要です。
+ヘッダーとフッターを表示する`UITableViewSource`には、サブクラスに次の追加のメソッドが必要です。
 
--   **TitleForHeader** – ヘッダーとして使用されるテキストを返します
--   **TitleForFooter** – フッターとして使用するテキストを返します。
+-   **タイトル forheader** –ヘッダーとして使用するテキストを返します
+-   **タイトル forfooter** –フッターとして使用するテキストを返します。
 
 
-サンプル ファイルで更新されたメソッド**BasicTableHeaderFooter/Code/TableSource.cs**ようになります。
+サンプルファイル**Basictableheaderfooter/Code/Tableource**の更新されたメソッドは次のようになります。
 
 ```csharp
 public override string TitleForHeader (UITableView tableView, nint section)
@@ -292,7 +292,7 @@ public override string TitleForFooter (UITableView tableView, nint section)
 }
 ```
 
-ビューを使用してフッター、ヘッダーの外観をカスタマイズすることもできます。 オブジェクトを使用して、`GetViewForHeader`と`GetViewForFooter`メソッドのオーバーライドで`UITableViewSource`します。
+で`GetViewForFooter` `GetViewForHeader` は、メソッドとメソッドのオーバーライドを使用して、ビューオブジェクトでヘッダーとフッターの外観をカスタマイズできます。`UITableViewSource`
 
 
 ## <a name="related-links"></a>関連リンク

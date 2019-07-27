@@ -1,139 +1,139 @@
 ---
-title: Android のコントロール (ウィジェット)
-description: Xamarin.Android のユーザー インターフェイスを作成するための構成要素
+title: Android コントロール (ウィジェット)
+description: Xamarin Android ユーザーインターフェイスを作成するための構成要素
 ms.prod: xamarin
 ms.assetid: B7A82166-B920-4672-B7A2-20DD5E0B5AEF
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/29/2018
-ms.openlocfilehash: 842fb1df2c9cc1aaf1a106687179a3730c2503bd
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 31f6c0dd0d4f5452ebc2cbde0cc44cd9c47eeb9a
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61042017"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510315"
 ---
-# <a name="android-controls-widgets"></a>Android のコントロール (ウィジェット)
+# <a name="xamarinandroid-controls-widgets"></a>Xamarin Android コントロール (ウィジェット)
 
-Xamarin.Android では、Android によって提供されるネイティブ ユーザー インターフェイス コントロール (ウィジェット) のすべてを公開します。 これらのコントロールは、Android Designer を使用して Xamarin.Android アプリへ、または XML レイアウト ファイルを使用してプログラムで簡単に追加できます。 Xamarin.Android を選択する方法に関係なく、すべてのユーザー インターフェイス オブジェクトのプロパティと c# でメソッドを公開します。 次のセクションでは、最も一般的な Android のユーザー インターフェイス コントロールを紹介し、Xamarin.Android アプリに組み込む方法を説明します。
+Android に用意されているすべてのネイティブユーザーインターフェイスコントロール (ウィジェット) は、Xamarin Android によって公開されます。 これらのコントロールは、Android Designer またはプログラムによって XML レイアウトファイルを使用して Xamarin Android アプリに簡単に追加できます。 選択する方法に関係なく、Xamarin Android では、のすべてのユーザーインターフェイスオブジェクトのプロパティとC#メソッドが公開されます。 以下のセクションでは、最も一般的な Android ユーザーインターフェイスコントロールについて紹介し、それらを Xamarin Android アプリに組み込む方法について説明します。
 
 ## <a name="action-barandroiduser-interfacecontrolsaction-barmd"></a>[操作バー](~/android/user-interface/controls/action-bar.md) 
 
-`ActionBar` 活動のタイトル、ナビゲーション インターフェイス、およびその他の対話型の項目を表示するツールバーです。 通常、アクティビティのウィンドウの上部にある操作バーが表示されます。
+`ActionBar`は、アクティビティタイトル、ナビゲーションインターフェイス、およびその他の対話型項目を表示するツールバーです。 通常、アクションバーは、アクティビティのウィンドウの上部に表示されます。
 
 ![ActionBar の例](images/action-bar.png)
 
 
 ## <a name="auto-completeandroiduser-interfacecontrolsauto-completemd"></a>[オートコンプリート](~/android/user-interface/controls/auto-complete.md)
 
-`AutoCompleteTextView` ユーザーの入力中に自動的に入力候補を表示する編集可能なテキスト ビュー要素です。 入力候補の一覧は、ユーザーが編集ボックスのコンテンツを置換する項目を選択できるメニュー ドロップダウンで表示されます。
+`AutoCompleteTextView`は編集可能なテキストビュー要素で、ユーザーの入力中に自動的に入力候補を表示します。 修正候補の一覧がドロップダウンメニューに表示されます。このメニューから、編集ボックスの内容を置き換える項目をユーザーが選択できます。
 
-![オート コンプリートの使用例](images/auto-complete.png)
+![オートコンプリートの例](images/auto-complete.png)
 
 
 ## <a name="buttonsandroiduser-interfacecontrolsbuttonsindexmd"></a>[ボタン](~/android/user-interface/controls/buttons/index.md)
 
-ボタンは、ユーザーがタップ操作を実行する UI 要素です。
+ボタンは、ユーザーが操作を実行するためにタップする UI 要素です。
 
 ![ボタンの例](images/buttons.png)
 
 
 ## <a name="calendarandroiduser-interfacecontrolscalendarmd"></a>[Calendar](~/android/user-interface/controls/calendar.md)
 
-`Calendar`クラスで特定のインスタンスに変換するために使用時間 (年、月、1 時間、曜日、月、および次の週の日付などの値を (エポックからのオフセット ミリ秒値)。
-`Calendar` 豊富なイベント、出席者、およびアラームを読み書きする機能など、予定表のデータとの相互作用オプションをサポートしています。 予定表のプロバイダーを使用すると、アプリケーションで、API を通じて追加したデータは、Android に付属する組み込みの予定表アプリに表示されます。
+`Calendar`クラスは、時間内の特定のインスタンス (エポックからのオフセットであるミリ秒の値) を、年、月、時、月の日、次の週の日付などの値に変換するために使用されます。
+`Calendar`では、イベント、出席者、リマインダーの読み取りや書き込みなど、カレンダーデータを使用した豊富な相互作用オプションがサポートされています。 アプリケーションで calendar プロバイダーを使用すると、API を通じて追加したデータが、Android に付属する組み込みの予定表アプリに表示されます。
 
-![予定表の例](images/calendar.png)
+![カレンダーの例](images/calendar.png)
 
 
 ## <a name="cardviewandroiduser-interfacecontrolscard-viewmd"></a>[CardView](~/android/user-interface/controls/card-view.md)
 
-`CardView` カードのようにビューのテキストとイメージのコンテンツを表示する UI コンポーネントです。 `CardView` として実装されます、`FrameLayout`の角が丸いと影のウィジェット。 通常、`CardView`内の 1 つの行項目を表示するために、`ListView`または`GridView`ビュー グループ化します。
+`CardView`は、カードに似たビューにテキストとイメージの内容を表示する UI コンポーネントです。 `CardView`は、角が`FrameLayout`丸く、影が付いたウィジェットとして実装されます。 通常、 `CardView` `ListView`または`GridView`ビューグループに単一の行項目を表示するには、を使用します。
 
-![カード ビューの例](images/cardview.png)
+![カードビューの例](images/cardview.png)
 
 
-## <a name="edit-textandroiduser-interfacecontrolsedit-textmd"></a>[テキストを編集します。](~/android/user-interface/controls/edit-text.md)
+## <a name="edit-textandroiduser-interfacecontrolsedit-textmd"></a>[テキストの編集](~/android/user-interface/controls/edit-text.md)
 
-`EditText` 入力すると、テキストを変更するために使用する UI 要素です。
+`EditText`は、テキストの入力と変更に使用される UI 要素です。
 
-![例のテキストの編集](images/edit-text.png)
+![テキストの編集の例](images/edit-text.png)
 
 
 ## <a name="galleryandroiduser-interfacecontrolsgallerymd"></a>[ギャラリー](~/android/user-interface/controls/gallery.md)
 
-`Gallery` 水平方向にスクロール リストに項目を表示するために使用するレイアウト ウィジェット現在の選択範囲をビューの中央に配置します。
+`Gallery`は、水平スクロールリストに項目を表示するために使用されるレイアウトウィジェットです。現在の選択範囲をビューの中央に配置します。
 
-![サンプル ギャラリー](images/gallery.png)
+![ギャラリーの例](images/gallery.png)
 
 
 ## <a name="navigation-barandroiduser-interfacecontrolsnavigation-barmd"></a>[ナビゲーション バー](~/android/user-interface/controls/navigation-bar.md)
 
-*ナビゲーション バー*用のハードウェア ボタンが含まれていないデバイス上のナビゲーション コントロールを提供します。**ホーム**、**戻る**、および**メニュー**します。
+*ナビゲーションバー*は、 **[ホーム]** 、 **[戻る]** 、および **[メニュー]** のハードウェアボタンを含まないデバイス上のナビゲーションコントロールを提供します。
 
-![ナビゲーション バーの例](images/navigation-bar.png)
+![ナビゲーションバーの例](images/navigation-bar.png)
 
 
 ## <a name="pickersandroiduser-interfacecontrolspickersindexmd"></a>[選択](~/android/user-interface/controls/pickers/index.md)
 
-*ピッカー*ユーザーが Android によって提供されるダイアログ ボックスを使用して、日付や時刻を選択できるようにする UI 要素を示します。
+*ピッカー*は、ユーザーが Android によって提供されるダイアログを使用して日付または時刻を選択できるようにする UI 要素です。
 
-![例の選択](images/picker.png)
+![ピッカーの例](images/picker.png)
 
 
 ## <a name="popup-menuandroiduser-interfacecontrolspopup-menumd"></a>[ポップアップ メニュー](~/android/user-interface/controls/popup-menu.md)
 
-`PopupMenu` 特定のビューにアタッチされているポップアップ メニューを表示するために使用されます。
+`PopupMenu`は、特定のビューにアタッチされているポップアップメニューを表示するために使用されます。
 
-![ポップアップ メニューの例](images/popup-menu.png)
+![ポップアップメニューの例](images/popup-menu.png)
 
 
 ## <a name="ratingbarandroiduser-interfacecontrolsratingbarmd"></a>[RatingBar](~/android/user-interface/controls/ratingbar.md)
 
-A`RatingBar`は星で評価を表示する UI 要素です。
+は、星の評価を表示する UI 要素です。`RatingBar`
 
 ![RatingBar の例](ratingbar-images/01-ratingbar.png)
 
 
 ## <a name="spinnerandroiduser-interfacecontrolsspinnermd"></a>[スピン ボタン](~/android/user-interface/controls/spinner.md)
 
-`Spinner` セットから 1 つの値を選択する簡単な方法を提供する UI 要素です。 ドロップダウン リストに simmilar になります。 
+`Spinner`は、セットから1つの値を選択するための簡単な方法を提供する UI 要素です。 ドロップダウンリストが表示されます。 
 
-![スピン ボタンの例](images/spinner.png)
+![スピンボタンの例](images/spinner.png)
 
 
 ## <a name="switchandroiduser-interfacecontrolsswitchmd"></a>[スイッチ](~/android/user-interface/controls/switch.md)
 
-`Switch` ユーザーなど、2 つの状態の間で切り替えるか、オフにできる UI 要素です。 `Switch`既定値は OFF です。
+`Switch`は、ユーザーがオンまたはオフなどの2つの状態を切り替えることができるようにする UI 要素です。 `Switch`既定値は OFF です。
 
-![例のスイッチ](images/switch.png)
+![スイッチの例](images/switch.png)
 
 
 ## <a name="textureviewandroiduser-interfacecontrolstexture-viewmd"></a>[TextureView](~/android/user-interface/controls/texture-view.md)
 
-`TextureView` ビデオまたは表示する OpenGL のコンテンツ ストリームを有効にするハードウェア アクセラレータによる 2D レンダリングを使用するビューです。
+`TextureView`は、ビデオまたは OpenGL コンテンツストリームを表示できるようにするための、ハードウェアアクセラの2D レンダリングを使用するビューです。
 
-![テクスチャ ビューの例](images/texture-view.png)
+![テクスチャビューの例](images/texture-view.png)
 
 
 ## <a name="toolbarandroiduser-interfacecontrolstool-barindexmd"></a>[ToolBar](~/android/user-interface/controls/tool-bar/index.md)
 
-`Toolbar`ウィジェット (Android 5.0 Lollipop で導入された) アクション バーのインターフェイスの汎化として考えることができます&ndash;には、操作バーを代替するものです。 `Toolbar`アプリのレイアウトでの任意の場所で使用できるし、は、操作バーよりもはるかにカスタマイズ可能な。
+( `Toolbar` Android 5.0 ロリポップで導入された) ウィジェットは、アクションバーインターフェイス&ndash;の一般化として考えることができます。これは、操作バーを置き換えることを目的としています。 は`Toolbar` 、アプリレイアウト内の任意の場所で使用でき、操作バーよりもはるかにカスタマイズできます。
 
 ![ツールバーの例](images/toolbar.png)
 
 
 ## <a name="viewpagerandroiduser-interfacecontrolsview-pagerindexmd"></a>[ViewPager](~/android/user-interface/controls/view-pager/index.md) 
 
-`ViewPager`はユーザーがデータのページ間の左右を反転できるレイアウト マネージャーです。
+は`ViewPager` 、ユーザーがデータのページを左右に反転できるレイアウトマネージャーです。
 
 ![ViewPager の例](images/viewpager.png)
 
 
 ## <a name="webviewandroiduser-interfacecontrolsweb-viewmd"></a>[WebView](~/android/user-interface/controls/web-view.md)
 
-`WebView` UI 要素を使用すると、web ページを表示するための独自のウィンドウを作成します (または完全なブラウザーを開発しても) です。
+`WebView`は、web ページを表示するための独自のウィンドウを作成できる UI 要素です (または、完全なブラウザーを開発することもできます)。
 
 ![Web ビューの例](images/web-view.png)
 

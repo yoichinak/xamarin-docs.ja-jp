@@ -1,46 +1,46 @@
 ---
-title: Android 呼び出し可能ラッパー
+title: Xamarin android の呼び出し可能ラッパー
 ms.prod: xamarin
 ms.assetid: C33E15FA-1E2B-819A-C656-CA588D611492
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: 7edbdaa5a690a641523cb5baad7909ed01992aa5
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a8bd3f11698260b944bd29fcd9551825cb76e506
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61090893"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511190"
 ---
-# <a name="android-callable-wrappers"></a>Android 呼び出し可能ラッパー
+# <a name="android-callable-wrappers-for-xamarinandroid"></a>Xamarin android の呼び出し可能ラッパー
 
-Android ランタイムがマネージ コードを呼び出すたびに、android 呼び出し可能ラッパー (ACWs) が必要です。 アート (Android ランタイム) で実行時にクラスを登録する方法がないために、これらのラッパーが必要です。 (具体的には、 [JNI DefineClass() 関数](http://docs.oracle.com/javase/1.5.0/docs/guide/jni/spec/functions.html#wp15986)Android ランタイムではサポートされていません}。 Android 呼び出し可能ラッパーは、そのため、ランタイム型の登録のサポートの不足を構成します。 
+Android ランタイムがマネージコードを呼び出すときは常に、android 呼び出し可能ラッパー (ACWs) が必要です。 これらのラッパーは、実行時にアート (Android ランタイム) にクラスを登録する方法がないために必要です。 (具体的には、 [JNI のていぎ eclass () 関数](http://docs.oracle.com/javase/1.5.0/docs/guide/jni/spec/functions.html#wp15986)は、Android ランタイムではサポートされていません。 そのため、Android 呼び出し可能ラッパーは、ランタイム型の登録がサポートされないようにします。 
 
-*毎回*Android コードを実行する必要があります、`virtual`インターフェイスは、メソッドまたは`overridden`またはマネージ コードで実装すると、Xamarin.Android する必要があります Java のプロキシを提供するため、このメソッドは、適切なマネージ型にディスパッチされます。 これらの Java プロキシ型は、同じコンス トラクターを実装して、オーバーライドされた基底クラスとインターフェイスのメソッドの宣言は、マネージ型として、「同じ」の基底クラスと Java インターフェイスの一覧を含む Java コードです。 
+*毎回*Android コードは、マネージコード`virtual`で実装または実装`overridden`されているまたはインターフェイスメソッドを実行する必要があります。 Xamarin は、このメソッドが適切なマネージ型にディスパッチされるように Java プロキシを提供する必要があります。 これらの Java プロキシ型は、マネージ型として "同じ" 基底クラスと Java インターフェイスリストを持つ Java コードです。同じコンストラクターを実装し、オーバーライドされた基底クラスとインターフェイスメソッドを宣言します。 
 
-Android 呼び出し可能ラッパーがによって生成された、 **monodroid.exe**中のプログラム、[ビルド プロセス](~/android/deploy-test/building-apps/build-process.md): (直接または間接的に) を継承するすべての種類が生成される[Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/)します。 
+Android 呼び出し可能ラッパーは、[ビルド処理](~/android/deploy-test/building-apps/build-process.md)中**に、(** 直接または間接的に) [Java](xref:Java.Lang.Object)を継承するすべての型に対して生成されます。 
 
 
 
-## <a name="android-callable-wrapper-naming"></a>Android 呼び出し可能ラッパーの名前を付ける
+## <a name="android-callable-wrapper-naming"></a>Android 呼び出し可能ラッパーの名前付け
 
-Android 呼び出し可能ラッパーのパッケージ名は、エクスポートされる型のアセンブリ修飾名の md5 チェックサムに基づいています。 この名前付けの方法では、使用可能にする別のアセンブリをパッケージ化エラーを導入することがなく同じ完全修飾型名を使用します。 
+Android 呼び出し可能ラッパーのパッケージ名は、エクスポートされる型のアセンブリ修飾名の MD5SUM に基づいています。 この名前付け方法を使用すると、パッケージ化エラーを発生させることなく、同じ完全修飾型名を異なるアセンブリから使用できるようになります。 
 
-この md5 チェックサムの名前付けスキームにより、型を名前で直接アクセスできません。 たとえば、次`adb`ため、コマンドが機能しません、型名`my.ActivityType`は既定では生成されません。 
+この MD5SUM 名前付けスキームにより、型に名前で直接アクセスすることはできません。 たとえば、次`adb`のコマンドは、既定では型名`my.ActivityType`が生成されないため、機能しません。 
 
 ```shell
 adb shell am start -n My.Package.Name/my.ActivityType
 ```
 
-また、名前で型を参照しようとした場合は、次のようなエラーを参照してください可能性があります。
+また、名前によって型を参照しようとすると、次のようなエラーが表示されることがあります。
 
 ```shell
 java.lang.ClassNotFoundException: Didn't find class "com.company.app.MainActivity"
 on path: DexPathList[[zip file "/data/app/com.company.App-1.apk"] ...
 ```
 
-場合する*は*へのアクセスを必要と名前で、型属性の宣言では、その型の名前を宣言できます。 たとえば、完全修飾名を持つアクティビティを宣言するコードをここでは`My.ActivityType`:
+名前で型にアクセス*する必要が*ある場合は、属性宣言でその型の名前を宣言できます。 たとえば、次に示すのは、完全修飾名`My.ActivityType`を持つアクティビティを宣言するコードです。
 
 ```csharp
 namespace My {
@@ -51,7 +51,7 @@ namespace My {
 }
 ```
 
-`ActivityAttribute.Name`このアクティビティの名前を明示的に宣言するプロパティを設定することができます。 
+プロパティ`ActivityAttribute.Name`は、このアクティビティの名前を明示的に宣言するように設定できます。 
 
 ```csharp
 namespace My {
@@ -62,23 +62,23 @@ namespace My {
 }
 ```
 
-このプロパティの設定が追加されると、`my.ActivityType`名と外部コードからアクセスできる`adb`スクリプト。 `Name`など、さまざまな種類の属性を設定できます`Activity`、 `Application`、 `Service`、 `BroadcastReceiver`、および`ContentProvider`: 
+このプロパティの設定が追加さ`my.ActivityType`れた後、には、外部コード`adb`およびスクリプトから名前を使用してアクセスできます。 属性`Name`は、、、 `BroadcastReceiver`、、および`Activity` `Application` `Service`など、さまざまな型に対して設定できます`ContentProvider`。 
 
--   [ActivityAttribute.Name](https://developer.xamarin.com/api/property/Android.App.ActivityAttribute.Name/)
--   [ApplicationAttribute.Name](https://developer.xamarin.com/api/property/Android.App.ApplicationAttribute.Name/)
--   [ServiceAttribute.Name](https://developer.xamarin.com/api/property/Android.App.ServiceAttribute.Name/)
--   [BroadcastReceiverAttribute.Name](https://developer.xamarin.com/api/property/Android.Content.BroadcastReceiverAttribute.Name/)
--   [ContentProviderAttribute.Name](https://developer.xamarin.com/api/property/Android.Content.ContentProviderAttribute.Name/)
+-   [ActivityAttribute.Name](xref:Android.App.ActivityAttribute.Name)
+-   [ApplicationAttribute.Name](xref:Android.App.ApplicationAttribute.Name)
+-   [ServiceAttribute.Name](xref:Android.App.ServiceAttribute.Name)
+-   [BroadcastReceiverAttribute.Name](xref:Android.Content.BroadcastReceiverAttribute.Name)
+-   [ContentProviderAttribute.Name](xref:Android.Content.ContentProviderAttribute.Name)
 
-Md5 チェックサムに基づくについての名前付けは、Xamarin.Android 5.0 で導入されました。 属性の名前付けの詳細については、次を参照してください。 [RegisterAttribute](https://developer.xamarin.com/api/type/Android.Runtime.RegisterAttribute/)します。 
+MD5SUM ベースの ACW の名前付けは、Xamarin. Android 5.0 で導入されました。 属性の名前付けの詳細については、「 [Registerattribute](xref:Android.Runtime.RegisterAttribute)」を参照してください。 
 
 
 
 ## <a name="implementing-interfaces"></a>インターフェイスの実装
 
-Android のインターフェイスを実装します。 必要がある場合があります[Android.Content.IComponentCallbacks](https://developer.xamarin.com/api/type/Android.Content.IComponentCallbacks/)します。 すべての Android のクラスとインターフェイスを拡張するため、 [Android.Runtime.IJavaObject](https://developer.xamarin.com/api/type/Android.Runtime.IJavaObject/)インターフェイス、疑問が浮かびます。 の実装方法`IJavaObject`でしょうか。 
+Android インターフェイス ( [IComponentCallbacks](xref:Android.Content.IComponentCallbacks)など) の実装が必要になる場合があります。 すべての Android のクラスとインターフェイスは[IJavaObject](xref:Android.Runtime.IJavaObject)インターフェイスを拡張するので、次のよう`IJavaObject`な疑問が生じます。 
 
-上に、質問の答えが: 理由を実装する必要があるすべての Android の種類`IJavaObject`は Xamarin.Android がある Android、つまり指定した型の Java プロキシに提供する Android 呼び出し可能ラッパーをできるようにします。 **Monodroid.exe**だけを検索`Java.Lang.Object`サブクラスと`Java.Lang.Object`実装`IJavaObject,`、答えは明らかな: サブクラス`Java.Lang.Object`: 
+上記の質問に回答しました。 android のすべての型`IJavaObject`を実装する必要がある理由は、android に提供する android 呼び出し可能ラッパー (つまり、特定の種類の Java プロキシ) を使用できるようにするためです。 **モノ**の`Java.Lang.Object` id はサブクラス`Java.Lang.Object`のみを検索するため、答え`IJavaObject,`を実装することは明らか`Java.Lang.Object`です。サブクラスは次のとおりです。 
 
 ```csharp
 class MyComponentCallbacks : Java.Lang.Object, Android.Content.IComponentCallbacks {
@@ -98,9 +98,9 @@ class MyComponentCallbacks : Java.Lang.Object, Android.Content.IComponentCallbac
 
 ## <a name="implementation-details"></a>実装の詳細
 
-*このページの残りの部分は、予告なく変更される可能性の実装の詳細を提供します。* (および、ここでは何が起こってについて調べることがあるためのみ)。 
+*このページの残りの部分では、通知なしに変更される可能性のある実装の詳細について説明します*。(ここでは、開発者が何が起こっているかを知りたいので、ここでのみ説明します)。 
 
-たとえば、次を指定C#ソース。
+たとえば、次C#のソースがあるとします。
 
 ```csharp
 using System;
@@ -120,7 +120,7 @@ namespace Mono.Samples.HelloWorld
 }
 ```
 
-**Mandroid.exe**プログラムは、次の Android 呼び出し可能ラッパーを生成します。 
+**Manid .exe**プログラムは、次の Android 呼び出し可能ラッパーを生成します。 
 
 ```java
 package mono.samples.helloWorld;
@@ -155,4 +155,4 @@ public class HelloAndroid
 }
 ```
 
-基底クラスが保持されることに注意してくださいと`native`各メソッドは、マネージ コード内でオーバーライドされるメソッドの宣言が提供されます。 
+基本クラスが保持され、マネージコード`native`内でオーバーライドされるメソッドごとにメソッド宣言が提供されることに注意してください。 

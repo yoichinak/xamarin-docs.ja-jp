@@ -6,53 +6,53 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/28/2018
-ms.openlocfilehash: 63cbe556783ffe22512ff5312817d522120bd15e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 49e0de909e2255d850211e51596efdaa43f293ae
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61013653"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68509370"
 ---
-# <a name="creating-resources-for-varying-screens"></a>さまざまな画面のリソースを作成します。
+# <a name="creating-resources-for-varying-screens"></a>さまざまな画面用のリソースの作成
 
-Android 自体で実行さまざまなデバイスでさまざまな解像度や画面サイズ、画面密度がそれぞれします。 Android は、スケーリングとサイズを変更すると、これらのデバイスでアプリケーションを実行しますが、最適なユーザー エクスペリエンスがあります。 たとえば、イメージがぼやけて表示されることや、ビューで期待どおりに配置することがあります。
+Android 自体はさまざまなデバイスで実行され、それぞれの解像度、画面サイズ、画面密度がさまざまです。 Android では、スケールとサイズ変更を行って、アプリケーションがこれらのデバイスで動作するようにしますが、これにより、ユーザーエクスペリエンスが最適化される可能性があります。 たとえば、画像がぼやけて表示されたり、表示に期待どおりに配置されたりする可能性があります。
 
 
 ## <a name="concepts"></a>概念
 
-いくつかの用語と概念は、複数の画面をサポートするために重要です。
+複数の画面をサポートするために、いくつかの用語と概念を理解しておくことが重要です。
 
-- **画面サイズ**&ndash;アプリケーションを表示するための物理領域の量
+- **画面のサイズ**&ndash;アプリケーションを表示するための物理領域の量
 
-- **画面の密度**&ndash;画面上の任意の特定領域のピクセル数。 一般的な測定単位は、ドット/インチ (dpi です)。
+- **画面の密度**&ndash;画面上の特定の領域のピクセル数。 一般的な測定単位は、ドット/インチ (dpi) です。
 
-- **解像度**&ndash;画面上のピクセルの合計数。 アプリケーションを開発する場合、解像度は画面のサイズおよび密度として重要ではないです。
+- **解決策**&ndash;画面上の合計ピクセル数。 アプリケーションを開発する場合、解像度は画面のサイズや密度ほど重要ではありません。
 
-- **密度に依存しないピクセル (dp)** &ndash;密度に依存しない設計するレイアウトを許可する仮想測定単位。 次の数式を使用して、ピクセルの配布ポイントに変換します。
+- **密度に依存しないピクセル (dp)** &ndash;密度に関係なくレイアウトを設計できるようにする測定単位。 この数式は、dp を画面ピクセルに変換するために使用されます。
 
     px &equals; dp &times; dpi &divide; 160
 
-- **印刷の向き**&ndash;画面の向きが高さより幅がある場合は、ランドス ケープをすると見なされます。 これに対し、画面が縦長の筐場合に、縦向きです。 ユーザーがデバイスを回転すると、アプリケーションの有効期間中に、印刷の向きを変更できます。
+- **向き**&ndash;画面の向きは、高さよりも幅が広い場合は横向きと見なされます。 これに対して、縦向きは、画面の高さが幅よりも大きい場合にあります。 ユーザーがデバイスを回転させるときに、アプリケーションの有効期間中に向きが変化することがあります。
 
-これらの概念の最初の 3 つが相互に関連することに注意してください。&ndash;密度の向上と、画面サイズが増加せずに、解像度を高くします。 ただし、密度と解像度の向上、画面サイズはままです。 この画面のサイズ、密度、および解決の関係では、画面のサポートはすぐに複雑になります。
+これらの概念のうち、最初の3つは相互&ndash;に関連しています。密度を上げることなく解像度を上げると、画面のサイズが大きくなります。 ただし、密度と解像度の両方が増加しても、画面のサイズは変更されないままになります。 画面のサイズ、密度、解像度の関係により、画面のサポートが迅速になります。
 
-この複雑さを処理するには、Android のフレームワークを使用して希望*密度に依存しないピクセル (dp)* 画面のレイアウト。 密度に依存しないピクセルを使用すると、UI 要素は、異なる密度の画面で同じ物理サイズである場合にユーザーに表示されます。
-
-
-## <a name="supporting-various-screen-sizes-and-densities"></a>さまざまな画面サイズおよび密度のサポート
-
-Android では、各画面構成用に正しくレイアウトを表示するために作業のほとんどを処理します。 ただし、システムの支援に実行できる一部のアクションがあります。
-
-レイアウトで実際のピクセル密度に依存しないピクセルの使用は、密度に依存しないことを確認するほとんどの場合は十分です。
-Android では、適切なサイズに実行時に、ドローアブルを拡大縮小されます。
-ただし、スケーリングはビットマップ不鮮明にすることが可能です。 この問題を回避するには、異なる密度の代替のリソースを指定します。 複数の解像度や画面解像度のデバイスを設計、それを証明する簡単で開始する以上の解像度または密度イメージし、は、スケール ダウン。
+この複雑さに対処するために、Android framework では画面レイアウトに*密度に依存しないピクセル (dp)* を使用することを推奨しています。 密度に依存しないピクセルを使用すると、ユーザーには、異なる密度を持つ画面で同じ物理サイズの UI 要素が表示されます。
 
 
-### <a name="declare-the-supported-screen-size"></a>サポートされている画面のサイズを宣言します。
+## <a name="supporting-various-screen-sizes-and-densities"></a>さまざまな画面サイズと密度のサポート
 
-画面のサイズを宣言することにより、サポートされているデバイスのみが、アプリケーションをダウンロードできます。 これは、設定によって実現されます、[サポート画面](https://developer.android.com/guide/topics/manifest/supports-screens-element.html)内の要素、 **AndroidManifest.xml**ファイル。 この要素は、アプリケーションでどのような画面サイズがサポートされている指定に使用されます。 特定の画面は、アプリケーションが画面には、そのレイアウトを配置できます正しくサポートと見なされます。 このマニフェスト要素を使用すると、アプリケーションは表示されませんで[ *Google Play* ](https://play.google.com/)画面仕様を満たしていないデバイス。 ただし、アプリケーションが、サポートされていない画面を備えたデバイスで実行されますが、レイアウトがぼやけてとピクセルです。
+Android では、ほとんどの作業を処理して、画面構成ごとにレイアウトを正しくレンダリングします。 ただし、システムの提供を支援するために実行できる操作がいくつかあります。
 
-サポートされている画面 sixes が宣言されている、 **Properites/AndroidManifest.xml**ソリューションのファイル。
+密度に依存しないピクセルの使用は、ほとんどの場合、レイアウトで実際のピクセルの代わりに使用するだけで十分です。
+Android では、実行時に、適切なサイズになるように、実行可能な drawables スケーリングします。
+ただし、拡大縮小によってビットマップがぼやけて表示される可能性があります。 この問題を回避するには、異なる密度の代替リソースを指定します。 複数の解像度と画面密度用にデバイスを設計する場合、解像度や密度の高いイメージで開始し、スケールダウンする方が簡単です。
+
+
+### <a name="declare-the-supported-screen-size"></a>サポートされている画面サイズを宣言する
+
+画面サイズを宣言すると、サポートされているデバイスだけがアプリケーションをダウンロードできるようになります。 これを行うには、 **Androidmanifest .xml**ファイルで "[サポート-画面](https://developer.android.com/guide/topics/manifest/supports-screens-element.html)" 要素を設定します。 この要素は、アプリケーションでサポートされる画面サイズを指定するために使用されます。 指定された画面は、アプリケーションが画面に合わせてレイアウトを適切に配置できる場合、サポートされていると見なされます。 このマニフェスト要素を使用すると、画面の仕様を満たしていないデバイスの[*Google Play*](https://play.google.com/)にアプリケーションが表示されません。 ただし、アプリケーションは、サポートされていない画面を持つデバイスでも実行されますが、レイアウトがぼやけて見えないように見える場合があります。
+
+サポートされているスクリーン sixes は、ソリューションの**caching/AndroidManifest .xml**ファイルで宣言されています。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -64,7 +64,7 @@ Android では、適切なサイズに実行時に、ドローアブルを拡大
 
 -----
 
-編集**AndroidManifest.xml**に含める[サポート画面](https://developer.android.com/guide/topics/manifest/supports-screens-element.html):
+**Androidmanifest .xml**を編集して[、サポート画面](https://developer.android.com/guide/topics/manifest/supports-screens-element.html)を含めます。
 
 ```xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -85,118 +85,118 @@ Android では、適切なサイズに実行時に、ドローアブルを拡大
 </manifest>
 ```
 
-### <a name="provide-alternate-layouts-for-different-screen-sizes"></a>代替レイアウトは、さまざまな画面サイズ
+### <a name="provide-alternate-layouts-for-different-screen-sizes"></a>さまざまな画面サイズに別のレイアウトを指定する
 
 
-代替レイアウトを使用すれば、特定の画面サイズ、位置を変更またはコンポーネントの UI 要素のサイズのビューをカスタマイズできます。
+代替レイアウトを使用すると、特定の画面サイズのビューをカスタマイズし、コンポーネントの UI 要素の位置やサイズを変更することができます。
 
-以降では、API レベル 13 (Android 3.2) は、画面サイズは非推奨のため、ソフトウェアを使用して*N*dp 修飾子。 指定したレイアウト領域の容量が必要な新しい修飾子を宣言します。 これらの新しい修飾子が Android 3.2 以降を実行するためのものがアプリケーションに使用することをお勧めします。
+API レベル 13 (Android 3.2) 以降では、sw*N*dp 修飾子の使用を優先するため、画面サイズは非推奨となりました。 この新しい修飾子は、特定のレイアウトに必要な領域のサイズを宣言します。 Android 3.2 以降で実行するように設計されたアプリケーションでは、これらの新しい修飾子を使用することをお勧めします。
 
-たとえば、必要な最小 700 のレイアウトを画面の幅の配布ポイントは、代替レイアウトは、フォルダーの移動は**レイアウト sw700dp**:
+たとえば、レイアウトで画面幅の最低 700 dp が必要な場合、代替レイアウトは**sw700dp**フォルダーに配置されます。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-![700 dp 画面幅レイアウト フォルダー](resources-for-varying-screens-images/03-layout-sw700dp-vs.png)
+![700 dp 画面の幅のレイアウトフォルダー](resources-for-varying-screens-images/03-layout-sw700dp-vs.png)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-![700 dp 画面幅レイアウト フォルダー](resources-for-varying-screens-images/03-layout-sw700dp-xs.png)
+![700 dp 画面の幅のレイアウトフォルダー](resources-for-varying-screens-images/03-layout-sw700dp-xs.png)
 
 -----
 
 
-なガイドラインとして、さまざまなデバイス用のいくつかの数字以下に示します。
+ガイドラインとして、さまざまなデバイスのいくつかの数値を次に示します。
 
-- **一般的な電話** &ndash; 320 dp: 一般的な携帯電話
+- **一般的な電話**&ndash; 320 dp: 一般的な電話
 
-- **タブレット 5"/"tweener"デバイス** &ndash; 480 dp: Samsung 注など
+- **5 つの "タブレット/" tweener "デバイス**&ndash; 480 dp: Samsung Note など
 
-- **7"tablet** &ndash; 600 dp: など、Barnes &amp; Noble 探る
+- **7 "タブレット**600 dp: Barnes &amp;立派 nook など&ndash;
 
-- **10 インチのタブレット** &ndash; 720 dp: Motorola Xoom など
+- **10 "タブレット**&ndash; 720 dp: Motorola xoom など
 
-アプリケーションのターゲット API レベル 12 (Android 3.1) までのこと、レイアウトに入れる修飾子を使用して、ディレクトリ**小さな**/**通常**/**大きな** /**特大**としてほとんどのデバイスで利用できるさまざまな画面サイズの汎化します。 たとえば、次の図では、代替のリソースの 4 つの異なる画面サイズがあります。
-
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
-
-![代替のリソースの 4 つの画面サイズ](resources-for-varying-screens-images/04-layout-large-vs.png)
-
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
-
-![代替のリソースの 4 つの画面サイズ](resources-for-varying-screens-images/04-layout-large-xs.png)
-
------
-
-古い pre API レベル 13 画面サイズ修飾子と密度に依存しないピクセルとの比較の比較を次に示します。
-
-- 426 dp dp は x 320**小さな**
-
-- 470 dp dp は x 320**通常**
-
-- 640 dp dp は x 480**大きな**
-
-- 960 dp dp は x 720**特大**
-
-新しい画面は、API レベル 13 で修飾子のサイズや、API レベル 12 と下限の古い画面修飾子よりも高い優先順位があるをします。
-アプリケーションにまたがり、古いと、新しい API レベルでは、次のスクリーン ショットに示すように、修飾子の両方のセットを使用して別のリソースを作成するために必要な場合があります。
+API レベルを最大 12 (Android 3.1) にするアプリケーションの場合、レイアウトは、の汎化と同じように**small**/**normal**/**large**/**特大**という修飾子を使用するディレクトリに移動する必要があります。ほとんどのデバイスで使用できるさまざまな画面サイズ。 たとえば、次の図には、4つの異なる画面サイズの代替リソースがあります。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-![代替のリソースを両方の修飾子](resources-for-varying-screens-images/05-both-qualifiers-vs.png)
+![4つの画面サイズの代替リソース](resources-for-varying-screens-images/04-layout-large-vs.png)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-![代替のリソースを両方の修飾子](resources-for-varying-screens-images/05-both-qualifiers-xs.png)
+![4つの画面サイズの代替リソース](resources-for-varying-screens-images/04-layout-large-xs.png)
+
+-----
+
+次に示すのは、古い API レベル13より前の画面サイズ修飾子が密度に依存しないピクセルとどのように比較されるかを比較したものです。
+
+- 426 dp x 320 dp が**小さい**
+
+- 470 dp x 320 dp が**正常**である
+
+- 640 dp x 480 dp が**大きく**なっています
+
+- 960 dp x 720 dp が**特大**
+
+API レベル13以上の新しい画面サイズ修飾子は、API レベル12以降の古い画面修飾子よりも優先順位が高くなります。
+古い API レベルと新しい API レベルにまたがるアプリケーションでは、次のスクリーンショットに示すように、両方の修飾子を使用して代替リソースを作成する必要がある場合があります。
+
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+
+![両方の修飾子を持つ代替リソース](resources-for-varying-screens-images/05-both-qualifiers-vs.png)
+
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+
+![両方の修飾子を持つ代替リソース](resources-for-varying-screens-images/05-both-qualifiers-xs.png)
 
 -----
 
 
 
-### <a name="provide-different-bitmaps-for-different-screen-densities"></a>さまざまな画面密度の異なるビットマップを指定します。
+### <a name="provide-different-bitmaps-for-different-screen-densities"></a>画面の密度に応じて異なるビットマップを指定する
 
-Android デバイスの必要に応じて、ビットマップのスケーラビリティがビットマップ自体可能性がありますいない洗練された方法スケール アップまたはスケール ダウン: ぼやけて、またはあいまいになる可能性があります。 画面密度の適切なビットマップを提供することで、この問題を軽減します。
+Android では、必要に応じてデバイスのビットマップが拡張されますが、ビットマップ自体は洗練されていたり、ぼやけたりする場合があります。 画面の密度に適したビットマップを提供することで、この問題を軽減できます。
 
-次の図に発生するレイアウトと外観の問題の例は、たとえば、密度の指定とリソースが指定されていません。
+たとえば、次の図は、密度指定のリソースが提供されていない場合に発生する可能性があるレイアウトと外観の問題の例を示しています。
 
-![密度リソースなしのスクリーン ショット](resources-for-varying-screens-images/06-density-not-provided.png)
+![密度リソースのないスクリーンショット](resources-for-varying-screens-images/06-density-not-provided.png)
 
-密度に固有のリソースでデザインしたレイアウトと比較します。
+密度固有のリソースを使用して設計されたレイアウトと比較します。
 
-![密度に固有のリソースのスクリーン ショット](resources-for-varying-screens-images/07-density-specific-resources.png)
+![密度固有のリソースを含むスクリーンショット](resources-for-varying-screens-images/07-density-specific-resources.png)
 
 
-### <a name="create-varying-density-resources-with-android-asset-studio"></a>Android Asset Studio のさまざまな密度のリソースを作成します。
+### <a name="create-varying-density-resources-with-android-asset-studio"></a>Android Asset Studio を使用してさまざまな密度リソースを作成する
 
-さまざまな密度のこれらのビットマップの作成を少し面倒なことができます。 そのため、Google と呼ばれるこれらのビットマップの作成に伴う面倒な作業の一部を削減できるオンラインのユーティリティが作成、 [ **Android Asset Studio**](https://romannurik.github.io/AndroidAssetStudio/)します。
+さまざまな密度のビットマップの作成は、少し面倒になることがあります。 そのため、Google は、 [**Android Asset Studio**](https://romannurik.github.io/AndroidAssetStudio/)と呼ばれるこれらのビットマップの作成に関連する面倒な作業の一部を減らすことができるオンラインユーティリティを作成しました。
 
 [![Android Asset Studio](resources-for-varying-screens-images/08-android-asset-studio-sml.png)](resources-for-varying-screens-images/08-android-asset-studio.png#lightbox)
 
-この web サイトを 1 つのイメージを提供することで、次の 4 つの一般的な画面密度を対象とするビットマップの作成に役立ちます。 Android Asset Studio は一部のカスタマイズで、ビットマップを作成し、zip ファイルとしてダウンロードすることを許可します。
+この web サイトは、1つのイメージを提供することで、4つの一般的な画面密度を対象とするビットマップの作成に役立ちます。 Android Asset Studio は、いくつかのカスタマイズでビットマップを作成し、zip ファイルとしてダウンロードできるようにします。
 
 
-## <a name="tips-for-multiple-screens"></a>複数の画面のヒント
+## <a name="tips-for-multiple-screens"></a>複数の画面に関するヒント
 
-デバイスでは、さまざまなまごつくかもしれませんに android を実行し、画面サイズや画面解像度の組み合わせが多すぎると感じることができます。 さまざまなデバイスをサポートするために必要な労力を最小限に抑えるには、次のヒントが役立ちます。
+Android は困惑のデバイスで実行され、画面のサイズと画面密度の組み合わせには圧倒される可能性があります。 次のヒントは、さまざまなデバイスをサポートするために必要な作業を最小限に抑えるのに役立ちます。
 
-- **のみの設計および必要な開発**&ndash;があり、多くのさまざまなデバイスがあるが、まれなフォーム ファクターの設計と開発のかなりの労力がかかる場合がありますをいくつか存在します。 [**画面サイズおよび密度**](https://developer.android.com/resources/dashboard/screens.html)ダッシュ ボードは、データ、画面サイズ/画面密度マトリックスの内訳を提供する Google から提供されるページ。 この内訳は、画面のサポートで開発作業をする方法の洞察を提供します。
+- **必要なものの設計と開発のみ**&ndash;多数のデバイスがありますが、の設計と開発にかなりの労力を要する可能性がある、まれなフォームファクターに存在するものもあります。 [**画面のサイズと密度**](https://developer.android.com/resources/dashboard/screens.html)のダッシュボードは、Google によって提供されるページであり、画面サイズ/画面密度マトリックスの内訳に関するデータを提供します。 この内訳では、画面のサポートに関する開発作業についての洞察を提供します。
 
-- **ピクセル単位ではなく、DPs 使用**-ピクセルが画面密度の変化に応じて厄介なものになります。 ピクセル値をハードコーディングしないでください。 配布ポイント (密度に依存しないピクセル単位) を優先してピクセルを避けてください。
+- **ピクセル単位ではなく、DPs を使用する**と、画面の密度が変化します。 ピクセル値をハードコーディングしないでください。 Dp (密度に依存しないピクセル) を優先するピクセルは避けてください。
 
-- **回避** [AbsoluteLayout](https://developer.xamarin.com/api/type/Android.Widget.AbsoluteLayout/)
-  **可能な任意の場所** &ndash; API レベル 3 (Android 1.5) は非推奨し、レイアウトが不安定になります。 これを使用しない必要があります。 代わりより柔軟なレイアウト ウィジェットを使用しよう[ **LinearLayout**](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/)、 [ **[相対レイアウト]**](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/)、または新しい[**GridLayout**](https://developer.xamarin.com/api/type/Android.Widget.GridLayout/)します。
+- **避ける**[AbsoluteLayout](xref:Android.Widget.AbsoluteLayout)
+  **可能**な限り&ndash; 、API レベル 3 (Android 1.5) では非推奨とされます。これにより、レイアウトが不安定になります。 使用しないでください。 代わりに、 [**LinearLayout**](xref:Android.Widget.LinearLayout)、 [**RelativeLayout**](xref:Android.Widget.RelativeLayout)、new [**GridLayout**](xref:Android.Widget.GridLayout)などのより柔軟なレイアウトウィジェットを使用してみてください。
 
-- **既定値として 1 つのレイアウトの方向を選択**&ndash;代替のリソースを提供するのではなく、たとえば、**レイアウト land**と**レイアウト ポート**、用のリソース配置横向きで**レイアウト**、リソースと、縦に**レイアウト ポート**します。
+- **既定のレイアウトの向きを1つ選択する**   たとえば、代替リソースレイアウトとレイアウトポートを提供するのではなく、横長のリソースをレイアウトに、縦のリソースをレイアウトポートに配置します。 &ndash;
 
-- **LayoutParams を使用して、高さと幅を**- XML レイアウト ファイルでは、UI 要素を定義するときに、Android アプリケーションを使用して、 **wrap_content**と**fill_parent**さらなる成功の値が必要がありますさまざまなデバイス ピクセルまたは密度に依存しない単位を使用してより適切な外観を確認してください。 これらのディメンション値は、Android を適切なビットマップ リソースのスケールにあります。 場合に最適な予約は密度に依存しない単位この同じ理由で、余白を指定して、UI 要素の埋め込み。
+- **Height と Width に LayoutParams を使用する**-XML レイアウトファイルで UI 要素を定義する場合、 **wrap_content**と**fill_parent**の値を使用する Android アプリケーションでは、ピクセルまたは密度に依存しない単位を使用します。 これらのディメンション値により、Android はビットマップリソースを必要に応じてスケーリングします。 これと同じ理由から、密度に依存しない単位は、UI 要素の余白と埋め込みを指定する場合に最適です。
 
 
 ## <a name="testing-multiple-screens"></a>複数の画面のテスト
 
-Android アプリケーションは、サポートされるすべての構成に対してテストする必要があります。 理想的です実際のデバイス自体でデバイスをテストする必要がありますが、多くの場合にこれが不可能または実用的です。
-ここでは、各デバイスの構成の Android 仮想デバイスのセットアップ、エミュレーターの使用が便利になります。
+Android アプリケーションは、サポートされるすべての構成に対してテストする必要があります。 理想的には、実際のデバイス自体でデバイスをテストすることをお勧めしますが、多くの場合、これは不可能であり、現実的ではありません。
+この場合、デバイス構成ごとにエミュレーターと Android 仮想デバイスのセットアップを使用すると便利です。
 
-Android SDK では、いくつかのエミュレーター スキンは、Avd を作成するために使用可能性がありますが、サイズ、密度、および多くのデバイスの解像度はレプリケートを提供します。
-同様に、ハードウェア ベンダーの多くは、自分のデバイスのスキンを提供します。
+Android SDK には、AVDs の作成に使用できるエミュレータースキンがいくつか用意されており、多くのデバイスのサイズ、密度、および解像度がレプリケートされます。
+多くのハードウェアベンダーは、デバイスのスキンを提供しています。
 
-別のオプションでは、サービスをテストするサード パーティ製のサービスを使用します。
-これらのサービスは APK を実行でさまざまなデバイスで実行し、アプリケーションがどのように動作するフィードバックを提供します。
+別の方法として、サードパーティのテストサービスのサービスを使用することもできます。
+これらのサービスは APK を使用し、さまざまなデバイスで実行してから、アプリケーションの動作に関するフィードバックを提供します。

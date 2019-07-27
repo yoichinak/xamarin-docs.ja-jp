@@ -1,41 +1,41 @@
 ---
-title: MacOS Mojave を概要します。
-description: このドキュメントでは、macOS Xamarin.Mac を使って Mojave アプリのビルドするように設定を取得する方法について説明します。 Xcode の 10 をダウンロードして for mac。 Visual Studio を更新する方法について説明します
+title: MacOS Mojave を使ってみる
+description: このドキュメントでは、Xamarin. Mac で macOS Mojave アプリをビルドするように設定する方法について説明します。 Xcode 10 をダウンロードし Visual Studio for Mac を更新する方法について説明します。
 ms.prod: xamarin
 ms.assetid: E9A7B68A-E164-4C5C-86AC-B2A3E7A30DA1
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: 6acf79d158869a09f93ff9cd129650304c209a35
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 369133f49566625dd677dc077ed8ff6a0bb0b4db
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61031677"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511668"
 ---
-# <a name="get-started-with-macos-mojave"></a>MacOS Mojave を概要します。
+# <a name="get-started-with-macos-mojave"></a>MacOS Mojave を使ってみる
 
-このドキュメントでは、macOS Xamarin.Mac を使って Mojave アプリのビルドするように設定を取得する方法について説明します。 Xcode の 10 をダウンロードして for mac。 Visual Studio を更新する方法について説明します
+このドキュメントでは、Xamarin. Mac で macOS Mojave アプリをビルドするように設定する方法について説明します。 Xcode 10 をダウンロードし Visual Studio for Mac を更新する方法について説明します。
 
 ## <a name="download-and-install"></a>ダウンロードしてインストールする
 
-1. **Xcode の 10 の最新のベータ版をインストール**– Apple の登録されている開発者はダウンロードして、Xcode 10 からの最新バージョンをインストール、 [Apple Developer Portal](https://developer.apple.com/download/)します。
+1. **最新の Xcode 10 beta をインストール**する–登録されている apple 開発者は、 [apple Developer ポータル](https://developer.apple.com/download/)から最新バージョンの Xcode 10 をダウンロードしてインストールできます。
 
-2. **Xcode の 10 を実行して**– Xcode 10 を更新して、for Mac は Visual Studio を実行する前に実行 Xamarin を必要とするいくつかのツールがインストールされます。
+2. **Xcode 10 を実行**する– Visual Studio for Mac を更新して実行する前に Xcode 10 を実行します。Xamarin に必要ないくつかのツールがインストールされます。
 
-3. **Mac 用 Visual Studio の更新プログラム**– for Mac で Visual Studio の最新の安定バージョンを使用して[Xamarin.Mac 5.0](https://developer.xamarin.com/releases/mac/xamarin.mac_5/xamarin.mac_5.0/)またはそれ以降。
+3. **Visual Studio for Mac の更新**– [Xamarin 5.0](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/mac/xamarin.mac_5/xamarin.mac_5.0.md)以降で Visual Studio for Mac の最新の安定バージョンを使用します。
 
-4. _(省略可能)_ **、Mac 上でのインストール macOS Mojave** –
+4. _(省略可能)_ **Mac に MacOS Mojave をインストールする**–
 
    > [!TIP]
-   > アプリでは、新しい macOS Mojave Api を使用しない場合でも、macOS Mojave SDK でビルドし、期待どおりに動作するすべてのものかどうかを確認することをテストすることを確認します。 アプリは、新しい Api を呼び出す場合、macOS Mojave SDK で再コンパイルし、Mac のオペレーティング システムのアップグレードなしでテストできます。
+   > アプリで新しい macOS Mojave Api を使用していない場合でも、macOS Mojave SDK を使用してビルドし、テストして、すべてが期待どおりに動作することを確認してください。 アプリが新しい Api を呼び出さない場合は、macOS Mojave SDK を使用して再コンパイルし、Mac のオペレーティングシステムをアップグレードせずにテストすることができます。
    >
-   > Mac を macOS ビルドし、新しい macOS Mojave Api を呼び出す Xamarin.Mac アプリケーションをテストする Mojave: アップグレードする前に
+   > Mac を macOS Mojave にアップグレードしてから、新しい macOS Mojave Api を呼び出す Xamarin. Mac アプリケーションをビルドしてテストする前に、次のようにします。
    >
-   > - 読み取り[Apple のリリース ノート](https://developer.apple.com/download/)のオペレーティング システムの更新。
+   > - オペレーティングシステムの更新プログラムについては、 [Apple のリリースノート](https://developer.apple.com/download/)を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 
-- [Xcode 10 をダウンロードします。](https://developer.apple.com/download/)
-- [Xamarin.Mac 5.0 リリース ノート](https://docs.microsoft.com/xamarin/mac/release-notes/5/5.0/)
+- [Xcode 10 のダウンロード](https://developer.apple.com/download/)
+- [Xamarin. Mac 5.0 リリースノート](https://docs.microsoft.com/xamarin/mac/release-notes/5/5.0/)

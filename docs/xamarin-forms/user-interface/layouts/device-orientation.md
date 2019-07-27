@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/09/2015
-ms.openlocfilehash: a38249236e758728452ff25fd0c486c3d03ce8fc
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: 2c218b030739dee8d3e49fab4e5c2a70ff5e71e0
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65970998"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511823"
 ---
 # <a name="device-orientation"></a>デバイスの向き
 
@@ -71,7 +71,7 @@ Xamarin.Android には、印刷の向きを指定するためのいくつかの�
 - **ランドス ケープ**&ndash;センサー データに関係なく、横にあるアプリケーションの向きを強制します。
 - **縦**&ndash;センサー データに関係なく、縦向きにするアプリケーションの向きを強制します。
 - **ユーザー** &ndash;により、アプリケーションは、ユーザーの表示に望ましい方向で表示されます。
-- **背後にある**&ndash;により、アプリケーションの向きの方向と同じである、[アクティビティ](https://developer.xamarin.com/api/type/Android.App.Activity/)その背後にあります。
+- **背後にある**&ndash;により、アプリケーションの向きの方向と同じである、[アクティビティ](xref:Android.App.Activity)その背後にあります。
 - **センサー** &ndash;センサーが決定する、アプリケーションの向きが場合でも、ユーザーが自動的に回転を無効にします。
 - **SensorLandscape** &ndash;により横向き (その画面は、上下として認識されていない)、画面が向いている方向を変更するセンサー データを使用しているときに使用するアプリケーション。
 - **SensorPortrait** &ndash;と縦向き (その画面は、上下として認識されていない)、画面が向いている方向を変更するセンサー データを使用しているときに使用するアプリケーションが発生します。

@@ -1,27 +1,27 @@
 ---
-title: TableLayout
+title: Xamarin Android TableLayout
 ms.prod: xamarin
 ms.assetid: 0C7B9C95-5E5F-A069-BA37-984E49F7DCAD
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 25b2393d2133c0a1f3f8354584c276fcd7ddaa4b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 9a5186fe49edc81f5d6ec8ca297146a27a0274fa
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61305161"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68509686"
 ---
-# <a name="tablelayout"></a>TableLayout
+# <a name="xamarinandroid-tablelayout"></a>Xamarin Android TableLayout
 
-[`TableLayout`](https://developer.xamarin.com/api/type/Android.Widget.TableLayout/) は、 [`ViewGroup`](https://developer.xamarin.com/api/type/Android.Views.ViewGroup/)
-子を表示します。 [`View`](https://developer.xamarin.com/api/type/Android.Views.View/)
-行と列内の要素。
+[`TableLayout`](xref:Android.Widget.TableLayout)はです。[`ViewGroup`](xref:Android.Views.ViewGroup)
+子を表示する[`View`](xref:Android.Views.View)
+行と列の要素。
 
-という名前の新しいプロジェクトを開始**HelloTableLayout**します。
+**HelloTableLayout**という名前の新しいプロジェクトを開始します。
 
-開く、 **Resources/Layout/Main.axml**ファイルを開き、次を挿入します。
+**Resources/Layout/Main. axml**ファイルを開き、次のように挿入します。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -102,13 +102,13 @@ ms.locfileid: "61305161"
 </TableLayout>
 ```
 
-HTML テーブルの構造に似て 方法に注意してください。 、 [`TableLayout`](https://developer.xamarin.com/api/type/Android.Widget.TableLayout/)
-要素は、HTML と同様に、`<table>`要素。 [`TableRow`](https://developer.xamarin.com/api/type/Android.Widget.TableRow/)
-似ています、`<tr>`要素は、セルを使用することがいずれかの種類[ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/)要素。 この例で、 [`TextView`](https://developer.xamarin.com/api/type/Android.Widget.TextView/)
-各セルに使用されます。 一部の行には、間も、基本的な[ `View`](https://developer.xamarin.com/api/type/Android.Views.View/)水平線を描画に使用されます。
+これが HTML テーブルの構造に似ていることに注意してください。 、[`TableLayout`](xref:Android.Widget.TableLayout)
+要素は HTML `<table>`要素に似ています。[`TableRow`](xref:Android.Widget.TableRow)
+は要素に`<tr>`似ていますが、セルの場合は任意の種類[`View`](xref:Android.Views.View)の要素を使用できます。 この例では、[`TextView`](xref:Android.Widget.TextView)
+は、各セルに対して使用されます。 一部の行の間には、水平線を描画[`View`](xref:Android.Views.View)するために使用される基本もあります。
 
-必ず、 **HelloTableLayout**アクティビティでは、このレイアウトの読み込み、 [`OnCreate()`](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/p/Android.OS.Bundle/)
-方法:
+**HelloTableLayout**アクティビティによって、このレイアウトが[`OnCreate()`](xref:Android.App.Activity.OnCreate*)
+b
 
 ```csharp
 protected override void OnCreate (Bundle savedInstanceState)
@@ -118,21 +118,21 @@ protected override void OnCreate (Bundle savedInstanceState)
 }
 ```
 
-[ `SetContentView(int)` ](https://developer.xamarin.com/api/member/Android.App.Activity.SetContentView/(System.Int32))メソッドのレイアウト ファイルを読み込み、 [ `Activity`](https://developer.xamarin.com/api/type/Android.App.Activity/)リソース ID で指定された&mdash;`Resource.Layout.Main`を指す、**リソース/レイアウト/Main.axml**レイアウト ファイルです。
+) [`SetContentView(int)`](xref:Android.App.Activity.SetContentView*)メソッドは、リソース ID [`Activity`](xref:Android.App.Activity) &mdash; `Resource.Layout.Main`によって指定されたのレイアウトファイルを読み込み、リソース **/レイアウト/メインの axml**レイアウトファイルを参照します。
 
-アプリケーションを実行します。 次が表示されます。
+アプリケーションを実行します。 次のように表示されます。
 
-[![複数のテーブル行を表示する TableLayout アプリのスクリーン ショットの例](table-layout-images/helloviews3.png)](table-layout-images/helloviews3.png#lightbox)
+[![複数のテーブル行を表示している TableLayout アプリのスクリーンショットの例](table-layout-images/helloviews3.png)](table-layout-images/helloviews3.png#lightbox)
 
 
 
-## <a name="references"></a>参照
+## <a name="references"></a>リファレンス
 
--   [`TableLayout`](https://developer.xamarin.com/api/type/Android.Widget.TableLayout/) 
+-   [`TableLayout`](xref:Android.Widget.TableLayout) 
 
--   [`TableRow`](https://developer.xamarin.com/api/type/Android.Widget.TableRow/) 
+-   [`TableRow`](xref:Android.Widget.TableRow) 
 
--   [`TextView`](https://developer.xamarin.com/api/type/Android.Widget.TextView/) 
+-   [`TextView`](xref:Android.Widget.TextView) 
 
-*このページの部分が作成および Android のオープン ソース プロジェクトで共有し、の条項に従って使用作業に基づいた変更、*
-[*Creative Commons 2.5 Attribution License*](http://creativecommons.org/licenses/by/2.5/).
+*このページの一部は、Android オープンソースプロジェクトによって作成および共有*
+され、[*Creative Commons 2.5 属性*](http://creativecommons.org/licenses/by/2.5/)で説明されている条項に従って使用される作業に基づいて変更されます。

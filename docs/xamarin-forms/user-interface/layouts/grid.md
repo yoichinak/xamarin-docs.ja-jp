@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: 1d445e3ef8869c74f052eb1153774dfab51ffd45
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 78a84fd8d4f380739a9f080a1a5aad7c5942d0c9
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67649596"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511880"
 ---
 # <a name="xamarinforms-grid"></a>Xamarin.Forms のグリッド
 
@@ -54,7 +54,7 @@ ms.locfileid: "67649596"
 - **絶対**&ndash;列と、特定の固定の高さと幅の値を持つ行のサイズを設定します。 値として指定し、 `GridUnitType.Absolute` (C#) と`#`、XAML で`#`目的の値をされています。
 
 > [!NOTE]
-> 列の幅の値として設定`*`Xamarin.Forms で既定では、することにより、列が使用可能なスペースを埋めることです。 行の高さの値として設定されて`*`既定。
+> 列の幅の値は、既定`*`ではとして設定されます。これにより、列が使用可能な領域に収まるようになります。 行の高さの値も、既定で`*`として設定されます。
 
 次の 3 つの行と 2 つの列が必要なアプリケーションを考えてみます。 一番下の行を正確に 200px (縦) をある必要があり、一番上の行は、中央の行と高さが同じである 2 回必要があります。 左側の列に合わせたコンテンツ幅にする必要があるし、右側の列は、残りのスペースを埋める必要があります。
 
@@ -137,7 +137,7 @@ grid.Children.Add(bottomRight, 1, 1);
 
 上記のコードでは、4 つのラベル、2 つの列では、2 つの行とグリッドを作成します。 各ラベルが同じサイズにあるし、行をすべて使用可能な領域を使用する展開はことに注意してください。
 
-上記の例ではビューに追加されます、 [ `Grid.Children` ](xref:Xamarin.Forms.Grid.Children)コレクションを使用して、 [ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid+IGridList%3CT%3E.Add/p/Xamarin.Forms.View/System.Int32/System.Int32/)左と上の引数を指定するオーバー ロードします。 使用する場合、 [ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid+IGridList%3CT%3E.Add/p/Xamarin.Forms.View/System.Int32/System.Int32/System.Int32/System.Int32/) left を指定するオーバー ロード、右、上、および、下部にある引数の中に、左と上の引数は、常に内のセルを参照、 [ `Grid`](xref:Xamarin.Forms.Grid)右と外部にあるセルを参照する引数の下部にある場合があります、`Grid`します。 これは、右の引数は、左の引数より大きい必ず下部にある引数を最上位の引数よりも大きい必ずためです。 次の例は、両方を使用して同等のコードを示しています。`Add`オーバー ロードします。
+上記の例ではビューに追加されます、 [ `Grid.Children` ](xref:Xamarin.Forms.Grid.Children)コレクションを使用して、 [ `Add` ](xref:Xamarin.Forms.Grid.IGridList`1.Add*)左と上の引数を指定するオーバー ロードします。 使用する場合、 [ `Add` ](xref:Xamarin.Forms.Grid.IGridList`1.Add*) left を指定するオーバー ロード、右、上、および、下部にある引数の中に、左と上の引数は、常に内のセルを参照、 [ `Grid`](xref:Xamarin.Forms.Grid)右と外部にあるセルを参照する引数の下部にある場合があります、`Grid`します。 これは、右の引数は、左の引数より大きい必ず下部にある引数を最上位の引数よりも大きい必ずためです。 次の例は、両方を使用して同等のコードを示しています。`Add`オーバー ロードします。
 
 ```csharp
 // left, top

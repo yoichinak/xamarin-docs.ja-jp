@@ -1,35 +1,35 @@
 ---
-title: Workbooks のインストールと要件
-description: このドキュメントでは、ダウンロードして、サポートされているプラットフォームとシステム要件について説明する、Xamarin Workbooks をインストールする方法について説明します。
+title: ブックのインストールと要件
+description: このドキュメントでは、Xamarin Workbooks をダウンロードしてインストールする方法について説明します。サポートされるプラットフォームとシステム要件について説明します。
 ms.prod: xamarin
 ms.assetid: 9D4E10E8-A288-4C6C-9475-02969198C119
 author: lobrien
 ms.author: laobri
 ms.date: 06/19/2018
-ms.openlocfilehash: cb79323c416c107c35c465bc2a8815ab267cc451
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: d94a14bcd1486b7b64e9ce6d9fee6d36406b2710
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865947"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511850"
 ---
-# <a name="workbooks-installation-and-requirements"></a>Workbooks のインストールと要件
+# <a name="workbooks-installation-and-requirements"></a>ブックのインストールと要件
 
 <a name="install" />
 
-## <a name="download-and-install"></a>ダウンロードとインストール
+## <a name="download-and-install"></a>ダウンロードしてインストールする
 
 # <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
-1. チェック、[要件](#requirements)以下。
-2. ダウンロードしてインストール[ブックの Windows に Xamarin](https://dl.xamarin.com/interactive/XamarinInteractive.msi)します。
-3. 開始[いろいろ](~/tools/workbooks/workbook.md)ブックまたは試す、[サンプル](https://developer.xamarin.com/workbooks)
+1. 以下の[要件](#requirements)を確認してください。
+2. [Windows 用の Xamarin Workbooks を](https://dl.xamarin.com/interactive/XamarinInteractive.msi)ダウンロードしてインストールします。
+3. ブックでの[再生](~/tools/workbooks/workbook.md)を開始します。
 
 # <a name="macostabmacos"></a>[macOS](#tab/macos)
 
-1. チェック、[要件](#requirements)以下。
-2. ダウンロードしてインストール[for Mac の Xamarin Workbooks](https://dl.xamarin.com/interactive/XamarinInteractive.pkg)します。
-3. 開始[いろいろ](~/tools/workbooks/workbook.md)ブックまたは試す、[サンプル](https://developer.xamarin.com/workbooks)
+1. 以下の[要件](#requirements)を確認してください。
+2. [Mac 用の Xamarin Workbooks を](https://dl.xamarin.com/interactive/XamarinInteractive.pkg)ダウンロードしてインストールします。
+3. [再生](~/tools/workbooks/workbook.md)を開始します。
 
 -----
 
@@ -37,77 +37,77 @@ ms.locfileid: "67865947"
 
 #### <a name="supported-operating-systems"></a>サポートされるオペレーティング システム
 
-- **Mac** -OS X 10.11 以降
-- **Windows** -Windows 7 以上 (Internet Explorer 11 以降と .NET 4.6.1 以降)
+- **Mac** -OS X 10.11 以上
+- **Windows** -windows 7 以降 (Internet Explorer 11 以降および .net 4.6.1 以上)
 
-#### <a name="supported-app-platforms"></a>サポートされているアプリのプラットフォーム
+#### <a name="supported-app-platforms"></a>サポートされているアプリプラットフォーム
 
-|アプリ プラットフォーム|OS のサポート|メモ|
+|アプリのプラットフォーム|OS のサポート|メモ|
 |--- |--- |--- |
-|Mac|Mac でのみサポートされます。|
-|iOS|Mac および Windows でサポートされています|Mac は、Xamarin.iOS 11.0 と Xcode 9.0 以上をインストールする必要があります。 Windows で iOS ブックを実行するには、Mac ビルド ホスト上のすべての操作を実行している必要があります、[リモートの iOS シミュレーター](~/tools/ios-simulator/index.md) Windows にインストールされています。|
-|Android|Mac および Windows でサポートされています|仮想デバイスで Google、Visual Studio または Xamarin Android のエミュレーターを使用する必要があります > = 5.0|
-|WPF|Windows でのみサポートされます。|
+|Mac|Mac でのみサポートされています|
+|iOS|Mac および Windows でサポートされています|Mac には、Xamarin iOS 11.0 と Xcode 9.0 以降をインストールする必要があります。 Windows で iOS ブックを実行するには、上記のすべてを実行している Mac ビルドホストと、Windows にインストールされている[リモート Ios シミュレーター](~/tools/ios-simulator/index.md)が必要です。|
+|Android|Mac および Windows でサポートされています|仮想デバイス > = 5.0 を使用して、Google、Visual Studio、または Xamarin Android エミュレーターを使用する必要があります|
+|WPF|Windows でのみサポートされます|
 |コンソール (.NET Framework)|Mac および Windows でサポートされています|
 |コンソール (.NET Core)|Mac および Windows でサポートされています|
 
 
 ## <a name="reporting-bugs"></a>バグの報告
 
-ください[GitHub の問題の報告][bugs]、すべて、次の情報が含まれて。
+[GitHub で問題を報告][bugs]し、次の情報をすべて含めるようにしてください。
 
 ### <a name="log-files"></a>ログ ファイル
 
-ブックのクライアント ログ ファイルを常に添付するには。
+常にブックのクライアントログファイルをアタッチする:
 
-- Mac の場合: `~/Library/Logs/Xamarin/Workbooks/Xamarin Workbooks {date}.log`
+- Mac`~/Library/Logs/Xamarin/Workbooks/Xamarin Workbooks {date}.log`
 - Windows: `%LOCALAPPDATA%\Xamarin\Workbooks\logs\Xamarin Workbooks {date}.log`
 
-1.4.x では、メイン メニューの検索 (macOS) またはエクスプ ローラー (Windows) 直接ログ ファイルを選択する機能も機能します。
+1.4. x では、メインメニューから直接 Finder (macOS) またはエクスプローラー (Windows) のログファイルを選択する機能もあります。
 
-- **ヘルプ > ログ ファイルの表示**
+- **ログファイルの表示 > ヘルプ**
 
-#### <a name="log-paths-for-workbooks-13-and-earlier"></a>ブックの 1.3 以降のログのパス:
+#### <a name="log-paths-for-workbooks-13-and-earlier"></a>ブック1.3 以前のログパス:
 
-- Mac の場合: `~/Library/Logs/Xamarin/Inspector/Xamarin Inspector {date}.log`
+- Mac`~/Library/Logs/Xamarin/Inspector/Xamarin Inspector {date}.log`
 - Windows: `%LOCALAPPDATA%\Xamarin\Inspector\logs\Xamarin Inspector {date}.log`
 
 ### <a name="platform-version-information"></a>プラットフォームのバージョン情報
 
-オペレーティング システムの詳細を知る非常に便利ですし、Xamarin 製品をインストールします。
+お使いのオペレーティングシステムとインストールされている Xamarin 製品に関する詳細を知ることが非常に役立ちます。
 
-ブックのメイン メニューでは。
+ブックのメインメニューから、次のようにします。
 
-* **ヘルプ > バージョン情報のコピー**
+* **バージョン情報のコピー > ヘルプ**
 
-#### <a name="instructions-for-workbooks-13-and-earlier"></a>ブックの 1.3 以降の手順:
+#### <a name="instructions-for-workbooks-13-and-earlier"></a>ブック1.3 以前のブックの手順:
 
 Visual Studio For Mac
 
-- **Visual Studio > Visual Studio のバージョン情報 > 詳細を表示 > 情報のコピー**
-- バグ レポートに貼り付けます
+- **Visual studio について > Visual Studio については > 情報のコピー > 詳細の表示**
+- バグレポートに貼り付け
 
 Visual Studio
 
-- **ヘルプ > Visual Studio のバージョン情報 > 情報のコピー**
-- オペレーティング システムのバージョンと 32 ビットまたは 64 ビットの Windows を実行しているかどうかを通知しています。
+- **Visual Studio > コピー情報の > に関するヘルプ**
+- オペレーティングシステムのバージョンと、32ビットまたは64ビットの Windows を実行しているかどうかをお知らせください。
 
 ### <a name="samples"></a>サンプル
 
-アタッチするか、またはリンクする場合、 **.workbooks**バグをより迅速に解決に役立つ可能性があるファイルが使用すると、問題があります。
+問題が発生している**ブック**ファイルに添付またはリンクできる場合は、バグの迅速な解決に役立つことがあります。
 
 ### <a name="devices"></a>[デバイス]
 
-IOS または Android のブックの接続に問題があるため、既にオンになっている場合[、トラブルシューティングのページ](~/tools/workbooks/troubleshooting/index.md)を把握する必要があります。
+IOS または Android ブックの接続に問題があり、[トラブルシューティングのページ](~/tools/workbooks/troubleshooting/index.md)を既に確認している場合は、次の点について理解しておく必要があります。
 
 - 接続しようとしているデバイスの名前
 - デバイスの OS バージョン
-- Android:X86 を使用していることを確認しますエミュレーター。
-- Android:どのようなエミュレーターのプラットフォームを使用していますか。 Google エミュレーターでしょうか。
-  Visual Studio Android Emulator でしょうか。 Xamarin Android Player でしょうか。
-- Windows で iOS の場合:Xamarin リモート iOS シミュレーターのバージョンはインストールした (確認 **プログラムの追加/削除** で **コントロール パネルの**) でしょうか。
-- Windows で iOS の場合:Mac ビルド ホストのプラットフォームのバージョン情報のも提供してください。
-- デバイスにはネットワーク接続 (web ブラウザーを使用してチェック) がありますか。
+- AndroidX86 エミュレーターを使用していることを確認する
+- Androidどのエミュレータープラットフォームを使用していますか? Google Emulator ですか?
+  Visual Studio Android Emulator ですか? Xamarin Android Player ますか?
+- Windows 上の iOS:Xamarin リモート iOS シミュレーターのバージョンはインストールした (確認 **プログラムの追加/削除** で **コントロール パネルの**) でしょうか。
+- Windows 上の iOS:Mac ビルドホストのプラットフォームバージョン情報も指定してください
+- デバイスはネットワークに接続されていますか (web ブラウザーで確認してください)。
 
 [bugs]: https://github.com/Microsoft/workbooks/issues/new
 
@@ -115,35 +115,35 @@ IOS または Android のブックの接続に問題があるため、既にオ�
 
 ### <a name="windows"></a>Windows
 
-ブックを取得する方法によっては、2 つのアンインストール手順を実行する必要があります。 これらの両方をソフトウェアを完全にアンインストールを確認してください。
+ブックを取得した方法によっては、2つのアンインストール手順を実行する必要があります。 これらの両方を確認して、ソフトウェアを完全にアンインストールしてください。
 
 #### <a name="visual-studio-installer"></a>Visual Studio インストーラー
 
-Visual Studio 2017 がある場合は開く**Visual Studio インストーラー**、ファイルの場所と**個々 のコンポーネント**の**Xamarin Workbooks**します。 オンの場合、それをオフにし、順にクリックします**変更**をアンインストールします。
+Visual Studio 2017 を使用している場合は**Visual Studio インストーラー**を開き、**個々のコンポーネント**で**Xamarin Workbooks**を探します。 チェックボックスがオンになっている場合はオフにし、 **[変更]** をクリックしてアンインストールします。
 
 #### <a name="system-uninstall"></a>システムのアンインストール
 
-使用してアンインストールする必要がありますをインストールした場合のブック自分でダウンロードしたインストーラー、**アプリと機能**またはを使用して Windows 10 でのシステム設定 ページ**プログラムの追加/削除**コントロール以前のバージョンの Windows パネル。
+ダウンロードしたインストーラーを使用してブックをインストールした場合は、Windows 10 の**アプリ & 機能**の システム設定 ページまたは以前のバージョンの Windows のコントロールパネルにある **プログラムの追加と削除** を使用してブックをアンインストールする必要があります。
 
-> **開始 > 設定 > システム > アプリと機能**
+> **システム > アプリ & の機能 > > 設定を開始します**
 
-![](install-images/windows-remove.png "Xamarin Workbooks に記載されている&quot;アプリ&amp;機能&quot;")
+![](install-images/windows-remove.png "&quot;アプリ&amp;の機能に記載されている Xamarin Workbooks&quot;")
 
-**引き続き、ブックは、知識がなくても再インストール取得されないことを確認する Visual Studio インストーラーの手順に従う必要があります。**
+**その場合でも、Visual Studio インストーラーの手順に従って、ブックがユーザーの知らないうちに再インストールされないようにする必要があります。**
 
 <a name="uninstall-macos" />
 
 ### <a name="macos"></a>macOS
 
-以降で[1.2.2](https://developer.xamarin.com/releases/interactive/interactive-1.2/)、Xamarin Workbooks を実行して、ターミナルからアンインストールできます。
+[1.2.2](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/interactive/interactive-1.2.md)以降では、次を実行して、Xamarin Workbooks をターミナルからアンインストールできます。
 
 ```bash
 sudo /Library/Frameworks/Xamarin.Interactive.framework/Versions/Current/uninstall
 ```
 
-アンインストーラーは、ファイルとディレクトリが削除され続行する前に確認を要求について詳しく説明します。
+アンインストーラーは、削除するファイルとディレクトリの詳細を確認し、続行する前に確認メッセージを表示します。
 
-渡す、`-help`への引数、`uninstall`より高度なシナリオ用のスクリプト。
+より高度なシナリオを`uninstall`実現するには、スクリプトに引数を渡します。`-help`
 
 古いバージョンでは、次のものを手動で削除する必要があります。
 
@@ -152,13 +152,13 @@ sudo /Library/Frameworks/Xamarin.Interactive.framework/Versions/Current/uninstal
 3. アドイン `"~/Library/Application Support/XamarinStudio-6.0/LocalInstall/Addins/Xamarin.Interactive"` と `"~/Library/Application Support/XamarinStudio-6.0/LocalInstall/Addins/Xamarin.Inspector"` を削除します
 4. `/Library/Frameworks/Xamarin.Interactive.framework` および `/Library/Frameworks/Xamarin.Inspector.framework` にある Inspector のファイルとサポート ファイルを削除します
 
-## <a name="downgrading"></a>ダウン グレード
+## <a name="downgrading"></a>ダウングレード
 
-用のバンドル識別子**アプリケーション/Xamarin Workbooks.app**から変更`com.xamarin.Inspector`に`com.xamarin.Workbooks`1.4 のリリースでは、Workbooks と Inspector とは完全に分割します。
+ブックとインスペクターが完全に分割されているため、 `com.xamarin.Inspector` 1.4 `com.xamarin.Workbooks`リリースのからに変更されたアプリのバンドル識別子。
 
-古いインストーラーでのバグにより、1.3.2 または古いインストーラーを使用して 1.4 以降のリリースをダウン グレードすることはできません。
+以前のインストーラーのバグにより、1.3.2 またはそれ以前のインストーラーを使用して1.4 またはそれ以降のリリースをダウングレードすることはできません。
 
-1\.4 または 1.3.2 に新しいまたは古いからダウン グレードします。
+1\.4 以降から1.3.2 またはそれ以降にダウングレードするには、次のようにします。
 
-1. [Workbooks と Inspector を手動でアンインストールします。](#uninstall-macos)
-2. 実行、1.3.2 以前`.pkg`インストーラー
+1. [ブック & インスペクターを手動でアンインストールする](#uninstall-macos)
+2. 1\.3.2 またはそれ以前`.pkg`のインストーラーを実行する

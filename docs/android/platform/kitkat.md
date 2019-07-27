@@ -1,53 +1,53 @@
 ---
-title: KitKat 機能
-description: Android 4.4 (KitKat) は、ユーザーおよび開発者向け機能学ばなければで読み込まれています。 このガイドでは、これらの機能のいくつかを強調表示し、コード例と KitKat を最大限に活用するための実装の詳細を提供します。
+title: KitKat の機能
+description: Android 4.4 (KitKat) には、ユーザーと開発者向けの生涯の機能が組み込まれています。 このガイドでは、これらの機能のいくつかについて説明し、KitKat を最大限に活用するのに役立つコード例と実装の詳細を示します。
 ms.prod: xamarin
 ms.assetid: D3FDEA1C-F076-406F-BCC3-2A55D2C6ADEE
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 9572a08a2403bf13d74fc5fda7c62ec1fb2d1537
-ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
+ms.openlocfilehash: 11ec23abda6f1faae19ba9108150b9aaf55ef290
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67674703"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510575"
 ---
-# <a name="kitkat-features"></a>KitKat 機能
+# <a name="kitkat-features"></a>KitKat の機能
 
-_Android 4.4 (KitKat) は、ユーザーおよび開発者向け機能学ばなければで読み込まれています。このガイドでは、これらの機能のいくつかを強調表示し、コード例と KitKat を最大限に活用するための実装の詳細を提供します。_
+_Android 4.4 (KitKat) には、ユーザーと開発者向けの生涯の機能が組み込まれています。このガイドでは、これらの機能のいくつかについて説明し、KitKat を最大限に活用するのに役立つコード例と実装の詳細を示します。_
 
 ## <a name="overview"></a>概要
 
-Android 4.4 (API レベル 19) とも呼ばれます"KitKat"は、遅延 2013 でリリースされました。 KitKat は、さまざまな新機能および強化などを提供します。
+Android 4.4 (API レベル 19) ("KitKat" とも呼ばれます) は、2013の遅延でリリースされました。 KitKat には、次のようなさまざまな新機能と機能強化が用意されています。
 
--  [ユーザー エクスペリエンス](#user_experience)&ndash;簡単なアニメーション遷移フレームワーク、半透明の状態とナビゲーション バー、全画面表示のイマーシブ モードとユーザーのエクスペリエンスを向上させるを作成するのに役立ちます。
+-  [ユーザーエクスペリエンス](#user_experience)&ndash;移行フレームワーク、半透明のステータスとナビゲーションバー、全画面のイマーシブモードで簡単なアニメーションを使用すると、ユーザーのエクスペリエンスを向上させることができます。
 
--  [ユーザーがコンテンツ](#user_content)&ndash;ストレージ アクセス フレームワークを簡単にユーザー ファイルの管理は、画像の印刷、web サイト、およびその他のコンテンツが強化された印刷 Api で、簡単にします。
+-  [ユーザーのコンテンツ](#user_content)&ndash;ストレージアクセスフレームワークを使用したユーザーファイルの管理の簡素化。印刷 api の向上により、画像、web サイト、その他のコンテンツの印刷が簡単になりました。
 
--  [ハードウェア](#hardware) &ndash; NFC カード エミュレーションのホスト ベースの NFC カードにすべてのアプリを有効にする; を低電力センサーの実行、`SensorManager`します。
+-  [ハードウェア](#hardware)Nfc ホストベースのカードエミュレーションを使用してアプリを nfc カードに変換し、 `SensorManager`で低電力センサーを実行します。 &ndash;
 
--  [開発者ツール](#developer_tools)&ndash;スクリーン キャストのアプリケーションで利用できる Android Debug Bridge クライアント、Android SDK の一部として。
+-  [開発者ツール](#developer_tools)&ndash; Android Debug Bridge クライアントで動作中のアプリケーションを、Android SDK の一部として使用できるようにします。
 
 
-このガイドでは、Xamarin.Android 開発者向け KitKat の大まかな概要に加えて、KitKat に既存の Xamarin.Android アプリケーションを移行するためのガイダンスを提供します。
+このガイドでは、既存の Xamarin Android アプリケーションを KitKat に移行するためのガイダンスと、Xamarin Android 開発者向けの KitKat の概要について説明します。
 
 ## <a name="requirements"></a>必要条件
 
-KitKat を使用して Xamarin.Android アプリケーションを開発する必要があります*Xamarin.Android 4.11.0*または高い、Android 4.4 (API レベル 19) 次のスクリーン ショットに示すように、Android SDK Manager を使用してをインストールします。
+KitKat を使用して Xamarin Android アプリケーションを開発するには、次のスクリーンショットに示すように、Android SDK Manager を使用して*Xamarin android 4.11.0*以降と android 4.4 (API レベル 19) がインストールされている必要があります。
 
-[![Android SDK Manager で Android 4.4 を選択します。](kitkat-images/api19.png)](kitkat-images/api19.png#lightbox)
+[![Android SDK Manager での Android 4.4 の選択](kitkat-images/api19.png)](kitkat-images/api19.png#lightbox)
 
 <a name="Migrating_Your_App_to_KitKat" />
 
-## <a name="migrating-your-app-to-kitkat"></a>アプリは、KitKat への移行
+## <a name="migrating-your-app-to-kitkat"></a>KitKat へのアプリの移行
 
-このセクションでは、Android 4.4 に既存のアプリケーションを移行するには、いくつか最初応答項目を提供します。
+このセクションでは、既存のアプリケーションを Android 4.4 に移行するための最初の応答項目について説明します。
 
-### <a name="check-system-version"></a>システムのバージョンを確認してください。
+### <a name="check-system-version"></a>システムバージョンの確認
 
-Android の以前のバージョンと互換性があるアプリケーションに必要な場合は、次のコード例に示すように、システムのバージョン チェックですべて KitKat 固有のコードをラップしてください。
+アプリケーションが以前のバージョンの Android と互換性を持っている必要がある場合は、以下のコードサンプルに示すように、KitKat 固有のコードをシステムのバージョンチェックに必ずラップしてください。
 
 ```csharp
 if (Build.VERSION.SdkInt >= BuildVersionCodes.Kitkat) {
@@ -55,63 +55,63 @@ if (Build.VERSION.SdkInt >= BuildVersionCodes.Kitkat) {
 }
 ```
 
-### <a name="alarm-batching"></a>アラームがバッチ処理
+### <a name="alarm-batching"></a>アラームのバッチ処理
 
-Android では、アラームのサービスを使用して、バック グラウンドでアプリを指定された時間にスリープ解除します。 KitKat は、この手順さらに電源を保持するためにアラームをバッチ処理します。 つまり、KitKat はアプリごとの正確な時刻にウェイク、代わりに、同じ期間にスリープ解除し、それらを同時にスリープ解除する登録されているいくつかのアプリケーションをグループ化するが優先されます。
-指定した時間間隔中にアプリをウェイクするための Android を指示するには、呼び出す`SetWindow`上、 [ `AlarmManager`](https://developer.xamarin.com/api/type/Android.App.AlarmManager/)最小長、最大時間 (ミリ秒)、アプリがウェイク アップする前に経過時間、および実行する操作を渡して、でウェイク アップします。
-次のコードでは、30 分と、ウィンドウの設定時間から 1 時間の間ウェイクする必要があるアプリケーションの例を示します。
+Android では、アラームサービスを使用して、指定した時間にバックグラウンドでアプリをスリープ解除します。 KitKat は、アラームをバッチ処理して電源を保持することで、これをさらに一歩進めます。 つまり、各アプリを正確なタイミングでスリープ解除する代わりに、KitKat は、同じ期間にウェイクアップするように登録されている複数のアプリケーションをグループ化し、同時にスリープ解除します。
+指定された期間中にアプリをスリープ解除するように`SetWindow` Android に[`AlarmManager`](xref:Android.App.AlarmManager)指示するには、でを呼び出し、アプリがウェイクアップされるまでの経過時間 (ミリ秒単位) と、ウェイクアップ時に実行する操作を渡します。
+次のコードは、ウィンドウが設定された時間から30分間にウェイクアップする必要があるアプリケーションの例を示しています。
 
 ```csharp
 AlarmManager alarmManager = (AlarmManager)GetSystemService(AlarmService);
 alarmManager.SetWindow (AlarmType.Rtc, AlarmManager.IntervalHalfHour, AlarmManager.IntervalHour, pendingIntent);
 ```
 
-アプリを正確な時間にスリープ解除を続行するには使用`SetExact`では、アプリは、ウェイク アップする必要があります、正確な時間および実行する操作を渡して。
+アプリを正確にスリープ解除するには、を`SetExact`使用して、アプリをウェイクアップする正確な時間を渡し、次の操作を実行します。
 
 ```csharp
 alarmManager.SetExact (AlarmType.Rtc, AlarmManager.IntervalDay, pendingIntent);
 ```
 
-不要になった KitKat では、正確な繰り返しのアラームを設定することができます。 使用するアプリケーション [`SetRepeating`](https://developer.xamarin.com/api/member/Android.App.AlarmManager.SetRepeating/p/Android.App.AlarmType/System.Int64/System.Int64/Android.App.PendingIntent/)
-正確なアラームを手動で各アラームをトリガーする必要はの機能を必要とします。
+KitKat では、正確な繰り返しアラームを設定できなくなりました。 を使用するアプリケーション[`SetRepeating`](xref:Android.App.AlarmManager.SetRepeating*)
+また、正確なアラームを使用するには、各アラームを手動でトリガーする必要があります。
 
 ### <a name="external-storage"></a>外部ストレージ
 
-外部ストレージは、2 種類のアプリケーション、および複数のアプリケーションで共有データに固有の記憶域に分けられますようになりました。 読み取りと書き込みの外部ストレージにアプリの特定の場所には、特殊なアクセス許可必要ありません。 これで共有記憶域上のデータと対話する必要があります、`READ_EXTERNAL_STORAGE`または`WRITE_EXTERNAL_STORAGE`権限。 そのため、2 つの種類に分類できます。
+外部ストレージは、アプリケーションに固有のストレージと複数のアプリケーションによって共有されるデータの2種類に分類されるようになりました。 外部ストレージ上のアプリ固有の場所に対する読み取りと書き込みには、特別なアクセス許可は必要ありません。 共有ストレージ上のデータと対話するに`READ_EXTERNAL_STORAGE`は`WRITE_EXTERNAL_STORAGE` 、またはのアクセス許可が必要です。 この2種類は、次のように分類できます。
 
--  メソッドを呼び出して、ファイルまたはディレクトリのパスを取得している場合`Context`- たとえば、 [`GetExternalFilesDir`](https://developer.xamarin.com/api/member/Android.Content.Context.GetExternalFilesDir/p/System.String/)
-   または [`GetExternalCacheDirs`](https://developer.xamarin.com/api/member/Android.Content.Context.GetExternalCacheDirs%28%29/)
-   - アプリには、追加のアクセス許可は不要です。
+-  で`Context`メソッドを呼び出すことによってファイルまたはディレクトリのパスを取得している場合は、次のようになります。[`GetExternalFilesDir`](xref:Android.Content.Context.GetExternalFilesDir*)
+   もしくは[`GetExternalCacheDirs`](xref:Android.Content.Context.GetExternalCacheDirs)
+   - アプリには追加のアクセス許可は必要ありません。
 
--  プロパティへのアクセスまたはでメソッドを呼び出すことによってファイルまたはディレクトリのパスを取得している場合`Environment`など [`GetExternalStorageDirectory`](https://developer.xamarin.com/api/property/Android.OS.Environment.ExternalStorageDirectory/)
-   または [`GetExternalStoragePublicDirectory`](https://developer.xamarin.com/api/member/Android.OS.Environment.GetExternalStoragePublicDirectory/p/System.String/)
-   、アプリが必要、`READ_EXTERNAL_STORAGE`または`WRITE_EXTERNAL_STORAGE`権限。
+-  プロパティにアクセスするか、で`Environment`メソッドを呼び出すことによって、ファイルまたはディレクトリのパスを取得している場合は。[`GetExternalStorageDirectory`](xref:Android.OS.Environment.ExternalStorageDirectory)
+   もしくは[`GetExternalStoragePublicDirectory`](xref:Android.OS.Environment.GetExternalStoragePublicDirectory*)
+   アプリには、また`READ_EXTERNAL_STORAGE`は`WRITE_EXTERNAL_STORAGE`のアクセス許可が必要です。
 
 > [!NOTE]
-> `WRITE_EXTERNAL_STORAGE` 意味、`READ_EXTERNAL_STORAGE`しかを 1 つのアクセス許可を設定する必要があるため、アクセス許可。
+> `WRITE_EXTERNAL_STORAGE`はアクセス`READ_EXTERNAL_STORAGE`許可を意味するので、1つのアクセス許可のみを設定する必要があります。
 
-### <a name="sms-consolidation"></a>SMS の統合
+### <a name="sms-consolidation"></a>SMS 統合
 
-KitKat は、ユーザーが選択した 1 つの既定のアプリケーションで SMS コンテンツをすべて集約することによって、ユーザーのメッセージ処理を簡略化します。 開発者は、既定のメッセージング アプリケーションとして選択可能なアプリできるようにし、コードと有効期間に、アプリケーションが選択されていない場合は、適切に動作します。 KitKat に SMS アプリの移行に関する詳細についてを参照してください、 [Your SMS アプリの準備 KitKat](http://android-developers.blogspot.com/2013/10/getting-your-sms-apps-ready-for-kitkat.html) Google からのガイド。
+KitKat は、ユーザーによって選択された1つの既定のアプリケーションのすべての SMS コンテンツを集計することによって、ユーザーのメッセージングを簡略化します。 開発者は、アプリを既定のメッセージングアプリケーションとして選択可能にし、アプリケーションが選択されていない場合にコード内で適切に動作するようにします。 SMS アプリを KitKat に移行する方法の詳細については、Google の「 [Sms アプリを準備する KitKat](http://android-developers.blogspot.com/2013/10/getting-your-sms-apps-ready-for-kitkat.html) 」ガイドを参照してください。
 
 ### <a name="webview-apps"></a>WebView アプリ
 
-[WebView](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) KitKat で、作り直しを取得します。 最大の変更にコンテンツを読み込むためのセキュリティを追加、`WebView`します。 以前の API バージョンを対象とするほとんどのアプリケーションが期待どおりに機能、中にテストを使用するアプリケーション、`WebView`クラスは強くお勧めします。 WebView の影響を受ける Api の詳細については、Android を参照してください[Android 4.4 内の web ビューへの移行](https://developer.android.com/guide/webapps/migrating.html)ドキュメント。
+[WebView](xref:Android.Webkit.WebView)が KitKat で作り直しを持っています。 最大の変更は、 `WebView`コンテンツをに読み込むためのセキュリティを強化することです。 古い API バージョンを対象とするほとんどのアプリケーションは想定どおりに動作します`WebView`が、クラスを使用するアプリケーションをテストすることを強くお勧めします。 影響を受ける WebView Api の詳細については、android 4.4 ドキュメントの「web ビューへの Android の[移行」](https://developer.android.com/guide/webapps/migrating.html)を参照してください。
 
 <a name="user_experience" />
 
-## <a name="user-experience"></a>ユーザー体験
+## <a name="user-experience"></a>ユーザー エクスペリエンス
 
-KitKat は、プロパティのアニメーションとテーマの半透明の UI オプションを処理するための新しい移行フレームワークを含む、ユーザー エクスペリエンスを強化するためにいくつかの新しい Api が付属します。 これらの変更について取り上げます。
+KitKat には、ユーザーエクスペリエンスを向上させるための新しい Api がいくつか付属しています。これには、プロパティアニメーションを処理するための新しい遷移フレームワークや、テーマ用の半透明 UI オプションが含まれます。 これらの変更については、以下で説明します。
 
 ### <a name="transition-framework"></a>移行フレームワーク
 
-移行フレームワークは、実装が簡単にアニメーションを使用します。 KitKat では、1 つの行のコードでは、シンプル プロパティのアニメーションを実行したりを使用して遷移をカスタマイズできます。*シーン*します。
+移行フレームワークを使用すると、アニメーションの実装が容易になります。 KitKat を使用すると、1行のコードだけで簡単なプロパティアニメーションを実行したり、*シーン*を使用して切り替え効果をカスタマイズしたりできます。
 
-#### <a name="simple-property-animation"></a>シンプル プロパティのアニメーション
+#### <a name="simple-property-animation"></a>単純なプロパティアニメーション
 
-新しい Android 遷移ライブラリには、プロパティのアニメーションの背後にあるコードが簡略化します。 フレームワークでは、最小限のコードで単純なアニメーションを実行できます。 たとえば、次のコード サンプルを使用します。 [`TransitionManager.BeginDelayedTransition`](https://developer.xamarin.com/api/member/Android.Transitions.TransitionManager.BeginDelayedTransition/p/Android.Views.ViewGroup/Android.Transitions.Transition/)
-表示と非表示をアニメーション化する、 `TextView`:
+新しい Android 遷移ライブラリは、プロパティアニメーションの分離コードを簡略化します。 フレームワークを使用すると、最小限のコードで単純なアニメーションを実行できます。 たとえば、次のコードサンプルではを使用します。[`TransitionManager.BeginDelayedTransition`](xref:Android.Transitions.TransitionManager.BeginDelayedTransition*)
+の`TextView`表示と非表示をアニメーション化するには:
 
 ```csharp
 using Android.Transitions;
@@ -148,30 +148,30 @@ public class MainActivity : Activity
 }
 ```
 
-上記の例では、移行フレームワークを使用して、自動プロパティの値が変更の間の既定の切り替え効果を作成します。 アニメーションが 1 行のコードによって処理されるため、行うことができます簡単にこれ以前のバージョンの Android との互換性をラップして、`BeginDelayedTransition`システムのバージョン チェックで呼び出します。 参照してください、 [Your KitKat アプリに移行する](#Migrating_Your_App_to_KitKat)詳細セクション。
+上の例では、遷移フレームワークを使用して、変化するプロパティ値の間に自動的に既定の遷移を作成します。 アニメーションは1行のコードによって処理されるため、システムのバージョンチェックで`BeginDelayedTransition`呼び出しをラップすることで、以前のバージョンの Android との互換性を簡単に実現できます。 詳細については、「 [KitKat へのアプリの移行](#Migrating_Your_App_to_KitKat)」を参照してください。
 
-次のスクリーン ショットは、アニメーションの前にアプリを示しています。
+次のスクリーンショットは、アニメーションの前のアプリを示しています。
 
-[![アニメーションの開始前に、アプリのスクリーン ショット](kitkat-images/trans-before.png)](kitkat-images/trans-before.png#lightbox)
+[![アニメーションを開始する前のアプリのスクリーンショット](kitkat-images/trans-before.png)](kitkat-images/trans-before.png#lightbox)
 
-次のスクリーン ショットは、アニメーションの終了後、アプリを示しています。
+次のスクリーンショットは、アニメーションの後のアプリを示しています。
 
-[![アニメーションの完了後にアプリのスクリーン ショット](kitkat-images/trans-after.png)](kitkat-images/trans-after.png#lightbox)
+[![アニメーションが完了した後のアプリのスクリーンショット](kitkat-images/trans-after.png)](kitkat-images/trans-after.png#lightbox)
 
-詳細については、次のセクションのシーンを使用した移行に制御を取得できます。
+次のセクションで説明するように、バックグラウンドで切り替え効果をより詳細に制御できます。
 
-#### <a name="android-scenes"></a>Android のシーン
+#### <a name="android-scenes"></a>Android シーン
 
-[シーン](https://developer.xamarin.com/api/type/Android.Transitions.Scene/)アニメーションの詳細に制御を開発者に提供するために移行フレームワークの一部として導入されました。 シーンでは、UI の動的な領域を作成します。 コンテナーといくつかのバージョンでは、またはコンテナーの内部 XML コンテンツを"シーン"を指定すると、Android は、残りのシーン間の遷移をアニメーション化する作業の。 Android のシーンでは、開発側で最低限の作業を複雑なアニメーションを作成できます。
+[バックグラウンド](xref:Android.Transitions.Scene)は、開発者がアニメーションをより細かく制御できるように、移行フレームワークの一部として導入されました。 シーン: UI で動的な領域を作成します。コンテナー、いくつかのバージョン、または "シーン" をコンテナー内の XML コンテンツに対して指定します。 Android は、残りの作業を行って、バックグラウンド間の遷移をアニメーション化します。 Android シーンを使用すると、開発側での作業を最小限に抑えて複雑なアニメーションを作成できます。
 
-動的なコンテンツを格納している静的の UI 要素は、呼び出された、*コンテナー*または*基本シーン*します。 次の例では、Android Designer を使用して、作成、`RelativeLayout`と呼ばれる`container`:
+動的コンテンツを格納する静的 UI 要素は、*コンテナー*または*シーンベース*と呼ばれるです。 次の例では、Android Designer を使用`RelativeLayout`し`container`て、という名前のを作成します。
 
-[![Android Designer を使用して、[相対レイアウト] コンテナーを作成するには](kitkat-images/container.png)](kitkat-images/container.png#lightbox)
+[![Android Designer を使用した RelativeLayout コンテナーの作成](kitkat-images/container.png)](kitkat-images/container.png#lightbox)
 
-サンプル レイアウトは、という名前のボタンも定義されています。`sceneButton`下、`container`します。 このボタンは、遷移をトリガーします。
+このサンプルレイアウトでは、の`sceneButton` `container`下に呼び出されるボタンも定義されています。 このボタンをクリックすると、移行がトリガーされます。
 
-コンテナー内で動的なコンテンツには、2 つの新しい Android レイアウトが必要です。 これらのレイアウトがコードのみを指定*内*コンテナー。
-次のサンプル コードと呼ばれるレイアウトを定義します。 *Scene1* 2 つの"キット"を読み取り、テキスト フィールドと"Kat"をそれぞれ含むと 2 番目のレイアウトと呼ばれる*Scene2*逆に、同じテキスト フィールドを格納しています。 XML は次のとおりです。
+コンテナー内の動的コンテンツには、2つの新しい Android レイアウトが必要です。 これらのレイアウトでは、コンテナー*内*のコードのみが指定されます。
+次のコード例では、 *Scene1*という名前のレイアウトを定義しています。これには、"Kit" と "kat" の2つのテキストフィールドがそれぞれ含まれています。また、 *Scene2*と呼ばれる2番目のレイアウトで、同じテキストフィールドが反転されています。 XML は次のとおりです。
 
  **Scene1.axml**:
 
@@ -215,9 +215,9 @@ public class MainActivity : Activity
 </merge>
 ```
 
-使用して上記の例`merge`を短いコードの表示を作成し、階層の表示を簡略化します。 詳細をご覧ください`merge`レイアウト[ここ](http://android-developers.blogspot.com/2009/03/android-layout-tricks-3-optimize-by.html)します。
+上の例で`merge`は、を使用してビューコードを短くし、ビュー階層を簡素化しています。 レイアウトの詳細につい`merge`ては、[こちら](http://android-developers.blogspot.com/2009/03/android-layout-tricks-3-optimize-by.html)を参照してください。
 
-シーンが呼び出すことによって作成された[ `Scene.GetSceneForLayout`](https://developer.xamarin.com/api/member/Android.Transitions.Scene.GetSceneForLayout/p/Android.Views.ViewGroup/System.Int32/Android.Content.Context/)コンテナー オブジェクト、シーンのレイアウトのファイルと現在のリソース ID を渡して、`Context`次のコード例に示しますように。
+シーンを作成するには[`Scene.GetSceneForLayout`](xref:Android.Transitions.Scene.GetSceneForLayout*)、次のコード例に示すように、を呼び出して、コンテナーオブジェクト、シーンのレイアウト`Context`ファイルのリソース ID、現在のを渡します。
 
 ```csharp
 RelativeLayout container = FindViewById<RelativeLayout> (Resource.Id.container);
@@ -228,7 +228,7 @@ Scene scene2 = Scene.GetSceneForLayout(container, Resource.Layout.Scene2, this);
 scene1.Enter();
 ```
 
-既定の切り替えの値を持つ Android をアニメーション化の 2 つのシーン間反転 ボタンをクリックすると。
+ボタンをクリックすると、次の2つのシーンが反転されます。 Android では、既定の遷移値がアニメーション化されます。
 
 ```csharp
 sceneButton.Click += (o, e) => {
@@ -240,26 +240,26 @@ sceneButton.Click += (o, e) => {
 };
 ```
 
-次のスクリーン ショットは、アニメーション前にシーンを示しています。
+次のスクリーンショットは、アニメーションの前のシーンを示しています。
 
-[![アニメーションの開始前に、アプリのスクリーン ショット](kitkat-images/trans-after.png)](kitkat-images/trans-after.png#lightbox)
+[![アニメーションを開始する前のアプリのスクリーンショット](kitkat-images/trans-after.png)](kitkat-images/trans-after.png#lightbox)
 
-次のスクリーン ショットでは、アニメーションの終了後、シーンを示しています。
+次のスクリーンショットは、アニメーションの後のシーンを示しています。
 
-[![アニメーションの終了後、アプリのスクリーン ショット](kitkat-images/scene.png)](kitkat-images/scene.png#lightbox)
+[![アニメーションが完了した後のアプリのスクリーンショット](kitkat-images/scene.png)](kitkat-images/scene.png#lightbox)
 
 
 > [!NOTE]
-> [既知のバグ](https://code.google.com/p/android/issues/detail?id=62450)Android の遷移のシーンを原因となるライブラリを使用して作成`GetSceneForLayout`2 回目、ユーザーのアクティビティ間を移動するときに中断します。 Java の回避策が記載されている[ここ](http://www.doubleencore.com/2013/11/new-transitions-framework/)します。
+> Android の遷移ライブラリには[既知のバグ](https://code.google.com/p/android/issues/detail?id=62450)があります。これに`GetSceneForLayout`より、を使用して作成されたシーンは、ユーザーが2回目にアクティビティを移動したときに中断されます。 Java の回避策については、[こちら](http://www.doubleencore.com/2013/11/new-transitions-framework/)を参照してください。
 
 
-##### <a name="custom-transitions-in-scenes"></a>シーン内のカスタムの移行
+##### <a name="custom-transitions-in-scenes"></a>バックグラウンドでのカスタム遷移
 
-内の xml リソース ファイルでカスタム遷移を定義することができます、`transition`ディレクトリ`Resources`次のスクリーン ショットに示すようにします。
+次のスクリーンショットに示すように、カスタム遷移は、 `transition`の下`Resources`のディレクトリにある xml リソースファイルで定義できます。
 
-[![リソースの移行/ディレクトリの下の transition.xml ファイルの場所](kitkat-images/resources.png)](kitkat-images/resources.png#lightbox)
+[![リソース/遷移ディレクトリの下にある遷移の .xml ファイルの場所](kitkat-images/resources.png)](kitkat-images/resources.png#lightbox)
 
-次のコード サンプルは、5 秒間アニメーション化を使用して切り替えを定義、[インターポレーターをしまった](https://developer.android.com/reference/android/views/animation/OvershootInterpolator.html):
+次のコードサンプルでは、5秒間アニメーション化し、[超え interpolator](https://developer.android.com/reference/android/views/animation/OvershootInterpolator.html)を使用する遷移を定義しています。
 
 ```xml
 <changeBounds
@@ -268,13 +268,13 @@ sceneButton.Click += (o, e) => {
   android:interpolator="@android:anim/overshoot_interpolator" />
 ```
 
-アクティビティの遷移が作成されたを使用して、 [TransitionInflater](https://developer.xamarin.com/api/type/Android.Transitions.TransitionInflater/)次のコードに示しますように。
+遷移は、次のコードに示すように、 [TransitionInflater](xref:Android.Transitions.TransitionInflater)を使用してアクティビティ内に作成されます。
 
 ```csharp
 Transition transition = TransitionInflater.From(this).InflateTransition(Resource.Transition.transition);
 ```
 
-新しい移行に追加し、`Go`アニメーションが開始される呼び出し。
+次に、アニメーションを開始する`Go`呼び出しに新しい遷移を追加します。
 
 ```csharp
 TransitionManager.Go (scene1, transition);
@@ -282,16 +282,16 @@ TransitionManager.Go (scene1, transition);
 
 ### <a name="translucent-ui"></a>半透明の UI
 
-KitKat をより細かく制御テーマ オプションの半透明の状態とナビゲーション バーを使用してアプリを示しています。 使用して、Android のテーマを定義する、同じ XML ファイル内のシステム UI 要素の透明度を変更することができます。 KitKat には、次のプロパティが導入されています。
+KitKat を使用すると、オプションの半透明状態とナビゲーションバーを使用して、アプリのテーマをより細かく制御できます。 Android テーマを定義するために使用するのと同じ XML ファイル内のシステム UI 要素の透明度を変更できます。 KitKat には、次のプロパティが導入されています。
 
--  `windowTranslucentStatus` -に設定すると true は、上部のステータス バー半透明です。
+-  `windowTranslucentStatus`-True に設定すると、最上位のステータスバーが半透明になります。
 
--  `windowTranslucentNavigation` -に設定すると true は、下部にあるナビゲーション バー半透明です。
+-  `windowTranslucentNavigation`-True に設定すると、下部のナビゲーションバーが半透明になります。
 
--  `fitsSystemWindows` -上部または下部のバーを transcluent に設定すると、既定で透過的な UI 要素の下にコンテンツがシフトします。 このプロパティを設定`true`コンテンツが半透明のシステムの UI 要素を持つ重複するを防ぐために簡単な方法です。
+-  `fitsSystemWindows`-上または下のバーを transcluent に設定すると、既定で透過的 UI 要素の下にコンテンツがシフトされます。 このプロパティをに`true`設定することは、コンテンツが半透明のシステム UI 要素と重複しないようにするための簡単な方法です。
 
 
-次のコードでは、半透明の状態とナビゲーション バーでテーマを定義します。
+次のコードは、半透明のステータスとナビゲーションバーを持つテーマを定義します。
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -310,30 +310,30 @@ KitKat をより細かく制御テーマ オプションの半透明の状態と
 </resources>
 ```
 
-次のスクリーン ショットは、半透明の状態、ナビゲーション バーの上のテーマを示しています。
+次のスクリーンショットは、半透明のステータスとナビゲーションバーのあるテーマを示しています。
 
-[![半透明の状態とナビゲーション バーを使用したアプリのスクリーン ショットの例](kitkat-images/theme.png)](kitkat-images/theme.png#lightbox)
+[![半透明のステータスとナビゲーションバーを持つアプリの例のスクリーンショット](kitkat-images/theme.png)](kitkat-images/theme.png#lightbox)
 
 <a name="user_content" />
 
-## <a name="user-content"></a>ユーザー コンテンツ
+## <a name="user-content"></a>ユーザーのコンテンツ
 
-### <a name="storage-access-framework"></a>ストレージ アクセス フレームワーク
+### <a name="storage-access-framework"></a>ストレージアクセスフレームワーク
 
-ストレージ アクセス フレームワーク (SAF) は、イメージ、ビデオ、ドキュメントなどの格納されているコンテンツと対話するユーザーの新しい方法です。 コンテンツを処理するためにアプリケーションを選択するダイアログ ボックスでユーザーを表示するのではなく KitKat は、データ集計の 1 つの場所にアクセスするユーザーを許可する新しい UI が開きます。 コンテンツが選択されているし、ユーザーは、コンテンツを要求したアプリケーションに戻りますアプリ エクスペリエンスを通常どおりに続行されます。
+ストレージアクセスフレームワーク (SAF) は、画像、ビデオ、ドキュメントなどの保存されたコンテンツをユーザーが操作するための新しい方法です。 KitKat は、コンテンツを処理するアプリケーションを選択するためのダイアログを表示するのではなく、ユーザーが1つの集約された場所でデータにアクセスできるようにする新しい UI を開きます。 コンテンツが選択されると、ユーザーはコンテンツを要求したアプリケーションに戻り、アプリのエクスペリエンスは通常どおり続行されます。
 
-この変更には、開発者側で 2 つのアクションが必要です。 プロバイダーからのコンテンツを必要とするアプリが最初に、要求元のコンテンツの新しい方法を更新する必要があります。 データを書き込む、2 つ目のアプリケーション、`ContentProvider`新しいフレームワークを使用するように変更する必要があります。 どちらのシナリオは、新しいに依存します。 [`DocumentsProvider`](https://developer.xamarin.com/api/type/Android.Provider.DocumentsProvider/)
+この変更には、開発者側で2つのアクションが必要です。まず、プロバイダーのコンテンツを必要とするアプリを、コンテンツを要求する新しい方法に更新する必要があります。 次に、データをに`ContentProvider`書き込むアプリケーションを、新しいフレームワークを使用するように変更する必要があります。 どちらのシナリオも新しい[`DocumentsProvider`](xref:Android.Provider.DocumentsProvider)
 [API]。
 
 #### <a name="documentsprovider"></a>DocumentsProvider
 
-KitKat との対話で`ContentProviders`で抽象化は、`DocumentsProvider`クラス。 つまり、ある SAF は関係ありませんデータが物理的には、どこからアクセスできる限り、 `DocumentsProvider` API。 ローカル プロバイダーは、クラウド サービス、および外部記憶装置インターフェイスは同じで、同じ方法で処理がすべての使用、ユーザーのコンテンツと対話する 1 つの場所で、ユーザーと開発者を提供することです。
+KitKat では、と`ContentProviders`の相互作用は`DocumentsProvider`クラスで抽象化されています。 つまり、SAF は、API を`DocumentsProvider`介してアクセスできる限り、データの物理的な場所を気にすることはできません。 ローカルプロバイダー、クラウドサービス、および外部ストレージデバイスはすべて同じインターフェイスを使用し、同じ方法で処理されます。これにより、ユーザーと開発者は、ユーザーのコンテンツを1か所で操作できるようになります。
 
-このセクションでは、読み込み、記憶域アクセス フレームワークでコンテンツを保存する方法について説明します。
+このセクションでは、ストレージアクセスフレームワークを使用してコンテンツを読み込んで保存する方法について説明します。
 
-#### <a name="request-content-from-a-provider"></a>コンテンツ プロバイダーからの要求します。
+#### <a name="request-content-from-a-provider"></a>プロバイダーからのコンテンツの要求
 
-わかります KitKat SAF で UI を使用してコンテンツを選択すること、`ActionOpenDocument`目的で、デバイスで使用できるすべてのコンテンツ プロバイダーに接続することを示します。 いくつかフィルター処理をこの目的を指定して追加できます`CategoryOpenable`、つまり、(つまりアクセス、利用可能なコンテンツ) を開くことができる唯一のコンテンツが返されます。 KitKat が、コンテンツをフィルター処理を許可しても、`MimeType`します。 イメージを指定することによってイメージの結果をフィルター次のコード例では、 `MimeType`:
+KitKat は、SAF UI を使用してコンテンツを選択することを意図`ActionOpenDocument`しています。これは、デバイスで利用可能なすべてのコンテンツプロバイダーに接続することを意味します。 を指定`CategoryOpenable`することによって、この目的にフィルターを追加できます。これは、開くことができるコンテンツ (つまり、アクセス可能なコンテンツ) のみが返されることを意味します。 KitKat では、を使用して`MimeType`コンテンツをフィルター処理することもできます。 たとえば、次のコードはイメージ`MimeType`を指定することによって、イメージの結果をフィルター処理します。
 
 ```csharp
 Intent intent = new Intent (Intent.ActionOpenDocument);
@@ -342,11 +342,11 @@ intent.SetType ("image/*");
 StartActivityForResult (intent, save_request_code);
 ```
 
-呼び出す`StartActivityForResult`ユーザー イメージの選択を参照できます、SAF UI を起動します。
+を`StartActivityForResult`呼び出すと、SAF UI が起動されます。ユーザーはこれを参照してイメージを選択できます。
 
-[![ストレージ アクセス フレームワーク イメージへの参照を使用するアプリのスクリーン ショットの例](kitkat-images/saf-ui.png)](kitkat-images/saf-ui.png#lightbox)
+[![イメージを参照するためにストレージアクセスフレームワークを使用するアプリのスクリーンショットの例](kitkat-images/saf-ui.png)](kitkat-images/saf-ui.png#lightbox)
 
-ユーザーが、イメージを選択後`OnActivityResult`を返します、`Android.Net.Uri`の選択したファイル。 次のコード例では、ユーザーのイメージの選択が表示されます。
+ユーザーがイメージを選択すると、 `OnActivityResult`選択し`Android.Net.Uri`たファイルのが返されます。 次のコード例は、ユーザーのイメージ選択を示しています。
 
 ```csharp
 protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
@@ -360,9 +360,9 @@ protected override void OnActivityResult(int requestCode, Result resultCode, Int
 }
 ```
 
-#### <a name="write-content-to-a-provider"></a>コンテンツ プロバイダーを書き込む
+#### <a name="write-content-to-a-provider"></a>プロバイダーへのコンテンツの書き込み
 
-SAF UI からのコンテンツの読み込み、だけでなく KitKat することもできますいずれかにコンテンツを保存`ContentProvider`を実装する、 `DocumentProvider` API。 コンテンツの使用を保存、`Intent`で`ActionCreateDocument`:
+KitKat では、SAF UI からコンテンツを読み込むだけでなく、 `ContentProvider` `DocumentProvider` API を実装する任意のにコンテンツを保存することもできます。 コンテンツを保存する`Intent`に`ActionCreateDocument`は、次のものを使用します。
 
 ```csharp
 Intent intentCreate = new Intent (Intent.ActionCreateDocument);
@@ -372,11 +372,11 @@ intentCreate.PutExtra (Intent.ExtraTitle, "NewDoc");
 StartActivityForResult (intentCreate, write_request_code);
 ```
 
-上記のコード サンプルでは、ユーザーがファイル名を変更し、新しいファイルを格納するディレクトリを選択できるようにすること、SAF UI を読み込みます。
+上記のコードサンプルでは、SAF UI が読み込まれ、ユーザーはファイル名を変更し、新しいファイルを格納するディレクトリを選択できます。
 
-[![NewDoc をダウンロード ディレクトリにファイル名を変更するユーザーのスクリーン ショット](kitkat-images/saf-save.png)](kitkat-images/saf-save.png#lightbox)
+[![ダウンロードディレクトリのファイル名を NewDoc に変更したユーザーのスクリーンショット](kitkat-images/saf-save.png)](kitkat-images/saf-save.png#lightbox)
 
-押されたとき**保存**、`OnActivityResult`が渡される、`Android.Net.Uri`アクセスするのには、新しく作成されたファイルの`data.Data`します。 新しいファイルにデータをストリーミングする uri を使用できます。
+ユーザーが **[保存]** を`OnActivityResult`押すと、 `Android.Net.Uri`新しく作成されたファイルのが渡されます`data.Data`。これには、を使用してアクセスできます。 Uri は、新しいファイルにデータをストリーミングするために使用できます。
 
 ```csharp
 protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
@@ -393,41 +393,41 @@ protected override void OnActivityResult(int requestCode, Result resultCode, Int
 }
 ```
 
-注意してください。 [`ContentResolver.OpenOutputStream(Android.Net.Uri)`](https://developer.xamarin.com/api/member/Android.Content.ContentResolver.OpenOutputStream/(Android.Net.Uri))
-返します、`System.IO.Stream`ので、ストリーミング プロセス全体を .NET で記述できます。
+この点に注意してください。[`ContentResolver.OpenOutputStream(Android.Net.Uri)`](xref:Android.Content.ContentResolver.OpenOutputStream*)
+は`System.IO.Stream`を返します。したがって、ストリーミングプロセス全体を .net で記述できます。
 
-読み込みの詳細については、作成、およびストレージ アクセス フレームワークでのコンテンツの編集を参照してください、[ストレージ アクセス フレームワークの Android ドキュメント](https://developer.android.com/guide/topics/providers/document-provider.html)します。
+ストレージアクセスフレームワークを使用したコンテンツの読み込み、作成、および編集の詳細については、[ストレージアクセスフレームワークの Android ドキュメント](https://developer.android.com/guide/topics/providers/document-provider.html)を参照してください。
 
-### <a name="printing"></a>印刷
+### <a name="printing"></a>Printing
 
-印刷コンテンツはの導入に伴い KitKat で簡素化され、[印刷サービス](https://developer.xamarin.com/api/namespace/Android.PrintServices/)と`PrintManager`します。 KitKat がフル活用するための最初の API バージョンではまた、 [Google のクラウドの印刷サービス Api](https://developers.google.com/cloud-print/)を使用して、 [Google Cloud Print アプリケーション](https://play.google.com/store/apps/details?id=com.google.android.apps.cloudprint)します。
-KitKat を自動的に付属するほとんどのデバイスが Google クラウド印刷のアプリをダウンロードし、 [HP 印刷サービス プラグイン](https://play.google.com/store/apps/details?id=com.hp.android.printservice)WiFi に最初に接続するとき。 移動して、ユーザーがデバイスの印刷設定を確認できます**設定 > システム > 印刷**:
+[印刷サービス](xref:Android.PrintServices)と`PrintManager`の導入により、KitKat でのコンテンツの印刷が簡略化されています。 また、KitKat は、google [Cloud print アプリケーション](https://play.google.com/store/apps/details?id=com.google.android.apps.cloudprint)を使用して[Google の Cloud print service api](https://developers.google.com/cloud-print/)を完全に活用するための最初の API バージョンでもあります。
+KitKat に付属しているほとんどのデバイスでは、最初に WiFi に接続するときに Google Cloud Print アプリと[HP Print Service プラグイン](https://play.google.com/store/apps/details?id=com.hp.android.printservice)が自動的にダウンロードされます。 ユーザーは、設定 **システム > 印刷** の順に移動して、自分のデバイスの印刷設定を確認でき > ます。
 
-[![印刷設定 画面のスクリーン ショットの例](kitkat-images/printing.png)](kitkat-images/printing.png#lightbox)
+[![[印刷の設定] 画面のスクリーンショットの例](kitkat-images/printing.png)](kitkat-images/printing.png#lightbox)
 
 
 > [!NOTE]
-> 印刷 Api は、既定で Google Cloud の印刷を使用する設定は、Android は、開発者は新しい Api を使用して印刷コンテンツを準備し、印刷処理を行うには、他のアプリケーションに送信をもできます。
+> 既定では、印刷 Api は Google Cloud Print と連動するように設定されていますが、開発者は、新しい Api を使用して印刷コンテンツを準備し、それを他のアプリケーションに送信して印刷処理を行うことができます。
 
 
 
 #### <a name="printing-html-content"></a>HTML コンテンツの印刷
 
-KitKat は自動的に作成、 [ `PrintDocumentAdapter` ](https://developer.xamarin.com/api/type/Android.Print.PrintDocumentAdapter/) web ビューを`WebView.CreatePrintDocumentAdapter`します。 Web コンテンツを印刷が連携して業務を[ `WebViewClient` ](https://developer.xamarin.com/api/type/Android.Webkit.WebViewClient/)する HTML コンテンツを読み込むを待機し、印刷オプションを [オプション] メニューで使用できるようにする、アクティビティと、アクティビティは、ユーザーが待機することができます[印刷] オプションと呼び出しを選択`Print`上、`PrintManager`します。 ここでは、画面上を印刷するために必要な基本的なセットアップの HTML コンテンツ。
+KitKat は、を[`PrintDocumentAdapter`](xref:Android.Print.PrintDocumentAdapter)使用して`WebView.CreatePrintDocumentAdapter`web ビューのを自動的に作成します。 Web コンテンツの印刷は、 [`WebViewClient`](xref:Android.Webkit.WebViewClient) HTML コンテンツが読み込まれるのを待ってから、[オプション] メニューで [印刷] オプションを使用できるようにすること、およびユーザーが [印刷] オプションを選択し、`Print`で。`PrintManager` このセクションでは、画面に表示される HTML コンテンツを印刷するために必要な基本的なセットアップについて説明します。
 
-読み込みと web コンテンツの印刷がインターネット アクセス許可が必要であることを確認してください。
+Web コンテンツの読み込みと印刷には、インターネットのアクセス許可が必要です。
 
-[![アプリケーションのオプションでのインターネット アクセス許可の設定](kitkat-images/internet.png)](kitkat-images/internet.png#lightbox)
+[![アプリオプションでのインターネットアクセス許可の設定](kitkat-images/internet.png)](kitkat-images/internet.png#lightbox)
 
-##### <a name="print-menu-item"></a>印刷メニュー項目
+##### <a name="print-menu-item"></a>[印刷] メニュー項目
 
-アクティビティの通常表示される印刷オプション[オプション メニュー](https://developer.android.com/guide/topics/ui/menus.html#options-menu)します。
-[オプション] メニューを使用して、アクティビティに対して操作を実行できます。 画面の右上隅にあると、次のような。
+印刷オプションは、通常、活動の [[オプション] メニュー](https://developer.android.com/guide/topics/ui/menus.html#options-menu)に表示されます。
+[オプション] メニューを使用すると、ユーザーはアクティビティに対してアクションを実行できます。 画面の右上隅にあり、次のように表示されます。
 
-[![画面の右上隅に表示される印刷メニュー項目の例のスクリーン ショット](kitkat-images/menu.png)](kitkat-images/menu.png#lightbox)
+[![画面の右上隅に表示される [印刷] メニュー項目のスクリーンショットの例](kitkat-images/menu.png)](kitkat-images/menu.png#lightbox)
 
 
-追加のメニュー項目を定義することができます、*メニュー*ディレクトリ*リソース*します。 次のコード サンプル メニュー項目を定義する[印刷](https://developer.xamarin.com/api/type/Android.Print.PrintManager/):
+追加のメニュー項目は、[*リソース*] の下の*メニュー*ディレクトリで定義できます。 次のコードでは、 [Print](xref:Android.Print.PrintManager)という名前のサンプルメニュー項目を定義しています。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -438,9 +438,9 @@ KitKat は自動的に作成、 [ `PrintDocumentAdapter` ](https://developer.xam
 </menu>
 ```
 
-を介して行われ、アクティビティの [オプション] メニューとの対話、`OnCreateOptionsMenu`と`OnOptionsItemSelected`メソッド。
-`OnCreateOptionsMenu` 印刷オプションのように、新しいメニュー項目を追加する場所、*メニュー* resources ディレクトリ。
-`OnOptionsItemSelected` メニューから、[印刷] オプションを選択すると、ユーザーをリッスンしの印刷を開始します。
+アクティビティの [オプション] メニューとの対話は、 `OnCreateOptionsMenu`メソッド`OnOptionsItemSelected`とメソッドを使用して行われます。
+`OnCreateOptionsMenu`*メニュー*リソースディレクトリから、[印刷] オプションなど、新しいメニュー項目を追加する場所です。
+`OnOptionsItemSelected`ユーザーがメニューから [印刷] オプションを選択するのを待機し、印刷を開始します。
 
 ```csharp
 bool dataLoaded;
@@ -464,11 +464,11 @@ public override bool OnOptionsItemSelected (IMenuItem item)
 }
 ```
 
-上記のコードでは、という名前の変数も定義します`dataLoaded`HTML コンテンツのステータスを追跡します。 `WebViewClient`オプション] メニューに [印刷メニュー項目を追加するアクティビティが認識できるようにすべてのコンテンツが読み込まれると、true には、この変数を設定します。
+また、上記のコードでは、 `dataLoaded` HTML コンテンツのステータスを追跡するためにという変数も定義されています。 は`WebViewClient` 、すべてのコンテンツが読み込まれたときに、この変数を true に設定します。そのため、アクティビティは [オプション] メニューに [印刷] メニュー項目を追加することを認識します。
 
 ##### <a name="webviewclient"></a>WebViewClient
 
-ジョブ、 `WebViewClient` 、内のデータを確認すること、`WebView`では、メニューに表示される印刷オプションを選択する前に完全に読み込まれるが、`OnPageFinished`メソッド。 `OnPageFinished` web コンテンツの読み込み、[完了] をリッスンし、そのオプション メニューを再作成するアクティビティに指示`InvalidateOptionsMenu`:
+のジョブ`WebViewClient`では、[印刷] オプションが`WebView`メニューに表示される前に、のデータが完全に読み込まれるように`OnPageFinished`します。これは、メソッドを使用して実行します。 `OnPageFinished`web コンテンツの読み込みが完了するまで待機し、次の項目を使用して`InvalidateOptionsMenu`[オプション] メニューを再作成するようにアクティビティに指示します。
 
 ```csharp
 class MyWebViewClient : WebViewClient
@@ -488,11 +488,11 @@ class MyWebViewClient : WebViewClient
 }
 ```
 
-`OnPageFinished` また、設定、`dataLoaded`値を`true`ため、`OnCreateOptionsMenu`インプレース印刷オプションを使用してメニューを再作成できます。
+`OnPageFinished`また、は`dataLoaded`値を`true`に設定`OnCreateOptionsMenu`します。そのため、[印刷] オプションを使用してメニューを再作成できます。
 
 ##### <a name="printmanager"></a>PrintManager
 
-次のコード例の内容を出力する、 `WebView`:
+次のコード例では、 `WebView`の内容を出力します。
 
 ```csharp
 void PrintPage ()
@@ -503,46 +503,46 @@ void PrintPage ()
 }
 ```
 
-`Print` 引数として受け取ります ("MyWebPage"この例では)、印刷ジョブの名前を。 [`PrintDocumentAdapter`](https://developer.xamarin.com/api/type/Android.Print.PrintDocumentAdapter/)
-コンテンツから印刷ドキュメントを生成して [`PrintAttributes`](https://developer.xamarin.com/api/type/Android.Print.PrintAttributes/)
-(`null`上記の例では)。 指定できる`PrintAttributes`に印刷 ページで、コンテンツのレイアウトの役立つわけでは、既定の属性は、ほとんどのシナリオを処理する必要があります。
+`Print`引数としてを受け取ります。印刷ジョブの名前 (この例では "MyWebPage ページ")、[`PrintDocumentAdapter`](xref:Android.Print.PrintDocumentAdapter)
+これにより、コンテンツから印刷ドキュメントが生成されます。[`PrintAttributes`](xref:Android.Print.PrintAttributes)
+(`null`上記の例では)。 既定の属性`PrintAttributes`ではほとんどのシナリオに対応できますが、を指定すると、印刷されたページにコンテンツをレイアウトするのに役立ちます。
 
-呼び出す`Print`印刷の UI は、印刷ジョブのオプションの一覧を読み込みます。 UI によって、次のスクリーン ショットに示すように、ユーザーの印刷または pdf、HTML コンテンツを保存のオプション。
+を`Print`呼び出すと、印刷ジョブのオプションが一覧表示された印刷 UI が読み込まれます。 UI では、次のスクリーンショットに示すように、HTML コンテンツを PDF に印刷または保存するオプションをユーザーに提供します。
 
-[![[印刷] メニューを表示する PrintHtmlActivity のスクリーン ショット](kitkat-images/print1.png)](kitkat-images/print1.png#lightbox)
+[![[印刷] メニューを表示する PrintHtmlActivity のスクリーンショット](kitkat-images/print1.png)](kitkat-images/print1.png#lightbox)
 
-[![PrintHtmlActivity のスクリーン ショットは、保存を PDF メニューとして表示します。](kitkat-images/print2.png)](kitkat-images/print2.png#lightbox)
+[![[PDF として保存] メニューを表示する PrintHtmlActivity のスクリーンショット](kitkat-images/print2.png)](kitkat-images/print2.png#lightbox)
 
 <a name="hardware" />
 
 ## <a name="hardware"></a>ハードウェア
 
-KitKat は、新しいデバイス機能に対応するいくつかの Api を追加します。 これらの最も重要なのホスト ベースのカードのエミュレーションと新しい`SensorManager`します。
+KitKat は、新しいデバイスの機能に対応するために、いくつかの Api を追加します。 最も注目すべき点は、ホストベースのカードエミュレーションと新しい`SensorManager`です。
 
-### <a name="host-based-card-emulation-in-nfc"></a>NFC のホスト ベースのカードのエミュレーション
+### <a name="host-based-card-emulation-in-nfc"></a>NFC のホストベースのカードエミュレーション
 
-ホスト ベース カード エミュレーション (HCE) には、通信事業者の専用のセキュリティで保護された要素に頼ることがなく NFC カードまたはカード リーダーの NFC ように動作するアプリケーションができます。 HCE をセットアップする前に HCE がデバイスで使用できることを確認します`PackageManager.HasSystemFeature`:
+ホストベースのカードエミュレーション (HCE) を使用すると、キャリアの専用安全要素に依存せずに、NFC カードや NFC カードリーダーのようにアプリケーションを動作させることができます。 HCE を設定する前に、デバイス`PackageManager.HasSystemFeature`で hce を使用できることを確認します。
 
 ```csharp
 bool hceSupport = PackageManager.HasSystemFeature(PackageManager.FeatureNfcHostCardEmulation);
 ```
 
-HCE である必要があります HCE 機能と`Nfc`アプリケーションのアクセス許可に登録する`AndroidManifest.xml`:
+Hce では、hce 機能と`Nfc`アクセス許可の両方をアプリケーションの`AndroidManifest.xml`に登録する必要があります。
 
 ```xml
 <uses-feature android:name="android.hardware.nfc.hce" />
 ```
 
-[![アプリケーションのオプションの NFC アクセス許可の設定](kitkat-images/nfc.png)](kitkat-images/nfc.png#lightbox)
+[![アプリオプションでの NFC アクセス許可の設定](kitkat-images/nfc.png)](kitkat-images/nfc.png#lightbox)
 
-作業をする、HCE が、バック グラウンドで実行できる必要があり、HCE を使用して、アプリケーションが実行されていない場合でも、ユーザーが、NFC トランザクションを開始する必要があります。 として HCE コードを記述してためここには、`Service`します。 HCE サービスを実装、`HostApduService`インターフェイスで、次のメソッドを実装します。
+作業するには、HCE をバックグラウンドで実行する必要があります。また、HCE を使用しているアプリケーションが実行されていない場合でも、ユーザーが NFC トランザクションを作成したときに開始する必要があります。 これを実現するには、 `Service`hce コードをとして記述します。 Hce サービスは、次`HostApduService`のメソッドを実装するインターフェイスを実装しています。
 
--  *ProcessCommandApdu* -An アプリケーション プロトコル データ ユニット (APDU) は、NFC のリーダーと HCE サービス間で送信内容を取得します。 このメソッドは、リーダーから、ADPU を消費し、応答内のデータ ユニットを返します。
+-  *Processcommandapdu* -アプリケーションプロトコルデータユニット (APDU) は、NFC リーダーと Hce サービスの間で送信されます。 このメソッドは、リーダーから ADPU を使用し、応答でデータ単位を返します。
 
--  *OnDeactivated* - `HostAdpuService` HCE サービスが NFC リーダーと通信する不要になったときは、非アクティブ化します。
+-  *Ondeactivated アクティブ*化`HostAdpuService` -hce サービスが NFC リーダーと通信しなくなったときに、が非アクティブになります。
 
 
-HCE サービスも、アプリケーションのマニフェストを登録し、適切なアクセス許可、インテント フィルター、およびメタデータで装飾する必要があります。 次のコードの例は、 `HostApduService` Android マニフェストを使用して登録されている、`Service`属性 (属性の詳細については、Xamarin を参照してください[Android マニフェスト操作](~/android/platform/android-manifest.md)ガイド)。
+HCE サービスもアプリケーションのマニフェストに登録する必要があり、適切なアクセス許可、インテントフィルター、およびメタデータで修飾する必要があります。 属性を使用して Android マニフェストに`HostApduService`登録されているのコード例を次に示します (属性の詳細については、「Xamarin [Working with android manifest](~/android/platform/android-manifest.md) guide」を参照してください)。 `Service`
 
 ```csharp
 [Service(Exported=true, Permission="android.permissions.BIND_NFC_SERVICE"),
@@ -564,7 +564,7 @@ class HceService : HostApduService
 }
 ```
 
-上記のサービス、アプリケーションと対話する NFC リーダーの手段を提供が NFC リーダーはこのサービスをエミュレートして、NFC のカードをスキャンする必要がある場合を知る方法はありませんが。 NFC リーダーがサービスを識別するために、割り当てることができます、サービスを一意*アプリケーション ID (AID)* します。 HCE サービスに関するその他のメタデータと共に、参考情報を指定する xml リソース ファイル内で登録、`MetaData`属性 (上記のコード例を参照してください)。 このリソース ファイルは、1 つまたは複数 AID フィルターの 1 つ以上の NFC リーダー デバイスの補助に対応する 16 進形式で一意の識別子の文字列を指定します。
+上記のサービスでは、NFC リーダーがアプリケーションと対話する方法を提供していますが、NFC リーダーは、このサービスがスキャンする必要がある NFC カードをエミュレートしているかどうかを知ることはできません。 NFC リーダーがサービスを識別できるように、サービスに一意の*アプリケーション ID (支援)* を割り当てることができます。 `MetaData`属性に登録されている xml リソースファイル (上記のコード例を参照) で、hce サービスに関するその他のメタデータと共に補助を指定します。 このリソースファイルは、1つまたは複数の NFC リーダーデバイスの補助機能に対応する、1つ以上の補助フィルター (一意の識別子文字列) を16進数形式で指定します。
 
 ```xml
 <host-apdu-service xmlns:android="http://schemas.android.com/apk/res/android"
@@ -579,28 +579,28 @@ class HceService : HostApduService
 </host-apdu-service>
 ```
 
-ヘルパーのフィルターだけでなく補助グループ ("other"と支払いアプリケーション) を指定 xml リソース ファイルも HCE サービスのユーザーに表示される説明を提供し、支払いのアプリケーションでは、260 x 96 dp バナーをユーザーに表示します。
+Xml リソースファイルは、フィルターを支援するだけでなく、HCE サービスのユーザー向けの説明も提供します。また、補助グループ (支払いアプリケーションと "その他") を指定し、支払いアプリケーションの場合は、ユーザーに表示する 260x96 dp バナーを指定します。
 
-上記で説明したセットアップは、NFC のカードをエミュレートするアプリケーションの基本的な構成要素を提供します。 NFC 自体では、さらにいくつかの手順とさらにテストを構成する必要があります。 カード エミュレーションのホスト ベースの詳細についてを参照してください、 [Android ドキュメント ポータル](https://developer.android.com/guide/topics/connectivity/nfc/hce.html)します。
-NFC を使用して、Xamarin での詳細については、チェック アウト、 [Xamarin NFC サンプル](https://github.com/xamarin/monodroid-samples/tree/master/NfcSample)します。
+前に説明したセットアップは、NFC カードをエミュレートするアプリケーションの基本的な構成要素を提供します。 NFC 自体では、さらに多くの手順を実行し、さらにテストを構成する必要があります。 ホストベースのカードエミュレーションの詳細については、 [Android ドキュメントポータル](https://developer.android.com/guide/topics/connectivity/nfc/hce.html)を参照してください。
+Xamarin での NFC の使用の詳細については、 [XAMARIN NFC のサンプル](https://github.com/xamarin/monodroid-samples/tree/master/NfcSample)を参照してください。
 
 ### <a name="sensors"></a>センサー
 
-KitKat を通じて、デバイスのセンサーへのアクセスを提供する、 [ `SensorManager`](https://developer.xamarin.com/api/type/Android.Hardware.SensorManager/)します。
-`SensorManager`バッテリの寿命を維持し、バッチ内のアプリケーションにセンサーの情報の配信をスケジュールする OS を使用します。
+KitKat は、を[`SensorManager`](xref:Android.Hardware.SensorManager)介してデバイスのセンサーへのアクセスを提供します。
+を`SensorManager`使用すると、OS はアプリケーションへのセンサー情報の配信をバッチでスケジュールし、バッテリの寿命を維持することができます。
 
-KitKat も付属して 2 つの新しい種類のセンサーのユーザーの手順を追跡します。 これらは、加速度計に基づいておりが含まれます。
+また、KitKat には、ユーザーの手順を追跡する2つの新しいセンサーの種類も付属しています。 これらは加速度計に基づいており、次のものが含まれます。
 
--  *StepDetector* -アプリは通知/ウェイク ユーザーが、ステップと、検出機能は、手順が発生したときの時刻の値を提供します。
+-  *Stepdetector* -ユーザーがステップを実行したときにアプリに通知され、ウェイクアップされます。この検出機能によって、ステップが発生した時間の値が示されます。
 
--  *StepCounter* -のセンサーが登録されているために、ユーザーが行われたステップの数を追跡*次のデバイスの再起動まで*します。
+-  *Stepcounter* -センサーが*次回のデバイスの再起動まで*に登録された後にユーザーが行った手順の数を追跡します。
 
-次のスクリーン ショットは、アクションの手順のカウンターを示しています。
+次のスクリーンショットは、動作中のステップカウンターを示しています。
 
-[![手順のカウンターを表示する SensorsActivity アプリのスクリーン ショット](kitkat-images/stepcounter.png)](kitkat-images/stepcounter.png#lightbox)
+[![ステップカウンターを表示する SensorsActivity アプリのスクリーンショット](kitkat-images/stepcounter.png)](kitkat-images/stepcounter.png#lightbox)
 
-作成することができます、`SensorManager`呼び出して`GetSystemService(SensorService)`として結果をキャストし、 `SensorManager`。 手順のカウンターを使用する呼び出し`GetDefaultSensor`上、`SensorManager`します。 センサーを登録およびのカウントのステップで変更をリッスンする、 [`ISensorEventListener`](https://developer.xamarin.com/api/type/Android.Hardware.ISensorEventListener/)
-次のコード例に示すようには、インターフェイス:
+を呼び出し`SensorManager` `GetSystemService(SensorService)` 、結果をとして`SensorManager`キャストすることで、を作成できます。 Step カウンターを使用するには`GetDefaultSensor` `SensorManager`、でを呼び出します。 センサーを登録し、ステップ数の変更をリッスンするには、[`ISensorEventListener`](xref:Android.Hardware.ISensorEventListener)
+インターフェイス。以下のコードサンプルを参照してください。
 
 ```csharp
 public class MainActivity : Activity, ISensorEventListener
@@ -631,9 +631,9 @@ public class MainActivity : Activity, ISensorEventListener
 }
 ```
 
-`OnSensorChanged` アプリケーションがフォア グラウンドでは、ステップ カウントが更新される場合と呼びます。 アプリケーションがバック グラウンドを入力またはデバイスがスリープ状態の場合`OnSensorChanged`は呼び出されません。 ただし、手順は引き続きまでカウントする`UnregisterListener`が呼び出されます。
+`OnSensorChanged`は、アプリケーションがフォアグラウンドにある間にステップ数が更新された場合に呼び出されます。 アプリケーションがバックグラウンドで入力された場合、またはデバイス`OnSensorChanged`がスリープ状態の場合、は呼び出されません。ただし、が`UnregisterListener`呼び出されるまで、手順は引き続きカウントされます。
 
-注意*センサーを登録するすべてのアプリケーション間でステップ数の値は累積的な*します。 つまりをアンインストールし、アプリケーションを再インストールして初期化する場合でも、`count`アプリケーションの起動時に 0 にある変数をセンサーで感知された値は、センサーが登録されているときに行われたステップの総数のままはによってかどうか、アプリケーションまたは別にします。 アプリケーションから呼び出すことによって、手順カウンターへの追加を防ぐことができます`UnregisterListener`上、`SensorManager`次のコードに示しますように。
+*ステップ数の値は、センサーを登録するすべてのアプリケーションで累積さ*れることに注意してください。 つまり、アプリケーションをアンインストールして再インストールし、アプリケーションの起動時に`count` 0 で変数を初期化したとしても、センサーによって報告された値は、センサーが登録されている間に実行されたステップの合計数を保持します。アプリケーションまたはその他。 次のコードに示すように、でを呼び出す`UnregisterListener`ことによって、 `SensorManager`アプリケーションがステップカウンターに追加されないようにすることができます。
 
 ```csharp
 protected override void OnPause()
@@ -643,11 +643,11 @@ protected override void OnPause()
 }
 ```
 
-デバイスの再起動カウントのステップを 0 にリセットします。 アプリには、センサーやデバイスの状態を使用して他のアプリケーションに関係なく、アプリケーションの正確なカウントを報告していることを確認する追加コードが必要です。
+デバイスを再起動すると、ステップ数が0にリセットされます。 アプリは、センサーを使用する他のアプリケーションやデバイスの状態に関係なく、アプリケーションの正確な数を報告するために、追加のコードを必要とします。
 
 
 > [!NOTE]
-> 手順検出および KitKat 付属のカウントについて、API では、中にすべてのスマート フォンで、センサーはあり。 実行して、センサーが使用可能なかどうかをチェックする`PackageManager.HasSystemFeature(PackageManager.FeatureSensorStepCounter);`の戻り値のことを確認するか、または`GetDefaultSensor`いない`null`します。
+> ステップの検出とカウントの API には KitKat が付属していますが、すべての電話がセンサーに outfitted されるわけではありません。 を実行`PackageManager.HasSystemFeature(PackageManager.FeatureSensorStepCounter);`してセンサーが使用可能かどうかを確認するか、の`GetDefaultSensor`戻り値が`null`でないことを確認します。
 
 
 <a name="developer_tools" />
@@ -656,59 +656,59 @@ protected override void OnPause()
 
 ### <a name="screen-recording"></a>画面記録
 
-KitKat には、録音機能を開発者がアクションでアプリケーションを記録できるように新しい画面が含まれています。 画面記録を利用、 [Android Debug Bridge (ADB)](https://developer.android.com/tools/help/adb.html)クライアントで、Android SDK の一部としてダウンロードできます。
+KitKat には、開発者が動作中のアプリケーションを記録できるように、新しい画面記録機能が用意されています。 画面記録は、 [Android Debug Bridge (ADB)](https://developer.android.com/tools/help/adb.html)クライアントを通じて利用できます。このクライアントは Android SDK の一部としてダウンロードできます。
 
-画面を記録するにはデバイスを接続します。次に、Android SDK のインストールを検索に移動し、**プラットフォーム ツール**ディレクトリと実行、 **adb**クライアント。
+画面を録画するには、デバイスを接続します。次に、Android SDK のインストールを見つけ、**プラットフォームツール**のディレクトリに移動して、 **adb**クライアントを実行します。
 
 ```shell
 adb shell screenrecord /sdcard/screencast.mp4
 ```
 
-上記のコマンドでは、4 mbps の既定の解像度で既定値 3 分間のビデオを記録します。 長さを編集するには、追加、 *-時間制限*フラグ。
-解像度を変更するには、追加、 *--ビット レート*フラグ。 次のコマンドが 8Mbps で 1 分間のビデオを記録されます。
+上のコマンドでは、既定の3分間のビデオが 4 Mbps の既定の解像度で記録されます。 長さを編集するには、 *--time-limit*フラグを追加します。
+解像度を変更するには、 *--bit レート*フラグを追加します。 次のコマンドは、1分間のビデオを8Mbps で記録します。
 
 ```shell
 adb shell screenrecord --bit-rate 8000000 --time-limit 60 /sdcard/screencast.mp4
 ```
 
-デバイスでビデオを見つけることができます - 記録が完了すると、ギャラリーに表示されます。
+ビデオはデバイスにあります。録画が完了すると、ギャラリーに表示されます。
 
 
 ## <a name="other-kitkat-additions"></a>その他の KitKat の追加
 
-上記の変更だけでなく KitKat ことができます。
+KitKat では、上記の変更に加えて次のことができます。
 
--  *全画面表示を使用して、* -KitKat が導入されていますが、新しい[イマーシブ モード](https://developer.android.com/reference/android/view/View.html#setSystemUiVisibility(int))のコンテンツを参照する、ゲーム、および全画面エクスペリエンスから利点がもたらされる他のアプリケーションを実行します。
+-  *全画面表示を使用する*-KitKat では、コンテンツを参照したり、ゲームを楽しんだ後に、全画面表示のエクスペリエンスの恩恵を受ける他のアプリケーションを実行したりするための新しい[イマーシブモード](https://developer.android.com/reference/android/view/View.html#setSystemUiVisibility(int))が導入されています。
 
--  *通知をカスタマイズする*-を使用したシステム通知に関する追加情報を取得します [`NotificationListenerService`](https://developer.xamarin.com/api/type/Android.Service.Notification.NotificationListenerService/)
-   . これにより、アプリ内の別の方法で情報を提供できます。
+-  *通知のカスタマイズ*-システム通知に関する追加情報を取得します。[`NotificationListenerService`](xref:Android.Service.Notification.NotificationListenerService)
+   . これにより、アプリ内で別の方法で情報を表示できます。
 
--  *描画可能なリソースをミラー化*-描画可能なリソースが新しいがあります。 [`autoMirrored`](https://developer.android.com/reference/android/R.attr.html#autoMirrored)
-   システムに通知する属性は、左から右のレイアウトの反転を必要とするイメージのミラー化されたバージョンを作成します。
+-  *ミラー*化されるリソースのミラー化されるリソースが新しくなりました[`autoMirrored`](https://developer.android.com/reference/android/R.attr.html#autoMirrored)
+   左から右へのレイアウトの反転が必要なイメージのミラー化されたバージョンをシステムに通知する属性。
 
--  *アニメーションを一時停止*-一時停止と再開のアニメーションを使用して作成します [`Animator`](https://developer.xamarin.com/api/type/Android.Animation.Animator/)
+-  *アニメーションの一時停止*-を使用して作成されたアニメーションを一時停止および再開します。[`Animator`](xref:Android.Animation.Animator)
    クラスの新しいインスタンスを初期化します。
 
--  *動的に変更するテキストの読み取り*-新しい「ライブ リージョン」として、新しいテキストに動的に更新する UI の部分を示す [`accessibilityLiveRegion`](https://developer.android.com/reference/android/R.attr.html#accessibilityLiveRegion)
-   新しいテキストはアクセシビリティ モードで自動的に読み取るための属性です。
+-  新しいテキストを使用して動的に更新する UI のテキストを動的に変更する部分を、新しいテキストで "live region" として*読み取り*ます。[`accessibilityLiveRegion`](https://developer.android.com/reference/android/R.attr.html#accessibilityLiveRegion)
+   属性を使用して、新しいテキストがユーザー補助モードで自動的に読み込まれるようにします。
 
--  *オーディオのエクスペリエンスの向上*-Make トラック音は、 [`LoudnessEnhancer`](https://developer.xamarin.com/api/type/Android.Media.Audiofx.LoudnessEnhancer/)
-   、ピーク時およびオーディオのストリームの RMS を検索します [`Visualizer`](https://developer.xamarin.com/api/field/Android.Media.Audiofx.Visualizer.MeasurementModePeakRms/)
-   クラス、および情報の取得、[オーディオ タイムスタンプ](https://developer.xamarin.com/api/type/Android.Media.AudioTimestamp/)オーディオ ビデオ同期を支援します。
+-  *オーディオエクスペリエンスの向上*-トラックを大きくすると、[`LoudnessEnhancer`](xref:Android.Media.Audiofx.LoudnessEnhancer)
+   では、オーディオストリームのピークと RMS を[`Visualizer`](xref:Android.Media.Audiofx.Visualizer.MeasurementModePeakRms)
+   オーディオビデオの同期に役立つように、[オーディオタイムスタンプ](xref:Android.Media.AudioTimestamp)から情報を取得します。
 
--  *カスタムの間隔で ContentResolver を同期*-KitKat 同期要求が実行された時刻にいくつかの可変性を追加します。 同期、`ContentResolver`でカスタムの時刻または間隔を呼び出して`ContentResolver.RequestSync`を渡して、`SyncRequest`します。
+-  *カスタム間隔での ContentResolver の同期*-KitKat は、同期要求の実行時にいくつかの可変性を追加します。 を呼び出し`ContentResolver` `ContentResolver.RequestSync` 、を`SyncRequest`渡すことによって、カスタムの時刻または間隔でを同期します。
 
--  *コント ローラーの間で識別*-KitKat では、コント ローラーは、デバイスの経由でアクセスできる一意の整数識別子を割り当てられた`ControllerNumber`プロパティ。 これにより、簡単にゲームに離れているプレーヤーに伝えます。
+-  *コントローラーを区別*する-KitKat では、コントローラーには、デバイスの`ControllerNumber`プロパティを使用してアクセスできる一意の整数識別子が割り当てられます。 これにより、ゲームのプレーヤーを区別しやすくなります。
 
--  *リモート コントロール*-ハードウェアとソフトウェアの両方の側でのいくつかの変更により、KitKat を使用すると、リモート_コントロールを使用してに IR の送信機能であり、デバイスを有効にする、 `ConsumerIrService`、および新しい周辺機器の対話 [`RemoteController`](https://developer.xamarin.com/api/type/Android.Media.RemoteController/)
-   Api。
+-  *リモートコントロール*-ハードウェアとソフトウェア側の両方に変更を加えることによって、KitKat では`ConsumerIrService`、を使用して IR トランスミッタでデバイス outfitted をリモートコントロールに変換し、周辺機器と新しい[`RemoteController`](xref:Android.Media.RemoteController)
+   Api.
 
-上記の API の変更点の詳細については、Google を参照してください[Android 4.4 Api](https://developer.android.com/about/versions/android-4.4.html)の概要。
+上記の API 変更の詳細については、「Google [Android 4.4 api](https://developer.android.com/about/versions/android-4.4.html)の概要」を参照してください。
 
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
-この記事では、一部の Android 4.4 (API レベル 19) で使用できる新しい Api を導入し、KitKat へのアプリケーションを移行する際に、ベスト プラクティスを説明します。 ユーザーに影響を与える Api への枠で囲まれた変更が発生するなどの it、*遷移 framework*と用の新しいオプション*テーマ*します。 導入された次に、*ストレージ アクセス フレームワーク*と`DocumentsProvider`クラスだけでなく、新しい*印刷 Api*します。 探索が*NFC ホスト ベースのカード エミュレーション*を操作する方法と*低電力センサー*ユーザーの手順を追跡するための 2 つの新しいセンサーを含むです。 アプリケーションとのリアルタイムのデモをキャプチャ最後に、説明*画面記録*、KitKat API の変更点と追加の詳細な一覧を提供します。
+この記事では、Android 4.4 (API レベル 19) で利用できる新しい Api のいくつかを紹介し、アプリケーションを KitKat に移行する際のベストプラクティスについて説明しました。 *移行フレームワーク*や*テーマ*の新しいオプションなど、ユーザーエクスペリエンスに影響する api の変更について説明しています。 次に、*ストレージアクセスフレームワーク*と`DocumentsProvider`クラス、および新しい*印刷 api*が導入されました。 ここでは、 *NFC ホストベースのカードエミュレーション*と、ユーザーの手順を追跡する2つの新しいセンサーを含む*低電力センサー*の使用方法について説明しています。 最後に、*画面記録*を使用してアプリケーションのリアルタイムのデモをキャプチャし、KitKat API の変更と追加の詳細な一覧を示しました。
 
 
 ## <a name="related-links"></a>関連リンク

@@ -1,40 +1,37 @@
 ---
-title: ActionBar
+title: Xamarin. Android の ActionBar
 ms.prod: xamarin
 ms.assetid: 84A79F1F-9E73-4E3E-80FA-B72E5686900B
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 95ebcc8ef436c90e807045bd009b35ff1c3e9c1f
-ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
+ms.openlocfilehash: 7717e247ca3b3ecf82e1814ab43e8351b4f75ba6
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66740798"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510454"
 ---
-# <a name="actionbar"></a>ActionBar
+# <a name="actionbar-for-xamarinandroid"></a>Xamarin. Android の ActionBar
+
+を使用`TabActivity`する場合、タブアイコンを作成するコードは、Android 4.0 フレームワークに対して実行しても効果がありません。 2\.3 より前のバージョンの Android と同様に機能しますが、 `TabActivity`クラス自体は4.0 で非推奨とされています。 次に説明する操作バーを使用する、タブ付きインターフェイスを作成する新しい方法が導入されました。
 
 
-## <a name="overview"></a>概要
+## <a name="action-bar-tabs"></a>操作バータブ
 
-使用する場合`TabActivity`タブのアイコンを作成するコードは、Android 4.0 framework に対して実行すると影響を与えません。 以前のバージョンの Android 2.3 以降、同様に動作します機能的、`TabActivity`クラス自体が 4.0 の非推奨とされました。 次に説明する操作バーを使用して、タブ付きインターフェイスを作成する新しい方法が導入されています。
+操作バーには、Android 4.0 でタブ付きインターフェイスを追加するためのサポートが含まれています。
+次のスクリーンショットは、このようなインターフェイスの例を示しています。
 
+[![エミュレーターで実行されているアプリのスクリーンショット。2つのタブが表示されます。](action-bar-images/25-actionbartabs.png)](action-bar-images/25-actionbartabs.png#lightbox)
 
-## <a name="action-bar-tabs"></a>操作バーのタブ
-
-アクション バーには、Android 4.0 でのタブ付きインターフェイスを追加するためのサポートが含まれています。
-次のスクリーン ショットでは、このようなインターフェイスの例を示します。
-
-[![は、エミュレーターで実行されているアプリのスクリーン ショット2 つのタブが表示されます。](action-bar-images/25-actionbartabs.png)](action-bar-images/25-actionbartabs.png#lightbox)
-
-操作バーのタブを作成することには、まず設定する必要がその`NavigationMode`プロパティ タブをサポートします。 Android 4 で、`ActionBar`プロパティが設定に使用できるアクティビティ クラスに使用可能な`NavigationMode`次のように。
+操作バーでタブを作成するには、まず、タブを`NavigationMode`サポートするようにプロパティを設定する必要があります。 Android 4 `ActionBar`では、アクティビティクラスでプロパティを使用できます。このクラスを使用して`NavigationMode` 、次のようにを設定できます。
 
 ```csharp
 this.ActionBar.NavigationMode = ActionBarNavigationMode.Tabs;
 ```
 
-これを完了すると、呼び出すことによって、タブを生み出すことができます、`NewTab`アクション バーでのメソッド。 呼び出し、このタブのインスタンスで、`SetText`と`SetIcon` タブのラベルのテキストとアイコンを設定するメソッドを以下に示すコード内の順序でこれらの呼び出しが行われました。
+この処理が完了したら、操作バーで`NewTab`メソッドを呼び出してタブを作成できます。 このタブインスタンスでは、メソッド`SetText`と`SetIcon`メソッドを呼び出してタブのラベルのテキストとアイコンを設定できます。これらの呼び出しは、以下に示すコードの順序で行われます。
 
 ```csharp
 var tab = this.ActionBar.NewTab ();
@@ -42,7 +39,7 @@ tab.SetText (tabText);
 tab.SetIcon (Resource.Drawable.ic_tab_white);
 ```
 
-ただし、タブを追加することができます、前に処理する必要があります、`TabSelected`イベント。 このハンドラーで、タブのコンテンツを作成できます。操作バーのタブが使用するように設計*フラグメント*、これらは、アクティビティのユーザー インターフェイスの一部を表すクラス。 フラグメントのビューにはこの例では、1 つが含まれています`TextView`に拡大しましたが、`Fragment`このようなサブクラスです。
+ただし、タブを追加する前に、 `TabSelected`イベントを処理する必要があります。 このハンドラーでは、タブのコンテンツを作成できます。操作バーのタブは、アクティビティ内のユーザーインターフェイスの一部を表すクラスである*フラグメント*を使用するように設計されています。 この例では、フラグメントのビューに1つ`TextView`のが含まれてい`Fragment`ます。これは、次のようにサブクラスで拡大します。
 
 ```csharp
 class SampleTabFragment: Fragment
@@ -65,7 +62,7 @@ class SampleTabFragment: Fragment
 }
 ```
 
-イベント引数が渡されて、`TabSelected`型のイベントは、`TabEventArgs`が含まれています、`FragmentTransaction`次に示すように、フラグメントを追加するために使用できるプロパティ。
+`TabSelected`イベントで渡されるイベント引数の型`TabEventArgs`はであり、次`FragmentTransaction`に示すように、フラグメントを追加するために使用できるプロパティが含まれています。
 
 ```csharp
 tab.TabSelected += delegate(object sender, ActionBar.TabEventArgs e) {             
@@ -74,35 +71,35 @@ tab.TabSelected += delegate(object sender, ActionBar.TabEventArgs e) {
 };
 ```
 
-呼び出して、操作バーに、タブを追加最後に、`AddTab`メソッドのこのコードで示すようにします。
+最後に、次のコードに示すように、 `AddTab`メソッドを呼び出すことによって、タブを操作バーに追加できます。
 
 ```csharp
 this.ActionBar.AddTab (tab);
 ```
 
-完全な例では、次を参照してください。、 *HelloTabsICS*このドキュメントのサンプル コードでのプロジェクト。
+完全な例については、このドキュメントのサンプルコードの*HelloTabsICS*プロジェクトを参照してください。
 
 
 ## <a name="shareactionprovider"></a>ShareActionProvider
 
-`ShareActionProvider`クラスが共有の動作が、操作バーから実行できるようにします。 共有インテントを処理し、操作バーから後でそれらを簡単にアクセスに使用されていたアプリケーションの履歴を保持するアプリの一覧でアクション ビューの作成を行います。 これにより、アプリケーションを Android 全体で一貫性のあるユーザー エクスペリエンスを使用してデータを共有できます。
+`ShareActionProvider`クラスを使用すると、操作バーから共有アクションを実行できます。 共有の目的を処理し、以前に使用したアプリケーションの履歴を保存しておくことによって、操作バーから後で簡単にアクセスできるようにするアプリの一覧を使用して、アクションビューを作成します。 これにより、Android 全体で一貫性のあるユーザーエクスペリエンスを使用してアプリケーションがデータを共有できるようになります。
 
 
-### <a name="image-sharing-example"></a>イメージの共有の例
+### <a name="image-sharing-example"></a>イメージ共有の例
 
-たとえば、以下は、イメージを共有するとメニュー項目の操作バーのスクリーン ショット (から取得した、 [ShareActionProvider](https://developer.xamarin.com/samples/monodroid/ShareActionProviderDemo/)サンプル)。 ShareActionProvider に関連付けられているインテントを処理するためにアプリケーションを読み込み、ユーザーが、操作バーのメニュー項目をタップしたとき、`ShareActionProvider`します。 この例でのメッセージング アプリケーションが過去に使用された、ため、操作バーに表示されます。
+たとえば、次に示すのは、イメージを共有するためのメニュー項目を持つ操作バーのスクリーンショットです (共有[Actionprovider](https://developer.xamarin.com/samples/monodroid/ShareActionProviderDemo/)サンプルから取得)。 ユーザーが操作バーのメニュー項目をタップすると、に関連付けられて`ShareActionProvider`いるインテントを処理するために、このアプリケーションが読み込まれます。 この例では、メッセージングアプリケーションが既に使用されているため、操作バーに表示されます。
 
-[![メッセージング操作バーのアプリケーション アイコンのスクリーン ショット](action-bar-images/09-shareactionprovider.png)](action-bar-images/09-shareactionprovider.png#lightbox)
-
-
-ユーザーは、操作バーの項目をクリックすると、共有のイメージが含まれるメッセージング アプリを起動すると、次に示します。
-
-[![Monkey のイメージを表示するメッセージング アプリのスクリーン ショット](action-bar-images/10-messagewithimage.png)](action-bar-images/10-messagewithimage.png#lightbox)
+[![操作バーのメッセージングアプリケーションアイコンのスクリーンショット](action-bar-images/09-shareactionprovider.png)](action-bar-images/09-shareactionprovider.png#lightbox)
 
 
-### <a name="specifying-the-action-provider-class"></a>アクション プロバイダー クラスを指定します。
+ユーザーが操作バーの項目をクリックすると、次のように、共有イメージを含むメッセージングアプリが起動されます。
 
-使用する、 `ShareActionProvider`、設定、 `android:actionProviderClass` xml 操作バーのメニューにメニュー項目を次のように属性します。
+[![サル画像を表示しているメッセージングアプリのスクリーンショット](action-bar-images/10-messagewithimage.png)](action-bar-images/10-messagewithimage.png#lightbox)
+
+
+### <a name="specifying-the-action-provider-class"></a>アクションプロバイダークラスの指定
+
+を使用`ShareActionProvider`するには、 `android:actionProviderClass`次のように、操作バーのメニューの XML のメニュー項目に対して属性を設定します。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -115,9 +112,9 @@ this.ActionBar.AddTab (tab);
 ```
 
 
-### <a name="inflating-the-menu"></a>メニューを膨張させること
+### <a name="inflating-the-menu"></a>メニューの拡大
 
-無効に、メニューを展開する`OnCreateOptionsMenu`でアクティビティ サブクラスです。 メニューへの参照を取得したら、取得できる、`ShareActionProvider`から、`ActionProvider`し設定する SetShareIntent メソッドを使用して、メニュー項目のプロパティ、`ShareActionProvider`の目的とした、次に示すよう。
+メニューを拡大するには、 `OnCreateOptionsMenu` Activity サブクラスでをオーバーライドします。 メニューへの参照を取得したら、次に示すよう`ShareActionProvider`に、 `ActionProvider`メニュー項目のプロパティからを取得し、set/ `ShareActionProvider`インテントメソッドを使用して目的を設定できます。
 
 ```csharp
 public override bool OnCreateOptionsMenu (IMenu menu)
@@ -132,9 +129,9 @@ public override bool OnCreateOptionsMenu (IMenu menu)
 ```
 
 
-### <a name="creating-the-intent"></a>インテントを作成します。
+### <a name="creating-the-intent"></a>インテントの作成
 
-`ShareActionProvider`に渡される、インテントを使用、`SetShareIntent`適切なアクティビティを起動する、上記のコード内のメソッド。 ここでは、次のコードを使用してイメージを送信するインテントを作成します。
+は`ShareActionProvider` 、上記のコードの`SetShareIntent`メソッドに渡されたインテントを使用して、適切なアクティビティを起動します。 この例では、次のコードを使用してイメージを送信するインテントを作成します。
 
 ```csharp
 Intent CreateIntent ()
@@ -147,13 +144,13 @@ Intent CreateIntent ()
 }
 ```
 
-上記のコード例のイメージがアプリケーション資産として含まれており、メッセージング アプリなどの他のアプリケーションにアクセスできるように、アクティビティが作成されると、パブリックにアクセスできる場所にコピーします。 この記事に付属するサンプル コードには、その使用方法を示す、この例の完全なソースが含まれています。
+上のコード例のイメージは、アプリケーションと共に資産として含まれており、アクティビティの作成時にパブリックにアクセスできる場所にコピーされます。そのため、メッセージングアプリなどの他のアプリケーションからアクセスできるようになります。 この記事に付属するサンプルコードには、この例の使用方法を示す完全なソースが含まれています。
 
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [こんにちはタブ ICS (サンプル)](https://developer.xamarin.com/samples/monodroid/HelloTabsICS/)
-- [ShareActionProvider デモ (サンプル)](https://developer.xamarin.com/samples/monodroid/ShareActionProviderDemo/)
-- [Ice Cream Sandwich の概要](http://www.android.com/about/ice-cream-sandwich/)
+- [Hello Tabs ICS (サンプル)](https://developer.xamarin.com/samples/monodroid/HelloTabsICS/)
+- [/Sharepoint のデモ (サンプル)](https://developer.xamarin.com/samples/monodroid/ShareActionProviderDemo/)
+- [アイスクリームサンドイッチの導入](http://www.android.com/about/ice-cream-sandwich/)
 - [Android 4.0 プラットフォーム](https://developer.android.com/sdk/android-4.0.html)

@@ -1,31 +1,31 @@
 ---
-title: Xamarin.Mac - macOS Sierra のトラブルシューティング
-description: このドキュメントは、Xamarin.Mac アプリでの macOS Sierra を操作するためのいくつかのトラブルシューティングのヒントを提供します。 ヒントは、Mac App Store、Apple Pay、バイナリの互換性、CFNetwork、CloudKit、および詳細に関連します。
+title: Xamarin. Mac-macOS Sierra のトラブルシューティング
+description: このドキュメントでは、Xamarin. Mac アプリで macOS Sierra を操作するためのトラブルシューティングのヒントをいくつか紹介します。 ヒントは、Mac App Store、Apple Pay、バイナリ互換性、CFNetwork、CloudKit などに関連しています。
 ms.prod: xamarin
 ms.assetid: 323DD5EE-87CE-48E4-B234-1CF61B45A019
 ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 09/22/2016
-ms.openlocfilehash: 322acff3279d0513266c7d9883726cac726334f7
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 3bb2acd5ef560afa787c2746133c05066a15cf9e
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67830554"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511794"
 ---
-# <a name="xamarinmac---macos-sierra-troubleshooting"></a>Xamarin.Mac - macOS Sierra のトラブルシューティング
+# <a name="xamarinmac---macos-sierra-troubleshooting"></a>Xamarin. Mac-macOS Sierra のトラブルシューティング
 
-_この記事では、Xamarin.Mac アプリでの macOS Sierra を操作するためのいくつかのトラブルシューティングのヒントを提供します。_
+_この記事では、Xamarin. Mac アプリで macOS Sierra を操作するためのトラブルシューティングのヒントをいくつか紹介します。_
 
-次のセクションでは、Xamarin.mac とそれらの問題の解決策を macOS Sierra を使用するときに発生する可能性がある既知の問題を一覧表示します。
+次のセクションでは、macOS Sierra を Xamarin. Mac と共に使用した場合に発生する可能性がある既知の問題とその解決策を示します。
 
 - [App Store](#App-Store)
 - [Apple Pay](#Apple-Pay)
 - [バイナリの互換性](#Binary-Compatibility)
 - [CFNetwork HTTP プロトコル](#CFNetwork-HTTP-Protocol)
 - [CloudKit](#CloudKit)
-- [Core イメージ](#CoreImage)
+- [コアイメージ](#CoreImage)
 - [通知](#Notifications)
 - [NSUserActivity](#NSUserActivity)
 - [Safari](#Safari)
@@ -36,14 +36,14 @@ _この記事では、Xamarin.Mac アプリでの macOS Sierra を操作する�
 
 既知の問題:
 
-- サンド ボックス環境でアプリ内購入をテストするときに認証ダイアログ ボックスが 2 回表示されます。
-- サンド ボックス環境でホストされているコンテンツをアプリ内購入をテストするときに、コンテンツのダウンロードが完了するまで、アプリがフォア グラウンドに移動するたびにパスワード ダイアログ ボックスが表示されます。
+- サンドボックス環境でアプリ内購入をテストする場合、[認証] ダイアログボックスが2回表示されることがあります。
+- サンドボックス環境でホストされたコンテンツを使用してアプリ内購入をテストする場合、コンテンツのダウンロードが完了するまで、アプリがフォアグラウンドに移動するたびにパスワードダイアログが表示されます。
 
 <a name="Apple-Pay" />
 
 ## <a name="apple-pay"></a>Apple Pay
 
-Apple Pay に新しいペイメント カードを追加するときに、不適切な有効期限の日付またはセキュリティ コード (CW) が入力された場合は、カードのプロビジョニング プロセスが終了します。
+Apple Pay に新しい支払カードを追加するときに、無効な有効期限またはセキュリティコード (CW) を入力すると、カードのプロビジョニングプロセスが終了します。
 
 <a name="Binary-Compatibility" />
 
@@ -51,54 +51,48 @@ Apple Pay に新しいペイメント カードを追加するときに、不適
 
 既知の問題:
 
-- 呼び出す`NSObject.ValueForKey`は、`null`キー、例外が発生します。
-- 両方`NSURLSession`と`NSURLConnection`の TLS ハンドシェイク中に RC4 暗号スイートされなく`http://`Url。
-- いずれかでスーパー ビューのジオメトリを変更した場合、アプリがハング、`ViewWillLayoutSubviews`または`LayoutSubviews`メソッド。
-- すべての SSL/TLS 接続の RC4 対称暗号は既定で無効になりました。 さらに、トランスポートのセキュリティで保護された API が SSLv3 がサポートされなくされ、アプリでは、SHA 1 および 3 des 暗号化を使用して、できるだけ早く停止するをお勧めします。
+- を`NSObject.ValueForKey`呼び出す`null`と、キーによって例外が発生します。
+- と`NSURLSession`は`NSURLConnection`どちらも、url の TLS ハンドシェイク中に RC4 `http://`暗号スイートを使用しなくなりました。
+- `ViewWillLayoutSubviews`またはのいずれかのメソッドでスーパービューのジオメトリを変更する`LayoutSubviews`と、アプリがハングすることがあります。
+- すべての SSL/TLS 接続では、RC4 対称暗号が既定で無効になっています。 さらに、セキュリティで保護されたトランスポート API は SSLv3 をサポートしなくなりました。アプリは、できるだけ早く SHA-1 と3DES 暗号化の使用を停止することをお勧めします。
 
 <a name="CFNetwork-HTTP-Protocol" />
 
 ## <a name="cfnetwork-http-protocol"></a>CFNetwork HTTP プロトコル
 
-`HTTPBodyStream`のプロパティ、`NSMutableURLRequest`クラスは、以降、開かれていないストリームに設定する必要があります`NSURLConnection`と`NSURLSession`今すぐこの要件を厳密に適用します。
+クラスのプロパティは、から`NSURLConnection`開かれていないストリームに設定`NSURLSession`する必要があります。これにより、この要件が厳密に適用されるようになります。 `HTTPBodyStream` `NSMutableURLRequest`
 
 <a name="CloudKit" />
 
 ## <a name="cloudkit"></a>CloudKit
 
-長時間実行される操作を返します、 _「ファイルを保存するためのアクセス許可がありません」。_ エラーがあります。
+実行時間の長い操作では、 _"ファイルを保存するためのアクセス許可がありません"_ が返されます。 エラー.
 
 <a name="CoreImage" />
 
-## <a name="core-image"></a>Core イメージ
+## <a name="core-image"></a>コアイメージ
 
-`CIImageProcessor` API で、任意の入力イメージ数をサポートします。 `CIImageProcessor` MacOS Sierra beta 1 に含まれている API は削除されます。
+API `CIImageProcessor`では、任意の入力イメージの数がサポートされるようになりました。 `CIImageProcessor`MacOS Sierra beta 1 に含まれていた API は削除されます。
 
 <a name="Notifications" />
 
 ## <a name="notifications"></a>通知
 
-Notification Content 拡張機能を使用する場合、ビュー コント ローラーが正しく解放されないと、拡張機能のメモリ制限に達したときにクラッシュ発生する可能性があります。
+通知コンテンツ拡張機能を使用する場合、ビューコントローラーが正しく解放されていないため、拡張メモリの制限に達したときにクラッシュする可能性があります。
 
 <a name="NSUserActivity" />
 
 ## <a name="nsuseractivity"></a>NSUserActivity
 
-ハンドオフ操作後に、`UserInfo`のプロパティを`NSUserActivity`オブジェクトを空にすることがあります。 明示的に呼び出す`BecomeCurrent``NSUserActivity`問題を回避する現在のオブジェクト。
+ハンドオフ操作の後、 `UserInfo` `NSUserActivity`オブジェクトのプロパティが空になる場合があります。 現在の`BecomeCurrent`回避策としてオブジェクトを明示的に呼び出し`NSUserActivity`ます。
 
 <a name="Safari" />
 
 ## <a name="safari"></a>Safari
 
-セキュリティで保護された WebGeolocation が必要です (`https://`) iOS 10 と macOS Sierra 場所データの悪用を防ぐには、両方で動作する URL。
-
-
-
-
-
-
+Webgeolocation は、iOS 10`https://`と macOS Sierra の両方で動作し、場所データの悪意のある使用を防ぐために、セキュリティで保護された () URL を必要とします。
 
 ## <a name="related-links"></a>関連リンク
 
 - [Mac サンプル](https://developer.xamarin.com/samples/mac/)
-- [新機能については OS X 10.12 です。](https://developer.apple.com/library/prerelease/content/releasenotes/MacOSX/WhatsNewInOSX/Articles/OSXv10.html#//apple_ref/doc/uid/TP40017145-SW1)
+- [MacOS 10.12 の新機能](https://developer.apple.com/library/prerelease/content/releasenotes/MacOSX/WhatsNewInOSX/Articles/OSXv10.html#//apple_ref/doc/uid/TP40017145-SW1)

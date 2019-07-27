@@ -1,57 +1,57 @@
 ---
 title: ContentProviders の概要
-description: Android オペレーティング システムでは、コンテンツ プロバイダーを使用して、メディア ファイル、連絡先や予定表の情報などの共有データへのアクセスを容易にします。 この記事を ContentProvider クラスについて説明し、その使用方法の 2 つの例を示します。
+description: Android オペレーティングシステムでは、コンテンツプロバイダーを使用して、メディアファイル、連絡先、予定表情報などの共有データへのアクセスを容易にします。 この記事では、ContentProvider クラスについて説明し、その使用方法の2つの例を示します。
 ms.prod: xamarin
 ms.assetid: 6E1810AA-EB70-9AD0-1B32-D9418908CC97
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: 60f9420fc630bcfc44a6b19356b2315ac8bcd523
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 1e62dc32e9764667cb8737167a49bcc9a4516f0f
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60951791"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510633"
 ---
 # <a name="intro-to-contentproviders"></a>ContentProviders の概要
 
-_Android オペレーティング システムでは、コンテンツ プロバイダーを使用して、メディア ファイル、連絡先や予定表の情報などの共有データへのアクセスを容易にします。この記事を ContentProvider クラスについて説明し、その使用方法の 2 つの例を示します。_
+_Android オペレーティングシステムでは、コンテンツプロバイダーを使用して、メディアファイル、連絡先、予定表情報などの共有データへのアクセスを容易にします。この記事では、ContentProvider クラスについて説明し、その使用方法の2つの例を示します。_
 
 
-## <a name="content-providers-overview"></a>コンテンツ プロバイダーの概要
+## <a name="content-providers-overview"></a>コンテンツプロバイダーの概要
 
-A *ContentProvider*データ リポジトリをカプセル化し、それにアクセスする API を提供します。 プロバイダーは、通常はも、データの表示/管理するための UI を提供する Android アプリケーションの一部として存在します。 コンテンツ プロバイダーを使用して主なメリットがプロバイダーのクライアント オブジェクトを使用してカプセル化されたデータを簡単にアクセスするには、他のアプリケーションを有効にする (と呼ばれる、 *ContentResolver*)。 同時に、コンテンツ プロバイダーとコンテンツの競合回避モジュールは、データへのアクセスが簡単にビルドおよび使用の一貫性のあるアプリケーション間の API を提供します。 任意のアプリケーションを使用することできます`ContentProviders`内部的にデータを管理し、他のアプリケーションに公開します。
+*Contentprovider*は、データリポジトリをカプセル化し、それにアクセスするための API を提供します。 プロバイダーは、通常、データを表示または管理するための UI も提供する Android アプリケーションの一部として存在します。 コンテンツプロバイダーを使用する主な利点は、他のアプリケーションがプロバイダークライアントオブジェクト ( *Contentresolver*と呼ばれます) を使用して、カプセル化されたデータに簡単にアクセスできるようにすることです。 また、コンテンツプロバイダーとコンテンツリゾルバーは、簡単に構築して使用できるデータアクセスのための一貫したアプリケーション間 API を提供します。 アプリケーションでは、を使用`ContentProviders`してデータを内部で管理したり、他のアプリケーションに公開したりすることもできます。
 
-A`ContentProvider`カスタム検索の候補を提供するアプリケーションにも必要または他のアプリケーションに貼り付けるアプリケーションから複雑なデータをコピーする機能を提供する場合。 このドキュメントにアクセスしてビルドする方法を示しています。 `ContentProviders` Xamarin.Android でします。
+また`ContentProvider` 、は、アプリケーションがカスタムの検索候補を提供するために必要な場合や、アプリケーションから複雑なデータをコピーして他のアプリケーションに貼り付けることができるようにする場合にも必要です。 このドキュメントでは、Xamarin Android で`ContentProviders`にアクセスしてビルドする方法について説明します。
 
 このセクションの構造は次のとおりです。
 
-- **そのしくみ**&ndash;内容の概要、`ContentProvider`とどのように機能は設計されています。
+- **しくみ**の設計と動作の`ContentProvider`概要について説明します。 &ndash;
 
-- **コンテンツ プロバイダーを使用する**&ndash;連絡先リストにアクセスする例。
+- **コンテンツプロバイダーの**使用&ndash;連絡先リストにアクセスする例。
 
-- **ContentProvider を使用してデータを共有する**&ndash;がかかると、`ContentProvider`同じアプリケーション内で。
+- **ContentProvider を使用してデータを共有する**同じアプリケーションでの`ContentProvider`の書き込みと使用。 &ndash;
 
-`ContentProviders` データを操作するカーソルを Listview の設定に使用する多くの場合。 参照してください、 [Listview と Adapter ガイド](~/android/user-interface/layouts/list-view/index.md)それらのクラスを使用する方法の詳細。
+`ContentProviders`また、データを操作するカーソルは、ListViews を設定するために使用されることがよくあります。 これらのクラスの使用方法の詳細については、「 [Listviews And Adapters」ガイド](~/android/user-interface/layouts/list-view/index.md)を参照してください。
 
-`ContentProviders` によって公開されている Android (またはその他のアプリケーション) は、アプリケーションで他のソースからデータを含める簡単な方法です。 アクセスと連絡先の一覧、写真や、アプリケーション内からの予定表イベントなどのデータの表示を許可するされ、ユーザーがそのデータ操作します。
+`ContentProviders`Android (または他のアプリケーション) によって公開されているので、アプリケーションの他のソースからのデータを簡単に含めることができます。 これらの機能を使用すると、アプリケーション内から連絡先リスト、写真、カレンダーイベントなどのデータにアクセスして表示し、ユーザーがそのデータを操作できるようになります。
 
-カスタム`ContentProviders`(カスタム検索、コピー/貼り付けなどの特別な用途を含め) その他のアプリケーションで使用したり、独自のアプリ内で使用できるデータをパッケージ化するのに便利です。
+カスタム`ContentProviders`は、独自のアプリ内で使用するデータをパッケージ化したり、他のアプリケーション (カスタム検索、コピー/貼り付けなどの特殊な用途を含む) で使用したりするための便利な方法です。
 
-このセクションのトピックで使用して、書き込みの簡単な例を提供する`ContentProvider`コード。
+このセクションのトピックでは、コードの使用と記述`ContentProvider`の簡単な例をいくつか紹介します。
 
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [ContactsAdapter デモ (サンプル)](https://developer.xamarin.com/samples/monodroid/PlatformFeatures/ContactsAdapterDemo/)
+- [ContactsAdapter Demo (サンプル)](https://developer.xamarin.com/samples/monodroid/PlatformFeatures/ContactsAdapterDemo/)
 - [SimpleContentProvider (サンプル)](https://developer.xamarin.com/samples/monodroid/PlatformFeatures/SimpleContentProvider)
-- [コンテンツ プロバイダーの開発者ガイド](https://developer.android.com/guide/topics/providers/content-providers.html)
-- [ContentProvider クラスのリファレンス](https://developer.xamarin.com/api/type/Android.Content.ContentProvider/)
-- [ContentResolver クラスのリファレンス](https://developer.xamarin.com/api/type/Android.Content.ContentResolver/)
-- [ListView クラスのリファレンス](https://developer.xamarin.com/api/type/Android.Widget.ListView/)
-- [CursorAdapter クラスのリファレンス](https://developer.xamarin.com/api/type/Android.Widget.CursorAdapter/)
-- [UriMatcher クラスのリファレンス](https://developer.xamarin.com/api/type/Android.Content.UriMatcher/)
-- [Android.Provider](https://developer.xamarin.com/api/namespace/Android.Provider/)
-- [ContactsContract クラスのリファレンス](https://developer.xamarin.com/api/type/Android.Provider.ContactsContract/)
+- [コンテンツプロバイダー開発者ガイド](https://developer.android.com/guide/topics/providers/content-providers.html)
+- [ContentProvider クラスのリファレンス](xref:Android.Content.ContentProvider)
+- [ContentResolver クラスのリファレンス](xref:Android.Content.ContentResolver)
+- [ListView クラスの参照](xref:Android.Widget.ListView)
+- [カーソルクラス参照のカーソル](xref:Android.Widget.CursorAdapter)
+- [UriMatcher クラスの参照](xref:Android.Content.UriMatcher)
+- [Android.Provider](xref:Android.Provider)
+- [ContactsContract クラスの参照](xref:Android.Provider.ContactsContract)

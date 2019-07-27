@@ -6,16 +6,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2018
-ms.openlocfilehash: 0613411e5436a0ea8ed08bf4af52dae84a9a701c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: bed346b33ac92f6a1c73cdd3b29fb70ba17c5e91
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61307956"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68509667"
 ---
 # <a name="user-profile"></a>ユーザー プロファイル
 
-Android には、列挙する連絡先がサポートされていますが、 [ContactsContract](https://developer.xamarin.com/api/type/Android.Provider.ContactsContract/) API Level 5 以降のプロバイダー。 連絡先の一覧を使用して同じくらい簡単ですなど、 [ContactContracts.Contacts](https://developer.xamarin.com/api/type/Android.Provider.ContactsContract+Contacts/)クラスに次のコード例に示すようにします。
+Android では、API レベル5以降、 [ContactsContract](xref:Android.Provider.ContactsContract)プロバイダーで連絡先を列挙することがサポートされています。 たとえば、連絡先の一覧表示は、次のコード例に示すように、 [Contactcontracts. contacts](xref:Android.Provider.ContactsContract.Contacts)クラスを使用するのと同じように簡単です。
 
 ```csharp
 // Get the URI for the user's contacts:
@@ -45,18 +45,16 @@ if (cursor != null)
 }
 ```
 
-Android 4 (API レベル 14) 以降、 [ContactsContact.Profile](https://developer.xamarin.com/api/type/Android.Provider.ContactsContract+Profile/)クラスを利用、`ContactsContract`プロバイダー。 `ContactsContact.Profile`デバイス所有者の名前と電話番号などの連絡先データを含む、デバイスの所有者に個人プロファイルへのアクセスを提供します。
+Android 4 (API レベル 14) 以降では、 [ContactsContact](xref:Android.Provider.ContactsContract.Profile)クラスは`ContactsContract`プロバイダーを通じて利用できます。 は`ContactsContact.Profile` 、デバイスの所有者の個人プロファイルへのアクセスを提供します。このプロファイルには、デバイス所有者の名前や電話番号などの連絡先データが含まれます。
 
+## <a name="required-permissions"></a>必要な権限
 
-## <a name="required-permissions"></a>必要なアクセス許可
+連絡先データの読み取りと書き込みを行うには、 `READ_CONTACTS`アプリケーション`WRITE_CONTACTS`でアクセス許可とアクセス許可をそれぞれ要求する必要があります。
+さらに、ユーザープロファイルを読み取り、編集するには、アプリケーション`READ_PROFILE`が`WRITE_PROFILE`およびのアクセス許可を要求する必要があります。
 
-連絡先データを読み書きするアプリケーションを要求する必要があります、`READ_CONTACTS`と`WRITE_CONTACTS`アクセス許可は、それぞれします。
-さらに、読み取りをユーザー プロファイルの編集は、アプリケーション要求する必要があります、`READ_PROFILE`と`WRITE_PROFILE`アクセス許可。
+## <a name="updating-profile-data"></a>プロファイルデータを更新しています
 
-
-## <a name="updating-profile-data"></a>プロファイル データの更新
-
-これらのアクセス許可を設定すると、アプリケーションは、ユーザー プロファイルのデータと対話する Android の通常の手法を使用できます。 たとえば、プロファイルの表示名を更新するには、呼び出す[ContentResolver.Update](https://developer.xamarin.com/api/member/Android.Content.ContentResolver.Update)で、`Uri`を使用して取得、 [ContactsContract.Profile.ContentRawContactsUri](https://developer.xamarin.com/api/property/Android.Provider.ContactsContract+Profile.ContentRawContactsUri/)ように、プロパティ以下に：
+これらのアクセス許可が設定されると、アプリケーションは通常の Android 手法を使用してユーザープロファイルのデータを操作できます。 たとえば、プロファイルの表示名を更新するには、次に示すように、 `Uri` [ContentRawContactsUri](xref:Android.Provider.ContactsContract.Profile.ContentRawContactsUri)プロパティを使用して取得したを使用して、 [contentresolver. を呼び出します。](xref:Android.Content.ContentResolver.Update*)
 
 ```csharp
 var values = new ContentValues ();
@@ -66,9 +64,9 @@ values.Put (ContactsContract.Contacts.InterfaceConsts.DisplayName, "John Doe");
 ContentResolver.Update (ContactsContract.Profile.ContentRawContactsUri, values, null, null);
 ```
 
-## <a name="reading-profile-data"></a>プロファイル データの読み取り
+## <a name="reading-profile-data"></a>プロファイルデータの読み取り
 
-発行するためのクエリ、 [ContactsContact.Profile.ContentUri](https://developer.xamarin.com/api/property/Android.Provider.ContactsContract+Profile.ContentUri/)読み取りは、プロファイル データをバックアップします。 たとえば、次のコードでは、ユーザー プロファイルの表示名が表示されます。
+[ContactsContact](xref:Android.Provider.ContactsContract.Profile.ContentUri)にクエリを発行すると、プロファイルデータが読み取られます。 たとえば、次のコードは、ユーザープロファイルの表示名を読み取ります。
 
 ```csharp
 // Read the profile
@@ -90,26 +88,24 @@ if (cursor != null)
 }
 ```
 
-## <a name="navigating-to-the-user-profile"></a>ユーザー プロファイルに移動します。
+## <a name="navigating-to-the-user-profile"></a>ユーザープロファイルへの移動
 
-最後に、ユーザー プロファイルに移動するのインテントを作成、`ActionView`アクションと`ContactsContract.Profile.ContentUri`に渡す、`StartActivity`このようなメソッド。
+最後に、ユーザープロファイルに移動するには、 `ActionView`アクションとを`ContactsContract.Profile.ContentUri`使用してインテントを作成し、 `StartActivity`次のようにメソッドに渡します。
 
 ```csharp
 var intent = new Intent (Intent.ActionView,
-    ContactsContract.Profile.ContentUri);           
+    ContactsContract.Profile.ContentUri);
 StartActivity (intent);
 ```
 
-上記のコードを実行するときに、次のスクリーン ショットに示すように、ユーザー プロファイルが表示されます。
+上記のコードを実行すると、次のスクリーンショットに示すように、ユーザープロファイルが表示されます。
 
-[![John Doe のユーザー プロファイルを表示するプロファイルのスクリーン ショット](user-profile-images/01-profile-screen-sml.png)](user-profile-images/01-profile-screen.png#lightbox)
+[![John Doe user プロファイルを表示しているプロファイルのスクリーンショット](user-profile-images/01-profile-screen-sml.png)](user-profile-images/01-profile-screen.png#lightbox)
 
-ユーザー プロファイルの操作は Android では、その他のデータ操作に似ており、デバイスの個人用設定の追加レベル。
-
-
+ユーザープロファイルの操作は、Android の他のデータとの対話に似ており、追加のレベルのデバイスの個人用設定を提供します。
 
 ## <a name="related-links"></a>関連リンク
 
 - [ContactsProviderDemo (サンプル)](https://developer.xamarin.com/samples/monodroid/ContactsProviderDemo/)
-- [Ice Cream Sandwich の概要](http://www.android.com/about/ice-cream-sandwich/)
+- [アイスクリームサンドイッチの導入](http://www.android.com/about/ice-cream-sandwich/)
 - [Android 4.0 プラットフォーム](https://developer.android.com/sdk/android-4.0.html)

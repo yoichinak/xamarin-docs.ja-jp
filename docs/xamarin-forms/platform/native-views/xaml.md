@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/24/2016
-ms.openlocfilehash: 7a5c09bfe46b9e775383889e07fd93094ba9bf68
-ms.sourcegitcommit: a9c60f50b40203dd784e3e790b0d83e2bfc86129
+ms.openlocfilehash: b2e441a8e1443d1d32d553e9bbf1126fe5e380e7
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65731522"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68508846"
 ---
 # <a name="native-views-in-xaml"></a>XAML のネイティブ ビュー
 
@@ -38,7 +38,7 @@ Xamarin.Forms XAML ファイルにネイティブのビューを埋め込むに�
 1. XAML ファイルでのネイティブ ビューのインスタンスを作成します。
 
 > [!IMPORTANT]
-> ネイティブ ビューを使用しているすべての XAML ページには、コンパイルされた XAML を無効にする必要があります。 これは、XAML ページの分離コード クラスを修飾することによって実現できます、`[XamlCompilation(XamlCompilationOptions.Skip)]`属性。 XAML のコンパイルの詳細については、次を参照してください。 [xamarin.forms XAML コンパイル](~/xamarin-forms/xaml/xamlc.md)します。
+> ネイティブビューを使用するすべての XAML ページでは、コンパイルされた XAML を無効にする必要があります。 これは、 `[XamlCompilation(XamlCompilationOptions.Skip)]` XAML ページの分離コードクラスを属性で修飾することによって実現できます。 XAML コンパイルの詳細については、「 [Xamarin. Forms での xaml のコンパイル](~/xamarin-forms/xaml/xamlc.md)」を参照してください。
 
 分離コード ファイルからのネイティブ ビューを参照するには、共有資産プロジェクト (SAP) を使用して、条件付きコンパイル ディレクティブを使用してプラットフォーム固有のコードをラップする必要があります。 詳細については、[コードからネイティブ ビューを参照する](#native_view_code)を参照してください。
 
@@ -184,7 +184,7 @@ Android のウィジェットのコンストラクターは通常、Android を�
 
 [ `UIFont.FromName` ](xref:UIKit.UIFont.FromName*)ファクトリ メソッドを設定するため、 [ `UILabel.Font` ](xref:UIKit.UILabel.Font)プロパティを新しい[ `UIFont` ](xref:UIKit.UIFont) iOS でします。 `UIFont`名とサイズの子であるメソッドの引数で指定された、`x:Arguments`属性。
 
-[ `Typeface.Create` ](https://developer.xamarin.com/api/member/Android.Graphics.Typeface.Create/p/System.String/Android.Graphics.TypefaceStyle/)ファクトリ メソッドを設定するため、 [ `TextView.Typeface` ](https://developer.xamarin.com/api/property/Android.Widget.TextView.Typeface/)プロパティを新しい[ `Typeface` ](https://developer.xamarin.com/api/type/Android.Graphics.Typeface/) Android で。 `Typeface`ファミリ名とスタイルの子であるメソッドの引数によって指定されます、`x:Arguments`属性。
+[ `Typeface.Create` ](xref:Android.Graphics.Typeface.Create*)ファクトリ メソッドを設定するため、 [ `TextView.Typeface` ](xref:Android.Widget.TextView.Typeface)プロパティを新しい[ `Typeface` ](xref:Android.Graphics.Typeface) Android で。 `Typeface`ファミリ名とスタイルの子であるメソッドの引数によって指定されます、`x:Arguments`属性。
 
 [ `FontFamily` ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.fontfamily)コンストラクターは、設定に使用される、 [ `TextBlock.FontFamily` ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.fontfamily)プロパティを新しい`FontFamily`ユニバーサル Windows プラットフォーム (UWP) にします。 `FontFamily`の子であるメソッドの引数で指定された名前、`x:Arguments`属性。
 
@@ -325,7 +325,7 @@ IOS と Android のネイティブ ビューの多くでは、コントロール
 
 ページには、各プラットフォームのネイティブ ピッカー ビューも含まれています。 各ネイティブの表示には、バインド、果物のコレクションが表示されます、`ItemSource`プロパティを`SubclassedNativeControlsPageViewModel.Fruits`コレクション。 これにより、次のスクリーン ショットに示すように、ユーザー、フルーツを選択します。
 
-![](xaml-images/sub-classed.png "サブクラス化されたネイティブ ビュー")
+![](xaml-images/sub-classed.png "サブクラス化ネイティブビュー")
 
 IOS と Android では、ネイティブの選択は、コントロールを設定するのにメソッドを使用します。 そのため、これらの選択は、XAML に対応できるようにするプロパティを公開するサブクラス化する必要があります。 ユニバーサル Windows プラットフォーム (UWP) で、`ComboBox`は既に XAML への対応、およびそのため、サブクラス化を必要としません。
 
@@ -423,7 +423,7 @@ class PickerModel : UIPickerViewModel
 
 ### <a name="android"></a>Android
 
-Android の実装サブクラス、 [ `Spinner` ](https://developer.xamarin.com/api/type/Android.Widget.Spinner/)と XAML から簡単に使用できるイベントの表示、およびプロパティを公開します。
+Android の実装サブクラス、 [ `Spinner` ](xref:Android.Widget.Spinner)と XAML から簡単に使用できるイベントの表示、およびプロパティを公開します。
 
 ```csharp
 class MySpinner : Spinner
@@ -481,7 +481,7 @@ class MySpinner : Spinner
 }
 ```
 
-`MySpinner`クラスでは`ItemsSource`と`SelectedObject`プロパティ、および`ItemSelected`イベント。 によって表示される項目、`MySpinner`クラスは、によって提供される、 [ `Adapter` ](https://developer.xamarin.com/api/type/Android.Widget.Adapter/) 、ビューに関連付けられたおよびに項目が表示されます、`Adapter`ときに、`ItemsSource`プロパティが最初に設定します。 たびにで選択された項目、`MySpinner`クラスの変更、`OnBindableSpinnerItemSelected`イベント ハンドラーの更新プログラム、`SelectedObject`プロパティ。
+`MySpinner`クラスでは`ItemsSource`と`SelectedObject`プロパティ、および`ItemSelected`イベント。 によって表示される項目、`MySpinner`クラスは、によって提供される、 [ `Adapter` ](xref:Android.Widget.Adapter) 、ビューに関連付けられたおよびに項目が表示されます、`Adapter`ときに、`ItemsSource`プロパティが最初に設定します。 たびにで選択された項目、`MySpinner`クラスの変更、`OnBindableSpinnerItemSelected`イベント ハンドラーの更新プログラム、`SelectedObject`プロパティ。
 
 ## <a name="summary"></a>まとめ
 

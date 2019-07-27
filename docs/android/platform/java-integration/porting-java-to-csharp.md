@@ -1,44 +1,37 @@
 ---
-title: Java から C# への移植
-description: 3 つ目のオプションが Java ソース コードを移植する Xamarin.Android アプリケーションで Java を使用してをC#します。
+title: Java を Xamarin C# Android に移植する
+description: Xamarin Android アプリケーションで Java を使用するための3つ目のオプションは、Java ソースコードC#をに移植することです。
 ms.prod: xamarin
 ms.assetid: 39E528BD-010F-47FC-BE48-8E7848E30454
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/05/2016
-ms.openlocfilehash: 9beb6d59c9376a404c06af7f0cd1efd985929843
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c6627f585326848c5221729ca94071b00651c59e
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61075146"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511173"
 ---
-# <a name="porting-java-to-c"></a>Java から C# への移植
+# <a name="porting-java-to-c-for-xamarinandroid"></a>Java を Xamarin C# Android に移植する
 
-_3 つ目のオプションが Java ソース コードを移植する Xamarin.Android アプリケーションで Java を使用してをC#します。_
+このアプローチは、次のような組織にとって重要な場合があります。
 
-## <a name="overview"></a>概要
+- **テクノロジスタックを Java からにC#切り替えています。**
+- **C#とは、同じ製品の Java バージョンを維持する必要があります。**
+- **一般的な Java ライブラリの .NET バージョンを用意する必要があります。**
 
-この方法は、組織に関心のあります。
+Java コードをにC#移植するには、次の2つの方法があります。 最初の方法は、コードを手動で移植することです。 これには、.NET と Java の両方を理解し、各言語の適切な表現方法に精通している、熟練した開発者が関与します。 この方法は、少量のコード、または Java からにC#完全に移行する組織にとって最も効果的です。
 
--  **テクノロジ スタックを Java から切り替えるC#します。**
--  **維持する必要があります、C#と同じ製品の Java バージョン。**
--  **Java 人気のあるライブラリの .NET バージョンがあることにします。**
+2番目の移植方法では、[シャープ](https://github.com/mono/sharpen)などのコードコンバーターを使用してプロセスを自動化します。 [シャープ](https://github.com/mono/sharpen)は、Versant からのオープンソースコンバーターでC#あり、当初は Java から*db4o*のコードを移植するために使用されていました。 db4o は、Java で開発した後、.NET に移植されたオブジェクト指向データベースです。 コードコンバーターの使用は、両方の言語に存在する必要があり、2つの間に何らかのパリティを必要とするプロジェクトに適しています。
 
+たとえば、自動化されたコード変換ツールを使用すると、 [ngit](https://github.com/mono/ngit)プロジェクトでそのようなことがわかります。
+Ngit は、Java プロジェクト[jgit](http://eclipse.org/)のポートです。
+Jgit 自体は、 [Git](http://git-scm.com/)ソースコード管理システムの Java 実装です。 Java からC#コードを生成するには、ngit プログラマーはカスタム自動化システムを使用して Jgit から java コードを抽出し、変換プロセスに対応するためにいくつかの修正プログラムC#を適用してから、コードを生成するシャープを実行します。 これにより、ngit プロジェクトは、jgit で実行される継続的な継続的な作業の恩恵を受けることができます。
 
-Java コードを移植する 2 つの方法はありますC#します。 最初の方法は、手動でコードの移植です。 これには、.NET と Java の両方を理解し、各言語の適切な手法に精通した開発者のスキルを持つ必要があります。 このアプローチにより、最も意味の小規模なコード、またはから Java を完全に移行したい組織C#します。
-
-2 番目の移植方法論がコード コンバーターを使用して、プロセスを自動化し、[シャープ](https://github.com/mono/sharpen)します。 [シャープ](https://github.com/mono/sharpen)は、オープン ソースのコンバーターが、コードの移植に使用されていた Versant から*db4o*を Java からC#します。 db4o は、Versant は Java で開発し、.NET に移植し、オブジェクト指向のデータベースです。 コード コンバーターを使用するうえで適したプロジェクトの両方の言語でに存在する必要があり、2 つの間のパリティを必要とする可能性があります。
-
-ときに、自動コード変換ツールが意味の例で確認できます、 [ngit](https://github.com/mono/ngit)プロジェクト。
-Java プロジェクトのポートである Ngit [jgit](http://eclipse.org/)します。
-Jgit 自体はの Java 実装、 [Git](http://git-scm.com/)ソース コード管理システム。 生成するC#コードから Java、自動化された jgit から Java コードを抽出、変換処理に対応するためにいくつかの修正プログラムを適用してから、シャープを生成するを実行するシステムのカスタム ngit プログラマの使用、C#コード。 これにより、継続的かつ継続的な作業は、jgit で行われるからメリットを得る ngit プロジェクトです。
-
-多くの場合、作業量が自明でない自動コード変換ツールでは、ブートス トラップに関連する、これを使用する妨げ証明可能性があります。 多くの場合、可能性がある単純かつ容易にポート JavaC#を手動でします。
-
-
+多くの場合、自動化されたコード変換ツールのブートストラップに関連する作業量はごくわずかであり、これは使用する障壁であることが証明されます。 多くの場合、Java C#を手動で移植する方が簡単で簡単です。
 
 ## <a name="related-links"></a>関連リンク
 
-- [変換ツールを高めましょう](https://github.com/mono/sharpen)
+- [シャープ変換ツール](https://github.com/mono/sharpen)

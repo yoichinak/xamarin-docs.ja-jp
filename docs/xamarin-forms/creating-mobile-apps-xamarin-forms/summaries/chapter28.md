@@ -1,18 +1,18 @@
 ---
 title: 第 28 章の概要です。 場所とマップ
-description: Xamarin.Forms によるモバイル アプリの作成。第 28 章の概要です。 場所とマップ
+description: Xamarin を使用した Mobile Apps の作成:第 28 章の概要です。 場所とマップ
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: F6E20077-687C-45C4-A375-31D4F49BBFA4
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: 0abd7e6cb5b8b9650a3dc324338587ff59a80a19
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 846b7fa3c905b208771a110a013283bd77214b72
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61331455"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511697"
 ---
 # <a name="summary-of-chapter-28-location-and-maps"></a>第 28 章の概要です。 場所とマップ
 
@@ -66,7 +66,7 @@ IOS のカスタム実装の`ILocationTracker`は、 [ `LocationTracker` ](https
 
 #### <a name="the-android-location-manager"></a>Android のロケーション マネージャー
 
-Android の実装の`ILocationTracker`は、 [ `LocationTracker` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.Android/LocationTracker.cs) 、Android の使用により、クラス[ `LocationManager` ](https://developer.xamarin.com/api/type/Android.Locations.LocationManager/)クラス。
+Android の実装の`ILocationTracker`は、 [ `LocationTracker` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.Android/LocationTracker.cs) 、Android の使用により、クラス[ `LocationManager` ](xref:Android.Locations.LocationManager)クラス。
 
 #### <a name="the-uwp-geo-locator"></a>UWP の geo ロケーター
 
@@ -158,7 +158,7 @@ Ios の場合、 **info.plist**ファイルは、そのユーザーの場所の�
 
 `Distance` メトリックとヤード ポンド単位間で変換することで、単位に依存しない距離を提供するものです。 A`Distance`値は、いくつかの方法で作成できます。
 
-- [`Distance` コンス トラクター](xref:Xamarin.Forms.Maps.Distance.%23ctor(System.Double))メートル単位の距離
+- [`Distance` コンストラクター](xref:Xamarin.Forms.Maps.Distance.%23ctor(System.Double))メートル単位の距離
 - [`Distance.FromMeters`](xref:Xamarin.Forms.Maps.Distance.FromMeters(System.Double)) 静的メソッド
 - [`Distance.FromKilometers`](xref:Xamarin.Forms.Maps.Distance.FromKilometers(System.Double)) 静的メソッド
 - [`Distance.FromMiles`](xref:Xamarin.Forms.Maps.Distance.FromMiles(System.Double)) 静的メソッド
@@ -179,14 +179,14 @@ Ios の場合、 **info.plist**ファイルは、そのユーザーの場所の�
 
 呼び出すことができます、 [ `MoveToRegion` ](xref:Xamarin.Forms.Maps.Map.MoveToRegion(Xamarin.Forms.Maps.MapSpan))メソッドの`Map`をプログラムで、マップ上の場所とズーム レベルを設定します。 型の引数は、`MapSpan`します。 作成することができます、`MapSpan`オブジェクトを使用して、次のいずれか。
 
-- [`MapSpan` コンス トラクター](xref:Xamarin.Forms.Maps.MapSpan.%23ctor(Xamarin.Forms.Maps.Position,System.Double,System.Double))で、`Position`と緯度と経度のスパン
+- [`MapSpan` コンストラクター](xref:Xamarin.Forms.Maps.MapSpan.%23ctor(Xamarin.Forms.Maps.Position,System.Double,System.Double))で、`Position`と緯度と経度のスパン
 - [`MapSpan.FromCenterAndRadius`](xref:Xamarin.Forms.Maps.MapSpan.FromCenterAndRadius(Xamarin.Forms.Maps.Position,Xamarin.Forms.Maps.Distance)) `Position`と半径
 
 新たに作成することも`MapSpan`メソッドを使用して、既存のものから[ `ClampLatitude` ](xref:Xamarin.Forms.Maps.MapSpan.ClampLatitude(System.Double,System.Double))または[ `WithZoom`](xref:Xamarin.Forms.Maps.MapSpan.WithZoom(System.Double))します。
 
 [WyomingPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/WyomingPage.xaml)ファイルと[WyomingPage.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/WyomingPage.xaml.cs)分離コード ファイルが使用する方法を示します、`MoveToRegion`ワイオミングの状態を表示するメソッド。
 
-また使用することができます、 [ `Map`コンス トラクター](xref:Xamarin.Forms.Maps.Map.%23ctor(Xamarin.Forms.Maps.MapSpan))で、`MapSpan`マップの場所を初期化するオブジェクト。 [XamarinHQPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/XamarinHQPage.xaml)ファイルが完全にサンフランシスコの Xamarin の本社の表示を XAML でこれを実行する方法を示します。
+また使用することができます、 [ `Map`コンストラクター](xref:Xamarin.Forms.Maps.Map.%23ctor(Xamarin.Forms.Maps.MapSpan))で、`MapSpan`マップの場所を初期化するオブジェクト。 [XamarinHQPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/XamarinHQPage.xaml)ファイルが完全にサンフランシスコの Xamarin の本社の表示を XAML でこれを実行する方法を示します。
 
 ### <a name="dynamic-zooming"></a>動的ズーム
 

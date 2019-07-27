@@ -1,37 +1,37 @@
 ---
 title: 指紋認証
-description: このガイドでは、Xamarin.Android アプリケーションを Android 6.0 で導入された、指紋認証を追加する方法について説明します。
+description: このガイドでは、Android 6.0 で導入された指紋認証を Xamarin Android アプリケーションに追加する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 6742D874-4988-4516-A946-D5C714B20A10
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 70e12abdf61a6a0bfb36d281bcaa6214199e567d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 7917f0cc03a4079d6b2adaba37fdc0332f8626c8
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61023471"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510605"
 ---
 # <a name="fingerprint-authentication"></a>指紋認証
 
-_このガイドでは、Xamarin.Android アプリケーションを Android 6.0 で導入された、指紋認証を追加する方法について説明します。_
+_このガイドでは、Android 6.0 で導入された指紋認証を Xamarin Android アプリケーションに追加する方法について説明します。_
 
 
 ## <a name="fingerprint-authentication-overview"></a>指紋認証の概要
 
-Android デバイスで指紋スキャナーの到着は、ユーザー認証の代わりに、従来のユーザー名/パスワード メソッドにアプリケーションを提供します。 ユーザーを認証する指紋の使用によって、ユーザー名とパスワードよりも煩雑セキュリティを組み込むアプリケーションになります。
+Android デバイスで指紋スキャナーを使用すると、ユーザー認証の従来のユーザー名/パスワード方法の代わりにアプリケーションが提供されます。 指紋を使用してユーザーを認証することにより、アプリケーションは、ユーザー名とパスワードよりも侵入が少ないセキュリティを組み込むことができます。
 
-FingerprintManager Api 指紋スキャナーでデバイスを対象にして、API レベル 23 (Android 6.0) を実行しているまたはそれ以降。 Api がある、`Android.Hardware.Fingerprints`名前空間。 Android サポート ライブラリ v4 は、指紋の古いバージョンの Android 用の Api のバージョンを提供します。 互換性 Api にあるは、`Android.Support.v4.Hardware.Fingerprint`名前空間内での配布、 [Xamarin.Android.Support.v4 NuGet パッケージ](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)。
+FingerprintManager Api は、指紋スキャナーを使用してデバイスを対象とし、API レベル 23 (Android 6.0) 以降を実行しています。 Api は`Android.Hardware.Fingerprints`名前空間にあります。 Android サポートライブラリ v4 には、以前のバージョンの Android 用の指紋 Api のバージョンが用意されています。 互換性 api は`Android.Support.v4.Hardware.Fingerprint`名前空間にあります。この api は、 [Xamarin. Android. の NuGet パッケージ](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)を通じて配布されます。
 
-[FingerprintManager](https://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.html) (とそのサポート ライブラリの対応する[FingerprintManagerCompat](https://developer.android.com/reference/android/support/v4/hardware/fingerprint/FingerprintManagerCompat.html)) のハードウェア スキャン、指紋を使用して、主要なクラスです。 このクラスは、ハードウェア自体との対話を管理するシステム レベルのサービスを Android SDK でラッパーです。 スキャナーからのフィードバックに応答したり、指紋スキャナーを起動するためになります。 このクラスには 3 つのみのメンバーで非常に簡単ですインターフェイス。
+[FingerprintManager](https://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.html) (およびサポートライブラリ対応の[FingerprintManagerCompat](https://developer.android.com/reference/android/support/v4/hardware/fingerprint/FingerprintManagerCompat.html)) は、指紋スキャンハードウェアを使用するための主要なクラスです。 このクラスは、ハードウェア自体との対話を管理するシステムレベルサービスの Android SDK ラッパーです。 指紋スキャナーを起動し、スキャナーからのフィードバックに応答する役割を担います。 このクラスには、次の3つのメンバーのみを含む非常に単純なインターフェイスがあります。
 
-* **`Authenticate`** &ndash; このメソッドは、ハードウェア スキャナーを初期化し、ユーザーが、指紋をスキャンするために待機しているバック グラウンドでサービスを開始します。
-* **`EnrolledFingerprints`** &ndash; このプロパティは返します`true`ユーザーが 1 つまたは複数の指紋をデバイスに登録されている場合。
-* **`HardwareDetected`** &ndash; このプロパティは、デバイスが指紋をスキャンをサポートしているかどうかに使用されます。
+* **`Authenticate`** &ndash;このメソッドは、ユーザーが指紋をスキャンするのを待機して、ハードウェアスキャナーを初期化し、サービスをバックグラウンドで起動します。
+* **`EnrolledFingerprints`** ユーザーがデバイスに`true` 1 つ以上の指紋を登録している場合、このプロパティはを返します。 &ndash;
+* **`HardwareDetected`** &ndash;このプロパティは、デバイスで指紋スキャンがサポートされているかどうかを判断するために使用されます。
 
-`FingerprintManager.Authenticate`メソッドは、指紋スキャナーを開始する Android アプリケーションによって使用されます。 次のスニペットでは、サポート ライブラリの互換性の Api を使用して呼び出す方法の例を示します。
+この`FingerprintManager.Authenticate`メソッドは、指紋スキャナーを起動するために Android アプリケーションによって使用されます。 次のスニペットは、サポートライブラリ互換性 Api を使用して呼び出す方法を示しています。
 
 ```csharp
 // context is any Android.Content.Context instance, typically the Activity 
@@ -44,13 +44,13 @@ fingerprintManager.Authenticate(FingerprintManager.CryptoObject crypto,
                                );
 ```
 
-このガイドは、使用する方法を説明する、`FingerprintManager`指紋認証を使用した Android アプリケーションを強化する Api。 インスタンスを作成し、作成する方法を取り上げますが、`CryptoObject`指紋スキャナーからの結果を保護するためにします。 サブクラスをアプリケーションがどのように検証`FingerprintManager.AuthenticationCallback`指紋スキャナーからのフィードバックに応答しているとします。 最後に、使用する方法と、Android デバイスまたはエミュレーターにフィンガー プリントを登録する方法が表示されます**adb**指紋のスキャンをシミュレートします。
+このガイドでは、api を使用`FingerprintManager`して、指紋認証で Android アプリケーションを拡張する方法について説明します。 ここでは、指紋スキャナーからの結果`CryptoObject`をセキュリティで保護するために、をインスタンス化して作成する方法について説明します。 ここでは、アプリケーションが指紋スキャナー `FingerprintManager.AuthenticationCallback`からのフィードバックにサブクラス化して応答する方法について説明します。 最後に、Android デバイスまたはエミュレーターに指紋を登録する方法と、 **adb**を使用して指紋スキャンをシミュレートする方法について説明します。
 
 ## <a name="requirements"></a>必要条件
 
-指紋認証には、Android 6.0 (API レベル 23) が必要となるまたは以上および指紋スキャナーでデバイス。 
+指紋認証には、Android 6.0 (API レベル 23) 以上、および指紋スキャナーを使用するデバイスが必要です。 
 
-指紋が既に認証されている各ユーザーのデバイスに登録されている必要があります。 パスワード、PIN、スワイプのパターンまたは顔認識を使用して画面のロックを設定します。 Android のエミュレーターで指紋認証機能の一部をシミュレートすることになります。  これら 2 つのトピックの詳細についてを参照してください、[指紋の登録](enrolling-fingerprint.md)セクション。 
+認証されるユーザーごとに、デバイスに指紋が既に登録されている必要があります。 これには、パスワード、PIN、スワイプパターン、または顔認識を使用する画面ロックの設定が含まれます。 Android Emulator では、一部の指紋認証機能をシミュレートすることができます。  これらの2つのトピックの詳細については、「[指紋の登録](enrolling-fingerprint.md)」セクションを参照してください。 
 
 
 
@@ -59,10 +59,10 @@ fingerprintManager.Authenticate(FingerprintManager.CryptoObject crypto,
 
 ## <a name="related-links"></a>関連リンク
 
-- [指紋のガイド サンプル アプリ](https://developer.xamarin.com/samples/monodroid/FingerprintGuide/)
-- [指紋ダイアログのサンプル](https://developer.xamarin.com/samples/monodroid/android-m/FingerprintDialog/)
-- [実行時にアクセス許可の要求](https://developer.android.com/training/permissions/requesting.html)
+- [指紋ガイドのサンプルアプリ](https://developer.xamarin.com/samples/monodroid/FingerprintGuide/)
+- [フィンガープリントダイアログのサンプル](https://developer.xamarin.com/samples/monodroid/android-m/FingerprintDialog/)
+- [実行時のアクセス許可の要求](https://developer.android.com/training/permissions/requesting.html)
 - [android.hardware.fingerprint](https://developer.android.com/reference/android/hardware/fingerprint/package-summary.html)
 - [android.support.v4.hardware.fingerprint](https://developer.android.com/reference/android/support/v4/hardware/fingerprint/package-summary.html)
-- [Android.Content.Context](https://developer.xamarin.com/api/type/Android.Content.Context/)
-- [指紋と支払いの API (ビデオ)](https://youtu.be/VOn7VrTRlA4)
+- [Android.Content.Context](xref:Android.Content.Context)
+- [指紋および支払い API (ビデオ)](https://youtu.be/VOn7VrTRlA4)

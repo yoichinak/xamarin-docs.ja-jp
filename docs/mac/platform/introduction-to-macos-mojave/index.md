@@ -1,51 +1,51 @@
 ---
 title: macOS Mojave の概要
-description: このドキュメントは、macOS Mojave で新規および更新された機能の概要の大まかな説明します。
+description: このドキュメントでは、macOS Mojave の新機能と更新された機能の概要について説明します。
 ms.prod: xamarin
 ms.assetid: 4A41CD85-C807-44C9-85AB-B5441B145A73
 ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: a9975eeec445ac59dc71a44a1156804835795982
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 9c88d0a90cf5f1cae0e27a05aeaa71f726ddb4de
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61032112"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511687"
 ---
 # <a name="introduction-to-macos-mojave"></a>macOS Mojave の概要
 
-このドキュメントは、macOS Mojave で新規および更新された機能の概要の大まかな説明します。
+このドキュメントでは、macOS Mojave の新機能と更新された機能の概要について説明します。
 
-Xamarin を使った Mojave アプリを macOS にビルドを開始するを参照してください、[ファースト ステップ ガイド](~/mac/platform/introduction-to-macos-mojave/get-started.md)の[Xamarin.Mac 5.0](https://developer.xamarin.com/releases/mac/xamarin.mac_5/xamarin.mac_5.0/)します。
+Xamarin を使用した macOS Mojave アプリの構築を開始するには、 [xamarin. Mac 5.0](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/mac/xamarin.mac_5/xamarin.mac_5.0.md)の[ファーストステップガイド](~/mac/platform/introduction-to-macos-mojave/get-started.md)を参照してください。
 
-## <a name="dark-mode"></a>ダーク モード
+## <a name="dark-mode"></a>ダークモード
 
-ダーク モードは、動的、ダーク グレー色スキームを使用して、ユーザー インターフェイス要素を表示する macOS Mojave でシステム全体のダーク テーマです。 新しい色のアクセント カラー、色の効果、およびためサード パーティ製アプリをユーザーの色の設定に関係なくきれいコンテンツ濃淡の色も導入されています。
+ダークモードは、macOS Mojave のシステム全体にわたるダークテーマで、動的なダークグレーの配色を使用してユーザーインターフェイス要素を表示します。 また、ユーザーの色の設定に関係なく、サードパーティのアプリの外観を向上させるために、新しいアクセントカラー、色効果、およびコンテンツ濃淡の色が導入されています。
 
 ## <a name="user-notifications-framework"></a>ユーザー通知フレームワーク
 
-MacOS Mojave、Mac アプリを使用して、ユーザー通知と連携する Api を変更するには、ユーザー通知フレームワークが含まれます。
+ユーザー通知フレームワークは macOS Mojave に含まれており、Mac アプリがユーザー通知を操作するために使用する Api を変更します。
 
 ## <a name="natural-language-framework"></a>自然言語フレームワーク
 
-自然言語、フレームワークは、アプリケーションをさまざまな種類の言語分析を実行できます。 たとえば、品詞を特定し、テキストのブロックで表される言語を決定する、使用できます。
+自然言語フレームワークを使用すると、アプリケーションはさまざまな種類の言語分析を実行できます。 たとえば、音声の一部を識別し、テキストブロックで表される言語を特定するために使用できます。
 
-## <a name="vision-framework"></a>ビジョン フレームワーク
+## <a name="vision-framework"></a>ビジョンフレームワーク
 
-ビジョン フレームワークには、さまざまな方向に顔を検出できる強化された顔検出機能が含まれています。 また、要求のリビジョンはビジョン framework アルゴリズムの特定のリビジョンを選択するようになりました使用できます。
+ビジョンフレームワークには、さまざまな向きで顔を検出できる改善された顔検出機能が含まれています。 また、要求のリビジョンを使用して、特定のビジョンフレームワークアルゴリズムリビジョンを選択できるようになりました。
 
-## <a name="network-framework"></a>ネットワーク フレームワーク
+## <a name="network-framework"></a>ネットワークフレームワーク
 
-基になるネットワーク フレームワークの場合は、ネットワーク スタック、 `URLSession` iOS アプリケーションでよく使用される Api は TCP、UDP、TLS、IPv4 および IPv6 を操作しやすく、スタンドアロン フレームワークとして使用できるようになりました。
+IOS アプリケーションで一般的に使用され`URLSession`ている api の基礎となるネットワークスタックが、スタンドアロンフレームワークとして使用できるようになりました。これにより、TCP、UDP、TLS、IPv4/IPv6 などを簡単に操作できます。
 
-## <a name="deprecations"></a>廃止された機能
+## <a name="deprecations"></a>廃止
 
-OpenGL ES と OpenCL、macOS Mojave で Apple が非推奨が[開発者](https://developer.apple.com/macos/whats-new/)メタルとメタル パフォーマンス シェーダーを採用します。
+MacOS Mojave では、Apple は OpenGL ES と OpenCL を非推奨にし、[開発者](https://developer.apple.com/macos/whats-new/)が金属および金属のパフォーマンスシェーダーを採用するようにしています。
 
 ## <a name="related-links"></a>関連リンク
 
-- [Xamarin.Mac サンプル](https://developer.xamarin.com/samples/mac/)
-- [macOS-Apple の開発者](https://developer.apple.com/macos/)
-- [Xamarin.Mac 5.0 リリース ノート](https://docs.microsoft.com/xamarin/mac/release-notes/5/5.0/)
+- [Xamarin. Mac サンプル](https://developer.xamarin.com/samples/mac/)
+- [macOS – Apple Developer](https://developer.apple.com/macos/)
+- [Xamarin. Mac 5.0 リリースノート](https://docs.microsoft.com/xamarin/mac/release-notes/5/5.0/)

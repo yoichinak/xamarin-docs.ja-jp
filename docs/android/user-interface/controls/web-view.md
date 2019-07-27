@@ -6,21 +6,21 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: ae0b67de5856e6baef9a4989a93e65ead2854a62
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 2718953c9e5628374c45fa3741d1ad3be3125dd9
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61310636"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510150"
 ---
-# <a name="web-view"></a>Web ビュー
+# <a name="xamarinandroid-web-view"></a>Xamarin Android Web ビュー
 
-[`WebView`](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) web ページを表示するための独自のウィンドウを作成します (または完全なブラウザーを開発しても) することができます。 このチュートリアルでは、単純なを作成します [`Activity`](https://developer.xamarin.com/api/type/Android.App.Activity/)
-表示して、web ページの移動をできます。
+[`WebView`](xref:Android.Webkit.WebView)web ページを表示するための独自のウィンドウを作成できます (または、完全なブラウザーを開発することもできます)。 このチュートリアルでは、単純なを作成します。[`Activity`](xref:Android.App.Activity)
+これにより、web ページを表示したり、移動したりできます。
 
-という名前の新しいプロジェクトを作成する**HelloWebView**します。
+**"/** " という名前の新しいプロジェクトを作成します。
 
-開いている**Resources/Layout/Main.axml**し、次を挿入します。
+**Resources/Layout/Main**を開き、次のように挿入します。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -30,23 +30,23 @@ ms.locfileid: "61310636"
     android:layout_height="fill_parent" />
 ```
 
-このアプリケーションをインターネットにアクセスするため、適切な権限を Android マニフェスト ファイルを追加する必要があります。 動作するアプリケーションに必要なアクセス許可を指定するプロジェクトのプロパティを開きます。 有効にする、`INTERNET`次に示すようにアクセス許可。
+このアプリケーションはインターネットにアクセスするため、Android マニフェストファイルに適切なアクセス許可を追加する必要があります。 プロジェクトのプロパティを開いて、アプリケーションが動作するために必要なアクセス許可を指定します。 次の`INTERNET`ようにアクセス許可を有効にします。
 
-![Android マニフェストでのインターネット アクセス許可の設定](web-view-images/01-set-internet-permissions.png)
+![Android マニフェストでのインターネットアクセス許可の設定](web-view-images/01-set-internet-permissions.png)
 
-今すぐ開きます**MainActivity.cs**を使用して、追加 Webkit のディレクティブ。
+ここで、 **MainActivity.cs**を開き、Webkit に using ディレクティブを追加します。
 
 ```csharp
 using Android.Webkit;
 ```
 
-上部にある、`MainActivity`クラスを宣言、 [ `WebView` ](https://developer.xamarin.com/api/type/Android.Webkit.WebView/)オブジェクト。
+`MainActivity`クラスの先頭に、オブジェクトを[`WebView`](xref:Android.Webkit.WebView)宣言します。
 
 ```csharp
 WebView web_view;
 ```
 
-ときに、 **WebView**は URL をロードしようとすると、既定でに委託する既定のブラウザー要求。 **WebView** URL (既定のブラウザーではなく) を読み込み、サブクラスを作成する必要があります`Android.Webkit.WebViewClient`をオーバーライドし、`ShouldOverriderUrlLoading`メソッド。 このカスタムのインスタンス`WebViewClient`に提供される、`WebView`します。 これを行うには、追加、次の入れ子になった`HelloWebViewClient`クラス内で`MainActivity`:
+Web ビューで URL の**読み込みが要求**されると、既定では既定のブラウザーに要求が委任されます。 **WebView**が既定のブラウザーではなく URL を読み込むようにするには、 `Android.Webkit.WebViewClient` `ShouldOverriderUrlLoading`メソッドをサブクラス化してオーバーライドする必要があります。 このカスタム`WebViewClient`のインスタンスは、 `WebView`に提供されます。 これを行うには、内`HelloWebViewClient` `MainActivity`に次の入れ子になったクラスを追加します。
 
 ```csharp
 public class HelloWebViewClient : WebViewClient
@@ -59,9 +59,9 @@ public class HelloWebViewClient : WebViewClient
 }
 ```
 
-ときに`ShouldOverrideUrlLoading`返します`false`、Android に通知を現在`WebView`インスタンスが要求を処理し、これ以上の操作は必要ありません。 
+が`ShouldOverrideUrlLoading`を`false`返すと、現在`WebView`のインスタンスが要求を処理したことと、それ以上のアクションが不要であることが Android に通知されます。 
 
-API レベル 24 以上をターゲットにする場合のオーバー ロードを使用して、`ShouldOverrideUrlLoading`を受け取る、`IWebResourceRequest`の 2 番目の引数の代わりに、 `string`:
+API レベル24以降を対象としている場合は、で`ShouldOverrideUrlLoading`はなく`string`2 `IWebResourceRequest`番目の引数にを受け取るのオーバーロードを使用します。
 
 ```csharp
 public class HelloWebViewClient : WebViewClient
@@ -75,8 +75,7 @@ public class HelloWebViewClient : WebViewClient
 }
 ```
 
-次に、次のコードを使用して、 [`OnCreate()`](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/(Android.OS.Bundle))
-方法:
+次に、のメソッドに対し[`OnCreate()`](xref:Android.App.Activity.OnCreate*)て次のコードを使用します。
 
 ```csharp
 protected override void OnCreate (Bundle bundle)
@@ -93,20 +92,20 @@ protected override void OnCreate (Bundle bundle)
 }
 ```
 
-メンバー初期化は、この[ `WebView` ](https://developer.xamarin.com/api/type/Android.Webkit.WebView/)から 1 つで、 [ `Activity` ](https://developer.xamarin.com/api/type/Android.App.Activity/)レイアウトの JavaScript を使用して、 [ `WebView` ](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) で[`JavaScriptEnabled` ](https://developer.xamarin.com/api/property/Android.Webkit.WebSettings.JavaScriptEnabled/) 
- `= true` (を参照してください、[呼び出す C\# JavaScript から](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/webview/call_csharp_from_javascript)C の呼び出し方法についてはレシピ\#JavaScript からの関数)。 最初の web ページが最後に、読み込まれた[ `LoadUrl(String)`](https://developer.xamarin.com/api/type/Android.Webkit.WebView/%2fM%2fLoadUrl)します。
+これにより、 [`WebView`](xref:Android.Webkit.WebView) [`Activity`](xref:Android.App.Activity)レイアウトからのメンバーを初期化[`WebView`](xref:Android.Webkit.WebView)し、を使用`= true` [`JavaScriptEnabled`](xref:Android.Webkit.WebSettings.JavaScriptEnabled) 
+しての javascript を有効にします ( [javascript からの呼び出し C\# ](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/webview/call_csharp_from_javascript)を参照してください)。JavaScript から C\#関数を呼び出す方法の詳細については、「レシピ」を参照してください)。 最後に、を使用して[`LoadUrl(String)`](xref:Android.Webkit.WebView)最初の web ページを読み込みます。
 
-アプリケーションをビルドし、実行します。 次のスクリーン ショットで 1 つとして、単純な web ページ ビューアー アプリが表示されます。
+アプリケーションをビルドし、実行します。 次のスクリーンショットに示すように、単純な web ページビューアーアプリが表示されます。
 
-[![Web ビューを表示するアプリの例](web-view-images/02-simple-webview-app-sml.png)](web-view-images/02-simple-webview-app.png#lightbox)
+[![WebView を表示するアプリの例](web-view-images/02-simple-webview-app-sml.png)](web-view-images/02-simple-webview-app.png#lightbox)
 
-処理するために、**戻る**キーの押下をクリックし、次の追加ステートメントを使用します。
+**[戻る]** ボタンのキーを押すには、次の using ステートメントを追加します。
 
 ```csharp
 using Android.Views;
 ```
 
-内で次のメソッドを次に、追加、`HelloWebView`アクティビティ。
+次に、 `HelloWebView`アクティビティ内に次のメソッドを追加します。
 
 ```csharp
 public override bool OnKeyDown (Android.Views.Keycode keyCode, Android.Views.KeyEvent e)
@@ -120,20 +119,18 @@ public override bool OnKeyDown (Android.Views.Keycode keyCode, Android.Views.Key
 }
 ```
 
-これ [`OnKeyDown(int, KeyEvent)`](https://developer.xamarin.com/api/member/Android.App.Activity.OnKeyDown/(Android.Views.Keycode%2cAndroid.Views.KeyEvent))
-アクティビティの実行中にボタンが押されたときに、コールバック メソッドが呼び出されます。 内部使用条件、 [ `KeyEvent` ](https://developer.xamarin.com/api/type/Android.Views.KeyEvent/) 、キーが押されたかどうかを確認するのには、**戻る**ボタンかどうかと、 [ `WebView` ](https://developer.xamarin.com/api/type/Android.Webkit.WebView/)が実際にできます。戻る (ある場合、履歴) を移動します。 どちらにも該当する場合、 [ `GoBack()` ](https://developer.xamarin.com/api/member/Android.Webkit.WebView.GoBack/)メソッドが呼び出される 1 つ戻りますの手順を移動しますが、 [ `WebView` ](https://developer.xamarin.com/api/type/Android.Webkit.WebView/)履歴。 返す`true`イベントが処理されたことを示します。 この条件が満たされていない場合は、イベントがシステムに送信されます。
+これ[`OnKeyDown(int, KeyEvent)`](xref:Android.App.Activity.OnKeyDown*)
+コールバックメソッドは、アクティビティの実行中にボタンが押されるたびに呼び出されます。 内の条件では[`KeyEvent`](xref:Android.Views.KeyEvent) 、を使用して、押されたキーが**戻る** [`WebView`](xref:Android.Webkit.WebView)ボタンであるかどうか、およびが実際に戻ることができるかどうかを確認します (履歴がある場合)。 両方が true [`GoBack()`](xref:Android.Webkit.WebView.GoBack)の場合、メソッドが呼び出されます。これにより、 [`WebView`](xref:Android.Webkit.WebView)履歴内の1つのステップが戻ります。 を`true`返すことは、イベントが処理されたことを示します。 この条件が満たされていない場合は、イベントがシステムに送り返されます。
 
-アプリケーションをもう一度実行します。 リンクをたどるし、ページの履歴を後方に移動できるようになりましたに。
+アプリケーションをもう一度実行します。 リンクに移動して、ページ履歴を表示できるようになります。
 
-[![アクションで [戻る] ボタンのスクリーン ショットの例](web-view-images/03-back-button-sml.png)](web-view-images/03-back-button.png#lightbox)
+[![アクションの [戻る] ボタンのスクリーンショットの例](web-view-images/03-back-button-sml.png)](web-view-images/03-back-button.png#lightbox)
 
-
-*このページの部分が作成および Android のオープン ソース プロジェクトで共有し、の条項に従って使用作業に基づいた変更、*
-[*Creative Commons 2.5 Attribution License*](http://creativecommons.org/licenses/by/2.5/).
-
+*このページの一部は、Android オープンソースプロジェクトによって作成および共有*
+され、[*Creative Commons 2.5 属性*](http://creativecommons.org/licenses/by/2.5/)で説明されている条項に従って使用される作業に基づいて変更されます。
 
 ## <a name="related-links"></a>関連リンク
 
 - [JavaScript から C# を呼び出す](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/webview/call_csharp_from_javascript)
-- [Android.Webkit.WebView](https://developer.xamarin.com/api/type/Android.Webkit.WebView)
-- [KeyEvent](https://developer.xamarin.com/api/type/Android.Webkit.WebView/Client)
+- [Android.Webkit.WebView](xref:Android.Webkit.WebView)
+- [KeyEvent](xref:Android.Webkit.WebView)

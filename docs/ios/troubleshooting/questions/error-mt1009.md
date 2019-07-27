@@ -7,21 +7,20 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 4a67537cc53aeecf1b86d11dbf041cea79587dd2
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: b01701566cec88ad4a1493cf5ab9778bd38792b0
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61422010"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511818"
 ---
 # <a name="error-mt1009-could-not-copy-the-assembly"></a>エラー MT1009: Could not copy the assembly (アセンブリをコピーできませんでした)
 
 > [!IMPORTANT]
-> Xamarin.iOS の最近のバージョンでは、この問題を解決されています。 ただし、ソフトウェアの最新バージョンで問題が発生した場合を提出してください、[新しいバグ](~/cross-platform/troubleshooting/questions/howto-file-bug.md)完全なバージョン管理情報と完全のビルド ログ出力します。
+> この問題は、最新バージョンの Xamarin. iOS で解決されました。 ただし、最新バージョンのソフトウェアで問題が発生した場合は、完全なバージョン管理情報と完全ビルドログ出力を使用して[新しいバグを作成](~/cross-platform/troubleshooting/questions/howto-file-bug.md)してください。
 
-」の説明に従って、[リリース ノート](https://developer.xamarin.com/releases/ios/xamarin.ios_7/xamarin.ios_7.2/)、7.2.6 Xamarin.iOS の既知の問題になります。 この問題は、開発者の主なアカウントの別のユーザー アカウントを使用して Xamarin.iOS がインストールされている場合は、高い特権を必要とするファイルのアクセス許可のため、します。
+[リリースノート](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/ios/xamarin.ios_7/xamarin.ios_7.2/index.md)に記載されているように、これは7.2.6 の既知の問題です。 この問題が発生するのは、Xamarin が、別のユーザーアカウントを使用してインストールされている場合に、より高い特権を必要とするファイルのアクセス許可があるためです。
 
-問題の回避、Mac のワークステーションで Terminal.app を開くし、次のコマンドを実行してください。
+この問題を回避するには、Mac ワークステーションでターミナルアプリを開き、次のコマンドを実行します。
 
 `sudo chmod 0644 /Developer/MonoTouch/usr/lib/mono/2.1/monotouch.dll.mdb`
-

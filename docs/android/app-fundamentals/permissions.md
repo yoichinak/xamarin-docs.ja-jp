@@ -1,77 +1,77 @@
 ---
-title: Xamarin.Android でのアクセス許可
+title: Xamarin. Android のアクセス許可
 ms.prod: xamarin
 ms.assetid: 3C440714-43E3-4D31-946F-CA59DAB303E8
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: 204dd903586164691d068a956e741c406df10b36
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 1426054b60d182f7f40bf3c4b0bf69b2287ad57e
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61027116"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68509405"
 ---
-# <a name="permissions-in-xamarinandroid"></a>Xamarin.Android でのアクセス許可
+# <a name="permissions-in-xamarinandroid"></a>Xamarin. Android のアクセス許可
 
 
 ## <a name="overview"></a>概要
 
-Android アプリケーションが独自のサンド ボックスで実行し、セキュリティ上の理由からはアクセスできない特定のシステム リソースやハードウェア デバイスでします。 これらのリソースを使用する前に、ユーザーは、アプリへのアクセス許可を明示的に付与する必要があります。 たとえば、アプリケーション、ユーザーから明示的なアクセス許可がないデバイスに GPS にアクセスできません。 Android がスローされます、`Java.Lang.SecurityException`アプリでは、アクセス許可がない保護されたリソースにアクセスしようとするとします。
+Android アプリケーションは独自のサンドボックスで実行され、セキュリティ上の理由から、デバイス上の特定のシステムリソースやハードウェアにアクセスすることはできません。 ユーザーは、これらのリソースを使用する前に、アプリに対するアクセス許可を明示的に付与する必要があります。 たとえば、アプリケーションは、ユーザーからの明示的なアクセス許可なしにデバイスの GPS にアクセスすることはできません。 アプリがアクセス許可`Java.Lang.SecurityException`なしに保護されたリソースにアクセスしようとすると、Android によってがスローされます。
 
-アクセス許可が宣言されている、 **AndroidManifest.xml**アプリの開発時に、アプリケーション開発者。 Android では、これらのアクセス許可、ユーザーの同意を取得するための 2 つの異なるワークフローがあります。
+アクセス許可は、アプリの開発時にアプリケーション開発者が**Androidmanifest .xml**で宣言します。 Android には、これらのアクセス許可に対するユーザーの同意を取得するための2つの異なるワークフローがあります。
  
-* アプリのインストール時に、Android 5.1 (API レベル 22) または下を対象とするアプリに対して、アクセス許可を要求が発生しました。 ユーザーがアクセス許可を付与しなかった場合、アプリはインストールされません。 アプリがインストールされると、アプリをアンインストールすることによって以外のアクセス権を失効させる方法はありません。
-* Android 6.0 (API レベル 23) 以降、ユーザーはさらに制御; のアクセス許可を付与されました。許可またはデバイスにアプリがインストールされている限り、アクセス許可を取り消すことができます。 このスクリーン ショットは、Google の連絡先アプリのアクセス許可の設定を示しています。 さまざまなアクセス許可の一覧し、有効またはアクセス許可を無効にできます。
+* Android 5.1 (API レベル 22) 以下を対象とするアプリの場合、アプリのインストール時にアクセス許可要求が発生しました。 ユーザーがアクセス許可を付与しなかった場合、アプリはインストールされません。 アプリをインストールした後は、アプリをアンインストールしない限り、アクセス許可を取り消すことはできません。
+* Android 6.0 (API レベル 23) 以降では、ユーザーはアクセス許可をより細かく制御できるようになりました。アプリがデバイスにインストールされている限り、アクセス許可の付与または取り消しを行うことができます。 このスクリーンショットは、Google Contacts アプリのアクセス許可の設定を示しています。 さまざまなアクセス許可の一覧が表示され、ユーザーはアクセス許可を有効または無効にすることができます。
 
-![サンプルのアクセス許可 画面](permissions-images/01-permissions-check.png) 
+![サンプルアクセス許可画面](permissions-images/01-permissions-check.png) 
 
-Android アプリは、保護されたリソースにアクセスするためのアクセス許可がないか確認する実行時に確認する必要があります。 アプリがアクセス許可を持たない場合、アクセス許可を付与するユーザーの Android SDK で提供される新しい Api を使用して要求を作成する必要があります。 アクセス許可は、2 つのカテゴリに分類されます。
+Android アプリは、保護されたリソースへのアクセス許可があるかどうかを確認するために、実行時に確認する必要があります。 アプリにアクセス許可がない場合は、ユーザーがアクセス許可を付与するために、Android SDK によって提供される新しい Api を使用して要求を行う必要があります。 アクセス許可は、次の2つのカテゴリに分類されます。
 
-* **通常のアクセス許可**&ndash;これらはアクセス許可をユーザーのセキュリティまたはプライバシーのほとんどのセキュリティ上の問題。 Android 6.0 のインストール時に通常のアクセス許可が自動的に与えられます。 Android のドキュメントを参照してください、[通常のアクセス許可の完全な一覧](https://developer.android.com/guide/topics/permissions/normal-permissions.html)します。
-* **危険なアクセス許可**&ndash;危険なアクセス許可では通常のアクセス許可とは異なり、ユーザーのセキュリティやプライバシーを保護します。 明示的には、ユーザーが許可されているこれらする必要があります。 SMS メッセージを送受信する危険なアクセス許可を必要とするアクションの例に示します。
+* **通常のアクセス許可**&ndash;これらのアクセス許可は、ユーザーのセキュリティまたはプライバシーに対してセキュリティ上の危険を最小限に抑えます。 Android 6.0 では、インストール時に通常のアクセス許可が自動的に付与されます。 [通常のアクセス許可の完全な一覧](https://developer.android.com/guide/topics/permissions/normal-permissions.html)については、Android のドキュメントを参照してください。
+* **危険なアクセス許可**&ndash;通常のアクセス許可とは異なり、危険なアクセス許可とは、ユーザーのセキュリティまたはプライバシーを保護するアクセス許可のことです。 これらは、ユーザーが明示的に付与する必要があります。 SMS メッセージの送信または受信は、危険なアクセス許可を必要とするアクションの一例です。
 
 > [!IMPORTANT]
-> アクセス許可が属するカテゴリは、時間の経過と共に変更可能性があります。  「標準」のアクセス許可に分類されたがこのアクセス許可は、将来的に API レベルに昇格危険なアクセス許可ことができます。
+> 権限が属しているカテゴリは、時間の経過と共に変わる可能性があります。  "通常の" アクセス許可として分類されたアクセス許可は、将来の API レベルで危険なアクセス許可に昇格される可能性があります。
 
-さらには危険なアクセス許可は分割[_アクセス許可グループ_](https://developer.android.com/guide/topics/permissions/requesting.html#perm-groups)します。 アクセス許可グループでは、論理的に関連するアクセス許可を保持します。 ユーザーは、1 つのアクセス許可グループのメンバーに権限を付与、ときに Android は自動的にそのグループのすべてのメンバーに権限を付与します。 たとえば、 [ `STORAGE` ](https://developer.android.com/reference/android/Manifest.permission_group.html#STORAGE)両方を保持するアクセス許可グループ、`WRITE_EXTERNAL_STORAGE`と`READ_EXTERNAL_STORAGE`アクセス許可。 ユーザーに権限を付与する場合`READ_EXTERNAL_STORAGE`、`WRITE_EXTERNAL_STORAGE`と同時にアクセス許可が自動的に付与します。
+危険なアクセス許可は、さらに[_アクセス許可グループ_](https://developer.android.com/guide/topics/permissions/requesting.html#perm-groups)に分類されます。 アクセス許可グループには、論理的に関連するアクセス許可が保持されます。 ユーザーがアクセス許可グループの1つのメンバーにアクセス許可を付与すると、Android はそのグループのすべてのメンバーに対してアクセス許可を自動的に付与します。 たとえば、 [`STORAGE`](https://developer.android.com/reference/android/Manifest.permission_group.html#STORAGE)アクセス許可グループには、と`WRITE_EXTERNAL_STORAGE` `READ_EXTERNAL_STORAGE`の両方のアクセス許可が保持されます。 ユーザーがへ`READ_EXTERNAL_STORAGE` `WRITE_EXTERNAL_STORAGE`のアクセス許可を付与した場合、アクセス許可は同時に自動的に付与されます。
 
-1 つ以上のアクセス許可を要求する前にこれは、アプリがアクセス許可を要求する前に、アクセス許可を必要と理由についての根拠を提供することをお勧めします。 ユーザーは、"the rationale"を認識すると、アプリは、ユーザーからアクセス許可を要求できます。 "The rationale"を理解すると、ユーザーはアクセス許可を付与し、一致しない場合、影響を理解する場合に十分な情報に基づいて判断を行うことができます。 
+1つ以上のアクセス許可を要求する前に、アプリケーションがアクセス許可を要求する前にアクセス許可を必要とする理由について、論理的な方法を提供することをお勧めします。 ユーザーが論理的根拠を理解すると、アプリはユーザーにアクセス許可を要求できます。 この原理を理解することで、アクセス許可を付与する必要がある場合にユーザーが情報に基づいた決定を行い、影響がない場合はその影響を理解することができます。 
 
-ワークフロー全体をチェックし、アクセス許可の要求と呼ばれる、_実行時のアクセス許可_チェックして、次の図に要約できます。 
+アクセス許可の確認と要求のワークフロー全体は、_実行時のアクセス許可_のチェックとして知られており、次の図にまとめることができます。 
 
-[![実行時の権限チェックのフロー チャート](permissions-images/02-permissions-workflow-sml.png)](permissions-images/02-permissions-workflow.png#lightbox)
+[![実行時のアクセス許可のチェックフローチャート](permissions-images/02-permissions-workflow-sml.png)](permissions-images/02-permissions-workflow.png#lightbox)
 
-Android サポート ライブラリ backports 以前のバージョンの Android へのアクセス許可の新しい Api の一部です。 これらのバックポート Api では、API レベル チェックするたびに実行する必要はありませんので、デバイスの Android のバージョンは自動的にチェックします。  
+Android サポートライブラリには、以前のバージョンの Android に対するアクセス許可用の新しい Api の一部があります。 これらの移植 Api は、デバイス上の Android のバージョンを自動的にチェックするため、毎回 API レベルのチェックを実行する必要はありません。  
 
-このドキュメントは、Xamarin.Android アプリケーションにアクセス許可を追加する方法を説明する方法と Android 6.0 (API レベル 23) を対象とするアプリ以降、実行時のアクセス許可チェックを実行する必要がありますか。
+このドキュメントでは、Xamarin Android アプリケーションにアクセス許可を追加する方法と、Android 6.0 (API レベル 23) 以降を対象とするアプリで実行時のアクセス許可チェックを実行する方法について説明します。
 
 
 > [!NOTE]
-> ハードウェアのアクセス許可が、アプリが Google Play でフィルター処理する方法に影響する可能性があります。 たとえば、アプリでは、カメラのアクセス許可が必要とする場合、Google Play は表示されませんアプリ カメラがインストールされていないデバイスで Google Play ストアで。
+> ハードウェアのアクセス許可が、Google Play によるアプリのフィルター処理に影響を与える可能性があります。 たとえば、アプリにカメラのアクセス許可が必要な場合、Google Play は、カメラがインストールされていないデバイスの Google Play ストアにアプリを表示しません。
 
 
 <a name="requirements" />
 
 ## <a name="requirements"></a>必要条件
 
-Xamarin.Android プロジェクトが含まれていることを強くお勧め、 [Xamarin.Android.Support.Compat](https://www.nuget.org/packages/Xamarin.Android.Support.Compat/) NuGet パッケージ。 このパッケージはバックポート権限が 1 つの一般的なを提供する Android の古いバージョンを特定の Api インターフェイスは、常にする必要はありませんが、アプリを実行する Android のバージョンを確認します。
+Xamarin Android プロジェクトには、 [xamarin. android. Support. 互換](https://www.nuget.org/packages/Xamarin.Android.Support.Compat/)NuGet パッケージを含めることを強くお勧めします。 このパッケージは、アクセス許可固有の Api を以前のバージョンの Android にバックポートし、アプリが実行されている Android のバージョンを常に確認する必要がない1つの共通インターフェイスを提供します。
 
 
-## <a name="requesting-system-permissions"></a>システムのアクセス許可を要求します。
+## <a name="requesting-system-permissions"></a>システムアクセス許可の要求
 
-Android のアクセス許可を持つ操作するために、まず、アクセス許可を android マニフェスト ファイルを宣言することです。 必要がありますこれ API レベルに関係なく、アプリが対象とします。
+Android のアクセス許可を操作するための最初の手順は、Android マニフェストファイルでアクセス許可を宣言することです。 これは、アプリがターゲットとしている API レベルに関係なく実行する必要があります。
 
-Android 6.0 のターゲットまたは高いことはできませんといって、ユーザーを許可するアクセス許可が有効になります次に、過去のある時点でのアクセス許可をアプリ。 Android 6.0 を対象とするアプリでは、実行時のアクセス許可チェックを常に実行する必要があります。 5.1 またはそれ以下の Android を対象とするアプリは、実行時のアクセス許可チェックを実行する必要はありません。
+Android 6.0 以降を対象とするアプリでは、ユーザーが過去のある時点でアクセス許可を付与したため、アクセス許可が次回有効になることを想定できません。 Android 6.0 を対象とするアプリは、常にランタイムアクセス許可チェックを実行する必要があります。 Android 5.1 以降を対象とするアプリでは、実行時のアクセス許可チェックを実行する必要はありません。
 
 > [!NOTE]
-> アプリケーションでは、必要なアクセス許可を要求する必要がありますのみ。
+> アプリケーションは、必要なアクセス許可のみを要求します。
 
 
-### <a name="declaring-permissions-in-the-manifest"></a>マニフェストにアクセス許可を宣言します。
+### <a name="declaring-permissions-in-the-manifest"></a>マニフェストでのアクセス許可の宣言
 
-アクセス許可を追加、 **AndroidManifest.xml**で、`uses-permission`要素。 たとえば、アプリケーションがデバイスの位置を検索する場合に微調整が必要ですし、コースの場所のアクセス許可。 次の 2 つの要素は、マニフェストに追加されます。 
+アクセス許可は、 `uses-permission`要素を使用して**androidmanifest .xml**に追加されます。 たとえば、アプリケーションがデバイスの位置を特定する場合、十分な場所のアクセス許可が必要です。 マニフェストには、次の2つの要素が追加されます。 
 
 ```xml
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -80,51 +80,51 @@ Android 6.0 のターゲットまたは高いことはできませんといっ�
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-Visual Studio に組み込まれているツールのサポートを使用してアクセス許可を宣言することができます。
+Visual Studio に組み込まれているツールのサポートを使用して、アクセス許可を宣言できます。
 
-1. ダブルクリック**プロパティ**で、**ソリューション エクスプ ローラー**を選択し、 **Android マニフェスト**プロパティ ウィンドウでタブ。
+1. **ソリューションエクスプローラー**で **[プロパティ]** をダブルクリックし、プロパティウィンドウの **[Android マニフェスト]** タブを選択します。
 
-    [![Android マニフェスト タブで必要なアクセス許可](permissions-images/04-required-permissions-vs-sml.png)](permissions-images/04-required-permissions-vs.png#lightbox)
+    [![[Android マニフェスト] タブで必要なアクセス許可](permissions-images/04-required-permissions-vs-sml.png)](permissions-images/04-required-permissions-vs.png#lightbox)
 
-2. アプリケーションにまだ、AndroidManifest.xml がない場合は、クリックして**いいえ AndroidManifest.xml が見つかりません。1 つ追加する をクリックします。** 次に示すよう。
+2. アプリケーションに androidmanifest .xml がまだない場合は、[いいえ] **をクリックします。次のように**クリックして追加します。
 
-    [![AndroidManifest.xml メッセージなし](permissions-images/05-no-manifest-vs-sml.png)](permissions-images/05-no-manifest-vs.png#lightbox)
+    [!["いいえ" (AndroidManifest .xml) メッセージ](permissions-images/05-no-manifest-vs-sml.png)](permissions-images/05-no-manifest-vs.png#lightbox)
 
-3. アプリケーションが必要なすべてのアクセス許可の選択、**アクセス許可が必要な**を一覧表示し、保存します。
+3. **[必要なアクセス許可]** ボックスの一覧から、アプリケーションに必要なアクセス許可を選択して保存します。
 
-    [![選択の例のカメラのアクセス許可](permissions-images/06-selected-permission-vs-sml.png)](permissions-images/06-selected-permission-vs.png#lightbox)
+    [![選択されたカメラのアクセス許可の例](permissions-images/06-selected-permission-vs-sml.png)](permissions-images/06-selected-permission-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-Mac 用 Visual Studio に組み込まれたツールのサポートを使用してアクセス許可を宣言することができます。
+Visual Studio for Mac に組み込まれているツールのサポートを使用して、アクセス許可を宣言できます。
 
-1. プロジェクトをダブルクリックして、 **Solution Pad**選択**オプション > ビルド > Android アプリケーション**:
+1. **Solution Pad**でプロジェクトをダブルクリックし、[オプション] を選択 **> Android アプリケーション > ビルド**します。
 
-    [![必要なアクセス許可のセクションに表示](permissions-images/04-required-permissions-xs-sml.png)](permissions-images/04-required-permissions-xs.png#lightbox)
+    [![表示される必要なアクセス許可セクション](permissions-images/04-required-permissions-xs-sml.png)](permissions-images/04-required-permissions-xs.png#lightbox)
 
-2. をクリックして、 **Android マニフェストの追加**ボタン、プロジェクトがまだない場合、 **AndroidManifest.xml**:
+2. プロジェクトに**Androidmanifest .xml**がまだない場合は、 **[Android マニフェストの追加]** ボタンをクリックします。
 
     [![プロジェクトの Android マニフェストが見つかりません](permissions-images/05-no-manifest-xs-sml.png)](permissions-images/05-no-manifest-xs.png#lightbox)
 
-3. アプリケーションが必要なすべてのアクセス許可の選択、**アクセス許可が必要な**を一覧表示し、をクリックして **[ok]**:
+3. **必要なアクセス**許可の一覧からアプリケーションで必要なアクセス許可を選択し、[ **OK]** をクリックします。
 
-    [![選択の例のカメラのアクセス許可](permissions-images/03-select-permission-xs-sml.png)](permissions-images/03-select-permission-xs.png#lightbox)
+    [![選択されたカメラのアクセス許可の例](permissions-images/03-select-permission-xs-sml.png)](permissions-images/03-select-permission-xs.png#lightbox)
     
 -----
 
-Xamarin.Android は一部のアクセス許可をデバッグ ビルドをビルド時に追加自動的には。 これにより、簡単にアプリケーションをデバッグします。 注目すべき 2 つのアクセス許可は、具体的には、`INTERNET`と`READ_EXTERNAL_STORAGE`します。 これらのセットに自動的にアクセス許可で有効にするのには表示されません、**アクセス許可が必要な**一覧。 リリース ビルドただしで明示的に設定されているアクセス許可のみを使用して、**アクセス許可が必要な**一覧。 
+Xamarin では、ビルド時に一部のアクセス許可がデバッグビルドに自動的に追加されます。 これにより、アプリケーションのデバッグが容易になります。 特に、と`INTERNET` `READ_EXTERNAL_STORAGE`の2つの注目すべきアクセス許可があります。 これらの自動的に設定されたアクセス許可は、 **[必要なアクセス許可]** の一覧で有効になっていません。 ただし、リリースビルドでは、**必要なアクセス許可**一覧に明示的に設定されているアクセス許可のみを使用します。 
 
-Android 5.1 (API レベル 22) またはそれ以下の対象とするアプリで何もない詳細を行う必要があります。 Android 6.0 (API 23 レベル 23) 以降を実行するアプリは、実行時の権限のチェックを実行する方法については、次のセクションに進む必要があります。 
+Android 5.1 (API レベル 22) 以下を対象とするアプリの場合は、それ以上の作業は必要ありません。 Android 6.0 (API 23 レベル 23) 以降で実行されるアプリは、実行時のアクセス許可チェックを実行する方法について、次のセクションに進む必要があります。 
 
 
-### <a name="runtime-permission-checks-in-android-60"></a>Android 6.0 で実行時アクセス許可を確認します
+### <a name="runtime-permission-checks-in-android-60"></a>Android 6.0 でのランタイムアクセス許可の確認
 
-`ContextCompat.CheckSelfPermission`メソッド (Android サポート ライブラリで使用可能) を使用して特定のアクセス許可が付与されていないかどうかをチェックします。 このメソッドは、 [ `Android.Content.PM.Permission` ](https://developer.xamarin.com/api/type/Android.Content.PM.Permission/) 2 つの値の 1 つを持つ列挙型。
+(Android サポートライブラリで利用可能)メソッドを使用して、特定のアクセス許可が付与されているかどうかを確認します。`ContextCompat.CheckSelfPermission` このメソッドは、次[`Android.Content.PM.Permission`](xref:Android.Content.PM.Permission)の2つの値のいずれかを持つ列挙型を返します。
 
-* **`Permission.Granted`** &ndash; 指定した権限を与えられています。
-* **`Permission.Denied`** &ndash; 指定したアクセス許可が付与されていません。
+* **`Permission.Granted`** &ndash;指定された権限が許可されています。
+* **`Permission.Denied`** &ndash;指定された権限が許可されていません。
 
-このコード スニペットでは、アクティビティでカメラの権限をチェックする方法の例を示します。 
+次のコードスニペットは、アクティビティのカメラアクセス許可を確認する方法の例です。 
 
 ```csharp
 if (ContextCompat.CheckSelfPermission(this, Manifest.Permission.Camera) == (int)Permission.Granted) 
@@ -137,19 +137,19 @@ else
 }
 ```
 
-アクセス許可が必要な理由、アプリケーションのアクセス許可を与える情報に基づいて判断できるようにしたり、ユーザーに通知することをお勧めします。 写真と geo タグを受け取るアプリの場合、この例にします。 カメラのアクセス許可が必要に応じてが、そのわかりにくい、アプリは、デバイスの場所も必要があります。 そのため、ユーザーには明らかです。 "The rationale"では、ユーザーの場所のアクセス許可は、望ましいことと、カメラのアクセス許可が必要である理由を理解するためにメッセージを表示する必要があります。
+ベストプラクティスとして、アプリケーションのアクセス許可が必要である理由をユーザーに通知し、アクセス許可を付与するための情報に基づいた決定を行うことができるようにすることをお勧めします。 この例として、写真を撮影して geo タグを付けるアプリがあります。 カメラのアクセス許可が必要であることは明らかですが、アプリがデバイスの場所も必要とする理由が明確でない場合もあります。 理論的には、場所のアクセス許可が望ましい理由と、カメラのアクセス許可が必要である理由をユーザーが理解できるように、メッセージを表示する必要があります。
 
-`ActivityCompat.ShouldShowRequestPermissionRationale` "The rationale"をユーザーに表示するかどうかを判断するメソッドを使用します。 このメソッドが返す`true`場合、指定されたアクセス許可の"the rationale"を表示する必要があります。 このスクリーン ショットでは、アプリがデバイスの場所を知る必要な理由を説明するアプリケーションによって表示される Snackbar の例を示します。
+`ActivityCompat.ShouldShowRequestPermissionRationale`メソッドを使用して、ユーザーに根拠を表示するかどうかを決定します。 このメソッドは、 `true`特定のアクセス許可の根拠を表示する必要がある場合にを返します。 このスクリーンショットは、アプリケーションによって表示される Snackbar の例を示しています。このバーは、アプリがデバイスの場所を知る必要がある理由を説明しています。
 
-![場所の論理的根拠](permissions-images/07-rationale-snackbar.png) 
+![場所の根拠](permissions-images/07-rationale-snackbar.png) 
 
-ユーザー、アクセス許可を付与する場合、`ActivityCompat.RequestPermissions(Activity activity, string[] permissions, int requestCode)`メソッドを呼び出す必要があります。 このメソッドでは、次のパラメーターが必要です。
+ユーザーがアクセス許可を`ActivityCompat.RequestPermissions(Activity activity, string[] permissions, int requestCode)`付与する場合は、メソッドを呼び出す必要があります。 このメソッドには、次のパラメーターが必要です。
 
-* **アクティビティ**&ndash;これは、アクセス許可を要求し、結果の Android で通知するアクティビティ。
-* **アクセス許可**&ndash;が、要求されているアクセス許可の一覧。
-* **requestCode** &ndash;へのアクセス許可要求の結果を照合に使用される整数値、`RequestPermissions`呼び出します。 この値は、ゼロより大きい値である必要があります。
+* **アクティビティ**&ndash;これは、アクセス許可を要求しているアクティビティで、Android によって結果が通知されます。
+* **アクセス許可**&ndash;要求されているアクセス許可の一覧。
+* **Requestcode**呼び出しに`RequestPermissions`対するアクセス許可要求の結果を照合するために使用さ&ndash;れる整数値。 この値は、ゼロより大きい値である必要があります。
 
-このコード スニペットでは、説明した 2 つの方法の例を示します。 最初に、アクセス許可"the rationale"を表示するかどうかを判断する確認が実行されます。 "The rationale"を表示する場合は、Snackbar が"the rationale"で表示されます。 ユーザーがクリックした場合**OK** Snackbar にし、アプリは、アクセス許可を要求します。 ユーザーが"the rationale"を受け入れませんアクセス許可を要求するアプリは続行されません。 "The rationale"が表示されない場合、アクティビティは、アクセス許可を要求します。
+このコードスニペットは、ここで説明した2つのメソッドの例です。 まず、アクセス許可の内容を表示するかどうかを確認します。 このような場合には、論理的なものとして Snackbar が表示されます。 ユーザーが Snackbar で **[OK]** をクリックすると、アプリはアクセス許可を要求します。 ユーザーがこの原理を受け入れない場合、アプリはアクセス許可の要求に進まないようにする必要があります。 この原理が示されていない場合、アクティビティはアクセス許可を要求します。
 
 ```csharp
 if (ActivityCompat.ShouldShowRequestPermissionRationale(this, Manifest.Permission.AccessFineLocation)) 
@@ -176,11 +176,11 @@ else
 }
 ```
 
-`RequestPermission` ユーザーには、アクセス許可が既に与えられている場合でも呼び出すことができます。 後続の呼び出しは必要ありませんが、ユーザー、アクセス許可を確認します (または取り消す) する機会を提供します。 ときに`RequestPermission`が呼び出されると、コントロールに渡されます、オペレーティング システムのアクセス許可を受け入れるため、UI が表示されます。  
+`RequestPermission`ユーザーが既にアクセス許可を付与されている場合でも、を呼び出すことができます。 それ以降の呼び出しは必要ありませんが、ユーザーがアクセス許可を確認 (または取り消し) する機会を提供します。 が`RequestPermission`呼び出されると、コントロールはオペレーティングシステムに渡され、アクセス許可を受け入れるための UI が表示されます。  
 
-![アクセス許可 ダイアログ](permissions-images/08-location-permission-dialog.png)
+![Permssion ダイアログ](permissions-images/08-location-permission-dialog.png)
 
-Android が、コールバック メソッドを使用して、アクティビティに結果を返すは、ユーザーが完了すると、`OnRequestPermissionResult`します。 このメソッドは、インターフェイスの一部`ActivityCompat.IOnRequestPermissionsResultCallback`アクティビティによって実装されている必要があります。 このインターフェイスは、1 つのメソッドを持って`OnRequestPermissionsResult`ユーザーの選択肢のアクティビティを通知するために Android によって呼び出されます。 ユーザーがアクセス許可を与えられた場合、アプリことができます進んでし、保護されたリソースを使用します。 実装する方法の例`OnRequestPermissionResult`を次に示します。 
+ユーザーが終了すると、Android はコールバックメソッド () `OnRequestPermissionResult`を使用して結果をアクティビティに返します。 このメソッドは、アクティビティによって`ActivityCompat.IOnRequestPermissionsResultCallback`実装される必要があるインターフェイスの一部です。 このインターフェイスには、という`OnRequestPermissionsResult`1 つのメソッドがあります。これは Android によって呼び出され、ユーザーの選択のアクティビティを通知します。 ユーザーがアクセス許可を付与している場合、アプリは保護されたリソースを使用できます。 を実装`OnRequestPermissionResult`する方法の例を次に示します。 
 
 ```csharp
 public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
@@ -212,11 +212,11 @@ public override void OnRequestPermissionsResult(int requestCode, string[] permis
 
 ## <a name="summary"></a>まとめ
 
-このガイドでは、追加、および Android デバイスでのアクセス許可を確認する方法について説明します。 (API レベル 23 <)、古い Android アプリと新しい Android アプリの間のアクセス許可の動作の違い (API レベル 22 >)。 これは、Android 6.0 で実行時のアクセス許可のチェックを実行する方法を説明します。
+このガイドでは、Android デバイスでアクセス許可を追加および確認する方法について説明しました。 以前の Android アプリ間でアクセス許可がどのように機能するか (API レベル < 23) と新しい Android アプリ (API レベル > 22) の違いについて説明します。 Android 6.0 で実行時のアクセス許可チェックを実行する方法について説明しました。
 
 
 ## <a name="related-links"></a>関連リンク
 
 - [通常のアクセス許可の一覧](https://developer.android.com/guide/topics/permissions/normal-permissions.html)
-- [ランタイムのアクセス許可のサンプル アプリ](https://github.com/xamarin/monodroid-samples/tree/master/android-m/RuntimePermissions)
-- [Xamarin.Android でのアクセス許可の処理](https://github.com/xamarin/recipes/tree/master/Recipes/android/general/projects/add_permissions_to_android_manifest)
+- [ランタイムアクセス許可のサンプルアプリ](https://github.com/xamarin/monodroid-samples/tree/master/android-m/RuntimePermissions)
+- [Xamarin. Android でのアクセス許可の処理](https://github.com/xamarin/recipes/tree/master/Recipes/android/general/projects/add_permissions_to_android_manifest)

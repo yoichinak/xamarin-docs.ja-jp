@@ -1,13 +1,13 @@
 ---
-ms.openlocfilehash: ef16224b9ef060ff8643211b8e1f0c767c518bdf
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: e383bbccd4e76be8a208f5680e5cf21e45a0dbc3
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67841379"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511945"
 ---
 
-以下のコマンドラインは、iPhone 用の **SOLUTION_FILE.sln** というソリューションのリリースビルドを指定するものです。 指定することで、IPA の場所を設定することができます、`IpaPackageDir`コマンドラインでのプロパティ。
+以下のコマンドラインは、iPhone 用の **SOLUTION_FILE.sln** というソリューションのリリースビルドを指定するものです。 IPA の場所を設定するには、コマンドライン`IpaPackageDir`でプロパティを指定します。
 
 - Mac における **xbuild** の使用:
 
@@ -29,5 +29,4 @@ ms.locfileid: "67841379"
 
 **msbuild** は、コマンドラインによって渡される `$( )` 式を、自動的に展開しません。 このため、コマンドラインで `IpaPackageDir` を設定する場合は、フルパスを使うことをお勧めします。
 
-
-`IpaPackageDir` プロパティについてのより詳しい情報は、[iOS 9.8 のリリースノート](https://developer.xamarin.com/releases/ios/xamarin.ios_9/xamarin.ios_9.8/#New_MSBuild_property_IpaPackageDir_to_customize_.ipa_output_location) を参照してください。
+`IpaPackageDir` プロパティについてのより詳しい情報は、[iOS 9.8 のリリースノート](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/ios/xamarin.ios_9/xamarin.ios_9.8.md#new-msbuild-property-ipapackagedir-to-customize-ipa-output-location) を参照してください。

@@ -1,36 +1,36 @@
 ---
-title: Xamarin.Android でのインテント サービス
+title: Xamarin. Android のインテントサービス
 ms.prod: xamarin
 ms.assetid: A5B86FE4-C8E2-4B0A-84CA-EF8F5119E31B
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 1301f34ad1f7a0069c542ba81bf237a673fd239d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4c868623ae08ac1366c1c9ea55c8d635f0a6a061
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61013132"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68509136"
 ---
-# <a name="intent-services-in-xamarinandroid"></a>Xamarin.Android でのインテント サービス
+# <a name="intent-services-in-xamarinandroid"></a>Xamarin. Android のインテントサービス
 
-## <a name="intent-services-overview"></a>インテント サービスの概要
+## <a name="intent-services-overview"></a>インテントサービスの概要
 
-どちらも開始して、バインドされたこと、サービスはパフォーマンスをスムーズに保つを非同期的に作業を実行する必要があります、メイン スレッドで実行するサービス。 この問題に対処する最も簡単な方法の 1 つは、_ワーカー キュー プロセッサ パターン_操作を完了するは 1 つのスレッドによって処理されるキューに配置します。 
+開始とバインドの両方のサービスがメインスレッドで実行されます。つまり、パフォーマンスを円滑に保つために、サービスは非同期に作業を実行する必要があります。 この問題に対処する最も簡単な方法の1つは、_ワーカーキュープロセッサパターン_を使用することです。このパターンでは、実行する作業が1つのスレッドによって処理されるキューに配置されます。
 
-[ `IntentService` ](https://developer.xamarin.com/api/type/Android.App.IntentService/)のサブクラスには、`Service`このパターンの特定の Android での実装を提供するクラス。 管理キューの作業をワーカー スレッド、キュー サービスを起動し、プル要求がワーカー スレッドで実行されるキューをオフします。 `IntentService`静かに自体を停止し、キュー内の他の作業がある場合に、ワーカー スレッドを削除します。
- 
-作成して作業がキューに送信された、`Intent`を渡します`Intent`を`StartService`メソッド。
+は[`IntentService`](xref:Android.App.IntentService) 、このパターンの Android `Service`固有の実装を提供するクラスのサブクラスです。 キューの機能を管理し、キューを処理するワーカースレッドを起動し、ワーカースレッドで実行する要求をキューからプルします。 は`IntentService` 、キューに作業がなくなったときに、自動的に停止し、ワーカースレッドを削除します。
 
-停止または中断することはできません、`OnHandleIntent`メソッド`IntentService`それが動作中にします。 このデザインにより、`IntentService`おく必要があるステートレス&ndash;アクティブな接続または他のアプリケーションからの通信に使用しないでください。 `IntentService` Statelessly 作業要求を処理するためのものです。
+を作成`Intent`し、それを`Intent` `StartService`メソッドに渡すことによって、作業がキューに送信されます。
 
-サブクラス化の 2 つの要件がある`IntentService`:
+操作中に`OnHandleIntent`メソッド`IntentService`を停止または中断することはできません。 この設計のため、は`IntentService`ステートレス&ndash;に保持する必要があります。アクティブな接続やアプリケーションの他の部分との通信に依存しないようにしてください。 は、作業要求を statelessly 処理することを目的としています。`IntentService`
 
-1. 新しい型 (サブクラスによって作成された`IntentService`) のみをオーバーライド、`OnHandleIntent`メソッド。
-2. 新しい型のコンス トラクターには、要求を処理するワーカー スレッドの名前に使用される文字列が必要です。 このワーカー スレッドの名前は、主に、アプリケーションのデバッグ時に使用します。
+サブクラス`IntentService`化には、次の2つの要件があります。
 
-次のコードは、 `IntentService` 、オーバーライドされた実装`OnHandleIntent`メソッド。
+1. (サブクラス`IntentService`によって作成された) `OnHandleIntent`新しい型は、メソッドのみをオーバーライドします。
+2. 新しい型のコンストラクターには、要求を処理するワーカースレッドの名前を指定するために使用される文字列が必要です。 このワーカースレッドの名前は、主にアプリケーションをデバッグするときに使用されます。
+
+次のコードは、 `IntentService`オーバーライド`OnHandleIntent`されたメソッドを使用したの実装を示しています。
 
 ```csharp
 [Service]
@@ -39,7 +39,7 @@ public class DemoIntentService: IntentService
     public DemoIntentService () : base("DemoIntentService")
     {
     }
-    
+
     protected override void OnHandleIntent (Android.Content.Intent intent)
     {
         Console.WriteLine ("perform some long running work");
@@ -49,7 +49,7 @@ public class DemoIntentService: IntentService
 }
 ```
 
-作業に送信される、`IntentService`をインスタンス化して、`Intent`しを呼び出す、 [ `StartService` ](https://developer.xamarin.com/api/member/Android.Content.Context.StartService/p/Android.Content.Intent/)をパラメーターとしてその意図を持つメソッド。 パラメーターとして、目的が、サービスに渡される、`OnHandleIntent`メソッド。 このコード スニペットでは、インテントに作業要求を送信する例を示します。 
+作業がに`IntentService`送信されるのは`Intent` 、をインスタンス化[`StartService`](xref:Android.Content.Context.StartService*)してから、そのインテントをパラメーターとしてメソッドを呼び出すことによって行われます。 インテントは、 `OnHandleIntent`メソッドのパラメーターとしてサービスに渡されます。 次のコードスニペットは、作業要求をインテントに送信する例です。 
 
 ```csharp
 // This code might be called from within an Activity, for example in an event
@@ -63,19 +63,18 @@ downloadIntent.Put
 StartService(downloadIntent);
 ```
 
-`IntentService`このコード スニペットに示すように、目的の値を抽出できます。  
+は`IntentService` 、次のコードスニペットに示すように、意図した値を抽出できます。  
 
 ```csharp
 protected override void OnHandleIntent (Android.Content.Intent intent)
 {
     string fileToDownload = intent.GetStringExtra("file_to_download");
-    
+
     Log.Debug("DemoIntentService", $"File to download: {fileToDownload}.");
 }
 ```
 
-
 ## <a name="related-links"></a>関連リンク
 
-- [IntentService](https://developer.xamarin.com/api/type/Android.App.IntentService/)
-- [StartService](https://developer.xamarin.com/api/member/Android.Content.Context.StartService/p/Android.Content.Intent/)
+- [IntentService](xref:Android.App.IntentService)
+- [StartService](xref:Android.Content.Context.StartService*)

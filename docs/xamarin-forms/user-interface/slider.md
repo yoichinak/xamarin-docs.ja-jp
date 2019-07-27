@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/27/2019
-ms.openlocfilehash: 6e65124df4b20a50091ad93e18621f8e6707ebbe
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: 1fa46af1ac1cf6ea49a53e3f8d3c3dca6ba83e13
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65970545"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511885"
 ---
 # <a name="xamarinforms-slider"></a>Xamarin.Forms のスライダー
 
@@ -39,7 +39,7 @@ Xamarin.Forms [ `Slider` ](xref:Xamarin.Forms.Slider)水平のバーを選択す
 
 [ `ValueChangedEventArgs` ](xref:Xamarin.Forms.ValueChangedEventArgs)に付属しているオブジェクト、`ValueChanged`イベントには 2 つのプロパティが両方の種類の`double`: [ `OldValue` ](xref:Xamarin.Forms.ValueChangedEventArgs.OldValue)と[ `NewValue` ](xref:Xamarin.Forms.ValueChangedEventArgs.NewValue). 時にイベントが発生して、値の`NewValue`と同じ、`Value`のプロパティ、`Slider`オブジェクト。
 
-`Slider` 定義も`DragStarted`と`DragCompleted`先頭と、ドラッグ操作の最後に発生するイベントです。 異なり、 [ `ValueChanged` ](xref:Xamarin.Forms.Slider.ValueChanged) 、イベント、`DragStarted`と`DragCompleted`のユーザー操作によってイベントが発生したのみ、`Slider`します。 ときに、`DragStarted`イベントの起動、 `DragStartedCommand`、型の`ICommand`を実行します。 同様に、`DragCompleted`イベントの起動、 `DragCompletedCommand`、型の`ICommand`を実行します。
+`Slider`は、 `DragStarted`ドラッグ`DragCompleted`操作の開始時と終了時に発生するイベントとイベントも定義します。 イベントとは異なり、イベント`DragCompleted`とイベントは、 `Slider`ユーザー操作によってのみ発生します。 `DragStarted` [`ValueChanged`](xref:Xamarin.Forms.Slider.ValueChanged) イベントが`DragStarted`発生`DragStartedCommand`すると、型`ICommand`のが実行されます。 同様に、イベント`DragCompleted`が発生`DragCompletedCommand`すると、型`ICommand`のが実行されます。
 
 > [!WARNING]
 > 水平レイアウトの制約のないオプションを使用しない`Center`、 `Start`、または`End`で`Slider`します。 Android と、UWP の両方で、`Slider`バーの長さが 0、および ios では、バーに折りたたまれては非常に短いです。 既定値を保持`HorizontalOptions`設定`Fill`の幅を使用しないと`Auto`設定時に`Slider`で、`Grid`レイアウト。
@@ -205,7 +205,7 @@ double value = slider.Value;
 </ContentPage>
 ```
 
-`Rotation`最初の`Label`にバインドされて、`Value`のプロパティ、`Slider`は、`Text`プロパティは、2 つ目の`Label`で、`StringFormat`仕様。 **スライダーの基本的なバインディング**ページ関数を少し異なる方法で 2 つの前のページから。ページが最初に表示される、2 番目の`Label`値を持つテキスト文字列が表示されます。 データ バインディングを使用すると便利です。 データ バインドせずにテキストを表示する、具体的には初期化する必要があるが、`Text`のプロパティ、`Label`またはの起動処理をシミュレートする、`ValueChanged`クラス コンストラクターからイベント ハンドラーを呼び出すことによってイベント。
+`Rotation`最初の`Label`にバインドされて、`Value`のプロパティ、`Slider`は、`Text`プロパティは、2 つ目の`Label`で、`StringFormat`仕様。 **[基本スライダーのバインド]** ページの機能は、前の2つのページと少し異なります。ページが最初に表示されると`Label` 、2番目のテキスト文字列に値が表示されます。 データ バインディングを使用すると便利です。 データ バインドせずにテキストを表示する、具体的には初期化する必要があるが、`Text`のプロパティ、`Label`またはの起動処理をシミュレートする、`ValueChanged`クラス コンストラクターからイベント ハンドラーを呼び出すことによってイベント。
 
 <a name="precautions" />
 
@@ -289,11 +289,11 @@ Slider slider = new Slider
 
 ### <a name="the-android-implementation"></a>Android の実装
 
-Android の実装の`Slider`は、Android に基づいて[ `SeekBar` ](https://developer.xamarin.com/api/type/Android.Widget.SeekBar/) 、常に設定し、 [ `Max` ](https://developer.xamarin.com/api/property/Android.Widget.ProgressBar.Max/) 1000 プロパティ。 つまり、 `Slider` android が 1,001 のみ個別の値。 設定した場合、`Slider`が、 `Minimum` 0 と`Maximum`5000、として、`Slider`操作は、`Value`プロパティが 0、5、10、15、およびその他の値。
+Android の実装の`Slider`は、Android に基づいて[ `SeekBar` ](xref:Android.Widget.SeekBar) 、常に設定し、 [ `Max` ](xref:Android.Widget.ProgressBar.Max) 1000 プロパティ。 つまり、 `Slider` android が 1,001 のみ個別の値。 設定した場合、`Slider`が、 `Minimum` 0 と`Maximum`5000、として、`Slider`操作は、`Value`プロパティが 0、5、10、15、およびその他の値。
 
 ### <a name="the-uwp-implementation"></a>UWP の実装
 
-UWP 実装`Slider`は UWP に基づいて[ `Slider` ](/uwp/api/windows.ui.xaml.controls.slider)コントロール。 `StepFrequency`プロパティ、UWP の`Slider`の差に設定されている、`Maximum`と`Minimum`プロパティが 10 日ですが 1 より大きくないで割った値します。
+UWP 実装`Slider`は UWP に基づいて[ `Slider` ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.slider)コントロール。 `StepFrequency`プロパティ、UWP の`Slider`の差に設定されている、`Maximum`と`Minimum`プロパティが 10 日ですが 1 より大きくないで割った値します。
 
 たとえば、既定の 0 ~ 1 の範囲、 `StepFrequency` 0.1 にプロパティを設定します。 として、`Slider`は、操作、`Value`プロパティは 0、0.1、0.2、0.3、0.4、0.5、0.6、0.7、0.8、0.9、または 1.0 に制限されます。 (これは、最後のページで、 [ **SliderDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos)サンプル)。間の差、`Maximum`と`Minimum`プロパティが 10 以上し`StepFrequency`を 1 に設定されていると、`Value`プロパティが整数値。
 

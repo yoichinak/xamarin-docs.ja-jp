@@ -1,28 +1,28 @@
 ---
-title: TextureView
+title: Xamarin. Android TextureView
 ms.prod: xamarin
 ms.assetid: DD1F3D68-5DD8-4644-8A13-08AE7719DE30
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/30/2017
-ms.openlocfilehash: 8f20666ddf5f74ff9451a22e289790eb14071f90
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 589cf1787f5dc3090cbfb1165e91d8ef58df37a6
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61076137"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510161"
 ---
-# <a name="textureview"></a>TextureView
+# <a name="xamarinandroid-textureview"></a>Xamarin. Android TextureView
 
-`TextureView`クラスは、ビデオや表示する OpenGL のコンテンツ ストリームを有効にするハードウェア アクセラレータによる 2D レンダリングを使用するビュー。 たとえば、次のスクリーン ショットを示しています、`TextureView`デバイスのカメラからライブ フィードを表示します。
+`TextureView`クラスは、ビデオまたは OpenGL コンテンツストリームを表示できるようにするための、ハードウェアアクセラの2d レンダリングを使用するビューです。 たとえば、次のスクリーンショットは、 `TextureView`デバイスのカメラからライブフィードを表示する方法を示しています。
 
-[![デバイスのカメラからライブの画像の例のスクリーン ショット](texture-view-images/22-textureviewcamera.png)](texture-view-images/22-textureviewcamera.png#lightbox)
+[![デバイスのカメラからのライブイメージのスクリーンショットの例](texture-view-images/22-textureviewcamera.png)](texture-view-images/22-textureviewcamera.png#lightbox)
 
-異なり、`SurfaceView`クラスは、OpenGL またはビデオ コンテンツを表示する使用することもできる、別のウィンドウには、TextureView はレンダリングされません。
-そのため、`TextureView`は他のビューのような表示変換をサポートできます。 たとえば、回転、`TextureView`設定するだけで実現できますその`Rotation`プロパティを設定して、透過性その`Alpha`プロパティ。
+OpenGL またはビデオコンテンツを表示するために使用することもできるクラスとは異なり、textureviewは別のウィンドウにはレンダリングされません。`SurfaceView`
+そのため`TextureView` 、は他のビューと同様にビュー変換をサポートできます。 たとえば、を`TextureView`回転させるには、 `Rotation`プロパティを設定するだけで、その`Alpha`プロパティを設定して透明度を設定します。
 
-そのため、使用、`TextureView`カメラからライブ ストリームの表示などを行うを変換し、次のコードに示すようにことができます。
+そのため、を`TextureView`使用すると、次のコードに示すように、カメラからライブストリームを表示し、変換することができます。
 
 ```csharp
 public class TextureViewActivity : Activity,
@@ -65,16 +65,16 @@ public class TextureViewActivity : Activity,
 }
 ```
 
-上記のコードを作成、 `TextureView` 、アクティビティのインスタンス`OnCreate`メソッドとしてアクティビティを設定して、`TextureView`の`SurfaceTextureListener`します。 `SurfaceTextureListener`、アクティビティの実装、`TextureView.ISurfaceTextureListener`インターフェイス。 システムが呼び出す、`OnSurfaceTextAvailable`メソッドと、`SurfaceTexture`が使用できる状態です。 このメソッドでは、`SurfaceTexture`で通過し、カメラのプレビューのテクスチャに設定します。 自由に設定するなど、通常ビュー ベースの操作を実行し、`Rotation`と`Alpha`上記の例のようにします。 デバイスで実行されている、作成されたアプリケーションは、以下に示します。
+上のコードでは`TextureView` 、アクティビティの`OnCreate`メソッドにインスタンスを作成し、その`TextureView`アクティビティを`SurfaceTextureListener`のとして設定します。 にするために、アクティビティは`TextureView.ISurfaceTextureListener`インターフェイスを実装します。 `SurfaceTextureListener` `SurfaceTexture`が使用できる状態に`OnSurfaceTextAvailable`なると、システムはメソッドを呼び出します。 このメソッドでは、渡され`SurfaceTexture`たを取得し、カメラのプレビューテクスチャに設定します。 次に、上記の例のように、 `Rotation`および`Alpha`を設定するなど、通常のビューベースの操作を自由に実行できます。 デバイスで実行されているアプリケーションは、次のようになります。
 
-[![イメージを表示する、デバイスで実行されているアプリの例](texture-view-images/17-textureviewdemo.png)](texture-view-images/17-textureviewdemo.png#lightbox)
+[![デバイスで実行されているアプリの例、イメージの表示](texture-view-images/17-textureviewdemo.png)](texture-view-images/17-textureviewdemo.png#lightbox)
 
-使用する、`TextureView`ハードウェア高速化する必要がありますが有効にしている API レベル 14 を既定になります。 またこの例は、カメラを使用しているため、両方、`android.permission.CAMERA`アクセス許可と`android.hardware.camera`で機能を設定する必要があります、 **AndroidManifest.xml**。
+を使用`TextureView`するには、ハードウェアアクセラレーションを有効にする必要があります。これは、既定では API レベル14として設定されます。 また、この例ではカメラを使用して`android.permission.CAMERA`いるため、 `android.hardware.camera`アクセス許可と機能の両方が**androidmanifest .xml**で設定されている必要があります。
 
 
 
 ## <a name="related-links"></a>関連リンク
 
 - [TextureViewDemo (サンプル)](https://developer.xamarin.com/samples/monodroid/TextureViewDemo/)
-- [Ice Cream Sandwich の概要](http://www.android.com/about/ice-cream-sandwich/)
+- [アイスクリームサンドイッチの導入](http://www.android.com/about/ice-cream-sandwich/)
 - [Android 4.0 プラットフォーム](https://developer.android.com/sdk/android-4.0.html)

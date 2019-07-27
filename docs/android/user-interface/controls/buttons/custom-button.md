@@ -6,22 +6,22 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: b5ccefa1eb7e659584c1c82481bbd4473a3a8abc
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: ecb745f2f50b5aa0e22e331a4def0be9d8f86aa5
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61076278"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510394"
 ---
 # <a name="custom-button"></a>カスタム ボタン
 
-このセクションで、テキストの代わりにカスタム イメージでボタンを作成するを使用して、 [ `Button` ](https://developer.xamarin.com/api/type/Android.Widget.Button/)ウィジェットとボタンのさまざまな状態に使用する 3 つの異なるイメージを定義する XML ファイル。 ボタンが押されたときに短いメッセージが表示されます。
+このセクションでは、テキストではなくカスタムイメージを使用するボタンを作成します[`Button`](xref:Android.Widget.Button) 。ウィジェットと、さまざまなボタンの状態に使用する3つの異なるイメージを定義する XML ファイルを使用します。 このボタンが押されると、短いメッセージが表示されます。
 
-右クリックし、次の 3 つのイメージをダウンロード、コピー、**リソース/drawable**プロジェクトのディレクトリ。 これらは、ボタンのさまざまな状態用に使用されます。
+次の3つのイメージを右クリックしてダウンロードし、プロジェクトの**Resources/** 作成ディレクトリにコピーします。 これらは、さまざまなボタンの状態に使用されます。
 
- [![通常の状態のアイコンが緑 Android](custom-button-images/android-normal.png)](custom-button-images/android-normal.png#lightbox) [![フォーカスのある状態のアイコンをオレンジ色の Android](custom-button-images/android-focused.png)](custom-button-images/android-focused.png#lightbox) [![押された状態の Android 黄色のアイコン](custom-button-images/android-pressed.png)](custom-button-images/android-pressed.png#lightbox)
+ 通常の[ ![](custom-button-images/android-pressed.png)](custom-button-images/android-pressed.png#lightbox)状態[ ![](custom-button-images/android-normal.png)](custom-button-images/android-normal.png#lightbox) [の緑色のandroidアイコンフォーカス状態![用の android アイコン](custom-button-images/android-focused.png)](custom-button-images/android-focused.png#lightbox)押された状態の黄色の android アイコン
 
-新しいファイルを作成、**リソース/drawable**という名前のディレクトリ**android_button.xml**します。 次の XML を挿入します。
+**Android_button**という名前の**リソース/** 作成されたディレクトリに新しいファイルを作成します。 次の XML を挿入します。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -34,14 +34,14 @@ ms.locfileid: "61076278"
 </selector>
 ```
 
-これには、ボタンの現在の状態に基づいて、そのイメージを変更する単一の描画可能なリソースを定義します。 最初の`<item>`定義**android_pressed.png**ボタンが押されたときにイメージとして (これはアクティブで)、2 つ目`<item>`を定義します**android_focused.png**イメージとしてときに、(トラック ボールまたは方向パッドを使用して、ボタンが強調表示) する場合、ボタンにフォーカスがある;3 番目の`<item>`定義**android_normal.png** (押されても、重点を置いています) 場合は、通常の状態のイメージとして。 この XML ファイルが 1 つの描画可能なリソースを表すようになりましたによって参照されると、 [ `Button` ](https://developer.xamarin.com/api/type/Android.Widget.Button/)がの背景を表示するイメージによって変わりますこれら 3 つの状態。
+これにより、1つの描画リソースが定義されます。これにより、ボタンの現在の状態に基づいてイメージが変更されます。 最初`<item>`のは、ボタンが押されたときにイメージとして**android_pressed**を定義します (アクティブ化`<item>`されています)。2番目のは、ボタンがフォーカスされたときにイメージとして**android_focused**を定義します (ボタンがトラックボールまたは方向パッドを使用して強調表示);3番目`<item>`のは、通常の状態 (押されていない場合またはフォーカスされていない場合) のイメージとして**android_normal**を定義します。 この XML ファイルは、 [`Button`](xref:Android.Widget.Button) 1 つの作成されたリソースを表し、によってバックグラウンドで参照されるときに、この3つの状態に基づいて表示されるイメージを変更します。
 
 
 > [!NOTE]
-> 順序、`<item>`要素が重要です。 この drawable が参照されると、`<item>`は、どれがボタンの現在の状態に適したを判断するためにスキャンします。
-> 場合のみ適用されますが、"normal"のイメージは最後であるため、条件`android:state_pressed`と`android:state_focused`両方が false を評価します。
+> `<item>`要素の順序は重要です。 この描画が参照されて`<item>`いる場合、現在のボタンの状態に適しているかどうかを判断するために、が走査されます。
+> "通常の" イメージは最後にあるため、条件`android:state_pressed`とが両方と`android:state_focused`も false を評価した場合にのみ適用されます。
 
-開く、 **Resources/layout/Main.axml**追加ファイルを開き、 [ `Button` ](https://developer.xamarin.com/api/type/Android.Widget.Button/)要素。
+**Resources/layout/Main. axml**ファイルを開き、要素を[`Button`](xref:Android.Widget.Button)追加します。
 
 ```xml
 <Button
@@ -52,10 +52,10 @@ ms.locfileid: "61076278"
         android:background="@drawable/android_button" />
 ```
 
-`android:background`属性は、ボタンの背景に使用する描画可能なリソースを指定します (これに保存するときに**Resources/drawable/android.xml**、として参照されます`@drawable/android`)。 これには、システム全体でのボタンに使用される通常のバック グラウンド イメージが置き換えられます。 描画可能なボタンの状態に基づいて、そのイメージを変更するためには、画像を背景に適用する必要があります。
+属性`android:background`は、ボタンの背景に使用する、描画できるリソースを指定します。これは、**リソース/描画元/android .xml**で`@drawable/android`保存したときに、として参照されます。 これにより、システム全体のボタンに使用される通常の背景イメージが置き換えられます。 描画用のイメージをボタンの状態に基づいて変更するには、イメージを背景に適用する必要があります。
 
-末尾に次のコードを追加するのには、ボタンが押されたときに何か、 [`OnCreate()`](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/p/Android.OS.Bundle/Android.OS.PersistableBundle/)
-方法:
+ボタンが押されたときに実行されるようにするには、の末尾に次のコードを追加します。[`OnCreate()`](xref:Android.App.Activity.OnCreate*)
+b
 
 ```csharp
 Button button = FindViewById<Button>(Resource.Id.button);
@@ -65,10 +65,10 @@ button.Click += (o, e) => {
 };
 ```
 
-これをキャプチャ、 [ `Button` ](https://developer.xamarin.com/api/type/Android.Widget.Button/) 、レイアウトから追加し、 [ `Toast` ](https://developer.xamarin.com/api/type/Android.Widget.Toast/)ときに表示されるメッセージを[ `Button` ](https://developer.xamarin.com/api/type/Android.Widget.Button/)がクリックされました。
+これにより[`Button`](xref:Android.Widget.Button) 、レイアウトからがキャプチャされ[`Toast`](xref:Android.Widget.Toast) 、 [`Button`](xref:Android.Widget.Button)がクリックされたときに表示されるメッセージが追加されます。
 
-ここで、アプリケーションを実行します。
+次に、アプリケーションを実行します。
 
 
-*このページの部分が作成および Android のオープン ソース プロジェクトで共有し、の条項に従って使用作業に基づいた変更、*
-[*Creative Commons 2.5 Attribution License*](http://creativecommons.org/licenses/by/2.5/).
+*このページの一部は、Android オープンソースプロジェクトによって作成および共有*
+され、[*Creative Commons 2.5 属性*](http://creativecommons.org/licenses/by/2.5/)で説明されている条項に従って使用される作業に基づいて変更されます。

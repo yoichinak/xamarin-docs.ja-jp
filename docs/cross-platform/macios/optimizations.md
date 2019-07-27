@@ -1,27 +1,27 @@
 ---
 title: ビルドの最適化
-description: このドキュメントでは、Xamarin.iOS および Xamarin.Mac アプリのビルド時に適用されるさまざまな最適化について説明します。
+description: このドキュメントでは、Xamarin および Xamarin アプリのビルド時に適用されるさまざまな最適化について説明します。
 ms.prod: xamarin
 ms.assetid: 84B67E31-B217-443D-89E5-CFE1923CB14E
 author: conceptdev
 ms.author: crdun
 ms.date: 04/16/2018
-ms.openlocfilehash: f1aa805b9b7a16ad1e8af573cf4170f885eb0197
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a14845646fb400285adac8579af4b15db61e047b
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61261208"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511165"
 ---
 # <a name="build-optimizations"></a>ビルドの最適化
 
-このドキュメントでは、Xamarin.iOS および Xamarin.Mac アプリのビルド時に適用されるさまざまな最適化について説明します。
+このドキュメントでは、Xamarin および Xamarin アプリのビルド時に適用されるさまざまな最適化について説明します。
 
-## <a name="remove-uiapplicationensureuithread--nsapplicationensureuithread"></a>UIApplication.EnsureUIThread の削除/NSApplication.EnsureUIThread
+## <a name="remove-uiapplicationensureuithread--nsapplicationensureuithread"></a>EnsureUIThread/NSApplication を削除します。
 
-呼び出しを削除します。 [UIApplication.EnsureUIThread] [ 1] (Xamarin.iOS) 用または`NSApplication.EnsureUIThread`(用、Xamarin.Mac)。
+[EnsureUIThread][1] (xamarin の場合) または`NSApplication.EnsureUIThread` (xamarin. Mac の場合) の呼び出しを削除します。
 
-この最適化は、次のようなコードに変更されます。
+この最適化により、次の種類のコードが変更されます。
 
 ```csharp
 public virtual void AddChildViewController (UIViewController childController)
@@ -31,7 +31,7 @@ public virtual void AddChildViewController (UIViewController childController)
 }
 ```
 
-次のように
+次のようになります。
 
 ```csharp
 public virtual void AddChildViewController (UIViewController childController)
@@ -40,19 +40,19 @@ public virtual void AddChildViewController (UIViewController childController)
 }
 ```
 
-この最適化が有効にするリンカーを必要とはメソッドにのみ適用し、`[BindingImpl (BindingImplOptions.Optimizable)]`属性。
+この最適化では、リンカーを有効にする必要があり、 `[BindingImpl (BindingImplOptions.Optimizable)]`属性を持つメソッドにのみ適用されます。
 
-既定ではリリースを有効になっている次のように構築します。
+既定では、リリースビルドで有効になっています。
 
-渡すことによって、既定の動作をオーバーライドできます`--optimize=[+|-]remove-uithread-checks`mtouch/mmp にします。
+既定の動作は、mtouch/ `--optimize=[+|-]remove-uithread-checks` mmp に渡すことでオーバーライドできます。
 
 [1]: https://docs.microsoft.com/dotnet/api/UIKit.UIApplication.EnsureUIThread
 
-## <a name="inline-intptrsize"></a>インライン IntPtr.Size
+## <a name="inline-intptrsize"></a>Inline IntPtr. サイズ
 
-定数値のインラインの`IntPtr.Size`ターゲット プラットフォームに応じて。
+ターゲットプラットフォームに従って`IntPtr.Size`の定数値をインラインで指定します。
 
-この最適化は、次のようなコードに変更されます。
+この最適化により、次の種類のコードが変更されます。
 
 ```csharp
 if (IntPtr.Size == 8) {
@@ -62,7 +62,7 @@ if (IntPtr.Size == 8) {
 }
 ```
 
-に従って (64 ビット プラットフォーム用の構築) の場合。
+(64 ビットプラットフォーム用にビルドする場合) は次のようになります。
 
 ```csharp
 if (8 == 8) {
@@ -72,21 +72,21 @@ if (8 == 8) {
 }
 ```
 
-この最適化が有効にするリンカーを必要とはメソッドにのみ適用し、`[BindingImpl (BindingImplOptions.Optimizable)]`属性。
+この最適化では、リンカーを有効にする必要があり、 `[BindingImpl (BindingImplOptions.Optimizable)]`属性を持つメソッドにのみ適用されます。
 
-既定で有効になって、1 つのアーキテクチャを対象とする場合、またはプラットフォーム アセンブリ (**Xamarin.iOS.dll**、 **Xamarin.TVOS.dll**、 **Xamarin.WatchOS.dll**または**Xamarin.Mac.dll**)。
+既定では、単一のアーキテクチャを対象とする場合、またはプラットフォームアセンブリ **(** **TVOS**、 **WatchOS** 、または**xamarin**. .dll) の場合に有効になります。
 
-この最適化が 32 ビット バージョンと、アプリの 64 ビット バージョンの異なるアセンブリを作成する場合、複数のアーキテクチャを対象にして、両方のバージョンが効果的に、最終的なアプリのサイズを増やすと、アプリに含まれる必要があります。です。
+複数のアーキテクチャを対象とする場合、この最適化によって、32ビットバージョンと64ビットバージョンのアプリ用に異なるアセンブリが作成されます。また、両方のバージョンをアプリに含める必要があります。そのため、最終的なアプリのサイズを減らすのではなく、効率的に増やす必要があります。し.
 
-渡すことによって、既定の動作をオーバーライドできます`--optimize=[+|-]inline-intptr-size`mtouch/mmp にします。
+既定の動作は、mtouch/ `--optimize=[+|-]inline-intptr-size` mmp に渡すことでオーバーライドできます。
 
-## <a name="inline-nsobjectisdirectbinding"></a>インライン NSObject.IsDirectBinding
+## <a name="inline-nsobjectisdirectbinding"></a>Inline NSObject
 
-`NSObject.IsDirectBinding` インスタンス プロパティかどうかを特定のインスタンスのラッパー型かどうかは、(ラッパーの型でのマネージ インスタンスは、ネイティブ型にマップするマネージ型を`UIKit.UIView`ネイティブ マップ」と入力`UIView`型の逆がユーザーの種類、ここで`class MyUIView : UIKit.UIView`ユーザーの種類になります)。
+`NSObject.IsDirectBinding`は、特定のインスタンスがラッパー型であるかどうかを判断するインスタンスプロパティです (ラッパー型はネイティブ型にマップされるマネージ型です。たとえば、マネージ`UIKit.UIView`型はネイティブ`UIView`型にマップされます。逆はユーザー型です。(この場合`class MyUIView : UIKit.UIView` 、はユーザーの種類です)。
 
-値を調べる必要がある`IsDirectBinding`値のバージョンを指定するために、OBJECTIVE-C を呼び出すときに`objc_msgSend`を使用します。
+使用するの`objc_msgSend`バージョンは値によっ`IsDirectBinding`て決定されるため、目標値 C を呼び出すときのの値を把握しておく必要があります。
 
-次のコードのみを指定します。
+次のコードのみが指定されています。
 
 ```csharp
 class UIView : NSObject {
@@ -117,7 +117,7 @@ class MyUIView : UIView {
 }
 ```
 
-ようにして確認できます`UIView.SomeProperty`の値`IsDirectBinding`定数でないし、インライン化することはできません。
+`UIView.SomeProperty` の`IsDirectBinding`値が定数ではなく、インライン化できないことを確認できます。
 
 ```csharp
 void uiView = new UIView ();
@@ -126,7 +126,7 @@ void myView = new MyUIView ();
 Console.WriteLine (myView.SomeProperty); // prints 'false'
 ```
 
-ただし、アプリで、すべての型を確認し、継承した型がないことを確認することは`NSUrl`とをインライン化するには、安全ではそのため、`IsDirectBinding`定数に値`true`:
+ただし、アプリ内のすべての型を確認し、から`NSUrl`継承する型がないことを確認することができます。したがって、 `IsDirectBinding`値を定数`true`にインライン化するのは安全です。
 
 ```csharp
 void myURL = new NSUrl ();
@@ -134,7 +134,7 @@ Console.WriteLine (myURL.SomeOtherProperty); // prints 'true'
 // There's no way to make SomeOtherProperty print anything but 'true', since there are no NSUrl subclasses.
 ```
 
-具体的には、この最適化はコードの次の種類を変更 (これは、バインドのコードを`NSUrl.AbsoluteUrl`)。
+特に、この最適化によって次の種類のコードが変更されます ( `NSUrl.AbsoluteUrl`のバインドコード)。
 
 ```csharp
 if (IsDirectBinding) {
@@ -144,7 +144,7 @@ if (IsDirectBinding) {
 }
 ```
 
-次に (場合を判断できるのサブクラスがない`NSUrl`アプリ)。
+次のようになります (アプリにの`NSUrl`サブクラスがないと判断できる場合)。
 
 ```csharp
 if (true) {
@@ -154,15 +154,15 @@ if (true) {
 }
 ```
 
-この最適化が有効にするリンカーを必要とはメソッドにのみ適用し、`[BindingImpl (BindingImplOptions.Optimizable)]`属性。
+この最適化では、リンカーを有効にする必要があり、 `[BindingImpl (BindingImplOptions.Optimizable)]`属性を持つメソッドにのみ適用されます。
 
-常に Xamarin.iOS では、既定で有効になって、Xamarin.Mac の既定で常に無効になります (ため Xamarin.Mac でアセンブリを動的に読み込むこともできますが、そのことはできません、特定のクラスがサブクラス化しないことを確認する)。
+既定では、xamarin. iOS では既定で有効になっており、既定では、xamarin. Mac では常に無効になっています。つまり、特定のクラスがサブクラス化されないことを判断することはできません。
 
-渡すことによって、既定の動作をオーバーライドできます`--optimize=[+|-]inline-isdirectbinding`mtouch/mmp にします。
+既定の動作は、mtouch/ `--optimize=[+|-]inline-isdirectbinding` mmp に渡すことでオーバーライドできます。
 
-## <a name="inline-runtimearch"></a>インライン Runtime.Arch
+## <a name="inline-runtimearch"></a>インラインランタイム. Arch
 
-この最適化は、次のようなコードに変更されます。
+この最適化により、次の種類のコードが変更されます。
 
 ```csharp
 if (Runtime.Arch == Arch.DEVICE) {
@@ -172,7 +172,7 @@ if (Runtime.Arch == Arch.DEVICE) {
 }
 ```
 
-に従って (デバイスの構築) の場合。
+次のようにします (デバイス用にビルドする場合)。
 
 ```csharp
 if (Arch.DEVICE == Arch.DEVICE) {
@@ -182,15 +182,15 @@ if (Arch.DEVICE == Arch.DEVICE) {
 }
 ```
 
-この最適化が有効にするリンカーを必要とはメソッドにのみ適用し、`[BindingImpl (BindingImplOptions.Optimizable)]`属性。
+この最適化では、リンカーを有効にする必要があり、 `[BindingImpl (BindingImplOptions.Optimizable)]`属性を持つメソッドにのみ適用されます。
 
-Xamarin.ios (Xamarin.Mac の利用はありません) は既定で常に有効です。
+既定では、Xamarin. iOS (Xamarin. Mac では使用できません) で常に有効になっています。
 
-渡すことによって、既定の動作をオーバーライドできます`--optimize=[+|-]inline-runtime-arch`mtouch にします。
+既定の動作は、mtouch に`--optimize=[+|-]inline-runtime-arch`渡すことでオーバーライドできます。
 
-## <a name="dead-code-elimination"></a>配信不能のコードの削除
+## <a name="dead-code-elimination"></a>デッドコードの排除
 
-この最適化は、次のようなコードに変更されます。
+この最適化により、次の種類のコードが変更されます。
 
 ```csharp
 if (true) {
@@ -200,13 +200,13 @@ if (true) {
 }
 ```
 
-:
+ドラッグ
 
 ```csharp
 Console.WriteLine ("Doing this");
 ```
 
-このような定数の比較も評価されます。
+また、次のような定数比較も評価します。
 
 ```csharp
 if (8 == 8) {
@@ -216,13 +216,13 @@ if (8 == 8) {
 }
 ```
 
-あると判断し、式`8 == 8`は、常に true し、サイズを小さくします。
+式`8 == 8`が常に true であることを確認し、次のように減らします。
 
 ```csharp
 Console.WriteLine ("Doing this");
 ```
 
-これは、次のようなコードを変換できるためのインライン展開の最適化と併用する場合に、強力な最適化 (これは、バインドのコードを`NFCIso15693ReadMultipleBlocksConfiguration.Range`)。
+これは、次の種類のコードを変換できるため、インライン展開の最適化と共に使用する場合に強力な最適化です ( `NFCIso15693ReadMultipleBlocksConfiguration.Range`これはのバインドコードです)。
 
 ```csharp
 NSRange ret;
@@ -254,7 +254,7 @@ if (IsDirectBinding) {
 return ret;
 ```
 
-これに (64 ビットのデバイスを構築して場合があることを確認することもない`NFCIso15693ReadMultipleBlocksConfiguration`アプリ内のサブクラス)。
+これには、(64 ビットデバイス用にビルドする場合と、アプリにサブクラスがない`NFCIso15693ReadMultipleBlocksConfiguration`ことを確認する場合にも使用できます)。
 
 ```csharp
 NSRange ret;
@@ -262,25 +262,25 @@ ret = global::ObjCRuntime.Messaging.NSRange_objc_msgSend (this.Handle, Selector.
 return ret;
 ```
 
-AOT コンパイラでは、次のように実行されないコードを排除することがあるが、リンカーは、リンカーをもう使用されず、(他の場所で使用される) 場合を除き、したがって削除可能性がある複数のメソッドがあることを確認できます。 つまり内でこの最適化が行われます:
+AOT コンパイラは、既にこのようなデッドコードを排除することができますが、この最適化はリンカー内で行われます。つまり、使用されなくなった (他の場所で使用されていない) 複数のメソッドがあることをリンカーが確認できるようになります。:
 
 * `global::ObjCRuntime.Messaging.NSRange_objc_msgSend_stret`
 * `global::ObjCRuntime.Messaging.NSRange_objc_msgSendSuper`
 * `global::ObjCRuntime.Messaging.NSRange_objc_msgSendSuper_stret`
 
-この最適化が有効にするリンカーを必要とはメソッドにのみ適用し、`[BindingImpl (BindingImplOptions.Optimizable)]`属性。
+この最適化では、リンカーを有効にする必要があり、 `[BindingImpl (BindingImplOptions.Optimizable)]`属性を持つメソッドにのみ適用されます。
 
-(リンカーを有効になっている) 場合は既定で常に有効です。
+常に既定で有効になっています (リンカーが有効になっている場合)。
 
-渡すことによって、既定の動作をオーバーライドできます`--optimize=[+|-]dead-code-elimination`mtouch/mmp にします。
+既定の動作は、mtouch/ `--optimize=[+|-]dead-code-elimination` mmp に渡すことでオーバーライドできます。
 
-## <a name="optimize-calls-to-blockliteralsetupblock"></a>BlockLiteral.SetupBlock への呼び出しを最適化します。
+## <a name="optimize-calls-to-blockliteralsetupblock"></a>BlockLiteral の呼び出しを最適化します。 SetupBlock
 
-Xamarin.iOS/Mac ランタイムは委任ブロック シグネチャ管理された、OBJECTIVE-C でブロックを作成するときに通知する必要があります。 負荷のかかる操作があります。 この最適化は、ビルド時にブロックの署名を計算し、呼び出す IL を変更、`SetupBlock`を引数として、署名を受け取るメソッド。 これを行うには、実行時に署名を計算するための必要性が回避できます。
+マネージデリゲートに対して目的の C ブロックを作成する場合は、Xamarin iOS/Mac ランタイムにブロック署名があることが必要です。 これは、かなり負荷のかかる操作である可能性があります。 この最適化により、ビルド時にブロック署名が計算され、代わりにシグネチャを`SetupBlock`引数として受け取るメソッドを呼び出すように IL が変更されます。 これにより、実行時に署名を計算する必要がなくなります。
 
-ベンチマークでは、これは 10 ~ 15 の倍数でブロックを呼び出す速くことを示します。
+ベンチマークでは、ブロックの呼び出し速度が 10 ~ 15 倍になることが示されています。
 
-次を変換[コード](https://github.com/xamarin/xamarin-macios/blob/018f7153441d9d7e0f58e2046f39eeb46f1ff480/src/UIKit/UIAccessibility.cs#L198-L211):
+次の[コード](https://github.com/xamarin/xamarin-macios/blob/018f7153441d9d7e0f58e2046f39eeb46f1ff480/src/UIKit/UIAccessibility.cs#L198-L211)が変換されます。
 
 ```csharp
 public static void RequestGuidedAccessSession (bool enable, Action<bool> completionHandler)
@@ -291,7 +291,7 @@ public static void RequestGuidedAccessSession (bool enable, Action<bool> complet
 }
 ```
 
-:
+ドラッグ
 
 ```csharp
 public static void RequestGuidedAccessSession (bool enable, Action<bool> completionHandler)
@@ -302,51 +302,51 @@ public static void RequestGuidedAccessSession (bool enable, Action<bool> complet
 }
 ```
 
-この最適化が有効にするリンカーを必要とはメソッドにのみ適用し、`[BindingImpl (BindingImplOptions.Optimizable)]`属性。
+この最適化では、リンカーを有効にする必要があり、 `[BindingImpl (BindingImplOptions.Optimizable)]`属性を持つメソッドにのみ適用されます。
 
-(静的レジストラー デバイスのビルドの既定で有効にし、静的レジストラーがリリースの既定で有効になっている Xamarin.Mac でビルドを Xamarin.iOS) で静的なレジストラーを使用する場合は既定で有効です。
+静的レジストラーを使用すると、既定で有効になります (Xamarin. iOS では、静的レジストラーはデバイスのビルドに対して既定で有効になっていますが、Xamarin. Mac では、静的レジストラーはリリースビルドでは既定で有効になっています)。
 
-渡すことによって、既定の動作をオーバーライドできます`--optimize=[+|-]blockliteral-setupblock`mtouch/mmp にします。
+既定の動作は、mtouch/ `--optimize=[+|-]blockliteral-setupblock` mmp に渡すことでオーバーライドできます。
 
-## <a name="optimize-support-for-protocols"></a>プロトコルのサポートを最適化します。
+## <a name="optimize-support-for-protocols"></a>プロトコルのサポートを最適化する
 
-Xamarin.iOS/Mac ランタイムでは、マネージ型の実装 OBJECTIVE-C プロトコルに関する情報が必要です。 インターフェイス (および、これらのインターフェイスの属性) でこの情報が格納されている、非常に効率的な形式ではない、リンカーに適したでもありません。
+Xamarin. iOS/Mac ランタイムには、マネージ型が目標 C プロトコルを実装する方法に関する情報が必要です。 この情報は、インターフェイス (およびこれらのインターフェイスの属性) に格納されます。これらは、非常に効率的な形式ではなく、リンカーにも適していません。
 
-1 つの例は、これらのインターフェイスがプロトコルのすべてのメンバーに関する情報を格納する、`[ProtocolMember]`属性は、特にそれらのメンバーのパラメーターの型への参照を含めることができます。 つまり、そのインターフェイスで使用されるすべての型を保持するリンカーと、このようなインターフェイスを実装するだけ、省略可能なメンバーの場合でも、アプリまたはしないでください呼び出しを実装します。
+1つの例として、これらのインターフェイスには、 `[ProtocolMember]`属性内のすべてのプロトコルメンバーに関する情報が格納されます。これには、これらのメンバーのパラメーターの型への参照が含まれます。 これは、このようなインターフェイスを実装するだけで、そのインターフェイスで使用されるすべての型がリンカーによって保持されることを意味します。これは、アプリが呼び出さないか、実装しないオプションのメンバーでも同様です。
 
-この最適化は実行時に検索を簡単には少量のメモリを使用する効率的な形式で必要な情報を格納する静的レジストラーになります。
+この最適化により、静的レジスタは、実行時に簡単にすばやく検索できるメモリをほとんど使用しない効率的な形式で、必要な情報を格納します。
 
-教えてくれるでしょう、リンカーには必ずしも必要がないことをこれらのインターフェイスも、関連属性のいずれかを保持します。
+また、これらのインターフェイスを保持する必要があるとは限りません。また、関連する属性もありません。
 
-この最適化では、リンカーと、静的なレジストラーの両方を有効にする必要があります。
+この最適化を行うには、リンカーと静的レジスタの両方を有効にする必要があります。
 
-Xamarin.iOS でリンカーと、静的なレジストラーの両方が有効にすると、この最適化は既定で有効です。
+Xamarin. iOS では、リンカーと静的レジストラーの両方が有効になっている場合、この最適化は既定で有効になっています。
 
-Xamarin.Mac でそれらのアセンブリとアセンブリを動的に読み込む Xamarin.Mac サポート可能性がありますいない既知のビルド時に (されために最適化されていない) ために既定では、この最適化が有効には、ことはありません。
+Xamarin. Mac では、この最適化は既定では有効になりません。これは、Xamarin. Mac ではアセンブリの動的な読み込みがサポートされており、これらのアセンブリがビルド時に既知ではない (したがって、最適化されていない) ためです。
 
-渡すことによって、既定の動作をオーバーライドできます`--optimize=-register-protocols`mtouch/mmp にします。
+既定の動作は、mtouch/ `--optimize=-register-protocols` mmp に渡すことでオーバーライドできます。
 
-## <a name="remove-the-dynamic-registrar"></a>動的登録を削除します。
+## <a name="remove-the-dynamic-registrar"></a>動的レジストラーを削除する
 
-Xamarin.iOS および Xamarin.Mac ランタイムの両方のサポートを組み込む[マネージ型を登録する](https://developer.xamarin.com/guides/ios/advanced_topics/registrar/)OBJECTIVE-C ランタイムでします。 これは実行するか、ビルド時または実行時に (またはビルド時および実行時に、残りの部分に部分的に) が、ビルド時に完全に完了している場合、実行時に操作を行うためのサポート コードを削除できるようになります。 これは、結果、アプリのサイズが大幅に低下具体的には小さなアプリ拡張機能など、watchOS アプリ。
+Xamarin と Xamarin の両方のランタイムには、[マネージ型](~/ios/internals/registrar.md)を目的の C ランタイムに登録するためのサポートが含まれています。 ビルド時または実行時 (またはビルド時には部分的に実行) で実行できますが、ビルド時に完全に完了した場合は、実行時に実行するためのサポートコードを削除することを意味します。 この結果、アプリのサイズが大幅に減少します。特に、拡張アプリや watchOS アプリなどの小規模なアプリの場合です。
 
-この最適化では、静的なレジストラーとリンカーの両方を有効にする必要があります。
+この最適化を行うには、静的レジスタとリンカーの両方が有効になっている必要があります。
 
-動的登録、および場合は削除を試みますが、削除する安全なは、リンカーが試行されます。
+リンカーは、動的レジストラーを削除するのが安全かどうかを判断しようとします。そうでない場合は、それを削除しようとします。
 
-Xamarin.Mac に動的に (これは、ビルド時に認識されませんでした) 実行時のアセンブリの読み込みをサポートするため、ビルド時にこれは安全な最適化かどうかを判断することはできません。 これは、この最適化が決して Xamarin.Mac アプリの既定で有効になっていることを意味します。
+Xamarin. Mac では、実行時にアセンブリを動的に読み込むことができます (ビルド時には認識されません)。そのため、ビルド時に安全な最適化であるかどうかを判断することはできません。 つまり、この最適化は、Xamarin. Mac アプリでは既定では有効になりません。
 
-渡すことによって、既定の動作をオーバーライドできます`--optimize=[+|-]remove-dynamic-registrar`mtouch/mmp にします。
+既定の動作は、mtouch/ `--optimize=[+|-]remove-dynamic-registrar` mmp に渡すことでオーバーライドできます。
 
-検出した場合に、リンカーが警告を発する場合は、動的なレジストラーを削除する既定値がオーバーライドされると、安全ではありません (ただし、動的なレジストラーが削除されます)。
+既定値がオーバーライドされて動的レジストラーが削除された場合、リンカーは安全でないことを検出した場合に警告を出力します (ただし、動的レジストラーは削除されます)。
 
-## <a name="inline-runtimedynamicregistrationsupported"></a>インライン Runtime.DynamicRegistrationSupported
+## <a name="inline-runtimedynamicregistrationsupported"></a>インラインランタイム。 DynamicRegistrationSupported
 
-値のインラインの`Runtime.DynamicRegistrationSupported`ビルド時に決定されます。
+ビルド時に決定`Runtime.DynamicRegistrationSupported`されたの値をインラインで指定します。
 
-動的レジストラーが削除された場合 (を参照してください、[動的登録を削除](#remove-the-dynamic-registrar)最適化)、これは、定数`false`値には、それ以外の場合これは定数`true`値。
+動的レジストラーが削除された場合 (「[動的レジストラーの](#remove-the-dynamic-registrar)最適化を削除する」を参照`false` )、これは定数値です`true` 。それ以外の場合は定数値です。
 
-この最適化は、次のようなコードに変更されます。
+この最適化により、次の種類のコードが変更されます。
 
 ```csharp
 if (Runtime.DynamicRegistrationSupported) {
@@ -356,31 +356,31 @@ if (Runtime.DynamicRegistrationSupported) {
 }
 ```
 
-次の動的なレジストラーが削除されたとき。
+動的レジストラーが削除されると、次のようになります。
 
 ```csharp
 throw new Exception ("dynamic registration is not supported");
 ```
 
-次の動的なレジストラーが削除されていない場合。
+動的レジストラーが削除されない場合は、次のようになります。
 
 ```csharp
 Console.WriteLine ("do something");
 ```
 
-この最適化が有効にするリンカーを必要とはメソッドにのみ適用し、`[BindingImpl (BindingImplOptions.Optimizable)]`属性。
+この最適化では、リンカーを有効にする必要があり、 `[BindingImpl (BindingImplOptions.Optimizable)]`属性を持つメソッドにのみ適用されます。
 
-(リンカーを有効になっている) 場合は既定で常に有効です。
+常に既定で有効になっています (リンカーが有効になっている場合)。
 
-渡すことによって、既定の動作をオーバーライドできます`--optimize=[+|-]inline-dynamic-registration-supported`mtouch/mmp にします。
+既定の動作は、mtouch/ `--optimize=[+|-]inline-dynamic-registration-supported` mmp に渡すことでオーバーライドできます。
 
-## <a name="precompute-methods-to-create-managed-delegates-for-objective-c-blocks"></a>Objective C のブロックのマネージ デリゲートを作成する方法を事前計算します。
+## <a name="precompute-methods-to-create-managed-delegates-for-objective-c-blocks"></a>事前計算ブロックのマネージデリゲートを作成するためのメソッド
 
-Objective C を呼び出すと、セレクターをパラメーターとしてのブロックを受け取りし、マネージ コードがオーバーライドされたメソッドは、Xamarin.iOS、Xamarin.Mac のランタイムがそのブロックのデリゲートを作成する必要があるとします。
+前の例では、ブロックをパラメーターとして受け取り、マネージコードによってそのメソッドがオーバーライドされた場合、そのブロックのデリゲートを作成する必要があります。
 
-バインディング ジェネレーターによって生成されたバインド コードが含まれます、`[BlockProxy]`属性を持つ型を指定します、`Create`これを実行できるメソッド。
+バインディングジェネレーターによって生成されるバインディングコードに`[BlockProxy]`は、属性が含まれます。 `Create`この属性は、この操作を実行できるメソッドを使用して型を指定します。
 
-次のような Objective C コードを指定します。
+次の目的 C コードを指定します。
 
 ```objc
 @interface ObjCBlockTester : NSObject {
@@ -404,7 +404,7 @@ Objective C を呼び出すと、セレクターをパラメーターとして�
 @end
 ```
 
-次のバインド コード:
+次のバインドコードを記述します。
 
 ```csharp
 [BaseType (typeof (NSObject))]
@@ -415,7 +415,7 @@ interface ObjCBlockTester
 }
 ```
 
-コード ジェネレーターが生成されます。
+ジェネレーターは次のものを生成します。
 
 ```csharp
 [Register("ObjCBlockTester", true)]
@@ -503,15 +503,15 @@ static class Trampolines
 }
 ```
 
-Objective C を呼び出すと`[ObjCBlockTester callClassCallback]`、Xamarin.iOS Xamarin.Mac ランタイムを見て、/、`[BlockProxy (typeof (Trampolines.NIDActionArity1V0))]`パラメーターの属性。 検索し、 `Create` 、その型のメソッド、デリゲートを作成するには、そのメソッドを呼び出します。
+前の C を呼び`[ObjCBlockTester callClassCallback]`出すと、パラメーターの`[BlockProxy (typeof (Trampolines.NIDActionArity1V0))]`属性が表示されるようになります。 その後、その型の`Create`メソッドを検索し、そのメソッドを呼び出してデリゲートを作成します。
 
-この最適化は検索、`Create`ビルド時、および静的レジストラーにメソッドでは、代わりに、属性とリフレクション (これははるかに高速でき、また、リンカーを使用してメタデータ トークンを使用して実行時にメソッドを検索するコードを生成します。アプリを小さくすること、対応するランタイム コードを削除) します。
+この最適化により、 `Create`ビルド時にメソッドが検索されます。静的レジストラーは、属性とリフレクションを使用したメタデータトークンを使用して、実行時にメソッドを検索するコードを生成します (これははるかに高速で、リンカーも可能です)。対応するランタイムコードを削除して、アプリのサイズを小さくします)。
 
-Mmp/mtouch は見つけることがない場合、`Create`メソッドは、MT4174/MM4174 警告が表示されます、およびルックアップを代わりに実行時に実行されます。
-最も考えられる原因はせず、必要なバインドのコードを記述して手動で`[BlockProxy]`属性。
+Mmp/mtouch が`Create`メソッドを見つけることができない場合は、MT4174/MM4174 警告が表示され、代わりに実行時に参照が実行されます。
+最も可能性の高い原因は、手動で記述され`[BlockProxy]`たバインドコードです。必要な属性はありません。
 
-この最適化では、静的なレジストラーを有効にする必要があります。
+この最適化を行うには、静的レジスタを有効にする必要があります。
 
-(ただし、静的なレジストラーを有効になっている) は既定で常に有効です。
+既定では、静的レジストラーが有効になっている限り、常に有効になります。
 
-渡すことによって、既定の動作をオーバーライドできます`--optimize=[+|-]static-delegate-to-block-lookup`mtouch/mmp にします。
+既定の動作は、mtouch/ `--optimize=[+|-]static-delegate-to-block-lookup` mmp に渡すことでオーバーライドできます。

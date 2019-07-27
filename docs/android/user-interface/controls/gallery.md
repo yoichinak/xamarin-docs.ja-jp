@@ -1,66 +1,66 @@
 ---
-title: Gallery
+title: Android ギャラリーコントロール
 ms.prod: xamarin
 ms.assetid: 3112E68A-7853-B147-90A6-6295CA2C4CB5
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2018
-ms.openlocfilehash: f9b73428531deeacc7bdea271cdc0c2872038e99
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6fe6b5a11473827eb716b0adf0fb0f3ae28a3538
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61218561"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510281"
 ---
-# <a name="gallery"></a>Gallery
+# <a name="xamarinandroid-gallery-control"></a>Xamarin. Android ギャラリーコントロール
 
-[`Gallery`](https://developer.xamarin.com/api/type/Android.Widget.Gallery/) レイアウト ウィジェットが、水平方向にスクロール リストに項目を表示するために使用され、ビューの中心に現在の選択範囲を配置します。
+[`Gallery`](xref:Android.Widget.Gallery)水平スクロールリストに項目を表示し、現在の選択範囲をビューの中央に配置するためのレイアウトウィジェットです。
 
 > [!IMPORTANT]
 > このウィジェットは、Android 4.1 (API レベル 16) で非推奨とされました。 
 
-このチュートリアルではフォト ギャラリーを作成し、ギャラリー項目を選択するたびにトースト メッセージを表示します。
+このチュートリアルでは、ギャラリー項目が選択されるたびに、写真のギャラリーを作成し、トーストメッセージを表示します。
 
-後に、`Main.axml`コンテンツ ビューのレイアウトが設定されて、`Gallery`をレイアウトからキャプチャされた[ `FindViewById`](https://developer.xamarin.com/api/member/Android.App.Activity.FindViewById/p/System.Int32/)します。
-、 [`Adapter`](https://developer.xamarin.com/api/property/Android.Widget.AdapterView.RawAdapter/)
-プロパティは、カスタム アダプターの設定を使用し ( `ImageAdapter`)、dallery に表示されるすべての項目のソースとして。 `ImageAdapter`が次の手順で作成されます。
+コンテンツビュー [`FindViewById`](xref:Android.App.Activity.FindViewById*)に対して`Main.axml`レイアウトを設定した後、を使用してレイアウトからがキャプチャされます。`Gallery`
+、[`Adapter`](xref:Android.Widget.AdapterView.RawAdapter)
+次に、プロパティを使用して、dallery `ImageAdapter`に表示されるすべての項目のソースとしてカスタムアダプター () を設定します。 は`ImageAdapter` 、次の手順で作成します。
 
-匿名デリゲートの購読を行うには何か、ギャラリー内の項目がクリックされたときに、 [`ItemClick`](https://developer.xamarin.com/api/event/Android.Widget.AdapterView.ItemClick/)
-イベント。 表示します。 [`Toast`](https://developer.xamarin.com/api/type/Android.Widget.Toast/)
-選択した項目のインデックス位置 (0 から始まる) を表示する (実際のシナリオで、位置される可能性があります他のタスクの完全な画像のサイズを取得する)。
+ギャラリー内の項目がクリックされたときに操作を行うには、匿名デリゲートをサブスクライブします。[`ItemClick`](xref:Android.Widget.AdapterView.ItemClick)
+イベント。 これは、[`Toast`](xref:Android.Widget.Toast)
+theselected item のインデックス位置 (0 から始まる) が表示されます (実際のシナリオでは、その位置を使用して、他のタスクのイメージ全体を取得できます)。
 
-まず、ドローアブル リソース ディレクトリに保存されたイメージを参照する Id の配列を含む、いくつかのメンバー変数がある (**リソース/drawable**)。
+最初に、いくつかのメンバー変数があります。これには、描画リソースディレクトリ (**リソース/** 描画) に保存されたイメージを参照する id の配列が含まれます。
 
-次に、クラスのコンス トラクターは、場所、 [`Context`](https://developer.xamarin.com/api/type/Android.Content.Context/)
-`ImageAdapter`インスタンスが定義されているし、ローカル フィールドに保存します。
-継承されるいくつか必要なメソッドを次に、この実装[ `BaseAdapter`](https://developer.xamarin.com/api/type/Android.Widget.BaseAdapter/)します。
-コンス トラクター、 [`Count`](https://developer.xamarin.com/api/property/Android.Widget.BaseAdapter.Count/)
-プロパティは、説明されています。 通常であれば [`GetItem(int)`](https://developer.xamarin.com/api/member/Android.Widget.BaseAdapter.GetItem/p/System.Int32/)
-アダプターで、指定した位置にある実際のオブジェクトを返す必要がありますが、この例では無視されます。 同様に、 [`GetItemId(int)`](https://developer.xamarin.com/api/member/Android.Widget.BaseAdapter.GetItemId/p/System.Int32/)
-項目の行の id を返す必要がありますが、ここで必要はありません。
+次はクラスコンストラクターです。ここで、[`Context`](xref:Android.Content.Context)
+では、インスタンスが定義され、ローカルフィールドに保存されます。 `ImageAdapter`
+次に、から継承されたいくつ[`BaseAdapter`](xref:Android.Widget.BaseAdapter)かの必須メソッドを実装します。
+コンストラクターと[`Count`](xref:Android.Widget.BaseAdapter.Count)
+プロパティは自明です。 通常であれば[`GetItem(int)`](xref:Android.Widget.BaseAdapter.GetItem*)
+は、アダプター内の指定した位置にある実際のオブジェクトを返す必要がありますが、この例では無視されます。 に[`GetItemId(int)`](xref:Android.Widget.BaseAdapter.GetItemId*)
+は項目の行 id を返す必要がありますが、ここでは必要ありません。
 
-メソッドにイメージを適用する作業では、 [`ImageView`](https://developer.xamarin.com/api/type/Android.Widget.ImageView/)
-埋め込まれている、 [`Gallery`](https://developer.xamarin.com/api/type/Android.Widget.Gallery/)
-このメソッドは、メンバー [`Context`](https://developer.xamarin.com/api/type/Android.Content.Context/)
-新たに作成するために使用[ `ImageView`](https://developer.xamarin.com/api/type/Android.Widget.ImageView/)します。
-、 [`ImageView`](https://developer.xamarin.com/api/type/Android.Widget.ImageView/)
-ローカル ドローアブル リソース、設定の配列からイメージを適用することで準備は、 [`Gallery.LayoutParams`](https://developer.xamarin.com/api/type/Android.Widget.Gallery+LayoutParams/)
-高さと幅に合わせてスケールを設定、イメージの場合、 [`ImageView`](https://developer.xamarin.com/api/type/Android.Widget.ImageView/)
-ディメンション、およびコンス トラクターで取得した高めます属性を使用するバック グラウンドを最後に設定します。
+メソッドは、イメージをに適用する処理を実行します。[`ImageView`](xref:Android.Widget.ImageView)
+に埋め込まれます。[`Gallery`](xref:Android.Widget.Gallery)
+このメソッドでは、メンバー[`Context`](xref:Android.Content.Context)
+は、新しい[`ImageView`](xref:Android.Widget.ImageView)を作成するために使用されます。
+、[`ImageView`](xref:Android.Widget.ImageView)
+は、作成したリソースのローカル配列からイメージを適用することで準備されます。[`Gallery.LayoutParams`](xref:Android.Widget.Gallery.LayoutParams)
+イメージの高さと幅。スケールを設定します。[`ImageView`](xref:Android.Widget.ImageView)
+最後に、コンストラクターで取得したスタイル設定可能な属性を使用するように背景を設定します。
 
-参照してください[ `ImageView.ScaleType` ](https://developer.xamarin.com/api/type/Android.Widget.ImageView+ScaleType/)の他のイメージのスケーリングのオプション。
+他[`ImageView.ScaleType`](xref:Android.Widget.ImageView.ScaleType)のイメージスケーリングオプションについては、「」を参照してください。
 
 ## <a name="walkthrough"></a>チュートリアル
 
-という名前の新しいプロジェクトを開始*HelloGallery*します。
+*"/* " という名前の新しいプロジェクトを開始します。
 
-[![新しいソリューション ダイアログ ボックスで新しい Android プロジェクトのスクリーン ショット](gallery-images/hellogallery1-sml.png)](gallery-images/hellogallery1.png#lightbox)
+[![[新しいソリューション] ダイアログの新しい Android プロジェクトのスクリーンショット](gallery-images/hellogallery1-sml.png)](gallery-images/hellogallery1.png#lightbox)
 
-を使用するにはいくつかの写真を検索または[これらのサンプル イメージをダウンロード](https://developer.android.com/shareables/sample_images.zip)します。
-イメージ ファイルをプロジェクトの追加**リソース/ディスプレイ**ディレクトリ。 **プロパティ**ごとにビルド アクション ウィンドウで、設定**AndroidResource**します。
+使用する写真を検索するか、[これらのサンプルイメージをダウンロード](https://developer.android.com/shareables/sample_images.zip)します。
+イメージファイルをプロジェクトの**Resources/アブル**ディレクトリに追加します。 **プロパティ** ウィンドウで、それぞれの ビルド アクションを**Androidresource**に設定します。
 
-開いている**Resources/Layout/Main.axml**し、次を挿入します。
+**Resources/Layout/Main**を開き、次のように挿入します。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -71,8 +71,8 @@ ms.locfileid: "61218561"
 />
 ```
 
-開いている`MainActivity.cs`の次のコードを挿入し、 [`OnCreate()`](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/p/Android.OS.Bundle/)
-方法:
+を`MainActivity.cs`開き、次のコードを挿入します。[`OnCreate()`](xref:Android.App.Activity.OnCreate*)
+b
 
 ```csharp
 protected override void OnCreate (Bundle bundle)
@@ -92,7 +92,7 @@ protected override void OnCreate (Bundle bundle)
 }
 ```
 
-という新しいクラスを作成`ImageAdapter`をサブクラスとして持つ[ `BaseAdapter` ](https://developer.xamarin.com/api/type/Android.Widget.BaseAdapter/):
+サブクラス`ImageAdapter` [`BaseAdapter`](xref:Android.Widget.BaseAdapter)と呼ばれる新しいクラスを作成します。
 
 ```csharp
 public class ImageAdapter : BaseAdapter
@@ -142,19 +142,15 @@ public class ImageAdapter : BaseAdapter
 
 ```
 
-アプリケーションを実行します。 次のスクリーン ショットのようになります。
+アプリケーションを実行します。 次のスクリーンショットのようになります。
 
-![サンプル イメージを表示する HelloGallery のスクリーン ショット](gallery-images/hellogallery3.png)
+![サンプルイメージを表示している全画面のスクリーンショット](gallery-images/hellogallery3.png)
 
+## <a name="references"></a>関連項目
 
+- [`BaseAdapter`](xref:Android.Widget.BaseAdapter)
+- [`Gallery`](xref:Android.Widget.Gallery)
+- [`ImageView`](xref:Android.Widget.ImageView)
 
-## <a name="references"></a>参照
-
--   [`BaseAdapter`](https://developer.xamarin.com/api/type/Android.Widget.BaseAdapter/)
--   [`Gallery`](https://developer.xamarin.com/api/type/Android.Widget.Gallery/)
--   [`ImageView`](https://developer.xamarin.com/api/type/Android.Widget.ImageView/)
-
-*このページの部分が作成および Android のオープン ソース プロジェクトで共有し、の条項に従って使用作業に基づいた変更、*
-[*Creative Commons 2.5 Attribution License*](http://creativecommons.org/licenses/by/2.5/).
-
-
+*このページの一部は、Android オープンソースプロジェクトによって作成および共有*
+され、[*Creative Commons 2.5 属性*](http://creativecommons.org/licenses/by/2.5/)で説明されている条項に従って使用される作業に基づいて変更されます。

@@ -1,42 +1,40 @@
 ---
-title: Xamarin.Android とします。デスクトップの Mono ランタイムの違い
+title: Xamarin Android とデスクトップ-Mono ランタイムの違い
 ms.prod: xamarin
 ms.assetid: F953F9B4-3596-8B3A-A8E4-8219B5B9F7CA
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 115d715214d7af3174c41d9d82e894ce429dab42
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 18e6e82011460a51a96df4694f15b36c5ec94ab5
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60953345"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510707"
 ---
 # <a name="limitations"></a>制限事項
 
-Android でのアプリケーションでは、ビルド プロセス中に Java プロキシ型を生成する必要があるために、実行時にすべてのコードを生成することはできません。
+Android のアプリケーションはビルドプロセス中に Java プロキシ型を生成する必要があるため、実行時にすべてのコードを生成することはできません。
 
-デスクトップ Mono と比較して、Xamarin.Android の制限事項を次に示します。
+デスクトップ Mono と比較した Xamarin Android の制限事項は次のとおりです。
 
+## <a name="limited-dynamic-language-support"></a>制限付きの動的言語サポート
 
-## <a name="limited-dynamic-language-support"></a>制限付きの動的言語のサポート
+ Android ランタイムがマネージコードを呼び出す必要がある場合は常に、 [android 呼び出し可能ラッパー](~/android/platform/java-integration/android-callable-wrappers.md)が必要です。 Android 呼び出し可能ラッパーは、IL の静的分析に基づいて、コンパイル時に生成されます。 この結果、次のような結果が得られます: 動的言語 (IronPython、IronRuby など) を使用する*ことはできません*。 Java 型のサブクラスが必要なシナリオ (間接サブクラス化を含む) では、コンパイル時にこれらの動的な型を抽出する方法がないためです。必要な Android 呼び出し可能ラッパーを生成します。
 
- [Android 呼び出し可能ラッパー](~/android/platform/java-integration/android-callable-wrappers.md) Android ランタイムがマネージ コードを呼び出す必要がある任意の時間が必要です。 Android 呼び出し可能ラッパーは、IL のスタティック分析に基づいて、コンパイル時に生成されます。 これの最終的な結果: する*できません*を使用して、動的言語 (IronPython、IronRuby など) のシナリオで Java 型のサブクラスを (間接的なサブクラス化) を含む必要があるようにこれらの動的な型を抽出する方法はありませんコンパイル時に必要な Android 呼び出し可能ラッパーを生成します。
+## <a name="limited-java-generation-support"></a>Java の生成サポートの制限
 
-
-## <a name="limited-java-generation-support"></a>生成の制限の Java サポート
-
-[Android 呼び出し可能ラッパー](~/android/platform/java-integration/android-callable-wrappers.md) Java コードをマネージ コードを呼び出すために、生成する必要があります。 *既定で*、Android 呼び出し可能ラッパーには (一部) の宣言されたコンス トラクターと仮想の Java メソッドをオーバーライドするメソッドのみが (つまりが[ `RegisterAttribute` ](https://developer.xamarin.com/api/type/Android.Runtime.RegisterAttribute/)) または Java インターフェイスのメソッド (の実装インターフェイスには同様に`Attribute`)。
+Java コードからマネージコードを呼び出すためには、 [Android 呼び出し可能ラッパー](~/android/platform/java-integration/android-callable-wrappers.md)を生成する必要があります。 *既定で*は、Android 呼び出し可能ラッパーは、(つまり、がある[`RegisterAttribute`](xref:Android.Runtime.RegisterAttribute)) 仮想 java メソッドをオーバーライドしたり、java インターフェイスメソッドを実装したりする (特定の) 宣言されたコンストラクターおよびメソッドのみを含みます`Attribute`(インターフェイスも同様です)。
   
-4.1 のリリースの前に追加のメソッドを宣言できるありません。 4.1 のリリースでは、 [、`Export`と`ExportField`Java のメソッドと、Android 呼び出し可能ラッパー内のフィールドを宣言するカスタム属性を使用できます。](~/android/platform/java-integration/working-with-jni.md)します。
+4\.1 リリースより前のバージョンでは、追加のメソッドを宣言することはできませんでした。 4\.1 リリース[ `Export`では、 `ExportField`およびカスタム属性を使用して、Android 呼び出し可能ラッパー内の Java メソッドとフィールドを宣言でき](~/android/platform/java-integration/working-with-jni.md)ます。
 
-### <a name="missing-constructors"></a>不足しているコンス トラクター
+### <a name="missing-constructors"></a>見つからないコンストラクター
 
-コンス トラクターのまま、厄介な場合を除き、 [ `ExportAttribute` ](https://developer.xamarin.com/api/type/Java.Interop.ExportAttribute)使用されます。 Android 呼び出し可能ラッパー コンス トラクターを生成するためのアルゴリズムでは、場合に、Java のコンス トラクターを出力することを示します。
+が使用されて[`ExportAttribute`](xref:Java.Interop.ExportAttribute)いる場合を除き、コンストラクターは注意してください。 Android 呼び出し可能ラッパーコンストラクターを生成するためのアルゴリズムは、次の場合に Java コンストラクターが生成されることを示します。
 
-1. すべてのパラメーターの型の Java マッピングがあります。
-2. 基本クラスは、同じコンス トラクターを宣言します&ndash;があるため、Android 呼び出し可能ラッパー*する必要があります*(する簡単な方法が存在しないため、既定の引数を使用するありません対応する基本クラス コンス トラクターを呼び出すことは。値を決定 Java 内で使用)。
+1. すべてのパラメーターの型に対して Java マッピングが存在します
+2. 基本クラスは同じコンストラクター &ndash;を宣言します。これは、Android 呼び出し可能ラッパーが対応する基底クラスコンストラクターを呼び出す*必要*があるためです。既定の引数を使用することはできません (値を簡単に判断する方法はありません)。は Java 内で使用する必要があります)。
 
 たとえば、次のクラスを考えてみます。
 
@@ -49,7 +47,7 @@ class MyIntentService : IntentService {
 }
 ```
 
-結果として得られる Android 呼び出し可能ラッパーこの検索を論理的に完ぺきを while*リリース ビルドで*は既定のコンス トラクターが含まれていません。 そのため、このサービスを開始しようとした場合 (例: [ `Context.StartService` ](https://developer.xamarin.com/api/member/Android.Content.Context.StartService/p/Android.Content.Intent/))、失敗になります。
+これは完全に論理的に見えますが、*リリースビルドで*の Android 呼び出し可能ラッパーには既定のコンストラクターが含まれません。 そのため、このサービスを開始しようとすると[`Context.StartService`](xref:Android.Content.Context.StartService*)(たとえば、エラーが発生します。
 
 ```shell
 E/AndroidRuntime(31766): FATAL EXCEPTION: main
@@ -72,7 +70,7 @@ E/AndroidRuntime(31766):        at android.app.ActivityThread.handleCreateServic
 E/AndroidRuntime(31766):        ... 10 more
 ```
 
-既定のコンス トラクターを宣言し、それを装飾するを回避するには、 `ExportAttribute`、設定、 [ `ExportAttribute.SuperStringArgument` ](https://developer.xamarin.com/api/property/Java.Interop.ExportAttribute.SuperArgumentsString/): 
+これを回避するには、既定のコンストラクターを宣言し`ExportAttribute`、を使用し[`ExportAttribute.SuperStringArgument`](xref:Java.Interop.ExportAttribute.SuperArgumentsString)て装飾を設定し、次のように設定します。 
 
 ```csharp
 [Service]
@@ -89,10 +87,10 @@ class MyIntentService : IntentService {
 
 ### <a name="generic-c-classes"></a>ジェネリックC#クラス
 
-ジェネリックC#クラスが部分的にしかサポートされています。 次の制限事項があります。
+ジェネリックC#クラスは部分的にのみサポートされています。 次の制限事項があります。
 
 
--   ジェネリック型を使用していない可能性があります`[Export]`または`[ExportField`]。 操作が生成されます、`XA4207`エラー。
+-   ジェネリック型は、また`[Export]`は`[ExportField`を使用できません。 これを行おうとすると、 `XA4207`エラーが発生します。
 
     ```csharp
     public abstract class Parcelable<T> : Java.Lang.Object, IParcelable
@@ -105,7 +103,7 @@ class MyIntentService : IntentService {
     }
     ```
 
--   ジェネリック メソッドを使用していない`[Export]`または`[ExportField]`:
+-   ジェネリックメソッドは、また`[Export]`は`[ExportField]`を使用できません。
 
     ```csharp
     public class Example : Java.Lang.Object
@@ -120,7 +118,7 @@ class MyIntentService : IntentService {
     }
     ```
 
--   `[ExportField]` 返すメソッドを使用することはできません`void`:
+-   `[ExportField]`を返す`void`メソッドでは使用できません。
 
     ```csharp
     public class Example : Java.Lang.Object
@@ -133,8 +131,8 @@ class MyIntentService : IntentService {
     }
     ```
 
--   ジェネリック型のインスタンス_しないで_Java コードから作成します。
-    また、マネージ コードから安全にのみ作成できます。
+-   ジェネリック型のインスタンスを Java コードから作成することはでき_ません_。
+    これらのコードは、マネージコードからのみ安全に作成できます。
 
     ```csharp
     [Activity (Label="Die!", MainLauncher=true)]
@@ -147,17 +145,15 @@ class MyIntentService : IntentService {
     }
     ```
 
-
 ## <a name="partial-java-generics-support"></a>部分的な Java ジェネリックのサポート
 
-Java のバインドのジェネリックのサポートは制限されます。 (非インスタンス化の) 別のジェネリック クラスから派生した汎用のインスタンス クラスのメンバーのままにする、特に Java.Lang.Object として公開します。 たとえば、 [Android.Content.Intent.GetParcelableExtra](https://developer.xamarin.com/api/member/Android.Content.Intent.GetParcelableExtra/p/System.String/) Java.Lang.Object を返します。 これは消去された Java ジェネリックのためにです。
-このような制限が適用されない一部のクラスが手動で調整します。
-
+Java ジェネリックのバインディングサポートは制限されています。 特に、別のジェネリック (インスタンス化されていない) クラスから派生したジェネリックインスタンスクラスのメンバーは、Java. Lang. オブジェクトとして公開されたままになります。 たとえば、 [GetParcelableExtra](xref:Android.Content.Intent.GetParcelableExtra*)メソッドは、Java. Lang. オブジェクトを返します。 これは、Java ジェネリックが消去されたことが原因です。
+この制限を適用しないクラスがいくつかありますが、手動で調整します。
 
 ## <a name="related-links"></a>関連リンク
 
 - [Android 呼び出し可能ラッパー](~/android/platform/java-integration/android-callable-wrappers.md)
-- [JNI の使用](~/android/platform/java-integration/working-with-jni.md)
-- [ExportAttribute](https://developer.xamarin.com/api/type/Java.Interop.ExportAttribute/)
-- [SuperString](https://developer.xamarin.com/api/property/Java.Interop.ExportAttribute.SuperArgumentsString/)
-- [RegisterAttribute](https://developer.xamarin.com/api/type/Android.Runtime.RegisterAttribute/)
+- [JNI の操作](~/android/platform/java-integration/working-with-jni.md)
+- [ExportAttribute](xref:Java.Interop.ExportAttribute)
+- [SuperString](xref:Java.Interop.ExportAttribute.SuperArgumentsString)
+- [RegisterAttribute](xref:Android.Runtime.RegisterAttribute)

@@ -6,64 +6,61 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/26/2018
-ms.openlocfilehash: c8a6e7a9abf9e8430253b9402d69f43744bf93c0
-ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
+ms.openlocfilehash: 64210bc18532a5260bd31ff1c20e8ffaf92d0df2
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66827671"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510547"
 ---
-# <a name="customizing-a-listviews-appearance"></a>ListView の外観のカスタマイズ
+# <a name="customizing-a-listviews-appearance-with-xamarinandroid"></a>Xamarin Android を使用した ListView の外観のカスタマイズ
 
-
-## <a name="overview"></a>概要
-
-ListView の外観は、表示されている行のレイアウトによって決まります。 外観を変更する、 `ListView`、別の行のレイアウトを使用します。
+ListView の外観は、表示されている行のレイアウトによって決まります。 の外観を変更するに`ListView`は、別の行レイアウトを使用します。
 
 
 ## <a name="built-in-row-views"></a>組み込みの行ビュー
 
-使用して参照できる組み込みの 12 個のビューがある**Android.Resource.Layout**:
+**Android. Resource. Layout**を使用して参照できる組み込みビューが12個あります。
 
-- **TestListItem** &ndash;最低限の書式のテキストの行を 1 。
+- **Testlistitem**&ndash;書式設定が最小の1行のテキスト。
 
-- **SimpleListItem1** &ndash; 1 つの行のテキスト。
+- **SimpleListItem1**&ndash; 1 行のテキスト。
 
-- **SimpleListItem2** &ndash; 2 行のテキスト。
+- **SimpleListItem2**&ndash; 2 行のテキスト。
 
-- **SimpleSelectableListItem** &ndash; 1 つの行の 1 つまたは複数の項目の選択 (API レベル 11 で追加) をサポートするテキスト。
+- **Simpleselectablelistitem**&ndash;単一または複数の項目の選択をサポートする1行のテキスト (API レベル11で追加)。
 
-- **SimpleListItemActivated1** &ndash; SimpleListItem1 と似ていますが、背景色を示す行を選択すると (API レベル 11 で追加します)。
+- **SimpleListItemActivated1**&ndash; SimpleListItem1 と同様ですが、背景色は、行が選択された (API レベル11で追加された) ことを示します。
 
-- **SimpleListItemActivated2** &ndash; SimpleListItem2 と似ていますが、背景色を示す行を選択すると (API レベル 11 で追加します)。
+- **SimpleListItemActivated2**&ndash; SimpleListItem2 と同様ですが、背景色は、行が選択された (API レベル11で追加された) ことを示します。
 
-- **SimpleListItemChecked** &ndash;選択範囲を示すチェック マークが表示されます。
+- **Simplelistitemchecked**&ndash;選択を示すためにチェックマークを表示します。
 
-- **SimpleListItemMultipleChoice** &ndash;選択肢を指定するためのチェック ボックスが表示されます。
+- **SimpleListItemMultipleChoice**&ndash;複数選択の選択を示すチェックボックスを表示します。
 
-- **SimpleListItemSingleChoice** &ndash;表示のオプションを相互に排他的な選択範囲を示すボタン。
+- **SimpleListItemSingleChoice**&ndash;相互排他的な選択を示すオプションボタンを表示します。
 
-- **TwoLineListItem** &ndash; 2 行のテキスト。
+- **Twolinelistitem**&ndash; 2 行のテキスト。
 
-- **ActivityListItem** &ndash;イメージのテキストの行を 1 。
+- **Activitylistitem**&ndash;イメージを含む1行のテキスト。
 
-- **SimpleExpandableListItem** &ndash;カテゴリ、および各グループでの行のグループを展開または折りたたむことができます。
+- **Simpleexpandablelistitem**&ndash;カテゴリごとに行をグループ化し、各グループを展開または折りたたむことができます。
 
-各組み込み行ビューには、関連付けられている組み込みスタイルがあります。 これらのスクリーン ショットでは、それぞれのビューの表示方法を示します。
+組み込みの各行ビューには、組み込みのスタイルが関連付けられています。 これらのスクリーンショットは、各ビューの表示方法を示しています。
 
-[![TestListItem、SimpleSelectableListItem、SimpleListitem1、および SimpleListItem2 のスクリーン ショット](customizing-appearance-images/builtinviews.png)](customizing-appearance-images/builtinviews.png#lightbox)
+[![TestListItem、SimpleSelectableListItem、SimpleListitem1、および SimpleListItem2 のスクリーンショット](customizing-appearance-images/builtinviews.png)](customizing-appearance-images/builtinviews.png#lightbox)
 
-[![SimpleListItemActivated1、SimpleListItemActivated2、SimpleListItemChecked、および SimpleListItemMultipleChecked のスクリーン ショット](customizing-appearance-images/builtinviews-2.png)](customizing-appearance-images/builtinviews-2.png#lightbox)
+[![SimpleListItemActivated1、SimpleListItemActivated2、SimpleListItemChecked、および Simplelistitemchecked のスクリーンショット](customizing-appearance-images/builtinviews-2.png)](customizing-appearance-images/builtinviews-2.png#lightbox)
 
-[![SimpleListItemSingleChoice、TwoLineListItem、ActivityListItem、および SimpleExpandableListItem のスクリーン ショット](customizing-appearance-images/builtinviews-3.png)](customizing-appearance-images/builtinviews-3.png#lightbox)
+[![SimpleListItemSingleChoice、TwoLineListItem、ActivityListItem、および SimpleExpandableListItem のスクリーンショット](customizing-appearance-images/builtinviews-3.png)](customizing-appearance-images/builtinviews-3.png#lightbox)
 
-**BuiltInViews/HomeScreenAdapter.cs**サンプル ファイル (で、 **BuiltInViews**ソリューション) の展開を可能なリスト項目の画面を生成するためにコードが含まれています。 ビューが設定されている、`GetView`このようなメソッド。
+**BuiltInViews/HomeScreenAdapter**サンプルファイル ( **BuiltInViews**ソリューション内) には、展開できないリスト項目画面を生成するコードが含まれています。 ビューは次のように`GetView`メソッドで設定されます。
 
 ```csharp
 view = context.LayoutInflater.Inflate(Android.Resource.Layout.SimpleListItem1, null);
 ```
 
-標準コントロールの識別子を参照することで、ビューのプロパティを設定できます`Text1`、`Text2`と`Icon` `Android.Resource.Id` (ビューは含まれていないか、例外がスローされるプロパティを設定しないでください)。
+その後、標準`Text1`コントロール識別子`Icon`を`Text2` `Android.Resource.Id`参照することによって、ビューのプロパティを設定できます。また、(ビューに含まれていないプロパティを設定しないと、例外がスローされます)。
 
 ```csharp
 view.FindViewById<TextView>(Android.Resource.Id.Text1).Text = item.Heading;
@@ -71,50 +68,50 @@ view.FindViewById<TextView>(Android.Resource.Id.Text2).Text = item.SubHeading;
 view.FindViewById<ImageView>(Android.Resource.Id.Icon).SetImageResource(item.ImageResourceId); // only use with ActivityListItem
 ```
 
-**BuiltInExpandableViews/ExpandableScreenAdapter.cs**サンプル ファイル (で、 **BuiltInViews**ソリューション) SimpleExpandableListItem 画面を生成するためにコードが含まれています。 グループ ビューが 設定されている、`GetGroupView`このようなメソッド。
+**BuiltInExpandableViews/ExpandableScreenAdapter**サンプルファイル ( **BuiltInViews**ソリューション内) には、simpleexpandablelistitem 画面を生成するためのコードが含まれています。 グループビューは、次のよう`GetGroupView`にメソッドで設定されます。
 
 ```csharp
 view = context.LayoutInflater.Inflate(Android.Resource.Layout.SimpleExpandableListItem1, null);
 ```
 
-子ビューが 設定されている、`GetChildView`このようなメソッド。
+子ビューは、次のよう`GetChildView`にメソッドで設定されます。
 
 ```csharp
 view = context.LayoutInflater.Inflate(Android.Resource.Layout.SimpleExpandableListItem2, null);
 ```
 
-標準を参照することで、グループ ビューと、子ビューのプロパティを設定しできます`Text1`と`Text2`上記のように、識別子を制御します。 (上記) SimpleExpandableListItem スクリーン ショットでは、1 行のグループ ビュー (SimpleExpandableListItem1) と 2 行の子ビュー (SimpleExpandableListItem2) の例を示します。 または、(SimpleExpandableListItem2) の 2 行のグループ ビューを構成することができます (SimpleExpandableListItem1) が 1 行、子ビューを構成することができますまたは両方のグループ化ビューと子ビューは、同じ数の行を持つことができます。 
+グループビューと子ビューのプロパティは、上記のように、標準`Text1` `Text2`識別子とコントロール識別子を参照することによって設定できます。 SimpleExpandableListItem スクリーンショット (上図参照) は、1行のグループビュー (SimpleExpandableListItem1) と2行の子ビュー (SimpleExpandableListItem2) の例を示しています。 または、2つの行 (SimpleExpandableListItem2) に対してグループビューを構成し、子ビューを1つの行 (SimpleExpandableListItem1) に対して構成することも、グループビューと子ビューの両方に同じ行数を設定することもできます。 
 
 
 
 ## <a name="accessories"></a>Accessories
 
-行には、[アクセサリ] の選択状態を示すため、ビューの右側に追加されたことがあります。
+行では、ビューの右側にアクセサリを追加して、選択状態を示すことができます。
 
-- **SimpleListItemChecked** &ndash;インジケーターとしてチェックで単一選択リストを作成します。
+- **Simplelistitemchecked**&ndash;インジケーターとしてチェックを使用して、単一選択リストを作成します。
 
-- **SimpleListItemSingleChoice** &ndash; 1 つだけ選択が可能なラジオ ボタン-型のリストを作成します。
+- **SimpleListItemSingleChoice**&ndash;選択できるオプションが1つだけの場合に、ラジオボタンの種類の一覧を作成します。
 
-- **SimpleListItemMultipleChoice** &ndash;複数の選択肢が考えられる checkbox 型のリストを作成します。
+- **SimpleListItemMultipleChoice**&ndash;複数の選択肢が可能な場合に、チェックボックスの種類の一覧を作成します。
 
-それぞれの順序で、次の画面は、前述の [アクセサリ] を示したです。
+前述のアクセサリは、次の画面にそれぞれの順序で示されています。
 
-[![スクリーン ショットの SimpleListItemChecked、SimpleListItemSingleChoice、およびアクセサリと SimpleListItemMultipleChoice](customizing-appearance-images/accessories.png)](customizing-appearance-images/accessories.png#lightbox)
+[![アクセサリーがある SimpleListItemChecked、SimpleListItemSingleChoice、および SimpleListItemMultipleChoice のスクリーンショット](customizing-appearance-images/accessories.png)](customizing-appearance-images/accessories.png#lightbox)
 
-これらのアクセサリ パスのいずれかを表示するには、アダプターに必要なレイアウトのリソース ID、手動で設定、必要な行の選択状態。 次のコードを作成して割り当てる方法を示しています、`Adapter`これらのレイアウトのいずれかを使用します。
+これらのアクセサリのいずれかを表示するには、必要なレイアウトリソース ID をアダプターに渡してから、必要な行の選択状態を手動で設定します。 次のコード行は、 `Adapter`これらのレイアウトのいずれかを使用してを作成し、割り当てる方法を示しています。
 
 ```csharp
 ListAdapter = new ArrayAdapter<String>(this, Android.Resource.Layout.SimpleListItemChecked, items);
 ```
 
-`ListView`自体が表示されている付属品に関係なく、別の選択モードをサポートしています。 混乱を避けるためには、次のように使用します。`Single`選択モードと`SingleChoice`[アクセサリ]、`Checked`または`Multiple`モードと、`MultipleChoice`スタイル。 選択モードがによって制御される、`ChoiceMode`のプロパティ、`ListView`します。
+は`ListView` 、表示されているアクセサリに関係なく、さまざまな選択モードをサポートしています。 混乱を避けるには`Single` 、 `SingleChoice`アクセサリを使用し`Checked`て選択`Multiple`モードを、 `MultipleChoice`スタイルにはまたはモードを使用します。 選択モードは、 `ChoiceMode` `ListView`のプロパティによって制御されます。
 
 
 ### <a name="handling-api-level"></a>API レベルの処理
 
-以前のバージョンの Xamarin.Android では、整数のプロパティとして列挙型を実装します。 最新バージョンは、適切な .NET 列挙型をこれにより、潜在的なオプションを検出するはるかに簡単導入にされています。
+以前のバージョンの Xamarin. Android では、整数プロパティとして列挙が実装されていました。 最新バージョンでは、適切な .NET 列挙型が導入されました。これにより、潜在的なオプションをより簡単に検出できます。
 
-API レベルによっては、ターゲット`ChoiceMode`は整数または列挙体。 サンプル ファイル**AccessoryViews/HomeScreen.cs**がブロックをコメント アウト Gingerbread API を対象にする場合。
+ターゲットとする API レベルに応じて、 `ChoiceMode`は整数または列挙値のいずれかになります。 **AccessoryViews/HomeScreen**サンプルファイルには、ジンジャー API を対象とする場合に、コメントアウトされたブロックがあります。
 
 ```csharp
 // For targeting Gingerbread the ChoiceMode is an int, otherwise it is an
@@ -134,22 +131,22 @@ lv.ChoiceMode = 1; // Single
 ```
 
 
-### <a name="selecting-items-programmatically"></a>プログラムで項目を選択します。
+### <a name="selecting-items-programmatically"></a>プログラムによる項目の選択
 
-実行するアイテムを手動で設定が '選択'、`SetItemChecked`メソッド (呼び出せる複数回の複数選択)。
+' 選択済み ' 項目を手動で設定する方法は`SetItemChecked` 、メソッドを使用して実行します (複数選択に対して複数回呼び出すことができます)。
 
 ```csharp
 // Set the initially checked row ("Fruits")
 lv.SetItemChecked(1, true);
 ```
 
-コードは、異なる方法で複数の選択肢から 1 項目の選択を検出するためにも必要です。 行が選択されているかを判断する`Single`モードの使用、`CheckedItemPosition`整数のプロパティ。
+また、このコードでは、複数の選択とは異なる方法で単一選択を検出する必要があります。 モードで`Single`選択されている行を確認する`CheckedItemPosition`には、整数プロパティを使用します。
 
 ```csharp
 FindViewById<ListView>(Android.Resource.Id.List).CheckedItemPosition
 ```
 
-選択した行を決定する`Multiple`をループ処理する必要があるモード、 `CheckedItemPositions` `SparseBooleanArray`します。 スパース配列はエントリのみを含むディクショナリのように、値が変更されて探して配列全体を走査する必要がありますので`true`を知ると、次のコード スニペットに示すように、一覧で選択されている値。
+モードで`Multiple`選択されている行を確認するには、 `CheckedItemPositions` `SparseBooleanArray`をループ処理する必要があります。 スパース配列は、値が変更されたエントリのみを含むディクショナリに似ているため、次のコードスニペットに示す`true`ように、リストで選択されている内容を確認するために、配列全体を走査する必要があります。
 
 ```csharp
 var sparseArray = FindViewById<ListView>(Android.Resource.Id.List).CheckedItemPositions;
@@ -161,31 +158,31 @@ Console.WriteLine();
 ```
 
 
-## <a name="creating-custom-row-layouts"></a>カスタムの行のレイアウトを作成します。
+## <a name="creating-custom-row-layouts"></a>カスタム行レイアウトの作成
 
-4 つの組み込みの行ビューでは、非常に単純です。 (電子メール、または、ツイートの連絡先情報の一覧) などのより複雑なレイアウトを表示するには、カスタム ビューが必要です。 カスタム ビューは通常、AXML ファイルでとして宣言されている、**リソース/レイアウト**ディレクトリにし、リソース Id、カスタム アダプターを使用して、読み込まれました。 ビューは、カスタムの色、フォントおよびレイアウトで表示クラス (するテキスト ビュー、ImageViews 他のコントロールなど) の任意の数を含めることができます。
+4つの組み込みの行ビューは非常に単純です。 より複雑なレイアウト (メールのリスト、ツイート、連絡先情報など) を表示するには、カスタムビューが必要です。 カスタムビューは一般に、 **Resources/Layout**ディレクトリでは axml ファイルとして宣言され、その後、カスタムアダプターによってリソース Id を使用して読み込まれます。 ビューには、任意の数の表示クラス (TextViews、ImageViews、その他のコントロールなど) を、カスタムの色、フォント、およびレイアウトで含めることができます。
 
-この例は、さまざまな方法で、前の例とは異なります。
+この例は、次のいくつかの方法で前の例と異なります。
 
--  継承`Activity`ではなく、`ListActivity`します。 いずれかの行をカスタマイズすることができます`ListView`で他のコントロールが含めることもできますが、 `Activity` (見出し、ボタンやその他のユーザー インターフェイス要素) などのレイアウト。 この例では、上記の見出しを追加します。、`ListView`について説明します。
+-  は、 `Activity`では`ListActivity`なく、から継承されます。 任意`ListView`のの行をカスタマイズできますが、他のコントロールを`Activity`レイアウト (見出し、ボタン、その他のユーザーインターフェイス要素など) に含めることもできます。 この例では、の上`ListView`に見出しを追加して説明します。
 
--  画面の AXML レイアウト ファイルが必要です前の例で、`ListActivity`レイアウト ファイルは必要ありません。 この AXML を含む、`ListView`宣言を制御します。
+-  画面には、AXML レイアウトファイルが必要です。前の例では`ListActivity` 、にレイアウトファイルは必要ありません。 この axml には`ListView` 、コントロール宣言が含まれています。
 
--  各の行を表示するために、AXML レイアウト ファイルが必要です。 この AXML ファイルには、カスタムのフォントおよび色の設定でテキストとイメージ コントロールが含まれています。
+-  で各行を表示するには、AXML レイアウトファイルが必要です。 この AXML ファイルには、フォントと色のカスタム設定を持つテキストコントロールとイメージコントロールが含まれています。
 
--  省略可能なカスタム セレクターの XML ファイルを使用すると、選択されている行の外観を設定します。
+-  オプションのカスタムセレクター XML ファイルを使用して、選択した行の外観を設定します。
 
--  `Adapter`実装からのカスタム レイアウトを返します、`GetView`をオーバーライドします。
+-  実装`Adapter`は、 `GetView`オーバーライドからカスタムレイアウトを返します。
 
--  `ItemClick` 異なる方法で宣言する必要があります (にイベント ハンドラーがアタッチされている`ListView.ItemClick`オーバーライドするのではなく`OnListItemClick`で`ListActivity`)。
-
-
-これらの変更は、詳細な以降では、アクティビティのビューとカスタム行ビューを作成して、それらを表示するために、アダプターとアクティビティへの変更について説明します。
+-  `ItemClick`を異なる方法で宣言する必要があります ( `ListView.ItemClick`のオーバーライド`OnListItemClick`で`ListActivity`はなく、にアタッチされるイベントハンドラーです)。
 
 
-### <a name="adding-a-listview-to-an-activity-layout"></a>アクティビティのレイアウトを ListView を追加します。
+これらの変更については、以下で詳しく説明します。アクティビティのビューとカスタムの行ビューを作成してから、アダプターとアクティビティに加えられた変更について説明します。
 
-`HomeScreen`から継承しなく`ListActivity`ホーム スクリーンの表示レイアウト AXML ファイルを作成する必要がありますので、既定のビューがないです。 この例で、ビュー、見出しがある (を使用して、 `TextView`) と`ListView`データを表示します。 レイアウトが定義されている、 **Resources/Layout/HomeScreen.axml**ファイルを次に示します。
+
+### <a name="adding-a-listview-to-an-activity-layout"></a>アクティビティレイアウトへの ListView の追加
+
+`HomeScreen` から`ListActivity`継承されなくなるため、既定のビューは存在しません。そのため、HomeScreen のビューに対してレイアウト axml ファイルを作成する必要があります。 この例では、ビューに見出し (を`TextView`使用) と、 `ListView`データを表示するを設定します。 レイアウトは、次に示す**Resources/layout/HomeScreen**ファイルで定義されています。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -211,12 +208,12 @@ Console.WriteLine();
 </LinearLayout>
 ```
 
-使用するメリット、`Activity`カスタム レイアウトを持つ (の代わりに、 `ListActivity`)、見出しなどの画面に追加のコントロールを追加できることにあります`TextView`この例では。
+(では`ListActivity`なく) `Activity`カスタムレイアウトでを使用すると、この例の見出し`TextView`などのコントロールを画面に追加できるようになります。
 
 
-### <a name="creating-a-custom-row-layout"></a>カスタムの行のレイアウトの作成
+### <a name="creating-a-custom-row-layout"></a>カスタムの行レイアウトの作成
 
-リスト ビューに表示される各の行のカスタム レイアウトを格納する別の AXML レイアウト ファイルが必要です。 この例では、行は、緑の背景、茶色のテキストおよびイメージを右揃えがあります。 このレイアウトを宣言する Android XML マークアップについては、「 **Resources/Layout/CustomView.axml**:
+別の AXML レイアウトファイルには、リストビューに表示される各行のカスタムレイアウトが含まれている必要があります。 この例では、行の背景が緑色、茶色のテキスト、右に固定されています。 このレイアウトを宣言するための Android XML マークアップは、 **Resources/layout/CustomView. axml**に記述されています。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -257,12 +254,12 @@ Console.WriteLine();
 </RelativeLayout >
 ```
 
-カスタムの行のレイアウトは、多くのさまざまなコントロールを含めることができます、スクロールのパフォーマンスが複雑なデザインが適用され、(特に、ネットワーク経由で読み込まれる必要がある) 場合にイメージを使用します。 スクロールのパフォーマンスの問題に対処の詳細については、Google の記事を参照してください。
+カスタムの行レイアウトにはさまざまなコントロールを含めることができますが、スクロールのパフォーマンスは複雑なデザインやイメージの使用によって影響を受ける可能性があります (特にネットワーク経由で読み込む必要がある場合)。 スクロールのパフォーマンスの問題に対処する方法の詳細については、Google の記事を参照してください。
 
 
-### <a name="referencing-a-custom-row-view"></a>行のカスタム ビューを参照します。
+### <a name="referencing-a-custom-row-view"></a>カスタム行ビューの参照
 
-例では、カスタム アダプターの実装は`HomeScreenAdapter.cs`します。 重要なメソッドは`GetView`リソース ID を使用してカスタム AXML を読み込み、 `Resource.Layout.CustomView`、および返す前に、ビュー内のコントロールの各プロパティを設定します。 完全なアダプターのクラスが表示されます。
+カスタムアダプターの実装例は、「」 `HomeScreenAdapter.cs`にあります。 キーメソッドは`GetView` 、リソース ID `Resource.Layout.CustomView`を使用してカスタムの axml を読み込み、それを返す前にビュー内の各コントロールのプロパティを設定します。 完全なアダプタークラスが表示されます。
 
 ```csharp
 public class HomeScreenAdapter : BaseAdapter<TableItem> {
@@ -301,15 +298,15 @@ public class HomeScreenAdapter : BaseAdapter<TableItem> {
 ```
 
 
-### <a name="referencing-the-custom-listview-in-the-activity"></a>アクティビティで、カスタム ListView を参照します。
+### <a name="referencing-the-custom-listview-in-the-activity"></a>アクティビティでのカスタム ListView の参照
 
-`HomeScreen`クラスを今すぐ継承`Activity`、`ListView`フィールドは、AXML で宣言されたコントロールへの参照を保持するクラスで宣言されています。
+クラスは`HomeScreen`から`Activity`継承するようになっ`ListView`たため、クラスでは、axml で宣言されたコントロールへの参照を保持するフィールドが宣言されています。
 
 ```csharp
 ListView listView;
 ```
 
-クラスは、アクティビティのカスタム レイアウト AXML を読み込む必要がありますしを使用して、`SetContentView`メソッド。 次を検索できる、`ListView`レイアウト内のコントロールと、アダプターに割り当てられ、作成クリック ハンドラーを割り当てます。 OnCreate メソッドのコードを次に示します。
+クラスは、 `SetContentView`メソッドを使用して、アクティビティのカスタムレイアウト axml を読み込む必要があります。 次に、レイアウト内`ListView`のコントロールを見つけて、アダプターを作成して割り当て、クリックハンドラーを割り当てます。 OnCreate メソッドのコードを次に示します。
 
 ```csharp
 SetContentView(Resource.Layout.HomeScreen); // loads the HomeScreen.axml as this activity's view
@@ -320,7 +317,7 @@ listView.Adapter = new HomeScreenAdapter(this, tableItems);
 listView.ItemClick += OnListItemClick;  // to be defined
 ```
 
-最後に、`ItemClick`ハンドラーを定義する必要がありますが、単に表示されますこの場合、`Toast`メッセージ。
+最後に`ItemClick` 、ハンドラーを定義する必要があります。この場合`Toast` 、メッセージが表示されるだけです。
 
 ```csharp
 void OnListItemClick(object sender, AdapterView.ItemClickEventArgs e)
@@ -331,21 +328,21 @@ void OnListItemClick(object sender, AdapterView.ItemClickEventArgs e)
 }
 ```
 
-表示された画面のようになります。
+結果の画面は次のようになります。
 
-[![結果として得られる CustomRowView のスクリーン ショット](customizing-appearance-images/customrowview.png)](customizing-appearance-images/customrowview.png#lightbox)
+[![結果の CustomRowView のスクリーンショット](customizing-appearance-images/customrowview.png)](customizing-appearance-images/customrowview.png#lightbox)
 
 
 
-### <a name="customizing-the-row-selector-color"></a>行セレクターの色をカスタマイズします。
+### <a name="customizing-the-row-selector-color"></a>行セレクターの色のカスタマイズ
 
-行が処理されたときに、ユーザーからのフィードバックの強調表示する必要があります。 カスタム ビューの背景色としてを指定した場合**CustomView.axml**もオーバーライド選択の強調表示します。 次のコードで**CustomView.axml**セットの行が処理されたときに、視覚的なインジケーターがないが明るい緑は、バック グラウンドも意味します。
+行に触れると、ユーザーからのフィードバックのために強調表示されます。 カスタムビューで**Customview**として背景色が指定されている場合、これも選択範囲の強調表示をオーバーライドします。 **Customview**のこのコード行では、背景が明るい緑に設定されていますが、これは、行がタッチされても視覚インジケーターがないことを意味します。
 
 ```xml
 android:background="#FFDAFF7F"
 ```
 
-強調表示の動作を再度有効にするまた、使用される色をカスタマイズする、代わりにカスタム セレクターに背景属性を設定します。 セレクターは、強調表示色だけでなく、既定の背景色を宣言します。 ファイル**Resources/Drawable/CustomSelector.xml**次の宣言が含まれています。
+強調表示動作を再度有効にしたり、使用する色をカスタマイズしたりするには、代わりに background 属性をカスタムセレクターに設定します。 セレクターは、既定の背景色と強調表示色の両方を宣言します。 File **Resources/アブル/CustomSelector .xml**には、次の宣言が含まれています。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -367,21 +364,21 @@ android:background="#FFDAFF7F"
 </selector>
 ```
 
-カスタム セレクターを参照するには、バック グラウンド属性を変更**CustomView.axml**に。
+カスタムセレクターを参照するには、 **Customview. axml**の background 属性を次のように変更します。
 
 ```xml
 android:background="@drawable/CustomSelector"
 ```
 
-選択した行と、対応する`Toast`ここで次のようにメッセージします。
+選択した行と対応`Toast`するメッセージは、次のようになります。
 
-[![トースト メッセージが選択されている行の名前を表示するのには、オレンジ色で選択した行](customizing-appearance-images/customselectcolor.png)](customizing-appearance-images/customselectcolor.png#lightbox)
+[![[選択した行の名前を表示するトーストメッセージを含むオレンジ色で選択された行]](customizing-appearance-images/customselectcolor.png)](customizing-appearance-images/customselectcolor.png#lightbox)
 
 
 
-### <a name="preventing-flickering-on-custom-layouts"></a>カスタム レイアウトでちらつきの防止
+### <a name="preventing-flickering-on-custom-layouts"></a>カスタムレイアウトのちらつきを防止する
 
-Android のパフォーマンスを改善しようとしました。`ListView`レイアウト情報をキャッシュすることによってスクロールします。 設定する必要がある時間の長いデータのリストをスクロールしていれば、`android:cacheColorHint`プロパティを`ListView`(行のカスタム レイアウトの背景として同じ色の値) に、アクティビティの AXML 定義で宣言します。 このヒントを含めるに失敗すると、カスタム行の背景色の一覧をユーザーがスクロール 'ちらつき' する可能性がありますが、
+Android では、レイアウト情報を`ListView`キャッシュすることで、スクロールのパフォーマンスを向上させようとしています。 データのスクロールリストが長い場合は、アクティビティの axml `android:cacheColorHint`定義の`ListView`宣言のプロパティも設定する必要があります (カスタムの行レイアウトの背景と同じ色の値に設定します)。 このヒントを含めないと、ユーザーがカスタムの行背景色でリストをスクロールしたときに "ちらつき" が発生する可能性があります。
 
 
 
