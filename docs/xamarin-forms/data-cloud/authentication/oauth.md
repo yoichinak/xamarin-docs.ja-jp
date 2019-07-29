@@ -1,5 +1,5 @@
 ---
-title: Id プロバイダーで AuthenticateUsers
+title: Id プロバイダーを使用した AuthenticateUsers
 description: この記事では、Xamarin.Auth を使用して、Xamarin.Forms アプリケーションの認証プロセスを管理する方法について説明します。
 ms.prod: xamarin
 ms.assetid: D44745D5-77BB-4596-9B8C-EC75C259157C
@@ -7,14 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/19/2017
-ms.openlocfilehash: 006e403b50a452265a40a0e95d17769fa0446a1a
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 294483e8b831aa085fc338eb05147ced1098c1c5
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67650412"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68508245"
 ---
-# <a name="authenticate-users-with-an-identity-provider"></a>Id プロバイダーでユーザーを認証します。
+# <a name="authenticate-users-with-an-identity-provider"></a>Id プロバイダーを使用したユーザーの認証
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/WebServices/OAuthNativeFlow/)
 
@@ -171,7 +171,7 @@ public override bool OpenUrl(UIApplication app, NSUrl url, NSDictionary options)
 
 #### <a name="android"></a>Android
 
-指定することで android では、カスタムの URL スキームが登録されている、 [ `IntentFilter` ](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/)属性を`Activity`スキームを処理します。 Id プロバイダーには、承認要求が完了すると、アプリケーションのリダイレクト URL にリダイレクトします。 によって処理される、起動パラメーターとして渡すこと、URL で、URL は、Android アプリケーションの起動においてカスタム スキームを使用すると、`OnCreate`のメソッド、`Activity`カスタムの URL スキームを処理するために登録します。 次のコード例では、カスタムの URL スキームを処理するサンプル アプリケーションからクラスを示します。
+指定することで android では、カスタムの URL スキームが登録されている、 [ `IntentFilter` ](xref:Android.App.IntentFilterAttribute)属性を`Activity`スキームを処理します。 Id プロバイダーには、承認要求が完了すると、アプリケーションのリダイレクト URL にリダイレクトします。 によって処理される、起動パラメーターとして渡すこと、URL で、URL は、Android アプリケーションの起動においてカスタム スキームを使用すると、`OnCreate`のメソッド、`Activity`カスタムの URL スキームを処理するために登録します。 次のコード例では、カスタムの URL スキームを処理するサンプル アプリケーションからクラスを示します。
 
 ```csharp
 [Activity(Label = "CustomUrlSchemeInterceptorActivity", NoHistory = true, LaunchMode = LaunchMode.SingleTop )]
@@ -197,7 +197,7 @@ public class CustomUrlSchemeInterceptorActivity : Activity
 }
 ```
 
-`DataSchemes`のプロパティ、 [ `IntentFilter` ](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/)で、プロジェクトの Android クライアント id から取得した反転クライアント識別子を設定する必要があります[Google API コンソール](http://console.developers.google.com)します。
+`DataSchemes`のプロパティ、 [ `IntentFilter` ](xref:Android.App.IntentFilterAttribute)で、プロジェクトの Android クライアント id から取得した反転クライアント識別子を設定する必要があります[Google API コンソール](http://console.developers.google.com)します。
 
 `OnCreate`メソッドから受信した URL の変換、 `Android.Net.Url` .net`Uri`とリダイレクト URL を処理する前に、`OnPageLoading`のパブリック メソッド`OAuth2Authenticator`オブジェクト。 これにより、web ブラウザーのタブを閉じて、受信した OAuth データを解析する Xamarin.Auth です。
 

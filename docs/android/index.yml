@@ -51,7 +51,7 @@ sections:
         className: cardsB
         items:
           - href: ~/android/get-started/index.md
-            html: すぐに Xamarin.Android を活用できるようになるチュートリアルです。 インストールがすべて完了していることを確認し、最初の Mac アプリを構築してみましょう。
+            html: すぐに Xamarin.Android を活用できるようになるチュートリアルです。 インストールがすべて完了していることを確認し、最初の Android アプリを構築してみましょう。
             image:
               src: 'https://docs.microsoft.com/media/common/i_get-started.svg'
               href: ~/android/get-started/index.md
@@ -111,8 +111,8 @@ sections:
         className: cardsD
         items:
           - title: API
-            href: 'https://developer.xamarin.com/api/root/MonoAndroid-lib/'
-            html: '<p><a href="https://developer.xamarin.com/api/root/MonoAndroid-lib/">Android API ドキュメント</a></p><p><a href="https://docs.microsoft.com/dotnet/api/?view=xamarinandroid-7.1">基本クラス ライブラリ</a></p>'
+            href: 'https://docs.microsoft.com/dotnet/api/?view=xamarin-android-sdk-9'
+            html: '<p><a href="https://docs.microsoft.com/dotnet/api/?view=xamarin-android-sdk-9">Android API ドキュメント</a></p><p><a href="https://docs.microsoft.com/dotnet/api/?view=xamarinandroid-7.1">基本クラス ライブラリ</a></p>'
           - title: サンプル
             href: 'https://developer.xamarin.com/samples/android/all/'
             html: '<p><a href="https://developer.xamarin.com/samples/android/all/">Android のサンプル</a></p>'

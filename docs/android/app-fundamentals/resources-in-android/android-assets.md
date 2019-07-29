@@ -6,46 +6,46 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/13/2018
-ms.openlocfilehash: 1e9a71de7725c8382e133d85977407bcc859fc58
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: f8a542b58fa891b63f43d1c87dea911b83e01949
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61013719"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68509317"
 ---
 # <a name="using-android-assets"></a>Android アセットの使用
 
-_資産_アプリケーションでテキスト、xml、フォント、音楽、ビデオなどの任意のファイルを追加する方法を提供します。 「リソース」としてこれらのファイルを含めると、Android は、リソース システムにそれらを処理し、生データを取得することはできません。 データの変更を加えずにアクセスする場合は、資産は、これを行う方法の 1 つです。
+_アセット_を使用すると、テキスト、xml、フォント、音楽、ビデオなどの任意のファイルをアプリケーションに含めることができます。 これらのファイルを "リソース" として追加しようとすると、Android によってそれらのファイルがリソースシステムに処理されるため、生データを取得できなくなります。 データにアクセスする場合は、資産を使用する方法があります。
 
-使用して、アプリケーションから読み取り可能なファイル システムと同様、プロジェクトに追加された資産が表示されます[AssetManager](https://developer.xamarin.com/api/type/Android.Content.Res.AssetManager/)します。
-この簡単なデモで、プロジェクトにテキスト ファイルの資産を追加しようとして読み取りを使用して`AssetManager`、し、[textview] に表示します。
+プロジェクトに追加されたアセットは、 [AssetManager](xref:Android.Content.Res.AssetManager)を使用してアプリケーションで読み取ることができるファイルシステムと同様に表示されます。
+この簡単なデモでは、プロジェクトにテキストファイル資産を追加し、を使用し`AssetManager`てそれを読み取って、TextView に表示します。
 
 
-## <a name="add-asset-to-project"></a>資産をプロジェクトに追加します。
+## <a name="add-asset-to-project"></a>プロジェクトへの資産の追加
 
-資産の移動、`Assets`プロジェクトのフォルダー。 という名前のこのフォルダーに新しいテキスト ファイルを追加`read_asset.txt`します。 「用件資産!」のようにいくつかのテキストを配置します。
+アセットは、 `Assets`プロジェクトのフォルダーにあります。 という名前`read_asset.txt`の新しいテキストファイルをこのフォルダーに追加します。 "私は資産から来ました" のようなテキストを入力します。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-Visual Studio を設定する必要がありますが、**ビルド アクション**にこのファイルの**AndroidAsset**:
+Visual Studio では、このファイルの**ビルドアクション**を**Androidasset**に設定する必要があります。
 
-![ビルド アクションを AndroidAsset に設定します。](android-assets-images/asset-properties-vs.png) 
+![AndroidAsset にビルドアクションを設定しています](android-assets-images/asset-properties-vs.png) 
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-Visual Studio for Mac を設定する必要がありますが、**ビルド アクション**にこのファイルの**AndroidAsset**:
+Visual Studio for Mac は、このファイルの**ビルドアクション**を**Androidasset**に設定する必要があります。
 
-[![ビルド アクションを AndroidAsset に設定します。](android-assets-images/asset-properties-xs-sml.png)](android-assets-images/asset-properties-xs.png#lightbox)
+[![AndroidAsset にビルドアクションを設定しています](android-assets-images/asset-properties-xs-sml.png)](android-assets-images/asset-properties-xs.png#lightbox)
 
 -----
 
-適切な選択 **"ビルド アクション"** により、ファイルは、APK にコンパイル時にパッケージ化するようになります。
+適切な**BuildAction**を選択すると、コンパイル時にファイルが apk にパッケージ化されるようになります。
 
 
-## <a name="reading-assets"></a>資産の読み取り
+## <a name="reading-assets"></a>アセットの読み取り
 
-使用して資産が読み取られる、 [AssetManager](https://developer.xamarin.com/api/type/Android.Content.Res.AssetManager/)します。 インスタンス、`AssetManager`にアクセスすることがある、[資産](https://developer.xamarin.com/api/property/Android.Content.Context.Assets/)プロパティを`Android.Content.Context`、アクティビティなどです。
-次のコードを開いて、 **read_asset.txt**資産の内容の読み取りし、TextView を使用して表示します。
+アセットは[AssetManager](xref:Android.Content.Res.AssetManager)を使用して読み取られます。 の`AssetManager`インスタンスは、アクティビティなどのの[Assets](xref:Android.Content.Context.Assets)プロパティ`Android.Content.Context`にアクセスすることによって使用できます。
+次のコードでは、 **read_asset**アセットを開き、内容を読み取って、TextView を使用して表示します。
 
 ```csharp
 protected override void OnCreate (Bundle bundle)
@@ -72,12 +72,12 @@ protected override void OnCreate (Bundle bundle)
 
 ## <a name="running-the-application"></a>アプリケーションの実行
 
-アプリケーションを実行し、次に表示する必要があります。
+アプリケーションを実行すると、次のように表示されます。
 
-![例のスクリーン ショット](android-assets-images/screenshot.png)
+![スクリーンショットの例](android-assets-images/screenshot.png)
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [AssetManager](https://developer.xamarin.com/api/type/Android.Content.Res.AssetManager/)
-- [コンテキスト](https://developer.xamarin.com/api/type/Android.Content.Context/)
+- [AssetManager](xref:Android.Content.Res.AssetManager)
+- [関連](xref:Android.Content.Context)

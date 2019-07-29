@@ -1,55 +1,54 @@
 ---
-title: Java 統合の概要
-description: Java のエコシステムには、コンポーネントの多様性と膨大なコレクションが含まれています。 これらのコンポーネントの多くは、Android アプリケーションの開発にかかる時間を短縮するができます。 このドキュメントは紹介し、開発者がこれらの既存の Java コンポーネントを Xamarin.Android アプリケーションの開発エクスペリエンスを向上させるために使用できる方法のいくつかの概要を説明します。
+title: Java と Xamarin Android の統合
+description: Java エコシステムには、多様で膨大な数のコンポーネントが含まれています。 これらのコンポーネントの多くは、Android アプリケーションの開発にかかる時間を短縮するために使用できます。 このドキュメントでは、開発者がこれらの既存の Java コンポーネントを使用して Xamarin Android アプリケーションの開発エクスペリエンスを向上させる方法の概要について概要を説明します。
 ms.prod: xamarin
 ms.assetid: 7B5B8695-1C49-19BF-AE99-948CDCBD2A20
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 01/18/2017
-ms.openlocfilehash: 3ab31fb7cac97fbae3315f51daf3dd4b1edbcc1d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: f577af88140c5797182617a22efbb2e7991a8abc
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61085293"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510564"
 ---
-# <a name="java-integration-overview"></a>Java 統合の概要
+# <a name="java-integration-with-xamarinandroid"></a>Java と Xamarin Android の統合
 
-_Java のエコシステムには、コンポーネントの多様性と膨大なコレクションが含まれています。これらのコンポーネントの多くは、Android アプリケーションの開発にかかる時間を短縮するができます。このドキュメントは紹介し、開発者がこれらの既存の Java コンポーネントを Xamarin.Android アプリケーションの開発エクスペリエンスを向上させるために使用できる方法のいくつかの概要を説明します。_
-
+_Java エコシステムには、多様で膨大な数のコンポーネントが含まれています。これらのコンポーネントの多くは、Android アプリケーションの開発にかかる時間を短縮するために使用できます。このドキュメントでは、開発者がこれらの既存の Java コンポーネントを使用して Xamarin Android アプリケーションの開発エクスペリエンスを向上させる方法の概要について概要を説明します。_
 
 ## <a name="overview"></a>概要
 
-Java エコシステムの範囲を指定するには、これは Java で、Xamarin.Android アプリケーションに必要な特定の機能をコーディングされている可能性があります。 このため、Xamarin.Android アプリケーションを作成するときに、これらの既存のライブラリを再利用する魅力的ななります。 
+Java エコシステムの範囲を考えると、Xamarin. Android アプリケーションに必要な特定の機能が Java で既にコーディングされている可能性が非常に高くなります。 このため、Xamarin Android アプリケーションを作成するときは、これらの既存のライブラリを試して再利用することが魅力的です。
 
-Xamarin.Android アプリケーションでの Java ライブラリを再利用可能な 3 つの方法はあります。 
+Xamarin Android アプリケーションで Java ライブラリを再利用するには、次の3つの方法があります。 
 
--   **Java バインド ライブラリを作成する**&ndash;を作成するこの手法では、Xamarin.Android プロジェクトが使用されるC#Java 型を囲むラッパー。 Xamarin.Android アプリケーションを参照できます、C#ラッパーによって、このプロジェクトを作成し、使用、`.jar`ファイル。 
+-   **Java バインドライブラリを作成する**この手法では、Java 型のラッパーを作成C#するために Xamarin Android プロジェクトが使用されます。 &ndash; その後、このプロジェクトで作成されC#たラッパーを Xamarin Android アプリケーションで参照し、 `.jar`そのファイルを使用できます。 
 
 -   **Java ネイティブ インターフェイス** &ndash; 、 *Java ネイティブ* *インターフェイス* (JNI) は非 Java コードを可能にするフレームワーク (C++ などまたはC#) を呼び出すか、実行中の Java コードによって呼び出されるJVM の内部。 
 
--   **コードの移植**&ndash;この方法では、Java ソース コードに変換し、C#します。 これは、手動、またはシャープなどの自動化されたツールを使用して実行できます。 
+-   **コードを移植する**このメソッドは、Java ソースコードを取得し、それをにC#変換します。 &ndash; これは手動で行うことも、シャープなどの自動ツールを使用して行うこともできます。 
 
-最初の 2 つの手法の中核には、 *Java ネイティブ インターフェイス*(JNI)。 JNI は、Java 仮想マシンで実行する Java コードとの対話には、Java で記述されていないアプリケーションを使用するフレームワークです。 Xamarin.Android を使用して作成 JNI*バインド*のC#コード。 
+最初の2つの手法の中核となるのは、 *Java ネイティブインターフェイス*(JNI) です。 JNI は、Java で記述されていないアプリケーションが Java 仮想マシンで実行されている Java コードと対話できるようにするフレームワークです。 JNI を使用してコードC#の*バインド*を作成します。 
 
-最初の手法は、Java ライブラリのバインドをより自動化された、宣言的なアプローチです。 Mac または Visual Studio プロジェクトの種類は Xamarin.Android によって提供されるため、Visual Studio を使用します&ndash;Java バインド ライブラリ。 これらのバインドを正常に作成するには、Java バインド ライブラリ必要がありますも一部手動の変更が、同様のほど多くないのは純粋な JNI アプローチ。 参照してください[Java ライブラリのバインド](~/android/platform/binding-java-library/index.md)Java バインド ライブラリの詳細について。 
+最初の手法は、Java ライブラリをバインドするための、より自動化された宣言型の方法です。 これには、Visual Studio for Mac または Xamarin. Android &ndash;によって提供される Visual Studio プロジェクトの種類のいずれかを使用する Java バインドライブラリが必要です。 これらのバインドを正常に作成するには、Java バインドライブラリに何らかの手動変更が必要になることがありますが、純粋な JNI アプローチほど多くの変更は必要ありません。 Java バインドライブラリの詳細については[、「Java ライブラリのバインド](~/android/platform/binding-java-library/index.md)」を参照してください。 
 
-JNI を使用して、2 番目の手法の多くを低いレベルで動作しますが、さらに細かく制御を提供および通常アクセスできない、Java バインド ライブラリを使用する Java メソッドにアクセスすることが。 
+JNI を使用する2番目の手法は、はるかに低いレベルで動作しますが、java バインドライブラリを使用して通常はアクセスできない Java メソッドに対してより詳細な制御とアクセスを行うことができます。 
 
-3 番目の手法は、前の 2 つのまったく異なる: Java をからコードを移植C#します。 1 つの言語から別のコードを移植できる非常に困難な作業が、ツールのヘルプでの作業が呼び出されることを削減することは*シャープ*します。 シャープは Java であるオープン ソース ツールです-に-C#コンバーター。 
+3番目の手法は、前の2つの手法 (Java からへC#のコードの移植) とは大きく異なります。 ある言語から別の言語へのコードの移植は非常に手間のかかるプロセスですが、*シャープ*と呼ばれるツールを使用すると、その作業を減らすことができます。 シャープは、Java からC#コンバーターのオープンソースツールです。 
 
 
 
 ## <a name="summary"></a>まとめ
 
-このドキュメントでは、Xamarin.Android アプリケーションで Java からのライブラリを再利用できる、さまざまな方法のいくつかの高度な概要が用意されています。 バインドの概念を導入し呼び出し可能ラッパーは、管理されているし、Java コードを移植するためのオプションを説明したC#します。 
+このドキュメントでは、Java からのライブラリを Xamarin Android アプリケーションで再利用するさまざまな方法の概要を説明しました。 ここでは、バインディングとマネージ呼び出し可能ラッパーの概念と、Java コードをに移植C#するためのオプションについて説明しました。 
 
 
 ## <a name="related-links"></a>関連リンク
 
 - [アーキテクチャ](~/android/internals/architecture.md)
 - [Java ライブラリのバインド](~/android/platform/binding-java-library/index.md)
-- [JNI の使用](~/android/platform/java-integration/working-with-jni.md)
+- [JNI の操作](~/android/platform/java-integration/working-with-jni.md)
 - [シャープにする](https://github.com/slluis/sharpen)
-- [Java ネイティブ インターフェイス](http://docs.oracle.com/javase/7/docs/technotes~/jni/index.html)
+- [Java ネイティブインターフェイス](http://docs.oracle.com/javase/7/docs/technotes~/jni/index.html)
