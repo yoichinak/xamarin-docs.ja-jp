@@ -16,7 +16,7 @@ ms.locfileid: "61033601"
 ---
 # <a name="storyboards-in-xamarinmac-quick-start"></a>Xamarin.Mac – クイック スタートでストーリー ボード
 
-ストーリー ボードを使用して Xamarin.Mac アプリのユーザー インターフェイスを定義する基礎として新しい Xamarin.Mac プロジェクトを開始しましょう。 **[Mac]** > **[アプリ]** > **[Cocoa アプリ]** を選択し、**[次へ]** ボタンをクリックします。
+ストーリー ボードを使用して Xamarin.Mac アプリのユーザー インターフェイスを定義する基礎として新しい Xamarin.Mac プロジェクトを開始しましょう。 **[Mac]**  >  **[アプリ]**  >  **[Cocoa アプリ]** を選択し、 **[次へ]** ボタンをクリックします。
 
 [![](quickstart-images/qs01.png "新しい Cocoa アプリを追加します。")](quickstart-images/qs01.png#lightbox)
 
