@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/11/2019
-ms.openlocfilehash: 0fff9b7ce4b78e29409d1cc7a55e7f447baf722c
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: f9c7ada224cefc9bb80e0bcba370d0dee4a664c9
+ms.sourcegitcommit: 25be5acf979f6b18b6d0e64392c9ab307259c032
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67831100"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68603842"
 ---
 # <a name="xamarinforms-user-interface-views"></a>Xamarin.Forms のユーザー インターフェイス ビュー
 
@@ -22,7 +22,7 @@ _では、Xamarin.Forms が提供されているビューを使用する方法_
 
 ## <a name="activityindicatoractivityindicatormd"></a>[ActivityIndicator](activityindicator.md)
 
-`ActivityIndicator`アニメーション化されたコントロールをユーザーに進行状況の情報を与えることがなく時間がかかる作業では、アプリケーションは関与していることを示します。
+は`ActivityIndicator` 、進行状況を示すことなく、アプリケーションが時間のかかるアクティビティに関与していることをユーザーに示すアニメーションコントロールです。
 
 ## <a name="animationanimationindexmd"></a>[アニメーション](animation/index.md)
 
@@ -38,11 +38,11 @@ Xamarin.Forms には、複雑なアニメーションを作成するのに十分
 
 ## <a name="checkboxcheckboxmd"></a>[CheckBox](checkbox.md)
 
-`CheckBox`かボタンの種類が checked または空にするには。 チェック ボックスをオンにした場合は、上にある見なしています。 チェック ボックスが空の場合は、オフになって見なしています。
+は`CheckBox` 、チェックを行うか空にすることができるボタンの種類です。 チェックボックスがオンになっている場合は、オンになっていると見なされます。 チェックボックスが空の場合は、オフになっていると見なされます。
 
 ## <a name="collectionviewcollectionviewindexmd"></a>[CollectionView](collectionview/index.md)
 
-[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)は別のレイアウトの仕様を使用してデータのリストを表示するための柔軟性とパフォーマンスの高いビューです。
+は[`CollectionView`](xref:Xamarin.Forms.CollectionView) 、さまざまなレイアウト仕様を使用してデータの一覧を表示するための、柔軟でパフォーマンスの高いビューです。
 
 ## <a name="colorscolorsmd"></a>[色](colors.md)
 
@@ -62,7 +62,7 @@ DataPages の迅速かつ簡単に構築済みのビューにデータ ソース
 
 ## <a name="display-pop-upspop-upsmd"></a>[ポップアップを表示する](pop-ups.md)
 
-Xamarin.Forms には、ポップアップに似た 2 つのユーザー インターフェイス要素、アラートとアクション シートが用意されています。 ユーザーの簡単な質問とタスクによる確認 ダイアログ ボックスを表示する、これらのインターフェイス要素を使用できます。
+Xamarin.Forms には、ポップアップに似た 2 つのユーザー インターフェイス要素、アラートとアクション シートが用意されています。 これらのインターフェイス要素を使用して、ユーザーに簡単な質問をしたり、ユーザーにタスクを案内したりするダイアログボックスを表示できます。
 
 ## <a name="graphics-with-skiasharpgraphicsskiasharpindexmd"></a>[SkiaSharp を使用したグラフィックス](graphics/skiasharp/index.md)
 
@@ -94,7 +94,11 @@ Xamarin.Forms は、スクロール行のデータを表示するリスト ビ�
 
 ## <a name="progressbarprogressbarmd"></a>[ProgressBar](progressbar.md)
 
-[ `ProgressBar` ](xref:Xamarin.Forms.ProgressBar)水平バーとして設定されている float プロパティに基づいて進行状況を視覚的に表すコントロールです。
+は[`ProgressBar`](xref:Xamarin.Forms.ProgressBar) 、フロートプロパティに基づいて塗りつぶされる水平バーとして進行状況を視覚的に表すコントロールです。
+
+## <a name="searchbarsearchbarmd"></a>[SearchBar](searchbar.md)
+
+は[`SearchBar`](xref:Xamarin.Forms.SearchBar) 、検索を開始するために使用されるユーザー入力コントロールです。 SearchBar コントロールは、プレースホルダーテキスト、クエリ入力、検索実行、およびキャンセルをサポートしています。
 
 ## <a name="sliderslidermd"></a>[スライダー](slider.md)
 
@@ -110,7 +114,7 @@ Xamarin.Forms は、スクロール行のデータを表示するリスト ビ�
 
 ## <a name="switchswitchmd"></a>[スイッチ](switch.md)
 
-`Switch`はオンとオフの状態の間で切り替え可能なボタンの一種です。
+は`Switch` 、状態をオンまたはオフに切り替えることができるボタンの種類です。
 
 ## <a name="tableviewtableviewmd"></a>[TableView](tableview.md)
 
@@ -130,7 +134,7 @@ Xamarin.Forms のテーマは、標準のコントロールの特定の外観を
 
 ## <a name="visualvisualindexmd"></a>[ビジュアル](visual/index.md)
 
-IOS と Android でまったく同じ、またはほぼ同じですが、外観の Xamarin.Forms アプリケーションを作成する Xamarin.Forms マテリアル Visual を使用できます。
+Xamarin. Forms Material ビジュアルを使用すると、iOS と Android で同一またはほぼ同一の外観のフォームアプリケーションを作成できます。
 
 ## <a name="visual-state-managervisual-state-managermd"></a>[Visual State Manager](visual-state-manager.md)
 
