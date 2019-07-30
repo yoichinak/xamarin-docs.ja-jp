@@ -5,12 +5,12 @@ ms.assetid: 5FBB6FF0-0E7B-4C29-8F06-91642AF12629
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 04/02/2019
-ms.openlocfilehash: 5ddbb6f3d1c1ebf16ca5534b7effd1993c3d8b26
-ms.sourcegitcommit: 0c823f5439f4279a35af23dd466e7a0483e65d50
+ms.openlocfilehash: 73c398a7dbc2b8b7b22b9b8e38177efe2ff48735
+ms.sourcegitcommit: 8fe8d163cb9927917f6a83204b4c387fc50181c2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65804912"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68388502"
 ---
 # <a name="xamarinessentials-email"></a>Xamarin.Essentials:電子メール
 
@@ -63,22 +63,6 @@ public class EmailTest
 ```
 
 
-## <a name="platform-differences"></a>プラットフォームによる違い
-
-# <a name="androidtabandroid"></a>[Android](#tab/android)
-
-Android の一部のメール クライアントは `Html` を検出する手段がなく、これをサポートしていないため、メールを送信するときは `PlainText` を使用することをお勧めします。
-
-# <a name="iostabios"></a>[iOS](#tab/ios)
-
-プラットフォームによる違いはありません。
-
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
-
-`Html` を送信しようとしている `BodyFormat` で `FeatureNotSupportedException` がスローされるため、`PlainText` のみをサポートします。
-
------
-
 ## <a name="file-attachments"></a>添付ファイル
 
 ![プレビュー機能](~/media/shared/preview.png)
@@ -108,6 +92,24 @@ message.Attachments.Add(new EmailAttachment(file));
 
 await Email.ComposeAsync(message);
 ```
+
+## <a name="platform-differences"></a>プラットフォームによる違い
+
+# <a name="androidtabandroid"></a>[Android](#tab/android)
+
+Android の一部のメール クライアントは `Html` を検出する手段がなく、これをサポートしていないため、メールを送信するときは `PlainText` を使用することをお勧めします。
+
+# <a name="iostabios"></a>[iOS](#tab/ios)
+
+プラットフォームによる違いはありません。
+
+# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+
+`Html` を送信しようとしている `BodyFormat` で `FeatureNotSupportedException` がスローされるため、`PlainText` のみをサポートします。
+
+すべての電子メール クライアントが添付ファイルの送信をサポートするわけではありません。 詳細については、[ドキュメント](https://docs.microsoft.com/windows/uwp/contacts-and-calendar/sending-email)を参照してください。
+
+-----
 
 ## <a name="api"></a>API
 

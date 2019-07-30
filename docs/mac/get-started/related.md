@@ -7,20 +7,20 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 12/02/2016
-ms.openlocfilehash: 87987e79fce2bd5277f8092d09752fe715e2f2ce
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 2e4c2ebea7783fe2400298b03a54e951d89960fe
+ms.sourcegitcommit: 9a2a21974d35353c3765eb683ef2fd7161c1d94a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57667654"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68329935"
 ---
 # <a name="xamarinmac-related-documentation"></a>Xamarin.Mac – 関連ドキュメント
 
-Xamarin.Mac に関する質問の資料は、[developer.xamarin.com](~/mac/get-started/index.md) の Mac セクション以外にも、次の 3 か所にあります。
+Xamarin.Mac に関する質問の資料は、[Microsoft Docs](~/mac/get-started/index.md) の Mac セクション以外にも、次の 3 か所にあります。
 
 - [**Xamarin.iOS のドキュメント**](~/ios/get-started/index.md): (主に AppKit/UIKit 以外の) 多くの API には、iOS と macOS バージョンであまり大きな違いはありません。 `UIFoo` という名前の iOS の API がある場合、macOS には `NSFoo` という同様な名前の API があります。 これらの例は、通常に既に C# にあります。
 
-- **Apple の [Mac Dev Center](https://developer.apple.com/devcenter/mac/)**: Objective-C での呼び出しに使用する API の例の多くは、簡単な方法で C# に変換できます。 これを行う方法については、「[Understanding Mac API](~/mac/app-fundamentals/mac-apis.md)」 (Mac の API を理解する) を参照してください。
+- **Apple の [Mac Dev Center](https://developer.apple.com/devcenter/mac/)** : Objective-C での呼び出しに使用する API の例の多くは、簡単な方法で C# に変換できます。 これを行う方法については、「[Understanding Mac API](~/mac/app-fundamentals/mac-apis.md)」 (Mac の API を理解する) を参照してください。
 
 - [**Stack Overflow**](https://stackoverflow.com/): 「[NSOutlineView でのすべてのノードの自動展開の方法](https://stackoverflow.com/questions/519751/nsoutlineview-auto-expand-all-nodes)」 などの簡単な質問が充実しています。 これらの例は多くの場合 Objective-C 用で、C# に変換する必要がありますが、C# 用の回答も一部あります。
 
