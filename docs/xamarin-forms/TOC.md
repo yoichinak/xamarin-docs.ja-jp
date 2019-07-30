@@ -180,6 +180,7 @@
 #### [ピッカーの ItemsSource プロパティの設定](user-interface/picker/populating-itemssource.md)
 #### [ピッカーの項目コレクションへのデータの追加](user-interface/picker/populating-items.md)
 ### [ProgressBar](user-interface/progressbar.md)
+### [SearchBar](user-interface/searchbar.md)
 ### [Slider](user-interface/slider.md)
 ### [ステッパ](user-interface/stepper.md)
 ### [スタイル](user-interface/styles/index.md)
