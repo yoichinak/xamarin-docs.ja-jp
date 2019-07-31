@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: f5961987e28c09ad703988083f1b127cd7b9dbd0
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a3273b4bed13c3982b9d9b4df874e4ad2ee30e3f
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60897247"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68645920"
 ---
 # <a name="watchos-notifications-in-xamarin"></a>watchOS Xamarin での通知
 
@@ -69,11 +69,11 @@ OS は、さまざまな要因に基づく静的または動的なビューを�
 
 通知は、リモート サーバーから取得できます ([Apple プッシュ通知サービス](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html)、または APNS) または iOS アプリでローカルで生成されたことができます。
 
-参照してください、 [iOS 通知のチュートリアル](~/ios/platform/user-notifications/deprecated/local-notifications-in-ios-walkthrough.md)ローカル通知を生成する方法の例については、 [WatchNotifications サンプル](https://developer.xamarin.com/samples/monotouch/WatchKit/WatchNotifications/)実施例についてはします。
+参照してください、 [iOS 通知のチュートリアル](~/ios/platform/user-notifications/deprecated/local-notifications-in-ios-walkthrough.md)ローカル通知を生成する方法の例については、 [WatchNotifications サンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/watchkit-watchnotifications)実施例についてはします。
 
 ローカル通知する必要がありますが、 `AlertTitle` Apple Watch に表示される設定、`AlertTitle`文字列が短い検索インターフェイスに表示されます。 両方、`AlertTitle`と`AlertBody`通知の一覧に表示されると、`AlertBody`時間の長い検索インターフェイスに表示されます。
 
-このスクリーン ショットは、`AlertTitle`通知の一覧に表示されていると、`AlertBody`時間の長い検索インターフェイスに表示されます (を使用して、[サンプル コード](https://developer.xamarin.com/samples/monotouch/WatchKit/WatchNotifications/))。
+このスクリーン ショットは、`AlertTitle`通知の一覧に表示されていると、`AlertBody`時間の長い検索インターフェイスに表示されます (を使用して、[サンプル コード](https://docs.microsoft.com/samples/xamarin/ios-samples/watchkit-watchnotifications))。
 
 ![](notifications-images/watch-notificationslist-sml.png "このスクリーン ショットは、通知リストに表示されている AlertTitle を示しています") ![](notifications-images/watch-notificationcontroller-sml.png "時間の長い外観インターフェイスに表示される AlertBody。")
 
@@ -98,7 +98,7 @@ Watch で通知が表示されることを確認するには、するには、(1
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 Visual Studio for Mac と watch extension を設定すると追加のオプションが表示されます、**スタートアップ プロジェクト**します。
-ウォッチ拡張機能プロジェクトを右クリックし、選択**実行 > カスタム パラメーター.**:
+ウォッチ拡張機能プロジェクトを右クリックし、選択**実行 > カスタム パラメーター.** :
     
 [![](notifications-images/runwith-customparams-sml.png "カスタム プロパティを持つ実行中")](notifications-images/runwith-customparams.png#lightbox)
     
@@ -126,7 +126,7 @@ Visual Studio for Mac と watch extension を設定すると追加のオプシ�
 
 ### <a name="example-notification-payload"></a>通知ペイロードの例
 
-[ウォッチ キット カタログ](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)サンプルがありますが、サンプル ペイロードの JSON ファイル**NotificationPayload.json** (下記参照)。
+[ウォッチ キット カタログ](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)サンプルがありますが、サンプル ペイロードの JSON ファイル**NotificationPayload.json** (下記参照)。
 
 ```csharp
 {
@@ -151,6 +151,6 @@ Visual Studio for Mac と watch extension を設定すると追加のオプシ�
 
 ## <a name="related-links"></a>関連リンク
 
-- [WatchNotifications (ローカル通知) (サンプル)](https://developer.xamarin.com/samples/monotouch/WatchKit/WatchNotifications/)
-- [WatchKitCatalog (サンプル)](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)
+- [WatchNotifications (ローカル通知) (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchkit-watchnotifications)
+- [WatchKitCatalog (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
 - [Apple のウォッチ キット通知 docs](https://developer.apple.com/library/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/BasicSupport.html)

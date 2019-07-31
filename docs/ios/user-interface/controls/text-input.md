@@ -1,54 +1,54 @@
 ---
-title: Xamarin.iOS でのテキスト入力
-description: このドキュメントでは、Xamarin.iOS アプリでのテキスト入力について説明します。 これは、UITextField と UITextVIew を使用してプログラムと iOS デザイナーの両方について説明します。
+title: Xamarin. iOS でのテキスト入力
+description: このドキュメントでは、Xamarin iOS アプリでのテキスト入力について説明します。 ここでは、プログラムと iOS Designer の両方で UITextField と Uitextfield を使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 03A7F1DC-017D-4501-91FD-82C78272CDB1
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: a4d23984d4fcfd0776fd6b3537d5a257f70e7837
-ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
+ms.openlocfilehash: 2bcbdf437956ed2e03e91236125d5e050cf349be
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66827128"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68642767"
 ---
-# <a name="text-input-in-xamarinios"></a>Xamarin.iOS でのテキスト入力
+# <a name="text-input-in-xamarinios"></a>Xamarin. iOS でのテキスト入力
 
-ユーザーのテキスト入力を受け取るためにでは、`UITextField`の単一行の入力と複数行の編集可能なテキストの UITextView します。 これらのコントロールのいずれかの画面にドラッグして、初期テキストを設定する をダブルクリックします。
+ユーザーテキスト入力の受け入れは、 `UITextField`複数行の編集可能なテキスト用の単一行入力と uitextview のを使用して行われます。 これらのコントロールのいずれかを画面にドラッグしてダブルクリックすると、初期のテキストを設定できます。
 
-次のスクリーン ショットは、Mac の Visual Studio のツールボックス パッドにあるこれらのコントロールのアイコンを表示します。
+次のスクリーンショットは、Visual Studio for Mac のツールボックスパッドにあるこれらのコントロールのアイコンを示しています。
 
- [![](text-input-images/image11a.png "UITextField")](text-input-images/image11a.png#lightbox)
+ [![](text-input-images/image11a.png "入っ")](text-input-images/image11a.png#lightbox)
 
  [![](text-input-images/image13a.png "UITextView")](text-input-images/image13a.png#lightbox)
 
-アウトレットを付けたし、ストーリー ボード ファイルを保存するには、Visual Studio for Mac の更新は、`.designer.cs`部分クラスを追加C#クラス ファイルにコントロールを参照しているコード。 各コントロールには独自の一意のプロパティとイベントにアクセスできる、C#コード。
+アウトレットに名前を付けてストーリーボードファイルを保存すると、Visual Studio for Mac に`.designer.cs`よって部分クラスが更新C#され、コントロールを参照するコードをクラスファイルに追加できます。 各コントロールには、 C#コード内でアクセスできる独自の固有のプロパティとイベントがあります。
 
  <a name="UITextField" />
 
 
 ## <a name="uitextfield"></a>UITextField
 
-`UITextField`コントロールは、1 行のユーザー名やパスワードなどのテキスト入力を受け入れるように最もよく使用されます。 コントロールをカスタマイズするために使用できるオプションの一部を次に示します。
+`UITextField`コントロールは、ユーザー名やパスワードなど、1行のテキスト入力を受け入れるためによく使用されます。 コントロールをカスタマイズするために使用できるオプションの一部を次に示します。
 
  [![](text-input-images/image15a.png "UITextField プロパティ")](text-input-images/image15a.png#lightbox)
 
-これらのコントロールは以下について説明します。
+これらのコントロールについて以下に説明します。
 
--  **プレース ホルダー** – これは省略可能です。 設定すると、それが表示されます、テキスト フィールドが想定されているどのような入力をユーザーに説明するには、通常は、空の場合。
--  **クリア ボタン**– これは、標準のクリア ボタン ((X) で灰色の円) が表示されたら、テキスト フィールドで、ユーザーをすぐにテキストをクリアするための手段としてを制御します。 完全に非表示、完全に表示するか、フィールドを編集するかどうかに応じて、表示されることができます。
--  **最小フォント サイズ**と**に合わせて調整**– により、長いテキストに合わせてし、切り捨てを防ぐために自動的に調整されますが、制限されたフォント サイズを指定されたサイズより小さい。
--  **大文字と小文字**– 単語、文章、またはすべての入力を自動的に大文字にするかどうか。
--  **修正**– スペル チェックやご提案が有効になっているかどうか。
--  **キーボード**– コントロール キーボード スタイルが、入力に表示され、どのようなキーは、キーボードの使用可能なためです。 その他のオプションと共に数字パッド、パッドの電話、電子メール、URL が含まれます。
--  **外観**– キーボードの外観のスタイルを制御およびがいずれかの濃いまたはライト テーマとしました。
--  **キーを返す**– どのような操作が実行されるより的確に反映する戻り値のキーのラベルを変更します。 サポートされている値には、Go、結合、[次へ]、終了、ルート、検索が含まれます。
--  **セキュリティで保護された**– 入力をマスクするかどうかを識別します (パスワードの入力など)。
+-  **Placeholder** –これは省略可能です。 設定すると、テキストフィールドが空のときに表示されます。通常は、ユーザーに入力が必要であることをユーザーに説明します。
+-  **クリアボタン**–ユーザーがテキストをすばやくクリアする方法として、標準のクリアボタン ((X) を含む灰色の円) がテキストフィールドに表示されるタイミングを制御します。 フィールドが編集されているかどうかによって、完全に非表示にしたり、永続的に表示したり、表示したりすることができます。
+-  [**フォントサイズの最小値とサイズ** **に合わせて調整**する] –テキストに合わせてフォントサイズを自動的に調整し、切り捨てを防止します。ただし、指定したサイズより小さくすることはできません。
+-  **大文字と小文字**の区別–単語、文、またはすべての入力を自動的に大文字にするかどうか。
+-  **修正**–スペルチェックと提案が有効になっているかどうか。
+-  **キーボード**–入力に表示されるキーボードのスタイルを制御します。したがって、キーボードで使用できるキーを制御します。 これには、テンキー、電話パッド、電子メール、URL、およびその他のオプションが含まれます。
+-  **[表示]** –キーボードの外観スタイルを制御します。濃いまたは淡色のテーマが適用されます。
+-  **Return key** –返されるアクションをより正確に反映するために、リターンキーのラベルを変更します。 サポートされる値は、[検索]、[結合]、[次へ]、[ルート]、[完了]、[検索] です。
+-  **Secure** –入力がマスクされているかどうか (パスワード入力など) を識別します。
 
 
-UITextField が呼び出された場合`textfield1`が追加されて画面に、デザイナーの設定またはそのプロパティを変更できますC#次のようにします。
+という名前`textfield1`の uitextfield がデザイナーを使用して画面に追加されている場合は、次C#のようにのプロパティを設定または変更できます。
 
 ```csharp
 textfield1.Placeholder = "type email here...";
@@ -58,11 +58,11 @@ textfield1.MinimumFontSize = 17f;
 textfield1.AdjustsFontSizeToFitWidth = true;
 ```
 
-Xamarin.iOS などの必要な設定を選択するが簡単に適切な場所の列挙体を提供します、`UIKeyboardType`と`UIReturnKeyType`上記のコード スニペット。
+Xamarin には、上記のコードスニペットの`UIKeyboardType`や`UIReturnKeyType`など、必要な設定を簡単に選択できるようにするための列挙が用意されています。
 
-### <a name="display-text-programmatically"></a>プログラムでテキストを表示します。
+### <a name="display-text-programmatically"></a>プログラムによるテキストの表示
 
-デザイナーを使用した、画面をデザインしたくない、または実行時にテキストを動的に追加する場合は、作成し UITextField でプログラムを表示する場合、`ViewDidLoad`次のようにビュー コント ローラーのメソッド。
+デザイナーを使用して画面をデザインしない場合、または実行時にいくつかのテキストを動的に追加する場合は、次のように、ビューコントローラー `ViewDidLoad`のメソッドで uitextfield をプログラムによって作成および表示できます。
 
 ```csharp
 var frame = new CGRect(10, 10, 300, 40);
@@ -75,17 +75,17 @@ View.Add(textfield1);
 
 ## <a name="uitextview"></a>UITextView
 
-`UITextView`読み取り専用のテキストを表示する、または複数行テキスト入力を受け入れるように、コントロールを使用できます。 同じオプションの多くが、 `UITextField` (など、修正、大文字と小文字など)。
+コントロール`UITextView`を使用して、読み取り専用のテキストを表示したり、複数行のテキスト入力を許可したりできます。 と同じオプションが多数あります`UITextField` (大文字と小文字の修正など)。
 
  [![](text-input-images/image16a.png "UITextView プロパティ")](text-input-images/image16a.png#lightbox)
 
-特定のプロパティは次のとおりです。
+具体的なプロパティは次のとおりです。
 
--  **動作**– テキストを編集可能または読み取り専用かどうか。
--  **検出**– 検出にクリック可能な要素にデータを入力、呼び出しをトリガーできる電話番号をアドレスになるなどマップ、Safari で開く Url にリンクまたは日付し、時刻を変換し、カレンダーのイベントになります。
+-  **動作**–テキストを編集可能にするか、読み取り専用にするかを指定します。
+-  **検出**–入力データを検出し、呼び出しをトリガーできる電話番号、マップへのリンクになるアドレス、Safari で開かれている Url、カレンダーでイベントになる日付と時刻などの、クリック可能な要素に変換します。
 
 
-UITextView は、デザイナー画面に追加されている場合は、設定またはこのようなプロパティを変更できます。
+UITextView がデザイナーを使用して画面に追加されている場合は、次のようにプロパティを設定または変更できます。
 
 ```csharp
 textview1.Text = "Lorem ipsum..."; // lots of text can go here
@@ -97,4 +97,4 @@ textview1.DataDetectorTypes = UIDataDetectorType.PhoneNumber | UIDataDetectorTyp
 
 ## <a name="related-links"></a>関連リンク
 
-- [コントロール (サンプル)](https://developer.xamarin.com/samples/monotouch/Controls/)
+- [コントロール (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/controls)

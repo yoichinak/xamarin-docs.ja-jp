@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/29/2019
-ms.openlocfilehash: 6410be4019772ad11cd97d27c5de3c0300d58519
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: a56764771f3106f73809a51616e90fa30692a4d4
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67649628"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656268"
 ---
 # <a name="xamarinforms-webview"></a>Xamarin.Forms の WebView
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithWebview/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithwebview)
 
 [`WebView`](xref:Xamarin.Forms.WebView) アプリで web および HTML コンテンツを表示するためのビューです。 異なり`OpenUri`、ユーザーをデバイス上の web ブラウザーを受け取ります`WebView`アプリ内の HTML コンテンツを表示します。
 
@@ -110,7 +110,7 @@ browser.Source = htmlSource;
 上記のコードで`@`リテラル、つまりすべての通常のエスケープ文字は無視されますを文字列として、HTML を示すために使用します。
 
 > [!NOTE]
-> 設定する必要があります、`WidthRequest`と`HeightRequest`のプロパティ、 [ `WebView` ](xref:Xamarin.Forms.WebView)レイアウトに応じて、HTML コンテンツを表示する、`WebView`の子です。 たとえば、これは、必要で、 [ `StackLayout`](xref:Xamarin.Forms.StackLayout)します。
+> が子であるレイアウトに応じ`WidthRequest`て`HeightRequest` 、 [`WebView`](xref:Xamarin.Forms.WebView) HTML コンテンツを表示するには、のプロパティとプロパティを設定する必要がある場合があります。 `WebView` たとえば、で[`StackLayout`](xref:Xamarin.Forms.StackLayout)はこれが必須です。
 
 ### <a name="local-html-content"></a>ローカルの HTML コンテンツ
 
@@ -334,25 +334,25 @@ public partial class InAppBrowserXaml : ContentPage
 
 Web ビューは、状態の変化に対応するために、次のイベントを発生させます。
 
-- [`Navigating`](xref:Xamarin.Forms.WebView.Navigating) -新しいページを読み込む、WebView の開始時に発生するイベントです。
-- [`Navigated`](xref:Xamarin.Forms.WebView.Navigated) – イベント ページが読み込まれ、ナビゲーションが停止したときに発生します。
-- [`ReloadRequested`](xref:Xamarin.Forms.WebView.ReloadRequested) – 現在のコンテンツを再読み込み要求が行われたときに発生するイベントです。
+- [`Navigating`](xref:Xamarin.Forms.WebView.Navigating)– WebView が新しいページの読み込みを開始するときに発生するイベントです。
+- [`Navigated`](xref:Xamarin.Forms.WebView.Navigated)–ページが読み込まれ、ナビゲーションが停止したときに発生するイベントです。
+- [`ReloadRequested`](xref:Xamarin.Forms.WebView.ReloadRequested)–現在のコンテンツを再読み込みする要求が行われたときに発生するイベントです。
 
-[ `WebNavigatingEventArgs` ](xref:Xamarin.Forms.WebNavigatingEventArgs)に付属しているオブジェクト、 [ `Navigating` ](xref:Xamarin.Forms.WebView.Navigating)イベントには 4 つのプロパティ。
+イベント[`WebNavigatingEventArgs`](xref:Xamarin.Forms.WebNavigatingEventArgs) [に`Navigating`](xref:Xamarin.Forms.WebView.Navigating)付随するオブジェクトには、次の4つのプロパティがあります。
 
-- `Cancel` –、ナビゲーションをキャンセルするかどうかを示します。
-- `NavigationEvent` – ナビゲーション イベントが発生しました。
-- `Source` – 要素、ナビゲーションを実行します。
-- `Url` – ナビゲーション先。
+- `Cancel`–ナビゲーションを取り消すかどうかを示します。
+- `NavigationEvent`–発生したナビゲーションイベント。
+- `Source`–ナビゲーションを実行した要素。
+- `Url`: ナビゲーション先。
 
-[ `WebNavigatedEventArgs` ](xref:Xamarin.Forms.WebNavigatedEventArgs)に付属しているオブジェクト、 [ `Navigated` ](xref:Xamarin.Forms.WebView.Navigated)イベントには 4 つのプロパティ。
+イベント[`WebNavigatedEventArgs`](xref:Xamarin.Forms.WebNavigatedEventArgs) [に`Navigated`](xref:Xamarin.Forms.WebView.Navigated)付随するオブジェクトには、次の4つのプロパティがあります。
 
-- `NavigationEvent` – ナビゲーション イベントが発生しました。
-- `Result` –、ナビゲーションの結果をについて説明します。 を使用して、 [ `WebNavigationResult` ](xref:Xamarin.Forms.WebNavigationResult)列挙型のメンバー。 正しい値は `Cancel`、`Failure`、`Success`、`Timeout` です。
-- `Source` – 要素、ナビゲーションを実行します。
-- `Url` – ナビゲーション先。
+- `NavigationEvent`–発生したナビゲーションイベント。
+- `Result`– [`WebNavigationResult`](xref:Xamarin.Forms.WebNavigationResult)列挙メンバーを使用したナビゲーションの結果について説明します。 正しい値は `Cancel`、`Failure`、`Success`、`Timeout` です。
+- `Source`–ナビゲーションを実行した要素。
+- `Url`: ナビゲーション先。
 
-読み込みに長い時間がかかるの web ページを使用する見込みがある場合は、使用を検討して、 [ `Navigating` ](xref:Xamarin.Forms.WebView.Navigating)と[ `Navigated` ](xref:Xamarin.Forms.WebView.Navigated)状態インジケーターを実装するイベントです。 例:
+読み込みに長い時間がかかる web ページを使用することが予想される[`Navigating`](xref:Xamarin.Forms.WebView.Navigating)場合[`Navigated`](xref:Xamarin.Forms.WebView.Navigated)は、イベントとイベントを使用して状態インジケーターを実装することを検討してください。 例:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -482,7 +482,7 @@ AbsoluteLayout*せず*WidthRequest & HeightRequest:
 
 ## <a name="invoking-javascript"></a>JavaScript の呼び出し
 
-[`WebView`](xref:Xamarin.Forms.WebView) JavaScript 関数を呼び出す機能が含まれていますC#、呼び出し元に結果を返すとC#コード。 これを行うと、 [ `WebView.EvaluateJavaScriptAsync` ](xref:Xamarin.Forms.WebView.EvaluateJavaScriptAsync*)メソッドは、次の例に示した、 [WebView](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/WebView)サンプル。
+[`WebView`](xref:Xamarin.Forms.WebView) JavaScript 関数を呼び出す機能が含まれていますC#、呼び出し元に結果を返すとC#コード。 これを行うと、 [ `WebView.EvaluateJavaScriptAsync` ](xref:Xamarin.Forms.WebView.EvaluateJavaScriptAsync*)メソッドは、次の例に示した、 [WebView](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-webview)サンプル。
 
 ```csharp
 var numberEntry = new Entry { Text = "5" };
@@ -516,5 +516,5 @@ function factorial(num) {
 
 ## <a name="related-links"></a>関連リンク
 
-- [WebView (サンプル) の操作](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithWebview/)
-- [WebView (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/WebView)
+- [WebView (サンプル) の操作](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithwebview)
+- [WebView (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-webview)

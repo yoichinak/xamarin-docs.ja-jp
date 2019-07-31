@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 1e57764dacf7ae0599df46f13bd4f5505c4cc4a2
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: ecb9e84473778f5185276a854bfbf2fdfcbb6528
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61370749"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68654848"
 ---
 # <a name="customizing-listview-cell-appearance"></a>ListView セルの外観をカスタマイズします。
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/CustomCells)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-customcells)
 
-[`ListView`](xref:Xamarin.Forms.ListView) 使用してカスタマイズできるスクロール可能なリスト ボックスが表示`ViewCell`秒。 `ViewCells` テキストとイメージを表示、true または false の状態を示すおよびユーザー入力を受け取るのために使用できます。
+[`ListView`](xref:Xamarin.Forms.ListView)スクロール可能な`ViewCell`リストを表示します。これは、を使用してカスタマイズできます。 `ViewCells` テキストとイメージを表示、true または false の状態を示すおよびユーザー入力を受け取るのために使用できます。
 
 <a name="Built_in_Cells" />
 
@@ -115,7 +115,7 @@ x:Class="demoListView.ImageCellPage">
 - カスタムのセルが入れ子になっている、 `DataTemplate`、内である`ListView.ItemTemplate`します。 これは、その他のセルを使用する場合と同じプロセスです。
 - `ViewCell` カスタムのセルの種類です。 子、`DataTemplate`要素でまたは型から派生する必要があります`ViewCell`します。
 - その内部に注意してください、 `ViewCell`、レイアウトは、によって管理される、`StackLayout`します。 このレイアウトでは、背景色をカスタマイズできます。 注意してくださいの任意のプロパティ`StackLayout`はバインド可能なことができますが、ここで示されていませんが、カスタムのセルの内部にバインドします。
-- 内で、 `ViewCell`Xamarin.Forms のレイアウトでレイアウトを管理することができます。 
+- 内では、すべての Xamarin. フォームレイアウトでレイアウトを管理できます。 `ViewCell` 
 
 ### <a name="cnum"></a>C&num;
 
@@ -157,7 +157,7 @@ public class CustomCell : ViewCell
     }
 ```
 
-使用してページのコンス トラクターに、 `ListView`、ListView の設定`ItemTemplate`プロパティを新しい`DataTemplate`:
+使用してページのコンストラクターに、 `ListView`、ListView の設定`ItemTemplate`プロパティを新しい`DataTemplate`:
 
 ```csharp
 public partial class ImageCellPage : ContentPage
@@ -170,13 +170,13 @@ public partial class ImageCellPage : ContentPage
     }
 ```
 
-注意のコンス トラクター`DataTemplate`は、型を受け取ります。 Typeof 演算子の CLR 型を取得する`CustomCell`します。
+注意のコンストラクター`DataTemplate`は、型を受け取ります。 Typeof 演算子の CLR 型を取得する`CustomCell`します。
 
 <a name="binding-context-changes" />
 
 ### <a name="binding-context-changes"></a>バインド コンテキストの変更
 
-セルのカスタム型のバインドする場合に[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)のインスタンスを表示する UI コントロール、`BindableProperty`値を使用する必要があります、 [ `OnBindingContextChanged` ](xref:Xamarin.Forms.Cell.OnBindingContextChanged)に表示されるデータを設定する上書き各セルはセル コンス トラクターの次のコード例で示したなく:
+セルのカスタム型のバインドする場合に[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)のインスタンスを表示する UI コントロール、`BindableProperty`値を使用する必要があります、 [ `OnBindingContextChanged` ](xref:Xamarin.Forms.Cell.OnBindingContextChanged)に表示されるデータを設定する上書き各セルはセル コンストラクターの次のコード例で示したなく:
 
 ```csharp
 public class CustomCell : ViewCell
@@ -258,6 +258,6 @@ IOS と Android での場合、 [ `ListView` ](xref:Xamarin.Forms.ListView)要�
 
 ## <a name="related-links"></a>関連リンク
 
-- [組み込みのセル (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/BuiltInCells)
-- [カスタムのセル (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/CustomCells)
-- [バインド コンテキストを変更 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/BindingContextChanged)
+- [組み込みのセル (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-builtincells)
+- [カスタムのセル (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-customcells)
+- [バインド コンテキストを変更 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-bindingcontextchanged)

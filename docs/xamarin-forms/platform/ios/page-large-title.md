@@ -1,24 +1,24 @@
 ---
-title: IOS での大きいページ タイトル
-description: プラットフォーム仕様はカスタム レンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ利用できる機能の使用を可能にします。 この記事では、NavigationPage のナビゲーション バーでの大規模なタイトルとページ タイトルを表示します。 iOS プラットフォームに固有の使用方法について説明します。
+title: IOS 上の大きなページタイトル
+description: プラットフォーム仕様はカスタム レンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ利用できる機能の使用を可能にします。 この記事では、NavigationPage のナビゲーションバーにページタイトルを大きなタイトルとして表示する iOS プラットフォーム固有のを使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 45FD9145-8319-452C-9AE6-624431A4D43C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 01c5e4f449a1aed84a73b0284ba15e0c03deeed7
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: ab9becf2f7363674346abf004c1748cb06eb0d31
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925775"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655424"
 ---
-# <a name="large-page-titles-on-ios"></a>IOS での大きいページ タイトル
+# <a name="large-page-titles-on-ios"></a>IOS 上の大きなページタイトル
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-この iOS プラットフォームに固有のナビゲーション バーでの大規模なタイトルとページ タイトルの表示に使用する[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)、iOS 11 以降を使用するデバイス。 大タイトルは左寄せで大きいフォントが使われます。そして画面の領域を効率的に使うために、ユーザーがコンテンツをスクロールした時に、標準のタイトルに移り変わります。 しかし横向きの画面では、コンテンツのレイアウトを最適化するためにタイトルはナビゲーションバーの中央に戻ります。 この機能は XAML で `NavigationPage.PrefersLargeTitles` 添付プロパティを `boolean` 値に設定して使用します。
+Ios 11 以上を使用するデバイスでは、この ios プラットフォーム固有のを使用して、の[`NavigationPage`](xref:Xamarin.Forms.NavigationPage)ナビゲーションバーにページタイトルを大きなタイトルとして表示します。 大タイトルは左寄せで大きいフォントが使われます。そして画面の領域を効率的に使うために、ユーザーがコンテンツをスクロールした時に、標準のタイトルに移り変わります。 しかし横向きの画面では、コンテンツのレイアウトを最適化するためにタイトルはナビゲーションバーの中央に戻ります。 この機能は XAML で `NavigationPage.PrefersLargeTitles` 添付プロパティを `boolean` 値に設定して使用します。
 
 ```xaml
 <NavigationPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -44,7 +44,6 @@ navigationPage.On<iOS>().SetPrefersLargeTitles(true);
 `NavigationPage.On<iOS>` メソッドは、このプラットフォーム仕様が iOS上 でのみ動作することを指定します。 `NavigationPage.SetPrefersLargeTitle`メソッドは、 [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)名前空間に存在し、大タイトルを有効にするかどうかを制御します。
 
 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage)で大タイトルが有効になると、ナビゲーションスタックにあるすべてのページは大タイトルで表示されるようになります。 この動作は個々のページ上で `Page.LargeTitleDisplay` 添付プロパティを `LargeTitleDisplayMode` 列挙型の値に設定することで上書きできます。
-
 
 ```xaml
 <ContentPage ...
@@ -73,7 +72,7 @@ public class iOSLargeTitlePageCS : ContentPage
 }
 ```
 
-`Page.On<iOS>`メソッドは、このプラットフォーム仕様が iOS上 でのみ動作することを指定します。  `Page.SetLargeTitleDisplay` メソッドは、 [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) 名前空間に存在し、[ `Page`](xref:Xamarin.Forms.Page) 上の大タイトルの動作を `LargeTitleDisplayMode`列挙型が提供する次の 3 つ値を使って制御します。
+`Page.On<iOS>`メソッドは、このプラットフォーム仕様が iOS上 でのみ動作することを指定します。 `Page.SetLargeTitleDisplay` メソッドは、 [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) 名前空間に存在し、[ `Page`](xref:Xamarin.Forms.Page) 上の大タイトルの動作を `LargeTitleDisplayMode`列挙型が提供する次の 3 つ値を使って制御します。
 
 - `Always` – 強制的にナビゲーションバーとフォントサイズに大きいフォーマットを使う。
 - `Automatic` – ナビゲーションスタックの前のアイテムと同じスタイル（大または小）を使う
@@ -102,6 +101,6 @@ switch (On<iOS>().LargeTitleDisplay())
 
 ## <a name="related-links"></a>関連リンク
 
-- [プラットフォーム仕様 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [プラットフォーム仕様 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [プラットフォーム仕様の作成](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
-- [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)
+- [iOSSpecific の API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

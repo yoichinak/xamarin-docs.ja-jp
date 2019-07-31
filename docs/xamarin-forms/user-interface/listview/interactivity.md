@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/27/2019
-ms.openlocfilehash: 1447526ef925431e3cad5f36d4ce7a528c8ab07c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 833e6d3fc06ceeb5f8f63cb8b8b255b2a940098c
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61386685"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68653883"
 ---
 # <a name="listview-interactivity"></a>ListView の対話機能
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/interactivity)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-interactivity)
 
-[`ListView`](xref:Xamarin.Forms.ListView) 提示データと対話をサポートします。
+[`ListView`](xref:Xamarin.Forms.ListView)は、提示されるデータとの対話をサポートします。
 
 <a name="selectiontaps" />
 
@@ -37,7 +37,7 @@ ms.locfileid: "61386685"
 同じ項目を 2 回タップすると 2 つが起動されます[ `ItemTapped` ](xref:Xamarin.Forms.ListView.ItemTapped) 、イベントはのみ火災単一[ `ItemSelected` ](xref:Xamarin.Forms.ListView.ItemSelected)イベント。
 
 > [!NOTE]
-> [ `ItemTappedEventArgs` ](xref:Xamarin.Forms.ItemTappedEventArgs)のイベント引数を保持しているクラス、 [ `ItemTapped` ](xref:Xamarin.Forms.ListView.ItemTapped)イベント、 [ `Group` ](xref:Xamarin.Forms.ItemTappedEventArgs.Group)と[ `Item`](xref:Xamarin.Forms.ItemTappedEventArgs.Item)プロパティ、および`ItemIndex`プロパティ内のインデックスを表す値を持つ、 [ `ListView` ](xref:Xamarin.Forms.ListView)タップされた項目の。 同様に、 [ `SelectedItemChangedEventArgs` ](xref:Xamarin.Forms.SelectedItemChangedEventArgs)のイベント引数を保持しているクラス、 [ `ItemSelected` ](xref:Xamarin.Forms.ListView.ItemSelected)イベントには、 [ `SelectedItem` ](xref:Xamarin.Forms.SelectedItemChangedEventArgs.SelectedItem)プロパティ、および、 `SelectedItemIndex`プロパティ内のインデックスを表す値を持つ、`ListView`選択された項目の。
+> `ItemIndex` [`ListView`](xref:Xamarin.Forms.ListView) [`Group`](xref:Xamarin.Forms.ItemTappedEventArgs.Group) [`Item`](xref:Xamarin.Forms.ItemTappedEventArgs.Item)イベントのイベント引数を格納している[クラス、プロパティ、プロパティ、およびタップされた項目の内のインデックスを表す値を持つプロパティが含まれています。`ItemTappedEventArgs`](xref:Xamarin.Forms.ItemTappedEventArgs) [`ItemTapped`](xref:Xamarin.Forms.ListView.ItemTapped) [`SelectedItemChangedEventArgs`](xref:Xamarin.Forms.SelectedItemChangedEventArgs)同様に`ListView` 、 [`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected)イベントのイベント引数を含むクラスには、 [`SelectedItem`](xref:Xamarin.Forms.SelectedItemChangedEventArgs.SelectedItem)プロパティと`SelectedItemIndex` 、選択した項目の内のインデックスを表す値を持つプロパティがあります。
 
 ときに、 [ `SelectionMode` ](xref:Xamarin.Forms.ListView.SelectionMode)プロパティに設定されて[ `Single` ](xref:Xamarin.Forms.ListViewSelectionMode.Single)、項目を[ `ListView` ](xref:Xamarin.Forms.ListView)選択できる、 [ `ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected)と[ `ItemTapped` ](xref:Xamarin.Forms.ListView.ItemTapped)イベントは発生し、 [ `SelectedItem` ](xref:Xamarin.Forms.ListView.SelectedItem)プロパティは、選択した項目の値に設定されます。
 
@@ -149,7 +149,7 @@ public void OnDelete (object sender, EventArgs e) {
 
 ## <a name="pull-to-refresh"></a>プルして更新.
 
-データの一覧をプルダウンと、その一覧は更新ことを期待するユーザーになっています。 [`ListView`](xref:Xamarin.Forms.ListView) この出力の-使えるをサポートしています。 プルして更新機能を有効にするには設定[ `IsPullToRefreshEnabled` ](xref:Xamarin.Forms.ListView.IsPullToRefreshEnabled)に`true`:
+データの一覧をプルダウンと、その一覧は更新ことを期待するユーザーになっています。 [`ListView`](xref:Xamarin.Forms.ListView)では、この機能がすぐにサポートされます。 プルから更新機能を有効にするには[`IsPullToRefreshEnabled`](xref:Xamarin.Forms.ListView.IsPullToRefreshEnabled) 、 `true`をに設定します。
 
 ```xaml
 <ListView ...
@@ -162,7 +162,7 @@ public void OnDelete (object sender, EventArgs e) {
 listView.IsPullToRefreshEnabled = true;
 ```
 
-既定では黒であると、更新中に、スピン ボタンが表示されます。 ただし、スピナーの色は iOS と Android で設定して、`RefreshControlColor`プロパティを[ `Color` ](xref:Xamarin.Forms.Color):
+更新中にスピンボタンが表示されます。これは既定では黒です。 ただし、 `RefreshControlColor`プロパティをに設定[`Color`](xref:Xamarin.Forms.Color)することにより、iOS と Android ではスピンボタンの色を変更できます。
 
 ```xaml
 <ListView ...
@@ -176,19 +176,19 @@ listView.IsPullToRefreshEnabled = true;
 listView.RefreshControlColor = Color.Red;
 ```
 
-次のスクリーン ショットは、ユーザーのプルとプルして更新を表示します。
+次のスクリーンショットは、ユーザーがプルしているときのプルツーリフレッシュを示しています。
 
 ![](interactivity-images/refresh-start.png "ListView のプルで進行状況を更新するには")
 
-次のスクリーン ショットは、ユーザーにはスピン ボックスが表示されていると、プルがリリースされた後にプルして更新を表示中に、 [ `ListView` ](xref:Xamarin.Forms.ListView)は更新しています。
+次のスクリーンショットは、ユーザーがプルを解放した後のプルから更新を示しています。 [`ListView`](xref:Xamarin.Forms.ListView)これは、の更新中にスピンボタンが表示されます。
 
-![](interactivity-images/refresh-in-progress.png "ListView 引っ張って更新が完了しました")
+![](interactivity-images/refresh-in-progress.png "ListView の更新が完了しました")
 
-[`ListView`](xref:Xamarin.Forms.ListView) 起動、 [ `Refreshing` ](xref:Xamarin.Forms.ListView.Refreshing) 、更新を開始するイベントと[ `IsRefreshing` ](xref:Xamarin.Forms.ListView.IsRefreshing)プロパティに設定する`true`します。 どのようなコードの内容を更新する必要は、`ListView`のイベント ハンドラーによって実行される必要がありますし、`Refreshing`イベント、またはメソッドによって実行される、 [ `RefreshCommand`](xref:Xamarin.Forms.ListView.RefreshCommand)します。 1 回、`ListView`は、更新、`IsRefreshing`にプロパティを設定する必要があります`false`、または[ `EndRefresh` ](xref:Xamarin.Forms.ListView.EndRefresh)を更新が完了したことを示すために、メソッドを呼び出す必要があります。
+[`ListView`](xref:Xamarin.Forms.ListView)イベントを発生させて更新を開始[`IsRefreshing`](xref:Xamarin.Forms.ListView.IsRefreshing)し、プロパティをに`true`設定します。 [`Refreshing`](xref:Xamarin.Forms.ListView.Refreshing) の`ListView`内容を更新するために必要なすべてのコードは、 `Refreshing`イベントのイベントハンドラー、またはによっ[`RefreshCommand`](xref:Xamarin.Forms.ListView.RefreshCommand)て実行されるメソッドによって実行される必要があります。 が更新されたら`IsRefreshing` 、更新が完了したことを示す[`EndRefresh`](xref:Xamarin.Forms.ListView.EndRefresh)ために、プロパティをに`false`設定するか、メソッドを呼び出す必要があります。 `ListView`
 
 > [!NOTE]
-> 定義するときに、 [ `RefreshCommand` ](xref:Xamarin.Forms.ListView.RefreshCommand)、`CanExecute`コマンドのメソッドを有効または無効、コマンドに指定できます。
+> を[`RefreshCommand`](xref:Xamarin.Forms.ListView.RefreshCommand)定義するときに`CanExecute` 、コマンドのメソッドを指定して、コマンドを有効または無効にすることができます。
 
 ## <a name="related-links"></a>関連リンク
 
-- [ListView の対話機能 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/interactivity)
+- [ListView の対話機能 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-interactivity)

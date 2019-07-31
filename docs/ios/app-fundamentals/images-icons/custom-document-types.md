@@ -1,54 +1,54 @@
 ---
-title: Xamarin.iOS でのカスタム ドキュメント アイコン
-description: この記事について説明を含む、カスタム ドキュメントの種類のアイコンとして使用する Xamarin.iOS アプリ内のイメージ アセットを管理します。
+title: Xamarin. iOS のカスタムドキュメントアイコン
+description: この記事では、カスタムドキュメントの種類のアイコンとして使用する Xamarin. iOS アプリでのイメージアセットの追加と管理について説明します。
 ms.prod: xamarin
 ms.assetid: 7A3F3C94-2578-4F53-9B8E-25714F48BDD6
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/23/2017
-ms.openlocfilehash: 7520d3984a204dbceb67ef5310a10b1571f03127
-ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
+ms.openlocfilehash: 1125b0c420d6dbd23c5539a2183d531bc0d6089f
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66827386"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643004"
 ---
-# <a name="custom-document-icons-in-xamarinios"></a>Xamarin.iOS でのカスタム ドキュメント アイコン
+# <a name="custom-document-icons-in-xamarinios"></a>Xamarin. iOS のカスタムドキュメントアイコン
 
-_この記事について説明を含む、カスタム ドキュメントの種類のアイコンとして使用する Xamarin.iOS アプリ内のイメージ アセットを管理します。_
+_この記事では、カスタムドキュメントの種類のアイコンとして使用する Xamarin. iOS アプリでのイメージアセットの追加と管理について説明します。_
 
-Xamarin.iOS アプリでは、特定のドキュメント型の読み込みをサポートする場合、開発者がなど、ユーザーが添付ファイルを押したときに、そのドキュメントの種類を見つけたときに、システムが使用するアイコンを指定できます、*メール アプリケーション*として次に示します。
+Xamarin iOS アプリで特定の種類のドキュメントの読み込みがサポートされている場合、開発者は、次に示すように、ユーザーが*メールアプリケーション*の添付ファイルを停止したときなど、そのドキュメントの種類を検出したときに使用するアイコンを提供できます。
 
  [![](custom-document-types-images/17.png "ドキュメントの種類のアイコンの例")](custom-document-types-images/17.png#lightbox)
 
-ディクショナリ エントリを含めることによって、ファイル形式、アプリが開始できるため、開発者がドキュメント型情報を追加できます、`CFBundleTypeName`文字列と`LSItemContentTypes`アプリの配列`Info.plist`します。 移動して、ドキュメントの種類のアイコン、`CFBundleTypeIconFiles`配列。 ドキュメント アイコンが指定されない場合は、アプリ アイコンから iOS が継承します。
-アイコンは、さまざまなデバイス解像度用に最適化された、いくつかのサイズを指定できます。 
+開発者は、アプリ内の`CFBundleTypeName`文字列および`LSItemContentTypes` `Info.plist`配列の辞書エントリを含めることによって、アプリが開くことのできるファイル形式のドキュメント型情報を追加できます。 ドキュメントの種類のアイコンが`CFBundleTypeIconFiles`配列に格納されます。 ドキュメントアイコンが指定されていない場合、iOS はアプリアイコンから1つを派生させます。
+さまざまなデバイスの解像度に合わせて最適化された複数のサイズに対してアイコンを指定できます。 
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-For Mac に Visual Studio でこれらの値を割り当てるには、使用、**ドキュメントの種類**セクション、 **詳細設定**  タブで、`Info.plist`エディターをドキュメントの種類を追加してアイコンのイメージを割り当てます。 たとえば、PDF サポートのための登録を示すスクリーン ショットを次に示します。
+これらの値を Visual Studio for Mac に割り当てるには、 `Info.plist`エディターの [**詳細設定**] タブにある [ドキュメントの**種類**] セクションを使用して、ドキュメントの種類を追加し、イメージアイコンを割り当てます。 たとえば、PDF サポートの登録を示すスクリーンショットを次に示します。
 
- [![](custom-document-types-images/18.png "'Info.plist' エディターの詳細設定 タブの下のセクションでドキュメントの種類")](custom-document-types-images/18.png#lightbox)
+ [![](custom-document-types-images/18.png "[情報] エディターの [詳細設定] タブにある [ドキュメントの種類] セクション")](custom-document-types-images/18.png#lightbox)
  
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-Visual Studio でこれらの値を割り当てるには、使用、**ドキュメントの種類**セクション、**詳細** タブで、 `Info.plist`:
+これらの値を Visual Studio で割り当てるには、の`Info.plist`[**詳細設定**] タブの [**ドキュメントの種類**] セクションを使用します。
 
- ![](custom-document-types-images/doc01w.png "詳細設定 タブの下のセクションでドキュメントの種類を開く")
+ ![](custom-document-types-images/doc01w.png "[詳細設定] タブの [ドキュメントの種類] セクションを開く")
 
-をクリックして、**ドキュメントの種類の追加**ボタンをクリックし、必要なフィールドに入力します。
+[**ドキュメントの種類の追加**] ボタンをクリックし、必要なフィールドを入力します。
 
 ![](custom-document-types-images/doc02w.png "ドキュメントの種類の追加フォーム")
 
 -----
 
 
-ドキュメントの種類の詳細については、Apple を参照してください。 [Uniform 型識別子の参照](https://developer.apple.com/library/ios/#documentation/Miscellaneous/Reference/UTIRef/Articles/System-DeclaredUniformTypeIdentifiers.html)と[iOS 用ドキュメントの対話プログラミング トピック](https://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Introduction/Introduction.html)します。
+ドキュメントの種類の詳細については、「Apple の[Uniform Type Identifier リファレンス](https://developer.apple.com/library/ios/#documentation/Miscellaneous/Reference/UTIRef/Articles/System-DeclaredUniformTypeIdentifiers.html)」および「 [IOS のドキュメント相互作用プログラミング](https://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Introduction/Introduction.html)に関するトピック」を参照してください。
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [画像 (サンプル) の操作](https://developer.xamarin.com/samples/monotouch/WorkingWithImages/)
+- [イメージの操作 (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/workingwithimages)
 - [Hello, iPhone](~/ios/get-started/hello-ios/index.md)
-- [カスタム アイコンとイメージの作成のガイドライン](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html)
+- [カスタムアイコンとイメージ作成のガイドライン](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html)

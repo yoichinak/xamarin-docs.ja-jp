@@ -1,5 +1,5 @@
 ---
-title: ASP.NET Web サービス (ASMX) の使用します。
+title: ASP.NET Web サービス (ASMX) を使用する
 description: この記事では、Xamarin.Forms アプリケーションから ASMX SOAP サービスを使用する方法を示します。
 ms.prod: xamarin
 ms.assetid: D5533964-5528-4D35-9C2B-FAFB632472AC
@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/02/2019
-ms.openlocfilehash: 73e7d13188c4c2ea1be39a237c3dc5cfd7fd8a7d
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 124cffaf827ebeb8109f3cd4ac4dfd2701e43f9c
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67659059"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656656"
 ---
-# <a name="consume-an-aspnet-web-service-asmx"></a>ASP.NET Web サービス (ASMX) の使用します。
+# <a name="consume-an-aspnet-web-service-asmx"></a>ASP.NET Web サービス (ASMX) を使用する
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoASMX/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todoasmx)
 
 _ASMX では、簡易オブジェクト アクセス プロトコル (SOAP) を使用してメッセージを送信する web サービスをビルドする機能を提供します。SOAP は、構築、および web サービスにアクセスするためのプラットフォームや言語に依存しないプロトコルです。ASMX サービスのコンシューマーは、プラットフォーム、オブジェクト モデル、またはサービスを実装するために使用するプログラミング言語について何も知る必要はありません。のみの SOAP メッセージを送受信する方法を理解する必要があります。この記事では、Xamarin.Forms アプリケーションから ASMX SOAP サービスを使用する方法を示します。_
 
@@ -29,7 +29,7 @@ SOAP メッセージは、次の要素を含む XML ドキュメントを示し�
 
 SOAP は、HTTP、SMTP、TCP、UDP など、多くのトランスポート プロトコルで操作できます。 ただし、ASMX サービスは HTTP 経由でのみ操作できます。 Xamarin プラットフォームは、HTTP 経由で SOAP 1.1 の標準的な実装をサポートしていて、標準の ASMX サービスの構成の多くのサポートが含まれます。
 
-このサンプルには、物理またはエミュレートされたデバイスを実行しているモバイル アプリケーションと取得、追加、編集、およびデータを削除するメソッドを提供する ASMX サービスが含まれています。 モバイル アプリケーションを実行するとときに、接続する ASMX のローカルにホストされているサービスの次のスクリーン ショット。
+このサンプルには、物理デバイスまたはエミュレートされたデバイスで実行されるモバイルアプリケーションと、データを取得、追加、編集、および削除するためのメソッドを提供する ASMX サービスが含まれています。 モバイルアプリケーションを実行すると、次のスクリーンショットに示すように、ローカルでホストされている ASMX サービスに接続します。
 
 ![](asmx-images/portal.png "サンプル アプリケーション")
 
@@ -37,7 +37,7 @@ SOAP は、HTTP、SMTP、TCP、UDP など、多くのトランスポート プ�
 > iOS 9 以降ではは、アプリのトランスポート セキュリティ (ATS) は、機密情報の誤った情報開示を回避をセキュリティで保護された接続 (アプリのバック エンド サーバーなど) のインターネット リソースと、アプリの間に強制します。 ATS が iOS 9 用にビルドされたアプリで既定で有効になるために、すべての接続は ATS セキュリティ要件に応じたされます。 接続はこれらの要件を満たしていない場合は、例外で失敗します。
 > 使用することができない場合の ATS を選択することができます、`HTTPS`プロトコルし、インターネット リソースのための通信をセキュリティで保護します。 これは、アプリの更新することで実現できます**Info.plist**ファイル。 詳細については、[アプリ トランスポート セキュリティ](~/ios/app-fundamentals/ats.md)を参照してください。
 
-## <a name="consume-the-web-service"></a>Web サービスを使用します。
+## <a name="consume-the-web-service"></a>Web サービスを使用する
 
 ASMX サービスは、次の操作を提供します。
 
@@ -50,21 +50,21 @@ ASMX サービスは、次の操作を提供します。
 
 アプリケーションで使用されるデータ モデルの詳細については、[、データのモデリング](~/xamarin-forms/data-cloud/web-services/introduction.md)を参照してください。
 
-## <a name="create-the-todoservice-proxy"></a>TodoService プロキシを作成します。
+## <a name="create-the-todoservice-proxy"></a>TodoService プロキシを作成する
 
-プロキシ クラスと呼ばれる`TodoService`、拡張`SoapHttpClientProtocol`HTTP 経由で、ASMX サービスと通信するためのメソッドを提供します。 プロキシは、Visual Studio 2019 または Visual Studio 2017 でプラットフォーム固有の各プロジェクトに web 参照の追加によって生成されます。 Web 参照には、サービスの Web サービス記述言語 (WSDL) ドキュメントで定義されている各アクションのメソッドおよびイベントが生成されます。
+と呼ばれる`TodoService`プロキシクラスは、 `SoapHttpClientProtocol`を拡張し、HTTP 経由で ASMX サービスと通信するためのメソッドを提供します。 プロキシは、Visual Studio 2019 または Visual Studio 2017 のプラットフォーム固有の各プロジェクトへの web 参照を追加することによって生成されます。 Web 参照は、サービスの Web サービス記述言語 (WSDL) ドキュメントで定義されている各アクションのメソッドとイベントを生成します。
 
-たとえば、`GetTodoItems`サービス操作の結果、`GetTodoItemsAsync`メソッドと`GetTodoItemsCompleted`プロキシ内のイベント。 生成されたメソッドが void の戻り値の型と呼び出す、`GetTodoItems`親アクション`SoapHttpClientProtocol`クラス。 呼び出されたメソッドでは、サービスから応答を受信するときに発生させる、`GetTodoItemsCompleted`イベント イベントの中で応答データを提供します`Result`プロパティ。
+たとえば、サービスアクション`GetTodoItems`によって、プロキシ`GetTodoItemsAsync`にメソッドと`GetTodoItemsCompleted`イベントが生成されます。 生成されたメソッドは void 戻り値の型`GetTodoItems`を持ち、親`SoapHttpClientProtocol`クラスでアクションを呼び出します。 呼び出されたメソッドがサービスから応答を受け取ると、そのイベント`GetTodoItemsCompleted`が発生し、イベントの`Result`プロパティ内に応答データが提供されます。
 
-## <a name="create-the-isoapservice-implementation"></a>ISoapService 実装を作成します。
+## <a name="create-the-isoapservice-implementation"></a>ISoapService 実装を作成する
 
-サンプルを定義、サービスを使用する共有のクロスプラット フォーム対応のプロジェクトを有効にする、`ISoapService`する次のように、インターフェイス、[タスク非同期プログラミング モデルでC#](/dotnet/csharp/programming-guide/concepts/async/)します。 各プラットフォームの実装、`ISoapService`プラットフォーム固有のプロキシを公開します。 サンプルでは`TaskCompletionSource`タスクの非同期インターフェイスとしてプロキシを公開するオブジェクト。 使用の詳細について`TaskCompletionSource`以下のセクションで、各アクションの種類の実装が見つかりました。
+このサンプルでは、共有のクロスプラットフォームプロジェクトがサービスと連携できるようにするため`ISoapService`に、[のC#非同期プログラミングモデルのタスク](/dotnet/csharp/programming-guide/concepts/async/)に従うインターフェイスを定義しています。 各プラットフォームには`ISoapService` 、プラットフォーム固有のプロキシを公開するためのが実装されています。 このサンプルで`TaskCompletionSource`は、オブジェクトを使用して、プロキシをタスクの非同期インターフェイスとして公開します。 の使用方法`TaskCompletionSource`の詳細については、以下のセクションの各アクションの種類の実装を参照してください。
 
-サンプル`SoapService`:
+サンプル`SoapService`は次のとおりです。
 
-1. インスタンスを作成、`TodoService`クラス レベルのインスタンスとして
-1. 呼ばれるコレクションを作成します`Items`を格納する`TodoItem`オブジェクト。
-1. 省略可能なカスタム エンドポイントを指定します`Url`プロパティを `TodoService`
+1. をクラス`TodoService`レベルのインスタンスとしてインスタンス化します。
+1. オブジェクトを格納`TodoItem`する`Items`ために呼び出されるコレクションを作成します。
+1. のオプション`Url`のプロパティのカスタムエンドポイントを指定します。`TodoService`
 
 ```csharp
 public class SoapService : ISoapService
@@ -81,7 +81,7 @@ public class SoapService : ISoapService
 }
 ```
 
-### <a name="create-data-transfer-objects"></a>データ転送オブジェクトを作成します。
+### <a name="create-data-transfer-objects"></a>データ転送オブジェクトの作成
 
 サンプル アプリケーションを使用して、`TodoItem`モデル データへのクラス。 格納する、`TodoItem`最初生成されたプロキシに変換する必要がある、web サービス内の項目`TodoItem`型。 これは、`ToASMXServiceTodoItem`メソッドを次のコード例に示すようにします。
 
@@ -97,7 +97,7 @@ ASMXService.TodoItem ToASMXServiceTodoItem (TodoItem item)
 }
 ```
 
-このメソッドは、新しい作成`ASMService.TodoItem`インスタンス、および各プロパティから同じプロパティを設定して、`TodoItem`インスタンス。
+このメソッドは、新しい`ASMService.TodoItem`インスタンスを作成し、 `TodoItem`インスタンスの各プロパティを同一のプロパティに設定します。
 
 同様に、web サービスからデータを取得すると、ときにする必要があります変換する必要が生成されたプロキシから`TodoItem`型、`TodoItem`インスタンス。 これを実行、`FromASMXServiceTodoItem`メソッドを次のコード例に示すようにします。
 
@@ -113,13 +113,13 @@ static TodoItem FromASMXServiceTodoItem (ASMXService.TodoItem item)
 }
 ```
 
-このメソッドは、生成されたプロキシからデータを取得`TodoItem`を入力し、新しく作成設定`TodoItem`インスタンス。
+このメソッドは、プロキシによって生成`TodoItem`された型からデータを取得`TodoItem`し、新しく作成されたインスタンスに設定します。
 
-### <a name="retrieve-data"></a>データを取得します。
+### <a name="retrieve-data"></a>データの取得
 
-`ISoapService`インターフェイスが必要ですが、`RefreshDataAsync`を返すメソッドを`Task`項目コレクションを使用します。 ただし、`TodoService.GetTodoItemsAsync`メソッドが void を返します。 インターフェイス パターンを満たすために呼び出す必要がある`GetTodoItemsAsync`、待機、`GetTodoItemsCompleted`イベントを起動するには、コレクションを設定します。 これにより、UI に有効なコレクションを戻すことができます。
+インターフェイス`ISoapService`は、メソッド`RefreshDataAsync`が項目コレクションと`Task`共にを返すことを想定しています。 ただし、この`TodoService.GetTodoItemsAsync`メソッドは void を返します。 インターフェイスパターンを満たすには、を呼び出し`GetTodoItemsAsync`、イベントが`GetTodoItemsCompleted`起動するまで待機して、コレクションにデータを設定する必要があります。 これにより、有効なコレクションを UI に返すことができます。
 
-次の例は、新しい作成`TaskCompletionSource`、内の非同期呼び出しを開始、`RefreshDataAsync`メソッド、待機、`Task`によって提供される、 `TaskCompletionSource`。 ときに、`TodoService_GetTodoItemsCompleted`イベント ハンドラーが呼び出されますが設定されます、`Items`コレクションと更新プログラム、 `TaskCompletionSource`:
+次の例では、 `TaskCompletionSource`新しいを作成し、 `RefreshDataAsync` `Task`メソッドで非同期呼び出しを開始し、によっ`TaskCompletionSource`て提供されるを待機します。 イベントハンドラーが呼び出されると、コレクションが`Items`設定され、 `TaskCompletionSource`が更新されます。 `TodoService_GetTodoItemsCompleted`
 
 ```csharp
 public class SoapService : ISoapService
@@ -164,11 +164,11 @@ public class SoapService : ISoapService
 }
 ```
 
-詳細については、次を参照してください。[非同期プログラミング モデル](/dotnet/standard/asynchronous-programming-patterns/asynchronous-programming-model-apm)と[TPL と従来の .NET Framework 非同期プログラミング](/dotnet/standard/parallel-programming/tpl-and-traditional-async-programming)します。
+詳細については、「[非同期プログラミングモデル](/dotnet/standard/asynchronous-programming-patterns/asynchronous-programming-model-apm)と[TPL および従来の .NET Framework 非同期プログラミング](/dotnet/standard/parallel-programming/tpl-and-traditional-async-programming)」を参照してください。
 
-### <a name="create-or-edit-data"></a>作成またはデータの編集
+### <a name="create-or-edit-data"></a>データの作成または編集
 
-実装する必要がありますを作成または、データを編集するとき、`ISoapService.SaveTodoItemAsync`メソッド。 このメソッドを検出するかどうか、`TodoItem`新しいまたは更新された項目は、適切なメソッドを呼び出します、`todoService`オブジェクト。 `CreateTodoItemCompleted`と`EditTodoItemCompleted`タイミングを判断するため、イベント ハンドラーを実装する必要がありますも、 `todoService` (これらに統合できる、単一のハンドラーと同じ操作を実行するため) ASMX サービスから応答を受信しました。 次の例では、インターフェイスとイベント ハンドラーの実装だけでなく`TaskCompletionSource`オブジェクトを非同期的に動作するために使用します。
+データを作成または編集する場合は、 `ISoapService.SaveTodoItemAsync`メソッドを実装する必要があります。 このメソッドは、 `TodoItem`が新規または更新された項目であるかどうかを検出し、 `todoService`オブジェクトに対して適切なメソッドを呼び出します。 および`CreateTodoItemCompleted` `todoService`イベントハンドラーは、が ASMX サービスからの応答を受信したことを知るためにも実装する必要があります (これらは同じ操作を実行するため、1つのハンドラーにまとめることができます)。 `EditTodoItemCompleted` 次の例では、インターフェイスとイベントハンドラーの実装、および`TaskCompletionSource`非同期操作に使用されるオブジェクトを示します。
 
 ```csharp
 public class SoapService : ISoapService
@@ -218,9 +218,9 @@ public class SoapService : ISoapService
 }
 ```
 
-### <a name="delete-data"></a>データを削除します。
+### <a name="delete-data"></a>データの削除
 
-データを削除するには、同様の実装が必要です。 定義、 `TaskCompletionSource`、イベント ハンドラーを実装し、`ISoapService.DeleteTodoItemAsync`メソッド。
+データを削除するには、同様の実装が必要です。 を定義し`ISoapService.DeleteTodoItemAsync` 、イベントハンドラーを実装し、メソッドを`TaskCompletionSource`実装します。
 
 ```csharp
 public class SoapService : ISoapService
@@ -261,11 +261,11 @@ public class SoapService : ISoapService
 }
 ```
 
-## <a name="test-the-web-service"></a>Web サービスをテストします。
+## <a name="test-the-web-service"></a>Web サービスをテストする
 
-物理デバイスまたはエミュレートされたデバイスでローカルにホストされているサービスをテストするには、有効にするには、カスタムの IIS 構成、エンドポイント アドレス、およびファイアウォール規則が必要です。 テスト環境をセットアップする方法の詳細については、次を参照してください。、 [IIS Express へのリモート アクセスを構成する](wcf.md#configure-remote-access-to-iis-express)します。 WCF と ASMX のテストの唯一の違いは、TodoService のポート番号です。
+ローカルにホストされるサービスを使用して物理デバイスまたはエミュレートされたデバイスをテストするには、カスタムの IIS 構成、エンドポイントアドレス、およびファイアウォール規則を設定する必要があります。 テスト用に環境をセットアップする方法の詳細については、 [IIS Express へのリモートアクセスの構成](wcf.md#configure-remote-access-to-iis-express)に関するセクションを参照してください。 WCF と ASMX のテストの唯一の違いは、TodoService のポート番号です。
 
 ## <a name="related-links"></a>関連リンク
 
-- [TodoASMX (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoASMX/)
+- [TodoASMX (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todoasmx)
 - [IAsyncResult](https://docs.microsoft.com/dotnet/api/system.iasyncresult)

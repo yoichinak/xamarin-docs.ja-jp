@@ -1,126 +1,126 @@
 ---
-title: 'Wear OS onXamarin.Android のインストールとセットアップ '
-description: この記事では、インストール手順と、コンピューターとデバイスの Android Wear の開発の準備に必要な構成の詳細について説明します。 この記事の目的は、Mac や Microsoft Visual Studio での Xamarin.Android Wear のインストールが Visual Studio に統合作業する必要があり、最初の Xamarin.Android Wear アプリケーションの構築を開始する準備ができます。
+title: '摩耗 OS のインストールとセットアップ '
+description: この記事では、Android の磨耗開発のためにコンピューターとデバイスを準備するために必要なインストール手順と構成の詳細について説明します。 この記事を終了すると、Visual Studio for Mac や Microsoft Visual Studio に統合された、作業中の Xamarin. Android のインストールが可能になります。また、最初の Xamarin. Android 磨耗アプリケーションの構築を開始する準備が整います。
 ms.prod: xamarin
 ms.assetid: 3BB395FA-0545-4024-A18F-98CF5E9CA55F
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 0bae98a204ba3478834894d6c093259a8b2139b2
-ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
+ms.openlocfilehash: 0099414529027a9a6e52b79393cfa6f0f3bc24d6
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66827721"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68647800"
 ---
 # <a name="setup-and-installation"></a>セットアップとインストール
 
-_この記事では、インストール手順と、コンピューターとデバイスの Android Wear の開発の準備に必要な構成の詳細について説明します。この記事の目的は、Mac や Microsoft Visual Studio での Xamarin.Android Wear のインストールが Visual Studio に統合作業する必要があり、最初の Xamarin.Android Wear アプリケーションの構築を開始する準備ができます。_
+_この記事では、Android の磨耗開発のためにコンピューターとデバイスを準備するために必要なインストール手順と構成の詳細について説明します。この記事を終了すると、Visual Studio for Mac や Microsoft Visual Studio に統合された、作業中の Xamarin. Android のインストールが可能になります。また、最初の Xamarin. Android 磨耗アプリケーションの構築を開始する準備が整います。_
 
 ## <a name="requirements"></a>必要条件
 
-Xamarin 基盤の Android Wear アプリを作成する、次が必要。
+Xamarin ベースの Android 磨耗アプリを作成するには、次のものが必要です。
 
--   **Visual Studio または Visual Studio for Mac** &ndash; Visual Studio 2017 Community 以降が必要です。
+-   **Visual Studio または Visual Studio for Mac**&ndash; Visual Studio 2017 Community 以降が必要です。
 
 -   **Xamarin.Android** &ndash; Xamarin.Android 4.17 or later must be installed and configured with either Visual Studio or Visual Studio for Mac.
 
--   **Android SDK** -Android SDK 5.0.1 (API 21) 以降、Android SDK Manager を使用してをインストールする必要があります。
+-   **Android SDK** Android SDK 5.0.1 (API 21) 以降を Android SDK Manager を使用してインストールする必要があります。
 
--   **Java Developer Kit** &ndash; Xamarin Android 開発が必要です[JDK 1.8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)開発 API レベル 24 以上の場合 (JDK 1.8 もサポートしている API レベル 24 より前)。
+-   **Java Developer Kit**API レベル24以上を開発している場合、Xamarin Android 開発では[jdk 1.8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)が必要です (jdk 1.8 では、24より前の api レベルもサポートされています)。 &ndash;
 
-引き続き使用できます[JDK 1.7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)またはそれ以前の API レベル 23 ののみで開発する場合。
+特に API レベル23以前を開発している場合は、 [JDK 1.7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)を使用し続けることができます。
 
 > [!IMPORTANT]
 > Xamarin.Android は JDK 9 をサポートしていません。
 
 ## <a name="installation"></a>インストール
 
-Xamarin.Android をインストールした後は、次の手順を実行するため、ビルドし、Android Wear アプリをテストする準備ができました。 
+Xamarin Android をインストールしたら、次の手順を実行して、Android の磨耗アプリをビルドしてテストする準備ができていることを確認します。 
 
 1.  必要な Android SDK とツールをインストールします。
-2.  テスト デバイスを構成します。
-3.  最初の Android Wear アプリを作成します。
+2.  テストデバイスを構成します。
+3.  初めての Android 用の磨耗アプリを作成します。
 
-次のセクションでは、次の手順を説明します。
+これらの手順については、次のセクションで説明します。
 
 
-### <a name="install-android-sdk-and-tools"></a>Android SDK とツールをインストールします。 
+### <a name="install-android-sdk-and-tools"></a>Android SDK とツールのインストール 
 
-起動、 **Android SDK Manager**: 
+**Android SDK マネージャー**を起動します。 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-![Visual Studio での Android SDK マネージャーを起動する方法](installation-images/vs/sdk-menu.png)
+![Visual Studio で Android SDK マネージャーを起動する方法](installation-images/vs/sdk-menu.png)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-![Mac を Visual Studio での Android SDK Manager を起動する方法](installation-images/xs/sdk-menu.png)
+![Visual Studio for Mac で Android SDK マネージャーを起動する方法](installation-images/xs/sdk-menu.png)
 
 -----
 
 
-次の Android SDK とツールをインストールできることを確認します。
+次の Android SDK とツールがインストールされていることを確認します。
 
-* Android SDK Tools v 24.0.0 またはそれ以降、および
-* Android 4.4W (API20) または
-* Android 5.0.1 (API21) またはそれ以降。
+* Android SDK Tools v 24.0.0 以上、
+* Android 4.4 W (API20)、または
+* Android 5.0.1 (API21) 以降。
 
-最新の SDK とツールがインストールされていない場合は、必要な SDK ツールをダウンロード*と*API ビット (そこには、少しスクロールする必要があります&ndash;API の選択範囲を次に示します)。 
+最新の sdk とツールがインストールされていない場合は、必要な sdk ツール*と*api ビットをダウンロードします (次に示すように&ndash; 、api の選択が表示されていることを確認するために少しスクロールする必要があります)。 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-![Android 5.0.1 を有効にする例を SDK Manager のスクリーン ショットのコンポーネント](installation-images/vs/sdk-select.png)
+![Android 5.0.1 コンポーネントの有効化に関する SDK Manager のスクリーンショットの例](installation-images/vs/sdk-select.png)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-![Android 4.4 および 5.0.1 有効にする例を SDK Manager のスクリーン ショットのコンポーネント](installation-images/xs/sdk-select.png)
+![Android 4.4 および5.0.1 コンポーネントを有効にする例の SDK Manager のスクリーンショット](installation-images/xs/sdk-select.png)
 
 -----
 
 
 ## <a name="configuration"></a>構成
 
-使用するには、アプリのテスト、Android Wear エミュレーターまたは実際の Android Wear デバイスを構成する必要があります。 
+アプリのテストを使用する前に、Android の磨耗エミュレーターまたは実際の Android の磨耗デバイスを構成する必要があります。 
 
 
-### <a name="android-wear-emulator"></a>Android Wear エミュレーター
+### <a name="android-wear-emulator"></a>Android の磨耗エミュレーター
 
-Android Wear エミュレーターを使用するを使用して、Android Wear Android Virtual Device (AVD) を構成する必要があります、 **Google エミュレーター マネージャー**:
+Android の摩耗エミュレーターを使用するには、 **Google Emulator Manager**を使用して Android の摩耗 Android 仮想デバイス (avd) を構成する必要があります。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-![Visual Studio から Android エミュレーター マネージャーを起動する方法](installation-images/vs/emulator-menu.png)
+![Visual Studio から Android Emulator マネージャーを起動する方法](installation-images/vs/emulator-menu.png)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-![Mac を Visual Studio から Android エミュレーター マネージャーを起動する方法](installation-images/xs/emulator-menu.png)
+![Visual Studio for Mac から Android Emulator マネージャーを起動する方法](installation-images/xs/emulator-menu.png)
 
 -----
 
-Android Wear エミュレーターの設定に関する詳細については、次を参照してください。[エミュレーターで Android Wear をデバッグ](~/android/wear/deploy-test/debug-on-emulator.md)します。
+Android の磨耗エミュレーターの設定の詳細については、「[エミュレーターでの android の磨耗のデバッグ](~/android/wear/deploy-test/debug-on-emulator.md)」を参照してください。
 
 
-### <a name="android-wear-device"></a>Android Wear デバイス
+### <a name="android-wear-device"></a>Android の磨耗デバイス
 
-Android Wear デバイス、Android Wear スマートウォッチなどを使っている場合は、エミュレーターを使用する代わりにこのデバイスでアプリをデバッグできます。 Wear デバイスでの開発方法の詳細については、次を参照してください。 [Wear デバイスでのデバッグ](~/android/wear/deploy-test/debug-on-device.md)します。
+Android の磨耗 Smartwatch などの Android の磨耗デバイスがある場合は、エミュレーターを使用する代わりに、このデバイスでアプリをデバッグすることができます。 磨耗デバイスを使用した開発の詳細については、「[磨耗デバイスでのデバッグ](~/android/wear/deploy-test/debug-on-device.md)」を参照してください。
 
 
-## <a name="create-your-first-android-wear-app"></a>最初の Android Wear アプリを作成します。
+## <a name="create-your-first-android-wear-app"></a>初めての Android 用の磨耗アプリを作成する
 
-に従って、[こんにちは、Wear](~/android/wear/get-started/hello-wear.md)最初 watch アプリを構築する手順。
+[Hello, 磨耗](~/android/wear/get-started/hello-wear.md)の指示に従って、初めての watch アプリを作成します。
 
 
 ## <a name="packaging-your-app"></a>アプリのパッケージ化
 
-Android wear のアプリケーションは、付属の Android フォン アプリで常に分散されます。 
+Android の磨耗アプリケーションは、常にコンパニオン Android phone アプリと共に配布されます。 
 
-Android Wear アプリケーションをメインの Android アプリへの参照として追加する場合は自動的に、Android Wear のプロジェクトと見なされます、必要なすべての XML とメタデータを生成します。 さらに、Google Play にアプリを簡単に出荷できるようにパッケージとバージョン番号が一致することを確認します。 
+Android の磨耗アプリケーションをメインの Android アプリケーションへの参照として追加すると、自動的に Android の磨耗プロジェクトと見なされ、必要なすべての XML とメタデータが自動的に生成されます。 また、パッケージとバージョン番号が一致していることを確認して、アプリを Google Play に簡単に配布できます。 
 
-Wear アプリをパッケージ化の詳細については、次を参照してください。[パッケージ化操作](~/android/wear/deploy-test/packaging.md)します。
+摩耗アプリのパッケージ化の詳細については、「[パッケージングの](~/android/wear/deploy-test/packaging.md)使用」を参照してください。
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkeletonWear (サンプル)](https://developer.xamarin.com/samples/monodroid/wear/SkeletonWear/)
+- [SkeletonWear (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-skeletonwear)

@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: 60add066d581afffeaa200769efcdff9e0644535
-ms.sourcegitcommit: e45f0cd6d7d4a77dba5ecaad4d7894025005a2dc
+ms.openlocfilehash: d8052e00809b15f0858583ee2919c47cfd8af00b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67309509"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68646571"
 ---
 # <a name="part-2-essential-xaml-syntax"></a>第 2 部です。 重要な XAML 構文
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
 _XAML は、ほとんどの場合、インスタンス化して、オブジェクトの初期化用です。多くの場合、XML の文字列として簡単に表すことができない複雑なオブジェクトにプロパティを設定する必要があり、子クラスの 1 つのクラスによって定義されたプロパティを設定する必要がある場合があります。これら 2 つのニーズには、プロパティ要素および添付プロパティの基本の XAML 構文の機能が必要です。_
 
@@ -143,7 +143,7 @@ XAML、ただし、この構文は非常に特殊です。 他に何も表示で
 </Label>
 ```
 
-別の例:`Grid`という名前の 2 つのプロパティを持つ`RowDefinitions`と`ColumnDefinitions`します。 これら 2 つのプロパティが型`RowDefinitionCollection`と`ColumnDefinitionCollection`のコレクションである`RowDefinition`と`ColumnDefinition`オブジェクト。 プロパティ要素構文を使用して、これらのコレクションを設定する必要があります。
+もう1つの例を次に示します。に`Grid`は、とと`RowDefinitions` `ColumnDefinitions`いう名前の2つのプロパティがあります。 これら 2 つのプロパティが型`RowDefinitionCollection`と`ColumnDefinitionCollection`のコレクションである`RowDefinition`と`ColumnDefinition`オブジェクト。 プロパティ要素構文を使用して、これらのコレクションを設定する必要があります。
 
 ここでは、XAML ファイルの先頭を`GridDemoPage`クラス、プロパティ要素タグを表示、`RowDefinitions`と`ColumnDefinitions`コレクション。
 
@@ -351,7 +351,7 @@ XAML、ただし、この構文は非常に特殊です。 他に何も表示で
 </ContentPage>
 ```
 
-実際の疑問が浮かびます。なぜこれらのプロパティ要素を*いない*XAML ファイルで、必須か?
+実際の質問は次のとおりです。これらのプロパティ要素が XAML ファイルで必須では*ない*のはなぜですか。
 
 XAML で使用するために、Xamarin.Forms で定義された要素が実行を許可されている 1 つのプロパティのフラグが設定された、`ContentProperty`クラスの属性。 検索する場合、`ContentPage`クラス オンライン Xamarin.Forms ドキュメントでは、この属性を確認します。
 
@@ -384,7 +384,7 @@ if (Device.RuntimePlatform == Device.iOS)
 }
 ```
 
-以下のように XAML を使用して行うこともできます、 [ `OnPlatform` ](xref:Xamarin.Forms.OnPlatform`1)と[ `On` ](xref:Xamarin.Forms.On)クラス。 最初のプロパティ要素を含める、`Padding`ページの上部付近のプロパティ。
+XAML では、クラス[`OnPlatform`](xref:Xamarin.Forms.OnPlatform`1)と[`On`](xref:Xamarin.Forms.On)クラスを使用して同様の操作を行うこともできます。 最初のプロパティ要素を含める、`Padding`ページの上部付近のプロパティ。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -524,15 +524,15 @@ Android、UWP は、の既定値に設定されているため`Padding`タグを
 ```
 
 > [!NOTE]
-> `OnPlatform`プラットフォームごとに UI の外観をカスタマイズする XAML のマークアップ拡張機能が使用もできます。 同じ機能を提供します、`OnPlatform`と`On`クラスがより簡潔な表現。 詳細については、次を参照してください。 [OnPlatform マークアップ拡張機能](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform)します。
+> マーク`OnPlatform`アップ拡張機能を XAML で使用して、プラットフォームごとに UI の外観をカスタマイズすることもできます。 クラス`OnPlatform` および`On`クラスと同じ機能を提供しますが、より簡潔な表現を使用します。 詳細については、次を参照してください。 [OnPlatform マークアップ拡張機能](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform)します。
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
 プロパティ要素と添付プロパティの場合は、基本的な XAML 構文の多くが確立されました。 ただし、場合によってオブジェクトに間接的な方法で、たとえば、リソース ディクショナリからプロパティを設定する必要があります。 この方法については、次の部分の一部で[3。XAML マークアップ拡張機能](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)します。
 
 ## <a name="related-links"></a>関連リンク
 
-- [XamlSamples](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
+- [XamlSamples](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 - [第 1 部XAML の概要](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
 - [第 3 部XAML マークアップ拡張](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
 - [第 4 部データ バインディングの基礎](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)

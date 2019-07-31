@@ -8,12 +8,12 @@ ms.custom: video
 author: conceptdev
 ms.author: crdun
 ms.date: 07/06/2018
-ms.openlocfilehash: 29f7725e41e5163b8f990c827983fbd79bdd1b1e
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 08339ba3017983cf79d75adc1c6c21a2fb9ad98b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510492"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643428"
 ---
 # <a name="oreo-features"></a>Oreo の機能
 
@@ -205,7 +205,7 @@ Android Oreo では、通知チャンネル、通知バッジ、XML でのカス
 *通知チャネル*は、通知用のアプリ定義のカテゴリです。
 送信する必要がある通知の種類ごとに通知チャネルを作成し、アプリのユーザーが選択した内容を反映する通知チャネルを作成することができます。 新しい通知チャネル機能を使用すると、ユーザーがさまざまな種類の通知をきめ細かく制御できるようになります。 たとえば、メッセージングアプリを実装する場合は、ユーザーが作成したメッセージ交換グループごとに個別の通知チャネルを作成できます。
 
-[通知](~/android/app-fundamentals/notifications/local-notifications.md#notif-chan)チャネルは、通知チャネルを作成し、それを使用してローカル通知を送信する方法を説明します。 実際のコード例については、 [Notificationchannels](https://developer.xamarin.com/samples/monodroid/android-o/NotificationChannels)サンプルを参照してください。このサンプルアプリでは、2つのチャネルを管理し、追加の通知オプションを設定します。
+[通知](~/android/app-fundamentals/notifications/local-notifications.md#notif-chan)チャネルは、通知チャネルを作成し、それを使用してローカル通知を送信する方法を説明します。 実際のコード例については、 [Notificationchannels](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-notificationchannels)サンプルを参照してください。このサンプルアプリでは、2つのチャネルを管理し、追加の通知オプションを設定します。
 
 
 
@@ -262,7 +262,7 @@ Android Oreo 以降では、アプリは APK にバンドルするのではな�
 
 `RequestFonts`メソッドを呼び出すと、まず、フォントがローカルに`RequestFont`キャッシュされているかどうかを確認します (の前の呼び出しから)。 キャッシュされていない場合は、フォントプロバイダーを呼び出し、そのフォントを非同期に取得してから、 `OnTypeFaceRetrieved`メソッドを呼び出して結果をアプリに渡します。
 
-ダウンロード可能な[フォント](https://developer.xamarin.com/samples/monodroid/android-o/DownloadableFonts)のサンプルは、Android Oreo で導入されたダウンロード可能なフォント機能の使用方法を示しています。 
+ダウンロード可能な[フォント](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-downloadablefonts)のサンプルは、Android Oreo で導入されたダウンロード可能なフォント機能の使用方法を示しています。 
 
 フォントのダウンロードの詳細については、「Android 開発者向けダウンロード可能な[フォント](https://developer.android.com/guide/topics/ui/look-and-feel/downloadable-fonts.html)」を参照してください。
 
@@ -272,7 +272,7 @@ Android Oreo 以降では、アプリは APK にバンドルするのではな�
 
 Android Oreo の新しい_オートフィル_フレームワークにより、ユーザーは、ログイン、アカウントの作成、クレジットカードのトランザクションなど、繰り返し発生するタスクを簡単に処理できるようになります。 ユーザーは、(入力エラーにつながる可能性がある) 情報を再入力する時間が短縮されます。 アプリでオートフィルフレームワークを使用するには、システム設定でオートフィルサービスを有効にする必要があります (ユーザーはオートコンプリートを有効または無効にすることができます)。
 
-[Autofillframework](https://developer.xamarin.com/samples/monodroid/android-o/AutoFillFramework/)サンプルは、オートフィルフレームワークの使用方法を示しています。 自動入力が必要なビューを含むクライアントアクティビティの実装と、クライアントアクティビティにオートフィルデータを提供できるサービスが含まれています。
+[Autofillframework](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-autofillframework)サンプルは、オートフィルフレームワークの使用方法を示しています。 自動入力が必要なビューを含むクライアントアクティビティの実装と、クライアントアクティビティにオートフィルデータを提供できるサービスが含まれています。
 
 オートフィルの新機能と、アプリをオートコンプリート用に最適化する方法の詳細については、「Android 開発者による[オートコンプリートフレームワーク](https://developer.android.com/guide/topics/text/autofill.html)」を参照してください。
 
@@ -294,7 +294,7 @@ PIP モードの場合のアクティビティの動作を指定するには、�
 
 -   [Setピクチャ Inピクチャ params](https://developer.android.com/reference/android/app/Activity.html#setPictureInPictureParams%28android.app.PictureInPictureParams%29)&ndash;アクティビティの PIP 構成設定 (縦横比の変更など) を更新します。
 
-Picture [inpicture](https://developer.xamarin.com/samples/monodroid/android-o/PictureInPicture)サンプルは、Oreo で導入されたハンドヘルドデバイス用の画像 (PiP) モードの基本的な使用方法を示しています。 このサンプルでは、表示モードまたは他のアクティビティを切り替えながら中断され続けるビデオを再生します。
+Picture [inpicture](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-pictureinpicture)サンプルは、Oreo で導入されたハンドヘルドデバイス用の画像 (PiP) モードの基本的な使用方法を示しています。 このサンプルでは、表示モードまたは他のアクティビティを切り替えながら中断され続けるビデオを再生します。
 
 
 
@@ -333,19 +333,19 @@ Android Oreo 以降を対象とするアプリでは、次の変更をサポー�
 
 Android Oreo 機能を活用する方法を示すために、いくつかの Xamarin Android サンプルを利用できます。
 
--   [NotificationsChannels](https://developer.xamarin.com/samples/monodroid/android-o/NotificationChannels)は、Android Oreo で導入された新しい通知チャネルシステムの使用方法を示しています。 このサンプルでは、2つの通知チャネルを管理します。1つは既定の重要度があり、もう1つは重要度が高くなります。
+-   [NotificationsChannels](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-notificationchannels)は、Android Oreo で導入された新しい通知チャネルシステムの使用方法を示しています。 このサンプルでは、2つの通知チャネルを管理します。1つは既定の重要度があり、もう1つは重要度が高くなります。
 
--   図[Inpicture](https://developer.xamarin.com/samples/monodroid/android-o/PictureInPicture)では、Oreo で導入されたハンドヘルドデバイス用の画像 (PiP) モードの基本的な使用方法を示しています。 このサンプルでは、表示モードまたは他のアクティビティを切り替えながら中断され続けるビデオを再生します。
+-   図[Inpicture](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-pictureinpicture)では、Oreo で導入されたハンドヘルドデバイス用の画像 (PiP) モードの基本的な使用方法を示しています。 このサンプルでは、表示モードまたは他のアクティビティを切り替えながら中断され続けるビデオを再生します。
 
--   [Autofillframework](https://developer.xamarin.com/samples/monodroid/android-o/AutoFillFramework)は、オートフィルフレームワークの使用方法を示しています。 自動入力が必要なビューを含むクライアントアクティビティの実装と、クライアントアクティビティにオートフィルデータを提供できるサービスが含まれています。
+-   [Autofillframework](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-autofillframework)は、オートフィルフレームワークの使用方法を示しています。 自動入力が必要なビューを含むクライアントアクティビティの実装と、クライアントアクティビティにオートフィルデータを提供できるサービスが含まれています。
 
--   [ダウンロード](https://developer.xamarin.com/samples/monodroid/android-o/DownloadableFonts)可能なフォントは、前に説明したダウンロード可能なフォント機能の使用方法の例を示しています。
+-   [ダウンロード](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-downloadablefonts)可能なフォントは、前に説明したダウンロード可能なフォント機能の使用方法の例を示しています。
 
--   [EmojiCompat](https://developer.xamarin.com/samples/monodroid/android-o/EmojiCompat)は、EmojiCompat サポートライブラリの使用方法を示しています。 このライブラリを使用すると、アプリで見つからない絵文字が "tofu" 文字として表示されないようにすることができます。
+-   [EmojiCompat](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-emojicompat)は、EmojiCompat サポートライブラリの使用方法を示しています。 このライブラリを使用すると、アプリで見つからない絵文字が "tofu" 文字として表示されないようにすることができます。
 
--   [場所の更新が保留](https://developer.xamarin.com/samples/monodroid/android-o/AndroidPlayLocation/LocUpdPendIntent)になっている場合は、を`PendingIntent`使用してデバイスの場所に関する更新を取得する location API の使用法が示されます。
+-   [場所の更新が保留](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-androidplaylocation-locupdpendintent)になっている場合は、を`PendingIntent`使用してデバイスの場所に関する更新を取得する location API の使用法が示されます。
 
--   [Location Updates フォアグラウンドサービス](https://developer.xamarin.com/samples/monodroid/android-o/AndroidPlayLocation/LocUpdFgService)は、location API を使用して、バインドされて開始されたフォアグラウンドサービスを使用してデバイスの場所に関する更新を取得する方法を示します。
+-   [Location Updates フォアグラウンドサービス](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-androidplaylocation-locupdfgservice)は、location API を使用して、バインドされて開始されたフォアグラウンドサービスを使用してデバイスの場所に関する更新を取得する方法を示します。
 
 
 ## <a name="video"></a>ビデオ
@@ -355,7 +355,7 @@ Android Oreo 機能を活用する方法を示すために、いくつかの Xam
 **Android 8.0 Oreo development withC#**
 
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
 この記事では、Android Oreo について紹介し、android Oreo で Xamarin の開発用の最新のツールとパッケージをインストールして構成する方法について説明しました。 Android Oreo で使用できる主な機能の概要と、いくつかの新機能のソースコード例へのリンクが用意されています。 Android Oreo 用のアプリの作成を開始する際に役立つ API ドキュメントおよび Android 開発者向けのトピックへのリンクが含まれています。 また、既存のアプリに影響する可能性がある、最も重要な Android Oreo 動作の変更も強調表示されています。
 

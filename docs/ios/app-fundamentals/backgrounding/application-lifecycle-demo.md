@@ -1,31 +1,31 @@
 ---
-title: Xamarin.iOS 用のアプリケーション ライフ サイクルのデモ
-description: このドキュメントでは、これらのイベントを処理するタイミングと方法を示す、iOS アプリケーション内のアプリ デリゲートによって処理される、さまざまなライフ サイクル イベントを調べます。
+title: Xamarin. iOS のアプリケーションライフサイクルデモ
+description: このドキュメントでは、iOS アプリケーションでアプリデリゲートによって処理されるさまざまなライフサイクルイベントについて説明し、これらのイベントを処理するタイミングと方法を示します。
 ms.prod: xamarin
 ms.assetid: 5C8AACA6-49F8-4C6D-99C3-5F443C01B230
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/17/2018
-ms.openlocfilehash: 3beb511c03b328ecea824bf89355d056df003f3e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4eefbd63a91c6fd9eeed7a6e5043db5a2ee9105b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60946194"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68649373"
 ---
-# <a name="application-lifecycle-demo-for-xamarinios"></a>Xamarin.iOS 用のアプリケーション ライフ サイクルのデモ
+# <a name="application-lifecycle-demo-for-xamarinios"></a>Xamarin. iOS のアプリケーションライフサイクルデモ
 
-この記事と[サンプル コード](https://developer.xamarin.com/samples/monotouch/LifecycleDemo/)ios で 4 つのアプリケーションの状態の役割を示します、`AppDelegate`メソッドの取得状態の変更されたときのアプリケーションに通知します。 アプリの状態が変わるたびに、コンソールに更新プログラムが印刷されます。
+この記事と[サンプルコード](https://docs.microsoft.com/samples/xamarin/ios-samples/lifecycledemo)では、iOS の4つのアプリケーション状態と、状態`AppDelegate`が変化したときにをアプリケーションに通知するためのメソッドの役割について説明します。 アプリが状態を変更するたびに、アプリケーションはコンソールに更新を出力します。
 
-[![](application-lifecycle-demo-images/image3-sml.png "サンプル アプリ")](application-lifecycle-demo-images/image3.png#lightbox)
+[![](application-lifecycle-demo-images/image3-sml.png "サンプルアプリ")](application-lifecycle-demo-images/image3.png#lightbox)
 
-[![](application-lifecycle-demo-images/image4.png "アプリ、アプリの状態が変わるたびに、コンソールの更新が出力されます。")](application-lifecycle-demo-images/image4.png#lightbox)
+[![](application-lifecycle-demo-images/image4.png "アプリが状態を変更するたびに、アプリによって更新内容がコンソールに出力されます。")](application-lifecycle-demo-images/image4.png#lightbox)
 
 ## <a name="walkthrough"></a>チュートリアル
 
-1. 開く、**ライフ サイクル**プロジェクト、 **LifecycleDemo**ソリューション。
-1. 開き、`AppDelegate`クラス。 ログ記録がアプリケーションに状態が変更されたときを示すライフ サイクル メソッドに追加されています。
+1. **LifecycleDemo**ソリューションで**ライフサイクル**プロジェクトを開きます。
+1. `AppDelegate`クラスを開きます。 アプリケーションの状態がいつ変更されたかを示すログがライフサイクルメソッドに追加されました。
 
     ```csharp
     public override void OnActivated(UIApplication application)
@@ -51,13 +51,13 @@ ms.locfileid: "60946194"
     }
     ```
 
-1. デバイスまたはシミュレーターでアプリケーションを起動します。 `OnActivated` アプリが起動するときに呼び出されます。 アプリケーションがこれで、 _Active_状態。
-1. シミュレーターまたはデバイスでアプリケーションをバック グラウンドで [ホーム] ボタンをクリックします。 `OnResignActivation` `DidEnterBackground`からのアプリ移行として呼び出される`Active`に`Inactive`とに、`Backgrounded`状態。 アプリケーションと見なされます、バック グラウンドで実行するアプリケーション コードのセットがないため、_中断_メモリにします。
-1. フォア グラウンドに戻すことをアプリに移動します。 `WillEnterForeground` `OnActivated`はどちらも呼び出されます。
+1. シミュレーターまたはデバイスでアプリケーションを起動します。 `OnActivated`アプリが起動すると、が呼び出されます。 これで、アプリケーションは_アクティブ_状態になります。
+1. シミュレーターまたはデバイスの [ホーム] ボタンをクリックして、アプリケーションをバックグラウンドにします。 `OnResignActivation`と`DidEnterBackground`は、アプリがから`Active`に、 `Backgrounded`状態に`Inactive`遷移するときに呼び出されます。 バックグラウンドで実行するように設定されたアプリケーションコードがないため、アプリケーションはメモリ内で_中断_されていると見なされます。
+1. アプリに戻り、前面に戻ります。 `WillEnterForeground`と`OnActivated`は両方とも呼び出されます。
 
-    ![](application-lifecycle-demo-images/image4.png "コンソールに出力状態の変更")
+    ![](application-lifecycle-demo-images/image4.png "コンソールに印刷される状態の変更")
 
-    次のビュー コント ローラーでのコード行は、アプリケーションがバック グラウンドから前景色が入力、画面に表示されるテキストを変更したときに実行されます。
+    ビューコントローラーの次のコード行は、アプリケーションが背景からフォアグラウンドに入ったときに実行され、画面に表示されるテキストを変更します。
 
     ```csharp
     UIApplication.Notifications.ObserveWillEnterForeground ((sender, args) => {
@@ -65,16 +65,16 @@ ms.locfileid: "60946194"
     });
     ```
 
-1. キーを押して、**ホーム**バック グラウンドにアプリケーションを配置するボタンをクリックします。 ダブルタップし、**ホーム**アプリケーションのスイッチャーを表示するボタンをクリックします。 Iphone X、画面の下部から上へスワイプします。
+1. **[ホーム]** ボタンをクリックして、アプリケーションを背景に配置します。 次に、 **[ホーム]** ボタンをダブルタップして、アプリケーションスイッチャーを開きます。 IPhone X で、画面の下部から上方向にスワイプします。
 
-    [![アプリケーションのスイッチャー](application-lifecycle-demo-images/app-switcher-sml.png "アプリケーションのスイッチャー")](application-lifecycle-demo-images/app-switcher.png#lightbox)
+    [![アプリケーションスイッチャー](application-lifecycle-demo-images/app-switcher-sml.png "アプリケーションスイッチャー")](application-lifecycle-demo-images/app-switcher.png#lightbox)
   
-1. アプリケーションのスイッチャーので、アプリケーションを見つけて、上方向にスワイプ (iOS 11、長押し上隅にある赤いアイコンが表示されるまで) を削除します。
+1. アプリスイッチャーでアプリケーションを見つけ、上にスワイプして削除します (iOS 11 では、赤いアイコンが隅に表示されるまで長く押します)。
 
-    [![実行中のアプリの削除までスワイプ](application-lifecycle-demo-images/app-switcher-swipe-sml.png "スワイプまで実行中のアプリの削除")](application-lifecycle-demo-images/app-switcher-swipe.png#lightbox)
+    [![上にスワイプして実行中のアプリを削除する](application-lifecycle-demo-images/app-switcher-swipe-sml.png "上にスワイプして実行中のアプリを削除する")](application-lifecycle-demo-images/app-switcher-swipe.png#lightbox)
 
-iOS では、アプリケーションを終了します。 なお`WillTerminate`アプリケーションが既にあるためには呼び出されません_中断_バック グラウンドでします。
+iOS によってアプリケーションが終了します。 アプリケーションが`WillTerminate`バックグラウンドで既に_中断_されているため、が呼び出されないことに注意してください。
 
 ## <a name="related-links"></a>関連リンク
 
-- [LifecycleDemo (サンプル)](https://developer.xamarin.com/samples/monotouch/LifecycleDemo/)
+- [LifecycleDemo (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/lifecycledemo)

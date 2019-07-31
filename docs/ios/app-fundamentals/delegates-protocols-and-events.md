@@ -1,40 +1,40 @@
 ---
-title: イベント、プロトコル、Xamarin.iOS でのデリゲート
-description: このドキュメントでは、イベント、プロトコルを使用する方法について説明し、Xamarin.iOS にデリゲートします。 これらの基本的な概念は、Xamarin.iOS の開発ではユビキタスです。
+title: Xamarin. iOS のイベント、プロトコル、およびデリゲート
+description: このドキュメントでは、Xamarin. iOS でイベント、プロトコル、およびデリゲートを操作する方法について説明します。 これらの基本的な概念は、Xamarin の iOS 開発で広く普及しています。
 ms.prod: xamarin
 ms.assetid: 7C07F0B7-9000-C540-0FC3-631C29610447
 ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 09/17/2017
-ms.openlocfilehash: a82d96cf3f290dd28d163dd6f147a9dc28dfaa81
-ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
+ms.openlocfilehash: d42263733c7fa793713738be4b389eaa4850f38b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66827605"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68649359"
 ---
-# <a name="events-protocols-and-delegates-in-xamarinios"></a>イベント、プロトコル、Xamarin.iOS でのデリゲート
+# <a name="events-protocols-and-delegates-in-xamarinios"></a>Xamarin. iOS のイベント、プロトコル、およびデリゲート
 
-Xamarin.iOS では、コントロールを使用して、ほとんどのユーザー操作のイベントを公開します。
-Xamarin.iOS アプリケーションでは、従来の .NET アプリケーションと同様に、ほぼ同じ方法でこれらのイベントを使用します。 たとえば、Xamarin.iOS UIButton クラスは TouchUpInside というイベントが、.NET アプリでこのクラスとイベントがいた場合と同様に、このイベントを使用します。
+Xamarin iOS は、コントロールを使用して、ほとんどのユーザー操作のイベントを公開します。
+Xamarin iOS アプリケーションは、従来の .NET アプリケーションとほぼ同じ方法でこれらのイベントを使用します。 たとえば、Xamarin. iOS UIButton クラスには TouchUpInside という名前のイベントがあり、このクラスとイベントが .NET アプリ内にある場合と同じように、このイベントを使用します。
 
 Xamarin.iOS は、この .NET のアプローチだけでなく、より複雑な相互作用とデータ バインドに使用できる別のモデルを公開します。 この方法論では、Apple がデリゲートとプロトコルと呼ぶものを使用します。 デリゲートは、C#のデリゲートと概念が似ていますが、単一のメソッドを定義して呼び出すのではなく、Objective C のデリゲートはプロトコルに準拠しているクラス全体を定義します。 メソッドが選択可能な場合を除き、プロトコルはC＃のインターフェースに似ています。 たとえば、データの UITableView を設定すると、設定自体を呼び出す UITableView UITableViewDataSource プロトコルで定義されているメソッドを実装するデリゲート クラスを作成します。
 
-この記事では、これらすべてのトピックについて説明しますで提供する強固な基盤、Xamarin.iOS でのコールバックのシナリオを処理するためなど。
+この記事では、これらのすべてのトピックについて学習し、次のような Xamarin のコールバックシナリオを処理するための堅固な基盤を提供します。
 
-- **イベント**– UIKit コントロールを使用して .NET イベント。
-- **プロトコル**– プロトコルとその使用方法の学習内容と、マップの注釈のデータを提供する例を作成します。
-- **デリゲート**– Objective C のデリゲートには、注釈を含むユーザーの操作を処理するためにマップの例を拡張し、強力と脆弱のデリゲートとこれらの各を使用する場合の違いを学習について学習します。
+- **イベント**– uikit コントロールでの .net イベントの使用。
+- **プロトコル**–プロトコルの概要と使用方法、およびマップの注釈にデータを提供する例の作成について説明します。
+- **デリゲート**–目的 C のデリゲートについて学習するには、注釈を含むユーザーの操作を処理するようにマップの例を拡張し、厳密なデリゲートと弱いデリゲートの違いを学習して、それぞれを使用するタイミングを学習します。
 
-プロトコル、デリゲートを示すためには、次に示すように、マップに注釈を追加するシンプルな地図アプリケーションを作成します。
+プロトコルとデリゲートについて説明するために、次に示すように、マップに注釈を追加する単純なマップアプリケーションを作成します。
 
-[![](delegates-protocols-and-events-images/01-map-sml.png "マップに注釈を追加するシンプルな地図アプリケーションの例")](delegates-protocols-and-events-images/01-map.png#lightbox)
-[![](delegates-protocols-and-events-images/04-annotation-with-callout-sml.png "マップに追加された例注釈")](delegates-protocols-and-events-images/04-annotation-with-callout.png#lightbox)
+[![](delegates-protocols-and-events-images/01-map-sml.png "")マップに注釈](delegates-protocols-and-events-images/01-map.png#lightbox)
+[(delegates-protocols-and-events-images/04-annotation-with-callout-sml.png "")を追加する単純なマップアプリケーションの例 (マップに追加された注釈の例)![]](delegates-protocols-and-events-images/04-annotation-with-callout.png#lightbox)
 
-このアプリを使って取り組むには、前に開始しましょう .NET のイベントは、UIKit で調べることで。
+このアプリに取り組む前に、まず、UIKit の下にある .NET イベントを見てみましょう。
 
-## <a name="net-events-with-uikit"></a>UIKit で .NET イベント
+## <a name="net-events-with-uikit"></a>UIKit を使用した .NET イベント
 
 Xamarin.iOS では、UIKit コントロールの .NET イベントを公開します。 たとえば、C# のラムダ式を使用する次のコードに示すように、UIButton には TouchUpInside イベントがあります。このイベントは、通常の .NET の場合と同じように処理します。
 
@@ -44,7 +44,7 @@ aButton.TouchUpInside += (o,s) => {
 };
 ```
 
-これを実装することも、C#次のような匿名メソッドを 2.0 スタイル。
+これは、 C#次のような2.0 スタイルの匿名メソッドを使用して実装することもできます。
 
 ```csharp
 aButton.TouchUpInside += delegate {
@@ -52,31 +52,31 @@ aButton.TouchUpInside += delegate {
 };
 ```
 
-上記のコードのワイヤード (有線)、`ViewDidLoad`の UIViewController のメソッド。 `aButton`変数を参照して、ボタンは、iOS デザイナーまたはコードを追加できます。 次の図は、iOS Designer に追加されているボタンを示しています。
+前のコードは、uiviewcontroller `ViewDidLoad`のメソッドに接続されています。 変数`aButton`はボタンを参照します。このボタンは、iOS デザイナーまたはコードと共に追加できます。 次の図は、iOS デザイナーに追加されたボタンを示しています。
 
-[![](delegates-protocols-and-events-images/02-interface-builder-outlet-sml.png "IOS Designer で追加ボタン")](delegates-protocols-and-events-images/02-interface-builder-outlet.png#lightbox)
+[![](delegates-protocols-and-events-images/02-interface-builder-outlet-sml.png "IOS Designer で追加されたボタン")](delegates-protocols-and-events-images/02-interface-builder-outlet.png#lightbox)
 
-Xamarin.iOS には、コントロールで発生する相互作用にコードを接続するターゲット アクション スタイルもサポートしています。 ターゲットのアクションを作成する、**こんにちは**ボタンをダブルクリック iOS Designer でします。 UIViewController の分離コード ファイルが表示され、開発者は接続のメソッドを挿入する場所の選択を求められます。
+また、Xamarin は、コントロールで発生する相互作用にコードを接続するためのターゲットアクションスタイルもサポートしています。 **[Hello]** ボタンのターゲットアクションを作成するには、iOS デザイナーでダブルクリックします。 UIViewController の分離コードファイルが表示され、開発者は接続方法を挿入する場所を選択するように求められます。
 
-[![](delegates-protocols-and-events-images/03-interface-builder-action-sml.png "UIViewControllers の分離コード ファイル")](delegates-protocols-and-events-images/03-interface-builder-action.png#lightbox)
+[![](delegates-protocols-and-events-images/03-interface-builder-action-sml.png "UIViewControllers 分離コードファイル")](delegates-protocols-and-events-images/03-interface-builder-action.png#lightbox)
 
-場所を選択すると、新しいメソッドが作成されコントロールにワイヤード (有線) アップします。 次の例では、メッセージが書き込まれますコンソールに、ボタンがクリックされたとき。
+場所を選択すると、新しいメソッドが作成され、コントロールに接続されます。 次の例では、ボタンがクリックされると、メッセージがコンソールに書き込まれます。
 
-[![](delegates-protocols-and-events-images/05-interface-builder-action-sml.png "ボタンがクリックされたときにそのメッセージがコンソールに書き込まれます")](delegates-protocols-and-events-images/05-interface-builder-action.png#lightbox)
+[![](delegates-protocols-and-events-images/05-interface-builder-action-sml.png "ボタンがクリックされると、メッセージがコンソールに書き込まれます。")](delegates-protocols-and-events-images/05-interface-builder-action.png#lightbox)
 
-IOS ターゲット アクション パターンに関する詳細については、ターゲット操作 セクションを参照してください。 [ios アプリケーションのコア コンピテンシー](https://developer.apple.com/library/ios/#DOCUMENTATION/General/Conceptual/Devpedia-CocoaApp/TargetAction.html) Apple の ios 開発者ライブラリ。
+IOS ターゲットアクションパターンの詳細については、Apple の iOS Developer Library の「 [ios のコアアプリケーションコンピテンシー](https://developer.apple.com/library/ios/#DOCUMENTATION/General/Conceptual/Devpedia-CocoaApp/TargetAction.html) 」の「ターゲット-アクション」セクションを参照してください。
 
-Xamarin.iOS で iOS Designer を使用する方法の詳細については、次を参照してください。、 [iOS デザイナーの概要](~/ios/user-interface/designer/index.md)ドキュメント。
+Xamarin で iOS Designer を使用する方法の詳細については、 [Ios designer の概要](~/ios/user-interface/designer/index.md)に関するドキュメントを参照してください。
 
 ## <a name="events"></a>イベント
 
-さまざまなオプションを < からのイベントをインターセプトしたい場合がある: を使用してから、C#ラムダおよび低レベルの Objective C Api を使用するデリゲート関数。
+UIControl からイベントをインターセプトする場合は、さまざまなオプションがあります。 C#ラムダとデリゲート関数を使用して低レベルの目標 C api を使用する方法です。
 
-次のセクションでは、必要な量の制御によって、ボタンの接地イベントをキャプチャする方法を示します。
+次のセクションでは、必要なコントロールの量に応じて、ボタンの着地イベントをキャプチャする方法を示します。
 
 ## <a name="c-style"></a>C#スタイル
 
-デリゲートの構文を使用します。
+デリゲート構文を使用する場合:
 
 ```csharp
 UIButton button = MakeTheButton ();
@@ -85,7 +85,7 @@ button.TouchDown += delegate {
 };
 ```
 
-代わりにラムダを使用するなどの: 場合
+代わりにラムダを使用する場合は、次のようにします。
 
 ```csharp
 button.TouchDown += () => {
@@ -93,7 +93,7 @@ button.TouchDown += () => {
 };
 ```
 
-する場合、複数のボタンは同じハンドラーを使用して、同じコードを共有します。
+複数のボタンで同じハンドラーを使用して同じコードを共有する場合は、次のようにします。
 
 ```csharp
 void handler (object sender, EventArgs args)
@@ -108,21 +108,21 @@ button1.TouchDown += handler;
 button2.TouchDown += handler;
 ```
 
-## <a name="monitoring-more-than-one-kind-of-event"></a>1 つ以上の種類のイベントの監視
+## <a name="monitoring-more-than-one-kind-of-event"></a>複数の種類のイベントを監視する
 
-C#イベント UIControlEvent フラグを個々 のフラグを 1 対 1 マッピングがあります。 2 つ以上のイベントを処理を使用すると、コードの同じ部分がある場合、`UIControl.AddTarget`メソッド。
+UIControlEvent C#フラグのイベントには、個々のフラグへの一対一のマッピングがあります。 同じコードで2つ以上のイベントを処理する場合は、 `UIControl.AddTarget`メソッドを使用します。
 
 ```csharp
 button.AddTarget (handler, UIControlEvent.TouchDown | UIControlEvent.TouchCancel);
 ```
 
-ラムダ構文を使用します。
+ラムダ構文を使用する場合:
 
 ```csharp
 button.AddTarget ((sender, event)=> Console.WriteLine ("An event happened"), UIControlEvent.TouchDown | UIControlEvent.TouchCancel);
 ```
 
-場合は、特定のオブジェクトのインスタンスへのフックや特定のセレクターの起動など、OBJECTIVE-C の低レベルの機能を使用する必要があります。
+特定のオブジェクトインスタンスへのフック、特定のセレクターの呼び出しなど、目標 C の下位レベルの機能を使用する必要がある場合は、次のようにします。
 
 ```csharp
 [Export ("MySelector")]
@@ -136,23 +136,23 @@ void MyObjectiveCHandler ()
 button.AddTarget (this, new Selector ("MySelector"), UIControlEvent.TouchDown);
 ```
 
-ただし、継承の基本クラスのインスタンス メソッドを実装する場合、パブリック メソッドがあります。
+継承された基本クラスでインスタンスメソッドを実装する場合は、パブリックメソッドである必要があることに注意してください。
 
 ## <a name="protocols"></a>プロトコル
 
-プロトコルは、メソッド宣言の一覧を提供する Objective C 言語機能です。 機能のインターフェイスに似た目的C#、プロトコルが省略可能なメソッドを持つことができるされている主な違いです。 プロトコルを採用するクラスがそれらを実装しない場合、省略可能なメソッドは呼び出されません。 同様、Objective C での 1 つのクラスが、複数のプロトコルを実装することも、C#クラスは、複数のインターフェイスを実装できます。
+プロトコルは、メソッド宣言の一覧を提供する目的 C 言語の機能です。 これは、のC#インターフェイスと同様の目的を果たします。主な違いは、プロトコルがオプションのメソッドを持つことができることです。 プロトコルを採用するクラスが実装していない場合、省略可能なメソッドは呼び出されません。 また、1つのクラスが複数のインターフェイスを実装できるのと同じようC#に、複数のプロトコルを実装することもできます。
 
-Apple では、iOS でプロトコルを使用して、したがって動作と同じように、呼び出し元から実装するクラスを抽象しながら、採用するクラスのコントラクトを定義、C#インターフェイス。 プロトコルが使用されるデリゲート以外のシナリオでは、両方 (などで、`MKAnnotation`例を次のように)、デリゲート (デリゲートのセクションでは、このドキュメントの後半で説明) とを使用して。
+Apple では、iOS 全体でプロトコルを使用して、実装するクラスのコントラクトを定義し、呼び出し元から実装クラスをC#分離し、インターフェイスと同様に操作します。 非デリゲートのシナリオ ( `MKAnnotation`次に示す例を参照) とデリゲート (このドキュメントで後述する「デリゲート」セクション) の両方で、プロトコルが使用されます。
 
-### <a name="protocols-with-xamarinios"></a>Xamarin.ios を使用するプロトコル
+### <a name="protocols-with-xamarinios"></a>Xamarin を使用したプロトコル
 
-Xamarin.iOS から OBJECTIVE-C プロトコルを使用して例を見ていきましょう。 この例で使用します、`MKAnnotation`プロトコルで、一部の`MapKit`フレームワーク。 `MKAnnotation` プロトコルにより、マップに追加できる注釈についての情報を提供することを採用する任意のオブジェクトです。 たとえば、実装するオブジェクト`MKAnnotation`注釈とそれに関連付けられているタイトルの位置を提供します。
+Xamarin. iOS の目的の C プロトコルを使用した例を見てみましょう。 この例では、 `MKAnnotation` `MapKit`フレームワークの一部であるプロトコルを使用します。 `MKAnnotation`は、これを採用する任意のオブジェクトが、マップに追加できる注釈に関する情報を提供できるようにするプロトコルです。 たとえば、を実装`MKAnnotation`するオブジェクトは、注釈の場所とそれに関連付けられているタイトルを提供します。
 
-この方法で、`MKAnnotation`注釈に付属している関連データを提供するプロトコルを使用します。 注釈自体の実際のビューが採用するオブジェクトのデータから構築された、`MKAnnotation`プロトコル。 たとえば、(次のスクリーン ショットに示す) と、注釈で、ユーザーがタップしたときに表示される引き出し線のテキストに由来します`Title`プロトコルを実装するクラスのプロパティ。
+これにより`MKAnnotation` 、プロトコルが、注釈に付随する関連データを提供するために使用されます。 注釈自体の実際のビューは、プロトコルを`MKAnnotation`採用するオブジェクトのデータから構築されます。 たとえば、次のスクリーンショットに示すように、ユーザーが注釈をタップしたときに表示される吹き出しのテキストは、 `Title`プロトコルを実装するクラスのプロパティから取得されます。
 
- [![](delegates-protocols-and-events-images/04-annotation-with-callout-sml.png "吹き出し注釈で、ユーザーがタップしたときのテキストの例")](delegates-protocols-and-events-images/04-annotation-with-callout.png#lightbox)
+ [![](delegates-protocols-and-events-images/04-annotation-with-callout-sml.png "ユーザーが注釈をタップしたときのコールアウトのテキストの例")](delegates-protocols-and-events-images/04-annotation-with-callout.png#lightbox)
 
-次のセクションで説明した[プロトコル Deep Dive](#protocols-deep-dive)Xamarin.iOS のプロトコルを抽象クラスにバインドします。 `MKAnnotation`プロトコル、バインドされているC#クラスの名前が`MKAnnotation`のサブクラスは、プロトコルの名前を模倣するために、 `NSObject`、CocoaTouch のルートの基本クラス。 プロトコルは、getter および setter 座標; のために実装が必要です。ただし、タイトルとサブタイトルは省略可能です。 そのため、`MKAnnotation`クラス、`Coordinate`プロパティは*抽象*を実装することを必要として、`Title`と`Subtitle`プロパティがマークされている*仮想*、次に示す、省略可能なことにします。
+次のセクション「[プロトコルの詳細](#protocols-deep-dive)」で説明されているように、Xamarin. iOS は、プロトコルを抽象クラスにバインドします。 プロトコルの場合、バインドC#されたクラス`MKAnnotation`には、プロトコルの名前を模倣する名前が付けられ`NSObject`ます。これは、CocoaTouch のルート基本クラスであるのサブクラスです。 `MKAnnotation` このプロトコルでは、座標に対して getter と setter が実装されている必要があります。ただし、タイトルとサブタイトルは省略可能です。 したがっ`MKAnnotation`て、クラス`Coordinate`では、プロパティは*abstract*であり、実装する`Title`必要があります。次に示すように、プロパティと`Subtitle`プロパティは*virtual*に設定され、省略可能になります。
 
 ```csharp
 [Register ("MKAnnotation"), Model ]
@@ -187,7 +187,7 @@ public abstract class MKAnnotation : NSObject
 }
 ```
 
-任意のクラスだけから派生することによって注釈データを提供できます`MKAnnotation`、少なくともいる限り、`Coordinate`プロパティを実装します。 たとえば、コンス トラクターで、座標を受け取り、タイトルの文字列を返しますサンプル クラスです。
+クラスは、 `Coordinate`少なくともプロパティが実装さ`MKAnnotation`れていれば、から派生するだけで注釈データを提供できます。 たとえば、次のサンプルクラスは、コンストラクター内の座標を受け取り、タイトルの文字列を返します。
 
 ```csharp
 /// <summary>
@@ -214,7 +214,7 @@ public class SampleMapAnnotation : MKAnnotation
 }
 ```
 
-バインドされているプロトコルを介してすべてのクラスをサブクラスとして持つ`MKAnnotation`注釈の表示を作成するときに、マップで使用される関連データを提供することができます。 マップに注釈を追加するに呼び出すだけです、`AddAnnotation`のメソッド、`MKMapView`の次のコードに示すように、インスタンスします。
+関連付けられているプロトコルを使用して、サブ`MKAnnotation`クラスが注釈のビューを作成するときにマップによって使用される関連データを提供できます。 マップに注釈を追加するには、次の`AddAnnotation`コードに示す`MKMapView`ように、インスタンスのメソッドを呼び出します。
 
 ```csharp
 //an arbitrary coordinate used for demonstration here
@@ -225,15 +225,15 @@ var sampleCoordinate =
 map.AddAnnotation (new SampleMapAnnotation (sampleCoordinate));
 ```
 
-ここで、マップ変数のインスタンスである、 `MKMapView`、マップ自体を表すクラスです。 `MKMapView`を使用して、`Coordinate`から派生したデータ、`SampleMapAnnotation`インスタンス マップ上の注釈のビューを配置します。
+ここでのマップ変数は、マップ自体`MKMapView`を表すクラスであるのインスタンスです。 は`MKMapView` `Coordinate` 、インスタンス`SampleMapAnnotation`から派生したデータを使用して、注釈ビューをマップに配置します。
 
-`MKAnnotation`プロトコルは、既知のセットを提供します。 それを実装する任意のオブジェクト間で、機能のコンシューマー (この場合のマップ) が必要はありません実装の詳細について知る。 これは、さまざまな利用可能なコメントを追加するマップに効率化します。
+プロトコル`MKAnnotation`は、実装の詳細について知る必要があるコンシューマー (この場合はマップ) を使用せずに、それを実装するオブジェクト全体で既知の一連の機能を提供します。 これにより、さまざまな注釈をマップに追加することが効率化されます。
 
-### <a name="protocols-deep-dive"></a>プロトコルの詳細情報
+### <a name="protocols-deep-dive"></a>プロトコルの詳細
 
-C#インターフェイスは、省略可能なメソッドをサポートしない、Xamarin.iOS のプロトコルを抽象クラスにマップされます。 そのため、プロトコルにバインドされている抽象クラスから派生して、必要なメソッドの実装によって Xamarin.iOS で Objective C でのプロトコルを採用することが実現されます。 これらのメソッドは、クラスの抽象メソッドとして公開されます。 仮想メソッドにバインドされるプロトコルからの省略可能なメソッド、C#クラス。
+インターフェイスC#はオプションのメソッドをサポートしないため、Xamarin は抽象クラスにプロトコルをマッピングします。 そのため、目的の C でプロトコルを採用するには、プロトコルにバインドされている抽象クラスから派生し、必要なメソッドを実装することによって、Xamarin. iOS で実現します。 これらのメソッドは、クラスの抽象メソッドとして公開されます。 プロトコルからのオプションのメソッドは、 C#クラスの仮想メソッドにバインドされます。
 
-たとえばの一部をここでは、`UITableViewDataSource`プロトコルにバインドされている Xamarin.iOS として。
+たとえば、Xamarin でバインドされている`UITableViewDataSource`プロトコルの一部を次に示します。
 
 ```csharp
 public abstract class UITableViewDataSource : NSObject
@@ -246,44 +246,44 @@ public abstract class UITableViewDataSource : NSObject
 }
 ```
 
-抽象クラスに注意してください。 Xamarin.iOS では、クラスをプロトコル/省略可能なために必要なメソッドをサポートするために抽象になります。
-Objective C のプロトコルとは異なり、(またはC#インターフェイス)、C#クラスは、多重継承をサポートしません。 デザインに影響C#プロトコルを使用しすることにより、通常のコードには、クラスが入れ子になった。 この問題についてについては、デリゲートのセクションで、このドキュメントで後述します。
+クラスは abstract であることに注意してください。 Xamarin では、クラスを抽象クラスにして、プロトコルのオプション/必須メソッドをサポートします。
+ただし、目標 C プロトコル (またはC#インターフェイス) とは異なりC# 、クラスは複数の継承をサポートしていません。 これは、プロトコルをC#使用するコードの設計に影響し、通常は入れ子になったクラスにつながります。 この問題の詳細については、このドキュメントで後述する「デリゲート」セクションを参照してください。
 
- `GetCell(…)` Objective C にバインドされている、抽象メソッドである*セレクター*、`tableView:cellForRowAtIndexPath:`の必要なメソッドは、`UITableViewDataSource`プロトコル。 セレクターは、メソッド名の Objective C 用語です。 必要に応じてメソッドを適用するには、Xamarin.iOS は、それを抽象として宣言します。 その他のメソッドでは、`NumberOfSections(…)`にバインドされた`numberOfSectionsInTableview:`します。 このメソッドは、Xamarin.iOS では宣言 virtual で上書きする省略可能なので、プロトコルでは、省略可能なC#します。
+ `GetCell(…)`は、 `UITableViewDataSource`プロトコルの必須メソッドである、目的 C*セレクター* `tableView:cellForRowAtIndexPath:`にバインドされた抽象メソッドです。 Selector は、メソッド名の目的の C 用語です。 必要に応じてメソッドを適用するために、Xamarin. iOS は抽象として宣言します。 もう1つの`NumberOfSections(…)`メソッドは、に`numberOfSectionsInTableview:`バインドされています。 このメソッドはプロトコルでは省略可能です。そのため、Xamarin ではこれを virtual として宣言C#しているので、でオーバーライドすることはできません。
 
-Xamarin.iOS は、すべての iOS バインドで処理されます。 ただし、OBJECTIVE-C からのプロトコルを手動でバインドする必要がある場合は、これを行うクラスを修飾することによって、`ExportAttribute`します。 これは、Xamarin.iOS 自体で使用される同じメソッドです。
+Xamarin では、すべての iOS バインドが自動的に処理します。 ただし、プロトコルを目的の C から手動でバインドする必要がある場合は、を使用`ExportAttribute`してクラスを装飾することによって、それを行うことができます。 これは、Xamarin によって使用される方法と同じです。
 
-Xamarin.iOS で Objective C 型をバインドする方法の詳細については、この記事を参照してください。 [Objective-c のバインド型](~/ios/platform/binding-objective-c/index.md)します。
+Xamarin の種類をバインドする方法の詳細については、「[バインディングの目的-c の型](~/ios/platform/binding-objective-c/index.md)」を参照してください。
 
-私たちありませんを通じてプロトコルでまだ、ただしです。 IOS の基礎として、使用 Objective C のデリゲートは、次のセクションのトピックでは、します。
+ただし、まだプロトコルを使用しているわけではありません。 また、iOS では、次のセクションのトピックである目的 C のデリゲートの基礎としても使用されています。
 
 ## <a name="delegates"></a>デリゲート
 
-iOS では、OBJECTIVE-C でデリゲートを使用して、1 つのオブジェクト パスのしくみ別に、委任パターンを実装します。 作業オブジェクトは、最初のオブジェクトのデリゲートです。 オブジェクトは、特定の処理が行われます後にメッセージを送信することによって作業を実行するには、そのデリゲートを指示します。 機能的には、メソッドを呼び出すことは、objective-c でこのようなメッセージを送信するC#します。 デリゲートは、これらの呼び出しに応答メソッドを実装し、そのため、アプリケーションに機能を提供します。
+iOS では、目的 C のデリゲートを使用して委任パターンを実装します。このパターンでは、1つのオブジェクトが別のオブジェクトに処理を渡します。 作業を行うオブジェクトは、最初のオブジェクトのデリゲートです。 オブジェクトは、特定の処理が行われた後にメッセージを送信することによって、処理を実行するようにデリゲートに指示します。 このようなメッセージを目的 C で送信することは、でC#メソッドを呼び出すことと機能的には同じです。 デリゲートは、これらの呼び出しに応答してメソッドを実装するため、アプリケーションに機能を提供します。
 
-デリゲートでは、サブクラスを作成しなくてもクラスの動作を拡張できます。 IOS でのアプリケーションは、1 つのクラスを呼び出して別、重要なアクションが発生した後と多くの場合、デリゲートを使用します。 たとえば、`MKMapView`クラスそのデリゲートへのユーザーがタップすると、マップに注釈がデリゲート クラスの作成者、アプリケーション内で応答する機会を提供します。 Xamarin.iOS でデリゲートをこの種類のデリゲートの使用状況の例を使用して、この記事の後半の例を操作できます。
+デリゲートを使用すると、クラスの動作を拡張することができます。サブクラスを作成する必要はありません。 IOS のアプリケーションは、重要なアクションが発生した後に、あるクラスが別のクラスにコールバックするときに、多くの場合、デリゲートを使用します。 たとえば、クラスは`MKMapView` 、ユーザーがマップ上で注釈をタップしたときにデリゲートにコールバックします。これにより、デリゲートクラスの作成者は、アプリケーション内で応答する機会を得ることができます。 この種類のデリゲートの使用例については、この記事の後半で説明します。たとえば、「Xamarin. iOS でのデリゲートの使用」をご覧ください。
 
-この時点と思うかもしれませんクラスがそのデリゲートを呼び出すには、どのような方法を決定する方法。 これは、プロトコルを使用する別の場所です。 通常は、デリゲートの使用可能なメソッドは、採用するプロトコル。
+この時点で、クラスがデリゲートで呼び出すメソッドをどのように決定するか疑問に思うかもしれません。 これは、プロトコルを使用するもう1つの場所です。 通常、デリゲートで使用できるメソッドは、使用するプロトコルによって取得されます。
 
-### <a name="how-protocols-are-used-with-delegates"></a>デリゲートでプロトコルを使用する方法
+### <a name="how-protocols-are-used-with-delegates"></a>デリゲートでのプロトコルの使用方法
 
-プロトコルを使用してマップを注釈の追加をサポートする以前方法を説明しました。
-プロトコルは、既知のクラスが特定のイベントが発生した、たとえば、ユーザーをマップに注釈をタップした後またはテーブルのセルを選択した後に呼び出すためのメソッドのセットを提供するも使用されます。 これらのメソッドを実装するクラスは、それらを呼び出すクラスのデリゲートと呼ばれます。
+ここでは、マップへの注釈の追加をサポートするためのプロトコルの使用方法について説明しました。
+また、プロトコルを使用して、特定のイベントが発生した後にクラスが呼び出す既知のメソッドのセットを提供します。たとえば、ユーザーがマップ上で注釈をタップした後や、テーブル内のセルを選択した後などです。 これらのメソッドを実装するクラスは、それらを呼び出すクラスのデリゲートと呼ばれます。
 
-委任をサポートするクラスは、デリゲートを実装するクラスが割り当てられているデリゲート プロパティを公開することで行います。 デリゲートを実装するメソッドは、特定のデリゲートを採用するプロトコルによって異なります。 `UITableView`メソッドを実装する、`UITableViewDelegate`プロトコルでの`UIAccelerometer`実装するメソッド、`UIAccelerometerDelegate`する対象の iOS 全体でその他のすべてのクラス、デリゲートを公開するのに、します。
+デリゲートをサポートするクラスは、デリゲートを実装するクラスが割り当てられるデリゲートプロパティを公開することによってこれを行います。 デリゲートに実装するメソッドは、特定のデリゲートによって適用されるプロトコルによって異なります。 メソッドについては`UIAccelerometer` 、メソッド`UITableViewDelegate`のプロトコルを実装します。これは`UIAccelerometerDelegate`、デリゲートを公開する iOS の他のクラスに対しても同様に実装します。 `UITableView`
 
-`MKMapView`前の例で使用したクラスは、呼び出すことは、デリゲートと呼ばれるプロパティもあります。 さまざまなイベントが発生した後。 デリゲート`MKMapView`の種類は`MKMapViewDelegate`します。
-選択すると後、に、注釈に応答する例が最初で間もなくみましょうこれ使用します強力と脆弱のデリゲートの違いについて説明します。
+前の例で示したクラスには、デリゲートと呼ばれるプロパティもあります。このプロパティは、さまざまなイベントが発生した後に呼び出されます。`MKMapView` の`MKMapView`デリゲートの型`MKMapViewDelegate`はです。
+ここでは、選択した後に注釈に応答する例をすぐに使用しますが、まず、厳密なデリゲートと弱いデリゲートの違いについて説明します。
 
-### <a name="strong-delegates-vs-weak-delegates"></a>Vs の厳密なデリゲート。弱い委任
+### <a name="strong-delegates-vs-weak-delegates"></a>厳密なデリゲートと弱いデリゲート
 
-これまでに紹介しましたデリゲートとは、強力なデリゲート、厳密に型指定された意味です。 Xamarin.iOS バインディングは、iOS では、すべてデリゲート プロトコルの厳密に型指定されたクラスに付属します。 ただし、iOS では、弱い委任の概念もあります。 OBJECTIVE-C プロトコルにバインドして、特定のデリゲート クラスをサブクラス化ではなく iOS することもできますたい、ExportAttribute でメソッドを装飾 NSObject から派生したクラスでプロトコル メソッドを自分でバインドを選択し、適切なセレクターを指定します。
-この方法で実行する場合は、デリゲート プロパティの代わりに WeakDelegate プロパティに、クラスのインスタンスを割り当てます。 弱い委任では、別の継承階層の下位デリゲート クラスを取得する柔軟性を提供します。 強力と脆弱の両方のデリゲートを使用する Xamarin.iOS の例を見てみましょう。
+これまでに確認したデリゲートは厳密なデリゲートであり、厳密に型指定されています。 Xamarin の iOS バインディングには、iOS のすべてのデリゲートプロトコルに対して厳密に型指定されたクラスが付属しています。 ただし、iOS には弱いデリゲートという概念もあります。 IOS では、特定のデリゲートに対して目的の C プロトコルにバインドされたクラスをサブクラス化するのではなく、NSObject から派生した任意のクラスのプロトコルメソッドを自分でバインドし、メソッドに ExportAttribute を使用してバインドすることもできます。適切なセレクターを指定します。
+この方法を使用する場合は、クラスのインスタンスを、Delegate プロパティではなく、"ユーザー設定の委任" プロパティに割り当てます。 弱いデリゲートを使用すると、デリゲートクラスを別の継承階層にする柔軟性が得られます。 厳密なデリゲートと弱いデリゲートの両方を使用する Xamarin の例を見てみましょう。
 
-### <a name="example-using-a-delegate-with-xamarinios"></a>Xamarin.iOS でデリゲートを使用した例
+### <a name="example-using-a-delegate-with-xamarinios"></a>Xamarin でデリゲートを使用する例
 
-コードを実行するには、この例では注釈をタップして、ユーザーへの応答にできるサブクラス`MKMapViewDelegate`にインスタンスを割り当てると、`MKMapView`の`Delegate`プロパティ。 `MKMapViewDelegate`プロトコルには、省略可能なメソッドのみが含まれています。
-そのため、すべてのメソッドが仮想、Xamarin.iOS では、このプロトコルにバインドされる`MKMapViewDelegate`クラス。 ユーザーが、注釈を選択すると、`MKMapView`インスタンスは送信、`mapView:didSelectAnnotationView:`そのデリゲートへのメッセージ。 オーバーライドする Xamarin.iOS では、これを処理するため、`DidSelectAnnotationView (MKMapView mapView, MKAnnotationView annotationView)`メソッドでは、このような MKMapViewDelegate サブクラスです。
+この例でユーザーが注釈をタップしたときにコードを実行するには`MKMapViewDelegate` 、をサブクラス化し`MKMapView`て`Delegate` 、のプロパティにインスタンスを割り当てることができます。 プロトコル`MKMapViewDelegate`には、省略可能なメソッドのみが含まれています。
+そのため、すべてのメソッドは、Xamarin. iOS `MKMapViewDelegate`クラスのこのプロトコルにバインドされている仮想です。 ユーザーが注釈`MKMapView`を選択すると、インスタンスはそのデリゲート`mapView:didSelectAnnotationView:`にメッセージを送信します。 これを Xamarin. iOS で処理するには、次の`DidSelectAnnotationView (MKMapView mapView, MKAnnotationView annotationView)`ように mkmapviewdelegate サブクラスのメソッドをオーバーライドする必要があります。
 
 ```csharp
 public class SampleMapDelegate : MKMapViewDelegate
@@ -308,9 +308,9 @@ public class SampleMapDelegate : MKMapViewDelegate
 }
 ```
 
-前に示した SampleMapDelegate クラスを含むコント ローラー内の入れ子になったクラスとして実装、`MKMapView`インスタンス。 Objective-c では、多くの場合、クラス内で直接、複数のプロトコルを採用するコント ローラーが表示されます。 ただし、Xamarin.iOS のクラスには、プロトコルがバインドされている、ために、厳密に型指定されたデリゲートを実装するクラスは、通常は入れ子になったクラスとして含まれています。
+上に示した SampleMapDelegate クラスは、インスタンスを`MKMapView`含むコントローラーで入れ子になったクラスとして実装されます。 目的 C では、多くの場合、コントローラーがクラス内で直接複数のプロトコルを採用していることがわかります。 ただし、プロトコルは Xamarin のクラスにバインドされるため、厳密に型指定されたデリゲートを実装するクラスは、通常、入れ子になったクラスとして含まれます。
 
-インプレース デリゲート クラスの実装を使用するだけで済みますコント ローラー内のデリゲートのインスタンスをインスタンス化し、それを割り当てる、`MKMapView`の`Delegate`プロパティは、ここに示すようにします。
+デリゲートクラスの実装を配置するには、次に示すように、コントローラーでデリゲートのインスタンスをインスタンス化し、 `MKMapView`その`Delegate`インスタンスをのプロパティに割り当てる必要があります。
 
 ```csharp
 public partial class Protocols_Delegates_EventsViewController : UIViewController
@@ -333,7 +333,7 @@ public partial class Protocols_Delegates_EventsViewController : UIViewController
 }
 ```
 
-派生したクラス、メソッドを自分でバインドする必要が、弱い委任を使用して、同じことを実現する、`NSObject`に割り当てると、`WeakDelegate`のプロパティ、`MKMapView`します。 以降、`UIViewController`から最終的に派生`NSObject`(Objective C のすべてのクラス CocoaTouch) などをメソッドにバインドされている単純に実装できる`mapView:didSelectAnnotationView:`コント ローラーで直接にコント ローラーに割り当てると`MKMapView`の`WeakDelegate`、余分な入れ子になったクラスの必要性を回避します。 次のコードでは、この方法を示しています。
+弱いデリゲートを使用して同じことを実現するには、から`NSObject`派生した任意のクラスでメソッドを自分でバインドし、 `WeakDelegate` `MKMapView`そのメソッドをのプロパティに割り当てる必要があります。 クラスは`UIViewController`最終的に`NSObject` `mapView:didSelectAnnotationView:`から派生したものであるため (CocoaTouch のすべての目的 C クラスと同様)、コントローラーに直接バインドされたメソッドを実装`MKMapView`し、コントローラーをに`WeakDelegate`割り当てることができます。では、追加の入れ子になったクラスは不要です。 次のコードは、この方法を示しています。
 
 ```csharp
 public partial class Protocols_Delegates_EventsViewController : UIViewController
@@ -355,13 +355,13 @@ public partial class Protocols_Delegates_EventsViewController : UIViewController
 }
 ```
 
-このコードを実行するときに、アプリケーションは、デリゲートが厳密に型指定されたバージョンを実行している場合とまったく動作します。 このコードから特典は、弱いデリゲートが厳密に型指定されたデリゲートを使用したときに作成された余分なクラスの作成を必要としないことです。 ただし、これは、タイプ セーフと引き換え。 渡されたセレクターで間違いをしたかどうか、 `ExportAttribute`、実行時まで確認はありません。
+このコードを実行すると、厳密に型指定されたデリゲートバージョンを実行したときとまったく同じように動作します。 このコードの利点は、弱いデリゲートでは、厳密に型指定されたデリゲートを使用したときに作成された追加のクラスを作成する必要がないことです。 ただし、これにはタイプセーフのコストが伴います。 に渡されたセレクターで間違いを犯した場合`ExportAttribute`、実行可能になるまではわかりません。
 
 ### <a name="events-and-delegates"></a>イベントとデリゲート
 
-デリゲートは、.NET のイベントの使用方法と同じように iOS でのコールバックに使用されます。 IOS を使用するには、Api と OBJECTIVE-C のデリゲートの使用方法よりのように思える .NET では、Xamarin.iOS は、デリゲートが iOS で使用されているさまざまな場所での .NET イベントを公開します。
+デリゲートは、.NET でのイベントの使用方法と同様に、iOS のコールバックに使用されます。 IOS Api を作成し、目的の C のデリゲートを使用する方法が .NET と似ているようにするために、ios ではデリゲートが多くの場所で .NET に公開されています。
 
-以前の実装ではたとえば、場所、`MKMapViewDelegate`に応答した .NET イベントを使用して選択したコメントが Xamarin.iOS で実装することもできます。 その場合は、イベントで定義される`MKMapView`と呼ばれる、`DidSelectAnnotationView`します。 必要があります、`EventArgs`型のサブクラス`MKMapViewAnnotationEventsArgs`します。 `View`プロパティの`MKMapViewAnnotationEventsArgs`注釈ビューへの参照を提供する、同じ実装を行うことがこれからが前に示すように、ここで。
+たとえば、以前の実装では、 `MKMapViewDelegate`選択した注釈に応答したが .net イベントを使用して Xamarin に実装することもできます。 その場合、イベントはで`MKMapView`定義され、と呼ば`DidSelectAnnotationView`れます。 これには、 `EventArgs`型`MKMapViewAnnotationEventsArgs`のサブクラスがあります。 の`View`プロパティは`MKMapViewAnnotationEventsArgs` 、次に示すように、注釈ビューへの参照を提供します。ここでは、前に示したのと同じ実装を続行できます。
 
 ```csharp
 map.DidSelectAnnotationView += (s,e) => {
@@ -380,14 +380,14 @@ map.DidSelectAnnotationView += (s,e) => {
 
 ## <a name="summary"></a>まとめ
 
-この記事では、Xamarin.iOS でのイベント、プロトコル、およびデリゲートを使用する方法について説明します。 Xamarin.iOS がコントロールの通常の .NET スタイルのイベントを公開する方法を説明しました。
-異なる方法を含めた、OBJECTIVE-C プロトコルの学習次C#インターフェイスと Xamarin.iOS での使用方法。 最後に、Xamarin.iOS の観点から OBJECTIVE-C でデリゲートを調査します。 Xamarin.iOS の仕組み両方厳密と弱い型指定されたデリゲート、および .NET イベント メソッドをデリゲートにバインドする方法を説明しました。
+この記事では、Xamarin. iOS でイベント、プロトコル、およびデリゲートを使用する方法について説明します。 Xamarin では、コントロールの通常の .NET スタイルイベントを公開する方法を説明しました。
+次に、目的の C プロトコルについて学習しました。 C#これには、インターフェイスとの違いや、Xamarin で使用する方法などがあります。 最後に、Xamarin. iOS の観点から目的の C のデリゲートを調べます。 Xamarin では、厳密に型指定されたデリゲートと、.NET イベントをデリゲートメソッドにバインドする方法の両方をサポートしています。
 
 ## <a name="related-links"></a>関連リンク
 
-- [プロトコル、デリゲート、およびイベント (サンプル)](https://developer.xamarin.com/samples/monotouch/Protocols_Delegates_Events/)
+- [プロトコル、デリゲート、およびイベント (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/protocols-delegates-events)
 - [Hello, iOS](~/ios/get-started/hello-ios/index.md)
-- [OBJECTIVE-C のバインドの種類](~/ios/platform/binding-objective-c/index.md)
-- [Objective C のプログラミング言語](https://developer.apple.com/library/ios/#documentation/Cocoa/Conceptual/ObjectiveC/Introduction/introObjectiveC.html)
-- [Xcode 4 でのユーザー インターフェイスの設計](https://developer.apple.com/library/ios/#documentation/IDEs/Conceptual/Xcode4TransitionGuide/InterfaceBuilder/InterfaceBuilder.html)
-- [IOS 用の核となるアプリケーションの機能](https://developer.apple.com/library/ios/#DOCUMENTATION/General/Conceptual/Devpedia-CocoaApp/TargetAction.html)
+- [バインディングの目的 C の型](~/ios/platform/binding-objective-c/index.md)
+- [目的 C プログラミング言語](https://developer.apple.com/library/ios/#documentation/Cocoa/Conceptual/ObjectiveC/Introduction/introObjectiveC.html)
+- [Xcode 4 でのユーザーインターフェイスの設計](https://developer.apple.com/library/ios/#documentation/IDEs/Conceptual/Xcode4TransitionGuide/InterfaceBuilder/InterfaceBuilder.html)
+- [IOS のコアアプリケーションコンピテンシー](https://developer.apple.com/library/ios/#DOCUMENTATION/General/Conceptual/Devpedia-CocoaApp/TargetAction.html)

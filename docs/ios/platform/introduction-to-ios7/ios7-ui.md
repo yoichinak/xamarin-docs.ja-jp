@@ -1,56 +1,56 @@
 ---
 title: iOS 7 ユーザー インターフェイスの概要
-description: iOS 7 では、多くのユーザー インターフェイスの変更について説明します。 この記事では、いくつかのコントロールの外観と新しいデザインをサポートする Api の両方は、大規模な変更の強調表示されます。
+description: iOS 7 では、大量のユーザーインターフェイスの変更が導入されています。 この記事では、コントロールの外観と新しいデザインをサポートする Api の両方において、大きな変更点をいくつか取り上げます。
 ms.prod: xamarin
 ms.assetid: FADCEA7C-8968-42A1-9E9E-F4BBAB7BCF2C
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 132265c27e1d1ba3b8f3fc8db10d7b3cfa746197
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 5ebfa7348e13e5b168dd7f2decbef921bd7d69e3
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61039134"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68652120"
 ---
 # <a name="ios-7-user-interface-overview"></a>iOS 7 ユーザー インターフェイスの概要
 
-_iOS 7 では、多くのユーザー インターフェイスの変更について説明します。この記事では、いくつかのコントロールの外観と新しいデザインをサポートする Api の両方は、大規模な変更の強調表示されます。_
+_iOS 7 では、大量のユーザーインターフェイスの変更が導入されています。この記事では、コントロールの外観と新しいデザインをサポートする Api の両方において、大きな変更点をいくつか取り上げます。_
 
-iOS 7 では、chrome 経由でコンテンツについて説明します。 IOS 7 のユーザー インターフェイス要素の強調 chrome 余分な枠線、ステータス バー、およびコンテンツ ビューで使用される画面領域の量を減らすのナビゲーション バーなどの属性を削除することで。 Ios 7 で全画面を使用するコンテンツが設計されています。
+iOS 7 では、chrome 上のコンテンツに焦点を当てています。 IOS 7 のユーザーインターフェイス要素は、不要な境界線、ステータスバー、ナビゲーションバーなどの属性を削除することで chrome を強調します。これにより、コンテンツビューで使用される画面領域の量が減ります。 IOS 7 では、コンテンツは画面全体を使用するように設計されています。
 
-iOS 7 の他のいくつかの変更が導入されています。 色がボタンの境界線などの属性の代わりのユーザー インターフェイス要素を区別するために使用されます。 ナビゲーション バーやステータス バーなどの多くの要素整いましたぼかしたして半透明または透過的のいずれかのコンテンツ ビューを使用して、その下にある領域を取得します。 これらのコンテンツ ビューは、ユーザー インターフェイスで奥行き感を伝える、ぼかしバーをレンダリングします。
+iOS 7 では、他にもいくつかの変更が導入されています。 color は、ボタンの境界線などの属性の代わりに、ユーザーインターフェイス要素を区別するために使用されます。 ナビゲーションバーやステータスバーなどの多くの要素は、ぼやけて半透明または透明になっています。コンテンツビューでは、その下に領域があります。 これらのコンテンツビューは、ユーザーインターフェイスの奥行を伝える、ぼやけたバーに表示されます。
 
-この記事では、iOS 7 とさまざまな Api デザインに関連する、新しいユーザー インターフェイスでのユーザー インターフェイス要素への変更のいくつかについて説明します。
+この記事では、iOS 7 のユーザーインターフェイス要素に加えられたいくつかの変更と、新しいユーザーインターフェイス設計に関連するさまざまな Api について説明します。
 
-## <a name="view-and-control-changes"></a>ビューとコントロールの変更
+## <a name="view-and-control-changes"></a>変更の表示と制御
 
-すべての UIKit でビューは、iOS 7 の新しいルック アンド フィールに準拠しています。 このセクションには、いくつかの新しい UI をサポートするために変更された関連する Api と同様に、これらのビューへの変更が強調表示されます。
+UIKit のすべてのビューは、iOS 7 の新しいルックアンドフィールに準拠しています。 このセクションでは、これらのビューに加えられた変更の一部と、新しい UI をサポートするように変更された関連の Api について説明します。
 
 ### <a name="uibutton"></a>UIButton
 
-作成したボタン、`UIButton`クラスは、次に示すようボーダーレス、既定では、背景がないのではようになりました。
+`UIButton`クラスから作成されたボタンは、次に示すように、既定では非表示になります。
 
- ![](ios7-ui-images/button.png "サンプル UIButton")
+ ![](ios7-ui-images/button.png "UIButton のサンプル")
 
-`UIButtonType.RoundedRect`スタイルが非推奨とされました。 IOS 7 で使用する場合`UIButtonType.RoundedRect`なります`UIButtonType.System`を使用しているが生成されますなし、バック グラウンドまたは表示されているエッジは、既定のボタン スタイルの上に示すようにします。
+スタイル`UIButtonType.RoundedRect`は非推奨とされました。 IOS 7 で使用すると`UIButtonType.RoundedRect` 、が使用`UIButtonType.System`されます。これにより、上に示したように、背景または表示されていない既定のボタンスタイルが生成されます。
 
 ### <a name="uibarbuttonitem"></a>UIBarButtonItem
 
-ような`UIButton`、ボタン バーがボーダーレス、既定では、新しいも`UIBarButtonItemStyle.Plain`次に示すスタイル。
+と同様に、バーボタンも、次のように新しい`UIBarButtonItemStyle.Plain`スタイルを既定として表示されます。 `UIButton`
 
- ![](ios7-ui-images/barbuttonplain.png "サンプル UIBarButtonItem")
+ ![](ios7-ui-images/barbuttonplain.png "UIBarButtonItem のサンプル")
 
-さらに、`UIBarButtonItemStyle.Bordered`スタイルが非推奨とされました。 設定`UIBarButtonItemStyle.Bordered`iOS 7 結果で、`UIBarButtonItemStyle.Plain`使用されているスタイルを設定します。
+また、スタイル`UIBarButtonItemStyle.Bordered`は非推奨とされます。 IOS `UIBarButtonItemStyle.Bordered` 7 でを設定すると、 `UIBarButtonItemStyle.Plain`スタイルが使用されます。
 
-`UIBarButtonItemStyle.Done`スタイルが非推奨されていません。 ただしはも作成ボーダーレス ボタンに示すように、太字のテキスト スタイルでのみ。
+スタイル`UIBarButtonItemStyle.Done`が非推奨とされていません。 ただし、次のように太字のテキストスタイルでのみ、境界線なしのボタンが作成されます。
 
- ![](ios7-ui-images/barbuttondone.png "元に戻すスタイルでサンプル UIBarButtonItem")
+ ![](ios7-ui-images/barbuttondone.png "Done スタイルのサンプルの UIBarButtonItem")
 
 ### <a name="uialertview"></a>UIAlertView
 
-アラートの表示をに加えて新しい iOS 7 のルック アンド フィールのスタイルの変更には、サブビューを使用してカスタマイズをサポートしません。 場合でも`UIAlertView`継承`UIView`を呼び出すと、`AddSubview`上、`UIAlertView`も何も起こりません。 次に例を示します。
+新しい iOS 7 のルックアンドフィールのスタイル変更に加え、アラートビューではサブビューを使用したカスタマイズがサポートされなくなりました。 `UIAlertView`を`AddSubview`継承する場合`UIAlertView`でも、でを呼び出すと効果はありません。 `UIView` 次に例を示します。
 
 ```csharp
 UIBarButtonItem button = new UIBarButtonItem ("Bar Button", UIBarButtonItemStyle.Plain, (s,e) =>
@@ -66,89 +66,89 @@ UIBarButtonItem button = new UIBarButtonItem ("Bar Button", UIBarButtonItemStyle
 });
 ```
 
-これが生成されます標準のアラートの表示が無視され、サブビューを次に示すよう。
+次のように、標準のアラートビューが生成されます。サブビューは無視されます。
 
- ![](ios7-ui-images/alert.png "サンプルの\"uialertview\"")
+ ![](ios7-ui-images/alert.png "UIAlertView のサンプル")
  
- メモ:"Uialertview"は、iOS 8 で非推奨とされました。 ビュー、[アラート コント ローラー](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/alertcontroller)レシピ iOS 8 以降、アラートの表示を使用します。
+ メモ:UIAlertView は、iOS 8 では非推奨となりました。 IOS 8 以降のアラートビューを使用して、[警告コントローラー](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/alertcontroller)のレシピを表示します。
 
 ### <a name="uisegmentedcontrol"></a>UISegmentedControl
 
-IOS 7 でのセグメント化されたコントロールは透過的であり、濃淡の色をサポートします。 テキストと境界線の色の濃淡の色が使用されます。 セグメントを選択すると、色が次に示すように、選択した区分を強調表示に使用する濃淡の色を背景とテキスト間スワップされます。
+IOS 7 のセグメント化されたコントロールは透明で、着色色をサポートします。 濃淡の色は、テキストと境界線の色に使用されます。 セグメントを選択すると、次に示すように、選択したセグメントを強調表示するために使用する濃淡の色で、背景とテキストの色が入れ替わります。
 
  ![](ios7-ui-images/segmentedcontrol.png "サンプル UISegmentedControl")
 
-さらに、 `UISegmentedControlStyle` iOS 7 では非推奨とされます。
+また、は`UISegmentedControlStyle` iOS 7 では非推奨となりました。
 
-### <a name="picker-views"></a>ビューの選択
+### <a name="picker-views"></a>ピッカービュー
 
-ピッカー ビュー用の API が大きく変更されています。ただし、iOS 7 の設計のガイドラインは、以前の iOS のように、ナビゲーション コント ローラーのスタックにプッシュされますまたは新しいコント ローラーを使用して、画面の下部にあるが、バージョンを使用するように入力ビューからアニメーションを実行するのではなく、ピッカー ビューは、インラインに表示する必要がありますを今すぐ状態します。 これは、システムの予定表アプリで確認できます。
+ピッカービューの API はほとんど変更されていません。ただし、iOS 7 の設計ガイドラインは、前の iOS バージョンと同様に、画面の下部から、またはナビゲーションコントローラーのスタックにプッシュされた新しいコントローラーを使用して、入力ビューとしてではなくインラインで表示する必要があります。 これは、システムカレンダーアプリで見ることができます。
 
- ![](ios7-ui-images/inlinepicker.png "これは、システムの予定表アプリで確認できます。")
+ ![](ios7-ui-images/inlinepicker.png "これは、システム予定表アプリで見ることができます。")
 
 ### <a name="uisearchdisplaycontroller"></a>UISearchDisplayController
 
-ナビゲーション内で検索バーが表示されるようになりましたバーの場合に、`UISearchDisplayController.DisplaysSearchBarInNavigationBar`プロパティの設定を true にします。 False - 既定値に設定すると、検索コント ローラーが表示される場合、ナビゲーション バーは表示されません。
+`UISearchDisplayController.DisplaysSearchBarInNavigationBar`プロパティが true に設定されている場合、ナビゲーションバー内に検索バーが表示されるようになりました。 False に設定した場合-既定では、検索コントローラーが表示されるときにナビゲーションバーが非表示になります。
 
-次のスクリーン ショット内で検索バー、 `UISearchDisplayController`:
+次のスクリーンショットは、 `UISearchDisplayController`内の検索バーを示しています。
 
- ![](ios7-ui-images/searchbar.png "サンプル UISearchDisplayController")
+ ![](ios7-ui-images/searchbar.png "UISearchDisplayController サンプル")
 
 ### <a name="uitableview"></a>UITableView
 
-に関する Api`UITableView`は、主に変更されません。 新しいユーザー インターフェイスの設計に準拠するように、スタイルが大幅に変更された、します。 内部のビュー階層は、若干異なるもあります。 この変更は、ほとんどのアプリに影響はありませんが、注意すべきことです。
+の api `UITableView`は主に変更されていませんが、新しいユーザーインターフェイスの設計に合わせてスタイルが大幅に変更されています。 内部ビュー階層も多少異なります。 この変更はほとんどのアプリには影響しませんが、注意すべき点です。
 
 #### <a name="grouped-table-style"></a>グループ化されたテーブルのスタイル
 
-グループ化されたスタイルが変更されたで更新内容を次に示すように、画面の端に拡張するようになりました。
+グループ化されたスタイル変更が更新され、次に示すように、コンテンツが画面の端に拡張されました。
 
- ![](ios7-ui-images/table1.png "サンプルのグループ化されたテーブルのスタイル")
+ ![](ios7-ui-images/table1.png "グループ化されたテーブルスタイルのサンプル")
 
 #### <a name="separatorinset"></a>SeparatorInset
 
-行区切り記号を設定してインデントようになりましたことができます、`UITableVIewCell.SeparatorInset`プロパティ。 たとえば、次のコードは、左端からのセルをインデントする使用は。
+プロパティを設定することにより、 `UITableVIewCell.SeparatorInset`行の区切り記号をインデントできるようになりました。 たとえば、次のコードは、左端からセルにインデントを設定するために使用されます。
 
 ```csharp
 cell.SeparatorInset = new UIEdgeInsets (0, 50, 0, 0);
 ```
 
-次に示すインデントされたセルをテーブル ビューが生成されます。
+これにより、次のようにインデントされたセルを含むテーブルビューが生成されます。
 
- ![](ios7-ui-images/separatorinset.png "サンプルの UITableView SeparatorInset")
+ ![](ios7-ui-images/separatorinset.png "UITableView SeparatorInset のサンプル")
 
-#### <a name="table-button-styles"></a>テーブルのボタンのスタイル
+#### <a name="table-button-styles"></a>テーブルボタンのスタイル
 
-テーブル ビューで使用されるさまざまなボタンがすべて変更します。 次のスクリーン ショットでは、編集モードのテーブル ビューが表示されます。
+テーブルビューで使用されるさまざまなボタンはすべて変更されています。 次のスクリーンショットは、編集モードのテーブルビューを示しています。
 
- ![](ios7-ui-images/table2.png "このスクリーン ショットは、編集モードのテーブル ビューを表示します")
+ ![](ios7-ui-images/table2.png "このスクリーンショットは、編集モードのテーブルビューを示しています。")
 
-### <a name="additional-control-changes"></a>その他のコントロールの変更
+### <a name="additional-control-changes"></a>追加の制御変更
 
-その他の UIKit コントロールは、スライダー、スイッチ ステッパなども変更されました。 これらの変更は、純粋なビジュアルです。 詳細については、Apple を参照してください[iOS 7 UI 移行ガイド](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/TransitionGuide/index.html)します。
+他の UIKit コントロールも、スライダー、スイッチ、steppers など、変更されています。 これらの変更は純粋にビジュアルです。 詳細については、「Apple の[iOS 7 UI 遷移ガイド」](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/TransitionGuide/index.html)を参照してください。
 
-## <a name="general-user-interface-changes"></a>一般的なユーザー インターフェイスの変更
+## <a name="general-user-interface-changes"></a>一般的なユーザーインターフェイスの変更
 
-IOS 7 UIKit の変更に加えて、さまざまな UI を視覚的な変更が導入されていますなど。
+UIKit に加えられた変更に加え、iOS 7 では、次のようなさまざまな視覚変更が UI に導入されています。
 
--  全画面表示のコンテンツ
+-  全画面コンテンツ
 -  バーの外観
 -  濃淡の色
 
 <a name="fullscreen" />
 
-### <a name="full-screen-content"></a>全画面表示のコンテンツ
+### <a name="full-screen-content"></a>全画面コンテンツ
 
-iOS 7 は、アプリケーションの画面全体を活用できるようにする設計されています。 状態とナビゲーション バーの下に表示されるとは対照的に存在する場合、ビュー コント ローラーはこれで、ステータス バーとナビゲーション バーのオーバー ラップ表示されます。
+iOS 7 は、アプリケーションで画面全体を利用できるように設計されています。 ビューコントローラーがステータスバーとナビゲーションバーに重なって表示されるようになりました。ステータスバーとナビゲーションバーがある場合は、ステータスバーとナビゲーションバーの下に表示されません。
 
-IOS 7 のアプリケーションを準備するときサブビューを使用して視覚的に配置し直すことができます*Interface Builder*または*Xamarin iOS Designer*します。 全画面表示のコンテンツをプログラムで処理に役立つ、新しい Api のいずれかを使用できます。 以下は、これらの Api が導入されました。
+IOS 7 用にアプリケーションを準備するときに、 *Interface Builder*または*Xamarin iOS Designer*を使用して、サブビューを視覚的に再調整できます。 新しい Api の1つを使用して、全画面表示のコンテンツをプログラムで処理することもできます。 これらの Api は次のように導入されています。
 
-#### <a name="toplayoutguide-and-bottomlayoutguide"></a>TopLayoutGuide と BottomLayoutGuide
+#### <a name="toplayoutguide-and-bottomlayoutguide"></a>TopLayoutGuide と下端の Layoutguide
 
- `TopLayoutGuide` `BottomLayoutGuide` 、半透明でコンテンツが重複しないようにする必要があります、ビューの開始または終了するには、場所の参照として使用`UIKit`バーで、次の例のように。
+ `TopLayoutGuide`と`BottomLayoutGuide`は、次の例のように、コンテンツが半透明`UIKit`バーに重ならないように、ビューの開始位置または終了位置の参照として機能します。
 
- [![](ios7-ui-images/clipped.png "半透明の UIKit バーによって重複しないコンテンツのサンプル")](ios7-ui-images/clipped.png#lightbox)
+ [![](ios7-ui-images/clipped.png "半透明な UIKit バーに重ならないサンプルコンテンツ")](ios7-ui-images/clipped.png#lightbox)
 
-これらの Api は、画面の上下からビューの距離を計算に使用することができ、コンテンツ配置を調整します。
+これらの Api を使用して、画面の上部または下部からビューの移動距離を計算し、それに応じてコンテンツの配置を調整できます。
 
 ```csharp
 public override void ViewDidLayoutSubviews ()
@@ -164,32 +164,32 @@ public override void ViewDidLayoutSubviews ()
 }
 ```
 
-設定を上記で計算された値を使用できます、`ImageView`の画像全体が表示されるよう、画面の上部からの距離。
+上で計算した値を使用して`ImageView`、画面の上部からの移動を設定し、イメージ全体が表示されるようにすることができます。
 
- [![](ios7-ui-images/good2.png "画面の上部から ImageViews 変位の例")](ios7-ui-images/good2.png#lightbox)
+ [![](ios7-ui-images/good2.png "画面の上部からの ImageViews の移動の例")](ios7-ui-images/good2.png#lightbox)
 
-参照してください、 [ImageViewer](https://developer.xamarin.com/samples/mobile/iOS7-ui-updates)実際のサンプルです。
+実際のサンプルについては、 [Imageviewer](https://docs.microsoft.com/samples/xamarin/ios-samples/ios7-ui-updates/)を参照してください。
 
-ビューを読み取ろうとしたため、階層に追加した後、変位値が動的に生成される`TopLayoutGuide`と`BottomLayoutGuide`値`ViewDidLoad`は 0 を返します。 ビューが読み込まれた後の例については、値の計算、`ViewDidLayoutSubviews`します。
+ディスプレイスメント値は、ビューが階層に追加された後に動的に生成されるため`TopLayoutGuide` 、 `BottomLayoutGuide`との`ViewDidLoad`値を読み取ろうとすると0が返されます。 など、ビューが読み込まれた後の値を計算し`ViewDidLayoutSubviews`ます。
 
 > [!IMPORTANT]
-> `TopLayoutGuide` `BottomLayoutGuide`新しい安全領域レイアウトを優先して、iOS 11 で非推奨とされます。 Apple が安全な領域を使用してを iOS 11 より前の iOS バージョンと互換性があると述べています。 詳細については、次を参照してください。、 [iOS 11 のアプリの更新](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md#fullscreen)ガイド。
+> `TopLayoutGuide`と`BottomLayoutGuide`は、新しいセーフエリアレイアウトを優先するため、iOS 11 では非推奨とされます。 この安全領域の使用は、iOS 11 より前の iOS バージョンと互換性があることが Apple によって示されています。 詳細については、「 [iOS 11 用アプリの更新](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md#fullscreen)」ガイドを参照してください。
 
 #### <a name="edgesforextendedlayout"></a>EdgesForExtendedLayout
 
-この API は、ビューのどの外枠を拡張する、全画面表示に関係なくバーの透明度を指定します。 IOS 7 でのナビゲーション バーとツールバーが表示の上に配置、コント ローラーのビュー - とは異なり以前の iOS のバージョンでは、同じ領域を行うしなかった場所。 IOS 7 写真のアプリケーションは、既定値を示しています。`UIViewController.EdgesForExtendedLayout`値、`UIRectEdge.All`します。 この設定は、重複している全画面表示の効果を作成、コンテンツ ビューですべての 4 辺を入力します。
+この API は、バーの透明度に関係なく、ビューの端を全画面表示に拡張する必要があることを指定します。 IOS 7 では、以前の iOS バージョンとは異なり、ナビゲーションバーとツールバーがコントローラーのビューの上に表示されます。これは、同じ領域を占有していない場合です。 IOS 7 Photos アプリケーションでは、既定`UIViewController.EdgesForExtendedLayout` `UIRectEdge.All`値のが示されています。 この設定により、ビュー内の4つのすべてのエッジがコンテンツと共に塗りつぶされ、重なった全画面効果が作成されます。
 
  [![](ios7-ui-images/photos.png "サンプル EdgesForExtendedLayout")](ios7-ui-images/photos.png#lightbox)
 
-画像をタップして、バーを削除し、イメージの全画面を示しています。
+イメージをタップするとバーが削除され、イメージが全画面に表示されます。
 
- [![](ios7-ui-images/photos2.png "削除のバーと EdgesForExtendedLayout")](ios7-ui-images/photos2.png#lightbox)
+ [![](ios7-ui-images/photos2.png "バーが削除された EdgesForExtendedLayout")](ios7-ui-images/photos2.png#lightbox)
 
-全画面表示のコンテンツは、既定値であるために、iOS 6 用に構成されたアプリケーションは、次のスクリーン ショットのように、クリップのビューの一部が完成します。
+全画面コンテンツが既定であるため、iOS 6 用に構成されたアプリケーションには、次のスクリーンショットのように、ビューの一部がクリップされます。
 
- [![](ios7-ui-images/clipped.png "IOS 6 用に構成されたアプリは、ビューのスクリーン ショットのように、クリップの一部になります")](ios7-ui-images/clipped.png#lightbox)
+ [![](ios7-ui-images/clipped.png "IOS 6 用に構成されたアプリには、次のスクリーンショットのようにビューの一部が表示されます。")](ios7-ui-images/clipped.png#lightbox)
 
-変更、`UIViewController.EdgesForExtendedLayout`プロパティは、この動作を調整します。 ビューいっぱいにならないすべてのエッジでは、ナビゲーションまたは (向き) でツールバーが占有する領域のコンテンツを表示するビューを回避するように指定できます。
+プロパティを`UIViewController.EdgesForExtendedLayout`変更すると、この動作が調整されます。 ビューが端にならないように指定できます。そのため、ビューでは、ナビゲーションまたはツールバーによって占有される領域にコンテンツが表示されないようにします (すべての向き)。
 
 ```csharp
 if (UIDevice.CurrentDevice.CheckSystemVersion (7, 0)) { 
@@ -197,25 +197,25 @@ if (UIDevice.CurrentDevice.CheckSystemVersion (7, 0)) {
 }
 ```
 
-当社のアプリで思いますビューがもう一度再配置される画像全体が表示されるよう。
+アプリでは、ビューが再度配置されていることがわかります。そのため、イメージ全体が表示されます。
 
- [![](ios7-ui-images/good.png "表示されるイメージ全体の例")](ios7-ui-images/good.png#lightbox)
+ [![](ios7-ui-images/good.png "イメージ全体を表示する例")](ios7-ui-images/good.png#lightbox)
 
-中の影響に注意してください、`TopLayoutGuide/BottomLayoutGuide`と`EdgesForExtendedLayout`Api に似ていますが、本来は異なる目標を入力します。 変更、`EdgesForExtendedLayout`から既定の設定は、6、iOS 用に設計されたアプリケーションでクリップされたビューを解決できますが、適切な iOS 7 の設計する必要があります全画面表示の見た目を優先して、全画面表示エクスペリエンスを表示、証明書利用者に提供`TopLayoutGuide`と`BottomLayoutGuide`がユーザーの位置に置いたりに操作を意図してコンテンツを正しく配置します。
+`TopLayoutGuide/BottomLayoutGuide` と`EdgesForExtendedLayout` api の効果は似ていますが、異なる目標を設定することを意図しています。 既定値から`TopLayoutGuide` 設定を変更すると、ios6向けに設計されたアプリケーションでは、クリップされたビューが修正される場合がありますが、適切なios7の設計では、全画面表示を使用して、およびに依存する全画面表示エクスペリエンスを提供する必要があります。`EdgesForExtendedLayout` `BottomLayoutGuide`コンテンツを適切に配置して、ユーザーのために快適に操作できるようにします。
 
-参照してください、 [ImageViewer](https://developer.xamarin.com/samples/mobile/iOS7-ui-updates)実際のサンプルです。
+実際のサンプルについては、 [Imageviewer](https://docs.microsoft.com/samples/xamarin/ios-samples/ios7-ui-updates/)を参照してください。
 
-### <a name="status-and-navigation-bars"></a>状態とナビゲーション バー
+### <a name="status-and-navigation-bars"></a>ステータスバーとナビゲーションバー
 
-ステータス バーとナビゲーション バーは、透明度が表示されます。 ステータス バーはツールバーやナビゲーション バーは半透明とユーザー インターフェイスで奥行き感を伝達するためにぼかし透明にします。 次のスクリーン ショットを示しますこのぼかしや透明度、コレクション ビューの青色の背景色が、状態とナビゲーション バーを薄い青の外観を与えることを示しています。
+ステータスバーとナビゲーションバーは、透明度を使用してレンダリングされます。 ステータスバーは透明になっていますが、ツールバーとナビゲーションバーは半透明で、ユーザーインターフェイスの奥行を伝えるためにぼやけています。 次のスクリーンショットは、このぼかしと透明度を示しています。コレクションビューの青の背景色は、ステータスバーとナビゲーションバーの両方を通じて表示され、薄い青の外観になっています。
 
- ![](ios7-ui-images/transparent-navbar.png "サンプルの状態とナビゲーション バーのぼかし効果")
+ ![](ios7-ui-images/transparent-navbar.png "サンプルステータスとナビゲーションバーのぼかし")
 
-#### <a name="status-bar-styles"></a>ステータス バーのスタイル
+#### <a name="status-bar-styles"></a>ステータスバーのスタイル
 
-ぼかし効果と透明度、と共に、ステータス バーの前景色は光または暗い (濃いされている既定値) のいずれかを指定できます。 ビュー コント ローラーから、ステータス バーのスタイルを設定できます。 また、ビュー コント ローラーは、ステータス バーを非表示にするか、または表示するかどうかを設定していることもできます。
+ぼかしと透明度と共に、ステータスバーの前景は明るいまたは暗い (既定値はダーク) のいずれかになります。 ステータスバーのスタイルは、ビューコントローラーから設定できます。 ビューコントローラーは、ステータスバーを非表示にするか表示するかを設定することもできます。
 
-たとえば、次のコードの上書き、`PreferredStatusBarStyle`して、ステータス バーのライトの前景色を表示するビュー コント ローラーのメソッド。
+たとえば、次のコードは、ビュー `PreferredStatusBarStyle`コントローラーのメソッドをオーバーライドして、ステータスバーが明るい前景を表示するようにします。
 
 ```csharp
 public override UIStatusBarStyle PreferredStatusBarStyle ()
@@ -224,11 +224,11 @@ public override UIStatusBarStyle PreferredStatusBarStyle ()
 }
 ```
 
-これにより、ステータス バーに表示される以下のとおり。
+これにより、ステータスバーが次のように表示されます。
 
- ![](ios7-ui-images/light-status-bar.png "ステータス バーのサンプル")
+ ![](ios7-ui-images/light-status-bar.png "ステータスバーの例")
 
-ビュー コント ローラーのコードからのステータス バーを非表示にするにはオーバーライド`PrefersStatusBarHidden`以下に示すようにします。
+ビューコントローラーのコードからステータスバーを非表示にするに`PrefersStatusBarHidden`は、次のようにをオーバーライドします。
 
 ```csharp
 public override bool PrefersStatusBarHidden ()
@@ -237,32 +237,32 @@ public override bool PrefersStatusBarHidden ()
 }
 ```
 
-これにより、ステータス バーを非表示になります。
+これにより、ステータスバーが非表示になります。
 
- ![](ios7-ui-images/status-bar-hidden.png "ステータス バーを非表示")
+ ![](ios7-ui-images/status-bar-hidden.png "ステータスバーの非表示")
 
 ### <a name="tint-color"></a>濃淡の色
 
-ボタンは、chrome のないテキストとして表示されるようになりました。 新しいテキストの色を制御できます`TintColor`プロパティ`UIView`します。 設定、`TintColor`色を設定するビューの全体のビュー階層に適用します。 適用する、 `TintColor`、アプリ全体の設定、`Window`します。 使用して、濃淡の色が変更されたときを検出することも、`UIView.TintColorDidChange`メソッド。
+ボタンが chrome レステキストとして表示されるようになりました。 テキストの色は、の`TintColor` `UIView`新しいプロパティを使用して制御できます。 を`TintColor`設定すると、ビューを設定するビューのビュー階層全体に色が適用されます。 アプリ全体で`TintColor`を適用するには、 `Window`に設定します。 また、メソッドを`UIView.TintColorDidChange`使用して濃淡の色が変化するタイミングを検出することもできます。
 
-たとえば、次のスクリーン ショットは、ナビゲーション コント ローラーのビューに濃淡の色を変更した効果を示しています。 紫に。
+たとえば、次のスクリーンショットは、ナビゲーションコントローラーのビューの濃淡の色を紫に変更した場合の効果を示しています。
 
- ![](ios7-ui-images/tint-color.png "ナビゲーション コント ローラーのビューで、紫色の色")
+ ![](ios7-ui-images/tint-color.png "ナビゲーションコントローラービューの紫色の濃淡の色")
 
-濃淡の色を場合も画像に適用できる、`RenderingMode`に設定されている`UIImageRenderingMode.AlwaysTemplate`します。
+がに`RenderingMode` `UIImageRenderingMode.AlwaysTemplate`設定されている場合は、イメージに濃淡の色を適用することもできます。
 
 > [!IMPORTANT]
-> 使用して、濃淡の色を設定することはできません`UIAppearance`します。
+> を使用して濃淡の`UIAppearance`色を設定することはできません。
 
 
 ### <a name="dynamic-type"></a>動的な型
 
-IOS 7 では、ユーザーは、システムの設定でテキストのサイズを指定できます。 動的な型で、フォントは、サイズに関係なくきれいに動的に調整されます。 `UIFont.PreferredFontForTextStyle` ユーザーによって制御されたサイズの最適化されたフォントを取得するために使用する必要があります。
+IOS 7 では、ユーザーはシステム設定でテキストのサイズを指定できます。 動的な型の場合、フォントはサイズに関係なく、適切に表示されるように動的に調整されます。 `UIFont.PreferredFontForTextStyle`は、ユーザーが制御するサイズに最適化されたフォントを取得するために使用する必要があります。
 
 ## <a name="summary"></a>まとめ
 
-この記事では、iOS 7 のユーザー インターフェイス要素への変更について説明します。 ビューと、UIKit、ビジュアルの変更の両方を強調表示のコントロールに加えられた変更のいくつかの検査し、関連 Api への変更します。 最後に、全画面表示のコンテンツ、濃淡の色の新しいサポート、および動的な型を使用する新しい Api が導入されています。
+この記事では、iOS 7 のユーザーインターフェイス要素に加えられた変更について説明します。 ここでは、UIKit のビューとコントロールに加えられたいくつかの変更を調べ、ビジュアルの変更と関連する Api の変更の両方を強調表示しています。 最後に、全画面コンテンツ、新しい着色色のサポート、および動的な型を操作するための新しい Api が導入されました。
 
 ## <a name="related-links"></a>関連リンク
 
-- [ImageViewer (サンプル)](https://developer.xamarin.com/samples/monotouch/iOS7-ui-updates)
+- [ImageViewer (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios7-ui-updates)

@@ -1,22 +1,22 @@
 ---
-title: ストアとのデータ Xamarin.Forms からの Azure Storage にアクセス
-description: Azure Storage とは、非構造化、および構造化データの格納に使用できるスケーラブルなクラウド ストレージ ソリューションです。 この記事では、Xamarin.Forms を使用して Azure Storage にテキストおよびバイナリ データを格納する方法と、データにアクセスする方法について説明します。
+title: Xamarin. フォームから Azure Storage のデータを格納してアクセスする
+description: Azure Storage とは、非構造化、および構造化データの格納に使用できるスケーラブルなクラウド ストレージ ソリューションです。 この記事では、Xamarin を使用して Azure Storage にテキストとバイナリデータを格納する方法と、データにアクセスする方法について説明します。
 ms.prod: xamarin
 ms.assetid: 5B10D37B-839B-4CD0-9C65-91014A93F3EB
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/28/2018
-ms.openlocfilehash: 044ff7448cc302da4d0efdf88325c40b9db0315c
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 3f3ff0b06fe23d724e04ac34108119932aa666ef
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67658629"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68649706"
 ---
-# <a name="store-and-access-data-in-azure-storage-from-xamarinforms"></a>ストアとのデータ Xamarin.Forms からの Azure Storage にアクセス
+# <a name="store-and-access-data-in-azure-storage-from-xamarinforms"></a>Xamarin. フォームから Azure Storage のデータを格納してアクセスする
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/WebServices/AzureStorage/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azurestorage)
 
 _Azure Storage とは、非構造化、および構造化データの格納に使用できるスケーラブルなクラウド ストレージ ソリューションです。この記事では、Xamarin.Forms を使用して Azure Storage にテキストおよびバイナリ データを格納する方法と、データにアクセスする方法を示します。_
 
@@ -260,8 +260,8 @@ public static async Task<bool> DeleteFileAsync(ContainerType containerType, stri
 
 ## <a name="related-links"></a>関連リンク
 
-- [Azure Storage (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/AzureStorage/)
+- [Azure Storage (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azurestorage)
 - [Storage の概要](https://azure.microsoft.com/documentation/articles/storage-introduction/)
 - [Xamarin から Blob Storage を使用する方法](https://azure.microsoft.com/documentation/articles/storage-xamarin-blob-storage/)
 - [Shared Access Signature (SAS) を使用します。](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/)
-- [Windows Azure ストレージ (NuGet)](https://www.nuget.org/packages/WindowsAzure.Storage/)
+- [Windows Azure Storage (NuGet)](https://www.nuget.org/packages/WindowsAzure.Storage/)

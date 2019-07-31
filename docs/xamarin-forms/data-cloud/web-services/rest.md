@@ -1,5 +1,5 @@
 ---
-title: RESTful Web サービスを使用します。
+title: RESTful Web サービスを使用する
 description: アプリケーションへの web サービスの統合は、一般的なシナリオです。 この記事では、Xamarin.Forms アプリケーションから rest ベースの web サービスを使用する方法を示します。
 ms.prod: xamarin
 ms.assetid: B540910C-9C51-416A-AAB9-057BF76489C3
@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/22/2018
-ms.openlocfilehash: adfc3247bce4d40d73580d6ca9baa31df4f57229
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: cb569a425bf636a51dd6d132f6efa539e74443a0
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67658969"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644578"
 ---
-# <a name="consume-a-restful-web-service"></a>RESTful Web サービスを使用します。
+# <a name="consume-a-restful-web-service"></a>RESTful Web サービスを使用する
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoREST/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)
 
 _アプリケーションへの web サービスの統合は、一般的なシナリオです。この記事では、Xamarin.Forms アプリケーションから rest ベースの web サービスを使用する方法を示します。_
 
@@ -38,7 +38,7 @@ Web サービスの REST に準拠している Api では、RESTful Api と呼�
 
 REST の簡潔さが、モバイル アプリケーションの web サービスにアクセスする主な方法を行うことができました。
 
-サンプル アプリケーションを実行すると、次のスクリーン ショットに示すようにローカルにホストされた REST サービスに接続されます。
+サンプルアプリケーションを実行すると、次のスクリーンショットに示すように、ローカルにホストされている REST サービスに接続します。
 
 ![](rest-images/portal.png "サンプル アプリケーション")
 
@@ -208,5 +208,5 @@ REST サービスでの HTTP ステータス コードの送信、`HttpResponseM
 ## <a name="related-links"></a>関連リンク
 
 - [ネイティブ モバイル アプリケーションのバックエンド サービスの作成](/aspnet/core/mobile/native-mobile-backend/)
-- [この TodoREST (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoREST/)
+- [この TodoREST (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)
 - [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.110).aspx)

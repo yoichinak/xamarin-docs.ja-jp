@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 7e2d6c1bb462a8eee5debc139aee9f71ae8ac6a8
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 9fafc6965c5d2dec79f440579a5cf3746a545bae
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68508787"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644397"
 ---
 # <a name="walkthrough---saving-the-activity-state"></a>チュートリアル - アクティビティの状態を保存する
 
@@ -20,7 +20,7 @@ _アクティビティライフサイクルガイドでは、状態の保存の�
 
 ## <a name="activity-state-walkthrough"></a>アクティビティの状態のチュートリアル
 
-( [Activitylifecycle サイクル](https://developer.xamarin.com/samples/monodroid/ActivityLifecycle)サンプルで) **ActivityLifecycle_Start**プロジェクトを開き、ビルドして実行します。 これは、アクティビティのライフサイクルを示す2つのアクティビティと、さまざまなライフサイクルメソッドの呼び出し方法を示す、非常に単純なプロジェクトです。 アプリケーションを起動すると、次の`MainActivity`画面が表示されます。
+( [Activitylifecycle サイクル](https://docs.microsoft.com/samples/xamarin/monodroid-samples/activitylifecycle)サンプルで) **ActivityLifecycle_Start**プロジェクトを開き、ビルドして実行します。 これは、アクティビティのライフサイクルを示す2つのアクティビティと、さまざまなライフサイクルメソッドの呼び出し方法を示す、非常に単純なプロジェクトです。 アプリケーションを起動すると、次の`MainActivity`画面が表示されます。
 
 [![アクティビティの画面](saving-state-images/01-activity-a-sml.png)](saving-state-images/01-activity-a.png#lightbox)
 
@@ -176,6 +176,6 @@ if (bundle != null)
 
 ## <a name="related-links"></a>関連リンク
 
-- [ActivityLifecycle サイクル (サンプル)](https://developer.xamarin.com/samples/monodroid/ActivityLifecycle)
+- [ActivityLifecycle サイクル (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/activitylifecycle)
 - [アクティビティのライフサイクル](~/android/app-fundamentals/activity-lifecycle/index.md)
 - [Android アクティビティ](xref:Android.App.Activity)

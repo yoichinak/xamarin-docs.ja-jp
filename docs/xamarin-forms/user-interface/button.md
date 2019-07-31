@@ -7,28 +7,28 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/19/2018
-ms.openlocfilehash: d32ef0176f0eff5981720d9e83568a7a40d0a396
-ms.sourcegitcommit: b4a12607ca944de10fd166139765241a4501831c
+ms.openlocfilehash: 8c55fecc8605b8bb7312e658e5edf46008f6b6ce
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66687146"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68651348"
 ---
 # <a name="xamarinforms-button"></a>Xamarin.Forms のボタン
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ButtonDemos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)
 
 _ボタンは、タップまたは特定のタスクを実行するためにアプリケーションに指示するクリックに応答します。_
 
 [ `Button` ](xref:Xamarin.Forms.Button)はすべての Xamarin.Forms で最も基本的な対話型コントロールです。 `Button`ビットマップ イメージの場合、またはテキストの組み合わせとイメージが表示されますが、コマンドを示す短いテキスト文字列こともできますが通常表示します。 ユーザーが、`Button`を指で、またはそのコマンドを開始する、マウスでクリックします。
 
-以下で説明するトピックのほとんどのページに対応して、 [ **ButtonDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ButtonDemos)サンプル。
+以下で説明するトピックのほとんどのページに対応して、 [ **ButtonDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)サンプル。
 
 ## <a name="handling-button-clicks"></a>クリックしたボタンの処理
 
 `Button` 定義、 [ `Clicked` ](xref:Xamarin.Forms.Button.Clicked) 、ユーザーがタップしたときに発生するイベント、`Button`指やマウス ポインターを使用します。 画面から指やマウス ボタンが離されたときに、イベントが発生した、`Button`します。 `Button`必要があります、 [ `IsEnabled` ](xref:Xamarin.Forms.VisualElement.IsEnabled)プロパティに設定`true`タップに応答します。
 
-**基本的なボタンをクリックして** ページで、 [ **ButtonDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ButtonDemos)サンプル インスタンスを作成する方法を示します、 `Button` XAML およびハンドルでその`Clicked`イベント。 **BasicButtonClickPage.xaml**ファイルが含まれています、`StackLayout`と共に、`Label`と`Button`:
+**基本的なボタンをクリックして** ページで、 [ **ButtonDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)サンプル インスタンスを作成する方法を示します、 `Button` XAML およびハンドルでその`Clicked`イベント。 **BasicButtonClickPage.xaml**ファイルが含まれています、`StackLayout`と共に、`Label`と`Button`:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -138,7 +138,7 @@ button.Clicked += OnButtonClicked;
 
 ## <a name="disabling-the-button"></a>ボタンを無効にします。
 
-特定の場所の特定の状態でアプリケーションが場合がありますが`Button`クリックは、有効な操作ではありません。 その場合、`Button`設定して無効にする必要があります、`IsEnabled`プロパティを`false`します。 典型的な例は、`Entry`ファイルを開く、ファイル名の制御`Button`:`Button`にいくつかのテキストが入力されている場合にのみ有効にする必要があります、`Entry`します。
+特定の場所の特定の状態でアプリケーションが場合がありますが`Button`クリックは、有効な操作ではありません。 その場合、`Button`設定して無効にする必要があります、`IsEnabled`プロパティを`false`します。 従来の例は、 `Entry`ファイルを開く`Button`ことができたファイル名のコントロールです。は、`Entry`一部のテキストがに入力されている場合にのみ有効にする必要があります。`Button`
 使用することができます、`DataTrigger`ように、このタスク、 [**データ トリガー** ](~/xamarin-forms/app-fundamentals/triggers.md#data-triggers)記事。
 
 ## <a name="using-the-command-interface"></a>コマンド インターフェイスを使用します。
@@ -152,7 +152,7 @@ button.Clicked += OnButtonClicked;
 
 型のプロパティを定義するビューモデル MVVM アプリケーションで`ICommand`し、XAML に接続されている`Button`データ バインドを持つ要素。 Xamarin.Forms も定義[ `Command` ]((xref:Xamarin.Forms.Command))と[ `Command<T>` ](xref:Xamarin.Forms.Command`1)実装するクラス、`ICommand`インターフェイスし、型のプロパティを定義する際に、ViewModelを支援する`ICommand`.
 
-情報の記事で詳しく説明は、コマンドを実行[**のコマンド インターフェイス**](~/xamarin-forms/app-fundamentals/data-binding/commanding.md)が、**基本的なボタン コマンド**ページで、 [ **ButtonDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ButtonDemos)サンプルは、基本的なアプローチを示しています。
+情報の記事で詳しく説明は、コマンドを実行[**のコマンド インターフェイス**](~/xamarin-forms/app-fundamentals/data-binding/commanding.md)が、**基本的なボタン コマンド**ページで、 [ **ButtonDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)サンプルは、基本的なアプローチを示しています。
 
 `CommandDemoViewModel`クラスは、型のプロパティを定義する非常に単純な ViewModel`double`という名前の`Number`、型の 2 つのプロパティと`ICommand`という名前の`MultiplyBy2Command`と`DivideBy2Command`:
 
@@ -268,7 +268,7 @@ class CommandDemoViewModel : INotifyPropertyChanged
 
 2 つ以上のことは`Button`要素をバインドする同じ`ICommand`プロパティ。 `Button`を使用して要素を区別する、 [ `CommandParameter` ](xref:Xamarin.Forms.Button.CommandParameter)プロパティの`Button`します。 ジェネリックを使用したいここでは、 [ `Command<T>` ](xref:Xamarin.Forms.Command`1)クラス。 `CommandParameter`オブジェクトが引数として渡されるし、`execute`と`canExecute`メソッド。 この手法で詳細に表示されます、 [**コマンド実行の基本的な**](~/xamarin-forms/app-fundamentals/data-binding/commanding.md#basic-commanding)のセクション、 [**コマンド インターフェイス**](~/xamarin-forms/app-fundamentals/data-binding/commanding.md#basic-commanding)記事。
 
-[ **ButtonDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ButtonDemos)サンプルでは、この手法で使用もその`MainPage`クラス。 **MainPage.xaml**ファイルが含まれています、`Button`サンプルの各ページ。
+[ **ButtonDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)サンプルでは、この手法で使用もその`MainPage`クラス。 **MainPage.xaml**ファイルが含まれています、`Button`サンプルの各ページ。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -409,7 +409,7 @@ public partial class PressAndReleaseButtonPage : ContentPage
 
 [![キーを押すし、ボタンを離します](button-images/PressAndReleaseButton.png "キーを押すし、ボタンのリリース")](button-images/PressAndReleaseButton-Large.png)
 
-このような動作では、ゲーム用のアプリケーションがあります。指で保持されている、 `Button` on 画面オブジェクトを特定の方向に移動を行う場合があります。
+この種の動作には、ゲーム用のアプリケーションがあります。に指`Button`を置くと、画面上のオブジェクトが特定の方向に移動する可能性があります。
 
 <a name="button-appearance" />
 
@@ -582,7 +582,7 @@ UWP でを選択すると、`CornerRadius`の高さの半分を超えている�
 
 ## <a name="creating-a-toggle-button"></a>トグル ボタンを作成します。
 
-サブクラス化することは`Button`オン/オフ スイッチのように正常に機能するようにします。ボタンをオンし、オフを切り替えるためにもう一度タップするには、1 回のボタンをタップします。
+次のようにサブ`Button`クラス化して、オンオフスイッチのように機能させることができます。ボタンを1回タップしてボタンを切り替え、もう一度タップしてオフにします。
 
 次`ToggleButton`クラスから派生`Button`という名前の新しいイベントを定義および`Toggled`というブール型プロパティと`IsToggled`します。 これらは、Xamarin.Forms で定義された 2 つの同じプロパティ[ `Switch` ](xref:Xamarin.Forms.Switch):
 
@@ -750,7 +750,7 @@ IOS、Android、および UWP で実行されているプログラムを次に�
 
 `Button`クラスを定義、 [ `ImageSource` ](xref:Xamarin.Forms.Button.Image)プロパティにビットマップ イメージを表示することができる`Button`、単独または組み合わせてテキスト。 テキストとイメージの配置方法を指定することもできます。
 
-`ImageSource`プロパティの型は[ `ImageSource` ](xref:Xamarin.Forms.ImageSource)、つまり、ビットマップは、ファイル、埋め込みリソース、URI、またはストリームから読み込むことができます。
+プロパティの型[`ImageSource`](xref:Xamarin.Forms.ImageSource)はです。これは、ファイル、埋め込みリソース、URI、またはストリームからビットマップを読み込むことができることを意味します。 `ImageSource`
 
 Xamarin.Forms でサポートされている各プラットフォームで、アプリケーションが実行するさまざまなデバイスのさまざまなピクセルの解像度の複数のサイズに格納されるイメージできます。 これら複数のビットマップをという名前またはデバイスのビデオに、オペレーティング システムが最適な一致を選択できますように格納されている画面の解像度。
 
@@ -887,5 +887,5 @@ UWP のビットマップが、プロジェクトのルート ディレクトリ
 
 ## <a name="related-links"></a>関連リンク
 
-- [ButtonDemos サンプル](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ButtonDemos)
+- [ButtonDemos サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)
 - [API ボタン](xref:Xamarin.Forms.Button)

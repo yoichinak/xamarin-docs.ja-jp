@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/22/2018
-ms.openlocfilehash: 35e3594f8b1496070e4770c05893d53feed6f2a1
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: b44bb52dc69aae1d3d058a1eae7c3be13ec5dc53
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511257"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643336"
 ---
 # <a name="location-services-on-android"></a>Android 上のロケーションサービス
 
@@ -346,14 +346,14 @@ else
 
 プロバイダーは動的に`GetBestProvider`変更されないことに注意してください。 代わりに、アクティビティのライフサイクル中に1回だけ、最適なプロバイダーを決定します。 プロバイダーの状態が設定された後で変更された場合、アプリケーションでは`ILocationListener` 、 &ndash; 、 `OnProviderDisabled`、および`OnStatusChanged` &ndash;の各メソッド`OnProviderEnabled`に関連するすべての可能性を処理するために、追加のコードが必要になります。プロバイダースイッチ。
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>まとめ
 
 このガイドでは、Android ロケーションサービスと、Google Location Services API のヒューズを持つ場所プロバイダーの両方を使用したユーザーの場所の取得について説明します。
 
 ## <a name="related-links"></a>関連リンク
 
-- [場所 (サンプル)](https://developer.xamarin.com/samples/monodroid/Location/)
-- [FusedLocationProvider (サンプル)](https://developer.xamarin.com/samples/monodroid/FusedLocationProvider/)
+- [場所 (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/location)
+- [FusedLocationProvider (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/fusedlocationprovider)
 - [Google Play 開発者サービス](https://developer.android.com/google/play-services/index.html)
 - [Criteria クラス](xref:Android.Locations.Criteria)
 - [LocationManager クラス](xref:Android.Locations.LocationManager)

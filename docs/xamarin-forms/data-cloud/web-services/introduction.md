@@ -1,22 +1,22 @@
 ---
-title: Xamarin.Forms の Web サービスの概要
-description: このガイドでは、別の web サービスと通信する方法について説明する Xamarin.Forms のサンプル アプリケーションのチュートリアルを提供します。 別のサンプル アプリケーションを使用すると、各 web サービスが機能的に似ており共通クラスを共有します。
+title: Xamarin. Forms Web Services の概要
+description: このガイドでは、さまざまな web サービスとの通信方法を示す Xamarin サンプルアプリケーションのチュートリアルを提供します。 別のサンプル アプリケーションを使用すると、各 web サービスが機能的に似ており共通クラスを共有します。
 ms.prod: xamarin
 ms.assetid: A3FEB262-0D79-42E6-8F8B-A565618C490B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/28/2017
-ms.openlocfilehash: b34381ad587d623e66af1b581200094448851bf6
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: bbeab6a6ab0d4a9d0e3a962240317fc0d54f9e25
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67658989"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656638"
 ---
-# <a name="xamarinforms-web-services-introduction"></a>Xamarin.Forms の Web サービスの概要
+# <a name="xamarinforms-web-services-introduction"></a>Xamarin. Forms Web Services の概要
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoREST)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)
 
 _このトピックでは、別の web サービスと通信する方法について説明する Xamarin.Forms のサンプル アプリケーションのチュートリアルを示します。別のサンプル アプリケーションを使用すると、各 web サービスが機能的に似ており共通クラスを共有します。_
 
@@ -36,9 +36,9 @@ _このトピックでは、別の web サービスと通信する方法につ�
 
 このガイド内の各トピックへのダウンロード リンクを提供する、*異なる*web サービスのバックエンドの特定の種類を示す、アプリケーションのバージョン。 各 web サービス スタイルに関連するページに関連するサンプル コードをダウンロードします。
 
-## <a name="understand-the-application-anatomy"></a>アプリケーションの構造を理解します。
+## <a name="understand-the-application-anatomy"></a>アプリケーションの構造を理解する
 
-各サンプル アプリケーション用の共有コード プロジェクトは、3 つのメイン フォルダーで構成されます。
+各サンプルアプリケーションの共有コードプロジェクトは、次の3つの主要なフォルダーで構成されています。
 
 |フォルダー|目的|
 |--- |--- |
@@ -46,9 +46,9 @@ _このトピックでは、別の web サービスと通信する方法につ�
 |モデル|アプリケーションのデータ モデル クラスが含まれています。 ここには、少なくとも、`TodoItem`クラスは、アプリケーションによって使用されるデータの 1 つの項目をモデル化します。 フォルダーは、ユーザー データのモデリングに使用されるその他のクラスも含めることができます。|
 |Views|アプリケーションのページが含まれています。 通常から成る、`TodoListPage`と`TodoItemPage`クラス、および認証のために使用されるその他のクラス。|
 
-各アプリケーション用の共有コード プロジェクトは、多数の重要なファイルで構成されます。
+各アプリケーションの共有コードプロジェクトも、いくつかの重要なファイルで構成されています。
 
-|ファイル|目的|
+|File|目的|
 |--- |--- |
 |Constants.cs|`Constants`クラスは、web サービスと通信するために、アプリケーションで使用される任意の定数を指定します。 これらの定数は、プロバイダー上に作成、個人のバックエンド サービスにアクセスする更新が必要です。|
 |ITextToSpeech.cs|`ITextToSpeech`インターフェイスでは、ことを指定します、`Speak`メソッドを実装するクラスによって提供される必要があります。|
@@ -63,7 +63,7 @@ _このトピックでは、別の web サービスと通信する方法につ�
 
 さらに、一部のサンプル アプリケーションには、ユーザーの認証プロセスの管理に使用される追加のページが含まれます。
 
-### <a name="model-the-data"></a>データをモデルします。
+### <a name="model-the-data"></a>データのモデル化
 
 各サンプル アプリケーションを使用して、`TodoItem`を表示し、記憶域の web サービスに送信されるデータをモデル化するクラス。 次に示すのは、`TodoItem` クラスのコード例です。
 
@@ -79,7 +79,7 @@ public class TodoItem
 
 `ID`プロパティは、それぞれを一意に識別するために使用`TodoItem`インスタンス、および更新または削除するデータを識別するために各 web サービスによって使用されます。
 
-### <a name="invoke-web-service-operations"></a>Web サービスの操作を呼び出す
+### <a name="invoke-web-service-operations"></a>Web サービス操作の呼び出し
 
 Web サービスの操作を使用してアクセスされる、`TodoItemManager`クラスやクラスのインスタンスにアクセスできる、`App.TodoManager`プロパティ。 `TodoItemManager`クラスは、web サービスの操作を呼び出す次のメソッドを提供します。
 
@@ -93,6 +93,6 @@ Web サービスの操作を直接呼び出すのではなく、`TodoItemManager
 
 ## <a name="related-links"></a>関連リンク
 
-- [ASMX (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoASMX)
-- [WCF (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoWCF)
-- [REST (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoREST)
+- [ASMX (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todoasmx)
+- [WCF (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todowcf)
+- [REST (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)

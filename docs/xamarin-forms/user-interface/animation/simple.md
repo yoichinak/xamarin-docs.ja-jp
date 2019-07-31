@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/27/2017
-ms.openlocfilehash: 46c2280717b39160a4ce1b44d0a63382ed0b283f
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: d3046479282ef1535677f6712e487ab80bbf9d1b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926464"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656801"
 ---
 # <a name="simple-animations-in-xamarinforms"></a>Xamarin.Forms での単純なアニメーション
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Animation/Basic/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-basic)
 
 _ViewExtensions クラスは、単純なアニメーションを作成するために使用できる拡張メソッドを提供します。この記事では、作成および ViewExtensions クラスを使用してアニメーションのキャンセルを示します。_
 
@@ -234,5 +234,5 @@ ViewExtensions.CancelAnimations (image);
 ## <a name="related-links"></a>関連リンク
 
 - [非同期サポートの概要](~/cross-platform/platform/async.md)
-- [基本的なアニメーション (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Animation/Basic/)
+- [基本的なアニメーション (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-basic)
 - [ViewExtensions](xref:Xamarin.Forms.ViewExtensions)

@@ -1,34 +1,34 @@
 ---
-title: Xamarin.iOS でのアプリのレビューを要求します。
-description: この記事では、iOS 10 に追加する Apple RequestReview メソッドを記述し、Xamarin.iOS での実装方法について説明します。
+title: Xamarin のアプリレビューを要求する
+description: この記事では、Apple が iOS 10 に追加した RequestReview メソッドについて説明し、Xamarin で実装する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 6408e707-b7dc-4557-b931-16a4d79b8930
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/29/2017
-ms.openlocfilehash: f72aaa781b0712e206cf02725cfc434594287f41
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c65e29a5499c33fd8d36dfa39bda05ec3b300148
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61365799"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656302"
 ---
-# <a name="request-app-review-in-xamarinios"></a>Xamarin.iOS でのアプリのレビューを要求します。
+# <a name="request-app-review-in-xamarinios"></a>Xamarin のアプリレビューを要求する
 
-_この記事では iOS 10 と Xamarin.iOS での実装方法に追加する Apple RequestReview メソッドについて説明します。_
+_この記事では、Apple が iOS 10 に追加した RequestReview 方法と、Xamarin で実装する方法について説明します。_
 
-Ios 10.3、新しい、`RequestReview()`メソッド iOS アプリに許可することを確認したり評価ユーザーに確認します。 配布アプリケーションでは、ユーザーがアプリ ストアからインストールされているこのメソッドが呼び出されると、iOS 10 が全体の評価を処理し、開発者のプロセスを確認してください。 このプロセスは、アプリ ストアのポリシーによって管理されますが、ため、アラートは可能性があります。 または、表示されない場合があります。
+Ios 10.3 を初めて使用`RequestReview()`する場合、メソッドを使用すると、ios アプリでユーザーに評価または確認を求めることができます。 ユーザーが App Store からインストールした出荷アプリでこのメソッドが呼び出されると、iOS 10 は開発者の評価およびレビュープロセス全体を処理します。 このプロセスは App Store ポリシーによって管理されているため、アラートが表示されない場合があります。
 
-![](request-app-review-images/review01.png "レビューの要求アラートの例")
+![](request-app-review-images/review01.png "レビュー要求のサンプルアラート")
 
-## <a name="requesting-a-rating-or-review"></a>評価またはレビューを要求します。
+## <a name="requesting-a-rating-or-review"></a>評価またはレビューの要求
 
-中に、`RequestReview()`の静的メソッド、`SKStoreReviewController`クラスを呼び出すことができます、いつでも、ユーザー エクスペリエンスの理にかなってレビュー プロセスの管理し、アプリ ストアのポリシーによって処理されます。 結果として、このメソッド可能性がありますまたはアラートが表示されない場合があり、ボタンをタップするなどのユーザー アクションへの応答では呼び出さないでいます。
+クラスの静的メソッドは、ユーザーエクスペリエンスに意味がある任意の時点で呼び出すことができますが、レビュープロセスは App Store ポリシーによって制御され、処理されます。 `RequestReview()` `SKStoreReviewController` 結果として、このメソッドは警告を表示したり、表示したりすることはできません。また、ボタンをタップするなど、ユーザーの操作に応答して呼び出さないでください。
 
-たとえば、アプリをレビューした後は、指定された回数を起動するか、ゲーム プレーヤーには、レベルが完了したらレビューの依頼可能性があります要求可能性があります。
+たとえば、アプリが特定の回数を起動した後にレビューを要求したり、プレーヤーがレベルを完了した後にレビューを要求したりすることがあります。
 
-要求にレビュー Xamarin.iOS アプリでは、起動が完了するとすぐに、次に変更を加える、`AppDelegate.cs`ファイル。
+Xamarin iOS アプリの起動が完了したらすぐにレビューを要求するには、 `AppDelegate.cs`ファイルに次の変更を加えます。
 
 ```csharp
 using Foundation;
@@ -57,20 +57,20 @@ namespace iOSTenThree
 ```
 
 > [!NOTE]
-> 呼び出す`RequestReview()`過小の開発アプリは常に、評価の表示をテストするためのダイアログを確認します。 これは、配布されていないメソッドの呼び出しは無視されます、TestFlight でのアプリには適用されません。
+> 開発`RequestReview()`中のアプリでを呼び出すと、テストできるように [評価とレビュー] ダイアログが常に表示されます。 これは、TestFlight によって配布されたアプリには適用されません。この場合、メソッドの呼び出しは無視されます。
 
-ときに、`RequestReview()`配布アプリケーションでは、ユーザーがアプリ ストアからインストールされているメソッドは、iOS 10 は開発者向け評価とレビュー プロセス全体を処理します。 ここでも、ため、このプロセスは、アプリ ストアのポリシーによって管理されますが、アラートが可能性があります。 または表示されない場合があります。
+ユーザーが app Store からインストールした出荷アプリでメソッドが呼び出されると、iOS10は開発者の評価およびレビュープロセス全体を処理します。`RequestReview()` このプロセスは App Store ポリシーによって管理されるため、アラートは表示されない場合があります。
 
-## <a name="linking-to-an-app-store-product-page"></a>App Store の製品ページへのリンク 
+## <a name="linking-to-an-app-store-product-page"></a>アプリストア製品ページへのリンク 
 
-新しいに加えて`RequestReview`メソッド、開発者はアプリ内からアプリ ストアでアプリの製品ページへのディープ リンクを提供してできますも。 追加することによって`action=write-review`製品ページの URL の最後に、ページが開きます場所、ユーザーことができます、アプリのレビューを自動的に作成します。 
+開発者は、新しい`RequestReview`メソッドに加えて、アプリ内からアプリストア内のアプリの製品ページへの深いリンクを提供することもできます。 製品ページ`action=write-review`の URL の末尾にを追加すると、ユーザーがアプリのレビューを自動的に書き込むことができるページが開きます。 
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
-この記事では、iOS 10 と Xamarin.iOS での実装方法に追加する Apple RequestReview メソッドをカバーされてです。
+この記事では、Apple が iOS 10 に追加した RequestReview 方法と、Xamarin で実装する方法について説明しました。
 
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [iOSTenThree サンプル](https://developer.xamarin.com/samples/ios/iOS10/iOSTenThree)
+- [iOSTenThree サンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios10-iostenthree/)

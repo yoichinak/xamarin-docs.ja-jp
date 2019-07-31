@@ -7,16 +7,16 @@ ms.assetid: 32C95DFF-9065-42D7-966C-D3DBD16906B3
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: e1e21fe121fba30755efbabe302ed0f22149e7e0
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: f43779fd0a61bd3ad04f3f7445faa6517fb9c989
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61157397"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68645895"
 ---
 # <a name="bitmap-basics-in-skiasharp"></a>SkiaSharp のビットマップの基礎
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _さまざまなソースからビットマップを読み込むし、それらを表示します。_
 
@@ -104,7 +104,7 @@ Android オペレーティング システムを使用する場合に例外を�
 
 コードの観点からビットマップを読み込む最も簡単な方法は、アプリケーションで直接ビットマップ リソースを含むです。 **SkiaSharpFormsDemos**プログラムには、という名前のフォルダーが含まれています。**メディア**ビットマップなどのファイルのいくつか含む**monkey.png**します。 プログラムのリソースとして格納されているビットマップに使用する必要があります、**プロパティ**ファイルを提供するためのダイアログ、**ビルド アクション**の**埋め込まれたリソース**!
 
-各埋め込みリソースには、*リソース ID*プロジェクト名、フォルダー、およびファイル名、ピリオドで接続されているすべてから構成されます。**SkiaSharpFormsDemos.Media.monkey.png**します。 そのリソースを指定することでこのリソースへのアクセスを取得する ID を引数として、 [ `GetManifestResourceStream` ](xref:System.Reflection.Assembly.GetManifestResourceStream(System.String))のメソッド、 [ `Assembly` ](xref:System.Reflection.Assembly)クラス。
+各埋め込みリソースには、プロジェクト名、フォルダー、およびファイル名で構成される*リソース ID*が含まれています。これらはすべてピリオドで結ばれています。**SkiaSharpFormsDemos**します。 そのリソースを指定することでこのリソースへのアクセスを取得する ID を引数として、 [ `GetManifestResourceStream` ](xref:System.Reflection.Assembly.GetManifestResourceStream(System.String))のメソッド、 [ `Assembly` ](xref:System.Reflection.Assembly)クラス。
 
 ```csharp
 string resourceID = "SkiaSharpFormsDemos.Media.monkey.png";
@@ -250,5 +250,5 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 ## <a name="related-links"></a>関連リンク
 
 - [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 - [画像ライブラリから写真を選択](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)

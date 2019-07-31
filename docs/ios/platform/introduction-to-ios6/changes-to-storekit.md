@@ -1,68 +1,68 @@
 ---
-title: IOS 6 で StoreKit の変更
-description: 'iOS 6 には、2 つの変更をストア キットの API が導入されています: iTunes (と App Store/iBookstore) を表示する機能、アプリと、新しいアプリ内から製品は、Apple が、ダウンロード可能なファイルをホストするオプションを購入します。 このドキュメントでは、Xamarin.iOS でこれらの機能を実装する方法について説明します。'
+title: iOS 6 の StoreKit の変更点
+description: iOS 6 では、ストアキット API に2つの変更が導入されています。アプリ内から iTunes (および App Store/iBookstore) 製品を表示する機能と、Apple がダウンロード可能なファイルをホストする新しいアプリ内購入オプションです。 このドキュメントでは、これらの機能を Xamarin iOS で実装する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 253D37D7-44C7-D012-3641-E15DC41C2699
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 35bac91e54181753bd1f3fd8b4cf0b851bfa1882
-ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
+ms.openlocfilehash: 03c18c50b15db05d26e1cec20e571367219f8643
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66827494"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643074"
 ---
-# <a name="changes-to-storekit-in-ios-6"></a>IOS 6 で StoreKit の変更
+# <a name="changes-to-storekit-in-ios-6"></a>iOS 6 の StoreKit の変更点
 
-_iOS 6 ストア キット API への 2 つの変更の導入: iTunes (と App Store/iBookstore) を表示する機能、アプリと、新しいアプリ内から製品は、Apple が、ダウンロード可能なファイルをホストするオプションを購入します。このドキュメントでは、Xamarin.iOS でこれらの機能を実装する方法について説明します。_
+_iOS 6 では、ストアキット API に2つの変更が導入されました。アプリ内から iTunes (および App Store/iBookstore) 製品を表示する機能と、Apple がダウンロード可能なファイルをホストする新しいアプリ内購入オプションが導入されました。このドキュメントでは、これらの機能を Xamarin iOS で実装する方法について説明します。_
 
-ストア キット iOS6 での主な変更は、これら 2 つの新機能です。
+IOS6 のストアキットに対する主な変更は、次の2つの新機能です。
 
-- **アプリ内のコンテンツの表示 & Purchasing** – ユーザーが購入できるし、アプリを離れることがなくアプリのダウンロード、音楽、書籍、およびその他の iTunes のコンテンツします。 購入を宣伝やレビューと評価をお勧めだけのための独自のアプリにリンクすることもできます。
-- **アプリ内購入でホストされているコンテンツ**– Apple の格納し、してファイルをホストする別のサーバーの必要性を削除します自動的に、バック グラウンド ダウンロードのサポートおよびすることができます、アプリ内購入製品に関連付けられているコンテンツを配信。少ないコードを記述します。
+- アプリ**内コンテンツ表示 & 購入**-ユーザーはアプリを離れることなく、アプリ、音楽、ブック、およびその他の iTunes コンテンツを購入してダウンロードできます。 また、独自のアプリにリンクして購入を促進したり、レビューや評価を促進したりすることもできます。
+- **アプリ内購入ホストコンテンツ**-Apple は、アプリ内購入製品に関連付けられているコンテンツを保存して配信します。これにより、ファイルをホストするための個別のサーバーが不要になり、バックグラウンドダウンロードが自動的にサポートされ、作成が可能になります。コードが少なくなります。
 
-参照してください、[アプリ内購入](~/ios/platform/in-app-purchasing/index.md)storekit や Api の詳細なカバレッジのガイド。
+StoreKit Api の詳細については、[アプリ内購入](~/ios/platform/in-app-purchasing/index.md)ガイドを参照してください。
 
 ## <a name="requirements"></a>必要条件
 
-このドキュメントで説明したストア キット機能は、iOS 6 および Xamarin.iOS 6.0 と共に、Xcode 4.5 が必要です。
+このドキュメントで説明されているストアキットの機能には、iOS 6 と Xcode 6.0 4.5 が必要です。
 
-## <a name="in-app-content-display--purchasing"></a>アプリ内のコンテンツの表示 (&) の購入
+## <a name="in-app-content-display--purchasing"></a>アプリ内コンテンツ表示 & 購入
 
-IOS で新しいアプリ内購入機能では、製品情報を表示し、購入またはアプリ内から製品をダウンロードすることができます。
-以前のアプリケーションは、iTunes、App Store、またはユーザーの元のアプリケーションのままになります iBookstore をトリガーする必要があります。 この新しい機能は、終わったときに自動的にユーザーとアプリに返します。
+IOS のアプリ内購入の新機能により、ユーザーはアプリ内から製品情報を表示し、製品を購入またはダウンロードすることができます。
+以前のアプリケーションでは、iTunes、App Store、または iBookstore をトリガーする必要がありました。これにより、ユーザーは元のアプリケーションを離れることになります。 この新しい機能は、完了時に自動的にユーザーをアプリに返します。
 
-[![](changes-to-storekit-images/image1.png "購入後、アプリに自動的に返す")](changes-to-storekit-images/image1.png#lightbox)
+[![](changes-to-storekit-images/image1.png "購入後にアプリに自動的に戻る")](changes-to-storekit-images/image1.png#lightbox)
 
-でしたこの使用方法の例は次のとおりです。
+これを使用する方法の例を次に示します。
 
-- **ユーザーが、アプリを評価することを勧める**– ユーザーが評価され、それを離れることがなく、アプリを確認できるように、App Store のページを開くことができます。
-- **アプリのクロス昇格**– 購入/ダウンロードをすぐにする機能を発行するその他のアプリケーションを表示するユーザーを許可します。
-- **ユーザー支援するヘルプを検索してコンテンツをダウンロード**– コンテンツをアプリを検索、管理、または (例: 集計を購入するユーザーを支援 音楽に関連するアプリでした曲の再生リストを提供し、各曲から、アプリ内購入を許可する)。
+- **アプリの評価をユーザーに促す**-アプリストアのページを開いて、ユーザーがアプリを離れることなく評価してレビューできるようにすることができます。
+- **アプリの昇格**-ユーザーが発行した他のアプリを表示し、すぐに購入/ダウンロードできるようにします。
+- **ユーザーがコンテンツを検索してダウンロード**できるようにする-アプリで検出、管理、または集計されたコンテンツをユーザーが購入できるようにします (例: 音楽関連のアプリでは、曲の再生リストを提供し、各曲をアプリ内から購入できるようにすることができます。
 
-1 回、`SKStoreProductViewController`が表示された iTunes、App Store、または、iBookstore に存在するものとして、製品情報と、ユーザーが対話します。 ユーザーは次のとおりです。
+`SKStoreProductViewController`が表示されると、ユーザーは、iTunes、App Store、または ibookstore の場合と同じように製品情報を操作できます。 ユーザーは次のことができます。
 
-- (アプリの場合)、ビューのスクリーン ショット
-- サンプルの曲またはビデオ (音楽、テレビ番組や映画) を
-- (読み取りと書き込み) のレビュー
-- 購入とダウンロードで、ビュー コント ローラーとストア キット内全体に行われます。
+- スクリーンショットの表示 (アプリの場合)
+- 曲またはビデオのサンプル (音楽、テレビ番組、映画)
+- 読み取り (および書き込み) レビュー、
+- 購入 & ダウンロード。これは、ビューコントローラーとストアキット内で完全に発生します。
 
-内でいくつかのオプション、`SKStoreProductViewController`などをクリックすると、関連するストア アプリを開き、アプリのままにするユーザーも強制は**関連製品**またはアプリの**サポート**リンク。
+内の一部の`SKStoreProductViewController`オプションでは、ユーザーがアプリを終了し、**関連する製品**やアプリの**サポート**リンクをクリックするなど、関連するストアアプリを開くことができます。
 
 ### <a name="skstoreproductviewcontroller"></a>SKStoreProductViewController
 
-すべてのアプリ内の製品を表示する API が単純な: を作成し、表示のみが必要です、`SKStoreProductViewController`します。 作成し、製品を表示する次の手順に従います。
+アプリ内で製品を表示する API は単純です。を`SKStoreProductViewController`作成して表示する必要があるだけです。 製品を作成して表示するには、次の手順に従います。
 
-1. 作成、`StoreProductParameters`ビュー コント ローラーにパラメーターを渡すオブジェクトを含む、`productId`コンス トラクターでします。
-1. インスタンスを作成、`SKProductViewController`します。 クラス レベルのフィールドに割り当てます。
-1. ビュー コント ローラーにハンドラーを割り当てる`Finished`イベントで、ビュー コント ローラーを無視する必要があります。 ユーザーがキャンセル をクリックしたときにこのイベントが呼び出されますまたは、それ以外の場合、ビュー コント ローラー内のトランザクションを終了します。
-1. 呼び出す、`LoadProduct`メソッドに渡して、`StoreProductParameters`と完了ハンドラー。 完了ハンドラーが製品要求が正常にしたことを確認し、存在する場合は、する必要があります、`SKProductViewController`モーダル形式。 製品を取得できない場合に、適切なエラー処理を追加する必要があります。
+1. コンストラクター内のを`productId`含む、ビューコントローラーにパラメーターを渡すオブジェクトを作成します。`StoreProductParameters`
+1. を`SKProductViewController`インスタンス化します。 クラスレベルフィールドに割り当てます。
+1. ビューコントローラーの`Finished`イベントにハンドラーを割り当てます。これにより、ビューコントローラーが破棄されます。 このイベントは、ユーザーが [キャンセル] を押したときに呼び出されます。それ以外の場合は、ビューコントローラー内のトランザクションを終了します。
+1. と完了ハンドラーを渡す`LoadProduct`メソッドを`StoreProductParameters`呼び出します。 完了ハンドラーは、製品要求が正常に行われたことを確認し、存在`SKProductViewController`する場合はモーダルを提示します。 製品を取得できない場合は、適切なエラー処理を追加する必要があります。
 
 ### <a name="example"></a>例
 
-*ProductView*プロジェクト、 *StoreKit*この記事のサンプル コードを実装して、`Buy`を任意の製品を受け取るメソッドの Apple ID と表示されます、`SKStoreProductViewController`します。 次のコードでは、特定の Apple ID の製品情報が表示されます。
+この記事の*storekit*サンプルコードの*productview*プロジェクトは、任意の`Buy`製品の Apple ID を受け取り、を`SKStoreProductViewController`表示するメソッドを実装しています。 次のコードは、特定の Apple ID の製品情報を表示します。
 
 ```csharp
 void Buy (int productId)
@@ -86,15 +86,15 @@ void Buy (int productId)
 }
 ```
 
-実行する – ダウンロードまたは購入内に完全が発生したときに以下のスクリーン ショットのように次のアプリ、 `SKStoreProductViewController`:
+アプリの実行時には、次のスクリーンショットのようになります。 `SKStoreProductViewController`ダウンロードまたは購入は、で完全に発生します。
 
-[![](changes-to-storekit-images/image2.png "実行時に次のように次のアプリ")](changes-to-storekit-images/image2.png#lightbox)
+[![](changes-to-storekit-images/image2.png "アプリは、を実行すると次のようになります。")](changes-to-storekit-images/image2.png#lightbox)
 
-### <a name="supporting-older-operating-systems"></a>以前のオペレーティング システムをサポートしています。
+### <a name="supporting-older-operating-systems"></a>以前のオペレーティングシステムのサポート
 
-サンプル アプリケーションには、以前のバージョンの iOS アプリ ストア、iTunes、または、iBookstore を開く方法を示すコードが含まれています。 使用して、`OpenUrl`を開き、適切に作成された**itunes.com** URL。
+このサンプルアプリケーションには、以前のバージョンの iOS でアプリストア、iTunes、または iBookstore を開く方法を示すコードが含まれています。 メソッドを`OpenUrl`使用して、適切に細工された**itunes.com** URL を開きます。
 
-バージョンのチェックを実行するコードを次に示すように実装することができます。
+次に示すように、バージョンチェックを実装して、実行するコードを決定できます。
 
 ```csharp
 if (UIDevice.CurrentDevice.CheckSystemVersion (6,0)) {
@@ -109,280 +109,280 @@ if (UIDevice.CurrentDevice.CheckSystemVersion (6,0)) {
 
 ### <a name="errors"></a>エラー
 
-使用する Apple ID が有効でない場合は何らかのネットワークまたは認証の問題を意味するはわかりにくいため、次のエラーが発生します。
+使用する Apple ID が有効でない場合、次のエラーが発生します。これは、何らかの種類のネットワークまたは認証の問題を意味するため、混乱する可能性があります。
 
  `Error Domain=SKErrorDomain Code=5 "Cannot connect to iTunes Store"`
 
-### <a name="reading-objective-c-documentation"></a>Objective C のドキュメントを読む
+### <a name="reading-objective-c-documentation"></a>目的 C のドキュメントを読む
 
-Apple の開発者ポータルでのストア キットに関する詳細を読む開発者 – プロトコルが表示されます[SKStoreProductViewControllerDelegate](https://developer.apple.com/library/prerelease/ios/#documentation/StoreKit/Reference/SKITunesProductViewControllerDelegate_ProtocolRef/Reference/Reference.html) – この新機能との関連で説明しました。 デリゲートのプロトコルとして公開されている 1 つだけメソッド – productViewControllerDidFinish –、`Finished`上のイベント、 `SKStoreProductViewController` Xamarin.iOS でします。
+Apple の開発者ポータルでストアキットについてお読みになる開発者は、この新機能に関して説明されている protocol- [Skstoreproductviewcontrollerdelegate](https://developer.apple.com/library/prerelease/ios/#documentation/StoreKit/Reference/SKITunesProductViewControllerDelegate_ProtocolRef/Reference/Reference.html)を参照してください。 デリゲートプロトコルには、productViewControllerDidFinish のメソッドが1つだけあります。これ`Finished`は、 `SKStoreProductViewController` Xamarin. iOS のでイベントとして公開されています。
 
-## <a name="determining-apple-ids"></a>Apple Id を決定します。
+## <a name="determining-apple-ids"></a>Apple Id の確認
 
-必要な Apple ID、`SKStoreProductViewController`は、*数*(混同しないようにバンドル Id を持つ"com.xamarin.mwc2012"など)。 以下で、表示しようとする製品の Apple ID を確認できるいくつかのさまざまな方法はあります。
+に`SKStoreProductViewController`必要な Apple ID は*数字*です ("mwc2012" のようなバンドル id と混同しないでください)。 表示したい製品の Apple ID を確認するには、次のようないくつかの方法があります。
 
 ### <a name="itunesconnect"></a>iTunesConnect
 
-アプリケーションを発行するは、簡単に見つけ、 **Apple ID** iTunes Connect で。
+発行するアプリケーションでは、iTunes Connect で**APPLE ID**を簡単に見つけることができます。
 
-[![](changes-to-storekit-images/image3.png "ITunes Connect で Apple ID の検索")](changes-to-storekit-images/image3.png#lightbox)
+[![](changes-to-storekit-images/image3.png "ITunes Connect での Apple ID の検索")](changes-to-storekit-images/image3.png#lightbox)
 
  <a name="Search_API" />
 
-### <a name="search-api"></a>Search API
+### <a name="search-api"></a>API の検索
 
-Apple では、アプリ ストア、iTunes、および、iBookstore のすべての商品を照会する動的な検索の API を提供します。 Search API にアクセスする方法に関する情報が記載されて[Apple の関連リソース](http://www.apple.com/itunes/affiliates/resources/documentation/itunes-store-web-service-search-api.html)API はすべてのユーザー (登録されていない関連会社) に公開されます。 結果として得られる JSON を解析して、検出、`trackId`を使用した Apple ID は`SKStoreProductViewController`します。
+Apple は、App Store、iTunes、および iBookstore 内のすべての製品に対してクエリを実行するための動的検索 API を提供しています。 Search API へのアクセス方法に関する情報は、 [Apple の関連リソース](http://www.apple.com/itunes/affiliates/resources/documentation/itunes-store-web-service-search-api.html)に記載されています。ただし、api は、登録された関連会社ではなくすべてのユーザーに公開されます。 生成された JSON を解析して`trackId` 、で`SKStoreProductViewController`使用する Apple ID であるを見つけることができます。
 
-結果は、その他のメタデータなどの情報を表示、アプリで製品を表示するために使用できるアートワーク Url も含まれます。
+結果には、アプリで製品をレンダリングするために使用できる表示情報やアートワークの Url など、他のメタデータも含まれます。
 
 次にいくつかの例を示します。
 
-- **iBooks アプリ**– [ http://itunes.apple.com/search?term=ibooks&amp; エンティティ ソフトウェア =&amp;国 = us](http://itunes.apple.com/search?term=ibooks&amp;entity=software&amp;country=us)
-- **ドットと持っている iBook** – [ http://itunes.apple.com/search?term=dot+and+the+kangaroo&amp; エンティティ電子ブックを =&amp;国 = us](http://itunes.apple.com/search?term=dot+and+the+kangaroo&amp;entity=ebook&amp;country=us)
+- **ibooks アプリ**– [ http://itunes.apple.com/search?term=ibooks&amp ; entity = software&amp; country = us](http://itunes.apple.com/search?term=ibooks&amp;entity=software&amp;country=us)
+- **ドットと Kangaroo ibook** – [ http://itunes.apple.com/search?term=dot+and+the+kangaroo&amp ; entity = ebook&amp; country = us](http://itunes.apple.com/search?term=dot+and+the+kangaroo&amp;entity=ebook&amp;country=us)
 
-### <a name="enterprise-partner-feed"></a>エンタープライズ パートナー フィード
+### <a name="enterprise-partner-feed"></a>エンタープライズパートナーフィード
 
-Apple では、ダウンロード可能なデータベースの準備完了のフラット ファイルの形式で、すべての製品の完全なデータ ダンプを承認済みのパートナーを提供します。 アクセスを修飾する場合、[エンタープライズ パートナー フィード](http://www.apple.com/itunes/affiliates/resources/documentation/itunes-enterprise-partner-feed.html)、そのデータセットで、製品の Apple ID が見つかりません。
+Apple は、承認されたパートナーに、すべての製品の完全なデータダンプを、ダウンロード可能なデータベース準備済みフラットファイルの形式で提供します。 [エンタープライズパートナーフィード](http://www.apple.com/itunes/affiliates/resources/documentation/itunes-enterprise-partner-feed.html)へのアクセスが必要な場合は、製品の Apple ID がそのデータセットに含まれています。
 
-エンタープライズ パートナー フィードの多くのユーザーのメンバーである、[アフィリ エイト プログラム](http://www.apple.com/itunes/affiliates)商品の売上を獲得にコミッションをできるようにします。 `SKStoreProductViewController` (この記事の執筆時点) では、関連の Id をサポートしません。
+エンタープライズパートナーフィードの多くのユーザーは、製品売上に対して歩合を獲得できる[関連プログラム](http://www.apple.com/itunes/affiliates)のメンバーです。 `SKStoreProductViewController`では、(書き込み時に) 関連 Id はサポートされません。
 
 ### <a name="direct-product-links"></a>製品の直接リンク
 
-製品の Apple ID は、その iTunes プレビュー URL リンクから推論することができます。
-始まる URL の一部を検索する (アプリ、音楽、またはブック) の製品リンクの iTunes で`id`し、次の番号を使用します。
+製品の Apple ID は、iTunes Preview URL リンクから推測できます。
+任意の iTunes 製品リンク (アプリ、音楽、またはブック) で、から始まる`id` URL の部分を探し、次の番号を使用します。
 
-IBooks への直接リンクは、たとえば、します。
+たとえば、iBooks への直接リンクは次のようになります。
 
 ```csharp
 http://itunes.apple.com/us/app/ibooks/id364709193?mt=8
 ```
 
-Apple ID が**364709193**します。 同様に、MWC2012 アプリの直接のリンクは
+Apple ID は**364709193**です。 同様に、MWC2012 アプリでは、直接リンクは
 
 ```csharp
 http://itunes.apple.com/us/app/mwc-2012-unofficial/id496963922?mt=8
 ```
 
-Apple ID が**496963922**します。
+Apple ID は**496963922**です。
 
-## <a name="in-app-purchase-hosted-content"></a>アプリ内購入には、コンテンツがホストされています。
+## <a name="in-app-purchase-hosted-content"></a>アプリ内購入ホストコンテンツ
 
-これらのファイル、web サーバーでホストするために使用し、し、アプリを安全にダウンロード後にコードを組み込む必要がある (ブックまたはその他のメディア、ゲーム同位のアートと構成、またはその他の大きなファイル) などのダウンロード可能なコンテンツの場合は、アプリ内購入購入できます。 IOS 6 以降では、Apple をホストする、サーバー上のファイルを別のサーバーの必要がなくなります。 機能は、非コンシューマブル製品 (使用できるまたはサブスクリプション) の使用のみ。 Apple のホスティング サービスを使用する利点は次のとおりです。
+アプリ内購入が、ダウンロード可能なコンテンツ (書籍やその他のメディア、ゲームレベルのアートと構成、その他の大きなファイル) で構成されている場合、これらのファイルは web サーバーでホストされるため、アプリケーションは、ご. IOS 6 以降では、Apple はサーバー上でファイルをホストするため、個別のサーバーを必要としません。 この機能は、非消費製品 (使用不可またはサブスクリプションではない) でのみ利用できます。 Apple のホスティングサービスを使用する利点は次のとおりです。
 
-- ホスティングと帯域幅のコストを削減します。
-- おそらくよりもスケーラブルな server ホストが現在使用しています。 
-- コードは、サーバー側の処理を構築する必要がないため、書き込みを少なくします。 
-- バック グラウンド ダウンロードは自動的に実装します。
+- ホスティング & 帯域幅のコストを節約します。
+- 現在使用している任意のサーバーホストよりも拡張性が高いと思います。 
+- サーバー側の処理を構築する必要がないため、記述するコードが少なくて済みます。 
+- バックグラウンドダウンロードが実装されています。
 
-注: に ios Simulator がサポートされていません、アプリ内購入コンテンツ テスト ホストされている場合、実際のデバイスでテストする必要があります。
+注: iOS シミュレーターでのホスト型アプリ内購入コンテンツのテストはサポートされていないため、実際のデバイスでテストする必要があります。
 
-### <a name="hosted-content-basics"></a>ホストされているコンテンツの基礎
+### <a name="hosted-content-basics"></a>ホストされたコンテンツの基本
 
-IOS 6、前に、製品を提供する 2 つの方法が (で詳しく説明されている[Xamarin のアプリ内購入](~/ios/platform/in-app-purchasing/index.md)ドキュメント)。
+IOS 6 より前の製品を提供するには、2つの方法がありました ( [Xamarin のアプリ内購入](~/ios/platform/in-app-purchasing/index.md)ドキュメントで詳細に説明されています)。
 
-- **組み込み製品**– を 'ロックが解除されて'、購入することで (コード、または埋め込みリソースとしてか)、アプリケーションに組み込まれている機能です。 組み込みの製品の例には、ロックされていない写真フィルターまたはゲームのパワーアップが含まれます。
-- **サーバーによって提供される製品**–、購入後、アプリケーションは、運用しているサーバーからコンテンツをダウンロードする必要があります。 このコンテンツは、購入時にダウンロードおよびデバイスに格納されている、製品の一部としてレンダリングされます。 例には、ブック、マガジンのバック ナンバー、またはバック グラウンドのアートと構成ファイルで構成されるゲームのレベルが含まれます。
+- **組み込みの製品**–購入によって "ロックが解除されている" 機能ですが、アプリケーションに組み込まれています (コードとして、または埋め込みリソースとして)。 組み込み製品の例としては、ロックされていない写真フィルターやゲーム中のパワーアップなどがあります。
+- **サーバーによって提供**される製品–購入後、アプリケーションは、運用しているサーバーからコンテンツをダウンロードする必要があります。 このコンテンツは、購入時にダウンロードされ、デバイスに保存され、製品の提供の一部としてレンダリングされます。 例としては、書籍、雑誌の問題、またはバックグラウンドアートと構成ファイルで構成されるゲームレベルがあります。
 
-IOS では、6 Apple は、サーバーによって提供される製品のバリエーションを提供しています: がサーバーにコンテンツ ファイルをホストします。 これにより、別のサーバーを操作する必要はありませんし、ストア キットを自分で記述していたバック グラウンド ダウンロード機能を提供するためにサーバーによって提供される製品を構築するはるかに簡単です。 活用するために Apple のホスト、アプリ内購入の新製品のコンテンツのホスティングを有効にしに活用するためにストア キット コードを変更します。 製品のコンテンツ ファイルは、Xcode を使用して構築し、審査およびリリースするための Apple のサーバーにアップロードします。
+IOS 6 では、サーバーによって配信される製品が用意されています。これらの製品は、サーバー上でコンテンツファイルをホストします。 これにより、サーバーによって提供される製品を簡単に作成できるようになります。これは、別のサーバーを操作する必要がなく、ストアキットによって、以前に作成したバックグラウンドダウンロード機能が提供されるためです。 Apple のホスティングを利用するには、新しいアプリ内購入製品のコンテンツホスティングを有効にし、ストアキットコードを変更して活用します。 製品コンテンツファイルは Xcode を使用してビルドされ、確認とリリースのために Apple のサーバーにアップロードされます。
 
-[![](changes-to-storekit-images/image4.png "ビルドおよび配信の処理")](changes-to-storekit-images/image4.png#lightbox)
+[![](changes-to-storekit-images/image4.png "ビルドと配布のプロセス")](changes-to-storekit-images/image4.png#lightbox)
 
-App Store を使用して、アプリ内購入を提供する*でコンテンツをホスト*次のセットアップと構成が必要です。
+アプリストアを使用して、ホストされ*たコンテンツを*使用してアプリ内購入を提供するには、次の設定と構成が必要です。
 
-- **iTunes Connect** – する*する必要があります*自動的に収集された資金を送金するようにするための Apple、銀行と税の情報が用意します。 製品を販売、および購入をテストするサンド ボックスのユーザー アカウントの設定を構成できます。  _構成することする必要がありますもホストするコンテンツを Apple をホストするこれらの非コンシューマブル製品の_します。
-- **iOS プロビジョニング ポータル**– バンドル Id を作成して、アプリ内購入をサポートするアプリケーションの場合と同様に、アプリでは、App Store へのアクセスを有効にします。
-- **ストア キット**– 製品を表示、製品を購入およびトランザクションを復元するため、アプリにコードを追加します。  _IOS 6 ストア キットも管理バック グラウンドで進行状況の更新で、製品コンテンツをダウンロードします。_
-- **カスタム コード**– を顧客による購入を追跡し、製品や購入したサービスを提供します。 などの iOS 6 ストア キット クラスの新しい利用`SKDownload`Apple によってホストされているコンテンツを取得します。
+- **ITunes Connect** –お客様に代わって収集された資金を送金できるように、Apple に銀行と税金の情報を提供する*必要があり*ます。 その後、販売する製品を構成し、購入をテストするためのサンドボックスユーザーアカウントを設定できます。  _Apple でホストする非消費製品用にホストされたコンテンツを構成する必要もあり_ます。
+- **IOS プロビジョニングポータル**–バンドル id を作成し、アプリへのアプリストアアクセスを有効にします。アプリ内購入をサポートするアプリケーションの場合と同様です。
+- **ストアキット**–製品を表示し、製品を購入し、トランザクションを復元するためのコードをアプリに追加します。  _また、iOS 6 ストアキットでは、製品コンテンツのダウンロードをバックグラウンドで管理し、進行状況を更新することもできます。_
+- **カスタムコード**–顧客によって行われた購入を追跡し、購入した製品またはサービスを提供します。 Apple によってホストされて`SKDownload`いるコンテンツを取得するために、のような新しい iOS 6 ストアキットクラスを使用します。
 
-次のセクションを作成し、購買を管理するパッケージをアップロードして、ホストするコンテンツを実装し、この記事のサンプル コードを使用して、プロセスをダウンロードする方法を説明します。
+以下のセクションでは、この記事のサンプルコードを使用して、パッケージの作成とアップロードから購入プロセスとダウンロードプロセスの管理まで、ホストされたコンテンツを実装する方法について説明します。
 
 ### <a name="sample-code"></a>サンプル コード
 
-サンプル プロジェクト*HostedNonConsumables* (StoreKitiOS6.zip) の使用がコンテンツをホストします。 アプリでは、2 つ「書籍の」販売、対象のコンテンツを Apple のサーバーでホストは提供します。 複雑なコンテンツは、実際のアプリケーションで使用できますが、テキスト ファイルと、イメージのコンテンツで構成されます。
+サンプルプロジェクト*HostedNonConsumables* (StoreKitiOS6 内) は、ホストされたコンテンツを使用します。 このアプリでは、2つの "書籍の章" を販売用に提供しています。これは、が Apple のサーバーでホストされているコンテンツです。 コンテンツはテキストファイルとイメージで構成されていますが、実際のアプリケーションでは、より複雑なコンテンツを使用することもできます。
 
-アプリは、前に、中に、および、購入後に、ようになります。
+アプリは次のようになります。購入の前後、購入後:
 
- [![](changes-to-storekit-images/image5.png "アプリは前に、最中、購入後にこのような検索します。")](changes-to-storekit-images/image5.png#lightbox)
+ [![](changes-to-storekit-images/image5.png "アプリは次のようになります。")](changes-to-storekit-images/image5.png#lightbox)
 
-テキスト ファイルとイメージがダウンロードして、アプリケーションの Documents ディレクトリにコピーします。 アプリケーション ストレージに使用できる別のディレクトリの詳細については、次を参照してください。、[ファイル システムのマニュアル](~/ios/app-fundamentals/file-system.md)します。
+テキストファイルとイメージがダウンロードされ、アプリケーションの Documents ディレクトリにコピーされます。 アプリケーションストレージで使用できるさまざまなディレクトリの詳細については、[ファイルシステムのドキュメント](~/ios/app-fundamentals/file-system.md)を参照してください。
 
 ## <a name="itunes-connect"></a>iTunes Connect
 
-Apple が使用する新しい製品を作成するのコンテンツをホストを必ず選択して、**非コンシューマブル**製品の種類。 その他の製品の種類では、コンテンツをホストすることはできません。 またが有効にしないのコンテンツをホストしている*既存*製品を販売する;、新製品のコンテンツをホストにのみ、有効にします。
+Apple のコンテンツホスティングを使用する新しい製品を作成する場合は、使用**不可**の製品の種類を選択してください。 その他の製品の種類では、コンテンツホスティングはサポートされていません。 また、販売する*既存*の製品のコンテンツホスティングを有効にしないでください。新しい製品のコンテンツホスティングを有効にするだけです。
 
- [![](changes-to-storekit-images/image6.png "非コンシューマブル製品の種類を選択します。")](changes-to-storekit-images/image6.png#lightbox)
+ [![](changes-to-storekit-images/image6.png "利用不可の製品の種類を選択します")](changes-to-storekit-images/image6.png#lightbox)
 
-入力、**製品 ID**します。 この ID はこの製品のコンテンツを作成するときに後では、必要になります。
+**製品 ID**を入力してください。 この ID は、後でこの製品のコンテンツを作成するときに必要になります。
 
- [![](changes-to-storekit-images/image7.png "製品 ID を入力します。")](changes-to-storekit-images/image7.png#lightbox)
+ [![](changes-to-storekit-images/image7.png "製品 ID を入力してください")](changes-to-storekit-images/image7.png#lightbox)
 
-コンテンツをホストするいると、[詳細] セクションで設定されます。 オフにして、アプリ内購入運用を開始する前に、 **Apple でコンテンツをホスト**(テスト内容をアップロードしている) 場合でもをキャンセルする場合にチェック ボックスをオン。 ただしコンテンツをホストしている後に削除できません、アプリ内購入が稼動します。
+コンテンツホスティングは詳細セクションで設定されます。 アプリ内購入が有効になる前に、キャンセルする場合は **[Apple でホストコンテンツ]** チェックボックスをオフにします (テストコンテンツをアップロードした場合でも)。 ただし、アプリ内購入が有効になった後にコンテンツホスティングを削除することはできません。
 
- [![](changes-to-storekit-images/image8.png "Apple とのコンテンツをホストしています。")](changes-to-storekit-images/image8.png#lightbox)
+ [![](changes-to-storekit-images/image8.png "Apple でコンテンツをホストする")](changes-to-storekit-images/image8.png#lightbox)
 
-コンテンツのホストをオンにして、製品は入力**アップロードを待機している**状態と、このメッセージを表示。
+コンテンツのホスティングを有効にすると、製品はアップロード状態を待機して次**の**メッセージを表示します。
 
- [![](changes-to-storekit-images/image9.png "製品はアップロードの状態の待機を入力し、このメッセージを表示")](changes-to-storekit-images/image9.png#lightbox)
+ [![](changes-to-storekit-images/image9.png "製品は、アップロード状態を待機してこのメッセージを表示します")](changes-to-storekit-images/image9.png#lightbox)
 
-コンテンツのパッケージは、Xcode で作成して、アーカイブ ツールを使用してアップロードします。 コンテンツのパッケージを作成する方法については、次のセクションで指定された**作成します。PKG ファイル**します。
+コンテンツパッケージは、Xcode で作成し、Archive ツールを使用してアップロードする必要があります。 コンテンツパッケージを作成する手順については、次の「作成」を参照**してください。PKG ファイル**。
 
-## <a name="creating-pkg-files"></a>作成します。PKG ファイル
+## <a name="creating-pkg-files"></a>,.PKG ファイル
 
-Apple にアップロードしたコンテンツのファイルには、次の制限を満たす必要があります。
+Apple にアップロードするコンテンツファイルは、次の制限を満たしている必要があります。
 
-- サイズ 2 GB を超えることはできません。
-- 実行可能コード (または、コンテンツの外側を指すシンボリック リンク) を含めることはできません。
-- 正しく書式設定する必要があります (など、 **.plist**ファイル) であり、 **.pkg**ファイル拡張子。 これは実行に自動的に Xcode を使用してこれらの手順に従う場合。
+- サイズが 2 GB を超えることはできません。
+- 実行可能コード (または、コンテンツの外部をポイントするシンボリックリンク) を含めることはできません。
+- は、適切な形式 ( **plist**ファイルを含む) であり、 **.pkg**ファイル拡張子を持つ必要があります。 これは、Xcode を使用してこれらの手順に従うと、自動的に実行されます。
 
-これらの制限を満たしている限り、多くのファイルが異なると、ファイルの種類を追加できます。 コンテンツがアプリケーションに配信する前に zip 形式であり、コードでアクセスする前に、ストア キットによって解凍されします。
+これらの制限が満たされていれば、さまざまなファイルやファイルの種類を追加できます。 コンテンツは、アプリケーションに配信される前に圧縮され、コードにアクセスする前にストアキットによって解凍されます。
 
-コンテンツのパッケージをアップロードした後、新しいコンテンツを交換できます。 新しいコンテンツのアップロードされ、通常のプロセスを使用してレビュー/承認のために送信する必要があります。 インクリメント、`ContentVersion`フィールドに新しいことを示すためにコンテンツのパッケージを更新します。
+コンテンツパッケージをアップロードすると、新しいコンテンツに置き換えることができます。 通常のプロセスを使用して、新しいコンテンツをアップロードし、レビューと承認のために送信する必要があります。 更新さ`ContentVersion`れたコンテンツパッケージのフィールドを増やして、新しいものであることを示します。
 
-### <a name="xcode-in-app-purchase-content-projects"></a>Xcode アプリ内購入コンテンツ プロジェクト
+### <a name="xcode-in-app-purchase-content-projects"></a>Xcode のアプリ内購入コンテンツプロジェクト
 
-現在の製品のアプリ内購入コンテンツのパッケージを作成するには、Xcode が必要です。 NO OBJECTIVE C コーディングは不要です。Xcode を新しいプロジェクトのみのファイルと plist を含む型をこれらのパッケージがあります。
+アプリ内購入製品のコンテンツパッケージを作成するには、現在 Xcode が必要です。 目的 C のコーディングは必要ありません。Xcode には、ファイルと plist を含むパッケージの新しいプロジェクトの種類があります。
 
-サンプル アプリケーションが販売書籍の章 – 各」の章のコンテンツのパッケージが含まれます。
+サンプルアプリケーションには販売に関する書籍の章があります。各章コンテンツパッケージには次のものが含まれます。
 
--  テキスト ファイル、および
--  」の章を表すイメージ。
+-  テキストファイル
+-  チャプターを表すイメージ。
 
 
-選択して開始**ファイル > 新しいプロジェクト**、メニューから選択して**アプリ内購入コンテンツ**:
+まず、メニューから **[ファイル > 新しいプロジェクト]** を選択し、 **[アプリ内購入コンテンツ]** を選択します。
 
- [![](changes-to-storekit-images/image10.png "アプリ内購入コンテンツを選択します。")](changes-to-storekit-images/image10.png#lightbox)
+ [![](changes-to-storekit-images/image10.png "アプリ内購入コンテンツの選択")](changes-to-storekit-images/image10.png#lightbox)
 
-入力、**製品名**と**会社識別子**ように、**バンドル識別子**と一致する、**製品 ID** iTunes で入力しました。この製品に接続します。
+**[製品名]** と **[会社識別子**] を入力します。これにより、**バンドル識別子**は [この製品の iTunes Connect] に入力した**製品 ID**と一致します。
 
-[![](changes-to-storekit-images/image11.png "名前と識別子を入力します。")](changes-to-storekit-images/image11.png#lightbox)
+[![](changes-to-storekit-images/image11.png "名前と識別子を入力してください")](changes-to-storekit-images/image11.png#lightbox)
 
-空白をする必要がありますが**アプリ内購入コンテンツ**プロジェクト。 右クリックし、**ファイルを追加しています.** ドラッグするか、**プロジェクト ナビゲーター**します。 いることを確認、 **ContentVersion**が正しいの (これが 1.0 では、開始は以降では、コンテンツの更新を選択する場合はそれをインクリメントしてください)。
+これで、**アプリ内購入コンテンツ**プロジェクトが空になります。 右クリックして [ファイル] を**追加**することができます。 または、**プロジェクトナビゲーター**にドラッグします。 **Contentversion**が正しいことを確認します (1.0 から開始する必要がありますが、後でコンテンツを更新することを選択した場合は、必ず増やしてください)。
 
-このスクリーン ショットでは、プロジェクトとメイン ウィンドウに表示される plist エントリに含まれるコンテンツのファイルに Xcode を示しています。
+このスクリーンショットは、プロジェクトに含まれているコンテンツファイルと、メインウィンドウに表示される plist エントリを含む Xcode を示しています。
 
-[![](changes-to-storekit-images/image12.png "このスクリーン ショット、プロジェクトとメイン ウィンドウに表示される plist エントリに含まれるコンテンツのファイルに Xcode を示しています")](changes-to-storekit-images/image12.png#lightbox)
+[![](changes-to-storekit-images/image12.png "このスクリーンショットは、プロジェクトに含まれているコンテンツファイルと、メインウィンドウに表示される plist エントリを含む Xcode を示しています。")](changes-to-storekit-images/image12.png#lightbox)
 
-すべてのコンテンツ ファイルを追加した後とこのプロジェクトを保存に後でもう一度編集またはアップロード プロセスを開始します。
+すべてのコンテンツファイルを追加したら、このプロジェクトを保存して後でもう一度編集したり、アップロードプロセスを開始したりすることができます。
 
-## <a name="uploading-pkg-files"></a>アップロードしています。PKG ファイル
+## <a name="uploading-pkg-files"></a>アップロード.PKG ファイル
 
-コンテンツのパッケージをアップロードする最も簡単な方法は、 **Xcode のアーカイブ ツール**します。 選択**製品 > アーカイブ**開始するには、メニューから。
+コンテンツパッケージをアップロードする最も簡単な方法は、 **Xcode Archive ツール**を使用することです。 メニューから **[Product > Archive]** を選択して開始します。
 
-![](changes-to-storekit-images/image13.png "Archiven を選択します。")
+![](changes-to-storekit-images/image13.png "Archiven の選択")
 
-コンテンツのパッケージは、次に示すように、アーカイブに表示されます。 アーカイブの種類とアイコンは、この行は、表示する、**アプリ内購入コンテンツ アーカイブ**します。 クリックして**を検証しています.** 実際には、アップロードを実行せず、コンテンツのパッケージのエラーを確認します。
+次に示すように、コンテンツパッケージはアーカイブに表示されます。 アーカイブの種類とアイコンこの行は、**アプリ内購入コンテンツアーカイブ**です。 **[検証]** をクリックします。 アップロードを実際に実行しなくても、コンテンツパッケージにエラーがないかどうかを確認します。
 
-[![](changes-to-storekit-images/image14.png "パッケージを検証します。")](changes-to-storekit-images/image14.png#lightbox)
+[![](changes-to-storekit-images/image14.png "パッケージを検証する")](changes-to-storekit-images/image14.png#lightbox)
 
-ITunes Connect の資格情報でログインします。
+ITunes Connect 資格情報でログインします。
 
-[![](changes-to-storekit-images/image15.png "ITunes Connect の資格情報でログイン")](changes-to-storekit-images/image15.png#lightbox)
+[![](changes-to-storekit-images/image15.png "ITunes Connect 資格情報でログインします")](changes-to-storekit-images/image15.png#lightbox)
 
-関連付けるには、このコンテンツは、適切なアプリケーションとアプリ内購入を選択します。
+適切なアプリケーションとアプリ内購入を選択して、このコンテンツを関連付けます。
 
-[![](changes-to-storekit-images/image16.png "関連付けるには、このコンテンツは、適切なアプリケーションとアプリ内購入を選択します。")](changes-to-storekit-images/image16.png#lightbox)
+[![](changes-to-storekit-images/image16.png "適切なアプリケーションとアプリ内購入を選択して、このコンテンツを関連付けます")](changes-to-storekit-images/image16.png#lightbox)
 
-このスクリーン ショットのようなメッセージが表示されます。
+次のスクリーンショットのようなメッセージが表示できます。
 
-![例の問題のメッセージなし](changes-to-storekit-images/image17.png "例の問題のメッセージはありません")
+![問題のないメッセージの例](changes-to-storekit-images/image17.png "問題のないメッセージの例")
 
-同様のプロセスを経由し、クリックしてもようになりました**配布しています.** コンテンツを実際にアップロードされます。
+次に同様のプロセスを実行しますが、 **[配布]** をクリックします。 は実際にコンテンツをアップロードします。
 
-[![アプリ配布](changes-to-storekit-images/image18.png "アプリを配布します")](changes-to-storekit-images/image18.png#lightbox)
+[![アプリを配布する](changes-to-storekit-images/image18.png "アプリを配布する")](changes-to-storekit-images/image18.png#lightbox)
 
-コンテンツをアップロードする、最初のオプションを選択します。
+コンテンツをアップロードするには、最初のオプションを選択します。
 
-![コンテンツのアップロード](changes-to-storekit-images/image19.png "コンテンツのアップロード")
+![コンテンツをアップロードする](changes-to-storekit-images/image19.png "コンテンツをアップロードする")
 
 もう一度サインインします。
 
 [![](changes-to-storekit-images/image15.png "ログイン")](changes-to-storekit-images/image15.png#lightbox)
 
-コンテンツをアップロードするには、適切なアプリケーションとアプリ内購入のレコードを選択します。
+適切なアプリケーションとアプリ内購入レコードを選択して、コンテンツをアップロードします。
 
-[![](changes-to-storekit-images/image20.png "アプリケーションとアプリ内購入のレコードを選択します。")](changes-to-storekit-images/image20.png#lightbox)
+[![](changes-to-storekit-images/image20.png "アプリケーションとアプリ内購入レコードを選択する")](changes-to-storekit-images/image20.png#lightbox)
 
-ファイルがアップロードされるまで待ち。
+ファイルがアップロードされるまでお待ちください:
 
-[![](changes-to-storekit-images/image21.png "コンテンツのアップロード ダイアログ")](changes-to-storekit-images/image21.png#lightbox)
+[![](changes-to-storekit-images/image21.png "コンテンツのアップロードダイアログ")](changes-to-storekit-images/image21.png#lightbox)
 
-アップロードが完了したら、コンテンツが、App Store に送信されたことを通知するメッセージが表示されます。
+アップロードが完了すると、アプリストアにコンテンツが送信されたことを知らせるメッセージが表示されます。
 
-[![](changes-to-storekit-images/image22.png "アップロードが成功したメッセージの例")](changes-to-storekit-images/image22.png#lightbox)
+[![](changes-to-storekit-images/image22.png "正常なアップロードメッセージの例")](changes-to-storekit-images/image22.png#lightbox)
 
-行われていますとに戻ると、製品のページでは、iTunes Connect パッケージの詳細を表示し、**送信準備ができて**状態。 製品は、この状態では、サンド ボックス環境でテストを開始できます。 サンド ボックスでのテスト用の製品を送信する必要はありません。
+この処理が完了すると、iTunes Connect の製品ページに戻ると、パッケージの詳細が表示され、状態を**送信する準備が整い**ます。 製品がこの状態である場合は、サンドボックス環境でテストを開始できます。 サンドボックスでテストのために製品を "送信" する必要はありません。
 
-[![](changes-to-storekit-images/image23.png "iTunes Connect パッケージの詳細を表示し、準備完了 でステータスを送信します。")](changes-to-storekit-images/image23.png#lightbox)
+[![](changes-to-storekit-images/image23.png "iTunes Connect パッケージの詳細を表示し、状態を送信する準備ができました")](changes-to-storekit-images/image23.png#lightbox)
 
-時間が (例: かかることができます。 数分後に) 間、アーカイブ、iTunes Connect のステータスが更新中にアップロードします。 レビュー用の製品を個別に送信したり、アプリケーションのバイナリと組み合わせて送信できます。 Apple が正式にコンテンツを承認された後でのみリリースされる予定、実稼働環境で App Store アプリ内購入します。
+しばらく時間がかかることがあります (例 数分)。アーカイブをアップロードしてから、iTunes Connect ステータスを更新します。 レビュー用に製品を個別に送信することも、アプリケーションバイナリと共に送信することもできます。 Apple が公式に承認されている場合にのみ、コンテンツはアプリで購入するために実稼働アプリストアで使用できるようになります。
 
-### <a name="pkg-file-format"></a>PKG ファイルの形式
+### <a name="pkg-file-format"></a>PKG ファイル形式
 
-Xcode とアーカイブ ツールを使用して作成してホストされているコンテンツのパッケージをアップロードするには、パッケージ自体の内容を表示することはありませんを意味します。 ファイルとサンプル アプリについては、次のスクリーン ショットのように作成されたパッケージ内のディレクトリで、 **plist**ルートと製品内のファイル内のファイル、**内容**サブディレクトリ。
+Xcode と Archive ツールを使用してホストされたコンテンツパッケージを作成およびアップロードすると、パッケージ自体の内容が表示されることはありません。 サンプルアプリ用に作成されたパッケージ内のファイルとディレクトリは、次のスクリーンショットのようになります。 **plist**ファイルがルートにあり、product ファイルが**Contents**サブディレクトリにあります。
 
-[![](changes-to-storekit-images/image24.png "ルートとその内容のサブディレクトリに、製品ファイルの plist ファイル")](changes-to-storekit-images/image24.png#lightbox)
+[![](changes-to-storekit-images/image24.png "ルートの plist ファイルと Contents サブディレクトリ内の製品ファイル")](changes-to-storekit-images/image24.png#lightbox)
 
-パッケージのディレクトリ構造に注意してください (特に内のファイルの場所、`Contents`サブディレクトリ) ため、デバイス上のパッケージからファイルを抽出するには、この情報を理解する必要があります。
+パッケージのディレクトリ構造 (特に、 `Contents`サブディレクトリ内のファイルの場所) に注意してください。これは、デバイス上のパッケージからファイルを抽出するために、この情報を理解する必要があるためです。
 
-### <a name="updating-package-content"></a>パッケージ コンテンツの更新
+### <a name="updating-package-content"></a>パッケージコンテンツを更新しています
 
-承認された後にコンテンツを更新するための手順:
+承認後にコンテンツを更新する手順は次のとおりです。
 
-- Xcode でプロジェクトをアプリ内購入コンテンツを編集します。
-- バージョン番号を増やします。
-- ITunes Connect に再度アップロードします。 後続の購入者の最新バージョンを自動的に取得するが、古いバージョンを既に持っているユーザーに通知が送信されません。
-- アプリがユーザーに通知し、それらのコンテンツの新しいバージョンを取得する責任を負います。 アプリのストア キットの復元機能を使用して、新しいバージョンをダウンロードする関数もビルドする必要があります。
-- 新しいバージョンが存在するかを確認するのには、(例: SKProducts をフェッチするアプリに機能を構築できます。 製品の価格を取得するために使用する同じプロセス) と ContentVersion プロパティを比較します。
+- Xcode で、アプリ内購入コンテンツプロジェクトを編集します。
+- バンプバージョン番号。
+- ITunes にアップロードして再接続します。 後続の購入者は最新バージョンを自動的に取得しますが、以前のバージョンを既に所有しているユーザーには通知が送信されません。
+- アプリは、ユーザーに通知し、新しいバージョンのコンテンツを取得するように促す役割を担います。 また、ストアキットの復元機能を使用して、新しいバージョンをダウンロードする関数を作成する必要もあります。
+- 新しいバージョンが存在するかどうかを判断するには、アプリに機能をビルドして、SKProducts をフェッチします (例として、 製品の価格を取得するために使用したのと同じプロセスで、ContentVersion プロパティを比較します。
 
 ## <a name="purchasing-overview"></a>購入の概要
 
-このセクションを読む前に確認既存[アプリ内購入ドキュメント](~/ios/platform/in-app-purchasing/index.md)します。
+このセクションを読む前に、既存[のアプリ内購入ドキュメント](~/ios/platform/in-app-purchasing/index.md)を確認してください。
 
-ホストされるコンテンツ、製品のときに発生するイベントのシーケンスを購入して、ダウンロードは、この図に示します。
+次の図に、ホストされたコンテンツを含む製品を購入してダウンロードするときに発生する一連のイベントを示します。
 
-[![](changes-to-storekit-images/image25.png "ホストされるコンテンツ、製品のときに発生するイベントのシーケンスを購入およびダウンロード")](changes-to-storekit-images/image25.png#lightbox)
+[![](changes-to-storekit-images/image25.png "ホストされたコンテンツを含む製品を購入してダウンロードするときに発生するイベントのシーケンス")](changes-to-storekit-images/image25.png#lightbox)
 
-1. ITunes Connect でホストするコンテンツの有効では、新製品を作成できます。 実際のコンテンツが (としてフォルダーにファイルを単にドラッグ) Xcode で個別に構築されたし、アーカイブし、iTunes (コーディングは必要ありません) にアップロードします。 各製品はご購入いただけますがその後、承認のため送信されます。 サンプル コードでこれらの製品 Id は、ハードコーディングされたが、新製品と iTunes Connect へのコンテンツを送信するときに更新できるように、リモート サーバーで使用可能な製品の一覧を格納する場合より柔軟なは、Apple とのコンテンツをホストします。
-1. ユーザーは、製品を購入、トランザクションが処理の支払キューに配置されます。
-1. ストア キットは、iTunes サーバー処理のために購入要求を転送します。
-1. トランザクションが完了 iTunes サーバー (例。 顧客は課金されます) を含むかどうかはダウンロード可能なアタッチされている製品情報、アプリに受信確認が返されます (そうである場合、ファイルのサイズとその他のメタデータ)。
-1. コードは、製品は、ダウンロード可能な場合にチェックし、その場合は、支払いのキューにも配置されているコンテンツのダウンロード要求を行う必要があります。 ストア キットは、iTunes のサーバーにこの要求を送信します。
-1. サーバーは、ダウンロードの進行状況と、コードに推定残り時間を返すコールバックを提供するストア キットをコンテンツ ファイルを返します。
-1. 完了すると、通知を取得し、キャッシュ フォルダーにファイルの場所を渡されます。
-1. コードは、ファイルをコピーし、製品が購入されていることを覚えておく必要がある任意の状態の保存、ことを確認する必要があります。 新しいファイルのバックアップのフラグが正しく設定するには、この機会を利用 (ヒント: サーバーからは、ユーザーを編集しないがおそらくをスキップするバックアップ、ユーザー常に取得できます Apple のサーバーから将来のため)。
-1. FinishTransaction を呼び出します。 この手順は重要なトランザクション支払いキューから削除します。 呼び出すことはありませんまで FinishTransaction キャッシュ ディレクトリの外部コンテンツをコピーした後に重要です。 FinishTransaction を呼び出すと、キャッシュされたファイルはすぐに削除する可能性があります。
+1. 新しい製品は、ホストされているコンテンツが有効になっている iTunes Connect で作成できます。 実際のコンテンツは、(ファイルをフォルダーにドラッグするだけで) Xcode で個別に作成され、アーカイブされて iTunes にアップロードされます (コーディングは必要ありません)。 各製品は承認のために送信され、その後、購入できるようになります。 このサンプルコードでは、これらの製品 Id はハードコーディングされていますが、新しい製品やコンテンツを iTunes Connect に送信するときに更新できるように、使用可能な製品リストをリモートサーバーに保存すると、Apple でコンテンツをホストすることがより柔軟になります。
+1. ユーザーが製品を購入すると、トランザクションが処理のために支払キューに配置されます。
+1. ストアキットは、処理のために購入要求を iTunes サーバーに転送します。
+1. トランザクションは、iTunes サーバーで完了します (例 お客様には課金されます) と領収書がアプリに返されます。製品情報は、ダウンロード可能かどうか (その場合はファイルサイズやその他のメタデータ) が含まれます。
+1. コードで製品がダウンロード可能かどうかを確認し、必要な場合は、コンテンツのダウンロード要求を行う必要があります。これは、支払いキューにも配置されます。 この要求は、ストアキットによって iTunes サーバーに送信されます。
+1. サーバーからストアキットにコンテンツファイルが返されます。これにより、ダウンロードの進行状況と残り時間の見積もりをコードに返すコールバックが提供されます。
+1. 完了すると、通知が表示され、キャッシュフォルダー内のファイルの場所が渡されます。
+1. コードでファイルをコピーして確認し、製品が購入されたことを覚えておく必要がある状態を保存する必要があります。 この機会に、新しいファイルでバックアップフラグを正しく設定します (ヒント: サーバーからのもので、ユーザーによって編集されていない場合は、ユーザーが将来 Apple のサーバーから常にそれらを取得できるため、バックアップをスキップする必要があります)。
+1. Finish トランザクションを呼び出します。 この手順は、支払いキューからトランザクションを削除するため重要です。 キャッシュディレクトリからコンテンツをコピーした後は、終了トランザクションを呼び出さないようにすることも重要です。 Finish Transaction を呼び出すと、キャッシュされたファイルがすぐに削除される可能性があります。
 
-## <a name="implementing-hosted-content-purchase"></a>ホストされているコンテンツの購入を実装します。
+## <a name="implementing-hosted-content-purchase"></a>ホストされたコンテンツの購入の実装
 
-完全なと組み合わせて、次の情報が読み取られる[アプリ内購入ドキュメント](~/ios/platform/in-app-purchasing/index.md)します。 このドキュメントの情報は、ホストされるコンテンツと以前の実装の違いについて説明します。
+次の情報は、[アプリ内購入ドキュメント](~/ios/platform/in-app-purchasing/index.md)と併せて読む必要があります。 このドキュメントの情報は、ホストされたコンテンツと以前の実装の違いに焦点を当てています。
 
 ### <a name="classes"></a>クラス
 
-次のクラスを追加または iOS 6 のサポートがホストされている内容に変更されました。
+IOS 6 でホストされるコンテンツをサポートするために、次のクラスが追加または変更されています。
 
-- **SKDownload** – 進行中のダウンロードを表す新しいクラスです。 1 つ以上、製品ごと、1 つ最初のみが実装されて、API を使用します。
-- **SKProduct** – 新しいプロパティの追加: `Downloadable`、 `ContentVersion`、`ContentLengths`配列。
-- **SKPaymentTransaction** – 新しいプロパティの追加:`Downloads`のコレクションを含む`SKDownload`オブジェクトをこの製品でダウンロード可能なコンテンツがホストされているかどうか。
-- **SKPaymentQueue** – 新しいメソッドの追加:`StartDownloads`します。 このメソッドを呼び出します`SKDownload`オブジェクトをホストするコンテンツをフェッチします。 ダウンロードはバック グラウンドで発生します。
-- **SKPaymentTransactionObserver** – 新しいメソッド:`UpdateDownloads`します。 ストア キットは、現在ダウンロード操作の進行状況の情報には、このメソッドを呼び出します。
+- **Skdownload** –進行中のダウンロードを表す新しいクラス。 API では、製品ごとに複数のを使用できますが、初期状態で実装されているのは1つだけです。
+- **Skproduct** –追加された`Downloadable`新しい`ContentVersion`プロパティ`ContentLengths` :、、配列。
+- **SKPaymentTransaction** –新しいプロパティが追加`Downloads`されました。この`SKDownload`製品でホストされているコンテンツがダウンロード可能な場合、オブジェクトのコレクションが含まれています。
+- **SKPaymentQueue** –新しいメソッドが追加`StartDownloads`されました:。 オブジェクトを使用し`SKDownload`てこのメソッドを呼び出し、ホストされたコンテンツをフェッチします。 ダウンロードはバックグラウンドで実行できます。
+- **SKPaymentTransactionObserver** –新しいメソッド: `UpdateDownloads`。 ストアキットは、現在のダウンロード操作に関する進行状況の情報を使用して、このメソッドを呼び出します。
 
-新しい詳細`SKDownload`クラス。
+新しい`SKDownload`クラスの詳細:
 
-- **進行状況**– 完了率のインジケーターをユーザーに表示するのに使用できる 0 ~ 1 の間の値。 進行状況を使用しないでください、ダウンロードが完了するかどうかを検出、状態をチェックする 1 を = = Finished = =。
-- **TimeRemaining** – ダウンロードの残り時間を秒単位での推定値です。 -1 は、見積もりの計算も意味します。
-- **状態**– アクティブな待機中、完了、失敗した、一時停止している、取り消されました。
-- **ContentURL** – ファイルの配置される場所、コンテンツがディスク上で、`Cache`ディレクトリ。 ダウンロードが完了した後にのみ設定されます。
-- **エラー** – 状態が失敗した場合、このプロパティを確認します。
+- **[進行状況]** –ユーザーにパーセント入力のインジケーターを表示するために使用できる0-1 の間の値。 ダウンロードが完了したかどうかを検出するために Progress = = 1 を使用しないでください。状態が [完了] になっていることを確認します。
+- **TimeRemaining** –ダウンロード時間の推定値 (秒単位)。 -1 は、推定値を計算していることを意味します。
+- **状態**–アクティブ、待機中、完了、失敗、一時停止、取り消し済み。
+- **Contenturl** –ディスク上のコンテンツが格納されている`Cache`ディレクトリ内のファイルの場所。 ダウンロードの完了後にのみ設定されます。
+- **エラー** –状態が Failed の場合は、このプロパティをオンにします。
 
-サンプル コードでクラス間の相互作用は (ホストされているコンテンツでの購入に固有のコードは緑で表示)、この図に示します。
+この図には、サンプルコードのクラス間の対話が示されています (ホストされているコンテンツの購入に固有のコードは緑で示されています)。
 
-[![](changes-to-storekit-images/image26.png "ホストされているコンテンツの購入がこの図では緑色で表示します。")](changes-to-storekit-images/image26.png#lightbox)
+[![](changes-to-storekit-images/image26.png "ホストされているコンテンツの購入は、この図では緑で示されています")](changes-to-storekit-images/image26.png#lightbox)
 
-これらのクラスが使用されているサンプル コードは、このセクションの残りの部分で示されます。
+これらのクラスが使用されているサンプルコードは、このセクションの残りの部分で示しています。
 
 ### <a name="custompaymentobserver-skpaymenttransactionobserver"></a>CustomPaymentObserver (SKPaymentTransactionObserver)
 
-既存の変更`UpdatedTransactions`、ダウンロード可能なコンテンツと呼び出しを確認する上書き`StartDownloads`必要な場合。
+既存`UpdatedTransactions`の上書きを変更して、ダウンロード可能なコンテンツ`StartDownloads`を確認し、必要に応じてを呼び出します。
 
 ```csharp
 public override void UpdatedTransactions (SKPaymentQueue queue, SKPaymentTransaction[] transactions)
@@ -415,7 +415,7 @@ public override void UpdatedTransactions (SKPaymentQueue queue, SKPaymentTransac
 }
 ```
 
-新しいメソッドをオーバーライド`UpdatedDownloads`を次に示します。 ストア キットは、後に、このメソッドを呼び出して`StartDownloads`でトリガーされる`UpdatedTransactions`します。 このメソッドが呼び出された*複数回*でダウンロードの進行状況を提供する中間の間隔で、ダウンロードが完了し、もう一度とします。 配列を受け取るメソッドに注目してください`SKDownload`オブジェクトの場合、各メソッドの呼び出しをキューに複数のダウンロードの状態を提供できるようにします。 ように、すべての時間と適切なアクション、ダウンロードの状態は、次の実装がチェックされます。
+新しいオーバーライドさ`UpdatedDownloads`れたメソッドを次に示します。 ストアキットは、でが`StartDownloads`トリガーされ`UpdatedTransactions`た後に、このメソッドを呼び出します。 このメソッドは、ダウンロードの進行状況を提供し、ダウンロードが終了したときに再度実行するために、不規則な間隔で*複数回*呼び出されます。 メソッドはオブジェクトの`SKDownload`配列を受け取ることに注意してください。そのため、各メソッド呼び出しで、キュー内の複数のダウンロードの状態を提供できます。 以下の実装に示すように、ダウンロードの状態は毎回チェックされ、適切なアクションが実行されます。
 
 ```csharp
 // ENTIRELY NEW METHOD IN iOS6
@@ -453,13 +453,13 @@ public override void PaymentQueueUpdatedDownloads (SKPaymentQueue queue, SKDownl
 }
 ```
 
-### <a name="inapppurchasemanager-skproductsrequestdelegate"></a>InAppPurchaseManager (SKProductsRequestDelegate)
+### <a name="inapppurchasemanager-skproductsrequestdelegate"></a>InAppPurchaseManager (Sk$ Requestdelegate)
 
-このクラスには、新しいメソッドが含まれています。`SaveDownload`各ダウンロードが正常に完了した後に呼び出されます。
+このクラスには、各`SaveDownload`ダウンロードが正常に完了した後に呼び出される新しいメソッドが含まれています。
 
-ホストされたコンテンツを正常にダウンロードし、解凍に、`Cache`ディレクトリ。 構造、します。PKG ファイルがすべてのファイルを保存する必要があります、`Contents`サブディレクトリは、次のコード内からファイルを抽出するため、`Contents`サブディレクトリ。
+ホストされているコンテンツが正常にダウンロードさ`Cache`れ、ディレクトリに解凍されました。 の構造体。PKG ファイルでは、すべてのファイルが`Contents`サブディレクトリに保存されている必要があるため、以下のコードは`Contents`サブディレクトリ内からファイルを抽出します。
 
-コードは、コンテンツのパッケージ内のすべてのファイルを反復処理し、それらにコピー、`Documents`のという名前のサブフォルダーでは、ディレクトリ、`ProductIdentifier`します。 最後`CompleteTransaction`、呼び出す`FinishTransaction`支払キューからトランザクションを削除します。
+このコードは、コンテンツパッケージ内のすべてのファイルを反復処理し、 `Documents`のという名前`ProductIdentifier`のサブフォルダー内のディレクトリにコピーします。 最後`CompleteTransaction` `FinishTransaction`に、を呼び出して、支払キューからトランザクションを削除します。
 
 ```csharp
 // ENTIRELY NEW METHOD IN iOS 6
@@ -483,51 +483,51 @@ public void SaveDownload (SKDownload download)
 }
 ```
 
-ときに`FinishTransaction`が呼び出されると、ダウンロードしたファイルがであるという保証がなくなります、`Cache`ディレクトリ。 すべてのファイルを呼び出す前にコピーする必要があります`FinishTransaction`します。
+が`FinishTransaction`呼び出されると、ダウンロードされたファイルは`Cache`ディレクトリに存在する保証がなくなります。 を呼び出す`FinishTransaction`前に、すべてのファイルをコピーする必要があります。
 
 
 ## <a name="other-considerations"></a>その他の注意事項
 
-上記のコード例では、ホストされているコンテンツの購入の非常に単純な実装を示します。 いくつか追加の点を考慮する必要がありますがあります。
+上記のコード例は、ホストされたコンテンツを購入するための非常に単純な実装を示しています。 考慮する必要がある追加のポイントがいくつかあります。
 
-### <a name="detecting-updated-content"></a>更新されたコンテンツを検出します。
+### <a name="detecting-updated-content"></a>更新されたコンテンツの検出
 
-ホストされているコンテンツのパッケージを更新することはできますが、ストア キットは既にダウンロードして、製品を購入するユーザーにこれらの更新プログラムをプッシュするメカニズムが提供されません。 この機能を実装するコードは、新しいチェックことができます`SKProduct.ContentVersion`プロパティ (場合、`SKProduct`は`Downloadable`) 定期的に、検出のかどうか、値がインクリメントされます。 また、プッシュ通知システムを構築できます。
+ホストされているコンテンツパッケージを更新することは可能ですが、ストアキットには、製品を既にダウンロードして購入しているユーザーにこれらの更新をプッシュするメカニズムは用意されていません。 この機能を実装するには、コードで`SKProduct.ContentVersion`新しいプロパティ (が`SKProduct` `Downloadable`の場合) を定期的にチェックし、値がインクリメントされるかどうかを検出します。 または、プッシュ通知システムを構築することもできます。
 
-### <a name="installing-updated-content-versions"></a>更新されたコンテンツのバージョンをインストールします。
+### <a name="installing-updated-content-versions"></a>更新されたコンテンツバージョンのインストール
 
-ファイルが既に存在する場合に、上記のサンプル コードは、ファイルのコピーをスキップします。 ダウンロードされるコンテンツの新しいバージョンをサポートする場合でもこれは良い考えではありません。
+上記のサンプルコードは、ファイルが既に存在する場合、ファイルのコピーをスキップします。 ダウンロードするコンテンツの新しいバージョンをサポートする場合は、この方法をお勧めしません。
 
-バージョンについては、という名前のフォルダーに内容をコピーし、これは、現在のバージョン (例: の追跡を別の方法があります。 `NSUserDefaults`または購入を完了したレコードを格納する任意の場所)。
+別の方法として、コンテンツをバージョンのという名前のフォルダーにコピーし、現在のバージョンを追跡することができます (例として、 また`NSUserDefaults`はで、完了した購入レコードを格納します。
 
-### <a name="restoring-transactions"></a>トランザクションを復元します。
+### <a name="restoring-transactions"></a>トランザクションの復元
 
-ときに`SKPaymentQueue.DefaultQueue.RestoreCompletedTransactions`が呼び出されると、ストア キットは、ユーザーの以前のすべてのトランザクションを返します。 、項目の数が多いが購入した場合、または購入ごとにコンテンツの大きなパッケージがある場合は、復元結果、大量のネットワーク トラフィックすべて取得キューとしてダウンロードを一度にします。
+が`SKPaymentQueue.DefaultQueue.RestoreCompletedTransactions`呼び出されると、Store Kit は、ユーザーの前のすべてのトランザクションを返します。 多数のアイテムを購入した場合、または各購入に大きなコンテンツパッケージが含まれている場合は、すべてのファイルが一度にキューに入れられるため、復元によって大量のネットワークトラフィックが発生する可能性があります。
 
-製品関連のコンテンツのパッケージの実際のダウンロードから個別に購入したかどうかを追跡することを検討してください。
+製品が、関連付けられているコンテンツパッケージの実際のダウンロードとは別に購入されているかどうかを追跡することを検討してください。
 
-### <a name="pausing-restarting-and-canceling-downloads"></a>一時停止と再起動、ダウンロードのキャンセル
+### <a name="pausing-restarting-and-canceling-downloads"></a>ダウンロードの一時停止、再開、キャンセル
 
-サンプル コードは、この機能を示していませんが、一時停止し、ホストされているコンテンツのダウンロードを再開すること、します。 `SKPaymentQueue.DefaultQueue`の方法があります`PauseDownloads`、`ResumeDownloads`と`CancelDownloads`します。
+このサンプルコードではこの機能については説明していませんが、ホストされているコンテンツのダウンロードを一時停止して再起動することができます。 には、、 `PauseDownloads` `ResumeDownloads` および`CancelDownloads`のメソッドがあります。 `SKPaymentQueue.DefaultQueue`
 
-コードを呼び出す場合`FinishTransaction`ダウンロードされる前に支払キューで`Finished`し、そのダウンロードが自動的に取り消されました。
+ダウンロードの前に`FinishTransaction`支払キューでコードがを呼び出すと、ダウンロードは自動的に取り消されます。 `Finished`
 
-### <a name="setting-the-skip-backup-flag-on-the-downloaded-content"></a>ダウンロードしたコンテンツにスキップ バックアップ フラグを設定
+### <a name="setting-the-skip-backup-flag-on-the-downloaded-content"></a>ダウンロードしたコンテンツに対してスキップバックアップフラグを設定する
 
-Apple の iCloud のバックアップ ガイドラインを提案する非ユーザー コンテンツ サーバーから簡単に復元される必要があります*いない*のバックアップ (iCloud 記憶域を使用する場合と不必要に) ためです。 バックアップの属性の設定の詳細については、次を参照してください。、[ファイル システム](~/ios/app-fundamentals/file-system.md)ドキュメント。
+Apple の iCloud バックアップのガイドラインでは、サーバーから簡単に復元できる非ユーザーコンテンツ (iCloud 記憶域を不必要に使用するため) をバックアップしないようにすることを推奨して*い*ます。 Backup 属性の設定の詳細については、[ファイルシステム](~/ios/app-fundamentals/file-system.md)のドキュメントを参照してください。
 
 ## <a name="summary"></a>まとめ
 
-この記事には iOS6 でストア キットの 2 つの新しい機能が導入: iTunes とアプリ内の他のコンテンツを購入し、独自のアプリ内購入をホストする Apple のサーバーを利用します。 この概要は、既存と共にお読みください[アプリ内購入ドキュメント](~/ios/platform/in-app-purchasing/index.md)のストア キットの機能を実装する完全にカバーします。
+この記事では、iOS6 のストアキットの2つの新機能を紹介しました。アプリ内から iTunes とその他のコンテンツを購入し、Apple のサーバーを利用して独自のアプリ内購入をホストします。 この概要については、既存[のアプリ内購入](~/ios/platform/in-app-purchasing/index.md)に関するドキュメントと共に、ストアキットの機能の実装の詳細について説明します。
 
 ## <a name="related-links"></a>関連リンク
 
-- [StoreKit (サンプル)](https://developer.xamarin.com/samples/monotouch/StoreKit/)
+- [StoreKit (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/storekit)
 - [アプリ内購入](~/ios/platform/in-app-purchasing/index.md)
-- [StoreKit のフレームワーク参照](https://developer.apple.com/library/prerelease/ios/#documentation/StoreKit/Reference/StoreKit_Collection/_index.html)
+- [StoreKit フレームワークリファレンス](https://developer.apple.com/library/prerelease/ios/#documentation/StoreKit/Reference/StoreKit_Collection/_index.html)
 - [SKStoreProductViewController クラスのリファレンス](https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKITunesProductViewController_Ref/SKStoreProductViewController.html)
 - [iTunes Search API リファレンス](http://www.apple.com/itunes/affiliates/resources/documentation/itunes-store-web-service-search-api.html)
 - [SKDownload](https://developer.apple.com/library/prerelease/ios/#documentation/StoreKit/Reference/SKDownload_Ref/Introduction/Introduction.html)
 - [SKPaymentQueue](https://developer.apple.com/library/prerelease/ios/documentation/StoreKit/Reference/SKPaymentQueue_Class/Reference/Reference.html#/apple_ref/occ/instm/SKPaymentQueue/cancelDownloads:)
 - [SKProduct](https://developer.apple.com/library/prerelease/ios/documentation/StoreKit/Reference/SKProduct_Reference/Reference/Reference.html#/apple_ref/occ/instp/SKProduct/downloadable)
-- [WWDC ビデオ:ストア キットで製品を販売](https://developer.apple.com/videos/wwdc/2012/?include=302#302)
+- [WWDC ビデオ:店舗キットを使用した製品の販売](https://developer.apple.com/videos/wwdc/2012/?include=302#302)

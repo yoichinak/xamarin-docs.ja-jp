@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/13/2018
-ms.openlocfilehash: 270191890e8747ecad7d250fb0fe18ce253d3823
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 49bb3f901f2b1f8ed4ae26650cb0509aabfd2369
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61169997"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68647613"
 ---
 # <a name="customizing-listview-appearance"></a>ListView の外観のカスタマイズ
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/Grouping)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-grouping)
 
-[`ListView`](xref:Xamarin.Forms.ListView) ほかに、一覧の表示を制御する機能を持つ、 [ `ViewCell` ](xref:Xamarin.Forms.ViewCell)一覧内の各行のインスタンス。
+[`ListView`](xref:Xamarin.Forms.ListView)には、リストの各行の[`ViewCell`](xref:Xamarin.Forms.ViewCell)インスタンスに加えて、一覧の表示を制御する機能があります。
 
 <a name="Grouping" />
 
@@ -55,7 +55,7 @@ public class PageTypeGroup : List<PageModel>
 
 上記のコードで`All`バインディング ソースとして、ListView に与えられる一覧を示します。 `Title` `ShortName`はグループの見出しに使用されるプロパティです。
 
-この段階で、`All`は空のリストです。 プログラムの開始時、リストに表示されます、静的コンス トラクターを追加します。
+この段階で、`All`は空のリストです。 プログラムの開始時、リストに表示されます、静的コンストラクターを追加します。
 
 ```csharp
 static PageTypeGroup()
@@ -78,7 +78,7 @@ static PageTypeGroup()
 }
 ```
 
-上記のコードでも呼び出す`Add`の要素に`groups`、型のインスタンスである`PageTypeGroup`します。 これは、考えられるため、`PageTypeGroup`から継承`List<PageModel>`します。 これは、上記の一覧パターンの一覧の例です。
+上のコードでは、型`Add` `PageTypeGroup`のインスタンスであるの`groups`要素に対してを呼び出すこともできます。 これは、考えられるため、`PageTypeGroup`から継承`List<PageModel>`します。 これは、上記の一覧パターンの一覧の例です。
 
 グループ化された一覧を表示するための XAML を次に示します。
 
@@ -201,13 +201,13 @@ ListView HeaderList = new ListView() {
 
 ![](customizing-list-appearance-images/header-custom.png "カスタマイズされたヘッダーとフッターを ListView")
 
-## <a name="scrollbar-visibility"></a>スクロール バーの可視性
+## <a name="scrollbar-visibility"></a>スクロールバーの表示
 
-[`ListView`](xref:Xamarin.Forms.ListView) `HorizontalScrollBarVisibility`と`VerticalScrollBarVisibility`を取得または設定するプロパティを[ `ScrollBarVisibility` ](xref:Xamarin.Forms.ScrollBarVisibility) 、水平方向または垂直方向のスクロール バーが表示されているときを表す値です。 両方のプロパティは、次の値に設定できます。
+[`ListView`](xref:Xamarin.Forms.ListView)プロパティ`HorizontalScrollBarVisibility`と`VerticalScrollBarVisibility`プロパティがあります。これらの[`ScrollBarVisibility`](xref:Xamarin.Forms.ScrollBarVisibility)プロパティは、水平方向または垂直方向のスクロールバーが表示されるタイミングを表す値を取得または設定します。 どちらのプロパティも、次の値に設定できます。
 
-- [`Default`](xref:Xamarin.Forms.ScrollBarVisibility) プラットフォームのスクロール バーの既定動作を示しの既定値は、`HorizontalScrollBarVisibility`と`VerticalScrollBarVisibility`プロパティ。
-- [`Always`](xref:Xamarin.Forms.ScrollBarVisibility) ビューでコンテンツを調整する場合でも、スクロール バーが、表示されることを示します。
-- [`Never`](xref:Xamarin.Forms.ScrollBarVisibility) スクロール バーが表示されないこと、コンテンツ ビューに収まらない場合でもを示します。
+- [`Default`](xref:Xamarin.Forms.ScrollBarVisibility)プラットフォームの既定のスクロールバーの動作を示します。は、プロパティ`HorizontalScrollBarVisibility`と`VerticalScrollBarVisibility`プロパティの既定値です。
+- [`Always`](xref:Xamarin.Forms.ScrollBarVisibility)ビューにコンテンツが収まる場合でも、スクロールバーが表示されることを示します。
+- [`Never`](xref:Xamarin.Forms.ScrollBarVisibility)コンテンツがビューに収まらない場合でも、スクロールバーが表示されないことを示します。
 
 <a name="Row_Separators" />
 
@@ -219,7 +219,7 @@ ListView HeaderList = new ListView() {
 
 既定の可視性:
 
-C#: 
+C#:
 
 ```csharp
 SepratorDemoListView.SeparatorVisibility = SeparatorVisibility.Default;
@@ -235,7 +235,7 @@ XAML:
 
 None:
 
-C#: 
+C#:
 
 ```csharp
 SepratorDemoListView.SeparatorVisibility = SeparatorVisibility.None;
@@ -251,7 +251,7 @@ XAML:
 
 使用して区切り線の色を設定することも、`SeparatorColor`プロパティ。
 
-C#: 
+C#:
 
 ```csharp
 SepratorDemoListView.SeparatorColor = Color.Green;
@@ -280,7 +280,7 @@ XAML:
 
 ### <a name="custom-fixed-row-height"></a>カスタムの固定の行の高さ
 
-C#: 
+C#:
 
 ```csharp
 RowHeightDemoListView.RowHeight = 100;
@@ -301,7 +301,7 @@ XAML:
 1 回手動で設定する行の高さがないことに注意してください`HasUnevenRows`に設定されている`true`高さは、Xamarin.Forms が自動的に計算されます。
 
 
-C#: 
+C#:
 
 ```csharp
 RowHeightDemoListView.HasUnevenRows = true;
@@ -342,8 +342,8 @@ void OnImageTapped (object sender, EventArgs args)
 
 ## <a name="related-links"></a>関連リンク
 
-- [グループ化 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/Grouping)
-- [Custom Renderer View (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithListviewNative/)
-- [行の動的なサイズ変更 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/DynamicUnevenListCells/)
+- [グループ化 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-grouping)
+- [Custom Renderer View (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithlistviewnative)
+- [行の動的なサイズ変更 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-dynamicunevenlistcells)
 - [1.4 リリース ノート](http://forums.xamarin.com/discussion/35451/xamarin-forms-1-4-0-released/)
 - [1.3 リリース ノート](http://forums.xamarin.com/discussion/29934/xamarin-forms-1-3-0-released/)

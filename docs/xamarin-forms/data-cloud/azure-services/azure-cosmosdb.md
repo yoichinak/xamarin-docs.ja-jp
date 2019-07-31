@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Forms での Azure Cosmos DB ドキュメント データベースを使用します。
+title: Xamarin. Forms で Azure Cosmos DB ドキュメントデータベースを使用する
 description: この記事では、Azure Cosmos DB .NET Standard クライアント ライブラリを使用して、Xamarin.Forms アプリケーションに Azure Cosmos DB ドキュメント データベースを統合する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 7C0605D9-9B7F-4002-9B60-2B5DAA3EA30C
@@ -8,22 +8,22 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: 0f0a9d2a5c7afb54256c7c2d3087b7912e833e3f
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: dd325fbdf9d2619df94077eed74f9e6c61796a26
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67659229"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68651401"
 ---
-# <a name="consume-an-azure-cosmos-db-document-database-in-xamarinforms"></a>Xamarin.Forms での Azure Cosmos DB ドキュメント データベースを使用します。
+# <a name="consume-an-azure-cosmos-db-document-database-in-xamarinforms"></a>Xamarin. Forms で Azure Cosmos DB ドキュメントデータベースを使用する
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoDocumentDB/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-tododocumentdb)
 
 _Azure Cosmos DB ドキュメント データベースは、JSON ドキュメント、シームレスなスケーリングとグローバル レプリケーションを必要とするアプリケーションの高速、高可用性でスケーラブルなデータベース サービスを提供するための低待機時間のアクセスを提供する NoSQL データベースです。この記事では、Azure Cosmos DB .NET Standard クライアント ライブラリを使用して、Xamarin.Forms アプリケーションに Azure Cosmos DB ドキュメント データベースを統合する方法について説明します。_
 
 > [!VIDEO https://youtube.com/embed/BoVH12igmbg]
 
-**Microsoft Azure Cosmos DB のビデオ**
+**Microsoft Azure Cosmos DB ビデオ**
 
 Azure のサブスクリプションを使用して、Azure Cosmos DB ドキュメント データベース アカウントをプロビジョニングできます。 各データベース アカウントには、0 個以上のデータベースを持つことができます。 Azure Cosmos db ドキュメント データベースは、ドキュメントのコレクションとユーザーの論理コンテナーです。
 
@@ -230,7 +230,7 @@ await client.DeleteDatabaseAsync(UriFactory.CreateDatabaseUri(Constants.Database
 
 ## <a name="related-links"></a>関連リンク
 
-- [Todo の Azure Cosmos DB (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoDocumentDB/)
+- [Todo の Azure Cosmos DB (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-tododocumentdb)
 - [Azure Cosmos DB のドキュメント](/azure/cosmos-db/)
 - [Azure Cosmos DB .NET Standard クライアント ライブラリ](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core)
 - [Azure Cosmos DB API](https://docs.microsoft.com/dotnet/api/overview/azure/cosmosdb/client?view=azure-dotnet)

@@ -6,22 +6,22 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/02/2018
-ms.openlocfilehash: 12e7e31cda9818a3cb2e2efc331a0be5d0c334e5
-ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
+ms.openlocfilehash: d924bac99b4edc5f41afd024d56fb0c6ace2613d
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66740855"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68647635"
 ---
 # <a name="gridviewpager"></a>GridViewPager
 
-[GridViewPager](https://developer.xamarin.com/samples/monodroid/wear/GridViewPager/) Android Wear の 2D ピッカーのナビゲーション パターンを実装する方法を示します。
+[GridViewPager](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-gridviewpager)サンプルでは、Android 劣化の2d ピッカーナビゲーションパターンを実装する方法を示します。
 
-![正方形の表示で GridViewPager の例のスクリーン ショット](gridviewpager-images/gridviewpager.png)
+![正方形ディスプレイの GridViewPager のスクリーンショットの例](gridviewpager-images/gridviewpager.png)
 
-最初に追加、 [Xamarin Android Wear サポート](https://www.nuget.org/packages/Xamarin.Android.Wear/)をプロジェクトに NuGet パッケージ。
+まず、 [Xamarin Android 磨耗サポート](https://www.nuget.org/packages/Xamarin.Android.Wear/)NuGet パッケージをプロジェクトに追加します。
 
-レイアウト XML は、ようになります。
+レイアウト XML は次のようになります。
 
 ```xml
 <android.support.wearable.view.GridViewPager xmlns:android="http://schemas.android.com/apk/res/android"
@@ -31,13 +31,13 @@ ms.locfileid: "66740855"
     android:keepScreenOn="true" />
 ```
 
-作成します。 [`GridPagerAdapter`](https://developer.android.com/reference/android/support/wearable/view/GridPagerAdapter.html)
-(またはサブクラスなど [`FragmentGridPagerAdapter`](https://developer.android.com/reference/android/support/wearable/view/FragmentGridPagerAdapter.html)
-ユーザーとして表示するビューを提供する次のように移動します。
+を作成する[`GridPagerAdapter`](https://developer.android.com/reference/android/support/wearable/view/GridPagerAdapter.html)
+(またはのようなサブクラスです。[`FragmentGridPagerAdapter`](https://developer.android.com/reference/android/support/wearable/view/FragmentGridPagerAdapter.html)
+ユーザーが移動したときに表示するビューを指定します。
 
-[サンプル アダプター](https://github.com/xamarin/monodroid-samples/blob/master/wear/GridViewPager/GridViewPager/SimpleGridPagerAdapter.cs)の上書きを含めて、必要なメソッドを実装する方法を示します`RowCount`、 `GetColumnCount`、`GetBackground`と `GetFragment`
+[サンプルアダプター](https://github.com/xamarin/monodroid-samples/blob/master/wear/GridViewPager/GridViewPager/SimpleGridPagerAdapter.cs)は、、 `RowCount` `GetColumnCount` `GetBackground`、、およびのオーバーライドなど、必要なメソッドを実装する方法を示しています。`GetFragment`
 
-示すように、アダプターを接続します。
+次に示すように、アダプターを接続します。
 
 ```csharp
 pager.Adapter = new SimpleGridPagerAdapter (this, FragmentManager);
@@ -47,6 +47,6 @@ pager.Adapter = new SimpleGridPagerAdapter (this, FragmentManager);
 
 ## <a name="related-links"></a>関連リンク
 
-- [Google の 2D ピッカー ドキュメント](https://developer.android.com/training/wearables/ui/2d-picker.html)
-- [android.support.wearable docs](https://developer.android.com/reference/android/support/wearable/view/package-summary.html)
-- [GridViewPager (sample)](https://developer.xamarin.com/samples/monodroid/wear/GridViewPager/)
+- [Google の2D ピッカードキュメント](https://developer.android.com/training/wearables/ui/2d-picker.html)
+- [android. ウェアラブルドキュメント](https://developer.android.com/reference/android/support/wearable/view/package-summary.html)
+- [GridViewPager (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-gridviewpager)

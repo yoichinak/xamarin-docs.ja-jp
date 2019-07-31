@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/03/2018
-ms.openlocfilehash: 28475df4baa225cc9a608607be6ed673ad0e6e8a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 105d06c7cea23ac0873c8de68d7ad1ad62ae1ffc
+ms.sourcegitcommit: 84764b9c51e769d6d6570a362af8451607c7e0d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61251383"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68665711"
 ---
 # <a name="creating-ios-user-interfaces-in-code-in-xamarinios"></a>Xamarin.iOS でのコードで iOS ユーザー インターフェイスの作成
 
@@ -89,10 +89,10 @@ Visual Studio for Mac では、空のテンプレートが提供されません�
     public override bool FinishedLaunching(UIApplication app, NSDictionary options)
     {
         // create a new window instance based on the screen size
-        window = new UIWindow(UIScreen.MainScreen.Bounds);
+        Window = new UIWindow(UIScreen.MainScreen.Bounds);
 
         // make the window visible
-        window.MakeKeyAndVisible();
+        Window.MakeKeyAndVisible();
 
         return true;
     }
@@ -118,10 +118,10 @@ public class AppDelegate : UIApplicationDelegate
     public override bool FinishedLaunching(UIApplication app, NSDictionary options)
     {
         // create a new window instance based on the screen size
-        window = new UIWindow(UIScreen.MainScreen.Bounds);
+        Window = new UIWindow(UIScreen.MainScreen.Bounds);
 
         // make the window visible
-        window.MakeKeyAndVisible();
+        Window.MakeKeyAndVisible();
 
         return true;
     }
@@ -132,7 +132,7 @@ public class AppDelegate : UIApplicationDelegate
 
 ## <a name="adding-a-controller"></a>コントローラーを追加する
 
-アプリは、多くのビュー コント ローラーを含めることができますが、すべてのビュー コント ローラーを制御する 1 つのルート ビュー コント ローラーが必要です。  コント ローラーを作成して、ウィンドウを追加、`UIViewController`インスタンスに設定して、`window.RootViewController`プロパティ。
+アプリは、多くのビュー コント ローラーを含めることができますが、すべてのビュー コント ローラーを制御する 1 つのルート ビュー コント ローラーが必要です。  コント ローラーを作成して、ウィンドウを追加、`UIViewController`インスタンスに設定して、`Window.RootViewController`プロパティ。
 
 ```csharp
 public class AppDelegate : UIApplicationDelegate
@@ -529,7 +529,7 @@ public override void Draw(CGRect rect)
 }
 ```
 
-`CircleView`は、`UIView`も設定できます`UIView`プロパティもします。 たとえば、設定できます、`BackgroundColor`コンス トラクターで。
+`CircleView`は、`UIView`も設定できます`UIView`プロパティもします。 たとえば、設定できます、`BackgroundColor`コンストラクターで。
 
 ```csharp
 public CircleView()
@@ -632,4 +632,4 @@ Apple は、.xib またはストーリー ボード ファイルを使用して 
 
 ## <a name="related-links"></a>関連リンク
 
-- [SimpleLogin (サンプル)](https://developer.xamarin.com/samples/monotouch/SimpleLogin)
+- [SimpleLogin (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/simplelogin)

@@ -1,47 +1,47 @@
 ---
-title: watchOS Xamarin でのイメージ コントロール
-description: このドキュメントでは、Xamarin でビルドされた watchOS アプリケーション イメージ コントロールを使用する方法について説明します。 SetImage メソッドは、watch extension、アニメーション、画像の追加、WKInterfaceImage コントロールについて説明します。
+title: Xamarin の watchOS Image コントロール
+description: このドキュメントでは、Xamarin でビルドされた watchOS アプリケーションでイメージコントロールを使用する方法について説明します。 WKInterfaceImage コントロール、SetImage メソッド、watch 拡張機能へのイメージの追加、アニメーションなどについて説明します。
 ms.prod: xamarin
 ms.assetid: B741C207-3427-46F3-9C90-A52BF8933FA4
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 30bb8f096384dd9f76e208fbd3dbef73cf53bb33
-ms.sourcegitcommit: 8ecfa339d0f3e7687977bfe4fc96448942690183
+ms.openlocfilehash: 7ff97f27a89b9943194ea875458f4e63f7797b76
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67558699"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68645852"
 ---
-# <a name="watchos-image-controls-in-xamarin"></a>watchOS Xamarin でのイメージ コントロール
+# <a name="watchos-image-controls-in-xamarin"></a>Xamarin の watchOS Image コントロール
 
-watchOS の提供、 [`WKInterfaceImage`](xref:WatchKit.WKInterfaceImage)イメージや単純なアニメーションを表示するコントロール。 一部のコントロール (ボタン、グループ、およびインターフェイス コント ローラー) などの背景画像をこともできます。
+watchOS の提供、 [`WKInterfaceImage`](xref:WatchKit.WKInterfaceImage)イメージや単純なアニメーションを表示するコントロール。 一部のコントロールには、背景イメージ (ボタン、グループ、インターフェイスコントローラーなど) を含めることもできます。
 
 ![](image-images/image-walkway.png "Apple Watch を示す図") ![](image-images/image-animation.png "単純なアニメーションを使用して Apple Watch")
 <!-- watch image courtesy of http://infinitapps.com/bezel/ -->
 
-資産カタログのイメージを使用すると、ウォッチ キット アプリにイメージを追加できます。
+アセットカタログ画像を使用して、ウォッチキットアプリに画像を追加します。
 のみ **@2x** Retina ディスプレイ デバイスをすべて見るために、バージョンが必要です。
 
-![](image-images/asset-universal-sml.png "Retina ディスプレイ デバイスをすべて見るために 2 つだけの x バージョンが必要です。")
+![](image-images/asset-universal-sml.png "すべてのウォッチデバイスに Retina が表示されるため、必要なバージョンは2倍です。")
 
-イメージ自体がウォッチの適切なサイズであることを確認することをお勧めします。 *回避*サイズが不適切イメージ (特に大規模なもの) を使用して、ウォッチ上に表示するのにスケーリングします。
+画像自体が、ウォッチ画面の正しいサイズであることを確認することをお勧めします。 サイズの正しくないイメージ (特に大きなもの) を使用*せず*に、拡大縮小して、ウォッチに表示します。
 
-資産カタログ イメージでウォッチ キット サイズ (38 mm および 42 mm) を使用すると、表示サイズごとに異なるイメージを指定します。
+アセットカタログイメージで Watch Kit のサイズ (38mm と 42 mm) を使用して、表示サイズごとに異なるイメージを指定できます。
 
-![](image-images/asset-watch-sml.png "資産カタログ イメージで 38 mm および 42 mm ウォッチ キット サイズを使用する表示サイズごとに異なるイメージを指定するには")
+![](image-images/asset-watch-sml.png "アセットカタログイメージで Watch Kit のサイズ38mm と 42 mm を使用して、表示サイズごとに異なるイメージを指定できます。")
 
 
-## <a name="images-on-the-watch"></a>Watch でのイメージ
+## <a name="images-on-the-watch"></a>ウォッチの画像
 
-イメージを表示する最も効率的な方法は、する*watch アプリのプロジェクトに含める*し、表示を使用して、`SetImage(string imageName)`メソッド。
+画像を表示する最も効率的な方法は、*それらを watch アプリプロジェクトに含め*、 `SetImage(string imageName)`メソッドを使用して表示することです。
 
-たとえば、 [WatchKitCatalog](https://developer.xamarin.com/samples/WatchKitCatalog/)サンプルでは、多数のイメージは、watch アプリ プロジェクト内のアセット カタログに追加します。
+たとえば、 [WatchKitCatalog](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog/)サンプルには、watch アプリプロジェクトのアセットカタログにいくつかのイメージが追加されています。
 
-![](image-images/asset-whale-sml.png "WatchKitCatalog サンプルには、多数のイメージは、watch アプリ プロジェクト内のアセット カタログに追加")
+![](image-images/asset-whale-sml.png "WatchKitCatalog サンプルには、watch アプリプロジェクトのアセットカタログに多数のイメージが追加されています。")
 
-これらは効率的に読み込まれ、watch を使用して、表示される`SetImage`文字列名パラメーターを使用。
+これらは、文字列 name パラメーターを使用して`SetImage` 、監視に効率的に読み込んで表示できます。
 
 ```csharp
 myImageControl.SetImage("Whale");
@@ -50,23 +50,23 @@ myOtherImageControl.SetImage("Worry");
 
 ### <a name="background-images"></a>背景画像
 
-同じロジックが適用されます、`SetBackgroundImage (string imageName)`上、 `Button`、 `Group`、および`InterfaceController`クラス。 最適なパフォーマンスは、watch アプリ自体で、イメージを格納することによって実現されます。
+、、および`SetBackgroundImage (string imageName)` `Group` `Button`クラスのに対しても同じロジックが適用されます。`InterfaceController` 最適なパフォーマンスを得るには、画像を watch アプリ自体に格納します。
 
 
-## <a name="images-in-the-watch-extension"></a>イメージ ウォッチ拡張機能
+## <a name="images-in-the-watch-extension"></a>Watch 拡張機能の画像
 
-に加えて、watch アプリ自体に格納されているイメージを読み込み、表示用の watch アプリに拡張機能のバンドルからイメージを送信することができます (または、リモートの場所からイメージをダウンロードし、それらを表示する可能性があります)。
+Watch アプリ自体に格納されているイメージを読み込むだけでなく、拡張機能バンドルのイメージを watch アプリに送信して表示することもできます (または、リモートの場所からイメージをダウンロードして表示することもできます)。
 
-作成するイメージ ウォッチ拡張機能からロードされ、`UIImage`をインスタンス化し、呼び出す`SetImage`で、`UIImage`オブジェクト。
+Watch 拡張機能からイメージを読み込むには`UIImage` 、インスタンスを作成`SetImage`し、 `UIImage`オブジェクトを使用してを呼び出します。
 
-たとえば、 [WatchKitCatalog](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)サンプルという名前のイメージでは、 **Bumblebee**ウォッチ拡張プロジェクトで。
+たとえば、 [WatchKitCatalog](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)サンプルには、watch 拡張機能プロジェクトの**Bumblebee**という名前のイメージがあります。
 
-![](image-images/asset-bumblebee-sml.png "WatchKitCatalog サンプルには、ウォッチ拡張機能プロジェクトで Bumblebee をという名前のイメージ")
+![](image-images/asset-bumblebee-sml.png "WatchKitCatalog サンプルには、watch 拡張機能プロジェクトの Bumblebee という名前のイメージがあります。")
 
-次のコードが発生します。
+次のコードでは、が発生します。
 
-- メモリに読み込まれているイメージと
-- watch で表示されます。
+- メモリに読み込まれているイメージ。
+- ウォッチに表示されます。
 
 ```csharp
 using (var image = UIImage.FromBundle ("Bumblebee")) {
@@ -75,22 +75,22 @@ using (var image = UIImage.FromBundle ("Bumblebee")) {
 ```
 
 
-## <a name="animations"></a>Animations
+## <a name="animations"></a>アニメーション
 
-イメージのセットをアニメーション化するには、同じプレフィックスで始まるすべてと数値のサフィックスが付いてする必要があります。
+一連のイメージをアニメーション化するには、すべてが同じプレフィックスで始まり、数字のサフィックスを持つ必要があります。
 
-[WatchKitCatalog](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)サンプル watch アプリのプロジェクトに一連の番号付きのイメージには、 **Bus**プレフィックス。
+[WatchKitCatalog](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)サンプルには、 **Bus**プレフィックスを持つ watch アプリプロジェクトに一連の番号付き画像が含まれています。
 
-![](image-images/asset-bus-animation-sml.png "WatchKitCatalog サンプルでは、バスのプレフィックスを持つ、watch アプリ プロジェクトの一連の番号付きのイメージ")
+![](image-images/asset-bus-animation-sml.png "WatchKitCatalog サンプルには、Bus プレフィックスを使用した watch アプリプロジェクト内の一連の番号付き画像が含まれています。")
 
-これらのイメージとしてアニメーションを表示する最初に読み込むイメージを使用して、`SetImage`し呼び出しとプレフィックスの名前で`StartAnimating`:
+これらのイメージをアニメーションとして表示するには、 `SetImage`まずプレフィックス名を使用して`StartAnimating`イメージを読み込み、次のように呼び出します。
 
 ```csharp
 animatedImage.SetImage ("Bus");
 animatedImage.StartAnimating ();
 ```
 
-呼び出す`StopAnimating`アニメーションのループを停止するイメージ コントロール。
+アニメーション`StopAnimating`のループを停止するには、イメージコントロールでを呼び出します。
 
 ```csharp
 animatedImage.StopAnimating ();
@@ -99,14 +99,14 @@ animatedImage.StopAnimating ();
 
 <a name="cache" />
 
-## <a name="appendix-caching-images-watchos-1"></a>付録:イメージ (watchOS 1) のキャッシュ
+## <a name="appendix-caching-images-watchos-1"></a>付録:イメージのキャッシュ (watchOS 1)
 
 > [!IMPORTANT]
-> watchOS 3 のアプリをデバイスに完全に実行します。 次の情報は、watchOS 1 アプリのみです。
+> watchOS 3 アプリはデバイス上で完全に実行されます。 次の情報は、watchOS 1 アプリのみを対象としています。
 
-アプリケーションでは、イメージ、拡張機能に格納されます (またはダウンロードされた) を繰り返し使用する場合は、後続の表示のパフォーマンスを向上させる、ウォッチのストレージにイメージをキャッシュすること勧めします。
+アプリケーションが拡張機能に格納されているイメージを繰り返し使用している場合 (またはダウンロードされている場合)、ウォッチのストレージにイメージをキャッシュして、後続の表示のパフォーマンスを向上させることができます。
 
-使用して、 `WKInterfaceDevice`s `AddCachedImage` watch、イメージを転送し、使用してメソッド`SetImage`に表示される、文字列としてイメージの name パラメーターで。
+S メソッドを使用してイメージをウォッチに転送し、image name `SetImage`パラメーターと共にを文字列として使用して表示します。 `AddCachedImage` `WKInterfaceDevice`
 
 ```csharp
 var device = WKInterfaceDevice.CurrentDevice;
@@ -120,16 +120,16 @@ using (var image = UIImage.FromBundle ("Bumblebee")) {
 }
 ```
 
-コードを使用して、イメージ キャッシュの内容を照会できます`WKInterfaceDevice.CurrentDevice.WeakCachedImages`します。
+を使用して`WKInterfaceDevice.CurrentDevice.WeakCachedImages`、コード内のイメージキャッシュの内容を照会できます。
 
 
-### <a name="managing-the-cache"></a>キャッシュを管理します。
+### <a name="managing-the-cache"></a>キャッシュの管理
 
-キャッシュ サイズは約 20 MB です。 アプリの再起動の間で維持、およびを使用してファイルをクリアする必要がなくなることと`RemoveCachedImage`または`RemoveAllCachedImages`メソッド、`WKInterfaceDevice.CurrentDevice`オブジェクト。
+キャッシュのサイズは約 20 MB です。 アプリの再起動間に保持されます。また、 `RemoveCachedImage` `WKInterfaceDevice.CurrentDevice`オブジェクトに対してメソッドまたは`RemoveAllCachedImages`メソッドを使用してファイルをクリアする必要があります。
 
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [WatchKitCatalog (サンプル)](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)
-- [Apple のイメージのドキュメント](https://developer.apple.com/documentation/watchkit/wkinterfaceimage)
+- [WatchKitCatalog (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
+- [Apple のイメージドキュメント](https://developer.apple.com/documentation/watchkit/wkinterfaceimage)

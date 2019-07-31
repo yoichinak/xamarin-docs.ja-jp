@@ -1,24 +1,24 @@
 ---
-title: ListView の高速 Android 上のスクロール
-description: プラットフォーム仕様はカスタム レンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ利用できる機能の使用を可能にします。 この記事では、Android プラットフォームに固有の ListView 内のデータを高速スクロールできるようにするを使用する方法について説明します。
+title: Android での ListView の高速スクロール
+description: プラットフォーム仕様はカスタム レンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ利用できる機能の使用を可能にします。 この記事では、ListView のデータをすばやくスクロールできるようにする、Android プラットフォーム固有のを使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 37D95A2D-74AC-488A-B903-2BDD799EAA5C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: 6ae266f9309e32c79ec6028d737cfdcaaa85b0d4
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: ce51483da9599cf049cf005ae18b35d110aa325b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926575"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68649991"
 ---
-# <a name="listview-fast-scrolling-on-android"></a>ListView の高速 Android 上のスクロール
+# <a name="listview-fast-scrolling-on-android"></a>Android での ListView の高速スクロール
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-この Android プラットフォームに固有の使用のデータを高速スクロールを有効にする[ `ListView`](xref:Xamarin.Forms.ListView)します。 この機能は XAML で `ListView.IsFastScrollEnabled` 添付プロパティを `boolean` 値に設定して使用します。
+この Android プラットフォーム固有のは、 [`ListView`](xref:Xamarin.Forms.ListView)内のデータをすばやくスクロールできるようにするために使用されます。 この機能は XAML で `ListView.IsFastScrollEnabled` 添付プロパティを `boolean` 値に設定して使用します。
 
 ```xaml
 <ContentPage ...
@@ -60,7 +60,7 @@ listView.On<Android>().SetIsFastScrollEnabled(!listView.On<Android>().IsFastScro
 
 ## <a name="related-links"></a>関連リンク
 
-- [プラットフォーム仕様 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [プラットフォーム仕様 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [プラットフォーム仕様の作成](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
-- [AndroidSpecific API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)
-- [AndroidSpecific.AppCompat API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)
+- [AndroidSpecific の API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)
+- [AndroidSpecific の AppCompat API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)

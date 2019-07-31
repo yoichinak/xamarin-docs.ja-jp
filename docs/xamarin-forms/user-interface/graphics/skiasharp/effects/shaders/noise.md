@@ -7,16 +7,16 @@ ms.assetid: 90C2D00A-2876-43EA-A836-538C3318CF93
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
-ms.openlocfilehash: 4801aa12acf8eca2384cc5b41d677f7cb0bdd90d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: dea7f5e51a864922d56f7b65d19b21a889cbc650
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61292942"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656165"
 ---
 # <a name="skiasharp-noise-and-composing"></a>SkiaSharp のノイズやを作成します。
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 単純なベクター グラフィックスは、不自然に傾向があります。 直線、滑らかな曲線、および純色のない現実世界のオブジェクトの不完全ようになります。 1982 ムービーのコンピューターで生成されたグラフィックスに取り組んでいる_トロン_、コンピューター科学者 Ken Perlin がこれらのイメージをより現実的なテクスチャに与えるためにランダムなプロセスを使用するアルゴリズムの開発を開始します。 1997 年、Ken Perlin Academy に対して賞技術的知識を習得します。 パーリン ノイズと呼ばれる作業が来たし、SkiaSharp ではサポートされてです。 次に例を示します。
 
@@ -44,7 +44,7 @@ public static SkiaSharp.SKShader CreatePerlinNoiseTurbulence (float baseFrequenc
 
 `seed`パラメーターは、乱数ジェネレーターの開始点。 浮動小数点値として指定して、前に、これを使用すると、および 0 は 1 と同じ分数が切り捨てられます。
 
-**パーリン ノイズ**ページで、 [ **SkiaSharpFormsDemos**)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)のさまざまな値を試すことができます、`baseFrequency`と`numOctaves`引数。 XAML ファイルを次に示します。
+**パーリン ノイズ**ページで、 [ **SkiaSharpFormsDemos**)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)のさまざまな値を試すことができます、`baseFrequency`と`numOctaves`引数。 XAML ファイルを次に示します。
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -399,4 +399,4 @@ public static SKShader CreateCompose (SKShader dstShader, SKShader srcShader, SK
 ## <a name="related-links"></a>関連リンク
 
 - [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

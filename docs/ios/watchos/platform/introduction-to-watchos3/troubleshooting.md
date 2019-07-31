@@ -1,100 +1,100 @@
 ---
-title: watchOS 3 トラブルシューティング
-description: このドキュメントは、Xamarin で watchOS 3 を使用する場合に便利ないくつかのトラブルシューティングのヒントを提供します。 ヒントは、アクティビティ、Apple Pay、バック グラウンド更新、NSURLConnection、プライバシー、および詳細に関連します。
+title: watchOS 3 のトラブルシューティング
+description: このドキュメントでは、Xamarin で watchOS 3 を使用する際に役立ついくつかのトラブルシューティングのヒントを提供します。 ヒントは、アクティビティ、Apple Pay、バックグラウンド更新、Nn 接続、プライバシーなどに関連しています。
 ms.prod: xamarin
 ms.assetid: 5911D898-0E23-40CC-9F3C-5F61B4D50ADC
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 6d2aaf12bd6c45f6268cf87a77d2ee03a9d7a888
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 323aad42832a70bf80e7a5bf3508bb9b65e77b5a
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61224033"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655200"
 ---
-# <a name="watchos-3-troubleshooting"></a>watchOS 3 トラブルシューティング
+# <a name="watchos-3-troubleshooting"></a>watchOS 3 のトラブルシューティング
 
-_この記事では、Apple Watch の Xamarin アプリでは、watchOS 3 の操作のトラブルシューティングのヒントをいくつかを示します。_
+_この記事では、Xamarin Apple Watch アプリで watchOS 3 を操作するためのトラブルシューティングのヒントをいくつか紹介します。_
 
-このページには、Xamarin とそれらの問題の解決策で watchOS 3 を使用するときに発生する既知の問題が一覧表示されます。
+このページでは、watchOS 3 と Xamarin を使用する場合に発生する可能性がある既知の問題と、それらの問題の解決策を示します。
 
 ## <a name="activities"></a>アクティビティ
 
-アクティビティが正常に機能する共有ですべてのペアになっている Apple Watch を watchOS 3 実行する必要があります。
+アクティビティの共有が正常に機能するには、すべてのペアリングされた Apple Watch で watchOS 3 が実行されている必要があります。
 
 既知の問題:
 
-- アクティビティの共有の通知に返信することがありますは失敗します。
-- アクティビティの共有通知メッセージに返信があります。
-- アクティビティの共有の通知メッセージを上のコンテキストのテキストが正しくないがあります。
+- アクティビティ共有通知への応答が失敗することがあります。
+- メッセージを使用したアクティビティ共有通知への返信が失敗する場合があります。
+- アクティビティ共有通知メッセージの上位のコンテキストテキストは正しくありません。
 
 ## <a name="apple-pay"></a>Apple Pay
 
 既知の問題:
 
-- 場合に達したときに Apple Pay で新しい支払ケアの入力は、不適切な有効期限の日付または CW コード**次**実行中のプロセスがクラッシュします。
-- 暗証番号 (PIN) を必要とするアプリで Apple Pay の購入がクラッシュする可能性があります。
+- Apple Pay の新しい支払い処理に対して正しくない有効期限日または CW コードを入力した場合、**次**にヒットすると、実行中のプロセスがクラッシュします。
+- 暗証番号 (PIN) を必要とするアプリ内 Apple Pay 購入がクラッシュする場合があります。
 
-## <a name="auto-mac-unlock"></a>Mac の自動ロック解除します。
+## <a name="auto-mac-unlock"></a>Mac の自動ロック解除
 
-自動、Apple Watch を使用するユーザーの iCloud アカウントに 2 要素認証が有効になっている場合に 2 つ (またはそれ以上) の watchOS 3 のベータ版と macOS Sierra beta 2 (またはそれ以上) を使用すると、そのファルダのロックを解除
+WatchOS 3 beta 2 (またはそれ以降) と macOS Sierra beta 2 (またはそれ以降) を使用することにより、ユーザーの iCloud アカウントで2要素認証が有効になっている場合、その Apple Watch を使用して Mac を自動的にロック解除できます。
 
-## <a name="background-refresh"></a>バック グラウンド更新
+## <a name="background-refresh"></a>バックグラウンド更新
 
-システム リソースに違反すると、次の例外コードを持つ 3 watchOS アプリのクラッシュが発生します。
+システムリソースに違反すると、次の例外コードで watchOS 3 アプリがクラッシュします。
 
-- **0xc51bad01** -アプリが多すぎる CPU 時間を使用します。
-- **0xc51bad02** -アプリが壁の時間がかかりすぎるを使用します。
-- **0xc51bad03** -アプリは、現在のタスクを完了するための十分なランタイムがありませんでした。
+- **0xc51bad01** -アプリで消費された CPU 時間が多すぎます。
+- **0xc51bad02** -アプリが使用しているウォール時間が多すぎます。
+- **0xc51bad03** -アプリには、現在のタスクを完了するための十分なランタイムがありませんでした。
 
-## <a name="clock"></a>Clock
+## <a name="clock"></a>時計
 
-新しくインストールした Apple Watch アプリから複雑な問題は、空白として表示可能性があります。 この問題を解決する Apple Watch を再起動します。
+新しくインストールされた Apple Watch アプリの複雑さは、空白として表示されることがあります。 この問題を解決するには Apple Watch を再起動してください。
 
 ## <a name="connectivity"></a>接続
 
 既知の問題:
 
-- watchOS で Apple Watch 上の保護されたユーザー データのアクセス許可をユーザーに求めるメッセージされません。 Watch アプリでデータを使用する前に、iPhone アプリでのアクセスを許可します。
-- Apple Watch WatchConnectivity のすべての転送が失敗する状態に入ることができますを修正する Apple Watch を再起動します。
+- watchOS では Apple Watch、保護されたユーザーデータに対するアクセス許可をユーザーにに要求しません。 Watch アプリでデータを使用する前に、iPhone アプリにアクセス権を付与します。
+- Apple Watch は、すべての WatchConnectivity 転送が失敗した状態に入り、Apple Watch を再起動して修正します。
 
 ## <a name="notifications"></a>通知
 
-メディア添付ファイルが大きすぎる場合は、ユーザーの iPhone、Apple Watch ではないで表示されます。
+メディア添付ファイルが大きすぎる場合は、ユーザーの iPhone に表示されますが、Apple Watch は表示されません。
 
 ## <a name="nsurlconnection"></a>NSURLConnection
 
-すべて`NSURLConnection`古い TLS プロトコルを使用して接続は失敗します。 すべての SSL/TLS 接続の RC4 対称暗号は既定で無効になりました。 さらに、トランスポートのセキュリティで保護された API が SSLv3 がサポートされなくされ、アプリでは、SHA 1 および 3 des 暗号化を使用して、できるだけ早く停止するをお勧めします。
+以前`NSURLConnection`の TLS プロトコルを使用している接続はすべて失敗します。 すべての SSL/TLS 接続では、RC4 対称暗号が既定で無効になっています。 さらに、セキュリティで保護されたトランスポート API は SSLv3 をサポートしなくなりました。アプリは、できるだけ早く SHA-1 と3DES 暗号化の使用を停止することをお勧めします。
 
-WatchOS 3 で時点で SSL/TLS 接続のセキュリティを厳密に Apple によって強制されるされます。 影響を受けるサービスとアプリは、最新の TLS プロトコルのバージョンを使用する web サーバーを更新する必要があります。
+WatchOS 3 では、SSL/TLS 接続のセキュリティは Apple によって厳密に適用されています。 影響を受けるサービスとアプリは、最新の TLS プロトコルバージョンを使用するように web サーバーを更新する必要があります。
 
 ## <a name="nsurlsession"></a>NSURLSession
 
-WatchOS 3 で時点で、`HTTPBodyStream`のプロパティ、`NSMutableURLRequest`クラスは、以降、開かれていないストリームに設定する必要があります`NSURLConnection`と`NSURLSession`今すぐこの要件を厳密に適用します。
+WatchOS 3 の時点で、 `HTTPBodyStream`では、 `NSMutableURLRequest`クラスのプロパティを未開封のストリーム`NSURLConnection` `NSURLSession`に設定し、この要件を厳密に適用する必要があります。
 
 ## <a name="privacy"></a>プライバシー
 
 既知の問題:
 
-使用する場合`https://`両方の Url`NSURLSession`と`NSURLConnection`不要になった TLS ハンドシェイク中に RC4 暗号スイートをサポートします。 次のエラー コードのいずれかを生成可能性があります。
+Url を使用`https://`する`NSURLConnection`場合、とでは、TLSハンドシェイク中にRC4暗号スイートがサポートされなく`NSURLSession`なりました。 次のエラーコードのいずれかが生成される可能性があります。
 
-- **-1200 または-98** -`NSURLErrorSecurityConnectionFailed`と SecureTransport エラー。
-- **[3:-9824]-1200** -http の読み込みに失敗しました。
-- **-1200**  -  `NSURLConnection`エラーで終了しました。
+- **-1200 または-98** - `NSURLErrorSecurityConnectionFailed`および securetransport エラー。
+- **-1200 [3:-9824]** -Http の読み込みに失敗しました。
+- **-**  -  1200`NSURLConnection`はエラーで終了しました。
 
-WatchOS 3 で時点で SSL/TLS 接続のセキュリティを厳密に Apple によって強制されるされます。 影響を受けるサービスとアプリは、最新の TLS プロトコルのバージョンを使用する web サーバーを更新する必要があります。 参照してください[NSURLConnection](#nsurlconnection)上の詳細についてはします。
+WatchOS 3 では、SSL/TLS 接続のセキュリティは Apple によって厳密に適用されています。 影響を受けるサービスとアプリは、最新の TLS プロトコルバージョンを使用するように web サーバーを更新する必要があります。 詳細については、上記の[Nn1 接続](#nsurlconnection)を参照してください。
 
 ## <a name="snapshots"></a>スナップショット
 
-新しいを採用していない WatchKit アプリ`HandelBackgroundTask`API は、watchOS 3 で定期的な更新プログラムを受けられなくなります。 
+新しい`HandelBackgroundTask` API を採用していない WatchKit アプリは、watchOS 3 で定期的な更新プログラムを受信しなくなります。 
 
 ## <a name="watchkit"></a>WatchKit
 
-WatchOS ドックのアプリがバック グラウンドに入ったとき、SpriteKit と SceneKit シーンを一時停止されます。
+SpriteKit と SceneKit のシーンは、アプリが watchOS Dock の背景に入ったときに一時停止します。
 
 ## <a name="related-links"></a>関連リンク
 
-- [watchOS のサンプル](https://developer.xamarin.com/samples/watchos/all/)
-- [WatchOS 3 の新機能新機能](https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewInwatchOS/Articles/watchOS3.html#//apple_ref/doc/uid/TP40017085-SW1)
+- [watchOS のサンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+watchOS)
+- [WatchOS 3 の新機能](https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewInwatchOS/Articles/watchOS3.html#//apple_ref/doc/uid/TP40017085-SW1)

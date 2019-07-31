@@ -7,16 +7,16 @@ ms.assetid: 0A79AB27-C69F-4376-8FFE-FF46E4783F30
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: cf31f3bd6f84a040d21420e865737417c374d947
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 50174844100eb852ac7daf5ce3f33b02b490ceb2
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61078478"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68646663"
 ---
 # <a name="cropping-skiasharp-bitmaps"></a>SkiaSharp のビットマップをトリミングします。
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 [**の作成と描画 SkiaSharp ビットマップ**](drawing.md)方法を説明する記事、`SKBitmap`にオブジェクトを渡すことができます、`SKCanvas`コンス トラクター。 ビットマップにレンダリングされるそのキャンバス原因グラフィックスで呼び出される任意の描画メソッド。 描画メソッドが含まれます`DrawBitmap`、つまり、この手法でを転送する 1 つのビットマップの一部またはすべて別のビットマップにおそらく適用された変換を許可します。
 
@@ -445,7 +445,7 @@ class PhotoCropperCanvasView : SKCanvasView
 
 ## <a name="hosting-the-photo-cropper-canvas-view"></a>写真の cropper キャンバスのビューをホストしています。
 
-トリミングのロジックを処理するこれら 2 つのクラスで、**写真のトリミング**ページで、 **[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** アプリケーションがごくわずかな作業を行います。 XAML ファイルのインスタンスを作成、`Grid`ホストに、`PhotoCropperCanvasView`と**完了**ボタン。
+トリミングのロジックを処理するこれら 2 つのクラスで、**写真のトリミング**ページで、 **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** アプリケーションがごくわずかな作業を行います。 XAML ファイルのインスタンスを作成、`Grid`ホストに、`PhotoCropperCanvasView`と**完了**ボタン。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -536,7 +536,7 @@ photoCropper = new PhotoCropperCanvasView(bitmap, 1.78f);
 
 著名人の Xamarin.Forms バージョン 14 ~ 15 のパズルは、書籍の第 22 章で登場した[_を Xamarin.Forms での Mobile Apps の作成_](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)としてダウンロードできます[ **XamagonXuzzle**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/XamagonXuzzle)します。 ただし、パズルになりより楽しく (多くの場合、さらに難しく) フォト ライブラリからイメージに基づいて場合。
 
-14 ~ 15 のパズルのこのバージョンの一部は、 **[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** アプリケーションで構成される、一連のページ「**パズルの写真**。
+14 ~ 15 のパズルのこのバージョンの一部は、 **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** アプリケーションで構成される、一連のページ「**パズルの写真**。
 
 **PhotoPuzzlePage1.xaml**ファイルから成る、 `Button`:
 
@@ -765,4 +765,4 @@ imgSources[4 * row + col] = (SKBitmapImageSource)bitmap;
 ## <a name="related-links"></a>関連リンク
 
 - [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

@@ -1,60 +1,60 @@
 ---
 title: .AAR のバインド
-description: このチュートリアルでは、Android から Xamarin.Android Java バインド ライブラリを作成する手順が説明します。AAR ファイルです。
+description: このチュートリアルでは、Android から Xamarin Android Java バインドライブラリを作成する手順について説明します。AAR ファイル。
 ms.prod: xamarin
 ms.assetid: 380413B8-6A99-4BB8-B64C-3EAF9F359C22
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/11/2018
-ms.openlocfilehash: 7f71ccf4ff61c176e73be6d3855136697a5c2130
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6d80af60ae94c638c7d90229852f304a40ce0b0c
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60958109"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643804"
 ---
 # <a name="binding-an-aar"></a>.AAR のバインド
 
-_このチュートリアルでは、Android から Xamarin.Android Java バインド ライブラリを作成する手順が説明します。AAR ファイルです。_
+_このチュートリアルでは、Android から Xamarin Android Java バインドライブラリを作成する手順について説明します。AAR ファイル。_
 
 
 ## <a name="overview"></a>概要
 
-*Android アーカイブ (します。AAR)* ファイルは、Android ライブラリのファイル形式。
-します。AAR ファイルは、します。以下を含む ZIP アーカイブ:
+*Android アーカイブ (.AAR)* ファイルは、Android ライブラリのファイル形式です。
+込み.AAR ファイルはです。次のものを含む ZIP アーカイブ:
 
--   コンパイル済みの Java コード
+-   コンパイル済み Java コード
 -   リソース Id
 -   リソース
--   メタ データ (たとえば、アクティビティの宣言、アクセス許可)
+-   メタデータ (アクティビティの宣言、アクセス許可など)
 
-このガイドでは、1 つのバインド ライブラリの作成の基礎を手順説明します。AAR ファイルです。 Java ライブラリによるバインディングの一般 (基本的なコード例では) の概要については、次を参照してください。 [Java ライブラリのバインド](~/android/platform/binding-java-library/index.md)します。
+このガイドでは、1つのにバインドライブラリを作成する方法の基本について説明します。AAR ファイル。 一般的な Java ライブラリバインディングの概要 (基本的なコード例を含む) については、「 [Java ライブラリのバインド](~/android/platform/binding-java-library/index.md)」を参照してください。
 
 
 > [!IMPORTANT]
-> バインド プロジェクトは 1 つのみ含めることができます。AAR ファイルです。 場合、します。他の依存関係を AAR します。AAR、し、これらの依存関係を独自のバインド プロジェクトに含まれているし、参照する必要があります。 参照してください[バグ 44573](https://bugzilla.xamarin.com/show_bug.cgi?id=44573)します。
+> バインドプロジェクトに含めることができるのは1つだけです。AAR ファイル。 の場合は。他のに依存関係を AAR します。AAR、これらの依存関係は、独自のバインドプロジェクトに含めてから参照する必要があります。 [バグ 44573](https://bugzilla.xamarin.com/show_bug.cgi?id=44573)を参照してください。
 
 
 ## <a name="walkthrough"></a>チュートリアル
 
-Android アーカイブ ファイル例は、Android Studio で、作成されたために、バインド ライブラリを作成します[textanalyzer.aar](https://github.com/xamarin/monodroid-samples/blob/master/JavaIntegration/AarBinding/Resources/textanalyzer.aar?raw=true)します。 これ。AAR が含まれています、`TextCounter`母音と文字列の子音の数をカウントする静的メソッドを持つクラス。 さらに、 **textanalyzer.aar**カウントの結果を表示するイメージ リソースが含まれています。
+Android Studio、 [aar](https://github.com/xamarin/monodroid-samples/blob/master/JavaIntegration/AarBinding/Resources/textanalyzer.aar?raw=true)で作成したサンプルの Android アーカイブファイルのバインドライブラリを作成します。 これ。AAR には`TextCounter` 、文字列の母音と子音の数をカウントする静的メソッドを含むクラスが含まれています。 さらに、aar には、カウントの結果を表示するのに役立つイメージリソースが含まれてい**ます。**
 
-次の手順を使用してからバインド ライブラリを作成します。AAR ファイル:
+からバインドライブラリを作成するには、次の手順を使用します。AAR ファイル (i):
 
-1. 新しい Java バインド ライブラリ プロジェクトを作成します。
+1. 新しい Java バインドライブラリプロジェクトを作成します。
 
-2. 1 つを追加します。AAR ファイルをプロジェクト。 バインド プロジェクトには、1 つのみを含めることがあります。AAR します。
+2. を1つ追加します。AAR ファイルをプロジェクトにします。 バインドプロジェクトには、1つだけを含めることができます。AAR.
 
-3. 適切なビルド アクションを設定します。AAR ファイルです。
+3. に適切なビルドアクションを設定します。AAR ファイル。
 
-4. ターゲット フレームワークを選択します。AAR をサポートします。
+4. をインストールするターゲットフレームワークを選択します。AAR は、をサポートしています。
 
-5. バインド ライブラリをビルドします。
+5. バインドライブラリをビルドします。
 
-バインド ライブラリを作成したらの呼び出しのテキスト文字列をユーザーに求めます小さい Android アプリを開発します。AAR メソッド、テキストの分析からイメージを取得します。AAR、および画像と共に結果が表示されます。
+バインドライブラリを作成したら、ユーザーにテキスト文字列を要求する小さな Android アプリを開発し、を呼び出します。AAR メソッドは、テキストを分析するために、からイメージを取得します。AAR を使用すると、イメージと共に結果が表示されます。
 
-サンプル アプリのアクセスは、`TextCounter`クラスの**textanalyzer.aar**:
+サンプルアプリは、 `TextCounter` **textanalyzer. aar**のクラスにアクセスします。
 
 ```java
 package com.xamarin.textcounter;
@@ -69,82 +69,82 @@ public class TextCounter
 }
 ```
 
-さらに、このサンプル アプリを取得し、でパッケージ化されている画像リソースの表示は**textanalyzer.aar**:
+さらに、このサンプルアプリは、 **textanalyzer. aar**にパッケージ化されているイメージリソースを取得して表示します。
 
-[![Xamarin monkey イメージ](binding-an-aar-images/00-monkey-sml.png)](binding-an-aar-images/00-monkey.png#lightbox)
+[![Xamarin のサル画像](binding-an-aar-images/00-monkey-sml.png)](binding-an-aar-images/00-monkey.png#lightbox)
 
-このイメージ リソースが存在する**res/drawable/monkey.png**で**textanalyzer.aar**します。
+このイメージリソースは、 **aar**の**res/描画/サル .png**に置かれています。
 
 
 
-### <a name="creating-the-bindings-library"></a>バインド ライブラリを作成します。
+### <a name="creating-the-bindings-library"></a>バインドライブラリの作成
 
-次の手順を開始する前に、例をダウンロードしてください[textanalyzer.aar](https://github.com/xamarin/monodroid-samples/blob/master/JavaIntegration/AarBinding/Resources/textanalyzer.aar?raw=true) Android アーカイブ ファイル。
+以下の手順を実行する前に、サンプルの[textanalyzer. aar](https://github.com/xamarin/monodroid-samples/blob/master/JavaIntegration/AarBinding/Resources/textanalyzer.aar?raw=true) Android アーカイブファイルをダウンロードしてください。
 
-1.  以降、Android バインド ライブラリ テンプレートで新しいバインド ライブラリ プロジェクトを作成します。 Visual Studio for Mac または Visual Studio (次のスクリーン ショットに表示する、Visual Studio ですが Visual Studio for Mac は非常に似ています) のいずれかを使用することができます。 ソリューションの名前を**AarBinding**:
+1.  Android バインドライブラリテンプレートを使用して、新しいバインドライブラリプロジェクトを作成します。 Visual Studio for Mac または Visual Studio のいずれかを使用できます (以下のスクリーンショットは Visual Studio を示していますが、Visual Studio for Mac はよく似ています)。 ソリューションに**AarBinding**という名前を指定します。
 
-    [![AarBindings プロジェクトを作成します。](binding-an-aar-images/01-new-bindings-library-vs-sml.w157.png)](binding-an-aar-images/01-new-bindings-library-vs.w157.png#lightbox)
+    [![AarBindings プロジェクトの作成](binding-an-aar-images/01-new-bindings-library-vs-sml.w157.png)](binding-an-aar-images/01-new-bindings-library-vs.w157.png#lightbox)
 
-2.  テンプレートに含まれる、 **Jars**フォルダーを追加する、します。バインド ライブラリ プロジェクトに AAR(s) します。 右クリックし、 **Jars**フォルダーと選択**追加 > 既存項目の**:
+2.  テンプレートには、を追加する**jar**フォルダーが含まれています。AAR (s) をバインドライブラリプロジェクトに対して行います。 **[Jar]** フォルダーを右クリックし、 **[既存の項目の追加 >]** を選択します。
 
     [![既存の項目を追加する](binding-an-aar-images/02-add-existing-item-vs-sml.png)](binding-an-aar-images/02-add-existing-item-vs.png#lightbox)
 
 
-3.  移動し、 **textanalyzer.aar**以前にダウンロードしたファイルを選択し、 をクリックして**追加**:
+3.  先ほどダウンロードした**aar**ファイルに移動して選択し、 **[追加]** をクリックします。
 
-    [![Textanalayzer.aar を追加します。](binding-an-aar-images/03-select-aar-file-vs-sml.png)](binding-an-aar-images/03-select-aar-file-vs.png#lightbox)
-
-
-4.  いることを確認、 **textanalyzer.aar**ファイルがプロジェクトに正常に追加します。
-
-    [![Textanalyzer.aar ファイルが追加されました](binding-an-aar-images/04-aar-added-vs-sml.png)](binding-an-aar-images/04-aar-added-vs.png#lightbox)
-
-5.  ビルド アクションは、設定**textanalyzer.aar**に`LibraryProjectZip`します。 Visual Studio for Mac では、右クリックして**textanalyzer.aar**ビルド アクションを設定します。 Visual Studio でビルド アクションで設定できる、**プロパティ**ウィンドウ)。
-
-    [![LibraryProjectZip textanalyzer.aar ビルド アクションに設定](binding-an-aar-images/05-embedded-aar-vs-sml.png)](binding-an-aar-images/05-embedded-aar-vs.png#lightbox)
-
-6.  プロジェクトを構成するプロパティを開き、*ターゲット フレームワーク*します。 場合、します。AAR は Android Api を使用して、API レベルにターゲット フレームワークを設定します。AAR が必要です。 (ターゲット フレームワークの設定と一般的な Android API レベルの詳細については、次を参照してください[Understanding Android API Levels](~/android/app-fundamentals/android-api-levels.md)。)。
-
-    バインド ライブラリのターゲット API レベルを設定します。 この例では自由にために API レベル (API レベル 23) の最新のプラットフォームを使用して、 **textanalyzer** Android API に依存関係はありません。
-
-    [![ターゲット レベル API 23 を設定します。](binding-an-aar-images/06-set-target-framework-vs-sml.png)](binding-an-aar-images/06-set-target-framework-vs.png#lightbox)
-
-7.  バインド ライブラリをビルドします。 バインド ライブラリ プロジェクトは正常にビルドされ、出力が生成する必要があります。次の場所に DLL:**AarBinding/bin/Debug/AarBinding.dll**
+    [![Textanalayzer を追加します。 aar](binding-an-aar-images/03-select-aar-file-vs-sml.png)](binding-an-aar-images/03-select-aar-file-vs.png#lightbox)
 
 
+4.  **Aar**ファイルがプロジェクトに正常に追加されたことを確認します。
 
-### <a name="using-the-bindings-library"></a>バインド ライブラリを使用します。
+    [![Aar ファイルが追加されました](binding-an-aar-images/04-aar-added-vs-sml.png)](binding-an-aar-images/04-aar-added-vs.png#lightbox)
 
-これを使用します。Xamarin.Android アプリで DLL をバインディング ライブラリへの参照を追加する必要があります最初。 次の手順に従います。
+5.  **Aar**のビルドアクションをに`LibraryProjectZip`設定します。 Visual Studio for Mac で、 **aar**を右クリックして、ビルドアクションを設定します。 Visual Studio では、 **[プロパティ]** ペインでビルドアクションを設定できます)。
 
-1.  このチュートリアルを簡略化するためにバインディング ライブラリと同じソリューションでこのアプリを作成しています。 (バインド ライブラリを使用するアプリでしたも存在する別のソリューション。)新しい Xamarin.Android アプリを作成します。 ソリューションを右クリックして**新しいプロジェクトの追加**。 新しいプロジェクトの名前**BindingTest**:
+    [![Aar ビルドアクションを LibraryProjectZip に設定しています](binding-an-aar-images/05-embedded-aar-vs-sml.png)](binding-an-aar-images/05-embedded-aar-vs.png#lightbox)
 
-    [![新しい BindingTest プロジェクトを作成します。](binding-an-aar-images/07-add-new-project-vs-sml.w157.png)](binding-an-aar-images/07-add-new-project-vs.w157.png#lightbox)
+6.  プロジェクトのプロパティを開いて、*ターゲットフレームワーク*を構成します。 の場合は。AAR は、任意の Android Api を使用して、ターゲットフレームワークをに設定されている API レベルに設定します。AAR が必要です。 (ターゲットフレームワークの設定と、一般的な Android API レベルの詳細については、「 [ANDROID Api レベル](~/android/app-fundamentals/android-api-levels.md)について」を参照してください)。
 
-2.  右クリックし、**参照**のノード、 **BindingTest**順に選択して**参照の追加.**:
+    バインドライブラリのターゲット API レベルを設定します。 この例では自由にために API レベル (API レベル 23) の最新のプラットフォームを使用して、 **textanalyzer** Android API に依存関係はありません。
 
-    [![参照を追加します。](binding-an-aar-images/08-add-reference-vs-sml.png)](binding-an-aar-images/08-add-reference-vs.png#lightbox)
+    [![ターゲットレベルを API 23 に設定する](binding-an-aar-images/06-set-target-framework-vs-sml.png)](binding-an-aar-images/06-set-target-framework-vs.png#lightbox)
 
-3.  選択、 **AarBinding**前に作成したプロジェクトをクリックします**OK**:
-
-    [![AAR バインド プロジェクトを確認してください。](binding-an-aar-images/09-choose-aar-binding-vs-sml.png)](binding-an-aar-images/09-choose-aar-binding-vs.png#lightbox)
-
-4.  開く、**参照**のノード、 **BindingTest**ことを確認するプロジェクト、 **AarBinding**参照が存在します。
-
-    [![参照 AarBinding が一覧表示します。](binding-an-aar-images/10-references-shows-aarbinding-vs-sml.png)](binding-an-aar-images/10-references-shows-aarbinding-vs.png#lightbox)
-
-
-バインド ライブラリ プロジェクトの内容を表示する場合で開くへの参照をダブルクリックすることができます、**オブジェクト ブラウザー**します。 マップされた内容を確認できます、`Com.Xamarin.Textcounter`名前空間 (Java からマップされた`com.xamarin.textanalyzezr`パッケージ) のメンバーを表示して、`TextCounter`クラス。
-
-[![オブジェクト ブラウザーの表示](binding-an-aar-images/11-object-browser-vs-sml.png)](binding-an-aar-images/11-object-browser-vs.png#lightbox)
-
-上記のスクリーン ショットには、2 つが強調表示されます。`TextAnalyzer`例のアプリが呼び出すメソッド: `NumConsonants` (ラップしています。 基になる Java`numConsonants`メソッド)、および`NumVowels`(ラップしています。 基になる Java`numVowels`メソッド)。
+7.  バインドライブラリをビルドします。 バインドライブラリプロジェクトが正常にビルドされ、出力が生成されます。次の場所にある DLL:**AarBinding/bin/Debug/AarBinding**
 
 
 
-### <a name="accessing-aar-types"></a>アクセスします。AAR 型
+### <a name="using-the-bindings-library"></a>バインドライブラリの使用
 
-バインド ライブラリを指すアプリへの参照を追加すると、Java 型にアクセスできるようにします。AAR するとしてアクセスC#型 (方々 に感謝します、C#ラッパー)。 C#アプリのコードを呼び出すことができます`TextAnalyzer`メソッドを次の例に示すようにします。
+これを使用する場合は。DLL Xamarin Android アプリでは、最初にバインドライブラリへの参照を追加する必要があります。 次の手順を使用します。
+
+1.  このチュートリアルを簡略化するために、このアプリをバインドライブラリと同じソリューションに作成しています。 (バインディングライブラリを使用するアプリケーションは、別のソリューションにも存在する可能性があります)。新しい Xamarin Android アプリを作成します。ソリューションを右クリックし、 **[新しいプロジェクトの追加]** を選択します。 新しいプロジェクトに**Bindingtest**という名前を指定します。
+
+    [![新しい BindingTest プロジェクトの作成](binding-an-aar-images/07-add-new-project-vs-sml.w157.png)](binding-an-aar-images/07-add-new-project-vs.w157.png#lightbox)
+
+2.  **Bindingtest**プロジェクトの **[参照]** ノードを右クリックし、 **[参照の追加]** を選択します。
+
+    [![[参照の追加] をクリック](binding-an-aar-images/08-add-reference-vs-sml.png)](binding-an-aar-images/08-add-reference-vs.png#lightbox)
+
+3.  前の手順で作成した**AarBinding**プロジェクトを選択し、[ **OK]** をクリックします。
+
+    [![AAR binding プロジェクトを確認する](binding-an-aar-images/09-choose-aar-binding-vs-sml.png)](binding-an-aar-images/09-choose-aar-binding-vs.png#lightbox)
+
+4.  **Bindingtest**プロジェクトの **[参照設定]** ノードを開き、 **AarBinding**参照が存在することを確認します。
+
+    [![AarBinding が [参照] の下に一覧表示されます。](binding-an-aar-images/10-references-shows-aarbinding-vs-sml.png)](binding-an-aar-images/10-references-shows-aarbinding-vs.png#lightbox)
+
+
+バインドライブラリプロジェクトの内容を表示するには、参照をダブルクリックして、**オブジェクトブラウザー**で開きます。 (Java `Com.Xamarin.Textcounter` `com.xamarin.textanalyzezr`パッケージからマップされた) 名前空間のマップされた内容を確認し、 `TextCounter`クラスのメンバーを表示することができます。
+
+[![オブジェクトブラウザーの表示](binding-an-aar-images/11-object-browser-vs-sml.png)](binding-an-aar-images/11-object-browser-vs.png#lightbox)
+
+上のスクリーンショットは、 `TextAnalyzer`サンプルアプリが`NumConsonants`呼び出す2つのメソッド (基になる java `numConsonants`メソッドをラップする) `NumVowels`と、(基になる`numVowels` java メソッドをラップする) を強調表示しています。
+
+
+
+### <a name="accessing-aar-types"></a>しよう.AAR 型
+
+バインドライブラリを参照するアプリへの参照を追加すると、で Java 型にアクセスできるようになります。( C#ラッパーに感謝) C#型にアクセスする場合と同様に AAR。 C#アプリコードは、 `TextAnalyzer`次の例に示すようにメソッドを呼び出すことができます。
 
 ```csharp
 using Com.Xamarin.Textcounter;
@@ -153,16 +153,16 @@ int numVowels = TextCounter.NumVowels (myText);
 int numConsonants = TextCounter.NumConsonants (myText);
 ```
 
-上記の例静的メソッドを呼び出しています、`TextCounter`クラス。 ただし、クラスのインスタンスを作成し、インスタンス メソッドを呼び出すことできますも。 たとえば場合、します。AAR というクラスをラップする`Employee`インスタンス メソッドを持つ`buildFullName`、インスタンス化できます`MyClass`を使用して、表示は、ここ。
+上の例では、 `TextCounter`クラスの静的メソッドを呼び出しています。 ただし、クラスをインスタンス化して、インスタンスメソッドを呼び出すこともできます。 たとえば、の場合はです。AAR は、インスタンスメソッド`Employee` `buildFullName`を持つというクラスをラップします`MyClass` 。次に示すように、インスタンス化して使用することができます。
 
 ```csharp
 var employee = new Com.MyCompany.MyProject.Employee();
 var name = employee.BuildFullName ();
 ```
 
-次の手順では使用して、テキストのユーザーに促すようにアプリにコードを追加`TextCounter`テキスト、および、表示結果を分析します。
+次の手順では、アプリケーションにコードを追加して、ユーザーにテキストの`TextCounter`入力を要求し、を使用してテキストを分析し、結果を表示するようにします。
 
-置換、 **BindingTest**レイアウト (**Main.axml**) 次の XML を使用します。 このレイアウトには、`EditText`テキスト入力の母音と子音カウントを開始するための 2 つのボタン。
+**Bindingtest**レイアウト (メインの**axml**) を次の XML に置き換えます。 このレイアウトには`EditText` 、テキスト入力用のと、母音と子音のカウントを開始するための2つのボタンがあります。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -200,7 +200,7 @@ var name = employee.BuildFullName ();
 </LinearLayout>
 ```
 
-内容を置き換える**MainActivity.cs**を次のコード。 この例で示すように、ボタンのイベント ハンドラーの呼び出しがラップ`TextCounter`メソッド内に存在する、します。結果を表示するトースト AAR および使用します。 通知、`using`バインド ライブラリの名前空間のステートメント (この場合、 `Com.Xamarin.Textcounter`)。
+**MainActivity.cs**の内容を次のコードに置き換えます。 この例に示すように、ボタンイベントハンドラーは、 `TextCounter`に存在するラップされたメソッドを呼び出します。AAR を使用し、結果を表示するためにトーストを使用します。 バインドさ`using`れたライブラリの名前空間 (この場合は`Com.Xamarin.Textcounter`) のステートメントに注意してください。
 
 ```csharp
 using System;
@@ -258,33 +258,33 @@ namespace BindingTest
 }
 ```
 
-コンパイルし、実行、 **BindingTest**プロジェクト。 アプリが起動し、左側のスクリーン ショットを表示 (、`EditText`テキストを使用して初期化されますが、これを変更することをタップすることができます)。 タップすると**カウント母音**トースト、右に示すようには、母音の数を表示します。
+**Bindingtest**プロジェクトをコンパイルして実行します。 アプリが起動し、左側にスクリーンショットが表示され`EditText`ます (はいくつかのテキストで初期化されますが、それをタップして変更できます)。 [母音の**カウント**] をタップすると、右側に示されている母音の数がトーストによって表示されます。
 
-[![BindingTest を実行しているのスクリーン ショット](binding-an-aar-images/12-count-vowels.png)](binding-an-aar-images/12-count-vowels.png#lightbox)
+[![BindingTest を実行したスクリーンショット](binding-an-aar-images/12-count-vowels.png)](binding-an-aar-images/12-count-vowels.png#lightbox)
 
-タップしてください、**カウント子音**ボタンをクリックします。 また、行のテキストを変更して別の母音をテストするには、もう一度これらのボタンをタップします、子音がカウントされます。
+**COUNT 子音**ボタンをタップしてみてください。 また、テキストの行を変更し、これらのボタンをもう一度タップして、さまざまな母音と子音のカウントをテストすることもできます。
 
 
 
-### <a name="accessing-aar-resources"></a>アクセスします。AAR リソース
+### <a name="accessing-aar-resources"></a>しよう.AAR リソース
 
-マージ ツール、Xamarin、 **R**からデータをします。アプリの AAR**リソース**クラス。 その結果、次のようにアクセスすることができます。AAR リソース レイアウト (および分離コード) に含まれるリソースにアクセスする場合と同じで、**リソース**プロジェクトのパス。
+Xamarin ツールは、から**R**データをマージします。アプリの**リソース**クラスに AAR します。 このため、にアクセスできます。プロジェクトの**resources**パスにあるリソースにアクセスするのと同じように、レイアウト (および分離コード) からリソースを AAR します。
 
-イメージ リソースをアクセスするには、 **Resource.Drawable**イメージ内にパックの名前します。AAR します。 たとえば、参照**image.png**でします。AAR ファイルを使用して`@drawable/image`:
+イメージリソースにアクセスするには、内でパックされたイメージに対して、**リソース**の作成可能な名前を使用します。AAR. たとえば、で**イメージ**を参照できます。次を使用し`@drawable/image`てファイルを AAR:
 
 ```xml
 <ImageView android:src="@drawable/image" ... />
 ```
 
-内に存在するリソースのレイアウトをアクセスすることもできます、します。AAR します。 使用するには、 **Resource.Layout**内部にパッケージ化レイアウトの名前します。AAR します。 例えば:
+に格納されているリソースレイアウトにアクセスすることもできます。AAR. これを行うには、内にパッケージ化されたレイアウトに対して、**リソースのレイアウト**名を使用します。AAR. 例えば:
 
 ```csharp
 var a = new ArrayAdapter<string>(this, Resource.Layout.row_layout, ...);
 ```
 
-**Textanalyzer.aar**例に配置されているイメージ ファイルが含まれています**res/drawable/monkey.png**します。 このイメージのリソースにアクセスして、アプリの例で使用します。
+**Aar**の例には、 **res//サル**に存在するイメージファイルが含まれています。 このイメージリソースにアクセスして、サンプルアプリで使用してみましょう。
 
-編集、 **BindingTest**レイアウト (**Main.axml**) を追加し、`ImageView`の末尾に、`LinearLayout`コンテナー。 これは、`ImageView`で見つかったイメージが表示されます**@drawable/monkey**; のリソース セクションからこのイメージが読み込まれます**textanalyzer.aar**:
+**Bindingtest**レイアウト (メインの**axml**) を編集`ImageView`し、を`LinearLayout`コンテナーの末尾に追加します。 これ`ImageView`により、にある **@drawable/monkey** イメージが表示されます。このイメージは、 **textanalyzer. aar**のリソースセクションから読み込まれます。
 
 ```xml
     ...
@@ -298,25 +298,25 @@ var a = new ArrayAdapter<string>(this, Resource.Layout.row_layout, ...);
 </LinearLayout>
 ```
 
-コンパイルし、実行、 **BindingTest**プロジェクト。 アプリが起動し、左側のスクリーン ショットを提示&ndash;タップすると**カウント子音**右に示すように、結果が表示されます。
+**Bindingtest**プロジェクトをコンパイルして実行します。 **[COUNT 子音]** をタップすると、アプリが&ndash;起動し、左側にスクリーンショットが表示されます。結果は右側に表示されます。
 
-[![BindingTest 子音数を表示します。](binding-an-aar-images/13-count-consonants.png)](binding-an-aar-images/13-count-consonants.png#lightbox)
+[![子音のカウントを表示する BindingTest](binding-an-aar-images/13-count-consonants.png)](binding-an-aar-images/13-count-consonants.png#lightbox)
 
 
-おめでとうございます! Java ライブラリを正常に連結されています。AAR!
+おめでとうございます! Java ライブラリが正常にバインドされました。AAR!
 
 
 
 ## <a name="summary"></a>まとめ
 
-このチュートリアルでのバインド ライブラリを作成しました、します。AAR ファイルを最小限のテストをアプリにバインド ライブラリを追加し、ことを確認するアプリを実行、C#コード内に存在する Java コードを呼び出すことができます、します。AAR ファイルです。
-アクセスして内にあるイメージ リソースを表示するアプリをさらに、拡張します。AAR ファイルです。
+このチュートリアルでは、のバインドライブラリを作成しました。AAR ファイルを使用して、バインドライブラリを最小テストアプリに追加し、アプリを実行しC#て、コードが内に存在する Java コードを呼び出すことができることを確認します。AAR ファイル。
+さらに、に格納されているイメージリソースにアクセスして表示するようにアプリを拡張しています。AAR ファイル。
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [Java バインド ライブラリ (ビデオ) を構築](https://university.xamarin.com/classes#10090)
+- [Java バインドライブラリの構築 (ビデオ)](https://university.xamarin.com/classes#10090)
 - [.JAR のバインド](~/android/platform/binding-java-library/binding-a-jar.md)
 - [Java ライブラリのバインド](~/android/platform/binding-java-library/index.md)
-- [AarBinding (サンプル)](https://developer.xamarin.com/samples/monodroid/JavaIntegration/AarBinding)
-- [バグ 44573 1 つのプロジェクトが複数 .aar ファイルをバインドできません。](https://bugzilla.xamarin.com/show_bug.cgi?id=44573)
+- [AarBinding (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/javaintegration-aarbinding)
+- [バグ 44573-1 つのプロジェクトで複数の aar ファイルをバインドできない](https://bugzilla.xamarin.com/show_bug.cgi?id=44573)

@@ -1,25 +1,25 @@
 ---
-title: Xamarin.iOS で非推奨の通知テクノロジ
-description: このドキュメントでは、iOS 10 で導入された、ユーザー通知フレームワーク置き換わって iOS 通知のテクノロジについて説明します。
+title: Xamarin の非推奨の通知テクノロジ
+description: このドキュメントでは、iOS 10 で導入されたユーザー通知フレームワークを優先するために非推奨とされた iOS 通知テクノロジについて説明します。
 ms.prod: xamarin
 ms.assetid: 20C4F6E5-56DF-4A85-BBF0-E38C88586307
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/07/2016
-ms.openlocfilehash: 63134298e437e7ac9b99ac4d716f6265752651c3
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: af9f4d606dbe258b224d09f68f9b65d6f56ab28f
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865685"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68653893"
 ---
-# <a name="deprecated-notification-technologies-in-xamarinios"></a>Xamarin.iOS で非推奨の通知テクノロジ
+# <a name="deprecated-notification-technologies-in-xamarinios"></a>Xamarin の非推奨の通知テクノロジ
 
-このセクションでは、ローカルの実装し、Xamarin.iOS でのプッシュ通知する方法を示します。 IOS 通知のさまざまな UI 要素について説明し、API の説明を作成して、通知を表示するのに関係するのです。
+このセクションでは、Xamarin. iOS でローカルおよびプッシュ通知を実装する方法について説明します。 ここでは、iOS の通知のさまざまな UI 要素について説明し、通知の作成と表示に関連する API について説明します。
 
 > [!IMPORTANT]
-> このセクションの情報は、iOS 9 に関連し、前に、そのままにしたここで以前の iOS バージョンをサポートするためにします。 IOS 10 以降を参照してください、[ユーザー通知フレームワーク ガイド](~/ios/platform/user-notifications/index.md)iOS デバイスでローカルとリモート通知の両方をサポートするためです。
+> このセクションの情報は、iOS 9 とそれ以前のバージョンをサポートするために残されています。 IOS 10 以降については、iOS デバイスでのローカル通知とリモート通知の両方をサポートするための[ユーザー通知フレームワークガイド](~/ios/platform/user-notifications/index.md)を参照してください。
 
 ## <a name="sections"></a>セクション
 
@@ -27,20 +27,20 @@ ms.locfileid: "67865685"
 
 ## <a name="local-notifications-in-ioslocal-notifications-in-iosmd"></a>[IOS でのローカル通知](local-notifications-in-ios.md)
 
-このセクションでは、Xamarin.iOS でローカル通知を実装する方法について説明します。 IOS 通知のさまざまな UI 要素について説明し、API の説明を作成して、通知を表示するのに関係するのです。
+このセクションでは、Xamarin. iOS でローカル通知を実装する方法について説明します。 ここでは、iOS の通知のさまざまな UI 要素について説明し、通知の作成と表示に関連する API について説明します。
 
 <a name="Local Notifications Walkthrough" />
 
 ## <a name="walkthrough---using-local-notifications-in-xamarinioslocal-notifications-in-ios-walkthroughmd"></a>[チュートリアル - Xamarin.iOS でのローカル通知の使用](local-notifications-in-ios-walkthrough.md)
 
-このセクションでは、Xamarin.iOS アプリケーションでローカル通知を使用する方法について説明します。 これを作成して、アプリで受信された場合にアラートがポップアップ表示される通知の発行の基礎を紹介します。
+このセクションでは、Xamarin iOS アプリケーションでローカル通知を使用する方法について説明します。 ここでは、アプリで受信したときにアラートをポップアップ表示する通知を作成して公開する方法の基本について説明します。
 
 <a name="Remote Notifications In iOS" />
 
 ## <a name="remote-notifications-in-iosremote-notifications-in-iosmd"></a>[IOS でのリモート通知](remote-notifications-in-ios.md)
 
-このセクションでは、iOS でプッシュ通知を説明します。 これは、Apple プッシュ通知ゲートウェイ サービス (APNS)、iOS アプリケーションに公開通知が果たす役割について説明します。 プッシュ通知を有効にして、説明に必要なセキュリティ証明書を作成する方法を説明します。 最後にこのセクションでは、クライアント モバイル デバイスを追跡するアプリケーション サーバーを実行する必要がありますハウスキーピング タスクの一部についてはします。
+このセクションでは、iOS でのプッシュ通知について説明します。 IOS アプリケーションに通知を発行するときに、Apple Push notification Gateway サービス (APNS) とそれが果たす役割について説明します。 ここでは、プッシュ通知を有効にするために必要なセキュリティ証明書の作成方法と、について説明します。 最後に、このセクションでは、クライアントモバイルデバイスを追跡するためにアプリケーションサーバーで実行する必要があるいくつかのハウスキーピングタスクについて説明します。
 
 ## <a name="related-links"></a>関連リンク
 
-- [通知 (サンプル)](https://developer.xamarin.com/samples/monotouch/Notifications/)
+- [通知 (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/notifications)

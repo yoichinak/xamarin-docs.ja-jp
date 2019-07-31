@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/16/2018
-ms.openlocfilehash: fb70ea126216642af513036211f7dd2a86fd9559
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 61dedca1b89237bdd4669a63173b1c6e4fde072b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509542"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644303"
 ---
 # <a name="walkthrough---using-local-notifications-in-xamarinandroid"></a>チュートリアル-Xamarin. Android でのローカル通知の使用
 
@@ -32,7 +32,7 @@ _このチュートリアルでは、Xamarin Android アプリケーションで
 
 ## <a name="creating-the-project"></a>プロジェクトの作成
 
-まず、 **Android アプリ**テンプレートを使用して新しい android プロジェクトを作成してみましょう。 このプロジェクトの Localnotifications を呼び出しましょう。 (Xamarin Android プロジェクトの作成に慣れていない場合は、「 [Hello, android](~/android/get-started/hello-android/hello-android-quickstart.md)」を参照してください)。
+まず、 **Android アプリ**テンプレートを使用して新しい android プロジェクトを作成してみましょう。 このプロジェクトの Localnotificationsを呼び出しましょう。 (Xamarin Android プロジェクトの作成に慣れていない場合は、「 [Hello, android](~/android/get-started/hello-android/hello-android-quickstart.md)」を参照してください)。
 
 リソースファイルの**値/文字列 .xml**を編集して、通知チャネルの作成時に使用される2つの余分な文字列リソースが含まれるようにします。
 
@@ -258,14 +258,14 @@ namespace LocalNotifications
 おめでとうございます! この時点で、Android のローカル通知チュートリアルが完了し、参照できる実用的なサンプルがあります。 ここでは説明したよりも多くの通知があります。詳細については、[通知に関する Google のドキュメント](https://developer.android.com/guide/topics/ui/notifiers/notifications.html)を参照してください。
 
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
 このチュートリアルで`NotificationCompat.Builder`は、通知の作成と表示に使用します。 ここでは、通知によるユーザーの操作に応答する方法として2番目のアクティビティを開始する方法の基本的な例を示し、最初のアクティビティから2番目のアクティビティへのデータの転送について説明しました。
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [LocalNotifications (サンプル)](https://developer.xamarin.com/samples/monodroid/LocalNotifications/)
+- [LocalNotifications (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/localnotifications)
 - [Android Oreo の通知チャネル](https://blog.xamarin.com/android-oreo-notification-channels/)
 - [警告](xref:Android.App.Notification)
 - [NotificationManager](xref:Android.App.NotificationManager)

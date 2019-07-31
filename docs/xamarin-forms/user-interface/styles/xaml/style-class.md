@@ -1,33 +1,33 @@
 ---
-title: Xamarin.Forms のスタイル クラス
-description: Xamarin.Forms のスタイル クラスには、スタイルの継承を使用しなくても、コントロールに適用する複数のスタイルが有効にします。
+title: Xamarin 形式のスタイルクラス
+description: Xamarin. Forms スタイルクラスを使用すると、スタイルの継承を使用せずに、コントロールに複数のスタイルを適用できます。
 ms.prod: xamarin
 ms.assetid: 4762401E-2B48-48F1-B6E4-61F7AF8AA46F
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/30/2019
-ms.openlocfilehash: a3ef0f96bcc955dcac4231f9eb9cf1ab16ee61aa
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 438d3462c123cc9c9a8730405bb64a5e9492bfdf
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925291"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68645551"
 ---
-# <a name="xamarinforms-style-classes"></a>Xamarin.Forms のスタイル クラス
+# <a name="xamarinforms-style-classes"></a>Xamarin 形式のスタイルクラス
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/BasicStyles/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
 
-_Xamarin.Forms のスタイル クラスには、スタイルの継承を使用しなくても、コントロールに適用する複数のスタイルが有効にします。_
+_Xamarin. Forms スタイルクラスを使用すると、スタイルの継承を使用せずに、コントロールに複数のスタイルを適用できます。_
 
-## <a name="create-style-classes"></a>スタイル クラスを作成します。
+## <a name="create-style-classes"></a>スタイルクラスの作成
 
-スタイル クラスを設定して作成できます、 [ `Class` ](xref:Xamarin.Forms.Style.Class)プロパティを[ `Style` ](xref:Xamarin.Forms.Style)を`string`クラスの名前を表します。 これにより、明示的なスタイルを使用して、定義した場合に利用、`x:Key`属性は、複数のスタイル クラスに適用できること、 [ `VisualElement`](xref:Xamarin.Forms.VisualElement)します。
+スタイルクラスを作成するには、の[`Class`](xref:Xamarin.Forms.Style.Class) [`Style`](xref:Xamarin.Forms.Style) `string`プロパティをクラス名を表すに設定します。 この機能の利点は、 `x:Key`属性を使用して明示的なスタイルを定義するよりも、複数のスタイルクラスを[`VisualElement`](xref:Xamarin.Forms.VisualElement)に適用できることです。
 
 > [!IMPORTANT]
-> さまざまな種類を対象に提供される、複数のスタイルは、同じクラス名を共有できます。 これにより、さまざまな種類の対象に、同じ名前を複数のスタイル クラスができます。
+> 複数のスタイルが異なる型をターゲットにしている場合は、同じクラス名を共有できます。 これにより、同じ名前の複数のスタイルクラスを使用して、異なる型をターゲットにすることができます。
 
-次の例では 3 つ[ `BoxView` ](xref:Xamarin.Forms.BoxView)クラスのスタイル設定、 [ `VisualElement` ](xref:Xamarin.Forms.VisualElement)スタイル クラス。
+次の例は、 [`BoxView`](xref:Xamarin.Forms.BoxView) 3 つのスタイルクラス[`VisualElement`](xref:Xamarin.Forms.VisualElement)とスタイルクラスを示しています。
 
 ```xaml
 <ContentPage ...>
@@ -74,9 +74,9 @@ _Xamarin.Forms のスタイル クラスには、スタイルの継承を使用�
 </ContentPage>
 ```
 
-`Separator`、 `Rounded`、および`Circle`スタイル クラスの各セット[ `BoxView` ](xref:Xamarin.Forms.BoxView)プロパティを特定の値にします。
+、 `Separator` 、`Rounded` [`BoxView`](xref:Xamarin.Forms.BoxView)およびスタイルクラスはそれぞれ、プロパティを特定の値に設定します。`Circle`
 
-`Rotated`スタイル クラスには、 [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)の[ `VisualElement` ](xref:Xamarin.Forms.VisualElement)、つまりのみに適用できる`VisualElement`インスタンス。 ただし、その[ `ApplyToDerivedTypes` ](xref:Xamarin.Forms.Style.ApplyToDerivedTypes)プロパティに設定されて`true`から派生したコントロールに適用できることが保証`VisualElement`など[ `BoxView`](xref:Xamarin.Forms.BoxView)します。 派生型にスタイルを適用する方法についての詳細については、次を参照してください。[派生型にスタイルを適用](implicit.md#apply-a-style-to-derived-types)します。
+スタイルクラスには、 [`TargetType`](xref:Xamarin.Forms.Style.TargetType)の[`VisualElement`](xref:Xamarin.Forms.VisualElement)があります。これは、インスタンスに`VisualElement`のみ適用できることを意味します。 `Rotated` ただし、その[`ApplyToDerivedTypes`](xref:Xamarin.Forms.Style.ApplyToDerivedTypes)プロパティはに`true`設定され[`BoxView`](xref:Xamarin.Forms.BoxView)ます。これにより、など、から`VisualElement`派生したコントロールに適用できるようになります。 派生型にスタイルを適用する方法の詳細については、「[スタイルを派生型に適用する](implicit.md#apply-a-style-to-derived-types)」を参照してください。
 
 同等の C# コードに示します。
 
@@ -178,11 +178,11 @@ Resources = new ResourceDictionary
 };
 ```
 
-## <a name="consume-style-classes"></a>スタイル クラスを使用します。
+## <a name="consume-style-classes"></a>スタイルクラスを使用する
 
-設定でスタイル クラスを使用できる、 [ `StyleClass` ](xref:Xamarin.Forms.NavigableElement.StyleClass)プロパティの型であるコントロールの`IList<string>`、スタイル クラス名の一覧にします。 コントロールの型と一致すること、スタイル クラスが適用されます、 [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)スタイルのクラス。
+スタイルクラスは、コントロールの[`StyleClass`](xref:Xamarin.Forms.NavigableElement.StyleClass)プロパティ (型`IList<string>`) をスタイルクラス名のリストに設定することによって使用できます。 コントロールの型がスタイルクラス[`TargetType`](xref:Xamarin.Forms.Style.TargetType)のと一致する場合、スタイルクラスが適用されます。
 
-次の例では 3 つ[ `BoxView` ](xref:Xamarin.Forms.BoxView)インスタンスでは、それぞれ異なるスタイル クラスに設定します。
+次の例は、 [`BoxView`](xref:Xamarin.Forms.BoxView)それぞれが異なるスタイルクラスに設定された3つのインスタンスを示しています。
 
 ```xaml
 <ContentPage ...>
@@ -201,12 +201,12 @@ Resources = new ResourceDictionary
 </ContentPage>    
 ```
 
-この例では、最初の[ `BoxView` ](xref:Xamarin.Forms.BoxView)する 3 番目の行区切り記号のスタイルが`BoxView`が循環します。 2 番目の`BoxView`が 2 つのスタイル クラスに適用し、it が丸められますの角を与えるし、45 度回転します。
+この例では、最初[`BoxView`](xref:Xamarin.Forms.BoxView)のは行の区切り記号としてスタイルを`BoxView`設定し、3番目の行は円で示しています。 2つ`BoxView`目のスタイルクラスが適用されます。これにより、角が丸くなり、45度回転します。
 
-![](style-class-images/boxviews.png "BoxViews スタイル クラスのスタイル設定")
+![](style-class-images/boxviews.png "BoxViews スタイルクラスでスタイルを適用する")
 
 > [!IMPORTANT]
-> コントロールに複数のスタイル クラスを適用できます、 [ `StyleClass` ](xref:Xamarin.Forms.NavigableElement.StyleClass)プロパティの型は`IList<string>`します。 この場合、一覧の順序の昇順でスタイル クラスが適用されます。 そのため、複数のスタイル クラスでは、同じプロパティを設定するときに最高のリストの位置にあるスタイル クラスでプロパティが優先されます。
+> [`StyleClass`](xref:Xamarin.Forms.NavigableElement.StyleClass)プロパティが型`IList<string>`であるため、複数のスタイルクラスをコントロールに適用できます。 この場合、スタイルクラスは昇順のリストの順序で適用されます。 したがって、複数のスタイルクラスが同一のプロパティを設定すると、リストの最上位の位置にあるスタイルクラスのプロパティが優先されます。
 
 同等の C# コードに示します。
 
@@ -225,4 +225,4 @@ Content = new StackLayout
 
 ## <a name="related-links"></a>関連リンク
 
-- [基本的なスタイル (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/BasicStyles/)
+- [基本的なスタイル (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)

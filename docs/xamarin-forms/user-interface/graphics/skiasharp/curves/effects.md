@@ -7,16 +7,16 @@ ms.assetid: 95167D1F-A718-405A-AFCC-90E596D422F3
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/29/2017
-ms.openlocfilehash: ee1df713315559c076fbfaed6f5a34057940ff36
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e0af5188dd34e76b419b4cd5bf8d604fb059b7d3
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61083210"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68642758"
 ---
 # <a name="path-effects-in-skiasharp"></a>SkiaSharp のパスの効果
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _入力し、線の描画に使用するパスを許可するパスのさまざまな効果を検出します。_
 
@@ -418,13 +418,13 @@ public partial class OneDimensionalPathEffectPage : ContentPage
 
 `y = a · cosh(x / a)`
 
-*Cosh*ハイパーボリック コサイン関数です。 *X*を 0 に等しい*cosh*ゼロと*y* equals *、*。 Catenary の中心です。 ように、*コサイン*関数、 *cosh*と呼ばれます*でも*、ですつまり*cosh(–x)* equals *cosh(x)*。、正または負の値の引数を高めるための値を増やすとします。 これらの値には、曲線、catenary の面を形成するについて説明します。
+*Cosh*ハイパーボリック コサイン関数です。 *X*を 0 に等しい*cosh*ゼロと*y* equals *、* 。 Catenary の中心です。 ように、*コサイン*関数、 *cosh*と呼ばれます*でも*、ですつまり*cosh(–x)* equals *cosh(x)* 。、正または負の値の引数を高めるための値を増やすとします。 これらの値には、曲線、catenary の面を形成するについて説明します。
 
 適切な値の検索 *、* に合わせて、電話のページの寸法を catenary を利用する直接計算はありません。 場合*w*と*h*の最適値、四角形の高さと幅は *、* 次の式を満たします。
 
 `cosh(w / 2 / a) = 1 + h / a`
 
-次のメソッド、 [ `LinkedChainPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/LinkedChainPage.cs)クラスには、左側のおよびと等号の右側の 2 つの式を参照して、等しいかどうかが組み込まれています`left`と`right`します。 値が小さい *、*、`left`がより大きい`right`; の値が大きい *、*、`left`がより小さい`right`します。 `while`の最適な値でループを絞り込みます *、*:
+次のメソッド、 [ `LinkedChainPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/LinkedChainPage.cs)クラスには、左側のおよびと等号の右側の 2 つの式を参照して、等しいかどうかが組み込まれています`left`と`right`します。 値が小さい *、* 、`left`がより大きい`right`; の値が大きい *、* 、`left`がより小さい`right`します。 `while`の最適な値でループを絞り込みます *、* :
 
 ```csharp
 float FindOptimumA(float width, float height)
@@ -453,7 +453,7 @@ float FindOptimumA(float width, float height)
 }
 ```
 
-`SKPath`オブジェクト クラスのコンス トラクターと、結果で、リンクが作成されたの`SKPathEffect`オブジェクトに設定し、`PathEffect`のプロパティ、`SKPaint`フィールドとして格納されているオブジェクト。
+`SKPath`オブジェクト クラスのコンストラクターと、結果で、リンクが作成されたの`SKPathEffect`オブジェクトに設定し、`PathEffect`のプロパティ、`SKPaint`フィールドとして格納されているオブジェクト。
 
 ```csharp
 public class LinkedChainPage : ContentPage
@@ -553,7 +553,7 @@ public class LinkedChainPage : ContentPage
 
 (0, 0) バケット パスのポイントは、ハンドル、したがって、`phase`引数がアニメーション化、バケットは、コンベヤ ベルト、おそらく、下部に水をスコープとアウトの上部にあるダンプに焦点を絞っているようです。
 
-[ `ConveyorBeltPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConveyorBeltPage.cs)クラス実装のオーバーライドでアニメーションを`OnAppearing`と`OnDisappearing`メソッド。 バケットのパスは、ページのコンス トラクターで定義されます。
+[ `ConveyorBeltPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConveyorBeltPage.cs)クラス実装のオーバーライドでアニメーションを`OnAppearing`と`OnDisappearing`メソッド。 バケットのパスは、ページのコンストラクターで定義されます。
 
 ```csharp
 public class ConveyorBeltPage : ContentPage
@@ -794,13 +794,13 @@ public class HatchFillPage : ContentPage
 }
 ```
 
-結果を慎重に確認すると、赤、青のハッチ線を角丸四角形に正確に制限されないことが表示されます。 (これは一見、基になる Skia コードの特性。)これがない場合は、緑色で斜線ハッチ線の別の方法が表示されます。角丸四角形はクリッピング パスとして使用され、ページ全体にハッチ線が描画されます。
+結果を慎重に確認すると、赤、青のハッチ線を角丸四角形に正確に制限されないことが表示されます。 (これは一見、基になる Skia コードの特性。)これが不十分な場合は、次のような別のアプローチが緑色で斜線のハッチ線として表示されます。角丸四角形はクリッピングパスとして使用され、ハッチ線はページ全体に描画されます。
 
 `PaintSurface`赤、青のハッチ線に不一致が確認できるように、角の丸い四角形を単にストロークを描画する呼び出しでハンドラーの終了します。
 
 [![](effects-images/hatchfill-small.png "ハッチの塗りつぶし ページのスクリーン ショットをトリプル")](effects-images/hatchfill-large.png#lightbox "ハッチの塗りつぶし ページの 3 倍になるスクリーン ショット")
 
-Android の画面はそのような検索実際には。赤の細い線と一見広い赤色の線に統合するシン スペースと広いスペースが原因のスクリーン ショットのスケーリングします。
+Android の画面は次のようになります。スクリーンショットの拡大縮小により、細い赤の線と細いスペースが、一見した幅の広い赤い線と広い領域に統合されました。
 
 ## <a name="filling-with-a-path"></a>パスの入力
 
@@ -1086,7 +1086,7 @@ public Boolean GetFillPath (SKPath src, SKPath dst, SKRect cullRect, Single resS
 
 最初の 2 つの引数のみが必要です。 メソッドによって参照されているパスにアクセスする、`src`引数、ストロークのプロパティに基づいてパスのデータを変更する、`SKPaint`オブジェクト (など、`PathEffect`プロパティ)、しに結果を書き込みます、`dst`パス。 `resScale`パラメーターは、小規模な移行先パスを作成する桁数を減らすことができます、`cullRect`引数は、四角形の外側の輪郭を排除できます。
 
-このメソッドの 1 つの基本的な使用では、パスの効果をまったく関与しません。場合、`SKPaint`オブジェクトがその`Style`プロパティに設定`SKPaintStyle.Stroke`と*いない*がその`PathEffect`設定し、`GetFillPath`を表すパスを作成、*アウトライン*ソース パスの描画したペイント プロパティであるかのようです。
+このメソッドの基本的な使用方法の1つに、パスの効果は含まれません。オブジェクトの`SKPaint` `Style`プロパティがに`SKPaintStyle.Stroke`設定*さ*れていて、が`PathEffect`設定されて`GetFillPath`いない場合、は、ソースパスの*アウトライン*を表すパスを作成します。ペイントのプロパティ。
 
 たとえば場合、`src`パスは、単純な円の半径、500 の`SKPaint`オブジェクトが 100 のストロークの幅を指定します、`dst`半径 550 の半径が 450 および、その他の 1 つ、2 つの同心円をパスになります。 メソッドは`GetFillPath`ため、この入力`dst`ストロークと同じパスでは、`src`パス。 ストロークを描画することができますもが、`dst`パス、パスのアウトラインを参照してください。
 
@@ -1287,7 +1287,7 @@ public class CatsInFramePage : ContentPage
 
 `catPath`で使用できる、`SKPathEffect.Create2DPath`メソッド場合、`SKPaint`オブジェクト`Style`プロパティに設定されて`Stroke`します。 ただし場合、`catPath`このプログラムで、猫の全体の頭がいっぱいになるし、表示されていることすらひげ直接に使用されます。 (試してみる)パスのアウトラインを取得してそのアウトラインでを使用する必要がある、`SKPathEffect.Create2DPath`メソッド。
 
-このジョブでは、コンス トラクター。 最初に 2 つの変換が適用されます`catPath`を移動する、(0, 0) の中央をポイントし、サイズにスケール ダウンします。 `GetFillPath` 輪郭のすべてのアウトラインを取得します`outlinedCatPath`でそのオブジェクトが使用して、`SKPathEffect.Create2DPath`呼び出します。 の要素、スケーリング、`SKMatrix`値が水平よりも少し大きめと翻訳の要因が、タイルの間の小さなバッファーを提供する cat の縦のサイズが多少を派生完全 cat に表示されるように経験的、フレームの左上隅。
+このジョブでは、コンストラクター。 最初に 2 つの変換が適用されます`catPath`を移動する、(0, 0) の中央をポイントし、サイズにスケール ダウンします。 `GetFillPath` 輪郭のすべてのアウトラインを取得します`outlinedCatPath`でそのオブジェクトが使用して、`SKPathEffect.Create2DPath`呼び出します。 の要素、スケーリング、`SKMatrix`値が水平よりも少し大きめと翻訳の要因が、タイルの間の小さなバッファーを提供する cat の縦のサイズが多少を派生完全 cat に表示されるように経験的、フレームの左上隅。
 
 ```csharp
 public class CatsInFramePage : ContentPage
@@ -1330,7 +1330,7 @@ public class CatsInFramePage : ContentPage
 }
 ```
 
-コンス トラクターを呼び出して`SKPathEffect.Create1DPath`のキャプションのフレーム。 パスの幅が 100 ピクセルは、レプリケートされたパスが枠の周りにオーバー ラップしたように、事前は 75 ピクセルことに注目してください。 コンス トラクターの呼び出しの最後のステートメント`SKPathEffect.CreateSum`2 つのパスの効果を結合し、結果を設定する、`SKPaint`オブジェクト。
+コンストラクターを呼び出して`SKPathEffect.Create1DPath`のキャプションのフレーム。 パスの幅が 100 ピクセルは、レプリケートされたパスが枠の周りにオーバー ラップしたように、事前は 75 ピクセルことに注目してください。 コンストラクターの呼び出しの最後のステートメント`SKPathEffect.CreateSum`2 つのパスの効果を結合し、結果を設定する、`SKPaint`オブジェクト。
 
 により、この作業はすべて、`PaintSurface`非常に簡単にするハンドラー。 四角形を定義しを使用して描画するだけで済みます`framePaint`:
 
@@ -1418,4 +1418,4 @@ public class DashedHatchLinesPage : ContentPage
 ## <a name="related-links"></a>関連リンク
 
 - [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

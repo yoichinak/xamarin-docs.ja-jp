@@ -7,20 +7,20 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/26/2019
-ms.openlocfilehash: 3bbea036efef44077ccbd28a16af06c97cd7026b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6363f84cb9c947fe8035b51c9f7aed05be6be9e0
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61230304"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68649204"
 ---
 # <a name="adding-data-to-a-pickers-items-collection"></a>データ選択コントロールの項目のコレクションを追加します。
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PickerDemo/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-pickerdemo)
 
 _ピッカーの表示は、データの一覧から、テキスト項目を選択するためのコントロールです。この記事では、項目のコレクションに追加することによってデータの選択を設定する方法と、ユーザーが項目の選択に応答する方法について説明します。_
 
-## <a name="populating-a-picker-with-data"></a>データの選択の設定
+## <a name="populating-a-picker-with-data"></a>データを使用したピッカーの設定
 
 Xamarin.Forms 2.3.4 を設定するためのプロセスの前に、 [ `Picker` ](xref:Xamarin.Forms.Picker)データが、読み取り専用に表示するデータを追加する[ `Items` ](xref:Xamarin.Forms.Picker.Items) 型のコレクション、`IList<string>`. コレクション内の各項目は、型でなければなりません`string`します。 初期化することにより XAML で項目を追加できる、`Items`プロパティの一覧を`x:String`項目。
 
@@ -83,5 +83,5 @@ void OnPickerSelectedIndexChanged(object sender, EventArgs e)
 
 ## <a name="related-links"></a>関連リンク
 
-- [ピッカーのデモ (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PickerDemo/)
+- [ピッカーのデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-pickerdemo)
 - [ピッカー](xref:Xamarin.Forms.Picker)

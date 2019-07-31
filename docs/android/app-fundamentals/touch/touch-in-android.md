@@ -6,36 +6,36 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 84767975eece4f8f0efae1fe53463cbc053bd836
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 7f68695b4fa6b8abb7938dd96794eb1d0d1d13a5
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61012918"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643952"
 ---
 # <a name="touch-in-android"></a>Android でのタッチ
 
-はるかなど、iOS、Android 作成、ユーザーの物理的な画面操作に関するデータを保持するオブジェクト&ndash;、`Android.View.MotionEvent`オブジェクト。 このオブジェクトがどのようなアクションの実行などのデータを保持して、タッチが、配置、圧力の量が適用されたなど。A`MotionEvent`オブジェクトが次の値への移動を分割します。
+IOS と同様に、Android では、ユーザーの画面&ndash; `Android.View.MotionEvent`とオブジェクトの物理的な相互作用に関するデータを保持するオブジェクトが作成されます。 このオブジェクトには、実行されたアクション、タッチが行われた場所、適用された負荷などのデータが保持されます。オブジェクト`MotionEvent`は、への移動を次の値に分割します。
 
--  最初のタッチ画面、または、タッチの終わりを越えて移動タッチなどの動きの型を記述するアクション コード。
+-  初期タッチ、画面上でのタッチの移動、タッチの終了など、モーションの種類を記述するアクションコード。
 
--  一連の軸の値の位置を示す、`MotionEvent`およびその他の移動のプロパティなど、タッチが行われている、ときに、タッチ行われたか、および圧力の量が使用されました。
-   軸の値は、上記の一覧ではすべての軸の値については説明しませんのでデバイスによっては、異なる場合があります。
+-  タッチが行われている場所、タッチが発生`MotionEvent`したとき、使用された圧力など、の移動プロパティおよびその他の移動プロパティの位置を表す軸値のセット。
+   軸の値はデバイスによって異なる場合があるため、前の一覧にはすべての軸の値が記述されていません。
 
 
-`MotionEvent`オブジェクトは、アプリケーションで適切なメソッドに渡されます。 タッチ イベントに応答する Xamarin.Android アプリケーションの 3 つの方法はあります。
+オブジェクト`MotionEvent`は、アプリケーション内の適切なメソッドに渡されます。 Xamarin Android アプリケーションがタッチイベントに応答するには、次の3つの方法があります。
 
--  *イベント ハンドラーを割り当てる`View.Touch`*  -`Android.Views.View`クラスには、`EventHandler<View.TouchEventArgs>`アプリケーションは、ハンドラーを割り当てることができます。 これは、.NET の一般的な動作です。
+-  *イベントハンドラーをに`View.Touch`割り当てる*- `Android.Views.View`クラスには、 `EventHandler<View.TouchEventArgs>`ハンドラーを割り当てることができるアプリケーションがあります。 これは、一般的な .NET の動作です。
 
--  *実装する`View.IOnTouchListener`*  -このインターフェイスのインスタンスは、ビューを使用してビュー オブジェクトに割り当てることができます。 `SetOnListener` メソッド。これは、機能的にイベント ハンドラーを割り当てるには、`View.Touch`イベント。 さまざまな見方が接している必要があります共有ロジックがある場合は、クラスを作成しに割り当てる各ビュー、独自のイベント ハンドラーよりも、このメソッドを実装する方が効率的があります。
+-  このインターフェイスの*実装`View.IOnTouchListener`* インスタンスは、ビューを使用してビューオブジェクトに割り当てることができます。 `SetOnListener`b.これは、 `View.Touch`イベントハンドラーをイベントに割り当てることと機能的には同じです。 いくつかの一般的なロジックや共有ロジックがあり、それらのビューを操作するときにさまざまなビューが必要になることがある場合は、クラスを作成し、各ビューに独自のイベントハンドラーを割り当てるよりも、このメソッドを実装する方が効率的です。
 
--  *オーバーライド`View.OnTouchEvent`*  -Android サブクラスのすべてのビュー`Android.Views.View`します。 Android ビューが操作されたときに呼び出す、`OnTouchEvent`を渡して、`MotionEvent`オブジェクトをパラメーターとして。
+-  *上書き`View.OnTouchEvent`*  -Android サブクラス`Android.Views.View`のすべてのビュー。 ビューにタッチすると、Android はを呼び出し`OnTouchEvent` 、パラメーターとし`MotionEvent`てオブジェクトを渡します。
 
 
 > [!NOTE]
-> すべての Android デバイスでは、タッチ スクリーンをサポートします。 
+> すべての Android デバイスがタッチスクリーンをサポートしているわけではありません。 
 
-マニフェスト ファイルに次のタグを追加すると、Google Play のみを表示するタッチを有効になっているはこれらのデバイスにアプリ。
+次のタグをマニフェストファイルに追加すると、Google Play によって、タッチが有効になっているデバイスにのみアプリが表示されるようになります。
 
 ```xml
 <uses-configuration android:reqTouchScreen="finger" />
@@ -43,18 +43,18 @@ ms.locfileid: "61012918"
 
 ## <a name="gestures"></a>ジェスチャ
 
-ジェスチャとは、タッチ スクリーン上の手書きの図形です。 ジェスチャでは、画面との接続のさまざまなポイントで作成されたポイントのシーケンスから成る各ストロークを 1 つ以上のストロークを持つことができます。 Android では、マルチタッチに関連する複雑なジェスチャに画面上で単純な念からジェスチャのさまざまな種類をサポートできます。
+ジェスチャは、タッチスクリーン上のハンド描画された図形です。 ジェスチャは、1つまたは複数のストロークを持つことができます。各ストロークは、画面とは異なる接点によって作成されたポイントのシーケンスで構成されます。 Android では、画面上の単純な theory からマルチタッチを含む複雑なジェスチャまで、さまざまな種類のジェスチャをサポートできます。
 
-Android に用意されて、`Android.Gestures`名前空間の管理とジェスチャに応答を具体的には。 At と呼ばれる特殊なクラスは、すべてのジェスチャの中心となる`Android.Gestures.GestureDetector`します。 このクラスがジェスチャとに基づいてイベントをリッスンする名前が示すように、`MotionEvents`オペレーティング システムによって提供されます。
+Android には`Android.Gestures` 、ジェスチャの管理と応答を行うための名前空間が用意されています。 すべてのジェスチャの中核となるのは、と`Android.Gestures.GestureDetector`呼ばれる特殊なクラスです。 名前が示すように、このクラスは、オペレーティングシステムによって`MotionEvents`提供されるジェスチャとイベントをリッスンします。
 
-ジェスチャの検出機能を実装するアクティビティをインスタンス化する必要があります、`GestureDetector`クラスのインスタンスを指定し、`IOnGestureListener`次のコード スニペットに示しますように。
+ジェスチャ検出機能を実装するには、次の`GestureDetector`コードスニペットに示すように`IOnGestureListener`、アクティビティでクラスをインスタンス化し、のインスタンスを提供する必要があります。
 
 ```csharp
 GestureOverlayView.IOnGestureListener myListener = new MyGestureListener();
 _gestureDetector = new GestureDetector(this, myListener);
 ```
 
-アクティビティは必要がありますも、OnTouchEvent を実装し、ジェスチャの検出機能を MotionEvent を渡します。 次のコード スニペットでは、この例を示します。
+また、アクティビティは OnTouchEvent を実装し、MotionEvent をジェスチャ検出機能に渡す必要があります。 次のコードスニペットは、この例を示しています。
 
 ```csharp
 public override bool OnTouchEvent(MotionEvent e)
@@ -64,47 +64,47 @@ public override bool OnTouchEvent(MotionEvent e)
 }
 ```
 
-インスタンス`GestureDetector`ジェスチャを識別する関心のあることは、アクティビティまたはアプリケーションに通知イベントを発生させるか、によって提供されるコールバックを通じて`GestureDetector.IOnGestureListener`します。
-このインターフェイスは、さまざまなジェスチャの 6 つのメソッドを提供します。
+の`GestureDetector`インスタンスは、目的のジェスチャを識別するときに、イベントを発生させるか、によっ`GestureDetector.IOnGestureListener`て提供されるコールバックを使用して、アクティビティまたはアプリケーションに通知します。
+このインターフェイスは、さまざまなジェスチャに対して6つのメソッドを提供します。
 
--  *OnDown* -タップが発生しますが、解放されていないときに呼び出されます。
+-  *Ondown* -タップが発生したが、解放されていない場合に呼び出されます。
 
--  *OnFling* -念を発生し、開始と終了のタッチ イベントをトリガーしたに関するデータを提供するときに呼び出されます。
+-  *OnFling* -theory が発生し、イベントをトリガーした開始および終了のタッチにデータを提供するときに呼び出されます。
 
--  *OnLongPress* -長押しが発生したときに呼び出されます。
+-  *Onlongpress*は、長い押下が発生したときに呼び出されます。
 
--  *OnScroll* -スクロール イベントが発生したときに呼び出されます。
+-  *Onscroll* -scroll イベントが発生したときに呼び出されます。
 
--  *OnShowPress* - という、OnDown が発生した後、移動、またはイベントが実行されていません。
+-  *Onshowpress*は、ondown が発生し、move または up イベントが実行されていない状態で呼び出されました。
 
--  *OnSingleTapUp* -1 回のタップが発生したときに呼び出されます。
+-  *OnSingleTapUp* -シングルタップが発生したときに呼び出されます。
 
 
-多くの場合に、ジェスチャのサブセットでアプリケーションを利用することがありますのみです。 この場合、アプリケーションは GestureDetector.SimpleOnGestureListener クラスを拡張しで関心のあるイベントに対応するメソッドをオーバーライドする必要があります。
+多くの場合、アプリケーションはジェスチャのサブセットのみを対象にすることができます。 この場合、アプリケーションは GestureDetector クラスを拡張し、関心のあるイベントに対応するメソッドをオーバーライドする必要があります。
 
-## <a name="custom-gestures"></a>カスタムのジェスチャ
+## <a name="custom-gestures"></a>カスタムジェスチャ
 
-ジェスチャとは、ユーザーがアプリケーションと対話するための優れた方法です。 これまで行ってきた Api は、単純なジェスチャで十分ですより複雑なジェスチャを少し面倒であるかもしれません。 複雑なジェスチャのヘルプ、Android には、カスタム ジェスチャに関連付けられている負荷の一部を容易にする Android.Gestures 名前空間内の別の API のセットが用意されています。
+ジェスチャは、ユーザーがアプリケーションと対話するための優れた方法です。 これまでに見てきた Api は、単純なジェスチャには十分ですが、より複雑なジェスチャに対しては、少し煩雑を証明することがあります。 Android では、より複雑なジェスチャに対応するために、カスタムジェスチャに関連する負荷の一部を簡単にするために、別の API セットが Android のジェスチャ名前空間に用意されています。
 
-### <a name="creating-custom-gestures"></a>カスタム ジェスチャを作成します。
+### <a name="creating-custom-gestures"></a>カスタムジェスチャの作成
 
-Android の 1.6 以降、Android SDK エミュレーターのジェスチャ Builder というに事前インストールされているアプリケーションが付属します。 このアプリケーションは、開発者はアプリケーションに埋め込むことができる定義済みのジェスチャを作成できます。 次のスクリーン ショットでは、ジェスチャのビルダーの例を示します。
+Android 1.6 以降、Android SDK には、ジェスチャビルダーと呼ばれるエミュレーターにプレインストールされたアプリケーションが付属しています。 このアプリケーションを使用すると、開発者は、アプリケーションに埋め込むことができる定義済みのジェスチャを作成できます。 次のスクリーンショットは、ジェスチャビルダーの例を示しています。
 
-[![例のジェスチャでジェスチャ ビルダーのスクリーン ショット](touch-in-android-images/image11.png)](touch-in-android-images/image11.png#lightbox)
+[![ジェスチャの例を含むジェスチャビルダーのスクリーンショット](touch-in-android-images/image11.png)](touch-in-android-images/image11.png#lightbox)
 
-ジェスチャのツールと呼ばれるこのアプリケーションの改良版には、Google Play を確認できます。 ジェスチャ ツールには、作成した後に、ジェスチャをテストできますが、ジェスチャ ビルダーとよく似て。 この次のスクリーン ショットは、ジェスチャのビルダーを示しています。
+ジェスチャツールと呼ばれるこのアプリケーションの改良されたバージョンは Google Play 見つかります。 ジェスチャツールは、作成後にジェスチャをテストできる点を除いて、ジェスチャビルダーとよく似ています。 次のスクリーンショットは、ジェスチャビルダーを示しています。
 
-[![例のジェスチャでジェスチャ ツールのスクリーン ショット](touch-in-android-images/image12.png)](touch-in-android-images/image12.png#lightbox)
+[![ジェスチャの例を含むジェスチャツールのスクリーンショット](touch-in-android-images/image12.png)](touch-in-android-images/image12.png#lightbox)
 
-ジェスチャのツールは少しを作成すると、テストするジェスチャが許可されているカスタム ジェスチャを作成するために便利で、Google Play で簡単に使用します。
+ジェスチャツールは、ジェスチャを作成時にテストし、Google Play で簡単に使用できるようにすることで、カスタムジェスチャを作成する場合に少し便利です。
 
-ジェスチャのツールは、ジェスチャに作成するには、画面上に描画し、名前の割り当てを使用できます。 ジェスチャが作成された後、デバイスの SD カードにバイナリ ファイルに保存されます。 このファイルは、デバイスから取得され、フォルダー/Resources/raw でアプリケーションとパッケージ化する必要があります。 このファイルは、Android Debug Bridge を使用してエミュレーターから取得できます。 次の例では、Galaxy Nexus からファイルをアプリケーションのリソース ディレクトリにコピーを示します。
+ジェスチャツールを使用すると、画面上に描画し、名前を割り当てることによってジェスチャを作成できます。 ジェスチャが作成されると、デバイスの SD カードのバイナリファイルに保存されます。 このファイルは、デバイスから取得し、アプリケーションと共に、次のフォルダーにパッケージ化してパッケージ化する必要があります。 このファイルは、Android Debug Bridge を使用してエミュレーターから取得できます。 次の例では、ファイルを Galaxy の場合はアプリケーションのリソースディレクトリにコピーします。
 
 ```shell
 $ adb pull /storage/sdcard0/gestures <projectdirectory>/Resources/raw
 ```
 
-ファイルを取得すると、ディレクトリ/Resources 内でアプリケーションをパッケージ化/生がなければなりません。 このジェスチャ ファイルを使用する最も簡単な方法は、次のスニペットに示すように、GestureLibrary、ファイルを読み込むには。
+ファイルを取得した後は、アプリケーションと共にパッケージ化する必要があります。 このジェスチャファイルを使用する最も簡単な方法は、次のスニペットに示すように、ファイルを GestureLibrary に読み込むことです。
 
 ```csharp
 GestureLibrary myGestures = GestureLibraries.FromRawResources(this, Resource.Raw.gestures);
@@ -115,9 +115,9 @@ if (!myGestures.Load())
 }
 ```
 
-### <a name="using-custom-gestures"></a>カスタム ジェスチャを使用します。
+### <a name="using-custom-gestures"></a>カスタムジェスチャの使用
 
-アクティビティ内でカスタム ジェスチャを認識するようにそのレイアウトに追加された Android.Gesture.GestureOverlay オブジェクトが必要です。 次のコード スニペットでは、プログラムによって、GestureOverlayView をアクティビティに追加する方法を示します。
+アクティビティ内のカスタムジェスチャを認識するには、そのレイアウトに GestureOverlay オブジェクトが追加されている必要があります。 次のコードスニペットは、プログラムを利用して GestureOverlayView をアクティビティに追加する方法を示しています。
 
 ```csharp
 GestureOverlayView gestureOverlayView = new GestureOverlayView(this);
@@ -125,7 +125,7 @@ gestureOverlayView.AddOnGesturePerformedListener(this);
 SetContentView(gestureOverlayView);
 ```
 
-次の XML スニペットは、宣言によって、GestureOverlayView を追加する方法を示します。
+次の XML スニペットは、GestureOverlayView を宣言によって追加する方法を示しています。
 
 ```xml
 <android.gesture.GestureOverlayView
@@ -134,14 +134,14 @@ SetContentView(gestureOverlayView);
     android:layout_height="match_parent" />
 ```
 
-`GestureOverlayView`は、ジェスチャの描画の処理中に発生するいくつかのイベントがあります。 最も注目すべきイベントが`GesturePerformed`します。 ユーザーに、ジェスチャの描画が完了したときに、このイベントが発生します。
+に`GestureOverlayView`は、ジェスチャの描画プロセス中に発生するいくつかのイベントがあります。 最も興味深いイベントは`GesturePerformed`です。 このイベントは、ユーザーがジェスチャの描画を完了したときに発生します。
 
-このイベントが発生したときに、アクティビティの確認、`GestureLibrary`を試して、ジェスチャ ツールによって、ジェスチャ、ジェスチャのいずれかのユーザーの作成と一致します。 `GestureLibrary` 予測のオブジェクトの一覧が返されます。
+このイベントが発生すると、アクティビティは、 `GestureLibrary`ユーザーがジェスチャツールによって作成されたジェスチャの1つを使用して、ユーザーとのジェスチャを試行するように要求します。 `GestureLibrary`は、予測オブジェクトの一覧を返します。
 
-予測の各オブジェクトは、スコアと内のジェスチャのいずれかの名前を保持、`GestureLibrary`します。 高いほど、スコアが高く予測にという名前のジェスチャはユーザーによって描かジェスチャと一致します。
-一般的に言えば、1.0 より低いスコアは、不適切な一致と見なされます。
+各予測オブジェクトは、 `GestureLibrary`内のいずれかのジェスチャのスコアと名前を保持します。 スコアが高いほど、予測に示されているジェスチャが、ユーザーによって描画されたジェスチャと一致する可能性が高くなります。
+一般に、1.0 より低いスコアは、一致していないと見なされます。
 
-次のコードでは、ジェスチャの一致の例を示します。
+次のコードは、ジェスチャを照合する例を示しています。
 
 ```csharp
 private void GestureOverlayViewOnGesturePerformed(object sender, GestureOverlayView.GesturePerformedEventArgs gesturePerformedEventArgs)
@@ -163,11 +163,11 @@ private void GestureOverlayViewOnGesturePerformed(object sender, GestureOverlayV
 }
 ```
 
-これを行うには、Xamarin.Android アプリケーションでタッチとジェスチャを使用する方法を理解が必要です。 お知らせようになりましたチュートリアルに進むし、動作するサンプル アプリケーションの概念のすべてを参照してください。
+これにより、Xamarin Android アプリケーションでタッチとジェスチャを使用する方法を理解できるようになります。 チュートリアルに進んで、実用的なサンプルアプリケーションのすべての概念を確認しましょう。
 
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [Android タッチ (サンプル) を開始](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/Touch_start)
-- [Android タッチ最後 (サンプル)](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/Touch_final)
+- [Android タッチスタート (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/applicationfundamentals-touch-start)
+- [Android のタッチ最終 (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/applicationfundamentals-touch-final)

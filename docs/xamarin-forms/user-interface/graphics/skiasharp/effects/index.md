@@ -7,16 +7,16 @@ ms.assetid: B3E06572-8E2A-49FA-90D1-444C394CD516
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/22/2018
-ms.openlocfilehash: 121d505d578aa20e86977c0da5d69626bbad1f53
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: da923a3542a57b6150e536ecb6649140e57c81e1
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61289306"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655350"
 ---
 # <a name="skiasharp-effects"></a>SkiaSharp の効果
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 SkiaSharp、 [ `SKPaint` ](xref:SkiaSharp.SKPaint)クラスの一般的な用語の下に分類できる 6 つのプロパティを定義_効果_します。 これらは、何らかの方法でグラフィックスの通常の表示を変更するプロパティです。 SkiaSharp の効果は、6 つのカテゴリに分類されます。
 
@@ -44,9 +44,9 @@ SkiaSharp、 [ `SKPaint` ](xref:SkiaSharp.SKPaint)クラスの一般的な用語
 
 設定、 [ `ColorFilter` ](xref:SkiaSharp.SKPaint.ColorFilter)プロパティの`SKPaint`型のオブジェクトに[ `SKColorFilter` ](xref:SkiaSharp.SKColorFilter)テーブルを使用する色を変更するのには、またはマトリックスに変換します。
 
-すべてのサンプル コードでは、次の記事、 [ **SkiaSharpFormsDemos**](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)します。 ホーム ページから次のように選択します。 **SkiaSharp 効果**します。
+すべてのサンプル コードでは、次の記事、 [ **SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)します。 ホーム ページから次のように選択します。 **SkiaSharp 効果**します。
 
 ## <a name="related-links"></a>関連リンク
 
 - [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

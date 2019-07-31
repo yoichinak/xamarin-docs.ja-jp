@@ -1,207 +1,207 @@
 ---
 title: iOS 9 の概要
-description: この記事では、Xamarin.iOS の開発者向けのすべての新規および変更した Api と iOS 9 で使用できる機能を紹介します。
+description: この記事では、iOS 9 for Xamarin の開発者が利用できる、新しい Api と変更された Api と機能について説明します。
 ms.prod: xamarin
 ms.assetid: 4D71BBD9-B948-4B59-9AF5-F199C51CBEB3
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: d0ad25a1ecff7262b9b4b41a5f9d73a5931bbd1c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 733f50954c7ea6bd4ada7468eb14443f4f3b1f1d
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60946243"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68654415"
 ---
 # <a name="introduction-to-ios-9"></a>iOS 9 の概要
 
-_この記事では、Xamarin.iOS の開発者向けのすべての新規および変更した Api と iOS 9 で使用できる機能を紹介します。_
+_この記事では、iOS 9 for Xamarin の開発者が利用できる、新しい Api と変更された Api と機能について説明します。_
 
-![](images/ios9-sml.png "IOS 9 のロゴ")
+![](images/ios9-sml.png "IOS 9 ロゴ")
 
-Apple には、既存の機能の多くの機能強化と共に iOS 9 でいくつかの新しい Api やサービスが追加されます。
+Apple では、iOS 9 に新しい Api とサービスがいくつか追加されており、既存の機能に多くの機能強化が加えられています。
 
 ## <a name="3d-touch"></a>3D Touch
 
-IOS 9 と iPhone 6 s および iPhone 6 s 新しい 3D Touch さらに、iOS アプリに負荷の機密性の高いジェスチャを追加します。 3D を使用したタッチ、iPhone アプリがようになりましただけでなく、ユーザーがデバイスの画面での手を加えることことを確認することができます、ユーザーが exerting 量不足を検出し、異なる圧力レベルに対応します。
+IOS 9 および iPhone 6s と iPhone 6s Plus の新機能である3D タッチにより、負荷の高いジェスチャが iOS アプリに追加されます。 3D タッチを使用すると、iPhone アプリは、ユーザーがデバイスの画面に接していることを示すだけでなく、ユーザーがどの程度の圧力を exerting、さまざまなプレッシャーレベルに応答しているかを判断することもできます。
 
-3D Touch は、アプリには、次の機能を提供します。
+3D Touch は、アプリに次の機能を提供します。
 
-- **感度への負荷が**- アプリがどの程度難しい測定できるようになりましたか光、ユーザーがその情報の画面を利用触れることができます。 たとえば、描画アプリでは、太くや薄型にユーザーがどの程度難しいが画面に触れるに基づいて行を作成できます。
-- **ここに表示し、ポップ**-アプリが、ユーザーが、現在のコンテキストから離れることがなく、データと対話できますようになりました。 キーを押して、画面に、できる*ピーク*が (メッセージのプレビュー) のように興味を持つ項目にします。 キーを押して難しく、できる*ポップ*項目にします。
-- **クイック アクション**-と考えるのクイック アクションをするポップ アップできる、ユーザーがデスクトップ アプリ内の項目を右クリックすると、コンテキスト メニューのようにします。 クイック アクションを使用して追加できます一般的な迅速かつ簡単には、関数へのアクセスのショートカット、アプリで iOS デバイスのホーム画面アイコンから。
+- **筆圧の感度**-アプリは、ユーザーが画面に接しているハードまたはライトを測定し、その情報を活用できるようになりました。 たとえば、描画アプリを使用すると、ユーザーがどのくらいの画面にタッチしているかに基づいて、行を太くまたは細くすることができます。
+- **ピークとポップ**-アプリは現在のコンテキストから移動することなく、ユーザーがデータを操作できるようになりました。 画面上で [ハード] を押すと、関心のある項目 (メッセージのプレビューなど) を*見る*ことができます。 より複雑にすると、項目に*ポップ*できます。
+- **クイックアクション**-ユーザーがデスクトップアプリの項目を右クリックしたときにポップアップできるコンテキストメニューなどのクイックアクションを考えてみましょう。 クイックアクションを使用すると、iOS デバイスのホーム画面のアイコンから、アプリ内の関数に共通の、迅速かつ簡単にアクセスできるショートカットを追加できます。
 
-詳細については、次を参照してください、 [3D Touch 概要](~/ios/platform/3d-touch.md)ガイド。
+詳細については、「 [3D タッチ](~/ios/platform/3d-touch.md)ガイドの概要」を参照してください。
 
 ## <a name="app-transport-security"></a>アプリケーション トランスポート セキュリティ
 
-新しい App Transport Security (ATS) を iOS 9、インターネット リソース (アプリのバック エンド サーバーなど) と、アプリの間のセキュリティで保護された接続を強制します。 ATS により、すべてのインターネット通信がセキュリティで保護された接続のベスト プラクティスに準拠しているアプリまたはライブラリを消費するを通じて直接に機密情報の偶発的漏えいを防ぐします。
+IOS 9 を初めて使用するアプリトランスポートセキュリティ (ATS) は、インターネットリソース (アプリのバックエンドサーバーなど) とアプリの間にセキュリティで保護された接続を適用します。 ATS は、すべてのインターネット通信がセキュリティで保護された接続のベストプラクティスに準拠していることを保証します。これにより、アプリまたは使用しているライブラリを通じて、機密情報が誤って開示されるのを防ぎます。
 
-ATS が iOS 9 および OS X 10.11 (El Capitan) を使用してすべての接続に開発されたアプリの既定で有効になっているため[NSUrlConnection](xref:Foundation.NSUrlConnection)、 [CFUrl](xref:CoreFoundation.CFUrl)または[NSUrlSession](xref:Foundation.NSUrlSession)対象になります。ATS セキュリティ要件です。 接続はこれらの要件を満たしていない場合は、例外で失敗します。
+IOS 9 と OS X 10.11 (El Capitan) 用に構築されたアプリでは、ATS が既定で有効になっているため、 [n Lconnection](xref:Foundation.NSUrlConnection)、 [cfurl](xref:CoreFoundation.CFUrl) 、または[nを](xref:Foundation.NSUrlSession)使用した接続はすべて、ats セキュリティ要件の対象となります。 接続がこれらの要件を満たしていない場合、例外が発生して失敗します。
 
-ATS に関する詳細については、次を参照してください、[アプリ トランスポート セキュリティ](~/ios/app-fundamentals/ats.md)ガイド。
+ATS の詳細については、「[アプリトランスポートセキュリティ](~/ios/app-fundamentals/ats.md)ガイド」を参照してください。
 
 <a name="multitasking" />
 
 ## <a name="multitasking-for-ipad"></a>iPad のマルチタスキング
 
-IOS 9 の場合は、Apple iPad の特定のハードウェア上で同時に 2 つのアプリを実行するためのマルチタス キングのサポートが追加されます。 その結果、任意の時点で実行されている唯一のアプリであるか、全画面表示や、デバイスのリソースへのアクセスである、Xamarin.iOS アプリは想定できなくできます。
+IOS 9 では、Apple は、特定の iPad ハードウェアで同時に2つのアプリを実行するためのマルチタスクサポートを追加しました。 その結果、Xamarin iOS アプリは、特定の時点で実行されている唯一のアプリであることや、デバイスの全画面またはリソースにアクセスできることを前提にできなくなります。
 
-IPad のマルチタス キングは、次の機能を使用してサポートされています。
+IPad のマルチタスキングは、次の機能によってサポートされています。
 
-- **スライド上**-現在実行中のメイン アプリケーションの約 25% をカバーする (言語の方向に基づいた画面の右端または左端にあるいずれか) パネルをスライドに一時的に 2 つ目の iOS アプリを実行するユーザーを許可します。 スライドは iPad Pro、iPad 航空、iPad 空気 2、iPad Mini 2、iPad Mini 3、または iPad Mini 4 でのみ使用できます。
-- **分割ビュー** -iPad のサポートされているハードウェア (iPad 空気 2、iPad Mini 4 および iPad Pro のみ)、ユーザーは 2 つ目のアプリを選択し、分割の画面表示モードで現在実行中のアプリをサイド バイ サイドでを実行します。 ユーザーは、各アプリを占有するメイン画面の割合を制御できます。
-- **ピクチャインピクチャ**- アプリ、iOS デバイスで現在実行中の他のアプリから浮遊した移動とサイズ変更可能なウィンドウで再生ビデオ コンテンツを再生、ビデオできるようになりました。 ユーザーは、このウィンドウの位置とサイズを完全に制御を持ちます。 図の画像は iPad Pro、iPad 航空、iPad 空気 2、iPad Mini 2、iPad Mini 3、または iPad Mini 4 でのみ使用できます。
+- **スライドオーバー** -ユーザーが、現在実行されているメインアプリの約 25% をカバーするスライドアウトパネル (言語の方向に基づいて、画面の右側または左側) で2番目の iOS アプリを一時的に実行できるようにします。 スライドショーは、iPad Pro、iPad Air、iPad Air 2、iPad ミニ2、iPad ミニ3、iPad ミニ4でのみ利用できます。
+- **分割ビュー** -サポートされている ipad ハードウェア (ipad Air 2、ipad ミニ4、ipad Pro のみ) では、ユーザーは2つ目のアプリを選択して、現在実行中のアプリと並べて分割画面モードで実行できます。 ユーザーは、各アプリが占めるメイン画面の割合を制御できます。
+- 画像の**画像-ビデオ**コンテンツを再生するアプリでは、iOS デバイスで現在実行されている他のアプリの周囲にある、移動してサイズ変更が可能なウィンドウでビデオを再生できるようになりました。 ユーザーは、このウィンドウのサイズと位置を完全に制御できます。 画像の画像は、iPad Pro、iPad Air、iPad Air 2、iPad ミニ2、iPad ミニ3、iPad ミニ4でのみ使用できます。
 
-IOS 9 のマルチタス キングの新機能に関する詳細については、次を参照してください、 [iPad のマルチタス キング](~/ios/platform/multitasking.md)ガイド。
+IOS 9 の新しいマルチタスク機能の詳細については、「 [iPad 用のマルチタスキング](~/ios/platform/multitasking.md)」ガイドを参照してください。
 
-## <a name="new-contacts-and-contacts-ui-frameworks"></a>新しいアドレス帳と連絡先の UI フレームワーク
+## <a name="new-contacts-and-contacts-ui-frameworks"></a>新しい連絡先と連絡先の UI フレームワーク
 
-Apple iOS 9 の導入に伴い、2 つの新しいフレームワークをリリースしました[連絡先](xref:Contacts)と[ContactsUI](xref:ContactsUI)8 以降、iOS でアドレス帳の UI フレームワークが使用される、既存のアドレス帳を交換します。
+IOS 9 の導入により、Apple は2つの新しいフレームワークである[Contacts](xref:Contacts)と[ContactsUI](xref:ContactsUI)をリリースしました。これは、iOS 8 以前で使用されていた既存のアドレス帳とアドレス帳の UI フレームワークを置き換えるものです。
 
-これらの新しい、オブジェクト指向フレームワークは、以下を説明します。
+これらの新しいオブジェクト指向フレームワークには、次のものが用意されています。
 
-- **連絡先**– ユーザーの連絡先情報への Xamarin.iOS を提供します。 ほとんどのアプリには、読み取り専用アクセスのみ必要とするため、このフレームワークは、スレッド セーフの読み取り専用アクセスの最適化されています。
-- **ContactsUI** – を表示するには、Xamarin.iOS の UI 要素の編集、選択、および iOS デバイスでの連絡先を作成します。
+- **Contacts** –ユーザーの連絡先情報に対する Xamarin. iOS アクセスを提供します。 ほとんどのアプリは読み取り専用アクセスのみを必要とするため、このフレームワークは、スレッドセーフで読み取り専用アクセスに対して最適化されています。
+- **ContactsUI** – ios デバイスで連絡先を表示、編集、選択、および作成するための XAMARIN の UI 要素を提供します。
 
-詳細については、次を参照してください。 この[連絡先と連絡先 UI](~/ios/platform/contacts.md)ドキュメント。
-
-
-## <a name="new-search-apis"></a>新しい Search Api
-
-検索は、iOS、xamarin ios アプリ内の情報にアクセスする新しい方法を提供する 9 で拡張されています。 新しい検索 Api を使用して行うことができます、アプリのコンテンツと Siri アラームと提案など、スポット ライトと Safari の検索結果を検索可能です。 これにより、ユーザーのアクティビティと、アプリ内で詳細情報へのクイック アクセスできます。
-
-さらに、新しい検索 Api を使用すると、以前の検索の実装機能せず、アプリで検索を統合しやすくします。 このため、Apple は iOS 9 アプリのコンテンツをアプリの検索を使用して検索可能な汎用的に数時間を要するそのことを要求します。
-
-詳細についてを参照してください、[検索の機能強化](~/ios/platform/search/index.md)ドキュメント。
-
-## <a name="new-stack-view"></a>新しいスタック ビュー
-
-スタック ビュー コントロール ([UIStackView](xref:UIKit.UIStackView) iOS デバイスの向きや画面サイズに動的に応答する (水平方向または垂直方向に)、サブビューのスタックを管理するには、自動レイアウトとサイズ クラスの機能を利用しています。
-
-スタック ビュー コントロールを使用すると、作業量は、ユーザー インターフェイスが大幅に減少のレイアウトに必要です。 スタック ビューにアタッチされているすべてのサブビューのレイアウトは、軸、配布、配置、および間隔などの開発者は定義されたプロパティに基づいて自動的に管理されます。
-
-詳細についてを参照してください、[スタック ビューの概要](~/ios/user-interface/controls/uistackview.md)ドキュメント。
+詳細については、[連絡先と連絡先の UI](~/ios/platform/contacts.md)に関するドキュメントを参照してください。
 
 
-## <a name="collection-view-changes"></a>コレクションの変更の表示
+## <a name="new-search-apis"></a>新しい検索 Api
 
-IOS 9、コレクション ビューで ([UICollectionView](xref:UIKit.UICollectionView)サポート ドラッグ、新しい既定ジェスチャ レコグナイザーおよびいくつかの新しいサポート メソッドを追加することで、ボックスから項目を並べ替えできるようになりました。
+IOS 9 で Search が拡張され、Xamarin iOS アプリ内の情報に新しい方法でアクセスできるようになりました。 新しい検索 Api を使用して、スポットライトおよび Safari の検索結果、ハンドオフおよび Siri のリマインダーと提案を使用して、アプリのコンテンツを検索可能にすることができます。 これにより、ユーザーはアプリ内のアクティビティや情報にすばやくアクセスできるようになります。
 
-これらの新しいメソッドを使用して、簡単に実装ドラッグの順序を変更する、コレクション ビューにして、順序変更プロセスのいずれかの段階中にアイテムの外観のカスタマイズのオプションがあります。
+また、新しい検索 Api を使用すると、以前に検索を実装することなく、アプリ内の検索を簡単に統合できます。 このため、Apple は、アプリ検索を使用して、iOS 9 アプリのコンテンツを汎用的に検索できるように、通常は数時間かかることを要求しています。
 
-IOS 9 のコレクション ビューの変更に関する詳細については、次を参照してください、[コレクションの変更の表示](~/ios/user-interface/controls/uicollectionview.md)ガイド。
+詳細については、[検索の拡張機能](~/ios/platform/search/index.md)に関するドキュメントを参照してください。
+
+## <a name="new-stack-view"></a>新しいスタックビュー
+
+スタックビューコントロール ([Uistackview](xref:UIKit.UIStackView) ) では、iOS デバイスの向きと画面サイズに動的に応答するサブビュー (水平方向または垂直方向) のスタックを管理するために、Auto Layout クラスと Size クラスの機能が活用されています。
+
+スタックビューコントロールを使用すると、ユーザーインターフェイスのレイアウトに必要な作業量が大幅に削減されます。 スタックビューにアタッチされているすべてのサブビューのレイアウトは、軸、分布、配置、間隔など、開発者が定義したプロパティに基づいて自動的に管理されます。
+
+詳細については、スタックビューのドキュメントの[概要を](~/ios/user-interface/controls/uistackview.md)参照してください。
+
+
+## <a name="collection-view-changes"></a>コレクションビューの変更
+
+IOS 9 では、コレクションビュー ([UICollectionView](xref:UIKit.UICollectionView)は、新しい既定のジェスチャレコグナイザーといくつかの新しいサポートメソッドを追加することで、すぐに項目をドラッグして並べ替えることができるようになりました。
+
+これらの新しいメソッドを使用すると、コレクションビューでドラッグツーオーダーを簡単に実装できます。また、並べ替え処理のいずれかの段階で、アイテムの外観をカスタマイズすることもできます。
+
+IOS 9 のコレクションビューの変更の詳細については、[コレクションビューの変更](~/ios/user-interface/controls/uicollectionview.md)に関するガイドを参照してください。
 
 ## <a name="game-enhancements"></a>ゲームの機能強化
 
-Ios 9、Apple は、Xamarin.iOS アプリでゲームのグラフィックとオーディオを実装しやすくゲーム Api へいくつかの技術的な機能強化が確立します。 高レベルのフレームワークの速度の向上と低レベルが強化されたグラフィックの機能、iOS デバイスの GPU の力を活用して開発の両方の容易さが含まれます。
+IOS 9 では、Apple はゲーム Api に対していくつかの技術的な改善を行っています。これにより、Xamarin. iOS アプリでゲームグラフィックスとオーディオを簡単に実装できるようになりました。 これには、高レベルのフレームワークを使用した簡単な開発と、低レベルの拡張により速度とグラフィック機能を向上させるための iOS デバイスの GPU の機能の活用が含まれます。
 
-金属、SceneKit SpriteKit の新しい高度な機能と共に GameplayKit、ReplayKit、モデルの I/O、MetalKit および金属パフォーマンス シェーダーが含まれます。
+これには、MetalKit、SceneKit、および SpriteKit の新機能として、再生キット、ReplayKit、モデル i/o、、金属パフォーマンスシェーダーが含まれます。
 
-詳細についてを参照してください、[ゲームの機能強化](~/ios/platform/gaming/index.md)ドキュメント。
+詳細については、[ゲーム拡張機能](~/ios/platform/gaming/index.md)に関するドキュメントを参照してください。
 
-## <a name="homekit-framework-changes"></a>HomeKit フレームワークの変更
+## <a name="homekit-framework-changes"></a>ホームキットフレームワークの変更
 
-[HomeKit](xref:HomeKit) iOS 8 で導入されたフレームワークをセットアップして Xamarin.iOS アプリから (自動化されたライト、ドアのロック ガレージ ドアを開ける装置など) の各種の有効になっている HomeKit アクセサリを制御する機能を提供します。 簡単にセットアップして構成することに加え、Siri の音声コマンドを使用して HomeKit アクセサリを制御できます。
+IOS 8 で導入された[ホームキット](xref:HomeKit)フレームワークは、Xamarin ios アプリから各種のホームキット対応アクセサリ (自動ライト、ドアロック、ガレージドア openers など) を設定および制御する機能を提供します。 簡単にセットアップして構成できるだけでなく、ホームキットのアクセサリは、話された Siri コマンドを使用して制御できます。
 
-Ios 9 では Apple がセットアップを簡単に行う、サポートされており (アクセサリ iCloud を使用してリモートで制御する) など、複数のアクセサリ相互作用を提供する、[アクセサリ] の種類を展開します。
+IOS 9 では、Apple のセットアップが簡単になり、サポートされているアクセサリの種類が拡張され、付属のアクセサリの相互作用 (たとえば、iCloud によるアクセサリのリモート制御など) が提供されました。
 
-詳細については、次を参照してください。 この[HomeKit の概要](~/ios/platform/homekit.md)、 [HomeKitIntro iOS サンプル アプリ](https://developer.xamarin.com/samples/monotouch/HomeKit/HomeKitIntro/)と Apple の[HomeKit](https://developer.apple.com/homekit/)ドキュメント。
+詳細については、「[ホームキットの概要](~/ios/platform/homekit.md)」、 [HomeKitIntro iOS サンプルアプリ](https://docs.microsoft.com/samples/xamarin/ios-samples/homekit-homekitintro)、および Apple の[ホームキット](https://developer.apple.com/homekit/)のドキュメントを参照してください。
 
-## <a name="handoff-framework-changes"></a>ハンドオフ フレームワークの変更
+## <a name="handoff-framework-changes"></a>ハンドオフフレームワークの変更
 
-ハンドオフ (継続性とも呼ばれます) は、Apple ios 8 および OS X Yosemite (10.10) でユーザーが自分のデバイス (iOS または Mac) のいずれかのアクティビティを開始して、同じアクティビティに続行 (ユーザーの iClou で識別されるデバイスのもう 1 つの方法として導入されました。d アカウント)。
+ハンドオフ (継続性とも呼ばれます) は、ユーザーがいずれかのデバイス (iOS または Mac) でアクティビティを開始し、デバイスの別のアクティビティ (ユーザーの iClou によって識別) を続行する方法として、Apple によって iOS 8 および OS X ヨーク Semite (10.10) に導入されました。d アカウント)。
 
-ハンドオフは、強化された検索機能を iOS 9 でも、新しいサポートで拡張されました。 詳細についてを参照してください、[検索の機能強化](~/ios/platform/search/index.md)ドキュメント。 ハンドオフの使用に関する詳細についてを参照してください、[ハンドオフの概要](~/ios/platform/handoff.md)ドキュメント。
+ハンドオフは、新しい高度な検索機能もサポートするために、iOS 9 で拡張されました。 詳細については、[検索の拡張機能](~/ios/platform/search/index.md)に関するドキュメントを参照してください。 ハンドオフの使用の詳細については、「[ハンドオフ](~/ios/platform/handoff.md)ドキュメントの概要」を参照してください。
 
 ## <a name="new-extension-points"></a>新しい拡張ポイント
 
-IOS 8、Apple が拡張機能を導入しました。-ライブラリが示されている標準のコンテキストで、オペレーティング システムによってなど、通知センター内のユーザーの要求、キーボード、または写真を編集するときにします。
+IOS 8 では、Apple は拡張機能を導入しました。これは、通知センター内、ユーザーがキーボードを要求したとき、または写真を編集しているときに、オペレーティングシステムによって標準コンテキストで提示されるライブラリです。
 
-Ios 9、Apple は、いくつかの新しい提供することで拡張機能のサポートを拡張は_拡張ポイント_使用ポリシーを定義し、次のように指定された領域内で操作するための Api を提供します。
+IOS 9 では、使用ポリシーを定義する新しい_拡張ポイント_をいくつか提供し、特定の領域内で動作するための api を提供することで、拡張機能のサポートを拡張しています。
 
-- **オーディオ ユニットの新しい拡張機能ポイント**– この拡張機能ポイントを使用して (GarageBand) などの他のオーディオ ユニット ホスト アプリ内で使用するなど、オーディオ効果、楽器、サウンドのジェネレーターを提供します。 この拡張機能ポイントでは販売することもできます_オーディオ ユニット_(オーディオ プラグインを)、App Store でします。
-- **新しいインデックスのメンテナンス拡張機能ポイント**: この拡張機能ポイントを使用して、アプリの再起動を必要とせず、アプリ データのインデックス再構築をサポートします。
-- **新しいネットワークの拡張機能ポイント**(Apple から特別なアクセスを許可する必要があります)。
-    - **アプリ プロキシ プロバイダーの拡張機能**: この拡張機能ポイントを使用して、カスタムの透過的なクライアント側のネットワーク プロキシを実装します。
-    - **データ プロバイダーのフィルター/フィルター コントロール プロバイダーの拡張機能**-これらの拡張ポイントを使用して、デバイス上のフィルター処理ネットワークの動的なコンテンツを実装します。
-    - **パケット トンネル プロバイダーの拡張機能**: この拡張機能ポイントを使用してカスタム VPN トンネリング プロトコル クライアント側を実装します。
-- **Safari の新しい拡張機能ポイント**:
-    - **コンテンツの拡張機能をブロックしている**: この拡張機能ポイントを使用して、ユーザーが web を参照するときに表示されないブロックのコンテンツの一覧を定義します。
-    - **共有リンク拡張機能**: この拡張機能ポイントを使用して、Safari の共有リンクで、アプリのコンテンツの表示を有効にします。
+- **新しいオーディオユニット拡張ポイント**-この拡張ポイントを使用して、他のオーディオユニットホストアプリ (GarageBand など) で使用するオーディオ効果、音楽楽器、サウンドジェネレーターなどを提供します。 また、この拡張ポイントを使用すると、_オーディオユニット_(オーディオプラグイン) をアプリストアで販売することもできます。
+- **新しいインデックスメンテナンス拡張ポイント**—この拡張ポイントを使用して、アプリの再起動を必要とせずにアプリデータのインデックスの再作成をサポートします。
+- **新しいネットワーク拡張ポイント**(Apple からの特別なアクセス許可が必要です):
+    - **アプリケーションプロキシプロバイダーの拡張**—この拡張ポイントを使用して、カスタムの透過的なクライアント側ネットワークプロキシを実装します。
+    - **フィルター Data Provider/フィルターコントロールプロバイダー拡張機能**-これらの拡張ポイントを使用して、デバイス上で動的なネットワークコンテンツフィルターを実装します。
+    - **パケットトンネルプロバイダーの拡張機能**—この拡張ポイントを使用して、カスタム VPN トンネリングプロトコルクライアント側を実装します。
+- **新しい Safari 拡張ポイント**:
+    - **[コンテンツブロック拡張]** —この拡張ポイントを使用して、ユーザーが web を閲覧しているときに表示されないブロックされたコンテンツの一覧を定義します。
+    - **共有リンク拡張機能**—この拡張ポイントを使用して、Safari の共有リンクでアプリのコンテンツを表示できるようにします。
 
-詳細についてを参照してください、[拡張機能の概要](~/ios/platform/extensions.md)と Apple の[アプリ拡張機能のプログラミング ガイド](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214)ドキュメント。
+詳細については、[拡張機能の概要](~/ios/platform/extensions.md)と Apple の[アプリ拡張機能のプログラミングガイド](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214)に関するドキュメントを参照してください。
 
 ## <a name="keychain-enhancements"></a>キーチェーンの機能強化
 
-Ios 9 で Apple は、次のように、セキュリティで保護されたエンクレーブとその他の項目の保護オプションの新しい暗号化キーの種類を提供するキーチェーンを強化します。
+IOS 9 では、次のように、Secure エンクレーブおよびその他のアイテム保護オプションに新しい暗号化キーの種類を提供するために、キーチェーンが拡張されています。
 
-- 指紋データベースが変更されたときに、キーチェーンの項目を無効にする新しい Touch ID 制約。
-- パスコードの Touch ID とアクセス制御リスト エントリを作成すると、のみを許可する新しい制約。
-- 新しい認証コンテキストを別の認証を呼び出すことができる`SecItem`呼び出し。
-- キーチェーンをアプリに用意されている項目の暗号化コントロール一覧のエントロピ (アプリケーションのパスワード オプションを使用) にアクセスします。
-- 生成して、セキュリティで保護されたエンクレーブ内のキーを使用するためのサポート (を使用して、`kSecAttrTokenIDSecureEnclave`属性)。
+- フィンガープリントデータベースが変更されたときにキーチェーン項目を無効にする新しい Touch ID 制約。
+- タッチ ID またはパスコードのみを含む Access Control リストエントリを作成できる新しい制約。
+- `SecItem`呼び出しとは別に認証を呼び出せるようにする新しい認証コンテキスト。
+- アプリによって提供されるキーチェーン項目の暗号化に対して、Access Control リストエントロピ (アプリケーションパスワードオプションを使用)。
+- (属性を`kSecAttrTokenIDSecureEnclave`使用して) secure エンクレーブ内でのキーの生成と使用のサポート。
 
-詳細についてを参照してください、 [Touch ID の概要](~/ios/platform/touchid.md)ドキュメント。
-
-
-## <a name="right-to-left-language-support"></a>右から左へ記述する言語のサポート
-
-Ios 9 の場合は、Apple が提示反転したユーザー インターフェイスよりも簡単にこれまでの右から左の言語の完全なサポートを提供することで行われます。 次に例を示します。
-
-- 標準[UIKit](xref:UIKit)コントロールを左右に - iOS デバイスのロケールと言語の設定に基づいて自動的に反転します。
-- [UIView](xref:UIKit.UIView)クラスは、指定されたビューの表示時期方法を定義するための属性は、右から左を反転します。
-- 使用してプログラムでイメージを反転する機能、 [FlipsForRightToLeftLayoutDirection](xref:UIKit.UIImage.FlipsForRightToLeftLayoutDirection)のプロパティ、 [UIImage](xref:UIKit.UIImage)クラス。
-
-詳細については、Apple を参照してください[言語のサポートを左右](https://developer.apple.com/library/prerelease/ios/documentation/MacOSX/Conceptual/BPInternational/SupportingRight-To-LeftLanguages/SupportingRight-To-LeftLanguages.html#//apple_ref/doc/uid/10000171i-CH17)ドキュメント。
+詳細については、「 [TOUCH ID](~/ios/platform/touchid.md)ドキュメントの概要」を参照してください。
 
 
+## <a name="right-to-left-language-support"></a>右から左へ記述する言語サポート
 
-## <a name="additional-framework-changes"></a>その他のフレームワークの変更
+IOS 9 では、右から左へ記述する言語を完全にサポートすることにより、以前よりも簡単にフリップされたユーザーインターフェイスを提供してきました。 これには、次の内容が含まれます。
 
-上を説明する主な変更を加え Apple が行った変更と iOS 9 の次のように既存のフレームワークをいくつかの機能強化。
+- 標準の[Uikit](xref:UIKit)コントロールは、iOS デバイスのロケールと言語の設定に基づいて、右から左に自動的に反転されます。
+- [Uiview](xref:UIKit.UIView)クラスには、右から左に反転したときに特定のビューを表示する方法を定義できる属性が用意されています。
+- [Uiimage](xref:UIKit.UIImage)クラスの[FlipsForRightToLeftLayoutDirection](xref:UIKit.UIImage.FlipsForRightToLeftLayoutDirection)プロパティを使用して、プログラムによってイメージを反転する機能。
 
-- AV Foundation Framework
-- AVKit Framework
-- CloudKit Framework
-- Foundation Framework
-- ハンドオフ フレームワーク
-- HealthKit のフレームワーク
-- HomeKit フレームワーク
+詳細については、Apple の[右から左へ記述する言語](https://developer.apple.com/library/prerelease/ios/documentation/MacOSX/Conceptual/BPInternational/SupportingRight-To-LeftLanguages/SupportingRight-To-LeftLanguages.html#//apple_ref/doc/uid/10000171i-CH17)のドキュメントを参照してください。
+
+
+
+## <a name="additional-framework-changes"></a>追加のフレームワークの変更
+
+Apple は、上記で説明した主な変更に加えて、次のような iOS 9 用の既存のいくつかのフレームワークに対して変更と改善を加えました。
+
+- AV Foundation フレームワーク
+- AVKit フレームワーク
+- CloudKit フレームワーク
+- Foundation フレームワーク
+- ハンドオフフレームワーク
+- HealthKit Framework
+- ホームキットフレームワーク
 - ローカル認証フレームワーク
 - MapKit フレームワーク
-- PassKit Framework
-- サービス フレームワークの safari
+- Pass Kit フレームワーク
+- Safari サービスフレームワーク
 - UIKit フレームワーク
 
-詳細についてを参照してください、[追加 iOS 9 フレームワークの変更点](~/ios/platform/introduction-to-ios9/additional-framework-changes.md)ドキュメント。
+詳細については、 [iOS 9 フレームワークのその他の変更](~/ios/platform/introduction-to-ios9/additional-framework-changes.md)に関するドキュメントを参照してください。
 
-## <a name="deprecated-apis-and-functions"></a>非推奨の Api と機能
+## <a name="deprecated-apis-and-functions"></a>非推奨の Api と関数
 
-Apple には、次の Api と iOS 9 の関数が非推奨とされます。
+Apple では、iOS 9 の次の Api と関数が非推奨とされています。
 
-- **アドレス帳とアドレス帳 UI** -これらの Api は、連絡先と連絡先の UI フレームワーク置き換えられています。 詳細については、次を参照してください。 この[連絡先と連絡先 UI](~/ios/platform/contacts.md)ドキュメント。
-- **CBCentralManager** -`RetrievePeripherals`と`RetrieveConnectedPeripherals`のメソッド、 `CBCentralManager` iOS 9 でクラスが削除されました。 これらのメソッドを呼び出すと、クラッシュ アクセサリをペアリングする場合、またはアプリの起動時にアプリが発生します。
-- **FetchAllChanges** -`FetchAllChanges`の`CKFetchRecordChangesOperation`クラスが非推奨になって、iOS 9 では削除されます。
-- **Media Player** -iOS 9 で、Media Player フレームワークが非推奨とされました。 代わりに、AVKit または AV Foundation Api のいずれかを使用します。
+- アドレス帳 & アドレス帳**ui** -これらの api は、Contact および contact ui フレームワークに置き換えられました。 詳細については、[連絡先と連絡先の UI](~/ios/platform/contacts.md)に関するドキュメントを参照してください。
+- **CBCentralManager** - `RetrievePeripherals` iOS 9 `RetrieveConnectedPeripherals`では、 `CBCentralManager`クラスのメソッドとメソッドが削除されています。 これらのメソッドを呼び出すと、アクセサリをペアリングするとき、またはアプリを起動するときに、アプリがクラッシュします。
+- **FetchAllChanges** - `CKFetchRecordChangesOperation`クラス`FetchAllChanges`のは、減価償却されており、iOS 9 では削除されます。
+- **Media Player** -Media Player framework は、iOS 9 では非推奨となりました。 代わりに、AVKit または AV Foundation Api を使用してください。
 
-特定の API の廃止された機能の一覧については、Apple を参照してください。 [iOS 9.0 API の差分を](https://developer.apple.com/library/prerelease/ios/releasenotes/General/iOS90APIDiffs/index.html#//apple_ref/doc/uid/TP40016222)ドキュメント。
+特定の API 廃止の完全な一覧については、Apple の[iOS 9.0 api の相違](https://developer.apple.com/library/prerelease/ios/releasenotes/General/iOS90APIDiffs/index.html#//apple_ref/doc/uid/TP40016222)点に関するドキュメントを参照してください。
 
-## <a name="ios-9-sample-apps"></a>iOS 9 のサンプル アプリ
+## <a name="ios-9-sample-apps"></a>iOS 9 サンプルアプリ
 
-ある[iOS 9 に固有のサンプル](https://developer.xamarin.com/samples/ios/iOS9/)を開始します。
+開始するには、 [iOS 9 固有のサンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9)がいくつか用意されています。
 
 - [AstroLayout](https://github.com/xamarin/monotouch-samples/tree/master/ios9/AstroLayout)
 - [CollectionView](https://github.com/xamarin/monotouch-samples/tree/master/ios9/CollectionView)
-- [MetalPerformanceShadersHelloWorld](https://developer.xamarin.com/samples/monotouch/ios9/MetalPerformanceShadersHelloWorld/)
-- [MusicMotion](https://developer.xamarin.com/samples/monotouch/ios9/MusicMotion/)
-- [PhotoProgress](https://developer.xamarin.com/samples/monotouch/ios9/PhotoProgress/)
-- [SegueCatalog](https://developer.xamarin.com/samples/monotouch/ios9/SegueCatalog/)
+- [MetalPerformanceShadersHelloWorld](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-metalperformanceshadershelloworld)
+- [MusicMotion](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-musicmotion)
+- [PhotoProgress](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-photoprogress)
+- [SegueCatalog](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-seguecatalog)
 - [StackView](https://github.com/xamarin/monotouch-samples/tree/master/ios9/StackView)
 - [StickyCorners](https://github.com/xamarin/monotouch-samples/tree/master/ios9/StickyCorners)
 
-これらのサンプル (コンパニオン Mac OS X バージョン予定!) の iOS の部分を確認します。
+また、これらのサンプルの iOS 部分も確認してください (コンパニオン Mac OS X バージョン)。
 
 - [AgentsCatalog](https://github.com/xamarin/mac-ios-samples/tree/master/AgentsCatalog)
 - [MetalKitEssentials](https://github.com/xamarin/mac-ios-samples/tree/master/MetalKitEssentials)
@@ -210,19 +210,19 @@ Apple には、次の Api と iOS 9 の関数が非推奨とされます。
 
 ## <a name="related-links"></a>関連リンク
 
-- [iOS 9 のサンプル](https://developer.xamarin.com/samples/ios/iOS9/)
-- [3D Touch の概要](~/ios/platform/3d-touch.md)
+- [iOS 9 のサンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9)
+- [3D タッチの概要](~/ios/platform/3d-touch.md)
 - [アプリケーション トランスポート セキュリティ](~/ios/app-fundamentals/ats.md)
 - [iPad のマルチタスキング](~/ios/platform/multitasking.md)
-- [連絡先と連絡先 UI](~/ios/platform/contacts.md)
-- [新しい Search Api](~/ios/platform/search/index.md)
-- [スタック ビューの概要](~/ios/user-interface/controls/uistackview.md)
-- [コレクションの変更の表示](~/ios/user-interface/controls/uicollectionview.md)
+- [連絡先と連絡先の UI](~/ios/platform/contacts.md)
+- [新しい検索 Api](~/ios/platform/search/index.md)
+- [スタックビューの概要](~/ios/user-interface/controls/uistackview.md)
+- [コレクションビューの変更](~/ios/user-interface/controls/uicollectionview.md)
 - [ゲームの機能強化](~/ios/platform/gaming/index.md)
-- [HomeKit の概要](~/ios/platform/homekit.md)
+- [ホームキットの概要](~/ios/platform/homekit.md)
 - [ハンドオフの概要](~/ios/platform/handoff.md)
 - [iOS 9 フレームワークのその他の変更点](~/ios/platform/introduction-to-ios9/additional-framework-changes.md)
 - [トラブルシューティング](~/ios/platform/introduction-to-ios9/troubleshooting.md)
-- [iOS 9 開発者向け](https://developer.apple.com/ios/pre-release/)
-- [IOS 9.0 を新します。](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
-- [Ios 9 (ビデオ) に、Xamarin.iOS アプリを更新しています](https://university.xamarin.com/lightninglectures/Updating-your-XamariniOS-apps-to-iOS9)
+- [iOS 9 (開発者向け)](https://developer.apple.com/ios/pre-release/)
+- [IOS 9.0 の新機能](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
+- [Xamarin の iOS アプリを iOS9 に更新する (ビデオ)](https://university.xamarin.com/lightninglectures/Updating-your-XamariniOS-apps-to-iOS9)

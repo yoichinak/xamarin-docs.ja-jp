@@ -8,16 +8,16 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/28/2019
 ms.custom: video
-ms.openlocfilehash: ba0a76b44f5942db5528e9f5d11a1d2c3f027c40
-ms.sourcegitcommit: 4a1520dee7759f8355ea65c8bb3d1bac8ba58122
+ms.openlocfilehash: f41bcc3ccaa6b4dd8c001ceb5ead165486745283
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66354012"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650257"
 ---
 # <a name="resource-dictionaries"></a>リソース ディクショナリ
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/XAML/ResourceDictionaries/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-resourcedictionaries)
 
 _XAML リソースは、共有し、Xamarin.Forms アプリケーション全体で再利用が可能なオブジェクトの定義です。_
 
@@ -150,7 +150,7 @@ Xamarin.Forms のプログラムにはから派生したクラス 1 つだけに
 
 ただし、注意のバック グラウンド バー、 [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)黄色のまま、ため、 [ `BarBackgroundColor` ](xref:Xamarin.Forms.NavigationPage.BarBackgroundColor)の値に設定されて、`PageBackgroundColor`アプリケーションで定義されているリソースレベル`ResourceDictionary`します。
 
-別の方法について考える`ResourceDictionary`よりも優先されます。XAML パーサーが検出した場合、 `StaticResource`、ビジュアル ツリーを介したを結ぶこと、一致するキーを検索、見つかった最初の一致を使用します。 XAML パーサーが検索ページでこの検索を終了し、キーもまだ検出された場合、`ResourceDictionary`にアタッチされている、`App`オブジェクト。 でも、キーが存在しない場合は、例外が発生します。
+`ResourceDictionary`優先順位を考慮するもう1つの方法を次に示します。XAML パーサーは、を`StaticResource`検出すると、見つかった最初の一致を使用して、ビジュアルツリーの上に移動することで、一致するキーを検索します。 XAML パーサーが検索ページでこの検索を終了し、キーもまだ検出された場合、`ResourceDictionary`にアタッチされている、`App`オブジェクト。 でも、キーが存在しない場合は、例外が発生します。
 
 ## <a name="stand-alone-resource-dictionaries"></a>スタンドアロンのリソース ディクショナリ
 
@@ -196,7 +196,7 @@ Xamarin.Forms のプログラムにはから派生したクラス 1 つだけに
 
 インスタンス`MyResourceDictionary`に設定されている、`Resources`のプロパティ、`ContentPage`オブジェクト。
 
-ただし、このアプローチでは、いくつかの制限があります。`Resources`のプロパティ、`ContentPage`参照のみ`ResourceDictionary`します。 などの他のオプションが必要なほとんどの場合、`ResourceDictionary`インスタンスとおそらく他のリソースもします。
+ただし、この方法にはいくつかの制限があります。のプロパティは`Resources` 、この1つ`ResourceDictionary`だけを参照します。`ContentPage` などの他のオプションが必要なほとんどの場合、`ResourceDictionary`インスタンスとおそらく他のリソースもします。
 
 このタスクでは、マージされたリソース ディクショナリが必要です。
 
@@ -306,7 +306,7 @@ Xamarin.Forms 3.0 が自動的にインスタンス化するため、 `ResourceD
 
 ## <a name="related-links"></a>関連リンク
 
-- [リソース ディクショナリ (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/XAML/ResourceDictionaries/)
+- [リソース ディクショナリ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-resourcedictionaries)
 - [スタイル](~/xamarin-forms/user-interface/styles/index.md)
 - [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
 

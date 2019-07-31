@@ -7,16 +7,16 @@ ms.assetid: 26C25BB8-FBE8-4B77-B01D-16A163A16890
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/09/2017
-ms.openlocfilehash: c1e4a76a70dcac3414d384469f25bad7908ae77f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e2bf493a5d8a4197fbc59044edf126761b41cf8d
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61019967"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68649726"
 ---
 # <a name="pixels-and-device-independent-units"></a>ピクセル、およびデバイスに依存しない単位
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _SkiaSharp の座標と Xamarin.Forms の座標間の違いを詳細します。_
 
@@ -28,7 +28,7 @@ Xamarin.Forms でしばらくの間をプログラミングした、Xamarin.Form
 
 これらの円*は*Xamarin.Forms サイズと比較します。 既定では、Xamarin.Forms は、基になるプラットフォームによって確立されているデバイスに依存しない単位に基づいて座標とサイズを計算中に SkiaSharp をピクセル単位で描画します。 (Xamarin.Forms の座標システムの詳細についてで参照できる[第 5 章です。サイズを扱う](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter05.md)書籍の*を Xamarin.Forms での Mobile Apps の作成*)。
 
-内のページ、 [ **SkewSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)というプログラム**画面サイズ**SkiaSharp テキスト出力を使用して、次の 3 つの異なるソースから表示画面のサイズを表示します。
+内のページ、 [ **SkewSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)というプログラム**画面サイズ**SkiaSharp テキスト出力を使用して、次の 3 つの異なるソースから表示画面のサイズを表示します。
 
 - 通常の Xamarin.Forms [ `Width` ](xref:Xamarin.Forms.VisualElement.Width)と[ `Height` ](xref:Xamarin.Forms.VisualElement.Height)のプロパティ、`SKCanvasView`オブジェクト。
 - [ `CanvasSize` ](xref:SkiaSharp.Views.Forms.SKCanvasView.CanvasSize)のプロパティ、`SKCanvasView`オブジェクト。
@@ -55,7 +55,7 @@ public SurfaceSizePage()
 public void DrawText (String text, Single x, Single y, SKPaint paint)
 ```
 
-X および Y 座標をテキストの開始、位置、テキスト文字列を指定して、`SKPaint`オブジェクト。 X 座標では、注意が、テキストの左側にあるを配置する場所を指定します。Y 座標の位置を指定する、*ベースライン*のテキスト。 インライン展開のホワイト ペーパーでは、手動でこれまで記述した、ベースラインにどの文字 sit と (文字 g、p、q、および y 上など) には、どのディセンダー降下の下の行をします。
+X および Y 座標をテキストの開始、位置、テキスト文字列を指定して、`SKPaint`オブジェクト。 X 座標は、テキストの左側が配置される場所を指定しますが、次の点に注意してください。Y 座標は、テキストの*ベースライン*の位置を指定します。 インライン展開のホワイト ペーパーでは、手動でこれまで記述した、ベースラインにどの文字 sit と (文字 g、p、q、および y 上など) には、どのディセンダー降下の下の行をします。
 
 `SKPaint`オブジェクトを使用すると、テキスト、フォント ファミリ、およびテキストのサイズの色を指定します。 既定で、 [ `TextSize` ](xref:SkiaSharp.SKPaint.TextSize)携帯電話などの高解像度のデバイスで最小のテキストで、12 の値を持つプロパティです。 最も簡単なアプリケーション以外も必要になりますいくつかの情報を表示しているテキストのサイズにします。 `SKPaint`クラスを定義、 [ `FontMetrics` ](xref:SkiaSharp.SKPaint.FontMetrics)プロパティは、いくつか[ `MeasureText` ](xref:SkiaSharp.SKPaint.MeasureText(System.String))メソッドが、高度な少なくニーズに応じて、 [ `FontSpacing` ](xref:SkiaSharp.SKPaint.FontSpacing)プロパティは、テキストの空白文字の連続する行の推奨値を提供します。
 
@@ -167,4 +167,4 @@ canvas.DrawOval(rect, paint);
 ## <a name="related-links"></a>関連リンク
 
 - [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

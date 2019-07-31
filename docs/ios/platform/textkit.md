@@ -1,24 +1,24 @@
 ---
-title: Xamarin.iOS で TextKit
-description: このドキュメントでは、Xamarin.iOS で TextKit を使用する方法について説明します。 TextKit は、強力なテキスト レイアウトとレンダリング機能を提供します。
+title: Xamarin の TextKit
+description: このドキュメントでは、Xamarin の TextKit を使用する方法について説明します。 TextKit は、強力なテキストレイアウトとレンダリング機能を提供します。
 ms.prod: xamarin
 ms.assetid: 1D0477E8-CD1E-48A9-B7C8-7CA892069EFF
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: f08e37d17cc32e45232d54cc4a51bb48d7ec94b1
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4d4785d6e556c856b0f7b4db2accd87f5297e277
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61184516"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655368"
 ---
-# <a name="textkit-in-xamarinios"></a>Xamarin.iOS で TextKit
+# <a name="textkit-in-xamarinios"></a>Xamarin の TextKit
 
-TextKit とは、強力なテキスト レイアウトとレンダリングの機能を提供する新しい API です。 低レベルの中核となるテキスト フレームワーク上に構築されますが、使用する主要なテキストよりもはるかに簡単です。
+TextKit は、強力なテキストレイアウトとレンダリング機能を提供する新しい API です。 これは、低レベルのコアテキストフレームワークの上に構築されていますが、コアテキストよりもはるかに使いやすくなっています。
 
-で TextKit の機能を標準コントロールに使用できるようにいくつかの iOS テキスト コントロールは TextKit、を使用する再実装されているを含みます。
+TextKit の機能を標準コントロールで使用できるようにするために、次のような TextKit を使用するようにいくつかの iOS テキストコントロールが再実装されています。
 
 -  UITextView
 -  UITextField
@@ -26,24 +26,24 @@ TextKit とは、強力なテキスト レイアウトとレンダリングの�
 
 ## <a name="architecture"></a>アーキテクチャ
 
-TextKit には、レイアウトと表示、次のクラスを含むからテキストの記憶域を分離する階層型アーキテクチャが用意されています。
+TextKit には、次のクラスを含む、レイアウトと表示からテキストストレージを分離するレイヤーアーキテクチャが用意されています。
 
--  `NSTextContainer` – 座標系とテキストのレイアウトに使用されるジオメトリを提供します。
--  `NSLayoutManager` – グリフにテキストにすることでは、テキストをレイアウトします。 
--  `NSTextStorage` – テキストのデータを保持して、バッチ テキストのプロパティの更新を処理します。 バッチ更新プログラムは、レイアウトを再計算し、テキストを再描画など、変更の実際の処理のためのレイアウト マネージャーに渡されます。
+-  `NSTextContainer`–テキストのレイアウトに使用される座標系と geometry を提供します。
+-  `NSLayoutManager`–テキストをグリフに変えることによってテキストをレイアウトします。 
+-  `NSTextStorage`–テキストデータを保持し、バッチテキストプロパティの更新を処理します。 バッチ更新は、レイアウトの再計算やテキストの再描画など、実際に変更を処理するためにレイアウトマネージャーに渡されます。
 
 
-これら 3 つのクラスは、テキストをレンダリングするビューに適用されます。 組み込みのテキストなど、ビューの処理`UITextView`、 `UITextField`、および`UILabel`設定すると、それらが既にあるが、作成し、いずれかに適用できます`UIView`インスタンスもします。
+これら3つのクラスは、テキストを表示するビューに適用されます。 `UITextView` `UIView` 、`UILabel` 、などの組み込みのテキスト処理ビューでは、既に設定されていますが、インスタンスを作成して任意のインスタンスに適用することもできます。 `UITextField`
 
 次の図は、このアーキテクチャを示しています。
 
- ![](textkit-images/textkitarch.png "この図は、TextKit アーキテクチャを示しています。")
+ ![](textkit-images/textkitarch.png "次の図は、TextKit のアーキテクチャを示しています。")
 
-## <a name="text-storage-and-attributes"></a>テキストの保存と属性
+## <a name="text-storage-and-attributes"></a>テキストの格納と属性
 
-`NSTextStorage`クラスはビューによって表示されるテキストを保持します。 文字への変更などのテキストまたはその属性の表示のレイアウト マネージャーに変更を加えたも通信します。 `NSTextStorage` 継承`MSMutableAttributed`までのバッチに指定するテキスト属性の変更を許可する文字列`BeginEditing`と`EndEditing`呼び出し。
+クラス`NSTextStorage`は、ビューによって表示されるテキストを保持します。 また、文字やその属性に対する変更などのテキストへの変更が、表示のためにレイアウトマネージャーに伝達されます。 `NSTextStorage`文字列から`MSMutableAttributed`継承されます。これにより、との呼び出しの`BeginEditing`間`EndEditing`で、テキスト属性を変更してバッチで指定することができます。
 
-など、次のコード スニペットがフォア グラウンドへの変更を指定し、背景色は、それぞれ、および特定の範囲を対象とします。
+たとえば、次のコードスニペットでは、前景色と背景色の変更をそれぞれ特定の範囲で指定しています。
 
 ```csharp
 textView.TextStorage.BeginEditing ();
@@ -52,17 +52,17 @@ textView.TextStorage.AddAttribute(UIStringAttributeKey.BackgroundColor, UIColor.
 textView.TextStorage.EndEditing ();
 ```
 
-後`EndEditing`が呼び出されると、変更は、さらに、必要なレイアウトとビューに表示されるテキストのレンダリングの計算を実行するレイアウト マネージャーに送信されます。
+`EndEditing`が呼び出されると、変更がレイアウトマネージャーに送信され、ビューに表示されるテキストに必要なレイアウトとレンダリングの計算が実行されます。
 
-## <a name="layout-with-exclusion-path"></a>除外パスでのレイアウト
+## <a name="layout-with-exclusion-path"></a>除外パスを使用したレイアウト
 
-TextKit も、レイアウトをサポートでき、複雑なシナリオなど、複数列のテキストと指定したパスの周囲でフローさせる文字列と呼ばれます*除外パス*します。 除外パスは、指定したパスの周りをフローするテキストを原因と、テキストのレイアウトのジオメトリを変更するテキスト コンテナーに適用されます。
+TextKit はレイアウトもサポートしており、複数列テキストなどの複雑なシナリオに対応し、*除外パス*と呼ばれる指定されたパスにテキストを流し込むことができます。 除外パスはテキストコンテナーに適用されます。これによりテキストレイアウトのジオメトリが変更され、テキストが指定したパスの周りに流れます。
 
-除外するパスを追加するには、設定が必要です、`ExclusionPaths`レイアウト マネージャーのプロパティ。 このプロパティを設定すると、テキストのレイアウトを無効にして除外パスの前後のテキストをフローするレイアウト マネージャー。
+除外パスを追加するには`ExclusionPaths` 、レイアウトマネージャーでプロパティを設定する必要があります。 このプロパティを設定すると、レイアウトマネージャーによってテキストレイアウトが無効になり、除外パスの周囲にテキストが流し込まれます。
 
-### <a name="exclusion-based-on-a-cgpath"></a>CGPath に基づいて除外
+### <a name="exclusion-based-on-a-cgpath"></a>CGPath に基づく除外
 
-次を考慮`UITextView`サブクラスを実装します。
+次`UITextView`のサブクラス実装について考えてみます。
 
 ```csharp
 public class ExclusionPathView : UITextView
@@ -139,35 +139,35 @@ public class ExclusionPathView : UITextView
 }
 ```
 
-このコードは、コア グラフィックスを使用して、テキスト ビュー上に描画するためのサポートを追加します。 以降、 `UITextView` TextKit をテキスト レンダリングやレイアウトに使用するクラスが組み込まれた、TextKit、除外パスの設定などのすべての機能を使用できます。
+このコードでは、コアグラフィックスを使用してテキストビューに描画するためのサポートが追加されています。 `UITextView`クラスはテキストのレンダリングとレイアウトに textkit を使用するように構築されているため、除外パスの設定など、textkit のすべての機能を使用できます。
 
 > [!IMPORTANT]
-> この例のサブクラス`UITextView`タッチ描画のサポートを追加します。 サブクラス化`UITextView`TextKit の機能を取得する必要はありません。
+> この例で`UITextView`は、サブクラスを使用してタッチ描画サポートを追加しています。 サブ`UITextView`クラス化は、textkit の機能を取得するためには必要ありません。
 
 
 
-ユーザーが、描画、テキスト ビュー上に描画後`CGPath`に適用される、`UIBezierPath`インスタンスを設定して、`UIBezierPath.CGPath`プロパティ。
+ユーザーがテキストビューに描画した後、次`CGPath`のように`UIBezierPath.CGPath`プロパティ`UIBezierPath`を設定することによって、描画がインスタンスに適用されます。
 
 ```csharp
 bezierPath.CGPath = exclusionPath;
 ```
 
-テキストのレイアウト パスの前後の更新は、次のコード行を更新します。
+次のコード行を更新すると、パスの周りにテキストレイアウトが更新されます。
 
 ```csharp
 TextContainer.ExclusionPaths = new UIBezierPath[] { bezierPath };
 ```
 
-次のスクリーン ショットでは、描画パスの周りをフローするテキストのレイアウトがどのように変化するかを示します。
+次のスクリーンショットは、描画されたパスの周囲にテキストのレイアウトがどのように変化するかを示しています。
 
 <!-- ![](textkit-images/exclusionpath1.png "This screenshot illustrates how the text layout changes to flow around the drawn path")--> 
-![](textkit-images/exclusionpath2.png "このスクリーン ショットは、描画パスの周りをフローするテキストのレイアウトがどのように変化するかを示します")
+![](textkit-images/exclusionpath2.png "このスクリーンショットは、描画されたパスの周囲にテキストレイアウトがどのように変化するかを示しています。")
 
-注意して、レイアウト マネージャーの`AllowsNonContiguousLayout`ここでプロパティが false に設定します。 これにより、常にテキストが変更の再計算するレイアウト。 これを true に設定すると、特にサイズの大きいドキュメントの場合、完全なレイアウトの更新を回避することでパフォーマンスが向上する可能性があります。 ただし、設定`AllowsNonContiguousLayout`に true を妨げる除外パス状況によっては、たとえば、レイアウトの更新から末尾の改行が設定されているパスの前に戻ることがなく実行時にテキストを入力した場合。
+この場合、レイアウトマネージャーの`AllowsNonContiguousLayout`プロパティが false に設定されていることに注意してください。 これにより、テキストが変更されるすべてのケースに対して、レイアウトが再計算されます。 この値を true に設定すると、大規模なドキュメントの場合は特に、レイアウト全体の更新を回避することでパフォーマンスが向上する可能性があります。 ただし、を`AllowsNonContiguousLayout` true に設定すると、場合によっては、除外パスによってレイアウトが更新されないようにすることができます。たとえば、パスを設定する前に後続のキャリッジリターンを使用せずに実行時にテキストを入力する場合などです。
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [IOS 7 (サンプル) の概要](https://developer.xamarin.com/samples/monotouch/IntroToiOS7)
+- [IOS 7 の概要 (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/introtoios7)
 - [iOS 7 ユーザー インターフェイスの概要](~/ios/platform/introduction-to-ios7/ios7-ui.md)
 - [バックグラウンド処理](~/ios/app-fundamentals/backgrounding/index.md)

@@ -7,16 +7,16 @@ ms.assetid: 1D53067B-3502-4D74-B89D-7EC496901AE2
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/24/2017
-ms.openlocfilehash: 690d3c15d7ad2aad06be5b499bae1a94107414f4
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a645ef4ed55c8b4c78bad94865777088f62f1175
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61019587"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68647404"
 ---
 # <a name="svg-path-data-in-skiasharp"></a>SkiaSharp の SVG パス データ
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _スケーラブル ベクター グラフィックス形式でテキスト文字列を使用してパスを定義します。_
 
@@ -361,7 +361,7 @@ public class PrettyAnalogClockPage : ContentPage
 }
 ```
 
-[**ドットし、ダッシュ**](~/xamarin-forms/user-interface/graphics/skiasharp/paths/dots.md)記事では、使用する方法について説明、 [ `SKPathEffect.CreateDash` ](xref:SkiaSharp.SKPathEffect.CreateDash*)破線を作成します。 最初の引数は、`float`を一般に 2 つの要素を持つ配列。最初の要素はダッシュの長さで、2 番目の要素はダッシュの間隔です。 ときに、`StrokeCap`プロパティに設定されて`SKStrokeCap.Round`、丸められた、破線の端がダッシュ ボードの両方の側でストロークの幅を効果的にダッシュの長さを長くします。 したがって、配列の最初の要素を 0 に設定は、点線を作成します。
+[**ドットし、ダッシュ**](~/xamarin-forms/user-interface/graphics/skiasharp/paths/dots.md)記事では、使用する方法について説明、 [ `SKPathEffect.CreateDash` ](xref:SkiaSharp.SKPathEffect.CreateDash*)破線を作成します。 最初の引数は`float` 、通常、次の2つの要素を持つ配列です。最初の要素はダッシュの長さで、2番目の要素はダッシュの間の間隔です。 ときに、`StrokeCap`プロパティに設定されて`SKStrokeCap.Round`、丸められた、破線の端がダッシュ ボードの両方の側でストロークの幅を効果的にダッシュの長さを長くします。 したがって、配列の最初の要素を 0 に設定は、点線を作成します。
 
 これらのドットの間の距離は、2 番目の配列の要素によって制御されます。 後ほど、これら 2 つと`SKPaint`オブジェクトは、90 単位の半径の円を描画するために使用します。 この円の円周は 180π、つまり 60 分のマークが 3 π 単位ごとに表示する必要があります、これは、2 番目の値で、`float`配列`minuteMarkPaint`します。 12 時間マークは 15π 単位ごとを表示する必要があります、2 番目の値は`float`配列。
 
@@ -433,4 +433,4 @@ public class PrettyAnalogClockPage : ContentPage
 ## <a name="related-links"></a>関連リンク
 
 - [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

@@ -7,22 +7,22 @@ ms.assetid: 342288C3-BB4C-4924-B178-72E112D777BA
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: 6d8ed5e2ec4707af2b61e299ee8274402f3a88a4
-ms.sourcegitcommit: e45f0cd6d7d4a77dba5ecaad4d7894025005a2dc
+ms.openlocfilehash: f5c5f0449962dec45a521112b2de92cddefe453f
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67309525"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655248"
 ---
 # <a name="part-4-data-binding-basics"></a>パート 4 です。 データ バインディングの基礎
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
 _データ バインドでは、ニォュォケォネェャ変ェ、他のいずれかが変更されるようにリンクする 2 つのオブジェクトのプロパティを許可します。これは非常に貴重なツールでは、およびショートカットと利便性全体をコードでは、データ バインドを定義できます、XAML を提供します。その結果、Xamarin.Forms で最も重要なマークアップ拡張機能の 1 つはバインドです。_
 
 ## <a name="data-bindings"></a>データ バインディング
 
-データ バインドと呼ばれる 2 つのオブジェクトのプロパティを接続、*ソース*と*ターゲット*します。 コードでは、2 つの手順が必要です。`BindingContext`ソース オブジェクトにターゲット オブジェクトのプロパティを設定する必要があります、`SetBinding`メソッド (と組み合わせて使用して多くの場合、`Binding`クラス)、ソースのプロパティにそのオブジェクトのプロパティをバインドする対象のオブジェクトで呼び出す必要がありますオブジェクト。
+データ バインドと呼ばれる 2 つのオブジェクトのプロパティを接続、*ソース*と*ターゲット*します。 コードでは、次の2つの手順を実行する必要があります。ターゲットオブジェクトの`SetBinding` `Binding`プロパティは、ソースオブジェクトに設定されている必要があります。また、そのオブジェクトのプロパティをソースのプロパティにバインドするには、ターゲットオブジェクトでメソッドを呼び出す必要があります。 `BindingContext`素材.
 
 ターゲット プロパティは、バインド可能なプロパティは、ターゲット オブジェクトをする必要がありますから派生させることである必要があります`BindableObject`します。 Xamarin.Forms のオンライン ドキュメントでは、どのプロパティは、バインド可能なプロパティを示します。 プロパティの`Label`など`Text`バインド可能なプロパティに関連付けられた`TextProperty`します。
 
@@ -114,11 +114,11 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 - `OneWay` -値は、ソースからターゲットに転送されます
 - `OneWayToSource` -値は、ターゲットからソースに転送されます
 - `TwoWay` — ソースとターゲット間の値に両方の方法が転送されます。
-- `OneTime` — データがソースからターゲットが場合にのみが、`BindingContext`の変更
+- `OneTime`-データがソースからターゲットに移動しますが、 `BindingContext`変更された場合にのみ
 
 次のプログラムの 1 つの一般的な用途を示します、`OneWayToSource`と`TwoWay`バインディング モード。 4 つ`Slider`ビューは、コントロール、 `Scale`、 `Rotate`、 `RotateX`、および`RotateY`のプロパティを`Label`します。 最初、見えますとしてこれら 4 つのプロパティの`Label`各によって設定されるため、データ バインドのターゲットがあります、`Slider`します。 ただし、`BindingContext`の`Label`は 1 つだけのオブジェクトとは異なる 4 つのスライダーがあります。
 
-そのため、すべてのバインディング設定一見下位方法。`BindingContext`の 4 つのスライダーの各設定は、`Label`とに、バインドが設定されて、`Value`スライダーのプロパティ。 使用して、`OneWayToSource`と`TwoWay`モードでは、これら`Value`プロパティは、ソースのプロパティを設定できます、 `Scale`、 `Rotate`、 `RotateX`、および`RotateY`のプロパティ、 `Label`:
+そのため、すべてのバインドは、一見した後の方法で設定されます。4つのスライダーのそれぞれ`Label` `Value`のがに設定され、各スライダーのプロパティにバインドが設定されます。 `BindingContext` 使用して、`OneWayToSource`と`TwoWay`モードでは、これら`Value`プロパティは、ソースのプロパティを設定できます、 `Scale`、 `Rotate`、 `RotateX`、および`RotateY`のプロパティ、 `Label`:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -255,7 +255,7 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 ```
 
 > [!NOTE]
-> セルとセルの子のバインディング ソースが、`ListView.ItemsSource`コレクション。
+> セルのバインドソースとセルの子は`ListView.ItemsSource` 、コレクションです。
 
 `Label`要素に設定されて、`View`のプロパティ、`ViewCell`します。 (、`ViewCell.View`ため、タグが必要ありません、`View`プロパティは、コンテンツのプロパティの`ViewCell`)。このマークアップの表示、`FriendlyName`の各プロパティ`NamedColor`オブジェクト。
 
@@ -410,7 +410,7 @@ namespace XamlSamples
 
 ## <a name="related-links"></a>関連リンク
 
-- [XamlSamples](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
+- [XamlSamples](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 - [第 1 部XAML (サンプル) の概要](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
 - [第 2 部重要な XAML 構文 (サンプル)](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
 - [第 3 部XAML マークアップ拡張機能 (サンプル)](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)

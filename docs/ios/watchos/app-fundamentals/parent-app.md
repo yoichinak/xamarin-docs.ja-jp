@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 6b3a6f45d78c0febb2aacf4f7693bc6e328c3ec0
-ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
+ms.openlocfilehash: 0dc3c8e4c8b4db99b07114e855910ccfe5fe180f
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66740959"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68654566"
 ---
 # <a name="working-with-the-watchos-parent-application-in-xamarin"></a>親アプリケーション Xamarin で watchOS の操作
 
@@ -35,7 +35,7 @@ Watch アプリとそれにバンドルされている iOS アプリ間で通信
 
 ## <a name="run-code"></a>コードを実行します。
 
-方法については、ウォッチ拡張機能と親の iPhone アプリ間の通信、 [GpsWatch サンプル](https://developer.xamarin.com/samples/monotouch/WatchKit/GpsWatch/)します。
+方法については、ウォッチ拡張機能と親の iPhone アプリ間の通信、 [GpsWatch サンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/watchkit-gpswatch)します。
 ウォッチ拡張機能は、その代理の使用に関するいくつかの処理を実行して、親 iOS アプリを要求できる、`OpenParentApplication`メソッド。
 
 これは、機能は、長時間実行されるタスク (などのネットワーク要求) - のみ親 iOS アプリを利用してこれらのタスクを完了して、ウォッチ拡張機能にアクセスできる場所で取得したデータを保存するためにバック グラウンド処理のために特に便利です。
@@ -147,7 +147,7 @@ wormHole = new Wormhole ("group.com.your-company.watchstuff", "messageDir");
 
 ## <a name="related-links"></a>関連リンク
 
-- [GpsWatch (サンプル)](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)
+- [GpsWatch (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
 - [WormHoleSharp (サンプル)](https://github.com/Clancey/WormHoleSharp)
 - [Apple の WKInterfaceController 参照](https://developer.apple.com/library/prerelease/ios/documentation/WatchKit/Reference/WKInterfaceController_class/index.html#//apple_ref/occ/clm/WKInterfaceController/openParentApplication:reply:)
 - [Apple のデータを含むアプリを共有します。](https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/ExtensionScenarios.html)
