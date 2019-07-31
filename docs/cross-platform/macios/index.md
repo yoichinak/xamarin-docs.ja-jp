@@ -17,7 +17,7 @@ ms.locfileid: "67864398"
 
 ## <a name="code-sharing"></a>コードの共有
 
-なしのユーザー インターフェイス要素が共有する最善の方法が、コードの要素に対しては引き続きの使用に iOS および Mac 間でコード[ポータブル クラス ライブラリ](~/cross-platform/app-fundamentals/pcl.md)します。
+ユーザー インターフェイス要素を持たないコードの構成の場合、iOS および Mac の間でコードを共有するための最善な方法は、依然として[ポータブル クラス ライブラリ](~/cross-platform/app-fundamentals/pcl.md)を使用することです。
 
 ユーザー インターフェイスの操作を行う必要のあるコードを共有したいを使用する必要があります[共有プロジェクト](~/cross-platform/app-fundamentals/shared-projects.md)1 つのプロジェクトで共有して、それを参照したときに、iOS と Mac の両方でコンパイルするコードを配置できます。
 
