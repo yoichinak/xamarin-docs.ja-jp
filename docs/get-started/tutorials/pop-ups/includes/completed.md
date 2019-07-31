@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 467855da6a691d1661f04e12f481db83b1848717
-ms.sourcegitcommit: 6ad272c2c7b0c3c30e375ad17ce6296ac1ce72b2
+ms.openlocfilehash: 030321c63b9c3494027fc79d010c8b5888871822
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66193829"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68669723"
 ---
 これでこのチュートリアルは完了です。ここでは、次のことを学習しました。
 
@@ -21,6 +21,6 @@ Xamarin.Forms を使用してモバイル アプリケーションを作成す�
 
 ## <a name="related-links"></a>関連リンク
 
-- [PopupsTutorial (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Tutorials/PopupsTutorial)
+- [PopupsTutorial (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-tutorials-popupstutorial/)
 - [ポップアップを表示する (ガイド)](~/xamarin-forms/user-interface/pop-ups.md)
 - [Page API](xref:Xamarin.Forms.Page)

@@ -11,7 +11,7 @@ abstract:
   description: 'Xamarin クロスプラットフォーム サンプル アプリとコード デモを参考にして、C# と Xamarin でモバイル アプリを構築してみてください。'
   menu:
     items:
-      - href: 'https://developer.xamarin.com/samples/'
+      - href: 'https://docs.microsoft.com/samples/browse/?products=xamarin'
         text: すべての Xamarin サンプル
 sections:
   - title: 開始するには
@@ -20,11 +20,11 @@ sections:
         style: cards
         className: cardsW
         items:
-          - href: 'https://developer.xamarin.com/samples/xamarin-forms/Todo/'
+          - href: 'https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo/'
             html: このサンプルは、データがローカルの SQLite データベースに格納され、アクセスされ、Xamarin.Forms で構築された Todo リスト アプリケーションの例です。
             image:
               src: images/todo.png
-              href: 'https://developer.xamarin.com/samples/xamarin-forms/Todo/'
+              href: 'https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo/'
             title: Todo
           - href: 'https://github.com/xamarinhq/app-myshoppe'
             html: 販売員が販売成績を把握したり、潜在顧客を管理したり、連絡先を表示したり、注文を管理したり、製品カタログを参照したりできるようにするデモ アプリです。
@@ -74,9 +74,9 @@ sections:
         style: cards
         className: cardsW
         items:
-          - href: 'https://developer.xamarin.com/samples/'
+          - href: 'https://docs.microsoft.com/samples/browse/?products=xamarin'
             html: すべての Xamarin クロスプラットフォーム サンプル アプリとコード デモです。
             image:
               src: ~/media/shared/sample-download.svg
-              href: 'https://developer.xamarin.com/samples/'
+              href: 'https://docs.microsoft.com/samples/browse/?products=xamarin'
             title: すべての Xamarin サンプル

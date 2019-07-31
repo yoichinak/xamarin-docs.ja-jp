@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 4e759917eac2c6d966d8cd577838c311c13b2a9e
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 2c9895f36faccb0d0c82b0e7884cc04b8c4273bf
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67659846"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68669720"
 ---
 これでこのチュートリアルは完了です。ここでは以下の方法を学習しました。
 
@@ -31,6 +31,6 @@ ms.locfileid: "67659846"
 
 ## <a name="related-links"></a>関連リンク
 
-- [WebServiceTutorial (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Tutorials/WebServiceTutorial)
+- [WebServiceTutorial (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-tutorials-webservicetutorial/)
 - [RESTful Web サービスの使用 (ガイド)](~/xamarin-forms/data-cloud/web-services/rest.md)
 - [Newtonsoft.Json NuGet パッケージ](https://www.nuget.org/packages/Newtonsoft.Json/)

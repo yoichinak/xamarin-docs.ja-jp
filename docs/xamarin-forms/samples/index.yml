@@ -11,7 +11,7 @@ abstract:
   description: Xamarin.Forms の概念の理解と作業の開始に役立つ Xamarin.Forms のサンプル アプリとコード デモです。
   menu:
     items:
-      - href: 'https://developer.xamarin.com/samples/xamarin-forms/all/'
+      - href: 'https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms'
         text: すべての Xamarin.Forms のサンプル
 sections:
   - title: null
@@ -56,9 +56,9 @@ sections:
               src: images/xuzzle.png
               href: 'https://developer.xamarin.com/samples/mobile/LivePlayer/XamagonXuzzleLP/'
             title: Xuzzle
-          - href: 'https://developer.xamarin.com/samples/xamarin-forms/all/'
+          - href: 'https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms'
             html: すべての Xamarin.Forms サンプル アプリとコード デモです。
             image:
               src: ~/media/shared/sample-download.svg
-              href: 'https://developer.xamarin.com/samples/xamarin-forms/all/'
+              href: 'https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms'
             title: すべての Xamarin.Forms のサンプル

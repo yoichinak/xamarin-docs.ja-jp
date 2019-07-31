@@ -11,7 +11,7 @@ abstract:
   description: 'Xamarin Android のサンプル アプリとコード デモを参考にして、C# と Xamarin でモバイル アプリを構築してみてください。'
   menu:
     items:
-      - href: 'https://developer.xamarin.com/samples/android/all/'
+      - href: 'https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Android'
         text: すべての Xamarin.Android サンプル
 sections:
   - title: null
@@ -68,9 +68,9 @@ sections:
               src: images/watchface.png
               href: 'https://developer.xamarin.com/samples/monodroid/wear/WatchFace/'
             title: WatchFace
-          - href: 'https://developer.xamarin.com/samples/android/all/'
+          - href: 'https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Android'
             html: すべての Xamarin.Android サンプル アプリとコード デモです。
             image:
               src: ~/media/shared/sample-download.svg
-              href: 'https://developer.xamarin.com/samples/android/all/'
+              href: 'https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Android'
             title: すべての Xamarin.Android サンプル
