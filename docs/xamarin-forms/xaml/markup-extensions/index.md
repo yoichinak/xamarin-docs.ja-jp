@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: cfdd639672f7fa624c7c8e30f17fbfc9dad403af
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 3b135f916225f896680cfb73175ba0568928be06
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61075482"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655756"
 ---
 # <a name="xaml-markup-extensions"></a>XAML マークアップ拡張機能
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/XAML/MarkupExtensions/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
 
 XAML マークアップ拡張機能では、リテラル テキスト文字列以外のソースから設定する要素の属性を許可することで、電源と XAML の柔軟性を拡張するのに役立ちます。
 
@@ -36,7 +36,7 @@ XAML マークアップ拡張機能では、リテラル テキスト文字列�
 
 設定する方が、`Color`属性、リソース ディクショナリに格納されている値か、作成したクラスの静的プロパティの値または型のプロパティから`Color` ページで、別の要素から構築された、または色合い、鮮やかさ、および明るさの値を区切ります。
 
-これらすべてのオプションは、XAML マークアップ拡張機能を使用できます。 しかし、語句「マークアップ拡張機能」がコンピューターを保護します。XAML マークアップ拡張機能は*いない*to XML 拡張機能。 XAML マークアップ拡張機能でも XAML は常に有効な XML です。
+これらすべてのオプションは、XAML マークアップ拡張機能を使用できます。 しかし、"マークアップ拡張機能" という語句を使用しないようにしてください。XAML マークアップ拡張機能は、XML の拡張機能では*ありません*。 XAML マークアップ拡張機能でも XAML は常に有効な XML です。
 
 マークアップ拡張機能は、要素の属性を表現する別の方法にすぎません。 XAML マークアップ拡張機能は、通常は、中かっこで囲まれた属性の設定で識別できます。
 
@@ -60,7 +60,7 @@ Xamarin.Forms で定義されている XAML マークアップ拡張機能を使
 
 ## <a name="related-links"></a>関連リンク
 
-- [マークアップ拡張機能 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/XAML/MarkupExtensions/)
+- [マークアップ拡張機能 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
 - [Xamarin.Forms book から XAML マークアップ拡張機能の章](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md)
 - [リソース ディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [動的なスタイル](~/xamarin-forms/user-interface/styles/dynamic.md)

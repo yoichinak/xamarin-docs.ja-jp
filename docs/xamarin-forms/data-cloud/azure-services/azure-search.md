@@ -1,5 +1,5 @@
 ---
-title: Azure Search および Xamarin.Forms とデータの検索
+title: Azure Search と Xamarin. フォームを使用してデータを検索する
 description: この記事では、Microsoft の Azure Search ライブラリを使用して、Xamarin.Forms アプリケーションに Azure Search を統合する方法を示します。
 ms.prod: xamarin
 ms.assetid: A4AEF233-3672-4174-9DBA-15BEE3030C0B
@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/05/2016
-ms.openlocfilehash: 0ecb546cfb657aa138f05ade64354eb46380e9ab
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: d13246ddae3f505d04db2a866f785a9f60ce3979
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67658639"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68652043"
 ---
-# <a name="search-data-with-azure-search-and-xamarinforms"></a>Azure Search および Xamarin.Forms とデータの検索
+# <a name="search-data-with-azure-search-and-xamarinforms"></a>Azure Search と Xamarin. フォームを使用してデータを検索する
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/WebServices/AzureSearch/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azuresearch)
 
 _Azure Search とは、インデックス作成とクエリのデータがアップロードするための機能を提供するクラウド サービスです。これには、インフラストラクチャの要件と、アプリケーションに検索機能を実装するのに関連付けられた検索アルゴリズムの複雑さが削除されます。この記事では、Microsoft の Azure Search ライブラリを使用して、Xamarin.Forms アプリケーションに Azure Search を統合する方法を示します。_
 
@@ -279,6 +279,6 @@ async Task AzureSuggestions(string text)
 
 ## <a name="related-links"></a>関連リンク
 
-- [Azure Search (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/AzureSearch/)
+- [Azure Search (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azuresearch)
 - [Azure Search のドキュメント](/azure/search/)
 - [Microsoft Azure Search ライブラリ](https://www.nuget.org/packages/Microsoft.Azure.Search/)

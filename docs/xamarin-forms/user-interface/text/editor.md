@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/26/2018
-ms.openlocfilehash: 97bb5ec954f36e48d8ae115baf8738862e5a8358
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 1f9cd0acd201f124f4a4577fec23dce52aee627d
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67649547"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657518"
 ---
 # <a name="xamarinforms-editor"></a>Xamarin.Forms のエディター
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
 _複数行テキスト入力_
 
@@ -61,7 +61,7 @@ var editor = new Editor { Placeholder = "Enter text here", PlaceholderColor = Co
 
 ### <a name="preventing-text-entry"></a>テキスト入力の防止
 
-内のテキストを変更することを防止できるユーザー、 [ `Editor` ](xref:Xamarin.Forms.Editor)を設定して、`IsReadOnly`プロパティで、既定値を持つの`false`を`true`:
+の[`Editor`](xref:Xamarin.Forms.Editor)既定値である`IsReadOnly`プロパティを次の`false`ように設定することによって、のテキストを変更でき`true`ないようにすることができます。
 
 ```xaml
 <Editor Text="This is a read-only Editor"
@@ -73,7 +73,7 @@ var editor = new Editor { Text = "This is a read-only Editor", IsReadOnly = true
 ```
 
 > [!NOTE]
-> `IsReadonly`プロパティの視覚的な外観は変更しません、 [ `Editor`](xref:Xamarin.Forms.Editor)とは異なり、`IsEnabled`もの視覚的な外観を変更するプロパティ、`Editor`灰色。
+> プロパティは、の視覚的な外観を灰色`Editor`に[`Editor`](xref:Xamarin.Forms.Editor)変更する`IsEnabled`プロパティとは異なり、の外観を変更しません。 `IsReadonly`
 
 ### <a name="limiting-input-length"></a>入力の長さの制限
 
@@ -189,9 +189,9 @@ var editor = new Editor { ... IsSpellCheckEnabled = false };
 
 ### <a name="enabling-and-disabling-text-prediction"></a>有効にして、予測入力を無効化
 
-`IsTextPredictionEnabled`プロパティ コントロールかどうか予測入力と自動テキストの修正を有効にします。 既定では、プロパティに設定が`true`します。 テキストを入力すると、word の予測が表示されます。
+プロパティ`IsTextPredictionEnabled`は、テキストの予測と自動テキスト修正が有効かどうかを制御します。 既定では、プロパティに設定が`true`します。 テキストを入力すると、word の予測が表示されます。
 
-ただし、テキスト エントリ シナリオによっては、ユーザー名、予測入力とテキストの自動入力など修正負のエクスペリエンスを提供しますを設定して無効にする必要があります、`IsTextPredictionEnabled`プロパティを`false`:。
+ただし、テキスト入力のシナリオによっては、ユーザー名の入力、テキスト予測、自動テキスト修正などがありますが、プロパティを次`IsTextPredictionEnabled`のよう`false`に設定することで無効にする必要があります。
 
 ```xaml
 <Editor ... IsTextPredictionEnabled="false" />
@@ -202,7 +202,7 @@ var editor = new Editor { ... IsTextPredictionEnabled = false };
 ```
 
 > [!NOTE]
-> ときに、`IsTextPredictionEnabled`プロパティに設定されて`false`、カスタムのキーボードがされていないと予測入力と自動的に使用されるテキストの修正が無効になっています。 ただし場合、 [ `Keyboard` ](xref:Xamarin.Forms.Keyboard)を無効にします。 テキストの予測が設定されている、`IsTextPredictionEnabled`プロパティは無視されます。 そのための予測の入力を有効にするプロパティを使用できません、`Keyboard`を明示的に無効にします。
+> プロパティがに`false`設定されていて、カスタムキーボードが使用されていない場合、テキスト予測と自動テキスト修正は無効になります。 `IsTextPredictionEnabled` ただし場合、 [ `Keyboard` ](xref:Xamarin.Forms.Keyboard)を無効にします。 テキストの予測が設定されている、`IsTextPredictionEnabled`プロパティは無視されます。 そのための予測の入力を有効にするプロパティを使用できません、`Keyboard`を明示的に無効にします。
 
 ### <a name="colors"></a>色
 
@@ -260,11 +260,11 @@ public partial class EditorPage : ContentPage
 - [完了した](xref:Xamarin.Forms.Editor.Completed)&ndash;ユーザーには、キーボードの戻り値のキーを押して、入力が終了したときに発生します。
 
 > [!NOTE]
-> [ `VisualElement` ](xref:Xamarin.Forms.VisualElement)元のクラス[ `Entry` ](xref:Xamarin.Forms.Entry)継承もが[ `Focused` ](xref:Xamarin.Forms.VisualElement.Focused)と[ `Unfocused` ](xref:Xamarin.Forms.VisualElement.Unfocused)イベント。
+> 継承元のクラス[`VisualElement`](xref:Xamarin.Forms.VisualElement)は、と[`Unfocused`](xref:Xamarin.Forms.VisualElement.Unfocused)のイベント[`Focused`](xref:Xamarin.Forms.VisualElement.Focused)も持っています。 [`Entry`](xref:Xamarin.Forms.Entry)
 
 ### <a name="completed"></a>完了
 
-`Completed`とのやり取りの完了に反応するイベントを使用する`Editor`します。 `Completed` キーボードの戻り値のキーを入力して (または UWP の Tab キーを押して)、ユーザーがフィールドに入力を終了したときに発生します。 イベントのハンドラーは、送信者を取得、汎用イベント ハンドラーと`EventArgs`:
+`Completed`とのやり取りの完了に反応するイベントを使用する`Editor`します。 `Completed`は、ユーザーがキーボードに戻りキーを入力するか、UWP の Tab キーを押すことによって、入力をフィールドで終了したときに発生します。 イベントのハンドラーは、送信者を取得、汎用イベント ハンドラーと`EventArgs`:
 
 ```csharp
 void EditorCompleted (object sender, EventArgs e)
@@ -360,5 +360,5 @@ Title="Editor Demo">
 
 ## <a name="related-links"></a>関連リンク
 
-- [テキスト (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
+- [テキスト (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 - [エディターの API](xref:Xamarin.Forms.Editor)

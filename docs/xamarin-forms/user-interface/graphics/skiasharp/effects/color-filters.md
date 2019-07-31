@@ -7,16 +7,16 @@ ms.assetid: 774E7B55-AEC8-4F12-B657-1C0CEE01AD63
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/28/2018
-ms.openlocfilehash: 71c0495520a5dd596be2e9cafec6b63e316fb627
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 5aa8b2e85d5a7d547af5333dcaf350025b86cc26
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61342457"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68647697"
 ---
 # <a name="skiasharp-color-filters"></a>SkiaSharp の色フィルター
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 カラー フィルターは、ポスタリゼーションなどの効果の他の色をビットマップ (またはその他の画像) での色を変換することができます。
 
@@ -103,7 +103,7 @@ R の別の数式をここでは '、G'、B' と A'。
 
 グレースケール = 0.2126・R + 0.7152・G + 0.0722・B
 
-カラービットマップをグレースケールビットマップに変換するには、R '、G'、およびB 'の結果がすべて同じ値に等しくなければなりません  マトリックスは。
+カラービットマップをグレースケールビットマップに変換するには、R '、G'、およびB 'の結果がすべて同じ値に等しくなければなりません マトリックスは。
 
 <pre>
 | 0.21 0.72 0.07 0 0 |
@@ -120,7 +120,7 @@ R の別の数式をここでは '、G'、B' と A'。
 public static SKColorFilter CreateColorMatrix (float[] matrix);
 ```
 
-場所`matrix`、20 の配列は、`float`値。 内の配列を作成するときにC#、4 × 5 マトリックスに似ているため、数値の書式を設定するは簡単です。 これは、方法については、**グレースケール マトリックス**ページで、 [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)サンプル。
+場所`matrix`、20 の配列は、`float`値。 内の配列を作成するときにC#、4 × 5 マトリックスに似ているため、数値の書式を設定するは簡単です。 これは、方法については、**グレースケール マトリックス**ページで、 [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプル。
 
 ```csharp
 public class GrayScaleMatrixPage : ContentPage
@@ -163,7 +163,7 @@ public class GrayScaleMatrixPage : ContentPage
 }
 ```
 
-`DrawBitmap`からがこのコードで使用する方法、 **BitmapExtension.cs**ファイルに含まれている、 [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)サンプル。 
+`DrawBitmap`からがこのコードで使用する方法、 **BitmapExtension.cs**ファイルに含まれている、 [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプル。 
 
 IOS、Android、およびユニバーサル Windows プラットフォームで実行されている結果を次に示します。
 
@@ -232,7 +232,7 @@ public static SKColorFilter CreateTable (byte[] table);
 public static SKColorFilter CreateTable (byte[] tableA, byte[] tableR, byte[] tableG, byte[] tableB);
 ```
 
-常に、配列には、256 エントリが含まれます。 `CreateTable`赤、緑、青のコンポーネントの 1 つのテーブル、同じテーブルを持つメソッドを使用します。 これは、単純なルックアップ テーブルです。元の色 (R、G、B)、およびコピー先の色である場合 (R'、B'、G')、変換先コンポーネントは、インデックス作成で取得し、`table`ソース コンポーネントで。
+常に、配列には、256 エントリが含まれます。 `CreateTable`赤、緑、青のコンポーネントの 1 つのテーブル、同じテーブルを持つメソッドを使用します。 単純な参照テーブルです。ソースの色が (r、g、b) で、変換先の色が (r '、B '、g ') の場合、変換先コンポーネントは、ソース`table`コンポーネントでインデックスを作成することによって取得されます。
 
 `R' = table[R]`
 
@@ -246,7 +246,7 @@ public static SKColorFilter CreateTable (byte[] tableA, byte[] tableR, byte[] ta
 
 セクションで**ポスタリゼーション**についての記事で[にアクセスする SkiaSharp ビットマップのピクセル ビット](../bitmaps/pixel-bits.md#posterization)、その色の解像度を低くビットマップの個々 のピクセル ビットを変更する方法を説明しました。 これと呼ばれる手法_ポスタリゼーション_します。 
 
-カラー テーブルを持つビットマップもポスタリゼーションことができます。 コンス トラクター、**ポスタリゼーション テーブル**ページ 6 ビットが 0 に設定を下部にバイトのインデックスをマップするカラー テーブルを作成します。
+カラー テーブルを持つビットマップもポスタリゼーションことができます。 コンストラクター、**ポスタリゼーション テーブル**ページ 6 ビットが 0 に設定を下部にバイトのインデックスをマップするカラー テーブルを作成します。
 
 ```csharp
 public class PosterizeTablePage : ContentPage
@@ -300,4 +300,4 @@ public class PosterizeTablePage : ContentPage
 ## <a name="related-links"></a>関連リンク
 
 - [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

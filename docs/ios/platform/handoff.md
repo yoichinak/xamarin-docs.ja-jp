@@ -1,168 +1,168 @@
 ---
-title: Xamarin.iOS でハンドオフ
-description: この記事では、ハンドオフを転送する Xamarin.iOS アプリで操作を内部では、ユーザーで実行されているアプリ間でのユーザー アクティビティの他のデバイス。
+title: Xamarin のハンドオフ (iOS)
+description: この記事では、ユーザーの他のデバイスで実行されているアプリ間でユーザーアクティビティを転送するために、Xamarin iOS アプリでハンドオフを操作する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 405F966A-4085-4621-AA15-33D663AD15CD
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 084b9924af467459a017413a958ec2e46ff219fc
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 28c5086833ceb1dc8550e513b120f7355aa9bebe
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865305"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656575"
 ---
-# <a name="handoff-in-xamarinios"></a>Xamarin.iOS でハンドオフ
+# <a name="handoff-in-xamarinios"></a>Xamarin のハンドオフ (iOS)
 
-_この記事では、ハンドオフを転送する Xamarin.iOS アプリで操作を内部では、ユーザーで実行されているアプリ間でのユーザー アクティビティの他のデバイス。_
+_この記事では、ユーザーの他のデバイスで実行されているアプリ間でユーザーアクティビティを転送するために、Xamarin iOS アプリでハンドオフを操作する方法について説明します。_
 
-Apple は、同じアプリまたは同じアクティビティをサポートする別のアプリを実行している別のデバイスに iOS 8、およびユーザーが自分のデバイスのいずれかで開始されたアクティビティに転送の一般的なメカニズムを提供する OS X Yosemite (10.10) ハンドオフを導入しました。
+Apple では、iOS 8 および OS X ヨーク Semite (10.10) にハンドオフが導入されました。ユーザーは、デバイスの1つで開始されたアクティビティを、同じアプリを実行している別のデバイス、または同じアクティビティをサポートする別のデバイスに転送するための一般的なメカニズムを提供します。
 
-[![](handoff-images/handoff02.png "ハンドオフ操作を実行する例")](handoff-images/handoff02.png#lightbox)
+[![](handoff-images/handoff02.png "ハンドオフ操作の実行例")](handoff-images/handoff02.png#lightbox)
 
-この記事では、簡単に見て Xamarin.iOS アプリで共有アクティビティの有効化し、ハンドオフ フレームワークの詳細を説明します。
+この記事では、Xamarin. iOS アプリでアクティビティの共有を有効にする方法を簡単に説明し、ハンドオフフレームワークについて詳しく説明します。
 
 ## <a name="about-handoff"></a>ハンドオフについて
 
-ハンドオフ (継続性とも呼ばれます) は、Apple ios 8 および OS X Yosemite (10.10) でユーザーが自分のデバイス (iOS または Mac) のいずれかのアクティビティを開始して、同じアクティビティに続行 (ユーザーの iClou で識別されるデバイスのもう 1 つの方法として導入されました。d アカウント)。
+ハンドオフ (継続性とも呼ばれます) は、ユーザーがいずれかのデバイス (iOS または Mac) でアクティビティを開始し、デバイスの別のアクティビティ (ユーザーの iClou によって識別) を続行する方法として、Apple によって iOS 8 および OS X ヨーク Semite (10.10) に導入されました。d アカウント)。
 
-ハンドオフは、強化された検索機能を iOS 9 でも、新しいサポートで拡張されました。 詳細についてを参照してください、[検索の機能強化](~/ios/platform/search/index.md)ドキュメント。
+ハンドオフは、新しい高度な検索機能もサポートするために、iOS 9 で拡張されました。 詳細については、[検索の拡張機能](~/ios/platform/search/index.md)に関するドキュメントを参照してください。
 
-など、ユーザーは、iPhone でメールを開始し、すべての入力と同じメッセージの情報と iOS で残っているのと同じ場所にカーソルを置き、Mac 上でシームレスに電子メールを引き続き。
+たとえば、ユーザーは自分の iPhone で電子メールを開始し、その Mac で同じメッセージ情報をすべて入力したまま、同じ場所に保存した電子メールをシームレスに継続することができます。
 
-同じを共有するアプリのいずれかの_チーム ID_ (for Mac Enterprise は、iTunes App Store を介して配信ハンドオフを使用してこれらのアプリがいずれかのアプリ間でのユーザー アクティビティを続行するには、対象または開発者として登録して署名または アドホック アプリ) で変更します。
+同じ_チーム ID_を共有するすべてのアプリは、アプリ間でユーザーのアクティビティを継続するために、ハンドオフを使用することができます。ただし、これらのアプリが ITunes app Store 経由で配信されるか、登録されている開発者 (Mac、エンタープライズ、またはアドホックアプリ) によって署名される場合に限ります。
 
-すべて`NSDocument`または`UIDocument`ベースのアプリに自動的にハンドオフは、組み込みのサポートし、ハンドオフをサポートするために最小限の変更が必要があります。
+または`UIDocument`ベースのアプリには、ハンドオフサポートが自動的に組み込まれており、ハンドオフをサポートするために最小限の変更が必要です。 `NSDocument`
 
-### <a name="continuing-user-activities"></a>継続のユーザー アクティビティ
+### <a name="continuing-user-activities"></a>ユーザーアクティビティの継続
 
-`NSUserActivity`クラス (にいくつかの小さな変更と共に`UIKit`と`AppKit`) ユーザーのデバイスのもう 1 つを継続できる可能性のあるユーザーのアクティビティを定義するためのサポートを提供します。
+クラス ( `UIKit` および`AppKit`に対するいくつかの小さな変更と共に) では、ユーザーのアクティビティを定義し、他のユーザーのデバイスで継続して使用できるようにすることがサポートされています。 `NSUserActivity`
 
-別のユーザーのデバイス経由で渡されるアクティビティで、カプセル化するインスタンスで`NSUserActivity`、としてマークされた、_現在のアクティビティ_セットを持つのペイロード (データの継続を実行するために使用)、アクティビティは、そのデバイスに送信する必要があります。
+アクティビティをユーザーの別のデバイスに渡すには、インスタンス`NSUserActivity`にカプセル化し、現在の_アクティビティ_としてマークし、ペイロードセット (継続を実行するために使用されるデータ) を持つ必要があります。また、アクティビティは次のようにする必要があります。そのデバイスに送信されます。
 
-ICloud を使用して同期されている、大きなデータ パケットでは、継続するアクティビティを定義する情報の最低限をハンドオフに渡します。
+ハンドオフは、必要最小限の情報を渡して、継続するアクティビティを定義します。これにより、より大きなデータパケットが iCloud 経由で同期されます。
 
-受信側のデバイスでは、アクティビティが継続できることの通知がユーザーに届きます。 (実行中でない場合、指定したアプリが起動された場合は、ユーザーのアクティビティを新しいデバイスで続行を選択およびからペイロード、`NSUserActivity`アクティビティを再起動するために使用します。
+受信デバイスでは、アクティビティを継続できるという通知がユーザーに送信されます。 ユーザーが新しいデバイスでアクティビティを続行することを選択した場合は、指定されたアプリが起動され (まだ実行`NSUserActivity`されていない場合)、からのペイロードを使用してアクティビティが再開されます。
 
-[![](handoff-images/handoffinteractions.png "継続のユーザー アクティビティの概要")](handoff-images/handoffinteractions.png#lightbox)
+[![](handoff-images/handoffinteractions.png "ユーザーアクティビティの継続の概要")](handoff-images/handoffinteractions.png#lightbox)
 
-同じ開発者チーム ID を共有し、応答するアプリのみを指定した_アクティビティの種類_は、継続の対象。 アプリでサポートされているアクティビティの種類の定義、`NSUserActivityTypes`のキーの**Info.plist**ファイル。 継続的デバイス、チーム ID、アクティビティの種類に基づく継続を実行するアプリを選択し、必要に応じて、_活動のタイトル_します。
+同じ開発者チーム ID を共有し、特定の_種類のアクティビティ_に応答するアプリのみが、継続の対象となります。 アプリでは、その`NSUserActivityTypes`情報の**plist**ファイルのキーでサポートされるアクティビティの種類を定義します。 これにより、継続しているデバイスは、チーム ID、アクティビティの種類、および必要に応じて_アクティビティのタイトル_に基づいて、継続を実行するアプリを選択します。
 
-受信側のアプリからの情報を使用して、`NSUserActivity`の`UserInfo`ユーザー インターフェイスを構成し、遷移がエンドユーザーにシームレスに表示されるように指定したアクティビティの状態を復元するためのディクショナリ。
+受信側のアプリは、 `NSUserActivity`の`UserInfo`ディクショナリからの情報を使用して、ユーザーインターフェイスを構成し、特定のアクティビティの状態を復元して、遷移がエンドユーザーに対してシームレスに表示されるようにします。
 
-継続をかどうかにより効率的に送信できるより多くの情報が必要です、`NSUserActivity`呼び出し元のアプリを送信し、必要なデータを転送する 1 つまたは複数のストリームを確立するアプリを再開することができます。 たとえば、アクティビティが複数のイメージを持つ大きなテキスト ドキュメントを編集していた場合ストリーミング必要になります、受信側のデバイスで、アクティビティを続行するために必要な情報を転送します。 詳細については、次を参照してください。、[サポート継続ストリーム](#supporting-continuation-streams)以下のセクション。
+継続がを`NSUserActivity`通じて効率的に送信できるよりも多くの情報を必要とする場合、再開中のアプリは発信元アプリへの呼び出しを送信し、必要なデータを送信するための1つ以上のストリームを確立できます。 たとえば、アクティビティが複数のイメージを含む大きなテキストドキュメントを編集していた場合、受信デバイスでアクティビティを続行するために必要な情報を転送するためにストリーミングが必要になります。 詳細については、以下の「[継続ストリームのサポート](#supporting-continuation-streams)」セクションを参照してください。
 
-上記で説明したように`NSDocument`または`UIDocument`ベースのアプリに自動的にハンドオフは組み込みのサポートがあります。 詳細については、次を参照してください。、[ドキュメント ベース アプリでのサポートのハンドオフ](#supporting-handoff-in-document-based-apps)以下のセクション。
+前述のように`NSDocument` 、 `UIDocument`またはベースのアプリには、自動的にハンドオフサポートが組み込まれています。 詳細については、以下の「[ドキュメントベースのアプリでのハンドオフのサポート](#supporting-handoff-in-document-based-apps)」セクションを参照してください。
 
 ### <a name="the-nsuseractivity-class"></a>NSUserActivity クラス
 
-`NSUserActivity`クラスはハンドオフ exchange でプライマリ オブジェクトであり、継続で利用可能なユーザー アクティビティの状態をカプセル化するために使用します。 アプリでのコピーがインスタンス化`NSUserActivity`の任意のアクティビティをサポートし、別のデバイスで続行することを希望します。 たとえば、ドキュメント エディターは活動を作成、各ドキュメントの現在開いています。 ただし、(最前面のウィンドウまたはタブに表示されます)、最前面のドキュメントのみが、_現在のアクティビティ_継続されるためご利用いただけます。
+`NSUserActivity`クラスは、ハンドオフ交換のプライマリオブジェクトであり、継続に使用できるユーザーアクティビティの状態をカプセル化するために使用されます。 アプリは、サポートしている`NSUserActivity`すべてのアクティビティののコピーをインスタンス化し、別のデバイスで続行することを望んでいます。 たとえば、ドキュメントエディターは、現在開いている各ドキュメントに対してアクティビティを作成します。 ただし、最前面のドキュメント (最前面のウィンドウまたはタブに表示されます) のみが_現在のアクティビティ_であり、れるために使用できます。
 
-インスタンス`NSUserActivity`両方で識別されるその`ActivityType`と`Title`プロパティ。 `UserInfo`ディクショナリ プロパティは、アクティビティの状態に関する情報を実行するために使用します。 設定、`NeedsSave`プロパティを`true`に遅延する場合を使用して状態情報を読み込む、 `NSUserActivity`'s を委任します。 使用して、`AddUserInfoEntries`に他のクライアントからの新しいデータをマージする方法、`UserInfo`ディクショナリ アクティビティの状態を保持するためにします。
+のインスタンスは`NSUserActivity` 、プロパティ`ActivityType`と`Title`プロパティの両方で識別されます。 `UserInfo`ディクショナリプロパティは、アクティビティの状態に関する情報を伝達するために使用されます。 のデリゲート`NeedsSave`を使用`true`して状態情報を遅延読み込みする場合は、プロパティをに設定します。 `NSUserActivity` メソッドを使用して、アクティビティの状態を維持する`UserInfo`ために、必要に応じて他のクライアントからの新しいデータをディクショナリにマージします。 `AddUserInfoEntries`
 
 ### <a name="the-nsuseractivitydelegate-class"></a>NSUserActivityDelegate クラス
 
-`NSUserActivityDelegate`情報を保持するために使用、`NSUserActivity`の`UserInfo`ディクショナリの最新の状態と、アクティビティの現在の状態と同期します。 システムが更新されるアクティビティの情報が必要な場合 (など別のデバイスで継続する前に) を呼び出し、`UserActivityWillSave`デリゲートのメソッド。
+は`NSUserActivityDelegate` 、 `NSUserActivity`の情報を最新の状態に保ち、アクティビティの現在の状態と同期するために使用されます。`UserInfo` 更新するアクティビティの情報 (別のデバイスでの継続など) が必要な場合は、デリゲートの`UserActivityWillSave`メソッドを呼び出します。
 
-実装する必要があります、`UserActivityWillSave`メソッドとする変更が加えられる、 `NSUserActivity` (など`UserInfo`、`Title`など) を現在のアクティビティの状態を反映することを確認します。 システムを呼び出すと、`UserActivityWillSave`メソッド、`NeedsSave`フラグがクリアされます。 アクティビティのデータのプロパティを変更する場合は、設定する必要あります`NeedsSave`に`true`もう一度です。
+現在のアクティビティの状態が`UserActivityWillSave`反映されていることを確認するに`UserInfo`は`Title`、メソッドを実装し、 `NSUserActivity` (、など) に変更を加える必要があります。 システムが`UserActivityWillSave`メソッド`NeedsSave`を呼び出すと、フラグがクリアされます。 アクティビティのデータプロパティを変更する場合は、を再度に`NeedsSave` `true`設定する必要があります。
 
-使用する代わりに、`UserActivityWillSave`メソッド上で示した、させることもできます`UIKit`または`AppKit`ユーザーのアクティビティを自動的に管理します。 これを行うには、設定、応答側オブジェクトの`UserActivity`プロパティと実装、`UpdateUserActivityState`メソッド。 参照してください、[レスポンダーでサポートしているハンドオフ](#supporting-handoff-in-responders)詳細については後述します。
+上記の`UserActivityWillSave`方法を使用する代わりに、必要`UIKit`に応じて`AppKit` 、ユーザーアクティビティを自動的にまたは管理することができます。 これを行うには、応答側オブジェクト`UserActivity`のプロパティを設定`UpdateUserActivityState`し、メソッドを実装します。 詳細については、以下の「[応答側でのハンドオフのサポート](#supporting-handoff-in-responders)」セクションを参照してください。
 
-### <a name="app-framework-support"></a>アプリのフレームワークのサポート
+### <a name="app-framework-support"></a>アプリフレームワークのサポート
 
-両方`UIKit`(iOS) および`AppKit`(OS X) のハンドオフの組み込みサポートを提供する、 `NSDocument`、レスポンダー (`UIResponder`/`NSResponder`)、および`AppDelegate`クラス。 各 OS では、わずかに異なるハンドオフを実装するときに、基本的なメカニズムと Api は、同じです。
+( `UIKit` IOS) と`AppKit` (OS X) の両方で、、レスポンダー (`NSResponder`/ `NSDocument``UIResponder`)、および`AppDelegate`クラスでのハンドオフのサポートが組み込まれています。 各 OS はハンドオフを若干異なる方法で実装しますが、基本的なメカニズムと Api は同じです。
 
-#### <a name="user-activities-in-document-based-apps"></a>ドキュメント ベースのアプリ内のユーザー アクティビティ
+#### <a name="user-activities-in-document-based-apps"></a>ドキュメントベースのアプリでのユーザーアクティビティ
 
-ドキュメント ベースの iOS および OS X アプリに自動的に組み込みのハンドオフ サポートがあります。 このサポートを有効にするには、追加する必要があります、`NSUbiquitousDocumentUserActivityType`の各キーと値`CFBundleDocumentTypes`アプリのエントリ**Info.plist**ファイル。
+ドキュメントベースの iOS および OS X アプリには、自動的にハンドオフサポートが組み込まれています。 このサポートを有効にするには、アプリの`NSUbiquitousDocumentUserActivityType` **情報 plist**ファイルの各`CFBundleDocumentTypes`エントリに対して、キーと値を追加する必要があります。
 
-このキーが存在する場合両方`NSDocument`と`UIDocument`を自動的に作成`NSUserActivity`指定された型の iCloud ベースのドキュメントのインスタンス。 アプリをサポートするドキュメントの種類ごとのアクティビティの種類を指定する必要があり、複数のドキュメント タイプは、同じアクティビティの種類を使用できます。 両方`NSDocument`と`UIDocument`を自動的に設定、`UserInfo`のプロパティ、`NSUserActivity`でその`FileURL`プロパティの値。
+このキーが存在する場合、 `NSDocument`と`UIDocument`の両方`NSUserActivity`が、指定された種類の iCloud ベースのドキュメントのインスタンスを自動的に作成します。 アプリがサポートするドキュメントの種類ごとにアクティビティの種類を指定する必要があります。また、複数のドキュメントの種類で同じアクティビティの種類を使用できます。 と`NSDocument`は`UIDocument`両方とも`UserInfo` 、 `FileURL`プロパティの値を使用してのプロパティを自動的に設定します。 `NSUserActivity`
 
-OS X 上、`NSUserActivity`によって管理される`AppKit`レスポンダーに自動的に関連付けられていると、ドキュメントのウィンドウ、メイン ウィンドウになったときに、現在のアクティビティになります。 Ios では、`NSUserActivity`によって管理されるオブジェクト`UIKit`、いずれかの呼び出しをする必要があります`BecomeCurrent`メソッドに明示的にまたはドキュメントの`UserActivity`プロパティ セットを`UIViewController`ときに、アプリが前面に表示します。
+OS X では、 `NSUserActivity`ドキュメントの`AppKit`ウィンドウがメインウィンドウになったときに、によって管理され、レスポンダーに関連付けられているが自動的に現在のアクティビティになります。 IOS では、 `NSUserActivity`によって`UIKit`管理されるオブジェクトの`BecomeCurrent`場合、メソッドを明示的に`UserActivity`呼び出すか、アプリ`UIViewController`がフォアグラウンドになったときに、ドキュメントのプロパティをに設定する必要があります。
 
-`AppKit` いずれかを自動的に復元`UserActivity`OS X では、この方法で作成されたプロパティ。これは、場合に発生、`ContinueUserActivity`メソッドを返します。`false`実装されていない場合またはします。 このような状況では、ドキュメントが開かれて、`OpenDocument`のメソッド、`NSDocumentController`しを受信して、`RestoreUserActivityState`メソッドの呼び出し。
+`AppKit`では、この`UserActivity`方法で作成されたすべてのプロパティが OS X に自動的に復元されます。このエラーは、 `ContinueUserActivity`メソッドが`false`を返す場合、または実装されていない場合に発生します。 この場合、ドキュメントは`OpenDocument` `NSDocumentController`のメソッドを使用して開かれ、メソッドの呼び出しを`RestoreUserActivityState`受け取ります。
 
-参照してください、[ドキュメント ベース アプリでのサポートのハンドオフ](#supporting-handoff-in-document-based-apps)詳細については後述します。
+詳細については、以下の「[ドキュメントベースのアプリでのハンドオフのサポート](#supporting-handoff-in-document-based-apps)」セクションを参照してください。
 
-#### <a name="user-activities-and-responders"></a>ユーザー アクティビティとレスポンダー
+#### <a name="user-activities-and-responders"></a>ユーザーアクティビティとレスポンダー
 
-両方`UIKit`と`AppKit`レスポンダー オブジェクトのとして設定した場合に、ユーザー アクティビティを自動的に管理できます`UserActivity`プロパティ。 設定する必要があります、状態が変更された場合、`NeedsSave`のレスポンダーのプロパティ`UserActivity`に`true`します。 システムは自動的に保存、`UserActivity`レスポンダー時間を呼び出すことによって、状態の更新に与えた後、必要な場合にその`UpdateUserActivityState`メソッド。
+と`UIKit` `UserActivity`はどちらも、応答側オブジェクトのプロパティとして設定した場合に、ユーザーアクティビティを自動的に管理できます。 `AppKit` 状態が変更されている場合は、 `NeedsSave` `UserActivity`応答側ののプロパティをに`true`設定する必要があります。 メソッド`UpdateUserActivityState`を呼び出すことに`UserActivity`よって状態を更新するために、応答側の時間を指定した後に、必要に応じてが自動的に保存されます。
 
-複数のレスポンダーは、1 つを共有している場合`NSUserActivity`受信する、インスタンス、`UpdateUserActivityState`システムは、ユーザーのアクティビティ オブジェクトを更新する場合にコールバックします。 応答側を呼び出す必要がある、`AddUserInfoEntries`に更新する方法、`NSUserActivity`の`UserInfo`この時点で現在のアクティビティの状態を反映するためのディクショナリ。 `UserInfo`それぞれ行う前にディクショナリがオフになって`UpdateUserActivityState`呼び出します。
+複数のレスポンダーが1つ`NSUserActivity`のインスタンスを共有し`UpdateUserActivityState`ている場合は、システムがユーザーアクティビティオブジェクトを更新するときにコールバックを受け取ります。 応答側は、 `AddUserInfoEntries`メソッドを呼び出して、現在`NSUserActivity`のアクティビティの状態を反映するように、この時点での`UserInfo`ディクショナリを更新する必要があります。 `UserInfo` 各`UpdateUserActivityState`呼び出しの前にディクショナリがクリアされます。
 
-アクティビティから自体の関連付けを解除、応答側が設定できるその`UserActivity`プロパティを`null`します。 アプリケーションのフレームワークが管理されている`NSUserActivity`インスタンスには、関連付けられているレスポンダーよりまたはドキュメントがない、自動的に検証済みではありません。
+アクティビティとの関連付けを解除するために、応答側`UserActivity`はその`null`プロパティをに設定できます。 アプリフレームワークマネージ`NSUserActivity`インスタンスに関連付けられたレスポンダーまたはドキュメントがそれ以上ない場合は、自動的に無効になります。
 
-参照してください、[レスポンダーでサポートしているハンドオフ](#supporting-handoff-in-responders)詳細については後述します。
+詳細については、以下の「[応答側でのハンドオフのサポート](#supporting-handoff-in-responders)」セクションを参照してください。
 
-#### <a name="user-activities-and-the-appdelegate"></a>ユーザーのアクティビティと、AppDelegate
+#### <a name="user-activities-and-the-appdelegate"></a>ユーザーアクティビティと AppDelegate
 
-アプリの`AppDelegate`ハンドオフ継続を処理するときに、その主なエントリ ポイントが。 ときに、ユーザーは通知に応答をハンドオフ、適切なアプリを起動 (既に実行されていない場合)、`WillContinueUserActivityWithType`のメソッド、`AppDelegate`が呼び出されます。 この時点で、アプリは、継続が開始されるユーザーに通知する必要があります。
+ハンドオフ継続`AppDelegate`を処理する場合、アプリの主なエントリポイントです。 ユーザーがハンドオフ通知に応答すると、適切なアプリが起動され (まだ実行され`WillContinueUserActivityWithType`ていない`AppDelegate`場合)、のメソッドが呼び出されます。 この時点で、アプリは継続が開始されたことをユーザーに通知する必要があります。
 
-`NSUserActivity`インスタンスが配信される、`AppDelegate`の`ContinueUserActivity`メソッドが呼び出されます。 この時点では、アプリのユーザー インターフェイスを構成し、特定のアクティビティを続行する必要があります。
+インスタンスは、 `AppDelegate`の`ContinueUserActivity`メソッドが呼び出されたときに配信されます。 `NSUserActivity` この時点で、アプリのユーザーインターフェイスを構成し、指定されたアクティビティを続行する必要があります。
 
-参照してください、[実装ハンドオフ](#implementing-handoff)詳細については後述します。
+詳細については、以下の「[ハンドオフの実装](#implementing-handoff)」を参照してください。
 
-## <a name="enabling-handoff-in-a-xamarin-app"></a>Xamarin アプリでのハンドオフを有効にします。
+## <a name="enabling-handoff-in-a-xamarin-app"></a>Xamarin アプリでのハンドオフの有効化
 
-Handoff によって課されるセキュリティ要件、によりハンドオフ フレームワークを使用する Xamarin.iOS アプリをする必要があります適切に構成する、Apple Developer ポータルと Xamarin.iOS プロジェクト ファイル。
+ハンドオフによって課せられるセキュリティ要件により、ハンドオフフレームワークを使用する Xamarin iOS アプリは、Apple Developer ポータルと Xamarin の iOS プロジェクトファイルの両方で適切に構成されている必要があります。
 
 次の手順で行います。
 
-1. ログイン、 [Apple Developer Portal](https://developer.apple.com)します。
-2. をクリックして**証明書, Identifiers & Profiles**します。
-3. これをいない場合は、をクリックして**識別子**アプリの ID を作成し、(例: `com.company.appname`)、それ以外の場合、既存の ID を編集
-4. いることを確認、 **iCloud**サービスは、指定した ID のチェックが完了します。
+1. [Apple Developer ポータル](https://developer.apple.com)にログインします。
+2. [**証明書]、[識別子 & プロファイル**] の順にクリックします。
+3. まだ行っていない場合は、 **[識別子]** をクリックし、アプリの id を作成`com.company.appname`します (例:)。それ以外の場合は、既存の id を編集します。
+4. 指定された ID に対して**iCloud**サービスがチェックされていることを確認します。
 
-    [![](handoff-images/provision01.png "指定した ID の iCloud サービスを有効にします。")](handoff-images/provision01.png#lightbox)
+    [![](handoff-images/provision01.png "指定された ID の iCloud サービスを有効にします")](handoff-images/provision01.png#lightbox)
 5. 変更内容を保存します。
-6. をクリックして**Provisioning Profiles** > **開発**とアプリを作成するには、新しい開発のプロビジョニング プロファイル。
+6. [**プロビジョニングプロファイル** > の**開発**] をクリックし、アプリの新しい開発プロビジョニングプロファイルを作成します。
 
-    [![](handoff-images/provision02.png "新しい開発プロビジョニング プロファイル、アプリの作成します。")](handoff-images/provision02.png#lightbox)
-7. ダウンロードして、新しいプロビジョニング プロファイルをインストールするまたは、Xcode を使用してダウンロードし、プロファイルをインストールしています。
-8. Xamarin.iOS プロジェクトのオプションを編集し、先ほど作成したプロビジョニング プロファイルを使用していることを確認します。
+    [![](handoff-images/provision02.png "アプリの新しい開発プロビジョニングプロファイルを作成する")](handoff-images/provision02.png#lightbox)
+7. 新しいプロビジョニングプロファイルをダウンロードしてインストールするか、Xcode を使用してプロファイルをダウンロードしてインストールします。
+8. Xamarin. iOS プロジェクトのオプションを編集し、先ほど作成したプロビジョニングプロファイルを使用していることを確認します。
 
-    [![](handoff-images/provision03.png "先ほど作成したプロビジョニング プロファイルを選択します。")](handoff-images/provision03.png#lightbox)
-9. 次に、編集、 **Info.plist**ファイルし、プロビジョニング プロファイルの作成に使用されたアプリ ID を使用していることを確認します。
+    [![](handoff-images/provision03.png "作成したプロビジョニングプロファイルを選択します")](handoff-images/provision03.png#lightbox)
+9. 次に、**情報の plist**ファイルを編集し、プロビジョニングプロファイルの作成に使用したアプリ ID を使用していることを確認します。
 
-    [![](handoff-images/provision04.png "アプリ ID を設定します。")](handoff-images/provision04.png#lightbox)
-10. スクロールして、**バック グラウンド モード**セクションし、次のものを確認してください。
+    [![](handoff-images/provision04.png "アプリ ID の設定")](handoff-images/provision04.png#lightbox)
+10. **[バックグラウンドモード]** セクションまでスクロールし、次の項目を確認します。
 
-    [![](handoff-images/provision05.png "必要なバック グラウンド モードを有効にします。")](handoff-images/provision05.png#lightbox)
+    [![](handoff-images/provision05.png "必要なバックグラウンドモードを有効にする")](handoff-images/provision05.png#lightbox)
 11. すべてのファイルに変更を保存します。
 
-これら設定した状態でのアプリケーションがハンドオフ フレームワークの Api にアクセスする準備ができてようになりました。 プロビジョニングの詳細についてを参照してください、 [Device Provisioning](~/ios/get-started/installation/device-provisioning/index.md)と[アプリのプロビジョニング](~/ios/get-started/installation/device-provisioning/index.md)ガイド。
+これらの設定を適用すると、アプリケーションはハンドオフフレームワーク Api にアクセスする準備ができました。 プロビジョニングの詳細については、[デバイスのプロビジョニング](~/ios/get-started/installation/device-provisioning/index.md)と[プロビジョニング](~/ios/get-started/installation/device-provisioning/index.md)に関するガイドを参照してください。
 
-## <a name="implementing-handoff"></a>Handoff を実装します。
+## <a name="implementing-handoff"></a>ハンドオフの実装
 
-同じ開発者チーム ID で署名され、同じアクティビティの種類をサポートするアプリ間でユーザーの作業を続行できます。 ユーザー アクティビティのオブジェクトを作成する Xamarin.iOS アプリでハンドオフを実装する必要があります (いずれかで`UIKit`または`AppKit`)、アクティビティを追跡するために、オブジェクトの状態を更新し、受信側のデバイスで、アクティビティを継続します。
+ユーザーアクティビティは、同じ開発者チーム ID で署名され、同じアクティビティの種類をサポートするアプリ間で継続できます。 Xamarin. iOS アプリにハンドオフを実装するには、ユーザーアクティビティオブジェクト (または`UIKit` `AppKit`のいずれか) を作成し、オブジェクトの状態を更新してアクティビティを追跡し、受信デバイスでアクティビティを続行する必要があります。
 
-### <a name="identifying-user-activities"></a>ユーザー アクティビティを識別します。
+### <a name="identifying-user-activities"></a>ユーザーアクティビティの識別
 
-ハンドオフの実装の最初の手順は、アプリをサポートするユーザー アクティビティの種類を識別するためには、別のデバイスでの継続の候補はそれらのアクティビティの表示. 例: ToDo アプリは、1 つとして項目を編集をサポート可能性があります_ユーザー アクティビティの種類_、および別の利用可能な項目の一覧の参照をサポートします。
+ハンドオフを実装するための最初の手順は、アプリでサポートされているユーザーアクティビティの種類を特定し、どのアクティビティが別のデバイスでの継続の候補として適しているかを確認することです。 例: ToDo アプリは、1つの_ユーザーアクティビティの種類_として項目の編集をサポートし、使用可能な項目の一覧を別の項目として参照することをサポートする場合があります。
 
-アプリでは、多くユーザー アクティビティの種類は、必要なアプリを提供する任意の関数のいずれかを作成できます。 各ユーザー アクティビティの種類、アプリは、型のアクティビティが開始されると、終了し、別のデバイスでそのタスクを続行する最新の状態情報を保持する必要がありますを追跡する必要があります。
+アプリでは、アプリが提供する任意の関数に1つずつ、必要な数のユーザーアクティビティを作成できます。 アプリでは、ユーザーアクティビティの種類ごとに、種類のアクティビティが開始および終了するタイミングを追跡し、最新の状態情報を維持して別のデバイスでそのタスクを続行する必要があります。
 
-送信側と受信側のアプリ間で一対一のマッピングがない同じチーム ID で署名されたすべてのアプリでは、ユーザー アクティビティを続行できます。 たとえば、特定のアプリは、別のデバイスで異なる、個々 のアプリで使用されるアクティビティの 4 つのさまざまな種類を作成できます。 これは、各アプリが小さいと、特定のタスクに焦点は (多くの機能と機能があります) をアプリの Mac のバージョンと iOS のアプリ間で頻繁に発生します。
+ユーザーアクティビティは、同じチーム ID で署名されたすべてのアプリに対して継続できます。送信アプリと受信アプリの間に1対1のマッピングはありません。 たとえば、特定のアプリでは、別のデバイス上の異なる個別のアプリによって使用される4種類のアクティビティを作成できます。 これは、アプリの Mac バージョン (多くの機能と機能がある場合もあります) と iOS アプリ (各アプリが小さく、特定のタスクに重点が置かれている場合) の間で一般的に発生します。
 
-### <a name="creating-activity-type-identifiers"></a>アクティビティの種類の識別子を作成します。
+### <a name="creating-activity-type-identifiers"></a>アクティビティの種類の識別子の作成
 
-_アクティビティ型識別子_に短い文字列が追加、`NSUserActivityTypes`のアプリの配列**Info.plist**ファイルが指定したユーザー アクティビティの種類を一意に識別するために使用します。 配列内のアプリをサポートする各アクティビティの 1 つのエントリがあります。 Apple では、アクティビティの型識別子の逆引き DNS スタイルの表記を使用して競合を避けるためお勧めします。 例:`com.company-name.appname.activity`特定のアプリ ベースのアクティビティまたは`com.company-name.activity`の複数のアプリで実行できるアクティビティ。
+_アクティビティの種類の識別子_は、特定のユーザーアクティビティ`NSUserActivityTypes`の種類を一意に識別するために使用される、アプリの**情報 plist**ファイルの配列に追加される短い文字列です。 配列には、アプリがサポートするアクティビティごとに1つのエントリがあります。 Apple では、競合を避けるために、アクティビティの種類の識別子に対して逆引き DNS スタイルの表記を使用することを提案しています。 たとえば、特定`com.company-name.appname.activity`のアプリベースのアクティビティ、 `com.company-name.activity`または複数のアプリで実行できるアクティビティなどです。
 
-作成するときに、アクティビティの型識別子が使用される、`NSUserActivity`アクティビティの種類を識別するインスタンス。 アクティビティを別のデバイスで続行すると、(アプリのチーム ID) と共に、アクティビティの種類は、アクティビティの続行を起動するには、どのアプリを決定します。
+アクティビティタイプ識別子は、アクティビティの種類を`NSUserActivity`識別するためにインスタンスを作成するときに使用されます。 アクティビティが別のデバイスで続行されると、アクティビティの種類 (アプリのチーム ID と共に) によって、アクティビティを続行するために起動するアプリが決まります。
 
-たとえば、というサンプル アプリを作成するつもりは**MonkeyBrowser** ([ここからダウンロード](https://developer.xamarin.com/samples/monotouch/ios8/MonkeyBrowser/))。 このアプリは、各 web ブラウザー ビューで別の URL を開き、4 つのタブに表示されます。 ユーザーは、アプリを実行している別の iOS デバイス上の任意のタブを続けることになります。
+例として、 **Monkeybrowser**というサンプルアプリを作成します ([ここでダウンロード](https://docs.microsoft.com/samples/xamarin/ios-samples/ios8-monkeybrowser)します)。 このアプリでは、4つのタブが表示され、それぞれの URL が web ブラウザービューで開かれます。 ユーザーは、アプリを実行している別の iOS デバイス上の任意のタブを続行できます。
 
-この動作をサポートするために必要なアクティビティの型識別子を作成するには、編集、 **Info.plist**ファイルに切り替えると、**ソース**ビュー。 追加、`NSUserActivityTypes`キーし、次の識別子を作成します。
+この動作をサポートするために必要なアクティビティの種類の識別子を作成するには、**情報の plist**ファイルを編集し、**ソース**ビューに切り替えます。 キーを`NSUserActivityTypes`追加し、次の識別子を作成します。
 
-[![](handoff-images/type01.png "NSUserActivityTypes キーと plist エディターで識別子が必要です。")](handoff-images/type01.png#lightbox)
+[![](handoff-images/type01.png "Plist エディターでの NSUserActivityTypes キーと必須識別子")](handoff-images/type01.png#lightbox)
 
-4 つ新しいアクティビティの種類の識別子、例では、タブごとに 1 つを作成した**MonkeyBrowser**アプリ。 内容を置き換える独自のアプリを作成するときに、`NSUserActivityTypes`アプリ、アクティビティに固有のアクティビティ型の識別子を持つ配列をサポートしています。
+例の**Monkeybrowser**アプリの各タブに1つずつ、4つの新しいアクティビティの種類の識別子を作成しました。 独自のアプリを作成するときに、 `NSUserActivityTypes`配列の内容を、アプリがサポートするアクティビティに固有のアクティビティの種類の識別子に置き換えます。
 
-### <a name="tracking-user-activity-changes"></a>ユーザーのアクティビティの変更の追跡
+### <a name="tracking-user-activity-changes"></a>ユーザーアクティビティの変更の追跡
 
-新しいインスタンスを作成するとき、`NSUserActivity`クラスを指定します、`NSUserActivityDelegate`変更アクティビティの状態を追跡するインスタンス。 たとえば、次のコードは、状態の変更を追跡するために使用できます。
+`NSUserActivity`クラスの新しいインスタンスを作成するときに、アクティビティの状態へ`NSUserActivityDelegate`の変更を追跡するインスタンスを指定します。 たとえば、次のコードを使用して、状態の変更を追跡できます。
 
 ```csharp
 using System;
@@ -201,17 +201,17 @@ namespace MonkeyBrowse
 }
 ```
 
-`UserActivityReceivedData`継続 Stream が送信側のデバイスからデータを受信したときに、メソッドが呼び出されます。 詳細については、次を参照してください。、[サポート継続ストリーム](#supporting-continuation-streams)以下のセクション。
+メソッド`UserActivityReceivedData`は、継続ストリームが送信デバイスからデータを受信したときに呼び出されます。 詳細については、以下の「[継続ストリームのサポート](#supporting-continuation-streams)」セクションを参照してください。
 
-`UserActivityWasContinued`メソッドは、別のデバイスが現在のデバイスからアクティビティを実行したときに呼び出されます。 、ToDo リストに新しい項目の追加などのアクティビティの種類に応じてアプリを送信側のデバイスでのアクティビティ中止必要がある可能性があります。
+メソッド`UserActivityWasContinued`は、別のデバイスが現在のデバイスからアクティビティを取得したときに呼び出されます。 ToDo リストに新しい項目を追加するなど、アクティビティの種類によっては、アプリが送信元デバイスでアクティビティを中止する必要がある場合があります。
 
-`UserActivityWillSave`アクティビティへの変更が保存され、ローカルで使用可能なデバイス間で同期する前に、メソッドが呼び出されます。 このメソッドを使用して、最後の 1 分に変更を加えることができます、`UserInfo`のプロパティ、`NSUserActivity`インスタンスから送信されます。
+`UserActivityWillSave`メソッドは、アクティビティに対する変更がローカルに保存され、ローカルで使用可能なデバイス間で同期される前に呼び出されます。 このメソッドを使用して、 `UserInfo` `NSUserActivity`インスタンスが送信される前に、インスタンスのプロパティに対して最後の1分間の変更を加えることができます。
 
-### <a name="creating-a-nsuseractivity-instance"></a>NSUserActivity インスタンスを作成します。
+### <a name="creating-a-nsuseractivity-instance"></a>NSUserActivity インスタンスの作成
 
-アプリが別のデバイスで続行の可能性を提供する必要がある各アクティビティにカプセル化する必要があります、`NSUserActivity`インスタンス。 アプリは、必要に応じて多くのアクティビティを作成でき、それらのアクティビティの性質は、機能と対象のアプリの機能に依存します。 たとえば、電子メール アプリは新しいメッセージとメッセージの読み取り用に作成するための 1 つのアクティビティを作成する可能性があります。
+アプリが別のデバイスで継続できる可能性を提供するために必要な各アクティビティは、 `NSUserActivity`インスタンスにカプセル化する必要があります。 アプリでは、必要な数のアクティビティを作成できます。また、アクティビティの性質は、対象のアプリの機能と機能に依存します。 たとえば、電子メールアプリでは、新しいメッセージを作成するためのアクティビティを1つ作成し、メッセージを読み取るために別のアクティビティを作成できます。
 
-この例のアプリでは、新しい`NSUserActivity`タブ付きの web ブラウザー ビューのいずれかで、ユーザーが新しい URL を入力するたびに作成されます。 次のコードでは、指定したタブの状態を格納します。
+このサンプルアプリでは、ユーザー `NSUserActivity`がタブ付き web ブラウザービューのいずれかで新しい URL を入力するたびに、新しいが作成されます。 次のコードは、指定されたタブの状態を格納します。
 
 ```csharp
 public NSString UserActivityTab1 = new NSString ("com.xamarin.monkeybrowser.tab1");
@@ -231,13 +231,13 @@ UserActivity.AddUserInfoEntries (userInfo);
 UserActivity.BecomeCurrent ();
 ```
 
-新たに作成、`NSUserActivity`ユーザー アクティビティの種類のいずれかを使用して、上記で作成したし、アクティビティの人間が判読できるタイトルを提供します。 インスタンスにアタッチします、`NSUserActivityDelegate`の状態が変更され、このユーザーのアクティビティが現在のアクティビティであることを iOS に通知を監視する上に作成します。
+上記で作成し`NSUserActivity`たユーザーアクティビティの種類のいずれかを使用して新しいを作成し、ユーザーが判読できるアクティビティのタイトルを提供します。 上記で作成し`NSUserActivityDelegate`たのインスタンスに接続して状態の変化を監視し、このユーザーアクティビティが現在のアクティビティであることを iOS に通知します。
 
-### <a name="populating-the-userinfo-dictionary"></a>UserInfo ディクショナリの作成
+### <a name="populating-the-userinfo-dictionary"></a>UserInfo 辞書を設定しています
 
-上記で述べたように、`UserInfo`のプロパティ、`NSUserActivity`クラスは、`NSDictionary`特定のアクティビティの状態を定義するために使用するキー/値ペアの。 格納されている値`UserInfo`、次の種類のいずれかを指定する必要があります: `NSArray`、 `NSData`、 `NSDate`、 `NSDictionary`、 `NSNull`、 `NSNumber`、 `NSSet`、 `NSString`、または`NSURL`します。 `NSURL` 受信側のデバイス上の同じドキュメントを指しているように、iCloud のドキュメントを参照するデータ値が自動的に調整されます。
+前述のように、 `UserInfo` `NSUserActivity`クラスのプロパティは`NSDictionary` 、特定のアクティビティの状態を定義するために使用されるキーと値のペアのです。 に`UserInfo`格納される値`NSDate`は`NSData` `NSArray` `NSDictionary` 、、`NSSet`、、 `NSNull` 、、`NSURL`、、、またはのいずれかの型である必要があります。 `NSNumber` `NSString` `NSURL`iCloud ドキュメントを指すデータ値は、受信デバイスで同じドキュメントを参照するように自動的に調整されます。
 
-上記の例で作成しました、`NSMutableDictionary`オブジェクトし、ユーザーが特定のタブで現在表示して URL を提供する 1 つのキーが設定されます。`AddUserInfoEntries`ユーザー アクティビティのメソッドが受信側のデバイスでのアクティビティを復元するために使用するデータでアクティビティを更新するために使用します。
+上の例では、オブジェクトを`NSMutableDictionary`作成し、ユーザーが現在表示している URL を示す単一のキーを設定しています。ユーザー `AddUserInfoEntries`アクティビティのメソッドは、受信デバイスでのアクティビティの復元に使用されるデータを使用してアクティビティを更新するために使用されました。
 
 ```csharp
 // Update the activity when the tab's URL changes
@@ -246,13 +246,13 @@ userInfo.Add (new NSString ("Url"), new NSString (url));
 UserActivity.AddUserInfoEntries (userInfo);
 ```
 
-Apple では、アクティビティが受信側のデバイスに適切なタイミングで送信されるように、必要最低限に送信される情報を維持することをお勧めします。 ドキュメントにアタッチされているイメージ編集より大きな情報が必要な場合に継続ストリームを使用する必要があります、送信する必要があります。 参照してください、[サポート継続ストリーム](#supporting-continuation-streams)詳細については後述します。
+Apple は、受信デバイスにアクティビティが適時に送信されるように、必要の最小値に送信される情報を保持することを提案します。 より大きな情報が必要な場合は、編集するドキュメントに添付されたイメージを送信する必要があるため、継続ストリームを使用する必要があります。 詳細については、後述の「[継続ストリームのサポート](#supporting-continuation-streams)」セクションを参照してください。
 
 ### <a name="continuing-an-activity"></a>アクティビティの続行
 
-ローカルの iOS および OS X デバイスで発信元のデバイスに物理的に近接して継続可能ユーザー アクティビティの可用性、同一の iCloud アカウントに署名されたハンドオフ自動的に通知します。 (チーム ID とアクティビティの種類に基づく) 適切なアプリと情報システムが起動場合は、ユーザーは、新しいデバイスのアクティビティを続行するが、その`AppDelegate`継続は、発生する必要があります。
+ハンドオフは、元のデバイスと物理的に近接し、同じ iCloud アカウントにサインインしているローカルの iOS および OS X デバイスに対して、継続的なユーザーアクティビティの可用性を自動的に通知します。 ユーザーが新しいデバイスでアクティビティを続行することを選択した場合、システムは (チーム ID とアクティビティの種類に基づいて) 適切なアプリを`AppDelegate`起動し、その継続が必要になる情報を表示します。
 
-まず、`WillContinueUserActivityWithType`メソッドが呼び出されるは、アプリが継続の開始をユーザーに通知できるようにします。 次のコードを使用して、 **AppDelegate.cs**継続の開始を処理するために、例のアプリのファイル。
+最初に、 `WillContinueUserActivityWithType`メソッドが呼び出されます。これにより、アプリは、継続が開始されようとしていることをユーザーに通知できます。 このサンプルアプリの**AppDelegate.cs**ファイルにある次のコードを使用して、継続の開始を処理します。
 
 ```csharp
 public NSString UserActivityTab1 = new NSString ("com.xamarin.monkeybrowser.tab1");
@@ -297,7 +297,7 @@ public override bool WillContinueUserActivity (UIApplication application, string
 }
 ```
 
-上記の例では、各ビュー コント ローラーの登録を`AppDelegate`パブリックであり`PreparingToHandoff`メソッドをアクティビティのインジケーターと、アクティビティの期限が現在のデバイスに渡すことをユーザーに知らせるメッセージが表示されます。 例:
+上の例では、各ビューコントローラーがに`AppDelegate`登録され、 `PreparingToHandoff`アクティビティインジケーターとメッセージを表示するパブリックメソッドがあります。これにより、アクティビティが現在のデバイスに渡されることをユーザーに知らせることができます。 例:
 
 ```csharp
 private void ShowBusy(string reason) {
@@ -322,7 +322,7 @@ public void PreparingToHandoff() {
 }
 ```
 
-`ContinueUserActivity`の`AppDelegate`が特定のアクティビティを実際には引き続き呼び出されます。 この例のアプリ: から、もう一度
+のは`ContinueUserActivity` 、指定されたアクティビティを実際に続行するために呼び出されます。`AppDelegate` ここでも、サンプルアプリから次のようになります。
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)
@@ -366,7 +366,7 @@ public override bool ContinueUserActivity (UIApplication application, NSUserActi
 }
 ```
 
-パブリック`PerformHandoff`各ビュー コント ローラーのメソッドは、実際には、ハンドオフが発行され、現在のデバイスでのアクティビティを復元します。 例の場合は、別のデバイスでユーザーが閲覧された特定のタブで、同じ URL を表示します。 例:
+各ビュー `PerformHandoff`コントローラーのパブリックメソッドは、実際にハンドオフを事前に形成し、現在のデバイスのアクティビティを復元します。 この例の場合、ユーザーが別のデバイスで参照していた特定のタブに同じ URL が表示されます。 例:
 
 ```csharp
 private void HideBusy() {
@@ -403,13 +403,13 @@ public void PerformHandoff(NSUserActivity activity) {
 }
 ```
 
-`ContinueUserActivity`メソッドが含まれています、`UIApplicationRestorationHandler`ベース アクティビティの再開のドキュメントまたは応答側を呼び出すことです。 渡す必要があります、`NSArray`または復元のハンドラーが呼び出されたときに、復元可能なオブジェクト。 例えば:
+メソッド`ContinueUserActivity`には、 `UIApplicationRestorationHandler`ドキュメントまたはレスポンダーベースのアクティビティを再開するために呼び出すことができるが含まれています。 または復元可能な`NSArray`オブジェクトを、呼び出されたときに復元ハンドラーに渡す必要があります。 例えば:
 
 ```csharp
 completionHandler (new NSObject[]{Tab4});
 ```
 
-各オブジェクトが渡されると、その`RestoreUserActivityState`メソッドが呼び出されます。 各オブジェクトにデータを使用し、`UserInfo`が自身の状態を復元するためのディクショナリ。 例えば:
+渡されたオブジェクトごとに`RestoreUserActivityState` 、そのメソッドが呼び出されます。 各オブジェクトは、 `UserInfo`ディクショナリ内のデータを使用して、独自の状態を復元できます。 例えば:
 
 ```csharp
 public override void RestoreUserActivityState (NSUserActivity activity)
@@ -421,13 +421,13 @@ public override void RestoreUserActivityState (NSUserActivity activity)
 }
 ```
 
-ドキュメント ベースのアプリを実装していない場合の`ContinueUserActivity`メソッドまたはそれを返します`false`、`UIKit`または`AppKit`アクティビティを自動的に再開することができます。 参照してください、[ドキュメント ベース アプリでのサポートのハンドオフ](#supporting-handoff-in-document-based-apps)詳細については後述します。
+ドキュメントベースの`ContinueUserActivity`アプリの場合、メソッドを実装していない場合、 `false` `UIKit`または`AppKit`を返した場合、またはがを返した場合、アクティビティは自動的に再開されます。 詳細については、以下の「[ドキュメントベースのアプリでのハンドオフのサポート](#supporting-handoff-in-document-based-apps)」セクションを参照してください。
 
-### <a name="failing-handoff-gracefully"></a>ハンドオフにおける注意点
+### <a name="failing-handoff-gracefully"></a>ハンドオフの正常エラー
 
-ハンドオフは、コレクションが疎に接続されている iOS および OS X デバイスの間で情報の送信に依存するので、転送プロセスされない場合があります。 このようなエラーを適切に処理し、発生する状況がすべてのユーザーに通知、アプリを設計する必要があります。
+ハンドオフは、大量の接続された iOS デバイスと OS X デバイス間での情報の送信に依存しているため、転送プロセスが失敗することがあります。 これらのエラーを適切に処理し、発生した状況をユーザーに通知するようにアプリを設計する必要があります。
 
-障害が発生した場合、`DidFailToContinueUserActivitiy`のメソッド、`AppDelegate`が呼び出されます。 例えば:
+エラーが発生した場合`DidFailToContinueUserActivitiy`は、 `AppDelegate`のメソッドが呼び出されます。 例えば:
 
 ```csharp
 public override void DidFailToContinueUserActivitiy (UIApplication application, string userActivityType, NSError error)
@@ -437,23 +437,23 @@ public override void DidFailToContinueUserActivitiy (UIApplication application, 
 }
 ```
 
-指定されたを使用する必要があります`NSError`障害についてユーザーに情報を提供します。
+指定`NSError`されたを使用して、エラーに関する情報をユーザーに提供する必要があります。
 
-## <a name="native-app-to-web-browser-handoff"></a>Web ブラウザーのハンドオフするネイティブ アプリ
+## <a name="native-app-to-web-browser-handoff"></a>ネイティブアプリから Web ブラウザーへのハンドオフ
 
-ユーザーは、目的のデバイスにインストールされている適切なネイティブ アプリをしなくても、アクティビティを続行することがあります。 場合によっては、web ベースのインターフェイスが必要な機能を提供し、アクティビティを継続することができますも。 たとえば、ユーザーの電子メール アカウントでは、構成、およびメッセージを読み取るのための web ベース UI を提供できます。
+ユーザーは、適切なネイティブアプリが目的のデバイスにインストールされていなくても、アクティビティを続行することができます。 場合によっては、web ベースのインターフェイスが必要な機能を提供し、アクティビティを続行することもできます。 たとえば、ユーザーの電子メールアカウントには、メッセージの作成と読み取りを行うための web ベースの UI が用意されている場合があります。
 
-元のネイティブ アプリ URL を知っている場合に、web インターフェイス (および、必要な構文を継続する特定の項目を識別するため)、この情報をエンコードできる、`WebpageURL`のプロパティ、`NSUserActivity`インスタンス。 受信側のデバイスが、継続を処理するためにインストールされている適切なネイティブ アプリを持っていない場合、指定された web インターフェイスを呼び出すことができます。
+元のネイティブアプリが web インターフェイスの URL (および指定された項目の継続を識別するために必要な構文) を認識している場合、 `WebpageURL` `NSUserActivity`インスタンスのプロパティでこの情報をエンコードできます。 受信デバイスに、継続を処理する適切なネイティブアプリがインストールされていない場合は、提供された web インターフェイスを呼び出すことができます。
 
-## <a name="web-browser-to-native-app-handoff"></a>Web ブラウザーでネイティブ アプリ ハンドオフ
+## <a name="web-browser-to-native-app-handoff"></a>Web ブラウザーからネイティブアプリへのハンドオフ
 
-ユーザーは、元のデバイスでは、web ベースのインターフェイスを使用していたし、受信側のデバイスでネイティブ アプリのドメイン部分を要求するかどうか、`WebpageURL`プロパティ、その後、システムにそのアプリの継続のハンドルを使用します。 新しいデバイスが受信する、`NSUserActivity`インスタンスとして、アクティビティの種類を示す`BrowsingWeb`と`WebpageURL`は、ユーザーがアクセスして、URL が含まれます、`UserInfo`ディクショナリを空になります。
+ユーザーが元のデバイスで web ベースのインターフェイスを使用していて、受信側のデバイス上のネイティブアプリが`WebpageURL`プロパティのドメイン部分を要求している場合、システムはそのアプリを使用して継続を処理します。 新しいデバイスは、アクティビティの`NSUserActivity`種類をとして`BrowsingWeb`マークするインスタンスを`WebpageURL`受け取ります。には、ユーザーがアクセス`UserInfo`していた URL が含まれます。ディクショナリは空になります。
 
-この種類のハンドオフに参加するアプリでドメインを要求にする必要があります、`com.apple.developer.associated-domains`形式と権利`<service>:<fully qualified domain name>`(例: `activity continuation:company.com`)。
+アプリがこの種類のハンドオフに参加するには、 `com.apple.developer.associated-domains`資格情報のドメインをという形式`<service>:<fully qualified domain name>`で要求する必要が`activity continuation:company.com`あります (例:)。
 
-指定したドメインと一致する場合、`WebpageURL`ハンドオフ プロパティの値は、そのドメインに web サイトから承認されたアプリ Id の一覧をダウンロードします。 Web サイトが承認済みの Id という名前の署名された JSON ファイルの一覧を提供する必要があります**apple アプリ サイト関連付け**(たとえば、 `https://company.com/apple-app-site-association`)。
+指定されたドメインが`WebpageURL`プロパティの値と一致する場合、ハンドオフによって、承認されたアプリ id の一覧がそのドメインの web サイトからダウンロードされます。 Web サイトでは、 **apple-app-site-association**という名前の署名付き JSON ファイルに承認済み id の一覧`https://company.com/apple-app-site-association`を提供する必要があります (例:)。
 
-この JSON ファイル形式でアプリ Id のリストを指定するディクショナリを格納して`<team identifier>.<bundle identifier>`します。 例えば:
+この JSON ファイルには、という形式`<team identifier>.<bundle identifier>`のアプリ id の一覧を指定するディクショナリが含まれています。 例えば:
 
 ```csharp
 {
@@ -464,7 +464,7 @@ public override void DidFailToContinueUserActivitiy (UIApplication application, 
 }
 ```
 
-JSON ファイルに署名する (正しいことがあるできるように`Content-Type`の`application/pkcs7-mime`)、使用、**ターミナル**アプリと`openssl`証明書とキーは iOS によって信頼された証明書機関によって発行されたコマンド (を参照してください[https://support.apple.com/kb/ht5012 ](https://support.apple.com/kb/ht5012)一覧については)。 例えば:
+JSON ファイルに署名する (が正しい`Content-Type` `application/pkcs7-mime`ことを確認するため) には、**ターミナル**アプリと`openssl` 、iOS によって信頼されている証明機関によって発行さ[https://support.apple.com/kb/ht5012](https://support.apple.com/kb/ht5012)れた証明書とキーを使用したコマンドを使用します (一覧については、「」を参照してください)。 例えば:
 
 ```csharp
 echo '{"activitycontinuation":{"apps":["YWBN8XTPBJ.com.company.FirstApp",
@@ -477,17 +477,17 @@ cat json.txt | openssl smime -sign -inkey company.com.key
 -outform DER > apple-app-site-association
 ```
 
-`openssl`コマンドは、web サイトに設置する署名付き JSON ファイルを出力、 **apple アプリ サイト関連付け**URL。 例えば:
+この`openssl`コマンドは、web サイトに配置した署名付きの JSON ファイルを、 **apple アプリサイトの関連付け**URL に出力します。 例えば:
 
 ```csharp
 https://example.com/apple-app-site-association.
 ```
 
-アプリは任意のアクティビティを受け取るが`WebpageURL`ドメインがその`com.apple.developer.associated-domains`権利。 のみ、`http`と`https`プロトコルは、サポート、その他のプロトコルには、例外が発生します。
+アプリは、 `WebpageURL`ドメインの`com.apple.developer.associated-domains`権利があるすべてのアクティビティを受け取ります。 プロトコルとプロトコル`https`のみがサポートされており、他のプロトコルでは例外が発生します。 `http`
 
-## <a name="supporting-handoff-in-document-based-apps"></a>ドキュメント ベースのアプリでのハンドオフのサポート
+## <a name="supporting-handoff-in-document-based-apps"></a>ドキュメントベースのアプリでのハンドオフのサポート
 
-IOS および OS X で、前述のようドキュメント ベースのアプリは自動的にサポート ハンドオフ iCloud ベースのドキュメントの場合、アプリの**Info.plist**ファイルが含まれています、`CFBundleDocumentTypes`のキー`NSUbiquitousDocumentUserActivityType`します。 例えば:
+前述のように、iOS と OS X では、アプリの**情報の plist**ファイルにの`CFBundleDocumentTypes` `NSUbiquitousDocumentUserActivityType`キーが含まれている場合、ドキュメントベースのアプリは iCloud ベースのドキュメントのハンドオフを自動的にサポートします。 例えば:
 
 ```xml
 <key>CFBundleDocumentTypes</key>
@@ -507,23 +507,23 @@ IOS および OS X で、前述のようドキュメント ベースのアプリ
 </array>
 ```
 
-この例では、文字列は、逆引き DNS アプリの追加アクティビティの名前指定子は。 アクティビティの種類のエントリの必要はありませんで繰り返されるこの方法を入力した場合、`NSUserActivityTypes`の配列、 **Info.plist**ファイル。
+この例では、文字列は、アクティビティの名前が付加された逆引き DNS アプリ指定子です。 このように入力した場合、アクティビティの種類のエントリを、 `NSUserActivityTypes` **情報 plist**ファイルの配列で繰り返す必要はありません。
 
-ユーザー アクティビティの自動的に作成されたオブジェクト (ドキュメントの利用`UserActivity`プロパティ)、アプリの他のオブジェクトによって参照される、継続の状態を復元するために使用できます。 たとえば、追跡するために項目の選択とドキュメントを置きます。 このアクティビティを設定する必要がある`NeedsSave`プロパティを`true`状態を変更および更新されるたびに、`UserInfo`ディクショナリで、`UpdateUserActivityState`メソッド。
+自動的に作成されたユーザーアクティビティオブジェクト (ドキュメントの`UserActivity`プロパティを通じて利用可能) は、アプリ内の他のオブジェクトから参照でき、継続時に状態を復元するために使用されます。 たとえば、項目の選択とドキュメントの位置を追跡します。 状態が変更され、 `NeedsSave` `UpdateUserActivityState`メソッド内`true`のディクショナリが`UserInfo`更新されるたびに、このアクティビティプロパティをに設定する必要があります。
 
-`UserActivity`プロパティは、任意のスレッドから使用できるしに iCloud の入出力移動するときに、ドキュメントの同期を保つために使用できるように、監視することのキー値 (KVO) プロトコルに準拠しています。 `UserActivity`ドキュメントが閉じられたときに、プロパティは無効になります。
+プロパティ`UserActivity`は任意のスレッドから使用でき、キー値観察 (kvo) プロトコルに準拠しているため、iCloud との間で移動するときにドキュメントの同期を維持するために使用できます。 ドキュメント`UserActivity`が閉じられると、プロパティは無効になります。
 
-詳細については、Apple を参照してください[ドキュメント ベース アプリでユーザーのアクティビティ サポート](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/Handoff/HandoffFundamentals/HandoffFundamentals.html#//apple_ref/doc/uid/TP40014338-CH3-SW5)ドキュメント。
+詳細については、[ドキュメントベースのアプリドキュメントの Apple のユーザーアクティビティサポート](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/Handoff/HandoffFundamentals/HandoffFundamentals.html#//apple_ref/doc/uid/TP40014338-CH3-SW5)を参照してください。
 
-## <a name="supporting-handoff-in-responders"></a>レスポンダーでハンドオフのサポート
+## <a name="supporting-handoff-in-responders"></a>応答側でのハンドオフのサポート
 
-レスポンダーを関連付けることができます (いずれかから継承された`UIResponder`iOS でまたは`NSResponder`OS X 上) を設定してアクティビティを`UserActivity`プロパティ。 システムが自動的に保存、`UserActivity`プロパティに適切な応答側の呼び出し時間`UpdateUserActivityState`ユーザー アクティビティのオブジェクトを使用する現在のデータを追加するメソッドを`AddUserInfoEntriesFromDictionary`メソッド。
+プロパティを設定することによって`UIResponder` 、(iOS `NSResponder`上または OS X 上で) レスポンダーを活動に関連付けることができます。 `UserActivity` システムは、適切な`UserActivity`タイミングでプロパティを自動的に保存し、応答`UpdateUserActivityState`側のメソッドを呼び出して、 `AddUserInfoEntriesFromDictionary`メソッドを使用して現在のデータをユーザーアクティビティオブジェクトに追加します。
 
-## <a name="supporting-continuation-streams"></a>継続のストリームをサポートしています。
+## <a name="supporting-continuation-streams"></a>継続ストリームのサポート
 
-場合、アクティビティの続行に必要な情報量効率的に転送できません、初期のハンドオフ ペイロードでもあるでしょう。 このような場合は、受信側のアプリは、それ自体と、元のアプリ データを転送する間、1 つまたは複数のストリームを確立できます。
+は、アクティビティを続行するために必要な情報量が、初期ハンドオフペイロードによって効率的に転送されない場合があります。 このような状況では、受信側のアプリは、データを転送するために、それ自体と元のアプリの間に1つ以上のストリームを確立できます。
 
-元のアプリの設定、`SupportsContinuationStreams`のプロパティ、`NSUserActivity`インスタンス`true`します。 例えば:
+元のアプリによって`SupportsContinuationStreams` 、 `NSUserActivity`インスタンスのプロパティが`true`に設定されます。 例えば:
 
 ```csharp
 // Create a new user Activity to support this tab
@@ -542,7 +542,7 @@ UserActivity.AddUserInfoEntries (userInfo);
 UserActivity.BecomeCurrent ();
 ```
 
-受信側のアプリを呼び出して、`GetContinuationStreams`のメソッド、`NSUserActivity`でその`AppDelegate`ストリームを確立するためにします。 例えば:
+受信側のアプリは、 `GetContinuationStreams` `NSUserActivity`その`AppDelegate`のメソッドを呼び出して、ストリームを確立できます。 例えば:
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)
@@ -586,55 +586,55 @@ public override bool ContinueUserActivity (UIApplication application, NSUserActi
 }
 ```
 
-ユーザー アクティビティのデリゲートが呼び出すことによって、ストリームを受信元のデバイスでは、その`DidReceiveInputStream`再開のデバイスで、ユーザー アクティビティを続行する、データを提供するメソッドが要求されました。
+元のデバイスでは、ユーザーアクティビティデリゲートは、 `DidReceiveInputStream`メソッドを呼び出して、再開中のデバイスでユーザーアクティビティを続行するために要求されたデータを提供することで、ストリームを受信します。
 
-使用する、`NSInputStream`データをストリーミングする読み取り専用アクセスを提供して、`NSOutputStream`書き込み専用アクセスを提供します。 要求と応答の形式で、受信側のアプリより多くのデータを要求し、元のアプリで提供します、ストリームを使用する必要があります。 発信元デバイスの出力ストリームに書き込まれたデータを継続的のデバイスでは、入力ストリームから読み込まれるように、またはその逆です。
+を`NSInputStream`使用してストリームデータへの読み取り専用アクセスを提供し、は`NSOutputStream`書き込み専用アクセスを提供します。 ストリームは要求と応答の形式で使用する必要があります。受信側のアプリは、さらに多くのデータを要求し、発信元のアプリがそれを提供します。 そのため、元のデバイスの出力ストリームに書き込まれるデータは、継続しているデバイスの入力ストリームから読み取られます。逆の場合も同様です。
 
-継続 Stream が必要な状況であってもが必要最小限の背面と 2 つのアプリ間の通信です。
+継続ストリームが必要な場合でも、2つのアプリ間の通信は、ごくわずかにする必要があります。
 
-詳細については、Apple を参照してください。[を使用して継続ストリーム](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/Handoff/AdoptingHandoff/AdoptingHandoff.html#//apple_ref/doc/uid/TP40014338-CH2-SW13)ドキュメント。
+詳細については、「Apple の[継続ストリームの使用](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/Handoff/AdoptingHandoff/AdoptingHandoff.html#//apple_ref/doc/uid/TP40014338-CH2-SW13)」のドキュメントを参照してください。
 
-## <a name="handoff-best-practices"></a>ハンドオフのベスト プラクティス
+## <a name="handoff-best-practices"></a>ハンドオフのベストプラクティス
 
-ハンドオフ経由でのユーザー アクティビティのシームレスな継続の実装を成功させるには、関連するさまざまなコンポーネントのための慎重に設計が必要です。 Apple では、ハンドオフが有効になっているアプリの次のベスト プラクティスを採用することを示しています。
+ハンドオフによるユーザーアクティビティのシームレスな継続を正常に実装するには、関連するさまざまなコンポーネントがあるため、慎重に設計する必要があります。 Apple では、ハンドオフが有効になっているアプリに関する次のベストプラクティスを採用することを提案します。
 
-- 次回に続くアクティビティの状態に関連する最小のペイロードを必要とするユーザー アクティビティをデザインします。 ペイロードが大きいほど、長くを開始する continuation がかかります。
-- 大量のデータを正常に継続を転送する必要がある場合、は、構成とネットワークのオーバーヘッドで関連するコストを考慮します。
-- 大きな Mac アプリ ユーザーのアクティビティによって処理される、いくつか小さくなり、iOS デバイスでタスク固有のアプリを作成するが一般的です。 連携して動作が正常に失敗したり、別のアプリと OS のバージョンを設計する必要があります。
-- アクティビティの種類を指定する場合は、逆引き DNS 表記を使用して、衝突を避けるためです。 型定義でその名前を含める必要があるアクティビティが特定のアプリに固有の場合は、(たとえば`com.myCompany.myEditor.editing`)。 アクティビティは、複数のアプリで動作できる場合、は、定義から、アプリ名を削除 (たとえば`com.myCompany.editing`)。
-- アプリがユーザー アクティビティの状態を更新する必要があるかどうか (`NSUserActivity`) 設定、`NeedsSave`プロパティを`true`します。 Handoff がデリゲートを呼び出し、適切なタイミングに`UserActivityWillSave`メソッドを更新できるように、`UserInfo`ディクショナリとして必要です。
-- 実装する必要がありますハンドオフ プロセスは、受信側のデバイスでは瞬時に初期化しない可能性があります、ため、`AppDelegate`の`WillContinueUserActivity`し、ユーザーに通知する、継続が開始されようとしています。
+- アクティビティの状態を継続できるようにするために可能な最小のペイロードを要求するように、ユーザーアクティビティを設計します。 ペイロードが大きいほど、継続の開始にかかる時間が長くなります。
+- 継続を成功させるために大量のデータを転送する必要がある場合は、構成およびネットワークのオーバーヘッドに関連するコストを考慮してください。
+- 大規模な Mac アプリでは、iOS デバイス上の複数の小さなタスク固有のアプリによって処理されるユーザーアクティビティを作成するのが一般的です。 アプリと OS のバージョンは、連携して動作するように設計されているか、適切に失敗します。
+- アクティビティの種類を指定する場合は、競合を回避するために、逆引き DNS 表記を使用します。 アクティビティが特定のアプリに固有のものである場合は、その名前を型定義に含める必要`com.myCompany.myEditor.editing`があります (たとえば、)。 アクティビティが複数のアプリで動作する場合は、定義からアプリ名を削除します`com.myCompany.editing`(たとえば、)。
+- アプリでユーザーアクティビティの状態を更新する必要がある場合`NSUserActivity`()、 `NeedsSave`プロパティを`true`に設定します。 適切なタイミングで、ハンドオフはデリゲートの`UserActivityWillSave`メソッドを呼び出し、必要に`UserInfo`応じて辞書を更新できるようにします。
+- ハンドオフプロセスは受信側のデバイスですぐに初期化されない場合が`AppDelegate`ある`WillContinueUserActivity`ため、を実装して、継続が開始されることをユーザーに通知する必要があります。
 
-## <a name="example-handoff-app"></a>ハンドオフ アプリの例
+## <a name="example-handoff-app"></a>ハンドオフアプリの例
 
-付属のハンドオフを使用して Xamarin.iOS アプリで例として、 [ **MonkeyBrowser** ](https://developer.xamarin.com/samples/monotouch/ios8/MonkeyBrowser/)このガイドを使ってサンプル アプリです。 アプリには、ユーザーがそれぞれ特定のアクティビティ型を持つ web のブラウズに使用できる 4 つのタブがあります。天気、お気に入り、休憩時間および作業します。
+Xamarin iOS アプリでハンドオフを使用する例として、このガイドには[**Monkeybrowser**](https://docs.microsoft.com/samples/xamarin/ios-samples/ios8-monkeybrowser)サンプルアプリが含まれています。 アプリには、ユーザーが web を参照するために使用できる4つのタブがあり、それぞれに特定の種類のアクティビティがあります。天気、お気に入り、コーヒーの休憩、仕事などです。
 
-任意のタブのユーザーが新しい URL とタップに入ったときに、**移動**ボタンを新しい`NSUserActivity`ユーザーが現在を参照する URL を含むタブが作成されます。
+任意のタブで、ユーザーが新しい url を入力して **[移動**] ボタンをタップ`NSUserActivity`すると、そのタブ用に新しいが作成され、ユーザーが現在参照している url が表示されます。
 
-[![](handoff-images/handoff01.png "ハンドオフ アプリの例")](handoff-images/handoff01.png#lightbox)
+[![](handoff-images/handoff01.png "ハンドオフアプリの例")](handoff-images/handoff01.png#lightbox)
 
-ユーザーのデバイスのもう 1 つがある場合、 **MonkeyBrowser** 、インストールされているアプリが同じユーザー アカウントを使用して iCloud にサインイン、ネットワーク、およびホーム上のデバイスに近接、ハンドオフ アクティビティが表示されますが、同じ(左下隅) に画面:
+別のユーザーのデバイスに**Monkeybrowser**アプリがインストールされている場合は、同じユーザーアカウントを使用して iCloud にサインインし、同じネットワーク上にあり、上のデバイスに近接しているときに、ハンドオフアクティビティがホーム画面に表示されます (下部)。左上隅):
 
-[![](handoff-images/handoff02.png "左下隅のホーム画面に表示されるハンドオフ アクティビティ")](handoff-images/handoff02.png#lightbox)
+[![](handoff-images/handoff02.png "左下隅のホーム画面に表示されるハンドオフアクティビティ")](handoff-images/handoff02.png#lightbox)
 
-ハンドオフ アイコンをユーザーが上にドラッグした場合、アプリが起動され、ユーザー アクティビティがで指定された、`NSUserActivity`新しいデバイスを継続します。
+ユーザーがハンドオフアイコンを上にドラッグすると、アプリが起動され、で`NSUserActivity`指定されたユーザーアクティビティが新しいデバイスで続行されます。
 
-[![](handoff-images/handoff03.png "新しいデバイスに続き、ユーザー アクティビティ")](handoff-images/handoff03.png#lightbox)
+[![](handoff-images/handoff03.png "ユーザーアクティビティは新しいデバイスで続行されます")](handoff-images/handoff03.png#lightbox)
 
-ときに、ユーザー アクティビティが正常に送信された別 Apple のデバイスに送信側のデバイスの`NSUserActivity`への呼び出しが表示されます、`UserActivityWasContinued`メソッドをその`NSUserActivityDelegate`別に、ユーザー アクティビティが正常に転送されたことを認識できるようにするにはデバイスです。
+ユーザーアクティビティが別の Apple デバイスに正常に送信されると、送信元`NSUserActivity`デバイスのは、ユーザーアクティビティ`UserActivityWasContinued`が別の`NSUserActivityDelegate`デバイスに正常に転送されたことを通知するために、のメソッドへの呼び出しを受信します。ドライブ.
 
 ## <a name="summary"></a>まとめ
 
-この記事では、ユーザーの Apple デバイスの複数のユーザー アクティビティを続行するために使用ハンドオフ フレームワークの概要を与えられます。 次に、有効にし、Xamarin.iOS アプリでハンドオフを実装する方法を示しました。 最後に、さまざまな種類の使用可能なハンドオフ継続とハンドオフのベスト プラクティスを説明します。
+この記事では、ユーザーの Apple デバイスの複数のユーザーアクティビティを続行するために使用されるハンドオフフレームワークの概要について説明しました。 次に、Xamarin iOS アプリでハンドオフを有効にして実装する方法を示しました。 最後に、さまざまな種類のハンドオフ継続の使用方法と、ハンドオフのベストプラクティスについて説明しました。
 
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [iOS 9 のサンプル](https://developer.xamarin.com/samples/ios/iOS9/)
-- [MonkeyBrowser サンプル](https://developer.xamarin.com/samples/monotouch/ios8/MonkeyBrowser/)
-- [iOS 9 開発者向け](https://developer.apple.com/ios/pre-release/)
-- [IOS 9.0 を新します。](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
+- [iOS 9 のサンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9)
+- [MonkeyBrowser のサンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios8-monkeybrowser)
+- [iOS 9 (開発者向け)](https://developer.apple.com/ios/pre-release/)
+- [IOS 9.0 の新機能](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
 - [HomeKitDeveloper ガイド](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/HomeKitDeveloperGuide/Introduction/Introduction.html)
-- [HomeKit のユーザー インターフェイス ガイドライン](https://developer.apple.com/homekit/ui-guidelines/)
-- [HomeKit フレームワーク参照](https://developer.apple.com/library/ios/home_kit_framework_ref)
+- [ホームキットのユーザーインターフェイスのガイドライン](https://developer.apple.com/homekit/ui-guidelines/)
+- [ホームキットフレームワークリファレンス](https://developer.apple.com/library/ios/home_kit_framework_ref)

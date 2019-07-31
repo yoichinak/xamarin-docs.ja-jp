@@ -7,23 +7,23 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/13/2019
-ms.openlocfilehash: ec1600f57daf627742db41f7410ef4f49b53c2b3
-ms.sourcegitcommit: 4b6e832d1db5616b657dc8540da67c509b28dc1d
+ms.openlocfilehash: 51555382e38412b7fa2c5c821b252984758bb1ec
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68386187"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656963"
 ---
 # <a name="xamarinforms-map"></a>Xamarin.Forms のマップ
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithMaps/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
 _Xamarin.Forms は、各プラットフォームでネイティブ マップ Api を使用します。_
 
 Xamarin.Forms.Maps は、各プラットフォームでネイティブ マップ Api を使用します。 これにより、ユーザーのための高速で使い慣れたマップエクスペリエンスが提供されますが、各プラットフォーム API の要件に準拠するためにはいくつかの構成手順が必要になります。
 構成すると、`Map`共通コードでその他の Xamarin.Forms 要素と同様の動作を制御します。
 
-マップ コントロールが使用されて、 [MapsSample](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithMaps/)サンプルは、次のとおりです。
+マップ コントロールが使用されて、 [MapsSample](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)サンプルは、次のとおりです。
 
  [![MobileCRM サンプル内の対応付け](map-images/maps-zoom-sml.png "マップ コントロールの例")](map-images/maps-zoom.png#lightbox "マップ コントロールの例")
 
@@ -377,8 +377,8 @@ public class MapItemTemplateSelector : DataTemplateSelector
 
 ## <a name="related-links"></a>関連リンク
 
-- [MapsSample](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithMaps/)
+- [MapsSample](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 - [カスタム レンダラーをマップします。](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md)
-- [Xamarin.Forms のサンプル](https://developer.xamarin.com/samples/xamarin-forms/all/)
+- [Xamarin.Forms のサンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
 - [DataTemplateSelector を作成する](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)
 - [Maps API](xref:Xamarin.Forms.Maps)

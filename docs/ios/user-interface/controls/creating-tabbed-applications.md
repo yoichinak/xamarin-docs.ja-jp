@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: e02b5631aff76e35300ae4d7dd5e3c6652f6e3da
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 1c3be128749b9fd0f67aa83038b3d30f4b2fcd2d
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61427187"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657540"
 ---
 # <a name="tab-bars-and-tab-bar-controllers-in-xamarinios"></a>タブ バーと Xamarin.iOS でのタブ バー コント ローラー
 
@@ -61,7 +61,7 @@ ms.locfileid: "61427187"
 
 ### <a name="adding-the-uitabbarcontroller"></a>UITabBarController を追加します。
 
-次に、空のクラスを選択して追加**ファイル > 新規ファイル**を選択して、**全般。空のクラス**テンプレート。 ファイルに名前を`TabController`次に示すよう。
+次に、 **[ファイル > 新しいファイル]** を選択し、[全般 **] を選択して、空のクラスを追加します。空の**クラステンプレートです。 ファイルに名前を`TabController`次に示すよう。
 
 [![](creating-tabbed-applications-images/02-newclass.png "TabController クラスを追加します。")](creating-tabbed-applications-images/02-newclass.png#lightbox)
 
@@ -156,7 +156,7 @@ public partial class AppDelegate : UIApplicationDelegate
 
 #### <a name="setting-a-system-item"></a>システムの項目の設定
 
-最初に、システムの項目を使用する最初のタブを設定してみましょう。 コンス トラクター、 `TabController`、コント ローラーを設定する行を削除`Title`の`tab1`をインスタンス化し、コント ローラーを設定するのには、次のコードに置き換えます`TabBarItem`プロパティ。
+最初に、システムの項目を使用する最初のタブを設定してみましょう。 コンストラクター、 `TabController`、コント ローラーを設定する行を削除`Title`の`tab1`をインスタンス化し、コント ローラーを設定するのには、次のコードに置き換えます`TabBarItem`プロパティ。
 
 ```csharp
 tab1.TabBarItem = new UITabBarItem (UITabBarSystemItem.Favorites, 0);
@@ -283,8 +283,8 @@ MainStoryboard.storyboard ファイルをダブルクリックしてデザイナ
 
 ドラッグして、`Label`と`Button`から ViewController1 上に、**ツールボックス**右側にします。 次に、名前と、次のコントロールのテキストを編集するのに [プロパティ] タブを使用します。
 
--  **ラベル**:`Text` = **1 つ**
--  **ボタン**:`Title` = **ユーザーがいくつかの初期操作**
+-  **ラベル**:`Text` = **目**
+-  **ボタン**:`Title` = **ユーザーが初期アクションを実行する**
 
 
 ボタンの可視性を制御します、`TouchUpInside`イベント、および私たちは、分離コードで参照する必要があります。 みましょうを識別、**名前**`aButton`プロパティ パッドで、次のスクリーン ショットに示すようにします。
@@ -370,6 +370,6 @@ public override void ViewDidLoad ()
 
 ## <a name="related-links"></a>関連リンク
 
-- [タブ付きアプリケーション (サンプル) を作成します。](https://developer.xamarin.com/samples/monotouch/CreatingTabbedApplications/)
+- [タブ付きアプリケーション (サンプル) を作成します。](https://docs.microsoft.com/samples/xamarin/ios-samples/creatingtabbedapplications)
 - [Images.zip](https://github.com/xamarin/ios-samples/blob/master/CreatingTabbedApplications/Resources/images.zip?raw=true)
 - [UITabBarController クラスのリファレンス](https://developer.apple.com/library/ios/#documentation/uikit/reference/UITabBarController_Class/Reference/Reference.html)

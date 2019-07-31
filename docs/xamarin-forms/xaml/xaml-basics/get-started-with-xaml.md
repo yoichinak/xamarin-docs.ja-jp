@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2018
-ms.openlocfilehash: 855bbc61fb5e4e653dbd39ddf05fac3e2fb42d8c
-ms.sourcegitcommit: 00deecefc17a98210bed12b4ef99ecca710275f1
+ms.openlocfilehash: 085960b92aa0f349d4cb2737385e723d8b6aa6b7
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67493355"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656514"
 ---
 # <a name="part-1-getting-started-with-xaml"></a>第 1 部です。 XAML の概要
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
 _Xamarin.Forms アプリケーションで XAML ページの視覚的内容を定義するために使用がほとんどの場合とで使用できます、C#分離コード ファイル。_
 
@@ -102,7 +102,7 @@ Visual studio for Mac では、次のように選択します。**ファイル >
 </ContentPage>
 ```
 
-2 つの XML 名前空間 (`xmlns`) の宣言は、Uri、Xamarin の web サイトの見かけ上 1 つ目と Microsoft's で 1 秒間を参照してください。 これらどのような Uri ポイントを確認する必要はありません。 何もありません。 Xamarin と Microsoft によって所有されている Uri だけあり、基本的にバージョンの識別子として機能します。
+2つの XML 名前`xmlns`空間 () 宣言は、最初は Xamarin の web サイトで、もう1つは Microsoft の uri を参照します。 これらどのような Uri ポイントを確認する必要はありません。 何もありません。 Xamarin と Microsoft によって所有されている Uri だけあり、基本的にバージョンの識別子として機能します。
 
 最初の XML 名前空間宣言では、プレフィックスのない XAML ファイル内で定義されているタグがたとえば参照、Xamarin.Forms のクラスにことを意味`ContentPage`します。 2 番目の名前空間宣言のプレフィックスを定義する`x`します。 これは、使用のいくつかの要素とは、XAML に固有の属性と自体が XAML の他の実装でサポートされています。 ただし、これらの要素と属性では、URI に埋め込まれた年によって多少異なります。 Xamarin.Forms には、2009 XAML 仕様が、すべてのサポートしています。
 
@@ -203,9 +203,9 @@ Visual Studio では、プロジェクトをビルド、生成する XAML ファ
 
 また、`Title`ルート タグに属性が設定されています。
 
-現時点では、クラス、プロパティ、および XML 間の関係を明らかになります。Xamarin.Forms クラス (など`ContentPage`または`Label`) XML 要素としての XAML ファイルに表示されます。 そのクラスのプロパティ-など`Title`で`ContentPage`の 7 つのプロパティと`Label`-通常、XML 属性として表示されます。
+現時点では、クラス、プロパティ、および XML 間のリレーションシップを明確にする必要があります。Xamarin. Forms クラス ( `ContentPage`や`Label`など) は、XML 要素として XAML ファイルに表示されます。 そのクラスのプロパティ-など`Title`で`ContentPage`の 7 つのプロパティと`Label`-通常、XML 属性として表示されます。
 
-これらのプロパティの値を設定する多くのショートカットが存在します。 一部のプロパティは、基本的なデータの種類です。など、`Title`と`Text`型のプロパティは、 `String`、`Rotation`の種類は`Double`と`IsVisible`(は`true`既定では説明のみをここで設定されます) 型`Boolean`.
+これらのプロパティの値を設定する多くのショートカットが存在します。 いくつかのプロパティは基本データ型です。`Title`たとえば、 `IsVisible` `Double` `true`プロパティと`Text`プロパティは`String`型で、は型であり、(既定では、ここでは説明のためだけに設定されています)は型です。`Rotation` `Boolean`.
 
 `HorizontalTextAlignment`プロパティの型は`TextAlignment`、列挙型であります。 列挙型のプロパティ、メンバー名はすべて指定する必要があります。
 
@@ -453,7 +453,7 @@ public partial class XamlPlusCodePage : ContentPage {
 
 ## <a name="related-links"></a>関連リンク
 
-- [XamlSamples](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
+- [XamlSamples](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 - [第 2 部基本的な XAML 構文](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
 - [第 3 部XAML マークアップ拡張](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
 - [第 4 部データ バインディングの基礎](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)

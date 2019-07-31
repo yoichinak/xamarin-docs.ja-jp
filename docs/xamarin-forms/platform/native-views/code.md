@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 8587cade1c5b4a6882f21603ee869f94f38fd04a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: ebaf5bf2fcb82dd98147819ea9e089dcd427affc
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61086094"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644453"
 ---
 # <a name="native-views-in-c"></a>C# でのネイティブ ビュー
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/NativeEmbedding/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeembedding)
 
 _IOS、Android、および UWP からのネイティブ ビューは、c# を使用して作成された Xamarin.Forms ページから直接参照できます。この記事では、c# を使用して作成された Xamarin.Forms レイアウトにネイティブ ビューを追加する方法と API の使用状況の測定を修正するカスタム ビューのレイアウトを上書きする方法を示します。_
 
@@ -323,5 +323,5 @@ stackLayout.Children.Add(fixedControl, arrangeOverrideDelegate: (renderer, final
 
 ## <a name="related-links"></a>関連リンク
 
-- [NativeEmbedding (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/NativeEmbedding/)
+- [NativeEmbedding (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeembedding)
 - [ネイティブ フォーム](~/xamarin-forms/platform/native-forms.md)

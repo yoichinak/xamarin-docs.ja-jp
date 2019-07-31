@@ -1,78 +1,78 @@
 ---
-title: Xamarin.iOS でコンシューマブル製品の購入
-description: このドキュメントでは、Xamarin.iOS でコンシューマブル製品について説明します。 コンシューマブル製品は、使い捨てなゲーム内の通貨などの機能です。
+title: Xamarin での消費製品の購入
+description: このドキュメントでは、Xamarin. iOS の利用できる製品について説明します。 使用できる製品は、ゲーム内の通貨などの単一の用途の機能です。
 ms.prod: xamarin
 ms.assetid: E0CB4A0F-C3FA-3933-58A7-13246971D677
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: b55465a700974e0ce5ceb8893d96311d920e04ae
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 818412cef7359e134dea51e76567aa65bba8e613
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61366718"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68651630"
 ---
-# <a name="purchasing-consumable-products-in-xamarinios"></a>Xamarin.iOS でコンシューマブル製品の購入
+# <a name="purchasing-consumable-products-in-xamarinios"></a>Xamarin での消費製品の購入
 
-コンシューマブル製品は 'restore' 要件がないため、実装する最も簡単です。 これらは、ゲーム内の通貨や、使い捨ての機能などの製品に役立ちます。 ユーザーがもう一度コンシューマブル製品 over-over 購入再ことができます。
+"復元" の要件はないため、利用できる製品は最も簡単に実装できます。 これらは、ゲーム内の通貨や単一の用途の機能などの製品に役立ちます。 ユーザーは、使用可能な製品をさらに再購入できます。
 
-## <a name="built-in-product-delivery"></a>組み込みの製品の出荷
+## <a name="built-in-product-delivery"></a>組み込みの製品配信
 
-このドキュメントに付属するサンプル コードは、組み込みの製品を示します: 'ロックを解除する ' 機能は、支払い後のコードに密結合されているために、製品 Id は、アプリケーションにハードコーディングしています。 購入プロセスを視覚化するには、次のようにします。   
+このドキュメントに付属するサンプルコードは、組み込み製品を示しています。製品 Id は、支払い後に機能を "ロック解除" するコードに密に結合されているため、アプリケーションにハードコーディングされています。 購入プロセスは次のように視覚化できます。   
    
 [![購入プロセスの視覚化](purchasing-consumable-products-images/image26.png)](purchasing-consumable-products-images/image26.png#lightbox)     
    
  基本的なワークフローは次のとおりです。   
    
- 1. アプリを追加、`SKPayment`をキューにします。 ユーザーが自分の Apple ID の入力を求めし、支払いの確認を求めに必要な場合。   
+ 1. アプリによって`SKPayment`がキューに追加されます。 必要に応じて、ユーザーは Apple ID の入力を求められ、支払いの確認を求められます。   
    
- 2. StoreKit では、サーバー処理のために、要求を送信します。   
+ 2. StoreKit は、要求をサーバーに送信して処理します。   
    
- 3. トランザクションが完了したら、サーバーは、トランザクション受信で応答します。   
+ 3. トランザクションが完了すると、サーバーはトランザクションの確認で応答します。   
    
- 4. `SKPaymentTransactionObserver`サブクラスですが、受信確認を受信し、それを処理します。   
+ 4. サブ`SKPaymentTransactionObserver`クラスは、受信確認を受信して処理します。   
    
- 5. アプリケーションにより、製品 (更新することで`NSUserDefaults`またはその他のメカニズム)、号餧ェヒェマル StoreKit の`FinishTransaction`します。
+ 5. アプリケーションによって (またはその`NSUserDefaults`他のメカニズムを更新して) 製品が有効に`FinishTransaction`なり、storekit のが呼び出されます。
 
-– ワークフローの別の型がある*Server-Delivered 製品*– つまり、ドキュメントの後半で説明されている (を参照してください*受信確認と Server-Delivered 製品*)。
+別の種類のワークフローとして、*サーバーによって提供*される製品があります。これについては、ドキュメントで後ほど説明します (「確認」および「*サーバー配信製品*」を参照してください)。
 
 ## <a name="consumable-products-example"></a>使用できる製品の例
 
-[InAppPurchaseSample コード](https://developer.xamarin.com/samples/monotouch/StoreKit/)という名前のプロジェクトを含む*消耗品*basic 'ゲームに通貨' (「クレジット モンキー」と呼ばれます) を実装します。 サンプルでは、多くの「monkey クレジット」– 必要実際のアプリケーションにもそれらの支出の何らかの方法として購入するユーザーを許可する 2 つのアプリ内購入製品を実装する方法を示します。   
+[InAppPurchaseSample コード](https://docs.microsoft.com/samples/xamarin/ios-samples/storekit)には、基本的な ' ゲーム内通貨 ' ("サルクレジット" と呼ばれます) を実装する*消耗品*と呼ばれるプロジェクトが含まれています。 このサンプルでは、2つのアプリ内購入製品を実装し、ユーザーが希望どおりに "サルのクレジット" を購入できるようにする方法を示します。実際のアプリケーションでは、これを使用する方法もあります。   
    
    
    
- アプリケーションがこれらのスクリーン ショットに示すように – のそれぞれの購入は、ユーザーの残高をさらに「monkey クレジット」を追加します。   
+ アプリケーションは次のスクリーンショットに示されています。購入するたびに、ユーザーの残高に "サルクレジット" が追加されます。   
    
    
    
- [![それぞれの購入ユーザー残高にさらに monkey クレジットを追加します](purchasing-consumable-products-images/image27.png)](purchasing-consumable-products-images/image27.png#lightbox)   
+ [![購入ごとに、ユーザーの残高に対してより多くのサルクレジットが追加されます](purchasing-consumable-products-images/image27.png)](purchasing-consumable-products-images/image27.png#lightbox)   
    
    
    
- StoreKit とアプリ ストアのカスタムのクラス間の相互作用は、次のようになります。   
+ カスタムクラス、StoreKit、アプリストア間の相互作用は次のようになります。   
    
    
    
- [![StoreKit とアプリ ストアのカスタムのクラス間の相互作用](purchasing-consumable-products-images/image28.png)](purchasing-consumable-products-images/image28.png#lightbox)
+ [![カスタムクラス、StoreKit、およびアプリストア間の相互作用](purchasing-consumable-products-images/image28.png)](purchasing-consumable-products-images/image28.png#lightbox)
 
 &nbsp;
 
 ### <a name="viewcontroller-methods"></a>ViewController メソッド
 
-だけでなく、プロパティと製品情報を取得するために必要なメソッドは、ビュー コント ローラーには、購入に関連する通知をリッスンするオブザーバーを追加の通知が必要です。 これらはだけ`NSObjects`登録されているし、で削除する`ViewWillAppear`と`ViewWillDisappear`それぞれします。
+ビューコントローラーでは、製品情報を取得するために必要なプロパティとメソッドに加えて、購入関連の通知をリッスンするために追加の通知オブザーバーが必要になります。 これらは、 `NSObjects` `ViewWillAppear`それぞれで登録と削除が行われるだけです`ViewWillDisappear` 。
 
 ```csharp
 NSObject succeededObserver, failedObserver;
 ```
 
-また、コンス トラクターを作成、`SKProductsRequestDelegate`サブクラス ( `InAppPurchaseManager`) をさらに作成して登録します、 `SKPaymentTransactionObserver` ( `CustomPaymentObserver`)。   
+`SKProductsRequestDelegate`また、コンストラクターはサブクラス ( `InAppPurchaseManager`) を作成し、 `SKPaymentTransactionObserver` ( `CustomPaymentObserver`) を作成して登録します。   
    
    
    
- アプリ内購入、トランザクションの処理の最初の部分は、サンプル アプリケーションから次のコードに示すように、何か購入するユーザーが希望する場合、ボタン押下を処理するためには。
+ アプリ内購入トランザクションの処理の最初の部分は、次のサンプルアプリケーションのコードに示すように、ユーザーが何かを購入するときにボタンの押下を処理することです。
 
 ```csharp
 buy5Button.TouchUpInside += (sender, e) => {
@@ -85,7 +85,7 @@ buy10Button.TouchUpInside += (sender, e) => {
 
    
    
- ユーザー インターフェイスの 2 番目の部分は、通知の処理、トランザクションが成功したこと、ここで表示される残高を更新することで。
+ ユーザーインターフェイスの2番目の部分では、表示されたバランスを更新することで、トランザクションが成功したという通知を処理します。
 
 ```csharp
 priceObserver = NSNotificationCenter.DefaultCenter.AddObserver (InAppPurchaseManager.InAppPurchaseManagerTransactionSucceededNotification,
@@ -94,7 +94,7 @@ priceObserver = NSNotificationCenter.DefaultCenter.AddObserver (InAppPurchaseMan
 });
 ```
 
-何らかの理由により、トランザクションが取り消された場合、ユーザー インターフェイスの最後の部分は、メッセージに表示されています。 コード例は、出力ウィンドウに単純にメッセージが書き込まれます。
+なんらかの理由でトランザクションがキャンセルされた場合、ユーザーインターフェイスの最後の部分でメッセージが表示されます。 コード例では、メッセージは単に出力ウィンドウに書き込まれます。
 
 ```csharp
 failedObserver = NSNotificationCenter.DefaultCenter.AddObserver (InAppPurchaseManager.InAppPurchaseManagerTransactionFailedNotification,
@@ -103,11 +103,11 @@ failedObserver = NSNotificationCenter.DefaultCenter.AddObserver (InAppPurchaseMa
 });
 ```
 
-ビュー コント ローラーでこれらのメソッドだけでなく消耗品の購入取引もコードが必要で、 `SKProductsRequestDelegate` 、`SKPaymentTransactionObserver`します。
+ビューコントローラーでこれらのメソッドに加えて、消費製品の購入トランザクションでも、 `SKProductsRequestDelegate` `SKPaymentTransactionObserver`とのコードが必要になります。
 
 ### <a name="inapppurchasemanager-methods"></a>InAppPurchaseManager メソッド
 
-いくつかのサンプル コードの実装は購入 InAppPurchaseManager クラスに関連するメソッドを含む、`PurchaseProduct`を作成するメソッド、`SKPayment`インスタンスし、処理のキューに追加します。
+このサンプルコードでは、 `PurchaseProduct` `SKPayment`インスタンスを作成し、それを処理のためにキューに追加するメソッドなど、InAppPurchaseManager クラスでいくつかの購入関連のメソッドを実装しています。
 
 ```csharp
 public void PurchaseProduct(string appStoreProductId)
@@ -117,11 +117,11 @@ public void PurchaseProduct(string appStoreProductId)
 }
 ```
 
-非同期操作には、支払いをキューに追加します。 アプリケーションは、コントロールを再度獲得 storekit やトランザクションを処理し、Apple のサーバーに送信します。 この時点では、その iOS は、ユーザーが App Store にログインし、必要な場合に、Apple ID とパスワードのプロンプト彼女を確認します。   
+キューへの支払いの追加は、非同期操作です。 StoreKit によってトランザクションが処理され、Apple のサーバーに送信される間、アプリケーションは制御を取り戻すことができます。 この時点で、iOS はユーザーがアプリストアにログインしていることを確認し、必要に応じて Apple ID とパスワードの入力を求めます。   
    
    
    
- App Store で認証し、トランザクションにすることに同意が正常にユーザーと仮定した場合、 `SKPaymentTransactionObserver` StoreKit の応答を受信して、トランザクションを実行し、完成させるのには、次のメソッドを呼び出します。
+ ユーザーが App Store での認証に成功し、トランザクションに同意した`SKPaymentTransactionObserver`場合、は storekit の応答を受け取り、次のメソッドを呼び出してトランザクションを実行して完了します。
 
 ```csharp
 public void CompleteTransaction (SKPaymentTransaction transaction)
@@ -133,7 +133,7 @@ public void CompleteTransaction (SKPaymentTransaction transaction)
 }
 ```
 
-最後の手順が呼び出すことによって、トランザクションが正常に満たされたことを StoreKit に通知することを確認するには`FinishTransaction`:
+最後の手順では、次のようにを呼び出し`FinishTransaction`て、トランザクションが正常に完了したことを storekit に通知します。
 
 ```csharp
 public void FinishTransaction(SKPaymentTransaction transaction, bool wasSuccessful)
@@ -153,11 +153,11 @@ public void FinishTransaction(SKPaymentTransaction transaction, bool wasSuccessf
 }
 ```
 
-製品を配信すると`SKPaymentQueue.DefaultQueue.FinishTransaction`支払キューからトランザクションを削除するのには呼び出す必要があります。
+製品が配信されたら`SKPaymentQueue.DefaultQueue.FinishTransaction` 、を呼び出して、支払キューからトランザクションを削除する必要があります。
 
 ### <a name="skpaymenttransactionobserver-custompaymentobserver-methods"></a>SKPaymentTransactionObserver (CustomPaymentObserver) メソッド
 
-StoreKit の呼び出し、`UpdatedTransactions`メソッドの配列を渡し、Apple のサーバーから応答を受信する場合`SKPaymentTransaction`コードを検査するオブジェクト。 メソッドは、各トランザクションをループ処理し、(ここで示すように) とトランザクションの状態に基づいて別の関数を実行します。
+Storekit は`UpdatedTransactions` 、Apple のサーバーから応答を受信したときにメソッドを呼び出し、コード`SKPaymentTransaction`で検査するオブジェクトの配列を渡します。 メソッドは、各トランザクションをループし、次に示すように、トランザクションの状態に基づいて異なる関数を実行します。
 
 ```csharp
 public override void UpdatedTransactions (SKPaymentQueue queue, SKPaymentTransaction[] transactions)
@@ -179,11 +179,11 @@ public override void UpdatedTransactions (SKPaymentQueue queue, SKPaymentTransac
 }
 ```
 
-`CompleteTransaction`メソッドは、このセクションで先ほど説明した – 購入の詳細を保存します`NSUserDefaults`StoreKit を使用してトランザクションを終了し、最後に更新する UI に通知します。
+この`CompleteTransaction`セクションの前半で説明したメソッドは、購入の詳細を`NSUserDefaults`に保存し、storekit を使用してトランザクションを終了し、最後に UI に更新を通知します。
 
-### <a name="purchasing-multiple-products"></a>複数の製品を購入します。
+### <a name="purchasing-multiple-products"></a>複数の製品を購入する
 
-アプリケーション内に複数の製品を購入する意味を提示した場合に使用して、`SKMutablePayment`クラスし、Quantity フィールドを設定します。
+アプリケーションで複数の製品を購入するのが理にかなって`SKMutablePayment`いる場合は、クラスを使用して Quantity フィールドを設定します。
 
 ```csharp
 public void PurchaseProduct(string appStoreProductId)
@@ -194,7 +194,7 @@ public void PurchaseProduct(string appStoreProductId)
 }
 ```
 
-完了したトランザクションを処理するコードは、購入を正しく満たすために数量プロパティをクエリもする必要があります。
+完成したトランザクションを処理するコードでは、次のように Quantity プロパティを照会して、適切に購入する必要もあります。
 
 ```csharp
 public void CompleteTransaction (SKPaymentTransaction transaction)
@@ -211,17 +211,17 @@ public void CompleteTransaction (SKPaymentTransaction transaction)
 }
 ```
 
-ユーザーは、複数の数量を購入、storekit や確認のアラートが反映されます、数量、ユニットの料金および課金されますが、合計価格の次のスクリーン ショット。
+ユーザーが複数の数量を購入すると、StoreKit 確認アラートには、次のスクリーンショットに示すように、請求される数量、単価、および料金の合計が反映されます。
 
 [![購入の確認](purchasing-consumable-products-images/image30.png)](purchasing-consumable-products-images/image30.png#lightbox)
 
 ## <a name="handling-network-outages"></a>ネットワーク障害の処理
 
-アプリ内購入には、Apple のサーバーと通信する StoreKit の作業のネットワーク接続が必要です。 ネットワーク接続が利用できない場合、アプリ内購入は使用できません。
+アプリ内購入では、StoreKit が Apple のサーバーと通信するために、正常なネットワーク接続が必要です。 ネットワーク接続が利用できない場合は、アプリ内購入は使用できません。
 
 ### <a name="product-requests"></a>製品要求
 
-ネットワークが作成中に使用可能でない場合、 `SKProductRequest`、`RequestFailed`のメソッド、`SKProductsRequestDelegate`サブクラスです ( `InAppPurchaseManager`) 次に示すというされます。
+を作成`SKProductRequest` `SKProductsRequestDelegate`しているときにネットワークが使用できない場合は、 `InAppPurchaseManager`次に示すように、サブクラス () のメソッドが呼び出されます。`RequestFailed`
 
 ```csharp
 public override void RequestFailed (SKRequest request, NSError error)
@@ -234,7 +234,7 @@ public override void RequestFailed (SKRequest request, NSError error)
 }
 ```
 
-ViewController は次の通知をリッスンし、購入ボタンにメッセージを表示します。
+次に、ViewController が通知をリッスンし、[購入] ボタンにメッセージを表示します。
 
 ```csharp
 requestObserver = NSNotificationCenter.DefaultCenter.AddObserver (InAppPurchaseManager.InAppPurchaseManagerRequestFailedNotification,
@@ -245,15 +245,15 @@ requestObserver = NSNotificationCenter.DefaultCenter.AddObserver (InAppPurchaseM
 });
 ```
 
-モバイル デバイスで一時的なネットワーク接続を使用できる、ので、アプリケーションは SystemConfiguration framework を使用してネットワークの状態を監視して、ネットワーク接続があるときにもう一度お試し可能性があります。 それを使用する、または Apple の参照します。
+ネットワーク接続はモバイルデバイスでは一時的なものであるため、アプリケーションは SystemConfiguration フレームワークを使用してネットワークの状態を監視し、ネットワーク接続が利用可能になったときに再試行することができます。 Apple のまたはそれを使用するを参照してください。
 
-### <a name="purchase-transactions"></a>購入のトランザクション
+### <a name="purchase-transactions"></a>トランザクションの購入
 
-Storekit や支払いのキューを格納し、購入手続きの際に、ネットワークが失敗したときに、ネットワークの停止の影響をに応じて異なりますので、前方の購入が可能であればに要求します。   
+StoreKit の支払キューは、可能な場合は購入要求を格納して転送します。そのため、ネットワークの停止の影響は、購入プロセス中にネットワークが失敗した場合によって異なります。   
    
    
    
- トランザクション中にエラーが発生した場合、`SKPaymentTransactionObserver`サブクラスです ( `CustomPaymentObserver`) 必要があります、`UpdatedTransactions`メソッドと呼ばれる、`SKPaymentTransaction`クラスは、失敗状態になります。
+ トランザクションの実行中にエラーが発生した`SKPaymentTransactionObserver`場合、 `CustomPaymentObserver`サブクラス () `UpdatedTransactions`によってメソッド`SKPaymentTransaction`が呼び出され、クラスは "失敗" の状態になります。
 
 ```csharp
 public override void UpdatedTransactions (SKPaymentQueue queue, SKPaymentTransaction[] transactions)
@@ -275,7 +275,7 @@ public override void UpdatedTransactions (SKPaymentQueue queue, SKPaymentTransac
 }
 ```
 
-`FailedTransaction`メソッドは次のように、エラーがユーザーによるキャンセルの場合、原因かどうかを検出します。
+メソッド`FailedTransaction`は、次に示すように、ユーザーによるキャンセルによってエラーが発生したかどうかを検出します。
 
 ```csharp
 public void FailedTransaction (SKPaymentTransaction transaction)
@@ -289,13 +289,13 @@ public void FailedTransaction (SKPaymentTransaction transaction)
 }
 ```
 
-トランザクションが失敗した場合でも、`FinishTransaction`支払いキューからトランザクションを削除するメソッドを呼び出す必要があります。
+トランザクションが失敗`FinishTransaction`した場合でも、支払キューからトランザクションを削除するには、メソッドを呼び出す必要があります。
 
 ```csharp
 SKPaymentQueue.DefaultQueue.FinishTransaction(transaction);
 ```
 
-コード例は、ViewController がメッセージを表示できるようにし、通知を送信します。 アプリケーションは、追加表示されませんが、ユーザーには、トランザクションが取り消された場合のメッセージします。 発生する可能性があるその他のエラー コードは次のとおりです。
+このコード例では、ViewController がメッセージを表示できるように通知を送信します。 ユーザーがトランザクションをキャンセルした場合、アプリケーションは追加のメッセージを表示しません。 次のようなエラーコードが発生する可能性があります。
 
 ```csharp
 FailedTransaction Code=0 Cannot connect to iTunes Store
@@ -304,17 +304,17 @@ FailedTransaction Code=5020 Forget Your Password?
 Applications may detect and respond to specific error codes, or handle them in the same way.
 ```
 
-## <a name="handling-restrictions"></a>処理の制約
+## <a name="handling-restrictions"></a>処理の制限
 
-**設定 > [全般] > 制限**iOS の機能により、ユーザーが自分のデバイスの特定の機能をロックします。   
+IOS の**設定 > 全般 > 制限**機能を使用すると、ユーザーは自分のデバイスの特定の機能をロックできます。   
    
    
    
- 使用してアプリ内購入のために、ユーザーが許可されているかどうかを照会することができます、`SKPaymentQueue.CanMakePayments`メソッド。 これは、false を返す場合、ユーザーは、アプリ内購入でアクセスできません。 購入しようとすると StoreKit はユーザーに自動的にエラー メッセージを表示します。 この値をチェックして、アプリケーションが代わりに購入ボタンを非表示にするか、ユーザーを支援するその他の操作できます。   
+ ユーザーが`SKPaymentQueue.CanMakePayments`メソッドを使用してアプリ内購入を行うことを許可されているかどうかをクエリできます。 False が返された場合、ユーザーはアプリ内購入にアクセスできません。 購入が試行された場合、StoreKit はユーザーにエラーメッセージを自動的に表示します。 この値を確認することで、アプリケーションで購入ボタンを非表示にしたり、他の操作を行ってユーザーを支援したりすることができます。   
    
    
    
- `InAppPurchaseManager.cs`ファイル、`CanMakePayments`メソッドは、このような storekit や関数をラップします。
+ このファイルでは`CanMakePayments` 、メソッドは次のように storekit 関数をラップします。 `InAppPurchaseManager.cs`
 
 ```csharp
 public bool CanMakePayments()
@@ -323,15 +323,15 @@ public bool CanMakePayments()
 }
 ```
 
-このメソッドをテストするには、使用、**制限**機能を無効にする iOS の**アプリ内購入**:   
+このメソッドをテストするには、iOS の**制限**機能を使用して、**アプリ内購入**を無効にします。   
    
    
    
- [![IOS の制限機能を使用して、アプリ内購入を無効にするには](purchasing-consumable-products-images/image31.png)](purchasing-consumable-products-images/image31.png#lightbox)   
+ [![IOS の制限機能を使用してアプリ内購入を無効にする](purchasing-consumable-products-images/image31.png)](purchasing-consumable-products-images/image31.png#lightbox)   
    
    
    
- 次のコード例`ConsumableViewController`に反応`CanMakePayments`false を返すことを表示して**AppStore で無効になっている**無効なボタンのテキスト。
+ このコード`ConsumableViewController`例では、 `CanMakePayments`無効になっているボタンに**appstore の無効**なテキストを表示することによって、false が返されるようになりました。
 
 ```csharp
 // only if we can make payments, request the prices
@@ -347,22 +347,22 @@ if (iap.CanMakePayments()) {
 }
 ```
 
-アプリケーションの場合に、このよう、**アプリ内購入**機能は制限付き – 購入ボタンが無効になっています。   
+**アプリ内購入**機能が制限されている場合、アプリケーションは次のようになります。 [購入] ボタンは無効になっています。   
    
    
    
- [![機能は、アプリ内購入には、ボタンが無効になっている購入が制限されていると、アプリケーションがこのような検索します。](purchasing-consumable-products-images/image32.png)](purchasing-consumable-products-images/image32.png#lightbox)   
+ [![アプリ内購入機能が制限されている場合、アプリケーションは次のようになります。購入ボタンは無効になります。](purchasing-consumable-products-images/image32.png)](purchasing-consumable-products-images/image32.png#lightbox)   
    
    
    
 
-製品情報ができます。 要求されたときに`CanMakePayments`、アプリが取得でも、および価格を表示できるように値が false の場合。 つまり、削除しました、`CanMakePayments`チェックも購入ボタン コードからアクティブである購入しようとすると、ユーザーにメッセージが表示される**アプリ内購入が許可されていません**(StoreKit によって生成されました。支払キューがアクセスされるとき)。   
+が false の場合`CanMakePayments`でも製品情報を要求できます。そのため、アプリでは引き続き価格を取得して表示できます。 つまり、コードからチェックを`CanMakePayments`削除した場合でも、[購入] ボタンはアクティブのままになります。ただし、購入した場合、ユーザーには、**アプリ内購入が許可**されていないことを示すメッセージが表示されます (支払キューがの場合、storekit によって生成されます)アクセスされる:   
    
    
    
- [![アプリ内購入が許可されていません](purchasing-consumable-products-images/image33.png)](purchasing-consumable-products-images/image33.png#lightbox)   
+ [![アプリ内購入は使用できません](purchasing-consumable-products-images/image33.png)](purchasing-consumable-products-images/image33.png#lightbox)   
    
    
    
- 実際のアプリケーションでは、完全にボタンを非表示や、おそらく StoreKit が自動的に表示されるアラートよりも詳細なメッセージを提供するなど、制限を処理する別のアプローチをかかる場合があります。
+ 実際のアプリケーションでは、ボタンを完全に非表示にしたり、StoreKit によって自動的に表示されるアラートよりも詳細なメッセージを提供するなど、さまざまな方法で制限を処理することがあります。
 

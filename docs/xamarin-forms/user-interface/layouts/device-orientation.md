@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/09/2015
-ms.openlocfilehash: 2c218b030739dee8d3e49fab4e5c2a70ff5e71e0
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: dccae3b3da4ab84c8ba14f204263e4230f31e833
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511823"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656783"
 ---
 # <a name="device-orientation"></a>デバイスの向き
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ResponsiveLayout)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-responsivelayout)
 
 アプリケーションの使用方法と、ユーザー エクスペリエンスを向上させるためにどのようにランドス ケープ方向を組み込むことが考慮すべき重要なは。 複数の向きに対応する個々 のレイアウトを設計することができ、最適なが使用可能な領域を使用します。 アプリケーション レベルでは、回転を無効または有効にすることができます。
 
@@ -475,7 +475,7 @@ protected override void OnSizeAllocated (double width, double height){
 
 ## <a name="related-links"></a>関連リンク
 
-- [レイアウト (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
-- [BusinessTumble 例 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BusinessTumble/)
-- [レスポンシブ レイアウト (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ResponsiveLayout)
+- [レイアウト (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
+- [BusinessTumble 例 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-businesstumble)
+- [レスポンシブ レイアウト (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-responsivelayout)
 - [画面の向きに基づくイメージを表示します。](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/screen-orientation)

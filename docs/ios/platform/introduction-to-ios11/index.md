@@ -1,86 +1,85 @@
 ---
 title: iOS 11 の概要
-description: このドキュメントは、iOS 11、ARKit や CoreML、MapKit、PDFKit、SiriKit、ビジョン フレームワークなどの機能を記述するさまざまなガイドにリンクしています。
+description: このドキュメントでは、ARKit、CoreML、MapKit、PDFKit、SiriKit、ビジョンフレームワークなど、iOS 11 の機能について説明するさまざまなガイドにリンクしています。
 ms.prod: xamarin
 ms.assetid: 22C38EA6-6DA9-4B92-B41B-814E589033F6
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/19/2017
-ms.openlocfilehash: 1542ae5d7dbdf008dd5b300dfb5820c3f04ae682
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.openlocfilehash: 648b03dc34daa8906adab316c552a9615649800d
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67268894"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655819"
 ---
 # <a name="introduction-to-ios-11"></a>iOS 11 の概要
 
-![ARKit 例](images/arkit.png) ![AR を配置するオブジェクト](images/arkit2.png) ![CoreML 例](images/coreml.png) ![MapKit の例](images/mapkit.png) ![ビジョンの四角形の例](images/vision1.png) ![ビジョンの顔の例](images/vision2.png) ![ドラッグ アンド ドロップの例](images/drag-drop.png) ![ドラッグ アンド ドロップの例](images/drag-drop2.png) ![SiriKit の例](images/sirikit.png)
+![ARKit の例](images/arkit.png) ![AR オブジェクトの配置](images/arkit2.png) ![CoreML の例](images/coreml.png) ![MapKit の例](images/mapkit.png) ![ビジョン四角形の例](images/vision1.png) ![ビジョンの例](images/vision2.png) ![ドラッグアンドドロップの例](images/drag-drop.png) ![ドラッグアンドドロップの例](images/drag-drop2.png) ![SiriKit の例](images/sirikit.png)
 
-iOS 11 では、さまざまなフレームワークで、多数の新機能と機能強化が含まれています。
+iOS 11 には、さまざまなフレームワークにわたる多くの新機能と機能強化が含まれています。
 
-## <a name="preparing-your-app-for-ios-11updating-your-appindexmd"></a>[IOS 11 のアプリを準備します。](updating-your-app/index.md)
+## <a name="preparing-your-app-for-ios-11updating-your-appindexmd"></a>[IOS 11 用アプリの準備](updating-your-app/index.md)
 
-Apple は、アーキテクチャの更新プログラム、新しいビジュアルの変更、および iOS 11 用の更新の iTunes Connect プロセスに導入されています。 このガイドを使用して、新しいリリースは、Xamarin.iOS アプリの準備を確認します。
+Apple は、iOS 11 用のアーキテクチャの更新、新しいビジュアルの変更、および更新された iTunes Connect プロセスを導入しました。 このガイドを使用して、新しいリリース用に Xamarin iOS アプリが準備されていることを確認してください。
 
 ## <a name="arkitarkitindexmd"></a>[ARKit](arkit/index.md)
 
-ARKit はデバイスのカメラからの世界との対話をユーザーに許可するを iOS、Augmented Reality を表示します。
-Xamarin では、使用することも[UrhoSharp の ARKit](arkit/urhosharp.md)します。
+ARKit は、iOS に拡張された現実をもたらし、ユーザーはデバイスのカメラを介して世界中と対話できるようにします。
+Xamarin では、 [Arkit を UrhoSharp と共](arkit/urhosharp.md)に使用することもできます。
 
 ## <a name="coremlcoremlmd"></a>[CoreML](coreml.md)
 
-CoreML と iOS 11 アプリには、機械学習モデルを統合することができます。 CoreML フレームワークには、既存のモデルを問題を分析するアプリのプロジェクトに組み込むに単純な API が用意されています、アプリ内で右。
+Machine learning モデルは、CoreML で iOS 11 アプリに統合できます。 CoreML フレームワークには、既存のモデルをアプリプロジェクトに組み込むための単純な API が用意されているため、アプリで問題を分析することができます。
 
 ## <a name="corenfccorenfcmd"></a>[CoreNFC](corenfc.md)
 
-iPhone 7 と以降のデバイスは、タグが付けられた製品、場所、またはそれらの世界には点を検出するためにアプリを有効にする近距離通信 (NFC) タグを読み取ることができます。
+iPhone 7 以降のデバイスでは、近距離無線通信 (NFC) タグを読み取ることができます。これにより、アプリはタグ付けされた製品、場所、または世界中の物を検出できます。
 
 ## <a name="drag-and-dropdrag-and-dropmd"></a>[ドラッグ アンド ドロップ](drag-and-drop.md)
 
-ドラッグ アンド ドロップの framework には、タッチによってデータを移動するための iOS 全体にわたってサポートが追加されます。 Ipad、企業内や別のアプリ間をドラッグすることができます。iPhone では、同じアプリ内でのみドラッグできます。 さまざまな種類の豊富なデータ型、アニメーション、およびマルチタッチ ジェスチャの処理を含む、カスタマイズのサポートがあります。
+ドラッグアンドドロップフレームワークを使用すると、タッチによってデータを移動するための iOS 全体のサポートが提供されます。 IPad では、さまざまなアプリの両方でドラッグできます。iPhone では、同じアプリ内でのみドラッグできます。 豊富なデータ型、アニメーション、マルチタッチジェスチャの処理など、さまざまな種類のカスタマイズがサポートされています。
 
 ## <a name="mapkitmapkitmd"></a>[MapKit](mapkit.md)
 
-MapKit が、多数の改良、コンパスをビューに追加のグループ化と自動のマーカーのサポートを含むです。
+MapKit には、自動マーカーグループ化のサポートや、ビューへのコンパスの追加など、さまざまな機能強化が施されています。
 
 ## <a name="pdfkit"></a>PDFKit
 
-PDF の作成し編集機能をアプリにも、PDFKit は iOS 11 でご利用いただけます。
+IOS 11 で PDFKit が利用可能になり、アプリに PDF の作成と編集の機能が提供されるようになりました。
 
 ## <a name="sirikitsirikitmd"></a>[SiriKit](sirikit.md)
 
-Siri は、リストと注意事項、および別のアプリ名などの他の機能強化を含め、さらに多くの相互作用をサポートします。
+Siri では、リストやメモなど、さらに多くの相互作用がサポートされるようになりました。その他の拡張機能としては、別のアプリ名があります
 
 ## <a name="visionvisionmd"></a>[Vision](vision.md)
 
-IOS、顔検出および認識、CoreML モデル、新しいバーコード検出 Api、テキストと水平の検出、および一般的なオブジェクトの検出など、追跡に、さまざまなイメージ処理と分析機能をもたらします。
+顔検出と認識、CoreML モデル、新しいバーコード検出 Api、テキストとホライズンの検出、および一般的なオブジェクトの検出と追跡を含む、さまざまなイメージ処理および分析機能を iOS に提供します。
 
 ## <a name="samples"></a>サンプル
 
-C# の数値がある[サンプル](https://developer.xamarin.com/samples/ios/iOS11/)開始します。
+使用を開始するためC#の[サンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS11)がいくつか用意されています。
 
-* [ARKit サンプル](https://developer.xamarin.com/samples/monotouch/ios11/ARKitSample/)
-* [ARKit を配置するオブジェクト](https://developer.xamarin.com/samples/monotouch/ios11/ARKitPlacingObjects/)
+* [ARKit サンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-arkitsample)
+* [オブジェクトを配置する ARKit](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-arkitplacingobjects)
 * [ARKit と UrhoSharp](arkit/urhosharp.md)
-* [CoreML サンプル](https://developer.xamarin.com/samples/monotouch/ios11/CoreML)
-* [CoreML 画像認識のサンプル](https://developer.xamarin.com/samples/monotouch/ios11/CoreMLImageRecognition)
-* [CoreML と Azure のカスタム モデル](https://developer.xamarin.com/samples/monotouch/ios11/CoreMLAzureModel)
-* [CoreNFC タグ リーダーのサンプル](https://developer.xamarin.com/samples/monotouch/ios11/NFCTagReader/)
-* [ドラッグ アンド ドロップのテーブル ビュー](https://developer.xamarin.com/samples/monotouch/ios11/DragAndDropTableView)
-* [ドラッグ アンド ドロップ コレクション ビュー](https://developer.xamarin.com/samples/monotouch/ios11/DragAndDropCollectionView)
-* [ドラッグ アンド ドロップのカスタム ビュー](https://developer.xamarin.com/samples/monotouch/ios11/DragAndDropCustomView)
-* [DragBoard ドラッグ アンド ドロップのサンプル](https://developer.xamarin.com/samples/monotouch/ios11/DragAndDropDragBoard)
-* [MapKit のサンプル](https://developer.xamarin.com/samples/monotouch/ios11/MapKitSample)
-* [SiriKit のサンプル](https://developer.xamarin.com/samples/monotouch/ios11/SiriKitSample/)
-* [更新済みの写真 framework サンプル](https://developer.xamarin.com/samples/monotouch/ios11/SamplePhotoApp/)
-* [ビジョンと CoreML サンプル](https://developer.xamarin.com/samples/monotouch/ios11/CoreMLVision)
-* [ビジョンの四角形の検出のサンプル](https://developer.xamarin.com/samples/monotouch/ios11/VisionRects)
-* [ビジョン顔検出のサンプル](https://developer.xamarin.com/samples/monotouch/ios11/VisionFaces)
-* [PDKFit ウィジェットのサンプル](https://developer.xamarin.com/samples/monotouch/ios11/PDFAnnotationWidgetsAdvanced)
-* [PDFKit 透かしのサンプル](https://developer.xamarin.com/samples/monotouch/ios11/PDFDocumentWatermark)
+* [CoreML イメージ認識のサンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlimagerecognition)
+* [Azure カスタムモデルを使用した CoreML](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlazuremodel)
+* [CoreNFC タグリーダーのサンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-nfctagreader)
+* [ドラッグ & ドロップテーブルビュー](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddroptableview)
+* [& ドロップコレクションビューをドラッグします](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddropcollectionview)
+* [ドラッグ & ドロップカスタムビュー](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddropcustomview)
+* [DragBoard ドラッグ & ドロップサンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddropdragboard)
+* [MapKit サンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-mapkitsample)
+* [SiriKit のサンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-sirikitsample)
+* [更新された Photos フレームワークのサンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-samplephotoapp)
+* [ビジョン & CoreML サンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlvision)
+* [視覚四角形の検出のサンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionrectangles/)
+* [ビジョン検出のサンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionfaces)
+* [PDKFit ウィジェットのサンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-pdfannotationwidgetsadvanced)
+* [PDFKit 透かしサンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-pdfdocumentwatermark)
 
 ## <a name="related-links"></a>関連リンク
 
-- [Xamarin iOS 11 のサンプル](https://developer.xamarin.com/samples/ios/iOS11/)
+- [Xamarin iOS 11 サンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS11)

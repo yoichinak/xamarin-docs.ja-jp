@@ -1,105 +1,105 @@
 ---
-title: 進行状況と Xamarin.iOS でのアクティビティのインジケーター
-description: このドキュメントでは、Xamarin.iOS で進行状況とアクティビティのインジケーターを使用する方法について説明します。 これには、プログラムとストーリー ボードの両方に使用する方法について説明します。
+title: Xamarin. iOS の進行状況とアクティビティインジケーター
+description: このドキュメントでは、Xamarin. iOS で進行状況とアクティビティのインジケーターを使用する方法について説明します。 プログラムとストーリーボードの両方で使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 7AA887E4-51F7-4867-82C5-A8D2EA48AE07
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/11/2017
-ms.openlocfilehash: d39170d0109d7f81d3f02ec36381ebcd46c0143d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e65836fe9b86cd4e05f60ad4ab116a14e43ad2ce
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61029592"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655707"
 ---
-# <a name="progress-and-activity-indicators-in-xamarinios"></a>進行状況と Xamarin.iOS でのアクティビティのインジケーター
+# <a name="progress-and-activity-indicators-in-xamarinios"></a>Xamarin. iOS の進行状況とアクティビティインジケーター
 
-長時間実行するために、アプリがある可能性がありますを読み込んで、データと、この遅延が、UI の更新で遅延が発生する処理などのタスクを実行します。 この期間中には、常に、システムがビジー状態の作業を行うことをユーザーに安心して進行状況インジケーターを使用してください。 これにより、ユーザー コントロールは、その入力を待機していませんが、その要求でアプリが動作しているを待機するが、正確にどのくらいの期間の詳細を示す手段を提供できます。
+アプリでは、データの読み込みや処理などの実行時間の長いタスクを実行する必要があり、この遅延によって UI の更新に遅延が生じる可能性があります。 この間、システムがビジー状態であることをユーザーに知らせるためには、常に進行状況インジケーターを使用する必要があります。 これにより、ユーザーは、アプリが要求に対して作業していること、入力を待機していないこと、および、待機する必要がある時間を正確に詳述する手段を提供できます。
 
-iOS では、このアプリでの進行状況の表示を提供する 2 つの主な方法が用意されています。アクティビティのインジケーター (など、特定_ネットワーク_アクティビティのインジケーター) と進行状況バー。
+iOS には、アプリでこの進行状況を示す2つの主な方法が用意されています。アクティビティインジケーター (特定の_ネットワーク_アクティビティインジケーターを含む) と進行状況バー。
 
-## <a name="activity-indicator"></a>アクティビティのインジケーター
+## <a name="activity-indicator"></a>アクティビティインジケーター
 
-アプリには、長いプロセスの実行時間が必要なタスクの正確な長さがわからない場合、アクティビティのインジケーターを表示する必要があります。
+アプリが長いプロセスを実行していても、タスクに必要な時間が正確にわからない場合は、アクティビティインジケーターを表示する必要があります。
 
-Apple では、アクティビティのインジケーターを操作するための次の推奨事項があります。
+Apple では、アクティビティインジケーターの使用に関して次のような推奨事項があります。
 
-- **可能であれば、代わりに進行状況バー** - アクティビティのインジケーターは、ユーザーか、実行中のプロセスにかかる、フィードバックがないため、長さが (たとえば、ファイルをダウンロードするバイト数) がわかっている場合、進行状況バーを常に使用します。
-- **保持インジケーター アニメーション**のためには、変更をアニメーション化するインジケーターを常にする必要があります、ユーザーが停止しているアプリに静止しているアクティビティのインジケーターを関連付けます。
-- **処理中のタスクの説明**-自体によってアクティビティのインジケーターを表示するだけでは不十分で、ユーザーを待機しているプロセスに通知する必要があります。 タスクを明確に定義するわかりやすいラベル (通常は単一の完全な文) が含まれます。
+- **可能な限り、進行状況**バーを使用します。これは、アクティビティインジケーターによって、実行されているプロセスの所要時間に関するフィードバックがユーザーに表示されないため、長さがわかっている場合は常に進行状況バーを使用します (たとえば、ファイルにダウンロードするバイト数)。
+- **インジケーターをアニメーション**化する-ユーザーは、継続したアクティビティインジケーターを停滞したアプリに関連付けるため、インジケーターが表示されている間は常にインジケーターをアニメーション化しておく必要があります。
+- **処理中のタスクについて説明**します。アクティビティインジケーターだけを表示するだけでは十分ではありません。ユーザーは、待機しているプロセスについて通知する必要があります。 タスクを明確に定義するわかりやすいラベル (通常は1つの完全な文) を含めます。
 
-### <a name="implementing-an-activity-indicator"></a>アクティビティのインジケーターを実装します。
+### <a name="implementing-an-activity-indicator"></a>アクティビティインジケーターの実装
 
-アクティビティのインジケーターは、によって実装、 [ `UIActivityIndictorView` ](xref:UIKit.UIActivityIndicatorView)ことを示す、`UIActivity`が行わします。
+アクティビティインジケーターは、 [`UIActivityIndictorView`](xref:UIKit.UIActivityIndicatorView) `UIActivity`が実行されていることを示すためにクラスによって実装されます。
 
-### <a name="activity-indicators-and-storyboards"></a>アクティビティのインジケーターとストーリー ボード
+### <a name="activity-indicators-and-storyboards"></a>アクティビティインジケーターとストーリーボード
 
-IOS Designer の UI を作成するを使用している場合、ツールボックスから、アクティビティのインジケーターをレイアウトに追加できます。 プロパティ パッドから、次のプロパティを調整することができます。
+IOS Designer を使用して UI を作成する場合は、[ツールボックス] からアクティビティインジケーターをレイアウトに追加できます。 Properties Pad から次のプロパティを調整できます。
 
 ![Properties Pad](progress-activity-indicator-images/progress-indicator1.png)
 
-### <a name="managing-activity-indicator-behavior"></a>アクティビティのインジケーターの動作の管理
+### <a name="managing-activity-indicator-behavior"></a>アクティビティインジケーターの動作の管理
 
-使用して、`StartAnimating()`と`StopAnimating()`メソッドを起動し、アクティビティのインジケーターのアニメーションを停止します。
+アクティビティインジケーターアニメーション`StopAnimating()`を開始または停止するには、メソッドとメソッドを使用します。`StartAnimating()`
 
-設定、`HidesWhenStopped`プロパティを`true`するアクティビティのインジケーターが消える`StopAnimating()`が呼び出されました。 設定されているこの`true`既定。 アクティビティのインジケーターにチェックして、回転アニメーションが実行されているかどうかを参照してください、任意の時点で、`IsAnimating`プロパティ。 
+が呼び出さ`HidesWhenStopped`れた`true`後`StopAnimating()`にアクティビティインジケーターが非表示になるようにするには、プロパティをに設定します。 既定では、 `true`これはに設定されています。 どの時点でも、プロパティを`IsAnimating`チェックすることで、アクティビティインジケーターがスピン中のアニメーションを実行しているかどうかを確認できます。 
 
 
-### <a name="managing-activity-indicator-appearances"></a>アクティビティのインジケーターの外観を管理します。
+### <a name="managing-activity-indicator-appearances"></a>アクティビティインジケーターの外観を管理する
 
-`UIActivityIndicatorViewStyle`列挙体は、アクティビティのインジケーターをインスタンス化中にパラメーターとして渡すことができます。 これを使用して、visual スタイルを設定することができます`Gray`、 `White`、または`WhiteLarge`など。
+アクティビティ`UIActivityIndicatorViewStyle`インジケーターをインスタンス化するときに、列挙体をパラメーターとして渡すことができます。 これを使用すると、visual スタイルを、 `Gray` `White`、または`WhiteLarge`に設定できます。たとえば、次のようになります。
 
 ```csharp
 activitySpinner = new UIActivityIndicatorView(UIActivityIndicatorViewStyle.WhiteLarge);
 ```
 
-によって提供される色をオーバーライドする`UIActivityIndicatorViewStyle`を設定して、`Color`プロパティ。
+によっ`UIActivityIndicatorViewStyle`て提供される色は、 `Color`プロパティを設定することによってオーバーライドできます。
 
 ## <a name="progress-bar"></a>進行状況バー
 
-進行状況バーは、状態と時間のかかるタスクの長さを示す色で塗りつぶしますを線として表示します。 進行状況バーは、タスクの長さが認識またはを計算するときに常に使用する必要があります。
+進行状況バーは、時間のかかるタスクの状態と長さを示すために色で塗りつぶす線として表示されます。 タスクの長さがわかっている場合、または計算できる場合は、進行状況バーを常に使用する必要があります。
 
-Apple では、進行状況バーを操作するための次の推奨事項があります。
+Apple では、進行状況バーの操作に関して次のような推奨事項があります。
 
-- **正確に進行状況を報告**-進行状況バーがタスクの完了に必要な時間を正確に表したは常にします。 ビジー状態で表示されるアプリの作成にかかる時間を偽ることはありません。
-- **Well-Defined 期間にわたって使用**-進行状況バーのみを表示しない時間のかかるタスクの時間が、配置しますが、ユーザーと、タスクの完了を示す値と、残りの期間の推定値です。
+- **進行状況を正確に報告**する-進行状況バーは、タスクを完了するために必要な時間の正確な表現である必要があります。 アプリがビジー状態として表示されるまでの時間を詐称しないでください。
+- **明確に定義された期間に使用**します。進行状況バーには、時間のかかるタスクが発生したことを示すだけでなく、タスクが完了したかどうかと、残存時間の見積もりが表示されます。
 
-### <a name="implementing-an-progress-bar"></a>進行状況バーが実装します。
+### <a name="implementing-an-progress-bar"></a>プログレスバーの実装
 
-進行状況バーがインスタンス化によって作成された、 [`UIProgressView`](xref:UIKit.UIProgressView)
+進行状況バーは、[`UIProgressView`](xref:UIKit.UIProgressView)
 
-### <a name="progress-bars-and-storyboards"></a>進行状況バーとストーリー ボード
+### <a name="progress-bars-and-storyboards"></a>進行状況バーとストーリーボード
 
-IOS Designer を使用する場合、UI に進行状況バーを追加できます。 検索**進行状況表示**で、**ツールボックス**ビューにドラッグします。
+IOS Designer を使用しているときに、進行状況バーを UI に追加することもできます。 **ツールボックス**で**進行状況ビュー**を検索し、ビューにドラッグします。
 
-プロパティ パッドで、次のプロパティを調整することができます。
+プロパティパッドでは、次のプロパティを調整できます。
 
 ![Properties Pad](progress-activity-indicator-images/progress-indicator3.png)
 
 
 ### <a name="managing-progress-bar-behavior"></a>進行状況バーの動作の管理
 
-使用して最初に、バーの進行状況を設定することができます、`Progress`プロパティ。
+バーの進行状況は、 `Progress`プロパティを使用して最初に設定できます。
 
 ```csharp
 ProgressBar.Progress = 0f;
 ```
 
-使用して進行状況を調整することができます、`SetProgress`メソッドとかどうかをアニメーション化、変更するかどうかを宣言するブール値を渡します。
+進行状況を調整するには、 `SetProgress`メソッドを使用して、変更をアニメーション化するかどうかを宣言するブール値を渡します。
 
 ```csharp
 ProgressBar.SetProgress(1.0f, true);
 ```
 
-進行状況バーの使用に関する詳細についてを参照してください、[進行状況の報告](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/networking/download_progress)レシピと[UICatalog tvOS サンプル](https://developer.xamarin.com/samples/monotouch/tvos/UICatalog/)します。
+進行状況バーの使用方法の詳細については、「[進行状況の報告](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/networking/download_progress)」レシピと[UICatalog tvOS サンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/tvos-uicatalog)を参照してください。
 
-### <a name="managing-progress-bar-appearance"></a>進行状況バーの外観を管理します。
+### <a name="managing-progress-bar-appearance"></a>進行状況バーの外観の管理
 
-アクティビティのインジケーターに似ています、`UIProgressViewStyle`列挙体は、進行状況バーをインスタンス化するとき、パラメーターとして渡すことができます。
+アクティビティインジケーターと同様に、 `UIProgressViewStyle`進行状況バーをインスタンス化するときに、列挙体をパラメーターとして渡すことができます。
 
-次のプロパティを使用して進行状況と追跡のイメージと濃淡の色を調整することができます。
+次のプロパティを使用して、進行状況とトラックイメージおよび濃淡の色を調整できます。
 
 ```csharp
 progressBar = new UIProgressView(UIProgressViewStyle.Default)

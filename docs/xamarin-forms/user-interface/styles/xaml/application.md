@@ -7,20 +7,20 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 7b13a192f883ea667977f4d9ae3eea41d8c65e24
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: f8fb026cd9a8dfbfd5abf13c9b11463bf84f7e0b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65971169"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68647244"
 ---
 # <a name="global-styles-in-xamarinforms"></a>Xamarin.Forms でグローバル スタイル
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/BasicStyles/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
 
 _スタイル利用できるグローバルに、アプリケーションのリソース ディクショナリに追加することで。これは、ページまたはコントロールの間でスタイルの重複を回避するのに役立ちます。_
 
-## <a name="create-a-global-style-in-xaml"></a>XAML でグローバルなスタイルを作成します。
+## <a name="create-a-global-style-in-xaml"></a>XAML でグローバルスタイルを作成する
 
 既定では、テンプレートから作成したすべての Xamarin.Forms アプリケーションでは、**App** クラスを使用して [`Application`](xref:Xamarin.Forms.Application) サブクラスが実装されます。 宣言する、 [ `Style` ](xref:Xamarin.Forms.Style)アプリケーションのアプリケーション レベルで[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) XAML、既定値を使用して**アプリ**クラスを XAML で置き換える必要があります**アプリ**クラスと関連付けられているコード ビハインドです。 詳細については、[アプリ クラスで操作して](~/xamarin-forms/app-fundamentals/application-class.md)を参照してください。
 
@@ -66,7 +66,7 @@ _スタイル利用できるグローバルに、アプリケーションのリ�
 
 ページのスタイルを作成する方法について[ `ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)を参照してください[明示的なスタイル](~/xamarin-forms/user-interface/styles/explicit.md)と[暗黙的スタイル](~/xamarin-forms/user-interface/styles/implicit.md)します。
 
-### <a name="override-styles"></a>スタイルをオーバーライドします。
+### <a name="override-styles"></a>スタイルのオーバーライド
 
 スタイルのビュー階層の下位には、アップ以上定義されているものよりも優先されます。 設定など、 [ `Style` ](xref:Xamarin.Forms.Style)設定[ `Button.TextColor` ](xref:Xamarin.Forms.Button.TextColor)に`Red`アプリケーションでレベルを設定 ページのレベルのスタイルによってオーバーライドされます`Button.TextColor`に`Green`. 同様に、ページ レベルのスタイルはコントロールのレベルのスタイルによってオーバーライドされます。 さらに場合、`Button.TextColor`が直接コントロール プロパティにこれは優先任意のスタイルを設定します。 この優先順位は次のコード例について説明します。
 
@@ -102,7 +102,7 @@ _スタイル利用できるグローバルに、アプリケーションのリ�
 
 [![](application-images/application-styles-2.png "例のスタイルをオーバーライドする")](application-images/application-styles-2-large.png#lightbox "スタイルの例をオーバーライドします。")
 
-## <a name="create-a-global-style-in-c35"></a>C でグローバルなスタイルを作成します。&#35;
+## <a name="create-a-global-style-in-c35"></a>C でグローバルスタイルを作成する&#35;
 
 [`Style`](xref:Xamarin.Forms.Style) アプリケーションのインスタンスを追加することができます[ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources)によって新しいを作成する (C#) コレクション[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)、追加してから、`Style`インスタンスを`ResourceDictionary`、として次のコード例に示します。
 
@@ -153,8 +153,8 @@ public class ApplicationStylesPageCS : ContentPage
 ## <a name="related-links"></a>関連リンク
 
 - [XAML マークアップ拡張](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
-- [基本的なスタイル (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/BasicStyles/)
-- [スタイル (サンプル) を使用します。](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithStyles/)
+- [基本的なスタイル (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
+- [スタイル (サンプル) を使用します。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithstyles)
 - [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
 - [スタイル](xref:Xamarin.Forms.Style)
 - [Set アクセス操作子](xref:Xamarin.Forms.Setter)

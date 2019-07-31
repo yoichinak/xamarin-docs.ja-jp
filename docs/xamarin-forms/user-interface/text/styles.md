@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: f70ab3faf6984720e395f5a41b4cabb63fe03053
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: b639a7fdefb8fca67d833b07ef9aa1a85da67ef6
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61188775"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68642884"
 ---
 # <a name="xamarinforms-text-styles"></a>Xamarin.Forms のテキストのスタイル
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
 _Xamarin.Forms でテキストのスタイル設定_
 
@@ -150,5 +150,5 @@ label.Style = Device.Styles.TitleStyle;
 
 - [第 12 章、Xamarin.Forms でモバイル アプリの作成](https://developer.xamarin.com/r/xamarin-forms/book/chapter12.pdf)
 - [スタイル](~/xamarin-forms/user-interface/styles/index.md)
-- [テキスト (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
+- [テキスト (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 - [スタイル](xref:Xamarin.Forms.Style)

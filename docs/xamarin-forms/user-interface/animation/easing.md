@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/14/2016
-ms.openlocfilehash: 3532a557c6ed958974326ca79ad160b01e9b5289
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 0be72e29ebfed9a3f43d96fd66b7f4597459a834
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926690"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656768"
 ---
 # <a name="easing-functions-in-xamarinforms"></a>Xamarin.Forms でのイージング関数
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Animation/Easing/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-easing)
 
 _Xamarin.Forms には、アニメーションの速度または実行されているように遅く、そのコントロールを使用すると、転送関数を指定するイージング クラスが含まれています。この記事では、定義済みのイージング関数を使用する方法とカスタム イージング関数を作成する方法を示します。_
 
@@ -112,6 +112,6 @@ await image.TranslateTo (0, 200, 2000, new Easing (t => 1 - Math.Cos (10 * Math.
 ## <a name="related-links"></a>関連リンク
 
 - [非同期サポートの概要](~/cross-platform/platform/async.md)
-- [イージング関数 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Animation/Easing/)
+- [イージング関数 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-easing)
 - [簡略化](xref:Xamarin.Forms.Easing)
 - [ViewExtensions](xref:Xamarin.Forms.ViewExtensions)

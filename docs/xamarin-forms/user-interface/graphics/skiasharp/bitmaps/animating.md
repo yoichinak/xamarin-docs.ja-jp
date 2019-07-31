@@ -7,16 +7,16 @@ ms.assetid: 97142ADC-E2FD-418C-8A09-9C561AEE5BFD
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/12/2018
-ms.openlocfilehash: 604067ac853bd53707e059b7db4abf2cfade21ce
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 69f77ef7959a53fa46210d7e6e68b9666692423b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61077276"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68653098"
 ---
 # <a name="animating-skiasharp-bitmaps"></a>SkiaSharp のビットマップをアニメーション化
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 SkiaSharp のグラフィックスを一般にアニメーション化するアプリケーションを呼び出す`InvalidateSurface`上、 `SKCanvasView` 16 ミリ秒ごとに多くの場合、固定の率でします。 呼び出しをトリガーする、画面を無効化、`PaintSurface`画面を再描画するハンドラー。 ビジュアルは、1 秒あたり 60 回再描画される、スムーズにアニメーション化に表示されます。
 
@@ -36,7 +36,7 @@ SkiaSharp と似たことを行うことができます。 この記事では、
 
 マンデルブロ集合とは、魅力的な視覚的が時間のかかる computionally です。 (マンデルブロ集合とここで使用する数学の詳細については、[の第 20 章_を Xamarin.Forms での Mobile Apps の作成_](https://xamarin.azureedge.net/developer/xamarin-forms-book/XamarinFormsBook-Ch20-Apr2016.pdf) 666 ページで開始を参照してください。 次の説明を想定その背景知識。)
 
-[**マンデルブロ アニメーション**](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/MandelAnima/)サンプルでは、ビットマップのアニメーションを使用して、マンデルブロ集合に固定小数点の継続的な拡大をシミュレートします。 ズーム アウト、後で拡大され、状態のままか、プログラムを終了するまで、サイクルが繰り返されます。
+[**マンデルブロ アニメーション**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-mandelanima)サンプルでは、ビットマップのアニメーションを使用して、マンデルブロ集合に固定小数点の継続的な拡大をシミュレートします。 ズーム アウト、後で拡大され、状態のままか、プログラムを終了するまで、サイクルが繰り返されます。
 
 プログラムは、このアニメーションのまでアプリケーションのローカル ストレージに格納された 50 のビットマップを作成して準備します。 各ビットマップには、前のビットマップとしての半分の幅と複素平面の高さが含まれます。 (プログラムでは、これらのビットマップが整数型を表すと言います_ズーム レベル_。)。シーケンス内のビットマップが表示されます。 ビットマップごとのスケーリングは別に 1 つのビットマップからスムーズな進行を提供するアニメーション化します。
 
@@ -240,7 +240,7 @@ public partial class MainPage : ContentPage
 
 `zoomLevel`パラメーターを`FilePath`範囲は 0 を`COUNT`から 1 を引いた定数。
 
-`MainPage`コンス トラクターの呼び出し、`LoadAndStartAnimation`メソッド。
+`MainPage`コンストラクターの呼び出し、`LoadAndStartAnimation`メソッド。
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -469,7 +469,7 @@ public partial class MainPage : ContentPage
 
 グラフィックス インターチェンジ形式 (GIF) 仕様には、ループ内で多くの場合、連続して表示できるシーンの複数の連続フレームを格納する 1 つの GIF ファイルを許可する機能が含まれています。 これらのファイルと呼ばれる_アニメーション Gif_します。 Web ブラウザーは、Gif、アニメーションを再生でき、SkiaSharp により、アプリケーションはアニメーション GIF ファイルからのフレームを抽出して、それらを順番に表示します。
 
-[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)サンプルには、という名前のアニメーション GIF リソースが含まれて**Newtons_cradle_animation_book_2.gif** DemonDeLuxe によって作成されからダウンロード、[ニュートンのクレードルに接続](https://en.wikipedia.org/wiki/Newton%27s_cradle) wikipedia ページ。 **アニメーション GIF**ページには、その情報を提供し、インスタンス化する XAML ファイルが含まれています、 `SKCanvasView`:
+[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルには、という名前のアニメーション GIF リソースが含まれて**Newtons_cradle_animation_book_2.gif** DemonDeLuxe によって作成されからダウンロード、[ニュートンのクレードルに接続](https://en.wikipedia.org/wiki/Newton%27s_cradle) wikipedia ページ。 **アニメーション GIF**ページには、その情報を提供し、インスタンス化する XAML ファイルが含まれています、 `SKCanvasView`:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -500,15 +500,15 @@ public partial class MainPage : ContentPage
 
 アニメーション GIF ファイルのフレームを抽出する SkisSharp の使用はしていない、任意の場所を文書化するため、次のコードの記述が通常よりも詳細。
 
-アニメーション GIF ファイルのデコードがページのコンス トラクターで発生しする必要があります、`Stream`ビットマップを参照するオブジェクトを作成するために使用する`SKManagedStream`オブジェクトをクリックし、 [ `SKCodec` ](xref:SkiaSharp.SKCodec)オブジェクト。 [ `FrameCount` ](xref:SkiaSharp.SKCodec.FrameCount)プロパティは、アニメーションを構成するフレームの数を示します。
+アニメーション GIF ファイルのデコードがページのコンストラクターで発生しする必要があります、`Stream`ビットマップを参照するオブジェクトを作成するために使用する`SKManagedStream`オブジェクトをクリックし、 [ `SKCodec` ](xref:SkiaSharp.SKCodec)オブジェクト。 [ `FrameCount` ](xref:SkiaSharp.SKCodec.FrameCount)プロパティは、アニメーションを構成するフレームの数を示します。
 
-コンス トラクターを使用して、これらのフレームは個々 のビットマップとして保存最終的には`FrameCount`型の配列を割り当てる`SKBitmap`と 2 つ`int`累積 (アニメーションのロジックが容易になります) を各フレームの期間の配列期間。
+コンストラクターを使用して、これらのフレームは個々 のビットマップとして保存最終的には`FrameCount`型の配列を割り当てる`SKBitmap`と 2 つ`int`累積 (アニメーションのロジックが容易になります) を各フレームの期間の配列期間。
 
 [ `FrameInfo` ](xref:SkiaSharp.SKCodec.FrameInfo)プロパティの`SKCodec`クラスの配列は、 [ `SKCodecFrameInfo` ](xref:SkiaSharp.SKCodecFrameInfo)値、1 つは、各フレームがこのプログラムではその構造からですだけが、 [ `Duration` ](xref:SkiaSharp.SKCodecFrameInfo.Duration) (ミリ秒) 内のフレームの。
 
 `SKCodec` という名前のプロパティを定義します[ `Info` ](xref:SkiaSharp.SKCodec.Info)型の[ `SKImageInfo`](xref:SkiaSharp.SKImageInfo)が、その`SKImageInfo`値を示します (少なくともこのイメージ) の色の種類がある`SKColorType.Index8`、です。 つまり。各ピクセルが、色の種類へのインデックス。 カラー テーブルを怠ってを避けるためには、プログラムを使用して、 [ `Width` ](xref:SkiaSharp.SKImageInfo.Width)と[ `Height` ](xref:SkiaSharp.SKImageInfo.Height)フルカラーを所有していることを構築するには、その構造から情報`ImageInfo`値。 各`SKBitmap`をから作成されます。
 
-`GetPixels`メソッドの`SKBitmap`を返します、`IntPtr`そのビットマップのピクセル ビットを参照します。 これらのピクセル ビットはまだ設定されていません。 ある`IntPtr`のいずれかに渡される、 [ `GetPixels` ](xref:SkiaSharp.SKCodec.GetPixels(SkiaSharp.SKImageInfo,System.IntPtr,SkiaSharp.SKCodecOptions))メソッドの`SKCodec`します。 そのメソッドが GIF ファイルからによって参照されるメモリ領域にフレームをコピー、`IntPtr`します。 [ `SKCodecOptions` ](xref:SkiaSharp.SKCodecOptions)コンス トラクターは、フレームの数を示します。
+`GetPixels`メソッドの`SKBitmap`を返します、`IntPtr`そのビットマップのピクセル ビットを参照します。 これらのピクセル ビットはまだ設定されていません。 ある`IntPtr`のいずれかに渡される、 [ `GetPixels` ](xref:SkiaSharp.SKCodec.GetPixels(SkiaSharp.SKImageInfo,System.IntPtr,SkiaSharp.SKCodecOptions))メソッドの`SKCodec`します。 そのメソッドが GIF ファイルからによって参照されるメモリ領域にフレームをコピー、`IntPtr`します。 [ `SKCodecOptions` ](xref:SkiaSharp.SKCodecOptions)コンストラクターは、フレームの数を示します。
 
 ```csharp
 public partial class AnimatedGifPage : ContentPage
@@ -578,7 +578,7 @@ public partial class AnimatedGifPage : ContentPage
 
 関係なく、`IntPtr`値、いいえ`unsafe`コードは、必要なため、 `IntPtr` C# ポインター値には変換されません。
 
-各フレームを抽出すると、コンス トラクターはすべてのフレームの期間を合計し、累積期間別の配列を初期化します。
+各フレームを抽出すると、コンストラクターはすべてのフレームの期間を合計し、累積期間別の配列を初期化します。
 
 分離コード ファイルの残りの部分には、アニメーションは専用です。 `Device.StartTimer`メソッドを使用して、タイマーを開始し、`OnTimerTick`コールバックを使用して、`Stopwatch`経過時間 (ミリ秒単位) を決定するオブジェクト。 累積期間配列をループ処理は、現在のフレームを検索するための十分なは。
 
@@ -660,5 +660,5 @@ public partial class AnimatedGifPage : ContentPage
 ## <a name="related-links"></a>関連リンク
 
 - [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
-- [マンデルブロ アニメーション (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/MandelAnima/)
+- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [マンデルブロ アニメーション (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-mandelanima)

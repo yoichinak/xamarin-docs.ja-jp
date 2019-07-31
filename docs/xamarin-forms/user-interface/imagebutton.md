@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/19/2018
-ms.openlocfilehash: f97cd3030b865b53b82845ff8941e3f0a10f0320
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 90d860cb6429025672a058e22e76f029872d3b34
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61169831"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657173"
 ---
 # <a name="xamarinforms-imagebutton"></a>Xamarin.Forms ImageButton
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/FormsGallery/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
 
 _ImageButton がイメージを表示し、タップまたは特定のタスクを実行するためにアプリケーションに指示するクリックに応答します。_
 
@@ -25,7 +25,7 @@ _ImageButton がイメージを表示し、タップまたは特定のタスク�
 > [!NOTE]
 > 中に、 [ `Button` ](xref:Xamarin.Forms.Button)ビュー定義、 [ `Image` ](xref:Xamarin.Forms.Button.Image)にイメージを表示することができるプロパティ、 `Button`、小さいアイコンを表示するときに使用するこのプロパティが対象としています次に、`Button`テキスト。
 
-このガイドのコード例がから取得した、 [FormsGallery サンプル](https://developer.xamarin.com/samples/xamarin-forms/FormsGallery/)します。
+このガイドのコード例がから取得した、 [FormsGallery サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)します。
 
 ## <a name="setting-the-image-source"></a>イメージ ソースを設定します。
 
@@ -276,4 +276,4 @@ public class ImageButtonDemoPage : ContentPage
 
 ## <a name="related-links"></a>関連リンク
 
-- [FormsGallery サンプル](https://developer.xamarin.com/samples/xamarin-forms/FormsGallery/)
+- [FormsGallery サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)

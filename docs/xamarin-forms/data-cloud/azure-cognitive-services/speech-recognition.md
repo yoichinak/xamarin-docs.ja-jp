@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: f854ac363fe3e5b9dc3df046c9fab592b97bc962
-ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
+ms.openlocfilehash: 97997a527647ae972eadff47da8c1321d5d55daa
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67675257"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655453"
 ---
 # <a name="speech-recognition-using-the-microsoft-speech-api"></a>Microsoft Speech API を使用して、音声認識
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoCognitiveServices/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 
 _Microsoft Speech API には、音声言語を処理するアルゴリズムを提供するクラウド ベースの API です。この記事では、Microsoft の音声認識の REST API を使用して、Xamarin.Forms アプリケーションでのテキストをオーディオに変換する方法について説明します。_
 
@@ -114,7 +114,7 @@ string GenerateRequestUri(string speechEndpoint)
 }
 ```
 
-によって実行される主な構成、`GenerateRequestUri`メソッドは、オーディオ コンテンツのロケールを設定します。 サポートされているロケールの一覧は、次を参照してください。[サポートされる言語](/azure/cognitive-services/speech/api-reference-rest/supportedlanguages/)します。
+によって実行される主な構成、`GenerateRequestUri`メソッドは、オーディオ コンテンツのロケールを設定します。 サポートされているロケールの一覧については、「[サポートされる言語](/azure/cognitive-services/speech/api-reference-rest/supportedlanguages/)」を参照してください。
 
 ### <a name="sending-the-request"></a>要求を送信します。
 
@@ -170,5 +170,5 @@ POST 要求に送信し、 `recognition` API。 応答が読み取られ、呼�
 ## <a name="related-links"></a>関連リンク
 
 - [Microsoft Speech API のドキュメント](/azure/cognitive-services/speech/home/)します。
-- [RESTful Web サービスを使用します。](~/xamarin-forms/data-cloud/web-services/rest.md)
-- [Todo Cognitive Services (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoCognitiveServices/)
+- [RESTful Web サービスを使用する](~/xamarin-forms/data-cloud/web-services/rest.md)
+- [Todo Cognitive Services (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)

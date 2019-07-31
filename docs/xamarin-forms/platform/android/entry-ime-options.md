@@ -1,24 +1,24 @@
 ---
-title: Android でのエントリの入力方式エディター オプション
-description: プラットフォーム仕様はカスタム レンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ利用できる機能の使用を可能にします。 この記事では、Android プラットフォームに固有のエントリのソフト キーボードのエディター オプションの入力方法を設定するを使用する方法について説明します。
+title: Android の入力方法エディターオプション
+description: プラットフォーム仕様はカスタム レンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ利用できる機能の使用を可能にします。 この記事では、エントリのソフトキーボードの Input Method Editor オプションを設定する Android プラットフォーム固有のを使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 7909C738-04B2-4476-9A3B-A6D79BC3B9B2
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: 4da446cf342065ce7766f8df0c71008ab47c31c4
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 3711e85bd30deb06f351f4539c5ffc7e4236efb6
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926820"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68653604"
 ---
-# <a name="entry-input-method-editor-options-on-android"></a>Android でのエントリの入力方式エディター オプション
+# <a name="entry-input-method-editor-options-on-android"></a>Android の入力方法エディターオプション
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-この Android のプラットフォーム固有設定入力方式エディター (IME) オプションのソフト キーボードの[ `Entry`](xref:Xamarin.Forms.Entry)します。 これは、ソフト キーボード、およびとの対話の下隅にあるユーザーのアクション ボタンの設定が含まれています、`Entry`します。 これは、 XAML で[`Entry.ImeOptions`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Entry.ImeOptionsProperty)添付プロパティを[`ImeFlags`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags)列挙型の値に設定して使用します。
+この Android プラットフォーム固有のは、 [`Entry`](xref:Xamarin.Forms.Entry)のソフトキーボードの Input Method Editor (IME) オプションを設定します。 これは、ソフト キーボード、およびとの対話の下隅にあるユーザーのアクション ボタンの設定が含まれています、`Entry`します。 これは、 XAML で[`Entry.ImeOptions`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Entry.ImeOptionsProperty)添付プロパティを[`ImeFlags`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags)列挙型の値に設定して使用します。
 
 ```xaml
 <ContentPage ...
@@ -62,7 +62,7 @@ entry.On<Android>().SetImeOptions(ImeFlags.Send);
 
 ## <a name="related-links"></a>関連リンク
 
-- [プラットフォーム仕様 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [プラットフォーム仕様 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [プラットフォーム仕様の作成](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
-- [AndroidSpecific API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)
-- [AndroidSpecific.AppCompat API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)
+- [AndroidSpecific の API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)
+- [AndroidSpecific の AppCompat API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)

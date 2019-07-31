@@ -1,24 +1,24 @@
 ---
-title: Android web ビューのズーム
-description: プラットフォーム仕様はカスタム レンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ利用できる機能の使用を可能にします。 この記事では、Android プラットフォームに固有の web ビューのズームをできるようにするを使用する方法について説明します。
+title: Android での WebView のズーム
+description: プラットフォーム仕様はカスタム レンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ利用できる機能の使用を可能にします。 この記事では、WebView のズームを有効にする Android プラットフォーム固有のを使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: DC1A3762-6A42-4298-929C-445F416C3E60
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/09/2019
-ms.openlocfilehash: 0e180ca5019bd4e5d1351cfb2f7a8c28ade2afe2
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: 2142882add91d613263d11fa4c1e6d7ad142c7c7
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65971644"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656001"
 ---
-# <a name="webview-zoom-on-android"></a>Android web ビューのズーム
+# <a name="webview-zoom-on-android"></a>Android での WebView のズーム
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-この Android プラットフォームに固有でピンチ ズームとズーム コントロールを有効にする[ `WebView`](xref:Xamarin.Forms.WebView)します。 XAML で設定して使用される、`WebView.EnableZoomControls`と`WebView.DisplayZoomControls`バインド可能なプロパティを`boolean`値。
+この Android プラットフォーム固有の機能により、の[`WebView`](xref:Xamarin.Forms.WebView)ピンチとズームのコントロールが有効になります。 次のように、 `WebView.EnableZoomControls` `WebView.DisplayZoomControls`バインド可能なプロパティを値に`boolean`設定することにより、XAML で使用されます。
 
 ```xaml
 <ContentPage ...
@@ -29,9 +29,9 @@ ms.locfileid: "65971644"
 </ContentPage>
 ```
 
-`WebView.EnableZoomControls`バインド可能なプロパティで、ピンチ ズームを有効にするかどうかを制御する、 [ `WebView` ](xref:Xamarin.Forms.WebView)、および`WebView.DisplayZoomControls`バインド可能なプロパティは、ズーム コントロールでのオーバーレイ表示されるかどうかを制御、`WebView`します。
+バインド`WebView.EnableZoomControls`可能なプロパティは、 [`WebView`](xref:Xamarin.Forms.WebView)でピンチからズームを有効にするかどうか`WebView.DisplayZoomControls`を制御し、バインド可能なプロパティは、 `WebView`ズームコントロールをに重ねて表示するかどうかを制御します。
 
-プラットフォームに固有の使用または、 C# fluent API を使用します。
+または、fluent API C#を使用して、プラットフォーム固有のを使用することもできます。
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -43,18 +43,18 @@ webView.On<Android>()
     .DisplayZoomControls(true);
 ```
 
-`WebView.On<Android>`メソッドはこのプラットフォーム仕様が Android 上でのみ動作することを指定します。 `WebView.EnableZoomControls`メソッドで、 [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)でピンチ ズームを有効にするかどうか、名前空間を使用して、 [ `WebView`](xref:Xamarin.Forms.WebView)します。 `WebView.DisplayZoomControls`メソッドを同じ名前空間を使用でズーム コントロールがオーバーレイ表示されるかどうかを制御する、`WebView`します。 さらに、`WebView.ZoomControlsEnabled`と`WebView.ZoomControlsDisplayed`有効かどうかピンチ ズームとズームのコントロールは、それぞれを返すメソッドを使用できます。
+`WebView.On<Android>`メソッドはこのプラットフォーム仕様が Android 上でのみ動作することを指定します。 名前空間[`WebView`](xref:Xamarin.Forms.WebView)の`WebView.EnableZoomControls`メソッドを使用して、でピンチ操作によるズームを有効にするかどうかを制御[`Xamarin.Forms.PlatformConfiguration.AndroidSpecific`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)します。 同じ名前空間の`WebView`メソッドを使用して、ズームコントロールをに重ねて表示するかどうかを制御します。`WebView.DisplayZoomControls` また`WebView.ZoomControlsEnabled` 、メソッドと`WebView.ZoomControlsDisplayed`メソッドを使用して、ピンチとズームの両方のコントロールが有効になっているかどうかを返すことができます。
 
-結果でそのピンチ、ズームを有効にすることができます、 [ `WebView` ](xref:Xamarin.Forms.WebView)、ズーム コントロールにオーバーレイでき、 `WebView`:
+結果として、では[`WebView`](xref:Xamarin.Forms.WebView)ピンチからズームを有効にすることができ、ズームコントロールはにオーバーレイ`WebView`できます。
 
-[![Android WebView を拡大のスクリーン ショット](webview-zoom-controls-images/webview-zoom.png "拡大 WebView")](webview-zoom-controls-images/webview-zoom-large.png#lightbox "WebView の拡大")
+Android でズームされる webview [![のズームのスクリーンショット](webview-zoom-controls-images/webview-zoom.png "") ](webview-zoom-controls-images/webview-zoom-large.png#lightbox "拡大")した WebView
 
 > [!IMPORTANT]
-> ズーム コントロールする必要がありますが両方有効になっているし、それぞれのバインド可能なプロパティまたはでオーバーレイ対象のメソッドを使用して、表示、 [ `WebView`](xref:Xamarin.Forms.WebView)します。
+> ズームコントロールは、 [`WebView`](xref:Xamarin.Forms.WebView)それぞれのバインド可能なプロパティまたはメソッドを使用して、に重ねられるように有効にし、表示する必要があります。
 
 ## <a name="related-links"></a>関連リンク
 
-- [プラットフォーム仕様 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+- [プラットフォーム仕様 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [プラットフォーム仕様の作成](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
-- [AndroidSpecific API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)
-- [AndroidSpecific.AppCompat API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)
+- [AndroidSpecific の API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)
+- [AndroidSpecific の AppCompat API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)
