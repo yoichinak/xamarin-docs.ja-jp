@@ -7,22 +7,22 @@ ms.assetid: 781937AA-AA1C-469C-AA92-D42D08B58635
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/24/2017
-ms.openlocfilehash: c71f0c0e5224c3fc4615d570487ed63c957c5556
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 09f2c2c0367b50146a564b370f555a1ed804371e
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61344795"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68642543"
 ---
 # <a name="skiasharp-curves-and-paths"></a>SkiaSharp の曲線とパス
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _SkiaSharp を使用して曲線を描画し、パスの機能を使用する方法について説明します_
 
 探索[ `SKPath` ](xref:SkiaSharp.SKPath)から始まったメソッドとプロパティ、 [ **SkiaSharp の線とパス**](../paths/index.md)記事。 こちらの記事を続行する曲線を追加するメソッド、`SKPath`オブジェクト、およびその他のパスの強力な機能を活用します。 簡潔な文字列のパス全体を指定する方法、パスの効果を使用する方法、およびパスの内部を詳しく調査する方法を確認します。
 
-このセクションでは、すべてのサンプル プログラムが記載されて、 **SkiaSharp の曲線とパス**のページ、 [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)プログラム、および、 [ **曲線**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves)ソリューションのフォルダー。
+このセクションでは、すべてのサンプル プログラムが記載されて、 **SkiaSharp の曲線とパス**のページ、 [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)プログラム、および、 [ **曲線**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves)ソリューションのフォルダー。
 
 ## <a name="three-ways-to-draw-an-arcarcsmd"></a>[円弧を描画する 3 つの方法](arcs.md)
 
@@ -56,4 +56,4 @@ SkiaSharp を使用して、円錐、二次方程式、3 次ベジエ曲線を�
 ## <a name="related-links"></a>関連リンク
 
 - [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

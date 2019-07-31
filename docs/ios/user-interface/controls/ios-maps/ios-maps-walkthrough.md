@@ -1,33 +1,33 @@
 ---
-title: 注釈と Xamarin.iOS でのオーバーレイ
-description: この記事では、Map Kit の注釈とオーバーレイの機能を使用する方法を示すステップ バイ ステップ チュートリアルを示します。 マップは、Xamarin 進化 2013 カンファレンスの位置にある、注釈とオーバーレイを表示するアプリケーションを追加する方法を示します。
+title: Xamarin. iOS の注釈とオーバーレイ
+description: この記事では、マップキットの注釈機能とオーバーレイ機能を使用する方法を説明するステップバイステップのチュートリアルを示します。 ここでは、Xamarin 進化2013カンファレンスの場所に注釈とオーバーレイを表示するマップをアプリケーションに追加する方法を示します。
 ms.prod: xamarin
 ms.assetid: 1BC4F7FC-AE3C-46D7-A4D3-18E142F55B8E
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 445661513b0cf79df99d54ed0bb4b0261dd75c2a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: dba8fc3c239a8c20795913d6d1e5409a478c4072
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61381501"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68642725"
 ---
-# <a name="annotations-and-overlays-in-xamarinios"></a>注釈と Xamarin.iOS でのオーバーレイ
+# <a name="annotations-and-overlays-in-xamarinios"></a>Xamarin. iOS の注釈とオーバーレイ
 
-このチュートリアルで構築するアプリケーションは、以下に示します。
+このチュートリアルでビルドするアプリケーションは次のようになります。
 
  [![](ios-maps-walkthrough-images/00-map-overlay.png "MapKit アプリの例")](ios-maps-walkthrough-images/00-map-overlay.png#lightbox)
  
-完成したコードを見つけることができます、[マップ チュートリアル サンプル](https://developer.xamarin.com/samples/monotouch/MapsWalkthrough/)します。
+完成したコードは、マップの[チュートリアルのサンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/mapswalkthrough)で確認できます。
 
-新しい作成から始めましょう**iOS 空のプロジェクト**、関連する名前を付けます。 コードの MapView を表示するビュー コント ローラーを追加して始めますおは当社の MapDelegate とカスタム注釈の新しいクラスを作成し。 以下の手順でビルドします。
+まず、新しい IOS の空の**プロジェクト**を作成し、関連する名前を付けます。 まず、ビューコントローラーに MapView を表示するコードを追加し、Mapview の新しいクラスとカスタム注釈を作成します。 以下の手順でビルドします。
 
 ## <a name="viewcontroller"></a>ViewController
 
 
-1. 次の名前空間を追加、 `ViewController`:
+1. に次の名前空間を`ViewController`追加します。
 
     ```csharp
     using MapKit;
@@ -36,7 +36,7 @@ ms.locfileid: "61381501"
     using CoreGraphics
     ```
 
-1. 追加、`MKMapView`と共に、クラスに変数をインスタンス化、`MapDelegate`インスタンス。 ここで作成、`MapDelegate`後。
+1. インスタンスと共に、 `MKMapView`インスタンス変数をクラスに追加`MapDelegate`します。 間もなく、次の`MapDelegate`ように作成します。
 
     ```csharp
     public partial class ViewController : UIViewController
@@ -46,7 +46,7 @@ ms.locfileid: "61381501"
         ...
     ```
 
-1. コント ローラーの`LoadView`メソッドを追加、`MKMapView`に設定し、`View`コント ローラーのプロパティ。
+1. コントローラーの`LoadView`メソッドで、を`MKMapView`追加`View`し、コントローラーのプロパティに設定します。
 
     ```csharp
     public override void LoadView ()
@@ -56,9 +56,9 @@ ms.locfileid: "61381501"
     }
     ```
 
-    次に、マップを初期化するコードを追加、' ViewDidLoad ' メソッド。
+    次に、' ViewDidLoad ' ' メソッドでマップを初期化するコードを追加します。
 
-1. `ViewDidLoad`マップの種類を設定し、ユーザーの場所を表示して、ズームとパンを許可するコードを追加します。
+1. [ `ViewDidLoad`マップの種類を設定するためのコードの追加] で、ユーザーの場所を表示し、ズームとパンを許可します。
 
     ```csharp
     // change map type, show user location and allow zooming and panning
@@ -69,7 +69,7 @@ ms.locfileid: "61381501"
     
     ```
 
-1. 次に、マップの中心し、it の領域を設定するコードを追加します。
+1. 次に、マップを中央に配置し、その領域を設定するためのコードを追加します。
 
     ```csharp
     double lat = 30.2652233534254;
@@ -81,20 +81,20 @@ ms.locfileid: "61381501"
     
     ```
 
-1. 新しいインスタンスを作成`MapDelegate`に割り当てると、`Delegate`の`MKMapView`します。 Implcodeent があると、もう一度、`MapDelegate`後。
+1. の`MapDelegate`新しいインスタンスを作成し、のに割り当て`Delegate` `MKMapView`ます。 ここでも、すぐに`MapDelegate` implcodeent ます。
 
     ```csharp
     mapDelegate = new MapDelegate ();
     map.Delegate = mapDelegate;     
     ```
 
-1. 8、iOS の時点では、ユーザーの場所を使用するには、このサンプルに追加しましょうから承認する要求する必要があります。 最初に、定義、`CLLocationManager`クラス レベルの変数。
+1. IOS 8 では、ユーザーが自分の場所を使用するために承認を要求する必要があるので、このサンプルに追加してみましょう。 まず、クラスレベル`CLLocationManager`の変数を定義します。
 
     ```csharp
     CLLocationManager locationManager = new CLLocationManager();
     ```
 
-1. `ViewDidLoad`を確認して、アプリケーションを実行しているデバイスは iOS 8 を使用して承認が要求されますがある場合、アプリが使用するメソッド。
+1. `ViewDidLoad`メソッドでは、アプリケーションを実行しているデバイスが iOS 8 を使用しているかどうかを確認し、アプリが使用されている場合に承認を要求します。
 
     ```csharp
     if (UIDevice.CurrentDevice.CheckSystemVersion(8,0)){
@@ -102,19 +102,19 @@ ms.locfileid: "61381501"
                 }
     ```
 
-1. 最後に、編集する必要があります、 **Info.plist**ファイルの場所を要求する理由のユーザに通知します。 **ソース**のメニュー、 **Info.plist**、次のキーを追加します。
+1. 最後に、ユーザーが場所を要求する理由をユーザーに通知するために、**情報 plist**ファイルを編集する必要があります。 **情報 plist**の **[ソース]** メニューで、次のキーを追加します。
     
     `NSLocationWhenInUseUsageDescription` 
     
-    文字列: 
+    および文字列: 
 
     `Maps Walkthrough Docs Sample`。
 
 
-## <a name="conferenceannotationcs--a-class-for-custom-annotations"></a>ConferenceAnnotation.cs – カスタム注釈クラス
+## <a name="conferenceannotationcs--a-class-for-custom-annotations"></a>ConferenceAnnotation.cs –カスタム注釈のクラス
 
 
-1. カスタム クラスと呼ばれる注釈を使用していきます`ConferenceAnnotation`します。 次のクラスをプロジェクトに追加します。
+1. ここでは、という`ConferenceAnnotation`注釈にカスタムクラスを使用します。 次のクラスをプロジェクトに追加します。
 
     ```csharp
     using System;
@@ -150,15 +150,15 @@ ms.locfileid: "61381501"
     }   
     ```
 
-## <a name="viewcontroller---adding-the-annotation-and-overlay"></a>ViewController - 注釈とオーバーレイの追加
+## <a name="viewcontroller---adding-the-annotation-and-overlay"></a>ViewController-注釈とオーバーレイの追加
 
-1. `ConferenceAnnotation`インプレースに追加できますが、マップします。 戻り、`ViewDidLoad`のメソッド、`ViewController`マップの中心の座標で注釈を追加します。
+1. `ConferenceAnnotation`を配置したら、それをマップに追加できます。 のメソッド`ViewDidLoad`に戻り、次のように、マップの中心座標に注釈を追加します。`ViewController`
 
     ```csharp
     map.AddAnnotations (new ConferenceAnnotation ("Evolve Conference", mapCenter)); 
     ```
 
-1. ホテルのオーバーレイにも必要です。 作成する次のコードを追加、 `MKPolygon` 、ホテルの座標を使用して、呼び出しによって、マップに追加`AddOverlay`:
+1. また、ホテルを重ねる必要もあります。 次のコードを追加して`MKPolygon` 、指定されたホテルの座標を使用してを作成し、 `AddOverlay`を呼び出して map に追加します。
 
     ```csharp
     // add an overlay of the hotel
@@ -178,12 +178,12 @@ ms.locfileid: "61381501"
     
     map.AddOverlay (hotelOverlay);  
     ```
-コードでは、これが完了すると`ViewDidLoad`します。 実装する必要があります、`MapDelegate`注釈の作成を処理し、それぞれのビューをオーバーレイするクラス。
+これにより、の`ViewDidLoad`コードが完成します。 ここで、注釈とオーバーレイ`MapDelegate`ビューの作成をそれぞれ処理するクラスを実装する必要があります。
 
 
 ## <a name="mapdelegate"></a>MapDelegate
 
-1. というクラスを作成`MapDelegate`から継承する`MKMapViewDelegate`を含めると、`annotationId`注釈の再利用の識別子として使用する変数。
+1. を`MapDelegate` `annotationId`継承するというクラスを作成し、注釈の再利用識別子として使用する変数を含めます。 `MKMapViewDelegate`
 
     ```csharp
     class MapDelegate : MKMapViewDelegate
@@ -192,9 +192,9 @@ ms.locfileid: "61381501"
         ...
     }
     ```
-    しかここにある 1 つの注釈ので再利用するコードで厳密には必要はありませんが、インクルードすることをお勧めします。
+    ここには1つの注釈しかないので、再利用コードは厳密には必要ありませんが、これを含めることをお勧めします。
 
-1. 実装、`GetViewForAnnotation`のビューを返すメソッド、`ConferenceAnnotation`を使用して、 **conference.png**このチュートリアルに含まれているイメージ。
+1. メソッドを実装して、このチュートリアルに`ConferenceAnnotation`含まれているカンファレンスの **.png**イメージを使用して、のビューを返します。 `GetViewForAnnotation`
 
     ```csharp
     public override MKAnnotationView GetViewForAnnotation (MKMapView mapView, NSObject annotation)
@@ -220,14 +220,14 @@ ms.locfileid: "61381501"
     }
     ```
 
-1. オースティンの都市が表示された画像を表示たいユーザーがのコメントをタップします。 次の変数を追加して、`MapDelegate`イメージを表示するビュー。
+1. ユーザーが注釈をタップすると、オースティンの市を示す画像が表示されます。 イメージのに次の変数`MapDelegate`を追加し、ビューを表示します。
 
     ```csharp
     UIImageView venueView;
     UIImage venueImage;
     ```
 
-1. 次に、注釈がタップされたときに、画像を表示、実装、`DidSelectAnnotation`メソッドとして、次のとおりです。
+1. 次に、注釈がタップされたときにイメージを表示`DidSelectAnnotation`するには、次のようにメソッドを実装します。
 
     ```csharp
     public override void DidSelectAnnotationView (MKMapView mapView, MKAnnotationView view)
@@ -247,7 +247,7 @@ ms.locfileid: "61381501"
     }
     ```
 
-1. ユーザー マップ上の別の場所をタップしてコメントを解除するときに、イメージを非表示には、実装、`DidSelectAnnotationView`メソッドとして、次のとおりです。
+1. ユーザーがマップ上の他の場所をタップして注釈を選択解除したときに`DidSelectAnnotationView`イメージを非表示にするには、次のようにメソッドを実装します。
 
     ```csharp
     public override void DidDeselectAnnotationView (MKMapView mapView, MKAnnotationView view)
@@ -261,9 +261,9 @@ ms.locfileid: "61381501"
         }
     }
     ```
-    場所に、コードの注釈があるようになりました。 コードを追加するだけですが、`MapDelegate`ホテル オーバーレイのビューを作成します。
+    これで、注釈のコードが配置されました。 残っているのは、ホテルオーバーレイのビュー `MapDelegate`を作成するために、にコードを追加することだけです。
 
-1. 次の実装を追加`GetViewForOverlay`を`MapDelegate`:
+1. の次の`GetViewForOverlay`実装を`MapDelegate`に追加します。
 
     ```csharp
     public override MKOverlayView GetViewForOverlay (MKMapView mapView, NSObject overlay)
@@ -277,17 +277,17 @@ ms.locfileid: "61381501"
     }
     ```
 
-アプリケーションを実行します。 カスタム注釈とオーバーレイの対話型のマップがあるようになりました。 [注釈] をタップし、次に示すよう、オースティンの画像が表示されます。
+アプリケーションを実行します。 カスタム注釈とオーバーレイを含む対話型マップが作成されました。 次に示すように、注釈をタップすると、オースティンのイメージが表示されます。
 
- [![](ios-maps-walkthrough-images/01-map-image.png "[注釈] をタップし、オースティンの画像が表示されます。")](ios-maps-walkthrough-images/01-map-image.png#lightbox)
+ [![](ios-maps-walkthrough-images/01-map-image.png "注釈をタップすると、オースティンのイメージが表示されます。")](ios-maps-walkthrough-images/01-map-image.png#lightbox)
 
 ## <a name="summary"></a>まとめ
 
-この記事では、マップに注釈を追加する方法と、指定された多角形のオーバーレイを追加する方法を説明しました。 マップ上のイメージをアニメーション化する注釈をタッチ サポートを追加する方法も示しました。
+この記事では、マップに注釈を追加する方法と、指定した多角形のオーバーレイを追加する方法について説明しました。 また、注釈にタッチサポートを追加して、マップ上でイメージをアニメーション化する方法についても説明します。
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [マップのチュートリアルのサンプル](https://developer.xamarin.com/samples/monotouch/MapsWalkthrough/)
-- [マップのデモのサンプル](https://developer.xamarin.com/samples/monotouch/MapDemo/)
+- [Maps チュートリアルのサンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/mapswalkthrough)
+- [マップのデモのサンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/mapdemo)
 - [iOS のマップ](~/ios/user-interface/controls/ios-maps/index.md)

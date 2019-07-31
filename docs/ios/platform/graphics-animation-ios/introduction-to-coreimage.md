@@ -1,33 +1,33 @@
 ---
-title: Xamarin.iOS で core イメージ
-description: Core のイメージは、iOS 5 イメージ処理を提供し、ライブ ビデオの拡張機能で導入された新しいフレームワークです。 この記事では、Xamarin.iOS サンプルを使ってこれらの機能について説明します。
+title: Xamarin のコアイメージ
+description: コアイメージは、iOS 5 で導入された新しいフレームワークであり、イメージ処理機能とライブビデオ拡張機能を提供します。 この記事では、Xamarin のサンプルでこれらの機能について説明します。
 ms.prod: xamarin
 ms.assetid: 91E0780B-FF8A-E70D-9CD4-419119612B2D
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: b58cf2244d16e154cf0a979bc509e7356a75bdb2
-ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
+ms.openlocfilehash: e4676314b361bac17b3c6df64631572e62f4d870
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66827840"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68653732"
 ---
-# <a name="core-image-in-xamarinios"></a>Xamarin.iOS で core イメージ
+# <a name="core-image-in-xamarinios"></a>Xamarin のコアイメージ
 
-_Core のイメージは、iOS 5 イメージ処理を提供し、ライブ ビデオの拡張機能で導入された新しいフレームワークです。この記事では、Xamarin.iOS サンプルを使ってこれらの機能について説明します。_
+_コアイメージは、iOS 5 で導入された新しいフレームワークであり、イメージ処理機能とライブビデオ拡張機能を提供します。この記事では、Xamarin のサンプルでこれらの機能について説明します。_
 
-Core のイメージは、さまざまな組み込みのフィルターと画像および顔検出を含むビデオに適用する効果を提供する iOS 5 で導入された新しいフレームワークです。
+コアイメージは、iOS 5 で導入された新しいフレームワークであり、顔検出など、イメージやビデオに適用するさまざまな組み込みのフィルターおよび効果を提供します。
 
-このドキュメントには、簡単な例が含まれています。
+このドキュメントには、次の簡単な例が含まれています。
 
--  顔検出します。
--  イメージにフィルターを適用
+-  顔検出。
+-  画像へのフィルターの適用
 -  使用可能なフィルターを一覧表示します。
 
 
-これらの例は、Xamarin.iOS アプリケーションにコア イメージ機能を組み込む作業を開始するヘルプする必要があります。
+これらの例では、Xamarin の iOS アプリケーションにコアイメージ機能を組み込む方法について説明します。
 
 ## <a name="requirements"></a>必要条件
 
@@ -35,9 +35,9 @@ Xcode の最新バージョンを使用する必要があります。
 
 ## <a name="face-detection"></a>顔検出
 
-Core のイメージの顔検出機能は名前だけ – 写真で顔を特定しようとし、認識しているすべての面の座標を返します。 この情報は、イメージ内のユーザーの数をカウント、インジケーターを (例: イメージの描画に使用できます。 'タグの' people 写真で)、またはその他考えることができます。
+主要な画像の顔検出機能では、写真内の顔を識別し、認識している顔の座標を返すことを試みます。 この情報を使用して、イメージ内の人数をカウントしたり、画像にインジケーターを描画したりすることができます (例として、 写真に "タグを付けている"、または他の人が考えてみてください。
 
-CoreImage\SampleCode.cs から次のコードでは、作成し、埋め込み画像の顔検出を使用する方法を示しています。
+この CoreImage\SampleCode.cs のコードは、埋め込み画像で顔検出を作成して使用する方法を示しています。
 
 ```csharp
 var image = new UIImage("photoFace.JPG");
@@ -47,17 +47,17 @@ var ciImage = CIImage.FromCGImage(image.CGImage);
 CIFeature[] features = detector.FeaturesInImage(ciImage);
 ```
 
-機能の配列を伴って`CIFaceFeature`オブジェクト (すべての顔が検出されなかった) 場合。 `CIFaceFeature`の顔ごと。 `CIFaceFeature` 次のプロパティがあります。
+特徴配列には、 `CIFaceFeature`オブジェクト (任意の顔が検出された場合) が設定されます。 各面`CIFaceFeature`にはがあります。 `CIFaceFeature`には、次のプロパティがあります。
 
--  HasMouthPosition – この顔を口が検出されたかどうか。
--  HasLeftEyePosition – 左目がこの顔の検出されたかどうか。
--  HasRightEyePosition – この面の適切な目が検出されたかどうか。 
--  MouthPosition – この顔口の座標。
--  LeftEyePosition – この面の左目の座標。
--  RightEyePosition – この面の適切な目の座標。
+-  HasMouthPosition –この顔で口が検出されたかどうかを指定します。
+-  HasLeftEyePosition –この顔に対して左目が検出されたかどうかを指定します。
+-  HasRightEyePosition –この顔に対して、右目が検出されたかどうかを指定します。 
+-  笑顔の位置–この顔の口の座標。
+-  LeftEyePosition –この顔の左側の視点の座標です。
+-  RightEyePosition –この顔の右目の座標です。
 
 
-これらすべてのプロパティの座標では、左下 – UIKit の原点として左上を使用するとは異なりにその出所があります。 座標を使用して`CIFaceFeature`'反転' にしてください。 CoreImage\CoreImageViewController.cs でこのカスタム イメージを非常に基本的なビューがイメージに 'face インジケーター' 三角形を描画する方法を示します (注、`FlipForBottomOrigin`メソッド)。
+これらのすべてのプロパティの座標の原点は、左上にあります。これは、左上を原点として使用する UIKit とは異なります。 座標を使用する場合`CIFaceFeature`は、必ず ' 反転 ' してください。 CoreImage\CoreImageViewController.cs のこの非常に基本的なカスタムイメージビューでは、イメージに ' face indicator ' 三角形を描画する`FlipForBottomOrigin`方法を示しています (メソッドに注意してください)。
 
 ```csharp
 public class FaceDetectImageView : UIView
@@ -102,7 +102,7 @@ public class FaceDetectImageView : UIView
 }
 ```
 
-SampleCode.cs ファイルでイメージと機能が割り当てられているイメージが再描画される前に。
+次に、SampleCode.cs ファイルで、イメージが再描画される前にイメージと機能が割り当てられます。
 
 ```csharp
 faceView.Image = image;
@@ -110,26 +110,26 @@ faceView.Features = features;
 faceView.SetNeedsDisplay();
 ```
 
-スクリーン ショットのサンプル出力: 検出された顔の特徴の場所は、UITextView で表示され、CoreGraphics を使用してソース イメージの上に描画します。
+スクリーンショットは、サンプル出力を示しています。検出された顔機能の場所は、UITextView に表示され、CoreGraphics を使用してソースイメージに描画されます。
 
-顔認識では動作に起因は (これらおもちゃ猿!) などの人間の顔のほかに、処理の検出が場合があります。
+顔認識のしくみによって、人の顔以外のものも検出されることがあります (このようなおもちゃの猿!)。
 
 ## <a name="filters"></a>フィルター
 
-50 以上のさまざまな組み込みフィルターがあるし、フレームワークは、新しいフィルターを実装できるように拡張可能です。
+50の異なる組み込みフィルターがあり、新しいフィルターを実装できるように、フレームワークは拡張可能です。
 
 ## <a name="using-filters"></a>フィルターの使用
 
-4 つの手順には、イメージにフィルターを適用: イメージの読み込み、フィルターを作成、フィルターを適用して保存 (または表示する) の結果。
+画像にフィルターを適用するには、イメージの読み込み、フィルターの作成、フィルターの適用、結果の保存 (または表示) という4つの手順を実行します。
 
-最初にイメージを読み込む、`CIImage`オブジェクト。
+まず、イメージを`CIImage`オブジェクトに読み込みます。
 
 ```csharp
 var uiimage = UIImage.FromFile ("photo.JPG");
 var ciimage = new CIImage (uiimage);
 ```
 
-次に、フィルター クラスを作成し、そのプロパティを設定します。
+次に、フィルタークラスを作成し、そのプロパティを設定します。
 
 ```csharp
 var sepia = new CISepiaTone();
@@ -137,7 +137,7 @@ sepia.Image = ciimage;
 sepia.Intensity = 0.8f;
 ```
 
-3 番目に、アクセス、`OutputImage`プロパティと呼び出し、`CreateCGImage`最終的な結果をレンダリングするメソッド。
+3番目に`OutputImage` 、プロパティにアクセス`CreateCGImage`し、メソッドを呼び出して最終的な結果を表示します。
 
 ```csharp
 CIImage output = sepia.OutputImage;
@@ -145,16 +145,16 @@ var context = CIContext.FromOptions(null);
 var cgimage = context.CreateCGImage (output, output.Extent);
 ```
 
-最後に、結果を表示するビューに、イメージを割り当てます。 実際のアプリケーション、ファイル システム、フォト アルバム、ツイートまたは電子メールに、結果のイメージを保存する可能性があります。
+最後に、画像をビューに割り当てて、結果を表示します。 実際のアプリケーションでは、生成されたイメージは、ファイルシステム、フォトアルバム、ツイート、または電子メールに保存される可能性があります。
 
 ```csharp
 var ui = UIImage.FromImage (cgimage);
 imgview.Image = ui;
 ```
 
-これらのスクリーン ショットの結果を表示する、`CISepia`と`CIHueAdjust`CoreImage.zip で紹介されているフィルターのサンプル コード。
+これらのスクリーンショットは、coreimage `CIHueAdjust` . .zip サンプルコードに示されているフィルター `CISepia`とフィルターの結果を示しています。
 
-参照してください、[コントラクトを調整して、イメージのレシピの明るさ](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/coreimage/adjust_contrast_and_brightness_of_an_image)の例については、`CIColorControls`フィルター。
+`CIColorControls`フィルターの例については、「[イメージレシピのコントラクトと明るさの調整](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/coreimage/adjust_contrast_and_brightness_of_an_image)」を参照してください。
 
 ```csharp
 var uiimage = UIImage.FromFile("photo.JPG");
@@ -192,9 +192,9 @@ var ui = UIImage.FromImage (cgimage);
 imgview.Image = ui;
 ```
 
-### <a name="listing-filters-and-their-properties"></a>フィルターとそのプロパティを一覧表示します。
+### <a name="listing-filters-and-their-properties"></a>フィルターとそのプロパティの一覧表示
 
-CoreImage\SampleCode.cs から次のコードでは、組み込みのフィルターの完全な一覧とそのパラメーターを出力します。
+CoreImage\SampleCode.cs からのこのコードは、組み込みフィルターとそのパラメーターの完全な一覧を出力します。
 
 ```csharp
 var filters = CIFilter.FilterNamesInCategories(new string[0]);
@@ -210,21 +210,21 @@ foreach (var filter in filters){
 }
 ```
 
-[CIFilter クラス参照](https://developer.apple.com/library/prerelease/ios/#documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilter_Class/Reference/Reference.html)50 の組み込みのフィルターとそのプロパティについて説明します。 上記のコードを使用してパラメーターの既定値、最大と最小許容値 (フィルターを適用する前に入力の検証に使用できます) など、フィルター クラスを照会できます。
+[Cifilter クラスのリファレンス](https://developer.apple.com/library/prerelease/ios/#documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilter_Class/Reference/Reference.html)では、50の組み込みフィルターとそのプロパティについて説明します。 上記のコードを使用すると、パラメーターの既定値や許容される最大値 (フィルターを適用する前に入力を検証するために使用される可能性がある) を含むフィルタークラスに対してクエリを実行できます。
 
-リスト カテゴリ出力次のようにシミュレーター – すべてのフィルターとそのパラメーターを表示するリストをスクロールすることができます。
+リストのカテゴリの出力はシミュレーターでは次のようになります。リストをスクロールして、すべてのフィルターとそのパラメーターを表示できます。
 
- [![](introduction-to-coreimage-images/coreimage05.png "リスト カテゴリ出力次のようにシミュレーター")](introduction-to-coreimage-images/coreimage05.png#lightbox)
+ [![](introduction-to-coreimage-images/coreimage05.png "リストのカテゴリの出力は、シミュレーターでは次のようになります。")](introduction-to-coreimage-images/coreimage05.png#lightbox)
 
-表示されている各フィルターは、アセンブリ ブラウザーまたは Visual Studio for Mac または Visual Studio のいずれかでオートコンプリートを使用して、Xamarin.iOS.CoreImage API を利用できるように、Xamarin.iOS、内のクラスとして公開されています。 
+一覧表示されている各フィルターは、Xamarin. iOS のクラスとして公開されています。そのため、アセンブリブラウザーで Xamarin. iOS. CoreImage API を探索したり、Visual Studio for Mac または Visual Studio でオートコンプリートを使用したりすることもできます。 
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
-この記事では、顔の検出とイメージにフィルターを適用するように、新しい iOS 5 Core イメージ framework 機能の一部を使用する方法を説明しました。 使用するためのフレームワークで使用できる多数のさまざまなイメージ フィルターされます。
+この記事では、顔検出や画像へのフィルターの適用など、新しい iOS 5 コアイメージフレームワークの機能の一部を使用する方法について説明しました。 フレームワークで使用できるイメージフィルターは多数あります。
 
 ## <a name="related-links"></a>関連リンク
 
-- [Core のイメージ (サンプル)](https://developer.xamarin.com/samples/monotouch/CoreImage/)
-- [コントラクトと、イメージのレシピの明るさを調整します。](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/coreimage/adjust_contrast_and_brightness_of_an_image)
-- [コア イメージ フィルターを使用します。](https://developer.apple.com/library/prerelease/ios/#documentation/GraphicsImaging/Conceptual/CoreImaging/ci_tasks/ci_tasks.html)
-- [CIFilter クラスのリファレンス](https://developer.apple.com/library/prerelease/ios/#documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilter_Class/Reference/Reference.htm)
+- [コアイメージ (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/coreimage)
+- [イメージレシピのコントラクトと明るさを調整する](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/coreimage/adjust_contrast_and_brightness_of_an_image)
+- [コアイメージフィルターの使用](https://developer.apple.com/library/prerelease/ios/#documentation/GraphicsImaging/Conceptual/CoreImaging/ci_tasks/ci_tasks.html)
+- [CIFilter クラス参照](https://developer.apple.com/library/prerelease/ios/#documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilter_Class/Reference/Reference.htm)

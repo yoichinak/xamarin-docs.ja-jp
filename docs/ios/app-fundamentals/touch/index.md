@@ -1,30 +1,30 @@
 ---
-title: Xamarin.iOS アプリでのタッチを処理します。
-description: このドキュメントは、タッチ、マルチタッチ、ジェスチャ、および Xamarin.iOS アプリで 3D Touch を使用する方法を説明するガイドにリンクしています。
+title: Xamarin iOS アプリでのタッチ処理
+description: このドキュメントでは、Xamarin iOS アプリでタッチ、マルチタッチ、ジェスチャ、3D タッチを操作する方法について説明しているガイドにリンクしています。
 ms.prod: xamarin
 ms.assetid: E3904713-6018-4755-A315-EB045DFB3500
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 01/23/2017
-ms.openlocfilehash: 5aabc3a3c2ffbcffc0e12379989f7eb43b03a902
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 8ed9ab164f6b14d794b29667ec96afab47e3fcde
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61399292"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655174"
 ---
-# <a name="handling-touch-in-xamarinios-apps"></a>Xamarin.iOS アプリでのタッチを処理します。
+# <a name="handling-touch-in-xamarinios-apps"></a>Xamarin iOS アプリでのタッチ処理
 
-他のモバイル プラットフォームのようには、iOS は、さまざまなタッチを処理する方法が。 マルチタッチをサポートできます-画面で連絡先の多くのポイント: および複雑なジェスチャ。 このガイドでは、いくつかの概念、および iOS でのタッチおよびジェスチャの実装の詳細について説明します。
+他のモバイルプラットフォームと同様に、iOS にはタッチを処理するさまざまな方法が用意されています。 マルチタッチ (画面上の多数の接点) と複雑なジェスチャをサポートできます。 このガイドでは、iOS でのタッチとジェスチャの実装の particularities に加えて、いくつかの概念について説明します。
 
-iOS でのタッチ データをカプセル化、`UITouch`クラスは、一連のアプリケーションに利用可能になって`UIResponder`メソッド。 アプリケーションのサブクラスでこれらのメソッドをオーバーライドできます`UIView`と`UIViewController`、どちらも継承`UIResponder`します。
+iOS で`UITouch`は、クラスのタッチデータをカプセル化しています。これは`UIResponder` 、一連のメソッドを通じてアプリケーションで使用できます。 アプリケーションは、および`UIView` `UIViewController`のサブクラスでこれらのメソッドをオーバーライドできます`UIResponder`。どちらもから継承されます。
 
-タッチ データのキャプチャ、に加えて iOS はタッチ ジェスチャのパターンを解釈するための手段を提供します。 これらのジェスチャ レコグナイザーは、イメージの回転やページの有効にするなど、アプリケーション固有のコマンドを解釈するさらに使用できます。 iOS では、最小値に追加されたコードでの一般的なジェスチャを処理するクラスの豊富なコレクションを提供します。
+タッチデータをキャプチャするだけでなく、iOS はジェスチャへのタッチパターンを解釈するための手段を提供します。 これらのジェスチャレコグナイザーは、イメージの回転やページのめくりなど、アプリケーション固有のコマンドを解釈するために使用できます。 iOS には、最小限のコードを追加した一般的なジェスチャを処理するクラスの豊富なコレクションが用意されています。
 
-タッチとジェスチャ レコグナイザーの間で choice では、混乱の 1 つを指定できます。 このガイドでは、一般に、基本設定を許可できることジェスチャ レコグナイザーをお勧めします。 ジェスチャ レコグナイザーは、懸念事項と優れたカプセル化の分離を提供する個別のクラスとして実装されます。 これにより、簡単に記述されたコードの量を最小限に抑え、個別のビューの間のロジックを共有できます。
+タッチ認識とジェスチャレコグナイザーのどちらを選択するかは、混乱を招く可能性があります。 このガイドでは、一般にジェスチャレコグナイザーに設定することをお勧めします。 ジェスチャレコグナイザーは不連続クラスとして実装されます。これにより、関心の分離とカプセル化の向上が実現します。 これにより、さまざまなビュー間でロジックを共有することが簡単になり、記述されたコードの量を最小限に抑えることができます。
 
-ただし、低レベルのタッチ処理を使用しても finger-paint プログラムを作成する複数の指を追跡する必要がある場合もあります。
+ただし、低いレベルのタッチ処理を使用する必要があり、複数の指を追跡する場合もあります。たとえば、指ペイントプログラムを作成する場合などです。
 
 ## <a name="sections"></a>セクション
 
@@ -32,13 +32,13 @@ iOS でのタッチ データをカプセル化、`UITouch`クラスは、一連
 -  [チュートリアル: iOS でのタッチの使用](ios-touch-walkthrough.md)
 -  [マルチタッチ追跡](touch-tracking.md)
 
-このガイドは、タッチで iOS の概要として機能します。 IOS での 3D タッチと Haptic フィードバックの使用の詳細については、これが導入されました。 ios 9 と 10 はそれぞれ、以下の特定のガイドを参照してください。
+このガイドは、iOS でのタッチの概要として機能します。 Ios での3D タッチと Haptic フィードバックの使用の詳細については、ios 9 と10で導入されました。以下の特定のガイドを参照してください。
 
 * [3D Touch](~/ios/platform/3d-touch.md)
 * [Haptic フィードバックの提供](~/ios/user-interface/ios-ui/haptic-feedback.md)
 
 ## <a name="related-links"></a>関連リンク
 
-- [iOS (サンプル) を開始するタッチ](https://developer.xamarin.com/samples/monotouch/ApplicationFundamentals/Touch_start)
-- [iOS の最終タッチ (サンプル)](https://developer.xamarin.com/samples/monotouch/ApplicationFundamentals/Touch_final)
-- [FingerPaint (サンプル)](https://developer.xamarin.com/samples/monotouch/ApplicationFundamentals/FingerPaint)
+- [iOS タッチスタート (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-touch-start)
+- [iOS タッチの最終版 (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-touch-final)
+- [FingerPaint (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-fingerpaint)

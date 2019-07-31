@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/04/2018
-ms.openlocfilehash: 263cbb4aed47794a09341bb8c78c4835510e50c0
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 521df49a7698bc149d6bca7460cff2df74402bda
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61408101"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657013"
 ---
 # <a name="xamarinforms-datepicker"></a>Xamarin.Forms DatePicker
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/DatePicker)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-datepicker)
 
 _ユーザーが日付を選択できる Xamarin.Forms のビュー。_
 
@@ -92,7 +92,7 @@ DatePicker datePicker = new DatePicker
 
 ## <a name="datepicker-in-an-application"></a>アプリケーションで DatePicker
 
-[ **DaysBetweenDates** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/DatePicker)サンプルでは、2 つ含まれています`DatePicker`そのページのビュー。 これら 2 つの日付の選択に使用でき、プログラムは、それらの日付間の日数を計算します。 プログラムの設定を変更しない、`MinimumDate`と`MaximumDate`プロパティ、2 つの日付は 1900 ~ 2100 でなければなりません。
+[ **DaysBetweenDates** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-datepicker)サンプルでは、2 つ含まれています`DatePicker`そのページのビュー。 これら 2 つの日付の選択に使用でき、プログラムは、それらの日付間の日数を計算します。 プログラムの設定を変更しない、`MinimumDate`と`MaximumDate`プロパティ、2 つの日付は 1900 ~ 2100 でなければなりません。
 
 XAML ファイルを次に示します。
 
@@ -196,5 +196,5 @@ public partial class MainPage : ContentPage
 
 ## <a name="related-links"></a>関連リンク
 
-- [DaysBetweenDates サンプル](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/DatePicker)
+- [DaysBetweenDates サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-datepicker)
 - [DatePicker API](xref:Xamarin.Forms.DatePicker)

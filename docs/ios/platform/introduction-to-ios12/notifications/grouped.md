@@ -1,36 +1,36 @@
 ---
-title: Xamarin.iOS でグループ化された通知
-description: IOS 12、通知センターまたはアプリケーションまたはスレッドのロック画面で通知をグループにことはできます。 このドキュメントでは、スレッドを送信する方法と Xamarin.iOS で連結の通知について説明します。
+title: Xamarin でのグループ化された通知 (iOS)
+description: IOS 12 では、通知センターで通知をグループ化することも、アプリケーションまたはスレッドごとにロック画面をグループ化することもできます。 このドキュメントでは、Xamarin. iOS でスレッド化された通知とスレッドなしの通知を送信する方法について説明します。
 ms.prod: xamarin
 ms.assetid: C6FA7C25-061B-4FD7-8E55-88597D512F3C
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/04/2018
-ms.openlocfilehash: 6798c4c5fa7502ba5e99cb8bc209468acaa4a9ec
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 3edaabe287bc2b37d2ec5a759ada9f59441c6d3a
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61402422"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68652571"
 ---
-# <a name="grouped-notifications-in-xamarinios"></a>Xamarin.iOS でグループ化された通知
+# <a name="grouped-notifications-in-xamarinios"></a>Xamarin でのグループ化された通知 (iOS)
 
-既定では、iOS 12 は、すべてのアプリの通知をグループに配置します。 ロック画面と通知センターは、このグループを上部に、最新の通知を持つスタックとして表示されます。 ユーザーが含まれており、グループ全体を無視するすべての通知を表示するグループを展開できます。
+既定では、iOS 12 はすべてのアプリの通知をグループに配置します。 ロック画面と通知センターには、このグループが一番上に最新の通知を含むスタックとして表示されます。 ユーザーは、グループを展開して、含まれているすべての通知を表示し、グループ全体を閉じることができます。
 
-アプリは、スレッド、検索対象となる特定の情報にアクセスしてユーザーが簡単でグループの通知でこともできます。
+アプリでは、スレッド別に通知をグループ化することもできます。これにより、ユーザーは興味のある特定の情報を簡単に見つけて操作できるようになります。
 
-## <a name="sample-app-groupednotifications"></a>サンプル アプリ:GroupedNotifications
+## <a name="sample-app-groupednotifications"></a>サンプルアプリ:GroupedNotifications
 
-Xamarin.iOS でグループ化された通知を使用する方法についてを参照してください、 [GroupedNotifications](https://developer.xamarin.com/samples/monotouch/iOS12/GroupedNotifications)サンプル アプリです。
+Xamarin. iOS でグループ化された通知を使用する方法については、 [Groupednotifications](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-groupednotifications)サンプルアプリを参照してください。
 
-このサンプル アプリでは、各メッセージの通知を送信する、スレッドによってグループ化して、さまざまな友人との会話をシミュレートします。 また、アプリケーション レベルのグループに通知 land を連結する方法を示します。
+このサンプルアプリでは、さまざまな友人とのメッセージ交換をシミュレートし、各メッセージの通知を送信して、スレッド別にグループ化します。 また、スレッド化されていない通知をアプリケーションレベルのグループに配置する方法も示します。
 
-このガイドでのコード スニペットは、このサンプル アプリから取得されます。
+このガイドのコードスニペットは、このサンプルアプリから抜粋したものです。
 
-## <a name="request-authorization-and-allow-foreground-notifications"></a>承認を要求し、フォア グラウンドの通知を許可します。
+## <a name="request-authorization-and-allow-foreground-notifications"></a>承認を要求し、フォアグラウンド通知を許可する
 
-アプリがローカル通知を送信する前に、そのアクセス許可を要求する必要があります。 サンプル アプリの[ `AppDelegate` ](xref:UIKit.UIApplicationDelegate)、 [ `FinishedLaunching` ](xref:UIKit.UIApplicationDelegate.FinishedLaunching(UIKit.UIApplication,Foundation.NSDictionary))メソッドは、このアクセス許可を要求します。
+アプリでローカル通知を送信するには、そのためのアクセス許可を要求する必要があります。 サンプルアプリの[`AppDelegate`](xref:UIKit.UIApplicationDelegate)では、メソッド[`FinishedLaunching`](xref:UIKit.UIApplicationDelegate.FinishedLaunching(UIKit.UIApplication,Foundation.NSDictionary))はこのアクセス許可を要求します。
 
 ```csharp
 public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
@@ -46,7 +46,7 @@ public override bool FinishedLaunching(UIApplication application, NSDictionary l
 }
 ```
 
-[ `Delegate` ](xref:UserNotifications.UNUserNotificationCenter.Delegate) (上記) に対して設定、 [ `UNUserNotificationCenter` ](xref:UserNotifications.UNUserNotificationCenter)フォア グラウンド アプリがに渡される、完了ハンドラーを呼び出すことによって、受信した通知を表示する必要があるかどうかを決定[`WillPresentNotification`](xref:UserNotifications.UNUserNotificationCenterDelegate_Extensions.WillPresentNotification(UserNotifications.IUNUserNotificationCenterDelegate,UserNotifications.UNUserNotificationCenter,UserNotifications.UNNotification,System.Action{UserNotifications.UNNotificationPresentationOptions})):
+の[`Delegate`](xref:UserNotifications.UNUserNotificationCenter.Delegate) (上記の設定) [`UNUserNotificationCenter`](xref:UserNotifications.UNUserNotificationCenter)では、に[`WillPresentNotification`](xref:UserNotifications.UNUserNotificationCenterDelegate_Extensions.WillPresentNotification(UserNotifications.IUNUserNotificationCenterDelegate,UserNotifications.UNUserNotificationCenter,UserNotifications.UNNotification,System.Action{UserNotifications.UNNotificationPresentationOptions}))渡された完了ハンドラーを呼び出すことにより、フォアグラウンドアプリで受信通知を表示するかどうかを決定します。
 
 ```csharp
 [Export("userNotificationCenter:willPresentotification:withCompletionHandler:")]
@@ -56,18 +56,18 @@ public void WillPresentNotification(UNUserNotificationCenter center, UNNotificat
 }
 ```
 
-[ `UNNotificationPresentationOptions.Alert` ](xref:UserNotifications.UNNotificationPresentationOptions)パラメーターまたはことを示しますアプリする必要がありますアラートを表示しますが、いないサウンドを再生するバッジを更新します。
+パラメーター [`UNNotificationPresentationOptions.Alert`](xref:UserNotifications.UNNotificationPresentationOptions)は、アプリが警告を表示しても、サウンドを再生したりバッジを更新したりしないことを示します。
 
-## <a name="threaded-notifications"></a>スレッドの通知
+## <a name="threaded-notifications"></a>スレッド通知
 
-サンプル アプリのタップ**メッセージを Alice と**ボタンを繰り返し Alice という名前の友人との会話の通知を送信させます。
-このメッセージ交換の通知は、同じスレッドの一部であるため、ロック画面と通知センター グループ化します。
+" **Alice" と**いう名前のサンプルアプリのメッセージを繰り返しタップして、alice という名前の友人とのメッセージ交換について通知を送信するようにします。
+このメッセージ交換の通知は同じスレッドの一部であるため、ロック画面と通知センターはそれらをまとめてグループ化します。
 
-異なる friend を使用して、メッセージ交換を開始するには、タップ、**新しい friend を選択して**ボタンをクリックします。 別のグループで、このメッセージ交換の通知が表示されます。
+別の友人とのメッセージ交換を開始するには、[**新しいフレンドを選択**します] ボタンをタップします。 このメッセージ交換の通知は、別のグループに表示されます。
 
 ### <a name="threadidentifier"></a>ThreadIdentifier
 
-サンプル アプリは、新しいスレッドを開始、いつでもスレッドの一意の識別子が作成されます。
+サンプルアプリは、新しいスレッドを開始するたびに、一意のスレッド識別子を作成します。
 
 ```csharp
 void StartNewThread()
@@ -77,13 +77,13 @@ void StartNewThread()
 }
 ```
 
-スレッドの通知、サンプル アプリを送信するには。
+スレッド化された通知を送信するには、サンプルアプリを次のようにします。
 
-- アプリに通知を送信するための承認があるかどうかを確認します。
-- 作成します。 [`UNMutableNotificationContent`](xref:UserNotifications.UNMutableNotificationContent)
-オブジェクトの通知のコンテンツと設定、 [`ThreadIdentifier`](xref:UserNotifications.UNMutableNotificationContent.ThreadIdentifier)
-上記で作成したスレッドの識別子。
-- 依頼を作成し、通知をスケジュールします。
+- アプリが通知を送信する承認を持っているかどうかを確認します。
+- を作成します。[`UNMutableNotificationContent`](xref:UserNotifications.UNMutableNotificationContent)
+通知の内容を表すオブジェクトです。[`ThreadIdentifier`](xref:UserNotifications.UNMutableNotificationContent.ThreadIdentifier)
+前に作成したスレッド識別子にします。
+- 要求を作成し、通知をスケジュールします。
 
 ```csharp
 async partial void ScheduleThreadedNotification(UIButton sender)
@@ -122,26 +122,26 @@ async partial void ScheduleThreadedNotification(UIButton sender)
 同じスレッド識別子を持つ同じアプリからのすべての通知は、同じ通知グループに表示されます。
 
 > [!NOTE]
-> リモート通知スレッド識別子を設定するには、追加、`thread-id`通知の JSON ペイロードにキー。 Apple を参照してください。[リモート通知を生成する](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification)詳細についてはドキュメントです。
+> リモート通知にスレッド識別子を設定するには、通知`thread-id`の JSON ペイロードにキーを追加します。 詳細については、Apple の[リモート通知の生成](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification)に関するドキュメントを参照してください。
 
-### <a name="summaryargument"></a>SummaryArgument
+### <a name="summaryargument"></a>引数の概要
 
-`SummaryArgument` 通知が、通知が所属する通知先グループの左下隅に表示される概要テキストをどのように影響するかを指定します。 iOS では、全体的な概要の説明を作成する、同じグループ内の通知の概要のテキストを集約します。
+`SummaryArgument`通知が属する通知グループの左下隅に表示される概要テキストに通知を適用する方法を指定します。 iOS では、同じグループ内の通知から概要テキストを集計して、概要説明全体を作成します。
 
-サンプル アプリでは、集計の引数として、メッセージの作成者が使用されます。 このアプローチを使用して、alice の 6 つの通知のグループの概要のテキストがある可能性があります**Alice と私からさらに 5 通知**します。
+サンプルアプリでは、メッセージの作成者を summary 引数として使用します。 この方法を使用すると、Alice との6つの通知のグループの概要テキストは、 **alice と Me からの 5**つの通知になることがあります。
 
-## <a name="unthreaded-notifications"></a>連結の通知
+## <a name="unthreaded-notifications"></a>未スレッド通知
 
-各サンプル アプリのタップ**アラームを設定**ボタンがさまざまな予定の事前通知のいずれかを送信します。 これらの通知がスレッドはないため、ロック画面上のアプリケーション レベルの通知グループには通知センターで表示されます。
+サンプルアプリの**予定リマインダー**ボタンをタップするたびに、さまざまな予定リマインダー通知が送信されます。 これらのリマインダーはスレッド化されていないため、ロック画面と通知センターのアプリケーションレベルの通知グループに表示されます。
 
-通知を送信する連結、サンプル アプリの`ScheduleUnthreadedNotification`メソッドは、上記と同様のコードを使用します。
-ただしは設定しません、`ThreadIdentifier`上、`UNMutableNotificationContent`オブジェクト。
+スレッド化されていない通知を送信する`ScheduleUnthreadedNotification`ために、サンプルアプリのメソッドは上記と同様のコードを使用します。
+ただし、 `ThreadIdentifier` `UNMutableNotificationContent`オブジェクトには設定されません。
 
 ## <a name="related-links"></a>関連リンク
 
-- [サンプル アプリ – GroupedNotifications](https://developer.xamarin.com/samples/monotouch/iOS12/GroupedNotifications)
-- [Xamarin.iOS でのユーザー通知フレームワーク](~/ios/platform/user-notifications/index.md)
-- [ユーザーへの通知 (WWDC 2018) の新機能新機能](https://developer.apple.com/videos/play/wwdc2018/710/)
-- [グループ化された通知 (WWDC 2018) を使用します。](https://developer.apple.com/videos/play/wwdc2018/711/)
-- [ユーザーへの通知 (WWDC 2017) の新機能新機能およびベスト プラクティス](https://developer.apple.com/videos/play/wwdc2017/708/)
-- [リモート通知 (Apple) を生成します。](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification)
+- [サンプルアプリ– GroupedNotifications](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-groupednotifications)
+- [Xamarin. iOS のユーザー通知フレームワーク](~/ios/platform/user-notifications/index.md)
+- [ユーザー通知の新機能 (WWDC 2018)](https://developer.apple.com/videos/play/wwdc2018/710/)
+- [グループ化された通知の使用 (WWDC 2018)](https://developer.apple.com/videos/play/wwdc2018/711/)
+- [ベストプラクティスとユーザー通知の新機能 (WWDC 2017)](https://developer.apple.com/videos/play/wwdc2017/708/)
+- [リモート通知の生成 (Apple)](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification)

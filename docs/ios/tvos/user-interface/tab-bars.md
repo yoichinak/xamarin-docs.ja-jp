@@ -1,156 +1,156 @@
 ---
-title: TvOS Xamarin でのタブ バー コント ローラーの操作
-description: このドキュメントでは、Xamarin でビルドされた tvOS アプリ内のタブ バー コント ローラーを使用する方法について説明します。 ビューのタブの横棒の上、高レベルを提供し、タブ バー項目、ストーリー ボードの統合、およびタブ バー項目について説明します。
+title: Xamarin での tvOS タブバーコントローラーの使用
+description: このドキュメントでは、Xamarin でビルドされた tvOS アプリでタブバーコントローラーを操作する方法について説明します。 タブバーの高度なビューが用意されており、タブバー項目、ストーリーボード統合、およびタブバー項目について説明しています。
 ms.prod: xamarin
 ms.assetid: 99A2D7C6-0324-4DE5-B6E9-D39D0BAD8370
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 7ac4d0effc1067b065bad114160dc8648e998dad
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 236a64736bc5f92537c858b9cdf938410cf4b0f4
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67830790"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68649659"
 ---
-# <a name="working-with-tvos-tab-bar-controllers-in-xamarin"></a>TvOS Xamarin でのタブ バー コント ローラーの操作
+# <a name="working-with-tvos-tab-bar-controllers-in-xamarin"></a>Xamarin での tvOS タブバーコントローラーの使用
 
-多くの種類の tvOS アプリでは、プライマリ ナビゲーション画面の一番上で実行されているタブ バーとして表示されます。 ユーザーは、可能なカテゴリと、ユーザーの選択を反映するように、変更の下のコンテンツ領域の一覧で、左側と右側を読み取ります。
+多くの種類の tvOS アプリでは、メインナビゲーションは画面の上部で実行されるタブバーとして表示されます。 ユーザーは、使用可能なカテゴリの一覧と、ユーザーの選択内容を反映するように変更されたコンテンツ領域のスワイプを左右します。
 
-[![](tab-bars-images/tab01.png "サンプルのタブ バー")](tab-bars-images/tab01.png#lightbox)
+[![](tab-bars-images/tab01.png "サンプルタブバー")](tab-bars-images/tab01.png#lightbox)
 
-タブ バーは既定で半透明し、常に、画面の上部に表示されます。 、フォーカスがあるときは、タブ バーは画面の最上位の 140 ピクセルを取り上げますが、以下のコンテンツ領域にフォーカスが移動したときにスライドはすばやく。
+タブバーは既定では半透明であり、常に画面の上部に表示されます。 フォーカスが移動すると、タブバーは画面の上位140ピクセルに対応しますが、フォーカスが下のコンテンツ領域に移ったときにすぐにスライドします。
 
 <a name="Tab-Bars-in-tvOS" />
 
-## <a name="tab-bars-in-tvos"></a>TvOS のタブ バー
+## <a name="tab-bars-in-tvos"></a>TvOS のタブバー
 
-`UITabViewController`同様の方法で動作し、次の主な違いと、iOS では、同様の目的を tvOS で機能します。
+は`UITabViewController`同様の方法で動作し、tvOS では、iOS と同様の目的で機能します。主な違いは次のとおりです。
 
-- IOS 画面の下部に表示されるタブ バーとは異なり tvOS のタブ バーは画面の最上位の 140 ピクセルを占有し、既定で半透明します。
-- フォーカスが下のコンテンツ領域のタブ バーを離れるときにタブ バーは画面の上端からスライドはすばやくを非表示にします。 ユーザーのメニュー ボタンを 1 回タップまたはの上方向にスワイプできる、 [Siri のリモート](~/ios/tvos/platform/remote-bluetooth.md#The-Siri-Remote)タブ バーを再び表示します。
-- 最初のタブ バーの下のコンテンツ領域にフォーカスを移動は Siri のリモートで下へスワイプ[フォーカスを設定できる項目](~/ios/tvos/app-fundamentals/navigation-focus.md#Focus-and-Selection)で表示されているコンテンツ。 ここでも、タブ バーを非表示にフォーカスを移動するとこれは。
-- タブ バーに表示されるカテゴリを選択する をクリックするのカテゴリのコンテンツとフォーカスをそのビューにフォーカスを設定できる最初の項目に切り替えが切り替えられます。
-- タブ バーに表示されるカテゴリ数を固定する必要があり、すべてのカテゴリは、常にアクセスできる必要がある、特定のカテゴリを無効にすることはありません。
-- タブ バーでは、tvOS のカスタマイズはサポートされていません。 さらに、それらを表示しない、**詳細**(iOS) などのカテゴリではより多くのカテゴリがある場合、タブ バーを格納できます。
+- 画面の下部に表示される iOS のタブバーとは異なり、tvOS のタブバーは画面の上部の140ピクセルを占め、既定では半透明になっています。
+- 下のコンテンツ領域のタブバーがフォーカスを移動すると、タブバーが画面の上部からすぐにスライドし、非表示になります。 ユーザーはメニューボタンを1回タップするか、 [Siri リモート](~/ios/tvos/platform/remote-bluetooth.md#The-Siri-Remote)でスワイプして、もう一度タブバーを表示することができます。
+- Siri リモートでスワイプすると、タブバーの下のコンテンツ領域にフォーカスが移動し、表示されているコンテンツ内のフォーカスがある最初の[項目](~/ios/tvos/app-fundamentals/navigation-focus.md#Focus-and-Selection)に移動します。 ここでも、フォーカスが移動するとタブバーが非表示になります。
+- タブバーに表示されるカテゴリをクリックして選択すると、そのカテゴリのコンテンツに切り替わり、フォーカスはそのビュー内のフォーカスが設定された最初の項目に切り替わります。
+- タブバーに表示されるカテゴリの数は固定する必要があり、すべてのカテゴリに常にアクセスできるようにする必要があります。特定のカテゴリを無効にすることはできません。
+- タブバーは、tvOS のカスタマイズをサポートしていません。 また、タブバーに表示されるよりも多くのカテゴリがある場合は、**より多く**のカテゴリ (iOS など) は表示されません。
 
-Apple では、タブ バーを操作するための次の推奨事項があります。
+Apple には、タブバーの操作に関する次のような推奨事項があります。
 
-- **コンテンツを論理的に整理するタブ バーを使用して**-タブ バーを使用して、tvOS アプリのコンテンツを論理的に整理します。 たとえば、おすすめ、上部のグラフ、Purchased および検索です。
-- **バッジを新しいコンテンツのユーザーの通知に追加**-新しいコンテンツのカテゴリのユーザーに通知するバッジ (白の数字、感嘆符の赤い楕円) を必要に応じて表示できます。
-- **控えめにバッジを使用して、** - しないバッジとタブ バーを整理し、ユーザーに重要な情報を提供することのみが表示されます。
-- **カテゴリの数を制限する**でに複雑さを軽減し保持するアプリ管理しやすい、しないカテゴリで、タブ バーをオーバー ロードしてすべてのカテゴリが表示されないいっぱいになったことを確認します。 単純で短いタイトルに最適です。
-- **カテゴリを無効にしない**-すべてのタブ (カテゴリ) は常に表示して有効に常にします。 指定したタブに内容が含まれない場合、理由をユーザーに、理由を説明します。 たとえば、購入 タブは、ユーザーが購入行われなかった場合に空になります。
+- **タブバーを使用してコンテンツを論理的に整理する**-タブバーを使用して、tvOS アプリが動作するコンテンツを論理的に整理します。 たとえば、おすすめの上位のグラフ、購入して検索します。
+- **新しいコンテンツをユーザーに通知するバッジを追加**します。必要に応じて、バッジ (白い数字や感嘆符を含む赤い楕円) を表示して、カテゴリ内の新しいコンテンツをユーザーに通知することができます。
+- **バッジは控えめに使用**します。バッジでタブバーを乱雑にせず、ユーザーに重要な情報を提供している場所だけを表示します。
+- **カテゴリの数を制限**する-複雑さを軽減し、アプリを管理しやすくするために、カテゴリを使用してタブバーをオーバーロードし、すべてのカテゴリが表示され、混雑していないことを確認します。 簡単で、短いタイトルが最適です。
+- **カテゴリを無効**にしない-すべてのタブ (カテゴリ) が常に表示され、常に有効になっている必要があります。 特定のタブにコンテンツがない場合は、その理由をユーザーに説明します。 たとえば、ユーザーが購入を行っていない場合、[購入] タブは空になります。
 
 <a name="Tab-Bar-Items" />
 
-## <a name="tab-bar-items"></a>タブ バー項目
+## <a name="tab-bar-items"></a>タブバー項目
 
-タブ バー項目によって表されるタブ バー内の各カテゴリ (タブ) (`UITabBarItem`)。 Apple では、タブ バー項目を操作するための次の推奨事項があります。
+タブバーの各カテゴリ (タブ) は、タブバー項目 (`UITabBarItem`) で表されます。 Apple には、タブバー項目を操作するための次のような推奨事項があります。
 
-- **テキスト ベースのタブを使用して**-Apple 提案、タブ バー項目中には、アイコンとして表されることは、簡潔なタイトルがアイコンよりを解釈しやすくするためにのみ、テキストを使用します。
-- **短期、わかりやすい名詞と動詞を使用して、** -あるタブ バー項目を含まれており、(写真、ビデオや音楽) などの単純な名詞や動詞 (検索や再生) がある場合に最適に動作するコンテンツを中継明確にする必要があります。
+- **テキストベースのタブを使用**する-タブバー項目をアイコンとして表示できますが、簡潔なタイトルはアイコンよりも簡単に解釈できるため、Apple ではテキストのみを使用することをお勧めします。
+- **短い、意味のある名詞または動詞を使用**する-タブバー項目は、含まれているコンテンツを明確にリレーし、単純な名詞 (写真、映画、音楽など) または動詞 (検索や再生など) である場合に最適に機能します。
 
 <a name="Tab-Bars-and-Storyboards" />
 
-## <a name="tab-bars-and-storyboards"></a>タブ バーとストーリー ボード
+## <a name="tab-bars-and-storyboards"></a>タブバーとストーリーボード
 
-Xamarin.tvOS アプリでタブ バーを使用する最も簡単な方法では、iOS デザイナーを使用して、アプリの UI に追加します。
+TvOS アプリのタブバーを操作する最も簡単な方法は、iOS デザイナーを使用してアプリの UI に追加することです。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
     
-1. 新しい Xamarin.tvOS アプリを起動し、選択**tvOS** > **アプリ** > **タブ付きアプリ**: 
+1. 新しい tvOS アプリを開始し、[ **tvOS** > **app** > ]**タブ付きアプリ**を選択します。 
 
-    [![](tab-bars-images/tab02.png "タブ付きアプリを選択します。")](tab-bars-images/tab02.png#lightbox)
-1. すべての新しい Xamarin.tvOS ソリューションを作成する、画面の指示に従います。
-1. **Solution Pad**、ダブルクリックして、`Main.storyboard`ファイルし、編集用に開きます。
-1. 変更する、**アイコン**または**タイトル**特定のカテゴリを選択、**タブ バー項目**の**ビュー コント ローラー**で、 **ドキュメント アウトライン**:
+    [![](tab-bars-images/tab02.png "タブ付きアプリの選択")](tab-bars-images/tab02.png#lightbox)
+1. すべてのプロンプトに従って、新しい tvOS ソリューションを作成します。
+1. **Solution Pad**で、 `Main.storyboard`ファイルをダブルクリックして開き、編集します。
+1. 特定のカテゴリの**アイコン**または**タイトル**を変更するには、 **[ドキュメントアウトライン]** の**ビューコントローラー**の**タブバー項目**を選択します。
 
-    [![](tab-bars-images/tab03a.png "ドキュメント アウトライン ビュー コント ローラーのタブ バーの項目")](tab-bars-images/tab03a.png#lightbox)
-1. 必要なプロパティを設定、**ウィジェット タブ**の**プロパティ エクスプ ローラー**: 
+    [![](tab-bars-images/tab03a.png "ドキュメントアウトラインのビューコントローラーのタブバー項目")](tab-bars-images/tab03a.png#lightbox)
+1. 次に、**プロパティエクスプローラー**の [**ウィジェット] タブ**で、必要なプロパティを設定します。 
 
     [![](tab-bars-images/tab03.png "[ウィジェット] タブ")](tab-bars-images/tab03.png#lightbox)
-1. 新しいカテゴリ (タブ) を追加するには、削除、**ビュー コント ローラー**デザイン サーフェイスに。 
+1. 新しいカテゴリ (タブ) を追加するには、**ビューコントローラー**をデザインサーフェイスにドロップします。 
 
-    [![](tab-bars-images/tab04.png "ビュー コント ローラー")](tab-bars-images/tab04.png#lightbox)
+    [![](tab-bars-images/tab04.png "ビューコントローラー")](tab-bars-images/tab04.png#lightbox)
 1. コントロールをクリックしてからドラッグ、 **タブのビューのコント ローラー**を新しい**ビュー コント ローラー**です。
-1. ポップアップから次のように選択します。**コントローラの表示** タブ (カテゴリ) として、新しいビューを追加します。 
+1. ポップアップから [コントローラーの**表示**] を選択して、新しいビューをタブ (カテゴリ) として追加します。 
 
-    [![](tab-bars-images/tab05.png "タブを選択します")](tab-bars-images/tab05.png#lightbox)
-1. IOS Designer の UI 要素を追加することで、通常どおり各 Caterogies コンテンツ領域用の UI のレイアウトをデザインします。
-1. UI コントロールを使用する必要なイベントも公開C#コード。
-1. 公開するすべての UI コントロールの名前を付けますC#コード。
+    [![](tab-bars-images/tab05.png "タブの選択")](tab-bars-images/tab05.png#lightbox)
+1. IOS デザイナーで UI 要素を追加することによって、各 Caterogies コンテンツ領域の UI のレイアウトを通常どおりにデザインします。
+1. コード内でC# UI コントロールを操作するために必要なイベントを公開します。
+1. コードでC#公開する UI コントロールの名前を指定します。
 1. 変更内容を保存します。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
     
-1. 新しい Xamarin.tvOS アプリを起動し、選択**tvOS** > **アプリ** > **タブ付きアプリ**: 
+1. 新しい tvOS アプリを開始し、[ **tvOS** > **app** > ]**タブ付きアプリ**を選択します。 
 
-    [![](tab-bars-images/tab02vs.png "タブ付きアプリを選択します。")](tab-bars-images/tab02vs.png#lightbox)
-1. すべての新しい Xamarin.tvOS ソリューションを作成する、画面の指示に従います。
-1. **ソリューション エクスプ ローラー**、ダブルクリックして、`Main.storyboard`ファイルし、編集用に開きます。
-1. 変更する、**アイコン**または**タイトル**特定のカテゴリを選択、**タブ バー項目**の**ビュー コント ローラー**で、 **ドキュメント アウトライン**:
+    [![](tab-bars-images/tab02vs.png "タブ付きアプリの選択")](tab-bars-images/tab02vs.png#lightbox)
+1. すべてのプロンプトに従って、新しい tvOS ソリューションを作成します。
+1. **ソリューションエクスプローラー**で、 `Main.storyboard`ファイルをダブルクリックして開き、編集します。
+1. 特定のカテゴリの**アイコン**または**タイトル**を変更するには、 **[ドキュメントアウトライン]** の**ビューコントローラー**の**タブバー項目**を選択します。
 
-    [![](tab-bars-images/tab03avs.png "ドキュメント アウトライン ビュー コント ローラー")](tab-bars-images/tab03avs.png#lightbox)
-1. 必要なプロパティを設定、**ウィジェット タブ**の**プロパティ エクスプ ローラー**: 
+    [![](tab-bars-images/tab03avs.png "ドキュメントアウトラインのビューコントローラー")](tab-bars-images/tab03avs.png#lightbox)
+1. 次に、**プロパティエクスプローラー**の [**ウィジェット] タブ**で、必要なプロパティを設定します。 
 
     [![](tab-bars-images/tab03vs.png "[ウィジェット] タブ")](tab-bars-images/tab03vs.png#lightbox)
-1. (タブ) の新しいカテゴリを追加するには、ドラッグ、**ビュー コント ローラー**から、**ツールボックス**し、デザイン画面にドロップします。 
+1. 新しいカテゴリ (タブ) を追加するには、 **[ツールボックス]** から**ビューコントローラー**をドラッグし、デザインサーフェイスにドロップします。 
 
-    [![](tab-bars-images/tab04vs.png "ビュー コント ローラー")](tab-bars-images/tab04vs.png#lightbox)
+    [![](tab-bars-images/tab04vs.png "ビューコントローラー")](tab-bars-images/tab04vs.png#lightbox)
 1. コントロールをクリックしてからドラッグ、 **タブのビューのコント ローラー**を新しい**ビュー コント ローラー**です。
-1. ポップアップから次のように選択します。**コントローラの表示** タブ (カテゴリ) として、新しいビューを追加します。 
+1. ポップアップから [コントローラーの**表示**] を選択して、新しいビューをタブ (カテゴリ) として追加します。 
 
-    [![](tab-bars-images/tab05vs.png "タブを選択します")](tab-bars-images/tab05vs.png#lightbox)
-1. IOS Designer の UI 要素を追加することで、通常どおり各 Caterogies コンテンツ領域用の UI のレイアウトをデザインします。
-1. UI コントロールを使用する必要なイベントも公開C#コード。
-1. 公開するすべての UI コントロールの名前を付けますC#コード。
+    [![](tab-bars-images/tab05vs.png "タブの選択")](tab-bars-images/tab05vs.png#lightbox)
+1. IOS Designer で UI 要素を追加することによって、各 Caterogies コンテンツ領域の UI のレイアウトを通常どおりにデザインします。
+1. コード内でC# UI コントロールを操作するために必要なイベントを公開します。
+1. コードでC#公開する UI コントロールの名前を指定します。
 1. 変更内容を保存します。
     
 -----
 
 > [!IMPORTANT]
-> などのイベントを割り当てることはできますが`TouchUpInside`UI 要素に (など、 `UIButton`)、ios デザイナーには呼び出されません Apple TV がタッチ画面またはタッチ イベントをサポートしていないためです。 常に使用する必要があります、 `Primary Action` tvOS 用のイベント ハンドラーのユーザー インターフェイス要素を作成するときにイベント。
+> など`TouchUpInside`のイベントを iOS デザイナーで UI 要素 ( `UIButton`など) に割り当てることはできますが、Apple TV にタッチスクリーンやタッチイベントのサポートがないために呼び出されることはありません。 TvOS ユーザーインターフェイス要素の`Primary Action`イベントハンドラーを作成するときは、常にイベントを使用する必要があります。
 
-ストーリー ボードの操作方法の詳細についてを参照してください、[はじめての tvOS クイック スタート ガイド](~/ios/tvos/get-started/hello-tvos.md)します。 
+ストーリーボードの操作の詳細については、「 [Hello, tvOS クイックスタートガイド](~/ios/tvos/get-started/hello-tvos.md)」を参照してください。 
 
 <a name="Working-with-Tab-Bars" />
 
-## <a name="working-with-tab-bars"></a>タブ バーの操作
+## <a name="working-with-tab-bars"></a>タブバーの操作
 
-使用して、`Items`のプロパティ、`UITabBar`のコレクションにアクセスする`UITabBarItems`として 0 (0) のインデックス付き配列が含まれています。 `SelectedItem`として現在選択されているタブ (カテゴリ) が返される、`UITabBarItem`します。
+のプロパティを使用し`UITabBar`て、に格納さ`UITabBarItems`れているのコレクションに、ゼロ (0) のインデックス付き配列としてアクセスします。 `Items` プロパティは、現在選択され`UITabBarItem`ているタブ (カテゴリ) をとして返します。 `SelectedItem`
 
 
 <a name="Working-with-Tab-Bar-Items" />
 
-## <a name="working-with-tab-bar-items"></a>タブ バー項目の操作
+## <a name="working-with-tab-bar-items"></a>タブバー項目の操作
 
-バッジを (赤い楕円と白いテキスト) の指定したタブに表示するには、次のコードを使用します。
+特定のタブ (白いテキストを含む赤い楕円) にバッジを表示するには、次のコードを使用します。
 
 ```csharp
 // Display a badge
 TabBar.Items [2].BadgeValue = "10";
 ```
 
-実行時に、次の結果を生成する場合します。
+実行すると、次の結果が生成されます。
 
-[![](tab-bars-images/tab06.png "バッジとタブ バー項目")](tab-bars-images/tab06.png#lightbox)
+[![](tab-bars-images/tab06.png "バッジが付いたタブバー項目")](tab-bars-images/tab06.png#lightbox)
 
-使用して、`Title`のプロパティ、`UITabBarItem`タイトルを変更して、`Image`アイコンを変更するプロパティ。
+のプロパティを使用して、タイトルと`Image`プロパティを変更し、アイコンを変更します。 `Title` `UITabBarItem`
 
 <a name="Summary" />
 
 ## <a name="summary"></a>Summary
 
-この記事では、設計とタブ バー コント ローラー Xamarin.tvOS アプリ内での操作について説明しました。
+この記事では、tvOS アプリ内でのタブバーコントローラーの設計と操作について説明しました。
 
 
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [tvOS のサンプル](https://developer.xamarin.com/samples/tvos/all/)
+- [tvOS のサンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
 - [tvOS](https://developer.apple.com/tvos/)
-- [tvOS ヒューマン インターフェイス ガイド](https://developer.apple.com/tvos/human-interface-guidelines/)
-- [TvOS 用のアプリのプログラミング ガイド](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)
+- [tvOS ヒューマンインターフェイスガイド](https://developer.apple.com/tvos/human-interface-guidelines/)
+- [TvOS のアプリプログラミングガイド](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

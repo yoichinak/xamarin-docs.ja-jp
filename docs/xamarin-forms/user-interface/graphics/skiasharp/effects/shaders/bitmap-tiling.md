@@ -7,18 +7,18 @@ ms.assetid: 9ED14E07-4DC8-4B03-8A33-772838BF51EA
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
-ms.openlocfilehash: 24c33c61002130fe645bba54c307394bbc2e0656
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 7d323aa6616f7547ab91dfe2b394c339e273d61c
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61322256"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650023"
 ---
 # <a name="skiasharp-bitmap-tiling"></a>SkiaSharp のビットマップのタイル
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/CatClock/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/catclock)
 
 2 つの以前の記事で説明したように、 [ `SKShader` ](xref:SkiaSharp.SKShader)クラスは、線形または円形グラデーションを作成できます。 この記事の重点、`SKShader`領域をタイルにビットマップを使用するオブジェクト。 水平および垂直に、ビットマップを繰り返すことが元の方向のいずれかであるかまたは水平方向および垂直方向を反転します。 タイルの間の不連続性を回避、反転します。
 
@@ -42,7 +42,7 @@ public static SKShader CreateBitmap (SKBitmap src, SKShaderTileMode tmx, SKShade
 
 ## <a name="exploring-the-tile-modes"></a>タイル モードの調査
 
-最初のプログラム、**ビットマップ タイル**のセクション、**シェーダーとその他の効果**のページ、 [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)サンプル2 つの効果を示します`SKShaderTileMode`引数。 **ビットマップ タイル反転モード**XAML ファイルのインスタンスを作成、`SKCanvasView`と 2 つ`Picker`ビューを選択するための`SKShaderTilerMode`水平および垂直に並べて表示の値。 注意の配列、`SKShaderTileMode`でメンバーが定義されている、`Resources`セクション。
+最初のプログラム、**ビットマップ タイル**のセクション、**シェーダーとその他の効果**のページ、 [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプル2 つの効果を示します`SKShaderTileMode`引数。 **ビットマップ タイル反転モード**XAML ファイルのインスタンスを作成、`SKCanvasView`と 2 つ`Picker`ビューを選択するための`SKShaderTilerMode`水平および垂直に並べて表示の値。 注意の配列、`SKShaderTileMode`でメンバーが定義されている、`Resources`セクション。
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -300,7 +300,7 @@ public class PhotographicBrickWallPage : ContentPage
 
 タイルの適切なビットマップを取得するには、いくつか作業が必要です。 この 1 つは、うまく非常に濃いブリックが目立つのでが多すぎます。 このレンガの壁が、小さいビットマップから構築されたという事実を公開、繰り返されるイメージ内で定期的に表示します。
 
-**メディア**のフォルダー、 [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)サンプルには、石壁のこのイメージも含まれています。
+**メディア**のフォルダー、 [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルには、石壁のこのイメージも含まれています。
 
 ![石壁タイル](bitmap-tiling-images/StoneWallTile.jpg "石壁タイル")
 
@@ -366,7 +366,7 @@ SKMatrix.PostConcat(ref matrix, SKMatrix.MakeRotationDegrees(15));
 
 セクションで[**タイルの配置**](#tile-alignment)、平行移動変換が、シェーダーを適用する例を確認します。
 
-スタンドアロン[ **Cat クロック**](https://developer.xamarin.com/samples/xamarin-forms/CatClock)サンプル (の一部ではなく**SkiaSharpFormsDemos**) この 240 ピクセルの正方形のビットマップに基づくビットマップのタイルを使用して粒度が木の背景をシミュレートします。
+スタンドアロン[ **Cat クロック**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/catclock)サンプル (の一部ではなく**SkiaSharpFormsDemos**) この 240 ピクセルの正方形のビットマップに基づくビットマップのタイルを使用して粒度が木の背景をシミュレートします。
 
 ![粒度の木](bitmap-tiling-images/WoodGrain.png "粒度の木")
 
@@ -780,5 +780,5 @@ public class AnimatedBitmapTilePage : ContentPage
 ## <a name="related-links"></a>関連リンク
 
 - [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
-- [CatClock (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/CatClock/)
+- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [CatClock (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/catclock)

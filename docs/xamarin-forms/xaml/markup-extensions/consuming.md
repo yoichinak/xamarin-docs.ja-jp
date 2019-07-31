@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/10/2019
-ms.openlocfilehash: fd67072953f0fc4e448fee7edeec84760ebbda9a
-ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
+ms.openlocfilehash: 6eeafcd943f9d92cf8fb2c19cea40a491413f78b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65048322"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657272"
 ---
 # <a name="consuming-xaml-markup-extensions"></a>XAML マークアップ拡張機能の使用
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/XAML/MarkupExtensions/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
 
 XAML マークアップ拡張機能は、さまざまなソースから設定する要素の属性を許可することで、電源と XAML の柔軟性の向上に役立ちます。 いくつかの XAML マークアップ拡張機能は、XAML 2009 の仕様の一部です。 これらをよく使用される XAML ファイルには表示`x`名前空間プレフィックス、およびは一般的に呼ばれるこのプレフィックスを持つ。 この記事では、次のマークアップ拡張機能について説明します。
 
@@ -27,7 +27,7 @@ XAML マークアップ拡張機能は、さまざまなソースから設定す
 - [`x:Null`](#null) –、属性を設定して、`null`値。
 - [`OnPlatform`](#onplatform) – プラットフォームごとに UI の外観をカスタマイズします。
 - [`OnIdiom`](#onidiom) – で、アプリケーションが実行されているデバイスの表現形式に基づく UI の外観をカスタマイズします。
-- [`DataTemplate`](#datatemplate-markup-extension) -を型に変換する[ `DataTemplate`](xref:Xamarin.Forms.DataTemplate)します。
+- [`DataTemplate`](#datatemplate-markup-extension)-型[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)をに変換します。
 
 XAML マークアップ拡張機能を追加では、従来の他の XAML 実装によってサポートされていて、Xamarin.Forms でもサポートされます。 これらは、他の記事で詳しく説明されます。
 
@@ -36,7 +36,7 @@ XAML マークアップ拡張機能を追加では、従来の他の XAML 実装
 - `Binding` &ndash; 2 つのオブジェクトのプロパティ間のリンクを確立、記事の説明に従って[**データ バインディングの**](~/xamarin-forms/app-fundamentals/data-binding/index.md)します。
 - `TemplateBinding` &ndash; この記事で説明したようにコントロール テンプレートからデータ バインディングを実行します[**からコントロール テンプレートのバインド**](~/xamarin-forms/app-fundamentals/templates/control-templates/template-binding.md)します。
 
-[ `RelativeLayout` ](xref:Xamarin.Forms.RelativeLayout)レイアウト カスタム マークアップ拡張機能を利用[ `ConstraintExpression`](xref:Xamarin.Forms.ConstraintExpression)します。 このマークアップ拡張機能が、情報の記事で説明されている[ **[相対レイアウト]**](~/xamarin-forms/user-interface/layouts/relative-layout.md)します。
+[ `RelativeLayout` ](xref:Xamarin.Forms.RelativeLayout)レイアウト カスタム マークアップ拡張機能を利用[ `ConstraintExpression`](xref:Xamarin.Forms.ConstraintExpression)します。 このマークアップ拡張機能が、情報の記事で説明されている[ **[相対レイアウト]** ](~/xamarin-forms/user-interface/layouts/relative-layout.md)します。
 
 <a name="static" />
 
@@ -44,7 +44,7 @@ XAML マークアップ拡張機能を追加では、従来の他の XAML 実装
 
 `x:Static`によってマークアップ拡張機能がサポートされている、 [ `StaticExtension` ](xref:Xamarin.Forms.Xaml.StaticExtension)クラス。 クラスがという名前の単一プロパティ[ `Member` ](xref:Xamarin.Forms.Xaml.StaticExtension.Member)型の`string`パブリック定数、静的プロパティ、静的フィールド、または列挙型のメンバーの名前に設定することです。
 
-使用する一般的な方法の 1 つ`x:Static`などいくつかの定数または静的変数を持つクラスを定義して、この小さな`AppConstants`クラス、 [ **Markupextension** ](https://developer.xamarin.com/samples/xamarin-forms/XAML/MarkupExtensions/)プログラム。
+使用する一般的な方法の 1 つ`x:Static`などいくつかの定数または静的変数を持つクラスを定義して、この小さな`AppConstants`クラス、 [ **Markupextension** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)プログラム。
 
 ```csharp
 static class AppConstants
@@ -85,7 +85,7 @@ XAML パーサーができます、`StaticExtension`のように短縮するに�
 </Label>
 ```
 
-さらに、この簡略ことができますが、変更がいくつかの新しい構文が導入されています。配置することで構成されて、`StaticExtension`クラスとメンバーの中かっこで囲んで設定します。 結果として得られる式の設定に直接、`FontSize`属性。
+これはさらに簡略化できますが、変更には新しい構文がいくつか導入されています。これは、 `StaticExtension`クラスとメンバーの設定を中かっこで囲むことで構成されます。 結果として得られる式の設定に直接、`FontSize`属性。
 
 ```xaml
 <Label Text="Label No. 3"
@@ -504,7 +504,7 @@ public partial class TypeDemoPage : ContentPage
 
 ## <a name="onidiom-markup-extension"></a>OnIdiom マークアップ拡張機能
 
-`OnIdiom`マークアップ拡張機能では、アプリケーションがで実行されているデバイスの表現形式に基づく UI の外観をカスタマイズすることができます。 サポートされている、 [ `OnIdiomExtension` ](xref:Xamarin.Forms.Xaml.OnIdiomExtension)クラスは、次のプロパティを定義します。
+`OnIdiom`マークアップ拡張機能を使用すると、アプリケーションが実行されているデバイスの表現に基づいて UI の外観をカスタマイズできます。 サポートされている、 [ `OnIdiomExtension` ](xref:Xamarin.Forms.Xaml.OnIdiomExtension)クラスは、次のプロパティを定義します。
 
 - `Default` 型の`object`デバイスの表現形式を表すプロパティに適用される、既定値に設定します。
 - `Phone` 型の`object`、携帯電話に適用する値に設定します。
@@ -538,14 +538,14 @@ public partial class TypeDemoPage : ContentPage
 
 [![OnIdiom デモ](consuming-images/onidiomdemo-small.png "OnIdiom デモ")](consuming-images/onidiomdemo-large.png#lightbox "OnIdiom デモ")
 
-## <a name="datatemplate-markup-extension"></a>DataTemplate のマークアップ拡張機能
+## <a name="datatemplate-markup-extension"></a>System.windows.datatemplate> のマークアップ拡張機能
 
-`DataTemplate`マークアップ拡張機能では、型を変換することができる、 [ `DataTemplate`](xref:Xamarin.Forms.DataTemplate)します。 サポートされている、`DataTemplateExtension`クラスを定義する、`TypeName`型のプロパティ、 `string`、つまりに変換される型の名前に設定、 `DataTemplate`。 `TypeName`プロパティは、コンテンツのプロパティの`DataTemplateExtension`します。 そのため、XAML マークアップの式が中かっこで表された、削除できます、`TypeName=`式の一部です。
+マークアップ拡張機能を使用すると、型[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)をに変換できます。 `DataTemplate` `DataTemplateExtension`これは、型`TypeName` `string`のプロパティを定義するクラスによってサポートされています。これは、 `DataTemplate`に変換される型の名前に設定されます。 `TypeName`プロパティは、コンテンツのプロパティの`DataTemplateExtension`します。 そのため、中かっこで囲まれた XAML マークアップ式では`TypeName=` 、式の一部を削除できます。
 
 > [!NOTE]
-> により、XAML パーサー、`DataTemplateExtension`のように短縮するにはクラス`DataTemplate`します。
+> XAML パーサー `DataTemplateExtension`では、クラスをとして`DataTemplate`省略できます。
 
-このマークアップ拡張機能の一般的な使い方は、次の例に示すようにシェル アプリケーションでは。
+このマークアップ拡張機能の一般的な使用方法は、次の例に示すように、シェルアプリケーション内にあります。
 
 ```xaml
 <ShellContent Title="Monkeys"
@@ -553,9 +553,9 @@ public partial class TypeDemoPage : ContentPage
               ContentTemplate="{DataTemplate views:MonkeysPage}" />
 ```
 
-この例で`MonkeysPage`から変換されたは、 [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)を[ `DataTemplate`](xref:Xamarin.Forms.DataTemplate)の値として設定されています、`ShellContent.ContentTemplate`プロパティ。 これにより`MonkeysPage`はアプリケーションの起動時にはなく、ページ ナビゲーションが発生したときに作成された場合のみです。
+この例では`MonkeysPage` 、が[`ContentPage`](xref:Xamarin.Forms.ContentPage)からに[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)変換されます。 `ShellContent.ContentTemplate`これは、プロパティの値として設定されます。 これにより`MonkeysPage` 、は、アプリケーションの起動時ではなく、ページへの移動時にのみ作成されます。
 
-シェル アプリケーションの詳細については、次を参照してください。 [Xamarin.Forms シェル](~/xamarin-forms/app-fundamentals/shell/index.md)します。
+シェルアプリケーションの詳細については、「 [Xamarin. フォームシェル](~/xamarin-forms/app-fundamentals/shell/index.md)」を参照してください。
 
 ## <a name="define-your-own-markup-extensions"></a>独自のマークアップ拡張機能を定義します。
 
@@ -563,9 +563,9 @@ Xamarin.Forms で使用可能でない XAML マークアップ拡張機能の必
 
 ## <a name="related-links"></a>関連リンク
 
-- [マークアップ拡張機能 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/XAML/MarkupExtensions/)
+- [マークアップ拡張機能 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
 - [Xamarin.Forms book から XAML マークアップ拡張機能の章](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md)
 - [リソース ディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [動的なスタイル](~/xamarin-forms/user-interface/styles/dynamic.md)
 - [データ バインディング](~/xamarin-forms/app-fundamentals/data-binding/index.md)
-- [Xamarin.Forms シェル](~/xamarin-forms/app-fundamentals/shell/index.md)します。
+- [Xamarin. フォームシェル](~/xamarin-forms/app-fundamentals/shell/index.md)。

@@ -1,72 +1,72 @@
 ---
 title: Android Wear
-description: Android のウェアラブル デバイス用のアプリを構築します。
+description: Android ウェアラブルデバイス用のアプリを構築しています。
 ms.prod: xamarin
 ms.assetid: 3BE4A128-2D88-4500-9E48-20375EA99A49
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2018
-ms.openlocfilehash: fca72291dd726d4f2a6635d26390baa103ee0d2d
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 13a9a02984828781cc6402e982a4b5151c077c52
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67864901"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68648331"
 ---
 # <a name="android-wear"></a>Android Wear
 
-Android Wear、スマート ウォッチなど、ウェアラブル デバイス用に設計された Android のバージョンです。 このセクションをインストールして、最初の Wear デバイスと、独自に作成するための Wear アプリを参照できるサンプルの一覧を作成するためのステップ バイ ステップ チュートリアル、Wear の開発に必要なツールを構成する方法の手順を説明します。
+Android の磨耗は、スマートウォッチなどのウェアラブルデバイス向けに設計された Android のバージョンです。 このセクションでは、磨耗の開発に必要なツールをインストールして構成する方法、最初の摩耗デバイスを作成するための手順に関するチュートリアル、および独自の摩耗アプリを作成するために参照できるサンプルの一覧について説明します。
 
 ## <a name="getting-startedandroidwearget-startedindexmd"></a>[はじめに](~/android/wear/get-started/index.md)
 
-Android Wear が導入されています。 インストールして Wear の開発用にコンピューターを構成する方法について説明します、作成し、エミュレーターまたは Wear デバイスで最初の Android Wear アプリを実行する手順を示します。
+Android の磨耗について説明します。コンピューターをインストールして、磨耗開発用に構成する方法について説明します。また、最初の Android 用の磨耗アプリをエミュレーターまたは磨耗デバイスで作成して実行するための手順について説明します。
 
 ## <a name="user-interfaceandroidwearuser-interfaceindexmd"></a>[ユーザー インターフェイス](~/android/wear/user-interface/index.md)
 
-Android Wear 固有が制御し、これらのコントロールを使用する方法を示すサンプルへのリンクを提供するについて説明します。
+Android の磨耗に固有のコントロールについて説明し、これらのコントロールの使用方法を示すサンプルへのリンクを示します。
 
 ## <a name="platform-featuresandroidwearplatformindexmd"></a>[プラットフォーム機能](~/android/wear/platform/index.md)
 
-このセクションのドキュメントでは、Android Wear に固有の機能について説明します。 ここで、WatchFace を作成する方法を説明するトピックが見つかります。
+このセクションのドキュメントでは、Android の磨耗に固有の機能について説明します。 ここでは、WatchFace を作成する方法について説明するトピックを紹介します。
 
 ## <a name="screen-sizesandroidwearscreen-sizesmd"></a>[画面サイズ](~/android/wear/screen-sizes.md)
 
-プレビューし、ユーザー インターフェイスの使用可能な画面サイズを最適化します。
+使用可能な画面サイズに合わせてユーザーインターフェイスをプレビューし、最適化します。
 
 ## <a name="deployment--testingandroidweardeploy-testindexmd"></a>[配置とテスト](~/android/wear/deploy-test/index.md)
 
-Android Wear デバイスまたは Wear 用に構成された Android エミュレーターには、Android Wear アプリをデプロイする方法について説明します。 デバッグのヒントと開発用コンピューターと、Android デバイスの Bluetooth 接続を設定する方法についての情報も含まれています。
+Android の摩耗デバイス、または磨耗用に構成された Android emulator に Android の磨耗アプリをデプロイする方法について説明します。 また、開発用コンピューターと Android デバイスとの間に Bluetooth 接続を設定する方法についても、デバッグのヒントと情報が含まれています。
 
-## <a name="wear-apishttpsdeveloperandroidcomreferenceandroidsupportwearable"></a>[Wear Api](https://developer.android.com/reference/android/support/wearable)
+## <a name="wear-apishttpsdeveloperandroidcomreferenceandroidsupportwearable"></a>[磨耗 Api](https://developer.android.com/reference/android/support/wearable)
 
-Android デベロッパー サイトがなど Wear の Api キーの詳細情報を提供します[ウェアラブル アクティビティ](https://developer.android.com/reference/android/support/wearable/activity/package-summary.html)、[インテント](https://developer.android.com/reference/com/google/android/wearable/intent/package-summary.html)、[認証](https://developer.android.com/reference/android/support/wearable/authentication/package-summary.html)、 [コンプリケーション](https://developer.android.com/reference/android/support/wearable/complications/package-summary.html)、[レンダリング コンプリケーション](https://developer.android.com/reference/android/support/wearable/complications/rendering/package-summary.html)、[通知](https://developer.android.com/reference/android/support/wearable/notifications/package-summary.html)、[ビュー](https://developer.android.com/reference/android/support/wearable/view/package-summary.html)、および[WatchFace](https://developer.android.com/reference/android/support/wearable/watchface/package-summary.html)します。
+Android 開発者サイトでは、[ウェアラブルアクティビティ](https://developer.android.com/reference/android/support/wearable/activity/package-summary.html)、[インテント](https://developer.android.com/reference/com/google/android/wearable/intent/package-summary.html)、[認証](https://developer.android.com/reference/android/support/wearable/authentication/package-summary.html)、[複雑さ](https://developer.android.com/reference/android/support/wearable/complications/package-summary.html)、[複雑さの表示](https://developer.android.com/reference/android/support/wearable/complications/rendering/package-summary.html)、[通知](https://developer.android.com/reference/android/support/wearable/notifications/package-summary.html)[など、主要な磨耗 api に関する詳細情報を提供しています。ビュー](https://developer.android.com/reference/android/support/wearable/view/package-summary.html)と[WatchFace](https://developer.android.com/reference/android/support/wearable/watchface/package-summary.html)。
 
 
 
 ## <a name="samples"></a>サンプル
 
-数を検索する[サンプル](https://developer.xamarin.com/samples/android/Android%20Wear/)Android Wear を使用して (に直接移動または[github](https://github.com/xamarin/monodroid-samples/tree/master/wear))。
+Android の磨耗 (または[github](https://github.com/xamarin/monodroid-samples/tree/master/wear)に直接アクセス) を使用して、多数の[サンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Android+wear)を見つけることができます。
 
 |サンプル|説明|スクリーン ショット|
 |--- |--- |--- |
-|[SkeletonWear](https://developer.xamarin.com/samples/monodroid/wear/SkeletonWear/)|GridViewPager や対話型通知など、ウェアラブルのプロジェクトの基本の単純な例です。|![Skeletonwear のスクリーン ショット](images/skeleton.png)|
-|[WatchViewStub](https://developer.xamarin.com/samples/monodroid/wear/WatchViewStub/)|画面の図形を検出し、適切なレイアウトを自動的に読み込まれます WatchViewStub コントロールの簡単なデモします。 WatchViewStub がでどのように動作するかを参照してください、 **Resources/layout/main_activity.xml**レイアウト。|![WatchViewStub のスクリーン ショット](images/watchview.png)|
-|[RecipeAssistant](https://developer.xamarin.com/samples/monodroid/wear/RecipeAssistant/)|Wear 通知ページでは、レシピの手順の形式でのデモです。 通知は、RecipeService.cs に作成されます。|![RecipeAssistant のスクリーン ショット](images/recipeassist.png)|
-|[ElizaChat](https://developer.xamarin.com/samples/monodroid/wear/ElizaChat/)|「パーソナル アシスタント」との対話の楽しいサンプルには、Wear 対話型通知を使用して定義された応答を使用してメッセージ交換を作成する、Eliza が呼び出されます。|![ElizaChat のスクリーン ショット](images/eliza.png)|
-|[GridViewPager](https://developer.xamarin.com/samples/monodroid/wear/GridViewPager/)|GridViewPager は、ユーザーが垂直方向にスワイプ、2D ナビゲーション パターンを実装し、オプションやコンテンツ内を移動するには、水平方向にします。|![GridViewPager のスクリーン ショット](images/gridviewpager.png)|
-|[WatchFace](https://developer.xamarin.com/samples/monodroid/wear/WatchFace)|WatchFace は、アナログ スタイルの時間、分、および 2 つ目の手でカスタムのウォッチの文字盤が。 このサンプルでは、現在の時刻を描画するウォッチ face サービスを作成およびハンドル アンビエント モードと可視性は、イベントを変更する方法を示します。 これには、タイム ゾーンの変更をリッスンし、それに応じて、時間が自動的に更新するブロードキャスト レシーバーが含まれます。|![WatchFace のスクリーン ショット](images/gridviewpager.png)|
+|[SkeletonWear](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-skeletonwear)|GridViewPager や対話型通知など、ウェアラブルプロジェクトの基本の簡単な例です。|![Skeletonwear のスクリーンショット](images/skeleton.png)|
+|[WatchViewStub](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-watchviewstub)|画面の形状を検出し、正しいレイアウトを自動的に読み込む WatchViewStub コントロールの簡単なデモ。 **Resources/layout/main_activity**レイアウトで WatchViewStub がどのように機能するかを確認します。|![WatchViewStub のスクリーンショット](images/watchview.png)|
+|[RecipeAssistant](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-recipeassistant)|レシピの手順の形式での、磨耗通知ページのデモンストレーション。 通知は RecipeService.cs に作成されます。|![RecipeAssistant のスクリーンショット](images/recipeassist.png)|
+|[ElizaChat](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-elizachat)|Eliza と呼ばれる "パーソナルアシスタント" と対話する楽しいサンプル。磨耗の対話型通知を使用して、事前に確立された応答を使用してメッセージ交換を作成します。|![リストの登録のスクリーンショット](images/eliza.png)|
+|[GridViewPager](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-gridviewpager)|GridViewPager は2D ナビゲーションパターンを実装します。このパターンでは、ユーザーは垂直方向にスワイプし、水平方向に移動して、オプションやコンテンツを移動できます。|![GridViewPager のスクリーンショット](images/gridviewpager.png)|
+|[WatchFace](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-watchface)|WatchFace は、時間、分、および秒のアナログスタイルを使用したカスタムウォッチフェイスです。 このサンプルでは、現在の時刻を描画し、アンビエントモードと可視性の変更イベントを処理する watch face サービスを作成する方法を示します。 これには、タイムゾーンの変更をリッスンし、それに応じて自動的に時刻を更新するブロードキャストレシーバーが含まれます。|![WatchFace のスクリーンショット](images/gridviewpager.png)|
 
 
 ## <a name="videos"></a>ビデオ
 
-Wear で Xamarin.Android をについて説明するリンクをサポートしてこれらのビデオを確認します。
+以下のビデオリンクをご確認ください。
 
 |説明|スクリーン ショット|
 |--- |--- |
-|[Android L とはるかに多く](https://blog.xamarin.com/webinar-recording-android-l-and-so-much-more/) &ndash; Android L の開発者プレビューはマテリアル デザイン、通知、および新しいアニメーションは、いくつかの名前を含む多くを活用するために開発者向けの新しい Api を導入します。|![プレゼンテーションのビデオのスクリーン ショット](images/video-android-l.png)|
-|[C#祝いと目には。Google Glass や Android Wear](https://www.youtube.com/watch?v=80H8tXByZQc) &ndash;将来 (または、Inspector ガジェット エピソード) から何かのように見えるかもしれませんウェアラブル コンピューティングが、多くの人々 が未来を今日増えて既に! C#開発者はこれを知るし、ツールと (進化 2014) から、ウェアラブル デバイスの能力を活用するスキルが既にあります。|![プレゼンテーションのビデオのスクリーン ショット](images/video-eyes-ears.png)|
-|[新機能については Xamarin.Android](https://www.youtube.com/watch?v=Gpqc2XZIQfU) &ndash; L を Android、Android Wear、Android TV、Android Auto、マテリアル デザイン、およびアート; これが何 Xamarin の開発者は、平均するでしょうか。 進化 2014 から。|![プレゼンテーションのビデオのスクリーン ショット](Images/video-whats-new.png)|
+|[Android L など](https://blog.xamarin.com/webinar-recording-android-l-and-so-much-more/)&ndash; Android L Developer Preview では、多くの開発者向けに大量の新しい api が導入されました。これには、素材のデザイン、通知、新しいアニメーションなどを利用して、いくつかの名前を指定できます。|![プレゼンテーションのビデオスクリーンショット](images/video-android-l.png)|
+|[C#耳の中にあります。Google グラスと Android](https://www.youtube.com/watch?v=80H8tXByZQc) &ndash;のウェアラブルコンピューティングは、将来のもの (またはインスペクターガジェットエピソード) のように見えますが、多くの人が既に将来を採用しています。 C#開発者はこれを把握しており、ウェアラブルデバイスの力を活用するためのツールとスキルが既に用意されています (2014 の進化から)。|![プレゼンテーションのビデオスクリーンショット](images/video-eyes-ears.png)|
+|[Xamarin Android の新機能](https://www.youtube.com/watch?v=Gpqc2XZIQfU)&ndash; Android L、android 磨耗、android TV、android Auto、マテリアル設計、および ART は、2014の進化から、Xamarin の開発者として何を意味していますか。|![プレゼンテーションのビデオスクリーンショット](Images/video-whats-new.png)|
 
 
 <!--

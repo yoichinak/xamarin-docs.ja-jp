@@ -1,34 +1,34 @@
 ---
-title: Xamarin.iOS での web ビュー
-description: このドキュメントでは、Xamarin.iOS アプリは web コンテンツを表示できるさまざまな方法について説明します。 UIWebView、WKWebView、SFSafariViewController、Safari、およびアプリのトランスポート セキュリティがについて説明します。
+title: Xamarin. iOS の Web ビュー
+description: このドキュメントでは、Xamarin iOS アプリで web コンテンツを表示するさまざまな方法について説明します。 ここでは、UIWebView、WKWebView、SFSafariViewController、Safari、および app transport のセキュリティについて説明します。
 ms.prod: xamarin
 ms.assetid: 84886CF4-2B2B-4540-AD92-7F0B791952D1
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 9adf514e4fc510617e3f4d801569935ee4a03f25
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 8848f2bacac4b1ddab5c74ec07246e077bb4f158
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61093794"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68642694"
 ---
-# <a name="web-views-in-xamarinios"></a>Xamarin.iOS での web ビュー
+# <a name="web-views-in-xamarinios"></a>Xamarin. iOS の Web ビュー
 
-Apple は iOS の有効期間にわたってさまざまなアプリ開発者がアプリケーションに web ビューの機能を組み込む方法をリリースしました。 ほとんどのユーザーは自分の iOS デバイスでは、組み込みの Safari web ブラウザーを利用し、その他のアプリからの web ビュー機能がこのエクスペリエンスと一致することを想定します。 ために、パフォーマンス基準、および機能で同じである同じジェスチャの想定されます。
+IOS Apple の有効期間中は、アプリ開発者がアプリに web ビュー機能を組み込むためのさまざまな方法がリリースされました。 ほとんどのユーザーは iOS デバイスで組み込みの Safari web ブラウザーを利用しているため、他のアプリの web ビュー機能はこのエクスペリエンスと同じであることが期待されます。 同じジェスチャが動作すること、パフォーマンスが同等であること、および機能が同じであることが期待されます。
 
-この記事で紹介 Apple によって提供される次の 3 つの Web ビューの各: `UIWebView`、 `WKWebview`、および`SFSafariViewController`、これらの類似点と相違点、および使用方法。 
+この記事では`UIWebView`、Apple によって提供される3つの Web ビュー (、 `WKWebview`、 `SFSafariViewController`、類似点と相違点、およびそれらを使用する方法) について説明します。 
 
-iOS 11 では、両方に新しい変更が導入されました`WKWebView`と`SFSafariViewController`します。 これらの詳細については、次を参照してください。、 [iOS 11 のガイドでの変更を Web](~/ios/platform/introduction-to-ios11/web.md)ガイド。
+iOS 11 では、と`WKWebView` `SFSafariViewController`の両方に新しい変更が導入されました。 これらの詳細については、「 [iOS 11 の Web 変更ガイド](~/ios/platform/introduction-to-ios11/web.md)」ガイドを参照してください。
 
 ## <a name="uiwebview"></a>UIWebView
 
-`UIWebView` アプリで web コンテンツを提供するための Apple のレガシ方法です。 2.0 では、iOS でリリースされ、8.0 の時点では推奨されていません。
+`UIWebView`は、アプリに web コンテンツを提供する従来の方法です。 IOS 2.0 でリリースされ、8.0 の時点で非推奨とされています。
 
-IOS のバージョンを 8.0 より前サポートを計画して使用する必要があります`UIWebView`します。 原因という事実に`UIWebView`小さいパフォーマンスが最適化されたその他の方法よりも、お勧め、ユーザーの iOS バージョンを確認する必要があります。 場合、8.0、またはを使用して、上記のオプションのいずれかの説明の下優れたユーザー エクスペリエンスが作成されます。
+8\.0 より前の iOS バージョンをサポートする予定の場合は、を使用`UIWebView`する必要があります。 パフォーマンスに対して最適化`UIWebView`されるのは代替手段よりも低いため、ユーザーの iOS バージョンを確認することをお勧めします。 8\.0 以上の場合、次のいずれかのオプションを使用すると、より優れたユーザーエクスペリエンスが得られます。
  
-UIWebView を Xamarin.iOS アプリに追加するには、次のコードを使用します。
+UIWebView を Xamarin iOS アプリに追加するには、次のコードを使用します。
  
 ```
 webView = new UIWebView (View.Bounds);
@@ -38,24 +38,24 @@ var url = "https://xamarin.com"; // NOTE: https secure request
 webView.LoadRequest(new NSUrlRequest(new NSUrl(url)));
 ```
 
-これには、次の web ビューが生成されます。
+これにより、次の web ビューが生成されます。
 
 [![](uiwebview-images/webview.png "ScalesPagesToFit の効果")](uiwebview-images/webview.png#lightbox)
 
-使用しての詳細については`UIWebView`、次のレシピを参照してください。
+の使用方法`UIWebView`の詳細については、次のレシピを参照してください。
 
 
 - [Web ページを読み込む](https://github.com/xamarin/recipes/tree/master/Recipes/ios/content_controls/web_view/load_a_web_page)
-- [ローカル コンテンツを読み込み](https://github.com/xamarin/recipes/tree/master/Recipes/ios/content_controls/web_view/load_local_content)
-- [以外の Web ドキュメントを読み込む](https://github.com/xamarin/recipes/tree/master/Recipes/ios/content_controls/web_view/load_non-web_documents)
+- [ローカルコンテンツの読み込み](https://github.com/xamarin/recipes/tree/master/Recipes/ios/content_controls/web_view/load_local_content)
+- [Web 以外のドキュメントを読み込む](https://github.com/xamarin/recipes/tree/master/Recipes/ios/content_controls/web_view/load_non-web_documents)
 
 ## <a name="wkwebview"></a>WKWebView
 
-`WKWebView` iOS 8 という web 閲覧モバイル Safari に似たインターフェイスを実装するために許可するアプリの開発者で導入されました。 これは、期限に達すると、ファクトの一部を`WKWebView`Nitro Javascript エンジン、モバイルの Safari で使用されるものと同じエンジンを使用します。 `WKWebView` 常に使用する必要があります over UIWebView されたため、[パフォーマンスが向上](http://blog.initlabs.com/post/100113463211/wkwebview-vs-uiwebview)、わかりやすいジェスチャは、および web ページとアプリ間の相互作用の容易さで構築します。
+`WKWebView`は、iOS 8 で導入されました。これにより、アプリ開発者は、mobile Safari と同様の web 閲覧インターフェイスを実装できます。 これは、Nitro Javascript エンジンを使用すること`WKWebView`によるものです。これは、モバイル Safari で使用されるのと同じエンジンです。 `WKWebView`[パフォーマンスが向上](http://blog.initlabs.com/post/100113463211/wkwebview-vs-uiwebview)し、ユーザーにわかりやすいジェスチャが組み込まれており、web ページとアプリの間の対話が容易であることが原因で、uiwebview 経由で常に使用する必要がありました。
   
-`WKWebView` 追加できますをアプリに UIWebView をするのとほぼ同じ方法で、開発者は UI/UX や機能をより細かく制御を持って。 作成して、web ビュー オブジェクトを表示するは、ビューを表示する方法、ユーザーが操作できる方法と、ユーザーが、ビューがどのように終了する方法を制御できますが、要求されたページを表示するされます。  
+`WKWebView`は、UIWebView とほぼ同じ方法でアプリに追加できます。ただし、開発者は UI/UX と機能をはるかに細かく制御できます。 Web ビューオブジェクトを作成して表示すると、要求されたページが表示されます。ただし、ビューの表示方法、ユーザーが移動する方法、およびユーザーがビューを終了する方法を制御できます。  
 
-次のコードを起動するために使用できます、 `WKWebView` Xamarin.iOS アプリで。
+次のコードを使用して、Xamarin `WKWebView` . iOS アプリでを起動できます。
 
 ```csharp
     WKWebView webView = new WKWebView(View.Frame, new WKWebViewConfiguration());
@@ -66,29 +66,29 @@ webView.LoadRequest(new NSUrlRequest(new NSUrl(url)));
     webView.LoadRequest(request);
 ```
 
-これには、次の web ビューが生成されます。
+これにより、次の web ビューが生成されます。
 
-[![](uiwebview-images/wkwebview.png "ScalesPagesToFit せず web ビューの例")](uiwebview-images/wkwebview.png#lightbox)
+[![](uiwebview-images/wkwebview.png "ScalesPagesToFit のない web ビューの例")](uiwebview-images/wkwebview.png#lightbox)
 
-注意することが重要`WKWebView`は WebKit 名前空間でクラスの先頭にディレクティブを使用してこれを追加する必要があるためです。
+は WebKit 名前空間にある`WKWebView`ことに注意する必要があるため、この using ディレクティブをクラスの先頭に追加する必要があります。
 
-`WKWebView` Xamarin.Mac のアプリ内でも使用でき、したがってするクロスプラット フォーム対応の Mac と iOS アプリを作成する場合は、その使用を検討することがあります。
+`WKWebView`は、Xamarin. Mac アプリ内でも使用できます。そのため、クロスプラットフォームの Mac/iOS アプリを作成する場合は、これを使用することを検討してください。
 
-[JavaScript アラートの処理](https://github.com/xamarin/recipes/tree/master/Recipes/ios/content_controls/web_view/handle_javascript_alerts)レシピ Javascript で WKWebView の使用に関する情報も提供します
+「 [Javascript アラートを処理](https://github.com/xamarin/recipes/tree/master/Recipes/ios/content_controls/web_view/handle_javascript_alerts)する」レシピでは、javascript での WKWebView の使用に関する情報も提供します。
 
 <a name="safariviewcontroller" />
 
 ## <a name="sfsafariviewcontroller"></a>SFSafariViewController
  
- `SFSafariViewController` アプリから web コンテンツを提供する最新の方法ですし、利用可能で、ios 9 以降。 異なり`UIWebView`または`WKWebView`、`SFSafariViewController`ビュー コント ローラーで、他のビューを使用することはできません。 存在する必要があります`SFSafariViewController`新しいビュー コント ローラーと同じ方法で紹介する任意のビュー コント ローラー。
+ `SFSafariViewController`は、アプリから web コンテンツを提供するための最新の方法であり、iOS 9 以降で使用できます。 また`UIWebView`は`WKWebView`と`SFSafariViewController`は異なり、はビューコントローラーであるため、他のビューと一緒に使用することはできません。 ビューコントローラーを`SFSafariViewController`表示するのと同じように、新しいビューコントローラーとして表示する必要があります。
  
- `SFSafariViewController` 基本的に、'ミニ safari' をアプリに埋め込むことができるは。 WKWebView などは、同じの Nitro Javascript エンジンを使用してもオートコンプリート、リーダー、およびモバイルの Safari の cookie とデータを共有する機能などの追加の Safari 機能の範囲を提供します。 ユーザー間の相互作用と`SFSafariViewController`は、アプリにアクセスできません。 アプリでは、既定の Safari 機能のいずれかへのアクセスはありません。
+ `SFSafariViewController`は、基本的には ' ミニ safari ' であり、アプリに埋め込むことができます。 WKWebView と同様に、同じ Nitro Javascript エンジンを使用しますが、オートフィル、閲覧者、モバイル Safari で cookie とデータを共有する機能など、さまざまな Safari 機能も用意されています。 ユーザーとの`SFSafariViewController`間の対話は、アプリにはアクセスできません。 アプリは、既定の Safari 機能のいずれにもアクセスできません。
  
-また、既定では、実装、**完了**ボタン、ユーザーをアプリに簡単に返すし、転送して、ユーザーが web ページのスタック間を移動できるようにする、ナビゲーション ボタンをバックアップすることができます。 さらに、アドレス バーの予想される web ページ上にある安心を与えることも、ユーザーを提供します。 アドレス バーでは、url を変更するユーザーは許可されません。 
+また、既定では、 **[完了]** ボタンが実装されています。これにより、ユーザーはアプリに簡単に戻ることができ、ナビゲーションボタンを転送および戻ることができ、ユーザーは web ページのスタック内を移動できます。 また、ユーザーには、予期された web ページ上にあることを安心して提供するアドレスバーを提供します。 アドレスバーでは、ユーザーが url を変更することはできません。 
 
-これらの実装を変更できないように`SFSafariViewController`は、アプリをカスタマイズすることがなく web ページを表示する必要がある場合、既定のブラウザーとして使用するに最適です。
+これらの実装は変更できない`SFSafariViewController`ため、アプリがカスタマイズなしで web ページを表示する必要がある場合は、既定のブラウザーとしてを使用することをお勧めします。
 
-次のコードを起動するために使用できます、 `SFSafariViewController` Xamarin.iOS アプリで。
+次のコードを使用して、Xamarin `SFSafariViewController` . iOS アプリでを起動できます。
 
 ```csharp
 var sfViewController = new SFSafariViewController(url);
@@ -96,13 +96,13 @@ var sfViewController = new SFSafariViewController(url);
 PresentViewController(sfViewController, true, null);
 ```
 
-これには、次の web ビューが生成されます。
+これにより、次の web ビューが生成されます。
 
-[![](uiwebview-images/sfsafariviewcontroller.png "SFSafariViewController と web ビューの例")](uiwebview-images/sfsafariviewcontroller.png#lightbox)
+[![](uiwebview-images/sfsafariviewcontroller.png "SFSafariViewController を使用した web ビューの例")](uiwebview-images/sfsafariviewcontroller.png#lightbox)
 
 ## <a name="safari"></a>Safari
 
-次のコードを使用して、アプリのモバイル Safari のアプリを開くこともします。
+次のコードを使用して、アプリ内から mobile Safari アプリを開くこともできます。
 
 ```csharp
 var url = new NSUrl("https://xamarin.com");
@@ -111,20 +111,20 @@ UIApplication.SharedApplication.OpenUrl(url);
 
 ```
 
-これには、次の web ビューが生成されます。
+これにより、次の web ビューが生成されます。
 
-[![](uiwebview-images/safari.png "Safari で提供される web ページ")](uiwebview-images/safari.png#lightbox)
+[![](uiwebview-images/safari.png "Safari に表示される web ページ")](uiwebview-images/safari.png#lightbox)
 
-Safari にアプリからユーザーを移動する一般に常に避けてください。 ほとんどのユーザーは、アプリケーションの外部でナビゲーションが予期しないため、アプリから移動する場合ユーザー可能性がありますしないを返す、基本的に engagement を強制終了します。
+一般に、アプリから Safari にユーザーを移動することは、常に避ける必要があります。 ほとんどのユーザーはアプリケーションの外部でのナビゲーションを想定していません。そのため、アプリから移動すると、ユーザーはそれを返すことがなく、実質的にはエンゲージメントを終了する可能性があります。
 
-iOS 9 の機能強化には、Safari ページの左上隅で提供されている [戻る] ボタンをアプリに簡単に返すにユーザーができるようにします。
+iOS 9 の機能強化により、Safari ページの左上隅にある [戻る] ボタンを使用して、ユーザーが簡単にアプリに戻ることができるようになりました。
 
 ## <a name="app-transport-security"></a>アプリケーション トランスポート セキュリティ
 
-アプリのトランスポート セキュリティ、または*ATS* apple iOS 9 で、すべてのインターネット通信をセキュリティで保護された接続のベスト プラクティスに準拠していることを確認で導入されました。
+IOS 9 では、アプリトランスポートセキュリティ (または*ATS* ) が Apple によって導入され、すべてのインターネット通信がセキュリティで保護された接続のベストプラクティスに準拠するようになりました。
 
-ATS の詳細については、アプリでは、その実装方法などを参照してください、[アプリ トランスポート セキュリティ](~/ios/app-fundamentals/ats.md)ガイド。
+アプリでの実装方法など、ATS の詳細については、「[アプリトランスポートセキュリティ](~/ios/app-fundamentals/ats.md)ガイド」を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 
-- [Webview (サンプル)](https://developer.xamarin.com/samples/monotouch/WebView/)
+- [Webview (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/webview)

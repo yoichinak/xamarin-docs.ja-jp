@@ -1,48 +1,48 @@
 ---
 title: tvOS 11 の概要
-description: このドキュメントでは、tvOS 11 と Apple のリリース ノートへのリンクでの Xamarin の開発者に使用できる新機能の概要を提供します。
+description: このドキュメントでは、tvOS 11 の Xamarin 開発者が使用できる新機能の概要と、Apple のリリースノートへのリンクを示します。
 ms.prod: xamarin
 ms.assetid: 5258F7A1-3388-4482-978C-DC33AAAEFBE6
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 02/08/2018
-ms.openlocfilehash: 4da83d5ecc7a54bcd692751e07c81e8e5bb0d94a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: aa28384b0f0f8e4901f975a7d47a5a3db964e539
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60932563"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657383"
 ---
 # <a name="introduction-to-tvos-11"></a>tvOS 11 の概要
 
-_Xamarin を使用して、tvOS 11 の開発者が利用できる新機能_
+_Xamarin for tvOS 11 を使用して開発者が利用できる新機能_
 
-Xamarin.tvOS アプリで新しい tvOS 11 の機能にアクセスします。
+TvOS アプリの新しい tvOS 11 機能にアクセスします。
 
-- 右から左へ記述する言語のサポート 
-- SceneKit および SpriteKit のフォーカスのサポート
-- 安全領域レイアウト ガイド 
-- プレーンなボタンのスタイルより簡単にスタイルを設定できます。
-- 対話型のフォーカス対応の階層化されたイメージ
-- カスタム アニメーションのフォーカスの相互作用を調整
-- カスタム サウンドは、フォーカスの相互作用を調整
+- 右から左へ記述する言語サポート 
+- SceneKit と SpriteKit のフォーカスサポート
+- 安全領域レイアウトガイド 
+- スタイルを簡単に設定できるプレーンテキストボタンスタイル
+- 対話的なフォーカスをサポートするレイヤー図
+- フォーカスの相互作用によって調整されるカスタムアニメーション
+- フォーカスの相互作用によって調整されるカスタムサウンド
 - CoreML を使用した機械学習
-- イメージおよびビデオの機能の検出
-- 高効率ビデオ コーディング (HEVC) のサポート
+- イメージとビデオ機能の検出
+- 高効率ビデオコーディング (HEVC) のサポート
 - 高効率イメージ形式 (HEIF) のサポート
-- App Store でのアプリ内購入を昇格します。
-- 拡張機能のトップ シェルフの明暗のイメージ
-- AirPlay 2
-- 金属 2
+- アプリストアでのアプリ内購入の昇格
+- 上部棚拡張機能の明るい画像と暗い画像
+- エアプレイ2
+- メタル2
 
-Apple の tvOS 11 で導入された変更の完全な一覧を参照してください、 [tvOS で新](https://developer.apple.com/library/content/releasenotes/General/WhatsNewinTVOS/Articles/tvOS_11_0.html)ドキュメント。
+Apple が tvOS 11 で導入した変更の完全な一覧については、tvOS ドキュメントの[新機能](https://developer.apple.com/library/content/releasenotes/General/WhatsNewinTVOS/Articles/tvOS_11_0.html)に関する記事をご覧ください。
 
 ## <a name="related-links"></a>関連リンク
 
-- [tvOS のサンプル](https://developer.xamarin.com/samples/tvos/all/)
+- [tvOS のサンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
 - [TvOS の概要](~/ios/tvos/index.md)
-- [新機能 tvOS 11 (Apple 開発者ガイド)](https://developer.apple.com/library/content/releasenotes/General/WhatsNewinTVOS/Articles/tvOS_11_0.html)
-- [新しい tvOS 11 (WWDC 2017) には](https://developer.apple.com/videos/play/wwdc2017/209/)
-- [フォーカスの対話で tvOS 11 (WWDC 2017)](https://developer.apple.com/videos/play/wwdc2017/224/)
-- [(Apple) の開発者向け tvOS](https://developer.apple.com/tvos/)
+- [TvOS 11 の新機能 (Apple 開発者ガイド)](https://developer.apple.com/library/content/releasenotes/General/WhatsNewinTVOS/Articles/tvOS_11_0.html)
+- [TvOS 11 (WWDC 2017) の新機能](https://developer.apple.com/videos/play/wwdc2017/209/)
+- [TvOS 11 でのフォーカスの相互作用 (WWDC 2017)](https://developer.apple.com/videos/play/wwdc2017/224/)
+- [開発者向け tvOS (Apple)](https://developer.apple.com/tvos/)

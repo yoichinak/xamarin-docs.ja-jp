@@ -7,22 +7,22 @@ ms.assetid: E3A4E373-F65D-45C8-8E77-577A804AC3F8
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: b4cd84e9134db2b2106af3205f189fbc2a92bdcc
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 484a3ac742d162e1d6faaa38ad2e4eb056ed64a3
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61018326"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644483"
 ---
 # <a name="drawing-a-simple-circle-in-skiasharp"></a>SkiaSharp の単純な円を描画
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _SkiaSharp 描画、キャンバスのなどの基本を学習し、オブジェクトの塗りつぶし_
 
 この記事の作成など、SkiaSharp を使った xamarin.forms のグラフィックスの描画の概念を説明する、 `SKCanvasView` 、グラフィックス、処理をホストするオブジェクト、`PaintSurface`イベント、およびを使用して、`SKPaint`とその他の描画の色を指定するオブジェクト属性。
 
-[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)プログラムには、この一連の SkiaSharp 記事のすべてのサンプル コードが含まれています。 最初のページは使用権を持って**単純な円**ページ クラスを呼び出すと[ `SimpleCirclePage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs)します。 このコードは、半径が 100 ピクセルのページの中央に円を描画する方法を示します。 円のアウトラインが赤であり、円の内部が青。
+[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)プログラムには、この一連の SkiaSharp 記事のすべてのサンプル コードが含まれています。 最初のページは使用権を持って**単純な円**ページ クラスを呼び出すと[ `SimpleCirclePage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs)します。 このコードは、半径が 100 ピクセルのページの中央に円を描画する方法を示します。 円のアウトラインが赤であり、円の内部が青。
 
 ![](circle-images/circleexample.png "赤で、青色の円")
 
@@ -33,7 +33,7 @@ using SkiaSharp;
 using SkiaSharp.Views.Forms;
 ```
 
-次のクラスのコンス トラクターを作成、 [ `SKCanvasView` ](xref:SkiaSharp.Views.Forms.SKCanvasView)オブジェクト、ハンドラーをアタッチします、 [ `PaintSurface` ](xref:SkiaSharp.Views.Forms.SKCanvasView.PaintSurface)イベント、およびセット、`SKCanvasView`オブジェクトをページのコンテンツ。
+次のクラスのコンストラクターを作成、 [ `SKCanvasView` ](xref:SkiaSharp.Views.Forms.SKCanvasView)オブジェクト、ハンドラーをアタッチします、 [ `PaintSurface` ](xref:SkiaSharp.Views.Forms.SKCanvasView.PaintSurface)イベント、およびセット、`SKCanvasView`オブジェクトをページのコンテンツ。
 
 ```csharp
 public SimpleCirclePage()
@@ -153,7 +153,7 @@ IOS、Android、およびユニバーサル Windows プラットフォームで�
 > [!NOTE]
 > `SKPaint`クラスを定義、 [ `IsAntialias` ](xref:SkiaSharp.SKPaint.IsAntialias)グラフィックスのレンダリングにアンチエイリアシングを有効にします。 アンチエイリアシング通常、結果視覚的により滑らかなエッジは、このプロパティに設定する可能性がありますので`true`のほとんどで、`SKPaint`オブジェクト。 このプロパティは、わかりやすくするためのために、_いない_のほとんどのサンプル ページで設定します。
 
-円のアウトラインの幅が 25 ピクセルとして指定されていますが&mdash;または 4 分の 1 円の半径&mdash;幅が狭いほど、ように見え、する正当な理由があります。線の幅の半分は、青い円によって隠されています。 引数、`DrawCircle`メソッドは、円の抽象の幾何学的座標を定義します。 青の内部のサイズは、最も近いピクセルにそのディメンションが 25 ピクセル幅のアウトラインがジオメトリの円をまたぐ&mdash;内側と外側の半分の半分です。
+円の輪郭の幅は25ピクセル&mdash; 、または円&mdash;の半径の1分の1になるように指定されていますが、細いことがあります。青の円では、線の幅の半分が見えません。 引数、`DrawCircle`メソッドは、円の抽象の幾何学的座標を定義します。 青の内部のサイズは、最も近いピクセルにそのディメンションが 25 ピクセル幅のアウトラインがジオメトリの円をまたぐ&mdash;内側と外側の半分の半分です。
 
 次のサンプル、 [Xamarin.Forms との統合](~/xamarin-forms/user-interface/graphics/skiasharp/basics/integration.md)記事では、これを視覚的に示します。
 
@@ -161,4 +161,4 @@ IOS、Android、およびユニバーサル Windows プラットフォームで�
 ## <a name="related-links"></a>関連リンク
 
 - [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/02/2016
-ms.openlocfilehash: c1fb596abb580cf42edda21ab71f2c70de59a547
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: c8be9220f17a0f0f046f09ff61ae76d1fed7e15f
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65924556"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644800"
 ---
 # <a name="attached-properties"></a>アタッチされるプロパティ
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/Effects/ShadowEffect/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)
 
 _添付プロパティは、特殊な種類のバインド可能なプロパティ、1 つのクラスで定義されているが、他のオブジェクトにアタッチされ、クラスを含む属性として XAML で認識可能なプロパティ名はピリオドで区切られました。この記事では、添付プロパティは、概要を示し、作成し、これらを使用する方法を示します。_
 
@@ -147,6 +147,6 @@ ShadowEffect.SetHasShadow (label, true);
 
 - [連結可能プロパティ](~/xamarin-forms/xaml/bindable-properties.md)
 - [XAML 名前空間](~/xamarin-forms/xaml/namespaces.md)
-- [シャドウ効果 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/Effects/ShadowEffect/)
+- [シャドウ効果 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)
 - [BindableProperty](xref:Xamarin.Forms.BindableProperty)
 - [BindableObject](xref:Xamarin.Forms.BindableObject)

@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Forms と Azure Cognitive Services の概要
+title: Xamarin. Forms と Azure Cognitive Services の概要
 description: この記事では、いくつかの Microsoft Cognitive Service Api を呼び出す方法を示すサンプル アプリケーションを紹介します。
 ms.prod: xamarin
 ms.assetid: 74121ADB-1322-4C1E-A103-F37257BC7CB0
@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: 36aa53a6d257d8f5311cab84485e608bef3e97f8
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 52774b387644b14e3d4612dffa6d3c3b28a37f25
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67659269"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68652313"
 ---
-# <a name="xamarinforms-and-azure-cognitive-services-introduction"></a>Xamarin.Forms と Azure Cognitive Services の概要
+# <a name="xamarinforms-and-azure-cognitive-services-introduction"></a>Xamarin. Forms と Azure Cognitive Services の概要
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoCognitiveServices/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 
 _Microsoft Cognitive Services では、Api、Sdk、および開発者は、顔認識、音声認識、および言語の理解などの機能を追加することで、アプリケーションをよりインテリジェントに利用可能なサービスのセットです。この記事では、いくつかの Microsoft Cognitive Service Api を呼び出す方法を示すサンプル アプリケーションを紹介します。_
 
@@ -50,9 +50,9 @@ _Microsoft Cognitive Services では、Api、Sdk、および開発者は、顔�
 
 `RateAppPage`の面では、表示されている、返された emotion で Face API に送信されるの写真を撮影できます。
 
-## <a name="understand-the-application-anatomy"></a>アプリケーションの構造を理解します。
+## <a name="understand-the-application-anatomy"></a>アプリケーションの構造を理解する
 
-5 つのメイン フォルダーのサンプル アプリケーションについては、共有コード プロジェクトで構成されます。
+サンプルアプリケーションの共有コードプロジェクトは、次の5つの主要なフォルダーで構成されています。
 
 |フォルダー|目的|
 |--- |--- |
@@ -62,9 +62,9 @@ _Microsoft Cognitive Services では、Api、Sdk、および開発者は、顔�
 |Utils|含まれています、`Timer`クラスで使用される、 `AuthenticationService` 9 分ごとに、JWT アクセス トークンを更新するクラス。|
 |Views|アプリケーションのページが含まれています。|
 
-共有コード プロジェクトには、いくつかの重要なファイルも含まれています。
+共有コードプロジェクトには、いくつかの重要なファイルも含まれています。
 
-|ファイル|目的|
+|File|目的|
 |--- |--- |
 |Constants.cs|`Constants`クラスは、呼び出される Microsoft Cognitive Service Api の API キーとエンドポイントを指定します。 API キーの定数は、さまざまな Cognitive Service Api にアクセスする更新が必要です。|
 |App.xaml.cs|`App`クラスは、各プラットフォームでアプリケーションによって表示される両方の最初のページをインスタンス化を担当し、`TodoManager`データベース操作の呼び出しに使用されるクラスです。|
@@ -80,7 +80,7 @@ _Microsoft Cognitive Services では、Api、Sdk、および開発者は、顔�
 
 さらに、これらの NuGet パッケージは、独自の依存関係もインストールします。
 
-### <a name="model-the-data"></a>データをモデルします。
+### <a name="model-the-data"></a>データのモデル化
 
 サンプル アプリケーションを使用して、`TodoItem`を表示し、ローカルの SQLite データベースに格納されるデータをモデル化するクラス。 次に示すのは、`TodoItem` クラスのコード例です。
 
@@ -96,7 +96,7 @@ public class TodoItem
 
 `ID`プロパティは、それぞれを一意に識別するために使用`TodoItem`インスタンスし、は、プロパティを自動インクリメントの主キー、データベースに SQLite 属性で修飾されます。
 
-### <a name="invoke-database-operations"></a>データベース操作を呼び出す
+### <a name="invoke-database-operations"></a>データベース操作の呼び出し
 
 `TodoItemRepository`クラスは、データベース操作を実装し、クラスのインスタンスを介してアクセスできる、`App.TodoManager`プロパティ。 `TodoItemRepository`クラスは、データベース操作を呼び出す次のメソッドを提供します。
 
@@ -105,15 +105,15 @@ public class TodoItem
 - **SaveItemAsync** – 作成するか、ローカルの SQLite データベース内の項目を更新します。
 - **DeleteItemAsync** – ローカルの SQLite データベースから指定した項目を削除します。
 
-### <a name="platform-project-implementations"></a>プラットフォーム プロジェクトの実装
+### <a name="platform-project-implementations"></a>プラットフォームプロジェクトの実装
 
-`Services`共有コード プロジェクトのフォルダーが含まれています、`IFileHelper`と`IAudioRecorderService`インターフェイスで使用される、`DependencyService`プラットフォーム プロジェクトにインターフェイスを実装するクラスを検索するクラス。
+共有コードプロジェクトの`IFileHelper` `IAudioRecorderService` `DependencyService`フォルダーには、プラットフォームプロジェクトでインターフェイスを実装するクラスを検索するためにクラスによって使用されるインターフェイスとインターフェイスが含まれています。 `Services`
 
 `IFileHelper`インターフェイスによって実装されます、`FileHelper`各プラットフォーム プロジェクトにクラス。 このクラスは、1 つのメソッドの`GetLocalFilePath`、SQLite データベースを格納するためのローカル ファイル パスが返されます。
 
 `IAudioRecorderService`インターフェイスによって実装されます、`AudioRecorderService`各プラットフォーム プロジェクトにクラス。 このクラスから成る`StartRecording`、 `StopRecording`、プラットフォーム Api を使用して、デバイスのマイクからオーディオを録音し、wav ファイルとして保存するには、メソッドをサポートしているとします。 Ios では、`AudioRecorderService`を使用して、`AVFoundation`オーディオを録音する API。 Android の場合、`AudioRecordService`を使用して、`AudioRecord`オーディオを録音する API。 ユニバーサル Windows プラットフォーム (UWP) で、`AudioRecorderService`を使用して、`AudioGraph`オーディオを録音する API。
 
-### <a name="invoke-cognitive-services"></a>Cognitive services を呼び出す
+### <a name="invoke-cognitive-services"></a>認識サービスの呼び出し
 
 サンプル アプリケーションは、次の Microsoft Cognitive Services を呼び出します。
 
@@ -125,4 +125,4 @@ public class TodoItem
 ## <a name="related-links"></a>関連リンク
 
 - [Microsoft Cognitive Services のドキュメント](https://www.microsoft.com/cognitive-services/documentation)
-- [Todo Cognitive Services (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoCognitiveServices/)
+- [Todo Cognitive Services (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)

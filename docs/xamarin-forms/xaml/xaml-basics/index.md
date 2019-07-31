@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: e85eb64099ba60a2b3663730a6fb058efdac6c60
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 7d46744c20874dd122b63e56ec92c7aa5ae6562e
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61211270"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656991"
 ---
 # <a name="xamarinforms-xaml-basics"></a>Xamarin.Forms XAML の基礎
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
-XAML (eXtensible Application Markup Language) を使用すると、開発者は Xamarin.Forms アプリケーションでコードではなくマークアップを使用してユーザー インターフェイスを定義できます。 Xamarin.Forms のプログラムでは、XAML が必要なことはありませんが、方が簡潔なと同等のコードより視覚的に一貫性のある使いやすい可能性があります。 XAML は、一般的な MVVM (モデル-ビュー-ビューモデル) アプリケーションのアーキテクチャで使用するため特に適しています。XAML では、XAML ベースのデータ バインディングによって、ビューモデルのコードにリンクされているビューを定義します。
+XAML (eXtensible Application Markup Language) を使用すると、開発者は Xamarin.Forms アプリケーションでコードではなくマークアップを使用してユーザー インターフェイスを定義できます。 Xamarin.Forms のプログラムでは、XAML が必要なことはありませんが、方が簡潔なと同等のコードより視覚的に一貫性のある使いやすい可能性があります。 XAML は、一般的によく使用される MVVM (モデルビューモデル) アプリケーションアーキテクチャでの使用に適しています。Xaml は、XAML ベースのデータバインディングを通じて、ビューモデルコードにリンクされたビューを定義します。
 
 ## <a name="xaml-basics-contents"></a>XAML の基礎の内容
 
@@ -86,7 +86,7 @@ XAML では、同等のコードをいくつかの利点があります。
 -  XAML では、コードを含めることはできません。 すべてのイベント ハンドラーは、コード ファイルで定義する必要があります。
 -  XAML では、反復処理のループを含めることはできません。 (ただし、いくつかの Xamarin.Forms のビジュアル オブジェクト-最も顕著な[ `ListView` ](xref:Xamarin.Forms.ListView) -内のオブジェクトに基づく複数の子要素を生成することができます、`ItemsSource`コレクションです)。
 -  XAML は、条件付きの処理 (ただし、データ バインディングを参照できますいくつかの条件付き処理を効率的にできるコード ベースのバインディング コンバーターです。) を含めることはできません。
--  一般に XAML することは、パラメーターなしのコンス トラクターを定義しないクラス インスタンス化できません。 (ただし、存在がこの制限を回避する方法です。)
+-  一般に XAML することは、パラメーターなしのコンストラクターを定義しないクラス インスタンス化できません。 (ただし、存在がこの制限を回避する方法です。)
 -  XAML は一般に、メソッドを呼び出すことはできません。 (ここでも、この制限も解決できます。)
 
 ない、ビジュアル デザイナー Xamarin.Forms アプリケーションで XAML を生成するためです。 すべての XAML は、手作業で記述された、する必要がありますが、ある、 [XAML プレビューアー](~/xamarin-forms/xaml/xaml-previewer/index.md)します。 プログラマは新しい XAML を頻繁にビルドして、特に後何も明らかに誤ってできない可能性がある、アプリケーションを実行する可能性があります。 多くの XAML での経験もの開発者は、実験が報いることを知っています。
@@ -107,6 +107,6 @@ Xamarin.Forms と XML について理解したら、読み取りを開始[第 1 
 
 ## <a name="related-links"></a>関連リンク
 
-- [XamlSamples](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
+- [XamlSamples](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 - [Mobile Apps のブックを作成します。](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)
-- [Xamarin.Forms のサンプル](https://developer.xamarin.com/samples/xamarin-forms/all/)
+- [Xamarin.Forms のサンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)

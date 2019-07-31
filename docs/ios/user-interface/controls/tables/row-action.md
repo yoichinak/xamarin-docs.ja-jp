@@ -1,48 +1,48 @@
 ---
-title: Xamarin.iOS での行のアクションの使用
-description: このガイドは UISwipeActionsConfiguration または UITableViewRowAction テーブル行のカスタムのスワイプ操作を作成する方法を示します
+title: Xamarin の行アクションの操作 (iOS)
+description: このガイドでは、Uiswipeactions Configuration または Uiswipeactionsconfiguration を使用してテーブル行のカスタムスワイプ操作を作成する方法を示します。
 ms.prod: xamarin
 ms.assetid: 340FB633-0C46-40AA-9963-FF17D7CA6858
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/25/2017
-ms.openlocfilehash: 6d41f37d4a63db710bb04e35e6e1a4be0dd4f7a4
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 41aabb5e8b6d3eb46a92ee194c6b6b5e3ca51943
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61408282"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655632"
 ---
-# <a name="working-with-row-actions-in-xamarinios"></a>Xamarin.iOS での行のアクションの使用
+# <a name="working-with-row-actions-in-xamarinios"></a>Xamarin の行アクションの操作 (iOS)
 
-_このガイドは UISwipeActionsConfiguration または UITableViewRowAction テーブル行のカスタムのスワイプ操作を作成する方法を示します_
+_このガイドでは、Uiswipeactions Configuration または Uiswipeactionsconfiguration を使用してテーブル行のカスタムスワイプ操作を作成する方法を示します。_
 
-![行に示すのスワイプ操作](row-action-images/action02.png)
+![行に対するスワイプ操作のデモンストレーション](row-action-images/action02.png)
 
-iOS には、テーブルに対する操作を行う 2 つの方法が用意されています:`UISwipeActionsConfiguration`と`UITableViewRowAction`します。
+iOS には`UISwipeActionsConfiguration` 、テーブルに対して操作を実行する`UITableViewRowAction`2 つの方法 (と) が用意されています。
 
-`UISwipeActionsConfiguration` iOS 11 で導入され、のセットを定義するために使用に実行するアクションを配置ときにユーザー スワイプといった_どちらの方向に_テーブル ビュー内の行。 この動作はネイティブ Mail.app のと同様です。 
+`UISwipeActionsConfiguration`は、iOS 11 で導入され、ユーザーがテーブルビューの行に対して_いずれかの方向で_スワイプしたときに実行する一連のアクションを定義するために使用されます。 この動作は、ネイティブのメールアプリの動作と似ています。 
 
-`UITableViewRowAction`テーブル ビュー内の行をユーザーのカードが水平方向に左するときに実行されるアクションを定義するクラスを使用します。
-たとえば、テーブル、行の左にスワイプの編集が表示されたら、**削除**既定のボタン。 複数のインスタンスに接続することによって、`UITableViewRowAction`クラスを`UITableView`、複数のカスタム動作を定義することができます、それぞれに独自のテキスト、書式設定と動作します。
+`UITableViewRowAction`クラスは、ユーザーがテーブルビューの行で水平にスワイプたときに実行されるアクションを定義するために使用されます。
+たとえば、テーブルを編集するときに、行を左にスワイプすると、既定で **[削除]** ボタンが表示されます。 `UITableViewRowAction`クラスの複数のインスタンスを`UITableView`にアタッチすることにより、複数のカスタムアクションを定義し、それぞれに独自のテキスト、書式設定、および動作を設定できます。
 
 
 ## <a name="uiswipeactionsconfiguration"></a>UISwipeActionsConfiguration
 
-スワイプ操作での実装に必要な 3 つのステップ`UISwipeActionsConfiguration`:
+スワイプ操作`UISwipeActionsConfiguration`を実装するには、次の3つの手順が必要です。
 
-1. オーバーライド`GetLeadingSwipeActionsConfiguration`や`GetTrailingSwipeActionsConfiguration`メソッド。 これらのメソッドを返す、`UISwipeActionsConfiguration`します。 
-2. インスタンスを作成、`UISwipeActionsConfiguration`が返されます。 このクラスの配列には、`UIContextualAction`します。
+1. `GetTrailingSwipeActionsConfiguration`メソッドとメソッドをオーバーライド`GetLeadingSwipeActionsConfiguration`します。 これらのメソッドは`UISwipeActionsConfiguration`を返します。 
+2. 返される`UISwipeActionsConfiguration`をインスタンス化します。 このクラスは、の`UIContextualAction`配列を受け取ります。
 3. `UIContextualAction` を作成します。
 
-これらは、次のセクションで詳しく説明します。
+これらの詳細については、次のセクションで詳しく説明します。
 
-### <a name="1-implementing-the-swipeactionsconfigurations-methods"></a>1.SwipeActionsConfigurations メソッドを実装します。
+### <a name="1-implementing-the-swipeactionsconfigurations-methods"></a>1. SwipeActionsConfigurations メソッドの実装
 
-`UITableViewController` (また`UITableViewSource`と`UITableViewDelegate`) 2 つのメソッドが含まれます:`GetLeadingSwipeActionsConfiguration`と`GetTrailingSwipeActionsConfiguration`、テーブル ビューの行の一連のスワイプ操作を実装するために使用されます。 先頭のスワイプ操作は、左から右の言語で、画面の左側にあると、右から左の言語では、画面の右側から、スワイプを指します。 
+`UITableViewController`(およびも`UITableViewSource` `UITableViewDelegate` )に`GetTrailingSwipeActionsConfiguration`は、テーブルビュー行にスワイプアクションのセットを実装するために使用されるとという2つのメソッドが含まれています。`GetLeadingSwipeActionsConfiguration` 先頭のスワイプ操作では、画面の左側から左から右の言語でスワイプを参照し、右から左に記述する言語で画面の右側からスワイプを参照します。 
 
-次の例 (から、 [TableSwipeActions](https://developer.xamarin.com/samples/monotouch/TableSwipeActions)サンプル)、先頭のスワイプ構成の実装例を示します。 2 つのアクションが説明されているコンテキストのアクションから作成された[下](#create-uicontextualaction)します。 これらのアクションはで新しく初期化に渡す[ `UISwipeActionsConfiguration` ](#create-uiswipeactionsconfigurations)、戻り値として使用します。
+次の例では、(「行[Wipeactions](https://docs.microsoft.com/samples/xamarin/ios-samples/tableswipeactions)サンプル」から) リーディングスワイプ構成を実装する方法を示しています。 コンテキストアクションからは、[次](#create-uicontextualaction)に説明する2つのアクションが作成されます。 これらのアクションは、戻り値として[`UISwipeActionsConfiguration`](#create-uiswipeactionsconfigurations)使用される、新しく初期化されたに渡されます。
 
 
 ```csharp
@@ -63,9 +63,9 @@ public override UISwipeActionsConfiguration GetLeadingSwipeActionsConfiguration(
 
 <a name="create-uiswipeactionsconfigurations" />
 
-### <a name="2-instantiate-a-uiswipeactionsconfiguration"></a>2.インスタンスを作成します。 `UISwipeActionsConfiguration`
+### <a name="2-instantiate-a-uiswipeactionsconfiguration"></a>2. をインスタンス化する`UISwipeActionsConfiguration`
 
-インスタンス化、`UISwipeActionsConfiguration`を使用して、`FromActions`の新しい配列を追加するメソッドを`UIContextualAction`s、次のコード スニペットに示すようにします。
+次の`UISwipeActionsConfiguration`コードスニペットに`FromActions`示すように、メソッドを使用`UIContextualAction`してをインスタンス化し、の新しい配列を追加します。
 
 ```csharp
 var leadingSwipe = UISwipeActionsConfiguration.FromActions(new UIContextualAction[] { flagAction, definitionAction })
@@ -73,23 +73,23 @@ var leadingSwipe = UISwipeActionsConfiguration.FromActions(new UIContextualActio
 leadingSwipe.PerformsFirstActionWithFullSwipe = false;
 ```
 
-操作の表示順序は、配列に渡される方法に依存する重要です。 たとえば、先頭のカードの上のコードはアクションのため表示します。
+アクションが表示される順序は、配列に渡される方法によって異なります。 たとえば、先頭のスワイプのコードでは、次のようにアクションが表示されます。
 
-![テーブルの行に表示される先頭のスワイプ操作](row-action-images/action03.png)
+![テーブルの行に表示される先頭方向のスワイプ操作](row-action-images/action03.png)
 
-スワイプといった、末尾の次の図に示すように、アクションが表示されます。
+後続のスワイプでは、次の図のようにアクションが表示されます。
 
-![テーブルの行に表示される後続のスワイプ操作](row-action-images/action04.png)
+![テーブル行に表示される最後のスワイプ操作](row-action-images/action04.png)
 
-このコード スニペットの新しい利用も`PerformsFirstActionWithFullSwipe`プロパティ。 既定では、このプロパティに設定が true の場合、行をユーザーが完全にスワイプするときに、配列の最初のアクションが発生することを意味します。 破壊的な操作がある場合 (たとえば"Delete"、理想的な動作できない可能性がありますこれおよびに設定する必要がありますので`false`します。
+このコードスニペットでは、新しい`PerformsFirstActionWithFullSwipe`プロパティも使用します。 既定では、このプロパティは true に設定されています。これは、ユーザーが行を完全にスワイプしたときに、配列の最初のアクションが行われることを意味します。 破壊的でないアクション (たとえば "Delete") がある場合は、これが理想的な動作ではない可能性があるため、 `false`これをに設定する必要があります。
 
 <a name="create-uicontextualaction" />
 
 ### <a name="create-a-uicontextualaction"></a>`UIContextualAction` の作成
 
-コンテキストのアクションは、ユーザー テーブルの行をスワイプするときに表示されるアクションを実際に作成します。
+コンテキストアクションでは、ユーザーがテーブル行をスワイプしたときに表示されるアクションを実際に作成します。
 
-提供する必要がありますアクションを初期化するために、`UIContextualActionStyle`タイトル、および`UIContextualActionHandler`します。 `UIContextualActionHandler`は 3 つのパラメーターを受け取ります。 アクション、アクションは、表示されていたビュー、および完了ハンドラー。
+アクションを初期化するには`UIContextualActionStyle`、、タイトル、 `UIContextualActionHandler`およびを指定する必要があります。 は`UIContextualActionHandler` 、アクション、アクションが表示されたビュー、および完了ハンドラーの3つのパラメーターを受け取ります。
 
 ```csharp
 public UIContextualAction ContextualFlagAction(int row)
@@ -113,13 +113,13 @@ public UIContextualAction ContextualFlagAction(int row)
 }
 ```
 
-背景色やアクションの画像などのさまざまなビジュアル プロパティを編集できます。 上記のコード スニペットは、アクションにイメージを追加し、その背景色を青の設定を示します。
+アクションの背景色や画像など、さまざまな視覚プロパティを編集できます。 上記のコードスニペットは、アクションに画像を追加し、背景色を青に設定する方法を示しています。
 
-コンテキスト アクションが作成されたら、初期化するために使用できます、`UISwipeActionsConfiguration`で、`GetLeadingSwipeActionsConfiguration`メソッド。
+コンテキストアクションが作成されると、を使用して`UISwipeActionsConfiguration` `GetLeadingSwipeActionsConfiguration`メソッドでを初期化できます。
 
 ## <a name="uitableviewrowaction"></a>UITableViewRowAction
 
-1 つまたは複数の行のカスタム アクションを定義する、`UITableView`のインスタンスを作成する必要があります、`UITableViewDelegate`クラスし、オーバーライド、`EditActionsForRow`メソッド。 例:
+に対して1つ以上の`UITableView`カスタム行アクションを定義するには、 `UITableViewDelegate`クラスのインスタンスを作成し、 `EditActionsForRow`メソッドをオーバーライドする必要があります。 例えば:
 
 ```csharp
 using System;
@@ -163,7 +163,7 @@ namespace BasicTable
 }
 ```
 
-静的な`UITableViewRowAction.Create`メソッドは、新たに作成するために使用`UITableViewRowAction`を表示する、 **Hi**ユーザー カードは、テーブル内の行を水平方向にままにするとボタンをクリックします。 後での新しいインスタンス、`TableDelegate`が作成されに接続されている、`UITableView`します。 例:
+静的`UITableViewRowAction.Create`メソッドを使用して新しい`UITableViewRowAction`を作成し、ユーザーがテーブルの行の水平方向にスワイプたときに **[Hi]** ボタンが表示されるようにします。 後で、 `TableDelegate`の新しいインスタンスが作成され、 `UITableView`にアタッチされます。 例えば:
 
 ```csharp
 TableDelegate tableDelegate;
@@ -175,15 +175,15 @@ table.Delegate = tableDelegate;
 
 ```
 
-上記のコードの実行し、ユーザー スワイプといった左テーブルの行に、 **Hi**の代わりにボタンが表示されます、**削除**既定で表示されるボタン。
+上のコードを実行し、ユーザーがテーブルの行にスワイプすると、既定で表示される **[削除]** ボタンの代わりに **[Hi]** ボタンが表示されます。
 
-[![](row-action-images/action01.png "削除ボタンの代わりに表示されている Hi ボタン")](row-action-images/action01.png#lightbox)
+[![](row-action-images/action01.png "[削除] ボタンの代わりに表示される [Hi] ボタン")](row-action-images/action01.png#lightbox)
 
-ユーザーがタップした場合、 **Hi**ボタン、`Hello World!`が書き込まれる Visual Studio でコンソールに Mac または Visual Studio のデバッグ モードでアプリケーションを実行するとします。
+ユーザーが **[こんにちは]** ボタンをタップ`Hello World!`すると、アプリケーションがデバッグモードで実行されるときに、Visual Studio for Mac または Visual Studio のコンソールにが出力されます。
 
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [TableSwipeActions (サンプル)](https://developer.xamarin.com/samples/monotouch/TableSwipeActions)
-- [WorkingWithTables (サンプル)](https://developer.xamarin.com/samples/monotouch/WorkingWithTables)
+- [個の Wipeactions (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/tableswipeactions)
+- [WorkingWithTables (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/workingwithtables)

@@ -7,16 +7,16 @@ ms.assetid: 400AE23A-6A0B-4FA8-BD6B-DE4146B04732
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
-ms.openlocfilehash: a17ddf438856600870c9bb3da60a5f4667128d57
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: df45908af9e2d13dcaeff732e8e8b1b49c523934
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61218184"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68647652"
 ---
 # <a name="the-skiasharp-circular-gradients"></a>SkiaSharp の円形グラデーション
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 [ `SKShader` ](xref:SkiaSharp.SKShader)クラスは、4 つの異なる種類のグラデーションを作成する静的メソッドを定義します。 [ **SkiaSharp 線状グラデーション**](linear-gradient.md)説明、 [ `CreateLinearGradient` ](xref:SkiaSharp.SKShader.CreateLinearGradient*)メソッド。 この記事では、その他の 3 つの種類のグラデーション、円をに基づいてこれらはすべてについて説明します。
 
@@ -54,7 +54,7 @@ A [ `CreateRadialGradient` ](xref:SkiaSharp.SKShader.CreateRadialGradient(SkiaSh
 
 使用する場合`CreateRadialGradient`円を入力する、円の中心に半径の円の半径へのグラデーションのグラデーションの中心を設定することができます。 その場合は、`SKShaderTileMode`引数は、グラデーションのレンダリングに影響を与えません。 グラデーションで塗りつぶす領域が、グラデーション、によって定義される円を超える場合は、`SKShaderTileMode`引数が円の外側の動作に大きな影響します。
 
-効果`SKShaderMode`方法については、**放射状グラデーション**ページで、 [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)サンプル。 このページの XAML ファイルのインスタンスを作成、`Picker`の 3 つのメンバーのいずれかを選択することができます、`SKShaderTileMode`列挙体。
+効果`SKShaderMode`方法については、**放射状グラデーション**ページで、 [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプル。 このページの XAML ファイルのインスタンスを作成、`Picker`の 3 つのメンバーのいずれかを選択することができます、`SKShaderTileMode`列挙体。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -140,7 +140,7 @@ public partial class RadialGradientPage : ContentPage
 
 [![放射状グラデーション](circular-gradients-images/RadialGradient.png "放射状グラデーション")](circular-gradients-images/RadialGradient-Large.png#lightbox)
 
-すべての 3 つのケースでは、グラデーションは、キャンバスを塗りつぶします。 左側にある iOS の画面では、半径を超えるグラデーションは、最後の色は白を続行します。 結果である`SKShaderTileMode.Clamp`します。 Android の画面は、の効果を示しています`SKShaderTileMode.Repeat`:。中心から 100 ピクセルで、グラデーションは最初の色は黒でもう一度開始します。 グラデーションは、radius のすべての 100 ピクセルが繰り返されます。 
+すべての 3 つのケースでは、グラデーションは、キャンバスを塗りつぶします。 左側にある iOS の画面では、半径を超えるグラデーションは、最後の色は白を続行します。 結果である`SKShaderTileMode.Clamp`します。 Android の画面には、次`SKShaderTileMode.Repeat`のような効果が表示されます。中央から100ピクセルで、グラデーションは最初の色 (黒) で再び開始されます。 グラデーションは、radius のすべての 100 ピクセルが繰り返されます。 
 
 ユニバーサル Windows プラットフォーム画面の右に示す方法`SKShaderTileMode.Mirror`代替方向にグラデーションをによりします。 最初のグラデーションは、中央の黒から白に半径が 100 ピクセルのです。 次は、200 ピクセルの半径を黒に 100 ピクセル radius から白し、もう一度 [次へ] のグラデーションを反転します。
 
@@ -620,4 +620,4 @@ public class ConicalSpecularHighlightPage : ContentPage
 ## <a name="related-links"></a>関連リンク
 
 - [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

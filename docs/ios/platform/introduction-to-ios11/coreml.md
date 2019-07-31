@@ -1,58 +1,58 @@
 ---
-title: Xamarin.iOS で CoreML の概要
-description: このドキュメントでは、CoreML で、iOS での machine learning の使用について説明します。 このドキュメントでは、ビジョンのフレームワークで使用する方法と CoreML を開始する方法について説明します。
+title: Xamarin. iOS の CoreML の概要
+description: このドキュメントでは、iOS で machine learning を使用できる CoreML について説明します。 このドキュメントでは、CoreML の使用を開始する方法と、それをビジョンフレームワークと共に使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: BE1E2CA1-E3AE-4C90-914C-CFDBD1DCB82B
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/30/2017
-ms.openlocfilehash: 3a00a7256cace9cbcff3478d866646d48cfdc50b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c2092cd9e7beb233c9478869ebff91d85b5b30c0
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61385080"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68649606"
 ---
-# <a name="introduction-to-coreml-in-xamarinios"></a>Xamarin.iOS で CoreML の概要
+# <a name="introduction-to-coreml-in-xamarinios"></a>Xamarin. iOS の CoreML の概要
 
-CoreML は machine learning を iOS – アプリは画像認識に問題が解決からあらゆる種類のタスクを実行するトレーニングされた機械学習モデルの活用できます。
+CoreML は機械学習を iOS にもたらします。アプリはトレーニング済みの機械学習モデルを活用して、問題解決からイメージ認識まで、あらゆる種類のタスクを実行できます。
 
-この概要では、次の項目について説明します。
+この概要では、次の内容について説明します。
 
-- [CoreML の概要](#coreml)
-- [ビジョン フレームワークで CoreML の使用](#coremlvision)
+- [CoreML のはじめに](#coreml)
+- [CoreML とビジョンフレームワークの使用](#coremlvision)
 
 <a name="coreml" />
 
-## <a name="getting-started-with-coreml"></a>CoreML の概要
+## <a name="getting-started-with-coreml"></a>CoreML のはじめに
 
-次の手順では、CoreML を iOS プロジェクトに追加する方法について説明します。 参照してください、 [Mars Habitat Pricer サンプル](https://developer.xamarin.com/samples/monotouch/ios11/CoreML/)実用的な例です。
+次の手順では、iOS プロジェクトに CoreML を追加する方法について説明します。 実際の例については、 [Mars Habitat Pricer サンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-marshabitatcoremltimer/)を参照してください。
 
-![Mars Habitat 価格を予測のサンプルのスクリーン ショット](coreml-images/marspricer-heading.png)
+![Mars Habitat Price 予測のサンプルのスクリーンショット](coreml-images/marspricer-heading.png)
 
-### <a name="1-add-the-coreml-model-to-the-project"></a>1.CoreML モデルをプロジェクトに追加します。
+### <a name="1-add-the-coreml-model-to-the-project"></a>1.CoreML モデルをプロジェクトに追加する
 
-CoreML モデルの追加 (ファイル、 **.mlmodel**拡張機能) を**リソース**プロジェクトのディレクトリ。 
+CoreML モデル ( **mlmodel**拡張子を持つファイル) をプロジェクトの**Resources**ディレクトリに追加します。 
 
-モデル ファイルのプロパティでは、その**ビルド アクション**に設定されている**CoreMLModel**します。 つまり、コンパイルには、 **.mlmodelc**ファイル、アプリケーションのビルド時にします。
+モデルファイルのプロパティでは、その**ビルドアクション**は**Coremlmodel**に設定されます。 これは、アプリケーションのビルド時に、このファイルが**mlmodelc**ファイルにコンパイルされることを意味します。
 
 ### <a name="2-load-the-model"></a>2.モデルを読み込みます
 
-使用して、モデルを読み込み、`MLModel.Create`静的メソッド。
+`MLModel.Create`静的メソッドを使用してモデルを読み込みます。
 
 ```csharp
 var assetPath = NSBundle.MainBundle.GetUrlForResource("NameOfModel", "mlmodelc");
 model = MLModel.Create(assetPath, out NSError error1);
 ```
 
-### <a name="3-set-the-parameters"></a>3.パラメーターを設定します
+### <a name="3-set-the-parameters"></a>3.パラメーターを設定する
 
-アウトを実装するコンテナー クラスを使用してモデル パラメーターが渡される`IMLFeatureProvider`します。
+モデルパラメーターは、を実装`IMLFeatureProvider`するコンテナークラスを使用して渡されます。
 
-機能のプロバイダー クラスは、文字列の辞書のように動作し、 `MLFeatureValue`s、各機能の値が単純な文字列または数値、配列またはデータ、またはイメージを格納しているピクセル バッファーをする可能性があります。
+機能プロバイダーのクラスは、文字列と`MLFeatureValue`s の辞書のように動作します。各特徴の値には、単純な文字列または数値、配列またはデータ、またはイメージを含むピクセルバッファーがあります。
 
-単一値機能プロバイダーのコードは、以下に示します。
+単一値の機能プロバイダーのコードを次に示します。
 
 ```csharp
 public class MyInput : NSObject, IMLFeatureProvider
@@ -67,20 +67,20 @@ public class MyInput : NSObject, IMLFeatureProvider
   }
 ```
 
-このようなクラスを使用して、入力パラメーターは、CoreML で認識される方法で指定できます。 機能の名前 (など`myParam`コード例では)、モデルで必要なものと一致する必要があります。
+このようなクラスを使用して、CoreML で認識される方法で入力パラメーターを指定できます。 機能の名前 (コード例のなど`myParam` ) は、モデルで想定されているものと一致している必要があります。
 
-### <a name="4-run-the-model"></a>4.モデルを実行します。
+### <a name="4-run-the-model"></a>4.モデルを実行する
 
-モデルを使用して設定する必要がインスタンス化する機能のプロバイダーとパラメーター、しを`GetPrediction`メソッドが呼び出されます。
+このモデルを使用するには、機能プロバイダーがインスタンス化され、パラメーターが`GetPrediction`設定されている必要があります。その後、メソッドが呼び出されます。
 
 ```csharp
 var input = new MyInput {MyParam = 13};
 var outFeatures = model.GetPrediction(inputFeatures, out NSError error2);
 ```
 
-### <a name="5-extract-the-results"></a>5.結果を抽出します。
+### <a name="5-extract-the-results"></a>5.結果を抽出する
 
-予測結果`outFeatures`のインスタンスも`IMLFeatureProvider`は出力値を使用してアクセスできます`GetFeatureValue`を各出力パラメーターの名前 (など`theResult`)、この例のように。
+この予測結果`outFeatures`は、の`IMLFeatureProvider`インスタンスでもあります。出力値に`GetFeatureValue`は、次の例のように、各`theResult`出力パラメーターの名前 (など) を指定してを使用してアクセスできます。
 
 ```csharp
 var result = outFeatures.GetFeatureValue("theResult").DoubleValue; // eg. 6227020800
@@ -88,17 +88,17 @@ var result = outFeatures.GetFeatureValue("theResult").DoubleValue; // eg. 622702
 
 <a name="coremlvision" />
 
-## <a name="using-coreml-with-the-vision-framework"></a>ビジョン フレームワークで CoreML の使用
+## <a name="using-coreml-with-the-vision-framework"></a>CoreML とビジョンフレームワークの使用
 
-CoreML は、形状認識、オブジェクトの識別、およびその他のタスクなど、イメージ上の操作を実行するビジョン フレームワークと組み合わせても使用できます。
+CoreML をビジョンフレームワークと組み合わせて使用して、図形の認識、オブジェクトの識別、その他のタスクなどのイメージに対する操作を実行することもできます。
 
-次の手順では、どの CoreML とビジョンが一緒に使用でについて説明します、 [CoreMLVision サンプル](https://developer.xamarin.com/samples/monotouch/ios11/CoreMLVision/)します。 サンプルを組み合わせて、[四角形認識](~/ios/platform/introduction-to-ios11/vision.md#rectangles)ビジョン フレームワークから、 _MNINSTClassifier_写真で手書き数字を識別するために、CoreML モデル。
+次の手順では、 [Coremlビジョンのサンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlvision)で coreml とビジョンを一緒に使用する方法について説明します。 このサンプルでは、ビジョンフレームワークの[四角形認識](~/ios/platform/introduction-to-ios11/vision.md#rectangles)と_MNINSTClassifier_ coreml モデルを組み合わせて、写真内の手書き数字を識別します。
 
-![番号 3 の画像認識](coreml-images/vision3.png) ![数字の 5 の画像認識](coreml-images/vision5.png)
+![数値3の画像認識](coreml-images/vision3.png) ![番号5の画像認識](coreml-images/vision5.png)
 
-### <a name="1-create-a-vision-coreml-model"></a>1.ビジョン CoreML モデルを作成します。
+### <a name="1-create-a-vision-coreml-model"></a>1.ビジョン CoreML モデルを作成する
 
-CoreML モデル_MNISTClassifier_が読み込まれでラップし、`VNCoreMLModel`モデルをビジョン タスクで使用できるようにします。 このコードでは、2 つのビジョン要求も作成します。 最初に、イメージ内の四角形の検索し、CoreML モデルを使用して四角形を処理するため。
+Coreml モデル_MNISTClassifier_が読み込まれ、にラップさ`VNCoreMLModel`れます。これにより、モデルをビジョンタスクで使用できるようになります。 このコードでは、イメージ内の四角形を検索するために最初に2つのビジョン要求を作成し、次に CoreML モデルで四角形を処理します。
 
 ```csharp
 // Load the ML model
@@ -113,11 +113,11 @@ RectangleRequest = new VNDetectRectanglesRequest(HandleRectangles);
 ClassificationRequest = new VNCoreMLRequest(model, HandleClassification);
 ```
 
-クラスが実装する必要がある、`HandleRectangles`と`HandleClassification`手順 3. および 4. を以下に示すように、Vision 要求メソッド。
+クラスは、次の手順 3 `HandleRectangles`と`HandleClassification` 4 に示すように、ビジョン要求のメソッドとメソッドを実装する必要があります。
 
-### <a name="2-start-the-vision-processing"></a>2.ビジョンの処理を開始します。
+### <a name="2-start-the-vision-processing"></a>2.ビジョン処理を開始する
 
-次のコードでは、要求の処理を開始します。 **CoreMLVision**サンプルでは、ユーザーがイメージを選択した後、このコードが実行されます。
+次のコードでは、要求の処理を開始します。 **Coremlvision**のサンプルでは、ユーザーがイメージを選択した後に、このコードが実行されます。
 
 ```csharp
 // Run the rectangle detector, which upon completion runs the ML classifier.
@@ -127,13 +127,13 @@ DispatchQueue.DefaultGlobalQueue.DispatchAsync(()=>{
 });
 ```
 
-このハンドラーは、`ciImage`ビジョン framework`VNDetectRectanglesRequest`手順 1. で作成されました。
+このハンドラーは、 `ciImage`手順 1. で`VNDetectRectanglesRequest`作成したビジョンフレームワークにを渡します。
 
-### <a name="3-handle-the-results-of-vision-processing"></a>3.ビジョンの処理の結果を処理します。
+### <a name="3-handle-the-results-of-vision-processing"></a>3.ビジョン処理の結果を処理する
 
-四角形の検出が完了すると実行、`HandleRectangles`メソッドは、最初の四角形を抽出する画像をトリミングするには、四角形のイメージをグレースケールに変換および分類 CoreML モデルに渡します。
+四角形の検出が完了すると、メソッドが`HandleRectangles`実行されます。このメソッドは、イメージをトリミングして最初の四角形を抽出し、四角形のイメージをグレースケールに変換して、それを coreml モデルに渡して分類します。
 
-`request`このメソッドに渡されるパラメーターには、ビジョンの要求の詳細が含まれています。 使用すると、 `GetResults<VNRectangleObservation>()` 、イメージ内の四角形の一覧を返します。 最初の四角形`observations[0]`抽出され、CoreML モデルに渡されます。
+このメソッドに渡される`GetResults<VNRectangleObservation>()` パラメーターには、ビジョン要求の詳細が含まれています。メソッドを使用すると、イメージ内で見つかった四角形のリストが返されます。`request` 最初の四角形`observations[0]`が抽出され、coreml モデルに渡されます。
 
 ```csharp
 void HandleRectangles(VNRequest request, NSError error) {
@@ -149,11 +149,11 @@ void HandleRectangles(VNRequest request, NSError error) {
 }
 ```
 
-`ClassificationRequest`を使用する、手順 1 で初期化された、`HandleClassification`メソッドは、次の手順で定義されています。
+は`ClassificationRequest` 、次の手順で定義され`HandleClassification`ているメソッドを使用するために、手順 1. で初期化されました。
 
-### <a name="4-handle-the-coreml"></a>4.ハンドル、CoreML
+### <a name="4-handle-the-coreml"></a>4.CoreML を処理する
 
-`request`このメソッドに渡されるパラメーターには、CoreML 要求の詳細が含まれていてを使用して、`GetResults<VNClassificationObservation>()`信頼度で順序付け可能な結果の一覧を返します (最も高い信頼度最初)。
+このメソッドに渡される`GetResults<VNClassificationObservation>()` パラメーターには、coreml要求の詳細が含まれています。メソッドを使用すると、信頼度によって並べ替えられた結果の一覧が返されます(最も信頼度が高い順)。`request`
 
 ```csharp
 void HandleClassification(VNRequest request, NSError error){
@@ -169,19 +169,19 @@ void HandleClassification(VNRequest request, NSError error){
 
 ## <a name="samples"></a>サンプル
 
-次の 3 つの CoreML サンプルを試すにがあります。
+次の3つの CoreML サンプルを試すことができます。
 
-* [Mars Habitat 価格を予測サンプル](https://developer.xamarin.com/samples/monotouch/ios11/CoreML/)が単純な数値の入力と出力します。
+* [Mars Habitat Price の予測サンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-marshabitatcoremltimer/)には、単純な数値入力と出力があります。
 
-* [Vision & CoreML サンプル](https://developer.xamarin.com/samples/monotouch/ios11/CoreMLVision/)イメージ パラメーターを受け取り、1 桁の数字を認識する CoreML モデルに渡される画像の正方形の領域を識別するビジョン フレームワークを使用します。
+* この[ビジョン & coreml サンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlvision)は image パラメーターを受け取り、ビジョンフレームワークを使用してイメージ内の四角形領域を識別します。これは、1桁の数字を認識する coreml モデルに渡されます。
 
-* 最後に、 [CoreML 画像認識のサンプル](https://developer.xamarin.com/samples/monotouch/ios11/CoreMLImageRecognition/)CoreML を写真で機能を識別するために使用します。 既定では、小さい**SqueezeNet**モデル (5 MB) が、書き込まれたダウンロードされ、大きい方を組み込むように**VGG16**モデル (553 MB)。 詳細については、次を参照してください。、[サンプルの readme](https://github.com/xamarin/ios-samples/blob/master/ios11/CoreMLImageRecognition/CoreMLImageRecognition/README.md)します。
+* 最後に、 [Coreml イメージ認識サンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlimagerecognition)では、coreml を使用して写真内の機能を識別します。 既定では、小さい**SqueezeNet**モデル (5 mb) を使用しますが、大規模な**VGG16**モデル (553mb) をダウンロードして組み込むことができるように記述されています。 詳細については、[サンプルの readme](https://github.com/xamarin/ios-samples/blob/master/ios11/CoreMLImageRecognition/CoreMLImageRecognition/README.md)を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 
 - [Machine Learning (Apple)](https://developer.apple.com/machine-learning/)
-- [CoreML 例 (Mars Habitat) (サンプル)](https://developer.xamarin.com/samples/monotouch/ios11/CoreML/)
-- [CoreML とビジョン (数字認識) (サンプル)](https://developer.xamarin.com/samples/monotouch/ios11/CoreMLVision/)
-- [CoreML 画像認識 (サンプル)](https://developer.xamarin.com/samples/monotouch/ios11/CoreMLImageRecognition/)
-- [CoreML と Azure の Custom Vision (サンプル)](https://developer.xamarin.com/samples/monotouch/ios11/CoreMLAzureModel)
-- [CoreML (WWDC) (ビデオ) の概要](https://developer.apple.com/videos/play/wwdc2017/703/)
+- [CoreML の例 (Mars Habitat) (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-marshabitatcoremltimer/)
+- [CoreML とビジョン (数値認識) (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlvision)
+- [CoreML イメージ認識 (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlimagerecognition)
+- [CoreML と Azure Custom Vision (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlazuremodel)
+- [CoreML (WWDC) の概要 (ビデオ)](https://developer.apple.com/videos/play/wwdc2017/703/)

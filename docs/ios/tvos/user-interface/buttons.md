@@ -1,105 +1,105 @@
 ---
-title: Xamarin で tvOS のボタンを使用
-description: このドキュメントでは、Xamarin でビルドされた tvOS アプリのボタンを使用する方法について説明します。 ボタン コードと、ストーリー ボードを操作する方法について説明し、ボタンのスタイルを設定する方法を調べます。
+title: Xamarin での tvOS ボタンの使用
+description: このドキュメントでは、Xamarin でビルドされた tvOS アプリでボタンを操作する方法について説明します。 ここでは、コードとストーリーボードでボタンを操作する方法と、ボタンのスタイルを確認する方法について説明します。
 ms.prod: xamarin
 ms.assetid: DA6EF400-A4E3-4245-A0D4-F2398CAE2C9B
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/07/2017
-ms.openlocfilehash: 6d8fc1daaced24dccead78c4f9d0e5d0959b3755
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e0f2939c534c009e54d6812c3a45ac6c759d1247
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61199074"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657305"
 ---
-# <a name="working-with-tvos-buttons-in-xamarin"></a>Xamarin で tvOS のボタンを使用
+# <a name="working-with-tvos-buttons-in-xamarin"></a>Xamarin での tvOS ボタンの使用
 
-インスタンスを使用して、 `UIButton` tvOS ウィンドウにフォーカスを設定できる、選択可能なボタンを作成するクラス。 ターゲット オブジェクトに、アクション メッセージを送信、ユーザーがボタンを選択、Xamarin.tvOS アプリの応答をユーザーの入力を許可します。
+クラスのインスタンスを使用`UIButton`して、tvOS ウィンドウにフォーカスがある、選択可能なボタンを作成します。 ユーザーがボタンを選択すると、ターゲットオブジェクトにアクションメッセージが送信され、tvOS アプリがユーザーの入力に応答できるようになります。
 
 [![](buttons-images/buttons01.png "ボタンの例")](buttons-images/buttons01.png#lightbox)
 
-フォーカスのある操作と Siri のリモート内を移動する方法の詳細についてを参照してください、[ナビゲーションとフォーカス](~/ios/tvos/app-fundamentals/navigation-focus.md)と[Siri のリモートと Bluetooth コント ローラー](~/ios/tvos/platform/remote-bluetooth.md)ドキュメント。
+Siri リモートを使用してフォーカスを操作する方法の詳細については、「[ナビゲーションとフォーカス](~/ios/tvos/app-fundamentals/navigation-focus.md)、 [Siri リモートおよび Bluetooth コントローラー](~/ios/tvos/platform/remote-bluetooth.md)の操作」のドキュメントを参照してください。
 
 <a name="About-Buttons" />
 
 ## <a name="about-buttons"></a>ボタンの概要
 
-TvOS、ボタンはアプリに固有の操作に使用され、タイトル、アイコン、またはその両方を含めることができます。 アプリのユーザー インターフェイスを使用して、ユーザーが移動したときに、 [Siri のリモート](~/ios/tvos/platform/remote-bluetooth.md#The-Siri-Remote)テキストと背景色を変更することが、指定したボタンにフォーカスを移動します。 影は、ユーザー インターフェイスの残りの部分を超えるように 3D 効果の追加 ボタンにも適用されます。
+TvOS では、ボタンはアプリ固有のアクションに使用され、タイトル、アイコン、またはその両方が含まれる場合があります。 ユーザーが[Siri リモート](~/ios/tvos/platform/remote-bluetooth.md#The-Siri-Remote)を使用してアプリのユーザーインターフェイスを移動すると、指定したボタンにフォーカスが移り、テキストと背景色が変更されます。 影は、ボタンにも適用されます。これにより、ユーザーインターフェイスの他の部分を超えて3D 効果が上がります。
 
 [![](buttons-images/buttons01.png "ボタンの例")](buttons-images/buttons01.png#lightbox)
 
-Apple では、ボタンを使用するための次の推奨事項があります。
+Apple では、ボタンの操作に関して次のような推奨事項があります。
 
-- **タイトルまたはアイコンを使用**- ながら、両方のアイコンとボタンのタイトルを含めることが、スペースが限られていない点に両方を組み合わせます。
-- **明確にマークの破壊的なボタン**- 破壊的なボタンを実行している場合 (ファイルの削除) などのアクションが明確にマーク テキストまたはアイコンを使用するようにします。 破壊的な操作は常に存在する必要があります、[アラート](~/ios/tvos/user-interface/alerts.md)アクションを制限するように求めます。
-- **戻るボタンの使用をしない**-Siri のリモートでのメニュー ボタンを使用すると、前の画面に戻ります。 このルールの 1 つの例外は、アプリ内購入または破壊的な操作の場所、**キャンセル**ボタンが表示されます。
+- **タイトルまたはアイコンを使用**します。一方、ボタンにはアイコンとタイトルの両方を含めることができますが、スペースは制限されているので、両方を結合しないようにしてください。
+- **破棄ボタンを明確にマーク**する-ボタンが破壊的な操作 (ファイルの削除など) を実行する場合は、テキストやアイコンを使用して、それを明確にマークします。 破壊的なアクションでは、ユーザーにアクションを制限するように求める[アラート](~/ios/tvos/user-interface/alerts.md)を常に提示する必要があります。
+- [**戻る] ボタンを使用しない**-Siri リモートのメニューボタンは、前の画面に戻るために使用されます。 このルールの唯一の例外は、 **[キャンセル**] ボタンが表示されるアプリ内購入または破壊的なアクションです。
 
-フォーカスおよびナビゲーションの操作方法の詳細についてを参照してください、[ナビゲーションとフォーカス](~/ios/tvos/app-fundamentals/navigation-focus.md)ドキュメント。
+フォーカスとナビゲーションの操作の詳細については、「[ナビゲーションとフォーカスのドキュメントの操作](~/ios/tvos/app-fundamentals/navigation-focus.md)」を参照してください。
 
 <a name="Button-Icons" />
 
-### <a name="button-icons"></a>ボタンのアイコン
+### <a name="button-icons"></a>ボタンアイコン
 
-Apple では、ボタンのアイコンは単純な非常にわかりやすいイメージを使用することをお勧めします。 過度に複雑なアイコンでは、ソファ、部屋のテレビ画面に認識、全体で把握する最も簡単な表現を使用しようとするために困難です。 可能であれば、標準を使用して、既知の検索の虫眼鏡) (アイコン用イメージ。
+Apple では、ボタンアイコンに対して、シンプルで認識しやすいイメージを使用することが提案されています。 非常に複雑なアイコンは、ソファの部屋にあるテレビ画面で認識するのは困難です。そのため、考えられる最も単純な表現を使用してください。 可能な限り、標準のよく知られた画像をアイコンに使用します (検索用の虫眼鏡など)。
 
 <a name="Button-Titles" />
 
-### <a name="button-titles"></a>ボタンのタイトル
+### <a name="button-titles"></a>ボタンタイトル
 
-Apple は、ボタンのタイトルを作成するときに次の推奨事項があります。
+Apple では、ボタンのタイトルを作成するときに次のような推奨事項があります。
 
-- **わかりやすいテキストの下のアイコン ボタンを表示する**- 可能であれば、アイコンの下、明確でわかりやすいテキストのみの各ボタンをさらに get 間で、ボタンの目的である場合。
-- **タイトルの動詞または動詞句を使用して**-ユーザーがボタンをクリックしたときに、明確に状態のアクションが実行されるに配置します。
-- **タイトル スタイルの大文字と小文字を使用して、** - 記事や接続詞前置詞を除き (4 文字以下)、ボタンのタイトルのすべての単語を大文字にする必要があります。
-- **Short、ポイントにタイトルを使用して、** -最短の可能な表現を使用して、ボタンのアクションを記述します。
+- **アイコンボタンの下にわかりやすいテキストを表示**します。可能な場合は、[クリア]、[説明テキストをアイコンのみ] の下に配置して、ボタンの目的をさらに詳細に取得します。
+- **タイトルに動詞または動詞句を使用する**-ユーザーがボタンをクリックしたときに実行されるアクションを明確にします。
+- **タイトルとスタイルの大文字小**文字を使用します。記事、接続詞、または前置詞 (4 文字以下) を除き、ボタンのタイトルのすべての単語は大文字にする必要があります。
+- **短いタイトルのタイトルを使用**する-可能な限り短い表現を使用して、ボタンのアクションを記述します。
 
 <a name="Buttons-and-Storyboards" />
 
-## <a name="buttons-and-storyboards"></a>ボタンとストーリー ボード
+## <a name="buttons-and-storyboards"></a>ボタンとストーリーボード
 
-Xamarin.tvOS アプリ内のボタンを使用する最も簡単な方法では、Xamarin のデザイナーを使用して iOS 用アプリの UI に追加します。
+TvOS アプリのボタンを操作する最も簡単な方法は、Xamarin Designer for iOS を使用してアプリの UI に追加することです。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 
-1. **ソリューション エクスプ ローラー**、ダブルクリックして、`Main.storyboard`ファイルし、編集用に開きます。
-1. ドラッグ、**ボタン**から、**ライブラリ**し、ビューにドロップします。 
+1. **ソリューションエクスプローラー**で、 `Main.storyboard`ファイルをダブルクリックして開き、編集します。
+1. **ライブラリ**から**ボタン**をドラッグし、ビューにドロップします。 
 
     [![](buttons-images/storyboard01.png "ボタン")](buttons-images/storyboard01.png#lightbox)
-1. **プロパティ エクスプ ローラー**などのボタンのいくつかのプロパティを調整することができます、**タイトル**と**テキストの色**: 
+1. **プロパティエクスプローラー**では、ボタンの**タイトル**や**テキストの色**など、いくつかのプロパティを調整できます。 
 
     [![](buttons-images/storyboard02.png "ボタンのプロパティ")](buttons-images/storyboard02.png#lightbox)
-1. 次に、スイッチ、**イベント タブ**に接続し、**イベント**から、**ボタン**、呼び出す`ButtonPressed`: 
+1. 次に、[**イベント] タブ**に切り替えて、**ボタン**から**イベント**を接続し、次`ButtonPressed`のように呼び出します。 
 
     [![](buttons-images/storyboard03.png "[イベント] タブ")](buttons-images/storyboard03.png#lightbox)
-1. 自動的に切り替わりますが、`ViewController.cs`ビューのコードを使用して、新しいアクションを配置することができます、**を**と**ダウン**方向キー。 
+1. **上**方向キーと**下**方向キー `ViewController.cs`を使用して、新しいアクションをコードに配置できるビューに自動的に切り替えられます。 
 
-    [![](buttons-images/storyboard04.png "コードで新しいアクションを配置します。")](buttons-images/storyboard04.png#lightbox)
-1. キーを押して、 **Enter**場所を選択します。 
+    [![](buttons-images/storyboard04.png "コードに新しいアクションを配置する")](buttons-images/storyboard04.png#lightbox)
+1. **Enter**キーを押して場所を選択します。 
 
-    [![](buttons-images/storyboard05.png "コード エディター")](buttons-images/storyboard05.png#lightbox)
+    [![](buttons-images/storyboard05.png "コードエディター")](buttons-images/storyboard05.png#lightbox)
 1. すべてのファイルに変更を保存します。
 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. **ソリューション エクスプ ローラー**、ダブルクリックして、`Main.storyboard`ファイルし、編集用に開きます。
-1. ドラッグ、**ボタン**から、**ライブラリ**し、ビューにドロップします。 
+1. **ソリューションエクスプローラー**で、 `Main.storyboard`ファイルをダブルクリックして開き、編集します。
+1. **ライブラリ**から**ボタン**をドラッグし、ビューにドロップします。 
 
     [![](buttons-images/storyboard01vs.png "ボタン")](buttons-images/storyboard01vs.png#lightbox)
-1. **プロパティ エクスプ ローラー**などのボタンのいくつかのプロパティを調整することができます、**タイトル**と**テキストの色**: 
+1. **プロパティエクスプローラー**では、ボタンの**タイトル**や**テキストの色**など、いくつかのプロパティを調整できます。 
 
-    [![](buttons-images/storyboard02vs.png "プロパティ エクスプ ローラー")](buttons-images/storyboard02vs.png#lightbox)
-1. 次に、スイッチ、**イベント タブ**に接続し、**イベント**から、**ボタン**、呼び出す`ButtonPressed`: 
+    [![](buttons-images/storyboard02vs.png "プロパティエクスプローラー")](buttons-images/storyboard02vs.png#lightbox)
+1. 次に、[**イベント] タブ**に切り替えて、**ボタン**から**イベント**を接続し、次`ButtonPressed`のように呼び出します。 
 
     [![](buttons-images/storyboard03vs.png "[イベント] タブ")](buttons-images/storyboard03vs.png#lightbox)
 1. すべてのファイルに変更を保存します。
 
 
 
-ビュー コント ローラーの編集 (例`ViewController.cs`) ファイルを開き、ボタンが選択されているを処理するために次のコードを追加します。
+ビューコントローラー (例`ViewController.cs`) ファイルを編集し、選択されているボタンを処理する次のコードを追加します。
 
 
 ```
@@ -124,21 +124,21 @@ namespace tvRemote
 
 -----
 
-ボタンの限り`Enabled`プロパティは`true`と別のコントロールまたはビューを対象になっていない、Siri リモコンを使用して、フォーカス設定項目ことができます。 ユーザーがボタンを選択し、タッチ画面をクリックした場合、`ButtonPressed`上記で定義されたアクションは実行されます。
+ボタンの`Enabled`プロパティが`true`であり、他のコントロールまたはビューでカバーされていない場合は、siri リモートを使用してフォーカスを設定された項目にすることができます。 ユーザーがボタンを選択し、タッチ画面をクリックすると`ButtonPressed` 、上で定義されたアクションが実行されます。
 
 > [!IMPORTANT]
-> などのアクションを割り当てることはできますが`TouchUpInside`を`UIButton`iOS デザイナーを作成するときに、**イベント ハンドラー**、Apple TV がタッチ画面またはタッチ イベントをサポートしていないためは呼び出されません。 既定値を常に使用する必要があります**アクションの種類**の作成時に**アクション**の tvOS ユーザー インターフェイス要素です。
+> `TouchUpInside` **イベントハンドラー**の作成時に、などの`UIButton`アクションを iOS デザイナーでに割り当てることはできますが、Apple TV にタッチスクリーンやタッチイベントのサポートがないため、このようなアクションは呼び出されません。 TvOS ユーザーインターフェイス要素の**アクション**を作成するときは、常に既定の**アクションの種類**を使用する必要があります。
 
 
 
 
-ストーリー ボードの操作方法の詳細についてを参照してください、[はじめての tvOS クイック スタート ガイド](~/ios/tvos/get-started/hello-tvos.md)します。
+ストーリーボードの操作の詳細については、「 [Hello, tvOS クイックスタートガイド](~/ios/tvos/get-started/hello-tvos.md)」を参照してください。
 
 <a name="Buttons-and-Code" />
 
 ## <a name="buttons-and-code"></a>ボタンとコード
 
-必要に応じて、`UIButton`で作成できますC#コードおよび tvOS アプリのビューに追加します。 例:
+必要に応じ`UIButton`て、をコードC#で作成し、tvOS アプリのビューに追加することができます。 例えば:
 
 ```csharp
 var button = new UIButton(UIButtonType.System);
@@ -151,28 +151,28 @@ button.AllEvents += (sender, e) => {
 View.AddSubview (button);
 ```
 
-新規に作成するときに`UIButton`指定するコードでは、その`UIButtonType`として、次のいずれか。
+コードに新しい`UIButton`を作成する場合は、次の`UIButtonType`いずれかとしてを指定します。
 
-- **システム**-が tvOS によって提示されるボタンの標準の種類で、最も頻繁に使用する型です。
-- **DetailDisclosure** -詳細な情報を表示または非表示に使用されるボタンの"有効にする の型を表示します。
-- **InfoDark** -濃い円に、ボタン、"i"が表示される情報を詳しく説明します。
-- **InfoLight** -ライト円に、ボタン、"i"が表示される情報を詳しく説明します。
-- **AddContact** -メンバーの追加ボタンとしてボタンを表示します。
-- **カスタム**- ボタンのいくつかの特性をカスタマイズすることができます。
+- **システム**-tvOS によって表示される標準のボタンの種類であり、最も頻繁に使用する型です。
+- 詳細情報の**開示**-詳細情報を表示または非表示にするために使用されるボタンの "停止" の種類を示します。
+- **インフォダーク**-[濃い詳細情報] ボタンをクリックすると、円に "i" が表示されます。
+- [ライトの詳細情報] ボタンをクリックすると、円に "i" が表示されます。
+- **Addcontact** -ボタンを [Add contact] ボタンとして表示します。
+- **[カスタム]** : ボタンのいくつかの特徴をカスタマイズできます。
 
-次に、画面サイズを定義し、ボタンの位置。 例:
+次に、画面上のサイズとボタンの位置を定義します。 例:
 
 ```csharp
 button.Frame = new CGRect (25, 25, 300, 150);
 ```
 
-次に、ボタンのタイトルを設定します。 `UIButtons` ほとんどとは異なる`UIKit`コントロールだけことはできませんので、状態を持ち、タイトルを変更する、この値を変更する必要は、指定された`UIControlState`します。 例えば:
+次に、ボタンのタイトルを設定します。 `UIButtons`のほとんど`UIKit`のコントロールとは異なります。これは、単にタイトルを変更するだけではなく、特定`UIControlState`ののために変更する必要があるためです。 例えば:
 
 ```csharp
 button.SetTitle ("Hello", UIControlState.Normal);
 ```
 
-次に、使用、`AllEvents`イベントをユーザーがボタンをクリックしたときに参照してください。 例:
+次に、 `AllEvents`イベントを使用して、ユーザーがボタンをクリックしたことを確認します。 例:
 
 ```csharp
 button.AllEvents += (sender, e) => {
@@ -181,14 +181,14 @@ button.AllEvents += (sender, e) => {
 };
 ```
 
-最後に、それを表示するビューに、ボタンを追加します。
+最後に、ボタンをビューに追加して表示します。
 
 ```csharp
 View.AddSubview (button);
 ```
 
 > [!IMPORTANT]
-> などのアクションを割り当てることはできますが`TouchUpInside`を`UIButton`、Apple TV がタッチ画面またはタッチ イベントをサポートしていないためは呼び出されません。 など、常にイベントを使用する必要があります**AllEvents**または**PrimaryActionTriggered**します。
+> など`TouchUpInside` の`UIButton`アクションをに割り当てることはできますが、Apple TV はタッチスクリーンやサポートタッチイベントを持っていないため、呼び出されません。 **AllEvents**や**primaryactiontriggered**などのイベントを常に使用する必要があります。
 
 
 
@@ -197,37 +197,37 @@ View.AddSubview (button);
 
 ## <a name="styling-a-button"></a>ボタンのスタイル設定
 
-tvOS のいくつかのプロパティを提供する、`UIButton`を使用して、そのタイトルを提供し、背景色とイメージのようなものでスタイルを設定できます。
+tvOS には、のタイトル`UIButton`を提供したり、背景色や画像などのスタイルを設定したりするために使用できる、のいくつかのプロパティが用意されています。
 
 <a name="Button-Titles" />
 
-### <a name="button-titles"></a>ボタンのタイトル
+### <a name="button-titles"></a>ボタンタイトル
 
-、上記のとおり`UIButtons`ほとんどとは異なる`UIKit`コントロールだけことはできませんので、状態を持ち、タイトルを変更する、この値を変更する必要は、指定された`UIControlState`します。 例:
+前述のように、 `UIButtons`のほとんど`UIKit`のコントロールとは異なります。これは、単にタイトルを変更するだけではなく、特定`UIControlState`のに変更する必要があるためです。 例えば:
 
 ```csharp
 button.SetTitle ("Hello", UIControlState.Normal);
 ```
 
-使用して、ボタンのタイトルの色を設定することができます、`SetTitleColor`メソッド。 例:
+ボタンのタイトルの色は、 `SetTitleColor`メソッドを使用して設定できます。 例えば:
 
 ```csharp
 button.SetTitleColor (UIColor.White, UIControlState.Normal);
 ```
 
-タイトルを調整してシャドウを使用して、`SetTitleShadowColor`します。 例えば:
+また、 `SetTitleShadowColor`を使用して、タイトルの影を調整することもできます。 例えば:
 
 ```csharp
 button.SetTitleShadowColor(UIColor.Black, UIControlState.Normal);
 ```
 
-変更するタイトルの影を設定する*Engraved*に*浮き出し*次のコードを使用して、ボタンが強調表示するとします。
+次のコードを使用して、ボタンが強調表示されているときに、影を*浮き彫り*から*エンボス*に変更するように設定できます。
 
 ```csharp
 button.ReverseTitleShadowWhenHighlighted = true;
 ```
 
-さらに、ボタンのタイトルとして属性付きのテキストを使用することができます。 例:
+また、ボタンのタイトルとして属性付きテキストを使用することもできます。 例えば:
 
 ```csharp
 var normalAttributedTitle = new NSAttributedString (buttonTitle, foregroundColor: UIColor.Blue, strikethroughStyle: NSUnderlineStyle.Single);
@@ -237,17 +237,17 @@ var highlightedAttributedTitle = new NSAttributedString (buttonTitle, foreground
 myButton.SetAttributedTitle (highlightedAttributedTitle, UIControlState.Highlighted);
 ```
 
-### <a name="button-images"></a>ボタンのイメージ
+### <a name="button-images"></a>ボタンイメージ
 
-A`UIButton`にアタッチされているイメージがあることができ、その背景としてイメージを使用することができます。
+は`UIButton` 、イメージを添付し、背景としてイメージを使用できます。
 
-ボタンの背景イメージの設定を指定された`UIControlState`、次のコードを使用します。
+特定`UIControlState`ののボタンの背景イメージを設定するには、次のコードを使用します。
 
 ```csharp
 button.SetBackgroundImage(UIImage.FromFile("my image.png"), UIControlState.Normal);
 ```
 
-設定、`AdjustsImageWhenHiglighted`プロパティを`true`ボタンが強調表示すると、軽量のイメージを描画するために (これは、既定値です)。 設定、`AdjustsImageWhenDisabled`プロパティを`true`ボタンが無効にした場合は、暗いイメージを描画する (ここでも、これは、既定値)。
+ボタンが強調表示`true`されているときにイメージを明るくする場合は、プロパティをに設定します(これが既定値です)。`AdjustsImageWhenHiglighted` ボタンが無効に`true`なっているときにイメージを暗くするには、プロパティをに設定します(ここでも、これが既定値です)。`AdjustsImageWhenDisabled`
 
 ボタンに表示されるイメージを設定するには、次のコードを使用します。
 
@@ -255,19 +255,19 @@ button.SetBackgroundImage(UIImage.FromFile("my image.png"), UIControlState.Norma
 button.SetImage(UIImage.FromFile("my image.png"), UIControlState.Normal);
 ```
 
-使用して、`TintColor`タイトルと、ボタンのイメージの両方に適用される色の濃淡を設定するプロパティ。 ボタン、`Custom`の種類、このプロパティは影響を与えません、実装する必要があります、`TintColor`動作自分でします。
+タイトルと`TintColor`ボタンのイメージの両方に適用される色の濃淡を設定するには、プロパティを使用します。 `Custom`型のボタンの場合、このプロパティは効果がありません。自分`TintColor`で動作を実装する必要があります。
 
 <a name="Summary" />
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
-この記事では、設計と Xamarin.tvOS アプリ内でボタンの操作について説明しました。 IOS Designer でボタンを使用する方法とボタンを作成する方法を示しましたC#コード。 最後に、ボタンのタイトルを変更し、そのスタイルと外観を変更する方法を示しました。
+この記事では、tvOS アプリ内のボタンの設計と操作について説明しました。 ここでは、iOS デザイナーでボタンを操作する方法と、コードでC#ボタンを作成する方法を示しました。 最後に、ボタンのタイトルを変更し、そのスタイルと外観を変更する方法を示しました。
 
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [tvOS のサンプル](https://developer.xamarin.com/samples/tvos/all/)
+- [tvOS のサンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
 - [tvOS](https://developer.apple.com/tvos/)
-- [tvOS ヒューマン インターフェイス ガイド](https://developer.apple.com/tvos/human-interface-guidelines/)
-- [TvOS 用のアプリのプログラミング ガイド](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)
+- [tvOS ヒューマンインターフェイスガイド](https://developer.apple.com/tvos/human-interface-guidelines/)
+- [TvOS のアプリプログラミングガイド](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

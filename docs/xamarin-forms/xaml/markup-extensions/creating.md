@@ -1,22 +1,22 @@
 ---
 title: XAML マークアップ拡張機能の作成
-description: この記事では、独自のカスタム Xamarin.Forms XAML マークアップ拡張を定義する方法について説明します。 XAML マークアップ拡張機能は、IMarkupExtension または IMarkupExtension を実装するクラスを<T>インターフェイス。
+description: この記事では、独自のカスタム Xamarin.Forms XAML マークアップ拡張を定義する方法について説明します。 XAML マークアップ拡張機能は、IMarkupExtension インターフェイスまたは IMarkupExtension<T>インターフェイスを実装するクラスです。
 ms.prod: xamarin
 ms.assetid: 797C1EF9-1C8E-4208-8610-9B79CCF17D46
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: e69d4b9dcf93c095804c5ac46527c03049580d1c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4d26713f258a8c97abd4b4e9970ebdd4d490f485
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61178109"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655864"
 ---
 # <a name="creating-xaml-markup-extensions"></a>XAML マークアップ拡張の作成
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/XAML/MarkupExtensions/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
 
 プログラムのレベルでは、XAML マークアップ拡張機能が実装するクラス、 [ `IMarkupExtension` ](xref:Xamarin.Forms.Xaml.IMarkupExtension)または[ `IMarkupExtension<T>` ](xref:Xamarin.Forms.Xaml.IMarkupExtension`1)インターフェイス。 次で説明する標準のマークアップ拡張機能のソース コードを調べることができます、 [ **Markupextension**ディレクトリ](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Xaml/MarkupExtensions)Xamarin.Forms の GitHub リポジトリの。
 
@@ -203,5 +203,5 @@ XAML マークアップ拡張機能では、さまざまなソースからの属
 
 ## <a name="related-links"></a>関連リンク
 
-- [マークアップ拡張機能 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/XAML/MarkupExtensions/)
+- [マークアップ拡張機能 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
 - [Xamarin.Forms book から XAML マークアップ拡張機能の章](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md)

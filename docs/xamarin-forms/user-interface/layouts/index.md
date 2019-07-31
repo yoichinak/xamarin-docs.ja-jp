@@ -8,41 +8,41 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/18/2018
-ms.openlocfilehash: 661f27b90882234ddc629ac280690d534aca499d
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 1889579a48364204a977d63bd9bdb875df37a2bf
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64977792"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657028"
 ---
 # <a name="layouts-in-xamarinforms"></a>Xamarin.Forms のレイアウト
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
 
 Xamarin.Forms は、いくつかのレイアウトと画面上のコンテンツを整理するための機能があります。
 
 > [!VIDEO https://youtube.com/embed/4HlLjTZQzjM]
 
-**Xamarin.Forms のレイアウトのビデオ**
+**Xamarin. フォームレイアウトビデオ**
 
 各レイアウト コントロールは画面の向きの変更を処理する方法の詳細と、以下について説明します。
 
-* **[StackLayout](stack-layout.md)**  – ビューを直線的に、配置を水平方向または垂直方向にします。 ビュー、StackLayout 内では、左または右のレイアウトの中央に配置できます。
-* **[AbsoluteLayout](absolute-layout.md)**  – 座標を設定してビューを配置およびサイズを絶対値または比率の観点からするために使用します。 ビューのレイヤーだけでなく、左、右または中央に固定する AbsoluteLayout を使用できます。
-* **[[相対レイアウト]](relative-layout.md)**  – 親のサイズと位置を基準とした制約を設定してビューを配置するために使用されます。
-* **[グリッド](grid.md)** – グリッド内のビューを配置するために使用されます。 絶対値または比率の観点からは、行と列を指定できます。
-* **[FlexLayout](flex-layout.md)**  – の折り返しビューを水平方向または垂直方向に配置するために使用されます。
-* **[ScrollView](scroll-view.md)**  – をスクロールすると表示されますが、画面の境界内に完全に収めることはできませんを提供します。
-* **[LayoutOptions](layout-options.md)**  – アラインメントとその親に対する相対的な表示は、拡張を定義します。
-* **[透明度を入力](#input_transparency)** – 要素が入力を受け取るかどうかを指定します。
-* **[余白とパディング](margin-and-padding.md)** – 要素は、ユーザー インターフェイスに表示されるときに、レイアウトの動作を制御する方法を示します。
-* **[デバイスの向き](device-orientation.md)** – デバイスの向きの変更を処理する方法について説明します。
-* **[タブレットとデスクトップ デバイス上のレイアウト](tablet.md)** – 各プラットフォームでの大きい画面を最適化する方法を示しています。
-* **[バインド可能なレイアウト](bindable-layouts.md)** – 項目のコレクションにバインドして、コンテンツを生成するレイアウト クラスを有効にします。
-* **[カスタム レイアウトを作成する](custom.md)** – カスタム レイアウトのクラスを作成する方法について説明します。
-* **[レイアウト圧縮](layout-compression.md)** – ページのレンダリング パフォーマンスを向上させるために指定したビジュアル ツリーからレイアウトを削除します。
+* **[Stacklayout](stack-layout.md)** –ビューを水平または垂直のどちらかに直線的に配置するために使用します。 ビュー、StackLayout 内では、左または右のレイアウトの中央に配置できます。
+* **[AbsoluteLayout](absolute-layout.md)** –絶対値または比率によって座標 & サイズを設定することによってビューを配置するために使用します。 ビューのレイヤーだけでなく、左、右または中央に固定する AbsoluteLayout を使用できます。
+* **[RelativeLayout](relative-layout.md)** –親のディメンション & position に相対的に制約を設定することによって、ビューを配置するために使用します。
+* **[Grid](grid.md)** –グリッド内のビューを配置するために使用します。 絶対値または比率の観点からは、行と列を指定できます。
+* **[Flexlayout](flex-layout.md)** –折り返しによってビューを水平方向または垂直方向に整列させるために使用します。
+* **[ScrollView](scroll-view.md)** –ビューが画面の境界内に収まらない場合に、スクロールを提供するために使用されます。
+* **[LayoutOptions](layout-options.md)** –親を基準とした、ビューの配置と展開を定義します。
+* **[入力透明度](#input_transparency)** –要素が入力を受け取るかどうかを指定します。
+* **[余白と埋め込み](margin-and-padding.md)** –ユーザーインターフェイスで要素がレンダリングされるときのレイアウト動作を制御する方法を示します。
+* **[デバイスの向き](device-orientation.md)** –デバイスの向きの変化を処理する方法について説明します。
+* **[タブレットデバイスとデスクトップデバイスでのレイアウト](tablet.md)** –各プラットフォームで大規模な画面を最適化する方法について説明します。
+* **[バインド](bindable-layouts.md)** 可能なレイアウト–項目のコレクションにバインドすることによって、レイアウトクラスがコンテンツを生成できるようにします。
+* **[カスタムレイアウトの作成](custom.md)** –カスタムレイアウトクラスを作成する方法について説明します。
+* **[レイアウトの圧縮](layout-compression.md)** –ページレンダリングのパフォーマンスを向上させるために、指定されたレイアウトをビジュアルツリーから削除します。
 
-プラットフォームのコントロールと Xamarin.Forms のレイアウトで直接も使用できます[**ネイティブな埋め込み**](~/xamarin-forms/platform/native-views/index.md) (Xamarin.Forms 2.2 で新規)、し[ **のカスタムレイアウトを作成します。**](custom.md)を特定の要件を満たすようにします。
+プラットフォームのコントロールと Xamarin.Forms のレイアウトで直接も使用できます[**ネイティブな埋め込み**](~/xamarin-forms/platform/native-views/index.md) (Xamarin.Forms 2.2 で新規)、し[ **のカスタムレイアウトを作成します。** ](custom.md)を特定の要件を満たすようにします。
 
 次の図は、レイアウト コントロールを視覚化します。
 
@@ -206,7 +206,7 @@ iOS、Android、およびユニバーサル Windows プラットフォームで�
 
 ### <a name="bindable-layoutsbindable-layoutsmd"></a>[バインド可能なレイアウト](bindable-layouts.md)
 
-`BindableLayout`クラスから派生した任意のレイアウト クラスを使用できます、 [ `Layout<T>` ](xref:Xamarin.Forms.Layout`1)で各項目の外観を設定することも、項目のコレクションにバインドするには、そのコンテンツを生成するクラス、 [ `DataTemplate`](xref:Xamarin.Forms.DataTemplate).
+クラスを使用すると、 [`Layout<T>`](xref:Xamarin.Forms.Layout`1)クラスから派生したすべてのレイアウトクラスで、項目のコレクションにバインドしてコンテンツを生成でき[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)ます。また、各項目の外観をに設定することもできます。 `BindableLayout`
 
 ### <a name="creating-a-custom-layoutcustommd"></a>[カスタム レイアウトの作成](custom.md)
 
@@ -225,5 +225,5 @@ Xamarin.Forms の 4 つのレイアウト クラスを定義する[ `StackLayout
 
 - [Apple のヒューマン インターフェイス ガイドライン](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG)
 - [Android のデザインの web サイト](https://developer.android.com/design/index.html)
-- [レイアウト (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
-- [BusinessTumble 例 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BusinessTumble/)
+- [レイアウト (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
+- [BusinessTumble 例 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-businesstumble)

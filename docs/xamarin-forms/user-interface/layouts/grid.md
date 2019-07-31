@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: 78a84fd8d4f380739a9f080a1a5aad7c5942d0c9
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 38206812fbd746a63c5bff18111779c25deedc66
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511880"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68648534"
 ---
 # <a name="xamarinforms-grid"></a>Xamarin.Forms のグリッド
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
 
 [`Grid`](xref:Xamarin.Forms.Grid) ビューの行と列に配置をサポートします。 比例サイズや絶対サイズを持つ行と列を設定できます。 `Grid`レイアウトは、従来のテーブルに混同しない必要があり、表形式のデータを提示するものではありません。 `Grid` 行、列またはセルの書式の概念はありません。 HTML のテーブルとは異なり`Grid`コンテンツをレイアウトするためのものが純粋です。
 
@@ -384,5 +384,5 @@ public CalculatorGridCode ()
 
 - [第 17 章である Xamarin.Forms によるモバイル アプリの作成](https://developer.xamarin.com/r/xamarin-forms/book/chapter17.pdf)
 - [グリッド](xref:Xamarin.Forms.Grid)
-- [レイアウト (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
-- [BusinessTumble 例 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BusinessTumble/)
+- [レイアウト (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
+- [BusinessTumble 例 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-businesstumble)

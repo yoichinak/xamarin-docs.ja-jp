@@ -7,16 +7,16 @@ ms.assetid: 79BD3266-D457-4E50-BDDF-33450035FA0F
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: 9e76558597928bafa25f6a217c6f0055657e4c22
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 030655ba94130294729871348b3408fe6c3695e6
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61401600"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656953"
 ---
 # <a name="creating-and-drawing-on-skiasharp-bitmaps"></a>作成して、SkiaSharp ビットマップの描画
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 どのアプリケーション ビットマップをロードできます、Web、アプリケーション リソース、およびユーザーのフォト ライブラリから見てきました。 アプリケーション内で新しいビットマップを作成することもできます。 最も簡単な方法では、1 つのコンス トラクターの[ `SKBitmap` ](xref:SkiaSharp.SKBitmap.%23ctor(System.Int32,System.Int32,System.Boolean)):
 
@@ -56,7 +56,7 @@ using (SKCanvas canvas = new SKCanvas(bitmap))
 
 ビットマップは、表示されます。 後では、プログラムを新規に作成できます`SKCanvas`に依存するオブジェクトが同じ、ビットマップ、さらに描画します。
 
-**こんにちはビットマップ**ページで、 **[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** アプリケーションが書き込むテキスト「こんにちは, ビットマップ!」 ビットマップと複数回のビットマップを表示します。  
+**こんにちはビットマップ**ページで、 **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** アプリケーションが書き込むテキスト「こんにちは, ビットマップ!」 ビットマップと複数回のビットマップを表示します。  
 
 コンス トラクター、`HelloBitmapPage`作成では、まず、`SKPaint`テキストを表示するオブジェクト。 テキスト文字列の大きさを決定し、その寸法のビットマップを作成します。 これは、後、作成、`SKCanvas`オブジェクトを呼び出し、そのビットマップに基づいて`Clear`、号餧ェヒェマル`DrawText`。 常を呼び出すことをお勧め`Clear`新しいビットマップで新しく作成されたビットマップにランダムなデータが含まれる場合がありますので。
 
@@ -121,7 +121,7 @@ public partial class HelloBitmapPage : ContentPage
 
 表示、**こんにちはビットマップ**ページは、ビットマップを作成するプログラムが透明こと黒色の文字を除くを示します。 理由を画面の色を水色を示しています。
 
-ドキュメント、`Clear`メソッドの`SKCanvas`ステートメントを使用してそれらをについて説明します。「キャンバスの現在のクリップ内のすべてのピクセルを置き換えます。」 「置換」という単語の使用には、これらのメソッドの重要な特性が表示されます。すべての描画メソッド`SKCanvas`何か、既存の画面に追加します。 `Clear`メソッド_置換_は既に存在します。
+`Clear` の`SKCanvas`メソッドのドキュメントでは、ステートメントについて説明しています。"キャンバスの現在のクリップ内のすべてのピクセルを置き換えます。" "置換" という単語を使用すると、これらのメソッドの重要な特性が明らかになります。のすべての描画メソッド`SKCanvas`は、既存の表示サーフェイスに何かを追加します。 `Clear`メソッド_置換_は既に存在します。
 
 `Clear` 2 つのバージョンに存在します。 
 
@@ -131,7 +131,7 @@ public partial class HelloBitmapPage : ContentPage
 
 呼び出す`Clear`新しいビットマップを引数なしで完全に透過的にするビットマップ全体を初期化します。 非透過または部分的に非透過的なビットマップの描画後何も通常なります。
 
-何かを次に示します。**こんにちはビットマップ** ページで、置換、`Clear`メソッドに適用される、`bitmapCanvas`をこのデータセット。
+次のようなものを試してみてください。 **[Hello Bitmap]** ページで、に`Clear`適用された`bitmapCanvas`メソッドを次のものに置き換えます。
 
 ```csharp
 bitmapCanvas.Clear(new SKColor(255, 0, 0, 128));
@@ -264,7 +264,7 @@ public partial class MonkeyMoustachePage : ContentPage
 
 ビットマップを変更する最も汎用的な方法は、実際のピクセル ビットへのアクセスを使用、サブジェクトが、記事で取り上げる **[にアクセスする SkiaSharp ビットマップ ピクセル](pixel-bits.md)** します。 ビットマップのピクセル ビットへのアクセスを必要としないを変更するその他の多くの手法があります。
 
-次に含まれているビットマップ、 **[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** アプリケーションは 360 ピクセル、高さが 480 ピクセル。
+次に含まれているビットマップ、 **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** アプリケーションは 360 ピクセル、高さが 480 ピクセル。
 
 ![登山愛好者](drawing-images/MountainClimbers.jpg "登山愛好者")
 
@@ -496,7 +496,7 @@ public partial class BitmapRotatorPage : ContentPage
 
 ビットマップに一般的に実行される別の操作が呼び出された_反転_します。 概念的には、ビットマップが 3 次元垂直軸またはビットマップの中心を通るの水平軸の周りで回転します。 垂直方向の反転ミラー イメージを作成します。
 
-**ビットマップ フリッパー**ページで、 **[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** アプリケーションはこれらのプロセスを示しています。 XAML ファイルが含まれています、`SKCanvasView`と垂直方向および水平方向に反転の 2 つのボタン。
+**ビットマップ フリッパー**ページで、 **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** アプリケーションはこれらのプロセスを示しています。 XAML ファイルが含まれています、`SKCanvasView`と垂直方向および水平方向に反転の 2 つのボタン。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -599,4 +599,4 @@ Monkey のシャツで反転レタリングからわかる、反転の回転と�
 ## <a name="related-links"></a>関連リンク
 
 - [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

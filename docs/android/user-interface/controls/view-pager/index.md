@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 0535dc5d2abcfa1587b8101d7a4e382782efb8ca
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 8c7aae672d284d4105c6b09dfe81b72cf4ad519b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510203"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68645515"
 ---
 # <a name="viewpager"></a>ViewPager
 
@@ -31,10 +31,10 @@ _ViewPager は、gestural ナビゲーションを実装できるレイアウト
 
 このガイドでは、次の両方の方法を示します。 
 
--   [Viewpager とビュー](~/android/user-interface/controls/view-pager/viewpager-and-views.md)。 [treepager](https://developer.xamarin.com/samples/monodroid/UserInterface/TreePager/)アプリは、を使用`ViewPager`してツリーカタログのビューを表示する方法を示すために開発されています (広葉樹および evergreen ツリーのイメージギャラリー)。 
+-   [Viewpager とビュー](~/android/user-interface/controls/view-pager/viewpager-and-views.md)。 [treepager](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-treepager)アプリは、を使用`ViewPager`してツリーカタログのビューを表示する方法を示すために開発されています (広葉樹および evergreen ツリーのイメージギャラリー)。 
     `PagerTabStrip`および`PagerTitleStrip`は、ページナビゲーションに役立つタイトルを表示するために使用されます。
 
--   [Viewpager とフラグメント](~/android/user-interface/controls/view-pager/viewpager-and-fragments.md)を使用すると、より複雑な[FlashCardPager](https://developer.xamarin.com/samples/monodroid/UserInterface/TreePager/)アプリが作成され、 `ViewPager`を`Fragment`使用して、計算問題をフラッシュカードとして表示し、ユーザー入力に応答するアプリをビルドする方法を示すことができます。 
+-   [Viewpager とフラグメント](~/android/user-interface/controls/view-pager/viewpager-and-fragments.md)を使用すると、より複雑な[FlashCardPager](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-treepager)アプリが作成され、 `ViewPager`を`Fragment`使用して、計算問題をフラッシュカードとして表示し、ユーザー入力に応答するアプリをビルドする方法を示すことができます。 
 
 
 ## <a name="requirements"></a>必要条件
@@ -85,5 +85,5 @@ Gestural ナビゲーションの実装には、次の`ViewPager`3 つのコン�
 
 ## <a name="related-links"></a>関連リンク
 
-- [TreePager (サンプル)](https://developer.xamarin.com/samples/monodroid/UserInterface/TreePager)
-- [FlashCardPager (サンプル)](https://developer.xamarin.com/samples/monodroid/UserInterface/FlashCardPager)
+- [TreePager (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-treepager)
+- [FlashCardPager (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-flashcardpager)

@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: c7bf7ca28200004e2383631c68cdaa4299348ecb
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 11bca4bc74316f87ab7b329c897efcd4b768bc03
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61174579"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657108"
 ---
 # <a name="part-5-from-data-bindings-to-mvvm"></a>パート 5 です。 MVVM へのデータ バインディングから
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
 _モデル-ビュー-ビューモデル (MVVM) アーキテクチャ パターンは、XAML で念頭考案されました。パターンが 3 つのソフトウェア レイヤー間の分離を強制-ビューと呼ばれる、XAML ユーザー インターフェイスモデルと呼ばれる、基になるデータされ、ビューと、モデルの中間には、ViewModel が呼び出されます。ビューとビューモデルは、多くの場合、XAML ファイルで定義されているデータ バインドを通じて接続されます。ビューの BindingContext は、通常、ViewModel のインスタンスです。_
 
@@ -35,7 +35,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 <StackLayout BindingContext="{x:Static sys:DateTime.Now}" …>
 ```
 
-`BindingContext` 非常に特殊なプロパティです。設定すると、`BindingContext`その要素のすべての子要素に継承されます。 つまり、すべての子、`StackLayout`これと同じある`BindingContext`、し、そのオブジェクトのプロパティへの単純なバインドを含めることができます。
+`BindingContext`は、非常に特殊なプロパティです。を要素`BindingContext`に設定すると、その要素のすべての子によって継承されます。 つまり、すべての子、`StackLayout`これと同じある`BindingContext`、し、そのオブジェクトのプロパティへの単純なバインドを含めることができます。
 
 **One-Shot DateTime**プログラムは、2 つの子のプロパティへのバインドを保持する`DateTime`バインディング パスが見つからないと思われるバインドを含めることの値はその他の 2 つの子。 つまり、`DateTime`自体の値が使用される、 `StringFormat`:
 
@@ -298,7 +298,7 @@ namespace XamlSamples
 
 ## <a name="commanding-with-viewmodels"></a>Viewmodel のコマンド実行
 
-多くの場合では、MVVM パターンは、データ項目の操作に限定されます。ビュー内のユーザー インターフェイス オブジェクトの並列ビューモデル内のデータ オブジェクト。
+多くの場合、MVVM パターンはデータ項目の操作に制限されています。ビュービュー内のユーザーインターフェイスオブジェクトは、ビューモデルの並列データオブジェクトを表示します。
 
 ただし、必要があります、ビュー、ビューモデルでさまざまなアクションをトリガーするボタンが含まれます。 ViewModel が含めることはできませんが、`Clicked`ボタンのハンドラーが特定のユーザー インターフェイスのパラダイムに ViewModel を占有するので。
 
@@ -581,7 +581,7 @@ void Download ()
 
 ## <a name="implementing-a-navigation-menu"></a>ナビゲーション メニューの実装
 
-[XamlSamples](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)この一連の記事内のすべてのソース コードを含むプログラムがそのホーム ページの ViewModel を使用します。 このビューモデルが短いという名前の 3 つのプロパティを持つクラスの定義を`Type`、 `Title`、および`Description`サンプル ページ、タイトル、および簡単な説明のそれぞれの型が含まれています。 さらに、ViewModel はという名前の静的プロパティを定義します。`All`プログラム内のすべてのページのコレクションには。
+[XamlSamples](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)この一連の記事内のすべてのソース コードを含むプログラムがそのホーム ページの ViewModel を使用します。 このビューモデルが短いという名前の 3 つのプロパティを持つクラスの定義を`Type`、 `Title`、および`Description`サンプル ページ、タイトル、および簡単な説明のそれぞれの型が含まれています。 さらに、ViewModel はという名前の静的プロパティを定義します。`All`プログラム内のすべてのページのコレクションには。
 
 ```csharp
 public class PageDataViewModel
@@ -702,7 +702,7 @@ private async void OnListViewItemSelected(object sender, SelectedItemChangedEven
 
 > [!VIDEO https://youtube.com/embed/DYRLcqG2BAY]
 
-**Xamarin Evolve 2016 です。Xamarin.Forms と Prism で簡単に行う MVVM**
+**Xamarin の進化 2016:MVVM と Prism でシンプルになった**
 
 ## <a name="summary"></a>まとめ
 
@@ -711,7 +711,7 @@ XAML は、データ バインディング時に特に、Xamarin.Forms アプリ
 
 ## <a name="related-links"></a>関連リンク
 
-- [XamlSamples](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
+- [XamlSamples](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 - [第 1 部XAML の概要](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
 - [第 2 部基本的な XAML 構文](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
 - [第 3 部XAML マークアップ拡張](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)

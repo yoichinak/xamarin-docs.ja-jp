@@ -1,47 +1,47 @@
 ---
-title: Xamarin.iOS では、core NFC
-description: このドキュメントでは、iOS 11 で導入された Api を使用して Xamarin.iOS でフィールド通信タグの近くを読み取る方法について説明します。
+title: Xamarin のコア NFC
+description: このドキュメントでは、iOS 11 で導入された Api を使用して、Xamarin iOS の近距離無線通信タグを読み取る方法について説明します。
 ms.prod: xamarin
 ms.technology: xamarin-ios
 ms.assetid: 846B59D3-F66A-48F3-A78C-84217697194E
 author: lobrien
 ms.author: laobri
 ms.date: 09/25/2017
-ms.openlocfilehash: 6888f7147796d3c00752d10387c19d0d9f269cad
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c82861a0b4ca00f7c664cd6a920f250ad937d306
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61170840"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656462"
 ---
-# <a name="core-nfc-in-xamarinios"></a>Xamarin.iOS では、core NFC
+# <a name="core-nfc-in-xamarinios"></a>Xamarin のコア NFC
 
-_IOS 11 を使用して読み取り近距離通信 (NFC) タグ_
+_IOS 11 を使用した近距離無線通信 (NFC) タグの読み取り_
 
-CoreNFC は ios 11 へのアクセスを提供する新しいフレームワーク、_近距離通信_(NFC) オプションをアプリ内からのタグを読み取る。 IPhone 7、8、さらに、および X 8、7 Plus です。
+CoreNFC は iOS 11 の新しいフレームワークで、アプリ内からタグを読み取る_近距離無線通信_(NFC) ラジオへのアクセスを提供します。 IPhone 7、7 Plus、8、8 Plus、X で動作します。
 
-IOS デバイスの NFC タグ リーダーがすべて NFC タグの種類 1 ~ 5 が含まれているをサポートしている_NFC データ交換形式_(NDEF) 情報。
+IOS デバイスの NFC タグリーダーは、 _Nfc データ交換形式_(NDEF) 情報を含むすべての nfc タグの種類 1 ~ 5 をサポートしています。
 
-これには注意すべきいくつかの制限があります。
+注意すべきいくつかの制限があります。
 
-- CoreNFC は、タグ (作成や書式設定) の読み取りのみをサポートします。
-- タグのスキャンは、ユーザーが開始する必要があり、60 秒後にタイムアウトします。
-- アプリは、スキャンの前景色に表示される必要があります。
-- CoreNFC は、(シミュレーター) ではなく実際のデバイスでのみテストできます。
+- CoreNFC はタグ読み取りのみをサポートします (書き込みや書式設定はできません)。
+- タグスキャンは、ユーザーが開始する必要があり、60秒後にタイムアウトになります。
+- アプリはスキャンのために前景に表示される必要があります。
+- CoreNFC は、(シミュレーターではなく) 実際のデバイスでのみテストできます。
 
-このページは CoreNFC を使用するために必要な構成について説明し、API を使用して、使用する方法を示しています、 ["NFCTagReader"サンプル コード](https://developer.xamarin.com/samples/monotouch/ios11/NFCTagReader/)します。
+このページでは、CoreNFC の使用に必要な構成について説明し、 ["Nfctagreader" サンプルコード](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-nfctagreader)を使用して API を使用する方法を示します。
 
 ## <a name="configuration"></a>構成
 
-CoreNFC を有効にするには、プロジェクトの 3 つの項目を構成する必要があります。
+CoreNFC を有効にするには、プロジェクトで次の3つの項目を構成する必要があります。
 
-- **Info.plist**プライバシー キー。
-- **Entitlements.plist**エントリ。
-- 使用するプロビジョニング プロファイル**NFC タグの読み取り**機能します。
+- **情報 plist**プライバシーキー。
+- **権利の plist**エントリ。
+- **NFC タグ読み取り**機能を備えたプロビジョニングプロファイル。
 
 ### <a name="infoplist"></a>Info.plist
 
-追加、 **NFCReaderUsageDescription**プライバシー キーと、スキャンの実行中にユーザーに表示されるテキスト。 アプリケーションに適切なメッセージを使用して (たとえば、スキャンの目的を説明します)。
+**NFCReaderUsageDescription**のプライバシーキーとテキストを追加します。これは、スキャンの実行中にユーザーに表示されます。 アプリケーションに適切なメッセージを使用します (たとえば、スキャンの目的を説明します)。
 
 ```xml
 <key>NFCReaderUsageDescription</key>
@@ -50,7 +50,7 @@ CoreNFC を有効にするには、プロジェクトの 3 つの項目を構成
 
 ### <a name="entitlementsplist"></a>Entitlements.plist
 
-アプリが要求する必要があります、**フィールド通信タグ読み取りの近く**で次のキー/値を使用して機能のペア、 **Entitlements.plist**:
+アプリでは、次のキー/値ペアを使用して、**近距離無線通信タグ読み取り**機能を要求する必要があり**ます。 plist**:
 
 ```xml
 <key>com.apple.developer.nfc.readersession.formats</key>
@@ -61,26 +61,26 @@ CoreNFC を有効にするには、プロジェクトの 3 つの項目を構成
 
 ### <a name="provisioning-profile"></a>プロファイルのプロビジョニング
 
-新規作成**アプリ ID**いることを確認し、 **NFC タグの読み取り**サービスがオンになっています。
+新しい**アプリ ID**を作成し、 **NFC タグ読み取り**サービスが実行されていることを確認します。
 
-[![NFC タグの読み取りが選択されていると開発者ポータルの新しいアプリ ID ページ](corenfc-images/app-services-nfc-sml.png)](corenfc-images/app-services-nfc.png#lightbox)
+[![開発者ポータルでの NFC タグの読み取りが選択された新しいアプリ ID ページ](corenfc-images/app-services-nfc-sml.png)](corenfc-images/app-services-nfc.png#lightbox)
 
-必要がありますし、この App ID の新しいプロビジョニング プロファイルを作成し、ダウンロードして、開発ファルダにインストールします。
+その後、このアプリ ID 用の新しいプロビジョニングプロファイルを作成し、それをダウンロードして開発用 Mac にインストールする必要があります。
 
 ## <a name="reading-a-tag"></a>タグの読み取り
 
-プロジェクトを構成すると後で追加`using CoreNFC;`NFC を実装するためにこれら 3 つの手順に従って、ファイルの先頭に読み取り機能にタグ付けします。
+プロジェクトが構成されたら、 `using CoreNFC;`ファイルの先頭にを追加し、次の3つの手順に従って NFC タグ読み取り機能を実装します。
 
-### <a name="1-implement-infcndefreadersessiondelegate"></a>1.実装 `INFCNdefReaderSessionDelegate`
+### <a name="1-implement-infcndefreadersessiondelegate"></a>1.導入`INFCNdefReaderSessionDelegate`
 
-インターフェイスでは、2 つのメソッドを実装するには。
+インターフェイスには、次の2つのメソッドを実装できます。
 
-- `DidDetect` – タグが正常に読み取られたときに呼び出されます。
-- `DidInvalidate` – エラーが発生したり、60 秒のタイムアウトに達したときに呼び出されます。
+- `DidDetect`–タグが正常に読み取られたときに呼び出されます。
+- `DidInvalidate`–エラーが発生したとき、または60秒のタイムアウトに達したときに呼び出されます。
 
 #### <a name="diddetect"></a>DidDetect
 
-サンプル コードでは、スキャンされた各メッセージがテーブルのビューに追加されます。
+このサンプルコードでは、スキャンされた各メッセージをテーブルビューに追加します。
 
 ```csharp
 public void DidDetect(NFCNdefReaderSession session, NFCNdefMessage[] messages)
@@ -96,18 +96,18 @@ public void DidDetect(NFCNdefReaderSession session, NFCNdefMessage[] messages)
 }
 ```
 
-このメソッドは、複数回呼び出すことができます (とのメッセージの配列を渡すことがあります) 場合は、セッションを複数のタグ読み取りデータを使用します。 3 番目のパラメーターを使用してこの設定は、`Start`メソッド (で説明されている[手順 2.](#step2))。
+セッションで複数のタグ読み取りが許可されている場合、このメソッドは複数回 (およびメッセージの配列が渡される可能性があります) に呼び出されることがあります。 これは、 `Start` ([手順 2](#step2)で説明した) メソッドの3番目のパラメーターを使用して設定します。
 
 #### <a name="didinvalidate"></a>DidInvalidate
 
-無効化は、さまざまな理由によって発生します。
+無効化は、次のようなさまざまな理由で発生する可能性があります。
 
 - スキャン中にエラーが発生しました。
-- アプリではなく、フォア グラウンドであります。
-- ユーザーは、スキャンをキャンセルすることを選択します。
-- スキャンは、アプリによって取り消されました。
+- アプリはフォアグラウンドになったます。
+- ユーザーがスキャンをキャンセルすることを選択しました。
+- スキャンはアプリによって取り消されました。
 
-次のコードでは、エラーを処理する方法を示します。
+次のコードは、エラーを処理する方法を示しています。
 
 ```csharp
 public void DidInvalidate(NFCNdefReaderSession session, NSError error)
@@ -121,34 +121,34 @@ public void DidInvalidate(NFCNdefReaderSession session, NSError error)
 }
 ```
 
-セッションが無効にするを再度スキャンする、新しいセッション オブジェクトを作成する必要があります。
+セッションが無効になったら、再度スキャンするために新しいセッションオブジェクトを作成する必要があります。
 
 <a name="step2" />
 
-### <a name="2-start-an-nfcndefreadersession"></a>2.開始します。 `NFCNdefReaderSession`
+### <a name="2-start-an-nfcndefreadersession"></a>2.開始`NFCNdefReaderSession`
 
-スキャンは、ボタンを押すなどのユーザーの要求で始まらなければなりません。
-次のコードは作成し、スキャンのセッションを開始します。
+スキャンは、ボタンを押すなどのユーザー要求で開始する必要があります。
+次のコードでは、スキャンセッションを作成して開始します。
 
 ```csharp
 Session = new NFCNdefReaderSession(this, null, true);
 Session?.BeginSession();
 ```
 
-パラメーター、`NFCNdefReaderSession`コンス トラクターは、次のとおり。
+`NFCNdefReaderSession`コンストラクターのパラメーターは次のとおりです。
 
-- `delegate` – の実装`INFCNdefReaderSessionDelegate`します。 サンプル コードで、デリゲートではテーブル ビュー コント ローラーで、したがって`this`デリゲート パラメーターとして使用されます。
-- `queue` – でコールバックが処理されるキュー。 できます`null`、後者を使用して、必ず、 `DispatchQueue.MainQueue` (ように、サンプルに示された) ユーザー インターフェイス コントロールを更新するときにします。
-- `invalidateAfterFirstRead` – とき`true`、最初の成功したスキャン後のスキャンの停止時に`false`スキャンは続行し、スキャンがキャンセルされたか、60 秒のタイムアウトに達するまで、複数の結果が返されます。
+- `delegate`–の`INFCNdefReaderSessionDelegate`実装。 このサンプルコードでは、デリゲートはテーブルビューコントローラーに実装されて`this`いるため、デリゲートパラメーターとして使用されます。
+- `queue`–コールバックが処理されるキュー。 この場合`null`、(サンプルに示されているように`DispatchQueue.MainQueue` ) ユーザーインターフェイスコントロールを更新するときに必ずを使用する必要があります。
+- `invalidateAfterFirstRead`–の`true`場合、スキャンは最初に成功した後に`false`停止します。スキャンが続行され、複数の結果が返されるまで、スキャンが取り消されるか、60秒のタイムアウトに達します。
 
 
-### <a name="3-cancel-the-scanning-session"></a>3.スキャンのセッションをキャンセルします。
+### <a name="3-cancel-the-scanning-session"></a>3.スキャンセッションをキャンセルする
 
-ユーザーは、ユーザー インターフェイスでのシステム提供のボタンを使用してスキャンのセッションをキャンセルできます。
+ユーザーは、ユーザーインターフェイスのシステム指定のボタンを使用して、スキャンセッションを取り消すことができます。
 
-![スキャン中に [キャンセル] ボタン](corenfc-images/scan-cancel-sml.png)
+![スキャン中の [キャンセル] ボタン](corenfc-images/scan-cancel-sml.png)
 
-アプリがスキャンをプログラムでキャンセル、`InvalidateSession`メソッド。
+アプリでは、メソッドを`InvalidateSession`呼び出すことによって、プログラムでスキャンを取り消すことができます。
 
 ```csharp
 Session.InvalidateSession();
@@ -158,10 +158,10 @@ Session.InvalidateSession();
 
 ## <a name="summary"></a>まとめ
 
-CoreNFC では、NFC タグからデータを読み取る、アプリを使用できます。 さまざまなタグの形式 (NDEF 型 1 ~ 5) の読み取りをサポートしていますが、書き込み、または書式設定をサポートしません。
+CoreNFC を使用すると、アプリは NFC タグからデータを読み取ることができます。 さまざまなタグ形式 (NDEF types 1 ~ 5) の読み取りをサポートしますが、書き込みや書式設定はサポートしていません。
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [NFCTagReader (サンプル)](https://developer.xamarin.com/samples/monotouch/ios11/NFCTagReader/)
-- [Core NFC (WWDC) (ビデオ) の概要](https://developer.apple.com/videos/play/wwdc2017/718/)
+- [NFCTagReader (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-nfctagreader)
+- [コア NFC (WWDC) の概要 (ビデオ)](https://developer.apple.com/videos/play/wwdc2017/718/)

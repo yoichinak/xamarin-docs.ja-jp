@@ -1,68 +1,68 @@
 ---
 title: Wear の基本
-description: 最初の Android Wear アプリを作成し、Wear エミュレーターまたはデバイスで実行します。 このチュートリアルには、Android Wear ボタンのクリックを処理し、Wear デバイスでをクリックしてカウンターを表示します。 小規模なプロジェクトを作成するための手順が説明します。 Wear エミュレーターまたは Android フォンに Bluetooth 経由で接続されている Wear デバイスを使用してアプリをデバッグする方法について説明します。 Android Wear のデバッグに関するヒントのセットも提供します。
+description: 初めての Android 用の磨耗アプリを作成し、それを磨耗エミュレーターまたはデバイスで実行します。 このチュートリアルでは、ボタンのクリックを処理し、磨耗デバイスに click カウンターを表示する小さな Android 用の磨耗プロジェクトを作成する手順について説明します。 この例では、アプリをデバッグする方法について説明します。これには、デバイスの摩耗エミュレーター、または Bluetooth 経由で Android フォンに接続されている磨耗デバイスを使用します。 また、Android の磨耗に関する一連のデバッグのヒントも提供します。
 ms.prod: xamarin
 ms.assetid: 86BCD0E7-E9DC-40F1-9B44-887BC51BB48D
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/10/2018
-ms.openlocfilehash: a8e27063040ff91f72a1cbf932b1b277a5dee63d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 056ab7a9fe4bcb7f07a9a7cd7c841a3d9f7574b6
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61277396"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68648022"
 ---
 # <a name="hello-wear"></a>Wear の基本
 
-_最初の Android Wear アプリを作成し、Wear エミュレーターまたはデバイスで実行します。このチュートリアルには、Android Wear ボタンのクリックを処理し、Wear デバイスでをクリックしてカウンターを表示します。 小規模なプロジェクトを作成するための手順が説明します。Wear エミュレーターまたは Android フォンに Bluetooth 経由で接続されている Wear デバイスを使用してアプリをデバッグする方法について説明します。Android Wear のデバッグに関するヒントのセットも提供します。_
+_初めての Android 用の磨耗アプリを作成し、それを磨耗エミュレーターまたはデバイスで実行します。このチュートリアルでは、ボタンのクリックを処理し、磨耗デバイスに click カウンターを表示する小さな Android 用の磨耗プロジェクトを作成する手順について説明します。この例では、アプリをデバッグする方法について説明します。これには、デバイスの摩耗エミュレーター、または Bluetooth 経由で Android フォンに接続されている磨耗デバイスを使用します。また、Android の磨耗に関する一連のデバッグのヒントも提供します。_
 
-![このチュートリアルで完了する Wear アプリのスクリーン ショット](hello-wear-images/example.png)
+![このチュートリアルで完了する必要がある磨耗アプリのスクリーンショット](hello-wear-images/example.png)
 
-## <a name="your-first-wear-app"></a>最初の Wear アプリ
+## <a name="your-first-wear-app"></a>最初の摩耗アプリ
 
-最初の Xamarin.Android Wear アプリを作成する次の手順に従います。
+次の手順に従って、最初の Xamarin. Android の磨耗アプリを作成します。
 
-### <a name="1-create-a-new-android-project"></a>1.新しい Android プロジェクトを作成します。
+### <a name="1-create-a-new-android-project"></a>1.新しい Android プロジェクトを作成する
 
-新規作成**Android Wear アプリケーション**:
+新しい Android 用の**磨耗アプリケーション**を作成します。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![新しいプロジェクト ダイアログで新しい Android Wear アプリケーションの作成](hello-wear-images/vs/new-solution-sml.w157.png)](hello-wear-images/vs/new-solution.w157.png#lightbox)
+[![[新しいプロジェクト] ダイアログでの新しい Android の磨耗アプリケーションの作成](hello-wear-images/vs/new-solution-sml.w157.png)](hello-wear-images/vs/new-solution.w157.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-[![新しいソリューション ダイアログ ボックスで新しい Android Wear アプリケーションの作成](hello-wear-images/xs/new-solution-sml.png)](hello-wear-images/xs/new-solution.png#lightbox)
+[![[新しいソリューション] ダイアログでの新しい Android の磨耗アプリケーションの作成](hello-wear-images/xs/new-solution-sml.png)](hello-wear-images/xs/new-solution.png#lightbox)
 
 -----
 
 
-このテンプレートが自動的に含まれる、 **Xamarin Android ウェアラブル ライブラリ**NuGet (および依存関係) Wear 固有のウィジェットにアクセスする必要があります。 Wear テンプレートが表示されない場合は、確認、[インストールとセットアップ](~/android/wear/get-started/installation.md)ガイドは、サポートされている Android SDK がインストールされていることを再確認してください。 
+このテンプレートには、 **Xamarin Android ウェアラブルライブラリ**NuGet (および依存関係) が自動的に含まれるため、摩耗固有のウィジェットにアクセスできます。 [磨耗] テンプレートが表示されない場合は、[インストールとセットアップ](~/android/wear/get-started/installation.md)のガイドを参照して、サポートされている Android SDK がインストールされていることを確認します。 
 
-### <a name="2-choose-the-correct-target-framework"></a>2.正しい選択**ターゲット フレームワーク**
+### <a name="2-choose-the-correct-target-framework"></a>2.適切な**ターゲットフレームワーク**を選択する
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-いることを確認**最小 Android ターゲット**に設定されている**Android 5.0 (Lollipop)** またはそれ以降。 
+最小の**android ターゲット**が**Android 5.0 (ロリポップ)** 以降に設定されていることを確認します。 
 
-[![Visual Studio での Android 5.0 にターゲット フレームワークを設定します。](hello-wear-images/vs/target-framework-sml.png)](hello-wear-images/vs/target-framework.png#lightbox)
+[![Visual Studio でターゲットフレームワークを Android 5.0 に設定する](hello-wear-images/vs/target-framework-sml.png)](hello-wear-images/vs/target-framework.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-ターゲット フレームワークに設定されていることを確認**Android 5.0 (Lollipop)** またはそれ以降。
+ターゲットフレームワークが**Android 5.0 (ロリポップ)** 以降に設定されていることを確認します。
 
-[![Visual Studio での Android 5.0 を Mac にターゲット フレームワークを設定します。](hello-wear-images/xs/target-framework-sml.png)](hello-wear-images/xs/target-framework.png#lightbox)
+[![Visual Studio for Mac でターゲットフレームワークを Android 5.0 に設定する](hello-wear-images/xs/target-framework-sml.png)](hello-wear-images/xs/target-framework.png#lightbox)
 
 -----
 
-ターゲット フレームワークの設定の詳細については、次を参照してください。 [Understanding Android API Levels](~/android/app-fundamentals/android-api-levels.md)します。
+ターゲットフレームワークの設定の詳細については、「 [ANDROID API レベルについ](~/android/app-fundamentals/android-api-levels.md)て」を参照してください。
 
 
-### <a name="3-edit-the-mainaxml-layout"></a>3.編集、 **Main.axml**レイアウト
+### <a name="3-edit-the-mainaxml-layout"></a>3.メインの**axml**レイアウトを編集する
 
-構成を格納するレイアウトを`TextView`と`Button`サンプル。 
+サンプル`TextView` の`Button`とを含むようにレイアウトを構成します。 
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -103,9 +103,9 @@ android:layout_height="match_parent">
 </FrameLayout>
 ```
 
-### <a name="4-edit-the-mainactivitycs-source"></a>4.編集、 **MainActivity.cs**ソース
+### <a name="4-edit-the-mainactivitycs-source"></a>4.**MainActivity.cs**ソースを編集する
 
-カウンターをインクリメントして、ボタンがクリックされたときに表示するコードを追加します。 
+カウンターをインクリメントし、ボタンがクリックされるたびに表示されるように、コードを追加します。 
 
 ```csharp
 [Activity (Label = "WearTest", MainLauncher = true, Icon = "@drawable/icon")]
@@ -129,51 +129,51 @@ public class MainActivity : Activity
 }
 ```
 
-### <a name="5-setup-an-emulator-or-device"></a>5.エミュレーターまたはデバイスのセットアップ
+### <a name="5-setup-an-emulator-or-device"></a>5.エミュレーターまたはデバイスを設定する
 
-[次へ] の手順をデプロイして、アプリを実行するには、エミュレーターまたはデバイスを設定するとします。 ない場合の展開および実行するプロセスに詳しく Xamarin.Android アプリ一般を参照してください、[こんにちは, Android クイック スタート](~/android/get-started/hello-android/hello-android-quickstart.md)します。
+次の手順では、アプリをデプロイして実行するためのエミュレーターまたはデバイスを設定します。 Xamarin をデプロイして実行するプロセスにまだ慣れていない場合は、「 [Hello, Android クイックスタート](~/android/get-started/hello-android/hello-android-quickstart.md)」を参照してください。
 
-Android Wear デバイス、Android Wear スマートウォッチなどがいない場合は、エミュレーターで、アプリを実行できます。 Wear アプリをエミュレーターでのデバッグについては、次を参照してください。[エミュレーターで Android Wear をデバッグ](~/android/wear/deploy-test/debug-on-emulator.md)します。
+Android の磨耗 Smartwatch などの Android 磨耗デバイスがない場合は、エミュレーターでアプリを実行できます。 エミュレーターでの磨耗アプリのデバッグの詳細については、「[エミュレーターでの Android の磨耗のデバッグ](~/android/wear/deploy-test/debug-on-emulator.md)」を参照してください。
 
-Android Wear デバイス、Android Wear スマートウォッチなどを使っている場合は、エミュレーターを使用する代わりに、デバイスでアプリを実行できます。 Wear デバイスでのデバッグの詳細については、次を参照してください。 [Wear デバイスでのデバッグ](~/android/wear/deploy-test/debug-on-device.md)します。
+Android の磨耗 Smartwatch などの Android の磨耗デバイスがある場合は、エミュレーターを使用する代わりに、デバイスでアプリを実行できます。 磨耗デバイスでのデバッグの詳細については、「[磨耗デバイスでのデバッグ](~/android/wear/deploy-test/debug-on-device.md)」を参照してください。
 
 
-### <a name="6-run-the-android-wear-app"></a>6.Android Wear アプリを実行します。
+### <a name="6-run-the-android-wear-app"></a>6.Android の磨耗アプリを実行する
 
-Android Wear デバイスは、デバイスのプルダウン メニューに表示されます。 デバッグを開始する前に、正しい Android Wear デバイスまたは AVD を選択してください。 デバイスを選択すると、エミュレーターまたはデバイスにアプリを展開する [再生] ボタンをクリックします。
+Android の磨耗デバイスが [デバイス] プルダウンメニューに表示されます。 デバッグを開始する前に、適切な Android の磨耗デバイスまたは AVD を選択してください。 デバイスを選択した後、[再生] ボタンをクリックして、エミュレーターまたはデバイスにアプリをデプロイします。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![Visual Studio メニューでデバイスを着用 AVD を選択します。](hello-wear-images/vs/choose-wear-sim.png)](hello-wear-images/vs/choose-wear-sim.png#lightbox)
+[![Visual Studio デバイスメニューでの磨耗 AVD の選択](hello-wear-images/vs/choose-wear-sim.png)](hello-wear-images/vs/choose-wear-sim.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-[![Visual Studio での Mac デバイス メニュー Wear AVD を選択します。](hello-wear-images/xs/choose-wear-sim.png)](hello-wear-images/xs/choose-wear-sim.png#lightbox)
+[![Visual Studio for Mac デバイスメニューでの磨耗 AVD の選択](hello-wear-images/xs/choose-wear-sim.png)](hello-wear-images/xs/choose-wear-sim.png#lightbox)
 
 -----
 
-表示される、**わずか 1 分.** 最初メッセージ (またはその他のいくつかのスポット画面)。 
+最初に、1**分ほど**のメッセージ (または他のスポット画面) が表示される場合があります。 
 
-![エミュレーターは、わずか 1 分を表示を見る.](hello-wear-images/please-wait.png)
+![Watch emulator が1分で表示されます...](hello-wear-images/please-wait.png)
 
-ウォッチ エミュレーターを使用している場合は、アプリの起動にかかります。 Bluetooth を使用しているときに、USB 経由では、アプリのデプロイに時間がかかります。 (たとえば、約 5 分かかります Nexus 5 電話の Bluetooth 接続である LG G ウォッチにこのアプリをデプロイする。)
+Watch emulator を使用している場合は、アプリの起動に時間がかかることがあります。 Bluetooth を使用している場合は、USB よりもアプリの展開に時間がかかります。 (たとえば、このアプリを LG G Watch にデプロイするには、5分ほどかかることがあります。これは、接続5の電話に Bluetooth で接続されています)。
 
-アプリが正常に展開した後 Wear デバイスの画面には、次のような画面が表示されます。
+アプリが正常に展開されると、磨耗デバイスの画面に次のような画面が表示されます。
 
-[![Wear アプリの最初の画面](hello-wear-images/mainactivity-screen.png)](hello-wear-images/mainactivity-screen.png#lightbox)
+[![磨耗アプリの最初の画面](hello-wear-images/mainactivity-screen.png)](hello-wear-images/mainactivity-screen.png#lightbox)
 
-タップして、 **をクリックします** 。 ボタン表面 Wear デバイスと各をタップしてカウントの増加を参照してください。
+タップして、 **をクリックします** 。 ボタンを押して、次のように押します。
 
-[![3 回のクリック後のスクリーン ショットの Wear アプリ](hello-wear-images/mainactivity-counts.png)](hello-wear-images/mainactivity-counts.png#lightbox)
+[![3回のクリック後の磨耗アプリのスクリーンショット](hello-wear-images/mainactivity-counts.png)](hello-wear-images/mainactivity-counts.png#lightbox)
 
 
 ## <a name="next-steps"></a>次の手順
 
-チェック アウト、 [Wear サンプル](https://developer.xamarin.com/samples/android/Android%20Wear/)コンパニオン Phone アプリで Android Wear アプリなどです。
+関連する電話アプリを含む、Android の摩耗アプリを含む[磨耗のサンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Android+wear)を確認してください。
 
-アプリを配布する準備ができたらを参照してください。[パッケージ化操作](~/android/wear/deploy-test/packaging.md)します。
+アプリを配布する準備ができたら、「[パッケージングの操作](~/android/wear/deploy-test/packaging.md)」を参照してください。
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [Me アプリ (サンプル) をクリックします。](https://developer.xamarin.com/samples/monodroid/wear/WearTest/)
+- [[Me App (サンプル)]](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-weartest)

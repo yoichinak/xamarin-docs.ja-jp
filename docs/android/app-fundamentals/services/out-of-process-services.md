@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: aaecc0da52fe692840ed928946963a995364fa9f
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 360ea18de0c9d30988d63602ba3c17c3d00ed83a
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509181"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644086"
 ---
 # <a name="running-android-services-in-remote-processes"></a>リモートプロセスでの Android サービスの実行
 
@@ -386,7 +386,7 @@ Android には、次の4種類のアクセス許可レベルがあります。
 
 * **標準**&ndash;これは、既定のアクセス許可レベルです。 これは、Android によって要求されたクライアントに自動的に付与できる危険度の低いアクセス許可を識別するために使用されます。 ユーザーは、これらのアクセス許可を明示的に付与する必要はありませんが、アプリの設定でアクセス許可を表示できます。
 * **署名**&ndash;これは、同じ証明書で署名されたアプリケーションに Android によって自動的に付与される特別なアクセス許可のカテゴリです。 このアクセス許可は、アプリケーション開発者がアプリ間でコンポーネントやデータを簡単に共有できるように設計されています。ユーザーは、一定のかけるを必要としません。
-* **Signatureorsystem**これは、上記で説明した署名のアクセス許可とよく似ています。  &ndash; このアクセス許可は、同じ証明書によって署名されたアプリに自動的に付与されるだけでなく、Android システムイメージと共にインストールされたアプリの署名に使用されたものと同じ証明書に署名されているアプリにも付与されます。 このアクセス許可は、通常、アプリケーションがサードパーティのアプリと連携できるようにするために、Android ROM 開発者によってのみ使用されます。 これは一般に、パブリックなの一般配布を目的としたアプリでは使用されません。
+* **Signatureorsystem**これは、上記で説明した署名のアクセス許可とよく似ています。 &ndash; このアクセス許可は、同じ証明書によって署名されたアプリに自動的に付与されるだけでなく、Android システムイメージと共にインストールされたアプリの署名に使用されたものと同じ証明書に署名されているアプリにも付与されます。 このアクセス許可は、通常、アプリケーションがサードパーティのアプリと連携できるようにするために、Android ROM 開発者によってのみ使用されます。 これは一般に、パブリックなの一般配布を目的としたアプリでは使用されません。
 * **危険**&ndash;危険なアクセス許可は、ユーザーにとって問題の原因となる可能性があります。 このため、**危険**なアクセス許可はユーザーによって明示的に承認される必要があります。
 
 `signature` および`normal`のアクセス許可は、Android によってインストールされるときに自動的に付与されるため、クライアントを含む apk の**前に**、サービスをホストする apk をインストールすることが重要です。 クライアントが最初にインストールされた場合、Android はアクセス許可を付与しません。 この場合は、クライアント APK をアンインストールし、サービス APK をインストールしてから、クライアント APK を再インストールする必要があります。
@@ -472,7 +472,7 @@ Service apk でアクセス許可を作成するには`permission` 、要素を*
 
 [![アプリケーションに付与されたアクセス許可を検索する方法を示す、Android デバイスのスクリーンショット](out-of-process-services-images/ipc-06-sml.png)](out-of-process-services-images/ipc-06.png#lightbox)
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>まとめ
 
 このガイドでは、リモートプロセスで Android サービスを実行する方法について詳しく説明しました。 ローカルサービスとリモートサービスの違いについて説明しました。また、リモートサービスが Android アプリの安定性とパフォーマンスに役立つ可能性がある理由についても説明しました。 リモートサービスを実装する方法と、クライアントがサービスと通信する方法について説明した後、このガイドでは、承認されたクライアントのみからサービスへのアクセスを制限する方法の1つを紹介しました。
 
@@ -488,4 +488,4 @@ Service apk でアクセス許可を作成するには`permission` 、要素を*
 - [プロセスとスレッド](https://developer.android.com/guide/components/processes-and-threads.html)
 - [Android マニフェスト-アクセス許可](https://developer.android.com/guide/topics/manifest/manifest-intro.html#perms)
 - [セキュリティのヒント](https://developer.android.com/training/articles/security-tips.html)
-- [MessengerServiceDemo (サンプル)](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/ServiceSamples/MessengerServiceDemo/)
+- [MessengerServiceDemo (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/applicationfundamentals-servicesamples-messengerservicedemo)

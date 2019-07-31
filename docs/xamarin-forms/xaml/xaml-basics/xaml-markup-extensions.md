@@ -7,16 +7,16 @@ ms.assetid: F4A37564-B18B-42FF-B841-9A1949895AB6
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/27/2018
-ms.openlocfilehash: 17ca8ec481b8af5ad0515e6544613864f0a66271
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 2417d6400faf80ad9b3b24a032046e7e867814f5
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61342199"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655484"
 ---
 # <a name="part-3-xaml-markup-extensions"></a>第 3 部です。 XAML マークアップ拡張機能
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
 _XAML マークアップ拡張機能は、オブジェクトまたはその他のソースから直接参照されている値に設定するプロパティを XAML で重要な機能を構成します。XAML マークアップ拡張機能は、オブジェクトの共有と、アプリケーション全体で使用される定数を参照するにとって特に重要ですが、データ バインドで、最大のユーティリティを検索します。_
 
@@ -105,7 +105,7 @@ _XAML マークアップ拡張機能は、オブジェクトまたはその他�
 </ContentPage>
 ```
 
-今すぐオブジェクトとさまざまな種類の値は、リソース ディクショナリに追加できます。 これらの型をインスタンス化可能にする必要があります。 抽象クラスをたとえばすることはできません。 これらの型は、パブリック コンス トラクターも必要です。 各項目で指定されたディクショナリのキーが必要です、`x:Key`属性。 例:
+今すぐオブジェクトとさまざまな種類の値は、リソース ディクショナリに追加できます。 これらの型をインスタンス化可能にする必要があります。 抽象クラスをたとえばすることはできません。 これらの型は、パブリック コンストラクターも必要です。 各項目で指定されたディクショナリのキーが必要です、`x:Key`属性。 例:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -403,7 +403,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 
 注意キーワード`clr-namespace`コロンと .NET 名前空間名は、セミコロン、キーワードの後に続く`assembly`、等号 (=) と、アセンブリ名。
 
-はい、コロン`clr-namespace`等号が`assembly`します。 構文は、この意図定義されました。ほとんどの XML 名前空間宣言など、URI スキーム名を開始する URI を参照する`http`コロンが後に常にします。 `clr-namespace`その規則を模倣するためにこの文字列の一部が対象としています。
+はい、コロン`clr-namespace`等号が`assembly`します。 構文は、次のように意図的に定義されています。ほとんどの XML 名前空間宣言は`http`、などの uri スキーム名を開始する uri を参照します。この uri には、常にコロンが続きます。 `clr-namespace`その規則を模倣するためにこの文字列の一部が対象としています。
 
 これら両方の名前空間宣言が含まれている、 **StaticConstantsPage**サンプル。 注意、`BoxView`ディメンションに設定されます`Math.PI`と`Math.E`100 の倍数ではスケール。
 
@@ -547,7 +547,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 </ContentPage>
 ```
 
-おそらくこのサンプルから行う必要があります、最も重要なレッスンでは、マークアップ拡張機能の構文を示します。マークアップ拡張機能の中かっこ内で引用符はない必要があります。 XAML ファイルにマークアップ拡張機能を入力するときに、プロパティの値を引用符で囲みますする自然なです。 しないでください。
+このサンプルから実行する必要のある最も重要な教訓は、マークアップ拡張機能の構文です。マークアップ拡張機能の中かっこ内に引用符を含めることはできません。 XAML ファイルにマークアップ拡張機能を入力するときに、プロパティの値を引用符で囲みますする自然なです。 しないでください。
 
 実行中のプログラムを次に示します。
 
@@ -561,7 +561,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 
 ## <a name="related-links"></a>関連リンク
 
-- [XamlSamples](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
+- [XamlSamples](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 - [第 1 部XAML の概要](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
 - [第 2 部基本的な XAML 構文](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
 - [第 4 部データ バインディングの基礎](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)

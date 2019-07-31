@@ -1,46 +1,46 @@
 ---
-title: Xamarin.iOS で ARKit の概要
-description: このドキュメントでは、augmented reality ARKit と iOS 11 で説明します。 これには、アプリへの 3D モデルを追加、構成、ビュー、セッション デリゲートを実装、世界では、3 D モデルを配置および augmented reality セッションを一時停止する方法について説明します。
+title: Xamarin の ARKit の概要
+description: このドキュメントでは、ARKit を使用した iOS 11 の強化された現実について説明します。 ここでは、3D モデルをアプリに追加する方法、ビューを構成する方法、セッションデリゲートを実装する方法、世界で3D モデルを配置する方法、および拡張された現実のセッションを一時停止する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 70291430-BCC1-445F-9D41-6FBABE87078E
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/30/2017
-ms.openlocfilehash: 348d2f2090105ed693da7be5a44c82ef18bd2a89
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 47c092215afef4aa6964a39f7dcb5b685d98a4fc
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61176719"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655729"
 ---
-# <a name="introduction-to-arkit-in-xamarinios"></a>Xamarin.iOS で ARKit の概要
+# <a name="introduction-to-arkit-in-xamarinios"></a>Xamarin の ARKit の概要
 
 _IOS 11 の拡張現実_
 
-ARKit では、さまざまな拡張現実のアプリケーションやゲームを使用できます。 ここでは、次のトピックについて説明します。
+ARKit は、拡張されたさまざまな現実のアプリケーションやゲームを可能にします。 ここでは、次のトピックについて説明します。
 
-- [ARKit の概要](#gettingstarted)
-- [ARKit UrhoSharp の併用](urhosharp.md)
+- [ARKit を使用したはじめに](#gettingstarted)
+- [UrhoSharp で ARKit を使用する](urhosharp.md)
 
 <a name="gettingstarted" />
 
-## <a name="getting-started-with-arkit"></a>ARKit の概要
+## <a name="getting-started-with-arkit"></a>ARKit を使用したはじめに
 
-単純なアプリケーションを通じて augmented reality で開始するに次の手順を説明します。 3 d モデルの配置と ARKit と追跡の機能に、モデルを維持できるようにすることです。
+次の手順では、強化された現実を開始するために、単純なアプリケーションについて説明します。3D モデルを配置し、ARKit によってモデルが追跡機能によって維持されるようにします。
 
-![カメラの画像を浮動小数点 jet 3D モデル](images/jet-sml.png)
+![カメライメージでの Jet 3D モデルフローティング](images/jet-sml.png)
 
-### <a name="1-add-a-3d-model"></a>1.3D モデルを追加します。
+### <a name="1-add-a-3d-model"></a>1. 3D モデルの追加
 
-資産をプロジェクトに追加する必要があります、 **SceneKitAsset**ビルド アクション。
+アセットは、 **SceneKitAsset**ビルドアクションを使用してプロジェクトに追加する必要があります。
 
-![プロジェクトである SceneKit アセット](images/scene-assets.png)
+![プロジェクト内の SceneKit アセット](images/scene-assets.png)
 
 
-### <a name="2-configure-the-view"></a>2.ビューを構成します。
+### <a name="2-configure-the-view"></a>2. ビューを構成する
 
-ビュー コント ローラーで`ViewDidLoad`メソッド、シーンの資産を読み込むし、設定、`Scene`ビューのプロパティ。
+ビューコントローラーの`ViewDidLoad`メソッドで、シーンアセットを読み込み、ビューのプロパティ`Scene`を設定します。
 
 ```csharp
 ARSCNView SceneView = (View as ARSCNView);
@@ -52,9 +52,9 @@ var scene = SCNScene.FromFile("art.scnassets/ship");
 SceneView.Scene = scene;
 ```
 
-### <a name="3-optionally-implement-a-session-delegate"></a>3.必要に応じてセッション デリゲートを実装します。
+### <a name="3-optionally-implement-a-session-delegate"></a>3.必要に応じてセッションデリゲートを実装する
 
-単純な場合は必要ありませんがセッション デリゲートの実装は (と、ユーザーにフィードバックを提供する実際のアプリケーションで)、ARKit セッションの状態をデバッグするために利用できます。 次のコードを使用して単純なデリゲートを作成します。
+単純なケースでは必須ではありませんが、セッションデリゲートを実装すると、ARKit セッション (および実際のアプリケーションではユーザーにフィードバックを提供する) の状態をデバッグするのに役立ちます。 次のコードを使用して、単純なデリゲートを作成します。
 
 ```csharp
 public class SessionDelegate : ARSessionDelegate
@@ -67,16 +67,16 @@ public class SessionDelegate : ARSessionDelegate
 }
 ```
 
-内のデリゲートを割り当てるので、`ViewDidLoad`メソッド。
+`ViewDidLoad`メソッドで、デリゲートをに割り当てます。
 
 ```csharp
 // Track changes to the session
 SceneView.Session.Delegate = new SessionDelegate();
 ```
 
-### <a name="4-position-the-3d-model-in-the-world"></a>4.世界での 3D モデルを配置します。
+### <a name="4-position-the-3d-model-in-the-world"></a>4。3D モデルを世界中に配置する
 
-`ViewWillAppear`、次のコードは ARKit セッションを確立し、デバイスのカメラの基準とした領域の 3D モデルの位置を設定します。
+で`ViewWillAppear`は、次のコードで arkit セッションを確立し、デバイスのカメラに対して相対的な空間で3d モデルの位置を設定します。
 
 ```csharp
 // Create a session configuration
@@ -94,11 +94,11 @@ var ship = SceneView.Scene.RootNode.FindChildNode("ship", true);
 ship.Position = new SCNVector3(2f, -2f, -9f);
 ```
 
-アプリケーションが実行または再開するには、3 D モデルは、カメラの前に配置されます。 モデルが配置されているし、カメラの移動 ARKit が配置されているモデルをご覧ください。
+アプリケーションが実行または再開されるたびに、3D モデルがカメラの前面に配置されます。 モデルが配置されたら、カメラを移動し、ARKit によってモデルが配置されたままになるようにします。
 
-### <a name="5-pause-the-augmented-reality-session"></a>5.拡張現実のセッションを一時停止します。
+### <a name="5-pause-the-augmented-reality-session"></a>5。拡張された現実のセッションを一時停止する
 
-ときに ビュー コント ローラーが表示されていない ARKit セッションを一時停止することをお勧めは (で、`ViewWillDisappear`メソッド。
+ビューコントローラーが表示されていない場合 (メソッドの`ViewWillDisappear`場合) は、arkit セッションを一時停止することをお勧めします。
 
 ```csharp
 SceneView.Session.Pause();
@@ -106,15 +106,15 @@ SceneView.Session.Pause();
 
 ## <a name="summary"></a>まとめ
 
-単純な ARKit アプリケーションで上記のコードの結果。 複雑な例については、ビュー コント ローラーを実装するために、拡張現実のセッションをホストを期待どおり`IARSCNViewDelegate`、追加のメソッドを実装するとします。
+上記のコードでは、単純な ARKit アプリケーションが生成されます。 さらに複雑な例としては、拡張された現実`IARSCNViewDelegate`セッションをホストするビューコントローラーがを実装し、追加のメソッドを実装することが想定されています。
 
-ARKit では、多数のサーフェスの追跡、およびユーザーの操作などのより高度な機能を提供します。 参照してください、 [UrhoSharp デモ](urhosharp.md)ARKit UrhoSharp の追跡を組み合わせる例についてはします。
+ARKit は、surface tracking やユーザー操作など、より高度な機能を備えています。 ARKit の追跡と UrhoSharp の組み合わせの例については、 [urhosharp デモ](urhosharp.md)を参照してください。
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [Augmented Reality (Apple)](https://developer.apple.com/arkit/)
-- [ARKit UrhoSharp の併用](urhosharp.md)
-- [単純な ARKit (Jet) のサンプル](https://developer.xamarin.com/samples/monotouch/ios11/ARKitSample/)
-- [ARKit を配置するオブジェクト (サンプル)](https://developer.xamarin.com/samples/monotouch/ios11/ARKitPlacingObjects/)
-- [ARKit - Augmented Reality ios (WWDC) (ビデオ) の概要](https://developer.apple.com/videos/play/wwdc2017/602/)
+- [拡張現実 (Apple)](https://developer.apple.com/arkit/)
+- [UrhoSharp で ARKit を使用する](urhosharp.md)
+- [簡易 ARKit (Jet) のサンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-arkitsample)
+- [ARKit 配置 (オブジェクトを) (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-arkitplacingobjects)
+- [ARKit の導入-iOS 向けの拡張現実 (WWDC) (ビデオ)](https://developer.apple.com/videos/play/wwdc2017/602/)

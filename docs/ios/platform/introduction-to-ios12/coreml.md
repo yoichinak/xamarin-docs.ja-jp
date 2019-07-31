@@ -1,34 +1,34 @@
 ---
-title: Xamarin.iOS で ML 2 コア
-description: このドキュメントでは、iOS 12 の一部として core ML が使用可能な更新プログラムについて説明します。 具体的には、新しいバッチ予測 API に関連付けられているパフォーマンスの向上に見えます。
+title: Xamarin のコア ML 2
+description: このドキュメントでは、iOS 12 の一部として利用できるコア ML の更新について説明します。 具体的には、新しいバッチ予測 API に関連するパフォーマンスの向上に注目します。
 ms.prod: xamarin
 ms.assetid: 408E752C-2C78-4B20-8B43-A6B89B7E6D1B
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/15/2018
-ms.openlocfilehash: 50d59f0b6ff2133c5870d84a1d740547768116e0
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4fc72e855101f110310a46145c577b272a647ac3
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61398846"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68645702"
 ---
-# <a name="core-ml-2-in-xamarinios"></a>Xamarin.iOS で ML 2 コア
+# <a name="core-ml-2-in-xamarinios"></a>Xamarin のコア ML 2
 
-コア ML は、機械学習では、iOS、macOS、tvOS、watchOS、使用可能なテクノロジです。 アプリの機械学習モデルに基づいて予測を行うことができます。
+コア ML は、iOS、macOS、tvOS、watchOS で利用できる機械学習テクノロジです。 これにより、アプリは機械学習モデルに基づいて予測を行うことができます。
 
-12、iOS では、Core ML には、バッチ処理 API が含まれています。 この API より効率的に Core ML し、モデルを使用して一連の予測を作成するシナリオでパフォーマンスの向上を提供します。
+IOS 12 では、コア ML にバッチ処理 API が含まれています。 この API により、コア ML がより効率的になり、モデルを使用して一連の予測を行うシナリオのパフォーマンスが向上します。
 
-## <a name="sample-app-marshabitatcoremltimer"></a>サンプル アプリ:MarsHabitatCoreMLTimer
+## <a name="sample-app-marshabitatcoremltimer"></a>サンプルアプリ:MarsHabitatCoreMLTimer
 
-コア ML を使用したバッチ予測を示すためを見て、 [MarsHabitatCoreMLTimer](https://developer.xamarin.com/samples/monotouch/iOS12/MarsHabitatCoreMLTimer)サンプル アプリです。 このサンプルを使用して、habitat、Mars で構築するためのコストを予測するコア ML モデルのトレーニングは、さまざまな入力に基づく: ソーラー パネル、greenhouses、数、および 2万の数の数値。
+コア ML でバッチ予測を行う方法については、 [MarsHabitatCoreMLTimer](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-marshabitatcoremltimer)サンプルアプリを参照してください。 このサンプルでは、主要な ML モデルを使用して、さまざまな入力 (太陽のパネルの数、greenhouses の数、acres の数) に基づいて、Mars で habitat を構築するためのコストを予測します。
 
-このドキュメントでのコード スニペットは、このサンプルから取得されます。
+このドキュメントのコードスニペットは、このサンプルを基にしています。
 
 ## <a name="generate-sample-data"></a>サンプル データの生成
 
-`ViewController`、サンプル アプリの`ViewDidLoad`メソッド呼び出し`LoadMLModel`、含まれるコア ML モデルが読み込まれます。
+で`ViewController`は、サンプルアプリの`ViewDidLoad`メソッドを`LoadMLModel`呼び出して、含まれているコア ML モデルを読み込みます。
 
 ```csharp
 void LoadMLModel()
@@ -38,7 +38,7 @@ void LoadMLModel()
 }
 ```
 
-サンプル アプリが 100,000 を作成し、`MarsHabitatPricerInput`シーケンシャルの Core ML 予測の入力として使用するオブジェクト。 生成された各サンプルでは、ランダムな値に設定ソーラー パネル、greenhouses、数、および 2万の数の数があります。
+次に、サンプルアプリによっ`MarsHabitatPricerInput`て、順次コア ML 予測の入力として使用する10万オブジェクトが作成されます。 生成された各サンプルには、太陽のパネルの数、greenhouses の数、および acres の数に対してランダムな値が設定されています。
 
 ```csharp
 async void CreateInputs(int num)
@@ -59,7 +59,7 @@ async void CreateInputs(int num)
 }
 ```
 
-アプリの 3 つのボタンをタップすると予測の 2 つのシーケンスを実行します。 1 つを使用して、`for`ループ、および新しいバッチを使用して別`GetPredictions`iOS 12 で導入されたメソッド。
+アプリの3つのボタンをタップすると、2つの予測のシーケンス`for`が実行されます。1つ`GetPredictions`はループを使用し、もう1つは iOS 12 で導入された新しい batch メソッドを使用します。
 
 ```csharp
 async void RunTest(int num)
@@ -74,7 +74,7 @@ async void RunTest(int num)
 
 ## <a name="for-loop"></a>for ループ
 
-`for`指定の数の入力を反復処理単純ループのバージョンのテストを呼び出す[ `GetPrediction` ](xref:CoreML.MLModel.GetPrediction*)ごとと、結果を破棄します。 メソッドは、予測にかかる時間を時間します。
+テスト`for`ネイティブのループバージョンは、指定された数の入力を反復[`GetPrediction`](xref:CoreML.MLModel.GetPrediction*)処理し、それぞれに対してを呼び出し、結果を破棄します。 メソッドは、予測を行うためにかかる時間の長さを示します。
 
 ```csharp
 async Task FetchNonBatchResults(int num)
@@ -92,10 +92,10 @@ async Task FetchNonBatchResults(int num)
 }
 ```
 
-## <a name="getpredictions-new-batch-api"></a>GetPredictions (新しいバッチ API)
+## <a name="getpredictions-new-batch-api"></a>GetPredictions (新しい batch API)
 
-テストのバッチのバージョンを作成します、`MLArrayBatchProvider`入力配列からオブジェクト (これは必須の入力パラメーターのため、`GetPredictions`メソッド)、作成、 [`MLPredictionOptions`](xref:CoreML.MLPredictionOptions)
-オブジェクトを使用して、CPU に制限されない予測計算を防止、`GetPredictions`をもう一度、結果を破棄することで予測をフェッチする API。
+テストのバッチバージョンは、入力配列`MLArrayBatchProvider`からオブジェクトを作成します (これは`GetPredictions`メソッドの必須の入力パラメーターであるため)。は、[`MLPredictionOptions`](xref:CoreML.MLPredictionOptions)
+予測計算が CPU に限定されないようにするオブジェクト。この`GetPredictions` API を使用して予測をフェッチし、結果を破棄します。
 
 ```csharp
 async Task FetchBatchResults(int num)
@@ -118,13 +118,13 @@ async Task FetchBatchResults(int num)
 
 ## <a name="results"></a>結果
 
-シミュレーターとデバイスの両方で`GetPredictions`Core ML のループに基づく予測よりもすぐに終了します。
+シミュレーターとデバイスの両方で`GetPredictions` 、はループベースのコア ML 予測よりも高速に終了します。
 
 ## <a name="related-links"></a>関連リンク
 
-- [サンプル アプリ – MarsHabitatCoreMLTimer](https://developer.xamarin.com/samples/monotouch/iOS12/MarsHabitatCoreMLTimer)
-- [コア ML、第 1 部 (WWDC 2018) の新機能新機能](https://developer.apple.com/videos/play/wwdc2018/708/)
-- [コア ML、第 2 部 (WWDC 2018) の新機能新機能](https://developer.apple.com/videos/play/wwdc2018/709/)
-- [Xamarin.iOS の Core ML の概要](https://docs.microsoft.com/xamarin/ios/platform/introduction-to-ios11/coreml)
+- [サンプルアプリ– MarsHabitatCoreMLTimer](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-marshabitatcoremltimer)
+- [コア ML の新機能、パート 1 (WWDC 2018)](https://developer.apple.com/videos/play/wwdc2018/708/)
+- [コア ML の新機能、パート 2 (WWDC 2018)](https://developer.apple.com/videos/play/wwdc2018/709/)
+- [Xamarin のコア ML の概要](https://docs.microsoft.com/xamarin/ios/platform/introduction-to-ios11/coreml)
 - [コア ML (Apple)](https://developer.apple.com/documentation/coreml?language=objc)
-- [コア ML モデルの操作](https://developer.apple.com/machine-learning/build-run-models/)
+- [主要な ML モデルの使用](https://developer.apple.com/machine-learning/build-run-models/)

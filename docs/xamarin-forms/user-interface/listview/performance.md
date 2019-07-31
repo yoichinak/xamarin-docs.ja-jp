@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/11/2017
-ms.openlocfilehash: 37b14b60f3cd9aa6a3fb182583bde902cc677b89
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 4a0a7a4db4b0ca982a162ec3a0b67dc729af0ed2
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925079"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655936"
 ---
 # <a name="listview-performance"></a>ListView のパフォーマンス
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithListviewNative/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithlistviewnative)
 
 モバイルアプリケーションの作成は、パフォーマンスが重要です。 ユーザは、スムーズなスクロールと高速ロード時間を期待するようになっています。 ユーザの期待に応え損なうと、ストアでのアプリケーションの評価が下がり、業務アプリの場合であれば、組織の時間と費用も無駄になります。
 
@@ -133,7 +133,7 @@ XAML では、以下のコードで示すように `CachingStrategy` 属性を�
 
 #### <a name="setting-the-caching-strategy-in-a-subclassed-listview"></a>サブクラス化された ListView での Caching Strategy の設定
 
-`CachingStrategy` [ `ListView` のサブクラスでは、 XAML での ](xref:Xamarin.Forms.ListView) 属性の設定は、期待した動作は起こりません。 `ListView`CachingStrategy`には `ListView` というプロパティは存在しないからです。 さらに場合、 [XAMLC](~/xamarin-forms/xaml/xamlc.md)が有効にすると、次のエラー メッセージが生成されます。**ないプロパティ、バインド可能なプロパティ、またはイベント 'CachingStrategy' が見つかりませんでした。**
+`CachingStrategy` [ `ListView` のサブクラスでは、 XAML での ](xref:Xamarin.Forms.ListView) 属性の設定は、期待した動作は起こりません。 `ListView`CachingStrategy`には `ListView` というプロパティは存在しないからです。 さらに、 [XAMLC](~/xamarin-forms/xaml/xamlc.md)が有効になっている場合は、次のエラーメッセージが生成されます。 **' CachingStrategy ' に対してプロパティ、バインド可能なプロパティ、またはイベントが見つかりませんでした**
 
 この問題を解決するには、 [ `ListView` ](xref:Xamarin.Forms.ListView) パラメータを受け取る [ `ListViewCachingStrategy` ](xref:Xamarin.Forms.ListViewCachingStrategy) のサブクラスのコンストラクタを作成し、それを基本クラスに渡します。
 
@@ -175,7 +175,6 @@ public class CustomListView : ListView
 -  `ListView` の内部に `ScrollView` を配置することは以下の理由で避けます。
     - `ListView` には自身にクロール機能が実装されています。
     - `ListView`は全てのジェスチャを受け取らない。それらは親である `ScrollView` によって処理されます。
-
     - `ListView`リストの要素と同時にスクロールするカスタマイズされたヘッダーとフッターを表示することができ、その機能のために潜在的に `ScrollView` が提供されています。 詳細については、次を参照してください。[ヘッダーとフッター](~/xamarin-forms/user-interface/listview/customizing-list-appearance.md#Headers_and_Footers)
 -  セルの中で非常に特殊な複雑なデザインが必要な場合は Custom Renderer を検討します。
 
@@ -186,6 +185,6 @@ public class CustomListView : ListView
 
 ## <a name="related-links"></a>関連リンク
 
-- [Custom Renderer View (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithListviewNative/)
-- [Custom Renderer ViewCell (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/ViewCell/)
+- [Custom Renderer View (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithlistviewnative)
+- [Custom Renderer ViewCell (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-viewcell)
 - [ListViewCachingStrategy](xref:Xamarin.Forms.ListViewCachingStrategy)

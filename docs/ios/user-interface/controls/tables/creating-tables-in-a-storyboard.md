@@ -1,96 +1,96 @@
 ---
 title: iOS Designer でのテーブルの操作
-description: 前のセクションでテーブルを使用した開発について学習しました。 これは、5 番目と最後のセクションはこれまでに学習した内容を集計し、ストーリー ボードを使用して基本的な面倒な作業一覧アプリケーションを作成します。
+description: 前のセクションでは、テーブルを使用した開発について説明します。 この5番目のセクションでは、これまでに学習した内容を集計し、ストーリーボードを使用して基本的な作業リストアプリケーションを作成します。
 ms.prod: xamarin
 ms.assetid: D8416E10-481A-0B6E-4081-B146E6358004
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 303c96ae6cdbc9f5b327c971f962d6eac75a6fa1
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e73695046786e4d9949fd46bdbba665ff4f6cc72
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61227554"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68645177"
 ---
 # <a name="working-with-tables-in-the-ios-designer"></a>iOS Designer でのテーブルの操作
 
-ストーリー ボードは、WYSIWYG iOS アプリケーションを作成する方法および Mac および Windows で Visual Studio 内でサポートされます。 ストーリー ボードの詳細についてを参照してください、[の概要をストーリー ボード](~/ios/user-interface/storyboards/index.md)ドキュメント。 ストーリー ボードのセルのレイアウトを編集することも*で*テーブルでは、テーブルとセルを使用した開発を簡略化
+ストーリーボードは、iOS アプリケーションを作成するための WYSIWYG 的な方法であり、Mac および Windows 上の Visual Studio 内でサポートされています。 ストーリーボードの詳細については、「[ストーリーボードの概要](~/ios/user-interface/storyboards/index.md)」ドキュメントを参照してください。 また、テーブル*内*のセルレイアウトを編集して、テーブルとセルを使用した開発を簡素化することもできます。
 
-IOS Designer のテーブル ビューのプロパティを構成するときに、セルの内容から選択することができますの 2 つの種類があります。**動的**または**静的**プロトタイプ コンテンツ。
+IOS デザイナーでテーブルビューのプロパティを構成する際には、次の2種類のセルコンテンツを選択できます。**動的**または**静的**なプロトタイプのコンテンツ。
 
 <a name="Prototype_Content" />
 
-## <a name="dynamic-prototype-content"></a>プロトタイプの動的なコンテンツ
+## <a name="dynamic-prototype-content"></a>動的プロトタイプのコンテンツ
 
-A`UITableView`プロトタイプ コンテンツは、通常データの一覧を表示するため、プロトタイプのセル (または、セルを定義できます 1 つ以上)、リストの各項目の再利用されます。 セルがインスタンス化する必要はありませんで取得された、`GetView`メソッドを呼び出して、`DequeueReusableCell`メソッドの`UITableViewSource`します。
+プロトタイプ`UITableView`コンテンツを持つは、通常、リスト内の各項目に対してプロトタイプセル (または複数定義可能なセル) を再利用するデータの一覧を表示することを目的としています。 これらのセルは、インスタンス化する必要はありません`GetView` `UITableViewSource`。メソッドでは`DequeueReusableCell` 、のメソッドを呼び出すことによって取得されます。
 
  <a name="Static_Content" />
 
 
 ## <a name="static-content"></a>静的コンテンツ
 
-`UITableView`静的コンテンツを使用すると、テーブルをデザイン サーフェイスの右にデザインできます。 セルは、テーブルにドラッグしてプロパティを変更して、コントロールを追加してカスタマイズできます。
+`UITableView`の静的コンテンツを使用すると、デザイン画面上にテーブルを適切にデザインできます。 セルはテーブルにドラッグし、プロパティを変更してコントロールを追加することによってカスタマイズできます。
 
  <a name="Creating_a_Storyboard-driven_app" />
 
 
-## <a name="creating-a-storyboard-driven-app"></a>ストーリー ボード駆動型アプリを作成します。
+## <a name="creating-a-storyboard-driven-app"></a>ストーリーボード駆動型アプリの作成
 
-StoryboardTable 例には、ストーリー ボードの UITableView の両方の種類を使用する単純なマスター-詳細アプリが含まれています。 このセクションの残りの部分では、完了すると、次のようになりますが小規模の to do リストの例を構築する方法について説明します。
+StoryboardTable の例には、ストーリーボードで両方の種類の UITableView を使用する単純なマスター/詳細アプリが含まれています。 このセクションの残りの部分では、完了時に次のような小さな to do リストの例を構築する方法について説明します。
 
- [![例の画面](creating-tables-in-a-storyboard-images/image13a.png)](creating-tables-in-a-storyboard-images/image13a.png#lightbox)
+ [![画面の例](creating-tables-in-a-storyboard-images/image13a.png)](creating-tables-in-a-storyboard-images/image13a.png#lightbox)
 
-ユーザー インターフェイスは、ストーリー ボードをビルドし、両方の画面を UITableView が使用されます。 メイン画面を使用して*プロトタイプ コンテンツ*画面を使用するには、行のレイアウトと詳細*静的コンテンツ*カスタム セルのレイアウトを使用してデータ エントリ フォームを作成します。
+ユーザーインターフェイスはストーリーボードを使用して作成され、両方の画面で UITableView が使用されます。 メイン画面は*プロトタイプコンテンツ*を使用して行をレイアウトし、詳細画面は*静的なコンテンツ*を使用して、カスタムセルレイアウトを使用してデータ入力フォームを作成します。
 
 ## <a name="walkthrough"></a>チュートリアル
 
-Visual Studio を使用して新しいソリューションを作成 **(作成) の新しいプロジェクト > 単一ビュー アプリ (C#)**、それを呼び出すと_StoryboardTables_します。
+[新しいプロジェクトの作成] を使用して Visual Studio で新しいソリューションを作成します. **.シングルビューアプリ (C#) を >** 、 _StoryboardTables_を呼び出します。
 
- [![新しいプロジェクト ダイアログを作成します。](creating-tables-in-a-storyboard-images/npd.png)](creating-tables-in-a-storyboard-images/npd.png#lightbox)
+ [![[新しいプロジェクトの作成] ダイアログ](creating-tables-in-a-storyboard-images/npd.png)](creating-tables-in-a-storyboard-images/npd.png#lightbox)
 
-一部のソリューションが開きますC#ファイルと`Main.storyboard`ファイルが既に作成されています。 ダブルクリックして、 `Main.storyboard` iOS Designer で開くファイル。
+ソリューションが開き、ファイルとC#ファイルが`Main.storyboard`既に作成されています。 `Main.storyboard`ファイルをダブルクリックして、iOS Designer で開きます。
 
 <a name="Modifying_the_Storyboard" />
 
-## <a name="modifying-the-storyboard"></a>ストーリー ボードを変更します。
+## <a name="modifying-the-storyboard"></a>ストーリーボードの変更
 
-3 つの手順では、ストーリー ボードを編集します。
+ストーリーボードは、次の3つの手順で編集されます。
 
--  最初に、レイアウトに必要なコント ローラーを表示し、そのプロパティを設定します。
--  次に、ドラッグ アンド ドロップ、ビュー上にオブジェクトによって、UI を作成します。
--  最後に、それぞれのビューに必要なの UIKit クラスを追加し、コードで参照できるように、さまざまなコントロールに名前を付けます。
+-  まず、必要なビューコントローラーをレイアウトし、それらのプロパティを設定します。
+-  次に、オブジェクトをビューにドラッグアンドドロップして UI を作成します。
+-  最後に、必要な UIKit クラスを各ビューに追加し、コードで参照できるように、さまざまなコントロールに名前を付けます。
 
 
-ストーリー ボードが完了すると、正常に動作するコードを追加することができます。
+ストーリーボードが完成したら、コードを追加してすべての機能を実現できます。
 
 <a name="Layout_The_View_Controllers" />
 
-### <a name="layout-the-view-controllers"></a>レイアウト ビュー コント ローラー
+### <a name="layout-the-view-controllers"></a>ビューコントローラーのレイアウト
 
-ストーリー ボードには、最初の変更が既存の詳細ビューを削除して、UITableViewController に置き換えます。 この場合は、以下の手順に従ってください。
+ストーリーボードへの最初の変更は、既存の詳細ビューを削除し、UITableViewController に置き換えることです。 この場合は、以下の手順に従ってください。
 
-1.  ビュー コント ローラーの下部にあるバーを選択し、それを削除します。
-2.  ドラッグ、**ナビゲーション コント ローラー**と**テーブル ビュー コント ローラー**ツールボックスからストーリー ボード上にします。 
-3.  追加されたテーブル ビューの 2 番目のコント ローラーをルート ビュー コント ローラーからのセグエを作成します。 セグエ、コントロールの作成 + ドラッグ*詳細セルから*UITableViewController を新たに追加します。 オプションを選択**表示**  **セグエ選択**します。 
-4.  選択して、新しい作成したセグエし、参照をコードでこのセグエに識別子を取得します。 セグエをクリックし、入力`TaskSegue`の**識別子**で、 **Properties Pad**、次のように。    
-  [![名前付けプロパティ パネルのセグエ](creating-tables-in-a-storyboard-images/image16a-sml.png)](creating-tables-in-a-storyboard-images/image16a.png#lightbox) 
+1.  ビューコントローラーの下部にあるバーを選択して削除します。
+2.  **ナビゲーションコントローラー**と**テーブルビューコントローラー**を、ツールボックスからストーリーボードにドラッグします。 
+3.  ルートビューコントローラーから、先ほど追加した2番目のテーブルビューコントローラーまでのセグエを作成します。 セグエを作成するには、*詳細セルから*新しく追加された UITableViewController にコントロールをドラッグします。 オプションを選択**表示**  **セグエ選択**します。 
+4.  作成した新しいセグエを選択し、コードでこのセグエを参照するための識別子を指定します。 セグエをクリックし、次`TaskSegue`のように**Properties Pad**の**識別子**として「」と入力します。    
+  [![プロパティパネルでのセグエの名前付け](creating-tables-in-a-storyboard-images/image16a-sml.png)](creating-tables-in-a-storyboard-images/image16a.png#lightbox) 
 
-5. 次を選択し、[プロパティ] タブを使用して 2 つのテーブル ビューを構成します。 ビューとビュー コント ローラー以外を選択してください – 選択を支援するドキュメント アウトラインを使用することができます。
+5. 次に、2つのテーブルビューを選択し、Properties Pad を使用して構成します。 [ビューコントローラーを表示せずに表示する] を選択してください。ドキュメントアウトラインを使用して、選択に役立てることができます。
 
-6.  変更するルート ビュー コント ローラー**コンテンツ。動的なプロトタイプ**(デザイン サーフェイス上のビューがラベル付けする**プロトタイプ コンテンツ**)。
+6.  ルートビューコントローラーを**コンテンツに変更します。動的プロトタイプ** (デザインサーフェイスのビューは、**プロトタイプコンテンツ**としてラベル付けされます)。
 
-    [![動的なプロトタイプへのコンテンツのプロパティの設定](creating-tables-in-a-storyboard-images/image17a.png)](creating-tables-in-a-storyboard-images/image17a.png#lightbox)
+    [![コンテンツプロパティを動的プロトタイプに設定する](creating-tables-in-a-storyboard-images/image17a.png)](creating-tables-in-a-storyboard-images/image17a.png#lightbox)
 
-7.  新しい変更**UITableViewController**する**コンテンツ。静的セル**します。 
+7.  新しい**uitableviewcontroller**を**コンテンツに変更します。静的**なセル。 
 
 
-8. 新しい UITableViewController は、そのクラスの名前と識別子の設定が必要です。 ビュー コント ローラーと種類を選択_TaskDetailViewController_の**クラス**で、 **Properties Pad** – これは、新しい作成`TaskDetailViewController.cs`ソリューション内のファイルパッドのです。 入力、 **StoryboardID**として_詳細_次の例で示すようにします。 これは、後で使用では、このビューを読み込むC#コード。  
+8. 新しい UITableViewController には、クラス名と識別子が設定されている必要があります。 ビューコントローラーを選択し、 **Properties Pad**の**クラス**に「 _task詳細 viewcontroller_ 」と入力します。これ`TaskDetailViewController.cs`により、Solution Pad に新しいファイルが作成されます。 次の例に示すように、 **StoryboardID**を_詳細_として入力します。 これは、後でこのビューをコードにC#読み込むために使用されます。  
 
-    [![ストーリー ボード ID の設定](creating-tables-in-a-storyboard-images/image18a.png)](creating-tables-in-a-storyboard-images/image18a.png#lightbox)
+    [![ストーリーボード ID の設定](creating-tables-in-a-storyboard-images/image18a.png)](creating-tables-in-a-storyboard-images/image18a.png#lightbox)
 
-9. このようなストーリー ボードのデザイン画面なります (ルート ビュー コント ローラーのナビゲーション項目のタイトルが「面倒な作業ボード」に変更されました)。
+9. ストーリーボードのデザインサーフェイスは次のようになります (ルートビューコントローラーのナビゲーション項目のタイトルが "面倒なボード" に変更されています)。
 
     [![デザイン画面](creating-tables-in-a-storyboard-images/image20a-sml.png)](creating-tables-in-a-storyboard-images/image20a.png#lightbox)  
 
@@ -100,82 +100,82 @@ Visual Studio を使用して新しいソリューションを作成 **(作成) 
 
 ### <a name="create-the-ui"></a>UI を作成する
 
-これで、ビュー セグエとはユーザー インターフェイス要素は、構成を追加する必要があります。
+ビューとセグエが構成されたので、ユーザーインターフェイスの要素を追加する必要があります。
 
 #### <a name="root-view-controller"></a>ルート ビュー コントローラー
 
-最初に、マスター ビュー コント ローラーで、プロトタイプのセルを選択し、設定、**識別子**として_taskcell_、下図のようにします。 これは、コードの後半でこの UITableViewCell のインスタンスの取得に使用されます。
+まず、次に示すように、マスタービューコントローラーで プロトタイプ セルを選択し、**識別子** を_taskcell_に設定します。 この UITableViewCell のインスタンスを取得するために、後でコード内で使用されます。
 
  [![セル識別子の設定](creating-tables-in-a-storyboard-images/image22a-sml.png)](creating-tables-in-a-storyboard-images/image22a.png#lightbox)
 
-次に、以下に示すように、新しいタスクを追加するボタンを作成する必要があります。
+次に、次に示すように、新しいタスクを追加するボタンを作成する必要があります。
 
-[![バーのナビゲーション バーのボタンの項目](creating-tables-in-a-storyboard-images/image23-sml.png)](creating-tables-in-a-storyboard-images/image23.png#lightbox)
+[![ナビゲーションバーのバーボタン項目](creating-tables-in-a-storyboard-images/image23-sml.png)](creating-tables-in-a-storyboard-images/image23.png#lightbox)
 
 次の手順で行います。 
 
--  ドラッグ、**バー ボタンの項目**をツールボックスから、_のナビゲーション バーの右側にある_します。
--  **Properties Pad** **バー ボタンの項目**選択**識別子。追加**(させる、 *+* + ボタン)。 
--  コードの後の段階で識別できるように、これに名前を付けます。 ルート ビュー コント ローラー クラス名を提供する必要がありますに注意してください (たとえば**ItemViewController**) バー ボタンの項目の名前を設定するようにします。
+-  ツールボックスから_ナビゲーションバーの右側_に**バーボタンの項目**をドラッグします。
+-  **Properties Pad** **バー ボタンの項目**選択**識別子。(** *+* プラスボタンにするため) を追加します。 
+-  後のステージでコード内で識別できるように名前を付けます。 バーボタン項目の名前を設定できるようにするには、ルートビューコントローラーにクラス名 (たとえば、 **Itemviewcontroller**) を指定する必要があることに注意してください。
 
 
-#### <a name="taskdetail-view-controller"></a>TaskDetail ビュー コント ローラー
+#### <a name="taskdetail-view-controller"></a>TaskDetail ビューコントローラー
 
-詳細ビューでは、多くの作業が必要です。 テーブル セルの表示は、ビューにドラッグし、そのラベル、テキスト ビュー、およびボタンが設定する必要があります。 次のスクリーン ショットは、2 つのセクションで完成した UI を示しています。 1 つのセクションには 3 つのセル、3 つのラベル、2 番目のセクションに 2 つのボタンを 1 つのセルがあるときに、2 つのテキスト フィールドと 1 つスイッチします。
+詳細ビューでは、さらに多くの作業が必要です。 テーブルビューのセルをビューにドラッグして、ラベル、テキストビュー、およびボタンを設定する必要があります。 次のスクリーンショットは、2つのセクションを含む完成した UI を示しています。 1つのセクションには3つのセル、3つのラベル、2つのテキストフィールド、1つのスイッチがあり、2番目のセクションには2つのボタンを持つ1つのセルがあります。
 
  [![詳細ビューのレイアウト](creating-tables-in-a-storyboard-images/image24a-sml.png)](creating-tables-in-a-storyboard-images/image24a.png#lightbox)
 
-完全なレイアウトを作成する手順は次のとおりです。
+レイアウト全体を作成する手順は次のとおりです。
 
-テーブル ビューを選択し、開く、**プロパティ パッド**します。 次のプロパティを更新します。
+テーブルビューを選択し、**プロパティパッド**を開きます。 次のプロパティを更新します。
 
--  **セクション**:_2_ 
--  **スタイル**:_グループ化_
--  **区切り記号**:_[なし]_
--  **選択**:_選択されていません_
+-  **セクション**:_3_ 
+-  **スタイル**:_ら_
+-  **区切り記号**:_None_
+-  **選択**:_選択なし_
 
-最上部のセクションを選択し、**プロパティ > テーブルのビュー セクション**変更**行**に_3_以下に示すように。
+上のセクションを選択し、[**プロパティ > テーブルビュー] セクション**で、次に示すように**行**を_3_に変更します。
 
 
- [![最上部のセクションを 3 つの行に設定します。](creating-tables-in-a-storyboard-images/image29-sml.png)](creating-tables-in-a-storyboard-images/image29.png#lightbox)
+ [![上のセクションを3行に設定する](creating-tables-in-a-storyboard-images/image29-sml.png)](creating-tables-in-a-storyboard-images/image29.png#lightbox)
 
-開いている各セルの**Properties Pad**設定。
+各セルに対して**Properties Pad**を開き、次のように設定します。
 
 -  **スタイル**:_Custom_
--  **識別子**:(例: 各セルの一意の識別子を選択します。 "_タイトル_「,」_ノート_「,」_完了_")。
--  スクリーン ショットに示すようにレイアウトを生成するために必要なコントロールをドラッグします (配置**UILabel**、 **UITextField**と**UISwitch**正しいのセルとラベルを設定適切に、ie します。タイトル、ノートと完了)。
+-  **識別子**:各セルの一意の識別子を選択します (例 "_title_"、"_note_"、"_done_")。
+-  必要なコントロールをドラッグして、スクリーンショットに示されているレイアウトを生成します (適切なセルに**UILabel**、 **uitextfield** 、 **uisスイッチ**を配置し、ラベルを適切に設定します)。タイトル、メモ、完了)。
 
 
-2 番目のセクションでは、次のように設定します。**行**に_1_高さが大きくするセルの下のサイズ変更ハンドルを取得してください。
+2番目のセクションでは、**行**を_1_に設定し、セルの下部のサイズ変更ハンドルを取得して高さを変更します。
 
--  **識別子の設定**: 一意の値 (例。 「保存」)。 
--  **背景を設定する**:_色をオフに_します。
--  2 つのボタンをセルにドラッグし、タイトルを適切に設定 (つまり_保存_と_削除_) の下に示すように。
+-  **識別子**を一意の値に設定します (例: [保存])。 
+-  **背景を設定し**ます。_色をクリア_します。
+-  次に示すように、2つのボタンをセルにドラッグし、タイトルを適切に設定します (つまり、_保存_と_削除_)。
 
-   [![下部のセクションで 2 つのボタンの設定](creating-tables-in-a-storyboard-images/image30-sml.png)](creating-tables-in-a-storyboard-images/image30.png#lightbox)
+   [![下部セクションの2つのボタンの設定](creating-tables-in-a-storyboard-images/image30-sml.png)](creating-tables-in-a-storyboard-images/image30.png#lightbox)
 
-この時点で、セルとコントロールをアダプティブのレイアウトに制約を設定することがありますもします。
+この時点で、セルとコントロールに対して制約を設定して、アダプティブレイアウトを確保することもできます。
 
-### <a name="adding-uikit-class-and-naming-controls"></a>UIKit クラスを追加して、コントロールの名前を付ける
+### <a name="adding-uikit-class-and-naming-controls"></a>UIKit クラスと名前付けコントロールの追加
 
-ストーリー ボードを作成するのには、最後のいくつかの手順があります。 最初名前を付けてください、コントロールの各  **Identity > 名**後でコードで使用できるようにします。 次のように、これら名前を付けます。
+ストーリーボードを作成するための最後の手順がいくつかあります。 まず、後でコードで使用できるように、各コントロールに**Identity > name**の下に名前を付けておく必要があります。 次のように名前を付けます。
 
--  **タイトルの UITextField** :_TitleText_
--  **ノート UITextField** :_NotesText_
--  **UISwitch** :_DoneSwitch_
--  **削除 UIButton** :_DeleteButton_
--  **保存 UIButton** :_SaveButton_
+-  **タイトル UITextField** :_タイトルのテキスト_
+-  **メモ UITextField** :_NotesText_
+-  **Uiswitch** :_DoneSwitch_
+-  **UIButton の削除**:_DeleteButton_
+-  **UIButton の保存**: _[SaveButton]_
 
 
 <a name="Adding_Code" />
 
-## <a name="adding-code"></a>コードを追加します。
+## <a name="adding-code"></a>追加 (コードを)
 
-作業の残りの部分は、Mac または Windows での Visual Studio で行われますC#します。 コードで使用されるプロパティの名前が、上記のチュートリアルでの設定を反映させることに注意してください。
+残りの作業は、Mac または Windows の Visual Studio で、を使用C#して実行されます。 コードで使用されるプロパティ名は、上記のチュートリアルで設定されているものと同じであることに注意してください。
 
-作成する最初の`Chores`クラスを取得し、ID、名前、ノートおよび、完了ブール値、値を設定する方法が提供されるアプリケーション全体でこれらの値を使用できるようにします。
+まず、 `Chores`クラスを作成します。これにより、アプリケーション全体でこれらの値を使用できるように、ID、Name、note、Done ブール値を取得して設定する方法が提供されます。
 
-`Chores`クラスは、次のコードを追加します。
+`Chores`クラスで、次のコードを追加します。
 
 ```csharp
 public class Chores {
@@ -186,11 +186,11 @@ public class Chores {
   }
 ```
 
-次に、作成、`RootTableSource`クラスから継承する`UITableViewSource`します。 
+次に、から`RootTableSource` `UITableViewSource`継承するクラスを作成します。 
 
-非ストーリー ボードのテーブル ビューとの違いは、`GetView`メソッドは、– セルが任意のインスタンスを作成する必要がある`theDequeueReusableCell`メソッドは常に (一致する識別子) を持つプロトタイプ セルのインスタンスを返します。
+このと非ストーリーボードテーブルビューの違いは、 `GetView`メソッドが`theDequeueReusableCell`セルをインスタンス化する必要がないことです。メソッドは常に、(一致する識別子を持つ) プロトタイプセルのインスタンスを返します。
 
-次のコードは、`RootTableSource.cs`ファイル。
+次のコードは、 `RootTableSource.cs`ファイルからのものです。
 
 ```csharp
 public class RootTableSource : UITableViewSource
@@ -227,7 +227,7 @@ public Chores GetItem(int id)
 }
 ```
 
-使用する、`RootTableSource`クラスで新しいコレクションを作成、`ItemViewController`のコンス トラクター。
+`RootTableSource`クラスを使用するには、 `ItemViewController`のコンストラクターに新しいコレクションを作成します。
 
 ```csharp
 chores = new List<Chore> {
@@ -236,7 +236,7 @@ chores = new List<Chore> {
     };
 ```
 
-`ViewWillAppear`ソースに、コレクションを渡すし、テーブル ビューに割り当てます。
+で`ViewWillAppear`ソースにコレクションを渡し、テーブルビューに割り当てます。
 
 ```csharp
 public override void ViewWillAppear(bool animated)
@@ -247,9 +247,9 @@ public override void ViewWillAppear(bool animated)
 }
 ```
 
-アプリを実行する場合は、メイン画面ようになりましたロードを 2 つのタスクの一覧を表示します。 タスクが操作されたときに、セグエをストーリー ボードが定義されていると、詳細画面を表示するが、現時点でデータは表示されません。
+アプリをすぐに実行すると、メイン画面に2つのタスクの一覧が読み込まれて表示されるようになります。 タスクがタッチされると、ストーリーボードによって定義されたセグエによって詳細画面が表示されますが、その時点ではデータは表示されません。
 
-'パラメーター 'セグエを送信するにはオーバーライド、`PrepareForSegue`メソッドのプロパティを設定し、 `DestinationViewController` (、`TaskDetailViewController`この例では)。 対象ビュー コント ローラー クラスをインスタンス化されているがまだ – ユーザーに表示されます。 つまり、クラスのプロパティを設定できますが、UI コントロールを変更しません。
+セグエでパラメーターを送信するには、 `PrepareForSegue`メソッドをオーバーライドし、の`DestinationViewController`プロパティを設定します`TaskDetailViewController` (この例では)。 ターゲットビューコントローラークラスはインスタンス化されていますが、まだユーザーに表示されていません。つまり、クラスのプロパティを設定することはできますが、UI コントロールを変更することはできません。
 
 ```csharp
 public override void PrepareForSegue (UIStoryboardSegue segue, NSObject sender)
@@ -266,7 +266,7 @@ public override void PrepareForSegue (UIStoryboardSegue segue, NSObject sender)
     }
 ```
 
-`TaskDetailViewController` 、 `SetTask` ViewWillAppear で参照できるように、メソッドがプロパティにそのパラメーターを割り当てます。 コントロールのプロパティは変更できません`SetTask`ためにが存在しないときに`PrepareForSegue`が呼び出されます。
+メソッド`TaskDetailViewController`で`SetTask`は、viewwillappear 中で参照できるように、パラメーターをプロパティに割り当てます。 が呼び出されたとき`SetTask` `PrepareForSegue`にが存在しない可能性があるので、コントロールのプロパティをで変更することはできません。
 
 ```csharp
 Chore currentTask {get;set;}
@@ -287,7 +287,7 @@ public override void ViewWillAppear (bool animated)
     }
 ```
 
-セグエは今すぐ詳細画面を開くし、選択したタスクの情報を表示します。 残念ながらの実装はありません、**保存**と**削除**ボタン。 ボタンを実装する前に、これらのメソッドを追加**ItemViewController.cs**を基になるデータを更新し、詳細画面を閉じます。
+セグエで詳細画面が開き、選択したタスク情報が表示されます。 残念ながら、 **[保存]** ボタンと **[削除]** ボタンは実装されていません。 ボタンを実装する前に、これらのメソッドを**ItemViewController.cs**に追加して、基になるデータを更新し、詳細画面を閉じます。
 
 ```csharp
 public void SaveTask(Chores chore)
@@ -304,7 +304,7 @@ public void DeleteTask(Chores chore)
 }
 ```
 
-次に、ボタンの追加する必要があります`TouchUpInside`イベント ハンドラーを`ViewDidLoad`メソッドの**TaskDetailViewController.cs**します。 `Delegate`プロパティへの参照を`ItemViewController`を呼び出し、具体的には、作成された`SaveTask`と`DeleteTask`、その操作の一部としてこのビューを閉じるを。
+次に、ボタンの`TouchUpInside`イベントハンドラーを**TaskDetailViewController.cs**の`ViewDidLoad`メソッドに追加する必要があります。 へ`Delegate`の`ItemViewController`プロパティ参照は、と`DeleteTask`を呼び出す`SaveTask`ことができるように特別に作成されました。これにより、このビューは操作の一部として閉じられます。
 
 ```csharp
 SaveButton.TouchUpInside += (sender, e) => {
@@ -317,7 +317,7 @@ SaveButton.TouchUpInside += (sender, e) => {
 DeleteButton.TouchUpInside += (sender, e) => Delegate.DeleteTask(currentTask);
 ```
 
-ビルドする機能の最後の残りの部分は、新しいタスクの作成です。 **ItemViewController.cs**追加新しいを作成するメソッドは、タスクし、詳細ビューが開きます。 ストーリー ボードの使用からビューをインスタンス化する、`InstantiateViewController`メソッドを`Identifier`'詳細' となるこの例では、そのビューの。
+最後にビルドする機能は、新しいタスクを作成することです。 **ItemViewController.cs**で、新しいタスクを作成するメソッドを追加し、詳細ビューを開きます。 ストーリーボードからビューをインスタンス化するに`InstantiateViewController`は、その`Identifier`ビューのでメソッドを使用します。この例では、"detail" になります。
 
 ```csharp
 public void CreateTask () 
@@ -334,26 +334,26 @@ public void CreateTask ()
     }
 ```
 
-接続のナビゲーション バーにボタンをクリックし、最後に、 **ItemViewController.cs**の`ViewDidLoad`メソッドを呼び出します。
+最後に、 **ItemViewController.cs**の`ViewDidLoad`メソッドのナビゲーションバーにあるボタンをクリックして呼び出します。
 
 ```csharp
 AddButton.Clicked += (sender, e) => CreateTask ();
 ```
 
-ストーリー ボードの使用例 – 次のように完成したアプリは完了します。
+ストーリーボードの例を完了すると、完成したアプリは次のようになります。
 
 [![完成したアプリ](creating-tables-in-a-storyboard-images/image28a.png)](creating-tables-in-a-storyboard-images/image28a.png#lightbox)
 
-例を示します。
+例を次に示します。
 
--  プロトタイプ コンテンツ データのリストを表示する再利用のセルが定義されているテーブルを作成します。 
--  入力のフォームを作成する静的なコンテンツのテーブルを作成しています。 これには、テーブルのスタイルを変更して、セクションでは、セルおよび UI コントロールの追加が含まれています。 
--  セグエを作成し、オーバーライドする方法、`PrepareForSegue`に必要なすべてのパラメーターのターゲット ビューを通知するメソッド。 
--  ストーリー ボードのビューを直接を読み込み、`Storyboard.InstantiateViewController`メソッド。
+-  データの一覧を表示するために再利用するためにセルが定義されているプロトタイプコンテンツを含むテーブルを作成します。 
+-  静的なコンテンツを含むテーブルを作成し、入力フォームを構築します。 これには、テーブルのスタイルの変更や、セクション、セル、および UI コントロールの追加が含まれます。 
+-  セグエを作成し、メソッドを`PrepareForSegue`オーバーライドして、必要なパラメーターのターゲットビューを通知する方法。 
+-  メソッドを使用して、 `Storyboard.InstantiateViewController`ストーリーボードビューを直接読み込みます。
 
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [StoryboardTable (サンプル)](https://developer.xamarin.com/samples/monotouch/StoryboardTable/)
+- [StoryboardTable (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/storyboardtable)
 - [ストーリーボードの概要](~/ios/user-interface/storyboards/index.md)

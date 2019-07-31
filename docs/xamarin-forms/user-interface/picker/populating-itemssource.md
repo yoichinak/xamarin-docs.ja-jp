@@ -7,22 +7,22 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/26/2019
-ms.openlocfilehash: 2c7daca80a207d0c060fc3a867b1eda03dd65258
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 803cd1babc32e3a42d957c4bac0cc93c4552fb8c
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61082887"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656119"
 ---
 # <a name="setting-a-pickers-itemssource-property"></a>ピッカーの ItemsSource プロパティの設定
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/MonkeyAppPicker/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-monkeyapppicker)
 
 _ピッカーの表示は、データの一覧から、テキスト項目を選択するためのコントロールです。この記事では、ItemsSource プロパティを設定してデータの選択を設定する方法と、ユーザーが項目の選択に応答する方法について説明します。_
 
 Xamarin.Forms 2.3.4 が強化、 [ `Picker` ](xref:Xamarin.Forms.Picker)ビューを設定してデータを追加する機能を追加してその[ `ItemsSource` ](xref:Xamarin.Forms.Picker.ItemsSource)プロパティ、および、から選択した項目を取得するには[`SelectedItem` ](xref:Xamarin.Forms.Picker.SelectedItem)プロパティ。 選択した項目のテキストの色を変更して、設定してさらに、 [ `TextColor` ](xref:Xamarin.Forms.Picker.TextColor)プロパティを[ `Color`](xref:Xamarin.Forms.Color)します。
 
-## <a name="populating-a-picker-with-data"></a>データの選択の設定
+## <a name="populating-a-picker-with-data"></a>データを使用したピッカーの設定
 
 A [ `Picker` ](xref:Xamarin.Forms.Picker)を設定してデータを設定することができます、 [ `ItemsSource` ](xref:Xamarin.Forms.Picker.ItemsSource)プロパティを`IList`コレクション。 コレクション内の各項目ので、または型から派生する必要があります`object`します。 初期化することにより XAML で項目を追加できる、`ItemsSource`項目の配列からのプロパティ。
 
@@ -103,7 +103,7 @@ void OnPickerSelectedIndexChanged(object sender, EventArgs e)
 > [!NOTE]
 > A [ `Picker` ](xref:Xamarin.Forms.Picker)設定して、特定のアイテムを表示する初期化することができます、 [ `SelectedIndex` ](xref:Xamarin.Forms.Picker.SelectedIndex)または[ `SelectedItem` ](xref:Xamarin.Forms.Picker.SelectedItem)プロパティ。 ただし、これらのプロパティを初期化した後に設定する必要があります、 [ `ItemsSource` ](xref:Xamarin.Forms.Picker.ItemsSource)コレクション。
 
-## <a name="populating-a-picker-with-data-using-data-binding"></a>データ バインディングを使用してデータの選択の設定
+## <a name="populating-a-picker-with-data-using-data-binding"></a>データバインディングを使用してピッカーにデータを読み込む
 
 A [ `Picker` ](xref:Xamarin.Forms.Picker)も設定できますデータにバインドするデータ バインディングを使用してその[ `ItemsSource` ](xref:Xamarin.Forms.Picker.ItemsSource)プロパティを`IList`コレクション。 XAML 内でこれは、 [ `Binding` ](xref:Xamarin.Forms.Xaml.BindingExtension)マークアップ拡張機能。
 
@@ -182,7 +182,7 @@ detailsLabel.SetBinding(Label.TextProperty, "SelectedMonkey.Details");
 
 ## <a name="related-links"></a>関連リンク
 
-- [ピッカーのデモ (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PickerDemo/)
-- [Monkey アプリ (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/MonkeyAppPicker/)
-- [バインド可能なピッカー (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BindablePicker/)
-- [API の選択](xref:Xamarin.Forms.Picker)
+- [ピッカーのデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-pickerdemo)
+- [Monkey アプリ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-monkeyapppicker)
+- [バインド可能なピッカー (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-bindablepicker)
+- [ピッカー API](xref:Xamarin.Forms.Picker)

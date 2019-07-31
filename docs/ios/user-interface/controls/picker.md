@@ -1,33 +1,33 @@
 ---
-title: Xamarin.iOS での選択コントロール
-description: このドキュメントでは、設計および Xamarin.iOS アプリでピッカー コントロールを操作する方法について説明します。 これには、コード内と iOS Designer での選択を実装する方法について説明します。
+title: Xamarin のピッカーコントロール
+description: このドキュメントでは、Xamarin iOS アプリでピッカーコントロールをデザインおよび操作する方法について説明します。 コードと iOS デザイナーでピッカーを実装する方法について説明します。
 ms.prod: xamarin
 ms.assetid: A2369EFC-285A-44DD-9E80-EC65BC3DF041
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/14/2018
-ms.openlocfilehash: 946cba08e1e504962c093f67e336d72b654a3a41
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4f4855c3928f05f2593d3d80fb7490a115b36e6a
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61229160"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655814"
 ---
-# <a name="picker-control-in-xamarinios"></a>Xamarin.iOS での選択コントロール
+# <a name="picker-control-in-xamarinios"></a>Xamarin のピッカーコントロール
 
-A [ `UIPickerView` ](xref:UIKit.UIPickerView)ホイールに似たインターフェイスの個々 のコンポーネントをスクロールして一覧から値を選択することになります。
+を[`UIPickerView`](xref:UIKit.UIPickerView)使用すると、ホイールのようなインターフェイスの個々のコンポーネントをスクロールすることで、リストから値を選択できます。
 
-ピッカーが頻繁に使用する日付と時刻を選択しますApple から提供されて、 [`UIDatePicker`](xref:UIKit.UIDatePicker)
-この目的のクラスです。
+ピッカーは、日付と時刻を選択するためによく使用されます。Apple は、[`UIDatePicker`](xref:UIKit.UIDatePicker)
+この目的のためのクラスです。
 
-実装して使用する方法について説明します、`UIPickerView`と`UIDatePicker`コントロール。
+この記事では、コントロール`UIPickerView`と`UIDatePicker`コントロールを実装して使用する方法について説明します。
 
 ## <a name="uipickerview"></a>UIPickerView
 
-### <a name="implementing-a-picker"></a>ピッカーを実装します。
+### <a name="implementing-a-picker"></a>ピッカーの実装
 
-新しいをインスタンス化して、ピッカーを実装`UIPickerView`:
+新しい`UIPickerView`をインスタンス化して、ピッカーを実装します。
 
 ```csharp
 UIPickerView pickerView = new UIPickerView(
@@ -40,15 +40,15 @@ UIPickerView pickerView = new UIPickerView(
 );
 ```
 
-### <a name="pickers-and-storyboards"></a>ピッカーとストーリー ボード
+### <a name="pickers-and-storyboards"></a>ピッカーとストーリーボード
 
-選択を作成する、 **iOS Designer**、ドラッグ、**ピッカー ビュー**から、**ツールボックス**デザイン サーフェイスにします。
+**IOS デザイナー**でピッカーを作成するには、 **[ツールボックス]** から [**ピッカー] ビュー**をデザイン画面にドラッグします。
 
-![ピッカーの表示をデザイン画面にドラッグ](picker-images/image1.png "ピッカー ビューをデザイン画面にドラッグします")
+![デザイン画面にピッカービューをドラッグする](picker-images/image1.png "デザイン画面にピッカービューをドラッグする")
 
-### <a name="working-with-a-picker-control"></a>ピッカー コントロールの操作
+### <a name="working-with-a-picker-control"></a>ピッカーコントロールの操作
 
-ピッカーを使用して、_モデル_データと対話します。
+ピッカーは、_モデル_を使用してデータを操作します。
 
 ```csharp
 public override void ViewDidLoad()
@@ -59,8 +59,8 @@ public override void ViewDidLoad()
 }
 ```
 
-[ `UIPickerViewModel` ](xref:UIKit.UIPickerViewModel)基本クラスは、2 つのインターフェイスを実装します。 [`IUIPickerDataSource`](xref:UIKit.IUIPickerViewDataSource)
-[ `IUIPickerViewDelegate`](xref:UIKit.IUIPickerViewDelegate)ピッカーのデータを指定するさまざまなメソッドを宣言して、対話を処理する方法。
+基底[`UIPickerViewModel`](xref:UIKit.UIPickerViewModel)クラスは2つのインターフェイスを実装します。[`IUIPickerDataSource`](xref:UIKit.IUIPickerViewDataSource)
+ピッカー [`IUIPickerViewDelegate`](xref:UIKit.IUIPickerViewDelegate)のデータとその処理方法を指定するさまざまなメソッドを宣言すると。
 
 ```csharp
 public class PeopleModel : UIPickerViewModel
@@ -122,23 +122,23 @@ public class PeopleModel : UIPickerViewModel
     }
 ```
 
-複数の列を持つことができます、ピッカーまたは_コンポーネント_します。 コンポーネントは、簡単かつより特定のデータを選択できる場合の複数のセクションに、ピッカーをパーティション分割します。
+ピッカーには、複数の列または_コンポーネント_を含めることができます。 コンポーネントは、ピッカーを複数のセクションに分割し、より簡単で特定のデータを選択できるようにします。
 
-![2 つのコンポーネントでピッカー](picker-images/image3.png "2 つのコンポーネントの選択")
+![2 つのコンポーネントを含むピッカー](picker-images/image3.png "2 つのコンポーネントを含むピッカー")
 
-選択では、コンポーネントの数を指定するには、使用、 [`GetComponentCount`](xref:UIKit.UIPickerViewModel.GetComponentCount(UIKit.UIPickerView)) 
+ピッカー内のコンポーネントの数を指定するには、[`GetComponentCount`](xref:UIKit.UIPickerViewModel.GetComponentCount(UIKit.UIPickerView)) 
 メソッドをオーバーライドします。
 
-### <a name="customizing-a-pickers-appearance"></a>選択コントロールの外観のカスタマイズ
+### <a name="customizing-a-pickers-appearance"></a>ピッカーの外観のカスタマイズ
 
-ピッカーの外観をカスタマイズする、 [`UIPickerView.UIPickerViewAppearance`](xref:UIKit.UIPickerView.UIPickerViewAppearance)
-クラスのオーバーライド、 [ `GetView` ](xref:UIKit.UIPickerViewModel.GetView(UIKit.UIPickerView,System.nint,System.nint,UIKit.UIView))と[ `GetRowHeight` ](xref:UIKit.UIPickerViewModel.GetRowHeight(UIKit.UIPickerView,System.nint))メソッド、`UIPickerViewModel`します。
+ピッカーの外観をカスタマイズするには、[`UIPickerView.UIPickerViewAppearance`](xref:UIKit.UIPickerView.UIPickerViewAppearance)
+クラスをオーバーライドする[`GetView`](xref:UIKit.UIPickerViewModel.GetView(UIKit.UIPickerView,System.nint,System.nint,UIKit.UIView))か[`GetRowHeight`](xref:UIKit.UIPickerViewModel.GetRowHeight(UIKit.UIPickerView,System.nint)) 、の`UIPickerViewModel`メソッドおよびメソッドをオーバーライドします。
 
 ## <a name="uidatepicker"></a>UIDatePicker
 
-### <a name="implementing-a-date-picker"></a>日付の選択を実装します。
+### <a name="implementing-a-date-picker"></a>日付の選択を実装する
 
-日付の選択をインスタンス化する実装を`UIDatePicker`:
+をインスタンス化して、日付`UIDatePicker`の選択を実装します。
 
 ```csharp
 UIPickerView pickerView = new UIPickerView(
@@ -151,17 +151,17 @@ UIPickerView pickerView = new UIPickerView(
 );
 ```
 
-### <a name="date-pickers-and-storyboards"></a>日付の選択とストーリー ボード
+### <a name="date-pickers-and-storyboards"></a>日付のピッカーとストーリーボード
 
-日付の選択を作成する、 **iOS Designer**、ドラッグ、**日付選択カレンダー**から、**ツールボックス**デザイン サーフェイスにします。
+**IOS Designer**で日付の選択を作成するには、 **[ツールボックス]** から**日付の選択**をデザイン画面にドラッグします。
 
-![日付の選択をデザイン画面にドラッグ](picker-images/image2.png "日付の選択をデザイン画面にドラッグします")
+![日付の選択をデザイン画面にドラッグする](picker-images/image2.png "日付の選択をデザイン画面にドラッグする")
 
 ### <a name="date-picker-properties"></a>日付の選択のプロパティ
 
-#### <a name="minimum-and-maximum-date"></a>最小値と日付の最大値
+#### <a name="minimum-and-maximum-date"></a>日付の最小値と最大値
 
-[`MinimumDate`](xref:UIKit.UIDatePicker.MinimumDate) [ `MaximumDate` ](xref:UIKit.UIDatePicker.MaximumDate)日付選択カレンダーで使用できる日付の範囲を制限します。 たとえば、次のコードは、存在の瞬間に至るまでの 60 年に日付の選択を制限します。
+[`MinimumDate`](xref:UIKit.UIDatePicker.MinimumDate)日付[`MaximumDate`](xref:UIKit.UIDatePicker.MaximumDate)選択で使用できる日付の範囲を制限します。 たとえば、次のコードでは、日付の選択が現在までの60年に制限されています。
 
 ```csharp
 var calendar = new NSCalendar(NSCalendarType.Gregorian);
@@ -174,15 +174,15 @@ datePickerView.MaximumDate = NSDate.Now;
 ```
 
 > [!TIP]
-> 明示的にキャストすることができます、`DateTime`を`NSDate`:
+> を明示的ににキャスト`DateTime` `NSDate`することができます。
 > ```csharp
 > DatePicker.MinimumDate = (NSDate)DateTime.Today.AddDays (-7);
 > DatePicker.MaximumDate = (NSDate)DateTime.Today.AddDays (7);
 > ```
 
-#### <a name="minute-interval"></a>分単位の間隔
+#### <a name="minute-interval"></a>分間隔
 
-[ `MinuteInterval` ](xref:UIKit.UIDatePicker.MinuteInterval)プロパティは、ピッカーが分を表示する間隔を設定します。
+プロパティ[`MinuteInterval`](xref:UIKit.UIDatePicker.MinuteInterval)は、ピッカーが分を表示する間隔を設定します。
 
 ```csharp
 datePickerView.MinuteInterval = 10;
@@ -190,62 +190,62 @@ datePickerView.MinuteInterval = 10;
 
 #### <a name="mode"></a>モード
 
-日付の選択をサポートして 4 つ[モード](xref:UIKit.UIDatePickerMode)以下を参照します。
+日付のピッカーでは、次に示す4つの[モード](xref:UIKit.UIDatePickerMode)がサポートされています。
 
-##### <a name="uidatepickermodetime"></a>UIDatePickerMode.Time
+##### <a name="uidatepickermodetime"></a>UIDatePickerMode
 
-`UIDatePickerMode.Time` 時刻、時間と分のセレクター関数および省略可能な AM または PM の指定と表示されます。
+`UIDatePickerMode.Time`時間と分セレクター、およびオプションの AM または PM の指定を使用して時刻を表示します。
 
 ```csharp
 datePickerView.Mode = UIDatePickerMode.Time;
 ```
 
-![UIDatePickerMode.Time](picker-images/image8.png "UIDatePickerMode.Time")
+![UIDatePickerMode](picker-images/image8.png "UIDatePickerMode")
 
-##### <a name="uidatepickermodedate"></a>UIDatePickerMode.Date
+##### <a name="uidatepickermodedate"></a>UIDatePickerMode
 
-`UIDatePickerMode.Date` 1 か月、日、年のセレクターの日付が表示されます。
+`UIDatePickerMode.Date`月、日、および年のセレクターで日付を表示します。
 
 ```csharp
 datePickerView.Mode = UIDatePickerMode.Date;
 ```
 
-![UIDatePickerMode.Date](picker-images/image7.png "UIDatePickerMode.Date")
+![UIDatePickerMode](picker-images/image7.png "UIDatePickerMode")
 
-セレクターの順序は、既定では、システムのロケールを使用する日付の選択のロケールに依存します。 上の図は、セレクターのレイアウトを示します、`en_US`ロケールでは、次の日に順序を変更 |1 か月 |年。
+セレクターの順序は、日付選択のロケールによって異なります。既定では、システムロケールが使用されます。 上の図は、 `en_US`ロケールのセレクターのレイアウトを示していますが、次のようにして注文を Day | に変更しています。Month |比
 
 ```csharp
 datePickerView.Locale = NSLocale.FromLocaleIdentifier("en_GB");
 ```
 
-![1 日 |1 か月 |年](picker-images/image9.png "日 |1 か月 |1 年")
+![Day |Month |年月日](picker-images/image9.png "|Month |年")
 
-##### <a name="uidatepickermodedateandtime"></a>UIDatePickerMode.DateAndTime
+##### <a name="uidatepickermodedateandtime"></a>UIDatePickerMode
 
-`UIDatePickerMode.DateAndTime` 日付、時間と分、および (を 12 や 24 時間制を使用するかどうか) に応じて省略可能な AM または PM 指定の時間の短縮されたビューが表示されます。
+`UIDatePickerMode.DateAndTime`日付、時刻、時間 (分)、およびオプションの AM または PM の指定 (12 または24時間形式のどちらが使用されているかによって異なる) を表示します。
 
 ```csharp
 datePickerView.Mode = UIDatePickerMode.DateAndTime;
 ```
 
-![UIDatePickerMode.DateAndTime](picker-images/image6.png "UIDatePickerMode.DateAndTime")
+![UIDatePickerMode](picker-images/image6.png "UIDatePickerMode")
 
-同様[ `UIDatePickerMode.Date`](#uidatepickermodedate)セレクターの順序と、12 や 24 時間制の使用は、日付の選択のロケールに依存します。
+と[`UIDatePickerMode.Date`](#uidatepickermodedate)同様に、セレクターの順序と12または24時間の時刻の使用は、日付の選択のロケールによって異なります。
 
 > [!TIP]
-> 使用して、`Date`モードでの日付の選択の値をキャプチャするプロパティ`UIDatePickerMode.Time`、 `UIDatePickerMode.Date`、または`UIDatePickerMode.DateAndTime`します。 この値は、`NSDate`します。
+> `Date`モード、`UIDatePickerMode.Time` 、また`UIDatePickerMode.DateAndTime`はで日付選択の値を取得するには、プロパティを使用します。 `UIDatePickerMode.Date` この値はとして`NSDate`格納されます。
 
-##### <a name="uidatepickermodecountdowntimer"></a>UIDatePickerMode.CountDownTimer
+##### <a name="uidatepickermodecountdowntimer"></a>UIDatePickerMode
 
-`UIDatePickerMode.CountDownTimer` 1 時間と分の値が表示されます。
+`UIDatePickerMode.CountDownTimer`時間と分の値を表示します。
 
 ```csharp
 datePickerView.Mode = UIDatePickerMode.CountDownTimer;
 ```
 
-!["UIDatePickerMode.CountDownTimer"](picker-images/image5.png "UIDatePickerMode.CountDownTimer")
+!["UIDatePickerMode"](picker-images/image5.png "UIDatePickerMode")
 
-`CountDownDuration`プロパティの日付の選択の値をキャプチャする`UIDatePickerMode.CountDownTimer`モード。 たとえば、カウント ダウンの値を現在の日付に追加します。
+プロパティ`CountDownDuration`は、モードで`UIDatePickerMode.CountDownTimer`日付選択の値をキャプチャします。 たとえば、現在の日付にカウントダウン値を追加するには、次のようにします。
 
 ```csharp
 var currentTime = NSDate.Now;
@@ -257,9 +257,9 @@ dateLabel.Text = "Alarm set for:" + coundownTimeformat.ToString(finishCountdown)
 
 #### <a name="nsdateformatter"></a>NSDateFormatter
 
-書式設定、`NSDate`を使用して、 [ `NSDateFormatter`](xref:Foundation.NSDateFormatter)します。
+`NSDate`の書式を設定するに[`NSDateFormatter`](xref:Foundation.NSDateFormatter)は、を使用します。
 
-使用する、`NSDateFormatter`を呼び出してその[ `ToString` ](xref:Foundation.NSDateFormatter.ToString(Foundation.NSDate))メソッド。 例:
+を使用`NSDateFormatter`するには、 [`ToString`](xref:Foundation.NSDateFormatter.ToString(Foundation.NSDate))メソッドを呼び出します。 例えば:
 
 ```csharp
 var date = NSDate.Now;
@@ -272,7 +272,7 @@ var formattedDate = formatter.ToString(d);
 
 ##### <a name="dateformat"></a>DateFormat
 
-[ `DateFormat` ](xref:Foundation.NSDateFormatter.DateFormat)のプロパティ (文字列)、`NSDateFormatter`カスタマイズ可能な日付形式の仕様します。
+のプロパティ (文字列) を使用すると、カスタマイズ可能な日付形式の指定を行うことができます。`NSDateFormatter` [`DateFormat`](xref:Foundation.NSDateFormatter.DateFormat)
 
 ```csharp
 NSDateFormatter dateFormat = new NSDateFormatter();
@@ -281,39 +281,39 @@ dateFormat.DateFormat = "yyyy-MM-dd";
 
 ##### <a name="timestyle"></a>TimeStyle
 
-[ `TimeStyle` ](xref:Foundation.NSDateFormatter.TimeStyle)プロパティ (、 [ `NSDateFormatterStyle` ](xref:Foundation.NSDateFormatterStyle)の`NSDateFormatter`事前に定義されたスタイルに基づく時刻の書式設定を指定します。
+プロパティ[`TimeStyle`](xref:Foundation.NSDateFormatter.TimeStyle) (の`NSDateFormatter`)は、事前に定義されたスタイルに基づいて時間書式を指定します。 [`NSDateFormatterStyle`](xref:Foundation.NSDateFormatterStyle)
 
 ```csharp
 NSDateFormatter timeFormat = new NSDateFormatter();
 timeFormat.TimeStyle = NSDateFormatterStyle.Short;
 ```
 
-さまざまな`NSDateFormatterStyle`値時間が次のように表示されます。
+さまざま`NSDateFormatterStyle`な値は、次のように時刻を表示します。
 
-- `NSDateFormatterStyle.Full`:午後 7時 46分: 00 東部夏時間
-- `NSDateFormatterStyle.Long`:7時 47分: 00 PM EDT
-- `NSDateFormatterStyle.Medium`:7時 47分: 00 PM
-- `NSDateFormatterSytle.Short`:7時 47分 PM
+- `NSDateFormatterStyle.Full`:午後7:46:00 時東部夏時間
+- `NSDateFormatterStyle.Long` :7:47:00 PM EDT
+- `NSDateFormatterStyle.Medium`:7:47:00 PM
+- `NSDateFormatterSytle.Short` :7:47 PM
 
 ##### <a name="datestyle"></a>DateStyle
 
-[ `DateStyle` ](xref:Foundation.NSDateFormatter.DateStyle)プロパティ (、 `NSDateFormatterStyle`) の`NSDateFormatter`事前に定義されたスタイルに基づく日付の書式を指定します。
+の[`DateStyle`](xref:Foundation.NSDateFormatter.DateStyle)プロパティ`NSDateFormatterStyle`() は、事前に定義されたスタイルに基づいて日付の`NSDateFormatter`書式を指定します。
 
 ```csharp
 NSDateFormatter dateTimeformat = new NSDateFormatter();
 dateTimeformat.DateStyle = NSDateFormatterStyle.Long;
 ```
 
-さまざまな`NSDateFormatterStyle`値が次のように日付を表示します。
+さまざま`NSDateFormatterStyle`な値は、次のように日付を表示します。
 
-- `NSDateFormatterStyle.Full`:水曜日、2017 年 8 月 2日 7時 48分 pm
-- `NSDateFormatterStyle.Long`:2017 年 8 月 2 日午後 7時 49分
-- `NSDateFormatterStyle.Medium`:2017 年 8 月 2 日午後 7時 49分
-- `NSDateFormatterStyle.Short`:8 月 2 日、午後 7時 50分
+- `NSDateFormatterStyle.Full`:2017年8月2日、7:48 PM の水曜日
+- `NSDateFormatterStyle.Long`:2017年8月2日 7:49 PM
+- `NSDateFormatterStyle.Medium` :2017年8月2、7:49 PM
+- `NSDateFormatterStyle.Short`:8/2/17、7:50 PM
 
 > [!NOTE]
-> `DateFormat` `DateStyle` / `TimeStyle`日付と時刻の書式設定を指定するさまざまな方法を提供します。 最近プロパティを設定する日時フォーマッタの出力を決定します。
+> `DateFormat`と`DateStyle`には、日付と時刻の書式設定を指定するさまざまな方法が用意されて/ `TimeStyle`います。 最後に設定したプロパティによって、日付フォーマッタの出力が決まります。
 
 ## <a name="related-links"></a>関連リンク
 
-- [PickerControl (サンプル)](https://developer.xamarin.com/samples/monotouch/PickerControl/)
+- [PickerControl (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/pickercontrol)

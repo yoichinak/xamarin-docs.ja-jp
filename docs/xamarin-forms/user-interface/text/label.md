@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/26/2019
-ms.openlocfilehash: 31303114ddd829b596569981b5812b91c4e95b30
-ms.sourcegitcommit: 0cb62b02a7efb5426f2356d7dbdfd9afd85f2f4a
+ms.openlocfilehash: 5c12b5a5c0e558403362bd12baddfb8201f40759
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/13/2019
-ms.locfileid: "65557439"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68642925"
 ---
 # <a name="xamarinforms-label"></a>Xamarin.Forms のラベル
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
 _Xamarin.Forms にテキストを表示_
 
@@ -146,7 +146,7 @@ var label =
 
 ## <a name="formatted-text"></a>書式付きテキスト
 
-ラベルの公開、 [ `FormattedText` ](xref:Xamarin.Forms.Label.FormattedText)プロパティを複数のフォントとテキストの表示を許可し、同じビューでの色します。
+ラベルは、 [`FormattedText`](xref:Xamarin.Forms.Label.FormattedText)同じビューの複数のフォントと色を持つテキストを表示できるようにするプロパティを公開します。
 
 `FormattedText`プロパティの型は[ `FormattedString` ](xref:Xamarin.Forms.FormattedString)、1 つまたは複数で構成される[ `Span` ](xref:Xamarin.Forms.Span)設定を使用して、インスタンス、 [ `Spans` ](xref:Xamarin.Forms.FormattedString.Spans)プロパティ. `Span` 外観を設定することができます。
 
@@ -157,13 +157,13 @@ var label =
 - [`FontSize`](xref:Xamarin.Forms.Span.FontSize) -スパン内のテキストのフォントのサイズ。
 - [`ForegroundColor`](xref:Xamarin.Forms.Span.ForegroundColor) -スパン内のテキストの色。 このプロパティは廃止されましたが、`TextColor`プロパティに置き換えられました。
 - [`LineHeight`](xref:Xamarin.Forms.Span.LineHeight) -スパンの既定の行の高さに適用する乗数。 詳細については、次を参照してください。[行の高さ](#line-height)
-- [`Style`](xref:Xamarin.Forms.Span.Style)  – スパンに適用するスタイル。
+- [`Style`](xref:Xamarin.Forms.Span.Style)–スパンに適用するスタイル。
 - [`Text`](xref:Xamarin.Forms.Span.Text) – スパンのテキスト。
 - [`TextColor`](xref:Xamarin.Forms.Span.TextColor) -スパン内のテキストの色。
 - `TextDecorations` -スパン内のテキストに適用する装飾。 詳細については、次を参照してください。[文字装飾](#text-decorations)。
 
 > [!NOTE]
-> [ `BackgroundColor` ](xref:Xamarin.Forms.Span.BackgroundColor)、 [ `Text` ](xref:Xamarin.Forms.Span.Text)、および[ `Text` ](xref:Xamarin.Forms.Span.Text)バインド可能なプロパティの既定のバインド モードがある[ `OneWay`](xref:Xamarin.Forms.BindingMode). このバインディング モードの詳細については、次を参照してください。 [、既定のバインド モード](~/xamarin-forms/app-fundamentals/data-binding/binding-mode.md#the-default-binding-mode)で、[バインド モード](~/xamarin-forms/app-fundamentals/data-binding/binding-mode.md)ガイド。
+> 、 [`BackgroundColor`](xref:Xamarin.Forms.Span.BackgroundColor) [、`Text`](xref:Xamarin.Forms.Span.Text) [`OneWay`](xref:Xamarin.Forms.BindingMode)および[のバインド可能なプロパティには、の既定のバインディングモードがあります。`Text`](xref:Xamarin.Forms.Span.Text) このバインディングモードの詳細については、「[バインドモード](~/xamarin-forms/app-fundamentals/data-binding/binding-mode.md)ガイド」の[既定のバインドモード](~/xamarin-forms/app-fundamentals/data-binding/binding-mode.md#the-default-binding-mode)に関する説明を参照してください。
 
 さらに、 [ `GestureRecognizers` ](xref:Xamarin.Forms.GestureElement.GestureRecognizers)プロパティを使用して、 [ `Span`](xref:Xamarin.Forms.Span)のジェスチャに応答するジェスチャ レコグナイザーのコレクションを使用することができます。
 
@@ -298,14 +298,14 @@ var label = new Label
 
 ## <a name="hyperlinks"></a>ハイパーリンク
 
-によって表示されるテキスト[ `Label` ](xref:Xamarin.Forms.Label)と[ `Span` ](xref:Xamarin.Forms.Span)インスタンスは、次の方法でハイパーリンクに変換できます。
+[`Label`](xref:Xamarin.Forms.Label) [および`Span`](xref:Xamarin.Forms.Span)インスタンスによって表示されるテキストは、次の方法でハイパーリンクに変換できます。
 
-1. 設定、`TextColor`と`TextDecoration`のプロパティ、 [ `Label` ](xref:Xamarin.Forms.Label)または[ `Span`](xref:Xamarin.Forms.Span)します。
-1. 追加、 [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer)を[ `GestureRecognizers` ](xref:Xamarin.Forms.GestureElement.GestureRecognizers)のコレクション、 [ `Label` ](xref:Xamarin.Forms.Label)または[ `Span`](xref:Xamarin.Forms.Span)が[ `Command` ](xref:Xamarin.Forms.TapGestureRecognizer.Command)プロパティにバインドされて、 `ICommand`、およびその[ `CommandParameter` ](xref:Xamarin.Forms.TapGestureRecognizer.CommandParameter)プロパティには、開くための URL が含まれています。
-1. 定義、`ICommand`によって実行される、 [ `TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer)します。
-1. によって実行されるコードを記述、`ICommand`します。
+1. または`TextDecoration` `TextColor` [の`Span`](xref:Xamarin.Forms.Span)プロパティとプロパティを設定します。 [`Label`](xref:Xamarin.Forms.Label)
+1. [`GestureRecognizers`](xref:Xamarin.Forms.GestureElement.GestureRecognizers) [`CommandParameter`](xref:Xamarin.Forms.TapGestureRecognizer.CommandParameter) `ICommand`を[また`Label`](xref:Xamarin.Forms.Label)は[`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer) [のコレクションに追加します。このプロパティは、をにバインドし、そのプロパティには開くURLを格納します。`Span`](xref:Xamarin.Forms.Span) [`Command`](xref:Xamarin.Forms.TapGestureRecognizer.Command)
+1. によって実行されるを定義し[ます。`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer) `ICommand`
+1. によって`ICommand`実行されるコードを記述します。
 
-取得した次のコード例、[ハイパーリンク デモ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/HyperlinkDemos)サンプルを示しています、 [ `Label` ](xref:Xamarin.Forms.Label)コンテンツが複数設定[ `Span` ](xref:Xamarin.Forms.Span)インスタンス。
+次のコード例では、[ハイパーリンクのデモ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-hyperlinks/)のサンプルで、 [`Label`](xref:Xamarin.Forms.Label)複数[`Span`](xref:Xamarin.Forms.Span)のインスタンスからコンテンツが設定されているを示しています。
 
 ```xaml
 <Label>
@@ -326,13 +326,13 @@ var label = new Label
 </Label>
 ```
 
-この例では、最初と 3 番目の[ `Span` ](xref:Xamarin.Forms.Span) 、2 番目のテキストを構成するインスタンス`Span`tappable ハイパーリンクを表します。 これがそのテキストの色を青に設定し、下線文字の装飾が。 次のスクリーン ショットに示すように、ハイパーリンクの外観が作成されます。
+この例では、1番目[`Span`](xref:Xamarin.Forms.Span)と3番目のインスタンスが`Span`テキストを構成し、2番目のインスタンスは tappable ハイパーリンクを表します。 テキストの色が青色に設定され、下線が付きます。 これにより、次のスクリーンショットに示すように、ハイパーリンクの外観が作成されます。
 
 [![ハイパーリンク](label-images/hyperlinks-small.png "ハイパーリンク")](label-images/hyperlinks-large.png#lightbox)
 
-ハイパーリンクをタップすると、ときに、 [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer)が応答を実行して、`ICommand`によって定義されたその[ `Command` ](xref:Xamarin.Forms.TapGestureRecognizer.Command)プロパティ。 URL がさらに、指定された、 [ `CommandParameter` ](xref:Xamarin.Forms.TapGestureRecognizer.CommandParameter)プロパティに渡される、`ICommand`をパラメーターとして。
+ハイパーリンクがタップ[`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer)されると、はその[`Command`](xref:Xamarin.Forms.TapGestureRecognizer.Command)プロパティによっ`ICommand`て定義されたを実行して応答します。 さらに、 [`CommandParameter`](xref:Xamarin.Forms.TapGestureRecognizer.CommandParameter)プロパティによって指定された URL は、 `ICommand`パラメーターとしてに渡されます。
 
-XAML ページの分離コードが含まれています、`TapCommand`実装。
+XAML ページの分離コードには、次の`TapCommand`実装が含まれています。
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -352,13 +352,13 @@ public partial class MainPage : ContentPage
 }
 ```
 
-`TapCommand`実行、`OpenBrowser`渡して、メソッド、 [ `TapGestureRecognizer.CommandParameter` ](xref:Xamarin.Forms.TapGestureRecognizer.CommandParameter)プロパティの値をパラメーターとして。 さらに、このメソッドを呼び出す、 [ `Device.OpenUri` ](xref:Xamarin.Forms.Device.OpenUri*)メソッドを web ブラウザーで URL を開きます。 そのため、全体的な影響されるときに、ページのハイパーリンクがタップされた、web ブラウザーが表示され、ハイパーリンクに関連付けられている URL にナビゲートするとします。
+は`TapCommand` 、 `OpenBrowser`メソッドを実行して[`TapGestureRecognizer.CommandParameter`](xref:Xamarin.Forms.TapGestureRecognizer.CommandParameter) 、プロパティ値をパラメーターとして渡します。 次に、このメソッドはメソッド[`Device.OpenUri`](xref:Xamarin.Forms.Device.OpenUri*)を呼び出して、web ブラウザーで URL を開きます。 そのため、全体的な影響として、ページでハイパーリンクをタップすると、web ブラウザーが表示され、ハイパーリンクに関連付けられている URL に移動します。
 
-### <a name="creating-a-reusable-hyperlink-class"></a>ハイパーリンクの再利用可能なクラスを作成します。
+### <a name="creating-a-reusable-hyperlink-class"></a>再利用可能なハイパーリンククラスを作成する
 
-ハイパーリンクを作成するのには、前のアプローチでは、アプリケーションのハイパーリンクを必要とするたびに繰り返し発生するコードの記述が必要です。 ただし、両方、 [ `Label` ](xref:Xamarin.Forms.Label)と[ `Span` ](xref:Xamarin.Forms.Span)を作成するクラスをサブクラス化できます`HyperlinkLabel`と`HyperlinkSpan`ジェスチャ レコグナイザーおよびコードの書式設定テキストと共に、クラスそこにも追加します。
+前の方法でハイパーリンクを作成するには、アプリケーションでハイパーリンクが必要になるたびに繰り返しコードを記述する必要があります。 ただし、クラスと[`Label`](xref:Xamarin.Forms.Label) [`Span`](xref:Xamarin.Forms.Span)クラスの両方をサブクラス化`HyperlinkLabel`し`HyperlinkSpan`て、クラスとクラスを作成することができます。これには、ジェスチャ認識エンジンとテキスト書式コードを追加します。
 
-取得した次のコード例、[ハイパーリンク デモ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/HyperlinkDemos)サンプルを示しています、`HyperlinkSpan`クラス。
+次のコード例は、ハイパーリンクの[デモ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-hyperlinks/)のサンプルから抜粋し`HyperlinkSpan`たクラスを示しています。
 
 ```csharp
 public class HyperlinkSpan : Span
@@ -384,9 +384,9 @@ public class HyperlinkSpan : Span
 }
 ```
 
-`HyperlinkSpan`クラスを定義、`Url`プロパティと関連付けられた[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)、コンス トラクターは、ハイパーリンクの外観を設定して、 [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer)が応答します。ときにハイパーリンクをタップします。 ときに、`HyperlinkSpan`がタップされた、`TapGestureRecognizer`が応答を実行して、 [ `Device.OpenUri` ](xref:Xamarin.Forms.Device.OpenUri*)メソッドを呼び出して、によって指定された URL を開き、 `Url` web ブラウザーでのプロパティ。
+クラス`HyperlinkSpan` `Url`はプロパティを定義し、関連[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)付けられており、コンストラクターはハイパーリンクの[`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer)外観と、ハイパーリンクがタップされたときに応答するを設定します。 がタップされると、 `TapGestureRecognizer`は、 [`Device.OpenUri`](xref:Xamarin.Forms.Device.OpenUri*)メソッドを実行して、 `Url`プロパティによって指定された URL を web ブラウザーで開くことで応答します。 `HyperlinkSpan`
 
-`HyperlinkSpan`クラスのインスタンスを XAML に追加することでクラスを使用できます。
+`HyperlinkSpan`クラスは、クラスのインスタンスを XAML に追加することによって使用できます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -415,8 +415,8 @@ public class HyperlinkSpan : Span
 
 ## <a name="related-links"></a>関連リンク
 
-- [テキスト (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
-- [ハイパーリンク (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Hyperlinks)
+- [テキスト (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
+- [ハイパーリンク (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-hyperlinks)
 - [第 3 章、Xamarin.Forms でモバイル アプリの作成](https://developer.xamarin.com/r/xamarin-forms/book/chapter03.pdf)
 - [ラベルの API](xref:Xamarin.Forms.Label)
 - [API のスパン](xref:Xamarin.Forms.Span)

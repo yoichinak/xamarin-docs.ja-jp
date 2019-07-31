@@ -1,5 +1,5 @@
 ---
-title: Xamarin.iOS でバック グラウンド処理
+title: Xamarin. iOS のバックグラウンド処理
 description: バック グラウンド処理または backgrounding は、別のアプリケーションがフォア グラウンドで実行中に、アプリケーションにバック グラウンドでタスクを実行させる処理です。 このガイドは、iOSにおけるバック グラウンド処理の概要を説明します。
 ms.prod: xamarin
 ms.assetid: F377440C-C5D9-4267-85D8-2C816E3A0300
@@ -7,22 +7,22 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/05/2018
-ms.openlocfilehash: a4f5112b6e77ab6e00453c19c766d1e905df1144
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: ee96288cee83e3a073da4e12aaa4332e38beb804
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60946658"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68649271"
 ---
-# <a name="backgrounding-in-xamarinios"></a>Xamarin.iOS でバック グラウンド処理
+# <a name="backgrounding-in-xamarinios"></a>Xamarin. iOS のバックグラウンド処理
 
-_バック グラウンド処理またはバック グラウンド処理は、アプリケーションが別のアプリケーションがフォア グラウンドで実行中にバック グラウンドでタスクを実行できるようにすることのプロセスです。このガイドは、バック グラウンド処理で iOS の概要として機能します。_
+_バックグラウンド処理またはバックグラウンド処理は、別のアプリケーションがフォアグラウンドで実行されている間に、アプリケーションがバックグラウンドでタスクを実行できるようにするプロセスです。このガイドは、iOS でのバックグラウンド処理の概要として機能します。_
 
-モバイル アプリケーションのバック グラウンド処理は、デスクトップ上のマルチタスクの従来の概念と根本的に異なります。 デスクトップ コンピューターでは、さまざまな実際の画面、能力、メモリなど、アプリケーションで使用可能なリソースがあります。 アプリケーションは、サイド バイ サイドで実行して、パフォーマンスを維持して、使用可能です。 モバイル デバイスでは、リソースがはるかに限られます。 小さな画面では、1 つ以上のアプリケーションを表示することは困難ですし、バッテリーの消耗が最高速度でいくつかのアプリケーションを実行します。 バック グラウンド処理、うまく実行に必要なバック グラウンド タスクを実行するためのリソースをアプリケーションに与えると、応答性の高い foregrounded アプリケーションとデバイスを保持する定数折衷案です。 IOS と Android の両方があるため、バック グラウンド処理の準備が非常にさまざまな方法で処理します。
+モバイルアプリケーションのバックグラウンド処理は、デスクトップ上のマルチタスキングの従来の概念とは基本的に異なります。 デスクトップコンピューターには、画面の不動産、電力、メモリなど、アプリケーションで使用できるさまざまなリソースが用意されています。 アプリケーションはサイドバイサイドで実行でき、パフォーマンスと使用可能な状態を維持できます。 モバイルデバイスでは、リソースの制限がはるかに高くなります。 1つの小さな画面に複数のアプリケーションを表示することは困難であり、複数のアプリケーションを完全に実行するとバッテリが消耗します。 バックグラウンド処理は、パフォーマンスを向上させるために必要なバックグラウンドタスクを実行するためにアプリケーションにリソースを提供し、事前に接地されたアプリケーションとデバイスの応答性を維持するために、一定のセキュリティ侵害を受けます。 IOS と Android はどちらもバックグラウンド処理に対してプロビジョニングされていますが、まったく異なる方法で処理されます。
 
-Ios でバック グラウンド処理は、アプリケーションの状態として認識し、アプリとユーザーの動作によってバック グラウンドの状態との間のアプリを移動します。 iOS には、既知のバック グラウンドに必要なアプリケーションの一種として動作している重要なタスクを完了する時間の OS を依頼したり、バック グラウンドで実行するアプリを関連付けるためのいくつかのオプションも用意されていて、指定のアプリケーションのコンテンツを更新します。間隔。
+IOS では、バックグラウンド処理はアプリケーションの状態として認識され、アプリとユーザーの動作に応じて、アプリはバックグラウンド状態との間で移動されます。 また、iOS では、アプリをバックグラウンドで実行するためのいくつかのオプションが用意されています。たとえば、重要なタスクを完了するための時間を OS に要求し、既知のバックグラウンドで必要なアプリケーションの種類として操作し、指定された場所でアプリケーションのコンテンツを更新します。不定期.
 
-このガイドとチュートリアルに付属するバック グラウンドでアプリケーションのタスクを実行する方法を説明ましょう。 主要な概念とベスト プラクティス、について説明いたします。 そのし、バック グラウンドで位置情報の更新を受信する現実の世界のアプリの作成を進めます。
+このガイドと付随するチュートリアルでは、アプリケーションタスクをバックグラウンドで実行する方法について学習します。 ここでは、主要な概念とベストプラクティスについて説明した後、場所の更新をバックグラウンドで受け取る実際のアプリを作成します。
 
 ## <a name="contents"></a>目次
 
@@ -34,14 +34,14 @@ Ios でバック グラウンド処理は、アプリケーションの状態と
 
 ## <a name="summary"></a>まとめ
 
-このガイドでは、iOS でのバック グラウンド処理を行うさまざまな方法を導入しました。 IOS アプリケーションの状態を説明し、ios アプリケーションのライフ サイクル アプローチをバック グラウンド処理、ロールを確認します。 さらに、どのように個々 のタスクまたは iOS のバック グラウンドで動作する全体のアプリケーション登録でしたわかっています。 最後に、バック グラウンドで更新プログラムを実行するアプリケーションを構築することにより、iOS でバック グラウンド処理の理解を補強します。
+このガイドでは、iOS でバックグラウンド処理を行うさまざまな方法を紹介しました。 Ios アプリケーションの状態について説明し、iOS アプリケーションのライフサイクルでバックグラウンド処理が果たす役割を確認します。 また、iOS のバックグラウンドで動作するように個々のタスクまたはアプリケーション全体を登録する方法についても説明しました。 最後に、バックグラウンドで更新を実行するアプリケーションを構築することにより、iOS でのバックグラウンド処理に関する理解を深めます。
 
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [Android でバック グラウンド処理](~/android/app-fundamentals/services/index.md)
-- [LifecycleDemo (サンプル)](https://developer.xamarin.com/samples/monotouch/LifecycleDemo/)
-- [場所 (サンプル)](https://developer.xamarin.com/samples/monotouch/Location/)
-- [単純なバック グラウンド転送 (サンプル)](https://developer.xamarin.com/samples/monotouch/SimpleBackgroundTransfer/)
-- [iOS バック グラウンドで実行](https://developer.apple.com/library/ios/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/BackgroundExecution/BackgroundExecution.html)
+- [Android でのバックグラウンド処理](~/android/app-fundamentals/services/index.md)
+- [LifecycleDemo (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/lifecycledemo)
+- [場所 (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/location)
+- [単純なバックグラウンド転送 (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/simplebackgroundtransfer)
+- [iOS のバックグラウンド実行](https://developer.apple.com/library/ios/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/BackgroundExecution/BackgroundExecution.html)

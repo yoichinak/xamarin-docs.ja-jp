@@ -1,35 +1,35 @@
 ---
-title: Xamarin.Android と Wear の OS の画面サイズの使用
+title: Xamarin. Android および磨耗 OS での画面サイズの操作
 ms.prod: xamarin
 ms.assetid: 77831169-C663-4D42-B742-B8B556B1DA4B
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: a9b71fb069a428d9bec03481c986f4deb4c904ea
-ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
+ms.openlocfilehash: 93e6797f2b00df32b8d3ae361f40fd487b7adac3
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66827736"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68647725"
 ---
-# <a name="working-with-screen-sizes"></a>画面サイズの使用
+# <a name="working-with-screen-sizes"></a>画面サイズの操作
 
-四角形またはラウンドの表示、さまざまなサイズにすることもできますが、android Wear デバイスを持つことができます。
+Android の磨耗デバイスは、四角形または丸いディスプレイを持つことができます。サイズも異なる場合があります。
 
-![四角形と円形 Wear のスクリーン ショットを表示します](screen-sizes-images/moyeu-wear.png)
+![四角形と丸い磨耗の画面のスクリーンショット](screen-sizes-images/moyeu-wear.png)
 
-## <a name="identifying-screen-type"></a>画面の種類を識別します。
+## <a name="identifying-screen-type"></a>画面の種類の識別
 
-Wear サポート ライブラリを提供する際に役立ついくつかのコントロールを検出およびなど、さまざまな画面の図形に適応`WatchViewStub`と`BoxInsetLayout`します。
+磨耗サポートライブラリには、 `WatchViewStub`や`BoxInsetLayout`など、さまざまな画面図形の検出と調整に役立つコントロールが用意されています。
 
-ライブラリ コントロールをサポートしてその他のことに注意してください (など`GridViewPager`)*自動的に*自体の画面の図形を検出し、コントロールの子が以下に示すように追加することはできません。
+他のサポートライブラリコントロール ( `GridViewPager`など) の一部は*自動的に*スクリーンシェイプを検出し、以下で説明するコントロールの子として追加することはできないことに注意してください。
 
 ### <a name="watchviewstub"></a>WatchViewStub
 
-参照してください、 [WatchViewStub](https://developer.xamarin.com/samples/monodroid/wear/WatchViewStub/)サンプルを画面の種類を検出し、種類ごとに異なるレイアウトを表示する方法を参照してください。
+画面の種類を検出し、種類ごとに異なるレイアウトを表示する方法については、 [WatchViewStub](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-watchviewstub)サンプルを参照してください。
 
-メインのレイアウト ファイルが含まれています、`android.support.wearable.view.WatchViewStub`を使用して四角形と円形の画面のさまざまなレイアウトを参照する、`app:rectLayout`と`app:roundLayout`属性。
+メインレイアウトファイルには、 `android.support.wearable.view.WatchViewStub`属性`app:rectLayout`と`app:roundLayout`属性を使用して、四角形と丸い画面のさまざまなレイアウトを参照するが含まれています。
 
 ```xml
 <android.support.wearable.view.WatchViewStub
@@ -41,48 +41,48 @@ Wear サポート ライブラリを提供する際に役立ついくつかの�
   app:roundLayout="@layout/round_layout" />
 ```
 
-ソリューションには、実行時に選択されますが、各スタイルのさまざまなレイアウトが含まれています。
+ソリューションには、実行時に選択されるスタイルごとに異なるレイアウトが含まれています。
 
-![ファイル リソース/レイアウトの下に表示](screen-sizes-images/solution.png)
+![[リソース/レイアウト] の下に表示されるファイル](screen-sizes-images/solution.png)
 
 
 ### <a name="boxinsetlayout"></a>BoxInsetLayout
 
-各画面の種類ごとに異なるレイアウトを構築するのではなく四角形またはラウンド画面に適応できる単一のビューも作成できます。
+画面の種類ごとに異なるレイアウトを作成するのではなく、四角形または丸い画面に適応する1つのビューを作成することもできます。
 
-これは、 [Google 例](https://developer.android.com/training/wearables/ui/layouts.html#same-layout)を使用する方法を示しています、`BoxInsetLayout`四角形と円形の両方の画面で、同じレイアウトを使用します。
-
-
-## <a name="wear-ui-designer"></a>Wear UI デザイナー
-
-Xamarin Android Designer には、四角形と円形の両方の画面がサポートされています。
-
-![Xamarin Android Designer で Android Wear の正方形の画面を選択します。](screen-sizes-images/design-screen-type.png)
-
-四角形のスタイルでデザイン画面を次に示します。
-
-![四角形のスタイルでデザイン画面](screen-sizes-images/design-rect.png) 
-
-Round スタイルでデザイン画面を次に示します。
-
-![Round スタイルでデザイン画面](screen-sizes-images/design-round.png)
+この[Google の例](https://developer.android.com/training/wearables/ui/layouts.html#same-layout)では、を`BoxInsetLayout`使用して、四角形と丸い両方の画面で同じレイアウトを使用する方法を示します。
 
 
-## <a name="wear-simulator"></a>Wear シミュレーター
+## <a name="wear-ui-designer"></a>摩耗 UI デザイナー
 
-**Google エミュレーター マネージャー**画面の種類の両方のデバイスの定義が含まれています。 アプリをテストする四角形と円形のエミュレーターを作成することができます。
+Xamarin Android Designer は、四角形と丸い両方の画面をサポートしています。
 
-![Wear デバイス定義の Google エミュレーター マネージャーで表示されます。](screen-sizes-images/emulator-devices.png)
+![Xamarin Android Designer の [Android の磨耗の四角形] 画面を選択する](screen-sizes-images/design-screen-type.png)
 
-エミュレーターは、次のように四角形の画面にレンダリングされます。
+四角形のスタイルのデザイン画面を次に示します。
 
-![エミュレーターの四角形の画面の表示](screen-sizes-images/recipe-2.png) 
+![四角形スタイルのデザインサーフェイス](screen-sizes-images/design-rect.png) 
 
-このようなラウンド画面にレンダリングされます。
+次のように、ラウンドスタイルのデザイン画面が表示されます。
 
-![エミュレーター ラウンド画面の表示](screen-sizes-images/recipe-2-round.png)
+![デザインサーフェイスのラウンドスタイル](screen-sizes-images/design-round.png)
+
+
+## <a name="wear-simulator"></a>磨耗シミュレーター
+
+**Google Emulator Manager**には、両方の画面の種類のデバイス定義が含まれています。 アプリケーションをテストするために、四角形と丸いエミュレーターを作成できます。
+
+![Google Emulator Manager に表示される磨耗デバイスの定義](screen-sizes-images/emulator-devices.png)
+
+エミュレーターは、次のように四角形の画面に表示されます。
+
+![四角形の画面のエミュレーターレンダリング](screen-sizes-images/recipe-2.png) 
+
+次のような画面が表示されます。
+
+![エミュレーターレンダリングのラウンドスクリーン](screen-sizes-images/recipe-2-round.png)
 
 ## <a name="video"></a>ビデオ
 
-[Android Wear 用アプリを全画面表示](https://www.youtube.com/watch?v=naf_WbtFAlY)から[developers.google.com](https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw)します。
+[Developers.google.com](https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw)から[の Android 磨耗用の全画面アプリ](https://www.youtube.com/watch?v=naf_WbtFAlY)。
 

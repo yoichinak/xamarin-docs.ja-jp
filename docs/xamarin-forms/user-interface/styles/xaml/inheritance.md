@@ -7,20 +7,20 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: c5fa46a67496123eb105ae12404d5607032f5ac1
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: 24f6eac93dd3095df70bbb326388cd9ed47f395c
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65971147"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657057"
 ---
 # <a name="style-inheritance-in-xamarinforms"></a>Xamarin.Forms でスタイル継承
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/BasicStyles/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
 
 _スタイルは、重複を削減し、再利用を有効にするには、その他のスタイルを継承できます。_
 
-## <a name="style-inheritance-in-xaml"></a>XAML でスタイル継承
+## <a name="style-inheritance-in-xaml"></a>XAML でのスタイルの継承
 
 スタイルの継承を設定して実行、 [ `Style.BasedOn` ](xref:Xamarin.Forms.Style.BasedOn)プロパティを既存[ `Style`](xref:Xamarin.Forms.Style)します。 XAML に設定してこれは、`BasedOn`プロパティを`StaticResource`以前に作成した参照するマークアップ拡張機能`Style`します。 C# での設定でこれは、`BasedOn`プロパティを`Style`インスタンス。
 
@@ -69,7 +69,7 @@ _スタイルは、重複を削減し、再利用を有効にするには、そ�
 > [!NOTE]
 > 暗黙的なスタイルは、明示的なスタイルから派生できますが、明示的なスタイルは暗黙的なスタイルから派生することはできません。
 
-### <a name="respecting-the-inheritance-chain"></a>継承チェーンを尊重し
+### <a name="respecting-the-inheritance-chain"></a>継承チェーンを尊重する
 
 スタイルは、同じレベル以上のスタイルからのみ継承できますで階層を表示します。 これによって、次のことが起こります。
 
@@ -108,7 +108,7 @@ _スタイルは、重複を削減し、再利用を有効にするには、そ�
 
 この例で`labelStyle`と`buttonStyle`レベルのリソースをコントロールには中に`baseStyle`はページ レベル リソースです。 ただし、`labelStyle`と`buttonStyle`継承`baseStyle`のことはできません`baseStyle`から継承する`labelStyle`または`buttonStyle`はそれぞれの場所で階層を表示している。
 
-## <a name="style-inheritance-in-c35"></a>C スタイルの継承&#35;
+## <a name="style-inheritance-in-c35"></a>C でのスタイル継承&#35;
 
 同等の C# ページで、 [ `Style` ](xref:Xamarin.Forms.Style)インスタンスに直接割り当てられた、 [ `Style` ](xref:Xamarin.Forms.NavigableElement.Style) 、必要なコントロールのプロパティが次のコード例に示すように。
 
@@ -158,8 +158,8 @@ public class StyleInheritancePageCS : ContentPage
 ## <a name="related-links"></a>関連リンク
 
 - [XAML マークアップ拡張](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
-- [基本的なスタイル (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/BasicStyles/)
-- [スタイル (サンプル) を使用します。](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithStyles/)
+- [基本的なスタイル (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
+- [スタイル (サンプル) を使用します。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithstyles)
 - [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
 - [スタイル](xref:Xamarin.Forms.Style)
 - [Set アクセス操作子](xref:Xamarin.Forms.Setter)

@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 10/25/2017
-ms.openlocfilehash: a2af40d7af5cac39cc92c8e2bc88b5fbcf81291e
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: ce2f62869057fc83b04b58af37d6ffffd5ad7fb8
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510045"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68646472"
 ---
 # <a name="using-cursoradapters-with-xamarinandroid"></a>Xamarin Android でのカーソルの使用
 
@@ -173,5 +173,5 @@ listView.Adapter = (IListAdapter)new HomeScreenCursorAdapter(this, cursor, false
 
 ## <a name="related-links"></a>関連リンク
 
-- [SimpleCursorTableAdapter (サンプル)](https://developer.xamarin.com/samples/monodroid/SimpleCursorTableAdapter/)
-- [カーソル Tableadapter (サンプル)](https://developer.xamarin.com/samples/monodroid/CursorTableAdapter/)
+- [SimpleCursorTableAdapter (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/simplecursortableadapter)
+- [カーソル Tableadapter (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/cursortableadapter)

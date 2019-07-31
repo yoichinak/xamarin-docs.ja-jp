@@ -1,52 +1,52 @@
 ---
 title: tvOS 12 の概要
-description: このドキュメントでは、現在 c# バインディングを提供する Xamarin のプレビュー リリースの tvOS 12 で新規および更新された機能の概要についての概要を説明します。
+description: このドキュメントでは、Xamarin のプレビューリリースで現在バインドが提供さC#れている tvOS 12 の新機能と更新された機能の概要について説明します。
 ms.prod: xamarin
 ms.assetid: 037F7FFF-2155-4017-B99A-839CE7EC5C9C
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: f7fb8cc379a070b848c5154c9c1d4fbfc8186266
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 16568ca06a7c6be9d23ebb44e9c958b06bbc6bdf
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60932544"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657350"
 ---
 # <a name="introduction-to-tvos-12"></a>tvOS 12 の概要
 
-このドキュメントでは、新規および更新された tvOS 12 の大まかな概要を説明します。
+このドキュメントでは、新規および更新された tvOS 12 の概要について説明します。
 
-Xamarin で tvOS 12 のアプリの構築を開始するを参照してください、[ファースト ステップ ガイド](~/ios/platform/introduction-to-ios12/get-started.md)します。
+Xamarin で tvOS 12 アプリのビルドを開始するには、[ファーストステップガイド](~/ios/platform/introduction-to-ios12/get-started.md)を参照してください。
 
 ## <a name="tvuikit"></a>TVUIKit
 
-tvOS 12 には、TVUIKit、tvOS 開発者ポスター ビュー、キャプション ボタン、カード ビュー、およびモノグラム ビューなどの一般的な tvOS コントロールを使用することができるようにする Api のセットが含まれています。 tvOS 12 には、長すぎるため、完全に表示されるテキストをスクロールするラベルのプロパティも導入されています。
+tvOS 12 には TVUIKit が含まれています。これは、tvOS 開発者がポスタービュー、キャプションボタン、カードビュー、monogram ビューなどの一般的な tvOS コントロールを使用できるようにする Api のセットです。 また、tvOS 12 には、長すぎるテキストをスクロールして完全に表示できないようにするプロパティも導入されています。
 
 ## <a name="password-autofill"></a>パスワードのオートコンプリート
 
-TvOS 12、ユーザーは 1 回のタップで tvOS アプリにサインインを iOS デバイスを使用できます。 組み合わせによってこれが有効になって`UITextContentType`ユーザー名とパスワードを指定する使用法フィールド、iOS アプリと tvOS アプリでは、ユーザーの後にフォーカスを受け取る項目を選択する優先フォーカス環境との関係を確立するために関連付けられているドメインユーザー名とパスワードを提供します。
+TvOS 12 では、ユーザーは iOS デバイスを使用して、1回のタップで tvOS アプリにサインインできます。 これは、ユーザー名とパスワード`UITextContentType`のフィールド、関連付けられているドメインを指定して iOS アプリと tvOS アプリの間の関係を確立するために使用する組み合わせによって有効になります。また、ユーザーの後にフォーカスを受け取る項目を選択するための推奨される環境です。ユーザー名とパスワードを提供します。
 
-## <a name="focus-engine-enhancements"></a>フォーカス エンジンの機能強化
+## <a name="focus-engine-enhancements"></a>フォーカスエンジンの機能強化
 
-tvOS 12 方法にレンダリングされる、フォーカス エンジンとの対話に関係なく、すべてのアプリを許可します。 Siri のリモート ユーザーの対話を通じて 項目を選択して、示唆している可能性のフォーカスの変更、および自然フォーカスを更新、フォーカス エンジンすべてのアプリで使用できます。 UIKit のカスタム アプリケーションでこれを有効に`IUIFocusItemContainer`、インターフェイス、`UIFocusMovementHint`クラス、`IUIFocusItemScrollableContainer`インターフェイス、およびその他の関連するクラスとメソッド。
+tvOS 12 では、レンダリング方法に関係なくすべてのアプリがフォーカスエンジンと対話できます。 Siri リモートとのユーザーのやり取りを通じて、フォーカスエンジンを任意のアプリと共に使用して、項目を選択したり、影響を受ける可能性のある変更や、自然な更新に焦点を当てることができます。 これは、カスタムアプリケーションで、uikit の`IUIFocusItemContainer`インターフェイス`UIFocusMovementHint` 、クラス、 `IUIFocusItemScrollableContainer`インターフェイス、およびその他の関連するクラスおよびメソッドを使用して有効にします。
 
-## <a name="vision-framework"></a>ビジョン フレームワーク
+## <a name="vision-framework"></a>ビジョンフレームワーク
 
-ビジョン フレームワークには、さまざまな方向に顔を検出できる強化された顔検出機能が含まれています。 また、要求のリビジョンはビジョン framework アルゴリズムの特定のリビジョンを選択するようになりました使用できます。
+ビジョンフレームワークには、さまざまな向きで顔を検出できる改善された顔検出機能が含まれています。 また、要求のリビジョンを使用して、特定のビジョンフレームワークアルゴリズムリビジョンを選択できるようになりました。
 
 ## <a name="natural-language-framework"></a>自然言語フレームワーク
 
-自然言語、フレームワークは、アプリケーションをさまざまな種類の言語分析を実行できます。 たとえば、品詞を特定し、テキストのブロックで表される言語を決定する、使用できます。
+自然言語フレームワークを使用すると、アプリケーションはさまざまな種類の言語分析を実行できます。 たとえば、音声の一部を識別し、テキストブロックで表される言語を特定するために使用できます。
 
-## <a name="deprecations"></a>廃止された機能
+## <a name="deprecations"></a>廃止
 
-TvOS 12 で Apple の OpenGL ES、使用は推奨[開発者](https://developer.apple.com/tvos/whats-new/)メタルを採用します。
+TvOS 12 では、Apple では OpenGL ES が非推奨とされており、[開発者](https://developer.apple.com/tvos/whats-new/)は金属を採用するようにしています。
 
 ## <a name="related-links"></a>関連リンク
 
-- [tvOS のサンプル](https://developer.xamarin.com/samples/tvos/all/)
+- [tvOS のサンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
 - [tvOS – Apple Developer (Apple)](https://developer.apple.com/tvos/)
-- [新機能については tvOS 12 (Apple) (ビデオ)](https://developer.apple.com/videos/play/wwdc2018/208/)
-- [テレビ (Apple)](https://www.apple.com/tv/)
+- [TvOS 12 (Apple) の新機能 (ビデオ)](https://developer.apple.com/videos/play/wwdc2018/208/)
+- [TV (Apple)](https://www.apple.com/tv/)

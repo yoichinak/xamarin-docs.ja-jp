@@ -7,22 +7,22 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/12/2019
-ms.openlocfilehash: 671abb0f61a5582a99165aa16c6b99db2ee8b1ee
-ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
+ms.openlocfilehash: 1aacd9a29ca13335d14f66175b2d2a4ccb19c9dc
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67512879"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655964"
 ---
 # <a name="xamarinforms-device-class"></a>Xamarin.Forms のデバイス クラス
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithDevice/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithdevice)
 
 [ `Device` ](xref:Xamarin.Forms.Device)クラスには、さまざまなプロパティとレイアウトと、プラットフォームごとに機能をカスタマイズする開発者を支援するメソッドが含まれています。
 
-ターゲットのコードでは、特定のハードウェアの種類とサイズ、するメソッドとプロパティだけでなく、`Device`クラスには、バック グラウンド スレッドから UI コントロールとの対話に使用できるメソッドが含まれています。 詳細については、次を参照してください。[バック グラウンド スレッドから UI を使用した対話](#interact-with-the-ui-from-background-threads)します。
+`Device`クラスには、特定のハードウェアの種類とサイズでコードをターゲットにするためのメソッドとプロパティに加えて、バックグラウンドスレッドから UI コントロールを操作するために使用できるメソッドが用意されています。 詳細については、「[バックグラウンドスレッドから UI を操作する](#interact-with-the-ui-from-background-threads)」を参照してください。
 
-## <a name="providing-platform-specific-values"></a>プラットフォーム固有の値を提供します。
+## <a name="providing-platform-specific-values"></a>プラットフォーム固有の値の指定
 
 Xamarin.Forms 2.3.4、前に、アプリケーションが実行されていたプラットフォームを調べることによって入手でした、 [ `Device.OS` ](xref:Xamarin.Forms.Device.OS)プロパティと比較することに、 [ `TargetPlatform.iOS` ](xref:Xamarin.Forms.TargetPlatform.iOS)、 [`TargetPlatform.Android` ](xref:Xamarin.Forms.TargetPlatform.Android)、 [ `TargetPlatform.WinPhone` ](xref:Xamarin.Forms.TargetPlatform.WinPhone)、および[ `TargetPlatform.Windows` ](xref:Xamarin.Forms.TargetPlatform.Windows)列挙値。 同様に、1 つの[ `Device.OnPlatform` ](xref:Xamarin.Forms.Device.OnPlatform(System.Action,System.Action,System.Action,System.Action))コントロールにプラットフォーム固有の値を指定するオーバー ロードを使用する可能性があります。
 
@@ -180,24 +180,24 @@ Device.StartTimer (new TimeSpan (0, 0, 60), () => {
 
 タイマーの内部コードがユーザー インターフェイスとやり取りするかどうか (のテキストを設定するなど、`Label`または通知を表示する) 内で行う必要がありますが、`BeginInvokeOnMainThread`式 (下記参照)。
 
-## <a name="interact-with-the-ui-from-background-threads"></a>バック グラウンド スレッドから UI との対話します。
+## <a name="interact-with-the-ui-from-background-threads"></a>バックグラウンドスレッドから UI を操作する
 
-IOS、Android、およびユニバーサル Windows プラットフォームを含む、ほとんどのオペレーティング システムでは、ユーザー インターフェイスに関連するコードにシングル スレッド モデルを使用します。 このスレッドが多くの場合と呼ばれる、*メイン スレッド*または*UI スレッド*します。 このモデルの結果には、アプリケーションのメイン スレッドでのユーザー インターフェイス要素にアクセスするすべてのコードを実行する必要があります。
+IOS、Android、およびユニバーサル Windows プラットフォームを含むほとんどのオペレーティングシステムは、ユーザーインターフェイスを含むコードにシングルスレッドモデルを使用します。 このスレッドは、多くの場合、*メインスレッド*または*UI スレッド*と呼ばれます。 このモデルの結果として、ユーザーインターフェイス要素にアクセスするすべてのコードは、アプリケーションのメインスレッドで実行する必要があります。
 
-アプリケーションは、バック グラウンド スレッドを使用して web サービスからのデータの取得などの実行時間の長い可能性がある操作を実行することがあります。 をバック グラウンド スレッドで実行されているコードがユーザー インターフェイス要素にアクセスする必要がある場合は、そのコードをメイン スレッドで実行があります。
+アプリケーションでは、バックグラウンドスレッドを使用して、web サービスからデータを取得するなど、長時間実行される可能性がある操作を実行することがあります。 バックグラウンドスレッドで実行されているコードがユーザーインターフェイス要素にアクセスする必要がある場合は、メインスレッドでそのコードを実行する必要があります。
 
-`Device`クラスには、次が含まれています。`static`ユーザーとの対話に使用できるメソッドをインターフェイスの背景のスレッドからの要素。
+クラス`Device`には、バックグラウンド`static`スレッドからユーザーインターフェイス要素を操作するために使用できる次のメソッドが含まれています。
 
 | メソッド | 引数 | 戻り値 | 目的 |
 |---|---|---|---|
-| `BeginInvokeOnMainThread` | `Action` | `void` | 呼び出す、`Action`のメイン スレッドで完了するを待ちませんとします。 |
-| `InvokeOnMainThreadAsync<T>` | `Func<T>` | `Task<T>` | 呼び出す、`Func<T>`メイン スレッドで完了するまで待機します。 |
-| `InvokeOnMainThreadAsync` | `Action` | `Task` | 呼び出す、`Action`メイン スレッドで完了するまで待機します。 |
-| `InvokeOnMainThreadAsync<T>`| `Func<Task<T>>` | `Task<T>` | 呼び出す、`Func<Task<T>>`メイン スレッドで完了するまで待機します。 |
-| `InvokeOnMainThreadAsync` | `Func<Task>` | `Task` | 呼び出す、`Func<Task>`メイン スレッドで完了するまで待機します。 |
-| `GetMainThreadSynchronizationContextAsync` | | `Task<SynchronizationContext>` | 返します、`SynchronizationContext`メイン スレッドにします。 |
+| `BeginInvokeOnMainThread` | `Action` | `void` | メインスレッド`Action`でを呼び出し、完了するまで待機しません。 |
+| `InvokeOnMainThreadAsync<T>` | `Func<T>` | `Task<T>` | メインスレッド`Func<T>`でを呼び出し、完了するまで待機します。 |
+| `InvokeOnMainThreadAsync` | `Action` | `Task` | メインスレッド`Action`でを呼び出し、完了するまで待機します。 |
+| `InvokeOnMainThreadAsync<T>`| `Func<Task<T>>` | `Task<T>` | メインスレッド`Func<Task<T>>`でを呼び出し、完了するまで待機します。 |
+| `InvokeOnMainThreadAsync` | `Func<Task>` | `Task` | メインスレッド`Func<Task>`でを呼び出し、完了するまで待機します。 |
+| `GetMainThreadSynchronizationContextAsync` | | `Task<SynchronizationContext>` | メインスレッド`SynchronizationContext`のを返します。 |
 
-次のコードを使用する例を示しています、`BeginInvokeOnMainThread`メソッド。
+次のコードは、 `BeginInvokeOnMainThread`メソッドの使用例を示しています。
 
 ```csharp
 Device.BeginInvokeOnMainThread (() =>
@@ -208,6 +208,6 @@ Device.BeginInvokeOnMainThread (() =>
 
 ## <a name="related-links"></a>関連リンク
 
-- [デバイスのサンプル](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithDevice/)
-- [スタイルのサンプル](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithStyles/)
+- [デバイスのサンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithdevice)
+- [スタイルのサンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithstyles)
 - [デバイス](xref:Xamarin.Forms.Device)

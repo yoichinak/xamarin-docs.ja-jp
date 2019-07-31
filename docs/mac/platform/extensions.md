@@ -1,24 +1,24 @@
 ---
 title: Xamarin.Mac 拡張機能のサポート
-description: このドキュメントでは、Xamarin.Mac の Finder や共有など、今日の拡張機能のサポートについて説明します。 制限事項と既知の問題、チュートリアルおよびサンプル アプリへのリンクを検査し、拡張機能を操作するためのヒントを提供します。
+description: このドキュメントでは、Xamarin. Mac での Finder、共有、および今日の拡張機能のサポートについて説明します。 制限事項と既知の問題、チュートリアルとサンプルアプリへのリンク、および拡張機能を使用するためのヒントについて説明します。
 ms.prod: xamarin
 ms.assetid: 4148F1BE-DFA0-46B6-9FCD-425A6541F510
 ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 0f4d6bb042f8bc8d48b45d7148984a53e3ce3437
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 5138062cec6ee71f1db17d0118001b59dd7bc02c
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61032529"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68642946"
 ---
 # <a name="xamarinmac-extension-support"></a>Xamarin.Mac 拡張機能のサポート
 
-Xamarin.Mac 2.10 で複数の macOS の拡張ポイントのサポートが追加されました。
+2\.10 Xamarin では、複数の macOS 拡張ポイントにサポートが追加されました。
 
-- ファインダー
+- 周り
 - 共有
 - 今日
 
@@ -26,43 +26,43 @@ Xamarin.Mac 2.10 で複数の macOS の拡張ポイントのサポートが追�
 
 ## <a name="limitations-and-known-issues"></a>制限事項と既知の問題
 
-次の制限し、Xamarin.Mac で拡張機能を開発するときに発生する可能性がある問題を把握します。
+次に、Xamarin. Mac で拡張機能を開発するときに発生する可能性がある制限事項と既知の問題について説明します。
 
-* 現在 Visual studio for mac のデバッグのサポートはありません。 使用して実行する必要がありますすべてデバッグ**NSLog**と**コンソール**します。 詳細については以下のヒント」セクションを参照してください。
-* 拡張機能が含まれている必要がありますが、ホスト アプリケーションで時は、システムでのレジスタに 1 回を実行します。 有効にする必要がありますし、**拡張子**のセクション**システム環境設定**します。 
-* いくつかの拡張機能のクラッシュは、ホスト アプリケーションが不安定になるし、予想外の動作が発生する可能性があります。 具体的には、 **Finder**と**今日**のセクション、**通知センター** 「詰まった」になるし、応答しなくなる可能性があります。 これにより、拡張機能プロジェクトで Xcode でも、経験豊富なされており、現在 Xamarin.Mac に関連付けられていないが表示されます。 これを確認して、システム ログに多くの場合、(を使用して**コンソール**、詳細については、ヒントを参照してください) に繰り返されるエラー メッセージを出力します。 これを解決する macOS の再起動が表示されます。
+* 現在、Visual Studio for Mac ではデバッグはサポートされていません。 すべてのデバッグは、 **Nslog**と**コンソール**を使用して行う必要があります。 詳細については、以下のヒントセクションを参照してください。
+* 拡張機能は、ホストアプリケーションに含まれている必要があります。これは、システムに登録して一度実行する場合に使用します。 その後、**システム環境設定**の**拡張**セクションで有効にする必要があります。 
+* 拡張機能のクラッシュによっては、ホストアプリケーションが不安定になり、予期しない動作が発生することがあります。 特に、**通知センター**の**Finder**と**今日**のセクションが "詰まっている" 状態になり、応答しなくなる場合があります。 これは、Xcode の拡張プロジェクトでも経験があり、現在は Xamarin. Mac とは無関係に表示されます。 多くの場合、これはシステムログに表示されることがあります (**コンソール**で、詳細については「ヒント」を参照してください)。繰り返しのエラーメッセージを出力します。 MacOS を再起動すると、この問題が解決します。
 
 <a name="Tips" />
 
 ## <a name="tips"></a>ヒント
 
-Xamarin.Mac で拡張機能を使用する場合、次のヒントが役に立ちます。
+次のヒントは、Xamarin. Mac で拡張機能を使用する場合に役立ちます。
 
-- 現在、Xamarin.Mac では、デバッグ拡張機能はサポートされていない、デバッグ エクスペリエンスは主に異なります実行と`printf`などのステートメント。 ただし、拡張機能で実行、サンド ボックス プロセスしたがって`Console.WriteLine`他の Xamarin.Mac アプリケーションは機能しません。 呼び出す[`NSLog`直接](https://gist.github.com/chamons/e2e409013a449cfbe1f2fbe5547f6554)システム ログにデバッグ メッセージを出力します。
-- キャッチされない例外が少量で有用な情報のみを提供する、拡張機能プロセスをクラッシュ、**システム ログ**します。 面倒なコードをラップ、 `try/catch` (例外) ブロックを`NSLog`の前に、再スローは役立つ可能性があります。
-- **システム ログ**からアクセスできる、**コンソール**の下でアプリ**アプリケーション** > **ユーティリティ**:
+- 現在、Xamarin. Mac では拡張機能のデバッグがサポートされていないため、 `printf`デバッグエクスペリエンスは主に実行や like ステートメントに依存します。 ただし、拡張機能はサンドボックスプロセスで実行`Console.WriteLine`されるため、他の Xamarin. Mac アプリケーションと同様に動作しません。 を[ `NSLog`直接](https://gist.github.com/chamons/e2e409013a449cfbe1f2fbe5547f6554)呼び出すと、デバッグメッセージがシステムログに出力されます。
+- キャッチされていない例外が発生すると、拡張プロセスがクラッシュし、**システムログ**に表示される情報の量がわずかになります。 (例外) `NSLog`ブロックで`try/catch`厄介なコードをラップすることは、再スローの前に役に立つ可能性があります。
+- **システムログ**には、**コンソール**アプリの [**アプリケーション** > **ユーティリティ**] からアクセスできます。
 
-    [![](extensions-images/extension02.png "システム ログ")](extensions-images/extension02.png#lightbox)
-- 前述のように、拡張機能のホスト アプリケーションを実行しているをシステムに登録します。 アプリケーション バンドルを削除する登録を解除します。 
-- 「無効な」のバージョンのアプリの拡張機能が登録されている場合を検索します (そのため、削除することができます)、次のコマンドを使用します。 `plugin kit -mv`
+    [![](extensions-images/extension02.png "システムログ")](extensions-images/extension02.png#lightbox)
+- 前述のように、拡張機能ホストアプリケーションを実行すると、システムに登録されます。 登録を解除してアプリケーションバンドルを削除しています。 
+- アプリの拡張機能の "存在しない" バージョンが登録されている場合は、次のコマンドを使用してそれらを見つけます (削除することもできます)。`plugin kit -mv`
 
 
 <a name="Walkthrough-and-Sample-App" />
 
-## <a name="walkthrough-and-sample-app"></a>チュートリアルとサンプル アプリ
+## <a name="walkthrough-and-sample-app"></a>チュートリアルとサンプルアプリ
 
-開発者は作成し、Xamarin.iOS の拡張機能と同じ方法で Xamarin.Mac 拡張機能の使用ためを参照してください、[拡張機能の概要](~/ios/platform/extensions.md)詳細についてはドキュメントです。
+開発者は、xamarin. iOS 拡張機能と同じ方法で Xamarin. Mac 拡張機能を作成して操作します。詳細については、[拡張機能の概要](~/ios/platform/extensions.md)に関するドキュメントを参照してください。
 
-小さなを格納している例 Xamarin.Mac プロジェクト、各拡張機能の種類の実際のサンプルが見つかります[ここ](https://developer.xamarin.com/samples/mac/ExtensionSamples/)します。
+各拡張機能の種類の小規模で実用的なサンプルを含む Xamarin. Mac プロジェクトの例については、[こちら](https://docs.microsoft.com/samples/xamarin/mac-samples/extensionsamples)を参照してください。
 
 <a name="Summary" />
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
-この記事では、Xamarin.Mac バージョン 2.10 (以降) のアプリでの拡張機能の使用方法を簡単に説明をしました。
+この記事では、Xamarin. Mac バージョン 2.10 (およびそれ以降) のアプリで拡張機能を使用する方法について簡単に説明しました。
 
 ## <a name="related-links"></a>関連リンク
 
 - [Hello Mac](~/mac/get-started/hello-mac.md)
-- [ExtensionSamples](https://developer.xamarin.com/samples/mac/ExtensionSamples/)
+- [ExtensionSamples](https://docs.microsoft.com/samples/xamarin/mac-samples/extensionsamples)
 - [macOS ヒューマン インターフェイス ガイドライン](https://developer.apple.com/design/human-interface-guidelines/macos/overview/themes/)

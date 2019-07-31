@@ -1,35 +1,35 @@
 ---
-title: Xamarin.iOS での通知の管理
-description: このドキュメントでは、iOS 12 で導入された新しい通知管理機能を活用するために Xamarin.iOS を使用する方法について説明します。
+title: Xamarin. iOS の通知管理
+description: このドキュメントでは、Xamarin を使用して、iOS 12 で導入された新しい通知管理機能を活用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: F1D90729-F85A-425B-B633-E2FA38FB4A0C
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/04/2018
-ms.openlocfilehash: 0157a685ac990c0626cd4d6001ef853c6a28b993
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 69b6876a22e511d1c14a795d7b81c3a638492468
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61035275"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68652386"
 ---
-# <a name="notification-management-in-xamarinios"></a>Xamarin.iOS での通知の管理
+# <a name="notification-management-in-xamarinios"></a>Xamarin. iOS の通知管理
 
-12、iOS オペレーティング システムには、通知センターからディープ リンクと、アプリの管理 画面で通知する設定アプリことができます。 この画面が参加をユーザーに許可する必要があり、さまざまな種類の通知からアプリを送信します。
+IOS 12 では、オペレーティングシステムが通知センターと設定アプリからアプリの通知管理画面に深くリンクできます。 この画面では、ユーザーは、アプリから送信されるさまざまな種類の通知をオプトインおよびオプトアウトできます。
 
-## <a name="sample-app-redgreennotifications"></a>サンプル アプリ:RedGreenNotifications
+## <a name="sample-app-redgreennotifications"></a>サンプルアプリ:RedGreenNotifications
 
-通知の管理のしくみの例を確認するを参照してください、 [RedGreenNotifications](https://developer.xamarin.com/samples/monotouch/iOS12/RedGreenNotifications)サンプル アプリです。
+通知管理のしくみの例については、 [RedGreenNotifications](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-redgreennotifications)サンプルアプリを参照してください。
 
-このサンプル アプリでは、– 赤、緑 – 2 つの種類の通知を送信し、ユーザーがいずれかの種類を有効または無効にできる画面を提供します。
+このサンプルアプリは、赤と緑の2種類の通知を送信し、ユーザーがいずれかの種類の選択を解除できる画面を提供します。
 
-このガイドでのコード スニペットは、このサンプル アプリから取得されます。
+このガイドのコードスニペットは、このサンプルアプリから抜粋したものです。
 
-## <a name="notification-management-screen"></a>通知の管理 画面
+## <a name="notification-management-screen"></a>通知管理画面
 
-サンプル アプリで`ManageNotificationsViewController`ユーザーを個別に有効にし、赤の通知、緑色の通知を無効にできるユーザー インターフェイスを定義します。 これは標準 [`UIViewController`](xref:UIKit.UIViewController)
-含む、 [ `UISwitch` ](xref:UIKit.UISwitch)の各通知の種類。 通知のいずれかの種類のスイッチを切り替え保存すると、ユーザーの既定値、通知の種類、ユーザーの設定で。
+このサンプルアプリでは`ManageNotificationsViewController` 、は、ユーザーが赤の通知と緑色の通知を個別に有効または無効にするためのユーザーインターフェイスを定義します。 これは標準です。[`UIViewController`](xref:UIKit.UIViewController)
+各通知[`UISwitch`](xref:UIKit.UISwitch)の種類のを格納している。 いずれかの種類の通知に対してスイッチを切り替えると、ユーザーの既定では、その種類の通知がユーザーに設定されます。
 
 ```csharp
 partial void HandleRedNotificationsSwitchValueChange(UISwitch sender)
@@ -39,13 +39,13 @@ partial void HandleRedNotificationsSwitchValueChange(UISwitch sender)
 ```
 
 > [!NOTE]
-> 通知の管理 画面では、ユーザーがアプリに通知を完全に無効かどうかも確認します。 そうである場合、個々 の通知の種類の切り替えは非表示になります。 これは、通知の管理画面を行うには。
+> また、通知管理画面では、ユーザーがアプリの通知をまったく無効にしているかどうかも確認されます。 その場合は、個々の通知の種類の切り替えを非表示にします。 これを行うには、通知管理画面を次のようにします。
 >
-> - 呼び出し[ `UNUserNotificationCenter.Current.GetNotificationSettingsAsync` ](xref:UserNotifications.UNUserNotificationCenter.GetNotificationSettingsAsync)され、検査、 [ `AuthorizationStatus` ](xref:UserNotifications.UNNotificationSettings.AuthorizationStatus)プロパティ。
-> - 通知をアプリの完全に無効にされている場合は、個々 の通知の種類の切り替えを非表示にします。
-> - かどうかの通知が無効になっているアプリケーションは、のでユーザーできます有効/無効通知 iOS の設定でいつでも、前面に移動するたびに再チェックします。
+> - を[`UNUserNotificationCenter.Current.GetNotificationSettingsAsync`](xref:UserNotifications.UNUserNotificationCenter.GetNotificationSettingsAsync)呼び出し、プロパティ[`AuthorizationStatus`](xref:UserNotifications.UNNotificationSettings.AuthorizationStatus)を調べます。
+> - アプリで通知が完全に無効になっている場合、個々の通知の種類の切り替えを非表示にします。
+> - アプリケーションがフォアグラウンドに移動するたびに通知が無効になっているかどうかを再確認します。これは、ユーザーがいつでも iOS 設定の通知を有効または無効にできるためです。
 
-サンプル アプリの`ViewController`クラスは、実際が受信することを確認、通知の種類のユーザーのローカル通知を送信する前に、通知、チェックのユーザーの設定を送信します。
+通知を送信する`ViewController`サンプルアプリのクラスは、ローカル通知を送信する前にユーザーの設定を確認して、ユーザーが実際に受け取る必要のある種類の通知であることを確認します。
 
 ```csharp
 partial void HandleTapRedNotificationButton(UIButton sender)
@@ -56,18 +56,18 @@ partial void HandleTapRedNotificationButton(UIButton sender)
         // ...
 ```
 
-## <a name="deep-link"></a>ディープ リンク
+## <a name="deep-link"></a>ディープリンク
 
-iOS ディープ リンク アプリの通知の管理画面に通知センター、設定アプリでアプリの通知設定から。 そのため、アプリが必要です。
+iOS の詳細情報は、通知センターからのアプリの通知管理画面と、設定アプリのアプリの通知設定にリンクされています。 これを容易にするために、アプリは次のことを行う必要があります。
 
-- 渡すことによって、通知の管理 画面が使用可能なであることを示す`UNAuthorizationOptions.ProvidesAppNotificationSettings`アプリの通知の承認要求にします。
-- 実装、`OpenSettings`メソッドから[ `IUNUserNotificationCenterDelegate`](xref:UserNotifications.IUNUserNotificationCenterDelegate)します。
+- アプリの通知承認要求に渡す`UNAuthorizationOptions.ProvidesAppNotificationSettings`ことによって、通知管理画面を使用できることを示します。
+- `OpenSettings` [から`IUNUserNotificationCenterDelegate`](xref:UserNotifications.IUNUserNotificationCenterDelegate)メソッドを実装します。
 
 ### <a name="authorization-request"></a>承認要求
 
-通知の管理 画面が使用可能なことは、アプリに渡す必要があります、オペレーティング システムに示すために、 `UNAuthorizationOptions.ProvidesAppNotificationSettings` (およびその他の通知の配信オプション必要があります) オプションを`RequestAuthorization`メソッドを`UNUserNotificationCenter`します。
+通知管理画面が使用可能であることをオペレーティングシステムに示すには、アプリで`UNAuthorizationOptions.ProvidesAppNotificationSettings`オプション (必要な他の通知配信オプションと共に) `RequestAuthorization`をの`UNUserNotificationCenter`メソッドに渡す必要があります。
 
-たとえば、サンプル アプリので`AppDelegate`:
+たとえば、サンプルアプリの`AppDelegate`場合は、次のようになります。
 
 ```csharp
 public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
@@ -82,9 +82,9 @@ public override bool FinishedLaunching(UIApplication application, NSDictionary l
 
 ### <a name="opensettings-method"></a>OpenSettings メソッド
 
-`OpenSettings`をディープ リンク アプリの通知の管理画面に、システムによって呼び出されたメソッドは、その画面に直接ユーザーを移動する必要があります。
+アプリケーション`OpenSettings`の通知管理画面へのディープリンクを行うためにシステムによって呼び出されるメソッドは、ユーザーをその画面に直接移動する必要があります。
 
-サンプル アプリでこのメソッドを実行するセグエ、`ManageNotificationsViewController`必要な場合。
+このサンプルアプリでは、必要に応じて、この`ManageNotificationsViewController`メソッドによってセグエが実行されます。
 
 ```csharp
 [Export("userNotificationCenter:openSettingsForNotification:")]
@@ -105,9 +105,9 @@ public void OpenSettings(UNUserNotificationCenter center, UNNotification notific
 
 ## <a name="related-links"></a>関連リンク
 
-- [サンプル アプリ – RedGreenNotifications](https://developer.xamarin.com/samples/monotouch/iOS12/RedGreenNotifications)
-- [Xamarin.iOS でのユーザー通知フレームワーク](~/ios/platform/user-notifications/index.md)
+- [サンプルアプリ– RedGreenNotifications](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-redgreennotifications)
+- [Xamarin. iOS のユーザー通知フレームワーク](~/ios/platform/user-notifications/index.md)
 - [UserNotifications (Apple)](https://developer.apple.com/documentation/usernotifications?language=objc)
-- [ユーザーへの通知 (WWDC 2018) の新機能新機能](https://developer.apple.com/videos/play/wwdc2018/710/)
-- [ユーザーへの通知 (WWDC 2017) の新機能新機能およびベスト プラクティス](https://developer.apple.com/videos/play/wwdc2017/708/)
-- [リモート通知 (Apple) を生成します。](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification)
+- [ユーザー通知の新機能 (WWDC 2018)](https://developer.apple.com/videos/play/wwdc2018/710/)
+- [ベストプラクティスとユーザー通知の新機能 (WWDC 2017)](https://developer.apple.com/videos/play/wwdc2017/708/)
+- [リモート通知の生成 (Apple)](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification)

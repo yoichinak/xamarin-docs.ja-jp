@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: 4e462346c2c0130c972d098aa2c988bdd61fc360
-ms.sourcegitcommit: 0c823f5439f4279a35af23dd466e7a0483e65d50
+ms.openlocfilehash: ad20ba50b8ff0f7dcbba3e8d297b2281544a373b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65804892"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657080"
 ---
 # <a name="xamarinforms-stacklayout"></a>Xamarin.Forms の StackLayout
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
 
-[StackLayout](xref:Xamarin.Forms.StackLayout)水平方向または垂直方向には、1 次元の行 (「スタック」) でビューを整理します。 ビューで、`StackLayout`レイアウト オプションを使用して、レイアウト領域に基づくサイズ設定することができます。 配置は、ビューは、レイアウトとビューのレイアウト オプションに追加された順序によって決まります。
+[Stacklayout](xref:Xamarin.Forms.StackLayout)は、水平方向または垂直方向の1次元線 ("スタック") でビューを整理します。 ビューで、`StackLayout`レイアウト オプションを使用して、レイアウト領域に基づくサイズ設定することができます。 配置は、ビューは、レイアウトとビューのレイアウト オプションに追加された順序によって決まります。
 
 [![](stack-layout-images/layouts-sml.png "Xamarin.Forms のレイアウト")](stack-layout-images/layouts.png#lightbox "Xamarin.Forms のレイアウト")
 
@@ -226,5 +226,5 @@ Title="StackLayouts">
 ## <a name="related-links"></a>関連リンク
 
 - [LayoutOptions](~/xamarin-forms/user-interface/layouts/layout-options.md)
-- [レイアウト (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
-- [BusinessTumble 例 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BusinessTumble/)
+- [レイアウト (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
+- [BusinessTumble 例 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-businesstumble)

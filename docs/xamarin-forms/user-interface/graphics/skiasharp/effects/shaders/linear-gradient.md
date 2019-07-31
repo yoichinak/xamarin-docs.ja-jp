@@ -7,16 +7,16 @@ ms.assetid: 20A2A8C4-FEB7-478D-BF57-C92E26117B6A
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
-ms.openlocfilehash: 9551a3b8e093dbb49a55a3761543602c40e81023
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 43a427b4eca174dce4af47bb43cb1a048a6cfe7c
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61158542"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68647685"
 ---
 # <a name="the-skiasharp-linear-gradient"></a>SkiaSharp の線形グラデーション
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 [ `SKPaint` ](xref:SkiaSharp.SKPaint)クラスを定義、 [ `Color` ](xref:SkiaSharp.SKPaint.Color)線のストロークまたは純色で領域の塗りつぶしに使用されるプロパティ。 または線のストロークを描画、使用領域の塗りつぶしまたは_グラデーション_色の段階的なブレンドであります。
 
@@ -27,7 +27,7 @@ ms.locfileid: "61158542"
 これらのメソッドは、型のオブジェクトを返す[ `SKShader` ](xref:SkiaSharp.SKShader)に設定する、 [ `Shader` ](xref:SkiaSharp.SKPaint.Shader)プロパティの`SKPaint`します。 場合、`Shader`プロパティが null 以外で、オーバーライド、`Color`プロパティ。 すべての行に線を付けるにまたはこれを使用して塗りつぶされる領域`SKPaint`オブジェクトが純色ではなく、グラデーション基づきます。
 
 > [!NOTE]
-> `Shader`に含めるときに、プロパティは無視されます、`SKPaint`オブジェクト、`DrawBitmap`呼び出します。 使用することができます、`Color`プロパティの`SKPaint`ビットマップを表示するための透明度レベルを設定する (、記事の説明に従って[SkiaSharp を表示するビットマップ](../../bitmaps/displaying.md#displaying-in-pixel-dimensions))、使用することはできませんが、`Shader`プロパティを表示するためグラデーションの透明度のビットマップです。 その他の手法を透明なグラデーションでのビットマップを表示するために使用できます。これらの記事で説明が[SkiaSharp 円形グラデーション](circular-gradients.md#radial-gradients-for-masking)と[SkiaSharp 合成と blend モード](../blend-modes/porter-duff.md#gradient-transparency-and-transitions)します。
+> `Shader`に含めるときに、プロパティは無視されます、`SKPaint`オブジェクト、`DrawBitmap`呼び出します。 使用することができます、`Color`プロパティの`SKPaint`ビットマップを表示するための透明度レベルを設定する (、記事の説明に従って[SkiaSharp を表示するビットマップ](../../bitmaps/displaying.md#displaying-in-pixel-dimensions))、使用することはできませんが、`Shader`プロパティを表示するためグラデーションの透明度のビットマップです。 他にも、グラデーション透明度のあるビットマップを表示するための方法が用意されています。これらの詳細については、SkiaSharp の「[グラデーション](circular-gradients.md#radial-gradients-for-masking)と[SkiaSharp の複合モードとブレンドモード](../blend-modes/porter-duff.md#gradient-transparency-and-transitions)」を参照してください。
 
 ## <a name="corner-to-corner-gradients"></a>角のグラデーション
 
@@ -37,7 +37,7 @@ ms.locfileid: "61158542"
 - 右上隅の水平方向に
 - 右下隅に斜め
 
-対角線方向の線形グラデーションの説明については、最初のページの**SkiaSharp シェーダーとその他の効果**のセクション、 [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)サンプル。 **角 - グラデーション**ページを作成、`SKCanvasView`コンス トラクター内。 `PaintSurface`ハンドラーを作成、`SKPaint`オブジェクト、`using`ステートメントとし、キャンバスの中央に配置する 300 ピクセルの正方形四角形を定義します。
+対角線方向の線形グラデーションの説明については、最初のページの**SkiaSharp シェーダーとその他の効果**のセクション、 [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプル。 **角 - グラデーション**ページを作成、`SKCanvasView`コンス トラクター内。 `PaintSurface`ハンドラーを作成、`SKPaint`オブジェクト、`using`ステートメントとし、キャンバスの中央に配置する 300 ピクセルの正方形四角形を定義します。
 
 ```csharp
 public class CornerToCornerGradientPage : ContentPage
@@ -477,7 +477,7 @@ public class GradientAnimationPage : ContentPage
 
 `OnTimerTick`メソッドは、計算、`angle`アニメーション化する 0 から 2 π を 3 秒おきの値。 
 
-グラデーションの 2 つの点を計算する方法の 1 つを次に示します。 `SKPoint`という名前の値`vector`を円の半径のポイント、キャンバスの中央からを拡張する計算されます。 このベクトルの方向は、角度の正弦と余弦の値に基づきます。 2 つの反対側のグラデーション ポイントは計算されます。1 つのポイントが、中心点からベクトルを減算することで計算され、その他のポイントが中心点に、ベクターを加算して計算されます。
+グラデーションの 2 つの点を計算する方法の 1 つを次に示します。 `SKPoint`という名前の値`vector`を円の半径のポイント、キャンバスの中央からを拡張する計算されます。 このベクトルの方向は、角度の正弦と余弦の値に基づきます。 その後、2つの反対のグラデーション点が計算されます。一方の点は、そのベクトルを中心点から減算することによって計算され、その他の点は、ベクトルを中心点に追加することによって計算されます。
 
 ```csharp
 public class GradientAnimationPage : ContentPage
@@ -511,7 +511,7 @@ public class GradientAnimationPage : ContentPage
 }
 ```
 
-少し異なる方法では、少ないコードが必要です。 このアプローチを利用、 [ `SKShader.CreateLinearGradient` ](xref:SkiaSharp.SKShader.CreateLinearGradient(SkiaSharp.SKPoint,SkiaSharp.SKPoint,SkiaSharp.SKColor[],System.Single[],SkiaSharp.SKShaderTileMode,SkiaSharp.SKMatrix))行列変換が最後の引数としてメソッドをオーバー ロードします。 この方法は、バージョン、 [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)サンプル。
+少し異なる方法では、少ないコードが必要です。 このアプローチを利用、 [ `SKShader.CreateLinearGradient` ](xref:SkiaSharp.SKShader.CreateLinearGradient(SkiaSharp.SKPoint,SkiaSharp.SKPoint,SkiaSharp.SKColor[],System.Single[],SkiaSharp.SKShaderTileMode,SkiaSharp.SKMatrix))行列変換が最後の引数としてメソッドをオーバー ロードします。 この方法は、バージョン、 [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプル。
 
 ```csharp
 public class GradientAnimationPage : ContentPage
@@ -617,13 +617,13 @@ public class RainbowGradientPage : ContentPage
 }
 ```
 
-2 つのグラデーションのポイントで、`CreateLinearGradient`方法は 2 つのパスを定義するポイントに基づいています。どちらも、左上隅の近くにします。 キャンバスの上端に 1 つ目は、2 番目は、キャンバスの左端にします。 結果を次に示します。
+`CreateLinearGradient`メソッドの2つのグラデーションポイントは、このパスを定義する2つの点に基づいています。どちらの点も、左上隅の近くにあります。 キャンバスの上端に 1 つ目は、2 番目は、キャンバスの左端にします。 結果を次に示します。
 
 [![障害のある虹グラデーション](linear-gradient-images/RainbowGradientFaulty.png "欠陥のある虹グラデーション")](linear-gradient-images/RainbowGradientFaulty-Large.png#lightbox)
 
 これは、興味深いイメージが目的では非常にではありません。 問題は、線形グラデーションを作成するときに、一定の色の行があるグラデーションの線に対して垂直です。 グラデーション ラインは、図は、上および左の辺に触れて、その行がない、図の右下隅に拡張する端に垂直な通常のポイントに基づいています。 この方法は、キャンバスが正方形の場合にのみ機能します。
 
-適切な虹のグラデーションを作成するには、グラデーション ラインを虹の端に垂直でなければなりません。 これより複雑な計算です。 図の長い側に並列なベクトルを定義する必要があります。 ベクターは 90 度回転が側に直角になるようにします。 掛けることによって、図の幅にすることが長く、`rainbowWidth`します。 さらに、ベクターを指すおよび図では、横にある点に基づいて 2 つのグラデーションのポイントが計算します。 表示されるコードをここでは、**虹グラデーション**ページで、 [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)サンプル。
+適切な虹のグラデーションを作成するには、グラデーション ラインを虹の端に垂直でなければなりません。 これより複雑な計算です。 図の長い側に並列なベクトルを定義する必要があります。 ベクターは 90 度回転が側に直角になるようにします。 掛けることによって、図の幅にすることが長く、`rainbowWidth`します。 さらに、ベクターを指すおよび図では、横にある点に基づいて 2 つのグラデーションのポイントが計算します。 表示されるコードをここでは、**虹グラデーション**ページで、 [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプル。
 
 ```csharp
 public class RainbowGradientPage : ContentPage
@@ -917,4 +917,4 @@ textBounds.Offset(xText, yText);
 ## <a name="related-links"></a>関連リンク
 
 - [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

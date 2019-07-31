@@ -1,24 +1,24 @@
 ---
-title: IOS でのホームのインジケーター可視性
-description: プラットフォーム仕様はカスタム レンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ利用できる機能の使用を可能にします。 この記事では、ページのホームのインジケーターの可視性を設定します。 iOS プラットフォームに固有の使用方法について説明します。
+title: IOS でのホームインジケーターの可視性
+description: プラットフォーム仕様はカスタム レンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ利用できる機能の使用を可能にします。 この記事では、ページ上のホームインジケーターの可視性を設定する iOS プラットフォーム固有のを使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: F81022E0-3C6C-49C0-A000-FAF6574D3FB7
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/09/2019
-ms.openlocfilehash: c0d6717cd8f89344be7df3dc3ec687a5f1b375f4
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: c8acf826eb5b3f42f62803ac1caaaa5929c5ea75
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65971624"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68648862"
 ---
-# <a name="home-indicator-visibility-on-ios"></a>IOS でのホームのインジケーター可視性
+# <a name="home-indicator-visibility-on-ios"></a>IOS でのホームインジケーターの可視性
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-この iOS プラットフォームに固有のホームのインジケーターの可視性の設定、 [ `Page`](xref:Xamarin.Forms.Page)します。 XAML で設定して使用される、 [ `Page.PrefersHomeIndicatorAutoHidden` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Page.PrefersHomeIndicatorAutoHiddenProperty)バインド可能なプロパティを`boolean`:
+この iOS プラットフォーム固有のは、 [`Page`](xref:Xamarin.Forms.Page)上のホームインジケーターの可視性を設定します。 これは、バインド可能な[`Page.PrefersHomeIndicatorAutoHidden`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Page.PrefersHomeIndicatorAutoHiddenProperty) `boolean`プロパティをに設定することによって XAML で使用されます。
 
 ```xaml
 <ContentPage ...
@@ -38,17 +38,17 @@ using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 On<iOS>().SetPrefersHomeIndicatorAutoHidden(true);
 ```
 
-`Page.On<iOS>`メソッドは、このプラットフォーム仕様が iOS上 でのみ動作することを指定します。  [ `Page.SetPrefersHomeIndicatorAutoHidden` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Page.SetPrefersHomeIndicatorAutoHidden(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.Page},System.Boolean))メソッドで、 [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)名前空間は、ホーム インジケーターの表示を制御します。 さらに、 [ `Page.PrefersHomeIndicatorAutoHidden` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Page.PrefersHomeIndicatorAutoHidden(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.Page}))ホームのインジケーターの可視性を取得するメソッドを使用できます。
+`Page.On<iOS>`メソッドは、このプラットフォーム仕様が iOS上 でのみ動作することを指定します。 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)名前空間のメソッドは[`Page.SetPrefersHomeIndicatorAutoHidden`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Page.SetPrefersHomeIndicatorAutoHidden(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.Page},System.Boolean)) 、ホームインジケーターの表示を制御します。 また[`Page.PrefersHomeIndicatorAutoHidden`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Page.PrefersHomeIndicatorAutoHidden(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.Page})) 、メソッドを使用して、ホームインジケーターの可視性を取得することもできます。
 
-その結果、自宅のインジケーターの可視性、 [ `Page` ](xref:Xamarin.Forms.Page)制御できます。
+その結果、上[`Page`](xref:Xamarin.Forms.Page)のホームインジケーターの表示を制御できるようになります。
 
-![IOS ページ ホームのインジケーターの可視性のスクリーン ショット](page-home-indicator-images/home-indicator-visibility.png "ホーム インジケーターの可視性 ページ")
+![IOS ページでのホームインジケーターの表示のスクリーンショット](page-home-indicator-images/home-indicator-visibility.png "ページホームインジケーターの表示")
 
 > [!NOTE]
-> このプラットフォームに固有に適用できる[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)、 [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage)、 [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)、および[ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage)オブジェクト。
+> このプラットフォーム固有[`ContentPage`](xref:Xamarin.Forms.ContentPage)のは[`NavigationPage`](xref:Xamarin.Forms.NavigationPage)、、 [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage)、、および[`TabbedPage`](xref:Xamarin.Forms.TabbedPage)の各オブジェクトに適用できます。
 
 ## <a name="related-links"></a>関連リンク
 
-- [プラットフォーム仕様 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+- [プラットフォーム仕様 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [プラットフォーム仕様の作成](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
-- [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)
+- [iOSSpecific の API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

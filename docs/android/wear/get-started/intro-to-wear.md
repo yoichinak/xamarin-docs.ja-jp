@@ -1,211 +1,211 @@
 ---
 title: Android Wear の概要
-description: Google の Android Wear の導入に伴いがスマート フォンやタブレットだけに制限優れた Android アプリを開発する際にします。 Android Wear の Xamarin.Android のサポートにより、実行するC#手首上のコードです。 この概要は、Android Wear の基本的な概要を提供します、主な機能について説明し、Android Wear 2.0 で使用できる機能の概要を提供しています。 最も一般的な Android Wear デバイスの一部を一覧表示し、参考資料の重要な Google Android Wear のドキュメントへのリンクを提供します。
+description: Google の Android 磨耗が導入されたことで、優れた Android アプリの開発に関しては、スマートフォンとタブレットのみに制限されなくなりました。 Android で Android の磨耗がサポートされるため、手首でコードをC#実行できるようになります。 この概要では、Android の磨耗の基本的な概要と主な機能について説明し、Android 磨耗2.0 で使用できる機能の概要を示します。 この記事では、より一般的な Android 用の磨耗デバイスのいくつかを紹介し、さらに参考になる、Google Android の重要なドキュメントへのリンクを示します。
 ms.prod: xamarin
 ms.assetid: EAEF99F0-8FBE-47E4-8644-E7244CFAF464
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 57a521df5fdede2bd92a6b1432f698c822a2b06f
-ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
+ms.openlocfilehash: a57273005df45c2f8035563efe9562c27cdfa732
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67674575"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68648410"
 ---
 # <a name="introduction-to-android-wear"></a>Android Wear の概要
 
-_Google の Android Wear の導入に伴いがスマート フォンやタブレットだけに制限優れた Android アプリを開発する際にします。Android Wear の Xamarin.Android のサポートにより、実行するC#手首上のコードです。この概要は、Android Wear の基本的な概要を提供します、主な機能について説明し、Android Wear 2.0 で使用できる機能の概要を提供しています。最も一般的な Android Wear デバイスの一部を一覧表示し、参考資料の重要な Google Android Wear のドキュメントへのリンクを提供します。_
+_Google の Android 磨耗が導入されたことで、優れた Android アプリの開発に関しては、スマートフォンとタブレットのみに制限されなくなりました。Android で Android の磨耗がサポートされるため、手首でコードをC#実行できるようになります。この概要では、Android の磨耗の基本的な概要と主な機能について説明し、Android 磨耗2.0 で使用できる機能の概要を示します。この記事では、より一般的な Android 用の磨耗デバイスのいくつかを紹介し、さらに参考になる、Google Android の重要なドキュメントへのリンクを示します。_
 
 
 ## <a name="overview"></a>概要
 
-さまざまな第 1 世代の Motorola 360、LG の G watch では、Samsung 歯車 Live などのデバイスで android Wear が実行されます。 Sony のスマートウォッチ 3 を含む、第 2 世代は、組み込みの GPS とオフラインの音楽の再生などの追加機能にもリリースされました。 Android Wear の 2.0 では、Google との協力により LG の 2 つの新しいウォッチ: LG ウォッチ スポーツおよび LG ウォッチ スタイル。
+Android の磨耗は、Motorola 360、LG の G watch、Samsung 歯車など、さまざまなデバイスで実行されます。 Sony の SmartWatch 3 を含む2つ目の世代も、組み込みの GPS やオフラインの音楽再生などの追加機能と共にリリースされました。 Android の摩耗2.0 では、Google は LG Watch のスポーツと LG Watch のスタイルの2つの新しいウォッチを LG と協力しました。
 
-![Android Wear 2.0 デバイス](intro-to-wear-images/hero-image.png "例 Android Wear 2.0 デバイス")
+![Android 磨耗2.0 デバイス](intro-to-wear-images/hero-image.png "Android の磨耗2.0 デバイスの例")
 
-Android Wear Xamarin.Android 5.0 以降では、Android 4.4W (API 20) をサポートし、追加を追加する NuGet パッケージの Wear 固有の UI を制御します。 Xamarin.Android 5.0 以降では、Wear アプリをパッケージ化するための機能も含まれています。 NuGet パッケージでは、Android Wear 2.0 のこのガイドの後半の説明に従って入手できます。
+Xamarin android 5.0 以降では、android 4.4 W (API 20) のサポートと、磨耗に特化した UI コントロールを追加する NuGet パッケージを通じて、Android の磨耗がサポートされます。 Xamarin Android 5.0 以降には、磨耗アプリをパッケージ化するための機能も含まれています。 このガイドで後述するように、NuGet パッケージは Android 磨耗2.0 でも利用できます。
 
 
-## <a name="android-wear-basics"></a>Android Wear の基本
+## <a name="android-wear-basics"></a>Android の磨耗の基本
 
-Android Wear がハンドヘルド Android のアプリの異なるユーザー インターフェイスのパラダイムです。 Wear アプリの最初の波が、付属の拡張に設計されたいくつかの方法が Android Wear 2.0 以降ではハンドヘルド app、Wear アプリは、単体で使用されるをすることができます。 Wear アプリを展開するときに、コンパニオン ハンドヘルド アプリにパッケージされています。 ほとんど Wear アプリは、ハンドヘルド コンパニオン アプリによって異なります、ハンドヘルド アプリと通信する手段を必要な。 次のセクションは、これらの使用状況シナリオについて説明し、Android Wear、essential の新機能の概要します。 
+Android の磨耗には、Android ハンドヘルドアプリとは異なるユーザーインターフェイスパラダイムがあります。 磨耗アプリの最初の波は、何らかの方法でコンパニオンハンドヘルドアプリを拡張するように設計されていましたが、Android 磨耗2.0 以降、磨耗アプリをスタンドアロンで使用できます。 アプリを展開すると、付属のハンドヘルドアプリでパッケージ化されます。 ほとんどの摩耗アプリはハンドヘルドコンパニオンアプリに依存しているため、ハンドヘルドアプリと通信するには何らかの方法が必要です。 以下のセクションでは、これらの使用シナリオについて説明し、基本的な Android の磨耗機能について概説します。 
 
 
 
 ### <a name="usage-scenarios"></a>使用シナリオ
 
-Android Wear の最初のバージョンが強化された通知の使用の現在のハンドヘルド アプリケーションを拡張して、ハンドヘルド アプリとウェアラブルのアプリ間のデータの同期で主に重点を置いています。 そのため、これらのシナリオは比較的簡単に実装できます。
+Android 劣化の最初のバージョンは、主に、拡張された通知を使用した現在のハンドヘルドアプリケーションの拡張と、ハンドヘルドアプリとウェアラブルアプリとの間でのデータの同期に重点を置いていました。 そのため、これらのシナリオは比較的簡単に実装できます。
 
 
 #### <a name="wearable-notifications"></a>ウェアラブル通知
 
-Android Wear をサポートする最も簡単な方法は、ハンドヘルドとウェアラブル デバイス間での通知の共有の性質の活用することです。 サポート v4 通知 API を使用して、`WearableExtender`クラス (で使用できる、 [Xamarin Android サポート ライブラリ](https://www.nuget.org/packages/Xamarin.Android.Support.v4/))、受信トレイ スタイル カードなど、プラットフォームのネイティブ機能を利用または音声入力することができます。 [RecipeAssistant](https://developer.xamarin.com/samples/monodroid/wear/RecipeAssistant/)サンプルは、Android Wear デバイスに通知の一覧を送信する方法を示すコード例を提供します。 
+Android の磨耗をサポートする最も簡単な方法は、ハンドヘルドデバイスとウェアラブルデバイス間の通知の共有性質を利用することです。 サポート v4 notification API と`WearableExtender`クラス ( [Xamarin Android サポートライブラリ](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)で利用可能) を使用することにより、受信トレイスタイルカードや音声入力など、プラットフォームのネイティブ機能を活用できます。 [RecipeAssistant](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-recipeassistant)サンプルには、Android の磨耗デバイスに通知のリストを送信する方法を示すコード例が用意されています。 
 
 
 
-#### <a name="companion-applications"></a>コンパニオン アプリケーション
+#### <a name="companion-applications"></a>コンパニオンアプリケーション
 
-別の方法では、ウェアラブル デバイスでネイティブに実行して、コンパニオン ハンドヘルド アプリと構成のペアを完全なアプリケーションを作成します。 この方法の好例が、[クイズ](https://developer.xamarin.com/samples/monodroid/wear/Quiz/)サンプル アプリは、ハンドヘルド デバイスで実行され、ウェアラブル デバイスで、クイズを質問するクイズを作成する方法を示します。 
+もう1つの方法は、ウェアラブルデバイスでネイティブに実行される完全なアプリケーションと、付属のハンドヘルドアプリを作成することです。 このアプローチの好例として、[クイズ](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-quiz)サンプルアプリがあります。これは、ハンドヘルドデバイスで実行されるクイズを作成し、ウェアラブルデバイスでクイズの質問をする方法を示しています。 
 
 
 
 ### <a name="user-interface"></a>ユーザー インターフェイス
 
-Wear の主なナビゲーション パターンは、一連の垂直方向に整列するカードです。 同じ行をレイヤー化されているアクションを関連付けるこれらのカードの各できます。 `GridViewPager`クラスには、この機能が用意されていますと同じアダプターの概念に準拠しています。`ListView`します。 通常関連付ける、`GridViewPager`で、 `FragmentGridPagerAdaptor` (または`GridPagerAdaptor`) を使用して各の行と列のセルとして表すできる、 `Fragment`: 
+磨耗の主要なナビゲーションパターンは、垂直方向に並べられた一連のカードです。 これらの各カードには、同じ行に重なっているアクションを関連付けることができます。 クラス`GridViewPager`は、この機能を提供します。と`ListView`同じアダプターの概念に従います。 通常、 `GridViewPager`を`FragmentGridPagerAdaptor` (または`GridPagerAdaptor`) に関連付けて、各行と列のセルを`Fragment`として表すことができます。 
 
-[![ナビゲーションを着用](intro-to-wear-images/2d-picker-sml.png "Wear ナビゲーション")](intro-to-wear-images/2d-picker.png#lightbox)
+[![磨耗のナビゲーション](intro-to-wear-images/2d-picker-sml.png "磨耗のナビゲーション")](intro-to-wear-images/2d-picker.png#lightbox)
 
-大規模で構成されるアクション ボタンの使用 (上記参照) としてその下にある小さな説明テキストを含む円の色は wear もします。  [GridViewPager](https://developer.xamarin.com/samples/monodroid/wear/GridViewPager/)サンプルを使用する方法を示します`GridViewPager`と`GridPagerAdapter`Wear アプリ。
+また、磨耗では、上の図に示すように、小さな説明のテキストを含む大きな色の円で構成されるアクションボタンも使用します。  [GridViewPager](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-gridviewpager)サンプルは、磨耗アプリで`GridViewPager`および`GridPagerAdapter`を使用する方法を示しています。
 
-Android Wear 2.0 は、Wear のユーザー インターフェイスにナビゲーション ドロワー、アクションのドロアーおよびインライン アクション ボタンを追加します。 詳細については、Android Wear 2.0 のユーザー インターフェイス要素は、Android を参照してください。[構造](https://www.google.com/design/spec-wear/system-overview/anatomy.html)トピック。 
-
-
-
-### <a name="communications"></a>通信
-
-Android Wear では、2 つの異なる通信ウェアラブルのアプリと必携ハンドヘルド アプリ間の通信を容易にするための Api を提供します。 
-
-**データ API** &ndash;この API は、ウェアラブル デバイスとハンドヘルド デバイス間の同期されたデータ ストアに似ています。 これを行うには最適である場合に、ウェアラブルとハンドヘルドの間の変更を反映 android 行われます。 ウェアラブルが範囲外の日時の同期をキューします。 この API のメイン エントリ ポイントは`WearableClass.DataApi`します。 この API の詳細については、Android を参照してください。[データ項目の同期](https://developer.android.com/training/wearables/data-layer/data-items.html)トピック。 
-
-**API メッセージ**&ndash;この API により、下位レベルの通信パスを使用する: 小さなペイロードをハンドヘルドとウェアラブルのアプリ間で同期しなくても一方向に送信されます。
-この API のメイン エントリ ポイントは`WearableClass.MessageApi`します。
-この API の詳細については、Android を参照してください。[受信メッセージを送信して](https://developer.android.com/training/wearables/data-layer/messages.html)トピック。
-
-各 API のリスナー インターフェイスを使用してこれらのメッセージを受信するためのコールバックを登録または、代わりに、アプリから派生したサービスを実装することもできます`WearableListenerService`します。
-このサービスは、Android Wear で自動的にインスタンス化されます。
-[FindMyPhone](https://developer.xamarin.com/samples/monodroid/wear/FindMyPhoneSample/)サンプルを実装する方法を示しています、`WearableListenerService`します。
+Android 磨耗2.0 は、ナビゲーションドロワー、アクションドロワー、およびインラインアクションボタンを磨耗ユーザーインターフェイスに追加します。 Android の摩耗2.0 ユーザーインターフェイス要素の詳細については、Android の[構造](https://www.google.com/design/spec-wear/system-overview/anatomy.html)に関するトピックを参照してください。 
 
 
 
-### <a name="deployment"></a>配置
+### <a name="communications"></a>Communications
 
-各ウェアラブルのアプリは、APK のメインのアプリケーション内に埋め込まれた独自の APK ファイルと共にデプロイされます。 このパッケージは、Xamarin.Android 5.0 以降では、自動的に処理されますが、バージョン 5.0 より前のバージョンの Xamarin.Android の手動で実行する必要があります。 
-[パッケージの操作](~/android/wear/deploy-test/packaging.md)展開について詳しく説明します。 
+Android の磨耗には、ウェアラブルアプリとコンパニオンハンドヘルドアプリ間の通信を容易にする2つの異なる通信 Api が用意されています。 
+
+**データ API**&ndash;この API は、ウェアラブルデバイスとハンドヘルドデバイス間の同期されたデータストアに似ています。 Android では、ウェアラブルとハンドヘルドの間の変更を、最適な方法で反映することができます。 ウェアラブルが範囲外の場合は、後で同期をキューに置いています。 この API のメインエントリポイントは`WearableClass.DataApi`です。 この API の詳細については、「Android の[データ項目の同期](https://developer.android.com/training/wearables/data-layer/data-items.html)」を参照してください。 
+
+**メッセージ API**&ndash;この API により、低レベルの通信パスを使用できるようになります。小さなペイロードは、ハンドヘルドアプリとウェアラブルアプリの同期なしで一方向に送信されます。
+この API のメインエントリポイントは`WearableClass.MessageApi`です。
+この API の詳細については、「Android での[メッセージの送受信](https://developer.android.com/training/wearables/data-layer/messages.html)」を参照してください。
+
+これらのメッセージを受信するためのコールバックを API リスナーの各インターフェイスで登録するか、またはから`WearableListenerService`派生するアプリにサービスを実装するかを選択できます。
+このサービスは、Android の磨耗によって自動的にインスタンス化されます。
+[FindMyPhone](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-findmyphonesample)サンプルは、を`WearableListenerService`実装する方法を示しています。
+
+
+
+### <a name="deployment"></a>展開
+
+各ウェアラブルアプリは、メインアプリケーション APK 内に埋め込まれた独自の APK ファイルを使用してデプロイされます。 このパッケージは、Xamarin. Android 5.0 以降で自動的に処理されますが、バージョン5.0 より前の Xamarin. Android のバージョンでは、手動で実行する必要があります。 
+[パッケージ化を](~/android/wear/deploy-test/packaging.md)使用すると、展開の詳細が説明されます。 
 
 
 
 ## <a name="going-further"></a>理解を深める 
 
-Android Wear を理解する最善の方法では、ビルドし、最初のアプリをテストします。 すぐに着手するための推奨される読み取り順序を次に示します。
+Android の磨耗に慣れるための最善の方法は、最初のアプリをビルドしてテストすることです。 次の一覧は、迅速に利用できるようにするために推奨される読み取り順序を示しています。
 
-1.  [セットアップとインストール](~/android/wear/get-started/installation.md)をインストールして、Xamarin.Android Wear アプリを構築するための開発環境の構成の詳細な手順を提供します。 
+1.  [セットアップ & のインストール](~/android/wear/get-started/installation.md)では、Xamarin Android のアプリをビルドするための開発環境をインストールして構成するための詳細な手順を提供します。 
 
-2.  必要なパッケージをインストールして、エミュレーターまたはデバイスが構成されているを参照してください[Hello、Wear](~/android/wear/get-started/hello-wear.md)ハンドル ボタン Android Wear の小規模なプロジェクトを作成する方法を説明する手順をクリックすると表示、。Wear デバイスでのカウンターをクリックします。 
+2.  必要なパッケージをインストールし、エミュレーターまたはデバイスを構成したら、「 [Hello, 磨耗](~/android/wear/get-started/hello-wear.md)」を参照して、ボタンのクリックを処理し、磨耗に click カウンターを表示する小さな Android 用の磨耗プロジェクトを作成する方法を説明した手順を実行します。ドライブ. 
 
-3.  [配置とテスト](~/android/wear/deploy-test/index.md)を構成して、エミュレーターと Bluetooth 経由で Wear デバイスにアプリをデプロイする方法の手順を含め、デバイスへの展開に関する詳細情報を提供します。
+3.  [展開 & テスト](~/android/wear/deploy-test/index.md)では、エミュレーターとデバイスの構成と展開に関する詳細情報を提供します。これには、Bluetooth 経由でアプリを摩耗デバイスに展開する方法についての説明が含まれます。
 
-4.  [操作画面サイズ](~/android/wear/screen-sizes.md)をプレビューし、さまざまな使用可能な画面サイズ Wear デバイスでのユーザー インターフェイスを最適化する方法について説明します。 
+4.  [画面のサイズ](~/android/wear/screen-sizes.md)を使用すると、磨耗デバイスで使用できるさまざまな画面サイズに合わせてユーザーインターフェイスをプレビューおよび最適化する方法について説明します。 
 
-5.  [パッケージの操作](~/android/wear/deploy-test/packaging.md)Google Play で配布するための Wear アプリを手動でパッケージ化する手順について説明します。
+5.  [パッケージの操作](~/android/wear/deploy-test/packaging.md)Google Play で配布するために、磨耗アプリを手動でパッケージ化する手順について説明します。
 
-最初の Wear アプリを作成すると、Android Wear の腕時計がカスタムのビルドを試みますしたい場合があります。 
-[ウォッチの文字盤を作成する](~/android/wear/platform/creating-a-watchface.md)追加の拡張機能、アナログ スタイル ウォッチの文字盤を拡張するコードの後に、デジタル ウォッチ face サービスを停止、削除を開発するためのコード例および詳細な手順を提供します。 
-
-
-
-## <a name="android-wear-20"></a>Android Wear 2.0
-
-Android Wear 2.0 などのさまざまな新機能や機能を紹介*コンプリケーション*、曲線のレイアウト、ナビゲーションとアクションの引き出し、および展開された通知。 また、Wear 2.0 により、ハンドヘルド アプリから独立して動作するスタンドアロン アプリを構築することが可能にします。 新しい*手首ジェスチャ*機能により、アプリの片手やり取りします。 次のセクションでは、これらの機能を強調表示し、アプリでの使用の開始に役立つリンクを指定します。
+最初の摩耗アプリを作成したら、Android 用のカスタムウォッチ式を作成することをお勧めします。 
+[ウォッチ式を作成](~/android/wear/platform/creating-a-watchface.md)すると、デジタルウォッチフェイスサービスを削除するための手順とコード例が示されます。その後、追加の機能を使用してアナログスタイルのウォッチ式に拡張するコードを記述します。 
 
 
 
-### <a name="install-wear-20-packages"></a>インストール Wear 2.0 パッケージ
+## <a name="android-wear-20"></a>Android の磨耗2.0
 
-Xamarin.Android で Wear 2.0 アプリを作成するを追加する必要があります、 **Xamarin.Android.Wear v2.0**パッケージをプロジェクト (をクリックして、 **[参照] タブ**)。
+Android の磨耗2.0 では、*複雑さ*、曲線レイアウト、ナビゲーションとアクションの引き出し、拡張された通知など、さまざまな新機能が導入されています。 また、磨耗2.0 を使用すると、ハンドヘルドアプリから独立して動作するスタンドアロンアプリを作成できます。 新しい*手首ジェスチャ*機能によって、アプリとの1対1の対話が可能になります。 以下のセクションでは、これらの機能について説明し、アプリでの使用を開始する際に役立つリンクを示します。
 
-[![Xamarin.Android.Wear v2.0](intro-to-wear-images/wear-nuget-2.0-sml.png "Xamarin.Android.Wear v2.0 の NuGet をインストールします。")](intro-to-wear-images/wear-nuget-2.0.png#lightbox)
 
-この NuGet パッケージには、Android サポート ウェアラブルと互換性の Wear のライブラリのバインドが含まれています。
 
-ほかに**Xamarin.Android.Wear**をインストールすることをお勧め、 **Xamarin.GooglePlayServices.Wearable** NuGet: 
+### <a name="install-wear-20-packages"></a>摩耗2.0 パッケージのインストール
+
+Xamarin Android での摩耗2.0 アプリをビルドするには、プロジェクトに**xamarin app-v 2.0**パッケージを追加する必要があります ([**参照] タブ**をクリックします)。
+
+[![Xamarin. Android. app-v 2.0](intro-to-wear-images/wear-nuget-2.0-sml.png "Xamarin app-v 2.0 NuGet をインストールする")](intro-to-wear-images/wear-nuget-2.0.png#lightbox)
+
+この NuGet パッケージには、Android Support ウェアラブルと摩耗互換性ライブラリの両方のバインドが含まれています。
+
+GooglePlayServices をインストールすることをお勧めします。これに加え**て、次**のように**xamarin**をインストールすることをお勧めします。 
 
 [![Xamarin.GooglePlayServices.Wearable](intro-to-wear-images/gpsw-nuget-sml.png "Install the Xamarin.GooglePlayServices.Wearable NuGet")](intro-to-wear-images/gpsw-nuget.png#lightbox)
 
 
-### <a name="key-features-of-wear-20"></a>Wear 2.0 の主な機能
+### <a name="key-features-of-wear-20"></a>磨耗2.0 の主な機能
 
-Android Wear 2.0 では、2014 年の最初のリリース以降 Android Wear 最大の更新をされています。 次のセクションでは、Android Wear 2.0 の主な機能を強調表示し、リンクが提供するためのアプリでこれらの新機能の使用を開始します。 
+Android の磨耗2.0 は、2014での初期起動以来、Android の磨耗の最大の更新プログラムです。 以下のセクションでは、Android の磨耗2.0 の主な機能について説明し、アプリでこれらの新機能を使用する際に役立つリンクを示します。 
 
 
 #### <a name="complications"></a>問題点
 
-*コンプリケーション*小さなウォッチをウォッチの文字盤をスワイプすることがなく、ひとめでわかります face ウィジェットは。 複雑な問題はデスクトップ スタイルのダッシュ ボードのウィジェットに似ています天気、バッテリの寿命、予定表イベント、およびアプリケーションへの適合性の統計などの情報を表示します。 
+*複雑*な点としては、ウォッチ盤をスワイプしなくても一目で見ることができる小さな watch face ウィジェットがあります。 複雑さはデスクトップスタイルのダッシュボードウィジェットに似ています。これらの情報には、天気、バッテリ寿命、カレンダーイベント、適合性アプリの統計情報が表示されます。 
 
-![コンプリケーション例](intro-to-wear-images/complications.png "複雑な問題の例")
+![複雑さの例](intro-to-wear-images/complications.png "複雑さの例")
 
-詳細については、複雑な問題は、Android を参照してください。[ウォッチ Face コンプリケーション](https://developer.android.com/wear/preview/features/complications.html)トピック。 
+複雑さの詳細については、「Android [Watch Face の複雑さ](https://developer.android.com/wear/preview/features/complications.html)」を参照してください。 
 
 
 
 #### <a name="navigation-and-action-drawers"></a>ナビゲーションとアクションの引き出し 
 
-Wear 2.0 では、2 つの新しいドロワーが含まれます。 *ナビゲーション ドロワーを*、(ように、左下に) アプリのビュー間を移動するユーザーをできるように、画面の上部に表示されます。 *アクション ドロワー*アクションの一覧から選択できます (右側に表示されます) と、画面の下部に表示されます。 
+2つの新しい引き出しが、磨耗2.0 に含まれています。 画面の上部に表示される*ナビゲーションドロワー*を使用すると、ユーザーはアプリのビュー間を移動できます (次の左側の図を参照)。 *操作ドロアー*は、画面の下部 (右側に表示) に表示され、ユーザーはアクションの一覧から選択できます。 
 
 ![ナビゲーションとアクションの引き出し](intro-to-wear-images/drawers.png "ナビゲーションとアクションの引き出し")
 
-これら 2 つの新しいインタラクティブな引き出しの詳細については、Android を参照してください。 [Wear のナビゲーションとアクション](https://developer.android.com/wear/preview/features/ui-nav-actions.html)トピック。 
+これら2つの新しい対話型引き出しの詳細については、「Android の[磨耗のナビゲーションと操作](https://developer.android.com/wear/preview/features/ui-nav-actions.html)」を参照してください。 
 
 
 
-#### <a name="curved-layouts"></a>曲線のレイアウト 
+#### <a name="curved-layouts"></a>曲線レイアウト 
 
-Wear 2.0 では、round Wear デバイス上の曲線のレイアウトを表示するための新機能について説明します。 具体的には、新しい`WearableRecyclerView`クラスは round のディスプレイで垂直方向の項目の一覧を表示するために最適化されています。 
+磨耗2.0 では、丸い磨耗デバイスで曲線レイアウトを表示するための新機能が導入されています。 具体的には、 `WearableRecyclerView`新しいクラスは、丸い表示に垂直方向の項目の一覧を表示するように最適化されています。 
 
-![曲線のレイアウト例](intro-to-wear-images/curved-layout.png "曲線のレイアウトの例")
+![曲線レイアウトの例](intro-to-wear-images/curved-layout.png "曲線レイアウトの例")
 
-`WearableRecyclerView` 拡張、`RecyclerView`曲線のレイアウトと循環のスクロールのジェスチャをサポートするクラス。 詳細については、Android を参照してください。 [WearableRecyclerView](https://developer.android.com/reference/android/support/wearable/view/WearableRecyclerView.html) API のドキュメント。 
+`WearableRecyclerView`クラスを`RecyclerView`拡張して、曲線レイアウトと円形スクロールジェスチャをサポートします。 詳細については、Android [WearableRecyclerView](https://developer.android.com/reference/android/support/wearable/view/WearableRecyclerView.html) API のドキュメントを参照してください。 
 
 
 
-#### <a name="standalone-apps"></a>スタンドアロン アプリ 
+#### <a name="standalone-apps"></a>スタンドアロンアプリ 
 
-Android Wear 2.0 アプリは、ハンドヘルド アプリから独立して動作できます。 これにより、たとえば、スマート ウォッチ式を続行できますコンパニオン ハンドヘルド デバイスは、オフ、または、ウェアラブル デバイスから遠く離れたが有効な場合でも、すべての機能を提供します。 この機能の詳細については、Android を参照してください。[スタンドアロン アプリ](https://developer.android.com/wear/preview/features/standalone-apps.html)トピック。
+Android の摩耗2.0 アプリは、ハンドヘルドアプリから独立して動作できます。 つまり、たとえば、スマートウォッチは、付属のハンドヘルドデバイスの電源が入っている場合や、ウェアラブルデバイスから離れた場所にいる場合でも、完全な機能を引き続き提供できます。 この機能の詳細については、「Android[スタンドアロンアプリ](https://developer.android.com/wear/preview/features/standalone-apps.html)」を参照してください。
 
 
 
 #### <a name="wrist-gestures"></a>手首ジェスチャ 
 
-手首ジェスチャを行うユーザーはタッチ スクリーンを使用せず、アプリと対話する&ndash;ユーザーが 1 つの手でアプリに応答できます。 2 つの手首ジェスチャがサポートされています。 
+手首ジェスチャを使用すると、ユーザーはタッチスクリーン&ndash;を使用せずにアプリと対話できるようになります。ユーザーはアプリにワンハンドで応答できます。 2つの手首ジェスチャがサポートされています。 
 
--   フリック手首
--   フリック手首
+-   手首をフリック
+-   手首のフリック
 
-詳細については、Android を参照してください。[手首ジェスチャ](https://developer.android.com/wear/preview/features/gestures.html)トピック。 
-
-
-インライン アクション、スマート応答、リモートの入力、展開された通知、および通知の新しいブリッジ モードなどの多くの詳細について Wear 2.0 機能があります。 Wear 2.0 の新機能についての詳細については、Android を参照してください。 [API の概要](https://developer.android.com/wear/preview/api-overview.html)します。 
+詳細については、Android の[手首のジェスチャ](https://developer.android.com/wear/preview/features/gestures.html)に関するトピックを参照してください。 
 
 
+これには、インラインアクション、スマート応答、リモート入力、拡張された通知、通知の新しいブリッジングモードなど、さまざまな摩耗2.0 機能があります。 新しい摩耗2.0 機能の詳細については、「Android [API の概要](https://developer.android.com/wear/preview/api-overview.html)」を参照してください。 
 
-## <a name="devices"></a>デバイス
 
-Android Wear を実行できるデバイスのいくつかの例を次に示します。
+
+## <a name="devices"></a>[デバイス]
+
+Android の磨耗を実行できるデバイスの例をいくつか次に示します。
 
 * [Motorola 360](https://moto360.motorola.com/)
 * [LG G ウォッチ](http://www.lg.com/us/smart-watches/lg-W100-g-watch)
-* [LG G ウォッチ R](http://www.lg.com/us/smartwatch/g-watch-r)
-* [ライブ Samsung 歯車](http://www.samsung.com/global/microsite/gear/gearlive_design.html)
-* [Sony スマートウォッチ 3](http://www.sonymobile.com/global-en/products/smartwear/smartwatch-3-swr50/)
-* [ASU ZenWatch](http://www.asus.com/us/Phones/ASUS_ZenWatch_WI500Q/)
+* [LG G Watch R](http://www.lg.com/us/smartwatch/g-watch-r)
+* [Samsung 歯車ライブ](http://www.samsung.com/global/microsite/gear/gearlive_design.html)
+* [Sony SmartWatch 3](http://www.sonymobile.com/global-en/products/smartwear/smartwatch-3-swr50/)
+* [ASUS ZenWatch](http://www.asus.com/us/Phones/ASUS_ZenWatch_WI500Q/)
 
 
 
 ## <a name="further-reading"></a>関連項目
 
-Google の Android Wear のドキュメントをご覧ください。
+Google の Android の磨耗ドキュメントを確認してください。
 
-* [Android Wear について](http://www.android.com/wear/)
-* [Android Wear アプリの設計](https://developer.android.com/design/wear/index.html)
-* [android.support.wearable ライブラリ](https://developer.android.com/reference/android/support/wearable/view/package-summary.html)
-* [Android Wear 2.0](https://developer.android.com/wear/preview/index.html)
+* [Android の磨耗について](http://www.android.com/wear/)
+* [Android の摩耗アプリの設計](https://developer.android.com/design/wear/index.html)
+* [android. サポート. ウェアラブルライブラリ](https://developer.android.com/reference/android/support/wearable/view/package-summary.html)
+* [Android の磨耗2.0](https://developer.android.com/wear/preview/index.html)
 
 
 
 ## <a name="summary"></a>まとめ
 
-この概要では、Android Wear の概要が提供されています。 Android Wear の基本機能を説明し、Android Wear 2.0 で導入された機能の概要が含まれています。 Wear の Xamarin.Android の開発の概要開発者に役立つ重要な読み取りへのリンクが提供されているし、現在市場で Android Wear デバイスのいくつかの例が表示されています。
+この概要では、Android の磨耗の概要について説明しました。 Android の磨耗の基本的な機能について概説し、Android 磨耗2.0 で導入された機能の概要を説明しました。 この記事では、開発者が Xamarin. Android の磨耗開発を始めるのに役立つ重要な情報へのリンクを提供し、現在市場にある一部の Android 劣化デバイスの例を示しました。
 
 
 ## <a name="related-links"></a>関連リンク

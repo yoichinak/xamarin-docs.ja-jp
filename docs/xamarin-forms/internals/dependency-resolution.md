@@ -7,25 +7,25 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/27/2018
-ms.openlocfilehash: 56e50f0c3dffd54fe3d95f4cd140883613c9206f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e2cab7191bb4877deacb3f3f3235a3a4d5c65612
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61297218"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656362"
 ---
 # <a name="dependency-resolution-in-xamarinforms"></a>Xamarin.Forms での依存関係の解決
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/Advanced/DependencyResolution/DIContainerDemo/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/advanced-dependencyresolution-dicontainerdemo)
 
-_この記事では、アプリケーションの依存関係注入コンテナーがある作成およびカスタム レンダラー、エフェクト、および DependencyService 実装の有効期間を制御できるように、Xamarin.Forms に依存関係の解決方法を挿入する方法について説明します。この記事のコード例がから取得した、[コンテナーを使用して依存関係の解決](https://developer.xamarin.com/samples/xamarin-forms/Advanced/DependencyResolution/DIContainerDemo/)サンプル。_
+_この記事では、アプリケーションの依存関係注入コンテナーがある作成およびカスタム レンダラー、エフェクト、および DependencyService 実装の有効期間を制御できるように、Xamarin.Forms に依存関係の解決方法を挿入する方法について説明します。この記事のコード例がから取得した、[コンテナーを使用して依存関係の解決](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/advanced-dependencyresolution-dicontainerdemo)サンプル。_
 
 モデル-ビュー-ビューモデル (MVVM) パターンを使用して、Xamarin.Forms アプリケーションのコンテキストでは、依存関係の注入コンテナーを登録およびモデルの表示を解決するため、サービスを登録すると、ビュー モデルに挿入することに使用できます。 ビュー モデルの作成時に、コンテナーは、必要なすべての依存関係を挿入します。 これらの依存関係が作成されていない場合、コンテナーが作成し、最初の依存関係を解決します。 ビューのモデルへの依存関係の挿入の例など、依存関係の挿入の詳細については、次を参照してください。[依存関係の注入](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md)します。
 
 作成の制御のプラットフォーム プロジェクトの種類の有効期間は従来、Xamarin.Forms を使用して実行し、`Activator.CreateInstance`カスタム レンダラーでは、特殊効果のインスタンスを作成するメソッドをおよび[ `DependencyService` ](xref:Xamarin.Forms.DependencyService)実装。 残念ながら、これは開発者の作成と、これらの型とそれらに依存関係を挿入する機能の有効期間の制御点を制限します。 この動作は、Xamarin.Forms にアプリケーションの依存関係注入コンテナー、または Xamarin.Forms 制御の種類を作成する方法: 依存関係の解決方法を挿入することで変更できます。 ただし、依存関係の解決方法を Xamarin.Forms に挿入するための要件がないことに注意してください。 Xamarin.Forms は引き続き作成し、依存関係の解決方法が挿入されていない場合は、プラットフォームのプロジェクト内の型の有効期間を管理します。
 
 > [!NOTE]
-> 解決するのにはファクトリ メソッドを使用する依存関係解決メソッドを挿入できるもこの記事は、依存関係の注入コンテナーを使用して登録済みの型を解決する Xamarin.Forms に依存関係の解決方法を挿入するのでは、登録済みの型。 詳細については、次を参照してください。、[ファクトリ メソッドを使用して依存関係の解決](https://developer.xamarin.com/samples/xamarin-forms/Advanced/DependencyResolution/FactoriesDemo/)サンプル。
+> 解決するのにはファクトリ メソッドを使用する依存関係解決メソッドを挿入できるもこの記事は、依存関係の注入コンテナーを使用して登録済みの型を解決する Xamarin.Forms に依存関係の解決方法を挿入するのでは、登録済みの型。 詳細については、次を参照してください。、[ファクトリ メソッドを使用して依存関係の解決](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/advanced-dependencyresolution-factoriesdemo)サンプル。
 
 ## <a name="injecting-a-dependency-resolution-method"></a>依存関係の解決方法を挿入します。
 
@@ -301,7 +301,7 @@ async void OnSelectPhotoButtonClicked(object sender, EventArgs e)
 
 ## <a name="related-links"></a>関連リンク
 
-- [コンテナー (サンプル) を使用して依存関係の解決](https://developer.xamarin.com/samples/xamarin-forms/Advanced/DependencyResolution/DIContainerDemo/)
+- [コンテナー (サンプル) を使用して依存関係の解決](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/advanced-dependencyresolution-dicontainerdemo)
 - [依存関係の挿入](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md)
 - [ビデオ プレーヤーの実装](~/xamarin-forms/app-fundamentals/custom-renderer/video-player/index.md)
 - [効果からのイベントの呼び出し](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)

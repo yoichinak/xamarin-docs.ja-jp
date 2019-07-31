@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/13/2016
-ms.openlocfilehash: 8da40e5500e5669027f658ec95930e3b3a37530e
-ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
+ms.openlocfilehash: 364e10b8b59fcc8d640799ab6a0f11dcf4ded818
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67675241"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644506"
 ---
 # <a name="introduction-to-watchos"></a>WatchOS の概要
 
@@ -29,7 +29,7 @@ WatchOS アプリのソリューションでは、3 つのプロジェクトが�
 
 WatchOS 1 のアプリで、拡張機能のコードは、iPhone で実行 – Apple Watch は外付けディスプレイを効果的に。 2 および 3 watchOS アプリは、Apple Watch に完全に実行されます。 この違いは、次の図に示されます。
 
-[![](intro-to-watchos-images/arch-sml.png "WatchOS 1 と watchOS 2 (以降) の違いは、この図には")](intro-to-watchos-images/arch.png#lightbox)
+[![](intro-to-watchos-images/arch-sml.png "次の図は、watchOS 1 と watchOS 2 (およびそれ以降) の違いを示しています。")](intro-to-watchos-images/arch.png#lightbox)
 
 WatchOS のバージョンを対象とするに関係なく Visual Studio for Mac の Solution Pad で完全なソリューションは次のようします。
 
@@ -53,8 +53,8 @@ WatchOS 2 以降がウォッチ接続フレームワークが、親アプリと�
 
 ライフ サイクルを`WKInterfaceController`オブジェクトには、次の呼び出しが含まれます。
 
-- [起動状態](xref:WatchKit.WKInterfaceController.Awake*):このメソッドでは、初期化の大部分を行う必要があります。
-- [WillActivate](xref:WatchKit.WKInterfaceController.WillActivate) :Watch アプリ直後に呼び出されますが、ユーザーに表示されます。 瞬間瞬間の最終初期化を実行、アニメーションなどを開始するには、このメソッドを使用します。
+- 起動[状態:](xref:WatchKit.WKInterfaceController.Awake*)ほとんどの初期化は、このメソッドで実行する必要があります。
+- を[アクティブ](xref:WatchKit.WKInterfaceController.WillActivate)にします。Watch アプリがユーザーに表示される直前に呼び出されます。 瞬間瞬間の最終初期化を実行、アニメーションなどを開始するには、このメソッドを使用します。
 - この時点では、Watch アプリが表示され、拡張機能がユーザー入力し、アプリケーション ロジックを Watch アプリの表示を更新する応答を開始します。
 - [DidDeactivate](xref:WatchKit.WKInterfaceController.DidDeactivate) Watch 後のアプリがユーザーによって破棄されて、このメソッドが呼び出されます。 ユーザー インターフェイス コントロールは、次回まで変更できませんこのメソッドから制御が戻た後`WillActivate`が呼び出されます。 IPhone への接続が切断された場合、このメソッドを呼び出すこともされます。
 - 拡張機能が非アクティブ化された後に、プログラムにアクセスできません。 保留中の非同期関数**されません**呼び出せません。 ウォッチ キットの拡張機能は、バック グラウンド処理モードを使用しない可能性があります。 プログラムがユーザーによって再アクティブ化、オペレーティング システムによって、アプリが退職していない場合は、最初に呼び出されるメソッドになります`WillActivate`します。
@@ -69,7 +69,7 @@ WatchOS 2 以降がウォッチ接続フレームワークが、親アプリと�
 ### <a name="normal-interaction"></a>通常の操作
 
 Watch アプリ/拡張機能の相互作用の大半のサブ クラスられます`WKInterfaceController`watch アプリの内のシーンに対応するために作成**Interface.storyboard**します。 これの詳細については、[インストール](~/ios/watchos/get-started/installation.md)と[Getting Started](~/ios/watchos/get-started/index.md)記事。
-次の図の一部を示しています、[ウォッチ キット カタログ](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)サンプルのストーリー ボード。 ここで示した各シーンには、対応するカスタム`WKInterfaceController`(`LabelDetailController`、 `ButtonDetailController`、`SwitchDetailController`など) で拡張機能プロジェクト。
+次の図の一部を示しています、[ウォッチ キット カタログ](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)サンプルのストーリー ボード。 ここで示した各シーンには、対応するカスタム`WKInterfaceController`(`LabelDetailController`、 `ButtonDetailController`、`SwitchDetailController`など) で拡張機能プロジェクト。
 
 ![](intro-to-watchos-images/scenes.png "標準の相互作用の例")
 
@@ -90,10 +90,10 @@ Notification イベントに対応するこれらのメソッドをオーバー�
 
 ## <a name="screen-sizes"></a>画面サイズ
 
-Apple Watch では、2 つの顔のサイズがあります。38 mm および 42 mm は、5:4 表示比率、および、Retina の両方が表示されます。 使用可能なサイズは次のとおりです。
+Apple Watch には、次の2つの顔サイズがあります。38mm と 42 mm、画面の表示比率が5:4、Retina が表示されます。 使用可能なサイズは次のとおりです。
 
-- 38 mm:136 x 170 論理ピクセル (272 x 340 物理ピクセル単位)
-- 42 mm:156 x 195 論理ピクセル (312 x 390 物理ピクセル単位) です。
+- 38mm:136 x 170 論理ピクセル (272 x 340 物理ピクセル)
+- 42 mm:156 x 195 論理ピクセル (312 x 390 物理ピクセル)。
 
 使用`WKInterfaceDevice.ScreenBounds`をどのディスプレイ、Watch アプリが実行されているかを判断します。
 
@@ -133,8 +133,8 @@ Apple のドキュメントをご覧ください。
 
 ## <a name="related-links"></a>関連リンク
 
-- [watchOS 3 カタログ (サンプル)](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)
-- [watchOS 1 カタログ (サンプル)](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)
+- [watchOS 3 カタログ (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
+- [watchOS 1 カタログ (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
 - [セットアップとインストール](~/ios/watchos/get-started/installation.md)
 - [Watch アプリの最初のビデオ](https://blog.xamarin.com/your-first-watch-kit-app/)
 - [ウォッチ キット ガイド用の Apple を開発します。](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/index.html)

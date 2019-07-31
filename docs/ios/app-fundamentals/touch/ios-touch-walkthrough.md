@@ -1,47 +1,47 @@
 ---
-title: 'チュートリアル: Xamarin.iOS でのタッチの使用'
-description: このドキュメントでは、サンプルのタッチ操作、ジェスチャ レコグナイザー、およびカスタム ジェスチャ レコグナイザーを説明する Xamarin.iOS アプリケーションでタッチを処理する方法について説明します。
+title: 'チュートリアル: Xamarin でのタッチの使用'
+description: このドキュメントでは、Xamarin iOS アプリケーションでタッチを処理する方法について説明します。タッチ操作のサンプル、ジェスチャレコグナイザー、およびカスタムジェスチャレコグナイザーについて説明します。
 ms.prod: xamarin
 ms.assetid: 13F8289B-7A80-4959-AF3F-57874D866DCA
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: abcd89a6c4547680df0b96d235531312d3b21c52
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: f772bf1309330b41f9faea812e2cdcdba8e969cb
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67864333"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68653136"
 ---
-# <a name="walkthrough-using-touch-in-xamarinios"></a>チュートリアル: Xamarin.iOS でのタッチの使用
+# <a name="walkthrough-using-touch-in-xamarinios"></a>チュートリアル: Xamarin でのタッチの使用
 
-このチュートリアルでは、さまざまな種類のタッチ イベントに応答するコードを記述する方法を示します。 それぞれの例は、別々 の画面に含まれています。
+このチュートリアルでは、さまざまな種類のタッチイベントに応答するコードを記述する方法について説明します。 それぞれの例は、別の画面に含まれています。
 
-- [サンプルのタッチ](#Touch_Samples)– タッチ イベントに応答する方法。
-- [ジェスチャ認識エンジン サンプル](#Gesture_Recognizer_Samples)– 組み込みジェスチャ レコグナイザーを使用する方法。
-- [カスタムのジェスチャ レコグナイザー サンプル](#Custom_Gesture_Recognizer)– カスタム ジェスチャ認識エンジンを構築する方法。
+- [タッチサンプル](#Touch_Samples)–タッチイベントに応答する方法。
+- [ジェスチャレコグナイザーのサンプル](#Gesture_Recognizer_Samples)–組み込みのジェスチャレコグナイザーの使用方法。
+- [カスタムジェスチャレコグナイザーのサンプル](#Custom_Gesture_Recognizer)–カスタムジェスチャ認識エンジンを構築する方法。
 
-各セクションでは、ゼロからコードを記述する手順を説明します。
-[サンプル コードを開始](https://developer.xamarin.com/samples/monotouch/ApplicationFundamentals/Touch_start)既に完全なストーリー ボードとメニュー画面が含まれます。
+各セクションには、最初からコードを記述する手順が含まれています。
+[開始サンプルコード](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-touch-start)には、完全なストーリーボードとメニュー画面が既に含まれています。
 
- [![](ios-touch-walkthrough-images/image3.png "サンプルには、メニュー画面が含まれます。")](ios-touch-walkthrough-images/image3.png#lightbox)
+ [![](ios-touch-walkthrough-images/image3.png "サンプルにはメニュー画面が含まれています")](ios-touch-walkthrough-images/image3.png#lightbox)
 
-コード、ストーリー ボードを追加し、iOS で使用可能なタッチ イベントのさまざまな種類の詳細には、次の手順に従います。 また、開く、[完成したサンプル](https://developer.xamarin.com/samples/monotouch/ApplicationFundamentals/Touch_final)作業すべてを表示します。
+次の手順に従ってコードをストーリーボードに追加し、iOS で使用できるさまざまな種類のタッチイベントについて説明します。 または、完成した[サンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-touch-final)を開いてすべての機能を確認します。
 
 <a name="Touch_Samples"/>
 
-## <a name="touch-samples"></a>タッチ サンプル
+## <a name="touch-samples"></a>タッチサンプル
 
-このサンプルでは、タッチ Api の一部が紹介されます。 タッチ イベントを実装するために必要なコードを追加するこれらの手順に従います。
+このサンプルでは、いくつかのタッチ Api について説明します。 タッチイベントを実装するために必要なコードを追加するには、次の手順に従います。
 
 
-1. プロジェクトを開く**Touch_Start**します。 最初にプロジェクトを実行するすべてが、正常かどうかを確認し、タッチ、**タッチ サンプル**ボタンをクリックします。 (ただし、いずれのボタンは機能)、次のような画面が表示されます。
+1. プロジェクト**Touch_Start**を開きます。 まず、プロジェクトを実行してすべて問題ないことを確認し、 **[タッチサンプル]** ボタンにタッチします。 次のような画面が表示されます (ただし、どのボタンも動作しません)。
     
-    [![](ios-touch-walkthrough-images/image4.png "サンプル アプリの非稼働ボタンと実行")](ios-touch-walkthrough-images/image4.png#lightbox)
+    [![](ios-touch-walkthrough-images/image4.png "動作しないボタンを使用したサンプルアプリの実行")](ios-touch-walkthrough-images/image4.png#lightbox)
 
 
-1. ファイルを編集して**TouchViewController.cs**クラスに次の 2 つのインスタンス変数を追加および`TouchViewController`:
+1. **TouchViewController.cs**ファイルを編集し、次の2つのインスタンス変数を`TouchViewController`クラスに追加します。
 
     ```csharp 
     #region Private Variables
@@ -51,7 +51,7 @@ ms.locfileid: "67864333"
     ```
 
 
-1. 実装、`TouchesBegan`メソッドを次のコードに示すようにします。
+1. 次のコードに示すように、メソッドを実装します。`TouchesBegan`
 
     ```csharp 
     public override void TouchesBegan(NSSet touches, UIEvent evt)
@@ -94,13 +94,13 @@ ms.locfileid: "67864333"
     }
     ```
     
-    このメソッドの動作をチェックするか、`UITouch`オブジェクト、および、存在する場合は、タッチが発生した場所に基づくアクションを実行します。
+    このメソッドは、 `UITouch`オブジェクトをチェックすることによって機能します。また、存在する場合は、タッチの発生箇所に基づいて何らかのアクションを実行します。
 
-    * _TouchImage 内_– テキストを表示します`Touches Began`ラベルとイメージを変更します。
-    * _DoubleTouchImage 内_– ダブルタップ ジェスチャ場合に表示されるイメージを変更します。
-    * _DragImage 内_–、タッチが開始されたことを示すフラグを設定します。 メソッド`TouchesMoved`かを判断するこのフラグを使用して、`DragImage`か、画面を移動する必要が次の手順で説明するようです。
+    * [_内部 TouchImage_ ] –ラベル`Touches Began`のテキストを表示し、画像を変更します。
+    * _DoubleTouchImage 内_-ジェスチャがダブルタップの場合に表示されるイメージを変更します。
+    * [ _DragImage 内_] –タッチが開始されたことを示すフラグを設定します。 メソッド`TouchesMoved`は、このフラグを使用して`DragImage` 、次の手順で説明するように、画面の周りを移動するかどうかを判断します。
 
-    個々 の仕上げにのみ、上記のコードを処理、動作がないまま、ユーザーが画面に指を移動する場合。 移動するに対応する実装`TouchesMoved`以下のコードに示すようにします。
+    上記のコードは個々の操作のみを扱っていますが、ユーザーが画面上で指を動かしても動作はありません。 移動に対応するには`TouchesMoved` 、次のコードに示すようにを実装します。
 
     ```csharp 
     public override void TouchesMoved(NSSet touches, UIEvent evt)
@@ -129,11 +129,11 @@ ms.locfileid: "67864333"
     }
     ```
 
-    このメソッドは、取得、`UITouch`オブジェクト、し、タッチが発生した場所を確認します。 タッチが発生した場合`TouchImage`、画面に表示されるタッチが移動テキスト。 
+    このメソッドは`UITouch` 、オブジェクトを取得し、タッチがどこで発生したかを確認します。 で`TouchImage`タッチが発生した場合は、移動したテキストが画面に表示されます。 
 
-    場合`touchStartedInside`が true の場合、ユーザーがに指を持っていることがわかって`DragImage`の周囲に移動することができます。 コードが移動`DragImage`ユーザーが画面に指を移動するとします。
+    が`touchStartedInside` true の場合は、ユーザーが`DragImage`指を持っていて、移動していることがわかります。 ユーザーが指を`DragImage`画面の上に移動すると、コードが移動します。
 
-1. ユーザーが画面をオフに自分の指を離したまたは iOS タッチ イベントをキャンセルするときにケースを処理する必要があります。 実装します。 これは、`TouchesEnded`と`TouchesCancelled`次に示すよう。
+1. ユーザーが画面から指を離したとき、または iOS がタッチイベントをキャンセルしたときに、そのケースを処理する必要があります。 そのために、次の`TouchesEnded`よう`TouchesCancelled`にとを実装します。
 
     ```csharp
     public override void TouchesCancelled(NSSet touches, UIEvent evt)
@@ -165,33 +165,33 @@ ms.locfileid: "67864333"
     }
     ```
     
-    これらのメソッドの両方がリセットされます、`touchStartedInside`フラグを false にします。 `TouchesEnded` 表示ではまた`TouchesEnded`画面。
+    どちらの方法でも`touchStartedInside`フラグが false にリセットされます。 `TouchesEnded`は画面に`TouchesEnded`も表示されます。
 
-1. この時点でサンプルのタッチ スクリーンが完了しました。 次のスクリーン ショットで示すように、画面がのイメージのそれぞれの操作を変更する方法に注意してください。
+1. この時点で、[タッチサンプル] 画面が完成しました。 次のスクリーンショットに示すように、各イメージを操作すると画面がどのように変化するかに注目してください。
         
     [![](ios-touch-walkthrough-images/image4.png "アプリの開始画面")](ios-touch-walkthrough-images/image4.png#lightbox)
     
-    [![](ios-touch-walkthrough-images/image5.png "ユーザーがボタンをドラッグした後、画面")](ios-touch-walkthrough-images/image5.png#lightbox)
+    [![](ios-touch-walkthrough-images/image5.png "ユーザーがボタンをドラッグした後の画面")](ios-touch-walkthrough-images/image5.png#lightbox)
  
 
 <a name="Gesture_Recognizer_Samples" />
 
-## <a name="gesture-recognizer-samples"></a>ジェスチャ認識エンジンのサンプル
+## <a name="gesture-recognizer-samples"></a>ジェスチャレコグナイザーのサンプル
 
-[前のセクション](#Touch_Samples)タッチ イベントを使用して、画面を中心にオブジェクトをドラッグする方法を示しました。
-ここでは、タッチ イベントの削除はし、次のジェスチャ レコグナイザーを使用する方法について説明します。
+[前のセクション](#Touch_Samples)では、タッチイベントを使用して、オブジェクトを画面の周りにドラッグする方法を示していました。
+このセクションでは、タッチイベントを除去し、次のジェスチャレコグナイザーを使用する方法を示します。
 
--  `UIPanGestureRecognizer`画面の周囲でイメージをドラッグします。
--  `UITapGestureRecognizer`画面上にダブル タップに応答します。
+-  画面の周りのイメージをドラッグするための。 `UIPanGestureRecognizer`
+-  画面上のダブルタップに応答する。`UITapGestureRecognizer`
 
-実行する場合、[サンプル コードを開始](https://developer.xamarin.com/samples/monotouch/ApplicationFundamentals/Touch_start) をクリックし、**ジェスチャ認識エンジン サンプル**ボタン、次の画面が表示されます。
+[開始サンプルコード](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-touch-start)を実行し、 **[ジェスチャ認識エンジンのサンプル]** ボタンをクリックすると、次の画面が表示されます。
 
- [![](ios-touch-walkthrough-images/image6.png "ジェスチャ認識エンジンのサンプル ボタンをクリックすると、この画面を示しています")](ios-touch-walkthrough-images/image6.png#lightbox)
+ [![](ios-touch-walkthrough-images/image6.png "[ジェスチャ認識エンジンのサンプル] ボタンをクリックすると、この画面が表示されます。")](ios-touch-walkthrough-images/image6.png#lightbox)
 
-ジェスチャ レコグナイザーを実装するためにこれらの手順に従います。
+ジェスチャレコグナイザーを実装するには、次の手順に従います。
 
 
-1. ファイルを編集して**GestureViewController.cs**し、次のインスタンス変数を追加します。
+1. **GestureViewController.cs**ファイルを編集し、次のインスタンス変数を追加します。
 
     ```csharp
     #region Private Variables
@@ -200,10 +200,10 @@ ms.locfileid: "67864333"
     #endregion
     ```
 
-    このインスタンスの変数の前のイメージの場所を追跡する必要があります。
-パン ジェスチャ レコグナイザーを使用して、`originalImageFrame`画面にイメージを再描画するために必要なオフセットを計算する値。
+    イメージの前の場所を追跡するには、このインスタンス変数が必要です。
+パンジェスチャ認識エンジンは、 `originalImageFrame`値を使用して、画面上のイメージを再描画するために必要なオフセットを計算します。
 
-1. コント ローラーには、次のメソッドを追加します。
+1. コントローラーに次のメソッドを追加します。
 
     ```csharp
     private void WireUpDragGestureRecognizer()
@@ -219,10 +219,10 @@ ms.locfileid: "67864333"
     }
     ```
 
-    このコードをインスタンス化、`UIPanGestureRecognizer`インスタンス、およびそれをビューに追加します。
-メソッドの形式でジェスチャをターゲットを割り当てることに注意してください。 `HandleDrag` – このメソッドは、次の手順で提供されます。
+    このコード`UIPanGestureRecognizer`は、インスタンスをインスタンス化し、ビューに追加します。
+メソッド`HandleDrag`の形式でジェスチャにターゲットを割り当てることに注意してください。このメソッドは、次の手順で提供されます。
 
-1. HandleDrag を実装するには、コント ローラーに次のコードを追加します。
+1. HandleDrag を実装するには、コントローラーに次のコードを追加します。
 
     ```csharp
     private void HandleDrag(UIPanGestureRecognizer recognizer)
@@ -246,10 +246,10 @@ ms.locfileid: "67864333"
     }
     ```
 
-    上記のコードはまずジェスチャ認識エンジンの状態を確認し、イメージを画面に移動し、します。 コント ローラーはこのコードで、画面イメージを 1 つをドラッグすることをようになりましたサポートします。
+    上記のコードでは、まずジェスチャ認識エンジンの状態を確認し、画面の周りにイメージを移動します。 このコードを使用すると、コントローラーは画面上の1つのイメージのドラッグをサポートできるようになります。
 
 
-1. 追加、`UITapGestureRecognizer`その DoubleTouchImage に表示されるイメージが変更されます。 次のメソッドを追加、`GestureViewController`コント ローラー。
+1. DoubleTouchImage に`UITapGestureRecognizer`表示されるイメージを変更するを追加します。 `GestureViewController`コントローラーに次のメソッドを追加します。
 
     ```csharp
     private void WireUpTapGestureRecognizer()
@@ -283,9 +283,9 @@ ms.locfileid: "67864333"
     }
     ```
 
-    このコードは、コードによく似ています、`UIPanGestureRecognizer`が使用しているターゲットのデリゲートを使用する代わりに、`Action`します。 
+    このコードは、のコードによく似て`UIPanGestureRecognizer`い`Action`ますが、を使用しているターゲットに対してデリゲートを使用する代わりに、を使用します。 
 
-1. 最後に実行する必要がありますが、変更`ViewDidLoad`追加したメソッドを呼び出すようにします。 次のコードのように、ViewDidLoad に変更します。
+1. 最後に、追加したメソッドを呼び出す`ViewDidLoad`ように変更する必要があります。 次のコードのように ViewDidLoad を変更します。
 
     ```csharp
     public override void ViewDidLoad()
@@ -302,28 +302,28 @@ ms.locfileid: "67864333"
     }
     ```
 
-    値を初期化しているにも気付か`originalImageFrame`します。
+    の`originalImageFrame`値を初期化することにも注意してください。
 
 
-1. アプリケーションを実行し、2 つのイメージを操作します。
-次のスクリーン ショットでは、これらのインタラクションの 1 つの例を示します。
+1. アプリケーションを実行し、2つのイメージを操作します。
+次のスクリーンショットは、これらの相互作用の一例です。
     
-    [![](ios-touch-walkthrough-images/image7.png "このスクリーン ショットは、ドラッグ操作を示しています。")](ios-touch-walkthrough-images/image7.png#lightbox)
+    [![](ios-touch-walkthrough-images/image7.png "このスクリーンショットは、ドラッグ操作を示しています。")](ios-touch-walkthrough-images/image7.png#lightbox)
 
 
 
 <a name="Custom_Gesture_Recognizer"/>
 
-## <a name="custom-gesture-recognizer"></a>カスタム ジェスチャ レコグナイザー
+## <a name="custom-gesture-recognizer"></a>カスタムジェスチャレコグナイザー
 
-このセクションでは、カスタム ジェスチャ レコグナイザーを構築する前のセクションの概念が適用されます。 カスタム ジェスチャ レコグナイザーはサブクラス`UIGestureRecognizer`とは、画面で、ユーザーは、"V"を描画する場合を認識し、ビットマップを切り替えます。 次のスクリーン ショットでは、この画面の例を示します。
+このセクションでは、カスタムジェスチャ認識エンジンを構築するために、前のセクションの概念を適用します。 カスタムジェスチャ認識エンジンはサブ`UIGestureRecognizer`クラスであり、ユーザーが画面に "V" を描画したときに認識され、ビットマップを切り替えます。 次のスクリーンショットは、この画面の例を示しています。
 
- [![](ios-touch-walkthrough-images/image8.png "ユーザーが画面に 'V' を描画するときに、アプリが認識されます。")](ios-touch-walkthrough-images/image8.png#lightbox)
+ [![](ios-touch-walkthrough-images/image8.png "アプリは、ユーザーが画面に ' V ' を描画したときに認識します")](ios-touch-walkthrough-images/image8.png#lightbox)
 
-カスタムのジェスチャ認識エンジンを作成する次の手順に従います。
+カスタムジェスチャ認識エンジンを作成するには、次の手順に従います。
 
 
-1. という名前のプロジェクトに新しいクラスを追加`CheckmarkGestureRecognizer`、し、次のコードのようになります。
+1. という名前`CheckmarkGestureRecognizer`のプロジェクトに新しいクラスを追加し、次のコードのようにします。
 
     ```csharp
     using System;
@@ -438,12 +438,12 @@ ms.locfileid: "67864333"
     }
     ```
 
-    Reset メソッドが呼び出されます、`State`プロパティを変更するか、`Recognized`または`Ended`します。 これは、カスタム ジェスチャ レコグナイザーの設定の内部状態をリセットする時刻です。
-今すぐクラスは、次回ユーザーが、アプリケーションと対話を新たに開始し、ジェスチャの認識を再試行する準備が完了します。
+    Reset メソッドは、プロパティが`State`または`Ended`のいずれか`Recognized`に変更されたときに呼び出されます。 これは、カスタムジェスチャ認識エンジンで内部状態セットをリセットするための時間です。
+次に、ユーザーがアプリケーションと対話するときに、クラスを最新の状態にして、ジェスチャを再度認識する準備ができました。
 
 
 
-1. カスタム ジェスチャ レコグナイザーを定義したところ (`CheckmarkGestureRecognizer`) を編集、 **CustomGestureViewController.cs**ファイルを開き、次の 2 つのインスタンス変数を追加します。
+1. カスタムジェスチャ認識エンジン (`CheckmarkGestureRecognizer`) を定義したので、 **CustomGestureViewController.cs**ファイルを編集し、次の2つのインスタンス変数を追加します。
 
     ```csharp
     #region Private Variables
@@ -452,7 +452,7 @@ ms.locfileid: "67864333"
     #endregion
     ```
 
-1. インスタンス化し、ジェスチャ レコグナイザーを構成するには、コント ローラーに次のメソッドを追加します。
+1. ジェスチャ認識エンジンをインスタンス化して構成するには、次のメソッドをコントローラーに追加します。
 
     ```csharp
     private void WireUpCheckmarkGestureRecognizer()
@@ -481,7 +481,7 @@ ms.locfileid: "67864333"
     }
     ```
 
-1. 編集`ViewDidLoad`を呼び出すよう`WireUpCheckmarkGestureRecognizer`の次のコード スニペットに示すようにします。
+1. 次`ViewDidLoad`のコードスニペットに`WireUpCheckmarkGestureRecognizer`示すように、を編集してを呼び出します。
 
     ```csharp
     public override void ViewDidLoad()
@@ -493,19 +493,19 @@ ms.locfileid: "67864333"
     }
     ```
 
-1. アプリケーションを実行し、画面に"V"を描いてください。 次のスクリーン ショットに示すように、変更を表示、イメージが表示されます。
+1. アプリケーションを実行し、画面に "V" を描画します。 次のスクリーンショットに示すように、表示されているイメージが変化していることがわかります。
     
-    [![](ios-touch-walkthrough-images/image9.png "チェック ボタン")](ios-touch-walkthrough-images/image9.png#lightbox)
+    [![](ios-touch-walkthrough-images/image9.png "ボタンがオンにされました")](ios-touch-walkthrough-images/image9.png#lightbox)
     
-    [![](ios-touch-walkthrough-images/image10.png "オフ ボタン")](ios-touch-walkthrough-images/image10.png#lightbox)
+    [![](ios-touch-walkthrough-images/image10.png "オフになっているボタン")](ios-touch-walkthrough-images/image10.png#lightbox)
 
 
 
-3 つのセクション タッチ iOS でのイベントに応答するさまざまな方法が示されている手順を上記: タッチ イベントでは、組み込みのジェスチャ認識機能を使用して、またはカスタムのジェスチャ認識エンジン。
+上記の3つのセクションでは、iOS のタッチイベントに応答するさまざまな方法を示しています。タッチイベント、組み込みのジェスチャレコグナイザー、またはカスタムジェスチャレコグナイザーを使用します。
 
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [iOS (サンプル) を開始するタッチ](https://developer.xamarin.com/samples/monotouch/ApplicationFundamentals/Touch_start)
-- [iOS の最終タッチ (サンプル)](https://developer.xamarin.com/samples/monotouch/ApplicationFundamentals/Touch_final)
+- [iOS タッチスタート (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-touch-start)
+- [iOS タッチの最終版 (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-touch-final)

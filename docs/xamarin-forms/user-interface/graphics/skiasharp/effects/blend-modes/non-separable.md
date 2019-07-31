@@ -7,16 +7,16 @@ ms.assetid: 97FA2730-87C0-4914-8C9F-C64A02CF9EEF
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
-ms.openlocfilehash: 9b94db14a197ca31be42e8712c2170fd66b86579
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 9054539b08da89c0f7d8a93150866fb1b41e63f1
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61162572"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68642782"
 ---
 # <a name="the-non-separable-blend-modes"></a>Blend のない分離モード
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 この記事で示した[**分離 SkiaSharp 描画モード**](separable.md)blend の分離モードは、赤、緑、および青のチャネルでの操作を個別に実行します。 Blend のない分離モードは必要ありません。 色の色合い、鮮やかさ、および明るさのレベルに運用する、blend のない分離モードは興味深い方法で色を変更できます。
 
@@ -28,7 +28,7 @@ Blend のない分離モードを理解するのには、送信先と送信元�
 
 HSL カラー モデルは、情報の記事で説明した[ **Xamarin.Forms との統合**](../../basics/integration.md)でき実験 HSL の色をその記事ではサンプル プログラムです。 作成することができます、`SKColor`色合い、鮮やかさ、および明るさの値を使用して、静的値[ `SKColor.FromHsl` ](xref:SkiaSharp.SKColor.FromHsl*)メソッド。
 
-色合いは、色のドミナント波長を表します。 色相 0 ~ 360 の範囲の値の加算と減算のプライマリの切り替え。赤は値 0、黄色は 60、緑は 120、シアンが 180 度、青は 240、マゼンタは 300 におよび、サイクルが 360 に赤に戻ります。
+色合いは、色のドミナント波長を表します。 色相値の範囲は 0 ~ 360 で、加法および減法混色を循環しています。赤は値0、黄色は60、緑は120、シアンは180、青は240、マゼンタは300、循環は360で赤に戻ります。
 
 主調色がない場合は&mdash;色は白または黒、灰色の網かけ、たとえば、&mdash;色合いは未定義であり、通常は 0 に設定します。 
 
@@ -198,7 +198,7 @@ public partial class NonSeparableBlendModesPage : ContentPage
 
 この blend モードのアプリケーションは、間もなく表示されます。
 
-最後に、 `SKBlendModes.Luminosity` blend モードは、逆の`SKBlendModes.Color`します。 Hue と変換先の飽和状態が保持されますが、ソースの明るさを使用します。 `Luminosity` Blend モードは最も不可解なバッチ。色相と彩度のスライダーに影響を与える、イメージが、中規模の輝度であっても、イメージは distinct できません。
+最後に、 `SKBlendModes.Luminosity` blend モードは、逆の`SKBlendModes.Color`します。 Hue と変換先の飽和状態が保持されますが、ソースの明るさを使用します。 `Luminosity` Blend モードは、バッチの最も不可解な部分です。色合いと鮮やかさのスライダーは画像に影響しますが、中程度の明るさでも画像は区別されません。
 
 [![非分離ブレンド モード - 光度](non-separable-images/NonSeparableBlendModes-Luminosity.png "非分離ブレンド モードの明るさ")](non-separable-images/NonSeparableBlendModes-Luminosity-Large.png#lightbox)
 
@@ -208,11 +208,11 @@ public partial class NonSeparableBlendModesPage : ContentPage
 
 ## <a name="a-matte-for-a-separable-mode"></a>分離モードのマット
 
-1 つのリソースとして含まれているビットマップ、 [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)サンプル。 ファイル名は**Banana.jpg**:
+1 つのリソースとして含まれているビットマップ、 [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプル。 ファイル名は**Banana.jpg**:
 
 ![バナナ Monkey](non-separable-images/Banana.jpg "Banana Monkey")
 
-バナナだけを含むマットを作成することになります。 これは内のリソースにも、 [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)サンプル。 ファイル名は**BananaMatte.png**:
+バナナだけを含むマットを作成することになります。 これは内のリソースにも、 [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプル。 ファイル名は**BananaMatte.png**:
 
 ![バナナ マット](non-separable-images/BananaMatte.png "Banana マット")
 
@@ -292,4 +292,4 @@ public class BlueBananaPage : ContentPage
 ## <a name="related-links"></a>関連リンク
 
 - [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

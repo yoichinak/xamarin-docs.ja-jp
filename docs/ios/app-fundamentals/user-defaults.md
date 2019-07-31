@@ -1,54 +1,54 @@
 ---
-title: Xamarin.iOS でのユーザーの既定値の操作
-description: この記事では、Xamarin iOS アプリまたは拡張機能で、既定の設定を保存するための NSUserDefaults の使用について説明します。 高レベルのための NSUserDefaults をについて説明し、値を読み書きする方法について説明します。
+title: Xamarin でのユーザーの既定値の使用
+description: この記事では、NSUserDefaults を使用して Xamarin iOS アプリまたは拡張機能に既定の設定を保存する方法について説明します。 ここでは、NSUserDefaults の概要について説明し、値の読み取りと書き込みの方法について説明します。
 ms.prod: xamarin
 ms.assetid: DAE7FFC4-B8C9-4D9E-886A-9B2388452EEB
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/07/2016
-ms.openlocfilehash: 688db534d6c99a8fadb7535f0532f9c1e9564707
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a1bc00d69f5b00787ba0e16b7e3846d5f18a4bed
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61153388"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655130"
 ---
-# <a name="working-with-user-defaults-in-xamarinios"></a>Xamarin.iOS でのユーザーの既定値の操作
+# <a name="working-with-user-defaults-in-xamarinios"></a>Xamarin でのユーザーの既定値の使用
 
-_この記事では、Xamarin.iOS アプリまたは拡張機能で、既定の設定を保存する NSUserDefault の操作について説明します。_
+_この記事では、NSUserDefault を使用して Xamarin iOS アプリまたは拡張機能に既定の設定を保存する方法について説明します。_
 
 
-`NSUserDefaults`クラスは、ios アプリと拡張機能は、システム全体の既定値は、システムとの対話方法を提供します。 既定でシステムを使用して、ユーザーはアプリの動作や、ユーザー設定 (アプリのデザインに基づく) を満たすためにスタイル設定を構成できます。 たとえば、ヤード メトリックの vs でのデータを表示または指定した UI テーマを選択します。
+クラス`NSUserDefaults`を使用すると、iOS アプリと拡張機能がシステム全体の既定のシステムとプログラムを使用して対話することができます。 ユーザーは、既定のシステムを使用して、アプリの動作またはスタイル設定 (アプリの設計に基づく) を構成できます。 たとえば、メトリックと英国の測定値にデータを表示したり、特定の UI テーマを選択したりすることができます。
 
-アプリのグループを使用すると`NSUserDefaults`特定グループ内のアプリ (または拡張機能) の間で通信する方法も提供します。
+アプリグループで使用すると`NSUserDefaults` 、には、特定のグループ内のアプリ (または拡張機能) 間で通信する手段も用意されています。
 
 <a name="About-User-Defaults" />
 
 ## <a name="about-user-defaults"></a>ユーザーの既定値について
 
-上記のとおり、ユーザーの既定値 (`NSUserDefaults`) アプリ (または拡張機能) に追加し、エンドユーザーが外観や操作の実行時にアプリを調整する変更できる構成可能なオプションを提供するために使用できます。
+前述のように、ユーザーの`NSUserDefaults`既定値 () をアプリ (または拡張機能) に追加し、エンドユーザーが実行時にアプリの外観や操作を調整するために変更できる構成可能なオプションを提供するために使用できます。
 
-アプリが最初に実行されるときに`NSUserDefaults`アプリのユーザーの既定値はデータベースからキーと値を読み取り、値が必要です。 開くと、毎回データベースの読み取りを回避するためにメモリにキャッシュします。 
+アプリが初めて実行さ`NSUserDefaults`れるときに、は、アプリのユーザーの既定のデータベースからキーと値を読み取り、メモリにキャッシュして、値が必要になるたびにデータベースを開いたり読み取りたりしないようにします。 
 
 > [!IMPORTANT]
-> Apple 不要になったことをお勧めする開発者の呼び出し、`Synchronize`メソッドを直接データベースにメモリ内キャッシュを同期します。 代わりに、自動的に呼び出されます、メモリ内キャッシュのユーザーの既定のデータベースとの同期を維持するために定期的にします。
+> Apple では、開発者が`Synchronize`メソッドを呼び出して、メモリ内キャッシュをデータベースと直接同期することを推奨していません。 代わりに、メモリ内キャッシュとユーザーの既定のデータベースとの同期を維持するために、定期的に自動的に呼び出されます。
 
-`NSUserDefaults`クラスには読み取りとなど、一般的なデータ型の基本設定の値を書き込み、いくつかの便利なメソッドが含まれています: 文字列、整数、浮動小数点、ブール値、および Url。 使用して他の種類のデータをアーカイブする`NSData`からの読み取りまたはユーザーの既定値はデータベースに書き込まれます。 詳細については、Apple を参照してください[の基本設定と設定のプログラミング ガイド](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/UserDefaults/Introduction/Introduction.html#//apple_ref/doc/uid/10000059i)します。
+クラス`NSUserDefaults`には、string、integer、float、boolean、url などの一般的なデータ型の設定値の読み取りと書き込みを行うための便利なメソッドがいくつか含まれています。 他の種類のデータは、を`NSData`使用してアーカイブした後、ユーザーの既定のデータベースに対して読み取りまたは書き込みを行うことができます。 詳細については、Apple の「[基本設定と設定のプログラミングガイド](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/UserDefaults/Introduction/Introduction.html#//apple_ref/doc/uid/10000059i)」を参照してください。
 
 <a name="Accessing-the-Shared-NSUserDefaults-Instance" />
 
 ## <a name="accessing-the-shared-nsuserdefaults-instance"></a>共有 NSUserDefaults インスタンスへのアクセス 
 
-ユーザーの既定の共有インスタンスは、デバイスの現在のユーザーのユーザーの既定値にアクセスを提供します。 共有の既定値のオブジェクトが存在しない場合にアクセスし、次の情報を使用して初期化は、最初に作成されます。
+共有ユーザーの既定のインスタンスは、デバイスの現在のユーザーの既定のアクセスを提供します。 共有の既定オブジェクトが存在しない場合は、最初にアクセスされ、次の情報で初期化されるときに、そのオブジェクトが作成されます。
 
-- `NSArgumentDomain`の現在のアプリから解析された既定値で構成されます。
-- アプリのバンドル Id のドメイン。
-- `NSGlobalDomain`で共有されるすべてのアプリの既定値で構成されます。
-- 各ユーザーのドメインを別の言語を優先します。
-- `NSRegistrationDomain`検索が成功した常に確認するアプリによって変更可能な一時的な既定のセットを使用します。
+- 現在のアプリから解析された既定値で構成される。`NSArgumentDomain`
+- アプリのバンドル識別子ドメイン。
+- すべてのアプリで共有される既定値で構成される。`NSGlobalDomain`
+- ユーザーの優先言語ごとに個別のドメイン。
+- 検索が常に成功するようにアプリによって変更できる一時的な既定のセットを持つ。`NSRegistrationDomain`
 
-ユーザーの既定の共有インスタンスにアクセスするには、次のコードを使用します。
+共有ユーザーの既定のインスタンスにアクセスするには、次のコードを使用します。
 
 ```csharp
 // Get Shared User Defaults
@@ -57,39 +57,39 @@ var plist = NSUserDefaults.StandardUserDefaults;
 
 <a name="Accessing-an-App-Group-NSUserDefaults-Instance" />
 
-## <a name="accessing-an-app-group-nsuserdefaults-instance"></a>アプリ グループのための NSUserDefaults インスタンスへのアクセス
+## <a name="accessing-an-app-group-nsuserdefaults-instance"></a>アプリグループの NSUserDefaults インスタンスにアクセスしています
 
-アプリのグループを使用して、前述のよう`NSUserDefaults`特定グループ内のアプリ (または拡張機能) 間の通信に使用できます。 最初に、アプリ グループ id と必要なアプリ Id が適切で構成されていることを確認する必要がありますには、**証明書, Identifiers & Profiles**セクションで[iOS デベロッパー センター](https://developer.apple.com/devcenter/ios/)がインストールされていると開発環境。
+前述のように、アプリグループを使用`NSUserDefaults`すると、を使用して、特定のグループ内のアプリ (または拡張機能) 間の通信を行うことができます。 最初に、 [IOS デベロッパーセンター](https://developer.apple.com/devcenter/ios/)の **[Certificates, identifier & Profiles]** セクションで、アプリグループと必要なアプリ id が適切に構成されていること、および開発環境にインストールされていることを確認する必要があります。
 
-次に、アプリや拡張機能プロジェクトを上記で作成した有効なアプリ Id の 1 つの必要があります、`Entitlements.plist`ファイルは、アプリ グループを有効になっているし、指定したアプリ バンドルに含める必要があります。
+次に、アプリまたは拡張機能プロジェクトに、上`Entitlements.plist`で作成した有効なアプリ id の1つが必要です。また、アプリグループが有効になっていて、指定されたアプリバンドルにファイルが含まれている必要があります。
 
-このすべてを共有アプリ グループ ユーザーの既定値アクセスできる次のコードを使用します。
+このすべてが整ったら、次のコードを使用して、共有アプリグループのユーザーの既定値にアクセスできます。
 
 ```csharp
 // Get App Group User Defaults
 var plist = new NSUserDefaults ("group.com.xamarin.todaysharing", NSUserDefaultsType.SuiteName);
 ```
 
-場所`group.com.xamarin.todaysharing`でアプリ グループが作成**証明書, Identifiers & Profiles**にアクセスします。 詳細についてを参照してください、[アプリ グループ機能](~/ios/deploy-test/provisioning/capabilities/app-groups-capabilities.md)ドキュメント。
+ここ`group.com.xamarin.todaysharing`で、は、[証明書] で作成されたアプリグループです。 **[識別子] は、アクセスする & プロファイル**です。 詳細についてを参照してください、[アプリ グループ機能](~/ios/deploy-test/provisioning/capabilities/app-groups-capabilities.md)ドキュメント。
 
 <a name="Reading-Default-Values" />
 
-## <a name="reading-default-values"></a>既定値を読み取る
+## <a name="reading-default-values"></a>既定値の読み取り
 
-必要なユーザーの既定のデータベースにアクセスした後は、キー/値のペアと読み取られるデータの種類に基づいて、いくつかの便利なメソッドを使用して既定値から値を読み取ることができます。
+目的のユーザーの既定のデータベースにアクセスした後、キーと値のペアを使用して既定値の値を読み取ることができます。また、読み取るデータの種類に基づいていくつかの便利な方法を使用することもできます。
 
-- `ArrayForKey` -の配列を返します`NSObjects`の特定のキー値。
-- `BoolForKey` -指定されたキーのブール値を返します。
-- `DataForKey` -を返します、`NSData`指定されたキーのオブジェクト。
-- `DictionaryForKey` -を返します、`NSDictionary`の特定のキー。
-- `DoubleForKey` -指定されたキーの double 値を返します。
-- `FloatForKey` -指定されたキーの浮動小数点値を返します。
-- `IntForKey` -指定されたキーの整数値を返します。
-- `StringArrayForKey` -の配列を返します`String`オブジェクト特定のキー値から。
-- `StringForKey` -指定されたキーの文字列値を返します。
-- `URLForKey` -を返します、`NSUrl`指定されたキーの値。
+- `ArrayForKey`-指定された`NSObjects`キー値のの配列を返します。
+- `BoolForKey`-指定されたキーのブール値を返します。
+- `DataForKey`-指定さ`NSData`れたキーのオブジェクトを返します。
+- `DictionaryForKey`-指定さ`NSDictionary`れたキーのを返します。
+- `DoubleForKey`-指定されたキーの double 型の値を返します。
+- `FloatForKey`-指定されたキーの float 値を返します。
+- `IntForKey`-指定されたキーの整数値を返します。
+- `StringArrayForKey`-指定された`String`キー値からオブジェクトの配列を返します。
+- `StringForKey`-指定されたキーの文字列値を返します。
+- `URLForKey`-指定さ`NSUrl`れたキーの値を返します。
 
-たとえば、次のコードよう、ユーザーの既定値からブール値になります。
+たとえば、次のコードは、ユーザーの既定値からブール値を読み取ります。
 
 ```csharp
 // Get Shared User Defaults
@@ -103,17 +103,17 @@ var useHeader = plist.BoolForKey("UseHeader");
 
 <a name="Writing-Default-Values" />
 
-## <a name="writing-default-values"></a>既定値を書き込んでいます
+## <a name="writing-default-values"></a>既定値の書き込み
 
-上記の値を読み取りと同じよう、必要なユーザー既定のデータベースにアクセスした後の値に書き込めるキー/値のペアと書き込まれるデータの種類に基づいて、いくつかの便利なメソッドを使用して、既定値。
+上記の値を読み取るのと同様に、目的のユーザーの既定のデータベースにアクセスした後、キーと値のペアを使用して既定値に値を書き込むことができ、記述されるデータの種類に基づいていくつかの便利な方法があります。
 
-- `SetBool` -指定したキーに指定したブール値を書き込みます。
-- `SetDouble` -指定したキーに指定した double 値を書き込みます。
-- `SetFloat` -指定したキーに指定された浮動小数点値を書き込みます。
-- `SetString` -指定したキーに指定した文字列値を書き込みます。
-- `SetURL` -指定された URL を書き込みます (`NSUrl`) 値を指定したキー。
+- `SetBool`-指定されたキーに指定されたブール値を書き込みます。
+- `SetDouble`-指定されたキーに指定された double 値を書き込みます。
+- `SetFloat`-指定された float 値を指定されたキーに書き込みます。
+- `SetString`-指定されたキーに指定された文字列値を書き込みます。
+- `SetURL`-指定された URL`NSUrl`() 値を指定されたキーに書き込みます。
 
-たとえば、次のコードは、ユーザーの既定値をブール値を記述します。
+たとえば、次のコードは、ユーザーの既定値にブール値を書き込みます。
 
 ```csharp
 // Get Shared User Defaults
@@ -127,19 +127,19 @@ plist.SetBool(useHeader, "UseHeader");
 ```
 
 > [!IMPORTANT]
-> アプリが最初に実行されるときに`NSUserDefaults`アプリのユーザーの既定値はデータベースからキーと値を読み取り、値が必要です。 開くと、毎回データベースの読み取りを回避するためにメモリにキャッシュします。
+> アプリが初めて実行さ`NSUserDefaults`れるときに、は、アプリのユーザーの既定のデータベースからキーと値を読み取り、メモリにキャッシュして、値が必要になるたびにデータベースを開いたり読み取りたりしないようにします。
 
 
 
 <a name="Summary" />
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
-この記事ではカバーされて、`NSUserDefaults`クラスとそのを使用して Xamarin.iOS アプリを構成する、エンドユーザーが使用できるオプションのセットを提供する方法。 さらに、アプリ グループを使用して、拡張機能とその親アプリ間、または、グループ内のアプリ間の通信について説明します。
+この記事では、 `NSUserDefaults`クラスについて説明し、エンドユーザーが Xamarin iOS アプリを構成するために使用できる一連のオプションを提供する方法について説明しました。 さらに、アプリグループを使用して、拡張機能とその親アプリ間、またはグループ内のアプリ間で通信を行います。
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [tvOS のサンプル](https://developer.xamarin.com/samples/tvos/all/)
-- [基本設定と設定のプログラミング ガイド](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/UserDefaults/Introduction/Introduction.html#//apple_ref/doc/uid/10000059i)
+- [tvOS のサンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
+- [基本設定と設定のプログラミングガイド](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/UserDefaults/Introduction/Introduction.html#//apple_ref/doc/uid/10000059i)
 - [NSUserDefaults](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSUserDefaults_Class/#//apple_ref/doc/constant_group/NSUserDefaults_Domains)

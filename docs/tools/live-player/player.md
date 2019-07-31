@@ -1,97 +1,97 @@
 ---
 title: Xamarin Live Player アプリ
-description: このドキュメントでは、コードの変更をプレビューするために使用するには、アプリがデバイスで live Xamarin Live Player について説明します。 これは、セットアップ、サンプル、ログ、デバイスの管理の設定について説明します。
+description: このドキュメントでは、デバイスでライブでコード変更をプレビューするために使用できる Xamarin Live Player アプリについて説明します。 セットアップ、サンプル、ログ、設定、デバイスの管理などについて説明します。
 ms.prod: xamarin
 ms.assetid: A7EB73C1-38D7-46C5-9AF6-4C571C168BE7
 author: lobrien
 ms.author: laobri
 ms.date: 06/13/2019
-ms.openlocfilehash: fce0eeae4ef5776842ea1b45c36163118042dc49
-ms.sourcegitcommit: 93b1e2255d59c8ca6674485938f26bd425740dd1
+ms.openlocfilehash: b09ea4e8ec09db5e9bf443476cd3a67e16f02d19
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67157728"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68651225"
 ---
 # <a name="xamarin-live-player-app"></a>Xamarin Live Player アプリ
 
 ![プレビュー機能](~/media/shared/preview.png)
 
 > [!WARNING]
-> Xamarin Live Player のプレビューが終了しました。 アプリが使用できなくします。 以下の手順は、Visual Studio 2017 のプレビューを使用して引き続きお客様に提供されます。
+> Xamarin Live Player プレビューが終了しました。 アプリは使用できなくなりました。 以下の手順は、Visual Studio 2017 でプレビューの使用を継続しているお客様向けに提供されています。
 
 > [!TIP]
-> 使用することができます、 [XAML プレビューアー](~/xamarin-forms/xaml/xaml-previewer/index.md)でそれらを編集すると、画面のデザインを表示するには、Visual Studio 2019 または Visual Studio for Mac。
+> Visual Studio 2019 または Visual Studio for Mac の[XAML プレビューアー](~/xamarin-forms/xaml/xaml-previewer/index.md)を使用して、編集時に画面のデザインを表示できます。
 
-スタートアップ時に、Xamarin Live Player アプリは、ようになります。
+起動時に、Xamarin Live Player アプリは次のようになります。
 
-![Live Player の Android アプリのスクリーン ショット](player-images/app-android-sml.png)
+![Live Player Android アプリのスクリーンショット](player-images/app-android-sml.png)
 
-キーを押すと**Visual Studio とペアリング**カメラを使用して、コンピューターに表示されているバーコードをスキャンします。
+[ペアリング]**を Visual Studio に**押すと、カメラを使用して、コンピューターに表示されているバーコードをスキャンします。
 
-![Android のバーコード スキャナーのスクリーン ショット](player-images/scan-android-sml.png)
+![Android バーコードスキャナーのスクリーンショット](player-images/scan-android-sml.png)
 
-接続が成功した場合と、コードがほぼ瞬時にデバイスで実行する必要があります (など、[電卓のサンプル](https://developer.xamarin.com/samples/mobile/LivePlayer/BasicCalculator))。
+接続に成功した場合、コードはデバイスでほぼ即座に実行されます ( [Calculator サンプル](https://github.com/xamarin/mobile-samples/tree/master/LivePlayer/BasicCalculator)など)。
 
-![デバイスで実行されているサンプルの電卓アプリケーション](player-images/basic-calculator-sml.png)
+![デバイスで実行されているサンプル電卓アプリ](player-images/basic-calculator-sml.png)
 
 ## <a name="options"></a>オプション
 
-情報ボタンを押して **(i)** を表示するアプリの下部にある、**オプション**メニュー。
+アプリの下部にある情報ボタン **(i)** を押すと、 **[オプション]** メニューが表示されます。
 
-[![[オプション] メニューのスクリーン ショット](player-images/options-sml.png)](player-images/options.png#lightbox)
+[![[オプション] メニューのスクリーンショット](player-images/options-sml.png)](player-images/options.png#lightbox)
 
 ### <a name="logs"></a>ログ
 
-問題の診断ログを表示します。
+問題を診断するためのログを表示します。
 
 ### <a name="settings"></a>設定
 
-- コンパイルと実行時のエラーの表示を切り替えます。
-- バージョン情報です。
+- コンパイルエラーと実行時エラーの表示を切り替えます。
+- バージョン情報。
 - フィードバックを送信します。
 
-[![設定のスクリーン ショット](player-images/settings-sml.png)](player-images/settings.png#lightbox)
+[![設定のスクリーンショット](player-images/settings-sml.png)](player-images/settings.png#lightbox)
 
-## <a name="managing-devices"></a>デバイスを管理します。
+## <a name="managing-devices"></a>デバイスの管理
 
-最初にデバイスを接続する手順については、[要件およびセットアップ](~/tools/live-player/install.md)します。 複数のデバイスをペアリングし、IDE を使用して管理できます。
+デバイスを初めて接続する場合は、「[必要条件 & セットアップ](~/tools/live-player/install.md)」に記載されている手順に従ってください。 IDE を使用して複数のデバイスをペアリングし、それらを管理することができます。
 
 # <a name="visual-studio-2017tabwindows"></a>[Visual Studio 2017](#tab/windows)
 
 Visual Studio で、次のように選択します**ツール > Xamarin Live Player > デバイスを管理しています...**
 
-![[デバイス] ウィンドウを管理します。](player-images/manage-tools-menu-vs.png)
+![デバイスの管理ウィンドウ](player-images/manage-tools-menu-vs.png)
 
-このウィンドウでは、以下を実行できます。
+このウィンドウでは、次の操作を実行できます。
 
-- コードをスキャンして、新しいデバイスをペアリングします。
-- また、画面に表示されるコードを入力してデバイスをペアリングします。
-- 一覧から既存のデバイスを削除します。
+- コードをスキャンして新しいデバイスをペアリングする
+- または、画面に表示されているコードを入力してデバイスをペアリングします。
+- 一覧から既存のデバイスを削除する
 
-このウィンドウは、デバイスの一覧からアクセスすることもできます。
+このウィンドウには、デバイスの一覧からアクセスすることもできます。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 Visual studio for Mac では、次のように選択します**ツール > (Xamarin Live Player) デバイスを管理しています...**
 
-![[デバイス] ウィンドウを管理します。](player-images/manage-tools-menu.png)
+![デバイスの管理ウィンドウ](player-images/manage-tools-menu.png)
 
-このウィンドウでは、以下を実行できます。
+このウィンドウでは、次の操作を実行できます。
 
-- コードをスキャンして、新しいデバイスをペアリングします。
-- また、画面に表示されるコードを入力してデバイスをペアリングします。
-- 一覧から既存のデバイスを削除します。
+- コードをスキャンして新しいデバイスをペアリングする
+- または、画面に表示されているコードを入力してデバイスをペアリングします。
+- 一覧から既存のデバイスを削除する
 
-![[デバイス] ウィンドウを管理します。](player-images/manage.png)
+![デバイスの管理ウィンドウ](player-images/manage.png)
 
-このウィンドウは、デバイスの一覧からアクセスすることもできます。
+このウィンドウには、デバイスの一覧からアクセスすることもできます。
 
-![Xamarin Live Player デバイスをデバイスの一覧から選択します。](player-images/manage-device-menu.png)
+![デバイス一覧から Xamarin Live Player デバイスを選択する](player-images/manage-device-menu.png)
 
 -----
 
-すべての問題を参照が発生した場合[制限事項とトラブルシューティング](~/tools/live-player/troubleshooting.md)します。
+問題が発生した場合は、「[制限事項とトラブルシューティング」を](~/tools/live-player/troubleshooting.md)参照してください。
 
 ## <a name="related-links"></a>関連リンク
 

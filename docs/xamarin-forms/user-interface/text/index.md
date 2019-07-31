@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2018
-ms.openlocfilehash: 8754f6573b00334fd228b1c9bd094cd91565976c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 3e30e3d4ea3bf0ec58aff842ffee68885a47d44a
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61363926"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656191"
 ---
 # <a name="text-in-xamarinforms"></a>Xamarin.Forms でのテキスト
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
 _Xamarin.Forms を使用して、テキストを入力または表示します。_
 
@@ -66,7 +66,7 @@ Xamarin.Forms では、テキストを操作するための 3 つのプライマ
 
 ## <a name="fontsfontsmd"></a>[フォント](fonts.md)
 
-多くのコントロールは、各プラットフォーム、またはカスタムのフォントをアプリに含まれている組み込みのフォントを使用して別のフォント設定をサポートします。 参照してください、[フォント](fonts.md)」の記事より詳細な情報。
+多くのコントロールは、各プラットフォームで組み込みフォントを使用するか、アプリに含まれるカスタムフォントを使用して、さまざまなフォント設定をサポートしています。 参照してください、[フォント](fonts.md)」の記事より詳細な情報。
 
 <a name="Styles" />
 
@@ -76,4 +76,4 @@ Xamarin.Forms では、テキストを操作するための 3 つのプライマ
 
 ## <a name="related-links"></a>関連リンク
 
-- [テキスト (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
+- [テキスト (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)

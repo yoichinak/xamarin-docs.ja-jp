@@ -6,16 +6,16 @@ ms.assetid: 2C348BEA-81DF-4794-8857-EB1DFF5E11DB
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/11/2017
-ms.openlocfilehash: 9cd5a25c598a25500aee595439aeecd648d50526
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6b85cdcd92c4680ced9f75d7b8c5a69c9512d6c4
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61291160"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656146"
 ---
 # <a name="skiasharp-graphics-in-xamarinforms"></a>Xamarin.Forms での SkiaSharp グラフィックス
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _SkiaSharp を使用して、Xamarin.Forms アプリケーションでの 2D グラフィック_
 
@@ -25,7 +25,7 @@ SkiaSharp は、.NET と c# は Google の製品で広く使用されるオー�
 
 > [!VIDEO https://channel9.msdn.com/Events/Xamarin/Xamarin-University-Presents-Webinar-Series/SkiaSharp-Graphics-for-XamarinForms/player]
 
-**ウェビナー:Xamarin.Forms 用 SkiaSharp**
+**ウェブSkiaSharp のための形式**
 
 ## <a name="skiasharp-preliminaries"></a>SkiaSharp の準備作業
 
@@ -65,5 +65,5 @@ SkiaSharp で描画できる最も簡単なグラフィック図形には、円�
 ## <a name="related-links"></a>関連リンク
 
 - [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 - [SkiaSharp 付き Xamarin.Forms ウェビナー (ビデオ)](https://channel9.msdn.com/Events/Xamarin/Xamarin-University-Presents-Webinar-Series/SkiaSharp-Graphics-for-XamarinForms)

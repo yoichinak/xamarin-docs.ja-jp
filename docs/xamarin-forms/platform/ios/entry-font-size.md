@@ -1,24 +1,24 @@
 ---
-title: IOS でのエントリのフォント サイズ
-description: プラットフォーム仕様はカスタム レンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ利用できる機能の使用を可能にします。 この記事では、エントリのフォント サイズを拡大/縮小する iOS のプラットフォームに固有の使用方法について説明します。
+title: IOS のエントリのフォントサイズ
+description: プラットフォーム仕様はカスタム レンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ利用できる機能の使用を可能にします。 この記事では、エントリのフォントサイズをスケールする iOS プラットフォーム固有のを使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: E8881D4E-902B-4397-A43E-916B2885EC87
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 24e8c0e0b963cda7d3240c47ee526001db9d4533
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: f0f5ca8aa7959d5c305c29c96f972dccc43a65ff
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926047"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68648141"
 ---
-# <a name="entry-font-size-on-ios"></a>IOS でのエントリのフォント サイズ
+# <a name="entry-font-size-on-ios"></a>IOS のエントリのフォントサイズ
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-この iOS プラットフォームに固有のフォント サイズを調整するために使用する[ `Entry` ](xref:Xamarin.Forms.Entry)入力テキストがコントロール内に収まることを確認します。 これは XAML で [`Entry.AdjustsFontSizeToFitWidth`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.AdjustsFontSizeToFitWidthProperty) 添付プロパティを `boolean` 値を設定して使用します。
+この iOS プラットフォーム固有のを使用して、の[`Entry`](xref:Xamarin.Forms.Entry)フォントサイズを拡大縮小し、入力テキストがコントロールに収まるようにします。 これは XAML で [`Entry.AdjustsFontSizeToFitWidth`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.AdjustsFontSizeToFitWidthProperty) 添付プロパティを `boolean` 値を設定して使用します。
 
 ```xaml
 <ContentPage ...
@@ -55,6 +55,6 @@ entry.On<iOS>().SetAdjustsFontSizeToFitWidth(!entry.On<iOS>().AdjustsFontSizeToF
 
 ## <a name="related-links"></a>関連リンク
 
-- [プラットフォーム仕様 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [プラットフォーム仕様 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [プラットフォーム仕様の作成](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
-- [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)
+- [iOSSpecific の API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

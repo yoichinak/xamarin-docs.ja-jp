@@ -7,16 +7,16 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: b266ef96513ac392afa83bc672d41db7cfe3ce16
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 14b92bb576679dee3408c5805c6b698addd9bd8a
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61278745"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657445"
 ---
 # <a name="skiasharp-lines-and-paths"></a>SkiaSharp の線とパス
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _SkiaSharp を使用して、行とグラフィックスのパスを描画するには_
 
@@ -24,7 +24,7 @@ _SkiaSharp を使用して、行とグラフィックスのパスを描画する
 
 グラフィック パスは、行と SkiaSharp の曲線を描画する最も一般的なアプローチです。 ここを使用して、 [ `SKPath` ](xref:SkiaSharp.SKPath)オブジェクトの小さな直線のコレクションを使用して、直線を描画するために (と呼ばれる、*ポリライン*) アルゴリズムを定義できます曲線を描画するためにします。 以降のセクション[ **SkiaSharp の曲線とパス**](../curves/index.md)でサポートされている曲線のさまざまな種類について説明します`SKPath`します。
 
-このセクションでは、すべてのサンプル プログラムが、見出しの下に表示**の線とパス**のホーム ページで、 [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)プログラム、および、 [**パス**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths)をソリューションのフォルダー。
+このセクションでは、すべてのサンプル プログラムが、見出しの下に表示**の線とパス**のホーム ページで、 [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)プログラム、および、 [**パス**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths)をソリューションのフォルダー。
 
 ## <a name="lines-and-stroke-capslinesmd"></a>[線とストローク キャップ](lines.md)
 
@@ -54,4 +54,4 @@ SkiaSharp を使用して、パラメーターの式を定義できる任意の�
 ## <a name="related-links"></a>関連リンク
 
 - [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

@@ -7,16 +7,16 @@ ms.assetid: 66D1A537-A247-484E-B5B9-FBCB7838FBE9
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
-ms.openlocfilehash: 8c86782d5b8b8250049d0ae060ca7bd548c5a4ef
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4fb5bd1e883adc3be89bde7cc0e1529e77165247
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61387362"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655038"
 ---
 # <a name="the-separable-blend-modes"></a>Blend の分離モード
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 この記事で示した[ **SkiaSharp の Porter Duff ブレンド モード**](porter-duff.md)、Porter Duff blend モードは、一般にクリッピングの操作を実行します。 Blend の分離モードは異なります。 分離モードでは、イメージの個々 の赤、緑、および青の色のコンポーネントを変更します。 Blend の分離モードでは、赤、緑、青の組み合わせが本当に白いことを示すための色を混在させることが。
 
@@ -127,7 +127,7 @@ public partial class LightenAndDarkenPage : ContentPage
 
 [![明るくして、画面の](separable-images/LightenAndDarken.png "明るくし、暗くします。")](separable-images/LightenAndDarken-Large.png#lightbox)
 
-このプログラムでは、通常の blend の分離モードを使用する方法を示しています。変換先は、何らかの非常に多くの場合、ビットマップのイメージです。 使用して表示される四角形は、ソースは、`SKPaint`オブジェクトをその`BlendMode`プロパティを分離できる blend モードに設定します。 四角形は、純色を指定できます (ここでは、)、またはグラデーションをします。 透過性は_いない_通常、blend の分離モードで使用します。
+このプログラムは、分離可能な blend モードを使用する通常の方法を示しています。変換先は、何らかの種類の画像であり、非常に多くの場合ビットマップです。 使用して表示される四角形は、ソースは、`SKPaint`オブジェクトをその`BlendMode`プロパティを分離できる blend モードに設定します。 四角形は、純色を指定できます (ここでは、)、またはグラデーションをします。 透過性は_いない_通常、blend の分離モードで使用します。
 
 このプログラムで実験するときこれら 2 つの blend のモードのされませんは明るくし、一様にイメージが暗く説明します。 代わりに、`Slider`に何らかのしきい値を設定します。 たとえば、するとして次のように向上します。、`Slider`の、`Lighten`モードでは、イメージの暗い部分の取得光最初明るい部分は同じままです。
 
@@ -149,9 +149,9 @@ public partial class LightenAndDarkenPage : ContentPage
 
 | ブレンド モード   | 変更なし | 操作 |
 | ------------ | --------- | --------- |
-| `Plus`       | 黒     | 色を追加することで明るくなります。Sc + Dc |
-| `Modulate`   | 白     | 色を乗算して暗くなります。Sc·Dc | 
-| `Screen`     | 黒     | 補完製品を補完するもの。Sc + Dc &ndash; Sc·Dc |
+| `Plus`       | 黒     | 色を追加して明るくする:Sc + Dc |
+| `Modulate`   | 白     | 色を乗算して暗くする:Sc修飾 | 
+| `Screen`     | 黒     | 補完の製品を補完します。Sc + Dc &ndash; Sc修飾 |
 | `Overlay`    | 灰色      | 逆関数 `HardLight` |
 | `Darken`     | 白     | 色の最小: min (Sc, Dc) |
 | `Lighten`    | 黒     | 色の最大: max (Sc、Dc) |
@@ -159,9 +159,9 @@ public partial class LightenAndDarkenPage : ContentPage
 | `ColorBurn`  | 白     | ソースに基づいて変換先を暗くなります。 | 
 | `HardLight`  | 灰色      | 同様に、過酷なスポット ライトの効果 |
 | `SoftLight`  | 灰色      | 論理的なスポット ライトの効果に似ています | 
-| `Difference` | 黒     | 濃い薄いから減算します。Abs (Dc &ndash; Sc) | 
+| `Difference` | 黒     | 明るい方から暗い方を減算します。Abs (Dc &ndash; Sc) | 
 | `Exclusion`  | 黒     | ような`Difference`がコントラストを下げる |
-| `Multiply`   | 白     | 色を乗算して暗くなります。Sc·Dc |
+| `Multiply`   | 白     | 色を乗算して暗くする:Sc修飾 |
 
 詳細なアルゴリズムは、W3C で見つかる[**合成とレベル 1 のブレンド**](https://www.w3.org/TR/compositing-1/)仕様と、Skia [ **SkBlendMode 参照**](https://skia.org/user/api/SkBlendMode_Reference)これら 2 つのソースでの表記は同じはなりません。 注意`Plus`Porter Duff blend モードと見なされることがよくと`Modulate`W3C 仕様の一部ではありません。
 
@@ -428,4 +428,4 @@ public class PrimaryColorsPage : ContentPage
 ## <a name="related-links"></a>関連リンク
 
 - [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

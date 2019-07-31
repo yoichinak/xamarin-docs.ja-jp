@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/02/2018
-ms.openlocfilehash: 7a50488d8b18682dffd76dee582767c063920840
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: a28368e0fa4574fbb92a43dbd650a127008f5d06
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510515"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643461"
 ---
 # <a name="nougat-features"></a>Nougat の機能
 
@@ -160,7 +160,7 @@ if (!IsInMultiWindowMode) {
 }
 ```
 
-[Multiwindowplayground](https://developer.xamarin.com/samples/monodroid/android-n/MultiWindowPlayground/)サンプルアプリにはC# 、アプリで複数のウィンドウユーザーインターフェイスを活用する方法を示すコードが含まれています。
+[Multiwindowplayground](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-multiwindowplayground)サンプルアプリにはC# 、アプリで複数のウィンドウユーザーインターフェイスを活用する方法を示すコードが含まれています。
 
 マルチウィンドウモードの詳細については、[マルチウィンドウのサポート](https://developer.android.com/guide/topics/ui/multi-window.html)に関する説明を参照してください。
 
@@ -210,7 +210,7 @@ NotificationCompat.Builder builder = new NotificationCompat.Builder (Application
    .AddAction (actionReplyByRemoteInput);
 ```
 
-[Messaging Service](https://developer.xamarin.com/samples/monodroid/android-n/MessagingService/)サンプルアプリにはC# 、 `RemoteInput`オブジェクトを使用して通知を拡張する方法を示すコードが含まれています。 Android 7.0 以降のアプリにインライン応答アクションを追加する方法の詳細については、「Android[への通知へ](https://developer.android.com/guide/topics/ui/notifiers/notifications.html#direct)の応答」を参照してください。
+[Messaging Service](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-messagingservice)サンプルアプリにはC# 、 `RemoteInput`オブジェクトを使用して通知を拡張する方法を示すコードが含まれています。 Android 7.0 以降のアプリにインライン応答アクションを追加する方法の詳細については、「Android[への通知へ](https://developer.android.com/guide/topics/ui/notifiers/notifications.html#direct)の応答」を参照してください。
 
 
 #### <a name="bundled-notifications"></a>バンドル通知
@@ -253,15 +253,15 @@ Android 7.1 の新しいアプリショートカット機能の詳細につい�
 
 Android Nougat 機能を活用する方法を示すために、いくつかの Xamarin Android サンプルを利用できます。
 
--   [Multiwindowplayground グラウンド](https://developer.xamarin.com/samples/monodroid/android-n/MultiWindowPlayground/)は、Android Nougat で使用できるマルチウィンドウ API の使用方法を示しています。 サンプルアプリをマルチ windows モードに切り替えて、アプリのライフサイクルと動作にどのように影響するかを確認できます。
+-   [Multiwindowplayground グラウンド](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-multiwindowplayground)は、Android Nougat で使用できるマルチウィンドウ API の使用方法を示しています。 サンプルアプリをマルチ windows モードに切り替えて、アプリのライフサイクルと動作にどのように影響するかを確認できます。
 
--   [メッセージングサービス](https://developer.xamarin.com/samples/monodroid/android-n/MessagingService/)は、 `NotificationCompatManager`を使用して通知を送信する単純なサービスです。 また、 `RemoteInput`オブジェクトを使用して通知を拡張し、Android Nougat デバイスがアプリを開いていなくても、通知から直接テキストを使用して応答できるようにします。
+-   [メッセージングサービス](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-messagingservice)は、 `NotificationCompatManager`を使用して通知を送信する単純なサービスです。 また、 `RemoteInput`オブジェクトを使用して通知を拡張し、Android Nougat デバイスがアプリを開いていなくても、通知から直接テキストを使用して応答できるようにします。
 
--   [アクティブな通知](https://developer.xamarin.com/samples/monodroid/android-n/ActiveNotifications/)は、API を`NotificationManager`使用して、アプリケーションが現在表示している通知の数を通知する方法を示しています。
+-   [アクティブな通知](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-activenotifications)は、API を`NotificationManager`使用して、アプリケーションが現在表示している通知の数を通知する方法を示しています。
 
--   スコープが指定した[ディレクトリアクセス](https://developer.xamarin.com/samples/monodroid/android-n/ScopedDirectoryAccess/)スコープが指定されたディレクトリアクセス API を使用して、特定のディレクトリに簡単にアクセスする方法を示します。 これは、マニフェストでまたは`READ_EXTERNAL_STORAGE` `WRITE_EXTERNAL_STORAGE`権限を定義する必要がある代わりに機能します。
+-   スコープが指定した[ディレクトリアクセス](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-scopeddirectoryaccess)スコープが指定されたディレクトリアクセス API を使用して、特定のディレクトリに簡単にアクセスする方法を示します。 これは、マニフェストでまたは`READ_EXTERNAL_STORAGE` `WRITE_EXTERNAL_STORAGE`権限を定義する必要がある代わりに機能します。
 
--   [直接ブート](https://developer.xamarin.com/samples/monodroid/android-n/DirectBoot/)デバイスで暗号化されたストレージにデータを格納する方法を説明します。この記憶域は、ユーザーの資格情報 (PIN/パターン/パスワード) が入力される前と後の両方でデバイスが起動されている間は常に使用できます。
+-   [直接ブート](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-directboot)デバイスで暗号化されたストレージにデータを格納する方法を説明します。この記憶域は、ユーザーの資格情報 (PIN/パターン/パスワード) が入力される前と後の両方でデバイスが起動されている間は常に使用できます。
 
 
 ## <a name="summary"></a>まとめ

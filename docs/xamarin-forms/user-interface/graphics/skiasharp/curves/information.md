@@ -7,16 +7,16 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/12/2017
-ms.openlocfilehash: b5d32f486b45005534adc8929caf6158d1c62a4b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 05d5003d349ae11a1ec6a1b6f3d66b2f68ffad8a
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61357177"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68652877"
 ---
 # <a name="path-information-and-enumeration"></a>パス情報と列挙
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _パスに関する情報を取得し、内容を列挙_
 
@@ -24,7 +24,7 @@ _パスに関する情報を取得し、内容を列挙_
 
 すべての行とパスを構成する曲線の長さの合計を確認すると役立つ場合があります。 この長さを計算するタスクではありません、単純なアルゴリズム、という名前のクラス全体ように[ `PathMeasure` ](xref:SkiaSharp.SKPathMeasure)を使用します。
 
-描画操作とパスを構成する点を取得する便利なことでがあります。 最初は、この機能は不要に思うかもしれません。プログラムには、パスが作成された場合、プログラムは既に内容を認識します。 パスが作成することも、見た[パスの効果](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md)と変換することで[パスへの文字列のテキスト](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md)します。 描画操作とこれらのパスを構成するポイントを取得することもできます。 1 つの方法は、半球の周囲のテキストを折り返す、たとえば、すべてのポイントにアルゴリズムの変換を適用するには。
+描画操作とパスを構成する点を取得する便利なことでがあります。 最初に、この機能は不要に思えるかもしれません。プログラムがパスを作成した場合、プログラムは既にその内容を認識しています。 パスが作成することも、見た[パスの効果](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md)と変換することで[パスへの文字列のテキスト](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md)します。 描画操作とこれらのパスを構成するポイントを取得することもできます。 1 つの方法は、半球の周囲のテキストを折り返す、たとえば、すべてのポイントにアルゴリズムの変換を適用するには。
 
 ![](information-images/pathenumerationsample.png "半球でラップされたテキスト")
 
@@ -32,7 +32,7 @@ _パスに関する情報を取得し、内容を列挙_
 
 この記事で[**パスとテキスト**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md)を使用する方法を説明しました、 [ `DrawTextOnPath` ](xref:SkiaSharp.SKCanvas.DrawTextOnPath(System.String,SkiaSharp.SKPath,System.Single,System.Single,SkiaSharp.SKPaint))がベースラインに依存してパスのテキスト文字列を描画するメソッド。 しかし、テキストのサイズのパスを正確に収まるようにする場合でしょうか。 円の円周を計算する単純なので、テキストの描画を円の周囲は簡単です。 楕円の円周やベジエ曲線の長さはそう簡単ではありません。
 
-[ `SKPathMeasure` ](xref:SkiaSharp.SKPathMeasure)クラスが役立つことができます。 [コンス トラクター](xref:SkiaSharp.SKPathMeasure.%23ctor(SkiaSharp.SKPath,System.Boolean,System.Single))を受け入れる、`SKPath`引数、および[ `Length` ](xref:SkiaSharp.SKPathMeasure.Length)プロパティが、長さが表示されます。
+[ `SKPathMeasure` ](xref:SkiaSharp.SKPathMeasure)クラスが役立つことができます。 [コンストラクター](xref:SkiaSharp.SKPathMeasure.%23ctor(SkiaSharp.SKPath,System.Boolean,System.Single))を受け入れる、`SKPath`引数、および[ `Length` ](xref:SkiaSharp.SKPathMeasure.Length)プロパティが、長さが表示されます。
 
 このクラスの説明については、**パスの長さ**、サンプルに基づいています、**ベジエ曲線**ページ。 [ **PathLengthPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathLengthPage.xaml)から派生したファイル`InteractivePage`タッチ インターフェイスが含まれています。
 
@@ -140,7 +140,7 @@ Boolean GetMatrix (Single distance, out SKMatrix matrix, SKPathMeasureMatrixFlag
 
 [![](information-images/unicyclehalfpipe-small.png "一輪車半分パイプ ページのスクリーン ショットをトリプル")](information-images/unicyclehalfpipe-large.png#lightbox "一輪車半分パイプ ページの 3 倍になるスクリーン ショット")
 
-`SKPaint`半分パイプと、一輪車線の描画に使用されるオブジェクトがフィールドとして定義されている、`UnicycleHalfPipePage`クラス。 定義されていることも、`SKPath`一輪車のオブジェクト。
+ハーフパイプと unicycle の両方を描画するために使用される`UnicycleHalfPipePage` オブジェクトは、クラスのフィールドとして定義されます。`SKPaint` 定義されていることも、`SKPath`一輪車のオブジェクト。
 
 ```csharp
 public class UnicycleHalfPipePage : ContentPage
@@ -255,7 +255,7 @@ SKPathVerb pathVerb = rawIterator.Next(points);
 
 元の直線が一連の小さな直線に分類されていることが重要です。 これら個々 の小さな直線行は、曲線を形成するさまざまな方法で操作できます。
 
-このプロセスで利用できる、 [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)サンプルには、静的な[ `PathExtensions` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathExtensions.cs)クラス、`Interpolate`を細分化するメソッド、直線の長さ単位の 1 つだけである多数の短い行にします。 さらに、クラスには、一連の小さな直線、曲線を近似する 3 つの種類のベジエ曲線に変換するいくつかのメソッドが含まれています。 (パラメーターの数式は、情報の記事で表示された[**ベジエ曲線の型を次の 3 つ**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/beziers.md))。このプロセスが呼び出されます_フラット化_曲線。
+このプロセスで利用できる、 [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルには、静的な[ `PathExtensions` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathExtensions.cs)クラス、`Interpolate`を細分化するメソッド、直線の長さ単位の 1 つだけである多数の短い行にします。 さらに、クラスには、一連の小さな直線、曲線を近似する 3 つの種類のベジエ曲線に変換するいくつかのメソッドが含まれています。 (パラメーターの数式は、情報の記事で表示された[**ベジエ曲線の型を次の 3 つ**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/beziers.md))。このプロセスが呼び出されます_フラット化_曲線。
 
 ```csharp
 static class PathExtensions
@@ -439,7 +439,7 @@ static class PathExtensions
 
 [![](information-images/globulartext-small.png "Globular テキスト ページのスクリーン ショットをトリプル")](information-images/globulartext-large.png#lightbox "Globular テキスト ページの 3 倍になるスクリーン ショット")
 
-[ `GlobularTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/GlobularTextPage.cs)クラスのコンス トラクターは、この変換を実行します。 作成、`SKPaint`オブジェクトのテキスト、および取得し、`SKPath`オブジェクトから、`GetTextPath`メソッド。 これは、パスに渡される、`CloneWithTransform`変換関数と共に拡張メソッド。
+[ `GlobularTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/GlobularTextPage.cs)クラスのコンストラクターは、この変換を実行します。 作成、`SKPaint`オブジェクトのテキスト、および取得し、`SKPath`オブジェクトから、`GetTextPath`メソッド。 これは、パスに渡される、`CloneWithTransform`変換関数と共に拡張メソッド。
 
 ```csharp
 public class GlobularTextPage : ContentPage
@@ -523,4 +523,4 @@ public class GlobularTextPage : ContentPage
 ## <a name="related-links"></a>関連リンク
 
 - [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

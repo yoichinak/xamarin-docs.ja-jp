@@ -1,26 +1,26 @@
 ---
-title: Windows 上の VisualElement レガシ カラー モード
-description: プラットフォーム仕様はカスタム レンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ利用できる機能の使用を可能にします。 この記事では、Xamarin.Forms の従来のカラー モードを無効にします。 Windows プラットフォームに固有の使用方法について説明します。
+title: Windows の VisualElement レガシカラーモード
+description: プラットフォーム仕様はカスタム レンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ利用できる機能の使用を可能にします。 この記事では、Xamarin のレガシカラーモードを無効にする Windows プラットフォーム固有のを使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: B8759309-07C7-4DCA-A18A-C1A198A7951B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: a3b6611ab5c7b318938dfc40b702d6f65787cfbf
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 7319b0886476ea502b7b9c450416cb4fe69e01fa
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65924843"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656908"
 ---
-# <a name="visualelement-legacy-color-mode-on-windows"></a>Windows 上の VisualElement レガシ カラー モード
+# <a name="visualelement-legacy-color-mode-on-windows"></a>Windows の VisualElement レガシカラーモード
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Xamarin.Forms のビューのいくつかの機能の色をレガシ モード。 このモードでは、ときに、 [ `IsEnabled` ](xref:Xamarin.Forms.VisualElement.IsEnabled)ビューのプロパティに設定されて`false`ビューが既定のネイティブ色無効の状態を使用してユーザー設定の色をオーバーライドします。 旧バージョンと互換性のため、この色のレガシ モードでは、サポートされているビューの既定の動作は残ります。
 
-このユニバーサル Windows プラットフォームのプラットフォーム固有には、この従来のカラー モードが無効にします、ビューが無効になっている場合でものまま、ユーザーがビューに色が設定されるようにします。 XAML で設定して使用される、 [ `VisualElement.IsLegacyColorModeEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.IsLegacyColorModeEnabledProperty)添付プロパティを`false`:
+このユニバーサル Windows プラットフォームプラットフォーム固有であるため、この従来のカラーモードは無効になり、ビューが無効になっている場合でも、ユーザーによって表示される色はそのままになります。 XAML で設定して使用される、 [ `VisualElement.IsLegacyColorModeEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.IsLegacyColorModeEnabledProperty)添付プロパティを`false`:
 
 ```xaml
 <ContentPage ...
@@ -57,6 +57,6 @@ _legacyColorModeDisabledEditor.On<Windows>().SetIsLegacyColorModeEnabled(false);
 
 ## <a name="related-links"></a>関連リンク
 
-- [プラットフォーム仕様 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [プラットフォーム仕様 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [プラットフォーム仕様の作成](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
-- [WindowsSpecific API](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)
+- [WindowsSpecific の API](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)

@@ -1,24 +1,24 @@
 ---
-title: Android でのページのライフ サイクル イベント
-description: 'プラットフォーム仕様はカスタム レンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ利用できる機能の使用を可能にします。 この記事では、方法、Android を使用するプラットフォーム固有を無効にします: 消えるしアプリケーション Appearing ページ イベントが一時停止し再開、それぞれについて説明します。'
+title: Android でのページライフサイクルイベント
+description: プラットフォーム仕様はカスタム レンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ利用できる機能の使用を可能にします。 この記事では、アプリケーションの一時停止と再開におけるページイベントの消失と表示を無効にする、Android プラットフォーム固有のを使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: F6E3759C-D347-407A-91A2-CF9B3B7D4CBD
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: 295b060ee795244184b3ea88b101c720436d1fe5
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 1745f137f2eeb04c0894c57bb0e45e5c43be7d0b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926529"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68649934"
 ---
-# <a name="page-lifecycle-events-on-android"></a>Android でのページのライフ サイクル イベント
+# <a name="page-lifecycle-events-on-android"></a>Android でのページライフサイクルイベント
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-この Android プラットフォームに固有の使用を無効にする、 [ `Disappearing` ](xref:Xamarin.Forms.Page.Appearing)と[ `Appearing` ](xref:Xamarin.Forms.Page.Appearing)アプリケーションのページ イベントが一時停止し、それぞれ、AppCompat を使用するアプリケーションを再開します。 さらに、これには一時停止時にソフトキーボードの操作方式に[`WindowSoftInputModeAdjust.Resize`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Resize)が設定されていて、ソフトキーボードが表示されていた場合に、再開時にソフトキーボードを表示するかどうかを制御する機能も含まれます。
+この Android プラットフォーム固有のは、AppCompat を使用[`Disappearing`](xref:Xamarin.Forms.Page.Appearing)する[`Appearing`](xref:Xamarin.Forms.Page.Appearing)アプリケーションについて、アプリケーションの一時停止と再開のイベントをそれぞれ無効にするために使用されます。 さらに、これには一時停止時にソフトキーボードの操作方式に[`WindowSoftInputModeAdjust.Resize`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Resize)が設定されていて、ソフトキーボードが表示されていた場合に、再開時にソフトキーボードを表示するかどうかを制御する機能も含まれます。
 
 > [!NOTE]
 > これらのイベントは、そのイベントに依存するアプリケーションの既存の動作を保持するためにデフォルトで有効であることに注意してください。 これらのイベントを無効にするとAppCompatのイベントサイクルを以前のAppCompatのイベントサイクルに合わせます。
@@ -59,7 +59,7 @@ Xamarin.Forms.Application.Current.On<Android>()
 
 ## <a name="related-links"></a>関連リンク
 
-- [プラットフォーム仕様 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [プラットフォーム仕様 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [プラットフォーム仕様の作成](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
-- [AndroidSpecific API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)
-- [AndroidSpecific.AppCompat API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)
+- [AndroidSpecific の API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)
+- [AndroidSpecific の AppCompat API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)

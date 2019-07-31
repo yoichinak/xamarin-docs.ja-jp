@@ -1,41 +1,41 @@
 ---
 title: Android の概要
-description: このドキュメントでは、Android での .NET の埋め込みの使用を開始する方法について説明します。 これは、.NET の埋め込み、Android ライブラリ プロジェクトを作成する、Android Studio プロジェクトとその他の考慮事項で生成された出力を使用してインストールするについて説明します。
+description: このドキュメントでは、Android での .NET 埋め込みの使用を開始する方法について説明します。 .NET 埋め込みのインストール、Android ライブラリプロジェクトの作成、Android Studio プロジェクトで生成された出力の使用、およびその他の考慮事項について説明します。
 ms.prod: xamarin
 ms.assetid: 870F0C18-A794-4C5D-881B-64CC78759E30
 author: lobrien
 ms.author: laobri
 ms.date: 03/28/2018
-ms.openlocfilehash: e60892edfcf73f3e7cada8923e16bcc1be2c203e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: df29a7f595973a0447899666838e21418ff69330
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60876930"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650073"
 ---
 # <a name="getting-started-with-android"></a>Android の概要
 
-要件に加え、 [Java の概要](~/tools/dotnet-embedding/get-started/java/index.md)ガイドも必要になります。
+[Java](~/tools/dotnet-embedding/get-started/java/index.md)の概要に関するガイドの要件に加えて、次のものも必要です。
 
-* [Xamarin.Android 7.5](https://visualstudio.microsoft.com/xamarin/)またはそれ以降
-* [Android Studio 3.x](https://developer.android.com/studio/index.html) Java 1.8 を使用
+* [Xamarin Android 7.5](https://visualstudio.microsoft.com/xamarin/)以降
+* Java 1.8 での[Android Studio](https://developer.android.com/studio/index.html) 3.x
 
-概要については、としてご紹介します。
+概要として、次のことを行います。
 
-* 作成、 C# Android ライブラリ プロジェクト
-* NuGet を使用して .NET の埋め込みをインストールします。
-* Android ライブラリ アセンブリでの .NET の埋め込みの実行します。
-* Android Studio での Java プロジェクトで生成された AAR ファイルを使用して、
+* Android ライブラリC#プロジェクトを作成する
+* NuGet を使用して .NET 埋め込みをインストールする
+* Android ライブラリアセンブリでの .NET 埋め込みの実行
+* Android Studio の Java プロジェクトで生成された AAR ファイルを使用する
 
-## <a name="create-an-android-library-project"></a>Android ライブラリ プロジェクトを作成します。
+## <a name="create-an-android-library-project"></a>Android ライブラリプロジェクトを作成する
 
-Visual Studio の Windows または Mac を開き、新しい Android クラス ライブラリ プロジェクトを作成、名前を付けます**csharp からのこんにちは**、保存して **~/Projects/hello-from-csharp**または **%USERPROFILE%\Csharp からの Projects\hello**します。
+Visual Studio for Windows または Mac を開き、新しい Android クラスライブラリプロジェクトを作成します。このプロジェクトには、 **csharp**という名前を付け、 **~/Projects/hello-from-csharp**または **%USERPROFILE%\Projects\hello-from-csharp**に保存します。
 
-という名前の新しい Android アクティビティを追加**HelloActivity.cs**に Android のレイアウトと、その後**Resource/layout/hello.axml**します。
+**HelloActivity.cs**という名前の新しい android アクティビティを追加し、その後に**リソース/レイアウト/こんにちは. Axml**で android レイアウトを追加します。
 
-新しい追加`TextView`レイアウト、および何か楽しいものにテキストを変更します。
+レイアウトに新しい`TextView`を追加し、テキストを楽しいものに変更します。
 
-レイアウト、ソースは、次のようになります。
+レイアウトソースは次のようになります。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -53,7 +53,7 @@ Visual Studio の Windows または Mac を開き、新しい Android クラス 
 </LinearLayout>
 ```
 
-アクティビティで呼び出していることを確認`SetContentView`と、新しいレイアウト。
+アクティビティで、新しいレイアウトでを呼び出し`SetContentView`ていることを確認します。
 
 ```csharp
 [Activity(Label = "HelloActivity"),
@@ -70,15 +70,15 @@ public class HelloActivity : Activity
 ```
 
 > [!NOTE]
-> 忘れず、`[Register]`属性。 詳細については、次を参照してください。[制限](#current-limitations-on-android)します。
+> 属性を忘れ`[Register]`ないでください。 詳細については、「[制限事項](#current-limitations-on-android)」を参照してください。
 
-プロジェクトをビルドします。 結果として得られるアセンブリを保存する`bin/Debug/hello-from-csharp.dll`します。
+プロジェクトをビルドします。 結果として得られる`bin/Debug/hello-from-csharp.dll`アセンブリは、に保存されます。
 
-## <a name="installing-net-embedding-from-nuget"></a>.NET の埋め込み NuGet からインストールします。
+## <a name="installing-net-embedding-from-nuget"></a>NuGet からの .NET 埋め込みのインストール
 
-手順に従います。[指示](~/tools/dotnet-embedding/get-started/install/install.md)をインストールして、プロジェクトの .NET の埋め込みを構成します。
+次の[手順](~/tools/dotnet-embedding/get-started/install/install.md)に従って、プロジェクトの .Net 埋め込みをインストールして構成します。
 
-このようなコマンドの呼び出しを構成する必要がありますがなります。
+構成する必要があるコマンドの呼び出しは次のようになります。
 
 ### <a name="visual-studio-for-mac"></a>Visual Studio for Mac
 
@@ -94,24 +94,24 @@ if exist %E4K_OUTPUT% rmdir /S /Q %E4K_OUTPUT%
 "$(SolutionDir)packages\Embeddinator-4000.0.2.0.80\tools\Embeddinator-4000.exe" "$(TargetPath)" --gen=Java --platform=Android --outdir=%E4K_OUTPUT% -c
 ```
 
-## <a name="use-the-generated-output-in-an-android-studio-project"></a>Android Studio プロジェクトで生成された出力を使用します。
+## <a name="use-the-generated-output-in-an-android-studio-project"></a>生成された出力を Android Studio プロジェクトで使用する
 
-1. Android Studio を開き、新しいプロジェクトを作成、**空のアクティビティ**します。
-2. 右クリックし、**アプリ**モジュール選択**新規 > モジュール**します。
-3. 選択**インポートします。JAR/。AAR パッケージ**します。
-4. 検索するディレクトリ ブラウザーを使用して **~/Projects/hello-from-csharp/output/hello_from_csharp.aar**  をクリック**完了**します。
+1. Android Studio を開き、**空のアクティビティ**を含む新しいプロジェクトを作成します。
+2. **アプリ**モジュールを右クリックし、 **[新しい > モジュール]** を選択します。
+3. [インポート] を選択し**ます。JAR/。AAR パッケージ**。
+4. ディレクトリブラウザーを使用して **~/Projects/hello-from-csharp/output/hello_from_csharp.aar**を検索し、 **[完了]** をクリックします。
 
-![Android Studio にインポート AAR](android-images/androidstudioimport.png)
+![AAR を Android Studio にインポートする](android-images/androidstudioimport.png)
 
-これは、AAR ファイル コピーという名前の新しいモジュールに**hello_from_csharp**します。
+これにより、AAR ファイルが**hello_from_csharp**という名前の新しいモジュールにコピーされます。
 
 ![Android Studio プロジェクト](android-images/androidstudioproject.png)
 
-新しいモジュールを使用する、**アプリ**を右クリックして**モジュール設定を開く**します。 **依存関係** タブで、新しい追加**モジュールの依存関係**選択 **: hello_from_csharp**します。
+**アプリ**から新しいモジュールを使用するには、右クリックし、 **[モジュール設定を開く]** を選択します。 **[依存関係]** タブで、新しい**モジュールの依存関係**を追加し、 **: hello_from_csharp**を選択します。
 
 ![Android Studio の依存関係](android-images/androidstudiodependencies.png)
 
-アクティビティを追加、新しい`onResume`メソッド、および起動する次のコードを使用して、C#アクティビティ。
+アクティビティで、新しい`onResume`メソッドを追加し、次のコードを使用してC#アクティビティを起動します。
 
 ```java
 import hello_from_csharp.*;
@@ -130,9 +130,9 @@ public class MainActivity extends AppCompatActivity {
 
 ### <a name="assembly-compression-important"></a>アセンブリの圧縮 (*重要*)
 
-さらに 1 つの変更は、Android Studio プロジェクトで .NET を埋め込む必要があります。
+また、Android Studio プロジェクトに .NET を埋め込むには、さらに変更が必要になります。
 
-アプリの開く**build.gradle**ファイルを開き、次の変更を追加します。
+アプリの**gradle**ファイルを開き、次の変更を追加します。
 
 ```groovy
 android {
@@ -143,9 +143,9 @@ android {
 }
 ```
 
-現在、Xamarin.Android は、APK から直接 .NET アセンブリを読み込み、アセンブリを圧縮しない必要しますが、あります。
+Xamarin Android では、現在、APK から直接 .NET アセンブリを読み込んでいますが、アセンブリを圧縮しない必要があります。
 
-このセットアップではありません、アプリが起動時にクラッシュし、コンソールに出力するようになります。
+この設定がない場合は、起動時にアプリがクラッシュし、次のような内容がコンソールに出力されます。
 
 ```shell
 com.xamarin.hellocsharp A/monodroid: No assemblies found in '(null)' or '<unavailable>'. Assuming this is part of Fast Deployment. Exiting...
@@ -153,33 +153,33 @@ com.xamarin.hellocsharp A/monodroid: No assemblies found in '(null)' or '<unavai
 
 ## <a name="run-the-app"></a>アプリを実行する
 
-アプリを起動するには。
+アプリを起動すると、次のようになります。
 
-![こんにちはC#エミュレーターで実行されているサンプル](android-images/hello-from-csharp-android.png)
+![エミュレーターでC#実行されているサンプルからの Hello](android-images/hello-from-csharp-android.png)
 
-ここでの変更点に注意してください。
+次の点に注意してください。
 
-* ある、C#クラス、 `HelloActivity`、そのサブクラスの Java
-* Android のリソース ファイルがあります。
-* Android Studio で Java からこれらを使用しました
+* Java をサブC#クラス化`HelloActivity`するクラスがあります。
+* Android リソースファイルがあります
+* これらは、の Java から使用されてい Android Studio
 
-このサンプルを動作させるには、次のすべては、最終的な APK に設定されます。
+このサンプルが機能するためには、次のすべてが最終的な APK で設定されています。
 
-* Xamarin.Android がアプリケーションの起動時に構成されています。
-* 含まれる .NET アセンブリ**資産/アセンブリ**
-* **AndroidManifest.xml**の変更、C#アクティビティなどです。
-* Android のリソースやアセットの .NET ライブラリから
-* [Android 呼び出し可能ラッパー](~/android/platform/java-integration/android-callable-wrappers.md)は`Java.Lang.Object`サブクラス
+* Xamarin. Android はアプリケーションの開始時に構成されます。
+* **アセット/アセンブリ**に含まれる .net アセンブリ
+* アクティビティのための xml の変更 (など) C#
+* Android のリソースと .NET ライブラリからのアセット
+* 任意`Java.Lang.Object`のサブクラスの[Android 呼び出し可能ラッパー](~/android/platform/java-integration/android-callable-wrappers.md)
 
-追加のチュートリアルを探している場合は、Charles Petzold の埋め込みについては、次のビデオをチェック_アウト[FingerPaint デモ](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/FingerPaint/)Android Studio プロジェクトで。
+追加のチュートリアルをお探しの場合は、次のビデオを参照してください。これは、Android Studio プロジェクトでのチャールズ Petzold 著) の[FingerPaint demo](https://docs.microsoft.com/samples/xamarin/monodroid-samples/applicationfundamentals-fingerpaint)の埋め込みを示しています。
 
-[![Android 用 Embeddinator-4000](https://img.youtube.com/vi/ZVcrXUpCNpI/0.jpg)](https://www.youtube.com/watch?v=ZVcrXUpCNpI)
+[![Embeddinator-4000 for Android](https://img.youtube.com/vi/ZVcrXUpCNpI/0.jpg)](https://www.youtube.com/watch?v=ZVcrXUpCNpI)
 
-## <a name="using-java-18"></a>Java 1.8 を使用します。
+## <a name="using-java-18"></a>Java 1.8 の使用
 
-これを作成、時点で最善の方法は Android Studio 3.0 を使用する ([ここからダウンロード](https://developer.android.com/studio/index.html))。
+この記事の執筆時点では、Android Studio 3.0 ([ここからダウンロード](https://developer.android.com/studio/index.html)) を使用することをお勧めします。
 
-アプリ モジュールのでは、Java 1.8 を有効にする**build.gradle**ファイル。
+アプリモジュールの**gradle**ファイルで Java 1.8 を有効にするには、次のようにします。
 
 ```groovy
 android {
@@ -191,9 +191,9 @@ android {
 }
 ```
 
-見てもを行うには、[テスト プロジェクトを Android Studio](https://github.com/mono/Embeddinator-4000/blob/master/tests/android/app/build.gradle)の詳細。 
+詳細については、 [Android Studio テストプロジェクト](https://github.com/mono/Embeddinator-4000/blob/master/tests/android/app/build.gradle)を参照することもできます。 
 
-Android Studio 2.3.x 安定版を使用する場合、非推奨のジャック ツール チェーンを有効にする必要があります。
+Android Studio 2.3. x stable を使用する場合は、非推奨のジャックツールチェーンを有効にする必要があります。
 
 ```groovy
 android {
@@ -205,9 +205,9 @@ android {
 }
 ```
 
-## <a name="current-limitations-on-android"></a>Android での現在の制限事項
+## <a name="current-limitations-on-android"></a>Android に関する現在の制限事項
 
-現在のところ場合、サブクラス`Java.Lang.Object`、Xamarin.Android .NET の埋め込みではなく、Java スタブ (Android 呼び出し可能ラッパー) が生成されます。 このため、する必要があります、エクスポートするための同じ規則に従ってくださいC#Xamarin.Android として Java にします。 例えば:
+現在、サブクラス`Java.Lang.Object`を使用すると、.net 埋め込みではなく、Xamarin android によって Java スタブ (android 呼び出し可能ラッパー) が生成されます。 このため、Java を Xamarin Android にエクスポートC#する場合は、同じ規則に従う必要があります。 例えば:
 
 ```csharp
 [Register("mono.embeddinator.android.ViewSubclass")]
@@ -223,10 +223,10 @@ public class ViewSubclass : TextView
 }
 ```
 
-* `[Register]` 必要な Java パッケージ名にマップするために必要な
-* `[Export]` メソッドを Java に表示されるようにするが必要です。
+* `[Register]`は、必要な Java パッケージ名にマップするために必要です
+* `[Export]`Java からメソッドを参照できるようにするには、が必要です。
 
-使用して`ViewSubclass`Java で次のようにします。
+Java では`ViewSubclass` 、次のようにを使用できます。
 
 ```java
 import mono.embeddinator.android.ViewSubclass;
@@ -235,36 +235,36 @@ ViewSubclass v = new ViewSubclass(this);
 v.apply("Hello");
 ```
 
-詳細をご覧ください[Xamarin.Android での Java 統合](~/android/platform/java-integration/index.md)します。
+詳細については[、「Xamarin Android と Java の統合」を](~/android/platform/java-integration/index.md)参照してください。
 
 ## <a name="multiple-assemblies"></a>複数のアセンブリ
 
-1 つのアセンブリの埋め込みは、単純です。ただし、1 つ以上が可能性が高くなりますがC#アセンブリ。 何度も Android サポート ライブラリやさらに複雑になる Google play 開発者サービスなどの NuGet パッケージの依存関係があります。
+単一のアセンブリの埋め込みは簡単です。ただし、多くの場合、複数のC#アセンブリが存在する可能性が高くなります。 Android サポートライブラリや Google Play 開発者サービスなど、さらに複雑になる NuGet パッケージに対する依存関係が多数あります。
 
-これにより、.NET の埋め込みなどの最終的な AAR にさまざまな種類のファイルを含める必要があるために、ジレンマをします。
+.NET の埋め込みには、次のような最終的な AAR に多くの種類のファイルを含める必要があるため、このようなジレンマが発生します。
 
 * Android アセット
 * Android のリソース
-* Android のネイティブ ライブラリ
-* Android の java ソース
+* Android ネイティブライブラリ
+* Android java ソース
 
-ほとんどの場合の AAR に Android サポート ライブラリまたは Google play 開発者サービスからこれらのファイルを追加したくないが、Google からの公式バージョン Android Studio で使用したいです。
+多くの場合、これらのファイルを Android サポートライブラリから含めたり、AAR に Google Play 開発者サービスしたりする必要はありませんが、Android Studio では Google の公式バージョンを使用します。
 
 推奨される方法を次に示します。
 
-* 自分が所有する任意のアセンブリを .NET の埋め込みを渡す (のソースがある) Java からを呼び出すと
-* Android アセットやネイティブ ライブラリは、リソースから必要な任意のアセンブリを .NET の埋め込みを渡す
-* ライブラリまたは Google play 開発者サービスを Android Studio でサポートして、Android などの Java 依存関係の追加します。
+* 自分が所有している (ソースがある) アセンブリを .NET に渡し、Java から呼び出す
+* Android アセット、ネイティブライブラリ、またはリソースが必要なすべてのアセンブリを .NET に渡す
+* Android サポートライブラリや Google Play 開発者サービスのような Java の依存関係を Android Studio に追加します。
 
-したがって、コマンドは次のようになります。
+コマンドは次のようになります。
 
 ```shell
 mono Embeddinator-4000.exe --gen=Java --platform=Android -c -o output YourMainAssembly.dll YourDependencyA.dll YourDependencyB.dll
 ```
 
-NuGet から何も除外する必要があります、Android アセット、リソース、および Android Studio プロジェクトで必要とするなどがあることを確認しない限り、します。 Java、およびリンカーを呼び出す必要はありませんの依存関係を省略することもできます。_する必要があります_ために必要なライブラリのパーツが含まれています。
+Android Studio プロジェクトで必要になる Android 資産やリソースなどが含まれていることがわかっている場合を除き、NuGet からは何も除外する必要があります。 Java から呼び出す必要のない依存関係を省略したり、必要なライブラリの部分_をリンカーに_含めたりすることもできます。
 
-Android Studio で、必要な Java 依存関係を追加する、 **build.gradle**ファイルようになります。
+Android Studio に必要な Java 依存関係を追加するために、 **gradle**ファイルは次のようになります。
 
 ```groovy
 dependencies {
@@ -277,12 +277,12 @@ dependencies {
 
 ## <a name="further-reading"></a>関連項目
 
-* [Android コールバック](~/tools/dotnet-embedding/android/callbacks.md)
-* [Android の予備調査](~/tools/dotnet-embedding/android/index.md)
-* [.NET の埋め込みの制限事項](~/tools/dotnet-embedding/limitations.md)
-* [オープン ソース プロジェクトに貢献します。](https://github.com/mono/Embeddinator-4000/blob/master/Contributing.md)
-* [エラー コードと説明](~/tools/dotnet-embedding/errors.md)
+* [Android でのコールバック](~/tools/dotnet-embedding/android/callbacks.md)
+* [Android の暫定版の研究](~/tools/dotnet-embedding/android/index.md)
+* [.NET 埋め込みの制限事項](~/tools/dotnet-embedding/limitations.md)
+* [オープンソースプロジェクトへの貢献](https://github.com/mono/Embeddinator-4000/blob/master/Contributing.md)
+* [エラーコードと説明](~/tools/dotnet-embedding/errors.md)
 
 ## <a name="related-links"></a>関連リンク
 
-- [天気の例 (Android)](https://github.com/jamesmontemagno/embeddinator-weather)
+- [Weather サンプル (Android)](https://github.com/jamesmontemagno/embeddinator-weather)

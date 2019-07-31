@@ -8,16 +8,16 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/28/2019
 ms.custom: video
-ms.openlocfilehash: 72475d4b811cb33d2e716fc6ab4e2d169a75c801
-ms.sourcegitcommit: 4a1520dee7759f8355ea65c8bb3d1bac8ba58122
+ms.openlocfilehash: 1b4732e87fb09a4846bfe12b7a476dfef2d6f4f9
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66354081"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68647227"
 ---
 # <a name="dynamic-styles-in-xamarinforms"></a>Xamarin.Forms での動的なスタイル
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/DynamicStyles/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-dynamicstyles)
 
 _スタイルはないプロパティの変更に応答し、アプリケーションの実行中は変更されません。たとえば、スタイル ビジュアル要素、1 つの set アクセス操作子インスタンスが変更された場合、削除、または追加された新しい set アクセス操作子インスタンスに割り当てると、変更は視覚要素に適用されません。ただし、アプリケーションは、動的リソースを使用して実行時に動的にスタイルの変更に応答することができます。_
 
@@ -125,7 +125,7 @@ public class DynamicStylesPageCS : ContentPage
 
 C# で、 [ `SearchBar` ](xref:Xamarin.Forms.SearchBar)インスタンスを使用して、 [ `SetDynamicResource` ](xref:Xamarin.Forms.Element.SetDynamicResource*)参照メソッドを`searchBarStyle`します。 `OnButtonClicked`イベント ハンドラーのコードは、XAML の例では、および実行すると、同じです。`searchBarStyle`間の切り替えは`blueSearchBarStyle`と`greenSearchBarStyle`します。
 
-## <a name="dynamic-style-inheritance"></a>動的なスタイルの継承
+## <a name="dynamic-style-inheritance"></a>動的スタイルの継承
 
 動的なスタイルのスタイルを派生することを実現できないを使用して、 [ `Style.BasedOn` ](xref:Xamarin.Forms.Style.BasedOn)プロパティ。 代わりに、 [ `Style` ](xref:Xamarin.Forms.Style)クラスが含まれています、 [ `BaseResourceKey` ](xref:Xamarin.Forms.Style.BaseResourceKey)値を持つにディクショナリのキーに設定できるプロパティを動的に変更可能性があります。
 
@@ -211,8 +211,8 @@ public class DynamicStylesInheritancePageCS : ContentPage
 ## <a name="related-links"></a>関連リンク
 
 - [XAML マークアップ拡張](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
-- [動的なスタイル (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/DynamicStyles/)
-- [スタイル (サンプル) を使用します。](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithStyles/)
+- [動的なスタイル (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-dynamicstyles)
+- [スタイル (サンプル) を使用します。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithstyles)
 - [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
 - [スタイル](xref:Xamarin.Forms.Style)
 - [Set アクセス操作子](xref:Xamarin.Forms.Setter)

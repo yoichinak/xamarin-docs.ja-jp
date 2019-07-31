@@ -7,16 +7,16 @@ ms.assetid: 940422A1-8BC0-4039-8AD7-26C61320F858
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/27/2018
-ms.openlocfilehash: d68153cdaad67b407def3ed5bfaddf928ef98bb4
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 1d85c705fb993e9b6b558b0c051de93e449b9d05
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61289112"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68648720"
 ---
 # <a name="skiasharp-mask-filters"></a>SkiaSharp マスク フィルター
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 フィルターのマスクは、ジオメトリとグラフィカル オブジェクトのアルファ チャネルを操作する効果。 マスクのフィルタを使用する設定、 [ `MaskFilter` ](xref:SkiaSharp.SKPaint.MaskFilter)プロパティの`SKPaint`型のオブジェクトに[ `SKMaskFilter` ](xref:SkiaSharp.SKMaskFilter)のいずれかを呼び出すことで作成したこと、`SKMaskFilter`静的メソッド。
 
@@ -43,7 +43,7 @@ public static SKMaskFilter CreateBlur (SKBlurStyle blurStyle, float sigma);
 
 次の例では、これらのスタイルの効果が表示されます。 `sigma`ぼかしの範囲を指定します。 Skia の以前のバージョンでは、ぼかしのエクステントは、半径の値で示されていました。 静的ながある場合は、半径の値が、アプリケーションの推奨[ `SKMaskFilter.ConvertRadiusToSigma` ](xref:SkiaSharp.SKMaskFilter.ConvertRadiusToSigma*)メソッドを他のいずれかから変換できます。 メソッドは、0.57735 半径を乗算し、0.5 を追加します。
 
-**マスクぼかし実験**ページで、 [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)ぼかしスタイル シグマ値で実験することができます。 XAML ファイルのインスタンスを作成、 `Picker` 4 つの`SKBlurStyle`列挙型メンバー、`Slider`シグマ値を指定します。
+**マスクぼかし実験**ページで、 [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)ぼかしスタイル シグマ値で実験することができます。 XAML ファイルのインスタンスを作成、 `Picker` 4 つの`SKBlurStyle`列挙型メンバー、`Slider`シグマ値を指定します。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -180,9 +180,9 @@ paint.MaskFilter = SKMaskFilter.CreateBlur(blurStyle, sigma);
 
 [![ぼかしの実験をマスク](mask-filters-images/MaskBlurExperiment.png "ぼかし実験のマスク")](mask-filters-images/MaskBlurExperiment-Large.png#lightbox)
 
-IOS のスクリーン ショットに示す、`Solid`スタイル。テキスト文字が実線の黒い線としてまだ存在して、ぼかしがこれらのテキスト文字の外側に追加されます。 
+IOS のスクリーンショットに`Solid`は、次のスタイルが示されています。テキスト文字は塗りつぶされた黒いストロークとして引き続き存在し、ぼかしはこれらのテキスト文字の外側に追加されます。 
 
-Android のスクリーン ショットの中間に示す、`Outer`スタイル。など、ビットマップは) 文字ストローク自体は削除し、ぼかしが 1 回、テキスト文字が表示された空の領域を囲みます。 
+中央の Android スクリーンショットには、 `Outer`次のスタイルが表示されます。文字ストローク自体は (ビットマップと同様に) 削除され、ぼかしはテキスト文字が1回出現した空の領域を囲みます。 
 
 適切な番組で UWP スクリーン ショット、`Inner`スタイル。 ぼかしは、通常、テキスト文字が占める領域に限定されます。
 
@@ -274,4 +274,4 @@ paint.MaskFilter = SKMaskFilter.CreateBlur(SKBlurStyle.Normal, paint.TextSize / 
 ## <a name="related-links"></a>関連リンク
 
 - [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

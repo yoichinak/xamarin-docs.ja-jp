@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: 73d5695b5f08a3f9085e1960260f2e2e4f30d78a
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 5739246ec7804b58d900ec790f427dab37504b1f
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67658699"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655031"
 ---
 # <a name="text-translation-using-the-translator-api"></a>Translator API を使用してテキスト翻訳
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoCognitiveServices/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 
 _Microsoft Translator API は、音声および REST API を介してテキスト翻訳を使用できます。この記事では、Microsoft Translator Text API を使用して、Xamarin.Forms アプリケーションで 1 つの言語からテキストを翻訳する方法について説明します。_
 
@@ -146,6 +146,6 @@ XML 応答の解析にサンプル アプリケーションで、`XDocument`の�
 ## <a name="related-links"></a>関連リンク
 
 - [Translator Text API ドキュメント](/azure/cognitive-services/translator/)します。
-- [RESTful Web サービスを使用します。](~/xamarin-forms/data-cloud/web-services/rest.md)
-- [Todo Cognitive Services (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoCognitiveServices/)
+- [RESTful Web サービスを使用する](~/xamarin-forms/data-cloud/web-services/rest.md)
+- [Todo Cognitive Services (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 - [Microsoft Translator Text API](http://docs.microsofttranslator.com/text-translate.html)します。

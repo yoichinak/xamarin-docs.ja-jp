@@ -7,20 +7,20 @@ ms.assetid: DBB58522-F816-4A8C-96A5-E0236F16A5C6
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/11/2018
-ms.openlocfilehash: cd7c8484827a038bbcf11180296547ea6fedf929
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6c066f89dc8f558a9154138bf38ad4326fe21291
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61411271"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68642522"
 ---
 # <a name="accessing-skiasharp-bitmap-pixel-bits"></a>SkiaSharp のビットマップのピクセル ビットへのアクセス
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 この記事で示した[**保存 SkiaSharp ビットマップ ファイルを**](saving.md)ビットマップは一般に JPEG または PNG などの圧縮形式でファイルに格納されています。 異なり、メモリに格納されている SkiaSharp ビットマップは圧縮されません。 ピクセルの連番として格納されます。 この非圧縮形式には、ビットマップの表示サーフェイスへの転送が容易になります。
 
-SkiaSharp のビットマップが占有するメモリ ブロックが非常に簡単な方法で構成されています。左から右、ピクセル単位の最初の行で始まるし、2 番目の行を続行します。 完全なカラー ビットマップの場合は、各ピクセルで構成されます 4 バイトのビットマップが必要なメモリの合計容量が 4 回、幅と高さの製品であることを意味します。
+SkiaSharp ビットマップによって占有されるメモリブロックは、非常に簡単な方法で編成されます。最初の行が左から右に、次に2番目の行に続きます。 完全なカラー ビットマップの場合は、各ピクセルで構成されます 4 バイトのビットマップが必要なメモリの合計容量が 4 回、幅と高さの製品であることを意味します。
 
 この記事では、アプリケーションがそれらのピクセルがビットマップのピクセルのメモリ ブロックにアクセスするには、直接かへのアクセスを取得する方法について説明します直接的または間接的にします。 場合によっては、プログラム イメージのピクセルを分析し、何らかのヒストグラムを作成する可能性があります。 一般的には、アプリケーションでは、アルゴリズム、ビットマップを構成するピクセルを作成して一意のイメージを構築できます。
 
@@ -37,7 +37,7 @@ SkiaSharp は、ビットマップのピクセル ビットにアクセスする
 
 最初の 2 つの手法として「概要」と「低レベル」として 2 つ目の 2 つを考えることができます。 その他のいくつかのメソッドとプロパティを使用することができますが、これらは最も重要です。
 
-パフォーマンスの違い、これらの手法を確認できるように、 [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)アプリケーションには、という名前のページが含まれている**グラデーション ビットマップ**をグラデーションを作成する赤、青の網掛けを結合するピクセルのビットマップを作成します。 プログラムは 8 つの異なるコピーを作成、このビットマップのすべてを使用してさまざまな手法のビットマップのピクセルを設定します。 この手法の簡単な説明を設定し、すべてのピクセルを設定するために必要な時間を計算する個別のメソッドで各これら 8 つのビットマップが作成されます。 各メソッドをループ処理ピクセル設定ロジック 100 倍のパフォーマンスをより正確に予測を取得します。
+パフォーマンスの違い、これらの手法を確認できるように、 [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)アプリケーションには、という名前のページが含まれている**グラデーション ビットマップ**をグラデーションを作成する赤、青の網掛けを結合するピクセルのビットマップを作成します。 プログラムは 8 つの異なるコピーを作成、このビットマップのすべてを使用してさまざまな手法のビットマップのピクセルを設定します。 この手法の簡単な説明を設定し、すべてのピクセルを設定するために必要な時間を計算する個別のメソッドで各これら 8 つのビットマップが作成されます。 各メソッドをループ処理ピクセル設定ロジック 100 倍のパフォーマンスをより正確に予測を取得します。
 
 ### <a name="the-setpixel-method"></a>SetPixel メソッド
 
@@ -280,7 +280,7 @@ SKBitmap FillBitmapUintPtrColor(out string description, out int milliseconds)
 }
 ```
 
-質問は、これは。整数形式です、`SKColor`値の順序で、`SKColorType.Rgba8888`色の種類、または`SKColorType.Bgra8888`色の種類、または、これはまったく別ですか? その質問に対する回答をすぐに明らかには。
+唯一の質問は次のとおりです。は、 `SKColor` 色の`SKColorType.Rgba8888`種類、色の種類、またはそれ以外のすべての値の整数形式です。`SKColorType.Bgra8888` その質問に対する回答をすぐに明らかには。
 
 ### <a name="the-setpixels-method"></a>SetPixels メソッド
 
@@ -294,7 +294,7 @@ bitmap.SetPixels(intPtr);
 
 最初、見えますまるで`SetPixels`以上の能力とよりもパフォーマンスは、`GetPixels`が簡単。 `GetPixels`ビットマップ メモリ ブロックを取得し、アクセスします。 `SetPixels`を割り当てると、メモリの一部にアクセスし、ビットマップ メモリ ブロックとして設定しを実行します。
 
-使用していますが`SetPixels`明確な構文上の利点を提供しています。配列を使用してビットマップのピクセル ビットにアクセスすることができます。 ここ、メソッドは、`GradientBitmapPage`この手法を示しています。 メソッドは、まず、ビットマップのピクセルのバイト数に対応する多次元のバイト配列を定義します。 最初の次元は、行、2 番目の次元は、列と各ピクセルの 4 つのコンポーネントの 3 番目の次元は。
+ただし、 `SetPixels`を使用すると、構文上の利点が明確になります。配列を使用してビットマップピクセルビットにアクセスできます。 ここ、メソッドは、`GradientBitmapPage`この手法を示しています。 メソッドは、まず、ビットマップのピクセルのバイト数に対応する多次元のバイト配列を定義します。 最初の次元は、行、2 番目の次元は、列と各ピクセルの 4 つのコンポーネントの 3 番目の次元は。
 
 ```csharp
 SKBitmap FillBitmapByteBuffer(out string description, out int milliseconds)
@@ -499,7 +499,7 @@ public class GradientBitmapPage : ContentPage
 
 予想どおり、呼び出す`SetPixel`65,536 回はビットマップのピクセルを設定する最小限の effeicient 方法。 入力、`SKColor`配列と設定、`Pixels`プロパティの一部のよりも有利な比較でも、`GetPixels`と`SetPixels`手法です。 操作`uint`ピクセル値は、一般に、個別の設定よりも高速`byte`コンポーネント、および変換する、`SKColor`を符号なし整数値をプロセスにいくつかのオーバーヘッドを追加します。
 
-さまざまなグラデーションを比較する興味深いです。各プラットフォームの上位の行が同じでと、グラデーションが表示されています。 つまり、`SetPixel`メソッドと`Pixels`プロパティが基になるピクセル形式に関係なく色からピクセルを正しく作成します。
+また、さまざまなグラデーションを比較することも興味深いことです。各プラットフォームの上位の行は同じであり、目的に応じてグラデーションが表示されます。 つまり、`SetPixel`メソッドと`Pixels`プロパティが基になるピクセル形式に関係なく色からピクセルを正しく作成します。
 
 IOS と Android のスクリーン ショットの次の 2 つの行も同じことを確認する、小さな`MakePixel`、既定のメソッドが正しく定義されている`Rgba8888`これらのプラットフォームのピクセル形式。
 
@@ -794,4 +794,4 @@ public class PosterizePage : ContentPage
 ## <a name="related-links"></a>関連リンク
 
 - [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

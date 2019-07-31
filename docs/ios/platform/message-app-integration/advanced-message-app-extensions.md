@@ -1,105 +1,105 @@
 ---
-title: Xamarin.iOS での高度なメッセージ アプリ拡張機能
-description: この記事では、メッセージ アプリと連携し、新しい機能をユーザーに表示する Xamarin.iOS ソリューションでメッセージ アプリ拡張機能を使用するための高度なテクニックを示します。
+title: Xamarin. iOS の高度なメッセージアプリ拡張機能
+description: この記事では、Xamarin. iOS ソリューションでメッセージアプリ拡張機能を使用するための高度な手法について説明します。このソリューションは、メッセージアプリと統合され、ユーザーに新しい機能を提供します。
 ms.prod: xamarin
 ms.assetid: 394A1FDA-AF70-4493-9B2C-4CFE4BE791B6
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: baceb59116dd907918b34eca4f44293051190954
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 7175cfa3b671a1510182b1497c941521170f39a9
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61155648"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68654518"
 ---
-# <a name="advanced-message-app-extensions-in-xamarinios"></a>Xamarin.iOS での高度なメッセージ アプリ拡張機能
+# <a name="advanced-message-app-extensions-in-xamarinios"></a>Xamarin. iOS の高度なメッセージアプリ拡張機能
 
-_この記事では、メッセージ アプリと連携し、新しい機能をユーザーに表示する Xamarin.iOS ソリューションでメッセージ アプリ拡張機能を使用するための高度なテクニックを示します。_
+_この記事では、Xamarin. iOS ソリューションでメッセージアプリ拡張機能を使用するための高度な手法について説明します。このソリューションは、メッセージアプリと統合され、ユーザーに新しい機能を提供します。_
 
 
-新しいメッセージ アプリ拡張機能が統合には、10、iOS、**メッセージ**をユーザーに新しい機能がアプリを提示しています。 拡張機能には、テキスト、ステッカー、メディア ファイル、および対話型メッセージを送信できます。
+IOS 10 を初めて使用する場合、メッセージアプリ拡張機能は**Messages**アプリと統合され、ユーザーに新しい機能を提供します。 拡張機能は、テキスト、ステッカー、メディアファイル、および対話型メッセージを送信できます。
 
-## <a name="about-message-app-extensions"></a>メッセージ アプリ拡張機能について
+## <a name="about-message-app-extensions"></a>メッセージアプリの拡張機能について
 
-前述のように、メッセージ アプリ拡張機能が統合、**メッセージ**をユーザーに新しい機能がアプリを提示しています。 拡張機能には、テキスト、ステッカー、メディア ファイル、および対話型メッセージを送信できます。 メッセージ アプリ拡張機能の 2 つの種類があります。
+前述のように、メッセージアプリ拡張機能は**Messages**アプリと統合され、ユーザーに新しい機能を提供します。 拡張機能は、テキスト、ステッカー、メディアファイル、および対話型メッセージを送信できます。 次の2種類のメッセージアプリ拡張機能を使用できます。
 
-- **ステッカー パック**-ユーザーがメッセージに追加できるステッカーのコレクションが含まれています。 ステッカー パックは、すべてのコードを記述することがなく作成できます。
-- **iMessage アプリ**-ステッカーを選択すると、テキストを入力する、(省略可能な型変換) によるメディア ファイルを含む、作成、編集、および相互作用のメッセージを送信するためのメッセージ アプリ内のカスタム ユーザー インターフェイスを表示することができます。
+- **ステッカーパック**-ユーザーがメッセージに追加できるステッカーのコレクションが含まれています。 ステッカーパックは、コードを記述せずに作成できます。
+- **IMessage アプリ**-メッセージアプリ内にカスタムユーザーインターフェイスを提供して、ステッカーの選択、テキストの入力 (オプションの型変換を含む)、および操作メッセージの作成、編集、および送信を行うことができます。
 
-メッセージ アプリ拡張機能は、次の 3 つの主要なコンテンツ タイプを提供します。
+メッセージアプリの拡張機能は、次の3つの主要なコンテンツの種類を提供します。
 
-- **対話型メッセージ**-アプリを生成するカスタム メッセージ コンテンツの種類は、メッセージで、アプリ ユーザーがタップしたときに、フォア グラウンドで起動されます。
-- **ステッカー** -ユーザーの間で送信されるメッセージに含めることがアプリによって生成されたイメージします。 参照してください、 [Ice cream ビルダー](https://developer.xamarin.com/samples/monotouch/ios10/IceCreamBuilder/)ステッカー パック アプリの実装例については、サンプル アプリです。
-- **その他のサポートされているコンテンツ**-アプリは、写真、ビデオ、テキストまたはメッセージ アプリを常にサポートされている種類のリンクなどのコンテンツを提供できます。
+- **対話型メッセージ**-アプリが生成するカスタムメッセージコンテンツの一種であり、ユーザーがメッセージをタップすると、アプリがフォアグラウンドで起動されます。
+- **ステッカー** -ユーザー間で送信されるメッセージに含めることができる、アプリによって生成されるイメージです。 ステッカーパックアプリの実装例については、[アイスクリームビルダー](https://docs.microsoft.com/samples/xamarin/ios-samples/ios10-icecreambuilder)のサンプルアプリを参照してください。
+- **サポートされているその他のコンテンツ**-アプリは、メッセージアプリによって常にサポートされている種類の写真、ビデオ、テキスト、リンクなどのコンテンツを提供できます。
 
-新しい ios 10 では、メッセージのアプリが含まれています、独自の専用の組み込みアプリ ストアには。 メッセージ アプリ拡張機能が含まれているすべてのアプリが表示され、このストアで昇格します。 新しいメッセージ アプリ ドロワーが、ユーザーにすばやくアクセスを提供するメッセージのアプリ ストアからダウンロードされているすべてのアプリが表示されます。
+IOS 10 の新機能であるメッセージアプリには、独自の専用の組み込みアプリストアが含まれるようになりました。 メッセージアプリの拡張機能を含むすべてのアプリが、このストアに表示され、昇格されます。 新しいメッセージアプリドロワーには、Messages App Store からダウンロードされたすべてのアプリが表示され、ユーザーにすばやくアクセスできるようになります。
 
-また新しい iOS 10 では、Apple が追加ユーザーを簡単にアプリを検出できるインライン アプリ属性。 たとえば、1 人のユーザーは、2 つ目のユーザーが持っていないアプリから別にコンテンツを送信する場合 (たとえばステッカー) のようにインストールされている送信側のアプリの名前 下にあるメッセージ履歴内のコンテンツ。 ユーザーがアプリのタップした場合の名前、メッセージ アプリ ストアを開くこと、アプリ ストアで選択されています。
+また、iOS 10 の新機能である Apple では、ユーザーがアプリを簡単に検出できるようにするインラインアプリの属性が追加されています。 たとえば、1人のユーザーが、2番目のユーザーがインストールしていないアプリから別のユーザーにコンテンツを送信した場合 (ステッカーなど)、送信元アプリの名前はメッセージ履歴のコンテンツの下に一覧表示されます。 ユーザーがアプリ名をタップすると、メッセージアプリストアが開き、ストアでアプリが選択されます。
 
-メッセージ アプリ拡張機能は、既存の iOS アプリ開発者が使い慣れたを作成して、すべての標準的なフレームワークと標準の iOS アプリの機能へのアクセスことに似ています。 例:
+メッセージアプリの拡張機能は、開発者が作成に慣れている既存の iOS アプリに似ており、標準の iOS アプリのすべての標準フレームワークと機能にアクセスできます。 例えば:
 
-- アプリ内購入へのアクセスがあります。
-- これらは、Apple Pay にアクセスします。
-- カメラなどのデバイスのハードウェアへのアクセスがあります。
+- アプリ内購入にアクセスできます。
+- Apple Pay にアクセスできます。
+- これらのユーザーは、カメラなどのデバイスハードウェアにアクセスできます。
 
-メッセージ アプリ拡張機能は iOS 10 でのみサポート、ただし、これらの拡張機能を送信するコンテンツは watchOS と macOS デバイスで表示できます。 新しい_ページの [最近]_ メッセージ アプリ拡張機能のものを含む、携帯電話から送信された最新のステッカーを表示し、watch から留めませんを送信するユーザーを許可するが、watchOS 3 に追加します。
+メッセージアプリの拡張機能は、iOS 10 でのみサポートされていますが、これらの拡張機能が送信するコンテンツは、watchOS および macOS デバイスで表示できます。 WatchOS 3 に追加された新しい  _Recents ページ_には、電話から送信された最近のステッカー (メッセージアプリの拡張機能を含む) が表示され、ユーザーはこれらのステッカーをウォッチから送信できます。
 
 ## <a name="about-interactive-messages"></a>対話型メッセージについて
 
-対話型メッセージは、カスタム メッセージ バブルの提示され、メッセージ アプリ拡張機能によって提供されます。 メッセージ [入力] フィールドに挿入し、送信、対話型メッセージ コンテンツを作成するユーザーを許可します。
+対話型メッセージはカスタムメッセージバブルを提示し、メッセージアプリの拡張機能によって提供されます。 ユーザーは、対話型のメッセージコンテンツを作成し、メッセージ入力フィールドに挿入して送信することができます。
 
-[![](advanced-message-app-extensions-images/interactive01.png "対話型メッセージのコンテンツを作成します。")](advanced-message-app-extensions-images/interactive01.png#lightbox)
+[![](advanced-message-app-extensions-images/interactive01.png "対話型メッセージのコンテンツの作成")](advanced-message-app-extensions-images/interactive01.png#lightbox)
 
-受信側のユーザーは、メッセージの履歴を作成したメッセージ アプリ拡張機能を読み込むには、そのメッセージ バブルをタップして、対話型メッセージに返信できます。 拡張機能は起動の全画面表示にして、応答を作成し、元のユーザーに送信するユーザーを許可します。
+受信側のユーザーは、メッセージ履歴内のメッセージバブルをタップして、それを作成したメッセージアプリ拡張機能を読み込むことで、対話型メッセージに応答できます。 拡張機能が全画面表示され、ユーザーは応答を作成して、送信元のユーザーに返信することができます。
 
-[![](advanced-message-app-extensions-images/interactive02.png "拡張機能は、全画面表示を起動")](advanced-message-app-extensions-images/interactive02.png#lightbox)
+[![](advanced-message-app-extensions-images/interactive02.png "拡張機能が全画面表示を開始しました。")](advanced-message-app-extensions-images/interactive02.png#lightbox)
 
 
-次のトピックについては、以下で詳しくで説明します。
+次のトピックについては、以下で詳しく説明します。
 
-- メッセージ API の概要
-- 拡張機能のライフ サイクル
-- メッセージを作成します。
-- メッセージを送信します。
+- Messages API の概要
+- 拡張機能のライフサイクル
+- メッセージの作成
+- メッセージの送信
 
-## <a name="messages-api-overview"></a>メッセージ API の概要
+## <a name="messages-api-overview"></a>Messages API の概要
 
-ユーザーによって呼び出されると、メッセージ アプリ拡張機能がコンパクトに表示モードでメッセージの履歴の下部に表示されます。
+ユーザーによって呼び出されると、メッセージの履歴の下部に、簡易表示モードでメッセージアプリの拡張機能が表示されます。
 
-[![](advanced-message-app-extensions-images/interactive03.png "メッセージ API の概要")](advanced-message-app-extensions-images/interactive03.png#lightbox)
+[![](advanced-message-app-extensions-images/interactive03.png "Messages API の概要")](advanced-message-app-extensions-images/interactive03.png#lightbox)
 
-1. `MSMessageAppViewController`でメッセージ アプリ拡張機能オブジェクトは、拡張機能の表示は、ユーザーに表示されるときに呼び出されるメイン クラスです。
-2. メッセージ交換としてユーザーに表示される、`MSConversation`オブジェクト インスタンス。
-3. `MSMessage`クラスは、メッセージ交換で指定されたメッセージ バブルを表します。
-4. `MSSession` メッセージを送信する方法を制御します。
-5. `MSMessageTemplateLayout` メッセージを表示する方法を制御します。
+1. メッセージアプリ拡張機能のオブジェクトは、拡張機能のビューがユーザーに表示されるときに呼び出されるメインクラスです。`MSMessageAppViewController`
+2. メッセージ交換は、 `MSConversation`オブジェクトインスタンスとしてユーザーに提示されます。
+3. クラス`MSMessage`は、メッセージ交換の特定のメッセージバブルを表します。
+4. `MSSession`メッセージの送信方法を制御します。
+5. `MSMessageTemplateLayout`メッセージの表示方法を制御します
 
-## <a name="the-extension-lifecycle"></a>拡張機能のライフ サイクル
+## <a name="the-extension-lifecycle"></a>拡張機能のライフサイクル
 
-アクティブになるメッセージ アプリ拡張機能のプロセスを参照してください。
+メッセージアプリ拡張機能がアクティブになったプロセスを見てみましょう。
 
-[![](advanced-message-app-extensions-images/interactive04.png "アクティブになるメッセージ アプリ拡張機能のプロセス")](advanced-message-app-extensions-images/interactive04.png#lightbox)
+[![](advanced-message-app-extensions-images/interactive04.png "メッセージアプリ拡張機能がアクティブになったプロセス")](advanced-message-app-extensions-images/interactive04.png#lightbox)
 
-1. 拡張機能は、(たとえばアプリ ドロワー) から起動すると、メッセージ アプリは、プロセスを起動します。
-2. `DidBecomeActive`メソッドが呼び出され、渡された、`MSConversation`でメッセージ アプリ拡張機能が実行されているメッセージ交換を表します。
-3. 拡張機能はオフの基づいているため、`UIViewController`両方`ViewWillAppear`と`ViewDidAppear`と呼ばれます。
+1. 拡張機能が起動されると (たとえば、アプリドロアーから)、メッセージアプリによってプロセスが起動されます。
+2. メソッドが呼び出され、メッセージアプリ`MSConversation`拡張機能が実行されているメッセージ交換を表すが渡されます。 `DidBecomeActive`
+3. 拡張機能はとの`UIViewController`両方`ViewWillAppear`に基づいて`ViewDidAppear`いるので、が呼び出されます。
 
-次に、非アクティブになるメッセージ アプリ拡張機能のプロセスを見てみましょう。
+次に、メッセージアプリの拡張機能が非アクティブ化されるプロセスについて見ていきます。
 
-[![](advanced-message-app-extensions-images/interactive05.png "非アクティブになるメッセージ アプリ拡張機能のプロセス")](advanced-message-app-extensions-images/interactive05.png#lightbox)
+[![](advanced-message-app-extensions-images/interactive05.png "メッセージアプリ拡張機能が非アクティブ化されるプロセス")](advanced-message-app-extensions-images/interactive05.png#lightbox)
 
-1. メッセージ アプリ拡張機能が非アクティブ化されるときに、`ViewWillDisappear`メソッドが最初に呼び出されます。
-2. 次に、`ViewDidDisappear`メソッドが呼び出されます。
-3. `WillResignActive`メソッドが呼び出され、渡された、`MSConversation`でメッセージ アプリ拡張機能が実行されているメッセージ交換を表します。 この時点でメッセージ アプリと拡張機能間の接続が解放されようです。
-4. 後の時点でメッセージ アプリによって、プロセスが終了します。
+1. メッセージアプリ拡張機能が非アクティブ化される`ViewWillDisappear`と、最初にメソッドが呼び出されます。
+2. その後`ViewDidDisappear` 、メソッドが呼び出されます。
+3. メソッドが呼び出され、メッセージアプリ`MSConversation`拡張機能が実行されているメッセージ交換を表すが渡されます。 `WillResignActive` この時点で、メッセージアプリと拡張機能の間の接続が解放されます。
+4. 後で、プロセスは Messages アプリによって終了されます。
 
-拡張機能が短期的なプロセスであるため、積極的に処理し、バッテリ電源を節約するために、システムによって中止されます。 開発者にならないようにこれを設計およびメッセージ アプリ拡張機能を実装するときに注意してください。
+拡張機能は短時間のプロセスであるため、処理とバッテリの電力を節約するためにシステムによって積極的に終了されます。 開発者は、メッセージアプリ拡張機能を設計および実装するときに、この点に留意する必要があります。
 
-## <a name="composing-a-message"></a>メッセージを作成します。
+## <a name="composing-a-message"></a>メッセージの作成
 
-メッセージ アプリ拡張機能では、プロセスで実行するいるし、そのユーザー インターフェイスが表示されます、新しいメッセージを作成する次のコードを使用できます。
+メッセージアプリ拡張機能がプロセスで実行され、そのユーザーインターフェイスが表示されたら、次のコードを使用して新しいメッセージを作成できます。
 
 ```csharp
 MSMessage ComposeMessage (IceCream iceCream, string caption, MSSession session = null)
@@ -122,31 +122,31 @@ MSMessage ComposeMessage (IceCream iceCream, string caption, MSSession session =
 }
 ```
 
-このコードを作成する新しい`MSMessage`いくつかのプロパティを設定し、(など`Url`)。 メッセージは、iOS でのみ作成できますに送信できます iOS と macOS の両方に表示します。
+このコードは、新しい`MSMessage`を作成し、いくつかの`Url`プロパティ (など) を設定します。 メッセージは iOS 上でのみ作成できますが、iOS と macOS の両方に送信して表示することができます。
 
-ユーザーは、macOS でのメッセージ交換でメッセージ バブルをクリックすると、Mac は、web ブラウザーで URL で指定されたアドレスを開いてしようとします。 その結果、開発者の web サイトは、macOS 上の web ブラウザーで、メッセージの一部の表現ベースのコンピューターを表示できる必要があります。
+ユーザーが macOS でメッセージ交換のメッセージバブルをクリックすると、Mac は web ブラウザーの URL で指定されたアドレスを開こうとします。 その結果、開発者の web サイトでは、macOS ベースのコンピューターの web ブラウザーにメッセージの一部を表示できるようになります。
 
-`AccessibilityLabel`プロパティは、メッセージ交換のトラン スクリプトをユーザーにスクリーン リーダーによって使用されます。 `Layout`プロパティを指定する方法、メッセージが表示されます、現在のみ、`MSMessageTemplateLayout`はサポートされており、次のようになります。
+`AccessibilityLabel`プロパティは、ユーザーに対するメッセージ交換のトランスクリプトを読み取るためにスクリーンリーダーによって使用されます。 プロパティ`Layout`は、メッセージの表示方法を指定します。現在`MSMessageTemplateLayout`のは、のみがサポートされ、次のようになります。
 
 [![](advanced-message-app-extensions-images/interactive06.png "MSMessageTemplateLayout テンプレート")](advanced-message-app-extensions-images/interactive06.png#lightbox)
 
-`Image`のプロパティ、`MSMessageTemplateLayout`画面 MessageBubble のメインの本文のコンテンツを提供します。 `MediaFileUrl`プロパティはまた、メッセージ バブルの本文のコンテンツを提供しますでサポートされていないコンテンツでは、`UIImage`バック グラウンドでのループは、ビデオ ファイル) など。 どちらの場合、`Image`と`MediaFileUrl`プロパティが指定されて、`Image`プロパティが優先されます。 `MediaFileUrl` PNG、JPEG、GIF、および (Media Player フレームワークによって、再生可能な任意の形式) でビデオをサポートしているメディア形式。
+の`Image`プロパティは、 `MSMessageTemplateLayout`画面上の messagebubble の本文のコンテンツを提供します。 また`MediaFileUrl` 、プロパティはメッセージバブルの本文にコンテンツを提供しますが、で`UIImage`はサポートされていないコンテンツ (バックグラウンドでループするビデオファイルなど) を使用できます。 プロパティ`Image`と`MediaFileUrl` プロパティの両方が指定されている場合は、プロパティが優先`Image`されます。 では、PNG、JPEG、GIF、およびビデオ (Media Player framework で再生できる任意の形式) がサポートされています。`MediaFileUrl`
 
-推奨されるメディアのサイズは、3 倍解像度で 300 x 300 ピクセルです。 少し大きくしたり小さく資産も受け付けられ、Apple が最適な結果を取得するいくつかのさまざまなサイズでテストを提案します。 メッセージ アプリをダウン サンプリングを必要に応じてこのメディアをスケールします。
+推奨されるメディアサイズは、3倍の解像度で 300 x 300 ピクセルです。 小さいアセットと小さいアセットも使用できます。 Apple は、最適な結果を得るために、いくつかの異なるサイズのテストを提案します。 メッセージアプリは、必要に応じてこのメディアをダウンサンプリングし、スケーリングします。
 
-資産が、受信側に送信されると、トランス コードされたメッセージ アプリ、ネットワーク経由で転送からそれらを最適化するために、接続されている任意のメディアが自動的になります。 このため、Apple 抑制メディアがスケール ダウンし、転送するために圧縮するために、メッセージに関連付けられているメディアでのテキストを含むため可能性のあるテキストのレンダリング、判読できます。
+アセットが受信者に送信されると、接続されているメディアは、ネットワーク上での転送を最適化するために、メッセージアプリによって自動的にトランスコードされます。 このため、Apple では、メッセージに添付されているメディア内のテキストを含めないようにしています。これは、メディアがスケールダウンされ、転送用に圧縮されるため、テキストが判読不能になる可能性があるためです。
 
-`ImageTitle`と`ImageSubtitle`プロパティがメッセージ バブル チャートに表示されるメディアの説明を入力します。 これらのプロパティはテキストとして送信されます受信側のデバイスに場所が明確に表示されます、イメージの左下隅。
+プロパティ`ImageTitle` と`ImageSubtitle`プロパティは、メッセージバブルに表示されるメディアの説明を提供します。 これらのプロパティは、受信デバイスにテキストとして送信され、イメージの左下隅に crisply にレンダリングされます。
 
-`Caption`、 `SubCaption`、`TrailingCaption`と`TrailingSubcaption`プロパティは、さらに、イメージを説明し、イメージの下のセクションに表示されます。 すべてのこれらのプロパティを設定`null`キャプション領域なしメッセージ バブルが作成されます。
+、 `Caption` 、`SubCaption`およびの`TrailingSubcaption`各プロパティでは、イメージについてさらに説明します。イメージの下のセクションにレンダリングされます。 `TrailingCaption` これらのプロパティをすべてに`null`設定すると、キャプション領域なしでメッセージバブルが作成されます。
 
-[![](advanced-message-app-extensions-images/interactive07.png "キャプション領域なしメッセージ バブル")](advanced-message-app-extensions-images/interactive07.png#lightbox)
+[![](advanced-message-app-extensions-images/interactive07.png "キャプション領域のないメッセージバブル")](advanced-message-app-extensions-images/interactive07.png#lightbox)
 
-最後に注意してくださいには、メッセージ アプリは、メッセージ バブルの左上隅でメッセージ アプリ拡張機能のアイコンを描画しないことです。
+最後に注意すべき点は、メッセージアプリはメッセージバブルの左上隅にメッセージアプリ拡張機能のアイコンを描画することです。
 
-## <a name="sending-a-message"></a>メッセージを送信します。
+## <a name="sending-a-message"></a>メッセージの送信
 
-1 回、`MSMessage`で構成される、次のコードは、送信に使用できるされました。
+`MSMessage`が構成されたら、次のコードを使用してそれを送信できます。
 
 ```csharp
 public void SendMessage (MSMessage message)
@@ -165,30 +165,30 @@ public void SendMessage (MSMessage message)
 }
 ```
 
-`ActiveConversation`のプロパティ、`MSMessagesAppViewController`でメッセージ アプリ拡張機能を起動した現在の会話を保持します。
+のプロパティは、 `MSMessagesAppViewController`メッセージアプリ拡張機能が起動された現在のメッセージ交換を保持します。 `ActiveConversation`
 
-呼び出す、`InsertMessage`の`MSConversation`メッセージ交換にメッセージを含めるし、生じる可能性のあるエラーを処理します。 メッセージが正常に含まれる場合は、入力フィールドにメッセージ バブルが表示されます。
+`InsertMessage` のを呼び出してメッセージ交換にメッセージを含め、発生する可能性のあるエラー`MSConversation`を処理します。 メッセージが正常に含まれている場合は、入力フィールドにメッセージのバブルが表示されます。
 
-さらに、拡張機能など、メッセージ交換に、さまざまな種類のデータを送信できます。
+さらに、この拡張機能は、次のようなさまざまな種類のデータをメッセージ交換に送信できます。
 
-- **テキスト** - `ActiveConversation.InsertText ("Message", (error) => {...});`
-- **添付ファイル** - `ActiveConversation.InsertAttachment (new NSUrl ("path"), "filename", (error) => {...});`
-- **ステッカー**  -  `ActiveConversation.InsertSticker (sticker, (obj) => {...});`場所`sticker`は、`MSSticker`します。
+- **本文** - `ActiveConversation.InsertText ("Message", (error) => {...});`
+- **対する** - `ActiveConversation.InsertAttachment (new NSUrl ("path"), "filename", (error) => {...});`
+- **ステッカー**  -  は、`MSSticker`はです。`ActiveConversation.InsertSticker (sticker, (obj) => {...});` `sticker`
 
-新しいコンテンツは、入力フィールドには、ユーザーは、青をタップして、メッセージを送信できません**送信**(と同様、一般的なメッセージ) ボタンをクリックします。 このプロセスは、ユーザーの制御下で完全には、コンテンツを自動的に送信するメッセージ アプリ拡張機能のための方法はありません。
+入力フィールドに新しいコンテンツが追加されると、ユーザーは、(通常のメッセージと同様に) 青い **[送信]** ボタンをタップしてメッセージを送信できます。 メッセージアプリ拡張機能でコンテンツを自動的に送信する方法はありません。このプロセスは、ユーザーの制御下にあります。
 
-## <a name="handling-the-compact-and-expanded-modes"></a>Compact および拡張モードの処理
+## <a name="handling-the-compact-and-expanded-modes"></a>コンパクトモードと拡張モードの処理
 
-メッセージ アプリ拡張機能は、2 つの異なる表示モードのいずれかで表示できます。
+メッセージアプリの拡張機能は、次の2つの異なる表示モードのいずれかで表示できます。
 
-[![](advanced-message-app-extensions-images/interactive08.png "2 つの異なる表示モードで表示されるメッセージ アプリ拡張:圧縮と展開")](advanced-message-app-extensions-images/interactive08.png#lightbox)
+[![](advanced-message-app-extensions-images/interactive08.png "メッセージアプリの拡張機能は、次の2つの異なる表示モードで表示されます。コンパクト & 展開済み")](advanced-message-app-extensions-images/interactive08.png#lightbox)
 
-- **Compact** -既定のモードは、このメッセージ アプリ拡張機能が、メッセージ ビューの下部にある 25% を占める場所。 コンパクト モードでアプリにキーボード、水平方向スクロールまたはスワイプ ジェスチャ レコグナイザーへのアクセスはありません。 アプリは入力フィールドへのアクセス権し、するために呼び出す`InsertMessage`はすぐにあるユーザーに表示されます。
-- **展開**-メッセージ アプリ拡張機能をメッセージ ビュー全体を入力します。 入力フィールドへのアクセスはありませんが、キーボード、水平方向スクロールおよびスワイプ ジェスチャ レコグナイザーへのアクセスにが。
+- **Compact** -これは、メッセージアプリの拡張機能がメッセージビューの下位 25% を占有する既定のモードです。 コンパクトモードでは、アプリはキーボード、水平スクロール、またはスワイプジェスチャのレコグナイザーにアクセスできません。 アプリには入力フィールドへのアクセス権があり、 `InsertMessage`の呼び出しはすぐにユーザーに表示されます。
+- **展開**済み-メッセージアプリの拡張機能によってメッセージビュー全体が表示されます。 入力フィールドへのアクセス権はありませんが、キーボード、水平スクロール、およびスワイプジェスチャのレコグナイザーにアクセスできます。
 
-メッセージ アプリ拡張機能は、切り替えることができますの間でこれらのモードは、プログラム、または手動でユーザーがいつでも、いずれかへの応答性はモードで変更にすぐにする必要があります。
+メッセージアプリの拡張機能は、プログラムによって、またはユーザーが手動でいつでも手動で切り替えることができ、表示モードの変更にすぐに応答する必要があります。
 
-次の 2 つの異なる表示モードの切り替えを処理の例を見てください。 2 つの異なるビュー コント ローラーは、各状態の必要になります。 `StickerBrowserViewController`ハンドル、 **Compact**ビューと`AddStickerViewController`を処理する、 **Expanded**ビュー。
+2つの異なる表示モードの切り替えを処理する次の例を見てみましょう。 状態ごとに2つの異なるビューコントローラーが必要になります。 は`StickerBrowserViewController` **コンパクト**ビューを処理し、 `AddStickerViewController`は**展開**されたビューを処理します。
 
 ```csharp
 using System;
@@ -359,7 +359,7 @@ namespace MessagesExtension {
 }
 ```
 
-`DidTransition` 2 つのモードの切り替えを処理するメソッドをオーバーライドします。
+`DidTransition`メソッドは、2つのモード間の切り替えを処理するためにオーバーライドされます。
 
 ```csharp
 public override void DidTransition (MSMessagesAppPresentationStyle presentationStyle)
@@ -378,46 +378,46 @@ public override void DidTransition (MSMessagesAppPresentationStyle presentationS
 }
 ```
 
-必要に応じて、アプリが使用される可能性がありますが、 `WillTransition` (上記の例 Icecream ビルダーで行われる) ようユーザーに提示される前に、表示モードの変更を処理するメソッド。 詳細についてを参照してください、[ステッカーのさらにカスタマイズ](~/ios/platform/message-app-integration/intro-to-message-app-extensions.md)ドキュメント。
+必要に応じて、アプリは`WillTransition`メソッドを使用して、ユーザーに表示される前に、ビューモードの変更を処理することもできます (上記の Icecream Builder の例のように)。 詳細については、[ステッカーのカスタマイズ](~/ios/platform/message-app-integration/intro-to-message-app-extensions.md)に関するドキュメントを参照してください。
 
-## <a name="replying-to-a-message"></a>メッセージに返信します。
+## <a name="replying-to-a-message"></a>メッセージへの返信
 
-メッセージ アプリ拡張機能は、メッセージに返信するときに処理する必要がある 2 つのケースがあります。
+メッセージに応答するときに、メッセージアプリの拡張機能が処理する必要があるケースが2つあります。
 
-[![](advanced-message-app-extensions-images/interactive09.png "非アクティブとアクティブ モードでメッセージ アプリ拡張機能")](advanced-message-app-extensions-images/interactive09.png#lightbox)
+[![](advanced-message-app-extensions-images/interactive09.png "非アクティブモードとアクティブモードのメッセージアプリ拡張機能")](advanced-message-app-extensions-images/interactive09.png#lightbox)
 
-- **拡張機能は非アクティブ**-ユーザーがタップする拡張機能をアクティブ化し、対話型のメッセージ交換を続行をメッセージのトラン スクリプトでメッセージ アプリ拡張機能のメッセージの吹き出しのいずれかを使用する必要があります。
-- **拡張機能が有効になって**-ユーザーが展開済みのビュー モードを入力し、中断した場所から対話型プロセスを続行するメッセージのトラン スクリプトでメッセージ アプリ拡張機能のメッセージのバブルをタップします。
+- **拡張機能が非アクティブ**になっています。ユーザーがタップして拡張機能をアクティブ化し、対話形式で会話を続けることができるメッセージのトランスクリプトに、メッセージアプリ拡張機能のメッセージバブルの1つがあります。
+- **拡張機能がアクティブになってい**ます。ユーザーは、メッセージトランスクリプトで Message App Extension のメッセージバブルをタップして展開されたビューモードに入り、中断した場所から対話型プロセスを続行できます。
 
-### <a name="the-extension-is-inactive"></a>拡張機能が非アクティブです。
+### <a name="the-extension-is-inactive"></a>拡張機能がアクティブではありません
 
-メッセージ バブルがメッセージのトラン スクリプトでユーザーがタップされたメッセージ アプリ拡張機能がアクティブでない場合は、次のプロセスが発生します。
+メッセージトランスクリプトでユーザーによってメッセージのバブルがタップされ、メッセージアプリの拡張機能が非アクティブになると、次の処理が行われます。
 
-[![](advanced-message-app-extensions-images/interactive10.png "非アクティブのメッセージ バブルの処理")](advanced-message-app-extensions-images/interactive10.png#lightbox)
+[![](advanced-message-app-extensions-images/interactive10.png "非アクティブなメッセージバブルの処理")](advanced-message-app-extensions-images/interactive10.png#lightbox)
 
-1. ユーザーが、拡張機能のメッセージのバブルをタップします。
-2. 拡張機能を起動すると、メッセージ アプリは、プロセスを起動します。
-3. `DidBecomeActive`メソッドが呼び出され、渡された、`MSConversation`でメッセージ アプリ拡張機能が実行されているメッセージ交換を表します。
-4. 拡張機能はオフの基づいているため、`UIViewController`両方`ViewWillAppear`と`ViewDidAppear`と呼ばれます。
+1. ユーザーが拡張機能のメッセージバブルをタップします。
+2. 拡張機能が起動されると、メッセージアプリによってプロセスが起動されます。
+3. メソッドが呼び出され、メッセージアプリ`MSConversation`拡張機能が実行されているメッセージ交換を表すが渡されます。 `DidBecomeActive`
+4. 拡張機能はとの`UIViewController`両方`ViewWillAppear`に基づいて`ViewDidAppear`いるので、が呼び出されます。
 
-プロセスが完了したら、展開の表示モードでメッセージ アプリ拡張機能が表示されます。
+プロセスが完了すると、メッセージアプリの拡張機能が展開ビューモードで表示されます。
 
-### <a name="the-extension-is-active"></a>拡張機能がアクティブ
+### <a name="the-extension-is-active"></a>拡張機能はアクティブです
 
-メッセージのトラン スクリプトでユーザーがメッセージ バブルをタップすると、メッセージ アプリ拡張機能がアクティブになって、次のプロセスが発生します。
+メッセージトランスクリプトでユーザーによってメッセージバブルがタップされ、メッセージアプリ拡張機能がアクティブになっている場合、次の処理が行われます。
 
-[![](advanced-message-app-extensions-images/interactive11.png "作業中のメッセージ バブルの処理")](advanced-message-app-extensions-images/interactive11.png#lightbox)
+[![](advanced-message-app-extensions-images/interactive11.png "アクティブメッセージバブルの処理")](advanced-message-app-extensions-images/interactive11.png#lightbox)
 
-1. ユーザーが、拡張機能のメッセージのバブルをタップします。
-2. メッセージ アプリ拡張機能が既にアクティブであるため、`WillTransition`のメソッド、`MSMessagesAppViewController`はコンパクトなから展開済みの表示モードへの切り替えを処理するために呼び出されます。
-3. `DidSelectMessage`のメソッド、`MSMessagesAppViewController`呼び出され、渡された、`MSMessage`と`MSConversation`メッセージ バブルが属しています。
-4. `DidTransition`のメソッド、`MSMessagesAppViewController`はコンパクトなから展開済みの表示モードへの切り替えを処理するために呼び出されます。
+1. ユーザーが拡張機能のメッセージバブルをタップします。
+2. メッセージアプリ拡張機能は既にアクティブ`WillTransition`になっているため、Compact から展開されたビューモードへの切り替えを処理するために、 `MSMessagesAppViewController`のメソッドが呼び出されます。
+3. `MSConversation` のメソッド`MSMessage`が呼び出され、メッセージバブルが属しているとが渡されます。 `MSMessagesAppViewController` `DidSelectMessage`
+4. `DidTransition` のメソッドは、Compactから展開されたビューモードへの切り替えを処理するために`MSMessagesAppViewController`呼び出されます。
 
-ここでも、プロセスが完了したら、展開の表示モードでメッセージ アプリ拡張機能が表示されます。
+この場合も、プロセスが完了すると、メッセージアプリの拡張機能が展開ビューモードで表示されます。
 
 ### <a name="accessing-the-selected-message"></a>選択したメッセージへのアクセス
 
-どちらの場合、ユーザーは、メッセージ アプリ拡張機能に属しているメッセージ バブルをタップしたときにする必要がありますへのアクセス、`MSMessage`を使用しているがタップされた、`SelectedMessage`のプロパティ、`MSConversation`します。
+どちらの場合も、ユーザーがメッセージアプリ拡張機能に属するメッセージバブルをタップすると、の`MSMessage` `SelectedMessage`プロパティ`MSConversation`を使用してタップされたにアクセスできる必要があります。
 
 例えば:
 
@@ -451,19 +451,19 @@ namespace MessageExtension
 }
 ```
 
-メッセージ アプリ拡張機能の UI に表示される、選択したメッセージと応答を作成するユーザーを許可する必要があります。
+選択したメッセージがメッセージアプリ拡張機能の UI に表示され、ユーザーは応答の作成を許可されている必要があります。
 
-## <a name="removing-partially-completed-messages"></a>メッセージ部分の削除が完了しました
+## <a name="removing-partially-completed-messages"></a>部分的に完了したメッセージの削除
 
-2 つユーザーのメッセージ交換の間の対話型のメッセージ交換のさまざまな手順を送信するには、プロセスでメッセージ トラン スクリプトを使用する部分的に完了したメッセージの吹き出しを開始できます。
+メッセージ交換の2人のユーザーの間で対話型会話のさまざまなステップを送信するプロセスでは、部分的に完了したメッセージのバブルが、メッセージトランスクリプトの乱雑さを開始する可能性があります。
 
-[![](advanced-message-app-extensions-images/interactive12.png "部分的に完了したメッセージの吹き出しは、メッセージのトラン スクリプトと雑然とさせることができます。")](advanced-message-app-extensions-images/interactive12.png#lightbox)
+[![](advanced-message-app-extensions-images/interactive12.png "部分的に完了したメッセージのバブルは、メッセージトランスクリプトを混乱させる可能性があります")](advanced-message-app-extensions-images/interactive12.png#lightbox)
 
-代わりに、メッセージ アプリ拡張機能では、メッセージのトラン スクリプトにコメントを簡潔に前のメッセージの吹き出しを縮小する必要があります。
+代わりに、メッセージのトランスクリプトで前のメッセージのバブルを簡潔なコメントに折りたたむ必要があります。
 
-[![](advanced-message-app-extensions-images/interactive13.png "メッセージのトラン スクリプトの前のメッセージの吹き出しの折りたたみ")](advanced-message-app-extensions-images/interactive13.png#lightbox)
+[![](advanced-message-app-extensions-images/interactive13.png "メッセージトランスクリプトで前のメッセージバブルを折りたたむ")](advanced-message-app-extensions-images/interactive13.png#lightbox)
 
-使用してこの処理は、`MSSession`折りたたむにはすべての既存の手順。 そのため、`DidSelectMessage`のメソッド、`MSMessagesAppViewController`クラスは、次のように変更できます。
+これは、 `MSSession`既存のすべてのステップを折りたたむためにを使用して処理されます。 クラスのメソッドは`DidSelectMessage` 、次のように変更できます。 `MSMessagesAppViewController`
 
 ```csharp
 public override void DidSelectMessage (MSMessage message, MSConversation conversation)
@@ -498,56 +498,56 @@ public override void DidSelectMessage (MSMessage message, MSConversation convers
 }
 ```
 
-終了して、選択したメッセージが既にある場合`MSSession`、それ以外の場合、新しい使用が`MSSession`が作成されます。 `SummaryText`のプロパティ、`MSMessage`折りたたまれている前の手順にキャプションを追加するために使用します。 場合、`SummaryText`プロパティに設定されて`null`、メッセージ交換では、前の手順はメッセージ交換のトラン スクリプトから完全に削除されます。
+選択したメッセージに既に終了`MSSession`しているがある場合は`MSSession` 、それが使用されます。それ以外の場合は、新しいが作成されます。 のプロパティは、 `MSMessage`折りたたまれた前の手順にキャプションを追加するために使用されます。 `SummaryText` プロパティがに`null`設定されている場合、メッセージ交換の前の手順は、メッセージ交換のトランスクリプトから完全に削除されます。 `SummaryText`
 
-## <a name="advanced-message-api-features"></a>メッセージの API 機能の詳細
+## <a name="advanced-message-api-features"></a>高度なメッセージ API 機能
 
-上記の詳細について、新しいメッセージ API の基本的な機能、Apple のフレームワークが組み込まれた高度な機能のいくつかのことを確認次に。
+上記の新しいメッセージ API の基本的な機能については、次に、Apple がフレームワークに組み込まれている高度な機能のいくつかを確認します。
 
-最初に、その他のいくつかのオーバーライド メソッドでは、`MSMessagesAppViewController`メッセージ交換に深くアクセスを提供するクラス。
+まず、 `MSMessagesAppViewController`クラスには、メッセージ交換により深いアクセスを提供するオーバーライドメソッドがいくつかあります。
 
-- `DidStartSendingMessage` -これは、ユーザーが [送信] ボタンをタップしたときに呼び出されます。 これは、メッセージの送信プロセスが開始されているだけで、受信者に配信が実際にされているという意味ではありません。
-- `DidCancelSendingMessage` -このエラーは、ユーザーがタップした場合、 *X*トラン スクリプトのメッセージ交換のメッセージ バブルの右上隅のボタンをクリックします。
-- `DidReceiveMessage` 、メッセージ アプリ拡張機能がアクティブなときにこのメソッドが呼び出されますが、メッセージ交換の参加者のいずれかから新しいメッセージを受け取りました。
+- `DidStartSendingMessage`-これは、ユーザーが [送信] ボタンをタップしたときに呼び出されます。 これは、送信プロセスが開始されただけで、メッセージが実際に受信者に配信されたことを意味するわけではありません。
+- `DidCancelSendingMessage`-これは、ユーザーがメッセージ交換のトランスクリプトのメッセージバブルの右上隅にある [ *X* ] ボタンをタップしたときに発生します。
+- `DidReceiveMessage`-このメソッドは、メッセージアプリ拡張機能がアクティブになっているときに呼び出され、メッセージ交換のいずれかの参加要素から新しいメッセージを受信しました。
 
-### <a name="group-conversations"></a>グループのメッセージ交換
+### <a name="group-conversations"></a>メッセージ交換のグループ化
 
-ユーザーが (3 つ以上の個人) とグループのメッセージ交換に関係するし、これを設計およびメッセージ アプリ拡張機能を実装するときに考慮する必要があります、メッセージ アプリ拡張機能を使用できます。
+メッセージアプリ拡張機能は、ユーザーがグループの会話 (3 人以上) に関与している間に使用できます。これは、メッセージアプリ拡張機能を設計および実装するときに考慮する必要があります。
 
-3 人のユーザーとグループのメッセージ交換で次の操作を参照してください。
+3人のユーザーとのグループメッセージ交換で、次の対話を見てみましょう。
 
-[![](advanced-message-app-extensions-images/interactive14.png "3 人のユーザーとグループのメッセージ交換内での対話")](advanced-message-app-extensions-images/interactive14.png#lightbox)
+[![](advanced-message-app-extensions-images/interactive14.png "グループと3人のユーザーとの対話")](advanced-message-app-extensions-images/interactive14.png#lightbox)
 
-1. ユーザー 1 はグループ対話型メッセージを送信ハンバーガー トッピングを選択するには、ユーザーの 2 および 3 のユーザーを確認します。
-2. ユーザー 2 は、トマトを選択します。
-3. 3 にぎやかを選択します。
-4. ユーザー 2 の両方のユーザー 3 の選択肢は、ほぼ同時に、ユーザー 1 に到着します。 その結果、ユーザー 2 の選択肢は、概要の行に折りたたまれます、ご利用いただけません。 このケースも反転されている可能性があります、表示されていると、ユーザーの 3 を折りたたみ中のユーザー 2 の選択肢です。
+1. ユーザー1は、ユーザー2とユーザー3にハンバーガートッピングを選択するように求めるグループ対話型のメッセージを送信します。
+2. ユーザー2はトマトを選択します。
+3. ユーザー3が選択を選択します。
+4. ユーザー2とユーザー3の両方の選択肢は、ほぼ同時にユーザー1に返されます。 その結果、ユーザー2の選択は概要行に折りたたまれ、使用できなくなります。 このケースは、ユーザー2が表示され、ユーザー3が折りたたまれている場合にも、反転されている可能性があります。
 
-いずれの場合も、この動作はありません必要なユーザー 1 は 2 のユーザーとユーザー 3 の選択肢にアクセスできる必要があります。 このような状況を処理するために Apple が提案されていますメッセージ アプリ拡張機能は、クラウド内のメッセージの状態を格納しの URL プロパティを使用して、 `MSMessage` (を取得、ユーザーの間で送信される) この状態にアクセスします。
+どちらの場合も、ユーザー1はユーザー2とユーザー3の両方の選択肢にアクセスできる必要があるため、この動作は望ましくありません。 この状況に対処するため、Apple では、メッセージアプリ拡張機能がメッセージの状態をクラウドに格納し、(ユーザー `MSMessage`間で送信される) の URL プロパティを使用して、この状態にアクセスすることを提案しています。
 
-ユーザーは、メッセージを送信するときにセッション トークンが生成され、現在のメッセージの状態を使用してクラウドにプッシュされます。 トラン スクリプトのメッセージ交換のメッセージ バブルをタップする、ときに、セッション トークンは、クラウドからの現在のセッション状態の取得に使用されます。
+ユーザーがメッセージを送信すると、セッショントークンが生成され、現在のメッセージ状態でクラウドにプッシュされます。 ユーザーがメッセージ交換のトランスクリプトでメッセージのバブルをタップすると、セッショントークンが使用され、現在のセッション状態がクラウドから取得されます。
 
-### <a name="sender-identifiers"></a>送信者識別子
+### <a name="sender-identifiers"></a>送信者の識別子
 
-メッセージの送信者の識別子へのアクセスについては、グループのメッセージ交換が上記の例を実行します。
+メッセージの送信者の識別子にアクセスする方法については、上記のグループメッセージ交換の例を次に示します。
 
-[![](advanced-message-app-extensions-images/interactive15.png "グループのメッセージ交換の識別子を送信します。")](advanced-message-app-extensions-images/interactive15.png#lightbox)
+[![](advanced-message-app-extensions-images/interactive15.png "グループメッセージ交換識別子の送信")](advanced-message-app-extensions-images/interactive15.png#lightbox)
 
-1. ユーザー 1 がグループ対話型メッセージを送信する、もう一度ハンバーガー トッピングを選択するには、ユーザーの 2 および 3 のユーザーを確認します。
-2. ユーザー 3 にぎやかを取得します。
-3. ユーザー 3 の選択肢がユーザーの 1 に受信され、ユーザー 2 がまだ返信できません。
-4. Apple は、ユーザーのプライバシーと非常に心配であるためメッセージ アプリ拡張機能のみを知って、一意識別子 (として、 `NSUUID`)、メッセージ交換の参加者が割り当てられています。 ローカルのデバイスでは、現在のユーザーの識別子だけ呼ばれます。
-5. `MSMessage`が、`SenderIdentifier`ユーザーのいずれかに一致するプロパティの参加要素の一覧で既知の拡張機能にします。
-6. 各ユーザー デバイスには、ここでも、ローカル ユーザーの識別子のみがわかっている参加要素のリストのコピーがあります。
-7. メッセージが送信されると、その`SenderIdentifier`プロパティは、ローカル ユーザーのも呼ばれます。
+1. ここでも、ユーザー1は、ユーザー2とユーザー3にハンバーガートッピングを選択するように求めるグループ対話型メッセージを送信します。
+2. ユーザー3が選択します。
+3. ユーザー3の選択がユーザー1に返され、ユーザー2はまだ返信していません。
+4. Apple はユーザーのプライバシーに関係しているため、メッセージアプリの拡張機能は、メッセージ交換の`NSUUID`各参加者に割り当てられた一意の識別子 () のみを認識します。 ローカルデバイスでは、現在のユーザーの識別子のみが認識されます。
+5. に`MSMessage` は、拡張機能で認識される参加者の一覧にあるユーザーの1つに一致するプロパティ`SenderIdentifier`があります。
+6. 各ユーザーデバイスには、参加者リストの独自のコピーがあります。ここでも、ローカルユーザーの識別子のみが認識されます。
+7. メッセージが送信されると、 `SenderIdentifier`そのプロパティは、ローカルユーザーのプロパティでもあることがわかります。
 
 送信者の識別子は、次の方法で使用できます。
 
-- 参加要素のリストを確認、拡張機能は、メッセージ交換でユーザーの数を取得できます。
-- 拡張機能は、ユーザーからのメッセージを受信したときの追跡できる送信者の識別子。 同じ送信者の識別子を持つ別のメッセージを受信した場合、拡張機能は同じユーザーからあるを認識します。
-- メッセージ交換内の特定のユーザーを識別できるように、使用できます。
+- 参加者の一覧を見ると、拡張機能によって、メッセージ交換のユーザー数を取得できます。
+- 拡張機能は、ユーザーからメッセージを受信すると、送信者の識別子を追跡できます。 同じ送信者識別子を持つ別のメッセージを受信した場合、拡張機能は同じユーザーのものであることを認識します。
+- これらは、メッセージ交換の特定のユーザーを識別するために使用できます。
 
-テキスト フィールドのいずれかで送信者の識別子を使用できる、`MSMessageTemplateLayout`によってドル記号を付けます (`$`)。 例:
+送信者の識別子は、ドル記号 ( `MSMessageTemplateLayout` `$`) を付けることによって、のテキストフィールドのいずれかで使用できます。 例えば:
 
 ```csharp
 // Pass along the sender identifier
@@ -555,13 +555,13 @@ var layout = new MSMessageTemplateLayout()
 layout.Caption = string.format("${0} wants pickles.",Conversation.LocalParticipantIdentifier.UuidString);
 ```
 
-メッセージ アプリでは、この種の書式でメッセージ バブルが表示されたら、置き換えられます、`$uuid...`メッセージを送信したメッセージ交換では参加者の連絡先の名前に置き換えます。
+メッセージアプリにこの種類の書式設定のメッセージバブルが表示されると、は`$uuid...` 、メッセージを送信したメッセージ交換の参加者の連絡先名に置き換えられます。
 
-送信者識別子は、異なる一意な送信者の識別子をメッセージ交換内の各参加者があるそのユーザー 1 のデバイスとユーザー 3 のデバイスにもう一度、注上の図を見ているので、各デバイス上で一意で。
+送信者の識別子は各デバイスで一意であるため、上の図を再び見ると、ユーザー1のデバイスとユーザー3のデバイスは、メッセージ交換の参加者ごとに一意の送信者識別子を持っていることに注意してください。
 
-メッセージ アプリ拡張機能のインストール、送信者の識別子のスコープです。 したがってユーザーをアンインストールし、メッセージ アプリ拡張機能を再インストールする場合、新しいインストールの新しい送信者の識別子が生成されます。
+送信者の識別子のスコープは、メッセージアプリ拡張機能のインストールに限定されます。 そのため、ユーザーがメッセージアプリ拡張機能をアンインストールして再インストールすると、新しいインストールに対して新しい送信者識別子が生成されます。
 
-送信者の識別子にアクセスするには、拡張機能は、次のコードを使用できます。
+送信者の識別子にアクセスするために、拡張機能では次のコードを使用できます。
 
 ```csharp
 public override void DidStartSendingMessage (MSMessage message, MSConversation conversation)
@@ -581,34 +581,34 @@ public override void DidStartSendingMessage (MSMessage message, MSConversation c
 
 ## <a name="supported-platforms"></a>サポートされているプラットフォーム
 
-メッセージ アプリ拡張機能によって生成された対話型メッセージは、次の Apple プラットフォームに提供されます。
+メッセージアプリ拡張機能によって生成される対話型メッセージは、次の Apple プラットフォームで配信されます。
 
 - watchOS 3
 - macOS Sierra
 - iOS 10
 
-3 つのプラットフォームでは、iOS 10 だけは対話型メッセージを生成するユーザーを許可します。 Macos Sierra で対話型メッセージ バブル チャートの場合、ユーザーがクリックした場合、URL に接続されている、 `MSMessage` Safari では表示され、メッセージの表現が表示されます。
+3つのプラットフォームのうち、ユーザーが対話型メッセージを生成することを許可するのは、iOS 10 だけです。 MacOS Sierra では、ユーザーが対話型メッセージのバブルをクリックすると、 `MSMessage`に接続されている URL が Safari で開かれ、メッセージの表現が表示されます。
 
-WatchOS では、メッセージ アプリのことをハンドオフ対話型メッセージを接続されている iOS デバイスをユーザーが応答を作成できます。
+WatchOS では、メッセージアプリは、ユーザーが応答を作成できる接続された iOS デバイスに対話型メッセージをハンドオフできます。
 
-新しいメッセージ API は古い Apple プラットフォームで対話型メッセージを受信した場合のフォールバックをサポートしています。
+古い Apple プラットフォームで対話型メッセージを受信した場合、新しい Messages API はフォールバックをサポートしています。
 
 - watchOS 2 +
 - OS X 10.11 +
-- iOS 9 +
+- iOS 9 以降
 
-2 つの個別のメッセージとしてフォールバック形式で転送されます。
+これらは、2つの異なるメッセージとしてフォールバック形式で配信されます。
 
-- イメージは、テンプレートのレイアウトによって提供されるいずれかになります。
-- 指定された、URL、もう一方になります、`MSMessage`します。
+- 1つは、テンプレートレイアウトによって提供されるイメージです。
+- もう1つは、 `MSMessage`に用意されている URL です。
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
-この記事では、統合する Xamarin.iOS ソリューションでメッセージ アプリ拡張機能を使用するための高度なテクニックを示しましたが、**メッセージ**アプリとユーザーに新しい機能が存在します。
+この記事では、Xamarin. iOS ソリューションでメッセージアプリ拡張機能を使用するための高度な手法について説明しました。このソリューションは、**メッセージ**アプリと統合され、ユーザーに新しい機能を提供します。
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [Ice cream ビルダー (サンプル)](https://developer.xamarin.com/samples/monotouch/ios10/IceCreamBuilder/)
-- [メッセージの参照](https://developer.apple.com/reference/messages)
-- [アプリ拡張機能のプログラミング ガイド](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214)
+- [アイスクリームビルダー (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios10-icecreambuilder)
+- [メッセージリファレンス](https://developer.apple.com/reference/messages)
+- [アプリ拡張機能のプログラミングガイド](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214)

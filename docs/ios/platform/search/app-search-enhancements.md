@@ -1,70 +1,70 @@
 ---
-title: Xamarin.iOS でのアプリの検索の機能強化
-description: この記事が、拡張機能では iOS 10 と Xamarin.iOS でそれらを実装する方法にアプリを検索する Apple を行ってきました。
+title: Xamarin のアプリ検索の機能強化
+description: この記事では、iOS 10 のアプリ検索に加えられた Apple の拡張機能と、それらを Xamarin. iOS に実装する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 30124DB6-6A02-4F66-A2D9-BBC8008E6B48
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/15/2017
-ms.openlocfilehash: e61cb20f12f6373ef57beb759b933d3dd9b6e76e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 27eff717fd1390f54a177cc7636e7d107b69cd24
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61408136"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656282"
 ---
-# <a name="app-search-enhancements-in-xamarinios"></a>Xamarin.iOS でのアプリの検索の機能強化
+# <a name="app-search-enhancements-in-xamarinios"></a>Xamarin のアプリ検索の機能強化
 
-_この記事が、拡張機能では iOS 10 と Xamarin.iOS でそれらを実装する方法にアプリを検索する Apple を行ってきました。_
+_この記事では、iOS 10 のアプリ検索に加えられた Apple の拡張機能と、それらを Xamarin. iOS に実装する方法について説明します。_
 
-Ios 10 では、Apple は引き出しますディープ リンク、アプリ内検索、検索継続および検証結果の視覚化などのアプリの検索へいくつかの機能強化が確立します。 この記事では、Xamarin.iOS アプリでこれらの機能の実装について説明します。
+IOS 10 では、Apple は引き出しディープリンク、アプリ内検索、検索継続、検証結果の視覚化など、アプリ検索に対していくつかの機能強化を行っています。 この記事では、これらの機能を Xamarin iOS アプリに実装する方法について説明します。
 
-## <a name="about-app-search-enhancements"></a>アプリの検索の機能強化について
+## <a name="about-app-search-enhancements"></a>アプリ検索の機能強化について
 
-IOS 10 でコア スポット ライトは、次のアプリを検索するいくつかの機能強化を提供します。
+IOS 10 のコアスポットライトは、次のようなアプリ検索に対していくつかの機能強化を提供します。
 
-- **(差分プライバシー) のディープ リンクの支持を引き出します**-検索結果でのディープ リンク アプリのコンテンツを昇格する方法を提供します。
-- **アプリ内検索**-使用して、新しい`CSSearchQuery`メール、Messages や Notes アプリの動作方法と同様のアプリ内スポット ライト検索機能を提供するクラス。
-- **継続を検索**- ユーザーをスポット ライトや、Safari で検索を開始し、アプリを開くし、その検索を続行します。
-- **検証結果の視覚化**-Apple の[アプリ検索 API 検証ツール](https://search.developer.apple.com/appsearch-validation-tool)テストの実行時に web サイトのマークアップとディープ リンクのビジュアル表現が表示されます。
-- **アプリの画像の共有をメッセージ**-スポット ライト検索で表示するメッセージ (メッセージ アプリ拡張機能) 経由で共有するために提供される一般的なアプリ内のイメージを使用します。
+- **引き出しディープリンクの人気度 (差分プライバシー)** -検索結果でディープリンクアプリのコンテンツを昇格する方法を提供します。
+- **アプリ内検索**-新しい`CSSearchQuery`クラスを使用して、メール、メッセージ、ノートアプリの動作と同様に、アプリ内スポットライト検索機能を提供します。
+- **[検索の継続]** -ユーザーがスポットライトまたは Safari で検索を開始し、アプリを開いて検索を続行できるようにします。
+- **検証結果の視覚化**-Apple の[App Search API 検証ツール](https://search.developer.apple.com/appsearch-validation-tool)では、テストを事前に形成するときに、web サイトのマークアップとディープリンクが視覚的に表示されるようになりました。
+- **メッセージアプリイメージの共有**-メッセージ (メッセージアプリ拡張機能を使用) での共有用に提供された、人気のあるアプリ内イメージがスポットライト検索に表示されます。
 
-次のセクションには、これらのトピックについて詳しくは説明します。
+以下のセクションでは、これらのトピックについて詳しく説明します。
 
-## <a name="crowdsourced-deep-link-popularity"></a>人気の引き出しますディープ リンク
+## <a name="crowdsourced-deep-link-popularity"></a>引き出しディープリンクの人気度
 
-iOS 10 をアプリに一般的なディープ リンクの後、ユーザーでは、使用して、アプリの順位付けを向上させるためにこの情報の検索結果でコンテンツを使用して、ユーザーの id を保護しながら、頻度をカウントするためのメカニズムを提供する*差分プライバシー*します。
+iOS 10 では、アプリへの一般的なディープリンクの後にユーザーが続く頻度をカウントし、この情報を使用して検索結果に含まれるアプリのコンテンツの順位を上げながら、差分を使用してユーザーの id を保護することができます。 *プライバシー*。
 
-使用するアプリの`NSUserActivity`ディープ リンク Url を提供し、オブジェクト、`EligibleForPublicIndexing`プロパティに設定`true`、iOS 10 のサブセットを送信する*差分プライバシー ハッシュ*Apple のサーバーにします。 この情報は、検索結果で人気のあるアプリでコンテンツを昇格させるし、使用されます。
+オブジェクトを使用`NSUserActivity`してディープリンク url を提供し`EligibleForPublicIndexing` 、プロパティをに`true`設定しているアプリの場合、iOS 10 は、*差分プライバシーハッシュ*のサブセットを Apple のサーバーに送信します。 この情報は、検索結果で人気のあるアプリ内コンテンツを昇格させるために使用されます。
 
-Xamarin.iOS アプリでのディープ リンクの実装の詳細についてを参照してください、 [NSUserActivity 検索](~/ios/platform/search/nsuseractivity.md)ドキュメント。
+Xamarin. iOS アプリでディープリンクを実装する方法の詳細については、「 [NSUserActivity を使用した検索](~/ios/platform/search/nsuseractivity.md)」のドキュメントを参照してください。
 
-## <a name="in-app-searching"></a>アプリ内の検索
+## <a name="in-app-searching"></a>アプリ内検索
 
-新しい実装することによって[CSSearchQuery](https://developer.apple.com/reference/corespotlight/cssearchquery)クラス、アプリはスポット ライトの検索とアプリ (にどのようなメール、Messages や Notes アプリケーションのままにする必要はありません、自体の内部コンテンツを検索する照合ルール テクノロジを提供できます作業時間)。
+新しい[Cssearchquery](https://developer.apple.com/reference/corespotlight/cssearchquery)クラスを実装することで、アプリはスポットライトの検索と照合ルールテクノロジを提供して、ユーザーがアプリを離れる必要はありません (メール、メッセージ、ノートアプリの動作に似ています)。
 
-通常、アプリをサポートする`CSSearchQuery`各自で別の検索インデックスを維持する必要はありません。 
+通常、をサポート`CSSearchQuery`するアプリでは、独自の個別の検索インデックスを維持する必要はありません。 
 
-## <a name="search-continuation"></a>検索の継続
+## <a name="search-continuation"></a>継続の検索
 
-Ios 9 では、Apple は、Search Api を導入しました。 (コア スポット ライトなど`NSUserActivity`と web マークアップ) ディープ-好みのユーザーをスポット ライトと Safari の両方の検索インターフェイスを使用してそのコンテンツの検索を許可するアプリ内のコンテンツを提供します。 参照してください、[新しい Search APIs](~/ios/platform/search/index.md)詳細についてはドキュメントです。
+IOS 9 では、検索 api (コアスポットライト、 `NSUserActivity` web マークアップなど) を使用して、ユーザーがスポットライトと Safari 検索インターフェイスの両方を使用してコンテンツを検索できるようにするための、アプリ内のコンテンツの詳細を提供しています。 詳細については、[新しい Search api](~/ios/platform/search/index.md)のドキュメントを参照してください。
 
-IOS 10 Apple は、ユーザーをスポット ライトや、Safari で検索を開始し、アプリを開くと、検索を続行できるようにしてこの機能によって構築します。 
+IOS 10 Apple では、ユーザーがスポットライトまたは Safari で検索を開始できるようにすることでこの機能をビルドし、アプリを開いたときに検索を続行します。 
 
-この機能を実装するには、編集、アプリの`Info.plist`ファイルを追加、`CoreSpotlightContinuation`型のキー**ブール**に値を設定および`YES`:
+この機能を実装するには、アプリ`Info.plist`のファイルを編集`CoreSpotlightContinuation`し、**ブール**型のキーを追加し`YES`て、その値をに設定します。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-[![](app-search-enhancements-images/search01.png "CoreSpotlightContinuation Info.plist ファイルの編集")](app-search-enhancements-images/search01.png#lightbox)
+[![](app-search-enhancements-images/search01.png "CoreSpotlightContinuation ファイルの編集")](app-search-enhancements-images/search01.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![](app-search-enhancements-images/searchw01.png "CoreSpotlightContinuation Info.plist ファイルの編集")](app-search-enhancements-images/search01.png#lightbox)
+[![](app-search-enhancements-images/searchw01.png "CoreSpotlightContinuation ファイルの編集")](app-search-enhancements-images/search01.png#lightbox)
 
 -----
 
-検索結果を引き続きユーザーに応答する (`NSUserActivity`)、編集、`AppDelegate.cs`オーバーライド ファイルを開き、`ContinueUserActivity`メソッド。 例:
+ユーザーに対して検索結果 (`NSUserActivity`) を続行するには、 `AppDelegate.cs`ファイルを編集し、 `ContinueUserActivity`メソッドをオーバーライドします。 例えば:
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)
@@ -87,37 +87,37 @@ public override bool ContinueUserActivity (UIApplication application, NSUserActi
 }
 ```
 
-このコードは、クエリの継続アクションの種類 (`userActivity.ActivityType == CSSearchQuery.ContinuationActionType`)、次に、ユーザーの現在のクエリから、読み取り、`NSUserActivity`クラスのユーザー情報のディクショナリ (`userActivity.UserInfo.KeyForValue(CSSearchQuery.QueryString)`)。 ここでは、アプリは、ユーザーの検索を続行するアクションを実行する必要があります。
+このコードは、クエリ継続アクションの種類 (`userActivity.ActivityType == CSSearchQuery.ContinuationActionType`) を検索し、 `NSUserActivity`クラスのユーザー情報ディクショナリ (`userActivity.UserInfo.KeyForValue(CSSearchQuery.QueryString)`) からユーザーの現在のクエリを読み取ります。 ここから、アプリはユーザーの検索を続行するためにアクションを実行する必要があります。
 
-Xamarin.iOS アプリでの検索の操作方法の詳細についてを参照してください、[コア スポット ライト検索](~/ios/platform/search/corespotlight.md)ドキュメント。
+Xamarin iOS アプリでの検索の操作の詳細については、[コアスポットライトのドキュメントを](~/ios/platform/search/corespotlight.md)参照してください。
 
 ## <a name="visualization-of-validation-results"></a>検証結果の視覚化
 
-Apple の[アプリ検索 API 検証ツール](https://search.developer.apple.com/appsearch-validation-tool)に web サイトのマークアップとディープ リンクのビジュアル表現が表示されます (などで定義されたマークアップを含む[Schema.org](http://schema.org/)) テストの実行時にします。
+Apple の[App SEARCH API 検証ツール](https://search.developer.apple.com/appsearch-validation-tool)では、テストを事前に実行するときに、web サイトのマークアップとディープリンク ( [Schema.org](http://schema.org/)で定義されているようなマークアップを含む) が視覚的に表示されるようになりました。
 
-検証ツールを使用すると、開発者は Applebot Web クローラーがなど、タイトル、説明、URL およびその他のサイトのインデックス付けされる情報には、要素がサポートされているを確認できます。
+検証ツールを使用すると、開発者は、タイトル、説明、URL、その他のサポートされている要素など、Applebot Web クローラーによってサイトのインデックスが作成された情報を確認できます。
 
-Web マークアップの操作方法の詳細についてを参照してください、 [Web マークアップと検索](~/ios/platform/search/web-markup.md)ドキュメント。
+Web マークアップの使用方法の詳細については、 [Web マークアップ](~/ios/platform/search/web-markup.md)のドキュメントを参照してください。
 
-## <a name="message-app-image-sharing"></a>メッセージ アプリの画像の共有
+## <a name="message-app-image-sharing"></a>メッセージアプリのイメージ共有
 
-メッセージ アプリ拡張機能は、メッセージを共有するためのイメージを提供する場合は、ユーザーがアプリを終了することがなく、メッセージ内からよく使われるイメージのスポット ライト検索を実行できるようにする、拡張機能を構成できます。
+メッセージアプリ拡張機能がメッセージ内で共有するためのイメージを提供する場合、拡張機能を構成して、ユーザーがアプリを離れることなく、メッセージ内から人気のある画像を検索できるようにすることができます。
 
-この機能を有効にするには、次の操作を行います。
+この機能を有効にするには、次の手順を実行します。
 
-1. メッセージ アプリ拡張機能を作成します。
-2. 追加、`com.apple.developer.associated-domains`アプリの権利をされメッセージ アプリ拡張機能を共有するイメージをホストする web ドメインの一覧が含まれます。 ドメインごとに、指定、`spotlight-image-search`サービス。
-3. 追加、`apple-app-site-association`ファイル、イメージをホストしている web サイトにします。 このファイルにはディクショナリが含まれています、`spotlight-image-search`サービスし、アプリの ID には、チーム ID またはアプリ ID のプレフィックスの後に、バンドル ID が含まれています ファイルは、最大 500 台までのパスとがスポット ライトによってインデックスが作成され、一般的なイメージの検索に含めるパターンに含めることができます。 詳細については、Apple を参照してください[の作成と関連ファイルをアップロード](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/AppSearch/UniversalLinks.html#//apple_ref/doc/uid/TP40016308-CH12-SW4)ドキュメント。
-4. Web サイトをクロールする Applebot を許可します。 Apple を参照してください[について Applebot](https://support.apple.com/HT204683)ドキュメント。
+1. メッセージアプリ拡張機能を作成します。
+2. をアプリの権利に追加し、メッセージアプリ拡張機能が共有しているイメージをホストするwebドメインの一覧を含めます。`com.apple.developer.associated-domains` 各ドメインについて、 `spotlight-image-search`サービスを指定します。
+3. 画像を`apple-app-site-association`ホストしている web サイトにファイルを追加します。 このファイルには、 `spotlight-image-search`サービスの辞書が含まれており、アプリの id が含まれています。これは、チーム id またはアプリ id プレフィックスの後にバンドル id が続きます。 このファイルには、最大500のパスと、スポットライトによってインデックスが作成され、一般的な画像検索に含まれるパターンを含めることができます。 詳細については、「Apple による[関連付けファイルの作成とアップロード](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/AppSearch/UniversalLinks.html#//apple_ref/doc/uid/TP40016308-CH12-SW4)」を参照してください。
+4. Applebot が web サイトをクロールできるようにします。 Apple の[Applebot に関する](https://support.apple.com/HT204683)ドキュメントを参照してください。
 
-参照してください、[メッセージ アプリ統合](~/ios/platform/message-app-integration/index.md)詳細についてはドキュメントです。
+詳細については、[メッセージアプリの統合](~/ios/platform/message-app-integration/index.md)に関するドキュメントを参照してください。
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
-この記事では、拡張機能をカバーされて Apple iOS 10 と Xamarin.iOS でそれらを実装する方法にアプリを検索する行ってきました。
+この記事では、iOS 10 でアプリ検索に加えられた Apple の拡張機能と、それらを Xamarin. iOS で実装する方法について説明しました。
 
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [iOS 10 のサンプル](https://developer.xamarin.com/samples/ios/iOS10/)
+- [iOS 10 のサンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS10)

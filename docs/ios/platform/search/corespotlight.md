@@ -1,28 +1,28 @@
 ---
-title: Xamarin.iOS でコア スポット ライト検索
-description: このドキュメントでは、Xamarin.iOS アプリケーションでコア スポット ライトを使用して、アプリ内のコンテンツへのリンクを提供する方法について説明します。 これには、作成、復元、更新、および検索可能な項目を削除する方法について説明します。
+title: Xamarin のコアスポットライトで検索する
+description: このドキュメントでは、Xamarin iOS アプリケーションでコアスポットライトを使用して、アプリ内コンテンツへのリンクを提供する方法について説明します。 検索可能な項目を作成、復元、更新、削除する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 1374914C-0F63-41BF-BD97-EBCEE86E57B1
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: fb9ddcc39bd33199dc370897250cd0d74597612f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: acf065a275b28863c5133f764a7f7b1f87127887
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61248486"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68654209"
 ---
-# <a name="search-with-core-spotlight-in-xamarinios"></a>Xamarin.iOS でコア スポット ライト検索
+# <a name="search-with-core-spotlight-in-xamarinios"></a>Xamarin のコアスポットライトで検索する
 
-コア スポット ライトは、ios 9 を追加、編集、またはアプリ内のコンテンツへのリンクを削除するデータベースのような API を提供する新しいフレームワークです。 コア スポット ライトを使用して追加された項目は、iOS デバイスでの Spotlight 検索で使用できるになります。
+コアスポットライトは、アプリ内のコンテンツへのリンクを追加、編集、または削除するためのデータベースに似た API を提供する iOS 9 用の新しいフレームワークです。 コアスポットライトを使用して追加された項目は、iOS デバイスのスポットライト検索で利用できます。
 
-コンテンツの種類の例についてはインデックスを作成できるコア スポット ライトを使用して、アプリを Apple のメッセージ、メール、予定表、ノートを確認します。 現在、これらはすべては、検索結果を提供するのにコア スポット ライトを使用します。
+コアスポットライトを使用してインデックスを作成できるコンテンツの種類の例については、Apple のメッセージ、メール、予定表、メモアプリを参照してください。 現在、すべてのユーザーがコアスポットライトを使用して検索結果を提供しています。
 
-## <a name="creating-an-item"></a>項目を作成します。
+## <a name="creating-an-item"></a>項目の作成
 
-項目を作成して、コア スポット ライトを使用してインデックス作成の例を次に示します。
+次に示すのは、項目を作成し、コアスポットライトを使用してインデックスを作成する例です。
 
 ```csharp
 using CoreSpotlight;
@@ -45,13 +45,13 @@ CSSearchableIndex.DefaultSearchableIndex.Index (new CSSearchableItem[]{ item }, 
 });
 ```
 
-この情報は、検索結果では、次のように表示されます。
+検索結果には、次のような情報が表示されます。
 
-[![](corespotlight-images/corespotlight01.png "コア スポット ライト検索結果の概要")](corespotlight-images/corespotlight01.png#lightbox)
+[![](corespotlight-images/corespotlight01.png "コアスポットライト検索結果の概要")](corespotlight-images/corespotlight01.png#lightbox)
 
-## <a name="restoring-an-item"></a>アイテムを復元します。
+## <a name="restoring-an-item"></a>項目を復元する
 
-ユーザーが、アプリでは、コア スポット ライトを使用して、検索結果に追加の項目をタップしたときに、`AppDelegate`メソッド`ContinueUserActivity`が呼び出されます (このメソッドはの使用も`NSUserActivity`)。 例:
+アプリのコアスポットライトを使用して検索結果に追加された項目をユーザーが`AppDelegate`タップ`ContinueUserActivity`すると、メソッドが呼び出されます ( `NSUserActivity`このメソッドはにも使用されます)。 例えば:
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application,
@@ -74,22 +74,22 @@ public override bool ContinueUserActivity (UIApplication application,
 }
 ```
 
-この時間となっているアクティビティのチェックに注意してください、`ActivityType`の`CSSearchableItem.ActionType`します。
+今度は、アクティビティ`ActivityType` `CSSearchableItem.ActionType`のがであることを確認します。
 
-## <a name="updating-an-item"></a>アイテムの更新
+## <a name="updating-an-item"></a>項目を更新する
 
-タイトルまたはサムネイル画像の変更が必要ななどとコア スポット ライトで作成したインデックス項目が変更する必要がある可能性があります。 この変更を行うには、最初に、インデックスの作成に使用されたに同じメソッドを使用します。
-作成、新しい`CSSearchableItem`項目を作成して、新しい接続に使用されたのと同じ ID を使用して`CSSearchableItemAttributeSet`変更された属性を含みます。
+重要なスポットライトで作成したインデックス項目を変更する必要がある場合があります。たとえば、タイトルやサムネイル画像の変更が必要になる場合があります。 この変更を行うには、最初にインデックスを作成するときと同じ方法を使用します。
+項目の作成に`CSSearchableItem`使用したものと同じ ID を使用して新しいを作成し`CSSearchableItemAttributeSet` 、変更された属性を含む新しいをアタッチします。
 
-[![](corespotlight-images/corespotlight02.png "項目の概要の更新")](corespotlight-images/corespotlight02.png#lightbox)
+[![](corespotlight-images/corespotlight02.png "項目の更新の概要")](corespotlight-images/corespotlight02.png#lightbox)
 
-この項目が検索可能なインデックスに書き込まれると、既存の項目は、新しい情報で更新されます。
+この項目が検索可能なインデックスに書き込まれると、既存の項目が新しい情報で更新されます。
 
-## <a name="deleting-an-item"></a>アイテムの削除
+## <a name="deleting-an-item"></a>項目の削除
 
-コア スポット ライトには、必要でなくなったときに、インデックス アイテムを削除する複数の方法が用意されています。
+コアスポットライトは、不要になったインデックス項目を削除する複数の方法を提供します。
 
-最初に、その識別子によって項目をたとえば削除できます。
+まず、識別子を使用して項目を削除できます。次に例を示します。
 
 ```csharp
 // Delete Items by ID
@@ -101,7 +101,7 @@ CSSearchableIndex.DefaultSearchableIndex.Delete(new string[]{"1","16"},(error) =
 });
 ```
 
-次に、ドメイン名でインデックス項目のグループを削除することができます。 例:
+次に、ドメイン名を指定して、インデックス項目のグループを削除できます。 例えば:
 
 ```csharp
 // Delete by Domain Name
@@ -113,7 +113,7 @@ CSSearchableIndex.DefaultSearchableIndex.DeleteWithDomain(new string[]{"domain-n
 });
 ```
 
-最後に、次のコードを含むすべてのインデックス項目を削除することができます。
+最後に、次のコードを使用して、すべてのインデックス項目を削除できます。
 
 ```csharp
 // Delete all index items
@@ -124,19 +124,19 @@ CSSearchableIndex.DefaultSearchableIndex.DeleteAll((error) => {
     }
 });
 ```
-## <a name="additional-core-spotlight-features"></a>スポット ライトの追加のコア機能
+## <a name="additional-core-spotlight-features"></a>その他の主要なスポットライト機能
 
-コア スポット ライトでは、正確で最新の状態は、インデックスを維持するため、次の機能があります。
+コアスポットライトには、インデックスを正確かつ最新の状態に保つために役立つ次の機能があります。
 
-- **更新プログラムのサポートをバッチ**– にバッチ全体を送信できる場合は、アプリを作成または同時に多数のインデックスのグループを変更する必要があります、`Index`のメソッド、 `CSSearchableIndex` 1 回の呼び出し内のクラス。
-- **インデックスの変更に応答する**– を使用して、`CSSearchableIndexDelegate`検索可能なインデックスからアプリの変更と通知に応答できます。
-- **データ保護を適用**– データ保護のクラスを使用して、セキュリティを実装できるコア スポット ライトを使用して、検索可能なインデックスに追加する項目。
+- **バッチ更新のサポート**–アプリで大規模なインデックスのグループを同時に作成または変更する必要がある場合は、バッチ全体を`Index` 1 回の`CSSearchableIndex`呼び出しでクラスのメソッドに送信できます。
+- **インデックスの変更に応答する**– `CSSearchableIndexDelegate`アプリを使用して、検索可能なインデックスからの変更と通知に応答できます。
+- **データ保護の適用**–データ保護クラスを使用して、コアスポットライトを使用して検索可能なインデックスに追加するアイテムにセキュリティを実装できます。
 
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [iOS 9 のサンプル](https://developer.xamarin.com/samples/ios/iOS9/)
-- [iOS 9 開発者向け](https://developer.apple.com/ios/pre-release/)
+- [iOS 9 のサンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9)
+- [iOS 9 (開発者向け)](https://developer.apple.com/ios/pre-release/)
 - [iOS 9.0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
-- [アプリの検索のプログラミング ガイド](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/AppSearch/index.html#//apple_ref/doc/uid/TP40016308)
+- [アプリ検索のプログラミングガイド](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/AppSearch/index.html#//apple_ref/doc/uid/TP40016308)

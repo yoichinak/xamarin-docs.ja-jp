@@ -1,46 +1,46 @@
 ---
-title: JSON を使用して Xamarin.iOS でのユーザー インターフェイスを作成するには
-description: MonoTouch.Dialog (mt.D) JSON データを使用して、UI の動的生成をサポートしています。 このチュートリアルで、JSONElement を使用して、アプリケーションでは、含まれている、またはリモートの Url から読み込まれた JSON からユーザー インターフェイスを作成する方法について説明します。
+title: JSON を使用した Xamarin でのユーザーインターフェイスの作成
+description: Monotouch.dialog (MT.D) では、JSON データを使用した動的な UI 生成がサポートされています。 このチュートリアルでは、JSONElement を使用して、アプリケーションに含まれているか、リモート Url から読み込まれた JSON からユーザーインターフェイスを作成する方法について説明します。
 ms.prod: xamarin
 ms.assetid: E353DF14-51D7-98E3-59EA-16683C770C23
 ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: e1eae07fab4a74a4f47f565d4c4ca0b7f6bc1aa9
-ms.sourcegitcommit: 85c45dc28ab3625321c271804768d8e4fce62faf
+ms.openlocfilehash: 64b35588afa06a6a8f4a206f10827409f9de316f
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67039662"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68645232"
 ---
-# <a name="using-json-to-create-a-user-interface-in-xamarinios"></a>JSON を使用して Xamarin.iOS でのユーザー インターフェイスを作成するには
+# <a name="using-json-to-create-a-user-interface-in-xamarinios"></a>JSON を使用した Xamarin でのユーザーインターフェイスの作成
 
-_MonoTouch.Dialog (mt.D) JSON データを使用して、UI の動的生成をサポートしています。このチュートリアルで、JSONElement を使用して、アプリケーションでは、含まれている、またはリモートの Url から読み込まれた JSON からユーザー インターフェイスを作成する方法について説明します。_
+_Monotouch.dialog (MT.D) では、JSON データを使用した動的な UI 生成がサポートされています。このチュートリアルでは、JSONElement を使用して、アプリケーションに含まれているか、リモート Url から読み込まれた JSON からユーザーインターフェイスを作成する方法について説明します。_
 
-MT.D には、JSON で宣言されているユーザー インターフェイスの作成がサポートされています。 要素は、山の JSON を使用して宣言された場合D するは、関連付けられている要素を自動的に作成されます。 ローカル ファイルで、解析されたか、JSON を読み込むことが`JsonObject`インスタンス、またはリモートの Url も使用できます。
+MT.D では、JSON で宣言されたユーザーインターフェイスの作成をサポートしています。 要素が JSON (MT) を使用して宣言されている場合。関連する要素が自動的に作成されます。 JSON は、ローカルファイル、解析`JsonObject`されたインスタンス、またはリモート Url から読み込むことができます。
 
-MT.D には、さまざまな JSON を使用する場合は、要素 API で使用できる機能がサポートされています。 たとえば、次のスクリーン ショットで、アプリケーションが完全を使用して宣言 JSON:
+MT.D は、JSON を使用するときに Elements API で使用できるすべての機能をサポートしています。 たとえば、次のスクリーンショットのアプリケーションは、JSON を使用して完全に宣言されています。
 
 [![](json-element-walkthrough-images/01-load-from-file.png "たとえば、このスクリーン ショットでは、アプリケーションが完全に宣言されている JSON を使用して")](json-element-walkthrough-images/01-load-from-file.png#lightbox) [![](json-element-walkthrough-images/01-load-from-file.png "など、このスクリーン ショットでは、アプリケーションが完全を使用して宣言JSON")](json-element-walkthrough-images/01-load-from-file.png#lightbox)
 
-例では、ここでも、[要素 API チュートリアル](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md)JSON を使用してタスクの詳細画面を追加する方法を示すチュートリアル。
+ここでは、JSON を使用してタスクの詳細画面を追加する方法を示す[ELEMENTS API チュートリアル](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md)のチュートリアルの例について説明します。
 
-## <a name="setting-up-mtd"></a>山の設定D
+## <a name="setting-up-mtd"></a>MT を設定しています。A
 
-MT.D は、Xamarin.iOS で分散されます。 これを使用するを右クリックし、**参照**、Xamarin.iOS のノードは、Visual Studio 2017 または Visual Studio for Mac プロジェクトし、への参照を追加、 **MonoTouch.Dialog 1**アセンブリ。 次に、追加`using MonoTouch.Dialog`ソース内のステートメントは、必要に応じてコードします。
+MT.D は、Xamarin. iOS と共に配布されます。 これを使用するには、Visual Studio 2017 または Visual Studio for Mac で Xamarin. iOS プロジェクトの **[参照]** ノードを右クリックし、 **monotouch.dialog**アセンブリへの参照を追加します。 次に、 `using MonoTouch.Dialog`必要に応じて、ソースコードにステートメントを追加します。
 
-## <a name="json-walkthrough"></a>JSON のチュートリアル
+## <a name="json-walkthrough"></a>JSON チュートリアル
 
-このチュートリアルの例は、タスクを作成できます。 最初の画面でタスクを選択すると、詳細画面が示すように表示されます。
+このチュートリアルの例では、タスクを作成できます。 最初の画面でタスクを選択すると、次のような詳細画面が表示されます。
 
- [![](json-element-walkthrough-images/03-task-list.png "示すように、詳細画面が表示される最初の画面でタスクを選択すると、")](json-element-walkthrough-images/03-task-list.png#lightbox)
+ [![](json-element-walkthrough-images/03-task-list.png "最初の画面でタスクを選択すると、詳細画面が表示されます。")](json-element-walkthrough-images/03-task-list.png#lightbox)
 
 ## <a name="creating-the-json"></a>JSON の作成
 
-この例では、という名前のプロジェクト内のファイルから、JSON をロードしましょう`task.json`します。 MT.D は、要素の API を反映した構文に準拠するように JSON を想定しています。 コードから要素 API を使用して、同様のセクションでは宣言 JSON を使用する場合とセクション内で要素を追加します。 セクションでは、JSON 内の要素を宣言するには文字列「セクション」と「要素」それぞれキーとして使用します。 使用して、関連付けられている要素の型を設定の各要素に対して、`type`キー。 その他のすべての要素のプロパティは、プロパティ名をキーとして設定されます。
+この例では、という名前`task.json`のプロジェクトのファイルから JSON を読み込みます。 MT.D は、JSON が Elements API を反映する構文に準拠していることを想定しています。 コードから Elements API を使用する場合と同様に、JSON を使用する場合は、セクションを宣言し、これらのセクション内で要素を追加します。 JSON でセクションと要素を宣言するには、文字列 "sections" と "elements" をそれぞれキーとして使用します。 要素ごとに、 `type`キーを使用して、関連付けられている要素の型が設定されます。 その他のすべての elements プロパティは、キーとしてプロパティ名を使用して設定されます。
 
-たとえば、次の JSON は、セクションとタスクの詳細の要素について説明します。
+たとえば、次の JSON では、タスクの詳細のセクションと要素について説明しています。
 
 ```json
 {
@@ -65,17 +65,17 @@ MT.D は、Xamarin.iOS で分散されます。 これを使用するを右ク�
 }
 ```
 
-上記の JSON に注意してくださいには、各要素の id が含まれています。 任意の要素には、実行時に参照する、id を含めることができます。 これをコードで JSON を読み込む方法を表示するとすぐには、使用する方法が表示されます。
+上記の JSON には、各要素の id が含まれています。 要素には、実行時に参照するための id を含めることができます。 コードで JSON を読み込む方法を説明するときに、この方法がどのように使用されるかをご紹介します。
 
-## <a name="loading-the-json-in-code"></a>コードで JSON の読み込み
+## <a name="loading-the-json-in-code"></a>コードでの JSON の読み込み
 
-JSON を定義した後に山に読み込む必要があります。D を使用して、`JsonElement`クラス。 上記で作成した JSON ファイルと仮定すると名前 sample.json をプロジェクトに追加して読み込み、コンテンツのビルド アクションを指定、`JsonElement`は次のコード行を呼び出すことだけです。
+JSON を定義したら、それを MT に読み込む必要があります。D `JsonElement`クラスを使用する。 上記で作成した json のファイルが、sample. json という名前のプロジェクトに追加されており、コンテンツのビルドアクションが指定`JsonElement`されている場合、を読み込むことは、次のコード行を呼び出すのと同じです。
 
 ```csharp
 var taskElement = JsonElement.FromFile ("task.json");
 ```
 
-これを追加する、必要に応じて毎回タスクを作成したことはので、次のように、以前の要素の API の例からクリックされたボタンを変更できます。
+ここでは、タスクが作成されるたびにこの要求を追加するため、次のように、前の Elements API の例でクリックしたボタンを変更できます。
 
 ```csharp
 _addButton.Clicked += (sender, e) => {
@@ -89,9 +89,9 @@ _addButton.Clicked += (sender, e) => {
 };
 ```
 
-## <a name="accessing-elements-at-runtime"></a>実行時に要素にアクセスします。
+## <a name="accessing-elements-at-runtime"></a>実行時の要素へのアクセス
 
-JSON ファイルで宣言するときに、両方の要素に id を追加しましたを思い出してください。 実行時のコードでは、そのプロパティを変更するのには、各要素にアクセスするのに id プロパティを使用できます。 たとえば、次のコードは、タスク オブジェクトから値を設定するエントリと日付の要素を参照します。
+ここでは、JSON ファイルで宣言したときに、両方の要素に id を追加しました。 Id プロパティを使用して、実行時に各要素にアクセスし、コードでプロパティを変更できます。 たとえば、次のコードでは、task オブジェクトの値を設定するために、entry 要素と date 要素を参照しています。
 
 ```csharp
 _addButton.Clicked += (sender, e) => {
@@ -119,9 +119,9 @@ _addButton.Clicked += (sender, e) => {
 };
 ```
 
-## <a name="loading-json-from-a-url"></a>Url からの JSON の読み込み
+## <a name="loading-json-from-a-url"></a>Url から JSON を読み込んでいます
 
-MT.コンス トラクターに、Url を渡すだけで、外部の Url からの JSON を動的な読み込みにもサポート D、`JsonElement`します。 MT.D は画面間を移動すると、必要に応じて、JSON で宣言された階層を展開します。 たとえば、ローカル web サーバーのルートにある次などの JSON ファイルを検討します。
+MT.また、のコンストラクターに Url を渡すだけで、 `JsonElement`外部 URL からの JSON の動的な読み込みもサポートされます。 MT.D は、画面間を移動するときに、オンデマンドで JSON で宣言された階層を拡張します。 たとえば、次のような JSON ファイルをローカル web サーバーのルートに配置するとします。
 
 ```json
 {
@@ -147,7 +147,7 @@ MT.コンス トラクターに、Url を渡すだけで、外部の Url から�
 }
 ```
 
-私たちはこれを使用して読み込む、`JsonElement`次のコードのようにします。
+これは、 `JsonElement`次のコードのようにを使用して読み込むことができます。
 
 ```csharp
 _rootElement = new RootElement ("Json Example") {
@@ -157,21 +157,21 @@ _rootElement = new RootElement ("Json Example") {
 };
 ```
 
-ファイルの取得し、山によって解析の実行時に次のスクリーン ショットに示すように、ユーザーが 2 つ目のビューに移動したときに D:
+実行時には、ファイルが MT によって取得および解析されます。次のスクリーンショットに示すように、ユーザーが2番目のビューに移動したとき。
 
- [![](json-element-walkthrough-images/04-json-web-example.png "ファイルが取得され、山によって解析ユーザーが 2 つ目のビューに移動すると、D")](json-element-walkthrough-images/04-json-web-example.png#lightbox)
+ [![](json-element-walkthrough-images/04-json-web-example.png "ファイルは MT によって取得および解析されます。ユーザーが2番目のビューに移動したとき")](json-element-walkthrough-images/04-json-web-example.png#lightbox)
 
 ## <a name="summary"></a>まとめ
 
-この記事を使用して作成する方法を示しました山とのインターフェイスJSON から D. アプリケーションと共に、リモート Url からのファイルに含まれる JSON を読み込む方法を示しました。 実行時に JSON で説明する要素にアクセスする方法も示しました。
+この記事では、MT で using インターフェイスを作成する方法について説明しました。JSON からの D。 このチュートリアルでは、ファイルに含まれる JSON をアプリケーションとリモート Url から読み込む方法を説明しました。 また、実行時に JSON で記述された要素にアクセスする方法も示しました。
 
 ## <a name="related-links"></a>関連リンク
 
-- [MTDJsonDemo (sample)](https://developer.xamarin.com/samples/monotouch/MTDJsonDemo/)
-- [MonoTouch.Dialog の概要](~/ios/user-interface/monotouch.dialog/index.md)
-- [要素の API のチュートリアル](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md)
+- [MTDJsonDemo (sample)](https://docs.microsoft.com/samples/xamarin/ios-samples/mtdjsondemo)
+- [Monotouch.dialog の概要](~/ios/user-interface/monotouch.dialog/index.md)
+- [Elements API のチュートリアル](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md)
 - [リフレクション API のチュートリアル](~/ios/user-interface/monotouch.dialog/reflection-api-walkthrough.md)
-- [Github の MonoTouch ダイアログ](https://github.com/migueldeicaza/MonoTouch.Dialog)
+- [Github の Monotouch.dialog ダイアログ](https://github.com/migueldeicaza/MonoTouch.Dialog)
 - [TweetStation アプリケーション](https://github.com/migueldeicaza/TweetStation)
 - [UITableViewController クラスのリファレンス](https://developer.apple.com/library/ios/#DOCUMENTATION/UIKit/Reference/UITableViewController_Class/Reference/Reference.html)
-- [UINavigationController クラスのリファレンス](https://developer.apple.com/library/ios/#documentation/UIKit/Reference/UINavigationController_Class/Reference/Reference.html)
+- [UINavigationController クラスの参照](https://developer.apple.com/library/ios/#documentation/UIKit/Reference/UINavigationController_Class/Reference/Reference.html)

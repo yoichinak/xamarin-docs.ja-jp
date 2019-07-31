@@ -1,22 +1,22 @@
 ---
 title: Xamarin.Forms TimePicker
-description: TimePicker は、ユーザーは、時間を選択できるようにする Xamarin.Forms のビューです。 この記事では、Xamarin.Forms アプリケーションでの TimePicker を使用する方法について説明します。
+description: TimePicker は、ユーザーが時刻を選択できるようにする Xamarin 形式のビューです。 この記事では、Xamarin.Forms アプリケーションでの TimePicker を使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 2E99FB23-B82D-4EB4-AFB3-5002E736E7B2
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/16/2018
-ms.openlocfilehash: 1b929b507d738cb4000bab20cfab5480b2222ed2
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: d5c4cc6600c8192718257abf4ef1cbec49c12eee
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61024135"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656485"
 ---
 # <a name="xamarinforms-timepicker"></a>Xamarin.Forms TimePicker
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/TimePicker/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-timepicker)
 
 _時刻を選択するユーザーを許可する Xamarin.Forms のビュー。_
 
@@ -79,7 +79,7 @@ TimePicker timePicker = new TimePicker
 
 ## <a name="timepicker-in-an-application"></a>アプリケーションで TimePicker
 
-[ **SetTimer** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/TimePicker/)サンプルが含まれます[ `TimePicker` ](xref:Xamarin.Forms.TimePicker)、 [ `Entry` ](xref:Xamarin.Forms.Entry)、および[ `Switch` ](xref:Xamarin.Forms.Switch)そのページのビュー。 `TimePicker` 、時刻を選択するために使用して、内のテキストのユーザーに通知する警告ダイアログが表示されますが発生した時刻を時、`Entry`に用意されている、`Switch`がオンにします。 XAML ファイルを次に示します。
+[ **SetTimer** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-timepicker)サンプルが含まれます[ `TimePicker` ](xref:Xamarin.Forms.TimePicker)、 [ `Entry` ](xref:Xamarin.Forms.Entry)、および[ `Switch` ](xref:Xamarin.Forms.Switch)そのページのビュー。 `TimePicker` 、時刻を選択するために使用して、内のテキストのユーザーに通知する警告ダイアログが表示されますが発生した時刻を時、`Entry`に用意されている、`Switch`がオンにします。 XAML ファイルを次に示します。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -179,5 +179,5 @@ public partial class MainPage : ContentPage
 
 ## <a name="related-links"></a>関連リンク
 
-- [SetTimer サンプル](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/TimePicker/)
+- [SetTimer サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-timepicker)
 - [TimePicker API](xref:Xamarin.Forms.TimePicker)

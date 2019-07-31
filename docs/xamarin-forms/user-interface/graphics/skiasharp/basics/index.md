@@ -7,22 +7,22 @@ ms.assetid: 25141E3E-D22E-44B1-A647-7E6FA0C9737B
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 15bdfe43a84927f60300539bce9c27d12b87d19e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 7f4f02c62da1807438cc3f9e81a89b62684a91a2
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61019787"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657090"
 ---
 # <a name="skiasharp-drawing-basics"></a>SkiaSharp 描画の基礎
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _SkiaSharp のグラフィックの概念と座標の基礎を学習します_
 
-SkiaSharp の NuGet パッケージを Xamarin.Forms アプリケーションに追加した後、SkiaSharp グラフィックスを使用を開始できます。 [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)ソリューションにはプログラミング手法を徐々 により高度なレッスンで SkiaSharp を説明するさまざまなページが含まれています。
+SkiaSharp の NuGet パッケージを Xamarin.Forms アプリケーションに追加した後、SkiaSharp グラフィックスを使用を開始できます。 [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)ソリューションにはプログラミング手法を徐々 により高度なレッスンで SkiaSharp を説明するさまざまなページが含まれています。
 
-このセクションでは、すべてのサンプル プログラムが、見出しの下に表示**SkiaSharp 描画の基礎**のホーム ページで、 [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)プログラム、および、 [**基本**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics)ソリューションのフォルダー。
+このセクションでは、すべてのサンプル プログラムが、見出しの下に表示**SkiaSharp 描画の基礎**のホーム ページで、 [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)プログラム、および、 [**基本**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics)ソリューションのフォルダー。
 
 ## <a name="drawing-a-simple-circlecirclemd"></a>[単純な円を描画](circle.md)
 
@@ -55,4 +55,4 @@ SkiaSharp のグラフィックスとテキストを統合するレンダリン�
 ## <a name="related-links"></a>関連リンク
 
 - [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

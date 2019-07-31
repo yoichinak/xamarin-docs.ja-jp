@@ -1,51 +1,51 @@
 ---
-title: Xamarin.iOS でソーシャル フレームワーク
-description: ソーシャル フレームワークは、中国でのユーザーの Twitter および Facebook、ほか SinaWeibo をなどのソーシャル ネットワークと対話するための統一された API を提供します。
+title: Xamarin のソーシャルフレームワーク
+description: ソーシャルフレームワークは、Twitter や Facebook などのソーシャルネットワークや中国のユーザー向けの SinaWeibo と対話するための統一された API を提供します。
 ms.prod: xamarin
 ms.assetid: A1C28E66-AA20-1C13-23AF-5A8712E6C752
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 4548f74495ff7ed8ef07d31cdb3f1370c5275dd4
-ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
+ms.openlocfilehash: 715fd408cc05671beba0277a690585fdbb558c7e
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66827888"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68654025"
 ---
-# <a name="social-framework-in-xamarinios"></a>Xamarin.iOS でソーシャル フレームワーク
+# <a name="social-framework-in-xamarinios"></a>Xamarin のソーシャルフレームワーク
 
-_ソーシャル フレームワークは、中国でのユーザーの Twitter および Facebook、ほか SinaWeibo をなどのソーシャル ネットワークと対話するための統一された API を提供します。_
+_ソーシャルフレームワークは、Twitter や Facebook などのソーシャルネットワークや中国のユーザー向けの SinaWeibo と対話するための統一された API を提供します。_
 
-ソーシャル フレームワークを使用すると、アプリケーションが認証を管理することがなく、単一の API からのソーシャル ネットワークと対話します。 これには、HTTP 経由で各ソーシャル ネットワークの API を使用できるようにする抽象化と同様に投稿を作成するためのビュー コント ローラーが提供されているシステムが含まれます。
+ソーシャルフレームワークを使用すると、アプリケーションは認証を管理しなくても、1つの API からソーシャルネットワークと対話できます。 これには、投稿を作成するためのシステム提供のビューコントローラーと、HTTP で各ソーシャルネットワークの API を使用できる抽象化が含まれています。
 
 > [!IMPORTANT]
-> さまざまなソーシャル ネットワークに接続するためのクロス プラットフォーム API を参照してください、 [Xamarin.Social](http://components.xamarin.com/view/xamarin.social/) Xamarin コンポーネント ストア コンポーネント。
+> クロスプラットフォーム API を使用してさまざまなソーシャルネットワークに接続する方法については、Xamarin コンポーネントストアの「 [xamarin. ソーシャル](http://components.xamarin.com/view/xamarin.social/)コンポーネント」を参照してください。
 
-## <a name="connecting-to-twitter"></a>Twitter に接続します。
+## <a name="connecting-to-twitter"></a>Twitter への接続
 
 ### <a name="twitter-account-settings"></a>Twitter アカウントの設定
 
-ソーシャル フレームワークを使用して Twitter に接続するには、アカウントを次に示すように、デバイス設定で構成する必要があります。
+ソーシャルフレームワークを使用して Twitter に接続するには、次に示すように、デバイスの設定でアカウントを構成する必要があります。
 
  [![](social-framework-images/twitter01.png "Twitter アカウントの設定")](social-framework-images/twitter01.png#lightbox)
 
-アカウントを入力して、Twitter で検証されると、ソーシャル フレームワーク クラスを使用して、Twitter にアクセスするデバイス上の任意のアプリケーションはこのアカウントを使用します。
+アカウントが Twitter によって入力され、確認されると、ソーシャルフレームワーククラスを使用して Twitter にアクセスするデバイス上のアプリケーションは、このアカウントを使用します。
 
-### <a name="sending-tweets"></a>ツイートを送信します。
+### <a name="sending-tweets"></a>ツイートの送信
 
-ソーシャル フレームワークにはと呼ばれるコント ローラーが含まれています`SLComposeViewController`を編集し、ツイートの送信に提供されるシステム ビューを表示します。 次のスクリーン ショットでは、このビューの例を示します。
+ソーシャルフレームワークには、ツイートを`SLComposeViewController`編集および送信するためのシステム指定のビューを提供する、というコントローラーが含まれています。 次のスクリーンショットは、このビューの例を示しています。
 
- [![](social-framework-images/twitter02.png "このスクリーン ショットは、SLComposeViewController の例を示しています。")](social-framework-images/twitter02.png#lightbox)
+ [![](social-framework-images/twitter02.png "このスクリーンショットは、Slている例を示しています。")](social-framework-images/twitter02.png#lightbox)
 
-使用する、 `SLComposeViewController` twitter で呼び出すことによって、コント ローラーのインスタンスを作成する必要があります、`FromService`メソッド`SLServiceType.Twitter`次に示すよう。
+Twitter `SLComposeViewController`でを使用するには、次に示すように、で`FromService` `SLServiceType.Twitter`メソッドを呼び出すことによって、コントローラーのインスタンスを作成する必要があります。
 
 ```csharp
 var slComposer = SLComposeViewController.FromService (SLServiceType.Twitter);
 ```
 
-後に、`SLComposeViewController`インスタンスが返されます、Twitter に投稿するための UI を提示するために使用できます。 ただし、最初には、呼び出すことで、この場合は、Twitter、ソーシャル ネットワークの可用性を確認する`IsAvailable`:
+`SLComposeViewController`インスタンスが返された後、そのインスタンスを使用して、Twitter にポストするための UI を表示できます。 ただし、最初に、次のようにを呼び出し`IsAvailable`て、ソーシャルネットワーク (この場合は Twitter) の可用性を確認します。
 
 ```csharp
 if (SLComposeViewController.IsAvailable (SLServiceKind.Twitter)) {
@@ -53,14 +53,14 @@ if (SLComposeViewController.IsAvailable (SLServiceKind.Twitter)) {
 }
 ```
 
- `SLComposeViewController` ユーザーの介入なしで直接、ツイートを送信しません。 ただし、次のメソッドで初期化できます。
+ `SLComposeViewController`は、ユーザーの介入なしに直接ツイートを送信しません。 ただし、次のメソッドを使用して初期化することができます。
 
--   `SetInitialText` – ツイートに表示するのには、最初のテキストを追加します。 
--  `AddUrl` – ツイートに Url を追加します。
--  `AddImage` – ツイートにイメージを追加します。
+-   `SetInitialText`–ツイートに表示する最初のテキストを追加します。 
+-  `AddUrl`–ツイートに Url を追加します。
+-  `AddImage`–イメージをツイートに追加します。
 
 
-初期化されると、呼び出す`PresentVIewController`によって作成されたビューが表示されます、`SLComposeViewController`します。 ユーザーし、必要に応じて編集し、ツイートを送信したり送信をキャンセルできます。 どちらの場合に、コント ローラーを破棄する必要があります、 `CompletionHandler`、場所、結果チェックすることもに、次に示すように、ツイートの送信または取り消された場合を参照してください。
+初期化される`PresentVIewController`と、を呼び出すと`SLComposeViewController`、によって作成されたビューが表示されます。 ユーザーは必要に応じて、ツイートを編集して送信することも、送信をキャンセルすることもできます。 どちらの場合も、コントローラーはで`CompletionHandler`破棄される必要があります。この場合、次に示すように、ツイートが送信またはキャンセルされたかどうかを確認するために結果を確認することもできます。
 
 ```csharp
 slComposer.CompletionHandler += (result) => {
@@ -73,7 +73,7 @@ slComposer.CompletionHandler += (result) => {
 
 #### <a name="tweet-example"></a>ツイートの例
 
-次のコード例を使用して、`SLComposeViewController`ツイートの送信に使用されるビューに表示します。
+次のコードは、 `SLComposeViewController`を使用して、ツイートの送信に使用されるビューを表示する方法を示しています。
 
 ```csharp
 using System;
@@ -136,11 +136,11 @@ namespace SocialFrameworkDemo
 }
 ```
 
-### <a name="calling-twitter-api"></a>Twitter API を呼び出す
+### <a name="calling-twitter-api"></a>Twitter API の呼び出し
 
-ソーシャル フレームワークには、ソーシャル ネットワークに HTTP 要求を行うためのサポートも含まれています。 要求をカプセル化、`SLRequest`ソーシャル ネットワークの特定の API をターゲットに使用されるクラスです。
+ソーシャルフレームワークには、ソーシャルネットワークに対する HTTP 要求の作成もサポートされています。 このメソッドは、特定の`SLRequest`ソーシャルネットワークの API を対象とするために使用されるクラスに要求をカプセル化します。
 
-たとえば、次のコードは、(上記のコードを拡張する) をパブリックのタイムラインを取得するのには Twitter への要求に。
+たとえば、次のコードでは、(上記のコードを展開して) パブリックタイムラインを取得するように Twitter に要求しています。
 
 ```csharp
 using Accounts;
@@ -220,14 +220,14 @@ partial void RequestTwitterTimeline_TouchUpInside (UIButton sender)
 #endregion
 ```
 
-このコードの詳細を見てみましょう。 最初に、アカウント ストアにアクセスし、Twitter アカウントの種類を取得します。
+このコードを詳しく見てみましょう。 まず、アカウントストアへのアクセス権を取得し、Twitter アカウントの種類を取得します。
 
 ```csharp
 var accountStore = new ACAccountStore ();
 var accountType = accountStore.FindAccountType (ACAccountType.Twitter);
 ```
 
-次に、自分の Twitter アカウントに、アプリにアクセスできるし、メモリと、UI の更新にアカウントが読み込まれる場合は、アクセスが許可かどうか、ユーザーが求められます。
+次に、アプリが Twitter アカウントにアクセスできるかどうかをユーザーにたずね、アクセス権が付与されると、アカウントがメモリに読み込まれ、UI が更新されます。
 
 ```csharp
 // Request access to Twitter account
@@ -244,7 +244,7 @@ accountStore.RequestAccess (accountType, (granted, error) => {
 });
 ```
 
-(UI のボタンをタップして) をユーザーがタイムラインのデータを要求すると、アプリは、Twitter からデータにアクセスする要求を最初にフォームします。
+ユーザーが (UI のボタンをタップして) タイムラインデータを要求すると、アプリはまず Twitter からデータにアクセスするための要求を行います。
 
 ```csharp
 // Initialize request
@@ -252,7 +252,7 @@ var parameters = new NSDictionary ();
 var url = new NSUrl("https://api.twitter.com/1.1/statuses/user_timeline.json?count=10");
 var request = SLRequest.Create (SLServiceKind.Twitter, SLRequestMethod.Get, url, parameters);
 ```
-この例を含めることで、最後の 10 個のエントリに返される結果を制限する`?count=10`URL にします。 最後に、(上記読み込まれた)、Twitter アカウントに、要求をアタッチし、データをフェッチする Twitter への呼び出しを実行します。
+この例では、URL にを含める`?count=10`ことで、返される結果を最後の10個のエントリに限定しています。 最後に、要求を (上記で読み込まれた) Twitter アカウントにアタッチし、Twitter への呼び出しを実行してデータをフェッチします。
 
 ```csharp
 // Request data
@@ -281,27 +281,27 @@ request.PerformRequest ((data, response, error) => {
 });
 ```
 
-データの読み込みが成功した場合は (次の例の出力) のように、未加工の JSON データが表示されます。
+データが正常に読み込まれた場合は、次の出力例のように生の JSON データが表示されます。
 
-[![](social-framework-images/twitter03.png "未加工の JSON データの表示の例")](social-framework-images/twitter03.png#lightbox)
+[![](social-framework-images/twitter03.png "生の JSON データ表示の例")](social-framework-images/twitter03.png#lightbox)
 
-実際のアプリで JSON の結果を標準と、ユーザーに表示される結果として解析し、でした。 参照してください[Web サービスの概要](~/cross-platform/data-cloud/web-services/index.md)JSON を解析する方法についてはします。
+実際のアプリでは、JSON の結果が通常どおりに解析され、結果がユーザーに表示されます。 JSON を解析する方法の詳細については、「 [Web サービスの概要](~/cross-platform/data-cloud/web-services/index.md)」を参照してください。
 
-## <a name="connecting-to-facebook"></a>Facebook への接続
+## <a name="connecting-to-facebook"></a>Facebook に接続しています
 
 ### <a name="facebook-account-settings"></a>Facebook アカウントの設定
 
-ソーシャル フレームワークを使用して Facebook への接続は、前に示した Twitter を使用するプロセスとほぼ同じです。 Facebook ユーザー アカウントは、次に示すよう、デバイスの設定で構成する必要があります。
+ソーシャルフレームワークを使用した Facebook への接続は、上に示した Twitter で使用されるプロセスとほぼ同じです。 Facebook ユーザーアカウントは、次に示すように、デバイスの設定で構成する必要があります。
 
 [![](social-framework-images/facebook01.png "Facebook アカウントの設定")](social-framework-images/facebook01.png#lightbox)
 
-構成されると、ソーシャル フレームワークを使用するデバイス上の任意のアプリケーションは Facebook に接続するこのアカウントを使用します。
+構成が完了すると、ソーシャルフレームワークを使用するデバイス上のアプリケーションは、このアカウントを使用して Facebook に接続します。
 
-### <a name="posting-to-facebook"></a>Facebook に投稿します。
+### <a name="posting-to-facebook"></a>Facebook への投稿
 
-ソーシャル フレームワークは、複数のソーシャル ネットワークにアクセスするように設計 unified API は、コードは、ソーシャル ネットワークが使用されているに関係なくほぼ同じです。
+ソーシャルフレームワークは、複数のソーシャルネットワークにアクセスするように設計された統合 API であるため、使用されているソーシャルネットワークに関係なく、コードはほぼ同じままです。
 
-たとえば、`SLComposeViewController`点だけが異なりますが、Facebook に固有の設定とオプションに切り替える前に示した例では、Twitter のように正確に使用することができます。 例:
+たとえば、前に`SLComposeViewController`示した Twitter の例とまったく同じようにを使用できますが、唯一の違いは Facebook 固有の設定およびオプションへの切り替えです。 例えば:
 
 ```csharp
 using System;
@@ -365,13 +365,13 @@ namespace SocialFrameworkDemo
 }
 ```
 
-Facebook では、使用すると、`SLComposeViewController`次を示す、Twitter の例とほぼ同じなビューが表示されます**Facebook**ここでは、タイトルとして。
+Facebook `SLComposeViewController`と共に使用すると、Twitter の例とほぼ同じ外観のビューが表示されます。この場合のタイトルとして**Facebook**が示されます。
 
-[![](social-framework-images/facebook02.png "SLComposeViewController 表示")](social-framework-images/facebook02.png#lightbox)
+[![](social-framework-images/facebook02.png "Slて Seviewcontroller ディスプレイ")](social-framework-images/facebook02.png#lightbox)
 
-### <a name="calling-facebook-graph-api"></a>Facebook Graph API の呼び出し
+### <a name="calling-facebook-graph-api"></a>Facebook Graph API を呼び出しています
 
-例のように、Twitter、ソーシャル フレームワークの`SLRequest`Facebook の graph API を使用してオブジェクトを使用できます。 たとえば、次のコードは、(上記のコードを拡張する) を Xamarin アカウントの詳細については、graph API から情報を返します。
+Twitter の例と同様に、ソーシャルフレームワークの`SLRequest`オブジェクトを Facebook の graph API と共に使用できます。 たとえば、次のコードでは、Xamarin アカウントに関する graph API から情報が返されます (上記のコードを展開することによって)。
 
 ```csharp
 using Accounts;
@@ -454,7 +454,7 @@ partial void RequestFacebookTimeline_TouchUpInside (UIButton sender)
 #endregion
 ```
 
-このコードと、上で示した Twitter バージョンの唯一の違いは、開発者/特定するアプリ ID (Facebook の開発者ポータルから生成することができます)、要求を行うときに、オプションとして設定する必要がありますをするための Facebook の要件を示します。
+このコードと前述の Twitter バージョンとの唯一の実際の違いは、Facebook の要件により、要求を行うときにオプションとして設定する必要がある開発者/アプリ固有の ID (Facebook の開発者ポータルから生成可能) を取得する必要があることです。
 
 ```csharp
 var options = new AccountStoreOptions ();
@@ -467,14 +467,14 @@ accountStore.RequestAccess (accountType, options, (granted, error) => {
 });
 ```
 
-このオプション (または、無効なキーを使用して) の設定に失敗したは、エラーまたは返されるデータなしのいずれかになります。
+このオプションを設定しなかった場合 (または無効なキーを使用した場合)、エラーが発生するか、データが返されません。
 
 ## <a name="summary"></a>まとめ
 
-この記事では、Twitter および Facebook と対話するソーシャル フレームワークを使用する方法を示しました。 デバイス設定でソーシャル ネットワークごとにアカウントを構成する場所を示しました。 使用する方法についても説明、`SLComposeViewController`ソーシャル ネットワークへの投稿に対する統一されたビューに表示します。 さらに、その調査、`SLRequest`ソーシャル ネットワークの API の呼び出しに使用されるクラス。
+この記事では、ソーシャルフレームワークを使用して Twitter と Facebook を操作する方法について説明しました。 このチュートリアルでは、デバイス設定でソーシャルネットワークごとにアカウントを構成する場所を示しました。 また、を使用して、 `SLComposeViewController`ソーシャルネットワークに投稿するための統合ビューを提供する方法についても説明しました。 さらに、各ソーシャル`SLRequest`ネットワークの API の呼び出しに使用されるクラスを調べています。
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [SocialFrameworkDemo (サンプル)](https://developer.xamarin.com/samples/monotouch/SocialFrameworkDemo/)
+- [社会 Alframeworkdemo (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/socialframeworkdemo)
 - [Web サービスの概要](~/cross-platform/data-cloud/web-services/index.md)

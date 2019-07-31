@@ -1,178 +1,178 @@
 ---
 title: iOS 8 の概要
-description: IOS 8、Apple は多くの新しいフレームワークと開発者を魅了し、エキサイティングに Api を提供しました。 このガイドはこれらの新しい Api を導入し、iOS 8 が開発者とユーザーの両方を利用する方法を参照してください。
+description: IOS 8 では、Apple は楽しみな気持ちと満足させるの開発者に多数の新しいフレームワークと Api を提供しています。 このガイドでは、これらの新しい Api を紹介し、iOS 8 が開発者とユーザーの両方にもたらすメリットについて説明します。
 ms.prod: xamarin
 ms.assetid: 33AD66C0-3743-49FE-9DCE-88ED3A16BA63
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/14/2017
-ms.openlocfilehash: 9299322eb20561444262c2b2ba87191d2bddcde4
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 592eff29e7c12741975dda0d602f5850071c1f45
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61317640"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644816"
 ---
 # <a name="introduction-to-ios-8"></a>iOS 8 の概要
 
-_IOS 8、Apple は多くの新しいフレームワークと開発者を魅了し、エキサイティングに Api を提供しました。このガイドはこれらの新しい Api を導入し、iOS 8 が開発者とユーザーの両方を利用する方法を参照してください。_
+_IOS 8 では、Apple は楽しみな気持ちと満足させるの開発者に多数の新しいフレームワークと Api を提供しています。このガイドでは、これらの新しい Api を紹介し、iOS 8 が開発者とユーザーの両方にもたらすメリットについて説明します。_
 
-iOS 7 は、どのようなユーザーと開発者は、最初の iPhone OS から直接、期待する取り込まれたから全体の iOS のユーザー インターフェイスを視覚的に変更します。 IOS 8 では、ユーザーが、iPhone から直接、ライフ サイクルのほぼすべての側面を制御する開発者は、多くのフレームワークを提供することによってこれを続行します。 正常性および適合性を使用して分析するたとえば*HealthKit*、パスコード、生体認証を使用してで使用されなくなった*LocalAuthentication*、 *App エクス テンション*サード パーティのアプリ間の通信チャネルを開くと*HomeKit*将来のホームに家を有効にすることができます。 
+iOS 7 では、最初の iPhone OS から直接、ユーザーと開発者が想定していた iOS ユーザーインターフェイス全体が視覚的に変更されました。 IOS 8 では、開発者向けに多くのフレームワークを提供することで、これを引き続き使用します。これにより、ユーザーは自分の iPhone から直接、ほぼすべての機能を制御できます。 たとえば、正常性と適合性は*HealthKit*を使用して分析でき、パスコードは*localauthentication*を使用した生体認証によって obsolescent されます。*アプリ拡張機能*は、サードパーティ製アプリ*間の通信チャネルを開きます。ホームキット*を使用すると、家を将来の自宅に変えることができます。 
 
-IOS 7 のユーザーを喜ばせる場合は、iOS 8 は開発者おいしい新ツールの範囲全体に喜んでいただけるについて説明します。 
+IOS 7 がユーザーのために使用されていた場合、iOS 8 では、おいしいの新しいツールのすべての範囲を備えた delighting 開発者に重点を置いています。 
 
-このガイドでは、Xamarin.iOS の開発者のため、新しい Api が導入されています。  
+このガイドでは、Xamarin の開発者向けの新しい Api について説明します。  
 
-詳細については、このドキュメントの最後に iOS 8 で非推奨とされましたが、一部の Api もあります。
+IOS 8 では非推奨とされているいくつかの Api もあります。これについては、このドキュメントの最後で説明します。
 
 ## <a name="requirements"></a>必要条件
 
-次が Visual studio for Mac iOS 8 のアプリを作成する必要です。
+Visual Studio for Mac で iOS 8 アプリを作成するには、次のものが必要です。
 
-- **Xcode 7 および iOS 8 以降**– Apple の最新の Xcode と iOS Api がインストールされ、開発者のコンピューターに構成する必要があります。
-- **Visual Studio for Mac** – Visual Studio for Mac の最新バージョンをインストールして、ユーザーのデバイスで構成する必要があります。
-- **iOS 8 デバイスまたはシミュレーター** – iOS デバイスをテストするための iOS 8 の最新バージョンを実行します。
+- **Xcode 7 と ios 8 以降**– Apple の最新の Xcode と ios api は、開発者のコンピューターにインストールして構成する必要があります。
+- **Visual Studio for Mac** –ユーザーデバイスで Visual Studio for Mac の最新バージョンをインストールして構成する必要があります。
+- **ios 8 デバイスまたはシミュレーター** –テスト用に ios 8 の最新バージョンを実行している ios デバイスです。
 
-## <a name="home-and-leisure"></a>ホーム ページと都合のよいタイミング
+## <a name="home-and-leisure"></a>自宅とレジャー
 
-iOS 8 をしっかりと HomeKit や HealthKit を使用して、自宅の中核にまっすぐに Apple、および iOS デバイスを工場に役立ちました。 このセクションでは、これら両方の新しいフレームワークは、次の作業、およびそれらを Xamarin.iOS アプリケーションに統合する方法に注目します。
+iOS 8 では、ホームキットと HealthKit を使用して、Apple と iOS デバイスを自宅の中核に直接送り込むことができました。 このセクションでは、これらの新しいフレームワークのしくみと、それらを Xamarin の iOS アプリケーションに統合する方法について説明します。
 
 ## <a name="homekit"></a>HomeKit
 
-IPhone から、アプライアンスを制御するテクノロジです。 新しいアプリケーションではありません。接続されているホーム製品の多くは、iOS アプリを使用して制御できます。 ただし HomeKit ここでは、この手順さらにホーム オートメーション デバイスは、一般的なプロトコルを昇格させることにより、特定の製造元など、iHome Philips と Honeywell をパブリック API を使用できるようにします。 シームレスに自分のホームのほぼすべての側面を制御できることを意味これをユーザーに 1 つのアプリケーション内で。 Philips Hue 電球、または入れ子のアラームを使用していることを知らせに関連はありません。 ユーザーには、多数のスマート ホーム プロセスが「シーン」にまとめてチェーンもことができます。
+IPhone からアプライアンスを制御することは、新しいテクノロジのアプリケーションではありません。多くの接続されたホーム製品は、iOS アプリを使用して制御できます。 しかし、home Kit は、ホームオートメーションデバイス用の共通プロトコルを昇格させ、特定の製造元が iHome、Honeywell、およびなどのパブリック API を利用できるようにすることで、一歩進んでいます。 ユーザーにとって、これは、1つのアプリケーション内から、自宅のほとんどすべての側面をシームレスに制御できることを意味します。 これは、お客様が、、または入れ子になった警報を使用していることを認識しているとは無関係です。 ユーザーは、多数のスマートホームプロセスを1つにまとめて、"シーン" にすることもできます。
 
-HomeKit、サード パーティのアプリと Siri できますアクセサリを検出し、個人のホームの構成データベースに追加、編集し、このデータに対して操作を実行およびアクセサリとアクションを実行するには、そのサービスと通信します。
+ホームキットを使用すると、サードパーティ製アプリおよび Siri は、アクセサリを検出し、個人のホーム構成データベースに追加し、このデータを編集して操作し、アクセサリとそのサービスと通信してアクションを実行することができます。
 
 ### <a name="configuration"></a>構成
 
-次の図は、HomeKit アクセサリの構成の基本的な階層を示します。
+次の図は、ホームキットのアクセサリの構成の基本階層を示しています。
 
-![](introduction-to-ios8-images/image1.png "この図では、HomeKit アクセサリの構成の基本的な階層を示しています。")
+![](introduction-to-ios8-images/image1.png "この図は、ホームキットのアクセサリの構成の基本階層を示しています。")
  
-HomeKit を開始するには、開発者は、プロビジョニング プロファイルに選択した HomeKit サービスがあることを確認する必要があります。 Apple は、Xcode の開発者向けの HomeKit シミュレーター アドインをも提供しました。 確認できます、 [Apple Developer Center](https://developer.apple.com/downloads/index.action)`Hardware IO Tools for Xcode`します。 
+ホームキットの使用を開始するには、開発者は、プロビジョニングプロファイルに [ホームキット] サービスが選択されていることを確認する必要があります。 Apple では、Xcode 用のホームキットシミュレーターアドインも開発者に提供しています。 これは、 [Apple Developer Center](https://developer.apple.com/downloads/index.action)のの下`Hardware IO Tools for Xcode`にあります。 
 
-詳細についてを参照してください、 [HomeKit](~/ios/platform/homekit.md)ガイド。
+詳細については、「[ホームキット](~/ios/platform/homekit.md)ガイド」を参照してください。
 
 ## <a name="healthkit"></a>HealthKit
 
-HealthKit は、正常性関連の情報を一元的な調整、およびセキュリティで保護されたデータ ストアを提供する iOS 8 で導入されたフレームワークです。 オペレーティング システムにより、プライバシーとセキュリティの正常性に関する情報と、正常性のアプリ、ユーザーのダッシュ ボード。 ユーザーのアクセス許可を持つアプリケーションは、読み取りし、さまざまな正常性に関する情報を記述します。
+HealthKit は、iOS 8 で導入されたフレームワークであり、正常性に関する情報を提供する一元化された、連携し、セキュリティで保護されたデータストアを提供します。 オペレーティングシステムによって、正常性情報のプライバシーとセキュリティが確保され、ヘルスアプリがユーザーのダッシュボードになります。 アプリケーションでは、ユーザーのアクセス許可を使用して、さまざまな正常性情報の読み取りと書き込みを行うことができます。
 
-Xamarin.iOS アプリの使用方法に関する詳細についてを参照してください、 [HealthKit の概要](~/ios/platform/healthkit.md)ガイド。
+Xamarin. iOS アプリでこれを使用する方法の詳細については、 [HealthKit の概要に](~/ios/platform/healthkit.md)関するガイドを参照してください。
 
-## <a name="extending-iphone-functionality"></a>IPhone の機能を拡張します。
-IOS8 で開発者がサード パーティのアプリ間通信をよりオープンに、アプリ、および高度な機能を使用できるユーザーをより細かく制御提供されているされます。 アプリの拡張機能とドキュメント ピッカーなどの機能は、Apple のエコシステムでのアプリケーションの使用方法の可能性を開きます。
+## <a name="extending-iphone-functionality"></a>IPhone 機能の拡張
+IOS8 を使用すると、開発者は、アプリを使用できるユーザーをより細かく制御できるようになり、サードパーティのアプリ間のよりオープンな通信のための機能が強化されます。 アプリ拡張機能やドキュメントピッカーなどの機能では、Apple のエコシステムでアプリケーションを使用する方法について、さまざまな可能性があります。
 
-### <a name="app-extensions"></a>アプリ拡張機能
-、簡単に説明する、アプリの拡張機能は、サード パーティ製アプリで互いと通信する方法です。 高度なセキュリティ標準を維持し、サンド ボックス化されたアプリの整合性を維持するためには、この通信はアプリケーション間で直接発生しません。 代わりに、これによって実行される、*拡張子*中央にします。
+### <a name="app-extensions"></a>アプリの拡張機能
+アプリの拡張機能は、サードパーティのアプリが相互に通信するための方法です。 高いセキュリティ標準を維持し、サンドボックス化されたアプリの整合性を維持するために、この通信はアプリケーション間で直接行われません。 代わりに、中央の*拡張機能*によって実行されます。
 
-アプリ拡張機能の作成の最初の手順が適切な拡張ポイントを定義するには、これは、動作と、適切な Api の可用性を保証するために重要です。 Visual studio for Mac アプリの拡張機能を作成するをソリューションに新しいプロジェクトを追加することで既存のアプリケーションに追加します。
+アプリ拡張機能を作成するための最初の手順は、正しい拡張ポイントを定義することです。これは、適切な Api の動作と可用性を確保するために重要です。 Visual Studio for Mac でアプリ拡張機能を作成するには、ソリューションに新しいプロジェクトを追加して、既存のアプリケーションに追加します。
 
-**新しいプロジェクト**に移動します ダイアログ**C#**  >  **iOS** > **Unified API**  > **拡張**、次のスクリーン ショットに示すようにします。
+**[新しいプロジェクト]** ダイアログで、 **C#**  > 次のスクリーンショットに示すように、 **iOS** > **Unified API** > の**拡張機能**に移動します。
 
 ![](introduction-to-ios8-images/image2.png "新しい拡張機能の作成")
  
-新しいプロジェクト ダイアログでは、7 つの新しいプロジェクト テンプレートは、アプリ拡張機能を作成して、次に説明します。 ドキュメント ピッカーなどの iOS の他の新しい Api に関連する拡張機能の多くに注意してください。
+[新しいプロジェクト] ダイアログには、アプリ拡張機能を作成するための7つの新しいプロジェクトテンプレートが用意されています。次に説明します。 拡張機能の多くは、iOS の他の新しい Api (ドキュメントピッカーなど) に関連しています。
 
-- **アクション**– これにより、開発者がユーザーには、特定のタスクを実行できるように一意のカスタム アクション ボタンを作成するには
-- **カスタム キーボード**– これにより、開発者の範囲に追加する独自のカスタムの 1 つを追加することで Apple キーボード組み込まれています。 人気のあるキーボード、Swype はこの関数を使用して、iOS にキーボードを表示します。
-- **Document Picker** – アプリケーションのサンド ボックスの外部ファイルにアクセスするユーザーがドキュメント ピッカー ビューのコント ローラーが含まれます。
-- **ドキュメント ピッカー ファイル プロバイダー** – これにより、ドキュメント ピッカーを使用してファイルをセキュリティで保護されたストレージ。
-- **写真編集**– このフィルターを拡張し、写真を編集するときにユーザーの詳細に制御し、その他のオプションに付与する写真アプリケーションで Apple によって既に提供されているツールを編集します。
-- **今すぐ**– これにより、アプリケーション、通知センターの [今日] セクションにウィジェットを表示します。
+- **アクション**–開発者は、ユーザーが特定のタスクを実行できるように、独自のカスタムアクションボタンを作成できます。
+- **カスタムキーボード**–開発者は、独自のカスタムのキーボードを追加することにより、組み込みの Apple キーボードの範囲にを追加できます。 一般的なキーボードである Swype は、キーボードを iOS に持ち込むために使用されます。
+- **ドキュメントピッカー** –これには、ユーザーがアプリケーションのサンドボックスの外部にあるファイルにアクセスできるようにする、ドキュメントピッカービューコントローラーが含まれています。
+- **ドキュメントピッカーファイルプロバイダー** –これにより、ドキュメントピッカーを使用してファイルの安全なストレージが提供されます。
+- **写真の編集**–写真アプリケーションで既に Apple によって提供されているフィルターと編集ツールを拡張し、ユーザーが写真を編集するときにより多くのオプションを制御できるようにします。
+- **今日**–アプリケーションでは、通知センターの今日のセクションにウィジェットを表示する機能が提供されています。
 
-Xamarin でのアプリの拡張機能の使用の詳細についてを参照してください、[アプリ拡張機能の概要](~/ios/platform/extensions.md)ガイド。
+Xamarin でのアプリ拡張機能の使用の詳細については、[アプリ拡張機能の概要](~/ios/platform/extensions.md)に関するガイドを参照してください。
 
 ### <a name="touch-id"></a>タッチ ID
 
-Touch ID が、ユーザーの認証の手段として iOS 7 で導入された: パスコードに似ています。 ただし、デバイスのロックを解除、App Store を使用して、iTunes を使用して、iCloud キーチェーンのみの認証に制限されていますが 
+タッチ ID は、ユーザーを認証する手段として iOS 7 で導入されました。パスコードに似ています。 ただし、デバイスのロック解除、アプリストアの使用、iTunes の使用、iCloud キーチェーンの認証のみに制限されていました。 
 
-ローカル認証 API を使用して iOS 8 アプリケーションの認証メカニズムとして Touch ID を使用する 2 つの方法はようになりました。 現在これは、ローカルの認証を使用して、リモートで認証することはできません。
+ローカル認証 API を使用した iOS 8 アプリケーションでは、タッチ ID を認証メカニズムとして使用する2つの方法があります。 現在、ローカル認証を使用してリモートで認証することはできません。
 
-まず、新しいキーチェーン アクセス制御リスト (Acl) を使用して既存の Keychain サービスを支援します。 キーチェーンのデータは、ユーザーの指紋認証が成功したロックされていることができます。
+まず、新しいキーチェーン Access Control リスト (Acl) を使用して、既存のキーチェーンサービスを支援します。 キーチェーンデータは、ユーザーの指紋の認証が成功したときにロックを解除することができます。
 
-次に、LocalAuthentication は、アプリケーションをローカルで認証する 2 つのメソッドを提供します。 開発者が使用する必要があります`CanEvaluatePolicy`デバイスがタッチの ID を受信できるかどうかが決定し、`EvaluatePolicy`認証操作を開始します。
+次に、LocalAuthentication は、アプリケーションをローカルで認証する2つの方法を提供します。 開発者は`CanEvaluatePolicy` 、を使用して、デバイスがタッチ ID を受け入れることが`EvaluatePolicy`できるかどうかを判断し、次に認証操作を開始する必要があります。
 
-Touch ID と Xamarin.iOS アプリケーションに統合する方法についての詳細についてを参照してください、[概要に touch Id](~/ios/platform/touchid.md)ガイド。
+Touch ID の詳細と、それを Xamarin. iOS アプリケーションに統合する方法については、TouchID ガイドの[概要](~/ios/platform/touchid.md)に関するページを参照してください。
 
 ### <a name="document-picker"></a>ドキュメント ピッカー
 
-ドキュメント ピッカーの連携が別のアプリで作成された、インポートし操作、およびそれらをエクスポートするファイルを開くユーザーを許可するユーザーの iCloud ドライブは、もう一度バックアップします。 これには、直感的なワークフロー、およびそのためより優れたエクスペリエンスが大幅に、ユーザーが作成されます。 さらにこの 1 つの手順は、iCloud の同期: 1 つのアプリケーションで行われた変更がすべてのデバイスで一貫して反映するもされます。
+ドキュメントピッカーはユーザーの iCloud ドライブと連携して、ユーザーが別のアプリで作成されたファイルを開いて、それらをインポートして操作し、再びエクスポートできるようにします。 これにより、直感的なワークフローが作成され、ユーザーにとってはるかに優れたエクスペリエンスが得られます。 iCloud の同期ではこれをさらに一歩進めます。1つのアプリケーションで行った変更もすべてのデバイスで一貫して反映されます。
 
-ドキュメント ピッカーの詳細にについて説明し、Xamarin.iOS アプリケーションに統合する方法についてを参照して、 [、ドキュメント ピッカーの概要](~/ios/platform/document-picker.md)ガイド。
+ドキュメントピッカーの詳細を確認し、それを Xamarin iOS アプリケーションに統合する方法については、[ドキュメントピッカーガイドの概要](~/ios/platform/document-picker.md)に関するページを参照してください。
 
 ### <a name="handoff"></a>Handoff
 
-大規模な継続性機能の一部である、ハンドオフは OS X、iOS の統合に向けてさらに一歩を受け取ります。 これには、クロス プラットフォーム AirDrop、呼び出しの iPhone、iPad、Mac、および iPhone からテザリングの向上で SMS を実行する機能が含まれます。
+より大規模な継続性機能の一部であるハンドオフは、OS X と iOS の統合についてさらに一歩進んでいます。 これには、クロスプラットフォームのエアドロップ、iPhone 呼び出しを行う機能、iPad と Mac での SMS、iPhone からのテザリングの機能強化が含まれます。
 
-Handoff を使用して、iOS 8 および Yosemite で動作、使用する別のすべてのデバイスにログインして iCloud アカウントが必要です。 Apple の事前インストールされているアプリ、Safari、iWork、マップ、予定表、連絡先など、使用する必要があります。
+ハンドオフは iOS 8 と、ユーザーが使用するすべてのデバイスにログインするための iCloud アカウントを必要とします。 Safari、iWork、Maps、カレンダー、連絡先など、プレインストールされているほとんどの Apple アプリで動作します。
 
-詳細についてを参照してください、[ハンドオフ](~/ios/platform/handoff.md)ガイド。
+詳細については、[ハンドオフ](~/ios/platform/handoff.md)ガイドを参照してください。
 
 ## <a name="unified-storyboards"></a>統合ストーリーボード
-iOS 8 が含まれていますが、新しいユーザー インターフェイスを作成するためのメカニズムを使用する方が簡単-統合されたストーリー ボード。 別のハードウェアの画面サイズのすべてをカバーする 1 つにストーリー ボードは、true「一度設計すれば、多くを使用して、」スタイルの高速で応答性の高いビューを作成できます。
+iOS 8 には、ユーザーインターフェイスを作成するための、統合されたストーリーボードという新しい簡単な使用機構が含まれています。 1つのストーリーボードを使用してさまざまなハードウェア画面サイズをすべてカバーすることで、高速および応答性の高いビューを、真の "デザイン1、多くの使用" スタイルで作成できます。
 
-IOS8、前に開発者が使用される`UIInterfaceOrientation`縦長と横長のモードを区別する、 `UIInterfaceIdiom` iOS デバイスを区別します。 IOS8 でできなくなった iPhone および iPad デバイスの個別のストーリー ボードを作成するために必要な印刷の向きとデバイスを使用してによって決定されます*サイズ クラス*。
+IOS8 より前の開発者`UIInterfaceOrientation`は、縦モードと横モードを区別`UIInterfaceIdiom`し、iOS デバイスを区別するために使用されていました。 IOS8 では、iPhone と iPad デバイス用に個別のストーリーボードを作成する必要がなくなりました。向きとデバイスは、*サイズクラス*を使用して決定されます。
 
-すべてのデバイスは垂直と水平方向の軸の両方で、サイズ クラスによって定義され、iOS 8 でのサイズ クラスの 2 種類があります。
+すべてのデバイスはサイズクラスによって、垂直軸と水平軸の両方で定義されます。また、iOS 8 のサイズクラスには次の2種類があります。
 
-- **通常**-これは、(iPad) などの大きな画面サイズ、または (など、UIScrollView 大きなサイズのという印象を与えるガジェット
-- **Compact** -これは比較的小さなデバイス (iPhone) などの。 このサイズでは、デバイスの向きが考慮されます。
+- **[標準]** -大きなサイズ (iPad など) または大きなサイズの印象を与えるガジェット (UIScrollView など) の場合は、
+- **Compact** -これは、より小さなデバイス (iPhone など) を対象としています。 このサイズでは、デバイスの向きが考慮されます。
 
-2 つの概念をまとめて使用する場合、結果は次の図に示すように、両方、異なる向きで使用できるさまざまな可能なサイズを定義する 2 x 2 グリッドに。
+2つの概念が一緒に使用されている場合は、次の図に示すように、異なる向きの両方で使用できるさまざまなサイズを定義する2つの x 2 グリッドが生成されます。
 
-![](introduction-to-ios8-images/image3.png "両方の異なる向きで使用できるさまざまな可能なサイズを定義する 2 x 2 グリッドを表すダイアグラム")
+![](introduction-to-ios8-images/image3.png "異なる向きの両方で使用できるさまざまなサイズを定義する 2 x 2 グリッドを表す図")
  
-サイズ クラスの詳細についてを参照してください、 [Unified ストーリー ボードの概要](~/ios/user-interface/storyboards/unified-storyboards.md)します。
+サイズクラスの詳細については、「[統合ストーリーボードの概要](~/ios/user-interface/storyboards/unified-storyboards.md)」を参照してください。
 
-## <a name="photo-kit"></a>フォト キット
-フォト キットは、アプリケーションをシステムのイメージのライブラリを照会し、その内容を表示したり、カスタム ユーザー インターフェイスを作成できる新しいフレームワークです。 これには、多数アルバムやフォルダーなどの資産のコレクションだけでなく、イメージおよびビデオ資産を表すクラスにはが含まれます。
+## <a name="photo-kit"></a>フォトキット
+Photo Kit は、アプリケーションがシステムイメージライブラリに対してクエリを実行し、その内容を表示および変更するためのカスタムユーザーインターフェイスを作成できるようにする新しいフレームワークです。 これには、イメージとビデオ資産を表す多数のクラスと、アルバムやフォルダーなどの資産のコレクションが含まれます。
 
-詳細についてを参照してください、 [PhotoKit](~/ios/platform/photokit.md)ガイド。
+詳細については、 [Photokit](~/ios/platform/photokit.md)のガイドを参照してください。
 
 ## <a name="games"></a>ゲーム
 
 <a name="scenekit" />
 
-### <a name="scene-kit"></a>シーンのキット
+### <a name="scene-kit"></a>シーンキット
 
-シーンのキットは、3 D シーン グラフの 3D グラフィックスの操作を簡素化する API です。 OS X 10.8 で初めて導入し、iOS 8 に来たようになりました。 シーンのキットで没入型の 3D 視覚化およびカジュアルの 3D ゲームの作成は必要ありません OpenGL の専門知識。 シーン グラフの一般的な概念に基づき、シーンのキットを抽象 OpenGL やことが非常に簡単に追加する 3D コンテンツをアプリケーションに、OpenGL ES の複雑さです。 ただし、OpenGL の専門家の場合は、シーン キットも OpenGL と直接リンク付けするための優れたサポートしています。 また、物理学などの 3D グラフィックスを補完する多数の機能が含まれていて、いくつかその他の Apple などのフレームワーク コア アニメーション、Core イメージおよび Sprite Kit と非常にうまく連携します。
+シーンキットは、3d グラフィックスを簡単に操作できる3D シーングラフ API です。 これは OS X 10.8 で初めて導入されましたが、現在は iOS 8 に付属しています。 シーンキットでは、イマーシブ3D 視覚エフェクトとカジュアル3D ゲームを作成する際に、OpenGL に関する専門知識は必要ありません。 シーンキットでは、一般的なシーングラフの概念を基にして、OpenGL と OpenGL の複雑さが解消されるため、アプリケーションに3D コンテンツを簡単に追加できます。 しかし、OpenGL の専門家であれば、シーンキットは OpenGL と直接結び付けることをサポートしています。 また、物理などの3D グラフィックスを補完する多くの機能が含まれており、コアアニメーション、コアイメージ、スプライトキットなど、他のいくつかの Apple framework と非常によく統合されています。
 
-詳細についてを参照してください、 [SceneKit](~/ios/platform/gaming/scenekit.md)ドキュメント。
+詳細については、 [SceneKit](~/ios/platform/gaming/scenekit.md)のドキュメントを参照してください。
 
 <a name="spritekit" />
 
-### <a name="sprite-kit"></a>Sprite Kit
+### <a name="sprite-kit"></a>スプライトキット
 
-Sprite Kit、apple の 2D ゲーム フレームワークでは、いくつかの興味深い新機能では、iOS 8 および OS X Yosemite が。 シーンのキット、シェーダーのサポート、照明、影、制約、法線マップの生成、および物理学の機能強化との統合が含まれます。 具体的には、物理運動の新機能を使用すると、非常に簡単にゲームにリアルな効果を追加します。
+Apple の 2D game framework であるスプライトキットには、iOS 8 と OS X の新しい機能がいくつかあります。 これには、シーンキット、シェーダーサポート、照明、影、制約、法線マップの生成、および物理的な機能強化との統合が含まれます。 特に、新しい物理機能により、現実的な効果をゲームに追加することが非常に簡単になります。
 
-詳細についてを参照してください、 [SpriteKit](~/ios/platform/gaming/spritekit.md)ドキュメント。
+詳細については、 [SpriteKit](~/ios/platform/gaming/spritekit.md)のドキュメントを参照してください。
 
 ## <a name="other-changes"></a>その他の変更
-上記で説明した iOS 8 の主要な変更、および Apple は、既存の多くのフレームワークをさらに更新が。 これらを次に説明します。
+また、上記の iOS 8 の主な変更点に加えて、Apple では、多くの既存のフレームワークをさらに更新しています。 これらの詳細を以下に示します。
 
-- **[Core イメージ](https://developer.apple.com/library/prerelease/ios/documentation/GraphicsImaging/Reference/CoreImagingRef/index.html#//apple_ref/doc/uid/TP40001171)** : Apple が四角形の領域の検出に対する優れたサポートを追加することで、イメージ処理のフレームワーク上に拡張し、イメージ内での QR コードします。 Mike Bluestein では、彼のブログ投稿の対象に、についての説明をします[iOS 8 でのイメージの検出](https://blog.xamarin.com/image-detection-in-ios-8/)
+- **[コアイメージ](https://developer.apple.com/library/prerelease/ios/documentation/GraphicsImaging/Reference/CoreImagingRef/index.html#//apple_ref/doc/uid/TP40001171)** – Apple は、イメージ処理フレームワークで拡張されています。これは、四角形領域の検出のサポートを強化し、画像内に QR コードを追加することによって行われます。 Mike Bluestein は、 [iOS 8 でのイメージの検出](https://blog.xamarin.com/image-detection-in-ios-8/)に関するブログ投稿でこれを考察しています
 
 ## <a name="deprecated-apis"></a>非推奨の API
-IOS 8 で行われたすべての強化された多数の Api が非推奨とされます。 これらのいくつか記載しています。
+IOS 8 で加えられたすべての機能強化により、いくつかの Api が非推奨となりました。 これらの一部を以下に示します。
 
-- **[UIApplication](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIApplication_Class/index.html#//apple_ref/occ/cl/UIApplication)**  – メソッドとリモート通知を登録するために使用されるプロパティで非推奨とされます。 これらは registerForRemoteNotificationTypes と enabledRemoteNotificationTypes です。
-- **[UIViewController](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIViewController_Class/index.html#//apple_ref/occ/cl/UIViewController)**  – メソッドとインターフェイスの向きを記述するためのプロパティに特徴とサイズ クラスは置き換えられています。 参照してください、 [Unified ストーリー ボードの概要](~/ios/user-interface/storyboards/unified-storyboards.md)これらを使用する方法についての詳細。
+- **[Uiapplication](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIApplication_Class/index.html#//apple_ref/occ/cl/UIApplication)** –リモート通知の登録に使用されるメソッドとプロパティは非推奨となりました。 これらは registerForRemoteNotificationTypes と enabledRemoteNotificationTypes です。
+- **[Uiviewcontroller](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIViewController_Class/index.html#//apple_ref/occ/cl/UIViewController)** –特徴クラスとサイズクラスは、インターフェイスの向きを示すために使用されるメソッドとプロパティに置き換えられました。 これらの使用方法の詳細については、「[統合ストーリーボードの概要](~/ios/user-interface/storyboards/unified-storyboards.md)」を参照してください。
 
-- **[UISearchDisplayController](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UISearchDisplayController_Class/index.html#//apple_ref/occ/cl/UISearchDisplayController)**  – これは置き換えられました UISearchController iOS8 でします。
+- **[Uisearchdisplaycontroller](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UISearchDisplayController_Class/index.html#//apple_ref/occ/cl/UISearchDisplayController)** – IOS8 の uisearchcontroller に置き換えられました。
 
-## <a name="summary"></a>まとめ
-この記事では、apple iOS 8 で導入された新機能のいくつか説明しました。
+## <a name="summary"></a>Summary
+この記事では、iOS 8 で Apple によって導入された新機能について説明しました。
 
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [UIKitEnhancements (サンプル)](https://developer.xamarin.com/samples/monotouch/ios8/UIKitEnhancements)
+- [UIKitEnhancements (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios8-uikitenhancements)
 - [アプリ拡張機能の概要](~/ios/platform/extensions.md)
 - [CloudKit の概要](~/ios/data-cloud/intro-to-cloudkit.md)
-- [ドキュメント ピッカーの概要](~/ios/platform/document-picker.md)
+- [ドキュメントピッカーの概要](~/ios/platform/document-picker.md)
 - [HealthKit の概要](~/ios/platform/healthkit.md)
-- [手動カメラ コントロールの概要](~/ios/user-interface/controls/intro-to-manual-camera-controls.md)
-- [Touch Id の概要](~/ios/platform/touchid.md)
-- [統合ストーリー ボードの概要](~/ios/user-interface/storyboards/unified-storyboards.md)
+- [手動カメラコントロールの概要](~/ios/user-interface/controls/intro-to-manual-camera-controls.md)
+- [TouchID の概要](~/ios/platform/touchid.md)
+- [統合されたストーリーボードの概要](~/ios/user-interface/storyboards/unified-storyboards.md)

@@ -7,16 +7,16 @@ ms.assetid: 288224F1-7AEE-4148-A88D-A70C03F83D7A
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/09/2017
-ms.openlocfilehash: c4ca44488a4d10d3936e7bd8e664e3ffcb2a140a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 586cf0eaa7b0f38af61c9f7d619b30a39023a19e
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61179808"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68652956"
 ---
 # <a name="integrating-with-xamarinforms"></a>Xamarin.Forms との統合
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _タッチと Xamarin.Forms 要素に応答する SkiaSharp グラフィックスを作成します。_
 
@@ -25,7 +25,7 @@ SkiaSharp のグラフィックスは、Xamarin.Forms のいくつかの方法�
 ![](integration-images/integrationexample.png "スライダーの色の選択")
 
 Xamarin.Forms で SkiaSharp の対話型のグラフィックスを作成するもう 1 つの方法は、タッチ機能によるです。
-2 番目のページで、 [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)プログラムが使用権を持って**トグルの塗りつぶしをタップ**します。 2 つの方法の単純な円を描画&mdash;塗りつぶしと塗りつぶしを&mdash;をタップして切り替えます。 [ `TapToggleFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml.cs)クラスは、ユーザー入力への応答で SkiaSharp グラフィックを変更する方法を示しています。
+2 番目のページで、 [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)プログラムが使用権を持って**トグルの塗りつぶしをタップ**します。 2 つの方法の単純な円を描画&mdash;塗りつぶしと塗りつぶしを&mdash;をタップして切り替えます。 [ `TapToggleFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml.cs)クラスは、ユーザー入力への応答で SkiaSharp グラフィックを変更する方法を示しています。
 
 このページで、`SKCanvasView`でクラスをインスタンス化、 [TapToggleFill.xaml](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml)ファイルで、また、Xamarin.Forms を設定[ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer)ビュー。
 
@@ -243,4 +243,4 @@ HSV モデルでは、純粋な色は、飽和状態と値の両方が 100 を�
 ## <a name="related-links"></a>関連リンク
 
 - [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

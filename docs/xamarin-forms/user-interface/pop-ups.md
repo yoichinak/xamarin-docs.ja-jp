@@ -1,24 +1,24 @@
 ---
-title: ポップアップを表示します。
-description: Xamarin.Forms には、ポップアップに似た 2 つのユーザー インターフェイス要素、アラートとアクション シートが用意されています。 アラートとアクション シート Api を使用して、簡単な質問をユーザーに依頼し、手順をユーザーにタスク ダイアログ ボックスを表示するかを説明します。
+title: ポップアップを表示する
+description: Xamarin.Forms には、ポップアップに似た 2 つのユーザー インターフェイス要素、アラートとアクション シートが用意されています。 この記事では、アラートとアクションシート Api を使用して、ユーザーに簡単な質問をしてユーザーにタスクを案内するダイアログボックスを表示する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 46AB0D5E-0025-4A8A-9D00-3E66C3D0BA2E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 58c98aefdf87bcd1ca819de96f67c66646c1723d
-ms.sourcegitcommit: 6ad272c2c7b0c3c30e375ad17ce6296ac1ce72b2
+ms.openlocfilehash: 3b6b2ea2d497c9fdce2c323c7f7a793a4186aa4f
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66182304"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656105"
 ---
-# <a name="display-pop-ups"></a>ポップアップを表示します。
+# <a name="display-pop-ups"></a>ポップアップを表示する
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/Navigation/Pop-ups/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-pop-ups)
 
-_Xamarin.Forms には、ポップアップに似た 2 つのユーザー インターフェイス要素、アラートとアクション シートが用意されています。アラートとアクション シート Api を使用して、簡単な質問をユーザーに依頼し、手順をユーザーにタスク ダイアログ ボックスを表示するかを説明します。_
+_Xamarin.Forms には、ポップアップに似た 2 つのユーザー インターフェイス要素、アラートとアクション シートが用意されています。この記事では、アラートとアクションシート Api を使用して、ユーザーに簡単な質問をしてユーザーにタスクを案内するダイアログボックスを表示する方法について説明します。_
 
 UI の一般的なタスクは、アラートを表示するまたはユーザーに選択を求めることです。 Xamarin.Forms には、[`Page`](xref:Xamarin.Forms.Page) クラス上に、ポップアップを介してユーザーとやり取りをするための、[`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*) と [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*) の 2 つのメソッドがあります。 それらは適切なネイティブ コントロールを使用して、各プラットフォーム上に表示されます。
 
@@ -46,7 +46,7 @@ async void OnAlertYesNoClicked (object sender, EventArgs e)
 
 [![DisplayAlert](pop-ups-images/alert2-sml.png "2 つのボタン付きのアラート ダイアログ")](pop-ups-images/alert2.png#lightbox "2 つのボタン付きのアラート ダイアログ")
 
-## <a name="guide-users-through-tasks"></a>タスクをユーザーに案内
+## <a name="guide-users-through-tasks"></a>タスクを通じてユーザーをガイドする
 
 [UIActionSheet](https://developer.apple.com/library/ios/documentation/uikit/reference/uiactionsheet_class/Reference/Reference.html) は、iOS の一般的な UI 要素です。 Xamarin.Forms の [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*)メソッドを使用すると、このコントロールをクロスプラットフォーム アプリにインクルードし、Android や UWP でネイティブの代替アイテムをレンダリングできます。
 
@@ -76,4 +76,4 @@ async void OnActionSheetCancelDeleteClicked (object sender, EventArgs e)
 
 ## <a name="related-links"></a>関連リンク
 
-- [PopupsSample](https://developer.xamarin.com/samples/xamarin-forms/Navigation/Pop-ups/)
+- [PopupsSample](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-pop-ups)

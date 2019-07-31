@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/26/2018
-ms.openlocfilehash: 64210bc18532a5260bd31ff1c20e8ffaf92d0df2
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 9307e440a780d60a8301c58d70ee882fbbdebab1
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510547"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68646394"
 ---
 # <a name="customizing-a-listviews-appearance-with-xamarinandroid"></a>Xamarin Android を使用した ListView の外観のカスタマイズ
 
@@ -384,6 +384,6 @@ Android では、レイアウト情報を`ListView`キャッシュすること�
 
 ## <a name="related-links"></a>関連リンク
 
-- [BuiltInViews (サンプル)](https://developer.xamarin.com/samples/monodroid/BuiltInViews/)
-- [AccessoryViews (サンプル)](https://developer.xamarin.com/samples/monodroid/AccessoryViews/)
-- [CustomRowView (サンプル)](https://developer.xamarin.com/samples/monodroid/CustomRowView/)
+- [BuiltInViews (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/builtinviews)
+- [AccessoryViews (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/accessoryviews)
+- [CustomRowView (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/customrowview)

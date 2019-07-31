@@ -1,46 +1,46 @@
 ---
-title: Xamarin.iOS でのアラートの表示
-description: このドキュメントでは、Xamarin.iOS で UIAlertController iOS 8 で導入された Api を使用してアラートを表示する方法について説明します。
+title: Xamarin でのアラートの表示
+description: このドキュメントでは、iOS 8 で導入された UIAlertController Api を使用して、Xamarin. iOS にアラートを表示する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 61C671E9-3757-4052-86E4-28640025A34A
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 576de9a46fc89fe01c564c05568d4331a32dbd96
-ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
+ms.openlocfilehash: 4c47e12468d9107cbe03d4bc45ffa77e4ad918e9
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67674400"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68652057"
 ---
-# <a name="displaying-alerts-in-xamarinios"></a>Xamarin.iOS でのアラートの表示
+# <a name="displaying-alerts-in-xamarinios"></a>Xamarin でのアラートの表示
 
-IOS 8 以降、UIAlertController が完成した置換 UIActionSheet とうち UIAlertView 両方が非推奨となりました。
+IOS 8 以降では、UIAlertController は、Uialertcontroller と Uialertcontroller が両方とも非推奨とされるようになりました。
 
-UIAlertController とは異なり、このクラスに置き換え、UIView のサブクラスであり、UIViewController のサブクラスです。
+UIView のサブクラスである、置き換えられたクラスとは異なり、UIAlertController は UIViewController のサブクラスです。
 
-使用`UIAlertControllerStyle`を表示するアラートの種類を示します。 これらのアラートの種類は次のとおりです。
+表示`UIAlertControllerStyle`するアラートの種類を示すには、を使用します。 これらのアラートの種類は次のとおりです。
 
 - **UIAlertControllerStyleActionSheet**
-    * 前の iOS 8 を UIActionSheet をされたこれは
+    * IOS より前の8これは、UIActionSheet でした。
 - **UIAlertControllerStyleAlert**
-    * 前の iOS 8 この UIAlertView にされている場合 
+    * IOS より前の8これは、UIAlertView になりました 
 
-アラートのコント ローラーの作成時に実行するために必要な 3 つの手順があります。
+警告コントローラーを作成するには、次の3つの手順を実行する必要があります。
 
-- 作成し、アラートを a: 構成
+- 次のものを使用してアラートを作成および構成します。
     * title
     * message
     * preferredStyle
     
-- (省略可能)テキスト フィールドを追加します。
-- 必要なアクションを追加します。
-- ビュー コント ローラーを表示します。
+- Optionalテキストフィールドを追加する
+- 必要なアクションを追加する
+- ビューコントローラーを表示する
 
-最も単純なアラートには、このスクリーン ショットで示すように 1 つのボタンが含まれています。
+最も単純なアラートには、次のスクリーンショットに示すように、1つのボタンが含まれています。
 
- ![1 つのボタンをアラートします。](alerts-images/alert1.png)
+ ![1つのボタンを持つアラート](alerts-images/alert1.png)
 
 単純なアラートを表示するコードは次のとおりです。
 
@@ -58,9 +58,9 @@ okayButton.TouchUpInside += (sender, e) => {
 };
 ```
 
-複数のオプションを使用して通知を表示する同様の方法で行われますが、2 つのアクションを追加します。 たとえば、次のスクリーン ショットでは、2 つのボタンでアラートが表示されます。
+複数のオプションを使用してアラートを表示する方法は似ていますが、2つのアクションが追加されます。 たとえば、次のスクリーンショットは、2つのボタンを持つアラートを示しています。
 
- ![2 つのボタンをアラートします。](alerts-images/alert2.png)
+ ![2つのボタンを含むアラート](alerts-images/alert2.png)
 
 ```csharp
 okayCancelButton.TouchUpInside += ((sender, e) => {
@@ -77,11 +77,11 @@ okayCancelButton.TouchUpInside += ((sender, e) => {
 });
 ```
 
-アラートは、次のスクリーン ショットのようなアクション シートを表示もできます。
+アラートには、次のスクリーンショットのような操作シートを表示することもできます。
 
- ![アクション シートのアラート](alerts-images/alert3.png)
+ ![操作シートのアラート](alerts-images/alert3.png)
 
-ボタンのアラートに追加されて、`AddAction`メソッド。
+次のメソッドを使用し`AddAction`て、アラートにボタンが追加されます。
 
 ```csharp
 actionSheetButton.TouchUpInside += ((sender, e) => {
@@ -111,5 +111,5 @@ actionSheetButton.TouchUpInside += ((sender, e) => {
 
 ## <a name="related-links"></a>関連リンク
 
-- [コントロール (サンプル)](https://developer.xamarin.com/samples/monotouch/Controls/)
-- [アラートのコント ローラー](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/alertcontroller)
+- [コントロール (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/controls)
+- [警告コントローラー](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/alertcontroller)

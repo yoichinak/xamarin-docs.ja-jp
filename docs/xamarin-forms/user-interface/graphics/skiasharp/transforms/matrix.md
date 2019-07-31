@@ -7,16 +7,16 @@ ms.assetid: 9EDED6A0-F0BF-4471-A9EF-E0D6C5954AE4
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/12/2017
-ms.openlocfilehash: 192f0745874b54989ab9070014dae2a5e9e98110
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e44dfd85d9d4480d56ac75d61fd379b04fb8fb12
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61354909"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68648618"
 ---
 # <a name="matrix-transforms-in-skiasharp"></a>SkiaSharp の行列変換
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _SkiaSharp の変換に、汎用性の高い変換行列に詳しく調べる_
 
@@ -44,7 +44,7 @@ _SkiaSharp の変換に、汎用性の高い変換行列に詳しく調べる_
 SKMatrix matrix = SKMatrix.MakeIdentity();
 ```
 
-`SKMatrix`既定のコンス トラクターは*いない*恒等行列を返します。 すべてゼロに設定するセルの行列を返します。 使用しないでください、`SKMatrix`コンス トラクターを手動でそれらのセルを設定しない場合。
+`SKMatrix`既定のコンストラクターは*いない*恒等行列を返します。 すべてゼロに設定するセルの行列を返します。 使用しないでください、`SKMatrix`コンストラクターを手動でそれらのセルを設定しない場合。
 
 SkiaSharp のグラフィカル オブジェクトをレンダリングするとき (x, y) の各ポイントが 3 番目の列では 1 - 1-3 でマトリックスを効果的に変換されます。
 
@@ -308,7 +308,7 @@ SKMatrix R = new SKMatrix();
 R.SetScaleTranslate(3, 3, 100, 100);
 ```
 
-これは 1 つの数回を安全に使用すると、`SKMatrix`コンス トラクター。 `SetScaleTranslate`メソッドは、行列の 9 つすべてのセルを設定します。 安全に使用でも、 `SKMatrix` 、静的コンス トラクター`Rotate`と`RotateDegrees`メソッド。
+これは 1 つの数回を安全に使用すると、`SKMatrix`コンストラクター。 `SetScaleTranslate`メソッドは、行列の 9 つすべてのセルを設定します。 安全に使用でも、 `SKMatrix` 、静的コンストラクター`Rotate`と`RotateDegrees`メソッド。
 
 ```csharp
 SKMatrix R = new SKMatrix();
@@ -324,7 +324,7 @@ SKMatrix.RotateDegrees(ref R, degrees, px, py);
 
 これらのメソッドは*いない*既存の変換を回転変換を連結します。 メソッドは、マトリックスのすべてのセルを設定します。 まったく同じ機能は、`MakeRotation`と`MakeRotationDegrees`メソッドがインスタンス化されないことを除いて、`SKMatrix`値。
 
-あるとします、`SKPath`オブジェクトを表示したいが、若干異なる方向の場合、または別の中心点がある場合です。 パスのすべての座標を変更するには呼び出すことによって、 [ `Transform` ](xref:SkiaSharp.SKPath.Transform(SkiaSharp.SKMatrix))メソッドの`SKPath`で、`SKMatrix`引数。 **パス変換**ページは、これを行う方法を示します。 [ `PathTransform` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/PathTransformPage.cs)クラスが参照、`HendecagramPath`フィールド内のオブジェクトがそのパスに変換を適用するが、コンス トラクターを使用します。
+あるとします、`SKPath`オブジェクトを表示したいが、若干異なる方向の場合、または別の中心点がある場合です。 パスのすべての座標を変更するには呼び出すことによって、 [ `Transform` ](xref:SkiaSharp.SKPath.Transform(SkiaSharp.SKMatrix))メソッドの`SKPath`で、`SKMatrix`引数。 **パス変換**ページは、これを行う方法を示します。 [ `PathTransform` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/PathTransformPage.cs)クラスが参照、`HendecagramPath`フィールド内のオブジェクトがそのパスに変換を適用するが、コンストラクターを使用します。
 
 ```csharp
 public class PathTransformPage : ContentPage
@@ -351,7 +351,7 @@ public class PathTransformPage : ContentPage
 
 `HendecagramPath`オブジェクトには、中心 (0, 0) し、星の 11 点をそのセンターによってすべての方向に 100 単位から外側に向かって拡張します。 これは、パスが正と負の値の両方の座標であることを意味します。 **パス変換** ページですべての正の座標を使用して 3 回として、大規模な星型で動作するが優先されます。 さらに、そのまま上のポイントの星の 1 つのポイントは望ましくありません。 代わりに、星の 1 つのポイントのまっすぐポイントします。 (星は 11 点があるため、されていない両方。)これは、星を 360 度回転 22 で割った値が必要です。
 
-コンス トラクターは、ビルド、`SKMatrix`オブジェクトを使用して 3 つの個別の変換から、`PostConcat`メソッド A、B、および C がのインスタンスを次のパターンで`SKMatrix`:
+コンストラクターは、ビルド、`SKMatrix`オブジェクトを使用して 3 つの個別の変換から、`PostConcat`メソッド A、B、および C がのインスタンスを次のパターンで`SKMatrix`:
 
 ```csharp
 SKMatrix matrix = A;
@@ -406,7 +406,7 @@ public class PathTransformPage : ContentPage
 
 [![](matrix-images/pathtransform-small.png "パスの変換 ページのスクリーン ショットをトリプル")](matrix-images/pathtransform-large.png#lightbox "パスに変換 ページの 3 倍になるスクリーン ショット")
 
-このプログラムのコンス トラクターでは、次の呼び出しを使用してパスに、マトリックスが適用されます。
+このプログラムのコンストラクターでは、次の呼び出しを使用してパスに、マトリックスが適用されます。
 
 ```csharp
 transformedPath.Transform(matrix);
@@ -487,7 +487,7 @@ public partial class ShowAffineMatrixPage : ContentPage
 }
 ```
 
-アフィン行列は、次の 3 つのポイントで一意に定義されます。 3 つ`TouchPoint`オブジェクトは、ビットマップの左、右上、左下隅に対応します。 アフィン行列は、四角形を平行四辺形に変換するための対応はのみであるために、他の 3 つが、4 番目のポイントが含まれます。 コンス トラクターの最後の呼び出しに`ComputeMatrix`のセルが計算される`SKMatrix`これら 3 つのポイントからのオブジェクト。
+アフィン行列は、次の 3 つのポイントで一意に定義されます。 3 つ`TouchPoint`オブジェクトは、ビットマップの左、右上、左下隅に対応します。 アフィン行列は、四角形を平行四辺形に変換するための対応はのみであるために、他の 3 つが、4 番目のポイントが含まれます。 コンストラクターの最後の呼び出しに`ComputeMatrix`のセルが計算される`SKMatrix`これら 3 つのポイントからのオブジェクト。
 
 `TouchAction`ハンドラーの呼び出し、`ProcessTouchEvent`メソッドをそれぞれ`TouchPoint`します。 `scale` Xamarin.Forms 座標から値がピクセルに変換します。
 
@@ -654,4 +654,4 @@ Z が 1、2 次元平面上に留まりますすべてが、`SkewXZ`と`SkewYZ`�
 ## <a name="related-links"></a>関連リンク
 
 - [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

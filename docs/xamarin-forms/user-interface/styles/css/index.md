@@ -8,16 +8,16 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/11/2019
-ms.openlocfilehash: c85dd8dbc654ee9c55248db1133135a2806f4bf2
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 5d4d7358ca6188f2528ea200f901823f04324ba3
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67829890"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68647480"
 ---
 # <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>カスケード スタイル シート (CSS) を使用した Xamarin.Forms アプリのスタイル設定
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/MonkeyAppCSS/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-monkeyappcss)
 
 _Xamarin.Forms では、カスケード スタイル シート (CSS) を使用した視覚要素のスタイリングをサポートします。_
 
@@ -76,7 +76,7 @@ Xamarin.Forms では、CSS スタイル シートはコンパイル時ではな�
 > [!NOTE]
 > 現時点では、XAML のスタイルを使ってできるすべてのスタイリングが、CSS で表現できるわけではありません。 しかし、XAML のスタイルは、Xamarin.Forms で現在サポートされていないプロパティの CSS を補足するために使用できます。 XAML のスタイルの詳細については、次を参照してください。[XAML スタイルを使った Xamarin.Forms アプリのスタイリング](~/xamarin-forms/user-interface/styles/xaml/index.md)。
 
-[MonkeyAppCSS](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/MonkeyAppCSS/) サンプルは、CSS を使用して簡単なアプリのスタイルを設定するデモで、次のスクリーン ショットのように表示されます。
+[MonkeyAppCSS](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-monkeyappcss) サンプルは、CSS を使用して簡単なアプリのスタイルを設定するデモで、次のスクリーン ショットのように表示されます。
 
 [![CSS スタイルのメイン ページを MonkeyApp](css-images/MonkeyAppMainPage.png "MonkeyApp のメイン ページで CSS スタイル")](css-images/MonkeyAppMainPage-Large.png#lightbox "CSS スタイルを持つ MonkeyApp メイン ページ")
 
@@ -187,7 +187,7 @@ stacklayout {
 このセレクタは、スタイルシートを適用したページ上のすべての [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) 要素を特定し、余白を均一20に設定します。
 
 > [!NOTE]
-> `element`セレクターは、指定した型のサブクラスを識別できません。
+> `element`セレクターは、指定された型のサブクラスを識別しません。
 
 ### <a name="selecting-elements-by-base-class"></a>基本クラスによる要素の選択
 
@@ -342,7 +342,7 @@ Xamarin.Forms では、次の CSS セレクターがサポートされていま�
 |`.class`|`.header`|`StyleClass` プロパティに `header` を含むすべての要素を選択します。 このセレクターは、大文字小文字を区別することに注意してください。|
 |`#id`|`#email`|`StyleId` に `email` が設定されているすべての要素を選択します。 `StyleId` が設定されていない場合は、`x:Name` でフォールバックします。 XAML を使用する場合は、`StyleId` より `x:Name`が優先されます。 このセレクターは、大文字小文字を区別することに注意してください。|
 |`*`|`*`|すべての要素を選択します。|
-|`element`|`label`|型の要素をすべて選択`Label`サブクラスではありませんが、します。 このセレクターは、大文字小文字を区別しないことに注意してください。|
+|`element`|`label`|型`Label`のすべての要素を選択しますが、サブクラスは選択しません。 このセレクターは、大文字小文字を区別しないことに注意してください。|
 |`^base`|`^contentpage`|基本クラスが `ContentPage` であるすべての要素を選択します。これには `ContentPage` 自体も含みます。 このセレクターは大文字と小文字を区別せず、また CSS の仕様の一部ではないことに注意してください。|
 |`element,element`|`label,button`|すべての `Button` 要素とすべての `Label` 要素を選択します。 このセレクターは、大文字小文字を区別しないことに注意してください。|
 |`element element`|`stacklayout label`|`StackLayout` 内のすべての `Label` 要素を選択します。 このセレクターは、大文字小文字を区別しないことに注意してください。|
@@ -428,7 +428,7 @@ Xamarin.Forms では次の CSS プロパティがサポートされています�
 
 さらに、`inherit` 値は存在しないため、継承はサポートされていません。 したがって、たとえば、`font-size` プロパティをレイアウトに設定し、そのレイアウト内のすべての [ `Label` ](xref:Xamarin.Forms.Label) インスタンスにその値が継承されることは期待できません。 1つの例外として、`direction` プロパティがあり、それは `inherit` の規定値を持ちます。
 
-### <a name="xamarinforms-specific-properties"></a>Xamarin.Forms の特定のプロパティ
+### <a name="xamarinforms-specific-properties"></a>Xamarin. フォーム固有のプロパティ
 
 次の Xamarin.Forms 特定 CSS プロパティがサポートされても (で、**値**列、型は_斜体_文字列リテラルは、 `gray`)。
 
@@ -447,9 +447,9 @@ Xamarin.Forms では次の CSS プロパティがサポートされています�
 |`-xf-thumb-color`|`Slider`|_color_ \| `initial` |`-xf-thumb-color: limegreen;`|
 |`-xf-spacing`|`StackLayout`|_double_ \| `initial` |`-xf-spacing: 8;`|
 
-### <a name="xamarinforms-shell-specific-properties"></a>Xamarin.Forms シェル固有のプロパティ
+### <a name="xamarinforms-shell-specific-properties"></a>Xamarin. フォームシェル固有のプロパティ
 
-次の Xamarin.Forms シェル特定 CSS プロパティがサポートされても (で、**値**列、型は_斜体_文字列リテラルは、 `gray`)。
+次の Xamarin. フォームシェル固有の CSS プロパティもサポートされています ( **[値]** 列では、型`gray`は_斜体_ですが、文字列リテラルは)。
 
 |プロパティ|対象|値|例|
 |---|---|---|---|
@@ -504,10 +504,10 @@ Xamarin.Forms では次の CSS プロパティがサポートされています�
 
 > [!VIDEO https://youtube.com/embed/va-Vb7vtan8]
 
-**Xamarin.Forms 3.0 CSS ビデオ**
+**Xamarin. Forms 3.0 CSS ビデオ**
 
 ## <a name="related-links"></a>関連リンク
 
-- [MonkeyAppCSS (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/MonkeyAppCSS/)
+- [MonkeyAppCSS (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-monkeyappcss)
 - [リソース ディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [XAML スタイルを使用した Xamarin.Forms アプリのスタイル設定](~/xamarin-forms/user-interface/styles/xaml/index.md)

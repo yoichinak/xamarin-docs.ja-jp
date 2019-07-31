@@ -1,96 +1,96 @@
 ---
-title: テーブルのパーツと Xamarin.iOS の機能
-description: このドキュメントでは、ios の UITableView のさまざまな部分について説明します。 セクションのヘッダー、セル、ページ フッターのセクションで、インデックス、および編集モードがについて説明します。
+title: Xamarin. iOS のテーブルパーツと機能
+description: このドキュメントでは、iOS の UITableView のさまざまな部分について説明します。 ここでは、セクションヘッダー、セル、セクションフッター、インデックス、および編集モードについて説明します。
 ms.prod: xamarin
 ms.assetid: B4139C8B-28F2-4C0F-297F-BF5432C5A915
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: c4d788cce12a9aabdd1170cd1a52915f3b30285f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: d6ad088f9223dccb1966148fe8f53d76e85040a6
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61200512"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68645601"
 ---
-# <a name="table-parts-and-functionality-in-xamarinios"></a>テーブルのパーツと Xamarin.iOS の機能
+# <a name="table-parts-and-functionality-in-xamarinios"></a>Xamarin. iOS のテーブルパーツと機能
 
-UITableView は、'グループ化された' または '標準' のスタイルを持つことができ、次の部分で構成されています。
+UITableView は、"グループ化" または "plain" スタイルを持つことができ、次の部分で構成されます。
 
--  [セクション ヘッダー](#Section_Header)
--  [セル](#Cells)(または行を使用する場合)
--  [セクションのフッター](#Section_Footer)
+-  [セクションヘッダー](#Section_Header)
+-  [セル](#Cells)(必要に応じて、または行)
+-  [セクションフッター](#Section_Footer)
 -  [Index](#Index)
--  [編集モード](#Edit_Features)('を削除するにはスワイプ' が含まれています行の順序を変更するハンドルをドラッグします)。 
+-  [編集モード](#Edit_Features)(行の順序を変更するために ' スワイプする ' とドラッグハンドルを含む) 
 
-これらのスクリーン ショットでは、セクションの行、ヘッダー、フッター、エディット コントロール、およびインデックスの表示方法を示します。
+これらのスクリーンショットは、セクション行、ヘッダー、フッター、編集コントロール、およびインデックスがどのように表示されるかを示しています。
 
- [![](table-parts-and-functionality-images/image1a.png "これらのスクリーン ショットは、セクションの行、ヘッダー、フッター、エディット コントロール、およびインデックスの表示方法を示します")](table-parts-and-functionality-images/image1a.png#lightbox)
+ [![](table-parts-and-functionality-images/image1a.png "これらのスクリーンショットは、セクション行、ヘッダー、フッター、編集コントロール、およびインデックスがどのように表示されるかを示しています。")](table-parts-and-functionality-images/image1a.png#lightbox)
 
-これらの部分は以下で詳しく説明します。
+これらの部分については、以下で詳しく説明します。
 
 <a name="Section_Header" />
 
-## <a name="section-header"></a>セクション ヘッダー
+## <a name="section-header"></a>セクションヘッダー
 
-セルことができます必要に応じてするセクションにグループ化、カスタム ヘッダー、ラベルが付いたやフッターとラベル付けします。 文字列値を持つヘッダーを設定することができますかの別のレイアウトやスタイルを許可するカスタム ビューを指定することができます。
+必要に応じて、セルをセクションにグループ化したり、カスタムヘッダーでラベル付けしたり、フッター付きでラベル付けしたりすることができます。 ヘッダーには文字列値を設定できます。または、別のレイアウトまたはスタイルを使用できるようにカスタムビューを指定することもできます。
 
 <a name="Cells" />
 
 ## <a name="cells"></a>セル
 
-セルは、テーブルの主なユーザー インターフェイス要素です。 正しく実装された場合、セルはメモリ効率を高めるため再利用します。 4 つの組み込みのセル スタイルがあるし、ストーリー ボードを使用する場合は、独自のカスタム セル – コードまたはデザイナーを作成することができます。
+セルは、テーブルのメインのユーザーインターフェイス要素です。 正しく実装されている場合、セルはメモリ効率のために再利用されます。 組み込みのセルスタイルは4つあります。また、コード内で、またはストーリーボードを使用する場合はデザイナーで独自のカスタムセルを作成することもできます。
 
 <a name="Section_Footer"/>
 
-## <a name="section-footer"></a>セクションのフッター
+## <a name="section-footer"></a>セクションフッター
 
-文字列値、省略可能なセクションのフッターを設定できますかの別のレイアウトやスタイルを許可するカスタム ビューを指定することができます。 セクション ヘッダーとフッターが個別に設定がないことができます。
+省略可能なセクションフッターは、文字列値を使用して設定できます。または、別のレイアウトまたはスタイルを使用できるようにカスタムビューを指定することもできます。 セクションのヘッダーとフッターは個別に設定できます。
 
 <a name="Index" />
 
 ## <a name="index"></a>インデックス
 
-インデックスは、下の表の右端の文字のストリップとして表示されます。
-手を加えることや、インデックスにドラッグすることは、テーブルの部分をスクロールを迅速化します。 インデックスは長い一覧の移動を支援することは推奨オプションです。 通常、インデックスは、グループ化されたスタイルは使用されません。
+インデックスは、テーブルの右端にある文字のストリップとして表示されます。
+インデックス上でタッチまたはドラッグすると、テーブルのその部分へのスクロールが高速化されます。 インデックスは省略可能ですが、長いリストを移動するために推奨されます。 通常、インデックスはグループ化されたスタイルでは使用されません。
 
 <a name="Edit_Features" />
 
 ## <a name="editing-mode"></a>編集モード
 
-使用可能なさまざまな編集機能のいくつかは。
+いくつかの異なる編集機能を使用できます。
 
-- 個々 のセルを削除するスワイプします。
-- 行ごとに delete ボタンを表示する編集モードに入る 
-- ハンドルの再注文を表示する編集モードに入ります。 
-- (アニメーション) を含む新しいセルを挿入します。
+- スワイプして個々のセルを削除します。
+- 編集モードに入り、各行の削除ボタンを表示します 
+- 再順序ハンドルを表示するための編集モードに入ります。 
+- 新しいセルの挿入 (アニメーションあり)。
 
-このドキュメントの残りの部分では、Xamarin.iOS でこれらすべての UITableView 機能を実装する方法を示します。
+このドキュメントの残りの部分では、これらすべての UITableView 機能を Xamarin. iOS で実装する方法について説明します。
 
 
 ## <a name="classes-overview"></a>クラスの概要
 
-テーブル ビューを表示するために使用する主なクラスを次に示します。
+テーブルビューの表示に使用される主なクラスを次に示します。
 
-[![](table-parts-and-functionality-images/classdiagram.png "テーブル ビューの表示に使用される主要クラスが次に示します")](table-parts-and-functionality-images/classdiagram.png#lightbox)
+[![](table-parts-and-functionality-images/classdiagram.png "テーブルビューを表示するために使用される主なクラスを次に示します。")](table-parts-and-functionality-images/classdiagram.png#lightbox)
 
-各クラスの目的は、次に示します。
+各クラスの目的は次のとおりです。
 
-- **UITableView** – スクロール コンテナー内のセルのコレクションを含むビュー。 テーブル ビューが画面全体を iPhone アプリで通常使用しますが、可能性があると拡大表示、iPad 上の一部として存在する (または、ポップ オーバーに表示されます)。 
-- **UITableViewCell** – テーブル ビューで 1 つのセル (または行) を表すビュー。 次の 4 つの組み込みのセルの種類がありますしでカスタム セル両方を作成することはC#または iOS デザイナー。 
-- **UITableViewSource** – Xamarin.iOS 排他テーブル、行の数など、行ごとのセルのビューを返す、行の選択とその他の多くのオプション機能の処理を表示するために必要なすべてのメソッドを提供する抽象クラス。 *する必要があります*サブクラス UITableView 作業を取得します。 
-- **NSIndexPath** – テーブル内のセルの位置を一意に識別する値を含む行とセクションのプロパティ。 
-- **UITableViewController** – をそのビューとテーブルのプロパティを使用してアクセスできる UITableView ハードコーディングを持つすぐ使用 UIViewController します。 
-- **UIViewController** – の表に、そのフレームを使用して任意の UIViewController の UITableView が適切に設定を追加する画面全体を占有しません。 
+- **Uitableview** –スクロールコンテナー内のセルのコレクションを含むビューです。 テーブルビューでは、通常、iPhone アプリで画面全体が使用されますが、iPad 上のより大きなビューの一部として存在する (または segue に表示される) ことがあります。 
+- **Uitableviewcell** –テーブルビュー内の1つのセル (または行) を表すビューです。 4つの組み込みのセル型があり、 C#または iOS Designer でカスタムセルを作成することができます。 
+- **Uitableviewsource** –テーブルを表示するために必要なすべてのメソッド (行数、各行のセルビューの返却、行の選択の処理、およびその他のオプション機能など) を提供する、非排他的抽象クラス。 UITableView を機能させるには、これをサブクラス化する*必要があり*ます。 
+- **Nsindexpath** –テーブル内のセルの位置を一意に識別する行とセクションのプロパティが含まれています。 
+- **Uitableviewcontroller** –すぐに使用できる uiviewcontroller。 uitableview がビューとしてハードコーディングされ、TableView プロパティを介してアクセスできます。 
+- **Uiviewcontroller** –テーブルが画面全体を占有していない場合は、フレームセットが適切に設定された UIViewController に UITableView を追加できます。 
 
-UITableViewSource には、Xamarin.iOS では使用できますが、通常必要のない次の 2 つクラスが置き換えられます。
+UITableViewSource は、次の2つのクラスを置き換えます。これらのクラスは引き続き Xamarin で使用できますが、通常は必要ありません。
 
-- **UITableViewDataSource** : は抽象クラスとして Xamarin.iOS でモデル化されて、OBJECTIVE-C プロトコル。 各セルだけでなくヘッダー、フッター、および行と、テーブル内のセクションの数に関する情報をビューにテーブルを提供するサブクラス化する必要があります。 
-- **UITableViewDelegate** – クラスとして Xamarin.iOS でモデル化されて、OBJECTIVE-C プロトコル。 選択した場合、編集機能とその他の省略可能なテーブル機能を処理します。 
+- **Uitableviewdatasource** – Xamarin. iOS で抽象クラスとしてモデル化されている、目標 C プロトコルです。 各セルのビューを含むテーブルと、テーブル内のヘッダー、フッター、および行とセクションの数に関する情報を提供するには、サブクラス化する必要があります。 
+- **Uitableviewdelegate** –クラスとして Xamarin. iOS でモデル化された、目標 C プロトコルです。 選択、機能の編集、およびその他のオプションのテーブル機能を処理します。 
 
-このドキュメントでは、例は UITableViewSource を使用して、すべてと、これら 2 つのクラスを無視します。 Objective C 例の Apple のドキュメントを参照できるようになりますがどのように (および Xamarin.iOS の UITableViewSource を代わりに使用できます) を把握するのに役立ちます参照にはためには、ここで説明します。
+このドキュメントでは、すべての例で UITableViewSource を使用し、これら2つのクラスを無視します。 ここでは、Apple のドキュメントに記載されているすべての目的 C の例でそれらを参照するため、ここで説明します。そのため、実行内容を理解しておくと便利です (また、Xamarin の UITableViewSource を使用することもできます)。
 
 ## <a name="related-links"></a>関連リンク
 
-- [WorkingWithTables (サンプル)](https://developer.xamarin.com/samples/monotouch/WorkingWithTables)
+- [WorkingWithTables (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/workingwithtables)

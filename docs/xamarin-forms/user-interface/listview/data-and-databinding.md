@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/30/2018
-ms.openlocfilehash: e53f6dce47dd7db60267d21c8d816ece554dc46c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 9855255464b32b99d78d7a1cdb24acce22d01648
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61320013"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68654758"
 ---
 # <a name="listview-data-sources"></a>ListView のデータ ソース
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/SwitchEntryTwoBinding)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-switchentrytwobinding)
 
 A [ `ListView` ](xref:Xamarin.Forms.ListView)データのリストを表示するためです。 データ、私たちが選択した項目にバインドする方法と、ListView の設定について説明します。
 
@@ -58,10 +58,6 @@ listView.ItemsSource = new string[]
   "monomodal",
   "mononucleosis"
 };
-
-//monochrome will not appear in the list because it was added
-//after the list was populated.
-listView.ItemsSource.Add("monochrome");
 ```
 
 ![](data-and-databinding-images/itemssource-simple.png "ListView 文字列の一覧を表示します。")
@@ -88,7 +84,7 @@ employees.Add(new Employee(){ DisplayName="Mr. Mono"});
 データ バインディングの詳細については、[データ バインディングの基礎](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)4 つの一部では、[記事シリーズを Xamarin.Forms XAML の基礎](~/xamarin-forms/xaml/xaml-basics/index.md)を参照してください。
 
 ### <a name="binding-cells"></a>セルのバインド
-内のオブジェクトのプロパティにバインドできるプロパティのセル (セルの子)、`ItemsSource`します。 たとえば、ListView を使用して、従業員の一覧を提供する可能性があります。
+内のオブジェクトのプロパティにバインドできるプロパティのセル (セルの子)、`ItemsSource`します。 たとえば、を`ListView`使用して従業員の一覧を表示できます。
 
 Employee クラス:
 
@@ -99,10 +95,12 @@ public class Employee
 }
 ```
 
-`ObservableCollection<Employee>` 作成され、設定、`ListView`の`ItemsSource`:
+が作成され、 `ListView`次の`ItemsSource`ように設定されます。 `ObservableCollection<Employee>`
 
 ```csharp
 ObservableCollection<Employee> employees = new ObservableCollection<Employee>();
+public ObservableCollection<Employee> Employees { get { return employees; }}
+
 public EmployeeListPage()
 {
   //defined in XAML to follow
@@ -131,11 +129,12 @@ public EmployeeListPage()
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-xmlns:constants="clr-namespace:XamarinFormsSample;assembly=XamarinFormsXamlSample"
-x:Class="XamarinFormsXamlSample.Views.EmployeeListPage"
-Title="Employee List">
-  <ListView x:Name="EmployeeView">
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:constants="clr-namespace:XamarinFormsSample;assembly=XamarinFormsXamlSample"
+             x:Class="XamarinFormsXamlSample.Views.EmployeeListPage"
+             Title="Employee List">
+  <ListView x:Name="EmployeeView"
+            ItemsSource="{Binding Employees}">
     <ListView.ItemTemplate>
       <DataTemplate>
         <TextCell Text="{Binding DisplayName}" />
@@ -145,11 +144,7 @@ Title="Employee List">
 </ContentPage>
 ```
 
-XAML でバインドされている可能性がありますが、バインドされたわかりやすいように、コードでのセットアップに注意してください。
-
-XAML の前のビットを定義、`ContentPage`を格納している、`ListView`します。 データ ソース、`ListView`経由で設定されている、`ItemsSource`属性。 内の各行のレイアウト、`ItemsSource`内で定義されて、`ListView.ItemTemplate`要素。
-
-これは、結果です。
+この XAML の例で`ContentPage`は、を`ListView`含むを定義します。 データ ソース、`ListView`経由で設定されている、`ItemsSource`属性。 の`ItemsSource`各行のレイアウトは、 `ListView.ItemTemplate`要素内で定義されます。 この結果、次のスクリーンショットが表示されます。
 
 ![](data-and-databinding-images/bound-data.png "データ バインディングを使用して ListView")
 
@@ -169,4 +164,4 @@ XAML の前のビットを定義、`ContentPage`を格納している、`ListVie
 
 ## <a name="related-links"></a>関連リンク
 
-- [2 つの方法 (サンプル) をバインド](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/SwitchEntryTwoBinding)
+- [2 つの方法 (サンプル) をバインド](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-switchentrytwobinding)

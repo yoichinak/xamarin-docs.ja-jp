@@ -1,33 +1,33 @@
 ---
-title: Xamarin.iOS での一時的な通知
-description: このドキュメントでは、Xamarin.iOS を使用して、一時的な通知と連携する方法について説明します。 IOS 12 で導入された、一時的な通知は、明示的なユーザーのアクセス許可がない通知の停止の通知を送信するアプリケーションを許可します。
+title: Xamarin. iOS での仮通知
+description: このドキュメントでは、Xamarin を使用して仮の通知を操作する方法について説明します。 IOS 12 で導入された一時的な通知により、アプリケーションは、明示的なユーザーアクセス許可なしに通知を送信できます。
 ms.prod: xamarin
 ms.assetid: 5DCB36B9-2637-48AE-8FC0-F6124F08AC48
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/04/2018
-ms.openlocfilehash: 434dd2e2ee7a0064b706872a228070c5114078c4
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 1b4cf7f2caee274f353afff89e30c2db96009c12
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61034776"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68652367"
 ---
-# <a name="provisional-notifications-in-xamarinios"></a>Xamarin.iOS での一時的な通知
+# <a name="provisional-notifications-in-xamarinios"></a>Xamarin. iOS での仮通知
 
-一時的な通知は、ユーザーの明示的な事前の同意なく通知を配信するアプリを許可します。 これらの通知は、サイレント モードで到着し、ユーザーがそれらの継続的配信の内外でのオプトインの前にプレビューできるように、通知センターにのみを表示します。
+仮通知を使用すると、ユーザーが明示的に事前に同意しなくても、アプリは通知を配信できます。 これらの通知は、通知センターにのみ表示され、ユーザーが継続的な配信をオプトインまたはオプトアウトする前にプレビューすることができます。
 
-通知センターでユーザーことができますかを指定ことアプリ provisional 通知の配信を停止、続行して仮、配信に目立つの配信を開始します。
+通知センターでは、一時的な通知の配信を停止するか、仮の配信を継続するか、またはより目立つように配信を開始するかをユーザーが指定できます。
 
-## <a name="sample-app-redgreennotifications"></a>サンプル アプリ:RedGreenNotifications
+## <a name="sample-app-redgreennotifications"></a>サンプルアプリ:RedGreenNotifications
 
-見て、 [RedGreenNotifications](https://developer.xamarin.com/samples/monotouch/iOS12/RedGreenNotifications)サンプル アプリは、一時的な通知を送信します。
+仮の通知を送信する[RedGreenNotifications](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-redgreennotifications)サンプルアプリを見てみましょう。
 
-## <a name="sending-provisional-notifications"></a>一時的な通知を送信します。
+## <a name="sending-provisional-notifications"></a>仮通知の送信
 
-一時的な通知を送信する提供`UNAuthorizationOptions.Provisional`にオプションとして、 [`RequestAuthorization`](xref:UserNotifications.UNUserNotificationCenter.RequestAuthorization*)
-メソッドの`UNUserNotificationCenter`:
+仮通知を送信するに`UNAuthorizationOptions.Provisional`は、のオプションとしてを指定します。[`RequestAuthorization`](xref:UserNotifications.UNUserNotificationCenter.RequestAuthorization*)
+`UNUserNotificationCenter`方法:
 
 ```csharp
 public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
@@ -41,13 +41,13 @@ public override bool FinishedLaunching(UIApplication application, NSDictionary l
 }
 ```
 
-ユーザー、著名な配信を一時的な通知を昇格する場合、`UNAuthorizationOptions`に渡される値`RequestAuthorization`新しい通知の配信設定が決定されます (上記のコードで`UNAuthorizationOptions.Alert`と`UNAuthorizationOptions.Sound`)。
+ユーザーが仮の通知を目立つ配信に昇格する`UNAuthorizationOptions`と、に`RequestAuthorization`渡される値によって、新しい通知配信設定が決定`UNAuthorizationOptions.Alert`さ`UNAuthorizationOptions.Sound`れます (上のコードでは、と)。
 
 ## <a name="related-links"></a>関連リンク
 
-- [サンプル アプリ – RedGreenNotifications](https://developer.xamarin.com/samples/monotouch/iOS12/RedGreenNotifications)
-- [Xamarin.iOS でのユーザー通知フレームワーク](~/ios/platform/user-notifications/index.md)
+- [サンプルアプリ– RedGreenNotifications](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-redgreennotifications)
+- [Xamarin. iOS のユーザー通知フレームワーク](~/ios/platform/user-notifications/index.md)
 - [UserNotifications (Apple)](https://developer.apple.com/documentation/usernotifications?language=objc)
-- [ユーザーへの通知 (WWDC 2018) の新機能新機能](https://developer.apple.com/videos/play/wwdc2018/710/)
-- [ユーザーへの通知 (WWDC 2017) の新機能新機能およびベスト プラクティス](https://developer.apple.com/videos/play/wwdc2017/708/)
-- [リモート通知 (Apple) を生成します。](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification)
+- [ユーザー通知の新機能 (WWDC 2018)](https://developer.apple.com/videos/play/wwdc2018/710/)
+- [ベストプラクティスとユーザー通知の新機能 (WWDC 2017)](https://developer.apple.com/videos/play/wwdc2017/708/)
+- [リモート通知の生成 (Apple)](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification)

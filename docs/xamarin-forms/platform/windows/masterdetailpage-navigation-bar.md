@@ -1,24 +1,24 @@
 ---
-title: Windows 上のナビゲーション バーの MasterDetailPage
-description: プラットフォーム仕様はカスタム レンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ利用できる機能の使用を可能にします。 この記事では、MasterDetailPage のナビゲーション バーを折りたたみます Windows プラットフォームに固有の使用方法について説明します。
+title: Windows 上の Masterのページナビゲーションバー
+description: プラットフォーム仕様はカスタム レンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ利用できる機能の使用を可能にします。 この記事では、Master詳細ページのナビゲーションバーを折りたたむ、Windows プラットフォーム固有のを使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 0E7436C9-FA3E-40CD-801C-3F7ED95C412D
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 4601aaefa09dcf5e3c4cf773ca9efff941547502
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: dc79421f7be3a35fe19f239fa24f6a14429953ac
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65924769"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656890"
 ---
-# <a name="masterdetailpage-navigation-bar-on-windows"></a>Windows 上のナビゲーション バーの MasterDetailPage
+# <a name="masterdetailpage-navigation-bar-on-windows"></a>Windows 上の Masterのページナビゲーションバー
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-このユニバーサル Windows プラットフォームのプラットフォーム固有のナビゲーション バーを縮小するために使用する[ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage)、設定によって、XAML で使用されると、 [ `MasterDetailPage.CollapseStyle` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.CollapseStyleProperty)と[ `MasterDetailPage.CollapsedPaneWidth`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.CollapsedPaneWidthProperty)添付プロパティ。
+このユニバーサル Windows プラットフォーム、 [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage)のナビゲーションバーを折りたたむために使用されます。 XAML では、プロパティ[`MasterDetailPage.CollapseStyle`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.CollapseStyleProperty)と[`MasterDetailPage.CollapsedPaneWidth`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.CollapsedPaneWidthProperty)添付プロパティを設定することによって使用されます。
 
 ```xaml
 <MasterDetailPage ...
@@ -48,6 +48,6 @@ page.On<Windows>().SetCollapseStyle(CollapseStyle.Partial).CollapsedPaneWidth(14
 
 ## <a name="related-links"></a>関連リンク
 
-- [プラットフォーム仕様 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [プラットフォーム仕様 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [プラットフォーム仕様の作成](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
-- [WindowsSpecific API](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)
+- [WindowsSpecific の API](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)

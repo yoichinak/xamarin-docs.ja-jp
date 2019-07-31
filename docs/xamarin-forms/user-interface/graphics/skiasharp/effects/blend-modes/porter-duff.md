@@ -7,16 +7,16 @@ ms.assetid: 57F172F8-BA03-43EC-A215-ED6B78696BB5
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
-ms.openlocfilehash: f988c16e933214b3ce737febb89d05a451eb2f14
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 60de4b8abc200ac7892838765210167f8a79dcfe
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61205897"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68645841"
 ---
 # <a name="porter-duff-blend-modes"></a>Porter Duff ブレンド モード
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 Thomas Porter と Tom Duff、Lucasfilm に作業している複合の代数を開発した後、Porter Duff blend モードと呼びます。 その用紙[_合成デジタル画像_](https://graphics.pixar.com/library/Compositing/paper.pdf) 1984 年 7 月号の発行された_コンピューター_グラフィックス_253 を 259 ページします。 これらの描画モード複合シーンにさまざまなイメージまとめての複合に不可欠です。
 
@@ -78,10 +78,10 @@ Skia という 14 モードを追加します`Modulate`に非常に似ていま�
 | `SrcIn`    |             | ソース       |        |
 | `DstIn`    |             | 保存先  |        |
 | `SrcOut`   |             |              | x      |
-| `DstOut`   | x           |              |        |
+| `DstOut`   | X           |              |        |
 | `SrcATop`  | x           | ソース       |        |
 | `DstATop`  |             | 保存先  | x      |
-| `Xor`      | x           |              | x      |
+| `Xor`      | X           |              | X      |
 | `Plus`     | x           | Sum          | x      |
 | `Modulate` |             | 製品      |        | 
 
@@ -279,11 +279,11 @@ canvas.Clear(SKColors.White);
 
 ## <a name="using-mattes-with-porter-duff"></a>Porter Duff でマットを使用します。
 
-**レンガ壁合成**ページは、クラシック合成タスクの例を示しています。画像を除去する必要がある背景ビットマップを含む、いくつかの情報を使用して組み立てする必要があります。 ここでは、 **SeatedMonkey.jpg**問題のある背景ビットマップを。
+**レンガの合成**のページには、従来の複合タスクの例が示されています。画像は、削除する必要がある背景を持つビットマップを含め、いくつかの部分から組み立てる必要があります。 ここでは、 **SeatedMonkey.jpg**問題のある背景ビットマップを。
 
 ![Monkey を装着](porter-duff-images/SeatedMonkey.jpg "Monkey の取り付け")
 
-合成、対応するための準備_マット_が作成されたイメージを表示する場合は黒と透明をそれ以外の場合は別のビットマップがあります。 このファイルの名前は**SeatedMonkeyMatte.png**でリソース間であり、**メディア**フォルダーで、 [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)サンプル:
+合成、対応するための準備_マット_が作成されたイメージを表示する場合は黒と透明をそれ以外の場合は別のビットマップがあります。 このファイルの名前は**SeatedMonkeyMatte.png**でリソース間であり、**メディア**フォルダーで、 [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプル:
 
 ![Monkey マット取り付けられている](porter-duff-images/SeatedMonkeyMatte.png "Monkey マット取り付けられています")
 
@@ -526,7 +526,7 @@ RGB 色はアルファ値で乗算済み。 たとえば場合、 **Sc**純粋�
 | `Plus`     | [Sa + Da、Sc + Dc] |
 | `Modulate` | [Sa·Da、Sc·Dc] | 
 
-これらの操作は簡単に分析するときに**Da**と**Sa**が 0 または 1 のいずれか。 たとえば、既定値`SrcOver`モードでは場合、 **Sa**し 0 の場合は、 **Sc**はも 0 の場合と、結果は **[Da, Dc]**、宛先アルファと色。 場合**Sa** 、結果は 1 に設定されて **[Sa, Sc]**、alpha のソースと色、または **[1, Sc]** します。
+これらの操作は簡単に分析するときに**Da**と**Sa**が 0 または 1 のいずれか。 たとえば、既定値`SrcOver`モードでは場合、 **Sa**し 0 の場合は、 **Sc**はも 0 の場合と、結果は **[Da, Dc]** 、宛先アルファと色。 場合**Sa** 、結果は 1 に設定されて **[Sa, Sc]** 、alpha のソースと色、または **[1, Sc]** します。
 
 `Plus`と`Modulate`モードは、新しい色が、ソースとターゲットの組み合わせに起因することで、他のユーザーとは少し異なります。 `Plus`バイトまたは浮動小数点のコンポーネントのいずれにも、モードを解釈できます。 **Porter Duff グリッド**ページのコピー先の色は、前に示した **(0xC0、0x80、0x00)** 元の色は **(0x00、0x80、0xC0)** します。 コンポーネントの各ペアが追加されますが、合計は 0 xff で固定されます。 結果は、色 **(0xC0、0 xff 0xC0)** します。 交差部分に示すように色です。
 
@@ -903,4 +903,4 @@ public partial class GradientTransitionsPage : ContentPage
 ## <a name="related-links"></a>関連リンク
 
 - [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

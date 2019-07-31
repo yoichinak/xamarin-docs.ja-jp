@@ -7,16 +7,16 @@ ms.assetid: 54A43F3D-9DA8-44A7-9AE4-7E3025129A0B
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/23/2017
-ms.openlocfilehash: 9bc320273df192f9daf2520f451601335731e7b0
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 2e9259bed6ad0ae5a926cb75ea74c1f379897220
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61189242"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68649285"
 ---
 # <a name="the-scale-transform"></a>スケール変換
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _SkiaSharp のスケール変換オブジェクトをさまざまなサイズを拡張するための検出します。_
 
@@ -102,7 +102,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-疑問に思うかもしれません。どのようにスケール ファクター影響から返される値、`MeasureText`メソッドの`SKPaint`でしょうか。 答えは：まったくありません。 `Scale` メソッドは、`SKCanvas`します。 行う何らかの処理は影響しません、`SKPaint`キャンバスで何かを表示するためにそのオブジェクトを使用するまでのオブジェクトします。
+次のようなことがあります。スケールファクターは、の`MeasureText` `SKPaint`メソッドから返される値にどのように影響しますか。 答えは：まったくありません。 `Scale` メソッドは、`SKCanvas`します。 行う何らかの処理は影響しません、`SKPaint`キャンバスで何かを表示するためにそのオブジェクトを使用するまでのオブジェクトします。
 
 ご覧のとおり、すべての後に描画、`Scale`比例して増加を呼び出します。
 
@@ -251,7 +251,7 @@ using (SKPaint strokePaint = new SKPaint
 
 [![](scale-images/anisotropicscaling-small.png "スケーリングの異方性ページのスクリーン ショットをトリプル")](scale-images/anisotropicscaling-large.png#lightbox "異方性スケール ページの 3 倍になるスクリーン ショット")
 
-別の方法を考えることができます、`Scale`と`Translate`呼び出しは、逆の順序で効果を確認します。`Translate`呼び出しは、キャンバスの左上隅に指向が完全に可視状態になるようにパスをシフトします。 `Scale`メソッドからは、そのスター左上隅に対して相対的に大きくします。
+`Scale` と`Translate`の呼び出しについて考えられるもう1つの方法は、逆の順序で効果を判断することです。この`Translate`呼び出しでは、パスが完全に表示されますが、キャンバスの左上隅に配置されるようになります。 `Scale`メソッドからは、そのスター左上隅に対して相対的に大きくします。
 
 実際には、星がキャンバスより少し大きいでことが表示されます。 問題は、ストロークの幅です。 `Bounds`プロパティの`SKPath`パスでエンコードされた座標のディメンションとは、プログラムの使用を拡張することを示します。 特定のストロークの幅と、パスが表示されると、表示されたパスは、キャンバスを超えています。
 
@@ -347,4 +347,4 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 ## <a name="related-links"></a>関連リンク
 
 - [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
