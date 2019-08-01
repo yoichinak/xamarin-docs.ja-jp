@@ -1,34 +1,34 @@
 ---
-title: スライダー、スイッチ、および Xamarin.iOS でセグメント付きコントロール
-description: このドキュメントでは、スライド、スイッチ、およびプログラムと iOS デザイナーの両方に、それらを操作する方法を説明する Xamarin.iOS のセグメント化されたコントロールについて説明します。
+title: Xamarin のスライダー、スイッチ、およびセグメント化されたコントロール
+description: このドキュメントでは、Xamarin のスライド、スイッチ、およびセグメント化されたコントロールについて説明します。プログラムと iOS Designer の両方で操作する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 85BF0EC8-E581-49CD-B9E7-98BE4C5A0F6B
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 7b66005ff64763d68dc6101985e514fa56cf896d
-ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
+ms.openlocfilehash: be4ae87600e533cdfdf39c204a8ef6af4682ec0c
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66827366"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655771"
 ---
-# <a name="sliders-switches-and-segmented-controls-in-xamarinios"></a>スライダー、スイッチ、および Xamarin.iOS でセグメント付きコントロール
+# <a name="sliders-switches-and-segmented-controls-in-xamarinios"></a>Xamarin のスライダー、スイッチ、およびセグメント化されたコントロール
 
 <a name="Sliders" />
 
 ## <a name="sliders"></a>スライダー
 
-スライダー コントロールには、数値の範囲内の単純な選択ができるようにします。 コントロールの既定値は 0 ~ 1 の値が、これらの制限をカスタマイズできます。
+スライダーコントロールを使用すると、範囲内の数値を簡単に選択できます。 コントロールの既定値は0と1の間の値ですが、これらの制限はカスタマイズできます。
 
- [![](slider-switch-segmented-controls-images/image25a.png "スライダー")](slider-switch-segmented-controls-images/image25a.png#lightbox)
+ [![](slider-switch-segmented-controls-images/image25a.png "Slider")](slider-switch-segmented-controls-images/image25a.png#lightbox)
 
-次のスクリーン ショットでは、デザイナーで編集できるプロパティを示します。
+次のスクリーンショットは、デザイナーで編集できるプロパティを示しています。
 
  [![](slider-switch-segmented-controls-images/image26a.png "スライダーのプロパティ")](slider-switch-segmented-controls-images/image25a.png#lightbox)
 
-次に示す、現在選択されている値を表示するハンドラーを配線を含め、コードでこれらの値を設定できます、`UILabel`コントロール。
+次に示すように、コードでこれらの値を設定できます。これには、 `UILabel`コントロールで現在選択されている値を表示するハンドラーの接続などがあります。
 
 ```csharp
 slider1.MinValue = -1;
@@ -37,7 +37,7 @@ slider1.Value = 0.5f; // the current value
 slider1.ValueChanged += (sender,e) => label1.Text = ((UISlider)sender).Value.ToString ();
 ```
 
-設定によって、スライダーの外観をカスタマイズすることもできます。
+スライダーの外観をカスタマイズするには、
 
 ```csharp
 slider1.ThumbTintColor = UIColor.Blue;
@@ -45,30 +45,30 @@ slider1.MinimumTrackTintColor = UIColor.Gray;
 slider1.MaximumTrackTintColor = UIColor.Green;
 ```
 
-カスタマイズしたスライダーのようになります。
+カスタマイズしたスライダーは次のようになります。
 
- [![](slider-switch-segmented-controls-images/image27a.png "カスタムのスライダー")](slider-switch-segmented-controls-images/image28a.png#lightbox)
+ [![](slider-switch-segmented-controls-images/image27a.png "カスタムスライダー")](slider-switch-segmented-controls-images/image28a.png#lightbox)
 
 > [!IMPORTANT]
-> 現時点では、[バグ](https://stackoverflow.com/a/19496179)原因、`ThumbTint`期待どおりに実行時に表示されません。 次のコード行を追加する**する前に**回避策としては、上記のコード。 [[ソース](https://stackoverflow.com/a/21396794)]。
+> 現在、[バグ](https://stackoverflow.com/a/19496179)が発生した`ThumbTint`ため、が実行時に期待どおりにレンダリングされません。 回避策として、上記のコードの**前に**次のコード行を追加できます。 [[ソース](https://stackoverflow.com/a/21396794)]:
 >
 > `slider1.SetThumbImage(UIImage.FromBundle("thumb.png"),UIControlState.Normal);`
 > 
-> 任意のイメージを使用するには、無効になり、これが配置されているかどうかを確認するよう_で_Resources ディレクトリとは、コードで呼び出されます。
+> オーバーライドされるイメージを使用できますが、リソースディレクトリ_に_配置され、コード内で呼び出されることを確認してください。
 
 <a name="Switch" />
 
-## <a name="switch"></a>切り替え
+## <a name="switch"></a>Switch
 
-iOS を使用して、`UISwitch`ブール値の入力で他のプラットフォームでラジオ ボタンを表すことができます。 ユーザーは移動することによって、コントロールを操作することができます、 *thumb*間、**オン/オフ**位置。
+iOS では`UISwitch` 、他のプラットフォームのラジオボタンで表すことができるブール型の入力としてを使用します。 ユーザーは、*つまみ*を**オン/オフ**の位置に移動することによって、コントロールを操作できます。
 
- [![](slider-switch-segmented-controls-images/image28a.png "スイッチ")](slider-switch-segmented-controls-images/image28a.png#lightbox)
+ [![](slider-switch-segmented-controls-images/image28a.png "切り替わり")](slider-switch-segmented-controls-images/image28a.png#lightbox)
 
-スイッチの外観をカスタマイズすることができます、 **Properties Pad**既定の状態を制御することが、デザイナーの**オン/オフの濃淡**色と**On/Off イメージ**. これは、次の図に示します。
+スイッチの外観は、デザイナーの**Properties Pad**でカスタマイズできます。これにより、既定の状態、**オン/オフの濃淡**の色、**オン/オフイメージ**を制御できます。 これを次の図に示します。
 
  [![](slider-switch-segmented-controls-images/image29a.png "スイッチのプロパティ")](slider-switch-segmented-controls-images/image29a.png#lightbox)
 
-スイッチのプロパティは、コードで設定することもできます、次のコードは、スイッチの既定値を表示する例`On`:
+スイッチのプロパティをコードで設定することもできます。たとえば、次のコードでは、スイッチに既定値の`On`が示されています。
 
 ```csharp
 switch1.On = true;
@@ -79,21 +79,21 @@ switch1.On = true;
 
 ## <a name="segmented-controls"></a>セグメント付きコントロール
 
-セグメント化されたコントロールは、オプションの数が少ない対話をユーザーに許可する適切な手段です。 水平方向に配置し、各セグメントは、個別のボタンとして機能します。 デザイナーを使用する場合、セグメント化されたコントロールは、「**ツールボックス > コントロール**、し、次の図のようになります。
+セグメント化されたコントロールは、ユーザーが少数のオプションと対話できるようにするための整理された方法です。 水平方向にレイアウトされ、各セグメントは個別のボタンとして機能します。 デザイナーを使用すると、セグメント化されたコントロールは **[ツールボックス > コントロール]** の下にあり、次の図のようになります。
 
- [![](slider-switch-segmented-controls-images/segmentedcontrol.png "セグメント化されたコントロール")](slider-switch-segmented-controls-images/segmentedcontrol.png#lightbox)
+ [![](slider-switch-segmented-controls-images/segmentedcontrol.png "セグメント化コントロール")](slider-switch-segmented-controls-images/segmentedcontrol.png#lightbox)
 
-次のようにデザイン サーフェイスでは、個別に選択するのには、各セグメントのデザイナーの一意の機能を使用できます。
+デザイナーの固有の機能を使用すると、次に示すように、デザイン画面で各セグメントを個別に選択できます。
 
- [![](slider-switch-segmented-controls-images/segmentedcontrolselection.png "セグメント化されたコントロール")](slider-switch-segmented-controls-images/segmentedcontrolselection.png#lightbox)
+ [![](slider-switch-segmented-controls-images/segmentedcontrolselection.png "セグメント化コントロール")](slider-switch-segmented-controls-images/segmentedcontrolselection.png#lightbox)
 
-これにより、各セグメントのプロパティをより正確に制御を使用するプロパティ パッドができます。 次のスクリーン ショットの編集可能なプロパティを確認できます。
+これにより、Properties Pad を使用して、各セグメントのプロパティをより厳密に制御できます。 編集可能なプロパティは、次のスクリーンショットで確認できます。
 
- [![](slider-switch-segmented-controls-images/segmentedcontrolproperties.png "セグメント化されたコントロール")](slider-switch-segmented-controls-images/segmentedcontrolproperties.png#lightbox)
+ [![](slider-switch-segmented-controls-images/segmentedcontrolproperties.png "セグメント化コントロール")](slider-switch-segmented-controls-images/segmentedcontrolproperties.png#lightbox)
 
-セグメント化されたコントロールのスタイルは iOS7、非推奨し、そのため、iOS7 アプリケーションでこのオプションを調整する効果はありませんに注意してください。
+セグメント化されたコントロールスタイルは iOS7 で非推奨とされているため、iOS7 アプリケーションでこのオプションを調整しても効果はありません。
 
 ## <a name="related-links"></a>関連リンク
 
-- [コントロール (サンプル)](https://developer.xamarin.com/samples/monotouch/Controls/)
-- [アラートのコント ローラー](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/alertcontroller)
+- [コントロール (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/controls)
+- [警告コントローラー](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/alertcontroller)

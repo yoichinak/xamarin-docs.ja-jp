@@ -1,6 +1,6 @@
 ---
 title: 複数ページの Xamarin.Forms アプリケーションでナビゲーションを実行する
-description: この記事では、複数のノートを格納できる、複数ページのアプリケーションに 1 つの注記を格納できるシングル ページ アプリケーションを有効にする方法について説明します。
+description: この記事では、1つのメモを複数ページアプリケーションに格納できるシングルページアプリケーションを、複数のメモを格納できるようにする方法について説明します。
 zone_pivot_groups: platform
 ms.topic: quickstart
 ms.prod: xamarin
@@ -9,59 +9,59 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/01/2019
-ms.openlocfilehash: 886527f6d4338ffbe7026bec536716bf844e3701
-ms.sourcegitcommit: 4b7a0ac33fc64516dd3d70bb68d9aa50e46b2dc5
+ms.openlocfilehash: 9ce02b4c6412eab1f4b1003b262573c59940286c
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "65997117"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68653793"
 ---
-# <a name="perform-navigation-in-a-multi-page-xamarinforms-application"></a>複数ページの Xamarin.Forms アプリケーションでのナビゲーションを実行します。
+# <a name="perform-navigation-in-a-multi-page-xamarinforms-application"></a>複数ページの Xamarin. フォームアプリケーションでナビゲーションを実行する
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/MultiPage/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-multipage/)
 
-このクイック スタートでは、学習する方法。
+このクイックスタートでは、次の方法について説明します。
 
-- Xamarin.Forms ソリューションに追加のページを追加します。
-- ページ間の移動を実行します。
-- ユーザー インターフェイス要素とそのデータ ソースの間でデータを同期するのにには、データ バインディングを使用します。
+- Xamarin. Forms ソリューションにページを追加します。
+- ページ間のナビゲーションを実行します。
+- ユーザーインターフェイス要素とそのデータソースとの間でデータを同期するには、データバインディングを使用します。
 
-このクイック スタート 1 つのページ クロスプラット フォーム-Xamarin.Forms アプリケーション、複数のノートを格納できる、複数ページのアプリケーションに 1 つの注記を格納できるを有効にする方法について説明します。 最終的なアプリケーションは、次のとおりです。
+このクイックスタートでは、1つのノートを複数ページアプリケーションに格納できる単一ページクロスプラットフォーム Xamarin. Forms アプリケーションを、複数のメモを格納できるようにする方法について説明します。 最終的なアプリケーションは、次のとおりです。
 
-[![](multi-page-images/screenshots1-sml.png "ページをノート")](multi-page-images/screenshots1.png#lightbox "ページをノート")
-[![](multi-page-images/screenshots2-sml.png "エントリ ページに注意してください")](multi-page-images/screenshots2.png#lightbox "に注意してくださいエントリ ページ")
+[メモ] ページ[ ![(multi-page-images/screenshots1-sml.png " ")]][(multi-page-images/screenshots1.png#lightbox "メモ] ページ")メモ入力ページの(multi-page-images/screenshots2.png#lightbox "メモ入力ページ") [ ![(multi-page-images/screenshots2-sml.png " ")]] 
+
 
 ### <a name="prerequisites"></a>必須コンポーネント
 
-正常に完了する必要があります、[前のクイック スタート](single-page.md)このクイック スタートを試行する前にします。 または、ダウンロード、[前のクイック スタート サンプル](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/SinglePage/)し、このクイック スタートの開始点として使用します。
+このクイックスタートを試行する前に、[前のクイックスタート](single-page.md)を正常に完了している必要があります。 または、[前のクイックスタートサンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-singlepage/)をダウンロードし、このクイックスタートの出発点として使用してください。
 
 ::: zone pivot="windows"
 
 ## <a name="update-the-app-with-visual-studio"></a>Visual Studio でアプリを更新する
 
-1. Visual Studio を起動します。 [開始] ウィンドウ、**ノート**最近使ったプロジェクトおよびソリューションの一覧、またはクリックでソリューション**プロジェクトまたはソリューションを開く**、し、**プロジェクト/ソリューションを開く**ダイアログノートのプロジェクトのソリューション ファイルを選択します。
+1. Visual Studio を起動します。 [スタート] ウィンドウで、[最近使ったプロジェクト/ソリューション] の一覧で [ **note** ] ソリューションをクリックするか、[**プロジェクトまたはソリューション**を開く] をクリックします。次に、[**プロジェクト/ソリューションを開く**] ダイアログで、メモプロジェクトのソリューションファイルを選択します。
 
     ![](multi-page-images/vs/open-solution.png "プロジェクトを開く")
 
-2. **ソリューション エクスプ ローラー**を右クリックし、**ノート**順に選択して**追加 > 新しいフォルダー**:
+2. **ソリューションエクスプローラー**で、**メモ**プロジェクトを右クリックし、[ **> 新しいフォルダーの追加**] を選択します。
 
     ![](multi-page-images/vs/add-new-item.png "新しい項目の追加")
 
-3. **ソリューション エクスプ ローラー**、新しいフォルダーの名前**モデル**:
+3. **ソリューションエクスプローラー**で、新しいフォルダー**モデル**にという名前を指定します。
 
-    ![](multi-page-images/vs/name-folder.png "[Models] フォルダー")
+    ![](multi-page-images/vs/name-folder.png "モデルフォルダー")
 
-4. **ソリューション エクスプ ローラー**を選択、**モデル**フォルダーを右クリックし、**追加 > 新しい項目.**:
+4. **ソリューションエクスプローラー**で、[**モデル**] フォルダーを選択し、右クリックして、[**新しい項目の追加 >** ] を選択します。
 
     ![](multi-page-images/vs/add-new-models-file.png "新しいファイルの追加")
 
-5. **新しい項目の追加**ダイアログ ボックスで、 **VisualC#項目 > クラス**、新しいファイルに名前**注**、 をクリックし、**追加**ボタン。
+5. [**新しい項目の追加**] ダイアログで、[**ビジュアルC#項目 > クラス**] を選択し、新しいファイルに「 **Note**」という名前を指定して、[**追加**] ボタンをクリックします。
 
-    ![](multi-page-images/vs/add-note-class.png "注クラスを追加します。")
+    ![](multi-page-images/vs/add-note-class.png "Note クラスの追加")
 
-    これがという名前のクラスに追加されます**注**を**モデル**のフォルダー、**ノート**プロジェクト。
+    これにより、 **note**という名前のクラスが**Notes**プロジェクトの [**モデル**] フォルダーに追加されます。
 
-6. **Note.cs**すべてのテンプレート コードを削除し、次のコードに置き換えます。
+6. **Note.cs**で、すべてのテンプレートコードを削除し、次のコードに置き換えます。
 
     ```csharp
     using System;
@@ -77,17 +77,17 @@ ms.locfileid: "65997117"
     }
     ```
 
-    このクラスを定義、`Note`アプリケーションで各メモに関するデータを格納するモデル。    
+    このクラスは、 `Note`アプリケーションの各メモに関するデータを格納するモデルを定義します。    
 
-    変更を保存**Note.cs**キーを押して**CTRL + S**ファイルを閉じます。
+    **CTRL + S**キーを押して**Note.cs**への変更内容を保存し、ファイルを閉じます。
 
-7. **ソリューション エクスプ ローラー**を右クリックし、**ノート**順に選択して**追加 > [新しい項目.**.**新しい項目の追加**ダイアログ ボックスで、 **VisualC#項目 > Xamarin.Forms > コンテンツ ページ**、新しいファイルに名前**NoteEntryPage**、] をクリックし、 **追加**ボタンをクリックします。
+7. **ソリューションエクスプローラー**で、**メモ**プロジェクトを右クリックし、[ **> 新しい項目の追加**] を選択します。[**新しい項目の追加**] ダイアログで、[**ビジュアルC#項目 > Xamarin. Forms > コンテンツ] ページ**を選択し、新しいファイルに**NoteEntryPage**という名前を指定して、[**追加**] ボタンをクリックします。
 
-    ![](multi-page-images/vs/add-note-entry-page.png "Xamarin.Forms ContentPage を追加します。")
+    ![](multi-page-images/vs/add-note-entry-page.png "Xamarin. Forms ContentPage の追加")
 
-    これはという名前の新しいページを追加**NoteEntryPage**プロジェクトのルート フォルダーにします。 このページは、アプリケーションでは、2 番目のページになります。
+    これにより、 **NoteEntryPage**という名前の新しいページがプロジェクトのルートフォルダーに追加されます。 このページは、アプリケーションの2番目のページになります。
 
-8. **NoteEntryPage.xaml**すべてのテンプレート コードを削除し、次のコードに置き換えます。
+8. **NoteEntryPage**で、すべてのテンプレートコードを削除し、次のコードに置き換えます。
 
       ```xaml
       <?xml version="1.0" encoding="UTF-8"?>
@@ -114,11 +114,11 @@ ms.locfileid: "65997117"
       </ContentPage>
       ```
 
-      このコードで構成されると、ページのユーザー インターフェイスを宣言によって定義されます、 [ `Editor` ](xref:Xamarin.Forms.Editor)テキストの入力と 2 つの[ `Button` ](xref:Xamarin.Forms.Button)の保存または削除するには、アプリケーション インスタンスファイルです。 2 つ`Button`インスタンスが水平方向にレイアウトを[ `Grid`](xref:Xamarin.Forms.Grid)で、`Editor`と`Grid`に垂直方向にレイアウトされる、 [ `StackLayout`](xref:Xamarin.Forms.StackLayout)します。 さらに、`Editor`にバインドするデータ バインドを使用して、`Text`のプロパティ、`Note`モデル。 データ バインディングの詳細については、次を参照してください。[データ バインディング](deepdive.md#data-binding)で、 [Xamarin.Forms クイック スタートの Deep Dive](deepdive.md)します。
+      このコードは、ページのユーザーインターフェイスを宣言[`Editor`](xref:Xamarin.Forms.Editor)によって定義します。これは、テキスト入力用のと、アプリケーションにファイルの保存または削除を指示する2つ[`Button`](xref:Xamarin.Forms.Button)のインスタンスで構成されます。 2つ`Button`のインスタンスは、で水平方向[`Grid`](xref:Xamarin.Forms.Grid)にレイアウト`Editor` `Grid`され、で水平方向[`StackLayout`](xref:Xamarin.Forms.StackLayout)にレイアウトされます。 さらに、は`Editor` 、データバインディングを使用して`Text` 、 `Note`モデルのプロパティにバインドします。 データバインディングの詳細については、「 [Xamarin](deepdive.md)の概要」の「[データバインディング](deepdive.md#data-binding)」を参照してください。
 
-      変更を保存**NoteEntryPage.xaml**キーを押して**CTRL + S**ファイルを閉じます。
+      **CTRL + S**キーを押して**NoteEntryPage**への変更内容を保存し、ファイルを閉じます。
 
-9. **NoteEntryPage.xaml.cs**すべてのテンプレート コードを削除し、次のコードに置き換えます。
+9. **NoteEntryPage.xaml.cs**で、すべてのテンプレートコードを削除し、次のコードに置き換えます。
 
       ```csharp
       using System;
@@ -169,18 +169,18 @@ ms.locfileid: "65997117"
       }
       ```
 
-      このコードを格納、`Note`インスタンスで 1 つの注記を表す、 [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)のページ。 ときに、**保存** [ `Button` ](xref:Xamarin.Forms.Button)が押された、`OnSaveButtonClicked`イベント ハンドラーが実行の内容を保存するか、 `Editor` 、ランダムに生成されたファイル名を持つ新しいファイルまたはメモを更新します。 存在する場合は、既存のファイルをします。 どちらの場合で、ファイルは、アプリケーションのローカル アプリケーション データ フォルダーに格納されます。 メソッドは、前のページに移動します。 ときに、**削除**`Button`が押された、`OnDeleteButtonClicked`イベント ハンドラーを実行すると、それが存在し、前のページにナビゲートされるファイルを削除します。 ナビゲーションの詳細については、次を参照してください。[ナビゲーション](deepdive.md#navigation)で、 [Xamarin.Forms クイック スタートの Deep Dive](deepdive.md)します。
+      このコードは、 `Note`ページ[`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)の内に1つのノートを表すインスタンスを格納します。 `Editor` **保存** [`Button`](xref:Xamarin.Forms.Button)を押す`OnSaveButtonClicked`と、イベントハンドラーが実行されます。これにより、の内容がランダムに生成されたファイル名を持つ新しいファイルに保存されるか、またはメモが更新されている場合は既存のファイルに保存されます。 どちらの場合も、ファイルはアプリケーションのローカルアプリケーションデータフォルダーに格納されます。 次に、メソッドは前のページに戻ります。 **削除** `Button`が押さ`OnDeleteButtonClicked`れると、イベントハンドラーが実行されます。これにより、ファイルが存在する場合は削除され、前のページに戻ります。 ナビゲーションの詳細については、「 [Xamarin のクイックスタート](deepdive.md)の[ナビゲーション](deepdive.md#navigation)」を参照してください。
 
-      変更を保存**NoteEntryPage.xaml.cs**キーを押して**CTRL + S**ファイルを閉じます。
+      **CTRL + S**キーを押して**NoteEntryPage.xaml.cs**への変更内容を保存し、ファイルを閉じます。
 
       > [!WARNING]
-      > この時点でアプリケーションをビルドしようとすると、以降の手順で修正されるエラーが発生します。
+      > この時点でアプリケーションをビルドしようとすると、後続の手順で修正されるエラーが発生します。
 
-10. **ソリューション エクスプ ローラー**を右クリックし、**ノート**順に選択して**追加 > [新しい項目.**.**新しい項目の追加**ダイアログ ボックスで、 **VisualC#項目 > Xamarin.Forms > コンテンツ ページ**、新しいファイルに名前**NotesPage**、] をクリックし、**追加**ボタンをクリックします。
+10. **ソリューションエクスプローラー**で、**メモ**プロジェクトを右クリックし、[ **> 新しい項目の追加**] を選択します。[**新しい項目の追加**] ダイアログで、[**ビジュアルC#項目 > Xamarin. Forms > コンテンツ] ページ**を選択し、新しいファイルに「**ノート**」という名前を指定して、[**追加**] ボタンをクリックします。
 
-      これがという名前のページに追加されます**NotesPage**プロジェクトのルート フォルダーにします。 このページは、アプリケーションのルート ページになります。
+      これにより、プロジェクトのルートフォルダーに [**ノート] ページ**という名前のページが追加されます。 このページは、アプリケーションのルートページになります。
 
-11. **NotesPage.xaml**すべてのテンプレート コードを削除し、次のコードに置き換えます。
+11. [ファイル **] [.xaml**] で、すべてのテンプレートコードを削除し、次のコードに置き換えます。
 
     ```xaml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -205,11 +205,11 @@ ms.locfileid: "65997117"
     </ContentPage>
     ```
 
-    このコードで構成されると、ページのユーザー インターフェイスを宣言によって定義されます、 [ `ListView` ](xref:Xamarin.Forms.ListView)と[ `ToolbarItem`](xref:Xamarin.Forms.ToolbarItem)します。 `ListView`使用データ、アプリケーションによって取得されるメモを表示するバインディングと、メモしてを選択するに移動、`NoteEntryPage`メモを変更できます。 新しいメモを作成して、キーを押しても、`ToolbarItem`します。 データ バインディングの詳細については、次を参照してください。[データ バインディング](deepdive.md#data-binding)で、 [Xamarin.Forms クイック スタートの Deep Dive](deepdive.md)します。
+    このコードは、 [`ListView`](xref:Xamarin.Forms.ListView) [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem)とで構成されるページのユーザーインターフェイスを宣言によって定義します。 は`ListView` 、データバインディングを使用して、アプリケーションによって取得されるすべてのメモを表示します`NoteEntryPage` 。メモを選択すると、ノートを変更できる場所に移動します。 または、 `ToolbarItem`を押して新しいメモを作成することもできます。 データバインディングの詳細については、「 [Xamarin](deepdive.md)の概要」の「[データバインディング](deepdive.md#data-binding)」を参照してください。
 
-    変更を保存**NotesPage.xaml**キーを押して**CTRL + S**ファイルを閉じます。
+    **CTRL + S**キーを押して、変更内容を [**ノート] ページ**に保存し、ファイルを閉じます。
 
-12. **NotesPage.xaml.cs**すべてのテンプレート コードを削除し、次のコードに置き換えます。
+12. **NotesPage.xaml.cs**で、すべてのテンプレートコードを削除し、次のコードに置き換えます。
 
     ```csharp
     using System;
@@ -272,14 +272,14 @@ ms.locfileid: "65997117"
     }
     ```    
 
-    このコードの機能を定義する、`NotesPage`します。 ページが表示されたら、`OnAppearing`メソッドの実行を設定します、 [ `ListView` ](xref:Xamarin.Forms.ListView)メモをローカル アプリケーション データ フォルダーから取得されたとします。 ときに、 [ `ToolbarItem` ](xref:Xamarin.Forms.ToolbarItem)が押された、`OnNoteAddedClicked`イベント ハンドラーが実行されます。 このメソッドに移動、`NoteEntryPage`で、設定、 [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)の`NoteEntryPage`を新しい`Note`インスタンス。 内の項目のときに、`ListView`が選択されている、`OnListViewItemSelected`イベント ハンドラーが実行されます。 このメソッドに移動、`NoteEntryPage`で、設定、 [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)の`NoteEntryPage`に、選択した`Note`インスタンス。 ナビゲーションの詳細については、次を参照してください。[ナビゲーション](deepdive.md#navigation)で、 [Xamarin.Forms クイック スタートの Deep Dive](deepdive.md)します。
+    このコードは、 `NotesPage`の機能を定義します。 このページが表示さ`OnAppearing`れると、メソッドが実行され、ローカルアプリケーションデータフォルダーから取得したすべての[`ListView`](xref:Xamarin.Forms.ListView)メモがに設定されます。 が押されると、 `OnNoteAddedClicked`イベントハンドラーが実行されます。 [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem) このメソッドは、に`NoteEntryPage`移動し、 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)の`NoteEntryPage`を新しい`Note`インスタンスに設定します。 の`ListView`項目が選択されると、 `OnListViewItemSelected`イベントハンドラーが実行されます。 このメソッドは、に`NoteEntryPage`移動し、 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)の`NoteEntryPage`を選択した`Note`インスタンスに設定します。 ナビゲーションの詳細については、「 [Xamarin のクイックスタート](deepdive.md)の[ナビゲーション](deepdive.md#navigation)」を参照してください。
 
-    変更を保存**NotesPage.xaml.cs**キーを押して**CTRL + S**ファイルを閉じます。
+    **CTRL + S**キーを押して**NotesPage.xaml.cs**への変更内容を保存し、ファイルを閉じます。
 
     > [!WARNING]
-    > この時点でアプリケーションをビルドしようとすると、以降の手順で修正されるエラーが発生します。
+    > この時点でアプリケーションをビルドしようとすると、後続の手順で修正されるエラーが発生します。
 
-13. **ソリューション エクスプ ローラー**、ダブルクリックして**App.xaml.cs**を開きます。 既存のコードを次のコードに置き換えます。
+13. **ソリューションエクスプローラー**で、[ **App.xaml.cs** ] をダブルクリックして開きます。 次に、既存のコードを次のコードに置き換えます。
 
     ```csharp
     using System;
@@ -303,48 +303,48 @@ ms.locfileid: "65997117"
     }
     ```
 
-    このコードは、名前空間宣言を追加、`System.IO`名前空間の静的な宣言を追加します。`FolderPath`型のプロパティ`string`。 `FolderPath`注データが格納されるデバイス上のパスを格納するプロパティが使用されます。 さらに、コードを初期化します、`FolderPath`プロパティ、`App`コンス トラクター、および初期化、 [ `MainPage` ](xref:Xamarin.Forms.Application.MainPage)プロパティを[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)をホストする、インスタンス`NotesPage`します。 ナビゲーションの詳細については、次を参照してください。[ナビゲーション](deepdive.md#navigation)で、 [Xamarin.Forms クイック スタートの Deep Dive](deepdive.md)します。
+    このコードは、 `System.IO`名前空間の名前空間宣言を追加し、型`string`の静的`FolderPath`プロパティの宣言を追加します。 `FolderPath`プロパティは、ノートデータが格納されるデバイス上のパスを格納するために使用されます。 さらに、この`FolderPath`コードは`App` [`MainPage`](xref:Xamarin.Forms.Application.MainPage)コンストラクターでプロパティを初期化し、プロパティを初期化して、 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage)の`NotesPage`インスタンスをホストするとします。 ナビゲーションの詳細については、「 [Xamarin のクイックスタート](deepdive.md)の[ナビゲーション](deepdive.md#navigation)」を参照してください。
 
     **CTRL + S** を押し、**App.xaml.cs** への変更内容を保存してから、ファイルを閉じます。
 
-14. **ソリューション エクスプ ローラー**の**ノート**プロジェクトを右クリックして**MainPage.xaml**を選択し、**削除**します。 キーを押して表示されるダイアログで、 **OK**ハード_ディスクからファイルを削除するボタン。
+14. **ソリューションエクスプローラー**の**Notes**プロジェクトで、 **mainpage.xaml**を右クリックし、[**削除**] を選択します。 表示されるダイアログで、 **[OK** ] をクリックして、ハードディスクからファイルを削除します。
 
-    これには、不要になったために使用されるページが削除されます。
+    これにより、使用されなくなったページが削除されます。
 
-15. 構築し、各プラットフォームで、プロジェクトを実行します。 詳細については、次を参照してください。[クイック スタートを構築](single-page.md#building-the-quickstart)します。
+15. 各プラットフォームでプロジェクトをビルドして実行します。 詳細については、「[クイックスタートのビルド](single-page.md#building-the-quickstart)」を参照してください。
 
-    **NotesPage**キーを押して、 **+** に移動するボタン、 **NoteEntryPage**メモを入力します。 移動は、アプリケーションのメモの保存後、 **NotesPage**します。
+    [**ノート] ページ**で、 **+** ボタンを押して**NoteEntryPage**に移動し、メモを入力します。 メモを保存すると、アプリケーションは [ノート **] ページ**に戻ります。
 
-    ノートについては、アプリケーションの動作を確認する、さまざまな長さの数を入力します。
+    さまざまな長さのメモを入力して、アプリケーションの動作を観察します。
 
 ::: zone-end
 ::: zone pivot="macos"
 
 ## <a name="update-the-app-with-visual-studio-for-mac"></a>Visual Studio for Mac でアプリを更新する
 
-1. Visual Studio for Mac を起動します。 開始時間帯でクリックして**オープン**、ダイアログ ボックスで、ノートのプロジェクトのソリューション ファイルを選択します。
+1. Visual Studio for Mac を起動します。 [スタート] ウィンドウで [**開く**] をクリックし、ダイアログボックスで、メモプロジェクトのソリューションファイルを選択します。
 
     ![](multi-page-images/vsmac/open-solution.png "ソリューションを開く")
 
-2. **Solution Pad**を選択、**ノート**プロジェクトを右クリックし、**追加 > 新しいフォルダー**:
+2. **Solution Pad**で、**メモ**プロジェクトを選択して右クリックし、[ **> 新しいフォルダーの追加**] を選択します。
 
-    ![](multi-page-images/vsmac/add-new-folder.png "新しいフォルダーを追加します。")
+    ![](multi-page-images/vsmac/add-new-folder.png "新しいフォルダーの追加")
 
-3. **Solution Pad**、新しいフォルダーの名前**モデル**:
+3. **Solution Pad**で、新しいフォルダー**モデル**にという名前を指定します。
 
-    ![](multi-page-images/vsmac/name-folder.png "[Models] フォルダー")
+    ![](multi-page-images/vsmac/name-folder.png "モデルフォルダー")
 
-4. **Solution Pad**を選択、**モデル**フォルダーを右クリックし、**追加 > 新しいファイル.**:
+4. **Solution Pad**で、[**モデル**] フォルダーを選択し、右クリックして、[**新しいファイルを追加 >** ] を選択します。
 
     ![](multi-page-images/vsmac/add-new-models-file.png "新しいファイルの追加")
 
-5. **新しいファイル**ダイアログ ボックスで、**一般的な > 空のクラス**、新しいファイルに名前を**注**、 をクリックし、**新規**ボタン。
+5. [**新しいファイル**] ダイアログで、 **[全般 > 空のクラス**] を選択し、新しいファイルに「 **Note**」という名前を指定して、[**新規**] ボタンをクリックします。
 
-    ![](multi-page-images/vsmac/add-note-class.png "注クラスを追加します。")
+    ![](multi-page-images/vsmac/add-note-class.png "Note クラスの追加")
 
-    これがという名前のクラスに追加されます**注**を**モデル**のフォルダー、**ノート**プロジェクト。
+    これにより、 **note**という名前のクラスが**Notes**プロジェクトの [**モデル**] フォルダーに追加されます。
 
-6. **Note.cs**すべてのテンプレート コードを削除し、次のコードに置き換えます。
+6. **Note.cs**で、すべてのテンプレートコードを削除し、次のコードに置き換えます。
 
     ```csharp
     using System;
@@ -360,17 +360,17 @@ ms.locfileid: "65997117"
     }
     ```
 
-    このクラスを定義、`Note`アプリケーションで各メモに関するデータを格納するモデル。
+    このクラスは、 `Note`アプリケーションの各メモに関するデータを格納するモデルを定義します。
 
-    変更を保存**Note.cs**を選択して**ファイル > 保存**(またはキーを押して **&#8984; + S**)、ファイルを閉じます。
+    [**ファイル > 保存**] を選択し (または **&#8984; + S**キーを押して)、 **Note.cs**への変更内容を保存してから、ファイルを閉じます。
 
-7. **Solution Pad**を選択、**ノート**プロジェクトを右クリックし、**追加 > 新しいファイル.**.**新しいファイル**ダイアログ ボックスで、**フォーム > フォーム ContentPage XAML**、新しいファイルに名前**NoteEntryPage**、 をクリックし、**新規**ボタン。
+7. **Solution Pad**で、**メモ**プロジェクトを選択し、右クリックして、[ **> 新しいファイルの追加**] を選択します。[**新しいファイル**] ダイアログで、 **[フォーム > フォーム ContentPage XAML**] を選択し、新しいファイルに**NoteEntryPage**という名前を指定して、[**新規**] ボタンをクリックします。
 
-    ![](multi-page-images/vsmac/add-note-entry-page.png "Xamarin.Forms ContentPage を追加します。")
+    ![](multi-page-images/vsmac/add-note-entry-page.png "Xamarin. Forms ContentPage の追加")
 
-    これはという名前の新しいページを追加**NoteEntryPage**プロジェクトのルート フォルダーにします。 このページは、アプリケーションでは、2 番目のページになります。
+    これにより、 **NoteEntryPage**という名前の新しいページがプロジェクトのルートフォルダーに追加されます。 このページは、アプリケーションの2番目のページになります。
 
-8. **NoteEntryPage.xaml**すべてのテンプレート コードを削除し、次のコードに置き換えます。
+8. **NoteEntryPage**で、すべてのテンプレートコードを削除し、次のコードに置き換えます。
 
       ```xaml
       <?xml version="1.0" encoding="UTF-8"?>
@@ -397,11 +397,11 @@ ms.locfileid: "65997117"
       </ContentPage>
       ```
 
-      このコードで構成されると、ページのユーザー インターフェイスを宣言によって定義されます、 [ `Editor` ](xref:Xamarin.Forms.Editor)テキストの入力と 2 つの[ `Button` ](xref:Xamarin.Forms.Button)の保存または削除するには、アプリケーション インスタンスファイルです。 2 つ`Button`インスタンスが水平方向にレイアウトを[ `Grid`](xref:Xamarin.Forms.Grid)で、`Editor`と`Grid`に垂直方向にレイアウトされる、 [ `StackLayout`](xref:Xamarin.Forms.StackLayout)します。 さらに、`Editor`にバインドするデータ バインドを使用して、`Text`のプロパティ、`Note`モデル。 データ バインディングの詳細については、次を参照してください。[データ バインディング](deepdive.md#data-binding)で、 [Xamarin.Forms クイック スタートの Deep Dive](deepdive.md)します。
+      このコードは、ページのユーザーインターフェイスを宣言[`Editor`](xref:Xamarin.Forms.Editor)によって定義します。これは、テキスト入力用のと、アプリケーションにファイルの保存または削除を指示する2つ[`Button`](xref:Xamarin.Forms.Button)のインスタンスで構成されます。 2つ`Button`のインスタンスは、で水平方向[`Grid`](xref:Xamarin.Forms.Grid)にレイアウト`Editor` `Grid`され、で水平方向[`StackLayout`](xref:Xamarin.Forms.StackLayout)にレイアウトされます。 さらに、は`Editor` 、データバインディングを使用して`Text` 、 `Note`モデルのプロパティにバインドします。 データバインディングの詳細については、「 [Xamarin](deepdive.md)の概要」の「[データバインディング](deepdive.md#data-binding)」を参照してください。
 
-      変更を保存**NoteEntryPage.xaml**を選択して**ファイル > 保存**(またはキーを押して **&#8984; + S**)、ファイルを閉じます。
+      [**ファイル > 保存**] を選択し (または、  **&#8984; + S**キーを押して)、 **NoteEntryPage**への変更内容を保存し、ファイルを閉じます。
 
-9. **NoteEntryPage.xaml.cs**すべてのテンプレート コードを削除し、次のコードに置き換えます。
+9. **NoteEntryPage.xaml.cs**で、すべてのテンプレートコードを削除し、次のコードに置き換えます。
 
       ```csharp
       using System;
@@ -452,18 +452,18 @@ ms.locfileid: "65997117"
       }
       ```
 
-      このコードを格納、`Note`インスタンスで 1 つの注記を表す、 [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)のページ。 ときに、**保存** [ `Button` ](xref:Xamarin.Forms.Button)が押された、`OnSaveButtonClicked`イベント ハンドラーが実行の内容を保存するか、 `Editor` 、ランダムに生成されたファイル名を持つ新しいファイルまたはメモを更新します。 存在する場合は、既存のファイルをします。 どちらの場合で、ファイルは、アプリケーションのローカル アプリケーション データ フォルダーに格納されます。 メソッドは、前のページに移動します。 ときに、**削除**`Button`が押された、`OnDeleteButtonClicked`イベント ハンドラーを実行すると、それが存在し、前のページにナビゲートされるファイルを削除します。 ナビゲーションの詳細については、次を参照してください。[ナビゲーション](deepdive.md#navigation)で、 [Xamarin.Forms クイック スタートの Deep Dive](deepdive.md)します。
+      このコードは、 `Note`ページ[`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)の内に1つのノートを表すインスタンスを格納します。 `Editor` **保存** [`Button`](xref:Xamarin.Forms.Button)を押す`OnSaveButtonClicked`と、イベントハンドラーが実行されます。これにより、の内容がランダムに生成されたファイル名を持つ新しいファイルに保存されるか、またはメモが更新されている場合は既存のファイルに保存されます。 どちらの場合も、ファイルはアプリケーションのローカルアプリケーションデータフォルダーに格納されます。 次に、メソッドは前のページに戻ります。 **削除** `Button`が押さ`OnDeleteButtonClicked`れると、イベントハンドラーが実行されます。これにより、ファイルが存在する場合は削除され、前のページに戻ります。 ナビゲーションの詳細については、「 [Xamarin のクイックスタート](deepdive.md)の[ナビゲーション](deepdive.md#navigation)」を参照してください。
 
-      変更を保存**NoteEntryPage.xaml.cs**を選択して**ファイル > 保存**(またはキーを押して **&#8984; + S**)、ファイルを閉じます。
+      [**ファイル > 保存**] を選択し (または **&#8984; + S**キーを押して)、 **NoteEntryPage.xaml.cs**への変更内容を保存してから、ファイルを閉じます。
 
       > [!WARNING]
-      > この時点でアプリケーションをビルドしようとすると、以降の手順で修正されるエラーが発生します。
+      > この時点でアプリケーションをビルドしようとすると、後続の手順で修正されるエラーが発生します。
 
-10. **Solution Pad**を選択、**ノート**プロジェクトを右クリックし、**追加 > 新しいファイル.**.**新しいファイル**ダイアログ ボックスで、**フォーム > フォーム ContentPage XAML**、新しいファイルに名前**NotesPage**、 をクリックし、**新規**ボタンをクリックします。
+10. **Solution Pad**で、**メモ**プロジェクトを選択し、右クリックして、[ **> 新しいファイルの追加**] を選択します。[**新しいファイル**] ダイアログで、 **[フォーム > フォーム ContentPage XAML**] を選択し、新しいファイルに「**ノート**」という名前を指定して、[**新規**作成] ボタンをクリックします。
 
-      これがという名前のページに追加されます**NotesPage**プロジェクトのルート フォルダーにします。 このページは、アプリケーションのルート ページになります。
+      これにより、プロジェクトのルートフォルダーに [**ノート] ページ**という名前のページが追加されます。 このページは、アプリケーションのルートページになります。
 
-11. **NotesPage.xaml**すべてのテンプレート コードを削除し、次のコードに置き換えます。
+11. [ファイル **] [.xaml**] で、すべてのテンプレートコードを削除し、次のコードに置き換えます。
 
     ```xaml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -488,11 +488,11 @@ ms.locfileid: "65997117"
     </ContentPage>
     ```
 
-    このコードで構成されると、ページのユーザー インターフェイスを宣言によって定義されます、 [ `ListView` ](xref:Xamarin.Forms.ListView)と[ `ToolbarItem`](xref:Xamarin.Forms.ToolbarItem)します。 `ListView`使用データ、アプリケーションによって取得されるメモを表示するバインディングと、メモしてを選択するに移動、`NoteEntryPage`メモを変更できます。 新しいメモを作成して、キーを押しても、`ToolbarItem`します。 データ バインディングの詳細については、次を参照してください。[データ バインディング](deepdive.md#data-binding)で、 [Xamarin.Forms クイック スタートの Deep Dive](deepdive.md)します。
+    このコードは、 [`ListView`](xref:Xamarin.Forms.ListView) [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem)とで構成されるページのユーザーインターフェイスを宣言によって定義します。 は`ListView` 、データバインディングを使用して、アプリケーションによって取得されるすべてのメモを表示します`NoteEntryPage` 。メモを選択すると、ノートを変更できる場所に移動します。 または、 `ToolbarItem`を押して新しいメモを作成することもできます。 データバインディングの詳細については、「 [Xamarin](deepdive.md)の概要」の「[データバインディング](deepdive.md#data-binding)」を参照してください。
 
-    変更を保存**NotesPage.xaml**を選択して**ファイル > 保存**(またはキーを押して **&#8984; + S**)、ファイルを閉じます。
+    [ファイル **]** **> [保存**] を選択して (または **&#8984; + S**キーを押して)、ファイルを閉じて、変更内容を保存します。
 
-12. **NotesPage.xaml.cs**すべてのテンプレート コードを削除し、次のコードに置き換えます。
+12. **NotesPage.xaml.cs**で、すべてのテンプレートコードを削除し、次のコードに置き換えます。
 
     ```csharp
     using System;
@@ -555,14 +555,14 @@ ms.locfileid: "65997117"
     }
     ```    
 
-    このコードの機能を定義する、`NotesPage`します。 ページが表示されたら、`OnAppearing`メソッドの実行を設定します、 [ `ListView` ](xref:Xamarin.Forms.ListView)メモをローカル アプリケーション データ フォルダーから取得されたとします。 ときに、 [ `ToolbarItem` ](xref:Xamarin.Forms.ToolbarItem)が押された、`OnNoteAddedClicked`イベント ハンドラーが実行されます。 このメソッドに移動、`NoteEntryPage`で、設定、 [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)の`NoteEntryPage`を新しい`Note`インスタンス。 内の項目のときに、`ListView`が選択されている、`OnListViewItemSelected`イベント ハンドラーが実行されます。 このメソッドに移動、`NoteEntryPage`で、設定、 [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)の`NoteEntryPage`に、選択した`Note`インスタンス。 ナビゲーションの詳細については、次を参照してください。[ナビゲーション](deepdive.md#navigation)で、 [Xamarin.Forms クイック スタートの Deep Dive](deepdive.md)します。
+    このコードは、 `NotesPage`の機能を定義します。 このページが表示さ`OnAppearing`れると、メソッドが実行され、ローカルアプリケーションデータフォルダーから取得したすべての[`ListView`](xref:Xamarin.Forms.ListView)メモがに設定されます。 が押されると、 `OnNoteAddedClicked`イベントハンドラーが実行されます。 [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem) このメソッドは、に`NoteEntryPage`移動し、 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)の`NoteEntryPage`を新しい`Note`インスタンスに設定します。 の`ListView`項目が選択されると、 `OnListViewItemSelected`イベントハンドラーが実行されます。 このメソッドは、に`NoteEntryPage`移動し、 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)の`NoteEntryPage`を選択した`Note`インスタンスに設定します。 ナビゲーションの詳細については、「 [Xamarin のクイックスタート](deepdive.md)の[ナビゲーション](deepdive.md#navigation)」を参照してください。
 
-    変更を保存**NotesPage.xaml.cs**を選択して**ファイル > 保存**(またはキーを押して **&#8984; + S**)、ファイルを閉じます。
+    [**ファイル > 保存**] を選択し (または **&#8984; + S**キーを押して)、 **NotesPage.xaml.cs**への変更内容を保存してから、ファイルを閉じます。
 
     > [!WARNING]
-    > この時点でアプリケーションをビルドしようとすると、以降の手順で修正されるエラーが発生します。
+    > この時点でアプリケーションをビルドしようとすると、後続の手順で修正されるエラーが発生します。
 
-13. **Solution Pad**、ダブルクリックして**App.xaml.cs**を開きます。 既存のコードを次のコードに置き換えます。
+13. **Solution Pad**で、[ **App.xaml.cs** ] をダブルクリックして開きます。 次に、既存のコードを次のコードに置き換えます。
 
     ```csharp
     using System;
@@ -586,36 +586,36 @@ ms.locfileid: "65997117"
     }
     ```
 
-    このコードは、名前空間宣言を追加、`System.IO`名前空間の静的な宣言を追加します。`FolderPath`型のプロパティ`string`。 `FolderPath`注データが格納されるデバイス上のパスを格納するプロパティが使用されます。 さらに、コードを初期化します、`FolderPath`プロパティ、`App`コンス トラクター、および初期化、 [ `MainPage` ](xref:Xamarin.Forms.Application.MainPage)プロパティを[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)をホストする、インスタンス`NotesPage`します。 ナビゲーションの詳細については、次を参照してください。[ナビゲーション](deepdive.md#navigation)で、 [Xamarin.Forms クイック スタートの Deep Dive](deepdive.md)します。
+    このコードは、 `System.IO`名前空間の名前空間宣言を追加し、型`string`の静的`FolderPath`プロパティの宣言を追加します。 `FolderPath`プロパティは、ノートデータが格納されるデバイス上のパスを格納するために使用されます。 さらに、この`FolderPath`コードは`App` [`MainPage`](xref:Xamarin.Forms.Application.MainPage)コンストラクターでプロパティを初期化し、プロパティを初期化して、 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage)の`NotesPage`インスタンスをホストするとします。 ナビゲーションの詳細については、「 [Xamarin のクイックスタート](deepdive.md)の[ナビゲーション](deepdive.md#navigation)」を参照してください。
 
     **[ファイル]、[保存]** の順に選択し (または **&#8984; + S** キーを押し)、**App.xaml.cs** への変更内容を保存してから、ファイルを閉じます。
 
-14. **Solution Pad**の**ノート**プロジェクトを右クリックして**MainPage.xaml**を選択し、**削除**します。 キーを押して表示されるダイアログで、**削除**ハード_ディスクからファイルを削除するボタンをクリックします。
+14. **Solution Pad**の**Notes**プロジェクトで、 **mainpage.xaml**を右クリックし、[**削除**] を選択します。 表示されたダイアログで、[**削除**] ボタンを押して、ハードディスクからファイルを削除します。
 
-    これには、不要になったために使用されるページが削除されます。
+    これにより、使用されなくなったページが削除されます。
 
-15. 構築し、各プラットフォームで、プロジェクトを実行します。 詳細については、次を参照してください。[クイック スタートを構築](single-page.md#building-the-quickstart)します。
+15. 各プラットフォームでプロジェクトをビルドして実行します。 詳細については、「[クイックスタートのビルド](single-page.md#building-the-quickstart)」を参照してください。
 
-    **NotesPage**キーを押して、 **+** に移動するボタン、 **NoteEntryPage**メモを入力します。 移動は、アプリケーションのメモの保存後、 **NotesPage**します。
+    [**ノート] ページ**で、 **+** ボタンを押して**NoteEntryPage**に移動し、メモを入力します。 メモを保存すると、アプリケーションは [ノート **] ページ**に戻ります。
 
-    ノートについては、アプリケーションの動作を確認する、さまざまな長さの数を入力します。
+    さまざまな長さのメモを入力して、アプリケーションの動作を観察します。
 
 ::: zone-end
 
 ## <a name="next-steps"></a>次の手順
 
-このクイック スタートでは説明した方法。
+このクイックスタートでは、次の方法について学習しました。
 
-- Xamarin.Forms ソリューションに追加のページを追加します。
-- ページ間の移動を実行します。
-- ユーザー インターフェイス要素とそのデータ ソースの間でデータを同期するのにには、データ バインディングを使用します。
+- Xamarin. Forms ソリューションにページを追加します。
+- ページ間のナビゲーションを実行します。
+- ユーザーインターフェイス要素とそのデータソースとの間でデータを同期するには、データバインディングを使用します。
 
-SQLite.NET のローカル データベースに、データを格納できるように、アプリケーションを変更するには、次のクイック スタートに進みます。
+ローカルの SQLite.NET データベースにデータを格納するようにアプリケーションを変更するには、次のクイックスタートに進みます。
 
 > [!div class="nextstepaction"]
 > [次へ](database.md)
 
 ## <a name="related-links"></a>関連リンク
 
-- [Notes (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/MultiPage/)
-- [Xamarin.Forms のクイック スタートの詳細情報](deepdive.md)
+- [Notes (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-multipage/)
+- [Xamarin. フォームのクイックスタートの詳細](deepdive.md)
