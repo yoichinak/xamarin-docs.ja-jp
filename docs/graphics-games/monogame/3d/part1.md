@@ -1,70 +1,70 @@
 ---
-title: モデル クラスを使用します。
-description: モデル クラスでは、3 D グラフィックスのレンダリングが従来の方法と比較した場合の複雑な 3D オブジェクトのレンダリングが大幅に簡略化します。 モデル オブジェクトは、カスタム コードがなくてもコンテンツを簡単に統合できるように、コンテンツ ファイルから作成されます。
+title: モデルクラスの使用
+description: モデルクラスは、従来の3D グラフィックスレンダリングの方法と比較して、複雑な3D オブジェクトのレンダリングを大幅に簡略化します。 モデルオブジェクトはコンテンツファイルから作成されます。これにより、カスタムコードを使用せずにコンテンツを簡単に統合できます。
 ms.prod: xamarin
 ms.assetid: AD0A7971-51B1-4E38-B412-7907CE43CDDF
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: 4a72effc85657b4722b17eae486e81db5992a1da
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 35df6e4ca799a875bcd7db50adbc7a300460885c
+ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832255"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68680963"
 ---
-# <a name="using-the-model-class"></a>モデル クラスを使用します。
+# <a name="using-the-model-class"></a>モデルクラスの使用
 
-_モデル クラスでは、3 D グラフィックスのレンダリングが従来の方法と比較した場合の複雑な 3D オブジェクトのレンダリングが大幅に簡略化します。モデル オブジェクトは、カスタム コードがなくてもコンテンツを簡単に統合できるように、コンテンツ ファイルから作成されます。_
+_モデルクラスは、従来の3D グラフィックスレンダリングの方法と比較して、複雑な3D オブジェクトのレンダリングを大幅に簡略化します。モデルオブジェクトはコンテンツファイルから作成されます。これにより、カスタムコードを使用せずにコンテンツを簡単に統合できます。_
 
-MonoGame API には、`Model`レンダリングを実行して、コンテンツ ファイルからデータを格納するために使用できるクラスが読み込まれます。 モデル ファイルは、純色の付いた三角形) など、非常に単純な場合があります。 または複雑なレンダリングでは、テクスチャや光のなどの情報を含めることができます。
+モノゲーム API には、 `Model`コンテンツファイルから読み込まれたデータを格納したり、レンダリングを実行したりするために使用できるクラスが含まれています。 モデルファイルは非常に単純な場合があります (たとえば、純色の三角形)。または、テクスチャや照明など、複雑なレンダリングのための情報が含まれている場合があります。
 
-このチュートリアルでは使用[ロボットの 3D モデルを](https://github.com/xamarin/mobile-samples/blob/master/ModelRenderingMG/Resources/Content.zip?raw=true)し、次について説明します。
+このチュートリアルでは、[ロボットの3d モデルを](https://github.com/xamarin/mobile-samples/blob/master/ModelRenderingMG/Resources/Content.zip?raw=true)使用して、次の内容について説明します。
 
-- 新しいゲーム プロジェクトの開始
-- モデルとそのテクスチャの XNBs の作成
-- ゲームのプロジェクトで、XNBs を含む
+- 新しいゲームプロジェクトの開始
+- モデルとそのテクスチャの XNBs を作成する
+- ゲームプロジェクトに XNBs を含める
 - 3D モデルの描画
 - 複数のモデルの描画
 
-完了したら、このプロジェクトは次のように表示されます。
+完了すると、次のようにプロジェクトが表示されます。
 
-![6 つのロボットを示す最終的なサンプル](part1-images/image1.png)
+![6つのロボットを示す完成したサンプル](part1-images/image1.png)
 
-## <a name="creating-an-empty-game-project"></a>ゲームの空のプロジェクトを作成します。
+## <a name="creating-an-empty-game-project"></a>空のゲームプロジェクトを作成する
 
-最初に呼び出された MonoGame3D ゲーム プロジェクトを設定する必要があります。 新しい MonoGame プロジェクトを作成する方法の詳細については、次を参照してください。[クロス プラットフォーム Monogame プロジェクトを作成するには、このチュートリアル](~/graphics-games/monogame/introduction/part1.md)します。
+まず、MonoGame3D という名前のゲームプロジェクトを設定する必要があります。 新しいモノゲームプロジェクトを作成する方法の詳細については、[クロスプラットフォームのモノゲームプロジェクトの作成に関するこのチュートリアル](~/graphics-games/monogame/introduction/part1.md)を参照してください。
 
-続行する前にする必要がありますのプロジェクトが開き、正しく展開を確認します。 展開後、空のブルー スクリーンが表示されます。
+先に進む前に、プロジェクトが開いて正しく配置されていることを確認する必要があります。 デプロイされると、空のブルースクリーンが表示されます。
 
-![青色空のゲーム画面](part1-images/image2.png)
+![空の青いゲーム画面](part1-images/image2.png)
 
 
-## <a name="including-the-xnbs-in-the-game-project"></a>ゲームのプロジェクトで、XNBs を含む
+## <a name="including-the-xnbs-in-the-game-project"></a>ゲームプロジェクトに XNBs を含める
 
-.Xnb ファイルの形式がビルドされたコンテンツを標準の拡張機能 (で作成されたコンテンツ、 [MonoGame パイプライン ツール](http://www.monogame.net/documentation/?page=Pipeline))。 組み込みのすべてのコンテンツは、ソース ファイル (つまり、モデルの場合、.fbx ファイル) および変換先のファイル (.xnb ファイル) を持ちます。 .Fbx 形式などのアプリケーションで作成できる一般的な 3D モデル形式[Maya](http://www.autodesk.com/products/maya/overview)と[Blender](http://www.blender.org/)します。 
+Xnb ファイル形式は、ビルドされたコンテンツ ([モノゲームパイプラインツール](http://www.monogame.net/documentation/?page=Pipeline)によって作成されたコンテンツ) の標準の拡張機能です。 すべてのビルドされたコンテンツには、ソースファイル (モデルの場合は fbx ファイル) と変換先ファイル (xnb ファイル) があります。 Fbx 形式は、 [Maya](http://www.autodesk.com/products/maya/overview)や[Blender](http://www.blender.org/)などのアプリケーションで作成できる一般的な3d モデル形式です。 
 
-`Model`ファイルを読み込んで .xnb 3D ジオメトリ データが含まれているディスクからクラスを作成できます。   コンテンツ プロジェクトを通じてこの .xnb ファイルが作成されます。 自動的に、Monogame テンプレートには、当社の Content フォルダのコンテンツ (拡張子 .mgcp) を含むプロジェクトが含まれます。 MonoGame パイプライン ツールの詳細については、次を参照してください。、[コンテンツ パイプライン ガイド](https://github.com/xamarin/docs-archive/blob/master/Docs/CocosSharp/content-pipeline/introduction.md)します。
+この`Model`クラスは、3d geometry データを含むディスクから、xnb ファイルを読み込むことによって作成できます。   この xnb ファイルは、コンテンツプロジェクトを通じて作成されます。 モノゲームテンプレートでは、コンテンツフォルダーにコンテンツプロジェクトが自動的に含まれます。 モノゲームパイプラインツールの詳細については、「[コンテンツパイプラインガイド](https://github.com/xamarin/docs-archive/blob/master/Docs/CocosSharp/content-pipeline/introduction.md)」を参照してください。
 
-MonoGame パイプラインを使用して経由では省略しますこのガイドは、ツールを使用します。ここに含まれる XNB ファイル。 なお、します。XNB ファイル プラットフォームごとに異なるため、XNB ファイルの正しいセットを使用しているいずれのプラットフォームを使用してください。
+このガイドでは、モノゲームパイプラインツールの使用をスキップし、を使用します。ここには XNB ファイルが含まれています。 であることに注意してください。XNB ファイルはプラットフォームごとに異なります。そのため、使用しているプラットフォームごとに正しい XNB ファイルセットを使用してください。
 
-解凍しましたが、 [Content.zip ファイル](https://github.com/xamarin/mobile-samples/blob/master/ModelRenderingMG/Resources/Content.zip?raw=true)包含 .xnb ファイル、ゲームで使用できるようにします。 Android プロジェクトに取り組んでいる場合を右クリックし、**資産**フォルダーで、 **WalkingGame.Android**プロジェクト。 IOS プロジェクトに取り組んでいる場合を右クリックし、 **WalkingGame.iOS**プロジェクト。 選択**の追加]-> [ファイルを追加しています.** で作業しているプラットフォームのフォルダーに両方の .xnb ファイルを選択します。
+[コンテンツ .zip ファイル](https://github.com/xamarin/mobile-samples/blob/master/ModelRenderingMG/Resources/Content.zip?raw=true)を解凍して、含まれている xnb ファイルをゲームで使用できるようにします。 Android プロジェクトで作業している場合は、プレイ中の**android**プロジェクトの**Assets**フォルダーを右クリックします。 IOS プロジェクトで作業している場合は、プレイ中の**ios**プロジェクトを右クリックします。 **> 追加** を選択して ファイルの追加 を選択し、作業しているプラットフォームのフォルダーにある xnb ファイル を選択します。
 
-2 つのファイルは、プロジェクトの一部を今すぐする必要があります。
+2つのファイルは、プロジェクトの一部になります。
 
-![ソリューション エクスプ ローラーのコンテンツ フォルダーは xnb ファイル](part1-images/xnbsinxs.png)
+![Xnb ファイルを含むソリューションエクスプローラーコンテンツフォルダー](part1-images/xnbsinxs.png)
 
-Visual Studio for Mac は、新しく追加された XNBs のビルド アクションを自動的に設定しない可能性があります。 IOS の各ファイルと選択を右クリックして**ビルド アクション BundleResource]-> [** します。 Android では、ファイル選択の各上を右クリックして**ビルド アクション AndroidAsset]-> [** します。
+新しく追加された XNBs のビルドアクションは、Visual Studio for Mac によって自動的に設定されない場合があります。 IOS の場合は、各ファイルを右クリックし、 **[ビルドアクション-> BundleResource]** を選択します。 Android の場合は、各ファイルを右クリックし、 **[ビルドアクション-> AndroidAsset]** を選択します。
 
-## <a name="rendering-a-3d-model"></a>3D モデルを表示
+## <a name="rendering-a-3d-model"></a>3D モデルのレンダリング
 
-画面に表示される、モデルを表示するために必要な最後の手順では、読み込みと描画コードを追加します。 具体的には、私たちがする、次を手順します。
+モデルを画面上に表示するために必要な最後の手順は、読み込みと描画のコードを追加することです。 具体的には、次のことを行います。
 
-- 定義する、`Model`インスタンス、`Game1`クラス
-- 読み込み、`Model`インスタンス `Game1.LoadContent`
-- 描画、`Model`インスタンス `Game1.Draw`
+- クラスでのインスタンスの`Model`定義 `Game1`
+- にインスタンス`Model`を読み込んでいます`Game1.LoadContent`
+- インスタンスの`Model`描画`Game1.Draw`
 
-置換、`Game1.cs`コード ファイル (である、 **WalkingGame** PCL) に次の。
+(**ゲーム**PCL にある)コードファイルを次のコードに置き換えます。`Game1.cs`
 
 ```csharp
 public class Game1 : Game
@@ -162,29 +162,29 @@ public class Game1 : Game
 }
 ```
 
-このコードを実行した場合は、モデルを画面に表示される表示されます。
+このコードを実行すると、モデルが画面上に表示されます。
 
-![画面上に表示されるモデル](part1-images/image8.png "モデルが画面に表示される表示する場合、このコードを実行すると、")
+![画面に表示されるモデル](part1-images/image8.png "このコードを実行すると、モデルは画面に表示され")ます。
 
-### <a name="model-class"></a>モデル クラス
+### <a name="model-class"></a>モデルクラス
 
-`Model`クラスは (.fbx ファイル) などのコンテンツ ファイルから 3D レンダリングを実行するための中核となるクラスです。 すべてのレンダリングでは、3 D ジオメトリ、テクスチャの参照を含むために必要な情報が含まれていますと`BasicEffect`インスタンス、配置、光源の方向、およびカメラの値を制御します。
+`Model`クラスは、コンテンツファイル (fbx ファイルなど) からの3d レンダリングを実行するためのコアクラスです。 これには、3d ジオメトリ、テクスチャ参照、 `BasicEffect`位置、光源、およびカメラの値を制御するインスタンスを含む、レンダリングに必要なすべての情報が含まれています。
 
-`Model`クラス自体に直接にこのガイドの後半で説明しますので、1 つのモデルのインスタンスは、複数の場所で表示できますを配置用の変数がありません。
+このガイドの後半で説明するように、1つのモデルインスタンスを複数の場所にレンダリングできるため、クラス自体に配置用の変数は直接ありません。`Model`
 
-各`Model`は 1 つまたは複数で構成されます`ModelMesh`を介して公開される、インスタンス、`Meshes`プロパティ。 検討できますが、`Model`として 1 つのゲーム オブジェクト (ロボットや車)、各`ModelMesh`別で描画できる`BasicEffect`値。 たとえば、メッシュの個別のパーツがロボットまたは車の車輪の区間を表すことができます、私たちを割り当てることがあります、`BasicEffect`車輪スピンまたは区間の値に移動します。 
+各`Model`は、 `Meshes`プロパティを通じて`ModelMesh`公開される1つ以上のインスタンスで構成されます。 は、 `Model` 1 つのゲームオブジェクト (ロボットや車など) として考えられますが`ModelMesh` 、それぞれ異なる`BasicEffect`値を使用して描画できます。 たとえば、個々のメッシュパーツは、車のロボットまたは車輪の脚を表すことができます。また、 `BasicEffect`値を割り当てて、車輪や脚を移動させることができます。 
 
 ### <a name="basiceffect-class"></a>BasicEffect クラス
 
-`BasicEffect`クラスのレンダリング オプションを制御するためのプロパティを提供します。 最初の変更を行った、`BasicEffect`を呼び出すには、`EnableDefaultLighting`メソッド。 名前のとおり、これによりを検証するために非常に便利ですが、既定の照明を`Model`ゲーム期待どおりに表示されます。 コメント アウトする場合、`EnableDefaultLighting`呼び出す、のテクスチャがない掛けや反射の光彩のレンダリング モデルを見てみましょう。
+クラス`BasicEffect`には、表示オプションを制御するためのプロパティが用意されています。 に対して`BasicEffect`最初に行った変更は、 `EnableDefaultLighting`メソッドを呼び出すことです。 名前が示すように、これによって既定のライティングが有効になります`Model` 。これは、がゲーム内で期待どおりに表示されることを確認するのに非常に便利です。 呼び出しをコメントアウトする`EnableDefaultLighting`と、テクスチャだけでレンダリングされるモデルが表示されますが、網掛けや反射グローはありません。
 
 ```csharp
 //effect.EnableDefaultLighting ();
 ```
 
-![テクスチャがない掛けや反射の光彩のレンダリング モデル](part1-images/image9.png "のテクスチャがない掛けや反射の光彩のレンダリング モデル")
+![テクスチャだけでレンダリングされるモデルですが、網掛けや反射グローはありません]。(part1-images/image9.png "テクスチャだけでレンダリングされるモデルですが、網掛けや反射グローはありません")。
 
-`World`位置、回転、およびモデルのスケールを調整するプロパティを使用できます。 使用上のコード、`Matrix.Identity`値、つまり、`Model`ゲーム指定どおり正確に .fbx ファイル内にレンダリングされます。 テーマは、マトリックス、および 3D 座標について詳しく[パート 3](~/graphics-games/monogame/3d/part3.md)、例としては、位置を変更できますが、`Model`変更することで、`World`次のようにプロパティ。
+`World`プロパティを使用して、モデルの位置、回転、およびスケールを調整できます。 上記のコードでは`Matrix.Identity` 、値を使用して`Model`います。これは、が fbx ファイルで指定されたとおりにゲーム内でレンダリングされることを意味します。 ここでは、[第3部](~/graphics-games/monogame/3d/part3.md)でマトリックスと3d 座標についてさらに詳しく説明しますが、例とし`Model`て、プロパティ`World`を次のように変更しての位置を変更することもできます。
 
 ```csharp
 // Z is up, so changing Z to 3 moves the object up 3 units:
@@ -192,24 +192,24 @@ var modelPosition = new Vector3 (0, 0, 3);
 effect.World = Matrix.CreateTranslation (modelPosition); 
 ```
 
-このコードは、3 つのワールド単位で上へ移動するオブジェクトが得られます。
+このコードを実行すると、オブジェクトが3つのワールド単位で上に移動します。
 
-![このコードの 3 つのワールド単位で上へ移動オブジェクトで結果](part1-images/image10.png "3 のワールド単位で上へ移動オブジェクトでこのコードの結果")
+![このコードにより、オブジェクトが3つのワールド単位で上に移動します]。(part1-images/image10.png "このコードにより、オブジェクトが3つのワールド単位で上に移動します")。
 
-割り当てられている最後の 2 つのプロパティ、`BasicEffect`は`View`と`Projection`します。 テーマは、3 D カメラで撮影[パート 3](~/graphics-games/monogame/3d/part3.md)、例として、ローカルに変更することで、カメラの位置を変更しますできますが、`cameraPosition`変数。
+に`BasicEffect`割り当てられた最後の 2 `View`つ`Projection`のプロパティは、とです。 [第3部](~/graphics-games/monogame/3d/part3.md)では3d カメラについて説明しますが、例として、ローカル`cameraPosition`変数を変更してカメラの位置を変更できます。
 
 ```csharp
 // The 8 has been changed to a 30 to move the Camera further back
 var cameraPosition = new Vector3 (0, 30, 0);
 ```
 
-わかりますカメラがそれ以上のバックアップを移動した結果として、`Model`パースペクティブにより小さく表示されます。
+カメラがさらに後ろに移動したことがわかります`Model` 。結果として、パースペクティブによって次のように表示されるようになります。
 
-![パースペクティブにより小さく表示されるモデルの結果として、さらに戻る移動カメラ](part1-images/image11.png "カメラがパースペクティブにより小さく表示されるモデルの結果として、さらにバックアップを移動")
+![カメラがさらに後ろに移動したため、パースペクティブによってモデルが小さくなり]ます。(part1-images/image11.png "カメラがさらに後ろに移動したため、パースペクティブによってモデルが小さくなり")ます。
 
-## <a name="rendering-multiple-models"></a>複数のモデルの表示
+## <a name="rendering-multiple-models"></a>複数のモデルのレンダリング
 
-1 つ前に述べたよう`Model`複数回を描画することができます。 簡単に確認する移動弊社はこと、`Model`目的は、独自のメソッドにコードを描画`Model`をパラメーターとしての位置。 完了後、この`Draw`と`DrawModel`メソッドのようになります。
+前述のように、1 `Model`つのを複数回描画できます。 これを簡単にするために、パラメーター `Model`として目的`Model`の位置を取得する独自のメソッドに描画コードを移動します。 完了する`Draw`と、メソッド`DrawModel`とメソッドは次のようになります。
 
 
 ```csharp
@@ -253,16 +253,16 @@ void DrawModel(Vector3 modelPosition)
 }
 ```
 
-これは、ロボット 6 回に描画されているモデルが得られます。
+この結果、ロボットモデルが6回描画されます。
 
-![これは、結果、6 回に描画されているモデルのロボット](part1-images/image1.png "ロボット 6 回に描画されているモデルでこの結果")
+![この結果、ロボットモデルが6回描画されます]。(part1-images/image1.png "この結果、ロボットモデルが6回描画されます")。
 
 ## <a name="summary"></a>まとめ
 
-このチュートリアルに導入された MonoGame の`Model`クラス。 、、.Xnb に .fbx ファイルの変換について説明しますが読み込むことがさらに、`Model`クラス。 表示方法に変更を`BasicEffect`インスタンスに影響を与えることができます`Model`描画します。
+このチュートリアルでは、モノ`Model`のゲームのクラスを導入しました。 この記事では、fbx ファイルを xnb に変換する方法について説明します。これ`Model`は、クラスに読み込むことができます。 また、インスタンスへの`BasicEffect`変更が描画に与える影響`Model`についても示します。
 
 ## <a name="related-links"></a>関連リンク
 
-- [MonoGame モデルのリファレンス](http://www.monogame.net/documentation/?page=T_Microsoft_Xna_Framework_Graphics_Model)
-- [Content.zip](https://github.com/xamarin/mobile-samples/blob/master/ModelRenderingMG/Resources/Content.zip?raw=true)
-- [完成したプロジェクト (サンプル)](https://developer.xamarin.com/samples/mobile/ModelRenderingMG/)
+- [モノゲームモデルリファレンス](http://www.monogame.net/documentation/?page=T_Microsoft_Xna_Framework_Graphics_Model)
+- [コンテンツ .zip](https://github.com/xamarin/mobile-samples/blob/master/ModelRenderingMG/Resources/Content.zip?raw=true)
+- [完成したプロジェクト (サンプル)](https://docs.microsoft.com/samples/xamarin/mobile-samples/modelrenderingmg/)

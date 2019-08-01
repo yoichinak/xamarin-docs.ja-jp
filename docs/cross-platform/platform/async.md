@@ -6,12 +6,12 @@ ms.assetid: F87BF587-AB64-4C60-84B1-184CAE36ED65
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 4ade8fbb3ac596ef2da5d76b4efa751661cd8611
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: fb58cb000d8179422979d9661950db82d1884414
+ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646251"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68680941"
 ---
 # <a name="async-support-overview"></a>非同期サポートの概要
 
@@ -89,7 +89,7 @@ Await を使用しても、呼び出し元のスレッドがブロックされ�
 
 ## <a name="example"></a>例
 
-サンプルの[Xamarin ソリューション](https://developer.xamarin.com/samples/mobile/AsyncAwait/)(iOS と Android の両方) をダウンロードして、mobile apps `async` `await`での実際の例を参照してください。 コード例については、このセクションで詳しく説明します。
+サンプルの[Xamarin ソリューション](https://docs.microsoft.com/samples/xamarin/mobile-samples/asyncawait/)(iOS と Android の両方) をダウンロードして、mobile apps `async` `await`での実際の例を参照してください。 コード例については、このセクションで詳しく説明します。
 
 ### <a name="writing-an-async-method"></a>非同期メソッドの記述
 
@@ -196,7 +196,7 @@ Async と await を使用すると、メインスレッドをブロックせず�
 
 ## <a name="related-links"></a>関連リンク
 
-- [AsyncAwait (サンプル)](https://developer.xamarin.com/samples/mobile/AsyncAwait/)
+- [AsyncAwait (サンプル)](https://docs.microsoft.com/samples/xamarin/mobile-samples/asyncawait/)
 - ["Generation To ステートメント" としてのコールバック](https://tirania.org/blog/archive/2013/Aug-15.html)
 - [データ (iOS) (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/data/)
 - [HttpClient (iOS) (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/httpclient/)

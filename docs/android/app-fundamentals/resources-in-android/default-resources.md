@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/13/2018
-ms.openlocfilehash: 3be63eb8909f129f046b2959ec7963e493674914
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: b3a6dfb11b49f9ab3b09cf09594eb374f63fe304
+ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644227"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68680229"
 ---
 # <a name="default-resources"></a>既定のリソース
 
@@ -38,7 +38,7 @@ ms.locfileid: "68644227"
  
 -  **レイアウト**&ndash;アクティビティやリスト内の行など、ユーザーインターフェイスのレイアウトを記述する XML ファイル。
 
--  **メニュー**[オプション *] メニュー*、*コンテキストメニュー*、*サブメニュー*などのアプリケーションメニューを記述する XML ファイル。 &ndash; メニューの例については、[ポップアップメニューのデモ](https://docs.microsoft.com/samples/xamarin/monodroid-samples/popupmenudemo)または[標準コントロール](https://developer.xamarin.com/samples/mobile/StandardControls/)のサンプルを参照してください。
+-  **メニュー**[オプション *] メニュー*、*コンテキストメニュー*、*サブメニュー*などのアプリケーションメニューを記述する XML ファイル。 &ndash; メニューの例については、[ポップアップメニューのデモ](https://docs.microsoft.com/samples/xamarin/monodroid-samples/popupmenudemo)または[標準コントロール](https://docs.microsoft.com/samples/xamarin/mobile-samples/standardcontrols/)のサンプルを参照してください。
 
 -  **生**&ndash;未加工のバイナリ形式で保存されている任意のファイル。 これらのファイルは、バイナリ形式で Android アプリケーションにコンパイルされます。
 
@@ -70,7 +70,7 @@ ms.locfileid: "68644227"
 
 -  **レイアウト**&ndash;アクティビティやリスト内の行など、ユーザーインターフェイスのレイアウトを記述する XML ファイル。
 
--  **メニュー**[オプション *] メニュー*、*コンテキストメニュー*、*サブメニュー*などのアプリケーションメニューを記述する XML ファイル。 &ndash; メニューの例については、[ポップアップメニューのデモ](https://docs.microsoft.com/samples/xamarin/monodroid-samples/popupmenudemo)または[標準コントロール](https://developer.xamarin.com/samples/mobile/StandardControls/)のサンプルを参照してください。
+-  **メニュー**[オプション *] メニュー*、*コンテキストメニュー*、*サブメニュー*などのアプリケーションメニューを記述する XML ファイル。 &ndash; メニューの例については、[ポップアップメニューのデモ](https://docs.microsoft.com/samples/xamarin/monodroid-samples/popupmenudemo)または[標準コントロール](https://docs.microsoft.com/samples/xamarin/mobile-samples/standardcontrols/)のサンプルを参照してください。
 
 -  **生**&ndash;未加工のバイナリ形式で保存されている任意のファイル。 これらのファイルは、バイナリ形式で Android アプリケーションにコンパイルされます。
 
