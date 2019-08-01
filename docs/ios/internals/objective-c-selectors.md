@@ -16,7 +16,7 @@ ms.locfileid: "61036374"
 ---
 # <a name="objective-c-selectors-in-xamarinios"></a>Xamarin.iOS での OBJECTIVE-C セレクター
 
-Objective-C 言語は*セレクター*に基づいています。セレクターは、オブジェクトまたは*クラス*に送信できるメッセージです。 [Xamarin.iOS](~/ios/internals/api-design/index.md)はインスタンス セレクターをインスタンスメソッドにマッピングし、クラス セレクターを静的メソッドにマッピングします。
+Objective-C 言語は*セレクター*に基づいています。 セレクターは、オブジェクトまたは*クラス*に送信できるメッセージです。 [Xamarin.iOS](~/ios/internals/api-design/index.md)はインスタンス セレクターをインスタンスメソッドにマッピングし、クラス セレクターを静的メソッドにマッピングします。
 
 通常の C 関数とは異なり、C++ メンバー関数と同様に) 呼び出すことができません直接セレクターを使用して、 [P/invoke](https://www.mono-project.com/docs/advanced/pinvoke/)セレクターが代わりに、OBJECTIVE-C のクラスに送信されるか、インスタンスを使用して、 [`objc_msgSend`](https://developer.apple.com/documentation/objectivec/1456712-objc_msgsend)
 関数。
