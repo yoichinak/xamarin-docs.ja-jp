@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/11/2017
-ms.openlocfilehash: c547a851d9e042f0289ac5c3a2d20ff97f681551
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 7308222e64d64efdbad218186bb9a6e4dca3b26e
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926954"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68651924"
 ---
 # <a name="introduction-to-xamarinforms-data-templates"></a>Xamarin.Forms データ テンプレートの概要
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/Templates/DataTemplates/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-datatemplates)
 
 _Xamarin.Forms のデータ テンプレートを使うと、サポートされているコントロール上のデータの表現方法を定義することができます。この記事では、データ テンプレートの概要について説明し、これが必要である理由について調べます。_
 
@@ -138,5 +138,5 @@ public class Person
 ## <a name="related-links"></a>関連リンク
 
 - [セルの外観](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md)
-- [データ テンプレート (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/Templates/DataTemplates/)
+- [データ テンプレート (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-datatemplates)
 - [DataTemplate](xref:Xamarin.Forms.DataTemplate)

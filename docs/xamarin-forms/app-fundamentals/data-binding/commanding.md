@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 37fbc0107414521a87c263d327ffd9b8940384eb
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 9c6edddd70fa7a74a72857a94dbed613b5b0d66d
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53053465"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657147"
 ---
 # <a name="the-xamarinforms-command-interface"></a>Xamarin.Forms のコマンド インターフェイス
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
 Model-View-ViewModel アーキテクチャでは、データ バインディングは、ViewModel のプロパティ (一般に、`INotifyPropertyChanged` の派生クラスです) と、View のプロパティ (一般に、XAML ファイルです) の間で定義されます。 アプリケーションでは、ViewModel 内の何かに影響を与えるコマンドをユーザーが開始しなければならないようにすることで、これらのプロパティ バインディングを拡張することが必要な場合があります。 通常、このようなコマンドはボタンのクリックや指のタップによって通知され、従来は、`Button` の `Clicked` のイベントまたは `TapGestureRecognizer` の `Tapped` イベントに対するハンドラーの分離コード ファイル内で処理されます。
 
@@ -86,7 +86,7 @@ Windows と Xamarin.Forms の間で ViewModel を共有する必要がない場�
 
 ## <a name="basic-commanding"></a>基本的なコマンド実行
 
-[**Data Binding Demos**](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/) プログラムの **Person Entry** ページでは、ViewModel に実装されたいくつかの簡単なコマンドのデモが行われます。
+[**Data Binding Demos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos) プログラムの **Person Entry** ページでは、ViewModel に実装されたいくつかの簡単なコマンドのデモが行われます。
 
 `PersonViewModel` では、人を定義する `Name`、`Age`、`Skills` という名前の 3 つのプロパティが定義されています。 このクラスには、`ICommand` プロパティは含まれて "*いません*"。
 
@@ -277,7 +277,7 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
 </ContentPage>
 ```
 
-そのしくみを次に示します。ユーザーは最初に **[New]** ボタンを押します。 これにより、入力フォームは有効になりますが、**[New]** ボタンは無効になります。 その後、ユーザーは名前、年齢、スキルを入力します。 編集中いつでも、ユーザーは **[Cancel]** ボタンを押して最初からやり直すことができます。 名前と有効な年齢が入力された場合にのみ、**[Submit]** ボタンが有効になります。 この **[Submit]** ボタンを押して、`ListView` に表示されているコレクションにユーザーを転送します。 **[Cancel]** または **[Submit]** ボタンを押すと、入力フォームがクリアされ、**[New]** ボタンが再び有効になります。
+そのしくみを次に示します。ユーザーは最初に **[New]** ボタンを押します。 これにより、入力フォームは有効になりますが、 **[New]** ボタンは無効になります。 その後、ユーザーは名前、年齢、スキルを入力します。 編集中いつでも、ユーザーは **[Cancel]** ボタンを押して最初からやり直すことができます。 名前と有効な年齢が入力された場合にのみ、 **[Submit]** ボタンが有効になります。 この **[Submit]** ボタンを押して、`ListView` に表示されているコレクションにユーザーを転送します。 **[Cancel]** または **[Submit]** ボタンを押すと、入力フォームがクリアされ、 **[New]** ボタンが再び有効になります。
 
 左側の iOS の画面には、有効な年齢を入力する前のレイアウトが表示されています。 Android と UWP の画面には、年齢を設定した後で有効になった **[Submit]** ボタンが表示されています。
 
@@ -285,7 +285,7 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
 
 プログラムには既存のエントリを編集する機能はなく、別のページに移動するときにエントリが保存されません。
 
-**[New]**、**[Submit]**、**[Cancel]** ボタンに対するすべてのロジックは、`NewCommand`、`SubmitCommand`、`CancelCommand` プロパティの定義によって `PersonCollectionViewModel` で処理されます。 `PersonCollectionViewModel` のコンストラクターでは、これら 3 つのプロパティに `Command` 型のオブジェクトが設定されます。  
+**[New]** 、 **[Submit]** 、 **[Cancel]** ボタンに対するすべてのロジックは、`NewCommand`、`SubmitCommand`、`CancelCommand` プロパティの定義によって `PersonCollectionViewModel` で処理されます。 `PersonCollectionViewModel` のコンストラクターでは、これら 3 つのプロパティに `Command` 型のオブジェクトが設定されます。  
 
 `Command` クラスの[コンストラクター](xref:Xamarin.Forms.Command.%23ctor(System.Action,System.Func{System.Boolean}))では、`Execute` および `CanExecute` メソッドに対応する `Action` および `Func<bool>` 型の引数を渡すことができます。 `Command` コンストラクター内で直接ラムダ関数としてこれらのアクションと関数を定義するのが最も簡単です。 `NewCommand` プロパティに対する `Command` オブジェクトの定義を次に示します。
 
@@ -376,11 +376,11 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
 }
 ```
 
-編集されている `PersonViewModel` オブジェクトでプロパティが変更されるたびに、`SubmitCommand` の `canExecute` 関数が呼び出されます。 それは、`Name` プロパティが 1 文字以上の長さで、`Age` が 0 より大きい場合にのみ、`true` を返します。 その時点で、**[Submit]** ボタンが有効になります。
+編集されている `PersonViewModel` オブジェクトでプロパティが変更されるたびに、`SubmitCommand` の `canExecute` 関数が呼び出されます。 それは、`Name` プロパティが 1 文字以上の長さで、`Age` が 0 より大きい場合にのみ、`true` を返します。 その時点で、 **[Submit]** ボタンが有効になります。
 
 **[Submit]** の `execute` 関数では、プロパティ変更ハンドラーが `PersonViewModel` から削除され、オブジェクトが `Persons` コレクションに追加されて、すべてのものが初期状態に戻されます。
 
-**[Cancel]** ボタンの `execute` 関数で行われることは、コレクションへのオブジェクトの追加を除き、**[Submit]** ボタンで行われることと同じです。
+**[Cancel]** ボタンの `execute` 関数で行われることは、コレクションへのオブジェクトの追加を除き、 **[Submit]** ボタンで行われることと同じです。
 
 ```csharp
 public class PersonCollectionViewModel : INotifyPropertyChanged
@@ -693,7 +693,7 @@ public class DecimalKeypadViewModel : INotifyPropertyChanged
 
 ## <a name="asynchronous-commanding-for-navigation-menus"></a>ナビゲーション メニューのための非同期コマンド実行
 
-コマンド実行は、[**Data Binding Demos**](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/) プログラム自体のように、ナビゲーション メニューを実装する場合に便利です。 **MainPage.xaml** の一部を次に示します。
+コマンド実行は、[**Data Binding Demos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos) プログラム自体のように、ナビゲーション メニューを実装する場合に便利です。 **MainPage.xaml** の一部を次に示します。
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -767,5 +767,5 @@ public partial class MainPage : ContentPage
 
 ## <a name="related-links"></a>関連リンク
 
-- [データ バインディングのデモ (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+- [データ バインディングのデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 - [Xamarin.Forms 書籍のデータ バインディングに関する章](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter18.md)

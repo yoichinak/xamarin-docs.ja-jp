@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 3e5db00a73047aaadb1162fa1cc8a21f6e77b3a0
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: ab3ed8895a4f7c6b44c978e52e0b00fc32850f75
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926193"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650633"
 ---
 # <a name="custom-video-transport-controls"></a>カスタムのビデオ トランスポート コントロール
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
 ビデオ プレーヤーのトランスポート コントロールには、**再生**、**一時停止**、および**停止**機能を実行するボタンが含まれています。 これらのボタンは一般的に、テキストではなく使い慣れたアイコンで識別されます。また、**再生**と**一時停止**機能は一般的に、1 つのボタンに結合されています。
 
@@ -364,7 +364,7 @@ namespace FormsVideoLibrary.iOS
 
 ### <a name="the-android-status-setting"></a>Android での状態の設定
 
-Android `VideoView` の [`IsPlaying`](https://developer.xamarin.com/api/property/Android.Widget.VideoView.IsPlaying/) プロパティは、ビデオが再生中か一時停止中かのみを示すブール値です。 `VideoView` でビデオがまだ再生や一時停止できないことを確認するには、`Prepared` の `VideoView` イベントを処理する必要があります。 これらの 2 つのハンドラーは `OnElementChanged` メソッド内で設定され、`Dispose` のオーバーライド中にデタッチされます。
+Android `VideoView` の [`IsPlaying`](xref:Android.Widget.VideoView.IsPlaying) プロパティは、ビデオが再生中か一時停止中かのみを示すブール値です。 `VideoView` でビデオがまだ再生や一時停止できないことを確認するには、`Prepared` の `VideoView` イベントを処理する必要があります。 これらの 2 つのハンドラーは `OnElementChanged` メソッド内で設定され、`Dispose` のオーバーライド中にデタッチされます。
 
 ```csharp
 namespace FormsVideoLibrary.Droid
@@ -660,4 +660,4 @@ namespace VideoPlayerDemos
 
 ## <a name="related-links"></a>関連リンク
 
-- [ビデオ プレーヤーのデモ (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)
+- [ビデオ プレーヤーのデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)

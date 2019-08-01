@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 11/10/2017
-ms.openlocfilehash: 808d7aa8f886dac38ed8ff5f274ca8f4a02c8dbf
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 76ce6cd3a78e56acb9d77c0c6a4b942e5bdc3f2e
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112430"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656079"
 ---
 # <a name="xamarinmac-performance"></a>Xamarin.Mac のパフォーマンス
 
@@ -59,7 +59,7 @@ Xamarin.Mac アプリケーションには、パフォーマンスの特性と�
 
 可能な限り、[非同期](~/cross-platform/platform/async.md)とスレッドを使用し、UI がブロックされないようにします。
 
-長時間実行される操作では、Apple の [HIG](https://developer.apple.com/macos/human-interface-guidelines/indicators/progress-indicators/) に記載されている [NSProgressIndicator](https://developer.xamarin.com/samples/mac/ProgressBarExample/) やその他のオプションを使用してユーザーに通知することを検討してください。
+長時間実行される操作では、Apple の [HIG](https://developer.apple.com/macos/human-interface-guidelines/indicators/progress-indicators/) に記載されている [NSProgressIndicator](https://docs.microsoft.com/samples/xamarin/mac-samples/progressbarexample) やその他のオプションを使用してユーザーに通知することを検討してください。
 
 
 ## <a name="related-links"></a>関連リンク

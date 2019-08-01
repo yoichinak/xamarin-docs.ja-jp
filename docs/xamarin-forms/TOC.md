@@ -35,7 +35,8 @@
 ### [XAML Standard (プレビュー)](xaml/standard/index.md)
 #### [コントロール](xaml/standard/controls.md)
 ### [実行時の XAML の読み込み](xaml/runtime-load.md)
-## [アプリケーションの基礎](app-fundamentals/index.md)
+## アプリケーションの基礎
+### [概要](app-fundamentals/index.yml)
 ### [ユーザー補助](app-fundamentals/accessibility/index.md)
 #### [オートメーションのプロパティ](app-fundamentals/accessibility/automation-properties.md)
 #### [キーボード アクセシビリティ](app-fundamentals/accessibility/keyboard.md)

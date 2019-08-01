@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/22/2018
-ms.openlocfilehash: 8cf6c11675f0f3ddca0d5aea69e5e07160ef8454
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: edd6fc92603783dc9de64b10304e8d48f97bdef3
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114783"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68509220"
 ---
 # <a name="android-debug-log"></a>Android のデバッグ ログ
 
@@ -70,7 +70,7 @@ ms.locfileid: "50114783"
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-**デバイス ログ**を開くには、**[表示] > [パッド] > [デバイス ログ]** の順にクリックします。
+**デバイス ログ**を開くには、 **[表示] > [パッド] > [デバイス ログ]** の順にクリックします。
 
 [![[デバイス ログ] メニュー項目の場所](android-debug-log-images/vsmac-01-logcat-sml.png)](android-debug-log-images/vsmac-01-logcat.png#lightbox)
 
@@ -137,8 +137,8 @@ $ ./adb logcat
 
 ## <a name="writing-to-the-debug-log"></a>デバッグ ログへの書き込み
 
-[Android.Util.Log](https://developer.xamarin.com/api/type/Android.Util.Log/) クラスのメソッドを使って、**デバッグ ログ**にメッセージを書き込むことができます。
-例: 
+[Android.Util.Log](xref:Android.Util.Log) クラスのメソッドを使って、**デバッグ ログ**にメッセージを書き込むことができます。
+次に例を示します。 
 
 ```csharp
 string tag = "myapp";

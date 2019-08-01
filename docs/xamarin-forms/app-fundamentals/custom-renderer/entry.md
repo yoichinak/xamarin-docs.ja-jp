@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/26/2018
-ms.openlocfilehash: cc7bdcfff3916f7d7ae04e4ef63cb02f17315c2a
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 2deee2bd7fa07f562bee02409d1a7a19cdac0be9
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926698"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650862"
 ---
 # <a name="customizing-an-entry"></a>Entry のカスタマイズ
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/Entry/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-entry)
 
 _Xamarin.Forms の Entry コントロールによって、1 行のテキストを編集対象にできます。この記事では、Entry コントロール用のカスタム レンダラーを作成する方法を示します。これにより、開発者は既定のネイティブ レンダリングを、各自のプラットフォームに固有のカスタマイズでオーバーライドできるようになります。_
 
@@ -216,4 +216,4 @@ namespace CustomRenderer.UWP
 
 ## <a name="related-links"></a>関連リンク
 
-- [CustomRendererEntry (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/Entry/)
+- [CustomRendererEntry (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-entry)

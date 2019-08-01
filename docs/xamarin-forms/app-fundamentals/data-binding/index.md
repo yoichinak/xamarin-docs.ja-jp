@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/23/2018
-ms.openlocfilehash: c607cecf6c7044fa4c8d0270a5b8d1471d3f9227
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: ace1129397251c02c5ffb682344ff2308a24c62a
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059062"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68653364"
 ---
 # <a name="xamarinforms-data-binding"></a>Xamarin.Forms のデータ バインディング
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
 _データ バインディングは、2 つのオブジェクトのプロパティをリンクして、片方のプロパティへの変更が自動的にもう片方のプロパティに反映されるようにする手法です。データ バインディングは、Model-View-ViewModel (MVVM) アプリケーション アーキテクチャにとって不可欠の部分です。_
 
@@ -35,7 +35,7 @@ Xamarin.Forms アプリケーションは 1 つ以上のページで構成され
 - 通常は同じページ上にある、`View` の別の派生物。
 - コード ファイル内のオブジェクト。
 
-[**DataBindingDemos**](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/) サンプルにあるようなデモ プログラムでは、`View` の 2 つの派生物間のデータ バインディングは、多くの場合、わかりやすさと簡潔さのために示されます。 ただし、`View` と別のオブジェクト間のデータ バインディングにも、同じ原則を適用できます。 アプリケーションが Model-View-ViewModel (MVVM) アーキテクチャを使って構築されている場合、基になるデータを使うクラスは多くの場合 ViewModel と呼ばれます。
+[**DataBindingDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos) サンプルにあるようなデモ プログラムでは、`View` の 2 つの派生物間のデータ バインディングは、多くの場合、わかりやすさと簡潔さのために示されます。 ただし、`View` と別のオブジェクト間のデータ バインディングにも、同じ原則を適用できます。 アプリケーションが Model-View-ViewModel (MVVM) アーキテクチャを使って構築されている場合、基になるデータを使うクラスは多くの場合 ViewModel と呼ばれます。
 
 データ バインディングついては、次の一連の記事で説明されています。
 
@@ -73,6 +73,6 @@ Xamarin.Forms アプリケーションは 1 つ以上のページで構成され
 
 ## <a name="related-links"></a>関連リンク
 
-- [データ バインディングのデモ (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+- [データ バインディングのデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 - [Xamarin.Forms 書籍のデータ バインディングに関する章](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
 - [XAML マークアップ拡張](~/xamarin-forms/xaml/markup-extensions/index.md)

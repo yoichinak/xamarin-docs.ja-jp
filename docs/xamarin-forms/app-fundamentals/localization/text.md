@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/06/2016
-ms.openlocfilehash: 39e641d5e911b179ca8da9fc6c1b7685a9644364
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: a00b8052bfa2cd3a762e1b78409ffaa85cdae70c
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67831495"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68646763"
 ---
 # <a name="localization"></a>ローカリゼーション
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/UsingResxLocalization/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/usingresxlocalization)
 
 _Xamarin.Forms アプリは、.NET リソース ファイルを使用してローカライズできます。_
 
@@ -805,8 +805,8 @@ Xamarin.Forms アプリケーションは、RESX ファイルと .NET グロー�
 
 ## <a name="related-links"></a>関連リンク
 
-- [RESX ローカライズ サンプル](https://developer.xamarin.com/samples/xamarin-forms/UsingResxLocalization/)
-- [TodoLocalized サンプル アプリ](https://developer.xamarin.com/samples/xamarin-forms/TodoLocalized/)
+- [RESX ローカライズ サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/usingresxlocalization)
+- [TodoLocalized サンプル アプリ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todolocalized)
 - [クロスプラットフォームのローカライズ](~/cross-platform/app-fundamentals/localization.md)
 - [iOS のローカライズ](~/ios/app-fundamentals/localization/index.md)
 - [Android のローカライズ](~/android/app-fundamentals/localization.md)

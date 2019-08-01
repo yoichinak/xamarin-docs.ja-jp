@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: a962c61027fa6f9f05c59272c900a3ca32e1b01f
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 12633b728240c2f90d0265fe7b9efb65ea49bf1f
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926136"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650645"
 ---
 # <a name="custom-video-positioning"></a>カスタムのビデオ位置
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
 各プラットフォームで実装されているトランスポート コントロールには、位置バーが含まれます。 このバーはスライダーまたはスクロール バーに似ており、ビデオの合計時間内の現在の位置を示します。 さらに、ユーザーは位置バーを操作して、ビデオ内の新しい位置へと前後に移動することができます。
 
@@ -418,7 +418,7 @@ UWP [`MediaElement`](/uwp/api/Windows.UI.Xaml.Controls.MediaElement/) に関す�
 
 これは適切な推奨事項ですが、3 つの `VideoPlayerRenderer` クラスは、`Position` プロパティを更新するために、既にタイマーを間接的に使用しています。 `Position` プロパティは、`UpdateStatus` イベントのハンドラーで変更されます。このイベントの発生は 1 秒に 10 回のみです。
 
-そのため、**[Custom Position Bar]\(カスタムの位置バー\)** ページに示されているように、パフォーマンスの問題を起こすことなく `VideoPlayer` の `Position` プロパティを `PositionSlider` の `Position` プロパティにバインドできます。
+そのため、 **[Custom Position Bar]\(カスタムの位置バー\)** ページに示されているように、パフォーマンスの問題を起こすことなく `VideoPlayer` の `Position` プロパティを `PositionSlider` の `Position` プロパティにバインドできます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -473,7 +473,7 @@ UWP [`MediaElement`](/uwp/api/Windows.UI.Xaml.Controls.MediaElement/) に関す�
 </ContentPage>
 ```
 
-最初の省略記号 (...) には `ActivityIndicator` が隠れています。以前の **[Custom Transport]\(カスタム トランスポート\)** ページと同じです。 2 つの `Label` 要素は、`Position` および `TimeToEnd` プロパティを示している点に注意してください。 これら 2 つの `Label` 要素の間にある省略記号には、再生、一時停止、および停止に関する **[Custom Transport]\(カスタム トランスポート\)** ページに表示される 2 つの `Button` 要素が隠れています。 コードビハインド ロジックは、**[Custom Transport]\(カスタム トランスポート\)** ページと同じです。
+最初の省略記号 (...) には `ActivityIndicator` が隠れています。以前の **[Custom Transport]\(カスタム トランスポート\)** ページと同じです。 2 つの `Label` 要素は、`Position` および `TimeToEnd` プロパティを示している点に注意してください。 これら 2 つの `Label` 要素の間にある省略記号には、再生、一時停止、および停止に関する **[Custom Transport]\(カスタム トランスポート\)** ページに表示される 2 つの `Button` 要素が隠れています。 コードビハインド ロジックは、 **[Custom Transport]\(カスタム トランスポート\)** ページと同じです。
 
 [![カスタムの位置設定](custom-positioning-images/custompositioning-small.png "カスタムの位置設定")](custom-positioning-images/custompositioning-large.png#lightbox "カスタムの位置設定")
 
@@ -481,4 +481,4 @@ UWP [`MediaElement`](/uwp/api/Windows.UI.Xaml.Controls.MediaElement/) に関す�
 
 ## <a name="related-links"></a>関連リンク
 
-- [ビデオ プレーヤーのデモ (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)
+- [ビデオ プレーヤーのデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)

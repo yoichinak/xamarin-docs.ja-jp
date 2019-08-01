@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 0c63e33309802f0945ad94a858af45f6b29b2cc4
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: b9658aa0a4222fb9d257299ea3c6fd69016abdb4
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53050780"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68646752"
 ---
 # <a name="xamarinforms-binding-path"></a>Xamarin.Forms のバインド パス
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
 これまでのすべてのデータ バインディング例では、`Binding` クラスの [`Path`](xref:Xamarin.Forms.Binding.Path) プロパティ (または `Binding` マークアップ拡張の [`Path`](xref:Xamarin.Forms.Xaml.BindingExtension.Path) プロパティ) が単一のプロパティに設定されていました。 実際には、`Path` を*サブ プロパティ* (プロパティのプロパティ) またはコレクションのメンバーに設定することができます。
 
@@ -167,5 +167,5 @@ Xamarin.Forms は、バインド パスを処理するので、`INotifyPropertyC
 
 ## <a name="related-links"></a>関連リンク
 
-- [データ バインディングのデモ (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+- [データ バインディングのデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 - [Xamarin.Forms 書籍のデータ バインディングに関する章](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)

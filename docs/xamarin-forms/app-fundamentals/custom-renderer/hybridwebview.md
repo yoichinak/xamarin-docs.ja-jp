@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/07/2019
-ms.openlocfilehash: d09188373d11b33f3b3d78b92faa46bf754797f6
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.openlocfilehash: cd4bb8cae59e5d9cdcc36a58fb37e71e56d580b3
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67268990"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650865"
 ---
 # <a name="implementing-a-hybridwebview"></a>HybridWebView の実装
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/HybridWebView/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-hybridwebview)
 
 _Xamarin.Forms のカスタム ユーザー インターフェイス コントロールは、View クラスから派生させる必要があります。これは画面上にレイアウトとコントロールを配置するために使われます。この記事では、HybridWebView カスタム コントロール用のカスタム レンダラーを作成する方法を示します。これにより、プラットフォームに固有の Web コントロールを強化して、JavaScript からの C# コードの呼び出しを実現する方法が示されます。_
 
@@ -377,7 +377,7 @@ namespace CustomRenderer.Droid
 }
 ```
 
-`HybridWebViewRenderer` クラスによって、`HybridWebView.Uri` プロパティに指定された Web ページがネイティブの [`WebView`](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) コントロールに読み込まれます。また、Web ページの読み込みが完了した後に、`JavascriptWebViewClient` クラスの `OnPageFinished` オーバーライドを使用して、`invokeCSharpAction` JavaScript 関数が Web ページに挿入されます。
+`HybridWebViewRenderer` クラスによって、`HybridWebView.Uri` プロパティに指定された Web ページがネイティブの [`WebView`](xref:Android.Webkit.WebView) コントロールに読み込まれます。また、Web ページの読み込みが完了した後に、`JavascriptWebViewClient` クラスの `OnPageFinished` オーバーライドを使用して、`invokeCSharpAction` JavaScript 関数が Web ページに挿入されます。
 
 ```csharp
 public class JavascriptWebViewClient : WebViewClient
@@ -401,10 +401,10 @@ public class JavascriptWebViewClient : WebViewClient
 
 - カスタム レンダラーが新しい Xamarin.Forms 要素にアタッチされている場合:
   - `Control` プロパティが `null` の場合、次の操作が実行されます。
-    - ネイティブの [`WebView`](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) インスタンスが作成され、JavaScript がコントロールで有効になり、`JavascriptWebViewClient` インスタンスが `WebViewClient` の実装として設定されます。
-    - ネイティブの [`WebView`](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) コントロールへの参照を `Control` プロパティに割り当てる `SetNativeControl` メソッドが呼び出されます。
-  - [`WebView.AddJavascriptInterface`](https://developer.xamarin.com/api/member/Android.Webkit.WebView.AddJavascriptInterface/p/Java.Lang.Object/System.String/) メソッドによって、新しい `JSBridge` インスタンスが WebView の JavaScript コンテキストのメイン フレームに挿入され、`jsBridge` と名前が付けられます。 これにより、JavaScript から `JSBridge` クラスのメソッドにアクセスできるようになります。
-  - [`WebView.LoadUrl`](https://developer.xamarin.com/api/member/Android.Webkit.WebView.LoadUrl/p/System.String/) メソッドによって、`HybridWebView.Uri` プロパティに指定された HTML ファイルが読み込まれます。 このコードにより、ファイルがプロジェクトの `Content` フォルダーに格納されることが指定されます。
+    - ネイティブの [`WebView`](xref:Android.Webkit.WebView) インスタンスが作成され、JavaScript がコントロールで有効になり、`JavascriptWebViewClient` インスタンスが `WebViewClient` の実装として設定されます。
+    - ネイティブの [`WebView`](xref:Android.Webkit.WebView) コントロールへの参照を `Control` プロパティに割り当てる `SetNativeControl` メソッドが呼び出されます。
+  - [`WebView.AddJavascriptInterface`](xref:Android.Webkit.WebView.AddJavascriptInterface*) メソッドによって、新しい `JSBridge` インスタンスが WebView の JavaScript コンテキストのメイン フレームに挿入され、`jsBridge` と名前が付けられます。 これにより、JavaScript から `JSBridge` クラスのメソッドにアクセスできるようになります。
+  - [`WebView.LoadUrl`](xref:Android.Webkit.WebView.LoadUrl*) メソッドによって、`HybridWebView.Uri` プロパティに指定された HTML ファイルが読み込まれます。 このコードにより、ファイルがプロジェクトの `Content` フォルダーに格納されることが指定されます。
   - `JavascriptWebViewClient` クラスでは、Web ページの読み込みが完了すると、`invokeCSharpAction` JavaScript 関数がページに挿入されます。
 - レンダラーがアタッチされている要素が変更された場合:
   - リソースがリリースされます。
@@ -511,5 +511,5 @@ namespace CustomRenderer.UWP
 
 ## <a name="related-links"></a>関連リンク
 
-- [CustomRendererHybridWebView (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/HybridWebView/)
+- [CustomRendererHybridWebView (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-hybridwebview)
 - [JavaScript から C# を呼び出す](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/webview/call_csharp_from_javascript)

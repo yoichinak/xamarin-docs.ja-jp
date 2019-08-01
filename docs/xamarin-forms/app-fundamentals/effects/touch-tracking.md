@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2018
-ms.openlocfilehash: 9b5150eff0290ef5858198459108699be9f9b273
-ms.sourcegitcommit: cb484bd529bf2d8e48e5b3d086bdfc31895ec209
+ms.openlocfilehash: 87542bbd158b8c8ab0f48bb57fa0d19ce8f374c0
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53411766"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68651674"
 ---
 # <a name="invoking-events-from-effects"></a>エフェクトからのイベントの呼び出し
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/effects/TouchTrackingEffectDemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-touchtrackingeffect/)
 
 _エフェクトではイベントを定義して呼び出すことができ、基礎ネイティブ ビューの変化を信号で送ります。この記事では、低レベルのマルチタッチ フィンガー トラッキングを実装する方法とタッチ操作を信号で送るイベントを生成する方法を紹介します。_
 
@@ -52,7 +52,7 @@ UWP の手法は、音楽用キーボードなど、一部のアプリケーシ�
 
 ## <a name="the-touch-tracking-effect-api"></a>タッチトラッキング エフェクト API
 
-[**タッチ トラッキング エフェクト デモ**](https://developer.xamarin.com/samples/xamarin-forms/effects/TouchTrackingEffectDemos/) サンプルには、低レベルのタッチトラッキングを実行するクラス (と列挙) が含まれています。 これらの型は名前空間 `TouchTracking` に属し、`Touch` という単語から始まります。 **TouchTrackingEffectDemos** .NET Standard ライブラリ プロジェクトには、タッチ イベント型の `TouchActionType` 列挙が含まれています。
+[**タッチ トラッキング エフェクト デモ**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-touchtrackingeffect/) サンプルには、低レベルのタッチトラッキングを実行するクラス (と列挙) が含まれています。 これらの型は名前空間 `TouchTracking` に属し、`Touch` という単語から始まります。 **TouchTrackingEffectDemos** .NET Standard ライブラリ プロジェクトには、タッチ イベント型の `TouchActionType` 列挙が含まれています。
 
 ```csharp
 public enum TouchActionType
@@ -359,7 +359,7 @@ static Dictionary<long, TouchRecognizer> idToTouchDictionary =
 
 ## <a name="putting-the-touch-effect-to-work"></a>タッチ エフェクトを動かす
 
-[**TouchTrackingEffectDemos**](https://developer.xamarin.com/samples/xamarin-forms/effects/TouchTrackingEffectDemos/) プログラムには、一般的な作業のタッチトラッキング エフェクトをテストするページが 5 つ含まれています。
+[**TouchTrackingEffectDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-touchtrackingeffect/) プログラムには、一般的な作業のタッチトラッキング エフェクトをテストするページが 5 つ含まれています。
 
 **[BoxView Dragging]\(BoxView ドラッグ操作\)** ページでは、`BoxView` 要素を `AbsoluteLayout` に追加し、画面上をドラッグできます。 [XAML ファイル](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffectDemos/TouchTrackingEffectDemos/TouchTrackingEffectDemos/BoxViewDraggingPage.xaml)によって、`BoxView` 要素を `AbsoluteLayout` に追加し、`AbsoluteLayout` を消去するための `Button` ビューが 2 つインスタンス化されます。
 
@@ -809,4 +809,4 @@ void OnTouchEffectAction(object sender, TouchActionEventArgs args)
 
 - [iOS のマルチタッチ フィンガー トラッキング](~/ios/app-fundamentals/touch/touch-tracking.md)
 - [Android のマルチタッチ フィンガー トラッキング](~/android/app-fundamentals/touch/touch-tracking.md)
-- [タッチ トラッキング エフェクト (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/effects/TouchTrackingEffectDemos/)
+- [タッチ トラッキング エフェクト (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-touchtrackingeffect/)

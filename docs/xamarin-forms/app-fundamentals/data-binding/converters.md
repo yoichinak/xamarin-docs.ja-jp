@@ -7,20 +7,20 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 4594da09d48a0888a88cbce9ab135a007eb6f4cd
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 34b449aa358874f06a495ec52578dcca2dd13767
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53054332"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68654735"
 ---
 # <a name="xamarinforms-binding-value-converters"></a>Xamarin.Forms バインディングの値コンバーター
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
 データ バインディングでは通常、ソース プロパティからターゲット プロパティへ、または、場合によってはターゲット プロパティからソース プロパティへ、データを転送します。 ソース プロパティとターゲット プロパティの型が同じ場合、または、暗黙の型変換によって一方の型がもう一方の型に変換できる場合は、この転送はすみやかに進みます。 それ以外の場合は、型変換を行う必要があります。
 
-[**文字列の書式設定**](string-formatting.md)に関する記事では、データ バインディングの `StringFormat` プロパティを使用して任意の型を文字列に変換する方法を確認しました。 それ以外の型の変換では、[`IValueConverter`](xref:Xamarin.Forms.IValueConverter) インターフェイスを実装するクラス内に専用のコードを記述する必要があります  (ユニバーサル Windows プラットフォームには、`Windows.UI.Xaml.Data` 名前空間内に [`IValueConverter`](/uwp/api/Windows.UI.Xaml.Data.IValueConverter/) という名前の類似のクラスが含まれますが、この `IValueConverter` は `Xamarin.Forms` 名前空間内にあります)。`IValueConverter` を実装するクラスは、*値コンバーター*と呼ばれますが、*バインディング コンバーター*または*バインディング値コンバーター*と呼ばれることもよくあります。
+[**文字列の書式設定**](string-formatting.md)に関する記事では、データ バインディングの `StringFormat` プロパティを使用して任意の型を文字列に変換する方法を確認しました。 それ以外の型の変換では、[`IValueConverter`](xref:Xamarin.Forms.IValueConverter) インターフェイスを実装するクラス内に専用のコードを記述する必要があります (ユニバーサル Windows プラットフォームには、`Windows.UI.Xaml.Data` 名前空間内に [`IValueConverter`](/uwp/api/Windows.UI.Xaml.Data.IValueConverter/) という名前の類似のクラスが含まれますが、この `IValueConverter` は `Xamarin.Forms` 名前空間内にあります)。`IValueConverter` を実装するクラスは、*値コンバーター*と呼ばれますが、*バインディング コンバーター*または*バインディング値コンバーター*と呼ばれることもよくあります。
 
 ## <a name="the-ivalueconverter-interface"></a>IValueConverter インターフェイス
 
@@ -51,7 +51,7 @@ public class IntToBoolConverter : IValueConverter
 
 データ バインディングにも `StringFormat` 設定が含まれている場合、結果が文字列として書式設定される前に、値コンバーターが呼び出されます。
 
-[**Data Binding Demos**](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/) (データ バインディング デモ) サンプルの**Enable Buttons** (ボタンの有効化) のページでは、データ バインディング内でこの値コンバーターを使用する方法のサンプルを示しています。 `IntToBoolConverter` は、ページのリソース ディクショナリ内でインスタンス化されます。 その後、2 つのデータ バインディングに `Converter` プロパティを設定するために、`StaticResource` マークアップ拡張を使って参照されます。 ページ上の複数のデータ バインディング間でデータ コンバーターを共有することは、極めて一般的です
+[**Data Binding Demos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos) (データ バインディング デモ) サンプルの**Enable Buttons** (ボタンの有効化) のページでは、データ バインディング内でこの値コンバーターを使用する方法のサンプルを示しています。 `IntToBoolConverter` は、ページのリソース ディクショナリ内でインスタンス化されます。 その後、2 つのデータ バインディングに `Converter` プロパティを設定するために、`StaticResource` マークアップ拡張を使って参照されます。 ページ上の複数のデータ バインディング間でデータ コンバーターを共有することは、極めて一般的です
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -373,7 +373,7 @@ public class DoubleToIntConverter : IValueConverter
 }
 ```
 
-`Convert` は `parameter` 値で乗算している間に `double` から `int` への変換を行います。`ConvertBack` は整数の `value` 引数を `parameter` で除算し、`double` の結果を返します  (以下に示すプログラムでは、値コンバーターが文字列の書式設定との関連付けのみに使用されているので、`ConvertBack` は使用されていません)。
+`Convert` は `parameter` 値で乗算している間に `double` から `int` への変換を行います。`ConvertBack` は整数の `value` 引数を `parameter` で除算し、`double` の結果を返します (以下に示すプログラムでは、値コンバーターが文字列の書式設定との関連付けのみに使用されているので、`ConvertBack` は使用されていません)。
 
 `parameter` 引数の型は、データ バインディングがコード内または XAML 内のどちらに定義されているかに応じて異なる可能性があります。 コード内で `Binding` の `ConverterParameter` プロパティが設定されている場合、通常は、数値型の値に設定されます。
 
@@ -467,5 +467,5 @@ binding.ConverterParameter = 255;
 
 ## <a name="related-links"></a>関連リンク
 
-- [データ バインディングのデモ (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+- [データ バインディングのデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 - [Xamarin.Forms 書籍のデータ バインディングに関する章](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)

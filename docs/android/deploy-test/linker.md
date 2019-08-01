@@ -6,18 +6,18 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/30/2018
-ms.openlocfilehash: 3f22556948fc87dc604870f5a8625b80a4a0b29d
-ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
+ms.openlocfilehash: a79dcf14ddefd13d17e218602030a6467a3f1448
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66827200"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643840"
 ---
 # <a name="linking-on-android"></a>Android でのリンク
 
 Xamarin.Android アプリケーションは、"*リンカー*" を使ってアプリケーションのサイズを小さくします。 リンカーは、アプリケーションのスタティック分析を利用して、実際に使われているアセンブリ、型、メンバーを判別します。 その後、リンカーは "*ガベージ コレクター*" のように動作して、参照されているアセンブリ、型、メンバーのクロージャ全体が見つかるまで、参照されているアセンブリ、型、メンバーを継続的に検索します。 そして、このクロージャの外部にあるものはすべて "*破棄*" されます。
 
-たとえば、[Hello, Android](https://developer.xamarin.com/samples/monodroid/HelloM4A/) の例を次に示します。
+たとえば、[Hello, Android](https://docs.microsoft.com/samples/xamarin/monodroid-samples/hellom4a) の例を次に示します。
 
 |構成|1.2.0 のサイズ|4.0.1 のサイズ|
 |---|---|---|
@@ -98,7 +98,7 @@ E/mono    (17755):   at (wrapper dynamic-method) object:95bb4fbe-bef8-4e5b-8e99-
 
 -   XML シリアル化を利用する場合、型のプロパティを保持することもできます。
 
-このような場合は、[Android.Runtime.Preserve](https://developer.xamarin.com/api/type/Android.Runtime.PreserveAttribute/) 属性を使うことができます。 アプリケーションによって静的にリンクされていないすべてのメンバーは削除の対象になるため、この属性を使って、静的に参照されていないが、アプリケーションにとって必要であるメンバーをマークすることができます。 この属性は、ある型のすべてのメンバー、または型自体に適用できます。
+このような場合は、[Android.Runtime.Preserve](xref:Android.Runtime.PreserveAttribute) 属性を使うことができます。 アプリケーションによって静的にリンクされていないすべてのメンバーは削除の対象になるため、この属性を使って、静的に参照されていないが、アプリケーションにとって必要であるメンバーをマークすることができます。 この属性は、ある型のすべてのメンバー、または型自体に適用できます。
 
 次の例では、この属性を使って `Example` クラスのコンストラクターを維持しています。
 

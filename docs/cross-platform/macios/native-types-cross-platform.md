@@ -6,12 +6,12 @@ ms.assetid: B9C56C3B-E196-4ADA-A1DE-AC10D1001C2A
 author: asb3993
 ms.author: amburns
 ms.date: 04/07/2016
-ms.openlocfilehash: deb4caa4d23d23b2997361cca161b218c1ff7b61
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: e400191b40775cef5d1ab1cba0bd6c4544f8c5fe
+ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511290"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68680216"
 ---
 # <a name="working-with-native-types-in-cross-platform-apps"></a>クロスプラットフォーム アプリでのネイティブ型の使用
 
@@ -207,7 +207,7 @@ namespace NativeShared
 }
 ```
 
-ここでは、標準`CalculateArea` `float`では`nfloat`なくを返すようにメソッドを変更したことに注意してください。 これは、(両方の値が`nfloat`乗算されるため) の計算`nfloat`結果を`float`戻り値に暗黙的に変換しようとしたときに、コンパイルエラーが発生しないようにするためです。
+ここでは、標準`CalculateArea` `float`では`nfloat`なくを返すようにメソッドを変更したことに注意してください。 これは、(両方の値が`nfloat`乗算されるため) の計算`nfloat`結果を`float`戻り値に_暗黙_的に変換しようとしたときに、コンパイルエラーが発生しないようにするためです。
 
 コードをコンパイルし`using nfloat = global::System.Single;`て非 Unified API デバイスで実行すると、はをに`nfloat`マップします。 `Single`これにより、 `float`を使用するフロントエンドアプリケーションが`CalculateArea`メソッドを呼び出すことができるように、に暗黙的に変換されます。変更.
 
@@ -251,4 +251,4 @@ Console.WriteLine ("Rectangle Area: {0}", Transformations.CalculateArea ((Rectan
 - [Unified API](~/cross-platform/macios/unified/index.md)
 - [ネイティブ型](~/cross-platform/macios/nativetypes.md)
 - [コード共有のオプション](~/cross-platform/app-fundamentals/code-sharing.md)
-- [コード共有のサンプル](https://developer.xamarin.com/samples/mobile/SharingCode/)
+- [コード共有のサンプル](https://docs.microsoft.com/samples/xamarin/mobile-samples/sharingcode/)

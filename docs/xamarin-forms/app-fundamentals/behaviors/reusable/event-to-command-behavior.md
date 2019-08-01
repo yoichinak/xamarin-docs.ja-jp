@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/09/2018
-ms.openlocfilehash: 1bb3f319eb104a7425c3be820f5c91efe300737f
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 292a6aaaea4fb0f84138e04c88f001c72ddd096d
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925169"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650909"
 ---
 # <a name="reusable-eventtocommandbehavior"></a>再利用可能な EventToCommandBehavior
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/Behaviors/EventToCommandBehavior/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-eventtocommandbehavior)
 
 _ビヘイビアーを使用すると、コマンドとやりとりするように設計されていないコントロールにコマンドを関連付けることができます。この記事では、Xamarin.Forms のビヘイビアーを作成および使用して、イベントが発生したときにコマンドを呼び出す方法を示します。_
 
@@ -35,7 +35,7 @@ _ビヘイビアーを使用すると、コマンドとやりとりするよう�
 - **Converter** – "*ソース*" と "*ターゲット*" の間でバインド エンジンによってイベント引数データが受け渡しされるときにその形式を変更する [`IValueConverter`](xref:Xamarin.Forms.IValueConverter) 実装です。
 
 > [!NOTE]
-> `EventToCommandBehavior` は、[EventToCommand Behavior サンプル](https://developer.xamarin.com/samples/xamarin-forms/Behaviors/EventToCommandBehavior/) に配置することができるカスタム クラスであり、Xamarin.Forms の一部ではありません。
+> `EventToCommandBehavior` は、[EventToCommand Behavior サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-eventtocommandbehavior) に配置することができるカスタム クラスであり、Xamarin.Forms の一部ではありません。
 
 ## <a name="creating-the-behavior"></a>ビヘイビアーの作成
 
@@ -208,6 +208,6 @@ selectedItemLabel.SetBinding(Label.TextProperty, "SelectedItemText");
 
 ## <a name="related-links"></a>関連リンク
 
-- [EventToCommand Behavior (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/Behaviors/EventToCommandBehavior/)
+- [EventToCommand Behavior (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-eventtocommandbehavior)
 - [Behavior](xref:Xamarin.Forms.Behavior)
 - [Behavior&lt;T&gt;](xref:Xamarin.Forms.Behavior`1)

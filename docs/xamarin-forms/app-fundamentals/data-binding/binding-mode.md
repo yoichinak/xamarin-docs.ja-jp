@@ -7,20 +7,20 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/01/2018
-ms.openlocfilehash: 4583b703d6c6b15105d60a98e7a1064e6a2e9263
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 20a6dab34f290c6e5f170d861183dabbfe382970
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64977784"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650218"
 ---
 # <a name="xamarinforms-binding-mode"></a>Xamarin.Forms のバインディング モード
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
 [前の記事](basic-bindings.md) では、**Alternative Code Binding** ページと **Alternative XAML Binding** ページに `Label` が備わっていて、その `Scale` プロパティは `Slider` の `Value` プロパティにバインドされていました。 `Slider` の初期値が 0 であるため、`Label` の `Scale` プロパティは 1 ではなく 0 に設定され、`Label` は非表示となりました。
 
-[**DataBindingDemos**](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/) のサンプル内の **Reverse Binding** ページは、データ バインディングが `Label` ではなく `Slider` に対して定義されているという点を除けば、前の記事のプログラムに類似しています。
+[**DataBindingDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos) のサンプル内の **Reverse Binding** ページは、データ バインディングが `Label` ではなく `Slider` に対して定義されているという点を除けば、前の記事のプログラムに類似しています。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -684,5 +684,5 @@ public partial class SampleSettingsPage : ContentPage
 
 ## <a name="related-links"></a>関連リンク
 
-- [データ バインディングのデモ (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+- [データ バインディングのデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 - [Xamarin.Forms 書籍のデータ バインディングに関する章](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)

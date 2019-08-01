@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 21a707ebd189e9cbfa6735b233a6c0af65138e0c
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: e14008341e531844851452daeee4c730565a2843
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926639"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650487"
 ---
 # <a name="creating-the-platform-video-players"></a>プラットフォーム ビデオ プレーヤーの作成
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
-[**VideoPlayerDemos**](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/) ソリューションには、Xamarin.Forms 用のビデオ プレーヤーを実装するためのコードが含まれます。 また、アプリケーション内でビデオ プレーヤーを使用する方法を示す一連のページも含まれます。 `VideoPlayer` コードとそのプラットフォーム レンダラーはすべて、`FormsVideoLibrary` という名前のプロジェクト フォルダー内にあり、名前空間 `FormsVideoLibrary` も使用します。 このため、自身のアプリケーションへのファイルのコピーも、クラスの参照も簡単に行うことができます。
+[**VideoPlayerDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) ソリューションには、Xamarin.Forms 用のビデオ プレーヤーを実装するためのコードが含まれます。 また、アプリケーション内でビデオ プレーヤーを使用する方法を示す一連のページも含まれます。 `VideoPlayer` コードとそのプラットフォーム レンダラーはすべて、`FormsVideoLibrary` という名前のプロジェクト フォルダー内にあり、名前空間 `FormsVideoLibrary` も使用します。 このため、自身のアプリケーションへのファイルのコピーも、クラスの参照も簡単に行うことができます。
 
 ## <a name="the-video-player"></a>ビデオ プレーヤー
 
@@ -120,7 +120,7 @@ namespace FormsVideoLibrary.iOS
 
 ### <a name="the-android-video-view"></a>Android のビデオ ビュー
 
-`VideoPlayer` 用の Android レンダラーは、Android [`VideoView`](https://developer.xamarin.com/api/type/Android.Widget.VideoView/) クラスに基づきます。 しかし、`VideoView` を単独で使用して、Xamarin.Forms アプリケーションでビデオを再生すると、ビデオは `VideoPlayer` 用に割り当てられた領域を塗りつぶし、正確な縦横比は保持されません。 このため、(後述するように) `VideoView` を Android `RelativeLayout` の子にします。 `using` ディレクティブは、それを Xamarin.Forms `RelativeLayout` と区別する `ARelativeLayout` を定義し、それが `ViewRenderer` の 2 番目のジェネリック引数になります。
+`VideoPlayer` 用の Android レンダラーは、Android [`VideoView`](xrtef:Android.Widget.VideoView) クラスに基づきます。 しかし、`VideoView` を単独で使用して、Xamarin.Forms アプリケーションでビデオを再生すると、ビデオは `VideoPlayer` 用に割り当てられた領域を塗りつぶし、正確な縦横比は保持されません。 このため、(後述するように) `VideoView` を Android `RelativeLayout` の子にします。 `using` ディレクティブは、それを Xamarin.Forms `RelativeLayout` と区別する `ARelativeLayout` を定義し、それが `ViewRenderer` の 2 番目のジェネリック引数になります。
 
 ```csharp
 using System;
@@ -365,7 +365,7 @@ namespace FormsVideoLibrary.iOS
 
 ### <a name="the-android-media-controller"></a>Android のメディア コントローラー
 
-Android でトランスポート コントロールを表示するには、[`MediaController`](https://developer.xamarin.com/api/type/Android.Widget.MediaController/) オブジェクトを作成し、それを `VideoView` オブジェクトと関連付ける必要があります。 しくみは、`SetAreTransportControlsEnabled` メソッドで示されています。
+Android でトランスポート コントロールを表示するには、[`MediaController`](xref:Android.Widget.MediaController) オブジェクトを作成し、それを `VideoView` オブジェクトと関連付ける必要があります。 しくみは、`SetAreTransportControlsEnabled` メソッドで示されています。
 
 ```csharp
 namespace FormsVideoLibrary.Droid
@@ -467,4 +467,4 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="related-links"></a>関連リンク
 
-- [ビデオ プレーヤーのデモ (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)
+- [ビデオ プレーヤーのデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)

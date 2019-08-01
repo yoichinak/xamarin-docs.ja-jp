@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 10e45ec438f1e698a9f09223cecea5934de54da8
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.openlocfilehash: 0a3238d614ee655bdf883f30adbc7969346fdfa7
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617715"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68508899"
 ---
 # <a name="xamarinandroid-performance"></a>Xamarin.Android のパフォーマンス
 
@@ -20,9 +20,9 @@ _Xamarin.Android でビルドされたアプリケーションのパフォーマ
 
 ## <a name="performance-overview"></a>パフォーマンスの概要
 
-低いアプリケーション パフォーマンスは、さまざまな方法で示されます。 たとえば、アプリケーションが応答しない、スクロールが遅くなった、電池の寿命が減っている可能性がある、などです。 ただし、パフォーマンスを最適化するには、単に効率的なコードを実装するだけでは済みません。 アプリケーション パフォーマンスのユーザー エクスペリエンスも考慮する必要があります。 たとえば、操作の実行によって、ユーザーが他の操作を実行できない状況にならないようにすることで、ユーザー エクスペリエンスを改善できます。
+アプリケーションのパフォーマンスの低さは、さまざまな形でアプリケーションに現れます。 たとえば、アプリケーションが応答しなかったり、スクロールが遅くなったり、電池の寿命が縮まったりすることがあります。 ただし、パフォーマンスを最適化するには、単に効率的なコードを実装するだけでは不十分です。 アプリケーション パフォーマンスに関わるユーザー エクスペリエンスも考慮する必要があります。 たとえば、操作の実行によって、ユーザーが他の操作を実行できない状況にならないようにすることで、ユーザー エクスペリエンスを改善できます。
 
-Xamarin.Android でビルドされたアプリケーションのパフォーマンスとユーザーの体感パフォーマンスを高めるための方法は多数あります。 Windows コモン コントロールには以下が含まれます。
+Xamarin.Android でビルドされたアプリケーションのパフォーマンスとユーザーの体感パフォーマンスを高めるための方法は多数あります。 それには以下が含まれます。
 
 - [レイアウト階層を最適化する](#optimizelayout)
 - [リスト ビューを最適化する](#optimizelistviews)
@@ -43,9 +43,9 @@ Xamarin.Android でビルドされたアプリケーションのパフォーマ�
 
 ## <a name="optimize-layout-hierarchies"></a>レイアウト階層を最適化する
 
-アプリケーションに追加された各レイアウトには、初期化、レイアウト、および描画が必要です。 `weight` パラメーターを使用する [`LinearLayout`](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/) インスタンスを入れ子にすると、レイアウト パスに影響する可能性があります。これは、子がそれぞれ 2 回測定されるためです。 `LinearLayout` の入れ子になったインスタンスを使用すると、ビュー階層が深くなり、その結果、[`ListView`](https://developer.xamarin.com/api/type/Android.Widget.ListView/) などの、複数回拡大されたレイアウトのパフォーマンスが低下する可能性があります。 したがって、このようなレイアウトを最適化することが重要です。そうすれば、パフォーマンスが向上します。
+アプリケーションに追加された各レイアウトには、初期化、レイアウト、および描画が必要です。 `weight` パラメーターを使用する [`LinearLayout`](xref:Android.Widget.LinearLayout) インスタンスを入れ子にすると、レイアウト パスに影響する可能性があります。これは、子がそれぞれ 2 回測定されるためです。 `LinearLayout` の入れ子になったインスタンスを使用すると、ビュー階層が深くなり、その結果、[`ListView`](xref:Android.Widget.ListView) などの、複数回拡大されたレイアウトのパフォーマンスが低下する可能性があります。 したがって、このようなレイアウトを最適化することが重要です。そうすれば、パフォーマンスが向上します。
 
-たとえば、アイコン、タイトル、および説明を含むリスト ビュー行の [`LinearLayout`](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/) について考えてみます。 `LinearLayout` には [`ImageView`](https://developer.xamarin.com/api/type/Android.Widget.ImageView/) と、2 つの [`TextView`](https://developer.xamarin.com/api/type/Android.Widget.TextView/) インスタンスを含む縦方向の `LinearLayout` が含まれます。
+たとえば、アイコン、タイトル、および説明を含むリスト ビュー行の [`LinearLayout`](xref:Android.Widget.LinearLayout) について考えてみます。 `LinearLayout` には [`ImageView`](xref:Android.Widget.ImageView) と、2 つの [`TextView`](xref:Android.Widget.TextView) インスタンスを含む縦方向の `LinearLayout` が含まれます。
 
 ```xml
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -80,7 +80,7 @@ Xamarin.Android でビルドされたアプリケーションのパフォーマ�
 </LinearLayout>
 ```
 
-このレイアウトは 3 レベルの深さであり、各 [`ListView`](https://developer.xamarin.com/api/type/Android.Widget.ListView/) 行で拡大しても無駄になります。 ただし、以下のコード例のように、レイアウトをフラット化することで改善できます。
+このレイアウトは 3 レベルの深さであり、各 [`ListView`](xref:Android.Widget.ListView) 行で拡大しても無駄になります。 ただし、以下のコード例のように、レイアウトをフラット化することで改善できます。
 
 ```xml
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -118,26 +118,26 @@ Xamarin.Android でビルドされたアプリケーションのパフォーマ�
 </RelativeLayout>
 ```
 
-前の 3 レベルの階層は 2 レベルの階層に減り、1 つの [`RelativeLayout`](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/) で 2 つの [`LinearLayout`](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/) インスタンスが置き換えられています。 各 [`ListView`](https://developer.xamarin.com/api/type/Android.Widget.ListView/) 行のレイアウトを拡大すると、パフォーマンスが大幅に向上します。
+前の 3 レベルの階層は 2 レベルの階層に減り、1 つの [`RelativeLayout`](xref:Android.Widget.RelativeLayout) で 2 つの [`LinearLayout`](xref:Android.Widget.LinearLayout) インスタンスが置き換えられています。 各 [`ListView`](xref:Android.Widget.ListView) 行のレイアウトを拡大すると、パフォーマンスが大幅に向上します。
 
 <a name="optimizelistviews" />
 
 ## <a name="optimize-list-views"></a>リスト ビューを最適化する
 
-ユーザーは、[`ListView`](https://developer.xamarin.com/api/type/Android.Widget.ListView/) インスタンスのスムーズなスクロールと読み込み時間の短縮を期待します。 ただし、各リスト ビュー行に深い入れ子のビュー階層が含まれる場合、またはリスト ビュー行に複雑なレイアウトが含まれる場合、スクロールのパフォーマンスは低下する可能性があります。 ただし、`ListView` のパフォーマンス低下を回避するために使用できる次のような手法があります。
+ユーザーは、[`ListView`](xref:Android.Widget.ListView) インスタンスのスムーズなスクロールと読み込み時間の短縮を期待します。 ただし、各リスト ビュー行に深い入れ子のビュー階層が含まれる場合、またはリスト ビュー行に複雑なレイアウトが含まれる場合、スクロールのパフォーマンスは低下する可能性があります。 ただし、`ListView` のパフォーマンス低下を回避するために使用できる次のような手法があります。
 
 - 行ビューを再利用する。詳細については、「[行ビューを再利用する](#reuserowviews)」を参照してください。
 - 可能な場合は、レイアウトをフラット化する。
 - Web サービスから取得される行のコンテンツをキャッシュする。
 - イメージのスケーリングを避ける。
 
-これらの手法をすべて使用することで、[`ListView`](https://developer.xamarin.com/api/type/Android.Widget.ListView/) インスタンスのスクロールをスムーズに保つことができます。
+これらの手法をすべて使用することで、[`ListView`](xref:Android.Widget.ListView) インスタンスのスクロールをスムーズに保つことができます。
 
 <a name="reuserowviews" />
 
 ### <a name="reuse-row-views"></a>行ビューを再利用する
 
-[`ListView`](https://developer.xamarin.com/api/type/Android.Widget.ListView/) で数百行を表示する場合、少数のみが 1 画面に表示されるなら、数百単位の [`View`](https://developer.xamarin.com/api/type/Android.Views.View/) オブジェクトを作成するのはメモリの無駄です。 代わりに、画面の行に表示される `View` オブジェクトのみをメモリに読み込み、その再利用されるオブジェクトに**コンテンツ**を読み込むことができます。 こうすることで、数百単位の追加オブジェクトのインスタンス化を防ぎ、時間とメモリを節約することができます。
+[`ListView`](xref:Android.Widget.ListView) で数百行を表示する場合、少数のみが 1 画面に表示されるなら、数百単位の [`View`](xref:Android.Views.View) オブジェクトを作成するのはメモリの無駄です。 代わりに、画面の行に表示される `View` オブジェクトのみをメモリに読み込み、その再利用されるオブジェクトに**コンテンツ**を読み込むことができます。 こうすることで、数百単位の追加オブジェクトのインスタンス化を防ぎ、時間とメモリを節約することができます。
 
 そのため、次のコード例のように、行が画面から消えるときに、そのビューを再利用のためのキューに格納できます。
 
@@ -154,7 +154,7 @@ public override View GetView(int position, View convertView, ViewGroup parent)
 }
 ```
 
-ユーザーがスクロールすると、[`ListView`](https://developer.xamarin.com/api/type/Android.Widget.ListView/) は `GetView` オーバーライドを呼び出して、表示する新しいビューを要求します。使用可能な場合は、`convertView` パラメーターに未使用のビューを渡します。 この値が `null` の場合、コードで新しい [`View`](https://developer.xamarin.com/api/type/Android.Views.View/) インスタンスが作成されます。それ以外の場合は、`convertView` プロパティをリセットして再利用できます。
+ユーザーがスクロールすると、[`ListView`](xref:Android.Widget.ListView) は `GetView` オーバーライドを呼び出して、表示する新しいビューを要求します。使用可能な場合は、`convertView` パラメーターに未使用のビューを渡します。 この値が `null` の場合、コードで新しい [`View`](xref:Android.Views.View) インスタンスが作成されます。それ以外の場合は、`convertView` プロパティをリセットして再利用できます。
 
 詳細については、「[Populating a ListView with Data](~/android/user-interface/layouts/list-view/populating.md)」 (ListView へのデータの設定) の「[Row View Re-Use](~/android/user-interface/layouts/list-view/populating.md#row-view-re-use)」 (行ビューの再利用) を参照してください。
 
@@ -199,17 +199,17 @@ App.Current.Service1.Updated -= service1UpdateHandler;
 
 ## <a name="release-resources-when-notified"></a>通知時にリソースを解放する
 
-アプリケーションのライフサイクル中に、[`OnTrimMemory`](https://developer.xamarin.com/api/member/Android.App.Activity.OnTrimMemory/p/Android.Content.TrimMemory/) コールバックにより、デバイスのメモリが少なくなったときに通知が提供されます。 次のメモリ レベルの通知をリッスンするには、このコールバックを実装する必要があります。
+アプリケーションのライフサイクル中に、[`OnTrimMemory`](xref:Android.App.Activity.OnTrimMemory*) コールバックにより、デバイスのメモリが少なくなったときに通知が提供されます。 次のメモリ レベルの通知をリッスンするには、このコールバックを実装する必要があります。
 
-- [`TrimMemoryRunningModerate`](https://developer.xamarin.com/api/field/Android.Content.ComponentCallbacks2.TrimMemoryRunningModerate/) – アプリケーションはいくつかの不要なリソースを解放することが*できます*。
-- [`TrimMemoryRunningLow`](https://developer.xamarin.com/api/field/Android.Content.ComponentCallbacks2.TrimMemoryRunningLow/) – アプリケーションは不要なリソースを解放する*必要があります*。
-- [`TrimMemoryRunningCritical`](https://developer.xamarin.com/api/field/Android.Content.ComponentCallbacks2.TrimMemoryRunningCritical/) – アプリケーションは、可能な限り多くの重要でないプロセスを解放する*必要があります*。
+- [`TrimMemoryRunningModerate`](xref:Android.Content.ComponentCallbacks2.TrimMemoryRunningModerate) – アプリケーションはいくつかの不要なリソースを解放することが*できます*。
+- [`TrimMemoryRunningLow`](xref:Android.Content.ComponentCallbacks2.TrimMemoryRunningLow) – アプリケーションは不要なリソースを解放する*必要があります*。
+- [`TrimMemoryRunningCritical`](xref:Android.Content.ComponentCallbacks2.TrimMemoryRunningCritical) – アプリケーションは、可能な限り多くの重要でないプロセスを解放する*必要があります*。
 
-さらに、アプリケーション プロセスがキャッシュされると、次のメモリ レベルの通知が [`OnTrimMemory`](https://developer.xamarin.com/api/member/Android.App.Activity.OnTrimMemory/p/Android.Content.TrimMemory/) コールバックで受信される場合があります。
+さらに、アプリケーション プロセスがキャッシュされると、次のメモリ レベルの通知が [`OnTrimMemory`](xref:Android.App.Activity.OnTrimMemory*) コールバックで受信される場合があります。
 
-- [`TrimMemoryBackground`](https://developer.xamarin.com/api/field/Android.Content.ComponentCallbacks2.TrimMemoryBackground/) – ユーザーがアプリに戻った場合に、すばやく効率的に再ビルドできるリソースを解放します。
-- [`TrimMemoryModerate`](https://developer.xamarin.com/api/field/Android.Content.ComponentCallbacks2.TrimMemoryModerate/) – リソースを解放することで、他のプロセスをキャッシュに保持でき、全体的なパフォーマンスが向上します。
-- [`TrimMemoryComplete`](https://developer.xamarin.com/api/field/Android.Content.ComponentCallbacks2.TrimMemoryComplete/) – 多くのメモリがすぐに回復されない場合は、アプリケーション プロセスがすぐに終了します。
+- [`TrimMemoryBackground`](xref:Android.Content.ComponentCallbacks2.TrimMemoryBackground) – ユーザーがアプリに戻った場合に、すばやく効率的に再ビルドできるリソースを解放します。
+- [`TrimMemoryModerate`](xref:Android.Content.ComponentCallbacks2.TrimMemoryModerate) – リソースを解放することで、他のプロセスをキャッシュに保持でき、全体的なパフォーマンスが向上します。
+- [`TrimMemoryComplete`](xref:Android.Content.ComponentCallbacks2.TrimMemoryComplete) – 多くのメモリがすぐに回復されない場合は、アプリケーション プロセスがすぐに終了します。
 
 受信したレベルに基づいてリソースを解放することで、通知に応答する必要があります。
 
@@ -219,7 +219,7 @@ App.Current.Service1.Updated -= service1UpdateHandler;
 
 ユーザーが別のアプリに移動したときに、アプリのユーザー インターフェイスで使用されているすべてのリソースを解放します。キャッシュされたプロセスに対する Android の容量が大幅に増加する場合があり、これにより、ユーザー エクスペリエンスの品質に影響する可能性があります。
 
-ユーザーが UI を終了するときに通知を受信するには、`Activity` クラスで [`OnTrimMemory`](https://developer.xamarin.com/api/member/Android.App.Activity.OnTrimMemory/p/Android.Content.TrimMemory/) コールバックを実装し、UI が非表示になっていることを示す [`TrimMemoryUiHidden`](https://developer.xamarin.com/api/field/Android.Content.ComponentCallbacks2.TrimMemoryUiHidden/) レベルをリッスンします。 この通知を受信するのは、アプリケーションの UI コンポーネントが*すべて* ユーザーに対して非表示になった場合のみです。 この通知の受信時に UI リソースを解放すると、ユーザーがアプリの別のアクティビティから戻った場合に、UI リソースを引き続き使用して、アクティビティをすばやく再開できます。
+ユーザーが UI を終了するときに通知を受信するには、`Activity` クラスで [`OnTrimMemory`](xref:Android.App.Activity.OnTrimMemory*) コールバックを実装し、UI が非表示になっていることを示す [`TrimMemoryUiHidden`](xref:Android.Content.ComponentCallbacks2.TrimMemoryUiHidden) レベルをリッスンします。 この通知を受信するのは、アプリケーションの UI コンポーネントが*すべて* ユーザーに対して非表示になった場合のみです。 この通知の受信時に UI リソースを解放すると、ユーザーがアプリの別のアクティビティから戻った場合に、UI リソースを引き続き使用して、アクティビティをすばやく再開できます。
 
 <a name="optimizeimages" />
 
@@ -235,7 +235,7 @@ App.Current.Service1.Updated -= service1UpdateHandler;
 
 メモリの使用量を節約するには、不要になったサイズの大きいイメージ リソースは破棄することをお勧めします。 ただし、正しくイメージを破棄することが重要です。 明示的な `.Dispose()` 呼び出しを使用せず、[using](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/using-statement) ステートメントを使用すると、`IDisposable` オブジェクトを正しく使用できます。 
 
-たとえば、[Bitmap](https://developer.xamarin.com/api/type/Android.Graphics.Bitmap/) クラスは `IDisposable` を実装します。 `using` ブロックに `BitMap` オブジェクトのインスタンスをラップすると、このブロックを終了するときに、それが正しく破棄されることが保証されます。
+たとえば、[Bitmap](xref:Android.Graphics.Bitmap) クラスは `IDisposable` を実装します。 `using` ブロックに `BitMap` オブジェクトのインスタンスをラップすると、このブロックを終了するときに、それが正しく破棄されることが保証されます。
 
 ```csharp
 using (Bitmap smallPic = BitmapFactory.DecodeByteArray(smallImageByte, 0, smallImageByte.Length))
@@ -260,7 +260,7 @@ Android デバイスでは、浮動小数点演算が、整数演算の場合よ
 
 ## <a name="dismiss-dialogs"></a>ダイアログを閉じる
 
-[`ProgressDialog`](https://developer.xamarin.com/api/type/Android.App.ProgressDialog/) クラス (または任意のダイアログやアラート) を使用する場合は、ダイアログの目的が完了したときに [`Hide`](https://developer.xamarin.com/api/member/Android.App.Dialog.Hide()/) メソッドを呼び出す代わりに、[`Dismiss`](https://developer.xamarin.com/api/member/Android.App.Dialog.Dismiss()/) メソッドを呼び出します。 それ以外の場合、ダイアログは引き続き有効であるため、アクティビティへの参照が保持され、そのアクティビティがリークされます。
+[`ProgressDialog`](xref:Android.App.ProgressDialog) クラス (または任意のダイアログやアラート) を使用する場合は、ダイアログの目的が完了したときに [`Hide`](xref:Android.App.Dialog.Hide*) メソッドを呼び出す代わりに、[`Dismiss`](xref:Android.App.Dialog.Dismiss*) メソッドを呼び出します。 それ以外の場合、ダイアログは引き続き有効であるため、アクティビティへの参照が保持され、そのアクティビティがリークされます。
 
 ## <a name="summary"></a>まとめ
 

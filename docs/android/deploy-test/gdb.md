@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/05/2018
-ms.openlocfilehash: c64714974f6467bcd7e0e4705a1426c83aa691b5
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: fe2cc5fb7c51425c8030d31015236473a5264efb
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57667591"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68509019"
 ---
 # <a name="gdb"></a>GDB
 
@@ -59,7 +59,7 @@ $ /Library/Frameworks/Mono.framework/Commands/xbuild /t:_Gdb *.csproj
 
 
 > [!NOTE]
-> `gdb-symbols` ディレクトリの内容は、展開された Android ターゲットに関連付けられており、ターゲットを変更した場合、自動的に置き換えられません  (これをバグと見なします)。Android ターゲット デバイスを変更する場合は、このディレクトリを手動で削除する必要があります。
+> `gdb-symbols` ディレクトリの内容は、展開された Android ターゲットに関連付けられており、ターゲットを変更した場合、自動的に置き換えられません (これをバグと見なします)。Android ターゲット デバイスを変更する場合は、このディレクトリを手動で削除する必要があります。
 
 最後に、生成された `gdb` コマンドをコピーし、シェルで実行します。
 
@@ -113,7 +113,7 @@ GNU gdb (GDB) 7.3.1-gg2
 
 アプリ内に `gdbserver` を含めるには、次のようにします。
 
-1. Android NDK 内で `gdbserver` (**$ANDROID\_NDK\_PATH/prebuilt/android-arm/gdbserver/gdbserver** にある) を見つけ、それを Project ディレクトリにコピーします。
+1. Android NDK 内で `gdbserver` ( **$ANDROID\_NDK\_PATH/prebuilt/android-arm/gdbserver/gdbserver** にある) を見つけ、それを Project ディレクトリにコピーします。
 
 2. `gdbserver` の名前を **libs/armeabi-v7a/libgdbserver.so** に変更します。
 
@@ -147,7 +147,7 @@ GNU gdb (GDB) 7.3.1-gg2
 
 アプリ デバッグでは `INTERNET` アクセス許可は既定で有効になります。 アプリケーションにまだ存在しない場合は、**Properties/AndroidManifest.xml** を編集するか、[[プロジェクトのプロパティ]](https://github.com/xamarin/recipes/tree/master/Recipes/android/general/projects/add_permissions_to_android_manifest) を編集して追加することができます。
 
-アプリ デバッグは、[ApplicationAttribute.Debugging](https://developer.xamarin.com/api/property/Android.App.ApplicationAttribute.Debuggable/) カスタム属性プロパティを `true` に設定するか、次のように **Properties/AndroidManifest.xml** を編集して `//application/@android:debuggable` 属性を `true` に設定することで有効にすることできます。
+アプリ デバッグは、[ApplicationAttribute.Debugging](xref:Android.App.ApplicationAttribute.Debuggable) カスタム属性プロパティを `true` に設定するか、次のように **Properties/AndroidManifest.xml** を編集して `//application/@android:debuggable` 属性を `true` に設定することで有効にすることできます。
 
 ```xml
 <application android:label="Example.Name.Here" android:debuggable="true">
@@ -163,7 +163,7 @@ GNU gdb (GDB) 7.3.1-gg2
 
 ### <a name="monopmip-doesnt-work"></a>`mono_pmip` が機能しない
 
-`mono_pmip` 関数 ([マネージド スタック フレームを取得する](https://www.mono-project.com/docs/debug+profile/debug/#debugging-with-gdb)場合に役立つ) が (現在、`_Gdb` ターゲットがプルダウンしていない) `libmonosgen-2.0.so` からエクスポートされます  (この問題は今後のリリースで修正される予定です)。
+`mono_pmip` 関数 ([マネージド スタック フレームを取得する](https://www.mono-project.com/docs/debug+profile/debug/#debugging-with-gdb)場合に役立つ) が (現在、`_Gdb` ターゲットがプルダウンしていない) `libmonosgen-2.0.so` からエクスポートされます (この問題は今後のリリースで修正される予定です)。
 
 `libmonosgen-2.0.so` にある関数の呼び出しを有効にするには、次のようにターゲット デバイスから `gdb-symbols` ディレクトリにコピーします。
 
@@ -197,6 +197,6 @@ Copyright (C) 2011 Free Software Foundation, Inc.
 No stack.
 ```
 
-これは通常、`gdb-symbols` ディレクトリの内容が Android ターゲットと同期されていないことを示しています  (Android ターゲットを変更しましたか?)。
+これは通常、`gdb-symbols` ディレクトリの内容が Android ターゲットと同期されていないことを示しています (Android ターゲットを変更しましたか?)。
 
 `gdb-symbols` ディレクトリを削除して、再試行してください。

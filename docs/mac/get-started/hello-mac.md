@@ -8,12 +8,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 09/02/2018
-ms.openlocfilehash: 9175c60c436f2e808f3658bae717a747e0401c28
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: 8f5be75c750a6ee7efc52300382ca2241b87ecd3
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58855316"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656924"
 ---
 # <a name="hello-mac-walkthrough"></a>Hello, Mac - チュートリアル
 
@@ -33,7 +33,7 @@ Xamarin.Mac を使うと、*Objective-C* または *Swift* で開発するとき
 - **Outlet と Action** – Outlet と Action を使用してユーザー インターフェイスのコントロールを接続する方法。
 - **配置/テスト** – Xamarin.Mac アプリを実行してテストする方法。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 Xamarin.Mac アプリケーションの開発に必要な条件は次のとおりです。
 
@@ -59,7 +59,7 @@ Xamarin.Mac を使って構築されたアプリケーションを実行する�
 
     [![](hello-mac-images/setup01-sml.png "メインの Visual Studio for Mac インターフェイス")](hello-mac-images/setup01.png#lightbox)
 
-2. **[新しいプロジェクト...]** ボタンをクリックして **[新しいプロジェクト]** ダイアログ ボックスを開き、**[Mac]** > **[アプリ]** > **[Cocoa アプリ]** の順に選択して **[次へ]** ボタンをクリックします。
+2. **[新しいプロジェクト...]** ボタンをクリックして **[新しいプロジェクト]** ダイアログ ボックスを開き、 **[Mac]**  >  **[アプリ]**  >  **[Cocoa アプリ]** の順に選択して **[次へ]** ボタンをクリックします。
 
     [![](hello-mac-images/setup02-sml.png "Cocoa アプリの選択")](hello-mac-images/setup02.png#lightbox)
 
@@ -77,7 +77,7 @@ Visual Studio for Mac で新しい Xamarin.Mac アプリが作成され、アプ
 
 [![](hello-mac-images/project01-sml.png "ソリューションの新しい既定のビュー")](hello-mac-images/project01.png#lightbox)
 
-Visual Studio for Mac では、Visual Studio 2019 と同じ **[ソリューション]** と **[プロジェクト]** の構造が使用されます。 ソリューションは 1 つまたは複数のプロジェクトを保持できるコンテナーです。プロジェクトには、アプリケーション、サポート ライブラリ、テスト アプリケーションなどを含めることができます。**[ファイル] > [新しいプロジェクト]** テンプレートにより、ソリューションとアプリケーション プロジェクトが自動的に作成されます。
+Visual Studio for Mac では、Visual Studio 2019 と同じ **[ソリューション]** と **[プロジェクト]** の構造が使用されます。 ソリューションは 1 つまたは複数のプロジェクトを保持できるコンテナーです。プロジェクトには、アプリケーション、サポート ライブラリ、テスト アプリケーションなどを含めることができます。 **[ファイル] > [新しいプロジェクト]** テンプレートにより、ソリューションとアプリケーション プロジェクトが自動的に作成されます。
 
 ## <a name="anatomy-of-a-xamarinmac-application"></a>Xamarin.Mac アプリケーションの構造
 
@@ -344,7 +344,7 @@ Xcode IDE と Interface Builder の基本を理解したら、開発者はメイ
 
 8. エディターの上部で、左上の**赤い I ビーム**をクリックします。 これにより、ウィンドウのサイズが変更されても、ボタンが画面の左上隅の同じ位置に維持されます。
 
-9. 次に、**[高さ]** と **[幅]** のボックスをクリックし、既定のサイズをそのまま使用します。 こうすると、ウィンドウのサイズが変更されても、ボタンが同じサイズに維持されます。
+9. 次に、 **[高さ]** と **[幅]** のボックスをクリックし、既定のサイズをそのまま使用します。 こうすると、ウィンドウのサイズが変更されても、ボタンが同じサイズに維持されます。
 
 10. **[Add 4 Constraints]\(4 制約の追加\)** ボタンをクリックして制約を追加し、エディターを閉じます。
 
@@ -354,7 +354,7 @@ Xcode IDE と Interface Builder の基本を理解したら、開発者はメイ
 
 12. **制約エディター**の上、右、左にある**赤い I ビーム**をクリックすると、指定された X と Y の位置にラベルが固定され、実行中のアプリケーションでウィンドウのサイズが変更されたときに拡大、縮小するように指定されます。
 
-13. もう一度 **[高さ]** ボックスをクリックし、既定のサイズをそのまま使用します。次に、**[Add 4 Constraints]\(4 制約の追加\)** ボタンをクリックして制約を追加し、エディターを閉じます。
+13. もう一度 **[高さ]** ボックスをクリックし、既定のサイズをそのまま使用します。次に、 **[Add 4 Constraints]\(4 制約の追加\)** ボタンをクリックして制約を追加し、エディターを閉じます。
 
 14. ユーザー インターフェイスに対する変更を保存します。
 
@@ -370,7 +370,7 @@ Xcode IDE と Interface Builder の基本を理解したら、開発者はメイ
 
 ### <a name="outlets-and-actions"></a>Outlet と Action
 
-**Outlet** と **Action** とは何でしょうか?  従来の .NET ユーザー インターフェイス プログラミングでは、ユーザー インターフェイスのコントロールは追加時にプロパティとして自動的に公開されます。 Mac では事情が異なり、ビューにコントロールを追加しただけでは、コントロールはコードにアクセスできません。 開発者は、UI 要素を明示的にコードに公開する必要があります。 これを行うために、Apple は 2 つのオプションを提供しています。
+**Outlet** と **Action** とは何でしょうか? 従来の .NET ユーザー インターフェイス プログラミングでは、ユーザー インターフェイスのコントロールは追加時にプロパティとして自動的に公開されます。 Mac では事情が異なり、ビューにコントロールを追加しただけでは、コントロールはコードにアクセスできません。 開発者は、UI 要素を明示的にコードに公開する必要があります。 これを行うために、Apple は 2 つのオプションを提供しています。
 
 - **Outlet**  – Outlet はプロパティに似ています。 開発者がコントロールをアウトレットに接続すると、プロパティを介してコードに公開されるため、イベント ハンドラーをアタッチしたり、メソッドを呼び出したりする操作を行うことができます。
 - **アクション** – アクションは WPF のコマンド パターンに似ています。 たとえば、コントロールに対してボタンのクリックなどのアクションが実行されると、コントロールはコード内でメソッドを自動的に呼び出します。 開発者は多くのコントロールを同じアクションに接続できるため、アクションは強力で便利です。
@@ -397,7 +397,7 @@ Xamarin.Mac 開発者にとって、これは開発者が**アウトレット**�
 
 3. Xcode により**コード エディター**で自動的に **ViewController.m** ファイルが選択されたことに注意してください。これは間違っています。 前述の **Outlet** と **Action** とは何かについての説明のように、開発者は **ViewController.h** を選択する必要があります。
 
-4. **コード エディター**の上部で、**[自動リンク]** をクリックし、`ViewController.h` ファイルを選択します。
+4. **コード エディター**の上部で、 **[自動リンク]** をクリックし、`ViewController.h` ファイルを選択します。
 
     [![](hello-mac-images/outlet02.png "正しいファイルを選択する")](hello-mac-images/outlet02.png#lightbox)
 
@@ -411,7 +411,7 @@ Xamarin.Mac 開発者にとって、これは開発者が**アウトレット**�
 
     [![](hello-mac-images/outlet04.png "ドラッグしてアウトレットを作成する")](hello-mac-images/outlet04.png#lightbox)
 
-8. ダイアログ ボックスが表示されます。 **[接続]** を **[アウトレット]** に設定したままにして、**[名前]** に「`ClickedLabel`」と入力します。
+8. ダイアログ ボックスが表示されます。 **[接続]** を **[アウトレット]** に設定したままにして、 **[名前]** に「`ClickedLabel`」と入力します。
 
     [![](hello-mac-images/outlet05.png "アウトレットを定義する")](hello-mac-images/outlet05.png#lightbox)
 
@@ -515,7 +515,7 @@ public override void ViewDidLoad ()
 }
 ```
 
-`ViewDidLoad` (`Initialize` などの別のメソッドではなく) を使用します。`ViewDidLoad` は、OS が読み込まれ、**.storyboard** ファイルからユーザー インターフェイスがインスタンス化された*後*に呼び出されるためです。 **.storyboard** ファイルが完全に読み込まれてインスタンス化される前に開発者がラベル コントロールにアクセスしようとすると、ラベル コントロールがまだ存在しないため `NullReferenceException` エラーが発生します。
+`ViewDidLoad` (`Initialize` などの別のメソッドではなく) を使用します。`ViewDidLoad` は、OS が読み込まれ、 **.storyboard** ファイルからユーザー インターフェイスがインスタンス化された*後*に呼び出されるためです。 **.storyboard** ファイルが完全に読み込まれてインスタンス化される前に開発者がラベル コントロールにアクセスしようとすると、ラベル コントロールがまだ存在しないため `NullReferenceException` エラーが発生します。
 
 次に、ボタンをクリックしたユーザーに応答するコードを追加します。 次の部分メソッドを `ViewController` クラスに追加します。
 
@@ -535,7 +535,7 @@ partial void ClickedButton (Foundation.NSObject sender) {
 アプリのビルド時、開発者はビルドの種類を選択できます。
 
 - **デバッグ** – デバッグ ビルドは、アプリの実行中に何が起きているのかを開発者がデバッグすることを可能にする追加のメタデータを含む **.app** (アプリケーション) ファイルにコンパイルされます。
-- **リリース** – リリース ビルドでは、**.app** ファイルも作成されますが、デバッグ情報は含まれていないためサイズが小さく、高速に実行されます。
+- **リリース** – リリース ビルドでは、 **.app** ファイルも作成されますが、デバッグ情報は含まれていないためサイズが小さく、高速に実行されます。
 
 開発者は、Visual Studio for Mac 画面の左上隅にある**構成セレクター**からビルドの種類を選択できます。
 
@@ -543,7 +543,7 @@ partial void ClickedButton (Foundation.NSObject sender) {
 
 ## <a name="building-the-application"></a>アプリケーションのビルド
 
-この例ではデバッグ ビルドで十分なので、**[デバッグ]** が選択されていることを確認してください。 **⌘B** を押すか、**[ビルド]** メニューの **[すべてビルド]** を選択して、最初にアプリをビルドします。
+この例ではデバッグ ビルドで十分なので、 **[デバッグ]** が選択されていることを確認してください。 **⌘B** を押すか、 **[ビルド]** メニューの **[すべてビルド]** を選択して、最初にアプリをビルドします。
 
 エラーがなければ、Visual Studio for Mac のステータス バーに "**ビルドが成功しました**" というメッセージが表示されます。 エラーがあった場合はプロジェクトを見直し、上記の手順に正しく従っていることを確認してください。 まず、コード (Xcode と Visual Studio for Mac の両方) がチュートリアルのコードと一致していることを確認します。
 
@@ -579,9 +579,9 @@ Xamarin.Mac アプリケーションの操作の基礎をより深く理解す�
 - [Collection Views (コレクション ビュー)](~/mac/user-interface/collection-view.md) - この記事では、Xamarin.Mac アプリケーションでのコレクション ビューの使用について説明しています。 Xcode とインターフェイス ビルダーでのコレクション ビューの作成と維持管理、Outlet と Action を使用してコレクション ビュー項目をコードに公開する方法、コレクション ビューの設定、最後に C# コードでのコレクション ビューへの応答に関する内容が含まれています。
 - [イメージの処理](~/mac/app-fundamentals/image.md) - この記事では、Xamarin.Mac アプリケーションでの画像の使用について説明しています。 アプリのアイコンを作成するために必要な画像の作成と維持管理、C# コードと Xcode の Interface Builder の両方での画像の使用に関する内容が含まれています。
 
-[Mac サンプル ギャラリー](https://developer.xamarin.com/samples/mac/all/)には、Xamarin.Mac の学習に役立つすぐに使用できるコード例が含まれています。
+[Mac サンプル ギャラリー](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Mac)には、Xamarin.Mac の学習に役立つすぐに使用できるコード例が含まれています。
 
-ユーザーが一般的な Mac アプリケーションに期待する機能を多数含んでいる完全な Xamarin.Mac アプリの 1 つが、[SourceWriter サンプル アプリ](https://developer.xamarin.com/samples/mac/SourceWriter/)です。 SourceWriter は、コードの完了とシンプルな構文の強調表示をサポートするシンプルなソース コード エディターです。
+ユーザーが一般的な Mac アプリケーションに期待する機能を多数含んでいる完全な Xamarin.Mac アプリの 1 つが、[SourceWriter サンプル アプリ](https://docs.microsoft.com/samples/xamarin/mac-samples/sourcewriter)です。 SourceWriter は、コードの完了とシンプルな構文の強調表示をサポートするシンプルなソース コード エディターです。
 
 SourceWriter のコード全体に詳細なコメントが付いており、また利用可能な場合には、重要な技術やメソッドから Xamarin.Mac ドキュメントの関連情報まで、さまざまなリンクが用意されています。
 
@@ -591,5 +591,5 @@ SourceWriter のコード全体に詳細なコメントが付いており、ま�
 
 ## <a name="related-links"></a>関連リンク
 
-- [Hello Mac (サンプル)](https://developer.xamarin.com/samples/mac/Hello_Mac/)
+- [Hello Mac (サンプル)](https://docs.microsoft.com/samples/xamarin/mac-samples/hello-mac)
 - [macOS ヒューマン インターフェイス ガイドライン](https://developer.apple.com/design/human-interface-guidelines/macos/overview/themes/)

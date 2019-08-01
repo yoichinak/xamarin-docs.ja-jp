@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 290cd36f36d86d161b7fc124f8961888ade41955
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 73d57c632cfcd36bd7f38865c39acb7fecb55e3e
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925954"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650915"
 ---
 # <a name="customizing-a-contentpage"></a>ContentPage のカスタマイズ
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/ContentPage/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-contentpage)
 
 _ContentPage は、単一ビューを表示し、画面の大部分を占めるビジュアル要素です。この記事では、ContentPage ページ用のカスタム レンダラーを作成する方法を示します。これにより、開発者は既定のネイティブ レンダリングを、各自のプラットフォームに固有のカスタマイズでオーバーライドできるようになります。_
 
@@ -199,7 +199,7 @@ namespace CustomRenderer.Droid
 
 基底クラスの `OnElementChanged` メソッドを呼び出すことで、Android の `ViewGroup` コントロールがインスタンス化されます。これは、ビューのグループになります。 レンダラーが既存の Xamarin.Forms 要素にまだアタッチされておらず、カスタム レンダラーによってレンダリングされているページ インスタンスが存在する場合にのみ、ライブ カメラ ストリームがレンダリングされます。
 
-このページは、カメラからライブ ストリームを提供する `Camera` API と写真をキャプチャする機能を使用する一連のメソッドを呼び出すことでカスタマイズされます。それから、ライブ カメラ ストリーム UI を `ViewGroup` に追加する `AddView` メソッドが呼び出されます。 Android では、ビューに対してメジャーおよびレイアウト操作を実行するために `OnLayout` メソッドをオーバーライドする必要もある点に注意してください。 詳細については、[ContentPage レンダラーのサンプル](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/ContentPage/)に関するページを参照してください。
+このページは、カメラからライブ ストリームを提供する `Camera` API と写真をキャプチャする機能を使用する一連のメソッドを呼び出すことでカスタマイズされます。それから、ライブ カメラ ストリーム UI を `ViewGroup` に追加する `AddView` メソッドが呼び出されます。 Android では、ビューに対してメジャーおよびレイアウト操作を実行するために `OnLayout` メソッドをオーバーライドする必要もある点に注意してください。 詳細については、[ContentPage レンダラーのサンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-contentpage)に関するページを参照してください。
 
 ### <a name="creating-the-page-renderer-on-uwp"></a>UWP 上でページ レンダラーを作成する
 
@@ -257,4 +257,4 @@ UWP 上で `PageRenderer` から派生したカスタム レンダラーを実�
 
 ## <a name="related-links"></a>関連リンク
 
-- [CustomRendererContentPage (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/ContentPage/)
+- [CustomRendererContentPage (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-contentpage)

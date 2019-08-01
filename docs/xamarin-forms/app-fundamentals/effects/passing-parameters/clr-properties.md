@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/05/2016
-ms.openlocfilehash: 9f3d95b3901295c29c2276bfdd85579b321f9795
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: c5271aab5342f065694e598bd5c2892ef1f18aeb
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925425"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656673"
 ---
 # <a name="passing-effect-parameters-as-common-language-runtime-properties"></a>共通言語ランタイム プロパティとして効果のパラメーターを渡す
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/Effects/ShadowEffect/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)
 
 _共通言語ランタイム (CLR) プロパティは、実行時のプロパティの変更に応答しない効果のパラメーターの定義に使用できます。この記事では、CLR プロパティを使用して効果にパラメーターを渡す方法について説明します。_
 
@@ -185,7 +185,7 @@ namespace EffectsDemo.Droid
 }
 ```
 
-`OnAttached` メソッドで `ShadowEffect` インスタンスを取得し、指定されたプロパティ値を使用して [`TextView.SetShadowLayer`](https://developer.xamarin.com/api/member/Android.Widget.TextView.SetShadowLayer/p/System.Single/System.Single/System.Single/Android.Graphics.Color/) メソッドを呼び出して影を作成します。 効果が添付されているコントロールに `Control.Layer` プロパティがない場合に備えて、この機能が `try`/`catch` ブロック内にラップされます。 クリーンアップする必要がないので、`OnDetached` メソッドによる実装は提供されません。
+`OnAttached` メソッドで `ShadowEffect` インスタンスを取得し、指定されたプロパティ値を使用して [`TextView.SetShadowLayer`](xref:Android.Widget.TextView.SetShadowLayer*) メソッドを呼び出して影を作成します。 効果が添付されているコントロールに `Control.Layer` プロパティがない場合に備えて、この機能が `try`/`catch` ブロック内にラップされます。 クリーンアップする必要がないので、`OnDetached` メソッドによる実装は提供されません。
 
 ### <a name="universal-windows-platform-project"></a>ユニバーサル Windows プラットフォーム プロジェクト
 
@@ -245,4 +245,4 @@ namespace EffectsDemo.UWP
 - [効果](xref:Xamarin.Forms.Effect)
 - [PlatformEffect](xref:Xamarin.Forms.PlatformEffect`2)
 - [RoutingEffect](xref:Xamarin.Forms.RoutingEffect)
-- [影効果 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/Effects/ShadowEffect/)
+- [影効果 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)

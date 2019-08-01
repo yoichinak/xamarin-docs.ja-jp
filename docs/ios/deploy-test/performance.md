@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 01/29/2016
-ms.openlocfilehash: 2cacf429efb11c5dd19276d62b997acae767516e
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: 4954b83b75618128f32b0e5fceed2f04df183433
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58870392"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511479"
 ---
 # <a name="xamarinios-performance"></a>Xamarin.iOS のパフォーマンス
 
@@ -101,15 +101,15 @@ container.AddSubview (new MyView (container));
 
 ここで、含まれるオブジェクトでは、親が維持されません。 ただし、親では、`container.AddSubView` を呼び出すことで子が維持されます。
 
-デリゲートまたはデータ ソース パターンを使用する iOS API でも、同じことが起こります。たとえば、[`Delegate`](xref:UIKit.UITableView.Delegate*) 
-プロパティまたは [`DataSource`](xref:UIKit.UITableView.DataSource*) を 
+デリゲートまたはデータ ソース パターンを使用する iOS API でも、同じことが起こります。たとえば、[`Delegate`](xref:UIKit.UITableView.Delegate*)
+プロパティまたは [`DataSource`](xref:UIKit.UITableView.DataSource*) を
 [`UITableView`](xref:UIKit.UITableView) クラスで設定するときなどに、ピア クラスに実装が含まれます。
 
 プロトコルを実装するためだけに作成されたクラスの場合 ([`IUITableViewDataSource`](xref:UIKit.IUITableViewDataSource) など) にできることは、サブクラスの作成ではなく、クラスにインターフェイスを実装し、メソッドをオーバーライドし、`DataSource` プロパティを `this` に割り当てることです。
 
 #### <a name="weak-attribute"></a>Weak 属性
 
-[Xamarin.iOS 11.10](https://developer.xamarin.com/releases/ios/xamarin.ios_11/xamarin.ios_11.10/#WeakAttribute) では、`[Weak]` 属性が導入されました。 `WeakReference <T>` と同様に、`[Weak]` を利用して[強い循環参照](https://docs.microsoft.com/xamarin/ios/deploy-test/performance#avoid-strong-circular-references)を中断できますが、コードがさらに短くなります。
+[Xamarin.iOS 11.10](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/ios/xamarin.ios_11/xamarin.ios_11.10.md#WeakAttribute) では、`[Weak]` 属性が導入されました。 `WeakReference <T>` と同様に、`[Weak]` を利用して[強い循環参照](https://docs.microsoft.com/xamarin/ios/deploy-test/performance#avoid-strong-circular-references)を中断できますが、コードがさらに短くなります。
 
 次のコード例をご覧ください。`WeakReference <T>` を使用しています。
 
@@ -211,7 +211,7 @@ class MyChild : UIView
 ```
 
 強い参照の解放の詳細については、「[Release IDisposable Resources](~/cross-platform/deploy-test/memory-perf-best-practices.md#idisposable)」(IDisposable リソースの解放) を参照してください。
-また、ブログ記事「[Xamarin.iOS, the garbage collector and me (Xamarin.iOS とガベージ コレクターと私)](http://krumelur.me/2015/04/27/xamarin-ios-the-garbage-collector-and-me/)」の説明もお勧めします。
+また、ブログ記事「[Xamarin.iOS, the garbage collector and me (Xamarin.iOS とガベージ コレクターと私)](http://c-sharx.net/2015-04-27-xamarin-ios-the-garbage-collector-and-me)」の説明もお勧めします。
 
 ### <a name="more-information"></a>詳細情報
 

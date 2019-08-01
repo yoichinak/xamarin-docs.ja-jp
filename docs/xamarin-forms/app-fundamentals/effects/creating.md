@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2016
-ms.openlocfilehash: 5d96d291c8750e6605a9800a3ecbe7d2901dd678
-ms.sourcegitcommit: 9a2a21974d35353c3765eb683ef2fd7161c1d94a
+ms.openlocfilehash: b7ce03b9b28bbcdb6201d17d8819af82d08dc9e8
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68329965"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68649345"
 ---
 # <a name="creating-an-effect"></a>効果の作成
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/Effects/FocusEffect/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-focuseffect)
 
 "_効果により、コントロールのカスタマイズが簡略化されます。この記事では、入力コントロールがフォーカスを取得したときにコントロールの背景色を変更する効果の作成方法を示します。_ "
 
@@ -261,5 +261,5 @@ public HomePageCS ()
 - [カスタム レンダラー](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)
 - [効果](xref:Xamarin.Forms.Effect)
 - [PlatformEffect](xref:Xamarin.Forms.PlatformEffect`2)
-- [背景色効果 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/effects/backgroundcoloreffect/)
-- [フォーカス効果 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/Effects/FocusEffect/)
+- [背景色効果 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-backgroundcoloreffect)
+- [フォーカス効果 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-focuseffect)

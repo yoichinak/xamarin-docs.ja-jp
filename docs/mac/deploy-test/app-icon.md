@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 5245ce6c2c8a2317e18a90514039d36232e933ef
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 25a0a6f5f16b3035307b6b42f1c509401beb3553
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117912"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68647124"
 ---
 # <a name="application-icon-for-xamarinmac-apps"></a>Xamarin.Mac アプリのアプリケーション アイコン
 
@@ -54,8 +54,8 @@ Xamarin.Mac アプリのアイコンをデザインする前に、[Apple アプ�
 
 開発者が Xamarin.Mac アプリで使用する他のイメージ リソースと同じように、アプリのアイコンも標準バージョンと Retina 解像度バージョンの両方提供する必要があります その他の画像と同じようにアイコン ファイルに名前を付けるときには `@2x` の形式を使用します。
 
-- **標準解像度**  - _画像名_**.**_ファイル名拡張子_ (例: **icon_512x512.png**)
-- **高解像度**  - _画像名_**@2x.**_ファイル名拡張子_ (例: **icon_512x512@2x.png**)
+- **標準解像度**  - _画像名_ **.** _ファイル名拡張子_ (例: **icon_512x512.png**)
+- **高解像度**  - _画像名_ **@2x.** _ファイル名拡張子_ (例: **icon_512x512@2x.png** )
 
 たとえば、512 x 512 バージョンのアプリのアイコンを指定するには、ファイルの名前は **icon_512x512.png** と **icon_512x512@2x.png** になります。
 
@@ -98,7 +98,7 @@ Xamarin.Mac アプリのアイコンをデザインする前に、[Apple アプ�
 
 次の手順で行います。
 
-1. **Solution Pad** で **Info.plist** をダブルクリックし、**[プロジェクト オプション]** を開きます。
+1. **Solution Pad** で **Info.plist** をダブルクリックし、 **[プロジェクト オプション]** を開きます。
 2. **[Mac OS X アプリケーション ターゲット]** セクションで、をクリックして、**アプリ アイコン**をクリックし、`AppIcon.appiconset` ファイルを選択します。 
 
     [![アイコン セットの設定](app-icon-images/icon01.png "アイコン セットの設定")](app-icon-images/icon01-large.png#lightbox)
@@ -116,7 +116,7 @@ Xamarin.Mac アプリのアイコンをデザインする前に、[Apple アプ�
 
 ## <a name="related-links"></a>関連リンク
 
-- [MacImages (サンプル)](https://developer.xamarin.com/samples/mac/MacImages/)
+- [MacImages (サンプル)](https://docs.microsoft.com/samples/xamarin/mac-samples/macimages)
 - [Hello Mac](~/mac/get-started/hello-mac.md)
 - [イメージの処理](~/mac/app-fundamentals/image.md)
 - [macOS ヒューマン インターフェイス ガイドライン - アイコンと画像](https://developer.apple.com/macos/human-interface-guidelines/icons-and-images/image-size-and-resolution/)

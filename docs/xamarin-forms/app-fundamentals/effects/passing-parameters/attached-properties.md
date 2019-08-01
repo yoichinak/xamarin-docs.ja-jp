@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/05/2016
-ms.openlocfilehash: fbc5ccda4e798b818b4c21dd459bab6b467cba31
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: d40e1657eb39543023490892b8765ee1fe956ec4
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925442"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68645370"
 ---
 # <a name="passing-effect-parameters-as-attached-properties"></a>効果のパラメーターを添付プロパティとして渡す
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/Effects/ShadowEffectRuntimeChange/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffectruntimechange)
 
 _添付プロパティは、実行時のプロパティの変更に応答する効果のパラメーターの定義に使用できます。この記事では、添付プロパティを使用して効果にパラメーターを渡す方法と、実行時にパラメーターを変更する方法を示します。_
 
@@ -318,7 +318,7 @@ namespace EffectsDemo.Droid
     }
 ```
 
-`OnAttached` メソッドは、`ShadowEffect` getter を使用して添付プロパティの値を取得し、[`TextView.SetShadowLayer`](https://developer.xamarin.com/api/member/Android.Widget.TextView.SetShadowLayer/p/System.Single/System.Single/System.Single/Android.Graphics.Color/) メソッドを呼び出してそのプロパティの値を使用して影を作成するメソッドを呼び出します。 効果が添付されているコントロールに `Control.Layer` プロパティがない場合に備えて、この機能が `try`/`catch` ブロック内にラップされます。 クリーンアップする必要がないので、`OnDetached` メソッドによる実装は提供されません。
+`OnAttached` メソッドは、`ShadowEffect` getter を使用して添付プロパティの値を取得し、[`TextView.SetShadowLayer`](xref:Android.Widget.TextView.SetShadowLayer*) メソッドを呼び出してそのプロパティの値を使用して影を作成するメソッドを呼び出します。 効果が添付されているコントロールに `Control.Layer` プロパティがない場合に備えて、この機能が `try`/`catch` ブロック内にラップされます。 クリーンアップする必要がないので、`OnDetached` メソッドによる実装は提供されません。
 
 #### <a name="responding-to-property-changes"></a>プロパティの変更への応答
 
@@ -440,4 +440,4 @@ public class LabelShadowEffect : PlatformEffect
 - [効果](xref:Xamarin.Forms.Effect)
 - [PlatformEffect](xref:Xamarin.Forms.PlatformEffect`2)
 - [RoutingEffect](xref:Xamarin.Forms.RoutingEffect)
-- [影効果 (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/Effects/ShadowEffectRuntimeChange/)
+- [影効果 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffectruntimechange)

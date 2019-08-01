@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2019
-ms.openlocfilehash: 43f8b1185900ff20f8e4c53680c1adf62ac8316a
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 5d3635ccc61a0be50e4a4b6d8bc44e60515cc21e
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67829694"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68509072"
 ---
 # <a name="build-process"></a>ビルド プロセス
 
@@ -127,7 +127,7 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
 
     `<AndroidApplication>True</AndroidApplication>` を持つプロジェクトは、Android パッケージ内に 1 つしか存在できない場合があります (残念ながら、これについてはまだ検証されていません。Android リソースに関するわかりにくいおかしなエラーになることがあります)。
 
--   **AndroidApplicationJavaClass** &ndash; [Android.App.Application](https://developer.xamarin.com/api/type/Android.App.Application/) からクラスを継承するときに、`android.app.Application` の代わりに使用する完全な Java クラス名。
+-   **AndroidApplicationJavaClass** &ndash; [Android.App.Application](xref:Android.App.Application) からクラスを継承するときに、`android.app.Application` の代わりに使用する完全な Java クラス名。
 
     このプロパティは、通常、`$(AndroidEnableMultiDex)` MSBuild プロパティなどの "*他の*" プロパティによって設定されます。
 

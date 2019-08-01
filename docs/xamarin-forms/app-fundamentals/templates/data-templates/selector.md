@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: bb65f5702579f83f56b30e556859a122d0e7fcbb
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 684820a646527b382b1dbb936b9256fd4457803e
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926920"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68651897"
 ---
 # <a name="creating-a-xamarinforms-datatemplateselector"></a>Xamarin.Forms DataTemplateSelector の作成
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/Templates/DataTemplateSelector/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-datatemplateselector)
 
 _DataTemplateSelector を使用して、データバインド プロパティの値に基づいて、実行時に DataTemplate を選択できます。これにより、複数の DataTemplates を同じ種類のオブジェクトに適用し、特定のオブジェクトの外観をカスタマイズできます。この記事では、DataTemplateSelector を作成して使用する方法を示します。_
 
@@ -137,5 +137,5 @@ public class HomePageCS : ContentPage
 
 ## <a name="related-links"></a>関連リンク
 
-- [データ テンプレート セレクター (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/Templates/DataTemplateSelector/)
+- [データ テンプレート セレクター (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-datatemplateselector)
 - [DataTemplateSelector](xref:Xamarin.Forms.DataTemplateSelector)

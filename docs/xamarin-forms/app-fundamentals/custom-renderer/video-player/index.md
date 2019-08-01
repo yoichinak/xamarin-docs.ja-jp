@@ -7,20 +7,20 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 5b48340233304f44b30fb9083b30be5c6c165b18
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 8e6f37fb607f4b0bc0ddfd41ad86dfe7ecbc03df
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925987"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650531"
 ---
 # <a name="implementing-a-video-player"></a>ビデオ プレーヤーの実装
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
 Xamarin.Forms アプリケーション内でビデオ ファイルを再生することが望ましい場合があります。 この一連の記事では、`VideoPlayer` という名前の Xamarin.Forms クラスに向けて、iOS、Android、およびユニバーサル Windows プラットフォーム (UWP) 用のカスタム レンダラーを記述する方法について説明します。
 
-[**VideoPlayerDemos**](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/) のサンプルでは、`VideoPlayer` を実装およびサポートするすべてのファイルが `FormsVideoLibrary` という名前のフォルダーに置かれ、`FormsVideoLibrary` という名前空間または `FormsVideoLibrary` で始まる名前空間を使って識別されました。 この機構と名前付けによって、ビデオ プレーヤー ファイルをご自身の Xamarin.Forms ソリューションにコピーしやすくなります。
+[**VideoPlayerDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) のサンプルでは、`VideoPlayer` を実装およびサポートするすべてのファイルが `FormsVideoLibrary` という名前のフォルダーに置かれ、`FormsVideoLibrary` という名前空間または `FormsVideoLibrary` で始まる名前空間を使って識別されました。 この機構と名前付けによって、ビデオ プレーヤー ファイルをご自身の Xamarin.Forms ソリューションにコピーしやすくなります。
 
 `VideoPlayer` では、3 種類のソースからビデオ ファイルを再生できます。
 
@@ -60,7 +60,7 @@ Xamarin.Forms アプリケーション内でビデオ ファイルを再生す�
 
 ## <a name="custom-video-transport-controlscustom-transportmd"></a>[カスタムのビデオ トランスポート コントロール](custom-transport.md)
 
-各プラットフォーム上のビデオ プレーヤーには、**[再生]** や **[一時停止]** ボタンという形でそれぞれのトランスポート コントロールが備わっていますが、そのボタンを表示させないようにしてご自身のものを指定できます。 この記事ではその方法を説明します。
+各プラットフォーム上のビデオ プレーヤーには、 **[再生]** や **[一時停止]** ボタンという形でそれぞれのトランスポート コントロールが備わっていますが、そのボタンを表示させないようにしてご自身のものを指定できます。 この記事ではその方法を説明します。
 
 ## <a name="custom-video-positioningcustom-positioningmd"></a>[ビデオのカスタム配置](custom-positioning.md)
 
@@ -72,4 +72,4 @@ Xamarin.Forms アプリケーション内でビデオ ファイルを再生す�
 
 ## <a name="related-links"></a>関連リンク
 
-- [ビデオ プレーヤーのデモ (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)
+- [ビデオ プレーヤーのデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
