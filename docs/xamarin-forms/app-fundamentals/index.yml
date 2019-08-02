@@ -1,0 +1,117 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: Xamarin.Forms のアプリケーションの基礎
+metadata:
+  title: Xamarin.Forms のアプリケーションの基礎
+  description: Xamarin.Forms を使用したモバイル アプリケーション開発の基礎について説明します。
+  ms.topic: landing-page
+  ms.prod: xamarin
+  ms.assetid: 7B516BBC-F7E1-4387-9779-7754E2E69723
+  author: davidbritch
+  ms.author: dabritch
+  ms.date: 07/30/2019
+abstract:
+  description: Xamarin.Forms を使用したモバイル アプリケーション開発の基礎について説明します。
+sections:
+  - title: null
+    items:
+      - type: list
+        style: cards
+        className: cardsB
+        items:
+          - href: accessibility/index.md
+            html: さまざまなニーズやエクスペリエンスで UI にアプローチするユーザーが使用できるアプリケーションの作成方法について説明します。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_accessibility.svg'
+              href: accessibility/index.md
+            title: ユーザー補助
+          - href: application-class.md
+            html: サブクラス化されたアプリケーション クラスによって公開される機能について説明します。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_code-blocks.svg'
+              href: application-class.md
+            title: App クラス
+          - href: app-lifecycle.md
+            html: アプリケーションのライフサイクル イベントの処理について説明します。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_agile.svg'
+              href: app-lifecycle.md
+            title: アプリのライフサイクル
+          - href: deep-linking.md
+            html: アプリケーション インデックス作成とディープ リンクの設定を使用して、アプリケーションのコンテンツを iOS および Android のデバイス上で検索できるようにする方法について説明します。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_link.svg'
+              href: deep-linking.md
+            title: アプリケーション インデックス作成とディープ リンクの設定
+          - href: behaviors/index.md
+            html: サブクラス化することなくコントロールに機能を追加する方法について説明します。
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: behaviors/index.md
+            title: ビヘイビアー
+          - href: custom-renderer/index.md
+            html: 新しいカスタム コントロールを作成し、既存のコントロールを変更して Xamarin.Forms コントロールを拡張する方法について説明します。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_extend.svg'
+              href: custom-renderer/index.md
+            title: カスタム レンダラー
+          - href: data-binding/index.md
+            html: ユーザー インターフェイスとそのデータソースと自動的に同期する方法について説明します。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_sync.svg'
+              href: data-binding/index.md
+            title: データ バインディング
+          - href: dependency-service/index.md
+            html: DependencyService クラスを使用して、共有コードからネイティブ プラットフォームの機能を呼び出す方法について説明します。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_architecture.svg'
+              href: dependency-service/index.md
+            title: 依存関係サービス
+          - href: effects/index.md
+            html: 基になるネイティブ コントロールにアクセスして、Xamarin.Forms コントロールの動作を調整する方法について説明します。
+            image:
+              src: ~/media/icons/i_platform.svg
+              href: effects/index.md
+            title: 効果
+          - href: gestures/index.md
+            html: ジェスチャ レコグナイザーを使用して、アプリケーションのタップ、ピンチ、パン、スワイプのジェスチャのサポートを追加する方法について説明します。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_form.svg'
+              href: gestures/index.md
+            title: ジェスチャ
+          - href: localization/index.md
+            html: Xamarin.Forms を使用して多言語アプリケーションを開発する方法について説明します。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_article.svg'
+              href: localization/index.md
+            title: ローカリゼーション
+          - href: messaging-center.md
+            html: メッセージベースの通信を使用して、型間の依存関係を減らす方法について説明します。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_mail.svg'
+              href: messaging-center.md
+            title: メッセージング センター
+          - href: navigation/index.md
+            html: Xamarin.Forms アプリケーションでナビゲーションを実行する方法について説明します。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_class.svg'
+              href: navigation/index.md
+            title: ナビゲーション
+          - href: shell/index.md
+            html: Xamarin.Forms のシェルを使用して、モバイル アプリケーション開発の複雑さを軽減する方法について説明します。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_mobile-app-developement.svg'
+              href: shell/index.md
+            title: Shell
+          - href: templates/index.md
+            html: Xamarin.Forms によって提供されるテンプレート機能の使用方法について説明します。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_template.svg'
+              href: templates/index.md
+            title: テンプレート
+          - href: triggers.md
+            html: イベントまたはプロパティの変更に基づいてコントロールの外観を変更するアクションを XAML で表す方法について説明します。
+            image:
+              src: ~/media/icons/i_xaml-forms.svg
+              href: triggers.md
+            title: トリガー

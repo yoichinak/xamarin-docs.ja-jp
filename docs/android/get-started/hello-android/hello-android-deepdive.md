@@ -9,12 +9,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 10/05/2018
-ms.openlocfilehash: 3d34ce3d5cb6e8e4931eafcc7cd82d141f5db8d7
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 2595ff23dcc0688c141f943d4ea61e13c970b7aa
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57670182"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68509571"
 ---
 # <a name="hello-android-deep-dive"></a>Hello, Android:詳しく調べる
 
@@ -153,6 +153,11 @@ Android アプリケーションは直線的に進行しないため (いくつ�
 
 ## <a name="user-interface"></a>ユーザー インターフェイス
 
+> [!TIP]
+> 新しいリリースの Visual Studio では、Android Designer 内で .xml ファイルを開くことができます。
+>
+> Android Designer では、.axml ファイルと .xml ファイルの両方がサポートされています。
+
 ::: zone pivot="windows"
 
 **activity_main.axml** は、アプリケーションの最初の画面に対応するユーザー インターフェイスのレイアウト ファイルです。 .axml は、これが Android デザイナー ファイルであることを示します (AXML は *Android XML* を意味します)。 *Main* という名前は、Android の観点から見ると任意であり、&ndash;レイアウト ファイルには別の名前を付けることもできます。 IDE で **activity_main.axml** を開くと、*Android Designer* と呼ばれる Android レイアウト ファイルのビジュアル エディターが起動します。
@@ -193,7 +198,7 @@ Android アプリケーションは直線的に進行しないため (いくつ�
 
 ::: zone-end
 
-この XML ソース コードには、**Text (Large)**、**Plain Text**、および 2 つの **Button** 要素が含まれている必要があります。 Android Designer の詳細については、Xamarin Android の「[Designer Overview](~/android/user-interface/android-designer/index.md)」 (Designer の概要) ガイドを参照してください。
+この XML ソースコードには、次の 4 つのコントロール要素を含める必要があります。2 つの**TextView**、1 つの**EditText**、1 つの**Button** 要素です。 Android Designer の詳細については、Xamarin Android の「[Designer Overview](~/android/user-interface/android-designer/index.md)」 (Designer の概要) ガイドを参照してください。
 
 ユーザー インターフェイスの視覚的な部分の背後にあるツールと概念について説明しました。 次に、アクティビティとアクティビティのライフサイクルを調べることで、ユーザー インターフェイスを稼働させるコードについて見てみましょう。
 
@@ -207,7 +212,7 @@ Activity は、ユーザーとの対話に応答して動的なユーザー エ�
 
 **Phoneword** アプリケーションには、1 つだけの画面 (Activity) があります。 画面を稼働させるクラスは、`MainActivity` と呼ばれ、**MainActivity.cs** ファイルに格納されます。 `MainActivity` という名前は、Android では特別な意味を持ちません &ndash; ただし、規則では、アプリケーションの最初のアクティビティの名前が `MainActivity` ですが、Android では、それが別の名前でもかまいません。
 
-**MainActivity.cs** を開くと、`MainActivity` クラスは、`Activity` クラスの*サブクラス*であること、および Activity に [Activity](https://developer.xamarin.com/api/type/Android.App.ActivityAttribute/) 属性が指定されていることがわかります。
+**MainActivity.cs** を開くと、`MainActivity` クラスは、`Activity` クラスの*サブクラス*であること、および Activity に [Activity](xref:Android.App.ActivityAttribute) 属性が指定されていることがわかります。
 
 ```csharp
 [Activity (Label = "Phone Word", MainLauncher = true)]
@@ -326,14 +331,14 @@ Android デバイスを使用してアプリケーションをテストできる
 
 ::: zone pivot="windows"
 
-デバイスを構成した後で、デバイスをプラグインし、**[デバイスの選択]** ダイアログからデバイスを選択し、アプリケーションを開始することでデバイスを展開できます。
+デバイスを構成した後で、デバイスをプラグインし、 **[デバイスの選択]** ダイアログからデバイスを選択し、アプリケーションを開始することでデバイスを展開できます。
 
 ![デバッグ デバイスの選択](hello-android-deepdive-images/vs/06-select-device.png "デバッグ デバイスの選択")
 
 ::: zone-end
 ::: zone pivot="macos"
 
-デバイスを構成した後で、デバイスをプラグインし、**[開始 (再生)]** を押してから、**[デバイスの選択]** ダイアログからデバイスを選択し、**[OK]** を押してデバイスを展開できます。
+デバイスを構成した後で、デバイスをプラグインし、 **[開始 (再生)]** を押してから、 **[デバイスの選択]** ダイアログからデバイスを選択し、 **[OK]** を押してデバイスを展開できます。
 
 [![デバッグ デバイスの選択](hello-android-deepdive-images/xs/06-select-device-sml.png)](hello-android-deepdive-images/xs/06-select-device.png#lightbox)
 
@@ -404,7 +409,7 @@ Android では、適切な密度のアイコンを取得します。
 _Google Play Services_ は、アドオン ライブラリのセットであり、これを使用して、Android 開発者が、Google マップ、Google Cloud Messaging、アプリ内の課金サービスなどの Google からの最新の機能を利用することができます。
 以前は、Google Play 開発者サービスのすべてのライブラリへのバインドは、Xamarin によって、1 つのパッケージの形式で支給されていました &ndash; Visual Studio for Mac 以降、アプリに含める Google Play 開発者サービス パッケージを選択するための新しいプロジェクト ダイアログを利用できます。
 
-1 つまたは複数の Google Play Service ライブラリを追加するには、プロジェクト ツリーで**パッケージ** ノードを右クリックし、**[Google Play Services の追加...]** をクリックします。
+1 つまたは複数の Google Play Service ライブラリを追加するには、プロジェクト ツリーで**パッケージ** ノードを右クリックし、 **[Google Play Services の追加...]** をクリックします。
 
 [![Google Play Service を追加する](hello-android-deepdive-images/xs/08-add-google-play-services-sml.png)](hello-android-deepdive-images/xs/08-add-google-play-services.png#lightbox)
 
@@ -412,7 +417,7 @@ _Google Play Services_ は、アドオン ライブラリのセットであり�
 
 [![パッケージの選択](hello-android-deepdive-images/xs/09-add-dialog-sml.png)](hello-android-deepdive-images/xs/09-add-dialog.png#lightbox)
 
-サービスを選択して **[パッケージの追加]** をクリックすると、Visual Studio for Mac によって、選択したパッケージ、およびそのために必要な依存 Google Play 開発者サービス パッケージがダウンロードおよびインストールされます。 場合によっては、**[ライセンスの同意]** ダイアログが表示され、パッケージをインストールする前に **[同意]** をクリックする必要があります。
+サービスを選択して **[パッケージの追加]** をクリックすると、Visual Studio for Mac によって、選択したパッケージ、およびそのために必要な依存 Google Play 開発者サービス パッケージがダウンロードおよびインストールされます。 場合によっては、 **[ライセンスの同意]** ダイアログが表示され、パッケージをインストールする前に **[同意]** をクリックする必要があります。
 
 [![ライセンスの同意](hello-android-deepdive-images/xs/10-license-acceptance-sml.png)](hello-android-deepdive-images/xs/10-license-acceptance.png#lightbox)
 
@@ -420,6 +425,6 @@ _Google Play Services_ は、アドオン ライブラリのセットであり�
 
 ## <a name="summary"></a>まとめ
 
-おめでとうございます!  これで、Xamarin.Android アプリケーションのコンポーネント、およびそれを作成するために必要なツールを確実に理解できました。
+おめでとうございます! これで、Xamarin.Android アプリケーションのコンポーネント、およびそれを作成するために必要なツールを確実に理解できました。
 
 「_作業の開始_」シリーズの次のチュートリアルでは、複数の画面を処理するようにアプリケーションを拡張し、より高度な Android アーキテクチャと概念を学習します。

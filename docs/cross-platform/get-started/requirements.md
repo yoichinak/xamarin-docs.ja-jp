@@ -6,12 +6,12 @@ ms.assetid: dd344d57-18e2-42a5-8c15-3f5be4123c72
 author: conceptdev
 ms.author: crdun
 ms.date: 04/26/2018
-ms.openlocfilehash: 3f51b61cd7dcc3c7b17881b3576aa2c22a45e470
-ms.sourcegitcommit: be9658de032f3893741261f16162a664952ce178
+ms.openlocfilehash: aea82b5946d12bc75aef18953d61cd88e5329329
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64987060"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511381"
 ---
 # <a name="system-requirements"></a>システム要件
 
@@ -70,7 +70,7 @@ Xamarin モバイル アプリケーションを USB 経由またはワイヤレ
 
 macOS 用の最新の Xamarin リリースは、[Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/installation) でダウンロードできます。 Windows の場合は、[Visual Studio のインストール手順](https://docs.microsoft.com/visualstudio/install/install-visual-studio)に従ってください。
 
-現在の製品バージョンの完全なリストは、[現在のリリースのページ](https://developer.xamarin.com/releases/current/)で確認できます。 このページには、ベータおよびアルファ チャネルの個々の製品バージョンの概要 (およびリリース ノートへのリンク) も示されています。
+現在の製品リリースの完全なリストは、[新着情報のページ](~/whats-new/index.yml)で確認できます。 このページは、リリース ノートにもリンクしています。
 
 各プラットフォームの特定の[インストール](~/get-started/installation/index.md)手順については、以下を参照してください。
 

@@ -9,12 +9,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: 849c60507fe0ff7b8bf1743be5bbf89ca94b9d6f
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 61bf1c99b90d21d701dd923dcca4a203c96b69a3
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865561"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657046"
 ---
 # <a name="hello-ios-multiscreen--quickstart"></a>Hello, iOS マルチスクリーン – クイック スタート
 
@@ -26,7 +26,7 @@ ms.locfileid: "67865561"
 
 ## <a name="requirements"></a>必要条件
 
-このガイドは、「Hello, iOS」ドキュメントを中断した箇所から再開するため、「[Hello, iOS クイック スタート](~/ios/get-started/hello-ios/index.md)」を完了する必要があります。 Phoneword アプリの完成版は、[Hello, iOS のサンプル](https://developer.xamarin.com/samples/monotouch/Hello_iOS/) ページからダウンロードできます。
+このガイドは、「Hello, iOS」ドキュメントを中断した箇所から再開するため、「[Hello, iOS クイック スタート](~/ios/get-started/hello-ios/index.md)」を完了する必要があります。 Phoneword アプリの完成版は、[Hello, iOS のサンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios) ページからダウンロードしてください。
 
 ::: zone pivot="macos"
 
@@ -34,7 +34,7 @@ ms.locfileid: "67865561"
 
 このチュートリアルでは、**Phoneword** アプリケーションに通話履歴画面を追加します。
 
-1. Visual Studio for Mac で **Phoneword** アプリケーションを開きます。 必要に応じて、[Hello, iOS チュートリアル](~/ios/get-started/hello-ios/index.md) ガイドで完成した Phoneword アプリケーションを[ここ](https://developer.xamarin.com/samples/monotouch/Hello_iOS/)からダウンロードすることができます。
+1. Visual Studio for Mac で **Phoneword** アプリケーションを開きます。 必要に応じて、[Hello, iOS チュートリアル](~/ios/get-started/hello-ios/index.md) ガイドで完成した Phoneword アプリケーションを[ここ](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios)からダウンロードすることができます。
 
 2. **Solution Pad** から **Main.storyboard** ファイルを開きます。
 
@@ -256,7 +256,7 @@ ms.locfileid: "67865561"
 
     ここではいくつかの処理が行われます。
 
-    - 変数 `translatedNumber` が `ViewDidLoad` メソッドから "_クラス レベルの変数_" に移動されています。
+    - 変数 `translatedNumber` が `ViewDidLoad` メソッドから_クラス レベルの変数_に移動されています。
     - `PhoneNumbers.Add(translatedNumber)` を呼び出して電話番号リストにダイヤル番号を追加するように **CallButton** コードが変更されています。
     - `PrepareForSegue` メソッドが追加されています。
 
@@ -275,7 +275,7 @@ ms.locfileid: "67865561"
 
 このチュートリアルでは、**Phoneword** アプリケーションに通話履歴画面を追加します。
 
-1. Visual Studio で **Phoneword** アプリケーションを開きます。 必要に応じて、[Hello, iOS チュートリアル](~/ios/get-started/hello-ios/index.md) ガイドから[完成した Phoneword アプリケーション](https://developer.xamarin.com/samples/monotouch/Hello_iOS/)をダウンロードします。 iOS Designer、および iOS シミュレーターを使用するには [Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md) に接続する必要があることを思い出してください。
+1. Visual Studio で **Phoneword** アプリケーションを開きます。 必要に応じて、[Hello, iOS チュートリアル](~/ios/get-started/hello-ios/index.md) ガイドから[完成した Phoneword アプリケーション](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios)をダウンロードします。 iOS Designer、および iOS シミュレーターを使用するには [Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md) に接続する必要があることを思い出してください。
 
 2. ユーザー インターフェイスの編集を開始します。 **[表示方法]** が _iPhone 6_ に設定されていることを確認して、**ソリューション エクスプローラー**から **Main.storyboard** ファイルを開きます。
 
@@ -517,6 +517,6 @@ ms.locfileid: "67865561"
 
 ## <a name="related-links"></a>関連リンク
 
-- [Hello, iOS (サンプル)](https://developer.xamarin.com/samples/monotouch/Hello_iOS/)
+- [Hello, iOS (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios)
 - [iOS ヒューマン インターフェイス ガイドライン](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/Introduction/Introduction.html)
 - [iOS プロビジョニング ポータル](https://developer.apple.com/ios/manage/overview/index.action)

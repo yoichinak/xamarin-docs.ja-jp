@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: f0ad51738e0bbe785773f653b06fe5f582527f0b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 722dfbb301d6698ee58d42029c8f6b82ecddc37b
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120880"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68508996"
 ---
 # <a name="xamarinandroid-environment"></a>Xamarin.Android Environment
 
@@ -36,7 +36,7 @@ Xamarin.Android 4.6 以降、*環境ファイル* をプロジェクトに追加
 
 *キー* が大文字で始まる場合、*キー* は環境変数として扱われます。**setenv** (3) は、プロセスの起動時に環境変数を指定された*値*に設定するために使用されます。
 
-"*キー*" が小文字で始まる場合、"*キー*" は Android のシステム プロパティとして扱われます。"*値*" は "*既定値*" です。Xamarin.Android の実行動作を制御する Android システムのプロパティは、まず Android システムのプロパティ ストアから検索され、値が存在しない場合は、環境ファイルに指定されている値が使用されます。 これは、診断のために、`adb shell setprop` を使用して環境ファイルの値をオーバーライドできるようにするためです。
+*キー*が小文字で始まる場合、*キー*は Android システムのプロパティとして扱われ、*値*は*既定値*になります。Xamarin.Android の実行動作を制御する Android システムのプロパティは、まず Android システムのプロパティ ストアから検索され、値が存在しない場合は、環境ファイルに指定されている値が使用されます。 これは、診断のために、`adb shell setprop` を使用して環境ファイルの値をオーバーライドできるようにするためです。
 
 ## <a name="xamarinandroid-environment-variables"></a>Xamarin.Android の環境変数
 
@@ -49,7 +49,7 @@ Xamarin.Android は `XA_HTTP_CLIENT_HANDLER_TYPE` 変数をサポートしてい
 
 Xamarin.Android 6.1 では、この環境変数は既定では設定されておらず、[HttpClientHandler](https://docs.microsoft.com/dotnet/api/system.net.http.httpclienthandler?view=xamarinandroid-7.1) が使用されます。
 
-または、値 `Xamarin.Android.Net.AndroidClientHandler` でネットワーク アクセスに [`java.net.URLConnection`](https://developer.xamarin.com/api/type/Java.Net.URLConnection/) を使用するよう指定できます。
+または、値 `Xamarin.Android.Net.AndroidClientHandler` でネットワーク アクセスに [`java.net.URLConnection`](xref:Java.Net.URLConnection) を使用するよう指定できます。
 これでは、Android がサポートする場合、TLS 1.2 の使用を許可している*場合があります*。
 
 Xamarin.Android 6.1 で追加されました。
@@ -90,15 +90,15 @@ Xamarin.Android は以下のシステム プロパティをサポートしてい
 Xamarin.Android が `adb logcat` にログを記録する追加情報を制御します。
 次のいずれかの値を含むコンマ区切りの文字列 (`,`) です。
 
-* `all`: *すべての* メッセージを出力します。 `lref` メッセージが含まれているので、あまりお勧めしません。
-* `assembly`: `.apk` を出力して、解析メッセージをアセンブリします。
-* `gc`: GC 関連のメッセージを出力します。
-* `gref`: JNI グローバル参照メッセージを出力します。
-* `lref`: JNI ローカル参照メッセージを出力します。  
-    *注*: これは*実際には*スパム `adb logcat` になります。  
+* `all`:*すべての*メッセージを出力します。 `lref` メッセージが含まれているので、あまりお勧めしません。
+* `assembly`:`.apk` を出力して、解析メッセージをアセンブリします。
+* `gc`:GC 関連のメッセージを出力します。
+* `gref`:JNI グローバル参照メッセージを出力します。
+* `lref`:JNI ローカル参照メッセージを出力します。  
+    *注*:これは*実際には*スパム `adb logcat` になります。  
     Xamarin.Android 5.1 では、`.__override__/lrefs.txt` ファイルも作成され、*巨大*なサイズになる可能性があります。  
     そのため、お勧めしません。
-* `timing`: いくつかのメソッド タイミング情報を出力します。 この処理で、ファイル `.__override__/methods.txt` と `.__override__/counters.txt` も作成されます。
+* `timing`:いくつかのメソッド タイミング情報を出力します。 この処理で、ファイル `.__override__/methods.txt` と `.__override__/counters.txt` も作成されます。
 
 
 ### `debug.mono.max_grefc`
@@ -106,7 +106,7 @@ Xamarin.Android が `adb logcat` にログを記録する追加情報を制御�
 `debug.mono.max_grefc` システム プロパティの値は整数です。
 この値で、ターゲット デバイスの既定の検出された最大 GREF カウントが*オーバーライド*されます。
 
-*注:* **environment.txt** ファイルで適時に値を取得できないので、`adb shell setprop
+*注意:* **environment.txt** ファイルで適時に値を取得できないので、`adb shell setprop
 debug.mono.max_grefc` でのみ使用できます。
 
 ### `debug.mono.profile`
@@ -131,8 +131,8 @@ debug.mono.max_grefc` でのみ使用できます。
 
 `debug.mono.wref` システム プロパティを使用すると、既定で検出された JNI の弱い参照メカニズムをオーバーライドすることができます。 サポートされている値は次の 2 つです。
 
-* `jni`: `JNIEnv::NewWeakGlobalRef()` で作成され、`JNIEnv::DeleteWeakGlobalREf()` によって破棄される JNI の弱い参照を使用します。
-* `java`: `java.lang.WeakReference` インスタンスを参照する JNI グローバル参照を使用します。
+* `jni`:`JNIEnv::NewWeakGlobalRef()` で作成され、`JNIEnv::DeleteWeakGlobalREf()` によって破棄される JNI の弱い参照を使用します。
+* `java`:`java.lang.WeakReference` インスタンスを参照する JNI グローバル参照を使用します。
 
 `java` は、既定では API-7 までと、ART が有効な場合は API-19 (Kit Kat) で使用されます (API-8 では `jni` の参照が追加され、ART によって `jni` の参照が*破棄されました*)。
 

@@ -57,7 +57,7 @@ sections:
         className: cardsB
         items:
           - href: ~/xamarin-forms/app-fundamentals/
-            html: ファイル、画像、データベースの扱いなど、Xamarin.Forms アプリを構築するために必要なすべての情報を説明します。
+            html: ナビゲーション、ジェスチャ、データ バインディングなど、Xamarin.Forms アプリを開発するために必要なことすべて。
             image:
               src: ~/media/icons/i_app-build.svg
               href: ~/xamarin-forms/app-fundamentals/

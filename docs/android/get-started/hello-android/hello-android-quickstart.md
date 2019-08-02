@@ -9,18 +9,18 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 10/05/2018
-ms.openlocfilehash: 71343aa69cc7fa34fb716ea39454e6437a64169f
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: c9f9fb7eecd41c3aeffb7a28042f944c9d6a320b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58855082"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644074"
 ---
 # <a name="hello-android-quickstart"></a>Hello, Android:クイック スタート
 
 _このガイドは 2 つに分かれています。最初に、Visual Studio を使用して Xamarin.Android アプリケーションを作成し、Xamarin を使用する Android アプリケーション開発の基礎について理解を深めます。_
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://developer.xamarin.com/samples/monodroid/Phoneword/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/monodroid-samples/phoneword)
 
 英数字の電話番号 (ユーザーが入力) を数字の電話番号に変換し、その番号をユーザーに表示するアプリケーションを作成します。 最終的にアプリケーションは次のようになります。
 
@@ -61,16 +61,21 @@ Android のエミュレーターを使用している場合は、ハードウェ
 
 Visual Studio を起動します。 **[ファイル]、[新規]、[プロジェクト]** の順にクリックして、新しいプロジェクトを作成します。
 
-**[新しいプロジェクト]** ダイアログで、**[Android アプリ]** テンプレートをクリックします。
-プロジェクトに `Phoneword` という名前を付けて、**[OK]** をクリックします。
+**[新しいプロジェクト]** ダイアログで、 **[Android アプリ]** テンプレートをクリックします。
+プロジェクトに `Phoneword` という名前を付けて、 **[OK]** をクリックします。
 
 [![新しいプロジェクトが Phoneword であることを示すスクリーンショット](hello-android-quickstart-images/vs/01-new-project-name-w158-sml.png)](hello-android-quickstart-images/vs/01-new-project-name-w158.png#lightbox)
 
-**[New Android App]\(新しい Android アプリ\)** ダイアログ ボックスで、**[空のアプリ]**、**[OK]** の順にクリックして新しいプロジェクトを作成します。
+**[New Android App]\(新しい Android アプリ\)** ダイアログ ボックスで、 **[空のアプリ]** 、 **[OK]** の順にクリックして新しいプロジェクトを作成します。
 
 [![空のアプリのテンプレートの選択](hello-android-quickstart-images/vs/02-blank-app-w158-sml.png)](hello-android-quickstart-images/vs/02-blank-app-w158.png#lightbox)
 
 ## <a name="create-a-layout"></a>レイアウトを作成する
+
+> [!TIP]
+> 新しいリリースの Visual Studio では、Android Designer 内で .xml ファイルを開くことができます。
+>
+> Android Designer では、.axml ファイルと .xml ファイルの両方がサポートされています。
 
 新しいプロジェクトが作成されたら、**ソリューション エクスプローラー**で **Resources** フォルダーを展開してから **layout** フォルダーを展開します。
 **activity_main.axml** をダブルクリックして、Android Designer で開きます。 アプリの画面の layout ファイルを以下に示します。
@@ -87,7 +92,7 @@ Visual Studio を起動します。 **[ファイル]、[新規]、[プロジェ�
 
 [![ラージ テキスト ウィジェットを追加する](hello-android-quickstart-images/vs/04-large-text-w158-sml.png)](hello-android-quickstart-images/vs/04-large-text-w158.png#lightbox)
 
-デザイン サーフェイスで **Text (Large)** コントロールを選択した状態で、**[プロパティ]** ウィンドウを使用して **Text (Large)** ウィジェットの `Text` プロパティを `Enter a Phoneword:` に変更します。
+デザイン サーフェイスで **Text (Large)** コントロールを選択した状態で、 **[プロパティ]** ウィンドウを使用して **Text (Large)** ウィジェットの `Text` プロパティを `Enter a Phoneword:` に変更します。
 
 [![ラージ テキスト プロパティを設定する](hello-android-quickstart-images/vs/05-enter-a-phoneword-w158-sml.png)](hello-android-quickstart-images/vs/05-enter-a-phoneword-w158.png#lightbox)
 
@@ -99,7 +104,7 @@ Visual Studio を起動します。 **[ファイル]、[新規]、[プロジェ�
 
 [![プレーン テキスト ウィジェットを追加する](hello-android-quickstart-images/vs/06b-plain-text-w158-sml.png)](hello-android-quickstart-images/vs/06b-plain-text-w158.png#lightbox)
 
-デザイン サーフェイスで **Plain Text** ウィジェットを選択した状態で、次のように、**[プロパティ]** ウィンドウを使用して **Plain Text** ウィジェットの `Id` プロパティを `@+id/PhoneNumberText` に変更し、`Text` プロパティを `1-855-XAMARIN` に変更します。
+デザイン サーフェイスで **Plain Text** ウィジェットを選択した状態で、次のように、 **[プロパティ]** ウィンドウを使用して **Plain Text** ウィジェットの `Id` プロパティを `@+id/PhoneNumberText` に変更し、`Text` プロパティを `1-855-XAMARIN` に変更します。
 
 [![プレーン テキスト プロパティを設定する](hello-android-quickstart-images/vs/07-add-properties-w158-sml.png)](hello-android-quickstart-images/vs/07-add-properties-w158.png#lightbox)
 
@@ -107,11 +112,11 @@ Visual Studio を起動します。 **[ファイル]、[新規]、[プロジェ�
 
 [![デザインに変換ボタンをドラッグする](hello-android-quickstart-images/vs/08-drag-button-w158-sml.png)](hello-android-quickstart-images/vs/08-drag-button-w158.png#lightbox)
 
-デザイン サーフェイスで **[Button]** を選択した状態で、次のように、**[プロパティ]** ウィンドウを使用してその `Text` プロパティを `Translate` に変更し、`Id` プロパティを `@+id/TranslateButton` に変更します。
+デザイン サーフェイスで **[Button]** を選択した状態で、次のように、 **[プロパティ]** ウィンドウを使用してその `Text` プロパティを `Translate` に変更し、`Id` プロパティを `@+id/TranslateButton` に変更します。
 
 [![変換ボタン プロパティを設定する](hello-android-quickstart-images/vs/09-translate-button-w158-sml.png)](hello-android-quickstart-images/vs/09-translate-button-w158.png#lightbox)
 
-**[TextView]** を **[ツールボックス]** からデザイン サーフェスにドラッグし、**[Button]** ウィジェットの下に配置します。 **[TextView]** の `Text` プロパティを空の文字列に変更し、その `Id` プロパティを `@+id/TranslatedPhoneword` に変更します。
+**[TextView]** を **[ツールボックス]** からデザイン サーフェスにドラッグし、 **[Button]** ウィジェットの下に配置します。 **[TextView]** の `Text` プロパティを空の文字列に変更し、その `Id` プロパティを `@+id/TranslatedPhoneword` に変更します。
 
 [![テキスト ビューでプロパティを設定する](hello-android-quickstart-images/vs/10-textview-properties-w158-sml.png)](hello-android-quickstart-images/vs/10-textview-properties-w158.png#lightbox)
 
@@ -119,11 +124,11 @@ Visual Studio を起動します。 **[ファイル]、[新規]、[プロジェ�
 
 ## <a name="write-some-code"></a>コードを記述する
 
-次の手順では、電話番号を英数字から数字に変換するコードをいくつか追加します。 以下のように、**ソリューション エクスプローラー** ウィンドウの **Phoneword** プロジェクトを右クリックし、**[追加]、[新しい項目...]** の順に選択して、新しいファイルをプロジェクトに追加します。
+次の手順では、電話番号を英数字から数字に変換するコードをいくつか追加します。 以下のように、**ソリューション エクスプローラー** ウィンドウの **Phoneword** プロジェクトを右クリックし、 **[追加]、[新しい項目...]** の順に選択して、新しいファイルをプロジェクトに追加します。
 
 [![新しい項目を追加する](hello-android-quickstart-images/vs/12-add-new-item-w158-sml.png)](hello-android-quickstart-images/vs/12-add-new-item-w158.png#lightbox)
 
-**[新しい項目の追加]** ダイアログで、**[Visual C#]、[コード]、[コード ファイル]** の順に選択し、新しいコード ファイルに **PhoneTranslator.cs** という名前を付けます。
+**[新しい項目の追加]** ダイアログで、 **[Visual C#]、[コード]、[コード ファイル]** の順に選択し、新しいコード ファイルに **PhoneTranslator.cs** という名前を付けます。
 
 [![PhoneTranslator.cs を追加する](hello-android-quickstart-images/vs/14-add-class-w158-sml.png)](hello-android-quickstart-images/vs/14-add-class-w158.png#lightbox)
 
@@ -248,7 +253,7 @@ translateButton.Click += (sender, e) =>
 };
 ```
 
-**[ファイル]、[すべて保存]** の順に選択して (または **CTRL + SHIFT + S** キーを押して) 作業内容を保存し、**[ビルド]、[ソリューションのリビルド]** の順に選択して (または **CTRL + SHIFT + B** キーを押して) アプリケーションをビルドします。 
+**[ファイル]、[すべて保存]** の順に選択して (または **CTRL + SHIFT + S** キーを押して) 作業内容を保存し、 **[ビルド]、[ソリューションのリビルド]** の順に選択して (または **CTRL + SHIFT + B** キーを押して) アプリケーションをビルドします。 
 
 エラーがある場合は、アプリケーションが正常にビルドされるまで、前の手順を実行し、誤りを修正します。 "_現在のコンテキストにリソースが存在しません_" などのビルド エラーが表示された場合は、**MainActivity.cs** の名前空間名とプロジェクト名 (`Phoneword`) が一致していることを確認してから、ソリューションを完全にリビルドします。 それでもビルド エラーが表示される場合は、最新の Visual Studio の更新プログラムをインストールしていることを確認します。
 
@@ -279,7 +284,7 @@ Android デバイスでアプリを実行する方法については、「[開�
 
 **[新しいプロジェクト]** をクリックして、新しいプロジェクトを作成します。
 
-**[新しいプロジェクト用のテンプレートを選びます]** ダイアログで、**[Android]、[アプリ]** の順にクリックして、**[Android アプリ]** テンプレートを選択します。 **[次へ]** をクリックします。
+**[新しいプロジェクト用のテンプレートを選びます]** ダイアログで、 **[Android]、[アプリ]** の順にクリックして、 **[Android アプリ]** テンプレートを選択します。 **[次へ]** をクリックします。
 
 [![Android アプリ テンプレートを選択する](hello-android-quickstart-images/xs/03-choose-template-sml.png)](hello-android-quickstart-images/xs/03-choose-template.png#lightbox)
 
@@ -287,22 +292,27 @@ Android デバイスでアプリを実行する方法については、「[開�
 
 [![Android アプリを構成する](hello-android-quickstart-images/xs/04-configure-android-app-sml.png)](hello-android-quickstart-images/xs/04-configure-android-app.png#lightbox)
 
-**[Configure your new Android App]\(新しい Android アプリを構成します\)** ダイアログでは、ソリューションとプロジェクトの名前は `Phoneword` に設定したままにし、**[作成]** をクリックしてプロジェクトを作成します。
+**[Configure your new Android App]\(新しい Android アプリを構成します\)** ダイアログでは、ソリューションとプロジェクトの名前は `Phoneword` に設定したままにし、 **[作成]** をクリックしてプロジェクトを作成します。
 
 ## <a name="create-a-layout"></a>レイアウトを作成する
 
-新しいプロジェクトが作成されたら、**[ソリューション]** パッドで **Resources** フォルダーを展開してから **layout** フォルダーを展開します。
+> [!TIP]
+> 新しいリリースの Visual Studio では、Android Designer 内で .xml ファイルを開くことができます。
+>
+> Android Designer では、.axml ファイルと .xml ファイルの両方がサポートされています。
+
+新しいプロジェクトが作成されたら、 **[ソリューション]** パッドで **Resources** フォルダーを展開してから **layout** フォルダーを展開します。
 **Main.axml** をダブルクリックして、Android Designer で開きます。 Android Designer で表示されるときの画面のレイアウト ファイルを以下に示します。
 
 [![Main.axml を開く](hello-android-quickstart-images/xs/05-open-layout-sml.png)](hello-android-quickstart-images/xs/05-open-layout.png#lightbox)
 
-**[Hello World, Click Me!]**  **ボタン** (デザイン サーフェイスにあります) を選択し、**Delete** キーを押して削除します。 
+**[Hello World, Click Me!]** **ボタン** (デザイン サーフェイスにあります) を選択し、**Delete** キーを押して削除します。 
 
 **[ツールボックス]** (右側の領域) の検索フィールドに「`text`」と入力し、デザイン サーフェイス (中央の領域) に **Text (Large)** ウィジェットをドラッグします。
 
 [![ラージ テキスト ウィジェットを追加する](hello-android-quickstart-images/xs/06-large-text-sml.png)](hello-android-quickstart-images/xs/06-large-text.png#lightbox)
 
-デザイン サーフェイスで **Text (Large)** ウィジェットを選択した状態で、次のように、**[プロパティ]** パッドを使用して **Text (Large)** ウィジェットの `Text` プロパティを `Enter a Phoneword:` に変更することができます。
+デザイン サーフェイスで **Text (Large)** ウィジェットを選択した状態で、次のように、 **[プロパティ]** パッドを使用して **Text (Large)** ウィジェットの `Text` プロパティを `Enter a Phoneword:` に変更することができます。
 
 [![ラージ テキスト ウィジェットのプロパティを設定する](hello-android-quickstart-images/xs/07-enter-a-phoneword-sml.png)](hello-android-quickstart-images/xs/07-enter-a-phoneword.png#lightbox)
 
@@ -310,7 +320,7 @@ Android デバイスでアプリを実行する方法については、「[開�
 
 [![プレーン テキスト ウィジェットを追加する](hello-android-quickstart-images/xs/08-plain-text-sml.png)](hello-android-quickstart-images/xs/08-plain-text.png#lightbox)
 
-デザイン サーフェイスで **Plain Text** ウィジェットを選択した状態で、次のように、**[プロパティ]** パッドを使用して **Plain Text** ウィジェットの `Id` プロパティを `@+id/PhoneNumberText` に変更し、`Text` プロパティを `1-855-XAMARIN` に変更することができます。
+デザイン サーフェイスで **Plain Text** ウィジェットを選択した状態で、次のように、 **[プロパティ]** パッドを使用して **Plain Text** ウィジェットの `Id` プロパティを `@+id/PhoneNumberText` に変更し、`Text` プロパティを `1-855-XAMARIN` に変更することができます。
 
 [![プレーン テキスト ウィジェットのプロパティを設定する](hello-android-quickstart-images/xs/09-add-properties-sml.png)](hello-android-quickstart-images/xs/09-add-properties.png#lightbox)
 
@@ -318,11 +328,11 @@ Android デバイスでアプリを実行する方法については、「[開�
 
 [![ボタンを追加する](hello-android-quickstart-images/xs/10-drag-button-sml.png)](hello-android-quickstart-images/xs/10-drag-button.png#lightbox)
 
-デザイン サーフェイスで **Button** を選択した状態で、次のように、**[プロパティ]** パッドを使用して **Button** の `Id` プロパティを `@+id/TranslateButton` に変更し、`Text` プロパティを `Translate` に変更できます。
+デザイン サーフェイスで **Button** を選択した状態で、次のように、 **[プロパティ]** パッドを使用して **Button** の `Id` プロパティを `@+id/TranslateButton` に変更し、`Text` プロパティを `Translate` に変更できます。
 
 [![変換ボタンとして構成する](hello-android-quickstart-images/xs/11-translate-button-sml.png)](hello-android-quickstart-images/xs/11-translate-button.png#lightbox)
 
-**[TextView]** を **[ツールボックス]** からデザイン サーフェスにドラッグし、**[Button]** ウィジェットの下に配置します。 次のように、選択した **[TextView]** で、**[TextView]** の `id` プロパティを `@+id/TranslatedPhoneWord` に設定し、`text` を空の文字列に変更します。
+**[TextView]** を **[ツールボックス]** からデザイン サーフェスにドラッグし、 **[Button]** ウィジェットの下に配置します。 次のように、選択した **[TextView]** で、 **[TextView]** の `id` プロパティを `@+id/TranslatedPhoneWord` に設定し、`text` を空の文字列に変更します。
 
 [![テキスト ビューでプロパティを設定する](hello-android-quickstart-images/xs/12-textview-properties-sml.png)](hello-android-quickstart-images/xs/12-textview-properties.png#lightbox)    
 
@@ -330,11 +340,11 @@ Android デバイスでアプリを実行する方法については、「[開�
 
 ## <a name="write-some-code"></a>コードを記述する
 
-ここでは、電話番号を英数字から数字に変換するコードをいくつか追加します。 以下のように、**[ソリューション]** パッドの **Phoneword** プロジェクトの横にある歯車アイコンをクリックし、**[追加]、[新しいファイル...]** の順に選択して、新しいファイルをプロジェクトに追加します。
+ここでは、電話番号を英数字から数字に変換するコードをいくつか追加します。 以下のように、 **[ソリューション]** パッドの **Phoneword** プロジェクトの横にある歯車アイコンをクリックし、 **[追加]、[新しいファイル...]** の順に選択して、新しいファイルをプロジェクトに追加します。
 
 [![新しいファイルをプロジェクトに追加する](hello-android-quickstart-images/xs/14-add-new-file-sml.png)](hello-android-quickstart-images/xs/14-add-new-file.png#lightbox)
 
-**[新しいファイル]** ダイアログで、**[全般]、[空のクラス]** の順に選択し、新しいファイルに **PhoneTranslator** という名前を付けて **[新規]** をクリックします。 これで、新しい空の C# クラスが作成されます。
+**[新しいファイル]** ダイアログで、 **[全般]、[空のクラス]** の順に選択し、新しいファイルに **PhoneTranslator** という名前を付けて **[新規]** をクリックします。 これで、新しい空の C# クラスが作成されます。
 
 新しいクラスのテンプレート コードをすべて削除し、次のコードに置き換えます。
 
@@ -404,7 +414,7 @@ namespace Core
 次の手順では、`MainActivity` クラスにバッキング コードを追加し、ユーザー インターフェイスを接続するためのコードを追加します。
 **Solution Pad** で **MainActivity.cs** をダブルクリックして開きます。
 
-まず、**[変換]** ボタンにイベント ハンドラーを追加します。 `MainActivity` クラスで、`OnCreate` メソッドを見つけます。 `OnCreate` 内 (`base.OnCreate(bundle)` および `SetContentView (Resource.Layout.Main)` 呼び出しの下) にボタン コードを追加します。 `OnCreate` メソッドが次のようになるように、既存のボタン処理コード (つまり、`Resource.Id.myButton` を参照してそのためのクリック ハンドラーを作成するコード) をすべて削除します。
+まず、 **[変換]** ボタンにイベント ハンドラーを追加します。 `MainActivity` クラスで、`OnCreate` メソッドを見つけます。 `OnCreate` 内 (`base.OnCreate(bundle)` および `SetContentView (Resource.Layout.Main)` 呼び出しの下) にボタン コードを追加します。 `OnCreate` メソッドが次のようになるように、既存のボタン処理コード (つまり、`Resource.Id.myButton` を参照してそのためのクリック ハンドラーを作成するコード) をすべて削除します。
 
 ```csharp
 using System;
@@ -463,7 +473,7 @@ translateButton.Click += (sender, e) =>
 };
 ```
 
-作業内容を保存し、**[ビルド]、[すべてビルド]** の順に選択して (または **&#8984; + B** キーを押して)、アプリケーションをビルドします。 アプリケーションがコンパイルされると、Visual Studio for Mac の上部に成功メッセージが表示されます。
+作業内容を保存し、 **[ビルド]、[すべてビルド]** の順に選択して (または **&#8984; + B** キーを押して)、アプリケーションをビルドします。 アプリケーションがコンパイルされると、Visual Studio for Mac の上部に成功メッセージが表示されます。
 
 エラーがある場合は、アプリケーションが正常にビルドされるまで、前の手順を実行し、誤りを修正します。 "_現在のコンテキストにリソースが存在しません_" などのビルド エラーが表示された場合は、**MainActivity.cs** の名前空間名とプロジェクト名 (`Phoneword`) が一致していることを確認してから、ソリューションを完全にリビルドします。 それでもビルド エラーが表示される場合は、最新の Xamarin.Android および Visual Studio for Mac の更新プログラムをインストールしていることを確認します。
 
@@ -493,19 +503,19 @@ namespace Phoneword
 
 ダイアログで **[削除]** ボタンをクリックします。
 
-次に、[Xamarin App Icons セット](https://github.com/xamarin/monodroid-samples/blob/master/Phoneword/Resources/XamarinAndroidIcons.zip?raw=true)をダウンロードして解凍します。 この ZIP ファイルは、アプリケーションのアイコンを含んでいます。 各アイコンは見た目は同じですが、さまざまな解像度で、画面密度が異なるさまざまなデバイスに正しくレンダリングできます。  Xamarin.Android プロジェクトに、このファイルのセットをコピーする必要があります。 Visual Studio for Mac の **Solution Pad** で、**mipmap-hdpi** フォルダーを右クリックし、**[追加]、[ファイルの追加]** の順に選択します。
+次に、[Xamarin App Icons セット](https://github.com/xamarin/monodroid-samples/blob/master/Phoneword/Resources/XamarinAndroidIcons.zip?raw=true)をダウンロードして解凍します。 この ZIP ファイルは、アプリケーションのアイコンを含んでいます。 各アイコンは見た目は同じですが、さまざまな解像度で、画面密度が異なるさまざまなデバイスに正しくレンダリングできます。  Xamarin.Android プロジェクトに、このファイルのセットをコピーする必要があります。 Visual Studio for Mac の **Solution Pad** で、**mipmap-hdpi** フォルダーを右クリックし、 **[追加]、[ファイルの追加]** の順に選択します。
 
 [![ファイルを追加する](hello-android-quickstart-images/xs/24-add-files-sml.png)](hello-android-quickstart-images/xs/24-add-files.png#lightbox)
 
 選択ダイアログから、解凍した Xamarin AdApp Icons のディレクトリに移動し、**mipmap-hdpi** フォルダーを開きます。 **Icon.png** を選択して **[開く]** をクリックします。
 
-**[ファイルをフォルダーに追加する]** ダイアログ ボックスで、**[Copy the file into the directory]\(ファイルをディレクトリにコピーする\)** を選択して **[OK]** をクリックします。
+**[ファイルをフォルダーに追加する]** ダイアログ ボックスで、 **[Copy the file into the directory]\(ファイルをディレクトリにコピーする\)** を選択して **[OK]** をクリックします。
 
 [![[ファイルをディレクトリにコピーする] ダイアログ](hello-android-quickstart-images/xs/26-copy-to-directory-sml.png)](hello-android-quickstart-images/xs/26-copy-to-directory.png#lightbox)
 
 **mipmap-** Xamarin App Icons フォルダーの内容が **Phoneword** プロジェクトの対応する **mipmap-** フォルダーにコピーされるまで、**mipmap-** フォルダーごとにこれらの手順を繰り返します。
 
-すべてのアイコンを Xamarin.Android プロジェクトにコピーしたら、**Solution Pad** でプロジェクトを右クリックして、**[プロジェクト オプション]** ダイアログを開きます。 **[ビルド]、[Android アプリケーション]** の順に選択し、**[アプリケーション アイコン]** コンボ ボックスから `@mipmap/icon` を選択します。
+すべてのアイコンを Xamarin.Android プロジェクトにコピーしたら、**Solution Pad** でプロジェクトを右クリックして、 **[プロジェクト オプション]** ダイアログを開きます。 **[ビルド]、[Android アプリケーション]** の順に選択し、 **[アプリケーション アイコン]** コンボ ボックスから `@mipmap/icon` を選択します。
 
 [![プロジェクト アイコンを設定する](hello-android-quickstart-images/xs/28-set-project-icon-sml.png)](hello-android-quickstart-images/xs/28-set-project-icon.png#lightbox)
 
@@ -525,4 +535,4 @@ Android デバイスでアプリを実行する方法については、「[開�
 ## <a name="related-links"></a>関連リンク
 
 - [Xamarin Android アプリ アイコン (ZIP)](https://github.com/xamarin/monodroid-samples/blob/master/Phoneword/Resources/XamarinAndroidIcons.zip?raw=true)
-- [Phoneword (サンプル)](https://developer.xamarin.com/samples/monodroid/Phoneword)
+- [Phoneword (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/phoneword)

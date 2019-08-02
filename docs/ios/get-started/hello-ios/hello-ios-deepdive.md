@@ -9,12 +9,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: 7f40671cd37ba88834698dea8cdaba267c96600c
-ms.sourcegitcommit: c77d4257f8a35c8d931538b78a2ebc2aa48c0db9
+ms.openlocfilehash: 050f084086df02314faecaca42a93007e6cc5246
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/30/2019
-ms.locfileid: "58751260"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68647046"
 ---
 # <a name="hello-ios--deep-dive"></a>Hello, iOS – 深い分析
 
@@ -134,7 +134,7 @@ namespace Phoneword_iOS
 
 アプリケーションがウィンドウを定義したら、ユーザー インターフェイスの読み込みを開始できます。 次のセクションでは、UI の作成について説明します。
 
-## <a name="user-interface"></a>[ユーザー インターフェイス]
+## <a name="user-interface"></a>ユーザー インターフェイス
 
 iOS アプリのユーザー インターフェイスは店舗の正面のようなものです。アプリケーションは、通常、1 つのウィンドウを取得しますが、必要な数のオブジェクトをウィンドウいっぱいに表示し、表示するアプリの必要に応じてオブジェクトの配置を変更することもできます。 このシナリオのオブジェクト (ユーザーに表示される物事) はビューと呼ばれます。 アプリケーションで 1 つの画面をビルドするには、*コンテンツ ビュー階層*にビューが相互に積み重ねられ、階層が単一のビュー コントローラーによって管理されます。 複数の画面があるアプリケーションには、複数のコンテンツ ビュー階層、それぞれに独自のビュー コントローラー、およびウィンドウ内のアプリケーションの場所のビューがあり、ユーザーに表示される画面に基づいて異なるコンテンツ ビュー階層が作成されます。
 
@@ -414,9 +414,9 @@ iOS シミュレーターは、アプリケーションをテストする簡単�
 デバイスは、プロビジョニングに時間がかかり、Apple 開発者アカウントが必要です。 [デバイス プロビジョニング](~/ios/get-started/installation/device-provisioning/index.md) ガイドでは、開発用デバイスを準備する詳細な手順を説明しています。
 
 > [!NOTE]
-> 現時点では、Apple の求めにより、デバイスまたはシミュレーターのコードをビルドするために、開発証明書または_署名 ID_ を用意する必要があります。 [デバイス プロビジョニング ガイド](~/ios/get-started/installation/device-provisioning/manual-provisioning.md)の手順に従ってこれを設定します。
+> 現時点では、Apple の求めにより、物理デバイスまたはシミュレーターのコードをビルドするために、開発証明書または_署名 ID_ を用意する必要があります。 [デバイス プロビジョニング ガイド](~/ios/get-started/installation/device-provisioning/manual-provisioning.md)の手順に従ってこれを設定します。
 
-デバイスがプロビジョニングされたら、プラグインすることで展開し、次のスクリーンショットに示すようにビルド ツールバーでターゲットを iOS デバイスに変更して、**[Start]** (**Play**) を押します。
+デバイスがプロビジョニングされたら、プラグインすることで展開し、次のスクリーンショットに示すようにビルド ツールバーでターゲットを iOS デバイスに変更して、 **[Start]** (**Play**) を押します。
 
 ::: zone pivot="macos"
 
@@ -457,11 +457,11 @@ iOS デバイスにアプリが展開されます。
 
 ## <a name="summary"></a>まとめ
 
-おめでとうございます!  これで、Xamarin.iOS アプリケーションのコンポーネント、およびそれを作成するためのツールを確実に理解できました。
-[作業の開始シリーズの次のチュートリアル](~/ios/get-started/hello-ios-multiscreen/index.md)では、複数の画面を処理するようにアプリケーションを拡張します。 複数の画面を処理するようにアプリケーションを拡張する途中でナビゲーション コントローラーを実装して、ストーリーボードの Segues について学習し、モデル、ビュー、コントローラー (MVC) のパターンを紹介します。
+おめでとうございます! これで、Xamarin.iOS アプリケーションのコンポーネント、およびそれを作成するためのツールを確実に理解できました。
+[作業の開始シリーズの次のチュートリアル](~/ios/get-started/hello-ios-multiscreen/index.md)では、複数の画面を処理するようにアプリケーションを拡張します。 複数の画面を処理するようにアプリケーションを拡張する途中でナビゲーション コントローラーを実装して、ストーリーボードの Segue について学習し、モデル、ビュー、コントローラー (MVC) のパターンを紹介します。
 
 ## <a name="related-links"></a>関連リンク
 
-- [Hello, iOS (サンプル)](https://developer.xamarin.com/samples/monotouch/Hello_iOS/)
+- [Hello, iOS (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios)
 - [iOS ヒューマン インターフェイス ガイドライン](https://developer.apple.com/design/human-interface-guidelines/ios/overview/themes/)
 - [iOS プロビジョニング ポータル](https://developer.apple.com/account/#/overview)
