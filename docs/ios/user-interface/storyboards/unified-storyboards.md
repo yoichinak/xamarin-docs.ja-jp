@@ -1,118 +1,118 @@
 ---
-title: Xamarin.iOS で統一されたストーリー ボード
-description: このドキュメントでは、Xamarin.iOS で統一されたストーリー ボードについて説明します。 統合ストーリー ボードには、1 つのインターフェイス定義を持つ複数の画面サイズをサポートするために開発者ができるようにします。
+title: Xamarin の統合されたストーリーボード
+description: このドキュメントでは、Xamarin. iOS の統合されたストーリーボードについて説明します。 統合されたストーリーボードを使用すると、開発者は1つのインターフェイス定義で複数の画面サイズをサポートできます。
 ms.prod: xamarin
 ms.assetid: F6F70374-FC2A-4401-A712-A16D0F9B340F
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: c9d98d9d3052f52dc7860ba513756e3a33d1dc58
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 02bc6fe7109f13629e776c800657846fca02641e
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67831915"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657132"
 ---
-# <a name="unified-storyboards-in-xamarinios"></a>Xamarin.iOS で統一されたストーリー ボード
+# <a name="unified-storyboards-in-xamarinios"></a>Xamarin の統合されたストーリーボード
 
-iOS 8 ユーザー インターフェイスを作成するため、簡単に使用する新しいメカニズムが含まれています-統合されたストーリー ボード。 別のハードウェアの画面サイズのすべてをカバーする 1 つにストーリー ボードは、高速で応答性のビューを作成することができます、"設計-1 回、使用して多"のスタイル。
+iOS 8 には、統合されたストーリーボードという、ユーザーインターフェイスを作成するための、使いやすい新しい機構が含まれています。 1つのストーリーボードを使用してさまざまなハードウェア画面サイズをすべてカバーすると、高速および応答性の高いビューを "設計時に1回、使用する多" スタイルで作成できます。
 
-開発者は、iPhone および iPad デバイスの独立した、特定のストーリー ボードを作成する必要がなくなりと共通インターフェイスを備えたアプリケーションを設計し、そのインターフェイスの別のサイズ クラスをカスタマイズする柔軟性があります。 これにより、アプリケーションは、各フォーム ファクターの長所に適応させることができ、最適なエクスペリエンスを提供する各ユーザー インターフェイスを調整できます。
+開発者は、iPhone と iPad デバイス用に個別の特定のストーリーボードを作成する必要がなくなったため、共通のインターフェイスを使用してアプリケーションを設計し、さまざまなサイズのクラスでそのインターフェイスをカスタマイズする柔軟性があります。 この方法では、各フォームファクターの長所に合わせてアプリケーションを調整できます。各ユーザーインターフェイスは、最適なエクスペリエンスを提供するように調整できます。
 
 <a name="size-classes" />
 
-## <a name="size-classes"></a>サイズ クラス
+## <a name="size-classes"></a>サイズクラス
 
-IOS 8 の場合は、前に、開発者が使用される`UIInterfaceOrientation`と`UIInterfaceIdiom`縦長と横長モードと iPhone および iPad デバイス間で区別するためにします。 印刷の向きとデバイスの決定、iOS8 でを使用して、*サイズ クラス*します。
+IOS 8 より前の開発者は`UIInterfaceOrientation` 、 `UIInterfaceIdiom`とを使用して、縦モードと横モードを区別し、iPhone と iPad デバイスを区別していました。 IOS8 では、方向とデバイスは*サイズクラス*を使用して決定されます。
 
-デバイスは垂直および水平方向の両方の軸でサイズのクラスによって定義され、iOS 8 でのサイズ クラスの 2 種類があります。
+デバイスは、垂直軸と水平軸の両方でサイズクラスによって定義され、iOS 8 には2種類のサイズクラスがあります。
 
--  **通常**– これは、(iPad) などの大きな画面サイズ、または大きなサイズのという印象を与えるガジェット (など、 `UIScrollView`
--  **Compact** – これは比較的小さなデバイス (iPhone) などの。 このサイズでは、デバイスの向きが考慮されます。
-
-
-2 つの概念をまとめて使用する場合、結果は次の図に示すように、両方、異なる向きで使用できるさまざまな可能なサイズを定義する 2 x 2 グリッドに。
-
- [![](unified-storyboards-images/sizeclassgrid.png "標準モードと最適化の向きで使用できるさまざまな可能なサイズを定義する 2 x 2 グリッド")](unified-storyboards-images/sizeclassgrid.png#lightbox)
-
-開発者は、4 つのこと (上の図に表示) と、さまざまなレイアウトになる可能性のいずれかを使用するビュー コント ローラーを作成できます。
-
-### <a name="ipad-size-classes"></a>iPad サイズ クラス
-
-サイズが多いため、iPad が、**正規**クラスの両方向のサイズ。
-
- [![](unified-storyboards-images/image1.png "iPad サイズ クラス")](unified-storyboards-images/image1.png#lightbox)
+-  **Regular** –これは、サイズの大きい画面 (iPad など)、または大きなサイズの印象を与えるガジェット (たとえば、`UIScrollView`
+-  **Compact** –これは、より小さなデバイス (iPhone など) を対象としています。 このサイズでは、デバイスの向きが考慮されます。
 
 
-### <a name="iphone-size-classes"></a>iPhone サイズ クラス
+2つの概念が一緒に使用されている場合は、次の図に示すように、異なる向きの両方で使用できるさまざまなサイズを定義する2つの x 2 グリッドが生成されます。
 
-IPhone では、デバイスの向きに基づいてさまざまなサイズ クラスがあります。
+ [![](unified-storyboards-images/sizeclassgrid.png "標準とコンパクトの向きで使用できるさまざまなサイズを定義する2×2のグリッド")](unified-storyboards-images/sizeclassgrid.png#lightbox)
 
- [![](unified-storyboards-images/iphonesizeclasses.png "iPhone サイズ クラス")](unified-storyboards-images/iphonesizeclasses.png#lightbox)
+開発者は、(上の図に示すように) レイアウトが異なる4つの方法のいずれかを使用するビューコントローラーを作成できます。
 
--  デバイスは、縦向きモードが、画面に、 **compact**水平方向にクラスと**正規**垂直方向に
--  横モードでは、画面のクラスは、縦モードから取り消されます。
+### <a name="ipad-size-classes"></a>iPad サイズクラス
 
-### <a name="iphone-6-plus-size-classes"></a>iPhone 6 Plus サイズ クラス
+IPad は、サイズが原因で、両方の向きに対して**通常**のクラスサイズが使用されます。
 
-サイズでは、以前の Iphone 縦向きが横で別々 の場合と同じです。
+ [![](unified-storyboards-images/image1.png "iPad サイズクラス")](unified-storyboards-images/image1.png#lightbox)
 
-[![](unified-storyboards-images/iphone6sizeclasses.png "iPhone 6 Plus サイズ クラス")](unified-storyboards-images/iphone6sizeclasses.png#lightbox)
 
-IPhone 6 Plus が十分な大きさの画面を横モードで正規の幅のサイズ クラスを用意することができます。
+### <a name="iphone-size-classes"></a>iPhone サイズクラス
 
-### <a name="support-for-a-new-screen-scale"></a>新しい画面のスケールのサポート
+IPhone のサイズクラスは、デバイスの向きによって異なります。
 
-IPhone 6 Plus で画面のスケール ファクター 3.0 (3 回元 iPhone 画面の解像度) の新しい HD の Retina ディスプレイを使用します。 これらのデバイスで最高のエクスペリエンスを提供するには、この画面のスケール用に設計された新しいアートワークを含めます。 Xcode 6 以降で資産カタログが 1 倍、2 x、および 3 x サイズ; でイメージを含めることができます。単に追加、新しいイメージの資産および iOS は、iPhone 6 で実行されている場合に、適切な資産に選択されますとします。
+ [![](unified-storyboards-images/iphonesizeclasses.png "iPhone サイズクラス")](unified-storyboards-images/iphonesizeclasses.png#lightbox)
 
-IOS での動作も読み込む画像認識、`@3x`イメージ ファイルのサフィックス。 たとえば、開発者が、次のファイル名と、アプリケーションのバンドルに (さまざまな解像度) でのイメージ アセットに含まれています: `MonkeyIcon.png`、 `MonkeyIcon@2x.png`、および`MonkeyIcon@3x.png`します。 Iphone 6 Plus、`MonkeyIcon@3x.png`開発者は、次のコードを使用してイメージを読み込む場合、イメージを自動的に使用されます。
+-  デバイスが縦モードのとき、画面には水平方向と**標準**時の**コンパクト**なクラスがあります。
+-  デバイスが横モードの場合、画面クラスは縦モードから逆になります。
+
+### <a name="iphone-6-plus-size-classes"></a>iPhone 6 Plus サイズクラス
+
+サイズは、縦向きの場合は以前のスマートフォンと同じですが、横には異なります。
+
+[![](unified-storyboards-images/iphone6sizeclasses.png "iPhone 6 Plus サイズクラス")](unified-storyboards-images/iphone6sizeclasses.png#lightbox)
+
+IPhone 6 Plus には十分な大きさの画面があるため、横モードでは通常の幅サイズクラスを持つことができます。
+
+### <a name="support-for-a-new-screen-scale"></a>新しい画面スケールのサポート
+
+IPhone 6 Plus では、3.0 (元の iPhone 画面解像度3倍) の画面スケールファクターで新しい Retina HD ディスプレイが使用されます。 これらのデバイスで最適なエクスペリエンスを提供するには、この画面のスケール用に設計された新しいアートワークを追加します。 Xcode 6 以降では、アセットカタログには、1倍、2倍、3倍のサイズで画像を含めることができます。新しいイメージ資産を追加するだけで、iOS は iPhone 6 Plus で実行されるときに正しい資産を選択します。
+
+IOS のイメージ読み込み動作でも、イメージ`@3x`ファイルのサフィックスが認識されます。 たとえば、開発者が`MonkeyIcon.png`、 `MonkeyIcon@2x.png`、、および`MonkeyIcon@3x.png`の各ファイル名を使用して、アプリケーションのバンドルにイメージ資産 (異なる解像度) を含めているとします。 IPhone 6 に加えて、 `MonkeyIcon@3x.png`開発者が次のコードを使用してイメージを読み込む場合は、イメージが自動的に使用されます。
 
 ```csharp
 UIImage icon = UIImage.FromFile("MonkeyImage.png");
 ```
-場合は、iOS を使用して UI 要素に、イメージを割り当てる、またはデザイナーとして`MonkeyIcon.png`、`MonkeyIcon@3x.png`で使用される、自動的に再 iPhone 6 Plus です。
+または、iOS デザイナー `MonkeyIcon.png`を使用してイメージを UI 要素に割り当てた場合は、が`MonkeyIcon@3x.png`自動的に iPhone 6 Plus で使用されます。
 
 <a name="dynamic-launch-screens" />
 
 ### <a name="dynamic-launch-screens"></a>動的な起動画面
 
-アプリが実際に開始をユーザーにフィードバックを提供する iOS アプリケーションを起動するときに、スプラッシュ スクリーンとして起動画面のファイルが表示されます。 IOS 8 の場合は、前に、開発者が 複数を含める必要があります`Default.png`のイメージ アセットをアプリケーションで実行されるデバイスの種類、方向、および画面解像度ごと。
+アプリが実際に起動されていることをユーザーにフィードバックするために、iOS アプリケーションを起動しているときに、起動画面ファイルがスプラッシュスクリーンとして表示されます。 IOS 8 より前の開発者は、アプリケーションが実行`Default.png`されるデバイスの種類、向き、画面の解像度ごとに、複数のイメージ資産を含める必要があります。
 
-新しい ios 8 の場合は、開発者が 1 つのアトミックを作成できます`.xib`自動レイアウトとサイズ クラスを使用して作成する Xcode でファイルを*動的な起動画面*は、すべてのデバイス、解像度、向きの動作をします。 これだけでなく、開発者を作成し、すべての必要なイメージ資産の管理の必要な作業の量が減少が、アプリケーションのインストールされているバンドルのサイズが削減されます。
+IOS 8 を初めて使用する場合、開発者は、 `.xib` Auto Layout クラスと Size クラスを使用して、すべてのデバイス、解像度、および向きに対して機能する*動的起動画面*を作成する、Xcode で単一のアトミックファイルを作成できます。 これにより、開発者が必要なすべてのイメージ資産を作成して維持するために必要な作業量が減少するだけでなく、アプリケーションのインストール済みバンドルのサイズが縮小されます。
 
 ## <a name="traits"></a>Traits
 
-特徴は、その環境の変更、レイアウトの変更を特定するのに使用できるプロパティです。 プロパティのセットで構成されます (、`HorizontalSizeClass`と`VerticalSizeClass`に基づいて`UIUserInterfaceSizeClass`)、インターフェイスの表現形式と ( `UIUserInterfaceIdiom`) と表示スケールします。
+特徴は、環境の変化に合わせてレイアウトがどのように変化するかを決定するために使用できるプロパティです。 これらは、一連のプロパティ`HorizontalSizeClass` (と`VerticalSizeClass`に`UIUserInterfaceSizeClass`基づく) と、インターフェイス表現 ( `UIUserInterfaceIdiom`) と表示スケールで構成されます。
 
-Apple が特徴であるコレクションとして参照するコンテナーでまとめ、上記の状態のすべて ( `UITraitCollection`)、だけでなく、プロパティもその値が含まれています。
+上記のすべての状態は、Apple が特徴コレクション ( `UITraitCollection`) として参照するコンテナーにラップされます。これには、プロパティだけでなく、それらの値も含まれます。
 
-## <a name="trait-environment"></a>特徴である環境
+## <a name="trait-environment"></a>特徴環境
 
-特徴の環境は iOS 8 の新しいインターフェイスとは、次のオブジェクトの特徴であるコレクションを返すことができません。
+特徴環境は、iOS 8 の新しいインターフェイスであり、次のオブジェクトの特徴コレクションを返すことができます。
 
 -  画面 ( `UIScreens` )。
 -  Windows ( `UIWindows` )。
--  コント ローラーの表示 ( `UIViewController` )。
--  ビュー ( `UIView` )。
--  プレゼンテーションのコント ローラー ( `UIPresentationController` )。
+-  コントローラー ( `UIViewController` ) を表示します。
+-  Views ( `UIView` )。
+-  プレゼンテーションコントローラー ( `UIPresentationController` )。
 
 
-開発者は、ユーザー インターフェイスのレイアウト方法を決定するのに特徴環境によって返される特徴であるコレクションを使用します。
+開発者は、特徴環境によって返される特徴コレクションを使用して、ユーザーインターフェイスをどのようにレイアウトするかを決定します。
 
-階層は、次の図に示すようすべての特徴である環境のこと。
+すべての特徴環境は、次の図に示すように階層を作成します。
 
- [![](unified-storyboards-images/viewhierarchy.png "特徴である環境階層図")](unified-storyboards-images/viewhierarchy.png#lightbox)
+ [![](unified-storyboards-images/viewhierarchy.png "特徴環境階層図")](unified-storyboards-images/viewhierarchy.png#lightbox)
 
-属性がコレクション子環境を親からの既定で、フローは、上記の特徴である環境があること。
+上記の特徴の特徴コレクションでは、既定で親環境から子環境にフローします。
 
-特徴である環境には、現在の特徴であるコレクションを取得するには、だけでなく、`TraitCollectionDidChange`メソッドで、ビューまたはビュー コント ローラーのサブクラスで上書きできます。 開発者は、これらの特徴が変更されたときに、特徴に依存している UI 要素のいずれかを変更するのに、このメソッドを使用できます。
+特徴環境には、現在の特徴コレクションを取得するだけで`TraitCollectionDidChange`なく、ビューまたはビューコントローラーサブクラスでオーバーライドできるメソッドがあります。 開発者は、この方法を使用して、特徴が変更されたときに特性に依存する UI 要素を変更できます。
 
-## <a name="typical-trait-collections"></a>一般的な特徴であるコレクション
+## <a name="typical-trait-collections"></a>一般的な特徴コレクション
 
-このセクションでは、ユーザーが iOS 8 を使用する場合に発生する特徴であるコレクションの一般的な種類を説明します。
+このセクションでは、iOS 8 を使用する場合にユーザーが経験する一般的な特徴コレクションについて説明します。
 
-開発者は、iPhone で表示される一般的な特徴であるコレクションを次に示します。
+次に示すのは、開発者が iPhone で見ることができる一般的な特徴コレクションです。
 
 |プロパティ|値|
 |--- |--- |
@@ -121,9 +121,9 @@ Apple が特徴であるコレクションとして参照するコンテナー�
 |`UserInterfaceIdom`|電話番号|
 |`DisplayScale`|2.0|
 
-すべての特徴であるプロパティの値があるために、上記のセットは、完全修飾の特徴であるコレクションを表します。
+上のセットは、すべての特徴プロパティの値を持つため、完全修飾された特徴コレクションを表します。
 
-その値の一部が不足している特徴であるコレクションが存在することも (Apple として参照する*未指定*)。
+また、値の一部が欠落している特徴コレクションがある可能性もあります (Apple は*未指定*として参照します)。
 
 |プロパティ|値|
 |--- |--- |
@@ -132,175 +132,175 @@ Apple が特徴であるコレクションとして参照するコンテナー�
 |`UserInterfaceIdom`|[未指定]|
 |`DisplayScale`|[未指定]|
 
-一般に、ただし、開発者では、その特徴であるコレクションの特徴である環境が表示されたらがコレクションを返す完全修飾の上記の例に示す。
+ただし、一般に、開発者が特徴のコレクションに特徴の環境を要求すると、上記の例に示すように、完全修飾コレクションが返されます。
 
-現在のビュー階層内で (ビューやビュー コント ローラー) などの特徴である環境でない場合、開発者可能性があります値を取得戻る指定されていないの特徴であるプロパティの 1 つ以上の。
+特徴環境 (ビュー、ビューコントローラーなど) が現在のビュー階層の内部にない場合、開発者は1つまたは複数の特徴プロパティの指定されていない値を取得する可能性があります。
 
-など、Apple によって提供される作成方法のいずれかを使用している場合、開発者は部分的に修飾の特徴であるコレクションを取得または`UITraitCollection.FromHorizontalSizeClass`、新しいコレクションを作成します。
+また`UITraitCollection.FromHorizontalSizeClass`、開発者は、Apple によって提供されるいずれかの作成方法 (など) を使用して新しいコレクションを作成する場合に、部分的に修飾された特徴コレクションも取得します。
 
-複数の特徴であるコレクションに対して実行できる 1 つの操作と比較する、互いにもう 1 つが含まれていない 1 つの特徴であるコレクションを確認する必要があります。 意味*コンテインメント*、2 番目のコレクションで指定されたすべての特徴の値必要がありますと一致最初のコレクション内の値と完全にします。
+複数の特徴コレクションに対して実行できる操作の1つは、相互に比較することです。これには、特徴コレクションに別の特徴コレクションが含まれている場合は、それらを相互に比較する必要があります。 *コンテインメント*の目的は、2番目のコレクションで指定されたすべての特徴について、値が最初のコレクションの値と正確に一致する必要があることです。
 
-テストする 2 つの特徴を使用して、`Contains`のメソッド、`UITraitCollection`をテストする特徴の値を渡します。
+2つの特徴をテスト`Contains`するには`UITraitCollection` 、テストする特徴の値を渡すのメソッドを使用します。
 
-開発者が決定するコードで、比較を手動で実行できるレイアウト ビューまたはコント ローラーの表示方法。 ただし、`UIKit`など、外観プロキシのように、その機能の一部を提供するこのメソッドを内部的に使用します。
+開発者は、コード内で手動で比較を実行して、ビューまたはビューコントローラーのレイアウト方法を決定できます。 ただし、 `UIKit`は、このメソッドを内部的に使用して、外観プロキシなどの機能の一部を提供します。
 
-## <a name="appearance-proxy"></a>外観のプロキシ
+## <a name="appearance-proxy"></a>表示プロキシ
 
-外観プロキシは、開発者は、ビューのプロパティのカスタマイズを許可する iOS の以前のバージョンで導入されました。 Ios 8 の特徴であるコレクションをサポートするために拡張されました。
+外観プロキシは、開発者がビューのプロパティをカスタマイズできるように、以前のバージョンの iOS で導入されました。 特徴コレクションをサポートするために、iOS 8 で拡張されています。
 
-外観のプロキシが、新しいメソッドが追加されました`AppearanceForTraitCollection`に渡された、指定されたコレクションの特徴の外観の新しいプロキシを返します。 開発者を実行するカスタマイズ外観プロキシのみ有効になる準拠しているビュー、指定された特徴のコレクション。
+外観プロキシには、渡された`AppearanceForTraitCollection`特定の特徴コレクションに対して新しい外観プロキシを返す新しいメソッドが含まれるようになりました。 開発者がその外観プロキシで実行するカスタマイズは、指定された特徴コレクションに準拠するビューに対してのみ有効になります。
 
-開発者が部分的に指定された属性がコレクションに渡すは一般に、`AppearanceForTraitCollection`直前に指定した水平方向のサイズ クラスのコンパクトなコンパクトな水平方向には、アプリケーション内の任意のビューをカスタマイズすることができるようにするものなどのメソッド。
+通常、開発者は、部分的に指定された特徴`AppearanceForTraitCollection`コレクションをメソッドに渡します。たとえば、水平方向のサイズクラス compact を指定した場合は、水平方向に圧縮されたアプリケーション内の任意のビューをカスタマイズできます。
 
 ## <a name="uiimage"></a>UIImage
 
-Apple が特徴であるコレクションに追加する別のクラス`UIImage`します。 過去に、開発者を指定する必要がある、@1Xと@2x(アイコン) などのアプリケーションに組み込む予定がある任意のビットマップ グラフィック資産のバージョン。
+Apple が特徴コレクションを追加した別の`UIImage`クラスはです。 以前は、開発者は、アプリケーションに@1X含める@2xビットマップグラフィックアセット (アイコンなど) のおよびバージョンを指定する必要がありました。
 
-iOS 8 は、開発者の特徴であるコレクションに基づくイメージ カタログ内の複数バージョンのイメージを含めるように拡張されています。 たとえば、開発者は、コンパクトな特徴クラスとその他のコレクションの完全な画像のサイズの小さい画像を含めることが。
+iOS 8 が拡張され、開発者は特徴コレクションに基づいてイメージカタログに複数のバージョンのイメージを含めることができるようになりました。 たとえば、開発者はコンパクトな特徴クラスを使用するためのイメージを小さくし、他のすべてのコレクションに対してイメージを完全にサイズ設定することができます。
 
-内部で使用される、イメージの 1 つ、`UIImageView`クラス、イメージのビューがその特徴であるコレクションの正しいバージョンのイメージを自動的に表示します。 します。 (横向きに縦向きからデバイスを切り替えるユーザー) などの特徴である環境が変更された場合のイメージ ビューが自動的に新しい特徴のコレクションと一致し、イメージの中の現在のバージョンの一致するように、サイズを変更する新しいイメージのサイズを選択します。表示されます。
+いずれかのイメージが`UIImageView`クラス内で使用されている場合、イメージビューには、その特徴コレクションに対応する正しいバージョンのイメージが自動的に表示されます。 特徴環境が変更された場合 (ユーザーがデバイスを縦向きから横方向に切り替えた場合など)、新しい特徴コレクションに合わせて新しいイメージサイズが自動的に選択され、イメージの現在のバージョンのサイズに合わせてサイズが変更されます。さ.
 
 ## <a name="uiimageasset"></a>UIImageAsset
 
-Apple がという iOS 8 を新しいクラスを追加`UIImageAsset`イメージの選択をさらに多くの制御を開発者に提供します。
+Apple は、イメージ選択をさらに制御する`UIImageAsset`ために、という新しいクラスを iOS 8 に追加しました。
 
-イメージ アセットには、イメージのさまざまなバージョンのすべてをラップし、により、開発者に渡された特徴であるコレクションに一致する特定のイメージを要求します。 イメージを追加または削除、イメージの資産からは、稼働中です。
+イメージ資産は、イメージのさまざまなバージョンをすべてラップし、開発者が渡された特徴コレクションに一致する特定のイメージを要求できるようにします。 イメージは、イメージアセットから追加または削除できます。
 
-イメージの資産の詳細については、Apple を参照してください。 [UIImageAsset](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIImageAsset_Ref/index.html#//apple_ref/occ/cl/UIImageAsset)ドキュメント。
+イメージ資産の詳細については、Apple の[Uiimageasset](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIImageAsset_Ref/index.html#//apple_ref/occ/cl/UIImageAsset)のドキュメントを参照してください。
 
-## <a name="combining-trait-collections"></a>結合の特徴であるコレクション
+## <a name="combining-trait-collections"></a>特徴コレクションの結合
 
-開発者が特徴であるコレクションで実行できる別の関数は、追加する 2 つ同時がの結果として 1 つのコレクションから指定されていない値は、2 つ目で指定された値を置き換え、結合されたコレクション。 これを使用して、`FromTraitsFromCollections`のメソッド、`UITraitCollection`クラス。
+特徴コレクションに対して開発者が実行できるもう1つの関数は、結合されたコレクションになる2つのを加算することです。この場合、1つのコレクションの未指定の値は、2つ目のコレクションの指定した値に置き換えられます。 これは、 `UITraitCollection`クラスの`FromTraitsFromCollections`メソッドを使用して行います。
 
-前述のよう、特徴のいずれかの特徴であるコレクションのいずれかで指定されていない場合は、別の指定した場合、値は指定されたバージョンに設定されます。 ただし、複数のバージョンの指定された特定の値がある場合は、過去の値の特徴であるコレクション値になります、ために使用されます。
+前述のように、いずれかの特徴が特徴コレクションのいずれかに指定されておらず、別の特性に指定されている場合、値は指定されたバージョンに設定されます。 ただし、特定の値の複数のバージョンが指定されている場合は、最後の特徴のコレクションの値が使用される値になります。
 
-## <a name="adaptive-view-controllers"></a>アダプティブ ビュー コント ローラー
+## <a name="adaptive-view-controllers"></a>アダプティブビューコントローラー
 
-このセクションでは、iOS ビューとビュー コント ローラーが自動的に、開発者のアプリケーションで適応性を特徴とサイズ クラスの概念を採用する方法の詳細を説明します。
+このセクションでは、iOS ビューおよびビューコントローラーが、開発者のアプリケーションで自動的に適応できるように、特徴クラスとサイズクラスの概念を採用した方法の詳細について説明します。
 
-### <a name="split-view-controller"></a>分割ビュー コント ローラー
+### <a name="split-view-controller"></a>ビューコントローラーの分割
 
-IOS 8 では、最も変更されたビュー コント ローラー クラスの 1 つは、`UISplitViewController`クラス。 以前は、開発者は、多くの場合、分割ビュー コント ローラーを使用して iPad のバージョンのアプリケーションでと iPhone バージョンのアプリのビュー階層の完全に別のバージョンを提供するが、します。
+IOS 8 の最も多くを変更したビューコントローラークラスの1つは`UISplitViewController` 、クラスです。 以前は、多くの場合、開発者はアプリケーションの iPad バージョンで分割ビューコントローラーを使用します。その後、iPhone バージョンのアプリのビュー階層の完全に異なるバージョンを提供する必要があります。
 
-IOS 8 で、`UISplitViewController`クラスは、両方のプラットフォーム (iPad および iPhone) で使用可能な開発者は、iPhone と iPad の両方の機能を 1 つのビュー コント ローラーの階層を作成します。
+IOS 8 `UISplitViewController`では、クラスを両方のプラットフォーム (ipad および iphone) で使用できます。これにより、開発者は iphone と ipad の両方で機能する1つのビューコントローラー階層を作成できます。
 
-IPhone が横にあるときは、分割ビュー コント ローラーで、iPad に表示されている場合と同様にそのビュー サイド バイ サイドが表示されます。
+IPhone が横向きの場合、分割ビューコントローラーは、iPad に表示される場合と同様に、ビューを並べて表示します。
 
-### <a name="overriding-traits"></a>特徴のオーバーライド
+### <a name="overriding-traits"></a>オーバーライド (特徴を)
 
-分割ビュー コント ローラーを示す、横向きで iPad を次の図のように、子コンテナーまでの親コンテナーからの特徴である環境が重ねて表示します。
+特徴環境は、次の図に示すように、親コンテナーから子コンテナーにカスケードされます。これは、iPad 上の分割ビューコントローラーが横向きに表示されることを示しています。
 
- [![](unified-storyboards-images/cascadingclasses01.png "横方向に iPad での分割ビュー コント ローラー")](unified-storyboards-images/cascadingclasses01.png#lightbox)
+ [![](unified-storyboards-images/cascadingclasses01.png "一方向の iPad 上の分割ビューコントローラー")](unified-storyboards-images/cascadingclasses01.png#lightbox)
 
-IPad では、水平および垂直方向の両方に通常のサイズ クラスが含まれるために、マスター/詳細の両方のビューが分割ビューに表示されます。
+IPad では、水平方向と垂直方向の両方に通常のサイズクラスがあるため、分割ビューにはマスタービューと詳細ビューの両方が表示されます。
 
-Iphone でサイズ クラスが両方向でコンパクトで、ある分割ビュー コント ローラーでは、次に示すように詳細の表示がのみ表示します。
+サイズクラスが両方の方向で圧縮されている iPhone では、分割ビューコントローラーは詳細ビューのみを表示します。次に例を示します。
 
- [![](unified-storyboards-images/cascadingclasses02.png "分割ビュー コント ローラーは、詳細の表示のみが表示されます。")](unified-storyboards-images/cascadingclasses02.png#lightbox)
+ [![](unified-storyboards-images/cascadingclasses02.png "分割ビューコントローラーには詳細ビューのみが表示されます")](unified-storyboards-images/cascadingclasses02.png#lightbox)
 
-開発者が横方向に iPhone でマスター/詳細の両方のビューを表示するアプリケーション、開発者が分割ビュー コント ローラーの親コンテナーに挿入し、特徴のコレクションをオーバーライドする必要があります。 次の図に示すようにします。
+開発者が横方向の iPhone でマスタービューと詳細ビューの両方を表示する必要があるアプリケーションでは、開発者は分割ビューコントローラーの親コンテナーを挿入し、特徴コレクションをオーバーライドする必要があります。 次の図に示すようになります。
 
- [![](unified-storyboards-images/cascadingclasses03.png "開発者が分割ビュー コント ローラーの親コンテナーを挿入し、特徴であるコレクションをオーバーライドする必要があります。")](unified-storyboards-images/cascadingclasses03.png#lightbox)
+ [![](unified-storyboards-images/cascadingclasses03.png "開発者は、分割ビューコントローラーの親コンテナーを挿入し、特徴コレクションをオーバーライドする必要があります。")](unified-storyboards-images/cascadingclasses03.png#lightbox)
 
-A`UIView`が分割ビュー コント ローラーの親として設定し、`SetOverrideTraitCollection`メソッドは、ビューの新しい特徴のコレクションを渡すと、分割ビュー コント ローラーを対象とする呼び出されます。 新しい特徴コレクションよりも優先、`HorizontalSizeClass`に設定すると`Regular`分割ビュー コント ローラーは横方向に iPhone でマスター/詳細の両方のビューを表示するようにします。
+は分割ビューコントローラー `SetOverrideTraitCollection`の親として設定され、メソッドは、新しい特徴コレクションを渡し、分割ビューコントローラーを対象とするビューで呼び出されます。`UIView` 新しい特徴コレクションは、 `HorizontalSizeClass`をオーバーライドしてをに`Regular`設定します。これにより、分割ビューコントローラーでは、iPhone のマスタービューと詳細ビューの両方が横向きに表示されるようになります。
 
-なお、`VerticalSizeClass`に設定された`unspecified`がその結果、親での特徴であるコレクションに追加する新しい特徴のコレクションを許可、`Compact VerticalSizeClass`子分割ビュー コント ローラーの。
+`VerticalSizeClass`が`Compact VerticalSizeClass`に`unspecified`設定されていることに注意してください。これにより、新しい特徴コレクションを親の特徴コレクションに追加して、子分割ビューコントローラーのを作成できます。
 
 ### <a name="trait-changes"></a>特徴の変更
 
-このセクションでの特徴である環境が変更されたときの特徴であるコレクションの移行の詳細に見てになります。 たとえば、ときに、デバイスは縦から横に回転されます。
+このセクションでは、特徴の環境が変更されたときに特徴コレクションがどのように変化するかについて詳しく説明します。 たとえば、デバイスが縦向きから横方向に回転しているとします。
 
- [![](unified-storyboards-images/traittransitions01.png "特徴の変更の概要を横向きに縦向き")](unified-storyboards-images/traittransitions01.png#lightbox)
+ [![](unified-storyboards-images/traittransitions01.png "縦と横の特徴の変更の概要")](unified-storyboards-images/traittransitions01.png#lightbox)
 
-最初に、iOS 8 は、いくつかの設定を行う移行の準備をします。 次に、システムでは、遷移の状態がアニメーション化します。 最後に、iOS 8 クリーンアップの移行中に必要な一時的な状態です。
+まず、iOS 8 では、移行を行うための準備としていくつかのセットアップを行います。 次に、システムによって遷移状態がアニメーション化されます。 最後に、iOS 8 は、移行中に必要な一時的な状態をクリーンアップします。
 
-iOS 8 では、次の表に示すように、特徴の変更に参加する、開発者が使用できるいくつかのコールバックを提供します。
+iOS 8 には、次の表に示すように、開発者が特徴の変更に参加するために使用できるいくつかのコールバックが用意されています。
 
 |フェーズ|コールバック|説明|
 |--- |--- |--- |
-|セットアップ|<ul><li>`WillTransitionToTraitCollection`</li><li>`TraitCollectionDidChange`</li></ul>|<ul><li>特徴であるコレクションは、その新しい値に設定を取得する前に、特徴の変更の先頭にこのメソッドが呼び出されます。</li><li>メソッドは、アニメーションの実行前に、特徴であるコレクションの値が変更されたときに呼び出されます。</li></ul>|
-|アニメーション|`WillTransitionToTraitCollection`|このメソッドに渡される遷移のコーディネーターが、`AnimateAlongside`により、開発者は、既定のアニメーションと共に実行されるアニメーションを追加するプロパティ。|
-|クリーンアップ|`WillTransitionToTraitCollection`|開発者は、移行が行われた後に、独自のクリーンアップ コードを含めるためのメソッドを提供します。|
+|セットアップ|<ul><li>`WillTransitionToTraitCollection`</li><li>`TraitCollectionDidChange`</li></ul>|<ul><li>このメソッドは、特徴コレクションが新しい値に設定される前に、特徴変更の開始時に呼び出されます。</li><li>このメソッドは、特徴コレクションの値が変更されたときに、アニメーションが行われる前に呼び出されます。</li></ul>|
+|アニメーション|`WillTransitionToTraitCollection`|このメソッドに渡される遷移コーディネーターには、開発`AnimateAlongside`者が既定のアニメーションと共に実行されるアニメーションを追加できるようにするプロパティがあります。|
+|クリーンアップ|`WillTransitionToTraitCollection`|移行の実行後に、開発者が独自のクリーンアップコードを含めるためのメソッドを提供します。|
 
-`WillTransitionToTraitCollection`メソッドが特徴であるコレクションの変更と共にビュー コント ローラーをアニメーション化に適しています。 `WillTransitionToTraitCollection`メソッドは、ビュー コント ローラーの使用のみ ( `UIViewController`) とその他の特徴である環境ではなくなど`UIViews`します。
+`WillTransitionToTraitCollection`メソッドは、特徴コレクションの変更と共にビューコントローラーをアニメーション化する場合に適しています。 メソッドは、ビューコントローラー ( `UIViewController`) でのみ使用でき、など`UIViews`の他の特徴環境では使用できません。 `WillTransitionToTraitCollection`
 
-`TraitCollectionDidChange`操作に最適ですが、`UIView`クラス、開発者が、特徴を変更すると、UI を更新します。
+は、 `UIView`クラスを操作する場合に適しています。開発者は、その特性が変更されたときにUIを更新する必要があります。`TraitCollectionDidChange`
 
-### <a name="collapsing-the-split-view-controllers"></a>分割ビュー コント ローラーを折りたたむ
+### <a name="collapsing-the-split-view-controllers"></a>分割ビューコントローラーの折りたたみ
 
-これで、みましょう take について詳しく見てどのようなは、分割ビュー コント ローラーが 2 つの列から 1 つの列のビューを縮小するときに発生します。 この変更の一環として、2 つのプロセスを実行する必要があります。
+では、分割ビューコントローラーが2つの列から1つの列ビューに折りたたまれたときの動作について詳しく見ていきましょう。 この変更の一環として、次の2つのプロセスを実行する必要があります。
 
--  既定で分割ビュー コント ローラーは、折りたたみが行われた後、ビューとしてプライマリ ビュー コント ローラーが使用されます。 開発者は、オーバーライドすることでこの動作をオーバーライドできます、`GetPrimaryViewControllerForCollapsingSplitViewController`のメソッド、`UISplitViewControllerDelegate`と折りたたまれた状態で表示するビュー コント ローラーを提供します。
--  セカンダリのビュー コント ローラーでは、プライマリのビュー コント ローラーにマージされます。 一般に、開発者は、この手順では; の操作を行う必要はありません。分割ビュー コント ローラーには、このフェーズがハードウェア デバイスでの自動処理が含まれています。 ただし、場所、開発者が、この変更と対話するでしょう。 いくつかの特殊なケースがあります。 呼び出す、`CollapseSecondViewController`のメソッド、`UISplitViewControllerDelegate`詳細ビューではなく、折りたたみが発生したときに表示するマスター ビュー コント ローラーを使用します。
-
-
-### <a name="expanding-the-split-view-controller"></a>分割ビュー コント ローラーを展開します。
-
-これで、みましょう折りたたまれた状態の分割ビュー コント ローラーが展開されている場合を見て何が発生します。 もう一度は、発生する必要がある 2 つの段階があります。
-
--  まず、新しいプライマリ ビュー コント ローラーを定義します。 既定では、分割ビュー コント ローラーは、折りたたまれたビューからプライマリのビュー コント ローラーを自動的に使用されます。 ここでも、開発者を使用してこの動作をオーバーライドすることができます、`GetPrimaryViewControllerForExpandingSplitViewController`のメソッド、`UISplitViewControllerDelegate`します。
--  プライマリのビュー コント ローラーが選択されると、セカンダリのビュー コント ローラーを再作成する必要があります。 ここでも、分割ビュー コント ローラーには、このフェーズがハードウェア デバイスでの自動処理が含まれています。 開発者は呼び出すことでこの動作をオーバーライドすることができます、`SeparateSecondaryViewController`のメソッド、`UISplitViewControllerDelegate`します。
+-  既定では、分割ビューコントローラーは、折りたたみが発生した後に、ビューとしてプライマリビューコントローラーを使用します。 開発者は、の`GetPrimaryViewControllerForCollapsingSplitViewController`メソッドをオーバーライドし、折りたたまれた状態で表示するビューコントローラーを提供することで、 `UISplitViewControllerDelegate`この動作をオーバーライドできます。
+-  セカンダリビューコントローラーは、プライマリビューコントローラーにマージする必要があります。 通常、開発者はこの手順に対して何らかの操作を行う必要はありません。分割ビューコントローラーには、ハードウェアデバイスに基づくこのフェーズの自動的な処理が含まれます。 ただし、開発者がこの変更を操作する必要がある特殊なケースもあります。 `CollapseSecondViewController` のメソッドを呼び出すと、詳細ビューではなく、折りたたみが発生したときにマスタービューコントローラーが`UISplitViewControllerDelegate`表示されます。
 
 
-分割ビューのコント ローラーでプライマリ ビュー コント ローラーが両方の展開と実装することで、ビューの折りたたみで役割を果たします、`CollapseSecondViewController`と`SeparateSecondaryViewController`のメソッド、`UISplitViewControllerDelegate`します。 `UINavigationController` 自動的にプッシュして、セカンダリのビュー コント ローラーをポップするこれらのメソッドを実装します。
+### <a name="expanding-the-split-view-controller"></a>分割ビューコントローラーを展開する
 
-### <a name="showing-view-controllers"></a>ビュー コント ローラーの表示
+ここで、分割ビューコントローラーが折りたたまれた状態から展開された場合の動作について詳しく見ていきましょう。 この場合も、次の2つの段階があります。
 
-Apple は iOS 8 に加えられたその他の変更では、開発者がビュー コント ローラーに表示されるようにします。 以前は、アプリケーションにはリーフのビュー コント ローラー (テーブル ビュー コント ローラーなど)、および開発者示しました別 (たとえば、応答でのセルにユーザーのタップに)、コント ローラーの階層を遡って、アプリケーションに到達する場合、ナビゲーション ビュー コント ローラーと呼び出し、`PushViewController`メソッドに対して新しいビューを表示するようにします。
-
-これには、ナビゲーション コント ローラーおよび環境で実行されていたを非常に密接に結合が表示されます。 Ios 8、Apple がによって分離されているこの 2 つの新しいメソッドを指定できます。
-
--  `ShowViewController` – その環境に基づく新しいビュー コント ローラーの表示に適応します。 たとえば、`UINavigationController`スタックに新しいビューを単純にプッシュします。 分割ビュー コント ローラーでは、新しいビュー コント ローラーは、新しいプライマリ ビュー コント ローラーとしての左側にある表示されます。 コンテナーのビュー コント ローラーが存在しない場合は、モーダル ビュー コント ローラーとして、新しいビューが表示されます。
--  `ShowDetailViewController` – と同様の方法で動作します。 `ShowViewController`、新しいビュー コント ローラーに渡されると、詳細ビューを置換する分割ビュー コント ローラーに実装されます。 呼び出しにリダイレクトされます (iPhone アプリケーションで見られる) と分割ビュー コント ローラーが折りたたまれている場合、`ShowViewController`メソッド、および新しいビューは、プライマリのビュー コント ローラーとして表示されます。 ここでも、コンテナーのビュー コント ローラーが存在しない場合は、モーダル ビュー コント ローラーとして、新しいビューが表示されます。
+-  まず、新しいプライマリビューコントローラーを定義します。 既定では、分割ビューコントローラーは、折りたたまれたビューのプライマリビューコントローラーを自動的に使用します。 ここでも、開発者はの`GetPrimaryViewControllerForExpandingSplitViewController`メソッドを使用して、 `UISplitViewControllerDelegate`この動作をオーバーライドできます。
+-  プライマリビューコントローラーを選択したら、セカンダリビューコントローラーを再作成する必要があります。 ここでも、分割ビューコントローラーには、ハードウェアデバイスに基づくこのフェーズの自動処理が含まれています。 開発者は、の`SeparateSecondaryViewController`メソッドを呼び出すことによって、 `UISplitViewControllerDelegate`この動作をオーバーライドできます。
 
 
-これらのメソッドは、リーフのビュー コント ローラーを起動して動作し、新しいビューの表示を処理する適切なコンテナーのビュー コント ローラーが見つかるまで、階層を表示する方法について説明します。
+分割ビューコントローラーでは、プライマリビューコントローラーは、 `CollapseSecondViewController` `UISplitViewControllerDelegate`のメソッドと`SeparateSecondaryViewController`メソッドを実装することによって、ビューの展開と折りたたみの両方でパーツを再生します。 `UINavigationController`は、これらのメソッドを実装して、セカンダリビューコントローラーを自動的にプッシュしてポップします。
 
-開発者は実装できます`ShowViewController`と`ShowDetailViewController`専用のカスタム ビュー コント ローラーを取得する同じ機能の自動化を`UINavigationController`と`UISplitViewController`を提供します。
+### <a name="showing-view-controllers"></a>ビューコントローラーの表示
+
+Apple が iOS 8 に加えたもう1つの変更は、開発者がビューコントローラーを表示する方法です。 以前は、アプリケーションにリーフビューコントローラー (テーブルビューコントローラーなど) があり、開発者が別のビューコントローラーを表示した場合 (たとえば、ユーザーがセルをタップした場合など)、アプリケーションはコントローラー階層を通じてナビゲーションビューコントローラーと`PushViewController`メソッドを呼び出して、新しいビューを表示します。
+
+これにより、ナビゲーションコントローラーと、それが実行されていた環境との間に非常に密接な結合が行われました。 IOS 8 では、Apple は次の2つの新しい方法を提供してこれを分離しました。
+
+-  `ShowViewController`–環境に基づいて新しいビューコントローラーを表示するように適応します。 たとえば、では、 `UINavigationController`新しいビューをスタックにプッシュするだけです。 分割ビューコントローラーでは、新しいビューコントローラーが新しいプライマリビューコントローラーとして左側に表示されます。 コンテナービューコントローラーが存在しない場合、新しいビューはモーダルビューコントローラーとして表示されます。
+-  `ShowDetailViewController`–はと同様の方法`ShowViewController`で機能しますが、詳細ビューを渡される新しいビューコントローラーに置き換えるために、分割ビューコントローラーに実装されます。 (IPhone アプリケーションで見られるように) 分割ビューコントローラーが折りたたまれている場合は、呼び出しが`ShowViewController`メソッドにリダイレクトされ、新しいビューがプライマリビューコントローラーとして表示されます。 ここでも、コンテナービューコントローラーが存在しない場合、新しいビューはモーダルビューコントローラーとして表示されます。
+
+
+これらのメソッドは、リーフビューコントローラーから開始し、新しいビューの表示を処理する適切なコンテナービューコントローラーが見つかるまでビュー階層をウォークします。
+
+開発者は`ShowViewController` 、 `ShowDetailViewController`独自のカスタムビューコントローラーにとを実装して、と`UINavigationController` `UISplitViewController`が提供するのと同じ自動化された機能を利用できます。
 
 ### <a name="how-it-works"></a>しくみ
 
-このセクションではこれらのメソッドが iOS 8 で実際に実装される方法を参照してくださいになります。 最初、新しいを見てみましょう`GetTargetForAction`メソッド。
+このセクションでは、これらのメソッドが実際に iOS 8 でどのように実装されているかを見ていきます。 まず、新しい`GetTargetForAction`メソッドを見てみましょう。
 
  [![](unified-storyboards-images/gettargetforaction.png "新しい GetTargetForAction メソッド")](unified-storyboards-images/gettargetforaction.png#lightbox)
 
-このメソッドでは、適切なコンテナーのビュー コント ローラーが見つかるまで、階層チェーンについて説明します。 例えば:
+このメソッドは、正しいコンテナービューコントローラーが見つかるまで階層チェーンをウォークします。 例えば:
 
-1.  場合、`ShowViewController`メソッドが呼び出されると、このメソッドを実装するチェーンの最初のビュー コント ローラーにはナビゲーション コント ローラーがあるため、新しいビューの親として使用されます。
-1.  場合、`ShowDetailViewController`メソッドが呼び出された代わりに、分割ビュー コント ローラーは、親として使用されているため、実装する最初のビュー コント ローラー。
+1.  `ShowViewController`メソッドが呼び出されると、このメソッドを実装するチェーン内の最初のビューコントローラーがナビゲーションコントローラーになるため、新しいビューの親として使用されます。
+1.  `ShowDetailViewController`メソッドが代わりに呼び出された場合、分割ビューコントローラーは、それを実装するための最初のビューコントローラーであるため、親として使用されます。
 
 
-`GetTargetForAction`メソッドは、特定のアクションを実装するビュー コント ローラーを検索して、そのアクションを受信する場合は、そのビュー コント ローラー。 このメソッドはパブリックであるために、開発者は、関数と同じように組み込み、独自のカスタム メソッドを作成できます`ShowViewController`と`ShowDetailViewController`メソッド。
+メソッド`GetTargetForAction`は、指定されたアクションを実装するビューコントローラーを特定し、そのアクションを受信するかどうかをそのビューコントローラーに要求することによって機能します。 このメソッドはパブリックであるため、開発者は、組み込みの`ShowViewController`メソッドと`ShowDetailViewController`メソッドと同様に機能する独自のカスタムメソッドを作成できます。
 
-## <a name="adaptive-presentation"></a>アダプティブ プレゼンテーション
+## <a name="adaptive-presentation"></a>適応型プレゼンテーション
 
-Ios 8 で、Apple のポップ オーバー プレゼンテーションが行われて ( `UIPopoverPresentationController`) アダプティブもします。 ポップ オーバー プレゼンテーション ビュー コント ローラーは、通常のサイズ クラスで自動的に通常のポップ オーバー ビューが表示されますが、全画面表示で表示コンパクトな水平方向にサイズ クラス (など、iphone の場合)。
+IOS 8 では、Apple は segue プレゼンテーション ( `UIPopoverPresentationController`) のアダプティブも作成しました。 そのため、Segue Presentation View Controller は通常の Segue ビューを標準サイズクラスで自動的に表示しますが、完全な画面を水平方向のコンパクトなサイズのクラス (iPhone など) で表示します。
 
-提示されたビュー コント ローラーを管理する統合されたストーリー ボード システム内で変更に合わせて、新しいコント ローラー オブジェクトが作成された —`UIPresentationController`します。 非表示にするまで、ビュー コント ローラーが表示される時刻からこのコント ローラーが作成されます。 管理クラスは、そのことができますと見なされるスーパー クラス ビュー コント ローラー経由でビュー コント ローラー (向き) など、プレゼンテーションのコント ローラーを制御するは、ビュー コント ローラーにフィードバックに影響するデバイスの変更に応答します。
+統合されたストーリーボードシステム内の変更に対応するために、表示されたビューコントローラー `UIPresentationController`を管理するための新しいコントローラーオブジェクトが作成されました。 このコントローラーは、ビューコントローラーが表示された時点から、破棄されるまで作成されます。 このクラスは管理クラスであるため、ビューコントローラーのスーパークラスと見なすことができます。これは、ビューコントローラー (向きなど) に影響するデバイスの変更に応答するため、プレゼンテーションコントローラーが制御するビューコントローラーに戻されます。
 
-ときに、開発者は、ビュー コント ローラーを使用して、`PresentViewController`プレゼンテーション プロセスの管理が渡されたメソッド、`UIKit`します。 UIKit 処理 (特に) が作成されているスタイルの適切なコント ローラー、ビュー コント ローラーに設定するスタイルをされている場合を除いて`UIModalPresentationCustom`します。 ここでは、アプリケーションが独自 PresentationController はなくを使用してを提供することができます、`UIKit`コント ローラー。
+開発者が`PresentViewController`メソッドを使用してビューコントローラーを提示すると、プレゼンテーションプロセスの管理が`UIKit`に渡されます。 UIKit では、作成されているスタイルに適したコントローラーが処理されます。ただし、ビューコントローラーのスタイルがに`UIModalPresentationCustom`設定されている場合にのみ例外が発生します。 ここでは、アプリケーションは`UIKit`コントローラーを使用するのではなく、独自のプレゼンテーションコントローラーを提供できます。
 
-### <a name="custom-presentation-styles"></a>カスタム スタイル設定
+### <a name="custom-presentation-styles"></a>カスタムプレゼンテーションスタイル
 
-開発者ではカスタムのプレゼンテーションの形式でカスタム プレゼンテーション コント ローラーを使用するオプションがあります。 同盟はそのビューの動作と外観を変更するのには、このカスタム コント ローラーを使用できます。
+カスタムプレゼンテーションスタイルでは、開発者はカスタムプレゼンテーションコントローラーを使用することができます。 このカスタムコントローラーを使用すると、その関係を持つビューの外観と動作を変更できます。
 
 <a name="size-classes"/>
 
-## <a name="working-with-size-classes"></a>サイズ クラスの使用
+## <a name="working-with-size-classes"></a>サイズクラスの使用
 
-この記事に含まれているアダプティブ写真 Xamarin プロジェクトでは、iOS 8 Unified Interface アプリケーション サイズ クラスとアダプティブのビュー コント ローラーを使用する実際の例を示します。
+この記事に含まれているアダプティブフォト Xamarin プロジェクトは、iOS 8 統合インターフェイスアプリケーションでサイズクラスとアダプティブビューコントローラーを使用するための実用的な例を提供します。
 
-アプリケーションに UI を完全に、コードから作成 IOS デザイナーを使用するのではなく、Unified ストーリー ボードを作成するには、同じ手法を適用します。 この記事の後半には、Unified ストーリー ボードおよび iOS の Xamarin アプリケーション デザイナーでサイズ クラスを使用する方法を紹介します。
+アプリケーションは、IOS デザイナーを使用して統合されたストーリーボードを作成するのではなく、コードから完全に UI を作成しますが、同じ手法が適用されます。 この記事の後半では、Xamarin アプリケーションで、統合されたストーリーボードと iOS デザイナーでサイズクラスを使用する方法について説明します。
 
-今すぐアダプティブ写真プロジェクトがでどのように実装サイズ クラスの機能のいくつかの iOS 8 を適応型アプリケーションの作成について詳しく見てみましょう。
+次に、アダプティブフォトプロジェクトが、アダプティブアプリケーションを作成するために、iOS 8 でいくつかのサイズクラス機能を実装する方法について詳しく見ていきましょう。
 
-### <a name="adapting-to-trait-environment-changes"></a>特徴の環境の変化に合わせて調整
+### <a name="adapting-to-trait-environment-changes"></a>特徴環境の変更に適応する
 
-Iphone の写真の適応型アプリケーションを実行中、ユーザーが縦から横へのデバイスを回転したときに、マスターと詳細の両方のビューが分割ビュー コント ローラーに表示されます。
+IPhone でアダプティブフォトアプリケーションを実行しているときに、ユーザーがデバイスを縦向きから横方向に回転させると、分割ビューコントローラーには、マスタービューと詳細ビューの両方が表示されます。
 
- [![](unified-storyboards-images/rotation.png "分割ビュー コント ローラーには、両方のマスターが表示され、詳細が以下のようにビュー")](unified-storyboards-images/rotation.png#lightbox)
+ [![](unified-storyboards-images/rotation.png "分割ビューコントローラーには、次に示すように、マスタービューと詳細ビューの両方が表示されます。")](unified-storyboards-images/rotation.png#lightbox)
 
-これは、オーバーライドすることで実現、`UpdateConstraintsForTraitCollection`の値に基づいて、ビュー コント ローラーおよび制約を調整する方法、`VerticalSizeClass`します。 例えば:
+これは、ビューコントローラーの`UpdateConstraintsForTraitCollection`メソッドをオーバーライドし、 `VerticalSizeClass`の値に基づいて制約を調整することで実現されます。 例えば:
 
 ```csharp
 public void UpdateConstraintsForTraitCollection (UITraitCollection collection)
@@ -354,9 +354,9 @@ public void UpdateConstraintsForTraitCollection (UITraitCollection collection)
 }
 ```
 
-### <a name="adding-transition-animations"></a>遷移のアニメーションを追加します。
+### <a name="adding-transition-animations"></a>切り替え効果アニメーションの追加
 
-オーバーライドすることで、既定のアニメーションに追加、分割ビュー コント ローラーからのアプリケーションがアダプティブの写真に折りたたむに展開されていると、アニメーション、`WillTransitionToTraitCollection`ビュー コント ローラーのメソッド。 例えば:
+アダプティブフォトアプリケーションの分割ビューコントローラーが折りたたまれていない状態になったときに、ビューコントローラーのメソッドを`WillTransitionToTraitCollection`オーバーライドすることにより、アニメーションが既定のアニメーションに追加されます。 例えば:
 
 ```csharp
 public override void WillTransitionToTraitCollection (UITraitCollection traitCollection, IUIViewControllerTransitionCoordinator coordinator)
@@ -370,11 +370,11 @@ public override void WillTransitionToTraitCollection (UITraitCollection traitCol
 }
 ```
 
-### <a name="overriding-the-trait-environment"></a>特徴である環境をオーバーライドします。
+### <a name="overriding-the-trait-environment"></a>特徴環境のオーバーライド
 
-上記に示すようアダプティブ写真アプリケーションで iPhone デバイスが横長ビューである場合、両方の詳細を表示する分割ビュー コント ローラーおよびマスター ビューが強制的します。
+前述のように、アダプティブフォトアプリケーションでは、iPhone デバイスが横ビューにあるときに、分割ビューコントローラーに詳細とマスタービューの両方を強制的に表示させます。
 
-これは、ビュー コント ローラーで次のコードを使用して行われました。
+これは、ビューコントローラーで次のコードを使用して実現されました。
 
 ```csharp
 private UITraitCollection forcedTraitCollection = new UITraitCollection ();
@@ -409,9 +409,9 @@ public void UpdateForcedTraitCollection ()
 }
 ```
 
-### <a name="expanding-and-collapsing-the-split-view-controller"></a>展開と折りたたみ分割ビュー コント ローラー
+### <a name="expanding-and-collapsing-the-split-view-controller"></a>分割ビューコントローラーの展開と折りたたみ
 
-[次へ] 分割ビュー コント ローラーの展開および折りたたみの動作を Xamarin で実装された方法を見てみましょう。 `AppDelegate`分割ビュー コント ローラーが作成されたときに、これらの変更を処理するために、デリゲートが割り当てられます。
+次に、分割ビューコントローラーの展開と折りたたみの動作が Xamarin でどのように実装されたかを見てみましょう。 `AppDelegate`では、分割ビューコントローラーが作成されると、これらの変更を処理するためのデリゲートが割り当てられます。
 
 ```csharp
 public class SplitViewControllerDelegate : UISplitViewControllerDelegate
@@ -460,13 +460,13 @@ public class SplitViewControllerDelegate : UISplitViewControllerDelegate
 }
 ```
 
-`SeparateSecondaryViewController`写真が表示されていると、その状態に基づいてアクションを実行するかどうかに表示するメソッドを調べます。 マスター ビュー コント ローラーが表示されるように表示されている写真がない場合にセカンダリのビュー コント ローラーを折りたたみます。
+メソッド`SeparateSecondaryViewController`は、写真が表示されているかどうかをテストし、その状態に基づいてアクションを実行します。 写真が表示されていない場合は、マスタービューコントローラーが表示されるように、セカンダリビューコントローラーを折りたたみます。
 
-`CollapseSecondViewController`メソッドを使用分割ビュー コント ローラーを展開するときにそのビューに戻るため、折りたたまれている場合は、写真はすべてが、スタック上に存在かどうかを参照してください。
+`CollapseSecondViewController`メソッドは、分割ビューコントローラーを展開するときに使用され、スタックに写真が存在するかどうかを確認します。これにより、そのビューに戻ります。
 
-### <a name="moving-between-view-controllers"></a>ビュー コント ローラー間の移動
+### <a name="moving-between-view-controllers"></a>ビューコントローラー間の移動
 
-次に、ビュー コント ローラー間で、写真の適応型アプリケーションを移動する方法を見てみましょう。 `AAPLConversationViewController`クラスのユーザーが、テーブルのセルを選択、`ShowDetailViewController`詳細ビューを表示するメソッドが呼び出されます。
+次に、Adaptive Photos アプリケーションがビューコントローラー間をどのように移動するかを見てみましょう。 クラスでは、ユーザーがテーブル`ShowDetailViewController`からセルを選択すると、メソッドが呼び出され、詳細ビューが表示されます。 `AAPLConversationViewController`
 
 ```csharp
 public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
@@ -482,9 +482,9 @@ public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
 }
 ```
 
-### <a name="displaying-disclosure-indicators"></a>漏えいのマークを表示します。
+### <a name="displaying-disclosure-indicators"></a>開示インジケーターの表示
 
-アダプティブ フォト アプリケーションでは、いくつかの場所の漏えいインジケーターが非表示または特徴環境への変更に基づいて表示できます。 これは、次のコードで処理されます。
+アダプティブフォトアプリケーションでは、特徴環境の変更に基づいて、開示インジケーターが非表示になっているか、表示されている場所がいくつかあります。 これは、次のコードを使用して処理されます。
 
 ```csharp
 public bool Aapl_willShowingViewControllerPushWithSender ()
@@ -516,9 +516,9 @@ public bool Aapl_willShowingDetailViewControllerPushWithSender ()
 }
 ```
 
-これらを使用して実装、`GetTargetViewControllerForAction`メソッドの詳細は上記で説明します。
+これらは、上記で`GetTargetViewControllerForAction`説明した方法を使用して実装されます。
 
-テーブル ビュー コント ローラーでは、データの表示が発生する、プッシュを移動するかどうかと、それに応じて漏えいインジケーターを表示または非表示にするかどうかを確認の上に実装されるメソッドを使用します。
+テーブルビューコントローラーがデータを表示するときには、前に実装したメソッドを使用して、プッシュが行われるかどうか、また、それに応じて開示インジケーターを表示するかどうかを確認します。
 
 ```csharp
 public override void WillDisplay (UITableView tableView, UITableViewCell cell, NSIndexPath indexPath)
@@ -535,9 +535,9 @@ public override void WillDisplay (UITableView tableView, UITableViewCell cell, N
 
 ### <a name="new-showdetailtargetdidchangenotification-type"></a>新しい`ShowDetailTargetDidChangeNotification`型
 
-Apple サイズ クラスと、分割ビュー コント ローラー内からの特徴である環境を操作するための新しい通知の種類が追加`ShowDetailTargetDidChangeNotification`します。 コント ローラーを展開または折りたたむ場合など、ターゲット分割ビュー コント ローラーの詳細の表示が変更されるたびに、この通知は送信を取得します。
+Apple では、 `ShowDetailTargetDidChangeNotification`分割ビューコントローラー内からサイズクラスと特徴環境を操作するための新しい通知の種類が追加されました。 この通知は、コントローラーの展開時や折りたたみ時など、分割ビューコントローラーのターゲット詳細ビューが変更されるたびに送信されます。
 
-アダプティブ写真アプリケーションでは、この通知を使用して、詳細ビュー コント ローラーの変更時に、漏えいインジケーターの状態を更新します。
+アダプティブフォトアプリケーションは、この通知を使用して、詳細ビューコントローラーが変更されたときに、公開インジケーターの状態を更新します。
 
 ```csharp
 public override void ViewDidLoad ()
@@ -550,226 +550,225 @@ public override void ViewDidLoad ()
 }
 ```
 
-アダプティブ写真アプリケーション サイズ クラスがすべての方法を詳しく見て、特徴のコレクションとアダプティブのビュー コント ローラーを使用して、Xamarin.iOS で簡単に統合されたアプリケーションを作成します。
+アダプティブフォトアプリケーションについて詳しく見ていきましょう。サイズのクラス、特徴コレクション、およびアダプティブビューコントローラーを使用して、Xamarin の統合アプリケーションを簡単に作成する方法をすべて確認できます。
 
 ## <a name="unified-storyboards"></a>統合ストーリーボード
 
-新しい ios 8、Unified ストーリー ボードがサイズ クラスの複数ターゲットとする、iPhone と iPad の両方のデバイスで表示できるストーリー ボード ファイルをユニファイド開発者が、1 つを作成できるようにします。 Unified ストーリー ボードを使用すると、開発者は、小さい UI 固有のコードを記述しが 1 つだけのインターフェイスのデザインを作成および管理します。
+IOS 8 を初めて使用する場合、統合されたストーリーボードを使用すると、複数のサイズクラスを対象にすることにより、iPhone と iPad の両方のデバイスに表示できる統合されたストーリーボードファイルを作成できます。 統合されたストーリーボードを使用することにより、開発者は UI 固有のコードを記述するだけで、作成と保守を行うためのインターフェイス設計は1つしかありません。
 
-Unified ストーリー ボードの主な利点は次のとおりです。
+統合されたストーリーボードの主な利点は次のとおりです。
 
--  IPhone と iPad 用の同じストーリー ボード ファイルを使用します。
--  IOS 6 および iOS 7 を下位にデプロイします。
--  さまざまなデバイス、向き、および Xamarin iOS Designer 内からすべての OS バージョンのレイアウトをプレビューします。
+-  IPhone と iPad で同じストーリーボードファイルを使用します。
+-  IOS 6 と iOS 7 に後方展開します。
+-  Xamarin iOS Designer 内から、さまざまなデバイス、向き、OS バージョンのレイアウトをプレビューします。
 
-この機能は完全にサポートでは、Visual Studio for Mac
+この機能は、で完全にサポートされてい Visual Studio for Mac
 
 <a name="enabling-size-classes" />
 
-### <a name="enabling-size-classes"></a>サイズ クラスを有効にします。
+### <a name="enabling-size-classes"></a>サイズクラスを有効にする
 
-新しい Xamarin.iOS プロジェクトでは、既定ではごサイズ クラス。 サイズ クラスとアダプティブ セグエ内、以前のプロジェクトからのストーリー ボードを使用するにはする必要がありますまず形式に変換、Xcode 6 Unified ストーリー ボードから、iOS デザイナー内。
+既定では、新しい Xamarin. iOS プロジェクトはすべて、クラスのサイズを変更します。 以前のプロジェクトのストーリーボード内でサイズクラスとアダプティブセグエを使用するには、まず iOS デザイナー内から Xcode 6 統合ストーリーボード形式に変換する必要があります。
 
-IOS デザイナーとチェックに変換するストーリー ボードを開くこれを行う、**サイズ クラスを使用して** チェック ボックス。
+これを行うには、iOS デザイナーで変換するストーリーボードを開き、[**サイズクラスを使用**する] チェックボックスをオンにします。
 
- [![](unified-storyboards-images/sizeclass01.png "サイズ クラスを使用 チェック ボックス")](unified-storyboards-images/sizeclass01.png#lightbox)
+ [![](unified-storyboards-images/sizeclass01.png "[サイズクラスを使用する] チェックボックス")](unified-storyboards-images/sizeclass01.png#lightbox)
 
-IOS Designer は、開発者がサイズ クラスを使用してストーリー ボードの形式に変換することを確認します。
+IOS デザイナーによって、開発者がサイズクラスを使用するようにストーリーボードの形式を変換する必要があることが確認されます。
 
- [![](unified-storyboards-images/sizeclass02.png "サイズ クラスのアラートの使用")](unified-storyboards-images/sizeclass02.png#lightbox)
-
-> [!IMPORTANT]
-> 自動レイアウトは、正常に動作するサイズ クラスについても確認する必要があります。
-
-### <a name="generic-device-types"></a>汎用デバイスの種類
-
-サイズ クラスを使用して、ストーリー ボードを変換すると、それが再表示されます、デザイン画面で、**ビューとして**デバイスはジェネリックになります。
-
- [![](unified-storyboards-images/sizeclass03.png "汎用デバイスの種類として表示します。")](unified-storyboards-images/sizeclass03.png#lightbox)
-
-汎用デバイスの種類を選択すると、すべてのビュー コント ローラーは 600 x 600 正方形にサイズ変更されます。 この四角形は、任意の幅と任意の高さのサイズを表します。 IOS デザイナーは、このモードでは、編集はサイズ クラスのすべてに適用されます。
-
-開発者は、iPhone としてデザイン画面を表示するためのオプションもあります。
-
- [![](unified-storyboards-images/sizeclass04.png "IPhone としてデザイン画面を表示します。")](unified-storyboards-images/sizeclass04.png#lightbox)
-
-または、iPad として表示する:
-
- [![](unified-storyboards-images/sizeclass05.png "IPad としてデザイン画面を表示します。")](unified-storyboards-images/sizeclass05.png#lightbox)
-
-### <a name="select-a-size-class"></a>サイズ クラスを選択します。
-
-サイズ クラス セレクター ボタンでは、ドロップダウン リストとして表示) の近くのデザイン画面の左上隅にあります。 サイズ クラスは現在編集中に選択する開発者が使用できます。
-
- [![](unified-storyboards-images/sizeclass06.png "サイズ クラスを選択します。")](unified-storyboards-images/sizeclass06.png#lightbox)
-
-セレクターはサイズ クラスの選択を 3 x 3 グリッドとして表示します。 グリッドの正方形のそれぞれは、クラスを幅と高さのクラスの組み合わせを表します。 中央の正方形は、Any Width/Any 高さのサイズ クラス (つまり Unified ストーリー ボードの既定のビュー) を選択します。 この四角形を選択した場合、開発者が、その他のすべての構成によって継承される既定のレイアウトを編集します。
-
-グリッドの左上隅の正方形は、Compact Compact 幅/高さのサイズ クラスを表します。
-
- [![](unified-storyboards-images/sizeclass07.png "Compact の幅/Compact 高さのサイズ クラス")](unified-storyboards-images/sizeclass07.png#lightbox)
-
-このモードは横方向に iPhone に対応します。 グリッドの右下隅にある四角は、正規の幅/標準高さサイズのクラスを iPad を表すを表します。
-
- [![](unified-storyboards-images/sizeclass08.png "通常の幅/標準の高さのサイズ クラス")](unified-storyboards-images/sizeclass08.png#lightbox)
-
-Iphone 縦向きの用紙のレイアウトを編集するには、左下隅で、正方形を選択します。 これは、Compact 通常幅/高さサイズ クラスを表します。
-
- [![](unified-storyboards-images/sizeclass09.png "Compact の幅/標準の高さのサイズ クラス")](unified-storyboards-images/sizeclass09.png#lightbox)
-
-これを選択する四角形をクリックし、デザイン画面には、新しい選択範囲に一致するようにビュー コント ローラーのサイズが変わります。
-
- [![](unified-storyboards-images/sizeclass10.png "デザイン画面に示すように、新しい選択範囲を一致するようにビュー コント ローラーのサイズを変更します。")](unified-storyboards-images/sizeclass10.png#lightbox)
-
-サイズ クラスおよび Iphone と Ipad のレイアウトへの影響についての詳細については、この記事のサイズ クラスを参照してください。
-
-### <a name="adaptive-segue-types"></a>アダプティブ セグエの種類
-
-かどうか、開発者が前に、ストーリー ボードを使用しの既存のセグエの種類に精通することが**プッシュ**、**モーダル**と**ポップ オーバー**します。 サイズ クラスは、Unified ストーリー ボード ファイルに有効な場合は、次アダプティブ セグエの種類 (上で説明した新しいビュー コント ローラー API に対応) が提供されます。**表示**と**詳細を表示する**します。
+ [![](unified-storyboards-images/sizeclass02.png "サイズクラスを使用するアラート")](unified-storyboards-images/sizeclass02.png#lightbox)
 
 > [!IMPORTANT]
-> サイズ クラスを有効にするをセグエ既存のすべての新しい型に変換します。
+> また、サイズクラスが正常に機能するためには、自動レイアウトもチェックする必要があります。
 
-IOS の例では、マスター ビューで単純なゲームのナビゲーション メニューにある分割ビュー コント ローラーを Unified ストーリー ボードを使用している 8 アプリケーションを実行します。 ユーザーがメニュー ボタンをクリックすると、選択した項目のビュー コント ローラー表示するかどう分割ビュー コント ローラーの詳細セクションでは iPad で実行されている場合。 Iphone の場合、項目のビュー コント ローラーをナビゲーション スタックにプッシュする必要があります。
+### <a name="generic-device-types"></a>一般的なデバイスの種類
 
-この効果を実現するために iOS Designer のコントロール ボタンをクリックし、線を表示するビュー コント ローラーにドラッグします。 マウス ボタンが解放されると、選択`Show Detail`セグエの種類のポップアップ メニューから。
+サイズクラスを使用するようにストーリーボードが変換されると、デザインサーフェイスに再表示され、デバイスが汎用になる**ようにビューが表示**されます。
 
- [![](unified-storyboards-images/segue01.png "セグエの種類のポップアップ メニューから詳細の表示 を選択します。")](unified-storyboards-images/segue01.png#lightbox)
+ [![](unified-storyboards-images/sizeclass03.png "汎用デバイスの種類として表示")](unified-storyboards-images/sizeclass03.png#lightbox)
 
-新しいセグエは、ボタンとビュー コント ローラー間で作成されます。 IPhone シミュレーターでアプリケーションを実行し、メイン メニューが表示されます。
+デバイスの種類として [汎用] を選択すると、すべてのビューコントローラーのサイズが 600 x 600 二乗に変更されます。 この正方形は、任意の幅と高さのサイズを表します。 IOS Designer がこのモードのときは、すべてのサイズクラスに編集が適用されます。
 
- [![](unified-storyboards-images/segue02.png "メイン メニュー")](unified-storyboards-images/segue02.png#lightbox)
+開発者は、デザイン画面を iPhone として表示することもできます。
 
-をクリックして、**選択ゲーム**ボタンをクリックし、項目のビュー コント ローラーをナビゲーション スタックにプッシュされます。
+ [![](unified-storyboards-images/sizeclass04.png "IPhone としてデザイン画面を表示する")](unified-storyboards-images/sizeclass04.png#lightbox)
 
- [![](unified-storyboards-images/segue03.png "示すようにその項目のビュー コント ローラーがナビゲーション スタックにプッシュされます。")](unified-storyboards-images/segue03.png#lightbox)
+または、iPad として表示します。
 
-IPhone シミュレーターを停止し、iPad シミュレーターでアプリケーションを実行します。 横の向きをメイン スイッチ メニューが再び表示されます。
+ [![](unified-storyboards-images/sizeclass05.png "IPad としてデザイン画面を表示する")](unified-storyboards-images/sizeclass05.png#lightbox)
 
- [![](unified-storyboards-images/segue04.png "メイン メニューが表示されます。")](unified-storyboards-images/segue04.png#lightbox)
+### <a name="select-a-size-class"></a>サイズクラスを選択してください
 
-もう一度、をクリックして、**選択ゲーム**分割ビュー コント ローラーの [詳細] セクションで、ボタンと、項目のビュー コント ローラーが表示されます。
+サイズクラスセレクターボタンはデザインサーフェイスの左上隅に表示されます ([表示] ボックスの近く)。 これにより、現在編集中のサイズクラスを開発者が選択できるようになります。
 
- [![](unified-storyboards-images/segue05.png "分割ビュー コント ローラーの詳細セクションに示すようにビュー コント ローラーの項目")](unified-storyboards-images/segue05.png#lightbox)
+ [![](unified-storyboards-images/sizeclass06.png "サイズクラスを選択してください")](unified-storyboards-images/sizeclass06.png#lightbox)
 
-### <a name="excluding-an-element-from-a-size-class"></a>サイズ クラスからの要素の除外
+セレクターは、サイズクラスの選択を 3 x 3 グリッドとして表示します。 グリッド内の各四角形は、幅クラスと高さクラスの組み合わせを表します。 中央の四角形では、任意の幅/高さサイズのクラス (統合されたストーリーボードの既定のビュー) を選択します。 この四角形を選択すると、開発者は既定のレイアウトを編集します。これは、他のすべての構成によって継承されます。
 
-指定された要素 (ビュー、コントロール、制約など) ができない特定のサイズ クラスの内部で必要な期間があります。 サイズ クラスから要素を除外するで除外する目的の項目を選択します。、**デザイン サーフェイス**します。 一番下までスクロール、**プロパティ エクスプ ローラー**  をクリックし、**歯車**ドロップダウン メニュー。 組み合わせを選択します**幅**と**高さ**から項目を除外します。
+グリッドの左上隅にある四角形は、Compact Width/Compact Height Size クラスを表します。
+
+ [![](unified-storyboards-images/sizeclass07.png "Compact Width/Compact Height Size クラス")](unified-storyboards-images/sizeclass07.png#lightbox)
+
+このモードは、横長の iPhone に対応しています。 グリッドの右下隅にある四角形は、iPad を表す通常の幅/標準の高さサイズクラスを表します。
+
+ [![](unified-storyboards-images/sizeclass08.png "標準幅/標準高さサイズクラス")](unified-storyboards-images/sizeclass08.png#lightbox)
+
+縦向きで iPhone のレイアウトを編集するには、左下隅にある四角形を選択します。 これは、Compact Width/Regular Height Size クラスを表します。
+
+ [![](unified-storyboards-images/sizeclass09.png "Compact Width/Regular Height Size クラス")](unified-storyboards-images/sizeclass09.png#lightbox)
+
+四角形をクリックして選択すると、デザインサーフェイスによってビューコントローラーのサイズが新しい選択に合わせて変更されます。
+
+ [![](unified-storyboards-images/sizeclass10.png "デザインサーフェイスは、表示されている新しい選択に合わせてビューコントローラーのサイズを変更します。")](unified-storyboards-images/sizeclass10.png#lightbox)
+
+サイズクラスの詳細および iPhones と Ipad のレイアウトへの影響については、この記事の「サイズクラス」セクションを参照してください。
+
+### <a name="adaptive-segue-types"></a>Adaptive セグエの種類
+
+開発者が以前にストーリーボードを使用していた場合は、**プッシュ**、**モーダル**、および**segue**の既存のセグエの種類について理解しておく必要があります。 統合されたストーリーボードファイルでサイズクラスが有効になっている場合、次のアダプティブセグエの種類 (上記で説明した新しいビューコントローラー API に対応する) が使用可能になります。詳細を**表示**して**表示**します。
+
+> [!IMPORTANT]
+> サイズクラスが有効になっている場合、既存のセグエはすべて新しい型に変換されます。
+
+マスタービューに単純なゲームナビゲーションメニューがある分割ビューコントローラーと統合されたストーリーボードを使用する iOS 8 アプリケーションの例を見てください。 ユーザーがメニューボタンをクリックすると、選択した項目のビューコントローラーが、iPad で実行されている場合、分割ビューコントローラーの詳細セクションに表示されます。 IPhone では、アイテムの View Controller をナビゲーションスタックにプッシュする必要があります。
+
+この効果を実現するには、iOS デザイナーで [] ボタンをクリックし、表示するビューコントローラーに線をドラッグします。 マウスボタンが離されたら、[ `Show Detail`セグエ Type] ポップアップメニューから次のように選択します。
+
+ [![](unified-storyboards-images/segue01.png "セグエの種類のポップアップメニューから [詳細の表示] を選択します。")](unified-storyboards-images/segue01.png#lightbox)
+
+新しいセグエは、ボタンとビューコントローラーの間に作成されます。 次に、iPhone シミュレーターでアプリケーションを実行すると、メインメニューが表示されます。
+
+ [![](unified-storyboards-images/segue02.png "メインメニュー")](unified-storyboards-images/segue02.png#lightbox)
+
+[ゲームの**選択**] ボタンをクリックすると、項目の View Controller がナビゲーションスタックにプッシュされます。
+
+ [![](unified-storyboards-images/segue03.png "項目ビューコントローラーは、以下のようにナビゲーションスタックにプッシュされます")](unified-storyboards-images/segue03.png#lightbox)
+
+IPhone シミュレーターを停止し、iPad シミュレーターでアプリケーションを実行します。 横向きに切り替えると、メインメニューが再び表示されます。
+
+ [![](unified-storyboards-images/segue04.png "メインメニューが表示されます。")](unified-storyboards-images/segue04.png#lightbox)
+
+ここでも、 **[ゲームの選択]** ボタンをクリックすると、アイテムの view Controller が分割ビューコントローラーの詳細セクションに表示されます。
+
+ [![](unified-storyboards-images/segue05.png "分割ビューコントローラーの詳細セクションに表示される項目ビューコントローラー")](unified-storyboards-images/segue05.png#lightbox)
+
+### <a name="excluding-an-element-from-a-size-class"></a>サイズクラスからの要素の除外
+
+特定のサイズクラス内では、特定の要素 (ビュー、コントロール、制約など) が必要ない場合があります。 サイズクラスから要素を除外するには、**デザインサーフェイス**で除外する目的の項目を選択します。 **プロパティエクスプローラー**の一番下までスクロールし、**歯車**のドロップダウンメニューをクリックします。 項目を除外する**幅**と**高さ**の組み合わせを選択してください:
 
 [![](unified-storyboards-images/exclude-a.png "幅と高さの組み合わせを選択します")](unified-storyboards-images/exclude-a.png#lightbox)
 
-新しい*除外ケース*の下にある要素に追加されます、**プロパティ エクスプ ローラー**します。 次に、オフにして、**インストール済み**特定のサイズ クラスのチェック ボックス。
+新しい*除外ケース*が、**プロパティエクスプローラー**の下部にある要素に追加されます。 次に、指定されたサイズクラスの **[インストール済み]** チェックボックスをオフにします。
 
-[![](unified-storyboards-images/exclude-b.png "インストールされているチェック ボックスをオフにします。")](unified-storyboards-images/exclude-b.png#lightbox)
+[![](unified-storyboards-images/exclude-b.png "インストールされているチェックボックスをオフにする")](unified-storyboards-images/exclude-b.png#lightbox)
 
-幅と高さから除外された項目をデザイン画面を切り替えると、全体の UI デザインではない特定のサイズ クラスから削除されました。
+デザインサーフェイスを、アイテムが除外された幅と高さに切り替えます。指定されたサイズクラスからは削除されていますが、UI デザイン全体は削除されていません。
 
- [![](unified-storyboards-images/exclude02.png "スイッチ幅と高さから除外された項目をデザイン画面")](unified-storyboards-images/exclude02.png#lightbox)
+ [![](unified-storyboards-images/exclude02.png "デザインサーフェイスを、アイテムが除外された幅と高さに切り替えます。")](unified-storyboards-images/exclude02.png#lightbox)
 
-Any Width/Any 高さのサイズ クラスと、要素への切り替えは、引き続き有効では。
+任意の幅と高さのいずれかのサイズのクラスに切り替えて、要素がまだ配置されている場合は、次のようになります。
 
- [![](unified-storyboards-images/exclude03.png "Any Width/Any 高さのサイズ クラスへの切り替え")](unified-storyboards-images/exclude03.png#lightbox)
+ [![](unified-storyboards-images/exclude03.png "任意の幅/高さサイズのクラスへの切り替え")](unified-storyboards-images/exclude03.png#lightbox)
 
-IPad シミュレーターでアプリケーションを実行すると、要素が表示されます。
+アプリケーションが iPad シミュレーターで実行されると、要素が表示されます。
 
- [![](unified-storyboards-images/exclude04.png "ときに表示される要素 iPad シミュレーターで実行中のアプリ")](unified-storyboards-images/exclude04.png#lightbox)
+ [![](unified-storyboards-images/exclude04.png "IPad シミュレーターでアプリを実行しているときに表示される要素")](unified-storyboards-images/exclude04.png#lightbox)
 
-IPhone シミュレーターでは、アプリケーションが実行されるときに、要素がありません。
+また、iPhone シミュレーターでアプリケーションを実行すると、要素が不足しています。
 
- [![](unified-storyboards-images/exclude05.png "要素が不足しているときに、iPhone シミュレーターで実行中のアプリ")](unified-storyboards-images/exclude05.png#lightbox)
+ [![](unified-storyboards-images/exclude05.png "IPhone シミュレーターでアプリを実行しているときに要素が見つからない")](unified-storyboards-images/exclude05.png#lightbox)
 
-要素から、除外のケースを削除する選択内の要素、**デザイン サーフェイス**の一番下までスクロール、**プロパティ エクスプ ローラー**  をクリックし、 **-** を削除する場合の横にあるボタンをクリックします。
+要素から除外のケースを削除するには、**デザインサーフェイス**で要素を選択し、**プロパティエクスプローラー**の一番下までスクロールして、 **-** 削除するケースの横にあるボタンをクリックします。
 
-Unified ストーリー ボードの実装を確認するを参照、`UnifiedStoryboard`サンプル Xamarin iOS 8 のアプリケーションがこのドキュメントにアタッチします。
+統合されたストーリーボードの実装を確認する`UnifiedStoryboard`には、このドキュメントにアタッチされている Xamarin iOS 8 アプリケーションのサンプルを参照してください。
 
 ## <a name="dynamic-launch-screens"></a>動的な起動画面
 
-アプリが実際に開始をユーザーにフィードバックを提供する iOS アプリケーションを起動するときに、スプラッシュ スクリーンとして起動画面のファイルが表示されます。 IOS 8 の場合は、前に、開発者が 複数を含める必要があります`Default.png`のイメージ アセットをアプリケーションで実行されるデバイスの種類、方向、および画面解像度ごと。 たとえば、 `Default@2x.png`、 `Default-Landscape@2x~ipad.png`、`Default-Portrait@2x~ipad.png`など。
+アプリが実際に起動されていることをユーザーにフィードバックするために、iOS アプリケーションを起動しているときに、起動画面ファイルがスプラッシュスクリーンとして表示されます。 IOS 8 より前の開発者は、アプリケーションが実行`Default.png`されるデバイスの種類、向き、画面の解像度ごとに、複数のイメージ資産を含める必要があります。 たとえば`Default@2x.png` `Default-Landscape@2x~ipad.png` 、、`Default-Portrait@2x~ipad.png`、などです。
 
-新しい iPhone 6 および iPhone 6 考慮とデバイス (および今後の Apple Watch)、すべての既存の iPhone と iPad デバイスで、これはさまざまなサイズ、向きと解像度の大きな配列を表します`Default.png`スタートアップ画面のイメージのアセットには、する必要があります作成および管理します。 さらに、これらのファイルは非常に大きくなることができは「膨張」成果物のアプリケーション バンドルは、iTunes App Store を (場合によって維持することが移動体通信ネットワーク経由で配信をできないように)、アプリケーションのダウンロードに必要な時間の量の増加エンドユーザーのデバイスで必要な記憶域の量の増加します。
+新しい iphone 6 および iphone 6 Plus デバイス (および今後の Apple Watch) と、既存のすべての iphone および iPad デバイスとの間では、さまざまなサイズ、向き、およびスタートアップ画面`Default.png`イメージ資産の解像度を表します。作成および管理されます。 さらに、これらのファイルは非常に大きくなる可能性があり、成果物アプリケーションバンドルを "肥大化" し、iTunes App Store からアプリケーションをダウンロードするために必要な時間を増やします (携帯ネットワークを介して配信できない場合もあります)。さらに、エンドユーザーのデバイスで必要とされるストレージの量を増やします。
 
-新しい ios 8 の場合は、開発者が 1 つのアトミックを作成できます`.xib`自動レイアウトとサイズ クラスを使用して作成する Xcode でファイルを*動的な起動画面*は、すべてのデバイス、解像度、向きの動作をします。 これだけでなく、開発者を作成し、すべての必要なイメージ資産の管理の必要な作業の量が減少しますが、アプリケーションのインストールされているバンドルのサイズが大幅に削減します。
+IOS 8 を初めて使用する場合、開発者は、 `.xib` Auto Layout クラスと Size クラスを使用して、すべてのデバイス、解像度、および向きに対して機能する*動的起動画面*を作成する、Xcode で単一のアトミックファイルを作成できます。 これにより、開発者が必要なすべてのイメージ資産を作成して維持するために必要な作業量を削減できるだけでなく、アプリケーションのインストール済みバンドルのサイズを大幅に削減できます。
 
 
-動的な起動画面は、次の制限事項と考慮事項があります。
+動的起動画面には、次の制限事項と考慮事項があります。
 
-- のみを使用して`UIKit`クラス。
-- 単一のルート ビューを使用して、`UIView`または`UIViewController`オブジェクト。
-- アプリケーションのコードへの接続を作成しない (追加しないでください**アクション**または**Outlet**)。
-- 追加しない`UIWebView`オブジェクト。
-- 任意のカスタム クラスを使用しないでください。
-- ランタイムの属性を使用しないでください。
+- クラスのみ`UIKit`を使用します。
+- オブジェクト`UIView`または`UIViewController`オブジェクトである単一のルートビューを使用します。
+- アプリケーションのコードには接続しないでください (**アクション**や**アウトレット**を追加しないでください)。
+- オブジェクトを`UIWebView`追加しないでください。
+- カスタムクラスは使用しないでください。
+- ランタイム属性は使用しないでください。
 
-上記のガイドラインを考慮してでは、既存の Xamarin iOS 8 のプロジェクトに動的な起動画面の追加を見てみましょう。
+上記のガイドラインを考慮して、既存の Xamarin iOS 8 プロジェクトに動的起動画面を追加する方法を見てみましょう。
 
 次の手順で行います。
 
-1. 開いている**Visual Studio for Mac**と負荷、**ソリューション**に動的な起動画面を追加します。
-2. **ソリューション エクスプ ローラー**を右クリックし、`MainStoryboard.storyboard`ファイルおよび選択**プログラムから開く** > **Xcode の Interface Builder**:
+1. **Visual Studio for Mac**を開き、**ソリューション**を読み込んで、動的起動画面をに追加します。
+2. **ソリューションエクスプローラー**で`MainStoryboard.storyboard` 、ファイルを右クリックし、[ **Open With** > **Xcode Interface Builder**] を選択します。
 
-    [![](unified-storyboards-images/dls01.png "Xcode インターフェイス ビルダーで開く")](unified-storyboards-images/dls01.png#lightbox)
+    [![](unified-storyboards-images/dls01.png "Xcode を使用して開く Interface Builder")](unified-storyboards-images/dls01.png#lightbox)
 3. Xcode で次のように選択します**ファイル** > **新規** > **ファイル...** :
 
-    [![](unified-storyboards-images/dls02.png "ファイルを選択/新規")](unified-storyboards-images/dls02.png#lightbox)
-4. 選択**iOS** > **ユーザー インターフェイス** > **起動画面** をクリックし、**次**ボタン。
+    [![](unified-storyboards-images/dls02.png "ファイル/新規の選択")](unified-storyboards-images/dls02.png#lightbox)
+4. [ **IOS** > **ユーザー**インターフェイス > の**起動画面**] を選択し、 **[次へ]** ボタンをクリックします。
 
-    [![](unified-storyboards-images/dls03.png "IOS の選択/ユーザー インターフェイス/起動画面")](unified-storyboards-images/dls03.png#lightbox)
-5. ファイルに名前を`LaunchScreen.xib` をクリックし、**作成**ボタン。
+    [![](unified-storyboards-images/dls03.png "IOS/ユーザーインターフェイス/起動画面の選択")](unified-storyboards-images/dls03.png#lightbox)
+5. ファイル`LaunchScreen.xib`に名前を指定し、 **[作成]** ボタンをクリックします。
 
-    [![](unified-storyboards-images/dls04.png "LaunchScreen.xib ファイルを名前します。")](unified-storyboards-images/dls04.png#lightbox)
-6. グラフィック要素を追加し、レイアウトの制約を使用して特定のデバイス、向き、および画面サイズに配置するには、起動画面のデザインを編集します。
+    [![](unified-storyboards-images/dls04.png "ファイルの名前を LaunchScreen にします。 xib")](unified-storyboards-images/dls04.png#lightbox)
+6. 起動画面のデザインを編集するには、グラフィック要素を追加し、レイアウトの制約を使用して、特定のデバイス、向き、画面のサイズに合わせます。
 
-    [![](unified-storyboards-images/dls05.png "起動画面のデザインの編集")](unified-storyboards-images/dls05.png#lightbox)
-7. 変更を保存`LaunchScreen.xib`します。
-8. 選択、**アプリケーション ターゲット**と**全般** タブ。
+    [![](unified-storyboards-images/dls05.png "起動画面のデザインを編集する")](unified-storyboards-images/dls05.png#lightbox)
+7. への変更を`LaunchScreen.xib`保存します。
+8. [**アプリケーション] ターゲット**と **[全般]** タブを選択します。
 
-    [![](unified-storyboards-images/dls06.png "ターゲットのアプリケーションと、[全般] タブを選択します。")](unified-storyboards-images/dls06.png#lightbox)
-9. をクリックして、**選択 Info.plist**ボタンを選択、`Info.plist`の Xamarin アプリをクリック、**選択**ボタン。
+    [![](unified-storyboards-images/dls06.png "[アプリケーション] ターゲットと [全般] タブを選択します。")](unified-storyboards-images/dls06.png#lightbox)
+9. **[情報の選択]** ボタンをクリックし、 `Info.plist` Xamarin アプリのを選択して、 **[選択]** ボタンをクリックします。
 
-    [![](unified-storyboards-images/dls07.png "Xamarin アプリの Info.plist を選択します。")](unified-storyboards-images/dls07.png#lightbox)
-10. **アプリ アイコンと起動イメージ** セクションで、開いている、**スクリーン ファイルを起動**ドロップダウンを選択し、`LaunchScreen.xib`上記で作成しました。
+    [![](unified-storyboards-images/dls07.png "Xamarin アプリの情報を選択します。")](unified-storyboards-images/dls07.png#lightbox)
+10. **[アプリアイコンと起動イメージ]** セクションで、 **[起動画面ファイル]** ドロップダウンを`LaunchScreen.xib`開き、上で作成したを選択します。
 
-    [![](unified-storyboards-images/dls08.png "選択、LaunchScreen.xib")](unified-storyboards-images/dls08.png#lightbox)
-11. ファイルに変更を保存し、Visual studio for mac を返す
-12. Visual Studio for Mac、Xcode で変更の同期を完了するまで待ちます。
-13. **ソリューション エクスプ ローラー**を右クリックし、**リソース**フォルダーと選択**追加** > **ファイルを追加しています.** :
+    [![](unified-storyboards-images/dls08.png "LaunchScreen. xib を選択します。")](unified-storyboards-images/dls08.png#lightbox)
+11. 変更内容をファイルに保存し、Visual Studio for Mac に戻ります。
+12. Visual Studio for Mac が Xcode との変更の同期を完了するまで待ちます。
+13. **ソリューションエクスプローラー**で、**リソース**フォルダーを右クリックし、[**追加** > ] [**ファイル**の追加] の順に選択します。
 
-    [![](unified-storyboards-images/dls09.png "選択は、追加/ファイルを追加しています.")](unified-storyboards-images/dls09.png#lightbox)
-14. 選択、`LaunchScreen.xib`上記で作成したファイルをクリックして、**オープン**ボタン。
+    [![](unified-storyboards-images/dls09.png "[Add/Add Files...] を選択します。")](unified-storyboards-images/dls09.png#lightbox)
+14. 上で作成した ファイルを選択し、[開く]ボタンをクリックし`LaunchScreen.xib`ます。
 
-    [![](unified-storyboards-images/dls10.png "LaunchScreen.xib ファイルを選択します。")](unified-storyboards-images/dls10.png#lightbox)
+    [![](unified-storyboards-images/dls10.png "LaunchScreen. xib ファイルを選択します。")](unified-storyboards-images/dls10.png#lightbox)
 15. アプリケーションをビルドします。
 
-### <a name="testing-the-dynamic-launch-screen"></a>動的な起動画面のテスト
+### <a name="testing-the-dynamic-launch-screen"></a>動的起動画面のテスト
 
-Visual studio for Mac では、iPhone 4 の Retina シミュレーターを選択し、アプリケーションを実行します。 正しい形式と向きの動的な起動画面が表示されます。
+Visual Studio for Mac で、iPhone 4 Retina シミュレーターを選択し、アプリケーションを実行します。 動的起動画面は、正しい形式と向きで表示されます。
 
-[![](unified-storyboards-images/dls11.png "垂直方向に表示される動的な起動画面")](unified-storyboards-images/dls11.png#lightbox)
+[![](unified-storyboards-images/dls11.png "垂直方向に表示される動的起動画面")](unified-storyboards-images/dls11.png#lightbox)
 
-Visual studio for Mac のアプリケーションを停止し、iPad の iOS 8 デバイスを選択します。 アプリケーションを実行し、起動画面はこのデバイスの向きを正しくフォーマットされます。
+Visual Studio for Mac でアプリケーションを停止し、iPad iOS 8 デバイスを選択します。 アプリケーションを実行します。起動画面は、このデバイスと向きに対して正しく書式設定されます。
 
-[![](unified-storyboards-images/dls12.png "水平方向に表示される動的な起動画面")](unified-storyboards-images/dls12.png#lightbox)
+[![](unified-storyboards-images/dls12.png "水平方向に表示される動的起動画面")](unified-storyboards-images/dls12.png#lightbox)
 
-Visual studio for Mac を返すし、アプリケーションの実行を停止します。
+Visual Studio for Mac に戻り、アプリケーションの実行を停止します。
 
-### <a name="working-with-ios-7"></a>IOS 7 の操作
+### <a name="working-with-ios-7"></a>IOS 7 の使用
 
-IOS 7 との下位互換性を維持するために含めるだけです、通常`Default.png`のイメージ アセット iOS 8 アプリケーションで通常どおりです。 iOS は、以前の動作に戻るし、iOS 7 デバイスで実行されているときに、起動画面としてそれらのファイルを使用します。
+Ios 7 との下位互換性を維持するには、 `Default.png`通常のイメージ資産を ios 8 アプリケーションに通常どおりに含めます。 ios は以前の動作に戻り、iOS 7 デバイスで実行しているときにこれらのファイルをスタートアップ画面として使用します。
 
-Xamarin で動的起動画面の実装を確認するを参照、[動的起動画面](https://developer.xamarin.com/samples/monotouch/ios8/DynamicLaunchScreen/)サンプル iOS 8 アプリケーションがこのドキュメントにアタッチします。
+Xamarin で動的起動画面の実装を確認するには、このドキュメントに添付されている[動的起動](https://docs.microsoft.com/samples/xamarin/ios-samples/ios8-dynamiclaunchscreen)画面のサンプル iOS 8 アプリケーションを確認してください。
 
 ## <a name="summary"></a>Summary
 
-この記事では、サイズのクラスと iPhone および iPad デバイスでのレイアウトへの影響を簡単に見てかかりました。 これは、統合インターフェイスを作成するサイズ クラスの特徴、特徴環境および特徴のコレクションを使用する方法について説明します。 アダプティブのビュー コント ローラーの概要と統一インターフェイスの内部サイズ クラスとそのしくみがかかりました。 サイズ クラスとから完全に統合されたインターフェイスの実装に見えましたC#Xamarin iOS 8 のアプリケーション内のコード。
+この記事では、サイズクラスの概要と、iPhone と iPad デバイスでのレイアウトへの影響について簡単に説明しました。 ここでは、特徴、特徴環境、特徴コレクションがサイズクラスを使用して統合インターフェイスを作成するしくみについて説明しました。 アダプティブビューコントローラーについて簡単に説明し、統合インターフェイス内でサイズクラスを使用する方法について説明しました。 ここでは、Xamarin iOS 8 アプリケーション内のコードC#から、サイズクラスと統合インターフェイスを完全に実装する方法を見てきました。
 
-最後に、この記事では、Xamarin iOS は iOS デバイスで機能するデザイナーの Unified ストーリー ボードの作成の基本をについて説明し、1 つの動的な起動画面を作成する、すべての iOS 8 デバイスでの起動画面として表示されます。
+最後に、この記事では、iOS デバイス間で動作する Xamarin iOS Designer を使用して統合されたストーリーボードを作成するための基本について説明し、すべての iOS 8 デバイスで起動画面として表示される単一の動的起動画面を作成する方法について説明します。
 
 ## <a name="related-links"></a>関連リンク
 
-- [アダプティブ写真 (サンプル)](https://developer.xamarin.com/samples/monotouch/ios8/AdaptivePhotos/)
-- [StoryboardIntro サンプル](https://developer.xamarin.com/samples/monotouch/StoryboardIntro/)
-- [動的な起動画面 (サンプル)](https://developer.xamarin.com/samples/monotouch/ios8/DynamicLaunchScreen/)
+- [アダプティブフォト (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios8-adaptivephotos)
+- [動的な起動画面 (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios8-dynamiclaunchscreen)
 - [iOS 8 の概要](~/ios/platform/introduction-to-ios8.md)
-- [動的レイアウト iOS8 - Evolve 2014 (ビデオ)](http://youtu.be/f3mMGlS-lM4)
+- [IOS8 での動的レイアウト-進化 2014 (ビデオ)](http://youtu.be/f3mMGlS-lM4)
 - [UIPresentationController](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIPresentationController_class/)
 - [UIImageAsset](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIImageAsset_Ref/index.html#//apple_ref/occ/cl/UIImageAsset)

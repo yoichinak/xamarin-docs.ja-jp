@@ -1,196 +1,196 @@
 ---
-title: Xamarin.Mac の画像
-description: この記事では、イメージとアイコンは、Xamarin.Mac アプリケーションでの操作について説明します。 これは、作成、およびアプリケーションのアイコンを作成するために必要し、c# コードと Xcode の Interface Builder の両方でイメージを使用してイメージを保守について説明します。
+title: Xamarin. Mac のイメージ
+description: この記事では、Xamarin. Mac アプリケーションでのイメージとアイコンの使用について説明します。 ここでは、アプリケーションのアイコンを作成し、コードと Xcode の両方C#の Interface Builder でイメージを使用するために必要なイメージの作成と管理について説明します。
 ms.prod: xamarin
 ms.assetid: C6B539C2-FC6A-4C38-B839-32BFFB9B16A7
 ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/15/2017
-ms.openlocfilehash: 719efc87b8843d0d2fcd2643aab23aa6849d940a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 197600f713527ed79d9a52768d367589d9edf2fa
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61078888"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68646881"
 ---
-# <a name="images-in-xamarinmac"></a>Xamarin.Mac の画像
+# <a name="images-in-xamarinmac"></a>Xamarin. Mac のイメージ
 
-_この記事では、イメージとアイコンは、Xamarin.Mac アプリケーションでの操作について説明します。これは、作成、およびアプリケーションのアイコンを作成するために必要し、c# コードと Xcode の Interface Builder の両方でイメージを使用してイメージを保守について説明します。_
+_この記事では、Xamarin. Mac アプリケーションでのイメージとアイコンの使用について説明します。ここでは、アプリケーションのアイコンを作成し、コードと Xcode の両方C#の Interface Builder でイメージを使用するために必要なイメージの作成と管理について説明します。_
 
 ## <a name="overview"></a>概要
 
-同じイメージへのアクセスがある、Xamarin.Mac アプリケーションで c# と .NET を使用する場合、およびアイコン ツールで作業する開発者*Objective C*と*Xcode*は。
+Xamarin. Mac C#アプリケーションでと .net を使用する場合、 *Xcode および* *で作業*する開発者が行うのと同じイメージおよびアイコンツールにアクセスできます。
 
-MacOS (旧称 Mac OS X) アプリケーション内の資産が使用されるイメージのいくつかの方法があります。 単に、アイコンを提供するためにツール バーまたはソースのリスト アイテムなどの UI コントロールに割り当てるには、アプリケーションの UI の一部としてイメージを表示するから Xamarin.Mac 簡単に、次の方法で、優れたアートワークを macOS アプリケーションに追加: 
+MacOS (旧称 Mac OS X) アプリケーション内でイメージアセットを使用するには、いくつかの方法があります。 単にアプリケーションの UI の一部としてイメージを表示して、ツールバーやソースリスト項目などの UI コントロールに割り当てると、アイコンを提供できるようになり、次の方法で macOS アプリケーションに優れたアートワークを簡単に追加できるようになります。: 
 
-- **UI 要素**-背景として、またはイメージ ビューで、アプリケーションの一部として、イメージを表示できます (`NSImageView`)。
-- **ボタン**-ボタンの画像を表示できます (`NSButton`)。
-- **セルのイメージ**- ベースのテーブル コントロールの一部として (`NSTableView`または`NSOutlineView`)、イメージのセルにイメージを使用できます (`NSImageCell`)。
-- **ツール バー アイテム**-イメージをツールバーに追加することができます (`NSToolbar`) イメージのツールバー項目として (`NSToolbarItem`)。
-- **ソースの一覧のアイコン**- ソース リストの一部として (を特別にフォーマットされた`NSOutlineView`)。
-- **アプリ アイコン**-に一連のイメージをグループ化できる、`.icns`に設定して、アプリケーションのアイコンとして使用します。 参照してください、[アプリケーション アイコン](~/mac/deploy-test/app-icon.md)詳細についてはドキュメントです。
+- **UI 要素**-イメージは、イメージビュー (`NSImageView`) で背景またはアプリケーションの一部として表示できます。
+- **ボタン**-イメージはボタン (`NSButton`) に表示できます。
+- 画像**セル**-テーブルベースのコントロール (`NSTableView`または`NSOutlineView`) の一部として、画像セル (`NSImageCell`) で画像を使用できます。
+- **Toolbar 項目**-イメージツールバー項目 (`NSToolbar``NSToolbarItem`) として、ツールバー () に画像を追加できます。
+- **ソースリストアイコン**-ソースリストの一部として (特別に`NSOutlineView`書式設定された)。
+- **アプリアイコン**-一連のイメージをまとめ`.icns`てグループ化し、アプリケーションのアイコンとして使用することができます。 詳細については、[アプリケーションアイコン](~/mac/deploy-test/app-icon.md)のドキュメントを参照してください。
 
-さらに、macOS では、アプリケーション全体で使用できる定義済みのイメージのセットを提供します。
+さらに、macOS には、アプリケーション全体で使用できる定義済みイメージのセットが用意されています。
 
-[![例は、アプリの実行](image-images/intro01.png "例は、アプリの実行")](image-images/intro01-large.png#lightbox)
+[![アプリの実行例](image-images/intro01.png "アプリの実行例")](image-images/intro01-large.png#lightbox)
 
-この記事では、イメージとアイコンを Xamarin.Mac アプリケーションで操作の基本を説明します。 作業することを強くお勧め、[こんにちは, Mac](~/mac/get-started/hello-mac.md)具体的には、最初の記事、 [Xcode と Interface Builder の概要](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)と[Outlet と Action](~/mac/get-started/hello-mac.md#outlets-and-actions)ほどのセクションでは、主要な概念と、この記事で使用する方法について説明します。
+この記事では、Xamarin. Mac アプリケーションでイメージとアイコンを操作するための基本について説明します。 最初に、 [Hello, Mac](~/mac/get-started/hello-mac.md)の記事を使用して作業することを強くお勧めします。具体的には、 [Xcode と Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)および[アウトレットとアクション](~/mac/get-started/hello-mac.md#outlets-and-actions)に関するセクションで説明します。これは、で使用する主要な概念と手法に関するものです。この記事をご覧ください。
 
 
-## <a name="adding-images-to-a-xamarinmac-project"></a>Xamarin.Mac プロジェクトにイメージを追加します。
+## <a name="adding-images-to-a-xamarinmac-project"></a>Xamarin. Mac プロジェクトへのイメージの追加
 
-Xamarin.Mac アプリケーションで使用するイメージを追加するときにいくつかの場所と方法は、開発者がプロジェクトのソース イメージ ファイルを含めることができます。
+Xamarin. Mac アプリケーションで使用するイメージを追加する場合、開発者がプロジェクトのソースにイメージファイルを含めることができる場所と方法がいくつかあります。
 
-- **メイン プロジェクト ツリーの [非推奨]** -イメージは、プロジェクト ツリーに直接追加することができます。 コードからメイン プロジェクト ツリーに格納されているイメージを呼び出すときにフォルダーの場所を指定しません。 たとえば、`NSImage image = NSImage.ImageNamed("tags.png");` のように指定します。 
-- **[非推奨] リソース フォルダー** -特殊**リソース**イメージ (イメージや、開発者のファイル、アイコン、起動画面または [全般] など、アプリケーションの一部となるすべてのファイルがバンドル 's フォルダーは希望を追加する)。 格納されているイメージを呼び出すときに、**リソース**コードからフォルダーをメイン プロジェクト ツリーにイメージと同様に格納されている、フォルダーの場所が指定されていません。 たとえば、`NSImage.ImageNamed("tags.png")` のように指定します。
-- **カスタムのフォルダーまたは [非推奨] サブフォルダー** -開発者がプロジェクトのソース ツリーにカスタム フォルダーを追加およびがイメージを格納します。 ファイルを追加する場所は、さらに、プロジェクトを整理するサブフォルダーに入れ子にできます。 開発者が追加された場合など、`Card`フォルダー、プロジェクトとのサブ フォルダーを`Hearts`、そのフォルダーにイメージを格納し、 **Jack.png**で、`Hearts`フォルダー、`NSImage.ImageNamed("Card/Hearts/Jack.png")`でイメージの読み込みはランタイム。
-- **[優先] 資産カタログの画像セット**- OS X El Capitan 追加**資産カタログの画像セット**すべてのバージョンまたはさまざまなデバイスをサポートし、スケール ファクターのために必要なイメージの表現が含まれて、アプリケーション。 イメージの資産ファイル名ではなく (**@1x**、 **@2x**)。
+- **メインプロジェクトツリー [非推奨]** -イメージをプロジェクトツリーに直接追加できます。 コードからメインプロジェクトツリーに格納されているイメージを呼び出すときに、フォルダーの場所が指定されていません。 たとえば、`NSImage image = NSImage.ImageNamed("tags.png");` のように指定します。 
+- **Resources フォルダー [** 使用されていません]-特別な**リソース**フォルダーは、アプリケーションのバンドルの一部となる任意のファイル (アイコン、起動画面、一般的な画像 (または、開発者が追加しようとしている他のイメージまたはファイル) 用です。 メインプロジェクトツリーに格納されているイメージと同様に、 **Resources**フォルダーに格納されているイメージをコードから呼び出す場合、フォルダーの場所は指定されません。 たとえば、`NSImage.ImageNamed("tags.png")` のように指定します。
+- **カスタムフォルダーまたはサブフォルダー [非推奨]** -開発者は、プロジェクトのソースツリーにカスタムフォルダーを追加し、そこにイメージを格納できます。 ファイルを追加する場所は、サブフォルダー内で入れ子にして、プロジェクトの整理に役立てることができます。 たとえば、開発者がフォルダーをプロジェクト`Card`に追加し、の`Hearts`サブフォルダーをそのフォルダーに追加した場合、イメージの**ジャック .png** `Hearts`をフォルダー `NSImage.ImageNamed("Card/Hearts/Jack.png")`に格納すると、実行時にイメージが読み込まれます。
+- **アセットカタログイメージセット [推奨]** -OS X El Capitan に追加された**資産カタログイメージセット**には、アプリケーションのさまざまなデバイスとスケールファクターをサポートするために必要なイメージのすべてのバージョンまたは表現が含まれています。 イメージ資産のファイル名 ( **@1x** 、 **@2x** ) に依存するのではなく、
 
 <a name="asset-catalogs" />
 
-### <a name="adding-images-to-an-asset-catalog-image-set"></a>資産カタログ イメージへのイメージの追加設定
+### <a name="adding-images-to-an-asset-catalog-image-set"></a>アセットカタログイメージセットへのイメージの追加
 
-、前述のよう、**資産カタログの画像セット**すべてのバージョンまたはさまざまなデバイスをサポートし、スケール ファクターは、アプリケーションに必要なイメージの表現が含まれています。 イメージの資産ファイル名ではなく (解像度の独立したイメージとイメージの命名規則が上記を参照)、**画像セット**資産エディターを使用して、どのデバイスと解像度にどのイメージが属しているを指定します。
+既に説明したように、**資産カタログのイメージセット**には、アプリケーションのさまざまなデバイスやスケールファクターをサポートするために必要なイメージのすべてのバージョンまたは表現が含まれています。 イメージアセットファイル名を使用するのではなく (解像度に依存しない画像と画像の名前を参照してください)、**イメージセット**は、アセットエディターを使用して、どのイメージがどのデバイスや解像度に属しているかを指定します。
 
-1. **Solution Pad**、ダブルクリックして、 **Assets.xcassets**ファイルを開き、編集します。 
+1. **Solution Pad**で、 **Assets. xcassets**ファイルをダブルクリックして開き、編集します。 
 
-    ![選択、Assets.xcassets](image-images/imageset01.png "Assets.xcassets を選択します。")
-2. 右クリックし、 **Assets リスト**選択**新しいイメージ セット**: 
+    ![アセットの選択 (xcassets] )(image-images/imageset01.png "アセットの選択 (xcassets") )
+2. [**アセット] ボックス**を右クリックし、 **[新しいイメージセット]** を選択します。 
 
-    [![新しいイメージ セットに追加する](image-images/imageset02.png "新しいイメージ セットの追加")](image-images/imageset02-large.png#lightbox)
-3. 新しいイメージ セットを選択し、エディターが表示されます。 
+    [![新しいイメージセットの追加](image-images/imageset02.png "新しいイメージセットの追加")](image-images/imageset02-large.png#lightbox)
+3. 新しいイメージセットを選択すると、エディターが表示されます。 
 
-    [![新しいイメージ セットの選択](image-images/imageset03.png "新しいイメージ セットの選択")](image-images/imageset03-large.png#lightbox)
-4. ここから、それぞれの異なるデバイスや必要な解像度のイメージでドラッグしたことができます。 
-5. 新しいイメージ セットをダブルクリックして**名前**で、 **Assets リスト**編集します。 
+    [![新しいイメージセットの選択](image-images/imageset03.png "新しいイメージセットの選択")](image-images/imageset03-large.png#lightbox)
+4. ここでは、さまざまなデバイスや必要な解像度ごとにイメージをドラッグできます。 
+5. [**アセット] ボックスの一覧**で、新しいイメージセットの**名前**をダブルクリックして編集します。 
 
-    [![名前を設定するイメージの編集](image-images/imageset04.png "名の設定、画像の編集")](image-images/imageset04-large.png#lightbox)
+    [![イメージセット名の編集](image-images/imageset04.png "イメージセット名の編集")](image-images/imageset04-large.png#lightbox)
     
-特殊な**ベクター**クラスに追加された**画像セット**を含めることができます、 _PDF_形式の代わりに個々 のビットマップ ファイルを含む casset でベクター イメージさまざまな解像度。 1 つのベクトルのファイルを指定するためにこのメソッドを使用して、 **@1x** (ベクターの PDF ファイル形式) の解決と **@2x** と **@3x** ファイルのバージョンがコンパイル時に生成され、アプリケーションのバンドルに含まれます。
+**イメージセット**に追加された特殊な**ベクター**クラスであり、別の解像度で個別のビットマップファイルを含めずに、casset に_PDF_形式のベクターイメージを含めることができます。 1 つのベクトルのファイルを指定するためにこのメソッドを使用して、 **@1x** (ベクターの PDF ファイル形式) の解決と **@2x** と **@3x** ファイルのバージョンがコンパイル時に生成され、アプリケーションのバンドルに含まれます。
 
-[![イメージ エディターのインターフェイスを設定する](image-images/imageset05.png "イメージ エディターのインターフェイスを設定します。")](image-images/imageset05-large.png#lightbox)
+[![イメージセットエディターのインターフェイス](image-images/imageset05.png "イメージセットエディターのインターフェイス")](image-images/imageset05-large.png#lightbox)
 
-例では、含める場合は、 `MonkeyIcon.pdf` 150px x 150px、資産は、コンパイルされたときに、最終的なアプリ バンドルに含めると、次のビットマップの解像度のアセット カタログのベクターとしてファイル。
+たとえば、解像度が 150 px x `MonkeyIcon.pdf` 150 px の資産カタログのベクターとしてファイルを含めると、コンパイル時に次のビットマップ資産が最終的なアプリバンドルに含まれます。
 
-1. **MonkeyIcon@1x.png** -150px x 150px 解決します。
-2. **MonkeyIcon@2x.png** -300 ピクセル x 300px 解決します。
-3. **MonkeyIcon@3x.png** -450px x 450px 解決します。
+1. **MonkeyIcon@1x.png** -150 px x 150 px 解像度。
+2. **MonkeyIcon@2x.png** -300 x 300 resolution。
+3. **MonkeyIcon@3x.png** -450px x 450px 解像度。
 
-次を考慮する資産カタログを PDF ベクター イメージを使用する場合。
+アセットカタログで PDF ベクターイメージを使用する場合は、次の点を考慮する必要があります。
 
-- PDF がコンパイル時と、最終的なアプリケーションに付属してビットマップ ビットマップにラスタライズになるベクトルの完全なサポートはありません。
-- アセット カタログに設定されていると、イメージのサイズを調整することはできません。 (またはコードに自動レイアウトとサイズ クラスを使用して) イメージのサイズを変更しようとした場合、イメージは他の任意のビットマップと同じようにゆがんで表示されます。
+- これは、コンパイル時に PDF がビットマップにラスタライズされ、最終的なアプリケーションに付属するビットマップになるため、完全なベクターサポートではありません。
+- アセットカタログに画像を設定した後は、イメージのサイズを調整することはできません。 イメージのサイズを変更しようとした場合 (コードまたは Auto Layout クラスと Size クラスを使用して)、イメージは他のビットマップと同様に変形されます。
 
-使用する場合、**セット イメージ**で Xcode の Interface Builder では、単に選択セットの名前で、ドロップダウン リストから、**属性インスペクター**:
+Xcode の Interface Builder で**イメージセット**を使用する場合は、**属性インスペクター**のドロップダウンリストからセットの名前を選択するだけです。
 
-![Xcode の Interface Builder で設定するイメージを選択する](image-images/imageset06.png "Xcode の Interface Builder で設定するイメージを選択します。")
+![Xcode の Interface Builder でのイメージセットの選択](image-images/imageset06.png "Xcode の Interface Builder でのイメージセットの選択")
 
 <a name="Adding-new-Assets-Collections"/>
 
-### <a name="adding-new-assets-collections"></a>新しい資産のコレクションを追加します。
+### <a name="adding-new-assets-collections"></a>新しいアセットコレクションの追加
 
-すべての画像を追加する代わりに、新しいコレクションを作成する場合がある可能性があります資産カタログ内のイメージを使用する場合、 **Assets.xcassets**コレクション。 たとえば、次のように、オンデマンド リソースを設計するときです。
+Assets カタログ内のイメージを使用する場合、すべてのイメージを Assets に追加するのではなく、新しいコレクションを作成することが必要になる場合があり**ます。 xcassets**コレクション。 たとえば、オンデマンドリソースを設計する場合などです。
 
-プロジェクトに新しいアセット カタログを追加するには
+新しい Assets カタログをプロジェクトに追加するには、次のようにします。
 
-1. プロジェクトを右クリックし、 **Solution Pad**選択**追加** > **新しいファイル.**
-2. 選択**Mac** > **資産カタログ**、入力、**名前**コレクションをクリックして、**新規**ボタン。 
+1. **Solution Pad**でプロジェクトを右クリックし、[**新しいファイル**の**追加** > ] を選択します。
+2. [ **Mac** > **資産カタログ**] を選択し、コレクションの**名前**を入力して、 **[新規]** ボタンをクリックします。 
 
-    ![新しいアセット カタログを追加する](image-images/asset01.png "新しいアセット カタログの追加")
+    ![新しい資産カタログの追加](image-images/asset01.png "新しい資産カタログの追加")
 
-既定値として同じ方法でここからコレクションを使用して作業できる**Assets.xcassets**プロジェクトで自動的に含まれているコレクション。
+ここからは、既定のアセットと同じ方法でコレクションを操作でき**ます。 xcassets**コレクションは、プロジェクトに自動的に含まれます。
 
 
-### <a name="adding-images-to-resources"></a>リソースへの画像の追加
-
-> [!IMPORTANT]
-> Apple での macOS アプリで画像の操作には、このメソッドは廃止されました。 使用する必要があります[資産カタログの画像セット](#asset-catalogs)マネージャーにアプリのイメージの代わりにします。
-
-プロジェクトの対象とする必要がありますが (c# コードで、またはインターフェイス ビルダーからか)、Xamarin.Mac アプリケーションでイメージ ファイルを使用する前に**リソース**とフォルダー、**バンドル リソース**します。 ファイルをプロジェクトに追加するには、次の操作を行います。
-
-1. 右クリックし、**リソース**でプロジェクトのフォルダー、 **Solution Pad**選択**追加** > **ファイルを追加しています.**: 
-
-    ![ファイルを追加する](image-images/add01.png "ファイルを追加します。")
-2. **ファイルの追加** ダイアログ ボックスで、選択、プロジェクトに追加するファイルのイメージを選択`BundleResource`の**上書きビルド アクション** をクリックし、**オープン**ボタン。
-
-    [![追加ファイルを選択する](image-images/add02.png "を追加するファイルの選択")](image-images/add02-large.png#lightbox)
-3. ファイルがでない場合、**リソース**フォルダーを求められます場合**コピー**、**移動**または**リンク**ファイル。 すべてのスートを選択すると、必要に応じて通常は**コピー**:
-
-    ![アクションの追加 を選択する](image-images/add04.png "アクションの追加 を選択します。")
-4. 新しいファイルは、プロジェクトに追加し、使用するための読み取り。 
-
-    ![Solution Pad に追加された新しいイメージ ファイル](image-images/add03.png "ソリューション パッドに追加された新しいイメージ ファイル")
-5. 必要なすべてのイメージ ファイルのプロセスを繰り返します。
-
-Xamarin.Mac アプリケーションで、任意の png、jpg、または pdf ファイルをソース イメージとして使用できます。 次のセクションで提供されたイメージの高解像度バージョンの追加について説明し、Retina をサポートするためにアイコン ベースの mac コンピューター。
+### <a name="adding-images-to-resources"></a>リソースへのイメージの追加
 
 > [!IMPORTANT]
-> イメージを追加する場合、**リソース**フォルダー、おくことができます、**上書きビルド アクション**に設定**既定**します。 既定でこのフォルダーの ビルド アクションは`BundleResource`します。
+> MacOS アプリでイメージを操作するこの方法は、Apple によって非推奨とされています。 代わりに、[アセットカタログのイメージセット](#asset-catalogs)を使用して、アプリのイメージを管理する必要があります。
 
-## <a name="provide-high-resolution-versions-of-all-app-graphics-resources"></a>すべてのアプリのグラフィックス リソースの高解像度バージョンを提供します。
+Xamarin. Mac アプリケーションでイメージファイルを使用する前に ( C#コードまたは Interface Builder から)、プロジェクトの**Resources**フォルダーに**バンドルリソース**として含める必要があります。 プロジェクトにファイルを追加するには、次の手順を実行します。
 
-任意のグラフィック資産 (アイコン、カスタム コントロール、カスタム カーソル、カスタムのアートワークなど) は、Xamarin.Mac アプリケーションに追加するには、その標準解像度バージョンだけでなく高解像度バージョンが必要です。 Retina ディスプレイでの実行には、Mac コンピューターが搭載されているときに、アプリケーションが最善の状態が表示されるように、この機能が必要です。
+1. **Solution Pad**でプロジェクトの**Resources**フォルダーを右クリックし、[追加] [**ファイル**の追加] の順**に選択** > します。 
 
+    ![ファイルの追加](image-images/add01.png "ファイルの追加")
+2. **[ファイルの追加]** ダイアログボックスで、プロジェクトに追加するイメージファイルを選択し`BundleResource` 、[**ビルドのオーバーライド] アクション**に対してを選択し、 **[開く]** ボタンをクリックします。
 
-### <a name="adopt-the-2x-naming-convention"></a>採用、@2x名前付け規則
+    [![追加するファイルの選択](image-images/add02.png "追加するファイルの選択")](image-images/add02-large.png#lightbox)
+3. ファイルが**Resources**フォルダーに存在しない場合は、ファイルを**コピー**、**移動**、または**リンク**するかどうかを確認するメッセージが表示されます。 それぞれのニーズに合ったものを選択します。通常は**コピー**されます。
 
-> [!IMPORTANT]
-> Apple での macOS アプリで画像の操作には、このメソッドは廃止されました。 使用する必要があります[資産カタログの画像セット](#asset-catalogs)マネージャーにアプリのイメージの代わりにします。
+    [![追加] アクションの選択][(image-images/add04.png "追加] アクションの選択")
+4. 新しいファイルはプロジェクトに含まれ、使用するために読み込まれます。 
 
-イメージのバージョンの標準と高解像度バージョンを作成するときに、Xamarin.Mac プロジェクトに含めるときにこのイメージのペアの名前付け規則に従います。
+    ![Solution Pad に追加された新しいイメージファイル](image-images/add03.png "Solution Pad に追加された新しいイメージファイル")
+5. 必要なすべてのイメージファイルに対して、この手順を繰り返します。
 
-- **標準解像度**  - **ImageName.filename 拡張子**(例: **tags.png**)
-- **高解像度**  -  **ImageName@2x.filename-extension** (例: **tags@2x.png**)
-
-プロジェクトに追加すると、次のような。
-
-![Solution Pad でイメージ ファイル](image-images/add03.png "Solution Pad でイメージ ファイル")
-
-内のファイルを選択するイメージは、Interface Builder での UI 要素に割り当てられている場合だけですが、 _ImageName_**.**_ファイル名拡張子_形式 (例: **tags.png**)。 イメージを使用して c# コードで同じですを選択する内のファイル、 _ImageName_**.**_ファイル名拡張子_形式。
-
-Mac では、Xamarin.Mac アプリケーションの実行時に、 _ImageName_**.**_ファイル名拡張子_形式のイメージは標準の解像度ディスプレイで使用される、 **ImageName@2x.filename-extension**は、イメージが自動的に取得する Retina ディスプレイは、mac コンピューターを行います。
-
-
-## <a name="using-images-in-interface-builder"></a>インターフェイス ビルダーでイメージを使用します。
-
-追加した、任意のイメージ リソース、**リソース**フォルダーで、Xamarin.Mac プロジェクト ビルド アクションを設定して**BundleResource**インターフェイス ビルダーで自動的に表示されますおよびできます(これには、イメージが処理されます) 場合、UI 要素の一部として選択されます。
-
-インターフェイス ビルダーでのイメージを使用するには、次の操作を行います。
-
-1. イメージの追加、**リソース**フォルダー、**ビルド アクション**の`BundleResource`: 
-
-     ![Solution Pad でイメージ リソース](image-images/ib00.png "Solution Pad でイメージ リソース")
-2. ダブルクリックして、 **Main.storyboard**ファイルを開き、Interface Builder での編集します。 
-
-     [![メインのストーリー ボードを編集](image-images/ib01.png "メインのストーリー ボードの編集")](image-images/ib01-large.png#lightbox)
-3. デザイン サーフェイスにイメージを UI 要素をドラッグします (たとえば、**イメージ ツール バー アイテム**)。 
-
-     ![ツール バー アイテムの編集](image-images/ib02.png "ツール バー アイテムの編集")
-4. 追加したイメージの選択、**リソース**フォルダーで、**イメージ名**ドロップダウン。 
-
-     [![ツールバー項目のイメージを選択する](image-images/ib03.png "ツールバー項目のイメージを選択します。")](image-images/ib03-large.png#lightbox)
-5. デザイン画面で、選択した画像が表示されます。 
-
-     ![ツール バー エディターに表示されるイメージ](image-images/ib04.png "ツール バー エディターに表示されるイメージ")
-6. 変更を保存し、Visual Studio for Mac は Xcode と同期に戻ります。
-
-上記の手順は、イメージのプロパティで設定することができる任意の UI 要素の動作、**属性インスペクター**します。 ここでも、選択した場合、 **@2x**イメージ ファイルのバージョンは、それが自動的に使用する Retina ディスプレイ ベースの mac コンピューター。
+Xamarin. Mac アプリケーションでは、任意の png、jpg、または pdf ファイルをソースイメージとして使用できます。 次のセクションでは、Retina ベースの Mac をサポートするために、イメージとアイコンの高解像度バージョンを追加する方法について説明します。
 
 > [!IMPORTANT]
-> イメージを使用できない場合、**イメージ名**ドロップダウンで、Xcode で .storyboard プロジェクト閉じてから Visual Studio for mac。 場合は、イメージを引き続き使用できないことを確認します。 その**ビルド アクション**は`BundleResource`イメージに追加されていると、**リソース**フォルダー。
+> **リソース**フォルダーにイメージを追加する場合は、[**ビルドのオーバーライド] アクション**を **[既定]** に設定したままにすることができます。 このフォルダーの既定のビルドアクションは`BundleResource`です。
 
-## <a name="using-images-in-c-code"></a>C# コードでイメージを使用します。
+## <a name="provide-high-resolution-versions-of-all-app-graphics-resources"></a>すべてのアプリグラフィックスリソースの高解像度バージョンを提供する
 
-イメージを格納するは、Xamarin.Mac アプリケーションで c# コードを使用してメモリにイメージを読み込むときに、`NSImage`オブジェクト。 イメージ ファイルは (リソースに含まれてください)、Xamarin.Mac アプリケーション バンドルに含まれる場合は、イメージの読み込みに次のコードを使用します。
+Xamarin. Mac アプリケーションに追加するグラフィック資産 (アイコン、カスタムコントロール、カスタムカーソル、カスタムアートワークなど) には、標準解像度のバージョンに加えて、高解像度バージョンが必要です。 これは、Retina に装備されている Mac コンピューターで実行した場合にアプリケーションが最適な状態になるようにするために必要です。
+
+
+### <a name="adopt-the-2x-naming-convention"></a>名前付け@2x規則を採用する
+
+> [!IMPORTANT]
+> MacOS アプリでイメージを操作するこの方法は、Apple によって非推奨とされています。 代わりに、[アセットカタログのイメージセット](#asset-catalogs)を使用して、アプリのイメージを管理する必要があります。
+
+イメージの標準解像度と高解像度バージョンを作成する場合は、次の名前付け規則に従ってイメージのペアを Xamarin. Mac プロジェクトに含めます。
+
+- **標準解像度**  - の**ImageName. ファイル名拡張子**(例: **tags .png**)
+- **高解像度**  -  **tags@2x.png** (**例:)ImageName@2x.filename-extension**
+
+プロジェクトに追加すると、次のように表示されます。
+
+![Solution Pad 内のイメージファイル](image-images/add03.png "Solution Pad 内のイメージファイル")
+
+イメージが Interface Builder の UI 要素に割り当てられている場合は、そのファイルを_ImageName_内で単に選択し**ます。** _ファイル名拡張子の_形式 (例: **.png**)。 コード内C#のイメージを使用する場合と同じように、 _ImageName_でファイルを選択し**ます。** _ファイル名-拡張子の_形式。
+
+Xamarin アプリケーションが Mac で実行されている場合は、 _ImageName_ **。** _ファイル名-拡張子_の形式の画像は、標準的な解像度の **ImageName@2x.filename-extension** 表示で使用されます。イメージは、Retina ディスプレイベースの mac で自動的に選択されます。
+
+
+## <a name="using-images-in-interface-builder"></a>Interface Builder でのイメージの使用
+
+Xamarin. Mac プロジェクトの**Resources**フォルダーに追加したイメージリソースが**BundleResource**に設定されている場合は、自動的に Interface Builder に表示され、UI 要素の一部として選択できます (ハンドルされている場合)。イメージ)。
+
+Interface builder でイメージを使用するには、次の手順を実行します。
+
+1. 次の `BundleResource`**ビルドアクション**を使用して、リソースフォルダーにイメージを追加します。 
+
+     ![Solution Pad 内のイメージリソース](image-images/ib00.png "Solution Pad 内のイメージリソース")
+2. メインの storyboard ファイルをダブルクリックして、Interface Builder で編集するために開き**ます。** 
+
+     [![メインストーリーボードの編集](image-images/ib01.png "メインストーリーボードの編集")](image-images/ib01-large.png#lightbox)
+3. 画像を撮影する UI 要素をデザイン画面にドラッグします (たとえば、**イメージツールバー項目**)。 
+
+     ![ツールバー項目の編集](image-images/ib02.png "ツールバー項目の編集")
+4. **[イメージ名]** ボックスの一覧で、 **Resources**フォルダーに追加したイメージを選択します。 
+
+     [![ツールバーアイテムの画像の選択](image-images/ib03.png "ツールバーアイテムの画像の選択")](image-images/ib03-large.png#lightbox)
+5. 選択したイメージがデザイン画面に表示されます。 
+
+     ![ツールバーエディターに表示されているイメージ](image-images/ib04.png "ツールバーエディターに表示されているイメージ")
+6. 変更を保存し Visual Studio for Mac に戻り、Xcode と同期します。
+
+上記の手順は、**属性インスペクター**で image プロパティを設定できる UI 要素に対して機能します。 ここでも、イメージファイルの **@2x** バージョンを含めた場合は、Retina ディスプレイベースの mac で自動的に使用されます。
+
+> [!IMPORTANT]
+> **[イメージ名]** ボックスの一覧にイメージが表示されない場合は、Xcode で storyboard プロジェクトを閉じ、Visual Studio for Mac から再度開きます。 イメージがまだ使用できない場合は、**ビルドアクション**が`BundleResource`であり、イメージが**Resources**フォルダーに追加されていることを確認します。
+
+## <a name="using-images-in-c-code"></a>コードでのC#イメージの使用
+
+Xamarin. Mac アプリケーションでコードをC#使用してイメージをメモリに読み込む場合、イメージは`NSImage`オブジェクトに格納されます。 イメージファイルが Xamarin. Mac アプリケーションバンドル (リソースに含まれています) に含まれている場合は、次のコードを使用してイメージを読み込みます。
 
 ```csharp
 NSImage image = NSImage.ImageNamed("tags.png");
 ```
 
-上記の例では、静的な`ImageNamed("...")`のメソッド、`NSImage`からメモリに指定したイメージを読み込むクラスを**リソース**フォルダーで、イメージが見つからない場合`null`が返されます。 インターフェイス ビルダーでは、割り当てられているイメージを選択した場合など、 **@2x**イメージ ファイルのバージョンは、それが自動的に使用する Retina ディスプレイ ベースの mac コンピューター。
+上のコードでは、 `ImageNamed("...")` `NSImage`クラスの静的メソッドを使用して、指定されたイメージを**リソース**フォルダーからメモリに読み込みます。 `null`イメージが見つからない場合は、が返されます。 Interface Builder で割り当てられたイメージと同様に、 **@2x** イメージファイルのバージョンを含めた場合は、Retina ディスプレイベースの mac で自動的に使用されます。
 
-アプリケーションのバンドル (Mac ファイル システム) から外のイメージを読み込むには、次のコードを使用します。
+(Mac ファイルシステムから) アプリケーションのバンドルの外部にイメージを読み込むには、次のコードを使用します。
 
 ```csharp
 NSImage image = new NSImage("/Users/KMullins/Documents/photo.jpg")
@@ -198,25 +198,25 @@ NSImage image = new NSImage("/Users/KMullins/Documents/photo.jpg")
 
 <a name="Working-with-Template-Images"/>
 
-## <a name="working-with-template-images"></a>テンプレート イメージの操作
+## <a name="working-with-template-images"></a>テンプレートイメージの操作
 
-MacOS アプリの設計に基づき、ありますアイコンまたはイメージ内の (たとえば、ユーザー設定に基づく) の配色の変更に合わせてユーザー インターフェイスをカスタマイズする必要がある場合。
+MacOS アプリの設計に基づいて、ユーザーインターフェイス内のアイコンまたはイメージをカスタマイズして、配色の変化 (ユーザー設定に基づくなど) と一致させることが必要になる場合があります。
 
-この効果を実現するために切り替え、_レンダリング モード_イメージ資産の**テンプレート イメージ**:
+この効果を実現するには、イメージ資産の_レンダリングモード_を**テンプレートイメージ**に切り替えます。
 
-[![テンプレート イメージを設定する](image-images/templateimage01.png "テンプレート イメージの設定")](image-images/templateimage01-large.png#lightbox)
+[![テンプレートイメージの設定](image-images/templateimage01.png "テンプレートイメージの設定")](image-images/templateimage01-large.png#lightbox)
 
-Xcode の Interface Builder からには、UI コントロールにイメージの資産を割り当てます。
+Xcode の Interface Builder から、イメージ資産を UI コントロールに割り当てます。
 
-![Xcode の Interface Builder でイメージを選択する](image-images/templateimage02.png "Xcode の Interface Builder でイメージを選択します。")
+![Xcode の Interface Builder でのイメージの選択](image-images/templateimage02.png "Xcode の Interface Builder でのイメージの選択")
 
-または、必要に応じてイメージ ソースをコードで設定。
+または、必要に応じて、コードでイメージソースを設定します。
 
 ```csharp
 MyIcon.Image = NSImage.ImageNamed ("MessageIcon");
 ```
 
-ビュー コント ローラーには、次のパブリック関数を追加します。
+次のパブリック関数をビューコントローラーに追加します。
 
 ```csharp
 public NSImage ImageTintedWithColor(NSImage sourceImage, NSColor tintColor)
@@ -233,11 +233,11 @@ public NSImage ImageTintedWithColor(NSImage sourceImage, NSColor tintColor)
 ```
 
 > [!IMPORTANT]
-> MacOS Mojave のダーク モードの登場によって、特に、回避するために重要ですが、 `LockFocus` API の作成のカスタム レンダリングされるときに`NSImage`オブジェクト。 このようなイメージでは、静的になるし、外観やディスプレイの密度の変更のアカウントに自動的に更新されません。
+> 特に macOS Mojave でのダークモードの登場では、カスタムレンダリング`LockFocus` `NSImage`オブジェクトを reating するときに API を回避することが重要です。 このようなイメージは静的になり、外観や表示密度の変化に対応するために自動的に更新されることはありません。
 >
-> 上記のハンドラー ベースのメカニズムを採用して再表示に動的な条件を自動的に処理されるときに、`NSImage`でホストされているなど、`NSImageView`します。
+> 上のハンドラーベースの機構を使用することにより、 `NSImage`が`NSImageView`でホストされている場合 (など)、動的条件の再レンダリングが自動的に行われます。
 
-最後に、テンプレート イメージを付けるには、色分けして表示するイメージに対してこの関数を呼び出します。
+最後に、テンプレートイメージの濃淡を付けるには、イメージに対してこの関数を呼び出して、色分けします。
 
 ```csharp
 MyIcon.Image = ImageTintedWithColor (MyIcon.Image, NSColor.Red);
@@ -245,9 +245,9 @@ MyIcon.Image = ImageTintedWithColor (MyIcon.Image, NSColor.Red);
 
 <a name="Using_Images_with_Table_Views" />
 
-## <a name="using-images-with-table-views"></a>テーブル ビューでのイメージの使用
+## <a name="using-images-with-table-views"></a>テーブルビューでのイメージの使用
 
-内のセルの一部としてイメージを含める、 `NSTableView`、によって、テーブル ビューのデータを返す方法を変更する必要があります`NSTableViewDelegate's``GetViewForItem`メソッドを使用して、`NSTableCellView`ではなく、一般的な`NSTextField`します。 例:
+画像を`NSTableView`内のセルの一部として含めるには、テーブルビューの`GetViewForItem` `NSTableViewDelegate's`メソッドによるデータの取得方法を変更して、通常`NSTextField`の`NSTableCellView`の代わりにを使用する必要があります。 例:
 
 ```csharp
 public override NSView GetViewForItem (NSTableView tableView, NSTableColumn tableColumn, nint row)
@@ -306,7 +306,7 @@ public override NSView GetViewForItem (NSTableView tableView, NSTableColumn tabl
 }
 ```
 
-ここで関心のあるいくつかの行があります。 まずにイメージを追加する列の場合作成、新しい`NSImageView`の必要なサイズと場所、また作成、新しい`NSTextField`し、イメージを使用したかどうかに基づいて既定の位置の配置。
+ここにはいくつかの興味深い行があります。 まず、イメージを含める列に対して、必要なサイズと場所の`NSImageView`新しいを作成します。また、イメージを使用し`NSTextField`ているかどうかに基づいて、新しいを作成し、既定の位置を配置します。
 
 ```csharp
 if (tableColumn.Title == "Product") {
@@ -318,7 +318,7 @@ if (tableColumn.Title == "Product") {
 }
 ```
 
-次に、親に新しいイメージの表示とテキスト フィールドを含める必要があります`NSTableCellView`:
+次に、新しいイメージビューとテキストフィールドを親`NSTableCellView`に含める必要があります。
 
 ```csharp
 view.AddSubview (view.ImageView);
@@ -329,7 +329,7 @@ view.AddSubview (view.TextField);
 
 ```
 
-最後に、圧縮およびテーブル ビューのセルに拡張できることに、テキスト フィールドを確認する必要があります。
+最後に、テキストフィールドに、テーブルビューセルを使用して圧縮および拡張できることを通知する必要があります。
 
 ```csharp
 view.TextField.AutoresizingMask = NSViewResizingMask.WidthSizable;
@@ -337,15 +337,15 @@ view.TextField.AutoresizingMask = NSViewResizingMask.WidthSizable;
 
 出力例:
 
-[![アプリで画像を表示する例](image-images/tables01.png "アプリで画像を表示する例")](image-images/tables01-large.png#lightbox)
+[![アプリでイメージを表示する例](image-images/tables01.png "アプリでイメージを表示する例")](image-images/tables01-large.png#lightbox)
 
-テーブル ビューの使用の詳細についてを参照してください、[テーブル ビュー](~/mac/user-interface/table-view.md)ドキュメント。
+テーブルビューの操作の詳細については、[テーブルビュー](~/mac/user-interface/table-view.md)のドキュメントを参照してください。
 
 <a name="Using_Images_with_Outline_Views" />
 
-## <a name="using-images-with-outline-views"></a>イメージを使用して、アウトライン ビューの使用
+## <a name="using-images-with-outline-views"></a>アウトラインビューでのイメージの使用
 
-内のセルの一部としてイメージを含める、 `NSOutlineView`、アウトライン ビューのデータを返す方法を変更する必要があります`NSTableViewDelegate's``GetView`メソッドを使用して、`NSTableCellView`ではなく、一般的な`NSTextField`します。 例:
+画像を`NSOutlineView`内のセルの一部として含めるには、アウトラインビューの`GetView` `NSTableViewDelegate's`メソッドによるデータの取得方法を変更して、通常`NSTextField`の`NSTableCellView`の代わりにを使用する必要があります。 例:
 
 ```csharp
 public override NSView GetView (NSOutlineView outlineView, NSTableColumn tableColumn, NSObject item) {
@@ -409,7 +409,7 @@ public override NSView GetView (NSOutlineView outlineView, NSTableColumn tableCo
 }
 ```
 
-ここで関心のあるいくつかの行があります。 まずにイメージを追加する列の場合作成、新しい`NSImageView`の必要なサイズと場所、また作成、新しい`NSTextField`し、イメージを使用したかどうかに基づいて既定の位置の配置。
+ここにはいくつかの興味深い行があります。 まず、イメージを含める列に対して、必要なサイズと場所の`NSImageView`新しいを作成します。また、イメージを使用し`NSTextField`ているかどうかに基づいて、新しいを作成し、既定の位置を配置します。
 
 ```csharp
 if (tableColumn.Title == "Product") {
@@ -421,7 +421,7 @@ if (tableColumn.Title == "Product") {
 }
 ```
 
-次に、親に新しいイメージの表示とテキスト フィールドを含める必要があります`NSTableCellView`:
+次に、新しいイメージビューとテキストフィールドを親`NSTableCellView`に含める必要があります。
 
 ```csharp
 view.AddSubview (view.ImageView);
@@ -432,7 +432,7 @@ view.AddSubview (view.TextField);
 
 ```
 
-最後に、圧縮およびテーブル ビューのセルに拡張できることに、テキスト フィールドを確認する必要があります。
+最後に、テキストフィールドに、テーブルビューセルを使用して圧縮および拡張できることを通知する必要があります。
 
 ```csharp
 view.TextField.AutoresizingMask = NSViewResizingMask.WidthSizable;
@@ -440,22 +440,22 @@ view.TextField.AutoresizingMask = NSViewResizingMask.WidthSizable;
 
 出力例:
 
-[![アウトライン ビューで表示されるイメージの例](image-images/outline01.png "アウトライン表示で表示されるイメージの例")](image-images/outline01-large.png#lightbox)
+[![アウトラインビューに表示されるイメージの例](image-images/outline01.png "アウトラインビューに表示されるイメージの例")](image-images/outline01-large.png#lightbox)
 
-アウトライン ビューの使用の詳細についてを参照してください、[アウトライン ビュー](~/mac/user-interface/outline-view.md)ドキュメント。
+アウトラインビューの操作の詳細については、[アウトラインビュー](~/mac/user-interface/outline-view.md)のドキュメントを参照してください。
 
 
 ## <a name="summary"></a>まとめ
 
-この記事では、Xamarin.Mac アプリケーションでイメージとアイコンの使用方法について詳しく説明をしました。 さまざまな種類を説明し、イメージ、Xcode の Interface Builder でのイメージとアイコンを使用する方法、および c# コードでのイメージとアイコンを操作する方法を使用します。
+この記事では、Xamarin. Mac アプリケーションでイメージとアイコンを操作する方法について詳しく説明しました。 ここでは、さまざまな種類と画像の使用方法、Xcode の Interface Builder での画像とアイコンの使用方法、およびコードでC#画像とアイコンを操作する方法について説明しました。
 
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [MacImages (サンプル)](https://developer.xamarin.com/samples/mac/MacImages/)
+- [MacImages (サンプル)](https://docs.microsoft.com/samples/xamarin/mac-samples/macimages)
 - [Hello Mac](~/mac/get-started/hello-mac.md)
-- [テーブル ビュー](~/mac/user-interface/table-view.md)
-- [アウトライン ビュー](~/mac/user-interface/outline-view.md)
-- [macOS X ヒューマン インターフェイス ガイドライン](https://developer.apple.com/macos/human-interface-guidelines/overview/themes/)
+- [テーブルビュー](~/mac/user-interface/table-view.md)
+- [アウトラインビュー](~/mac/user-interface/outline-view.md)
+- [macOS X ヒューマンインターフェイスガイドライン](https://developer.apple.com/macos/human-interface-guidelines/overview/themes/)
 - [OS X 向けの高解像度について](https://developer.apple.com/library/content/documentation/GraphicsAnimation/Conceptual/HighResolutionOSX/Introduction/Introduction.html)

@@ -1,53 +1,53 @@
 ---
-title: Xamarin.Mac のアラート
-description: この記事では、Xamarin.Mac アプリケーションでのアラートの操作について説明します。 作成してからのアラートを表示する説明C#コードとユーザーの操作に応答します。
+title: Xamarin. Mac のアラート
+description: この記事では、Xamarin. Mac アプリケーションでのアラートの使用について説明します。 ここでは、コードからのC#アラートの作成と表示、およびユーザーの操作への応答について説明します。
 ms.prod: xamarin
 ms.assetid: F1DB93A1-7549-4540-AD5E-D7605CCD8435
 ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 6545b1423b809e42293302baf3eba9521848edc1
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 14a7fdc21c95b2febcf73497055461830b0df831
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61237655"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68645790"
 ---
-# <a name="alerts-in-xamarinmac"></a>Xamarin.Mac のアラート
+# <a name="alerts-in-xamarinmac"></a>Xamarin. Mac のアラート
 
-_この記事では、Xamarin.Mac アプリケーションでのアラートの操作について説明します。作成してからのアラートを表示する説明C#コードとユーザーの操作に応答します。_
+_この記事では、Xamarin. Mac アプリケーションでのアラートの使用について説明します。ここでは、コードからのC#アラートの作成と表示、およびユーザーの操作への応答について説明します。_
 
-使用する場合C#へのアクセスがある .NET では、Xamarin.Mac アプリケーションと作業する開発者で、同じアラートを*Objective C*と*Xcode*は。 
+Xamarin. Mac C#アプリケーションでと .net を使用する場合、 *Xcode および*で作業する開発者が行うのと同じアラートにアクセスできます。 
 
-警告は、特殊な種類 (エラー) など、深刻な問題が発生したときに表示されるダイアログ ボックスのまたは (ファイルを削除する準備をしています) などの警告として。 アラートは、ダイアログ ボックスであるためも必要です、ユーザーの応答を閉じる前にします。
+アラートは、重大な問題 (エラーなど) が発生したとき、または警告 (ファイルの削除の準備など) が発生したときに表示される特別な種類のダイアログです。 アラートはダイアログであるため、閉じる前にユーザーの応答も必要です。
 
 [![](alert-images/alert06.png "アラートの例")](alert-images/alert06.png#lightbox)
 
-この記事では、アラート、Xamarin.Mac アプリケーションでの操作の基礎を取り上げます。 
+この記事では、Xamarin. Mac アプリケーションでのアラートの操作の基本について説明します。 
 
 <a name="Introduction_to_Alerts" />
 
 ## <a name="introduction-to-alerts"></a>アラートの概要
 
-警告は、特殊な種類 (エラー) など、深刻な問題が発生したときに表示されるダイアログ ボックスのまたは (ファイルを削除する準備をしています) などの警告として。 アラートは、そのタスクをユーザーに続行前に破棄する必要がありますので、ユーザーを中断、ため、絶対に必要である場合を除き、アラートを表示しないでください。
+アラートは、重大な問題 (エラーなど) が発生したとき、または警告 (ファイルの削除の準備など) が発生したときに表示される特別な種類のダイアログです。 ユーザーがタスクを続行できるようになる前にアラートを破棄する必要があるため、警告が表示されないため、必要な場合を除き、アラートを表示しないようにしてください。
 
-Apple では、次のガイドラインをお勧めします。
+Apple では、次のガイドラインを提案します。
 
-- ユーザー情報を提供するだけで、アラートを使用しないでください。
-- 共通の取り消し可能なアクションに関する警告は表示されません。 場合でも、そのような状況データの損失が発生する可能性があります。
-- 状況は、アラート場合、は、それを表示するその他の UI 要素またはメソッドを使用しないでください。
-- 注意のアイコンは控えめに使用する必要があります。
-- アラートの状態を明確かつ簡潔に示す警告メッセージに説明します。
-- ボタンの既定の名前は、警告メッセージで記述したアクションに対応しています。
+- ユーザー情報を提供するためだけにアラートを使用しないでください。
+- 一般的な取り消し可能なアクションのアラートを表示しません。 そのような状況でもデータが失われる可能性があります。
+- アラートが問題になる場合は、他の UI 要素またはメソッドを使用して表示することを避けてください。
+- 警告アイコンは控えめに使用する必要があります。
+- アラートの状況を明確かつ簡潔にアラートメッセージに記述します。
+- 既定のボタン名は、警告メッセージに記載されているアクションに対応している必要があります。
 
-詳細については、次を参照してください、[アラート](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/WindowAlerts.html#//apple_ref/doc/uid/20000957-CH44-SW1)の Apple の「 [OS X ヒューマン インターフェイス ガイドライン。](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
+詳細については、「Apple の[OS X ヒューマンインターフェイスガイドライン](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)」の「[アラート](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/WindowAlerts.html#//apple_ref/doc/uid/20000957-CH44-SW1)」セクションを参照してください。
 
 <a name="Anatomy_of_an_Alert" />
 
-## <a name="anatomy-of-an-alert"></a>アラートの詳細
+## <a name="anatomy-of-an-alert"></a>アラートの構造
 
-前述のように、重大な問題が発生した場合、アプリケーションのユーザーに、または (保存されていないファイルを閉じる) などのデータ損失の可能性を警告としてアラートが表示する必要があります。 アラートを作成、Xamarin.Mac でC#コード、たとえば。
+前述のように、重大な問題が発生したとき、またはデータ損失の可能性に対する警告として、アプリケーションのユーザーに警告を表示する必要があります (保存されていないファイルを閉じるなど)。 Xamarin. Mac では、アラートがコードでC#作成されます。次に例を示します。
 
 ```csharp
 var alert = new NSAlert () {
@@ -58,29 +58,29 @@ var alert = new NSAlert () {
 alert.RunModal ();
 ```
 
-上記のコードでは、警告アイコン、タイトル、警告メッセージ、および 1 つに重ね合わせて示す、アプリケーション アイコンと警告が表示されます**OK**ボタンをクリックします。
+上記のコードでは、警告アイコン、タイトル、警告メッセージ、および1つの **[OK** ] ボタンに重ねて表示された [アプリケーション] アイコンを含むアラートが表示されます。
 
-[![](alert-images/alert01.png "[Ok] ボタンのアラート")](alert-images/alert01.png#lightbox)
+[![](alert-images/alert01.png "[OK] ボタンのあるアラート")](alert-images/alert01.png#lightbox)
 
-Apple では、アラートをカスタマイズするために使用できるいくつかのプロパティを提供します。
+Apple には、アラートをカスタマイズするために使用できるいくつかのプロパティが用意されています。
 
-- **AlertStyle**として、次のいずれかのアラートの種類を定義します。
-    - **警告**- ユーザーが重要でない、現在または近いイベントを警告するために使用します。 これは、既定のスタイルです。
-    - **情報**- 現在または迫っているイベントについてユーザーに警告に使用されます。 現時点では、表示の違いはありません、**警告**と**情報**
-    - **重要な**- の兆候のイベント (ファイルを削除する) などの深刻な事態についてユーザーに警告に使用されます。 この種類のアラートは、控えめに使用する必要があります。
-- **MessageText** -これは、メイン メッセージまたは警告のタイトルとユーザーに、状況を簡単に定義する必要があります。
-- **InformativeText** -これは、本文のアラートの状況を明確に定義および実行可能なオプションをユーザーに提示する必要があります。
-- **アイコン**-ユーザーに表示されるカスタム アイコンを使用します。
-- **HelpAnchor** & **ShowsHelp** -HelpBook アプリケーションに関連付けられるし、アラートのヘルプを表示するアラートを使用します。
-- **ボタン**-既定では、アラートは、 **[ok]** ボタンが、**ボタン**コレクションでは、必要に応じてより多くの選択肢を追加できます。
-- **ShowsSuppressionButton**場合 -`true`ユーザーがそれをトリガーしたイベントの後続の出現箇所の警告を非表示に使用できるチェック ボックスを表示します。
-- **AccessoryView** -アラートの追加などの追加情報を提供するもう 1 つのサブビューをアタッチすることができます、**テキスト フィールド**データ入力用です。 新しい設定した場合**AccessoryView**または、既存の変更を呼び出す必要があります、`Layout()`アラートの表示レイアウトを調整する方法。
+- **Alertstyle**は、アラートの種類を次のいずれかとして定義します。
+    - **警告**-重要ではない、現在または差し迫ったイベントをユーザーに警告するために使用されます。 これは既定のスタイルです。
+    - **情報**-現在または将来発生するイベントについてユーザーに警告するために使用されます。 現在、**警告**と**情報**の間には、表示される違いはありません。
+    - **重大**-イベント (ファイルの削除など) の重大な結果をユーザーに警告するために使用されます。 この種類のアラートは、控えめに使用する必要があります。
+- **Messagetext** -アラートのメインメッセージまたはタイトルです。ユーザーに対して状況をすばやく定義します。
+- **InformativeText** -これはアラートの本文であり、状況を明確に定義し、使用可能なオプションをユーザーに提示する必要があります。
+- **アイコン**-ユーザーにカスタムアイコンを表示することを許可します。
+- ShowsHelp-アラートをアプリケーションのヘルプブックに関連付けて、アラートのヘルプを表示することを許可します。  & 
+- **ボタン**-既定では、警告には **[OK** ] ボタンしかありませんが、**ボタン**のコレクションでは、必要に応じてさらに選択肢を追加できます。
+- **ShowsSuppressionButton** - `true`によって、トリガーされたイベントの後続の発生に対して警告を抑制するために使用できるチェックボックスが表示されます。
+- **AccessoryView** -データ入力用の**テキストフィールド**の追加などの追加情報を提供するために、アラートに別のサブビューをアタッチすることができます。 新しい**AccessoryView**を設定するか、既存のものを変更する場合は、 `Layout()`メソッドを呼び出して、アラートの表示レイアウトを調整する必要があります。
 
 <a name="Displaying_an_Alert" />
 
 ## <a name="displaying-an-alert"></a>アラートの表示
 
-表示されている、フローティング状態であるアラートがあることができます、2 つの方法はありますか、シートとして。 次のコードでは、フローティング状態であると、アラートが表示されます。
+警告を表示する方法には、フリーフローティングまたはシートという2つの方法があります。 次のコードでは、アラートがフリーフローティングとして表示されます。
 
 ```csharp
 var alert = new NSAlert () {
@@ -90,11 +90,11 @@ var alert = new NSAlert () {
 };
 alert.RunModal ();
 ```
-このコードを実行すると場合、次のように表示されます。
+このコードを実行すると、次のように表示されます。
 
 [![](alert-images/alert02.png "単純なアラート")](alert-images/alert02.png#lightbox)
 
-次のコードでは、シートとして同じアラートが表示されます。
+次のコードでは、シートと同じ警告が表示されます。
 
 ```csharp
 var alert = new NSAlert () {
@@ -105,16 +105,16 @@ var alert = new NSAlert () {
 alert.BeginSheet (this);
 ```
 
-このコードを実行している場合、次が表示されます。
+このコードが実行されると、次のように表示されます。
 
-[![](alert-images/alert03.png "シートとして表示されるアラート")](alert-images/alert03.png#lightbox)
+[![](alert-images/alert03.png "シートとして表示される警告")](alert-images/alert03.png#lightbox)
 
 
 <a name="Working_with_Alert_Buttons" />
 
-## <a name="working-with-alert-buttons"></a>アラートのボタンを使用
+## <a name="working-with-alert-buttons"></a>アラートボタンの操作
 
-既定では、アラートのみが表示されます、 **OK**ボタンをクリックします。 ただし、制限はありませんに追加することで追加ボタンを作成するには、**ボタン**コレクション。 次のコードでは、フローティング状態であるアラートを**OK**、**キャンセル**と**かもしれません**ボタン。
+既定では、アラートには **[OK** ] ボタンのみが表示されます。 ただし、これに限定されているわけではありませんが、**ボタン**のコレクションに追加することによって追加のボタンを作成できます。 次のコードでは、" **OK**"、"**キャンセル**" **、および "** ボタン" を使用して、フリーフローティングの警告を作成します。
 
 ```csharp
 var alert = new NSAlert () {
@@ -128,17 +128,17 @@ alert.AddButton ("Maybe");
 var result = alert.RunModal ();
 ```
 
-追加された最初のボタンは使用できます、_ボタンの既定の_ユーザーが Enter キーを押した場合をアクティブになります。 返される値は、ユーザーが押されたボタンを表す整数になります。 ここで、次の値が返されます。
+追加された最初のボタンは、ユーザーが Enter キーを押すとアクティブになる_既定のボタン_になります。 返される値は、ユーザーが押したボタンを表す整数です。 ここでは、次の値が返されます。
 
-- **[OK]** - 1000 です。
-- **キャンセル**1001 - します。
-- **おそらく**1002 - します。
+- **OK** -1000。
+- **キャンセル**-1001。
+- 1002の**可能性**があります。
 
-コードを実行した場合、次が表示されます。
+コードを実行すると、次のように表示されます。
 
-[![](alert-images/alert04.png "ボタンの 3 つのオプションのアラート")](alert-images/alert04.png#lightbox)
+[![](alert-images/alert04.png "3つのボタンオプションを持つアラート")](alert-images/alert04.png#lightbox)
 
-シートとして、同じアラートのコードを次に示します。
+次に、同じ警告をシートとして使用するコードを示します。
 
 ```csharp
 var alert = new NSAlert () {
@@ -153,18 +153,18 @@ alert.BeginSheetForResponse (this, (result) => {
     Console.WriteLine ("Alert Result: {0}", result);
 });
 ```
-このコードを実行している場合、次が表示されます。
+このコードが実行されると、次のように表示されます。
 
-[![](alert-images/alert05.png "シートとして表示されるボタンの 3 つのアラート")](alert-images/alert05.png#lightbox)
+[![](alert-images/alert05.png "シートとして表示される3つのボタンの警告")](alert-images/alert05.png#lightbox)
 
 > [!IMPORTANT]
-> アラートには、複数の 3 つのボタンを追加しないでください。
+> 警告には、3つ以上のボタンを追加しないでください。
 
 <a name="Showing_the_Suppress_Button" />
 
-## <a name="showing-the-suppress-button"></a>非表示 ボタンを示す
+## <a name="showing-the-suppress-button"></a>[非表示] ボタンを表示する
 
-場合、アラートの`ShowSuppressButton`プロパティは`true`アラートは、ユーザーがそれをトリガーしたイベントの後続の出現箇所の警告を非表示に使用できるチェック ボックスを表示します。 次のコードでは、フローティング状態であるアラートを抑制する ボタンを表示します。
+警告の`ShowSuppressButton`プロパティが`true`の場合、アラートには、そのアラートをトリガーしたイベントの後続の発生についてアラートを抑制するために使用できるチェックボックスが表示されます。 次のコードは、非表示のボタンを使用して、フリーフローティングのアラートを表示します。
 
 ```csharp
 var alert = new NSAlert () {
@@ -180,13 +180,13 @@ var result = alert.RunModal ();
 Console.WriteLine ("Alert Result: {0}, Suppress: {1}", result, alert.SuppressionButton.State == NSCellStateValue.On);
 ```
 
-場合の値、`alert.SuppressionButton.State`は`NSCellStateValue.On`、抑制する チェック ボックスをオン、それ以外の場合、必要ありません。
+の`alert.SuppressionButton.State`値が`NSCellStateValue.On`の場合、ユーザーは抑制チェックボックスをオンにしています。そうでない場合は、非表示になります。
 
-コードが実行された場合、次が表示されます。
+コードを実行すると、次のように表示されます。
 
-[![](alert-images/alert06.png "アラートを抑制する ボタン")](alert-images/alert06.png#lightbox)
+[![](alert-images/alert06.png "抑制ボタンを持つアラート")](alert-images/alert06.png#lightbox)
 
-シートとして、同じアラートのコードを次に示します。
+次に、同じ警告をシートとして使用するコードを示します。
 
 ```csharp
 var alert = new NSAlert () {
@@ -203,15 +203,15 @@ alert.BeginSheetForResponse (this, (result) => {
 });
 ```
 
-このコードを実行している場合、次が表示されます。
+このコードが実行されると、次のように表示されます。
 
-[![](alert-images/alert07.png "シートとしてアラートを抑制する ボタンを表示します。")](alert-images/alert07.png#lightbox)
+[![](alert-images/alert07.png "[非表示] ボタンがシートとして表示されているアラート")](alert-images/alert07.png#lightbox)
 
 <a name="Adding_a_Custom_SubView" />
 
-## <a name="adding-a-custom-subview"></a>カスタムのサブビューを追加します。
+## <a name="adding-a-custom-subview"></a>カスタムサブビューの追加
 
-アラートが、`AccessoryView`さらに、アラートをカスタマイズなどを追加するために使用できるプロパティ、**テキスト フィールド**ユーザーの入力。 次のコードでは、追加したテキスト入力フィールドでフローティング状態であるアラートを作成します。
+アラートには`AccessoryView` 、さらにアラートをカスタマイズしたり、ユーザー入力用の**テキストフィールド**のようなものを追加したりするために使用できるプロパティがあります。 次のコードは、テキスト入力フィールドを追加して、フリーフローティングの警告を作成します。
 
 ```csharp
 var input = new NSTextField (new CGRect (0, 0, 300, 20));
@@ -231,13 +231,13 @@ var result = alert.RunModal ();
 Console.WriteLine ("Alert Result: {0}, Suppress: {1}", result, alert.SuppressionButton.State == NSCellStateValue.On);
 ```
 
-主要な行は`var input = new NSTextField (new CGRect (0, 0, 300, 20));`新たに作成される**テキスト フィールド**アラートを追加する予定こと。 `alert.AccessoryView = input;` どの接続、**テキスト フィールド**、アラートへの呼び出しに、`Layout()`メソッドで、新しいサブビューに収まるように、アラートのサイズを変更するには必要です。
+ここで重要なの`var input = new NSTextField (new CGRect (0, 0, 300, 20));`は、アラートを追加する新しい**テキストフィールド**を作成する行です。 `alert.AccessoryView = input;`これは、**テキストフィールド**をアラートに添付し、 `Layout()`メソッドへの呼び出しを行います。これは、新しいサブビューに合わせて警告のサイズを変更するために必要です。
 
-コードを実行した場合、次が表示されます。
+コードを実行すると、次のように表示されます。
 
-[![](alert-images/alert08.png "コードを実行した場合、次が表示されます。")](alert-images/alert08.png#lightbox)
+[![](alert-images/alert08.png "コードを実行すると、次のように表示されます。")](alert-images/alert08.png#lightbox)
 
-シートとして同じアラートを次に示します。
+シートと同じ警告を次に示します。
 
 ```csharp
 var input = new NSTextField (new CGRect (0, 0, 300, 20));
@@ -258,19 +258,19 @@ alert.BeginSheetForResponse (this, (result) => {
 });
 ```
 
-このコードを実行した場合、次が表示されます。
+このコードを実行すると、次のように表示されます。
 
-[![](alert-images/alert09.png "カスタム ビューのアラート")](alert-images/alert09.png#lightbox)
+[![](alert-images/alert09.png "カスタムビューを含むアラート")](alert-images/alert09.png#lightbox)
 
 <a name="Summary" />
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
-この記事では、Xamarin.Mac アプリケーションでアラートの使用方法について詳しく説明をしました。 さまざまな種類と警告を作成し、アラートをカスタマイズする方法、アラートを操作する方法の使用方法を説明しましたC#コード。
+この記事では、Xamarin. Mac アプリケーションでのアラートの使用について詳しく説明しました。 ここでは、さまざまな種類とアラートの使用方法、アラートを作成およびカスタマイズする方法、およびコードC#でアラートを操作する方法について説明しました。
 
 ## <a name="related-links"></a>関連リンク
 
-- [MacWindows (サンプル)](https://developer.xamarin.com/samples/mac/MacWindows/)
+- [MacWindows (サンプル)](https://docs.microsoft.com/samples/xamarin/mac-samples/macwindows)
 - [Hello Mac](~/mac/get-started/hello-mac.md)
 - [Windows の操作](~/mac/user-interface/window.md)
 - [OS X ヒューマン インターフェイス ガイドライン](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)

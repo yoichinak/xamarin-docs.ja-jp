@@ -1,48 +1,48 @@
 ---
-title: watchOS で Xamarin (Force Touch) メニュー コントロール
-description: このドキュメントでは、Xamarin で watchOS force タッチ ジェスチャを使用する方法について説明します。 Force タッチに応答する方法について説明しますが、メニューとメニュー項目を変更する追加する方法。
+title: Xamarin の watchOS Menu コントロール (Force Touch)
+description: このドキュメントでは、Xamarin で watchOS force touch ジェスチャを使用する方法について説明します。 また、強制タッチに応答する方法、メニューを追加する方法、およびメニュー項目を変更する方法についても説明します。
 ms.prod: xamarin
 ms.assetid: 5A7F83FB-9BC4-4812-92C5-CEC8DAE8211E
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 7696c820ab6fdf19bdef46db31061fb5914e6cf4
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6ad021d07d1263b20919cf4f640a8b65bf3b12b2
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60880687"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655743"
 ---
-# <a name="watchos-menu-control-force-touch-in-xamarin"></a>watchOS で Xamarin (Force Touch) メニュー コントロール
+# <a name="watchos-menu-control-force-touch-in-xamarin"></a>Xamarin の watchOS Menu コントロール (Force Touch)
 
-キットには、watch アプリの画面で実装された場合、メニューをトリガーする強制タッチ ジェスチャをご覧ください。
+Watch Kit は、ウォッチアプリ画面に実装されたときにメニューをトリガーする Force Touch ジェスチャを提供します。
 
-![](menu-images/menu.png "Apple Watch のメニューを表示")
+![](menu-images/menu.png "メニューを表示 Apple Watch には")
 <!-- watch image courtesy of http://infinitapps.com/bezel/ -->
 
 ## <a name="responding-to-force-touch"></a>Force Touch への応答
 
-場合、`Menu`ユーザーは、Force Touch、メニューが表示されますが実行すると、インターフェイス コント ローラーに対して実装されています。 画面が簡単にアニメーション化メニューが実装されていない場合、いないその他のアクションが発生します。
+`Menu`がインターフェイスコントローラーに対して実装されている場合、ユーザーが Force Touch を実行すると、メニューが表示されます。 メニューが実装されていない場合は、他の操作が発生しないように、画面が短時間でアニメーション化されます。
 
-Force タッチは画面で、特定の要素に関連付けられていません。インターフェイス コント ローラーに接続できる 1 つだけのメニューと、画面上の Force Touch キーを押しての発生に関係なく表示されます。
+強制タッチは、画面上の特定の要素に関連付けられていません。インターフェイスコントローラーにアタッチできるメニューは1つだけです。このメニューは、画面上での Force Touch の押し方に関係なく表示されます。
 
-1 つまたは 4 つのメニュー間オプションを表示できます。
+1 ~ 4 つのメニューオプションを表示できます。
 
 
 ## <a name="adding-a-menu"></a>メニューの追加
 
-A`Menu`に追加する必要があります、`InterfaceController`デザイン時にストーリー ボード上。 メニュー コントロールが、インターフェイス コント ローラーにドラッグしたときは、ストーリー ボードのプレビューで表示はありませんが、**メニュー**に表示されます、**ドキュメント アウトライン**パッド。
+は`Menu` 、デザイン時にストーリー `InterfaceController`ボードのに追加する必要があります。 メニューコントロールをインターフェイスコントローラー上にドラッグすると、ストーリーボードのプレビューに視覚的な表示はありませんが、**ドキュメントアウトライン**パッドには**メニュー**が表示されます。
 
-![](menu-images/menu-action.png "デザイン時にメニューの編集")
+![](menu-images/menu-action.png "デザイン時のメニューの編集")
 
-最大で 4 つのメニュー項目は、メニュー コントロールを追加できます。 構成することができますが、**プロパティ**パッド。 次の属性を設定できます。
+メニューコントロールには、最大4つのメニュー項目を追加できます。 これらは、 **[プロパティ]** パッドで構成できます。 次の属性を設定できます。
 
 - タイトル、および
-- カスタム イメージ、または
-- システム イメージの場合:受け入れるように、ブロック、拒否、情報を追加、さらに、ミュート、一時停止、再生、再開、共有、シャッフル、スピーカー、ごみ箱を繰り返します。
+- カスタムイメージ、または
+- システムイメージ:Accept、Add、Block、辞退、Info、More、More、ミュート、Pause、Play、Repeat、Resume、Share、シャッフル、スピーカー、ごみ箱。
 
-作成、`Action`を選択して、**イベント**のセクション、**プロパティ**パッド、アクション メソッドの名前を入力します。 部分メソッドが、コードでは、次のように、インターフェイス コント ローラー クラスで実装できますで作成されます。
+[プロパティ`Action` ] パッドの **[イベント]** セクションを選択し、アクションメソッドの名前を入力して、を作成します。 部分メソッドは、次のようにインターフェイスコントローラークラスで実装できるコードで作成されます。
 
 ```csharp
 partial void MenuItemTapped ()
@@ -51,14 +51,14 @@ partial void MenuItemTapped ()
 }
 ```
 
-### <a name="custom-images"></a>カスタム イメージ
+### <a name="custom-images"></a>カスタムイメージ
 
-IOS でのタブの画像と同様に、メニュー項目のイメージは、背景を表示できるようにするアルファ チャネルを持つ非透過のパターンを必要とします。
+IOS のタブ画像と同様に、メニュー項目イメージには、背景を表示するためのアルファチャネルを持つ不透明なパターンが必要です。
 
-最適なパフォーマンス watch アプリ プロジェクト (watch アプリ拡張機能プロジェクトではなく) にメニューを使用するイメージを追加する必要があります。
+最適なパフォーマンスを得るには、メニューに使用するイメージを watch アプリのプロジェクト (watch app extension プロジェクトではなく) に追加する必要があります。
 
 
-## <a name="changing-the-menu-items"></a>メニュー項目を変更します。
+## <a name="changing-the-menu-items"></a>メニュー項目の変更
 
 <!--
 ### Design Time Items
@@ -66,16 +66,16 @@ IOS でのタブの画像と同様に、メニュー項目のイメージは、�
 Menu items added the storyboard can be shown and hidden programmatically.
 -->
 
-### <a name="adding-at-runtime"></a>実行時に追加します。
+### <a name="adding-at-runtime"></a>追加 (実行時に)
 
-発生することはできません、`Menu`ですが、実行時に、インターフェイス コント ローラーに追加するのコレクション`MenuItem`s*できます*プログラムで変更します。
-使用して、`AddMenuItem`メソッド。
+を`Menu`実行時にインターフェイスコントローラーに追加することはできませんが、の`MenuItem`コレクションはプログラムによって変更*でき*ます。
+次に`AddMenuItem`示すように、メソッドを使用します。
 
 ```csharp
 AddMenuItem (WKMenuItemIcon.Accept, "Yes", new ObjCRuntime.Selector ("tapped"));
 ```
 
-Xamarin.iOS ウォッチ キット API は現在必要があります、`selector`の`AdMenuItem`メソッドで、次のように宣言する必要があります。
+現在、Xamarin. iOS Watch Kit API では`selector` 、 `AdMenuItem`メソッドのが必要です。これは次のように宣言する必要があります。
 
 ```csharp
 [Export("tapped")]
@@ -85,15 +85,15 @@ void MenuItemTapped ()
 }
 ```
 
-### <a name="removing-at-runtime"></a>実行時に削除します。
+### <a name="removing-at-runtime"></a>削除 (実行時に)
 
-`ClearAllMenuItems`すべてを削除するメソッドを呼び出すことが*プログラムによって追加された*メニュー項目。
+メソッド`ClearAllMenuItems`を呼び出して、*プログラムによって追加された*すべてのメニュー項目を削除できます。
 
-ストーリー ボードで構成されているメニュー項目をクリアすることはできません。
+ストーリーボードで構成されているメニュー項目を消去することはできません。
 
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [WatchKitCatalog (サンプル)](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)
-- [Apple のメニューのドキュメント](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/Menus.html)
+- [WatchKitCatalog (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
+- [Apple のメニュードキュメント](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/Menus.html)

@@ -1,44 +1,44 @@
 ---
 title: バインドの Unified API への移行
-description: この記事では、Xamarin.IOS および Xamarin.Mac アプリケーションの Unified Api をサポートするために既存の Xamarin バインド プロジェクトの更新に必要な手順について説明します。
+description: この記事では、Xamarin および Xamarin アプリケーション用の統合 Api をサポートするために、既存の Xamarin バインドプロジェクトを更新するために必要な手順について説明します。
 ms.prod: xamarin
 ms.assetid: 5E2A3251-D17F-4F9C-9EA0-6321FEBE8577
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: f081ccda507fe3fe65af0e2fb50841aecd7b3c23
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 4046dcff5cb572890ad41ab57efe6345d09f61fd
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67830466"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68646295"
 ---
 # <a name="migrating-a-binding-to-the-unified-api"></a>バインドの Unified API への移行
 
-_この記事では、Xamarin.IOS および Xamarin.Mac アプリケーションの Unified Api をサポートするために既存の Xamarin バインド プロジェクトの更新に必要な手順について説明します。_
+_この記事では、Xamarin および Xamarin アプリケーション用の統合 Api をサポートするために、既存の Xamarin バインドプロジェクトを更新するために必要な手順について説明します。_
 
 ## <a name="overview"></a>概要
 
-2015 年 2 月 1 日の開始 Apple では、iTunes、Mac App Store への新しい送信は 64 ビット アプリケーションである必要がある必要があります。 その結果、新しい Xamarin.iOS または Xamarin.Mac アプリケーションでは、64 ビットをサポートするために、既存のクラシック MonoTouch と MonoMac Api ではなく新しい Unified API を使用する必要があります。
+2月1日以降、2015 Apple では、iTunes および Mac App Store への新規送信がすべて64ビットアプリケーションである必要があります。 そのため、新しい Xamarin. iOS または monotouch.dialog アプリケーションでは、64ビットをサポートするために、既存のクラシックおよびモノ Mac Api ではなく、新しい Unified API を使用する必要があります。
 
-さらに、Xamarin バインド プロジェクトは、64 ビット Xamarin.iOS、Xamarin.Mac プロジェクトに含まれる新しい Unified Api もサポートする必要があります。 この記事では、Unified API を使用して既存のバインド プロジェクトの更新に必要な手順を説明します。
+さらに、Xamarin バインドプロジェクトは、64ビットの Xamarin. iOS または Xamarin. Mac プロジェクトに含まれる新しい統合 Api もサポートする必要があります。 この記事では、Unified API を使用するように既存のバインドプロジェクトを更新するために必要な手順について説明します。
 
 ## <a name="requirements"></a>必要条件
 
-この記事で紹介する手順を完了する、次が必要。
+この記事に記載されている手順を完了するには、次のものが必要です。
 
-- **Visual Studio for Mac** -Visual Studio for Mac の最新バージョンがインストールされており、開発用コンピューターで構成されています。
-- **Apple Mac** - Apple の iOS 用のバインドのプロジェクトをビルドするには mac が必要とファルダ
+- **Visual Studio for Mac** -開発用コンピューターにインストールされ、構成されている Visual Studio for Mac の最新バージョンです。
+- **Apple mac** -IOS および Mac 用のバインドプロジェクトをビルドするには、apple mac が必要です。
 
-バインド プロジェクトは Windows マシン上の Visual studio ではサポートされていません。
+Windows コンピューターの Visual studio では、プロジェクトのバインドはサポートされていません。
 
-## <a name="modify-the-using-statements"></a>使用してステートメントを変更します。
+## <a name="modify-the-using-statements"></a>Using ステートメントを変更する
 
-Unified Api によりを簡単にこれまでよりも Mac および iOS だけでなく、同じの 32 ビットおよび 64 ビット アプリケーションをサポートするバイナリことができますの間でコードを共有します。 削除して、 _MonoMac_と_MonoTouch_プレフィックス、名前空間から簡単に共有 Xamarin.Mac、Xamarin.iOS アプリケーションのプロジェクト間で実現されます。
+統合された Api を使用すると、Mac と iOS の間でコードを共有できるだけでなく、同じバイナリで32および64ビットアプリケーションをサポートすることができます。 名前空間から_モノ Mac_と_monotouch.dialog_プレフィックスを削除することにより、xamarin と xamarin の両方のアプリケーションプロジェクトでより簡単な共有が実現されます。
 
-バインディング、コントラクトのいずれかを変更する必要がありますが、結果として (およびその他の`.cs`バインド プロジェクト内のファイル) を削除する、 _MonoMac_と_MonoTouch_からプレフィックス、 `using`ステートメント。
+そのため`.cs` 、microsoft の`using`ステートメントから、モノの_mac_と_monotouch.dialog_のプレフィックスを削除するには、バインドコントラクト (およびバインドプロジェクト内のその他のファイル) を変更する必要があります。
 
-たとえば、次を指定されたバインドのコントラクトでステートメントを使用します。
+たとえば、バインドコントラクトで次の using ステートメントを使用したとします。
 
 ```csharp
 using System;
@@ -48,7 +48,7 @@ using MonoTouch.UIKit;
 using MonoTouch.ObjCRuntime;
 ```
 
-取り除くことは、`MonoTouch`プレフィックスは次のようになります。
+プレフィックスを`MonoTouch`削除すると、次のような結果になります。
 
 ```csharp
 using System;
@@ -58,60 +58,60 @@ using UIKit;
 using ObjCRuntime;
 ```
 
-このいずれかに対して行う必要がありますが、もう一度`.cs`バインド プロジェクト ファイル。 この変更は、次の手順は、新しいネイティブ データ型を使用するには、このバインド プロジェクトを更新するは。
+ここでも、バインドプロジェクト内の任意`.cs`のファイルに対してこれを行う必要があります。 この変更が行われたら、次の手順では、新しいネイティブデータ型を使用するようにバインドプロジェクトを更新します。
 
-Unified API の詳細についてを参照してください、 [Unified API](~/cross-platform/macios/unified/index.md)ドキュメント。 32 ビットおよび 64 ビット アプリケーションとフレームワークに関する情報をサポートしている詳しい背景情報についてを参照してください。、 [32 ビットおよび 64 ビット プラットフォームに関する考慮事項](~/cross-platform/macios/32-and-64/index.md)ドキュメント。
+Unified API の詳細については、 [Unified API](~/cross-platform/macios/unified/index.md)のドキュメントを参照してください。 32および64ビットアプリケーションのサポートとフレームワークに関する情報の背景については、 [32 および64ビットプラットフォームに関する考慮事項](~/cross-platform/macios/32-and-64/index.md)に関するドキュメントを参照してください。
 
-## <a name="update-to-native-data-types"></a>ネイティブ データ型への更新
+## <a name="update-to-native-data-types"></a>ネイティブデータ型への更新
 
-Objective C のマップ、`NSInteger`のデータ型`int32_t`32 ビット システムでと`int64_t`64 ビット システムでします。 この動作が一致する新しい Unified API には、前に使用が置き換えられます`int`(常として定義されている .net `System.Int32`) に新しいデータ型:`System.nint`します。
+目標 C は、 `NSInteger`データ`int32_t`型を`int64_t` 32 ビットシステム上のと64ビットシステムにマップします。 この動作を一致させるために、新しい Unified API は、 `int`の以前の使用 (.net では、 `System.Int32`常にとして定義さ`System.nint`れている) を新しいデータ型に置き換えます。
 
-新しいと共に`nint`データ型の場合は、Unified API が導入されています、`nuint`と`nfloat`へのマッピングの種類、`NSUInteger`と`CGFloat`型もします。
+新しい`nint`データ型と共に、型および型へ`nuint` `NSUInteger` `CGFloat`の`nfloat`マッピングのために、Unified API には型と型が導入されています。
 
-当社の API を確認し、任意のインスタンスのことを確認する必要があります、 `NSInteger`、`NSUInteger`と`CGFloat`以前にマップされている`int`、`uint`と`float`新しいに更新される`nint`、 `nuint`と`nfloat`型。
+前に説明したように、API を確認し、のすべての`NSInteger`インスタンス`NSUInteger`と`CGFloat` 、以前に`uint` `int` `float`マップしたのインスタンスと、新しい`nint`に更新する必要があります。`nuint`型と`nfloat`型。
 
-たとえばの OBJECTIVE-C メソッド定義を考えてみます。
+たとえば、という目的の C メソッド定義を指定した場合、次のようになります。
 
 ```csharp
 -(NSInteger) add:(NSInteger)operandUn and:(NSInteger) operandDeux;
 ```
 
-以前のバインドのコントラクトには、次の定義が必要がある。 場合
+前のバインディングコントラクトが次のように定義されている場合:
 
 ```csharp
 [Export("add:and:")]
 int Add(int operandUn, int operandDeux);
 ```
 
-新しいバインドを更新します。
+新しいバインドを次のように更新します。
 
 ```csharp
 [Export("add:and:")]
 nint Add(nint operandUn, nint operandDeux);
 ```
-私たちはマッピングする場合、新しいバージョン サード パーティ製のライブラリと私たちが最初にリンクされているよりも、確認する必要があります、`.h`あればライブラリとヘッダー ファイルに既存の明示的な呼び出し`int`、 `int32_t`、 `unsigned int`、`uint32_t`または`float`するアップグレードされた、 `NSInteger`、`NSUInteger`または`CGFloat`します。 そうである場合、同じ変更を`nint`、`nuint`と`nfloat`型にも、そのマッピングにする必要があります。
+最初にリンクしたものより新しいバージョンのサードパーティライブラリにマッピングする場合は、 `.h`ライブラリのヘッダーファイルを確認し、 `int`、 `int32_t` `unsigned int`、、 `uint32_t`またはの呼び出しが終了しているかどうかを確認する必要があります。は、 、`NSUInteger` また`CGFloat`はにアップグレードされました。 `NSInteger` `float` その場合は、 `nint`、、 `nuint`および`nfloat`型に対する同じ変更を、マッピングにも加える必要があります。
 
-これらのデータ型の変更の詳細については、次を参照してください。、[ネイティブ型](~/cross-platform/macios/nativetypes.md)ドキュメント。
+これらのデータ型の変更の詳細については、[ネイティブ型](~/cross-platform/macios/nativetypes.md)のドキュメントを参照してください。
 
-## <a name="update-the-coregraphics-types"></a>CoreGraphics 型を更新します。
+## <a name="update-the-coregraphics-types"></a>CoreGraphics 型を更新する
 
-使用されるポイント、サイズ、および四角形のデータ型`CoreGraphics`で実行されているデバイスに応じて 32 ビットまたは 64 ビットを使用します。 発生すると、データ型と一致する既存のデータ構造を使用して Xamarin は iOS と Mac の Api は、最初にバインドされると`System.Drawing`(`RectangleF`など)。
+で`CoreGraphics`使用されるポイント、サイズ、および四角形のデータ型は、実行されているデバイスに応じて32または64ビットを使用します。 Xamarin が iOS と Mac の api を最初にバインドしたときに、の`System.Drawing`データ型と一致するようになった既存のデータ構造を使用しました (`RectangleF`など)。
 
-呼び出すときに、既存のコードにする必要があります、次の調整の 64 ビットと新しいネイティブ データ型をサポートするために必要であるため`CoreGraphic`メソッド。
+64ビットと新しいネイティブデータ型をサポートするための要件があるため、メソッドを呼び出す`CoreGraphic`ときには、既存のコードに対して次の調整を行う必要があります。
 
-- **CGRect** -使用`CGRect`の代わりに`RectangleF`四角形の領域にポイント浮動を定義する場合。
-- **CGSize** -使用`CGSize`の代わりに`SizeF`浮動小数点のポイント サイズ (幅と高さ) を定義するときにします。
-- **CGPoint** -使用`CGPoint`の代わりに`PointF`(X と Y 座標) の場所にポイント浮動を定義する場合。
+- **Cgrect** -浮動`CGRect`小数点`RectangleF`四角形領域を定義するときに、の代わりにを使用します。
+- **Cgsize** -浮動`CGSize`小数点`SizeF`サイズ (幅と高さ) を定義するときに、の代わりにを使用します。
+- **Cgpoint** -浮動`CGPoint`小数点`PointF`位置 (X 座標と Y 座標) を定義するときに、の代わりにを使用します。
 
-API を確認し、任意のインスタンスのことを確認する必要が`CGRect`、`CGSize`または`CGPoint`以前にバインドするされた`RectangleF`、`SizeF`または`PointF`ネイティブな型に変更する`CGRect`、`CGSize`または`CGPoint`直接します。
+上記のように、API を確認`CGRect`し、以前に`CGSize` `RectangleF` `SizeF` `PointF`バインドされていた、 `CGPoint`またはネイティブ型`CGRect`に変更されたのインスタンスがあることを確認する必要があります。または`CGPoint`直接。 `CGSize`
 
-たとえば、OBJECTIVE-C の初期化子を考えてみます。
+たとえば、の目的の C 初期化子を指定した場合、次のようになります。
 
 ```csharp
 - (id)initWithFrame:(CGRect)frame;
 ```
 
-場合は、前のバインディングには、次のコードが含まれています。
+前のバインディングに次のコードが含まれている場合:
 
 ```csharp
 [Export ("initWithFrame:")]
@@ -119,7 +119,7 @@ IntPtr Constructor (RectangleF frame);
 
 ```
 
-そのコードを更新します。
+そのコードを次のように更新します。
 
 ```csharp
 [Export ("initWithFrame:")]
@@ -127,18 +127,18 @@ IntPtr Constructor (CGRect frame);
 
 ```
 
-すべてのコードの変更の準備には、バインド プロジェクトを変更または Unified Api に対してバインド ファイルを作成する必要があります。
+すべてのコード変更が適用されたので、バインドプロジェクトを変更するか、統合 Api にバインドするようにファイルを作成する必要があります。
 
-## <a name="modify-the-binding-project"></a>バインド プロジェクトを変更します。
+## <a name="modify-the-binding-project"></a>バインドプロジェクトを変更する
 
-Unified Api を使用して、バインド プロジェクトを更新する最後の手順として変更するか必要があります、 `MakeFile` (バインドしているから Visual studio for Mac) の場合、プロジェクトまたは Xamarin プロジェクトの種類を作成し、指示するために使用_btouch_クラシックものではなく Unified Api をバインドします。
+統合された api を使用するようにバインドプロジェクトを更新する最後の手順として`MakeFile` 、プロジェクトのビルドに使用するを変更するか、Xamarin プロジェクトの種類 (Visual Studio for Mac 内からバインドする場合) を変更して、 _btouch_にバインドするように指示する必要があります。従来の Api ではなく、統合された Api に対して。
 
 
 ### <a name="updating-a-makefile"></a>メイクファイルの更新
 
-場合は、Xamarin に、バインド プロジェクトをビルドするメイクファイルを使用しています。含める必要が、DLL、`--new-style`コマンド ライン オプションと呼び出し`btouch-native`の代わりに`btouch`します。
+メイクファイルを使用して、バインドプロジェクトを Xamarin にビルドする場合。DLL では、 `--new-style`コマンドラインオプションを指定し、の`btouch`代わり`btouch-native`にを呼び出す必要があります。
 
-したがって、次を指定`MakeFile`:
+次`MakeFile`のように指定します。
 
 ```csharp
 BINDDIR=/src/binding
@@ -173,50 +173,50 @@ clean:
     -rm -f *.a *.dll
 ```
 
-呼び出し元からに切り替える必要があります`btouch`に`btouch-native`ので、マクロ定義を次のように調整しますが。
+の呼び出し`btouch`からに切り替える必要が`btouch-native`あるため、次のようにマクロ定義を調整します。
 
 ```csharp
 BTOUCH=/Developer/MonoTouch/usr/bin/btouch-native
 ```
 
-呼び出しを更新`btouch`を追加し、`--new-style`オプションを次のようにします。
+の呼び出しを更新し、 `btouch`次の`--new-style`ようにオプションを追加します。
 
 ```csharp
 XMBindingLibrary.dll: AssemblyInfo.cs XMBindingLibrarySample.cs extras.cs libXMBindingLibrarySampleUniversal.a
     $(BTOUCH) -unsafe --new-style -out:$@ XMBindingLibrarySample.cs -x=AssemblyInfo.cs -x=extras.cs --link-with=libXMBindingLibrarySampleUniversal.a,libXMBindingLibrarySampleUniversal.a
 ```
 
-実行できるようになりました、 `MakeFile` API の新しい 64 ビット バージョンをビルドするには通常どおりです。
+これで、を通常`MakeFile`どおりに実行して、API の新しい64ビットバージョンをビルドできるようになりました。
 
-### <a name="updating-a-binding-project-type"></a>バインド プロジェクトの種類を更新しています
+### <a name="updating-a-binding-project-type"></a>バインドプロジェクトの種類の更新
 
-場合は当社の API を構築する、Visual Studio for Mac プロジェクト テンプレートのバインドを使用している、バインド プロジェクト テンプレートの新しい Unified API バージョンに更新する必要になります。 これを行う最も簡単な方法では、すべての既存のコードと設定を新しい Unified API のバインド プロジェクトの追加とコピーを開始します。
+Visual Studio for Mac バインドプロジェクトテンプレートを使用して API を構築している場合は、新しい Unified API バージョンのバインドプロジェクトテンプレートに更新する必要があります。 これを行う最も簡単な方法は、新しい Unified API バインドプロジェクトを開始し、既存のすべてのコードと設定をコピーすることです。
 
 次の手順で行います。
 
-1. Visual Studio for mac の起動
-2. 選択**ファイル** > **新しい** > **ソリューション.**
-3. 新しいソリューション ダイアログ ボックスで選択**iOS** > **Unified API** > **iOS プロジェクトのバインド**: 
+1. Visual Studio for Mac を開始します。
+2. **ファイル** > の新しいソリューション > の選択.. **.**
+3. [新しいソリューション] ダイアログボックスで、[ **ios** > **Unified API** > **ios バインドプロジェクト**] を選択します。 
 
-    [![](update-binding-images/image01new.png "新しいソリューション ダイアログ ボックスで、iOS を選択します/Unified API/iOS バインド プロジェクト。")](update-binding-images/image01new.png#lightbox)
-4. 新しいプロジェクトの構成 ダイアログ ボックスで次のように入力します。、**名前**新しいバインド プロジェクトをクリックします、 **OK**ボタン。
-5. バインドを作成する予定は OBJECTIVE-C ライブラリの 64 ビット バージョンが含まれます。
-6. 既存の 32 ビット クラシック API バインド プロジェクトからソース コードをコピー (など、`ApiDefinition.cs`と`StructsAndEnums.cs`ファイル)。
-7. ソース コード ファイルに上記説明したように変更を行います。
+    [![](update-binding-images/image01new.png "[新しいソリューション] ダイアログボックスで、[iOS/Unified API/iOS バインドプロジェクト] を選択します。")](update-binding-images/image01new.png#lightbox)
+4. [新しいプロジェクトの構成] ダイアログで、新しいバインドプロジェクトの**名前**を入力し、 **[OK]** をクリックします。
+5. バインドを作成する対象となる、64ビットバージョンの目標 C ライブラリを含めます。
+6. 既存の32ビット Classic API バインドプロジェクト ( `ApiDefinition.cs`や`StructsAndEnums.cs`ファイルなど) からソースコードをコピーします。
+7. 上記の変更をソースコードファイルに加えます。
 
-すべての変更を行うには、32 ビット バージョンと同様に、新しい 64 ビット バージョンの API を構築できます。
+これらの変更をすべて適用したら、32ビットバージョンの場合と同様に、API の新しい64ビットバージョンをビルドできます。
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
-この記事では、新しい Unified Api と 64 ビットのデバイスをサポートするために既存の Xamarin バインド プロジェクトに対して行う必要がある変更を示しましたし、API の新しい 64 ビットの互換性のあるバージョンをビルドするために必要な手順を実行します。
+この記事では、新しい統合 Api と64ビットデバイスをサポートするために、既存の Xamarin バインドプロジェクトに加える必要がある変更と、API の新しい64ビット互換バージョンを構築するために必要な手順について説明しました。
 
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [Mac および iOS](~/cross-platform/macios/index.md)
+- [Mac と iOS](~/cross-platform/macios/index.md)
 - [Unified API](~/cross-platform/macios/nativetypes.md)
-- [32/64 ビットのプラットフォームに関する考慮事項](~/cross-platform/macios/32-and-64/index.md)
+- [32/64 ビットプラットフォームに関する考慮事項](~/cross-platform/macios/32-and-64/index.md)
 - [既存の iOS アプリのアップグレード](~/cross-platform/macios/unified/updating-ios-apps.md)
 - [Unified API](~/cross-platform/macios/unified/index.md)
-- [BindingSample](https://developer.xamarin.com/samples/monotouch/BindingSample/)
+- [BindingSample](https://docs.microsoft.com/en-us/samples/xamarin/ios-samples/bindingsample/)

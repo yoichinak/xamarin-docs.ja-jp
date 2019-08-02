@@ -7,16 +7,16 @@ ms.assetid: CE1B222E-A2D0-4016-A532-EC1E59EE3D6B
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
-ms.openlocfilehash: 3ea05563ecbca95d26d692d5424c30e961229ac5
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 8071f310e899575699e1d0b925541f2863b00676
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61021213"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68645186"
 ---
 # <a name="skiasharp-blend-modes"></a>SkiaSharp のブレンド モード
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 これらの記事の重点、 [ `BlendMode` ](xref:SkiaSharp.SKPaint.BlendMode)プロパティの[ `SKPaint`](xref:SkiaSharp.SKPaint)します。 `BlendMode`プロパティの型は[ `SKBlendMode` ](xref:SkiaSharp.SKBlendMode)、29 のメンバーを持つ列挙体。
 
@@ -46,13 +46,13 @@ SkiaSharp のブレンド モードは、W3C で説明したものに密接に�
 
 これら 3 つのカテゴリの名前は、次のセクションでより多くの意味になる予定です。 メンバーがここに表示されていること、順序は、の定義と同様、`SKBlendMode`列挙体。 最初の列内の 13 の列挙体のメンバーでは、0 ~ 12 の整数値があります。 2 番目の列は整数 13 ~ 24 に対応する列挙型メンバーを 3 番目の列内のメンバーの 25 ~ 28 の値がします。
 
-モードは、後ほどこれら blend_約_W3C で同じ順序**合成とレベル 1 のブレンド**ドキュメントがいくつか違いがあります。`Src`モードと呼びます_コピー_ 、W3C ドキュメント内および`Plus`と呼びます_明るい_。 W3C のドキュメント定義、_標準_に含まれていない blend モード`SKBlendModes`と同じであるため`SrcOver`します。 `Modulate` Blend モード (最初の列の上部) には、W3C のドキュメントとのディスカッションに含まれていない、`Multiply`モードよりも前`Screen`します。
+これらの blend モードについては、W3C**合成および Blend Level 1**のドキュメントと_ほぼ_同じ順序で説明されていますが、いくつか違いがあります。このモードは `Plus` W3C ドキュメントでは Copy と呼ばれ、軽いと呼ばれます。 `Src` W3C のドキュメント定義、_標準_に含まれていない blend モード`SKBlendModes`と同じであるため`SrcOver`します。 `Modulate` Blend モード (最初の列の上部) には、W3C のドキュメントとのディスカッションに含まれていない、`Multiply`モードよりも前`Screen`します。
 
 `Modulate` Blend モードは Skia に一意な追加の Porter Duff モードとは分離モードとして、説明します。
 
 ## <a name="the-importance-of-transparency"></a>透過性の重要性
 
-従来は、合成がと共に開発の概念、_アルファ チャネル_します。 などの表示画面、`SKCanvas`オブジェクトおよびフルカラー ビットマップ、各ピクセルは 4 バイト。1 バイト、赤、緑、および青のコンポーネントと追加のバイトの透明度。 このアルファ コンポーネントは完全な透明性の 0 のこれらの値の間での透過性のさまざまなレベルでの完全な不透明度 0 xff までです。
+従来は、合成がと共に開発の概念、_アルファ チャネル_します。 オブジェクトやフルカラービットマップなどの`SKCanvas`表示画面では、各ピクセルは4バイトで構成されます。赤、緑、および青のコンポーネントの場合はそれぞれ1バイト、透明度の場合は追加のバイト。 このアルファ コンポーネントは完全な透明性の 0 のこれらの値の間での透過性のさまざまなレベルでの完全な不透明度 0 xff までです。
 
 ブレンド モードの多くは、透過性に依存します。 通常はときに、`SKCanvas`で最初に取得されます、`PaintSurface`ハンドラー、または、`SKCanvas`が作成されるビットマップを描画するには、最初の手順はこの呼び出しです。
 
@@ -93,4 +93,4 @@ Blend のない分離モードを使用すると、色相、彩度、または�
 ## <a name="related-links"></a>関連リンク
 
 - [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

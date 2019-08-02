@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: 996e6469347a50523964a5b855804b0041ff8d21
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: 40a44b2748b29b21a1456c55cb75514f18506dd7
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65970979"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68648566"
 ---
 # <a name="images-in-xamarinforms"></a>Xamarin.Forms でのイメージ
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithImages/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithimages)
 
 _イメージは、Xamarin.Forms のプラットフォームで共有できる、具体的には、各プラットフォーム用に読み込むことができるまたは表示をダウンロードすることができます。_
 
@@ -44,7 +44,7 @@ Xamarin.Forms を使用して、 [ `Image` ](xref:Xamarin.Forms.Image)をペー�
 - [`AspectFill`](xref:Xamarin.Forms.Aspect.AspectFill) -縦横比を維持しながら、表示領域を塗りつぶすようにイメージをクリップ (ie。 ゆがむことなく)。
 - [`AspectFit`](xref:Xamarin.Forms.Aspect.AspectFit) -レター ボックス (必須) の場合は、イメージ全体のイメージが表示領域に収まるように空白かどうかに応じて境界線の上/下に追加で、イメージは幅または高さ。
 
-イメージを読み込むことが、[ローカルファイル](#local-images)、[埋め込みリソース](#embedded-images)、または[ダウンロード](#downloading-images)します。 フォント アイコンを表示してさらに、 [ `Image` ](xref:Xamarin.Forms.Image)ビューのフォント アイコン データを指定することによって、`FontImageSource`オブジェクト。 詳細については、次を参照してください。[フォント アイコン表示](~/xamarin-forms/user-interface/text/fonts.md#display-font-icons)で、[フォント](~/xamarin-forms/user-interface/text/fonts.md)ガイド。
+イメージを読み込むことが、[ローカルファイル](#local-images)、[埋め込みリソース](#embedded-images)、または[ダウンロード](#downloading-images)します。 また、 `FontImageSource`オブジェクトのフォントアイコンデータを指定する[`Image`](xref:Xamarin.Forms.Image)ことで、ビューによってフォントアイコンを表示することもできます。 詳細については、「[フォント](~/xamarin-forms/user-interface/text/fonts.md)ガイド」の「[フォントアイコンの表示](~/xamarin-forms/user-interface/text/fonts.md#display-font-icons)」を参照してください。
 
 ## <a name="local-images"></a>ローカルのイメージ
 
@@ -53,11 +53,11 @@ Xamarin.Forms を使用して、 [ `Image` ](xref:Xamarin.Forms.Image)をペー�
 すべてのアプリ間で 1 つのイメージを使用する*すべてのプラットフォームで同じファイル名を使用する必要があります*、有効な Android のリソース名を指定する必要があります (つまり。 のみ小文字、数字、アンダー スコア、および期間が許可されている)。
 
 - **iOS** - 管理し、iOS 9 は、使用するために、イメージをサポートする方法を優先**資産カタログの画像セット**、すべてのスケール ファクターのさまざまなデバイスをサポートするために必要なイメージのバージョンを含める必要がありますが、アプリケーション。 詳細については、[資産カタログ イメージ セットに追加するイメージ](~/ios/app-fundamentals/images-icons/displaying-an-image.md)を参照してください。
-- **Android** -内のイメージを配置、**リソース/drawable**ディレクトリが**ビルド アクション。AndroidResource**します。 高 DPI と低いバージョンの画像が指定することもできます (で適切に名前付き**リソース**など、サブディレクトリ**ldpi drawable**、 **drawable hdpi**と**drawable xhdpi**)。
-- **ユニバーサル Windows プラットフォーム (UWP)** -アプリケーションのルート ディレクトリにイメージを配置**ビルド アクション。コンテンツ**します。
+- **Android** -ビルドアクションを使用して、**リソース/** 作成された**ディレクトリにイメージを配置します。AndroidResource**。 高 DPI と低いバージョンの画像が指定することもできます (で適切に名前付き**リソース**など、サブディレクトリ**ldpi drawable**、 **drawable hdpi**と**drawable xhdpi**)。
+- **ユニバーサル Windows プラットフォーム (UWP)** -ビルドアクションを使用して **、アプリケーションのルートディレクトリにイメージを配置します。コンテンツ**。
 
 > [!IMPORTANT]
-> IOS 9 の場合は、前にイメージが通常の配置、**リソース**フォルダー**ビルド アクション。BundleResource**します。 ただし、apple の iOS アプリで画像の操作には、このメソッドは廃止されました。 詳細については、[画像のサイズとファイル名](~/ios/app-fundamentals/images-icons/displaying-an-image.md)を参照してください。
+> IOS 9 より前のイメージは、通常、ビルドアクションを使用**して Resources フォルダーに配置されていました。BundleResource**。 ただし、apple の iOS アプリで画像の操作には、このメソッドは廃止されました。 詳細については、[画像のサイズとファイル名](~/ios/app-fundamentals/images-icons/displaying-an-image.md)を参照してください。
 
 ファイルの名前付けおよび配置についてこれらの規則に準拠するには、次の XAML を読み込み、すべてのプラットフォーム イメージを表示することができます。
 
@@ -90,7 +90,7 @@ iOS、Android、および UWP には、オペレーティング システムが�
 
 IOS 9 以降のイメージの管理の推奨される方法は、適切な資産カタログの画像セットに必要な各解像度のイメージをドラッグすることです。 詳細については、[資産カタログ イメージ セットに追加するイメージ](~/ios/app-fundamentals/images-icons/displaying-an-image.md)を参照してください。
 
-Retina のバージョンのイメージは、iOS 9 より前に配置する可能性があります、 **リソース** フォルダー - 2 と 3 回の解像度、 **@2x** または **@3x** (例: ファイル拡張子の前に、ファイル名のサフィックス **myimage@2x.png**). ただし、apple の iOS アプリで画像の操作には、このメソッドは廃止されました。 詳細については、[画像のサイズとファイル名](~/ios/app-fundamentals/images-icons/displaying-an-image.md)を参照してください。
+Retina のバージョンのイメージは、iOS 9 より前に配置する可能性があります、 **リソース** フォルダー - 2 と 3 回の解像度、 **@2x** または **@3x** (例: ファイル拡張子の前に、ファイル名のサフィックス **myimage@2x.png** ). ただし、apple の iOS アプリで画像の操作には、このメソッドは廃止されました。 詳細については、[画像のサイズとファイル名](~/ios/app-fundamentals/images-icons/displaying-an-image.md)を参照してください。
 
 Android の代替解像度のイメージを配置する必要があります[特別という名前のディレクトリ](https://developer.android.com/guide/practices/screens_support.html)に次のスクリーン ショットに示すように、Android プロジェクトで。
 
@@ -102,23 +102,23 @@ Android の代替解像度のイメージを配置する必要があります[�
 
 一部のコントロールでは、イメージを表示するプロパティがあります。
 
-- [`Page`](xref:Xamarin.Forms.Page) -すべてのページから派生した型`Page`が[ `IconImageSource` ](xref:Xamarin.Forms.Page.IconImageSource)と[ `BackgroundImageSource` ](xref:Xamarin.Forms.Page.BackgroundImageSource)プロパティは、ファイル、埋め込みリソース、URI、またはストリームに割り当てることができます。 場合など、特定の状況で、 [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)が表示されて、 [ `ContentPage`](xref:Xamarin.Forms.ContentPage)プラットフォームでサポートされている場合、アイコンが表示されます。
+- [`Page`](xref:Xamarin.Forms.Page)-から`Page`派生するすべてのページの種類[`BackgroundImageSource`](xref:Xamarin.Forms.Page.BackgroundImageSource)にはプロパティとプロパティがあり[`IconImageSource`](xref:Xamarin.Forms.Page.IconImageSource) 、ファイル、埋め込みリソース、URI、またはストリームを割り当てることができます。 場合など、特定の状況で、 [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)が表示されて、 [ `ContentPage`](xref:Xamarin.Forms.ContentPage)プラットフォームでサポートされている場合、アイコンが表示されます。
 
   > [!IMPORTANT]
-  > Ios では、 [ `Page.IconImageSource` ](xref:Xamarin.Forms.Page.IconImageSource)資産カタログの画像セット内のイメージからプロパティを設定することはできません。 代わりのアイコン イメージを読み込み、`Page.IconImageSource`ファイル、埋め込みリソース、URI、またはストリームからのプロパティ。
+  > Ios では、 [ `Page.IconImageSource` ](xref:Xamarin.Forms.Page.IconImageSource)資産カタログの画像セット内のイメージからプロパティを設定することはできません。 代わりに、ファイル、埋め込みリソース`Page.IconImageSource` 、URI、またはストリームから、プロパティのアイコンイメージを読み込みます。
 
-- [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem) は、 [ `IconImageSource` ](xref:Xamarin.Forms.MenuItem.IconImageSource)ファイル、埋め込みリソース、URI、またはストリームから読み込まれたイメージを設定できるプロパティです。
-- [`ImageCell`](xref:Xamarin.Forms.ImageCell) は、 [ `ImageSource` ](xref:Xamarin.Forms.ImageCell.ImageSource)ファイル、埋め込みリソース、URI、またはストリームからイメージを設定できるプロパティを取得します。
+- [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem)-ファイル、 [`IconImageSource`](xref:Xamarin.Forms.MenuItem.IconImageSource)埋め込みリソース、URI、またはストリームから読み込まれたイメージに設定できるプロパティがあります。
+- [`ImageCell`](xref:Xamarin.Forms.ImageCell)-ファイル、 [`ImageSource`](xref:Xamarin.Forms.ImageCell.ImageSource)埋め込みリソース、URI、またはストリームから取得したイメージに設定できるプロパティがあります。
 
 ## <a name="embedded-images"></a>[埋め込み画像]
 
 埋め込み画像は (ローカルのイメージ) のようなアプリケーションにも付属しますが、各アプリケーションのファイル構造、イメージ、イメージのコピーではなく、ファイルがリソースとしてアセンブリに埋め込まれました。 イメージの配布には、このメソッドは、各プラットフォームで同じイメージを使用する場合に推奨し、コードにバンドルされているイメージは、コンポーネントの作成に特に適しています。
 
-プロジェクトには、画像を埋め込む、新しい項目を追加し、追加するイメージ/秒を選択して右クリックします。 既定では、イメージに**ビルド アクション。None**; に設定する必要があります**ビルド アクション。[EmbeddedResource]** になっていることを確認します。
+プロジェクトには、画像を埋め込む、新しい項目を追加し、追加するイメージ/秒を選択して右クリックします。 既定では、イメージに**はビルドアクションがあります。なし**。ビルドアクションに**設定する必要があります。[EmbeddedResource]** になっていることを確認します。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-![](images-images/vs-buildaction.png "ビルド アクションを設定します。埋め込まれたリソース")
+![](images-images/vs-buildaction.png "ビルドアクションの設定:EmbeddedResource")
 
 **ビルド アクション**表示および変更できる、**プロパティ**ファイル ウィンドウ。
 
@@ -128,7 +128,7 @@ IDE によってこの既定値を連結して生成された、**既定 Namespa
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-![](images-images/xs-buildaction.png "ビルド アクションを設定します。埋め込まれたリソース")
+![](images-images/xs-buildaction.png "ビルドアクションの設定:EmbeddedResource")
 
 **ビルド アクション**表示および変更できるようも、**プロパティ**ファイルのパッド。
 このパッドを示しています、**リソース ID**コード内のリソースの参照に使用します。 次のスクリーン ショット、**リソース ID**は**WorkingWithImages.beach.jpg**します。
@@ -298,7 +298,7 @@ webImage.Source = new UriImageSource
 
 参照してください、 [iOS イメージを操作](~/ios/app-fundamentals/images-icons/index.md)、 [Google リモコン](https://developer.android.com/design/style/iconography.html)、および[タイルおよびアイコンのアセットのガイドライン](/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets/)これらのアプリケーション リソースの作成の詳細についてはします。
 
-フォント アイコンを表示してさらに、 [ `Image` ](xref:Xamarin.Forms.Image)ビューのフォント アイコン データを指定することによって、`FontImageSource`オブジェクト。 詳細については、次を参照してください。[フォント アイコン表示](~/xamarin-forms/user-interface/text/fonts.md#display-font-icons)で、[フォント](~/xamarin-forms/user-interface/text/fonts.md)ガイド。
+また、 `FontImageSource`オブジェクトのフォントアイコンデータを指定する[`Image`](xref:Xamarin.Forms.Image)ことで、ビューによってフォントアイコンを表示することもできます。 詳細については、「[フォント](~/xamarin-forms/user-interface/text/fonts.md)ガイド」の「[フォントアイコンの表示](~/xamarin-forms/user-interface/text/fonts.md#display-font-icons)」を参照してください。
 
 ## <a name="splash-screens"></a>スプラッシュ スクリーン
 
@@ -314,7 +314,7 @@ Xamarin.Forms には、さまざまなプラットフォーム間で使用する
 
 ## <a name="related-links"></a>関連リンク
 
-- [WorkingWithImages (サンプル)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithImages/)
+- [WorkingWithImages (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithimages)
 - [iOS 画像の操作](~/ios/app-fundamentals/images-icons/index.md)
 - [Android のアイコン](https://developer.android.com/design/style/iconography.html)
 - [タイルおよびアイコンのアセットのガイドライン](/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets/)

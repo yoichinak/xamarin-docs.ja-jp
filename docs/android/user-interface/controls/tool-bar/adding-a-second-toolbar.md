@@ -6,24 +6,24 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: fc95c05c1945464cd9cac8565d8a11ff1b4c7e1d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 5d2fec537f10ad3ef5300275c9851d4f57bc961d
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61175153"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68645165"
 ---
 # <a name="adding-a-second-toolbar"></a>2 番目のツール バーの追加
 
 
 ## <a name="overview"></a>概要 
 
-`Toolbar`アクション バーには置換を超えることができます&ndash;アクティビティ内で複数回を使用することできますや、画面の任意の場所に配置してカスタマイズする画面の部分の幅のみにまたがるように構成できます。 次の例は、1 秒あたりに作成する方法を示しています。`Toolbar`し、画面の下部に配置します。 これは、`Toolbar`実装**コピー**、**切り取り**、および**貼り付け**メニュー項目。 
+は`Toolbar` 、1つのアクティビティ内で複数&ndash;回使用できる操作バーを置き換える以外にも、画面上の任意の場所に配置するようにカスタマイズすることができ、画面の部分的な幅にのみまたがるように構成できます。 次の例では、2番目`Toolbar`のを作成し、画面の下部に配置する方法を示しています。 これ`Toolbar`は、**コピー**、**切り取り**、および**貼り付け**の各メニュー項目を実装します。 
 
 
-## <a name="define-the-second-toolbar"></a>2 番目のツールバーを定義します。 
+## <a name="define-the-second-toolbar"></a>2番目のツールバーを定義する 
 
-レイアウト ファイルを編集**Main.axml**でその内容を次の XML に置き換えます。
+レイアウトファイルの**Main**を編集し、その内容を次の xml に置き換えます。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -54,53 +54,53 @@ ms.locfileid: "61175153"
 </RelativeLayout>
 ```
 
-この XML は、2 つ目を追加します。`Toolbar`空の画面の一番下`ImageView`、画面の中央の情報を入力します。 この高さ`Toolbar`アクション バーの高さに設定されます。 
+この XML は、画面`Toolbar`の下部に2番目のを追加`ImageView`し、画面の中央に空のを入力します。 この`Toolbar`の高さは、操作バーの高さに設定されています。 
 
 ```xml
 android:minHeight="?android:attr/actionBarSize"
 ```
 
-これの背景色`Toolbar`次に定義されているアクセント カラーに設定されます。
+この`Toolbar`の背景色は、次のように定義されるアクセントの色に設定されます。
 
 ```xml
 android:background="?android:attr/colorAccent
 ```
 
-通知この`Toolbar`、さまざまなテーマに基づきます (**ThemeOverlay.Material.Dark.ActionBar**) で使用した場合、`Toolbar`で作成した[操作バーの置き換え](~/android/user-interface/controls/tool-bar/replacing-the-action-bar.md) &ndash;アクティビティのウィンドウも親しみやすくしたり、最初に使用されるテーマにバインドされていない`Toolbar`します。
+`Toolbar`これは、「」で作成したによって使用されるの`Toolbar`とは別のテーマ (ThemeOverlay) に基づいています。これは、アクティビティのウィンドウ décor またはにバインドされていない[操作バー](~/android/user-interface/controls/tool-bar/replacing-the-action-bar.md) &ndash;を置き換えます。最初`Toolbar`ので使用されるテーマ。
 
-編集**Resources/values/styles.xml**次アクセント カラーをスタイル定義に追加します。 
+**Resources/values/styles .xml**を編集し、スタイル定義に次のアクセント色を追加します。 
 
 ```xml
 <item name="android:colorAccent">#C7A935</item>
 ```
 
-これにより、下部のツールバーでは濃いオレンジ色にします。 ビルドと、アプリを実行している画面の下部にある空白 2 番目ツールバーが表示されます。 
+これにより、下部のツールバーに濃いオレンジ色が設定されます。 アプリをビルドして実行すると、画面の下部に空の2つ目のツールバーが表示されます。 
 
-[![画面の下部にある黄色の 2 番目のツールバーを使用したアプリのスクリーン ショット](adding-a-second-toolbar-images/01-second-toolbar-sml.png)](adding-a-second-toolbar-images/01-second-toolbar.png#lightbox)
+[![画面の下部に黄色い2番目のツールバーがあるアプリのスクリーンショット](adding-a-second-toolbar-images/01-second-toolbar-sml.png)](adding-a-second-toolbar-images/01-second-toolbar.png#lightbox)
 
 
  
-## <a name="add-edit-menu-items"></a>編集メニュー項目を追加します。 
+## <a name="add-edit-menu-items"></a>編集メニュー項目の追加 
 
-このセクションは、下部にあるを編集 メニュー項目を追加する方法を説明します`Toolbar`します。 
+ここでは、[編集] メニュー項目を下部`Toolbar`に追加する方法について説明します。 
 
-セカンダリにメニュー項目を追加する`Toolbar`: 
+メニュー項目をセカンダリ`Toolbar`に追加するには: 
 
-1.  メニュー アイコンを追加、 `mipmap-` (必要な) 場合は、アプリ プロジェクトのフォルダー。
+1.  アプリプロジェクトの`mipmap-`フォルダーにメニューアイコンを追加します (必要な場合)。
 
-2.  メニュー項目の内容を定義する追加のメニュー リソース ファイルを追加することで**リソース/メニュー**します。 
+2.  メニュー項目の内容を定義するには、追加のメニューリソースファイルを [**リソース] メニュー**に追加します。 
 
-3.  アクティビティの`OnCreate`メソッド、検索、 `Toolbar` (呼び出して`FindViewById`) 拡張と、`Toolbar`のメニュー。
+3.  アクティビティの`OnCreate`メソッドで、 `Toolbar` (を`Toolbar`呼び出し`FindViewById`て) を検索し、のメニューを拡大します。
 
-4.  クリック ハンドラーを実装する`OnCreate`新しいメニュー項目。 
+4.  新しいメニュー項目に対し`OnCreate`て、のクリックハンドラーを実装します。 
 
-次のセクションでは、このプロセスの詳細を示しています。**切り取り**、**コピー**、および**貼り付け**メニュー項目を下に追加されて`Toolbar`します。 
+以下のセクションでは、このプロセスの詳細について説明します。**切り取り**、**コピー**、**貼り付け**の各メニュー項目が下部`Toolbar`に追加されます。 
 
 
 
-### <a name="define-the-edit-menu-resource"></a>編集メニュー リソースを定義します。
+### <a name="define-the-edit-menu-resource"></a>[編集] メニューリソースの定義
 
-**リソース/メニュー**サブディレクトリという新しい XML ファイルを作成**edit_menus.xml**内容を次の XML に置き換えます。
+**Resources/menu**サブディレクトリで、 **edit_menus**という名前の新しい xml ファイルを作成し、内容を次の xml に置き換えます。
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -123,13 +123,13 @@ android:background="?android:attr/colorAccent
 </menu>
 ```
 
-この XML を作成、**切り取り**、**コピー**、および**貼り付け**メニュー項目 (に追加されたアイコンを使用して、`mipmap-`フォルダー[操作バーの置き換え](~/android/user-interface/controls/tool-bar/replacing-the-action-bar.md)).
+この XML は、**切り取り**、**コピー**、**貼り付け**の各メニュー項目を作成します (操作バー `mipmap-`を[置き換える](~/android/user-interface/controls/tool-bar/replacing-the-action-bar.md)ためにフォルダーに追加されたアイコンを使用します)。
 
 
 
-### <a name="inflate-the-menus"></a>メニューを展開します。
+### <a name="inflate-the-menus"></a>メニューを拡大する
 
-最後に、`OnCreate`メソッド**MainActivity.cs**、次のコード行を追加します。 
+`OnCreate` **MainActivity.cs**のメソッドの最後に、次のコード行を追加します。 
 
 ```csharp
 var editToolbar = FindViewById<Toolbar>(Resource.Id.edit_toolbar);
@@ -140,28 +140,28 @@ editToolbar.MenuItemClick += (sender, e) => {
 };
 ```
 
-このコードでは検索、`edit_toolbar`ビューで定義されている**Main.axml**、そのタイトルを設定**編集**、そのメニュー項目を拡張し、(で定義されている**edit_menus.xml**)。 メニューを定義を編集するアイコンがタップされたかを示すトーストを表示するハンドラーをクリックします。 
+この`edit_toolbar`コードは、**増えで定義**されているビューを検索し、そのタイトルを**編集用**に設定して、そのメニュー項目 ( **edit_menus**で定義) をします。 これは、タップされた編集アイコンを示すトーストを表示するメニュークリックハンドラーを定義します。 
 
-アプリケーションをビルドし、実行します。 アプリの実行時に、次のように、テキストとアイコンの上に追加は表示されます。 
+アプリケーションをビルドし、実行します。 アプリを実行すると、上に追加されたテキストとアイコンが次のように表示されます。 
 
-[![下部ツールバーには、切り取り、コピー、および貼り付けのアイコンの図](adding-a-second-toolbar-images/02-bottom-toolbar-sml.png)](adding-a-second-toolbar-images/02-bottom-toolbar.png#lightbox)
+[![[切り取り]、[コピー]、[貼り付け] アイコンがある、下部のツールバーの図](adding-a-second-toolbar-images/02-bottom-toolbar-sml.png)](adding-a-second-toolbar-images/02-bottom-toolbar.png#lightbox)
 
-タップすると、**切り取り**メニュー アイコンが表示される次のトースト。 
+**[切り取り]** メニューアイコンをタップすると、次のトーストが表示されます。 
 
-[![切り取りメニュー アイコンがタップされたことを示すトーストのスクリーン ショット](adding-a-second-toolbar-images/03-bottom-tapped-sml.png)](adding-a-second-toolbar-images/03-bottom-tapped.png#lightbox)
+[![[切り取り] メニューアイコンがタップされたことを示すトーストのスクリーンショット](adding-a-second-toolbar-images/03-bottom-tapped-sml.png)](adding-a-second-toolbar-images/03-bottom-tapped.png#lightbox)
 
-いずれかのツールバーのメニュー項目をタップして、結果として得られるのトースト通知が表示されます。 
+いずれかのツールバーの [メニュー項目] をタップすると、結果の toasts が表示されます。 
 
-[![スクリーン ショットのトーストの保存、コピー、および貼り付けメニュー項目のタップ](adding-a-second-toolbar-images/04-menu-action-sml.png)](adding-a-second-toolbar-images/04-menu-action.png#lightbox)
+[![[保存]、[コピー]、[貼り付け] の各メニュー項目のスクリーンショット](adding-a-second-toolbar-images/04-menu-action-sml.png)](adding-a-second-toolbar-images/04-menu-action.png#lightbox)
 
 
 
-## <a name="the-up-button"></a>最新のボタン 
+## <a name="the-up-button"></a>[上へ] ボタン 
 
-ほとんどの Android アプリの依存、**戻る**アプリのナビゲーション ボタン; キーを押して、**戻る**ボタンは、前の画面が表示されます。
-ただし、提供することがありますも、**を**を簡単にユーザーがアプリのメイン画面に「上」に移動するボタンをクリックします。 ユーザーが選択すると、**を**ボタンをユーザーがアプリの階層内の上位レベルに移動&ndash;は、アプリが表示されます、ユーザーはバックアップを以前にアクセスしたポップをそれぞれのバックアップではなく、戻るスタック内の複数アクティビティアクティビティ。 
+ほとんどの Android アプリは、アプリナビゲーションの **[戻る]** ボタンに依存しています。 **[戻る]** ボタンを押すと、ユーザーが前の画面に移動します。
+ただし、 **[up]** ボタンを使用して、ユーザーがアプリのメイン画面に簡単に移動できるようにすることもできます。 ユーザーが [**上**へ] ボタンを選択すると、ユーザーはアプリ階層&ndash;の上位レベルに移動します。つまり、アプリは、前に表示されたアクティビティに戻るのではなく、ユーザーをバックスタック内の複数のアクティビティにポップします。 
 
-有効にする、**を** ボタンを使用する 2 番目のアクティビティを`Toolbar`のアクション バーとして呼び出す、`SetDisplayHomeAsUpEnabled`と`SetHomeButtonEnabled`メソッドは、2 つ目のアクティビティの`OnCreate`メソッド。
+`Toolbar`アクション`OnCreate` `SetHomeButtonEnabled`バーとしてを使用する2番目のアクティビティで [上へ] ボタンを有効にするには、2番目のアクティビティのメソッドでメソッドとメソッドを呼び出します。`SetDisplayHomeAsUpEnabled`
 
 ```csharp
 SetActionBar (toolbar);
@@ -170,7 +170,7 @@ ActionBar.SetDisplayHomeAsUpEnabled (true);
 ActionBar.SetHomeButtonEnabled (true);
 ```
 
-[V7 ツールバーをサポートして](https://developer.xamarin.com/samples/monodroid/Supportv7/AppCompat/Toolbar/)コード例は、**を** ボタンの動作。 (を次に説明した AppCompat ライブラリを使用して) このサンプルは、ツールバーを使用する 2 番目のアクティビティを実装して**を**の階層型ナビゲーション、前の活動に戻るボタンをクリックします。 この例で、`DetailActivity`ホーム ボタンにより、**を**ボタンは、次のことで`SupportActionBar`メソッドの呼び出し。 
+[ [Support V7] ツールバー](https://docs.microsoft.com/samples/xamarin/monodroid-samples/supportv7-appcompat-toolbar)のコードサンプルでは、 **[Up]** ボタンが動作しています。 このサンプルでは、次に説明する AppCompat ライブラリを使用して、前のアクティビティへの階層ナビゲーションのツールバーの **[上]** ボタンを使用する2番目のアクティビティを実装します。 この例`DetailActivity`では、[ホーム] ボタンを使用して、次`SupportActionBar`のメソッドを呼び出すことにより、 **[上へ]** ボタンを有効にします。 
 
 ```csharp
 SetSupportActionBar (toolbar);
@@ -179,15 +179,15 @@ SupportActionBar.SetDisplayHomeAsUpEnabled (true);
 SupportActionBar.SetHomeButtonEnabled (true);
 ```
 
-ユーザーの操作から`MainActivity`に`DetailActivity`、`DetailActivity`が表示されます、**を**ボタン (左矢印) のスクリーン ショットに示すように。
+ユーザーがから`MainActivity`に`DetailActivity`移動すると、 `DetailActivity`スクリーンショットに示されているように**上向き**のボタン (左向きの矢印) が表示されます。
 
-[![ツールバーの上ボタン左矢印のスクリーン ショットの例](adding-a-second-toolbar-images/05-up-button-sml.png)](adding-a-second-toolbar-images/05-up-button.png#lightbox)
+[![ツールバーの上のボタンの左矢印のスクリーンショットの例](adding-a-second-toolbar-images/05-up-button-sml.png)](adding-a-second-toolbar-images/05-up-button.png#lightbox)
 
-これをタップして**を**ボタンにより、アプリに戻る`MainActivity`します。 階層の複数のレベルでさらに複雑なアプリケーションでは、このボタンをタップする戻ったら、ユーザー、前の画面ではなく、アプリで次に高いレベルに。 
+**このボタン**をタップすると、アプリはに`MainActivity`戻ります。 複数レベルの階層を持つより複雑なアプリでは、このボタンをタップすると、ユーザーが前の画面ではなく、アプリの次の最上位レベルに戻ります。 
 
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [ロリポップ ツールバー (サンプル)](https://developer.xamarin.com/samples/monodroid/android5.0/Toolbar/)
-- [AppCompat ツールバー (サンプル)](https://developer.xamarin.com/samples/monodroid/Supportv7/AppCompat/Toolbar/)
+- [ロリポップツールバー (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android50-toolbar)
+- [AppCompat ツールバー (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/supportv7-appcompat-toolbar)

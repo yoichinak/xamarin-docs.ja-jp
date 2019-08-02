@@ -1,87 +1,87 @@
 ---
-title: Xamarin.iOS でのイメージを表示します。
-description: このドキュメントでは、Xamarin.iOS でイメージを表示する方法について説明します。 プログラムまたは iOS Designer によって、アプリに追加のイメージがについて説明します。
+title: Xamarin を使用したイメージの表示
+description: このドキュメントでは、Xamarin. iOS でイメージを表示する方法について説明します。 プログラムまたは iOS Designer を使用して、アプリにイメージを追加する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 67CA8DB6-769D-42BB-A137-3AF933789FE1
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/13/2018
-ms.openlocfilehash: 25c5595fac2ea2aa7a87d6640cc6b5c399ab5e5e
-ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
+ms.openlocfilehash: fb51d0d04c86274d43e23e4912ed16765b7cdc8b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66827809"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657529"
 ---
-# <a name="displaying-images-with-xamarinios"></a>Xamarin.iOS でのイメージを表示します。
+# <a name="displaying-images-with-xamarinios"></a>Xamarin を使用したイメージの表示
 
-アプリにイメージを追加するには、2 つの手順が必要です: 最初に、プロジェクトにイメージを追加次に、コントロールと、画面に表示するコードを追加します。 参照してください、[イメージを操作](~/ios/app-fundamentals/images-icons/index.md)Xamarin.iOS での画像処理のカバレッジの詳細情報の記事。
+アプリにイメージを追加するには、次の2つの手順を実行する必要があります。まず、イメージをプロジェクトに追加します。次に、コントロールとコードを追加して、画面に表示します。 Xamarin. iOS のイメージ処理の詳細については、[イメージの操作](~/ios/app-fundamentals/images-icons/index.md)に関する記事を参照してください。
 
-## <a name="adding-images-to-your-app"></a>アプリへの画像の追加
+## <a name="adding-images-to-your-app"></a>アプリへのイメージの追加
 
-Mac のソリューションでは、Visual Studio での任意のフォルダーにイメージを追加できる場合に、**ビルド アクション**に設定されている**コンテンツ**ファイルがアプリに含められ、表示されることができます。
+イメージは Visual Studio for Mac ソリューション内の任意のフォルダーに追加できます。また、[**ビルド] アクション**が **[コンテンツ]** に設定されている場合、そのファイルはアプリに含まれ、表示できます。
 
-Visual Studio for Mac と呼ばれる特殊なディレクトリもサポートしています。**リソース**イメージ ファイルを含むことができます。 リソース フォルダー内のファイルが必要、**ビルド アクション**設定**BundleResource**します。
+Visual Studio for Mac では、イメージファイルも格納できる**リソース**と呼ばれる特別なディレクトリもサポートされています。 Resources フォルダー内のファイルには、**ビルドアクション**が**BundleResource**に設定されている必要があります。
 
-このスクリーン ショットは、**ビルド アクション**ときファイルに表示されるオプションを右クリックします。
+このスクリーンショットは、ファイルが右クリックされたときに表示される**ビルドアクション**オプションを示しています。
 
- [![](image-images/image30a.png "[ビルド アクション] メニュー")](image-images/image30a.png#lightbox)
+ [![](image-images/image30a.png "ビルドアクションメニュー")](image-images/image30a.png#lightbox)
 
-Visual Studio for Mac は通常、適切な選択**ビルド アクション**自動的がファイルをプロジェクトに移動する場合に特には、これらの設定では、注意する必要があります。
+Visual Studio for Mac は通常、適切な**ビルドアクション**を自動的に選択しますが、プロジェクト内でファイルを移動する場合は特に、これらの設定に注意する必要があります。
 
-### <a name="adding-an-image-file"></a>イメージ ファイルを追加します。
+### <a name="adding-an-image-file"></a>イメージファイルの追加
 
-プロジェクトにイメージ ファイルを追加するプロジェクトを右クリックして選択**ファイルを追加しています.**
+プロジェクトにイメージファイルを追加するには、まずプロジェクトを右クリックし、 **[ファイルの追加...]** を選択します。
 
- [![](image-images/image31a.png "ファイルを [追加] メニュー")](image-images/image31a.png#lightbox)
+ [![](image-images/image31a.png "ファイルの追加...メニュー")](image-images/image31a.png#lightbox)
 
-イメージ (またはイメージ) の選択を標準ファイル ダイアログに含めたいです。 イメージがあるために、既定のビルド アクション**BundleResource** – 特定の理由がない限り、この値をオーバーライドしません。
+標準ファイルダイアログに含めるイメージ (またはイメージ) を選択します。 イメージの既定のビルドアクションは**BundleResource**になります。具体的な理由がない限り、この値をオーバーライドしないでください。
 
- [![](image-images/image32a.png "追加ファイル ダイアログ ボックス")](image-images/image32a.png#lightbox)
+ [![](image-images/image32a.png "[ファイルの追加] ダイアログ")](image-images/image32a.png#lightbox)
 
-イメージとが読み込まれ、コードに表示される使用可能なプロジェクトに追加されます。 このスクリーン ショットは、iOS アプリケーション プロジェクトに追加されたイメージを示しています。
+イメージがプロジェクトに追加され、コードで読み込んで表示できるようになります。 このスクリーンショットは、iOS アプリケーションプロジェクトに追加されたイメージを示しています。
 
- [![](image-images/image33a.png "プロジェクト内のイメージ")](image-images/image33a.png#lightbox)
+ [![](image-images/image33a.png "プロジェクト内の画像")](image-images/image33a.png#lightbox)
 
-### <a name="what-is-the-resources-directory"></a>リソース ディレクトリとは何ですか。
+### <a name="what-is-the-resources-directory"></a>Resources ディレクトリとは何ですか。
 
-配置されたファイル、**リソース**ディレクトリは通常ファイルの内容を扱い、**リソース**フォルダーは、アプリケーションのルートにコピーされでそこから参照できますコード。 多くの理由で便利なこのすることができます。
+**Resources**ディレクトリに配置されたファイルは、通常のファイルとは異なる方法で扱われます。 **resources**フォルダーの内容はアプリケーションのルートにコピーされ、コード内でそこから参照できます。 これは、さまざまな理由で役に立ちます。
 
--  既定のスタートアップのイメージとアプリケーションのアイコンなどのアプリケーションのプロパティで構成されたイメージを保存します。
--  その他のイメージと、コードから個別にファイルを格納するように容易になるよう管理 (サブディレクトリは、リソース ディレクトリの内容をコピーするときに保持されます)。
+-  既定のスタートアップイメージやアプリケーションアイコンなど、アプリケーションのプロパティで構成されたイメージを格納する。
+-  他のイメージやファイルをコードとは別に格納すると、管理が容易になります (リソースディレクトリの内容がコピーされるときにサブディレクトリが保持されます)。
 
 
-**リソース**ディレクトリは、コードでは、それらのイメージが容易に書き込み共有コード ライブラリを必要とする、コンシューマー側アプリケーションのルートにコピーされると想定できますので、ライブラリ プロジェクトで特に便利です画像、サウンド、ビデオ、XML、またはその他のファイル。
+**リソース**ディレクトリは、ライブラリプロジェクトで特に便利です。コードでは、それらのイメージが使用中のアプリケーションのルートにコピーされることを想定して、イメージ、サウンド、ビデオ、XML を必要とする共有コードライブラリを作成しやすくするためです。その他のファイル。
 
-**リソース**ディレクトリへの名前は、そのためにする必要があります、あり、すべてのファイルがビルド アクションがあります。 **BundleResource**します。
+**Resources**ディレクトリには名前を付ける必要があります。また、すべてのファイルにはビルドアクションを**BundleResource**に設定する必要があります。
 
-## <a name="displaying-the-image"></a>イメージを表示します。
+## <a name="displaying-the-image"></a>画像を表示する
 
-IOS Designer を使用して、 **Image View**イメージまたはアニメーション化された一連のイメージを表示します。 **Image View**ツールボックスからアイコンを次に示します。
+IOS デザイナーでイメージ**ビュー**を使用して、イメージまたはアニメーション化された一連のイメージを表示します。 ツールボックスの **[イメージビュー]** アイコンを次に示します。
 
- [![](image-images/image35a.png "ツールボックスに ImageView")](image-images/image35.png#lightbox)
+ [![](image-images/image35a.png "ツールボックスの ImageView")](image-images/image35.png#lightbox)
 
-ドラッグ、 **Image View**から、**ツールボックス**ビュー コント ローラーにします。 その後、 **Image View > イメージ**ドロップダウン リストで、プロジェクトのすべての使用可能なイメージ ファイルの一覧が表示されます。 イメージのビューに追加するこれらのいずれかを選択します。
+**[ツールボックス]** から**イメージビュー**をビューコントローラーにドラッグします。 次に、 **[イメージビュー > イメージ]** で、プロジェクト内の使用可能なすべてのイメージファイルの一覧がドロップダウンリストに表示されます。 これらのいずれかを選択して、イメージビューに追加します。
 
- [![](image-images/image36a.png "ツールボックスに ImageView")](image-images/image36.png#lightbox)
+ [![](image-images/image36a.png "ツールボックスの ImageView")](image-images/image36.png#lightbox)
 
-### <a name="displaying-the-image-programmatically"></a>プログラムでイメージを表示します。
+### <a name="displaying-the-image-programmatically"></a>プログラムによるイメージの表示
 
-**SF Monkey.jpg**のルートにある、**リソース**ディレクトリ アプリケーション バンドルのルートで実行時に利用可能になります。 イメージのビュー コントロールでは、このイメージを表示するには、次のコードを使用します。
+**SF**は**リソース**ディレクトリのルートに配置されているため、アプリケーションバンドルのルートで実行時に使用できるようになります。 このイメージをイメージビューコントロールに表示するには、次のコードを使用します。
 
 ```csharp
 imageview1.Image = UIImage.FromBundle("SF Monkey.png");
 ```
 
-内のイメージを配置しました。 いた場合**SF/リソース/Pics Monkey.jpg**、コードが含まれますし、 **Pics**フォルダーのパス。
+イメージを作成した場合は、次のコードではパスに**Pics**フォルダーが含まれていることになります。
 
 ```csharp
 imageview1.Image = UIImage.FromBundle("Pics/SF Monkey.png");
 ```
 
-リソース ファイルを参照を含める必要があることはありません、**リソース**フォルダー。
+リソースファイル参照に**リソース**フォルダーを含める必要はありません。
 
 ## <a name="related-links"></a>関連リンク
 
-- [コントロール (サンプル)](https://developer.xamarin.com/samples/monotouch/Controls/)
+- [コントロール (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/controls)
