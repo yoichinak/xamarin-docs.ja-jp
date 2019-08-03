@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/21/2018
-ms.openlocfilehash: 321448453ebe38bd7d43665a3c8bade4fe0f68c2
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 9ea105b27aacef9ca9d63af0c57de880d039ff53
+ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645252"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68739180"
 ---
 # <a name="xamarinforms-local-databases"></a>Xamarin.Forms のローカル データベース
 
@@ -24,7 +24,7 @@ ms.locfileid: "68645252"
 
 Xamarin.Forms アプリケーションでは、[SQLite.NET PCL NuGet](https://www.nuget.org/packages/sqlite-net-pcl/) パッケージを使用して、共有コードにデータベース操作を組み込むことができます。これを行うには、`SQLite` NuGet に含まれているクラスを参照します。 Xamarin.Forms ソリューションの .NET Standard ライブラリ プロジェクト内にデータベース操作を定義できます。
 
-付随している[サンプル アプリケーション](https://github.com/xamarin/xamarin-forms-samples/tree/master/Todo)は、単純な Todo-list アプリケーションです。 次のスクリーンショットで、各プラットフォーム上でサンプルがどのように表示されるかを示します。
+付随している[サンプル アプリケーション](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)は、単純な Todo-list アプリケーションです。 次のスクリーンショットで、各プラットフォーム上でサンプルがどのように表示されるかを示します。
 
 [![Xamarin.Forms データベース サンプルのスクリーンショット](databases-images/todo-list-sml.png "TodoList の 1 ページ目のスクリーンショット")](databases-images/todo-list.png#lightbox "TodoList の 1 ページ目のスクリーンショット") [![Xamarin.Forms データベース サンプルのスクリーンショット](databases-images/todo-list-sml.png "TodoList の 1 ページ目のスクリーンショット")](databases-images/todo-list.png#lightbox "TodoListの 1 ページ目のスクリーンショット")
 
@@ -124,4 +124,3 @@ Xamarin.Forms では、SQLite データベース エンジンを使ったデー�
 
 - [Todo サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)
 - [Xamarin.Forms のサンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
-

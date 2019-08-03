@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: c05bc88ef6d182f282decedff3e4fb03b4bb96b1
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: feae1a33b2e090ccfe3573285c75978aacd1799a
+ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61334695"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68739202"
 ---
 # <a name="creating-mobile-apps-with-xamarinforms-book"></a>Xamarin.Forms book で Mobile Apps を作成します。
 
@@ -26,11 +26,11 @@ ms.locfileid: "61334695"
 
 Microsoft Virtual Academy から、優先される電子ブックをダウンロードします。
 
-*    [**PDF (56Mb)**](https://aka.ms/xamebook)
+*    [**PDF (56Mb)** ](https://aka.ms/xamebook)
 
-*    [**epub 形式 (151 Mb)**](https://aka.ms/xamebook/epub)
+*    [**epub 形式 (151 Mb)** ](https://aka.ms/xamebook/epub)
 
-*    [**Kindle edition (325 Mb)**](https://aka.ms/xamebook/mobi)
+*    [**Kindle edition (325 Mb)** ](https://aka.ms/xamebook/mobi)
 
 できます[個々 章ダウンロード](#download-chapters-and-summaries)PDF ファイルとして。
 
@@ -103,7 +103,7 @@ Xamarin.Forms アプリケーションは通常、異なるプラットフォー
 
 <i>Xamarin.Forms によるモバイル アプリを作成する</i>まず C# を使用した Xamarin.Forms アプリケーションを作成する方法について説明します。 までに Extensible Application Markup Language (XAML) が導入されていない[第 7 章です。XAML 対コード](summaries/chapter07.md)します。
 
-XAML で、Xamarin.Forms ではるかに大きな役割できるようになりました。 Visual Studio を使用した分散 Xamarin.Forms ソリューション テンプレートでは、ページの XAML ベースのファイルを作成します。 Xamarin.Forms を使用して、開発者は、できるだけ早く XAML で使い慣れたなります。 [EXtensible Application Markup Language (XAML)](~/xamarin-forms/xaml/index.md) Xamarin.Forms ドキュメントのセクションには、開始するための XAML のいくつかのアーティクルが含まれています。
+XAML で、Xamarin.Forms ではるかに大きな役割できるようになりました。 Visual Studio を使用した分散 Xamarin.Forms ソリューション テンプレートでは、ページの XAML ベースのファイルを作成します。 Xamarin.Forms を使用して、開発者は、できるだけ早く XAML で使い慣れたなります。 [EXtensible Application Markup Language (XAML)](~/xamarin-forms/xaml/index.yml) Xamarin.Forms ドキュメントのセクションには、開始するための XAML のいくつかのアーティクルが含まれています。
 
 ### <a name="supported-platforms"></a>サポートされているプラットフォーム
 

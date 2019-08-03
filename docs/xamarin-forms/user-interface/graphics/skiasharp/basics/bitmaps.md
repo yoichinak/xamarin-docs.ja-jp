@@ -7,12 +7,12 @@ ms.assetid: 32C95DFF-9065-42D7-966C-D3DBD16906B3
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: f43779fd0a61bd3ad04f3f7445faa6517fb9c989
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 47fd6323e309353446c707730679a191cb8e923c
+ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645895"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68738889"
 ---
 # <a name="bitmap-basics-in-skiasharp"></a>SkiaSharp のビットマップの基礎
 
@@ -22,7 +22,7 @@ _さまざまなソースからビットマップを読み込むし、それら�
 
 SkiaSharp のビットマップのサポートは非常に広範です。 この記事では、のみの基本を説明します&mdash;ビットマップを読み込む方法と、それらを表示する方法。
 
-![](bitmaps-images/bitmapssample.png "2 つのビットマップの表示")
+![](bitmaps-images/basicbitmaps-small.png "2 つのビットマップの表示")
 
 ビットマップの量により詳細な検証は、セクションで見つかる[SkiaSharp ビットマップ](../bitmaps/index.md)します。
 
@@ -98,7 +98,7 @@ protected override async void OnAppearing()
 
 Android オペレーティング システムを使用する場合に例外を発生させる、`Stream`から返された`GetStreamAsync`で、`SKBitmap.Decode`メソッド メイン スレッドで時間のかかる操作を実行することがあるためです。 このためにビットマップ ファイルの内容をコピー、`MemoryStream`オブジェクトを使用して`CopyToAsync`します。
 
-静的な`SKBitmap.Decode`メソッドはビットマップ ファイルをデコードします。 JPEG、PNG、GIF のビットマップ形式と連携し、内部 SkiaSharp 形式で結果を格納します。 この時点で、`SKCanvasView`許可を無効にする必要があります、`PaintSurface`ハンドラーの表示を更新します。 
+静的な`SKBitmap.Decode`メソッドはビットマップ ファイルをデコードします。 JPEG、PNG、GIF のビットマップ形式と連携し、内部 SkiaSharp 形式で結果を格納します。 この時点で、`SKCanvasView`許可を無効にする必要があります、`PaintSurface`ハンドラーの表示を更新します。
 
 ## <a name="loading-a-bitmap-resource"></a>ビットマップ リソースの読み込み
 

@@ -1,66 +1,66 @@
 ---
-title: Xamarin.Forms での azure SignalR サービス
-description: Azure SignalR サービスと Xamarin.Forms の Azure Functions の概要します。
+title: Azure SignalR Service と Xamarin. フォーム
+description: Azure SignalR Service の概要と Xamarin. フォームを使用した Azure Functions
 ms.prod: xamarin
 ms.assetid: 1B9A69EF-C200-41BF-B098-D978D7F9CD8F
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 06/07/2019
-ms.openlocfilehash: 587f3dbbd46b65ec92c4e0eff18a56e89337f191
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: a4d0f5c5ceefcfe9a36a5fcf10c6fb4937c1db90
+ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67658759"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68739209"
 ---
-# <a name="azure-signalr-service-with-xamarinforms"></a>Xamarin.Forms での azure SignalR サービス
+# <a name="azure-signalr-service-with-xamarinforms"></a>Azure SignalR Service と Xamarin. フォーム
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://github.com/xamarin/xamarin-forms-samples/tree/master/WebServices/AzureSignalR)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azuresignalr/)
 
-ASP.NET Core SignalR は、リアルタイム通信をアプリケーションに追加するプロセスを簡素化するアプリケーション モデルです。 Azure SignalR サービスは、SignalR のスケーラブルなアプリケーションの迅速な開発および展開できます。 Azure Functions は、フォーム、スケーラブルなイベント ドリブンのアプリケーションに組み合わせることができます、短時間でサーバーレス コード メソッドです。
+ASP.NET Core SignalR は、リアルタイム通信をアプリケーションに追加するプロセスを簡略化するアプリケーションモデルです。 Azure SignalR サービスを使用すると、スケーラブルな SignalR アプリケーションを迅速に開発およびデプロイできます。 Azure Functions は、イベントドリブンでスケーラブルなアプリケーションを形成するために組み合わせることができる、有効期間が短く、サーバーレスのコードメソッドです。
 
-この記事とサンプルは、接続されているクライアントにリアルタイム メッセージを配信するには、Azure SignalR サービスと Xamarin.Forms を使用して Azure Functions を結合する方法を示します。
+この記事とサンプルでは、Azure SignalR Service と Azure Functions を Xamarin. Forms と組み合わせて、接続されたクライアントにリアルタイムメッセージを配信する方法を示します。
 
-## <a name="create-an-azure-signalr-service-and-azure-functions-app"></a>Azure SignalR サービスと Azure Functions アプリを作成します。
+## <a name="create-an-azure-signalr-service-and-azure-functions-app"></a>Azure SignalR サービスと Azure Functions アプリを作成する
 
-サンプル アプリケーションは、次の 3 つの主要コンポーネントで構成されます。 Azure SignalR サービスをハブ、2 つの関数を使用して Azure Functions インスタンスおよび送信およびメッセージを受信できるモバイル アプリケーション。 これらのコンポーネントは次のようにやり取りします。
+このサンプルアプリケーションは、3つの主要なコンポーネントで構成されています。 Azure SignalR Service hub、2つの機能を持つ Azure Functions インスタンス、およびメッセージを送受信できるモバイルアプリケーションです。 これらのコンポーネントは次のように動作します。
 
-1. モバイル アプリケーションが呼び出す、**ネゴシエート**SignalR ハブに関する情報を取得する Azure 関数。
-1. モバイル アプリケーションでは、ネゴシエーション情報を使用して、SignalR ハブの登録にし、接続を形成します。
-1. モバイル アプリケーションにメッセージが送信、登録した後、**説明**Azure 関数。
-1. **説明**関数は、SignalR ハブに受信メッセージを渡します。
-1. SignalR ハブでは、元の送信者を含む、すべてのモバイル アプリケーションが接続されているインスタンスにメッセージをブロードキャストします。
+1. モバイルアプリケーションは、SignalR ハブに関する情報を取得するために、 **Negotiate** Azure 関数を呼び出します。
+1. モバイルアプリケーションは、ネゴシエーション情報を使用して自身を SignalR hub に登録し、接続を形成します。
+1. 登録後、モバイルアプリケーションは、Azure の**トーク**関数にメッセージを送信します。
+1. **Talk**関数は、受信メッセージを SignalR hub に渡します。
+1. SignalR hub は、接続されているすべてのモバイルアプリケーションインスタンス (元の送信者を含む) にメッセージをブロードキャストします。
 
 > [!NOTE]
-> **ネゴシエート**と**説明**サンプル アプリケーションでの関数は、Visual Studio 2019 と Azure ランタイム ツールを使用してローカルで実行できます。 ただし、Azure SignalR サービスをローカルにエミュレートすることはできませんし、テスト用の物理または仮想デバイスを Azure Functions をローカルにホストされているを公開することは困難です。 これにより、クロスプラット フォームでのテストとして、Azure 関数アプリ インスタンスを Azure Functions をデプロイすることをお勧めします。 配置の詳細については、次を参照してください。 [Visual Studio 2019 で Azure Functions のデプロイ](#deploy-azure-functions-with-visual-studio-2019)します。
+> サンプルアプリケーションの**Negotiate**および**Talk**関数は、Visual Studio 2019 と Azure ランタイムツールを使用してローカルで実行できます。 ただし、Azure SignalR サービスをローカルにエミュレートすることはできません。ローカルでホストされている Azure Functions をテストのために物理または仮想デバイスに公開するのは困難です。 Azure Functions を Azure Functions アプリインスタンスにデプロイすることをお勧めします。これにより、クロスプラットフォームテストが可能になります。 デプロイの詳細については、「 [Visual Studio 2019 での Azure Functions のデプロイ](#deploy-azure-functions-with-visual-studio-2019)」を参照してください。
 
-### <a name="create-an-azure-signalr-service"></a>Azure SignalR サービスを作成します。
+### <a name="create-an-azure-signalr-service"></a>Azure SignalR サービスを作成する
 
-Azure SignalR サービスを選択して作成できます**リソースの作成**、Azure portal の検索の左上隅で**SignalR**します。 Azure SignalR サービスは、free レベルで作成できます。 Azure SignalR サービスがである必要があります**サーバーレス**サービスのモード。 誤って既定または従来のサービスのモードを選択した場合は、後で Azure SignalR サービスのプロパティで変更できます。
+Azure portal の左上隅にある **[リソースの作成]** を選択し、 **SignalR**を検索することで、Azure SignalR サービスを作成できます。 Azure SignalR サービスは、free レベルで作成できます。 Azure SignalR サービスは、**サーバーレス**サービスモードである必要があります。 既定または従来のサービスモードを誤って選択した場合は、後で Azure SignalR サービスのプロパティで変更できます。
 
-次のスクリーン ショットは、新しい Azure SignalR サービスの作成を示しています。
+次のスクリーンショットは、新しい Azure SignalR サービスの作成を示しています。
 
-![Azure portal で Azure SignalR サービスのスクリーン ショットの作成](azure-signalr-images/azure-signalr-create.png "Azure SignalR サービスを作成します。")
+![Azure portal での Azure SignalR Service の作成のスクリーンショット](azure-signalr-images/azure-signalr-create.png "Azure SignalR サービスの作成")
 
-作成されたら、**キー** Azure SignalR サービスのセクションには、**接続文字列**、SignalR ハブに、Azure 関数アプリの接続に使用します。 次のスクリーン ショットでは、Azure SignalR サービスの接続文字列を検索する場所を示します。
+Azure SignalR サービスの**キー**セクションには、作成された**接続文字列**が含まれています。これは、Azure Functions アプリを SignalR hub に接続するために使用されます。 次のスクリーンショットは、Azure SignalR サービスで接続文字列を見つける場所を示しています。
 
-![Azure portal で Azure SignalR のスクリーン ショットの接続文字列](azure-signalr-images/azure-signalr-connection-string.png "Azure SignalR 接続文字列")
+![Azure portal の Azure SignalR 接続文字列のスクリーンショット](azure-signalr-images/azure-signalr-connection-string.png "Azure SignalR 接続文字列")
 
-この接続文字列を使用する[Visual Studio 2019 で Azure Functions のデプロイ](#deploy-azure-functions-with-visual-studio-2019)します。
+この接続文字列は、 [Visual Studio 2019 を使用して Azure Functions をデプロイ](#deploy-azure-functions-with-visual-studio-2019)するために使用されます。
 
-### <a name="create-an-azure-functions-app"></a>Azure Functions アプリを作成します。
+### <a name="create-an-azure-functions-app"></a>Azure Functions アプリを作成する
 
-サンプル アプリケーションをテストするには、Azure portal で新しい Azure 関数アプリを作成する必要があります。 書き留めて、**アプリ名**サンプル アプリケーションで使用すると、この URL **Constants.cs**ファイル。 次のスクリーン ショットは、"xdocsfunctions"と呼ばれる新しい Azure 関数アプリの作成を示しています。
+サンプルアプリケーションをテストするには、Azure portal で新しい Azure Functions アプリを作成する必要があります。 この URL はサンプルアプリケーション**Constants.cs**ファイルで使用されるため、**アプリ名**をメモしておきます。 次のスクリーンショットは、"xdocsfunctions" という新しい Azure Functions アプリの作成を示しています。
 
-[![Azure 関数アプリのスクリーン ショットの作成](azure-signalr-images/azure-functions-app-cropped.png)](azure-signalr-images/azure-functions-app-full.png#lightbox)
+[![Azure Functions アプリの作成のスクリーンショット](azure-signalr-images/azure-functions-app-cropped.png)](azure-signalr-images/azure-functions-app-full.png#lightbox)
 
-Azure 関数は、Visual Studio 2019 から Azure 関数アプリ インスタンスにデプロイできます。 次のセクションでは、Azure Functions アプリのインスタンスにサンプル アプリケーションで 2 つの関数の展開について説明します。
+Azure functions は、Visual Studio 2019 から Azure Functions アプリインスタンスにデプロイできます。 次のセクションでは、サンプルアプリケーションの2つの関数を Azure Functions アプリインスタンスに展開する方法について説明します。
 
-### <a name="build-azure-functions-in-visual-studio-2019"></a>Visual Studio 2019 で Azure Functions を作成します。
+### <a name="build-azure-functions-in-visual-studio-2019"></a>Visual Studio 2019 でのビルド Azure Functions
 
-サンプル アプリケーションにはと呼ばれるクラス ライブラリが含まれています**ChatServer**と呼ばれるファイルの 2 つのサーバーレス Azure 関数を含む**Negotiate.cs**と**Talk.cs**します。
+サンプルアプリケーションには、**チャットサーバー**と呼ばれるクラスライブラリが含まれています。これには、 **Negotiate.cs**と**Talk.cs**という名前のファイルに2つのサーバーレス Azure Functions が含まれます。
 
-`Negotiate`関数は web 要求に応答を`SignalRConnectionInfo`オブジェクトを含む、`AccessToken`プロパティと`Url`プロパティ。 モバイル アプリケーションでは、これらの値を使用して、SignalR ハブに登録します。 次のコードは、`Negotiate`関数。
+関数`Negotiate`は`AccessToken` 、プロパティと`Url`プロパティを含む`SignalRConnectionInfo`オブジェクトを使用して、web 要求に応答します。 モバイルアプリケーションは、これらの値を使用して自身を SignalR hub に登録します。 次のコードは、 `Negotiate`関数を示しています。
 
 ```csharp
 [FunctionName("Negotiate")]
@@ -74,7 +74,7 @@ public static SignalRConnectionInfo GetSignalRInfo(
 }
 ```
 
-`Talk`関数は POST の本文内のメッセージ オブジェクトを提供する HTTP POST 要求に応答します。 POST の本文に変換されますが、 `SignalRMessage` SignalR hub に転送します。 次のコードは、`Talk`関数。
+関数`Talk`は、ポスト本文にメッセージオブジェクトを提供する HTTP POST 要求に応答します。 ポスト本文はに変換`SignalRMessage`され、SignalR hub に転送されます。 次のコードは、 `Talk`関数を示しています。
 
 ```csharp
 [FunctionName("Talk")]
@@ -116,31 +116,31 @@ public static async Task<IActionResult> Run(
 }
 ```
 
-Azure functions と Azure Functions アプリの詳細については、次を参照してください。 [Azure Functions のドキュメント](/azure/azure-functions/)します。
+Azure functions と Azure Functions アプリの詳細については、 [Azure Functions のドキュメント](/azure/azure-functions/)を参照してください。
 
-### <a name="deploy-azure-functions-with-visual-studio-2019"></a>Visual Studio 2019 で Azure Functions をデプロイします。
+### <a name="deploy-azure-functions-with-visual-studio-2019"></a>Visual Studio 2019 で Azure Functions をデプロイする
 
-Visual Studio 2019 関数を Azure Functions アプリにデプロイすることができます。 Azure でホストされる関数では、クロス プラットフォームのすべてのデバイスのアクセス可能なテストのエンドポイントを提供することによってテストが容易になります。
+Visual Studio 2019 では、Azure Functions アプリに関数をデプロイできます。 Azure でホストされる関数は、すべてのデバイスにアクセス可能なテストエンドポイントを提供することで、クロスプラットフォームのテストを容易にします。
 
-サンプルの関数アプリを右クリックして**発行**関数を Azure Functions アプリに発行する ダイアログを起動します。 Azure Function App をセットアップする前の手順を実行する場合、選択できます**既存の**Azure 関数アプリにサンプル アプリケーションを公開します。 次のスクリーン ショットでは、Visual Studio 2019 で、発行ダイアログ オプションを示します。
+Sample functions アプリを右クリックして **[発行]** を選択すると、ダイアログが起動し、Azure Functions アプリに関数が発行されます。 前の手順に従って Azure Function App を設定した場合は、 **[既存のものを選択]** を選択して、サンプルアプリケーションを Azure Functions アプリに発行できます。 次のスクリーンショットは、Visual Studio 2019 の [発行] ダイアログオプションを示しています。
 
-![Visual Studio 2019 の発行の選択ダイアログ](azure-signalr-images/vs-publish-target.png "Visual Studio 2019 でオプションのパブリッシュ")
+![Visual Studio 2019 の [オプションの発行] ダイアログ](azure-signalr-images/vs-publish-target.png "Visual Studio 2019 の発行オプション")
 
-Microsoft アカウントにサインインするとは、検索し、発行先として Azure 関数アプリを選択できます。 次のスクリーン ショットでは、Visual Studio 2019 の公開ダイアログで Azure Functions アプリの使用例を示しています。
+Microsoft アカウントにサインインすると、発行先として Azure Functions アプリを検索して選択できます。 次のスクリーンショットは、Visual Studio 2019 の発行ダイアログでの Azure Functions アプリの例を示しています。
 
-![Visual Studio 2019 の公開ダイアログで、Azure Functions アプリ](azure-signalr-images/vs-app-selection.png "Visual Studio 2019 の公開ダイアログで Azure 関数アプリ")
+![Visual Studio 2019 の [発行] ダイアログの Azure Functions アプリ](azure-signalr-images/vs-app-selection.png "Visual Studio 2019 の [発行] ダイアログの Azure Functions アプリ")
 
-Azure 関数アプリを選択した後、インスタンス、サイトの URL、構成、および Azure Functions アプリのターゲットに関するその他の情報が表示されます。 選択**Azure App Service の設定の編集**で接続文字列を入力し、**リモート**フィールド。 接続文字列を使って、**ネゴシエート**と**説明**Azure SignalR サービスに接続する関数し、記載されて、**キー** Azure SignalR のセクションAzure portal のサービスです。 接続文字列の詳細については、次を参照してください。 [Azure SignalR サービスの作成](#create-an-azure-signalr-service)です。
+Azure Functions アプリインスタンスを選択すると、ターゲット Azure Functions アプリに関するサイトの URL、構成、およびその他の情報が表示されます。 **[Azure App Service 設定の編集]** を選択し、 **[リモート]** フィールドに接続文字列を入力します。 この接続文字列は、Azure SignalR サービスに接続するために**Negotiate**関数と**Talk**関数によって使用され、Azure portal の Azure SignalR サービスの**キー**セクションで使用できます。 接続文字列の詳細については、「 [Azure SignalR サービスの作成](#create-an-azure-signalr-service)」を参照してください。
 
-接続文字列を入力した後は、クリックして**発行**関数を Azure Functions アプリにデプロイします。 完了すると、関数は、Azure portal で Azure 関数アプリで表示されます。 次のスクリーン ショットでは、Azure portal で公開された関数を示しています。
+接続文字列を入力したら、 **[発行]** をクリックして、関数を Azure Functions アプリにデプロイできます。 完了すると、関数が Azure portal の Azure Functions アプリに一覧表示されます。 次のスクリーンショットは、Azure portal で公開されている関数を示しています。
 
-![関数は、Azure 関数アプリで公開されている](azure-signalr-images/azure-functions-deployed.png "関数は、Azure 関数アプリで公開されています。")
+![Azure Functions アプリで公開された関数](azure-signalr-images/azure-functions-deployed.png "Azure Functions アプリで公開された関数")
 
-## <a name="integrate-azure-signalr-service-with-xamarinforms"></a>Xamarin.Forms での Azure SignalR サービスを統合します。
+## <a name="integrate-azure-signalr-service-with-xamarinforms"></a>Azure SignalR Service と Xamarin. Forms の統合
 
-Azure SignalR サービスと、Xamarin.Forms アプリケーションの統合は、SignalR サービス クラスでインスタンス化される、`MainPage`の 3 つのイベントに割り当てられているイベント ハンドラー クラス。 これらのイベント ハンドラーの詳細については、次を参照してください。 [SignalR サービス クラスを使用して、Xamarin.Forms で](#use-the-signalr-service-class-in-xamarinforms)します。
+Azure SignalR service と Xamarin. Forms アプリケーションの統合は、3つのイベントに割り当てられたイベント`MainPage`ハンドラーを使用してクラスでインスタンス化される SignalR サービスクラスです。 これらのイベントハンドラーの詳細については、「 [Xamarin. Forms での SignalR service クラスの使用](#use-the-signalr-service-class-in-xamarinforms)」を参照してください。
 
-サンプル アプリケーションが含まれています、 **Constants.cs**クラス Azure Functions アプリの URL エンドポイントをカスタマイズする必要があります。 値を設定、`HostName`プロパティを Azure Functions アプリのアドレス。 次のコードは、 **Constants.cs**例を使用してプロパティ`HostName`値。
+サンプルアプリケーションには、Azure Functions アプリの URL エンドポイントでカスタマイズする必要がある**Constants.cs**クラスが含まれています。 `HostName`プロパティの値を Azure Functions アプリのアドレスに設定します。 次のコードは、 **Constants.cs**プロパティと値の`HostName`例を示しています。
 
 ```csharp
 public static class Constants
@@ -162,13 +162,13 @@ public static class Constants
 ```
 
 > [!NOTE]
-> `Username`サンプル アプリケーションでプロパティ**Constants.cs**ファイルは、デバイスの`RuntimePlatform`ユーザー名と値。 これにより、簡単にクロスプラット フォーム デバイスでのテストし、メッセージを送信するデバイスを識別できます。 実際のアプリケーションでは、この値は一意のユーザー名と言えるでしょうをサインアップ時に収集されたまたは、プロセスにサインインします。
+> サンプル`Username`アプリケーションの**Constants.cs**ファイルのプロパティは、デバイスの`RuntimePlatform`値をユーザー名として使用します。 これにより、デバイスをクロスプラットフォームでテストし、どのデバイスがメッセージを送信しているかを識別しやすくなります。 実際のアプリケーションでは、この値は、サインアップまたはサインインプロセス中に収集される一意のユーザー名になる可能性があります。
 
-### <a name="the-signalr-service-class"></a>SignalR サービス クラス
+### <a name="the-signalr-service-class"></a>SignalR service クラス
 
-`SignalRService`クラス、 **ChatClient**サンプル アプリケーションでプロジェクトを Azure SignalR サービスに接続するための Azure 関数アプリ内の関数を呼び出す実装を示しています。
+サンプル`SignalRService`アプリケーションの**チャットクライアント**プロジェクトのクラスは、Azure Functions アプリ内の関数を呼び出して Azure SignalR サービスに接続する実装を示しています。
 
-`SendMessageAsync`メソッドで、 `SignalRService` Azure SignalR サービスに接続されているクライアントにメッセージを送信するクラスを使用します。 このメソッドに HTTP POST 要求を実行する、**説明**JSON シリアル化を含めて、Azure 関数アプリでホストされている関数`Message`POST ペイロードとしてのオブジェクト。 **説明**関数は、クライアントが接続されているすべてのブロードキャストの Azure SignalR サービスにメッセージを渡します。 `SendMessageAsync` メソッドのコードを次に示します。
+`SignalRService`クラスのメソッドは、Azure SignalR サービスに接続されているクライアントにメッセージを送信するために使用されます。 `SendMessageAsync` このメソッドは、JSON でシリアル化`Message`されたオブジェクトをポストペイロードとして含む、Azure Functions アプリでホストされている**トーク**関数に対して HTTP POST 要求を実行します。 **Talk**関数は、接続されているすべてのクライアントにブロードキャストするために、メッセージを Azure SignalR サービスに渡します。 `SendMessageAsync` メソッドのコードを次に示します。
 
 ```csharp
 public async Task SendMessageAsync(string username, string message)
@@ -189,9 +189,9 @@ public async Task SendMessageAsync(string username, string message)
 }
 ```
 
-`ConnectAsync`メソッドで、`SignalRService`クラスは、HTTP GET 要求を実行、**ネゴシエート**Azure 関数アプリでホストされている関数。 **ネゴシエート**関数がのインスタンスに逆シリアル化は、JSON を返す、`NegotiateInfo`クラス。 1 回、`NegotiateInfo`オブジェクトを取得のインスタンスを使用して Azure SignalR サービスと直接登録するために、`HubConnection`クラス。
+`SignalRService`クラス`ConnectAsync`のメソッドは、Azure Functions アプリでホストされている**Negotiate**関数に対して HTTP GET 要求を実行します。 **Negotiate**関数は、 `NegotiateInfo`クラスのインスタンスに逆シリアル化された JSON を返します。 オブジェクトが取得されると、 `HubConnection`クラスのインスタンスを使用して Azure SignalR サービスに直接登録するために使用されます。 `NegotiateInfo`
 
-ASP.NET Core SignalR は、メッセージに、開いている接続からの受信データを変換し、メッセージの種類を定義し、着信メッセージの種類によってイベント ハンドラーをバインドできます。 `ConnectAsync`メソッドは、サンプル アプリケーションので定義されたメッセージの名前のイベント ハンドラーを登録します。 **Constants.cs**ファイル。 これは既定では、"新しいメッセージ"。
+ASP.NET Core SignalR は、開いている接続から受信したデータをメッセージに変換し、開発者がメッセージの種類を定義し、イベントハンドラーを種類別に受信メッセージにバインドできるようにします。 メソッド`ConnectAsync`は、サンプルアプリケーションの**Constants.cs**ファイルで定義されているメッセージ名のイベントハンドラーを登録します。これは、既定では "newmessage" です。
 
 `ConnectAsync` メソッドのコードを次に示します。
 
@@ -226,7 +226,7 @@ public async Task ConnectAsync()
 }
 ```
 
-`AddNewMessage`メソッドがイベント ハンドラーとしてバインドされている、`ConnectAsync`メッセージが上記のコードで表示されます。 メッセージが受信したときに、`AddNewMessage`として提供されるメッセージ データ メソッドを呼び出すと、`JObject`します。 `AddNewMessage`メソッドに変換、`JObject`のインスタンスに、`Message`クラスし、のハンドラーが呼び出され、`NewMessageReceived`バインドされている場合。 `AddNewMessage` メソッドのコードを次に示します。
+メソッドは、前のコードに示すように`ConnectAsync` 、メッセージのイベントハンドラーとしてバインドされます。 `AddNewMessage` メッセージを受信`AddNewMessage`すると、 `JObject`として提供されたメッセージデータを使用してメソッドが呼び出されます。 メソッド`AddNewMessage`は、を`JObject` `Message`クラスのインスタンスに変換し、バインドされている`NewMessageReceived`場合は、のハンドラーを呼び出します。 `AddNewMessage` メソッドのコードを次に示します。
 
 ```csharp
 public void AddNewMessage(JObject message)
@@ -242,11 +242,11 @@ public void AddNewMessage(JObject message)
 }
 ```
 
-### <a name="use-the-signalr-service-class-in-xamarinforms"></a>Xamarin.Forms で SignalR サービス クラスを使用します。
+### <a name="use-the-signalr-service-class-in-xamarinforms"></a>SignalR のサービスクラスを使用する
 
-Xamarin.Forms で SignalR サービス クラスを利用するには、バインド、`SignalRService`内のイベントのクラス、`MainPage`分離コード クラス。
+SignalR サービスクラスを Xamarin で使用することによって、クラス`SignalRService`のイベントを分離`MainPage`コードクラスにバインドすることができます。
 
-`Connected`内のイベント、 `SignalRService` SignalR 接続が正常に完了したときに、クラスが発生します。 `ConnectionFailed`内のイベント、`SignalRService`クラスは、SignalR 接続が失敗したときに発生します。 `SignalR_ConnectionChanged`イベント ハンドラー メソッドが両方のイベントにバインドされている、`MainPage`コンス トラクター。 このイベント ハンドラー、接続に基づく接続と送信ボタンの状態を更新する`success`引数、チャットのキューを使用するイベントによって提供されるメッセージを追加し、`AddMessage`メソッド。 次のコードは、`SignalR_ConnectionChanged`イベント ハンドラー メソッド。
+`SignalRService`クラスのイベントは、SignalR 接続が正常に完了したときに発生します。 `Connected` `SignalRService`クラスのイベントは、SignalR 接続が失敗したときに発生します。 `ConnectionFailed` イベントハンドラーメソッドは、 `MainPage`コンストラクター内の両方のイベントにバインドされます。 `SignalR_ConnectionChanged` このイベントハンドラーは、接続`success`引数に基づいて [接続] ボタンと [送信] ボタンの状態を更新し、 `AddMessage`メソッドを使用して、イベントによって提供されるメッセージをチャットキューに追加します。 次のコードは、 `SignalR_ConnectionChanged`イベントハンドラーメソッドを示しています。
 
 ```csharp
 void SignalR_ConnectionChanged(object sender, bool success, string message)
@@ -259,7 +259,7 @@ void SignalR_ConnectionChanged(object sender, bool success, string message)
 }
 ```
 
-`NewMessageReceived`内のイベント、`SignalRService`クラスは、Azure SignalR サービスから新しいメッセージが受信したときに発生します。 `SignalR_NewMessageReceived`にイベント ハンドラー メソッドがバインドされている、`NewMessageReceived`内のイベント、`MainPage`コンス トラクター。 このイベント ハンドラー、受信を変換する`Message`オブジェクトを文字列にし、それを使用して、チャット キューに追加、`AddMessage`メソッド。 次のコードは、`SignalR_NewMessageReceived`イベント ハンドラー メソッド。
+`SignalRService`クラスのイベントは、Azure SignalR サービスから新しいメッセージを受信したときに発生します。 `NewMessageReceived` イベントハンドラーメソッドは、 `MainPage`コンストラクター内の`NewMessageReceived`イベントにバインドされます。 `SignalR_NewMessageReceived` このイベントハンドラーは、受信`Message`したオブジェクトを文字列に変換し、 `AddMessage`メソッドを使用してそれをチャットキューに追加します。 次のコードは、 `SignalR_NewMessageReceived`イベントハンドラーメソッドを示しています。
 
 ```csharp
 void SignalR_NewMessageReceived(object sender, Model.Message message)
@@ -269,7 +269,7 @@ void SignalR_NewMessageReceived(object sender, Model.Message message)
 }
 ```
 
-`AddMessage`メソッドとして、新しいメッセージの追加、`Label`チャット キューにオブジェクト。 `AddMessage`多くの場合、メソッドは、メイン UI スレッドの外部からのイベント ハンドラーによって例外を回避するメイン スレッドで発生する UI の更新を強制するようにします。 `AddMessage` メソッドのコードを次に示します。
+メソッド`AddMessage`は、新しいメッセージを`Label`オブジェクトとしてチャットキューに追加します。 `AddMessage`メソッドは、メイン ui スレッドの外部からイベントハンドラーによって呼び出されることが多いため、メインスレッドで UI 更新が強制的に実行され、例外が発生しないようにします。 `AddMessage` メソッドのコードを次に示します。
 
 ```csharp
 void AddMessage(string message)
@@ -290,18 +290,18 @@ void AddMessage(string message)
 
 ## <a name="test-the-application"></a>アプリケーションをテストする
 
-ある場合に、iOS、Android、UWP で SignalR チャット アプリケーションをテストできます。
+SignalR chat アプリケーションは、次のような iOS、Android、UWP でテストできます。
 
-1. Azure SignalR サービスを作成します。
-1. Azure Functions アプリを作成します。
-1. カスタマイズされた、 **Constants.cs** Azure Functions アプリのエンドポイントを持つファイル。
+1. Azure SignalR サービスを作成しました。
+1. Azure Functions アプリを作成しました。
+1. Azure Functions アプリエンドポイントを使用して**Constants.cs**ファイルをカスタマイズします。
 
-これらの手順を完了し、クリックすると、アプリケーションを実行すると、 **Connect** Azure SignalR サービスとの接続をボタン フォーム。 クリックして、メッセージを入力して、**送信**チャットのキューにいずれかに表示されるメッセージで結果をボタンには、モバイル アプリケーションが接続されています。
+これらの手順が完了し、アプリケーションが実行されたら、 **[接続]** ボタンをクリックすると、Azure SignalR サービスとの接続が形成されます。 メッセージを入力して **[送信]** ボタンをクリックすると、接続されているモバイルアプリケーションのチャットキューにメッセージが表示されます。
 
 ## <a name="related-links"></a>関連リンク
 
-* [Xamarin と SignalR によるリアルタイムのモバイル アプリの作成](https://mybuild.techcommunity.microsoft.com/sessions/77333/)
+* [Xamarin と SignalR を使用したリアルタイムモバイルアプリの構築](https://mybuild.techcommunity.microsoft.com/sessions/77333/)
 * [SignalR 入門](/aspnet/signalr/overview/getting-started/introduction-to-signalr)
 * [Azure Functions の紹介](/azure/azure-functions/functions-overview)
 * [Azure Functions のドキュメント](/azure/azure-functions/)
-* [MVVM の SignalR チャットのサンプル](https://github.com/lbugnion/sample-xamarin-signalr)
+* [MVVM SignalR chat のサンプル](https://github.com/lbugnion/sample-xamarin-signalr)

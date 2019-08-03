@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Forms CollectionView の概要
+title: CollectionView の概要
 description: CollectionView は、異なるレイアウト仕様を使ってデータのリストを表示するための柔軟で高パフォーマンスなビューです。
 ms.prod: xamarin
 ms.assetid: 5C08F687-B9E6-4CE4-8726-F287F6D0B6A7
@@ -7,62 +7,62 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
-ms.openlocfilehash: 456c83808ff685a8c2199cf80c96d63b9334675e
-ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
+ms.openlocfilehash: 25e2d9bad11614cf594980480db14ddc18125a96
+ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67512729"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68738904"
 ---
-# <a name="xamarinforms-collectionview-introduction"></a>Xamarin.Forms CollectionView の概要
+# <a name="xamarinforms-collectionview-introduction"></a>CollectionView の概要
 
 ![](~/media/shared/preview.png "この API は、現在プレリリースです")
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/CollectionViewDemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView) 別のレイアウトの仕様を使用してデータのリストを表示するためのビュー。 これは [ `ListView`](xref:Xamarin.Forms.ListView) の代わりとして、より柔軟でより高パフォーマンスを提供することを目的にしています。 たとえば、次のスクリーン ショットは、表示、 `CollectionView` 2 つの列の垂直グリッドを使用して、複数選択できます。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)は、さまざまなレイアウト仕様を使用してデータの一覧を表示するためのビューです。 これは [ `ListView`](xref:Xamarin.Forms.ListView) の代わりとして、より柔軟でより高パフォーマンスを提供することを目的にしています。 たとえば、次のスクリーンショットは、 `CollectionView` 2 つの列の垂直グリッドを使用し、複数の選択を可能にするを示しています。
 
-[![IOS と Android での CollectionView 垂直グリッド レイアウトのスクリーン ショット](introduction-images/verticalgrid-multipleselection.png "複数選択の垂直グリッド レイアウトの CollectionView")](introduction-images/verticalgrid-multipleselection-large.png#lightbox "CollectionView 垂直グリッド レイアウト複数の選択")
+[複数選択のある iOS および Android(introduction-images/verticalgrid-multipleselection.png "CollectionView の垂直グリッドレイアウト")![の CollectionView 垂直グリッドレイアウトのスクリーンショット]](introduction-images/verticalgrid-multipleselection-large.png#lightbox "複数選択の CollectionView 垂直グリッドレイアウト")
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView) Xamarin.Forms 4.0 で使用できます。 ただし、現在試験段階で、`Forms.Init` を呼ぶ前に、Android では `MainActivity` クラス、iOS では `AppDelegate` クラスに以下の1行を加えることによってのみ使用できます:
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)は、Xamarin. Forms 4.0 で使用できます。 ただし、現在試験段階で、`Forms.Init` を呼ぶ前に、Android では `MainActivity` クラス、iOS では `AppDelegate` クラスに以下の1行を加えることによってのみ使用できます:
 
 ```csharp
 Forms.SetFlags("CollectionView_Experimental");
 ```
 
 > [!IMPORTANT]
-> [`CollectionView`](xref:Xamarin.Forms.CollectionView) iOS と Android で使用できますが、ユニバーサル Windows プラットフォームで利用可能な部分的にのみ。
+> [`CollectionView`](xref:Xamarin.Forms.CollectionView)は iOS と Android で使用できますが、ユニバーサル Windows プラットフォームでのみ一部利用できます。
 
 ## <a name="collectionview-and-listview-differences"></a>CollectionView と ListView の相違点
 
-中に、 [ `CollectionView` ](xref:Xamarin.Forms.CollectionView)と[ `ListView` ](xref:Xamarin.Forms.ListView) Api は似ています、注目すべきいくつか違いがあります。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) Api と[`ListView`](xref:Xamarin.Forms.ListView) api は似ていますが、いくつかの重要な違いがあります。
 
-- [`CollectionView`](xref:Xamarin.Forms.CollectionView) 柔軟なレイアウト モデル、データをリストまたはグリッドの垂直方向または水平方向に表示することが可能があります。
-- [`CollectionView`](xref:Xamarin.Forms.CollectionView) サポートする単一と複数選択します。
-- [`CollectionView`](xref:Xamarin.Forms.CollectionView) セルの概念はありません。 代わりに、データテンプレートを使用して、リストのデータの各アイテムの外観を定義します。
-- [`CollectionView`](xref:Xamarin.Forms.CollectionView) 基になるネイティブ コントロールによって提供される仮想化を自動的に利用します。
-- [`CollectionView`](xref:Xamarin.Forms.CollectionView) API サーフェスを減少[ `ListView`](xref:Xamarin.Forms.ListView)します。 多くのプロパティおよびイベントから[ `ListView` ](xref:Xamarin.Forms.ListView)が存在しない`CollectionView`します。
-- [`CollectionView`](xref:Xamarin.Forms.CollectionView) 組み込みの区切り記号は含まれません。
+- [`CollectionView`](xref:Xamarin.Forms.CollectionView)には、データを垂直方向または水平方向にリストまたはグリッドで表示できる柔軟なレイアウトモデルが用意されています。
+- [`CollectionView`](xref:Xamarin.Forms.CollectionView)単一および複数の選択をサポートします。
+- [`CollectionView`](xref:Xamarin.Forms.CollectionView)セルの概念はありません。 代わりに、データテンプレートを使用して、リストのデータの各アイテムの外観を定義します。
+- [`CollectionView`](xref:Xamarin.Forms.CollectionView)は、基になるネイティブコントロールによって提供される仮想化を自動的に利用します。
+- [`CollectionView`](xref:Xamarin.Forms.CollectionView)の[`ListView`](xref:Xamarin.Forms.ListView)API サーフェイスを減らします。 のプロパティとイベント[`ListView`](xref:Xamarin.Forms.ListView)の多くは、に`CollectionView`は存在しません。
+- [`CollectionView`](xref:Xamarin.Forms.CollectionView)には、組み込みの区切り記号は含まれません。
 
-## <a name="move-from-listview-to-collectionview"></a>CollectionView ListView から移動します。
+## <a name="move-from-listview-to-collectionview"></a>ListView から CollectionView への移動
 
-[`ListView`](xref:Xamarin.Forms.ListView) 既存の Xamarin.Forms の実装での実装に移行できる[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)の次の表に、ヘルプと実装。
+[`ListView`](xref:Xamarin.Forms.ListView)既存の Xamarin. フォーム実装の実装は、次[`CollectionView`](xref:Xamarin.Forms.CollectionView)の表を参考にして実装に移行できます。
 
 | 概念 | ListView API | CollectionView |
 |---|---|---|
-| データ | `ItemsSource` | A [ `CollectionView` ](xref:Xamarin.Forms.CollectionView)設定によってデータが読み込まれて、`ItemsSource`プロパティ。 詳細については、次を参照してください。[設定データの CollectionView](populate-data.md#populate-a-collectionview-with-data)します。 |
-| 項目の外観 | `ItemTemplate` | 内の各項目の外観を[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)を設定して定義することができます、`ItemTemplate`プロパティを[ `DataTemplate`](xref:Xamarin.Forms.DataTemplate)します。 詳細については、次を参照してください。[項目の外観を定義](populate-data.md#define-item-appearance)します。 |
-| セル | `TextCell`、 `ImageCell`、 `ViewCell` | [`CollectionView`](xref:Xamarin.Forms.CollectionView) セルの概念はありません。 代わりに、データテンプレートを使用して、リストのデータの各アイテムの外観を定義します。 |
-| 行区切り記号 | `SeparatorColor`, `SeparatorVisibility` | [`CollectionView`](xref:Xamarin.Forms.CollectionView) 組み込みの区切り記号は含まれません。 これらは、項目テンプレートで、必要な場合、提供できます。 |
-| 選択ツール | `SelectionMode`, `SelectedItem` | [`CollectionView`](xref:Xamarin.Forms.CollectionView) サポートする単一と複数選択します。 詳細については、次を参照してください。 [Xamarin.Forms CollectionView 選択](selection.md)します。 |
-| 行の高さ | `HasUnevenRows`, `RowHeight` | `CollectionView`、各項目の行の高さが続く、`ItemSizingStrategy`プロパティ。 詳細については、次を参照してください。[項目のサイズ変更](layout.md#item-sizing)します。|
-| キャッシュ | `CachingStrategy` | [`CollectionView`](xref:Xamarin.Forms.CollectionView) 基になるネイティブ コントロールによって提供される仮想化を自動的に使用します。 |
-| ヘッダーとフッター | `Header`, `HeaderElement`, `HeaderTemplate`, `Footer`, `FooterElement`, `FooterTemplate` | ヘッダーとフッターは現時点でサポートされていない`CollectionView`は将来のリリースで追加します。|
-| グループ化 | `GroupDisplayBinding`, `GroupHeaderTemplate`, `GroupShortNameBinding`, `IsGroupingEnabled` | グループ化がサポートされていない現在`CollectionView`は将来のリリースで追加します。 |
-| 引っ張って更新 | `IsPullToRefreshEnabled`, `IsRefreshing`, `RefreshAllowed`, `RefreshCommand`, `RefreshControlColor`, `BeginRefresh()`, `EndRefresh()` | 引っ張って更新がサポートされていない現在`CollectionView`は将来のリリースで追加します。 |
-| コンテキスト アクション | `ContextActions` | コンテキスト アクションがで現在サポートされていない`CollectionView`は将来のリリースで追加します。 |
-| スクロール | `ScrollTo()` | [`CollectionView`](xref:Xamarin.Forms.CollectionView) 定義`ScrollTo`メソッドは、項目をビューにスクロールします。 詳細については、次を参照してください。[スクロール](scrolling.md)します。 |
+| データ | `ItemsSource` | に[`CollectionView`](xref:Xamarin.Forms.CollectionView)は、 `ItemsSource`プロパティを設定することによってデータが設定されます。 詳細については、「データを使用した[CollectionView の設定](populate-data.md#populate-a-collectionview-with-data)」を参照してください。 |
+| 項目の外観 | `ItemTemplate` | の各項目[`CollectionView`](xref:Xamarin.Forms.CollectionView)の外観は、 `ItemTemplate`プロパティ[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)をに設定することによって定義できます。 詳細については、「[アイテムの外観を定義](populate-data.md#define-item-appearance)する」を参照してください。 |
+| セル | `TextCell`、 `ImageCell`、 `ViewCell` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)セルの概念はありません。 代わりに、データテンプレートを使用して、リストのデータの各アイテムの外観を定義します。 |
+| 行区切り記号 | `SeparatorColor`, `SeparatorVisibility` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)には、組み込みの区切り記号は含まれません。 これらは、必要に応じて項目テンプレートに指定できます。 |
+| 選択ツール | `SelectionMode`, `SelectedItem` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)単一および複数の選択をサポートします。 詳細については、「 [CollectionView Selection](selection.md)」を参照してください。 |
+| 行の高さ | `HasUnevenRows`, `RowHeight` | では`ItemSizingStrategy` 、各項目の行の高さはプロパティによって決定されます。 `CollectionView` 詳細については、「[項目のサイズ](layout.md#item-sizing)設定」を参照してください。|
+| キャッシュ | `CachingStrategy` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)は、基になるネイティブコントロールによって提供される仮想化を自動的に使用します。 |
+| ヘッダーとフッター | `Header`, `HeaderElement`, `HeaderTemplate`, `Footer`, `FooterElement`, `FooterTemplate` | ヘッダーとフッターは、現在で`CollectionView`はサポートされていませんが、今後のリリースで追加される予定です。|
+| グループ化 | `GroupDisplayBinding`, `GroupHeaderTemplate`, `GroupShortNameBinding`, `IsGroupingEnabled` | グループ化は現在で`CollectionView`はサポートされていませんが、今後のリリースで追加される予定です。 |
+| プルして更新 | `IsPullToRefreshEnabled`, `IsRefreshing`, `RefreshAllowed`, `RefreshCommand`, `RefreshControlColor`, `BeginRefresh()`, `EndRefresh()` | 現在、での`CollectionView`プル更新はサポートされていませんが、今後のリリースで追加される予定です。 |
+| コンテキスト アクション | `ContextActions` | コンテキストアクションは現在で`CollectionView`はサポートされていませんが、今後のリリースで追加される予定です。 |
+| スクロール | `ScrollTo()` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)項目`ScrollTo`をビューにスクロールするメソッドを定義します。 詳細については、「[スクロール](scrolling.md)」を参照してください。 |
 
 ## <a name="related-links"></a>関連リンク
 
-- [CollectionView (サンプル)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/CollectionViewDemos/)
+- [CollectionView (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)

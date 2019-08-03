@@ -1,51 +1,51 @@
 ---
-title: Xamarin.Forms CollectionView の選択
-description: 既定では、CollectionView 選択は無効です。 単一または複数選択を有効にすることができます。
+title: Xamarin CollectionView の選択
+description: 既定では、CollectionView の選択は無効になっています。 単一または複数選択を有効にすることができます。
 ms.prod: xamarin
 ms.assetid: 423D91C7-1E58-4735-9E80-58F11CDFD953
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
-ms.openlocfilehash: dc01cf6bea9fe614cbfb53dcc4417ffb0e602c6f
-ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
+ms.openlocfilehash: f1a3e8bb8959588e64339f70268370440f356be9
+ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67512756"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68738973"
 ---
-# <a name="xamarinforms-collectionview-selection"></a>Xamarin.Forms CollectionView の選択
+# <a name="xamarinforms-collectionview-selection"></a>Xamarin CollectionView の選択
 
 ![](~/media/shared/preview.png "この API は、現在プレリリースです")
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/CollectionViewDemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView) 項目の選択を制御する次のプロパティを定義します。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)項目の選択を制御する次のプロパティを定義します。
 
-- [`SelectionMode`](xref:Xamarin.Forms.SelectableItemsView.SelectionMode)、型の[ `SelectionMode` ](xref:Xamarin.Forms.SelectionMode)、選択モード。
-- [`SelectedItem`](xref:Xamarin.Forms.SelectableItemsView.SelectedItem)、型の`object`、一覧で選択された項目。 このプロパティの既定のバインド モードは、`TwoWay`であり、`null`項目が選択されていないときの値します。
-- [`SelectedItems`](xref:Xamarin.Forms.SelectableItemsView.SelectedItems)、型の`IList<object>`、一覧で項目を選択します。 このプロパティの既定のバインド モードは、`OneWay`であり、`null`項目が選択されていないときの値します。
-- [`SelectionChangedCommand`](xref:Xamarin.Forms.SelectableItemsView.SelectionChangedCommand)、型の`ICommand`、選択した項目が変更されたときに実行されます。
-- [`SelectionChangedCommandParameter`](xref:Xamarin.Forms.SelectableItemsView.SelectionChangedCommandParameter)、型の`object`、に渡されるパラメーターは、`SelectionChangedCommand`します。
+- [`SelectionMode`](xref:Xamarin.Forms.SelectableItemsView.SelectionMode)選択モードで[`SelectionMode`](xref:Xamarin.Forms.SelectionMode)ある、型の。
+- [`SelectedItem`](xref:Xamarin.Forms.SelectableItemsView.SelectedItem)型`object`の、リスト内の選択された項目。 このプロパティの既定の`TwoWay`バインディングモードはで、項目が選択されていない場合は`null`値が設定されます。
+- [`SelectedItems`](xref:Xamarin.Forms.SelectableItemsView.SelectedItems)型`IList<object>`の、リスト内の選択された項目。 このプロパティの既定の`OneWay`バインディングモードはで、項目が選択されていない場合は`null`値が設定されます。
+- [`SelectionChangedCommand`](xref:Xamarin.Forms.SelectableItemsView.SelectionChangedCommand)型`ICommand`の。選択した項目が変更されたときに実行されます。
+- [`SelectionChangedCommandParameter`](xref:Xamarin.Forms.SelectableItemsView.SelectionChangedCommandParameter)型`object`の。これは、 `SelectionChangedCommand`に渡されるパラメーターです。
 
 これらのプロパティはすべて、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトを基盤としています。つまり、プロパティはデータ バインディングの対象にすることができます。
 
-既定では、 [ `CollectionView` ](xref:Xamarin.Forms.CollectionView)選択が無効になっています。 この動作を変更して、設定して、ただし、 [ `SelectionMode` ](xref:Xamarin.Forms.SelectableItemsView.SelectionMode)プロパティの値のいずれかを[ `SelectionMode` ](xref:Xamarin.Forms.SelectionMode)列挙型メンバー。
+既定では[`CollectionView`](xref:Xamarin.Forms.CollectionView) 、選択は無効になっています。 ただし、この動作は、 [`SelectionMode`](xref:Xamarin.Forms.SelectableItemsView.SelectionMode)プロパティ値を[`SelectionMode`](xref:Xamarin.Forms.SelectionMode)列挙体のメンバーの1つに設定することによって変更できます。
 
-- `None` – 項目を選択できないことを示します。 これが既定値です。
-- `Single` –、強調表示されている選択項目を 1 つの項目を選択できることを示します。
-- `Multiple` – 複数の項目選択できるである、選択したアイテムを強調表示されていることを示します。
+- `None`–項目を選択できないことを示します。 これが既定値です。
+- `Single`–1つの項目を選択し、選択した項目を強調表示することを示します。
+- `Multiple`–選択された項目が強調表示されている複数の項目を選択できることを示します。
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView) 定義、 [ `SelectionChanged` ](xref:Xamarin.Forms.SelectableItemsView.SelectionChanged)ときに発生するイベント、 [ `SelectedItem` ](xref:Xamarin.Forms.SelectableItemsView.SelectedItem)プロパティの変更、いずれかの理由、ユーザーまたはアプリケーションが、プロパティを設定すると、一覧から項目を選択します。 さらに、このイベントもときに発生する、 [ `SelectedItems` ](xref:Xamarin.Forms.SelectableItemsView.SelectedItems)プロパティの変更。 [ `SelectionChangedEventArgs` ](xref:Xamarin.Forms.SelectionChangedEventArgs)に付属しているオブジェクト、`SelectionChanged`イベントには 2 つのプロパティが両方の種類の`IReadOnlyList<object>`:
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)ユーザーが[`SelectionChanged`](xref:Xamarin.Forms.SelectableItemsView.SelectionChanged)一覧から項目を選択し[`SelectedItem`](xref:Xamarin.Forms.SelectableItemsView.SelectedItem)たか、アプリケーションがプロパティを設定したときに、プロパティが変更されたときに発生するイベントを定義します。 また、このイベントは、 [`SelectedItems`](xref:Xamarin.Forms.SelectableItemsView.SelectedItems)プロパティが変更されたときにも発生します。 `IReadOnlyList<object>`イベント[`SelectionChangedEventArgs`](xref:Xamarin.Forms.SelectionChangedEventArgs) に`SelectionChanged`付随するオブジェクトには、次の2種類のプロパティがあります。
 
-- `PreviousSelection` – 選択範囲が変更される前に、選択された項目の一覧。
-- `CurrentSelection` – 選択の変更後に、選択された項目の一覧。
+- `PreviousSelection`–選択項目が変更される前に選択された項目の一覧。
+- `CurrentSelection`–選択の変更後に選択された項目の一覧。
 
-## <a name="single-selection"></a>単一の選択
+## <a name="single-selection"></a>単一選択
 
-ときに、 [ `SelectionMode` ](xref:Xamarin.Forms.SelectableItemsView.SelectionMode)プロパティに設定されて`Single`、1 つの項目で、 [ `CollectionView` ](xref:Xamarin.Forms.CollectionView)を選択できます。 項目が選択されているときに、 [ `SelectedItem` ](xref:Xamarin.Forms.SelectableItemsView.SelectedItem)プロパティは、選択した項目の値に設定されます。 このプロパティが変更されたときに、 [ `SelectionChangedCommand` ](xref:Xamarin.Forms.SelectableItemsView.SelectionChangedCommand)が実行される (の値を持つ、 [ `SelectionChangedCommandParameter` ](xref:Xamarin.Forms.SelectableItemsView.SelectionChangedCommandParameter)に渡される、 `ICommand`)、および[ `SelectionChanged` ](xref:Xamarin.Forms.SelectableItemsView.SelectionChanged)イベントが発生します。
+プロパティが[`SelectionMode`](xref:Xamarin.Forms.SelectableItemsView.SelectionMode)に`Single`設定されている場合は、内[`CollectionView`](xref:Xamarin.Forms.CollectionView)の1つの項目を選択できます。 項目を選択[`SelectedItem`](xref:Xamarin.Forms.SelectableItemsView.SelectedItem)すると、プロパティは選択した項目の値に設定されます。 このプロパティ[`SelectionChangedCommand`](xref:Xamarin.Forms.SelectableItemsView.SelectionChangedCommand)が変更[`SelectionChangedCommandParameter`](xref:Xamarin.Forms.SelectableItemsView.SelectionChangedCommandParameter)されると、が実行され (に`ICommand`渡されるの値によって) [`SelectionChanged`](xref:Xamarin.Forms.SelectableItemsView.SelectionChanged) 、イベントが発生します。
 
-次の XAML の例は、 [ `CollectionView` ](xref:Xamarin.Forms.CollectionView)単一アイテムの選択に応答することができます。
+次の XAML の例は[`CollectionView`](xref:Xamarin.Forms.CollectionView) 、単一の項目の選択に応答できるを示しています。
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}"
@@ -66,7 +66,7 @@ collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 collectionView.SelectionChanged += OnCollectionViewSelectionChanged;
 ```
 
-このコード例では、`OnCollectionViewSelectionChanged`イベント ハンドラーが実行されるときに、 [ `SelectionChanged` ](xref:Xamarin.Forms.SelectableItemsView.SelectionChanged)を以前に選択したアイテム、および現在の選択項目を取得するイベント ハンドラーのイベントの起動。
+このコード例`OnCollectionViewSelectionChanged`では、イベントが発生し[`SelectionChanged`](xref:Xamarin.Forms.SelectableItemsView.SelectionChanged)たときにイベントハンドラーが実行され、前に選択した項目を取得するイベントハンドラーと、現在選択されている項目を取得します。
 
 ```csharp
 void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -78,17 +78,17 @@ void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e
 ```
 
 > [!IMPORTANT]
-> [ `SelectionChanged` ](xref:Xamarin.Forms.SelectableItemsView.SelectionChanged)変更した結果として発生した変更がイベントを発生させる、 [ `SelectionMode` ](xref:Xamarin.Forms.SelectableItemsView.SelectionMode)プロパティ。
+> イベント[`SelectionChanged`](xref:Xamarin.Forms.SelectableItemsView.SelectionChanged)は、プロパティを[`SelectionMode`](xref:Xamarin.Forms.SelectableItemsView.SelectionMode)変更した結果として発生する変更によって発生する可能性があります。
 
-次のスクリーン ショットで 1 つの項目の選択、 [ `CollectionView` ](xref:Xamarin.Forms.CollectionView):
+次のスクリーンショットは、 [`CollectionView`](xref:Xamarin.Forms.CollectionView)での単一項目の選択を示しています。
 
-[![IOS と Android で、1 つを選択した CollectionView 垂直方向の一覧のスクリーン ショット](selection-images/single-selection.png "CollectionView 垂直方向に 1 つを選択した一覧")](selection-images/single-selection-large.png#lightbox "CollectionView で単一の垂直方向の一覧選択")
+1つの選択を使用した[ ![CollectionView 縦の一覧のスクリーンショット (](selection-images/single-selection.png "1 つの選択を使用した")iOS および Android CollectionView の縦の一覧)](selection-images/single-selection-large.png#lightbox "1 つの選択項目を含む CollectionView 縦の一覧")
 
-## <a name="multiple-selection"></a>複数の選択
+## <a name="multiple-selection"></a>複数選択
 
-ときに、 [ `SelectionMode` ](xref:Xamarin.Forms.SelectableItemsView.SelectionMode)プロパティに設定されて`Multiple`での複数の項目、 [ `CollectionView` ](xref:Xamarin.Forms.CollectionView)を選択できます。 項目が選択されているときに、 [ `SelectedItems` ](xref:Xamarin.Forms.SelectableItemsView.SelectedItems)プロパティは、選択した項目に設定されます。 このプロパティが変更されたときに、 [ `SelectionChangedCommand` ](xref:Xamarin.Forms.SelectableItemsView.SelectionChangedCommand)が実行される (の値を持つ、 [ `SelectionChangedCommandParameter` ](xref:Xamarin.Forms.SelectableItemsView.SelectionChangedCommandParameter)に渡される、 `ICommand`)、および[ `SelectionChanged` ](xref:Xamarin.Forms.SelectableItemsView.SelectionChanged)イベントが発生します。
+プロパティが[`SelectionMode`](xref:Xamarin.Forms.SelectableItemsView.SelectionMode)に`Multiple`設定されている場合は、 [`CollectionView`](xref:Xamarin.Forms.CollectionView)内の複数の項目を選択できます。 項目を選択[`SelectedItems`](xref:Xamarin.Forms.SelectableItemsView.SelectedItems)すると、プロパティは選択した項目に設定されます。 このプロパティ[`SelectionChangedCommand`](xref:Xamarin.Forms.SelectableItemsView.SelectionChangedCommand)が変更[`SelectionChangedCommandParameter`](xref:Xamarin.Forms.SelectableItemsView.SelectionChangedCommandParameter)されると、が実行され (に`ICommand`渡されるの値によって) [`SelectionChanged`](xref:Xamarin.Forms.SelectableItemsView.SelectionChanged) 、イベントが発生します。
 
-次の XAML の例は、 [ `CollectionView` ](xref:Xamarin.Forms.CollectionView)複数項目の選択に応答することができます。
+次の XAML の例は[`CollectionView`](xref:Xamarin.Forms.CollectionView) 、複数の項目の選択に応答できるを示しています。
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}"
@@ -109,7 +109,7 @@ collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 collectionView.SelectionChanged += OnCollectionViewSelectionChanged;
 ```
 
-このコード例では、`OnCollectionViewSelectionChanged`イベント ハンドラーが実行されるときに、 [ `SelectionChanged` ](xref:Xamarin.Forms.SelectableItemsView.SelectionChanged)イベント ハンドラーが、以前に選択した項目では、および現在の選択した項目を取得するイベントの起動。
+このコード例`OnCollectionViewSelectionChanged`では、イベントの[`SelectionChanged`](xref:Xamarin.Forms.SelectableItemsView.SelectionChanged)発生時にイベントハンドラーが実行され、以前に選択された項目を取得するイベントハンドラーと、現在選択されている項目を取得します。
 
 ```csharp
 void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -121,15 +121,15 @@ void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e
 ```
 
 > [!IMPORTANT]
-> [ `SelectionChanged` ](xref:Xamarin.Forms.SelectableItemsView.SelectionChanged)変更した結果として発生した変更がイベントを発生させる、 [ `SelectionMode` ](xref:Xamarin.Forms.SelectableItemsView.SelectionMode)プロパティ。
+> イベント[`SelectionChanged`](xref:Xamarin.Forms.SelectableItemsView.SelectionChanged)は、プロパティを[`SelectionMode`](xref:Xamarin.Forms.SelectableItemsView.SelectionMode)変更した結果として発生する変更によって発生する可能性があります。
 
-次のスクリーン ショットで複数の項目の選択、 [ `CollectionView` ](xref:Xamarin.Forms.CollectionView):
+次のスクリーンショットは、 [`CollectionView`](xref:Xamarin.Forms.CollectionView)での複数の項目の選択を示しています。
 
-[![IOS と Android での複数選択 CollectionView 垂直方向の一覧のスクリーン ショット](selection-images/multiple-selection.png "CollectionView 複数を選択した垂直方向に一覧")](selection-images/multiple-selection-large.png#lightbox "CollectionView を垂直方向に一覧複数の選択")
+複数の選択がある[ ![CollectionView 縦の一覧のスクリーンショット (IOS と Android の](selection-images/multiple-selection.png "CollectionView 縦の一覧と複数選択"))](selection-images/multiple-selection-large.png#lightbox "複数選択を含む CollectionView の一覧")
 
-## <a name="single-pre-selection"></a>1 つの事前選択
+## <a name="single-pre-selection"></a>1つの事前選択
 
-ときに、 [ `SelectionMode` ](xref:Xamarin.Forms.SelectableItemsView.SelectionMode)プロパティに設定されて`Single`、1 つの項目で、 [ `CollectionView` ](xref:Xamarin.Forms.CollectionView)設定であらかじめ選択されて、 [ `SelectedItem` ](xref:Xamarin.Forms.SelectableItemsView.SelectedItem)項目のプロパティです。 次の XAML の例は、`CollectionView`事前に 1 つの項目を選択します。
+プロパティがに`Single`設定されている場合、 [`SelectedItem`](xref:Xamarin.Forms.SelectableItemsView.SelectedItem)プロパティを[`CollectionView`](xref:Xamarin.Forms.CollectionView)項目に設定することによって、内の1つの項目を事前選択できます。 [`SelectionMode`](xref:Xamarin.Forms.SelectableItemsView.SelectionMode) 次の XAML の例は`CollectionView` 、1つの項目を事前に選択するを示しています。
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}"
@@ -151,9 +151,9 @@ collectionView.SetBinding(SelectableItemsView.SelectedItemProperty, "SelectedMon
 ```
 
 > [!NOTE]
-> [ `SelectedItem` ](xref:Xamarin.Forms.SelectableItemsView.SelectedItem)プロパティの既定のバインド モードは、`TwoWay`します。
+> プロパティには、の既定の`TwoWay`バインディングモードがあります。 [`SelectedItem`](xref:Xamarin.Forms.SelectableItemsView.SelectedItem)
 
-[ `SelectedItem` ](xref:Xamarin.Forms.SelectableItemsView.SelectedItem)プロパティ データにバインド、`SelectedMonkey`プロパティの種類は、接続されているビュー モデルの`Monkey`します。 既定を`TwoWay`バインドを使用する場合に、ユーザーが、選択した項目の値を変更するため、`SelectedMonkey`プロパティの設定に、選択した`Monkey`オブジェクト。 `SelectedMonkey`でプロパティが定義されている、`MonkeysViewModel`クラスし、の 4 番目の項目に設定されている、`Monkeys`コレクション。
+[ `SelectedItem` ](xref:Xamarin.Forms.SelectableItemsView.SelectedItem)プロパティ データにバインド、`SelectedMonkey`プロパティの種類は、接続されているビュー モデルの`Monkey`します。 既定`TwoWay`では、ユーザーが選択した項目を変更した場合に、選択`Monkey`したオブジェクト`SelectedMonkey`にプロパティの値が設定されるように、バインドが使用されます。 プロパティは`MonkeysViewModel`クラスで定義され、 `Monkeys`コレクションの4番目の項目に設定されます。 `SelectedMonkey`
 
 ```csharp
 public class MonkeysViewModel : INotifyPropertyChanged
@@ -186,13 +186,13 @@ public class MonkeysViewModel : INotifyPropertyChanged
 }
 ```
 
-そのため、ときに、 [ `CollectionView` ](xref:Xamarin.Forms.CollectionView)が表示されたら、一覧の 4 番目の項目が事前選択されています。
+そのため、が[`CollectionView`](xref:Xamarin.Forms.CollectionView)表示されたら、一覧の4番目の項目が事前に選択されています。
 
-[![IOS と Android での 1 つの事前選択で CollectionView 垂直方向の一覧のスクリーン ショット](selection-images/single-pre-selection.png "CollectionView 垂直方向に一覧で 1 つの事前選択")](selection-images/single-pre-selection-large.png#lightbox "CollectionView 垂直方向の一覧1 つ前の選択")
+1つの事前選択が設定された[ ![、IOS および Android の CollectionView 縦の一覧の CollectionView 縦の一覧のスクリーンショット](selection-images/single-pre-selection.png "") ](selection-images/single-pre-selection-large.png#lightbox "1 つの事前選択を含む CollectionView 縦の一覧")
 
 ## <a name="multiple-pre-selection"></a>複数の事前選択
 
-ときに、 [ `SelectionMode` ](xref:Xamarin.Forms.SelectableItemsView.SelectionMode)プロパティに設定されて`Multiple`での複数の項目、 [ `CollectionView` ](xref:Xamarin.Forms.CollectionView)事前に選択できます。 次の XAML の例は、`CollectionView`を複数の項目の前の選択が有効になります。
+プロパティが[`SelectionMode`](xref:Xamarin.Forms.SelectableItemsView.SelectionMode)に`Multiple`設定されている場合は、 [`CollectionView`](xref:Xamarin.Forms.CollectionView)内の複数の項目を事前に選択できます。 次の XAML の例は`CollectionView` 、複数の項目の事前選択を有効にするを示しています。
 
 ```xaml
 <CollectionView x:Name="collectionView"
@@ -215,9 +215,9 @@ collectionView.SetBinding(SelectableItemsView.SelectedItemsProperty, "SelectedMo
 ```
 
 > [!NOTE]
-> [ `SelectedItems` ](xref:Xamarin.Forms.SelectableItemsView.SelectedItems)プロパティの既定のバインド モードは、`OneWay`します。
+> プロパティには、の既定の`OneWay`バインディングモードがあります。 [`SelectedItems`](xref:Xamarin.Forms.SelectableItemsView.SelectedItems)
 
-[ `SelectedItems` ](xref:Xamarin.Forms.SelectableItemsView.SelectedItems)プロパティ データにバインド、`SelectedMonkeys`プロパティの種類は、接続されているビュー モデルの`ObservableCollection<object>`します。 `SelectedMonkeys`でプロパティが定義されている、`MonkeysViewModel`クラス、および 2 番目、4 番目、および 5 分に設定されている項目を`Monkeys`コレクション。
+[ `SelectedItems` ](xref:Xamarin.Forms.SelectableItemsView.SelectedItems)プロパティ データにバインド、`SelectedMonkeys`プロパティの種類は、接続されているビュー モデルの`ObservableCollection<object>`します。 プロパティは`MonkeysViewModel`クラスで定義され、 `Monkeys`コレクション内の2番目、4番目、および5番目の項目に設定されます。 `SelectedMonkeys`
 
 ```csharp
 namespace CollectionViewDemos.ViewModels
@@ -254,17 +254,17 @@ namespace CollectionViewDemos.ViewModels
 }
 ```
 
-そのため、ときに、 [ `CollectionView` ](xref:Xamarin.Forms.CollectionView)が表示されたら、2 番目、4 番目に、リスト内の 5 番目の項目があらかじめ選択と。
+したがって、が[`CollectionView`](xref:Xamarin.Forms.CollectionView)表示された場合、一覧の2番目、4番目、および5番目の項目が事前に選択されています。
 
-[![IOS と Android での複数の事前選択 CollectionView 垂直方向の一覧のスクリーン ショット](selection-images/multiple-pre-selection.png "CollectionView 垂直方向に一覧で複数の事前選択")](selection-images/multiple-pre-selection-large.png#lightbox "CollectionView 垂直複数の事前選択されたリスト")
+複数の事前選択が設定された[ ![CollectionView の一覧のスクリーンショット (IOS と Android の](selection-images/multiple-pre-selection.png "CollectionView 縦の一覧と複数の事前選択を含む"))](selection-images/multiple-pre-selection-large.png#lightbox "複数の事前選択を含む CollectionView 縦の一覧")
 
-## <a name="clearing-selections"></a>選択内容をクリアします。
+## <a name="clearing-selections"></a>選択のクリア
 
-[ `SelectedItem` ](xref:Xamarin.Forms.SelectableItemsView.SelectedItem)と[ `SelectedItems` ](xref:Xamarin.Forms.SelectableItemsView.SelectedItems) 、またはにバインドするオブジェクトを設定してプロパティをクリアできます`null`します。
+プロパティ[`SelectedItem`](xref:Xamarin.Forms.SelectableItemsView.SelectedItem) `null`と[`SelectedItems`](xref:Xamarin.Forms.SelectableItemsView.SelectedItems)プロパティをクリアするには、プロパティまたはバインド先のオブジェクトをに設定します。
 
-## <a name="change-selected-item-color"></a>選択した項目の色を変更します。
+## <a name="change-selected-item-color"></a>選択した項目の色の変更
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView) `Selected` [ `VisualState` ](xref:Xamarin.Forms.VisualState)で選択されたアイテムを視覚的な変更の開始に使用できる、`CollectionView`します。 このユース ケースを共通の`VisualState`の次の XAML の例に示すは、選択した項目の背景色を変更することです。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)では、を使用して、 `CollectionView`内の選択した項目に対するビジュアル変更を開始できます。 `Selected` [`VisualState`](xref:Xamarin.Forms.VisualState) 一般的なユースケース`VisualState`では、次の XAML の例に示すように、選択した項目の背景色を変更します。
 
 ```xaml
 <ContentPage ...>
@@ -301,17 +301,17 @@ namespace CollectionViewDemos.ViewModels
 ```
 
 > [!IMPORTANT]
-> [ `Style` ](xref:Xamarin.Forms.Style)を格納している、 `Selected` `VisualState`必要があります、 [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)プロパティ値のルート要素の型が、 [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)、として設定されています、`ItemTemplate`プロパティの値。
+> を[`Style`](xref:Xamarin.Forms.Style) [`TargetType`](xref:Xamarin.Forms.Style.TargetType) [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)含むは、`ItemTemplate`のルート要素の型であるプロパティ値を持つ必要があります。これは、プロパティ値として設定されます。`VisualState` `Selected`
 
-この例で、 [ `Style.TargetType` ](xref:Xamarin.Forms.Style.TargetType)プロパティの値に設定されて`Grid`ためのルート要素、 [ `ItemTemplate` ](xref:Xamarin.Forms.ItemsView.ItemTemplate)は、 [ `Grid`](xref:Xamarin.Forms.Grid)します。 `Selected` [ `VisualState` ](xref:Xamarin.Forms.VisualState)内の項目のときに、ことを指定します、 [ `CollectionView` ](xref:Xamarin.Forms.CollectionView)が選択されている、 [ `BackgroundColor` ](xref:Xamarin.Forms.VisualElement.BackgroundColor)項目のに設定されます`LightSkyBlue`:
+この例では、 [`Style.TargetType`](xref:Xamarin.Forms.Style.TargetType)の[`ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate)ルート[`Grid`](xref:Xamarin.Forms.Grid)要素がで`Grid`あるため、プロパティ値はに設定されています。 [`CollectionView`](xref:Xamarin.Forms.CollectionView) [`BackgroundColor`](xref:Xamarin.Forms.VisualElement.BackgroundColor) `LightSkyBlue`の項目が選択されている場合、項目のは次のように設定されることを[指定します。`VisualState`](xref:Xamarin.Forms.VisualState) `Selected`
 
-[![IOS と Android での単一選択のカスタム色で CollectionView 垂直方向の一覧のスクリーン ショット](selection-images/single-selection-color.png "単一選択のカスタム色で縦方向のリストを CollectionView") ] (selection-images/single-selection-color-large.png#lightbox "単一選択のカスタム色で縦方向のリストを CollectionView")
+カスタム単一選択色が設定された、 [ ![IOS および Android の CollectionView 縦の一覧の CollectionView 縦の一覧のスクリーンショット](selection-images/single-selection-color.png "") ](selection-images/single-selection-color-large.png#lightbox "カスタムの単一選択の色を持つ CollectionView 縦の一覧")
 
-表示状態の詳細については、次を参照してください。 [Xamarin.Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md)します。
+表示状態の詳細については、「 [Xamarin. Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md)」を参照してください。
 
-## <a name="disable-selection"></a>選択範囲を無効にします。
+## <a name="disable-selection"></a>選択の無効化
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView) 既定では、選択範囲が無効です。 ただし場合、`CollectionView`が有効にすると、選択範囲を設定して無効にすることができます、 [ `SelectionMode` ](xref:Xamarin.Forms.SelectableItemsView.SelectionMode)プロパティを`None`:
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)既定では、選択は無効になっています。 ただし、の`CollectionView`選択が有効になっている場合は、 [`SelectionMode`](xref:Xamarin.Forms.SelectableItemsView.SelectionMode)プロパティをに設定`None`することによって無効にすることができます。
 
 ```xaml
 <CollectionView ...
@@ -328,12 +328,12 @@ CollectionView collectionView = new CollectionView
 };
 ```
 
-ときに、 [ `SelectionMode` ](xref:Xamarin.Forms.SelectableItemsView.SelectionMode)プロパティに設定されて`None`、項目を[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)選択することはできません、 [ `SelectedItem` ](xref:Xamarin.Forms.SelectableItemsView.SelectedItem)プロパティにはまま`null`、および[ `SelectionChanged` ](xref:Xamarin.Forms.SelectableItemsView.SelectionChanged)イベントは発生しません。
+`null` [`SelectedItem`](xref:Xamarin.Forms.SelectableItemsView.SelectedItem) [`CollectionView`](xref:Xamarin.Forms.CollectionView) [`SelectionChanged`](xref:Xamarin.Forms.SelectableItemsView.SelectionChanged)プロパティがに`None`設定されている場合、の項目は選択できず、プロパティはそのまま残り、イベントは発生しません。 [`SelectionMode`](xref:Xamarin.Forms.SelectableItemsView.SelectionMode)
 
 > [!NOTE]
-> 項目が選択されている場合、 [ `SelectionMode` ](xref:Xamarin.Forms.SelectableItemsView.SelectionMode)からプロパティを変更`Single`に`None`、 [ `SelectedItem` ](xref:Xamarin.Forms.SelectableItemsView.SelectedItem)プロパティに設定する`null`と[ `SelectionChanged` ](xref:Xamarin.Forms.SelectableItemsView.SelectionChanged)空のときに発生するイベント`CurrentSelection`プロパティ。
+> 項目が[`SelectionMode`](xref:Xamarin.Forms.SelectableItemsView.SelectionMode)選択され、プロパティがから`Single`に`None`変更されると、 [`SelectedItem`](xref:Xamarin.Forms.SelectableItemsView.SelectedItem)プロパティがに`null` [`SelectionChanged`](xref:Xamarin.Forms.SelectableItemsView.SelectionChanged)設定され、空`CurrentSelection`のプロパティを使用してイベントが発生します.
 
 ## <a name="related-links"></a>関連リンク
 
-- [CollectionView (サンプル)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/CollectionViewDemos/)
-- [Xamarin.Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md)
+- [CollectionView (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
+- [Xamarin Forms State Manager](~/xamarin-forms/user-interface/visual-state-manager.md)
