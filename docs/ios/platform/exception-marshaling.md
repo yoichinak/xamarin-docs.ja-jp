@@ -1,5 +1,5 @@
 ---
-title: Xamarin.iOS でマーシャ リング例外
+title: Xamarin.iOS における例外のマーシャ リング
 description: このドキュメントでは、Xamarin.iOS アプリでネイティブおよびマネージ例外を使用する方法について説明します。 これは、発生する可能性がある問題とこれらの問題の解決方法について説明します。
 ms.prod: xamarin
 ms.assetid: BE4EE969-C075-4B9A-8465-E393556D8D90
@@ -14,11 +14,11 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61075096"
 ---
-# <a name="exception-marshaling-in-xamarinios"></a>Xamarin.iOS でマーシャ リング例外
+# <a name="exception-marshaling-in-xamarinios"></a>Xamarin.iOS における例外のマーシャ リング
 
-_Xamarin.iOS には、ネイティブ コードでは特に、例外に応答するのに役立ちます新しいイベントが含まれています。_
+_Xamarin.iOS には、特にネイティブ コードで、例外に応答するのに役立つ新しいイベントが含まれています。_
 
-マネージ コードと Objective C のランタイム例外 (try、catch、finally 句) のサポートがあります。
+マネージ コードと Objective-C の両方でランタイム例外 (try、catch、finally 句) をサポートします。
 
 ただし、その実装は、さまざまな例外を処理し、その他の言語で記述されたコードを実行する必要があるときに、ランタイム ライブラリ (Mono ランタイムと Objective C ランタイム ライブラリ) が問題があること。
 
