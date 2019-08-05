@@ -128,7 +128,7 @@ public class AppDelegate : UIApplicationDelegate
 }
 ```
 
-このアプリケーションを今すぐ実行する場合は、ことを示すスローされる例外に得可能性`Application windows are expected to have a root view controller at the end of application launch`します。 コント ローラーを追加し、アプリのルート ビュー コント ローラーになります。
+このアプリケーションを今すぐ実行する場合、`Application windows are expected to have a root view controller at the end of application launch`ということを示す例外がスローされる可能性があります。 コント ローラーを追加し、それをアプリのルート ビュー コント ローラーにします。
 
 ## <a name="adding-a-controller"></a>コントローラーを追加する
 
