@@ -31,7 +31,7 @@ API のバインドの背後にあるデザインの原則について説明し�
 また、Visual Studio for Mac と Xcode の Interface Builder を使用すると、UI の設計に Interface Builder を使用する方法についても説明します。
 
 > [!IMPORTANT]
-> このドキュメントには、Mac の Xcode の Interface Builder にのみ統合のための Visual Studio がについて説明します。 IOS Designer の詳細についてを参照してください、 [iOS Designer](~/ios/user-interface/designer/index.md)ドキュメント。
+> このドキュメントでは、Visual Studio for Mac と Xcode の Interface Builder との統合についてのみ説明します。iOS Designer の詳細については、 [iOS Designer](~/ios/user-interface/designer/index.md)ドキュメントを参照してください。
 
 ## <a name="ios-architectureiosinternalsarchitecturemd"></a>[iOS のアーキテクチャ](~/ios/internals/architecture.md)
 
