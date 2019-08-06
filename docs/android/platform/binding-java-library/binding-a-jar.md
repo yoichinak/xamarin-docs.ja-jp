@@ -36,7 +36,7 @@ MCW に生成されたコードでは、API の呼び出しを転送する JNI (
  
 ## <a name="walkthrough"></a>チュートリアル
 
-次のチュートリアルでは、バインド ライブラリを作成します[Picasso](http://square.github.io/picasso/)、人気のある Android。イメージの読み込みとキャッシュ機能を提供する JAR です。 次の手順を使用してバインドは**picasso-2.x.x.jar** Xamarin.Android プロジェクトで使用できる新しい .NET アセンブリを作成します。 
+次のチュートリアルでは、バインド ライブラリを作成します[ピカソ](http://square.github.io/picasso/)、人気のある Android。イメージの読み込みとキャッシュ機能を提供する JAR です。 次の手順を使用してバインドは**picasso-2.x.x.jar** Xamarin.Android プロジェクトで使用できる新しい .NET アセンブリを作成します。 
 
 1. 新しい Java バインド ライブラリ プロジェクトを作成します。
 
@@ -63,7 +63,7 @@ public class Picasso
 }
 ```
 
-バインド ライブラリを生成後**picasso-2.x.x.jar**からこれらのメソッドを呼び出しC#します。 例えば:
+バインド ライブラリを生成後**ピカソ 2.x.x.jar**からこれらのメソッドを呼び出しC#します。 例えば:
 
 ```csharp
 using Com.Squareup.Picasso;
@@ -77,7 +77,7 @@ Picasso.With (this)
 
 ### <a name="creating-the-bindings-library"></a>バインド ライブラリを作成します。
 
-次の手順を開始する前にダウンロード[picasso-2.x.x.jar](http://repo1.maven.org/maven2/com/squareup/picasso/picasso/2.5.2/picasso-2.5.2.jar)します。
+次の手順を開始する前にダウンロード[ピカソ 2.x.x.jar](http://repo1.maven.org/maven2/com/squareup/picasso/picasso/2.5.2/picasso-2.5.2.jar)します。
 
 最初に、新しいバインド ライブラリ プロジェクトを作成します。 Visual Studio for Mac または Visual Studio で新しいソリューションを作成し、選択、 *Android バインド ライブラリ*テンプレート。 (このチュートリアルのスクリーン ショットは、Visual Studio を使用して、Visual Studio for Mac は非常に似ています)。ソリューションの名前を**JarBinding**: 
 
@@ -87,7 +87,7 @@ Picasso.With (this)
 
 [![既存の項目を追加する](binding-a-jar-images/02-add-existing-item-sml.png)](binding-a-jar-images/02-add-existing-item.png#lightbox)
 
-移動し、**picasso-2.x.x.jar**ファイルが以前にダウンロードし、選択し、をクリックして**追加**: 
+移動し、**ピカソ 2.x.x.jar**ファイルが以前にダウンロードし、選択し、をクリックして**追加**: 
 
 [![Jar ファイルを選択し、[追加] をクリックしてください](binding-a-jar-images/03-select-jar-file-sml.png)](binding-a-jar-images/03-select-jar-file.png#lightbox)
 
@@ -132,7 +132,7 @@ Picasso.With (this)
 
 [![新しい BindingTest プロジェクトを追加します。](binding-a-jar-images/07-add-new-project-sml.w157.png)](binding-a-jar-images/07-add-new-project.w157.png#lightbox)
 
-右クリックし、**参照**のノード、 **BindingTest**順に選択して**参照の追加.**:
+右クリックし、**参照**のノード、 **BindingTest**順に選択して**参照の追加.** :
 
 [![右の参照を追加します。](binding-a-jar-images/08-add-reference.png)](binding-a-jar-images/08-add-reference.png#lightbox)
 
