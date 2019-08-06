@@ -44,7 +44,7 @@ public virtual void AddChildViewController (UIViewController childController)
 
 既定では、リリースビルドで有効になっています。
 
-既定の動作は、mtouch/ `--optimize=[+|-]remove-uithread-checks` mmp に渡すことでオーバーライドできます。
+既定の動作は、mtouch/mmp に `--optimize=[+|-]remove-uithread-checks` を渡すことでオーバーライドできます。
 
 [1]: https://docs.microsoft.com/dotnet/api/UIKit.UIApplication.EnsureUIThread
 
