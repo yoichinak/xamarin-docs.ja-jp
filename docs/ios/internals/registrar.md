@@ -24,7 +24,7 @@ ms.locfileid: "61036400"
 
 - [[Register]](xref:Foundation.RegisterAttribute)属性を持つクラスを、Objective-C のクラスとして登録します。
 - [[Category]](xref:ObjCRuntime.CategoryAttribute)属性を持つクラスを、Objective-C のカテゴリとして登録します。
-- [[Protocol]](xref:Foundation.ProtocolAttribute)属性を持つインターフェースを、Objective-C のプロトコルとして登録します。 
+- [[Protocol]](xref:Foundation.ProtocolAttribute)属性を持つインターフェースを、Objective-C のプロトコルとして登録します。
 - [[Export]](xref:Foundation.ExportAttribute)属性を持つメンバーを、Objective-C がそれらにアクセスできるようにします。
 
 たとえば、マネージ`Main`Xamarin.iOS アプリケーションで一般的なメソッド。
@@ -124,7 +124,7 @@ class MyClass : IMyProtocol
 
 ## <a name="new-registration-system"></a>新しい登録システム
 
-安定した 6.2.6 以降のバージョンとベータ 6.3.4 バージョンでは、新しい静的レジストラーが追加されました。 7.2.1 バージョンについては、行った新しいレジストラー既定値。
+安定した 6.2.6 以降のバージョンとベータ 6.3.4 バージョンでは、新しい静的レジストラーが追加されました。 7\.2.1 バージョンについては、行った新しいレジストラー既定値。
 
 この新しい登録システムでは、次の新機能を提供します。
 

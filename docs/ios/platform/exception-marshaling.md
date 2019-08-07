@@ -16,7 +16,7 @@ ms.locfileid: "61075096"
 ---
 # <a name="exception-marshaling-in-xamarinios"></a>Xamarin.iOS における例外のマーシャ リング
 
-_Xamarin.iOS には、特にネイティブ コードで、例外に応答するのに役立つ新しいイベントが含まれています。_
+_Xamarin.iOS には、ネイティブ コードでは特に、例外に応答するのに役立ちます新しいイベントが含まれています。_
 
 マネージ コードと Objective-C の両方でランタイム例外 (try、catch、finally 句) をサポートします。
 
