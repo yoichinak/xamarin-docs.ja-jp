@@ -374,13 +374,13 @@ Console.WriteLine ("do something");
 
 既定の動作は、mtouch/ `--optimize=[+|-]inline-dynamic-registration-supported` mmp に渡すことでオーバーライドできます。
 
-## <a name="precompute-methods-to-create-managed-delegates-for-objective-c-blocks"></a>事前計算ブロックのマネージデリゲートを作成するためのメソッド
+## <a name="precompute-methods-to-create-managed-delegates-for-objective-c-blocks"></a>Objective-C ブロックのマネージデリゲートを作成するための事前計算メソッド
 
-前の例では、ブロックをパラメーターとして受け取り、マネージコードによってそのメソッドがオーバーライドされた場合、そのブロックのデリゲートを作成する必要があります。
+Objective-C がブロックをパラメーターとして受け取るセレクターを呼び出し、マネージコードによってそのメソッドがオーバーライドされた場合、Xamarin.iOS / Xamarin.Mac ランタイムはそのブロックのデリゲートを作成する必要があります。
 
-バインディングジェネレーターによって生成されるバインディングコードに`[BlockProxy]`は、属性が含まれます。 `Create`この属性は、この操作を実行できるメソッドを使用して型を指定します。
+バインディングジェネレーターによって生成されるバインディングコードには、`[BlockProxy]`属性が含まれます。 この属性は、この操作を実行できる`Create`メソッドを使用して型を指定します。
 
-次の目的 C コードを指定します。
+次の Objective-C コードを指定します。
 
 ```objc
 @interface ObjCBlockTester : NSObject {
