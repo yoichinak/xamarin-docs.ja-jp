@@ -274,9 +274,9 @@ AOT コンパイラは、既にこのようなデッドコードを排除する�
 
 既定の動作は、mtouch/ `--optimize=[+|-]dead-code-elimination` mmp に渡すことでオーバーライドできます。
 
-## <a name="optimize-calls-to-blockliteralsetupblock"></a>BlockLiteral の呼び出しを最適化します。 SetupBlock
+## <a name="optimize-calls-to-blockliteralsetupblock"></a>BlockLiteral.SetupBlock の呼び出しの最適化。 
 
-マネージデリゲートに対して目的の C ブロックを作成する場合は、Xamarin iOS/Mac ランタイムにブロック署名があることが必要です。 これは、かなり負荷のかかる操作である可能性があります。 この最適化により、ビルド時にブロック署名が計算され、代わりにシグネチャを`SetupBlock`引数として受け取るメソッドを呼び出すように IL が変更されます。 これにより、実行時に署名を計算する必要がなくなります。
+マネージデリゲートに対して Objective-C ブロックを作成する場合は、Xamarin iOS/Mac ランタイムにブロック署名があることが必要です。 これは、かなり負荷のかかる操作である可能性があります。 この最適化により、ビルド時にブロック署名が計算され、代わりにシグネチャを引数として受け取る`SetupBlock`メソッドを呼び出すように IL が変更されます。 これにより、実行時に署名を計算する必要がなくなります。
 
 ベンチマークでは、ブロックの呼び出し速度が 10 ~ 15 倍になることが示されています。
 
@@ -291,7 +291,7 @@ public static void RequestGuidedAccessSession (bool enable, Action<bool> complet
 }
 ```
 
-ドラッグ
+変換後のコード
 
 ```csharp
 public static void RequestGuidedAccessSession (bool enable, Action<bool> completionHandler)
