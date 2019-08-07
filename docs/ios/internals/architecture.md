@@ -22,18 +22,17 @@ Xamarin.iOS アプリケーションは Mono 実行環境内で実行され、C#
 
 [![](architecture-images/ios-arch-small.png "この図では、事前の Time (AOT) コンパイルのアーキテクチャの基本的な概要を示しています。")](architecture-images/ios-arch.png#lightbox)
 
-## <a name="native-and-managed-code-an-explanation"></a>ネイティブおよびマネージ コードの場合:詳細について
+## <a name="native-and-managed-code-an-explanation"></a>説明:ネイティブ コードとマネージ コードについて
 
-Xamarin で開発するときには、*ネイティブ コードとマネージ コード*という用語がよく使用されます。 [マネージ コード](https://blogs.msdn.microsoft.com/brada/2004/01/09/what-is-managed-code/)は、 [.NET Framework 共通言語ランタイム](https://msdn.microsoft.com/library/8bs2ecf4(v=vs.110).aspx)、 または、 Xamarin の場合は Mono ランタイムによって実行が管理されるコードです。 これは、中間言語と呼ばれるものです。
+Xamarin で開発するときには、*ネイティブ コードとマネージ コード*という用語がよく使用されます。 [マネージ コード](https://blogs.msdn.microsoft.com/brada/2004/01/09/what-is-managed-code/)は、 [.NET Framework 共通言語ランタイム](https://msdn.microsoft.com/library/8bs2ecf4(v=vs.110).aspx)、 または、Xamarin の場合は Mono ランタイムによって実行が管理されるコードです。 これは、中間言語と呼ばれるものです。
 
-ネイティブ コードとは、（例として、　Objective-C はもちろん、ARM チップ上で、AOT コンパイルされたコードも含む）特定のプラットフォームでネイティブに実行されるコードです。 このガイドでは、AOT がマネージコードをネイティブコードにコンパイルする方法、そして、　Xamarin.iOS アプリケーションがバインディングを使用して Apple の iOS API をフルに活用し、一方で、.NET の BCL と C# などの高度な言語にもアクセスしながら、どのように動作するかについて説明します。
+ネイティブ コードとは、（例として、Objective-C はもちろん、ARM チップ上で、AOT コンパイルされたコードも含む）特定のプラットフォームでネイティブに実行されるコードです。 このガイドでは、AOT がマネージコードをネイティブコードにコンパイルする方法、そして、Xamarin.iOS アプリケーションがバインディングを使用して Apple の iOS API をフルに活用し、一方で、.NET の BCL と C# などの高度な言語にもアクセスしながら、どのように動作するかについて説明します。
 
 ## <a name="aot"></a>AOT
 
-Mono、Xamarin プラットフォーム アプリケーションをコンパイルするときにC#(またはF#) コンパイラが実行され、コンパイルは、C#とF#コード Microsoft Intermediate Language (MSIL) にします。 Xamarin.Android、Xamarin.Mac アプリケーションの場合、または Xamarin.iOS アプリケーションでも、シミュレーターで実行している場合、 [.NET 共通言語ランタイム (CLR)](https://msdn.microsoft.com/library/8bs2ecf4(v=vs.110).aspx)タイム (JIT) コンパイラですればを使用して MSIL にコンパイルします。 これはネイティブ コードにコンパイル、実行時に、アプリケーションの適切なアーキテクチャで実行されることができます。
+Xamarin プラットフォーム アプリケーションをコンパイルするときに、Mono C#(またはF#) コンパイラが実行され、C#とF#コードを Microsoft Intermediate Language (MSIL) にコンパイルします。 Xamarin.Android、Xamarin.Mac アプリケーションの場合、または Xamarin.iOS アプリケーションでも、シミュレーターで実行している場合、 [.NET 共通言語ランタイム (CLR)](https://msdn.microsoft.com/library/8bs2ecf4(v=vs.110).aspx)は Just in Time (JIT) コンパイラを使用して MSIL にコンパイルします。 実行時にこれはネイティブ コードにコンパイルされ、アプリケーションの適切なアーキテクチャで実行できます。
 
-ただし、ios では、Apple で、デバイスに動的に生成されたコードを実行することによって設定されるセキュリティの制限があります。
-私たちは、これらの安全性のプロトコルに従うことを確認するには、Xamarin.iOS は、事前の Time (AOT) コンパイラをマネージ コードをコンパイルするのに代わりに使用します。 必要に応じてデバイス、Apple の ARM ベースのプロセッサにデプロイできる LLVM の最適化、バイナリのネイティブの iOS が生成されます。 これがどのまとめての大まかな図は、次に示します。
+ただし、iOS では、Apple によって設定された、デバイス上で動的に生成されたコードの実行を禁止するセキュリティの制限があります。これらの安全性のプロトコルを確実に守るために、Xamarin.iOS は、代わりに Ahead of Time (AOT) コンパイラをマネージ コードをコンパイルするのに使用します。 これにより、必要に応じて LLVM によってデバイス用に最適化されたネイティブの iOS バイナリが生成され、Apple の ARM ベースのプロセッサにデプロイできます。これがどのように適合するのかをまとめた大まかな図を次に示します。
 
 [![](architecture-images/aot.png "どのようにこの適合化の概要図")](architecture-images/aot-large.png#lightbox)
 
