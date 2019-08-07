@@ -20,12 +20,12 @@ ms.locfileid: "61036400"
 
 ## <a name="registration-of-managed-classes-and-methods"></a>マネージ クラスとメソッドの登録
 
-起動時に、Xamarin.iOS は登録します。
+起動時に、Xamarin.iOS は以下を登録します。
 
-- クラスと、 [[登録]](xref:Foundation.RegisterAttribute) Objective C のクラスと属性。
-- クラスと、 [[Category]](xref:ObjCRuntime.CategoryAttribute) Objective C カテゴリとして属性。
-- 連動する、 [[Protocol]](xref:Foundation.ProtocolAttribute) OBJECTIVE-C プロトコルとして属性。
-- 持つメンバーを[[エクスポート]](xref:Foundation.ExportAttribute)OBJECTIVE-C でそれらにアクセスできるようにします。
+- [[Register]](xref:Foundation.RegisterAttribute)属性を持つクラスを、Objective-C のクラスとして登録します。
+- [[Category]](xref:ObjCRuntime.CategoryAttribute)属性を持つクラスを、Objective-C のカテゴリとして登録します。
+- [[Protocol]](xref:Foundation.ProtocolAttribute)属性を持つインターフェースを、Objective-C のプロトコルとして登録します。 
+- [[Export]](xref:Foundation.ExportAttribute)属性を持つメンバーを、Objective-C がそれらにアクセスできるようにします。
 
 たとえば、マネージ`Main`Xamarin.iOS アプリケーションで一般的なメソッド。
 
