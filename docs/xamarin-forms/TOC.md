@@ -128,7 +128,8 @@
 ##### [データ テンプレートの作成](app-fundamentals/templates/data-templates/creating.md)
 ##### [データ テンプレートの選択](app-fundamentals/templates/data-templates/selector.md)
 ### [トリガー](app-fundamentals/triggers.md)
-## [ユーザー インターフェイス](user-interface/index.md)
+## ユーザー インターフェイス
+### [概要](user-interface/index.yml)
 ### [アクティビティのインジケーター](user-interface/activityindicator.md)
 ### [アニメーション](user-interface/animation/index.md)
 #### [単純なアニメーション](user-interface/animation/simple.md)
