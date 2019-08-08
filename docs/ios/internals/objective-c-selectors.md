@@ -18,10 +18,9 @@ ms.locfileid: "61036374"
 
 Objective-C 言語は*セレクター*に基づいています。 セレクターは、オブジェクトまたは*クラス*に送信できるメッセージです。 [Xamarin.iOS](~/ios/internals/api-design/index.md)はインスタンス セレクターをインスタンスメソッドにマッピングし、クラス セレクターを静的メソッドにマッピングします。
 
-通常の C 関数とは異なり、C++ メンバー関数と同様に) 呼び出すことができません直接セレクターを使用して、 [P/invoke](https://www.mono-project.com/docs/advanced/pinvoke/)セレクターが代わりに、OBJECTIVE-C のクラスに送信されるか、インスタンスを使用して、 [`objc_msgSend`](https://developer.apple.com/documentation/objectivec/1456712-objc_msgsend)
-関数。
+通常の C 関数とは異なり(C++ メンバー関数と同様に)、[P/invoke](https://www.mono-project.com/docs/advanced/pinvoke/) を使用して直接セレクターを呼び出すことができません。代わりにセレクターは、[`objc_msgSend`](https://developer.apple.com/documentation/objectivec/1456712-objc_msgsend) 関数を使用して、Objective-C クラスまたはインスタンスに送信されます。
 
-Objective C でのメッセージの詳細については、Apple の参照してください[オブジェクトの操作](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/WorkingwithObjects/WorkingwithObjects.html#//apple_ref/doc/uid/TP40011210-CH4-SW2)ガイド。
+Objective-C でのメッセージの詳細については、Apple の[Working with Objects](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/WorkingwithObjects/WorkingwithObjects.html#//apple_ref/doc/uid/TP40011210-CH4-SW2)ガイドを参照してください。
 
 ## <a name="example"></a>例
 
