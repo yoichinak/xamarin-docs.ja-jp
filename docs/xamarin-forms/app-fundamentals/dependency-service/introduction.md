@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/12/2019
-ms.openlocfilehash: dfff2c22c17fddb4bbd1feb79e08949e62d8f9bc
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: d49a12e38b9bfe1014583ce7f0d7c7770270af7b
+ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832221"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68739368"
 ---
 # <a name="xamarinforms-dependencyservice-introduction"></a>Xamarin.Forms の DependencyService の概要
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-samples/tree/master/DependencyService)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice/)
 
 [`DependencyService`](xref:Xamarin.Forms.DependencyService) クラスは、Xamarin.Forms アプリケーションで共有コードからネイティブ プラットフォームの機能を起動できるようにするサービス ロケーターです。
 
@@ -156,5 +156,5 @@ DeviceOrientation orientation = DependencyService.Get<IDeviceOrientationService>
 
 ## <a name="related-links"></a>関連リンク
 
-- [DependencyService のデモ (サンプル)](https://github.com/xamarin/xamarin-forms-samples/tree/master/DependencyService)
+- [DependencyService のデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice/)
 - [Xamarin.Forms の DependencyService の登録と解決](registration-and-resolution.md)

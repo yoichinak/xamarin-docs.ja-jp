@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/23/2019
-ms.openlocfilehash: 51d8764854db2fb62a412fab6e1e48c8beabbf1f
-ms.sourcegitcommit: 6ad272c2c7b0c3c30e375ad17ce6296ac1ce72b2
+ms.openlocfilehash: 9f2aecf1bcac8f9603db40e3562f49123e924bfc
+ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66178060"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68739296"
 ---
 # <a name="xamarinforms-shell-flyout"></a>Xamarin.Forms シェルのポップアップ
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
 ポップアップは、シェル アプリケーションのルート メニューであり、アイコンから、または画面の横からスワイプして、アクセスすることが可能です。 ポップアップは、オプションのヘッダー、ポップアップ項目、およびオプションのメニュー項目から構成されています。
 
@@ -191,7 +191,7 @@ Shell.Current.FlyoutIsPresented = false;
 この暗黙的な変換では、各 [`ContentPage`](xref:Xamarin.Forms.ContentPage) オブジェクトが自動的に `ShellContent` オブジェクトでラップされ、それが `Tab` オブジェクトでラップされ、それが `FlyoutItem` オブジェクトでラップされます。
 
 > [!IMPORTANT]
-> シェル アプリケーションでは、`ShellContent` オブジェクトの子である各 [`ContentPage`](xref:Xamarin.Forms.ContentPage) は、アプリケーションの起動中に作成されます。 この手法を利用して追加の `ShellContent` オブジェクトを付け加えると、アプリケーションの起動時に追加のページが作成され、起動エクスペリエンスの低下を引き起こす場合があります。 ただし、シェルでは、ナビゲーションに応答して、必要に応じてページを作成することも可能です。 詳しくは、「[Xamarin.Forms シェルのタブ](tabs.md)」ガイドにある「[効率的なページの読み込み](tabs.md#efficient-page-loading)」をご覧ください。
+> シェル アプリケーションでは、`ShellContent` オブジェクトの子である各 [`ContentPage`](xref:Xamarin.Forms.ContentPage) は、アプリケーションの起動中に作成されます。 この手法を利用してその他の `ShellContent` オブジェクトを追加すると、アプリケーションの起動時に追加のページが作成され、起動エクスペリエンスの低下を引き起こす場合があります。 ただし、シェルでは、ナビゲーションに応答して、必要に応じてページを作成することも可能です。 詳しくは、「[Xamarin.Forms シェルのタブ](tabs.md)」ガイドにある「[効率的なページの読み込み](tabs.md#efficient-page-loading)」をご覧ください。
 
 ### <a name="flyoutitem-class"></a>FlyoutItem クラス
 
@@ -467,4 +467,4 @@ Shell.Current.CurrentItem = aboutItem;
 
 ## <a name="related-links"></a>関連リンク
 
-- [Xaminals (サンプル)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals/)
+- [Xaminals (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)

@@ -9,12 +9,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/27/2018
-ms.openlocfilehash: c0e772e0207d2ccc9a94aefd9655dc1bb6776bba
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 997c9e023a743b8e5128ffc566e50da63652f945
+ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653481"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68739006"
 ---
 # <a name="xamarinforms-quickstart-deep-dive"></a>Xamarin. フォームのクイックスタートの詳細
 
@@ -31,9 +31,9 @@ Visual Studio は、コードを*ソリューション*と*プロジェクト*�
 プロジェクトの内容:
 
 - 注: このプロジェクトは、すべての共有コードと共有 UI を保持する .NET Standard ライブラリプロジェクトです。
-- Notes. Android-このプロジェクトは Android 固有のコードを保持し、Android アプリケーションのエントリポイントです。
-- [注]: このプロジェクトは、ios 固有のコードを保持し、iOS アプリケーションのエントリポイントです。
-- 注: UWP: このプロジェクトは、ユニバーサル Windows プラットフォーム (UWP) 固有のコードを保持し、UWP アプリケーションのエントリポイントです。
+- Notes.Android-このプロジェクトは Android 固有のコードを保持し、Android アプリケーションのエントリポイントです。
+- Notes.iOS: このプロジェクトは、ios 固有のコードを保持し、iOS アプリケーションのエントリポイントです。
+- Notes.UWP: このプロジェクトは、ユニバーサル Windows プラットフォーム (UWP) 固有のコードを保持し、UWP アプリケーションのエントリポイントです。
 
 ## <a name="anatomy-of-a-xamarinforms-application"></a>Xamarin. Forms アプリケーションの構造
 
@@ -57,9 +57,9 @@ Visual Studio は、コードを*ソリューション*と*プロジェクト*�
 
 プロジェクトの内容:
 
-- 注: このプロジェクトは、すべての共有コードと共有 UI を保持する .NET Standard ライブラリプロジェクトです。
-- 注: このプロジェクトは、android 固有のコードを保持し、Android アプリケーションのエントリポイントです。
-- [メモ]: このプロジェクトは、ios 固有のコードを保持し、iOS アプリケーションのエントリポイントです。
+- Notes: このプロジェクトは、すべての共有コードと共有 UI を保持する .NET Standard ライブラリプロジェクトです。
+- Notes.Android: このプロジェクトは、android 固有のコードを保持し、Android アプリケーションのエントリポイントです。
+- Notes.iOS: このプロジェクトは、ios 固有のコードを保持し、iOS アプリケーションのエントリポイントです。
 
 ## <a name="anatomy-of-a-xamarinforms-application"></a>Xamarin. Forms アプリケーションの構造
 
@@ -532,7 +532,7 @@ Visual Studio for Mac と Visual Studio のいずれも、アプリケーショ�
 
 ## <a name="related-links"></a>関連リンク
 
-- [拡張可能なアプリケーションマークアップ言語 (XAML)](~/xamarin-forms/xaml/index.md)
+- [拡張可能なアプリケーションマークアップ言語 (XAML)](~/xamarin-forms/xaml/index.yml)
 - [データ バインディング](~/xamarin-forms/app-fundamentals/data-binding/index.md)
 - [コントロールのリファレンス](~/xamarin-forms/user-interface/controls/index.md)
 - [XAML マークアップ拡張](~/xamarin-forms/xaml/markup-extensions/index.md)
