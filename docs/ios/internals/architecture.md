@@ -24,9 +24,9 @@ Xamarin.iOS アプリケーションは Mono 実行環境内で実行され、C#
 
 ## <a name="native-and-managed-code-an-explanation"></a>ネイティブおよびマネージ コードの場合:詳細について
 
-Xamarin で開発するときには、*ネイティブ コードとマネージ コード*という用語がよく使用されます。 [マネージ コード](https://blogs.msdn.microsoft.com/brada/2004/01/09/what-is-managed-code/)は、 [.NET Framework 共通言語ランタイム](https://msdn.microsoft.com/library/8bs2ecf4(v=vs.110).aspx)、 または、 Xamarin の場合は Mono ランタイムによって実行が管理されるコードです。 これは、中間言語と呼ばれるものです。
+Xamarin で開発するときには、*ネイティブ コードとマネージ コード*という用語がよく使用されます。 [マネージ コード](https://blogs.msdn.microsoft.com/brada/2004/01/09/what-is-managed-code/)は、 [.NET Framework 共通言語ランタイム](https://msdn.microsoft.com/library/8bs2ecf4(v=vs.110).aspx)、 または、Xamarin の場合は Mono ランタイムによって実行が管理されるコードです。 これは、中間言語と呼ばれるものです。
 
-ネイティブ コードとは、（例として、　Objective-C はもちろん、ARM チップ上で、AOT コンパイルされたコードも含む）特定のプラットフォームでネイティブに実行されるコードです。 このガイドでは、AOT がマネージコードをネイティブコードにコンパイルする方法、そして、　Xamarin.iOS アプリケーションがバインディングを使用して Apple の iOS API をフルに活用し、一方で、.NET の BCL と C# などの高度な言語にもアクセスしながら、どのように動作するかについて説明します。
+ネイティブ コードとは、（例として、Objective-C はもちろん、ARM チップ上で、AOT コンパイルされたコードも含む）特定のプラットフォームでネイティブに実行されるコードです。 このガイドでは、AOT がマネージコードをネイティブコードにコンパイルする方法、そして、Xamarin.iOS アプリケーションがバインディングを使用して Apple の iOS API をフルに活用し、一方で、.NET の BCL と C# などの高度な言語にもアクセスしながら、どのように動作するかについて説明します。
 
 ## <a name="aot"></a>AOT
 
