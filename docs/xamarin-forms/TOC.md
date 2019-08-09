@@ -151,6 +151,7 @@
 #### [レイアウト](user-interface/controls/layouts.md)
 #### [ビュー](user-interface/controls/views.md)
 #### [セル](user-interface/controls/cells.md)
+#### [サードパーティ コントロール](user-interface/controls/thirdparty.md)
 ### [DataPages](user-interface/datapages/index.md)
 #### [開始するには](user-interface/datapages/get-started.md)
 #### [コントロールのリファレンス](user-interface/datapages/controls.md)
@@ -339,7 +340,7 @@
 #### [音声認識](data-cloud/azure-cognitive-services/speech-recognition.md)
 #### [スペル チェック](data-cloud/azure-cognitive-services/spell-check.md)
 #### [テキストの変換](data-cloud/azure-cognitive-services/text-translation.md)
-#### [感情認識](data-cloud/azure-cognitive-services/emotion-recognition.md)
+#### [認識された感情認識](data-cloud/azure-cognitive-services/emotion-recognition.md)
 ### Web サービス
 #### [Web サービスの概要](data-cloud/web-services/index.md)
 #### [はじめに](data-cloud/web-services/introduction.md)
