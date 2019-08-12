@@ -21,7 +21,7 @@ Objective-C 言語は*セレクター*に基づいています。 セレクタ�
 通常の C 関数とは異なり、C++ メンバー関数と同様に) 呼び出すことができません直接セレクターを使用して、 [P/invoke](https://www.mono-project.com/docs/advanced/pinvoke/)セレクターが代わりに、OBJECTIVE-C のクラスに送信されるか、インスタンスを使用して、 [`objc_msgSend`](https://developer.apple.com/documentation/objectivec/1456712-objc_msgsend)
 関数。
 
-Objective C でのメッセージの詳細については、Apple の参照してください[オブジェクトの操作](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/WorkingwithObjects/WorkingwithObjects.html#//apple_ref/doc/uid/TP40011210-CH4-SW2)ガイド。
+Objective-C でのメッセージの詳細については、Apple の[Working with Objects](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/WorkingwithObjects/WorkingwithObjects.html#//apple_ref/doc/uid/TP40011210-CH4-SW2)ガイドを参照してください。
 
 ## <a name="example"></a>例
 
@@ -147,7 +147,7 @@ else
 
 セレクターの名前を使用すると、作成できます、 [ `ObjCRuntime.Selector` ](xref:ObjCRuntime.Selector)のインスタンス。
 
-### <a name="calling-objcmsgsend"></a>Objc_msgSend を呼び出す
+### <a name="calling-objc_msgsend"></a>Objc_msgSend を呼び出す
 
 `objc_msgSend` オブジェクトには、(セレクター) メッセージを送信します。 このファミリの関数は、少なくとも 2 つの必要な引数を受け取ります。 セレクターのターゲット (インスタンスまたはクラスの処理)、自体、セレクターとセレクターの必要な引数。 インスタンスとセレクター引数には、 `System.IntPtr`、し、残りのすべての引数は、セレクターが必要ですが、たとえば型と一致する必要があります、`nint`の`int`、または`System.IntPtr`すべて`NSObject`-派生型。 使用して、 [`NSObject.Handle`](xref:Foundation.NSObject.Handle)
 取得するプロパティ、 `IntPtr` Objective C 型のインスタンスにします。
@@ -190,7 +190,7 @@ else
 }
 ```
 
-### <a name="using-the-objcmsgsendstret-method"></a>Objc_msgSend_stret メソッドを使用してください。
+### <a name="using-the-objc_msgsend_stret-method"></a>Objc_msgSend_stret メソッドを使用してください。
 
 ARM で作成するときに使用します [`objc_msgSend_stret`](https://developer.apple.com/documentation/objectivec/1456730-objc_msgsend_stret?language=objc)
 列挙型または列挙型の基本型のいずれかではない任意の値型の (`int`、 `byte`、 `short`、 `long`、 `double`、 `float`)。

@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/06/2017
-ms.openlocfilehash: 62e825a497e6d2cb06414a2553ba1cfe2864fca1
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: dac059576b8821d218cca44ae1c049010e364cfc
+ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832206"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68739357"
 ---
 # <a name="picking-a-photo-from-the-picture-library"></a>画像ライブラリから写真を選択する
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-samples/tree/master/DependencyService)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice/)
 
 この記事では、ユーザーが電話の画像ライブラリから写真を選択できるアプリケーションを作成する手順について説明します。 Xamarin.Forms にはこの機能は含まれていないため、[`DependencyService`](xref:Xamarin.Forms.DependencyService) を使用して各プラットフォームのネイティブ API にアクセスする必要があります。
 
@@ -280,6 +280,6 @@ async void OnPickPhotoButtonClicked(object sender, EventArgs e)
 
 ## <a name="related-links"></a>関連リンク
 
-- [DependencyService (サンプル)](https://github.com/xamarin/xamarin-forms-samples/tree/master/DependencyService)
+- [DependencyService (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice/)
 - [ギャラリーから写真を選択する (iOS)](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery)
 - [画像を選択する (Android)](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/pick_image)

@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/24/2019
-ms.openlocfilehash: df8ecba2527015dd6a7e2fd324b34306295b94d3
-ms.sourcegitcommit: b986460787677cf8c2fc7cc8c03f4bc60c592120
+ms.openlocfilehash: 9e3acf1c5b101f021b0071947e91f0c9fc3dafcb
+ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66213311"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68739248"
 ---
 # <a name="xamarinforms-shell-search"></a>Xamarin.Forms シェルでの検索
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
 Xamarin.Forms シェルには、`SearchHandler` クラスによって提供される統合された検索機能が組み込まれています。 検索機能は、サブクラス化された `SearchHandler` オブジェクトを `Shell.SearchHandler` 添付プロパティに設定することで、ページに追加できます。 これにより、検索ボックスがページの上部に追加されます。
 
@@ -237,7 +237,7 @@ XAML では次のようにしてこれを実現できます。
 <SearchHandler Keyboard="Email" />
 ```
 
-該当の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 SearchHandler searchHandler = new SearchHandler { Keyboard = Keyboard.Email };
@@ -268,7 +268,7 @@ SearchHandler searchHandler = new SearchHandler { Keyboard = Keyboard.Email };
 </SearchHandler>
 ```
 
-該当の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 SearchHandler searchHandler = new SearchHandler { Placeholder = "Enter search terms" };
@@ -313,7 +313,7 @@ searchHandler.Keyboard = Keyboard.Create(KeyboardFlags.Suggestions | KeyboardFla
 - `ShowsResults`: `bool` 型、テキスト入力時に、候補領域に検索結果が表示されるかどうかを指示します。 既定値は `false` です。
 - `TextColor`:`Color` 型、検索ボックスのテキストの色。
 
-これらのプロパティはすべて、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトを基盤としています。つまり、プロパティがデータ バインディングの対象になる場合があります。
+これらのプロパティはすべて、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトを基盤としています。つまり、プロパティはデータ バインディングの対象にすることができます。
 
 また、`SearchHandler`ク ラスでは、オーバーライドできる次のようなメソッドを提供しています。
 
@@ -326,5 +326,5 @@ searchHandler.Keyboard = Keyboard.Create(KeyboardFlags.Suggestions | KeyboardFla
 
 ## <a name="related-links"></a>関連リンク
 
-- [Xaminals (サンプル)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals/)
+- [Xaminals (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 - [Xamarin.Forms シェルのナビゲーション](navigation.md)

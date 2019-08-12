@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/12/2019
-ms.openlocfilehash: 71836021b29094911f9d1ad43639ed103fa18b73
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 8173ebcc174df6e34a53f226a43083bd28941031
+ms.sourcegitcommit: 2e5a6b8bcd1a073b54604f51538fd108e1c2a8e5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68652813"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68869384"
 ---
 # <a name="create-a-xamarinforms-visual-renderer"></a>Xamarin. Forms ビジュアルレンダラーを作成する
 
@@ -104,20 +104,23 @@ public class CustomVisual : IVisual
 
 ## <a name="register-the-ivisual-type"></a>IVisual 型の登録
 
-プラットフォームプロジェクトで、次の`ExportRendererAttribute`ようにレンダラークラスを装飾します。
+プラットフォームプロジェクトで、レンダラー名前空間を次の`ExportRendererAttribute`ように修飾します。
 
 ```csharp
 [assembly: ExportRenderer(typeof(Xamarin.Forms.Button), typeof(CustomButtonRenderer), new[] { typeof(CustomVisual) })]
-public class CustomButtonRenderer : ButtonRenderer
+namespace VisualDemos.iOS
 {
-    protected override void OnElementChanged(ElementChangedEventArgs<Button> e)
+    public class CustomButtonRenderer : ButtonRenderer
     {
-        ...
+        protected override void OnElementChanged(ElementChangedEventArgs<Button> e)
+        {
+            // ...
+        }
     }
 }
 ```
 
-この例では、 `ExportRendererAttribute`は、3 `CustomButtonRenderer`番目の引数として[`Button`](xref:Xamarin.Forms.Button)登録された`IVisual`型を使用して、クラスを使用してオブジェクトをレンダリングすることを指定しています。 の一部として`IVisual`型を指定するレンダラーは、既定のレンダラーではなくビューでの表示に使用されます。 `ExportRendererAttribute`
+IOS プラットフォームプロジェクトのこの例では、は`ExportRendererAttribute` 、3番`CustomButtonRenderer`目の引数として登録[`Button`](xref:Xamarin.Forms.Button)された`IVisual`型を使用して、クラスを使用してオブジェクトをレンダリングすることを指定します。 の一部として`IVisual`型を指定するレンダラーは、既定のレンダラーではなくビューでの表示に使用されます。 `ExportRendererAttribute`
 
 ## <a name="consume-the-visual-renderer"></a>ビジュアルレンダラーを使用する
 

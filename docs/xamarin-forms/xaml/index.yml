@@ -1,0 +1,129 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: eXtensible Application Markup Language (XAML)
+metadata:
+  title: eXtensible Application Markup Language (XAML)
+  description: XAML を使って Xamarin.Forms ユーザー インターフェイスを定義する方法について説明します。
+  ms.topic: landing-page
+  ms.prod: xamarin
+  ms.assetid: CD30EECC-8AC1-4CF5-A4FE-348420A6231E
+  author: davidbritch
+  ms.author: dabritch
+  ms.date: 07/31/2019
+abstract:
+  description: XAML を使って Xamarin.Forms ユーザー インターフェイスを定義する方法について説明します。
+sections:
+  - title: 開始するには
+    items:
+      - type: list
+        style: cards
+        className: cardsB
+        items:
+          - href: xaml-basics/index.md
+            html: XAML を使った Xamarin.Forms ユーザー インターフェイスの開発の基本について説明します。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_overview.svg'
+              href: xaml-basics/index.md
+            title: 基本
+          - href: xaml-controls.md
+            html: XAML ファイルから参照できる Xamarin.Forms のビューについて説明します。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_form.svg'
+              href: xaml-controls.md
+            title: コントロール
+          - href: xamlc.md
+            html: XAML コンパイラ使って XAML を中間言語に直接コンパイルする方法について説明します。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_build.svg'
+              href: xamlc.md
+            title: コンパイル
+          - href: markup-extensions/index.md
+            html: 要素属性をリテラル テキスト文字列ではなくソースから設定できるようにする、XAML マークアップ拡張について説明します。
+            image:
+              src: ~/media/icons/i_xaml-forms.svg
+              href: markup-extensions/index.md
+            title: マークアップ拡張機能
+  - title: ツール
+    items:
+      - type: list
+        style: cards
+        className: cardsB
+        items:
+          - href: toolbox.md
+            html: XAML ツールボックスを使って Xamarin.Forms のコントロールとレイアウトを XAML エディターにドラッグする方法について説明します。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_tools.svg'
+              href: toolbox.md
+            title: ツールボックス
+          - href: xaml-previewer/index.md
+            html: XAML プレビューアーを使用して、ページのライブ プレビューをその XAML マークアップと並べて表示する方法について説明します。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_responsive.svg'
+              href: xaml-previewer/index.md
+            title: プレビューアー
+  - title: 名前空間
+    items:
+      - type: list
+        style: cards
+        className: cardsB
+        items:
+          - href: namespaces.md
+            html: XAML 名前空間の構文と、XAML 名前空間を宣言して型にアクセスする方法について説明します。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_namespace.svg'
+              href: namespaces.md
+            title: 名前空間
+          - href: custom-namespace-schemas.md
+            html: カスタム URL と 1 つまたは複数の CLR 名前空間の間のマッピングを指定する、XAML カスタム名前空間スキーマを作成する方法について説明します。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_code-blocks.svg'
+              href: custom-namespace-schemas.md
+            title: カスタム名前空間スキーマ
+          - href: custom-prefix.md
+            html: XAML の使用のために、XAML 名前空間に関連付ける推奨プレフィックスを指定する方法について説明します。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_code-automate.svg'
+              href: custom-prefix.md
+            title: 名前空間の推奨プレフィックス
+  - title: その他の機能
+    items:
+      - type: list
+        style: cards
+        className: cardsB
+        items:
+          - href: bindable-properties.md
+            html: 連結可能プロパティを作成する方法と、それらを XAML から使用する方法について説明します。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_code-edit.svg'
+              href: bindable-properties.md
+            title: 連結可能プロパティ
+          - href: attached-properties.md
+            html: アタッチされるプロパティを作成する方法と、それらを XAML から使用する方法について説明します。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_code-samples.svg'
+              href: attached-properties.md
+            title: アタッチされるプロパティ
+          - href: resource-dictionaries.md
+            html: XAML リソースを作成する方法と、Xamarin.Forms アプリケーション全体でそれらを再利用する方法について説明します。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_reference.svg'
+              href: resource-dictionaries.md
+            title: リソース ディクショナリ
+          - href: passing-arguments.md
+            html: XAML を使って、コンストラクターに引数を渡す方法、ファクトリ メソッドを呼び出す方法、ジェネリック引数の型を指定する方法について説明します。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_learn-about.svg'
+              href: passing-arguments.md
+            title: 引数の受け渡し
+          - href: field-modifiers.md
+            html: 名前付き XAML 要素に対して生成されたフィールドのアクセス レベルを指定する、XAML フィールド修飾子について説明します。
+            image:
+              src: ~/media/icons/i_xaml-forms.svg
+              href: field-modifiers.md
+            title: フィールド修飾子
+          - href: runtime-load.md
+            html: 実行時に XAML を読み込んで解析する方法について説明します。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_mobile-app-developement.svg'
+              href: runtime-load.md
+            title: 実行時に XAML を読み込む

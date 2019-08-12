@@ -1,153 +1,153 @@
 ---
-title: リモート通知 firebase Cloud Messaging
-description: このチュートリアルでは、Xamarin.Android アプリケーションで Firebase Cloud Messaging を使用して、リモートの通知 (プッシュ通知とも呼ばれます) を実装する方法の詳細な手順の説明を提供します。 Firebase Cloud Messaging (FCM) との通信に必要な、FCM にアクセスするために Android マニフェストを構成する方法の例をまとめたものを Firebase を使用して、ダウン ストリームのメッセージングを示すさまざまなクラスを実装する方法を示していますコンソール。
+title: 焼討 Base Cloud Messaging を使用したリモート通知
+description: このチュートリアルでは、アドインアプリケーションで、焼討 Base Cloud Messaging を使用してリモート通知 (プッシュ通知とも呼ばれます) を実装する方法を順を追って説明します。 ここでは、焼討 Base Cloud Messaging (FCM) との通信に必要なさまざまなクラスを実装する方法を示し、FCM にアクセスするために Android マニフェストを構成する方法の例を示し、消火ベースを使用したダウンストリームメッセージングのデモンストレーションを行います。コンソール.
 ms.prod: xamarin
 ms.assetid: 4D7C5F46-C997-49F6-AFDA-6763E68CDC90
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/31/2018
-ms.openlocfilehash: a50a2014e28becacb2c9f4965b7f3377be57ab16
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 3837e28fa657764312cdbe379ba66caf9ccf18a4
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67830317"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644202"
 ---
-# <a name="remote-notifications-with-firebase-cloud-messaging"></a>リモート通知 firebase Cloud Messaging
+# <a name="remote-notifications-with-firebase-cloud-messaging"></a>焼討 Base Cloud Messaging を使用したリモート通知
 
-_このチュートリアルでは、Xamarin.Android アプリケーションで Firebase Cloud Messaging を使用して、リモートの通知 (プッシュ通知とも呼ばれます) を実装する方法の詳細な手順の説明を提供します。Firebase Cloud Messaging (FCM) との通信に必要な、FCM にアクセスするために Android マニフェストを構成する方法の例をまとめたものを Firebase を使用して、ダウン ストリームのメッセージングを示すさまざまなクラスを実装する方法を示していますコンソール。_
+_このチュートリアルでは、アドインアプリケーションで、焼討 Base Cloud Messaging を使用してリモート通知 (プッシュ通知とも呼ばれます) を実装する方法を順を追って説明します。ここでは、焼討 Base Cloud Messaging (FCM) との通信に必要なさまざまなクラスを実装する方法を示し、FCM にアクセスするために Android マニフェストを構成する方法の例を示し、消火ベースを使用したダウンストリームメッセージングのデモンストレーションを行います。コンソール._
 
 ## <a name="fcm-notifications-overview"></a>FCM 通知の概要
 
-このチュートリアルで、基本的なアプリと呼ばれる**FCMClient** FCM メッセージングの基本事項を説明するために作成されます。 **FCMClient** Google play 開発者サービスの存在を確認します、FCM から登録トークンを受け取る、Firebase コンソールから送信するリモート通知が表示されます、トピック メッセージをサブスクライブします。
+このチュートリアルでは、FCM メッセージングの要点を示すために、 **Fcmclient**と呼ばれる基本的なアプリを作成します。 **Fcmclient**は、Google Play 開発者サービスの存在を確認し、fcm から登録トークンを受け取り、焼討 base コンソールから送信するリモート通知を表示して、トピックメッセージをサブスクライブします。
 
-[![アプリのスクリーン ショットの例](remote-notifications-with-fcm-images/00-app-example-sml.png)](remote-notifications-with-fcm-images/00-app-example.png#lightbox)
+[![アプリのスクリーンショットの例](remote-notifications-with-fcm-images/00-app-example-sml.png)](remote-notifications-with-fcm-images/00-app-example.png#lightbox)
 
-次のトピックも紹介します。
+次のトピックについて詳しく説明します。
 
-1.  バック グラウンド通知
+1.  バックグラウンド通知
 
-2.  トピックのメッセージ
+2.  トピックメッセージ
 
-3.  フォア グラウンドの通知
+3.  フォアグラウンド通知
 
-このチュートリアルでは、機能を段階的に追加されます**FCMClient**し、デバイスまたは FCM と対話する方法を理解するためのエミュレーターで実行します。 ライブ アプリ トランザクションが、FCM サーバーとミラーリング監視サーバーにログ記録を使用して、Firebase コンソール通知 GUI に入力した FCM メッセージから通知を生成する方法がわかります。
+このチュートリアルでは、 **Fcmclient**に機能を段階的に追加し、それをデバイスまたはエミュレーターで実行して、fcm との対話方法を理解します。 ログ記録を使用して、FCM サーバーでライブアプリトランザクションを監視します。また、FCM メッセージからの通知の生成方法については、「焼討 Base Console notification GUI」に入力します。
 
 ## <a name="requirements"></a>必要条件
 
 
-理解するおくと役、[さまざまな種類のメッセージの](https://firebase.google.com/docs/cloud-messaging/concept-options#notifications_and_data_messages)Firebase Cloud Messaging で送信することができます。 メッセージのペイロードは、クライアント アプリを受信およびメッセージの処理方法が決まります。
+これは、焼討 Base Cloud Messaging から送信できる[さまざまな種類のメッセージ](https://firebase.google.com/docs/cloud-messaging/concept-options#notifications_and_data_messages)を理解するのに役立ちます。 メッセージのペイロードによって、クライアントアプリがメッセージを受信して処理する方法が決まります。
 
-このチュートリアルを続行するには、Google の FCM サーバーを使用するために必要な資格情報を取得する必要があります。このプロセスについては[Firebase Cloud Messaging](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md#setup_fcm)します。
-具体的には、ダウンロードする必要があります、 **google-services.json**このチュートリアルで説明するコード例で使用するファイル。 かどうかはまだ作成していないプロジェクトで、Firebase コンソール (まだダウンロードしていない場合や、 **google-services.json**ファイル) を参照してください[Firebase Cloud Messaging](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md)します。
+このチュートリアルを続行するには、Google の FCM サーバーを使用するために必要な資格情報を取得する必要があります。このプロセスについては、「[焼討 Base Cloud Messaging](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md#setup_fcm)」で説明されています。
+特に、このチュートリアルで示されているコード例で使用する**google services の json**ファイルをダウンロードする必要があります。 まだ焼討ベースコンソールでプロジェクトを作成していない場合 (または、まだ**google services の json**ファイルをダウンロードしていない場合) は、「[焼討 base Cloud Messaging](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md)」を参照してください。
 
-例のアプリを実行するには、テストの Android デバイスまたは firebase の互換性のあるエミュレーターを必要があります。 Firebase Cloud Messaging で Android 4.0 以降を実行しているクライアントをサポートしているし、これらのデバイスには、Google Play ストア アプリがインストールされている必要があります (Google Play Services 9.2.1 または以降が必要です)。 デバイスにインストールされている Google Play ストア アプリがあるまだない場合は、次を参照してください。、 [Google Play](https://support.google.com/googleplay) web サイトをダウンロードしてインストールします。 または、テスト デバイス (Android SDK エミュレーターを使用している場合は、Google Play ストアをインストールする必要はありません) の代わりにインストールされている Google play 開発者サービスで、Android SDK エミュレーターを使用できます。
+このサンプルアプリを実行するには、互換性が付属している Android テストデバイスまたはエミュレーターが必要です。 焼討 base Cloud Messaging では、Android 4.0 以降で実行されているクライアントがサポートされています。また、これらのデバイスには Google Play ストアアプリもインストールする必要があります (Google Play 開発者サービス9.2.1 以降が必要です)。 デバイスに Google Play ストアアプリをまだインストールしていない場合は、 [Google Play](https://support.google.com/googleplay)の web サイトにアクセスしてダウンロードし、インストールします。 または、テストデバイスではなく Google Play 開発者サービスをインストールした Android SDK エミュレーターを使用することもできます (Android SDK エミュレーターを使用している場合は、Google Play ストアをインストールする必要はありません)。
 
-## <a name="start-an-app-project"></a>アプリ プロジェクトを開始します。
+## <a name="start-an-app-project"></a>アプリプロジェクトを開始する
 
-という名前の新しい空の Xamarin.Android プロジェクトの作成を開始する**FCMClient**します。 Xamarin.Android プロジェクトの作成に慣れていない場合は、次を参照してください。 [Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md)します。
-新しいアプリを作成した後、次の手順は、パッケージ名を設定し、FCM との通信に使用されるいくつかの NuGet パッケージをインストールするのには。
+まず、 **Fcmclient**という名前の新しい空の Xamarin Android プロジェクトを作成します。 Xamarin Android プロジェクトの作成に慣れていない場合は、「 [Hello, android](~/android/get-started/hello-android/hello-android-quickstart.md)」を参照してください。
+新しいアプリが作成されたら、次の手順として、パッケージ名を設定し、FCM との通信に使用されるいくつかの NuGet パッケージをインストールします。
 
-### <a name="set-the-package-name"></a>パッケージ名を設定します。
+### <a name="set-the-package-name"></a>パッケージ名を設定する
 
-[Firebase Cloud Messaging](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md)、FCM 対応アプリのパッケージ名を指定します。 このパッケージ名としても機能、 [*アプリケーション ID* ](./firebase-cloud-messaging.md#fcm-in-action-app-id)関連付けられている、 [API キー](firebase-cloud-messaging.md#fcm-in-action-api-key)します。 このパッケージ名を使用するアプリを構成します。
+「[焼討 Base Cloud Messaging](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md)」で、fcm 対応アプリのパッケージ名を指定しました。 このパッケージ名は、 [API キー](firebase-cloud-messaging.md#fcm-in-action-api-key)に関連付けられている[*アプリケーション ID*](./firebase-cloud-messaging.md#fcm-in-action-app-id)としても機能します。 このパッケージ名を使用するようにアプリを構成します。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1.  プロパティを開き、 **FCMClient**プロジェクト。
+1.  **Fcmclient**プロジェクトのプロパティを開きます。
 
-2.  **Android マニフェスト** ページで、パッケージ名を設定します。
+2.  [ **Android マニフェスト**] ページで、パッケージ名を設定します。
 
-次の例では、パッケージ名に設定されて`com.xamarin.fcmexample`:
+次の例では、パッケージ名がに`com.xamarin.fcmexample`設定されています。
 
-[![パッケージ名を設定します。](remote-notifications-with-fcm-images/01-package-name-vs-sml.png)](remote-notifications-with-fcm-images/01-package-name-vs.png#lightbox)
+[![パッケージ名の設定](remote-notifications-with-fcm-images/01-package-name-vs-sml.png)](remote-notifications-with-fcm-images/01-package-name-vs.png#lightbox)
 
-更新する際、 **Android マニフェスト**、ことを確認のチェックも、`Internet`アクセス許可を有効にします。
+**Android マニフェスト**を更新するときに、 `Internet`アクセス許可が有効になっていることも確認してください。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1.  プロパティを開き、 **FCMClient**プロジェクト。
+1.  **Fcmclient**プロジェクトのプロパティを開きます。
 
-2.  **Android アプリケーション** ページで、パッケージ名を設定します。
+2.  [ **Android アプリケーション**] ページで、パッケージ名を設定します。
 
-次の例では、パッケージ名に設定されて`com.xamarin.fcmexample`:
+次の例では、パッケージ名がに`com.xamarin.fcmexample`設定されています。
 
-[![パッケージ名を設定します。](remote-notifications-with-fcm-images/01-package-name-xs-sml.png)](remote-notifications-with-fcm-images/01-package-name-xs.png#lightbox)
+[![パッケージ名の設定](remote-notifications-with-fcm-images/01-package-name-xs-sml.png)](remote-notifications-with-fcm-images/01-package-name-xs.png#lightbox)
 
-更新する際、 **Android マニフェスト**、ことを確認のチェックも、`INTERNET`アクセス許可が有効になっている (**アクセス許可が必要な**)。
+**Android マニフェスト**を更新するときに、アクセス許可が有効になって`INTERNET`いることを確認します ([**必要なアクセス許可**] の下)。
 
 -----
 
 > [!IMPORTANT]
-> クライアント アプリはこのパッケージ名でない場合は、FCM から登録トークンを受信することはできません*まったく*Firebase コンソールに入力されたパッケージ名と一致します。
+> このパッケージ名が、焼討 Base コンソールに入力されたパッケージ名と*完全*に一致しない場合、クライアントアプリは fcm から登録トークンを受け取ることができません。
 
-### <a name="add-the-xamarin-google-play-services-base-package"></a>Xamarin Google Play サービス基本パッケージを追加します。
+### <a name="add-the-xamarin-google-play-services-base-package"></a>Xamarin Google Play 開発者サービス基本パッケージを追加する
 
-Firebase Cloud Messaging、Google play 開発者サービス、依存しているため、 [Xamarin Google play 開発者サービスのベース](https://www.nuget.org/packages/Xamarin.GooglePlayServices.Base/)Xamarin.Android プロジェクトに NuGet パッケージを追加する必要があります。 バージョン 29.0.0.2 必要がありますまたはそれ以降。
+焼討 Base Cloud Messaging は Google Play 開発者サービスに依存しているため、xamarin [Google Play 開発者サービス Base](https://www.nuget.org/packages/Xamarin.GooglePlayServices.Base/) NuGet パッケージを Xamarin. Android プロジェクトに追加する必要があります。 バージョン29.0.0.2 以降が必要になります。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1.  Visual Studio で、右クリックして**参照 > NuGet パッケージの管理.** .
+1.  Visual Studio で、[参照] を右クリックし **> [NuGet パッケージの管理**] をクリックします。
 
-2.  をクリックして、**参照**タブし、検索**Xamarin.GooglePlayServices.Base**します。
+2.  [**参照**] タブをクリックし、 **GooglePlayServices**を検索します。
 
-3.  このパッケージをインストール、 **FCMClient**プロジェクト。
+3.  このパッケージを**Fcmclient**プロジェクトにインストールします。
 
-    [![Google Play Services ベースのインストール](remote-notifications-with-fcm-images/02-google-play-services-vs-sml.png)](remote-notifications-with-fcm-images/02-google-play-services-vs.png#lightbox)
+    [![Google Play 開発者サービスベースのインストール](remote-notifications-with-fcm-images/02-google-play-services-vs-sml.png)](remote-notifications-with-fcm-images/02-google-play-services-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1.  Visual Studio for Mac では、右クリックして**パッケージ > パッケージを追加しています.** .
+1.  Visual Studio for Mac で、[パッケージ] を右クリックし **> [パッケージの追加...** ] をクリックします。
 
-2.  検索**Xamarin.GooglePlayServices.Base**します。
+2.  **GooglePlayServices**を検索します。
 
-3.  このパッケージをインストール、 **FCMClient**プロジェクト。
+3.  このパッケージを**Fcmclient**プロジェクトにインストールします。
 
-    [![Google Play Services ベースのインストール](remote-notifications-with-fcm-images/02-google-play-services-xs-sml.png)](remote-notifications-with-fcm-images/02-google-play-services-xs.png#lightbox)
+    [![Google Play 開発者サービスベースのインストール](remote-notifications-with-fcm-images/02-google-play-services-xs-sml.png)](remote-notifications-with-fcm-images/02-google-play-services-xs.png#lightbox)
 
 -----
 
-NuGet のインストール中にエラーが発生する場合は閉じます、 **FCMClient**プロジェクト、それを再度開き、NuGet のインストールを再試行します。
+NuGet のインストール中にエラーが発生した場合は、 **Fcmclient**プロジェクトを閉じて再度開いてから、nuget のインストールを再試行してください。
 
-インストールするときに**Xamarin.GooglePlayServices.Base**、すべての必要な依存関係もインストールされます。 編集**MainActivity.cs**し、以下の追加`using`ステートメント。
+**GooglePlayServices**をインストールすると、必要なすべての依存関係もインストールされます。 **MainActivity.cs**を編集し、次`using`のステートメントを追加します。
 
 ```csharp
 using Android.Gms.Common;
 ```
 
-このステートメントを使用する、`GoogleApiAvailability`クラス**Xamarin.GooglePlayServices.Base**できる**FCMClient**コード。
-`GoogleApiAvailability` Google play 開発者サービスの有無を確認に使用されます。
+このステートメントにより`GoogleApiAvailability` 、 **GooglePlayServices**内のクラスが**fcmclient**コードで使用できるようになります。
+`GoogleApiAvailability`は Google Play 開発者サービスの存在を確認するために使用されます。
 
-### <a name="add-the-xamarin-firebase-messaging-package"></a>Xamarin Firebase Messaging パッケージを追加します。
+### <a name="add-the-xamarin-firebase-messaging-package"></a>Xamarin 焼討 Base メッセージングパッケージを追加する
 
-FCM からメッセージを受信する、[メッセージング - Xamarin Firebase](https://www.nuget.org/packages/Xamarin.Firebase.Messaging/)アプリ プロジェクトに NuGet パッケージを追加する必要があります。 このパッケージは、Android アプリケーションは FCM サーバーからのメッセージを受信できません。
+FCM からメッセージを受信するには、 [Xamarin 焼討 Base Messaging](https://www.nuget.org/packages/Xamarin.Firebase.Messaging/) NuGet パッケージをアプリケーションプロジェクトに追加する必要があります。 このパッケージがないと、Android アプリケーションは FCM サーバーからメッセージを受信できません。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1.  Visual Studio で、右クリックして**参照 > NuGet パッケージの管理.** .
+1.  Visual Studio で、[参照] を右クリックし **> [NuGet パッケージの管理**] をクリックします。
 
-2. 検索**Xamarin.Firebase.Messaging**します。
+2. 「 **Xamarin. メッセージ**」を検索します。
 
-3.  このパッケージをインストール、 **FCMClient**プロジェクト。
+3.  このパッケージを**Fcmclient**プロジェクトにインストールします。
 
-    [![Xamarin Firebase のメッセージングをインストールします。](remote-notifications-with-fcm-images/03-firebase-messaging-vs-sml.png)](remote-notifications-with-fcm-images/03-firebase-messaging-vs.png#lightbox)
+    [![Xamarin 焼討 Base メッセージングのインストール](remote-notifications-with-fcm-images/03-firebase-messaging-vs-sml.png)](remote-notifications-with-fcm-images/03-firebase-messaging-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1.  Visual Studio for Mac では、右クリックして**パッケージ > パッケージを追加しています.** .
+1.  Visual Studio for Mac で、[パッケージ] を右クリックし **> [パッケージの追加...** ] をクリックします。
 
-2.  検索**Xamarin.Firebase.Messaging**します。
+2.  「 **Xamarin. メッセージ**」を検索します。
 
-3.  このパッケージをインストール、 **FCMClient**プロジェクト。
+3.  このパッケージを**Fcmclient**プロジェクトにインストールします。
 
-    [![Xamarin Firebase のメッセージングをインストールします。](remote-notifications-with-fcm-images/03-firebase-messaging-xs-sml.png)](remote-notifications-with-fcm-images/03-firebase-messaging-xs.png#lightbox)
+    [![Xamarin 焼討 Base メッセージングのインストール](remote-notifications-with-fcm-images/03-firebase-messaging-xs-sml.png)](remote-notifications-with-fcm-images/03-firebase-messaging-xs.png#lightbox)
 
 -----
 
-インストールするときに**Xamarin.Firebase.Messaging**、すべての必要な依存関係もインストールされます。
+**Xamarin. Messaging**をインストールすると、必要なすべての依存関係もインストールされます。
 
-次に、編集**MainActivity.cs**し、以下の追加`using`ステートメント。
+次に、 **MainActivity.cs**を編集し、 `using`次のステートメントを追加します。
 
 ```csharp
 using Firebase.Messaging;
@@ -155,49 +155,49 @@ using Firebase.Iid;
 using Android.Util;
 ```
 
-最初の 2 つのステートメント内の型を作成する、 **Xamarin.Firebase.Messaging** NuGet パッケージを使用可能な**FCMClient**コード。 **Android.Util** FMS とトランザクションの確認に使用されるログ記録機能を追加します。
+最初の2つのステートメントは、 **Xamarin.** の NuGet パッケージの型を**fcmclient**コードで使用できるようにします。 **Android. Util**では、FMS でトランザクションを観察するために使用されるログ機能が追加されます。
 
-### <a name="add-googleplayservices-json"></a>Google Services JSON ファイルを追加します。
+### <a name="add-googleplayservices-json"></a>Google Services JSON ファイルを追加する
 
-次の手順が追加するには、 **google-services.json**ファイルをプロジェクトのルート ディレクトリ。
+次の手順では、プロジェクトのルートディレクトリに**google services の json**ファイルを追加します。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1.  コピー **google-services.json**プロジェクト フォルダーにします。
+1.  **Google-** services.msc をプロジェクトフォルダーにコピーします。
 
-2.  追加**google-services.json**アプリ プロジェクトを (をクリックして**すべてのファイル**で、**ソリューション エクスプ ローラー**を右クリックして**google-services.json**を選択し、**プロジェクトに含める**)。
+2.  アプリプロジェクトに**google-** services.msc を追加します (**ソリューションエクスプローラー**で [**すべてのファイルを表示**] をクリックし、[ **google-services**] を右クリックして、[**プロジェクトに含める**] を選択します)。
 
-3.  選択**google-services.json**で、**ソリューション エクスプ ローラー**ウィンドウ。
+3.  [**ソリューションエクスプローラー** ] ウィンドウで [ **google-** services.msc] を選択します。
 
-4.  **プロパティ**ペインで、設定、**ビルド アクション**に**GoogleServicesJson**:
+4.  [**プロパティ**] ペインで、[**ビルド] アクション**を [ **GoogleServicesJson**] に設定します。
 
-    [![ビルド アクションを GoogleServicesJson に設定します。](remote-notifications-with-fcm-images/04-google-services-json-vs-sml.png)](remote-notifications-with-fcm-images/04-google-services-json-vs.png#lightbox)
+    [![ビルドアクションを GoogleServicesJson に設定する](remote-notifications-with-fcm-images/04-google-services-json-vs-sml.png)](remote-notifications-with-fcm-images/04-google-services-json-vs.png#lightbox)
 
     > [!NOTE] 
-    > 場合、 **GoogleServicesJson**ビルド アクションが示されていません、保存、ソリューションを閉じ、再度開きます。
+    > **GoogleServicesJson**ビルドアクションが表示されない場合は、ソリューションを保存して閉じ、再度開きます。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1.  コピー **google-services.json**プロジェクト フォルダーにします。
+1.  **Google-** services.msc をプロジェクトフォルダーにコピーします。
 
-2.  追加**google-services.json**アプリ プロジェクトにします。
+2.  **Google-** services.msc をアプリプロジェクトに追加します。
 
-3.  右クリックして**google-services.json**します。
+3.  [ **Google-services. json**] を右クリックします。
 
-4.  設定、**ビルド アクション**に**GoogleServicesJson**:
+4.  **ビルドアクション**を**GoogleServicesJson**に設定します。
 
-    [![ビルド アクションを GoogleServicesJson に設定します。](remote-notifications-with-fcm-images/04-google-services-json-xs-sml.png)](remote-notifications-with-fcm-images/04-google-services-json-xs.png#lightbox)
+    [![ビルドアクションを GoogleServicesJson に設定する](remote-notifications-with-fcm-images/04-google-services-json-xs-sml.png)](remote-notifications-with-fcm-images/04-google-services-json-xs.png#lightbox)
 
 -----
 
-ときに**google-services.json** 、プロジェクトに追加されます (および**GoogleServicesJson**ビルド アクションが設定されている)、ビルド プロセスは、クライアント ID を抽出しますおよび[API キー](./firebase-cloud-messaging.md#fcm-in-action-api-key)し。結合生成されるこれらの資格情報を追加します。 **AndroidManifest.xml**に存在する**obj/Debug/android/AndroidManifest.xml**します。 このマージ プロセスは、すべてのアクセス許可と FCM サーバーへの接続に必要なその他の FCM 要素に自動的に追加します。
+Google **GoogleServicesJson**がプロジェクトに追加されると (および、ビルドアクションが設定された場合)、ビルドプロセスはクライアント ID と[API キー](./firebase-cloud-messaging.md#fcm-in-action-api-key)を抽出し、これらの資格情報をマージ/生成さ **れたに追加します。** **Obj/Debug/Android/androidmanifest**に存在する AndroidManifest .xml。 このマージプロセスでは、FCM サーバーへの接続に必要なすべてのアクセス許可とその他の FCM 要素が自動的に追加されます。
 
 
-## <a name="check-for-google-play-services-and-create-a-notification-channel"></a>Google play 開発者サービスを確認し、通知チャネルを作成
+## <a name="check-for-google-play-services-and-create-a-notification-channel"></a>Google Play 開発者サービスを確認し、通知チャネルを作成します
 
-Google Android アプリを Google play 開発者サービスの機能にアクセスする前に、Google Play Services APK の存在に確認をお勧めします (詳細については、次を参照してください。 [Google play 開発者サービスの確認](https://firebase.google.com/docs/cloud-messaging/android/client#sample-play))。
+Google では、Google Play 開発者サービス機能にアクセスする前に、Android アプリで APK Google Play 開発者サービスが存在するかどうかを確認することをお勧めします (詳細については、「 [Google Play サービスの確認](https://firebase.google.com/docs/cloud-messaging/android/client#sample-play)」を参照してください)。
 
-アプリの UI の初期レイアウトを最初に作成されます。 編集**Resources/layout/Main.axml**内容を次の XML に置き換えます。
+最初に、アプリの UI の初期レイアウトが作成されます。 **Resources/layout/Main**を編集し、その内容を次の xml に置き換えます。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -216,10 +216,10 @@ Google Android アプリを Google play 開発者サービスの機能にアク�
 </LinearLayout>
 ```
 
-これは、 `TextView` Google play 開発者サービスがインストールされているかどうかを示すメッセージを表示するために使用されます。 変更を保存**Main.axml**します。
+これ`TextView`は Google Play 開発者サービスがインストールされているかどうかを示すメッセージを表示するために使用されます。 変更内容を**メインの axml**に保存します。
 
 
-編集**MainActivity.cs**し、次のインスタンス変数を追加して、`MainActivity`クラス。
+**MainActivity.cs**を編集し、次のインスタンス変数を`MainActivity`クラスに追加します。
 
 ```csharp
 public class MainActivity : AppCompatActivity
@@ -232,11 +232,11 @@ public class MainActivity : AppCompatActivity
     TextView msgText;
 ```
 
-変数`CHANNEL_ID`と`NOTIFICATION_ID`メソッドで使用される[ `CreateNotificationChannel` ](#create-notification-channel-code)に追加される`MainActivity`このチュートリアルで後でします。
+これらの`CHANNEL_ID`変数`NOTIFICATION_ID`とは、このチュートリアルの[`CreateNotificationChannel`](#create-notification-channel-code) `MainActivity`後半で追加されるメソッドで使用されます。
 
 
-次の例では、`OnCreate`メソッドは、アプリは FCM サービスを使用する前に Google play 開発者サービスが利用できることを確認します。
-次のメソッドを追加、`MainActivity`クラス。
+次の例`OnCreate`では、メソッドは、アプリが fcm サービスを使用しようとする前に Google Play 開発者サービスが使用可能であることを確認します。
+次のメソッドを`MainActivity`クラスに追加します。
 
 ```csharp
 public bool IsPlayServicesAvailable ()
@@ -261,9 +261,9 @@ public bool IsPlayServicesAvailable ()
 }
 ```
 
-このコードは、Google Play Services APK がインストールされているかどうかにデバイスを確認します。 メッセージが表示されますがインストールされていない場合、 `TextBox` APK を Google Play ストアからダウンロードする (またはデバイスのシステム設定で有効にする) のユーザーに指示します。
+このコードは、Google Play 開発者サービス APK がインストールされているかどうかをデバイスで確認します。 インストールされていない場合は、 `TextBox` Google Play ストアから apk をダウンロードするようにユーザーに指示するメッセージ (または、デバイスのシステム設定で有効にする) が表示されます。
 
-<a name="create-notification-channel-code"></a>Android 8.0 (API レベル 26) 以降を実行しているアプリを作成する必要があります、 [_通知チャネル_](~/android/app-fundamentals/notifications/local-notifications.md)通知を発行します。  次のメソッドを追加、`MainActivity`クラス (必要に応じて) 通知チャネルが作成されます。
+<a name="create-notification-channel-code"></a>Android 8.0 (API レベル 26) 以降で実行されているアプリでは、通知を発行するための[_通知チャネル_](~/android/app-fundamentals/notifications/local-notifications.md)を作成する必要があります。  通知チャネルを作成する`MainActivity`クラスに次のメソッドを追加します (必要な場合)。
 
 ```csharp
 void CreateNotificationChannel()
@@ -304,21 +304,21 @@ protected override void OnCreate (Bundle bundle)
 }
 ```
 
-`IsPlayServicesAvailable` 最後に呼び出されます`OnCreate`Google play 開発者サービスは、各実行時間のアプリが起動を確認できるようにします。 メソッド`CreateNotificationChannel`は Android 8 を実行しているデバイスの通知チャネルが存在することを確認すると呼ばれる以上。 アプリがある場合、`OnResume`メソッドを呼び出す必要が`IsPlayServicesAvailable`から`OnResume`もします。 完全に再構築し、アプリを実行します。 すべてが正しく構成されて、次のスクリーン ショットのような画面が表示されます。
+`IsPlayServicesAvailable`は、アプリが起動する`OnCreate`たびに Google Play 開発者サービスチェックが実行されるように、の末尾で呼び出されます。 Android 8 `CreateNotificationChannel`以降を実行しているデバイスの通知チャネルが存在することを確認するために、メソッドが呼び出されます。 アプリに`OnResume`メソッドがある場合は、からも`IsPlayServicesAvailable`を`OnResume`呼び出す必要があります。 アプリを完全にリビルドして実行します。 すべてが正しく構成されている場合は、次のスクリーンショットのような画面が表示されます。
 
-[![アプリは、Google play 開発者サービスが使用可能なであることを示します](remote-notifications-with-fcm-images/05-gps-available-sml.png)](remote-notifications-with-fcm-images/05-gps-available.png#lightbox)
+[![アプリは Google Play 開発者サービスが使用可能であることを示します](remote-notifications-with-fcm-images/05-gps-available-sml.png)](remote-notifications-with-fcm-images/05-gps-available.png#lightbox)
 
-この結果を得られない場合は、Google Play Services APK がデバイスにインストールされていることを確認します (詳細については、次を参照してください。[設定を Google play 開発者サービス](https://developers.google.com/android/guides/setup))。
-追加したこと確認することも、 **Xamarin.Google.Play.Services.Base**をパッケージ化、 **FCMClient**前述のようにプロジェクトします。
+この結果が得られない場合は、Google Play 開発者サービス APK がデバイスにインストールされていることを確認します (詳細については、「 [Google Play 開発者サービスのセットアップ](https://developers.google.com/android/guides/setup)」を参照してください)。
+また、前に説明したように、 **Fcmclient**プロジェクトに**Xamarin. Google. service.** .............................
 
 
-## <a name="add-the-instance-id-receiver"></a>インスタンス ID のレシーバーを追加します。
+## <a name="add-the-instance-id-receiver"></a>インスタンス ID レシーバーを追加する
 
-次の手順が拡張するサービスを追加するには`FirebaseInstanceIdService`ハンドルの作成、回転、および更新[Firebase 登録トークン](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md#fcm-in-action-registration-token)します。 `FirebaseInstanceIdService`サービスがデバイスにメッセージを送信できる FCM 必要です。 ときに、`FirebaseInstanceIdService`サービスは、アプリは自動的に FCM メッセージを受信し、アプリが backgrounded たびに通知として表示して、クライアント アプリに追加されます。
+次の手順では、を拡張`FirebaseInstanceIdService`するサービスを追加して、[焼討基本登録トークン](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md#fcm-in-action-registration-token)の作成、ローテーション、および更新を処理します。 サービス`FirebaseInstanceIdService`は、fcm がデバイスにメッセージを送信できるようにするために必要です。 `FirebaseInstanceIdService`サービスがクライアントアプリに追加されると、アプリは自動的に fcm メッセージを受信し、アプリが backgrounded されるたびに通知として表示されます。
 
-### <a name="declare-the-receiver-in-the-android-manifest"></a>Android マニフェストで、受信側を宣言します。
+### <a name="declare-the-receiver-in-the-android-manifest"></a>Android マニフェストで受信者を宣言する
 
-編集**AndroidManifest.xml**し、次の挿入`<receiver>`要素を`<application>`セクション。
+**Androidmanifest .xml**を編集し、 `<receiver>` `<application>`セクションに次の要素を挿入します。
 
 ```xml
 <receiver
@@ -336,26 +336,26 @@ protected override void OnCreate (Bundle bundle)
 </receiver>
 ```
 
-この XML は、次を行います。
+この XML は、次のことを行います。
 
--   宣言を`FirebaseInstanceIdReceiver`実装を提供する、[一意識別子](https://developers.google.com/instance-id/)の各アプリ インスタンス。 この受信者は認証し、アクションを承認します。
+-   各アプリ`FirebaseInstanceIdReceiver`インスタンスの一意の[識別子](https://developers.google.com/instance-id/)を提供する実装を宣言します。 この受信者は認証し、アクションを承認します。
 
 -   内部宣言`FirebaseInstanceIdInternalReceiver`安全にサービスを開始するために使用する実装。
 
--   [アプリ ID](./firebase-cloud-messaging.md#fcm-in-action-app-id)に格納されている場合は、 **google-services.json**がファイル[プロジェクトに追加](#add-googleplayservices-json)します。 Xamarin.Android Firebase バインドがトークンを置き換える`${applicationId}`; アプリ ID を持つ追加のコードは必要ありません、クライアント アプリでアプリ ID を指定するには
+-   [アプリ ID](./firebase-cloud-messaging.md#fcm-in-action-app-id)は、[プロジェクトに追加](#add-googleplayservices-json)された**google services の json**ファイルに格納されます。 Xamarin の消火ベースのバインドでは、トークン`${applicationId}`はアプリ id に置き換えられます。アプリ id を提供するために、クライアントアプリで追加のコードは必要ありません。
 
-`FirebaseInstanceIdReceiver`は、`WakefulBroadcastReceiver`を受け取る`FirebaseInstanceId`と`FirebaseMessaging`イベントから派生したクラスに配信および`FirebaseInstanceIdService`します。
+`FirebaseMessaging` `FirebaseInstanceId` `FirebaseInstanceIdService`は、イベントとイベントを受け取り、派生元のクラスに配信するです。`WakefulBroadcastReceiver` `FirebaseInstanceIdReceiver`
 
-### <a name="implement-the-firebase-instance-id-service"></a>Firebase インスタンス ID サービスを実装します。
+### <a name="implement-the-firebase-instance-id-service"></a>焼討 Base インスタンス ID サービスを実装する
 
-FCM で、アプリケーションの登録作業は、カスタム`FirebaseInstanceIdService`提供するサービス。
-`FirebaseInstanceIdService` 次の手順を実行します。
+アプリケーションを fcm に登録する作業は、指定したカスタム`FirebaseInstanceIdService`サービスによって処理されます。
+`FirebaseInstanceIdService`では、次の手順を実行します。
 
-1.  使用して、[インスタンス ID API](https://developers.google.com/android/reference/com/google/android/gms/iid/InstanceID) FCM とアプリのサーバーにアクセスするクライアント アプリを承認するセキュリティ トークンを生成します。 代わりに、アプリが返される、[登録トークン](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md#fcm-in-action-registration-token)FCM から。
+1.  [インスタンス ID API](https://developers.google.com/android/reference/com/google/android/gms/iid/InstanceID)を使用して、クライアントアプリが fcm とアプリサーバーにアクセスすることを承認するセキュリティトークンを生成します。 返されると、アプリは FCM から[登録トークン](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md#fcm-in-action-registration-token)を取得します。
 
-2.  アプリのサーバーで必要な場合は、アプリ サーバーに登録トークンを転送します。
+2.  アプリサーバーで登録トークンが必要な場合は、アプリサーバーに登録トークンを転送します。
 
-という新しいファイルを追加**MyFirebaseIIDService.cs**次のテンプレート コードを置き換えます。
+**MyFirebaseIIDService.cs**という名前の新しいファイルを追加し、テンプレートコードを次のコードに置き換えます。
 
 ```csharp
 using System;
@@ -384,26 +384,26 @@ namespace FCMClient
 }
 ```
 
-このサービスを実装して、`OnTokenRefresh`登録トークンが最初に作成または変更されたときに呼び出されるメソッド。 ときに`OnTokenRefresh`実行から最新のトークンを取得、`FirebaseInstanceId.Instance.Token`プロパティ (これは、FCM によっては非同期的に更新されます)。 この例で、出力ウィンドウに表示できますように更新トークンが記録されます。
+このサービスは、 `OnTokenRefresh`登録トークンが最初に作成または変更されたときに呼び出されるメソッドを実装します。 を`OnTokenRefresh`実行すると、 `FirebaseInstanceId.Instance.Token`プロパティから最新のトークンが取得されます (fcm によって非同期的に更新されます)。 この例では、更新されたトークンがログに記録されるため、出力ウィンドウで表示できます。
 
 ```csharp
 var refreshedToken = FirebaseInstanceId.Instance.Token;
 Log.Debug(TAG, "Refreshed token: " + refreshedToken);
 ```
 
-`OnTokenRefresh` 呼び出される頻度の低い: 次の状況でトークンの更新に使用されます。
+`OnTokenRefresh`次のような場合にトークンを更新するために使用されます。
 
--   ときに、アプリがインストールまたはアンインストールします。
+-   アプリがインストールまたはアンインストールされたとき。
 
--   ときに、ユーザーは、アプリ データを削除します。
+-   ユーザーがアプリデータを削除したとき。
 
--   アプリに消去されるインスタンスの id。
+-   アプリがインスタンス ID を消去するとき。
 
 -   トークンのセキュリティが侵害された場合。
 
-Google のに従って[インスタンス ID](https://developers.google.com/instance-id/guides/android-implementation)ドキュメントについては、FCM インスタンス ID サービスが要求に、アプリがトークン定期的に (通常は、6 か月ごと) を更新します。
+Google の[インスタンス id](https://developers.google.com/instance-id/guides/android-implementation)のドキュメントに従って、Fcm instance id サービスは、アプリがトークンを定期的に更新するように要求します (通常は6か月ごと)。
 
-`OnTokenRefresh` 呼び出して`SendRegistrationToAppServer`に関連付けるユーザーの登録トークン サーバー側のアカウント (ある場合) で保持されているアプリケーションで。
+`OnTokenRefresh`また、 `SendRegistrationToAppServer`はを呼び出して、アプリケーションによって管理されているサーバー側アカウント (存在する場合) にユーザーの登録トークンを関連付けます。
 
 ```csharp
 void SendRegistrationToAppServer (string token)
@@ -412,19 +412,19 @@ void SendRegistrationToAppServer (string token)
 }
 ```
 
-この実装は、アプリ サーバーの設計に依存するため、この例では、空のメソッド本体が提供されます。 アプリケーション サーバーは、FCM 登録情報を必要とする場合は変更`SendRegistrationToAppServer`アプリによって管理される任意のサーバー側アカウントとユーザーの FCM インスタンス ID トークンを関連付ける。 (トークンがクライアント アプリに不透明なことに注意してください)。
+この実装はアプリサーバーの設計に依存しているため、この例では空のメソッド本体が用意されています。 アプリサーバーで fcm 登録情報が必要な場合`SendRegistrationToAppServer`は、を変更して、ユーザーの fcm インスタンス ID トークンを、アプリで管理されている任意のサーバー側アカウントに関連付けます。 (トークンはクライアントアプリに対して非透過的であることに注意してください)。
 
-トークンは、アプリ サーバーに送信されるときに`SendRegistrationToAppServer`トークンがサーバーに送信されたかどうかを示すブール値を維持する必要があります。 このブール値が false の場合`SendRegistrationToAppServer`トークンをアプリ サーバーから送信する&ndash;それ以外の場合、トークンは、前の呼び出しでアプリのサーバーに送信されて既にします。 場合によっては (このなど`FCMClient`例)、アプリのサーバーでは、トークンは必要はありません。 したがって、このメソッドはこの例では必要はありません。
+トークンがアプリサーバーに送信されるとき、 `SendRegistrationToAppServer`は、トークンがサーバーに送信されたかどうかを示すブール値を保持する必要があります。 このブール値が false の`SendRegistrationToAppServer`場合、はアプリサーバー &ndash;にトークンを送信します。それ以外の場合、トークンは既に以前の呼び出しでアプリサーバーに送信されています。 場合によっては (この`FCMClient`例など)、アプリサーバーはトークンを必要としないため、この例ではこの方法は必要ありません。
 
-## <a name="implement-client-app-code"></a>クライアント アプリ コードを実装します。
+## <a name="implement-client-app-code"></a>クライアントアプリコードの実装
 
-受信側サービスが準備できたので、これらのサービスを活用するためにクライアント アプリ コードを記述できます。 次のセクションで、ボタンは、登録トークンをログオン UI に追加されます (とも呼ばれます、*インスタンス ID トークン*) により多くのコードを追加および`MainActivity`を表示する`Intent`からアプリを起動したときに情報を通知:
+受信側サービスが配置されたので、クライアントアプリコードを記述してこれらのサービスを利用できます。 次のセクションでは、登録トークン (*インスタンス ID トークン*とも呼ばれます) をログに記録するためのボタンが UI に追加され`MainActivity` 、アプリ`Intent`が通知から起動されたときに情報を表示するためのコードがに追加されています。
 
-[![ログ アプリの画面に追加トークン ボタン](remote-notifications-with-fcm-images/06-log-token-sml.png)](remote-notifications-with-fcm-images/06-log-token.png#lightbox)
+[![アプリ画面に追加された [ログトークン] ボタン](remote-notifications-with-fcm-images/06-log-token-sml.png)](remote-notifications-with-fcm-images/06-log-token.png#lightbox)
 
-### <a name="log-tokens"></a>ログのトークン
+### <a name="log-tokens"></a>ログトークン
 
-デモの目的でのみこの手順で追加したコードは、&ndash;運用環境のクライアント アプリは登録トークンを記録する必要がありません。 編集**Resources/layout/Main.axml**し、以下の追加`Button`宣言の直後に、`TextView`要素。
+この手順で追加したコードは、デモンストレーション&ndash;のみを目的としています。実稼働クライアントアプリでは、登録トークンをログに記録する必要がありません。 **Resources/layout/Main**を編集し、要素の`Button` `TextView`直後に次の宣言を追加します。
 
 ```xml
 <Button
@@ -444,11 +444,11 @@ logTokenButton.Click += delegate {
 };
 ```
 
-このコードでは、現在のトークンをログ出力ウィンドウにときに、**ログ トークン** ボタンをタップします。
+このコードは、[**ログトークン**] ボタンがタップされたときに、現在のトークンを [出力] ウィンドウに記録します。
 
-### <a name="handle-notification-intents"></a>通知のインテントを処理します。
+### <a name="handle-notification-intents"></a>通知インテントを処理する
 
-ユーザーがから発行された通知をタップした**FCMClient**、その通知に付属するすべてのデータでメッセージを利用`Intent`extras します。 編集**MainActivity.cs**の先頭に次のコードを追加し、`OnCreate`メソッド (呼び出しの前に`IsPlayServicesAvailable`)。
+ユーザーが**fcmclient**から発行された通知をタップすると、その通知メッセージに付随する`Intent`データはすべて、エクストラで使用できるようになります。 **MainActivity.cs**を編集し、 `OnCreate`メソッドの先頭 (の呼び出しの`IsPlayServicesAvailable`前) に次のコードを追加します。
 
 ```csharp
 if (Intent.Extras != null)
@@ -461,66 +461,66 @@ if (Intent.Extras != null)
 }
 ```
 
-アプリの起動ツール`Intent`ため、このコードに付属するデータをログイン、ユーザーがその通知メッセージをタップしたときに発生、`Intent`出力ウィンドウにします。 場合は、異なる`Intent`起動する必要があります、`click_action`に通知メッセージのフィールドを設定する必要があります`Intent`(ランチャー`Intent`ない場合に使用`click_action`が指定されて)。
+ユーザーが通知メッセージ`Intent`をタップすると、アプリのランチャーが発生します。そのため、このコードでは`Intent` 、に含まれるすべてのデータが出力ウィンドウに記録されます。 別`Intent`のを起動する必要がある`click_action`場合は、通知メッセージのフィールドをその`Intent`フィールドに設定する必要があります`click_action` (が指定されていない場合はランチャー `Intent`が使用されます)。
 
 
-## <a name="background-notifications"></a>バック グラウンド通知
+## <a name="background-notifications"></a>バックグラウンド通知
 
-ビルドし、実行、 **FCMClient**アプリ。 **ログ トークン**ボタンが表示されます。
+**Fcmclient**アプリをビルドして実行します。 [ **Log Token** ] ボタンが表示されます。
 
-[![トークン [ログ] ボタンが表示されます。](remote-notifications-with-fcm-images/06-log-token-sml.png)](remote-notifications-with-fcm-images/06-log-token.png#lightbox)
+[![[ログトークン] ボタンが表示されます](remote-notifications-with-fcm-images/06-log-token-sml.png)](remote-notifications-with-fcm-images/06-log-token.png#lightbox)
 
-タップして、**ログ トークン**ボタンをクリックします。 IDE の [出力] ウィンドウで、次のようなメッセージを表示する必要があります。
+[**ログトークン**] ボタンをタップします。 IDE の出力ウィンドウに次のようなメッセージが表示されます。
 
-[![出力ウィンドウに表示されるインスタンス ID トークン](remote-notifications-with-fcm-images/07-token-received-sml.png)](remote-notifications-with-fcm-images/07-token-received.png#lightbox)
+[![インスタンス ID トークンが出力ウィンドウに表示されます](remote-notifications-with-fcm-images/07-token-received-sml.png)](remote-notifications-with-fcm-images/07-token-received.png#lightbox)
 
-長い文字列が付いた**トークン**Firebase コンソールに貼り付けるはインスタンスの ID トークンは、&ndash;を選択し、この文字列をクリップボードにコピーします。 インスタンス ID トークンが表示されない場合は、先頭に次の行を追加、`OnCreate`ことを確認するメソッド**google-services.json**正しく解析されました。
+**トークン**でラベル付けされた長い文字列は、焼討 base コンソール&ndash;に貼り付けるインスタンス ID トークンです。この文字列を選択してクリップボードにコピーします。 インスタンス ID トークンが表示されない場合は、 `OnCreate`メソッドの先頭に次の行を追加して、 **google-services**が正しく解析されたことを確認します。
 
 ```csharp
 Log.Debug(TAG, "google app id: " + GetString(Resource.String.google_app_id));
 ```
 
-`google_app_id`出力ウィンドウに出力値が一致する必要があります、`mobilesdk_app_id`で記録された値**google-services.json**します。
+出力ウィンドウに記録された`mobilesdk_app_id` 値は、**google-services.json**に記録された値と一致している必要があります。`google_app_id`
 
-### <a name="send-a-message"></a>メッセージを送信します。
+### <a name="send-a-message"></a>メッセージを送信する
 
-サインイン、 [Firebase Console](https://console.firebase.google.com)、プロジェクトを選択**通知**、 をクリック**最初のメッセージを送信**:
+[焼討 Base コンソール](https://console.firebase.google.com)にサインインし、プロジェクトを選択して [**通知**] をクリックし、[**最初のメッセージを送信する**] をクリックします。
 
-[![送信の最初のメッセージ ボタン](remote-notifications-with-fcm-images/08-first-notification-sml.png)](remote-notifications-with-fcm-images/08-first-notification.png#lightbox)
+[![最初のメッセージを送信するボタン](remote-notifications-with-fcm-images/08-first-notification-sml.png)](remote-notifications-with-fcm-images/08-first-notification.png#lightbox)
 
-**Compose メッセージ**ページで、メッセージ テキストを入力して選択**1 つのデバイス**します。 IDE の [出力] ウィンドウからインスタンス ID のトークンをコピーして貼り付けます、 **FCM 登録トークン**Firebase コンソールのフィールド。
+[**メッセージの作成**] ページで、メッセージテキストを入力し、[**単一デバイス**] を選択します。 IDE 出力ウィンドウからインスタンス ID トークンをコピーし、焼討 Base コンソールの**Fcm 登録トークン**フィールドに貼り付けます。
 
-[![メッセージ ダイアログ ボックスを作成します。](remote-notifications-with-fcm-images/09-compose-message-sml.png)](remote-notifications-with-fcm-images/09-compose-message.png#lightbox)
+[![メッセージの作成ダイアログ](remote-notifications-with-fcm-images/09-compose-message-sml.png)](remote-notifications-with-fcm-images/09-compose-message.png#lightbox)
 
-Android デバイス (またはエミュレーターで)、Android をタップして、アプリがバック グラウンド**概要**ボタンとホーム画面に触れることです。 デバイス準備ができたら、クリックして**メッセージの送信**Firebase コンソールで。
+Android デバイス (またはエミュレーター) で、[Android の**概要**] ボタンをタップしてホーム画面に触れることによって、アプリの背景を表示します。 デバイスの準備ができたら、焼討 Base コンソールで [**メッセージの送信**] をクリックします。
 
-[![送信メッセージ ボタン](remote-notifications-with-fcm-images/10-send-message-sml.png)](remote-notifications-with-fcm-images/10-send-message.png#lightbox)
+[![[メッセージの送信] ボタン](remote-notifications-with-fcm-images/10-send-message-sml.png)](remote-notifications-with-fcm-images/10-send-message.png#lightbox)
 
-ときに、**レビュー メッセージ**ダイアログが表示されたら、をクリックして**送信**します。
-通知アイコンは、デバイス (またはエミュレーター) の通知領域に表示する必要があります。
+[**メッセージの確認**] ダイアログが表示されたら、[**送信**] をクリックします。
+通知アイコンは、デバイス (またはエミュレーター) の通知領域に表示されます。
 
-[![通知アイコンが表示されます。](remote-notifications-with-fcm-images/11-notification-icon-sml.png)](remote-notifications-with-fcm-images/11-notification-icon.png#lightbox)
+[![通知アイコンが表示されます](remote-notifications-with-fcm-images/11-notification-icon-sml.png)](remote-notifications-with-fcm-images/11-notification-icon.png#lightbox)
 
-メッセージを表示する通知アイコンを開きます。 通知メッセージに入力した内容が正確にする必要があります、**メッセージ テキスト**Firebase コンソールのフィールド。
+通知アイコンを開いてメッセージを表示します。 通知メッセージは、次のように、焼討 Base コンソールの**メッセージテキスト**フィールドに入力されたものと同じである必要があります。
 
-[![デバイスでは、通知メッセージを表示してください。](remote-notifications-with-fcm-images/12-notification-sml.png)](remote-notifications-with-fcm-images/12-notification.png#lightbox)
+[![デバイスに通知メッセージが表示される](remote-notifications-with-fcm-images/12-notification-sml.png)](remote-notifications-with-fcm-images/12-notification.png#lightbox)
 
-起動する通知アイコンをタップ、 **FCMClient**アプリ。 `Intent`に送信される extras **FCMClient** IDE の出力ウィンドウに表示されます。
+通知アイコンをタップして**Fcmclient**アプリを起動します。 `Intent` **Fcmclient**に送信されたすべての内容が、IDE の出力ウィンドウに表示されます。
 
-[![キー、メッセージ ID、および折りたたみキーから、インテント エクストラ リスト](remote-notifications-with-fcm-images/13-intent-extras-sml.png)](remote-notifications-with-fcm-images/13-intent-extras.png#lightbox)
+[![キー、メッセージ ID、および折りたたみキーからのインテントリスト](remote-notifications-with-fcm-images/13-intent-extras-sml.png)](remote-notifications-with-fcm-images/13-intent-extras.png#lightbox)
 
-この例で、**から**キーは、アプリの Firebase プロジェクト番号に設定されます (この例で`41590732`)、および**collapse_key**パッケージ名に設定されている (**com.xamarin.fcmexample**)。
-メッセージを受け取らない場合は、削除することをお試しください、 **FCMClient**デバイス (またはエミュレーター) にアプリを上記の手順を繰り返します。
+この例では、 **from**キーはアプリの焼討 base プロジェクト番号 (この例`41590732`では) に設定され、 **collapse_key**はパッケージ名 (**com. xamarin. fcmexample**) に設定されています。
+メッセージが表示されない場合は、デバイス (またはエミュレーター) で**Fcmclient**アプリを削除してみて、上記の手順を繰り返します。
 
 
 > [!NOTE]
-> キューブを強制終了アプリとして設定すると場合、FCM は通知の送信を停止します。 Android では、バック グラウンド サービス ブロードキャストが不必要にまたは誤ってが停止状態のアプリケーションのコンポーネントを起動できなくなります。 (この動作の詳細については、次を参照してください[停止状態のアプリケーション上のコントロールを起動](https://developer.android.com/about/versions/android-3.1.html#launchcontrols)。)。このためは、必要に応じて実行するたびに、アプリを手動でアンインストールし、デバッグ セッションを停止&ndash;これにより、FCM メッセージが受信するために継続されるように、新しいトークンを生成します。
+> アプリを強制的に閉じると、FCM によって通知の配信が停止されます。 Android では、停止したアプリケーションのコンポーネントが誤って、または不必要に起動されるのを防ぐことができます。 (この動作の詳細については、「停止した[アプリケーションでのコントロールの起動](https://developer.android.com/about/versions/android-3.1.html#launchcontrols)」を参照してください)。このため、アプリを実行するたびに手動でアンインストールし、デバッグセッション&ndash;から停止する必要があります。これにより、fcm によって新しいトークンが生成され、メッセージが引き続き受信されるようになります。
 
-### <a name="add-a-custom-default-notification-icon"></a>カスタムの既定の通知アイコンを追加します。
+### <a name="add-a-custom-default-notification-icon"></a>カスタムの既定の通知アイコンを追加する
 
-前の例では、通知アイコンは、アプリケーションのアイコンに設定されます。 次の XML では、カスタムの既定のアイコンの通知を構成します。 Android では、通知アイコンが明示的に設定されていないすべての通知メッセージの場合は、このカスタムの既定アイコンが表示されます。
+前の例では、通知アイコンはアプリケーションアイコンに設定されています。 次の XML は、通知用のカスタムの既定のアイコンを構成します。 Android では、通知アイコンが明示的に設定されていないすべての通知メッセージに対して、このカスタムの既定のアイコンが表示されます。
 
-カスタムの既定の通知アイコンを追加するには、アイコンを追加、**リソース/drawable**ディレクトリ、編集**AndroidManifest.xml**、し、次`<meta-data>`要素をに`<application>`セクション。
+カスタムの既定の通知アイコンを追加するには、**リソース/** 作成されたディレクトリにアイコンを追加し、**を編集し**て、 `<meta-data>` `<application>`セクションに次の要素を挿入します。
 
 ```xml
 <meta-data
@@ -528,15 +528,15 @@ Android デバイス (またはエミュレーターで)、Android をタップ�
     android:resource="@drawable/ic_stat_ic_notification" />
 ```
 
-この例で、通知アイコンに存在するで**ic/リソース/drawable\_stat\_ic\_notification.png**はカスタムの既定の通知アイコンとして使用されます。 カスタムの既定のアイコンがで構成されていない場合**AndroidManifest.xml**と通知ペイロードでアイコンが設定されていない、(上記の通知アイコン スクリーン ショットに表示) と Android に通知アイコンとしてアプリケーションのアイコンが使用されます。
+この例では、**リソース/描画可能\_/ic stat\_\_** に存在する通知アイコンが、カスタムの既定の通知アイコンとして使用されます。 カスタムの既定のアイコンが**Androidmanifest .xml**で構成されておらず、通知ペイロードでアイコンが設定されていない場合、Android では通知アイコンとしてアプリケーションアイコンが使用されます (上の通知アイコンのスクリーンショットを参照)。
 
-## <a name="handle-topic-messages"></a>トピックのメッセージを処理します。
+## <a name="handle-topic-messages"></a>トピックメッセージを処理する
 
-これまでに記述されたコードでは、登録トークンを処理し、リモート通知機能をアプリに追加します。 次の例では、リッスンするコードを追加します*トピック メッセージ*し、ユーザーにリモートとして通知を転送します。 トピックのメッセージは、特定のトピックにサブスクライブする 1 つまたは複数のデバイスに送信される FCM メッセージです。 トピックのメッセージの詳細については、次を参照してください。[トピック メッセージング](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md)します。
+これまでに記述したコードは、登録トークンを処理し、リモート通知機能をアプリに追加します。 次の例では、*トピックメッセージ*をリッスンし、リモート通知としてユーザーに転送するコードを追加します。 トピックメッセージは、特定のトピックをサブスクライブする1つ以上のデバイスに送信される FCM メッセージです。 トピックメッセージの詳細については、「[トピックメッセージング](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md)」を参照してください。
 
-### <a name="subscribe-to-a-topic"></a>トピックをサブスクライブします。
+### <a name="subscribe-to-a-topic"></a>トピックをサブスクライブする
 
-編集**Resources/layout/Main.axml**し、以下の追加`Button`直後に、前の宣言`Button`要素。
+**Resources/layout/Main**を編集し、前`Button` `Button`の要素の直後に次の宣言を追加します。
 
 ```xml
 <Button
@@ -548,8 +548,8 @@ Android デバイス (またはエミュレーターで)、Android をタップ�
   android:text="Subscribe to Notifications" />
 ```
 
-この XML を追加、**通知をサブスクライブする**レイアウトにボタンをクリックします。
-編集**MainActivity.cs**の末尾に次のコードを追加し、`OnCreate`メソッド。
+この XML は、[**通知の購読**] ボタンをレイアウトに追加します。
+**MainActivity.cs**を編集し、 `OnCreate`メソッドの末尾に次のコードを追加します。
 
 ```csharp
 var subscribeButton = FindViewById<Button>(Resource.Id.subscribeButton);
@@ -559,54 +559,54 @@ subscribeButton.Click += delegate {
 };
 ```
 
-このコードを検索、**通知をサブスクライブする**レイアウトでボタンをクリックし、そのクリック ハンドラーを呼び出すコードに代入`FirebaseMessaging.Instance.SubscribeToTopic`、サブスクライブしているトピックの「を渡して、_ニュース_します。 ユーザーがタップしたときに、**購読**ボタン、アプリをサブスクライブする、_ニュース_トピック。 次のセクションで、_ニュース_トピックのメッセージは、Firebase コンソール通知 GUI から送信されます。
+このコードでは、レイアウトの [ **Notification へのサブスクライブ**] ボタンを探し、そのクリックハンドラー `FirebaseMessaging.Instance.SubscribeToTopic`を呼び出して、サブスクライブしたトピックである_news_を渡しているコードに割り当てます。 ユーザーが [**サブスクライブ**] ボタンをタップすると、アプリは_ニュース_トピックをサブスクライブします。 次のセクションでは、アドインのコンソール通知 GUI から_ニュース_トピックメッセージが送信されます。
 
-### <a name="send-a-topic-message"></a>トピックのメッセージを送信します。
+### <a name="send-a-topic-message"></a>トピックメッセージを送信する
 
-アプリをアンインストール、再構築し、再度実行します。 をクリックして、**通知をサブスクライブする**ボタンをクリックします。
+アプリをアンインストールしてリビルドし、もう一度実行してください。 [**通知の登録**] ボタンをクリックします。
 
-[![サブスクライブ通知ボタン](remote-notifications-with-fcm-images/14-subscribe-sml.png)](remote-notifications-with-fcm-images/14-subscribe.png#lightbox)
+[![[通知の購読] ボタン](remote-notifications-with-fcm-images/14-subscribe-sml.png)](remote-notifications-with-fcm-images/14-subscribe.png#lightbox)
 
-アプリが正常にサブスクライブしている場合は表示**トピックの同期が成功した**IDE では、出力ウィンドウ。
+アプリが正常にサブスクライブしている場合は、IDE の出力ウィンドウに [**同期は成功しまし**た] と表示されます。
 
-[![出力ウィンドウには、トピックの同期が成功したメッセージが表示されます。](remote-notifications-with-fcm-images/15-topic-sync-sml.png)](remote-notifications-with-fcm-images/15-topic-sync.png#lightbox)
+[![出力ウィンドウにトピック「同期が成功しました」メッセージが表示されます](remote-notifications-with-fcm-images/15-topic-sync-sml.png)](remote-notifications-with-fcm-images/15-topic-sync.png#lightbox)
 
-トピックのメッセージを送信するのにには、次の手順を使用します。
+トピックメッセージを送信するには、次の手順に従います。
 
-1.  Firebase コンソールで、次のようにクリックします。**新しいメッセージ**します。
+1.  [焼討 Base] コンソールで、[**新しいメッセージ**] をクリックします。
 
-2.  **Compose メッセージ**ページで、メッセージ テキストを入力して選択**トピック**します。
+2.  [**メッセージの作成**] ページで、メッセージテキストを入力し、[**トピック**] を選択します。
 
-3.  **トピック**プルダウン メニューでは、組み込みのトピックを選択して**ニュース**:
+3.  **トピック**プルダウンメニューで、組み込みトピック [ **news**] を選択します。
 
-    [![ニュース トピックを選択します。](remote-notifications-with-fcm-images/16-topic-message-sml.png)](remote-notifications-with-fcm-images/16-topic-message.png#lightbox)
+    [![ニューストピックを選択する](remote-notifications-with-fcm-images/16-topic-message-sml.png)](remote-notifications-with-fcm-images/16-topic-message.png#lightbox)
 
-4.  Android デバイス (またはエミュレーターで)、Android をタップして、アプリがバック グラウンド**概要**ボタンとホーム画面に触れることです。
+4.  Android デバイス (またはエミュレーター) で、[Android の**概要**] ボタンをタップしてホーム画面に触れることによって、アプリの背景を表示します。
 
-5.  デバイス準備ができたら、クリックして**メッセージの送信**Firebase コンソールでします。
+5.  デバイスの準備ができたら、焼討 Base コンソールで [**メッセージの送信**] をクリックします。
 
-6.  IDE 出力ウィンドウを表示する確認 **/トピック/ニュース**ログの出力。
+6.  IDE の出力ウィンドウで、ログ出力の次の**トピック**を確認します。
 
-    [![/Topic/news からのメッセージが表示されます。](remote-notifications-with-fcm-images/17-message-arrived-sml.png)](remote-notifications-with-fcm-images/17-message-arrived.png#lightbox)
+    [![/トピック/ニュースからのメッセージが表示されます。](remote-notifications-with-fcm-images/17-message-arrived-sml.png)](remote-notifications-with-fcm-images/17-message-arrived.png#lightbox)
 
-このメッセージが出力ウィンドウに表示される、ときに通知アイコンも Android デバイスで通知領域に表示されます。 トピックのメッセージを表示する通知アイコンを開きます。
+このメッセージが [出力] ウィンドウに表示された場合は、Android デバイスの通知領域に通知アイコンも表示されます。 通知アイコンを開いて、トピックメッセージを表示します。
 
-[![トピックのメッセージが通知として表示されます。](remote-notifications-with-fcm-images/18-other-news-sml.png)](remote-notifications-with-fcm-images/18-other-news.png#lightbox)
+[![トピックメッセージは通知として表示されます。](remote-notifications-with-fcm-images/18-other-news-sml.png)](remote-notifications-with-fcm-images/18-other-news.png#lightbox)
 
-メッセージを受け取らない場合は、削除することをお試しください、 **FCMClient**デバイス (またはエミュレーター) にアプリを上記の手順を繰り返します。
+メッセージが表示されない場合は、デバイス (またはエミュレーター) で**Fcmclient**アプリを削除してみて、上記の手順を繰り返します。
 
-## <a name="foreground-notifications"></a>フォア グラウンドの通知
+## <a name="foreground-notifications"></a>フォアグラウンド通知
 
-実装する必要があります foregrounded アプリで通知を受信する`FirebaseMessagingService`します。 このサービスは、データ ペイロードを受信するため、アップ ストリームのメッセージを送信するために必要なもできます。 次の例を拡張するサービスを実装する方法を説明する`FirebaseMessagingService`&ndash;作成されたアプリは、フォア グラウンドで実行中に、リモート通知を処理できます。
+事前に接地したアプリで通知を受信する`FirebaseMessagingService`には、を実装する必要があります。 このサービスは、データペイロードを受信したり、上流のメッセージを送信したりするためにも必要です。 次の例は、生成されたアプリを`FirebaseMessagingService`拡張&ndash;するサービスを実装して、フォアグラウンドで実行中のリモート通知を処理できるようにする方法を示しています。
 
-### <a name="implement-firebasemessagingservice"></a>FirebaseMessagingService を実装します。
+### <a name="implement-firebasemessagingservice"></a>焼討 Basemessagingservice を実装する
 
-`FirebaseMessagingService`サービスが受信および Firebase からメッセージを処理する責任を負います。 この型とオーバーライド アプリごとにサブクラス必要があります、`OnMessageReceived`受信メッセージを処理します。 アプリがフォア グラウンドにあるときに、`OnMessageReceived`コールバックは、メッセージを常に処理します。
+`FirebaseMessagingService`サービスは、消火ベースからのメッセージの受信と処理を担当します。 各アプリは、この型をサブクラス`OnMessageReceived`化し、をオーバーライドして受信メッセージを処理する必要があります。 アプリがフォアグラウンドにある場合、 `OnMessageReceived`コールバックは常にメッセージを処理します。
 
 > [!NOTE]
-> アプリでは、Firebase Cloud の受信メッセージを処理するための 10 秒があるだけです。 このライブラリを使用してバック グラウンド実行をスケジュールする必要がありますよりも長くかかる作業、 [Android ジョブ スケジューラ](~/android/platform/android-job-scheduler.md)または[Firebase ジョブ ディスパッチャー](~/android/platform/firebase-job-dispatcher.md)します。
+> アプリでは、受信した焼討 Base Cloud メッセージを処理するのに10秒しかありません。 これよりも時間がかかる作業は、 [Android ジョブスケジューラ](~/android/platform/android-job-scheduler.md)や[焼討ベースジョブディスパッチャー](~/android/platform/firebase-job-dispatcher.md)などのライブラリを使用してバックグラウンドで実行するようにスケジュールする必要があります。
 
-という新しいファイルを追加**MyFirebaseMessagingService.cs**次のテンプレート コードを置き換えます。
+**MyFirebaseMessagingService.cs**という名前の新しいファイルを追加し、テンプレートコードを次のコードに置き換えます。
 
 ```csharp
 using System;
@@ -632,13 +632,13 @@ namespace FCMClient
 }
 ```
 
-なお、`MESSAGING_EVENT`に新しい FCM メッセージが送られるように、インテント フィルターを宣言する必要があります`MyFirebaseMessagingService`:
+新しい fcm `MESSAGING_EVENT`メッセージが次のように`MyFirebaseMessagingService`送信されるように、インテントフィルターを宣言する必要があることに注意してください。
 
 ```csharp
 [IntentFilter(new[] { "com.google.firebase.MESSAGING_EVENT" })]
 ```
 
-クライアント アプリケーションが FCM からメッセージを受信`OnMessageReceived`から渡されるでメッセージの内容を抽出します`RemoteMessage`オブジェクトを呼び出すことによってその`GetNotification`メソッド。 次に、IDE の出力ウィンドウに表示できますように、メッセージの内容が記録されます。
+クライアントアプリが fcm からメッセージを受信すると`OnMessageReceived` 、は、 `GetNotification`メソッドを呼び出すことに`RemoteMessage`よって、渡されたオブジェクトからメッセージの内容を抽出します。 次に、メッセージの内容をログに記録して、IDE の出力ウィンドウで表示できるようにします。
 
 ```csharp
 var body = message.GetNotification().Body;
@@ -646,40 +646,40 @@ Log.Debug(TAG, "Notification Message Body: " + body);
 ```
 
 > [!NOTE]
-> ブレークポイントを設定する場合`FirebaseMessagingService`、デバッグ セッション、FCM メッセージを配信する方法のため、これらのブレークポイントをヒットしない可能性があります。
+> に`FirebaseMessagingService`ブレークポイントを設定した場合、fcm によってメッセージが配信されるため、デバッグセッションでこれらのブレークポイントにヒットするかどうかを確認できます。
 
 
-### <a name="send-another-message"></a>別のメッセージを送信します。
+### <a name="send-another-message"></a>別のメッセージを送信する
 
-アプリをアンインストール、再構築、もう一度、実行および別のメッセージを送信する次の手順します。
+アプリをアンインストールし、再構築して再実行し、次の手順に従って別のメッセージを送信します。
 
-1.  Firebase コンソールで、次のようにクリックします。**新しいメッセージ**します。
+1.  [焼討 Base] コンソールで、[**新しいメッセージ**] をクリックします。
 
-2.  **Compose メッセージ**ページで、メッセージ テキストを入力して選択**1 つのデバイス**します。
+2.  [**メッセージの作成**] ページで、メッセージテキストを入力し、[**単一デバイス**] を選択します。
 
-3.  IDE の [出力] ウィンドウからトークン文字列をコピーして貼り付けます、 **FCM 登録トークン**Firebase コンソールを以前と同様のフィールド。
+3.  IDE 出力ウィンドウからトークン文字列をコピーし、前と同じように、焼討 Base コンソールの**Fcm 登録トークン**フィールドに貼り付けます。
 
-4.  アプリがフォア グラウンドで実行されていることを確認し、クリックして**メッセージの送信**Firebase コンソールで。
+4.  アプリがフォアグラウンドで実行されていることを確認し、次に、焼討 Base コンソールで [**メッセージの送信**] をクリックします。
 
-    [![コンソールから別のメッセージを送信します。](remote-notifications-with-fcm-images/19-hello-again-sml.png)](remote-notifications-with-fcm-images/19-hello-again.png#lightbox)
+    [![コンソールからの別のメッセージの送信](remote-notifications-with-fcm-images/19-hello-again-sml.png)](remote-notifications-with-fcm-images/19-hello-again.png#lightbox)
 
-5.  ときに、**レビュー メッセージ**ダイアログが表示されたら、をクリックして**送信**します。
+5.  [**メッセージの確認**] ダイアログが表示されたら、[**送信**] をクリックします。
 
-6.  IDE の出力ウィンドウには、受信メッセージが記録されます。
+6.  受信メッセージは、IDE の出力ウィンドウに記録されます。
 
-    [![メッセージ本文は、出力ウィンドウに出力](remote-notifications-with-fcm-images/20-logged-message.png)](remote-notifications-with-fcm-images/20-logged-message.png#lightbox)
+    [![出力ウィンドウに出力されるメッセージ本文](remote-notifications-with-fcm-images/20-logged-message.png)](remote-notifications-with-fcm-images/20-logged-message.png#lightbox)
 
 
-### <a name="add-a-local-notification-sender"></a>ローカル通知の送信側を追加します。
+### <a name="add-a-local-notification-sender"></a>ローカル通知の送信者を追加する
 
-この残りの例では、受信 FCM メッセージは、アプリがフォア グラウンドで実行中に起動されたローカル通知に変換されます。 編集**MyFirebaseMessageService.cs**し、以下の追加`using`ステートメント。
+この残りの例では、受信した FCM メッセージは、アプリがフォアグラウンドで実行されている間に起動されるローカル通知に変換されます。 **MyFirebaseMessageService.cs**を編集し、次`using`のステートメントを追加します。
 
 ```csharp
 using FCMClient;
 using System.Collections.Generic;
 ```
 
-次のメソッドを追加`MyFirebaseMessagingService`:
+に次のメソッドを`MyFirebaseMessagingService`追加します。
 
 <a name="sendnotification-method"></a>
 
@@ -710,11 +710,11 @@ void SendNotification(string messageBody, IDictionary<string, string> data)
 }
 ```
 
-バック グラウンド通知からこの通知を区別するためには、このコードは、アプリケーション アイコンとは異なるアイコンが表示された通知をマークします。 ファイルを追加する[ic\_stat\_ic\_notification.png](remote-notifications-with-fcm-images/ic-stat-ic-notification.png)に**リソース/drawable**し、含めることで、 **FCMClient**プロジェクト.
+この通知をバックグラウンド通知から区別するために、このコードは、アプリケーションアイコンとは異なるアイコンを使用して通知をマークします。 ファイル[ic\_stat\_icのファイルをリソース/組み込み用のファイルに追加し、**fcmclient**プロジェクトに含めます。\_](remote-notifications-with-fcm-images/ic-stat-ic-notification.png)
 
-`SendNotification`メソッドは`NotificationCompat.Builder`、通知を作成して`NotificationManagerCompat`通知を起動するために使用します。 通知を保持する`PendingIntent`は、アプリを開きに渡された文字列の内容を表示するユーザーに許可する`messageBody`。 詳細については`NotificationCompat.Builder`を参照してください[ローカル通知](~/android/app-fundamentals/notifications/local-notifications.md)します。
+この`SendNotification`メソッドは`NotificationCompat.Builder` 、を使用して通知`NotificationManagerCompat`を作成し、通知を開始するために使用されます。 通知は、 `PendingIntent`ユーザーがアプリを開いて、に`messageBody`渡された文字列の内容を表示できるようにするを保持します。 の詳細`NotificationCompat.Builder`については、「[ローカル通知](~/android/app-fundamentals/notifications/local-notifications.md)」を参照してください。
 
-呼び出す、`SendNotification`メソッドの最後に、`OnMessageReceived`メソッド。
+メソッドの最後にメソッドを`SendNotification`呼び出します。 `OnMessageReceived`
 
 ```csharp
 public override void OnMessageReceived(RemoteMessage message)
@@ -727,42 +727,42 @@ public override void OnMessageReceived(RemoteMessage message)
 }
 ```
 
-これらの変更の結果として`SendNotification`フォア グラウンドでアプリがあり、通知領域で、通知は表示中に、通知を受け取るたびに実行されます。
+これらの変更の結果とし`SendNotification`て、は、アプリがフォアグラウンドにある間に通知が受信されるたびに実行され、通知領域に通知が表示されます。
 
-アプリがバック グラウンドにあるときに、[メッセージのペイロード](https://firebase.google.com/docs/cloud-messaging/concept-options#notifications_and_data_messages)メッセージの処理方法が決まります。
+アプリがバックグラウンドで実行されている場合、メッセージの処理方法は[メッセージのペイロード](https://firebase.google.com/docs/cloud-messaging/concept-options#notifications_and_data_messages)によって決まります。
 
-* **通知**&ndash;にメッセージを送信は、**システム トレイ**します。 ローカル通知が表示されます。 ユーザーが通知をタップしたときに、アプリが起動します。
-* **データ**&ndash;によって処理されるメッセージ`OnMessageReceived`します。
-* **両方**&ndash;通知とデータの両方のペイロードのメッセージは、システム トレイに配信されます。 アプリが起動したら、データ ペイロードに表示されます、`Extras`の`Intent`アプリの起動に使用されました。
+* **通知**メッセージはシステムトレイに送信されます。 &ndash; ローカル通知が表示されます。 ユーザーが通知をタップすると、アプリが起動します。
+* **データ**メッセージはによって`OnMessageReceived`処理されます。 &ndash;
+* **両方**&ndash;通知とデータペイロードの両方を含むメッセージがシステムトレイに配信されます。 アプリが起動すると、アプリを起動するために`Extras`使用さ`Intent`れたのにデータペイロードが表示されます。
 
-この例で、アプリが backgrounded、`SendNotification`場合は、メッセージのデータ ペイロードが実行されます。 それ以外の場合、(このチュートリアルで前に示した) バック グラウンド通知が起動されます。
+この例では、アプリが backgrounded `SendNotification`の場合、メッセージにデータペイロードがある場合はが実行されます。 それ以外の場合は、バックグラウンド通知 (このチュートリアルで既に説明したもの) が起動されます。
 
-### <a name="send-the-last-message"></a>最後のメッセージを送信します。
+### <a name="send-the-last-message"></a>最後のメッセージを送信する
 
-アプリをアンインストールし、再構築し、もう一度、実行、次の手順を使用して、最後のメッセージを送信します。
+アプリをアンインストールして再構築し、もう一度実行してから、次の手順を使用して最後のメッセージを送信します。
 
-1.  Firebase コンソールで、次のようにクリックします。**新しいメッセージ**します。
+1.  [焼討 Base] コンソールで、[**新しいメッセージ**] をクリックします。
 
-2.  **Compose メッセージ**ページで、メッセージ テキストを入力して選択**1 つのデバイス**します。
+2.  [**メッセージの作成**] ページで、メッセージテキストを入力し、[**単一デバイス**] を選択します。
 
-3.  IDE の [出力] ウィンドウからトークン文字列をコピーして貼り付けます、 **FCM 登録トークン**Firebase コンソールを以前と同様のフィールド。
+3.  IDE 出力ウィンドウからトークン文字列をコピーし、前と同じように、焼討 Base コンソールの**Fcm 登録トークン**フィールドに貼り付けます。
 
-4.  アプリがフォア グラウンドで実行されていることを確認し、クリックして**メッセージの送信**Firebase コンソールで。
+4.  アプリがフォアグラウンドで実行されていることを確認し、次に、焼討 Base コンソールで [**メッセージの送信**] をクリックします。
 
-    [![フォア グラウンド メッセージを送信します。](remote-notifications-with-fcm-images/21-console-fg-msg-sml.png)](remote-notifications-with-fcm-images/21-console-fg-msg.png#lightbox)
+    [![フォアグラウンドメッセージの送信](remote-notifications-with-fcm-images/21-console-fg-msg-sml.png)](remote-notifications-with-fcm-images/21-console-fg-msg.png#lightbox)
 
-今回は、出力ウィンドウに記録されたメッセージは、新しい通知にはパッケージ化も&ndash;アプリがフォア グラウンドで実行中に、通知トレイの通知アイコンが表示されます。
+今回は、出力ウィンドウに記録されたメッセージも新しい通知&ndash;にパッケージ化されています。アプリがフォアグラウンドで実行されている間、通知アイコンが通知トレイに表示されます。
 
-[![前景のメッセージの通知アイコン](remote-notifications-with-fcm-images/22-foreground-icon-sml.png)](remote-notifications-with-fcm-images/22-foreground-icon.png#lightbox)
+[![フォアグラウンドメッセージの通知アイコン](remote-notifications-with-fcm-images/22-foreground-icon-sml.png)](remote-notifications-with-fcm-images/22-foreground-icon.png#lightbox)
 
-通知を開くと、Firebase コンソール通知 GUI から送信された最後のメッセージが表示されます。
+通知を開くと、焼討 Base コンソール通知 GUI から送信された最後のメッセージが表示されます。
 
-[![フォア グラウンド通知がフォア グラウンド アイコンで表示](remote-notifications-with-fcm-images/23-foreground-msg-sml.png)](remote-notifications-with-fcm-images/23-foreground-msg.png#lightbox)
+[![前景の通知を前面に表示するアイコン](remote-notifications-with-fcm-images/23-foreground-msg-sml.png)](remote-notifications-with-fcm-images/23-foreground-msg.png#lightbox)
 
 
-## <a name="disconnecting-from-fcm"></a>FCM から切断しています
+## <a name="disconnecting-from-fcm"></a>FCM からの切断
 
-トピックのサブスクリプションの解除を呼び出し、 [UnsubscribeFromTopic](https://firebase.google.com/docs/reference/android/com/google/firebase/messaging/FirebaseMessaging.html#unsubscribeFromTopic%28java.lang.String%29)メソッドを[FirebaseMessaging](https://firebase.google.com/docs/reference/android/com/google/firebase/messaging/FirebaseMessaging)クラス。 サブスクリプションの解除の例については、_ニュース_トピックでは以前では、購読、 **Unsubscribe**ボタン ハンドラーのコードを次に、レイアウトに追加できます。
+トピックの購読を解除するには、[焼討 Basemessaging](https://firebase.google.com/docs/reference/android/com/google/firebase/messaging/FirebaseMessaging)クラスで[UnsubscribeFromTopic](https://firebase.google.com/docs/reference/android/com/google/firebase/messaging/FirebaseMessaging.html#unsubscribeFromTopic%28java.lang.String%29)メソッドを呼び出します。 たとえば、前の手順で購読した_ニュース_トピックからサブスクライブを解除するために、次のハンドラーコードを使用して、登録**解除**ボタンをレイアウトに追加することができます。
 
 ```csharp
 var unSubscribeButton = FindViewById<Button>(Resource.Id.unsubscribeButton);
@@ -772,37 +772,37 @@ unSubscribeButton.Click += delegate {
 };
 ```
 
-FCM 完全デバイスの登録を解除するには、呼び出すことにより、インスタンス ID を削除、 [DeleteInstanceId](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId.html#deleteInstanceId%28%29)メソッドを[FirebaseInstanceId](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId)クラス。 例:
+FCM からデバイスの登録を解除するには、[消火 baseinstanceid](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId)クラスの[deleteinstanceid](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId.html#deleteInstanceId%28%29)メソッドを呼び出して、インスタンス ID を削除します。 例:
 
 ```csharp
 FirebaseInstanceId.Instance.DeleteInstanceId();
 ```
 
-このメソッドの呼び出しでは、インスタンス ID と関連付けられているデータを削除します。 その結果、デバイスに FCM データの定期的な送信は停止します。
+このメソッドを呼び出すと、インスタンス ID とそれに関連付けられているデータが削除されます。 その結果、デバイスへの FCM データの定期的な送信が停止されます。
 
 
 ## <a name="troubleshooting"></a>トラブルシューティング
 
-次の記述の問題と回避策が Xamarin.Android を Firebase Cloud Messaging を使用するときに発生する可能性があります。
+次に、Xamarin. Android での焼討 Base Cloud Messaging の使用時に発生する可能性がある問題と回避策について説明します。
 
-### <a name="firebaseapp-is-not-initialized"></a>FirebaseApp が初期化されていません
+### <a name="firebaseapp-is-not-initialized"></a>焼討 Baseapp は初期化されていません
 
-場合によっては、このエラー メッセージを表示可能性があります。
+場合によっては、次のエラーメッセージが表示されることがあります。
 
 ```shell
 Java.Lang.IllegalStateException: Default FirebaseApp is not initialized in this process
 Make sure to call FirebaseApp.initializeApp(Context) first.
 ```
 
-これは既知の問題、ソリューションをクリーニングし、プロジェクトを再構築を回避することです (**ビルド > ソリューションのクリーン**、**ビルド > ソリューションのリビルド**)。
+これは既知の問題であり、ソリューションをクリーニングしてプロジェクトをリビルドする (**ビルド > クリーンソリューション**を構築し、**ソリューションをビルド > リビルド**する) ことで回避できます。
 
 ## <a name="summary"></a>まとめ
 
-このチュートリアルでは、Xamarin.Android アプリケーションでリモート通知の Firebase Cloud Messaging を実装するための手順が詳しく説明します。 FCM の通信に必要な必要なパッケージをインストールする方法が説明されているし、FCM サーバーにアクセスする Android マニフェストを構成する方法について説明しました。 Google play 開発者サービスの有無を確認する方法を示したサンプル コードを提供します。 登録トークンの場合は、FCM とネゴシエートし、インスタンス ID リスナー サービスを実装する方法について説明し、アプリが backgrounded 中に、このコードがバック グラウンド通知を作成する方法について説明しました。 トピックのメッセージをサブスクライブする方法を説明し、受信して、アプリがフォア グラウンドで実行中に、リモート通知を表示するために使用するメッセージ リスナー サービスの実装例を提供します。
+このチュートリアルでは、Xamarin Android アプリケーションでの焼討 Base Cloud Messaging リモート通知の実装手順について詳しく説明します。 ここでは、FCM 通信に必要なパッケージをインストールする方法と、FCM サーバーにアクセスするために Android マニフェストを構成する方法について説明しました。 Google Play 開発者サービスの存在を確認する方法を示すサンプルコードが用意されています。 この例では、登録トークンに対して FCM とネゴシエートするインスタンス ID リスナーサービスを実装する方法を説明しました。また、アプリの backgrounded 中にこのコードがバックグラウンド通知を作成する方法についても説明しました。 ここでは、トピックメッセージをサブスクライブする方法について説明し、アプリケーションがフォアグラウンドで実行されているときにリモート通知を受信して表示するために使用されるメッセージリスナーサービスの実装例を示しました。
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [FCMNotifications (サンプル)](https://developer.xamarin.com/samples/monodroid/Firebase/FCMNotifications)
+- [FCMNotifications (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/firebase-fcmnotifications)
 - [Firebase Cloud Messaging](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md)
 - [FCM メッセージについて](https://firebase.google.com/docs/cloud-messaging/concept-options)

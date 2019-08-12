@@ -78,7 +78,7 @@ if (8 == 8) {
 
 複数のアーキテクチャを対象とする場合、この最適化によって、32ビットバージョンと64ビットバージョンのアプリ用に異なるアセンブリが作成されます。また、両方のバージョンをアプリに含める必要があります。そのため、最終的なアプリのサイズを減らすのではなく、効率的に増やす必要があります。し.
 
-既定の動作は、mtouch/ `--optimize=[+|-]inline-intptr-size` mmp に渡すことでオーバーライドできます。
+既定の動作は、mtouch/mmp に `--optimize=[+|-]inline-intptr-size` を渡すことでオーバーライドできます。
 
 ## <a name="inline-nsobjectisdirectbinding"></a>Inline NSObject
 
@@ -158,7 +158,7 @@ if (true) {
 
 既定では、xamarin. iOS では既定で有効になっており、既定では、xamarin. Mac では常に無効になっています。つまり、特定のクラスがサブクラス化されないことを判断することはできません。
 
-既定の動作は、mtouch/ `--optimize=[+|-]inline-isdirectbinding` mmp に渡すことでオーバーライドできます。
+既定の動作は、mtouch/mmp に `--optimize=[+|-]inline-isdirectbinding` を渡すことでオーバーライドできます。
 
 ## <a name="inline-runtimearch"></a>インラインランタイム. Arch
 
@@ -200,7 +200,7 @@ if (true) {
 }
 ```
 
-ドラッグ
+変換後のコード
 
 ```csharp
 Console.WriteLine ("Doing this");
@@ -272,11 +272,11 @@ AOT コンパイラは、既にこのようなデッドコードを排除する�
 
 常に既定で有効になっています (リンカーが有効になっている場合)。
 
-既定の動作は、mtouch/ `--optimize=[+|-]dead-code-elimination` mmp に渡すことでオーバーライドできます。
+既定の動作は、mtouch/mmp に `--optimize=[+|-]dead-code-elimination` を渡すことでオーバーライドできます。
 
-## <a name="optimize-calls-to-blockliteralsetupblock"></a>BlockLiteral の呼び出しを最適化します。 SetupBlock
+## <a name="optimize-calls-to-blockliteralsetupblock"></a>BlockLiteral.SetupBlock の呼び出しを最適化する
 
-マネージデリゲートに対して目的の C ブロックを作成する場合は、Xamarin iOS/Mac ランタイムにブロック署名があることが必要です。 これは、かなり負荷のかかる操作である可能性があります。 この最適化により、ビルド時にブロック署名が計算され、代わりにシグネチャを`SetupBlock`引数として受け取るメソッドを呼び出すように IL が変更されます。 これにより、実行時に署名を計算する必要がなくなります。
+マネージデリゲートに対して Objective-C ブロックを作成する場合は、Xamarin iOS/Mac ランタイムにブロック署名があることが必要です。 これは、かなり負荷のかかる操作である可能性があります。 この最適化により、ビルド時にブロック署名が計算され、代わりにシグネチャを引数として受け取る`SetupBlock`メソッドを呼び出すように IL が変更されます。 これにより、実行時に署名を計算する必要がなくなります。
 
 ベンチマークでは、ブロックの呼び出し速度が 10 ~ 15 倍になることが示されています。
 
@@ -291,7 +291,7 @@ public static void RequestGuidedAccessSession (bool enable, Action<bool> complet
 }
 ```
 
-ドラッグ
+変換後のコード
 
 ```csharp
 public static void RequestGuidedAccessSession (bool enable, Action<bool> completionHandler)
@@ -306,7 +306,7 @@ public static void RequestGuidedAccessSession (bool enable, Action<bool> complet
 
 静的レジストラーを使用すると、既定で有効になります (Xamarin. iOS では、静的レジストラーはデバイスのビルドに対して既定で有効になっていますが、Xamarin. Mac では、静的レジストラーはリリースビルドでは既定で有効になっています)。
 
-既定の動作は、mtouch/ `--optimize=[+|-]blockliteral-setupblock` mmp に渡すことでオーバーライドできます。
+既定の動作は、mtouch/mmp に `--optimize=[+|-]blockliteral-setupblock` を渡すことでオーバーライドできます。
 
 ## <a name="optimize-support-for-protocols"></a>プロトコルのサポートを最適化する
 
@@ -324,7 +324,7 @@ Xamarin. iOS では、リンカーと静的レジストラーの両方が有効�
 
 Xamarin. Mac では、この最適化は既定では有効になりません。これは、Xamarin. Mac ではアセンブリの動的な読み込みがサポートされており、これらのアセンブリがビルド時に既知ではない (したがって、最適化されていない) ためです。
 
-既定の動作は、mtouch/ `--optimize=-register-protocols` mmp に渡すことでオーバーライドできます。
+既定の動作は、mtouch/mmp に `--optimize=-register-protocols` を渡すことでオーバーライドできます。
 
 ## <a name="remove-the-dynamic-registrar"></a>動的レジストラーを削除する
 
@@ -336,7 +336,7 @@ Xamarin と Xamarin の両方のランタイムには、[マネージ型](~/ios/
 
 Xamarin. Mac では、実行時にアセンブリを動的に読み込むことができます (ビルド時には認識されません)。そのため、ビルド時に安全な最適化であるかどうかを判断することはできません。 つまり、この最適化は、Xamarin. Mac アプリでは既定では有効になりません。
 
-既定の動作は、mtouch/ `--optimize=[+|-]remove-dynamic-registrar` mmp に渡すことでオーバーライドできます。
+既定の動作は、mtouch/mmp に `--optimize=[+|-]remove-dynamic-registrar` を渡すことでオーバーライドできます。
 
 既定値がオーバーライドされて動的レジストラーが削除された場合、リンカーは安全でないことを検出した場合に警告を出力します (ただし、動的レジストラーは削除されます)。
 
@@ -372,15 +372,15 @@ Console.WriteLine ("do something");
 
 常に既定で有効になっています (リンカーが有効になっている場合)。
 
-既定の動作は、mtouch/ `--optimize=[+|-]inline-dynamic-registration-supported` mmp に渡すことでオーバーライドできます。
+既定の動作は、mtouch/mmp に `--optimize=[+|-]inline-dynamic-registration-supported` を渡すことでオーバーライドできます。
 
-## <a name="precompute-methods-to-create-managed-delegates-for-objective-c-blocks"></a>事前計算ブロックのマネージデリゲートを作成するためのメソッド
+## <a name="precompute-methods-to-create-managed-delegates-for-objective-c-blocks"></a>Objective-C ブロックのマネージデリゲートを作成するための事前計算メソッド
 
-前の例では、ブロックをパラメーターとして受け取り、マネージコードによってそのメソッドがオーバーライドされた場合、そのブロックのデリゲートを作成する必要があります。
+Objective-C がブロックをパラメーターとして受け取るセレクターを呼び出し、マネージコードによってそのメソッドがオーバーライドされた場合、Xamarin.iOS / Xamarin.Mac ランタイムはそのブロックのデリゲートを作成する必要があります。
 
-バインディングジェネレーターによって生成されるバインディングコードに`[BlockProxy]`は、属性が含まれます。 `Create`この属性は、この操作を実行できるメソッドを使用して型を指定します。
+バインディングジェネレーターによって生成されるバインディングコードには、`[BlockProxy]`属性が含まれます。 この属性は、この操作を実行できる`Create`メソッドを使用して型を指定します。
 
-次の目的 C コードを指定します。
+次の Objective-C コードを指定します。
 
 ```objc
 @interface ObjCBlockTester : NSObject {
@@ -514,4 +514,4 @@ Mmp/mtouch が`Create`メソッドを見つけることができない場合は�
 
 既定では、静的レジストラーが有効になっている限り、常に有効になります。
 
-既定の動作は、mtouch/ `--optimize=[+|-]static-delegate-to-block-lookup` mmp に渡すことでオーバーライドできます。
+既定の動作は、mtouch/mmp に `--optimize=[+|-]static-delegate-to-block-lookup` を渡すことでオーバーライドできます。
