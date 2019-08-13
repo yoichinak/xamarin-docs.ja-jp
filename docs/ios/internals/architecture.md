@@ -22,7 +22,7 @@ Xamarin.iOS アプリケーションは Mono 実行環境内で実行され、C#
 
 [![](architecture-images/ios-arch-small.png "この図では、事前の Time (AOT) コンパイルのアーキテクチャの基本的な概要を示しています。")](architecture-images/ios-arch.png#lightbox)
 
-## <a name="native-and-managed-code-an-explanation"></a>ネイティブ コードとマネージ コードについて
+## <a name="native-and-managed-code-an-explanation"></a>ネイティブ コードとマネージ コードについて詳細について
 
 Xamarin で開発するときには、*ネイティブ コードとマネージ コード*という用語がよく使用されます。 [マネージ コード](https://blogs.msdn.microsoft.com/brada/2004/01/09/what-is-managed-code/)は、 [.NET Framework 共通言語ランタイム](https://msdn.microsoft.com/library/8bs2ecf4(v=vs.110).aspx)、 または、Xamarin の場合は Mono ランタイムによって実行が管理されるコードです。 これは、中間言語と呼ばれるものです。
 
@@ -33,11 +33,11 @@ Xamarin で開発するときには、*ネイティブ コードとマネージ 
 Xamarin プラットフォーム アプリケーションをコンパイルするときに、Mono C#(またはF#) コンパイラが実行され、C#とF#コードを Microsoft Intermediate Language (MSIL) にコンパイルします。 Xamarin.Android、Xamarin.Mac アプリケーションの場合、または Xamarin.iOS アプリケーションでも、シミュレーターで実行している場合、 [.NET 共通言語ランタイム (CLR)](https://msdn.microsoft.com/library/8bs2ecf4(v=vs.110).aspx)は Just in Time (JIT) コンパイラを使用して MSIL にコンパイルします。 実行時にこれはネイティブ コードにコンパイルされ、アプリケーションの適切なアーキテクチャで実行できます。
 
 ただし、iOS では、Apple によって設定された、デバイス上で動的に生成されたコードの実行を禁止するセキュリティの制限があります。
-これらの安全性のプロトコルを確実に守るために、Xamarin.iOS は、代わりに Ahead of Time (AOT) コンパイラをマネージ コードをコンパイルするのに使用します。 これにより、必要に応じて LLVM によってデバイス用に最適化されたネイティブの iOS バイナリが生成され、Apple の ARM ベースのプロセッサにデプロイできます。これがどのように適合するのかをまとめた大まかな図を次に示します。
+これらの安全性のプロトコルを確実に守るために、Xamarin.iOS は、代わりに Ahead of Time (AOT) コンパイラをマネージ コードをコンパイルするのに使用します。 これにより、必要に応じて LLVM によってデバイス用に最適化されたネイティブの iOS バイナリが生成され、Apple の ARM ベースのプロセッサにデプロイできます。 これがどのように適合するのかをまとめた大まかな図を次に示します。
 
 [![](architecture-images/aot.png "どのようにこの適合化の概要図")](architecture-images/aot-large.png#lightbox)
 
-詳細については、制限事項の数値を持つ AOT を使用して、[制限](~/ios/internals/limitations.md)ガイド。 また、さまざまな点が強化 JIT 経由で、起動時間とさまざまなパフォーマンスの最適化を削減することを
+AOT の使用には多くの制限事項があります。それらの詳細については、[制限](~/ios/internals/limitations.md)ガイドで説明されています。 また、起動時間の短縮とさまざまなパフォーマンスの最適化によって、JIT に比べてさまざまな点が強化されています。
 
 ソースからネイティブ コードにコードをコンパイルする方法について学習しましたので、Xamarin.iOS を使用して完全なネイティブ iOS アプリケーションを記述する方法を確認するために、内部を見てみましょう。
 
