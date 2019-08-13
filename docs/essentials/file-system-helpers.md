@@ -1,18 +1,18 @@
 ---
-title: 'Xamarin.Essentials: ファイル システム ヘルパー'
+title: Xamarin.Essentials:ファイル システム ヘルパー
 description: Xamarin.Essentials の FileSystem クラスには、アプリケーションのキャッシュ ディレクトリやデータ ディレクトリを検索したり、アプリ パッケージ内のファイルを開いたりする、一連のヘルパーが含まれています。
 ms.assetid: B3EC2DE0-EFC0-410C-AF71-7410AE84CF84
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: 74089d55006555168d9774924c484cb8866cfb37
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.openlocfilehash: 5b155e4976a67bda36e66d2ca3565c9237fde3c6
+ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52898851"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68738865"
 ---
-# <a name="xamarinessentials-file-system-helpers"></a>Xamarin.Essentials: ファイル システム ヘルパー
+# <a name="xamarinessentials-file-system-helpers"></a>Xamarin.Essentials:ファイル システム ヘルパー
 
 **FileSystem** クラスには、アプリケーションのキャッシュ ディレクトリやデータ ディレクトリを検索したり、アプリ パッケージ内のファイルを開いたりする、一連のヘルパーが含まれています。
 
@@ -28,7 +28,7 @@ ms.locfileid: "52898851"
 using Xamarin.Essentials;
 ```
 
-**キャッシュ データ**を格納するアプリケーションのディレクトリを取得するには、次のようにします。 キャッシュ データは、一時的なデータより長く保持する必要があるデータに対して使用できますが、正しく動作する必要のあるデータには使用できません。
+**キャッシュ データ**を格納するアプリケーションのディレクトリを取得するには、次のようにします。 キャッシュ データは、一時的なデータより長く保持する必要があるデータに対して使用できますが、正しく動作するために必要なデータである必要はありません。このストレージが消去されるタイミングは OS から指示されるためです。
 
 ```csharp
 var cacheDir = FileSystem.CacheDirectory;
