@@ -1,30 +1,29 @@
 ---
 title: DataPages コントロールのリファレンス
-description: この記事では、Xamarin.Forms DataPages NuGet パッケージで利用できるコントロールについて説明します。
+description: この記事では、Xamarin DataPages NuGet パッケージで使用できるコントロールについて説明します。
 ms.prod: xamarin
 ms.assetid: 891615D0-E8BD-4ACC-A7F0-4C3725FBCC31
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: c907d55f09d334e167c831a19f9d0edc4c97732f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 2af4bc3bd4dc6ae47f573c58c84aad54f41d42cd
+ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61161760"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68980814"
 ---
 # <a name="datapages-controls-reference"></a>DataPages コントロールのリファレンス
 
 ![](~/media/shared/preview.png "この API は現在プレビュー段階")
 
 > [!IMPORTANT]
-> DataPages が必要です、 [Xamarin.Forms テーマ](~/xamarin-forms/user-interface/themes/index.md)レンダリングへの参照。
+> DataPages を表示するには、Xamarin. Forms Theme リファレンスが必要です。 これには、プロジェクトに[xamarin. theme. Base](https://www.nuget.org/packages/Xamarin.Forms.Theme.Base/) nuget パッケージをインストールし、その後に、 [xamarin. theme](https://www.nuget.org/packages/Xamarin.Forms.Theme.Light/)パッケージまたは[xamarin](https://www.nuget.org/packages/Xamarin.Forms.Theme.Dark/) . theme. theme パッケージのいずれかをインストールする必要があります。
 
+DataPages Nuget には、データソースバインドを利用できる多数のコントロールが含まれています。
 
-Xamarin.Forms の DataPages Nuget には、さまざまなデータ ソースのバインドの利用できるコントロールが含まれています。
-
-これらのコントロールを XAML で使用する名前空間が含まれていることを確認、例を参照してください、`xmlns:pages`宣言。
+これらのコントロールを XAML で使用するには、名前空間が含まれている`xmlns:pages`ことを確認します。たとえば、次の宣言を参照してください。
 
 ```xaml
 <ContentPage
@@ -34,9 +33,9 @@ Xamarin.Forms の DataPages Nuget には、さまざまなデータ ソースの
     x:Class="DataPagesDemo.Detail">
 ```
 
-次の例は、`DynamicResource`参照は操作するプロジェクトのリソース ディクショナリに存在する必要があります。 構築する方法の例はまた、[カスタム コントロール](#custom)
+次の例に`DynamicResource`は、プロジェクトの resources ディクショナリに存在しなければならない参照が含まれています。 [カスタムコントロール](#custom)を構築する方法の例もあります。
 
-## <a name="built-in-controls"></a>組み込みのコントロール
+## <a name="built-in-controls"></a>組み込みコントロール
 
 * [HeroImage](#heroimage)
 * [ListItem](#listitem)
@@ -45,12 +44,12 @@ Xamarin.Forms の DataPages Nuget には、さまざまなデータ ソースの
 
 ### <a name="heroimage"></a>HeroImage
 
-`HeroImage`コントロールが 4 つのプロパティ。
+この`HeroImage`コントロールには、次の4つのプロパティがあります。
 
 * テキスト
 * 詳細
 * ImageSource
-* 側面
+* 部分
 
 ```xaml
 <pages:HeroImage
@@ -73,15 +72,15 @@ Xamarin.Forms の DataPages Nuget には、さまざまなデータ ソースの
 
 ### <a name="listitem"></a>ListItem
 
-`ListItem`コントロールのレイアウトはネイティブの iOS に似ており、Android のリストまたはテーブル行、ただしこの属性は通常のビューとしてにも使用できます。 例では、その下のコードが内部でホストされている表示されます、`StackLayout`がデータ バインド scolling リスト コントロールで使用することもできます。
+`ListItem`コントロールのレイアウトは、ネイティブの iOS および Android の一覧またはテーブルの行に似ていますが、通常のビューとしても使用できます。 下のコード例では、がの`StackLayout`内部でホストされていますが、データバインドされたリストコントロールで使用することもできます。
 
-5 つのプロパティがあります。
+次の5つのプロパティがあります。
 
 * Title
 * 詳細
 * ImageSource
 * PlaceholdImageSource
-* 側面
+* 部分
 
 ```xaml
 <StackLayout Spacing="0">
@@ -93,7 +92,7 @@ Xamarin.Forms の DataPages Nuget には、さまざまなデータ ソースの
     />
 ```
 
-これらのスクリーン ショットを示して、 `ListItem` iOS および Android プラットフォームの両方、ライト テーマと暗いテーマを使用してで。
+これらのスクリーンショット`ListItem`は、次のように、明るいテーマとダークテーマの両方を使用した iOS および Android プラットフォームのを示しています。
 
 **Android**
 
@@ -104,17 +103,17 @@ Xamarin.Forms の DataPages Nuget には、さまざまなデータ ソースの
 ![](controls-images/listitem-light-ios.png "IOS で ListItem コントロール") ![](controls-images/listitem-dark-ios.png "ios ListItem コントロール")
 
 
-## <a name="custom-control-example"></a>カスタム コントロールの例
+## <a name="custom-control-example"></a>カスタムコントロールの例
 
-このカスタムの目的は、`CardView`コントロールはネイティブ Android CardView のようになります。
+このカスタム`CardView`コントロールの目的は、ネイティブの Android CardView に似ていることです。
 
-3 つのプロパティが含まれます。
+次の3つのプロパティが含まれます。
 
 * テキスト
 * 詳細
 * ImageSource
 
-目標は、カスタム コントロールを次のコードのようになります (なお、カスタム`xmlns:local`が必要です、現在のアセンブリを参照する)。
+目標は、次のコードのように見えるカスタムコントロールです (現在のアセンブリを`xmlns:local`参照するカスタムが必要であることに注意してください)。
 
 ```xaml
 <local:CardView
@@ -124,7 +123,7 @@ Xamarin.Forms の DataPages Nuget には、さまざまなデータ ソースの
 />
 ```
 
-組み込みのライトとダーク テーマに対応する色を使用して以下のスクリーン ショットのようになります。
+組み込みのライトとダークテーマに対応する色を使用して、次のスクリーンショットのようになります。
 
 **Android**
 
@@ -136,21 +135,21 @@ Xamarin.Forms の DataPages Nuget には、さまざまなデータ ソースの
 
 <a name="custom" />
 
-### <a name="building-the-custom-cardview"></a>カスタム CardView の構築
+### <a name="building-the-custom-cardview"></a>カスタム CardView のビルド
 
-1. [DataView のサブクラス](#1)
-2. [フォント、レイアウト、および余白を定義します。](#2)
-3. [スタイルのコントロールの子を作成します。](#3)
-4. [コントロールのレイアウト テンプレートを作成します。](#4)
-5. [テーマ固有のリソースを追加します。](#5)
-6. [CardView クラスの ControlTemplate に設定します。](#6)
-7. [ページにコントロールを追加します。](#7)
+1. [DataView サブクラス](#1)
+2. [フォント、レイアウト、および余白を定義する](#2)
+3. [コントロールの子のスタイルを作成する](#3)
+4. [コントロールレイアウトテンプレートを作成する](#4)
+5. [テーマ固有のリソースを追加する](#5)
+6. [CardView クラスの ControlTemplate を設定します。](#6)
+7. [コントロールをページに追加する](#7)
 
 <a name="1" />
 
-#### <a name="1-dataview-subclass"></a>1.DataView のサブクラス
+#### <a name="1-dataview-subclass"></a>1.DataView サブクラス
 
-C# サブクラス`DataView`コントロールのバインド可能なプロパティを定義します。
+C# の`DataView`サブクラスは、コントロールのバインド可能なプロパティを定義します。
 
 ```csharp
 public class CardView : DataView
@@ -190,11 +189,11 @@ public class CardView : DataView
 
 <a name="2" />
 
-#### <a name="2-define-font-layout-and-margins"></a>2.フォント、レイアウト、および余白を定義します。
+#### <a name="2-define-font-layout-and-margins"></a>2.フォント、レイアウト、および余白を定義する
 
-コントロール デザイナーは、カスタム コントロールのユーザー インターフェイス設計の一環として、これらの値を算出します。 プラットフォーム固有の仕様が必要ですが、`OnPlatform`要素を使用します。
+コントロールデザイナーは、カスタムコントロールのユーザーインターフェイスデザインの一部としてこれらの値を確認します。 プラットフォーム固有の仕様が必要な`OnPlatform`場合は、要素が使用されます。
 
-いくつかの値を参照するメモ`StaticResource`s – これらで定義される[手順 5](#5)します。
+が参照する`StaticResource`値としては、[手順 5](#5). で定義されているものがあります。
 
 ```xml
 <!-- CARDVIEW FONT SIZES -->
@@ -248,9 +247,9 @@ public class CardView : DataView
 
 <a name="3" />
 
-#### <a name="3-create-styles-for-the-controls-children"></a>3.スタイルのコントロールの子を作成します。
+#### <a name="3-create-styles-for-the-controls-children"></a>3.コントロールの子のスタイルを作成する
 
-カスタム コントロールで使用される子を作成しようと定義されているすべての要素を参照します。
+に対して定義されているすべての要素を参照して、カスタムコントロールで使用される子を作成します。
 
 ```xml
 <!-- EXPLICIT STYLES (will be Classes) -->
@@ -280,9 +279,9 @@ public class CardView : DataView
 
 <a name="4" />
 
-#### <a name="4-create-the-control-layout-template"></a>4.コントロールのレイアウト テンプレートを作成します。
+#### <a name="4-create-the-control-layout-template"></a>4.コントロールレイアウトテンプレートを作成する
 
-カスタム コントロールのビジュアル デ ザインは上記で定義されたリソースを使用して、コントロール テンプレートで明示的に宣言します。
+カスタムコントロールのビジュアルデザインは、上で定義したリソースを使用して、コントロールテンプレートで明示的に宣言されます。
 
 ```xml
 <!--- CARDVIEW -->
@@ -324,11 +323,11 @@ public class CardView : DataView
 
 <a name="5" />
 
-#### <a name="5-add-the-theme-specific-resources"></a>5.テーマ固有のリソースを追加します。
+#### <a name="5-add-the-theme-specific-resources"></a>5.テーマ固有のリソースを追加する
 
-これは、カスタム コントロールであるため、リソース ディクショナリを使用しているテーマに一致するリソースを追加します。
+これはカスタムコントロールであるため、リソースディクショナリを使用しているテーマに一致するリソースを追加します。
 
-##### <a name="light-theme-colors"></a>ライト テーマの色
+##### <a name="light-theme-colors"></a>明るいテーマの色
 
 ```xaml
 <Color x:Key="iOSCardViewBackgroundColor">#FFFFFF</Color>
@@ -341,7 +340,7 @@ public class CardView : DataView
 <Color x:Key="iOSCardViewDetailTextColor">#8F8E94</Color>
 ```
 
-##### <a name="dark-theme-colors"></a>ダーク テーマの色
+##### <a name="dark-theme-colors"></a>ダークテーマの色
 
 ```xaml
 <!-- CARD VIEW COLORS -->
@@ -357,9 +356,9 @@ public class CardView : DataView
 
 <a name="6" />
 
-#### <a name="6-set-the-controltemplate-for-the-cardview-class"></a>6.CardView クラスの ControlTemplate に設定します。
+#### <a name="6-set-the-controltemplate-for-the-cardview-class"></a>6.CardView クラスの ControlTemplate を設定します。
 
-最後に、c# クラスで作成されたことを確認[手順 1.](#1)で定義されているコントロール テンプレートを使用して[手順 4](#4)を使用して、 `Style` `Setter`要素
+最後にC# 、[手順 1](#1) . で作成したクラスが、 `Style` `Setter` [手順 4.](#4)で定義したコントロールテンプレートを使用して要素を使用していることを確認します。
 
 ```xml
 <Style TargetType="local:CardView">
@@ -371,9 +370,9 @@ public class CardView : DataView
 
 <a name="7" />
 
-#### <a name="7-add-the-control-to-a-page"></a>7.ページにコントロールを追加します。
+#### <a name="7-add-the-control-to-a-page"></a>7.コントロールをページに追加する
 
-`CardView`コントロールをページに追加できるようになりました。 次の例を示しますでホストされていること、 `StackLayout`:
+これ`CardView`で、コントロールをページに追加できるようになりました。 次の例は、でホストさ`StackLayout`れていることを示しています。
 
 ```xaml
 <StackLayout Spacing="0">

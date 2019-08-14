@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/21/2018
-ms.openlocfilehash: b48e92bcb49109dad6e8c5260b5cb822945e7a0b
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 82ca106f29eb28672abcbd282b60841bfdb4da8c
+ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68651336"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68980831"
 ---
 # <a name="xamarinforms-layouts"></a>Xamarin.Forms のレイアウト
 
@@ -45,7 +45,7 @@ _Xamarin.Forms のレイアウトは、visual 構造にユーザー インター
 
 |     |     |
 | --- | --- |
-| [ `Frame` ](xref:Xamarin.Forms.Frame)クラスから派生[ `ContentView` ](#contentView)し、その子の周囲に四角形のフレームを表示します。 `Frame` 既定値を持つ[ `Padding` ](xref:Xamarin.Forms.Layout.Padding) 20, の値も定義します[ `OutlineColor` ](xref:Xamarin.Forms.Frame.OutlineColor)、 [ `CornerRadius`](xref:Xamarin.Forms.Frame.CornerRadius)と[ `HasShadow` ](xref:Xamarin.Forms.Frame.HasShadow)プロパティ。<br /><br />[API ドキュメント](xref:Xamarin.Forms.Frame) | [![例のフレーム](layouts-images/Frame.png "フレーム例")](layouts-images/Frame-Large.png#lightbox "フレームの例")<br />[このページの C# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/FrameDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/FrameDemoPage.xaml) |
+| クラス[`Frame`](xref:Xamarin.Forms.Frame)はから[`ContentView`](#contentView)派生し、その子の周りに境界線またはフレームを表示します。 クラス`Frame`の既定[`Padding`](xref:Xamarin.Forms.Layout.Padding)値は20で、、 [`CornerRadius`](xref:Xamarin.Forms.Frame.CornerRadius)、および[`HasShadow`](xref:Xamarin.Forms.Frame.HasShadow)の[`BorderColor`](xref:Xamarin.Forms.Frame.BorderColor)各プロパティも定義します。<br /><br />[API ドキュメント](xref:Xamarin.Forms.Frame) / [ガイド](~/xamarin-forms/user-interface/layouts/frame.md) / [サンプル](https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/userinterface-frame/) | [![例のフレーム](layouts-images/Frame.png "フレーム例")](layouts-images/Frame-Large.png#lightbox "フレームの例")<br />[このページの C# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/FrameDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/FrameDemoPage.xaml) |
 |     |     |
 
 <a name="scrollView" />

@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/06/2018
-ms.openlocfilehash: da19b9071695f11a7c5591b7e715d85daa01841b
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 3291589f4a61fad7d7465e0ac2bd4844ae4a0655
+ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68508719"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68980737"
 ---
 # <a name="xamarinios-errors"></a>Xamarin. iOS エラー
 
@@ -137,7 +137,7 @@ Xamarin. iOS は、エラーメッセージに示されている場所にアセ�
 
 <a name="MT0015" />
 
-### <a name="mt0015-invalid-abi--supported-abis-are-i386-x8664--armv7-armv7llvm-armv7llvmthumb2-armv7s-armv7sllvm-armv7sllvmthumb2-arm64-and-arm64llvm"></a>MT0015:ABI が無効です: *。 サポートされている ABIs: i386、x86_64、armv7、armv7 + llvm、armv7 + llvm + thumb2、armv7s、armv7s + llvm、armv7s + llvm + thumb2、arm64、arm64 + llvm。
+### <a name="mt0015-invalid-abi--supported-abis-are-i386-x86_64--armv7-armv7llvm-armv7llvmthumb2-armv7s-armv7sllvm-armv7sllvmthumb2-arm64-and-arm64llvm"></a>MT0015:ABI が無効です: *。 サポートされている ABIs: i386、x86_64、armv7、armv7 + llvm、armv7 + llvm + thumb2、armv7s、armv7s + llvm、armv7s + llvm + thumb2、arm64、arm64 + llvm。
 
 無効な ABI が mtouch に渡されました。 有効な ABI を指定してください。
 
@@ -252,7 +252,7 @@ Xcode symbolicates (メモリアドレスを関数名とファイル/行番号�
 
 <a name="MT0037" />
 
-### <a name="mt0037-monotouchdll-is-not-64-bit-compatible-either-reference-xamariniosdll-or-do-not-build-for-a-64-bit-architecture-arm64-andor-x8664"></a>MT0037: monotouch.dialog は64ビット互換ではありません。 ARM64 を参照するか、64ビットアーキテクチャ (x86_64 または) 用にビルドしないでください。
+### <a name="mt0037-monotouchdll-is-not-64-bit-compatible-either-reference-xamariniosdll-or-do-not-build-for-a-64-bit-architecture-arm64-andor-x86_64"></a>MT0037: monotouch.dialog は64ビット互換ではありません。 ARM64 を参照するか、64ビットアーキテクチャ (x86_64 または) 用にビルドしないでください。
 
 <a name="MT0038" />
 
@@ -838,7 +838,7 @@ class Program {
 
 ファイルにタッチするときにエラーが発生しました (部分的なビルドが正しく行われるようにするために行われます)。
 
-この警告は無視される可能性があります。問題が発生した場合は、バグ https://bugzilla.xamarin.com (https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)) ) をファイルに登録すると調査されます。
+この警告は無視される可能性があります。問題が発生した場合は、 [https://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)バグが発生すると調査されます。
 
 ## <a name="mt1xxx-project-related-error-messages"></a>MT1xxx:プロジェクト関連のエラーメッセージ
 
@@ -1678,7 +1678,7 @@ Parameter name: instruction
 
 <a name="MT3002" />
 
-### <a name="mt3002-aot-restriction-method--must-be-static-since-it-is-decorated-with-monopinvokecallback-see-developerxamarincomguidesiosadvancedtopicslimitationsreversecallbacksiosinternalslimitationsmdreverse-callbacks"></a>MT3002:AOT 制限:メソッド ' * ' は、[MonoPInvokeCallback] で修飾されているため、静的である必要があります。 Developer.xamarin.com/guides/ios/advanced_topics/limitations/を参照してください[#Reverse_Callbacks](~/ios/internals/limitations.md#reverse-callbacks)
+### <a name="mt3002-aot-restriction-method--must-be-static-since-it-is-decorated-with-monopinvokecallback-see-developerxamarincomguidesiosadvanced_topicslimitationsreverse_callbacksiosinternalslimitationsmdreverse-callbacks"></a>MT3002:AOT 制限:メソッド ' * ' は、[MonoPInvokeCallback] で修飾されているため、静的である必要があります。 Developer.xamarin.com/guides/ios/advanced_topics/limitations/を参照してください[#Reverse_Callbacks](~/ios/internals/limitations.md#reverse-callbacks)
 
 このエラーメッセージは AOT コンパイラからのものです。
 
@@ -1824,7 +1824,7 @@ Xamarin では、問題の種類をサポートする必要がある場合は、
 
 <a name="MT4112" />
 
-### <a name="mt4112-the-registrar-found-an-invalid-type--registering-generic-types-with-objective-c-is-not-supported-and-may-lead-to-random-behavior-andor-crashes-for-backwards-compatibility-with-older-versions-of-xamarinios-it-is-possible-to-ignore-this-error-by-passing---unsupported--enable-generics-in-registrar-as-an-additional-mtouch-argument-in-the-projects-ios-build-options-page-see-developerxamarincomguidesiosadvancedtopicsregistrariosinternalsregistrarmd-for-more-information"></a>MT4112:レジストラーで無効な型`*`が見つかりました。 旧バージョンの Xamarin との下位互換性を確保するために、ジェネリック型を目的の C に登録することはサポートされていません。また、異常な動作やクラッシュが`--unsupported--enable-generics-in-registrar`発生する可能性があります。 iOS を追加すると、このエラーを無視してもかまいません。プロジェクトの iOS ビルドオプションページの引数。 詳細については、「 [developer.xamarin.com/guides/ios/advanced_topics/registrar](~/ios/internals/registrar.md) 」を参照してください)。
+### <a name="mt4112-the-registrar-found-an-invalid-type--registering-generic-types-with-objective-c-is-not-supported-and-may-lead-to-random-behavior-andor-crashes-for-backwards-compatibility-with-older-versions-of-xamarinios-it-is-possible-to-ignore-this-error-by-passing---unsupported--enable-generics-in-registrar-as-an-additional-mtouch-argument-in-the-projects-ios-build-options-page-see-developerxamarincomguidesiosadvanced_topicsregistrariosinternalsregistrarmd-for-more-information"></a>MT4112:レジストラーで無効な型`*`が見つかりました。 旧バージョンの Xamarin との下位互換性を確保するために、ジェネリック型を目的の C に登録することはサポートされていません。また、異常な動作やクラッシュが`--unsupported--enable-generics-in-registrar`発生する可能性があります。 iOS を追加すると、このエラーを無視してもかまいません。プロジェクトの iOS ビルドオプションページの引数。 詳細については、「 [developer.xamarin.com/guides/ios/advanced_topics/registrar](~/ios/internals/registrar.md) 」を参照してください)。
 
 <a name="MT4113" />
 
@@ -2110,7 +2110,7 @@ Xcode をアップグレードしてください。
 
 <a name="MT4168" />
 
-### <a name="mt4168-cannot-register-the-type-managedname-because-its-objective-c-name-exportedname-is-an-objective-c-keyword-please-use-a-different-name"></a>MT4168:型 ' {managed\_name} ' は、その目標 c 名 ' {エクスポート\_された名前} ' が目的 c のキーワードであるため、登録できません。 別の名前を使用してください。
+### <a name="mt4168-cannot-register-the-type-managed_name-because-its-objective-c-name-exported_name-is-an-objective-c-keyword-please-use-a-different-name"></a>MT4168:型 ' {managed\_name} ' は、その目標 c 名 ' {エクスポート\_された名前} ' が目的 c のキーワードであるため、登録できません。 別の名前を使用してください。
 
 対象の型の目的の C 名が、有効な目標 C 識別子ではありません。
 
@@ -2931,7 +2931,7 @@ class MyImports {
 
 <a name="MT8011" />
 
-### <a name="mt8011-unable-to-locate-the-delegate-to-block-conversion-attribute-delegateproxy-for-the-return-value-for-the-method--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8011:*メソッドの*戻り値の変換属性 ([DelegateProxy]) をブロックするデリゲートが見つかりません。 バグを送信してください http://bugzilla.xamarin.com です。
+### <a name="mt8011-unable-to-locate-the-delegate-to-block-conversion-attribute-delegateproxy-for-the-return-value-for-the-method--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8011:メソッドの戻り値の変換属性 ([DelegateProxy]) をブロックするデリゲートが見つかりません。 バグを送信してください http://bugzilla.xamarin.com です。
 
 Xamarin. iOS は、実行時に必要なメソッドを見つけることができませんでした (デリゲートをブロックに変換するため)。
 
@@ -3017,6 +3017,6 @@ Xamarin. iOS は、実行時に必要なメソッドを見つけることがで�
 
 <a name="MT8024" />
 
-### <a name="mt8024-could-not-find-a-valid-extension-type-for-the-smart-enum-smarttype-please-file-a-bug-at-httpsbugzillaxamarincom"></a>MT8024:スマート enum ' {smart_type} ' の有効な拡張機能の種類が見つかりませんでした。 バグを送信してください https://bugzilla.xamarin.com です。
+### <a name="mt8024-could-not-find-a-valid-extension-type-for-the-smart-enum-smart_type-please-file-a-bug-at-httpsbugzillaxamarincom"></a>MT8024:スマート enum ' {smart_type} ' の有効な拡張機能の種類が見つかりませんでした。 バグを送信してください https://bugzilla.xamarin.com です。
 
 これは、Xamarin. iOS のバグを示しています。 バグを送信してください [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)です。

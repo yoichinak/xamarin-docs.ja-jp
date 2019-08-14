@@ -6,12 +6,12 @@ ms.assetid: F0622A01-DE7F-451A-A51F-129876AB6FFD
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: 7c7b58266b4f5168fdb231258390fa64278963f8
-ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
+ms.openlocfilehash: 44ba9188a059cc28c7b4d89143cef1921a0b1701
+ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68680954"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68978477"
 ---
 # <a name="part-2--implementing-the-walkinggame"></a>パート2–ゲームの実装
 
@@ -29,12 +29,11 @@ _このチュートリアルでは、ゲームロジックとコンテンツを�
 - 文字への移動の追加
 - 一致する移動とアニメーション
 
-
 ## <a name="unzipping-our-game-content"></a>ゲームコンテンツの解凍
 
 コードの記述を開始する前に、ゲーム*コンテンツ*を解凍します。 多くの場合、ゲーム開発者は、*コンテンツ*という用語を使用して、通常はビジュアルアーティスト、ゲームデザイナー、またはオーディオデザイナーによって作成された非コードファイルを参照します。 一般的なコンテンツの種類には、ビジュアルの表示、サウンドの再生、人工知能 (AI) の動作の制御に使用されるファイルが含まれます。 ゲーム開発チームの観点から見たコンテンツは、通常、プログラマ以外が作成します。
 
-ここで使用するコンテンツについては、 [github を](https://github.com/xamarin/mobile-samples/blob/master/WalkingGameMG/Resources/charactersheet.png?raw=true)参照してください。 これらのファイルは、このチュートリアルの後半でアクセスする場所にダウンロードする必要があります。
+ここで使用するコンテンツについては、 [GitHub を](https://github.com/xamarin/mobile-samples/blob/master/WalkingGameMG/Resources/charactersheet.png?raw=true)参照してください。 これらのファイルは、このチュートリアルの後半でアクセスする場所にダウンロードする必要があります。
 
 ## <a name="monogame-class-overview"></a>モノゲームクラスの概要
 
@@ -57,11 +56,11 @@ _このチュートリアルでは、ゲームロジックとコンテンツを�
 
 ゲームのコンテンツを追加するには、 **[コンテンツ]** フォルダーを右クリックし、[**追加] > [ファイルの追加**] の順に選択します。コンテンツ .zip ファイルが抽出された場所に移動し、文字**シート .png**ファイルを選択します。 ファイルをフォルダーに追加する方法を確認するメッセージが表示されたら、 **[コピー]** オプションを選択します。
 
-![](part2-images/image1.png "ファイルをフォルダーに追加する方法を確認するメッセージが表示されたら、[コピー] オプションを選択します。")
+![ファイルをフォルダーに追加する方法を確認するメッセージが表示されたら、[コピー] オプションを選択します。](part2-images/image1.png)
 
 コンテンツフォルダーには、文字シート .png ファイルが含まれるようになりました。
 
-![](part2-images/image2.png "コンテンツフォルダーには、文字シート .png ファイルが含まれるようになりました。")
+![コンテンツフォルダーには、文字シート .png ファイルが含まれるようになりました。](part2-images/image2.png)
 
 次に、文字シート .png ファイルを読み込んでを`Texture2D`作成するコードを追加します。 これを行うには`Game1.cs` 、ファイルを開き、次のフィールドを Game1.cs クラスに追加します。
 
@@ -117,7 +116,7 @@ protected override void Draw(GameTime gameTime)
 
 ゲームを実行すると、文字シートから作成されたテクスチャを表示するスプライトが1つ表示されるようになりました。
 
-![](part2-images/image3.png "ゲームを実行すると、文字シートから作成されたテクスチャを表示するスプライトが1つ表示されるようになりました。")
+![ゲームを実行すると、文字シートから作成されたテクスチャを表示するスプライトが1つ表示されるようになりました。](part2-images/image3.png)
 
 ## <a name="creating-the-characterentity"></a>文字エンティティの作成
 
@@ -133,7 +132,6 @@ protected override void Draw(GameTime gameTime)
 
 エンティティ組織のシステムは複雑になる可能性があり、多くのゲームエンジンでは、エンティティの管理に役立つクラスを提供しています。 非常に単純なエンティティシステムを実装します。そのため、完全なゲームでは通常、開発者の作業に多くの組織が必要であることに注意してください。
 
-
 ### <a name="defining-the-characterentity"></a>文字エンティティの定義
 
 私たちが呼び出す`CharacterEntity`エンティティは、次の特性を持ちます。
@@ -143,7 +141,7 @@ protected override void Draw(GameTime gameTime)
 - `X`および Y プロパティを指定して、文字の位置を制御します。
 - 自分自身を更新する機能。具体的には、タッチスクリーンから値を読み取り、位置を適切に調整します。
 
-ゲーム`CharacterEntity`にを追加するには、[プレイ **] プロジェクトを**右クリックまたはクリックし、 **[新しいファイルの追加 >]** を選択します。 **[空のクラス]** オプションを選択し、新しいファイルに「文字**エンティティ**」という名前を指定し、 **[新規作成]** をクリックします。
+ゲーム`CharacterEntity`にを追加するには、[プレイ] プロジェクトを右クリックまたはクリックし、 **[新しいファイルの追加 >]** を選択します。 **[空のクラス]** オプションを選択し、新しいファイルに「文字**エンティティ**」という名前を指定し、 **[新規作成]** をクリックします。
 
 まず、 `CharacterEntity`を`Texture2D`読み込み、それ自体を描画する機能を追加します。 新しく追加さ`CharacterEntity.cs`れたファイルを次のように変更します。
 
@@ -215,7 +213,6 @@ namespace WalkingGame
 
 これは`SpriteBatch` 、すべて`Draw`の呼び出しに同じインスタンスを使用する場合と、1つのセットと`End`の`Begin`呼び出しの間で`Draw`すべての呼び出しが行われる場合に、最も効率的なレンダリングが可能であるためです。 もちろん、ゲームに含まれるエンティティインスタンスは1つだけですが、より複雑なゲームでは、複数のエンティティで同じ`SpriteBatch`インスタンスを使用できるパターンを利用できます。
 
-
 ## <a name="adding-characterentity-to-the-game"></a>キャラクターエンティティをゲームに追加する
 
 これで、をレンダリングする`CharacterEntity`ためのコードを追加したので、この新しい`Game1.cs`エンティティのインスタンスを使用するようにのコードを置き換えることができます。 これを行うには、 `Texture2D`フィールドをの`CharacterEntity` `Game1`フィールドに置き換えます。
@@ -278,7 +275,7 @@ protected override void Draw(GameTime gameTime)
 
 ゲームを実行すると、文字が表示されるようになります。 X と Y の既定値は0であるため、文字は画面の左上隅に配置されます。
 
-![](part2-images/image4.png "X と Y の既定値は0であるため、文字は画面の左上隅に配置されます。")
+![X と Y の既定値は0であるため、文字は画面の左上隅に配置されます。](part2-images/image4.png)
 
 ## <a name="creating-the-animation-class"></a>Animation クラスの作成
 
@@ -286,11 +283,9 @@ protected override void Draw(GameTime gameTime)
 
 ここでは、 `Animation`クラスを作成して、文字エンティティアニメーションのロジックと状態を制御します。 Animation クラスは、アニメーションだけ`CharacterEntity`でなくすべてのエンティティに使用できる一般的なクラスになります。 Ultimate クラスは`Rectangle` 、`CharacterEntity`を描画するときにが使用するを提供します。 `Animation` また、アニメーションの定義`AnimationFrame`に使用されるクラスも作成します。
 
-
 ### <a name="defining-animationframe"></a>定義 (アニメーションフレームを)
 
 `AnimationFrame`には、アニメーションに関連するロジックは含まれません。 データを格納するためだけに使用します。 `AnimationFrame`クラスを追加するには、 **[プレイ]** の共有プロジェクトを右クリックまたはクリックし、 **[新しいファイルの追加 >]** を選択します。「**アニメーションフレーム**」という名前を入力し、 **[新規]** ボタンをクリックします。 次のコードが`AnimationFrame.cs`含まれるようにファイルを変更します。
-
 
 ```csharp
 using System;
@@ -504,7 +499,7 @@ protected override void Update(GameTime gameTime)
 
 これで`CharacterEntity` 、は`walkDown`アニメーションを再生します。
 
-![](part2-images/image5.gif "これで、文字エンティティが再生ダウンアニメーションを再生します。")
+![これで、文字エンティティが再生ダウンアニメーションを再生します。](part2-images/image5.gif)
 
 ## <a name="adding-movement-to-the-character"></a>文字への移動の追加
 
@@ -513,7 +508,6 @@ protected override void Update(GameTime gameTime)
 ### <a name="defining-getdesiredvelocityfrominput"></a>GetDesiredVelocityFromInput の定義
 
 ここでは、タッチスクリーンの`TouchPanel`現在の状態に関する情報を提供する、モノゲームのクラスを使用します。 を確認`TouchPanel`し、文字の目的の速度を返すメソッドを追加してみましょう。
-
 
 ```csharp
 Vector2 GetDesiredVelocityFromInput()
@@ -552,7 +546,6 @@ Vector2 GetDesiredVelocityFromInput()
 
 この`if (desiredVelocity.X != 0 || desiredVelocity.Y != 0)`ステートメントでは、ベロシティが0以外であるかどうかが確認されています。つまり、ユーザーが文字の現在位置と同じ位置に触れていないことを確認しています。 そうでない場合は、タッチの距離に関係なく、文字の速度が一定になるように設定する必要があります。 これを実現するには、ベロシティベクターを正規化します。これにより、長さは1になります。 速度ベクトル1は、文字が1ピクセル/秒で移動することを意味します。 この値には、200の必要な速度を乗算することで、速度を上げます。
 
-
 ### <a name="applying-velocity-to-position"></a>位置にベロシティを適用する
 
 から`GetDesiredVelocityFromInput`返されたベロシティを、実行時に影響`X`を`Y`与える文字の値と値に適用する必要があります。 次のように`Update`メソッドを変更します。
@@ -578,7 +571,7 @@ public void Update(GameTime gameTime)
 
 ここでゲームを実行すると、文字がタッチの場所に移動していることがわかります。
 
-![](part2-images/image6.gif "文字がタッチ位置に移動しています")
+![文字がタッチ位置に移動しています](part2-images/image6.gif)
 
 ## <a name="matching-movement-and-animation"></a>一致する移動とアニメーション
 
@@ -661,7 +654,6 @@ public CharacterEntity (GraphicsDevice graphicsDevice)
 
 次に、文字が移動する方向に従ってアニメーションを使用するようにロジックを調整します。または、文字が停止したばかりの場合は、最後のアニメーションに従います。 これを行うには、メソッドを`Update`次のように変更します。
 
-
 ```csharp
 public void Update(GameTime gameTime)
 {
@@ -736,9 +728,9 @@ public void Update(GameTime gameTime)
 
 このコードの結果として、検索時に文字が適切にアニメーション化され、停止時にその最後の方向に直面することになります。
 
-![](part2-images/image7.gif "このコードの結果として、検索時に文字が適切にアニメーション化され、停止時にその最後の方向に直面することになります。")
+![このコードの結果として、検索時に文字が適切にアニメーション化され、停止時にその最後の方向に直面することになります。](part2-images/image7.gif)
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
 このチュートリアルでは、モノゲームを使って、スプライト、オブジェクトの移動、入力検出、アニメーションを使用してクロスプラットフォームのゲームを作成する方法を説明しました。 汎用アニメーションクラスの作成について説明します。 また、コードロジックを整理するための文字エンティティを作成する方法についても説明しました。
 

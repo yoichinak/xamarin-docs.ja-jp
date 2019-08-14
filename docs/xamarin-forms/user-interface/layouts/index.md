@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/18/2018
-ms.openlocfilehash: 1889579a48364204a977d63bd9bdb875df37a2bf
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 7d63dafbb17a3757f5d15f65e977b4b0cb8bc44a
+ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657028"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68980863"
 ---
 # <a name="layouts-in-xamarinforms"></a>Xamarin.Forms のレイアウト
 
@@ -32,6 +32,7 @@ Xamarin.Forms は、いくつかのレイアウトと画面上のコンテンツ
 * **[RelativeLayout](relative-layout.md)** –親のディメンション & position に相対的に制約を設定することによって、ビューを配置するために使用します。
 * **[Grid](grid.md)** –グリッド内のビューを配置するために使用します。 絶対値または比率の観点からは、行と列を指定できます。
 * **[Flexlayout](flex-layout.md)** –折り返しによってビューを水平方向または垂直方向に整列させるために使用します。
+* **[Frame](frame.md)** -色、ドロップシャドウなどを使用して構成できる境界線 (frame) を持つビューをラップするために使用されます。
 * **[ScrollView](scroll-view.md)** –ビューが画面の境界内に収まらない場合に、スクロールを提供するために使用されます。
 * **[LayoutOptions](layout-options.md)** –親を基準とした、ビューの配置と展開を定義します。
 * **[入力透明度](#input_transparency)** –要素が入力を受け取るかどうかを指定します。
@@ -179,6 +180,10 @@ Xamarin.Forms は、いくつかのレイアウトと画面上のコンテンツ
 - グリッドと列が明示的に指定されて、コンテンツから推論できません。
 - `Height` `Width`値に設定できますスター、つまり、グリッドが空き領域の塗りつぶしにそれらの値を設定します。
 - 各ボタンの位置が指定された`Grid.Row`  &  `Grid.Column`プロパティ。
+
+### <a name="frameframemd"></a>[Frame](frame.md)
+
+レイアウト`Frame`は、子`View`の周囲にカスタマイズ可能な境界線を作成するために使用されます。 を`Frame`使用すると、 `Button`や`Label`などのコントロールの周囲に境界線を配置したり、他のレイアウトをラップしてカードなどの複雑な UI オブジェクトを作成したりできます。
 
 ### <a name="layoutoptionslayout-optionsmd"></a>[LayoutOptions](layout-options.md)
 
