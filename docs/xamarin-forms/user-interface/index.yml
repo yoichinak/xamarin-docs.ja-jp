@@ -9,7 +9,7 @@ metadata:
   ms.assetid: 391B4A77-7CAC-42D2-9E77-BD8E170E9BE6
   author: davidbritch
   ms.author: dabritch
-  ms.date: 07/31/2019
+  ms.date: 08/07/2019
 abstract:
   description: Xamarin.Forms を使用し、ユーザー インターフェイスを作成する方法について説明します。
 sections:
@@ -115,6 +115,12 @@ sections:
               src: ~/media/icons/i_user-interface.svg
               href: map.md
             title: マップ
+          - href: menuitem.md
+            html: MenuItem クラスを使用して、ListView セルのコンテキスト メニューに項目を追加する方法について説明します。
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: menuitem.md
+            title: MenuItem
           - href: picker/index.md
             html: ピッカー コントロールを使用し、データ一覧からテキスト項目を選択する方法について説明します。
             image:
@@ -169,12 +175,24 @@ sections:
               src: ~/media/icons/i_user-interface.svg
               href: text/index.md
             title: テキスト
+          - href: theming.md
+            html: Xamarin. Forms アプリケーションのテーマを作成し、実行時にテーマを変更する方法について説明します。
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: theming.md
+            title: テーマ
           - href: timepicker.md
             html: TimePicker を使用し、時間を選択できるようにする方法について説明します。
             image:
               src: ~/media/icons/i_user-interface.svg
               href: timepicker.md
             title: TimePicker
+          - href: toolbaritem.md
+            html: ToolbarItem を使用して、ナビゲーション バーにボタンを追加する方法について説明します。
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: toolbaritem.md
+            title: ToolbarItem
           - href: visual/index.md
             html: Xamarin.Forms の素材のビジュアルを使用し、iOS と Android で、同一またはだいたい同一に見えるアプリケーションを作成する方法について説明します。
             image:

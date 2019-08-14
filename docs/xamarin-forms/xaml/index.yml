@@ -49,6 +49,12 @@ sections:
         style: cards
         className: cardsB
         items:
+          - href: hot-reload.md
+            html: XAML ホット リロードを使用して、UI の変更をすばやく検証する方法について説明します。
+            image:
+              src: ~/media/icons/i_quickstart-3.svg
+              href: hot-reload.md
+            title: ホット リロード
           - href: toolbox.md
             html: XAML ツールボックスを使って Xamarin.Forms のコントロールとレイアウトを XAML エディターにドラッグする方法について説明します。
             image:
