@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
-ms.openlocfilehash: 775675e11b85bb53bb51c36b71129a086d9dd60f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ccb10829f10ddd76fe7402143d66a32949daccc1
+ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68651255"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68980800"
 ---
 # <a name="enhanced-user-notifications-in-xamarinios"></a>Xamarin でのユーザー通知の強化
 
@@ -78,7 +78,7 @@ IOS アプリが送信できるリモート通知には、次の機能と属性�
 IOS アプリで使用可能なリモート通知には、次の2種類があります。
 
 - **ユーザー**への接続-デバイス上のユーザーに表示されます。
-- **サイレント更新**-バックグラウンドで iOS アプリのコンテンツを更新するためのメカニズムが用意されています。 サイレント更新を受信すると、アプリは、削除サーバーに接続して最新のコンテンツを取得できます。
+- **サイレント更新**-バックグラウンドで iOS アプリのコンテンツを更新するためのメカニズムが用意されています。 サイレント更新を受信すると、アプリはリモートサーバーに接続して最新のコンテンツを取得することができます。
 
 詳細については、Apple の[ローカルおよびリモート通知のプログラミングガイド](https://developer.apple.com/documentation/usernotifications)に関するドキュメントを参照してください。
 

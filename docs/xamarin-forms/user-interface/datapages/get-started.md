@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: a77ebd8a6c64d2ee44011e8d51977adf88b52be9
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: d47a8d4a0fa72cee59a054554e9868f20323d00b
+ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832435"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68980790"
 ---
 # <a name="getting-started-with-datapages"></a>DataPages の概要
 
@@ -21,8 +21,7 @@ ms.locfileid: "67832435"
 ![](~/media/shared/preview.png "この API は現在プレビュー段階")
 
 > [!IMPORTANT]
-> DataPages が必要です、 [Xamarin.Forms テーマ](~/xamarin-forms/user-interface/themes/index.md)レンダリングへの参照。
-
+> DataPages を表示するには、Xamarin. Forms Theme リファレンスが必要です。 これには、プロジェクトに[xamarin. theme. Base](https://www.nuget.org/packages/Xamarin.Forms.Theme.Base/) nuget パッケージをインストールし、その後に、 [xamarin. theme](https://www.nuget.org/packages/Xamarin.Forms.Theme.Light/)パッケージまたは[xamarin](https://www.nuget.org/packages/Xamarin.Forms.Theme.Dark/) . theme. theme パッケージのいずれかをインストールする必要があります。
 
 DataPages Preview を使用して単純なデータ ドリブンのページの構築を開始、次の手順に従います。 このデモを使用して、プレビューでハードコーディングされたスタイル (「イベント」) をビルドするは、コード内の特定の JSON 形式でのみ機能します。
 
@@ -34,7 +33,7 @@ Xamarin.Forms .NET Standard ライブラリとアプリケーション プロジ
 
 * Xamarin.Forms.Pages
 * Xamarin.Forms.Theme.Base
-* テーマの実装を Nuget (例: Xamarin.Forms.Theme.Light)
+* テーマの実装を Nuget (例: (Xamarin. Theme)
 
 ## <a name="2-add-theme-reference"></a>2. テーマの参照を追加します。
 
@@ -52,7 +51,7 @@ Xamarin.Forms .NET Standard ライブラリとアプリケーション プロジ
 ```
 
 > [!IMPORTANT]
-> 手順を行う必要があります[テーマ アセンブリ (下記) を読み込む](#loadtheme)iOS に一部の定型コードを追加して`AppDelegate`と Android`MainActivity`します。 これは、将来のプレビュー リリースで改善されます。
+> また、iOS `AppDelegate`および Android `MainActivity`に定型コードを追加して、[テーマアセンブリ (下記) を読み込む](#loadtheme)手順にも従う必要があります。 これは、将来のプレビュー リリースで改善されます。
 
 
 ## <a name="3-add-a-xaml-page"></a>3.XAML ページを追加します。
@@ -100,7 +99,7 @@ MainPage = new NavigationPage (new SessionDataPage ());
 削除、`Content`要素置き換え、それを`p:ListDataPage.DataSource`データ ページを設定します。 リモート Json 次の例では、データ ファイルを URL から読み込まれています。
 
 > [!NOTE]
-> プレビュー*必要があります*、`StyleClass`属性をデータ ソースのレンダリング ヒントを提供します。 `StyleClass="Events"`プレビューでは事前に定義し、スタイルを含むレイアウトを指す*ハードコード*使用されている JSON データ ソースと一致します。
+> プレビューでは、 `StyleClass`データソースの表示ヒントを提供するために属性が*必要です*。 `StyleClass="Events"`プレビューでは事前に定義し、スタイルを含むレイアウトを指す*ハードコード*使用されている JSON データ ソースと一致します。
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -177,7 +176,7 @@ SetBinding (TitleProperty, new DataSourceBinding ("title"));
 ```
 
 
-ゼロからテーマを作成する、もう少し作業が (を参照してください、[テーマ ガイド](~/xamarin-forms/user-interface/themes/index.md)) が、将来のプレビュー リリースは、簡単に確認を行う。
+最初からテーマを作成するのはもう少しの作業ですが、今後のプレビューリリースではこれが簡単になります。
 
 
 ## <a name="troubleshooting"></a>トラブルシューティング
