@@ -1,5 +1,5 @@
 ---
-title: カスタム レイアウトの作成
+title: Xamarin. Forms でカスタムレイアウトを作成する
 description: この記事では、カスタム レイアウト クラスを作成する方法と、ページ間で、その子を水平方向に整列し、追加の行に後続の子の表示をラップし、印刷の向きを区別する. WrapLayout クラスを説明します。
 ms.prod: xamarin
 ms.assetid: B0CFDB59-14E5-49E9-965A-3DCCEDAC2E31
@@ -7,20 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/29/2017
-ms.openlocfilehash: 11707a1e871b0988847ab4a2c266d268db063000
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 0f2136aa4a07d289e1e8aecc6cb37460fdc5727c
+ms.sourcegitcommit: 157da886e1f304c6b482aa3f265ef7d78b696ab7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645203"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69024531"
 ---
-# <a name="creating-a-custom-layout"></a>カスタム レイアウトの作成
+# <a name="create-a-custom-layout-in-xamarinforms"></a>Xamarin. Forms でカスタムレイアウトを作成する
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-customlayout-wraplayout)
 
 _Xamarin.Forms – StackLayout、AbsoluteLayout、[相対レイアウト]、およびグリッドの 4 つのレイアウト クラスを定義し、別の方法でその子を配置それぞれします。ただし、場合によっては必要 Xamarin.Forms が提供していないレイアウトを使用してページのコンテンツを整理します。この記事では、カスタム レイアウト クラスを作成する方法と、ページ間で、その子を水平方向に整列し、追加の行に後続の子の表示をラップし、印刷の向きを区別する. WrapLayout クラスを説明します。_
-
-## <a name="overview"></a>概要
 
 Xamarin.Forms でから派生してレイアウトのすべてのクラス、 [ `Layout<T>` ](xref:Xamarin.Forms.Layout`1)クラスおよびをジェネリック型を制約する[ `View` ](xref:Xamarin.Forms.View)とその派生型。 さらに、`Layout<T>`クラスから派生、 [ `Layout` ](xref:Xamarin.Forms.Layout)クラスを要素の位置とサイズ変更の子のメカニズムを提供します。
 
@@ -67,7 +65,7 @@ Invalidation は、ページ上の要素の変更によって新しいレイア�
 
 [ `InvalidateLayout` ](xref:Xamarin.Forms.Layout.InvalidateLayout)の反復的な呼び出しを最小限に抑えるのキャッシュ実装をオーバーライドする、 [ `Measure` ](xref:Xamarin.Forms.VisualElement.Measure(System.Double,System.Double,Xamarin.Forms.MeasureFlags))レイアウトの子のメソッド。 オーバーライドする、`InvalidateLayout`メソッドの子を追加またはレイアウトから削除するときに通知を提供します。 同様に、 [ `OnChildMeasureInvalidated` ](xref:Xamarin.Forms.Layout.OnChildMeasureInvalidated)レイアウトの子のいずれかのサイズが変更されたときに通知を提供するメソッドをオーバーライドすることができます。 両方のメソッド オーバーライドのカスタム レイアウト キャッシュをクリアして応答します。 詳細については、次を参照してください。[計算とデータのキャッシュ](#caching)します。
 
-## <a name="creating-a-custom-layout"></a>カスタム レイアウトの作成
+## <a name="create-a-custom-layout"></a>カスタムレイアウトを作成する
 
 カスタム レイアウトを作成するプロセスは次のとおりです。
 
@@ -89,7 +87,7 @@ Invalidation は、ページ上の要素の変更によって新しいレイア�
 
 <a name="creating" />
 
-### <a name="creating-a-wraplayout"></a>WrapLayout を作成します。
+### <a name="create-a-wraplayout"></a>WrapLayout を作成する
 
 サンプル アプリケーションでは、印刷の向き区別`WrapLayout`クラスを追加の行に後続の子の表示をラップし、ページ間で、その子を水平方向に整列します。
 
@@ -107,7 +105,7 @@ public class WrapLayout : Layout<View>
 
 <a name="caching" />
 
-#### <a name="calculating-and-caching-layout-data"></a>計算とレイアウトのデータのキャッシュ
+#### <a name="calculate-and-cache-layout-data"></a>レイアウトデータの計算とキャッシュ
 
 `LayoutData`構造体には、さまざまなプロパティで子のコレクションに関するデータを格納します。
 
@@ -200,7 +198,7 @@ LayoutData GetLayoutData(double width, double height)
 
 <a name="adding_properties" />
 
-#### <a name="adding-properties-backed-by-bindable-properties"></a>バインド可能なプロパティでサポートされるプロパティを追加します。
+#### <a name="add-properties-backed-by-bindable-properties"></a>バインド可能なプロパティによってサポートされるプロパティの追加
 
 `WrapLayout`クラス定義`ColumnSpacing`と`RowSpacing`プロパティ、値がレイアウトでは、列の行を区切るために使用して、バインド可能なプロパティによってバックアップされています。 バインド可能なプロパティは次のコード例に示します。
 
@@ -230,7 +228,7 @@ public static readonly BindableProperty RowSpacingProperty = BindableProperty.Cr
 
 <a name="onmeasure" />
 
-#### <a name="overriding-the-onmeasure-method"></a>OnMeasure メソッドをオーバーライドします。
+#### <a name="override-the-onmeasure-method"></a>OnMeasure メソッドのオーバーライド
 
 `OnMeasure`オーバーライドが次のコード例で示すようにします。
 
@@ -256,7 +254,7 @@ protected override SizeRequest OnMeasure(double widthConstraint, double heightCo
 
 <a name="layoutchildren" />
 
-#### <a name="overriding-the-layoutchildren-method"></a>LayoutChildren メソッドをオーバーライドします。
+#### <a name="override-the-layoutchildren-method"></a>LayoutChildren メソッドのオーバーライド
 
 `LayoutChildren`オーバーライドが次のコード例で示すようにします。
 
@@ -307,7 +305,7 @@ protected override void LayoutChildren(double x, double y, double width, double 
 
 <a name="invalidatelayout" />
 
-#### <a name="overriding-the-invalidatelayout-method"></a>InvalidateLayout メソッドをオーバーライドします。
+#### <a name="overridethe-invalidatelayout-method"></a>InvalidateLayout メソッドを上書きします。
 
 [ `InvalidateLayout` ](xref:Xamarin.Forms.Layout.InvalidateLayout)オーバーライドが呼び出されるの子が追加またはレイアウト、または 1 つを削除するときの`WrapLayout`プロパティの変更の値を次のコード例に示すようにします。
 
@@ -326,7 +324,7 @@ protected override void InvalidateLayout()
 
 <a name="onchildmeasureinvalidated" />
 
-#### <a name="overriding-the-onchildmeasureinvalidated-method"></a>OnChildMeasureInvalidated メソッドをオーバーライドします。
+#### <a name="override-the-onchildmeasureinvalidated-method"></a>OnChildMeasureInvalidated メソッドのオーバーライド
 
 [ `OnChildMeasureInvalidated` ](xref:Xamarin.Forms.Layout.OnChildMeasureInvalidated)サイズを変更し、次のコード例に示したレイアウトの子のいずれかと、オーバーライドが呼び出されます。
 
@@ -342,7 +340,7 @@ protected override void OnChildMeasureInvalidated()
 
 <a name="consuming" />
 
-### <a name="consuming-the-wraplayout"></a>WrapLayout の使用
+### <a name="consume-the-wraplayout"></a>WrapLayout を使用する
 
 `WrapLayout`に配置することでクラスを使用できる、 [ `Page` ](xref:Xamarin.Forms.Page) XAML コードの例を次に示すように派生型。
 
