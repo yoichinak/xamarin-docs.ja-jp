@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/14/2019
-ms.openlocfilehash: fbc966fdf1d79ecc9794d2156db81b583694ce36
-ms.sourcegitcommit: 84764b9c51e769d6d6570a362af8451607c7e0d2
+ms.openlocfilehash: 523113a7b54541733e14f947eefa247e4f774b99
+ms.sourcegitcommit: 157da886e1f304c6b482aa3f265ef7d78b696ab7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68665680"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69024512"
 ---
 # <a name="create-a-controltemplate"></a>ControlTemplate の作成
 
@@ -152,7 +152,7 @@ void OnButtonClicked (object sender, EventArgs e)
 
 ## <a name="create-a-controltemplate-in-c35"></a>C&#35; での ControlTemplate の作成
 
-[`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) をアプリケーション レベルで定義するには、`ControlTemplate` を表わす `class` クラスを作成する必要があります。 次のコード例に示すように、テンプレート用に使用される[レイアウト](~/xamarin-forms/user-interface/layouts/index.md)からこのクラスを派生させる必要があります。
+[`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) をアプリケーション レベルで定義するには、`ControlTemplate` を表わす `class` クラスを作成する必要があります。 次のコード例に示すように、テンプレート用に使用される[レイアウト](~/xamarin-forms/user-interface/layouts/index.yml)からこのクラスを派生させる必要があります。
 
 ```csharp
 class TealTemplate : Grid
