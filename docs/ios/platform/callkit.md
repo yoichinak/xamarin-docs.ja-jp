@@ -1,99 +1,99 @@
 ---
-title: Xamarin.iOS で CallKit
-description: この記事では、その Apple の iOS 10 と Xamarin.iOS VOIP アプリでの実装方法でリリースされた新しい CallKit API について説明します。
+title: Xamarin の CallKit
+description: この記事では、Apple が iOS 10 でリリースした新しい CallKit API と、Xamarin iOS VOIP アプリでの実装方法について説明します。
 ms.prod: xamarin
 ms.assetid: 738A142D-FFD2-4738-B3ED-57C273179848
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/15/2017
-ms.openlocfilehash: 6db9ff0085c17f07d07a7591f5d735793bfbc5f9
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: aa57ae8a0f8254a715893b155d34e20297ec5c73
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61390598"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68653018"
 ---
-# <a name="callkit-in-xamarinios"></a>Xamarin.iOS で CallKit
+# <a name="callkit-in-xamarinios"></a>Xamarin の CallKit
 
-IOS 10 で新しい CallKit API は、VOIP アプリを iPhone UI と統合し使い慣れたインターフェイスを提供し、エンドユーザーに発生するための手段を提供します。 この API を使用したユーザーが表示し、iOS デバイスのロック画面から VOIP 通話との対話および連絡先の Phone アプリの使用を管理**お気に入り**と**も最近使ったもの**ビュー。
+IOS 10 の新しい CallKit API は、VOIP アプリを iPhone UI と統合し、使い慣れたインターフェイスとエクスペリエンスをエンドユーザーに提供するための手段を提供します。 この API を使用すると、ユーザーは iOS デバイスのロック画面から VOIP 通話を表示して操作したり、電話アプリの **[お気に入り]** ビューと **[受信者]** ビューを使用して連絡先を管理したりできます。
 
 ## <a name="about-callkit"></a>CallKit について
 
-Apple、に従って CallKit のファースト パーティ iOS 10 でのエクスペリエンスにサード パーティ製音声経由で IP (VOIP) のアプリを昇格する新しいフレームワークです。 CallKit API は、VOIP アプリを iPhone UI 統合し使い慣れたインターフェイスを提供し、エンドユーザーに操作を使用できます。 組み込みの Phone アプリと同様、ユーザーが表示し、iOS デバイスのロック画面から VOIP 通話との対話および連絡先の Phone アプリの使用を管理**お気に入り**と**も最近使ったもの**ビュー。
+Apple によれば、CallKit は、サードパーティのボイスオーバー IP (VOIP) アプリを iOS 10 のファーストパーティエクスペリエンスに昇格させる新しいフレームワークです。 CallKit API を使用すると、VOIP アプリを iPhone UI と統合し、使い慣れたインターフェイスとエクスペリエンスをエンドユーザーに提供できます。 組み込みの Phone アプリと同様に、ユーザーは iOS デバイスのロック画面から VOIP 通話を表示および操作したり、電話アプリの **[お気に入り]** ビューと **[受信者]** ビューを使用して連絡先を管理したりすることができます。
 
-さらに、CallKit API は、データベースを名前 (呼び出し元の ID) と電話番号を関連付けることができます、または (呼び出しをブロックして)、番号がなるべきときに、システムがブロックされているに通知するアプリの拡張機能を作成する機能を提供します。
+また、CallKit API では、電話番号を名前 (発信者 ID) に関連付けたり、番号をブロックする必要がある場合にシステムに通知したりできるアプリ拡張機能を作成することができます (呼び出しブロック)。
 
-### <a name="the-existing-voip-app-experience"></a>既存の VOIP アプリケーション エクスペリエンス
+### <a name="the-existing-voip-app-experience"></a>既存の VOIP アプリのエクスペリエンス
 
-新しい CallKit API とその機能を説明する、する前に、サードの現在のユーザー エクスペリエンスを見ては、9 (またはそれ以下) MonkeyCall という架空の VOIP アプリを使用して iOS でアプリを VOIP でパーティします。 MonkeyCall とは、ユーザーが既存の iOS Api を使用して、VOIP 通話を送受信できる単純なアプリです。
+新しい CallKit API とその機能について説明する前に、「MonkeyCall」という架空の VOIP アプリを使用して、iOS 9 でサードパーティ製の VOIP アプリを使用した現在のユーザーエクスペリエンスを確認してください。 MonkeyCall は、ユーザーが既存の iOS Api を使用して VOIP 通話を送受信できるようにする単純なアプリです。
 
-現時点では、MonkeyCall の着信呼び出しの受信は、ユーザー、iPhone がロックされている場合は、ロック画面で受信した通知は他の種類の通知 (メッセージからようまたはアプリをたとえばメール)。
+現在、ユーザーが MonkeyCall で着信呼び出しを受信していて、iPhone がロックされている場合、ロック画面で受信した通知は、他の種類の通知 (メッセージやメールアプリなど) と区別できません。
 
-呼び出しに応答する場合、ユーザーは、MonkeyCall 通知、アプリを開き、パスコード (または Touch ID のユーザー) の呼び出しをそのまま使用する可能性がありますの会話を始める前に、電話のロックを解除する入力をスライドにする必要があります。
+ユーザーが呼び出しに応答する場合は、MonkeyCall 通知をスライドしてアプリを開き、電話のパスコード (またはユーザータッチ ID) を入力して、通話を受け入れてメッセージ交換を開始する前に電話のロックを解除する必要があります。
 
-操作は、電話がロックされている場合に均等に面倒です。 ここでも、着信 MonkeyCall 呼び出しは、標準的な通知バナーが画面の上部からスライドとして表示されます。 通知が一時的なのでは、通知センターを開き、回答し、呼び出しまたは検索 MonkeyCall アプリを手動で起動して特定の通知を検索することを強制して、ユーザーが簡単にできなかんだことができます。
+電話のロックが解除されても、エクスペリエンスは煩雑になります。 ここでも、入力した MonkeyCall 呼び出しは、画面の上部からスライドする標準通知バナーとして表示されます。 通知は一時的なものであるため、ユーザーが通知センターを開いて、応答する特定の通知を見つけてから、手動で MonkeyCall アプリを呼び出したり、起動したりする必要があります。
 
 ### <a name="the-callkit-voip-app-experience"></a>CallKit VOIP アプリのエクスペリエンス
 
-MonkeyCall アプリの新しい CallKit Api を実装すると、iOS 10 での VOIP の着信通話をユーザーのエクスペリエンスが大幅に向上することができます。 上から電話がロックされているときに、VOIP 通話を受信するユーザーの例を実行します。 CallKit を実装すると、呼び出しは全画面表示、ネイティブ UI をスワイプの回答の標準的な機能と、組み込みの Phone アプリからの呼び出しが受信されている場合と同様に、iPhone のロック画面に表示されます。
+MonkeyCall アプリで新しい CallKit Api を実装することにより、着信 VOIP 通話でのユーザーエクスペリエンスが、iOS 10 で大幅に改善される可能性があります。 電話が上からロックされているときに、VOIP 通話を受信するユーザーの例を見てください。 CallKit を実装することによって、呼び出しは iPhone のロック画面に表示されます。これは、組み込みの Phone アプリから電話を受け取った場合と同様に、全画面表示、ネイティブ UI、および標準的なスワイプ操作機能を使用して行われます。
 
-ここでも、MonkeyCall VOIP 呼び出しが受信したときに、iPhone でロックされているない場合、同じの全画面表示、ネイティブ UI と組み込みのアプリが表示される電話と MonkeyCall の標準のスワイプの回答とタップ-拒否する機能がカスタムの着信音の再生のオプション.
+ここでも、MonkeyCall VOIP 呼び出しを受信したときに iPhone のロックが解除された場合は、組み込みの Phone アプリの全画面表示、ネイティブ UI、および標準的なスワイプと応答の両方の機能が表示され、MonkeyCall にはカスタムの着信音を再生するオプションがあります.
 
-CallKit MonkeyCall、その VOIP を許可する追加機能を呼び出し、組み込みの [最近] に表示されるは、他の種類と対話する呼び出しをお気に入りの一覧を提供する、組み込み不可およびブロック機能を使用するには、Siri から MonkeyCall 呼び出しを起動し、ユーザーが、連絡先アプリ内のユーザーに MonkeyCall 呼び出しを割り当てる機能を提供します。
+CallKit は、MonkeyCall に追加機能を提供し、その VOIP 呼び出しを他の種類の呼び出しと対話し、組み込みのメーリングリストとお気に入りの一覧に表示できるようにします。組み込みの "応答のない機能とブロック" 機能を使用するには、Siri から MonkeyCall 呼び出しを開始します。は、ユーザーが MonkeyCall 呼び出しを連絡先アプリのユーザーに割り当てることができるようにします。
 
-CallKit アーキテクチャをについて説明します、着信および発信の詳細、フローと CallKit API を呼び出します。
+次のセクションでは、CallKit アーキテクチャ、受信および送信呼び出しフロー、および CallKit API について詳しく説明します。
 
-## <a name="the-callkit-architecture"></a>CallKit アーキテクチャ
+## <a name="the-callkit-architecture"></a>CallKit のアーキテクチャ
 
-IOS 10 では、Apple が CallKit すべてのシステム サービスを採用が CallKit 経由でシステムの UI に CarPlay、たとえば、に対する呼び出しが認識されるよう。 MonkeyCall CallKit を採用するために、指定された例では、これらの組み込みのシステム サービスと同じ方法でシステムに認識し、同じ機能のすべてを取得します。
+IOS 10 では、すべてのシステムサービスで、たとえば、CarPlay で行われた呼び出しが CallKit を介してシステム UI で認識されるように、Apple が CallKit を採用していました。 次の例では、MonkeyCall は CallKit を採用しているため、システムに対してこれらの組み込みシステムサービスと同じように認識され、同じ機能をすべて取得します。
 
-[![](callkit-images/callkit01.png "CallKit サービス スタック")](callkit-images/callkit01.png#lightbox)
+[![](callkit-images/callkit01.png "CallKit サービススタック")](callkit-images/callkit01.png#lightbox)
 
-上の図から MonkeyCall アプリを詳しく見てください。 アプリでは、すべての独自のネットワークとの通信にそのコードが含まれていて、独自のユーザー インターフェイスが含まれます。 システムとの通信に CallKit でリンクします。
+上の図の MonkeyCall アプリを詳しく見てみましょう。 アプリには、独自のネットワークと通信するためのすべてのコードが含まれており、独自のユーザーインターフェイスが含まれています。 システムと通信するための CallKit のリンクは次のとおりです。
 
 [![](callkit-images/callkit02.png "MonkeyCall アプリのアーキテクチャ")](callkit-images/callkit02.png#lightbox)
 
-CallKit、アプリが使用するには、2 つの主要なインターフェイスがあります。
+アプリが使用する CallKit には、次の2つの主要なインターフェイスがあります。
 
-- `CXProvider` -これにより、帯域外の通知が発生した場合のシステムに通知する MonkeyCall アプリです。
-- `CXCallController` -ローカル ユーザーのアクションのシステムに通知する MonkeyCall アプリを許可します。
+- `CXProvider`-MonkeyCall アプリが、発生する可能性のある帯域外通知をシステムに通知することができます。
+- `CXCallController`-MonkeyCall アプリがローカルユーザーの操作をシステムに通知できるようにします。
 
 ### <a name="the-cxprovider"></a>CXProvider
 
-上記で説明したように`CXProvider`アプリ、帯域外の通知が発生した場合のシステムに伝達に許可します。 これらは、ローカル ユーザーの操作のため実行されませんが、着信呼び出しなどの外部のイベントが原因で発生することを通知します。
+前述のように`CXProvider` 、は、発生する可能性がある帯域外通知をアプリケーションがシステムに通知することを許可します。 これらの通知は、ローカルユーザーの操作によって発生することはありませんが、着信呼び出しなどの外部イベントによって発生します。
 
-アプリを使用する必要があります、`CXProvider`次の。
+アプリでは、 `CXProvider`次のためにを使用する必要があります。
 
-- システムに着信呼び出しを報告します。
-- レポートで、システムに接続されている呼び出しを送信します。
-- システムへの呼び出しを終了するリモート ユーザーをレポートします。
+- システムへの着信呼び出しを報告します。
+- 送信呼び出しがシステムに接続されたことを報告します。
+- システムの呼び出しを終了するリモートユーザーを報告します。
 
-使用して、アプリは、システムと通信する必要があるときに、`CXCallUpdate`クラスを使用して、アプリと通信する場合、システム、`CXAction`クラス。
+アプリケーションがシステムと通信する場合は、 `CXCallUpdate`クラスを使用し、システムがアプリと通信する必要があるときに、 `CXAction`クラスを使用します。
 
-[![](callkit-images/callkit03.png "CXProvider 経由でシステムとの通信")](callkit-images/callkit03.png#lightbox)
+[![](callkit-images/callkit03.png "CXProvider を使用したシステムとの通信")](callkit-images/callkit03.png#lightbox)
 
 ### <a name="the-cxcallcontroller"></a>CXCallController
 
-`CXCallController` VOIP 通話を開始するユーザーなどのローカルのユーザー アクションのシステムに通知するアプリを許可します。 実装することによって、`CXCallController`システム内の他の種類の呼び出しの作用をアプリを取得します。 たとえば、既に進行中のアクティブなテレフォニー呼び出しがある`CXCallController`保留中でその呼び出しを配置し、開始または VOIP 呼び出しに応答する VOIP アプリを許可することができます。
+を`CXCallController`使用すると、アプリケーションは、ユーザーが VOIP 通話を開始するなど、ローカルユーザーの操作をシステムに通知することができます。 を`CXCallController`実装することによって、アプリケーションはシステム内の他の種類の呼び出しと対話することができます。 たとえば、アクティブなテレフォニー通話が既に進行中の場合、 `CXCallController`では、voip アプリがその呼び出しを保留中に配置し、voip 通話を開始または回答できるようにすることができます。
 
-アプリを使用する必要があります、`CXCallController`次の。
+アプリでは、 `CXCallController`次のためにを使用する必要があります。
 
-- ユーザーには、システムに発信呼び出しが開始されたときにレポートします。
-- レポート ユーザーがシステムに着信呼び出しに応答します。
-- ユーザーがシステムへの呼び出しが終了したときにレポートします。
+- ユーザーがシステムへの発信呼び出しを開始したことを報告します。
+- ユーザーがシステムへの着信呼び出しに応答したときに報告します。
+- ユーザーがシステムの呼び出しを終了したときに報告します。
 
-アプリは、ローカル ユーザーの操作をシステムと通信する場合、使用して、`CXTransaction`クラス。
+アプリケーションがローカルユーザーの操作をシステムに通知する場合、次の`CXTransaction`ようにクラスを使用します。
 
-[![](callkit-images/callkit04.png "CXCallController を使用して、システムに報告します。")](callkit-images/callkit04.png#lightbox)
+[![](callkit-images/callkit04.png "CXCallController を使用したシステムへの報告")](callkit-images/callkit04.png#lightbox)
 
-## <a name="implementing-callkit"></a>CallKit を実装します。
+## <a name="implementing-callkit"></a>CallKit の実装
 
-次のセクションでは、Xamarin.iOS VOIP アプリで CallKit を実装する方法を示します。 この例では、架空の MonkeyCall VOIP アプリからのコードに このドキュメントを使用しているされます。 ここで示すコードは、いくつかのサポート クラスを表します、CallKit の特定の部分は、次のセクションで詳しく説明します。
+次のセクションでは、Xamarin. iOS VOIP アプリで CallKit を実装する方法について説明します。 例として、このドキュメントでは、架空の MonkeyCall VOIP アプリのコードを使用します。 ここで紹介するコードは、いくつかのサポートクラスを示しています。 CallKit 固有の部分については、以降のセクションで詳しく説明します。
 
 ### <a name="the-activecall-class"></a>ActiveCall クラス
 
-`ActiveCall`クラスは、次のように、現在アクティブな VOIP 呼び出しに関する情報がすべて保持するために、MonkeyCall アプリによって使用されます。
+`ActiveCall`クラスは、次のように現在アクティブな VOIP 通話に関するすべての情報を保持するために、monkeycall アプリによって使用されます。
 
 ```csharp
 using System;
@@ -217,11 +217,11 @@ namespace MonkeyCall
 }
 ```
 
-`ActiveCall` 呼び出しと呼び出しの状態が変更されたときに発生する可能性が 2 つのイベントの状態を定義するいくつかのプロパティを保持します。 これは、例としてのみであるため、開始、応答、および呼び出しを終了するをシミュレートするために使用する 3 つの方法があります。
+`ActiveCall`呼び出しの状態を定義するいくつかのプロパティと、呼び出しの状態が変化したときに発生する可能性がある2つのイベントを保持します。 これは単なる例であるため、呼び出しの開始、応答、終了をシミュレートするために3つのメソッドが使用されています。
 
 ### <a name="the-startcallrequest-class"></a>StartCallRequest クラス
 
-`StartCallRequest`静的クラスは、出力方向の操作を呼び出すときに使用されるいくつかのヘルパー メソッドを提供します。
+`StartCallRequest`静的クラスには、発信呼び出しを操作するときに使用されるいくつかのヘルパーメソッドが用意されています。
 
 ```csharp
 using System;
@@ -278,11 +278,11 @@ namespace MonkeyCall
 }
 ```
 
-`CallHandleFromURL`と`CallHandleFromActivity`クラスは、発信通話で呼び出されている担当者の連絡先のハンドルを取得する、AppDelegate で使用されます。 詳細についてを参照してください、[発信呼び出しの処理](#handling-outgoing-calls)以下のセクション。
+クラス`CallHandleFromURL` と`CallHandleFromActivity`クラスは、発信呼び出しで呼び出されている人物の連絡先ハンドルを取得するために appdelegate で使用されます。 詳細については、以下の「[発信通話の処理](#handling-outgoing-calls)」セクションを参照してください。
 
 ### <a name="the-activecallmanager-class"></a>ActiveCallManager クラス
 
-`ActiveCallManager`クラスは MonkeyCall アプリで開いているすべての呼び出しを処理します。
+クラス`ActiveCallManager`は、monkeycall アプリ内のすべての開いている呼び出しを処理します。
 
 ```csharp
 using System;
@@ -392,11 +392,11 @@ namespace MonkeyCall
 }
 ```
 
-もう一度のみ、シミュレーションは、このため、`ActiveCallManager`のみのコレクションを保持`ActiveCall`オブジェクトによって指定された呼び出しを検索するためのルーチンであり、`UUID`プロパティ。 開始、終了および、発信通話の保留中の状態を変更するメソッドも含まれています。 詳細についてを参照してください、[発信呼び出しの処理](#handling-outgoing-calls)以下のセクション。
+ここでも、はシミュレーションのみであるため`ActiveCallManager` 、はオブジェクトの`ActiveCall`コレクションのみを保持し、その`UUID`プロパティによって特定の呼び出しを検索するためのルーチンを備えています。 また、発信呼び出しの保留状態を開始、終了、変更するメソッドも含まれています。 詳細については、以下の「[発信通話の処理](#handling-outgoing-calls)」セクションを参照してください。
 
 ### <a name="the-providerdelegate-class"></a>ProviderDelegate クラス
 
-前に説明したように、`CXProvider`帯域外の通知、アプリとシステムの間の双方向通信を提供します。 開発者がカスタムを提供する必要がある`CXProviderDelegate`アタッチ先と、`CXProvider`帯域外の CallKit イベントを処理するアプリ。 MonkeyCall は、次を使用して`CXProviderDelegate`:
+前に説明した`CXProvider`ように、は、アプリケーションと帯域外通知用システム間の双方向の通信を提供します。 開発者は、カスタム`CXProviderDelegate`を指定し、それをにアタッチして、 `CXProvider`アウトオブバンド callkit イベントを処理する必要があります。 MonkeyCall は次`CXProviderDelegate`のものを使用します。
 
 ```csharp
 using System;
@@ -599,21 +599,21 @@ namespace MonkeyCall
 }
 ```
 
-このデリゲートのインスタンスが作成されたときに渡される、`ActiveCallManager`任意のアクティビティの呼び出しを処理するために使用することです。 次に、ハンドルの型が定義されます (`CXHandleType`) を`CXProvider`に応答します。
+このデリゲートのインスタンスが作成されると、呼び出しアクティビティを`ActiveCallManager`処理するために使用するが渡されます。 次に、が応答するハンドル型`CXHandleType`() `CXProvider`を定義します。
 
 ```csharp
 // Define handle types
 var handleTypes = new [] { (NSNumber)(int)CXHandleType.PhoneNumber };
 ```
 
-呼び出しが進行中の場合、アプリのアイコンに適用されるテンプレート イメージを取得します。
+また、呼び出しの進行中にアプリのアイコンに適用されるテンプレートイメージを取得します。
 
 ```csharp
 // Get Image Template
 var templateImage = UIImage.FromFile ("telephone_receiver.png");
 ```
 
-これらの値の取得にバンドルされている、`CXProviderConfiguration`構成に使用される、 `CXProvider`:
+これらの値は、 `CXProviderConfiguration` `CXProvider`を構成するために使用されるにバンドルされます。
 
 ```csharp
 // Setup the initial configurations
@@ -625,7 +625,7 @@ Configuration = new CXProviderConfiguration ("MonkeyCall") {
 };
 ```
 
-デリゲートは、新しい作成`CXProvider`でこれらの構成自体が接続すると。
+次に、デリゲートは、 `CXProvider`これらの構成を使用して新しいを作成し、それ自体をアタッチします。
 
 ```csharp
 // Create a new provider
@@ -635,9 +635,9 @@ Provider = new CXProvider (Configuration);
 Provider.SetDelegate (this, null);
 ```
 
-CallKit を使用する場合は、アプリの作成し、独自の音声セッションの処理が不要になった、代わりに構成し、システムを作成し、その処理されるオーディオのセッションを使用する必要があります。 
+CallKit を使用すると、アプリは独自のオーディオセッションを作成して処理しなくなります。代わりに、システムによって作成および処理されるオーディオセッションを構成して使用する必要があります。 
 
-これを実際のアプリの場合、`DidActivateAudioSession`事前構成された呼び出しを開始するメソッドを使用`AVAudioSession`システム提供。
+実際のアプリの場合、 `DidActivateAudioSession`メソッドを使用して、システムによって提供される構成`AVAudioSession`済みのを使用して呼び出しを開始します。
 
 ```csharp
 public override void DidActivateAudioSession (CXProvider provider, AVFoundation.AVAudioSession audioSession)
@@ -646,7 +646,7 @@ public override void DidActivateAudioSession (CXProvider provider, AVFoundation.
 }
 ```
 
-使用することも、`DidDeactivateAudioSession`の最終処理し、システムへの接続を解放するメソッドに提供される音声セッション。
+また、 `DidDeactivateAudioSession`メソッドを使用して、システムが提供するオーディオセッションへの接続を最終処理し、解放します。
 
 ```csharp
 public override void DidDeactivateAudioSession (CXProvider provider, AVFoundation.AVAudioSession audioSession)
@@ -656,11 +656,11 @@ public override void DidDeactivateAudioSession (CXProvider provider, AVFoundatio
 }
 ```
 
-コードの残りの部分は、次のセクションで詳しく取り上げられます。
+残りのコードについては、後のセクションで詳しく説明します。
 
 ### <a name="the-appdelegate-class"></a>AppDelegate クラス
 
-MonkeyCall のインスタンスを保持するために、AppDelegate を使用して、`ActiveCallManager`と`CXProviderDelegate`アプリ全体にわたって使用されます。
+Monkeycall は、 `ActiveCallManager` `CXProviderDelegate` appdelegate を使用してのインスタンスを保持し、アプリ全体で使用されます。
 
 ```csharp
 using Foundation;
@@ -728,29 +728,29 @@ namespace MonkeyCall
 }
 ```
 
-`OpenUrl`と`ContinueUserActivity`メソッドは、アプリが、発信通話を処理するときに使用します。 上書きします。 詳細についてを参照してください、[発信呼び出しの処理](#handling-outgoing-calls)以下のセクション。
+`OpenUrl` および`ContinueUserActivity`オーバーライドメソッドは、アプリが発信呼び出しを処理するときに使用されます。 詳細については、以下の「[発信通話の処理](#handling-outgoing-calls)」セクションを参照してください。
 
-## <a name="handling-incoming-calls"></a>着信通話の処理
+## <a name="handling-incoming-calls"></a>着信呼び出しの処理
 
-いくつかの状態および受信の VOIP 通話を通過できる通常の受信呼び出しワークフロー中になどのプロセスがあります。
+着信 VOIP 呼び出しでは、次のような一般的な着信呼び出しワークフローを通過することができます。
 
-- 着信呼び出しが存在しているユーザー (およびシステム) に通知します。
-- ユーザーが、呼び出しに応答する場合に通知を受信し、他のユーザーと呼び出しを初期化します。
-- ユーザーが、現在の呼び出しを終了するときに、システムとの通信ネットワークを通知します。
+- 着信呼び出しが存在することをユーザー (およびシステム) に通知します。
+- ユーザーが呼び出しに応答し、他のユーザーとの呼び出しを初期化する必要があるときに通知を受信します。
+- ユーザーが現在の呼び出しを終了するときに、システムと通信ネットワークに通知します。
 
-次のセクションでは、例としてもう一度 MonkeyCall VOIP アプリを使用して、着信の呼び出しワークフローを処理するために、アプリが CallKit を使用する方法について詳しく説明になります。
+次のセクションでは、例として MonkeyCall VOIP アプリを使用して、アプリが CallKit を使用して着信呼び出しワークフローを処理する方法について詳しく見ていきます。
 
-### <a name="informing-user-of-incoming-call"></a>着信通話のユーザーに通知
+### <a name="informing-user-of-incoming-call"></a>着信呼び出しをユーザーに通知する
 
-リモート ユーザーはローカル ユーザーと VOIP メッセージ交換を開始して、次の処理が発生します。
+リモートユーザーがローカルユーザーとの VOIP メッセージ交換を開始すると、次の処理が行われます。
 
-[![](callkit-images/callkit05.png "リモート ユーザーが VOIP メッセージ交換を開始します。")](callkit-images/callkit05.png#lightbox)
+[![](callkit-images/callkit05.png "リモートユーザーが VOIP メッセージ交換を開始しました")](callkit-images/callkit05.png#lightbox)
 
-1. アプリは、その通信ネットワークから通知を受信 VOIP 呼び出しがあることを取得します。
-2. アプリでは、`CXProvider`を送信する、`CXCallUpdate`呼び出しの通知システムにします。
-3. システムでは、システム UI、システム サービスおよび CallKit を使用して他の VOIP アプリケーションへの呼び出しを発行します。
+1. アプリは、着信 VOIP 通話があることを示す通知を通信ネットワークから取得します。
+2. アプリはを使用`CXProvider`して、 `CXCallUpdate`呼び出しの通知をシステムに送信します。
+3. システム UI、システムサービス、およびその他の VOIP アプリへの呼び出しを、CallKit を使用して発行します。
 
-たとえば、 `CXProviderDelegate`:
+たとえば`CXProviderDelegate`、次のようになります。
 
 ```csharp
 public void ReportIncomingCall (NSUuid uuid, string handle)
@@ -773,19 +773,19 @@ public void ReportIncomingCall (NSUuid uuid, string handle)
 }
 ```
 
-このコードを作成する新しい`CXCallUpdate`インスタンスし、呼び出し元を識別するハンドルをアタッチします。 次に、使用して、`ReportNewIncomingCall`のメソッド、`CXProvider`呼び出しのシステムに通知するクラス。 呼び出しを追加が成功した場合、アプリのアクティブな呼び出しのコレクションにいない場合は、エラー報告する必要をユーザーにします。
+このコードは、新しい`CXCallUpdate`インスタンスを作成し、呼び出し元を識別するハンドルをアタッチします。 次に、 `CXProvider`クラスの`ReportNewIncomingCall`メソッドを使用して、呼び出しのシステムを通知します。 成功した場合、呼び出しはアプリのアクティブな呼び出しのコレクションに追加されます。そうでない場合は、エラーをユーザーに報告する必要があります。
 
-### <a name="user-answering-incoming-call"></a>ユーザー応答の受信呼び出し
+### <a name="user-answering-incoming-call"></a>ユーザーに応答する着信呼び出し
 
-受信の VOIP 呼び出しに応答する場合、以下の処理が行われます。
+ユーザーが着信 VOIP 通話に応答する場合、次の処理が行われます。
 
-[![](callkit-images/callkit06.png "ユーザーが 受信の VOIP 呼び出し")](callkit-images/callkit06.png#lightbox)
+[![](callkit-images/callkit06.png "ユーザーは、着信 VOIP 通話に応答します。")](callkit-images/callkit06.png#lightbox)
 
-1. システムの UI は、ユーザーが、VOIP 呼び出しに応答することをシステムに通知します。
-2. システムは、送信、`CXAnswerCallAction`アプリの`CXProvider`回答目的の通知。
-3. アプリは、呼び出しの応答は、ユーザーを VOIP 通話が通常どおり実行されますが通信ネットワークを通知します。
+1. システム UI によって、ユーザーが VOIP 通話に応答する必要があることがシステムに通知されます。
+2. システムは、 `CXAnswerCallAction`回答インテントの`CXProvider`通知をアプリに送信します。
+3. アプリは、ユーザーが通話に応答していることと、VOIP の呼び出しが通常どおり続行されることを通信ネットワークに通知します。
 
-たとえば、 `CXProviderDelegate`:
+たとえば`CXProviderDelegate`、次のようになります。
 
 ```csharp
 public override void PerformAnswerCallAction (CXProvider provider, CXAnswerCallAction action)
@@ -814,19 +814,19 @@ public override void PerformAnswerCallAction (CXProvider provider, CXAnswerCallA
 }
 ```
 
-このコードは、まずアクティブな呼び出しの一覧に特定の呼び出しを検索します。 呼び出しが見つからない場合は、システムは通知され、メソッドが終了します。 見つかった場合、`AnswerCall`のメソッド、`ActiveCall`クラスが呼び出しを開始すると呼ばれ、それが成功または失敗した場合、システムは情報。
+このコードでは、まず、アクティブな呼び出しの一覧で、指定された呼び出しを検索します。 呼び出しが見つからない場合は、システムに通知され、メソッドは終了します。 見つかっ`AnswerCall`た場合は、呼び出しを開始する`ActiveCall`ためにクラスのメソッドが呼び出され、成功または失敗した場合はシステムによって情報が格納されます。
 
-### <a name="user-ending-incoming-call"></a>ユーザーが着信呼び出しを終了します。
+### <a name="user-ending-incoming-call"></a>ユーザーが着信呼び出しを終了します
 
-アプリの UI 内からの呼び出しを終了する場合は、次の処理が発生します。
+ユーザーがアプリの UI 内から呼び出しを終了する場合、次のようになります。
 
-[![](callkit-images/callkit07.png "ユーザーがアプリの UI 内からの呼び出しを終了します")](callkit-images/callkit07.png#lightbox)
+[![](callkit-images/callkit07.png "ユーザーは、アプリの UI 内から呼び出しを終了します。")](callkit-images/callkit07.png#lightbox)
 
-1. アプリを作成します`CXEndCallAction`にバンドルを取得する、`CXTransaction`呼び出しが終了することを通知するシステムに送信されます。
-2. システムは、末尾呼び出しの目的を検証し、送信、`CXEndCallAction`を使用してアプリに戻り、`CXProvider`します。
-3. アプリはその呼び出しが終了になっていることに、通信ネットワークを通知します。
+1. アプリは、 `CXEndCallAction` `CXTransaction`呼び出しが終了したことを通知するためにシステムに送信されるにバンドルされるを作成します。
+2. システムは、エンド呼び出しの目的を確認し`CXEndCallAction` 、を`CXProvider`介してアプリにを送り返します。
+3. その後、アプリは、呼び出しが終了したことを通信ネットワークに通知します。
 
-たとえば、 `CXProviderDelegate`:
+たとえば`CXProviderDelegate`、次のようになります。
 
 ```csharp
 public override void PerformEndCallAction (CXProvider provider, CXEndCallAction action)
@@ -858,37 +858,37 @@ public override void PerformEndCallAction (CXProvider provider, CXEndCallAction 
 }
 ```
 
-このコードは、まずアクティブな呼び出しの一覧に特定の呼び出しを検索します。 呼び出しが見つからない場合は、システムは通知され、メソッドが終了します。 見つかった場合、`EndCall`のメソッド、`ActiveCall`クラスが通話を終了すると呼ばれ、それが成功または失敗した場合、システムは情報。 成功した場合は、呼び出しがアクティブな呼び出しのコレクションから削除されます。
+このコードでは、まず、アクティブな呼び出しの一覧で、指定された呼び出しを検索します。 呼び出しが見つからない場合は、システムに通知され、メソッドは終了します。 見つかった場合は、 `EndCall`呼び出しを終了するために`ActiveCall`クラスのメソッドが呼び出され、成功または失敗した場合はシステムが情報になります。 成功した場合は、アクティブな呼び出しのコレクションから呼び出しが削除されます。
 
-## <a name="managing-multiple-calls"></a>複数の呼び出しを管理します。
+## <a name="managing-multiple-calls"></a>複数の呼び出しの管理
 
-ほとんどの VOIP アプリでは、一度に複数の呼び出しを処理できます。 たとえば、現在アクティブな VOIP 呼び出しがあるし、そこに新しい受信呼び出し、ユーザーがあるアプリの取得の通知が一時停止できる場合または 2 つ目の回答を最初に呼び出すには、[切断]。
+ほとんどの VOIP アプリは、一度に複数の呼び出しを処理できます。 たとえば、現在アクティブな VOIP 通話が存在し、アプリが新しい着信呼び出しがあるという通知を受け取った場合、ユーザーは最初の呼び出しを一時停止または切断して、2つ目の呼び出しに応答できます。
 
-システムを送信するのには、上記のような状況により、`CXTransaction`を複数のアクションの一覧に含まれるアプリに (など、 `CXEndCallAction` 、 `CXAnswerCallAction`)。 これらの操作には、システムでは、UI を適切に更新できるように、個別に処理を完了する必要があります。
+上記の状況では、複数のアクション ( `CXTransaction` `CXEndCallAction`や`CXAnswerCallAction`など) のリストを含むがアプリに送信されます。 これらの操作はすべて、システムが UI を適切に更新できるように、個別に実行する必要があります。
 
-## <a name="handling-outgoing-calls"></a>送信処理を呼び出す
+## <a name="handling-outgoing-calls"></a>送信呼び出しの処理
 
-ユーザーが (電話アプリ) で最近使用した一覧からエントリをタップした場合などは、アプリに属している呼び出しから送信されます、_呼び出す目的の起動_システムで。
+たとえば、ユーザーがアプリに属している通話の一覧 (Phone アプリの場合) からエントリをタップすると、システムによって_開始呼び出しの目的_が送信されます。
 
-[![](callkit-images/callkit08.png "開始の呼び出しの目的の受信")](callkit-images/callkit08.png#lightbox)
+[![](callkit-images/callkit08.png "開始呼び出しの目的を受信する")](callkit-images/callkit08.png#lightbox)
 
-1. アプリによって作成され、_呼び出しアクションの開始_開始呼び出す目的に基づいて、システムから受信しました。 
-2. アプリを使用して、`CXCallController`システムからの呼び出しを開始アクションを要求します。
-3. 使用してアプリに返される、システムが、操作を受け入れる場合、`XCProvider`を委任します。
-4. アプリは、その通信ネットワークで発信通話を開始します。
+1. アプリは、システムから受信した開始呼び出しのインテントに基づいて、 _Start 呼び出しアクション_を作成します。 
+2. アプリはを使用`CXCallController`して、システムから開始呼び出しアクションを要求します。
+3. システムがアクションを受け入れると、 `XCProvider`デリゲートを介してアプリに返されます。
+4. アプリは、通信ネットワークを使用して発信呼び出しを開始します。
 
-インテントの詳細についてを参照してください、 [Intents および Intents UI 拡張機能](~/ios/platform/sirikit/understanding-sirikit.md)ドキュメント。 
+インテントの詳細については、[インテントとインテントの UI 拡張機能](~/ios/platform/sirikit/understanding-sirikit.md)に関するドキュメントを参照してください。 
 
-### <a name="the-outgoing-call-lifecycle"></a>送信呼び出しのライフ サイクル
+### <a name="the-outgoing-call-lifecycle"></a>発信呼び出しのライフサイクル
 
-CallKit と発信呼び出しを使用する場合、アプリは、次のライフ サイクル イベントのシステムに通知する必要があります。
+CallKit と発信呼び出しを使用する場合、アプリは次のライフサイクルイベントをシステムに通知する必要があります。
 
-1. **開始**-開始しようとして、発信通話であるシステムに伝達します。
-2. **開始**-発信呼び出しが開始されたシステムに伝達します。
-3. **接続**-発信通話を接続しているシステムに伝達します。
-4. **接続されている**-送信を通知する呼び出しが接続されているし、当事者の双方の通信できるようになりました。
+1. **開始**-発信呼び出しが開始されようとしていることをシステムに通知します。
+2. **開始**済み-発信呼び出しが開始されたことをシステムに通知します。
+3. **接続**-発信呼び出しが接続していることをシステムに通知します。
+4. **Connected** -発信呼び出しが接続されたこと、および両方のパーティが通信できることを通知します。
 
-たとえば、次のコードが、発信通話が開始されます。
+たとえば、次のコードでは発信呼び出しが開始されます。
 
 ```csharp
 private CXCallController CallController = new CXCallController ();
@@ -923,9 +923,9 @@ public void StartCall (string contact)
 }
 ```
 
-作成されます、`CXHandle`構成を使用して、`CXStartCallAction`にバンドルされています、`CXTransaction`を使用して、システムに送信される、`RequestTransaction`のメソッド、`CXCallController`クラス。 呼び出すことによって、`RequestTransaction`メソッド、システムは、ソースに関係なく、既存の呼び出しで保留中を配置できます (FaceTime、VOIP、Phone アプリなど)、新しい呼び出しを開始する前に、します。
+を`CXHandle`作成し、それを使用して`CXStartCallAction` 、 `CXCallController`クラスの`RequestTransaction`メソッドを`CXTransaction`使用してシステムに送信されるにバンドルされているを構成します。 `RequestTransaction`メソッドを呼び出すことにより、新しい呼び出しが開始される前に、ソース (Phone アプリ、FaceTime、VOIP など) に関係なく、既存の呼び出しを保留にすることができます。
 
-発信の VOIP 通話を開始する要求には、Siri、(連絡先アプリ) 内の連絡先カードのエントリなど、さまざまなソースから、または (電話アプリ) で最近使用した一覧からを取得できます。 このような場合は、アプリが送信されます、開始呼び出しインテント内で、`NSUserActivity`して処理する必要があります、AppDelegate と。
+発信 VOIP 通話を開始する要求は、Siri、連絡先カード (連絡先アプリの場合)、または (Phone アプリ内の) リストからのエントリなど、いくつかの異なるソースから取得できます。 このような状況では、アプリはの`NSUserActivity`内部で開始呼び出しのインテントを送信し、appdelegate はそれを処理する必要があります。
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)
@@ -945,9 +945,9 @@ public override bool ContinueUserActivity (UIApplication application, NSUserActi
 }
 ```
 
-ここで、`CallHandleFromActivity`ヘルパー クラスのメソッド`StartCallRequest`呼び出されている人に、ハンドルの取得に使用されている (を参照してください[StartCallRequest クラス](#the-startcallrequest-class)上)。
+ここでは、ヘルパークラス `StartCallRequest` の `CallHandleFromActivity` メソッドを使用して、呼び出されているユーザーへのハンドルを取得しています(上記の [startcallrequest](#the-startcallrequest-class) クラスを参照してください)。
 
-`PerformStartCallAction`のメソッド、 [ProviderDelegate クラス](#the-providerdelegate-class)最後に実際の送信呼び出しを起動し、そのライフ サイクルのシステムに伝達するために使用します。
+[Providerdelegate クラス](#the-providerdelegate-class)のメソッドは、最終的に実際の発信呼び出しを開始し、そのライフサイクルをシステムに通知するために使用されます。`PerformStartCallAction`
 
 ```csharp
 public override void PerformStartCallAction (CXProvider provider, CXStartCallAction action)
@@ -987,11 +987,11 @@ public override void PerformStartCallAction (CXProvider provider, CXStartCallAct
 }
 ```
 
-インスタンスを作成、`ActiveCall`クラス (進行中の呼び出しに関する情報を保持) して呼び出される人に設定します。 `StartingConnectionChanged`と`ConnectedChanged`イベントを監視し、送信呼び出しのライフ サイクルの報告に使用されます。 呼び出しが開始され、システム通知アクションが完了しました。
+このクラスは`ActiveCall` 、(進行中の呼び出しに関する情報を保持するために) クラスのインスタンスを作成し、呼び出されたユーザーを設定します。 イベント`StartingConnectionChanged` と`ConnectedChanged`イベントは、発信呼び出しのライフサイクルを監視して報告するために使用されます。 呼び出しが開始され、アクションが満たされたことがシステムに通知されます。
 
-### <a name="ending-an-outgoing-call"></a>発信通話を終了
+### <a name="ending-an-outgoing-call"></a>発信呼び出しの終了
 
-ユーザーは、発信通話を終了するとしたら、次のコードを使用できます。
+ユーザーが発信呼び出しを終了し、終了する場合は、次のコードを使用できます。
 
 ```csharp
 private CXCallController CallController = new CXCallController ();
@@ -1025,52 +1025,52 @@ public void EndCall (ActiveCall call)
 }
 ```
 
-場合作成、`CXEndCallAction`終了への呼び出しの UUID をバンドルで、`CXTransaction`を使用して、システムに送信、`RequestTransaction`のメソッド、`CXCallController`クラス。 
+が end の`CXEndCallAction`呼び出しの UUID を使用してを作成した場合、 `CXTransaction`は、 `CXCallController`クラスの`RequestTransaction`メソッドを使用してシステムに送信されるにバンドルします。 
 
-## <a name="additional-callkit-details"></a>CallKit の詳細
+## <a name="additional-callkit-details"></a>その他の CallKit の詳細
 
-このセクションでは、開発者が CallKit などの操作する際に考慮する必要のある追加の詳細情報を取り上げます。
+このセクションでは、開発者が次のような CallKit を使用する際に考慮する必要がある追加の詳細について説明します。
 
 - プロバイダーの構成
-- アクション エラー
-- システム上の制限
+- アクションエラー
+- システムの制限
 - VOIP オーディオ
 
 ### <a name="provider-configuration"></a>プロバイダーの構成
 
-プロバイダーの構成により、ときに (ネイティブの呼び出しで UI) 内のユーザー エクスペリエンスをカスタマイズする iOS 10 を VOIP アプリ CallKit を使用します。
+プロバイダーの構成により、iOS 10 の VOIP アプリは、CallKit を使用するときに (ネイティブの呼び出し元の UI 内で) ユーザーエクスペリエンスをカスタマイズできます。
 
-アプリには、次の種類のカスタマイズを作成できます。
+アプリでは、次の種類のカスタマイズを行うことができます。
 
 - ローカライズされた名前を表示します。
-- ビデオの呼び出しのサポートを有効にします。
-- 呼び出しの UI のボタンをカスタマイズするには、独自のテンプレート イメージ アイコンを表示します。 カスタム ボタンを持つユーザーの操作は、処理するアプリに直接送信されます。 
+- ビデオ通話のサポートを有効にします。
+- 独自のテンプレートイメージアイコンを表示して、呼び出し中の UI のボタンをカスタマイズします。 カスタムボタンを使用したユーザー操作は、処理するアプリに直接送信されます。 
 
-### <a name="action-errors"></a>アクション エラー
+### <a name="action-errors"></a>アクションエラー
 
-CallKit を使用して、iOS 10 VOIP アプリは、適切に失敗したアクションを処理し、アクションの状態を常に通知するユーザーを保持する必要があります。 
+CallKit を使用する iOS 10 VOIP アプリは、正常に失敗したアクションを処理し、常にユーザーにアクション状態を通知する必要があります。 
 
-次の例を考慮に入れてください。
+次の例を考慮してください。
 
-1. アプリでは、呼び出しの開始アクションが受信し、その通信ネットワークで新しい VOIP 通話を初期化するプロセスが開始されました。
-2. 制限付きまたはネットワーク通信する機能もありません、のため、この接続が失敗します。
-3. アプリ*する必要があります*送信、**失敗**メッセージ呼び出しを開始アクションを (`Action.Fail()`)、エラーのシステムに通知します。
-4. これにより、呼び出しの状態のユーザーに通知するシステムです。 たとえば、障害を呼び出す UI を表示するには、です。
+1. アプリは Start 呼び出しアクションを受け取り、通信ネットワークを使用して新しい VOIP 通話を初期化するプロセスを開始しました。
+2. ネットワーク通信機能が制限されているかまったくないため、この接続は失敗します。
+3. アプリは、**失敗**の原因をシステムに通知するために、`Action.Fail()`[呼び出しの開始] アクション () にエラーメッセージを送信する*必要があり*ます。
+4. これにより、システムは呼び出しの状態をユーザーに通知できます。 たとえば、呼び出しエラーの UI を表示します。
 
-さらに、iOS 10 を VOIP アプリに応答する必要は_タイムアウト エラー_所定の時間内で、予期されるアクションを処理できないときに発生することができます。 CallKit によって提供される各アクションの種類には、関連付けられている最大タイムアウト値があります。 これらのタイムアウト値は、ユーザーによって要求された CallKit アクションが処理される、応答性の高い方法で保持し、OS や応答性の流動性も確認します。
+さらに、iOS 10 VOIP アプリは、所定の時間内に予想されるアクションを処理できない場合に発生する可能性がある_タイムアウトエラー_に応答する必要があります。 CallKit によって提供される各アクションの種類には、最大タイムアウト値が関連付けられています。 これらのタイムアウト値によって、ユーザーによって要求された CallKit アクションが応答的な方法で処理されるため、OS の流体と応答性も維持されます。
 
-プロバイダー デリゲートにはいくつかの方法があります (`CXProviderDelegate`) もこのタイムアウト状況を適切に処理するをオーバーライドする必要があります。
+このタイムアウト状況を適切に処理するため`CXProviderDelegate`にオーバーライドする必要がある、プロバイダーデリゲート () にはいくつかのメソッドがあります。
 
-### <a name="system-restrictions"></a>システム上の制限
+### <a name="system-restrictions"></a>システムの制限
 
-IOS 10 の VOIP のアプリを実行している iOS デバイスの現在の状態に基づいて、特定のシステム制限を適用可能性があります。
+IOS 10 VOIP アプリを実行している iOS デバイスの現在の状態に基づいて、特定のシステム制限が適用される場合があります。
 
-たとえば場合、は、着信 VOIP 呼び出しをシステムによって制限できます。
+たとえば、次の場合、着信 VOIP 通話はシステムによって制限されます。
 
-1. 相手の呼び出しは、ユーザーのブロックされた呼び出し元の一覧です。
-2. ユーザーの iOS デバイスは、Do Not Disturb モードです。
+1. を呼び出す人は、ユーザーのブロックされた呼び出し元の一覧にあります。
+2. ユーザーの iOS デバイスは、応答不可モードになっています。
 
-VOIP 呼び出しは、このような状況のいずれかが制限されている場合は、それを処理するために、次のコードを使用します。
+これらのいずれかの状況によって VOIP 通話が制限されている場合は、次のコードを使用してそれを処理します。
 
 ```csharp
 public class ProviderDelegate : CXProviderDelegate
@@ -1109,53 +1109,53 @@ public class ProviderDelegate : CXProviderDelegate
 
 ### <a name="voip-audio"></a>VOIP オーディオ
 
-CallKit は、iOS 10 を VOIP アプリがライブの VOIP 呼び出し中に必要なオーディオのリソースを処理するためのいくつかの利点を提供します。 最大のメリットの 1 つは、アプリの音声セッションが引き上げの優先順位 iOS 10 で実行する場合。 これは、組み込みの電話と同じ優先度レベルと FaceTime アプリとこの強化された優先順位は VOIP アプリの音声セッションを中断して他の実行中のアプリを防止します。
+CallKit は、iOS 10 VOIP アプリがライブ VOIP 通話中に必要とするオーディオリソースを処理するためのいくつかの利点を提供します。 最大の利点の1つは、iOS 10 での実行時にアプリのオーディオセッションで優先順位が引き上げられることです。 これは、組み込みの Phone および FaceTime アプリと同じ優先度レベルで、この拡張優先度レベルにより、他の実行中のアプリが VOIP アプリのオーディオセッションを中断するのを防ぐことができます。
 
-また、CallKit では、パフォーマンスを向上したり、ユーザー設定とデバイスの状態に基づくライブの呼び出し中に特定の出力デバイスに VOIP オーディオをインテリジェントにルーティングするその他のオーディオ ルーティング ヒントへのアクセスがあります。 たとえば、bluetooth ヘッドホン、CarPlay のライブ接続またはユーザー補助の設定など、接続されているデバイスに基づいています。
+さらに、CallKit は、ユーザー設定やデバイスの状態に基づいてライブ通話中に、パフォーマンスを向上させ、VOIP オーディオを特定の出力デバイスにインテリジェントにルーティングできる他のオーディオルーティングヒントにアクセスできます。 たとえば、bluetooth ヘッドホンなどの接続されたデバイスに基づいて、live CarPlay 接続やユーザー補助の設定を行います。
 
-一般的な VOIP のライフ サイクル中に CallKit を使用して呼び出す、アプリが CallKit が提供するオーディオ Stream を構成する必要があります。 次の例を参照してください。
+CallKit を使用した一般的な VOIP 通話のライフサイクル中に、アプリは CallKit によって提供されるオーディオストリームを構成する必要があります。 次の例を見てみましょう。
 
-[![](callkit-images/callkit09.png "呼び出し操作のシーケンスを開始")](callkit-images/callkit09.png#lightbox)
+[![](callkit-images/callkit09.png "Start 呼び出しアクションシーケンス")](callkit-images/callkit09.png#lightbox)
 
-1. 呼び出しの開始アクションは、着信の呼び出しに応答するアプリケーションによって受信されます。
-2. このアクションは、アプリによって満たされる、前にの構成が必要なは提供します。 その`AVAudioSession`します。
-3. アプリは、アクションが満たされていることをシステムに通知します。
-4. CallKit が高優先順位を提供する、呼び出しが接続すると、前に`AVAudioSession`アプリが要求した構成に一致します。 アプリで通知されます、`DidActivateAudioSession`のメソッド、`CXProviderDelegate`します。
+1. 開始呼び出しアクションは、着信呼び出しに応答するためにアプリによって受信されます。
+2. このアクションがアプリによって実行される前に、に`AVAudioSession`必要な構成が提供されます。
+3. アプリは、アクションが実行されたことをシステムに通知します。
+4. 呼び出しを接続する前に、callkit では、 `AVAudioSession`アプリが要求した構成に一致する優先度が高くなります。 アプリは、 `DidActivateAudioSession` `CXProviderDelegate`のメソッドを使用して通知されます。
 
-## <a name="working-with-call-directory-extensions"></a>呼び出しのディレクトリ拡張機能の使用
+## <a name="working-with-call-directory-extensions"></a>Call directory 拡張機能の使用
 
-CallKit を使用する場合_ディレクトリ拡張機能を呼び出す_ブロックされた呼び出しの番号を追加して、iOS デバイスで連絡先アプリで連絡先を特定の VOIP アプリに固有の番号を確認する方法を提供します。
+CallKit を使用する場合、_呼び出しディレクトリ拡張機能_を使用して、ブロックされた呼び出し番号を追加し、特定の VOIP アプリに固有の番号を iOS デバイスの Contact アプリの連絡先に識別することができます。
 
-### <a name="implementing-a-call-directory-extension"></a>呼び出しのディレクトリ拡張機能の実装
+### <a name="implementing-a-call-directory-extension"></a>Call directory 拡張機能の実装
 
-Xamarin.iOS アプリでは、呼び出しのディレクトリ拡張機能を実装するには、次の操作を行います。
+Xamarin iOS アプリで Call Directory 拡張機能を実装するには、次の手順を実行します。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1. Visual studio for mac アプリのソリューションを開きます
-2. ソリューション名を右クリックし、**ソリューション エクスプ ローラー**選択**追加** > **新しいプロジェクトの追加**します。
-3. 選択**iOS** > **拡張機能** > **ディレクトリ拡張機能を呼び出す** をクリックし、 **次へ**ボタン。 
+1. Visual Studio for Mac でアプリのソリューションを開きます。
+2. **ソリューションエクスプローラー**でソリューション名を右クリックし、[**追加** > ] **[新しいプロジェクト]** の順に選択します。
+3. [ **IOS** > **拡張**機能 > ] **[ディレクトリ拡張機能を呼び出す]** を選択し、 **[次へ]** ボタンをクリックします。 
 
-    [![](callkit-images/calldir01.png "新しい呼び出しディレクトリ拡張機能の作成")](callkit-images/calldir01.png#lightbox)
-4. 入力、**名前**拡張機能をクリックして、**次**ボタン。 
+    [![](callkit-images/calldir01.png "新しい Call Directory 拡張機能を作成する")](callkit-images/calldir01.png#lightbox)
+4. 拡張機能の**名前**を入力し、 **[次へ]** ボタンをクリックします。 
 
-    [![](callkit-images/calldir02.png "拡張機能の名前を入力")](callkit-images/calldir02.png#lightbox)
-5. 調整、**プロジェクト名**や**ソリューション名**ために必要なクリックすると、**作成**ボタン。 
+    [![](callkit-images/calldir02.png "拡張機能の名前を入力する")](callkit-images/calldir02.png#lightbox)
+5. 必要に応じて**プロジェクト名**または**ソリューション名**を調整し、 **[作成]** ボタンをクリックします。 
 
     [![](callkit-images/calldir03.png "プロジェクトの作成")](callkit-images/calldir03.png#lightbox) 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. Visual Studio で、アプリのソリューションを開きます。
-2. ソリューション名を右クリックし、**ソリューション エクスプ ローラー**選択**追加** > **新しいプロジェクトの追加**します。
-3. 選択**iOS** > **拡張機能** > **ディレクトリ拡張機能を呼び出す** をクリックし、 **次へ**ボタン。 
+1. Visual Studio でアプリのソリューションを開きます。
+2. **ソリューションエクスプローラー**でソリューション名を右クリックし、[**追加** > ] **[新しいプロジェクト]** の順に選択します。
+3. [ **IOS** > **拡張**機能 > ] **[ディレクトリ拡張機能を呼び出す]** を選択し、 **[次へ]** ボタンをクリックします。 
 
-    [![](callkit-images/calldir01w.png "新しい呼び出しディレクトリ拡張機能の作成")](callkit-images/calldir01.png#lightbox)
-4. 入力、**名前**拡張機能をクリックして、 **OK**ボタン
+    [![](callkit-images/calldir01w.png "新しい Call Directory 拡張機能を作成する")](callkit-images/calldir01.png#lightbox)
+4. 拡張機能の**名前**を入力し、 **[OK]** ボタンをクリックします。
 
 -----
 
-これは追加、`CallDirectoryHandler.cs`クラスを次のようなプロジェクト。
+これにより、 `CallDirectoryHandler.cs`次のようなクラスがプロジェクトに追加されます。
 
 ```csharp
 using System;
@@ -1249,16 +1249,16 @@ namespace MonkeyCallDirExtension
 }
 ```
 
-`BeginRequest`メソッドを呼び出すディレクトリ ハンドラーでは、必要な機能を提供するように変更する必要があります。 上記のサンプルの場合、VOIP アプリの連絡先データベースでブロックされていると、使用可能な数値のリストを設定することを試みます。 作成するかは、何らかの理由で失敗を要求している場合、`NSError`にエラーを説明し、渡すこと、`CancelRequest`のメソッド、`CXCallDirectoryExtensionContext`クラス。
+呼び出しディレクトリハンドラーのメソッドは、必要な機能を提供するように変更する必要があります。`BeginRequest` 上記のサンプルの場合は、VOIP アプリの連絡先データベースでブロックされている数と使用可能な番号の一覧を設定しようとします。 何らかの理由でいずれかの要求が`NSError`失敗した場合は、を作成`CancelRequest`してエラー `CXCallDirectoryExtensionContext`を説明し、クラスのメソッドに渡します。
 
-ブロックされている数値の使用を設定する、`AddBlockingEntry`のメソッド、`CXCallDirectoryExtensionContext`クラス。 メソッドに提供される数字_する必要があります_数値で昇順にします。 最適なパフォーマンスとメモリ使用量が多くの電話番号、特定の時点で番号のサブセットを読み込むと、各バッチに読み込まれる数値の中に割り当てられたオブジェクトを解放する場合のプールを使用してのみを検討します。
+ブロックされた番号を設定`AddBlockingEntry`するには`CXCallDirectoryExtensionContext` 、クラスのメソッドを使用します。 メソッドに指定する数値は、数値の昇順にする_必要があり_ます。 多数の電話番号がある場合のパフォーマンスとメモリの最適な使用方法については、特定の時点で数値のサブセットを読み込み、autorelease pool を使用して、読み込まれた番号の各バッチの間に割り当てられたオブジェクトを解放することを検討してください。
 
-既知の VOIP のアプリに連絡先電話番号の連絡先アプリに通知を使用して、`AddIdentificationEntry`のメソッド、`CXCallDirectoryExtensionContext`クラスし、数と識別のラベルの両方を指定します。 メソッドに提供される数字、もう一度_する必要があります_数値で昇順にします。 最適なパフォーマンスとメモリ使用量が多くの電話番号、特定の時点で番号のサブセットを読み込むと、各バッチに読み込まれる数値の中に割り当てられたオブジェクトを解放する場合のプールを使用してのみを検討します。
+VOIP アプリに知られている連絡先番号のアプリに連絡するには、 `AddIdentificationEntry` `CXCallDirectoryExtensionContext`クラスのメソッドを使用し、番号と識別ラベルの両方を指定します。 ここでも、メソッドに指定する数値は、数値の昇順にする_必要があり_ます。 多数の電話番号がある場合のパフォーマンスとメモリの最適な使用方法については、特定の時点で数値のサブセットを読み込み、autorelease pool を使用して、読み込まれた番号の各バッチの間に割り当てられたオブジェクトを解放することを検討してください。
 
 ## <a name="summary"></a>まとめ
 
-この記事では、Apple の iOS 10 と Xamarin.iOS VOIP アプリでの実装方法でリリースされた新しい CallKit API をについて説明します。 CallKit が iOS システムに統合するアプリを使用する方法について、(電話) などの組み込みアプリを使用して同等の機能を提供する方法、および Siri の相互作用およびを使用して、ロック画面とホーム画面などの場所での iOS でアプリの可視性が増加する方法が示されて連絡先アプリです。
+この記事では、Apple が iOS 10 でリリースした新しい CallKit API と、Xamarin iOS VOIP アプリで実装する方法について説明しました。 CallKit では、アプリを iOS システムに統合する方法、組み込みアプリ (Phone など) との機能の同等性を提供する方法、Siri の相互作用と via を通じて、アプリがロックやホーム画面などの場所でアプリの可視性を向上させる方法について説明しています。連絡先アプリ。
 
 ## <a name="related-links"></a>関連リンク
 
-- [iOS 10 のサンプル](https://developer.xamarin.com/samples/ios/iOS10/)
+- [iOS 10 のサンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS10)
