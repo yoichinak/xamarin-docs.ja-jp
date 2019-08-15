@@ -1,24 +1,24 @@
 ---
 title: テキストの編集
-description: EditText ウィジェットを使用して、ユーザー入力をそのまま使用する方法。
+description: EditText ウィジェットを使用してユーザー入力を受け入れる方法。
 ms.prod: xamarin
 ms.assetid: E513BCBC-438E-15E8-B83A-4B768A8E8B32
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/09/2018
-ms.openlocfilehash: 518c13aea431a8e973579768cc70b8281a31acac
-ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
+ms.openlocfilehash: a937de27fc032b0d88dfdf717339b47e0df8e58d
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67674731"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644634"
 ---
-# <a name="edit-text"></a>テキストの編集
+# <a name="xamarinandroid-edit-text"></a>Xamarin Android のテキストの編集
 
-このセクションでは使用して、 [EditText](https://developer.xamarin.com/api/type/Android.Widget.EditText/)ウィジェットをユーザーの入力テキスト フィールドを作成します。 フィールドにテキストを入力した後、 **Enter**キー トースト メッセージにテキストが表示されます。
+このセクションでは、 [EditText](xref:Android.Widget.EditText)ウィジェットを使用して、ユーザー入力用のテキストフィールドを作成します。 フィールドにテキストが入力されると、Enter キーを**押し**て、トーストメッセージにテキストが表示されます。
 
-開いている**Resources/layout/activity_main.axml**を追加し、 [EditText](https://developer.xamarin.com/api/type/Android.Widget.EditText/)要素を含むレイアウトにします。 次の例では、 **activity_main.axml**が、`EditText`に追加されている、 `LinearLayout`:
+**Resources/layout/activity_main**を開き、 [EditText](xref:Android.Widget.EditText)要素を含んでいるレイアウトに追加します。 次の activity_main の例では、に`EditText` `LinearLayout`追加されたがあり**ます。**
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -35,10 +35,10 @@ ms.locfileid: "67674731"
 </LinearLayout>
 ```
 
-このコード例では、`EditText`属性`android:imeOptions`に設定されている`actionGo`します。 この設定は、既定値を変更[完了](https://developer.android.com/reference/android/view/inputmethod/EditorInfo#IME_ACTION_DONE)アクションを[移動](https://developer.android.com/reference/android/view/inputmethod/EditorInfo#IME_ACTION_GO)アクションをタップするように、 **」と入力**トリガーをキー、`KeyPress`入力ハンドラー。
-(通常、`actionGo`されるように、 **」と入力**キーは、ユーザーに型指定された URL のターゲットにします)。
+このコード例では、 `EditText`属性`android:imeOptions`はに`actionGo`設定されています。 この`KeyPress`設定は、 **Enter**キーをタップして入力ハンドラーをトリガーするように、[既定の完了] アクションを[[](https://developer.android.com/reference/android/view/inputmethod/EditorInfo#IME_ACTION_GO) [実行](https://developer.android.com/reference/android/view/inputmethod/EditorInfo#IME_ACTION_DONE)] アクションに変更します。
+(通常は`actionGo` 、 **Enter**キーがで入力された URL のターゲットに移動するために使用されます)。
 
-ユーザーのテキスト入力を処理するための末尾に次のコードを追加、 [OnCreate](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/)メソッド**MainActivity.cs**:
+ユーザーテキスト入力を処理するには、 **MainActivity.cs**の[OnCreate](xref:Android.App.Activity.OnCreate*)メソッドの末尾に次のコードを追加します。
 
 ```csharp
 EditText edittext = FindViewById<EditText>(Resource.Id.edittext);
@@ -52,21 +52,21 @@ edittext.KeyPress += (object sender, View.KeyEventArgs e) => {
 };
 ```
 
-さらに、次を追加`using`ステートメントの先頭に**MainActivity.cs**が存在しない場合。
+さらに、次`using`のステートメントを**MainActivity.cs**の先頭に追加します (まだ存在していない場合)。
 
 ```csharp
 using Android.Views;
 ```
 
-このコード例の拡張、 [EditText](https://developer.xamarin.com/api/type/Android.Widget.EditText/)レイアウトから要素を追加し、 [KeyPress](https://developer.xamarin.com/api/event/Android.Views.View.KeyPress/)ウィジェットにフォーカスがあるキーが押されたときにアクションを定義するハンドラー。 リッスンするように、メソッドが定義されているこの場合、 **」と入力**(タップ) する場合のキーし、ポップアップ、[トースト](https://developer.xamarin.com/api/type/Android.Widget.Toast/)のメッセージに入力されています。 なお、 [Handled](https://developer.xamarin.com/api/property/Android.Views.View+KeyEventArgs.Handled/)プロパティは常に`true`イベントが処理された場合。 これは、イベントのバブリングを防ぐために必要です (キャリッジ リターン、テキスト フィールドになります) がアップします。
+このコード例では、レイアウトから[EditText](xref:Android.Widget.EditText)要素を増えし、ウィジェットにフォーカスがあるときにキーが押されたときに実行されるアクションを定義する[KeyPress](xref:Android.Views.View.KeyPress)ハンドラーを追加します。 この場合、メソッドは**enter**キーをリッスンするように定義されています (タップした場合)。その後、入力されたテキストを含む[トースト](xref:Android.Widget.Toast)メッセージをポップアップ表示します。 イベントが処理された場合、[処理済み](xref:Android.Views.View.KeyEventArgs.Handled)のプロパティは常に `true` にする必要があることに注意してください。 これは、イベントがバブルアップされないようにするために必要です (これにより、テキストフィールドに復帰が返されます)。
 
-アプリケーションを実行し、テキスト フィールドにテキストを入力します。 押したときに、 **」と入力**キー、トーストが表示されます、右に示すようにします。
+アプリケーションを実行し、テキストフィールドにテキストを入力します。 Enter**キーを**押すと、右側に表示されるようにトーストが表示されます。
 
-[![EditText にテキストを入力の例](edit-text-images/edit-text-sml.png)](edit-text-images/edit-text.png#lightbox)
+[![EditText にテキストを入力する例](edit-text-images/edit-text-sml.png)](edit-text-images/edit-text.png#lightbox)
 
-*このページの部分が作成された作業に基づいた変更と* [ *Android オープン ソース プロジェクトで共有*](http://code.google.com/policies.html) *で説明されている条項にしたがって使用* [ *2.5 の creative Commons Attribution License* ](http://creativecommons.org/licenses/by/2.5/) *します。このチュートリアルがに基づいて、* [*フォーム Stuff の Android チュートリアル*](https://developer.android.com/resources/tutorials/views/hello-formstuff.html) *します。*
+*このページの部分は、作成された作業に基づいて変更されます*。[*Android オープンソースプロジェクトによって共有されます*](http://code.google.com/policies.html)*および「」で説明されている用語に従って使用されます*。[*Creative Commons 2.5 属性のライセンス*](http://creativecommons.org/licenses/by/2.5/) *.このチュートリアルは、* [*Android フォーム*](https://developer.android.com/resources/tutorials/views/hello-formstuff.html)に関するチュートリアルに基づいてい*ます。*
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [EditTextSample](https://developer.xamarin.com/samples/monodroid/UserInterface/EditTextSample/)
+- [EditTextSample](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-edittextsample)

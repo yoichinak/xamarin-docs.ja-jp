@@ -1,26 +1,26 @@
 ---
-title: Xamarin.iOS でのマップ
-description: このドキュメントでは、iOS の MapKit フレームワークと Xamarin.iOS での使用方法について説明します。 これには、スタイル、パンしズーム、ユーザーの場所を使用、注釈を追加、コールアウト、およびオーバーレイ、操作およびローカル検索を実行、マップを追加する方法について説明します。
+title: Xamarin. iOS のマップ
+description: このドキュメントでは、iOS MapKit フレームワークと、それが Xamarin. iOS でどのように使用されるかについて説明します。 ここでは、マップの追加、スタイルの指定、パンとズーム、ユーザーの位置を操作する方法、注釈を追加する方法、コールアウトとオーバーレイを操作する方法、およびローカル検索を実行する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 5DD8E56D-51C1-4AFA-B387-79B5734698ED
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: c61b5a8bd99afda5e8fbeea44e3362574fa7feea
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4b0e540bdcdf061f64880ea961a5e07a0a45b22e
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61226731"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68642917"
 ---
-# <a name="maps-in-xamarinios"></a>Xamarin.iOS でのマップ
+# <a name="maps-in-xamarinios"></a>Xamarin. iOS のマップ
 
-マップは、すべての最新のモバイル オペレーティング システムで一般的な機能です。 iOS では、Map Kit フレームワークを通じてネイティブ マッピング サポートを提供します。 マップのキット、アプリケーションは、リッチで対話型のマップを簡単に追加できます。 これらのマップは、さまざまな、マップ上の場所をマークする注釈を追加して、任意図形のグラフィックスのオーバーレイなどの方法でカスタマイズできます。 Map Kit もデバイスの現在の場所を表示するための組み込みのサポートしています。
+Maps は、すべての最新のモバイルオペレーティングシステムで共通の機能です。 iOS では、マップキットフレームワークによってネイティブにマッピングがサポートされています。 マップキットを使用すると、アプリケーションは、リッチでインタラクティブなマップを簡単に追加できます。 これらのマップは、マップ上の場所をマークする注釈を追加したり、任意の図形のグラフィックをオーバーレイしたりするなど、さまざまな方法でカスタマイズできます。 マップキットには、デバイスの現在の場所を表示するためのサポートが組み込まれています。
 
 ## <a name="adding-a-map"></a>マップの追加
 
-マップをアプリケーションに追加するために追加することでは、`MKMapView`次に示すように、ビュー階層にインスタンスします。
+アプリケーションにマップを追加するには、次に`MKMapView`示すように、インスタンスをビュー階層に追加します。
 
 ```csharp
 // map is an MKMapView declared as a class variable
@@ -28,31 +28,31 @@ map = new MKMapView (UIScreen.MainScreen.Bounds);
 View = map;
 ```
 
- `MKMapView` `UIView`マップを表示するサブクラスです。 上記のコードを使用してマップを追加するだけには、対話型のマップが生成されます。
+ `MKMapView`は、マップを表示するサブクラスです。`UIView` 上記のコードを使用してマップを追加するだけで、対話型のマップが生成されます。
 
- ![](images/00-map.png "サンプル マップ")
+ ![](images/00-map.png "サンプルマップ")
 
-## <a name="map-style"></a>マップ スタイル
+## <a name="map-style"></a>マップスタイル
 
- `MKMapView` マップの 3 つの異なるスタイルをサポートしています。 マップ スタイルを適用する設定、`MapType`プロパティから値を`MKMapType`列挙体。
+ `MKMapView`では、3種類のマップのスタイルがサポートされています。 マップスタイルを適用するには、単`MapType`にプロパティを`MKMapType`列挙型の値に設定します。
  ```
 map.MapType = MKMapType.Standard; //road map
 map.MapType = MKMapType.Satellite;
 map.MapType = MKMapType.Hybrid;
  ```
-  次のスクリーン ショットは、使用可能な別のマップのスタイルを表示します。
+  次のスクリーンショットは、使用可能なさまざまなマップスタイルを示しています。
 
- ![](images/01-mapstyles.png "このスクリーン ショットは、利用できる別のマップのスタイルを表示します。")
+ ![](images/01-mapstyles.png "このスクリーンショットは、使用可能なさまざまなマップスタイルを示しています。")
 
 ## <a name="panning-and-zooming"></a>パンとズーム
 
- `MKMapView` マップのインタラクティビティ機能のサポートにはなどが含まれています。
+ `MKMapView`には、次のようなマップインタラクティビティ機能のサポートが含まれています。
 
--  ピンチ ジェスチャを使用してズーム
--  パン ジェスチャを使用してパン
+-  ピンチジェスチャを使用したズーム
+-  パンジェスチャによるパン
 
 
-これらの機能を有効になっているか、設定するだけで無効になっている、`ZoomEnabled`と`ScrollEnabled`のプロパティ、`MKMapView`インスタンス、既定値が両方に当てはまります。 たとえば、静的なマップを表示する単に、適切なプロパティ false に設定します。
+これらの機能は、 `ZoomEnabled` `MKMapView`インスタンスのプロパティとプロパティを設定`ScrollEnabled`するだけで有効または無効にすることができます。この場合、既定値は両方とも true になります。 たとえば、静的マップを表示するには、適切なプロパティを false に設定するだけです。
 
 ```csharp
 map.ZoomEnabled = false;
@@ -61,7 +61,7 @@ map.ScrollEnabled = false;
 
 ## <a name="user-location"></a>ユーザーの場所
 
-ユーザーの操作だけでなく`MKMapView`デバイスの場所を表示するための組み込みサポートがあります。 これを使用して、 *Core 場所*フレームワーク。 ユーザーの場所にアクセスする前に、ユーザーにダイアログを表示する必要があります。 これを行うには、インスタンスを作成`CLLocationManager`を呼び出すと`RequestWhenInUseAuthorization`します。
+ユーザーの操作に加えて`MKMapView` 、には、デバイスの場所を表示するためのサポートも組み込まれています。 これは、*コアロケーション*フレームワークを使用して行われます。 ユーザーの場所にアクセスするには、ユーザーにメッセージを表示する必要があります。 これを行うには、の`CLLocationManager`インスタンスを作成し、を呼び出し`RequestWhenInUseAuthorization`ます。
 
 ```csharp
 CLLocationManager locationManager = new CLLocationManager();
@@ -69,40 +69,40 @@ locationManager.RequestWhenInUseAuthorization();
 //locationManager.RequestAlwaysAuthorization(); //requests permission for access to location data while running in the background
 ```
 
-IOS 8.0 では、呼び出しを試みるより前のバージョンで`RequestWhenInUseAuthorization`エラーが発生します。 IOS のバージョンを 8 より前のバージョンをサポートする場合は、その呼び出しを行う前に確認してください。
+8\.0 より前のバージョンの iOS では、を呼び出そう`RequestWhenInUseAuthorization`とするとエラーが発生することに注意してください。 8より前のバージョンをサポートする場合は、その呼び出しを行う前に iOS のバージョンを確認してください。
 
-変更が必要です、ユーザーの場所へのアクセスも**Info.plist**します。 位置データに関連する次のキーを設定する必要があります。
+ユーザーの場所にアクセスするには、**情報 plist**を変更する必要もあります。 位置データに関連する次のキーを設定する必要があります。
 
 - **NSLocationWhenInUseUsageDescription**: アプリでやり取りしている間にユーザーの場所にアクセスする場合。
 - **NSLocationAlwaysUsageDescription**: アプリがバック グラウンドでユーザーの場所にアクセスする場合。
 
-これらのキーを追加するには、開く**Info.plist**を選択して*ソース*エディターの下部にあります。
+これらのキーを追加するには、 **[plist]** を開き、エディターの下部にある [*ソース*] を選択します。
 
-更新すると**Info.plist**とその場所へのアクセス許可をユーザーに求めるメッセージが表示、マップでユーザーの場所を表示するには設定して、`ShowsUserLocation`プロパティを true にします。
+**情報**を更新し、ユーザーにその場所へのアクセス許可を求めるメッセージが表示されたら、 `ShowsUserLocation`プロパティを true に設定してマップ上のユーザーの場所を表示できます。
 
 ```csharp
 map.ShowsUserLocation = true;
 ```
 
- ![](images/02-location-alert.png "許可する場所のアクセスのアラート")
+ ![](images/02-location-alert.png "場所へのアクセスを許可するアラート")
  
 ## <a name="annotations"></a>コメント
 
- `MKMapView` イメージを表示する、マップ上の注釈と呼ばれるをサポートしています。 カスタム イメージまたはさまざまな色のシステム定義のピンのいずれかを指定できます。 たとえば、次のスクリーン ショットが両方 pin を使用してマップを表示し、カスタム イメージ。
+ `MKMapView`では、マップ上の画像 (注釈) の表示もサポートされています。 これには、カスタムイメージ、またはさまざまな色のシステム定義の pin を使用できます。 たとえば、次のスクリーンショットは、ピンとカスタムイメージの両方を含むマップを示しています。
 
- ![](images/03-annotations.png "このスクリーン ショットは両方 pin を使用してマップし、カスタム イメージ")
+ ![](images/03-annotations.png "このスクリーンショットは、ピンとカスタムイメージの両方を含むマップを示しています。")
 
 ### <a name="adding-an-annotation"></a>注釈の追加
 
-注釈自体には、2 つの部分があります。
+注釈自体には、次の2つの部分があります。
 
--  `MKAnnotation`オブジェクトで、注釈、タイトルや注釈の場所などに関するデータ モデルにはが含まれています。
--  `MKAnnotationView` 、イメージを表示して、必要に応じてユーザーが、注釈をタップしたときに表示されているコールアウトを含むです。
+-  注釈のタイトルや場所など、注釈に関するモデルデータを含むオブジェクト。`MKAnnotation`
+-  `MKAnnotationView`表示するイメージと、ユーザーが注釈をタップしたときに表示されるコールアウトを格納する。
 
 
-Map Kit は iOS の委任パターンを使用して、マップに注釈を追加する場所、`Delegate`のプロパティ、`MKMapView`のインスタンスに設定されている、`MKMapViewDelegate`します。 このデリゲートの実装が返されますが、`MKAnnotationView`注釈の。
+マップキットでは、iOS の委任パターンを使用して、の`Delegate`プロパティ`MKMapView`がのインスタンス`MKMapViewDelegate`に設定されているマップに注釈を追加します。 これは、このデリゲートの実装であり、 `MKAnnotationView`注釈のを返します。
 
-最初に注釈を追加するには、注釈は呼び出すことによって追加`AddAnnotations`上、`MKMapView`インスタンス。
+注釈を追加するには、まず、 `AddAnnotations` `MKMapView`インスタンスでを呼び出して注釈を追加します。
 
 ```csharp
 // add an annotation
@@ -112,9 +112,9 @@ map.AddAnnotations (new MKPointAnnotation (){
 });
 ```
 
-注釈の位置が、マップに表示されるとき、`MKMapView`が呼び出す、デリゲートの`GetViewForAnnotation`を取得するメソッド、`MKAnnotationView`を表示します。
+注釈の位置がマップ`MKMapView`に表示されると、はそのデリゲートの`GetViewForAnnotation`メソッドを呼び出して、 `MKAnnotationView`表示するを取得します。
 
-次のコードでのシステム指定の返しますなど`MKPinAnnotationView`:
+たとえば、次のコードはシステムが提供`MKPinAnnotationView`するを返します。
 
 ```csharp
 string pId = "PinAnnotation";
@@ -137,34 +137,34 @@ public override MKAnnotationView GetViewForAnnotation (MKMapView mapView, NSObje
 }
 ```
 
-### <a name="reusing-annotations"></a>注釈を再利用
+### <a name="reusing-annotations"></a>注釈の再利用
 
-メモリを節約するために`MKMapView`プール テーブルのセルが再利用するように再利用するための注釈の表示を許可します。 呼び出しでは、注釈の表示をプールから取得`DequeueReusableAnnotation`:
+メモリを節約する`MKMapView`ため、では、テーブルのセルを再利用する場合と同様に、注釈ビューを再利用できるようにプールできます。 プールから注釈ビューを取得するに`DequeueReusableAnnotation`は、次の呼び出しを行います。
 
 ```csharp
 MKAnnotationView pinView = (MKPinAnnotationView)mapView.DequeueReusableAnnotation (pId);
 ```
 
-#### <a name="showing-callouts"></a>吹き出しを表示
+#### <a name="showing-callouts"></a>コールアウトを表示する
 
-前述のように、注釈は必要に応じて、吹き出しを表示できます。 単に吹き出しを表示するには設定`CanShowCallout`を true に、`MKAnnotationView`します。 これは、結果、注釈のタイトルが示すように、注釈がタップされたときに表示されています。
+前述のように、注釈は必要に応じてコールアウトを表示できます。 コールアウトを表示するに`CanShowCallout`は、で true `MKAnnotationView`に設定されているだけです。 次のように、注釈がタップされると、注釈のタイトルが表示されます。
 
  ![](images/04-callout.png "表示されている注釈のタイトル")
 
-### <a name="customizing-the-callout"></a>引き出し線のカスタマイズ
+### <a name="customizing-the-callout"></a>コールアウトのカスタマイズ
 
-次に示すよう、左と右アクセサリのビューを表示する引き出し線をカスタマイズもできます。
+次に示すように、吹き出しをカスタマイズして、左および右のアクセサリビューを表示することもできます。
 
 ```csharp
 pinView.RightCalloutAccessoryView = UIButton.FromType (UIButtonType.DetailDisclosure);
 pinView.LeftCalloutAccessoryView = new UIImageView(UIImage.FromFile ("monkey.png"));
 ```
 
-このコードは、次のコールアウトが得られます。
+このコードを実行すると、次のように吹き出しが表示されます。
 
- ![](images/05-callout-accessories.png "例の引き出し線")
+ ![](images/05-callout-accessories.png "コールアウトの例")
 
-右側のアクセサリをタップしてユーザーを処理するために単純に実装、`CalloutAccessoryControlTapped`メソッドで、 `MKMapViewDelegate`:
+ユーザーが適切なアクセサリをタップする処理を行うに`CalloutAccessoryControlTapped`は、 `MKMapViewDelegate`でメソッドを実装するだけです。
 
 ```csharp
 public override void CalloutAccessoryControlTapped (MKMapView mapView, MKAnnotationView view, UIControl control)
@@ -175,35 +175,35 @@ public override void CalloutAccessoryControlTapped (MKMapView mapView, MKAnnotat
 
 ### <a name="overlays"></a>オーバーレイ
 
-マップ レイヤーのグラフィックスを別の方法では、オーバーレイを使用しています。 オーバーレイでは、マップが拡大縮小されたときに、マップと一緒に拡大縮小されるグラフィカル コンテンツの描画がサポートされます。 iOS では、いくつかの種類など、オーバーレイのサポートを提供します。
+マップ上でグラフィックスをレイヤー化するもう1つの方法は、オーバーレイを使用することです。 オーバーレイでは、マップが拡大縮小されたときに、マップと一緒に拡大縮小されるグラフィカル コンテンツの描画がサポートされます。 iOS では、次のようないくつかの種類のオーバーレイがサポートされています。
 
--  多角形のマップ上のいくつかの領域を強調表示によく使用します。
--  ポリライン - ルートを表示するときによく見られます。
--  円 - マップの円形の領域を強調表示するために使用します。
+-  多角形-マップ上の一部の領域を強調表示するためによく使用されます。
+-  ポリライン-多くの場合、ルートを表示するときに見られます。
+-  円-マップの円形の領域を強調表示するために使用されます。
 
 
-さらに、詳細なカスタマイズされた描画コードの任意のジオメトリを表示するカスタムのオーバーレイを作成できます。 たとえば、気象レーダーはカスタムのオーバーレイの有力候補になります。
+さらに、カスタムオーバーレイを作成して、カスタマイズされた詳細な描画コードを持つ任意のジオメトリを表示することもできます。 たとえば、気象レーダーはカスタムオーバーレイの候補として適しています。
 
 #### <a name="adding-an-overlay"></a>オーバーレイの追加
 
-注釈と同様に、オーバーレイを追加する 2 つの部分には。
+注釈と同様に、オーバーレイの追加には次の2つの部分が含まれます。
 
--  オーバーレイのモデル オブジェクトを作成し、追加すること、`MKMapView`します。
--  オーバーレイのビューを作成する、`MKMapViewDelegate`します。
+-  オーバーレイのモデルオブジェクトを作成し、 `MKMapView`に追加します。
+-  でオーバーレイのビューを作成`MKMapViewDelegate`します。
 
 
-オーバーレイのモデルには、いずれかを指定できる`MKShape`サブクラスです。 Xamarin.iOS が含まれています`MKShape`多角形、多角形や円のサブクラスを使用して、 `MKPolygon`、`MKPolyline`と`MKCircle`それぞれクラスします。
+オーバーレイのモデルには、任意`MKShape`のサブクラスを指定できます。 Xamarin. iOS に`MKShape`は`MKPolygon`、、、 `MKPolyline`および`MKCircle`の各クラスを使用して、多角形、ポリライン、および円のサブクラスが含まれています。
 
-追加する次のコードを使用するなど、 `MKCircle`:
+たとえば、次のコードを使用してを追加`MKCircle`します。
 
 ```csharp
 var circleOverlay = MKCircle.Circle (mapCenter, 1000);
 map.AddOverlay (circleOverlay);
 ```
 
-オーバーレイのビューは、`MKOverlayView`インスタンスによって返される、`GetViewForOverlay`で、`MKMapViewDelegate`します。 各`MKShape`対応しています`MKOverlayView`特定の形状を表示する方法を把握しています。 `MKPolygon`が`MKPolygonView`します。 同様に、`MKPolyline`に対応する`MKPolylineView`、および`MKCircle`が`MKCircleView`します。
+オーバーレイのビューは`MKOverlayView` 、のに`GetViewForOverlay`よって`MKMapViewDelegate`返されるインスタンスです。 各`MKShape`には、 `MKOverlayView`指定された図形を表示する方法を認識する対応するがあります。 に`MKPolygon`はが`MKPolygonView`あります。 同様に`MKPolyline` 、は`MKPolylineView`に対応し`MKCircle` 、に`MKCircleView`はがあります。
 
-たとえば、次のコードを返します、`MKCircleView`の`MKCircle`:
+たとえば、次のコードは、 `MKCircleView` `MKCircle`のを返します。
 
 ```csharp
 public override MKOverlayView GetViewForOverlay (MKMapView mapView, NSObject overlay)
@@ -215,31 +215,31 @@ public override MKOverlayView GetViewForOverlay (MKMapView mapView, NSObject ove
 }
 ```
 
-マップに円を表示このように。
+次のように、マップ上に円が表示されます。
 
  ![](images/06-circle-overlay.png "マップに表示される円")
 
-## <a name="local-search"></a>ローカルの検索
+## <a name="local-search"></a>ローカル検索
 
-iOS には、ローカル検索マップ キットは、指定した地理的リージョン観光名所の検索を非同期 API が含まれています。
+iOS には、マップキットを使用したローカル検索 API が含まれています。これにより、指定された地理的領域内の関心のあるポイントを非同期検索できます。
 
-ローカルの検索を実行するには、アプリケーションは以下の手順を実行する必要があります。
+ローカル検索を実行するには、アプリケーションで次の手順を実行する必要があります。
 
-1.  作成`MKLocalSearchRequest`オブジェクト。
-1.  作成、`MKLocalSearch`オブジェクトから、`MKLocalSearchRequest`します。
-1.  呼び出す、`Start`メソッドを`MKLocalSearch`オブジェクト。
-1.  取得、`MKLocalSearchResponse`コールバック オブジェクト。
+1.  オブジェクト`MKLocalSearchRequest`を作成します。
+1.  からオブジェクトを作成します。 `MKLocalSearchRequest` `MKLocalSearch`
+1.  オブジェクトに対してメソッドを`Start`呼び出します。 `MKLocalSearch`
+1.  コールバック`MKLocalSearchResponse`内のオブジェクトを取得します。
 
 
-ローカルの検索 API 自体では、ユーザー インターフェイスはありません。 使用するマップも必要ありません。 ただし、ローカルの検索を実際に使用するために、アプリケーションが検索クエリを指定し、結果を表示する手段を提供する必要があります。 さらに、結果には、場所データが含まれているが、のでさせることが多くの場合、マップで表示することです。
+ローカル検索 API 自体は、ユーザーインターフェイスを提供しません。 マップを使用する必要もありません。 ただし、ローカル検索を実際に使用するには、アプリケーションで検索クエリを指定して結果を表示する方法が用意されている必要があります。 また、結果には位置データが含まれるため、多くの場合、マップに表示するのが理にかなっています。
 
 <a name="Adding_a_Local_Search_UI"/>
 
 ### <a name="adding-a-local-search-ui"></a>ローカル検索 UI の追加
 
-検索の入力をそのまま使用する 1 つの方法は、 `UISearchBar`、によって提供される、`UISearchController`をテーブルの結果が表示されます。
+検索入力を受け入れる方法の1つは`UISearchBar`、に`UISearchController`よって提供されるを使用して、結果をテーブルに表示することです。
 
-次のコードを追加、 `UISearchController` (検索バーのプロパティに) で、`ViewDidLoad`メソッドの`MapViewController`:
+次のコードでは`UISearchController` 、の`ViewDidLoad` `MapViewController`メソッドに (検索バープロパティを持つ) を追加しています。
 
 ```csharp
 //Creates an instance of a custom View Controller that holds the results
@@ -269,21 +269,21 @@ DefinesPresentationContext = true;
 NavigationItem.TitleView = searchController.SearchBar;
 ```
 
-検索バーのオブジェクトをユーザー インターフェイスに組み込む担当していることに注意してください。 この例でのナビゲーション バーの TitleView を割り当てましたが、アプリケーションでナビゲーション コント ローラーを使用しないことを表示する別の場所を検索する必要があります。
+ユーザーインターフェイスには検索バーオブジェクトを組み込む必要があることに注意してください。 この例では、ナビゲーションバーの TitleView に割り当てましたが、アプリケーションでナビゲーションコントローラーを使用しない場合は、別の場所を検索して表示する必要があります。
 
-このコード スニペットで – 別のカスタム ビュー コント ローラーを作成しました`searchResultsController`– 検索結果を表示して、検索のコント ローラー オブジェクトを作成するこのオブジェクトを使用します。 検索バーで、ユーザーが操作したときにアクティブになった新しい検索 updater も作成しました。 キーストロークごとの検索に関する通知を受信し、UI の更新を担当します。
-両方を実装する方法を見てかかります、`searchResultsController`と`searchResultsUpdater`このガイドで後述します。
+このコードスニペットでは、別のカスタムビューコントローラー ( `searchResultsController` ) を作成しました。これによって検索結果が表示され、このオブジェクトを使用して検索コントローラーオブジェクトが作成されました。 また、新しい検索アップデーターも作成しました。これは、ユーザーが検索バーと対話するときにアクティブになります。 各キーストロークで検索に関する通知を受け取り、UI の更新を担当します。
+`searchResultsController`との両方を実装する方法については、このガイドの後半で説明します。`searchResultsUpdater`
 
-これは、次に示すように、マップ上に表示される検索バーが得られます。
+この結果、次に示すように、マップ上に検索バーが表示されます。
 
  ![](images/07-searchbar.png "マップ上に表示される検索バー")
  
 
 
-### <a name="displaying-the-search-results"></a>検索結果を表示します。
+### <a name="displaying-the-search-results"></a>検索結果の表示
 
-カスタム ビュー コント ローラー; の作成に必要な検索結果を表示するには通常、`UITableViewController`します。 上記のよう、`searchResultsController`のコンス トラクターに渡される、`searchController`作成されるときにします。
-次のコードでは、このカスタム ビュー コント ローラーを作成する方法の例を示します。
+検索結果を表示するには、カスタムビューコントローラーを作成する必要があります。通常は`UITableViewController`です。 上`searchResultsController`に示すように、を作成`searchController`するときに、のコンストラクターにが渡されます。
+このカスタムビューコントローラーを作成する方法の例を次のコードに示します。
 
 ```csharp
 public class SearchResultsViewController : UITableViewController
@@ -356,9 +356,9 @@ public class SearchResultsViewController : UITableViewController
 
 ### <a name="updating-the-search-results"></a>検索結果の更新
 
-`SearchResultsUpdater`間の媒介として機能、`searchController`の検索バーと検索結果。 
+は`SearchResultsUpdater` 、 `searchController`の検索バーと検索結果の間の媒介として機能します。 
 
-最初に検索メソッドを作成するがこの例では、`SearchResultsViewController`します。 作成する必要がありますこれを行う、`MKLocalSearch`オブジェクトし、それを使用して、検索を発行する、`MKLocalSearchRequest`に渡されたコールバックで、結果が取得されます、`Start`のメソッド、`MKLocalSearch`オブジェクト。 後、結果が返されます、`MKLocalSearchResponse`オブジェクトの配列を含む`MKMapItem`オブジェクト。
+この例では、 `SearchResultsViewController`最初にで検索メソッドを作成する必要があります。 これを行うには`MKLocalSearch` 、オブジェクトを作成し、それを使用して`MKLocalSearchRequest`の検索を発行する必要があります。結果は`Start` 、 `MKLocalSearch`オブジェクトのメソッドに渡されたコールバックで取得されます。 結果は、オブジェクトの`MKLocalSearchResponse` `MKMapItem`配列を含むオブジェクトで返されます。
 
 ```csharp
 public void Search (string forSearchString)
@@ -384,7 +384,7 @@ public void Search (string forSearchString)
 }
 ```
 
-次に、`MapViewController`のカスタム実装を作成します`UISearchResultsUpdating`に割り当てられる、`SearchResultsUpdater`のプロパティ、`searchController`で、[ローカル検索 UI を追加する](#Adding_a_Local_Search_UI)セクション。
+次に、`MapViewController` で、「[ローカル検索 UI を追加する](#Adding_a_Local_Search_UI)」セクションの `searchController` の `SearchResultsUpdater` プロパティに割り当てられた `UISearchResultsUpdating` のカスタム実装を作成します。
 
 ```csharp
 public class SearchResultsUpdator : UISearchResultsUpdating
@@ -398,20 +398,20 @@ public class SearchResultsUpdator : UISearchResultsUpdating
 }
 ```
 
-上記の実装注釈を追加、マップ項目を結果から、選択すると次に示すよう。
+上の実装では、次のように、結果から項目が選択されたときにマップに注釈を追加します。
 
- ![](images/08-search-results.png "結果から項目が選択されているときに、マップに追加注釈")
+ ![](images/08-search-results.png "結果から項目が選択されたときにマップに追加された注釈")
  
 > [!IMPORTANT]
-> `UISearchController` iOS 8 で実装されていました。 これより前にデバイスをサポートするかどうかは、使用する必要があります`UISearchDisplayController`します。
+> `UISearchController`は、iOS 8 で実装されました。 これより前のデバイスをサポートする場合は、を使用`UISearchDisplayController`する必要があります。
 
 
 
 ## <a name="summary"></a>まとめ
 
-この記事では調査、*マップ* *キット* iOS 用のフレームワークです。 方法を説明しましたが、まず、`MKMapView`クラスは、アプリケーションに含まれる対話型のマップを使用できます。 注釈とオーバーレイを使用してマップをさらにカスタマイズする方法を説明します。 最後に、ios 6.1、Map Kit に追加されたローカルの検索機能を検証を使用する方法を示す観光名所の場所ベースのクエリを実行し、マップに追加します。
+この記事では調査、*マップ* *キット* iOS 用のフレームワークです。 まず、クラスを使用して`MKMapView` 、対話的なマップをアプリケーションに含める方法を見てきました。 さらに、注釈とオーバーレイを使用してマップをカスタマイズする方法についても説明します。 最後に、iOS 6.1 を使用してマップキットに追加されたローカル検索機能を確認しました。ここでは、関心のあるポイントに対して場所ベースのクエリを実行し、マップに追加する方法を示します。
 
 ## <a name="related-links"></a>関連リンク
 
 - [SearchController](https://github.com/xamarin/recipes/tree/master/Recipes/ios/content_controls/search-controller)
-- [MapDemo (サンプル)](https://developer.xamarin.com/samples/monotouch/MapDemo)
+- [MapDemo (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/mapdemo)

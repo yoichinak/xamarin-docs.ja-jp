@@ -1,61 +1,61 @@
 ---
-title: 追加の iOS 10 フレームワークの変更
-description: このドキュメントは、軽微な変更と iOS 10 での既存のフレームワークに加えられた機能強化について説明し、させる方法について説明します Xamarin.iOS でこれらの更新プログラムを使用します。
+title: IOS 10 フレームワークのその他の変更
+description: このドキュメントでは、iOS 10 の既存のフレームワークに加えられた軽微な変更と拡張について説明し、これらの更新プログラムを Xamarin iOS で使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 0E2217F1-FC96-4D0A-ABAB-D40AD8F96502
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/29/2017
-ms.openlocfilehash: ac255baf44951518b29112d2903950039a80ee53
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 5aad72de5d894a83d734cd53fce3ac060125d740
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67831222"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656937"
 ---
-# <a name="additional-ios-10-frameworks-changes"></a>追加の iOS 10 フレームワークの変更
+# <a name="additional-ios-10-frameworks-changes"></a>IOS 10 フレームワークのその他の変更
 
-_この記事では、追加、マイナー変更や iOS 10 用の既存のフレームワークの機能強化について説明します。_
+_この記事では、iOS 10 の既存のフレームワークに対する追加、軽微な変更、または拡張機能について説明します。_
 
 ## <a name="av-foundation-framework-additions"></a>AV Foundation フレームワークの追加
 
-AVFoundation フレームワークには、次の機能強化が含まれています。
+AVFoundation framework には、次の機能強化が含まれています。
 
-- Ios 10 で、開発者がなくなった異なるを実装する[AVPlayerItem](https://developer.xamarin.com/api/type/AVFoundation.AVPlayerItem/)コンテンツの種類に基づいて動作します。 設定するだけです、`Rate`プロパティと AVFoundation の十分なコンテンツはなく失速再生に使用できる、ときに決まります。
-- 新しい[AVCapturePhotoOutput](https://developer.xamarin.com/api/type/AVFoundation.AVCaptureFileOutput/)クラスは、非推奨と置き換えられます`AVCaptureStillImageOutput`クラスし、高度な制御を提供し、キャプチャ プロセスの監視によって写真のすべてのワークフローを処理するための統一されたメソッドを提供し、ライブの写真と生のキャプチャ形式などの新機能のサポートします。
-- 新しい`AVPlayerLooper`クラスでは、再生中に、特定のメディアをループ処理しやすくします。
-- `AVAssetDownloadURLSession`クラスでは、ダウンロードし、暗号化された HLS ストリームの FairPlay の後で再生します。
-- 既定で、 [AVCaptureSession](https://developer.xamarin.com/api/type/AVFoundation.AVCaptureSession/)クラスは、デバイスのハードウェアをサポートしているときに自動的に全体色、全体にわたるすべてのキャプチャをサポートします。 Apple を参照してください。 [iOS デバイスの互換性のリファレンス](https://developer.apple.com/library/prerelease/content/documentation/DeviceInformation/Reference/iOSDeviceCompatibility/Introduction/Introduction.html#//apple_ref/doc/uid/TP40013599)の詳細。
+- IOS 10 では、開発者はコンテンツの種類に基づいてさまざまな[AVPlayerItem](xref:AVFoundation.AVPlayerItem)動作を実装する必要がなくなりました。 プロパティを`Rate`設定するだけで、停止することなく再生できるコンテンツが十分にあるかどうかが avfoundation によって判断されます。
+- 新しい[AVCapturePhotoOutput](xref:AVFoundation.AVCaptureFileOutput)クラスは、非推奨`AVCaptureStillImageOutput`のクラスを置き換え、キャプチャプロセスの高度な制御と監視と新規サポートを提供することで、すべての写真ワークフローを処理するための統一された方法を提供します。ライブ写真や RAW キャプチャ形式などの機能。
+- 新しい`AVPlayerLooper`クラスを使用すると、再生中に特定のメディアを簡単にループできます。
+- クラス`AVAssetDownloadURLSession`では、FairPlay の暗号化された HLS ストリームをダウンロードし、後で再生することができます。
+- 既定では、 [AVCaptureSession](xref:AVFoundation.AVCaptureSession)クラスは、デバイスのハードウェアでサポートされている場合に、ワイド色のワイド色のキャプチャを自動的にサポートします。 詳細については、Apple の[IOS デバイス互換性のリファレンス](https://developer.apple.com/library/prerelease/content/documentation/DeviceInformation/Reference/iOSDeviceCompatibility/Introduction/Introduction.html#//apple_ref/doc/uid/TP40013599)を参照してください。
 
 ## <a name="avkit-additions"></a>AVKit の追加
 
-AVKit フレームワークが含まれています、新しい`UpdatesNowPlayingInfoCenter`プロパティを指定すると、現在再生中のインフォ センターを更新する必要があります。
+Avkit フレームワークに新しい`UpdatesNowPlayingInfoCenter`プロパティが含まれるようになりました。これにより、現在プレイ中の情報センターを更新する必要があることが示されます。
 
-## <a name="core-data-enhancements"></a>コア データ拡張機能
+## <a name="core-data-enhancements"></a>コアデータの機能強化
 
-iOS 10 には、Core Data framework に、次の機能強化が含まれています。
+iOS 10 には、コアデータフレームワークに対する次の機能強化が含まれています。
 
-- [NSManagedObjectContext](https://developer.xamarin.com/api/type/CoreData.NSManagedObjectContext/) WAL ジャーナルのモードのサポート、新しいクエリの生成にデータ ストアを SQLite オブジェクト機能の管理オブジェクトのコンテキスト (MOC) を将来をフェッチするための特定のデータベース バージョンに固定でき、トランザクションのエラーが発生します。
-- ルート[NSManagedObjectContext](https://developer.xamarin.com/api/type/CoreData.NSManagedObjectContext/)オブジェクトは、同時実行のエラーとシリアル化せずフェッチをサポートしています。
-- [NSPersistentStoreCoordinator](https://developer.xamarin.com/api/type/CoreData.NSPersistentStoreCoordinator/)クラスには、SQLite のデータ ストアのプールが管理されます。
-- いくつかの新しい便利なメソッドに追加された`NSManagedObject`フェッチを実行し、サブクラスを作成しやすきます。
-- 高レベルを使用して`NSPersistenceContainer`参照に、 `NSPersistentStoreCoordinator`、 [NSManagedObjectModel](https://developer.xamarin.com/api/type/CoreData.NSManagedObjectModel/)およびその他のコア データの構成リソース。
+- WAL ジャーナルモードで SQLite データストアを使用する[NSManagedObjectContext](xref:CoreData.NSManagedObjectContext)オブジェクトでは、新しいクエリ生成機能がサポートされています。この機能を使用すると、マネージオブジェクトコンテキスト (MOC) を特定のデータベースバージョンに固定して、将来のフェッチやエラー処理を行うことができます。
+- ルート[NSManagedObjectContext](xref:CoreData.NSManagedObjectContext)オブジェクトは、シリアル化を使用しない同時エラーおよびフェッチをサポートしています。
+- [NSPersistentStoreCoordinator](xref:CoreData.NSPersistentStoreCoordinator)クラスは、SQLite データストアのプールを保持します。
+- フェッチの実行とサブクラスの作成`NSManagedObject`を容易にするために、いくつかの新しい便利なメソッドが追加されました。
+- 高レベル`NSPersistenceContainer`を使用して`NSPersistentStoreCoordinator`、、 [NSManagedObjectModel](xref:CoreData.NSManagedObjectModel) 、その他のコアデータ構成リソースを参照します。
 
-詳細については、Apple を参照してください[コア データ フレームワーク参照](https://developer.apple.com/reference/coredata)します。
+詳細については、Apple の[Core Data Framework リファレンス](https://developer.apple.com/reference/coredata)を参照してください。
 
-## <a name="core-image-enhancements"></a>コア イメージの機能強化
+## <a name="core-image-enhancements"></a>コアイメージの機能強化
 
-iOS 10 では、Core のイメージのフレームワークを次の機能強化。
+iOS 10 では、コアイメージフレームワークが次のように強化されています。
 
-- 開発者は、処理の前後に色空間との間に変換することで、Core のイメージのコンテキストの作業の色空間の外部の色空間内のイメージを処理できますようになりました。
-- A8 または A9 の Cpu を使用して iOS デバイスの場合は、RAW イメージ形式がサポートされています。 Core のイメージは、組み込み iSight カメラから画像をデコードまたはサード パーティのカメラから今すぐサポートを提供します。 使用して、`FilterWithImageData`または`FilterWithImageURL`のメソッド、 [CIFilter](https://developer.xamarin.com/api/type/CoreImage.CIFilter/) RAW 画像を処理するクラス。
-- いくつかのレンダリング パフォーマンスの機能強化が加え`UIImage`で (Core イメージをイメージ ストアによってバックアップされて) いる場合にレンダリング`UIImageView`オブジェクト。 
-- `UIImage` 全体のすべてのタグが付けられたオブジェクトは全体域では、色でレンダリングされます`UIImageView`ワイド色をサポートする iOS デバイス上のオブジェクト。
-- コア イメージのカーネル コードでは、特定のピクセル出力形式を要求できますようになりました。
-- `ImageWithExtent`のメソッド、 [CIFilter](https://developer.xamarin.com/api/type/CoreImage.CIFilter/)クラスは、フィルター操作にカスタム処理を挿入するために使用できます。 Core のイメージは出力用のイメージを処理するときに、フィルターの間で指定されたコールバックを呼び出すか、表示します。
+- 開発者は、処理の前後に色空間を変換することによって、コアイメージコンテキストの作業色空間の外にある色空間のイメージを処理できるようになりました。
+- A8 または A9 の Cpu を使用する iOS デバイスでは、RAW イメージ形式がサポートされるようになりました。 コアイメージでは、組み込みの iSight カメラから、またはサードパーティ製カメラから生画像をデコードできるようになりました。 `FilterWithImageData` [Cifilter](xref:CoreImage.CIFilter)クラス`FilterWithImageURL`のメソッドまたはメソッドを使用して、未加工のイメージを処理します。
+- オブジェクトのレンダリング (コアイメージイメージストア`UIImage`によってサポートされている場合) に`UIImageView`対して、いくつかのレンダリングパフォーマンスが向上しています。 
+- `UIImage`ワイド色のタグが付けられたオブジェクトは、ワイド`UIImageView`色をサポートする iOS デバイス上のオブジェクトで、幅域外色として表示されます。
+- コアイメージカーネルコードは、特定のピクセル出力形式を要求できるようになりました。
+- [Cifilter](xref:CoreImage.CIFilter)クラスのメソッドを使用して、フィルター操作にカスタム処理を挿入できます。`ImageWithExtent` コアイメージは、出力または表示のためにイメージを処理するときに、フィルター間で指定されたコールバックを呼び出します。
 
-さらに、以下の新しいコア イメージ フィルターが追加されました。
+さらに、次の新しいコアイメージフィルターが追加されました。
 
 - `CINinePartTiled`
 - `CINinePartStretched`
@@ -63,156 +63,156 @@ iOS 10 では、Core のイメージのフレームワークを次の機能強�
 - `CIEdgePreserveUpsampleFilter`
 - `CIClamp`
 
-## <a name="core-motion-additions"></a>コア アニメーションの追加
+## <a name="core-motion-additions"></a>コアモーションの追加
 
-新しいコア アニメーション フレームワークには iOS 10 では、アプリで高速でリアルタイムの通知を受け取るユーザーの一時停止と再開の実行中に追跡できるようにする歩数計イベントが含まれています。 使用して、 [CMPedometer](https://developer.xamarin.com/api/type/CoreMotion.CMPedometer/)フォア グラウンドまたはバック グラウンドの歩数計イベントを登録します。
+IOS 10 の新機能であるコアモーションフレームワークには pedometer イベントが含まれています。これにより、アプリは、実行中に追跡を一時停止および再開するためのリアルタイムのリアルタイム通知を受け取ることができます。 [CMPedometer](xref:CoreMotion.CMPedometer)を使用して、フォアグラウンドまたはバックグラウンドの pedometer イベントに登録します。
 
 ## <a name="foundation-enhancements"></a>Foundation の機能強化
 
-IOS 10 の Foundation フレームワークには、次の機能強化が施されました。
+IOS 10 の Foundation framework には、次の機能強化が加えられています。
 
-- 使用して、新しい[NSMeasurementFormatter](https://developer.apple.com/reference/foundation/nsmeasurementformatter)クラスは、エンドユーザーに表示するためのローカライズされた測定値の書式を設定します。
-- 使用して、新しい[NSDateInterval](https://developer.apple.com/reference/foundation/nsdateinterval)間隔を比較して、間隔の交差部分のテストのための期間などの日付と時刻の間隔の計算を行うクラス。
-- 使用して、新しい[NSMeasurement](https://developer.apple.com/reference/foundation/nsmeasurement)間さまざまなユニットの測定 (UOM) を変換または異なる UOMs 内の値に対して計算を実行するクラス。
+- 新しい[NSMeasurementFormatter](https://developer.apple.com/reference/foundation/nsmeasurementformatter)クラスを使用して、ローカライズされた測定形式をエンドユーザーに表示するように書式設定します。
+- 新しい[Nsdateinterval](https://developer.apple.com/reference/foundation/nsdateinterval)クラスを使用して、間隔の比較と間隔の交差部分のテストを行うために、期間などの日付と時間の間隔を計算します。
+- 新しい [Nsmeasurement](https://developer.apple.com/reference/foundation/nsmeasurement) クラスを使用して異なる測定単位 (UOM) 間で変換するか、異なる uoms の値に対して計算を実行します。
 
-- 使用して、新しい[NSUnit](https://developer.apple.com/reference/foundation/nsunit)と[NSDimension](https://developer.apple.com/reference/foundation/nsdimension)特定 UOMs を表すためのクラス。
-- いくつかの新しいプロパティが追加されて、 [NSLocal](https://developer.apple.com/reference/foundation/nslocale)ローカル情報と使用可能な表示形式を取得するクラス。
+- 特定の UOMs を表すために、新しい[Nsunit](https://developer.apple.com/reference/foundation/nsunit)クラスと[nsunit](https://developer.apple.com/reference/foundation/nsdimension)クラスを使用します。
+- ローカル情報と使用可能な表示形式を取得するために、いくつかの新しいプロパティが[nslocal](https://developer.apple.com/reference/foundation/nslocale)クラスに追加されました。
 
-## <a name="gamekit-enhancements"></a>GameKit の機能強化
+## <a name="gamekit-enhancements"></a>お持ちのキットの機能強化
 
-IOS 10 で GameKit フレームワークには、次の機能強化が施されました。
+IOS 10 の作成キットフレームワークには、次の機能強化が行われています。
 
-- **Game Center アプリ**非推奨し、iOS から削除されています。 アプリが GameKit を使用する場合、_する必要があります_GameKit 機能 (ランキングなど) の表示に独自のインターフェイスを提供します。 
-- 新しい iCloud 専用のアカウントの種類によって実装されて、 [GKCloudPlayer](https://developer.apple.com/reference/gamekit/gkcloudplayer)クラス。
-- 新しい[GKGameSession](https://developer.apple.com/reference/gamekit/gkgamesession)クラス Game Center への永続的なデータ ストレージを管理するための汎用化されたソリューションを提供します。 `GKGameSession` プレーヤーのリストを保持し、アプリが実装を担当する参加要素の日付が格納されているになっていること、取得またはプレーヤー間で交換される方法とタイミングです。 多くの場合は、ゲーム セッションはターンに基づく既存の一致、リアルタイムの一致または永続的なゲーム保存メソッドを置き換えることができます。
+- **Game Center アプリ**は非推奨となり、iOS から削除されました。 アプリで使用する場合は、独自のインターフェイスを提示して、スコアボードなどのユーザーキット機能を表示_する必要があり_ます。 
+- 新しい iCloud 専用のアカウントの種類は、 [Gkcloudplayer](https://developer.apple.com/reference/gamekit/gkcloudplayer)クラスによって実装されています。
+- 新しい[Gkq&a session](https://developer.apple.com/reference/gamekit/gkgamesession)クラスは、Game Center で永続的なデータストレージを管理するための一般化されたソリューションを提供します。 `GKGameSession`プレーヤーのリストを保持します。アプリは、参加者の日付の格納、取得、交換の方法とタイミングを実装する役割を担います。 多くの場合、ゲームセッションでは、既存のターンベースの一致、リアルタイムの一致、または永続的なゲーム保存方法を置き換えることができます。
 
-## <a name="gameplaykit-enhancements"></a>GameplayKit の機能強化
+## <a name="gameplaykit-enhancements"></a>お持ちのおプレイキットの機能強化
 
-IOS 10 で GameplayKit フレームワークには、次の機能強化が施されました。
+IOS 10 では、次のような機能強化が行われています。
 
-- 使用して、新しい[GKMeshGraph](https://developer.apple.com/reference/gameplaykit/gkmeshgraph)高パフォーマンスで自然なパスを提供するクラス。
-- 手続き型のノイズの生成が追加され、自然に見えるテクスチャのリアリティを強化し、カメラの動きをリアリティを追加し、豊富なゲームの世界を生成するために使用できます。
-- 空間パーティション分割を使用して、効率的な検索のゲームの世界のデータをパーティション分割します。
-- 新しいモンテカルロ ストラテジスト ([GKMonteCarloStrategist](https://developer.apple.com/reference/gameplaykit/gkmontecarlostrategist)) 可能な移動の徹底的な計算が追加されました。
-- 既存のエージェントと、new を使用してパス検索動作を 3D のサポートが追加されました[GKAgent3D](https://developer.apple.com/reference/gameplaykit/gkagent3d)と[GKGraphNode3D](https://developer.apple.com/reference/gameplaykit/gkgraphnode3d)クラス。
-- 新しい[GKScene](https://developer.apple.com/reference/gameplaykit/gkscene)と[GKSKNodeComponent](https://developer.apple.com/reference/gameplaykit/gksknodecomponent) GameplayKit と SpriteKit をより簡単に組み合わせるクラスの作成。
-- デシジョン ツリーの新しい API が追加されました ([GKDecisionTree](https://developer.apple.com/reference/gameplaykit/gkdecisiontree)と[GKDecisionNode](https://developer.apple.com/reference/gameplaykit/gkdecisionnode)) ゲーム構築 AI を強化するためにします。
+- 新しい[GKMeshGraph](https://developer.apple.com/reference/gameplaykit/gkmeshgraph)クラスを使用して、高パフォーマンスの自然なパスを提供します。
+- 手続き型のノイズ生成が追加され、自然なテクスチャのリアリティを向上させるために使用できます。また、カメラの動きにリアリティを加え、豊富なゲームワールドを生み出します。
+- 空間パーティション分割を使用して、効率的な検索のためにゲームのワールドデータを分割します。
+- すべての移動計算を可能にするために、新しいモンテカルロストラテジスト ([GKMonteCarloStrategist](https://developer.apple.com/reference/gameplaykit/gkmontecarlostrategist)) が追加されました。
+- 新しい[GKAgent3D](https://developer.apple.com/reference/gameplaykit/gkagent3d)クラスと[GKGraphNode3D](https://developer.apple.com/reference/gameplaykit/gkgraphnode3d)クラスを使用して、既存のエージェントおよびパス検索動作に3d サポートが追加されました。
+- 新しい[Gkscene](https://developer.apple.com/reference/gameplaykit/gkscene)クラスと[GKSKNodeComponent](https://developer.apple.com/reference/gameplaykit/gksknodecomponent)クラスを使用すると、これまでにないようにすることができます。
+- ゲームを構築する AI を強化するために、新しいデシジョンツリー API が追加されました ([GKDecisionTree](https://developer.apple.com/reference/gameplaykit/gkdecisiontree)と[GKDecisionNode](https://developer.apple.com/reference/gameplaykit/gkdecisionnode))。
 
 ## <a name="healthkit-enhancements"></a>HealthKit の機能強化
 
-IOS 10 で HealthKit フレームワークには、次の機能強化が施されました。
+IOS 10 の HealthKit フレームワークには、次の機能強化が行われています。
 
-- 天気の種類の新しいメタデータのキーが追加されています (など`HKWeatherConditionClear`と`HKWeatherConditionCloudy`) とトレーニングの種類 (など`HKWorkoutActivityTypeFlexibility`と`HKWorkoutActivityTypeWheelchairRunPace`) が追加されています。
-- 新しい`HKCDADocument`臨床ドキュメント アーキテクチャ (CDA) を表すため、ドキュメントを書式設定されたクラスが追加されました。
-- 使用して、新しい[HKWorkoutConfiguration](https://developer.apple.com/reference/healthkit/hkworkoutconfiguration)クラスを指定する、`ActivityType`と`LocationType`トレーニングの。
-- 新しい[HKWheelchairUseObject](https://developer.apple.com/reference/healthkit/hkwheelchairuseobject)と`WheelchairUse`のメソッド、 [HKHealthStore](https://developer.apple.com/reference/healthkit/hkhealthstore)手押し車を操作するためのクラスが追加されました正常性データに関連します。
+- 気象の種類`HKWeatherConditionClear` (や`HKWeatherConditionCloudy`など) に新しいメタデータキーが追加され、 `HKWorkoutActivityTypeFlexibility`トレーニングの種類 ( `HKWorkoutActivityTypeWheelchairRunPace`やなど) が追加されました。
+- 新しい`HKCDADocument`クラスが追加され、臨床ドキュメントアーキテクチャ (CDA) 形式のドキュメントを表します。
+- 新しい hkworkspace [outconfiguration](https://developer.apple.com/reference/healthkit/hkworkoutconfiguration)クラスを使用して、 `ActivityType`トレーニング`LocationType`のおよびを指定します。
+- 車椅子に関連する正常`WheelchairUse`性データを操作するために、新しい[HKWheelchairUseObject](https://developer.apple.com/reference/healthkit/hkwheelchairuseobject)と[HKHealthStore](https://developer.apple.com/reference/healthkit/hkhealthstore)クラスのメソッドが追加されました。
 
-## <a name="homekit-enhancements"></a>HomeKit の機能強化
+## <a name="homekit-enhancements"></a>ホームキットの機能強化
 
-IOS 10 で HomeKit フレームワークには、次の機能強化が施されました。
+IOS 10 のホームキットフレームワークには、次の機能強化が行われています。
 
 - 新しいサービスと特性が追加されました。
-- HomeKit アクセサリのリモート アクセスを提供し、automation のトリガーを実行し、有効にするハブの共有ユーザーのアクセス許可として動作する、iPad を構成できます。
-- カメラとドアベルのアクセサリ サポートが追加されました。
-- [アクセサリ] のコンテキストと構成の詳細が用意されています。
+- IPad は、リモートのアクセサリアクセスを提供するホームキットハブとして機能し、automation トリガーを実行し、共有ユーザーのアクセス許可を有効にするように構成できます。
+- カメラと doorbell のアクセサリのサポートが追加されました。
+- アクセサリ向けに、より多くのコンテキストと構成が用意されています。
 
-参照してください、 [HomeKit の概要](~/ios/platform/homekit.md)詳細についてはドキュメントです。
+詳細については、「[ホームキット](~/ios/platform/homekit.md)のドキュメントの概要」を参照してください。
 
-## <a name="metal-enhancements"></a>金属製の拡張機能
+## <a name="metal-enhancements"></a>金属の機能強化
 
-IOS 10 で金属製のフレームワークには、次の機能強化が施されました。
+IOS 10 の金属フレームワークには、次のような機能強化が加えられています。
 
-- 3D アプリやゲームが使用できるようになりました_テセレーション_複雑なシーンと GPU を使用してジオメトリを効率的に表示するためにします。
-- 金属のパフォーマンスを最適化するためにリソース割り当ての詳細な管理ベースのリソースをヒープを使用してアプリと Memoryless レンダー ターゲットを提供します。
-- 関数の特殊化を使用すると、シーンにマテリアルとライトの組み合わせの高度に最適化されたコレクションを作成します。
+- 3D アプリやゲームでは、_テセレーション_を使用して、複雑なシーンとジオメトリを GPU 経由で効率的にレンダリングできるようになりました。
+- リソースの割り当てをきめ細かく制御することにより、リソースヒープと Memoryless レンダーターゲットを使用して金属ベースのアプリのパフォーマンスを最適化できます。
+- 関数の特殊化を使用して、シーンに対して高度に最適化されたマテリアルおよびライトの組み合わせ関数のコレクションを作成します。
 
-詳細については、Apple を参照してください[メタル プログラミング ガイド](https://developer.apple.com/library/prerelease/content/documentation/Miscellaneous/Conceptual/MetalProgrammingGuide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40014221)します。
+詳細については、Apple の[金属のプログラミングガイド](https://developer.apple.com/library/prerelease/content/documentation/Miscellaneous/Conceptual/MetalProgrammingGuide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40014221)を参照してください。
 
 ## <a name="modelio-enhancements"></a>ModelIO の機能強化
 
-IOS 10 で ModelIO フレームワークには、次の機能強化が施されました。
+IOS 10 の ModelIO フレームワークには、次の機能強化が行われています。
 
-- 米国ドルのファイル形式はサポートされています。
-- サポートが追加された距離のフィールドの署名、 [MDLVoxelArray](https://developer.apple.com/reference/modelio/mdlvoxelarray)クラス。
-- 使用して、新しい`MDLLightProbeIrradianceDataSource`光のプローブの配置を支援するクラス。
-- 使用して、新しい`MDLMaterialPropertyGraph`を簡単にランタイムをサポートするクラスがモデルに変更します。
+- 米国ドルのファイル形式がサポートされるようになりました。
+- 符号付き距離フィールドのサポートが[Mdlvoxelarray](https://developer.apple.com/reference/modelio/mdlvoxelarray)クラスに追加されました。
+- 新しい`MDLLightProbeIrradianceDataSource`クラスを使用すると、プローブの配置を簡単に行うことができます。
+- 新しい`MDLMaterialPropertyGraph`クラスを使用すると、モデルに対する実行時の変更を簡単にサポートできます。
 
 ## <a name="photos-enhancements"></a>写真の機能強化
 
-IOS 10 で写真のフレームワークには、次の機能強化が施されました。
+IOS 10 の Photos フレームワークには、次のような機能強化が加えられています。
 
-- 使用して、 [CIImageProcessorInput](https://developer.apple.com/reference/coreimage/ciimageprocessorinput)と[CIImageProcessorOutput](https://developer.apple.com/reference/coreimage/ciimageprocessoroutput)クラスの編集を実行する新しいコア イメージ プロセッサ機能を活用するためにします。
-- ライブの写真の編集が写真のフレームワークをサポートするアプリ、および写真編集拡張機能を利用できます (写真やカメラの内部で使用するためのアプリ)。
-- 使用して、新しい[PHLivePhotoEditingContext](https://developer.apple.com/reference/photos/phlivephotoeditingcontext)ビデオとの両方にまだコンテンツをライブの写真の編集を適用するクラス。
+- [Ciimageprocessorinput](https://developer.apple.com/reference/coreimage/ciimageprocessorinput)クラスと[Ciimageprocessorinput](https://developer.apple.com/reference/coreimage/ciimageprocessoroutput)クラスを使用して、新しいコアイメージプロセッサ機能を利用して編集を行います。
+- 写真フレームワークと写真編集拡張機能をサポートするアプリ (写真およびカメラアプリ内で使用) でライブフォト編集ができるようになりました。
+- 新しい[PHLivePhotoEditingContext](https://developer.apple.com/reference/photos/phlivephotoeditingcontext)クラスを使用して、ライブ写真のビデオと静止コンテンツの両方に編集を適用します。
 
 ## <a name="replaykit-enhancements"></a>ReplayKit の機能強化
 
-IOS 10 で ReplayKit フレームワークには、次の機能強化が施されました。
+IOS 10 の ReplayKit フレームワークには、次の機能強化が行われています。
 
-- 使用して、 [RPScreenRecorder](https://developer.apple.com/reference/replaykit/rpscreenrecorder)、 [RPBroadcastActivityViewController](https://developer.apple.com/reference/replaykit/rpbroadcastactivityviewcontroller)と[RPBroadcastController](https://developer.apple.com/reference/replaykit/rpbroadcastcontroller)のブロードキャストをサポートするクラスをサード パーティによってメディアの記録サイト。
-- Broadcast UI およびブロードキャストのアップロードの拡張機能は、アプリで ReplayKit サード パーティのブロードキャスト サービスをサポートするために必要です。
+- [RPScreenRecorder](https://developer.apple.com/reference/replaykit/rpscreenrecorder)、[RPBroadcastActivityViewController](https://developer.apple.com/reference/replaykit/rpbroadcastactivityviewcontroller)、[RPBroadcastController](https://developer.apple.com/reference/replaykit/rpbroadcastcontroller) クラスを使用して、サードパーティのサイトからの記録されたメディアのブロードキャストをサポートします。
+- アプリケーションで ReplayKit サードパーティのブロードキャストサービスをサポートするには、ブロードキャスト UI と Broadcast Upload の拡張機能が必要です。
 
 ## <a name="scenekit-enhancements"></a>SceneKit の機能強化
 
-IOS 10 である SceneKit フレームワークには、次の機能強化が施されました。
+IOS 10 の SceneKit フレームワークには、次の機能強化が行われています。
 
-- [SCNCamera](xref:SceneKit.SCNCamera)クラスは HDR 機能と効果を使用して大きいリアリティを提供することができます。 アダプティブ露出を使用すると、自動効果または使用の周辺、カラーの縁取りおよび、ゲームに fillmatic 効果を追加するのに色が成績評価を作成します。
-- SceneKit には、単純な資産の作成をより現実的な結果を新しい物理的にベースのレンダリング (PBR) システムが含まれています。
-- 使用して、新しい[SCNLightingModelPhysicallyBased](https://developer.apple.com/reference/scenekit/scnlightingmodelphysicallybased)網掛けモデルの製品に現実的な網かけのさまざまな 3 つだけの基本的なプロパティを必要とするときに (`Diffuse`、`Metalness`と`Roughness`)。
-- 環境ベースのライティング機能を最適なシェーディング PBR、以降を使用して、`LightingEnvironment`イメージ ベースの光源をシーン全体に割り当てるプロパティをします。
-- 使用して、`IESProfileURL`照明を定義する実際の照明設備をインポートするプロパティ (ルーメン) の輝度 (ケルビン) での色温度などの実際の値に基づきます。
-- PBR と HDR の両方のカメラの機能は、従来のレンダリング テクニックよりも良い結果を提供し、結果として、SceneKit 今すぐ実行色のすべての計算 (wide カラー デバイス ディスプレイで P3 広色域を使用して) 線形のカラー領域でします。
-- SceneKit 色カラー プロファイル情報を読み取ることによってすべての色を一致するようになりました。
-- SceneKit では、シェーダーの種類のすべての線形の RGB 色空間の色要素の値を解釈します。
-- 両方の線形のカラー領域のレンダリングと wide 色を指定することで無効にできます、`SCNDisableLinearSpaceRendering`と`SCNDisableWideGamut`アプリのキー`Info.plist`します。
-- 任意の多角形霊長 (ファイルから読み込まれたまたはプログラムによって生成されるか) を構築する新しい geometry を指定する[SCNGeometryPrimitiveTypePolygon](https://developer.apple.com/reference/scenekit/1772322-scenekit_enumerations/scngeometryprimitivetype/scngeometryprimitivetypepolygon)クラス。
-- SceneKit を読み取ってテクスチャ画像のカラー プロファイル情報の調整、ために、この情報が指定されていることをすべてのイメージ資産カタログを使用します。
+- [Scncamera](xref:SceneKit.SCNCamera)クラスは、HDR の特徴と効果を使用して、よりリアリティを高めることができます。 アダプティブ露出を使用して自動効果を作成するか、vignetting、color fringing、色の調整を使用して、ゲームに fillmatic 効果を追加します。
+- SceneKit には、より簡単なアセット作成により、より現実的な結果を得るために、新しい物理的に基づく表示 (.PBR) システムが追加されました。
+- 新しい[SCNLightingModelPhysicallyBased](https://developer.apple.com/reference/scenekit/scnlightingmodelphysicallybased)シェーディングモデルを使用して、さまざまな現実的な網掛け効果を製品に追加し、`Diffuse`3 `Metalness`つの基本プロパティ (、および) のみを必要と`Roughness`します。
+- .Pbr シェーディングは環境ベースの光源で最適に機能するため`LightingEnvironment` 、プロパティを使用して、イメージベースの光源をシーン全体に割り当てます。
+- プロパティを`IESProfileURL`使用して、照度 (ルーメン) や色温度 (ケルビン単位) などの実際の値に基づいて光源を定義する実際の照明器具をインポートします。
+- SceneKit と HDR の両方のカメラ機能は、従来の表示手法よりも優れた結果を提供します。結果として、では、すべての色の計算を線形の色空間で実行するようになりました (ワイド色のデバイスディスプレイで P3 の色域外を使用)。
+- SceneKit color プロファイル情報を読み取って、すべての色に一致するようになりました。
+- SceneKit は、すべてのシェーダーの種類の線形 RGB カラー空間で色コンポーネントの値を解釈します。
+- アプリのでキー `SCNDisableLinearSpaceRendering`と`SCNDisableWideGamut`キーを指定することにより、線形色空間の`Info.plist`レンダリングとワイド色の両方を無効にできます。
+- 新しい[SCNGeometryPrimitiveTypePolygon](https://developer.apple.com/reference/scenekit/1772322-scenekit_enumerations/scngeometryprimitivetype/scngeometryprimitivetypepolygon)クラスで geometry を指定するために、任意の多角形の霊長類 (ファイルから読み込まれるか、プログラムによって生成される) を構築します。
+- テクスチャイメージでカラープロファイル情報の読み取りと調整を SceneKit するため、すべてのイメージに対してアセットカタログを使用して、この情報が確実に提供されるようにします。
 
 ## <a name="spritekit-enhancements"></a>SpriteKit の機能強化
 
-IOS 10 である SpriteKit フレームワークには、次の機能強化が施されました。
+IOS 10 の SpriteKit フレームワークには、次の機能強化が行われています。
 
-- カスタムのシェーダーは、属性を指定できます (`SKAttribute`) 属性値を指定することで、シェーダーを使用する各ノードで個別に構成できます (`SKAttributeValue`)。
-- Tilemaps は、2 D、2.5 D、および使用する側のスクロール ゲームの正方形と六角等角投影のタイルの図形をサポートするようになりました、 `SKTileMapMode`、 `SKTileGroup`、`SKTileGroupRule`と`SKTileSet`クラス。
-- 使用して、新しい`SKWarpGeometry`を拡大または事実を歪曲クラス[SKSpriteNode](https://developer.xamarin.com/api/type/SpriteKit.SKSpriteNode/)または[SKEffectNode](https://developer.xamarin.com/api/type/SpriteKit.SKEffectNode/)レンダリングします。 新しい[SKAction](https://developer.xamarin.com/api/type/SpriteKit.SKAction/) warp エフェクト間の遷移をアニメーション化するクラスを使用できます。
-- [SKView](https://developer.xamarin.com/api/type/SpriteKit.SKView/)クラスは、シーンをレンダリングするタイミングと方法をきめ細かく制御できるようにいくつかの新しいメソッドを提供します。
+- カスタムシェーダーは、属性値`SKAttribute`(`SKAttributeValue`) を指定することによって、シェーダーを使用する各ノードで個別に構成できる属性 () を提供できます。
+- Tilemaps は`SKTileMapMode`、 `SKTileGroup`、、 `SKTileGroupRule`および`SKTileSet`の各クラスを使用して、2d、2.5 d、およびサイドスクロールゲーム用の正方形、六角、および等角投影のタイル図形をサポートするようになりました。
+- 新しい`SKWarpGeometry`クラスを使用して、 [SKSpriteNode](xref:SpriteKit.SKSpriteNode)または[SKEffectNode](xref:SpriteKit.SKEffectNode)のレンダリングを伸縮またはデフォルメします。 新しい[Skaction](xref:SpriteKit.SKAction)クラスは、ワープ効果間の遷移をアニメーション化するために使用できます。
+- [Skview](xref:SpriteKit.SKView)クラスには、シーンをレンダリングするタイミングと方法をきめ細かく制御できる新しいメソッドがいくつか用意されています。
 
 ## <a name="scrollview-enhancements"></a>ScrollView の機能強化
 
-IOS 10.3 の ScrollView コントロールには、次の機能強化が施されました。
+IOS 10.3 の ScrollView コントロールには、次の機能強化が行われています。
 
-- `UIScrollView` 追加されました、`IndexDisplayMode`プロパティとして、ユーザーがスクロール中にインデックスを表示する方法を制御するため、`UIScrollViewIndexDisplayMode`の。
-    - `Automatic` 表示インデックスは、OS によって制御されます。
-    - `AlwaysHidden` 表示インデックスは常に表示されません。
+- `UIScrollView`次に、 `IndexDisplayMode` `UIScrollViewIndexDisplayMode`のようにユーザーがスクロールしているときのインデックスの表示方法を制御するプロパティを含めます。
+    - `Automatic`-インデックスの表示は OS によって制御されます。
+    - `AlwaysHidden`-インデックスの表示は常に非表示になります。
 
-参照してください、 [iOSTenThree サンプル](https://developer.xamarin.com/samples/monotouch/iOS10/iOSTenThree)の使用量。
+使用方法については、 [IOSTenThree サンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios10-iostenthree)を参照してください。
 
 ## <a name="uikit-enhancements"></a>UIKit の機能強化
 
-IOS 10 の UIKit フレームワークには、次の機能強化が施されました。
+IOS 10 の UIKit フレームワークには、次のような機能強化が加えられています。
 
-- 新しい[UIPasteboard](xref:UIKit.UIPasteboard) API (有効期間の制限事項) などの新しいオプションを提供し、共通のクラス型の互換性のあるコンテンツの種類を自動的に宣言されます。
-- 新しいアニメーションを完全にインタラクティブなオブジェクトに基づく、割り込み可能なサポートが追加され、ジェスチャにリンクすることができます。 Apple を参照してください[UIViewAnimating プロトコル リファレンス](https://developer.apple.com/reference/uikit/uiviewanimating)、 [UIViewPropertyAnimator クラス参照](https://developer.apple.com/reference/uikit/uiviewpropertyanimator)、 [UITimingCurveProvider プロトコル リファレンス](https://developer.apple.com/reference/uikit/uitimingcurveprovider)、 [UICubicTimingParameters クラス参照](https://developer.apple.com/reference/uikit/uicubictimingparameters)と[UISpringTimingParameter クラス参照](https://developer.apple.com/reference/uikit/uispringtimingparameters)詳細についてはします。
-- 新しい`UIPreviewInteraction`と`UIPreviewInteractionDelegate`開発者アプリがピークと pop 操作のためのカスタム インターフェイスを提供できるようにします。
-- 新しい`UIAccessibilityCustomRotor`クラス経由で音声などの支援技術にカスタムのコンテキストに固有の機能を提供するアプリを使用できます。
-- 使用して、`UIAccessibilityIsAssistiveTouchRunning`と`UIAccessibilityAssistiveTouchStatusDidChangeNotification`AssistiveTouch が有効になっているかどうかを判断するシンボル。
-- 使用して、`UIAccessibilityHearingDevicePairedEar`と`UIAccessibilityHearingDevicePairedEarDidChangeNotification`いずれかの状態を取得するシンボル ペア MFi 皆さまの支援になっています。
-- ラベルで動的な型をサポートするためにテキスト フィールドとテキスト ボックスを使用して、新しい`PreferredFontForTextStyle`のメソッド、`UIFont`クラス。
-- かどうかは、要素がそのフォントを更新する必要がありますを決定するときに、デバイスの`UIContentSizeCategory`、変更を使用して、`AdjustsFontForContentSizeCategory`のプロパティ、`UIContentSizeCategoryAdjusting`デリゲートします。
-- `OpenURL`のメソッド、`UIApplication`クラスは、非同期的が呼び出され、完了ハンドラー オープン操作が完了した後に呼び出されるようになりました。
-- CloudKit の共有を開始し、新しいプロパティを変更`UICloudSharingController`と`UICloudSharingControllerDelegate`クラス。
-- プリフェッチされたセルのスクロール エクスペリエンスの向上に利用`UICollectionViews`新しい`UICollectionViewDataSourcePrefetching`を委任します。
-- 開発者は、(テキストと背景の色) などのタブ バー項目のバッジの外観を制御できるようになりました。
-- コントロールの更新は、すべてのスクロール ビュー、スクロール ビューのサブクラスではサポートされています (など`UICollectionView`)。
+- 新しい[Uipasteboard](xref:UIKit.UIPasteboard) API は、新しいオプション (有効期間の制限など) を提供し、共通クラス型に対して互換性のあるコンテンツの種類を自動的に宣言します。
+- 新しい完全対話型のオブジェクトベースの中断可能なアニメーションのサポートが追加され、ジェスチャにリンクできるようになりました。 Apple の[Uiviewanimating プロトコルのリファレンス](https://developer.apple.com/reference/uikit/uiviewanimating)、[uiviewpropertyアニメータークラスリファレンス](https://developer.apple.com/reference/uikit/uiviewpropertyanimator)、[UITimingCurveProvider Protocol reference](https://developer.apple.com/reference/uikit/uitimingcurveprovider)、[UICubicTimingParameters クラス参照](https://developer.apple.com/reference/uikit/uicubictimingparameters)、詳細については、[UISpringTimingParameter クラス参照](https://developer.apple.com/reference/uikit/uispringtimingparameters)を参照してください。
+- 新しい`UIPreviewInteraction`とを`UIPreviewInteractionDelegate`使用すると、開発者アプリはピーク操作とポップ操作のためのカスタムインターフェイスを提供できます。
+- 新しい`UIAccessibilityCustomRotor`クラスを使用すると、アプリは、ボイスオーバーなどの補助的なテクノロジに対して、コンテキスト固有のカスタム機能を提供できます。
+- AssistiveTouch が`UIAccessibilityIsAssistiveTouchRunning`有効`UIAccessibilityAssistiveTouchStatusDidChangeNotification`になっているかどうかを判断するには、記号と記号を使用します。
+- `UIAccessibilityHearingDevicePairedEar` と`UIAccessibilityHearingDevicePairedEarDidChangeNotification`記号を使用して、ペアになっている mfi 聴覚援助の状態を取得します。
+- ラベルの動的な型をサポートするために、テキストフィールドとテキスト`PreferredFontForTextStyle`ボックスは`UIFont`クラスの新しいメソッドを使用します。
+- デバイスの変更時に要素の`UIContentSizeCategory`フォントを更新する必要があるかどうかを判断するには、 `UIContentSizeCategoryAdjusting`デリゲートの`AdjustsFontForContentSizeCategory`プロパティを使用します。
+- クラスのメソッドが非同期に呼び出され、open アクションの完了後に呼び出される完了ハンドラーがサポートされるようになりました。 `OpenURL` `UIApplication`
+- Cloudkit の共有を開始し、新しい`UICloudSharingController`クラスと`UICloudSharingControllerDelegate`クラスを使用してそのプロパティを変更します。
+- `UICollectionViews` 新しい`UICollectionViewDataSourcePrefetching`デリゲートを使用したのスクロールエクスペリエンスを向上させるために、プリフェッチされたセルを活用します。
+- 開発者は、タブバー項目 (テキストや背景色など) のバッジの外観を制御できるようになりました。
+- すべてのスクロールビューおよびスクロールビューのサブクラス ( `UICollectionView`など) で更新コントロールがサポートされるようになりました。
 
 ## <a name="webkit-enhancements"></a>WebKit の機能強化
 
-IOS 10 で WebKit フレームワークには、次の機能強化が施されました。
+IOS 10 の WebKit フレームワークには、次の機能強化が行われています。
 
-- ピークと pop のサポートが追加されましたが、`WKWebView`クラス。 使用して、`ShouldPreviewElement`メソッドを特定の web ビューがプレビュー表示を決定します。
+- Peek と pop の`WKWebView`サポートがクラスに追加されました。 メソッドを`ShouldPreviewElement`使用して、特定の web ビューでプレビューを表示するかどうかを決定します。
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [iOS 10 のサンプル](https://developer.xamarin.com/samples/ios/iOS10/)
-- [IOS 10 の新機能新機能](https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewIniOS/Articles/iOS10.html#//apple_ref/doc/uid/TP40017084-SW1)
+- [iOS 10 のサンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS10)
+- [IOS 10 の新機能](https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewIniOS/Articles/iOS10.html#//apple_ref/doc/uid/TP40017084-SW1)

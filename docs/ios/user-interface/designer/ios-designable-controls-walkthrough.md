@@ -1,42 +1,42 @@
 ---
 title: iOS Designer でのカスタム コントロールの使用
-description: このドキュメントでは、カスタム コントロールを作成し、iOS 用の Xamarin のデザイナーを使用する方法について説明します。 コントロールを iOS デザイナーのツールボックスで使用できるように、正しくレンダリングされるようにコントロールを実装および時刻、および詳細を設計する方法を示します。
+description: このドキュメントでは、カスタムコントロールを作成し、Xamarin Designer for iOS と共に使用する方法について説明します。 IOS デザイナーのツールボックスでコントロールを使用できるようにする方法、コントロールを実装して、正しくレンダリングされるようにする方法などについて説明します。
 ms.prod: xamarin
 ms.assetid: 9032B32E-97BD-4DA6-9955-811B84682578
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 98504c9d5f210d55a2be4c85c52d4bc1418fc223
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 448bc60891a44d8cd5eea0480031d692b4fb5d31
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61154425"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657477"
 ---
 # <a name="using-custom-controls-with-the-ios-designer"></a>iOS Designer でのカスタム コントロールの使用
 
 ## <a name="requirements"></a>必要条件
 
-IOS 用 Xamarin デザイナーは、Visual Studio for Mac と Visual Studio 2017 と後での Windows で使用します。
+Xamarin Designer for iOS は Visual Studio for Mac と Visual Studio 2017 以降の Windows で使用できます。
 
-このガイドで説明した内容を熟知することを前提としています、[ガイド ファースト](~/ios/get-started/index.md)します。
+このガイドでは、[はじめにガイド](~/ios/get-started/index.md)で説明されている内容を理解していることを前提としています。
 
 ## <a name="walkthrough"></a>チュートリアル
 
 > [!IMPORTANT]
-> Xamarin.Studio 5.5 以降、カスタム コントロールを作成する方法は、以前のバージョンと若干異なります。 か、カスタム コントロールを作成する、`IComponent`インターフェイスは、(関連する実装メソッド) を使用して必要またはクラスの注釈として付ける`[DesignTimeVisible(true)]`します。 後者の方法は、チュートリアルの次の例で使用されています。
+> Xamarin. Studio 5.5 以降では、カスタムコントロールの作成方法は、以前のバージョンと少し異なります。 カスタムコントロール`IComponent`を作成するには、インターフェイスが (関連付けられている実装メソッドを使用して) 必要で`[DesignTimeVisible(true)]`あるか、またはクラスに注釈を付けることができます。 後者の方法は、次のチュートリアルの例で使用されています。
 
 
-1. 新しいソリューションを作成、 **iOS > アプリ > 単一ビュー アプリケーション > c#** テンプレート、という名前を付けます`ScratchTicket`、し、新しいプロジェクト ウィザードを続行します。
+1. IOS > アプリから新しいソリューションを作成し`ScratchTicket`、[**シングルビューアプリケーションC# ] > テンプレート >** して、名前を指定し、新しいプロジェクトウィザードを続行します。
 
-    [![](ios-designable-controls-walkthrough-images/01new.png "新しいソリューションを作成します。")](ios-designable-controls-walkthrough-images/01new.png#lightbox)
+    [![](ios-designable-controls-walkthrough-images/01new.png "新しいソリューションを作成する")](ios-designable-controls-walkthrough-images/01new.png#lightbox)
 
-1. という名前の新しい空のクラス ファイルを作成する`ScratchTicketView`:
+1. という名前`ScratchTicketView`の新しい空のクラスファイルを作成します。
 
-    [![](ios-designable-controls-walkthrough-images/02new.png "新しい ScratchTicketView クラスを作成します。")](ios-designable-controls-walkthrough-images/02new.png#lightbox)
+    [![](ios-designable-controls-walkthrough-images/02new.png "新しい ScratchTicketView クラスを作成する")](ios-designable-controls-walkthrough-images/02new.png#lightbox)
 
-1. 次のコードを追加`ScratchTicketView`クラス。
+1. クラスの`ScratchTicketView`次のコードを追加します。
 
     ```csharp
     using System;
@@ -158,60 +158,60 @@ IOS 用 Xamarin デザイナーは、Visual Studio for Mac と Visual Studio 201
     ```
 
 
-1. 追加、 `FillTexture.png`、`FillTexture2.png`と`Monkey.png`ファイル (使用可能な[GitHub から](https://github.com/xamarin/ios-samples/blob/master/ScratchTicket/Resources/images.zip?raw=true)) に、**リソース**フォルダー。
+1. `FillTexture.png`、`FillTexture2.png`、および`Monkey.png` ([GitHub から](https://github.com/xamarin/ios-samples/blob/master/ScratchTicket/Resources/images.zip?raw=true)入手できる) ファイルを **Resources** フォルダーに追加します。
     
-1. ダブルクリックして、`Main.storyboard`ファイルをデザイナーで開きます。
+1. `Main.storyboard`ファイルをダブルクリックして、デザイナーで開きます。
 
-    [![](ios-designable-controls-walkthrough-images/03new.png "IOS Designer")](ios-designable-controls-walkthrough-images/03new.png#lightbox)
-
-
-1. ドラッグ アンド ドロップ、 **Image View**から、**ツールボックス**ストーリー ボードの表示にします。
-
-    [![](ios-designable-controls-walkthrough-images/04new.png "イメージのビューがレイアウトに追加")](ios-designable-controls-walkthrough-images/04new.png#lightbox)
+    [![](ios-designable-controls-walkthrough-images/03new.png "IOS デザイナー")](ios-designable-controls-walkthrough-images/03new.png#lightbox)
 
 
-1. 選択、 **Image View**変更とその**イメージ**プロパティを`Monkey.png`します。
+1. **[ツールボックス]** から**イメージビュー**をストーリーボードのビューにドラッグアンドドロップします。
 
-    [![](ios-designable-controls-walkthrough-images/05new.png "Monkey.png にイメージのイメージの表示プロパティの設定")](ios-designable-controls-walkthrough-images/05new.png#lightbox)
+    [![](ios-designable-controls-walkthrough-images/04new.png "レイアウトに追加されたイメージビュー")](ios-designable-controls-walkthrough-images/04new.png#lightbox)
+
+
+1. **イメージビュー**を選択し、その**イメージ**プロパティを`Monkey.png`に変更します。
+
+    [![](ios-designable-controls-walkthrough-images/05new.png "画像表示イメージのプロパティを「サル .png」に設定します。")](ios-designable-controls-walkthrough-images/05new.png#lightbox)
 
     
-1. サイズ クラスを使用しているようにこのイメージの表示を制限する必要があります。 制約モードにするには、2 回イメージをクリックします。 Center 固定ハンドルをクリックして、中央に制限して、垂直方向および水平方向に配置しましょう。
+1. サイズクラスを使用しているため、このイメージビューを制限する必要があります。 イメージを2回クリックして、制約モードにします。 中央にピン留めするハンドルをクリックし、垂直方向と水平方向に並べて配置します。
 
-    [![](ios-designable-controls-walkthrough-images/06new.png "画像を中央揃え")](ios-designable-controls-walkthrough-images/06new.png#lightbox)
+    [![](ios-designable-controls-walkthrough-images/06new.png "イメージの中央揃え")](ios-designable-controls-walkthrough-images/06new.png#lightbox)
 
-1. 高さと幅を制限するには、サイズを固定ハンドル ('骨' 形のハンドル) をクリックしを幅と高さをそれぞれ選択します。
+1. 高さと幅を制限するには、サイズ固定ハンドル ("ボーン" の形のハンドル) をクリックし、[幅] と [高さ] をそれぞれ選択します。
 
     [![](ios-designable-controls-walkthrough-images/07new.png "制約の追加")](ios-designable-controls-walkthrough-images/07new.png#lightbox)
 
 
-1. ツールバーの [更新] ボタンをクリックして、制約に基づくフレームを更新します。
+1. ツールバーの [更新] ボタンをクリックして、制約に基づいてフレームを更新します。
 
-    [![](ios-designable-controls-walkthrough-images/08new.png "制約ツールバー")](ios-designable-controls-walkthrough-images/08new.png#lightbox)
-
-
-1. 次に、プロジェクトをビルドできるように、**チケット ビューのスクラッチ**下に表示されます**カスタム コンポーネント**ツールボックスに。
-
-    [![](ios-designable-controls-walkthrough-images/09new.png "カスタム コンポーネントのツールボックス")](ios-designable-controls-walkthrough-images/09new.png#lightbox)
+    [![](ios-designable-controls-walkthrough-images/08new.png "[制約] ツールバー")](ios-designable-controls-walkthrough-images/08new.png#lightbox)
 
 
-1. ドラッグ アンド ドロップ、**チケット ビューのスクラッチ**monkey 画像の上に表示されるようにします。 スクラッチ チケット ビューが完全に、次に示すよう、monkey をについて説明するため、ドラッグ ハンドルを調整します。
+1. 次に、プロジェクトをビルドして、ツールボックス の **カスタムコンポーネント** の下に **スクラッチチケット ビュー**が表示されるようにします。
 
-    [![](ios-designable-controls-walkthrough-images/10new.png "イメージ ビュー上のスクラッチ チケット ビュー")](ios-designable-controls-walkthrough-images/10new.png#lightbox)
-
-1. イメージの表示にスクラッチ チケット ビューを制限するには、両方のビューを選択する外接する四角形を描画します。 次に示すように制約に基づいて幅、高さ、Center、中間および更新プログラムのフレームに制限するオプションを選択します。
-
-    [![](ios-designable-controls-walkthrough-images/11new.png "中央揃えと制約の追加")](ios-designable-controls-walkthrough-images/11new.png#lightbox)
+    [![](ios-designable-controls-walkthrough-images/09new.png "カスタムコンポーネントツールボックス")](ios-designable-controls-walkthrough-images/09new.png#lightbox)
 
 
-1. アプリケーションを実行し、monkey を表示するイメージをオフ"scratch"。
+1. **スクラッチチケットビュー**をドラッグアンドドロップして、サル画像の上に表示されるようにします。 次に示すように、スクラッチチケットビューがサルを完全にカバーするように、ドラッグハンドルを調整します。
 
-    [![](ios-designable-controls-walkthrough-images/10-app.png "サンプル アプリの実行")](ios-designable-controls-walkthrough-images/10-app.png#lightbox)
+    [![](ios-designable-controls-walkthrough-images/10new.png "イメージビューに対するスクラッチチケットビュー")](ios-designable-controls-walkthrough-images/10new.png#lightbox)
 
-## <a name="adding-design-time-properties"></a>デザイン時プロパティを追加します。
+1. 両方のビューを選択するには、外接する四角形を描画して、スクラッチチケットビューをイメージビューに制限します。 次に示すように、制約に基づいて、幅、高さ、中心、中央に制限するオプションを選択し、制約に基づいてフレームを更新します。
 
-デザイナーには、プロパティの数値型、列挙、文字列、bool、CGSize、示す UIColor、および UIImage のカスタム コントロールのデザイン時サポートも含まれています。 例として、プロパティを追加、 `ScratchTicketView` 「傷オフ」イメージを設定するには。
+    [![](ios-designable-controls-walkthrough-images/11new.png "制約の中心と追加")](ios-designable-controls-walkthrough-images/11new.png#lightbox)
 
-次のコードを追加、`ScratchTicketView`クラスのプロパティ。
+
+1. アプリケーションを実行し、イメージを "ゼロオフ" にして、サルを表示します。
+
+    [![](ios-designable-controls-walkthrough-images/10-app.png "サンプルアプリの実行")](ios-designable-controls-walkthrough-images/10-app.png#lightbox)
+
+## <a name="adding-design-time-properties"></a>デザイン時プロパティの追加
+
+このデザイナーには、numeric、enumeration、string、bool、CGSize、UIColor、および UIImage の各プロパティ型のカスタムコントロールのデザイン時サポートも含まれています。 例として、に`ScratchTicketView`プロパティを追加して、"傷のあるイメージ" を設定してみましょう。
+
+プロパティの`ScratchTicketView`クラスに次のコードを追加します。
 
 ```csharp
 [Export("Image"), Browsable(true)]
@@ -225,7 +225,7 @@ public UIImage Image
 }
 ```
 
-Null チェックを追加したいことも、`Draw`メソッドでは、次のようにします。
+次のように、 `Draw`メソッドに null チェックを追加することもできます。
 
 ```csharp
 public override void Draw(CGRect rect)
@@ -265,17 +265,17 @@ public override void Draw(CGRect rect)
 }
 ```
 
-など、`ExportAttribute`と`BrowsableAttribute`に設定する引数を持つ`true`デザイナーに表示されているプロパティで結果**プロパティ**パネル。 プロパティを変更するなど、プロジェクトに含まれているもう 1 つのイメージに`FillTexture2.png`、次に示すように、デザイン時にコントロールの更新中に結果します。
+引数をに`BrowsableAttribute` 設定`true`したおよびを含めると、デザイナーの [プロパティ] パネルにプロパティが表示されます`ExportAttribute` 。 次に示すように、プロパティをプロジェクトに含まれる別`FillTexture2.png`のイメージ (など) に変更すると、デザイン時にコントロールが更新されます。
 
- [![](ios-designable-controls-walkthrough-images/11-customproperty.png "デザイン時プロパティの編集")](ios-designable-controls-walkthrough-images/10-app.png#lightbox)
+ [![](ios-designable-controls-walkthrough-images/11-customproperty.png "デザイン時のプロパティの編集")](ios-designable-controls-walkthrough-images/10-app.png#lightbox)
 
 ## <a name="summary"></a>まとめ
 
-この記事には、iOS デザイナーを使用して iOS アプリケーションで使用するほか、カスタム コントロールを作成する方法を説明しました。 作成し、デザイナーのアプリケーションに使用できるようにするコントロールを構築する方法を説明しました**ツールボックス**します。 さらに、デザイン時およびランタイムの両方が正しく表示されるように、コントロールを実装する方法と、デザイナーでカスタム コントロールのプロパティを公開する方法を説明しました。
+この記事では、iOS デザイナーを使用して、カスタムコントロールを作成し、iOS アプリケーションで使用する方法について説明します。 デザイナーの**ツールボックス**で、コントロールを作成してビルドし、アプリケーションで使用できるようにする方法を説明しました。 また、デザイン時と実行時の両方で適切にレンダリングされるようにコントロールを実装する方法についても説明しました。また、デザイナーでカスタムコントロールのプロパティを公開する方法についても説明しました。
 
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [ScratchTicket (サンプル)](https://developer.xamarin.com/samples/monotouch/ScratchTicket/)
+- [ScratchTicket (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/scratchticket)
 - [必要なイメージ (サンプル)](https://github.com/xamarin/ios-samples/blob/master/ScratchTicket/Resources/images.zip?raw=true)
