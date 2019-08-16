@@ -1,211 +1,213 @@
 ---
 title: Xamarin での TeamCity の使用
-description: このガイドでは、モバイル アプリケーションをコンパイルし、Xamarin Test Cloud に送信する TeamCity の使用するための手順を説明します。
+description: このガイドでは、TeamCity を使用してモバイルアプリケーションをコンパイルし、Xamarin Test Cloud に送信するために必要な手順について説明します。
 ms.prod: xamarin
 ms.assetid: AC2626CB-28A7-4808-B2A9-789D67899546
 author: lobrien
 ms.author: laobri
 ms.date: 03/23/2017
-ms.openlocfilehash: a3cb79f33b64d933aa8ab4d3555479cc16238992
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 2880fcbc3366079955945c4780af2be82afe5a4a
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61218947"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511924"
 ---
 # <a name="using-team-city-with-xamarin"></a>Xamarin での TeamCity の使用
 
-_このガイドでは、モバイル アプリケーションをコンパイルし、Xamarin Test Cloud に送信する TeamCity の使用するための手順を説明します。_
+_このガイドでは、TeamCity を使用してモバイルアプリケーションをコンパイルし、Xamarin Test Cloud に送信するために必要な手順について説明します。_
 
-説明したように、[継続的な統合の概要](~/tools/ci/intro-to-ci.md)ガイド、継続的インテグレーション (CI) が役に立つ作業品質のモバイル アプリケーションを開発するときにします。 継続的インテグレーション サーバー ソフトウェアの実行可能な多くのオプションがあります。このガイドに焦点[TeamCity](http://www.jetbrains.com/teamcity/) JetBrains から。
+「[継続的インテグレーションの概要](~/tools/ci/intro-to-ci.md)」で説明したように、継続的インテグレーション (CI) は、品質の高いモバイルアプリケーションを開発するときに便利な方法です。 継続的インテグレーションサーバーソフトウェアには、さまざまなオプションが用意されています。このガイドでは、JetBrains からの[Teamcity](http://www.jetbrains.com/teamcity/)に注目します。
 
-TeamCity のインストールのさまざまな順列をいくつかあります。 これらのいくつかの一覧を次には。
+TeamCity のインストールには、いくつかの異なる順列があります。 これらのいくつかの一覧を次に示します。
 
-- **Windows サービス**– TeamCity が起動する Windows サービスとして Windows を起動する場合、このシナリオでします。 IOS アプリケーションをコンパイルする Mac ビルド ホストと組み合わせる必要があります。
+- **Windows サービス**–このシナリオでは、Windows が windows サービスとして起動すると teamcity が開始されます。 IOS アプリケーションをコンパイルするには、Mac ビルドホストとペアリングする必要があります。
 
-- **OS X 上のデーモンを起動**– 概念的には、これは、前の手順で説明されている Windows サービスとしての実行に非常に似ています。 既定で、ルート アカウントで、ビルドが実行されます。
+- **OS X でデーモンを起動**する–概念的には、これは前の手順で説明した Windows サービスとして実行するのとよく似ています。 既定では、ビルドはルートアカウントで実行されます。
 
-- **OS X 上のユーザー アカウント**– TeamCity を起動するたびに、ユーザーがログインするユーザー アカウントで実行することはできます。
+- **OS X のユーザーアカウント**–ユーザーがログインするたびに起動するユーザーアカウントで teamcity を実行できます。
 
-前のシナリオのユーザー アカウントで OS X での TeamCity の実行は、最も簡単なセットアップする最も簡単なです。
+前のシナリオでは、OS X のユーザーアカウントで TeamCity を実行するのが最も簡単で、簡単にセットアップできます。
 
-TeamCity の設定には、いくつかの手順があります。
+TeamCity の設定には、次のようないくつかの手順が含まれます。
 
-- **TeamCity インストール**– TeamCity のインストールは、このガイドでは説明しません。 このガイドでは、TeamCity がインストールされ、ユーザー アカウントで実行されていることを前提としています。 手順については[TeamCity をインストールする](http://confluence.jetbrains.com/display/TCD8/Installation)で見つかる、 [TeamCity 8 ドキュメント](http://confluence.jetbrains.com/display/TCD8/TeamCity+Documentation)jetbrains します。
+- **Teamcity のインストール**– teamcity のインストールについては、このガイドでは説明しません。 このガイドでは、TeamCity がインストールされ、ユーザーアカウントで実行されていることを前提としています。 [TeamCity のインストール](http://confluence.jetbrains.com/display/TCD8/Installation)手順については、JetBrains による[teamcity 8 のドキュメント](http://confluence.jetbrains.com/display/TCD8/TeamCity+Documentation)を参照してください。
 
-- **ビルド サーバーを準備する**: この手順では、必要なソフトウェア、ツールをインストールしに証明書が必要なモバイル アプリケーションの構築および配布用に準備します。
+- **ビルドサーバーの準備**: この手順では、モバイルアプリケーションを構築し、配布の準備を行うために必要なソフトウェア、ツール、および証明書をインストールします。
 
-- **ビルド スクリプトの作成**– この手順は、厳密には必要ありませんが、ビルド スクリプトが無人のアプリケーションの構築に役立ちます。 ビルド スクリプトを使用する可能性があると、継続的インテグレーションを練習していない場合でも、配布するバイナリを作成する一貫性のある反復可能な方法を提供するビルドの問題のトラブルシューティングに役立ちます。
+- **ビルドスクリプトの作成**-この手順は、厳密には必要ありませんが、ビルドスクリプトは、アプリケーションを無人でビルドするのに役立ちます。 ビルドスクリプトを使用すると、発生する可能性のあるビルドの問題のトラブルシューティングに役立ち、継続的インテグレーションが実行されていない場合でも、一貫性のある反復可能な方法で配布用のバイナリを作成できます。
 
-- **TeamCity プロジェクトを作成する**– メタ データがすべて含まれます TeamCity プロジェクトを作成する必要があります前の 3 つの手順を完了すると、ソース コードを取得し、プロジェクトをコンパイルして、Xamarin Test Cloud にテストを送信するために必要です。
+- **TeamCity プロジェクトの作成**–前の3つの手順が完了したら、ソースコードを取得し、プロジェクトをコンパイルして、テストを Xamarin Test Cloud に送信するために必要なすべてのメタデータを含む teamcity プロジェクトを作成する必要があります。
 
 ## <a name="requirements"></a>必要条件
 
-使用したエクスペリエンス[Xamarin Test Cloud](https://developer.xamarin.com/guides/testcloud)が必要です。
+[App Center テスト](https://docs.microsoft.com/appcenter/test-cloud/)の経験が必要です。
 
-TeamCity 8.1 に関する知識が必要です。 TeamCity のインストールでは、このドキュメントの範囲外です。 TeamCity は OS X Mavericks がインストールされているし、ルート アカウントではなく、通常のユーザー アカウントで実行するいると見なされます。
+TeamCity 8.1 に関する知識が必要です。 TeamCity のインストールについては、このドキュメントでは説明しません。 TeamCity は OS X Mavericks にインストールされており、ルートアカウントではなく通常のユーザーアカウントで実行されていることを前提としています。
 
-ビルド サーバーは、OS X、専用の継続的インテグレーションを実行するスタンドアロン コンピューターにあります。 理想的には、ビルド サーバーをデータベース サーバー、web サーバー、または開発者のワークステーションなど、他のロールの責任はできません。
+ビルドサーバーは、継続的インテグレーション専用の、OS X を実行するスタンドアロンコンピューターである必要があります。 理想的には、ビルドサーバーは、データベースサーバー、web サーバー、開発者ワークステーションなどの他のロールに対して責任を負いません。
 
 > [!IMPORTANT]
-> このガイドでは、Xamarin の「ヘッドレス」インストールは含まれません。
+> このガイドでは、Xamarin の "ヘッドレス" インストールについては説明しません。
 
 [!include[](~/tools/ci/includes/firewall-information.md)]
 
-## <a name="preparing-the-build-server"></a>ビルド サーバーを準備します。
+## <a name="preparing-the-build-server"></a>ビルドサーバーの準備
 
-ビルド サーバーの構成で重要な手順では、すべての必要なツール、ソフトウェア、およびモバイル アプリケーションを構築する証明書をインストールします。 ビルド サーバー モバイル ソリューションをコンパイルしてテストを実行することである必要があります。 構成の問題を最小限に抑えるには、ソフトウェアとツールを TeamCity をホストしている同じユーザー アカウントでインストールしてください。 必要なものの一覧を次には。
+ビルドサーバーを構成するための重要な手順は、モバイルアプリケーションをビルドするために必要なすべてのツール、ソフトウェア、および証明書をインストールすることです。 ビルドサーバーでモバイルソリューションをコンパイルし、テストを実行できることが重要です。 構成の問題を最小限に抑えるには、TeamCity をホストしているのと同じユーザーアカウントにソフトウェアとツールをインストールする必要があります。 必要なものの一覧を次に示します。
 
-1. **Visual Studio for Mac** – Xamarin.iOS および Xamarin.Android が含まれます。
-2. **Xamarin コンポーネント ストアへのログイン**– このオプションの手順で、のみ、アプリケーションが、Xamarin コンポーネント ストアからコンポーネントを使用するかどうかに必要な。 事前にこの時点で、コンポーネント ストアにログインすると、TeamCity ビルド アプリケーションをコンパイルしようとしました。 問題ができなくなります。
-3. **Xcode** – Xcode が iOS アプリケーションをコンパイルして署名するために必要です。
-4. **Xcode コマンド ライン ツール**– これはのインストール」セクションの手順 1. で説明されている、 [Ruby rbenv と更新](https://developer.xamarin.com/guides/testcloud/calabash/updating-ruby-using-rbenv/)ガイド。
-5. **署名 Id とプロビジョニング プロファイル**: 証明書をインポートし、XCode でプロファイルをプロビジョニングします。 Apple のガイドを参照してください[をエクスポートする署名 Id とプロビジョニング プロファイル](https://developer.apple.com/library/ios/recipes/xcode_help-accounts_preferences/articles/export_signing_assets.html)の詳細。
-6. **Android キーストア**– 必要な Android キーストアを TeamCity ユーザーがつまり、アクセス権を持っているディレクトリにコピー`~/Documents/keystores/MyAndroidApp1`します。
-7. **Calabash** – これは、アプリケーションがあるテスト Calabash を使用して作成された場合のオプションの手順。 参照してください、 [Calabash OS X Mavericks 上にインストールする](https://developer.xamarin.com/guides/testcloud/calabash/osx-installation/)ガイドと[Ruby rbenv と更新](https://developer.xamarin.com/guides/testcloud/calabash/updating-ruby-using-rbenv/)詳細ガイド。
+1. **Visual Studio for Mac** –これには、Xamarin と xamarin Android が含まれます。
+2. **Xamarin コンポーネントストアにログインする**–これはオプションの手順であり、アプリケーションが Xamarin コンポーネントストアのコンポーネントを使用する場合にのみ必要です。 この時点でコンポーネントストアに事前にログインすると、TeamCity ビルドがアプリケーションのコンパイルを試行しても問題が発生しなくなります。
+3. **Xcode** – Xcode は、iOS アプリケーションをコンパイルして署名するために必要です。
+4. **Xcode コマンドラインツール**–「 [Ruby With rbenv の更新](https://github.com/calabash/calabash-ios/wiki)」ガイドの「インストール」セクションの手順 1. で説明されています。
+5. **& プロビジョニングプロファイルの署名 id** : XCode を使用して証明書とプロビジョニングプロファイルをインポートします。 詳細については[、「署名 id とプロビジョニングプロファイルのエクスポート](https://developer.apple.com/library/ios/recipes/xcode_help-accounts_preferences/articles/export_signing_assets.html)に関する Apple のガイド」を参照してください。
+6. **Android キーストア**–必要な android キーストアを、teamcity ユーザーがアクセスできるディレクトリにコピーします`~/Documents/keystores/MyAndroidApp1`。
+7. **Calabash** –アプリケーションに calabash を使用して記述されたテストがある場合は、これは省略可能な手順です。 詳細については、「 [OS X Mavericks に Calabash をインストールする](https://github.com/calabash/calabash-ios/wiki)」および「 [Ruby With rbenv を更新](https://github.com/calabash/calabash-ios/wiki)する」ガイドを参照してください。
 
 次の図は、これらすべてのコンポーネントを示しています。
 
-![](teamcity-images/image1.png "この図ではこれらすべてのコンポーネント")
+![](teamcity-images/image1.png "この図は、これらすべてのコンポーネントを示しています。")
 
-すべてのソフトウェアがインストールされたら、ユーザー アカウントにログインし、すべてのソフトウェアが正しくインストールされた、動作していることを確認します。 ソリューションをコンパイルして、Test Cloud にアプリケーションを送信する必要があります。 これが大幅に簡略化できます、ビルド スクリプトを実行して、次のセクションで説明されているとします。
+すべてのソフトウェアがインストールされたら、ユーザーアカウントにログインし、すべてのソフトウェアが正しくインストールされ、動作していることを確認します。 これには、ソリューションをコンパイルし、Test Cloud にアプリケーションを送信する必要があります。 これは、次のセクションで説明するように、ビルドスクリプトを実行することで大幅に簡素化できます。
 
-## <a name="create-a-build-script"></a>ビルド スクリプトを作成します。
+## <a name="create-a-build-script"></a>ビルドスクリプトの作成
 
-TeamCity のコンパイルとテスト クラウドにモバイル アプリケーションの送信自体のすべての側面を処理することが可能でがビルド スクリプトを作成する強くお勧めします。 ビルド スクリプトには次の利点があります。
+TeamCity では、コンパイルとモバイルアプリケーションの送信のすべての側面を処理して Test Cloud することができますが、ビルドスクリプトを作成することを強くお勧めします。 ビルドスクリプトには、次のような利点があります。
 
-1. **ドキュメント**– ビルド スクリプトが、ソフトウェアを構築する方法に関するドキュメントの一種として機能します。 これは、いくつかの「マジック」に関連付けられたアプリケーションのデプロイを機能に集中できるように削除されます。
-1. **再現性**– ビルド スクリプトにより、またはユーザーの作業内容に関係なく、まったく同じ方法で動作が、アプリケーションがコンパイルおよび展開するには、毎回です。 この反復可能な整合性では、問題や、正しく実行されたビルドが原因でクリープがエラーや人的ミスを削除します。
-1. **バージョン管理**– ビルド スクリプトは、ソース管理システムに含めることができます。 これは、ビルド スクリプトへの変更の追跡、監視、およびエラーまたは誤りが見つかった場合に修正をできることを意味します。
-1. **環境を準備する**– ビルド スクリプトが必要なサード パーティの依存関係をインストールするためのロジックを含めることができます。 適切なコンポーネントとアプリケーションをビルドするようになります。
+1. **ドキュメント**–ビルドスクリプトは、ソフトウェアの構築方法に関するドキュメントの形式として機能します。 これにより、アプリケーションの配置に関連する "マジック" の一部が削除され、開発者は機能に専念できます。
+1. **再現性**: ビルドスクリプトを使用すると、アプリケーションをコンパイルして配置するたびに、どのユーザーがどのように動作するかに関係なく、まったく同じ方法で動作します。 この反復可能な一貫性によって、ビルドまたは人的エラーが不適切に実行されたことが原因で、でクリープする可能性のある問題またはエラーが除去されます。
+1. **バージョン管理**-ビルドスクリプトをソース管理システムに含めることができます。 つまり、ビルドスクリプトへの変更を追跡、監視、修正して、エラーまたは誤りが見つかった場合には修正できます。
+1. **環境を準備**する–ビルドスクリプトには、必要なサードパーティの依存関係をインストールするロジックを含めることができます。 これにより、アプリケーションが適切なコンポーネントでビルドされるようになります。
 
-ビルド スクリプトは (Windows) で Powershell ファイルまたは (OS X) 上の bash スクリプトとして簡単にできます。 ビルド スクリプトを作成する場合は、スクリプト言語のいくつかの選択肢があります。
+ビルドスクリプトは、Powershell ファイル (Windows の場合) または bash スクリプト (OS X の場合) のように簡単にできます。 ビルドスクリプトを作成する場合、スクリプト言語にはいくつかの選択肢があります。
 
 - [**rake** ](https://github.com/jimweirich/rake) – Ruby に基づいてプロジェクトを構築するためのドメイン固有言語 (DSL) になります。 rake は、人気の利点とライブラリの豊富なエコシステムがあります。
 
-- [**psake** ](https://github.com/psake/psake) – これは、ソフトウェアを構築するための Windows Powershell ライブラリ
+- [**psake**](https://github.com/psake/psake) - ソフトウェアを構築するための Windows Powershell ライブラリです
 
 - [**FAKE**](http://fsharp.github.io/FAKE/) – これは、ベースの DSLF#に必要な場合は、既存の .NET ライブラリを利用できるようにします。
 
-どのスクリプト言語が使用されるは、ユーザー設定や要件によって異なります。 [TaskyPro Calabash](https://github.com/xamarin/test-cloud-samples/tree/master/TaskyPro/TaskyPro-Calabash)例にはとして、rake を使用する例が含まれています、[ビルド スクリプト](https://github.com/xamarin/test-cloud-samples/blob/master/TaskyPro/TaskyPro-Calabash/Rakefile)します。
+どのスクリプト言語が使用されるかは、ユーザーの好みや要件によって異なります。 [TaskyPro Calabash](https://github.com/xamarin/test-cloud-samples/tree/master/TaskyPro/TaskyPro-Calabash)例にはとして、rake を使用する例が含まれています、[ビルド スクリプト](https://github.com/xamarin/test-cloud-samples/blob/master/TaskyPro/TaskyPro-Calabash/Rakefile)します。
 
 > [!NOTE]
-> 表現力とソフトウェアの構築には専用の DSL の保守容易性、MSBuild または NAnt がこれらの不足などの XML ベース ビルド システムを使用することになります。
+> MSBuild や NAnt などの XML ベースのビルドシステムを使用することもできますが、本ソフトウェアの構築専用の DSL の表現力や保守性は欠けています。
 
-### <a name="parameterizing-the-build-script"></a>ビルド スクリプトのパラメーター化
+### <a name="parameterizing-the-build-script"></a>ビルドスクリプトのパラメーター化
 
-構築およびソフトウェアのテストのプロセスには、秘密に保つ必要があります情報が必要です。 具体的には、APK を作成、キーストアまたはキーストア内のキーのエイリアスのパスワードが必要があります。 同様に、Test Cloud では、開発者に一意の API キーが必要です。 これらの種類の値はなりませんハード ビルド スクリプトのコード化されました。 代わりに変数として、ビルド スクリプトに渡す必要があります。
+ソフトウェアのビルドとテストのプロセスには、機密情報を保持する必要がある情報が必要です。 特に、APK の作成には、キーストアのパスワード、またはキーストアのキーエイリアスが必要になる場合があります。 同様に、Test Cloud には、開発者に固有の API キーが必要です。 これらの種類の値は、ビルドスクリプトでハードコーディングしないでください。 代わりに、変数としてビルドスクリプトに渡す必要があります。
 
-重要度の低いには、iOS デバイスの ID またはクラウドのテストに使用するデバイスのテストを識別する Android デバイス ID の実行などの値です。 これらは、保護する必要のある値ではありませんが、ビルドからビルドを変更することがあります。
+機密性が低いは、iOS デバイス ID や、テストの実行に使用 Test Cloud デバイスを識別する Android デバイス ID などの値です。 これらは、保護する必要がある値ではなく、ビルドごとに変更される可能性があります。
 
-ビルド スクリプトの外部変数のこれらの型を格納することも簡単など、開発者と、組織内のビルド スクリプトを共有します。 開発者は、ビルド サーバーとして同じスクリプトを使用することがありますが、独自のキーストアと API キーを使用することができます。
+これらの種類の変数をビルドスクリプトの外部に格納すると、開発者は、たとえば、組織内でビルドスクリプトを共有しやすくなります。 開発者は、ビルドサーバーとまったく同じスクリプトを使用できますが、独自のキーストアと API キーを使用できます。
 
-これらの機密性の高い値を格納するための 2 つの可能なオプションがあります。
+これらの機密値を格納するには、次の2つのオプションを使用できます。
 
-- **構成ファイル**– この値は、バージョン管理にチェックインしない必要があります Test Cloud の API キーを保護します。 ファイルは、各マシンを作成できます。 このファイルから値を読み取る方法は、使用するスクリプト言語に依存します。
+- **構成ファイル**– Test Cloud API キーを保護するには、この値をバージョン管理にチェックインしないようにする必要があります。 ファイルは、コンピューターごとに作成できます。 このファイルから値を読み取る方法は、使用するスクリプト言語によって異なります。
 
-- **環境変数**– これら基になるスクリプト言語の共有に関係なく、コンピューターごとに簡単に設定することができます。
+- **環境変数**–コンピューター単位で簡単に設定でき、基になるスクリプト言語に依存しません。
 
-これらの選択肢のそれぞれに長所と短所があります。 TeamCity は、ため、このガイドは、ビルド スクリプトを作成するときに、この手法は推奨環境変数を適切に動作します。
+これらの選択肢には長所と短所があります。 TeamCity は環境変数で適切に動作するため、このガイドではビルドスクリプトを作成するときにこの手法をお勧めします。
 
-### <a name="build-steps"></a>ビルド ステップ
+### <a name="build-steps"></a>ビルドステップ
 
-ビルド スクリプトは、次の手順を実行できる必要があります。
+ビルドスクリプトは、次の手順を実行できる必要があります。
 
-- **アプリケーションをコンパイル**– これは、正しいプロビジョニング プロファイルで、アプリケーションに署名が含まれています。
+- **アプリケーションをコンパイルし**ます。これには、適切なプロビジョニングプロファイルを使用したアプリケーションへの署名も含まれます。
 
-- **Xamarin Test Cloud にアプリケーションを提出**– これは、署名と適切なキーストアで APK を整列 zip に含まれます。
+- **アプリケーションを Xamarin Test Cloud に送信**します。これには、適切なキーストアを使用して apk を署名し、zip に揃えることが含まれます。
 
-これら 2 つの手順については、以下で詳しく説明します。
+これらの2つの手順については、以下で詳しく説明します。
 
-#### <a name="compiling-a-xamarinios-application"></a>Xamarin.iOS アプリケーションのコンパイル
+#### <a name="compiling-a-xamarinios-application"></a>Xamarin. iOS アプリケーションのコンパイル
 
 [!include[](~/tools/ci/includes/commandline-compile-of-xamarin-ios-ipa.md)]
 
-#### <a name="compiling-a-xamarinandroid-application"></a>Xamarin.Android アプリケーションのコンパイル
+#### <a name="compiling-a-xamarinandroid-application"></a>Xamarin Android アプリケーションのコンパイル
 
-Android アプリケーションをコンパイルする**xbuild** (または**msbuild** Windows 上)。
+Android アプリケーションをコンパイルするには、 **xbuild** (または Windows 上の**msbuild** ) を使用します。
 
 ```bash
 /Library/Frameworks/Mono.framework/Commands/xbuild /t:SignAndroidPackage /p:Configuration=Release /path/to/android.csproj
 ```
 
-Xamarin Android アプリケーションをコンパイルすることに注意して**xbuild** 、プロジェクトを使用して iOS アプリケーションをビルドする**xbuild**ソリューションが必要です。
+Xamarin Android アプリケーションをコンパイルすると、 **xbuild**によってプロジェクトが使用され、iOS アプリケーションをビルドするにはソリューション**が必要に**なります。
 
-#### <a name="submitting-xamarinuitests-to-test-cloud"></a>Test Cloud に Xamarin.UITests を送信します。
+#### <a name="submitting-xamarinuitests-to-test-cloud"></a>UITests を Test Cloud に送信しています
 
-UITests を使用して送信、`test-cloud.exe`アプリケーションは、次のスニペットに示すようにします。
+UITests は、次の`test-cloud.exe`スニペットに示すように、アプリケーションを使用して送信されます。
 
 ```bash
 test-cloud.exe <path-to-apk-or-ipa-file> <test-cloud-team-api-key> --devices <device-selection-id> --assembly-dir <path-to-tests-containing-test-assemblies> --nunit-xml report.xml --user <email>
 ```
 
-テストの実行は、テスト結果がという NUnit スタイル XML ファイルの形式で返されます**report.xml**します。 TeamCity ビルド ログに情報が表示されます。
+テストが実行されると、テスト結果は、**レポート xml**という NUnit 形式の xml ファイルの形式で返されます。 TeamCity によって、ビルドログに情報が表示されます。
 
-Test Cloud に UITests を送信する方法の詳細については、このガイドを参照してで[アップロードの準備 Xamarin.UITests](/appcenter/test-cloud/preparing-for-upload/uitest/)します。
+Test Cloud に UITests を送信する方法の詳細については、[アップロードのための UITests の準備](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/uitest/)に関するこのガイドを参照してください。
 
-#### <a name="submitting-calabash-tests-to-test-cloud"></a>Calabash テスト クラウドに送信します。
+#### <a name="submitting-calabash-tests-to-test-cloud"></a>Test Cloud に対する Calabash テストの送信
 
-Calabash テストを使用して送信されたが、 `test-cloud` gem、次のスニペットに示すようにします。
+Calabash テストは、次の`test-cloud`スニペットに示すように gem を使用して送信されます。
 
 ```bash
 test-cloud submit /path/to/APK-or-IPA <test-cloud-team-api-key> --devices <device-id> --user <email>
 ```
-Test Cloud に Android アプリケーションを送信するには、まず calabash android を使用して、APK テスト サーバーを再構築する必要があります。
+
+Android アプリケーションを Test Cloud に送信するには、最初に calabash-android を使用して APK テストサーバーを再構築する必要があります。
 
 ```bash
 $ calabash-android build </path/to/signed/APK>
 $ test-cloud submit /path/to/APK <test-cloud-team-api-key> --devices <ANDROID_DEVICE_ID> --profile=android --config=config/cucumber.yml --pretty
 ```
-Calabash テストの送信についての詳細についてを参照してください Xamarin のガイドで[Calabash テストを Test Cloud に送信する](https://developer.xamarin.com/guides/testcloud/calabash/working-with/submitting-tests-to-xamarin-test-cloud/)します。
 
-## <a name="creating-a-teamcity-project"></a>TeamCity プロジェクトを作成します。
+Calabash テストの送信の詳細については、 [Test Cloud への Calabash テストの送信](https://github.com/calabash/calabash-ios/wiki)に関する Xamarin のガイドを参照してください。
 
-TeamCity がインストールされている、Visual Studio for Mac は、プロジェクトをビルドすると、プロジェクトのビルドし、Test Cloud に送信する TeamCity でプロジェクトを作成する時間になります。
+## <a name="creating-a-teamcity-project"></a>TeamCity プロジェクトの作成
 
-1. Web ブラウザー経由での TeamCity にログインして開始します。 ルート プロジェクトに移動します。
+TeamCity がインストールされ Visual Studio for Mac、プロジェクトをビルドできるようになったら、TeamCity でプロジェクトを作成してプロジェクトをビルドし、Test Cloud に送信します。
 
-    ![ルート プロジェクトに移動](teamcity-images/image2.png "ルート プロジェクトに移動")ルート プロジェクトの下に新しいサブ プロジェクトを作成します。
+1. Web ブラウザーを使用して TeamCity にログインすることで開始されます。 ルートプロジェクトに移動します。
 
-    ![ルート プロジェクト下に、ルート プロジェクトに移動し、新しいサブ プロジェクトを作成する](teamcity-images/image3.png "への移動、ルート下に、ルート、プロジェクトに新しいサブ プロジェクトの作成")
-2. サブ プロジェクトが作成されたら、新しいビルドの構成を追加します。
+    ![ルートプロジェクトに移動します]。(teamcity-images/image2.png "ルートプロジェクトに移動します")。ルートプロジェクトの下に、新しいサブプロジェクトを作成します。
 
-    ![サブ プロジェクトが作成されたら、新しいビルド構成を追加します。](teamcity-images/image5.png "サブ プロジェクトが作成されたら、新しいビルド構成を追加します。")
-3. VC プロジェクトをビルド構成にアタッチします。 これは、バージョン コントロールの設定画面を使用して行います。
+    ルート![プロジェクトの下にあるルートプロジェクトに移動し、新しいサブプロジェクトを作成]します。ルート(teamcity-images/image3.png "プロジェクトの下にあるルートプロジェクトに移動し、新しいサブプロジェクトを作成")します。
+2. サブプロジェクトが作成されたら、新しいビルド構成を追加します。
 
-    ![バージョン コントロールの設定画面を使用してこれには](teamcity-images/image6.png "バージョン コントロールの設定画面を使用してこれには")
+    ![サブプロジェクトが作成されたら、新しいビルド構成を追加します]。(teamcity-images/image5.png "サブプロジェクトが作成されたら、新しいビルド構成を追加します")。
+3. ビルド構成に VCS プロジェクトをアタッチします。 これを行うには、[バージョンコントロールの設定] 画面を使用します。
 
-    VC プロジェクトの作成がない場合は、次に示す新しい VCS ルート ページから作成するオプションがあります。
+    ![これは、[バージョンコントロールの設定] 画面で行います]。(teamcity-images/image6.png "これは、[バージョンコントロールの設定] 画面で行います")。
 
-    ![VC プロジェクトの作成がない場合は、新しい VCS ルート ページから作成するオプションがある](teamcity-images/image7.png "VC プロジェクトの作成がない場合は、新しい VCS ルート ページから作成するオプションがあります。")
+    VCS プロジェクトが作成されていない場合は、次に示す新しい VCS ルートページから作成することもできます。
 
-    VCS ルートがアタッチされると、プロジェクトをチェック アウト TeamCity はしようとして自動ビルド ステップを検出します。 TeamCity に慣れている場合、検出されたビルド手順のいずれかを選択できます。 ここでは、検出されたビルド手順を無視しても安全です。
+    ![Vcs プロジェクトが作成されていない場合は、新しい Vcs ルートページから作成することもでき]ます。(teamcity-images/image7.png "Vcs プロジェクトが作成されていない場合は、新しい Vcs ルートページから作成することもでき")ます。
 
-4. 次に、ビルドのトリガーを構成します。 これはビルドをキューにユーザーがリポジトリにコードをコミットする場合など、特定の条件が満たされたときにします。 次のスクリーン ショットでは、ビルドのトリガーを追加する方法を示します。
+    VCS のルートがアタッチされると、TeamCity によってプロジェクトがチェックアウトされ、ビルドのステップが自動的に検出されます。 TeamCity を使い慣れている場合は、検出されたビルドステップのいずれかを選択できます。 現時点では、検出されたビルドの手順を無視しても安全です。
 
-    ![このスクリーン ショットは、ビルドのトリガーを追加する方法を示しています。](teamcity-images/image8.png "このスクリーン ショットは、ビルドのトリガーを追加する方法を示しています。")ビルド トリガーを構成する例を次のスクリーン ショットで確認できます。
+4. 次に、ビルドトリガーを構成します。 これにより、ユーザーがリポジトリにコードをコミットしたときなど、特定の条件が満たされたときにビルドがキューに入れられます。 次のスクリーンショットは、ビルドトリガーを追加する方法を示しています。
 
-    ![ビルドのトリガーの構成の例は、このスクリーン ショットで確認できます](teamcity-images/image9.png "ビルド トリガーの構成の例は、このスクリーン ショットで確認できます")
+    ![このスクリーンショットは、ビルドトリガーを追加する方法を示し]ています。(teamcity-images/image8.png "このスクリーンショットは、ビルドトリガーを追加する方法を示し")ています。ビルドトリガーを構成する例を次のスクリーンショットに示します。
 
-5. ビルド スクリプトのパラメーター化の前のセクションでは、環境変数としていくつかの値を格納することをお勧めします。 これらの変数は、パラメーターの画面を使用して、ビルド構成に追加できます。 テスト クラウド API キー、iOS デバイスの ID、および Android のデバイス ID の下のスクリーン ショットに示すように、変数を追加します。
+    ![ビルドトリガーを構成する例については、このスクリーンショット]をご覧ください。(teamcity-images/image9.png "ビルドトリガーを構成する例については、このスクリーンショット")をご覧ください。
 
-    ![テスト クラウド API キー、iOS デバイスの ID、および Android のデバイス ID の変数を追加](teamcity-images/image11.png "テスト クラウド API キー、iOS デバイスの ID、および Android のデバイス ID の変数を追加")
+5. 前のセクション「ビルドスクリプトのパラメーター化」では、環境変数としていくつかの値を格納することを推奨していました。 これらの変数は、[パラメーター] 画面を使用してビルド構成に追加できます。 次のスクリーンショットに示すように、Test Cloud API キー、iOS デバイス ID、および Android デバイス ID の変数を追加します。
 
-6. 最後の手順では、アプリケーションとエンキュー Test Cloud にアプリケーションをコンパイルするビルド スクリプトで起動されるビルド ステップを追加します。 次のスクリーン ショットでは、アプリケーションを構築する、Rakefile を使用するビルド ステップの例を示します。
+    ![TEST CLOUD API キー、iOS デバイス id、および Android デバイス id の変数を追加]します。(teamcity-images/image11.png "TEST CLOUD API キー、iOS デバイス id、および Android デバイス id の変数を追加")します。
 
-    ![このスクリーン ショットのようなアプリケーションを構築する、Rakefile を使用するビルド ステップの](teamcity-images/image12.png "このスクリーン ショットは、Rakefile を使用してアプリケーションを構築するビルド手順の例")
+6. 最後の手順では、ビルドスクリプトを呼び出してアプリケーションをコンパイルし、アプリケーションを Test Cloud にエンキューするビルドステップを追加します。 次のスクリーンショットは、Rakefile を使用してアプリケーションをビルドするビルドステップの例です。
 
-7. この時点では、ビルド構成が完了しました。 プロジェクトが正しく構成されていることを確認するビルドをトリガーすることをお勧めします。 これを行うには、意味のない小さな変更をリポジトリにコミットします。 TeamCity は、コミットを検出し、ビルドを開始する必要があります。
+    ![このスクリーンショットは、Rakefile を使用してアプリケーションをビルドするビルドステップの例です]。(teamcity-images/image12.png "このスクリーンショットは、Rakefile を使用してアプリケーションをビルドするビルドステップの例です")。
 
-8. ビルドが完了すると、ビルド ログを検査し、問題や注意が必要なビルドの警告があるかどうかを参照してください。
+7. この時点で、ビルド構成が完了します。 ビルドをトリガーして、プロジェクトが適切に構成されていることを確認することをお勧めします。 これを行うには、小規模で重要ではない変更をリポジトリにコミットすることをお勧めします。 TeamCity はコミットを検出し、ビルドを開始する必要があります。
+
+8. ビルドが完了したら、ビルドログを調べ、注意が必要なビルドに問題または警告があるかどうかを確認します。
 
 ## <a name="summary"></a>まとめ
 
-このガイドでは、TeamCity を使用して、Xamarin モバイル アプリケーションを構築し、Test Cloud に送信する方法について説明します。 ビルド プロセスを自動化するビルド スクリプトの作成について説明しました。 ビルド スクリプトに任せ、アプリケーションのコンパイル、テスト クラウドに送信して結果の待機
+このガイドでは、TeamCity を使用して Xamarin モバイルアプリケーションをビルドし、Test Cloud に送信する方法について説明します。 ビルドプロセスを自動化するためのビルドスクリプトの作成について説明しました。 ビルドスクリプトは、アプリケーションのコンパイル、Test Cloud への送信、および結果の待機を行います。
 
-開発者がコードをコミットするたびにビルドをキューは、ビルド スクリプトを呼び出す TeamCity でプロジェクトを作成する方法について説明しました。
+次に、開発者がコードをコミットしてビルドスクリプトを呼び出すたびにビルドをキューにする、TeamCity でプロジェクトを作成する方法について説明します。
 
 ## <a name="related-links"></a>関連リンク
 
-- [Xamarin.UITests などのアップロードを準備します。](/appcenter/test-cloud/preparing-for-upload/uitest/)
-- [インストールして、TeamCity の構成](http://confluence.jetbrains.com/display/TCD8/Installing+and+Configuring+the+TeamCity+Server)
+- [UITests fpr アップロードを準備しています](/appcenter/test-cloud/preparing-for-upload/uitest/)
+- [TeamCity のインストールと構成](http://confluence.jetbrains.com/display/TCD8/Installing+and+Configuring+the+TeamCity+Server)

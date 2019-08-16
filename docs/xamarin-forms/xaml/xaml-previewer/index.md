@@ -1,6 +1,6 @@
 ---
-title: Xamarin.Forms 用 XAML プレビューアー
-description: この記事では、XAML プレビューアーを使用してレンダリングを入力すると、Xamarin.Forms のレイアウトを表示する方法について説明します。 XAML プレビューアーには、Visual Studio 2019 および for mac。 Visual Studio 2019 です。
+title: Xamarin. フォーム用の XAML プレビューアー
+description: この記事では、XAML プレビューアーを使用して、入力時に表示される Xamarin のレイアウトを確認する方法について説明します。 XAML プレビューアーは、Visual Studio 2019 および Visual Studio 2019 for Mac で使用できます。
 zone_pivot_groups: platform
 ms.prod: xamarin
 ms.assetid: 84769ff1-72fd-4c44-8251-dd6d5bf8c7b2
@@ -8,20 +8,20 @@ ms.technology: xamarin-forms
 author: maddyleger1
 ms.author: maleger
 ms.date: 02/04/2019
-ms.openlocfilehash: db243a9c8dcb25f51bc7926a7aa239531e9c24f6
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: b287d523101bb8ca7faca8ea95ee898ccf9c0bb1
+ms.sourcegitcommit: e02b725e48af867eb2c53ac9e17805f778fbbc8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61210820"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68757267"
 ---
-# <a name="xaml-previewer-for-xamarinforms"></a>Xamarin.Forms 用 XAML プレビューアー
+# <a name="xaml-previewer-for-xamarinforms"></a>Xamarin. フォーム用の XAML プレビューアー
 
-_レンダリングを入力すると、Xamarin.Forms のレイアウトを参照してください。_
+_入力時に表示される Xamarin のフォームレイアウトを確認する_
 
 ## <a name="overview"></a>概要
 
-XAML プレビューアーは iOS と Android で Xamarin.Forms XAML ページがどのように表示されるかを示しています。 XAML を変更するときに、コードと共にすぐにプレビューを確認します。 XAML プレビューアーには、Visual Studio および Visual Studio for mac です。
+XAML プレビューアーには、iOS と Android に関する Xamarin の XAML ページの外観が示されています。 XAML に変更を加えると、コードと共にすぐにプレビューが表示されます。 XAML プレビューアーは、Visual Studio および Visual Studio for Mac で使用できます。
 
 ## <a name="getting-started"></a>作業の開始
 
@@ -29,46 +29,49 @@ XAML プレビューアーは iOS と Android で Xamarin.Forms XAML ページ�
 
 ### <a name="visual-studio-2019"></a>Visual Studio 2019
 
-分割ビューのウィンドウにある矢印をクリックして、XAML プレビューアーを開くことができます。 既定値に分割表示動作を変更する場合は、使用、**ツール > オプション > Xamarin > フォーム プレビューアー**ダイアログ。 このダイアログ ボックスでは、既定のドキュメント ビューと分割の向きを選択できます。
+[分割ビュー] ペインの矢印をクリックすると、XAML プレビューアーを開くことができます。 既定の分割ビューの動作を変更する場合は、**ツール > オプション > Xamarin > フォームプレビューアー**  ダイアログを使用します。 このダイアログボックスでは、既定のドキュメントビューと分割の向きを選択できます。
 
-[![Visual Studio のオプションの Xamarin.Forms プレビューアー](xaml-previewer-images/xamlp-options-vs-sm.png "Visual Studio で Xamarin.Forms プレビューアーのオプション")](xaml-previewer-images/xamlp-options-vs-lg.png#lightbox)
+[![Visual Studio の Xamarin. フォームプレビューアーオプション](xaml-previewer-images/xamlp-options-vs-sm.png "Visual Studio の Xamarin. フォームプレビューアーオプション")](xaml-previewer-images/xamlp-options-vs-lg.png#lightbox)
 
-エディターが開きますフルサイズまたは次へ で選択した設定に基づいて、プレビューアーを XAML ファイルを開くときに、**ツール > オプション > Xamarin > フォーム プレビューアー**ダイアログ。 ただし、エディター ウィンドウ内の各ファイルの分割を変更できます。
+XAML ファイルを開くと、エディターは、[**ツール > オプション] > [Xamarin > フォーム**] ポップアップダイアログで選択した設定に基づいて、フルサイズまたはプレビューアーの横に表示されます。 ただし、エディターウィンドウでは、ファイルごとに分割を変更できます。
 
-#### <a name="xaml-preview-controls"></a>XAML プレビュー コントロール
+#### <a name="xaml-preview-controls"></a>XAML プレビューコントロール
 
-XAML プレビューアーをコードを表示するかどうか、またはウィンドウを表示、分割ボタンを選択すると、両方とも選択します。 中央のボタンは、何側プレビューアーと、コードが上を交換します。
+分割ビューペインでこれらのボタンを選択することにより、コード、XAML プレビューアー、またはその両方を表示するかどうかを選択します。 中央のボタンをクリックすると、プレビューアーとコードのサイドが交換されます。
 
-[![デザイン、ソース、および Visual Studio での分割ビューの切り替えにコントロールを Xamarin.Forms プレビューアー](xaml-previewer-images/xamlp-controls-splitview-vs-sm.png "Xamarin.Forms プレビューアーのコントロールをデザイン、ソース、および Visual Studio での分割ビューを切り替える")](xaml-previewer-images/xamlp-controls-splitview-vs-lg.png#lightbox)
+[![Visual Studio でデザイン、ソース、および分割ビューを切り替えるための Xamarin フォームプレビューアーコントロール](xaml-previewer-images/xamlp-controls-splitview-vs-sm.png "Visual Studio でデザイン、ソース、および分割ビューを切り替えるための Xamarin フォームプレビューアーコントロール")](xaml-previewer-images/xamlp-controls-splitview-vs-lg.png#lightbox)
 
-画面が垂直方向または水平方向に分割するかどうかを変更するか、完全に 1 つのペインを折りたたみます。
+画面を縦または横に分割するか、ウィンドウ全体を折りたたむかを変更できます。
 
-[![Visual Studio で Xamarin.Forms プレビューアー ウィンドウの向きコントロール](xaml-previewer-images/xamlp-controls-orientation-vs-sm.png "Visual Studio で Xamarin.Forms プレビューアー ウィンドウの向きのコントロール")](xaml-previewer-images/xamlp-controls-orientation-vs-lg.png#lightbox)
+[![Visual Studio での Xamarin フォームのプレビューアーペインの向きコントロール](xaml-previewer-images/xamlp-controls-orientation-vs-sm.png "Visual Studio での Xamarin フォームのプレビューアーペインの向きコントロール")](xaml-previewer-images/xamlp-controls-orientation-vs-lg.png#lightbox)
 
 ::: zone-end
 ::: zone pivot="macos"
 
 ### <a name="visual-studio-for-mac"></a>Visual Studio for Mac
 
-**プレビュー** XAML ページを開くと、エディター ボタンが表示されます。 表示またはキーを押して、プレビューアーを非表示、**プレビュー**任意の XAML ドキュメント ウィンドウの右上隅にあるボタン。
+**[プレビュー]** ボタンは、XAML ページを開いたときにエディターに表示されます。 任意の XAML ドキュメントウィンドウの左下にある **[プレビュー]** ボタンまたは **[分割]** ボタンを押して、プレビューアーを表示または非表示にします。
 
-[![Visual Studio for Mac で Xamarin.Forms プレビューアー](xaml-previewer-images/xamlp-list-sml.png "Visual Studio for Mac で Xamarin.Forms プレビューアー")](xaml-previewer-images/xamlp-list.png#lightbox)
+[![プレビューまたは分割ボタンで有効になっている Xamarin. フォームプレビューアー](xaml-previewer-images/xamlp-list-sml.png)](xaml-previewer-images/xamlp-list.png#lightbox)
+
+> [!NOTE]
+> 以前のバージョンの Visual Studio for Mac では、**プレビュー**ボタンはウィンドウの右上にありました。
 
 ::: zone-end
 
-## <a name="xaml-previewer-options"></a>XAML プレビューアー オプション
+## <a name="xaml-previewer-options"></a>XAML プレビューアーオプション
 
-プレビュー ウィンドウの上部のオプションがあります。
+プレビューウィンドウの上部に表示されるオプションは次のとおりです。
 
-* **Android** – 画面の Android バージョンを表示します。
-* **iOS** – 画面の iOS バージョンを表示する (*に注意してください。Windows を Visual Studio を使用している場合あります[、Mac とペアリングして](~/ios/get-started/installation/windows/connecting-to-mac/index.md)このモードを使用する*)
-* **デバイス**-解像度や画面サイズを含む、Android または iOS のデバイスのドロップダウン リスト
-* **縦 (アイコン)** -縦向きを使用して、プレビュー
-* **横 (アイコン)** – 使用して横長の向きのプレビュー
+* **Android** –画面の android バージョンを表示する
+* **ios** –画面の ios バージョンを表示します *(注:Windows で Visual Studio を使用している場合、このモードを使用するには、[Mac とペアリング](~/ios/get-started/installation/windows/connecting-to-mac/index.md)しておく必要があります*)
+* **デバイス**-解像度と画面サイズを含む Android または iOS デバイスのドロップダウンリスト
+* **縦 (アイコン)** –プレビューで縦向きを使用します
+* **横 (アイコン)** –プレビューに横向きを使用します
 
-## <a name="detect-design-mode"></a>デザイン モードを検出します。
+## <a name="detect-design-mode"></a>デザインモードの検出
 
-静的な[ `DesignMode.IsDesignModeEnabled` ](xref:Xamarin.Forms.DesignMode.IsDesignModeEnabled)プロパティは、プレビューアーで、アプリケーションが実行されているかどうかを示します。 これを使用して、アプリケーションが、または、プレビューアーで実行されていないときにのみ実行されるコードを指定できます。
+静的[`DesignMode.IsDesignModeEnabled`](xref:Xamarin.Forms.DesignMode.IsDesignModeEnabled)プロパティは、アプリケーションがプレビューアーで実行されているかどうかを示します。 これを使用すると、アプリケーションがプレビューアーで実行されている場合、または実行されていない場合にのみ実行されるコードを指定できます。
 
 ```csharp
 if (DesignMode.IsDesignModeEnabled)
@@ -82,21 +85,21 @@ if (!DesignMode.IsDesignModeEnabled)
 }
 ```
 
-このプロパティはデザイン時に実行に失敗した、ページのコンス トラクターでライブラリを初期化する場合に便利です。
+このプロパティは、デザイン時に実行に失敗したページコンストラクター内のライブラリを初期化する場合に便利です。
 
 ## <a name="troubleshooting"></a>トラブルシューティング
 
-以下の問題の確認と[Xamarin Forums](https://forums.xamarin.com/categories/xamarin-forms)プレビューアーが動作していない場合、します。
+プレビューアーが機能していない場合は、以下の問題と[Xamarin フォーラム](https://forums.xamarin.com/categories/xamarin-forms)を確認してください。
 
-### <a name="xaml-previewer-isnt-showing-or-shows-an-error"></a>XAML プレビューアーが表示されていない、またはエラーを示します
+### <a name="xaml-previewer-isnt-showing-or-shows-an-error"></a>XAML プレビューアーが表示されていないか、エラーが表示されています
 
-* 起動するには、プレビューアーの時間がかかることができます - わかります「初期化レンダリング」準備が整うまでです。
-* 閉じてみてください XAML ファイル。
-* いることを確認、`App`クラスにはパラメーターなしのコンス トラクター。
-* -Xamarin.Forms バージョンを確認する以上である必要がある Xamarin.Forms 3.6 です。 NuGet から最新の Xamarin.Forms バージョンを更新したことができます。
-* Android のプレビュー - JDK のインストールに必要な最小チェック[JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/index.html)します。
-* 折り返しのいずれかをお試しください ページのクラスを初期化するC#で分離コード`if (!DesignMode.IsDesignModeEnabled)`します。
+* プレビューアーが起動するまでに時間がかかることがあります。準備が整うまで、"レンダリングを初期化しています" と表示されます。
+* XAML ファイルを閉じてから再度開いてみてください。
+* `App`クラスにパラメーターなしのコンストラクターがあることを確認します。
+* Xamarin. Forms バージョンを確認します。これは少なくとも Xamarin. Forms 3.6 である必要があります。 NuGet を使用して最新の Xamarin. Forms バージョンに更新できます。
+* JDK のインストールを確認する-Android のプレビューには[jdk 8](https://www.oracle.com/technetwork/java/javase/downloads/index.html)以上が必要です。
+* C# で`if (!DesignMode.IsDesignModeEnabled)`、ページの分離コードに初期化されたクラスをラップしてみてください。
 
-### <a name="custom-controls-arent-rendering"></a>カスタム コントロールが表示されません。
+### <a name="custom-controls-arent-rendering"></a>カスタムコントロールがレンダリングしない
 
-プロジェクトのビルドを再試行してください。 プレビューアーには、コントロールを表示するために失敗した場合、または場合のデザイン時レンダリングのコントロールの作成者のオプトアウトのコントロールの基底クラスが表示されます。 詳細については、次を参照してください。 [XAML プレビューアーでカスタム コントロールのレンダリング](render-custom-controls.md)します。
+プロジェクトをビルドしてみてください。 コントロールをレンダリングできない場合、またはコントロールの作成者がデザイン時のレンダリングをオプトアウトした場合、プレビューアーによってコントロールの基本クラスが表示されます。 詳細については、「 [XAML プレビューアーでのカスタムコントロールのレンダリング](render-custom-controls.md)」を参照してください。

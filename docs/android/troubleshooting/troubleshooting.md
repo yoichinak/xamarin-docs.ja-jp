@@ -7,143 +7,161 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2018
-ms.openlocfilehash: b2f11bd09e1b1b3fd7af29a026229494a081ad11
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: f57736238fc01d865d7655d72da427e2c18dca59
+ms.sourcegitcommit: e02b725e48af867eb2c53ac9e17805f778fbbc8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61085054"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68757244"
 ---
 # <a name="troubleshooting-tips"></a>トラブルシューティングのヒント
 
 
 ## <a name="getting-diagnostic-information"></a>診断情報の取得
 
-Xamarin.Android では、いくつかのバグを追跡するときに検索する場所がいくつかがあります。
+Xamarin Android では、さまざまなバグを追跡する際にいくつかの場所を確認できます。
 不足している機能には次が含まれます。
 
-1.  診断 MSBuild 出力します。
-2.  デバイスのデプロイ ログ。
-3.  Android のデバッグ ログ出力します。
+1.  診断 MSBuild の出力。
+2.  デバイス展開ログ。
+3.  Android デバッグログの出力。
 
 
 <a name="Diagnostic_MSBuild_Output" />
 
-## <a name="diagnostic-msbuild-output"></a>診断 MSBuild 出力
+## <a name="diagnostic-msbuild-output"></a>診断 MSBuild の出力
 
-診断 MSBuild では、パッケージのビルドに関連する追加情報を含めることができ、一部のパッケージ展開情報を含めることができます。
+診断 MSBuild には、パッケージのビルドに関する追加情報を含めることができます。また、パッケージの配置情報が含まれている場合もあります。
 
 Visual Studio 内で診断 MSBuild 出力を有効にするには:
 
-1.  クリックして**ツール > オプション.**
-2.  左側のツリー ビューで選択**プロジェクトおよびソリューション > ビルドおよび実行**
-3.  右側のパネルでは、診断に MSBuild ビルド出力の詳細度ドロップダウンを設定します。
+1.  [**ツール] > [オプション**] をクリックします。
+2.  左側のツリービューで、[プロジェクトおよびソリューション] を選択し **> ビルドして実行**します。
+3.  右側のパネルで、MSBuild ビルド出力の詳細度ドロップダウンを [診断] に設定します。
 4.  **[OK]** をクリックします。
 5.  パッケージから不要な要素を取り除き、再ビルドします。
-6.  診断の出力は、出力パネル内で表示されます。
+6.  診断出力は、[出力] パネル内に表示されます。
 
 
-Mac、OS x: を Visual Studio 内で診断 MSBuild 出力を有効にするには
+Visual Studio for Mac/OS X で診断 MSBuild 出力を有効にするには:
 
-1.  クリックして**Visual Studio for Mac > の基本設定.**
-2.  左側のツリー ビューで選択**プロジェクト > ビルド**
-3.  右側のパネルでログ詳細度ドロップダウンに設定の診断
+1.  **[Visual Studio for Mac > の設定]** をクリックします。
+2.  左側のツリービューで、 **[プロジェクト > ビルド]** を選択します。
+3.  右側のパネルで、[ログの詳細度] ドロップダウンを [診断] に設定します。
 4.  **[OK]** をクリックします。
 5.  Visual Studio for Mac を再起動します。
 6.  パッケージから不要な要素を取り除き、再ビルドします。
-7.  診断の出力は、エラー パッド内で参照できます (**ビュー > パッド > エラー** )、ビルド出力 ボタンをクリックしています。
+7.  診断出力は、[ビルド出力] ボタンをクリックすることで、エラーパッド (**表示 > パッド > エラー** ) 内に表示されます。
 
 
 
 
-## <a name="device-deployment-logs"></a>デバイスのデプロイ ログ
+## <a name="device-deployment-logs"></a>デバイス展開ログ
 
-Visual Studio 内でデバイスのデプロイ ログを有効にします。
+Visual Studio 内でデバイス展開のログ記録を有効にするには:
 
-1.  **ツール > オプション.**>
-2.  左側のツリー ビューで選択**Xamarin > Android の設定**
-3.  右側のパネルで [X] を有効にする**拡張機能のデバッグ ログ (デスクトップに monodroid.log)** チェック ボックスをオンします。
-4.  ログ メッセージは、デスクトップ上の monodroid.log ファイルに書き込まれます。
-
-
-Visual Studio for Mac は、常にデバイスのデプロイ ログを書き込みます。 それらを見つけるには少し困難です。*AndroidUtils*すべて日 + など、展開が発生したときのログ ファイルが作成されます。**AndroidTools-2012-10-24_12-35-45.log**します。
-
--  Windows のログ ファイルが書き込まれます`%LOCALAPPDATA%\XamarinStudio-{VERSION}\Logs`します。
--  OS X 上にログ ファイルの書き込み`$HOME/Library/Logs/XamarinStudio-{VERSION}`します。
+1.  **ツール > オプション...** >
+2.  左側のツリービューで、 **[Xamarin > Android の設定]** を選択します。
+3.  右側のパネルで、[X] 拡張機能のデバッグログを有効にします **([モノのデスクトップにログを書き込む**] チェックボックスをオンにします)。
+4.  ログメッセージは、デスクトップ上のログファイルに書き込まれます。
 
 
+Visual Studio for Mac は、常にデバイスのデプロイログを書き込みます。 検索は少し難しくなります。次のように、デプロイが行われるたびに、 *AndroidUtils*ログファイルが作成されます。**Androidtools-2012-10-24 _12-35-45**。
+
+-  Windows では、ログファイルはに`%LOCALAPPDATA%\XamarinStudio-{VERSION}\Logs`書き込まれます。
+-  OS X では、ログファイルはに`$HOME/Library/Logs/XamarinStudio-{VERSION}`書き込まれます。
 
 
-## <a name="android-debug-log-output"></a>Android のデバッグ ログ出力
 
-Android に多数のメッセージを書き込み、 [Android デバッグ ログ](~/android/deploy-test/debugging/android-debug-log.md)します。
-Xamarin.Android で Android のシステム プロパティを使用して、Android のデバッグ ログに関連するメッセージの生成を制御します。 Android のシステム プロパティを使用して設定できます、 *setprop*コマンド内で、 [Android Debug Bridge (adb)](https://developer.android.com/guide/developing/tools/adb.html):
+
+## <a name="android-debug-log-output"></a>Android デバッグログの出力
+
+Android では、多くのメッセージが[Android デバッグログ](~/android/deploy-test/debugging/android-debug-log.md)に書き込まれます。
+Xamarin android のシステムプロパティを使用して、Android デバッグログへの追加メッセージの生成を制御します。 Android システムプロパティは、 [Android Debug Bridge (adb)](https://developer.android.com/guide/developing/tools/adb.html)内の*setprop は*コマンドを使用して設定できます。
 
 ```shell
 adb shell setprop PROPERTY_NAME PROPERTY_VALUE
 ```
 
-システムのプロパティ、プロセスの起動時に読み取られるため必要があります設定するか前に、アプリケーションが起動するか、システムのプロパティが変更された後に、アプリケーションを再起動する必要があります。
+システムプロパティは、プロセスの起動時に読み取られるため、アプリケーションを起動する前に設定するか、システムプロパティの変更後にアプリケーションを再起動する必要があります。
 
 
 
 ### <a name="xamarinandroid-system-properties"></a>Xamarin.Android のシステム プロパティ
 
-Xamarin.Android には、次のシステム プロパティがサポートされています。
+Xamarin Android では、次のシステムプロパティがサポートされています。
 
--   *debug.mono.debug*:これと同じ場合、空でない文字列`*mono-debug*`します。
+-   *デバッグし*ます。デバッグ:空でない文字列の場合、これはと同じ`*mono-debug*`です。
 
--   *debug.mono.env*:パイプで区切られた ('*|*')、アプリケーションの起動時にエクスポートする環境変数の一覧*する前に*mono は初期化されています。 これにより、環境変数を設定するには、そのコントロールの mono ログ記録できます。
+-   *mono. env*:Mono が初期化さ *|* *れる前*に、アプリケーションの起動時にエクスポートする環境変数の、パイプで区切られた (' ') リスト。 これにより、mono ログを制御する環境変数を設定できます。
 
-    - *注*:値があるため '*|*' に、区切られた値は、引用符で囲むのレベルをいる必要がありますとして、 \` *adb シェル*\`コマンド引用符のセットが削除されます。
+    - *注*:値は *|* ' ' で区切られているため、値は引用符の追加レベルを持つ必要が\`あります。これは、 *adb シェル*\`コマンドによって一連の引用符が削除されるためです。
 
-    - *注*:Android のシステム プロパティの値は 92 文字以内にすることはできます。
+    - *注*:Android システムプロパティの値の長さは92文字以下でなければなりません。
 
     - 例:
 
             adb shell setprop debug.mono.env "'MONO_LOG_LEVEL=info|MONO_LOG_MASK=asm'"
 
--   *debug.mono.log*:コンマ区切り ('*、*')、Android のデバッグ ログに関連するメッセージを印刷する必要があるコンポーネントの一覧。 既定では、何も設定されます。 コンポーネントは次のとおりです。
+-   *debug.mono.log*:Android デバッグログに追加のメッセージを出力する必要があるコンポーネントのコンマ区切り (' *,* ') リスト。 既定では、何も設定されていません。 コンポーネントは次のとおりです。
 
-    -   *すべて*:すべてのメッセージを出力します。
-    -   *gc*:GC に関連するメッセージを印刷します。
-    -   *gref*:(脆弱なグローバル) の参照の割り当てと解放メッセージを印刷します。
-    -   *lref*:ローカル参照の割り当てと解放メッセージを印刷します。
+    -   *すべて*:すべてのメッセージを印刷する
+    -   *gc*:GC 関連のメッセージを出力します。
+    -   *グリーン*:印刷 (脆弱、グローバル) 参照の割り当てと解放のメッセージ。
+    -   *持つ*:ローカル参照の割り当てと解放のメッセージを出力します。
 
-    *注*: これらは*非常に*詳細。 本当にする必要がある場合を除きを有効にしないでください。
+    *注*: これらは*非常*に冗長です。 本当に必要な場合を除き、有効にしないでください。
 
--   *debug.mono.trace*:設定できる、 [mono--トレース](http://docs.go-mono.com/?link=man%3amono(1))`=PROPERTY_VALUE`設定します。
+-   次のように*トレースし*ます。[Mono--trace](http://docs.go-mono.com/?link=man%3amono(1)) `=PROPERTY_VALUE`設定を設定できます。
 
+## <a name="deleting-bin-and-obj"></a>および`bin`の削除`obj`
 
+Xamarin. Android は、次のような状況から過去に検出されました。
 
-## <a name="xamarinandroid-cannot-resolve-systemvaluetuple"></a>Xamarin.Android は System.ValueTuple を解決することはできません。
+- 予期しないビルドまたは実行時エラーが発生した。
+- `Clean`ディレクトリ`Rebuild`と`bin`ディレクトリは、、、または手動で削除します。`obj`
+- 問題は解決しません。
 
-Visual Studio と互換性がないのため、このエラーが発生します。
+開発者の生産性に影響を与えるために、このような問題の解決に多大な投資を行っています。
 
-- **Visual Studio 2017 Update 1** (バージョン 15.1 以前) は互換性のみ、 **System.ValueTuple NuGet 4.3.0** (またはそれ以前)。
+このような問題が発生した場合は、次のようになります。
 
-- **Visual Studio 2017 Update 2** (バージョン 15.2 以降) と互換性のあるのみ、 **System.ValueTuple NuGet 4.3.1** (またはそれ以降)。
+1. インクリメンタルノートを作成します。 プロジェクトをこの状態にする最後のアクションは何ですか?
+1. 現在のビルドログを保存します。 もう一度ビルドし、[診断ビルドログ](#diagnostic-msbuild-output)を記録してください。
+1. [バグレポート][bug]を送信します。
 
-Visual Studio 2017 のインストールに対応する正しい System.ValueTuple NuGet を選択してください。
+ディレクトリ`bin` と`obj`ディレクトリを削除する前に、これらのディレクトリを zip 形式にし、必要に応じて後で診断できるように保存します。 単`Clean`に Xamarin Android アプリケーションプロジェクトを使用すれば、作業を再び行うことができます。
+
+[bug]: https://github.com/xamarin/xamarin-android/wiki/Submitting-Bugs,-Feature-Requests,-and-Pull-Requests
+
+## <a name="xamarinandroid-cannot-resolve-systemvaluetuple"></a>Xamarin Android では、ValueTuple を解決できません。
+
+このエラーは、Visual Studio との互換性がないことが原因で発生します。
+
+- **Visual Studio 2017 更新プログラム 1**(バージョン15.1 またはそれ以前) は、 **System. ValueTuple NuGet 4.3.0** (またはそれ以前) とのみ互換性があります。
+
+- **Visual Studio 2017 更新プログラム 2**(バージョン15.2 以降) は、4.3.1 (またはそれ以降) の**システム**とのみ互換性があります。
+
+Visual Studio 2017 のインストールに対応する適切な system.servicemodel タプル NuGet を選択してください。
 
 
 ## <a name="gc-messages"></a>GC メッセージ
 
-Gc を格納する値を debug.mono.log システム プロパティを設定して GC コンポーネントのメッセージを表示できます。
+GC コンポーネントメッセージを表示するには、gc を含む値に "mono. log システム" プロパティを設定します。
 
-GC を実行し、でした、GC の作業量についての情報を提供するたびに、GC のメッセージが生成されます。
+Gc メッセージは、gc が実行されるたびに生成され、GC によって行われた作業量に関する情報を提供します。
 
 ```shell
 I/monodroid-gc(12331): GC cleanup summary: 81 objects tested - resurrecting 21.
 ```
 
-設定によって生成されるタイミング情報などの追加の GC 情報、`MONO_LOG_LEVEL`環境変数を`debug`:
+環境変数を次のように設定することによって`MONO_LOG_LEVEL` 、タイミング情報`debug`などの追加の GC 情報を生成できます。
 
 ```shell
 adb shell setprop debug.mono.env MONO_LOG_LEVEL=debug
 ```
 
-これにより、(多くの) 追加 Mono などのメッセージの結果の 3 つが発生します。
+これにより、次の3つの結果を含む、(多くの) 追加の Mono メッセージが生成されます。
 
 ```shell
 D/Mono (15723): GC_BRIDGE num-objects 1 num_hash_entries 81226 sccs size 81223 init 0.00ms df1 285.36ms sort 38.56ms dfs2 50.04ms setup-cb 9.95ms free-data 106.54ms user-cb 20.12ms clenanup 0.05ms links 5523436/5523436/5523096/1 dfs passes 1104 6883/11046605
@@ -151,27 +169,27 @@ D/Mono (15723): GC_MINOR: (Nursery full) pause 2.01ms, total 287.45ms, bridge 22
 D/Mono ( 2073): GC_MAJOR: (user request) pause 2.17ms, total 2.47ms, bridge 28.77 major 576K/576K los 0K/16K
 ```
 
-`GC_BRIDGE`メッセージ、`num-objects`はこのパスを考慮すると、ブリッジ オブジェクトの数と`num_hash_entries`ブリッジ コードのこの呼び出し中に処理されたオブジェクトの数です。
+メッセージでは、 `num-objects`はこの`num_hash_entries`パスが考慮するブリッジオブジェクトの数です。は、このブリッジコードの呼び出し中に処理されたオブジェクトの数です。 `GC_BRIDGE`
 
-`GC_MINOR`と`GC_MAJOR`メッセージ、`total`世界が一時停止中の時間は、(スレッドが実行されていない)、中に`bridge`のブリッジ (これは、Java VM が扱う) コードの処理にかかった時間の量です。 世界が*いない*ブリッジ処理中に一時停止しています。
+とのメッセージでは`total` 、は、世界が一時停止している時間 (スレッドは実行されて`bridge`いません) であり、はブリッジ処理コード (Java VM との間) でかかった時間です。 `GC_MAJOR` `GC_MINOR` ブリッジ処理が行われている間、世界は一時停止*されていません*。
 
- *一般に*の値が大きいほど`num_hash_entries`、以上の時間を`bridge`コレクションになります、大きい方と、`total`費やされた時間の収集になります。
+ *一般に*、の`num_hash_entries`値が大きいほど、 `bridge`コレクションにかかる時間が長くなり、収集にかかる`total`時間が長くなります。
 
 
 
 ## <a name="global-reference-messages"></a>グローバル参照メッセージ
 
-グローバル参照 loggig (GREF)、ログ記録を有効にする、 *debug.mono.log*システム プロパティを含める必要があります*gref*など。
+グローバル参照 loggig (グリーン) のログ記録を有効にするには、次のように、 *mono. log*システムプロパティに値が含まれている必要があります。
 
 ```shell
 adb shell setprop debug.mono.log gref
 ```
 
-Xamarin.Android では、グローバルの Android のリファレンスを使用して、Java に提供する必要がある Java インスタンスの Java のメソッドを呼び出すときに、として Java インスタンスと、関連付けられているマネージ インスタンスの間のマッピングを提供します。
+Xamarin Android のグローバル参照を使用して Java インスタンスと関連付けられたマネージインスタンスの間のマッピングを提供します。 Java メソッドを呼び出すときは、java インスタンスを java に提供する必要があります。
 
-残念ながら、Android エミュレーターは、時に存在する 2000 グローバル参照のみを許可します。 ハードウェアでは、52000 グローバル参照の程度の高い制限があります。 下限値はそのため、エミュレーターでアプリケーションを実行するときに、問題が発生する*場所*インスタンスのソースからを非常に便利なことができます。
+残念ながら、Android エミュレーターでは、一度に2000のグローバル参照しか存在できません。 ハードウェアでは、52000のグローバル参照の制限がはるかに高くなっています。 エミュレーターでアプリケーションを実行するときには、制限が低いため、インスタンスが*どこ*から取得されたかを把握することが非常に便利な場合があります。
 
- *注*: グローバルの参照カウントは、Xamarin.Android の内部としない (およびことはできません) は、プロセスに読み込まれるその他のネイティブ ライブラリによって除外グローバル参照を含めます。 推定値としてグローバル参照カウントを使用します。
+ *注*: グローバル参照カウントは、Xamarin. Android の内部にあり、プロセスに読み込まれた他のネイティブライブラリによって取得されたグローバル参照を含めることはできません。 グローバル参照カウントを推定値として使用します。
 
 ```shell
 I/monodroid-gref(12405): +g+ grefc 108 gwrefc 0 obj-handle 0x40517468/L -> new-handle 0x40517468/L from    at Java.Lang.Object.RegisterInstance(IJavaObject instance, IntPtr value, JniHandleOwnership transfer)
@@ -193,34 +211,34 @@ I/monodroid-gref(27679): +w+ grefc 1916 gwrefc 296 obj-handle 0x406b2b98/G -> ne
 I/monodroid-gref(27679): -w- grefc 1915 gwrefc 294 handle 0xde691aaf/W from take_global_ref_jni
 ```
 
-結果の 4 つのメッセージがあります。
+結果として、次の4つのメッセージがあります。
 
--  グローバル参照の作成: で始まる行は *+ g +* 、し、作成するコード パスのスタック トレースを提供します。
--  グローバル参照破棄: で始まる行は *-g-* とグローバル参照の破棄コード パスのスタック トレースを行うことがあります。 GC は、gref の破棄、スタック トレースは提供されません。
--  グローバルの弱い参照の作成: で始まる行は *+ w +* します。
--  グローバルの弱い参照破棄: で始まる行は *-w-* します。
+-  グローバル参照の作成: *+ g +* で始まる行で、作成するコードパスのスタックトレースが提供されます。
+-  グローバル参照の破棄: これらは、 *-g-* で始まる行であり、グローバル参照のコードパスの破棄のスタックトレースを提供する場合があります。 GC がの場合、スタックトレースは提供されません。
+-  弱いグローバル参照の作成: *+ w +* で始まる行です。
+-  弱いグローバル参照破棄: これらは *、-w から*始まる行です。
 
 
-すべてのメッセージ、 *grefc*値の Xamarin.Android が作成されると、グローバルの参照数は、中、 *grefwc*値は Xamarin.Android が作成されたグローバルの弱い参照の数。 *処理*または*obj ハンドル*値が、JNI のハンドル値と後の文字には、' */*' はハンドルの値の型: */L*ローカル参照は、 */G*のグローバルの参照と */W*グローバルの弱い参照の。
+すべてのメッセージでは、 *grefc*の値は、xamarin によって作成されたグローバル参照の数を示します。 *grefc*値は、xamarin によって作成された弱いグローバル参照の数です。 *Handle*または*obj-* handle の値は JNI handle の値で、' ' の後 */* の文字はハンドル値の型 (ローカル参照の場合は */l* 、グローバル参照の場合は */g* 、弱グローバル参照の場合は " */w* ") になります。
 
-GC プロセスの一環として、グローバル参照 (+ g +) がグローバルの弱い参照に変換されます (+ w + の原因と-g-)、Java 側の GC を開始すると、およびグローバルの弱い参照をチェックして、収集されたかどうか、します。 弱い参照を新しい gref が作成されたがまだ動作している場合 (g +、-w + -)、弱い参照が破棄されるそれ以外の場合 (-w)。
+GC プロセスの一部として、グローバル参照 (+ g +) が弱いグローバル参照 (+ w + と-g-) に変換され、Java 側 GC が開始され、弱いグローバル参照が収集されたかどうかが確認されます。 まだ生きている場合は、弱い参照 (+ g +,-w) の周りに新しいグリーンが作成されます。それ以外の場合は、弱い参照が破棄されます (-w)。
 
-## <a name="java-instance-is-created-and-wrapped-by-a-mcw"></a>Java のインスタンスが作成され、MCW によってラップされました。
+## <a name="java-instance-is-created-and-wrapped-by-a-mcw"></a>Java インスタンスが作成され、MCW によってラップされます。
 
 ```shell
 I/monodroid-gref(27679): +g+ grefc 2211 gwrefc 0 obj-handle 0x4066df10/L -> new-handle 0x4066df10/L from ...
 I/monodroid-gref(27679): handle 0x4066df10; key_handle 0x4066df10: Java Type: `android/graphics/drawable/TransitionDrawable`; MCW type: `Android.Graphics.Drawables.TransitionDrawable`
 ```
 
-## <a name="a-gc-is-being-performed"></a>GC が実行されているとしています.
+## <a name="a-gc-is-being-performed"></a>GC を実行しています...
 
 ```shell
 I/monodroid-gref(27679): +w+ grefc 1953 gwrefc 259 obj-handle 0x4066df10/G -> new-handle 0xde68f95f/W from take_weak_global_ref_jni
 I/monodroid-gref(27679): -g- grefc 1952 gwrefc 259 handle 0x4066df10/G from take_weak_global_ref_jni
 ```
 
-## <a name="object-is-still-alive-as-handle--null"></a>オブジェクトがまだ有効で、ハンドルとして! = null
-## <a name="wref-turned-back-into-a-gref"></a>wref、gref に再度有効に
+## <a name="object-is-still-alive-as-handle--null"></a>ハンドルが null の場合、オブジェクトはまだ生きています
+## <a name="wref-turned-back-into-a-gref"></a>wref がグリーンに戻される
 
 ```shell
 I/monodroid-gref(27679): *try_take_global obj=0x4976f080 -> wref=0xde68f95f handle=0x4066df10
@@ -228,159 +246,159 @@ I/monodroid-gref(27679): +g+ grefc 1930 gwrefc 39 obj-handle 0xde68f95f/W -> new
 I/monodroid-gref(27679): -w- grefc 1930 gwrefc 38 handle 0xde68f95f/W from take_global_ref_jni
 ```
 
-## <a name="object-is-dead-as-handle--null"></a>オブジェクトが配信不能、ハンドルとして null を = =
-## <a name="wref-is-freed-no-new-gref-created"></a>wref が解放された、新しい gref 作成
+## <a name="object-is-dead-as-handle--null"></a>オブジェクトが停止しています。ハンドル = = null
+## <a name="wref-is-freed-no-new-gref-created"></a>wref が解放されました。新しいグリーンが作成されていません
 
 ```shell
 I/monodroid-gref(27679): *try_take_global obj=0x4976f080 -> wref=0xde68f95f handle=0x0
 I/monodroid-gref(27679): -w- grefc 1914 gwrefc 296 handle 0xde68f95f/W from take_global_ref_jni
 ```
 
-ここで「興味深い」欠点が 1 つがある: 4.0 より前の Android を実行しているターゲット、gref 値は、Android ランタイムのメモリ内での Java オブジェクトのアドレスと一致しません。 (つまり非移動、政治的、コレクターは、GC でし、それらのオブジェクトへの直接参照を渡そうとして、)。後にそのため、g + + w +、-g-、+ g +、-w シーケンス、結果として得られる gref gref の元の値と同じ値になります。 これにより、ログを grepping は非常に簡単です。
+ここでは、"興味深い" 注意点が1つあります。4.0 より前の Android を実行しているターゲットでは、その値は Android ランタイムのメモリ内の Java オブジェクトのアドレスと同じになります。 (つまり、GC は移動不可で、保守的なコレクターであり、それらのオブジェクトへの直接参照を処理します)。したがって、+ g +、+ w +、-g-、+ g +、-w シーケンスの後、結果として得られる値は、元の値の値と同じになります。 これにより、ログの grepping が非常に簡単になります。
 
-Android 4.0 では、ただし、移動、コレクターがし、不要になった Android ランタイムへの直接参照を VM オブジェクト。 そのため、後に、g + + w +、-g-、+ g +、-w シーケンス、gref 値*異なるものになります*。 場合は、オブジェクトには、複数の Gc が生き残る、インスタンスを実際にから割り当てられたかを判断するが難しく、いくつかの gref 値によって変わります。
+ただし、android 4.0 には移動コレクターがあり、Android ランタイム VM オブジェクトへの直接の参照はありません。 その結果、+ g +、+ w +、-g-、+ g +、-w シーケンスの後に、値が*異なること*になります。 オブジェクトが複数の Gc の後に存在する場合は、複数の値が変更されるため、インスタンスが実際に割り当てられた場所を特定するのが難しくなります。
 
-### <a name="querying-programmatically"></a>プログラムでクエリを実行します。
+### <a name="querying-programmatically"></a>プログラムによるクエリ
 
-クエリを実行して GREF と WREF の両方の数を照会することができます、`JniRuntime`オブジェクト。
+オブジェクトに`JniRuntime`対してクエリを実行することによって、すべてのカウントと wref のカウントを照会できます。
 
-`Java.Interop.JniRuntime.CurrentRuntime.GlobalReferenceCount` グローバル参照カウント
+`Java.Interop.JniRuntime.CurrentRuntime.GlobalReferenceCount`-グローバル参照カウント
 
-`Java.Interop.JniRuntime.CurrentRuntime.WeakGlobalReferenceCount` -弱い参照カウント
-
-
-
-## <a name="android-debug-logs"></a>Android のデバッグ ログ
-
-[Android デバッグ ログ](~/android/deploy-test/debugging/android-debug-log.md)すれば、ランタイム エラーに関する追加のコンテキストを提供することがあります。
+`Java.Interop.JniRuntime.CurrentRuntime.WeakGlobalReferenceCount`-弱い参照カウント
 
 
 
-## <a name="floating-point-performance-is-terrible"></a>浮動小数点のパフォーマンスは、恐ろしいです。
+## <a name="android-debug-logs"></a>Android デバッグログ
 
-または、「アプリ 10 倍高速で実行、リリース ビルドよりも、デバッグ ビルド!」
-
-Xamarin.Android は、複数のデバイスの Abi をサポートしています: *armeabi*、 *armeabi v7a*、および*x86*します。 内でデバイスの Abi を指定できます**プロジェクトのプロパティ > [アプリケーション] タブ > サポートされているアーキテクチャ**します。
-
-デバッグ ビルドでは、すべての Abi と、対象デバイスの最速の ABI のためは使用 Android パッケージを使用します。
-
-リリース ビルドには、プロジェクトのプロパティ タブで選択した Abi にはのみが含まれます。1 つ以上選択できます。
-
-*armeabi* ABI、既定値は、広範なデバイスをサポートしています。 *ただし*armeabi とサポートしていないデバイスのマルチ CPU ハードウェアの浮動小数点、amont など。 その結果、armeabi リリース ランタイムを使用するアプリは、1 つのコアに関連付けられるし、論理的な float 実装を使用します。 これらの両方は、アプリのパフォーマンスがはるかに低速に投稿できます。
-
-有効にすると、アプリは、適切な浮動小数点パフォーマンス (ゲームなど) を必要とする場合、 *armeabi v7a* ABI です。 のみをサポートすることも、 *armeabi v7a*ランタイム、こうすることが古いデバイスだけをサポートする*armeabi*アプリを実行することはできません。
+[Android デバッグログ](~/android/deploy-test/debugging/android-debug-log.md)には、表示されているランタイムエラーに関する追加のコンテキストが示される場合があります。
 
 
 
-## <a name="could-not-locate-android-sdk"></a>Android SDK が見つかりませんでした。
+## <a name="floating-point-performance-is-terrible"></a>浮動小数点のパフォーマンスが低下しています。
 
-2 のダウンロードは Google の Android SDK の Windows から入手できます。
-.Exe インストーラーを選択した場合は、インストール先を Xamarin.Android に指示するレジストリ キーを書き込みます。 .Zip ファイルを選択して解凍して、Xamarin.Android では、SDK を検索する場所を認識しません。 移動して Visual Studio で SDK を場所、Xamarin.Android を判断できます**ツール > オプション > Xamarin > Android 設定**:
+または、"アプリはリリースビルドと比べて、デバッグビルドでは10倍高速に実行されます" ということもあります。
 
-[![Xamarin Android の設定で android SDK の場所](troubleshooting-images/01.png)](troubleshooting-images/01.png#lightbox)
+Xamarin は複数のデバイス ABIs をサポートしています。 *armeabi*、 *armeabi-armeabi-v7a*、 *x86*。 デバイス ABIs、 **[プロジェクトのプロパティ] > [アプリケーション] タブ > サポートされているアーキテクチャ**の中で指定できます。
+
+デバッグビルドでは、すべての ABIs を提供する Android パッケージが使用されるため、ターゲットデバイスで最も高速な ABI が使用されます。
+
+リリースビルドでは、[プロジェクトのプロパティ] タブで ABIs のみが選択されます。複数のを選択できます。
+
+*armeabi*は既定の abi であり、最も広範なデバイスサポートを備えています。 *ただし*、armeabi では、マルチ CPU デバイスとハードウェアの浮動小数点はサポートされていません。 その結果、armeabi リリースランタイムを使用するアプリは1つのコアに関連付けられ、ソフト浮動小数点の実装を使用します。 どちらも、アプリケーションのパフォーマンスが大幅に低下する可能性があります。
+
+アプリで適正な浮動小数点のパフォーマンス (ゲームなど) が必要な場合は、 *armeabi-Armeabi-v7a* ABI を有効にする必要があります。 *Armeabi armeabi-v7a*ランタイムのみをサポートすることができますが、これは*armeabi*のみをサポートする古いデバイスがアプリを実行できないことを意味します。
 
 
 
-## <a name="ide-does-not-display-target-device"></a>IDE でターゲット デバイスが表示されません。
+## <a name="could-not-locate-android-sdk"></a>Android SDK が見つかりませんでした
 
-場合があります、デバイスがデバイスの選択 ダイアログ ボックスに表示されていない展開するデバイスにアプリケーションを配置しようとするされます。 これは、Android Debug Bridge が休暇でを決定した場合に発生します。
+Windows 用 Android SDK には、Google から2つのダウンロードが用意されています。
+.Exe インストーラーを選択すると、インストールされている Xamarin. Android に通知するレジストリキーが書き込まれます。 .Zip ファイルを選択して自分で解凍した場合、Xamarin では、SDK を検索する場所がわかりません。 Visual Studio で SDK を使用するように Xamarin Android に指示するには、**ツール > オプション > xamarin > Android 設定**の順に移動します。
 
-この問題を診断するには、検索、 [adb プログラム](~/android/deploy-test/debugging/android-debug-log.md)を実行します。
+[![Xamarin Android 設定での Android SDK の場所](troubleshooting-images/01.png)](troubleshooting-images/01.png#lightbox)
+
+
+
+## <a name="ide-does-not-display-target-device"></a>IDE にターゲットデバイスが表示されない
+
+アプリケーションをデバイスに展開しようとしても、展開先のデバイスが [デバイスの選択] ダイアログボックスに表示されない場合があります。 これは、Android Debug Bridge が休暇時に行われると判断された場合に発生する可能性があります。
+
+この問題を診断するには、 [adb プログラム](~/android/deploy-test/debugging/android-debug-log.md)を見つけて、次を実行します。
 
 ```shell
 adb devices
 ```
 
-デバイスが存在しない場合は、デバイスを検出できるように、Android Debug Bridge サーバーを再起動する必要があります。
+デバイスが存在しない場合は、Android Debug Bridge サーバーを再起動して、デバイスが検出されるようにする必要があります。
 
 ```shell
 adb kill-server
 adb start-server
 ```
 
-HTC 同期ソフトウェアができない可能性があります**adb 開始サーバー**から正常に動作します。 場合、 **adb 開始サーバー**コマンドは、どのポートで開始していますを出力しない HTC 同期ソフトウェアを終了、adb サーバーを再起動してみてください。
+HTC 同期ソフトウェアによって **、adb の起動サーバー**が正常に動作しなくなる場合があります。 Adb の**開始サーバー**コマンドによって開始されているポートが印刷されない場合は、HTC 同期ソフトウェアを終了し、adb サーバーを再起動してください。
 
 
-## <a name="the-specified-task-executable-keytool-could-not-be-run"></a>指定したタスクの実行可能ファイル"keytool"を実行できませんでした。
+## <a name="the-specified-task-executable-keytool-could-not-be-run"></a>指定されたタスクの実行可能ファイル "keytool" を実行できませんでした
 
-これは、パスに Java SDK の bin ディレクトリが配置されているディレクトリが含まれていないことを意味します。 これらの手順を実行したことを確認、[インストール](~/android/get-started/installation/index.md)ガイド。
+これは、Java SDK の bin ディレクトリが配置されているディレクトリがパスに含まれていないことを意味します。 [インストール](~/android/get-started/installation/index.md)ガイドの手順に従っていることを確認します。
 
 
-## <a name="monodroidexe-or-aresgenexe-exited-with-code-1"></a>monodroid.exe または aresgen.exe コード 1 で終了しました
+## <a name="monodroidexe-or-aresgenexe-exited-with-code-1"></a>コード1で終了したモノ id .exe または aresgen
 
-この問題をデバッグし、Visual Studio にして、これを行うに、MSBuild の詳細度レベルを変更するには、次を選択します。**ツール > オプション > プロジェクト**と**ソリューション > ビルド**と**実行 > MSBuild プロジェクト ビルド出力の詳細**にこの値を設定および**標準**します。
+この問題をデバッグするには、Visual Studio に移動し、MSBuild の詳細レベルを変更します。これを行うには、次のように選択します。**ツール > オプション > プロジェクト**と**ソリューションをビルド**して **> 実行 >、MSBuild プロジェクトのビルド出力の詳細**度を設定し、この値を**Normal**に設定します。
 
-再構築して、完全なエラーが含まれている Visual Studio の出力ウィンドウを確認します。
+リビルドし、Visual Studio の出力ウィンドウを確認します。このウィンドウには、完全なエラーが含まれている必要があります。
 
-## <a name="there-is-not-enough-storage-space-on-the-device-to-deploy-the-package"></a>パッケージを展開するデバイスで十分な記憶域スペースはありません。
+## <a name="there-is-not-enough-storage-space-on-the-device-to-deploy-the-package"></a>パッケージを展開するための十分な記憶領域がデバイスにありません
 
-これには、Visual Studio 内からエミュレーターを起動しないときに発生します。 Visual Studio の外部でエミュレーターを開始するときに渡す必要があります、`-partition-size 512`オプションは、例。
+このエラーは、Visual Studio 内からエミュレーターを起動しない場合に発生します。 Visual Studio の外部でエミュレーターを起動する場合は、 `-partition-size 512`オプションを渡す必要があります。たとえば、
 
 ```shell
 emulator -partition-size 512 -avd MonoDroid
 ```
 
-つまり、シミュレーターの正しい名前を使用することを確認[シミュレーターを構成するときに使用した名前](~/android/get-started/installation/windows.md#device)します。
+シミュレーターを[構成するときに使用した名前](~/android/get-started/installation/windows.md#device)など、正しいシミュレーター名を使用していることを確認します。
 
 
-## <a name="installfailedinvalidapk-when-installing-a-package"></a>インストール\_FAILED\_無効な\_APK パッケージのインストール時
+## <a name="install_failed_invalid_apk-when-installing-a-package"></a>パッケージ\_を\_インストール\_するときに、インストールが無効な apk に失敗しました
 
-Android パッケージ名*する必要があります*にピリオド ('*.*')。 パッケージ名を編集するは、ピリオドが含まれているようにします。
+Android パッケージ名にはピリオド (' *.* ') を含める*必要があり*ます。 パッケージ名を編集して、ピリオドが含まれるようにします。
 
--   Visual studio:
-    -   プロジェクトを右クリックして > のプロパティ
+-   Visual Studio 内:
+    -   プロジェクトを右クリックし > プロパティ をクリックします。
     -   左側の [Android マニフェスト] タブをクリックします。
-    -   パッケージ名 フィールドを更新します。
-        -   メッセージが表示された場合&ldquo;いいえ AndroidManifest.xml が見つかりません。 1 つ追加する をクリックします。&rdquo;リンクをクリックし、パッケージ名 フィールドを更新します。
--   Visual Studio for Mac: 内
-    -   プロジェクトを右クリックして > オプション。
-    -   ビルドに移動/Android アプリケーション セクション。
-    -   変更を格納するパッケージ名 フィールドを '.'。
+    -   [パッケージ名] フィールドを更新します。
+        -   「No androidmanifest」というメッセージ&ldquo;が表示された場合。 1つを追加する場合にクリックします。&rdquo;で、リンクをクリックし、[パッケージ名] フィールドを更新します。
+-   Visual Studio for Mac 内:
+    -   プロジェクト > オプションを右クリックします。
+    -   [ビルド/Android アプリケーション] セクションに移動します。
+    -   "." が含まれるように [パッケージ名] フィールドを変更します。
 
 
 
 
-## <a name="installfailedmissingsharedlibrary-when-installing-a-package"></a>インストール\_FAILED\_MISSING\_SHARED\_パッケージをインストールするときにライブラリ
+## <a name="install_failed_missing_shared_library-when-installing-a-package"></a>パッケージのインストール\_時\_に、\_見つからない共有ライブラリをインストールする\_
 
-このコンテキストで「共有ライブラリ」は*いない*ネイティブの共有ライブラリ (*libfoo.so*) ファイルです。 Google Maps など、ターゲット デバイスに個別にインストールする必要があるライブラリではなく。
+このコンテキストの "共有ライブラリ" は、ネイティブ共有ライブラリ (*libfoo.so*) ファイルでは*ありません*。代わりに、Google Maps など、ターゲットデバイスに個別にインストールする必要があるライブラリです。
 
-Android パッケージを指定する共有ライブラリを必要と、`<uses-library/>`要素。 場合、*必要*ライブラリは、ターゲット デバイスに存在しません (例:`//uses-library/@android:required`は*true*、既定値)、パッケージのインストールが失敗*インストール\_失敗\_MISSING\_SHARED\_ライブラリ*します。
+Android パッケージでは、 `<uses-library/>`要素に必要な共有ライブラリを指定します。 *必要な*ライブラリがターゲットデバイスに存在しない場合 (既定で`//uses-library/@android:required`は*true*に設定されて *\_\_\_いる場合など)、パッケージのインストールは失敗します。\_ライブラリ*。
 
-共有ライブラリが必要なことを確認するには*生成*
-**AndroidManifest.xml**ファイル (例: **obj\\デバッグ\\android\\AndroidManifest.xml**) を探して、`<uses-library/>`要素。 `<uses-library/>` プロジェクトの要素を手動で追加できる**プロパティ\\AndroidManifest.xml**ファイルおよびを使用して、 [UsesLibraryAttribute カスタム属性](https://developer.xamarin.com/api/type/Android.App.UsesLibraryAttribute/)します。
+どの共有ライブラリが必要かを判断するには、*生成さ*
+れた**androidmanifest .xml**ファイル (例: **obj\\Debug\\android\\androidmanifest .xml**) を表示し、 `<uses-library/>`要素。 `<uses-library/>`要素は、プロジェクトの**プロパティ\\と roidmanifest .xml**ファイルに手動で追加することも、[ユーザー属性のカスタム属性](xref:Android.App.UsesLibraryAttribute)を使用して追加することもできます。
 
-アセンブリへの参照の追加など、 *Mono.Android.GoogleMaps.dll*暗黙的に追加されます、 `<uses-library/>` Google Maps 共有ライブラリ。
-
-
-
-## <a name="installfailedupdateincompatible-when-installing-a-package"></a>インストール\_FAILED\_UPDATE\_パッケージをインストールするときに互換性がありません
-
-Android パッケージには、次の 3 つの要件があります。
-
--   含める必要がありますが、'.'(前のエントリを参照してください)
--   一意の文字列のパッケージ名がある必要があります (そのため、Chrome アプリの com.android.chrome など、Android のアプリ名に表示されるリバース tld 規則)
--   パッケージのアップグレード パッケージに同じ署名キーが必要です。
-
-したがって、このシナリオを考えてみましょう。
-
-1.  ビルドし、デバッグ アプリとしてアプリをデプロイします。
-2.  署名のキーをなどを変更する (またはに満足できないために、既定のデバッグ署名キー)、アプリをリリースとして使用
-3.  削除することがなく、アプリをインストールする、デバッグなど、> デバッグなしで開始 Visual Studio 内
+たとえば、 *GoogleMaps*にアセンブリ参照を追加すると、Google Maps 共有ライブラリのが`<uses-library/>`暗黙的に追加されます。
 
 
-インストール パッケージのインストールは失敗この場合、\_FAILED\_更新\_互換性のないエラーは、パッケージ名は、署名中に変更していないため、キーがでした。 [Android デバッグ ログ](~/android/deploy-test/debugging/android-debug-log.md)のようなメッセージにも含まれます。
+
+## <a name="install_failed_update_incompatible-when-installing-a-package"></a>パッケージ\_を\_インストール\_するときにインストール失敗の更新プログラムに互換性がない
+
+Android パッケージには、次の3つの要件があります。
+
+-   '. ' が含まれている必要があります。(前のエントリを参照)
+-   一意の文字列パッケージ名を持つ必要があります (したがって、Chrome アプリの場合は、Android アプリ名に表示される逆 tld 規則です)。
+-   パッケージをアップグレードするときは、パッケージの署名キーが同じである必要があります。
+
+そのため、次のシナリオを考えてみましょう。
+
+1.  アプリをビルド & デバッグアプリとしてデプロイする
+2.  署名キーを変更した場合 (たとえば、をリリースアプリとして使用する場合) (または、既定で提供されるデバッグ署名キーが気に入らないため)
+3.  最初にアプリを削除せずにインストールします。たとえば、Visual Studio 内でデバッグを行わずにデバッグ > 開始します。
+
+
+この場合、署名キーの実行中にパッケージ名\_が\_変更\_されていなかったため、パッケージのインストールが失敗し、インストールエラーが発生します。 [Android デバッグログ](~/android/deploy-test/debugging/android-debug-log.md)には、次のようなメッセージも含まれます。
 
 ```shell
 E/PackageManager(  146): Package [PackageName] signatures do not match the previously installed version; ignoring!
 ```
 
-このエラーを解決するには、完全に削除、アプリケーション、デバイスから再インストールする前に。
+このエラーを解決するには、再インストールする前に、デバイスからアプリケーションを完全に削除します。
 
 
-## <a name="installfaileduidchanged-when-installing-a-package"></a>インストール\_FAILED\_UID\_パッケージをインストールするときに変更
+## <a name="install_failed_uid_changed-when-installing-a-package"></a>パッケージ\_の\_インストール\_時にインストールに失敗した UID が変更されました
 
-Android のパッケージがインストールされているときに割り当てられます、*ユーザー id* (UID)。
-*場合によって*で現在不明な理由により、既にインストールされているアプリの上にインストールするときに、インストールは失敗します`INSTALL_FAILED_UID_CHANGED`:
+Android パッケージをインストールすると、*ユーザー id* (UID) が割り当てられます。
+現時点では、インストール済みのアプリをインストールすると、インストールが次の`INSTALL_FAILED_UID_CHANGED`ように失敗する場合があります。
 
 ```shell
 ERROR [2015-03-23 11:19:01Z]: ANDROID: Deployment failed
@@ -391,19 +409,19 @@ Mono.AndroidTools.InstallFailedException: Failure [INSTALL_FAILED_UID_CHANGED]
    at System.Threading.Tasks.Task.Execute()
 ```
 
-この問題を回避する*を完全にアンインストール*Android ターゲットの GUI からアプリをインストールするかを使用して、Android パッケージ`adb`:
+この問題を回避するには、android ターゲットの GUI からアプリをインストールするか、を使用し`adb`て、android パッケージを完全にアンインストールします。
 
 ```shell
 $ adb uninstall @PACKAGE_NAME@
 ```
 
-**使用しないでください**`adb uninstall -k`されますこの*保持*アプリケーションのデータをそのため、ターゲット デバイスに競合する UID を維持します。
+**使用**しない。これにより、アプリケーションデータが保持されるため、競合する UID がターゲットデバイスに保持されます。 `adb uninstall -k`
 
 
 
-## <a name="release-apps-fail-to-launch-on-device"></a>リリースのアプリケーションはデバイスの起動に失敗します。
+## <a name="release-apps-fail-to-launch-on-device"></a>デバイスでリリースアプリを起動できない
 
-Android のデバッグ ログの出力ではのようなメッセージが含まれます。
+Android デバッグログの出力には、次のようなメッセージが含まれます。
 
 ```shell
 D/AndroidRuntime( 1710): Shutting down VM
@@ -413,21 +431,21 @@ E/AndroidRuntime( 1710): java.lang.UnsatisfiedLinkError: Couldn't load monodroid
 E/AndroidRuntime( 1710):        at java.lang.Runtime.loadLibrary(Runtime.java:365)
 ```
 
-そうである場合は、この 2 つの考えられる原因があります。
+その場合は、次の2つの原因が考えられます。
 
-1.  .Apk では、ターゲット デバイスをサポートする ABI を提供していません。
-    たとえば、.apk では、armeabi v7a のバイナリのみが含まれ、ターゲット デバイスは armeabi のみをサポートします。
+1.  Apk には、ターゲットデバイスでサポートされている ABI が用意されていません。
+    たとえば、apk には armeabi-armeabi-v7a バイナリのみが含まれ、ターゲットデバイスは armeabi のみをサポートします。
 
-2.  [Android バグ](http://code.google.com/p/android/issues/detail?id=21670)します。 大文字と小文字の場合は、アプリをアンインストール、指でのクロスおよびアプリを再インストールします。
+2.  [Android のバグ](http://code.google.com/p/android/issues/detail?id=21670)。 このような場合は、アプリをアンインストールし、指を使用してアプリを再インストールします。
 
-(1) を解決するには、プロジェクトのオプション/プロパティを編集し、 [Abi のサポートの一覧に必要な ABI のサポートを追加](~/android/app-fundamentals/cpu-architectures.md)します。 を追加する必要があるどの ABI を判断するには、ターゲット デバイスに対して次の adb コマンドを実行します。
+(1) を修正するには、プロジェクトのオプションとプロパティを編集し、[必要な ABI のサポートをサポートされている ABIs の一覧に追加](~/android/app-fundamentals/cpu-architectures.md)します。 どの ABI を追加する必要があるかを判断するには、ターゲットデバイスに対して次の adb コマンドを実行します。
 
 ```shell
 adb shell getprop ro.product.cpu.abi
 adb shell getprop ro.product.cpu.abi2
 ```
 
-出力には、プライマリ (および省略可能なセカンダリ) Abi です。
+出力には、プライマリ (およびオプションのセカンダリ) ABIs が含まれます。
 
 ```shell
 $ adb shell getprop | grep ro.product.cpu
@@ -435,17 +453,17 @@ $ adb shell getprop | grep ro.product.cpu
 [ro.product.cpu.abi]: [armeabi-v7a]
 ```
 
-## <a name="the-outpath-property-is-not-set-for-project-ldquomyappcsprojrdquo"></a>プロジェクトの OutPath プロパティが設定されていない&ldquo;MyApp.csproj&rdquo;
+## <a name="the-outpath-property-is-not-set-for-project-ldquomyappcsprojrdquo"></a>プロジェクト&ldquo;MyApp の outpath プロパティが設定されていません&rdquo;
 
-通常は、HP、コンピューターと、環境変数がある&ldquo;プラットフォーム&rdquo;MCD または HPD のようなものに設定されています。 一般的に設定されているプラットフォームの MSBuild プロパティと競合&ldquo;Any CPU&rdquo;または&ldquo;x86&rdquo;します。 MSBuild が機能する前に、自分のコンピューターからこの環境変数を削除する必要があります。
+通常、これは HP コンピューターがあり、環境変数&ldquo;プラットフォーム&rdquo;が MCD や hpd などに設定されていることを意味します。 これは、 &ldquo;通常は Any CPU&rdquo;または&ldquo;x86&rdquo;に設定されている MSBuild プラットフォームプロパティと競合します。 MSBuild を機能させるには、この環境変数をコンピューターから削除する必要があります。
 
--   コントロール パネル > システム > 詳細 > 環境変数
+-   コントロールパネル > システム > 高度な > 環境変数
 
-Mac の Visual Studio または Visual Studio を再起動しを再構築します。 これで、モ ノが期待どおりに機能します。
+Visual Studio または Visual Studio for Mac を再起動し、リビルドを試行します。 正常に機能するようになりました。
 
-## <a name="javalangclasscastexception-monoandroidruntimejavaobject-cannot-be-cast-to"></a>中: mono.android.runtime.JavaObject にキャストできません.
+## <a name="javalangclasscastexception-monoandroidruntimejavaobject-cannot-be-cast-to"></a>ClassCastException: JavaObject をにキャストすることはできません...
 
-Xamarin.Android 4.x は入れ子になったジェネリック型を正しくマーシャ リング適切です。 たとえば、次の C\#を使用してコード[SimpleExpandableListAdapter](https://developer.xamarin.com/api/type/Android.Widget.SimpleExpandableListAdapter/):
+Xamarin 2.x では、入れ子になったジェネリック型が適切にマーシャリングされていません。 たとえば、\# [simpleexpandablelistadapter](xref:Android.Widget.SimpleExpandableListAdapter)を使用する次の C コードについて考えてみます。
 
 
 ```csharp
@@ -478,7 +496,7 @@ mAdapter = new SimpleExpandableListAdapter (
 ```
 
 
-問題は、入れ子になったジェネリック型に、Xamarin.Android から正しくマーシャ リングすることです。 `List<IDictionary<string, object>>`にマーシャ リングされる、 [java.lang.ArrrayList](https://developer.xamarin.com/api/type/Java.Util.ArrayList/)が、`ArrayList`を含む`mono.android.runtime.JavaObject`インスタンス (を参照、`Dictionary<string, object>`インスタンス)を実装するものではなく[java.util.Map](https://developer.xamarin.com/api/type/Java.Util.IMap/)、次の例外の結果として得られる。
+問題は、Xamarin. Android で入れ子になったジェネリック型が正しくマーシャリングされないことです。 `List<IDictionary<string, object>>` は [java.lang.ArrrayList](xref:Java.Util.ArrayList) にマーシャリングされていますが、`ArrayList` には、(`Dictionary<string, object>` インスタンスを参照する) `mono.android.runtime.JavaObject` インスタンスが含まれています。これは、[java.util.Map](xref:Java.Util.IMap) を実装するものではありません。その結果、次の例外が発生します。
 
 ```shell
 E/AndroidRuntime( 2991): FATAL EXCEPTION: main
@@ -492,7 +510,7 @@ E/AndroidRuntime( 2991):        at android.widget.ListView.fillFromTop(ListView.
 E/AndroidRuntime( 2991):        at android.widget.ListView.layoutChildren(ListView.java:1622)
 ```
 
-回避策は、指定された使用[Java コレクション型](~/android/internals/api-design.md)の代わりに、`System.Collections.Generic`型、&ldquo;内部&rdquo;型。 インスタンスをマーシャ リングする場合、適切な Java 型、これがします。 (Gref の有効期間を減らすために必要なより複雑なは、次のコードです。 使用して、元のコードの変更を簡略化できます`s/List/JavaList/g`と`s/Dictionary/JavaDictionary/g`場合 gref の有効期間が、心配はありません)。
+この回避策は、 &ldquo;内部&rdquo;型の`System.Collections.Generic`型ではなく、提供された[Java コレクション型](~/android/internals/api-design.md)を使用することです。 これにより、インスタンスをマーシャリングするときに、適切な Java の種類が得られます。 (次のコードは、期間を短縮するために必要以上に複雑です。 `s/List/JavaList/g` また`s/Dictionary/JavaDictionary/g` 、を使用して元のコードを変更することもできます。
 
 ```csharp
 // insert good code here
@@ -525,12 +543,12 @@ using (var groupData = new JavaList<IDictionary<string, object>> ()) {
 }
 ```
 
-[これは、将来のリリースで修正](https://bugzilla.xamarin.com/show_bug.cgi?id=5401)します。
+[これは、将来のリリースで修正される予定](https://bugzilla.xamarin.com/show_bug.cgi?id=5401)です。
 
 
 ## <a name="unexpected-nullreferenceexceptions"></a>予期しない NullReferenceExceptions
 
-場合によっては、 [Android デバッグ ログ](~/android/deploy-test/debugging/android-debug-log.md)に比べて、NullReferenceExceptions は言うまでもを&ldquo;発生することはできません、&rdquo;またはアプリがなくなるの少し前に Android ランタイム コードの Mono に由来します。
+場合によっては、[Android Debug Log](~/android/deploy-test/debugging/android-debug-log.md) に、&ldquo;発生できない&rdquo; nullreferenceexceptionsや、アプリが停止する直前にMonoforAndroidのランタイムコードが表示されることがあります。
 
 ```shell
 E/mono(15202): Unhandled Exception: System.NullReferenceException: Object reference not set to an instance of an object
@@ -550,28 +568,28 @@ E/mono    ( 4176): at Android.Runtime.JNIEnv.NewString (string)
 E/mono    ( 4176): at Android.Util.Log.Info (string,string)
 ```
 
-これは、Android ランタイムがさまざまな理由から、ターゲットの GREF 制限に達した、何かなどに発生することが、プロセスを中止するときに発生することができます&ldquo;間違った&rdquo;JNI の使用。
+これは、Android ランタイムがプロセスを中止することを決定した場合に発生する可能性があります。これは、ターゲットの JNI の制限に&ldquo;達し&rdquo;たり、で何らかの問題が発生したりするなど、さまざまな理由で発生する可能性があります。
 
-このかどうかを参照するには、ようなプロセスからのメッセージを Android デバッグ ログを確認します。
+この問題が発生しているかどうかを確認するには、Android デバッグログで、次のようなプロセスからのメッセージを確認します。
 
 ```shell
 E/dalvikvm(  123): VM aborting
 ```
 
 
-## <a name="abort-due-to-global-reference-exhaustion"></a>グローバル参照の枯渇による中止します。
+## <a name="abort-due-to-global-reference-exhaustion"></a>グローバル参照の枯渇による中止
 
-Android ランタイムの JNI のレイヤーには、時間の任意の時点で有効にする JNI オブジェクト参照の数に制限がのみサポートされます。 この制限を超えると、何かが中断します。
+Android ランタイムの JNI レイヤーでサポートされるのは、特定の時点で有効な JNI オブジェクト参照の数が限られている場合のみです。 この制限を超えると、何かが中断します。
 
-GREF (*グローバル参照*) の制限は、エミュレーターで 2000 参照とハードウェアに対する ~ 52000 を参照します。
+グリーン (*global reference*) の制限は、エミュレーターでは2000の参照、ハードウェアでは ~ 52000 の参照です。
 
-Android のデバッグ ログにこのメッセージが表示されたらが多すぎる GREFs の作成を開始して理解しておく。
+Android デバッグログに次のようなメッセージが表示されたときに、作成される GREFs が多すぎることがわかっています。
 
 ```shell
 D/dalvikvm(  602): GREF has increased to 1801
 ```
 
-GREF 制限に達すると、次などのメッセージが出力されます。
+上限に達した場合は、次のようなメッセージが出力されます。
 
 ```shell
 D/dalvikvm(  602): GREF has increased to 2001
@@ -642,16 +660,16 @@ E/dalvikvm(  602): VM aborting
 ```
 
 
-上記の例では (ちなみに、由来、 [685215 バグ](https://bugzilla.novell.com/show_bug.cgi?id=685215))、問題が多すぎる Android.Graphics.Point のインスタンスが作成されていることですを参照してください[コメント\#2](https://bugzilla.novell.com/show_bug.cgi?id=685215#c2)の修正プログラムの一覧については。この特定のバグです。
+上の例 (ちなみに、[バグ 685215](https://bugzilla.novell.com/show_bug.cgi?id=685215)から発生します) で問題は、作成されている Android... のインスタンスが多すぎることです。この特定のバグの修正の一覧については、[コメント\#2](https://bugzilla.novell.com/show_bug.cgi?id=685215#c2)を参照してください。
 
-種類が多数のインスタンスを検索する便利なソリューションは、通常、割り当てられた&ndash;上記のダンプに Android.Graphics.Point&ndash;し、検索、作成された、ソース コードとその dispose で適切に (ように、Java-object 有効期間の短縮)。 これは常に適切な (\#685215 はマルチ スレッド、単純なソリューションが Dispose の呼び出しを回避できます) が、最初に検討してください。
+通常、便利な解決策は、割り当てら&ndash;れて&ndash;いるインスタンスの数が多すぎている型を検索し、それをソースコード内で作成し、それらを適切に破棄することです (Java オブジェクトの有効期間が短縮されます)。 これは常に適切で\#あるとは限りません (685215 はマルチスレッドであるため、単純なソリューションは Dispose 呼び出しを回避します) が、最初に考慮する必要があります。
 
-有効にできます[GREF ログ](~/android/troubleshooting/index.md)GREFs が作成されたときと数の存在を確認します。
+作成した GREFs がどの程度存在するかを確認するには、その[ログ記録](~/android/troubleshooting/index.md)を有効にすることができます。
 
 
-## <a name="abort-due-to-jni-type-mismatch"></a>JNI の型が一致しないのために中止します。
+## <a name="abort-due-to-jni-type-mismatch"></a>JNI の型が一致しないため、中止します
 
-キューブを手動ロール JNI コードとして設定すると場合、型が一致しませんなど、正しくこと可能性がありますを呼び出すしようとすると`java.lang.Runnable.run`を実装していない型で`java.lang.Runnable`します。 このような場合がありますメッセージ Android デバッグ ログに次のような。
+JNI コードを手動でロールアウトする場合、型が正しく一致しない可能性があります。たとえば、を実装`java.lang.Runnable.run` `java.lang.Runnable`していない型でを呼び出そうとした場合などです。 これが発生すると、Android デバッグログに次のようなメッセージが表示されます。
 
 ```shell
 W/dalvikvm( 123): JNI WARNING: can't call Ljava/Type;;.method on instance of Lanother/java/Type;
@@ -660,28 +678,28 @@ W/dalvikvm( 123):              in Lmono/java/lang/RunnableImplementor;.n_run:()V
 E/dalvikvm( 123): VM aborting
 ```
 
-## <a name="dynamic-code-support"></a>動的なコードのサポート
+## <a name="dynamic-code-support"></a>動的コードのサポート
 
-### <a name="dynamic-code-does-not-compile"></a>動的なコードはコンパイルされません。
+### <a name="dynamic-code-does-not-compile"></a>動的コードはコンパイルされません。
 
-C を使用する\#System.Core.dll、Microsoft.CSharp.dll および Mono.CSharp.dll をプロジェクトに追加する必要が、アプリケーションまたはライブラリに動的にします。
+アプリケーションまたは\#ライブラリで C 動的を使用するには、プロジェクトに system.servicemodel、Microsoft の .dll、および Mono を追加する必要があります。
 
-### <a name="in-release-build-missingmethodexception-occurs-for-dynamic-code-at-run-time"></a>リリースのビルドで MissingMethodException が動的なコードの実行時に発生します。
+### <a name="in-release-build-missingmethodexception-occurs-for-dynamic-code-at-run-time"></a>リリースビルドでは、実行時に動的コードの MissingMethodException が発生します。
 
--   アプリケーション プロジェクトには System.Core.dll、Microsoft.CSharp.dll または Mono.CSharp.dll への参照がない可能性があります。 これらのアセンブリが参照されていることを確認します。
+-   おそらく、アプリケーションプロジェクトには、System. .dll、Microsoft. CSharp. .dll への参照が含まれていません。 これらのアセンブリが参照されていることを確認します。
 
-    -   常に注意してください動的コード コスト。 効率的なコードを必要がある場合は、動的なコードを使用していないことを検討します。
+    -   動的コードは常にコストがかかることに注意してください。 効率的なコードが必要な場合は、動的コードを使用しないことを検討してください。
 
--   最初のプレビュー段階では、各アセンブリ内の型は、アプリケーション コードによって明示的に使用されていない限り、これらのアセンブリは除外されました。 回避策については、次を参照してください。 [http://lists.ximian.com/pipermail/mo...il/009798.html](http://lists.ximian.com/pipermail/monodroid/2012-April/009798.html)
+-   最初のプレビューでは、各アセンブリの型がアプリケーションコードによって明示的に使用されていない限り、これらのアセンブリは除外されていました。 回避策については、次を参照してください。[http://lists.ximian.com/pipermail/mo...il/009798.html](http://lists.ximian.com/pipermail/monodroid/2012-April/009798.html)
 
 
-## <a name="projects-built-with-aotllvm-crash-on-x86-devices"></a>AOT と LLVM クラッシュで x86 上でビルドされたプロジェクトのデバイス
+## <a name="projects-built-with-aotllvm-crash-on-x86-devices"></a>、X86 デバイスで AOT + LLVM クラッシュでビルドされたプロジェクト
 
-ビルドされたアプリをデプロイするときに[AOT と LLVM](~/android/deploy-test/release-prep/index.md) x86 ベースのデバイスで、次のような例外エラー メッセージが表示することがあります。
+X86 ベースのデバイスで[AOT + LLVM](~/android/deploy-test/release-prep/index.md)でビルドされたアプリをデプロイすると、次のような例外エラーメッセージが表示される場合があります。
 
 ```shell
 Assertion: should not be reached at /Users/.../external/mono/mono/mini/tramp-x86.c:124
 Fatal signal 6 (SIGABRT), code -6 in tid 4051 (amarin.bug56111)
 ```
 
-これで報告される既知の問題は、 [56111](https://bugzilla.xamarin.com/show_bug.cgi?id=56111)します。 回避策では、LLVM を無効にします。
+これは、 [56111](https://bugzilla.xamarin.com/show_bug.cgi?id=56111)で報告されている既知の問題です。 この回避策は、LLVM を無効にすることです。

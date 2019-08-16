@@ -6,174 +6,174 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2018
-ms.openlocfilehash: 09466cc9eed4899ef0aa1198ff0aee5cd420e110
-ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
+ms.openlocfilehash: 3b89f63d42b01140d73cd1551c75211d2fea8e27
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67674634"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510724"
 ---
 # <a name="garbage-collection"></a>ガベージ コレクション
 
-Xamarin.Android で Mono を使用して[単純な世代別ガベージ コレクター](https://www.mono-project.com/docs/advanced/garbage-collector/sgen/)します。 これは、2 つの世代にマーク アンド スイープ ガベージ コレクターと*ラージ オブジェクト スペース*、2 つの種類のコレクションで。 
+Xamarin Android では、Mono の[単純な世代のガベージコレクター](https://www.mono-project.com/docs/advanced/garbage-collector/sgen/)を使用します。 これは、2種類のコレクションを持つ、2つのジェネレーションと*大きなオブジェクト空間*を持つマークアンドスイープガベージコレクターです。 
 
--   マイナー コレクション (収集 Gen0 ヒープ) 
--   (収集 Gen1 およびラージ オブジェクト スペース ヒープ) の主要なコレクション。 
+-   マイナーコレクション (Gen0 ヒープの収集) 
+-   主要なコレクション (Gen1 と大きなオブジェクト空間ヒープを収集します)。 
 
 > [!NOTE]
-> 使用して明示的なコレクションがない場合は、 [GC。Collect()](xref:System.GC.Collect)コレクションは*オンデマンド*ヒープの割り当てに基づいて、します。 *これは、参照カウント システムではありません*; オブジェクト*未解決の参照がないとすぐには収集されません*、か、スコープが終了しました。 GC は、マイナーのヒープが新しい割り当てのためのメモリを使い果たしたときに実行されます。 割り当てがない場合は実行されません。
+> GC を介した明示的なコレクションが存在しない場合[。Collect ()](xref:System.GC.Collect)コレクションは、ヒープ割り当て*に基づいて要求時に*行われます。 *これは参照カウントシステムではありません*。未処理の参照がない場合、またはスコープが終了した場合は、すぐにオブジェクト*が収集されません*。 GC は、新しい割り当てのためにマイナーヒープのメモリが不足したときに実行されます。 割り当てられていない場合は、実行されません。
 
 
-マイナー コレクションは低コストな頻度の高いと、最近割り当てられた、配信不能のオブジェクトを収集するために使用します。 マイナー コレクションは、割り当てられたオブジェクトのいくつかの MB ごとの後に実行されます。 軽微なコレクションを呼び出すことによって手動で実行できます[GC。(0) の収集します。](/dotnet/api/system.gc.collect#System_GC_Collect_System_Int32_) 
+マイナーコレクションは安価で頻繁に使用され、最近割り当てられたオブジェクトと配信されていないオブジェクトを収集するために使用されます。 マイナーコレクションは、割り当てられたオブジェクトの数 MB ごとに実行されます。 マイナーコレクションは、GC を呼び出すことによって手動で実行でき[ます。Collect (0)](/dotnet/api/system.gc.collect#System_GC_Collect_System_Int32_) 
 
-メジャーのコレクションでは、コストがかかり、あまり頻繁には、すべて終了したオブジェクトを再利用する使用されます。 現在のヒープ サイズ (ヒープのサイズ変更) する前にメモリが使い果たされると、メジャーのコレクションが実行されます。 メジャーのコレクションを呼び出すことによって手動で実行できます[GC。() を収集](xref:System.GC.Collect)または呼び出すことによって[GC。(Int) の収集](/dotnet/api/system.gc.collect#System_GC_Collect_System_Int32_)引数で[GC。MaxGeneration](xref:System.GC.MaxGeneration)します。 
-
-
-
-## <a name="cross-vm-object-collections"></a>クロス VM オブジェクトのコレクション
-
-オブジェクトの種類の 3 つのカテゴリがあります。
-
--   **マネージ オブジェクト**: 型は*いない*から継承[Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/) 、例: [System.String](xref:System.String)します。 
-    これらは、GC によって通常収集されます。 
-
--   **Java オブジェクト**:Java 型が Android ランタイム VM 内に存在するが、Mono の VM には公開されません。 これらは、退屈であり、これ以上説明しません。 これらは、Android ランタイム VM によって通常収集されます。 
-
--   **ピア オブジェクト**: 実装する型[IJavaObject](https://developer.xamarin.com/api/type/Android.Runtime.IJavaObject/) 、例: すべて[Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/)と[Java.Lang.Throwable](https://developer.xamarin.com/api/type/Java.Lang.Throwable/)サブクラスです。 これらの型のインスタンスがある 2 つの"halfs"、*管理されているピア*と*ネイティブ ピア*します。 管理対象のピアのインスタンスである、C#クラス。 ネイティブのピアが Android ランタイム VM 内での Java クラスのインスタンスとC# [IJavaObject.Handle](https://developer.xamarin.com/api/property/Android.Runtime.IJavaObject.Handle/)プロパティには、ネイティブのピアに JNI グローバル参照が含まれています。 
+主要なコレクションはコストが高く、頻度が低く、すべての配信不能オブジェクトを回収するために使用されます。 メジャーコレクションは、ヒープのサイズを変更する前に、現在のヒープサイズに対してメモリが使い果たされると実行されます。 メジャーコレクションは、GC を呼び出すことによって手動で実行でき[ます。Collect ()](xref:System.GC.Collect)を呼び出すか、GC を呼び出し[ます。Collect (int)](/dotnet/api/system.gc.collect#System_GC_Collect_System_Int32_)を引数 GC と共に使用[します。MaxGeneration](xref:System.GC.MaxGeneration)。 
 
 
-ネイティブのピアの 2 種類あります。
 
--   **フレームワークのピア**:例: xamarin.android を何もがわかっている Java 型を「正常」 [android.content.Context](https://developer.xamarin.com/api/type/Android.Content.Context/)します。
+## <a name="cross-vm-object-collections"></a>クロス VM オブジェクトコレクション
 
--   **ユーザーのピア**:[Android 呼び出し可能ラッパー](~/android/platform/java-integration/working-with-jni.md)ビルド時に、アプリケーション内に存在する各 Java.Lang.Object サブクラスが生成されます。
+オブジェクトの種類には、3つのカテゴリがあります。
 
+-   **マネージオブジェクト**: system.string[から](xref:Java.Lang.Object)継承*されていない*型 ( [system.string](xref:System.String)など)。 
+    これらは通常、GC によって収集されます。 
 
-Xamarin.Android プロセス内で 2 つの Vm があるとは、ガベージ コレクションの 2 つの種類があります。
+-   **Java オブジェクト**:Android ランタイム VM 内に存在していても Mono VM には公開されていない Java 型。 これらは退屈なものであり、それ以上については説明しません。 これらは、通常、Android ランタイム VM によって収集されます。 
 
--   Android ランタイム コレクション 
--   Mono のコレクション 
-
-Android ランタイム コレクションの動作、注意点がありますが、通常、: JNI グローバル参照は、GC ルートとして扱われます。 JNI がグローバルな場合、Android ランタイム VM オブジェクトはオブジェクトを保持してを参照するその結果、*できません*場合でも、コレクションの対象ではそれ以外の場合は、収集します。
-
-Mono のコレクションとは、楽しい作業が行われる場所です。 通常、マネージ オブジェクトが収集されます。 ピア オブジェクトを収集するには、次のプロセスを実行します。
-
-1.  Mono のコレクションの対象となるすべてのピア オブジェクトでは、弱い JNI グローバル参照に置き換え、JNI グローバル参照があります。 
-
-2.  Android ランタイム VM GC が呼び出されます。 任意のネイティブのピア インスタンスは収集可能性があります。 
-
-3.  (1) で作成した、JNI の弱いのグローバルな参照がチェックされます。 弱い参照を収集すると、ピア オブジェクトが収集されます。 弱い参照を持つ場合*いない*収集された、弱い参照は JNI グローバル参照に置き換えられ、ピア オブジェクトは収集されません。 注: API 14 以降でつまりから返される値`IJavaObject.Handle`GC 後に変更する可能性があります。 
-
-これは、いずれかによって参照されている限り、ピア オブジェクトのインスタンスが存在するすべての最終的な結果がマネージ コード (例: に格納されている、`static`変数) または Java コードによって参照されます。 それ以外の場合は、何を超えるネイティブ ピアの有効期間を拡張するさらに、live、ネイティブのピアと管理されているピアの両方が収集可能になるまで、ネイティブのピアが収集可能なできないようです。
+-   **ピアオブジェクト**: [IJavaObject](xref:Android.Runtime.IJavaObject)を実装する型、たとえば、すべての[Java.Lang.Object](xref:Java.Lang.Object) サブクラスと [Java.Lang.Throwable](xref:Java.Lang.Throwable) サブクラスです。 これらの型のインスタンスには、*マネージピア*と*ネイティブピア*の2つの "halfs" があります。 マネージピアは、 C#クラスのインスタンスです。 ネイティブピアは Android ランタイム VM 内の Java クラスのインスタンスであり、 C# [IJavaObject](xref:Android.Runtime.IJavaObject.Handle)プロパティには、ネイティブピアへの JNI グローバル参照が含まれています。 
 
 
-## <a name="object-cycles"></a>オブジェクトのサイクル
+ネイティブピアには、次の2種類があります。
 
-ピア オブジェクトは、Android ランタイムおよび Mono VM の内部で論理的に存在します。 たとえば、 [Android.App.Activity](https://developer.xamarin.com/api/type/Android.App.Activity/)ピアのマネージ インスタンスは、対応する必要が[android.app.Activity](https://developer.android.com/reference/android/app/Activity.html) framework ピア Java インスタンス。 すべてのオブジェクトから継承する[Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/)ことが期待される両方の Vm 内の表現があります。 
+-   **フレームワークのピア**:"Normal" Java の種類は、 [android. コンテンツコンテキスト](xref:Android.Content.Context)など、Xamarin の何も認識していません。
 
-両方の Vm で表現するすべてのオブジェクトが 1 つの VM 内でのみ存在するオブジェクトと比較して、拡張の有効期間になります (など、 [ `System.Collections.Generic.List<int>` ](xref:System.Collections.Generic.List%601))。 呼び出す[GC。収集](xref:System.GC.Collect)Xamarin.Android GC が収集する前にいずれかの VM で、オブジェクトが参照されていないことを確認する必要が必ずしも、これらのオブジェクトを収集しません。 
+-   **ユーザーピア**:アプリケーション内に存在する各 Java Lang.ini オブジェクトサブクラスのビルド時に生成される、 [Android 呼び出し可能ラッパー](~/android/platform/java-integration/working-with-jni.md) 。
 
-オブジェクトの有効期間を短縮する[Java.Lang.Object.Dispose()](https://developer.xamarin.com/api/member/Java.Lang.Object.Dispose/)呼び出す必要があります。 これは手動で""の接続が切断できます。 つまり、オブジェクトを高速で収集するグローバルの参照を解放して、2 つの Vm 間でオブジェクトにします。 
+
+Xamarin. Android プロセス内には2つの Vm が存在するため、次の2種類のガベージコレクションがあります。
+
+-   Android ランタイムコレクション 
+-   Mono コレクション 
+
+Android ランタイムコレクションは正常に動作しますが、注意点があります。 JNI のグローバル参照は、GC ルートとして扱われます。 その結果、Android ランタイム VM オブジェクトを保持している JNI グローバル参照が存在する場合、そのオブジェクトがコレクションに適合していても、そのオブジェクトを収集する*ことはできません*。
+
+Mono コレクションは、楽しいものです。 管理オブジェクトは正常に収集されます。 ピアオブジェクトを収集するには、次の手順を実行します。
+
+1.  Mono コレクションの対象となるすべてのピアオブジェクトの JNI グローバル参照は、JNI の弱いグローバル参照に置き換えられます。 
+
+2.  Android ランタイム VM GC が呼び出されます。 ネイティブピアインスタンスはすべて収集できます。 
+
+3.  (1) で作成された JNI 弱いグローバル参照がチェックされます。 弱い参照が収集されている場合は、ピアオブジェクトが収集されます。 弱い参照が収集されて*い*ない場合、弱い参照は JNI グローバル参照に置き換えられ、ピアオブジェクトは収集されません。 注: API 14 以降では、から`IJavaObject.Handle`返される値は GC 後に変更される可能性があることを意味します。 
+
+この結果、ピアオブジェクトのインスタンスは、いずれかのマネージコード ( `static`変数に格納されているなど) によって参照されているか、Java コードによって参照されている限り、有効になります。 また、ネイティブピアは、ネイティブピアとマネージピアの両方が収集可能になるまで収集されないので、ネイティブピアの有効期間は、それ以外の場合よりも長く拡張されます。
+
+
+## <a name="object-cycles"></a>オブジェクトサイクル
+
+ピアオブジェクトは、Android ランタイムと Mono VM の両方に論理的に存在します。 たとえば、 [android](xref:Android.App.Activity)の管理対象ピアインスタンスには、対応する[android](https://developer.android.com/reference/android/app/Activity.html) .Net framework ピアの Java インスタンスが含まれます。 [Java. オブジェクト](xref:Java.Lang.Object)から継承されるすべてのオブジェクトは、両方の vm 内に表現を持つことが想定されます。 
+
+両方の Vm で表現を持つすべてのオブジェクトの有効期間は、 [`System.Collections.Generic.List<int>`](xref:System.Collections.Generic.List%601)1 つの vm 内にのみ存在するオブジェクト (など) と比較して拡張されます。 [GC を呼び出しています。収集](xref:System.GC.Collect)では、必ずしもこれらのオブジェクトが収集されることはありません。 ANDROID GC では、オブジェクトを収集する前に、いずれの VM からも参照されないようにする必要があります。 
+
+オブジェクトの有効期間を短縮するには、 [Java. object. Dispose ()](xref:Java.Lang.Object.Dispose)を呼び出す必要があります。 これにより、グローバル参照を解放することによって、2つの Vm 間でオブジェクトの接続を手動で "サーバー" します。これにより、オブジェクトをより迅速に収集できます。 
 
 
 ## <a name="automatic-collections"></a>自動コレクション
 
-以降で[リリース 4.1.0](https://developer.xamarin.com/releases/android/mono_for_android_4/mono_for_android_4.1.0)、gref しきい値を超えたときに Xamarin.Android がフル GC に自動的に実行します。 このしきい値は、プラットフォームの既知の最大 grefs の 90% を示します。エミュレーター (最大 2000) で 1800 grefs と 46800 grefs ハードウェア (最大 52000)。 *注:* Xamarin.Android によって作成された grefs だけがカウント[Android.Runtime.JNIEnv](https://developer.xamarin.com/api/type/Android.Runtime.JNIEnv/)は、その他のプロセスで作成した grefs は認識していないとします。 これは、ヒューリスティック*のみ*します。 
+[リリース 4.1.0](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/android/mono_for_android_4/mono_for_android_4.1.0/index.md)以降、Xamarin. Android では、しきい値を超えた場合に、完全な GC が自動的に実行されます。 このしきい値は、プラットフォームの既知の最大 grefs の 90% です。1800 grefs on the emulator (2000 max)、および 46800 grefs on ハードウェア (最大 52000)。 *注:* Xamarin Android では、 [android. ランタイム](xref:Android.Runtime.JNIEnv)によって作成された grefs のみがカウントされ、プロセスで作成された他の grefs は認識されません。 これはヒューリスティックに*すぎ*ません。 
 
-自動のコレクションが実行されると、次のようなメッセージは、デバッグ ログを印刷します。
+自動コレクションが実行されると、次のようなメッセージがデバッグログに出力されます。
 
 ```shell
 I/monodroid-gc(PID): 46800 outstanding GREFs. Performing a full GC!
 ```
 
-内で見つかったは、これは、非確定的ないもの時刻 (例: グラフィックス レンダリング) 中に発生する可能性があります。 このメッセージを表示する、他の場所で、明示的なコレクションを実行したい場合がありますまたはしようとする場合[ピア オブジェクトの有効期間を短縮](#Helping_the_GC)します。 
+この出現は非決定的であり、悪い時 (グラフィックスレンダリングの途中など) で発生する可能性があります。 このメッセージが表示された場合は、他の場所で明示的にコレクションを実行するか、[ピアオブジェクトの有効期間を短縮](#Helping_the_GC)することをお勧めします。 
 
-## <a name="gc-bridge-options"></a>GC ブリッジ オプション
+## <a name="gc-bridge-options"></a>GC ブリッジオプション
 
-Xamarin.Android では、Android と Android ランタイムによる透過的なメモリ管理を提供します。 Mono ガベージ コレクターと呼ばれる拡張機能として実装されます、 *GC ブリッジ*します。 
+Android と android ランタイムを使用して、透過的なメモリ管理機能を提供します。 これは、 *GC ブリッジ*と呼ばれる Mono ガベージコレクターの拡張機能として実装されます。 
 
-GC ブリッジは、Mono のガベージ コレクションとアウトされるピアの「存続性」Android ランタイム ヒープを使用して検証オブジェクトする必要があります。 数値の中に機能します。 順序で次の手順を実行して、この判断に GC ブリッジします。
+GC ブリッジは、Mono ガベージコレクション中に動作し、Android ランタイムヒープで "活性" を確認する必要があるピアオブジェクトを識別します。 GC ブリッジは、次の手順を順番に実行して、この決定を行います。
 
-1.  Java のオブジェクトに到達できないピア オブジェクトの mono 参照グラフを誘発します。 
+1.  到達できないピアオブジェクトの mono 参照グラフを、そのオブジェクトが表す Java オブジェクトに強制的に挿入します。 
 
-2.  Java の GC を実行します。
+2.  Java GC を実行します。
 
-3.  どのオブジェクトが実際に実行されないことを確認します。 
+3.  どのオブジェクトが本当に停止しているかを確認します。 
 
-この複雑な処理が実現のサブクラス`Java.Lang.Object`任意のオブジェクトを自由に参照以外に Java でのオブジェクトをバインドできるすべての制限を削除しますC#します。 このような複雑さのためには、アプリケーションで顕著な一時停止する可能性が、ブリッジ処理を非常に高価なことができます。 アプリケーションで大きな一時停止が発生している場合は、次の 3 つの GC ブリッジ実装のいずれかを調べてみる価値は。 
+この複雑なプロセスは、の`Java.Lang.Object`サブクラスが任意のオブジェクトを自由に参照できるようにすることです。これにより、Java オブジェクトをC#バインドできる制限がなくなります。 この複雑さにより、ブリッジプロセスは非常にコストが高くなり、アプリケーションで顕著な一時停止が発生する可能性があります。 アプリケーションで大幅な一時停止が発生している場合は、次の3つの GC ブリッジ実装のいずれかを調査する価値があります。 
 
--   **Tarjan** -GC ブリッジのまったく新しいデザインに基づいて[Robert Tarjan のアルゴリズムの伝達を逆参照と](https://en.wikipedia.org/wiki/Tarjan's_strongly_connected_components_algorithm)します。
-    最適なパフォーマンス、シミュレートされたワークロードでは、は、実験用のコードの大きな共有もあります。 
+-   **Tarjan** - [Robert tarjan のアルゴリズムと後方参照の伝達](https://en.wikipedia.org/wiki/Tarjan's_strongly_connected_components_algorithm)に基づく GC ブリッジのまったく新しい設計。
+    シミュレートされたワークロードで最高のパフォーマンスが得られますが、試験的なコードの共有も大きくなります。 
 
--   **新しい**-二次動作の 2 つのインスタンスの修正がコア アルゴリズムを保持する、元のコードの主要な改訂 (に基づいて[Kosaraju のアルゴリズム](https://en.wikipedia.org/wiki/Kosaraju's_algorithm)コンポーネントが接続されている厳密に検索用)。 
+-   **新**機能: 元のコードの大きな見直しで、2つの二次動作のインスタンスを修正し、コアアルゴリズムを維持します (強い接続コンポーネントを検出するための[Kosaraju のアルゴリズム](https://en.wikipedia.org/wiki/Kosaraju's_algorithm)に基づいています)。 
 
--   **古い**-元の実装 (3 つの最も安定したと見なされます)。 これは、アプリケーションで使用する場合のブリッジ、`GC_BRIDGE`一時停止が許容されます。 
-
-
-最適などの GC のブリッジの動作を確認する唯一の方法は、アプリケーションで実験して出力を分析することです。 ベンチマークのデータを収集する 2 つの方法はあります。 
-
--   **ログ記録を有効にする**-ログ記録を有効にする (で説明、[構成](~/android/internals/garbage-collection.md)セクション) の GC のブリッジの各オプションでは、キャプチャして、各設定のログ出力を比較します。 検査、`GC`メッセージの各オプションは、特に、`GC_BRIDGE`メッセージ。 非対話型アプリケーションは、許容量が 60 ミリ秒 (ゲーム) などの非常に対話型アプリケーション用の上には、一時停止しますが、問題は、最大 150ms を一時停止します。 
-
--   **ブリッジのアカウンティングを有効にする**-ブリッジのアカウンティング ブリッジ プロセスに関係する各オブジェクトによって指されるオブジェクトの平均コストが表示されます。 サイズがこの情報を並べ替えると、余分なオブジェクトの最大数を保持している内容についての手掛かりが提供されます。 
+-   **Old** -元の実装 (最も安定したものと見なされます)。 これは、 `GC_BRIDGE`一時停止が許容される場合にアプリケーションが使用する必要があるブリッジです。 
 
 
-指定する`GC_BRIDGE`オプションをアプリケーションには、私たちが必要があります、渡す`bridge-implementation=old`、`bridge-implementation=new`または`bridge-implementation=tarjan`を`MONO_GC_PARAMS`例については、環境変数。 
+どの GC ブリッジが最適に動作するかを判断する唯一の方法は、アプリケーションを試して出力を分析することです。 ベンチマークのためにデータを収集するには、次の2つの方法があります。 
+
+-   **ログ記録を有効**にする-各 GC ブリッジオプションについて、[構成](~/android/internals/garbage-collection.md)セクションで説明されているようにログ記録を有効にし、各設定のログ出力をキャプチャして比較します。 各オプションの`GC_BRIDGE` `GC`メッセージ (特にメッセージ) を検査します。 非対話型のアプリケーションでは、最大150ミリ秒の一時停止が許容されますが、非常に対話型のアプリケーション (ゲームなど) の場合、60ミリ秒を超えると問題が発生します。 
+
+-   **ブリッジアカウンティングを有効にする**-ブリッジアカウンティングには、ブリッジプロセスに含まれる各オブジェクトが指すオブジェクトの平均コストが表示されます。 この情報をサイズで並べ替えると、余分なオブジェクトが最も多く保持されているかどうかを示すヒントが表示されます。 
+
+
+アプリケーションで必要`GC_BRIDGE`なオプションを指定するには、 `bridge-implementation=new` 、 `bridge-implementation=tarjan` 、また`MONO_GC_PARAMS`は環境変数に渡し`bridge-implementation=old`ます。次に例を示します。 
 
 ```shell
 MONO_GC_PARAMS=bridge-implementation=tarjan
 ```
 
-既定の設定は**Tarjan**します。 回帰の場合は、する必要がありますこのオプションを設定する**古い**します。 またより安定してを使用する情報を選択することがあります**古い**オプション場合**Tarjan**パフォーマンスの向上は生成されません。 
+既定の設定は、 **Tarjan**です。 回帰が見つかった場合は、このオプションを**Old**に設定する必要があります。 また、 **Tarjan**によってパフォーマンスが向上しない場合は、より安定した**古い**オプションを使用することもできます。 
 
 <a name="Helping_the_GC" />
 
-## <a name="helping-the-gc"></a>GC を支援
+## <a name="helping-the-gc"></a>GC のサポート
 
-GC メモリの使用およびコレクションの時間を短縮するための複数の方法はあります。
+GC でメモリ使用量と収集時間を短縮するには、複数の方法があります。
 
 
 
-### <a name="disposing-of-peer-instances"></a>ピアのインスタンスの破棄
+### <a name="disposing-of-peer-instances"></a>ピアインスタンスの破棄
 
-GC に不完全なプロセスが実行されないのは低はメモリが低いときに、GC はそのメモリを認識しないためです。 
+GC にはプロセスの不完全なビューがあり、メモリが不足していることが GC で認識されないため、メモリが不足している場合は実行されない可能性があります。 
 
-インスタンスなど、 [Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/)型または派生型は、少なくとも 20 バイト サイズ (通知などせず変更される可能性など。)。 
-[呼び出し可能ラッパーをマネージ](~/android/internals/architecture.md)ので、追加のインスタンス メンバーを追加できませんがある場合、 [Android.Graphics.Bitmap](https://developer.xamarin.com/api/type/Android.Graphics.Bitmap/)インスタンスのメモリ、10 MB の blob を参照する Xamarin.Android の GC をわかりません&ndash;GC20 バイトのオブジェクトが表示されます、10 MB のメモリをアライブに保つは Android の実行時に割り当てられたオブジェクトにリンクされていることを確認することはできません。 
+たとえば、 [Java. Lang. オブジェクト](xref:Java.Lang.Object)型または派生型のインスタンスのサイズは少なくとも20バイトです (予告なしに変更される可能性があります)。 
+[マネージ呼び出し可能ラッパー](~/android/internals/architecture.md)は、インスタンスメンバーを追加しません。したがって、10 mb のメモリの blob を参照する[android の Graphics. Bitmap](xref:Android.Graphics.Bitmap)インスタンスがある場合、Xamarin は&ndash; gc が20バイトのオブジェクトを参照することを認識しません。は、10 MB のメモリを保持している Android ランタイムに割り当てられたオブジェクトにリンクされていることを判断できません。 
 
-GC を頻繁に必要があります。 残念ながら、 *GC。AddMemoryPressure()* と*GC。RemoveMemoryPressure()* はサポートされていませんのでする*知る*だけラージ Java に割り当てられたオブジェクト グラフを手動で呼び出す必要がありますを解放する[GC。Collect()](xref:System.GC.Collect)プロンプト Java 側を解放する GC にメモリ、またはすることができますの明示的な破棄*Java.Lang.Object*マネージ呼び出し可能ラッパーと Java のインスタンス間のマッピングの重大なサブクラスです。 たとえばを参照してください[バグ 1084](http://bugzilla.xamarin.com/show_bug.cgi?id=1084#c6)します。 
+多くの場合、GC を支援する必要があります。 残念ながら、 *GC です。AddMemoryPressure ()* および*GC。RemoveMemoryPressure ()* はサポートされていないので、Java で割り当てられた大きなオブジェクトグラフを解放したことが*わかっ*ている場合は、手動で GC を呼び出す必要があり[ます。収集 ()](xref:System.GC.Collect)を実行して、java 側のメモリを解放するよう GC に要求します。または、 *Java の lang.ini*を明示的に破棄して、マネージ呼び出し可能ラッパーと java インスタンス間のマッピングを中断することもできます。 例については、「 [Bug 1084](http://bugzilla.xamarin.com/show_bug.cgi?id=1084#c6)」を参照してください。 
 
 
 > [!NOTE]
-> 必要があります*非常に*を破棄する場合は注意`Java.Lang.Object`サブクラスのインスタンス。
+> サブクラスのインスタンスを破棄する場合`Java.Lang.Object`は、細心*の注意が*必要です。
 
-メモリの破損の可能性を最小限に抑えるには、次のガイドラインを呼び出すときに観察`Dispose()`します。
-
-
-#### <a name="sharing-between-multiple-threads"></a>複数のスレッド間の共有
-
-場合、 *Java またはマネージ*インスタンス、複数のスレッド間で共有できる*することはできません`Dispose()`d*、**これまで**します。 例えば [`Typeface.Create()`](https://developer.xamarin.com/api/member/Android.Graphics.Typeface.Create/(System.String%2cAndroid.Graphics.TypefaceStyle)) 
-返す可能性があります、*キャッシュされたインスタンス*します。 複数のスレッドは、同じ引数を提供する場合は、取得、*同じ*インスタンス。 その結果、`Dispose()`の演算を行い、 `Typeface` 1 つのスレッドからインスタンスが他のスレッドで発生する可能性が無効になる`ArgumentException`から`JNIEnv.CallVoidMethod()`(特に) インスタンスが別のスレッドから破棄されたため、します。 
+メモリが破損する可能性を最小限に抑えるには、を呼び出す`Dispose()`ときに、次のガイドラインを確認してください。
 
 
-#### <a name="disposing-bound-java-types"></a>バインドされた Java 型を破棄
+#### <a name="sharing-between-multiple-threads"></a>複数のスレッド間での共有
 
-インスタンスを破棄することができますのインスタンスがバインドされている Java の型である場合、*限り*マネージ コードからインスタンスを再利用されない*と*Java インスタンスを (参照前のスレッド間で共有することはできません`Typeface.Create()`ディスカッション)。 (この決定を行うにくい場合があります。)マネージ コードを次回 Java インスタンスの入力を*新しい*ラッパーが作成されます。 
+*Java またはマネージ*インスタンスが複数のスレッド間で共有されている可能性がある場合は、これ**まで**は *`Dispose()`d*ではありません。 例えば[`Typeface.Create()`](xref:Android.Graphics.Typeface.Create*) 
+キャッシュされた*インスタンス*を返す場合があります。 複数のスレッドが同じ引数を提供する場合は、*同じ*インスタンスを取得します。 その結果、あるスレッドから`ArgumentException` `JNIEnv.CallVoidMethod()`インスタンスを使用すると、他のスレッドが無効になる可能性があります。これにより、インスタンスが別のスレッドから破棄されたため、が (その他の) から発生することがあります。 `Typeface` `Dispose()` 
 
-これは、機能は、ドローアブルと他のリソースの量が多いインスタンスに関しては多くの場合に便利です。
+
+#### <a name="disposing-bound-java-types"></a>バインドされた Java 型の破棄
+
+インスタンスがバインドされた Java 型の場合、インスタンスを*マネージコードから*再利用できず、java インスタンスをスレッド間で共有できない*限り*、インスタンスを破棄できます (前`Typeface.Create()`の説明を参照してください)。 (この決定を行うことは困難な場合があります)。次に Java インスタンスがマネージコードに入ると、*新しい*ラッパーが作成されます。 
+
+これは、次のような場合に便利です。
 
 ```csharp
 using (var d = Drawable.CreateFromPath ("path/to/filename"))
     imageView.SetImageDrawable (d);
 ```
 
-上記は安全なので、ピアを[Drawable.CreateFromPath()](https://developer.xamarin.com/api/member/Android.Graphics.Drawables.Drawable.CreateFromPath/)返しますはフレームワークのピアを参照してください*いない*User ピア。 `Dispose()`呼び出しの最後に、`using`ブロックは、管理対象の間のリレーションシップを解除[ディスプレイ](https://developer.xamarin.com/api/type/Android.Graphics.Drawables.Drawable/)および framework[ディスプレイ](https://developer.android.com/reference/android/graphics/drawable/Drawable.html)Java インスタンスをインスタンスAndroid ランタイムをする必要があるとすぐに収集されます。 これが*いない*User ピアにピア インスタンスと呼ばれる場合は、安全では、ここに"external"の情報を使用して*知る*を`Drawable`User ピアを参照できませんので、`Dispose()`を呼び出す安全です。 
+[CreateFromPath ()](xref:Android.Graphics.Drawables.Drawable.CreateFromPath*)が返すピアは、ユーザーピアでは*なく*、フレームワークピアを参照するため、上記は安全です。 `using` ブロックの末尾での `Dispose()` 呼び出しにより、マネージドコードインスタンスとフレームワークの[描画可能](xref:Android.Graphics.Drawables.Drawable)インスタンスの間のリレーションシップが解除され、Androidランタイムで必要になったときに[描画可能](https://developer.android.com/reference/android/graphics/drawable/Drawable.html)インスタンスをすぐに収集できるようになります。 ピアインスタンスがユーザーピアを指している場合、これは安全では*ありません*。ここでは、が`Drawable`ユーザーピア`Dispose()`を参照できず、その呼び出しが安全であることを*知る*ために "外部" 情報を使用しています。 
 
 
-#### <a name="disposing-other-types"></a>その他の種類の破棄 
+#### <a name="disposing-other-types"></a>その他の型の破棄 
 
-Java 型のバインドのない型のインスタンスを指す場合 (など、カスタム`Activity`)、**しないで**呼び出し`Dispose()`しない限りする*知る*こと Java コードはありませんオーバーライドされたメソッドを呼び出すインスタンス。 そのために[ `NotSupportedException`s](~/android/internals/architecture.md#Premature_Dispose_Calls)します。 
+インスタンスが java 型のバインドでは`Activity`ない型 (カスタムなど) を参照している場合、そのインスタンスでオーバーライドされたメソッドを呼び出す java コードがないことが*わかっ*ている場合を除き、を呼び出す`Dispose()`ことは**できません**。 そうしないと、 [ `NotSupportedException`](~/android/internals/architecture.md#Premature_Dispose_Calls)が発生します。 
 
-たとえばがある場合、カスタム リスナーをクリックします。
+たとえば、カスタムクリックリスナーがある場合は、次のようになります。
 
 ```csharp
 partial class MyClickListener : Java.Lang.Object, View.IOnClickListener {
@@ -181,7 +181,7 @@ partial class MyClickListener : Java.Lang.Object, View.IOnClickListener {
 }
 ```
 
-*しないで*Java は、将来のメソッドを呼び出すしようと、このインスタンスを破棄します。
+このインスタンスは、今後 Java がメソッドを呼び出そうとするため、破棄*しないでください*。
 
 ```csharp
 // BAD CODE; DO NOT USE
@@ -191,9 +191,9 @@ using (var listener = new MyClickListener ())
 ```
 
 
-#### <a name="using-explicit-checks-to-avoid-exceptions"></a>明示的なチェックを使用して例外を回避するには
+#### <a name="using-explicit-checks-to-avoid-exceptions"></a>例外を回避するための明示的なチェックの使用
 
-実装している場合、 [Java.Lang.Object.Dispose](https://developer.xamarin.com/api/member/Java.Lang.Object.Dispose(System.Boolean)/)メソッドをオーバー ロード、JNI に関連するオブジェクトに触れないでください。 これを作成、*倍 dispose* (致命的) で、コードをできるようにする場合はガベージ コレクションが既にを基になる Java オブジェクトにアクセスしようとしています。 これには、次のような例外が生成されます。 
+JNI[のオーバーロードメソッド](xref:Java.Lang.Object.Dispose*)を実装している場合は、関係するオブジェクトに触れないようにしてください。 このようにすると、既にガベージコレクトされている基になる Java オブジェクトにコードから (致命的) アクセスを試みることができるように、*ダブル破棄*の状況が発生する可能性があります。 これを行うと、次のような例外が発生します。 
 
 ```shell
 System.ArgumentException: 'jobject' must not be IntPtr.Zero.
@@ -201,9 +201,9 @@ Parameter name: jobject
 at Android.Runtime.JNIEnv.CallVoidMethod
 ```
 
-多くの場合、この状況では、オブジェクトの最初の dispose の原因になる null の場合、メンバーと、この null のメンバーで、その後のアクセス試行がスローされる例外が発生し、ときに発生します。 具体的には、オブジェクトの`Handle`で最初の dispose (をマネージ インスタンスにリンクの基になる Java インスタンス) は無効になりますが、でも、マネージ コードは、使用可能な (参照では不要になった場合でもこの基になるJavaインスタンスへのアクセスを試みます。[呼び出し可能ラッパーをマネージ](~/android/internals/architecture.md#Managed_Callable_Wrappers)Java インスタンスとマネージ インスタンス間のマッピングの詳細について)。 
+この状況は、多くの場合、オブジェクトの最初の破棄によってメンバーが null になると発生します。その後、この null メンバーに対する後続のアクセス試行によって例外がスローされます。 具体的には、オブジェクト`Handle`の (マネージインスタンスを基になる java インスタンスにリンクする) は、最初の dispose で無効になりますが、マネージコードは、使用できなくなった場合でも、この基になる java インスタンスにアクセスしようとします (「」を参照[)。](~/android/internals/architecture.md#Managed_Callable_Wrappers)Java インスタンスとマネージインスタンスの間のマッピングの詳細については、「マネージ呼び出し可能ラッパー」を参照してください。 
 
-この例外を防止する優れた方法がで明示的に確認するには、`Dispose`と基になる Java インスタンスの管理対象のインスタンス間のマッピングは引き続き無効な場合はメソッドは、確認する場合、オブジェクトの`Handle`が null (`IntPtr.Zero`)前に、そのメンバーにアクセスします。 たとえば、次`Dispose`メソッドへのアクセス、`childViews`オブジェクト。 
+この例外を回避するには、マネージインスタンスと基に`Dispose`なる Java インスタンスの間のマッピングがまだ有効であることをメソッドで明示的に検証することをお勧めします`Handle` 。つまり、`IntPtr.Zero`オブジェクトのが null () かどうかを確認します。メンバーにアクセスする前。 たとえば、次`Dispose`のメソッドはオブジェクトに`childViews`アクセスします。 
 
 ```csharp
 class MyClass : Java.Lang.Object, ISomeInterface 
@@ -219,7 +219,7 @@ class MyClass : Java.Lang.Object, ISomeInterface
 }
 ```
 
-初期の dispose がエラーの原因を渡す場合`childViews`に無効な`Handle`、`for`ループへのアクセスがスローされます、`ArgumentException`します。 明示的に追加することで`Handle`null チェックを 1 つ目の前に`childViews`、次に、アクセス`Dispose`メソッドの例外の発生を防ぎます。 
+`childViews`初期の`Handle` disposeパスによっ`ArgumentException`てが無効になると、ループアクセスによってがスローされます。`for` 最初`Handle` `Dispose`のアクセスの前に明示的な null チェックを追加することにより、次のメソッドは例外が発生しないようにします。 `childViews` 
 
 ```csharp
 class MyClass : Java.Lang.Object, ISomeInterface 
@@ -241,11 +241,11 @@ class MyClass : Java.Lang.Object, ISomeInterface
 ```
 
 
-### <a name="reduce-referenced-instances"></a>参照先のインスタンスを減らす
+### <a name="reduce-referenced-instances"></a>参照されるインスタンスを減らす
 
-インスタンスのたびに、`Java.Lang.Object`型またはサブクラスがスキャンされている場合、GC では、全体の中に*オブジェクト グラフ*インスタンスを指すことはスキャンもする必要があります。 オブジェクト グラフは、一連の「インスタンスのルート」を参照する、オブジェクト インスタンス*plus*ルート インスタンスによって参照されているすべての参照先で再帰的にします。 
+GC 中に`Java.Lang.Object`型またはサブクラスのインスタンスがスキャンされるたびに、インスタンスが参照する*オブジェクトグラフ*全体もスキャンされる必要があります。 オブジェクトグラフは、"ルートインスタンス" が参照するオブジェクトインスタンスのセット、*および*ルートインスタンスが参照するすべてのものを再帰的に参照します。 
 
-次のクラスを検討してください。
+次のクラスについて考えてみます。
 
 ```csharp
 class BadActivity : Activity {
@@ -263,11 +263,11 @@ class BadActivity : Activity {
 }
 ```
 
-ときに`BadActivity`が構築されると、オブジェクト グラフの 10004 インスタンスを含む、(1 x `BadActivity`、1 x `strings`、1 x`string[]`によって保持されている`strings`、文字列インスタンス x 10000)、*すべて*のある必要がありますスキャンされるたびに、`BadActivity`インスタンスをスキャンします。 
+が`BadActivity`構築されると、オブジェクトグラフには10004インスタンス ( `BadActivity`1x `strings` `string[]` 、10000x 文字列インスタンス`strings`によって保持されているインスタンス) が格納されます。これらはすべて、`BadActivity`インスタンスはスキャンされます。 
 
-これは好ましくない影響があります、コレクションの時間の GC の一時停止時間を増加します。 
+これにより、収集時間が悪影響を受ける可能性があり、その結果、GC の一時停止時間が増加します。 
 
-によって、GC が役立つことができます*削減*ユーザー ピア インスタンスによってルートとするオブジェクト グラフのサイズ。 上記の例では、これを行う移動`BadActivity.strings`Java.Lang.Object から継承しない別のクラス。 
+ユーザーピアインスタンスによってルートされるオブジェクトグラフのサイズを*小さく*することで、GC を支援できます。 上記の例では、これを実行するに`BadActivity.strings`は、次のように、Java. Lang. オブジェクトから継承しない別のクラスに移動します。 
 
 ```csharp
 class HiddenReference<T> {
@@ -313,56 +313,56 @@ class BetterActivity : Activity {
 ```
 
 
-## <a name="minor-collections"></a>マイナー コレクション
+## <a name="minor-collections"></a>マイナーコレクション
 
-軽微なコレクションを呼び出すことによって手動で実行できます[GC。Collect(0)](xref:System.GC.Collect)します。 マイナー コレクションは安価なは、(メジャーのコレクションと比較して) 場合が必要は重大なコスト、固定されている多くの場合、それらをトリガーするため、わずか数ミリ秒の一時停止時間にしてください。 
+マイナーコレクションは、GC を呼び出すことによって手動で実行でき[ます。(0) を収集](xref:System.GC.Collect)します。 マイナーコレクションは安価ですが (主要なコレクションと比較した場合)、大幅な固定コストが発生します。そのため、頻繁にトリガーしないようにし、数ミリ秒の一時停止時間を設定する必要があります。 
 
-アプリケーションで同じことは繰り返し実行の「デューティ サイクル」にある場合は、デューティ サイクルが終了した後、マイナーのコレクションを手動で実行することをお勧め場合があります。 デューティ サイクルの例は次のとおりです。 
+同じ処理が何度も行われる "デューティサイクル" がアプリケーションにある場合は、デューティサイクルが終了したら、手動でマイナーコレクションを実行することをお勧めします。 デューティサイクルの例を次に示します。 
 
--  1 つのゲームのフレームのレンダリング サイクルです。
--  特定のアプリのダイアログ (開く、閉じる、入力) と全体の相互作用 
--  ネットワークのグループは、アプリのデータの更新/同期を要求します。
+-  1つのゲームフレームのレンダリングサイクル。
+-  特定のアプリダイアログとの相互作用 (開く、塗りつぶし、終了) 
+-  アプリケーションデータを更新または同期するためのネットワーク要求のグループ。
 
 
 
-## <a name="major-collections"></a>メジャーのコレクション
+## <a name="major-collections"></a>主要なコレクション
 
-メジャーのコレクションを呼び出すことによって手動で実行できます[GC。Collect()](xref:System.GC.Collect)または`GC.Collect(GC.MaxGeneration)`します。 
+メジャーコレクションは、GC を呼び出すことによって手動で実行でき[ます。()](xref:System.GC.Collect)または`GC.Collect(GC.MaxGeneration)`を収集します。 
 
-まれには、実行する必要があります、512 MB のヒープを収集するときに、スタイルの Android デバイスでの秒部分の一時停止時間を必要があります。 
+512 MB のヒープを収集するときに、Android スタイルのデバイスで1秒間に一時停止することがあります。 
 
-主要なコレクション呼び出すことができる手動で、これまでの場合。 
+メジャーコレクションは、次の場合にのみ手動で呼び出す必要があります。 
 
--   時間のかかる関税の最後にサイクルと、時間の長いが一時停止は、ユーザーに問題を提示しません。 
+-   時間のかかるデューティサイクルの終わりに、長い一時停止によってユーザーに問題が表示されない場合。 
 
--   内でオーバーライドされた[Android.App.Activity.OnLowMemory()](https://developer.xamarin.com/api/member/Android.App.Activity.OnLowMemory/)メソッド。 
+-   オーバーライドされた[Android. Activity. OnLowMemory ()](xref:Android.App.Activity.OnLowMemory)メソッド内。 
 
 
 
 ## <a name="diagnostics"></a>診断
 
-グローバル参照を作成および破棄されるときに、追跡するには設定、 [debug.mono.log](~/android/troubleshooting/index.md)システム プロパティを格納する[ *gref* ](~/android/troubleshooting/index.md)や[ *gc*](~/android/troubleshooting/index.md)します。 
+グローバル参照がいつ作成および破棄されたかを追跡するには、[*gref*](~/android/troubleshooting/index.md) および/または [*gc*](~/android/troubleshooting/index.md) を含む [debug.mono.log](~/android/troubleshooting/index.md) システム プロパティを設定します。 
 
 
 
 ## <a name="configuration"></a>構成
 
-設定して、Xamarin.Android のガベージ コレクターを構成することができます、`MONO_GC_PARAMS`環境変数。 ビルド アクションで環境変数を設定することがあります[AndroidEnvironment](~/android/deploy-test/environment.md)します。
+Xamarin. Android ガベージコレクターは、環境変数を`MONO_GC_PARAMS`設定することによって構成できます。 環境変数は、 [Androidenvironment](~/android/deploy-test/environment.md)のビルドアクションを使用して設定できます。
 
-`MONO_GC_PARAMS`環境変数は、次のパラメーターのコンマ区切りの一覧。 
+`MONO_GC_PARAMS`環境変数は、次のパラメーターのコンマ区切りのリストです。 
 
--   `nursery-size` = *サイズ*:新世代のサイズを設定します。 サイズはバイト単位で、2 の累乗である必要があります。 サフィックス`k`、`m`と`g`キロ、200万とギガバイトでそれぞれ指定するために使用できます。 新世代は、(2) の第 1 世代です。 大きい新世代では、プログラムの速度が通常より多くのメモリを明らかに使用されます。 既定の新世代のサイズを 512 kb です。 
+-   `nursery-size` = *サイズ*:新世代のサイズを設定します。 サイズはバイト単位で指定され、2の累乗でなければなりません。 サフィックス`k` `m`とは、それぞれキロバイト、メガバイト、ギガバイトを指定するために使用できます。`g` 新世代は最初の世代 (2) です。 新世代が大きいほど、通常はプログラムが高速化されますが、より多くのメモリが使用されます。 既定の新世代サイズは 512 kb です。 
 
--   `soft-heap-limit` = *サイズ*:ターゲットの最大では、アプリのメモリ使用量を管理します。 メモリ使用量が指定の値を下回ると、実行時間 (少ないコレクション) の GC が最適化されています。 
-    メモリ使用量 (複数のコレクション) は、GC が、この上限を超えた最適化されています。 
+-   `soft-heap-limit` = *サイズ*:アプリの対象となる最大マネージメモリ使用量。 メモリ使用量が指定された値を下回る場合、GC は実行時間 (コレクションが減少) に最適化されます。 
+    この制限を超えると、GC はメモリ使用量 (コレクションの数が増えます) に合わせて最適化されます。 
 
--   `evacuation-threshold` = *しきい値*:退避のしきい値を % に設定します。 値は 0 ~ 100 の範囲の整数である必要があります。 既定値は 66 です。 コレクションのスイープのフェーズでは、特定のヒープ ブロック型の占有率がこの割合に達しなかったことが検出されるは、コピーする占有率を 100% に近くなってを復元できるため、次の主要なコレクションでそのブロック型のコレクションを行います。 値 0 は、退避をオフにします。 
+-   `evacuation-threshold` = *しきい値*:退避しきい値をパーセント単位で設定します。 値は 0 ~ 100 の範囲の整数である必要があります。 既定値は66です。 コレクションのスイープフェーズによって、特定のヒープブロックの種類の占有率がこの割合よりも小さいことが判明した場合、次のメジャーコレクションでそのブロックの種類のコレクションをコピーします。これにより、占有率が 100% に近い値に復元されます。 値0は、退避をオフにします。 
 
--   `bridge-implementation` = *実装をブリッジ*:これにより、GC のパフォーマンスの問題に対処する GC ブリッジ オプションが設定されます。 3 つの値がある:*古い*、*新しい*、 *tarjan*します。
+-   `bridge-implementation` = *ブリッジの実装*:Gc のパフォーマンスの問題に対処するために、GC ブリッジオプションが設定されます。 有効な値には、 *old* 、 *new* 、 *tarjan*の3つがあります。
 
--   `bridge-require-precise-merge`:ブリッジが引き起こす可能性があります、まれに、オブジェクトを最適化を含む Tarjan では、まずガベージになった後に 1 つの GC が収集されます。 このオプションを含むより遅い可能性がありますより予測可能な Gc を行う、その最適化を無効にします。
+-   `bridge-require-precise-merge` :Tarjan bridge には最適化が含まれています。これにより、まれにオブジェクトがガベージになった後に1つの GC が収集される可能性があります。 このオプションを含めると、その最適化が無効になり、Gc が予測可能になりますが、処理速度が低下する可能性があります。
 
-たとえば、128 MB のヒープ サイズの制限を GC で構成するを使用してプロジェクトを新しいファイルを追加、**ビルド アクション**の`AndroidEnvironment`内容。 
+たとえば、ヒープサイズの上限が 128 mb になるように GC を構成するには、の`AndroidEnvironment` **ビルドアクション**を含む新しいファイルをプロジェクトに追加します。 
 
 ```shell
 MONO_GC_PARAMS=soft-heap-limit=128m

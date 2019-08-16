@@ -1,66 +1,63 @@
 ---
-title: Xamarin.iOS で UrhoSharp を ARKit を使用します。
-description: 検出方法平面のこのドキュメントは、Xamarin.iOS で ARKit のアプリを設定する方法について説明し、フレームのレンダリング方法をカメラを調整する方法を見て、照明などを操作する方法 UrhoSharp、HoloLens のコードの作成についても説明します。
+title: Xamarin の UrhoSharp で ARKit を使用する
+description: このドキュメントでは、Xamarin で ARKit アプリを設定する方法について説明します。次に、フレームがどのようにレンダリングされるか、カメラを調整する方法、プレーンを検出する方法、照明を操作する方法などについて説明します。 また、UrhoSharp と HoloLens のコードの記述についても説明します。
 ms.prod: xamarin
 ms.assetid: 877AF974-CC2E-48A2-8E1A-0EF9ABF2C92D
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/01/2017
-ms.openlocfilehash: b02ecc8a40f6ff8a1862d50202439d369003a53d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 69ddb42f6bf51ec78d9735346c44efa94fb9c418
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61262440"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68508774"
 ---
-# <a name="using-arkit-with-urhosharp-in-xamarinios"></a>Xamarin.iOS で UrhoSharp を ARKit を使用します。
+# <a name="using-arkit-with-urhosharp-in-xamarinios"></a>Xamarin の UrhoSharp で ARKit を使用する
 
-導入に伴い[ARKit](https://developer.apple.com/arkit/)Apple が簡単に拡張現実のアプリケーションを作成する開発者向け。 ARKit がデバイスの正確な位置を追跡し、世界のさまざまな画面を検出し、コードに ARKit から返されたデータのブレンドする開発者の役目です。
+[Arkit](https://developer.apple.com/arkit/)の導入により、Apple は、開発者が拡張された現実アプリケーションを簡単に作成できるようになりました。 ARKit は、デバイスの正確な位置を追跡し、世界中のさまざまな画面を検出し、開発者が ARKit から送信されるデータをコードに合成します。
 
-[UrhoSharp](~/graphics-games/urhosharp/index.md) 3D アプリケーションを作成に使用できる包括的で使いやすい 3D API を提供します。   これらのどちらも ARKit 物理世界では、情報を提供して、結果を表示するために Urho ブレンドします。
+[Urhosharp](~/graphics-games/urhosharp/index.md)は、3d アプリケーションを作成するために使用できる包括的で使いやすい 3d API を提供します。   これらの両方を組み合わせて、ARKit を使用して世界の物理的な情報を提供し、Urho を使用して結果を表示することができます。
 
-このページには、優れた拡張現実のアプリケーションを作成するためにこれら 2 つの世界に接続する方法について説明します。
-
+このページでは、これら2つの世界を接続して、優れた拡張現実アプリケーションを作成する方法について説明します。
 
 ## <a name="the-basics"></a>基本事項
 
-IPhone または iPad に表示されるよう、世界の上に存在する 3D コンテンツが実行します。   考え方としては、3 D コンテンツに、デバイスのカメラからコンテンツを調和させるのにはおよびがその部屋の一部では、3 D オブジェクトの動作 - これは、この世界にオブジェクトをアンカーでのデバイスのユーザーがいることを確認する部屋が移動します。
+IPhone/iPad で見られるように、世界の上に3D コンテンツを表示したいと思います。   これは、デバイスのカメラのコンテンツと3D コンテンツをブレンドすることです。また、デバイスのユーザーが部屋の周りを移動し、3D オブジェクトがその部屋の一部として動作するようにします。これは、オブジェクトをこの世界に固定することによって行われます。
 
-![ARKit でアニメーション化された図](urhosharp-images/image1.gif)
+![ARKit のアニメーション化される図](urhosharp-images/image1.gif)
 
+ここでは、Urho ライブラリを使用して3D アセットを読み込み、世界に配置します。また、ARKit を使用して、カメラからのビデオストリームや世界中の電話の位置を取得します。   ユーザーが電話で移動するときに、場所の変更を使用して、Urho エンジンが表示している座標系を更新します。
 
-取り上げる Urho ライブラリを当社の 3D アセットを読み込み、世界では、上に配置し、ARKit 使用して、電話、世界中の場所と同様に、カメラからビデオ ストリームを取得します。   ユーザーが自分の電話で移動すると、Urho エンジンが表示されている座標システムを更新するのに場所に変更を使用します。
-
-これにより、3 次元空間でオブジェクトを配置して、ユーザーの移動時に、3 D オブジェクトの場所が反映されますが置かれた場所と場所。
+このようにして、3D 空間にオブジェクトを配置し、ユーザーを移動すると、3D オブジェクトの位置と位置が反映されます。
 
 ## <a name="setting-up-your-application"></a>アプリケーションの設定
 
 ### <a name="ios-application-launch"></a>iOS アプリケーションの起動
 
-作成し、3 D コンテンツを起動する必要がある iOS アプリケーションを実装するのサブクラスを作成してこれを行う、 [ `Urho.Application` ](https://developer.xamarin.com/api/type/Urho.Application/)オーバーライドすることで、セットアップ コードを提供し、`Start`メソッド。  これは、シーンを取得、イベント ハンドラーのセットアップはこれにデータを含むです。
+IOS アプリケーションでは、3d コンテンツを作成して起動する必要があります。これを行うには`Urho.Application` 、のサブクラスを実装するを`Start`作成し、メソッドをオーバーライドしてセットアップコードを指定します。  ここでは、シーンにデータを入力し、イベントハンドラーを設定します。
 
-導入されています、`Urho.ArkitApp`クラスをサブクラスとして持つ`Urho.Application`しその`Start`メソッドが面倒な作業を行います。   型の基本クラスを変更するアプリケーションは、既存の Urho を行う必要があるすべて`Urho.ArkitApp`urho シーン、世界中で実行されるアプリケーションがあるとします。
+`Urho.ArkitApp`クラスを作成`Urho.Application`し、その`Start`メソッドで大量の処理を行うクラスを導入しました。   既存の Urho アプリケーションに対して行う必要があるのは、基底クラスを型`Urho.ArkitApp`に変更し、世界中の Urho シーンを実行するアプリケーションがある場合です。
 
 ### <a name="the-arkitapp-class"></a>ArkitApp クラス
 
-このクラスは、オペレーティング システムが提供されるため、便利な既定値、いくつか主要なオブジェクトを使用したシーン両方のセットと ARKit イベントの処理を提供します。
+このクラスは、便利な既定のセットを提供します。これには、いくつかの主要なオブジェクトを含むシーンと、オペレーティングシステムによって配信される ARKit イベントの処理が含まれます。
 
-セットアップが、`Start`仮想メソッド。   サブクラスにこのメソッドをオーバーライドする場合は、ことを確認して、親にチェーンを使用して行う必要があります。 `base.Start()` 、独自の実装にします。
+セットアップは`Start`仮想メソッドで実行されます。   サブクラスでこのメソッドをオーバーライドする場合は、独自の実装でを使用`base.Start()`して、親にチェーンしていることを確認する必要があります。
 
-`Start`メソッドは、シーン、ビューポート、カメラ、指向性光の場合を設定し、それらのパブリック プロパティとして。
+メソッド`Start`は、シーン、ビューポート、カメラ、および指向性ライトを設定し、それらをパブリックプロパティとして設定します。
 
-- [ `Scene` ](https://developer.xamarin.com/api/type/Urho.Scene/)のオブジェクトを保持するには
-- 方向[ `Light` ](https://developer.xamarin.com/api/type/Urho.Light/)シャドウ、および場所を利用し、`LightNode`プロパティ
-- [ `Camera` ](https://developer.xamarin.com/api/type/Urho.Camera/) ARKit アプリケーションに更新プログラムを配信する際にコンポーネントが含まれるが更新されると
-- [ `ViewPort` ](https://developer.xamarin.com/api/type/Urho.Viewport/)結果を表示します。
-
+- オブジェクトを保持する。 `Scene`
+- 影付き`Light`の方向で、プロパティを`LightNode`使用してその場所を使用できます。
+- `Camera` arkit によってアプリケーションに更新プログラムが配信されるときにコンポーネントが更新される。
+- 結果`ViewPort`を表示する。
 
 ### <a name="your-code"></a>コード
 
-サブクラスを`ArkitApp`クラスし、オーバーライド、`Start`メソッド。   メソッドが行う必要があります最初に行うことが最大チェーンは、`ArkitApp.Start`呼び出して`base.Start()`します。  その後はオブジェクトをシーンに追加、ライト、shadows または処理するイベントをカスタマイズする ArkitApp プロパティの設定のいずれかを使用できます。
+次に、 `ArkitApp`クラスをサブクラス化し、 `Start`メソッドをオーバーライドする必要があります。   メソッドが最初に行う必要があるのは、 `ArkitApp.Start`を呼び出す`base.Start()`ことによってにチェーンすることです。  その後、ArkitApp によって設定されたプロパティのいずれかを使用して、オブジェクトをシーンに追加したり、処理するライト、シャドウ、またはイベントをカスタマイズしたりすることができます。
 
-ARKit/UrhoSharp の例では、テクスチャのアニメーションの文字をロードし、次の実装、アニメーションを再生します。
+ARKit/UrhoSharp サンプルは、テクスチャを使用してアニメーション化された文字を読み込み、次の実装を使用してアニメーションを再生します。
 
     ```csharp
     public class MutantDemo : ArkitApp
@@ -90,43 +87,43 @@ ARKit/UrhoSharp の例では、テクスチャのアニメーションの文字�
     }
     ```
 
-および 3D コンテンツの augmented reality で表示されます。 この時点で行う必要があることですが本当にします。
+これで、3D コンテンツを強化された現実に表示するために、この時点で実行する必要があります。
 
-Urho は、資産をこの形式にエクスポートする必要があるために、3 D モデルやアニメーションのカスタム形式を使用します。   などのツールを使用することができます、 [Urho3D Blender アドイン](https://github.com/reattiva/Urho3D-Blender)と[UrhoAssetImporter](https://github.com/EgorBo/UrhoAssetImporter) Urho によって必要な形式には、3 D の最大、DBX、DAE、OBJ、Blend などの人気のある形式からこれらのアセットを変換することができます。
+Urho では、3D モデルとアニメーションのカスタム形式を使用するため、資産をこの形式にエクスポートする必要があります。   [Urho3D Blender アドイン](https://github.com/reattiva/Urho3D-Blender)や[UrhoAssetImporter](https://github.com/EgorBo/UrhoAssetImporter)などのツールを使用すると、DBX、DAE、OBJ、Blend、3d-Max などの一般的な形式から、Urho が必要とする形式にこれらの資産を変換できます。
 
-Urho を使用して 3D のアプリケーションの作成の詳細については、次を参照してください。、 [UrhoSharp の概要](~/graphics-games/urhosharp/introduction.md)ガイド。
+Urho を使用して3D アプリケーションを作成する方法の詳細については、「 [UrhoSharp](~/graphics-games/urhosharp/introduction.md)ガイドの概要」を参照してください。
 
-## <a name="arkitapp-in-depth"></a>深さで ArkitApp
+## <a name="arkitapp-in-depth"></a>ArkitApp の詳細
 
 > [!NOTE]
-> このセクションでは ARKit UrhoSharp の既定のエクスペリエンスをカスタマイズする、または統合のしくみに関するより深い洞察を取得する必要がある開発者を対象としています。   このセクションを読む必要はありません。
+> このセクションは、UrhoSharp と ARKit の既定のエクスペリエンスをカスタマイズする開発者を対象としています。また、統合のしくみについて深い洞察を得ることを目的としています。   このセクションを読む必要はありません。
 
-ARKit API は非常に単純で、作成および構成する、 [ARSession](https://developer.apple.com/documentation/arkit/arsession)オブジェクトを配信を開始し、 [ARFrame](https://developer.apple.com/documentation/arkit/arframe)オブジェクト。   これらには、両方のカメラとデバイスの推定の実際の位置によってキャプチャされたイメージが含まれます。
+ARKit API は非常に単純です。[ARFrame](https://developer.apple.com/documentation/arkit/arframe) オブジェクトの配信を開始する[ARSession](https://developer.apple.com/documentation/arkit/arsession) を作成および構成します。   これらには、カメラによってキャプチャされたイメージと、デバイスの実際の実際の位置の両方が含まれます。
 
-私たちは、3D コンテンツを使用することで、カメラで配信されるイメージの作成し、デバイスの場所や位置の可能性を一致するように UrhoSharp のカメラを調整します。
+カメラによって配信される画像を3D コンテンツと共に作成し、デバイスの位置と位置の可能性に合わせて UrhoSharp のカメラを調整します。
 
-次の図は、何が起きて、`ArkitApp`クラス。
+次の図は、 `ArkitApp`クラスで行われる処理を示しています。
 
-[![クラスと、ArkitApp で画面のダイアグラム](urhosharp-images/image2.png)](urhosharp-images/image2.png#lightbox)
+[![ArkitApp のクラスと画面の図](urhosharp-images/image2.png)](urhosharp-images/image2.png#lightbox)
 
 ### <a name="rendering-the-frames"></a>フレームのレンダリング
 
-考え方は単純、結合されたイメージを生成するために、3 D グラフィックスでカメラからビデオを結合します。     一連のこれらのキャプチャされたイメージのシーケンスで取得しましたと Urho シーンをこの入力を混在させることができます。
+この考え方は単純で、カメラからのビデオと3D グラフィックスを組み合わせて、結合された画像を生成します。     これらのキャプチャされたイメージを順番に取得し、この入力を Urho シーンと組み合わせます。
 
-これを行う最も簡単な方法は、挿入する、 [ `RenderPathCommand` ](https://developer.xamarin.com/api/type/Urho.RenderPathCommand/)をメイン[ `RenderPath`](https://developer.xamarin.com/api/type/Urho.RenderPath/)します。  これは、一連の 1 つのフレームを描画するために実行されるコマンドです。  このコマンドはすべてのテクスチャを渡すことで、ビューポートを入力します。    これを設定、プロセスは、最初のフレームでし番目で実際の定義を行う**ARRenderPath.xml**この時点で読み込まれるファイル。
+これを行う最も簡単な方法は、を`RenderPathCommand`メイン`RenderPath`に挿入することです。  これは、1つのフレームを描画するために実行される一連のコマンドです。  このコマンドを実行すると、ビューポートに渡されるすべてのテクスチャが表示されます。    プロセスの最初のフレームにこれを設定し、実際の定義はこの時点で読み込まれる次の**Arrenderpath .xml**ファイルで行います。
 
-ただし、これら 2 つの世界をブレンドする 2 つの問題に直面しました。
-
-
-1. Ios では、GPU のテクスチャの解像度 2 の累乗である必要がありますが、カメラから取得するフレームには、例 2 の累乗である解像度はありません。1280 x 720 します。
-2. フレームがでエンコードされた[YUV](https://en.wikipedia.org/wiki/YUV)形式、2 つのイメージの輝度およびおよび彩度によって表されます。
-
-YUV フレームは、2 つのさまざまな解像度で提供されます。  輝度 (基本的に、グレースケール イメージ) とくらい小さい 640 x 360 クロミナンス コンポーネントを表す 1280 x 720 イメージ:
-
-![結合 Y と UV コンポーネントを示すイメージ](urhosharp-images/image3.png)
+ただし、この2つのワールドをブレンドするための2つの問題に直面しています。
 
 
-OpenGL ES を使用して、完全な色分けされたイメージを描画するには、テクスチャのスロットから輝度 (Y コンポーネント) とクロミナンス (UV 面) を取得する小さなシェーダーを記述する必要あります。  UrhoSharp は、"sDiffMap"と"sNormalMap"の名前を持つおよび RGB 形式に変換します。
+1. IOS では、GPU テクスチャの解像度は2である必要がありますが、カメラから取得するフレームには2の累乗の解像度がありません。次に例を示します。1280 x 720.
+2. フレームは、3つのイメージ (ルミナンスとクロマ) で表される、 [YUV](https://en.wikipedia.org/wiki/YUV)形式でエンコードされます。
+
+YUV フレームには、2つの異なる解像度があります。  輝度 (基本的にはグレースケールイメージ) と、クロミナンスコンポーネントの 640 x 360 を表す、1280 x 720 のイメージ。
+
+![Y と UV コンポーネントの組み合わせを示す画像](urhosharp-images/image3.png)
+
+
+OpenGL を使用して全色の画像を描画するには、テクスチャスロットから輝度 (Y 成分) とクロミナンス (UV 平面) を取得する小さなシェーダーを作成する必要があります。  UrhoSharp には、"SsNormalMap Map" と "" という名前が付いており、それらを RGB 形式に変換します。
 
 ```csharp
 mat4 ycbcrToRGBTransform = mat4(
@@ -140,7 +137,7 @@ vec4 ycbcr = vec4(texture2D(sDiffMap, vTexCoord).r,
 gl_FragColor = ycbcrToRGBTransform * ycbcr;
 ```
 
-2 つの解決の電源が入っていないテクスチャを表示するために、次のパラメーターで Texture2D を定義しなければ。
+2つの解像度の力を持たないテクスチャをレンダリングするには、次のパラメーターを使用して Texture2D を定義する必要があります。
 
 ```chsarp
 // texture for UV-plane;
@@ -152,27 +149,27 @@ cameraUVtexture.SetAddressMode(TextureCoordinate.U, TextureAddressMode.Clamp);
 cameraUVtexture.SetAddressMode(TextureCoordinate.V, TextureAddressMode.Clamp);
 ```
 
-そのため、背景としてキャプチャしたイメージをレンダリングし、その上の任意のシーンをレンダリングするには、そのような恐ろしい変異形できなくなっています。
+そのため、キャプチャしたイメージを背景としてレンダリングし、その上にあるシーンをレンダリングして、そのようにすることができます。
 
-### <a name="adjusting-the-camera"></a>カメラを調整します。
+### <a name="adjusting-the-camera"></a>カメラの調整
 
-`ARFrame`オブジェクトでは、推定のデバイスの位置も含まれます。  ユーザーのずれ ARFrame ゲームのカメラを移動する必要がありますが、ARKit する前に、でしたをトラック デバイスの向き (ロール、ピッチ、ヨー) とレンダリング、ビデオの上にピン留めされたホログラム - デバイスを少し移動するかどうか、たいしたホログラムされます。
+オブジェクト`ARFrame`には、推定されるデバイスの位置も含まれます。  ここでは、ゲームカメラ ARFrame を移動する必要がありました。 Arframe は、デバイスの向き (ロール、ピッチ、ヨー) を追跡し、ピン留めされたホログラムをビデオの上に表示することはあまり重要ではありませんでした。ただし、デバイスを移動する場合は、ビットホログラムがずれます。
 
-ジャイロスコープなどの組み込みセンサーの動きを追跡することはできないために発生する、のみの高速化できます。  ARKit 分析の各フレームと抽出機能ポイントを追跡し、そのため、正確性を提供することがでは、データの移動と回転を含むマトリックスを変換します。
+これは、ジャイロスコープなどの組み込みのセンサーが移動を追跡できず、アクセラレーションのみであることが原因で発生します。  ARKit は各フレームを分析し、特徴ポイントを抽出して追跡します。これにより、移動データと回転データを含む正確な変換行列が得られます。
 
-たとえば、これは、現在の位置の取得です。
+たとえば、現在の位置を取得するには、次のようにします。
 
 ```csharp
 var row = arCamera.Transform.Row3;
 CameraNode.Position = new Vector3(row.X, row.Y, -row.Z);
 ```
 
-使用して`-row.Z`ARKit は右手座標系を使用するためです。
+Arkit `-row.Z`は右手座標系を使用するため、を使用します。
 
 
 ### <a name="plane-detection"></a>平面の検出
 
-ARKit は水平面を検出することが、この機能により、現実の世界との対話など、実際のテーブルまたはフロアに、変異形を行って ことができます。 HitTest メソッド (レイキャスト) を使用することを行う最も簡単な方法です。 画面座標に変換 (0.5; 0.5 中心) 実際の座標に (0; 0; 0 は最初のフレームの位置)。
+ARKit は、水平方向のプレーンを検出できます。この機能により、たとえば、実際のテーブルまたはフロアに変異を配置できます。 これを行う最も簡単な方法は、System.windows.media.visualtreehelper.hittest メソッド (raycasting) を使用することです。 画面座標 (0.5 は中央) を実際の座標に変換します (0、0、0は、最初のフレームの位置) です。
 
 ```chsarp
 protected Vector3? HitTest(float screenX = 0.5f, float screenY = 0.5f)
@@ -188,7 +185,7 @@ protected Vector3? HitTest(float screenX = 0.5f, float screenY = 0.5f)
 }
 ```
 
-ここをタップして、デバイス画面上の位置によって水平画面で、変異形を配置できます。
+ここで、デバイス画面上のどこにタップするかに応じて、ミュータントを水平方向の表面に配置できます。
 
 ```chsarp
 void OnTouchEnd(TouchEndEventArgs e)
@@ -201,11 +198,11 @@ void OnTouchEnd(TouchEndEventArgs e)
 }
 ```
 
-![ビューの移動として平面をアニメーション化された図を変更します。](urhosharp-images/image4.gif)
+![アニメーション図ビューの移動として平面を変更する](urhosharp-images/image4.gif)
 
-### <a name="realistic-lighting"></a>リアルなライティング
+### <a name="realistic-lighting"></a>リアルな照明
 
-実際の照明条件に応じて仮想のシーンは明るくしたり暗く周囲のにより適したものにする必要があります。 ARFrame には、Urho のアンビエント光を調整するために使用できる LightEstimate プロパティが含まれています。 これは、次のように。
+実際の照明条件によっては、その環境に合わせて仮想シーンを明るくしたり暗くしたりする必要があります。 ARFrame には、Urho アンビエントライトを調整するために使用できる LightEstimate プロパティが含まれています。これは次のように行われます。
 
 ```csharp
 var ambientIntensity = (float) frame.LightEstimate.AmbientIntensity / 1000f;
@@ -213,16 +210,16 @@ var zone = Scene.GetComponent<Zone>();
 zone.AmbientColor = Color.White * ambientIntensity;
 ```
 
-### <a name="beyond-ios---hololens"></a>IOS - HoloLens を超える
+### <a name="beyond-ios---hololens"></a>IOS-HoloLens 以外
 
-UrhoSharp[すべての主要なオペレーティング システム上で実行](~/graphics-games/urhosharp/platform/index.md)ので、他の場所で、既存のコードを再利用することができます。
+UrhoSharp は、[すべての主要なオペレーティングシステムで実行](~/graphics-games/urhosharp/platform/index.md)されるので、既存のコードを他の場所で再利用できます。
 
-HoloLens で実行される最も魅力的なプラットフォームの 1 つです。   つまり、iOS および HoloLens UrhoSharp を使用する最高の Augmented Reality アプリケーションを構築する間で簡単に切り替えることができます。
+HoloLens は、それが実行されている最も魅力的なプラットフォームの1つです。   これは、iOS と HoloLens を簡単に切り替えて、UrhoSharp を使用してすばらしい拡張現実アプリケーションを構築できることを意味します。
 
-MutantDemo ソースを検索できる[github.com/EgorBo/ARKitXamarinDemo](https://github.com/EgorBo/ARKitXamarinDemo)します。
+[Github.com/EgorBo/ARKitXamarinDemo](https://github.com/EgorBo/ARKitXamarinDemo)で、ミューテーターのデモソースを見つけることができます。
 
 
 ## <a name="related-links"></a>関連リンク
 
 - [UrhoSharp](~/graphics-games/urhosharp/index.md)
-- [ARKitXamarinDemo (with UrhoSharp) (sample)](https://github.com/EgorBo/ARKitXamarinDemo)
+- [ARKitXamarinDemo (UrhoSharp) (サンプル)](https://github.com/EgorBo/ARKitXamarinDemo)

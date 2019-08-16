@@ -1,165 +1,165 @@
 ---
 title: Android 9 Pie
-description: Xamarin.Android を使用して Android の 9 円用アプリの開発を開始する方法。
+description: Xamarin を使用して Android 9 の円用アプリの開発を開始する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 6575DD32-9DC8-44E6-85EF-1F8BD07D3780
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2018
-ms.openlocfilehash: e08324d5a905639e7ecd59bc4c7a5c0f02d0adfe
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 52141141ab525c7407fa2f3ff2dca749473b39c1
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61218009"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511451"
 ---
-# <a name="android-pie-features"></a>Android の円グラフの機能
+# <a name="android-pie-features"></a>Android の円機能
 
-_Xamarin.Android を使用して Android の 9 円用アプリの開発を開始する方法。_
+_Xamarin を使用して Android 9 の円用アプリの開発を開始する方法について説明します。_
 
-[Android の 9 円](https://developer.android.com/about/versions/pie/)Google から提供が開始されました。 さまざまな新機能と Api が公開されて、このリリースでは、これらの多くは、最新の Android デバイスで、ハードウェアの新機能を利用するために必要です。
+[Android 9 の円](https://developer.android.com/about/versions/pie/)は Google から入手できるようになりました。 このリリースでは、多数の新機能と Api が提供されており、その多くは最新の Android デバイスで新しいハードウェア機能を利用するために必要です。
 
-![Android 円ヒーローのイメージ](pie-images/01-android-p-logo.png)
+![Android の円のヒーロー画像](pie-images/01-android-p-logo.png)
 
-この記事では、Android の円の Xamarin.Android アプリの開発を開始するために構成されます。 これには、必要な更新プログラムをインストール、SDK を構成およびエミュレーターまたはデバイスのテスト用に準備する方法について説明します。 Android の円の新機能の概要を説明し、主な Android の円グラフ機能の一部を使用する方法を示しています。 ソース コードの例を提供します。
+この記事は、Android 用の Xamarin Android アプリの開発を始める際に役立つように構成されています。 ここでは、必要な更新プログラムをインストールし、SDK を構成し、テスト用のエミュレーターまたはデバイスを準備する方法について説明します。 また、Android 円の新機能の概要を示し、いくつかの主要な Android 円機能の使用方法を示すサンプルソースコードを提供します。
 
-Xamarin.Android 9.0 では、Android の円のサポートを提供します。 Android の円の Xamarin.Android のサポートの詳細については、次を参照してください。、 [Android P Developer Preview 3](https://docs.microsoft.com/xamarin/android/release-notes/9/9.0/#android-p-dp1)リリース ノート。
+Android 9.0 では、Android の円グラフがサポートされています。 Android 用の Xamarin のサポートの詳細については、 [Android P Developer Preview 3](https://docs.microsoft.com/xamarin/android/release-notes/9/9.0/#android-p-dp1)のリリースノートを参照してください。
 
 ## <a name="requirements"></a>必要条件
 
-Android の円の機能を Xamarin ベースのアプリで使用する次の一覧が必要です。
+Xamarin ベースのアプリで Android の円機能を使用するには、次の一覧が必要です。
 
-- **Visual Studio** &ndash; Visual Studio 2019 をお勧めします。
-    Visual Studio 2017 では、Visual Studio 2017 15.8 またはそれ以降のバージョンの Windows 更新プログラムを使用しています。 場合、 Macos では、Mac 7.6 またはそれ以降のバージョンの Visual Studio 2017 を更新します。
+- **Visual Studio**&ndash; Visual Studio 2019 をお勧めします。
+    Visual Studio 2017 を使用している場合は、Windows update で Visual Studio 2017 バージョン15.8 以降に更新します。 MacOS で、Visual Studio 2017 for Mac バージョン7.6 以降に更新します。
 
-- **Xamarin.Android** &ndash; Xamarin.Android 9.0.0.17 以降、Visual Studio をインストールする必要があります (Xamarin.Android がの一部として自動的にインストールされている、 **.NET によるモバイル開発**ワークロード)。
+- Xamarin 9.0.0.17 以降を Visual Studio と共にインストールする必要があります (xamarin android は、.net ワークロード**を使用したモバイル開発**の一部として自動的にインストールされます)。 &ndash;
 
-- **Java Developer Kit** &ndash; Xamarin Android 9.0 開発が必要です[JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) (または、Microsoft の配布のプレビューを試すことができます、 [OpenJDK](~/android/get-started/installation/openjdk.md))。 JDK8 がの一部として自動的にインストールされている、 **.NET によるモバイル開発**ワークロード。
+- **Java Developer Kit**Xamarin Android 9.0 開発には[JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)が必要です (または、Microsoft の[openjdk](~/android/get-started/installation/openjdk.md)の配布プレビューを試すことができます)。 &ndash; JDK8 は、.NET ワークロード**を使用したモバイル開発**の一部として自動的にインストールされます。
 
-- **Android SDK** &ndash; 28 またはそれ以降の Android SDK API が、Android SDK Manager を使用してをインストールする必要があります。
+- **Android SDK**&ndash; Android SDK Manager を使用して Android SDK API 28 以降をインストールする必要があります。
 
 ## <a name="getting-started"></a>作業の開始
 
-Xamarin.Android で円グラフの Android アプリを開発して開始するには、ダウンロードし、最初の円を Android プロジェクトを作成する前に、最新のツールと SDK パッケージをインストールする必要があります。
+Xamarin android で Android の円アプリの開発を始めるには、最初の Android 円プロジェクトを作成する前に、最新のツールと SDK パッケージをダウンロードしてインストールする必要があります。
 
-1. Visual Studio 2019 をお勧めします。 Visual Studio 2017 を使用している場合に更新[Visual Studio 2017 バージョン 15.8](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes)またはそれ以降。 Visual Studio for Mac を使用している場合に更新[Visual Studio 2017 for Mac バージョン 7.6](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes)またはそれ以降。
+1. Visual Studio 2019 をお勧めします。 Visual Studio 2017 を使用している場合は、 [Visual studio 2017 バージョン 15.8](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes)以降に更新してください。 Visual Studio for Mac を使用している場合は、 [Visual Studio 2017 For Mac バージョン 7.6](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes)以降に更新してください。
 
-2. インストール**Android 円 (API 28)** パッケージとツール、SDK Manager を使用しています。
+2. SDK Manager を使用して、 **Android の円 (API 28)** パッケージとツールをインストールします。
 
-3. 対象とする新しい Xamarin.Android プロジェクトの作成**Android 9.0**します。
+3. **Android 9.0**を対象とする新しい Xamarin android プロジェクトを作成します。
 
-4. エミュレーターまたは円の Android アプリのテスト用のデバイスを構成します。
+4. Android の円アプリをテストするためのエミュレーターまたはデバイスを構成します。
 
-次のセクションでは、これらの各手順について説明します。
+これらの各手順については、次のセクションで説明します。
 
 ### <a name="update-visual-studio"></a>Visual Studio 2017 を更新する
 
-Visual Studio 2019 は Xamarin を使用して円の Android アプリを構築するためお勧めします。
+Xamarin を使用して Android の円アプリをビルドする場合は、Visual Studio 2019 をお勧めします。
 
-Visual Studio 2017 を使用している場合は、Visual Studio 2017 15.8 またはそれ以降のバージョンに更新 (手順については、次を参照してください。[を最新のリリースの Visual Studio 2017 の更新](https://docs.microsoft.com/visualstudio/install/update-visual-studio))。 Macos では、Visual Studio 2017 for Mac 7.6 以降に更新 (手順については、次を参照してください。[セットアップとインストールの Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/installation))。
+Visual studio 2017 を使用している場合は、Visual Studio 2017 バージョン15.8 以降に更新してください (手順については、「 [Visual studio 2017 を最新のリリースに更新](https://docs.microsoft.com/visualstudio/install/update-visual-studio)する」を参照してください)。 MacOS で、Mac 7.6 以降の Visual Studio 2017 に更新します (手順については、「 [Visual Studio for Mac のセットアップとインストール](https://docs.microsoft.com/visualstudio/mac/installation)」を参照してください)。
 
-### <a name="install-the-android-sdk"></a>Android SDK をインストールします。
+### <a name="install-the-android-sdk"></a>Android SDK のインストール
 
-Xamarin.Android 9.0、プロジェクトを作成する必要があります最初に使用する Android SDK Manager の SDK プラットフォームをインストールする**Android 円 (API レベル 28)** またはそれ以降。
+Xamarin Android 9.0 を使用してプロジェクトを作成するには、最初に Android SDK マネージャーを使用して Android 用 SDK platform **(API レベル 28)** 以降をインストールする必要があります。
 
-1. SDK マネージャーを起動します。 Visual Studio で、次のようにクリックします。**ツール > Android > Android SDK Manager**します。 Visual studio for Mac では、次のようにクリックします。**ツール > SDK Manager**します。
+1. SDK Manager を起動します。 Visual Studio で、 **[Tools > Android > Android SDK Manager]** をクリックします。 Visual Studio for Mac で、 **[ツール > SDK Manager]** をクリックします。
 
-2. 、右下隅で歯車アイコンをクリックし、選択**リポジトリ > Google (サポートされていません)**:
+2. 右下隅にある歯車アイコンをクリックし、 **[リポジトリ > Google (サポートされていません)]** を選択します。
 
-    [![Google にリポジトリを設定します。](pie-images/vs/set-repo-sml.png)](pie-images/vs/set-repo.png#lightbox)
+    [![Google にリポジトリを設定しています](pie-images/vs/set-repo-sml.png)](pie-images/vs/set-repo.png#lightbox)
 
-3. インストール、 **Android 円**としてリストされている SDK パッケージ**Android SDK プラットフォーム 28**で、**プラットフォーム** タブ (詳細については、SDK Manager を使用して、参照してください[Android SDK セットアップ](~/android/get-started/installation/android-sdk.md))。
+3. **[プラットフォーム]** タブで**Android SDK Platform 28**と表示されている**Android の円**sdk パッケージをインストールします (sdk Manager の使用方法の詳細については、「 [Android SDK セットアップ](~/android/get-started/installation/android-sdk.md)」を参照してください)。
 
-    [![Android の円のパッケージをインストールします。](pie-images/vs/sdk-manager-sml.png)](pie-images/vs/sdk-manager.png#lightbox)
+    [![Android の円パッケージのインストール](pie-images/vs/sdk-manager-sml.png)](pie-images/vs/sdk-manager.png#lightbox)
 
-4. エミュレーターを使用している場合をサポートする仮想デバイスを作成します。 **API レベル 28**します。 仮想デバイスの作成の詳細については、次を参照してください。[仮想デバイスの管理が Android Device Manager](~/android/get-started/installation/android-emulator/device-manager.md)します。
+4. エミュレーターを使用している場合は、 **API レベル 28**をサポートする仮想デバイスを作成します。 仮想デバイスの作成の詳細については、「 [Android Device Manager を使用した仮想デバイスの管理](~/android/get-started/installation/android-emulator/device-manager.md)」を参照してください。
 
-### <a name="start-a-xamarinandroid-project"></a>Xamarin.Android プロジェクトを開始します。
+### <a name="start-a-xamarinandroid-project"></a>Xamarin. Android プロジェクトを開始する
 
-新しい Xamarin.Android プロジェクトを作成します。 Xamarin で Android の開発に慣れていない場合は、次を参照してください。 [Hello, Android](~/android/get-started/hello-android/index.md)を Xamarin.Android プロジェクトを作成する方法について説明します。
+新しい Xamarin. Android プロジェクトを作成します。 Xamarin を使用した Android 開発を初めて使用する場合は、「 [Hello, android](~/android/get-started/hello-android/index.md) 」を参照して、xamarin android プロジェクトの作成について学習してください。
 
-Android プロジェクトを作成するときに、ターゲット Android バージョン 9.0 以降にバージョン設定を構成する必要があります。 たとえば、Android の円のプロジェクトを対象にする必要がありますを構成するにプロジェクトのターゲットの Android API レベル**Android 9.0** (API 28)。 設定することも、ターゲット フレームワーク レベル API 28 以降をお勧めします。 Android API レベルを構成する方法の詳細は、次を参照してください。 [Understanding Android API Levels](~/android/app-fundamentals/android-api-levels.md)します。
+Android プロジェクトを作成するときは、バージョン設定を Android 9.0 以降を対象とするように構成する必要があります。 たとえば、Android 用のプロジェクトを対象にするには、プロジェクトのターゲットの Android API レベルを**android 9.0** (API 28) に構成する必要があります。 また、ターゲットフレームワークレベルを API 28 以降に設定することをお勧めします。 Android API レベルの構成の詳細については、「 [ANDROID Api レベルについ](~/android/app-fundamentals/android-api-levels.md)て」を参照してください。
 
 
-### <a name="configure-a-device-or-emulator"></a>デバイスまたはエミュレーターを構成します。
+### <a name="configure-a-device-or-emulator"></a>デバイスまたはエミュレーターを構成する
 
-Nexus やピクセルなどの物理デバイスを使用している場合はデバイスを更新する Android の円を次の手順で[Nexus とピクセル デバイスの工場出荷時イメージ](https://developers.google.com/android/images)します。
+複数のデバイスを使用している場合は、デバイスを Android 円グラフに更新することができます。これを行うには、「デバイス[の出荷先イメージ](https://developers.google.com/android/images)」の指示に従ってください。
 
-エミュレーターを使用している場合は、API レベル 28 仮想デバイスを作成し、x86 ベースのイメージを選択します。 Android Device Manager を使用して作成し、仮想デバイスの管理方法の詳細については、次を参照してください。[仮想デバイスの管理が Android Device Manager](~/android/get-started/installation/android-emulator/device-manager.md)します。
-テストとデバッグ用の Android エミュレーターの使用方法の詳細については、次を参照してください。 [Android エミュレーターでデバッグする](~/android/deploy-test/debugging/debug-on-emulator.md)します。
+エミュレーターを使用している場合は、API レベル28用の仮想デバイスを作成し、x86 ベースのイメージを選択します。 Android Device Manager を使用した仮想デバイスの作成と管理の詳細については、「 [Android Device Manager を使用した仮想デバイスの管理](~/android/get-started/installation/android-emulator/device-manager.md)」を参照してください。
+テストとデバッグに Android エミュレーターを使用する方法の詳細については、「 [Android Emulator でのデバッグ](~/android/deploy-test/debugging/debug-on-emulator.md)」を参照してください。
 
 
 
 ## <a name="new-features"></a>新機能
 
-Android の円グラフには、さまざまな新しい機能が導入されています。 これらの新機能の一部にさらに、Android ユーザー エクスペリエンスを強化するためにデザインされたものは、最新の Android デバイスによって提供される新しいハードウェアの機能を活用するためのもの。
+Android の円グラフには、さまざまな新機能が導入されています。 これらの新機能の一部は、最新の Android デバイスによって提供される新しいハードウェア機能を利用することを目的としていますが、Android ユーザーエクスペリエンスをさらに強化するように設計されています。
 
--   **素材のサポートを表示**&ndash;の形状と場所を検索するは、Api、_素材_以降の Android デバイスの画面の上部にあります。
+-   **切り取り線のサポートを表示**する新しい Android デバイス上の画面の上部にある_カットアウト_の位置と形状を検索するための api を提供します。 &ndash;
 
--   **通知の機能強化**&ndash;イメージ、および新しい通知メッセージを表示できますようになりました`Person`クラスは、メッセージ交換の参加者を簡略化に使用します。
+-   **通知の機能強化**通知メッセージに画像を表示できるようになり`Person`ました。また、新しいクラスを使用して、メッセージ交換の参加者を簡略化します。 &ndash;
 
--   **室内配置**&ndash;プラットフォーム プロトコルのサポート、WiFi Round Trip 時、WiFi デバイスに屋内設定ナビゲーションを使用するアプリのことができます。
+-   **室内ポジショニング**&ndash; Wifi ラウンドトリップタイムプロトコルのプラットフォームサポート。これにより、アプリは、屋内設定のナビゲーションに wifi デバイスを使用できるようになります。
 
--   **複数のカメラ サポート** &ndash; (デュアル前面とデュアル背面カメラ) など複数の物理的な cameras から同時にアクセス ストリームに機能を提供します。
+-   **マルチカメラのサポート**&ndash;では、複数の物理カメラ (デュアルフロントとデュアルバックカメラなど) からストリームに同時にアクセスする機能が提供されています。
 
 
-次のセクションでは、これらの機能を強調表示しするための簡単なコード例は、アプリでの使用開始を指定します。
+以下のセクションでは、これらの機能について説明し、アプリでの使用を開始するのに役立つ簡単なコード例を示します。
 
-### <a name="display-cutout-support"></a>素材のサポートを表示します。
+### <a name="display-cutout-support"></a>切り取り線のサポートを表示する
 
-エッジ ツー エッジ画面に多数の新しい Android デバイスが、*素材の表示*(または「ノッチ」) の表示をカメラ、スピーカーの上部にあります。
-次のスクリーン ショットでは、素材のエミュレーター例を示します。
+エッジツーエッジ画面を搭載した多くの新しい Android デバイスには、カメラとスピーカーのディスプレイの上部に表示される*カットアウト*("ノッチ") があります。
+次のスクリーンショットは、カットアウトのエミュレーターの例を示しています。
 
-[![Android エミュレーターの素材をシミュレートします。](pie-images/02-example-cutout-sml.png)](pie-images/02-example-cutout.png#lightbox)
+[![カットアウトをシミュレートする Android エミュレーター](pie-images/02-example-cutout-sml.png)](pie-images/02-example-cutout.png#lightbox)
 
-表示素材を備えたデバイスでアプリのウィンドウの内容を表示する方法を管理する Android の円は、新しい追加が[LayoutInDisplayCutoutMode](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#layoutInDisplayCutoutMode)ウィンドウ レイアウトの属性。 この属性は、次の値のいずれかに設定できます。
+アプリウィンドウで、表示をカットアウトしてデバイスにコンテンツを表示する方法を管理するために、Android の円グラフに新しい[LayoutInDisplayCutoutMode](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#layoutInDisplayCutoutMode)ウィンドウレイアウト属性が追加されました。 この属性は、次のいずれかの値に設定できます。
 
--   [LayoutInDisplayCutoutModeNever](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_NEVER) &ndash;ウィンドウ素材領域と重複は許可されません。
+-   [LayoutInDisplayCutoutModeNever](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_NEVER)&ndash;ウィンドウは、カットアウト領域と重複することはできません。
 
--   [LayoutInDisplayCutoutModeShortEdges](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES) &ndash;素材領域には、画面の短いエッジにのみを拡張する、ウィンドウが許可されています。 
+-   [LayoutInDisplayCutoutModeShortEdges](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES)&ndash;ウィンドウは、カットアウト領域に拡張できますが、画面の短辺にのみ表示されます。 
 
--   [LayoutInDisplayCutoutModeDefault](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_DEFAULT) &ndash;システム バー内で、素材が含まれている場合は、素材の領域に拡張する、ウィンドウが許可されています。
+-   [LayoutInDisplayCutoutModeDefault](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_DEFAULT)&ndash;システムバー内にカットアウトが含まれている場合、ウィンドウは切り出領域に拡張できます。
 
-たとえば、素材の領域に重ならないようにするには、アプリ ウィンドウ レイアウト素材モードを設定*決して*: 
+たとえば、アプリウィンドウが切り使用領域と重ならないようにするには、レイアウトのカットアウトモードを [*なし*] に設定します。 
 
 ```csharp
 Window.Attributes.LayoutInDisplayCutoutMode =
     Android.Views.LayoutInDisplayCutoutMode.Never;
 ```
 
-次の例では、これらの素材のモードの例を示します。 左側の最初のスクリーン ショットでは、非全画面表示モードでのアプリです。 Center スクリーン ショットは、アプリが全画面表示で`LayoutInDisplayCutoutMode`設定`LayoutInDisplayCutoutModeShortEdges`します。 素材の表示領域に、アプリの背景が白が拡張されていることを確認します。
+これらのカットアウトモードの例を次に示します。 左側の最初のスクリーンショットは、非全画面モードのアプリです。 中央のスクリーンショットでは、がに`LayoutInDisplayCutoutMode` `LayoutInDisplayCutoutModeShortEdges`設定された状態でアプリが全画面表示されます。 アプリの白い背景が、表示のカットアウト領域まで拡大していることに注意してください。
 
-[![例は、エミュレーターで素材モードを表示します。](pie-images/03-cutout-modes-sml.png)](pie-images/03-cutout-modes.png#lightbox)
+[![例エミュレーターでのカットアウトモードの表示](pie-images/03-cutout-modes-sml.png)](pie-images/03-cutout-modes.png#lightbox)
 
-最終的なスクリーン ショットでは (上、右上)、`LayoutInDisplayCutoutMode`に設定されている`LayoutInDisplayCutoutModeShortNever`全画面表示に移動する前にします。
-素材の表示領域に拡張するアプリの背景が白が許可されないことに注意してください。
+最後のスクリーンショット (右側) では、 `LayoutInDisplayCutoutMode`が全画面表示になる前にに`LayoutInDisplayCutoutModeShortNever`設定されています。
+アプリの白い背景は、表示のカットアウト領域への拡張が許可されていないことに注意してください。
 
-デバイスで、素材の領域に関する詳細情報が必要な場合、新しい使える[DisplayCutout](https://developer.android.com/reference/android/view/DisplayCutout.html)クラス。 `DisplayCutout` コンテンツを表示するために使用できない表示の領域を表します。 この情報を使用すると、アプリがこの非機能的な領域の内容を表示しないように、素材の形状と場所を取得します。
+デバイスの切り抜き領域に関する詳細情報が必要な場合は、新しい[Displaycutout](https://developer.android.com/reference/android/view/DisplayCutout.html)クラスを使用できます。 `DisplayCutout`コンテンツの表示に使用できないディスプレイの領域を表します。 この情報を使用して、アプリケーションが非機能領域のコンテンツを表示しないようにするために、カットアウトの場所と形状を取得できます。
 
-Android の P で素材の新機能についての詳細については、次を参照してください。[ディスプレイ素材サポート](https://developer.android.com/about/versions/pie/android-9.0#cutout)します。
+Android P の新しいカットアウト機能の詳細については、「[切り取り線のサポートを表示](https://developer.android.com/about/versions/pie/android-9.0#cutout)する」を参照してください。
 
 
 
 ### <a name="notifications-enhancements"></a>通知の機能強化
 
-Android の円グラフには、メッセージ エクスペリエンスを向上させるために、次の機能強化が導入されています。
+Android の円グラフでは、メッセージングエクスペリエンスを向上させるために次の機能強化が導入されています。
 
--   通知チャネル (で導入された[Android Oreo](~/android/platform/oreo.md)) チャネルのグループのブロックしているようになりました。
+-   ( [Android Oreo](~/android/platform/oreo.md)で導入された) 通知チャネルで、チャネルグループのブロックがサポートされるようになりました。
 
--   通知システム 3 カテゴリがあります新しい Do Not Disturb (アラームのシステム サウンドとメディア ソース優先順位を付ける)。 さらは 7 つの新しい Do Not Disturb モード (バッジ、通知のライト、ステータス バーの外観、および全画面表示のアクティビティの起動) などのビジュアルの中断を抑制するために使用できます。
+-   通知システムには、3つの新しい [応答不可] カテゴリがあります (アラーム、システムサウンド、およびメディアソースに優先順位を付けます)。 また、視覚的な中断 (バッジ、通知ライト、ステータスバーの外観、全画面表示の活動の開始など) を抑制するために使用できる、新しい "応答不可" モードが7つあります。
 
--   新しい[Person](https://developer.android.com/reference/android/app/Person.html)をメッセージの送信者を表すクラスが追加されました。 このクラスの使用は、(自分のアバターと Uri を含む) メッセージ交換にかかわる人を識別することによって、各通知のレンダリングを最適化するために役立ちます。
+-   メッセージの送信者を表す新しい[Person](https://developer.android.com/reference/android/app/Person.html)クラスが追加されました。 このクラスを使用すると、メッセージ交換に関係するユーザー (アバターや Uri など) を識別することによって、各通知のレンダリングを最適化できます。
 
--   通知は、画像を表示できるようになりました。 
+-   通知に画像が表示されるようになりました。 
 
-次の例では、新しい Api を使用してイメージを含む通知を生成する方法を示します。 次のスクリーン ショットにテキスト通知が投稿され、を埋め込みイメージでの通知が続きます。 (右側に表示される) と、通知が展開されます、最初の通知のテキストが表示され、イメージに埋め込まれている 2 つ目の通知が拡大します。
+次の例は、新しい Api を使用して、イメージを含む通知を生成する方法を示しています。 次のスクリーンショットでは、テキスト通知が送信され、その後に埋め込み画像を含む通知が続きます。 (右側に示されているように) 通知が展開されると、最初の通知のテキストが表示され、2番目の通知に埋め込まれている画像が拡大されます。
 
-[![イメージの例の通知](pie-images/04-example-notifications-sml.png)](pie-images/04-example-notifications.png#lightbox)
+[![イメージを使用した通知の例](pie-images/04-example-notifications-sml.png)](pie-images/04-example-notifications.png#lightbox)
 
-次の例では、Android の円の通知では、画像を含める方法と、新しいの使用方法を示します`Person`クラス。
+次の例は、Android の円通知に画像を含める方法を示しています。また、 `Person`新しいクラスの使用方法を示しています。
 
-1. 作成、`Person`送信者を表すオブジェクト。 送信者の名前とアイコンが含まれる`fromPerson`:
+1. 送信者`Person`を表すオブジェクトを作成します。 たとえば、送信者の名前とアイコンはに`fromPerson`含まれています。
 
     ```csharp
     Icon senderIcon = Icon.CreateWithResource(this, Resource.Drawable.sender_icon);
@@ -169,7 +169,7 @@ Android の円グラフには、メッセージ エクスペリエンスを向�
         .Build();
     ```
 
-2. 作成、`Notification.MessagingStyle.Message`を新しいイメージを渡すことを送信するイメージを含む[Notification.MessagingStyle.Message.SetData](https://developer.android.com/reference/android/app/Notification.MessagingStyle.Message.html#setData%28java.lang.String,%20android.net.Uri)メソッド。
+2. 送信する`Notification.MessagingStyle.Message`イメージを含むを作成し、そのイメージを新しい[Notification. messagingstyle. Message. SetData](https://developer.android.com/reference/android/app/Notification.MessagingStyle.Message.html#setData%28java.lang.String,%20android.net.Uri)メソッドに渡します。
    例:
 
     ```csharp
@@ -179,14 +179,14 @@ Android の円グラフには、メッセージ エクスペリエンスを向�
             .SetData("image/", imageUri);
     ```
 
-3. メッセージを追加、`Notification.MessagingStyle`オブジェクト。 例:
+3. メッセージを`Notification.MessagingStyle`オブジェクトに追加します。 例:
 
     ```csharp
     Notification.MessagingStyle style = new Notification.MessagingStyle(fromPerson)
             .AddMessage(message);
     ```
 
-4. 通知のビルダーには、このスタイルを接続します。 例:
+4. このスタイルを通知ビルダーにプラグインします。 例:
 
     ```csharp
     builder = new Notification.Builder(this, MY_CHANNEL)
@@ -204,67 +204,67 @@ Android の円グラフには、メッセージ エクスペリエンスを向�
     notificationManager.Notify(notificationId, builder.Build());
     ```
 
-通知の作成の詳細については、次を参照してください。[ローカル通知](~/android/app-fundamentals/notifications/local-notifications.md)します。
+通知の作成の詳細については、「[ローカル通知](~/android/app-fundamentals/notifications/local-notifications.md)」を参照してください。
 
 
-### <a name="indoor-positioning"></a>室内の配置
+### <a name="indoor-positioning"></a>室内ポジショニング
 
-Android の円は、IEEE 802.11mc のサポートを提供します (とも呼ばれます_WiFi Round-Trip 時_または_WiFi RTT_) との距離をいずれかを検出するためにアプリをできるように、または、複数の Wi-fi アクセス ポイントします。 この情報を使用することが活用するために、アプリの*室内配置*1 ~ 2 のメーターの精度でします。 IEEE 801.11mc のハードウェアのサポートを提供する Android デバイスでアプリがスマート アプライアンスまたはターンで有効にする手順については、店舗の場所ベースのコントロールなどのナビゲーション機能を提供できます。
+Android の円は、IEEE 802.11 mc ( _WiFi ラウンドトリップ時間_または_wifi RTT_とも呼ばれます) をサポートします。これにより、アプリは1つ以上の wi-fi アクセスポイントへの距離を検出できるようになります。 この情報を使用すると、アプリでは 1 ~ 2 メートルの精度で*室内ポジショニング*を利用することができます。 IEEE 801.11 mc のハードウェアサポートを提供する Android デバイスでは、アプリは、スマートアプライアンスの場所ベースの制御やストアによるターンスルーの指示などのナビゲーション機能を提供できます。
 
-[![WiFi RTT を使用して、屋内ナビゲーションの例](pie-images/05-wifi-rtt-sml.png)](pie-images/05-wifi-rtt.png#lightbox)
+[![WiFi RTT を使用した室内ナビゲーションの例](pie-images/05-wifi-rtt-sml.png)](pie-images/05-wifi-rtt.png#lightbox)
 
-新しい[WifiRttManager](https://developer.android.com/reference/android/net/wifi/rtt/WifiRttManager)クラスといくつかのヘルパー クラスは、Wi-fi デバイスまでの距離を測定する手段を提供します。 Android の P で導入されたに屋内配置 Api に関する詳細については、次を参照してください。 [Android.Net.Wifi.Rtt](https://developer.android.com/reference/android/net/wifi/rtt/package-summary)します。
+新しい[WifiRttManager](https://developer.android.com/reference/android/net/wifi/rtt/WifiRttManager)クラスといくつかのヘルパークラスは、wi-fi デバイスへの距離を測定するための手段を提供します。 Android P で導入された屋内配置 Api の詳細については、「 [android .net. wi-fi](https://developer.android.com/reference/android/net/wifi/rtt/package-summary)」を参照してください。
 
 
-### <a name="multi-camera-support"></a>複数のカメラのサポート
+### <a name="multi-camera-support"></a>マルチカメラのサポート
 
-多くの新しい Android デバイスでは、ステレオ ビジョン、強化された視覚効果、および向上のズーム機能などの機能の有用なデュアル前面またはデュアル背面カメラがあります。 Android P が導入されていますが、新しい[マルチ カメラ](https://developer.android.com/about/versions/pie/android-9.0#camera)API アプリが使用できるようにする、*論理カメラ*(または*論理マルチ カメラ*) は、2 つ以上でサポートします。物理的な cameras します。
-デバイスは、論理マルチ カメラをサポートする場合にサポートされているか、デバイスで各カメラの機能を表示できるかを判断する[RequestAvailableCapabilitiesLogicalMultiCamera](https://developer.android.com/reference/android/hardware/camera2/CameraMetadata#REQUEST_AVAILABLE_CAPABILITIES_LOGICAL_MULTI_CAMERA)します。
+多くの新しい Android デバイスには、ステレオビジョン、視覚効果の向上、ズーム機能の向上などの機能に役立つデュアルフロントエンドまたはデュアルバックカメラが搭載されています。 Android P には新しい[マルチカメラ](https://developer.android.com/about/versions/pie/android-9.0#camera)API が導入されています。これにより、アプリで2つ以上の物理カメラによって支えられた*論理カメラ*(または*論理マルチカメラ*) を使用できるようになります。
+デバイスで論理マルチカメラがサポートされているかどうかを判断するには、デバイス上の各カメラの機能を見て、 [RequestAvailableCapabilitiesLogicalMultiCamera](https://developer.android.com/reference/android/hardware/camera2/CameraMetadata#REQUEST_AVAILABLE_CAPABILITIES_LOGICAL_MULTI_CAMERA)がサポートされているかどうかを確認します。
 
-Android の円も含まれています、新しい[セッション構成](https://developer.android.com/reference/android/hardware/camera2/params/SessionConfiguration.html)初期キャプチャ中に遅延を減らすことやを起動し、カメラのストリームを開始する必要性を排除するために使用できるクラス。
+また、Android の円グラフには、初期キャプチャ中の遅延を減らし、カメラストリームを開始および開始する必要がなくなるために使用できる新しい[SessionConfiguration](https://developer.android.com/reference/android/hardware/camera2/params/SessionConfiguration.html)クラスも含まれています。
 
-複数のカメラの詳細については、Android P でサポートを参照してください[マルチ カメラのサポートとカメラの更新プログラム](https://developer.android.com/about/versions/pie/android-9.0#camera)します。
+Android P でのマルチカメラのサポートの詳細については、「[マルチカメラのサポートとカメラの更新プログラム](https://developer.android.com/about/versions/pie/android-9.0#camera)」を参照してください。
 
 
 ### <a name="other-features"></a>その他の機能
 
-さらに、Android の円グラフには、その他のいくつかの新機能がサポートされています。
+さらに、Android の円グラフでは、他のいくつかの新機能がサポートされています。
 
--   新しい[AnimatedImageDrawable](https://developer.android.com/reference/android/graphics/drawable/AnimatedImageDrawable.html)クラスは、描画、およびアニメーション化されたイメージを表示するために使用できます。
+-   新しい[AnimatedImageDrawable](https://developer.android.com/reference/android/graphics/drawable/AnimatedImageDrawable.html)クラス。アニメーション化されたイメージを描画および表示するために使用できます。
 
--   新しい[ImageDecoder](https://developer.android.com/reference/android/graphics/ImageDecoder.html)クラスを置き換える`BitmapFactory`します。 `ImageDecoder` デコードに使用できる、`AnimatedImageDrawable`します。
+-   `BitmapFactory` を置き換える新しい [ImageDecoder](https://developer.android.com/reference/android/graphics/ImageDecoder.html) クラス。 `ImageDecoder`をデコード`AnimatedImageDrawable`するために使用できます。
 
--   HDR (ハイ ダイナミック レンジ) ビデオおよび HEIF (高効率イメージ ファイルの形式) のイメージをサポートします。
+-   HDR (High Dynamic Range) video および HEIF (高効率のイメージファイル形式) イメージのサポート。
 
--   [JobScheduler](https://developer.android.com/reference/android/app/job/JobScheduler.html)はネットワーク関連の仕事をよりインテリジェントに処理するために強化されています。 新しい[GetNetwork](https://developer.android.com/reference/android/app/job/JobParameters#getNetwork%28%29)のメソッド、 [JobParameters](https://developer.android.com/reference/android/app/job/JobParameters)クラスは、特定のジョブをすべてのネットワーク要求を実行するための最適なネットワークを返します。
+-   [Jobscheduler](https://developer.android.com/reference/android/app/job/JobScheduler.html)は、ネットワーク関連のジョブをよりインテリジェントに処理するように強化されています。 [Jobparameters](https://developer.android.com/reference/android/app/job/JobParameters)クラスの新しい[getnetwork](https://developer.android.com/reference/android/app/job/JobParameters#getNetwork%28%29)メソッドは、特定のジョブに対してネットワーク要求を実行するのに最適なネットワークを返します。
 
-Android の円の最新の機能の詳細については、次を参照してください。 [Android 9 の機能と Api](https://developer.android.com/about/versions/pie/android-9.0)します。
+Android の最新の円機能の詳細については、「 [android 9 の機能と api](https://developer.android.com/about/versions/pie/android-9.0)」を参照してください。
 
 
 ## <a name="behavior-changes"></a>動作の変更
 
-ターゲット Android バージョンは、API レベル 28 に設定されているときに上記で説明した新機能を実装していない場合でも、アプリの動作に影響するいくつかのプラットフォームの変更点があります。 次に、これらの変更の簡単な概要を示します。
+ターゲットの Android バージョンが API レベル28に設定されている場合、上で説明した新機能を実装していない場合でも、アプリの動作に影響を与える可能性があるプラットフォームの変更がいくつかあります。 これらの変更の簡単な概要を次に示します。
 
--  アプリは、フォア グラウンド サービスを使用する前にフォア グラウンドのアクセス許可を要求する必要があります。
+-  フォアグラウンドサービスを使用する前に、アプリでフォアグラウンドアクセス許可を要求できるようになりました。
 
--  1 つを共有できない場合は、アプリは、1 つ以上のプロセスがある、 [WebView](https://developer.xamarin.com/api/type/Android.Webkit.WebView/)プロセス間でのデータ ディレクトリ。
+-  アプリに複数のプロセスがある場合、プロセス間で1つの[WebView](xref:Android.Webkit.WebView)データディレクトリを共有することはできません。
 
--  直接パスで別のアプリのデータ ディレクトリへのアクセスはもう行えません。
+-  別のアプリのデータディレクトリにパスで直接アクセスすることはできなくなりました。
 
-Android の P を対象とするアプリの動作の変更の詳細については、次を参照してください。[動作の変更](https://developer.android.com/about/versions/pie/android-9.0-changes-all#p-apps)します。
+Android P を対象とするアプリの動作変更の詳細については、「[動作の変更](https://developer.android.com/about/versions/pie/android-9.0-changes-all#p-apps)」を参照してください。
 
 
 ## <a name="sample-code"></a>サンプル コード
 
-[AndroidPMiniDemo](https://github.com/xamarin/monodroid-samples/tree/master/android-p/AndroidPMiniDemo)素材の表示モードを設定する方法については、Android 円の Xamarin.Android サンプル アプリは、新たに使用する方法`Person`クラス、およびイメージを含む通知を送信する方法。
+[Androidpminidemo](https://github.com/xamarin/monodroid-samples/tree/master/android-p/AndroidPMiniDemo)は、android 用の Xamarin サンプルアプリです。これは、表示のカットアウトモードを設定する方法、新しい`Person`クラスを使用する方法、およびイメージを含む通知を送信する方法を示しています。
 
 
 ## <a name="summary"></a>まとめ
 
-この記事では、Android の円を導入し、インストールし、Android の円で最新のツールと Xamarin.Android の開発用のパッケージを構成する方法について説明します。 これらの機能のいくつかのソース コードの例での Android の円グラフで使用できる主な機能の概要が提供されています。
-API のドキュメントへのリンクが含まれているし、円の Android のアプリの作成に役立つ Android 開発者向けのトピックを開始します。 既存のアプリに影響する最も重要な Android 円動作の変更も強調表示されます。
+この記事では、Android の円グラフについて説明しました。 android で Android を使用して開発するための最新のツールとパッケージをインストールして構成する方法について説明します。 Android の円グラフで使用できる主な機能の概要について説明しました。これらの機能のいくつかについては、ソースコード例を参照してください。
+Android 用アプリの作成を開始する際に役立つ API ドキュメントおよび Android 開発者向けのトピックへのリンクが含まれています。 また、既存のアプリに影響する可能性がある、最も重要な Android の円の動作変更も強調表示されています。
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [Android の 9 円](https://developer.android.com/about/versions/pie/)
+- [Android 9 円](https://developer.android.com/about/versions/pie/)
