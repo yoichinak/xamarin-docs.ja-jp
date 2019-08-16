@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: f0f15647e439381c2aa291234b444d668d1b63d0
-ms.sourcegitcommit: 2e5a6b8bcd1a073b54604f51538fd108e1c2a8e5
+ms.openlocfilehash: 05b8be21373930ae2b501c84757b7be11f794aa9
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68869356"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524611"
 ---
 # <a name="java-bindings-metadata"></a>Java バインド メタデータ
 
@@ -55,21 +55,21 @@ Xamarin.Android **Java バインディング ライブラリ**とも呼ばれる
 
 これらの XML マッピングファイルは、プロジェクトの **[変換]** フォルダーにあります。
 
--   **メタデータ .xml** &ndash;を使用すると、生成されたバインディングの名前空間を変更するなど、最終的な API に変更を加えることができます。 
+- **メタデータ .xml** &ndash;を使用すると、生成されたバインディングの名前空間を変更するなど、最終的な API に変更を加えることができます。 
 
--   **Enumfields .xml** &ndash;には、Java `int`定数とC# `enums`の間のマッピングが含まれています。 
+- **Enumfields .xml** &ndash;には、Java `int`定数とC# `enums`の間のマッピングが含まれています。 
 
--   **Enummethods .xml** &ndash;を使用すると、メソッドのパラメーターと戻り`int`値のC# `enums`型を Java 定数からに変更できます。 
+- **Enummethods .xml** &ndash;を使用すると、メソッドのパラメーターと戻り`int`値のC# `enums`型を Java 定数からに変更できます。 
 
 **メタデータの .xml**ファイルは、次のような一般的な目的の変更を可能にするため、これらのファイルを最も多くインポートします。
 
--   名前空間、クラス、メソッド、またはフィールドの名前を変更して、.NET の規則に従うようにします。 
+- 名前空間、クラス、メソッド、またはフィールドの名前を変更して、.NET の規則に従うようにします。 
 
--   不要な名前空間、クラス、メソッド、またはフィールドの削除。 
+- 不要な名前空間、クラス、メソッド、またはフィールドの削除。 
 
--   クラスを別の名前空間に移動します。 
+- クラスを別の名前空間に移動します。 
 
--   バインディングの設計を行うためのサポートクラスを追加して、.NET framework パターンに従います。 
+- バインディングの設計を行うためのサポートクラスを追加して、.NET framework パターンに従います。 
 
 **メタデータ**の詳細については、「」を参照してください。
 
@@ -103,13 +103,13 @@ Xamarin.Android **Java バインディング ライブラリ**とも呼ばれる
 
 次に、Java API の一般的に使用される XPath 要素の一部を示します。
 
--   `interface`&ndash; Java インターフェイスを検索するために使用されます。 `/interface[@name='AuthListener']`例:
+- `interface`&ndash; Java インターフェイスを検索するために使用されます。 `/interface[@name='AuthListener']`例:
 
--   `class`&ndash;クラスを検索するために使用します。 `/class[@name='MapView']`例:
+- `class`&ndash;クラスを検索するために使用します。 `/class[@name='MapView']`例:
 
--   `method`&ndash; Java クラスまたはインターフェイスのメソッドを検索するために使用します。 `/class[@name='MapView']/method[@name='setTitleSource']`例:
+- `method`&ndash; Java クラスまたはインターフェイスのメソッドを検索するために使用します。 `/class[@name='MapView']/method[@name='setTitleSource']`例:
 
--   `parameter`&ndash;メソッドのパラメーターを指定します。 など.`/parameter[@name='p0']`
+- `parameter`&ndash;メソッドのパラメーターを指定します。 など.`/parameter[@name='p0']`
 
 
 

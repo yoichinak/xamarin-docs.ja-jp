@@ -1,0 +1,105 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: Xamarin.Forms のレイアウト
+metadata:
+  title: Xamarin.Forms のレイアウト
+  description: Xamarin. Forms のレイアウト クラスとレイアウト機能について説明します。
+  ms.topic: landing-page
+  ms.prod: xamarin
+  ms.assetid: CF6BD41F-CD4B-4576-841D-B8A49A4EC754
+  author: davidbritch
+  ms.author: dabritch
+  ms.date: 08/14/2019
+abstract:
+  description: Xamarin. Forms のレイアウト クラスとレイアウト機能について説明します。
+sections:
+  - title: null
+    items:
+      - type: list
+        style: cards
+        className: cardsB
+        items:
+          - href: stack-layout.md
+            html: ビューを 1 次元のスタックで水平方向または垂直方向に整理する方法について学習します。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: stack-layout.md
+            title: StackLayout
+          - href: grid.md
+            html: ビューを比例サイズと絶対サイズにできるように行と列に整理する方法について学習します。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: grid.md
+            title: グリッド
+          - href: flex-layout.md
+            html: 折り返しを使用して、ビューを水平方向または垂直方向に整理する方法について説明します。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: flex-layout.md
+            title: FlexLayout
+          - href: absolute-layout.md
+            html: 座標とサイズを相対値または絶対値で設定して、ビューを整理する方法について説明します。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: absolute-layout.md
+            title: AbsoluteLayout
+          - href: relative-layout.md
+            html: レイアウト ビューや兄弟ビューのプロパティに対する制約を設定して、ビューを整理する方法について説明します。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: absolute-layout.md
+            title: RelativeLayout
+          - href: scroll-view.md
+            html: ビューが画面の境界内に収まらないときにスクロールを可能にする方法について説明します。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: scroll-view.md
+            title: ScrollView
+          - href: frame.md
+            html: 色、ドロップ シャドウなどのオプションを使用して構成できるフレームでビューを折り返す方法について説明します。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: frame.md
+            title: フレーム
+          - href: layout-options.md
+            html: 親レイアウト内でビューの配置を定義する方法について説明します。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: layout-options.md
+            title: LayoutOptions
+          - href: margin-and-padding.md
+            html: 要素とその隣接する要素、および子要素との距離を制御する方法について説明します。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: margin-and-padding.md
+            title: 余白とスペース
+          - href: device-orientation.md
+            html: デバイスの向きの変更を構成し、それに対応する方法について説明します。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: device-orientation.md
+            title: デバイスの向き
+          - href: tablet.md
+            html: タブレットとデスクトップのアプリケーションのレイアウトを最適化する方法について説明します。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: tablet.md
+            title: タブレットとデスクトップのレイアウト
+          - href: bindable-layouts.md
+            html: 項目のコレクションにバインドすることによって、レイアウト クラスでコンテンツを生成し、その外観を設定する方法について説明します。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: bindable-layouts.md
+            title: バインド可能なレイアウト
+          - href: layout-compression.md
+            html: ビジュアル ツリーから特定のレイアウト オブジェクトを削除し、ページのレンダリング パフォーマンスを改善する方法について説明します。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: layout-compression.md
+            title: レイアウト圧縮
+          - href: custom.md
+            html: 方向を区別するカスタム レイアウト クラスを作成する方法について説明します。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: custom.md
+            title: カスタム レイアウト

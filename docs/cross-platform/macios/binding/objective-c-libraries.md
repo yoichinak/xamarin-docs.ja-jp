@@ -6,12 +6,12 @@ ms.assetid: 8A832A76-A770-1A7C-24BA-B3E6F57617A0
 author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: 1d4c93e625b92275828428917ebbc86d931e8363
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: daca6d1cc5ec8a5e47f068f140f835219bd24c86
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68649506"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522017"
 ---
 # <a name="binding-objective-c-libraries"></a>バインディングの目的 C ライブラリ
 
@@ -97,10 +97,10 @@ API ファイルの形式と使用できる属性の詳細については、後�
 
 完全なバインドを作成するには、通常、次の4つのコンポーネントを処理します。
 
--  (`ApiDefinition.cs`テンプレート内の) API 定義ファイル。
--  省略可能: API 定義ファイル (`StructsAndEnums.cs`テンプレート内) に必要な列挙型、型、構造体。
--  省略可能: 生成されたバインディングを拡張する可能性のある追加C#のソース。またC#は、よりわかりやすい API (プロジェクトに追加するすべてのファイル) を提供します。
--  バインドするネイティブライブラリ。
+- (`ApiDefinition.cs`テンプレート内の) API 定義ファイル。
+- 省略可能: API 定義ファイル (`StructsAndEnums.cs`テンプレート内) に必要な列挙型、型、構造体。
+- 省略可能: 生成されたバインディングを拡張する可能性のある追加C#のソース。またC#は、よりわかりやすい API (プロジェクトに追加するすべてのファイル) を提供します。
+- バインドするネイティブライブラリ。
 
 このグラフは、次のファイル間の関係を示しています。
 
@@ -132,7 +132,7 @@ public partial class Camera {
 
 ライブラリをビルドすると、ネイティブバインドが生成されます。
 
-このバインディングを完了するには、ネイティブライブラリをプロジェクトに追加する必要があります。  これを行うには、ソリューションエクスプローラーでネイティブライブラリを Finder からプロジェクトにドラッグアンドドロップするか、プロジェクトを右クリックして [追加] [**ファイル**の追加] の順**に選択** > し、プロジェクトにネイティブライブラリを追加します。ネイティブライブラリを選択します。
+このバインディングを完了するには、ネイティブライブラリをプロジェクトに追加する必要があります。  これを行うには、ソリューションエクスプローラーでネイティブライブラリを Finder からプロジェクトにドラッグアンドドロップするか、プロジェクトを右クリックして [追加] [**ファイル**の追加] の順に選択 > し、プロジェクトにネイティブライブラリを追加します。ネイティブライブラリを選択します。
 ネイティブライブラリは、"lib" という語で始まり、拡張子 ". a" で終わります。 この操作を行うと、Visual Studio for Mac によって2つのファイルが追加されますC# 。このファイルには、ネイティブライブラリに含まれる内容に関する情報を含むファイルと、自動的に設定されたファイルがあります。
 
  [![](objective-c-libraries-images/screen-shot-2012-02-08-at-3.45.06-pm.png "ネイティブライブラリは慣例により、\"lib\" から始まり、拡張子で終わります。")](objective-c-libraries-images/screen-shot-2012-02-08-at-3.45.06-pm.png#lightbox)
@@ -214,7 +214,7 @@ string SetText ([NullAllowed] string text);
 および[`[Internal]`](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute)
 アトリビュート.
 
-内部のプロパティで[`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)属性を使用する場合は、実際には、getter と setter の2つのメソッドをバインドします。 エクスポートするために指定する名前は、"set **" という**語を前に付加することによって計算されます。 set を使用して、**ベース**の最初の文字を大文字に変換し、セレクターが引数を受け取るようにします。 これは、 `[Export ("label")]`プロパティに適用されたは、実際には "label" と "setlabel:" をバインドすることを意味します。目的 C のメソッド。
+内部のプロパティで[`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)属性を使用する場合は、実際には、getter と setter の2つのメソッドをバインドします。 エクスポートするために指定する名前は、 "set" という語を前に付加することによって計算されます。 set を使用して、**ベース**の最初の文字を大文字に変換し、セレクターが引数を受け取るようにします。 これは、 `[Export ("label")]`プロパティに適用されたは、実際には "label" と "setlabel:" をバインドすることを意味します。目的 C のメソッド。
 
 場合によっては、目的の C プロパティが上記のパターンに従わず、名前が手動で上書きされることがあります。 そのような場合は、を使用して、バインディングの生成方法を制御できます。[`[Bind]`](~/cross-platform/macios/binding/binding-types-reference.md#BindAttribute) 
 get アクセス操作子または setter の属性。次に例を示します。
@@ -309,10 +309,10 @@ interface MyMutableTree {
 
 ツール`btouch-native`は、クラス内に4つ`Foo`のコンストラクターを自動的に生成します。クラスには、次のものが生成されます。
 
--  `Foo ()`: 既定のコンストラクター (目標 C の "init" コンストラクターにマップ)
--  `Foo (NSCoder)`: NIB files の逆シリアル化中に使用されるコンストラクター (目的の C の "initWithCoder:" コンストラクターにマップされます)。
--  `Foo (IntPtr handle)`: ハンドルベースの作成のコンストラクター。ランタイムがアンマネージオブジェクトからマネージオブジェクトを公開する必要がある場合に、ランタイムによって呼び出されます。
--  `Foo (NSEmptyFlag)`: これは、二重初期化を防ぐために派生クラスによって使用されます。
+- `Foo ()`: 既定のコンストラクター (目標 C の "init" コンストラクターにマップ)
+- `Foo (NSCoder)`: NIB files の逆シリアル化中に使用されるコンストラクター (目的の C の "initWithCoder:" コンストラクターにマップされます)。
+- `Foo (IntPtr handle)`: ハンドルベースの作成のコンストラクター。ランタイムがアンマネージオブジェクトからマネージオブジェクトを公開する必要がある場合に、ランタイムによって呼び出されます。
+- `Foo (NSEmptyFlag)`: これは、二重初期化を防ぐために派生クラスによって使用されます。
 
 定義するコンストラクターについては、インターフェイス定義内で次のシグネチャを使用して宣言する必要があり`IntPtr`ます。これらは、値を返す必要があり、メソッドの名前はコンストラクターである必要があります。 たとえば、 `initWithFrame:`コンストラクターをバインドするには、次のように使用します。
 
@@ -545,14 +545,14 @@ interface LonelyClass {
 
 属性[`[Field]`](~/cross-platform/macios/binding/binding-types-reference.md#FieldAttribute)は、次のデータ型に適用できます。
 
--  `NSString`参照 (読み取り専用プロパティのみ)
--  `NSArray`参照 (読み取り専用プロパティのみ)
--  32ビット整数 (`System.Int32`)
--  64ビット整数 (`System.Int64`)
--  32ビット浮動小数点`System.Single`()
--  64ビット浮動小数点`System.Double`()
--  `System.Drawing.SizeF`
--  `CGSize`
+- `NSString`参照 (読み取り専用プロパティのみ)
+- `NSArray`参照 (読み取り専用プロパティのみ)
+- 32ビット整数 (`System.Int32`)
+- 64ビット整数 (`System.Int64`)
+- 32ビット浮動小数点`System.Single`()
+- 64ビット浮動小数点`System.Double`()
+- `System.Drawing.SizeF`
+- `CGSize`
 
 ネイティブフィールド名に加えて、ライブラリ名を渡すことによって、フィールドが配置されているライブラリ名を指定できます。
 
@@ -1197,9 +1197,9 @@ void SomeString (ref NSObject byref);
 
 上の例では、値に "Retain" セマンティクスがあるとしてフラグが付けられています。 使用できるセマンティクスは次のとおりです。
 
--  Assign
--  コピー
--  保持
+- Assign
+- コピー
+- 保持
 
 <a name="Style_Guidelines" />
 
@@ -1255,9 +1255,9 @@ interface MyClassDelegate {
 
 クラスをラップするには、次のことを行う必要があります。
 
--  ホストクラスで、にを追加します。[`[BaseType]`](~/cross-platform/macios/binding/binding-types-reference.md#BaseTypeAttribute)  
+- ホストクラスで、にを追加します。[`[BaseType]`](~/cross-platform/macios/binding/binding-types-reference.md#BaseTypeAttribute)  
    デリゲートとして機能する型と、公開しC#た名前を宣言します。 上記の例では、 `typeof (MyClassDelegate)`と`WeakDelegate`はそれぞれとです。
--  デリゲートクラスで、3つ以上のパラメーターを持つ各メソッドで、自動的に生成された EventArgs クラスに使用する型を指定する必要があります。
+- デリゲートクラスで、3つ以上のパラメーターを持つ各メソッドで、自動的に生成された EventArgs クラスに使用する型を指定する必要があります。
 
 バインディングジェネレーターは、1つのイベント変換先のみをラップするように制限されていません。一部の目的 C クラスは、複数のデリゲートにメッセージを出力することができます。そのため、このセットアップをサポートする配列を用意する必要があります。 ほとんどのセットアップでは必要ありませんが、ジェネレーターはそのようなケースをサポートする準備ができています。
 

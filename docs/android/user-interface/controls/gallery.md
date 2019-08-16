@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2018
-ms.openlocfilehash: 6fe6b5a11473827eb716b0adf0fb0f3ae28a3538
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 04fac4084328c0af962282dea7a31e3c00457bef
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510281"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69523009"
 ---
 # <a name="xamarinandroid-gallery-control"></a>Xamarin. Android ギャラリーコントロール
 
@@ -53,7 +53,7 @@ theselected item のインデックス位置 (0 から始まる) が表示され
 
 ## <a name="walkthrough"></a>チュートリアル
 
-*"/* " という名前の新しいプロジェクトを開始します。
+"/" という名前の新しいプロジェクトを開始します。
 
 [![[新しいソリューション] ダイアログの新しい Android プロジェクトのスクリーンショット](gallery-images/hellogallery1-sml.png)](gallery-images/hellogallery1.png#lightbox)
 
@@ -146,11 +146,10 @@ public class ImageAdapter : BaseAdapter
 
 ![サンプルイメージを表示している全画面のスクリーンショット](gallery-images/hellogallery3.png)
 
-## <a name="references"></a>関連項目
+## <a name="references"></a>リファレンス
 
 - [`BaseAdapter`](xref:Android.Widget.BaseAdapter)
 - [`Gallery`](xref:Android.Widget.Gallery)
 - [`ImageView`](xref:Android.Widget.ImageView)
 
-*このページの一部は、Android オープンソースプロジェクトによって作成および共有*
-され、[*Creative Commons 2.5 属性*](http://creativecommons.org/licenses/by/2.5/)で説明されている条項に従って使用される作業に基づいて変更されます。
+_このページの一部は、Android オープンソースプロジェクトによって作成および共有され、 [Creative Commons 2.5 属性](http://creativecommons.org/licenses/by/2.5/)で説明されている条項に従って使用される作業に基づいて変更されます。_

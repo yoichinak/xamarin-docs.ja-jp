@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/27/2018
-ms.openlocfilehash: 19ac5a023b1f97b2e08bbe1821a2b9259280fc98
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: d59acaec36c63c62fe934f145d06bfbb78d11f6c
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645148"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522861"
 ---
 # <a name="replacing-the-action-bar"></a>操作バーの置き換え
 
@@ -21,15 +21,15 @@ ms.locfileid: "68645148"
 
 アプリの既定のアクションバーを次のよう`Toolbar`に置き換えるには: 
 
-1.  新しいカスタムテーマを作成し、この新しいテーマを使用するようにアプリのプロパティを変更します。 
+1. 新しいカスタムテーマを作成し、この新しいテーマを使用するようにアプリのプロパティを変更します。 
 
-2.  カスタムテーマの`windowNoTitle` 属性を無効にして、属性を有効`windowActionBar`にします。
+2. カスタムテーマの`windowNoTitle` 属性を無効にして、属性を有効`windowActionBar`にします。
 
-3.  のレイアウト`Toolbar`を定義します。
+3. のレイアウト`Toolbar`を定義します。
 
-4.  アクティビティの`Toolbar` **メインの axml**レイアウトファイルにレイアウトを含めます。 
+4. アクティビティの`Toolbar` **メインの axml**レイアウトファイルにレイアウトを含めます。 
 
-5.  アクティビティの`OnCreate`メソッドにコードを追加してを`Toolbar`検索し`SetActionBar` 、を呼び出し`ToolBar`てをアクションバーとしてインストールします。
+5. アクティビティの`OnCreate`メソッドにコードを追加してを`Toolbar`検索し`SetActionBar` 、を呼び出し`ToolBar`てをアクションバーとしてインストールします。
 
 以下のセクションでは、このプロセスについて詳しく説明します。 単純なアプリが作成され、その操作バーがカスタマイズ`Toolbar`されたに置き換えられます。 
 
@@ -175,13 +175,13 @@ ActionBar.Title = "My Toolbar";
 
 にメニューを追加する`Toolbar`には、次のようにします。 
 
-1.  アプリプロジェクトのフォルダーにメニューアイコン (必要`mipmap-`に応じて) を追加します。 Google では、[素材アイコン](https://design.google.com/icons/)ページに一連の無料メニューアイコンが用意されています。 
+1. アプリプロジェクトのフォルダーにメニューアイコン (必要`mipmap-`に応じて) を追加します。 Google では、[素材アイコン](https://design.google.com/icons/)ページに一連の無料メニューアイコンが用意されています。 
 
-2.  [**リソース] メニュー**の下に新しいメニューリソースファイルを追加して、メニュー項目の内容を定義します。 
+2. [**リソース] メニュー**の下に新しいメニューリソースファイルを追加して、メニュー項目の内容を定義します。 
 
-3.  `OnCreateOptionsMenu` アクティビティ&ndash;のメソッドを実装します。このメソッドは、メニュー項目を増えします。 
+3. `OnCreateOptionsMenu` アクティビティ&ndash;のメソッドを実装します。このメソッドは、メニュー項目を増えします。 
 
-4.  `OnOptionsItemSelected` アクティビティ&ndash;のメソッドを実装します。このメソッドは、メニュー項目がタップされたときにアクションを実行します。 
+4. `OnOptionsItemSelected` アクティビティ&ndash;のメソッドを実装します。このメソッドは、メニュー項目がタップされたときにアクションを実行します。 
 
 以下のセクションでは、カスタマイズ`Toolbar`されたに **[編集]** メニュー項目と **[保存]** メニュー項目を追加して、このプロセスを詳しく説明します。 
 
@@ -218,13 +218,13 @@ ActionBar.Title = "My Toolbar";
 
 この XML では、次の3つのメニュー項目が作成されます。
 
--   `ic_action_content_create.png`アイコン (鉛筆) を使用する **[編集]** メニュー項目。 
+- `ic_action_content_create.png`アイコン (鉛筆) を使用する **[編集]** メニュー項目。 
 
--   `ic_action_content_save.png`アイコン (フロッピーディスク) を使用する **[保存]** メニュー項目。 
+- `ic_action_content_save.png`アイコン (フロッピーディスク) を使用する **[保存]** メニュー項目。 
 
--   アイコンのない**基本設定**メニュー項目。
+- アイコンのない**基本設定**メニュー項目。
 
-`Toolbar` &ndash; `ifRoom` `showAsAction` **[編集]** および **[保存]** メニュー項目の属性をこの設定に設定すると、これらのメニュー項目が表示されるのに十分な領域がある場合は、これらのメニュー項目がに表示されます。 **[基本設定]** メニュー `showAsAction`項目`never`をこれに設定&ndash;すると、[**設定] メニュー**が*オーバーフロー*メニューに表示されます (3 つの垂直ドット)。 
+`Toolbar` &ndash; `ifRoom` `showAsAction` **[編集]** および **[保存]** メニュー項目の属性をこの設定に設定すると、これらのメニュー項目が表示されるのに十分な領域がある場合は、これらのメニュー項目がに表示されます。 **[基本設定]** メニュー `showAsAction`項目`never`をこれに設定する&ndash;と、[設定] メニューが*オーバーフロー*メニューに表示されます (3 つの垂直ドット)。 
 
 
 ### <a name="implement-oncreateoptionsmenu"></a>OnCreateOptionsMenu を実装する

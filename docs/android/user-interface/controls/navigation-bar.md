@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/01/2017
-ms.openlocfilehash: c017ab96bdd78a41b31a3305021c5bc1f8e472d0
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 3bb2b47623c03d335ae1edc4bf87881622823ea1
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644913"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522927"
 ---
 # <a name="xamarinandroid-navigation-bar"></a>Xamarin. Android ナビゲーションバー
 
@@ -22,9 +22,9 @@ Android 4 では、*ナビゲーションバー*と呼ばれる新しいシス�
 
 いくつかの新しいフラグを使用して、ナビゲーションバーとそのコントロールの表示を制御したり、Android 3 で導入されたシステムバーを表示したりすることができます。 フラグは`Android.View.View`クラスで定義され、以下に一覧表示されます。
 
--   `SystemUiFlagVisible`&ndash;ナビゲーションバーを表示します。 
--   `SystemUiFlagLowProfile`&ndash;ナビゲーションバーのコントロールを暗くします。 
--   `SystemUiFlagHideNavigation`&ndash;ナビゲーションバーを非表示にします。 
+- `SystemUiFlagVisible`&ndash;ナビゲーションバーを表示します。 
+- `SystemUiFlagLowProfile`&ndash;ナビゲーションバーのコントロールを暗くします。 
+- `SystemUiFlagHideNavigation`&ndash;ナビゲーションバーを非表示にします。 
 
 
 これらのフラグは、 `SystemUiVisibility`プロパティを設定することによって、ビュー階層内の任意のビューに適用できます。 複数のビューにこのプロパティが設定されている場合、システムはそれらをまたは操作と組み合わせ、フラグが設定されているウィンドウがフォーカスを保持する限り、適用します。 ビューを削除すると、設定されているすべてのフラグも削除されます。

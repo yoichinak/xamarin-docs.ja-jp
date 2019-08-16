@@ -6,22 +6,22 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/08/2018
-ms.openlocfilehash: 67fb12fd66d4d218f6e8bd40e21499e6c07e9e15
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: e49f12dd656d5e07feccd34e231a00124d81048a
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510587"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524275"
 ---
 # <a name="specialized-fragment-classes"></a>特殊なフラグメント クラス
 
 Fragment API は、アプリケーションで検出されたより一般的な機能の一部をカプセル化する他のサブクラスを提供します。 これらのサブクラスは次のとおりです。
 
--   **Listfragment**&ndash;このフラグメントは、配列やカーソルなどのデータソースにバインドされた項目の一覧を表示するために使用されます。
+- **Listfragment**&ndash;このフラグメントは、配列やカーソルなどのデータソースにバインドされた項目の一覧を表示するために使用されます。
 
--   "**コードフラグメント**"&ndash;このフラグメントは、ダイアログのラッパーとして使用されます。 フラグメントによって、アクティビティの上にダイアログが表示されます。
+- "**コードフラグメント**"&ndash;このフラグメントは、ダイアログのラッパーとして使用されます。 フラグメントによって、アクティビティの上にダイアログが表示されます。
 
--   **PreferenceFragment**&ndash;このフラグメントは、ユーザー設定オブジェクトをリストとして表示するために使用されます。
+- **PreferenceFragment**&ndash;このフラグメントは、ユーザー設定オブジェクトをリストとして表示するために使用されます。
 
 
 
@@ -91,9 +91,9 @@ public override void OnListItemClick(ListView l, View v, int index, long id)
 
 は`DialogFragment` 、フラグメントとダイアログの間の状態の一貫性を保ちます。 ダイアログオブジェクトのすべての対話とコントロールは、 `DialogFragment` API を介して行われる必要があります。ダイアログオブジェクトの直接呼び出しでは実行されません。 API `DialogFragment`は、フラグメントを表示する`Show()`ために使用されるメソッドを各インスタンスに提供します。 フラグメントを削除するには、次の2つの方法があります。
 
--  インスタンスでを呼び出し`DialogFragment.Dismiss()`ます。 `DialogFragment` 
+- インスタンスでを呼び出し`DialogFragment.Dismiss()`ます。 `DialogFragment` 
 
--  別`DialogFragment`の表示。
+- 別`DialogFragment`の表示。
 
 を作成`DialogFragment`するために、クラスは`Android.App.DialogFragment,`から継承した後、次の2つのメソッドのいずれかをオーバーライドします。
 

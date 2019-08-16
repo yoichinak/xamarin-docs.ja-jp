@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/16/2018
-ms.openlocfilehash: 19998f685955ce118ffe37e7624fd43b082ab994
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 3ff6bc9c603360232b22a36dadb42b6caf31cada
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644424"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522398"
 ---
 # <a name="local-notifications-on-android"></a>Android でのローカル通知
 
@@ -30,9 +30,9 @@ Android には、ユーザーに通知アイコンと通知情報を表示する
 
 Android の通知では、次の2種類のレイアウトを使用します。
 
--   ***基本レイアウト***&ndash;コンパクトで固定のプレゼンテーション形式。
+- ***基本レイアウト***&ndash;コンパクトで固定のプレゼンテーション形式。
 
--   ***展開***されたレイアウト&ndash;より大きなサイズに拡張して詳細情報を表示できるプレゼンテーション形式。
+- ***展開***されたレイアウト&ndash;より大きなサイズに拡張して詳細情報を表示できるプレゼンテーション形式。
 
 これらの各レイアウトの種類 (およびそれらを作成する方法) については、次のセクションで説明します。
 
@@ -43,13 +43,13 @@ Android の通知では、次の2種類のレイアウトを使用します。
 
 すべての Android 通知は基本レイアウト形式に基づいて構築されます。これには、少なくとも次の要素が含まれます。
 
-1.  *通知アイコン*。アプリがさまざまな種類の通知をサポートしている場合、発信元アプリまたは通知の種類を表します。
+1. *通知アイコン*。アプリがさまざまな種類の通知をサポートしている場合、発信元アプリまたは通知の種類を表します。
 
-2.  通知の*タイトル*。通知が個人のメッセージの場合は、送信者の名前。
+2. 通知の*タイトル*。通知が個人のメッセージの場合は、送信者の名前。
 
-3.  通知メッセージ。
+3. 通知メッセージ。
 
-4.  *タイムスタンプ*。
+4. *タイムスタンプ*。
 
 次の図に示すように、これらの要素が表示されます。
 
@@ -75,11 +75,11 @@ Android 5.0 では、*ヘッドアップ*と呼ばれる優先順位の高い通
 
 Android では、通知の並べ替えと表示をインテリジェントに行えるように、通知メタデータのサポートが追加されています。 通知メタデータは、ロック画面およびヘッドアップ形式で通知を表示する方法も制御します。 アプリケーションでは、次の種類の通知メタデータを設定できます。
 
--   **優先順位**&ndash;通知を表示する方法とタイミングは、優先度レベルによって決まります。 たとえば、Android 5.0 では、優先度の高い通知はヘッドアップ通知として表示されます。
+- **優先順位**&ndash;通知を表示する方法とタイミングは、優先度レベルによって決まります。 たとえば、Android 5.0 では、優先度の高い通知はヘッドアップ通知として表示されます。
 
--   **可視性**&ndash;通知がロック画面に表示されたときに表示される通知コンテンツの量を指定します。
+- **可視性**&ndash;通知がロック画面に表示されたときに表示される通知コンテンツの量を指定します。
 
--   **カテゴリ**デバイスが "*応答不可*" モードの場合など、さまざまな状況で通知を処理する方法をシステムに通知します。 &ndash;
+- **カテゴリ**デバイスが "*応答不可*" モードの場合など、さまざまな状況で通知を処理する方法をシステムに通知します。 &ndash;
 
 > [!NOTE]
 > **可視性** と **カテゴリ** Android 5.0 およびそれ以前のバージョンの Android では使用できないで導入されました。 Android 8.0 以降では、[通知チャネル](#notif-chan)を使用して、ユーザーに通知を表示する方法を制御します。
@@ -97,11 +97,11 @@ Android 4.1 以降では、展開されたレイアウトスタイルを使用�
 
 Android では、単一イベント通知用に展開された3つのレイアウトスタイルがサポートされています。
 
--   ***大きいテキスト***&ndash; [契約] モードでは、メッセージの最初の行の抜粋の後に2つの期間が表示されます。 展開モードでは、メッセージ全体が表示されます (上の例を参照)。
+- ***大きいテキスト***&ndash; [契約] モードでは、メッセージの最初の行の抜粋の後に2つの期間が表示されます。 展開モードでは、メッセージ全体が表示されます (上の例を参照)。
 
--   ***受信トレイ***&ndash; [契約] モードでは、新しいメッセージの数が表示されます。 展開モードでは、最初の電子メールメッセージ、または受信トレイ内のメッセージの一覧が表示されます。
+- ***受信トレイ***&ndash; [契約] モードでは、新しいメッセージの数が表示されます。 展開モードでは、最初の電子メールメッセージ、または受信トレイ内のメッセージの一覧が表示されます。
 
--   ***イメージ***&ndash; [契約] モードでは、メッセージテキストのみが表示されます。 展開モードでは、テキストとイメージが表示されます。
+- ***イメージ***&ndash; [契約] モードでは、メッセージテキストのみが表示されます。 展開モードでは、テキストとイメージが表示されます。
 
 [基本通知以外](#beyond-the-basic-notification)(この記事の後半) では、*テキスト*、*受信トレイ*、および*イメージ*の通知を作成する方法について説明します。
 
@@ -121,15 +121,15 @@ Android Oreo と共にインストールされる**YouTube**アプリには、�
 
 この画面では、ユーザーは次の手順に従って、**ダウンロード**通知チャネルの動作を変更できます。
 
--   重要度 レベルを **緊急**、**高**、**中**、または **低** に設定します。これにより、サウンドとビジュアルの中断のレベルが構成されます。
+- 重要度 レベルを **緊急**、**高**、**中**、または **低** に設定します。これにより、サウンドとビジュアルの中断のレベルが構成されます。
 
--   通知ドットをオンまたはオフにします。
+- 通知ドットをオンまたはオフにします。
 
--   点滅する光をオンまたはオフにします。
+- 点滅する光をオンまたはオフにします。
 
--   ロック画面で通知を表示または非表示にします。
+- ロック画面で通知を表示または非表示にします。
 
--   **[応答不可]** 設定をオーバーライドします。
+- **[応答不可]** 設定をオーバーライドします。
 
 **一般的な通知**チャネルには、次のような設定があります。
 
@@ -144,19 +144,19 @@ Android で通知を作成するには、 [Xamarin. Android.](https://www.nuget.
 
 `NotificationCompat.Builder`通知のさまざまなオプションを設定するためのメソッドを提供します。次に例を示します。
 
--   コンテンツ (タイトル、メッセージテキスト、通知アイコンなど)。
+- コンテンツ (タイトル、メッセージテキスト、通知アイコンなど)。
 
--   *ビッグテキスト*、*受信トレイ*、*画像*のスタイルなど、通知のスタイル。
+- *ビッグテキスト*、*受信トレイ*、*画像*のスタイルなど、通知のスタイル。
 
--   通知の優先度。 [最小]、[低]、[既定]、[高]、または [最大] を設定します。 Android 8.0 以降では、[_通知チャネル_](#notification-channels)を使用して優先度が設定されます。
+- 通知の優先度。 [最小]、[低]、[既定]、[高]、または [最大] を設定します。 Android 8.0 以降では、[_通知チャネル_](#notification-channels)を使用して優先度が設定されます。
 
--   ロック画面での通知の可視性 (パブリック、プライベート、またはシークレット)。
+- ロック画面での通知の可視性 (パブリック、プライベート、またはシークレット)。
 
--   Android が通知を分類してフィルター処理するのに役立つカテゴリメタデータ。
+- Android が通知を分類してフィルター処理するのに役立つカテゴリメタデータ。
 
--   通知がタップされたときに起動するアクティビティを示す、省略可能なインテント。
+- 通知がタップされたときに起動するアクティビティを示す、省略可能なインテント。
 
--   通知が発行される通知チャネルの ID (Android 8.0 以降)。
+- 通知が発行される通知チャネルの ID (Android 8.0 以降)。
 
 ビルダーでこれらのオプションを設定すると、設定を含む通知オブジェクトが生成されます。 通知を発行するには、この通知オブジェクトを*通知マネージャー*に渡します。 Android には、 [Notificationmanager](xref:Android.App.NotificationManager)クラスが用意されています。このクラスは、通知を発行してユーザーに表示します。 このクラスへの参照は、アクティビティやサービスなど、任意のコンテキストから取得できます。
 
@@ -200,21 +200,21 @@ void CreateNotificationChannel()
 
 Android で通知を生成するには、次の手順を実行します。
 
-1.  オブジェクトを`NotificationCompat.Builder`インスタンス化します。
+1. オブジェクトを`NotificationCompat.Builder`インスタンス化します。
 
-2.  オブジェクトのさまざまなメソッド`NotificationCompat.Builder`を呼び出して、通知オプションを設定します。
+2. オブジェクトのさまざまなメソッド`NotificationCompat.Builder`を呼び出して、通知オプションを設定します。
 
-3.  `NotificationCompat.Builder`オブジェクトの[ビルド](xref:Android.App.Notification.Builder.Build)メソッドを呼び出して、通知オブジェクトをインスタンス化します。
+3. `NotificationCompat.Builder`オブジェクトの[ビルド](xref:Android.App.Notification.Builder.Build)メソッドを呼び出して、通知オブジェクトをインスタンス化します。
 
-4.  通知マネージャーの[Notify](xref:Android.App.NotificationManager.Notify*)メソッドを呼び出して、通知を発行します。
+4. 通知マネージャーの[Notify](xref:Android.App.NotificationManager.Notify*)メソッドを呼び出して、通知を発行します。
 
 通知ごとに、少なくとも次の情報を指定する必要があります。
 
--   小さいアイコン (24 x 24 dp のサイズ)
+- 小さいアイコン (24 x 24 dp のサイズ)
 
--   短いタイトル
+- 短いタイトル
 
--   通知のテキスト
+- 通知のテキスト
 
 次のコード例は、を使用`NotificationCompat.Builder`して基本通知を生成する方法を示しています。 メソッドで`NotificationCompat.Builder`は[メソッドチェーン](https://en.wikipedia.org/wiki/Method_chaining)がサポートされていることに注意してください。つまり、各メソッドはビルダーオブジェクトを返します。これにより、最後のメソッド呼び出しの結果を使用して次のメソッド呼び出しを呼び出すことができます。
 
@@ -321,11 +321,11 @@ notificationManager.Notify (notificationId, notification);
 
 通知は、次の3つのうちのいずれかが発生するまで表示されたままになります。
 
--   ユーザーが通知を破棄する (または*クリアオール*をタップする)。
+- ユーザーが通知を破棄する (または*クリアオール*をタップする)。
 
--   アプリケーションは、通知が発行`NotificationManager.Cancel`されたときに割り当てられた一意の通知 ID を渡して、への呼び出しを行います。
+- アプリケーションは、通知が発行`NotificationManager.Cancel`されたときに割り当てられた一意の通知 ID を渡して、への呼び出しを行います。
 
--   アプリケーションがを`NotificationManager.CancelAll`呼び出します。
+- アプリケーションがを`NotificationManager.CancelAll`呼び出します。
 
 Android の通知を更新する方法の詳細については、「[通知を変更する](https://developer.android.com/training/notify-user/managing.html#Updating)」を参照してください。
 
@@ -604,22 +604,22 @@ builder.SetStyle (inboxStyle);
 
 Android 7.1 以降で実行されているアプリでは、通知自体に優先順位を直接設定する必要があります。 通知が発行されると、通知の優先度設定によって2つの結果が決定されます。
 
--   通知は、他の通知に関連して表示されます。
+- 通知は、他の通知に関連して表示されます。
     たとえば、優先度の高い通知は、各通知が公開されたタイミングに関係なく、通知ドロワーの優先度の低い通知の上に表示されます。
 
--   通知をヘッドアップ通知形式 (Android 5.0 以降) で表示するかどうかを指定します。 優先度が*高*および*最大*の通知だけが、ヘッドアップ通知として表示されます。
+- 通知をヘッドアップ通知形式 (Android 5.0 以降) で表示するかどうかを指定します。 優先度が*高*および*最大*の通知だけが、ヘッドアップ通知として表示されます。
 
 Xamarin Android では、通知の優先度を設定するために次の列挙が定義されています。
 
--   `NotificationPriority.Max`&ndash;緊急時または重大な状態 (着信呼び出し、ターン順、緊急通知など) に対してユーザーに警告します。 Android 5.0 以降のデバイスでは、最大優先順位通知は、ヘッドアップ形式で表示されます。
+- `NotificationPriority.Max`&ndash;緊急時または重大な状態 (着信呼び出し、ターン順、緊急通知など) に対してユーザーに警告します。 Android 5.0 以降のデバイスでは、最大優先順位通知は、ヘッドアップ形式で表示されます。
 
--   `NotificationPriority.High`&ndash;重要なイベント (重要なメールやリアルタイムチャットメッセージの到着など) をユーザーに通知します。 Android 5.0 以降のデバイスでは、優先度の高い通知がヘッドアップ形式で表示されます。
+- `NotificationPriority.High`&ndash;重要なイベント (重要なメールやリアルタイムチャットメッセージの到着など) をユーザーに通知します。 Android 5.0 以降のデバイスでは、優先度の高い通知がヘッドアップ形式で表示されます。
 
--   `NotificationPriority.Default`&ndash;中レベルの重要度を持つ条件をユーザーに通知します。
+- `NotificationPriority.Default`&ndash;中レベルの重要度を持つ条件をユーザーに通知します。
 
--   `NotificationPriority.Low`&ndash;ソフトウェア更新プログラムの通知やソーシャルネットワークの更新プログラムなど、ユーザーに通知する必要がある非緊急情報。
+- `NotificationPriority.Low`&ndash;ソフトウェア更新プログラムの通知やソーシャルネットワークの更新プログラムなど、ユーザーに通知する必要がある非緊急情報。
 
--   `NotificationPriority.Min`&ndash;通知を表示する場合にのみユーザーに通知される背景情報 (場所や天気情報など)。
+- `NotificationPriority.Min`&ndash;通知を表示する場合にのみユーザーに通知される背景情報 (場所や天気情報など)。
 
 通知の優先度を設定するには、 `NotificationCompat.Builder`オブジェクトの[setpriority](xref:Android.App.Notification.Builder.SetPriority*)メソッドを呼び出して、優先度レベルで渡します。 例:
 
@@ -649,11 +649,11 @@ builder.SetPriority (NotificationPriority.High);
 Android 5.0 以降では、[*可視性*] 設定を使用して、セキュリティで保護されたロック画面に表示される通知コンテンツの量を制御できます。
 Xamarin Android では、通知の可視性を設定するために次の列挙が定義されています。
 
--   `NotificationVisibility.Public`&ndash;通知の完全な内容が、セキュリティで保護されたロック画面に表示されます。
+- `NotificationVisibility.Public`&ndash;通知の完全な内容が、セキュリティで保護されたロック画面に表示されます。
 
--   `NotificationVisibility.Private`&ndash;セキュリティで保護されたロック画面 (通知アイコンや、通知を送信したアプリの名前など) には重要な情報のみが表示されますが、通知の詳細の残りは非表示になります。 すべての通知の`NotificationVisibility.Private`既定値はです。
+- `NotificationVisibility.Private`&ndash;セキュリティで保護されたロック画面 (通知アイコンや、通知を送信したアプリの名前など) には重要な情報のみが表示されますが、通知の詳細の残りは非表示になります。 すべての通知の`NotificationVisibility.Private`既定値はです。
 
--   `NotificationVisibility.Secret`&ndash;通知アイコンだけでなく、セキュリティで保護されたロック画面には何も表示されません。 通知コンテンツは、ユーザーがデバイスのロックを解除した後にのみ使用できます。
+- `NotificationVisibility.Secret`&ndash;通知アイコンだけでなく、セキュリティで保護されたロック画面には何も表示されません。 通知コンテンツは、ユーザーがデバイスのロックを解除した後にのみ使用できます。
 
 通知の表示を設定するために、アプリは`SetVisibility` `NotificationCompat.Builder`オブジェクトのメソッドを呼び出し、可視性の設定を渡します。 たとえば、この呼び出しに`SetVisibility`よって通知`Private`が行われます。
 
@@ -671,33 +671,33 @@ builder.SetVisibility (NotificationVisibility.Private);
 
 Android 5.0 以降では、通知の順位付けとフィルター処理に定義済みのカテゴリを使用できます。 Xamarin Android では、これらのカテゴリに対して次の列挙が提供されます。
 
--   `Notification.CategoryCall`&ndash;着信通話。
+- `Notification.CategoryCall`&ndash;着信通話。
 
--   `Notification.CategoryMessage`&ndash;テキストメッセージを受信します。
+- `Notification.CategoryMessage`&ndash;テキストメッセージを受信します。
 
--   `Notification.CategoryAlarm`&ndash;アラーム条件またはタイマーの有効期限。
+- `Notification.CategoryAlarm`&ndash;アラーム条件またはタイマーの有効期限。
 
--   `Notification.CategoryEmail`&ndash;受信電子メールメッセージ。
+- `Notification.CategoryEmail`&ndash;受信電子メールメッセージ。
 
--   `Notification.CategoryEvent`&ndash;カレンダーイベント。
+- `Notification.CategoryEvent`&ndash;カレンダーイベント。
 
--   `Notification.CategoryPromo`&ndash;プロモーションメッセージまたは広告。
+- `Notification.CategoryPromo`&ndash;プロモーションメッセージまたは広告。
 
--   `Notification.CategoryProgress`&ndash;バックグラウンド操作の進行状況。
+- `Notification.CategoryProgress`&ndash;バックグラウンド操作の進行状況。
 
--   `Notification.CategorySocial`&ndash;ソーシャルネットワークの更新。
+- `Notification.CategorySocial`&ndash;ソーシャルネットワークの更新。
 
--   `Notification.CategoryError`&ndash;バックグラウンド操作または認証プロセスの失敗。
+- `Notification.CategoryError`&ndash;バックグラウンド操作または認証プロセスの失敗。
 
--   `Notification.CategoryTransport`&ndash;メディア再生の更新。
+- `Notification.CategoryTransport`&ndash;メディア再生の更新。
 
--   `Notification.CategorySystem`&ndash;システム使用 (システムまたはデバイスの状態) 用に予約されています。
+- `Notification.CategorySystem`&ndash;システム使用 (システムまたはデバイスの状態) 用に予約されています。
 
--   `Notification.CategoryService`&ndash;バックグラウンドサービスが実行されていることを示します。
+- `Notification.CategoryService`&ndash;バックグラウンドサービスが実行されていることを示します。
 
--   `Notification.CategoryRecommendation`&ndash;現在実行中のアプリに関連する推奨メッセージ。
+- `Notification.CategoryRecommendation`&ndash;現在実行中のアプリに関連する推奨メッセージ。
 
--   `Notification.CategoryStatus`&ndash;デバイスに関する情報。
+- `Notification.CategoryStatus`&ndash;デバイスに関する情報。
 
 通知が並べ替えられると、通知の優先度はそのカテゴリの設定よりも優先されます。 たとえば、優先度の高い通知は、 `Promo`カテゴリに属している場合でも、ヘッドアップとして表示されます。 通知のカテゴリを設定するには、 `SetCategory` `NotificationCompat.Builder`オブジェクトのメソッドを呼び出して、カテゴリの設定を渡します。 例:
 
@@ -709,7 +709,7 @@ builder.SetCategory (Notification.CategoryCall);
 
 ![スクリーンスイッチに応答しない](local-notifications-images/26-do-not-disturb.png)
 
-ユーザーが、(上のスクリーンショットに示されているように) 電話以外のすべての割り込みを*ブロックするよう*に構成すると、Android `Notification.CategoryCall`では、デバイスがに存在しないときに、カテゴリ設定の通知が表示されるようになります。 *応答*モード。 通知は`Notification.CategoryAlarm` 、*応答不可*モードではブロックされないことに注意してください。
+ユーザーが、(上のスクリーンショットに示されているように) 電話以外のすべての割り込みをブロックするように構成すると、Android `Notification.CategoryCall`では、デバイスがに存在しないときに、カテゴリ設定の通知が表示されるようになります。 *応答*モード。 通知は`Notification.CategoryAlarm` 、*応答不可*モードではブロックされないことに注意してください。
 
 [Localnotifications](https://docs.microsoft.com/samples/xamarin/monodroid-samples/localnotifications)サンプルでは、を使用`NotificationCompat.Builder`して、通知から2番目のアクティビティを起動する方法を示します。 このサンプルコードについては、 [「Xamarin. Android でのローカル通知の使用](~/android/app-fundamentals/notifications/local-notifications-walkthrough.md)」チュートリアルで説明しています。
 

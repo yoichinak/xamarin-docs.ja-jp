@@ -1,38 +1,38 @@
 ---
 title: Java ライブラリのバインド
-description: Android のコミュニティがアプリで使用することがあります多くの Java ライブラリこのガイドでは、バインド ライブラリを作成して、Xamarin.Android アプリケーションに Java ライブラリを組み込む方法について説明します。
+description: Android コミュニティには、アプリで使用できる Java ライブラリが多数あります。このガイドでは、バインドライブラリを作成して、Xamarin Android アプリケーションに Java ライブラリを組み込む方法について説明します。
 ms.prod: xamarin
 ms.assetid: B39FF1D5-69C3-8A76-D268-C227A23C9485
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/01/2017
-ms.openlocfilehash: 016ac7269f334f6df7fba9635897b9608f459284
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: 4c01022e01c5ba6a9099b88e99558bd7d7ce728d
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65970219"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524548"
 ---
 # <a name="binding-a-java-library"></a>Java ライブラリのバインド
 
-_Android のコミュニティがアプリで使用することがあります多くの Java ライブラリこのガイドでは、バインド ライブラリを作成して、Xamarin.Android アプリケーションに Java ライブラリを組み込む方法について説明します。_
+_Android コミュニティには、アプリで使用できる Java ライブラリが多数あります。このガイドでは、バインドライブラリを作成して、Xamarin Android アプリケーションに Java ライブラリを組み込む方法について説明します。_
 
 ## <a name="overview"></a>概要
 
-Android 用のサード パーティ製のライブラリ エコシステム膨大になります。 このため、頻繁に理にかなって、新しいものを作成するよりも既存の Android ライブラリを使用します。 Xamarin.Android には、これらのライブラリを使用する 2 つの方法が用意されています。
+Android 用のサードパーティ製ライブラリエコシステムは大規模です。 このため、新しい Android ライブラリを作成するよりも、既存の Android ライブラリを使用することがよくあります。 Xamarin には、これらのライブラリを使用する2つの方法が用意されています。
 
--   作成、*バインド ライブラリ*でライブラリを自動的にラップするC#経由での Java を起動するためのラッパー コードC#呼び出し。
+- 呼び出しを使用C#して Java コードを呼び出すC#ことができるように、ラッパーを使用してライブラリを自動的にラップする*バインドライブラリ*を作成します。
 
--   使用して、 *Java ネイティブ インターフェイス*(*JNI*) Java ライブラリ コードで呼び出しを直接起動します。 JNI は、Java コードを呼び出し、ネイティブ アプリケーションやライブラリによって呼び出されるようにするプログラミング フレームワークです。
+- Java*ネイティブインターフェイス*(*JNI*) を使用して、java ライブラリコード内の呼び出しを直接呼び出します。 JNI は、Java コードがを呼び出し、ネイティブアプリケーションまたはライブラリから呼び出すことができるプログラミングフレームワークです。
 
-このガイドでは、最初のオプション: を作成する方法、*バインド ライブラリ*1 つまたは複数の既存の Java ライブラリをラップするアセンブリ、アプリケーションでリンクすることができます。 JNI の使用に関する詳細については、次を参照してください。 [JNI の](~/android/platform/java-integration/working-with-jni.md)します。
+このガイドでは、最初のオプションについて説明します。1つ以上の既存の Java ライブラリをアプリケーションのリンク先のアセンブリにラップする*バインドライブラリ*を作成する方法について説明します。 JNI の使用方法の詳細については、「 [JNI を使用した作業](~/android/platform/java-integration/working-with-jni.md)」を参照してください。
 
-Xamarin.Android を使用してバインドを実装する*呼び出し可能ラッパーをマネージ*(*MCW*)。 MCW は、マネージ コードは、Java のコードを呼び出す必要がある場合に使用される JNI のブリッジです。 呼び出し可能ラッパーをマネージ Java 型をサブクラス化と Java の型の仮想メソッドのオーバーライドもサポートしています。 同様に、Android ランタイム (アート) コードがマネージ コードを呼び出すことが希望されるたびにこれは Android 呼び出し可能ラッパー (について) と呼ばれる別の JNI ブリッジを使用しています。 これは、[アーキテクチャ](~/android/internals/architecture.md)次の図に示します。
+Xamarin は*マネージ呼び出し可能ラッパー* (*mcw*) を使用してバインディングを実装します。 MCW は、マネージコードが Java コードを呼び出す必要がある場合に使用される JNI ブリッジです。 マネージ呼び出し可能ラッパーは、java 型のサブクラス化と Java 型の仮想メソッドのオーバーライドもサポートしています。 同様に、Android ランタイム (アート) コードでマネージコードを呼び出す必要がある場合は、Android の呼び出し可能ラッパー (ACW) と呼ばれる別の JNI ブリッジによって実行されます。 この[アーキテクチャ](~/android/internals/architecture.md)を次の図に示します。
 
-[![Android JNI のブリッジのアーキテクチャ](images/architecture.png)](images/architecture.png#lightbox)
+[![Android JNI ブリッジのアーキテクチャ](images/architecture.png)](images/architecture.png#lightbox)
 
-バインディング ライブラリは、Java の型のマネージ呼び出し可能ラッパーを含むアセンブリです。 たとえば、Java の型をここでは`MyClass`、バインド ライブラリをラップする必要があります。
+バインドライブラリは、Java 型のマネージ呼び出し可能ラッパーを含むアセンブリです。 たとえば、次の Java 型`MyClass`は、バインドライブラリでラップします。
 
 ```java
 package com.xamarin.mycode;
@@ -43,7 +43,7 @@ public class MyClass
 }
 ```
 
-バインド ライブラリを生成した後、 **.jar**を格納している`MyClass`、インスタンス化してからのメソッドを呼び出すC#:
+を含む`MyClass` **.jar**のバインドライブラリを生成した後、それをインスタンス化し、からC#メソッドを呼び出すことができます。
 
 ```csharp
 var instance = new MyClass ();
@@ -51,99 +51,99 @@ var instance = new MyClass ();
 string result = instance.MyMethod (42);
 ```
 
-このバインド ライブラリを作成するには、Xamarin.Android を使用*Java バインド ライブラリ*テンプレート。 結果のバインド プロジェクトでは、MCW クラスでは、.NET アセンブリを作成します。 **.jar**ファイル、および Android ライブラリ プロジェクトがそこに埋め込まれたリソースです。 Android アーカイブのバインド ライブラリを作成することもできます (します。AAR) ファイルと Eclipse Android ライブラリ プロジェクト。 によって生成されたバインド ライブラリ DLL アセンブリを参照するは、Xamarin.Android プロジェクトで既存の Java ライブラリを再利用できます。
+このバインドライブラリを作成するには、Xamarin *Java Bindings ライブラリ*テンプレートを使用します。 結果のバインドプロジェクトは、MCW クラス、 **.jar**ファイル、およびその中に埋め込まれている Android ライブラリプロジェクトのリソースを含む .net アセンブリを作成します。 Android アーカイブ用のバインドライブラリ () を作成することもできます。AAR) ファイルと Eclipse Android ライブラリプロジェクト。 結果のバインドライブラリ DLL アセンブリを参照することにより、既存の Java ライブラリを Xamarin. Android プロジェクトで再利用できます。
 
-バインディング ライブラリ内の型を参照するときに、バインド ライブラリの名前空間を使用する必要があります。 通常、追加、`using`の上部にあるディレクティブ、C#ソース ファイル、つまり、Java のパッケージ名の .NET 名前空間のバージョン。 たとえば、Java のパッケージの名前、バインドの **.jar**以下します。
+バインドライブラリ内の型を参照する場合は、バインドライブラリの名前空間を使用する必要があります。 通常、 C#ソースファイルの`using`先頭に、Java パッケージ名の .net 名前空間バージョンであるディレクティブを追加します。 たとえば、バインドさ**れた .jar**の Java パッケージ名が次のようになっているとします。
 
 ```csharp
 com.company.package
 ```
 
-次を記述し、`using`の上部にあるステートメント、C#ソース ファイル、バインドされた型にアクセスする **.jar**ファイル。
+次に、 C#ソースファイルの`using`先頭に次のステートメントを記述して、バインドされた **.jar**ファイル内の型にアクセスします。
 
 ```csharp
 using Com.Company.Package;
 ```
 
 
-既存の Android ライブラリをバインドするときに、次の点に留意する必要があります。
+既存の Android ライブラリをバインドする場合は、次の点に注意する必要があります。
 
-* **ライブラリの外部の依存関係はありますか。** &ndash; Xamarin.Android プロジェクトでは、Android ライブラリで必要な Java 依存関係を含める必要がある、 **ReferenceJar**か、または、 **EmbeddedReferenceJar**します。 ネイティブ アセンブリとしてバインド プロジェクトに追加する必要があります、 **EmbeddedNativeLibrary**します。  
+* **ライブラリの外部依存関係はありますか。** &ndash;Android ライブラリに必要な Java 依存関係は、 **Referencejar**または**EmbeddedReferenceJar**として Xamarin プロジェクトに含める必要があります。 すべてのネイティブアセンブリは、 **EmbeddedNativeLibrary**としてバインドプロジェクトに追加する必要があります。  
 
-* **Android API のバージョンは、Android ライブラリの対象ですか?** &ndash; Android API レベルを「ダウン グレード」することはできません。Xamarin.Android バインド プロジェクトも、レベル (またはそれ以上) には、同じ API をターゲットはことを確認、Android ライブラリとして。
+* **Android ライブラリの対象となる Android API のバージョンを教えてください。** &ndash;Android API レベルを "ダウングレード" することはできません。Xamarin. Android バインドプロジェクトが、Android ライブラリと同じ API レベル (またはそれ以降) を対象としていることを確認します。
 
-* **JDK のバージョンは、ライブラリをコンパイルに使用されたか。** &ndash; Xamarin.Android で Android ライブラリの使用よりも JDK の異なるバージョンで作成した場合、バインド エラーが発生します。 可能であれば、同じバージョンの Xamarin.Android のインストールで使用される JDK を使用して、Android ライブラリを再コンパイルします。
+* **ライブラリをコンパイルするために使用された JDK のバージョン** &ndash;Android ライブラリが、Xamarin Android で使用されているものとは異なるバージョンの JDK でビルドされている場合、バインドエラーが発生することがあります。 可能であれば、Xamarin Android のインストールで使用されているものと同じバージョンの JDK を使用して、Android ライブラリを再コンパイルします。
 
 
 ## <a name="build-actions"></a>ビルド アクション
 
-バインド ライブラリを作成するときに設定する*ビルド アクション*上、 **.jar**またはします。バインド ライブラリ プロジェクトに組み込むこと AAR ファイル&ndash;各ビルド アクションを決定する方法、 **.jar**または。AAR ファイルがあるに埋め込まれた (またはによって参照される)、バインド ライブラリ。 これらを次に示しますビルド アクション。
+バインドライブラリを作成する場合は、.jar またはに*ビルドアクション*を設定し**ます**。AAR ファイルをバインドライブラリプロジェクト&ndash;に組み込むと、各ビルドアクションによって**jar**またはの方法が決まります。AAR ファイルは、バインドライブラリに埋め込まれる (または参照される) ことになります。 これらのビルドアクションの概要を次に示します。
 
-* `EmbeddedJar` &ndash; 埋め込みます、 **.jar**埋め込みリソースとしては、結果のバインド ライブラリ DLL にします。 これは、最も簡単なほとんどの一般的に使用されるビルド アクションです。 このオプションを使用する場合、 **.jar**自動的にバイト コードにコンパイルされ、バインド ライブラリにパッケージ化します。
+* `EmbeddedJar`作成されたバインディングライブラリ DLL に .jar を埋め込みリソースとして埋め込み**ます。** &ndash; これは最も単純で一般的に使用されるビルドアクションです。 このオプションは、 **jar**を自動的にバイトコードにコンパイルし、バインドライブラリにパッケージ化する場合に使用します。
 
-* `InputJar` &ndash; 埋め込まれません、 **.jar**結果バインド ライブラリにします。DLL です。 バインド ライブラリ。DLL はこの依存関係を持って **.jar**実行時にします。 含めるしたくない場合は、このオプションを使用、 **.jar** (たとえば、ライセンス上の理由)、バインド ライブラリ。 このオプションを使用する場合、入力を確保 **.jar**デバイス、アプリを実行するに収録されています。
+* `InputJar`結果として得られるバインドライブラリには .jar が埋め込まれません。 &ndash;DLL. バインドライブラリ。DLL は、実行時にこの **.jar**に依存します。 このオプションは、(たとえば、ライセンスの理由で) **.jar**をバインドライブラリに含めない場合に使用します。 このオプションを使用する場合は、アプリを実行するデバイスで入力**jar**が使用可能であることを確認する必要があります。
 
-* `LibraryProjectZip` &ndash; 埋め込みます、します。結果として得られるバインド ライブラリに AAR ファイルです。DLL です。 バインドされているリソース (およびそのコード) にアクセスできる点を除いて EmbeddedJar に似ています。AAR ファイルです。 このオプションを埋め込む場合に使用します。バインド ライブラリ AAR します。
+* `LibraryProjectZip`&ndash;を埋め込みます。AAR ファイルを結果のバインドライブラリに挿入します。DLL. これは、バインドされたのリソース (およびコード) にアクセスできる点を除いて、EmbeddedJar に似ています。AAR ファイル。 を埋め込む場合は、このオプションを使用します。AAR をバインドライブラリに挿入します。
 
-* `ReferenceJar` &ndash; 参照を指定 **.jar**: 参照 **.jar**は、 **.jar** 、バインドの 1 つは **.jar**または。AAR ファイルによって異なります。 この参照 **.jar**コンパイル時の依存関係を満たすためにのみ使用されます。 このビルド アクションを使用するとC#参照のバインドは作成されません **.jar**結果バインド ライブラリが埋め込まれていないとします。DLL です。 参照のバインディング ライブラリを行うと、このオプションを使用 **.jar**が実行されていないが、します。 このビルド アクションは複数のパッケージ化に適しています。 **.jar**s (やします。AARs) に複数のバインド ライブラリを相互に依存します。
+* `ReferenceJar`参照を指定します。 jar: 参照。 jar は、バインドされた .jar またはのいずれかの .jar です。 &ndash;AAR ファイルはに依存します。 この参照は、コンパイル時の依存関係を満たすためにのみ使用されます。 このビルドアクションを使用するとC# 、バインドは参照**jar**に対して作成されず、結果のバインドライブラリには埋め込まれません。DLL. このオプションは、参照**jar**のバインドライブラリを作成する場合に使用しますが、まだ実行していない場合は、このオプションを使用します。 このビルドアクションは、複数の **.jar**s (やなど) をパッケージ化する場合に便利です。複数の相互に依存するバインディングライブラリにします。
 
-* `EmbeddedReferenceJar` &ndash; 参照を埋め込みます **.jar**結果バインド ライブラリにします。DLL です。 作成する場合は、このビルド アクションを使用してC#両方の入力をバインド **.jar** (またはします。AAR) とすべての参照の **.jar**(s)、バインド ライブラリ。
+* `EmbeddedReferenceJar`結果として得られるバインディングライブラリに参照 .jar を埋め込みます。 &ndash;DLL. このビルドアクションは、入力 **.jar** (またC#はの両方のバインドを作成する場合に使用します。AAR) とそのすべての参照 **.jar**をバインドライブラリに作成します。
 
-* `EmbeddedNativeLibrary` &ndash; ネイティブを埋め込みます **.so**バインディングにします。 このビルド アクションのため **.so**によって必要なファイルを **.jar**バインドされているファイルします。 手動で読み込む必要があります、 **.so** Java ライブラリからコードを実行する前にライブラリ。 次に示します。
+* `EmbeddedNativeLibrary`ネイティブなをバインドに埋め込み**ます。** &ndash; このビルドアクションは、バインドされている **.jar**ファイルに必要なファイルに対して使用され**ます。** Java ライブラリからコードを実行する前に、ライブラリを手動で読み込む必要がある場合があります。 詳細については、以下を参照してください。
 
-これらのビルド アクションは、次のガイドで詳しく説明します。
+これらのビルドアクションの詳細については、次のガイドで説明します。
 
-Java API のドキュメントをインポートするためにそれらを変換して、次のビルド アクションを使用するさらに、 C# XML ドキュメント。
+さらに、次のビルドアクションを使用して、Java API ドキュメントをインポートしC# 、XML ドキュメントに変換することができます。
 
-* `JavaDocJar` Maven パッケージのスタイルに準拠している Java ライブラリの Javadoc アーカイブ Jar をポイントするために使用されます (通常は`FOOBAR-javadoc**.jar**`)。
-* `JavaDocIndex` をポイントするために使用`index.html`API リファレンス ドキュメント HTML 内のファイル。
-* `JavaSourceJar` 補完するために使用`JavaDocJar`を最初のソースから JavaDoc を生成し、として結果を扱う`JavaDocIndex`、Maven に準拠している Java ライブラリのスタイルをパッケージ化 (通常は`FOOBAR-sources**.jar**`)。
+* `JavaDocJar`は、Maven パッケージスタイル (通常は`FOOBAR-javadoc**.jar**`) に準拠する Java ライブラリの Javadoc アーカイブ Jar を指すために使用されます。
+* `JavaDocIndex`は、API リファレンスドキュメント`index.html` HTML 内のファイルを指すために使用されます。
+* `JavaSourceJar`を補完`JavaDocJar`するために使用されます。最初にソースから JavaDoc を生成`JavaDocIndex`し、Maven パッケージスタイル (通常は`FOOBAR-sources**.jar**`) に準拠する Java ライブラリに対して結果をとして扱います。
 
-API のドキュメントが Java8、Java7 または (すべて別の形式では)、Java6 SDK から既定 doclet をする必要がありますまたは DroidDoc スタイル。
+API ドキュメントは、Java8、Java7、または Java6 SDK の既定の doclet (すべて異なる形式) であるか、または Iddoc スタイルである必要があります。
 
-## <a name="including-a-native-library-in-a-binding"></a>バインディングのネイティブ ライブラリを含む
+## <a name="including-a-native-library-in-a-binding"></a>バインドにネイティブライブラリを含める
 
-含める必要があります、 **.so** Java ライブラリのバインドの一部として Xamarin.Android バインド プロジェクトのライブラリです。 Xamarin.Android は JNI の呼び出しと、エラー メッセージを失敗して、ラップされた Java コードの実行時に_java.lang.UnsatisfiedLinkError:ネイティブ メソッドが見つかりません:_ アプリケーションのアウト logcat に表示されます。
+Java ライブラリのバインドの一部として、Xamarin Android プロジェクトに **. so**ライブラリを含めることが必要になる場合があります。 ラップされた Java コードを実行すると、JNI の呼び出しに失敗し、エラーメッセージ_UnsatisfiedLinkError が発生します。ネイティブメソッドが見つかりませ_ん: アプリケーションの logcat out に表示されます。
 
-この修正プログラムは、手動で読み込む、 **.so**ライブラリへの呼び出しで`Java.Lang.JavaSystem.LoadLibrary`します。 たとえば、Xamarin.Android プロジェクトに共有ライブラリがあると仮定すると**libpocketsphinx_jni.so**のビルド アクションを使用してプロジェクトをバインドに含まれる**EmbeddedNativeLibrary**、次のスニペット(共有ライブラリを使用する前に実行) が読み込まれます、 **.so**ライブラリ。
+この問題を解決するには、の呼び出し`Java.Lang.JavaSystem.LoadLibrary`を使用して、... ライブラリを手動で読み込みます。 たとえば、Xamarin Android プロジェクトに共有ライブラリ libpocketsphinx_jni が含まれていると**します。そのため**、 **EmbeddedNativeLibrary**のビルドアクションを使用してバインドプロジェクトにインクルードします。次のスニペット (共有ライブラリを使用する前に実行)は、 **...** ライブラリを読み込みます。
 
 ```csharp
 Java.Lang.JavaSystem.LoadLibrary("pocketsphinx_jni");
 ```
 
-## <a name="adapting-java-apis-to-ceparsl"></a>C、Java Api の調整&eparsl;
+## <a name="adapting-java-apis-to-ceparsl"></a>Java Api を C に適合させる&eparsl;
 
-Xamarin.Android バインド ジェネレーターは、いくつかの Java の表現方法と .NET のパターンに対応するパターンに変更されます。 次の一覧は、Java にマップする方法について説明しますC#/.NET:
+Xamarin Android のバインドジェネレーターは、一部の Java 表現とパターンを .NET パターンに対応するように変更します。 次の一覧では、Java を/.NET C#にマップする方法について説明します。
 
--   _Setter と Getter メソッド_Java では_プロパティ_.NET でします。
+- Java の_Setter/Getter メソッド_は、.Net の_プロパティ_です。
 
--   _フィールド_Java では_プロパティ_.NET でします。
+- Java の_フィールド_は .Net の_プロパティ_です。
 
--   _リスナーとリスナー インターフェイス_Java では_イベント_.NET でします。 コールバック インターフェイスのメソッドのパラメーターによって表される、`EventArgs`サブクラスです。
+- Java の_リスナー/リスナーインターフェイス_は、.Net の_イベント_です。 コールバックインターフェイスのメソッドのパラメーターは、 `EventArgs`サブクラスによって表されます。
 
--   A_クラスの静的な入れ子になった_Java では、_入れ子になったクラス_.NET でします。
+- Java の_静的入れ子クラス_は、.Net の_入れ子になったクラス_です。
 
--   _内部クラス_Java では、_入れ子になったクラス_にインスタンス コンス トラクターでC#します。
+- Java の_内部クラス_は、の C#インスタンスコンストラクターを持つ入れ子になったクラスです。
 
 
 
-## <a name="binding-scenarios"></a>バインディングのシナリオ
+## <a name="binding-scenarios"></a>バインドのシナリオ
 
-次のバインディング シナリオのガイドでは、アプリに組み込むこと Java ライブラリ (またはライブラリ) をバインドできます。
+次のバインドシナリオガイドは、アプリに組み込むために Java ライブラリ (またはライブラリ) をバインドするのに役立ちます。
 
--   [バインドします。JAR](~/android/platform/binding-java-library/binding-a-jar.md)バインド ライブラリを作成するためのチュートリアルは、 **.jar**ファイル。
+- [をバインドします。JAR](~/android/platform/binding-java-library/binding-a-jar.md)は、 **.jar**ファイルのバインドライブラリを作成するためのチュートリアルです。
 
--   [バインドします。AAR](~/android/platform/binding-java-library/binding-an-aar.md)バインド ライブラリを作成するためのチュートリアルです。AAR ファイル。 Android Studio ライブラリをバインドする方法については、このチュートリアルを参照してください。
+- [をバインドします。AAR](~/android/platform/binding-java-library/binding-an-aar.md)は、のバインドライブラリを作成するためのチュートリアルです。AAR ファイル。 Android Studio ライブラリをバインドする方法については、このチュートリアルを参照してください。
 
--   [Eclipse ライブラリ プロジェクトをバインド](~/android/platform/binding-java-library/binding-a-library-project.md)Android ライブラリ プロジェクトからバインド ライブラリを作成するためのチュートリアルです。 Eclipse の Android ライブラリ プロジェクトをバインドする方法については、このチュートリアルを参照してください。
+- [Eclipse ライブラリプロジェクトのバインド](~/android/platform/binding-java-library/binding-a-library-project.md)は、Android ライブラリプロジェクトからバインドライブラリを作成するためのチュートリアルです。 Eclipse Android ライブラリプロジェクトをバインドする方法については、このチュートリアルを参照してください。
 
--   [バインドのカスタマイズ](~/android/platform/binding-java-library/customizing-bindings/index.md)ビルド エラーを解決し、結果として得られる API を図形には、バインドを手動に変更する方法について説明します"C#のような"。
+- [バインディングのカスタマイズ](~/android/platform/binding-java-library/customizing-bindings/index.md)では、ビルドエラーを解決し、結果として得られる API の構造を ""C#のようなものにするために、バインディングに手動で変更を加える方法について説明します。
 
--   [バインドのトラブルシューティング](~/android/platform/binding-java-library/troubleshooting-bindings.md)バインド エラーの一般的なシナリオを一覧表示、考えられる原因、について説明します、およびこれらのエラーを解決するための推奨事項します。
+- [バインディングのトラブルシューティング](~/android/platform/binding-java-library/troubleshooting-bindings.md)では、一般的なバインドエラーのシナリオ、考えられる原因、およびこれらのエラーを解決するための提案を示します。
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [JNI の使用](~/android/platform/java-integration/working-with-jni.md)
+- [JNI の操作](~/android/platform/java-integration/working-with-jni.md)
 - [GAPI メタデータ](https://www.mono-project.com/docs/gui/gtksharp/gapi/#metadata)
 - [ネイティブ ライブラリの使用](~/android/platform/native-libraries.md)

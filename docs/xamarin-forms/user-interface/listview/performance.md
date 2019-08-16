@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/11/2017
-ms.openlocfilehash: 4a0a7a4db4b0ca982a162ec3a0b67dc729af0ed2
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: a1fae280f42f91fce4b4fe28c3f728cf14c7a21c
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655936"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528905"
 ---
 # <a name="listview-performance"></a>ListView のパフォーマンス
 
@@ -163,20 +163,20 @@ public class CustomListView : ListView
 
 `ListView` フォーマンスを向上させるための多くのテクニックがあります。
 
--  `ItemsSource` コレクションは、ランダムアクセスをサポートしないため、 `IList<T>` プロパティには `IEnumerable<T>` ではなく `IEnumerable<T>` コレクションをバインドする。
--  可能な限り `TextCell` ではなく、組み込みのセル (  /  `SwitchCell` `ViewCell` など) を使用する。
--  より少ない要素を使う。 例えば複数の Label の代わりに `FormattedString` を使った1つの Label の使用を検討する。
--  不均一のデータ（異なる型のデータ） を表示する場合は、 `ListView` を `TableView` 置き換える。
--  [ `Cell.ForceUpdateSize` ](xref:Xamarin.Forms.Cell.ForceUpdateSize) ソッドの使用を控える。 使いすぎると、パフォーマンスが低下します。
--  Android でインスタンス化した後で、 `ListView` の 行セパレータの可視性や色を設定することを避けます。これは大きなパフォーマンスの低下が発生します。
--  [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) に基づいたセルのレイアウトの変更を避けます。 これは大きなレイアウトと初期化のコストが発生します。
--  深くネストされたレイアウトの階層は避けます。 ネストを減らすために、 `AbsoluteLayout` または `Grid` を使用します。
--  `LayoutOptions`に `Fill` ( Fill は最も計算量が少ない）以外を指定することを避けます。
--  `ListView` の内部に `ScrollView` を配置することは以下の理由で避けます。
+- `ItemsSource` コレクションは、ランダムアクセスをサポートしないため、 `IList<T>` プロパティには `IEnumerable<T>` ではなく `IEnumerable<T>` コレクションをバインドする。
+- 可能な限り `TextCell` ではなく、組み込みのセル (  /  `SwitchCell` `ViewCell` など) を使用する。
+- より少ない要素を使う。 例えば複数の Label の代わりに `FormattedString` を使った1つの Label の使用を検討する。
+- 不均一のデータ（異なる型のデータ） を表示する場合は、 `ListView` を `TableView` 置き換える。
+- [ `Cell.ForceUpdateSize` ](xref:Xamarin.Forms.Cell.ForceUpdateSize) ソッドの使用を控える。 使いすぎると、パフォーマンスが低下します。
+- Android でインスタンス化した後で、 `ListView` の 行セパレータの可視性や色を設定することを避けます。これは大きなパフォーマンスの低下が発生します。
+- [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) に基づいたセルのレイアウトの変更を避けます。 これは大きなレイアウトと初期化のコストが発生します。
+- 深くネストされたレイアウトの階層は避けます。 ネストを減らすために、 `AbsoluteLayout` または `Grid` を使用します。
+- `LayoutOptions`に `Fill` ( Fill は最も計算量が少ない）以外を指定することを避けます。
+- `ListView` の内部に `ScrollView` を配置することは以下の理由で避けます。
     - `ListView` には自身にクロール機能が実装されています。
     - `ListView`は全てのジェスチャを受け取らない。それらは親である `ScrollView` によって処理されます。
     - `ListView`リストの要素と同時にスクロールするカスタマイズされたヘッダーとフッターを表示することができ、その機能のために潜在的に `ScrollView` が提供されています。 詳細については、次を参照してください。[ヘッダーとフッター](~/xamarin-forms/user-interface/listview/customizing-list-appearance.md#Headers_and_Footers)
--  セルの中で非常に特殊な複雑なデザインが必要な場合は Custom Renderer を検討します。
+- セルの中で非常に特殊な複雑なデザインが必要な場合は Custom Renderer を検討します。
 
 `AbsoluteLayout` は1回も計測処理を呼ぶことなくレイアウトを実行できる可能性があります。 これはパフォーマンス上で非常に強力です。 場合`AbsoluteLayout`することはできません、使用を検討してください[`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout)です。 `RelativeLayout` を使えば、直接制約を渡すことで式木 API を使うよりもかなり速くなるでしょう。 なぜなら、式木 API は JIT を使い、 iOS ではその式木が実行時に解釈され、それが非常に低速だからです。 式木 API はレイアウトの初期化や回転時にのみ呼ばれるようなページレイアウトに適しています。しかし `ListView` ではその処理がスクロールの間、継続的に実行され、パフォーマンスを損ないます。
 

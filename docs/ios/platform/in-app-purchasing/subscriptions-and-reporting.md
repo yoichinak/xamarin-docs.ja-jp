@@ -1,72 +1,72 @@
 ---
-title: サブスクリプションと Xamarin.iOS でのレポート
-description: このドキュメントでは、サブスクリプションの更新以外、無料のサブスクリプションを自動更新可能なサブスクリプション、および iTunes Connect を使用してこれらのアイテムをレポートするについて説明します。
+title: Xamarin. iOS のサブスクリプションとレポート
+description: このドキュメントでは、非更新サブスクリプション、無料のサブスクリプション、自動更新可能なサブスクリプションについて説明し、iTunes Connect を使用してこれらのアイテムに関するレポートを作成します。
 ms.prod: xamarin
 ms.assetid: 27EE4234-07F5-D2CD-DC1C-86E27C20141E
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 44dd2b2eea31f47ed53d8ef25ff7b0667286179d
-ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
+ms.openlocfilehash: ea016860bc30d9f6b70f41b85db09bf5544304ba
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67674558"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528279"
 ---
-# <a name="subscriptions-and-reporting-in-xamarinios"></a>サブスクリプションと Xamarin.iOS でのレポート
+# <a name="subscriptions-and-reporting-in-xamarinios"></a>Xamarin. iOS のサブスクリプションとレポート
 
-## <a name="about-non-renewing-subscriptions"></a>非更新サブスクリプションについて
+## <a name="about-non-renewing-subscriptions"></a>更新以外のサブスクリプションについて
 
-サブスクリプションの非更新は、時間制限 (1 週間のナビゲーション アプリケーションへのアクセス) やデータのアーカイブに時間制限付きアクセスなどのサービスの売上を表す製品を対象としています。   
+非更新サブスクリプションは、時間制限付きのサービスの販売を表す製品 (ナビゲーションアプリケーションへの1週間のアクセス、またはデータアーカイブへの期間限定のアクセスなど) を対象としています。   
    
-サブスクリプションの非更新とその他の製品の種類の間の主な違い:
+更新以外のサブスクリプションとその他の製品の種類の主な違いは次のとおりです。
 
--  ITunes Connect での製品定義では、という用語は含まれません。 アプリケーション コードは、製品の ID からの有効期間を推測できる必要があります。 
--  これらは、複数回 (など、消耗品) 購入できます。 アプリケーションは、サブスクリプション期間/有効期限と更新を管理し、ユーザーが重複しているサブスクリプションを購入するを防ぐ必要があります。 
--  StoreKit 復元関数では、購入記録はサポートされていません。 場合は、サブスクリプションは、ユーザーのすべてのデバイスでも利用できる必要があります、アプリケーションが設計およびリモート サーバーと連携してこの機能を実装する必要があります。 アプリケーションもをバックアップする場合、サブスクリプションの状態、デバイスがバックアップを担当し、復元からのバックアップ。 
--  実装の概要
--  サブスクリプションの非更新は、サーバーによって提供されるワークフローを使用して、コンシューマブル製品と同様に管理に通常実装する必要があります。 
+- ITunes Connect の製品定義には、という用語は含まれていません。 アプリケーションコードは、プロダクト ID から有効期間を推測できる必要があります。 
+- 複数回購入できます (使用可能な製品など)。 アプリケーションは、サブスクリプションの有効期限と更新を管理し、ユーザーが重複するサブスクリプションを購入できないようにする必要があります。 
+- この購入は、StoreKit の復元機能ではサポートされていません。 すべてのユーザーのデバイスでサブスクリプションを使用できるようにする必要がある場合は、この機能をリモートサーバーと組み合わせて設計および実装する必要があります。 また、アプリケーションは、デバイスがバックアップから復元された場合に、サブスクリプションの状態をバックアップする役割も担います。 
+- 実装の概要
+- 更新以外のサブスクリプションは、通常、サーバー側で配信されるワークフローと、使用可能なマネージド製品を使用して実装する必要があります。 
 
 
 ## <a name="about-free-subscriptions"></a>無料サブスクリプションについて
 
-無料サブスクリプションを使用すると、(Newsstand 以外のアプリで、使用できません) Newsstand アプリで無料のコンテンツを配置できます。 無料のサブスクリプションが開始されるとは、すべてのユーザーのデバイスで利用可能があります。 無料のサブスクリプションの有効期限はありません。アプリケーションのアンインストール時にのみ終了します。
+無料サブスクリプションを使用すると、開発者は無料のコンテンツを Newsstand アプリに配置できます (Newsstand 以外のアプリでは使用できません)。 無料のサブスクリプションが開始されると、すべてのユーザーのデバイスで使用できるようになります。 無料サブスクリプションは期限切れになりません。アプリケーションがアンインストールされたときにのみ終了します。
 
 ### <a name="implementation-overview"></a>実装の概要
 
-無料サブスクリプションは、自動更新可能なサブスクリプションのように動作します。 アプリケーションによっては、iTunes Connect で 'purchase' の使用可能な無料のサブスクリプション製品が必要です。 ユーザーが購入した、ときに、自動更新可能なサブスクリプション製品のような無料のサブスクリプションの購入を検証する必要があります。 無料のサブスクリプションのトランザクションを復元できます。
+無料サブスクリプションは、自動更新サブスクリプションと同じように動作します。 アプリケーションには、iTunes Connect で ' purchase ' に使用できる無料のサブスクリプション製品が必要です。 ユーザーが購入した場合は、無料サブスクリプションの購入を、自動更新可能なサブスクリプション製品と同様に検証する必要があります。 無料のサブスクリプショントランザクションは復元できます。
 
 
-## <a name="about-auto-renewable-subscriptions"></a>自動更新可能なサブスクリプションについて
+## <a name="about-auto-renewable-subscriptions"></a>自動更新サブスクリプションについて
 
-自動更新可能なサブスクリプションは、Newsstand アプリケーションで主に使用されます。 これらは、iTunes Connect (7 日から 1 年に至るまでの期間を設定する) で構成されて、指定した期間、動的なコンテンツへのユーザー アクセスを付与する製品を表します。 サブスクリプションは、各サブスクリプション期間の最後に、ユーザーの Apple ID を充電ユーザー opts アウトしない限り、自動的に更新されます。この製品の種類は雑誌やニュースのサブスクリプションに適して、ユーザーが自分のサブスクリプションが有効な間に発行された各問題へのアクセスを取得します。
+自動更新可能なサブスクリプションは主に Newsstand アプリケーションで使用されます。 これらは、iTunes Connect で構成されている一定期間、ユーザーに動的コンテンツへのアクセスを許可する製品を表します (期間は7日から1年に設定します)。 サブスクリプションは自動的に更新されます。ユーザーが不在になった場合を除き、各サブスクリプション期間の終了時にユーザーの Apple ID が課金されます。この製品の種類は、サブスクリプションが有効である間に発行された各問題にユーザーがアクセスできる、雑誌または news サブスクリプションに適しています。
 
 ### <a name="implementation-overview"></a>実装の概要
 
-Server-Delivered 製品ワークフローを使用して自動更新可能なサブスクリプションを実装する必要があります (を参照してください、*受信確認と Server-Delivered 製品*セクション)。
+自動更新可能なサブスクリプションは、サーバー配信製品ワークフローを使用して実装する必要があります (「確認*メッセージとサーバー配信製品*」セクションを参照してください)。
 
 #### <a name="shared-secret"></a>共有シークレット
 
-アプリ内購入の共有シークレットは、サーバー上の自動更新可能なサブスクリプションを検証するときに、JSON 要求で使用する必要があります。 共有シークレットは、iTunes Connect を使用して作成されたアクセスです。
+サーバーで自動更新可能なサブスクリプションを確認するときは、アプリ内購入共有シークレットを JSON 要求で使用する必要があります。 共有シークレットは、iTunes Connect を使用して作成またはアクセスされます。
 
-ITunes Connect ホーム ページの選択から**Myapps**:   
+ITunes Connect のホームページから、 **[マイアプリ]** を選択します。   
    
  [![](subscriptions-and-reporting-images/image2.png "[My Apps] を選びます")](subscriptions-and-reporting-images/image2.png#lightbox)  
  
-アプリケーションを選択し、をクリックして、**アプリ内購入** タブ。
+アプリケーションを選択し、 **[アプリ内購入]** タブをクリックします。
 
-[![](subscriptions-and-reporting-images/image6.png "アプリ内購入 タブをクリックします。")](subscriptions-and-reporting-images/image6.png#lightbox)
+[![](subscriptions-and-reporting-images/image6.png "[アプリ内購入] タブをクリックします。")](subscriptions-and-reporting-images/image6.png#lightbox)
 
-ページの下部にある、次のように選択します**ビューまたは共有シークレットを生成**:。
+ページの下部にある **[共有シークレットの表示または生成]** を選択します。
    
- [![](subscriptions-and-reporting-images/image40.png "ビューを選択するか、共有シークレットを生成します。")](subscriptions-and-reporting-images/image40.png#lightbox)
+ [![](subscriptions-and-reporting-images/image40.png "[共有シークレットの表示または生成] を選択します。")](subscriptions-and-reporting-images/image40.png#lightbox)
 
- [![](subscriptions-and-reporting-images/image41.png "共有シークレットを生成します。")](subscriptions-and-reporting-images/image41.png#lightbox)   
+ [![](subscriptions-and-reporting-images/image41.png "共有シークレットを生成する")](subscriptions-and-reporting-images/image41.png#lightbox)   
    
    
    
- 共有シークレットを使用するには、自動更新可能サブスクリプションでは、次のように、アプリ内購入の確認メッセージを検証するときに、Apple のサーバーに送信される JSON ペイロードに含めます。
+ 共有シークレットを使用するには、次のように、自動更新可能なサブスクリプションのアプリ内購入確認を検証するときに、Apple のサーバーに送信される JSON ペイロードにそれを含めます。
 
 ```csharp
 {
@@ -75,11 +75,11 @@ ITunes Connect ホーム ページの選択から**Myapps**:
 }
 ```
 
-場合は、購入が他の製品の種類として有効では、応答の状態 フィールドを 0 になります。
+購入が有効な場合、応答の状態フィールドは0になり、他の種類の製品と同様になります。
 
-#### <a name="downloading-items-after-the-initial-subscription-term"></a>最初のサブスクリプション期間の後に項目をダウンロード
+#### <a name="downloading-items-after-the-initial-subscription-term"></a>最初のサブスクリプション期間の後に項目をダウンロードする
 
-サブスクリプション製品の一部として、コードは頻繁に Apple のサーバーに対しての最新の既知確認メッセージを確認する必要があります。 JSON 応答が発生したトランザクションのアプリケーションに通知する追加のフィールドを含める場合は、サブスクリプションが自動更新、前回の認証以降、(これは、サブスクリプション有効期間を延長する必要があります)。 JSON 応答が含まれます。
+サブスクリプション製品の配信の一部として、コードは Apple のサーバーに対する最新の既知の受信確認を頻繁に検証する必要があります。 前回の検証以降にサブスクリプションが自動更新された場合、JSON 応答には、発生したトランザクションをアプリケーションに通知する追加のフィールド (サブスクリプションの有効性を延長する必要があります) が含まれます。 JSON 応答には次のものが含まれます。
 
 ```csharp
 {
@@ -90,33 +90,33 @@ ITunes Connect ホーム ページの選択から**Myapps**:
 }
 ```
 
-状態が 0 の場合は、サブスクリプションがまだ有効し、他のフィールドが有効なデータを保持します。 状態が 21006 の場合は、サブスクリプションが終了しました。 参照してください、 [、自動更新可能なサブスクリプションの受信を確認する](https://developer.apple.com/library/ios/releasenotes/General/ValidateAppStoreReceipt/Chapters/ValidateRemotely.html)のドキュメントを他のエラー コード。
+状態がゼロの場合、サブスクリプションは引き続き有効であり、他のフィールドに有効なデータが保持されます。 状態が21006の場合、サブスクリプションの有効期限が切れています。 その他のエラーコードについては、「自動更新可能[なサブスクリプション](https://developer.apple.com/library/ios/releasenotes/General/ValidateAppStoreReceipt/Chapters/ValidateRemotely.html)の確認」ドキュメントを参照してください。
 
-#### <a name="restoring-auto-renewable-subscriptions"></a>復元中の自動更新可能なサブスクリプション
+#### <a name="restoring-auto-renewable-subscriptions"></a>自動更新可能なサブスクリプションを復元しています
 
-表示されます – 複数のトランザクションを元の購入トランザクションと、別のトランザクションの各期間のサブスクリプションが更新されました。 有効期間を理解するには、開始日と用語を追跡する必要があります。   
+複数のトランザクションが返されます。つまり、元の購入トランザクションと、サブスクリプションが更新された期間ごとに個別のトランザクションが返されます。 有効期間を把握するには、開始日と使用条件を追跡する必要があります。   
    
    
    
- SKPaymentTransaction オブジェクトでは、サブスクリプション期間は含まれません: 各用語の別の製品 ID を使用し、トランザクションの購入日からサブスクリプションの期間を推定するコードを記述する必要があります。
+ SKPaymentTransaction オブジェクトにはサブスクリプションの用語が含まれていません。用語ごとに異なる製品 ID を使用し、トランザクションの購入日からサブスクリプション期間を推定できるコードを記述する必要があります。
 
-#### <a name="testing-auto-renewal"></a>自動更新をテストします。
+#### <a name="testing-auto-renewal"></a>自動更新のテスト
 
-サブスクリプションのテストを容易にできるように、その期間は、サンド ボックス内でテストするときに圧縮されます。 1 週間サブスクリプションでは、3 分ごと、1 年間のサブスクリプション 1 時間ごとの更新が更新されます。 サブスクリプションは自動更新、サンド ボックス内でのテスト中に 6 回の最大数。
+サブスクリプションのテストを容易にするために、サンドボックスでテストを行うと、その期間が圧縮されます。 1週間のサブスクリプションは3分ごとに更新し、1年間のサブスクリプションは1時間ごとに更新します。 サブスクリプションは、サンドボックスでのテスト中に最大6回自動更新されます。
 
 ## <a name="reporting"></a>レポート
 
-iTunes Connect ( [itunesconnect.apple.com](http://itunesconnect.apple.com)) を提供します。   
+iTunes Connect ( [itunesconnect.apple.com](http://itunesconnect.apple.com)) には次のものがあります。   
    
- **売上および傾向**– ダウンロード、更新プログラムとアプリ内購入アプリの詳細が表示されます。   
+ **[売上と傾向**] –アプリのダウンロード、更新プログラム、アプリ内購入の詳細が表示されます。   
    
- **支払いと会計報告書**– し、支払う金額はどの程度行われた一覧の支払いおよび、アプリによって達成 income について詳しく説明します。
+ **支払いと財務報告**–お客様のアプリによって獲得された収入の詳細と、お客様に対して行われた支払いとお支払い額の一覧を表示します。
 
-売上および傾向レポートの使用例は、以下に示します。   
+次に、売上および傾向レポートの例を示します。   
 
- [![](subscriptions-and-reporting-images/image42.png "売上および傾向レポートの使用例")](subscriptions-and-reporting-images/image42.png#lightbox)   
+ [![](subscriptions-and-reporting-images/image42.png "売上および傾向レポートの例")](subscriptions-and-reporting-images/image42.png#lightbox)   
    
- [ **ITC 接続 Mobile**iOS アプリ (iTunes のリンク)](http://itunes.apple.com/us/app/itunes-connect-mobile/id376771144?mt=8)します。
-使用可能な統計情報の一部の iPhone スクリーン ショットを次に示します。   
+ また、 [ **ITC Connect Mobile**IOS アプリ (iTunes リンク)](http://itunes.apple.com/us/app/itunes-connect-mobile/id376771144?mt=8)もあります。
+使用できる統計情報の一部については、iPhone のスクリーンショットを次に示します。   
    
- [![](subscriptions-and-reporting-images/image43.png "使用可能な統計情報の一部の iPhone スクリーン ショット")](subscriptions-and-reporting-images/image43.png#lightbox)
+ [![](subscriptions-and-reporting-images/image43.png "利用可能な統計情報の一部に関する iPhone のスクリーンショット")](subscriptions-and-reporting-images/image43.png#lightbox)

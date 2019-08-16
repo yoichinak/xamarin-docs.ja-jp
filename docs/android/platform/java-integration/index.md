@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 01/18/2017
-ms.openlocfilehash: f577af88140c5797182617a22efbb2e7991a8abc
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 22c3217eec1b2e531ad4534fc1cb35a701a06e34
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510564"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524079"
 ---
 # <a name="java-integration-with-xamarinandroid"></a>Java と Xamarin Android の統合
 
@@ -24,11 +24,11 @@ Java エコシステムの範囲を考えると、Xamarin. Android アプリケ�
 
 Xamarin Android アプリケーションで Java ライブラリを再利用するには、次の3つの方法があります。 
 
--   **Java バインドライブラリを作成する**この手法では、Java 型のラッパーを作成C#するために Xamarin Android プロジェクトが使用されます。 &ndash; その後、このプロジェクトで作成されC#たラッパーを Xamarin Android アプリケーションで参照し、 `.jar`そのファイルを使用できます。 
+- **Java バインドライブラリを作成する**この手法では、Java 型のラッパーを作成C#するために Xamarin Android プロジェクトが使用されます。 &ndash; その後、このプロジェクトで作成されC#たラッパーを Xamarin Android アプリケーションで参照し、 `.jar`そのファイルを使用できます。 
 
--   **Java ネイティブ インターフェイス** &ndash; 、 *Java ネイティブ* *インターフェイス* (JNI) は非 Java コードを可能にするフレームワーク (C++ などまたはC#) を呼び出すか、実行中の Java コードによって呼び出されるJVM の内部。 
+- **Java ネイティブインターフェイス**C++ C# Java ネイティブインターフェイス (JNI) は、java 以外のコード (やなど) が JVM 内で実行されている java コードによる呼び出しまたは呼び出しを行うことを可能にするフレームワークです。 &ndash; 
 
--   **コードを移植する**このメソッドは、Java ソースコードを取得し、それをにC#変換します。 &ndash; これは手動で行うことも、シャープなどの自動ツールを使用して行うこともできます。 
+- **コードを移植する**このメソッドは、Java ソースコードを取得し、それをにC#変換します。 &ndash; これは手動で行うことも、シャープなどの自動ツールを使用して行うこともできます。 
 
 最初の2つの手法の中核となるのは、 *Java ネイティブインターフェイス*(JNI) です。 JNI は、Java で記述されていないアプリケーションが Java 仮想マシンで実行されている Java コードと対話できるようにするフレームワークです。 JNI を使用してコードC#の*バインド*を作成します。 
 
@@ -40,7 +40,7 @@ JNI を使用する2番目の手法は、はるかに低いレベルで動作し
 
 
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
 このドキュメントでは、Java からのライブラリを Xamarin Android アプリケーションで再利用するさまざまな方法の概要を説明しました。 ここでは、バインディングとマネージ呼び出し可能ラッパーの概念と、Java コードをに移植C#するためのオプションについて説明しました。 
 

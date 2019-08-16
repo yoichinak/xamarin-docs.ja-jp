@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/11/2018
-ms.openlocfilehash: 6d80af60ae94c638c7d90229852f304a40ce0b0c
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 4c612faca90d4b2b4e44cfbb53ff65ec07fcdfd1
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643804"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524840"
 ---
 # <a name="binding-an-aar"></a>.AAR のバインド
 
@@ -24,10 +24,10 @@ _このチュートリアルでは、Android から Xamarin Android Java バイ�
 *Android アーカイブ (.AAR)* ファイルは、Android ライブラリのファイル形式です。
 込み.AAR ファイルはです。次のものを含む ZIP アーカイブ:
 
--   コンパイル済み Java コード
--   リソース Id
--   リソース
--   メタデータ (アクティビティの宣言、アクセス許可など)
+- コンパイル済み Java コード
+- リソース Id
+- リソース
+- メタデータ (アクティビティの宣言、アクセス許可など)
 
 このガイドでは、1つのにバインドライブラリを作成する方法の基本について説明します。AAR ファイル。 一般的な Java ライブラリバインディングの概要 (基本的なコード例を含む) については、「 [Java ライブラリのバインド](~/android/platform/binding-java-library/index.md)」を参照してください。
 
@@ -81,35 +81,35 @@ public class TextCounter
 
 以下の手順を実行する前に、サンプルの[textanalyzer. aar](https://github.com/xamarin/monodroid-samples/blob/master/JavaIntegration/AarBinding/Resources/textanalyzer.aar?raw=true) Android アーカイブファイルをダウンロードしてください。
 
-1.  Android バインドライブラリテンプレートを使用して、新しいバインドライブラリプロジェクトを作成します。 Visual Studio for Mac または Visual Studio のいずれかを使用できます (以下のスクリーンショットは Visual Studio を示していますが、Visual Studio for Mac はよく似ています)。 ソリューションに**AarBinding**という名前を指定します。
+1. Android バインドライブラリテンプレートを使用して、新しいバインドライブラリプロジェクトを作成します。 Visual Studio for Mac または Visual Studio のいずれかを使用できます (以下のスクリーンショットは Visual Studio を示していますが、Visual Studio for Mac はよく似ています)。 ソリューションに**AarBinding**という名前を指定します。
 
     [![AarBindings プロジェクトの作成](binding-an-aar-images/01-new-bindings-library-vs-sml.w157.png)](binding-an-aar-images/01-new-bindings-library-vs.w157.png#lightbox)
 
-2.  テンプレートには、を追加する**jar**フォルダーが含まれています。AAR (s) をバインドライブラリプロジェクトに対して行います。 **[Jar]** フォルダーを右クリックし、 **[既存の項目の追加 >]** を選択します。
+2. テンプレートには、を追加する**jar**フォルダーが含まれています。AAR (s) をバインドライブラリプロジェクトに対して行います。 **[Jar]** フォルダーを右クリックし、 **[既存の項目の追加 >]** を選択します。
 
     [![既存の項目を追加する](binding-an-aar-images/02-add-existing-item-vs-sml.png)](binding-an-aar-images/02-add-existing-item-vs.png#lightbox)
 
 
-3.  先ほどダウンロードした**aar**ファイルに移動して選択し、 **[追加]** をクリックします。
+3. 先ほどダウンロードした**aar**ファイルに移動して選択し、 **[追加]** をクリックします。
 
     [![Textanalayzer を追加します。 aar](binding-an-aar-images/03-select-aar-file-vs-sml.png)](binding-an-aar-images/03-select-aar-file-vs.png#lightbox)
 
 
-4.  **Aar**ファイルがプロジェクトに正常に追加されたことを確認します。
+4. **Aar**ファイルがプロジェクトに正常に追加されたことを確認します。
 
     [![Aar ファイルが追加されました](binding-an-aar-images/04-aar-added-vs-sml.png)](binding-an-aar-images/04-aar-added-vs.png#lightbox)
 
-5.  **Aar**のビルドアクションをに`LibraryProjectZip`設定します。 Visual Studio for Mac で、 **aar**を右クリックして、ビルドアクションを設定します。 Visual Studio では、 **[プロパティ]** ペインでビルドアクションを設定できます)。
+5. **Aar**のビルドアクションをに`LibraryProjectZip`設定します。 Visual Studio for Mac で、 **aar**を右クリックして、ビルドアクションを設定します。 Visual Studio では、 **[プロパティ]** ペインでビルドアクションを設定できます)。
 
     [![Aar ビルドアクションを LibraryProjectZip に設定しています](binding-an-aar-images/05-embedded-aar-vs-sml.png)](binding-an-aar-images/05-embedded-aar-vs.png#lightbox)
 
-6.  プロジェクトのプロパティを開いて、*ターゲットフレームワーク*を構成します。 の場合は。AAR は、任意の Android Api を使用して、ターゲットフレームワークをに設定されている API レベルに設定します。AAR が必要です。 (ターゲットフレームワークの設定と、一般的な Android API レベルの詳細については、「 [ANDROID Api レベル](~/android/app-fundamentals/android-api-levels.md)について」を参照してください)。
+6. プロジェクトのプロパティを開いて、*ターゲットフレームワーク*を構成します。 の場合は。AAR は、任意の Android Api を使用して、ターゲットフレームワークをに設定されている API レベルに設定します。AAR が必要です。 (ターゲットフレームワークの設定と、一般的な Android API レベルの詳細については、「 [ANDROID Api レベル](~/android/app-fundamentals/android-api-levels.md)について」を参照してください)。
 
     バインドライブラリのターゲット API レベルを設定します。 この例では自由にために API レベル (API レベル 23) の最新のプラットフォームを使用して、 **textanalyzer** Android API に依存関係はありません。
 
     [![ターゲットレベルを API 23 に設定する](binding-an-aar-images/06-set-target-framework-vs-sml.png)](binding-an-aar-images/06-set-target-framework-vs.png#lightbox)
 
-7.  バインドライブラリをビルドします。 バインドライブラリプロジェクトが正常にビルドされ、出力が生成されます。次の場所にある DLL:**AarBinding/bin/Debug/AarBinding**
+7. バインドライブラリをビルドします。 バインドライブラリプロジェクトが正常にビルドされ、出力が生成されます。次の場所にある DLL:**AarBinding/bin/Debug/AarBinding**
 
 
 
@@ -117,19 +117,19 @@ public class TextCounter
 
 これを使用する場合は。DLL Xamarin Android アプリでは、最初にバインドライブラリへの参照を追加する必要があります。 次の手順を使用します。
 
-1.  このチュートリアルを簡略化するために、このアプリをバインドライブラリと同じソリューションに作成しています。 (バインディングライブラリを使用するアプリケーションは、別のソリューションにも存在する可能性があります)。新しい Xamarin Android アプリを作成します。ソリューションを右クリックし、 **[新しいプロジェクトの追加]** を選択します。 新しいプロジェクトに**Bindingtest**という名前を指定します。
+1. このチュートリアルを簡略化するために、このアプリをバインドライブラリと同じソリューションに作成しています。 (バインディングライブラリを使用するアプリケーションは、別のソリューションにも存在する可能性があります)。新しい Xamarin Android アプリを作成します。ソリューションを右クリックし、 **[新しいプロジェクトの追加]** を選択します。 新しいプロジェクトに**Bindingtest**という名前を指定します。
 
     [![新しい BindingTest プロジェクトの作成](binding-an-aar-images/07-add-new-project-vs-sml.w157.png)](binding-an-aar-images/07-add-new-project-vs.w157.png#lightbox)
 
-2.  **Bindingtest**プロジェクトの **[参照]** ノードを右クリックし、 **[参照の追加]** を選択します。
+2. **Bindingtest**プロジェクトの **[参照]** ノードを右クリックし、 **[参照の追加]** を選択します。
 
     [![[参照の追加] をクリック](binding-an-aar-images/08-add-reference-vs-sml.png)](binding-an-aar-images/08-add-reference-vs.png#lightbox)
 
-3.  前の手順で作成した**AarBinding**プロジェクトを選択し、[ **OK]** をクリックします。
+3. 前の手順で作成した**AarBinding**プロジェクトを選択し、[ **OK]** をクリックします。
 
     [![AAR binding プロジェクトを確認する](binding-an-aar-images/09-choose-aar-binding-vs-sml.png)](binding-an-aar-images/09-choose-aar-binding-vs.png#lightbox)
 
-4.  **Bindingtest**プロジェクトの **[参照設定]** ノードを開き、 **AarBinding**参照が存在することを確認します。
+4. **Bindingtest**プロジェクトの **[参照設定]** ノードを開き、 **AarBinding**参照が存在することを確認します。
 
     [![AarBinding が [参照] の下に一覧表示されます。](binding-an-aar-images/10-references-shows-aarbinding-vs-sml.png)](binding-an-aar-images/10-references-shows-aarbinding-vs.png#lightbox)
 

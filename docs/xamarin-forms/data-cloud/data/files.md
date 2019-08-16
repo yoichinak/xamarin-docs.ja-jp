@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/21/2018
-ms.openlocfilehash: 21d25315aec5c056df90da11b8a51ee1493a45a5
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 0d4e32b7bf98758f12dc038e0b61ffa0132f234d
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656684"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529227"
 ---
 # <a name="file-handling-in-xamarinforms"></a>Xamarin.Forms でのファイル処理
 
@@ -115,8 +115,8 @@ listView.ItemsSource = monkeys;
 
 共有プロジェクトのこの問題には 2 つの解決策があります。
 
--  **プロジェクトを同期する** - 各プラットフォームのプロジェクト プロパティを編集し、**同じ**アセンブリ名と既定の名前空間を使用します。 この値は共有プロジェクトの埋め込みリソース ID のプレフィックスとして "ハードコード" できます。
--  **#if コンパイラ ディレクティブ** - コンパイラ ディレクティブを使用して正しいリソース ID プレフィックスを設定し、その値を使用して正しいリソース ID を動的に構築します。
+- **プロジェクトを同期する** - 各プラットフォームのプロジェクト プロパティを編集し、**同じ**アセンブリ名と既定の名前空間を使用します。 この値は共有プロジェクトの埋め込みリソース ID のプレフィックスとして "ハードコード" できます。
+- **#if コンパイラ ディレクティブ** - コンパイラ ディレクティブを使用して正しいリソース ID プレフィックスを設定し、その値を使用して正しいリソース ID を動的に構築します。
 
 
 2 つ目のオプションを示すコードを以下に示します。 コンパイラ ディレクティブを使用し、ハードコードされたリソース プレフィックス (通常、参照元プロジェクトの既定の名前空間と同じです) を選択します。 次に、`resourcePrefix` 変数を埋め込みリソース ファイル名と連結することで有効なリソース ID が作成されます。

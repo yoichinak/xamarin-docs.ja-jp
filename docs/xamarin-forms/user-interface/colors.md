@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: 1f29f283207ed8c1382424b3680177886ad2c806
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: f68e192db0b7acceb325ad44f40dce9cb229a26a
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653151"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528989"
 ---
 # <a name="colors-in-xamarinforms"></a>Xamarin.Forms での色
 
@@ -24,12 +24,12 @@ _Xamarin.Forms は、柔軟なクロスプラット フォーム対応の色ク�
 
 `Color`クラスは、さまざまな色のインスタンスを作成するメソッドを提供します。
 
--  **名前付きの色**-一般的な名前付きの色などのコレクション`Red`、 `Green`、および`Blue`します。
--  **Fromhex** -HTML で使用される構文に似た文字列値 ("00FF00" など)。 必要に応じて、最初の文字ペア ("CC00FF00") として Alpha を指定できます。
--  **FromHsla** -色相、彩度と輝度`double`アルファ値は省略可能な (0.0 ~ 1.0) の値。
--  **FromRgb** -赤、緑、および青`int`値 (0 ~ 255)。
--  **FromRgba** -赤、緑、青、およびアルファ`int`値 (0 ~ 255)。
--  **FromUint** -1 つの設定`double`値を表す**argb**します。
+- **名前付きの色**-一般的な名前付きの色などのコレクション`Red`、 `Green`、および`Blue`します。
+- **Fromhex** -HTML で使用される構文に似た文字列値 ("00FF00" など)。 必要に応じて、最初の文字ペア ("CC00FF00") として Alpha を指定できます。
+- **FromHsla** -色相、彩度と輝度`double`アルファ値は省略可能な (0.0 ~ 1.0) の値。
+- **FromRgb** -赤、緑、および青`int`値 (0 ~ 255)。
+- **FromRgba** -赤、緑、青、およびアルファ`int`値 (0 ~ 255)。
+- **FromUint** -1 つの設定`double`値を表す**argb**します。
 
 ここに割り当てられている、いくつかの例の色、`BackgroundColor`の許可されている構文のさまざまなバリエーションを使用して一部のラベル。
 
@@ -69,11 +69,11 @@ IOS と Android では、このインスタンスが既定の背景に表示さ�
 
 `Color` インスタンスには、新しい色の作成に使用できる追加のメソッドが含まれます。
 
--  **AddLuminosity** -指定のデルタによって、明るさを変更することで、新しい色を返します。
--  **WithHue** -色合いを指定した値に置き換えて、新しい色を返します。
--  **WithLuminosity**の明るさを指定した値に置き換えて、新しい色を返します。
--  **WithSaturation** -鮮やかさを指定した値に置き換えて、新しい色を返します。
--  **MultiplyAlpha** -、アルファは、指定されたアルファ値を乗算することを変更することで、新しい色を返します。
+- **AddLuminosity** -指定のデルタによって、明るさを変更することで、新しい色を返します。
+- **WithHue** -色合いを指定した値に置き換えて、新しい色を返します。
+- **WithLuminosity**の明るさを指定した値に置き換えて、新しい色を返します。
+- **WithSaturation** -鮮やかさを指定した値に置き換えて、新しい色を返します。
+- **MultiplyAlpha** -、アルファは、指定されたアルファ値を乗算することを変更することで、新しい色を返します。
 
 ## <a name="implicit-conversions"></a>暗黙の型変換
 

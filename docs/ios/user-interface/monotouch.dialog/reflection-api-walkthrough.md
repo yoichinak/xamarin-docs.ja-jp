@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: 9dc98480d57dc7d4883306e9f4fc530599af9bd7
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 6482d0626874b3f2ca5e90efb0e376be60551fd7
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68652417"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528450"
 ---
 # <a name="creating-a-xamarinios-application-using-the-reflection-api"></a>リフレクション API を使用して Xamarin iOS アプリケーションを作成する
 
@@ -26,9 +26,9 @@ MT.D は、Xamarin. iOS と共に配布されます。 これを使用するに�
 
 リフレクション API の使用方法は次のように単純です。
 
-1.  MT で修飾されたクラスを作成します。D 属性。
-1.  `BindingContext`インスタンスを作成し、上記のクラスのインスタンスを渡します。 
-1.  を作成し、を渡し`BindingContext’s` `RootElement`ます。 `DialogViewController` 
+1. MT で修飾されたクラスを作成します。D 属性。
+1. `BindingContext`インスタンスを作成し、上記のクラスのインスタンスを渡します。 
+1. を作成し、を渡し`BindingContext’s` `RootElement`ます。 `DialogViewController` 
 
 
 リフレクション API の使用方法を示す例を見てみましょう。 この例では、次のように単純なデータ入力画面を作成します。

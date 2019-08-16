@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/13/2018
-ms.openlocfilehash: fd813427836b0250b84941eca54d6bbe6219518e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ea3bfccd9133f6bb4cdf2e2a72bd20a307fb80d1
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645330"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522496"
 ---
 # <a name="extending-the-recyclerview-example"></a>RecyclerView の例を拡張する
 
@@ -26,11 +26,11 @@ ms.locfileid: "68645330"
 
 項目クリックイベントを処理する方法を説明するために、次の手順では、ユーザーによってどの写真がタッチされたかをレポートするために、基本的な写真表示アプリがどのように変更されるかを説明します。 サンプルアプリで項目クリックイベントが発生すると、次のシーケンスが実行されます。
 
-1.  写真の`CardView`は、項目クリックイベントを検出し、アダプターに通知します。
+1. 写真の`CardView`は、項目クリックイベントを検出し、アダプターに通知します。
 
-2.  アダプターは、(項目の位置情報を含む) イベントをアクティビティの項目クリックハンドラーに転送します。
+2. アダプターは、(項目の位置情報を含む) イベントをアクティビティの項目クリックハンドラーに転送します。
 
-3.  アクティビティの項目クリックハンドラーは、項目クリックイベントに応答します。
+3. アクティビティの項目クリックハンドラーは、項目クリックイベントに応答します。
 
 最初に、という名前`ItemClick`のイベントハンドラーメンバーが`PhotoAlbumAdapter`クラス定義に追加されます。
 

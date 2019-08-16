@@ -1,329 +1,329 @@
 ---
-title: Xamarin.Android デザイナー素材のデザイン機能
-description: このトピックでは、素材の設計に準拠していませんレイアウトを作成する開発者にとってより簡単にするデザイナーの機能について説明します。 このセクションでは、紹介し、マテリアル グリッド、マテリアルの色パレット、印刷用のスケール、およびテーマ エディターを使用する方法について説明します。
+title: Xamarin. Android Designer 素材のデザイン機能
+description: このトピックでは、開発者が素材デザインに準拠したレイアウトを簡単に作成できるようにするデザイナー機能について説明します。 このセクションでは、素材グリッド、素材カラーパレット、文字体裁スケール、およびテーマエディターの使用方法について説明します。
 ms.prod: xamarin
 ms.assetid: AC55E1B2-C239-4019-B0C3-A16F6CF0D6E0
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/25/2018
-ms.openlocfilehash: 59c61cc637a435f8107256ddcd6bfacfb0466867
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 77b0bc28bc4156092cb2b12d0c8b234d3f021239
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61211225"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69523441"
 ---
-# <a name="xamarinandroid-designer-material-design-features"></a>Xamarin.Android デザイナー マテリアル デザイン機能
+# <a name="xamarinandroid-designer-material-design-features"></a>Xamarin. Android Designer 素材のデザイン機能
 
-_このトピックでは、素材の設計に準拠していませんレイアウトを作成する開発者にとってより簡単にするデザイナーの機能について説明します。このセクションでは、紹介し、マテリアル グリッド、マテリアルの色パレット、印刷用のスケール、およびテーマ エディターを使用する方法について説明します。_
+_このトピックでは、開発者が素材デザインに準拠したレイアウトを簡単に作成できるようにするデザイナー機能について説明します。このセクションでは、素材グリッド、素材カラーパレット、文字体裁スケール、およびテーマエディターの使用方法について説明します。_
 
 > [!Video https://youtube.com/embed/E3_ZjIOzVzY]
 
-**Evolve 2016:すべてのユーザーには、マテリアル デザイン美しいアプリを作成できます。**
+**Evolve 2016:すべてのユーザーが、素材設計で美しいアプリを作成できます**
 
 ## <a name="overview"></a>概要
 
-Xamarin.Android のデザイナーには、マテリアル デザイン準拠のレイアウトを作成するためのより簡単にする機能が含まれています。 マテリアル デザインに慣れていない場合は、次を参照してください。、[マテリアル デザイン概要](https://material.io/design/introduction)します。
+Android Designer には、マテリアルデザインに準拠したレイアウトの作成を容易にする機能が含まれています。 素材のデザインに慣れていない場合は、[資料の設計の概要](https://material.io/design/introduction)を参照してください。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-このガイドでは、次のデザイナーの機能を見てなります。
+このガイドでは、次のデザイナー機能について説明します。
 
--   *素材グリッド*&ndash;グリッド、間隔、およびマテリアル デザイン ガイドラインに従ってレイアウト ウィジェットを配置するための主線を表示するデザイン サーフェイス上のオーバーレイします。
+- *素材グリッド*&ndash;素材のデザインガイドラインに従ってレイアウトウィジェットを配置する際に役立つグリッド、スペース、および keylines を表示するデザインサーフェイスのオーバーレイ。
 
--   *テーマ エディター* &ndash;できるようにする小さなカラー リソース エディター テーマのサブセットの色の情報を設定します。 たとえば、プレビューおよびなどマテリアルの色を変更できます`colorPrimary`、 `colorPrimaryDark`、および`colorAccent`します。
+- *テーマエディター*&ndash;テーマのサブセットの色情報を設定できる、小さいカラーリソースエディター。 たとえば、 `colorPrimary`、 `colorPrimaryDark`、 `colorAccent`などの素材の色をプレビューおよび変更できます。
 
-これらの各機能確認がされその使用方法の例を示します。
+これらの各機能について説明し、その使用方法の例を示します。
 
-## <a name="material-design-grid"></a>素材のデザイン グリッド
+## <a name="material-design-grid"></a>素材のデザイングリッド
 
-マテリアル デザイン グリッド] メニューの [デザイナーの上部にあるツールバーから提供されています。
+[マテリアルデザイン] グリッドメニューは、デザイナーの上部にあるツールバーから使用できます。
 
-[![素材のデザイン グリッド](material-design-features-images/vs/01-material-design-grid-w158-sml.png)](material-design-features-images/vs/01-material-design-grid-w158.png#lightbox)
+[![素材のデザイングリッド](material-design-features-images/vs/01-material-design-grid-w158-sml.png)](material-design-features-images/vs/01-material-design-grid-w158.png#lightbox)
 
-マテリアル デザイン グリッド アイコンをクリックすると、デザイナーが、次の要素を含むデザイン画面にオーバーレイが表示されます。
+[素材デザイン] グリッドアイコンをクリックすると、次の要素を含むデザインサーフェイスにオーバーレイが表示されます。
 
--   主線 (オレンジ色の線)
+- Keylines (オレンジ色の線)
 
--   間隔 (緑の領域)
+- 間隔 (緑の領域)
 
--   グリッド (青い線)
+- グリッド (青い線)
 
-これらの要素は、前のスクリーン ショットで確認できます。 オーバーレイの以下の内容は、構成できます。 マテリアル デザイン グリッド メニューの横にある省略記号をクリックするとダイアログ ポップ オーバーでは、グリッドを有効/無効にするの主線、配置を構成および間隔を設定することが表示されます。 すべての値で表現される注`dp`(密度に依存しないピクセル単位)。
+これらの要素は、前のスクリーンショットで確認できます。 これらの各オーバーレイ項目は構成可能です。 [マテリアルデザイン] グリッドメニューの横にある省略記号をクリックすると、ダイアログ segue が開きます。このダイアログボックスでは、グリッドを無効/有効にしたり、キー行の配置を構成したり、spacings を設定したりできます。 すべての値は (密度に`dp`依存しないピクセル) で表されることに注意してください。
 
-[![グリッド、断裁、および間隔の構成](material-design-features-images/vs/03-grid-configuration-w158-sml.png)](material-design-features-images/vs/03-grid-configuration-w158.png#lightbox)
+[![Grid、keyline、および spacing の構成](material-design-features-images/vs/03-grid-configuration-w158-sml.png)](material-design-features-images/vs/03-grid-configuration-w158.png#lightbox)
 
-新しい断裁を追加するには、新しいオフセット値を入力します、**オフセット**ボックスに、場所を選択します (**左**、**上部**、**右**、または **。下部にある**) をクリックし、+ アイコンを新しい断裁を追加します。 同様に、新しい間隔を追加するを入力 (dp) 内のオフセットとサイズ、**サイズ**と**オフセット**ボックスに、それぞれします。 場所を選択します (**左**、**上部**、**右**、または**下部にある**) をクリックし、+ 新しい間隔を追加する アイコン。
+新しい keyline を追加するには、 **[オフセット]** ボックスに新しいオフセット値を入力し、場所 (**left**、 **top**、 **right**、または**bottom**) を選択し、[+] アイコンをクリックして新しい keyline を追加します。 同様に、新しいスペースを追加するには、サイズ ボックスと **オフセット**ボックスにそれぞれサイズとオフセット (dp) を入力します。 場所 (**左**、**上**、**右**、**下**) を選択し、[+] アイコンをクリックして新しい間隔を追加します。
 
-これらの構成値を変更するときに、レイアウトの XML ファイルに保存されていて、レイアウトをもう一度開くときに再利用します。
+これらの構成値を変更すると、レイアウト XML ファイルに保存され、再度レイアウトを開いたときに再利用されます。
 
 
-## <a name="theme-editor"></a>テーマ エディター
+## <a name="theme-editor"></a>テーマエディター
 
-**テーマ エディター**テーマの属性のサブセットの色の情報をカスタマイズすることができます。 開くには、**テーマ エディター**ツールバーで、ペイント ブラシ アイコンをクリックします。
+**テーマエディター**では、テーマ属性のサブセットの色情報をカスタマイズできます。 **テーマエディター**を開くには、ツールバーの [ペイントブラシ] アイコンをクリックします。
 
-[![テーマ エディター アイコン](material-design-features-images/vs/04-theme-editor-icon-w158-sml.png)](material-design-features-images/vs/04-theme-editor-icon-w158.png#lightbox)
+[![テーマエディターのアイコン](material-design-features-images/vs/04-theme-editor-icon-w158-sml.png)](material-design-features-images/vs/04-theme-editor-icon-w158.png#lightbox)
 
-ただし、**テーマ エディター**は、ツールバーからアクセスできるすべてのターゲット Android バージョンと API レベルでは、以下に示す機能のサブセットが使用できるは、ターゲット API レベルが API 21 (Android 5.0 より前の場合のみロリポップ)。
+**テーマエディター**には、対象となるすべての Android バージョンと api レベルのツールバーからアクセスできますが、ターゲット api レベルが API 21 (Android 5.0 ロリポップ) よりも前の場合は、以下で説明する機能のサブセットのみを使用できます。
 
-左側のパネル、**テーマ エディター**現在選択されているテーマを構成する色の一覧が表示されます (この例では使用、 `Default Theme`)。
+**テーマエディター**の左側のパネルには、現在選択されているテーマを構成する色の一覧が表示されます (この例`Default Theme`ではを使用しています)。
 
-[![テーマ エディター](material-design-features-images/vs/05-theme-editor-w158-sml.png)](material-design-features-images/vs/05-theme-editor-w158.png#lightbox)
+[![テーマエディター](material-design-features-images/vs/05-theme-editor-w158-sml.png)](material-design-features-images/vs/05-theme-editor-w158.png#lightbox)
 
-左上の色を選択すると、右側のパネルは、その色を編集するために、次のタブを提供します。
+左側の色を選択すると、右側のパネルには、その色を編集するための次のタブが表示されます。
 
--   **継承**&ndash;選択した色のスタイル継承ダイアグラムを表示し、解決済みの色とそのテーマの色に割り当てられているカラー コードを一覧表示します。
+- **継承**&ndash;選択した色のスタイルの継承ダイアグラムを表示し、そのテーマの色に割り当てられている解決済みの色と色のコードを表示します。
 
--   **カラー ピッカー** &ndash;任意の値を選択した色を変更することができます。
+- **カラーピッカー**&ndash;選択した色を任意の値に変更できます。
 
--   **素材パレット**&ndash;マテリアル デザインに準拠した値を選択した色を変更することができます。
+- **素材パレット**&ndash;選択した色を、マテリアルデザインに準拠した値に変更できます。
 
--   **リソース**&ndash;テーマで、その他の既存の色リソースのいずれかに、選択した色を変更することができます。
+- **リソース**&ndash;選択した色を、テーマ内の他の既存の色リソースの1つに変更できます。
 
-これらのタブの詳細のいずれかを見てみましょう。
+これらのタブのそれぞれを詳しく見てみましょう。
 
-### <a name="inherit-tab"></a>タブを継承します。
+### <a name="inherit-tab"></a>[継承] タブ
 
-次の例のように、**継承**のスタイルの継承がタブに一覧表示されます、**バック グラウンド**の色、**既定のテーマ**:
+次の例に示すように、 **[継承]** タブには、**既定のテーマ**の**背景**色のスタイル継承が表示されます。
 
-[![タブを継承します。](material-design-features-images/vs/06-inherit-tab-w158-sml.png)](material-design-features-images/vs/06-inherit-tab-w158.png#lightbox)
+[![[継承] タブ](material-design-features-images/vs/06-inherit-tab-w158-sml.png)](material-design-features-images/vs/06-inherit-tab-w158.png#lightbox)
 
-この例で、**既定のテーマ**を使用するスタイルを継承`@color/background_material_light`でよりも優先されますが、`color/material_grey_50`のカラー コード値を持つ`#fffafafa`します。
-スタイルの継承の詳細については、次を参照してください。[スタイルとテーマ](https://developer.android.com/guide/topics/ui/themes.html#Inheritance)します。
+この例では、**既定のテーマ**はを使用`@color/background_material_light`するスタイルを継承します`color/material_grey_50`が、色の`#fffafafa`コード値がであるでオーバーライドします。
+スタイルの継承の詳細については、「[スタイルとテーマ](https://developer.android.com/guide/topics/ui/themes.html#Inheritance)」を参照してください。
 
 ### <a name="color-picker"></a>カラー ピッカー
 
-次のスクリーン ショットを示しています、**カラー ピッカー**:
+次のスクリーンショットは、**カラーピッカー**を示しています。
 
-[![カラー ピッカー](material-design-features-images/vs/07-color-picker-w158-sml.png)](material-design-features-images/vs/07-color-picker-w158.png#lightbox)
+[![カラーピッカー](material-design-features-images/vs/07-color-picker-w158-sml.png)](material-design-features-images/vs/07-color-picker-w158.png#lightbox)
 
-この例で、**バック グラウンド**さまざまな方法で任意の値に色を変更することができます。
+この例では、さまざまな方法で**背景**色を任意の値に変更できます。
 
--   色を直接クリックするとします。
--   色合い、鮮やかさ、および明るさの値を入力します。
--   10 進数の RGB (赤、緑、青) 値を入力します。
--   選択した色のアルファ (透明度) を設定します。
--   16 進数カラー コードを直接入力します。
+- 色を直接クリックします。
+- 色合い、鮮やかさ、および明るさの値を入力します。
+- RGB (赤、緑、青) の値を10進数で入力します。
+- 選択した色のアルファ (不透明度) を設定します。
+- 16進数のカラーコードを直接入力します。
 
-カラー ピッカーで選択した色は*いない*マテリアル デザイン ガイドラインに、または使用可能な色リソースのセットを制限します。
+カラーピッカーで選択した色は、素材のデザインガイドラインや使用可能な色リソースのセットに限定され*ません*。
 
 ### <a name="resources"></a>リソース
 
-**リソース** タブが存在するテーマの色リソースの一覧を提供しています。
+**[リソース]** タブには、テーマに既に存在する色リソースの一覧が表示されます。
 
-[![リソース](material-design-features-images/vs/08-resources-w158-sml.png)](material-design-features-images/vs/08-resources-w158.png#lightbox)
+[![参考](material-design-features-images/vs/08-resources-w158-sml.png)](material-design-features-images/vs/08-resources-w158.png#lightbox)
 
-使用して、**リソース** タブは、この色のリストにユーザーの選択を制限します。 テーマの別の部分に既に割り当てられている色リソースを選択すると、UI の 2 つの隣接する要素発生可能性があります"化"(顔色と一致している) ために注意してくださいと区別するためにユーザーを困難になります。
+**[リソース]** タブを使用すると、選択した色の一覧が制限されます。 テーマの別の部分に既に割り当てられている色リソースを選択すると、UI の隣接する2つの要素が "同時に実行" される可能性があることに注意してください (色が同じであるため)。ユーザーが区別するのが困難になります。
 
 ### <a name="material-palette"></a>素材パレット
 
-**素材パレット**タブが表示されます、**マテリアル デザインのカラー パレット**します。 一貫性のあるマテリアル デザイン ガイドラインにあるように、色の選択を制約するこのパレットから色の値を選択します。
+**[素材パレット]** タブでは、**素材デザインのカラーパレット**が開きます。 このパレットから色の値を選択すると、色の選択が制限され、マテリアルデザインガイドラインとの一貫性が確保されます。
 
 [![素材パレット](material-design-features-images/vs/09-material-palette-w158-sml.png)](material-design-features-images/vs/09-material-palette-w158.png#lightbox)
 
-色パレットの上部では、パレットの下部には、選択した色の色合いの範囲が表示されます。 中に、プライマリのマテリアル デザイン色が表示されます。 たとえば、 **Indigo**、一連の**Indigo**色相がダイアログの下部に表示されます。
-Hue を選択すると、プロパティの色が選択されている hue に変更されます。 次の例では、`Background Tint`ボタンの変更は*Indigo 500*:
+カラーパレットの上部には、主要な素材デザインの色が表示されます。パレットの下部には、選択した原色の色の範囲が表示されます。 たとえば、 **[indigo]** を選択すると、ダイアログの下部に**indigo**の色合いのコレクションが表示されます。
+色合いを選択すると、プロパティの色が、選択した色合いに変わります。 次の例では、 `Background Tint`ボタンのが*Indigo 500*に変更されています。
 
-![Indigo 500 を選択します。](material-design-features-images/vs/10-indigo-w158.png)
+![[Indigo 500] を選択します。](material-design-features-images/vs/10-indigo-w158.png)
 
-`Background Tint` カラー コードに設定されている*Indigo 500* (`#ff3f51b5`)、し、デザイナーは、この変更を反映するように背景色を更新します。
+`Background Tint`は*Indigo 500* (`#ff3f51b5`) の色コードに設定され、デザイナーはこの変更を反映するように背景色を更新します。
 
-[![背景の濃淡の変更](material-design-features-images/vs/11-background-tint-w158-sml.png)](material-design-features-images/vs/11-background-tint-w158.png#lightbox)
+[![背景の濃淡が変更されました](material-design-features-images/vs/11-background-tint-w158-sml.png)](material-design-features-images/vs/11-background-tint-w158.png#lightbox)
 
-マテリアル デザインのカラー パレットの詳細については、マテリアル デザインを参照してください。[色パレット ガイド](https://material.io/design/color/)します。
+マテリアルデザインカラーパレットの詳細については、「マテリアルデザインの[カラーパレットガイド](https://material.io/design/color/)」を参照してください。
 
 ### <a name="creating-a-new-theme"></a>新しいテーマの作成
 
-次の例では、素材パレット新しいカスタム テーマの作成に使用します。 最初に、変更します、**バック グラウンド**する色*青い 900*:
+次の例では、マテリアルパレットを使用して、新しいカスタムテーマを作成します。 まず、**背景**色を*青 900*に変更します。
 
-![背景を青 900 に変更します。](material-design-features-images/vs/12-change-background-to-blue-w158.png)
+![背景を青900に変更します](material-design-features-images/vs/12-change-background-to-blue-w158.png)
 
-色リソースが変更されたときにポップアップ メッセージがメッセージと共に *、現在のテーマの変更が保存されて*:
+色リソースを変更すると、メッセージが表示され、*現在のテーマの変更は保存*されていません。
 
-[![警告未保存の変更](material-design-features-images/vs/13-unsaved-changes-w158-sml.png)](material-design-features-images/vs/13-unsaved-changes-w158.png#lightbox)
+[![未保存の変更の警告](material-design-features-images/vs/13-unsaved-changes-w158-sml.png)](material-design-features-images/vs/13-unsaved-changes-w158.png#lightbox)
 
-**バック グラウンド**デザイナーでの色を新しい色の選択を変更したが、この変更が保存されていません。 この時点で、次のいずれかを行うことができます。
+デザイナーの**背景**色が新しい色の選択に変わりましたが、この変更はまだ保存されていません。 この時点で、次のいずれかの操作を実行できます。
 
--   クリックして**変更の破棄**を新しい色の選択 (または選択) を破棄し、テーマを元の状態を元に戻します。
+- **[変更の破棄]** をクリックして、新しい色の選択 (または選択) を破棄し、テーマを元の状態に戻します。
 
--   キーを押して<kbd>CTRL + S</kbd>に変更を保存する、現在のテーマ。
+- <kbd>CTRL + S</kbd>キーを押して、現在のテーマへの変更を保存します。
 
-次の例では、 <kbd>CTRL + S</kbd>に変更が保存されたようにが押された**AppTheme**:
+次の例では、変更が**Apptheme**に保存されるように<kbd>CTRL + S キー</kbd>を押しました。
 
 [![AppTheme に保存された変更](material-design-features-images/vs/14-custom-theme-w158-sml.png)](material-design-features-images/vs/14-custom-theme-w158.png#lightbox)
 
 ## <a name="summary"></a>まとめ
 
-このトピックでは、Xamarin.Android デザイナーで使用可能なマテリアル デザイン機能について説明します。 有効にし、素材のデザイン グリッドを構成する方法を説明し、テーマ エディターを使用して、マテリアル デザイン ガイドラインに準拠した新しいカスタム テーマを作成する方法について説明します。
-マテリアル デザインの Xamarin.Android のサポートの詳細については、次を参照してください。[マテリアル テーマ](~/android/user-interface/material-theme.md)します。
+このトピックでは、Android Designer で使用できるマテリアルデザイン機能について説明します。 ここでは、[マテリアルデザイン] グリッドを有効にして構成する方法について説明しました。また、テーマエディターを使用して、マテリアルデザインガイドラインに準拠する新しいカスタムテーマを作成する方法についても説明しました。
+Xamarin の詳細については、マテリアル設計の詳細については、「[マテリアルのテーマ](~/android/user-interface/material-theme.md)」を参照してください。
 
 
 
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-このガイドでは、次のデザイナー機能を見て。
+このガイドでは、デザイナーの次の機能について説明します。
 
--   *素材のデザイン グリッド*&ndash;グリッド、間隔、およびマテリアル デザイン ガイドラインに従ってレイアウト ウィジェットを配置するための主線を表示するデザイン サーフェイス上のオーバーレイします。
+- *素材のデザイングリッド*&ndash;素材のデザインガイドラインに従ってレイアウトウィジェットを配置する際に役立つグリッド、スペース、および keylines を表示するデザインサーフェイスのオーバーレイ。
 
--   *素材のデザインのカラー パレット*&ndash;公式のマテリアル デザイン パレットから色を選択するのには、使用するプロパティ パッド ダイアログ。
+- *素材デザインの色パレット*&ndash; [プロパティパッド] ダイアログ。これは、公式のマテリアルデザインパレットから色を選択するのに役立ちます。
 
--   *印刷用のスケール* &ndash; A プロパティ パッド ダイアログ用の素材のデザイン準拠設定の選択肢を提供する、`textAppearance`テキスト フィールドのプロパティ。
+- *大*文字と小文字の調整テキストフィールドの`textAppearance`プロパティに対する素材デザインに準拠した設定を提供するプロパティパッドダイアログ。 &ndash;
 
--   *テーマ エディター* &ndash;できるようにする小さなカラー リソース エディター テーマのサブセットの色の情報を設定します。 たとえば、プレビューおよびなどマテリアルの色を変更できます`colorPrimary`、 `colorPrimaryDark`、および`colorAccent`します。
+- *テーマエディター*&ndash;テーマのサブセットの色情報を設定できる、小さいカラーリソースエディター。 たとえば、 `colorPrimary`、 `colorPrimaryDark`、 `colorAccent`などの素材の色をプレビューおよび変更できます。
 
-これらの各機能確認がされその使用方法の例を示します。
+これらの各機能について説明し、その使用方法の例を示します。
 
-## <a name="material-design-grid"></a>素材のデザイン グリッド
+## <a name="material-design-grid"></a>素材のデザイングリッド
 
-マテリアル デザイン グリッド] メニューの [デザイナーの上部にあるツールバーから提供されています。
+[マテリアルデザイン] グリッドメニューは、デザイナーの上部にあるツールバーから使用できます。
 
-[![素材のデザイン グリッド](material-design-features-images/xs/01-material-design-grid-sml.png)](material-design-features-images/xs/01-material-design-grid.png#lightbox)
+[![素材のデザイングリッド](material-design-features-images/xs/01-material-design-grid-sml.png)](material-design-features-images/xs/01-material-design-grid.png#lightbox)
 
-マテリアル デザイン グリッド アイコンをクリックすると、デザイナーが、次の要素を含むデザイン画面にオーバーレイが表示されます。
+[素材デザイン] グリッドアイコンをクリックすると、次の要素を含むデザインサーフェイスにオーバーレイが表示されます。
 
--   主線 (オレンジ色の線)
+- Keylines (オレンジ色の線)
 
--   間隔 (緑の領域)
+- 間隔 (緑の領域)
 
--   グリッド (青い線)
+- グリッド (青い線)
 
-これらの要素は、次のスクリーン ショットに表示されることができます。
+これらの要素は、次のスクリーンショットで確認できます。
 
-[![断裁、間隔、およびグリッド](material-design-features-images/xs/02-grid-and-keylines-sml.png)](material-design-features-images/xs/02-grid-and-keylines.png#lightbox)
+[![Keyline、スペーシング、および grid](material-design-features-images/xs/02-grid-and-keylines-sml.png)](material-design-features-images/xs/02-grid-and-keylines.png#lightbox)
 
-オーバーレイの以下の内容は、構成できます。 省略記号をクリックすると (&hellip;) マテリアル デザイン グリッド メニューの横にあるダイアログ ポップ オーバー グリッドを有効/無効にするの主線、配置を構成して、間隔を設定するためが開きます。 すべての値で表現される注`dp`(密度に依存しないピクセル単位)。
+これらの各オーバーレイ項目は構成可能です。 [マテリアルデザイン] グリッドメニュー&hellip;の横にある省略記号 () をクリックすると、ダイアログ segue が開き、グリッドを無効/有効にしたり、キー行の配置を構成したり、spacings を設定したりすることができます。 すべての値は (密度に`dp`依存しないピクセル) で表されることに注意してください。
 
-[![グリッド、断裁、および間隔の構成](material-design-features-images/xs/03-grid-configuration-sml.png)](material-design-features-images/xs/03-grid-configuration.png#lightbox)
+[![Grid、keyline、および spacing の構成](material-design-features-images/xs/03-grid-configuration-sml.png)](material-design-features-images/xs/03-grid-configuration.png#lightbox)
 
-新しい断裁を追加するには、新しいオフセット値を入力します、**オフセット**ボックスに、場所を選択します (**左**、**上部**、**右**、または **。下部にある**) をクリックし、+ アイコン (値を入力すると、右側に表示されます) を新しい断裁を追加します。 同様に、新しい間隔を追加するを入力 (dp) 内のオフセットとサイズ、**サイズ**と**オフセット**ボックスに、それぞれします。 場所を選択します (**左**、**上部**、**右**、または**下部にある**) をクリックし、+ 新しい間隔を追加する アイコン。
+新しい keyline を追加するには、 **[オフセット]** ボックスに新しいオフセット値を入力し、場所 (**left**、 **top**、 **right**、または**bottom**) を選択し、[+] アイコン (値を入力したときに右側に表示されます) をクリックして、新しい keyline を追加します。 同様に、新しいスペースを追加するには、サイズ ボックスと **オフセット**ボックスにそれぞれサイズとオフセット (dp) を入力します。 場所 (**左**、**上**、**右**、**下**) を選択し、[+] アイコンをクリックして新しい間隔を追加します。
 
-これらの構成値を変更するときに、レイアウトの XML ファイルに保存されていて、レイアウトをもう一度開くときに再利用します。
+これらの構成値を変更すると、レイアウト XML ファイルに保存され、再度レイアウトを開いたときに再利用されます。
 
-## <a name="material-design-color-palette"></a>素材のデザインのカラー パレット
+## <a name="material-design-color-palette"></a>素材デザインの色パレット
 
-すべてのプロパティ パネル項目を色を受け入れるようになりましたが、このスクリーン ショットで示すようにマテリアル デザインのカラー パレットを開きを使用する追加パレット アイコン。
+色を受け入れるすべてのプロパティパネル項目には、次のスクリーンショットに示すように、[パレット] アイコンが追加されます。このアイコンを使用して、素材デザインのカラーパレットを開くことができます。
 
-[![色のアイコン](material-design-features-images/xs/04-new-color-icon-sml.png)](material-design-features-images/xs/04-new-color-icon.png#lightbox)
+[![色アイコン](material-design-features-images/xs/04-new-color-icon-sml.png)](material-design-features-images/xs/04-new-color-icon.png#lightbox)
 
-このアイコンをクリックすると、ダイアログのポップ オーバーはマテリアル デザインのカラー パレットからそのプロパティの色を構成するためにできるようにするを開きます。
+このアイコンをクリックすると、ダイアログ segue が開きます。このダイアログボックスでは、素材デザインのカラーパレットから、そのプロパティの色を構成することができます。
 
-[![素材のデザインのカラー パレット](material-design-features-images/xs/05-material-palette-sml.png)](material-design-features-images/xs/05-material-palette.png#lightbox)
+[![素材デザインの色パレット](material-design-features-images/xs/05-material-palette-sml.png)](material-design-features-images/xs/05-material-palette.png#lightbox)
 
-色パレットの上部では、パレットの下部には、選択した色の色合いの範囲が表示されます。 中に、プライマリのマテリアル デザイン色が表示されます。 たとえば、 **Indigo**、一連の**Indigo**色相がダイアログの下部に表示されます。
-Hue を選択すると、プロパティの色が選択されている hue に変更されます。 次の例では、`Background Tint`ボタンの変更は*Indigo 500*:
+カラーパレットの上部には、主要な素材デザインの色が表示されます。パレットの下部には、選択した原色の色の範囲が表示されます。 たとえば、 **[indigo]** を選択すると、ダイアログの下部に**indigo**の色合いのコレクションが表示されます。
+色合いを選択すると、プロパティの色が、選択した色合いに変わります。 次の例では、 `Background Tint`ボタンのが*Indigo 500*に変更されています。
 
-[![Indigo 500 を選択します。](material-design-features-images/xs/06-indigo-sml.png)](material-design-features-images/xs/06-indigo.png#lightbox)
+[![Indigo 500 を選択する](material-design-features-images/xs/06-indigo-sml.png)](material-design-features-images/xs/06-indigo.png#lightbox)
 
-`Background Tint` カラー コードに設定されている*Indigo 500* (`#ff3f51b5`)、し、デザイナーは、この変更を反映するように、ボタンの背景色を更新します。
+`Background Tint`は*Indigo 500* (`#ff3f51b5`) の色コードに設定され、デザイナーは、この変更を反映するようにボタンの背景色を更新します。
 
-[![背景の濃淡の変化](material-design-features-images/xs/07-background-tint-sml.png)](material-design-features-images/xs/07-background-tint.png#lightbox)
+[![背景の濃淡の変更](material-design-features-images/xs/07-background-tint-sml.png)](material-design-features-images/xs/07-background-tint.png#lightbox)
 
-マテリアル デザインのカラー パレットの詳細については、マテリアル デザインを参照してください。[色パレット ガイド](https://material.io/design/color/)します。
+マテリアルデザインカラーパレットの詳細については、「マテリアルデザインの[カラーパレットガイド](https://material.io/design/color/)」を参照してください。
 
-## <a name="typographic-scale"></a>印刷用のスケール
+## <a name="typographic-scale"></a>大文字と小文字の調整
 
-**テキストの外観**のセクション、**プロパティ**パッド**スタイル**タブにすることができます アイコンを選択します、`TextAppearance`マテリアル デザインに準拠しているスタイル仕様:
+[**プロパティ**パッド**スタイル**] タブの **[テキストの表示]** セクションには、マテリアルデザイン仕様`TextAppearance`に準拠するスタイルを選択できるアイコンがあります。
 
 [![[スタイル] タブ](material-design-features-images/xs/08-typo-scale-icon-sml.png)](material-design-features-images/xs/08-typo-scale-icon.png#lightbox)
 
-このアイコンをクリックすると開きます、**文字体裁スケール**ダイアログ ポップ オーバーから選択できる構成済みのテキスト スタイルの一覧が表示されます。
+このアイコンをクリックすると、 **[タイポグラフィスケール]** ダイアログボックスが開き、事前に構成されたテキストスタイルの一覧が表示されます。これには、次の中から選択できます。
 
-[![テキスト スタイルの選択](material-design-features-images/xs/09-text-appearance-sml.png)](material-design-features-images/xs/09-text-appearance.png#lightbox)
+[![テキストスタイルの選択](material-design-features-images/xs/09-text-appearance-sml.png)](material-design-features-images/xs/09-text-appearance.png#lightbox)
 
-クリックすると、次の例で**ディスプレイ 1**の大きいフォントにボタンのテキストを変更**ディスプレイ 1**:
+次の例では、 **[表示 1]** をクリックすると、ボタンのテキストが、**表示 1**の大きなフォントに変わります。
 
-[![1 のスタイルを表示します。](material-design-features-images/xs/10-display-1-sml.png)](material-design-features-images/xs/10-display-1.png#lightbox)
+[![1スタイルを表示](material-design-features-images/xs/10-display-1-sml.png)](material-design-features-images/xs/10-display-1.png#lightbox)
 
-テキストのスタイル、**文字体裁スケール**に従って、**テーマ**設定します。 たとえば場合、 **Light**デザイナー、利用可能なテキストのスタイルのミラーの一覧では、テーマを選択してください。、 **Light**テーマ。
+[文字**幅の調整**] ダイアログボックスのテキストスタイルは、**テーマ**の設定に従います。 たとえば、**ライト**テーマがデザイナーで選択されている場合、使用可能なテキストスタイルの一覧によって**明るい**テーマが反映されます。
 
-[![ライト テーマ](material-design-features-images/xs/11-light-theme-sml.png)](material-design-features-images/xs/11-light-theme.png#lightbox)
+[![ライトテーマ](material-design-features-images/xs/11-light-theme-sml.png)](material-design-features-images/xs/11-light-theme.png#lightbox)
 
-## <a name="theme-editor"></a>テーマ エディター
+## <a name="theme-editor"></a>テーマエディター
 
-**テーマ エディター**テーマの属性のサブセットの色の情報をカスタマイズすることができます。 開くには、**テーマ エディター**ツールバーで、ペイント ブラシ アイコンをクリックします。
+**テーマエディター**では、テーマ属性のサブセットの色情報をカスタマイズできます。 **テーマエディター**を開くには、ツールバーの [ペイントブラシ] アイコンをクリックします。
 
-[![テーマ エディター アイコン](material-design-features-images/xs/12a-theme-editor-icon-sml.png)](material-design-features-images/xs/12a-theme-editor-icon.png#lightbox)
+[![テーマエディターのアイコン](material-design-features-images/xs/12a-theme-editor-icon-sml.png)](material-design-features-images/xs/12a-theme-editor-icon.png#lightbox)
 
-ただし、**テーマ エディター**は、ツールバーからアクセスできるすべてのターゲット Android バージョンと API レベルでは、以下に示す機能のサブセットが使用できるは、ターゲット API レベルが API 21 (Android 5.0 より前の場合のみロリポップ)。
+**テーマエディター**には、対象となるすべての Android バージョンと api レベルのツールバーからアクセスできますが、ターゲット api レベルが API 21 (Android 5.0 ロリポップ) よりも前の場合は、以下で説明する機能のサブセットのみを使用できます。
 
-左側のパネル、**テーマ エディター**現在選択されているテーマを構成する色の一覧が表示されます (この例では使用、 `Default Theme`)。
+**テーマエディター**の左側のパネルには、現在選択されているテーマを構成する色の一覧が表示されます (この例`Default Theme`ではを使用しています)。
 
-[![テーマ エディター](material-design-features-images/xs/12b-theme-editor-sml.png)](material-design-features-images/xs/12b-theme-editor.png#lightbox)
+[![テーマエディター](material-design-features-images/xs/12b-theme-editor-sml.png)](material-design-features-images/xs/12b-theme-editor.png#lightbox)
 
-左上の色を選択すると、右側のパネルは、その色を編集するために、次のタブを提供します。
+左側の色を選択すると、右側のパネルには、その色を編集するための次のタブが表示されます。
 
--   **継承**&ndash;選択した色のスタイル継承ダイアグラムを表示し、解決済みの色とそのテーマの色に割り当てられているカラー コードを一覧表示します。
+- **継承**&ndash;選択した色のスタイルの継承ダイアグラムを表示し、そのテーマの色に割り当てられている解決済みの色と色のコードを表示します。
 
--   **カラー ピッカー** &ndash;任意の値を選択した色を変更することができます。
+- **カラーピッカー**&ndash;選択した色を任意の値に変更できます。
 
--   **素材パレット**&ndash;マテリアル デザインに準拠した値を選択した色を変更することができます。
+- **素材パレット**&ndash;選択した色を、マテリアルデザインに準拠した値に変更できます。
 
--   **リソース**&ndash;テーマで、その他の既存の色リソースのいずれかに、選択した色を変更することができます。
+- **リソース**&ndash;選択した色を、テーマ内の他の既存の色リソースの1つに変更できます。
 
-これらのタブの詳細のいずれかを見てみましょう。
+これらのタブのそれぞれを詳しく見てみましょう。
 
-### <a name="inherit-tab"></a>タブを継承します。
+### <a name="inherit-tab"></a>[継承] タブ
 
-次の例のように、**継承**のスタイルの継承がタブに一覧表示されます、**バック グラウンド**の色、**既定のテーマ**:
+次の例に示すように、 **[継承]** タブには、**既定のテーマ**の**背景**色のスタイル継承が表示されます。
 
-[![タブを継承します。](material-design-features-images/xs/13-inherit-sml.png)](material-design-features-images/xs/13-inherit.png#lightbox)
+[![[継承] タブ](material-design-features-images/xs/13-inherit-sml.png)](material-design-features-images/xs/13-inherit.png#lightbox)
 
-この例で、**既定のテーマ**を使用するスタイルを継承`@color/background_material_dark`でよりも優先されますが、`color/material_grey_850`のカラー コード値を持つ`#ff303030`します。
-スタイルの継承の詳細については、次を参照してください。[スタイルとテーマ](https://developer.android.com/guide/topics/ui/themes.html#Inheritance)します。
+この例では、**既定のテーマ**はを使用`@color/background_material_dark`するスタイルを継承します`color/material_grey_850`が、色の`#ff303030`コード値がであるでオーバーライドします。
+スタイルの継承の詳細については、「[スタイルとテーマ](https://developer.android.com/guide/topics/ui/themes.html#Inheritance)」を参照してください。
 
 ### <a name="color-picker"></a>カラー ピッカー
 
-次のスクリーン ショットを示しています、**カラー ピッカー**:
+次のスクリーンショットは、**カラーピッカー**を示しています。
 
-[![カラー ピッカー](material-design-features-images/xs/14-color-picker-sml.png)](material-design-features-images/xs/14-color-picker.png#lightbox)
+[![カラーピッカー](material-design-features-images/xs/14-color-picker-sml.png)](material-design-features-images/xs/14-color-picker.png#lightbox)
 
 
-この例で、**バック グラウンド**さまざまな方法で任意の値に色を変更することができます。
+この例では、さまざまな方法で**背景**色を任意の値に変更できます。
 
--   色を直接クリックするとします。
--   色合い、鮮やかさ、および明るさの値を入力します。
--   10 進数の RGB (赤、緑、青) 値を入力します。
--   選択した色のアルファ (透明度) を設定します。
--   16 進数カラー コードを直接入力します。
+- 色を直接クリックします。
+- 色合い、鮮やかさ、および明るさの値を入力します。
+- RGB (赤、緑、青) の値を10進数で入力します。
+- 選択した色のアルファ (不透明度) を設定します。
+- 16進数のカラーコードを直接入力します。
 
-カラー ピッカーで選択した色は*いない*マテリアル デザイン ガイドラインに、または使用可能な色リソースのセットを制限します。
+カラーピッカーで選択した色は、素材のデザインガイドラインや使用可能な色リソースのセットに限定され*ません*。
 
 ### <a name="resources"></a>リソース
 
-**リソース** タブが存在するテーマの色リソースの一覧を提供しています。
+**[リソース]** タブには、テーマに既に存在する色リソースの一覧が表示されます。
 
-[![リソース](material-design-features-images/xs/15-resources-sml.png)](material-design-features-images/xs/15-resources.png#lightbox)
+[![参考](material-design-features-images/xs/15-resources-sml.png)](material-design-features-images/xs/15-resources.png#lightbox)
 
-使用して、**リソース** タブは、この色のリストにユーザーの選択を制限します。 テーマの別の部分に既に割り当てられている色リソースを選択すると、UI の 2 つの隣接する要素発生可能性があります"化"(顔色と一致している) ために注意してくださいと区別するためにユーザーを困難になります。
+**[リソース]** タブを使用すると、選択した色の一覧が制限されます。 テーマの別の部分に既に割り当てられている色リソースを選択すると、UI の隣接する2つの要素が "同時に実行" される可能性があることに注意してください (色が同じであるため)。ユーザーが区別するのが困難になります。
 
 ### <a name="material-palette"></a>素材パレット
 
-**素材パレット**タブが表示されます、**マテリアル デザインのカラー パレット**説明[以前](#material-design-color-palette)します。 このパレットから色の値を選択すると、マテリアル デザイン ガイドラインに矛盾があるように、色の選択が制限されます。
+**[素材パレット]** タブには、[前](#material-design-color-palette)に説明した [**マテリアルのデザイン] カラーパレット**が表示されます。 このパレットから色の値を選択すると、マテリアルのデザインガイドラインと一貫性があるように色の選択が制限されます。
 
 [![素材パレット](material-design-features-images/xs/16-material-palette-sml.png)](material-design-features-images/xs/16-material-palette.png#lightbox)
 
 ### <a name="creating-a-new-theme"></a>新しいテーマの作成
 
-次の例では、素材パレット新しいカスタム テーマの作成に使用します。 最初に、変更します、**バック グラウンド**する色*青い 900*:
+次の例では、マテリアルパレットを使用して、新しいカスタムテーマを作成します。 まず、**背景**色を*青 900*に変更します。
 
-[![背景を青 900 に変更します。](material-design-features-images/xs/17-change-background-to-blue-sml.png)](material-design-features-images/xs/17-change-background-to-blue.png#lightbox)
+[![背景を青900に変更します](material-design-features-images/xs/17-change-background-to-blue-sml.png)](material-design-features-images/xs/17-change-background-to-blue.png#lightbox)
 
-色リソースが変更されたときにポップアップ メッセージがメッセージと共に *、現在のテーマの変更が保存されて*:
+色リソースを変更すると、メッセージが表示され、*現在のテーマの変更は保存*されていません。
 
-[![警告未保存の変更](material-design-features-images/xs/18-unsaved-changes-sml.png)](material-design-features-images/xs/18-unsaved-changes.png#lightbox)
+[![未保存の変更の警告](material-design-features-images/xs/18-unsaved-changes-sml.png)](material-design-features-images/xs/18-unsaved-changes.png#lightbox)
 
-デザイナーでの色の変更を行ったが、この変更が保存されていません。 この時点で、次のいずれかを行うことができます。
+デザイナーでの色の変更が行われましたが、この変更はまだ保存されていません。 この時点で、次のいずれかの操作を実行できます。
 
--   クリックして**変更の破棄**を新しい色の選択 (または選択) を破棄し、テーマを元の状態を元に戻します。
+- **[変更の破棄]** をクリックして、新しい色の選択 (または選択) を破棄し、テーマを元の状態に戻します。
 
--   キーを押して **&#8984; + S**という名前の新しいテーマに変更を保存する**カスタム**します。
+- **&#8984; + S**キーを押して、**カスタム**という名前の新しいテーマへの変更を保存します。
 
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
-このトピックでは、Xamarin.Android デザイナーで使用可能なマテリアル デザイン機能について説明します。 これは、有効にし、素材のデザイン グリッドを構成する方法、マテリアル デザインのカラー パレットを使用して、色のプロパティを編集する方法、および文字体裁スケール セレクターを使用して、テキストのプロパティを構成する方法について説明します。 テーマ エディターを使用して、マテリアル デザイン ガイドラインに準拠した新しいカスタム テーマを作成する方法も示されています。 マテリアル デザインの Xamarin.Android のサポートの詳細については、次を参照してください。[マテリアル テーマ](~/android/user-interface/material-theme.md)します。
+このトピックでは、Android Designer で使用できるマテリアルデザイン機能について説明します。 ここでは、マテリアルデザイングリッドを有効にして構成する方法、素材デザインカラーパレットを使用して色のプロパティを編集する方法、およびタイポグラフィスケールセレクターを使用してテキストプロパティを構成する方法について説明しました。 また、テーマエディターを使用して、マテリアルデザインガイドラインに準拠する新しいカスタムテーマを作成する方法についても説明します。 Xamarin の詳細については、マテリアル設計の詳細については、「[マテリアルのテーマ](~/android/user-interface/material-theme.md)」を参照してください。
 
 -----
 

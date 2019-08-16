@@ -6,30 +6,26 @@ ms.assetid: DF103686-4A92-40FA-9CF1-A9376293B13C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/28/2019
+ms.date: 08/15/2019
 ms.custom: video
-ms.openlocfilehash: f41bcc3ccaa6b4dd8c001ceb5ead165486745283
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: a9b9b2d12193161e0cb4514600381c3a7a38495a
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650257"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529321"
 ---
 # <a name="resource-dictionaries"></a>リソース ディクショナリ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-resourcedictionaries)
 
-_XAML リソースは、共有し、Xamarin.Forms アプリケーション全体で再利用が可能なオブジェクトの定義です。_
-
-これらのリソース オブジェクトは、リソース ディクショナリに格納されます。 この記事では、リソース ディクショナリをマージする方法とを作成し、リソース ディクショナリを使用する方法について説明します。
-
-## <a name="overview"></a>概要
+_XAML リソースは、Xamarin. フォームアプリケーション全体で共有および再利用できるオブジェクトの定義です。これらのリソースオブジェクトは、リソースディクショナリに格納されます。_
 
 A [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) Xamarin.Forms アプリケーションで使用されるリソースのリポジトリです。 一般的なリソースが含まれている、`ResourceDictionary`含める[スタイル](~/xamarin-forms/user-interface/styles/index.md)、[コントロール テンプレート](~/xamarin-forms/app-fundamentals/templates/control-templates/index.md)、[データ テンプレート](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)色、およびコンバーター。
 
 XAML に格納されているリソースで、`ResourceDictionary`取得して使用して要素に適用できるし、`StaticResource`マークアップ拡張機能。 C# の場合は、リソース定義することもに、`ResourceDictionary`を取得して、文字列ベースのインデクサーを使用して要素に適用します。 ただし、使用する利点のほとんどは、`ResourceDictionary`で c# の場合は、共有オブジェクトは単にフィールドまたはプロパティとして格納されているし、しない直接アクセスに最初から取得ディクショナリ。
 
-## <a name="creating-and-consuming-a-resourcedictionary"></a>作成および ResourceDictionary を使用します。
+## <a name="create-and-consume-a-resourcedictionary"></a>ResourceDictionary の作成と使用
 
 リソースが定義されている、 [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) 、次のいずれかに設定されている`Resources`プロパティ。
 
@@ -116,7 +112,7 @@ Xamarin.Forms のプログラムにはから派生したクラス 1 つだけに
 > [!NOTE]
 > 1 つのページに固有のリソースは、アプリケーション レベルのリソース ディクショナリをそのため、ページで必要なときに、リソースの代わりに、アプリケーションの起動時に解析されますに含めることはできません。 詳細については、次を参照してください。[アプリケーション リソース ディクショナリのサイズを減らす](~/xamarin-forms/deploy-test/performance.md)します。
 
-## <a name="overriding-resources"></a>リソースのオーバーライド
+## <a name="override-resources"></a>リソースの上書き
 
 ときに`ResourceDictionary`のリソースを共有`x:Key`属性値は、ビューの階層内で下に定義されているリソースは優先を以上定義されています。 たとえば、設定、`PageBackgroundColor`リソースを`Blue`アプリケーションでレベルがページ レベルで上書きされている`PageBackgroundColor`リソースに設定`Yellow`。 ページ レベルでは同様に、`PageBackgroundColor`制御レベルによってリソースが上書きされます`PageBackgroundColor`リソース。 この優先順位は次の XAML コード例について説明します。
 
@@ -152,7 +148,7 @@ Xamarin.Forms のプログラムにはから派生したクラス 1 つだけに
 
 `ResourceDictionary`優先順位を考慮するもう1つの方法を次に示します。XAML パーサーは、を`StaticResource`検出すると、見つかった最初の一致を使用して、ビジュアルツリーの上に移動することで、一致するキーを検索します。 XAML パーサーが検索ページでこの検索を終了し、キーもまだ検出された場合、`ResourceDictionary`にアタッチされている、`App`オブジェクト。 でも、キーが存在しない場合は、例外が発生します。
 
-## <a name="stand-alone-resource-dictionaries"></a>スタンドアロンのリソース ディクショナリ
+## <a name="stand-alone-resource-dictionaries"></a>スタンドアロンリソースディクショナリ
 
 派生したクラス`ResourceDictionary`別のスタンドアロン ファイルにもできます。 (から派生したクラスより正確に`ResourceDictionary`通常必要がある、_ペア_ファイルの XAML ファイルの分離コード ファイル内のリソースが定義されているため、`InitializeComponent`呼び出しも必要です)。結果のファイルは、アプリケーション間で共有できます。
 
@@ -200,17 +196,42 @@ Xamarin.Forms のプログラムにはから派生したクラス 1 つだけに
 
 このタスクでは、マージされたリソース ディクショナリが必要です。
 
-## <a name="merged-resource-dictionaries"></a>マージされたリソース ディクショナリ
+## <a name="merged-resource-dictionaries"></a>マージされたリソースディクショナリ
 
-マージされたリソース ディクショナリは、1 つ以上を組み合わせた`ResourceDictionary`インスタンス別に`ResourceDictionary`します。 これを行う XAML ファイルで設定して、 [ `MergedDictionaries` ](xref:Xamarin.Forms.ResourceDictionary.MergedDictionaries)アプリケーション、ページ、または制御レベルにマージする 1 つまたは複数のリソース ディクショナリにプロパティ`ResourceDictionary`します。
+マージされたリソースディクショナリは[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 、1つ`ResourceDictionary`または複数のオブジェクトを別のオブジェクトに結合します。
+
+### <a name="merge-local-resource-dictionaries"></a>ローカルリソースディクショナリのマージ
+
+ローカル[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)を別`ResourceDictionary`のにマージするには、 [`Source`](xref:Xamarin.Forms.ResourceDictionary.Source)プロパティにリソースを含む XAML ファイルのファイル名を設定します。
+
+```xaml
+<ContentPage ...>
+    <ContentPage.Resources>
+        <!-- Add more resources here -->
+        <ResourceDictionary Source="MyResourceDictionary.xaml" />
+        <!-- Add more resources here -->
+    </ContentPage.Resources>
+    ...
+</ContentPage>
+```
+
+この構文は、クラスを`MyResourceDictionary`インスタンス化しません。 代わりに、XAML ファイルを参照します。 そのため、 [`Source`](xref:Xamarin.Forms.ResourceDictionary.Source)プロパティを設定するときに、分離コードファイル (**MyResourceDictionary.xaml.cs**) は必要なく、属性は`x:Class` **myresourcedictionary .xaml**ファイルのルートタグから削除できます。 さらに、この方法を使用してリソースディクショナリをマージする場合、Xamarin に[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)よってが自動的`ResourceDictionary`にインスタンス化されるため、外側のタグは必要ありません。
 
 > [!IMPORTANT]
-> `ResourceDictionary` 定義、 [ `MergedWith` ](xref:Xamarin.Forms.ResourceDictionary.MergedWith)プロパティ。 このプロパティを使用しないでください。Xamarin.Forms の 3.0 の時点で廃止されました。
+> プロパティ[`Source`](xref:Xamarin.Forms.ResourceDictionary.Source)は、XAML からのみ設定できます。
 
-インスタンス`MyResourceDictionary`任意のアプリケーション、ページ、または制御レベルにマージできるように`ResourceDictionary`します。 次の XAML コード例はページ レベルにマージしていることを示しています`ResourceDictionary`を使用して、`MergedDictionaries`プロパティ。
+### <a name="merge-resource-dictionaries-from-other-assemblies"></a>他のアセンブリからリソースディクショナリをマージする
+
+は、 `ResourceDictionary` [`MergedDictionaries`](xref:Xamarin.Forms.ResourceDictionary.MergedDictionaries) [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) のプロパティに追加すること`ResourceDictionary`で、別のにマージすることもできます。 この手法では、リソースディクショナリが配置されているアセンブリに関係なく、リソースディクショナリをマージできます。
+
+> [!IMPORTANT]
+> クラス[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)は、 [`MergedWith`](xref:Xamarin.Forms.ResourceDictionary.MergedWith)プロパティも定義します。 ただし、このプロパティは非推奨とされているため、使用できなくなりました。
+
+次のコード例は`MyResourceDictionary` 、ページレベル[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)の[`MergedDictionaries`](xref:Xamarin.Forms.ResourceDictionary.MergedDictionaries)コレクションに追加されることを示しています。
 
 ```xaml
-<ContentPage ...>
+<ContentPage ...
+             xmlns:local="clr-namespace:ResourceDictionaryDemo">
     <ContentPage.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -222,87 +243,38 @@ Xamarin.Forms のプログラムにはから派生したクラス 1 つだけに
 </ContentPage>
 ```
 
-そのマークアップは、のインスタンスのみを示しています。`MyResourceDictionary`に追加される、`ResourceDictionary`他を参照することもできますが、`ResourceDictionary`内のインスタンスで、`MergedDictionary`プロパティ要素タグ、およびそれらのタグの外部でのその他のリソース。
+次の例は、同じ`MyResourceDictionary`アセンブリに存在するのインスタンスを[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)に追加しています。 さらに、他のアセンブリ、 `ResourceDictionary` [`MergedDictionaries`](xref:Xamarin.Forms.ResourceDictionary.MergedDictionaries)プロパティ要素タグ内の他のオブジェクト、その他のリソース (タグ以外) からリソースディクショナリを追加することもできます。
 
 ```xaml
-<ContentPage ...>
+<ContentPage ...
+             xmlns:local="clr-namespace:ResourceDictionaryDemo"
+             xmlns:theme="clr-namespace:MyThemes;assembly=MyThemes">
     <ContentPage.Resources>
         <ResourceDictionary>
-
             <!-- Add more resources here -->
-
             <ResourceDictionary.MergedDictionaries>
-
                 <!-- Add more resource dictionaries here -->
-
                 <local:MyResourceDictionary />
-
+                <theme:LightTheme />
                 <!-- Add more resource dictionaries here -->
-
             </ResourceDictionary.MergedDictionaries>
-
             <!-- Add more resources here -->
-
         </ResourceDictionary>
     </ContentPage.Resources>
     ...
 </ContentPage>
 ```
 
-1 つのみ`MergedDictionaries`セクション、 `ResourceDictionary`、同数に配置できますが、`ResourceDictionary`そこでインスタンス化します。
+> [!IMPORTANT]
+> にはプロパティ要素タグ`MergedDictionaries`を1つだけ含めることができますが、そこに`ResourceDictionary`必要な数のオブジェクトを含めることができます。 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)
 
 マージする際に[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)リソースが同じ共有`x:Key`属性値は、Xamarin.Forms は、次のリソースの優先順位を使用します。
 
 1. リソース ディクショナリのローカル リソース。
-1. マージされたリソース ディクショナリに含まれるリソース経由で非推奨とされる[ `MergedWith` ](xref:Xamarin.Forms.ResourceDictionary.MergedWith)プロパティ。
 1. 使用してマージされたリソース ディクショナリに含まれるリソース、`MergedDictionaries`に登録されている逆の順序で、コレクション、`MergedDictionaries`プロパティ。
 
 > [!NOTE]
 > アプリケーションが複数含まれている場合に、負荷の高いタスク リソース ディクショナリを検索することができますサイズの大きいリソース ディクショナリ。 そのため、不要な検索を避けるため、アプリケーション内の各ページだけが、ページに適切なリソース ディクショナリを使用するを確認する必要があります。
-
-## <a name="merging-dictionaries-in-xamarinforms-30"></a>Xamarin.Forms 3.0 でのマージの辞書
-
-Xamarin.Forms 3.0 では、マージ プロセスで始まる[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)インスタンスはやや簡単かつ柔軟になりました。 `MergedDictionaries`プロパティ要素タグが必要ではありません。 代わりに、追加するリソース ディクショナリに別`ResourceDictionary`新しいタグ[ `Source` ](xref:Xamarin.Forms.ResourceDictionary.Source)プロパティがリソースで XAML ファイルのファイル名に設定します。
-
-```xaml
-<ContentPage ...>
-    <ContentPage.Resources>
-        <ResourceDictionary>
-
-            <!-- Add more resources here -->
-
-            <ResourceDictionary Source="MyResourceDictionary.xaml" />
-
-            <!-- Add more resources here -->
-
-        </ResourceDictionary>
-    </ContentPage.Resources>
-    ...
-</ContentPage>
-```
-
-Xamarin.Forms 3.0 が自動的にインスタンス化するため、 `ResourceDictionary`、これらの 2 つは外部`ResourceDictionary`タグは必要なくなりました。
-
-```xaml
-<ContentPage ...>
-    <ContentPage.Resources>
-
-        <!-- Add more resources here -->
-
-        <ResourceDictionary Source="MyResourceDictionary.xaml" />
-
-        <!-- Add more resources here -->
-
-    </ContentPage.Resources>
-    ...
-</ContentPage>
-```
-
-この新しい構文は_いない_をインスタンス化、`MyResourceDictionary`クラス。 代わりに、XAML ファイルを参照します。 分離コード ファイルの理由を (**MyResourceDictionary.xaml.cs**) は必要なくなりました。 削除することも、`x:Class`のルート タグから属性を**MyResourceDictionary.xaml**ファイル。
-
-## <a name="summary"></a>まとめ
-
-この記事で作成および使用する方法を説明した、 [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)、およびリソース ディクショナリを結合する方法。 A`ResourceDictionary`リソースを 1 つの場所で定義されている、Xamarin.Forms アプリケーション全体で再利用を許可します。
 
 ## <a name="related-links"></a>関連リンク
 
@@ -315,4 +287,3 @@ Xamarin.Forms 3.0 が自動的にインスタンス化するため、 `ResourceD
 > [!Video https://channel9.msdn.com/Shows/XamarinShow/XamarinForms-101-Application-Resources/player]
 
 [!include[](~/essentials/includes/xamarin-show-essentials.md)]
-

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 07/29/2019
-ms.openlocfilehash: dfc50defb6eafe705cc9c59b1b9793f1ce48c527
-ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
+ms.openlocfilehash: b42a300d9d76a18322891856486720116eb6a8d4
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68984304"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522029"
 ---
 # <a name="xamarinforms-toolbaritem"></a>ToolbarItem
 
@@ -37,6 +37,9 @@ Xamarin. Forms [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem)クラスは、 `P
 * [`CommandParameter`](xref:Xamarin.Forms.MenuItem.CommandParameter)に渡す必要があるパラメーターを指定`object`するです`SearchCommand`。
 
 これらのプロパティは、 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) `ToolbarItem`インスタンスがデータバインディングのターゲットになることができるように、オブジェクトによってバックアップされます。
+
+> [!NOTE]
+> オブジェクトから[`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem)ツールバーを作成する代わりに、 [`NavigationPage.TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty)添付プロパティを複数のビューを含むレイアウトクラスに設定することもできます。 詳細については、「[ナビゲーションバーでのビューの表示](~/xamarin-forms/app-fundamentals/navigation/hierarchical.md#displaying-views-in-the-navigation-bar)」を参照してください。
 
 ## <a name="create-a-toolbaritem"></a>ToolbarItem を作成する
 

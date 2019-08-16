@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: a1bcb83d6057cb7d4a43c510d7b5805b574812e6
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: f71c275dd2beee6aedf41ecd19c8a4a39ab5a36f
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510063"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522643"
 ---
 # <a name="xamarinandroid-gridview"></a>Xamarin Android GridView
 
@@ -136,7 +136,7 @@ public class ImageAdapter : BaseAdapter
 最初に必要なメソッド[`GetView()`](xref:Android.Widget.BaseAdapter.GetView*)はです。
 このメソッドは、新しいを作成します。[`View`](xref:Android.Views.View)
 に追加されたイメージ`ImageAdapter`ごとに。 このが呼び出されると、[`View`](xref:Android.Views.View)
-が渡されます。これは通常、リサイクルされたオブジェクト (少なくとも一度呼び出された後) であるため、オブジェクトが null かどうかを確認します。 *Null の*場合、[`ImageView`](xref:Android.Widget.ImageView)
+が渡されます。これは通常、リサイクルされたオブジェクト (少なくとも一度呼び出された後) であるため、オブジェクトが null かどうかを確認します。 Null の場合、[`ImageView`](xref:Android.Widget.ImageView)
 は、イメージプレゼンテーションに必要なプロパティを使用してインスタンス化され、構成されます。
 
 - [`LayoutParams`](xref:Android.Views.View.LayoutParameters)ビュー&mdash;の高さと幅を設定します。これにより、描画のサイズに関係なく、各イメージのサイズが変更され、必要に応じてトリミングされます。
@@ -166,5 +166,4 @@ public class ImageAdapter : BaseAdapter
 - [`ImageView`](xref:Android.Widget.ImageView)
 - [`BaseAdapter`](xref:Android.Widget.BaseAdapter)
 
-*このページの一部は、Android オープンソースプロジェクトによって作成および共有*
-され、[*Creative Commons 2.5 属性*](http://creativecommons.org/licenses/by/2.5/)で説明されている条項に従って使用される作業に基づいて変更されます。
+_このページの一部は、Android オープンソースプロジェクトによって作成および共有され、 [Creative Commons 2.5 属性](http://creativecommons.org/licenses/by/2.5/)で説明されている条項に従って使用される作業に基づいて変更されます。_

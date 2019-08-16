@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/02/2019
-ms.openlocfilehash: 8c816bf98d9997d09b73e7c9cb0d2ff436b65fbb
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: fd34532e647f0595ed8afa5ef7ad044b84b7d918
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643984"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69525799"
 ---
 # <a name="remote-notifications-with-google-cloud-messaging"></a>Google Cloud Messaging を使用したリモート通知
 
@@ -31,12 +31,12 @@ _このチュートリアルでは、Google Cloud Messaging を使用して、Xa
 
 GCM 対応の Xamarin Android クライアントアプリを作成するには、次の手順を実行します。
 
-1.  GCM サーバーとの通信に必要な追加のパッケージをインストールします。
-2.  GCM サーバーにアクセスするためのアプリのアクセス許可を構成します。
-3.  Google Play 開発者サービスの存在を確認するコードを実装します。 
-4.  登録トークンに対して GCM とネゴシエートする登録インテントサービスを実装します。
-5.  GCM からの登録トークンの更新をリッスンするインスタンス ID リスナーサービスを実装します。
-6.  GCM を介してアプリサーバーからリモートメッセージを受信する GCM リスナーサービスを実装します。
+1. GCM サーバーとの通信に必要な追加のパッケージをインストールします。
+2. GCM サーバーにアクセスするためのアプリのアクセス許可を構成します。
+3. Google Play 開発者サービスの存在を確認するコードを実装します。 
+4. 登録トークンに対して GCM とネゴシエートする登録インテントサービスを実装します。
+5. GCM からの登録トークンの更新をリッスンするインスタンス ID リスナーサービスを実装します。
+6. GCM を介してアプリサーバーからリモートメッセージを受信する GCM リスナーサービスを実装します。
 
 このアプリでは、*トピックメッセージング*と呼ばれる新しい GCM 機能を使用します。 トピック「メッセージング」では、アプリサーバーは個々のデバイスの一覧ではなく、トピックにメッセージを送信します。 そのトピックにサブスクライブしているデバイスは、プッシュ通知としてトピックメッセージを受信できます。 GCM トピックメッセージングの詳細については、「Google の実装に関する[トピックメッセージング](https://developers.google.com/cloud-messaging/topic-messaging)」を参照してください。 
 
@@ -87,14 +87,14 @@ GCM からメッセージを受信するには、Google Play ストアアプリ�
 
 Android アプリケーションで Google Cloud Messaging から通知を受信するには、次のアクセス許可が構成されている必要があります。 
 
--   `com.google.android.c2dm.permission.RECEIVE`&ndash; Google Cloud Messaging からメッセージを登録および受信するためのアクセス許可をアプリに付与します。 (何`c2dm`を意味するのでしょうか。 これは、_クラウドからデバイスへのメッセージング_を意味します。これは、現在非推奨とされている GCM です。 
+- `com.google.android.c2dm.permission.RECEIVE`&ndash; Google Cloud Messaging からメッセージを登録および受信するためのアクセス許可をアプリに付与します。 (何`c2dm`を意味するのでしょうか。 これは、_クラウドからデバイスへのメッセージング_を意味します。これは、現在非推奨とされている GCM です。 
     GCM は、 `c2dm`多くのアクセス許可文字列で引き続き使用されます)。 
 
--   `android.permission.WAKE_LOCK`&ndash; (省略可能) メッセージをリッスンしている間に、デバイスの CPU がスリープ状態にならないようにします。 
+- `android.permission.WAKE_LOCK`&ndash; (省略可能) メッセージをリッスンしている間に、デバイスの CPU がスリープ状態にならないようにします。 
 
--   `android.permission.INTERNET`&ndash;クライアントアプリが GCM と通信できるように、インターネットアクセスを許可します。 
+- `android.permission.INTERNET`&ndash;クライアントアプリが GCM と通信できるように、インターネットアクセスを許可します。 
 
--   *package_name は、アプリケーション*`.permission.C2D_MESSAGE`を Android に登録し、すべての C2D (クラウドからデバイス) メッセージを排他的に受信するためのアクセス許可を要求します。 &ndash; *Package_name*プレフィックスは、アプリケーション ID と同じです。 
+- *package_name は、アプリケーション*`.permission.C2D_MESSAGE`を Android に登録し、すべての C2D (クラウドからデバイス) メッセージを排他的に受信するためのアクセス許可を要求します。 &ndash; *Package_name*プレフィックスは、アプリケーション ID と同じです。 
 
 これらのアクセス許可は、Android マニフェストで設定します。 **Androidmanifest**を編集して、内容を次の xml に置き換えてみましょう。 
 
@@ -205,11 +205,11 @@ protected override void OnCreate (Bundle bundle)
 
 アプリはアプリサーバーからリモート通知を受信する前に、GCM に登録し、登録トークンを取得する必要があります。 GCM にアプリケーションを登録する作業は、作成し`IntentService`たによって処理されます。 では、次の手順を実行します。`IntentService` 
 
-1.  では、 [InstanceID](https://developers.google.com/instance-id/) API を使用して、クライアントアプリがアプリサーバーにアクセスすることを承認するセキュリティトークンを生成します。 返されると、GCM から登録トークンが返されます。
+1. では、 [InstanceID](https://developers.google.com/instance-id/) API を使用して、クライアントアプリがアプリサーバーにアクセスすることを承認するセキュリティトークンを生成します。 返されると、GCM から登録トークンが返されます。
 
-2.  アプリサーバーに登録トークンを転送します (アプリサーバーで必要な場合)。
+2. アプリサーバーに登録トークンを転送します (アプリサーバーで必要な場合)。
 
-3.  1つ以上の通知トピックチャネルをサブスクライブします。
+3. 1つ以上の通知トピックチャネルをサブスクライブします。
 
 これ`IntentService`を実装した後は、GCM から登録トークンを取得したかどうかをテストして確認します。
 
@@ -272,11 +272,11 @@ namespace ClientApp
 
 上記のサンプルコードでは、 *YOUR_SENDER_ID*をクライアントアプリプロジェクトの送信者 ID 番号に変更します。 プロジェクトの送信者 ID を取得するには、次のようにします。 
 
-1.  [Google Cloud Console](https://console.cloud.google.com/)にログインし、プルダウンメニューからプロジェクト名を選択します。 プロジェクトに対して表示される **[プロジェクト情報]** ウィンドウで、 **[プロジェクト設定へのジャンプ]** をクリックします。
+1. [Google Cloud Console](https://console.cloud.google.com/)にログインし、プルダウンメニューからプロジェクト名を選択します。 プロジェクトに対して表示される **[プロジェクト情報]** ウィンドウで、 **[プロジェクト設定へのジャンプ]** をクリックします。
 
     [![XamarinGCM プロジェクトの選択](remote-notifications-with-gcm-images/7-choose-project-sml.png)](remote-notifications-with-gcm-images/7-choose-project.png#lightbox)
 
-2.  **[設定]** ページで、プロジェクト**番号** &ndash;を探します。これはプロジェクトの送信者 ID です。
+2. **[設定]** ページで、プロジェクト**番号** &ndash;を探します。これはプロジェクトの送信者 ID です。
 
     [![表示されるプロジェクト番号](remote-notifications-with-gcm-images/9-project-number-sml.png)](remote-notifications-with-gcm-images/9-project-number.png#lightbox)
 
@@ -306,7 +306,7 @@ protected override void OnCreate (Bundle bundle)
 [Service (Exported = false)]
 ```
 
-コンストラクター `RegistrationIntentService`は、*デバッグを容易*にするために、ワーカースレッドに名前を設定します。 
+コンストラクター `RegistrationIntentService`は、デバッグを容易にするために、ワーカースレッドに名前を設定します。 
 
 ```csharp
 public RegistrationIntentService() : base ("RegistrationIntentService") { }
@@ -536,7 +536,7 @@ GCM からメッセージを受信するには、その前に、Android マニ�
 
 #### <a name="add-a-reference-to-systemnethttp"></a>System .Net. Http への参照を追加します。
 
-また、テストメッセージを GCM に送信する`System.Net.Http` `HttpClient`ためのをインスタンス化できるように、への参照を追加する必要もあります。 MessageSender プロジェクトで、参照 を右クリックし、**参照の追加 >** をクリックして、 **が表示さ**れるまで下へスクロールします。 **[System .net. Http]** の横にチェックマークを付け、[ **OK]** をクリックします。 
+また、テストメッセージを GCM に送信する`System.Net.Http` `HttpClient`ためのをインスタンス化できるように、への参照を追加する必要もあります。 MessageSender プロジェクトで、参照 を右クリックし、**参照の追加 >** をクリックして、  が表示されるまで下へスクロールします。 **[System .net. Http]** の横にチェックマークを付け、[ **OK]** をクリックします。 
 
 
 #### <a name="implement-code-that-sends-a-test-message"></a>テストメッセージを送信するコードを実装する

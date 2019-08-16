@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: dac81a40983ea8414ec730f10c4c1f17e4d9915c
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 0c606e001552f1c4267ffc29bd69b2f38f2ec971
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653806"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527932"
 ---
 # <a name="core-graphics-in-xamarinios"></a>Xamarin のコアグラフィック
 
@@ -24,10 +24,10 @@ iOS には、低レベルの描画をサポートするための[*コアグラ�
 
 コアグラフィックスは、次のようなさまざまなシナリオでの描画をサポートしています。
 
--  [を`UIView`使用して画面に描画](#Drawing_in_a_UIView_Subclass)します。
--  [メモリまたは画面にイメージを描画](#Drawing_Images_and_Text)します。
--  PDF の作成と描画。
--  既存の PDF の読み取りと描画。
+- [を`UIView`使用して画面に描画](#Drawing_in_a_UIView_Subclass)します。
+- [メモリまたは画面にイメージを描画](#Drawing_Images_and_Text)します。
+- PDF の作成と描画。
+- 既存の PDF の読み取りと描画。
 
 
 ## <a name="geometric-space"></a>幾何学的空間
@@ -36,9 +36,9 @@ iOS には、低レベルの描画をサポートするための[*コアグラ�
 
 このアプローチにはいくつかの利点があります。
 
--  描画コードは動的になり、後で実行時にグラフィックスを変更できます。
--  アプリケーションバンドルの静的イメージの必要性を減らすと、アプリケーションのサイズが小さくなる可能性があります。
--  グラフィックスは、デバイス間の解像度の変更に対して、より高い回復力を持ちます。
+- 描画コードは動的になり、後で実行時にグラフィックスを変更できます。
+- アプリケーションバンドルの静的イメージの必要性を減らすと、アプリケーションのサイズが小さくなる可能性があります。
+- グラフィックスは、デバイス間の解像度の変更に対して、より高い回復力を持ちます。
 
 <a name="Drawing_in_a_UIView_Subclass"/>
 
@@ -270,10 +270,10 @@ public override void Draw (RectangleF rect)
 
 コアグラフィックスは、ビューのグラフィックスコンテキストに描画するだけでなく、イメージの描画とも呼ばれるイメージの描画をサポートします。 これを行うには、以下が必要です。
 
--  インメモリビットマップによってサポートされるグラフィックスコンテキストを作成する
--  描画状態の設定と描画コマンドの発行
--  コンテキストからイメージを取得する
--  コンテキストの削除
+- インメモリビットマップによってサポートされるグラフィックスコンテキストを作成する
+- 描画状態の設定と描画コマンドの発行
+- コンテキストからイメージを取得する
+- コンテキストの削除
 
 
 ビューによってコンテキストが提供されるメソッドとは異なり、この場合は、次の2つの方法のいずれかでコンテキストを作成します。`Draw`

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 5ebfa7348e13e5b168dd7f2decbef921bd7d69e3
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: e943b10623507278c073e73e5b755bcb5954bdaa
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68652120"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528334"
 ---
 # <a name="ios-7-user-interface-overview"></a>iOS 7 ユーザー インターフェイスの概要
 
@@ -130,9 +130,9 @@ cell.SeparatorInset = new UIEdgeInsets (0, 50, 0, 0);
 
 UIKit に加えられた変更に加え、iOS 7 では、次のようなさまざまな視覚変更が UI に導入されています。
 
--  全画面コンテンツ
--  バーの外観
--  濃淡の色
+- 全画面コンテンツ
+- バーの外観
+- 濃淡の色
 
 <a name="fullscreen" />
 
@@ -259,7 +259,7 @@ public override bool PrefersStatusBarHidden ()
 
 IOS 7 では、ユーザーはシステム設定でテキストのサイズを指定できます。 動的な型の場合、フォントはサイズに関係なく、適切に表示されるように動的に調整されます。 `UIFont.PreferredFontForTextStyle`は、ユーザーが制御するサイズに最適化されたフォントを取得するために使用する必要があります。
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
 この記事では、iOS 7 のユーザーインターフェイス要素に加えられた変更について説明します。 ここでは、UIKit のビューとコントロールに加えられたいくつかの変更を調べ、ビジュアルの変更と関連する Api の変更の両方を強調表示しています。 最後に、全画面コンテンツ、新しい着色色のサポート、および動的な型を操作するための新しい Api が導入されました。
 

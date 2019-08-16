@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: dd935e6feb14d9077c1ad98a2e7e10e67646dc4f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: f77a4f2f31c72726515e33dc273616f175df2891
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650118"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528525"
 ---
 # <a name="creating-user-interface-objects-in-xamarinios"></a>Xamarin でのユーザーインターフェイスオブジェクトの作成
 
@@ -28,9 +28,9 @@ using UIKit;
 
 UI コントロールとレイアウトは、次の3つの方法で編集できます。
 
--  **[Xamarin IOS Designer](~/ios/user-interface/designer/index.md)** – xamarin の組み込みレイアウトデザイナーを使用して、画面をデザインします。 ストーリーボードまたは XIB ファイルをダブルクリックして、組み込みのデザイナーで編集します。
--  **Xcode Interface Builder** – Interface Builder を使用してコントロールを画面レイアウトにドラッグします。 **Solution Pad**内のファイルを右クリックし、 **[> Xcode Interface Builder で開く]** を選択して、ストーリーボードまたは XIB ファイルを開きます。
--  **をC#使用**すると、コードを使用してプログラムで作成し、ビュー階層に追加することもできます。
+- **[Xamarin IOS Designer](~/ios/user-interface/designer/index.md)** – xamarin の組み込みレイアウトデザイナーを使用して、画面をデザインします。 ストーリーボードまたは XIB ファイルをダブルクリックして、組み込みのデザイナーで編集します。
+- **Xcode Interface Builder** – Interface Builder を使用してコントロールを画面レイアウトにドラッグします。 **Solution Pad**内のファイルを右クリックし、 **[> Xcode Interface Builder で開く]** を選択して、ストーリーボードまたは XIB ファイルを開きます。
+- **をC#使用**すると、コードを使用してプログラムで作成し、ビュー階層に追加することもできます。
 
 新しいストーリーボードと XIB ファイルを追加するには、iOS プロジェクトを右クリックし、[**新しいファイルの追加 >.** ..] を選択します。
 
@@ -92,12 +92,12 @@ Xcode の Interface Builder と Visual Studio for Mac との統合方法の詳�
 
 (ビューコントローラーまたはビューコントローラーなどで) をC#使用してプログラムでユーザーインターフェイスオブジェクトを作成する場合は、次の手順を実行します。
 
--  ユーザーインターフェイスオブジェクトのクラスレベルフィールドを宣言します。 たとえば、 `ViewDidLoad`コントロール自体を1回作成します。 次に、ビューコントローラーのライフサイクルメソッド全体でオブジェクトを参照できます (
+- ユーザーインターフェイスオブジェクトのクラスレベルフィールドを宣言します。 たとえば、 `ViewDidLoad`コントロール自体を1回作成します。 次に、ビューコントローラーのライフサイクルメソッド全体でオブジェクトを参照できます (
 `ViewWillAppear`)
--  コントロールの`CGRect`フレーム (画面上の X 座標と Y 座標、およびその幅と高さ) を定義するを作成します。 このための`using CoreGraphics`ディレクティブがあることを確認する必要があります。
--  コントロールを作成して割り当てるには、コンストラクターを呼び出します。
--  プロパティまたはイベントハンドラーを設定します。
--  を`Add()`呼び出して、ビュー階層にコントロールを追加します。
+- コントロールの`CGRect`フレーム (画面上の X 座標と Y 座標、およびその幅と高さ) を定義するを作成します。 このための`using CoreGraphics`ディレクティブがあることを確認する必要があります。
+- コントロールを作成して割り当てるには、コンストラクターを呼び出します。
+- プロパティまたはイベントハンドラーを設定します。
+- を`Add()`呼び出して、ビュー階層にコントロールを追加します。
 
 次に、を使用して`UILabel` C#ビューコントローラーでを作成する簡単な例を示します。
 

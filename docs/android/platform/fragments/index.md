@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2018
-ms.openlocfilehash: cfc4420d95778188368f3e7d3595713d83371d33
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: b04ecf0685e78b73346ea5af815ed46f98b5da0f
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643602"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524359"
 ---
 # <a name="fragments"></a>フラグメント
 
@@ -42,9 +42,9 @@ _Android 3.0 では、スマートフォンやタブレットで検出された�
 
 このガイドでは、次のようなフラグメントの使用方法について包括的に説明します。
 
--   **フラグメントの作成**–実装する必要がある基本的なフラグメントとキーメソッドを作成する方法。
--   **フラグメントの管理とトランザクション**–実行時にフラグメントを操作する方法について説明します。
--   **Android サポートパッケージ**–以前のバージョンの Android でフラグメントを使用できるようにするライブラリを使用する方法について説明します。
+- **フラグメントの作成**–実装する必要がある基本的なフラグメントとキーメソッドを作成する方法。
+- **フラグメントの管理とトランザクション**–実行時にフラグメントを操作する方法について説明します。
+- **Android サポートパッケージ**–以前のバージョンの Android でフラグメントを使用できるようにするライブラリを使用する方法について説明します。
 
 
 ## <a name="requirements"></a>必要条件

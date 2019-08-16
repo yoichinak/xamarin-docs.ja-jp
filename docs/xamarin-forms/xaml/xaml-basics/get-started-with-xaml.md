@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2018
-ms.openlocfilehash: 085960b92aa0f349d4cb2737385e723d8b6aa6b7
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: f4acadc1153c93ebade7453cfd7a79f5b052e513
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656514"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528355"
 ---
 # <a name="part-1-getting-started-with-xaml"></a>第 1 部です。 XAML の概要
 
@@ -211,9 +211,9 @@ Visual Studio では、プロジェクトをビルド、生成する XAML ファ
 
 複雑な型のプロパティ、ただし、コンバーターが使用、XAML を解析するためです。 これらは、クラスから派生する Xamarin.Forms`TypeConverter`します。 多くは、パブリック クラスですが、一部ができません。 この特定の XAML ファイルのこれらのクラスのいくつかは、バック グラウンドの役割を果たします。
 
--  `LayoutOptionsConverter` `VerticalOptions`プロパティ
--  `FontSizeConverter` `FontSize`プロパティ
--  `ColorTypeConverter` `TextColor`プロパティ
+- `LayoutOptionsConverter` `VerticalOptions`プロパティ
+- `FontSizeConverter` `FontSize`プロパティ
+- `ColorTypeConverter` `TextColor`プロパティ
 
 これらのコンバーターは、プロパティの設定の使用可能な構文を制御します。
 

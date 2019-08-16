@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 209d70c2e158261ca671e6a889e979de39362d53
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 38d58350cf067a2d5f7813250590cc0715b6c9ea
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647985"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527398"
 ---
 # <a name="introduction-to-3d-touch-in-xamarinios"></a>Xamarin での3D タッチの概要
 
@@ -274,11 +274,11 @@ public override void ViewDidLoad ()
   - `UIApplicationShortcutIconTypeTime`
   - `UIApplicationShortcutIconTypeUpdate`
 
-        ![](3d-touch-images/uiapplicationshortcuticontype.png "UIApplicationShortcutIconType imagery")
+  ![](3d-touch-images/uiapplicationshortcuticontype.png "UIApplicationShortcutIconType の画像")
 
-* `UIApplicationShortcutItemSubtitle`-項目のサブタイトルを定義します。
-* `UIApplicationShortcutItemTitle`-項目のタイトルを定義します。
-* `UIApplicationShortcutItemType`-は、アプリ内の項目を識別するために使用する文字列値です。 詳細については、以下のセクションを参照してください。
+- `UIApplicationShortcutItemSubtitle`-項目のサブタイトルを定義します。
+- `UIApplicationShortcutItemTitle`-項目のタイトルを定義します。
+- `UIApplicationShortcutItemType`-は、アプリ内の項目を識別するために使用する文字列値です。 詳細については、以下のセクションを参照してください。
 
 > [!IMPORTANT]
 > `Info.plist`ファイルに設定されているクイックアクションのショートカット項目は、 `Application.ShortcutItems`プロパティを使用してアクセスできません。 これらは、 `HandleShortcutItem`イベントハンドラーにのみ渡されます。

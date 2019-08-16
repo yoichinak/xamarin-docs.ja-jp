@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2018
-ms.openlocfilehash: 52141141ab525c7407fa2f3ff2dca749473b39c1
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: d4d7379e1d4d2dd605331b30d692df299f5f5c13
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511451"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69523668"
 ---
 # <a name="android-pie-features"></a>Android の円機能
 
@@ -95,13 +95,13 @@ Android プロジェクトを作成するときは、バージョン設定を An
 
 Android の円グラフには、さまざまな新機能が導入されています。 これらの新機能の一部は、最新の Android デバイスによって提供される新しいハードウェア機能を利用することを目的としていますが、Android ユーザーエクスペリエンスをさらに強化するように設計されています。
 
--   **切り取り線のサポートを表示**する新しい Android デバイス上の画面の上部にある_カットアウト_の位置と形状を検索するための api を提供します。 &ndash;
+- **切り取り線のサポートを表示**する新しい Android デバイス上の画面の上部にある_カットアウト_の位置と形状を検索するための api を提供します。 &ndash;
 
--   **通知の機能強化**通知メッセージに画像を表示できるようになり`Person`ました。また、新しいクラスを使用して、メッセージ交換の参加者を簡略化します。 &ndash;
+- **通知の機能強化**通知メッセージに画像を表示できるようになり`Person`ました。また、新しいクラスを使用して、メッセージ交換の参加者を簡略化します。 &ndash;
 
--   **室内ポジショニング**&ndash; Wifi ラウンドトリップタイムプロトコルのプラットフォームサポート。これにより、アプリは、屋内設定のナビゲーションに wifi デバイスを使用できるようになります。
+- **室内ポジショニング**&ndash; Wifi ラウンドトリップタイムプロトコルのプラットフォームサポート。これにより、アプリは、屋内設定のナビゲーションに wifi デバイスを使用できるようになります。
 
--   **マルチカメラのサポート**&ndash;では、複数の物理カメラ (デュアルフロントとデュアルバックカメラなど) からストリームに同時にアクセスする機能が提供されています。
+- **マルチカメラのサポート**&ndash;では、複数の物理カメラ (デュアルフロントとデュアルバックカメラなど) からストリームに同時にアクセスする機能が提供されています。
 
 
 以下のセクションでは、これらの機能について説明し、アプリでの使用を開始するのに役立つ簡単なコード例を示します。
@@ -115,11 +115,11 @@ Android の円グラフには、さまざまな新機能が導入されていま
 
 アプリウィンドウで、表示をカットアウトしてデバイスにコンテンツを表示する方法を管理するために、Android の円グラフに新しい[LayoutInDisplayCutoutMode](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#layoutInDisplayCutoutMode)ウィンドウレイアウト属性が追加されました。 この属性は、次のいずれかの値に設定できます。
 
--   [LayoutInDisplayCutoutModeNever](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_NEVER)&ndash;ウィンドウは、カットアウト領域と重複することはできません。
+- [LayoutInDisplayCutoutModeNever](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_NEVER)&ndash;ウィンドウは、カットアウト領域と重複することはできません。
 
--   [LayoutInDisplayCutoutModeShortEdges](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES)&ndash;ウィンドウは、カットアウト領域に拡張できますが、画面の短辺にのみ表示されます。 
+- [LayoutInDisplayCutoutModeShortEdges](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES)&ndash;ウィンドウは、カットアウト領域に拡張できますが、画面の短辺にのみ表示されます。 
 
--   [LayoutInDisplayCutoutModeDefault](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_DEFAULT)&ndash;システムバー内にカットアウトが含まれている場合、ウィンドウは切り出領域に拡張できます。
+- [LayoutInDisplayCutoutModeDefault](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_DEFAULT)&ndash;システムバー内にカットアウトが含まれている場合、ウィンドウは切り出領域に拡張できます。
 
 たとえば、アプリウィンドウが切り使用領域と重ならないようにするには、レイアウトのカットアウトモードを [*なし*] に設定します。 
 
@@ -145,13 +145,13 @@ Android P の新しいカットアウト機能の詳細については、「[切
 
 Android の円グラフでは、メッセージングエクスペリエンスを向上させるために次の機能強化が導入されています。
 
--   ( [Android Oreo](~/android/platform/oreo.md)で導入された) 通知チャネルで、チャネルグループのブロックがサポートされるようになりました。
+- ( [Android Oreo](~/android/platform/oreo.md)で導入された) 通知チャネルで、チャネルグループのブロックがサポートされるようになりました。
 
--   通知システムには、3つの新しい [応答不可] カテゴリがあります (アラーム、システムサウンド、およびメディアソースに優先順位を付けます)。 また、視覚的な中断 (バッジ、通知ライト、ステータスバーの外観、全画面表示の活動の開始など) を抑制するために使用できる、新しい "応答不可" モードが7つあります。
+- 通知システムには、3つの新しい [応答不可] カテゴリがあります (アラーム、システムサウンド、およびメディアソースに優先順位を付けます)。 また、視覚的な中断 (バッジ、通知ライト、ステータスバーの外観、全画面表示の活動の開始など) を抑制するために使用できる、新しい "応答不可" モードが7つあります。
 
--   メッセージの送信者を表す新しい[Person](https://developer.android.com/reference/android/app/Person.html)クラスが追加されました。 このクラスを使用すると、メッセージ交換に関係するユーザー (アバターや Uri など) を識別することによって、各通知のレンダリングを最適化できます。
+- メッセージの送信者を表す新しい[Person](https://developer.android.com/reference/android/app/Person.html)クラスが追加されました。 このクラスを使用すると、メッセージ交換に関係するユーザー (アバターや Uri など) を識別することによって、各通知のレンダリングを最適化できます。
 
--   通知に画像が表示されるようになりました。 
+- 通知に画像が表示されるようになりました。 
 
 次の例は、新しい Api を使用して、イメージを含む通知を生成する方法を示しています。 次のスクリーンショットでは、テキスト通知が送信され、その後に埋め込み画像を含む通知が続きます。 (右側に示されているように) 通知が展開されると、最初の通知のテキストが表示され、2番目の通知に埋め込まれている画像が拡大されます。
 
@@ -230,13 +230,13 @@ Android P でのマルチカメラのサポートの詳細については、「[
 
 さらに、Android の円グラフでは、他のいくつかの新機能がサポートされています。
 
--   新しい[AnimatedImageDrawable](https://developer.android.com/reference/android/graphics/drawable/AnimatedImageDrawable.html)クラス。アニメーション化されたイメージを描画および表示するために使用できます。
+- 新しい[AnimatedImageDrawable](https://developer.android.com/reference/android/graphics/drawable/AnimatedImageDrawable.html)クラス。アニメーション化されたイメージを描画および表示するために使用できます。
 
--   `BitmapFactory` を置き換える新しい [ImageDecoder](https://developer.android.com/reference/android/graphics/ImageDecoder.html) クラス。 `ImageDecoder`をデコード`AnimatedImageDrawable`するために使用できます。
+- `BitmapFactory` を置き換える新しい [ImageDecoder](https://developer.android.com/reference/android/graphics/ImageDecoder.html) クラス。 `ImageDecoder`をデコード`AnimatedImageDrawable`するために使用できます。
 
--   HDR (High Dynamic Range) video および HEIF (高効率のイメージファイル形式) イメージのサポート。
+- HDR (High Dynamic Range) video および HEIF (高効率のイメージファイル形式) イメージのサポート。
 
--   [Jobscheduler](https://developer.android.com/reference/android/app/job/JobScheduler.html)は、ネットワーク関連のジョブをよりインテリジェントに処理するように強化されています。 [Jobparameters](https://developer.android.com/reference/android/app/job/JobParameters)クラスの新しい[getnetwork](https://developer.android.com/reference/android/app/job/JobParameters#getNetwork%28%29)メソッドは、特定のジョブに対してネットワーク要求を実行するのに最適なネットワークを返します。
+- [Jobscheduler](https://developer.android.com/reference/android/app/job/JobScheduler.html)は、ネットワーク関連のジョブをよりインテリジェントに処理するように強化されています。 [Jobparameters](https://developer.android.com/reference/android/app/job/JobParameters)クラスの新しい[getnetwork](https://developer.android.com/reference/android/app/job/JobParameters#getNetwork%28%29)メソッドは、特定のジョブに対してネットワーク要求を実行するのに最適なネットワークを返します。
 
 Android の最新の円機能の詳細については、「 [android 9 の機能と api](https://developer.android.com/about/versions/pie/android-9.0)」を参照してください。
 
@@ -245,11 +245,11 @@ Android の最新の円機能の詳細については、「 [android 9 の機能
 
 ターゲットの Android バージョンが API レベル28に設定されている場合、上で説明した新機能を実装していない場合でも、アプリの動作に影響を与える可能性があるプラットフォームの変更がいくつかあります。 これらの変更の簡単な概要を次に示します。
 
--  フォアグラウンドサービスを使用する前に、アプリでフォアグラウンドアクセス許可を要求できるようになりました。
+- フォアグラウンドサービスを使用する前に、アプリでフォアグラウンドアクセス許可を要求できるようになりました。
 
--  アプリに複数のプロセスがある場合、プロセス間で1つの[WebView](xref:Android.Webkit.WebView)データディレクトリを共有することはできません。
+- アプリに複数のプロセスがある場合、プロセス間で1つの[WebView](xref:Android.Webkit.WebView)データディレクトリを共有することはできません。
 
--  別のアプリのデータディレクトリにパスで直接アクセスすることはできなくなりました。
+- 別のアプリのデータディレクトリにパスで直接アクセスすることはできなくなりました。
 
 Android P を対象とするアプリの動作変更の詳細については、「[動作の変更](https://developer.android.com/about/versions/pie/android-9.0-changes-all#p-apps)」を参照してください。
 

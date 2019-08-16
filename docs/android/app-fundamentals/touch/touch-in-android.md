@@ -6,30 +6,30 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 7f68695b4fa6b8abb7938dd96794eb1d0d1d13a5
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 274c441e0507f100697fc153a9f748de1bce4cf3
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643952"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526070"
 ---
 # <a name="touch-in-android"></a>Android でのタッチ
 
 IOS と同様に、Android では、ユーザーの画面&ndash; `Android.View.MotionEvent`とオブジェクトの物理的な相互作用に関するデータを保持するオブジェクトが作成されます。 このオブジェクトには、実行されたアクション、タッチが行われた場所、適用された負荷などのデータが保持されます。オブジェクト`MotionEvent`は、への移動を次の値に分割します。
 
--  初期タッチ、画面上でのタッチの移動、タッチの終了など、モーションの種類を記述するアクションコード。
+- 初期タッチ、画面上でのタッチの移動、タッチの終了など、モーションの種類を記述するアクションコード。
 
--  タッチが行われている場所、タッチが発生`MotionEvent`したとき、使用された圧力など、の移動プロパティおよびその他の移動プロパティの位置を表す軸値のセット。
+- タッチが行われている場所、タッチが発生`MotionEvent`したとき、使用された圧力など、の移動プロパティおよびその他の移動プロパティの位置を表す軸値のセット。
    軸の値はデバイスによって異なる場合があるため、前の一覧にはすべての軸の値が記述されていません。
 
 
 オブジェクト`MotionEvent`は、アプリケーション内の適切なメソッドに渡されます。 Xamarin Android アプリケーションがタッチイベントに応答するには、次の3つの方法があります。
 
--  *イベントハンドラーをに`View.Touch`割り当てる*- `Android.Views.View`クラスには、 `EventHandler<View.TouchEventArgs>`ハンドラーを割り当てることができるアプリケーションがあります。 これは、一般的な .NET の動作です。
+- *イベントハンドラーをに`View.Touch`割り当てる*- `Android.Views.View`クラスには、 `EventHandler<View.TouchEventArgs>`ハンドラーを割り当てることができるアプリケーションがあります。 これは、一般的な .NET の動作です。
 
--  このインターフェイスの*実装`View.IOnTouchListener`* インスタンスは、ビューを使用してビューオブジェクトに割り当てることができます。 `SetOnListener`b.これは、 `View.Touch`イベントハンドラーをイベントに割り当てることと機能的には同じです。 いくつかの一般的なロジックや共有ロジックがあり、それらのビューを操作するときにさまざまなビューが必要になることがある場合は、クラスを作成し、各ビューに独自のイベントハンドラーを割り当てるよりも、このメソッドを実装する方が効率的です。
+- このインターフェイスの*実装`View.IOnTouchListener`* インスタンスは、ビューを使用してビューオブジェクトに割り当てることができます。 `SetOnListener`b.これは、 `View.Touch`イベントハンドラーをイベントに割り当てることと機能的には同じです。 いくつかの一般的なロジックや共有ロジックがあり、それらのビューを操作するときにさまざまなビューが必要になることがある場合は、クラスを作成し、各ビューに独自のイベントハンドラーを割り当てるよりも、このメソッドを実装する方が効率的です。
 
--  *上書き`View.OnTouchEvent`*  -Android サブクラス`Android.Views.View`のすべてのビュー。 ビューにタッチすると、Android はを呼び出し`OnTouchEvent` 、パラメーターとし`MotionEvent`てオブジェクトを渡します。
+- *上書き`View.OnTouchEvent`*  -Android サブクラス`Android.Views.View`のすべてのビュー。 ビューにタッチすると、Android はを呼び出し`OnTouchEvent` 、パラメーターとし`MotionEvent`てオブジェクトを渡します。
 
 
 > [!NOTE]
@@ -67,17 +67,17 @@ public override bool OnTouchEvent(MotionEvent e)
 の`GestureDetector`インスタンスは、目的のジェスチャを識別するときに、イベントを発生させるか、によっ`GestureDetector.IOnGestureListener`て提供されるコールバックを使用して、アクティビティまたはアプリケーションに通知します。
 このインターフェイスは、さまざまなジェスチャに対して6つのメソッドを提供します。
 
--  *Ondown* -タップが発生したが、解放されていない場合に呼び出されます。
+- *Ondown* -タップが発生したが、解放されていない場合に呼び出されます。
 
--  *OnFling* -theory が発生し、イベントをトリガーした開始および終了のタッチにデータを提供するときに呼び出されます。
+- *OnFling* -theory が発生し、イベントをトリガーした開始および終了のタッチにデータを提供するときに呼び出されます。
 
--  *Onlongpress*は、長い押下が発生したときに呼び出されます。
+- *Onlongpress*は、長い押下が発生したときに呼び出されます。
 
--  *Onscroll* -scroll イベントが発生したときに呼び出されます。
+- *Onscroll* -scroll イベントが発生したときに呼び出されます。
 
--  *Onshowpress*は、ondown が発生し、move または up イベントが実行されていない状態で呼び出されました。
+- *Onshowpress*は、ondown が発生し、move または up イベントが実行されていない状態で呼び出されました。
 
--  *OnSingleTapUp* -シングルタップが発生したときに呼び出されます。
+- *OnSingleTapUp* -シングルタップが発生したときに呼び出されます。
 
 
 多くの場合、アプリケーションはジェスチャのサブセットのみを対象にすることができます。 この場合、アプリケーションは GestureDetector クラスを拡張し、関心のあるイベントに対応するメソッドをオーバーライドする必要があります。

@@ -1,60 +1,60 @@
 ---
-title: HttpClient スタックと SSL/TLS の実装セレクター for Android
-description: HttpClient スタックと SSL/TLS の実装セレクターは、Xamarin.Android アプリで使用する HttpClient と SSL/TLS の実装を決定します。
+title: Android 用の HttpClient スタックと SSL/TLS 実装セレクター
+description: HttpClient スタックと SSL/TLS 実装セレクターによって、Xamarin Android アプリで使用される HttpClient と SSL/TLS の実装が決まります。
 ms.prod: xamarin
 ms.assetid: D7ABAFAB-5CA2-443D-B902-2C7F3AD69CE2
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/20/2018
-ms.openlocfilehash: e6d8ccea7331f53d2e7262630689075a8b9a1ff1
-ms.sourcegitcommit: 450106d5f05b4473bf7f5b9100b2eaf18c9110de
+ms.openlocfilehash: 9f66764fef5c54563ffd03274b1f86a8c0bcc637
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67522968"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522147"
 ---
-# <a name="httpclient-stack-and-ssltls-implementation-selector-for-android"></a>HttpClient スタックと SSL/TLS の実装セレクター for Android
+# <a name="httpclient-stack-and-ssltls-implementation-selector-for-android"></a>Android 用の HttpClient スタックと SSL/TLS 実装セレクター
 
-HttpClient スタックと SSL/TLS の実装セレクターは、Xamarin.Android アプリで使用する HttpClient と SSL/TLS の実装を決定します。
+HttpClient スタックと SSL/TLS 実装セレクターによって、Xamarin Android アプリで使用される HttpClient と SSL/TLS の実装が決まります。
 
-プロジェクトを参照する必要があります、 **System.Net.Http**アセンブリ。
+プロジェクトは、**システムの .net. Http**アセンブリを参照する必要があります。
 
 > [!WARNING]
-> **2018 年 4 月、** : セキュリティ強化のため主要なクラウド プロバイダーの要件、PCI のコンプライアンスを含むし、web サーバーが TLS バージョン 1.2 より前のサポートを停止する必要があります。  以前のバージョンの TLS を使用する Visual Studio の既定値の以前のバージョンで作成した Xamarin プロジェクト。
+> **2018 年4月、** セキュリティ要件が増加しているため (PCI コンプライアンスを含む)、主要クラウドプロバイダーと web サーバーは、1.2 より前の TLS バージョンのサポートを停止することが予想されます。 以前のバージョンの Visual Studio で作成された Xamarin プロジェクトは、既定で古いバージョンの TLS を使用します。
 >
-> アプリは引き続きこれらのサーバーとサービスを使用することを確認するには**で Xamarin プロジェクトを更新する必要があります、`Android HttpClient`と`Native TLS 1.2`、次に示す設定を再構築し、アプリを再デプロイ**に、ユーザー。
+> アプリがこれらのサーバーとサービスを引き続き使用できるようにするに**は、 `Android HttpClient`以下に示す`Native TLS 1.2`設定とを使用して Xamarin プロジェクトを更新し、ユーザーにアプリを再構築して再デプロイする必要があり**ます。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-Xamarin.Android HttpClient 構成が**プロジェクト オプション > Android オプション**、 をクリックし、**詳細オプション**ボタン。
+Xamarin HttpClient の構成は、 **[プロジェクトオプション > Android オプション]** にあり、 **[詳細オプション]** ボタンをクリックします。
 
-TLS 1.2 のサポートの推奨設定を次に示します。
+TLS 1.2 サポートに推奨される設定は次のとおりです。
 
 [![Visual Studio Android オプション](http-stack-images/android-win-sml.png)](http-stack-images/android-win.png#lightbox)
 
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-Xamarin.Android HttpClient 構成が**プロジェクト オプション > ビルド > Android のビルド**設定とをクリックして、**全般** タブ。
+Xamarin の HttpClient の構成は、 **[プロジェクトオプション]** で、Android のビルド設定 > ビルドし > **[全般]** タブをクリックします。
 
-TLS 1.2 のサポートの推奨設定を次に示します。
+TLS 1.2 サポートに推奨される設定は次のとおりです。
 
-[![Visual Studio for Mac の Android オプション](http-stack-images/android-mac-sml.png)](http-stack-images/android-mac.png#lightbox)
+[![Android オプションの Visual Studio for Mac](http-stack-images/android-mac-sml.png)](http-stack-images/android-mac.png#lightbox)
 
 -----
 
-## <a name="alternative-configuration-options"></a>代替の構成オプション
+## <a name="alternative-configuration-options"></a>その他の構成オプション
 
 ### <a name="androidclienthandler"></a>AndroidClientHandler
 
-AndroidClientHandler は、マネージ コードで実装するすべてのものではなく、ネイティブの Java/OS コードにデリゲートする新しいハンドラーです。
-**これは、推奨されるオプションです。**
+AndroidClientHandler は、マネージコードですべてを実装するのではなく、ネイティブ Java/OS コードにデリゲートする新しいハンドラーです。
+**このオプションを選択することをお勧めします。**
 
-#### <a name="pros"></a>プロフェッショナル
+#### <a name="pros"></a>長所
 
-- ネイティブ API を使用して、パフォーマンスと実行可能ファイルのサイズを小さくします。
-- 次のような最新の標準をサポートします。 TLS 1.2.
+- パフォーマンスを向上させ、実行可能ファイルのサイズを小さくするには、ネイティブ API を使用します。
+- 最新の標準のサポート (例) TLS 1.2.
 
 #### <a name="cons"></a>短所
 
@@ -63,48 +63,48 @@ AndroidClientHandler は、マネージ コードで実装するすべてのも�
 
 ### <a name="managed-httpclienthandler"></a>マネージド (HttpClientHandler)
 
-マネージ ハンドラーは、Xamarin.Android の以前のバージョンから同梱されている完全管理型の HttpClient ハンドラーです。
+マネージハンドラーは、以前の Xamarin. Android バージョンに付属していた、完全に管理された HttpClient ハンドラーです。
 
-#### <a name="pros"></a>プロフェッショナル
+#### <a name="pros"></a>長所
 
-- 最も互換性のある (機能) と MS .NET および Xamarin の古いバージョンをお勧めします。
+- これは、MS .NET と以前の Xamarin バージョンで最も互換性のある (機能) です。
 
 #### <a name="cons"></a>短所
 
-- いない完全に統合されて、OS (例。 制限あり TLS 1.0)。
-- 通常はかなり遅くなります (例。 暗号化) のネイティブ API よりもします。
-- マネージ コード、大規模なアプリケーションを作成することが必要です。
+- OS と完全に統合されていません (例: TLS 1.0) に制限されています。
+- 通常は非常に遅くなります ( 暗号化) をネイティブ API よりも後に行います。
+- より大きなアプリケーションを作成するために、より多くのマネージコードが必要になります。
 
 
 
-### <a name="choosing-a-handler"></a>ハンドラーを選択します。
+### <a name="choosing-a-handler"></a>ハンドラーの選択
 
-間で choice`AndroidClientHandler`と`HttpClientHandler`アプリケーションのニーズによって異なります。 `AndroidClientHandler` お勧め、最新のセキュリティ サポートでは、次のような。
+`AndroidClientHandler` と`HttpClientHandler`の選択は、アプリケーションのニーズによって異なります。 `AndroidClientHandler`は、最新のセキュリティサポートにお勧めします (例:)。
 
--   TLS 1.2 + サポートが必要です。
--   アプリが Android 4.1 (API 16) を対象とするまたはそれ以降。
--   必要な TLS 1.2 + サポート`HttpClient`します。
--   不要な TLS 1.2 + サポート`WebClient`します。
+- TLS 1.2 以降のサポートが必要です。
+- アプリは Android 4.1 (API 16) 以降を対象としています。
+- の TLS 1.2 以降の`HttpClient`サポートが必要です。
+- では、TLS 1.2 以降のサポート`WebClient`は必要ありません。
 
-`HttpClientHandler` TLS 1.2 + 必要がある場合、適切な選択は、サポートしますが、Android 4.1 より前のバージョンの Android をサポートする必要があります。 これもをお勧め TLS 1.2 + が必要な場合のサポート`WebClient`します。
+`HttpClientHandler`は、TLS 1.2 以降のサポートが必要であるが、android 4.1 より前のバージョンの Android をサポートする必要がある場合に適しています。 また、TLS 1.2 + のサポートが必要な場合に`WebClient`も適しています。
 
-以降では、Xamarin.Android 8.3、`HttpClientHandler`退屈 SSL の既定値 (`btls`) 基になる TLS プロバイダーとして。 SSL/TLS を退屈プロバイダーには次の利点があります。
+Xamarin Android 8.3 以降では、 `HttpClientHandler`基になる TLS プロバイダー`btls`として、既定では退屈な SSL () が使用されます。 退屈な SSL TLS プロバイダーには、次のような利点があります。
 
--   TLS 1.2 + をサポートします。
--   すべての Android バージョンをサポートします。
--   TLS 1.2 + が両方のサポートを提供します`HttpClient`と`WebClient`します。
+- TLS 1.2 以降がサポートされています。
+- すべての Android バージョンがサポートされています。
+- TLS 1.2 以降のサポートをと`HttpClient` `WebClient`の両方に提供します。
 
-退屈 SSL を使用して、元になる TLS プロバイダーとしての欠点は、(サポートされる ABI ごとに追加の APK サイズの約 1 MB を追加)、結果として得られる APK のサイズを増やすことできます。
+退屈な SSL を使用していない TLS プロバイダーとして使用する場合の欠点は、結果として得られる APK のサイズを増やすことができることです (サポートされている ABI ごとに追加の APK サイズの約 1 MB を追加します)。
 
-Xamarin.Android 8.3 以降、既定の TLS プロバイダーは退屈 SSL (`btls`)。 設定して、履歴マネージ SSL 実装に戻すことができます、ボーリングの SSL を使用しない場合、`$(AndroidTlsProvider)`プロパティを`legacy`(ビルドのプロパティの設定の詳細については、次を参照してください。[ビルド プロセス](~/android/deploy-test/building-apps/build-process.md))。
+Xamarin Android 8.3 以降では、既定の TLS プロバイダーは、退屈な`btls`SSL () です。 退屈な ssl を使用しない場合は、 `$(AndroidTlsProvider)`プロパティをに設定する`legacy`ことによって、管理された ssl 実装の履歴に戻すことができます (ビルドプロパティの設定の詳細については、「[ビルドプロセス](~/android/deploy-test/building-apps/build-process.md)」を参照してください)。
 
 
-### <a name="programatically-using-androidclienthandler"></a>プログラムで使用します。 `AndroidClientHandler`
+### <a name="programatically-using-androidclienthandler"></a>プログラムによる使用`AndroidClientHandler`
 
-`Xamarin.Android.Net.AndroidClientHandler`は、 `HttpMessageHandler` Xamarin.Android 向けの実装。
-このクラスのインスタンスが、ネイティブを使用して`java.net.URLConnection`すべての HTTP 接続を実装します。 これは、HTTP パフォーマンス、および小規模な APK のサイズの増加を理論的に提供されます。
+は、 `Xamarin.Android.Net.AndroidClientHandler` Xamarin. Android 専用の実装です。`HttpMessageHandler`
+このクラスのインスタンスは、すべての`java.net.URLConnection` HTTP 接続に対してネイティブ実装を使用します。 これにより、理論的に HTTP パフォーマンスが向上し、APK サイズが小さくなります。
 
-このコード スニペットの 1 つのインスタンスを明示的にする方法の例に示します、`HttpClient`クラス。
+次のコードスニペットは、 `HttpClient`クラスの1つのインスタンスに対して明示的にを使用する方法の例です。
 
 ```csharp
 // Android 4.1 or higher, Xamarin.Android 6.1 or higher
@@ -112,20 +112,20 @@ HttpClient client = new HttpClient(new Xamarin.Android.Net.AndroidClientHandler 
 ```
 
 > [!NOTE]
-> 基になる Android デバイスが TLS 1.2 (つまりをサポートする必要があります。Android 4.1 以降)。 TLS 1.2 の公式のサポートは、Android 5.0 以降でことに注意してください。 ただし一部のデバイスは、Android 4.1 + で TLS 1.2 をサポートします。
+> 基になる Android デバイスは、TLS 1.2 (ie をサポートしている必要があります。Android 4.1 以降)。 TLS 1.2 の公式のサポートは Android 5.0 以降であることに注意してください。 ただし、一部のデバイスでは、Android 4.1 以降で TLS 1.2 がサポートされています。
 
 
-## <a name="ssltls-implementation-build-option"></a>SSL/TLS 実装ビルド オプション
+## <a name="ssltls-implementation-build-option"></a>SSL/TLS 実装のビルドオプション
 
-このプロジェクトのオプションは、すべての web 要求で使用されるどのような基になる TLS ライブラリを制御します。 どちらも`HttpClient`と`WebRequest`します。 既定では、TLS 1.2 が選択されます。
+このプロジェクトオプションでは、すべての web 要求で使用される基になる`HttpClient` TLS `WebRequest`ライブラリ (との両方) を制御します。 既定では、TLS 1.2 が選択されています。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![Visual Studio での TLS または SSL 実装コンボ ボックス](http-stack-images/tls06-vs.png)](http-stack-images/tls05-vs.png#lightbox)
+[![Visual Studio の TLS/SSL 実装コンボボックス](http-stack-images/tls06-vs.png)](http-stack-images/tls05-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-[![Visual Studio for Mac での TLS または SSL 実装コンボ ボックス](http-stack-images/tls06-xs.png)](http-stack-images/tls05-xs.png#lightbox)
+[![Visual Studio for Mac の TLS/SSL 実装コンボボックス](http-stack-images/tls06-xs.png)](http-stack-images/tls05-xs.png#lightbox)
 
 -----
 
@@ -135,51 +135,51 @@ HttpClient client = new HttpClient(new Xamarin.Android.Net.AndroidClientHandler 
 var client = new HttpClient();
 ```
 
-HttpClient 実装に設定された場合**マネージ**に設定されている TLS の実装と**ネイティブ TLS 1.2 +** 、`client`オブジェクトが、管理対象に自動的には使用`HttpClientHandler`と用に TLS 1.2 (BoringSSL ライブラリによって提供される) その HTTP 要求。
+Httpclient 実装が "**マネージ**" に設定されていて、tls 実装が**ネイティブ tls 1.2 +** に`client`設定されている場合`HttpClientHandler` 、オブジェクトは、次のようにして (BoringSSL ライブラリによって提供される) マネージと TLS 1.2 を自動的に使用します。HTTP 要求。
 
-ただし場合、 **HttpClient 実装**に設定されている`AndroidHttpClient`、し、すべて`HttpClient`オブジェクトが基になる Java クラスを使用して`java.net.URLConnection`と影響を受けることはできません、 **TLS/SSLの実装**値。 `WebRequest` オブジェクトでは、BoringSSL ライブラリを使用します。
+ただし、 **httpclient 実装**がに設定され`AndroidHttpClient`ている場合`HttpClient` 、すべてのオブジェクトは基に`java.net.URLConnection`なる Java クラスを使用し、 **TLS/SSL 実装**値の影響を受けません。 `WebRequest`オブジェクトは、BoringSSL ライブラリを使用します。
 
-## <a name="other-ways-to-control-ssltls-configuration"></a>SSL や TLS の構成を制御する他の方法
+## <a name="other-ways-to-control-ssltls-configuration"></a>SSL/TLS の構成を制御するその他の方法
 
-3 つの方法が、Xamarin.Android アプリケーションが TLS の設定を制御できます。
+Xamarin Android アプリケーションで TLS 設定を制御するには、次の3つの方法があります。
 
-1. プロジェクト オプションには、HttpClient の実装と既定の TLS ライブラリを選択します。
-2. 使用してプログラムで`Xamarin.Android.Net.AndroidClientHandler`します。
-3. (省略可能) 環境変数を宣言します。
+1. [プロジェクトオプション] で、HttpClient 実装と既定の TLS ライブラリを選択します。
+2. を使用`Xamarin.Android.Net.AndroidClientHandler`したプログラムによる。
+3. 環境変数を宣言します (省略可能)。
 
-3 つの選択肢の推奨方法は、Xamarin.Android プロジェクトのオプションを使用して、既定値を宣言する`HttpMessageHandler`およびアプリ全体の TLS です。 次に、必要に応じて、プログラムによってインスタンス化`Xamarin.Android.Net.AndroidClientHandler`オブジェクト。 上記のこれらのオプション。
+3つの選択肢の中から、Xamarin. Android プロジェクトオプションを使用して、アプリ全体の`HttpMessageHandler`既定値と TLS を宣言する方法をお勧めします。 次に、必要に応じて`Xamarin.Android.Net.AndroidClientHandler` 、プログラムによってオブジェクトをインスタンス化します。 これらのオプションについては、上記で説明します。
 
-3 番目のオプション&ndash;環境変数を使用して&ndash;次に説明します。
+次に、 &ndash;環境変数&ndash;を使用した3番目のオプションについて説明します。
 
-### <a name="declare-environment-variables"></a>環境変数を宣言します。
+### <a name="declare-environment-variables"></a>環境変数の宣言
 
-Xamarin.Android で TLS の使用に関連する 2 つの環境変数です。
+Xamarin の TLS の使用に関連する環境変数には、次の2つがあります。
 
-- `XA_HTTP_CLIENT_HANDLER_TYPE` &ndash; この環境変数は、既定値を宣言します。`HttpMessageHandler`アプリケーションで使用されます。 例:
+- `XA_HTTP_CLIENT_HANDLER_TYPE`この環境変数は、アプリケーション`HttpMessageHandler`が使用する既定値を宣言します。 &ndash; 例えば:
 
     ```csharp
     XA_HTTP_CLIENT_HANDLER_TYPE=Xamarin.Android.Net.AndroidClientHandler
     ```
 
-- `XA_TLS_PROVIDER` &ndash; TLS ライブラリを使用するか、この環境変数を宣言します`btls`、 `legacy`、または`default`(これは、この変数を省略することと同じ)。
+- `XA_TLS_PROVIDER`この環境変数は、 `legacy`、、または`default`のいずれか`btls`で使用される TLS ライブラリを宣言します (この変数を省略した場合と同じです)。 &ndash;
 
     ```csharp
     XA_TLS_PROVIDER=btls
     ```
 
-追加することでこの環境変数を設定、_環境ファイル_をプロジェクトにします。 環境ファイルは Unix 形式のプレーン テキスト ファイルのビルド アクションを持つ**AndroidEnvironment**:
+この環境変数は、_環境ファイル_をプロジェクトに追加することによって設定されます。 環境ファイルは、 **Androidenvironment**のビルドアクションを含む Unix 形式のプレーンテキストファイルです。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-![Visual Studio で AndroidEnvironment ビルド アクションのスクリーン ショット。](http-stack-images/tls03-vs.png)
+![Visual Studio の AndroidEnvironment ビルドアクションのスクリーンショット。](http-stack-images/tls03-vs.png)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-![Visual studio for mac のアクションを構築、AndroidEnvironment のスクリーン ショット](http-stack-images/tls03-xs.png)
+![Visual Studio for Mac の AndroidEnvironment ビルドアクションのスクリーンショット。](http-stack-images/tls03-xs.png)
 
 -----
 
-参照してください、 [Xamarin.Android 環境](~/android/deploy-test/environment.md)の詳細については、環境変数と Xamarin.Android のガイド。
+環境変数と Xamarin Android の詳細については、「 [Xamarin Android 環境](~/android/deploy-test/environment.md)ガイド」を参照してください。
 
 
 ## <a name="related-links"></a>関連リンク

@@ -7,22 +7,22 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: d6ad088f9223dccb1966148fe8f53d76e85040a6
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ff0773b3073221bead48439b7d99f1db993e3353
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645601"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528593"
 ---
 # <a name="table-parts-and-functionality-in-xamarinios"></a>Xamarin. iOS のテーブルパーツと機能
 
 UITableView は、"グループ化" または "plain" スタイルを持つことができ、次の部分で構成されます。
 
--  [セクションヘッダー](#Section_Header)
--  [セル](#Cells)(必要に応じて、または行)
--  [セクションフッター](#Section_Footer)
--  [Index](#Index)
--  [編集モード](#Edit_Features)(行の順序を変更するために ' スワイプする ' とドラッグハンドルを含む) 
+- [セクションヘッダー](#Section_Header)
+- [セル](#Cells)(必要に応じて、または行)
+- [セクションフッター](#Section_Footer)
+- [Index](#Index)
+- [編集モード](#Edit_Features)(行の順序を変更するために ' スワイプする ' とドラッグハンドルを含む) 
 
 これらのスクリーンショットは、セクション行、ヘッダー、フッター、編集コントロール、およびインデックスがどのように表示されるかを示しています。
 

@@ -6,20 +6,20 @@ ms.assetid: 1E6825DF-1254-4FCB-B94D-ADD33D1B5309
 author: lobrien
 ms.author: laobri
 ms.date: 03/23/2017
-ms.openlocfilehash: 2e6a75fa3c4c63e8dea402c6761f8ef753908540
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: d44e7232529386b7cb6b3db5fbb8bc4a285972fb
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61047870"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529123"
 ---
 # <a name="using-jenkins-with-xamarin"></a>Xamarin における Jenkins の使用
 
 _このガイドでは、継続的インテグレーション サーバーとして Jenkins を設定し、Xamarin で作成したモバイル アプリケーションのコンパイルを自動化する方法を示します。その中で、OS X での Jenkins のインストール、構成、およびソースコード管理システムへ変更をコミットした時に、Xamarin.iOS と Xamarin.Android をコンパイルするためのジョブの設定方法について説明します。_
 
-[Xamarin を使用した継続的インテグレーションの概要](~/tools/ci/intro-to-ci.md) では、早期にコードの破損や不整合の警告を提供する便利なソフトウェア開発の手法として継続的インテグレーションを説明しています。 CI は、開発者が発生した課題や問題を処理し、ソフトウェアを開発のために安定した状態に保持し続けることを可能にします。 このチュートリアルでは、ドキュメントの両方からコンテンツを一緒に使用する方法について説明します。
+[Xamarin を使用した継続的インテグレーションの概要](~/tools/ci/intro-to-ci.md) では、早期にコードの破損や不整合の警告を提供する便利なソフトウェア開発の手法として継続的インテグレーションを説明しています。 CI は、開発者が発生した課題や問題を処理し、ソフトウェアを開発のために安定した状態に保持し続けることを可能にします。 このチュートリアルでは、両方のドキュメントのコンテンツを一緒に使用する方法について説明します。
 
-このガイドでは、OS X を実行する専用のコンピューターに Jenkins をインストールして、コンピューターの起動時に自動的に実行するように構成する方法を示します。 Jenkins をインストールしてすぐに、Msbuild をサポートする追加のプラグインをインストールします。 Jenkins は標準で Git をサポートしています。 TFS をソース コード管理に使っている場合は、追加のプラグインとコマンドラインユーティリティもインストールする必要があります。
+このガイドでは、OS X を実行する専用コンピューターに Jenkins をインストールし、コンピューターの起動時に自動的に実行されるように構成する方法について説明します。 Jenkins をインストールしてすぐに、Msbuild をサポートする追加のプラグインをインストールします。 Jenkins は標準で Git をサポートしています。 TFS をソース コード管理に使っている場合は、追加のプラグインとコマンドラインユーティリティもインストールする必要があります。
 
 Jenkins を構成し、任意の必要なプラグインをインストールしたら、Xamarin.iOS と Xamarin.Android プロジェクトをコンパイルする 1 つ以上のジョブを作成します。 ジョブは、いくつかの作業の実行に必要なメタデータと手順の集まりです。 通常、ジョブは次のような構成になります。
 
@@ -42,9 +42,9 @@ Xamarin のモバイル アプリ向けのビルド サーバーは、開発者�
 
 [![](jenkins-walkthrough-images/image1.png "一般的な Jenkins ビルドサーバーの上記のすべての要素を示しています. ")](jenkins-walkthrough-images/image1.png#lightbox)
 
-iOS アプリケーションのビルドし、macOS を実行するコンピューターで署名のみが可能です。 Mac Mini は妥当なコストが低いオプションでは、OS X 10.10 (Yosemite) を実行できる任意のコンピューターがまたは高いだけで十分です。
+iOS アプリケーションは、macOS を実行しているコンピューターでのみビルドおよび署名できます。 Mac ミニは妥当な低コストのオプションですが、OS X 10.10 (ヨーク Semite) 以上を実行できるコンピューターであれば十分です。
 
-ソース コード管理に TFS を使用する場合はインストールする[Team Explorer Everywhere](https://docs.microsoft.com/azure/devops/java/download-eclipse-plug-in/)します。 Team Explorer Everywhere には、macOS のターミナルで TFS をクロス プラットフォームへのアクセスが提供します。
+TFS がソースコード管理に使用されている場合は、 [Team Explorer Everywhere](https://docs.microsoft.com/azure/devops/java/download-eclipse-plug-in/)をインストールする必要があります。 Team Explorer Everywhere は、macOS のターミナルでの TFS へのクロスプラットフォームアクセスを提供します。
 
 [!include[](~/tools/ci/includes/firewall-information.md)]
 
@@ -58,7 +58,7 @@ Jenkins を使用するための最初のタスクは、インストールです
 
 ほとんどの従来の継続的インテグレーション アプリケーションは、デーモン (OS X または \*nix) として、または、サービス (Windows) としてバックグラウンドで動作します。 これは、機能は、ビルド環境のセットアップが簡単に実行される、必要に応じて、GUI の相互作用が存在しないシナリオに適しています。 これは、GUIによる対話が要求されないシナリオに適しています。そしてその場合は、ビルド環境のセットアップを簡単に実行できます。 モバイルアプリは、キーストアと署名証明書も必要としますが、Jenkins がデーモンとして実行している場合、アクセスに問題がある可能性があります。
 
-Jenkins.App は、Jenkins をインストールする便利な方法です。 これは、Jenkins サーバーの開始と停止を簡略化する AppleScript ラッパーです。 Bash シェルで実行する代わりに、Jenkins が次のスクリーンショットで示すように Dock 内のアイコンのアプリとして動作します。
+Jenkins は、Jenkins をインストールするための便利な方法です。 これは、Jenkins サーバーの開始と停止を簡略化する AppleScript ラッパーです。 Bash シェルで実行する代わりに、Jenkins が次のスクリーンショットで示すように Dock 内のアイコンのアプリとして動作します。
 
 [![](jenkins-walkthrough-images/image2.png "Bash シェルで実行する代わりに、Jenkins が次のスクリーンショットで示すように Dock 内のアイコンのアプリとして動作します. ")](jenkins-walkthrough-images/image2.png#lightbox)
 
@@ -66,7 +66,7 @@ Jenkins の開始または停止は、Jenkins.App の開始または停止と同
 
 Jenkins.App をインストールするには、以下のスクリーンショットで示されているプロジェクトのダウンロードページから、最新バージョンをダウンロードします。
 
-[![](jenkins-walkthrough-images/image3.png "アプリのプロジェクトからの最新バージョンのダウンロード ページで、このスクリーン ショットに示されているダウンロード")](jenkins-walkthrough-images/image3.png#lightbox)
+[![](jenkins-walkthrough-images/image3.png "このスクリーンショットに示されているように、プロジェクトのダウンロードページから最新バージョンをダウンロードします。")](jenkins-walkthrough-images/image3.png#lightbox)
 
 Zip ファイルを、ビルドサーバーの `/Applications` フォルダに展開し、他の OS X アプリケーションと同様に開始します。
 初めて Jenkins.App を起動する場合は、Jenkins をダウンロードすることを通知するダイアログが表示されます。
@@ -81,15 +81,15 @@ Jenkins のカスタマイズは省略可能で、アプリの開始時に毎回
 
 Jenkins をカスタマイズする必要がある場合は、**Change defaults** ボタンをクリックします。 すると 2 つの連続するダイアログボックスが表示されます。 ひとつは、Java コマンドラインパラメーターを求めるもので、もうひとつは Jenkins コマンドラインパラメーターを求めるものです。 次の 2 つのスクリーンショットは、これら 2 つのダイアログボックスを表示しています。
 
-[![](jenkins-walkthrough-images/image6.png "このスクリーン ショットは、ダイアログ ボックス")](jenkins-walkthrough-images/image6.png#lightbox)
+[![](jenkins-walkthrough-images/image6.png "このスクリーンショットは、ダイアログを示しています")](jenkins-walkthrough-images/image6.png#lightbox)
 
-[![](jenkins-walkthrough-images/image7.png "このスクリーン ショットは、ダイアログ ボックス")](jenkins-walkthrough-images/image7.png#lightbox)
+[![](jenkins-walkthrough-images/image7.png "このスクリーンショットは、ダイアログを示しています")](jenkins-walkthrough-images/image7.png#lightbox)
 
-Jenkins を実行したら、ユーザーがコンピュータへログインするたびに起動できるように、ログイン項目として設定した方が良いでしょう。 ドッキング ステーションに Jenkins のアイコンを右クリックしてこれを行う**オプション > ログイン時に開いて**の次のスクリーン ショットに示しますように。
+Jenkins を実行したら、ユーザーがコンピュータへログインするたびに起動できるように、ログイン項目として設定した方が良いでしょう。 これを行うには、Dock の Jenkins アイコンを右クリックし、[オプション] を選択します。次のスクリーンショットに示すように、ログイン時に > 開きます。
 
 [![](jenkins-walkthrough-images/image8.png "これは、このスクリーンショットに示すように、Dock の Jenkins アイコンを右クリックし、 オプション ログイン時に開く を選択することで可能です。")](jenkins-walkthrough-images/image8.png#lightbox)
 
-これにより、Jenkins.App は、コンピュータの起動時ではなく、ユーザーがログインするたびに自動的に起動することが可能になります。 OS X が起動時に自動ログインを使用しているユーザーアカウントを指定することが可能です。 開く、**システム環境設定**を選択し、 **Users & Groups**アイコンがこのスクリーン ショットで示すように。
+これにより、Jenkins.App は、コンピュータの起動時ではなく、ユーザーがログインするたびに自動的に起動することが可能になります。 OS X が起動時に自動ログインを使用しているユーザーアカウントを指定することが可能です。 **[システム環境設定]** を開き、次のスクリーンショットに示すように、 **[Users & Groups]** アイコンを選択します。
 
 [![](jenkins-walkthrough-images/image9.png "システム環境設定を開き、このスクリーンショットに示すように、ユーザーとグループのアイコンを選択")](jenkins-walkthrough-images/image9.png#lightbox)
 
@@ -101,13 +101,13 @@ Jenkins を実行したら、ユーザーがコンピュータへログインす
 
 Jenkins.App インストーラーが完了したら、Jenkins を開始して、次のスクリーンショットに示すように web ブラウザーを起動して URL http://localhost:8080 を開きます。
 
-[![](jenkins-walkthrough-images/image10.png "このスクリーン ショットで示すように、8080")](jenkins-walkthrough-images/image10.png#lightbox)
+[![](jenkins-walkthrough-images/image10.png "8080 (このスクリーンショットを参照)")](jenkins-walkthrough-images/image10.png#lightbox)
 
 このページから、次のスクリーンショットに示すように、左上の角にあるメニューより **Jenkins > Jenkinsの管理 > プラグインの管理** を選択します。
 
 [![](jenkins-walkthrough-images/image11.png "このページの、左上隅にあるメニューから Jenkins Jenkinsの管理 プラグインの管理を選択します")](jenkins-walkthrough-images/image11.png#lightbox)
 
-すると、**Jenkins プラグインマネージャー** ページが表示されます。 利用可能 タブをクリックすると、ダウンロードしてインストールできる 600 を超えるプラグインの一覧が表示されます。 これを次のスクリーン ショットに示します。
+すると、**Jenkins プラグインマネージャー** ページが表示されます。 利用可能 タブをクリックすると、ダウンロードしてインストールできる 600 を超えるプラグインの一覧が表示されます。 これを次のスクリーンショットに示します。
 
 [![](jenkins-walkthrough-images/image12.png "利用可能 タブをクリックすると、ダウンロードしてインストールできる 600 を超えるプラグインの一覧が表示されます。")](jenkins-walkthrough-images/image12.png#lightbox)
 
@@ -119,17 +119,17 @@ Jenkins.App インストーラーが完了したら、Jenkins を開始して、
 
 Jenkins では、追加のプラグインなしで Git がサポートされます。
 
-すべてのプラグインをインストールした後は、Jenkins を再起動し、各プラグインのグローバル設定を構成します。 プラグインのグローバル設定は、次のスクリーン ショットに示すように、左上の **Jenkins > Jenkinsの管理 > システムの設定** にあります。
+すべてのプラグインをインストールしたら、Jenkins を再起動し、各プラグインのグローバル設定を構成します。 プラグインのグローバル設定は、次のスクリーン ショットに示すように、左上の **Jenkins > Jenkinsの管理 > システムの設定** にあります。
 
 [![](jenkins-walkthrough-images/image13.png "プラグインのグローバル設定は、左上の Jenkins / Jenkinsの管理 / システムの設定 にあります。")](jenkins-walkthrough-images/image13.png#lightbox)
 
 このメニューオプションを選択すると、**システムの設定 [Jenkins]** ページに移動します。 このページには、Jenkins 自体と、グローバルプラグインの値の一部の設定を構成するセクションが含まれています。  次のスクリーン ショットは、このページの例を示しています。
 
-[![](jenkins-walkthrough-images/image14.png "このスクリーン ショットは、このページの例を示しています。")](jenkins-walkthrough-images/image14.png#lightbox)
+[![](jenkins-walkthrough-images/image14.png "このページの例を次のスクリーンショットに示します。")](jenkins-walkthrough-images/image14.png#lightbox)
 
 #### <a name="configuring-the-msbuild-plugin"></a>MSBuild プラグインの構成
 
-MSBuild プラグインは、Visual Studio for Mac のソリューションとプロジェクトファイルをコンパイルするために、**/Library/Frameworks/Mono.framework/Commands/xbuild** を使用するように構成する必要があります。 次のスクリーンショットに示すように、**システムの設定 [Jenkins]** ページを **MSBuild追加** ボタンが現れるまで下にスクロールします。
+MSBuild プラグインは、Visual Studio for Mac のソリューションとプロジェクトファイルをコンパイルするために、 **/Library/Frameworks/Mono.framework/Commands/xbuild** を使用するように構成する必要があります。 次のスクリーンショットに示すように、**システムの設定 [Jenkins]** ページを **MSBuild追加** ボタンが現れるまで下にスクロールします。
 
  [![](jenkins-walkthrough-images/image15.png "MSBuild追加 ボタンが表示されるまでシステムの設定 Jenkins のページを下へスクロールします。")](jenkins-walkthrough-images/image15.png#lightbox)
 
@@ -139,9 +139,9 @@ MSBuild プラグインは、Visual Studio for Mac のソリューションと�
 
 このセクションは、ソースコード管理に TFS を使用する場合は必須です。
 
-MacOS のワークステーション、TFS サーバーと対話するために[Team Explorer Everywhere](https://docs.microsoft.com/azure/devops/java/download-eclipse-plug-in/)ワークステーションにインストールする必要があります。 Team Explorer Everywhere は、TFS にアクセスするためのクロスプラットフォーム コマンドライン クライアントを含む Microsoft のツールのセットです。 Team Explorer Everywhere は、Microsoft からダウンロードでき、 3 つの手順でインストールすることができます。
+MacOS ワークステーションが TFS サーバーと対話できるようにするには、ワークステーションに[Team Explorer Everywhere](https://docs.microsoft.com/azure/devops/java/download-eclipse-plug-in/)がインストールされている必要があります。 Team Explorer Everywhere は、TFS にアクセスするためのクロスプラットフォーム コマンドライン クライアントを含む Microsoft のツールのセットです。 Team Explorer Everywhere は、Microsoft からダウンロードでき、 3 つの手順でインストールすることができます。
 
-1. ユーザーアカウントにアクセスできるディレクトリにアーカイブファイルを展開します。 例えば、**~/tee** にファイルを展開します。
+1. ユーザーアカウントにアクセスできるディレクトリにアーカイブファイルを展開します。 例えば、 **~/tee** にファイルを展開します。
 2. 上記の手順で展開されたファイルを保持するフォルダーを含めるシェルまたはシステムへのパスを構成します。 例えば以下のようにします。
 
     ```
@@ -173,13 +173,13 @@ TFS 用のコマンドライン クライアントをインストールしたら
 
 **グローバルセキュリティの設定** ページで、**セキュリティを有効化** チェックボックスをチェックすると、 次のスクリーンショットのように **アクセス制御** フォームが現れます。
 
-[![](jenkins-walkthrough-images/image19.png "グローバル セキュリティの構成 ページで、チェックを有効にするセキュリティ チェック ボックスをオンおよびアクセス制御の形式になります、このスクリーン ショット")](jenkins-walkthrough-images/image19.png#lightbox)
+[![](jenkins-walkthrough-images/image19.png "[グローバルセキュリティの構成] ページで、[セキュリティを有効にする] チェックボックスをオンにすると、次のスクリーンショットのような Access Control フォームが表示されます。")](jenkins-walkthrough-images/image19.png#lightbox)
 
 次のスクリーンショットに示すように、**Security Realm Section** の **Jenkinsのユーザーデータベース** ラジオボタンを押して、**ユーザーにサインアップを許可** にもチェックを入れたことを確認します。
 
 [![](jenkins-walkthrough-images/image20.png "Security Realm Section の Jenkinsのユーザーデータベース ラジオボタンを押して、ユーザーにサインアップを許可 にもチェックを入れたことを確認します。")](jenkins-walkthrough-images/image20.png#lightbox)
 
-最後に、Jenkins を再起動し、新しいアカウントを作成します。 作成した最初のアカウントはルートアカウントで、このアカウントは自動的に管理者に昇格されます。 **グローバルセキュリティの設定** ページに戻り、**Matrix-based security** ラジオボタンにチェックを入れます。 次のスクリーンショットで示すように、ルートアカウントにはフルアクセスを付与し、匿名アカウントには読み取り専用アクセスを付与した方が良いでしょう。
+最後に、Jenkins を再起動して、新しいアカウントを作成します。 作成した最初のアカウントはルートアカウントで、このアカウントは自動的に管理者に昇格されます。 **グローバルセキュリティの設定** ページに戻り、**Matrix-based security** ラジオボタンにチェックを入れます。 次のスクリーンショットで示すように、ルートアカウントにはフルアクセスを付与し、匿名アカウントには読み取り専用アクセスを付与した方が良いでしょう。
 
 [![](jenkins-walkthrough-images/image21.png "ルートアカウントにはフルアクセスを付与し、匿名アカウントには読み取り専用アクセスを付与した方が良いでしょう。")](jenkins-walkthrough-images/image21.png#lightbox)
 
@@ -191,11 +191,11 @@ TFS 用のコマンドライン クライアントをインストールしたら
 
 1. Jenkins を停止します。 Jenkins.app を使用している場合は、Dock の Jenkins.App アイコンを右クリックし、ポップアップメニューから終了を選択して停止できます。
 
-    ![アプリのアイコンで表示されるメニューから Quit を選択して、ドッキング ステーションに](jenkins-walkthrough-images/image19.png)
+    ![Dock のアプリアイコンをクリックし、ポップアップ表示されたメニューから [終了] を選択します。](jenkins-walkthrough-images/image19.png)
 
 2. **~/.jenkins/config.xml** ファイルをテキスト エディターで開きます。
 3. `<usesecurity></usesecurity>` 要素の値を `true` から `false` に変更します。
-4. 削除、`<authorizationstrategy></authorizationstrategy>`と`<securityrealm></securityrealm>`ファイルからの要素。
+4. ファイルから`<securityrealm></securityrealm>`との要素を削除します。 `<authorizationstrategy></authorizationstrategy>`
 5. Jenkins を再起動します。
 
 ## <a name="setting-up-a-job"></a>ジョブの設定
@@ -214,7 +214,7 @@ Jenkins では、最上位レベルに、ソフトウェアを*ジョブ*に組�
 
 ![](jenkins-walkthrough-images/image24.png "このスクリーンショットのようになります。")
 
-Jenkins は、次のパスにあるハード ディスク上のディレクトリ内のジョブ、編成: **~/.jenkins/jobs/[JOB 名]**
+Jenkins は、次のパスにあるハードディスク上のディレクトリにジョブを整理します。 **~/.jenkins/jobs/[ジョブ名]**
 
 このフォルダーには、ログ、構成ファイル、コンパイルに必要なソースコードなどのすべてのファイルと成果物が含まれています。
 
@@ -224,7 +224,7 @@ Jenkins は、次のパスにあるハード ディスク上のディレクト�
 - 1 つ以上の *ビルド アクション* をプロジェクトに追加する必要があります。 これらは、アプリケーションをビルドするために必要な手順やタスクです。
 - ジョブには 1 つの*ビルド トリガー*を割り当てる必要があります – Jenkins がどのくらいの頻度でコードを取得し最終的なプロジェクトをビルドするのかを知らせる命令のセットです。
 
-### <a name="configuring-source-code-control"></a>ソース コード管理の構成
+### <a name="configuring-source-code-control"></a>ソースコード管理の構成
 
 Jenkins が行う最初のタスクは、ソース コード管理システムからソース コードを取得することです。 Jenkins は、現在利用可能な一般的なソース コード管理システムの多くをサポートしています。 このセクションでは、2 つの一般的なシステムである Git と Team Foundation Server について説明します。 これらそれぞれのソース コード管理システムについては、以下のセクションで詳しく説明します。
 
@@ -274,9 +274,9 @@ TFS に必要な情報を指定します。 次のスクリーンショットは
 
 Jenkins は、ソースコート全体を *ワークスペース* と呼ばれる特別なフォルダーに保存します。 このディレクトリは、以下の場所のフォルダー内にあります。
 
-    ```
-    ~/.jenkins/jobs/[JOB NAME]/workspace
-    ```
+```
+~/.jenkins/jobs/[JOB NAME]/workspace
+```
 
 ワークスペースへのパスは、`$WORKSPACE` という名前の環境変数に格納されています。
 
@@ -289,7 +289,7 @@ Jenkins のワークスペース フォルダーは、ジョブのランディ�
 Jenkins には、ビルドを開始するためのいくつかの異なる方法があります。これらは *ビルド トリガー* と言われています。 ビルド トリガーは、Jenkins がいつジョブを開始しプロジェクトをビルドするかを決めることができます。 一般的なビルド トリガーの 2 つは以下の通りです。
 
 - **定期的にビルド** – このトリガーは、Jenkins が、2 時間ごとや平日の午前 0 時ごとなどの指定された間隔でジョブを開始するようにします。 ビルドは、ソース コード リポジトリに変更があったかどうかに関係なく開始されます。
-- **SCM のポーリング**– このトリガーは、定期的にソース コード管理をポーリングします。 ソース コード リポジトリに変更がコミットされた場合、Jenkins は、新しいビルドを開始します。
+- **ポーリング SCM** –このトリガーは、ソースコード管理を定期的にポーリングします。 ソース コード リポジトリに変更がコミットされた場合、Jenkins は、新しいビルドを開始します。
 
 ポーリング SCM は、開発者がビルドを破壊するような変更をコミットした時に、すばやくフィードバックできるため、人気のあるトリガーです。 これは、最近コミットされたコードが問題の原因となったということをチームに通知でき、開発者は問題にすばやく取り組むことができます。
 
@@ -304,14 +304,14 @@ Xamarin.iOS プロジェクトは、`xbuild` または `msbuild` 使用して、
 
 [!include[](~/tools/ci/includes/commandline-compile-of-xamarin-ios-ipa.md)]
 
-### <a name="building-a-xamarinandroid-project"></a>Xamarin.Android プロジェクトのビルド
+### <a name="building-a-xamarinandroid-project"></a>Xamarin Android プロジェクトのビルド
 
 Xamarin.Android プロジェクトのビルドは、Xamarin.iOS プロジェクトをビルドする概念によく似ています。 Xamarin.Android プロジェクトから APK を作成するには、次の 2 つの手順を実行して Jenkins を構成する必要があります。
 
 - MSBuild プラグインを使用して、プロジェクトをコンパイルします。
 - 有効なリリース用のキーストアを使って APK を署名し zipalign します。
 
-これら 2 つの手順は、次の 2 つのセクションで詳しく説明されます。
+これらの2つの手順については、次の2つのセクションで詳しく説明します。
 
 ### <a name="creating-the-apk"></a>APK の作成
 
@@ -323,11 +323,11 @@ Xamarin.Android プロジェクトのビルドは、Xamarin.iOS プロジェク�
 
 ![](jenkins-walkthrough-images/image37.png "ビルド ステップがプロジェクトに追加されたら、出現したフォーム フィールドに入力します。")
 
-このビルド ステップは、**$WORKSPACE** フォルダーで `xbuild` を実行します。 MSBuild のビルド ファイルは、**Xamarin.Android.csproj** ファイルに設定されています。 **コマンドライン引数** には、ターゲットの **PackageForAndroid** のリリース ビルドを指定します。 この手順の成果物は、次の場所にある APK になります。
+このビルド ステップは、 **$WORKSPACE** フォルダーで `xbuild` を実行します。 MSBuild のビルド ファイルは、**Xamarin.Android.csproj** ファイルに設定されています。 **コマンドライン引数** には、ターゲットの **PackageForAndroid** のリリース ビルドを指定します。 この手順の成果物は、次の場所にある APK になります。
 
-    ```
-    $WORKSPACE/[PROJECT NAME]/bin/Release
-    ```
+```
+$WORKSPACE/[PROJECT NAME]/bin/Release
+```
 
 次のスクリーンショットは、この APK の例を示しています。
 
@@ -356,9 +356,9 @@ APK の署名と zipalign は、技術的に独立した 2 つのタスクで、
 
 出現したフォーム フィールドの **プロパティ** に、次の形式で 1 行につき 1 つずつ、環境変数を追加します。
 
-    ```
-    ENVIRONMENT_VARIABLE_NAME = value
-    ```
+```
+ENVIRONMENT_VARIABLE_NAME = value
+```
 
 次のスクリーンショットは、APK の署名に必要な環境変数を示しています。
 
@@ -372,12 +372,12 @@ APK ファイルの環境変数の一部は、`WORKSPACE` 環境変数上でビ�
 
 ![](jenkins-walkthrough-images/image41.png "このスクリーンショットは STOREPASS 環境変数を追加する例です。")
 
-環境変数の初期設定が終わったら、次は、APK を署名して zipalign するためのビルド ステップを追加する手順に移ります。 環境変数を挿入するビルド ステップの直後に、`jarsigner` と `zipalign` を実行する別の **Execute shell** コマンド ビルドがあります。次のスニペットに示すように、各コマンドを 1 行ずつ実行します。 次のスニペットに示すように、1 行の各コマンドを実行します。
+環境変数の初期設定が終わったら、次は、APK を署名して zipalign するためのビルド ステップを追加する手順に移ります。 環境変数を挿入するビルド ステップの直後に、`jarsigner` と `zipalign` を実行する別の **Execute shell** コマンド ビルドがあります。次のスニペットに示すように、各コマンドを 1 行ずつ実行します。 各コマンドには、次のスニペットに示すように、1行ずつ移動します。
 
-    ```
-    jarsigner -verbose -sigalg MD5withRSA -digestalg SHA1 -keystore $KEYSTORE_FILE -storepass $STORE_PASS -signedjar $SIGNED_APK $INPUT_APK $KEYSTORE_ALIAS
-    zipalign -f -v 4 $SIGNED_APK $FINAL_APK
-    ```
+```
+jarsigner -verbose -sigalg MD5withRSA -digestalg SHA1 -keystore $KEYSTORE_FILE -storepass $STORE_PASS -signedjar $SIGNED_APK $INPUT_APK $KEYSTORE_ALIAS
+zipalign -f -v 4 $SIGNED_APK $FINAL_APK
+```
 
 次のスクリーンショットでは、手順に `jarsigner` と `zipalign` コマンドを入力する方法の例を示しています。
 
@@ -389,9 +389,9 @@ APK ファイルの環境変数の一部は、`WORKSPACE` 環境変数上でビ�
 
 自動テストは、シェル コマンドを使用して Test Cloud に送信することができます。 Xamarin Test Cloud で実行するテストの設定に関する詳細については、こちらの [Xamarin.UITest](/appcenter/test-cloud/preparing-for-upload/uitest/) を使用するためのガイドを参照してください。
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
-このガイドは、macos でのビルド サーバーとして Jenkins を導入し、コンパイルして、リリース用の Xamarin モバイル アプリケーションを準備するように構成します。 ビルド プロセスをサポートするために複数のプラグインと共に macOS コンピューターで Jenkins をインストールしました。 TFS または Git のいずれかからコードを取得し、そのコードをリリースの準備ができているアプリケーションへコンパイルするというジョブを作成し構成しました。 また、ジョブを実行する時間をスケジュールする 2 つの異なる方法について調査しました。
+このガイドでは、macOS でビルドサーバーとして Jenkins を導入し、Xamarin モバイルアプリケーションをリリース用にコンパイルおよび準備するように構成しました。 ビルドプロセスをサポートするために、複数のプラグインと共に macOS コンピューターに Jenkins をインストールしました。 TFS または Git のいずれかからコードを取得し、そのコードをリリースの準備ができているアプリケーションへコンパイルするというジョブを作成し構成しました。 また、ジョブを実行する時間をスケジュールする 2 つの異なる方法について調査しました。
 
 ## <a name="related-links"></a>関連リンク
 

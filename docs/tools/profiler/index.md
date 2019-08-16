@@ -6,12 +6,12 @@ ms.assetid: 3247fcee-6acc-470d-ab87-c1c511d67363
 author: lobrien
 ms.author: laobri
 ms.date: 06/03/2018
-ms.openlocfilehash: 2efc782386b8ec39ecca21aaf88738c813c260f0
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 4541a795d819c3738fffbb3224ef35dce5fc5521
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511657"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529048"
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
@@ -143,8 +143,8 @@ Xamarin Profiler は、iOS または Android アプリケーションをプロ�
 
 #### <a name="launching-from-visual-studio"></a>起動 (Visual Studio から)
 
-1.  まず、アプリケーションが Visual Studio に読み込まれていることを確認し、上で指定したように (既定の) デバッグ構成を選択します。
-2.  次の図に示すように、Visual Studio で **> Xamarin Profiler**を参照して、プロファイラーを開きます。
+1. まず、アプリケーションが Visual Studio に読み込まれていることを確認し、上で指定したように (既定の) デバッグ構成を選択します。
+2. 次の図に示すように、Visual Studio で **> Xamarin Profiler**を参照して、プロファイラーを開きます。
 
 ![Visual Studio からのプロファイラーの起動](images/start-profiling-vs.png)
 
@@ -231,8 +231,8 @@ Xamarin Profiler は、次に示す5つのセクションで構成されてい�
 割り当て用のインスペクタービューには、オブジェクトのフィルター処理とグループ化のオプション、割り当てられたメモリの統計情報、上位の割り当て、スタックトレースとルートへのパスのビューがあります。
 
 - **[コールツリー]** –アプリケーション内のすべてのスレッドのコールツリー全体が表示され、各ノードに割り当てられたメモリに関する情報が含まれます。 一覧で要素が選択されると、すべての兄弟ノードが灰色で表示されます。 ツリーを展開するか、要素をダブルクリックしてドリルダウンすることができます。このデータビューを表示するときに、表示設定インスペクタービューを使用して、表示方法を変更できます。 現在、次の2つのオプションがあります。
-    1.  [反転された**コールツリー** ] –スタックトレースは上から下へと見なされます。 これは、CPU が時間を費やしている最も深い方法を示す、便利な表示オプションです。
-    2.  **スレッドで分離**-このオプションは、呼び出しツリーをスレッドごとに整理します。
+    1. [反転された**コールツリー** ] –スタックトレースは上から下へと見なされます。 これは、CPU が時間を費やしている最も深い方法を示す、便利な表示オプションです。
+    2. **スレッドで分離**-このオプションは、呼び出しツリーをスレッドごとに整理します。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 

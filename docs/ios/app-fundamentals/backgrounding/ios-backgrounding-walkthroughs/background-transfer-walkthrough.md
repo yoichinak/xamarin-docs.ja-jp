@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: fad85eadd819c04d087345c6bf4b5e977c9ec279
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: a0c659904be2f6755ff4a32853e141ee8572e839
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656527"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69521242"
 ---
 # <a name="background-transfer-and-nsurlsession-in-xamarinios"></a>Xamarin のバックグラウンド転送と Nの Lsession
 
@@ -52,15 +52,15 @@ public partial class SimpleBackgroundTransferViewController : UIViewController
 
 に`NSUrlSessionDelegate`は、転送の状態を確認するための次の基本的な方法が用意されています。
 
--  *DidFinishEventsForBackgroundSession* -このメソッドは、すべてのタスクが完了し、転送が完了すると呼び出されます。
--  *DidReceiveChallenge* -承認が必要なときに資格情報を要求するために呼び出されます。
--  *DidBecomeInvalidWithError* -が`NSURLSession`無効になった場合に呼び出されます。
+- *DidFinishEventsForBackgroundSession* -このメソッドは、すべてのタスクが完了し、転送が完了すると呼び出されます。
+- *DidReceiveChallenge* -承認が必要なときに資格情報を要求するために呼び出されます。
+- *DidBecomeInvalidWithError* -が`NSURLSession`無効になった場合に呼び出されます。
 
 
 バックグラウンドセッションでは、実行しているタスクの種類に応じて、より特殊なデリゲートが必要になります。 バックグラウンドセッションは、次の2種類のタスクに制限されます。
 
--  *タスクのアップロード*-型`NSUrlSessionUploadTask`のタスクは`NSUrlSessionTaskDelegate` 、から`NSUrlSessionDelegate`継承されるを使用します。 このデリゲートは、アップロードの進行状況を追跡したり、HTTP リダイレクトを処理したりするための追加のメソッドを提供します。
--  *タスクのダウンロード*-種類`NSUrlSessionDownloadTask`がのタスク`NSUrlSessionDownloadDelegate`は、から`NSUrlSessionTaskDelegate`継承されるを使用します。 このデリゲートには、アップロードタスクのすべてのメソッドに加えて、ダウンロードの進行状況を追跡し、ダウンロードタスクが再開または完了したことを確認するためのダウンロード固有のメソッドが用意されています。
+- *タスクのアップロード*-型`NSUrlSessionUploadTask`のタスクは`NSUrlSessionTaskDelegate` 、から`NSUrlSessionDelegate`継承されるを使用します。 このデリゲートは、アップロードの進行状況を追跡したり、HTTP リダイレクトを処理したりするための追加のメソッドを提供します。
+- *タスクのダウンロード*-種類`NSUrlSessionDownloadTask`がのタスク`NSUrlSessionDownloadDelegate`は、から`NSUrlSessionTaskDelegate`継承されるを使用します。 このデリゲートには、アップロードタスクのすべてのメソッドに加えて、ダウンロードの進行状況を追跡し、ダウンロードタスクが再開または完了したことを確認するためのダウンロード固有のメソッドが用意されています。
 
 
 次のコードは、URL からイメージをダウンロードするために使用できるタスクを定義します。 バックグラウンドセッションでを呼び出し`CreateDownloadTask` 、URL 要求を渡すことによって、タスクを開始します。

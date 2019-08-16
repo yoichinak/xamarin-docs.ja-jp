@@ -1,37 +1,37 @@
 ---
-title: Razor テンプレートを使用して構築 HTML ビュー
-description: " 全画面表示の web ページを使用して HTML を表示するためには、web サイト プロジェクトから、HTML、JavaScript と CSS が既にある場合に特にクロスプラット フォーム対応の方法で複雑な書式設定を表示するためにシンプルかつ効果的な方法です。"
+title: Razor テンプレートを使用した HTML ビューの作成
+description: " 全画面の web ページを使用して HTML をレンダリングすることは、複雑な書式をクロスプラットフォーム方式でレンダリングするための簡単で効果的な方法です。特に、HTML、JavaScript、および CSS が web サイトプロジェクトにある場合は特にそうです。"
 ms.prod: xamarin
 ms.assetid: D8B87C4F-178E-48D9-BE43-85066C46F05C
 author: asb3993
 ms.author: amburns
 ms.date: 07/24/2018
-ms.openlocfilehash: 539f59b9835cab6281327bcd1a37482ef82b62cc
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: c6c279a31b6081f7e20b4047e2a8e82c79aeac23
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67650174"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69521808"
 ---
-# <a name="building-html-views-using-razor-templates"></a>Razor テンプレートを使用して構築 HTML ビュー
+# <a name="building-html-views-using-razor-templates"></a>Razor テンプレートを使用した HTML ビューの作成
 
-モバイル開発の世界で用語「ハイブリッド アプリ」は、通常、ホストされた web ビューアー コントロールの内部 HTML ページとしてその画面の一部 (またはすべて) を表示するアプリケーションを指します。
+モバイル開発環境では、"ハイブリッドアプリ" という用語は、通常、ホストされている web ビューアーコントロール内のすべての画面を HTML ページとして表示するアプリケーションを指します。
 
-使用する一部の開発環境がある、プラットフォームにも制限が、それらのアプリの複雑な処理や UI 効果を実現しようとしていますが、パフォーマンスの問題から低下し、は HTML と JavaScript で完全には、次のモバイル アプリをビルド機能にアクセスできます。
+モバイルアプリを完全に HTML および JavaScript でビルドできるようにする開発環境がいくつかありますが、これらのアプリは、複雑な処理や UI 効果を実現しようとしたときにパフォーマンスの問題が発生する可能性があり、プラットフォームでも制限されています。アクセスできる機能。
 
-Xamarin は、HTML を Razor テンプレート エンジンを利用する場合に特にの両方の長所を提供します。 Xamarin を使用した JavaScript と CSS を使用してもが、基になるプラットフォーム Api に完全にアクセスし使用した処理を高速、クロスプラット フォームで template 宣言された HTML ビューを構築する柔軟性があるC#します。
+Xamarin は、特に Razor HTML テンプレートエンジンを利用する場合に、両方の長所を発揮します。 Xamarin では、JavaScript と CSS を使用するクロスプラットフォームのテンプレート化された HTML ビューを構築する柔軟性があります。また、を使用してC#、基になるプラットフォーム api と高速処理に完全にアクセスすることもできます。
 
-このドキュメントでは、Razor テンプレート エンジンを使用して、Xamarin を使用してモバイル プラットフォーム間で使用できる HTML と JavaScript と CSS のビューを構築する方法について説明します。
+このドキュメントでは、Razor テンプレートエンジンを使用して、Xamarin を使用してモバイルプラットフォーム間で使用できる HTML + JavaScript + CSS ビューを構築する方法について説明します。
 
 ## <a name="using-web-views-programmatically"></a>プログラムによる Web ビューの使用
 
-Razor について学習する前に、アプリ内で生成される HTML コンテンツ具体的には直接 – HTML コンテンツを表示する web ビューを使用する方法について説明します。
+Razor について学習する前に、このセクションでは、web ビューを使用して HTML コンテンツを直接表示する方法 (特に、アプリ内で生成される HTML コンテンツ) について説明します。
 
-簡単に作成し、C# を使用して HTML を表示、Xamarin は iOS と Android の両方では、基になるプラットフォーム API に完全にアクセスを提供します。 各プラットフォームの基本構文は、以下に示します。
+簡単に作成し、C# を使用して HTML を表示、Xamarin は iOS と Android の両方では、基になるプラットフォーム API に完全にアクセスを提供します。 各プラットフォームの基本構文を次に示します。
 
 ### <a name="ios"></a>iOS
 
-数行のコードを受け取るも Xamarin.iOS で UIWebView コントロールの HTML を表示します。
+Xamarin の UIWebView コントロールに HTML を表示すると、次の数行のコードが必要になります。
 
 ```csharp
 var webView = new UIWebView (View.Bounds);
@@ -41,11 +41,11 @@ var html = "<html><h1>Hello</h1><p>World</p></html>";
 webView.LoadHtmlString(html, NSBundle.MainBundle.BundleUrl);
 ```
 
-参照してください、 [iOS UIWebView](http://docs.xamarin.com/recipes/ios/content_controls/web_view/) UIWebView コントロールの使用の詳細についてはレシピです。
+UIWebView コントロールの使用方法の詳細については、「 [IOS uiwebview](http://docs.xamarin.com/recipes/ios/content_controls/web_view/)レシピ」を参照してください。
 
 ### <a name="android"></a>Android
 
-Xamarin.Android を使用して、WebView コントロールの HTML を表示すると、わずか数行のコードで実現されます。
+Xamarin を使用して WebView コントロールに HTML を表示するには、数行のコードを実行します。
 
 ```csharp
 // webView is declared in an AXML layout file
@@ -58,11 +58,11 @@ var html = "<html><h1>Hello</h1><p>World</p></html>";
 webView.LoadDataWithBaseURL("file:///android_asset/", html, "text/html", "UTF-8", null);
 ```
 
-参照してください、 [Android WebView](http://docs.xamarin.com/recipes/android/controls/webview/) WebView コントロールの使用に関する詳細のレシピです。
+WebView コントロールの使用方法の詳細については、「 [Android webview](http://docs.xamarin.com/recipes/android/controls/webview/)レシピ」を参照してください。
 
-### <a name="specifying-the-base-directory"></a>基本ディレクトリを指定します。
+### <a name="specifying-the-base-directory"></a>基本ディレクトリの指定
 
-両方のプラットフォームでは、HTML ページの基本ディレクトリを指定するパラメーターです。 これは、イメージ、CSS ファイルなどのリソースへの相対参照を解決するのには使用されているデバイスのファイル システム上の場所です。 たとえば、タグのような
+両方のプラットフォームには、HTML ページの基本ディレクトリを指定するパラメーターがあります。 これは、イメージや CSS ファイルなどのリソースへの相対参照を解決するために使用される、デバイスのファイルシステム上の場所です。 たとえば、次のようなタグがあるとします。
 
 ```html
 <link rel="stylesheet" href="style.css" />
@@ -70,7 +70,7 @@ webView.LoadDataWithBaseURL("file:///android_asset/", html, "text/html", "UTF-8"
 <script type="text/javascript" src="jscript.js">
 ```
 
-これらのファイルを参照してください: **style.css**、 **monkey.jpg**と**jscript.js**します。 これらのファイルが配置されるページに読み込むことができるように、web ビューのベース ディレクトリの設定に指示します。
+次のファイルを参照してください。 **.css**、**サル .jpg** 、および**jscript .js**。 基本ディレクトリの設定により、これらのファイルをページに読み込むことができるように、これらのファイルが配置されている web ビューが示されます。
 
 #### <a name="ios"></a>iOS
 
@@ -80,60 +80,60 @@ webView.LoadDataWithBaseURL("file:///android_asset/", html, "text/html", "UTF-8"
 webView.LoadHtmlString (page, NSBundle.MainBundle.BundleUrl);
 ```
 
-ベース ディレクトリとして指定`NSBundle.MainBundle.BundleUrl`にアプリケーションがインストールされているディレクトリを参照します。 内のすべてのファイル、**リソース**などフォルダーをこの場所にコピーされる、 **style.css**ファイルを次に示します。
+ベースディレクトリは、アプリケーションが`NSBundle.MainBundle.BundleUrl`インストールされているディレクトリを参照するとして指定されます。 **Resources**フォルダー内のすべてのファイルは、次に示す**スタイルの .css**ファイルなど、この場所にコピーされます。
 
- ![iPhoneHybrid ソリューション](images/image1_240x163.png)
+ ![I、ハイブリッドソリューション](images/image1_240x163.png)
 
-すべての静的なコンテンツ ファイルのビルド アクションをする必要があります**BundleResource**:
+すべての静的コンテンツファイルのビルドアクションは、 **BundleResource**である必要があります。
 
- ![iOS プロジェクトのビルド アクション:BundleResource](images/image2_250x131.png)
+ ![iOS プロジェクトのビルドアクション:BundleResource](images/image2_250x131.png)
 
 #### <a name="android"></a>Android
 
-Android では、html 文字列は、web ビューで表示されるときに、パラメーターとして渡されるベース ディレクトリも必要です。
+Android では、html 文字列が web ビューに表示されるときに、パラメーターとして基本ディレクトリを渡す必要もあります。
 
 ```csharp
 webView.LoadDataWithBaseURL("file:///android_asset/", page, "text/html", "UTF-8", null);
 ```
 
-特殊な文字列**file:///android_asset/** アプリで、表示は、ここを格納している Android Assets フォルダーを指す、 **style.css**ファイル。
+特別な文字列**file:///android_asset/** は、アプリ内の android Assets フォルダーを参照します。ここには、**スタイルの .css**ファイルが含まれています。
 
  ![AndroidHybrid ソリューション](images/image3_240x167.png)
 
-すべての静的なコンテンツ ファイルのビルド アクションをする必要があります**AndroidAsset**します。
+すべての静的コンテンツファイルのビルドアクションは、 **Androidasset**である必要があります。
 
- ![Android プロジェクトのビルド アクション:AndroidAsset](images/image4_250x71.png)
+ ![Android プロジェクトのビルドアクション:AndroidAsset](images/image4_250x71.png)
 
-### <a name="calling-c-from-html-and-javascript"></a>呼び出すC#HTML および JavaScript から
+### <a name="calling-c-from-html-and-javascript"></a>HTML C#および JavaScript からの呼び出し
 
-Web ビューに html ページが読み込まれると、ページがサーバーから読み込まれた場合と、リンクとフォームに扱います。 つまり、ユーザーがリンクをクリックしてまたはフォームを送信する場合、web ビューに指定したターゲットに移動しようとします。
+Html ページが web ビューに読み込まれると、ページがサーバーから読み込まれた場合と同じように、リンクとフォームが処理されます。 つまり、ユーザーがリンクをクリックするかフォームを送信すると、web ビューは、指定されたターゲットへの移動を試みます。
 
-リンクが (google.com) などの外部のサーバーにある場合、web ビューは (インターネット接続があると仮定)、外部の web サイトの読み込みにしようとします。
+リンクが外部サーバー (google.com など) へのリンクである場合、web ビューは外部 web サイトの読み込みを試みます (インターネット接続があることを前提とします)。
 
 ```html
 <a href="http://google.com/">Google</a>
 ```
 
-リンクが相対の場合、web ビューはベースのディレクトリからそのコンテンツの読み込みにしようとします。 明らかにネットワーク接続は必要ありませんするのには、このデバイス上のアプリにコンテンツが保存されています。
+リンクが相対パスの場合、web ビューはそのコンテンツをベースディレクトリから読み込もうとします。 デバイス上のアプリにコンテンツが格納されているため、これが機能するためにネットワーク接続は必要ありません。
 
 ```html
 <a href="somepage.html">Local content</a>
 ```
 
-フォームのアクションでは、同じ規則に従います。
+フォームアクションは同じルールに従います。
 
 ```html
 <form method="get" action="http://google.com/"></form>
 <form method="get" action="somepage.html"></form>
 ```
 
-クライアントの web サーバーをホストするねただし、HTTP GET 経由でサービスを呼び出す今日のレスポンシブ デザイン パターンで採用されている同じサーバー通信技術を使用して JavaScript を生成することによって、応答を非同期に処理 (または呼び出し側の JavaScript は web ビューで既にホストされている)。 これにより、簡単に処理し、表示、HTML ページ上の結果をバックアップ用の C# コードに戻りましょう、HTML からデータを渡すことができます。
+クライアントで web サーバーをホストすることはありません。ただし、現在の応答性の高いデザインパターンで採用されているのと同じサーバー通信手法を使用して、HTTP GET でサービスを呼び出したり、JavaScript (または web ビューで既にホストされている JavaScript を呼び出すことによって) 応答を非同期的に処理したりすることができます。 これにより、簡単に処理し、表示、HTML ページ上の結果をバックアップ用の C# コードに戻りましょう、HTML からデータを渡すことができます。
 
-IOS と Android の両方は、アプリケーション コード (必要な) 場合、アプリのコードは応答できるように、これらのナビゲーション イベントをインターセプトするためのメカニズムを提供します。 この機能は、ネイティブ コードが web ビューを操作できるので、ハイブリッド アプリを構築するために重要です。
+IOS と Android はどちらも、アプリケーションコードがこれらのナビゲーションイベントをインターセプトして、アプリコードが応答できるようにするためのメカニズムを提供します (必要な場合)。 この機能は、ネイティブコードが web ビューと対話できるようにするため、ハイブリッドアプリを構築する上で重要です。
 
 #### <a name="ios"></a>iOS
 
-(リンクをクリックして) など、ナビゲーション要求を処理するためにアプリケーション コードを許可する iOS web ビューに関する ShouldStartLoad イベントをオーバーライドできます。 メソッドのパラメーターは、すべての情報を提供します。
+IOS の web ビューの "指定しない" イベントを上書きして、アプリケーションコードがナビゲーション要求 (リンククリックなど) を処理できるようにすることができます。 メソッドパラメーターは、すべての情報を提供します。
 
 ```csharp
 bool HandleShouldStartLoad (UIWebView webView, NSUrlRequest request, UIWebViewNavigationType navigationType) {
@@ -142,7 +142,7 @@ bool HandleShouldStartLoad (UIWebView webView, NSUrlRequest request, UIWebViewNa
 }
 ```
 
-イベント ハンドラーを割り当てます。
+次に、イベントハンドラーを割り当てます。
 
 ```csharp
 webView.ShouldStartLoad += HandleShouldStartLoad;
@@ -150,7 +150,7 @@ webView.ShouldStartLoad += HandleShouldStartLoad;
 
 #### <a name="android"></a>Android
 
-Android で単にサブクラス WebViewClient し、ナビゲーション要求に応答するコードを実装します。
+Android では、WebViewClient を単にサブクラス化してから、ナビゲーション要求に応答するコードを実装します。
 
 ```csharp
 class HybridWebViewClient : WebViewClient {
@@ -161,19 +161,19 @@ class HybridWebViewClient : WebViewClient {
 }
 ```
 
-web ビューで、クライアントを設定します。
+次に、web ビューでクライアントを設定します。
 
 ```csharp
 webView.SetWebViewClient (new HybridWebViewClient ());
 ```
 
-### <a name="calling-javascript-from-c"></a>JavaScript からの呼び出しC#
+### <a name="calling-javascript-from-c"></a>呼び出し (JavaScript を)C#
 
-読み込む新しい HTML ページでは、web ビューを示すだけでなくC#コードが現在表示されているページ内で JavaScript をでも実行できます。 使用して全体の JavaScript コードのブロックを作成できますC#文字列し、実行すると、JavaScript を使用してページで既に使用可能なメソッドの呼び出しを作成するまたは`script`タグ。
+新しい HTML ページを読み込むように web ビューに指示するだけでC#なく、コードは現在表示されているページ内で JavaScript を実行することもできます。 Javascript コードブロック全体は、文字列をC#使用して作成し、実行できます。また、ページで既に使用可能`script`な javascript のメソッド呼び出しをタグ経由で作成することもできます。
 
 #### <a name="android"></a>Android
 
-JavaScript コードが実行され、それをプレフィックスの作成"javascript:"web ビューは、その文字列を読み込むように指示するとします。
+実行する JavaScript コードを作成し、"javascript:" でプレフィックスを付け、その文字列を読み込むように web ビューに指示します。
 
 ```csharp
 var js = "alert('test');";
@@ -182,40 +182,40 @@ webView.LoadUrl ("javascript:" + js);
 
 #### <a name="ios"></a>iOS
 
-iOS web ビューでは、JavaScript を呼び出す具体的には、メソッドを提供します。
+iOS web ビューでは、JavaScript を呼び出すためのメソッドが提供されるようになります。
 
 ```csharp
 var js = "alert('test');";
 webView.EvaluateJavascript (js);
 ```
 
-### <a name="summary"></a>まとめ
+### <a name="summary"></a>Summary
 
-このセクションには、Android と xamarin では、ハイブリッド アプリケーションを構築する iOS の両方の web ビュー コントロールの機能が導入されてなど。
+このセクションでは、Android と iOS の両方で、次のようなハイブリッドアプリケーションを構築するための web ビューコントロールの機能について紹介しました。
 
--  コードでは、生成された文字列から HTML をロードする機能
--  ローカル ファイル (CSS、JavaScript、イメージまたはその他の HTML ファイル) を参照する機能
--  C# のコードでナビゲーション要求をインターセプトする機能
--  JavaScript から呼び出す機能C#コード。
+- コードで生成された文字列から HTML を読み込む機能
+- ローカルファイル (CSS、JavaScript、イメージ、またはその他の HTML ファイル) を参照する機能
+- コード内のC#ナビゲーション要求をインターセプトする機能
+- コードからC# JavaScript を呼び出すことができる。
 
 
-次のセクションでは、Razor で、簡単にハイブリッド アプリで使用する HTML を作成することについて説明します。
+次のセクションでは、ハイブリッドアプリで使用する HTML を簡単に作成できる Razor について説明します。
 
-## <a name="what-is-razor"></a>Razor とは何ですか。
+## <a name="what-is-razor"></a>Razor とは
 
-Razor は、サーバー上で実行し、web ブラウザーに提供する HTML を生成する最初の ASP.NET MVC で導入されたテンプレート エンジンです。
+Razor は、ASP.NET MVC で導入されたテンプレートエンジンであり、もともとサーバー上で実行し、web ブラウザーに提供する HTML を生成します。
 
-Razor テンプレート エンジンで標準の HTML の構文を拡張するC#、レイアウトを表現して CSS スタイル シートおよび JavaScript を簡単に組み込むようにします。 テンプレートには、任意のカスタム型を指定することができ、プロパティを持つは、テンプレートから直接アクセスできるモデル クラスを参照できます。 その主な利点の 1 つは、簡単に HTML と C# の構文を混在させる機能です。
+Razor テンプレートエンジンは、レイアウトを表現しC# 、CSS スタイルシートと JavaScript を簡単に組み込むことができるように、標準の HTML 構文をで拡張します。 このテンプレートは、モデルクラスを参照できます。これは任意のカスタム型で、そのプロパティにはテンプレートから直接アクセスできます。 その主な利点の 1 つは、簡単に HTML と C# の構文を混在させる機能です。
 
-Razor テンプレートがサーバー側の使用に限定されない、Xamarin アプリでそれらに含めることもできます。 プログラムの web ビューで処理する機能だけでなく Razor テンプレートを使用すると、Xamarin でビルドする高度なクロスプラット フォーム対応のハイブリッド アプリケーションができます。
+Razor テンプレートはサーバー側での使用に限定されておらず、Xamarin アプリに含めることもできます。 Razor テンプレートを使用すると、プログラムによって web ビューを操作できるようになり、Xamarin を使用して高度なクロスプラットフォームハイブリッドアプリケーションを構築できます。
 
 ### <a name="razor-template-basics"></a>Razor テンプレートの基礎
 
-Razor テンプレート ファイルが、 **.cshtml**ファイル拡張子。 テキスト テンプレートのセクションから Xamarin プロジェクトに追加することができます、**新しいファイル**ダイアログ。
+Razor テンプレートファイルの拡張子は、 **cshtml**です。 これらは、**新しいファイル** ダイアログの テキストテンプレート セクションから Xamarin プロジェクトに追加できます。
 
- ![新しいファイル - Razor テンプレート](images/image5_400x201.png)
+ ![新しいファイル-Razor テンプレート](images/image5_400x201.png)
 
-単純な Razor テンプレート ( **RazorView.cshtml**) を次に示します。
+単純な Razor テンプレート ( **RazorView**) を次に示します。
 
 ```html
 @model string
@@ -226,31 +226,31 @@ Razor テンプレート ファイルが、 **.cshtml**ファイル拡張子。 
 </html>
 ```
 
-通常の HTML ファイルから次の相違点に注意してください。
+通常の HTML ファイルとは次の点に注意してください。
 
--  `@`シンボルは、Razor テンプレートで特別な意味を持つ – こと、次の式は、C# に評価されることを示します。
-- `@model` ディレクティブは、常に、Razor テンプレート ファイルの最初の行として表示されます。
--  `@model`型ディレクティブの後にする必要があります。 この例をテンプレートに単純な文字列が渡されるが、任意のカスタム クラスを使用できます。
--  ときに`@Model`参照は、テンプレート全体で (この例では、これは文字列になります) で生成されたテンプレートに渡されたオブジェクトへの参照を提供します。
--  IDE のテンプレートの部分クラスが自動的に生成 (を使用するファイル、 **.cshtml**拡張機能)。 このコードを表示できますが、編集しないでください。
- ![RazorView.cshtml](images/image6_125x34.png) RazorView .cshtml テンプレートのファイル名と一致するという名前の部分クラスです。 この名前の c# コードでテンプレートを参照するために使用することをお勧めします。
-- `@using` ステートメントは、Razor テンプレートに含める追加の名前空間の上部に含めることもできます。
+- `@`シンボルは、Razor テンプレートで特別な意味を持つ – こと、次の式は、C# に評価されることを示します。
+- `@model`ディレクティブは常に Razor テンプレートファイルの最初の行として表示されます。
+- ディレクティブ`@model`の後に型を指定する必要があります。 この例では、単純な文字列がテンプレートに渡されていますが、これは任意のカスタムクラスである可能性があります。
+- テンプレート`@Model`全体でが参照されている場合、テンプレートの生成時にテンプレートに渡されたオブジェクトへの参照が提供されます (この例では文字列になります)。
+- IDE によって、テンプレートの部分クラスが自動的に生成されます (ファイル拡張子は**cshtml** )。 このコードを表示することはできますが、編集することはできません。
+ ![RazorView 部分クラスは、cshtml テンプレートファイル名と一致するように RazorView という名前が付けられています。](images/image6_125x34.png) この名前は、コードでC#テンプレートを参照するために使用されます。
+- `@using`ステートメントを Razor テンプレートの先頭に追加して、追加の名前空間を含めることもできます。
 
 
-最終的な HTML 出力は、次の C# コードを生成できます。 文字列"Hello World"が表示されるテンプレートの出力に組み込まれる予定であること、モデルを指定するに注意してください。
+最終的な HTML 出力は、次の C# コードを生成できます。 モデルは、表示されるテンプレートの出力に組み込まれる文字列 "Hello World" として指定されていることに注意してください。
 
 ```csharp
 var template = new RazorView () { Model = "Hello World" };
 var page = template.GenerateString ();
 ```
 
-IOS シミュレーターと Android エミュレーターでの web ビューに表示される出力を次に示します。
+IOS シミュレーターの web ビューに表示される出力と Android Emulator を次に示します。
 
  ![Hello World](images/image7_523x135.png)
 
-### <a name="more-razor-syntax"></a>Razor 構文の詳細
+### <a name="more-razor-syntax"></a>その他の Razor 構文
 
-開始するためのいくつかの基本的な Razor 構文を紹介するこのセクションでは、これを使用します。 このセクションの例では、次のクラスにデータを設定、表示 Razor を使用します。
+このセクションでは、使用を開始する際に役立つ基本的な Razor 構文を紹介します。 このセクションの例では、次のクラスにデータを設定し、Razor を使用して表示します。
 
 ```csharp
 public class Monkey {
@@ -260,7 +260,7 @@ public class Monkey {
 }
 ```
 
-すべての例は、次のデータの初期化コードを使用します。
+すべての例では、次のデータ初期化コードを使用します。
 
 ```csharp
 var animal = new Monkey {
@@ -271,9 +271,9 @@ var animal = new Monkey {
 };
 ```
 
-#### <a name="displaying-model-properties"></a>モデルのプロパティを表示します。
+#### <a name="displaying-model-properties"></a>モデルのプロパティの表示
 
-モデルがプロパティを持つクラスである場合は、このテンプレートの例で示すように Razor テンプレートで簡単に参照がされます。
+モデルがプロパティを持つクラスである場合は、次のテンプレートの例に示すように、Razor テンプレートで簡単に参照できます。
 
 ```html
 @model Monkey
@@ -285,18 +285,18 @@ var animal = new Monkey {
 </html>
 ```
 
-これは、次のコードを使用して文字列に表示することができます。
+これは、次のコードを使用して文字列にレンダリングできます。
 
 ```csharp
 var template = new RazorView () { Model = animal };
 var page = template.GenerateString ();
 ```
 
-最終的な出力が iOS シミュレーターと Android エミュレーターでの web ビューのとおりです。
+最終的な出力は、iOS シミュレーターの web ビューと Android Emulator に表示されます。
 
- ![Rupert](images/image8_516x160.png)
+ ![、Pert](images/image8_516x160.png)
 
-#### <a name="c-statements"></a>C# のステートメント
+#### <a name="c-statements"></a>C#命令
 
 複雑な C# モデル プロパティの更新プログラムとこの例では、年齢の計算など、テンプレートに含めることができます。
 
@@ -321,7 +321,7 @@ var page = template.GenerateString ();
 
 #### <a name="if-else-statements"></a>If-else ステートメント
 
-コード分岐で表現できる`@if`このテンプレートの例で示すようにします。
+このテンプレートの例に示す`@if`ように、コード分岐はで表すことができます。
 
 ```html
 @model Monkey
@@ -342,7 +342,7 @@ var page = template.GenerateString ();
 
 #### <a name="loops"></a>ループ
 
-ループのような構造`foreach`も追加できます。 `@`ループ変数のプレフィックスを使用できます (`@food`ここで) HTML でレンダリングします。
+のような`foreach`ループ構造を追加することもできます。 このプレフィックスは、ループ変数 ( `@food`この場合は) で使用して、HTML 形式で表示できます。 `@`
 
 ```html
 @model Monkey
@@ -365,95 +365,95 @@ var page = template.GenerateString ();
 </html>
 ```
 
-上記のテンプレートの出力を表示するには、iOS シミュレーターと Android エミュレーターで実行されています。
+上記のテンプレートの出力は、iOS シミュレーターおよび Android Emulator で実行されています。
 
- ![Rupert X Monkey](images/image9_520x277.png)
+ ![サル (pert)](images/image9_520x277.png)
 
-このセクションでは、Razor テンプレートを使用した単純な読み取り専用ビューをレンダリングの基礎について説明しました。 次のセクションがユーザー入力を受け付け、HTML ビューでの JavaScript の間で相互運用する、Razor を使用してより完全なアプリを構築する方法について説明し、C#します。
+このセクションでは、Razor テンプレートを使用して単純な読み取り専用ビューを表示する方法の基本について説明しました。 次のセクションでは、Razor を使用してより完全なアプリを構築する方法について説明します。これC#は、HTML ビューとの JavaScript 間でユーザー入力を受け入れ、相互運用することができます。
 
-## <a name="using-razor-templates-with-xamarin"></a>Xamarin を使用した Razor テンプレートの使用
+## <a name="using-razor-templates-with-xamarin"></a>Xamarin での Razor テンプレートの使用
 
-このセクションは、Visual studio for mac。 ソリューション テンプレートを使用して、独自のハイブリッド アプリケーションをビルドに使用する方法を説明します 次の 3 つのテンプレートがあるから使用可能な**ファイル > 新規 > ソリューション.** ウィンドウ。
+このセクションでは、Visual Studio for Mac のソリューションテンプレートを使用して独自のハイブリッドアプリケーションを構築する方法について説明します。 **[新しい > ソリューションの >]** ウィンドウでは、次の3つのテンプレートを使用できます。
 
 - **Android > アプリ > Android WebView アプリケーション**
-- **iOS > アプリ > の web ビュー アプリケーション**
+- **iOS > アプリ > WebView アプリケーション**
 - **ASP.NET MVC プロジェクト**
 
 
 
-**新しいソリューション**ウィンドウ次のような iPhone と Android プロジェクト - 右側のソリューションの説明には、Razor テンプレート エンジンのサポートが強調表示されます。
+**新しいソリューション**ウィンドウは、IPhone と Android プロジェクトの場合は次のようになります。右側のソリューションの説明では、Razor テンプレートエンジンのサポートが強調表示されています。
 
- ![IPhone と Android のソリューションを作成します。](images/image13_1139x959.png)
+ ![IPhone と Android ソリューションの作成](images/image13_1139x959.png)
 
-簡単に追加することに注意してください、 **.cshtml** Razor テンプレート*任意*の既存の Xamarin プロジェクト、その必要はありませんこれらのソリューション テンプレートを使用します。 iOS プロジェクトにはいずれも; Razor を使用するストーリー ボードは必要ありません。単にプログラムで UIWebView コントロールを任意のビューに追加し、c# コードで全体 Razor テンプレートをレンダリングすることができます。
+既存の Xamarin プロジェクトには簡単に cshtml Razor テンプレートを追加できることに注意して**ください**。これらのソリューションテンプレートを使用する必要はありません。 iOS プロジェクトでは、Razor を使用するためのストーリーボードは必要ありません。プログラムによって任意のビューに UIWebView コントロールを追加するだけで、コードC#内で Razor テンプレート全体をレンダリングできます。
 
-IPhone と Android プロジェクト用の既定テンプレート ソリューションの内容を次に示します。
+IPhone と Android プロジェクトの既定のテンプレートソリューションコンテンツを次に示します。
 
- ![iPhone や Android テンプレート](images/image10_428x310.png)
+ ![iPhone と Android のテンプレート](images/image10_428x310.png)
 
-テンプレートでは、データ モデル オブジェクトに Razor テンプレートを読み込み、ユーザー入力を処理、および JavaScript を使用して、ユーザーへの通信をすぐにアプリケーション インフラストラクチャを提供します。
+テンプレートを使用すると、すぐに使用できるアプリケーションインフラストラクチャを利用して、データモデルオブジェクトを含む Razor テンプレートを読み込み、ユーザー入力を処理して、JavaScript を介してユーザーに返信できます。
 
 ソリューションの重要な部分は次のとおりです。
 
--  などの静的コンテンツ、 **style.css**ファイル。
--  Razor テンプレート ファイルの .cshtml **RazorView.cshtml**します。
--  モデル クラスなど、Razor テンプレートで参照されている**ExampleModel.cs**します。
--  Web ビューを作成しなど、テンプレートをレンダリング プラットフォーム固有のクラス、 `MainActivity` android、および`iPhoneHybridViewController`iOS でします。
+- **スタイルの .css**ファイルなどの静的コンテンツ。
+- **RazorView**のような Razor テンプレートファイル。
+- **ExampleModel.cs**などの Razor テンプレートで参照されるモデルクラス。
+- Web ビューを作成してテンプレートをレンダリングするプラットフォーム固有のクラス。たとえば、 `MainActivity` Android `iPhoneHybridViewController`の場合は、iOS の場合はです。
 
 
-次のセクションでは、プロジェクトの作業について説明します。
+次のセクションでは、プロジェクトの動作について説明します。
 
 ### <a name="static-content"></a>静的コンテンツ
 
-静的コンテンツには、CSS スタイル シートやイメージ、JavaScript ファイルからリンクまたは web ビューに表示されている HTML ファイルで参照できるその他のコンテンツが含まれています。
+静的コンテンツには、web ビューに表示されている HTML ファイルからリンクしたり、参照したりできる CSS スタイルシート、画像、JavaScript ファイル、その他のコンテンツが含まれます。
 
-プロジェクト テンプレートには、ハイブリッド アプリでの静的コンテンツを含める方法を示すために最小限のスタイル シートが含まれます。 このようなテンプレートでは、CSS スタイル シートを参照します。
+テンプレートプロジェクトには、ハイブリッドアプリに静的コンテンツを含める方法を示すための最小限のスタイルシートが含まれています。 次のように、テンプレートで CSS スタイルシートが参照されます。
 
 ```html
 <link rel="stylesheet" href="style.css" />
 ```
 
-任意のスタイル シートや JQuery などのフレームワークなど、必要な JavaScript ファイルを追加することができます。
+JQuery などのフレームワークを含む、必要な任意のスタイルシートと JavaScript ファイルを追加できます。
 
 ### <a name="razor-cshtml-templates"></a>Razor cshtml テンプレート
 
-テンプレートには、Razor **.cshtml**が HTML または JavaScript の間でデータを伝達するためのコード、事前に記述ファイルとC#します。 これによりビルド処理や保存の C# コードを高度なハイブリッドをしないだけ、モデルからの読み取り専用のデータの表示がも HTML 内のユーザー入力を受け付けるとアプリを渡します。
+このテンプレートには、 HTML/JavaScript とC#の間でデータをやり取りするための事前に記述されたコードを含む Razor ファイルが含まれています。 これによりビルド処理や保存の C# コードを高度なハイブリッドをしないだけ、モデルからの読み取り専用のデータの表示がも HTML 内のユーザー入力を受け付けるとアプリを渡します。
 
-#### <a name="rendering-the-template"></a>テンプレートの表示
+#### <a name="rendering-the-template"></a>テンプレートを表示する
 
-呼び出す、`GenerateString`テンプレート レンダリングすぐに web ビューで表示できる HTML。 テンプレートは、モデルを使用する場合は、レンダリングの前に指定する必要があります。 この図は、レンダリングのしくみ-しない静的なリソースが指定された基本ディレクトリを使用して、指定されたファイルを検索する、実行時に web ビューによって解決されるを示しています。
+テンプレートで`GenerateString`を呼び出すと、web ビューで表示できる HTML がレンダリングされます。 テンプレートでモデルを使用する場合は、レンダリングの前に指定する必要があります。 この図は、レンダリングの動作を示しています。静的なリソースは実行時に web ビューによって解決され、指定されたファイルを検索するために指定されたベースディレクトリを使用します。
 
- ![Razor のフローチャート](images/image12_700x421.png)
+ ![Razor フローチャート](images/image12_700x421.png)
 
 #### <a name="calling-c-code-from-the-template"></a>テンプレートから C# コードを呼び出す
 
 Web ビューの URL を設定し、web ビューを再度読み込まなくても、ネイティブの要求を処理するためには、C# での要求をインターセプトし、C# にコールバック レンダリングされた web ビューからの通信が行われます。
 
-RazorView のボタンの処理方法の例を確認できます。 ボタンには、次の HTML があります。
+例については、「RazorView のボタンの処理方法」を参照してください。 このボタンには、次の HTML があります。
 
 ```html
 <input type="button" name="UpdateLabel" value="Click" onclick="InvokeCSharpWithFormValues(this)" />
 ```
 
-`InvokeCSharpWithFormValues` JavaScript 関数が HTML フォーム セットからすべての値を読み込み、 `location.href` web 表示。
+JavaScript `InvokeCSharpWithFormValues`関数は、HTML フォームからすべての値を読み取り、web ビュー `location.href`のを設定します。
 
 ```javascript
 location.href = "hybrid:" + elm.name + "?" + qs;
 ```
 
-これは、URL (例: カスタム スキーマを使用する web ビュー内を移動しよう `hybrid:`)
+これにより、web ビューがカスタムスキームの URL に移動しようとします ( `hybrid:`)
 
 ```
 hybrid:UpdateLabel?textbox=SomeValue&UpdateLabel=Click
 ```
 
-ネイティブの web ビューでは、このナビゲーション要求を処理するときインターセプトする機会があります。 Ios でこれは UIWebView の HandleShouldStartLoad イベントを処理することによって行われます。 Android では、私たちサブクラス化だけ、WebViewClient、フォームで使用し、ShouldOverrideUrlLoading をオーバーライドします。
+ネイティブ web ビューがこのナビゲーション要求を処理するときは、それをインターセプトすることができます。 IOS では、これは UIWebView の HandleShouldStartLoad イベントを処理することによって行われます。 Android では、フォームで使用される WebViewClient を単にサブクラス化し、ShouldOverrideUrlLoading をオーバーライドします。
 
-これら 2 つのナビゲーション インターセプターの内部は、基本的に同じです。
+これら2つのナビゲーションインターセプターの内部構造は、基本的に同じです。
 
-最初に、web ビューを読み込むには、試行する URL を確認し、カスタムのスキームで開始しない場合 (`hybrid:`)、通常どおり、移動を発生を許可します。
+まず、web ビューが読み込もうとしている URL を確認し、カスタムスキーム (`hybrid:`) で開始されていない場合は、ナビゲーションを通常どおりに実行できるようにします。
 
-カスタムの URL スキーム、スキーム間 URL 内のすべてのおよび"?" (この例では、"UpdateLabel") で処理するメソッドの名前です。 クエリ文字列内のすべてのメソッド呼び出しへのパラメーターとして扱われます。
+カスタム URL スキームの場合、スキームと "?" の間の URL 内のすべてのものが含まれます。 処理するメソッド名を指定します (この例では "UpdateLabel")。 クエリ文字列内のすべてのものは、メソッド呼び出しのパラメーターとして扱われます。
 
 ```csharp
 var resources = url.Substring(scheme.Length).Split('?');
@@ -463,66 +463,66 @@ var parameters = System.Web.HttpUtility.ParseQueryString(resources[1]);
 
 `UpdateLabel` このサンプルでは (前の「C# という」文字列に)、テキスト ボックスにパラメーターに最小限の文字列操作し、web ビューにコールバックします。
 
-URL を処理が完了したら、メソッドは、web ビューがカスタムの URL に移動する [完了] を試行しませんようにナビゲーションを中止します。
+URL の処理後、メソッドはナビゲーションを中止して、web ビューがカスタム URL への移動を完了しないようにします。
 
-#### <a name="manipulating-the-template-from-c"></a>C# からテンプレートを操作します。
+#### <a name="manipulating-the-template-from-c"></a>テンプレートを操作するC#
 
-レンダリングされた HTML web ビューへの通信C#は web ビューでの JavaScript の呼び出しによって行われます。 Ios では、呼び出すことによってこれは、 `EvaluateJavascript` UIWebView で。
+からC#表示される HTML web ビューへの通信は、web ビューで JavaScript を呼び出すことによって行われます。 IOS では、これは uiwebview `EvaluateJavascript`でを呼び出すことによって行われます。
 
 ```csharp
 webView.EvaluateJavascript (js);
 ```
 
-Android では、JavaScript で呼び出せる web ビューとして URL を使用して、JavaScript を読み込むことによって、 `"javascript:"` URL スキーム。
+Android では、 `"javascript:"` url スキームを使用して javascript を url として読み込むことにより、web ビューで javascript を呼び出すことができます。
 
 ```csharp
 webView.LoadUrl ("javascript:" + js);
 ```
 
-## <a name="making-an-app-truly-hybrid"></a>アプリを作成する真のハイブリッド
+## <a name="making-an-app-truly-hybrid"></a>アプリを真のハイブリッドにする
 
-これらのテンプレートがようにしない各プラットフォームのネイティブ コントロールの使用 – 1 つの web ビューの画面全体が入力されます。
+これらのテンプレートは、各プラットフォームでネイティブコントロールを使用しません。画面全体に1つの web ビューが設定されます。
 
-種類の項目を表示する web が最も得意とリッチ テキストおよびレスポンシブのレイアウトなど、HTML をプロトタイプ作成、すばらしいことができます。 Android でより適切 (iOS の UITableView) または ListView などのネイティブ UI コントロールを使用して実行しますなどされないすべてのタスクは、HTML および JavaScript – データの長い一覧をスクロールに適しています。
+HTML は、プロトタイプに適しています。また、リッチテキストや応答性の高いレイアウトなど、web が最適な種類の情報を表示できます。 ただし、すべてのタスクが HTML および JavaScript に適しているわけではありません。たとえば、長いデータリストをスクロールすると、ネイティブ UI コントロール (iOS の UITableView、Android の ListView など) を使用してパフォーマンスが向上します。
 
-テンプレートの web ビューは、プラットフォーム固有のコントロール – 編集だけで簡単に拡張でき、 **MainStoryboard.storyboard** iOS デザイナーで、または**Resources/layout/Main.axml** Android で。
+テンプレート内の web ビューは、プラットフォーム固有のコントロールを使用して簡単に拡張できます。 iOS デザイナーの**mainstoryboard.storyboard ファイル**を編集するか、Android の**Resources/layout/Main. axml**を編集するだけです。
 
 ### <a name="razortodo-sample"></a>RazorTodo サンプル
 
-[RazorTodo](https://github.com/xamarin/mobile-samples/tree/master/RazorTodo)リポジトリには、完全に HTML 駆動型アプリとネイティブ コントロールと HTML を組み合わせたアプリ間の差を表示する 2 つの個別のソリューションが含まれています。
+[RazorTodo](https://github.com/xamarin/mobile-samples/tree/master/RazorTodo)リポジトリには、完全な html 駆動型アプリと、html をネイティブコントロールと組み合わせるアプリの違いを示すための2つのソリューションが含まれています。
 
--  **RazorTodo** -Razor テンプレートを使用して完全に HTML 駆動型アプリ。
--  **RazorNativeTodo** - iOS および Android 用のネイティブなリスト ビュー コントロールの使用が、HTML および Razor での編集 画面が表示されます。
+- **RazorTodo** -Razor テンプレートを使用する完全な HTML 駆動型アプリ。
+- **RazorNativeTodo** -IOS および Android 用のネイティブのリストビューコントロールを使用しますが、編集画面は HTML および Razor で表示されます。
 
 
-これらの Xamarin アプリは、iOS と Android では、ポータブル クラス ライブラリ (Pcl) データベースとモデルのクラスなどの一般的なコードを共有するを使用しての両方で実行します。 Razor **.cshtml**プラットフォーム間で簡単に共有しているように、テンプレートを PCL に含めるもできます。
+これらの Xamarin アプリは、iOS と Android の両方で動作し、ポータブルクラスライブラリ (Pcl) を利用してデータベースやモデルクラスなどの共通コードを共有します。 Razorテンプレートは、複数のプラットフォーム間で簡単に共有できるように、PCL に含めることもできます。
 
 両方のサンプル アプリでは、Twitter で共有および Xamarin を使用したハイブリッド アプリケーションでもあるアクセス基になるすべての機能にテンプレート駆動の HTML Razor ビューからのデモ、ネイティブ プラットフォームからの音声合成 API を組み込みます。
 
-**RazorTodo**アプリは、リストと編集ビューを HTML Razor テンプレートを使用します。 つまり、共有ポータブル クラス ライブラリでほぼ完全にアプリを構築できます (データベースを含むと **.cshtml** Razor テンプレート)。 次のスクリーン ショットでは、iOS および Android アプリを表示します。
+**RazorTodo**アプリでは、リストビューと編集ビューに HTML Razor テンプレートを使用します。 つまり、アプリケーションは、ほとんどの場合、共有のポータブルクラスライブラリ (データベースおよび**cshtml** Razor テンプレートを含む) でビルドできます。 以下のスクリーンショットは、iOS アプリと Android アプリを示しています。
 
  ![RazorTodo](images/Both_700x290.png)
 
-**RazorNativeTodo**アプリは、編集ビューに、HTML Razor テンプレートを使用しますが、各プラットフォームでネイティブのスクロール リストを実装します。 これは、数などの利点を提供します。
+**RazorNativeTodo**アプリでは、編集ビューに HTML Razor テンプレートが使用されますが、各プラットフォームにはネイティブスクロールリストが実装されています。 これには、次のようなさまざまな利点があります。
 
--  パフォーマンス - ネイティブ スクロール コントロールは、高速で滑らかなのも非常に長いデータの一覧をスクロールすることを確認するのに仮想化を使用します。
--  ネイティブのエクスペリエンスでは、プラットフォーム固有の UI 要素を簡単に、iOS と Android で高速スクロール インデックスのサポートなどを有効にします。
+- パフォーマンス-ネイティブスクロールコントロールでは仮想化を使用して、データのリストが非常に長い場合でも、高速でスムーズにスクロールできるようにします。
+- ネイティブエクスペリエンス-プラットフォーム固有の UI 要素は、iOS および Android での高速スクロールインデックスのサポートなど、簡単に有効にすることができます。
 
 
-Xamarin を使用したハイブリッド アプリのビルドの主な利点は、(最初のサンプル) のような完全に HTML 主導のユーザー インターフェイスを起動して (2 つ目のサンプルでは) として、必要に応じてプラットフォーム固有の機能を追加しことができます。 ネイティブ リスト画面および HTML Razor は、両方の iOS の画面を編集し、Android を以下に示します。
+Xamarin を使用してハイブリッドアプリを構築する主な利点は、(最初のサンプルのように) HTML 駆動型のユーザーインターフェイスを使用して開始し、必要に応じてプラットフォーム固有の機能を追加できることです (2 番目のサンプルで示すように)。 IOS と Android の両方のネイティブリスト画面と HTML Razor 編集画面を次に示します。
 
  ![RazorNativeTodo](images/BothNative_700x290.png)
 
 ## <a name="summary"></a>まとめ
 
-この記事では iOS と Android のビルドを容易にするに使用できる web ビュー コントロールの機能について説明しましたハイブリッド アプリケーション。
+この記事では、ハイブリッドアプリケーションの構築を容易にする、iOS および Android で使用できる web ビューコントロールの機能について説明しました。
 
-また、Razor テンプレート エンジンと構文を使用して Xamarin アプリで簡単に HTML を生成するために使用できる、について説明します。**cshtml** Razor テンプレート ファイル。 Visual Studio は、Mac すばやくソリューション テンプレートは Xamarin を使用したハイブリッド アプリケーションの構築を開始するのもについて説明します。
+次に、を使用して、Xamarin アプリで HTML を簡単に生成するために使用できる Razor テンプレートエンジンと構文について説明しました。**cshtml**Razor テンプレートファイル。 また、Xamarin を使用してハイブリッドアプリケーションの構築をすぐに開始できるようにするための Visual Studio for Mac ソリューションテンプレートについても説明しました。
 
 最後に、ネイティブ ユーザー インターフェイスと API と web ビューを結合する方法を示す RazorTodo サンプルが導入されました。
 
 ### <a name="related-links"></a>関連リンク
 
 - [RazorTodo サンプル](https://github.com/xamarin/mobile-samples/tree/master/RazorTodo)
-- [MVC 3 - Razor ビュー エンジン (マイクロソフト)](http://www.asp.net/mvc/videos/mvc-3/mvc-3-razor-view-engine)
-- [Razor 構文 (Microsoft) を使用して ASP.NET Web プログラミングの概要](http://www.asp.net/web-pages/tutorials/basics/2-introduction-to-asp-net-web-programming-using-the-razor-syntax)
+- [MVC 3-Razor ビューエンジン (Microsoft)](http://www.asp.net/mvc/videos/mvc-3/mvc-3-razor-view-engine)
+- [Razor 構文を使用した ASP.NET Web プログラミングの概要 (Microsoft)](http://www.asp.net/web-pages/tutorials/basics/2-introduction-to-asp-net-web-programming-using-the-razor-syntax)

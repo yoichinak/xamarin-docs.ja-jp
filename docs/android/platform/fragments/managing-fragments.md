@@ -6,23 +6,23 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/07/2018
-ms.openlocfilehash: 3e0430b8ed9c42030441021e71c3b08b1ddccc57
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 5b829b1c38007bbb070b643a355d70bffaef01a5
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61022206"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524305"
 ---
 # <a name="managing-fragments"></a>フラグメントの管理
 
-Android フラグメントの管理を支援するための提供、`FragmentManager`クラス。 各アクティビティのインスタンスが実行されて`Android.App.FragmentManager`を検索またはそのフラグメントを動的に変更されます。 これらの変更の各セットと呼ばれる、*トランザクション*、いずれかのクラスに含まれている Api を使用して実行し、`Android.App.FragmentTransation`で管理される、 `FragmentManager`。 アクティビティは、このようなトランザクションを開始可能性があります。
+フラグメントの管理を支援するために、 `FragmentManager` Android にはクラスが用意されています。 各アクティビティには、その`Android.App.FragmentManager`フラグメントを検索または動的に変更するのインスタンスがあります。 これらの変更の各セットは*トランザクション*と呼ばれ、によって管理`Android.App.FragmentTransation` `FragmentManager`されるクラスに含まれる api の1つを使用して実行されます。 アクティビティは、次のようなトランザクションを開始できます。
 
 ```csharp
 FragmentTransaction fragmentTx = this.FragmentManager.BeginTransaction();
 ```
 
-フラグメントにこれらの変更が実行される、`FragmentTransaction`などのメソッドを使用して、インスタンス`Add()`、`Remove(),`と`Replace().`を使用して、変更が適用される、 `Commit()`。 すぐに、トランザクションでの変更は行われません。
-代わりに、できるだけ早く、アクティビティの UI スレッドで実行する予定です。
+これらのフラグメントへの`FragmentTransaction`変更は`Add()`、 `Remove(),` `Replace().`などのメソッドを使用してインスタンスで実行され、変更はを`Commit()`使用して適用されます。 トランザクションの変更はすぐには実行されません。
+代わりに、アクティビティの UI スレッドでできるだけ早く実行するようにスケジュールされています。
 
 次の例では、既存のコンテナーにフラグメントを追加する方法を示します。
 
@@ -38,11 +38,11 @@ fragmentTx.Add(Resource.Id.fragment_container, aDifferentDetailsFrag);
 fragmentTx.Commit();
 ```
 
-場合は、トランザクションのコミット後`Activity.OnSaveInstanceState()`が呼び出されると、例外がスローされます。 これは、アクティビティの状態を保存、ときに Android もホストされているフラグメントの状態が保存されるために発生します。 この時点より後のフラグメントのトランザクションがコミットされた場合は、アクティビティが復元されるときにこれらのトランザクションの状態が失われます。
+が呼び出された後`Activity.OnSaveInstanceState()`にトランザクションがコミットされると、例外がスローされます。 これは、アクティビティによって状態が保存されるときに、Android によって、ホストされているフラグメントの状態も保存されるためです。 この時点より後にフラグメントトランザクションがコミットされた場合、アクティビティが復元されると、これらのトランザクションの状態は失われます。
 
-アクティビティのフラグメントのトランザクションを保存することは[戻るスタック](https://developer.android.com/guide/topics/fundamentals/tasks-and-back-stack.html)を呼び出すことによって`FragmentTransaction.AddToBackStack()`します。 これにより、ユーザーによる下位に移動するフラグメントの場合に変更、**戻る**ボタンが押されました。 このメソッドを呼び出し、削除されたフラグメントが破棄されは、ユーザーがアクティビティでもう一度移動する場合は使用できません。
+を`FragmentTransaction.AddToBackStack()`呼び出すことによって、アクティビティの[バックスタック](https://developer.android.com/guide/topics/fundamentals/tasks-and-back-stack.html)にフラグメントトランザクションを保存することができます。 これにより、 **[戻る]** ボタンが押されたときに、ユーザーがフラグメントの変更を前後に移動できるようになります。 このメソッドを呼び出さないと、削除されたフラグメントは破棄され、ユーザーがアクティビティをたどって戻ると使用できなくなります。
 
-次の例は、使用する方法を示します、`AddToBackStack`のメソッド、`FragmentTransaction`戻るスタックの最初のフラグメントの状態を維持しながら、1 つのフラグメントを置換します。
+次の例では、 `AddToBackStack` `FragmentTransaction`のメソッドを使用して1つのフラグメントを置換し、バックスタックの最初のフラグメントの状態を維持する方法を示します。
 
 ```csharp
 // Create a new fragment and a transaction.
@@ -62,15 +62,15 @@ fragmentTx.Commit();
 
 ## <a name="communicating-with-fragments"></a>フラグメントとの通信
 
-*FragmentManager*に関するすべてのアクティビティに関連付けられているフラグメントを知っているし、これらのフラグメントを検索する 2 つのメソッドを提供します。
+*Fragmentmanager*は、アクティビティにアタッチされているすべてのフラグメントを認識し、これらのフラグメントを見つけるために2つのメソッドを提供します。
 
--   **FindFragmentById** &ndash;このメソッドは、フラグメントは、トランザクションの一部として追加されたときに、レイアウト ファイルで指定された ID またはコンテナーの ID を使用してフラグメントを検索します。
+- **FindFragmentById**&ndash;このメソッドは、フラグメントがトランザクションの一部として追加されたときに、レイアウトファイルで指定された id またはコンテナー id を使用して検出されます。
 
--   **FindFragmentByTag** &ndash;レイアウト ファイルで指定された、またはトランザクションに追加されたタグを持つフラグメントを検索するこのメソッドが使用されます。
+- **Findfragmentbytag**&ndash;このメソッドは、レイアウトファイルに指定された、またはトランザクションで追加されたタグを持つフラグメントを検索するために使用されます。
 
-フラグメントとアクティビティの両方の参照、`FragmentManager`同じ手法がそれらの間を行き来通信に使用されるため、します。 アプリケーションでは、フラグメントの参照を検索するには、これら 2 つのメソッドのいずれかを使用して、適切な型には、その参照をキャスト、およびがフラグメント上のメソッドを直接呼び出す可能性があります。 次のスニペットでは、例を示します。
+フラグメントとアクティビティはどちらも`FragmentManager`を参照するため、同じ手法を使用してそれらの間で通信を行います。 アプリケーションでは、次の2つのメソッドのいずれかを使用して参照フラグメントを検出し、その参照を適切な型にキャストして、フラグメントのメソッドを直接呼び出すことができます。 次のスニペットに例を示します。
 
-アクティビティを使用することも、`FragmentManager`フラグメントを検索します。
+アクティビティでを使用`FragmentManager`してフラグメントを検索することもできます。
 
 ```csharp
 var emailList = FragmentManager.FindFragmentById<EmailListFragment>(Resource.Id.email_list_fragment);
@@ -80,7 +80,7 @@ emailList.SomeCustomMethod(parameter1, parameter2);
 
 ### <a name="communicating-with-the-activity"></a>アクティビティとの通信
 
-フラグメントを使用することは、`Fragment.Activity`そのホストを参照するプロパティ。 アクティビティをより具体的な型をキャストすることによってことがメソッドの呼び出しとそのホストでは、プロパティをアクティビティの次の例に示すようにできます。
+フラグメントは、 `Fragment.Activity`プロパティを使用してそのホストを参照することができます。 アクティビティをより具体的な型にキャストすることにより、アクティビティは、次の例に示すように、そのホスト上のメソッドとプロパティを呼び出すことができます。
 
 ```csharp
 var myActivity = (MyActivity) this.Activity;

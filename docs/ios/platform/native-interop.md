@@ -1,104 +1,104 @@
 ---
-title: Xamarin.iOS でネイティブ ライブラリを参照します。
-description: このドキュメントでは、Xamarin.iOS アプリケーションにネイティブの C ライブラリにリンクする方法について説明します。 ユニバーサルのネイティブ ライブラリと C のメソッドへのアクセスをビルドする方法を説明C#します。
+title: Xamarin でのネイティブライブラリの参照
+description: このドキュメントでは、ネイティブ C ライブラリを Xamarin iOS アプリケーションにリンクする方法について説明します。 ここでは、汎用ネイティブライブラリを構築し、からC#C メソッドにアクセスする方法について説明します。
 ms.prod: xamarin
 ms.assetid: 1DA80280-E78A-EC4B-8673-C249C8425CF5
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/28/2016
-ms.openlocfilehash: 7ed8fc18624f46abd4a9fc293d8c33a1722da7dd
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 426b46f578ac3a09372fa4bf63ace1b6545c4866
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61424622"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528171"
 ---
-# <a name="referencing-native-libraries-in-xamarinios"></a>Xamarin.iOS でネイティブ ライブラリを参照します。
+# <a name="referencing-native-libraries-in-xamarinios"></a>Xamarin でのネイティブライブラリの参照
 
-Xamarin.iOS では、ネイティブの C ライブラリと OBJECTIVE-C ライブラリの両方とのリンクをサポートしています。 このドキュメントでは、Xamarin.iOS プロジェクト、ネイティブの C ライブラリにリンクする方法について説明します。 OBJECTIVE-C ライブラリの作業を行うことについては、次を参照してください。 この[Objective-c のバインド型](~/ios/platform/binding-objective-c/index.md)ドキュメント。
+Xamarin. iOS は、ネイティブ C ライブラリと目的 C ライブラリの両方を使用したリンクをサポートします。 このドキュメントでは、ネイティブ C ライブラリを Xamarin. iOS プロジェクトにリンクする方法について説明します。 目的 C ライブラリについても同様に説明します。詳細については、「[バインディングの目的-c の型](~/ios/platform/binding-objective-c/index.md)」を参照してください。
 
 <a name="building_native" />
 
-## <a name="building-universal-native-libraries-i386-armv7-and-arm64"></a>(I386、ARMv7、および ARM64) ユニバーサルのネイティブ ライブラリの構築
+## <a name="building-universal-native-libraries-i386-armv7-and-arm64"></a>Universal Native Library (i386、ARMv7、ARM64) の構築
 
-IOS 開発のサポートされているプラットフォームごとに、ネイティブ ライブラリを構築することがしばしば (シミュレーターと ARMv7/ARM64 デバイス自体の i386)。 ライブラリの Xcode プロジェクトが既に場合は実際に行うは簡単です。
+多くの場合、iOS 開発用にサポートされているプラットフォームごとにネイティブライブラリを構築することをお勧めします (シミュレーターの場合は i386、デバイス自体の場合は ARMv7/ARM64)。 ライブラリ用の Xcode プロジェクトを既に持っている場合は、これは非常に簡単です。
 
-I386 バージョンのネイティブ ライブラリをビルドするには、ターミナルから、次のコマンドを実行します。
+ネイティブライブラリの i386 バージョンをビルドするには、ターミナルから次のコマンドを実行します。
 
 ```bash
 /Developer/usr/bin/xcodebuild -project MyProject.xcodeproj -target MyLibrary -sdk iphonesimulator -arch i386 -configuration Release clean build
 ```
 
-これは、結果、ネイティブのスタティック ライブラリ `MyProject.xcodeproj/build/Release-iphonesimulator/`します。 後で使用する一意の名前を付けることの安全な場所にライブラリ アーカイブ ファイル (libMyLibrary.a) をコピー (または移動) (など**libMyLibrary i386.a**)、arm64 および armv7 バージョンは、同じライブラリの使用が衝突しないように次にビルドします。
+これにより、にネイティブスタティックライブラリ`MyProject.xcodeproj/build/Release-iphonesimulator/`が生成されます。 ライブラリアーカイブファイル (libMyLibrary. a) を後で使用するために安全な場所にコピー (または移動) します。これにより、次に構築するのと同じライブラリの arm64 バージョンと armv7 バージョンが競合しないようにし**ます**。
 
-ARM64 バージョンのネイティブ ライブラリをビルドするには、次のコマンドを実行します。
+ネイティブライブラリの ARM64 バージョンをビルドするには、次のコマンドを実行します。
 
 ```bash
 /Developer/usr/bin/xcodebuild -project MyProject.xcodeproj -target MyLibrary -sdk iphoneos -arch arm64 -configuration Release clean build
 ```
 
-この時点でビルドされたネイティブ ライブラリが配置されます`MyProject.xcodeproj/build/Release-iphoneos/`します。 もう一度、コピー (移動) のように名前を変更する、安全な場所にこのファイル**libMyLibrary arm64.a**競合が発生しないようにします。
+今回は、ビルドされたネイティブライブラリが`MyProject.xcodeproj/build/Release-iphoneos/`に配置されます。 ここでも、このファイルを安全な場所にコピー (または移動) します。このファイルの名前を**Libmylibrary-arm64**のように変更して、競合しないようにします。
 
-ARMv7 バージョンのライブラリを今すぐビルドするには。
+次に、ライブラリの ARMv7 バージョンをビルドします。
 
 ```bash
 /Developer/usr/bin/xcodebuild -project MyProject.xcodeproj -target MyLibrary -sdk iphoneos -arch armv7 -configuration Release clean build
 ```
 
-結果として得られるライブラリ ファイルのコピー (または移動) を同じ場所に移動して、ライブラリの他の 2 つのバージョンのように名前を変更する**libMyLibrary armv7.a**します。
+作成したライブラリファイルを他の2つのバージョンのライブラリに移動した同じ場所にコピー (または移動) します。その後、 **Libmylibrary-armv7**のように名前を変更します。
 
-汎用をバイナリにするために、使用することができます、`lipo`ツールようになります。
+ユニバーサルバイナリを作成するには、次の`lipo`ようにツールを使用します。
 
 ```bash
 lipo -create -output libMyLibrary.a libMyLibrary-i386.a libMyLibrary-arm64.a libMyLibrary-armv7.a
 ```
 
-これにより作成されます`libMyLibrary.a`これは、iOS 開発のすべてのターゲットの使用に適したとなる universal (fat) ライブラリとなります。
+これに`libMyLibrary.a`より、ユニバーサル (fat) ライブラリが作成されます。これは、すべての iOS 開発ターゲットで使用するのに適しています。
 
 
-### <a name="missing-required-architecture-i386"></a>不足しているに必要なアーキテクチャ i386
+### <a name="missing-required-architecture-i386"></a>必要なアーキテクチャの i386 がありません
 
-取得する場合、`does not implement methodSignatureForSelector`または`does not implement doesNotRecognizeSelector`i386 アーキテクチャ、おそらく、ios シミュレーターでは、ライブラリ、Objective C ライブラリを使用しようとするとき、ランタイムの出力内のメッセージはコンパイルされませんでした (を参照してください、[ユニバーサル構成ネイティブ ライブラリ](#building_native)前のセクション)。
+IOS シミュレーターで目的の`does not implement methodSignatureForSelector` C `does not implement doesNotRecognizeSelector`ライブラリを使用しようとしたときに、ランタイムの出力にまたはメッセージが表示される場合は、そのライブラリが i386 アーキテクチャ用にコンパイルされていない可能性があります (「 [Universal ネイティブを構築する」を参照してください)。「ライブラリ](#building_native)」セクションを参照してください)。
 
-特定のライブラリでサポートされるアーキテクチャを確認するには、ターミナルで次のコマンドを使用します。
+特定のライブラリでサポートされているアーキテクチャを確認するには、ターミナルで次のコマンドを使用します。
 
 ```bash
 lipo -info /full/path/to/libraryname.a
 ```
 
-場所`/full/path/to/`が消費されるライブラリへの完全パスと`libraryname.a`ライブラリの名前に問題が。
+ここ`/full/path/to/`で、は使用されている`libraryname.a`ライブラリへの完全パスであり、は対象のライブラリの名前です。
 
-をライブラリにソースがある場合は、iOS シミュレーターでアプリをテストする場合コンパイルし、同様に、i386 アーキテクチャのバンドルする必要あります。
+ソースがライブラリにある場合は、iOS シミュレーターでアプリをテストする場合は、i386 アーキテクチャ用にもコンパイルしてバンドルする必要があります。
 
-### <a name="linking-your-library"></a>ライブラリをリンク
+### <a name="linking-your-library"></a>ライブラリのリンク
 
-使用する任意のサード パーティ製のライブラリは、アプリケーションに静的にリンクする必要があります。 
+使用するすべてのサードパーティライブラリは、アプリケーションと静的にリンクされている必要があります。 
 
-インターネットまたは Xcode でビルドから取得した"libMyLibrary.a"ライブラリが静的にリンクする場合は、いくつかの作業を行う必要があります。
+ライブラリ "libMyLibrary. a" を静的にリンクする場合は、インターネットから入手したか、Xcode でビルドした場合、いくつかの操作を行う必要があります。
 
--  プロジェクトにライブラリを取り込む
--  ライブラリをリンクする Xamarin.iOS を構成します。
--  ライブラリのメソッドにアクセスします。
+- ライブラリをプロジェクトに取り込む
+- ライブラリをリンクするように Xamarin を構成する
+- ライブラリからメソッドにアクセスします。
 
 
-**プロジェクトにライブラリを取り込む**、キーを押して、ソリューション エクスプ ローラーからプロジェクトを選択**コマンド + オプション + a**します。 LibMyLibrary.a に移動し、プロジェクトに追加します。 メッセージが表示されたら、プロジェクトにコピーするには、Visual Studio for Mac または Visual Studio に伝えます。 これを追加した後、プロジェクト内、libFoo.a を探すを右クリックし、設定、**ビルド アクション**に**none**します。
+**ライブラリをプロジェクトに取り込む**には、ソリューションエクスプローラーからプロジェクトを選択し、**コマンド + オプション + a**キーを押します。 LibMyLibrary. a に移動し、プロジェクトに追加します。 プロンプトが表示されたら Visual Studio for Mac または Visual Studio でプロジェクトにコピーするように指示します。 追加した後、プロジェクトで libFoo を見つけて右クリックし、[**ビルド] アクション**を **[なし]** に設定します。
 
-**構成 Xamarin.iOS ライブラリをリンクする**、最終的な実行可能ファイル (ライブラリそのものではありませんが、最終的なプログラム) プロジェクト オプションで追加する必要があります**iOS ビルド**の (これらは、余分な引数。プロジェクトのオプションの一部)、"-gcc_flags"オプションの後にたとえば、プログラムでは、必要なすべての余分なライブラリが含まれている引用符で囲まれた文字列。
+Xamarin を構成してライブラリをリンクするには、最終的な実行可能ファイル (ライブラリ自体ではなく、最後のプログラム) のプロジェクトオプションで、 **IOS ビルド**の Extra 引数 (これらはプロジェクトオプションの一部) に "-gcc_flags" を追加する必要があり**ます。** オプションの後に、プログラムに必要なすべての追加ライブラリを含む、引用符で囲まれた文字列。次に例を示します。
 
 ```bash
 -gcc_flags "-L${ProjectDir} -lMylibrary -force_load ${ProjectDir}/libMyLibrary.a"
 ```
 
-上記の例ではリンク**libMyLibrary.a**
+上の例では **、Libmylibrary をリンクしています。**
 
-使用することができます`-gcc_flags`実行可能ファイルの最後のリンクを実行するために使用、GCC コンパイラに渡すコマンドライン引数のセットを指定します。 たとえば、このコマンドラインも CFNetwork フレームワークを参照します。
+を使用`-gcc_flags`すると、実行可能ファイルの最終的なリンクを実行するために使用される GCC コンパイラに渡すコマンドライン引数のセットを指定できます。 たとえば、次のコマンドラインは、CFNetwork フレームワークも参照します。
 
 ```bash
 -gcc_flags "-L${ProjectDir} -lMylibrary -lSystemLibrary -framework CFNetwork -force_load ${ProjectDir}/libMyLibrary.a"
 ```
 
-ネイティブ ライブラリに C++ コードが含まれている場合、正しいコンパイラを使用する Xamarin.iOS を認識するように、「余分な引数」で - cxx であるフラグも渡す必要があります。 C++ のように、前のオプションになります。
+ネイティブライブラリにコードがC++含まれている場合は、.cxx フラグを "追加の引数" に渡す必要があります。これにより、Xamarin は正しいコンパイラを使用することが認識されます。 以前C++のオプションは次のようになります。
 
 ```bash
 -cxx -gcc_flags "-L${ProjectDir} -lMylibrary -lSystemLibrary -framework CFNetwork -force_load ${ProjectDir}/libMyLibrary.a"
@@ -106,48 +106,48 @@ lipo -info /full/path/to/libraryname.a
 
 <a name="Accessing_C_Methods_from_C#" />
 
-## <a name="accessing-c-methods-from-c35"></a>C から C のメソッドにアクセスします。&#35;
+## <a name="accessing-c-methods-from-c35"></a>C から C メソッドへのアクセス&#35;
 
-ネイティブ ライブラリの 2 つの種類に使用できるある iOS:
+IOS で使用できるネイティブライブラリには、次の2種類があります。
 
--  オペレーティング システムの一部であるライブラリを共有します。
+- オペレーティングシステムの一部である共有ライブラリ。
 
--  アプリケーションに付属するスタティック ライブラリ。
+- アプリケーションに付属するスタティックライブラリ。
 
 
-使用するもののいずれかで定義されているメソッドにアクセスする[Mono の P/invoke 機能](https://www.mono-project.com/docs/advanced/pinvoke/)はほぼは .net では、使用するのと同じテクノロジであります。
+これらのいずれかで定義されているメソッドにアクセスするには、 [Mono の P/Invoke 機能](https://www.mono-project.com/docs/advanced/pinvoke/)を使用します。これは、.net で使用するのと同じテクノロジです。これは、ほぼ次のようになります。
 
--  C 関数を呼び出したいを決定します。
--  その署名を確認します。
--  ライブラリ内の特定します。
--  適切な P/invoke 宣言を書き込む
+- 呼び出す C 関数を決定する
+- 署名を確認する
+- どのライブラリが常駐しているかを判断する
+- 適切な P/Invoke 宣言を記述します。
 
-P/invoke を使用する場合は、リンクするライブラリのパスを指定する必要があります。 ライブラリを共有する iOS を使用して、ハードコーディングするか、パスまたはで定義していますが、利便性定数を使用するときに、 `Constants`、これらの定数は、iOS の共有ライブラリをカバーする必要があります。
+P/Invoke を使用する場合は、リンク先のライブラリのパスを指定する必要があります。 Ios 共有ライブラリを使用する場合は、パスをハードコーディングするか、「 `Constants`」で定義した便利な定数を使用することができます。これらの定数は、ios の共有ライブラリに対応している必要があります。
 
-たとえば、c: このシグネチャのある Apple の UIKit ライブラリから UIRectFrameUsingBlendMode メソッドを呼び出す必要がある場合
+たとえば、次のシグネチャを持つ Apple の UIKit ライブラリから、C: で UIRectFrameUsingBlendMode メソッドを呼び出す必要があるとします。
 
 ```csharp
 void UIRectFrameUsingBlendMode (CGRect rect, CGBlendMode mode);
 ```
 
-P/invoke 宣言は、次のようになります。
+P/Invoke 宣言は次のようになります。
 
 ```csharp
 [DllImport (Constants.UIKitLibrary,EntryPoint="UIRectFrameUsingBlendMode")]
 public extern static void RectFrameUsingBlendMode (RectangleF rect, CGBlendMode blendMode);
 ```
 
-Constants.UIKitLibrary 定数として定義されているだけでは、"/System/Library/Frameworks/UIKit.framework/UIKit"、エントリ ポイントにより、必要に応じて外部名 (UIRectFramUsingBlendMode) を指定で別の名前を公開するときC#、短い RectFrameUsingBlendMode します。
+UIKitLibrary は "/System/Library/Frameworks/UIKit.framework/UIKit" として定義された定数にすぎません。エントリポイントを使用すると、でC#別の名前を公開するときに、必要に応じて外部名 (UIRectFramUsingBlendMode) を指定できます。RectFrameUsingBlendMode の短縮。
 
 <a name="Accessing_C_Dylibs" />
 
-### <a name="accessing-c-dylibs"></a>Dylib を C へのアクセス
+### <a name="accessing-c-dylibs"></a>C Dylibs へのアクセス
 
-呼び出しの前に必要な追加のセットアップのビットがある場合は、Xamarin.iOS アプリケーションで C Dylib を利用する必要がある場合は、`DllImport`属性。
+Xamarin. iOS アプリケーションで C dylib を使用する必要がある場合は、 `DllImport`属性を呼び出す前に追加のセットアップが必要になります。
 
-たとえば、ある場合、`Animal.dylib`で、`Animal_Version`を通じ、アプリケーションでメソッドを使用する前に、ライブラリの場所の Xamarin.iOS を通知する必要があります。
+たとえば、アプリケーションで呼び出す`Animal.dylib` `Animal_Version`メソッドを持つがある場合は、ライブラリの使用を試みる前に、そのライブラリの場所を Xamarin に通知する必要があります。
 
-これを行うには、編集、`Main.CS`ファイルを開き、次のようになります。
+これを行うには、 `Main.CS`ファイルを編集し、次のようにします。
 
 ```csharp
 static void Main (string[] args)
@@ -160,7 +160,7 @@ static void Main (string[] args)
 }
 ```
 
-場所`/full/path/to/`Dylib を読み取り中に完全パスを指定します。 このコードでできますし、リンクできるように、`Animal_Version`メソッドとして、次のとおりです。
+ここ`/full/path/to/`で、は、使用されている dylib への完全なパスです。 このコードを配置すると、次のように`Animal_Version`メソッドにリンクできます。
 
 ```csharp
 [DllImport("Animal.dylib", EntryPoint="Animal_Version")]
@@ -169,9 +169,9 @@ public static extern double AnimalLibraryVersion();
 
 <a name="Static_Libraries" />
 
-### <a name="static-libraries"></a>スタティック ライブラリ
+### <a name="static-libraries"></a>スタティックライブラリ
 
-スタティック ライブラリは、iOS でのみ使用できます、ためにがない外部の共有ライブラリを使用すると、リンクため DllImport 属性で、path パラメーターは、特別な名前を使用する必要があります`__Internal`(名前の先頭に二重アンダー スコア文字に注意してください) ではなくパス名です。
+IOS ではスタティックライブラリしか使用できないため、リンク先となる外部共有ライブラリがないため、DllImport 属性の path パラメーターには特別な名前`__Internal`を使用する必要があります (名前の先頭にある2つのアンダースコア文字に注意してください)。パス名。
 
-これにより、共有ライブラリから読み込むことがなく、現在のプログラムで参照するメソッドのシンボルを検索する DllImport が強制されます。
+これにより、DllImport は、共有ライブラリから読み込まれるのではなく、現在のプログラムで参照しているメソッドのシンボルを検索します。
 

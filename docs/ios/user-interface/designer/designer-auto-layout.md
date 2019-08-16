@@ -1,207 +1,207 @@
 ---
-title: IOS 用の Xamarin のデザイナーを使用した自動レイアウト
-description: このガイドでは、iOS 自動レイアウトを紹介し、iOS 用の Xamarin のデザイナーを使用して、作成および編集する制約を使用してレイアウトする方法について説明します。 制約の変更、アニメーション化するコードの変更の制約についても説明します。
+title: Xamarin Designer for iOS を使用した自動レイアウト
+description: このガイドでは、iOS の自動レイアウトについて説明し、Xamarin Designer for iOS を使用して、制約を使用してレイアウトを作成および編集する方法について説明します。 また、コード内の制約の変更、制約の変更のアニメーション化などについても説明します。
 ms.prod: xamarin
 ms.assetid: CAC7A715-55BB-45E2-BB6D-2168D36D428F
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 41a9ec90b4b734dde7a982ac3d4b2e7b2082321c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 5545a7b044eee2f5f0c1ced7ce056423fdbf158b
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61413181"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528586"
 ---
-# <a name="auto-layout-with-the-xamarin-designer-for-ios"></a>IOS 用の Xamarin のデザイナーを使用した自動レイアウト
+# <a name="auto-layout-with-the-xamarin-designer-for-ios"></a>Xamarin Designer for iOS を使用した自動レイアウト
 
-自動レイアウトの (「アダプティブ レイアウト」とも呼ばれます) は、レスポンシブ デザイン手法です。 各要素の場所は、画面上のポイントにハード コードされた、過渡期のレイアウト システムとは異なり、自動レイアウトがの詳細については*リレーションシップ*-デザイン サーフェイス上の他の要素を基準として要素の位置。 自動レイアウトの中核が制約または画面上の他の要素のコンテキストで要素の配置または要素のセットを定義するルールの考え方です。 要素が画面上の特定位置に関連付けられていないため、制約はさまざまな画面サイズと向きがデバイス上で優れた外観アダプティブのレイアウトの作成に役立ちます。
+自動レイアウト ("アダプティブレイアウト" とも呼ばれます) は、応答性の高いデザインアプローチです。 移動レイアウトシステムとは異なり、各要素の位置は画面上のポイントにハードコーディングされています。 "自動レイアウト" は、*リレーションシップ*(デザインサーフェイス上の他の要素に対する要素の相対的な位置) に関するものです。 自動レイアウトの中核となるのは、画面上の他の要素のコンテキストにおける要素または要素のセットの配置を定義する制約または規則の概念です。 要素は画面上の特定の位置に関連付けられていないため、制約は、さまざまな画面サイズとデバイスの向きに適したアダプティブレイアウトを作成するのに役立ちます。
 
-このガイドでは、制約、および Xamarin iOS Designer に処理する方法を紹介します。 このガイドでは、プログラムで制約の使用は含まれません。 プログラムによる自動レイアウトの使用方法の詳細についてを参照してください、 [Apple ドキュメント](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/AutolayoutPG/ProgrammaticallyCreatingConstraints.html)します。
+このガイドでは、Xamarin iOS Designer で制約とその操作を行う方法について説明します。 このガイドでは、制約の使用方法については説明しません。 プログラムによる自動レイアウトの使用の詳細については、 [Apple のドキュメント](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/AutolayoutPG/ProgrammaticallyCreatingConstraints.html)を参照してください。
 
 ## <a name="requirements"></a>必要条件
 
-IOS 用 Xamarin デザイナーは、Visual Studio for Mac で Visual Studio 2017 と、後で Windows で使用します。
+Xamarin Designer for iOS は、Visual Studio 2017 以降の Windows で Visual Studio for Mac で使用できます。
 
-このガイドでは、デザイナーのコンポーネントからのナレッジ、 [iOS Designer の概要](~/ios/user-interface/designer/introduction.md)ガイド。
+このガイドでは、「 [IOS designer の概要](~/ios/user-interface/designer/introduction.md)」ガイドのデザイナーのコンポーネントに関する知識を前提としています。
 
 ## <a name="introduction-to-constraints"></a>制約の概要
 
-制約は、画面上の 2 つの要素間の関係の数学的表現です。 UI を表す、数学的なリレーションシップとしての要素の位置は、ハード コーディング UI 要素の場所に関連付けられているいくつかの問題を解決します。 たとえば、画面の下部にあるボタン 20px を縦向きモードで配置する場合、ボタンの位置は横モードで画面をオフになります。 これを回避するには、ビューの下部にあるボタン 20px の下端に配置する制約を設定しますでした。 ボタンのエッジの位置として計算されますが*button.bottom = view.bottom - 20 px*縦長と横長の両方のモードで、ビューの下部にあるボタン 20px を配置するとします。 数学的な関係に基づく配置を計算する機能は、UI 設計に制約は非常に役立つ、何です。
+制約とは、画面上の2つの要素間のリレーションシップを数学的に表現したものです。 UI 要素の位置を数学的関係として表すと、UI 要素の場所のハードコーディングに関連するいくつかの問題が解決されます。 たとえば、画面の下部にあるボタン20px を縦モードで配置する場合、ボタンの位置は横モードで画面から外れます。 これを回避するには、ボタンの下端をビューの下部から20px に設定する制約を設定します。 ボタンの端の位置は、ボタンとして計算さ*れます。 bottom = 20px*の場合は、ビューの一番下から縦モードと横モードの両方でボタン20px が配置されます。 数学的な関係に基づいて配置を計算する機能は、UI デザインで制約を使用すると便利です。
 
-制約を設定すると、作成、`NSLayoutConstraint`制約が適用されるオブジェクトとプロパティを引数として受け取るオブジェクトまたは*属性*制約の対象となるをします。 IOS デザイナーで属性には、エッジなど、*左*、*右*、*上部*、および*下部*要素の。 サイズ属性はなど、それらも*高さ*と*幅*、およびポイントの場所、センター *centerX*と*centerY*。 たとえば、2 つのボタンの左側の境界の位置に制約を追加する際、デザイナーは内部では、次のコード生成しています。
+制約を設定するときに、制約を`NSLayoutConstraint`適用するオブジェクトの引数として使用するオブジェクトと、制約が動作するプロパティ (*属性*) を作成します。 IOS デザイナーでは、属性に要素の*左*、*右*、*上*、*下*などのエッジが含まれます。 *高さ*や*幅*などのサイズ属性や、中心点の位置、 *system.windows.media.rotatetransform.centerx* 、およびセンター *y*も含まれます。 たとえば、2つのボタンの左側の境界の位置に制約を追加すると、デザイナーはその部分の下に次のコードを生成します。
 
 ```csharp
 View.AddConstraint (NSLayoutConstraint.Create (Button1, NSLayoutAttribute.Left, NSLayoutRelation.Equal, Button2, NSLayoutAttribute.Left, 1, 10));
 ```
 
-次のセクションでは、iOS デザイナーを有効にすると、自動レイアウトを無効にして制約ツールバーを使用してなどを使用して制約の使用について説明します。
+次のセクションでは、自動レイアウトの有効化と無効化、制約ツールバーの使用など、iOS Designer を使用した制約の操作について説明します。
 
-## <a name="enable-auto-layout"></a>自動レイアウトを有効にします。
+## <a name="enable-auto-layout"></a>自動レイアウトを有効にする
 
-IOS Designer の既定の構成が、制約モードを有効にします。 ただしに必要となる有効または無効に手動で、2 つの手順で行うことができます。
+既定の iOS デザイナー構成では、制約モードが有効になっています。 ただし、手動で有効または無効にする必要がある場合は、次の2つの手順で行うことができます。
 
-1.  デザイン画面で空の領域をクリックします。 これにより、任意の要素を解除し、ストーリー ボード ドキュメントのプロパティが表示されます。
-1.  オンまたはオフに、**使用オート**プロパティ パネルでチェック ボックスをオンします。
+1. デザイン画面の空の領域をクリックします。 これにより、すべての要素が選択解除され、ストーリーボードドキュメントのプロパティが表示されます。
+1. プロパティパネルで、 **[オートレイアウトを使用する]** チェックボックスをオンまたはオフにします。
 
-    ![](designer-auto-layout-images/image01.png "プロパティ パネルで使用して [自動レイアウト] チェック ボックス")
+    ![](designer-auto-layout-images/image01.png "プロパティパネルの [オートレイアウトを使用する] チェックボックス")
 
 
-既定では、制約がない作成された、または画面に表示します。 代わりに、コンパイル時にフレーム情報から、自動的に推論がされます。 制約を追加するには、デザイン画面で要素を選択し、制約を追加する必要があります。 使用するため、**制約ツールバー**します。
+既定では、画面上に制約が作成または表示されません。 代わりに、コンパイル時にフレーム情報から自動的に推論されます。 制約を追加するには、デザイン画面で要素を選択し、制約を追加する必要があります。 これは、[**制約] ツールバー**を使用して行うことができます。
 
 ## <a name="constraints-toolbar"></a>制約ツールバー
 
- [![](designer-auto-layout-images/toolbarnew.png "コンテキスト メニュー コマンド")](designer-auto-layout-images/toolbarnew.png#lightbox)
+ [![](designer-auto-layout-images/toolbarnew.png "コンテキストメニューのコマンド")](designer-auto-layout-images/toolbarnew.png#lightbox)
 
-制約ツールバーが更新され、2 つの主要な部分から成るようになりました。
+[制約] ツールバーが更新され、次の2つの主要部分で構成されるようになりました。
 
-- **制約モード ボタンの切り替え**:以前は、デザイン画面で選択したビューをもう一度クリックして制約モードを入力します。 制約バーにこのトグル ボタンを使用する必要がありますようになりました。
+- **制約モードボタンのトグル**:以前は、デザイン画面で選択したビューでもう一度クリックして、制約モードに入りました。 次に、このトグルボタンを制約バーで使用します。
 
   ![制約モードの切り替え](designer-auto-layout-images/constraints.png)
 
-- **「更新制約」のボタンをクリックします。** 制約の編集モードではするかにより、変更に注意して重要です。
-  - 制約の編集モードでは、このボタンは、要素のフレームを一致するように制約を調整します。
-  - フレームが編集モードでは、このボタンは、制約を定義する位置に一致する要素のフレームを調整します。
+- **[制約の更新] ボタン:** 制約編集モードになっているかどうかによって変わることに注意する必要があります。
+  - 制約編集モードでは、このボタンによって、要素フレームに合わせて制約が調整されます。
+  - フレーム編集モードでは、このボタンは、制約が定義されている位置と一致するように要素フレームを調整します。
 
 
-## <a name="surface-based-constraint-editing"></a>画面に基づく制約の編集
+## <a name="surface-based-constraint-editing"></a>サーフェイスベースの制約の編集
 
-前のセクションでは、既定の制約を追加したり、制約ツールバーを使用して制約を削除について説明しました。 微調整の制約の詳細の編集、デザイン サーフェイスで直接制約と対話できます。 このセクションでは、画面ベースの制約の編集 (暗証番号 (pin) 間隔コントロール、ドロップ領域では、さまざまな種類の制約の使用など) の基礎について説明します。
+前のセクションでは、[制約] ツールバーを使用して、既定の制約を追加し、制約を削除する方法を学習しました。 より細かく調整された制約を編集するために、デザインサーフェイスで直接制約を操作できます。 このセクションでは、ピン間隔コントロール、領域のドロップ、さまざまな種類の制約の操作など、サーフェスベースの制約編集の基本について説明します。
 
-### <a name="creating-constraints"></a>制約を作成します。
+### <a name="creating-constraints"></a>制約の作成
 
-IOS のデザイナー ツールは、2 種類のデザイン サーフェイス上の要素を操作するためのコントロールを提供します。 *コントロールをドラッグ*と*pin 間隔コントロール*次の図のように、します。
+IOS デザイナーツールには、デザインサーフェイス上の要素を操作するためのコントロールが2種類用意されています。 次の図に示すように、コントロールと*ピン間隔コントロール*を*ドラッグ*します。
 
-![ビュー コントロール](designer-auto-layout-images/controls.png)
+![コントロールの表示](designer-auto-layout-images/controls.png)
 
-これらは、制約のバーで、制約モード ボタンを選択して切り替えること。
+これらは、制約バーの [制約モード] ボタンを選択することによって切り替えられます。
 
-4 要素の両側 T 型ハンドルを定義、*上部*、*右*、*下部*、および*左*の要素の端を制約です。 要素の下、右にある 2 つは消すハンドル定義*高さ*と*幅*制約それぞれします。 中央の正方形では、両方を処理*centerX*と*centerY*制約。
+要素の両側にある4つの T 形ハンドルによって、制約の要素の*上*、*右*、*下*、および*左端*が定義されます。 要素の右側と下部にある2つの I 形ハンドルは、それぞれ*高さ*と*幅*の制約を定義します。 中央の四角形は、 *system.windows.media.rotatetransform.centerx*制約と*センター y*制約の両方を処理します。
 
-制約を作成するには、ハンドルを選択し、デザイン サーフェイス上のどこかにドラッグします。 一連の緑の線/ボックスが何を伝える画面に表示されますが、ドラッグを開始するときに制限することができます。 たとえば、次のスクリーン ショットで中央ボタンの上にあるを制約します。
+制約を作成するには、ハンドルを選択し、デザインサーフェイス上の任意の場所にドラッグします。 ドラッグを開始すると、一連の緑色の線/ボックスが画面に表示され、制約できるものが示されます。 たとえば、次のスクリーンショットでは、中央のボタンの上側を制限しています。
 
- [![](designer-auto-layout-images/image07.png "中央のボタンの上の制約")](designer-auto-layout-images/image07.png#lightbox)
+ [![](designer-auto-layout-images/image07.png "中央のボタンの上側を制限する")](designer-auto-layout-images/image07.png#lightbox)
 
-その他の 2 つのボタンの間では、次の 3 つの破線緑の線に注意してください。 緑の線を示す*ドロップ エリア*、または制限できますが、他の要素の属性。 その他の 2 つのボタンが 3 つの垂直方向のドロップ領域を提供する上記のスクリーン ショット (*下部*、 *centerY*、*上部*) ボタンを制限します。 ビューの上部にある緑の破線は、ビュー コント ローラー、ビューの上部にある制約は、実線の緑色のボックスは、ビュー コント ローラー トップ レイアウト ガイドの下の制約を提供することを意味します。
+他の2つのボタンの間にある3つの点線の緑色の線に注意してください。 緑色の線は、*ドロップ領域*、または制限できる他の要素の属性を示します。 上のスクリーンショットでは、その他の2つのボタンは、ボタンを制限するための垂直方向の3つのドロップエリア (*下部*、*中央の y*、*上*) を提供しています。 ビューの上部にある緑色の点線は、ビューコントローラーがビューの一番上に制約を提供することを意味します。緑色の緑色の場合は、ビューコントローラーがトップレイアウトガイドの下に制約を提供することを意味します。
 
 > [!IMPORTANT]
-> レイアウト ガイドは、特殊な種類の上部を作成することを許可する制約のターゲットと下部にある制約システム バー、ステータス バーやツールバーなどの存在を考慮します。 主な用途の 1 つは、最新のバージョンがあるコンテナーのビューのステータス バーの下に拡張するために iOS 6 および iOS 7 の間で互換性のあるアプリが必要です。 トップ レイアウト ガイドの詳細についてを参照してください、 [Apple ドキュメント](https://developer.apple.com/library/ios/documentation/userexperience/conceptual/transitionguide/AppearanceCustomization.html#//apple_ref/doc/uid/TP40013174-CH15-SW2)します。
+> レイアウトガイドは、さまざまな種類の制約ターゲットで、ステータスバーやツールバーなどのシステムバーの存在を考慮して、上下の制約を作成できます。 主な用途の1つは、iOS 6 と iOS 7 の間でアプリとの互換性を持たせることです。これは、最新バージョンでは、コンテナービューがステータスバーの下に拡張されるためです。 上部のレイアウトガイドの詳細については、 [Apple のドキュメント](https://developer.apple.com/library/ios/documentation/userexperience/conceptual/transitionguide/AppearanceCustomization.html#//apple_ref/doc/uid/TP40013174-CH15-SW2)を参照してください。
 
 
 
-次の 3 つのセクションでは、さまざまな種類の制約の使用を紹介します。
+次の3つのセクションでは、さまざまな種類の制約の使用について説明します。
 
-### <a name="size-constraints"></a>サイズの制約
+### <a name="size-constraints"></a>サイズ制約
 
-サイズの制約の*高さ*と*幅*-2 つのオプションがあります。 最初のオプションは、上記の例に示すように、近隣要素のサイズに制約を識別するハンドルをドラッグすることです。 その他のオプションでは、セルフ_サービスによる制約を作成するハンドルをダブルクリックします。 これにより、定数のサイズの値を指定する次のスクリーン ショットに示すようにします。
+サイズの制約がある場合 (*高さ*と*幅*)、2つのオプションがあります。 最初のオプションでは、上の例で示すように、ハンドルをドラッグして近隣の要素サイズを制限します。 もう1つのオプションは、ハンドルをダブルクリックして自己制約を作成することです。 これにより、次のスクリーンショットに示すように、定数サイズ値を指定できます。
 
- [![](designer-auto-layout-images/sizec.png "次に示すように、近隣要素のサイズを制限するハンドルをドラッグします")](designer-auto-layout-images/sizec.png#lightbox)
+ [![](designer-auto-layout-images/sizec.png "次に示すように、ハンドルをドラッグして近隣の要素サイズに制限します。")](designer-auto-layout-images/sizec.png#lightbox)
 
-### <a name="center-constraints"></a>Center の制約
+### <a name="center-constraints"></a>中央の制約
 
-四角形のハンドルが作成されます、 *centerX*または*centerY*コンテキストに応じて、制約。 次のスクリーン ショットに示すように、両方の縦と横のドロップダウン領域を提供するその他の要素のライトは四角形のハンドルをドラッグします。
+Square ハンドルは、コンテキストに応じて、 *system.windows.media.rotatetransform.centerx*または*センター y*制約を作成します。 四角形ハンドルをドラッグすると、次のスクリーンショットに示すように、垂直方向と水平方向の両方のドロップ領域を提供するために、他の要素が淡色表示されます。
 
- [![](designer-auto-layout-images/centerc.png "Center の制約")](designer-auto-layout-images/centerc.png#lightbox)
+ [![](designer-auto-layout-images/centerc.png "中央の制約")](designer-auto-layout-images/centerc.png#lightbox)
 
-垂直方向のドロップ領域では、選択した場合、 *centerY*制約が作成されます。 水平方向のドロップ領域を選択した場合、制約がに基づいてする*centerX*します。
+垂直のドロップエリアを選択すると、*中央の y*制約が作成されます。 水平方向のドロップ領域を選択した場合、制約は*system.windows.media.rotatetransform.centerx*に基づいて作成されます。
 
-### <a name="combinational-constraints"></a>Combinational 制約
+### <a name="combinational-constraints"></a>主要制約の連結
 
-配置と 2 つの要素間の等値制約のサイズの両方を作成するには、次のスクリーン ショットに示すようから上部のツールバーの水平方向の配置、垂直方向の配置およびサイズの等号の順序で指定する項目を選択できます。
+2つの要素間のアラインメントとサイズの等価性の両方の制約を作成するには、次のスクリーンショットに示すように、上部のツールバーから項目を選択して、水平方向の配置、垂直方向の配置、およびサイズの等号を指定できます。
 
- [![](designer-auto-layout-images/image06.png "Combinational 制約")](designer-auto-layout-images/image06.png#lightbox)
+ [![](designer-auto-layout-images/image06.png "主要制約の連結")](designer-auto-layout-images/image06.png#lightbox)
 
-### <a name="visualizing-and-editing-constraints"></a>視覚化および制約を編集します。
+### <a name="visualizing-and-editing-constraints"></a>制約の視覚化と編集
 
-制約を追加するときが表示されます、デザイン サーフェイス青い線として項目を選択するとき。
+制約を追加すると、項目を選択したときに、デザインサーフェイスに青い線として表示されます。
 
- [![](designer-auto-layout-images/image09.png "制約を視覚化します。")](designer-auto-layout-images/image09.png#lightbox)
+ [![](designer-auto-layout-images/image09.png "視覚化 (制約を)")](designer-auto-layout-images/image09.png#lightbox)
 
-青い線をクリックし、[プロパティ] パネルで直接制約の値を編集する制約を選択します。 代わりに、青い線をダブルクリックすると表示されます、ポップ オーバー デザイン画面に直接値を編集することができます。
+制約を選択するには、青い線をクリックし、[プロパティ] パネルで直接制約値を編集します。 または、青い線をダブルクリックすると、デザインサーフェイス上で値を直接編集できる segue が表示されます。
 
  [![](designer-auto-layout-images/image08.png "制約の編集")](designer-auto-layout-images/image08.png#lightbox)
 
 ## <a name="constraint-issues"></a>制約の問題
 
-いくつかの種類の問題は、制約を使用する場合に発生します。
+制約を使用すると、いくつかの種類の問題が発生する可能性があります。
 
--  **競合する制約**— これ複数の制約は、属性の競合する値を持つ要素を強制し、制約エンジンがそれらを調整できる場合に発生します。
--  **アイテムは不完全拘束**— (場所とサイズ) の要素のプロパティを一連の制約と制約を有効にするための組み込みのサイズで完全対応する必要があります。 これらの値があいまいな場合は、拘束になり、項目と言います。
--  **フレームの存在**: この要素のフレームとその一連の制約が異なる 2 つの結果として得られる四角形を定義する場合に発生します。
+- **制約が競合**しています。これは、複数の制約によって要素の属性の値が競合し、制約エンジンがその属性を調整できない場合に発生します。
+- **Underconstrained items** —要素のプロパティ (location + size) は、制約のセットと有効な固有のサイズによって完全にカバーされている必要があります。 これらの値があいまいである場合、項目は underconstrained と呼ばれます。
+- **Frame misplacement** -これは、要素のフレームとその制約のセットで2つの異なる結果の四角形が定義されている場合に発生します。
 
 
-このセクションは、上記 3 つの問題について詳しく説明し、それらを処理する方法の詳細を提供します。
+このセクションでは、上記の3つの問題について説明し、その処理方法の詳細を示します。詳述
 
 ### <a name="conflicting-constraints"></a>競合する制約
 
-競合する制約は、赤色でマークされ、警告記号があります。 競合に関する情報をポップ オーバー ポインターを合わせると、警告シンボルが表示されます。
+競合する制約は赤色でマークされ、警告記号が付きます。 警告シンボルをポイントすると、segue に競合に関する情報が表示されます。
 
  [![](designer-auto-layout-images/image11.png "競合する制約の警告")](designer-auto-layout-images/image11.png#lightbox)
 
-### <a name="underconstrained-items"></a>不完全拘束項目
+### <a name="underconstrained-items"></a>Underconstrained Items
 
-不完全拘束項目は、オレンジ色で表示され、ビュー コント ローラーのオブジェクトのバーで、オレンジ色のマーカーのアイコンの外観をトリガーします。
+Underconstrained items はオレンジ色で表示され、ビューコントローラーオブジェクトバーにオレンジ色のマーカーアイコンが表示されます。
 
- [![](designer-auto-layout-images/image02.png "オレンジ色で不完全拘束項目が表示されます。")](designer-auto-layout-images/image02.png#lightbox)
+ [![](designer-auto-layout-images/image02.png "Underconstrained の項目はオレンジ色で表示されます")](designer-auto-layout-images/image02.png#lightbox)
 
-マーカー アイコンをクリックした場合は、シーンで不完全拘束項目に関する情報を取得し、次のスクリーン ショットに示すように制限することで、完全にまたはそれらの制約を削除することで、問題の解決。
+そのマーカーアイコンをクリックすると、次のスクリーンショットに示すように、シーン内の underconstrained アイテムに関する情報を取得し、問題を解決することができます。
 
- [![](designer-auto-layout-images/image10.png "不完全拘束項目を修正")](designer-auto-layout-images/image10.png#lightbox)
+ [![](designer-auto-layout-images/image10.png "Underconstrained 項目の修正")](designer-auto-layout-images/image10.png#lightbox)
 
-### <a name="frame-misplacement"></a>フレームの存在
+### <a name="frame-misplacement"></a>フレーム Misplacement
 
-フレームの存在は、不完全拘束項目として同じカラー コードを使用します。 項目は、ネイティブのフレームを使用して、画面に常に表示されますが、項目は最終的に、アプリケーションを実行すると次のスクリーン ショットに示すようにフレームの存在の場合、赤色の四角形としてマークされます。
+Frame misplacement は、underconstrained items と同じカラーコードを使用します。 項目は常にネイティブフレームを使用してサーフェイス上に表示されますが、フレーム misplacement の場合は、次のスクリーンショットに示すように、アプリケーションの実行時に項目が終了する位置が赤い四角形でマークされます。
 
- [![](designer-auto-layout-images/image05.png "サンプルのフレームの存在の表示")](designer-auto-layout-images/image05.png#lightbox)
+ [![](designer-auto-layout-images/image05.png "サンプルフレーム Misplacement ビュー")](designer-auto-layout-images/image05.png#lightbox)
 
-フレーム存在エラーを解決するには、選択、**制約に基づいてフレームを更新**(一番右のボタン) 制約ツールバーからボタンをクリックします。
+フレーム misplacement エラーを解決するには、[制約] ツールバーの [**制約に基づいてフレームを更新**する] ボタン (右端のボタン) を選択します。
 
- [![](designer-auto-layout-images/image03.png "ツール バー ボタンの制約に基づくフレームを更新します。")](designer-auto-layout-images/image03.png#lightbox)
+ [![](designer-auto-layout-images/image03.png "[制約に基づいてフレームを更新する] ツールバーボタン")](designer-auto-layout-images/image03.png#lightbox)
 
-これにより、コントロールによって定義されている位置に一致する要素のフレームが自動的に調整します。
+これにより、コントロールによって定義された位置と一致するように、要素フレームが自動的に調整されます。
 
 <a name="modifying-in-code" />
 
-## <a name="modifying-constraints-in-code"></a>コード内の制約を変更します。
+## <a name="modifying-constraints-in-code"></a>コード内の制約の変更
 
-アプリの要件に基づき、ありますコードで制約を変更する必要がある場合。 たとえば、サイズを変更したり、ビューの位置を変更する制約にアタッチされます、制約の優先順位を変更または制約を完全に非アクティブ化します。
+アプリの要件に基づいて、コードで制約を変更することが必要になる場合があります。 たとえば、制約が関連付けられているビューのサイズ変更や位置変更を行うには、制約の優先順位を変更するか、制約を完全に非アクティブ化します。
 
-コードの制約にアクセスするには、まず次の手順に従って iOS Designer で公開する必要があります。
+コード内の制約にアクセスするには、まず次の手順を実行して、その制約を iOS デザイナーで公開する必要があります。
 
-1. (上記の方法のいずれかを使用) が通常どおり、制約を作成します。
-2. **ドキュメント アウトラインのエクスプ ローラー**目的の制約を見つけ、それを選択します。
+1. (上記のいずれかの方法を使用して) 通常どおり制約を作成します。
+2. **ドキュメントアウトラインエクスプローラー**で、目的の制約を見つけて選択します。
 
-    [![](designer-auto-layout-images/modify01.png "ドキュメント アウトラインのエクスプ ローラー")](designer-auto-layout-images/modify01.png#lightbox)
-3. 次に、割り当て、**名前**の制約、**ウィジェット**のタブ、**プロパティ エクスプ ローラー**:
+    [![](designer-auto-layout-images/modify01.png "ドキュメントアウトラインエクスプローラー")](designer-auto-layout-images/modify01.png#lightbox)
+3. 次に、**プロパティエクスプローラー**の **[ウィジェット]** タブで、制約に**名前**を割り当てます。
 
     [![](designer-auto-layout-images/modify02.png "[ウィジェット] タブ")](designer-auto-layout-images/modify02.png#lightbox)
 4. 変更内容を保存します。
 
-場所で上記の変更、コード内の制約にアクセスでき、そのプロパティを変更できます。 たとえば、0 に接続されているビューの高さを設定するのに、次を使用できます。
+上記の変更を適用したら、コードで制約にアクセスし、そのプロパティを変更できます。 たとえば、次のコードを使用して、添付ビューの高さをゼロに設定できます。
 
 ```csharp
 ViewInfoHeight.Constant = 0;
 ```
 
-IOS Designer の制約は次の設定を指定します。
+IOS デザイナーでは、次のような制約が設定されています。
 
-[![](designer-auto-layout-images/modify03.png "プロパティ エクスプ ローラーでの制約の編集")](designer-auto-layout-images/modify03.png#lightbox)
+[![](designer-auto-layout-images/modify03.png "プロパティエクスプローラーでの制約の編集")](designer-auto-layout-images/modify03.png#lightbox)
 
-### <a name="the-deferred-layout-pass"></a>遅延のレイアウト パス
+### <a name="the-deferred-layout-pass"></a>遅延レイアウトパス
 
-制約の変更に応じて接続されているビューをすぐに更新するには、代わりに、自動レイアウト エンジンをスケジュール、_延期レイアウト パス_近い将来にします。 この遅延のパスではだけでなくは、指定されたビューの制約が更新されると、制約、階層内のすべてのビューが再計算され、新しいレイアウトを調整するように更新します。
+自動レイアウトエンジンは、制約の変更に応じて添付ビューをすぐに更新するのではなく、近い将来の_遅延レイアウトパス_をスケジュールします。 この遅延パスでは、特定のビューの制約が更新されただけでなく、階層内のすべてのビューに対する制約が再計算され、新しいレイアウトに合わせて更新されます。
 
-任意の時点では、呼び出すことによって遅延レイアウト パスをスケジュールすることができます、`SetNeedsLayout`または`SetNeedsUpdateConstraints`親ビューのメソッド。 
+任意の時点で、親ビューのメソッド`SetNeedsLayout`または`SetNeedsUpdateConstraints`メソッドを呼び出すことによって、独自の遅延レイアウトパスをスケジュールすることができます。 
 
-段階的提供のレイアウト パスは、ビュー階層を 2 つの一意のパスで構成されます。
+遅延レイアウトパスは、ビュー階層を介して2つの一意のパスで構成されます。
 
-- **更新パス**-このパスで、自動レイアウト エンジン ビューの階層構造を走査し、呼び出します、`UpdateViewConstraints`すべてのビュー コント ローラー メソッドと`UpdateConstraints`メソッドすべてのビューをします。
-- **レイアウト パス**- もう一度、自動レイアウト エンジンがビューの階層構造を走査が、この時点で呼び出す、`ViewWillLayoutSubviews`すべてのビュー コント ローラー メソッドと`LayoutSubviews`メソッドすべてのビューをします。 `LayoutSubviews`メソッドを更新、`Frame`自動レイアウト エンジンによって各サブビュー四角形のプロパティが計算されます。
+- このパスの**更新パス**では、自動レイアウトエンジンがビュー階層を走査し、すべて`UpdateViewConstraints`のビューコントローラー `UpdateConstraints`でメソッドを呼び出し、すべてのビューに対してメソッドを呼び出します。
+- **レイアウトが再度渡され**ます。自動レイアウトエンジンはビュー階層を走査しますが、今回`ViewWillLayoutSubviews`はすべてのビューコントローラー `LayoutSubviews`でメソッドを呼び出し、すべてのビューに対してメソッドを呼び出します。 メソッド`LayoutSubviews`は、自動`Frame`レイアウトエンジンによって計算された四角形を使用して、各サブビューのプロパティを更新します。
 
-### <a name="animating-constraint-changes"></a>制約の変更をアニメーション化
+### <a name="animating-constraint-changes"></a>制約変更のアニメーション化
 
-制約のプロパティを変更するだけでなく、ビューの制約に加えた変更をアニメーション化するのにコア アニメーションを使用できます。 例:
+制約プロパティを変更するだけでなく、コアアニメーションを使用して、ビューの制約に対する変更をアニメーション化することもできます。 例えば:
 
 ```csharp
 UIView.BeginAnimations("OpenInfo");
@@ -213,16 +213,16 @@ View.LayoutIfNeeded();
 UIView.CommitAnimations();
 ```
 
-ここで重要を呼び出し、`LayoutIfNeeded`アニメーション ブロック内の親ビューのメソッド。 これは、アニメーション化された場所またはサイズ変更の各"frame"を描画するためにビューを示します。 、この行がない、ビューは単にスナップ、最終バージョンにアニメーション化することがなく。
+ここで重要なのは`LayoutIfNeeded` 、アニメーションブロック内の親ビューのメソッドを呼び出すことです。 これにより、アニメーションの位置またはサイズの変更の各フレームを描画するようビューに指示します。 この行を使用しない場合、ビューはアニメーション化せずに最終バージョンにスナップするだけです。
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
-このガイドは、iOS 自動 (または"adaptive") で導入されました。 レイアウトとデザイン サーフェイス上の要素間のリレーションシップの数学的表現としての制約の概念です。 IOS デザイナーの操作で自動レイアウトを有効にする方法を説明し、**制約ツールバー**、およびデザイン サーフェイスに個別に制約を編集します。 次に、制約の 3 つの一般的な問題をトラブルシューティングする方法を説明します。 最後に、コード内の制約を変更する方法を示しました。
+このガイドでは、iOS の自動 (アダプティブ) レイアウトと、デザインサーフェイス上の要素間のリレーションシップの数学的表現としての制約の概念を紹介しました。 ここでは、iOS デザイナーで自動レイアウトを有効にする方法、**制約ツールバー**を使用する方法、デザインサーフェイスで個別に制約を編集する方法について説明します。 次に、3つの一般的な制約の問題をトラブルシューティングする方法について説明しました。 最後に、コードで制約を変更する方法を示しました。
 
 ## <a name="related-links"></a>関連リンク
 
 - [ストーリーボードの概要](~/ios/user-interface/storyboards/index.md)
-- [iOS デザイン可能なコントロールのチュートリアル](~/ios/user-interface/designer/ios-designable-controls-walkthrough.md)
-- [Android デザイナーの概要](~/android/user-interface/android-designer/index.md)
+- [iOS のデザイン可能コントロールのチュートリアル](~/ios/user-interface/designer/ios-designable-controls-walkthrough.md)
+- [Android Designer の概要](~/android/user-interface/android-designer/index.md)
 - [プログラムによる制約](~/ios/user-interface/programmatic-layout-constraints.md)
-- [Apple - 自動レイアウト ガイド](https://developer.apple.com/library/ios/documentation/userexperience/conceptual/AutolayoutPG/Introduction/Introduction.html#/apple_ref/doc/uid/TP40010853-CH13-SW1)
+- [Apple-自動レイアウトガイド](https://developer.apple.com/library/ios/documentation/userexperience/conceptual/AutolayoutPG/Introduction/Introduction.html#/apple_ref/doc/uid/TP40010853-CH13-SW1)

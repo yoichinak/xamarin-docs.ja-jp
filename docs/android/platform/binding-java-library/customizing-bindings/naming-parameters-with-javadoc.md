@@ -1,46 +1,46 @@
 ---
-title: Javadoc でパラメーターの名前を付ける
-description: この記事では、Java プロジェクトから生成された Javadoc を使用して、Java バインド プロジェクト内のパラメーター名を回復する方法について説明します。
+title: Javadoc を使用したパラメーターの名前付け
+description: この記事では、java プロジェクトから生成された Javadoc を使用して Java バインドプロジェクトのパラメーター名を回復する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 59E8EF16-1322-486A-BB16-353804B77356
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/20/2017
-ms.openlocfilehash: e394377043953a297afed36a3ce0747a3e6d1512
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 77cd5ac86a24769947eefb6941229c56efc3297b
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60955872"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524563"
 ---
-# <a name="naming-parameters-with-javadoc"></a>Javadoc でパラメーターの名前を付ける
+# <a name="naming-parameters-with-javadoc"></a>Javadoc を使用したパラメーターの名前付け
 
-_この記事では、Java プロジェクトから生成された Javadoc を使用して、Java バインド プロジェクト内のパラメーター名を回復する方法について説明します。_
+_この記事では、java プロジェクトから生成された Javadoc を使用して Java バインドプロジェクトのパラメーター名を回復する方法について説明します。_
 
 
 ## <a name="overview"></a>概要
 
-既存の Java ライブラリをバインドするときに、バインドされた API に関するいくつかのメタデータは失われます。 具体的にはメソッドにパラメーターの名前。 パラメーター名は、として表示されます`p0`、`p1`など。これは、Java`.class`ファイルには、Java ソース コードで使用されたパラメーター名は保持されません。 
+既存の Java ライブラリをバインドする場合、バインドされた API に関するメタデータの一部は失われます。 具体的には、メソッドのパラメーターの名前です。 パラメーター名は、 `p0` `p1`、などとして表示されます。これは、java `.class`ファイルが java ソースコードで使用されたパラメーター名を保持していないためです。 
 
-Java の Xamarin.Android バインド プロジェクトは、元のライブラリの Javadoc HTML にアクセス権がある場合、パラメーター名を指定できます。 
+元のライブラリから Javadoc HTML にアクセスできる場合は、Xamarin Android Java バインドプロジェクトでパラメーター名を指定できます。 
 
-## <a name="integrating-javadoc-html-into-a-java-binding-project"></a>Java プロジェクトのバインドへの HTML の Javadoc の統合
+## <a name="integrating-javadoc-html-into-a-java-binding-project"></a>Java バインドプロジェクトへの Javadoc HTML の統合
 
-Java バインド プロジェクトに Javadoc HTML の統合は、次の手順から成る手動のプロセスです。 
+Javadoc HTML を Java バインドプロジェクトに統合するには、次の手順で構成される手動のプロセスを実行します。 
 
-1.  ライブラリの Javadoc をダウンロードします。
-2.  編集、`.csproj`追加ファイルを開き、`<JavaDocPaths>`プロパティ。
-3.  消去し、プロジェクトのリビルド
+1. ライブラリ用の Javadoc をダウンロードする
+2. ファイルを編集し、プロパティ`<JavaDocPaths>`を追加します。 `.csproj`
+3. プロジェクトのクリーンとリビルド
 
-これが完了すると、元の Java パラメーター名は Java バインド プロジェクトがバインドされている Api に存在する必要があります。 
+この処理が完了したら、Java バインドプロジェクトによってバインドされた Api に元の Java パラメーター名が存在する必要があります。 
 
 
 > [!NOTE]
-> 大量の JavaDoc の出力に差異があります。 します。JAR のバインディング ツール チェーンがすべて 1 つの可能な順列をサポートしていませんし、そのいくつかのパラメーターが正しくという名前はします。
+> JavaDoc の出力には、多くの分散があります。 、.JAR バインディングツールチェーンは、考えられるすべての順列をサポートしているわけではないため、一部のパラメーターに適切な名前を付けることはできません。
 
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
-この記事で説明する方法は、バインドされた Api の意味パラメーターの名前を提供するのに Java バインド プロジェクトで Javadoc を使用します。 
+この記事では、Java バインドプロジェクトで Javadoc を使用して、バインドされた Api に対して意味のあるパラメーター名を指定する方法について説明しました。 
 

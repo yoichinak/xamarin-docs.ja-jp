@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 0099414529027a9a6e52b79393cfa6f0f3bc24d6
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 1f6fa57bbe47bbc2fe97bbd0df7018fc1cd3897a
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647800"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522167"
 ---
 # <a name="setup-and-installation"></a>セットアップとインストール
 
@@ -22,13 +22,13 @@ _この記事では、Android の磨耗開発のためにコンピューター�
 
 Xamarin ベースの Android 磨耗アプリを作成するには、次のものが必要です。
 
--   **Visual Studio または Visual Studio for Mac**&ndash; Visual Studio 2017 Community 以降が必要です。
+- **Visual Studio または Visual Studio for Mac**&ndash; Visual Studio 2017 Community 以降が必要です。
 
--   **Xamarin.Android** &ndash; Xamarin.Android 4.17 or later must be installed and configured with either Visual Studio or Visual Studio for Mac.
+- **Xamarin android** &ndash; 4.17 以降をインストールして、Visual Studio または Visual Studio for Mac で構成する必要があります。
 
--   **Android SDK** Android SDK 5.0.1 (API 21) 以降を Android SDK Manager を使用してインストールする必要があります。
+- **Android SDK** Android SDK 5.0.1 (API 21) 以降を Android SDK Manager を使用してインストールする必要があります。
 
--   **Java Developer Kit**API レベル24以上を開発している場合、Xamarin Android 開発では[jdk 1.8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)が必要です (jdk 1.8 では、24より前の api レベルもサポートされています)。 &ndash;
+- **Java Developer Kit**API レベル24以上を開発している場合、Xamarin Android 開発では[jdk 1.8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)が必要です (jdk 1.8 では、24より前の api レベルもサポートされています)。 &ndash;
 
 特に API レベル23以前を開発している場合は、 [JDK 1.7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)を使用し続けることができます。
 
@@ -39,9 +39,9 @@ Xamarin ベースの Android 磨耗アプリを作成するには、次のもの
 
 Xamarin Android をインストールしたら、次の手順を実行して、Android の磨耗アプリをビルドしてテストする準備ができていることを確認します。 
 
-1.  必要な Android SDK とツールをインストールします。
-2.  テストデバイスを構成します。
-3.  初めての Android 用の磨耗アプリを作成します。
+1. 必要な Android SDK とツールをインストールします。
+2. テストデバイスを構成します。
+3. 初めての Android 用の磨耗アプリを作成します。
 
 これらの手順については、次のセクションで説明します。
 

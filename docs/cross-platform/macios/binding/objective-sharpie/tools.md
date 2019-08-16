@@ -1,28 +1,26 @@
 ---
-title: 目標油性ツールとコマンド
-description: このドキュメントでは、それらで使用するには、目的の油性とコマンドライン引数に含まれているツールの概要を示します。
+title: 目標マジックペンツール & コマンド
+description: このドキュメントでは、マジックペンに含まれるツールの概要と、それらで使用するコマンドライン引数について説明します。
 ms.prod: xamarin
 ms.assetid: A84E209B-8932-4CC1-BAD1-7FD51F798A97
 author: asb3993
 ms.author: amburns
 ms.date: 10/05/2015
-ms.openlocfilehash: 51a0b81204b743824e24cfed83bd73308fa8d506
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: ddfe0f99991808214a6006c9504d267179adf2ab
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64977663"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69521860"
 ---
-# <a name="objective-sharpie-tools--commands"></a>目標油性ツールとコマンド
+# <a name="objective-sharpie-tools--commands"></a>目標マジックペンツール & コマンド
 
-_それらを使用するには、目的の油性とコマンドライン引数に含まれるツールの概要です。_
+_目標マジックペンに含まれるツールの概要と、それらを使用するためのコマンドライン引数。_
 
-<style type="text/css"> .terminal 青 {色: rgb(10,96,254);} .terminal 緑 {color: rgb(12,156,26);} .terminal マゼンタ {色: rgb(152,12,103);} </style>
+目標マジックペンが正常に[インストールさ](~/cross-platform/macios/binding/objective-sharpie/get-started.md)れたら、ターミナルを開き、マジックペンが提供する必要がある*コマンド*の目標を理解します。
 
-
-目標油性が正常に[インストール](~/cross-platform/macios/binding/objective-sharpie/get-started.md)ターミナルを開き、理解して、<em>コマンド</em>目標油性が提供する必要があります。
-
-<pre>$ <b>sharpie -help</b>
+```
+$ sharpie -help
 usage: sharpie [OPTIONS] TOOL [TOOL_OPTIONS]
 
 Options:
@@ -48,22 +46,24 @@ Available Tools:
   bind               Create a Xamarin C# binding to Objective-C APIs
   update             Update to the latest release of Objective Sharpie
   verify-docs        Show cross reference documentation for [Verify] attributes
-  docs               Open the Objective Sharpie online documentation</pre>
+  docs               Open the Objective Sharpie online documentation
+```
 
-目標油性には、次のツールが用意されています。
+目標マジックペンには、次のツールが用意されています。
 
-|ツール|説明|
+|Tool|説明|
 |--- |--- |
-|**xcode**|現在の Xcode インストールと iOS デバイスと使用可能な Mac Sdk のバージョンに関する情報を提供します。 使用するこの情報は後で、バインドが生成されたとき。|
-|**pod**|検索、構成、(ローカル ディレクトリ) にインストールすると、および OBJECTIVE-C のバインド[CocoaPod](https://cocoapods.org/)マスター Spec リポジトリから使用可能なライブラリ。 このツールで評価を渡すための適切な入力を自動的に推測にインストールされている CocoaPod、`bind`以下のツール。 3.0 の新機能です。|
-|**bind**|ヘッダー ファイルの解析 (`*.h`)、最初に、OBJECTIVE-C ライブラリ[ApiDefinition.cs と StructsAndEnums.cs](~/cross-platform/macios/binding/objective-sharpie/platform/apidefinitions-structsandenums.md)ファイル。|
-|**update**|目標油性の新しいバージョンをチェックし、ダウンロードがある場合、インストーラーを起動します。|
-|**verify-docs**|に関する詳細情報が表示されます`[Verify]`属性。|
-|**docs**|既定の web ブラウザーでは、このドキュメントに移動します。|
+|**xcode**|現在の Xcode のインストールと、使用可能な iOS および Mac Sdk のバージョンに関する情報を提供します。 この情報は、後でバインドを生成するときに使用します。|
+|**pod**|(ローカルディレクトリ内の) を検索し、構成し、インストールします。また、マスター仕様リポジトリから使用できる目的の C [Cocoa](https://cocoapods.org/)ライブラリをバインドします。 このツールは、インストールされているを評価して、次の`bind`ツールに渡す正しい入力を自動的に推測します。 3\.0 の新。|
+|**bind**|目的の C ライブラリの`*.h`ヘッダーファイル () を解析し、初期の[ApiDefinition.cs ファイルと StructsAndEnums.cs](~/cross-platform/macios/binding/objective-sharpie/platform/apidefinitions-structsandenums.md)ファイルに挿入します。|
+|**update**|新しいバージョンの目標マジックペンを確認し、インストーラーが使用可能な場合はダウンロードして起動します。|
+|**verify-docs**|属性に関する`[Verify]`詳細情報を表示します。|
+|**docs**|既定の web ブラウザーでこのドキュメントに移動します。|
 
-特定の目標油性ツールのヘルプを表示するには、ツールの名前を入力し、`-help`オプション。 たとえば、`sharpie xcode -help`次の出力を返します。
+特定の目的のマジックペンツールに関するヘルプを表示するには、ツールの名前`-help`とオプションを入力します。 たとえば、は`sharpie xcode -help`次の出力を返します。
 
-<pre>$ <b>sharpie xcode -help</b>
+```
+$ sharpie xcode -help
 usage: sharpie xcode [OPTIONS]
 
 Options:
@@ -71,17 +71,20 @@ Options:
   -v, -verbose     Be verbose with output
 
 Xcode Options:
-  -sdks            List all available Xcode SDKs. Pass -verbose for more details.</pre>
+  -sdks            List all available Xcode SDKs. Pass -verbose for more details.
+```
 
-バインディング プロセスを始めることができます、前に、ターミナルに次のコマンドを入力して、現在インストールされている各種 Sdk についての情報を取得する必要があります`sharpie xcode -sdks`します。 出力は、インストールされている Xcode のバージョンによって異なる場合があります。 いずれかにインストールされている Sdk の次の目標油性`Xcode*.app`下、`/Applications`ディレクトリ。
+バインドプロセスを開始する前に、次のコマンドをターミナル`sharpie xcode -sdks`に入力して、現在インストールされている sdk に関する情報を取得する必要があります。 インストールされている Xcode のバージョンによっては、出力が異なる場合があります。 目標マジックペンは、次のディレクトリに`Xcode*.app`インストールさ`/Applications`れている sdk を検索します。
 
-<pre>$ <b>sharpie xcode -sdks</b>
-<span class="terminal-blue">sdk:</span> appletvos9.0    <span class="terminal-green">arch:</span> arm64
-<span class="terminal-blue">sdk:</span> iphoneos9.1     <span class="terminal-green">arch:</span> arm64   armv7
-<span class="terminal-blue">sdk:</span> iphoneos9.0     <span class="terminal-green">arch:</span> arm64   armv7
-<span class="terminal-blue">sdk:</span> iphoneos8.4     <span class="terminal-green">arch:</span> arm64   armv7
-<span class="terminal-blue">sdk:</span> macosx10.11     <span class="terminal-green">arch:</span> x86_64  i386
-<span class="terminal-blue">sdk:</span> macosx10.10     <span class="terminal-green">arch:</span> x86_64  i386
-<span class="terminal-blue">sdk:</span> watchos2.0      <span class="terminal-green">arch:</span> armv7</pre>
+```
+$ sharpie xcode -sdks
+sdk: appletvos9.0    arch: arm64
+sdk: iphoneos9.1     arch: arm64   armv7
+sdk: iphoneos9.0     arch: arm64   armv7
+sdk: iphoneos8.4     arch: arm64   armv7
+sdk: macosx10.11     arch: x86_64  i386
+sdk: macosx10.10     arch: x86_64  i386
+sdk: watchos2.0      arch: armv7
+```
 
-上記からわかりますがあること、 `iphoneos9.1` SDK は、コンピューターにインストールされているしが`arm64`アーキテクチャ サポート。 このセクションでは、すべてのサンプルについてはこの値が使用されます。 この情報が、最初に Objective C ライブラリ ヘッダー ファイルを解析する準備ができて`ApiDefinition.cs`と`StructsAndEnums.cs`バインド プロジェクト。
+この記事では、 `iphoneos9.1` SDK がコンピューターにインストールされており、アーキテクチャが`arm64`サポートされていることがわかります。 このセクションのすべてのサンプルに対して、この値を使用します。 この情報が記載されたので、目的の C ライブラリヘッダーファイルを最初`ApiDefinition.cs`のおよび`StructsAndEnums.cs`バインドプロジェクトに解析する準備ができました。

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: 11bca4bc74316f87ab7b329c897efcd4b768bc03
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: f81a9d232e1702d112e837a80d35403162e3adca
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657108"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529329"
 ---
 # <a name="part-5-from-data-bindings-to-mvvm"></a>パート 5 です。 MVVM へのデータ バインディングから
 
@@ -304,26 +304,26 @@ namespace XamlSamples
 
 ビューモデルには、特定のユーザー インターフェイス オブジェクトの詳細独立しても、ビューモデル内で呼び出されるメソッドを許可を許可する、*コマンド*インターフェイスが存在します。 このコマンドのインターフェイスは Xamarin.Forms では、次の要素でサポートされています。
 
--  `Button`
--  `MenuItem`
--  `ToolbarItem`
--  `SearchBar`
--  `TextCell` (つまりも`ImageCell`)
--  `ListView`
--  `TapGestureRecognizer`
+- `Button`
+- `MenuItem`
+- `ToolbarItem`
+- `SearchBar`
+- `TextCell` (つまりも`ImageCell`)
+- `ListView`
+- `TapGestureRecognizer`
 
 例外です、`SearchBar`と`ListView`要素、これらの要素が 2 つのプロパティを定義します。
 
--  `Command` 型の  `System.Windows.Input.ICommand`
--  `CommandParameter` 型の  `Object`
+- `Command` 型の  `System.Windows.Input.ICommand`
+- `CommandParameter` 型の  `Object`
 
 `SearchBar`定義`SearchCommand`と`SearchCommandParameter`プロパティ、中に、`ListView`定義、`RefreshCommand`型のプロパティ`ICommand`します。
 
 `ICommand`インターフェイスは、2 つのメソッドと 1 つのイベントを定義します。
 
--  `void Execute(object arg)`
--  `bool CanExecute(object arg)`
--  `event EventHandler CanExecuteChanged`
+- `void Execute(object arg)`
+- `bool CanExecute(object arg)`
+- `event EventHandler CanExecuteChanged`
 
 ViewModel 型のプロパティを定義できます`ICommand`します。 これらのプロパティをバインドすることができますし、`Command`の各プロパティ`Button`またはその他の要素、またはこのインターフェイスを実装するカスタム ビューなど。 必要に応じて設定することができます、`CommandParameter`個々 に識別するためにプロパティ`Button`オブジェクト (またはその他の要素) この ViewModel のプロパティにバインドします。 内部的には、`Button`呼び出し、`Execute`メソッド、ユーザーがタップするたびに、`Button`に渡し、`Execute`メソッドその`CommandParameter`します。
 
@@ -704,7 +704,7 @@ private async void OnListViewItemSelected(object sender, SelectedItemChangedEven
 
 **Xamarin の進化 2016:MVVM と Prism でシンプルになった**
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
 XAML は、データ バインディング時に特に、Xamarin.Forms アプリケーションでユーザー インターフェイスを定義するための強力なツールと、MVVM を使用します。 結果はクリーン、洗練された、および潜在的に理解できる使いやすいユーザー インターフェイスのすべてのバック グラウンド サポート コードで表したものです。
 

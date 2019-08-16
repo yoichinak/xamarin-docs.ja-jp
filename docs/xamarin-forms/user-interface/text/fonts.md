@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/28/2019
-ms.openlocfilehash: 329f7dc9cc43582f630a4895fba452a8496bae9a
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: c18c4e63831a03cbe28accfe10f4c7da31130803
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656175"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529309"
 ---
 # <a name="fonts-in-xamarinforms"></a>Xamarin.Forms でのフォント
 
@@ -58,9 +58,9 @@ label.FontSize = 24;
 
 **太字**や*斜体*などのフォントスタイルは、`FontAttributes`プロパティで設定できます。 現在サポートされている値は次のとおりです。
 
--  **None**
--  **Bold**
--  **Italic**
+- **None**
+- **Bold**
+- **Italic**
 
 `FontAttribute`列挙体は、次のように使用できます（単一の属性を指定するか、またはそれらを`OR`して一緒にすることができます）。
 
@@ -100,7 +100,7 @@ XAML には、すべてのフォント設定を文字列値として表現でき
 <Label Text="Use size 72" FontSize="72" />
 ```
 
-[`Device.RuntimePlatform`](~/xamarin-forms/platform/device.md#providing-platform-specific-values)を XAML で使用して、各プラットフォームで異なるフォントをレンダリングすることもできます。 以下の例では、iOS（<span style="font-family:MarkerFelt-Thin">MarkerFelt-Thin</span>）ではカスタムフォントフェイスを使用し、他のプラットフォームではサイズと属性のみを指定しています。
+[`Device.RuntimePlatform`](~/xamarin-forms/platform/device.md#providing-platform-specific-values)を XAML で使用して、各プラットフォームで異なるフォントをレンダリングすることもできます。 次の例では、iOS でカスタムフォントフェイス (MarkerFelt) を使用して、他のプラットフォームのサイズと属性のみを指定しています。
 
 ```xaml
 <Label Text="Hello Forms with XAML">
@@ -183,7 +183,7 @@ new Label
 
 ### <a name="windows"></a>Windows
 
-Windows プラットフォーム用の Xamarin.Forms は、特定の命名標準に従ってプロジェクトに追加されたカスタム フォントを参照できます。 最初にフォント ファイルをアプリケーション プロジェクトの **/Assets/Fonts/** フォルダに追加し、<span class="UIItem">ビルドアクション：Content</span>を設定します。 次に、フルパスとフォントファイル名を使用し、その後にハッシュ（＃）と<span class="UIItem">フォント名</span>を続けます。以下にコードスニペットを示します：
+Windows プラットフォーム用の Xamarin.Forms は、特定の命名標準に従ってプロジェクトに追加されたカスタム フォントを参照できます。 最初にフォント ファイルをアプリケーション プロジェクトの **/Assets/Fonts/** フォルダに追加し、**ビルドアクション：Content**を設定します。 次に、フルパスとフォントファイル名を使用し、その後にハッシュ（＃）と**フォント名**を続けます。以下にコードスニペットを示します：
 
 ```csharp
 new Label

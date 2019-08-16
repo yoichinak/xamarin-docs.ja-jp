@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 4d4785d6e556c856b0f7b4db2accd87f5297e277
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 0bed0e272293d3462d32fe5134147112e38116f0
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655368"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528720"
 ---
 # <a name="textkit-in-xamarinios"></a>Xamarin の TextKit
 
@@ -20,17 +20,17 @@ TextKit は、強力なテキストレイアウトとレンダリング機能を
 
 TextKit の機能を標準コントロールで使用できるようにするために、次のような TextKit を使用するようにいくつかの iOS テキストコントロールが再実装されています。
 
--  UITextView
--  UITextField
--  UILabel
+- UITextView
+- UITextField
+- UILabel
 
 ## <a name="architecture"></a>アーキテクチャ
 
 TextKit には、次のクラスを含む、レイアウトと表示からテキストストレージを分離するレイヤーアーキテクチャが用意されています。
 
--  `NSTextContainer`–テキストのレイアウトに使用される座標系と geometry を提供します。
--  `NSLayoutManager`–テキストをグリフに変えることによってテキストをレイアウトします。 
--  `NSTextStorage`–テキストデータを保持し、バッチテキストプロパティの更新を処理します。 バッチ更新は、レイアウトの再計算やテキストの再描画など、実際に変更を処理するためにレイアウトマネージャーに渡されます。
+- `NSTextContainer`–テキストのレイアウトに使用される座標系と geometry を提供します。
+- `NSLayoutManager`–テキストをグリフに変えることによってテキストをレイアウトします。 
+- `NSTextStorage`–テキストデータを保持し、バッチテキストプロパティの更新を処理します。 バッチ更新は、レイアウトの再計算やテキストの再描画など、実際に変更を処理するためにレイアウトマネージャーに渡されます。
 
 
 これら3つのクラスは、テキストを表示するビューに適用されます。 `UITextView` `UIView` 、`UILabel` 、などの組み込みのテキスト処理ビューでは、既に設定されていますが、インスタンスを作成して任意のインスタンスに適用することもできます。 `UITextField`

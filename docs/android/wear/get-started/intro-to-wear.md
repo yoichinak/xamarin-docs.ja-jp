@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: a57273005df45c2f8035563efe9562c27cdfa732
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 6a9bb5fae84b6883943410d0c2585ce60a1208a4
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648410"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526445"
 ---
 # <a name="introduction-to-android-wear"></a>Android Wear の概要
 
@@ -90,15 +90,15 @@ Android の磨耗には、ウェアラブルアプリとコンパニオンハン
 
 Android の磨耗に慣れるための最善の方法は、最初のアプリをビルドしてテストすることです。 次の一覧は、迅速に利用できるようにするために推奨される読み取り順序を示しています。
 
-1.  [セットアップ & のインストール](~/android/wear/get-started/installation.md)では、Xamarin Android のアプリをビルドするための開発環境をインストールして構成するための詳細な手順を提供します。 
+1. [セットアップ & のインストール](~/android/wear/get-started/installation.md)では、Xamarin Android のアプリをビルドするための開発環境をインストールして構成するための詳細な手順を提供します。 
 
-2.  必要なパッケージをインストールし、エミュレーターまたはデバイスを構成したら、「 [Hello, 磨耗](~/android/wear/get-started/hello-wear.md)」を参照して、ボタンのクリックを処理し、磨耗に click カウンターを表示する小さな Android 用の磨耗プロジェクトを作成する方法を説明した手順を実行します。ドライブ. 
+2. 必要なパッケージをインストールし、エミュレーターまたはデバイスを構成したら、「 [Hello, 磨耗](~/android/wear/get-started/hello-wear.md)」を参照して、ボタンのクリックを処理し、磨耗に click カウンターを表示する小さな Android 用の磨耗プロジェクトを作成する方法を説明した手順を実行します。ドライブ. 
 
-3.  [展開 & テスト](~/android/wear/deploy-test/index.md)では、エミュレーターとデバイスの構成と展開に関する詳細情報を提供します。これには、Bluetooth 経由でアプリを摩耗デバイスに展開する方法についての説明が含まれます。
+3. [展開 & テスト](~/android/wear/deploy-test/index.md)では、エミュレーターとデバイスの構成と展開に関する詳細情報を提供します。これには、Bluetooth 経由でアプリを摩耗デバイスに展開する方法についての説明が含まれます。
 
-4.  [画面のサイズ](~/android/wear/screen-sizes.md)を使用すると、磨耗デバイスで使用できるさまざまな画面サイズに合わせてユーザーインターフェイスをプレビューおよび最適化する方法について説明します。 
+4. [画面のサイズ](~/android/wear/screen-sizes.md)を使用すると、磨耗デバイスで使用できるさまざまな画面サイズに合わせてユーザーインターフェイスをプレビューおよび最適化する方法について説明します。 
 
-5.  [パッケージの操作](~/android/wear/deploy-test/packaging.md)Google Play で配布するために、磨耗アプリを手動でパッケージ化する手順について説明します。
+5. [パッケージの操作](~/android/wear/deploy-test/packaging.md)Google Play で配布するために、磨耗アプリを手動でパッケージ化する手順について説明します。
 
 最初の摩耗アプリを作成したら、Android 用のカスタムウォッチ式を作成することをお勧めします。 
 [ウォッチ式を作成](~/android/wear/platform/creating-a-watchface.md)すると、デジタルウォッチフェイスサービスを削除するための手順とコード例が示されます。その後、追加の機能を使用してアナログスタイルのウォッチ式に拡張するコードを記述します。 
@@ -119,7 +119,7 @@ Xamarin Android での摩耗2.0 アプリをビルドするには、プロジェ
 
 この NuGet パッケージには、Android Support ウェアラブルと摩耗互換性ライブラリの両方のバインドが含まれています。
 
-GooglePlayServices をインストールすることをお勧めします。これに加え**て、次**のように**xamarin**をインストールすることをお勧めします。 
+GooglePlayServices をインストールすることをお勧めします。これに加えて、次のように**xamarin**をインストールすることをお勧めします。 
 
 [![Xamarin.GooglePlayServices.Wearable](intro-to-wear-images/gpsw-nuget-sml.png "Install the Xamarin.GooglePlayServices.Wearable NuGet")](intro-to-wear-images/gpsw-nuget.png#lightbox)
 
@@ -169,8 +169,8 @@ Android の摩耗2.0 アプリは、ハンドヘルドアプリから独立し�
 
 手首ジェスチャを使用すると、ユーザーはタッチスクリーン&ndash;を使用せずにアプリと対話できるようになります。ユーザーはアプリにワンハンドで応答できます。 2つの手首ジェスチャがサポートされています。 
 
--   手首をフリック
--   手首のフリック
+- 手首をフリック
+- 手首のフリック
 
 詳細については、Android の[手首のジェスチャ](https://developer.android.com/wear/preview/features/gestures.html)に関するトピックを参照してください。 
 
@@ -203,7 +203,7 @@ Google の Android の磨耗ドキュメントを確認してください。
 
 
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
 この概要では、Android の磨耗の概要について説明しました。 Android の磨耗の基本的な機能について概説し、Android 磨耗2.0 で導入された機能の概要を説明しました。 この記事では、開発者が Xamarin. Android の磨耗開発を始めるのに役立つ重要な情報へのリンクを提供し、現在市場にある一部の Android 劣化デバイスの例を示しました。
 

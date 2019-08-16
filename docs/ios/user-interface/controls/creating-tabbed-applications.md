@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 1c3be128749b9fd0f67aa83038b3d30f4b2fcd2d
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 7fe03fbbdff02df9494317abe223ede5ed386c48
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657540"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528933"
 ---
 # <a name="tab-bars-and-tab-bar-controllers-in-xamarinios"></a>タブ バーと Xamarin.iOS でのタブ バー コント ローラー
 
@@ -26,8 +26,8 @@ ms.locfileid: "68657540"
 
 `UITabBarController`タブ付きアプリケーションの開発を以下がサポートされます。
 
--  複数のコント ローラーを追加することができます。
--  使用して、タブ付きのユーザー インターフェイスを提供する、`UITabBar`クラスは、コント ローラーとビューを切り替えるユーザーを許可します。 
+- 複数のコント ローラーを追加することができます。
+- 使用して、タブ付きのユーザー インターフェイスを提供する、`UITabBar`クラスは、コント ローラーとビューを切り替えるユーザーを許可します。 
 
 
 コント ローラーに追加、`UITabBarController`経由でその`ViewControllers`であるプロパティを`UIViewController`配列。 `UITabBarController`自体の処理の適切なコント ローラーの読み込みと選択されたタブに基づいてそのビューを表示します。
@@ -69,9 +69,9 @@ ms.locfileid: "68657540"
 
 実装する、`UITabBarController`以下を実行する必要があります。
 
-1.  基本クラスを設定する`TabController`に`UITabBarController`します。 
-1.  作成`UIViewController`に追加するインスタンス、`TabController`します。 
-1.  追加、`UIViewController`インスタンスに割り当てられた配列を`ViewControllers`のプロパティ、`TabController`します。 
+1. 基本クラスを設定する`TabController`に`UITabBarController`します。 
+1. 作成`UIViewController`に追加するインスタンス、`TabController`します。 
+1. 追加、`UIViewController`インスタンスに割り当てられた配列を`ViewControllers`のプロパティ、`TabController`します。 
 
 
 次のコードを追加、`TabController`を次の手順を実現するクラス。
@@ -283,8 +283,8 @@ MainStoryboard.storyboard ファイルをダブルクリックしてデザイナ
 
 ドラッグして、`Label`と`Button`から ViewController1 上に、**ツールボックス**右側にします。 次に、名前と、次のコントロールのテキストを編集するのに [プロパティ] タブを使用します。
 
--  **ラベル**:`Text` = **目**
--  **ボタン**:`Title` = **ユーザーが初期アクションを実行する**
+- **ラベル**:`Text` = **目**
+- **ボタン**:`Title` = **ユーザーが初期アクションを実行する**
 
 
 ボタンの可視性を制御します、`TouchUpInside`イベント、および私たちは、分離コードで参照する必要があります。 みましょうを識別、**名前**`aButton`プロパティ パッドで、次のスクリーン ショットに示すようにします。

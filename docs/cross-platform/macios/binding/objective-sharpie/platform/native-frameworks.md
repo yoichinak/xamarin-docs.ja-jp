@@ -1,37 +1,41 @@
 ---
 title: ネイティブ フレームワークのバインド
-description: このドキュメントは、目的の油性を使用する方法を説明のフレームワークとして配布されるライブラリへのバインドを作成するフレームワーク オプション。
+description: このドキュメントでは、目標マジックペンのフレームワークオプションを使用して、フレームワークとして配布されるライブラリへのバインドを作成する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 91AE058A-3A1F-41A9-9DE4-4B96880A1869
 author: asb3993
 ms.author: amburns
 ms.date: 01/15/2016
-ms.openlocfilehash: 0da40918c8ae36c4ab3d4c41128429b49706d653
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: cb6c39b2110161b3f839b8adc03701007f09cc4d
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64977654"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69521886"
 ---
 # <a name="binding-native-frameworks"></a>ネイティブ フレームワークのバインド
 
-としてネイティブ ライブラリを配布することがあります、 [framework](https://developer.apple.com/library/mac/documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WhatAreFrameworks.html)します。 目標油性を通じてフレームワークが定義されているバインドを適切に便利な機能を提供します、`-framework`オプション。
+ネイティブライブラリが[フレームワーク](https://developer.apple.com/library/mac/documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WhatAreFrameworks.html)として配布される場合があります。 目標マジックペンは、 `-framework`オプションを使用して適切に定義されたフレームワークをバインドするための便利な機能を提供します。
 
-たとえば、バインド、 [Adobe Creative SDK フレームワーク](https://creativesdk.adobe.com/downloads.html)iOS は簡単です。
+たとえば、 [Adobe CREATIVE SDK Framework](https://creativesdk.adobe.com/downloads.html) for iOS をバインドするのは簡単です。
 
-<pre>$ <b>sharpie bind \
+```
+$ sharpie bind \
     -framework AdobeCreativeSDKFoundation.framework \
-    -sdk iphoneos8.1</b></pre>
+    -sdk iphoneos8.1
+```
 
-場合によっては、フレームワークを指定します、 **Info.plist**を示すに対してどの SDK フレームワークをコンパイルする必要があります。 この情報が存在する場合と明示的な`-sdk`オプションが渡されると、目的の油性を使用すると、フレームワークから推測されます**Info.plist** (いずれか、`DTSDKName`キーまたはの組み合わせ、`DTPlatformName`と`DTPlatformVersion`キー)。
+場合によっては、フレームワークがどの SDK をコンパイルする必要があるかを示す**情報**が、フレームワークによって指定されます。 この情報が存在し、明示`-sdk`的なオプションが指定されていない場合、目標マジックペンは、フレームワークの**情報** `DTSDKName` ( `DTPlatformVersion`キーまたはキーの`DTPlatformName`組み合わせ) からそれを推論します。
 
-`-framework`オプションでは、渡される明示的なヘッダー ファイルは許可されていません。 包括的なヘッダー ファイルは、フレームワーク名に基づく規則によって選択されます。 包括的なヘッダーが見つからない場合は、目標油性はフレームワークのバインドを試みません clang の framework 引数があると共に、解析する適切な包括的なヘッダー ファイルを提供することで、バインドを手動で実行する必要があります (など、 `-F`フレームワークの検索パスのオプション)。
+オプション`-framework`では、明示的なヘッダーファイルを渡すことはできません。 包括的なヘッダーファイルは、フレームワーク名に基づいて規則によって選択されます。 包括的なヘッダーが見つからない場合、目標マジックペンはフレームワークのバインドを試行しません。また、解析するための正しい包括ヘッダーファイルと、clang のフレームワーク引数 (例に示す`-F`ように)を指定して、バインドを手動で実行する必要があります。フレームワークの検索パスオプション)。
 
-内部的には、指定する`-framework`ショートカットだけです。 次のバインド引数と同じですが、`-framework`上記の短縮形。
-特別な重要なは、 `-F .` clang に提供するフレームワークの検索パス (コマンドの一部として必要な領域と期間に注意してください)。
+内部的には、 `-framework`を指定するだけでショートカットができます。 次のバインド引数は、上記の`-framework`短縮形と同じです。
+特に重要なの`-F .`は、clang に提供されるフレームワーク検索パスです (コマンドの一部として必要なスペースとピリオドに注意してください)。
 
-<pre>$ <b>sharpie bind \
+```
+$ sharpie bind \
     -sdk iphoneos8.1 \
     AdobeCreativeSDKFoundation.framework/Headers/AdobeCreativeSDKFoundation.h \
     -scope AdobeCreativeSDKFoundation.framework/Headers \
-    -c -F .</b></pre>
+    -c -F .
+```

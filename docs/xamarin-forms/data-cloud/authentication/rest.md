@@ -1,5 +1,5 @@
 ---
-title: RESTful Web サービスを認証します。
+title: RESTful Web サービスを認証する
 description: 基本認証では、適切な資格情報を持つクライアントのみにリソースへのアクセスを提供します。 この記事では、基本認証を使用して RESTful web サービスのリソースへのアクセスを保護する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 7B5FFDC4-F2AA-4B12-A30A-1DACC7FECBF1
@@ -7,14 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/22/2018
-ms.openlocfilehash: bf334c7fde8433b7bbe45c8caaf962705c39320d
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 5a0e820c8a9f04b7ad9173893852285d53dbe7a6
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67650393"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529206"
 ---
-# <a name="authenticate-a-restful-web-service"></a>RESTful Web サービスを認証します。
+# <a name="authenticate-a-restful-web-service"></a>RESTful Web サービスを認証する
 
 _HTTP では、リソースへのアクセスを制御するいくつかの認証メカニズムの使用をサポートします。基本認証では、適切な資格情報を持つクライアントのみにリソースへのアクセスを提供します。この記事では、基本認証を使用して RESTful web サービスのリソースへのアクセスを保護する方法を示します。_
 
@@ -35,7 +35,7 @@ _HTTP では、リソースへのアクセスを制御するいくつかの認�
 ![](rest-images/basic-authentication-success.png "基本認証の成功")
 
 > [!NOTE]
-> 基本認証は、HTTPS 接続経由でのみ使用する必要があります。 HTTP 接続経由で使用すると、<code>Authorization</code>ヘッダーは、HTTP トラフィックが、攻撃者によってキャプチャされた場合に簡単にデコードできます。
+> 基本認証は、HTTPS 接続経由でのみ使用する必要があります。 HTTP 接続経由で使用すると、`Authorization`ヘッダーは、HTTP トラフィックが、攻撃者によってキャプチャされた場合に簡単にデコードできます。
 
 ## <a name="specifying-basic-authentication-in-a-web-request"></a>Web 要求で基本認証を指定します。
 
@@ -73,11 +73,11 @@ public class RestService : IRestService
 要求に署名する web サービス操作に要求が行われたときにその後、`Authorization`ユーザーが操作を呼び出すアクセス許可を持つかどうかを示すヘッダー。
 
 > [!NOTE]
-> このコードは、定数として資格情報を格納、安全でない形式で公開されたアプリケーションしない格納する必要があります。 [Xamarith.Auth](https://www.nuget.org/packages/Xamarin.Auth/) NuGet が資格情報を安全に格納するための機能を提供します。 詳細については、[の格納とデバイスのアカウント情報の取得](~/xamarin-forms/data-cloud/authentication/oauth.md)を参照してください。
+> このコードでは、資格情報は定数として格納されますが、公開されたアプリケーションで安全ではない形式で格納することはできません。 [Xamarith.Auth](https://www.nuget.org/packages/Xamarin.Auth/) NuGet が資格情報を安全に格納するための機能を提供します。 詳細については、[の格納とデバイスのアカウント情報の取得](~/xamarin-forms/data-cloud/authentication/oauth.md)を参照してください。
 
 ## <a name="processing-the-authorization-header-server-side"></a>承認ヘッダーのサーバー側の処理
 
-REST サービスでは、各アクションを装飾する必要があります、`[BasicAuthentication]`属性。 この属性は、解析に使用される、`Authorization`ヘッダーに格納されている値と比較して、base64 でエンコードされた資格情報が有効なかどうかの判断と*Web.config*します。この方法は、サンプルのサービスに適した、パブリックに公開された web サービスを拡張する必要があります。
+REST サービスは、各アクションを`[BasicAuthentication]`属性で装飾する必要があります。 この属性は、 `Authorization`ヘッダーを解析し、base64 でエンコードされた資格情報が web.config に格納されている値と比較することによって有効かどうかを判断するために使用されます。この方法はサンプルサービスに適していますが、公開されている web サービスの拡張が必要です。
 
 IIS によって使用される基本的な認証モジュールでは、ユーザーが自分の Windows 資格情報に対して認証されます。 そのため、ユーザーは、サーバーのドメインにアカウントが必要です。 ただし、ユーザー アカウントがデータベースなどの外部ソースに対して認証されて、カスタム認証を許可する、基本認証モデルを構成できます。 詳細については、次を参照してください。 [ASP.NET Web API で基本認証](http://www.asp.net/web-api/overview/security/basic-authentication)、ASP.NET web サイト。
 
@@ -86,5 +86,5 @@ IIS によって使用される基本的な認証モジュールでは、ユー�
 
 ## <a name="related-links"></a>関連リンク
 
-- [RESTful web サービスを使用します。](~/xamarin-forms/data-cloud/web-services/rest.md)
+- [RESTful web サービスを使用する](~/xamarin-forms/data-cloud/web-services/rest.md)
 - [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.110).aspx)

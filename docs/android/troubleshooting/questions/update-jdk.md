@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 09/07/2018
-ms.openlocfilehash: 02768bfcae9da06d8fd86ada63dd2d463245d254
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 193f9f92f112608908d2feb50f815a670d48b39c
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510461"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69523410"
 ---
 # <a name="how-do-i-update-the-java-development-kit-jdk-version"></a>Java Development Kit (JDK) のバージョンの更新方法を教えてください
 
@@ -27,19 +27,19 @@ Microsoft Mobile OpenJDK に更新するには、「 [Microsoft Mobile Openjdk P
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1.  [Oracle web サイト](https://www.oracle.com/technetwork/java/javase/downloads/index.html)から JDK 8 (1.8) をダウンロードします。
+1. [Oracle web サイト](https://www.oracle.com/technetwork/java/javase/downloads/index.html)から JDK 8 (1.8) をダウンロードします。
 
     ![Oracle web サイトの JDK ダウンロードページのスクリーンショット](update-jdk-images/image1.png)
 
-2.  Xamarin Android designer での[カスタムコントロール](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/vs/xamarin.vs_4/xamarin.vs_4.2/index.md#androiddesignercustomcontrols)の表示を許可するには、64ビットバージョンを選択します。
+2. Xamarin Android designer での[カスタムコントロール](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/vs/xamarin.vs_4/xamarin.vs_4.2/index.md#androiddesignercustomcontrols)の表示を許可するには、64ビットバージョンを選択します。
 
     ![JDK のダウンロードページからダウンロードする Windows x64 JDK パッケージの選択](update-jdk-images/image2.png)
 
-3.  .Exe を実行し、**開発ツール**をインストールします。
+3. .Exe を実行し、**開発ツール**をインストールします。
 
     ![JDK インストーラーでの開発ツールのインストール](update-jdk-images/image3.png)
 
-4.  Visual Studio を開き、 **Java Development kit の場所**を更新して、[ツール > オプション] の下の新しい JDK をポイントし **> Xamarin > Android の設定 > java Development kit の場所**に移動します。
+4. Visual Studio を開き、 **Java Development kit の場所**を更新して、[ツール > オプション] の下の新しい JDK をポイントし **> Xamarin > Android の設定 > java Development kit の場所**に移動します。
 
     [![[Android の設定] ページの JDK のパス設定](update-jdk-images/image4-sml.png)](update-jdk-images/image4.png#lightbox)
 
@@ -47,11 +47,11 @@ Microsoft Mobile OpenJDK に更新するには、「 [Microsoft Mobile Openjdk P
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1.  [Oracle web サイト](https://www.oracle.com/technetwork/java/javase/downloads/index.html)から JDK 8 (1.8) をダウンロードします。
+1. [Oracle web サイト](https://www.oracle.com/technetwork/java/javase/downloads/index.html)から JDK 8 (1.8) をダウンロードします。
 
     ![Oracle web サイトの JDK ダウンロードページのスクリーンショット](update-jdk-images/image1.png)
 
-2.  Dmg ファイルを開き、.pkg インストーラーを実行します。
+2. Dmg ファイルを開き、.pkg インストーラーを実行します。
 
     ![MacOS で JDK インストーラーを実行する](update-jdk-images/image5.png)
 

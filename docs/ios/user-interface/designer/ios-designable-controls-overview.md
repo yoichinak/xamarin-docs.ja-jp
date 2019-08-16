@@ -1,54 +1,54 @@
 ---
-title: IOS 用の Xamarin のデザイナーでカスタム コントロール
-description: IOS 用の Xamarin デザイナーでは、プロジェクトの作成または Xamarin コンポーネント ストアなどの外部ソースから参照されているカスタム コントロールのレンダリングをサポートします。
+title: Xamarin Designer for iOS 内のカスタムコントロール
+description: Xamarin Designer for iOS は、プロジェクトで作成されたカスタムコントロールの表示、または Xamarin コンポーネントストアなどの外部ソースからの参照をサポートします。
 ms.prod: xamarin
 ms.assetid: D8F07D63-B006-4050-9D1B-AC6FCDA71B99
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 267c465fbc10468e70e39831e4f47a4a87f36d00
-ms.sourcegitcommit: 4a1520dee7759f8355ea65c8bb3d1bac8ba58122
+ms.openlocfilehash: aa6db1403a34b7228352e12e1b2f954308db3744
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66353986"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528507"
 ---
-# <a name="custom-controls-in-the-xamarin-designer-for-ios"></a>IOS 用の Xamarin のデザイナーでカスタム コントロール
+# <a name="custom-controls-in-the-xamarin-designer-for-ios"></a>Xamarin Designer for iOS 内のカスタムコントロール
 
-_IOS 用の Xamarin デザイナーでは、プロジェクトの作成または Xamarin コンポーネント ストアなどの外部ソースから参照されているカスタム コントロールのレンダリングをサポートします。_
+_Xamarin Designer for iOS は、プロジェクトで作成されたカスタムコントロールの表示、または Xamarin コンポーネントストアなどの外部ソースからの参照をサポートします。_
 
-IOS 用の Xamarin のデザイナーは、アプリケーションのユーザー インターフェイスを視覚化するための強力なツールであり、WYSIWYG 編集のほとんどの iOS ビューとビュー コント ローラーのサポートを提供します。 アプリは、iOS に組み込まれているものを拡張するカスタム コントロールを含めることもできます。 いくつかのガイドラインを考慮してでは、これらのカスタム コントロールが書き込まれた場合、iOS Designer より豊富な編集機能を提供することによってもレンダリングされることができます。 このドキュメントではこれらのガイドラインを参照してください。
+Xamarin Designer for iOS は、アプリケーションのユーザーインターフェイスを視覚化するための強力なツールであり、ほとんどの iOS ビューおよびビューコントローラーに対して WYSIWYG での編集がサポートされています。 アプリには、iOS に組み込まれているものを拡張するカスタムコントロールが含まれている場合もあります。 これらのカスタムコントロールは、いくつかのガイドラインを考慮して記述されている場合、iOS デザイナーでもレンダリングできるため、さらに充実した編集エクスペリエンスが提供されます。 このドキュメントでは、これらのガイドラインについて説明します。
 
 ## <a name="requirements"></a>必要条件
 
-次のすべての要件を満たすコントロールをデザイン サーフェイスにレンダリングします。
+次のすべての要件を満たすコントロールがデザインサーフェイスに表示されます。
 
-1.  直接または間接的なサブクラスが[UIView](xref:UIKit.UIView)または[UIViewController](xref:UIKit.UIViewController)します。 その他の[NSObject](xref:Foundation.NSObject)サブクラスは、デザイン サーフェイス上のアイコンとして表示されます。
-2.  [RegisterAttribute](xref:Foundation.RegisterAttribute) OBJECTIVE-C に公開するには
-3.  [必要な IntPtr コンス トラクター](~/ios/internals/api-design/index.md)します。
-4.  実装するか、 [IComponent](xref:System.ComponentModel.IComponent)インターフェイスまたはが、 [DesignTimeVisibleAttribute](xref:System.ComponentModel.DesignTimeVisibleAttribute)を True に設定します。
+1. これは、 [Uiview](xref:UIKit.UIView)または[uiviewcontroller](xref:UIKit.UIViewController)の直接または間接のサブクラスです。 他の[NSObject](xref:Foundation.NSObject)サブクラスは、デザイン画面にアイコンとして表示されます。
+2. これは、目的の C に公開する[Registerattribute](xref:Foundation.RegisterAttribute)を持っています。
+3. これには[、必要な IntPtr コンストラクター](~/ios/internals/api-design/index.md)があります。
+4. [IComponent](xref:System.ComponentModel.IComponent)インターフェイスを実装しているか、 [DesignTimeVisibleAttribute](xref:System.ComponentModel.DesignTimeVisibleAttribute)が True に設定されています。
 
-上記の要件を満たすコードで定義されているコントロールは、シミュレーターに含まれるプロジェクトがコンパイルされるときに、デザイナーに表示されます。 既定ではすべてのカスタム コントロールに表示されます、**カスタム コンポーネント**のセクション、**ツールボックス**します。 ただし、 [CategoryAttribute](xref:System.ComponentModel.CategoryAttribute)別のセクションを指定するカスタム コントロールのクラスに適用することができます。
+上記の要件を満たすコードで定義されたコントロールは、コンテナーに含まれるプロジェクトがシミュレーター用にコンパイルされるときに、デザイナーに表示されます。 既定では、すべてのカスタムコントロールは、**ツールボックス**の **[カスタムコンポーネント]** セクションに表示されます。 ただし、[カテゴリ属性](xref:System.ComponentModel.CategoryAttribute)をカスタムコントロールのクラスに適用して、別のセクションを指定することもできます。
 
-デザイナーは、サード パーティ製の OBJECTIVE-C ライブラリの読み込みをサポートしていません。
+デザイナーでは、サードパーティの目標 C ライブラリの読み込みはサポートされていません。
 
 ## <a name="custom-properties"></a>カスタム プロパティ
 
-カスタム コントロールで宣言されたプロパティは、次の条件が満たされた場合、[プロパティ] パネルに表示されます。
+次の条件が満たされている場合、カスタムコントロールによって宣言されたプロパティが [プロパティ] パネルに表示されます。
 
-1.  プロパティには、パブリック ゲッターとセッターがあります。
-1.  プロパティは、 [ExportAttribute](xref:Foundation.ExportAttribute)と同様に、 [BrowsableAttribute](xref:System.ComponentModel.BrowsableAttribute)を True に設定します。
-1.  プロパティの型が数値型、列挙型、string、bool、 [SizeF](xref:System.Drawing.SizeF)、[示す UIColor](xref:UIKit.UIColor)、または[UIImage](xref:UIKit.UIImage)します。 サポートされている型のこの一覧は、将来拡張可能性があります。
+1. プロパティは、パブリック getter および setter を持ちます。
+1. プロパティには[Exportattribute](xref:Foundation.ExportAttribute)と[BrowsableAttribute](xref:System.ComponentModel.BrowsableAttribute)が True に設定されています。
+1. プロパティの型は、数値型、列挙型、文字列、ブール値、 [SizeF](xref:System.Drawing.SizeF)、 [UIColor](xref:UIKit.UIColor)、または[uiimage](xref:UIKit.UIImage)です。 サポートされている種類のこの一覧は、今後拡張される可能性があります。
 
 
-プロパティで装飾できるはまた、 [DisplayNameAttribute](xref:System.ComponentModel.DisplayNameAttribute)プロパティ パネルに表示されるラベルを指定します。
+プロパティは[Displaynameattribute](xref:System.ComponentModel.DisplayNameAttribute)で修飾して、プロパティパネルに表示されるラベルを指定することもできます。
 
 ## <a name="initialization"></a>初期化
 
-`UIViewController`サブクラスを使用する必要がある、 [ViewDidLoad](xref:UIKit.UIViewController.ViewDidLoad)デザイナーで作成したビューに依存するコードのメソッド。
+サブ`UIViewController`クラスの場合は、デザイナーで作成したビューに依存するコードに[ViewDidLoad](xref:UIKit.UIViewController.ViewDidLoad)メソッドを使用する必要があります。
 
-`UIView`およびその他の`NSObject`サブクラスを[AwakeFromNib](xref:Foundation.NSObject.AwakeFromNib)メソッドは、レイアウト ファイルから読み込まれるカスタム コントロールの初期化の実行をお勧めします。 これは、コントロールのコンス トラクターを実行するが、前に設定する、ときに、[プロパティ] パネルで設定されたカスタム プロパティは設定されていないため`AwakeFromNib`が呼び出されます。
+および`UIView`その他`NSObject`のサブクラスの場合、 [AwakeFromNib](xref:Foundation.NSObject.AwakeFromNib)メソッドは、レイアウトファイルから読み込まれた後にカスタムコントロールの初期化を実行するために推奨される場所です。 これは、プロパティパネルで設定されたカスタムプロパティは、コントロールのコンストラクターの実行時には設定されませんが、 `AwakeFromNib`が呼び出される前に設定されるためです。
 
 
 ```csharp
@@ -64,7 +64,7 @@ public class CustomView : UIView {
 }
 ```
 
-場合は、コントロールのコードから直接作成する設計もメソッドがこのような一般的な初期化コードを作成したい場合があります。
+コントロールがコードから直接作成されるように設計されている場合は、次のように、共通の初期化コードを持つメソッドを作成することもできます。
 
 ```csharp
 [Register ("CustomView"), DesignTimeVisible (true)]
@@ -93,7 +93,7 @@ public class CustomView : UIView {
 
 ## <a name="property-initialization-and-awakefromnib"></a>プロパティの初期化と AwakeFromNib
 
-IOS Designer 内で設定されている値を上書きしないか、カスタム コンポーネントでデザイン可能なプロパティを初期化するタイミングと場所に注意する必要があります。 たとえば、次のコードを実行します。
+カスタムコンポーネントのデザイン可能なプロパティを初期化するタイミングと場所は、iOS デザイナー内で設定された値を上書きしないように注意する必要があります。 例として、次のコードを実行します。
 
 ```csharp
 [Register ("CustomView"), DesignTimeVisible (true)]
@@ -124,25 +124,25 @@ public class CustomView : UIView {
 }
 ```
 
-`CustomView`コンポーネントが公開、 `Counter` iOS デザイナー内の開発者によって設定できるプロパティです。 ただし、どのような値は、デザイナーの値の内部設定に関係なく、`Counter`プロパティがゼロ (0) になります。 その理由を説明します。
+コンポーネント`CustomView`は、iOS `Counter`デザイナー内で開発者が設定できるプロパティを公開します。 ただし、デザイナー内でどのような値が設定されていて`Counter`も、プロパティの値は常にゼロ (0) になります。 その理由を説明します。
 
--  インスタンス、`CustomControl`ストーリー ボード ファイルから膨らみます。
--  IOS デザイナーで変更されたプロパティが設定されます (の値を設定するなど、`Counter`に 2 つ (2)、たとえば)。
--  `AwakeFromNib`メソッドが実行され、コンポーネントの呼び出しが行われた`Initialize`メソッド。
--  内部`Initialize`の値、`Counter`プロパティがゼロ (0) にリセットされます。
-
-
-上記のような状況を修正するか、初期化、`Counter`プロパティ別の場所 (コンポーネントのコンス トラクターなど) をオーバーライドしないか、`AwakeFromNib`メソッドと呼び出し`Initialize`何の外部でさらに初期化が必要なコンポーネントがない場合そのコンス トラクターによって現在処理中です。
-
-## <a name="design-mode"></a>デザイン モード
-
-デザイン サーフェイスでは、カスタム コントロールは、いくつかの制限に従う必要があります。
-
--  デザイン モードでアプリ バンドルのリソースが利用できません。 イメージを経由で読み込まれたときに使用できます。 [UIImage メソッド](xref:UIKit.UIImage)します。
--  デザイン モードで、web 要求などの非同期操作を実行しない必要があります。 デザイン画面は、アニメーションまたはコントロールの UI に、他の非同期更新をサポートしていません。
+- の`CustomControl`インスタンスは、ストーリーボードファイルから大きくなっています。
+- IOS designer で変更されたすべてのプロパティが設定されます (たとえば`Counter` 、の値を2に設定するなど)。
+- メソッドが実行され、コンポーネントの`Initialize`メソッドが呼び出されます。 `AwakeFromNib`
+- プロパティの値の中`Initialize`で、ゼロ (0) にリセットされています。 `Counter`
 
 
-カスタム コントロールを実装できます[IComponent](xref:System.ComponentModel.IComponent)を使用して、[ください](xref:System.ComponentModel.ISite.DesignMode)プロパティをデザイン画面であるかを確認します。 この例でラベルに表示されます「デザイン モード」で、デザイン画面と「ランタイム」時。
+上記の状況を解決するには、 `Counter`プロパティを別の場所 (コンポーネントのコンストラクターなど) で初期化するか`AwakeFromNib` 、メソッドを`Initialize`オーバーライドしないで、コンポーネントがそれ以外の初期化を必要としない場合はを呼び出します。は現在、コンストラクターによって処理されています。
+
+## <a name="design-mode"></a>デザインモード
+
+デザイン画面では、カスタムコントロールはいくつかの制限に従う必要があります。
+
+- アプリバンドルリソースはデザインモードでは使用できません。 画像は、 [uiimage メソッド](xref:UIKit.UIImage)を使用して読み込まれるときに使用できます。
+- Web 要求などの非同期操作は、デザインモードでは実行できません。 デザインサーフェイスでは、コントロールの UI に対するアニメーションまたはその他の非同期更新はサポートされていません。
+
+
+カスタムコントロールは[IComponent](xref:System.ComponentModel.IComponent)を実装し、 [designmode](xref:System.ComponentModel.ISite.DesignMode)プロパティを使用して、デザインサーフェイス上にあるかどうかを確認できます。 この例では、ラベルのデザイン画面に "デザインモード" が表示され、実行時には "Runtime" と表示されます。
 
 ```csharp
 [Register ("DesignerAwareLabel")]
@@ -167,26 +167,26 @@ public class DesignerAwareLabel : UILabel, IComponent {
 }
 ```
 
-常に確認する必要があります、`Site`プロパティ`null`前に、そのメンバーのいずれかにアクセスしようとしています。 場合`Site`は`null`コントロールがデザイナーで実行されていないと考えても安全です。
-デザイン モードで`Site`コントロールのコンス トラクターが実行された後と前に設定されます`AwakeFromNib`が呼び出されます。
+そのメンバーにアクセスしよう`Site`とする`null`前に、常にのプロパティを確認する必要があります。 `Site` が`null`の場合は、コントロールがデザイナーで実行されていないと想定するのは安全です。
+デザインモードでは`Site` 、コントロールのコンストラクターが実行された後、が`AwakeFromNib`呼び出される前に、が設定されます。
 
 ## <a name="debugging"></a>デバッグ
 
-上記の要件を満たすコントロールはツールボックスに表示され、表面に表示されます。
-コントロールを表示しない場合は、コントロールまたはその依存関係のいずれかのバグを確認します。
+上記の要件を満たすコントロールは、ツールボックスに表示され、画面に表示されます。
+コントロールがレンダリングされない場合は、コントロールまたはその依存関係のいずれかにバグがあるかどうかを確認します。
 
-デザイン画面では、他のコントロールを表示するためにも引き続き個別のコントロールによってスローされた例外をキャッチできます多くの場合。 コントロールの障害は、赤のプレース ホルダーに置き換えられ、感嘆符のアイコンをクリックして、例外トレースを表示することができます。
+多くの場合、デザイン画面では、他のコントロールのレンダリングを継続しながら、個々のコントロールによってスローされた例外をキャッチできます。 欠陥のあるコントロールは赤いプレースホルダーに置き換えられ、感嘆符アイコンをクリックして例外トレースを表示できます。
 
- ![](ios-designable-controls-overview-images/exception-box.png "赤のプレース ホルダーと例外の詳細コントロールの障害")
+ ![](ios-designable-controls-overview-images/exception-box.png "赤色のプレースホルダーおよび例外の詳細としてのコントロールの不具合")
 
-デバッグ シンボルがコントロールで使用できる場合は、トレース ファイル名や行番号にがあります。 スタック トレース内の行をクリックすると、ソース コードでは、その行にジャンプします。
+コントロールでデバッグシンボルを使用できる場合、トレースにはファイル名と行番号が含まれます。 スタックトレース内の行をダブルクリックすると、ソースコード内のその行にジャンプします。
 
-デザイナーをコントロールの障害ときない、デザイン画面の上部に警告メッセージが表示されます。
+デザイナーが欠陥のあるコントロールを分離できない場合は、デザイン画面の上部に警告メッセージが表示されます。
 
- ![](ios-designable-controls-overview-images/info-bar.png "デザイン画面の上部に警告メッセージ")
+ ![](ios-designable-controls-overview-images/info-bar.png "デザイン画面の上部に警告メッセージが表示されます。")
 
-完全なレンダリングは、欠陥のあるコントロールを固定またはデザイン画面から削除されたときに再開されます。
+問題のあるコントロールが固定されているか、デザインサーフェイスから削除されると、完全なレンダリングが再開されます。
 
 ## <a name="summary"></a>まとめ
 
-この記事には、作成し、iOS デザイナーでカスタム コントロールのアプリケーションが導入されました。 まず、デザイン画面に表示して、[プロパティ] パネルでのカスタム プロパティを公開するコントロールを満たす必要のある要件を説明します。 -コントロールと切り替えプロパティの初期化の分離コードで照合されます。 動作の説明が最後に例外がスローされたときに、この問題を解決する方法。
+この記事では、iOS designer でのカスタムコントロールの作成と適用について説明しました。 まず、デザイン画面に表示するためにコントロールが満たす必要のある要件と、プロパティパネルでカスタムプロパティを公開する要件について説明します。 次に、コントロールと DesignMode プロパティの分離コードを確認します。 最後に、例外がスローされた場合の動作と、その解決方法について説明しました。

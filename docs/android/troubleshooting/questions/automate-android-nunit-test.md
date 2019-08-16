@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2018
-ms.openlocfilehash: 94a0bddcb3a9a1e7236bed4b4c95fc38e1f9f0dd
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: f25ce3c5bfe7e3d8032709e9df99e7538e978862
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510431"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69523416"
 ---
 # <a name="how-do-i-automate-an-android-nunit-test-project"></a>Android NUnit テスト プロジェクトを自動化する方法を教えてください
 
@@ -28,7 +28,7 @@ adb shell am instrument
 
 次の手順では、このプロセスについて説明します。
 
-1.  **TestInstrumentation.cs**という名前の新しいファイルを作成します。 
+1. **TestInstrumentation.cs**という名前の新しいファイルを作成します。 
 
     ```cs 
     using System;
@@ -37,16 +37,16 @@ adb shell am instrument
     using Android.Content;
     using Android.Runtime;
     using Xamarin.Android.NUnitLite;
-     
+
     namespace App.Tests {
-     
+
         [Instrumentation(Name="app.tests.TestInstrumentation")]
         public class TestInstrumentation : TestSuiteInstrumentation {
-     
+
             public TestInstrumentation (IntPtr handle, JniHandleOwnership transfer) : base (handle, transfer)
             {
             }
-     
+
             protected override void AddTests ()
             {
                 AddTest (Assembly.GetExecutingAssembly ());
@@ -54,11 +54,12 @@ adb shell am instrument
         }
     }
     ```
+
     このファイルでは`Xamarin.Android.NUnitLite.TestSuiteInstrumentation` 、( **Xamarin. Android. .dll**から) がサブクラスとして作成`TestInstrumentation`されます。
 
-2.  `TestInstrumentation` コンストラクター`AddTests`とメソッドを実装します。 メソッド`AddTests`は、実際に実行されるテストを制御します。
+2. `TestInstrumentation` コンストラクター`AddTests`とメソッドを実装します。 メソッド`AddTests`は、実際に実行されるテストを制御します。
 
-3.  TestInstrumentation.cs を追加するようにファイルを変更します。`.csproj` 例えば:
+3. TestInstrumentation.cs を追加するようにファイルを変更します。`.csproj` 例えば:
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -74,13 +75,13 @@ adb shell am instrument
     </Project>
     ```
 
-4.  次のコマンドを使用して、単体テストを実行します。 を`PACKAGE_NAME`アプリのパッケージ名に置き換えます (パッケージ名は、 **androidmanifest .xml**にあるアプリの`/manifest/@package`属性にあります)。
+4. 次のコマンドを使用して、単体テストを実行します。 を`PACKAGE_NAME`アプリのパッケージ名に置き換えます (パッケージ名は、 **androidmanifest .xml**にあるアプリの`/manifest/@package`属性にあります)。
 
     ```shell
     adb shell am instrument -w PACKAGE_NAME/app.tests.TestInstrumentation
     ```
 
-5.  必要に応じて`.csproj` 、 `RunTests` MSBuild ターゲットを追加するようにファイルを変更できます。 これにより、次のようなコマンドを使用して単体テストを呼び出すことができます。
+5. 必要に応じて`.csproj` 、 `RunTests` MSBuild ターゲットを追加するようにファイルを変更できます。 これにより、次のようなコマンドを使用して単体テストを呼び出すことができます。
 
     ```shell
     msbuild /t:RunTests Project.csproj

@@ -6,100 +6,100 @@ ms.assetid: 066d36a3-e553-48d6-8769-c972274d7641
 author: asb3993
 ms.author: amburns
 ms.date: 03/20/2017
-ms.openlocfilehash: 3e3d426e7b00725eafeba139de5bc46d416c368a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 1711f0f2a0af7ef95e8fe59668992e9fc5bee140
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61344237"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69521606"
 ---
 # <a name="missing-visual-studio-extensions-after-installation"></a>インストール後に見つからない Visual Studio の拡張機能がある
 
-## <a name="error-message-this-project-is-incompatible-with-the-current-edition-of-visual-studio"></a>エラー メッセージ:このプロジェクトは Visual Studio の現在のエディションと互換性がありません。
+## <a name="error-message-this-project-is-incompatible-with-the-current-edition-of-visual-studio"></a>エラー メッセージ:このプロジェクトは、Visual Studio の現在のエディションと互換性がありません
 
-以降をインストールまたは Visual Studio 2017 (Community、Professional または Enterprise) を確認します。
+Visual Studio 2017 (Community、Professional、または Enterprise) 以降がインストールされていることを確認します。
 
-参照してください、 [Windows 要件](~/cross-platform/get-started/requirements.md#windows-requirements)します。
+「Windows の[要件](~/cross-platform/get-started/requirements.md#windows-requirements)」も参照してください。
 
-## <a name="possible-fix-1-change-the-installation-to-make-sure-the-visual-studio-extensions-are-installed"></a>考えられる修正 1:Visual Studio 拡張機能がインストールされているかどうかを確認するインストールを変更します。
+## <a name="possible-fix-1-change-the-installation-to-make-sure-the-visual-studio-extensions-are-installed"></a>考えられる修正プログラム 1:インストールを変更して、Visual Studio 拡張機能がインストールされていることを確認します。
 
-特定の状況で Xamarin インストーラーが自動的に - チェック ボックスをオフ Visual Studio 拡張機能のインストール オプションです。 問題の原因がある場合は、インストーラーを使用して、不足している Visual Studio の拡張機能をインストール**変更**コマンド。 たとえば、Visual Studio 2013 の拡張機能をインストールします。
+場合によっては、Xamarin インストーラーによって、Visual Studio 拡張機能のインストールオプションが自動的にオフにされることがあります。 これが問題の原因である場合は、インストーラーの **[変更]** コマンドを使用して、不足している Visual Studio 拡張機能をインストールします。 たとえば、Visual Studio 2013 の拡張機能をインストールするには、次のようにします。
 
-1. Windows を開く**プログラムと機能**コントロール パネル。
+1. コントロールパネルの [Windows の**プログラムと機能**] を開きます。
 
-2. 右クリックして、 **Xamarin**エントリ、および選択**変更**します。
+2. **Xamarin**エントリを右クリックし、 **[変更]** を選択します。
 
-3. クリックして**次**、し**変更**します。
+3. **[次へ]** 、 **[変更]** の順にクリックします。
 
-4. 確認、 **Xamarin for Visual Studio 2013**をインストールするオプションを設定します。
+4. **Xamarin for Visual Studio 2013**オプションが [インストール] に設定されていることを確認します。
 
-    ![](missing-vs-extensions-images/installer.png "Xamarin を Visual Studio 2013 のインストール オプションを有効にします。")
+    ![](missing-vs-extensions-images/installer.png "Visual Studio 2013 インストールオプションでの Xamarin の有効化")
 
-5. インストーラー ウィザードの残りの部分を実行します。
+5. インストーラーウィザードの残りの部分を続行します。
 
-## <a name="possible-fix-2-ask-visual-studio-to-set-up-the-extensions-again"></a>考えられる修正 2:Visual Studio をもう一度設定し、拡張機能の確認します。
+## <a name="possible-fix-2-ask-visual-studio-to-set-up-the-extensions-again"></a>考えられる修正プログラム 2:Visual Studio に拡張機能をもう一度設定するように依頼します
 
-1. Xamarin 拡張機能を Visual Studio の拡張機能フォルダーにコピーされているかどうかを確認します。
+1. Xamarin 拡張機能が Visual Studio extensions フォルダーにコピーされているかどうかを確認します。
 
     `C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\Extensions\Xamarin\Xamarin\3.1.228.0`
 
-    拡張機能は、(バージョン 3.1.228) のインストールが正しく場合があります 60 項目フォルダー内です。
+    拡張機能が正しくインストールされている場合 (バージョン3.1.228 の場合)、次のフォルダーに60項目が表示されます。
 
 
-    ![](missing-vs-extensions-images/folder.png "エクスプ ローラーで 'Xamarin\3.1.228.0' フォルダーの内容の一覧")
+    ![](missing-vs-extensions-images/folder.png "エクスプローラーでの ' Xamarin\3.1.228.0 ' フォルダーの内容の一覧")
 
-2. このフォルダーが正しいことを確認した後は、Visual Studio で、拡張機能の設定をもう一度お試しくださいを指示します。
+2. このフォルダーが正しく表示されていることを確認した後、Visual Studio に拡張機能のセットアップをもう一度試してください。
 
     `"C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\devenv.exe" /setup`
 
-## <a name="possible-fix-3-try-a-fresh-reinstall-of-xamarin"></a>可能な限りでは、3 を修正します。Xamarin の最新の再インストールを再試行してください。
+## <a name="possible-fix-3-try-a-fresh-reinstall-of-xamarin"></a>考えられる修正プログラム 3:Xamarin の新しい再インストールを試す
 
-1.  Windows コントロール パネルで、表示されている次のいずれかをアンインストールします。
+1. Windows のコントロールパネルで、次のいずれかのものをアンインストールします。
 
-    *   Xamarin
+    * Xamarin
 
-    *   Xamarin for Windows
+    * Xamarin for Windows
 
-    *   Xamarin.Android
+    * Xamarin.Android
 
-    *   Xamarin.iOS
+    * Xamarin.iOS
 
-    *   Xamarin for Visual Studio
+    * Xamarin for Visual Studio
 
-2.  エクスプ ローラーで、Visual Studio の Xamarin 拡張機能フォルダーから残りのファイルを削除します (すべてのバージョンでは、両方を含む**Program Files**と**Program Files (x86)**)。
+2. エクスプローラーで、Xamarin Visual Studio 拡張機能フォルダー (**プログラムファイル**と**プログラムファイル (x86)** の両方を含むすべてのバージョン) から残りのファイルを削除します。
 
     `C:\Program Files*\Microsoft Visual Studio 1*.0\Common7\IDE\Extensions\Xamarin`
 
-3.  "VirtualStore"ディレクトリから拡張機能ディレクトリのいずれかの「オーバーレイ」コピーがある可能性があるかどうかでも確認します。
+3. また、"VirtualStore" ディレクトリをチェックインして、いずれかの拡張ディレクトリの "オーバーレイ" コピーが存在する可能性があるかどうかを確認します。
 
     `%LOCALAPPDATA%\VirtualStore`
 
-4.  レジストリ エディター (regedit) を開きます。
+4. レジストリエディター (regedit) を開きます。
 
-5.  このキーを探します。
+5. このキーを探します。
 
     _HKEY\_LOCAL\_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\SharedDlls_
 
-6.  次のパターンに一致するエントリがあれば、削除します。
+6. 次のパターンに一致するエントリがあれば、削除します。
 
-    _C:\Program Files\*\Microsoft Visual Studio 1\*.0\Common7\IDE\Extensions\Xamarin_
+    _C:\Program files\*\Microsoft Visual Studio 1\*.0 \ Common7\IDE\Extensions\Xamarin_
 
-7.  このキーを探します。
+7. このキーを探します。
 
     `HKEY\_CURRENT\_USER\Software\Microsoft\VisualStudio\1\*.0\ExtensionManager\PendingDeletions`
 
-8.  Xamarin に関連すると考えられるすべてのエントリを削除します。 たとえば、ここでの 1 つを使用 Xamarin の以前のバージョンで問題が発生します。
+8. Xamarin に関連すると考えられるすべてのエントリを削除します。 たとえば、以前のバージョンの Xamarin では、次のような問題が発生します。
 
     _Mono.VisualStudio.Shell,1.0_
 
-9.  再起動します。
+9. 再起動します。
 
-10.  現在の安定したバージョンから Xamarin を再インストール[visualstudio.com](https://visualstudio.com/xamarin)します。
+10. [Visualstudio.com](https://visualstudio.com/xamarin)から、Xamarin の現在の安定バージョンを再インストールします。
 
-## <a name="possible-fix-4-repair-visual-studio-installation"></a>考えられる修正 4:Visual Studio のインストールを修復します。
+## <a name="possible-fix-4-repair-visual-studio-installation"></a>考えられる修正プログラム 4:Visual Studio のインストールを修復する
 
-1.  Windows を開く**プログラムと機能**コントロール パネル。
+1. コントロールパネルの [Windows の**プログラムと機能**] を開きます。
 
-2.  関連の Microsoft Visual Studio エントリを右クリックし、選択**変更**
+2. 関連する Microsoft Visual Studio エントリを右クリックし、 **[変更]** を選択します。
 
-3.  をクリックして、**修復**Visual Studio のダイアログ ボックスが開きますがボタンをクリックします。
+3. 表示された Visual Studio ダイアログで **[修復]** ボタンをクリックします。

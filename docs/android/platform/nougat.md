@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/02/2018
-ms.openlocfilehash: a28368e0fa4574fbb92a43dbd650a127008f5d06
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 2abc4b9b39fa90e525c3562a27ffd5d8c67f0078
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643461"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69523796"
 ---
 # <a name="nougat-features"></a>Nougat の機能
 
@@ -32,11 +32,11 @@ Android 2.x Api の詳細については、「[開発者向けの android 7.1](h
 
 Android Nougat は、Xamarin Android 開発者にとって関心のある多くの新機能を提供します。 これには次の機能があります。
 
--   **複数ウィンドウのサポート**&ndash;この機能強化により、ユーザーは、画面上で2つのアプリを一度に開くことができるようになります。
+- **複数ウィンドウのサポート**&ndash;この機能強化により、ユーザーは、画面上で2つのアプリを一度に開くことができるようになります。
 
--   **通知の機能強化**Android Nougat の再設計された通知システムには、ユーザーが通知 UI から直接テキストメッセージにすばやく応答できるようにする*直接応答*機能が含まれています。 &ndash; また、受信したメッセージに対してアプリが通知を作成した場合、新しいバンドルされた*通知*機能では、複数のメッセージを受信したときに1つのグループとして通知をまとめてまとめることができます。
+- **通知の機能強化**Android Nougat の再設計された通知システムには、ユーザーが通知 UI から直接テキストメッセージにすばやく応答できるようにする*直接応答*機能が含まれています。 &ndash; また、受信したメッセージに対してアプリが通知を作成した場合、新しいバンドルされた*通知*機能では、複数のメッセージを受信したときに1つのグループとして通知をまとめてまとめることができます。
 
--   **データセーバー**&ndash;この機能は、アプリによる携帯データネットワークの使用量を削減するために役立つ新しいシステムサービスです。これにより、ユーザーは、アプリが携帯データを使用する方法を制御できるようになります。
+- **データセーバー**&ndash;この機能は、アプリによる携帯データネットワークの使用量を削減するために役立つ新しいシステムサービスです。これにより、ユーザーは、アプリが携帯データを使用する方法を制御できるようになります。
 
 さらに、Android Nougat は、新しいネットワークセキュリティ構成機能、外出先での Doze、キーの構成証明、新しいクイック設定 Api、マルチロケールサポート、ICU4J Api、web ビューの機能強化など、アプリ開発者に関心のある他の多くの機能強化をもたらします。Java 8 言語機能、スコープを持つディレクトリアクセス、カスタムポインター API、platform VR サポート、仮想ファイル、およびバックグラウンド処理の最適化にアクセスできます。
 
@@ -47,13 +47,13 @@ Android Nougat は、Xamarin Android 開発者にとって関心のある多く�
 
 Xamarin ベースのアプリで新しい Android Nougat 機能を使用するには、次のものが必要です。
 
--   **Visual Studio または Visual Studio for Mac**&ndash; Visual Studio を使用している場合は、Xamarin 用の Visual Studio Tools バージョン4.2.0.628 以降が必要です。 Visual Studio for Mac を使用している場合は、Visual Studio for Mac のバージョン6.1.0 以降が必要です。
+- **Visual Studio または Visual Studio for Mac**&ndash; Visual Studio を使用している場合は、Xamarin 用の Visual Studio Tools バージョン4.2.0.628 以降が必要です。 Visual Studio for Mac を使用している場合は、Visual Studio for Mac のバージョン6.1.0 以降が必要です。
 
--   **Xamarin android** &ndash; 7.0 以降をインストールして、Visual Studio または Visual Studio for Mac で構成する必要があります。
+- **Xamarin android** &ndash; 7.0 以降をインストールして、Visual Studio または Visual Studio for Mac で構成する必要があります。
 
--   Android SDK Manager を使用して**Android SDK** -Android SDK 7.0 (API 24) 以降をインストールする必要があります。
+- Android SDK Manager を使用して**Android SDK** -Android SDK 7.0 (API 24) 以降をインストールする必要があります。
 
--   **Java Developer Kit**API レベル24以上を開発している場合、Xamarin Android 7.0 開発には[jdk 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)以降が必要です (jdk 8 では、24より前の api レベルもサポートされています)。 &ndash; カスタムコントロールまたはフォームプレビューアーを使用する場合は、64ビットバージョンの JDK 8 が必要です。
+- **Java Developer Kit**API レベル24以上を開発している場合、Xamarin Android 7.0 開発には[jdk 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)以降が必要です (jdk 8 では、24より前の api レベルもサポートされています)。 &ndash; カスタムコントロールまたはフォームプレビューアーを使用する場合は、64ビットバージョンの JDK 8 が必要です。
 
 > [!IMPORTANT]
 > Xamarin.Android は JDK 9 をサポートしていません。
@@ -66,13 +66,13 @@ Android Nougat で確実に動作させるには、Xamarin C6SR4 以降を使用
 
 Android Nougat と Xamarin android の使用を開始するには、Android Nougat プロジェクトを作成する前に、最新のツールと SDK パッケージをダウンロードしてインストールする必要があります。
 
-1.  Xamarin から最新の Xamarin Android 更新プログラムをインストールします。
+1. Xamarin から最新の Xamarin Android 更新プログラムをインストールします。
 
-2.  **Android 7.0 (API 24)** パッケージとツール以降をインストールします。
+2. **Android 7.0 (API 24)** パッケージとツール以降をインストールします。
 
-3.  Android Nougat を対象とする新しい Xamarin Android プロジェクトを作成します。
+3. Android Nougat を対象とする新しい Xamarin Android プロジェクトを作成します。
 
-4.  Android Nougat 用のエミュレーターまたはデバイスを構成します。
+4. Android Nougat 用のエミュレーターまたはデバイスを構成します。
 
 これらの各手順については、次のセクションで説明します。
 
@@ -87,19 +87,19 @@ Android Nougat の Xamarin サポートを追加するには、Visual Studio ま
 
 Xamarin Android 7.0 を使用してプロジェクトを作成するには、最初に Android SDK マネージャーを使用して**SDK Platform Android N (API 24)** 以降をインストールする必要があります。 また、最新の**Android SDK Tools**もインストールする必要があります。
 
-1.  Android SDK マネージャーを起動します (Visual Studio for Mac で、**ツール > 使用し&hellip;て Android SDK マネージャーを開き**ます。 Visual Studio では、**ツール > Android > Android SDK マネージャー**) を使用します。
+1. Android SDK マネージャーを起動します (Visual Studio for Mac で、**ツール > 使用し&hellip;て Android SDK マネージャーを開き**ます。 Visual Studio では、**ツール > Android > Android SDK マネージャー**) を使用します。
 
-2.  **Android 7.0 (API 24)** 以降をインストールします。
+2. **Android 7.0 (API 24)** 以降をインストールします。
 
     [![Android SDK Manager での Android 7.0 パッケージの選択](nougat-images/preview-packages.png)](nougat-images/preview-packages.png#lightbox)
 
-3.  最新の Android SDK ツールをインストールします。
+3. 最新の Android SDK ツールをインストールします。
 
     [![Android SDK マネージャーで最新の Android SDK ツールを選択する](nougat-images/preview-tools.png)](nougat-images/preview-tools.png#lightbox)
 
     Android SDK Tools revision 25.2.2 以降、Android SDK Platform tools v24.0.3 以降、Android SDK Build Tools 24.0.2 以降をインストールする必要があります。
 
-4.  **Java Development Kit の場所**が JDK 1.8 用に構成されていることを確認します。
+4. **Java Development Kit の場所**が JDK 1.8 用に構成されていることを確認します。
 
     [![[ツール] オプションの下に JDK 8 パスを構成する](nougat-images/use-jdk-1.8.png)](nougat-images/use-jdk-1.8.png#lightbox)
 
@@ -123,9 +123,9 @@ Android プロジェクトを作成するときは、バージョン設定を An
 
 エミュレーターを使用している場合は、Android AVD マネージャーを起動し、次の設定を使用して新しいデバイスを作成します。
 
--   デバイス:"月 ~ 金"、""、""、""、""、""、または "ピクセル C" のようにします。
--   ターゲット:Android 7.0-API レベル24
--   ABI: x86 または\_x86 64
+- デバイス:"月 ~ 金"、""、""、""、""、""、または "ピクセル C" のようにします。
+- ターゲット:Android 7.0-API レベル24
+- ABI: x86 または\_x86 64
 
 たとえば、この仮想デバイスは、次のようにして、この仮想デバイスを構成します。
 
@@ -253,18 +253,18 @@ Android 7.1 の新しいアプリショートカット機能の詳細につい�
 
 Android Nougat 機能を活用する方法を示すために、いくつかの Xamarin Android サンプルを利用できます。
 
--   [Multiwindowplayground グラウンド](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-multiwindowplayground)は、Android Nougat で使用できるマルチウィンドウ API の使用方法を示しています。 サンプルアプリをマルチ windows モードに切り替えて、アプリのライフサイクルと動作にどのように影響するかを確認できます。
+- [Multiwindowplayground グラウンド](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-multiwindowplayground)は、Android Nougat で使用できるマルチウィンドウ API の使用方法を示しています。 サンプルアプリをマルチ windows モードに切り替えて、アプリのライフサイクルと動作にどのように影響するかを確認できます。
 
--   [メッセージングサービス](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-messagingservice)は、 `NotificationCompatManager`を使用して通知を送信する単純なサービスです。 また、 `RemoteInput`オブジェクトを使用して通知を拡張し、Android Nougat デバイスがアプリを開いていなくても、通知から直接テキストを使用して応答できるようにします。
+- [メッセージングサービス](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-messagingservice)は、 `NotificationCompatManager`を使用して通知を送信する単純なサービスです。 また、 `RemoteInput`オブジェクトを使用して通知を拡張し、Android Nougat デバイスがアプリを開いていなくても、通知から直接テキストを使用して応答できるようにします。
 
--   [アクティブな通知](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-activenotifications)は、API を`NotificationManager`使用して、アプリケーションが現在表示している通知の数を通知する方法を示しています。
+- [アクティブな通知](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-activenotifications)は、API を`NotificationManager`使用して、アプリケーションが現在表示している通知の数を通知する方法を示しています。
 
--   スコープが指定した[ディレクトリアクセス](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-scopeddirectoryaccess)スコープが指定されたディレクトリアクセス API を使用して、特定のディレクトリに簡単にアクセスする方法を示します。 これは、マニフェストでまたは`READ_EXTERNAL_STORAGE` `WRITE_EXTERNAL_STORAGE`権限を定義する必要がある代わりに機能します。
+- スコープが指定した[ディレクトリアクセス](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-scopeddirectoryaccess)スコープが指定されたディレクトリアクセス API を使用して、特定のディレクトリに簡単にアクセスする方法を示します。 これは、マニフェストでまたは`READ_EXTERNAL_STORAGE` `WRITE_EXTERNAL_STORAGE`権限を定義する必要がある代わりに機能します。
 
--   [直接ブート](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-directboot)デバイスで暗号化されたストレージにデータを格納する方法を説明します。この記憶域は、ユーザーの資格情報 (PIN/パターン/パスワード) が入力される前と後の両方でデバイスが起動されている間は常に使用できます。
+- [直接ブート](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-directboot)デバイスで暗号化されたストレージにデータを格納する方法を説明します。この記憶域は、ユーザーの資格情報 (PIN/パターン/パスワード) が入力される前と後の両方でデバイスが起動されている間は常に使用できます。
 
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
 この記事では、Android Nougat について紹介し、android Nougat で Xamarin の開発用の最新のツールとパッケージをインストールして構成する方法について説明しました。 また、android Nougat で使用できる主な機能の概要と、Android Nougat 用アプリの作成を開始する際に役立つサンプルソースコードへのリンクも示しました。
 

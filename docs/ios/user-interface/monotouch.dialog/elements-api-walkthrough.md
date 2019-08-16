@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: 82320b069156828101d17e79ca48a8933b8a8777
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ab7761071ef0795d054febbfb302702e09d80c53
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655075"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528463"
 ---
 # <a name="creating-a-xamarinios-application-using-the-elements-api"></a>Elements API を使用して Xamarin iOS アプリケーションを作成する
 
 _この記事は、「Monotouch.dialog の概要」の記事に記載されている情報に基づいています。ここでは、Monotouch.dialog (MT) の使用方法を示すチュートリアルを示します。D) Elements API を使用して、MT を使用したアプリケーションの構築をすぐに始めることができます。A._
 
-このチュートリアルでは、MT を使用します。D Elements API は、タスク一覧を表示するアプリケーションのマスター/詳細スタイルを作成します。 ユーザーがナビゲーションバーで<span class="ui">+</span>ボタンを選択すると、タスクのテーブルに新しい行が追加されます。 行を選択すると、次に示すように、タスクの説明と期限を更新できる詳細画面に移動します。
+このチュートリアルでは、MT を使用します。D Elements API は、タスク一覧を表示するアプリケーションのマスター/詳細スタイルを作成します。 ユーザーがナビゲーションバーで **+** ボタンを選択すると、タスクのテーブルに新しい行が追加されます。 行を選択すると、次に示すように、タスクの説明と期限を更新できる詳細画面に移動します。
 
  [![](elements-api-walkthrough-images/01-task-list-app.png "行を選択すると、詳細画面に移動し、タスクの説明と期日を更新することができます。")](elements-api-walkthrough-images/01-task-list-app.png#lightbox)
 
@@ -36,11 +36,11 @@ Monotouch.dialog の[概要ダイアログ](~/ios/user-interface/monotouch.dialo
 
 Monotouch.dialog を使用してマルチスクリーンアプリケーションを作成するには、次のことを行う必要があります。
 
-1.  `UINavigationController.` の作成
-1.  `DialogViewController.` の作成
-1.  を、のルートとして追加します。`DialogViewController``UINavigationController.` 
-1.  `RootElement`をに追加します。`DialogViewController.`
-1.  `Sections` と`Elements`をに追加します。`RootElement.` 
+1. `UINavigationController.` の作成
+1. `DialogViewController.` の作成
+1. を、のルートとして追加します。`DialogViewController``UINavigationController.` 
+1. `RootElement`をに追加します。`DialogViewController.`
+1. `Sections` と`Elements`をに追加します。`RootElement.` 
 
 ### <a name="using-a-uinavigationcontroller"></a>UINavigationController を使用する
 
@@ -77,14 +77,14 @@ public override bool FinishedLaunching (UIApplication app, NSDictionary options)
 
 ### <a name="using-dialogviewcontroller"></a>診断ビューコントローラーの使用
 
-サブクラスであるは`DialogViewController`、ビュー `UITableView`としてを持ちます。 `UITableViewController` この例では、 <span class="ui">+</span>ボタンがタップされるたびに、テーブルに項目を追加します。 <span class="ui">+</span> `NavigationItem` `RightBarButton`はに追加さ`DialogViewController`れたため、次に示すように、のプロパティを使用してボタンを`UINavigationController`追加できます。
+サブクラスであるは`DialogViewController`、ビュー `UITableView`としてを持ちます。 `UITableViewController` この例では、 **+** ボタンがタップされるたびに、テーブルに項目を追加します。 **+** `NavigationItem` `RightBarButton`はに追加さ`DialogViewController`れたため、次に示すように、のプロパティを使用してボタンを`UINavigationController`追加できます。
 
 ```csharp
 _addButton = new UIBarButtonItem (UIBarButtonSystemItem.Add);
 _rootVC.NavigationItem.RightBarButtonItem = _addButton;
 ```
 
-`RootElement`以前にを作成したときに、ユーザーが`Section` <span class="ui">+</span>ボタンをタップしたときに要素を追加できるように、1つのインスタンスに渡しました。 次のコードを使用して、ボタンのイベントハンドラーでこれを実現できます。
+`RootElement`以前にを作成したときに、ユーザーが`Section` **+** ボタンをタップしたときに要素を追加できるように、1つのインスタンスに渡しました。 次のコードを使用して、ボタンのイベントハンドラーでこれを実現できます。
 
 ```csharp
 _addButton.Clicked += (sender, e) => {                

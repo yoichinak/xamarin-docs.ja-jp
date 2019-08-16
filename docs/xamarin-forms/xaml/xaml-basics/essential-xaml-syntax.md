@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: d8052e00809b15f0858583ee2919c47cfd8af00b
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 7526349c1b4b61495af95dfc200a5055cea5650e
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646571"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529297"
 ---
 # <a name="part-2-essential-xaml-syntax"></a>第 2 部です。 重要な XAML 構文
 
@@ -82,9 +82,9 @@ _XAML は、ほとんどの場合、インスタンス化して、オブジェ�
 
 この新しい構文では、いくつかの便利な用語を導入できます。
 
--  `Label` *オブジェクト要素*します。 これは Xamarin.Forms オブジェクトが XML 要素として表されます。
--  `Text`、 `VerticalOptions`、`FontAttributes`と`FontSize`は*プロパティ属性*します。 これらは Xamarin.Forms プロパティを XML 属性として表されます。
--  その最終的なスニペットで`TextColor`になりますが、*プロパティ要素*します。 Xamarin.Forms プロパティですが、XML 要素ではようになりました。
+- `Label` *オブジェクト要素*します。 これは Xamarin.Forms オブジェクトが XML 要素として表されます。
+- `Text`、 `VerticalOptions`、`FontAttributes`と`FontSize`は*プロパティ属性*します。 これらは Xamarin.Forms プロパティを XML 属性として表されます。
+- その最終的なスニペットで`TextColor`になりますが、*プロパティ要素*します。 Xamarin.Forms プロパティですが、XML 要素ではようになりました。
 
 
 最初の要素があるプロパティの定義を XML の構文の違反となると思われるはありません。 XML では、期間の特別な意味がありません。 XML デコーダーでは、`Label.TextColor`通常の子要素だけです。
@@ -176,13 +176,13 @@ XAML、ただし、この構文は非常に特殊です。 他に何も表示で
 
 それぞれの子のタグ内で、`Grid`行と、次の属性を使用してその子の列を指定します。
 
--  `Grid.Row`
--  `Grid.Column`
+- `Grid.Row`
+- `Grid.Column`
 
 これらの属性の既定値は、0 です。 子が 1 つ以上の行または列でこれらの属性にまたがるかどうかを示すこともできます。
 
--  `Grid.RowSpan`
--  `Grid.ColumnSpan`
+- `Grid.RowSpan`
+- `Grid.ColumnSpan`
 
 これら 2 つの属性は、1 の既定値を指定します。
 

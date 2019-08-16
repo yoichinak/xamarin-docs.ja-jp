@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: ce13532026e2c49cb733e5afc0f6abd41ff1abdd
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 31602b14179691d13d8058c90cf20a6f7f667124
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645034"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522824"
 ---
 # <a name="toolbar-compatibility"></a>ツール バーの互換性
 
@@ -24,13 +24,13 @@ ms.locfileid: "68645034"
 
 AppCompat バージョンのツールバーを使用するようにアプリを変更するには、次のようにします。 
 
-1.  アプリの Android の最小バージョンとターゲットを設定します。
+1. アプリの Android の最小バージョンとターゲットを設定します。
 
-2.  AppCompat NuGet パッケージをインストールします。
+2. AppCompat NuGet パッケージをインストールします。
 
-3.  組み込みの Android テーマではなく、AppCompat テーマを使用します。
+3. 組み込みの Android テーマではなく、AppCompat テーマを使用します。
 
-4.  を`MainActivity`ではなくサブクラス`AppCompatActivity`に変更します。`Activity` 
+4. を`MainActivity`ではなくサブクラス`AppCompatActivity`に変更します。`Activity` 
 
 これらの各手順の詳細については、次のセクションで説明します。
 

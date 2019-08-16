@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 01/03/2018
-ms.openlocfilehash: 95d71beff2bd5219712494deb43f1f9fb4b082ec
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 7c98686a1aa99e250b3fd1d0fcc6ae64d625a11f
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646305"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522410"
 ---
 # <a name="recyclerview"></a>RecyclerView
 
@@ -27,9 +27,9 @@ _RecyclerView は、コレクションを表示するためのビューグルー
 
 `RecyclerView`は、次の2つの魅力的な機能を提供します。
 
--  これには柔軟なアーキテクチャがあり、優先するコンポーネントをプラグインすることによって動作を変更できます。
+- これには柔軟なアーキテクチャがあり、優先するコンポーネントをプラグインすることによって動作を変更できます。
 
--  大きなコレクションでは、項目ビューを再利用し、ビューの参照をキャッシュするために*ビューホルダー*を使用する必要があるため、効率的です。
+- 大きなコレクションでは、項目ビューを再利用し、ビューの参照をキャッシュするために*ビューホルダー*を使用する必要があるため、効率的です。
 
 このガイドでは、xamarin `RecyclerView` android アプリケーションでを使用する方法について説明し`RecyclerView`ます。このガイドでは、xamarin android プロジェクトにパッケージ`RecyclerView`を追加する方法について説明し、一般的なアプリケーションの機能について説明します。 実際のコード例を使用すると、アプリケーションに`RecyclerView`統合する方法、項目ビューのクリックを実装する方法、基になる`RecyclerView`データが変更されたときに更新する方法を示すことができます。 このガイドでは、Xamarin Android の開発について理解していることを前提としています。
 
@@ -38,27 +38,27 @@ _RecyclerView は、コレクションを表示するためのビューグルー
 
 は多くの場合 android 5.0 ロリポップに関連付けられていますが&ndash; 、サポートライブラリ`RecyclerView`として提供されており、API レベル 7 (android 2.1) 以降を対象とするアプリで動作します。 `RecyclerView` Xamarin ベースのアプリケーションでを`RecyclerView`使用するには、次のものが必要です。
 
--  **Xamarin.Android** &ndash; Xamarin.Android 4.20 or later must be installed and configured with either Visual Studio or Visual Studio for Mac.
+- **Xamarin android** &ndash; 4.20 以降をインストールして、Visual Studio または Visual Studio for Mac で構成する必要があります。
 
--  アプリプロジェクトには、 **v7**パッケージが含まれている必要があります。 NuGet パッケージのインストールの詳細について[は、「チュートリアル:プロジェクト](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)に NuGet を含めます。
+- アプリプロジェクトには、 **v7**パッケージが含まれている必要があります。 NuGet パッケージのインストールの詳細について[は、「チュートリアル:プロジェクト](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)に NuGet を含めます。
 
 
 ### <a name="overview"></a>概要
 
 `RecyclerView`は、Android のウィジェット`ListView`および`GridView`ウィジェットの代わりとして考えることができます。 前の例と`RecyclerView`同様に、は小さいウィンドウに大きなデータセットを表示するよう`RecyclerView`に設計されていますが、より多くのレイアウトオプションが用意されており、大規模なコレクションを表示するために最適化されています。 に慣れて`ListView`いる場合は、と`RecyclerView`の間`ListView`にいくつかの重要な違いがあります。
 
--   `RecyclerView`は少し複雑になります。を`RecyclerView` `ListView`使用するには、より多くのコードを記述する必要があります。
+- `RecyclerView`は少し複雑になります。を`RecyclerView` `ListView`使用するには、より多くのコードを記述する必要があります。
 
--   `RecyclerView`は、定義済みのアダプターを提供しません。データソースにアクセスするアダプターコードを実装する必要があります。 ただし、Android には、および`ListView` `GridView`で動作する定義済みのアダプターがいくつか用意されています。
+- `RecyclerView`は、定義済みのアダプターを提供しません。データソースにアクセスするアダプターコードを実装する必要があります。 ただし、Android には、および`ListView` `GridView`で動作する定義済みのアダプターがいくつか用意されています。
 
--   `RecyclerView`ユーザーが項目をタップしても、項目クリックイベントは提供されません。代わりに、項目クリックイベントはヘルパークラスによって処理されます。 これに対し`ListView` 、では、項目クリックイベントが提供されます。
+- `RecyclerView`ユーザーが項目をタップしても、項目クリックイベントは提供されません。代わりに、項目クリックイベントはヘルパークラスによって処理されます。 これに対し`ListView` 、では、項目クリックイベントが提供されます。
 
--   `RecyclerView`では、ビューをリサイクルし、ビューホルダーパターンを適用することによってパフォーマンスを向上させます。これにより、不要なレイアウトリソースの参照がなくなります。 で`ListView`は、ビューホルダーパターンの使用は省略可能です。
+- `RecyclerView`では、ビューをリサイクルし、ビューホルダーパターンを適用することによってパフォーマンスを向上させます。これにより、不要なレイアウトリソースの参照がなくなります。 で`ListView`は、ビューホルダーパターンの使用は省略可能です。
 
--   `RecyclerView`は、カスタマイズしやすくするモジュール形式の設計に基づいています。 たとえば、アプリにコードを大幅に変更することなく、別のレイアウトポリシーをプラグインできます。
+- `RecyclerView`は、カスタマイズしやすくするモジュール形式の設計に基づいています。 たとえば、アプリにコードを大幅に変更することなく、別のレイアウトポリシーをプラグインできます。
     これに対し`ListView` 、の構造は比較的モノリシックです。
 
--   `RecyclerView`には、項目の追加と削除のための組み込みアニメーションが含まれています。 `ListView`アニメーションでは、アプリ開発者の一部に対して追加の作業が必要になります。
+- `RecyclerView`には、項目の追加と削除のための組み込みアニメーションが含まれています。 `ListView`アニメーションでは、アプリ開発者の一部に対して追加の作業が必要になります。
 
 
 ### <a name="sections"></a>セクション

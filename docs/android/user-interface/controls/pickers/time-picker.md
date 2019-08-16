@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: fea96ab645b2d01b774f691402a5796eec1f1dba
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: dfee003ba327b199974ae277a93cb1ca55a81b0d
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644967"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522883"
 ---
 # <a name="android-time-picker"></a>Android の時刻の選択
 
@@ -167,20 +167,20 @@ public class TimePickerFragment : DialogFragment, TimePickerDialog.IOnTimeSetLis
 
 `TimePickerFragment`には、ファクトリメソッド、ダイアログのインスタンス化メソッド、およびで必要`OnTimeSet`とされるハンドラー `TimePickerDialog.IOnTimeSetListener`メソッドという、いくつかのメソッドが実装されています。
 
--   `TimePickerFragment`はの`DialogFragment`サブクラスです。 また、インターフェイスも`TimePickerDialog.IOnTimeSetListener`実装します (つまり、必要な`OnTimeSet`メソッドを提供します)。
+- `TimePickerFragment`はの`DialogFragment`サブクラスです。 また、インターフェイスも`TimePickerDialog.IOnTimeSetListener`実装します (つまり、必要な`OnTimeSet`メソッドを提供します)。
 
     ```csharp
     public class TimePickerFragment : DialogFragment, TimePickerDialog.IOnTimeSetListener
     ```
 
--   `TAG`はログ記録のために初期化されます (*MyTimePickerFragment*は、使用する任意の文字列に変更できます)。 Null `timeSelectedHandler`参照の例外を防ぐために、アクションは空のデリゲートに初期化されます。
+- `TAG`はログ記録のために初期化されます (*MyTimePickerFragment*は、使用する任意の文字列に変更できます)。 Null `timeSelectedHandler`参照の例外を防ぐために、アクションは空のデリゲートに初期化されます。
 
     ```csharp
     public static readonly string TAG = "MyTimePickerFragment";
     Action<DateTime> timeSelectedHandler = delegate { };
     ```
 
--   ファクトリメソッドは、新しい`TimePickerFragment`をインスタンス化するために呼び出されます。 `NewInstance` このメソッドは、 `Action<DateTime>`ユーザーがの`TimePickerDialog` **[OK** ] ボタンをクリックしたときに呼び出されるハンドラーを受け取ります。
+- ファクトリメソッドは、新しい`TimePickerFragment`をインスタンス化するために呼び出されます。 `NewInstance` このメソッドは、 `Action<DateTime>`ユーザーがの`TimePickerDialog` **[OK** ] ボタンをクリックしたときに呼び出されるハンドラーを受け取ります。
 
     ```csharp
     public static TimePickerFragment NewInstance(Action<DateTime> onTimeSelected)
@@ -191,7 +191,7 @@ public class TimePickerFragment : DialogFragment, TimePickerDialog.IOnTimeSetLis
     }
     ```
 
--   フラグメントを表示するときに、Android は`DialogFragment`メソッド[oncreatedialog](xref:Android.App.DialogFragment.OnCreateDialog*)を呼び出します。
+- フラグメントを表示するときに、Android は`DialogFragment`メソッド[oncreatedialog](xref:Android.App.DialogFragment.OnCreateDialog*)を呼び出します。
     このメソッドは、新しい`TimePickerDialog`オブジェクトを作成し、アクティビティ、コールバックオブジェクト (の現在のインスタンス`TimePickerFragment`)、および現在の時刻を使用して初期化します。
 
     ```csharp
@@ -205,7 +205,7 @@ public class TimePickerFragment : DialogFragment, TimePickerDialog.IOnTimeSetLis
     }
     ```
 
--   ユーザーが`TimePicker`ダイアログ`OnTimeSet`の時刻設定を変更すると、メソッドが呼び出されます。 `OnTimeSet`現在の`DateTime`日付と、ユーザーによって選択された時間 (時と分) のマージを使用して、オブジェクトを作成します。
+- ユーザーが`TimePicker`ダイアログ`OnTimeSet`の時刻設定を変更すると、メソッドが呼び出されます。 `OnTimeSet`現在の`DateTime`日付と、ユーザーによって選択された時間 (時と分) のマージを使用して、オブジェクトを作成します。
 
     ```csharp
     public void OnTimeSet(TimePicker view, int hourOfDay, int minute)
@@ -215,7 +215,7 @@ public class TimePickerFragment : DialogFragment, TimePickerDialog.IOnTimeSetLis
     ```
 
 
--   この`DateTime`オブジェクトは、 `timeSelectedHandler`作成時に`TimePickerFragment`オブジェクトに登録されたに渡されます。 `OnTimeSet`このハンドラーを呼び出して、アクティビティの時間表示を選択された時間に更新します (このハンドラーは次のセクションで実装されています)。
+- この`DateTime`オブジェクトは、 `timeSelectedHandler`作成時に`TimePickerFragment`オブジェクトに登録されたに渡されます。 `OnTimeSet`このハンドラーを呼び出して、アクティビティの時間表示を選択された時間に更新します (このハンドラーは次のセクションで実装されています)。
 
     ```csharp
     timeSelectedHandler (selectedTime);
@@ -225,7 +225,7 @@ public class TimePickerFragment : DialogFragment, TimePickerDialog.IOnTimeSetLis
 
 が実装されたので、 `NewInstance`ファクトリメソッド`DialogFragment`を使用してをインスタンス化し、表示フラグメントを呼び出してそれを表示し[ます。 Show](xref:Android.App.DialogFragment.Show*): `DialogFragment`
 
-に次のメソッドを`MainActivity`追加します。
+次のメソッドを `MainActivity` に追加します。
 
 ```csharp
 void TimeSelectOnClick (object sender, EventArgs eventArgs)

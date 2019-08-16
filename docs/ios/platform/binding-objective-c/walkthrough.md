@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
-ms.openlocfilehash: b73f00eb704d80da6b0bab3a34f08f2d1cb70a16
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 0870139def82317646981f154116a704d84cfa0e
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646176"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527997"
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>チュートリアル: iOS Objective-C ライブラリのバインド
 
@@ -45,10 +45,10 @@ Xamarin でこの特定の目標 C API を使用するために必要なすべ�
 
 この記事では、Xcode と C 言語に関する知識があり、「[Objective-C のバインド](~/cross-platform/macios/binding/index.md)」を読んだことがあることを前提としています。 また、表示される手順を完了するには、次のものが必要です。
 
--  **Xcode と IOS SDK** -Apple の Xcode と最新の ios API は、開発者のコンピューターにインストールして構成する必要があります。
--  **[Xcode コマンドラインツール](#Installing_the_Xcode_Command_Line_Tools)** -現在インストールされているバージョンの Xcode には、Xcode コマンドラインツールがインストールされている必要があります (インストールの詳細については、以下を参照してください)。
--  **Visual Studio for Mac または Visual studio** -Visual Studio for Mac または visual studio の最新バージョンが開発用コンピューターにインストールされ、構成されている必要があります。 Xamarin iOS アプリケーションを開発するには Apple Mac が必要です。また、Visual Studio を使用する場合は、 [xamarin. ios ビルドホスト](~/ios/get-started/installation/windows/connecting-to-mac/index.md)に接続する必要があります。
--  **目標マジックペンの最新バージョン**-[ここ](~/cross-platform/macios/binding/objective-sharpie/get-started.md)からダウンロードした目標マジックペンツールの現在のコピー。 目標マジックペンが既にインストールされている場合は、を使用して最新バージョンに更新できます。`sharpie update`
+- **Xcode と IOS SDK** -Apple の Xcode と最新の ios API は、開発者のコンピューターにインストールして構成する必要があります。
+- **[Xcode コマンドラインツール](#Installing_the_Xcode_Command_Line_Tools)** -現在インストールされているバージョンの Xcode には、Xcode コマンドラインツールがインストールされている必要があります (インストールの詳細については、以下を参照してください)。
+- **Visual Studio for Mac または Visual studio** -Visual Studio for Mac または visual studio の最新バージョンが開発用コンピューターにインストールされ、構成されている必要があります。 Xamarin iOS アプリケーションを開発するには Apple Mac が必要です。また、Visual Studio を使用する場合は、 [xamarin. ios ビルドホスト](~/ios/get-started/installation/windows/connecting-to-mac/index.md)に接続する必要があります。
+- **目標マジックペンの最新バージョン**-[ここ](~/cross-platform/macios/binding/objective-sharpie/get-started.md)からダウンロードした目標マジックペンツールの現在のコピー。 目標マジックペンが既にインストールされている場合は、を使用して最新バージョンに更新できます。`sharpie update`
 
 <a name="Installing_the_Xcode_Command_Line_Tools"/>
 
@@ -134,7 +134,7 @@ Github で InfColorPicker のコードを調べる場合は、次のようにし
 
     [![](walkthrough-images/image06.png "プロジェクト名として「InfColorPicker」と入力します。")](walkthrough-images/image06.png#lightbox)
 5. プロジェクトを保存する場所を選択し、 **[OK]** ボタンをクリックします。
-6. 次に、ソースを InfColorPicker プロジェクトからスタティックライブラリプロジェクトに追加する必要があります。 (既定では) **Xcode ファイルは**、スタティックライブラリに既に存在するため、上書きすることはできません。 **Finder**から、GitHub から解凍した元のプロジェクトの infcolorpicker ソースコードに移動し、すべての infcolorpicker ファイルをコピーして、新しいスタティックライブラリプロジェクトに貼り付けます。
+6. 次に、ソースを InfColorPicker プロジェクトからスタティックライブラリプロジェクトに追加する必要があります。 (既定では) Xcode ファイルは、スタティックライブラリに既に存在するため、上書きすることはできません。 **Finder**から、GitHub から解凍した元のプロジェクトの infcolorpicker ソースコードに移動し、すべての infcolorpicker ファイルをコピーして、新しいスタティックライブラリプロジェクトに貼り付けます。
 
     [![](walkthrough-images/image12.png "すべての InfColorPicker ファイルをコピーする")](walkthrough-images/image12.png#lightbox)
 
@@ -215,11 +215,11 @@ clean:
 
 任意のプレーンテキストエディターで**Makefile**コマンドを入力し、プロジェクト**名**を使用してセクションをプロジェクトの名前に更新します。 指示内のタブを保持したまま、上記の手順を正確に貼り付けることも重要です。
 
-と**いう名前の**ファイルを、上記で作成した InfColorPicker Xcode スタティックライブラリと同じ場所に保存します。
+という名前のファイルを 、上記で作成した InfColorPicker Xcode スタティックライブラリと同じ場所に保存します。
 
 [![](walkthrough-images/lib00.png "メイクファイルという名前でファイルを保存します。")](walkthrough-images/lib00.png#lightbox)
 
-Mac でターミナルアプリケーションを開き、メイクファイルの場所に移動します。 ターミナル`make`に「」と入力し、 **enter キーを**押すと、**メイクファイル**が実行されます。
+Mac でターミナルアプリケーションを開き、メイクファイルの場所に移動します。 ターミナル`make`に「」と入力し、enter キーを押すと、**メイクファイル**が実行されます。
 
 [![](walkthrough-images/lib01.png "メイクファイルの出力の例")](walkthrough-images/lib01.png#lightbox)
 
@@ -332,7 +332,7 @@ Architectures in the fat file: libInfColorPicker.a are: i386 armv7 x86_64 arm64
 
 -----
 
-**ファイルが**プロジェクトに追加されると、Xamarin によってファイルの**ビルドアクション**が自動的に**objcbindingてライブラリ**に設定され、という名前`libInfColorPickerSDK.linkwith.cs`の特別なファイルが作成されます。
+ファイルがプロジェクトに追加されると、Xamarin によってファイルの**ビルドアクション**が自動的に**objcbindingてライブラリ**に設定され、という名前`libInfColorPickerSDK.linkwith.cs`の特別なファイルが作成されます。
 
 
 このファイルには`LinkWith` 、追加したスタティックライブラリを処理する方法を示す属性が含まれています。 このファイルの内容を次のコードスニペットに示します。

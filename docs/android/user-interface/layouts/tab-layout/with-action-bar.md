@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 92278fb84cba6329c33ac8a972a686fff7186f67
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 4673b178512a886e5fdb154c57c8d659276bb392
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647433"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522333"
 ---
 # <a name="tabbed-layouts-with-the-actionbar"></a>ActionBar を使用したタブ付きレイアウト
 
@@ -47,17 +47,17 @@ ActionBar は、すべてのタブを表示できない場合、水平方向に�
 
 アクションバーの各タブは、[*フラグメント*](~/android/platform/fragments/index.md)に関連付けられている必要があります。 ユーザーがタブを選択すると、アプリケーションには、タブに関連付けられているフラグメントが表示されます。ActionBar は、ユーザーに適切なフラグメントを表示する役割がありません。 代わりに、ActionBar は、ActionBar. ITabListener インターフェイスを実装するクラスを使用して、タブの状態の変化についてアプリケーションに通知します。 このインターフェイスには、タブの状態が変化したときに Android によって起動される3つのコールバックメソッドが用意されています。 
 
--  **Ontabselected** -このメソッドは、ユーザーがタブを選択したときに呼び出されます。フラグメントが表示されます。
+- **Ontabselected** -このメソッドは、ユーザーがタブを選択したときに呼び出されます。フラグメントが表示されます。
 
--  **Ontabreselected**実行-このメソッドは、タブが既に選択されているが、ユーザーによって再度選択された場合に呼び出されます。 通常、このコールバックは、表示されているフラグメントを更新/更新するために使用されます。
+- **Ontabreselected**実行-このメソッドは、タブが既に選択されているが、ユーザーによって再度選択された場合に呼び出されます。 通常、このコールバックは、表示されているフラグメントを更新/更新するために使用されます。
 
--  **Ontabunselected** -このメソッドは、ユーザーが別のタブを選択したときに呼び出されます。このコールバックは、表示されなくなったフラグメントの状態を保存するために使用されます。
+- **Ontabunselected** -このメソッドは、ユーザーが別のタブを選択したときに呼び出されます。このコールバックは、表示されなくなったフラグメントの状態を保存するために使用されます。
 
 Xamarin は、 `ActionBar.ITabListener` `ActionBar.Tab`クラスのイベントを使用してをラップします。 アプリケーションでは、イベントハンドラーをこれらのイベントの1つ以上に割り当てることができます。 [アクションバー] タブでは、次の`ActionBar.ITabListener`3 つのイベント (のメソッドごとに1つ) が発生します。 
 
--  TabSelected
--  TabReselected
--  TabUnselected
+- TabSelected
+- TabReselected
+- TabUnselected
 
 
 

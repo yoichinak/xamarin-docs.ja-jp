@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 4ff0fa177bf28f00182c202ffba770d4be61b3c7
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 00df2edc1acc45c0302ecc793f4670eafa1dd91c
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643354"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69523751"
 ---
 # <a name="marshmallow-features"></a>Marshmallow の機能
 
@@ -26,31 +26,31 @@ _この記事は、android 6.0 Marshmallow 用アプリを開発するために 
 Android [6.0 Marshmallow](https://developer.android.com/about/versions/marshmallow/index.html)は、android ロリポップの後の次の主要な android リリースです。
 Xamarin Android は Android Marshmallow をサポートし、次のものが含まれます。
 
--   **API 23/Android 6.0 のバインド**&ndash; Android 6.0 では、以下に示す新機能用に多くの新しい api が追加されています。 api レベル23を対象とする場合、これらの api は Xamarin Android アプリで使用できます。 Android 6.0 Api の詳細については、「 [android 6.0 api](https://developer.android.com/preview/api-overview.html)」を参照してください。 
+- **API 23/Android 6.0 のバインド**&ndash; Android 6.0 では、以下に示す新機能用に多くの新しい api が追加されています。 api レベル23を対象とする場合、これらの api は Xamarin Android アプリで使用できます。 Android 6.0 Api の詳細については、「 [android 6.0 api](https://developer.android.com/preview/api-overview.html)」を参照してください。 
 
 [![Marshmallow を実行しているタブレットや携帯電話のヒーロー画像](marshmallow-images/android-m-hero-sml.png)](marshmallow-images/android-m-hero.png#lightbox)
 
 Marshmallow リリースは主に "ポーランドと品質" に重点を置いていますが、Xamarin Android 開発者にとって興味深い多くの新機能も提供しています。 これには次の機能があります。 
 
--   **実行時のアクセス許可**&ndash;この機能強化により、ユーザーは実行時にケースごとにセキュリティのアクセス許可を承認することができます。 
+- **実行時のアクセス許可**&ndash;この機能強化により、ユーザーは実行時にケースごとにセキュリティのアクセス許可を承認することができます。 
 
--   **認証の機能強化**Android Marshmallow 以降では、アプリは指紋センサーを使用してユーザーを認証できるようになりました。また、新しい*資格情報の確認*機能を使用すると、パスワードを入力する必要が最小限に抑えられます。 &ndash; 
+- **認証の機能強化**Android Marshmallow 以降では、アプリは指紋センサーを使用してユーザーを認証できるようになりました。また、新しい*資格情報の確認*機能を使用すると、パスワードを入力する必要が最小限に抑えられます。 &ndash; 
 
--   **アプリのリンク**この機能を使用すると、アプリを web ドメインに自動的に関連付けることで、アプリの選択をポップアップ表示する必要がなくなります。 &ndash; 
+- **アプリのリンク**この機能を使用すると、アプリを web ドメインに自動的に関連付けることで、アプリの選択をポップアップ表示する必要がなくなります。 &ndash; 
 
--   **直接共有**ユーザーに対して共有を迅速かつ直感的に行うための*直接共有ターゲット*を定義できます。この機能を使用すると、他のアプリとコンテンツを共有できます。 &ndash; 
+- **直接共有**ユーザーに対して共有を迅速かつ直感的に行うための*直接共有ターゲット*を定義できます。この機能を使用すると、他のアプリとコンテンツを共有できます。 &ndash; 
 
--   **音声操作**&ndash;この新しい API を使用すると、会話音声機能をアプリに組み込むことができます。 
+- **音声操作**&ndash;この新しい API を使用すると、会話音声機能をアプリに組み込むことができます。 
 
--   **4K 表示モード**&ndash; Android Marshmallow では、アプリでサポートされているハードウェアに対して4k 解像度の解像度を要求できます。 
+- **4K 表示モード**&ndash; Android Marshmallow では、アプリでサポートされているハードウェアに対して4k 解像度の解像度を要求できます。 
 
--   **新しいオーディオ機能**&ndash; Marshmallow 以降では、Android で MIDI プロトコルがサポートされるようになりました。 また、デジタルオーディオキャプチャオブジェクトと再生オブジェクトを作成するための新しいクラスも用意されています。また、オーディオデバイスと入力デバイスを関連付けるための新しい API フックが用意されています。 
+- **新しいオーディオ機能**&ndash; Marshmallow 以降では、Android で MIDI プロトコルがサポートされるようになりました。 また、デジタルオーディオキャプチャオブジェクトと再生オブジェクトを作成するための新しいクラスも用意されています。また、オーディオデバイスと入力デバイスを関連付けるための新しい API フックが用意されています。 
 
--   **新しいビデオ機能**&ndash; Marshmallow は、アプリがオーディオストリームとビデオストリームを同期させるのに役立つ新しいクラスを提供します。このクラスは、動的な再生速度もサポートします。 
+- **新しいビデオ機能**&ndash; Marshmallow は、アプリがオーディオストリームとビデオストリームを同期させるのに役立つ新しいクラスを提供します。このクラスは、動的な再生速度もサポートします。 
 
--   **Android For Work**&ndash; Marshmallow には、企業所有のシングルユーザーデバイス向けの強化されたコントロールが含まれています。 デバイスの所有者によるアプリのサイレントインストールとアンインストール、システム更新の自動受け入れ、証明書管理の向上、データ使用状況の追跡、アクセス許可の管理、および作業状態の通知をサポートしています。 
+- **Android For Work**&ndash; Marshmallow には、企業所有のシングルユーザーデバイス向けの強化されたコントロールが含まれています。 デバイスの所有者によるアプリのサイレントインストールとアンインストール、システム更新の自動受け入れ、証明書管理の向上、データ使用状況の追跡、アクセス許可の管理、および作業状態の通知をサポートしています。 
 
--   **マテリアルデザインサポートライブラリ**新しいデザイン*サポートライブラリ*には、デザインコンポーネントとパターンが用意されています。これを使用すると、アプリケーションに素材のデザインのルックアンドフィールを簡単に組み込むことができます。 &ndash; 
+- **マテリアルデザインサポートライブラリ**新しいデザイン*サポートライブラリ*には、デザインコンポーネントとパターンが用意されています。これを使用すると、アプリケーションに素材のデザインのルックアンドフィールを簡単に組み込むことができます。 &ndash; 
 
 さらに、android M では多くの主要な Android ライブラリの更新がリリースされており、android M とそれ以前のバージョンの Android では新機能が提供されています。
 
@@ -60,13 +60,13 @@ Marshmallow リリースは主に "ポーランドと品質" に重点を置い�
 
 Xamarin ベースのアプリで新しい Android Marshmallow 機能を使用するには、次のものが必要です。 
 
--   **Xamarin.Android** &ndash; Xamarin.Android 5.1.7.12 or later must be installed and configured with either Visual Studio or Xamarin Studio.
+- Xamarin 5.1.7.12 以降をインストールし、Visual Studio または Xamarin Studio で構成する必要があります。 &ndash;
 
--   **Visual Studio for Mac**または**Visual Studio** &ndash; Visual Studio for Mac を使用している場合は、バージョン5.9.7.22 以降が必要です。 Visual Studio を使用している場合は、Xamarin tools for Visual Studio のバージョン3.11.1537 以降が必要です。 
+- **Visual Studio for Mac**または**Visual Studio** &ndash; Visual Studio for Mac を使用している場合は、バージョン5.9.7.22 以降が必要です。 Visual Studio を使用している場合は、Xamarin tools for Visual Studio のバージョン3.11.1537 以降が必要です。 
 
--   **Android SDK**&ndash; Android SDK Manager を使用して Android SDK 6.0 (API 23) 以降をインストールする必要があります。
+- **Android SDK**&ndash; Android SDK Manager を使用して Android SDK 6.0 (API 23) 以降をインストールする必要があります。
 
--   **Java Developer Kit**API レベル24以上を開発している場合、Xamarin. Android には[jdk 1.8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)以降が必要です (jdk 1.8 では、Marshmallow を含む、24より前の api レベルもサポートされています)。 &ndash; カスタムコントロールまたはフォームプレビューアーを使用する場合は、64ビットバージョンの JDK 1.8 が必要です。
+- **Java Developer Kit**API レベル24以上を開発している場合、Xamarin. Android には[jdk 1.8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)以降が必要です (jdk 1.8 では、Marshmallow を含む、24より前の api レベルもサポートされています)。 &ndash; カスタムコントロールまたはフォームプレビューアーを使用する場合は、64ビットバージョンの JDK 1.8 が必要です。
 
 特に API レベル23以前を開発している場合は、 [JDK 1.7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)を使用し続けることができます。 
 
@@ -75,13 +75,13 @@ Xamarin ベースのアプリで新しい Android Marshmallow 機能を使用す
 
 Android Marshmallow と Xamarin android の使用を開始するには、Android Marshmallow プロジェクトを作成する前に、最新のツールと SDK パッケージをダウンロードしてインストールする必要があります。 
 
-1.  **安定**チャネルから最新の Xamarin 更新プログラムをインストールします。 
+1. **安定**チャネルから最新の Xamarin 更新プログラムをインストールします。 
 
-2.  Android 6.0 Marshmallow SDK パッケージとツールをインストールします。
+2. Android 6.0 Marshmallow SDK パッケージとツールをインストールします。
 
-3.  Android 6.0 Marshmallow (API レベル 23) を対象とする新しい Xamarin Android プロジェクトを作成します。 
+3. Android 6.0 Marshmallow (API レベル 23) を対象とする新しい Xamarin Android プロジェクトを作成します。 
 
-4.  Android Marshmallow 用のエミュレーターまたはデバイスを構成します。
+4. Android Marshmallow 用のエミュレーターまたはデバイスを構成します。
 
 これらの各手順については、次のセクションで説明します。
 
@@ -95,11 +95,11 @@ Android 6.0 Marshmallow のサポートが含まれるように Xamarin を更�
 
 Android Marshmallow 用の Xamarin Android プロジェクトを作成するには、まず Android SDK マネージャーを使用して Android 6.0 SDK をインストールする必要があります。
 
--   Android SDK Manager を起動します (Visual Studio for Mac では、**ツール > SDK マネージャー**を使用します。 Visual Studio では、**ツール > Android > Android SDK manager**) を使用して、最新の Android SDK Tools をインストールします。
+- Android SDK Manager を起動します (Visual Studio for Mac では、**ツール > SDK マネージャー**を使用します。 Visual Studio では、**ツール > Android > Android SDK manager**) を使用して、最新の Android SDK Tools をインストールします。
 
     [![Android SDK マネージャーで Android SDK ツールを選択する](marshmallow-images/mnc-preview-tools.png)](marshmallow-images/mnc-preview-tools.png#lightbox)
 
--   また、最新の**Android 6.0** SDK パッケージをインストールします。
+- また、最新の**Android 6.0** SDK パッケージをインストールします。
 
     [![Android SDK Manager での Android 6.0 SDK パッケージの選択](marshmallow-images/mnc-preview-packages.png)](marshmallow-images/mnc-preview-packages.png#lightbox)
 
@@ -120,9 +120,9 @@ Android プロジェクトを作成するときは、バージョン設定を An
 
 エミュレーターを使用している場合は、Android AVD マネージャーを起動し、次の設定を使用して新しいデバイスを作成します。
 
--   デバイス:の場合は、5、6、または9です。
--   ターゲット:Android 6.0-API レベル23
--   ABI: x86
+- デバイス:の場合は、5、6、または9です。
+- ターゲット:Android 6.0-API レベル23
+- ABI: x86
 
 たとえば、この仮想デバイスは、次のように、この仮想デバイスを構成して、次のようにします。
 
@@ -147,13 +147,13 @@ Xamarin には、Android Marshmallow (およびそれ以降) でランタイム�
 
 このサンプルアプリでは、次のことを示します。
 
--   実行時にアクセス許可を確認および要求する方法。
--   Android M デバイスのアクセス許可を宣言する方法。
+- 実行時にアクセス許可を確認および要求する方法。
+- Android M デバイスのアクセス許可を宣言する方法。
 
 このサンプルアプリを使用するには:
 
-1.  **カメラ**または**連絡先**のボタンをタップすると、アクセス許可の要求ダイアログボックスが表示されます。
-2.  カメラまたは連絡先のフラグメントを表示するアクセス許可を付与します。
+1. **カメラ**または**連絡先**のボタンをタップすると、アクセス許可の要求ダイアログボックスが表示されます。
+2. カメラまたは連絡先のフラグメントを表示するアクセス許可を付与します。
 
 Android Marshmallow の新しいランタイムアクセス許可機能の詳細については、「[システムアクセス許可の操作](https://developer.android.com/preview/features/runtime-permissions.html)」を参照してください。
 
@@ -163,9 +163,9 @@ Android Marshmallow の新しいランタイムアクセス許可機能の詳細
 
 Android Marshmallow には、パスワードの必要性をなくすために役立つ2つの認証拡張機能が用意されています。
 
--   **指紋認証**&ndash;指紋スキャンを使用してユーザーを認証します。
+- **指紋認証**&ndash;指紋スキャンを使用してユーザーを認証します。
 
--   **資格情報の確認**&ndash;デバイスのロックが解除された期間に基づいてユーザーを認証します。
+- **資格情報の確認**&ndash;デバイスのロックが解除された期間に基づいてユーザーを認証します。
 
 次に説明するリンクとサンプルアプリは、これらの新機能を理解するのに役立ちます。
 
@@ -179,8 +179,8 @@ Xamarin には、アプリで登録済みの指紋を使用してユーザーを
 
 このサンプルアプリを使用するには:
 
-1.  **[購入]** ボタンをタッチして、指紋認証ダイアログを開きます。
-2.  登録した指紋をスキャンして認証します。
+1. **[購入]** ボタンをタッチして、指紋認証ダイアログを開きます。
+2. 登録した指紋をスキャンして認証します。
 
 このサンプルアプリでは、指紋リーダーを備えたデバイスが必要であることに注意してください。
 このアプリには、指紋 (またはパスワード) は保存されません。
@@ -205,8 +205,8 @@ Xamarin には、アプリでデバイスの資格情報 (PIN、パターン、�
 
 このサンプルアプリを使用するには:
 
-1.  デバイスにセキュリティで保護されたロック画面を設定します (セキュリティで保護された **> セキュリティ > Screenlock**)。
-2.  **購入** ボタンをタップし、セキュリティで保護されたロック画面 の資格情報を確認します。
+1. デバイスにセキュリティで保護されたロック画面を設定します (セキュリティで保護された **> セキュリティ > Screenlock**)。
+2. **購入** ボタンをタップし、セキュリティで保護されたロック画面 の資格情報を確認します。
 
 
 
@@ -216,13 +216,13 @@ Xamarin には、アプリでデバイスの資格情報 (PIN、パターン、�
 
 *Chrome カスタムタブ*を使用すると、ユーザーがアプリを離れることなく、chrome の機能で web サイトを簡単かつ洗練された方法で表示できます。 この機能により、アプリはユーザーの web エクスペリエンスをより細かく制御できます。を使用しなくても、ネイティブコンテンツと web コンテンツの間でシームレス`WebView`な移行を行うことができます。 また、次の項目をカスタマイズすると、Chrome の外観にも影響があります。 
 
--   ツールバーの色
+- ツールバーの色
 
--   アニメーションの開始と終了
+- アニメーションの開始と終了
 
--   Chrome ツールバーのカスタムアクションとオーバーフローメニュー
+- Chrome ツールバーのカスタムアクションとオーバーフローメニュー
 
--   Chrome プリスタートおよびコンテンツプリフェッチ (高速読み込みの場合)
+- Chrome プリスタートおよびコンテンツプリフェッチ (高速読み込みの場合)
 
 Xamarin Android アプリでこの機能を利用するには、 [Android Support カスタムタブライブラリ](https://www.nuget.org/packages/Xamarin.Android.Support.CustomTabs/)をダウンロードしてインストールします。
 この機能の詳細については、「 [Chrome カスタムタブ](https://developer.chrome.com/multidevice/android/customtabs)」を参照してください。
@@ -233,19 +233,19 @@ Xamarin Android アプリでこの機能を利用するには、 [Android Suppor
 
 Android ロリポップは、Android エクスペリエンスを更新するための新しいデザイン言語として[マテリアルデザイン](http://www.google.com/design/spec/material-design/introduction.html)を導入しました (Xamarin android アプリでのマテリアルデザインの使用に関する情報については、「[マテリアルのテーマ](~/android/user-interface/material-theme.md)」を参照してください)。 Android Marshmallow を使用すると、アプリの開発者が素材のデザインのルックアンドフィールを簡単に採用できるように、 *android のデザインサポートライブラリ*が導入されました。 このライブラリには、次のコンポーネントが含まれています。
 
--   **CoordinatorLayout**新しいウィジェットはに似ていますが、 `FrameLayout`より強力です。 `CoordinatorLayout` &ndash; は、子`CoordinatorLayout`ビューのコンテナーとして使用することも、最上位のレイアウトとして`layout_anchor`使用することもできます。また、ビューを他のビューとの間で固定するために使用できる属性を提供します。
+- **CoordinatorLayout**新しいウィジェットはに似ていますが、 `FrameLayout`より強力です。 `CoordinatorLayout` &ndash; は、子`CoordinatorLayout`ビューのコンテナーとして使用することも、最上位のレイアウトとして`layout_anchor`使用することもできます。また、ビューを他のビューとの間で固定するために使用できる属性を提供します。
 
--   **折りたたみ (ツールバー**を)新しいは、の`Toolbar`ラッパーである折りたたみアプリバーです。 `CollapsingToolbarLayout` &ndash; (*アプリバー*は、以前は*操作バー*と呼ばれていたものです)。
+- **折りたたみ (ツールバー**を)新しいは、の`Toolbar`ラッパーである折りたたみアプリバーです。 `CollapsingToolbarLayout` &ndash; (*アプリバー*は、以前は*操作バー*と呼ばれていたものです)。
 
--   **浮動アクションボタン**&ndash;アプリのインターフェイスの主要なアクションを示す丸いボタン。
+- **浮動アクションボタン**&ndash;アプリのインターフェイスの主要なアクションを示す丸いボタン。
 
--   **テキストを編集するための浮動ラベル**ユーザーがテキスト`TextInputLayout`を入力した`EditText`ときにヒントが非表示になったときに、新しいウィジェット (をラップする) を使用して、フローティングラベルを表示します。 &ndash;
+- **テキストを編集するための浮動ラベル**ユーザーがテキスト`TextInputLayout`を入力した`EditText`ときにヒントが非表示になったときに、新しいウィジェット (をラップする) を使用して、フローティングラベルを表示します。 &ndash;
 
--   **ナビゲーションビュー**&ndash; 新しい`NavigationView`ウィジェットを使用すると、ユーザーが移動しやすい方法でナビゲーションドロワーを使用できます。
+- **ナビゲーションビュー**&ndash; 新しい`NavigationView`ウィジェットを使用すると、ユーザーが移動しやすい方法でナビゲーションドロワーを使用できます。
 
--   **Snackbar**&ndash; 新しい`SnackBar`ウィジェットは、画面の下部に表示される簡単なメッセージを画面の下部に表示する軽量のフィードバックメカニズム (トーストに似ています) です。
+- **Snackbar**&ndash; 新しい`SnackBar`ウィジェットは、画面の下部に表示される簡単なメッセージを画面の下部に表示する軽量のフィードバックメカニズム (トーストに似ています) です。
 
--   **素材のタブ**&ndash; 新しい`TabLayout`ウィジェットには、アプリで最上位のナビゲーションを実装する方法としてタブを表示するための水平レイアウトが用意されています。
+- **素材のタブ**&ndash; 新しい`TabLayout`ウィジェットには、アプリで最上位のナビゲーションを実装する方法としてタブを表示するための水平レイアウトが用意されています。
 
 Xamarin Android アプリで[デザインサポートライブラリ](https://developer.android.com/tools/support-library/features.html#design)を利用するには、Xamarin [Xamarin Support library Design](https://www.nuget.org/packages/Xamarin.Android.Support.Design/) NuGet パッケージをダウンロードしてインストールします。
 
@@ -254,11 +254,11 @@ Xamarin には、 &ndash; [Cheesesquare](https://docs.microsoft.com/samples/xama
 このサンプルでは、デザインライブラリの次の機能を示します。
 
 
--   折りたたみ (ツールバーを)
--   浮動アクションボタン
--   表示アンカー
--   NavigationView
--   Snackbar
+- 折りたたみ (ツールバーを)
+- 浮動アクションボタン
+- 表示アンカー
+- NavigationView
+- Snackbar
 
 デザインライブラリの詳細については、Android 開発者ブログの「 [Android Design Support library](http://android-developers.blogspot.co.at/2015/05/android-design-support-library.html) 」を参照してください。
 
@@ -267,11 +267,11 @@ Xamarin には、 &ndash; [Cheesesquare](https://docs.microsoft.com/samples/xama
 
 Android Marshmallow に加えて、Google はいくつかのコア Android ライブラリに関連する更新を発表しました。 Xamarin では、プレビューリリースの NuGet パッケージを使用して、これらの更新プログラムに対する Xamarin をサポートしています。 
 
--   [Google Play 開発者サービス](https://www.nuget.org/packages?q=Xamarin+Google+Play+Services)最新バージョンの Google Play 開発者サービスには、新しい*アプリの招待*機能が含まれています。これにより、ユーザーはアプリを友人と共有できます。 &ndash; この機能の詳細については、「 [Google のアプリの招待でアプリのリーチを拡大する](https://blog.xamarin.com/expand-your-apps-reach-with-googles-app-invites/)」を参照してください。 
+- [Google Play 開発者サービス](https://www.nuget.org/packages?q=Xamarin+Google+Play+Services)最新バージョンの Google Play 開発者サービスには、新しい*アプリの招待*機能が含まれています。これにより、ユーザーはアプリを友人と共有できます。 &ndash; この機能の詳細については、「 [Google のアプリの招待でアプリのリーチを拡大する](https://blog.xamarin.com/expand-your-apps-reach-with-googles-app-invites/)」を参照してください。 
 
--   [Android サポートライブラリ](https://www.nuget.org/packages?q=xamarin+support+library)&ndash;これらの nuget は、ライブラリ api でのみ使用できる機能を提供し、Android framework api の下位互換性のあるバージョンを提供します。 
+- [Android サポートライブラリ](https://www.nuget.org/packages?q=xamarin+support+library)&ndash;これらの nuget は、ライブラリ api でのみ使用できる機能を提供し、Android framework api の下位互換性のあるバージョンを提供します。 
 
--   [Android ウェアラブルライブラリ](https://www.nuget.org/packages/Xamarin.Android.Wear)&ndash;この NuGet には Google Play 開発者サービスバインドが含まれています。 最新バージョンのウェアラブルライブラリは、Android の磨耗プラットフォームへの新しい機能 (カスタムアプリの簡単なナビゲーションを含む) を提供します。 
+- [Android ウェアラブルライブラリ](https://www.nuget.org/packages/Xamarin.Android.Wear)&ndash;この NuGet には Google Play 開発者サービスバインドが含まれています。 最新バージョンのウェアラブルライブラリは、Android の磨耗プラットフォームへの新しい機能 (カスタムアプリの簡単なナビゲーションを含む) を提供します。 
 
 
 ## <a name="summary"></a>まとめ

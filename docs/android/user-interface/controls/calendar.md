@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 027b526815c56e5a0092b68b550129d9ffbf1493
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 610f9be346b761c4d20e4bbf97ecfcda74c0bee0
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643027"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69523053"
 ---
 # <a name="xamarinandroid-calendar"></a>Xamarin Android カレンダー
 
@@ -224,10 +224,10 @@ class ViewBinder : Java.Lang.Object, SimpleCursorAdapter.IViewBinder
 
 カレンダーデータを読み取る方法についても説明しました。 次に、カレンダーにイベントを追加する方法を見てみましょう。 これを機能させるには、前に`android.permission.WRITE_CALENDAR`説明したアクセス許可を必ず含めてください。 カレンダーにイベントを追加するには、次の操作を行います。
 
-1.  インスタンスを`ContentValues`作成します。
-1.  クラスの`CalendarContract.Events.InterfaceConsts`キーを使用して、 `ContentValues`インスタンスにデータを設定します。
-1.  イベントの開始時刻と終了時刻のタイムゾーンを設定します。
-1.  イベントデータ`ContentResolver`をカレンダーに挿入するには、を使用します。
+1. インスタンスを`ContentValues`作成します。
+1. クラスの`CalendarContract.Events.InterfaceConsts`キーを使用して、 `ContentValues`インスタンスにデータを設定します。
+1. イベントの開始時刻と終了時刻のタイムゾーンを設定します。
+1. イベントデータ`ContentResolver`をカレンダーに挿入するには、を使用します。
 
 
 次のコードは、これらの手順を示しています。

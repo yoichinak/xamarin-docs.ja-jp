@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 4eb115889b65819e969b8024fc9fbcdc02b566fb
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 64ad867dca0bbbf27d39b69dc7a1acba73728ca2
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648204"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527803"
 ---
 # <a name="storekit-overview-and-retrieving-product-info-in-xamarinios"></a>StoreKit の概要と Xamarin での製品情報の取得
 
@@ -28,14 +28,14 @@ ms.locfileid: "68648204"
    
  **Skproducts 要求**: 販売する承認済み製品の storekit への要求 (App Store)。 複数の製品 Id を使用して構成できます。
 
--   **Sk$ Requestdelegate** –製品の要求と応答を処理するメソッドを宣言します。 
--   **Sk製品応答**– storekit (App Store) からデリゲートに返されます。 要求と共に送信される製品 Id に一致する SKProducts を含みます。 
--   **Skproduct** – Storekit (iTunes Connect で構成したもの) から取得された製品です。 製品 ID、タイトル、説明、価格などの製品に関する情報が含まれています。 
--   **Skpayment** –製品 ID で作成され、購入を行うために支払キューに追加されます。 
--   **SKPaymentQueue** – Apple に送信される、キューに入れられた支払い要求です。 通知は、各支払いの処理結果としてトリガーされます。 
--   **SKPaymentTransaction** –完了したトランザクション (アプリストアによって処理され、storekit を介してアプリケーションに送信される購入要求) を表します。 トランザクションを購入、復元、または失敗させることができます。 
--   **SKPaymentTransactionObserver** – storekit の支払キューによって生成されるイベントに応答するカスタムサブクラスです。 
--   **Storekit 操作は非同期です**。 SKProductRequest が開始された後、または sk支払いがキューに追加されると、コードに制御が返されます。 StoreKit は、Apple のサーバーからデータを受信するときに、SKProductsRequestDelegate または SKPaymentTransactionObserver サブクラスでメソッドを呼び出します。 
+- **Sk$ Requestdelegate** –製品の要求と応答を処理するメソッドを宣言します。 
+- **Sk製品応答**– storekit (App Store) からデリゲートに返されます。 要求と共に送信される製品 Id に一致する SKProducts を含みます。 
+- **Skproduct** – Storekit (iTunes Connect で構成したもの) から取得された製品です。 製品 ID、タイトル、説明、価格などの製品に関する情報が含まれています。 
+- **Skpayment** –製品 ID で作成され、購入を行うために支払キューに追加されます。 
+- **SKPaymentQueue** – Apple に送信される、キューに入れられた支払い要求です。 通知は、各支払いの処理結果としてトリガーされます。 
+- **SKPaymentTransaction** –完了したトランザクション (アプリストアによって処理され、storekit を介してアプリケーションに送信される購入要求) を表します。 トランザクションを購入、復元、または失敗させることができます。 
+- **SKPaymentTransactionObserver** – storekit の支払キューによって生成されるイベントに応答するカスタムサブクラスです。 
+- **Storekit 操作は非同期です**。 SKProductRequest が開始された後、または sk支払いがキューに追加されると、コードに制御が返されます。 StoreKit は、Apple のサーバーからデータを受信するときに、SKProductsRequestDelegate または SKPaymentTransactionObserver サブクラスでメソッドを呼び出します。 
 
 
 次の図は、さまざまな StoreKit クラス間の関係を示しています (抽象クラスはアプリケーションで実装する必要があります)。   
@@ -48,7 +48,7 @@ ms.locfileid: "68648204"
    
  これらのクラスの詳細については、このドキュメントの後半で説明します。
 
-## <a name="testing"></a>テスト
+## <a name="testing"></a>Testing (テスト)
 
 ほとんどの StoreKit 操作には、テスト用の実際のデバイスが必要です。 製品情報を取得しています (ie 料金&amp;の説明) はシミュレーターで動作しますが、購入および復元操作でエラーが返されます (例: 5002 transaction Code = "不明なエラーが発生しました。" など)。
 
@@ -95,11 +95,11 @@ ITunes でテストユーザーを作成するには、メインページで **[
    
  アプリで販売されている製品の種類 (消費、非消費、または種類のサブスクリプション) に関係なく、表示する製品情報を取得するプロセスは同じです。 この記事に付属する InAppPurchaseSample コードには、表示のために運用情報を取得する方法を示す、*コンシューマ*という名前のプロジェクトが含まれています。 次の方法を示します。
 
--  の`SKProductsRequestDelegate`実装を作成し、 `ReceivedResponse`抽象メソッドを実装します。 このコード例では、 `InAppPurchaseManager`このクラスを呼び出します。 
--  StoreKit で、支払いが許可されているか`SKPaymentQueue.CanMakePayments`どうかを確認します (を使用)。 
--  ITunes Connect `SKProductsRequest`で定義されている製品 id を使用して、をインスタンス化します。 これは、例の`InAppPurchaseManager.RequestProductData`メソッドで行います。 
--  で Start メソッドを呼び出し`SKProductsRequest`ます。 これにより、App Store サーバーへの非同期呼び出しがトリガーされます。 デリゲート ( `InAppPurchaseManager` ) は、結果と共に呼び出されます。 
--  デリゲートの ( `InAppPurchaseManager` ) `ReceivedResponse`メソッドは、アプリストアから返されたデータ (製品の価格 & の説明、または無効な製品に関するメッセージ) を使用して UI を更新します。 
+- の`SKProductsRequestDelegate`実装を作成し、 `ReceivedResponse`抽象メソッドを実装します。 このコード例では、 `InAppPurchaseManager`このクラスを呼び出します。 
+- StoreKit で、支払いが許可されているか`SKPaymentQueue.CanMakePayments`どうかを確認します (を使用)。 
+- ITunes Connect `SKProductsRequest`で定義されている製品 id を使用して、をインスタンス化します。 これは、例の`InAppPurchaseManager.RequestProductData`メソッドで行います。 
+- で Start メソッドを呼び出し`SKProductsRequest`ます。 これにより、App Store サーバーへの非同期呼び出しがトリガーされます。 デリゲート ( `InAppPurchaseManager` ) は、結果と共に呼び出されます。 
+- デリゲートの ( `InAppPurchaseManager` ) `ReceivedResponse`メソッドは、アプリストアから返されたデータ (製品の価格 & の説明、または無効な製品に関するメッセージ) を使用して UI を更新します。 
 
 全体的な相互作用は次のようになります ( **Storekit**は iOS に組み込まれており、 **App Store**は Apple のサーバーを表します)。
 

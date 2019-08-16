@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/26/2018
-ms.openlocfilehash: 9307e440a780d60a8301c58d70ee882fbbdebab1
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: a2487fd0f7d90b70ec0dc1fb1978ca06a3108822
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646394"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522607"
 ---
 # <a name="customizing-a-listviews-appearance-with-xamarinandroid"></a>Xamarin Android を使用した ListView の外観のカスタマイズ
 
@@ -164,17 +164,17 @@ Console.WriteLine();
 
 この例は、次のいくつかの方法で前の例と異なります。
 
--  は、 `Activity`では`ListActivity`なく、から継承されます。 任意`ListView`のの行をカスタマイズできますが、他のコントロールを`Activity`レイアウト (見出し、ボタン、その他のユーザーインターフェイス要素など) に含めることもできます。 この例では、の上`ListView`に見出しを追加して説明します。
+- は、 `Activity`では`ListActivity`なく、から継承されます。 任意`ListView`のの行をカスタマイズできますが、他のコントロールを`Activity`レイアウト (見出し、ボタン、その他のユーザーインターフェイス要素など) に含めることもできます。 この例では、の上`ListView`に見出しを追加して説明します。
 
--  画面には、AXML レイアウトファイルが必要です。前の例では`ListActivity` 、にレイアウトファイルは必要ありません。 この axml には`ListView` 、コントロール宣言が含まれています。
+- 画面には、AXML レイアウトファイルが必要です。前の例では`ListActivity` 、にレイアウトファイルは必要ありません。 この axml には`ListView` 、コントロール宣言が含まれています。
 
--  で各行を表示するには、AXML レイアウトファイルが必要です。 この AXML ファイルには、フォントと色のカスタム設定を持つテキストコントロールとイメージコントロールが含まれています。
+- で各行を表示するには、AXML レイアウトファイルが必要です。 この AXML ファイルには、フォントと色のカスタム設定を持つテキストコントロールとイメージコントロールが含まれています。
 
--  オプションのカスタムセレクター XML ファイルを使用して、選択した行の外観を設定します。
+- オプションのカスタムセレクター XML ファイルを使用して、選択した行の外観を設定します。
 
--  実装`Adapter`は、 `GetView`オーバーライドからカスタムレイアウトを返します。
+- 実装`Adapter`は、 `GetView`オーバーライドからカスタムレイアウトを返します。
 
--  `ItemClick`を異なる方法で宣言する必要があります ( `ListView.ItemClick`のオーバーライド`OnListItemClick`で`ListActivity`はなく、にアタッチされるイベントハンドラーです)。
+- `ItemClick`を異なる方法で宣言する必要があります ( `ListView.ItemClick`のオーバーライド`OnListItemClick`で`ListActivity`はなく、にアタッチされるイベントハンドラーです)。
 
 
 これらの変更については、以下で詳しく説明します。アクティビティのビューとカスタムの行ビューを作成してから、アダプターとアクティビティに加えられた変更について説明します。

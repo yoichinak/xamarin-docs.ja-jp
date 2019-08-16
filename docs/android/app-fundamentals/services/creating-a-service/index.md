@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/03/2018
-ms.openlocfilehash: c5348ab754139dbd4012f6bfe9d22068ac16d12b
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: d5b3f084be7adc664dcb52342af617788f4dde48
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509258"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526224"
 ---
 # <a name="creating-a-service"></a>サービスの作成
 
@@ -75,7 +75,7 @@ public class DemoService : Service
 
 Android でサービスを開始する最も基本的な方法は、開始する`Intent`サービスを特定するのに役立つメタデータを含むをディスパッチすることです。 サービスの開始に使用できるインテントには、次の2つの異なるスタイルがあります。
 
--   **明示的なインテント**_明示的なインテント_によって、特定のアクションを完了するために使用する必要があるサービスが正確に特定されます。 &ndash; 明示的なインテントは、特定のアドレスを持つ文字と考えることができます。Android は、明示的に識別されたサービスにインテントをルーティングします。 このスニペットは、明示的なインテントを使用してという名前`DownloadService`のサービスを開始する例の1つです。
+- **明示的なインテント**_明示的なインテント_によって、特定のアクションを完了するために使用する必要があるサービスが正確に特定されます。 &ndash; 明示的なインテントは、特定のアドレスを持つ文字と考えることができます。Android は、明示的に識別されたサービスにインテントをルーティングします。 このスニペットは、明示的なインテントを使用してという名前`DownloadService`のサービスを開始する例の1つです。
 
     ```csharp
     // Example of creating an explicit Intent in an Android Activity
@@ -83,7 +83,7 @@ Android でサービスを開始する最も基本的な方法は、開始する
     downloadIntent.data = Uri.Parse(fileToDownload);
     ```
 
--   **暗黙的なインテント**&ndash;この種類のインテントは、ユーザーが実行しようとしているアクションのを大まかに特定しますが、その操作を完了するための正確なサービスは不明です。 暗黙のインテントは、"関心のあるユーザー" に対応する文字と考えることができます。
+- **暗黙的なインテント**&ndash;この種類のインテントは、ユーザーが実行しようとしているアクションのを大まかに特定しますが、その操作を完了するための正確なサービスは不明です。 暗黙のインテントは、"関心のあるユーザー" に対応する文字と考えることができます。
     Android は目的の内容を調べ、目的に合った既存のサービスがあるかどうかを判断します。
 
     _インテントフィルター_を使用して、登録済みサービスとの暗黙的なインテントを照合します。 インテントフィルターは、サービスと暗黙的なインテントを照合するために必要なメタデータを含む**Androidmanifest .xml**に追加される xml 要素です。

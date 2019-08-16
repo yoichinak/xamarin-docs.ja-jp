@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2018
-ms.openlocfilehash: 87542bbd158b8c8ab0f48bb57fa0d19ce8f374c0
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 94a10213f8ae42d6e8f3407b18051021d92be5bc
+ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68651674"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68978562"
 ---
 # <a name="invoking-events-from-effects"></a>エフェクトからのイベントの呼び出し
 
@@ -40,7 +40,7 @@ Android の場合、`View` クラスによって、すべてのタッチ操作�
 
 ユニバーサル Windows プラットフォーム (UWP) では、`UIElement` クラスによって `PointerPressed`、`PointerMoved`、`PointerReleased` という名前のイベントが定義されます。 これらのイベントに関する説明は、[MSDN のポインター入力の処理](/windows/uwp/input-and-devices/handle-pointer-input/)に関する記事と [`UIElement`](/uwp/api/windows.ui.xaml.uielement/) クラスに関する API 文書にあります。
 
-ユニバーサル Windows プラットフォームの `Pointer` API はマウス、タッチ、ペンによる入力の統一を意図するものです。 そのため、マウス ボタンが押されていないときでも、マウスが要素を横切って動くと、`PointerMoved` イベントが呼び出されます。 このようなイベントにともなう `PointerRoutedEventArgs` オブジェクトには `Pointer` という名前のプロパティがあります。このプロパティには、マウス ボタンが押されたかどうかや指が画面と接触しているかどうかを示す `IsInContact` プロパティがあります。
+ユニバーサル Windows プラットフォームの `Pointer` API はマウス、タッチ、ペンによる入力の統一を意図するものです。 そのため、マウス ボタンが押されていないときでも、マウスが要素を横切ると、`PointerMoved` イベントが呼び出されます。 このようなイベントにともなう `PointerRoutedEventArgs` オブジェクトには `Pointer` という名前のプロパティがあります。このプロパティには、マウス ボタンが押されたかどうかや指が画面と接触しているかどうかを示す `IsInContact` プロパティがあります。
 
 さらに、UWP によって `PointerEntered` と `PointerExited` という 2 つのイベントがさらに定義されます。 この 2 つのイベントは、マウスまたは指が要素間を移動したタイミングを示します。 たとえば、A と B という名前が付けられた 2 つの隣接する要素があるとします。いずれの要素にも、ポインター イベントのハンドラーがインストールされています。 指が A を押すと、`PointerPressed` イベントが呼び出されます。 指が動くと、A によって `PointerMoved` イベントが呼び出されます。 指が A から B に移動すると、A によって `PointerExited` イベントが呼び出され、B によって `PointerEntered` イベントが呼び出されます。 指を離すと、B によって `PointerReleased` イベントが呼び出されます。
 

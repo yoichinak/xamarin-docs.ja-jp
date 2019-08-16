@@ -7,22 +7,22 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 0746174857f66843ef9a09429b6286f2efca90d6
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: af90baf6d7b94973a76bcf391f2cb28c45340602
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61420538"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528151"
 ---
 # <a name="mdocarchivetomsxdocconverterexe-not-found-rverbasecommandonrequest"></a>MDocArchiveToMsxDocConverter.exe not found rver.BaseCommand.OnRequest (MDocArchiveToMsxDocConverter.exe が rver.BaseCommand.OnRequest に見つかりません)
 
 > [!IMPORTANT]
-> Xamarin の最近のバージョンでは、この問題を解決されています。 ただし、ソフトウェアの最新バージョンで問題が発生した場合を提出してください、[新しいバグ](~/cross-platform/troubleshooting/questions/howto-file-bug.md)完全なバージョン管理情報と完全のビルド ログ出力します。
+> この問題は、最新バージョンの Xamarin で解決されました。 ただし、最新バージョンのソフトウェアで問題が発生した場合は、完全なバージョン管理情報と完全ビルドログ出力を使用して[新しいバグを作成](~/cross-platform/troubleshooting/questions/howto-file-bug.md)してください。
 
 
 ## <a name="error-message"></a>エラー メッセージ
 
-このエラーが含まれる、 *Mac サーバー ログ*Visual Studio で。
+このエラーは、Visual Studio の*Mac サーバーログ*に表示される場合があります。
 
 ```
 Error: /Developer/MonoTouch/usr/share/doc/MonoTouch/MDocArchiveToMsxDocConverter.exe not found
@@ -30,12 +30,12 @@ Error: /Developer/MonoTouch/usr/share/doc/MonoTouch/MDocArchiveToMsxDocConverter
   at Mtb.Server.Listener.OnRequest (System.Object state) [0x00000] in <filename unknown>:0
 ```
 
-このメッセージには、2 つの個別の問題があります。
+このメッセージには、次の2つの問題があります。
 
-1.  `Error: /Developer/MonoTouch/usr/share/doc/MonoTouch/MDocArchiveToMsxDocConverter.exe not found`
+1. `Error: /Developer/MonoTouch/usr/share/doc/MonoTouch/MDocArchiveToMsxDocConverter.exe not found`
 
-    このエラーは問題がも誤解を招きます。 これは、[削除予定](https://bugzilla.xamarin.com/show_bug.cgi?id=21667)将来のリリースでします。
+    このエラーは害を与えませんが、誤解を招くこともあります。 今後のリリースでは[削除される予定](https://bugzilla.xamarin.com/show_bug.cgi?id=21667)です。
 
-2.  `rver.BaseCommand.OnRequest (System.Net.HttpListenerContext context …`
+2. `rver.BaseCommand.OnRequest (System.Net.HttpListenerContext context …`
 
-    このエラーは、実際の問題です。 残念ながら、ために、[制限](https://bugzilla.xamarin.com/show_bug.cgi?id=22080)この例外のスタック トレースは*不完全な*します。 Mac サーバー ログに次のように、不完全なスタック トレースを確認する場合は、確認、`~/Library/Logs/Xamarin/MonoTouchVS/mtbserver.log`完全なスタック トレースを検索する Mac ビルド ホスト上のファイル。
+    このエラーは実際の問題です。 残念ながら、この例外スタックトレースは、[制限](https://bugzilla.xamarin.com/show_bug.cgi?id=22080)があるため、*不完全*です。 このような不完全なスタックトレースが mac サーバーログに記録されている場合は`~/Library/Logs/Xamarin/MonoTouchVS/mtbserver.log` 、mac ビルドホストのファイルをチェックして、完全なスタックトレースを見つけることができます。

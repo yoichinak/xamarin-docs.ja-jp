@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2019
-ms.openlocfilehash: 5d3635ccc61a0be50e4a4b6d8bc44e60515cc21e
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: ffa462ed7cfdc45357f0ac62cae23d307cdb92b7
+ms.sourcegitcommit: 9f37dc00c2adab958025ad1cdba9c37f0acbccd0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509072"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69012458"
 ---
 # <a name="build-process"></a>ビルド プロセス
 
@@ -72,6 +72,28 @@ Xamarin.Android プロジェクトに対して、次のビルド ターゲット
 
 -   **UpdateAndroidResources** &ndash; `Resource.designer.cs` ファイルを更新します。 このターゲットは通常、新しいリソースがプロジェクトに追加されたときに、IDE によって呼び出されます。
 
+## <a name="build-extension-points"></a>拡張ポイントをビルドする
+
+Xamarin Android のビルド システムでは、ビルド プロセスに接続するユーザー向けに、いくつかのパブリック拡張ポイントが公開されています。 これらの拡張ポイントのいずれかを使用するには、`PropertyGroup` の適切な MSBuild プロパティにカスタム ターゲットを追加する必要があります。 次に例を示します。
+
+```xml
+<PropertyGroup>
+   <AfterGenerateAndroidManifest>
+      $(AfterGenerateAndroidManifest);
+      YourTarget;
+   </AfterGenerateAndroidManifest>
+</PropertyGroup>
+```
+
+ビルド プロセスの拡張に関する注意事項を次に示します。正しく記述されていないと、ビルドの拡張機能がビルドのパフォーマンスに影響を与える可能性があります (特に、拡張機能がすべてのビルドで実行される場合)。 このような拡張機能を実装する前に、MSBuild の[ドキュメント](https://docs.microsoft.com/visualstudio/msbuild/msbuild)を読むことを強くお勧めします。
+
+-   **AfterGenerateAndroidManifest** &ndash; このプロパティに示されているターゲットは、内部の `_GenerateJavaStubs` ターゲットの後に直接実行されます。 ここで、`$(IntermediateOutputPath)` の `AndroidManifest.xml` ファイルが生成されます。 したがって、生成された `AndroidManifest.xml` ファイルに変更を加える場合、この拡張ポイントを使用して行うことができます。
+
+    Xamarin.Android 9.4 で追加されました。
+
+-   **BeforeGenerateAndroidManifest** &ndash; このプロパティに示されているターゲットは、`_GenerateJavaStubs` の前に直接実行されます。
+
+    Xamarin.Android 9.4 で追加されました。
 
 ## <a name="build-properties"></a>[ビルド プロパティ]
 
@@ -113,13 +135,19 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
 パッケージング プロパティは、Android パッケージの作成を制御し、`Install` ターゲットと `SignAndroidPackage` ターゲッによって使用されます。
 リリース アプリケーションをパッケージングする場合には、[署名プロパティ](#Signing_Properties)も関係します。
 
+-   **AndroidApkDigestAlgorithm** &ndash; `jarsigner -digestalg` で使用するダイジェスト アルゴリズムを指定する文字列値。
+
+    既定値は APK の場合 `SHA1`、アプリ バンドルの場合 `SHA-256` です。
+
+    Xamarin.Android 9.4 で追加されました。
+
 -   **AndroidApkSignerAdditionalArguments** &ndash; 開発者が `apksigner` ツールに追加の引数を指定することを許可する文字列プロパティ。
 
     Xamarin.Android 8.2 で追加されました。
 
 -   **AndroidApkSigningAlgorithm** &ndash; `jarsigner -sigalg` で使用する署名アルゴリズムを指定する文字列値。
 
-    既定値は `md5withRSA` です。
+    既定値は APK の場合 `md5withRSA`、アプリ バンドルの場合 `SHA256withRSA` です。
 
     Xamarin.Android 8.2 で追加されました。
 
@@ -147,6 +175,10 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
 
 -   **AndroidEnableDesugar** &ndash; `desugar` が有効かどうかを決定するブール型プロパティ。 現在、Android ではすべての Java 8 機能がサポートされておらず、`javac` コンパイラの出力に `desugar` と呼ばれるバイトコード変換を実行して、既定のツールチェーンにより新しい言語機能が実装されています。 `AndroidDexTool=dx` を使用している場合の既定値は `False`、`AndroidDexTool=d8` を使用している場合の既定値は `True` です。
 
+-   **AndroidEnableGooglePlayStoreChecks** &ndash; 開発者が次の Google Play ストア チェックを無効にできるようにするブール プロパティ: XA1004、XA1005、XA1006。 これは、Google Play ストアを対象としておらず、このチェックを実行したくない開発者にとって役立ちます。
+
+    Xamarin.Android 9.4 で追加されました。
+
 -   **AndroidEnableMultiDex** &ndash; 最終的な `.apk` で Multi-Dex サポートを使用するかどうかを決定するブール型プロパティ。
 
     このプロパティのサポートは、Xamarin.Android 5.1 で追加されました。
@@ -166,6 +198,14 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
     既定では、この値は `True` に設定されます。
 
     Xamarin.Android 9.2 で追加されました。
+
+-   **AndroidEnableProfiledAot** &ndash; Ahead-of-Time コンパイル中に AOT プロファイルを使用するかどうかを決定するブール型プロパティ。
+
+    プロファイルは `AndroidAotProfile` 項目グループに一覧表示されます。 この項目グループには、既定のプロファイルが含まれています。 既存のものを削除し、独自の AOT プロファイルを追加することで上書きできます。
+
+    このプロパティのサポートは、Xamarin.Android 9.4 で追加されました。
+
+    このプロパティは既定で `False` です。
 
 -   **AndroidEnableSGenConcurrent** &ndash; Mono の[同時 GC コレクター](https://www.mono-project.com/docs/about-mono/releases/4.8.0/#concurrent-sgen)が使用されるかどうかを決定するブール型プロパティ。
 
@@ -238,11 +278,23 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
     Xamarin.Android 9.2 で追加されました。
 
 -   **AndroidHttpClientHandlerType** &ndash; 既定の `System.Net.Http.HttpClient` コンストラクターによって使用される、既定の `System.Net.Http.HttpMessageHandler` の実装を制御します。 値は `HttpMessageHandler` サブクラスのアセンブリ修飾型名であり、[`System.Type.GetType(string)`](https://docs.microsoft.com/dotnet/api/system.type.gettype?view=netcore-2.0#System_Type_GetType_System_String_) での使用に適しています。
+    このプロパティでは次の値が最も一般的です。
 
-    既定値は `System.Net.Http.HttpClientHandler, System.Net.Http` です。
+    -   `Xamarin.Android.Net.AndroidClientHandler`:Android Java API を使用して、ネットワーク要求を実行します。 これにより、基になる Android バージョンが TLS 1.2 をサポートする場合、TLS 1.2 の URL にアクセスできます。 TLS 1.2 のサポートが Java を通じて確実に提供されるのは、Android 5.0 以降のみです。
 
-    これは、Android Java API を使用してネットワーク要求を実行する `Xamarin.Android.Net.AndroidClientHandler` を代わりに含むようにオーバーライドできます。 これにより、基になる Android バージョンが TLS 1.2 をサポートする場合、TLS 1.2 の URL にアクセスできます。  
-    TLS 1.2 のサポートが Java を通じて確実に提供されるのは、Android 5.0 以降のみです。
+        これは、Visual Studio のプロパティページの **Android** オプションと、Visual Studio for Mac プロパティ ページの **AndroidClientHandler** オプションに対応しています。
+
+        Visual Studio で **[最低限の Android バージョン]** が **[Android 5.0 (Lollipop)]** 以上に構成されている、または Visual Studio for Mac で **[ターゲット プラットフォーム]** が **[最新および最高]** に設定されている場合、新しいプロジェクトのウィザードで、新しいプロジェクトに対してこのオプションが選択されます。
+
+    -   空の文字列を設定解除します。これは、`System.Net.Http.HttpClientHandler, System.Net.Http` と同じです
+
+        これは、Visual Studio のプロパティ ページの**既定**オプションに対応しています。
+
+        Visual Studio で **[最低限の Android バージョン]** が **[Android 4.4.87]** 以下に構成されている、または Visual Studio for Mac で **[ターゲット プラットフォーム]** が **[最新の開発]** または **[最大の互換性]** に設定されている場合、新しいプロジェクトのウィザードで、新しいプロジェクトに対してこのオプションが選択されます。
+
+    -  `System.Net.Http.HttpClientHandler, System.Net.Http`:マネージド `HttpMessageHandler` を使用します。
+
+       これは、Visual Studio のプロパティ ページの**マネージド**オプションに対応しています。
 
     *注*:TLS 1.2 のサポートがバージョン 5.0 より前の Android で必要な場合、"*または*" TLS 1.2 のサポートが `System.Net.WebClient` および関連する API で必要な場合、`$(AndroidTlsProvider)` を使用する必要があります。
 
@@ -314,6 +366,17 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
 
     Xamarin.Android 8.3 で追加されました。
 
+-   **AndroidPackageFormat** &ndash; `apk` または `aab` の有効な値の列挙方式のプロパティ。 これは、Android アプリケーションを [APK ファイル][apk]または [Android アプリ バンドル][bundle]としてパッケージ化するかどうかを示します。 アプリ バンドルは、Google Play での送信を目的とした `Release` ビルドの新しい形式です。 この値は現在、`apk` が既定で使用されます。
+
+    `$(AndroidPackageFormat)` を `aab` に設定すると、Android アプリ バンドルに必要な他の MSBuild プロパティが設定されます。
+
+    * `$(AndroidUseAapt2)` は `True`です。
+    * `$(AndroidUseApkSigner)` は `False`です。
+    * `$(AndroidCreatePackagePerAbi)` は `False`です。
+
+[apk]: https://en.wikipedia.org/wiki/Android_application_package
+[bundle]: https://developer.android.com/platform/technology/app-bundle
+
 -   **AndroidR8JarPath** &ndash; r8 dex コンパイラおよびシュリンカーで使用する `r8.jar` へのパス。 既定値は、Xamarin.Android のインストール パスになります。 詳細については、[D8 と R8][d8-r8] に関するドキュメントをご覧ください。
 
 -   **AndroidSdkBuildToolsVersion** &ndash; Android SDK ビルド ツール パッケージは、特に、**aapt** ツールと **zipalign** ツールを提供します。 複数の異なるバージョンのビルド ツール パッケージを同時にインストールすることができます。 パッケージ化するビルド ツール パッケージの選択は、"優先" ビルド ツールのバージョンをチェックして、ある場合はそれを使用して行われます。"優先" バージョンが "*ない*" 場合は、インストールされている最も高いバージョンのビルド ツール パッケージが使用されます。
@@ -331,19 +394,27 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
 
 -   **AndroidTlsProvider** &ndash; アプリケーションで使用する必要がある TLS プロバイダーを指定する文字列値。 指定できる値は次のとおりです。
 
+    -   空の文字列を設定解除します。Xamarin.Android 7.3 以上では、これは `btls` と同等です。
+
+        Xamarin.Android 7.1 では、これは `legacy` と同等です。
+
+        これは、Visual Studio のプロパティ ページの**既定**の設定に対応しています。
+
     -   `btls`:[HttpWebRequest](xref:System.Net.HttpWebRequest) との TLS 通信に [BoringSSL](https://boringssl.googlesource.com/boringssl) を使用します。
+
         これにより、Android のすべてのバージョンで TLS 1.2 を使用できます。
+
+        これは、Visual Studio のプロパティ ページの**ネイティブ TLS 1.2+** の設定に対応しています。
 
     -   `legacy`:ネットワークの対話に過去に管理されていた SSL の実装を使用します。 これは、TLS 1.2 をサポート*していません*。
 
-    -   `default`:*Mono* で既定の TLS プロバイダーを選択することを許可します。
-        Xamarin.Android 7.3 でも、これは `legacy` と同等です。  
-        *注*:IDE の "既定" 値が `$(AndroidTlsProvider)` プロパティの "*削除*" をもたらすため、この値が `.csproj` の値に表示される可能性は低いです。
+        これは、Visual Studio のプロパティ ページの**マネージド TLS 1.0** の設定に対応しています。
 
-    -   空の文字列を設定解除します。Xamarin.Android 7.1 では、これは `legacy` と同等です。  
-        Xamarin.Android 7.3 では、これは `btls` と同等です。
+    -   `default`:この値は、Xamarin.Android プロジェクトで使用される可能性はほとんどありません。 代わりに空の文字列を使用することをお勧めします。これは、Visual Studio のプロパティ ページの**既定**の設定に対応しています。
 
-    既定値は、空の文字列です。
+        `default` 値は、Visual Studio のプロパティ ページでは提供されません。
+
+        これは現在、`legacy` と同じです。
 
     Xamarin.Android 7.1 で追加されました。
 

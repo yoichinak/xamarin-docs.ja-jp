@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 4b0e540bdcdf061f64880ea961a5e07a0a45b22e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: d7bd3d64d7e9f4ad8298120a017719b3cbb1410e
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68642917"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528702"
 ---
 # <a name="maps-in-xamarinios"></a>Xamarin. iOS のマップ
 
@@ -48,8 +48,8 @@ map.MapType = MKMapType.Hybrid;
 
  `MKMapView`には、次のようなマップインタラクティビティ機能のサポートが含まれています。
 
--  ピンチジェスチャを使用したズーム
--  パンジェスチャによるパン
+- ピンチジェスチャを使用したズーム
+- パンジェスチャによるパン
 
 
 これらの機能は、 `ZoomEnabled` `MKMapView`インスタンスのプロパティとプロパティを設定`ScrollEnabled`するだけで有効または無効にすることができます。この場合、既定値は両方とも true になります。 たとえば、静的マップを表示するには、適切なプロパティを false に設定するだけです。
@@ -96,8 +96,8 @@ map.ShowsUserLocation = true;
 
 注釈自体には、次の2つの部分があります。
 
--  注釈のタイトルや場所など、注釈に関するモデルデータを含むオブジェクト。`MKAnnotation`
--  `MKAnnotationView`表示するイメージと、ユーザーが注釈をタップしたときに表示されるコールアウトを格納する。
+- 注釈のタイトルや場所など、注釈に関するモデルデータを含むオブジェクト。`MKAnnotation`
+- `MKAnnotationView`表示するイメージと、ユーザーが注釈をタップしたときに表示されるコールアウトを格納する。
 
 
 マップキットでは、iOS の委任パターンを使用して、の`Delegate`プロパティ`MKMapView`がのインスタンス`MKMapViewDelegate`に設定されているマップに注釈を追加します。 これは、このデリゲートの実装であり、 `MKAnnotationView`注釈のを返します。
@@ -177,9 +177,9 @@ public override void CalloutAccessoryControlTapped (MKMapView mapView, MKAnnotat
 
 マップ上でグラフィックスをレイヤー化するもう1つの方法は、オーバーレイを使用することです。 オーバーレイでは、マップが拡大縮小されたときに、マップと一緒に拡大縮小されるグラフィカル コンテンツの描画がサポートされます。 iOS では、次のようないくつかの種類のオーバーレイがサポートされています。
 
--  多角形-マップ上の一部の領域を強調表示するためによく使用されます。
--  ポリライン-多くの場合、ルートを表示するときに見られます。
--  円-マップの円形の領域を強調表示するために使用されます。
+- 多角形-マップ上の一部の領域を強調表示するためによく使用されます。
+- ポリライン-多くの場合、ルートを表示するときに見られます。
+- 円-マップの円形の領域を強調表示するために使用されます。
 
 
 さらに、カスタムオーバーレイを作成して、カスタマイズされた詳細な描画コードを持つ任意のジオメトリを表示することもできます。 たとえば、気象レーダーはカスタムオーバーレイの候補として適しています。
@@ -188,8 +188,8 @@ public override void CalloutAccessoryControlTapped (MKMapView mapView, MKAnnotat
 
 注釈と同様に、オーバーレイの追加には次の2つの部分が含まれます。
 
--  オーバーレイのモデルオブジェクトを作成し、 `MKMapView`に追加します。
--  でオーバーレイのビューを作成`MKMapViewDelegate`します。
+- オーバーレイのモデルオブジェクトを作成し、 `MKMapView`に追加します。
+- でオーバーレイのビューを作成`MKMapViewDelegate`します。
 
 
 オーバーレイのモデルには、任意`MKShape`のサブクラスを指定できます。 Xamarin. iOS に`MKShape`は`MKPolygon`、、、 `MKPolyline`および`MKCircle`の各クラスを使用して、多角形、ポリライン、および円のサブクラスが含まれています。
@@ -225,10 +225,10 @@ iOS には、マップキットを使用したローカル検索 API が含ま�
 
 ローカル検索を実行するには、アプリケーションで次の手順を実行する必要があります。
 
-1.  オブジェクト`MKLocalSearchRequest`を作成します。
-1.  からオブジェクトを作成します。 `MKLocalSearchRequest` `MKLocalSearch`
-1.  オブジェクトに対してメソッドを`Start`呼び出します。 `MKLocalSearch`
-1.  コールバック`MKLocalSearchResponse`内のオブジェクトを取得します。
+1. オブジェクト`MKLocalSearchRequest`を作成します。
+1. からオブジェクトを作成します。 `MKLocalSearchRequest` `MKLocalSearch`
+1. オブジェクトに対してメソッドを`Start`呼び出します。 `MKLocalSearch`
+1. コールバック`MKLocalSearchResponse`内のオブジェクトを取得します。
 
 
 ローカル検索 API 自体は、ユーザーインターフェイスを提供しません。 マップを使用する必要もありません。 ただし、ローカル検索を実際に使用するには、アプリケーションで検索クエリを指定して結果を表示する方法が用意されている必要があります。 また、結果には位置データが含まれるため、多くの場合、マップに表示するのが理にかなっています。

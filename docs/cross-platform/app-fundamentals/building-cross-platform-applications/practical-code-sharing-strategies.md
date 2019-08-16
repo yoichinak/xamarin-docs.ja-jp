@@ -6,12 +6,12 @@ ms.assetid: 328D042A-FF78-A7B6-1574-B5AF49A1AADB
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: f374da4a541b81bb1bcf84f2b9342785551c15a4
-ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
+ms.openlocfilehash: e7739642bdb9a10046286035c4aa1a3699bb75b0
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67512962"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526782"
 ---
 # <a name="part-5---practical-code-sharing-strategies"></a>パート 5 - 実践的なコード共有戦略
 
@@ -29,7 +29,7 @@ ms.locfileid: "67512962"
 
 SQLite とは、オープン ソース データベースの実装です。 ソースとドキュメントをご覧ください[SQLite.org](http://www.sqlite.org/)します。SQLite のサポートは、各モバイル プラットフォームで入手できます。
 
--  **iOS** – オペレーティング システムに組み込まれています。
+- **iOS** – オペレーティング システムに組み込まれています。
 - **Android** – Android 2.2 (API レベル 10) 以降、オペレーティング システムに組み込まれています。
 - **Windows** – を参照してください、[拡張機能のユニバーサル Windows プラットフォーム用 SQLite](https://visualstudiogallery.msdn.microsoft.com/4913e7d5-96c9-4dde-a1a1-69820d615936)します。
 
@@ -97,10 +97,10 @@ SQLite NET は、保存および SQLite 内のクラスを取得することを�
 
 SQLite NET の機能:
 
--  テーブルは、モデル クラスに属性を追加して定義されます。
--  データベース インスタンスは、のサブクラスで表される`SQLiteConnection`、SQLite net-library のメイン クラスです。
--  クエリおよびオブジェクトを使用して削除された、データを挿入できます。 SQL ステートメントは必要ありません (ただし、必要な場合は、SQL ステートメントを記述することができますです)。
--  SQLite NET によって返されるコレクションでは、基本的な Linq クエリを実行できます。
+- テーブルは、モデル クラスに属性を追加して定義されます。
+- データベース インスタンスは、のサブクラスで表される`SQLiteConnection`、SQLite net-library のメイン クラスです。
+- クエリおよびオブジェクトを使用して削除された、データを挿入できます。 SQL ステートメントは必要ありません (ただし、必要な場合は、SQL ステートメントを記述することができますです)。
+- SQLite NET によって返されるコレクションでは、基本的な Linq クエリを実行できます。
 
 
 ソース コードと SQLite NET のドキュメントは、 [SQLite-Net github](https://github.com/praeclarum/sqlite-net)し、両方のケース スタディに実装されています。 SQLite NET コードの単純な例 (から、 *Tasky Pro*ケース スタディ) を次に示します。
@@ -141,9 +141,9 @@ Table<TodoItem>.ToList(); // returns all rows in a collection
 
 ファイルへのアクセスは、任意のアプリケーションの重要な部分を特定します。 アプリケーションのインクルードの一部である可能性がありますファイルの一般的な例:
 
--  SQLite データベース ファイルです。
--  ユーザーが生成したデータ (テキスト、画像、サウンド、ビデオ)。
--  (イメージ、html や PDF ファイル) をキャッシュにダウンロードされたデータ。
+- SQLite データベース ファイルです。
+- ユーザーが生成したデータ (テキスト、画像、サウンド、ビデオ)。
+- (イメージ、html や PDF ファイル) をキャッシュにダウンロードされたデータ。
 
 
 
@@ -154,10 +154,10 @@ Xamarin.iOS と Xamarin.Android の両方でクラスを使用してファイル
 
 各プラットフォームには、考慮事項に考慮しなければならない別のアクセス制限があります。
 
--  iOS アプリケーションは、非常に制限されているファイル システム アクセス権を持つサンド ボックスで実行します。 さらに Apple では、バックアップを特定の場所 (およびその他のない) を指定することで、ファイル システムを使用する方法を決定します。 参照してください、 [Xamarin.iOS でのファイル システム操作](~/ios/app-fundamentals/file-system.md)詳細はガイド。
--  Android は、アプリケーションに関連する特定のディレクトリにアクセスを制限することもが、外部メディア (例。 SD カード) および共有データへのアクセスします。
--  Windows Phone 8 (Silverlight) は、ファイルに直接アクセスを許可しない – を使用してファイルを操作することができますのみ`IsolatedStorage`します。
--  WinRT の Windows 8.1 および Windows 10 UWP プロジェクトのみを使用して非同期のファイル操作を提供する`Windows.Storage`API で、他のプラットフォームとは異なります。
+- iOS アプリケーションは、非常に制限されているファイル システム アクセス権を持つサンド ボックスで実行します。 さらに Apple では、バックアップを特定の場所 (およびその他のない) を指定することで、ファイル システムを使用する方法を決定します。 参照してください、 [Xamarin.iOS でのファイル システム操作](~/ios/app-fundamentals/file-system.md)詳細はガイド。
+- Android は、アプリケーションに関連する特定のディレクトリにアクセスを制限することもが、外部メディア (例。 SD カード) および共有データへのアクセスします。
+- Windows Phone 8 (Silverlight) は、ファイルに直接アクセスを許可しない – を使用してファイルを操作することができますのみ`IsolatedStorage`します。
+- WinRT の Windows 8.1 および Windows 10 UWP プロジェクトのみを使用して非同期のファイル操作を提供する`Windows.Storage`API で、他のプラットフォームとは異なります。
 
 #### <a name="example-for-ios-and-android"></a>IOS および Android 用の例
 
@@ -216,10 +216,10 @@ PCL と互換性のある Nuget – はも[PCLStorage](https://www.nuget.org/pac
 
 ほとんどのモバイル アプリケーションがネットワーク コンポーネントは、たとえば。
 
--  イメージをダウンロード、ビデオおよびオーディオ (例。 サムネイル、写真、音楽)。
--  (例: ドキュメントのダウンロード HTML、PDF)。
--  (写真やテキスト) などのユーザー データをアップロードしています。
--  Web サービスまたはサード パーティ (などの SOAP、XML または JSON) の API にアクセスします。
+- イメージをダウンロード、ビデオおよびオーディオ (例。 サムネイル、写真、音楽)。
+- (例: ドキュメントのダウンロード HTML、PDF)。
+- (写真やテキスト) などのユーザー データをアップロードしています。
+- Web サービスまたはサード パーティ (などの SOAP、XML または JSON) の API にアクセスします。
 
 
 .NET Framework のネットワーク リソースにアクセスするため、いくつかの異なるクラスを提供します。 `HttpClient`、 `WebClient`、および`HttpWebRequest`します。
@@ -290,9 +290,9 @@ using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
 
 このような状況でモバイル アプリがかかる場合がありますアクションは次のとおりです。
 
--  ネットワークが利用できない場合は、ユーザーにお勧めします。 手動で無効になっていること (例: 場合 機内モードまたは Wi-fi をオフにする) し、問題を解決することができます。
--  接続が 3 G の場合は、アプリケーションの動作が異なります (たとえば、Apple を許可しないアプリ 3 G を超えるダウンロードを 20 Mb より大きい)。 アプリケーションがこの情報を使用して過度のダウンロードについてユーザーに警告する大きなファイルを取得するときにタイムアウトします。
--  ネットワークを使用できる場合でも、他の要求を開始する前に、ターゲット サーバーとの接続を確認することをお勧めを勧めします。 アプリのネットワーク操作がタイムアウトを繰り返し防止されより多くの情報のエラー メッセージ、ユーザーに表示することもできます。
+- ネットワークが利用できない場合は、ユーザーにお勧めします。 手動で無効になっていること (例: 場合 機内モードまたは Wi-fi をオフにする) し、問題を解決することができます。
+- 接続が 3 G の場合は、アプリケーションの動作が異なります (たとえば、Apple を許可しないアプリ 3 G を超えるダウンロードを 20 Mb より大きい)。 アプリケーションがこの情報を使用して過度のダウンロードについてユーザーに警告する大きなファイルを取得するときにタイムアウトします。
+- ネットワークを使用できる場合でも、他の要求を開始する前に、ターゲット サーバーとの接続を確認することをお勧めを勧めします。 アプリのネットワーク操作がタイムアウトを繰り返し防止されより多くの情報のエラー メッセージ、ユーザーに表示することもできます。
 
 
 [Xamarin.iOS サンプル](https://github.com/xamarin/monotouch-samples/tree/master/ReachabilitySample)使用可能な (Apple のに基づいて[サンプル コードの到達可能性](https://developer.apple.com/library/ios/#samplecode/Reachability/Introduction/Intro.html)) ネットワークの可用性を検出するためにします。
@@ -378,10 +378,10 @@ static Context uiContext = TaskScheduler.FromCurrentSynchronizationContext();
 
 並列タスクのライブラリを使用しないコードの場合は、各プラットフォーム独自の構文の UI スレッドにマーシャ リングの操作があります。
 
--  **iOS** – `owner.BeginInvokeOnMainThread(new NSAction(action))`
--  **Android** – `owner.RunOnUiThread(action)`
--  **Xamarin.Forms** – `Device.BeginInvokeOnMainThread(action)`
--  **Windows** – `Deployment.Current.Dispatcher.BeginInvoke(action)`
+- **iOS** – `owner.BeginInvokeOnMainThread(new NSAction(action))`
+- **Android** – `owner.RunOnUiThread(action)`
+- **Xamarin.Forms** – `Device.BeginInvokeOnMainThread(action)`
+- **Windows** – `Deployment.Current.Dispatcher.BeginInvoke(action)`
 
 
 

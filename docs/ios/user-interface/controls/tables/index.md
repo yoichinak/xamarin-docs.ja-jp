@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 01/06/2016
-ms.openlocfilehash: d01814bc241dcfb7b62f40bef226ee720a96ff23
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 0dd3830b4903658d0b014eceaad9c57859963c04
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657006"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528633"
 ---
 # <a name="working-with-tables-and-cells-in-xamarinios"></a>Xamarin でのテーブルとセルの操作
 
@@ -22,10 +22,10 @@ Xamarin を使用したクロスプラットフォームアプリケーション
 
 これらの記事では、次のようなテーブルの使用について、包括的に説明します。
 
--   **テーブルパーツ**– `UITableView`コントロールのビジュアル要素の概要と説明。 
--   テーブル**でのデータの表示**–テーブルを作成および設定する方法を示すと共に、さまざまなテーブルとセルスタイルを使用して、セルオブジェクトを再利用することにより、メモリの問題を回避します。 
--   **高度な使用法**–カスタムセルを作成し、UITableView クラスの編集機能を使用します。 
--   **テーブルを視覚的に作成**する-Xamarin Designer for iOS を使用して、ストーリーボードを含むテーブルドリブンインターフェイスを作成します。 
+- **テーブルパーツ**– `UITableView`コントロールのビジュアル要素の概要と説明。 
+- テーブル**でのデータの表示**–テーブルを作成および設定する方法を示すと共に、さまざまなテーブルとセルスタイルを使用して、セルオブジェクトを再利用することにより、メモリの問題を回避します。 
+- **高度な使用法**–カスタムセルを作成し、UITableView クラスの編集機能を使用します。 
+- **テーブルを視覚的に作成**する-Xamarin Designer for iOS を使用して、ストーリーボードを含むテーブルドリブンインターフェイスを作成します。 
 
 ## <a name="contents"></a>目次
 

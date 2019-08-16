@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: a27bc699d6c7a77c8a970e363ca55bf54751df66
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 32cb0e376646478ad01a6ea7784094d23529b0b4
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655638"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528623"
 ---
 # <a name="populating-a-table-with-data-in-xamarinios"></a>Xamarin のデータを使用してテーブルにデータを読み込む
 
@@ -34,8 +34,8 @@ ms.locfileid: "68655638"
 
 テーブルにデータを表示するには、次の2つの必須メソッドが必要です。
 
--   **Rowsinsection** –テーブルに[`nint`](~/cross-platform/macios/nativetypes.md)表示されるデータ行の合計数を返します。
--   **Getcell** –メソッドに`UITableCellView`渡される対応する行インデックスのデータが設定されたを返します。
+- **Rowsinsection** –テーブルに[`nint`](~/cross-platform/macios/nativetypes.md)表示されるデータ行の合計数を返します。
+- **Getcell** –メソッドに`UITableCellView`渡される対応する行インデックスのデータが設定されたを返します。
 
 
 BasicTable サンプルファイル**TableSource.cs**には、の`UITableViewSource`最も簡単な実装があります。 次のコードスニペットでは、テーブルに表示する文字列の配列を受け取り、各文字列を含む既定のセルスタイルを返しています。
@@ -239,9 +239,9 @@ keys = indexedTableItems.Keys.ToArray ();
 
 サブ`UITableViewSource`クラスでは、 `Dictionary<>`を使用するために、次のメソッドを追加または変更する必要があります。
 
--   **Numberofsections** –このメソッドは省略可能です。既定では、テーブルは1つのセクションを前提としています。 インデックスを表示する場合、このメソッドはインデックス内の項目数を返す必要があります (たとえば、インデックスに英語のアルファベットのすべての文字が含まれている場合は26など)。
--   **Rowsinsection** –指定したセクションの行の数を返します。
--   **Sectionindextitles** –インデックスを表示するために使用される文字列の配列を返します。 このサンプルコードは、文字の配列を返します。
+- **Numberofsections** –このメソッドは省略可能です。既定では、テーブルは1つのセクションを前提としています。 インデックスを表示する場合、このメソッドはインデックス内の項目数を返す必要があります (たとえば、インデックスに英語のアルファベットのすべての文字が含まれている場合は26など)。
+- **Rowsinsection** –指定したセクションの行の数を返します。
+- **Sectionindextitles** –インデックスを表示するために使用される文字列の配列を返します。 このサンプルコードは、文字の配列を返します。
 
 
 サンプルファイル**Basictableindex/Tableource**の更新されたメソッドは次のようになります。
@@ -275,8 +275,8 @@ public override string[] SectionIndexTitles (UITableView tableView)
 
 ヘッダーとフッターを表示する`UITableViewSource`には、サブクラスに次の追加のメソッドが必要です。
 
--   **タイトル forheader** –ヘッダーとして使用するテキストを返します
--   **タイトル forfooter** –フッターとして使用するテキストを返します。
+- **タイトル forheader** –ヘッダーとして使用するテキストを返します
+- **タイトル forfooter** –フッターとして使用するテキストを返します。
 
 
 サンプルファイル**Basictableheaderfooter/Code/Tableource**の更新されたメソッドは次のようになります。

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: 7d46744c20874dd122b63e56ec92c7aa5ae6562e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: d8b522ce75b2b594242dca167242ad0362f6cbfc
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656991"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528307"
 ---
 # <a name="xamarinforms-xaml-basics"></a>Xamarin.Forms XAML の基礎
 
@@ -35,35 +35,13 @@ XAML (eXtensible Application Markup Language) を使用すると、開発者は 
 
 XAML 内容は、書籍の多数の章で詳しくなど。
 
-<table style="border:0px; box-shadow:0 0px 0px" cellpadding="0" cellspacing="2" border="0" width="85%">
-<tr style="background:#ecf0f1">
-  <td style="border:0px;">
-    <h4>第 7 章 XAML 対コード</h4>
-  </td>
-  <td style="border:0px;" align="right"><a href="https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch07-Apr2016.pdf">PDF をダウンロードします。</a> </td>
-  <td style="border:0px;" align="right"><a href="~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter07.md">まとめ</a></td>
-</tr>
-<tr style="background:#f8f9fa">
-  <td style="border:0px;">
-    <h4>第 8 章 コードと調和で XAML</h4>
-  </td>
-  <td style="border:0px;" align="right"><a href="https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch08-Apr2016.pdf">PDF をダウンロードします。</a> </td>
-  <td style="border:0px;" align="right"><a href="~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter08.md">まとめ</a></td>
-</tr>
-<tr style="background:#f8f9fa">
-  <td style="border:0px;">
-    <h4>第10章 XAML マークアップ拡張機能</h4>
-  </td>
-  <td style="border:0px;" align="right"><a href="https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch10-Apr2016.pdf">PDF をダウンロードします。</a> </td>
-  <td style="border:0px;" align="right"><a href="~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md">まとめ</a></td>
-</tr>
-<tr style="background:#f8f9fa">
-  <td style="border:0px;">
-    <h4>第 18 章 MVVM</h4>
-  </td>
-  <td style="border:0px;" align="right"><a href="https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch18-Apr2016.pdf">PDF をダウンロードします。</a> </td>
-  <td style="border:0px;" align="right"><a href="~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter18.md">まとめ</a></td></tr>
-</table>
+
+| 」の章 | ダウンロード | Summary |
+|---------|---------|---------|
+| 第 7 章 XAML 対コード | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch07-Apr2016.pdf) | [まとめ](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter07.md) |
+| 第 8 章 コードと調和で XAML | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch08-Apr2016.pdf) | [まとめ](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter08.md) |
+| 第10章 XAML マークアップ拡張機能 | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch10-Apr2016.pdf) | [まとめ](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md) |
+| 第 18 章 MVVM | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch18-Apr2016.pdf) | [概要](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter18.md) |
 
 これらの章は、[無料でダウンロード](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)します。
 
@@ -77,17 +55,17 @@ XAML は Xamarin.Forms、クロス プラットフォーム ネイティブ ベ�
 
 XAML では、同等のコードをいくつかの利点があります。
 
--  XAML は、多くの場合は詳細は、簡潔で同等のコードよりも読みやすくします。
--  親子階層の XML に固有では、visual できるようにするためのユーザー インターフェイス オブジェクト、親子階層を模倣するために XAML をできます。
--  XAML では、プログラマ、簡単に手記述できますが、理解できる使いやすいビジュアル デ ザイン ツールによって生成されるようにするためにも適しています。
+- XAML は、多くの場合は詳細は、簡潔で同等のコードよりも読みやすくします。
+- 親子階層の XML に固有では、visual できるようにするためのユーザー インターフェイス オブジェクト、親子階層を模倣するために XAML をできます。
+- XAML では、プログラマ、簡単に手記述できますが、理解できる使いやすいビジュアル デ ザイン ツールによって生成されるようにするためにも適しています。
 
 もちろん、ほとんどの場合は、マークアップ言語に固有の制限に関連するデメリットも。
 
--  XAML では、コードを含めることはできません。 すべてのイベント ハンドラーは、コード ファイルで定義する必要があります。
--  XAML では、反復処理のループを含めることはできません。 (ただし、いくつかの Xamarin.Forms のビジュアル オブジェクト-最も顕著な[ `ListView` ](xref:Xamarin.Forms.ListView) -内のオブジェクトに基づく複数の子要素を生成することができます、`ItemsSource`コレクションです)。
--  XAML は、条件付きの処理 (ただし、データ バインディングを参照できますいくつかの条件付き処理を効率的にできるコード ベースのバインディング コンバーターです。) を含めることはできません。
--  一般に XAML することは、パラメーターなしのコンストラクターを定義しないクラス インスタンス化できません。 (ただし、存在がこの制限を回避する方法です。)
--  XAML は一般に、メソッドを呼び出すことはできません。 (ここでも、この制限も解決できます。)
+- XAML では、コードを含めることはできません。 すべてのイベント ハンドラーは、コード ファイルで定義する必要があります。
+- XAML では、反復処理のループを含めることはできません。 (ただし、いくつかの Xamarin.Forms のビジュアル オブジェクト-最も顕著な[ `ListView` ](xref:Xamarin.Forms.ListView) -内のオブジェクトに基づく複数の子要素を生成することができます、`ItemsSource`コレクションです)。
+- XAML は、条件付きの処理 (ただし、データ バインディングを参照できますいくつかの条件付き処理を効率的にできるコード ベースのバインディング コンバーターです。) を含めることはできません。
+- 一般に XAML することは、パラメーターなしのコンストラクターを定義しないクラス インスタンス化できません。 (ただし、存在がこの制限を回避する方法です。)
+- XAML は一般に、メソッドを呼び出すことはできません。 (ここでも、この制限も解決できます。)
 
 ない、ビジュアル デザイナー Xamarin.Forms アプリケーションで XAML を生成するためです。 すべての XAML は、手作業で記述された、する必要がありますが、ある、 [XAML プレビューアー](~/xamarin-forms/xaml/xaml-previewer/index.md)します。 プログラマは新しい XAML を頻繁にビルドして、特に後何も明らかに誤ってできない可能性がある、アプリケーションを実行する可能性があります。 多くの XAML での経験もの開発者は、実験が報いることを知っています。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/29/2017
-ms.openlocfilehash: 0f2136aa4a07d289e1e8aecc6cb37460fdc5727c
-ms.sourcegitcommit: 157da886e1f304c6b482aa3f265ef7d78b696ab7
+ms.openlocfilehash: d6bcecd27e0380221febc34f787f71d20e0fcaf9
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69024531"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526955"
 ---
 # <a name="create-a-custom-layout-in-xamarinforms"></a>Xamarin. Forms でカスタムレイアウトを作成する
 
@@ -428,6 +428,6 @@ async Task<ImageList> GetImageListAsync()
 - [WrapLayout (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-customlayout-wraplayout)
 - [カスタム レイアウト](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter26.md)
 - [Xamarin.Forms でのカスタム レイアウトを作成する (ビデオ)](https://evolve.xamarin.com/session/56e20f83bad314273ca4d81c)
-- [レイアウト<T>](xref:Xamarin.Forms.Layout`1)
+- [レイアウト\<T >](xref:Xamarin.Forms.Layout`1)
 - [レイアウト](xref:Xamarin.Forms.Layout)
 - [VisualElement](xref:Xamarin.Forms.VisualElement)

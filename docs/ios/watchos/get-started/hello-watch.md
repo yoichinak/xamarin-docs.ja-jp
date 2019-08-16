@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 12/14/2016
-ms.openlocfilehash: 7bc728360c26321c16839c5d67b93a91d2593602
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 26c418355c83da807d6dfa514e58f9bf1675759f
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655511"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528430"
 ---
 # <a name="hello-watchos--walkthrough"></a>Hello, watchOS –チュートリアル
 
 「[セットアップとインストール](~/ios/watchos/get-started/installation.md)」の手順に従ってソリューションを作成すると、次の3つのプロジェクトが作成されます。
 
-- セットアップまたはその他のデバイス上の管理タスクに使用される iOS 親アプリ。 (他の種類の iOS 拡張機能では、これは "コンテナー" アプリと呼ばれることがよくあります)。Watch アプリでは、ユーザーは親アプリを実行**しなくて**も、watch アプリの実行を開始できます。
+- セットアップまたはその他のデバイス上の管理タスクに使用される iOS 親アプリ。 (他の種類の iOS 拡張機能では、これは "コンテナー" アプリと呼ばれることがよくあります)。Watch アプリでは、ユーザーは親アプリを実行しなくても、Watchアプリの実行を開始できます。
 - Watch アプリのプログラムコードを含む Watch の拡張機能。そして
 - ウォッチアプリ。ウォッチにレンダリングされるストーリーボードとイメージリソースを保持します。
 
@@ -43,10 +43,10 @@ ms.locfileid: "68655511"
 Watch アプリで Xcode をダブルクリックして Xamarin iOS Designer を起動します (Mac を使用している場合は、右クリックして、 **> Interface Builder で開く**こともできます)
 
 
-1.  **ツールボックス**と**プロパティ**パッドが表示されていることを確認します。
-1.  インターフェイスコントローラーをクリックして選択します。
-1.  インターフェイスコントローラーの識別子とタイトルを**interfaceController**と**Hi Watch**に設定します。
-1.  **クラス**が**InterfaceController**に設定されていることを確認します。
+1. **ツールボックス**と**プロパティ**パッドが表示されていることを確認します。
+1. インターフェイスコントローラーをクリックして選択します。
+1. インターフェイスコントローラーの識別子とタイトルを**interfaceController**と**Hi Watch**に設定します。
+1. **クラス**が**InterfaceController**に設定されていることを確認します。
 
     ![](hello-watch-images/interfacecontrollerattributes.png "インターフェイスコントローラーの識別子とタイトルを interfaceController と Hi Watch に設定します。")
 
@@ -54,10 +54,10 @@ Watch アプリで Xcode をダブルクリックして Xamarin iOS Designer を
 
 Visual Studio で Xamarin iOS Designer を使用して編集するには、Watch アプリで [] というインターフェイスをダブルクリックします。
 
-1.  プロパティペインを開きます。
-1.  クラスを**InterfaceController**に変更します。
-1.  インターフェイスコントローラーをクリックします。そして
-1.  インターフェイスコントローラーの識別子とタイトルを**interfaceController**および**Hi Watch**に設定します。
+1. プロパティペインを開きます。
+1. クラスを**InterfaceController**に変更します。
+1. インターフェイスコントローラーをクリックします。そして
+1. インターフェイスコントローラーの識別子とタイトルを**interfaceController**および**Hi Watch**に設定します。
 
     ![](hello-watch-images/vs-interfacecontrollerattributes.png "インターフェイスコントローラーの識別子とタイトルを interfaceController と Hi Watch に設定します。")
 

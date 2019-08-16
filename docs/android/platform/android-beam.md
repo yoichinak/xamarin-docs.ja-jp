@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/06/2017
-ms.openlocfilehash: 0c4f7303d3620dcc2c829d732fe7a5f97f0e3883
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 83fa64ca207358b712341e1923a3a9a67a449e1f
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643756"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524729"
 ---
 # <a name="android-beam"></a>Android ビーム
 
@@ -23,9 +23,9 @@ Android ビームは、2つのデバイスが範囲内にある場合に、NFC �
 
 Android では、Android ビームでメッセージを設定する2つの方法がサポートされています。
 
--   `SetNdefPushMessage`-Android ビームが開始される前に、アプリケーションは SetNdefPushMessage を呼び出して、NFC 経由でプッシュする NdefMessage とそれをプッシュするアクティビティを指定できます。 このメカニズムは、アプリケーションの使用中にメッセージが変更されない場合に最適です。
+- `SetNdefPushMessage`-Android ビームが開始される前に、アプリケーションは SetNdefPushMessage を呼び出して、NFC 経由でプッシュする NdefMessage とそれをプッシュするアクティビティを指定できます。 このメカニズムは、アプリケーションの使用中にメッセージが変更されない場合に最適です。
 
--   `SetNdefPushMessageCallback`-Android ビームが開始されると、アプリケーションは、NdefMessage を作成するためのコールバックを処理できます。 このメカニズムにより、デバイスが範囲内になるまでメッセージの作成を遅延させることができます。 アプリケーションで発生している内容に応じてメッセージが変化するシナリオをサポートします。
+- `SetNdefPushMessageCallback`-Android ビームが開始されると、アプリケーションは、NdefMessage を作成するためのコールバックを処理できます。 このメカニズムにより、デバイスが範囲内になるまでメッセージの作成を遅延させることができます。 アプリケーションで発生している内容に応じてメッセージが変化するシナリオをサポートします。
 
 
 どちらの場合も、Android ビームでデータを送信するために、 `NdefMessage`アプリケーションはを送信し、 `NdefRecords`データをいくつかの方法でパッケージ化します。 Android ビームをトリガーする前に対処する必要がある重要な点を見てみましょう。 まず、を作成するため`NdefMessage`のコールバックスタイルを使用します。

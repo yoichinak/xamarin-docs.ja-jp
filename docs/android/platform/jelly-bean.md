@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: e54f499316d2b99d87d05fbd202308eecaaed220
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 614a0e3952db42d2587930b66bf71ce4c703d035
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643367"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524066"
 ---
 # <a name="jelly-bean-features"></a>Jelly Bean の機能
 
@@ -48,9 +48,9 @@ Jelly Bean を使用して Xamarin Android アプリケーションを開発す�
 
 アクティビティは、ズームアニメーションまたはカスタムアニメーションのいずれかを使用`ActivityOptions`して、クラスを使用して起動できます。 これらのアニメーションをサポートするために、次の新しいメソッドが用意されています。
 
--   `MakeScaleUpAnimation`–画面の開始位置とサイズからアクティビティウィンドウをスケールアップするアニメーションを作成します。
--   `MakeThumbnailScaleUpAnimation`–サムネイル画像から画面上の指定した位置にスケールアップするアニメーションを作成します。
--   `MakeCustomAnimation`–アプリケーションのリソースからアニメーションを作成します。 アクティビティが開いたときと、アクティビティが停止したときの1つのアニメーションがあります。
+- `MakeScaleUpAnimation`–画面の開始位置とサイズからアクティビティウィンドウをスケールアップするアニメーションを作成します。
+- `MakeThumbnailScaleUpAnimation`–サムネイル画像から画面上の指定した位置にスケールアップするアニメーションを作成します。
+- `MakeCustomAnimation`–アプリケーションのリソースからアニメーションを作成します。 アクティビティが開いたときと、アクティビティが停止したときの1つのアニメーションがあります。
 
 
 新しい`TimeAnimator`クラスには、アニメーション`TimeAnimator.ITimeListener`でフレームが変更されるたびにアプリケーションに通知できるインターフェイスが用意されています。 たとえば、の次の`TimeAnimator.ITimeListener`実装について考えてみます。
@@ -85,12 +85,12 @@ Android 4.1 では、Android 3.0 で導入されたアプリケーションス�
 
 より複雑なシナリオでは、アクティビティクラスに新しいメソッドがあり、これを使用して、上のナビゲーションの動作を処理し、バックスタックを構築できます。
 
--   `OnNavigateUp`–このメソッドをオーバーライドすることによって、[<span class="ui">上</span>へ] ボタンが押されたときにカスタム動作を実行することができます。
--   `NavigateUpTo`–このメソッドを呼び出すと、アプリケーションは、現在のアクティビティから、指定されたインテントによって指定されたアクティビティに移動します。
--   `ParentActivityIntent`–現在のアクティビティの親アクティビティを起動するインテントを取得するために使用されます。
--   `ShouldUpRecreateTask`–このメソッドは、親アクティビティに移動するために、合成バックスタックを作成する必要があるかどうかを照会するために使用されます。 合成`true`スタックを作成する必要がある場合はを返します。 
--   `FinishAffinity`–このメソッドを呼び出すと、現在のアクティビティとその下にあるすべてのアクティビティが、同じタスクアフィニティを持つ現在のタスクで完了します。
--   `OnCreateNavigateUpTaskStack`–このメソッドは、合成スタックの作成方法を完全に制御する必要がある場合にオーバーライドされます。
+- `OnNavigateUp`–このメソッドをオーバーライドすることによって、[**上**へ] ボタンが押されたときにカスタム動作を実行することができます。
+- `NavigateUpTo`–このメソッドを呼び出すと、アプリケーションは、現在のアクティビティから、指定されたインテントによって指定されたアクティビティに移動します。
+- `ParentActivityIntent`–現在のアクティビティの親アクティビティを起動するインテントを取得するために使用されます。
+- `ShouldUpRecreateTask`–このメソッドは、親アクティビティに移動するために、合成バックスタックを作成する必要があるかどうかを照会するために使用されます。 合成`true`スタックを作成する必要がある場合はを返します。 
+- `FinishAffinity`–このメソッドを呼び出すと、現在のアクティビティとその下にあるすべてのアクティビティが、同じタスクアフィニティを持つ現在のタスクで完了します。
+- `OnCreateNavigateUpTaskStack`–このメソッドは、合成スタックの作成方法を完全に制御する必要がある場合にオーバーライドされます。
 
 
 
@@ -120,10 +120,10 @@ public class AutoFocusCallbackActivity : Activity, Camera.IAutoFocusCallback
 
 新しいクラス`MediaActionSound`は、さまざまなメディア操作に対してサウンドを生成するための API のセットを提供します。 カメラでは、次のようないくつかの操作を実行できます。 `Android.Media.MediaActionSoundType`これらは列挙型によって定義されます。
 
--   `MediaActionSoundType.FocusComplete`–このサウンドは、フォーカスが完了したときに再生されます。
--   `MediaActionSoundType.ShutterClick`–このサウンドは、静止画像画像が取得されたときに再生されます。
--   `MediaActionSoundType.StartVideoRecording`–このサウンドは、ビデオ記録の開始を示すために使用されます。
--   `MediaActionSoundType.StopVideoRecording`–このサウンドは、ビデオ記録の終了を示すために再生されます。
+- `MediaActionSoundType.FocusComplete`–このサウンドは、フォーカスが完了したときに再生されます。
+- `MediaActionSoundType.ShutterClick`–このサウンドは、静止画像画像が取得されたときに再生されます。
+- `MediaActionSoundType.StartVideoRecording`–このサウンドは、ビデオ記録の開始を示すために使用されます。
+- `MediaActionSoundType.StopVideoRecording`–このサウンドは、ビデオ記録の終了を示すために再生されます。
 
 
 クラスの`MediaActionSound`使用例を次のスニペットに示します。
@@ -178,10 +178,10 @@ Android 4.1 には、マルチキャスト DNS ベースのサービス検出用
 
 Jelly Bean で、 `WifiP2pManager`は*Bonjour*または*Upnp*を使用して近くのデバイスを検出できます。 Bonjour は、Apple によるゼロ conf の実装です。 Upnp は、ゼロ conf もサポートするネットワークプロトコルのセットです。 Wi-fi サービス検出をサポートする`WiFiP2pManager`ために、に追加された次のメソッド。
 
--   `AddLocalService()`–このメソッドは、ピアによる検出のために、Wi-fi 経由でアプリケーションをサービスとしてアナウンスするために使用されます。
--   `AddServiceRequest(`) –このメソッドは、サービス検出要求をフレームワークに送信します。 Wi-fi サービス検出を初期化するために使用されます。
--   `SetDnsSdResponseListeners()`–このメソッドは、Bonjour からの探索要求への応答を受信するときに呼び出されるコールバックを登録するために使用されます。
--   `SetUpnpServiceResponseListener()`–このメソッドは、Upnp に対する検出要求への応答を受信するときに呼び出されるコールバックを登録するために使用されます。
+- `AddLocalService()`–このメソッドは、ピアによる検出のために、Wi-fi 経由でアプリケーションをサービスとしてアナウンスするために使用されます。
+- `AddServiceRequest(`) –このメソッドは、サービス検出要求をフレームワークに送信します。 Wi-fi サービス検出を初期化するために使用されます。
+- `SetDnsSdResponseListeners()`–このメソッドは、Bonjour からの探索要求への応答を受信するときに呼び出されるコールバックを登録するために使用されます。
+- `SetUpnpServiceResponseListener()`–このメソッドは、Upnp に対する検出要求への応答を受信するときに呼び出されるコールバックを登録するために使用されます。
 
 
 
@@ -196,9 +196,9 @@ Jelly Bean で、 `WifiP2pManager`は*Bonjour*または*Upnp*を使用して近�
 
 クラスには、 `ClipData` `Intent.ClipData`プロパティを使用してオブジェクトを関連付けることができるようになりました。 `Intent` このメソッドを使用すると、クリップボードからの追加データをインテントと共に送信できます。 のインスタンスに`ClipData` `ClipData.Item`は、1つ以上のを含めることができます。 `ClipData.Item`は、次の種類の項目です。
 
--   **Text** –これは、HTML または組み込みの Android スタイル範囲でサポートされている形式を持つ任意の文字列です。
--  **インテント**–任意`Intent`のオブジェクト。
--   **Uri** – HTTP ブックマークやコンテンツプロバイダーの uri など、任意の uri を指定できます。
+- **Text** –これは、HTML または組み込みの Android スタイル範囲でサポートされている形式を持つ任意の文字列です。
+- **インテント**–任意`Intent`のオブジェクト。
+- **Uri** – HTTP ブックマークやコンテンツプロバイダーの uri など、任意の uri を指定できます。
 
 
 
@@ -214,9 +214,9 @@ Jelly Bean で、 `WifiP2pManager`は*Bonjour*または*Upnp*を使用して近�
 
 キャプチャし`Android.Media.Audiofx.AudioEffect`たオーディオでの追加のオーディオの事前処理をサポートするために、新しいサブクラスが追加されました。
 
--   `Android.Media.Audiofx.AcousticEchoCanceler`–このクラスは、キャプチャされたオーディオ信号からリモートパーティからシグナルを削除するために、オーディオを事前処理するために使用されます。 たとえば、音声通信アプリケーションからエコーを削除します。
--   `Android.Media.Audiofx.AutomaticGainControl`–このクラスは、出力シグナルが一定になるように入力信号をブーストまたは減少させることによって、キャプチャされたシグナルを正規化するために使用されます。
--   `Android.Media.Audiofx.NoiseSuppressor`–このクラスは、キャプチャされたシグナルからバックグラウンドノイズを除去します。
+- `Android.Media.Audiofx.AcousticEchoCanceler`–このクラスは、キャプチャされたオーディオ信号からリモートパーティからシグナルを削除するために、オーディオを事前処理するために使用されます。 たとえば、音声通信アプリケーションからエコーを削除します。
+- `Android.Media.Audiofx.AutomaticGainControl`–このクラスは、出力シグナルが一定になるように入力信号をブーストまたは減少させることによって、キャプチャされたシグナルを正規化するために使用されます。
+- `Android.Media.Audiofx.NoiseSuppressor`–このクラスは、キャプチャされたシグナルからバックグラウンドノイズを除去します。
 
 
 すべてのデバイスでこれらの影響がサポートされるわけではありません。 アプリケーションから`AudioEffect.IsAvailable`メソッドを呼び出して、問題のオーディオ効果がアプリケーションを実行しているデバイスでサポートされているかどうかを確認する必要があります。
@@ -225,8 +225,8 @@ Jelly Bean で、 `WifiP2pManager`は*Bonjour*または*Upnp*を使用して近�
 
 次の新しいクラスは、メディアを再生する場所を選択するための標準的なメカニズムと UI を提供します。
 
--   `MediaRouter`–このクラスを使用すると、アプリケーションは、デバイスから外部スピーカーまたは他のデバイスへのメディアチャネルのルーティングを制御できます。
--   `MediaRouterActionProvider`および`MediaRouteButton` –これらのクラスは、メディアを選択して再生するための一貫した UI を提供するのに役立ちます。
+- `MediaRouter`–このクラスを使用すると、アプリケーションは、デバイスから外部スピーカーまたは他のデバイスへのメディアチャネルのルーティングを制御できます。
+- `MediaRouterActionProvider`および`MediaRouteButton` –これらのクラスは、メディアを選択して再生するための一貫した UI を提供するのに役立ちます。
 
 
 
@@ -235,17 +235,17 @@ Jelly Bean で、 `WifiP2pManager`は*Bonjour*または*Upnp*を使用して近�
 
 Android 4.1 を使用すると、アプリケーションの柔軟性が向上し、通知を表示することができます。 アプリケーションでユーザーに対してより大きな通知を表示できるようになりました。 新しいメソッドでは`NotificationBuilder.SetStyle()` 、通知に新しい3つの新しいスタイルのいずれかを設定できます。
 
--   `Notification.BigPictureStyle`–これは、イメージを含む通知を生成するヘルパークラスです。 次の図は、大きな画像を含む通知の例を示しています。
+- `Notification.BigPictureStyle`–これは、イメージを含む通知を生成するヘルパークラスです。 次の図は、大きな画像を含む通知の例を示しています。
 
 
  [![Big画像スタイルの通知のスクリーンショットの例](jelly-bean-images/image2.png)](jelly-bean-images/image2.png#lightbox)
 
--   `Notification.BigTextStyle`–これは、電子メールなどの複数行のテキストを含む通知を生成するヘルパークラスです。 この新しい通知スタイルの例を次のスクリーンショットに示します。
+- `Notification.BigTextStyle`–これは、電子メールなどの複数行のテキストを含む通知を生成するヘルパークラスです。 この新しい通知スタイルの例を次のスクリーンショットに示します。
 
 
  [![BigTextStyle 通知のスクリーンショットの例](jelly-bean-images/image3.png)](jelly-bean-images/image3.png#lightbox)
 
--   `Notification.InboxStyle`–これは、次のスクリーンショットに示すように、電子メールメッセージのスニペットなどの文字列のリストを含む通知を生成するヘルパークラスです。
+- `Notification.InboxStyle`–これは、次のスクリーンショットに示すように、電子メールメッセージのスニペットなどの文字列のリストを含む通知を生成するヘルパークラスです。
 
 
  [![通知のスクリーンショットの例-受信トレイのスタイル通知](jelly-bean-images/image4.png)](jelly-bean-images/image4.png#lightbox)
@@ -263,11 +263,11 @@ Android 4.1 を使用すると、アプリケーションの柔軟性が向上�
 
 次の新しいアクセス許可が追加されました。
 
--   `READ_EXTERNAL_STORAGE`-アプリケーションは、外部ストレージへの読み取り専用アクセスを必要とします。 現在、すべてのアプリケーションには既定で読み取りアクセス権がありますが、Android の今後のリリースでは、アプリケーションが読み取りアクセスを明示的に要求する必要があります。
--   `READ_USER_DICTIONARY`-ユーザーの word 辞書への読み取りアクセスを許可します。
--   `READ_CALL_LOG`-アプリケーションが呼び出しログを読み取ることによって、受信および送信の呼び出しに関する情報を取得できるようにします。
--   `WRITE_CALL_LOG`-アプリケーションが電話の通話ログに書き込むことを許可します。
--   `WRITE_USER_DICTIONARY`-アプリケーションがユーザーの word 辞書に書き込むことを許可します。
+- `READ_EXTERNAL_STORAGE`-アプリケーションは、外部ストレージへの読み取り専用アクセスを必要とします。 現在、すべてのアプリケーションには既定で読み取りアクセス権がありますが、Android の今後のリリースでは、アプリケーションが読み取りアクセスを明示的に要求する必要があります。
+- `READ_USER_DICTIONARY`-ユーザーの word 辞書への読み取りアクセスを許可します。
+- `READ_CALL_LOG`-アプリケーションが呼び出しログを読み取ることによって、受信および送信の呼び出しに関する情報を取得できるようにします。
+- `WRITE_CALL_LOG`-アプリケーションが電話の通話ログに書き込むことを許可します。
+- `WRITE_USER_DICTIONARY`-アプリケーションがユーザーの word 辞書に書き込むことを許可します。
 
 
 注意`READ_EXTERNAL_STORAGE`すべき重要な変更: 現在、このアクセス許可は Android によって自動的に付与されます。 Android の将来のバージョンでは、アクセス許可を付与する前に、アプリケーションからこのアクセス許可を要求する必要があります。

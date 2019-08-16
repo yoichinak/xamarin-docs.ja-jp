@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/22/2018
-ms.openlocfilehash: b44bb52dc69aae1d3d058a1eae7c3be13ec5dc53
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: f6bc5891e416d7cb6c9b80c0502a9cc5d2d911d1
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643336"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69523992"
 ---
 # <a name="location-services-on-android"></a>Android 上のロケーションサービス
 
@@ -30,11 +30,11 @@ Android では、場所データを操作するためにどの API が選択さ�
 
 ユーザーの場所を特定するために、いくつかのテクノロジが内部的に使用されます。 使用されるハードウェアは、データの収集ジョブに対して選択された*場所プロバイダー*の種類によって異なります。 Android では、次の3つの場所プロバイダーを使用します。
 
--   **GPS プロバイダー**&ndash; GPS は、最も正確な場所を提供し、最も多くの電力を消費し、屋外で最適に動作します。 このプロバイダーは、GPS と支援型 GPS ([Agps](https://en.wikipedia.org/wiki/Assisted_GPS)) を組み合わせて使用します。これは、携帯電話の塔によって収集された gps データを返します。
+- **GPS プロバイダー**&ndash; GPS は、最も正確な場所を提供し、最も多くの電力を消費し、屋外で最適に動作します。 このプロバイダーは、GPS と支援型 GPS ([Agps](https://en.wikipedia.org/wiki/Assisted_GPS)) を組み合わせて使用します。これは、携帯電話の塔によって収集された gps データを返します。
 
--   **ネットワークプロバイダー**&ndash;携帯ネットワークによって収集された agps データを含む、WiFi と携帯データの組み合わせを提供します。 GPS プロバイダーよりも電力消費量は少なくても、精度が異なる場所データを返します。
+- **ネットワークプロバイダー**&ndash;携帯ネットワークによって収集された agps データを含む、WiFi と携帯データの組み合わせを提供します。 GPS プロバイダーよりも電力消費量は少なくても、精度が異なる場所データを返します。
 
--   **パッシブプロバイダー**&ndash;アプリケーションで場所データを生成するために他のアプリケーションまたはサービスによって要求されたプロバイダーを使用する "便乗" オプション。 これは信頼性が低く、省電力のオプションであり、固定の場所の更新を必要としないアプリケーションに最適です。
+- **パッシブプロバイダー**&ndash;アプリケーションで場所データを生成するために他のアプリケーションまたはサービスによって要求されたプロバイダーを使用する "便乗" オプション。 これは信頼性が低く、省電力のオプションであり、固定の場所の更新を必要としないアプリケーションに最適です。
 
 場所プロバイダーは、常に使用できるとは限りません。 たとえば、アプリケーションで GPS を使用する場合がありますが、GPS が設定でオフになっているか、デバイスに GPS がまったくない可能性があります。 特定のプロバイダーを使用できない場合は、そのプロバイダーを`null`選択するとが返される可能性があります。
 
@@ -43,10 +43,10 @@ Android では、場所データを操作するためにどの API が選択さ�
 場所を認識するアプリケーションは、GPS、Wi-fi、携帯電話のデータを受信するために、デバイスのハードウェアセンサーにアクセスする必要があります。 アクセスは、アプリケーションの Android マニフェストで適切なアクセス許可を使用して制御されます。
 アプリケーションの要件と API &ndash;の選択に応じて、次の2つのアクセス許可を使用できます。
 
--   `ACCESS_FINE_LOCATION`&ndash;アプリケーションが GPS にアクセスできるようにします。
+- `ACCESS_FINE_LOCATION`&ndash;アプリケーションが GPS にアクセスできるようにします。
     *Gps プロバイダー*オプションと*パッシブプロバイダー*オプションに必要です (*パッシブプロバイダーには、別のアプリケーションまたはサービスによって収集された GPS データにアクセスするためのアクセス許可が必要*です)。 *ネットワークプロバイダー*のオプションのアクセス許可。
 
--   `ACCESS_COARSE_LOCATION`&ndash;携帯電話と wi-fi の場所へのアプリケーションのアクセスを許可します。 が設定されて`ACCESS_FINE_LOCATION`いない場合、*ネットワークプロバイダー*に必要です。
+- `ACCESS_COARSE_LOCATION`&ndash;携帯電話と wi-fi の場所へのアプリケーションのアクセスを許可します。 が設定されて`ACCESS_FINE_LOCATION`いない場合、*ネットワークプロバイダー*に必要です。
 
 API バージョン 21 (Android 5.0 ロリポップ) 以降を対象とするアプリでは、GPS `ACCESS_FINE_LOCATION`ハードウェアが搭載されていないデバイスでを有効にし、引き続き実行できます。 アプリに GPS ハードウェアが必要な`android.hardware.location.gps` `uses-feature`場合は、明示的に Android マニフェストに要素を追加する必要があります。 詳細については、「Android の[使用-機能](https://developer.android.com/guide/topics/manifest/uses-feature-element.html)要素のリファレンス」を参照してください。
 
@@ -175,7 +175,7 @@ await fusedLocationProviderClient.RequestLocationUpdatesAsync(locationRequest, l
 
 このメソッドは、次の2つのパラメーターを受け取ります。
 
--   **`Android.Gms.Location.LocationRequest`** オブジェクトと`LocationRequest`は、どのようにして、どのようにして、どのようにして Xamarin. Android アプリケーションがどのように機能するかについてのパラメーターです。 &ndash; は`LocationRequest` 、要求を頻繁に実行する方法や、正確な場所の更新が重要であるかなどの情報を保持します。 たとえば、重要な場所を要求すると、デバイスは GPS を使用し、その結果、場所を決定するときに電力が多くなります。 このコードスニペットは、高い精度で`LocationRequest`場所のを作成する方法を示しています。場所の更新については約5分ごとに確認しています (ただし、要求間の間隔が2分を超えていません)。 デバイスの場所を特定するとき`LocationRequest`に使用する場所プロバイダーのガイダンスとして、ヒューズが使用されます。
+- **`Android.Gms.Location.LocationRequest`** オブジェクトと`LocationRequest`は、どのようにして、どのようにして、どのようにして Xamarin. Android アプリケーションがどのように機能するかについてのパラメーターです。 &ndash; は`LocationRequest` 、要求を頻繁に実行する方法や、正確な場所の更新が重要であるかなどの情報を保持します。 たとえば、重要な場所を要求すると、デバイスは GPS を使用し、その結果、場所を決定するときに電力が多くなります。 このコードスニペットは、高い精度で`LocationRequest`場所のを作成する方法を示しています。場所の更新については約5分ごとに確認しています (ただし、要求間の間隔が2分を超えていません)。 デバイスの場所を特定するとき`LocationRequest`に使用する場所プロバイダーのガイダンスとして、ヒューズが使用されます。
 
     ```csharp
     LocationRequest locationRequest = new LocationRequest()
@@ -184,7 +184,7 @@ await fusedLocationProviderClient.RequestLocationUpdatesAsync(locationRequest, l
                                       .SetFastestInterval(60 * 1000 * 2);
     ```
 
--   **`Android.Gms.Location.LocationCallback`** 場所の更新を受け取るために、Xamarin アプリケーションは`LocationProvider`抽象クラスをサブクラス化する必要があります。 &ndash; このクラスは2つのメソッドを公開しました。これは、場所情報を使用してアプリを更新するために、置き換えられる場所プロバイダーによって呼び出されることが 詳細については、以下で詳しく説明します。
+- **`Android.Gms.Location.LocationCallback`** 場所の更新を受け取るために、Xamarin アプリケーションは`LocationProvider`抽象クラスをサブクラス化する必要があります。 &ndash; このクラスは2つのメソッドを公開しました。これは、場所情報を使用してアプリを更新するために、置き換えられる場所プロバイダーによって呼び出されることが 詳細については、以下で詳しく説明します。
 
 場所の更新を Xamarin Android アプリケーションに通知するために、ヒューズの場所プロバイダーはを`LocationCallBack.OnLocationResult(LocationResult result)`呼び出します。 パラメーター `Android.Gms.Location.LocationResult`には、更新プログラムの場所の情報が含まれます。
 
@@ -233,10 +233,10 @@ Android ロケーションサービスは、Android で位置情報を使用す�
 
 Android ロケーションサービスを使用してユーザーの場所を取得するには、いくつかの手順を実行します。
 
-1.  `LocationManager`サービスへの参照を取得します。
-2.  場所が変更されたときに、インターフェイスを実装し、イベントを処理します。`ILocationListener`
-3.  指定し`LocationManager`たプロバイダーの場所の更新を要求するには、を使用します。 前`ILocationListener`の手順のは、 `LocationManager`からコールバックを受信するために使用されます。
-4.  アプリケーションが更新プログラムの受信に適していない場合に、場所の更新を停止します。
+1. `LocationManager`サービスへの参照を取得します。
+2. 場所が変更されたときに、インターフェイスを実装し、イベントを処理します。`ILocationListener`
+3. 指定し`LocationManager`たプロバイダーの場所の更新を要求するには、を使用します。 前`ILocationListener`の手順のは、 `LocationManager`からコールバックを受信するために使用されます。
+4. アプリケーションが更新プログラムの受信に適していない場合に、場所の更新を停止します。
 
 ### <a name="location-manager"></a>ロケーションマネージャー
 
@@ -346,7 +346,7 @@ else
 
 プロバイダーは動的に`GetBestProvider`変更されないことに注意してください。 代わりに、アクティビティのライフサイクル中に1回だけ、最適なプロバイダーを決定します。 プロバイダーの状態が設定された後で変更された場合、アプリケーションでは`ILocationListener` 、 &ndash; 、 `OnProviderDisabled`、および`OnStatusChanged` &ndash;の各メソッド`OnProviderEnabled`に関連するすべての可能性を処理するために、追加のコードが必要になります。プロバイダースイッチ。
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
 このガイドでは、Android ロケーションサービスと、Google Location Services API のヒューズを持つ場所プロバイダーの両方を使用したユーザーの場所の取得について説明します。
 

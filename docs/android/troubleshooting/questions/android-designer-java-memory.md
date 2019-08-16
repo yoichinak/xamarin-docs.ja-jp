@@ -7,22 +7,22 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/02/2018
-ms.openlocfilehash: c42be49aff56453bb1bc3b3c732cad151ccd62e0
-ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
+ms.openlocfilehash: 05d72c2b9cea3972a8173ea0656f5a84c2b3d51c
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67674454"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69523493"
 ---
 # <a name="adjusting-java-memory-parameters-for-the-android-designer"></a>Android Designer の Java メモリ パラメーターの調整
 
-開始するときに使用される既定のメモリ パラメーター、`java`プロセスでは、Android designer がいくつかのシステム構成と互換性がない可能性があります。
+Android designer のプロセスを`java`開始するときに使用される既定のメモリパラメーターは、一部のシステム構成と互換性がない場合があります。
 
-Xamarin Studio 5.7.2.7 (および以降では、Visual Studio for Mac) を開始し、Visual Studio Tools for Xamarin 3.9.344、これらの設定は、プロジェクトごとにカスタマイズできます。
+Xamarin Studio 5.7.2.7 (以降、Visual Studio for Mac) および Xamarin 3.9.344 の Visual Studio Tools 以降では、これらの設定はプロジェクトごとにカスタマイズできます。
 
-## <a name="new-android-designer-properties-and-corresponding-java-options"></a>新しい Android デザイナーのプロパティと対応する Java オプション
+## <a name="new-android-designer-properties-and-corresponding-java-options"></a>新しい Android designer のプロパティと対応する Java オプション
 
-次のプロパティ名が示された、java 対応[コマンド ライン オプション](http://docs.oracle.com/javase/7/docs/technotes/tools/windows/java.html)
+次のプロパティ名は、指定された java[コマンドラインオプション](http://docs.oracle.com/javase/7/docs/technotes/tools/windows/java.html)に対応しています。
 
 - **AndroidDesignerJavaRendererMinMemory** -Xms
 
@@ -33,17 +33,17 @@ Xamarin Studio 5.7.2.7 (および以降では、Visual Studio for Mac) を開始
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1.  Visual Studio でソリューションを開きます。
+1. Visual Studio でソリューションを開きます。
 
-2.  ソリューション エクスプ ローラーで 1 つずつ Android プロジェクトを選択し、をクリックして[すべてのファイル](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/4afxey9h(v=vs.90))プロジェクトごとに 2 回クリックします。 いずれか含まれていないプロジェクトをスキップする`.axml`レイアウト ファイルです。 この手順は、各プロジェクトのディレクトリが含まれていることを確認、`.csproj.user`ファイル。
+2. ソリューションエクスプローラーで各 Android プロジェクトを1つずつ選択し、各プロジェクトの [[すべてのファイルを](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/4afxey9h(v=vs.90))2 回表示] をクリックします。 `.axml`レイアウトファイルが含まれていないプロジェクトはスキップできます。 この手順では、 `.csproj.user`各プロジェクトディレクトリにファイルが含まれていることを確認します。
 
-3.  Visual Studio を終了します。
+3. Visual Studio を終了します。
 
-4.  検索、`.csproj.user`の各手順 2 からプロジェクト ファイル。
+4. 手順 2. の各プロジェクトのファイルを探します。`.csproj.user`
 
-5.  各編集`.csproj.user`テキスト エディターでファイル。
+5. 各`.csproj.user`ファイルをテキストエディターで編集します。
 
-6.  内の新しい Android デザイナーのメモリのプロパティの一部またはすべてを追加、`<PropertyGroup>`要素。 既存を使用する`<PropertyGroup>`か新規に作成します。 完全な例を次に示します`.csproj.user`3 つすべての属性を含むファイルが既定値に設定します。
+6. `<PropertyGroup>`要素内に新しい Android デザイナーメモリのプロパティを追加します。 既存`<PropertyGroup>`のを使用することも、新しいものを作成することもできます。 次に示すのは`.csproj.user` 、3つの属性すべてが既定値に設定された完全なサンプルファイルです。
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -59,29 +59,29 @@ Xamarin Studio 5.7.2.7 (および以降では、Visual Studio for Mac) を開始
     </Project>
     ```
 
-7.  保存して閉じますすべての更新された`.csproj.user`ファイル。
+7. 更新さ`.csproj.user`れたすべてのファイルを保存して閉じます。
 
-8.  Visual Studio を再起動し、ソリューションをもう一度です。
+8. Visual Studio を再起動し、ソリューションを再度開きます。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1.  開いている Visual studio for Mac にソリューション ディレクトリを確認します。 ソリューションに含まれる、`.userprefs`ファイル。
+1. ソリューションを Visual Studio for Mac で開き、ソリューションディレクトリに`.userprefs`ファイルが含まれていることを確認します。
 
-2.  Visual Studio を終了 for mac。
+2. Visual Studio for Mac を終了します。
 
-3.  検索、`.userprefs`ソリューション ディレクトリ内のファイル。
+3. ソリューションディレクトリ`.userprefs`内のファイルを見つけます。
 
-4.  編集、`.userprefs`テキスト エディターでファイル。
+4. テキストエディター `.userprefs`でファイルを編集します。
 
-5.  次の形式で既存の XML 要素を探します。 この要素名の最後の部分には、プロジェクトの名前が一致します。"この例では"AndroidApplication1:
+5. 次の形式で既存の XML 要素を見つけます。 この要素名の最後の部分は、プロジェクトの名前と一致します。この例では、"AndroidApplication1" を使用します。
 
     ```xml
     <MonoDevelop.Ide.ItemProperties.AndroidApplication1 ... >
     ```
 
-6.  場合、`<MonoDevelop.Ide.ItemProperties.AndroidApplication1 ... >`要素が存在しません。 内の任意の場所に作成して`<Properties>`要素。 必ず、"AndroidApplication1"をプロジェクトの名前に置き換えます。
+6. 要素が存在しない場合は、それを囲む`<Properties>`要素内の任意の場所に作成します。 `<MonoDevelop.Ide.ItemProperties.AndroidApplication1 ... >` 必ず "AndroidApplication1" をプロジェクトの名前に置き換えてください。
 
-7.  要素の属性として、新しい Android デザイナーのメモリのプロパティの一部またはすべてを追加します。 完全な例を次に示します`.userprefs`3 つすべての属性を含むファイルが既定値に設定します。
+7. 新しい Android デザイナーメモリプロパティのいずれかまたはすべてを、要素の属性として追加します。 次に示すのは`.userprefs` 、3つの属性すべてが既定値に設定された完全なサンプルファイルです。
 
     ```xml
     <Properties StartupItem="AndroidApplication1\AndroidApplication1.csproj">
@@ -95,11 +95,11 @@ Xamarin Studio 5.7.2.7 (および以降では、Visual Studio for Mac) を開始
     </Properties>
     ```
 
-8.  手順 5 ~ 7 を含むソリューション内の各 Android プロジェクトを`.axml`レイアウト ファイルです。 (つまり、1 つ追加`<MonoDevelop.Ide.ItemProperties.ProjectName>`の各プロジェクトの要素)。
+8. レイアウトファイルが含まれているソリューション内の各 Android プロジェクト`.axml`に対して、手順5-7 を繰り返します。 (つまり、プロジェクトごとに`<MonoDevelop.Ide.ItemProperties.ProjectName>` 1 つの要素を追加します)。
 
-9.  保存して閉じます、`.userprefs`ファイル。
+9. `.userprefs`ファイルを保存して閉じます。
 
-10. Mac を Visual Studio を再起動し、ソリューションをもう一度します。
+10. Visual Studio for Mac を再起動し、ソリューションを再度開きます。
 
 -----
 

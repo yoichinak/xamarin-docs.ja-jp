@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/14/2017
-ms.openlocfilehash: 43c57b552ab9465e67290018fe5f1908eecf2ee9
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 82a2e2b4abe5bc634c74c083b860d1f4f59a90b7
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656042"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528477"
 ---
 # <a name="view-controller-transitions-in-xamarinios"></a>Xamarin のコントローラーの遷移を表示します。 iOS
 
@@ -24,10 +24,10 @@ IOS 7 のビューコントローラー間のアニメーション化された�
 
 カスタム遷移を使用するに`PresentViewController`は、次のようにします。
 
-1.  表示するコントローラー `UIModalPresentationStyle.Custom`のをに設定します。`ModalPresentationStyle`
-2.  を`UIViewControllerTransitioningDelegate`実装して、の`UIViewControllerAnimatedTransitioning`インスタンスであるアニメータークラスを作成します。
-3.  表示するコントローラーでも、 `UIViewControllerTransitioningDelegate` プロパティをのインスタンスに設定します。`TransitioningDelegate`
-4.  ビューコントローラーを表示します。
+1. 表示するコントローラー `UIModalPresentationStyle.Custom`のをに設定します。`ModalPresentationStyle`
+2. を`UIViewControllerTransitioningDelegate`実装して、の`UIViewControllerAnimatedTransitioning`インスタンスであるアニメータークラスを作成します。
+3. 表示するコントローラーでも、 `UIViewControllerTransitioningDelegate` プロパティをのインスタンスに設定します。`TransitioningDelegate`
+4. ビューコントローラーを表示します。
 
 
 たとえば、次のコードは、という`ControllerTwo` `UIViewController`型のビューコントローラーを示しています。
@@ -80,8 +80,8 @@ public class TransitioningDelegate : UIViewControllerTransitioningDelegate
 
 クラス`UIViewControllerAnimatedTransitioning`は、実際のアニメーションを処理します。 次の2つのメソッドを実装する必要があります。
 
-1.  `TransitionDuration`–アニメーションの継続時間を秒単位で返します。
-1.  `AnimateTransition`–実際のアニメーションを実行します。
+1. `TransitionDuration`–アニメーションの継続時間を秒単位で返します。
+1. `AnimateTransition`–実際のアニメーションを実行します。
 
 
 たとえば、次のクラスはを`UIViewControllerAnimatedTransitioning`実装して、コントローラーのビューのフレームをアニメーション化します。
@@ -126,18 +126,18 @@ public class CustomTransitionAnimator : UIViewControllerAnimatedTransitioning
 
 コレクションビューには、アニメーション化された遷移を作成するためのサポートが組み込まれています。
 
--  **ナビゲーションコントローラー** : 2 つ`UICollectionViewController`のインスタンスの間のアニメーション化された遷移`UINavigationController`は、で管理するときに、必要に応じて自動的に処理できます。
--  **遷移レイアウト**–新しい`UICollectionViewTransitionLayout`クラスによって、レイアウト間で対話形式の切り替えを行うことができます。
+- **ナビゲーションコントローラー** : 2 つ`UICollectionViewController`のインスタンスの間のアニメーション化された遷移`UINavigationController`は、で管理するときに、必要に応じて自動的に処理できます。
+- **遷移レイアウト**–新しい`UICollectionViewTransitionLayout`クラスによって、レイアウト間で対話形式の切り替えを行うことができます。
 
 
 ### <a name="navigation-controller-transitions"></a>ナビゲーションコントローラーの遷移
 
 ナビゲーションコントローラー内で使用する場合、 `UICollectionViewController`には、コントローラー間のアニメーション化された遷移のサポートが含まれます。 このサポートは組み込まれており、を実装するにはいくつかの簡単な手順が必要です。
 
-1.  で`UseLayoutToLayoutNavigationTransitions` `false`をに設定します。`UICollectionViewController`
-1.  の`UICollectionViewController`インスタンスをナビゲーションコントローラーのスタックのルートに追加します。
-1.  2番目`UICollectionViewController`のを作成`UseLayoutToLayoutNavigtionTransitions`し、 `true`そのプロパティをに設定します。
-1.  2番目`UICollectionViewController`のをナビゲーションコントローラーのスタックにプッシュします。
+1. で`UseLayoutToLayoutNavigationTransitions` `false`をに設定します。`UICollectionViewController`
+1. の`UICollectionViewController`インスタンスをナビゲーションコントローラーのスタックのルートに追加します。
+1. 2番目`UICollectionViewController`のを作成`UseLayoutToLayoutNavigtionTransitions`し、 `true`そのプロパティをに設定します。
+1. 2番目`UICollectionViewController`のをナビゲーションコントローラーのスタックにプッシュします。
 
 
 次のコードでは`UICollectionViewController` 、と`ImagesCollectionViewController`いう名前のサブクラスをナビゲーションコントローラーのスタックのルート`UseLayoutToLayoutNavigationTransitions`に追加し`false`ます。プロパティはに設定されています。
@@ -208,13 +208,13 @@ public override void ItemSelected (UICollectionView collectionView, NSIndexPath 
 
 を使用して`UICollectionViewTransitionLayout` 、ジェスチャレコグナイザーに対話型の遷移を実装する手順は次のとおりです。
 
-1.  ジェスチャ認識エンジンを作成します。
-1.  のメソッドを呼び出し、ターゲットレイアウトと完了ハンドラーを渡します。 `UICollectionView` `StartInteractiveTransition`
-1.  メソッドから`UICollectionViewTransitionLayout` `TransitionProgress` 返されたインスタンスのプロパティを設定します`StartInteractiveTransition` 。
-1.  レイアウトを無効にします。
-1.  のメソッドを呼び出して遷移を完了`CancelInteractiveTransition` するか、メソッドを呼び出してキャンセルします。`UICollectionView` `FinishInteractiveTransition`  `FinishInteractiveTransition`アニメーションが対象のレイアウトへの遷移を完了させます`CancelInteractiveTransition` 。一方、アニメーションは元のレイアウトに戻ります。
-1.  `StartInteractiveTransition`メソッドの完了ハンドラーで、遷移の完了を処理します。
-1.  ジェスチャ認識エンジンをコレクションビューに追加します。
+1. ジェスチャ認識エンジンを作成します。
+1. のメソッドを呼び出し、ターゲットレイアウトと完了ハンドラーを渡します。 `UICollectionView` `StartInteractiveTransition`
+1. メソッドから`UICollectionViewTransitionLayout` `TransitionProgress` 返されたインスタンスのプロパティを設定します`StartInteractiveTransition` 。
+1. レイアウトを無効にします。
+1. のメソッドを呼び出して遷移を完了`CancelInteractiveTransition` するか、メソッドを呼び出してキャンセルします。`UICollectionView` `FinishInteractiveTransition`  `FinishInteractiveTransition`アニメーションが対象のレイアウトへの遷移を完了させます`CancelInteractiveTransition` 。一方、アニメーションは元のレイアウトに戻ります。
+1. `StartInteractiveTransition`メソッドの完了ハンドラーで、遷移の完了を処理します。
+1. ジェスチャ認識エンジンをコレクションビューに追加します。
 
 
 次のコードは、ピンチのジェスチャレコグナイザー内で対話型レイアウトの切り替えを実装しています。

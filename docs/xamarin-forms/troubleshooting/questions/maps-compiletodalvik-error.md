@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Forms.Maps Android プロジェクトが COMPILETODALVIK UNEXPECTED TOP-LEVEL ERROR で失敗は理由ですか。
+title: COMPILETODALVIK Android プロジェクトが予期しないトップレベルエラーで失敗するのはなぜですか。
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: C0251EB1-F509-47AD-98D6-846AF46425E5
@@ -7,34 +7,34 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/25/2017
-ms.openlocfilehash: 9df9e348440b9dd4b18b3859d64cbe47bd05b24c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: efa21d3547167996e1a7dcc533caa00e0b1262e6
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61250492"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529033"
 ---
-# <a name="why-does-my-xamarinformsmaps-android-project-fail-with-compiletodalvik-unexpected-top-level-error"></a>Xamarin.Forms.Maps Android プロジェクトが COMPILETODALVIK UNEXPECTED TOP-LEVEL ERROR で失敗は理由ですか。
+# <a name="why-does-my-xamarinformsmaps-android-project-fail-with-compiletodalvik-unexpected-top-level-error"></a>COMPILETODALVIK Android プロジェクトが予期しないトップレベルエラーで失敗するのはなぜですか。
 
-このエラーは for Mac または Visual Studio のビルド出力 ウィンドウで、Visual Studio のエラー パッドで発生する可能性があります。Xamarin.Forms.Maps を使用して Android のプロジェクト。
+このエラーは、Visual Studio for Mac のエラーパッドまたは Visual Studio のビルド出力ウィンドウに表示されることがあります。Android プロジェクトでは、Xamarin を使用します。
 
-これは、最もよく、Xamarin.Android プロジェクト用の Java ヒープ サイズを増やすことで解決します。 ヒープ サイズを大きくこれらの手順に従います。
+これは、Xamarin Android プロジェクトの Java ヒープサイズを増やすことによって最も一般的に解決されます。 ヒープサイズを増やすには、次の手順に従います。
 
 ## <a name="visual-studio"></a>Visual Studio
 
-1. Android プロジェクトを右クリックして & プロジェクト オプション を開きます。
-2. 移動して**Android オプション]、[詳細設定**
-3. Java ヒープ サイズ ボックスには、1 G を入力します。
+1. Android プロジェクト & 右クリックして、[プロジェクトオプション] を開きます。
+2. **Android オプションにアクセス-> 詳細設定**
+3. [Java ヒープのサイズ] テキストボックスに「1G」と入力します。
 4. プロジェクトをリビルドします。
 
-![Visual Studio プロジェクトのオプションのスクリーン ショット](maps-compiletodalvik-error-images/vsjavaheap.png "Android ビルド Visual Studio でのオプション")
+![Visual Studio プロジェクトオプションのスクリーンショット](maps-compiletodalvik-error-images/vsjavaheap.png "Visual Studio の Android ビルドオプション")
 
 ## <a name="visual-studio-for-mac"></a>Visual Studio for Mac
 
-1.  Android プロジェクトを右クリックして & プロジェクト オプション を開きます。
-2.  移動して**ビルド Android のビルド]->-> [詳細設定**
-3.  Java ヒープ サイズ ボックスには、1 G を入力します。
-4.  プロジェクトをリビルドします。  
+1. Android プロジェクト & 右クリックして、[プロジェクトオプション] を開きます。
+2. **ビルド-> Android ビルド-> 詳細設定**にアクセス
+3. [Java ヒープのサイズ] テキストボックスに「1G」と入力します。
+4. プロジェクトをリビルドします。  
 
-![Visual Studio for Mac プロジェクト オプションのスクリーン ショット](maps-compiletodalvik-error-images/xsjavaheap.png "Android のビルドでは、Visual Studio for Mac のオプション")
+![Visual Studio for Mac プロジェクトオプションのスクリーンショット](maps-compiletodalvik-error-images/xsjavaheap.png "Visual Studio for Mac の Android ビルドオプション")
 

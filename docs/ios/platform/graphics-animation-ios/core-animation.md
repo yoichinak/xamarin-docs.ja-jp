@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 12bb8fe6f8ed77ea9091c165d4656da292266679
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 9412012949cd012d572b65b7af6e2890160338dc
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656614"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527949"
 ---
 # <a name="core-animation-in-xamarinios"></a>Xamarin のコアアニメーション
 
@@ -40,9 +40,9 @@ UIKit には、アプリケーションにアニメーションを簡単に追�
 
 このセクションでは、次のような UIKit アニメーション機能について説明します。
 
--  コントローラー間の切り替え
--  ビュー間の切り替え
--  プロパティアニメーションの表示
+- コントローラー間の切り替え
+- ビュー間の切り替え
+- プロパティアニメーションの表示
 
 
 ### <a name="view-controller-transitions"></a>ビュー コントローラーの切り替え
@@ -59,9 +59,9 @@ SecondViewController vc2 = new SecondViewController {
 
 この場合`PartialCurl` 、アニメーションが使用されますが、他にも次のようなものがあります。
 
--  `CoverVertical`–画面の下部からスライドアップします。
--  `CrossDissolve`–新しいビューがフェードイン & 前のビューがフェードアウトします。
--  `FlipHorizontal`-右から左への水平方向の反転。 無視では、遷移は左から右へとフリップします。
+- `CoverVertical`–画面の下部からスライドアップします。
+- `CrossDissolve`–新しいビューがフェードイン & 前のビューがフェードアウトします。
+- `FlipHorizontal`-右から左への水平方向の反転。 無視では、遷移は左から右へとフリップします。
 
 
 遷移をアニメーション化するに`true`は、次のよう`PresentViewController`に2番目の引数としてを渡します。
@@ -100,12 +100,12 @@ UIView.Transition (
 
 Uikit では、 `UIView`クラスのさまざまなプロパティを自由にアニメーション化できます。これには次のものが含まれます。
 
--  フレーム
--  線
--  中央揃え
--  [アルファ]
--  変換
--  色
+- フレーム
+- 線
+- 中央揃え
+- [アルファ]
+- 変換
+- 色
 
 
 これらのアニメーションは、静的`NSAction` `UIView.Animate`メソッドに渡されるデリゲートでプロパティの変更を指定することによって暗黙的に行われます。 たとえば、次のコードでは、 `UIImageView`の中心点をアニメーション化しています。
@@ -234,7 +234,7 @@ public override void ViewDidAppear (bool animated)
 
  ![](core-animation-images/12-explicit-animation.png "このスクリーンショットは、指定されたパスをアニメーション化している画像を含むレイヤーを示しています。")
  
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
 この記事では、*主要なアニメーション*フレームワークによって提供されるアニメーション機能について説明しました。 ここでは、UIKit でのアニメーションの動作と、下位レベルのアニメーションコントロールに対して直接使用する方法の両方を示す、コアアニメーションを検証しています。
 

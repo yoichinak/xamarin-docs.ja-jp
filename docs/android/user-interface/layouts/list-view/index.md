@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 79f97382b6d8bd7875e4921c859f92cd6b321687
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 3817a6a111bb8a19248127d3be31a719fac68ba8
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646319"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522558"
 ---
 # <a name="xamarinandroid-listview"></a>Xamarin Android ListView
 
@@ -192,26 +192,26 @@ ListAdapter = new ArrayAdapter<string> (this, Resource.Layout.list_item, countri
 
 その他のトピック (下のリンク) では、 `ListView`クラスと共に使用できるさまざまな種類のアダプターについて、包括的に説明しています。 構造は、次のとおりです。
 
--   **視覚的外観**コントロールの`ListView`一部と&ndash;その動作方法。
+- **視覚的外観**コントロールの`ListView`一部と&ndash;その動作方法。
 
--   **クラス**の表示に使用されるクラスの概要。 `ListView` &ndash;
+- **クラス**の表示に使用されるクラスの概要。 `ListView` &ndash;
 
--   **ListView でのデータの表示**単純なデータの一覧を表示する方法、ユーザビリティ機能`ListView's`を実装する方法、さまざまな組み込みの行レイアウトを使用する方法、およびアダプターで行ビューを再利用してメモリを節約する方法について説明します。 &ndash;
+- **ListView でのデータの表示**単純なデータの一覧を表示する方法、ユーザビリティ機能`ListView's`を実装する方法、さまざまな組み込みの行レイアウトを使用する方法、およびアダプターで行ビューを再利用してメモリを節約する方法について説明します。 &ndash;
 
--   **カスタムの外観**カスタムレイアウト、フォント、 `ListView`および色を使用してのスタイルを変更する。 &ndash;
+- **カスタムの外観**カスタムレイアウト、フォント、 `ListView`および色を使用してのスタイルを変更する。 &ndash;
 
--   **SQLite の使用**で SQLite データベースのデータを表示する方法について説明します。`CursorAdapter` &ndash;
+- **SQLite の使用**で SQLite データベースのデータを表示する方法について説明します。`CursorAdapter` &ndash;
 
--   **アクティビティのライフサイクル**アクティビティを実装`ListView`する際の設計に関する考慮事項 (ライフサイクルのどこにあるかを含む)。データを設定し、リソースを解放するタイミングを含みます。 &ndash;
+- **アクティビティのライフサイクル**アクティビティを実装`ListView`する際の設計に関する考慮事項 (ライフサイクルのどこにあるかを含む)。データを設定し、リソースを解放するタイミングを含みます。 &ndash;
 
 (6 つの部分に分かれている) 説明は、 `ListView`クラス自体の概要から始めて、その使用方法についてのより複雑な例を紹介します。
 
--   [ListView のパーツと機能](~/android/user-interface/layouts/list-view/parts-and-functionality.md)
--   [ListView にデータを読み込む](~/android/user-interface/layouts/list-view/populating.md)
--   [ListView の外観のカスタマイズ](~/android/user-interface/layouts/list-view/customizing-appearance.md)
--   [CursorAdapters の使用](~/android/user-interface/layouts/list-view/cursor-adapters.md)
--   [ContentProvider の使用](~/android/user-interface/layouts/list-view/content-provider.md)
--   [ListView とアクティビティのライフサイクル](~/android/user-interface/layouts/list-view/activity-lifecycle.md)
+- [ListView のパーツと機能](~/android/user-interface/layouts/list-view/parts-and-functionality.md)
+- [ListView にデータを読み込む](~/android/user-interface/layouts/list-view/populating.md)
+- [ListView の外観のカスタマイズ](~/android/user-interface/layouts/list-view/customizing-appearance.md)
+- [CursorAdapters の使用](~/android/user-interface/layouts/list-view/cursor-adapters.md)
+- [ContentProvider の使用](~/android/user-interface/layouts/list-view/content-provider.md)
+- [ListView とアクティビティのライフサイクル](~/android/user-interface/layouts/list-view/activity-lifecycle.md)
 
 
 ## <a name="summary"></a>まとめ

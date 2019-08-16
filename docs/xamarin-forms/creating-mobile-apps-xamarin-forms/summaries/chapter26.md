@@ -1,18 +1,18 @@
 ---
 title: 第 26 章の概要です。 カスタム レイアウト
-description: Xamarin.Forms によるモバイル アプリの作成。第 26 章の概要です。 カスタム レイアウト
+description: Xamarin を使用した Mobile Apps の作成:第 26 章の概要です。 カスタム レイアウト
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 2B7F4346-414E-49FF-97FB-B85E92D98A21
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 9fa9802f94e10612c4b0fe02c84ddcabc89820a8
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 46a9887d12d251e60cf6767fe89f6125fe1438d4
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61331573"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529238"
 ---
 # <a name="summary-of-chapter-26-custom-layouts"></a>第 26 章の概要です。 カスタム レイアウト
 
@@ -116,7 +116,7 @@ Xamarin.Forms のレイアウトを処理する一元的なシステムではあ
 
 [ **ExploreChildSize** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/ExploreChildSizes)表示制約とサイズは、単純なレイアウトの情報を要求します。
 
-## <a name="deriving-from-layoutview"></a>レイアウトからの派生<View>
+## <a name="deriving-from-layoutview"></a>レイアウト\<ビューからの派生 >
 
 カスタム レイアウトのクラスから派生`Layout<View>`します。 2 つの役割があります。
 

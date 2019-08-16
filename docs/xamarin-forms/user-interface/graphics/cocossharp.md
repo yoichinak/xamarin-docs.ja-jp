@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/03/2016
-ms.openlocfilehash: f5a672f6b34edf02eeac0f2820989d0656342167
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: a6077029a82577cccbf060f14cdd7586c2793a94
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648829"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529257"
 ---
 # <a name="using-cocossharp-in-xamarinforms"></a>Xamarin.Forms で CocosSharp を使用します。
 
@@ -62,7 +62,7 @@ CocosSharp を使用する前に、開発者は、Xamarin.Forms プロジェク�
 CocosSharp の Nuget パッケージには、すべての CocosSharp オブジェクトを作成するために必要なオブジェクトが含まれます。
 CocosSharp.Forms の nuget パッケージに含まれる、`CocosSharpView`クラスは、Xamarin.Forms で CocosSharp をホストするために使用します。
 追加、 **CocosSharp.Forms** NuGet と**CocosSharp**も自動的に追加されます。
-これを行うを右クリックし、<span class="UIItem">パッケージ</span>フォルダーをクリックし、.NET Standard ライブラリ プロジェクトで<span class="UIItem">パッケージを追加しています.</span>.検索語句を入力します。 <span class="UIItem">CocosSharp.Forms</span>を選択します<span class="UIItem">Xamarin.Forms 用 CocosSharp</span>、順にクリックします<span class="UIItem">パッケージの追加</span>します。
+これを行うを右クリックし、**パッケージ**フォルダーをクリックし、.NET Standard ライブラリ プロジェクトで**パッケージを追加しています.** .検索語句を入力します。 **CocosSharp.Forms**を選択します**Xamarin.Forms 用 CocosSharp**、順にクリックします**パッケージの追加**します。
 
 ![](cocossharp-images/image1.png "追加のパッケージ ダイアログ ボックス")
 

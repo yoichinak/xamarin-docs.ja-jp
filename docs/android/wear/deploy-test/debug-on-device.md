@@ -1,153 +1,159 @@
 ---
 title: Wear デバイスでのデバッグ
-description: この記事では、Xamarin.Android Wear Wear デバイスでアプリケーションをデバッグする方法について説明します。
+description: この記事では、摩耗デバイスで Xamarin の Android の磨耗アプリケーションをデバッグする方法について説明します。
 ms.prod: xamarin
 ms.assetid: 01668E4B-BB83-4C26-B23A-F788173FB823
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 816ec5c861b5889e1735eab6293ed10318c53644
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 2a0c21f5a985e7a0bbe5b2afac1520280a0bd5e8
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67831880"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522132"
 ---
 # <a name="debug-on-a-wear-device"></a>Wear デバイスでのデバッグ
 
-_この記事では、Xamarin.Android Wear Wear デバイスでアプリケーションをデバッグする方法について説明します。_
+_この記事では、摩耗デバイスで Xamarin の Android の磨耗アプリケーションをデバッグする方法について説明します。_
 
 
 ## <a name="overview"></a>概要
 
-Android Wear デバイス、Android Wear スマートウォッチなどを使っている場合は、エミュレーターを使用する代わりに、デバイスでアプリを実行できます。 (ない場合の展開および実行するプロセスに詳しく Android Wear アプリを参照してください[こんにちは、Wear](~/android/wear/get-started/hello-wear.md))。
+Android の磨耗 Smartwatch などの Android の磨耗デバイスがある場合は、エミュレーターを使用する代わりに、デバイスでアプリを実行できます。 (Android 用の摩耗アプリの展開と実行のプロセスにまだ慣れていない場合は、「 [Hello, 磨耗](~/android/wear/get-started/hello-wear.md)」を参照してください)。
 
-## <a name="prepare-the-wear-device"></a>Wear デバイスを準備します。
+## <a name="prepare-the-wear-device"></a>磨耗デバイスを準備します。
 
-Android Wear デバイスでデバッグを有効にするのにには、次の手順を使用します。
+Android の磨耗デバイスでデバッグを有効にするには、次の手順に従います。
 
-1.  開く、**設定**Android Wear デバイス上のメニュー。
+1. Android の磨耗デバイスで **[設定]** メニューを開きます。
 
-2.  タップし、メニューの一番下までスクロール**について**します。
+2. メニューの一番下までスクロールし、 **[バージョン情報]** をタップします。
 
-3.  7 回ビルド番号をタップします。
+3. ビルド番号を7回タップします。
 
-4.  **設定**メニューをタップします**開発者向けオプション**します。
+4. **[設定]** メニューの **[開発者オプション]** をタップします。
 
-5.  確認します**ADB デバッグ**を有効にします。
+5. **ADB デバッグ**が有効になっていることを確認します。
 
 
 ## <a name="debugging-over-usb"></a>USB 経由でのデバッグ
 
-Wear デバイスでは、USB ポートには場合、Wear デバイスをコンピューターに接続を展開し、Android フォンを使用するように、アプリを実行/デバッグ (詳細については、次を参照してください。[デバイス上のデバッグ](~/android/deploy-test/debugging/debug-on-device.md))。
+デバイスに USB ポートがある場合は、コンピューターに磨耗デバイスを接続してデプロイし、Android フォンを使用する場合と同じようにアプリを実行/デバッグすることができます (詳細については、「[デバイスでのデバッグ](~/android/deploy-test/debugging/debug-on-device.md)」を参照してください)。
 
 
-## <a name="debugging-over-bluetooth"></a>Bluetooth 経由でのデバッグ
+## <a name="debugging-over-bluetooth"></a>Bluetooth でのデバッグ
 
-Wear デバイスでは、USB ポートはありません、お使いのコンピューターに接続されている Android フォンにアプリのデバッグ出力をルーティングして Bluetooth 経由で Wear デバイスにアプリをデプロイできます。 
+使用しているデバイスに USB ポートがない場合は、コンピューターに接続されている Android フォンにアプリのデバッグ出力をルーティングすることによって、Bluetooth 経由でアプリを摩耗デバイスに展開することができます。 
 
-### <a name="prepare-your-phone"></a>携帯電話を準備します。
+### <a name="prepare-your-phone"></a>電話を準備する
 
-Wear デバイスへの Bluetooth 接続を行うため、携帯電話を準備するのにには、次の手順を使用します。 
+次の手順を使用して、デバイスへの Bluetooth 接続を確立するための電話を準備します。 
 
-1.  されていない場合を設定する Xamarin.Android 開発用の電話で説明したよう[開発用デバイスの設定](~/android/get-started/installation/set-up-device-for-development.md)します。
+1. まだインストールしていない場合は、「[開発用にデバイスを設定する](~/android/get-started/installation/set-up-device-for-development.md)」の説明に従って、Xamarin Android 開発用の電話を設定します。
 
-2.  ダウンロードしてインストール、無料[Android Wear](https://play.google.com/store/apps/details?id=com.google.android.wearable.app) Google Play ストアからアプリ。
+2. Google Play ストアから無料の[Android 劣化](https://play.google.com/store/apps/details?id=com.google.android.wearable.app)アプリをダウンロードしてインストールします。
 
-### <a name="connect-the-device"></a>デバイスを接続します。
+### <a name="connect-the-device"></a>デバイスを接続する
 
-Wear デバイスを携帯電話に接続するのにには、次の手順を使用します。
+次の手順に従って、磨耗デバイスを電話に接続します。
 
-1.  携帯電話の Bluetooth 中間 (上記で構成) として機能、Android Wear アプリが起動されます。 
+1. Bluetooth 中継局として機能する電話 (上記で構成) で、Android の磨耗アプリを起動します。 
 
-2.  タップして、**設定**アイコン。
+2. **[設定]** アイコンをタップします。
 
-3.  有効にする**Bluetooth 経由でデバッグ**します。 Android Wear アプリの画面に表示される、次の状態が表示されます。
+3. **Bluetooth でのデバッグ**を有効にします。 Android の磨耗アプリの画面に次の状態が表示されます。
 
-        Host: disconnected
-        Target: connected
+    ```
+    Host: disconnected
+    Target: connected
+    ```
 
-4.  USB 経由で電話をコンピューターに接続します。 コンピューターには、次のコマンドを入力します。
+4. USB 経由で電話をコンピューターに接続します。 コンピューターで、次のコマンドを入力します。
 
     ```shell
     adb forward tcp:4444 localabstract:/adb-hub
     adb connect 127.0.0.1:4444
     ```
 
-    ポート 4444 が使用できない場合は、アクセス権があるその他の使用可能なポートを使用することができます。 
+    ポート4444が使用できない場合は、アクセスできる他の任意のポートを使用できます。 
 
     > [!NOTE]
-    > Visual Studio または Visual Studio for Mac を再起動する場合は、Wear デバイスへの接続をセットアップするには、もう一度これらのコマンドを実行する必要があります。
+    > Visual Studio または Visual Studio for Mac を再起動する場合は、これらのコマンドをもう一度実行して、磨耗デバイスへの接続をセットアップする必要があります。
 
-5.  Wear デバイスが表示されたら、許可することを確認**ADB デバッグ**します。 Android Wear アプリで、変更の状態が表示されます。
+5. 磨耗デバイスからプロンプトが表示されたら、 **ADB デバッグ**を許可していることを確認します。 Android の磨耗アプリでは、状態が次のように変化します。
 
-        Host: connected
-        Target: connected
+    ```
+    Host: connected
+    Target: connected
+    ```
 
-6.  上記の手順を完了すると、次のように実行されている`adb devices`電話、および Android Wear デバイスの状態が表示されます。
+6. 上記の手順を完了すると、 `adb devices` [実行中] に電話と Android の両方の磨耗デバイスの状態が表示されます。
 
-        List of devices attached
-        127.0.0.1:4444    device
-        019ad61df0a69399  device
+    ```
+    List of devices attached
+    127.0.0.1:4444    device
+    019ad61df0a69399  device
+    ```
 
-この時点では、Wear デバイスにアプリをデプロイできます。
+この時点で、アプリを磨耗デバイスにデプロイできます。
 
 <a name="screenshots" />
 
-### <a name="taking-screenshots"></a>スクリーン ショットを作成
+### <a name="taking-screenshots"></a>スクリーンショットの撮影
 
-Wear デバイスのスクリーン ショットは、次のコマンドを入力して実行できます。 
+次のコマンドを入力して、磨耗デバイスのスクリーンショットを取得できます。 
 
 ```shell
 adb -s 127.0.0.1:4444 shell screencap -p /sdcard/DCIM/screencap.png
 ```
 
-スクリーン ショットを次のコマンドを入力して、コンピューターにコピーします。
+次のコマンドを入力して、スクリーンショットをコンピューターにコピーします。
 
 ```shell
 adb -s 127.0.0.1:4444 pull /sdcard/DCIM/screencap.png
 ```
 
-デバイスのスクリーン ショットを削除するには、次のコマンドを入力します。
+次のコマンドを入力して、デバイスのスクリーンショットを削除します。
 
 ```shell
 adb -s 127.0.0.1:4444 shell rm /sdcard/DCIM/screencap.png
 ```
 
 
-### <a name="uninstalling-an-app"></a>アプリをアンインストールします。
+### <a name="uninstalling-an-app"></a>アプリのアンインストール
 
-Wear デバイスからアプリをアンインストールするには、次のコマンドを入力します。
+次のコマンドを入力して、磨耗デバイスからアプリをアンインストールできます。
 
 ```shell
 adb -s 127.0.0.1:4444 uninstall <package name>
 ```
 
-たとえば、パッケージ名を持つアプリを削除する`com.xamarin.weartest`、次のコマンドを入力します。
+たとえば、パッケージ名`com.xamarin.weartest`を使用してアプリを削除するには、次のコマンドを入力します。
 
 ```shell
 adb -s 127.0.0.1:4444 uninstall com.xamarin.weartest
 ```
 
-Bluetooth 経由で Android Wear デバイスのデバッグの詳細については、次を参照してください。 [Bluetooth 経由でデバッグ](https://developer.android.com/training/wearables/apps/bt-debugging.html)します。
+Bluetooth 経由での Android の磨耗デバイスのデバッグの詳細については、「 [bluetooth 経由](https://developer.android.com/training/wearables/apps/bt-debugging.html)でのデバッグ」を参照してください。
 
 
-## <a name="debugging-a-wear-app-with-a-companion-phone-app"></a>コンパニオンの phone アプリの Wear アプリのデバッグ
+## <a name="debugging-a-wear-app-with-a-companion-phone-app"></a>コンパニオン電話アプリでの磨耗アプリのデバッグ
 
-Android Wear アプリが Google Play で配布するためのコンパニオン Android フォン アプリをパッケージ化されます (詳細については、次を参照してください。[パッケージ化操作](~/android/wear/deploy-test/packaging.md))。 ただし、引き続き開発する Wear アプリとそのコンパニオン アプリとは別にします。 Google Play ストアからアプリをリリースするときに、Wear アプリはコンパニオン アプリをパッケージ化し、可能であれば自動的にインストールします。
+Android の摩耗アプリは、Google Play で配布するためのコンパニオン Android phone アプリと共にパッケージ化されます (詳細については、「[パッケージングの](~/android/wear/deploy-test/packaging.md)使用」を参照してください)。 ただし、引き続き、磨耗アプリとそのコンパニオンアプリを別々に開発しています。 Google Play ストアを通じてアプリをリリースすると、アプリがコンパニオンアプリと共にパッケージ化され、可能であれば自動的にインストールされます。
 
-コンパニオン アプリを使用して、Wear アプリをデバッグします。 
+コンパニオンアプリを使用して、磨耗アプリをデバッグするには: 
 
-1.  ビルドし、コンパニオン アプリを電話に展開します。
+1. コンパニオンアプリを構築し、電話にデプロイします。
 
-2.  Wear プロジェクトを右クリックし、既定のスタート プロジェクトとして設定します。
+2. [磨耗] プロジェクトを右クリックし、[既定の開始] プロジェクトとして設定します。
 
-3.  Wear プロジェクトをウェアラブル デバイスをデプロイします。
+3. ウェアラブルデバイスに磨耗プロジェクトをデプロイします。
 
-4.  実行し、デバイス上の Wear アプリをデバッグします。
+4. デバイスでの磨耗アプリの実行とデバッグを行います。
 
  
 ## <a name="summary"></a>まとめ
 
-この記事では、付属の phone アプリの Wear アプリをデバッグする方法と、Bluetooth 経由で Visual Studio からデバッグを Wear、Android Wear デバイスを構成する方法について説明します。 Bluetooth 経由で Wear アプリをデバッグするための一般的なデバッグに関するヒントも提供されます。
+この記事では、Bluetooth を使用して Visual Studio からの磨耗デバッグ用に Android の磨耗デバイスを構成する方法、およびコンパニオン電話アプリを使用して磨耗アプリをデバッグする方法について説明しました。 また、Bluetooth を使用して磨耗アプリをデバッグするための一般的なデバッグのヒントも提供しました。

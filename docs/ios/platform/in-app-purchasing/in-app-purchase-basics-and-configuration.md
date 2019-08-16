@@ -1,131 +1,131 @@
 ---
-title: アプリ内購入の基本と Xamarin.iOS での構成
-description: このドキュメントでは、ルール、構成、および iTunes Connect に関する関連情報について説明する Xamarin.iOS でのアプリ内購入について説明します。
+title: Xamarin でのアプリ内購入の基本と構成
+description: このドキュメントでは、Xamarin. iOS でのアプリ内購入について説明し、ルール、構成、iTunes Connect に関する関連情報について説明します。
 ms.prod: xamarin
 ms.assetid: 11FB7F02-41B3-2B34-5A4F-69F12897FE10
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 267dac5b6aec263f1d8b69d81f34f732118c1802
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4c8e08c5393bed1f96baa7c1bced85eed3d2d0c6
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61406894"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527915"
 ---
-# <a name="in-app-purchase-basics-and-configuration-in-xamarinios"></a>アプリ内購入の基本と Xamarin.iOS での構成
+# <a name="in-app-purchase-basics-and-configuration-in-xamarinios"></a>Xamarin でのアプリ内購入の基本と構成
 
-アプリ内購入を実装するには、デバイスで storekit や API を利用するアプリケーションが必要です。 Storekit や Apple の iTunes のサーバー製品の情報を取得し、トランザクションを実行するとすべての通信を管理します。 アプリ内購入のプロビジョニング プロファイルを構成する必要があり、iTunes Connect で製品情報を入力する必要があります。
+アプリ内購入を実装するには、アプリケーションがデバイスで StoreKit API を利用する必要があります。 StoreKit は、Apple の iTunes サーバーとのすべての通信を管理して、製品情報を取得し、トランザクションを実行します。 プロビジョニングプロファイルは、アプリ内購入用に構成されている必要があります。また、製品情報を iTunes Connect に入力する必要があります。
 
- [![](in-app-purchase-basics-and-configuration-images/image1.png "Storekit や Apple のすべての通信はこのグラフに示すように、管理します。")](in-app-purchase-basics-and-configuration-images/image1.png#lightbox)
+ [![](in-app-purchase-basics-and-configuration-images/image1.png "このグラフに示すように、StoreKit は Apple とのすべての通信を管理します。")](in-app-purchase-basics-and-configuration-images/image1.png#lightbox)
 
-App Store を使用して、アプリ内購入を提供するには、次のセットアップと構成が必要です。
+アプリストアを使用してアプリ内購入を提供するには、次の設定と構成が必要です。
 
--  **iTunes Connect** : 販売する製品を構成し、購入をテストするサンド ボックスのユーザー アカウントをセットアップします。 必要がありますも提供されている、銀行と税の情報を Apple にので自動的に収集された資金を送金します。
--   **iOS プロビジョニング ポータル**– バンドル Id を作成して、アプリの App Store へのアクセスを有効にします。
--  **ストア キット**– 製品を表示、製品の購入、およびトランザクションを復元するため、アプリにコードを追加します。
--  **カスタム コード**– を顧客による購入を追跡し、製品や購入したサービスを提供します。 お使いの製品は、書籍や雑誌) などのサーバーからダウンロードしたコンテンツで構成されている場合、配信確認メッセージを検証するサーバー側プロセスを実装する必要がありますもことがあります。
+- **ITunes Connect** –購入テスト用にサンドボックスユーザーアカウントを設定するための製品を構成します。 また、お客様に代わって収集された資金を送金できるように、Apple に銀行と税金の情報を提供する必要があります。
+- **IOS プロビジョニングポータル**–バンドル id を作成し、アプリに対する app Store アクセスを有効にします。
+- **ストアキット**–製品を表示し、製品を購入し、トランザクションを復元するためのコードをアプリに追加します。
+- **カスタムコード**–顧客によって行われた購入を追跡し、購入した製品またはサービスを提供します。 サーバーからダウンロードされたコンテンツで製品が構成されている場合は、サーバー側のプロセスを実装して確認メッセージを検証することも必要になる場合があります (書籍や雑誌の問題など)。
 
 
-2 つストア キット「サーバーの環境」があります。
+次の2つのストアキットの "サーバー環境" があります。
 
--  **実稼働**– 実際のコストとトランザクション。 送信および Apple によって承認されたアプリケーションを使用してのみアクセスできます。 アプリ内購入製品のレビューし、で、運用環境で使用する前に承認もする必要があります。
--  **サンド ボックス**-発生テスト場所。 製品は、ここでする (承認プロセスは運用環境にのみ適用されます) の作成後すぐに使用できます。 サンド ボックス内のトランザクションでは、テスト ユーザー (Apple Id を実際のない) トランザクションを実行する必要があります。
+- **実稼働**–実際のコストを持つトランザクションです。 Apple によって送信および承認されたアプリケーションでのみアクセスできます。 アプリ内購入製品は、運用環境で使用できるようになる前に確認および承認する必要もあります。
+- **サンドボックス**–テストが行われます。 製品は、作成後すぐに使用できます (承認プロセスは運用環境にのみ適用されます)。 サンドボックス内のトランザクションには、トランザクションを実行するためのテストユーザー (実際の Apple Id ではありません) が必要です。
 
-## <a name="in-app-purchase-rules"></a>アプリ内購入の規則
+## <a name="in-app-purchase-rules"></a>アプリ内購入のルール
 
-アプリ内で他の形式のデジタル製品やサービスの支払いをそのまま使用および伝えしたり、アプリ内からユーザーを参照してくださいことはできません。 つまり、最も適切な支払いメカニズムは、アプリ内購入時にクレジット_カードや PayPal を受け入れることはできません。 アプリの外部のデジタル製品の購入、特殊なケースがありますの使用など、特定の"login"に関連付けられている web サイトにブックを購入し、アプリでは、"login"ユーザー アクセスできるようにすることを使用して、アプリで購入したブックの「します。
-このように動作するアプリケーションは言うまでもまたは外部の購入機能へのリンクは許可されていません: 開発者が (おそらく電子メール マーケティングまたはその他のいくつかの直接チャネル) を介して他の方法で、ユーザーには、この機能を通信する必要があります。
+アプリ内のデジタル製品またはサービスに対する他の形式の支払いを受け入れることはできません。また、アプリ内からユーザーを言及したり、ユーザーを参照したりすることはできません。 つまり、アプリ内購入が最適な支払い方法である場合、クレジットカードや PayPal を受け入れることはできません。 アプリの外部でデジタル製品を購入する場合、アプリで使用する特殊なケースがあります。たとえば、特定の "ログイン" に関連付けられている web サイトでブックを購入し、アプリでその "ログイン" を使用すると、ユーザーは購入したブックにアクセスできます。
+この方法で動作するアプリケーションは、外部の購入機能への言及やリンクは許可されていません。開発者は、この機能を他の方法でユーザーに通知する必要があります (おそらく、電子メールマーケティングや他の直接チャネルを使用して)。
 
-ただし、使用できないためアプリ内購入の物理的な商品は、許可されている場合 (例: 代替の支払いメカニズムを使用することで クレジット_カードや paypal など) から、アプリ内で。
+ただし、物理的な商品に対してアプリ内購入を使用することはできません。その場合は、別の支払い方法を使用できます (例: クレジットカード、PayPal) をアプリ内から。
 
-Apple は、上と販売 – 名前、説明になったし、'product' のスクリーン ショットは、確認のために必要な前に、すべての製品を承認する必要があります。 製品のレビュー時間は、アプリケーションのレビューと同じです。
+Apple は、販売を開始する前にすべての製品を承認する必要があります。「製品」の名前、説明、およびスクリーンショットを確認する必要があります。 製品のレビュー時間は、アプリケーションのレビューと同じです。
 
-製品の任意の価格を選択することはできません: Apple をサポートするそれぞれの国/通貨で特定の値を持つ '価格レベル' を選択することがあります。 さまざまな市場の価格レベルが異なることはできません。
+製品に対して価格を選択することはできません。 Apple がサポートしている国/通貨ごとに特定の値を持つ ' 価格レベル ' のみを選択できます。 市場によって異なる価格レベルを持つことはできません。
 
 ## <a name="configuration"></a>構成
 
-アプリ内購入コードを記述する前に、iTunes Connect では、いくつかセットアップ作業を行う必要があります ( [itunesconnect.apple.com](http://itunesconnect.apple.com)) および iOS プロビジョニング ポータル ( [developer.apple.com/iOS](https://developer.apple.com/iOS))。
+アプリ内購入コードを記述する前に、iTunes Connect ( [itunesconnect.apple.com](http://itunesconnect.apple.com)) と IOS プロビジョニングポータル ( [developer.apple.com/iOS](https://developer.apple.com/iOS)) でいくつかのセットアップ作業を行う必要があります。
 
-これら 3 つの手順は、コードを記述する前に完了する必要があります。
+コードを記述する前に、次の3つの手順を完了する必要があります。
 
--  **Apple 開発者アカウント**– Apple に銀行業務および課税情報を送信します。
--  **iOS プロビジョニング ポータル**– アプリが有効なアプリ ID を確認します (ワイルドカードにアスタリスクが付いていない * が) がアプリの購入で有効になります。
--  **iTunes Connect アプリケーション管理**– 製品、アプリケーションを追加します。
+- **Apple の開発者アカウント**–お客様の銀行および課税情報を apple に送信します。
+- **IOS プロビジョニングポータル**–アプリに有効なアプリ ID があることを確認します (ワイルドカードではなくアスタリスク * を含む)。アプリの購入が有効になっていることを確認します。
+- **ITunes Connect アプリケーション管理**–アプリケーションに製品を追加します。
 
 
 ### <a name="apple-developer-account"></a>Apple 開発者アカウント
 
-無料アプリの配布のビルドとでほとんどの構成が必要です[iTunes Connect](https://itunesconnect.apple.com)、有料を販売するアプリまたはアプリ内購入する必要があります銀行業務および課税情報を Apple に提供します。 をクリックして**契約、税金、銀行**ここで示すように、メイン メニューから。
+無料のアプリを構築して配布するには、 [ITunes Connect](https://itunesconnect.apple.com)の構成がほとんど必要ありません。ただし、有料アプリやアプリ内購入を販売するには、Apple に銀行および課税情報を提供する必要があります。 次に示すメインメニューから、[**契約]、[税金と銀行**] の順にクリックします。
 
- [![](in-app-purchase-basics-and-configuration-images/image2.png "契約、税金、銀行のメイン メニューからをクリックします。")](in-app-purchase-basics-and-configuration-images/image2.png#lightbox)
+ [![](in-app-purchase-basics-and-configuration-images/image2.png "メインメニューの [契約]、[税金と銀行] をクリックします。")](in-app-purchase-basics-and-configuration-images/image2.png#lightbox)
 
-開発者アカウントが必要、 **iOS 有料アプリケーション**実際には、このスクリーン ショットで示すようにコントラクトします。
+このスクリーンショットに示すように、開発者アカウントには**IOS 有料アプリケーション**コントラクトが有効になっている必要があります。
 
- [![](in-app-purchase-basics-and-configuration-images/image3.png "有料アプリケーション コントラクトの有効な iOS を開発者アカウントが必要")](in-app-purchase-basics-and-configuration-images/image3.png#lightbox)
+ [![](in-app-purchase-basics-and-configuration-images/image3.png "開発者アカウントには、iOS 有料アプリケーションコントラクトが有効になっている必要があります。")](in-app-purchase-basics-and-configuration-images/image3.png#lightbox)
 
-なるまで、storekit や機能をテストすることはできません、 **iOS 有料アプリケーション**コントラクト – storekit や呼び出しコードでは失敗 Apple が処理されるまで、**契約、税金、および銀行**情報。
+**IOS の有料アプリケーション**契約を取得するまで、storekit の機能をテストすることはできません。コード内の storekit の呼び出しは、Apple が**契約、税金、銀行**の情報を処理するまで失敗します。
 
 ### <a name="ios-provisioning-portal"></a>iOS プロビジョニング ポータル
 
-新しいアプリケーションが設定されて、**アプリ Id**のセクション、 **iOS Provisioning Portal**します。 新しいアプリ ID を作成するには、 [iOS プロビジョニング ポータルの Member Center](https://developer.apple.com/membercenter/index.action)に移動します**証明書、識別子、およびプロファイル**クリックして、ポータルのセクション**識別子**  *iOS アプリ*します。 新しいアプリ ID を生成する権利を上にある「+」をクリックし、
+新しいアプリケーションは、 **IOS プロビジョニングポータル**の **[アプリ id]** セクションで設定します。 新しいアプリ ID を作成するには、 [Ios プロビジョニングポータルのメンバーセンター](https://developer.apple.com/membercenter/index.action)に移動し、ポータルの [**証明書]、[識別子]、[プロファイル**] セクションに移動して、[ *Ios アプリ*] の **[識別子]** をクリックします。 次に、右上にある [+] をクリックして、新しいアプリ ID を生成します。
 
 
-新規作成フォーム**アプリ Id**
+新しい**アプリ id**を作成するためのフォーム
 
- 次に示します。
+ 次のようになります。
 
  [![](in-app-purchase-basics-and-configuration-images/image4.png "新しいアプリ Id を作成するためのフォーム")](in-app-purchase-basics-and-configuration-images/image4.png#lightbox)
 
-適切なものを入力、*説明*リスト内のこのアプリ ID を簡単に識別できるようにします。 *アプリ ID プレフィックス*のチーム ID を選択します。
+*説明*に適切なものを入力して、リスト内でこのアプリ ID を簡単に識別できるようにします。 [*アプリ Id プレフィックス*] で、チーム id を選択します。
 
-#### <a name="bundle-identifierapp-id-suffix-format"></a>バンドル識別子/アプリ ID のサフィックスの形式
+#### <a name="bundle-identifierapp-id-suffix-format"></a>バンドル識別子/アプリ ID サフィックス形式
 
-ような任意の文字列を使用することができます、**バンドル識別子**である限り、アカウント内で一意である)、逆引き DNS 形式ではなくする任意の文字列を使用して、Apple がお勧めしますが、します。 この記事に付属するサンプル アプリケーションは、(Apple では推奨していない) 場合でも、my_store_example のような識別子を使用するも同じく有効なりますが、バンドル Id の com.xamarin.storekit.testing を使用します。
+**バンドル識別子**には任意の文字列を使用できます (アカウント内で一意である必要があります)。ただし、Apple は、任意の文字列を使用するのではなく、逆引き DNS 形式に従うことをお勧めします。 この記事に付属するサンプルアプリケーションでは、バンドル識別子に対して my_store_example を使用しますが、(Apple では推奨されませんが) のような識別子を使用することもできます。
 
 > [!IMPORTANT]
-> Apple ことができますの末尾に追加するワイルドカードのアスタリスクを**バンドル識別子**1 つのアプリ ID をただし、複数のアプリケーションを使用できるように_AppPurchaseのワイルドカードアプリIdを使用することはできません_. ワイルド カード バンドル識別子が com.xamarin.* あります例
+> また、Apple では、1つのアプリ ID を複数のアプリケーションに使用できるように、ワイルドカードのアスタリスクを**バンドル識別子**の末尾に追加することもできます。ただし、_ワイルドカードアプリ Id を apppurchase に使用することはできません_。 たとえば、ワイルドカードバンドル識別子の例としては、「xamarin. *」などがあります。
 
-#### <a name="enabling-app-services"></a>App Services を有効にします。
+#### <a name="enabling-app-services"></a>App Services の有効化
 
-なお**アプリ内購入**サービスの一覧に自動的に有効にします。
+**アプリ内購入**は、サービスの一覧で自動的に有効になります。
 
- [![](in-app-purchase-basics-and-configuration-images/image5.png "サービスの一覧で、アプリ内購入を自動的に有効になります")](in-app-purchase-basics-and-configuration-images/image5.png#lightbox)
+ [![](in-app-purchase-basics-and-configuration-images/image5.png "アプリ内購入は、サービスの一覧で自動的に有効になります")](in-app-purchase-basics-and-configuration-images/image5.png#lightbox)
 
 #### <a name="provisioning-profiles"></a>プロビジョニング プロファイル
 
-アプリ内購入を設定したアプリ ID 選択は、通常とは、開発と実稼働プロビジョニング プロファイルを作成します。 参照してください、 [iOS デバイスのプロビジョニング](~/ios/get-started/installation/device-provisioning/index.md)と[App Store に公開](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)詳細情報をガイドします。
+開発と運用のプロビジョニングプロファイルを通常どおり作成します。アプリ内購入用に設定したアプリ ID を選択します。 詳細については、「 [IOS デバイスのプロビジョニング](~/ios/get-started/installation/device-provisioning/index.md)と[App Store への発行](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)」ガイドを参照してください。
 
 ## <a name="itunes-connect"></a>iTunes Connect
 
-をクリックして**マイ アプリ**で iTunes Connect iOS アプリケーションのエントリを作成または更新します。 アプリケーションの概要 ページを次に示します。
+[ITunes Connect の**マイアプリ**] をクリックして、iOS アプリケーションエントリを作成または編集します。 アプリケーションの [概要] ページを次に示します。
 
- [![](in-app-purchase-basics-and-configuration-images/image6.png "アプリケーションの概要 ページ")](in-app-purchase-basics-and-configuration-images/image6.png#lightbox)
+ [![](in-app-purchase-basics-and-configuration-images/image6.png "アプリケーションの [概要] ページ")](in-app-purchase-basics-and-configuration-images/image6.png#lightbox)
 
-クリックして**アプリ内購入**を作成または販売、製品を編集します。 このスクリーン ショットでは、既にいくつかの製品とサンプル アプリを示しています。
+**[アプリ内購入]** をクリックして、販売する製品を作成または編集します。 このスクリーンショットは、いくつかの製品が既に追加されているサンプルアプリを示しています。
 
- [![](in-app-purchase-basics-and-configuration-images/image7.png "既にいくつかの製品を使ってサンプル アプリ")](in-app-purchase-basics-and-configuration-images/image7.png#lightbox)
+ [![](in-app-purchase-basics-and-configuration-images/image7.png "いくつかの製品が既に追加されているサンプルアプリ")](in-app-purchase-basics-and-configuration-images/image7.png#lightbox)
 
-新しい製品を追加するプロセスでは、2 つの手順があります。
+新しい製品を追加するプロセスには、次の2つの手順があります。
 
-1.   製品の種類を選択します。[![](in-app-purchase-basics-and-configuration-images/image8.png "製品の種類を選択します。")](in-app-purchase-basics-and-configuration-images/image8.png#lightbox) 
-2.   製品の属性を製品 Id を含む、価格レベルとローカライズされた説明を入力します。[![](in-app-purchase-basics-and-configuration-images/image9.png "製品の属性を入力")](in-app-purchase-basics-and-configuration-images/image9.png#lightbox)
+1. 製品の種類を選択します。[![](in-app-purchase-basics-and-configuration-images/image8.png "製品の種類を選択する")](in-app-purchase-basics-and-configuration-images/image8.png#lightbox) 
+2. 製品 Id、価格レベル、およびローカライズされた説明を含む、製品の属性を入力します。[![](in-app-purchase-basics-and-configuration-images/image9.png "Products 属性の入力")](in-app-purchase-basics-and-configuration-images/image9.png#lightbox)
 
-各アプリ内購入製品に必要なフィールドを次に示します。
+アプリ内購入製品ごとに必要なフィールドを次に示します。
 
 
 ### <a name="reference-name"></a>参照名
 
-参照名は、ユーザーに表示されません。内部使用し、iTunes Connect でのみ表示されます。
+参照名はユーザーに表示されません。これは内部使用用であり、iTunes Connect でのみ表示されます。
 
 ### <a name="product-id-format"></a>製品 ID の形式
 
-製品識別子は、英数字 (A ~ Z、a ~ z、0-9) を含めることができますのみアンダー スコア (_)、およびピリオド (.) 文字。 任意の文字列は、識別子を使用できますが、Apple は、逆引き DNS 形式をお勧めします。 たとえば、サンプル アプリケーションは、このバンドル識別子を使用します。
+製品識別子に含めることができるのは、英数字 (A-z、a-z、0 ~ 9)、アンダースコア (_)、およびピリオド (.) のみです。 識別子には任意の文字列を使用できますが、Apple では逆引き DNS 形式を使用することをお勧めします。 たとえば、サンプルアプリケーションでは、次のバンドル識別子を使用します。
 
  `com.xamarin.storekit.testing`
 
-そのため、アプリ内購入製品を識別するために、規則であるよう。
+そのため、アプリ内購入製品を識別する規則は次のようになります。
 
 ```csharp
 com.xamarin.storekit.testing.consume5credits
@@ -134,67 +134,67 @@ com.xamarin.storekit.testing.sepia
 com.xamarin.storekit.testing.greyscale
 ```
 
-この名前付け規則は適用されませんが、製品の管理に役立つ推奨事項だけです。 さらに、同じの逆引き DNS の規則に従うに関係なく、製品の Id は*関連しない*バンドル識別子とは必要ありません、同じ文字列で開始します。 (Apple では推奨していない) 場合でも、photo_product_greyscale などの識別子を使用する有効なままできます。
+この名前付け規則は適用されません。単に製品の管理に役立つ推奨事項です。 さらに、同じ逆引き DNS 規則に従っても、製品識別子はバンドル識別子に*関連付け*られず、同じ文字列で始まる必要はありません。 ただし、photo_product_greyscale のような識別子を使用することもできます (Apple では推奨されません)。
 
-製品 ID は、ユーザーに表示されませんが、アプリケーション コードで製品を参照に使用されます。
+製品 ID はユーザーに表示されませんが、アプリケーションコードで製品を参照するために使用されます。
 
 ### <a name="product-type"></a>製品の種類
 
-アプリ内購入製品を提供することができますの 5 つの種類があります。
+アプリ内購入製品には、次の5種類が用意されています。
 
-1.  **消耗**– べき点が 'を '、使用、プレーヤーが費やすことができます、ゲーム内の通貨など。 ユーザーはバックアップ/復元、またはそれ以外の場合、デバイスが更新、使用できるトランザクションは取得は復元されませんも (となる効果的にプレーヤー何度も同じ特典)。 アプリケーション コードは、トランザクションが完了するとすぐに、'消耗品' を提供することを確認する必要があります。
-1.  **非コンシューマブル**– デジタル マガジンの問題やゲーム レベルなど、1 回購入製品 'ユーザー 'が所有します。
-1.  **自動更新可能なサブスクリプション**だけ雑誌の講読、現実世界のように、サブスクリプション期間の最後に Apple に自動的にもう一度顧客に請求し、サブスクリプション期間を明示的に状態のままか、顧客まで拡張これをキャンセルします。 Newsstand のアプリに支払い方法では (実際には、サポートする Newsstand 配布用に承認するには、この支払い方法)。
-1.  **無料サブスクリプション**– Newsstand 対応のアプリのみが提供することができ、すべてのデバイスにより、お客様はサブスクリプション コンテンツにアクセスします。 無料のサブスクリプションの有効期限はありません。
-1.  **サブスクリプションの非更新**– 写真アーカイブへの 1 か月のアクセスなどの静的コンテンツに時間制限アクセスを販売するために使用する必要があります。
+1. 使用可能–プレーヤーが使用できるゲーム内通貨など、"使用済み" です。 ユーザーがバックアップ/復元を実行した場合、またはその他の方法でデバイスを更新した場合は、使用できるトランザクションも復元されません (これにより、プレーヤーは実質的に同じ特典を再び有効にすることになります)。 アプリケーションコードでは、トランザクションが完了するとすぐに ' 使用可能な項目 ' を提供する必要があります。
+1. **非**利用-デジタル雑誌の問題やゲームレベルなど、ユーザーが購入した製品を所有している製品。
+1. **自動更新サブスクリプション**–実際の雑誌サブスクリプションと同様に、サブスクリプション期間の終了時に、Apple は顧客に自動的に料金を請求し、無期限に、または顧客が明示的にキャンセルするまでサブスクリプション期間を延長します。 これは、Newsstand アプリのお支払い方法として推奨されています (実際には、アプリはこの支払い方法をサポートして Newsstand 配布を承認する必要があります)。
+1. **無料サブスクリプション**: Newsstand 対応アプリでのみ提供でき、顧客はすべてのデバイスでサブスクリプションコンテンツにアクセスできます。 無料サブスクリプションは期限切れになりません。
+1. **非更新サブスクリプション**-1 か月の写真アーカイブへのアクセスなど、静的なコンテンツへの時間制限付きアクセスを販売するために使用する必要があります。
 
 
- *現在、このドキュメントには、(使用できると非コンシューマブル) のみ最初 2 つの製品タイプがについて説明します。*
+ *このドキュメントでは、現在、最初の2つの製品の種類 (利用できると非消費) のみについて説明します。*
 
  <a name="Price_Tiers" />
 
 ### <a name="price-tiers"></a>価格レベル
 
-App Store では、製品の任意の価格を選択することはできません-Apple から選択できる固定価格レベルを提供します。 価格は、通貨ごとに固定し、Apple は (たとえば、特定の通貨と米ドルの間の相対外国換算レートの持続的な変更) 後に相対の価格を調整する権利を留保します。
+アプリストアでは、製品に対して任意の価格を選択することはできません。 Apple には、選択できる固定価格レベルが用意されています。 価格は通貨ごとに固定されています。 Apple は、相対的な価格を調整する権利を留保します (たとえば、特定の通貨と米国ドルとの相対的な海外換算レートが変化した後など)。
 
-Apple では、する通貨/価格の適切なレベルを選択するための価格のマトリックスを提供します。 価格のマトリックス (2012 年 8 月) の抜粋を次に示します。
+Apple では、希望する通貨/価格に適したレベルを選択するための価格マトリックスが提供されています。 価格マトリックス (2012 年8月) の抜粋を次に示します。
 
- [![](in-app-purchase-basics-and-configuration-images/image10.png "2012 年 8 月の価格のマトリックスの抜粋")](in-app-purchase-basics-and-configuration-images/image10.png#lightbox)
+ [![](in-app-purchase-basics-and-configuration-images/image10.png "2012年8月の価格マトリックスの抜粋")](in-app-purchase-basics-and-configuration-images/image10.png#lightbox)
 
-(2013 年 6 月) の書き込み時に、米国ドルから 87 階層 USD 999.99 0.99 です。 価格のマトリックスには、価格が表示されます、お客様がお支払いとも Apple – から届きます量これは、以下の 30% の料金でありことも、現地の税金 (例では米国とカナダの販売者が 99 c p の 70 c を受信する通知を収集するために必要製品、オーストラリアの販売者により 63 c のみを受信中に '商品&amp;サービス税' 販売価格を徴収)。
+書き込み時点 (2013 年6月) では、87のレベルは0.99 から USD 999.99 になります。 価格マトリックスには、お客様が支払う料金、および Apple から受け取る金額が示されています。これは 30% の料金と、収集する必要がある現地の税金です (米国およびカナダ販売者が 99 c p の場合は70c を受け取る例をご覧ください)。roduct。オーストラリアの販売者は、売上価格で徴収さ&amp;れる "商品サービス税" によって63c のみを受け取ります。
 
-製品の価格は、将来の日付で有効にするためのスケジュールされた料金の変更を含め、いつでも更新できます。 このスクリーン ショットは、将来の付の価格の変更を追加する方法を示しています: 価格が一時的に変更する階層 1 から階層 3 に 9 月のみを示します。
+製品の価格は、将来の日付に適用されるスケジュールされた価格変更を含め、いつでも更新できます。 このスクリーンショットは、将来の価格の変更がどのように追加されるかを示しています。価格は、9月の月について、階層1から階層3に一時的に変更されています。
 
- [![](in-app-purchase-basics-and-configuration-images/image11.png "場所、価格一時的に変更する階層 1 から階層 3 に 9 月のみの将来の付価格変更")](in-app-purchase-basics-and-configuration-images/image11.png#lightbox)
+ [![](in-app-purchase-basics-and-configuration-images/image11.png "価格は、9月の月について、階層1から階層3に一時的に変更されている将来の価格変更です。")](in-app-purchase-basics-and-configuration-images/image11.png#lightbox)
 
-### <a name="free-products-not-supported"></a>無料の製品がサポートされていません
+### <a name="free-products-not-supported"></a>サポートされていない無料製品
 
-Apple には、Newsstand アプリ用の特別な無料のサブスクリプション オプションが用意されていますが、他の種類のアプリ内購入のゼロ (無料) 価格を設定することはできません。 編集することができます (つまり。 下位) 販売プロモーションの価格は、iTunes Connect を使用して"無償版"アプリ内購入を行うことはできません。
+Apple は Newsstand アプリ向けに特別な無料サブスクリプションオプションを提供していますが、他のアプリ内購入の種類に対してゼロ (無料) 価格を設定することはできません。 販売促進の価格を編集することはできますが、iTunes Connect を使用してアプリ内購入を行うことはできません。
 
 ### <a name="localization"></a>ローカリゼーション
 
-ITunes Connect では、任意の数のサポートされている言語の別の名前と説明テキストを入力できます。 各言語は、追加/編集で、ポップアップを使用して指定できます。
+ITunes Connect では、サポートされている任意の数の言語に対して、異なる名前と説明のテキストを入力できます。 ポップアップを使用して、各言語をで追加または編集できます。
 
- [![](in-app-purchase-basics-and-configuration-images/image12.png "各言語を追加/編集できますでポップアップを使用して")](in-app-purchase-basics-and-configuration-images/image12.png#lightbox)   
+ [![](in-app-purchase-basics-and-configuration-images/image12.png "ポップアップを使用して、各言語をで追加または編集できます。")](in-app-purchase-basics-and-configuration-images/image12.png#lightbox)   
    
    
    
- アプリで製品情報を表示する場合は、StoreKit を使用して表示するためのローカライズされたテキストがあります。 通貨の表示は、この書式設定は、ドキュメントの後半で説明、正しいシンボルと – 10 進数の書式設定を表示するもローカライズする必要があります。
+ アプリに製品情報を表示すると、ローカライズされたテキストを StoreKit を使用して表示できるようになります。 通貨表示は、正しい記号と10進数の書式を表示するようにローカライズする必要もあります。この書式設定については、ドキュメントの後半で説明します。
 
 ### <a name="app-store-review"></a>App Store のレビュー
 
-アプリと同じ各製品をレビューする Apple によって販売上を移動する許可。 名前または説明、不適切なコンテンツの製品を拒否する可能性があります。 または Apple が正しくない製品の種類を (例: 選択した場合があります。 した書籍や雑誌の問題の作成が消耗製品の種類を使用)。 製品のレビューには、アプリのレビュー程度かかることができます。
+アプリと同じ–各製品は、販売が開始される前に、Apple によってレビューされます。 製品名または説明に不適切な内容が含まれていると、製品が拒否されることがあります。または、Apple が間違った製品の種類を選択したと判断する可能性があります (例: 本または雑誌の問題が作成されましたが、使用できる製品の種類が使用されています)。 製品レビューは、アプリのレビュー期間中に限り得ることができます。
 
-初めてのアプリ内購入 (新しいアプリ、または既存のサブスクリプションへの機能が追加されました) かどうかを有効になっていると、アプリが送信される一部の製品を送信するも選択する必要があります。 ITunes Connect ポータルには、このスクリーン ショットに示すように、これを行うを求められます。
+アプリの購入が有効になっているアプリが初めて送信されたとき (新しいアプリであるか、既存のアプリに機能が追加されているかにかかわらず)、送信する一部の製品も選択する必要があります。 ITunes Connect ポータルでは、次のスクリーンショットに示すように、これを行うように求められます。
 
- [![](in-app-purchase-basics-and-configuration-images/image13.png "ITunes Connect ポータルには、一部の製品もを送信するように求められます")](in-app-purchase-basics-and-configuration-images/image13.png#lightbox)   
+ [![](in-app-purchase-basics-and-configuration-images/image13.png "ITunes Connect ポータルでも、一部の製品を送信するように求められます。")](in-app-purchase-basics-and-configuration-images/image13.png#lightbox)   
    
    
    
- アプリケーションとアプリ内購入いただきます、(したがって、そのアプリに移動しないストア承認済み製品なしに!) を一度に承認すべてようにします。
+ アプリケーションとアプリ内購入は一緒にレビューされるので、すべてが一度に承認されるようになります (アプリが承認された製品を使用せずにストアに移動することはありません)。
 
-アプリ内購入機能により、最初のバージョンが承認されると、さらに製品を追加し、それらをいつでも確認用に送信できます。 選択することできますも、特定のアプリ内購入製品と、新しいバージョンを送信するを使用して、**バージョン詳細**が示すように、プロンプトのページします。
+アプリ内購入機能を使用した最初のバージョンが承認されたら、さらに製品を追加して、いつでもレビュー用に送信することができます。 また、プロンプトに示されているように、 **[バージョンの詳細]** ページを使用して、特定のアプリ内購入製品と共に新しいバージョンを送信することもできます。
 
-参照してください、 [App Store レビューに関するガイドライン](https://developer.apple.com/appstore/guidelines.html)詳細についてはします。
+詳細については、 [App Store のレビューに関するガイドライン](https://developer.apple.com/appstore/guidelines.html)を参照してください。
 
- [パート 2 - ストア キットの概要と製品情報の取得](~/ios/platform/in-app-purchasing/store-kit-overview-and-retreiving-product-information.md)
+ [パート 2-ストアキットの概要と製品情報の取得](~/ios/platform/in-app-purchasing/store-kit-overview-and-retreiving-product-information.md)

@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: 5d2fec537f10ad3ef5300275c9851d4f57bc961d
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 4d9bf7b7a43c7c258bc60e9dfea1626e5c304b03
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645165"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522871"
 ---
 # <a name="adding-a-second-toolbar"></a>2 番目のツール バーの追加
 
@@ -86,13 +86,13 @@ android:background="?android:attr/colorAccent
 
 メニュー項目をセカンダリ`Toolbar`に追加するには: 
 
-1.  アプリプロジェクトの`mipmap-`フォルダーにメニューアイコンを追加します (必要な場合)。
+1. アプリプロジェクトの`mipmap-`フォルダーにメニューアイコンを追加します (必要な場合)。
 
-2.  メニュー項目の内容を定義するには、追加のメニューリソースファイルを [**リソース] メニュー**に追加します。 
+2. メニュー項目の内容を定義するには、追加のメニューリソースファイルを [**リソース] メニュー**に追加します。 
 
-3.  アクティビティの`OnCreate`メソッドで、 `Toolbar` (を`Toolbar`呼び出し`FindViewById`て) を検索し、のメニューを拡大します。
+3. アクティビティの`OnCreate`メソッドで、 `Toolbar` (を`Toolbar`呼び出し`FindViewById`て) を検索し、のメニューを拡大します。
 
-4.  新しいメニュー項目に対し`OnCreate`て、のクリックハンドラーを実装します。 
+4. 新しいメニュー項目に対し`OnCreate`て、のクリックハンドラーを実装します。 
 
 以下のセクションでは、このプロセスの詳細について説明します。**切り取り**、**コピー**、**貼り付け**の各メニュー項目が下部`Toolbar`に追加されます。 
 
@@ -140,7 +140,7 @@ editToolbar.MenuItemClick += (sender, e) => {
 };
 ```
 
-この`edit_toolbar`コードは、**増えで定義**されているビューを検索し、そのタイトルを**編集用**に設定して、そのメニュー項目 ( **edit_menus**で定義) をします。 これは、タップされた編集アイコンを示すトーストを表示するメニュークリックハンドラーを定義します。 
+このコードは`edit_toolbar` 、増えで定義されているビューを検索し、そのタイトルを**編集用**に設定して、そのメニュー項目 ( **edit_menus**で定義) をします。 これは、タップされた編集アイコンを示すトーストを表示するメニュークリックハンドラーを定義します。 
 
 アプリケーションをビルドし、実行します。 アプリを実行すると、上に追加されたテキストとアイコンが次のように表示されます。 
 
@@ -183,7 +183,7 @@ SupportActionBar.SetHomeButtonEnabled (true);
 
 [![ツールバーの上のボタンの左矢印のスクリーンショットの例](adding-a-second-toolbar-images/05-up-button-sml.png)](adding-a-second-toolbar-images/05-up-button.png#lightbox)
 
-**このボタン**をタップすると、アプリはに`MainActivity`戻ります。 複数レベルの階層を持つより複雑なアプリでは、このボタンをタップすると、ユーザーが前の画面ではなく、アプリの次の最上位レベルに戻ります。 
+このボタンをタップすると、アプリはに`MainActivity`戻ります。 複数レベルの階層を持つより複雑なアプリでは、このボタンをタップすると、ユーザーが前の画面ではなく、アプリの次の最上位レベルに戻ります。 
 
 
 

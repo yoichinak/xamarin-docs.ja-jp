@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: bed8180c513eefd5765be767a5dca7cecefa6101
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 70555a0e2df3bcdd9c3abe47cf8231145891a826
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865962"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528408"
 ---
 # <a name="working-with-watchos-localization-in-xamarin"></a>WatchOS で Xamarin のローカライズの操作
 
@@ -56,7 +56,7 @@ Watch アプリの設計を考慮してテキストの長さが異なるとス�
 
 1. 作成**Base.lproj**ディレクトリと移動、 **Interface.storyboard**にします。
 
-2. 作成 **<language>.lproj**をサポートする各言語用のディレクトリ。
+2. サポートする言語ごとに、  **\<言語 >** を作成します。
 
 3. **.Lproj**ディレクトリを含める必要があります、 **Interface.strings** (ファイル名は storboard の名前を一致する必要があります)、テキスト ファイル。 必要に応じて、これらのディレクトリでのローカライズを必要とするすべてのイメージを配置できます。
 
@@ -125,7 +125,7 @@ displayText.SetText (localizedDisplay);
 
 コードによって設定されたイメージは、2 つの方法で設定できます。
 
-1. 変更することができます、`Image`その値に設定して、イメージの文字列名を既にコントロールが次のような Watch アプリに存在します
+1. `Image`コントロールを変更するには、その値を Watch アプリに既に存在するイメージの文字列名に設定します。たとえば、
 
     ```csharp
     displayImage.SetImage("gradient"); // image in Watch App (as shown above)
@@ -139,7 +139,7 @@ displayText.SetText (localizedDisplay);
     }
     ```
 
-    指定する必要はありませんが、 **@2x** イメージのファイル名を参照する場合。
+    イメージのファイル名を参照するときは **@2x** 、を指定する必要はありません。
 
 2 番目のメソッドも watch; で表示するためにリモート サーバーからイメージをダウンロードする場合は、適用できます。ただしここで行う必要があります、ユーザーの設定に従い、イメージをダウンロードすることが正しくローカライズされています。
 

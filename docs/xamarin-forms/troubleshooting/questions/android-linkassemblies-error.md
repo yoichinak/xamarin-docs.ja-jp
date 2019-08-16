@@ -1,5 +1,5 @@
 ---
-title: Android のビルド エラー – The LinkAssemblies タスクが予期せず失敗しました
+title: 'Android ビルドエラー: LinkAssemblies タスクが予期せず失敗しました'
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: EB3BE685-CB72-48E3-89D7-C845E76B9FA2
@@ -7,33 +7,33 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/07/2019
-ms.openlocfilehash: f517aaa770fa7b2f1463954638f0afc95168bf65
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 71305dd7287df56036d0298ebfcf8a8cb7c4d3b3
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61250743"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528370"
 ---
-# <a name="android-build-error--the-linkassemblies-task-failed-unexpectedly"></a>Android のビルド エラー – The LinkAssemblies タスクが予期せず失敗しました
+# <a name="android-build-error--the-linkassemblies-task-failed-unexpectedly"></a>Android ビルドエラー: LinkAssemblies タスクが予期せず失敗しました
 
-エラー メッセージが表示することがあります`The "LinkAssemblies" task failed unexpectedly`Xamarin.Android プロジェクトのビルドがフォームを使用している場合。 リンカーは、アクティブな場合 (通常で、*リリース*アプリ パッケージのサイズを小さくビルド); Android ターゲットが最新のフレームワークに更新されないために発生するとします。 (詳細については。[Android の要件の Xamarin.Forms](~/get-started/requirements.md#android))
+フォームを使用する Xamarin Android `The "LinkAssemblies" task failed unexpectedly`プロジェクトをビルドすると、エラーメッセージが表示される場合があります。 これは、リンカーがアクティブなときに発生します (通常は*リリース*ビルドで、アプリケーションパッケージのサイズを小さくします)。また、Android ターゲットが最新のフレームワークに更新されないために発生します。 (詳細情報:[Android 用の Xamarin 形式の要件](~/get-started/requirements.md#android))
 
-この問題を解決最新サポート対象の Android SDK バージョンがあり、設定するかどうかを確認するには、**ターゲット フレームワーク**にインストールされている最新のプラットフォームにします。 またに設定することをお勧め、**ターゲット Android バージョン**最新インストールされているプラットフォームに、および**最小 Android バージョン**API 19 以上。 これは、サポートされる構成と見なされます。
+この問題を解決するには、サポートされている最新の Android SDK バージョンがあることを確認し、インストールされている最新のプラットフォームに**ターゲットフレームワーク**を設定します。 また、**ターゲットの Android バージョン**を、インストールされている最新のプラットフォームに、 **android の最小バージョン**を API 19 以降に設定することもお勧めします。 これは、サポートされる構成と見なされます。
 
-## <a name="setting-in-visual-studio-for-mac"></a>Visual Studio for Mac 設定
+## <a name="setting-in-visual-studio-for-mac"></a>Visual Studio for Mac での設定
 
-1.  Android のプロジェクトを右クリックし、選択**オプション**メニュー。
-2.  **プロジェクト オプション**ダイアログ ボックスに移動して**ビルド > 全般**します。
-3.  設定、 **Android バージョンを使用してコンパイルします。(ターゲット フレームワーク)** にインストールされている最新のプラットフォームにします。
-4.  **プロジェクト オプション**ダイアログ ボックスに移動して**ビルド > Android アプリケーション**します。
-5.  設定、 **Minimum Android version** API レベル 19 以上に、 **Target Android version** (3) で選択した最新インストールされているプラットフォームにします。
+1. Android プロジェクトを右クリックし、メニューの **[オプション]** を選択します。
+2. **[プロジェクトオプション]** ダイアログで、 **[ビルド > 全般**] にアクセスします。
+3. Android バージョンを使用してコンパイルを設定します。 **(ターゲットフレームワーク)** インストールされている最新のプラットフォームに。
+4. **[プロジェクトオプション]** ダイアログで、 **[ビルド > Android アプリケーション]** にアクセスします。
+5. Android の**最小バージョン**を API レベル19以上に設定し、**ターゲットの android バージョン**を、(3) で選択した最新のインストール済みプラットフォームに設定します。
 
-## <a name="setting-in-visual-studio"></a>Visual Studio での設定
+## <a name="setting-in-visual-studio"></a>設定 (Visual Studio での)
 
-1.  Android のプロジェクトを右クリックし、選択**プロパティ**メニュー。
-2.  プロジェクトのプロパティに移動**アプリケーション**します。
-3.  設定、 **Android バージョンを使用してコンパイルします。(ターゲット フレームワーク)** にインストールされている最新のプラットフォームにします。
-4.  プロジェクトのプロパティに移動**Android マニフェスト**します。
-5.  設定、 **Minimum Android version** API レベル 19 以上に、 **Target Android version** (3) で選択した最新インストールされているプラットフォームにします。
+1. Android プロジェクトを右クリックし、メニューの **[プロパティ]** を選択します。
+2. プロジェクトのプロパティで、 **[アプリケーション]** にアクセスします。
+3. Android バージョンを使用してコンパイルを設定します。 **(ターゲットフレームワーク)** インストールされている最新のプラットフォームに。
+4. プロジェクトのプロパティで、 **[Android マニフェスト]** にアクセスします。
+5. Android の**最小バージョン**を API レベル19以上に設定し、**ターゲットの android バージョン**を、(3) で選択した最新のインストール済みプラットフォームに設定します。
 
-これらの設定を更新した後は、クリーンアップ、変更内容が取り出されることを確認するようにプロジェクトを再構築してください。
+これらの設定を更新したら、プロジェクトをクリーンにしてリビルドし、変更が確実に取得されるようにしてください。

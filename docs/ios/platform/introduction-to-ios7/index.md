@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 067d97e6a36dae6c11f056241c08c21899e96c08
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 885cf4b77d4eac0668a2e70c57187e9b23a91dd1
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68649329"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527571"
 ---
 # <a name="introduction-to-ios-7"></a>iOS 7 の概要
 
@@ -28,8 +28,8 @@ iOS 7 では、UIKit でのアニメーションのサポートが強化され�
 
  `UIView`では、スプリング効果を使用してプロパティの変更をアニメーション化できるようになりました。 これを追加するには、 `AnimateNotify`次`AnimateNotifyAsync`に示すように、メソッドまたはメソッドのいずれかを呼び出して、spring の減衰率と最初の spring ベロシティの値を渡します。
 
--  `springWithDampingRatio`–0から1までの値。振幅の値は、小さい値になります。
--  `initialSpringVelocity`–1秒あたりのアニメーション距離の合計に対する割合で示す、最初の spring velocity。
+- `springWithDampingRatio`–0から1までの値。振幅の値は、小さい値になります。
+- `initialSpringVelocity`–1秒あたりのアニメーション距離の合計に対する割合で示す、最初の spring velocity。
 
 
 次のコードでは、イメージビューの中心が変化したときに spring effect が生成されます。
@@ -97,19 +97,19 @@ API は本質的に宣言されています。 オブジェクトと呼ばれる
 
 複雑な相互作用をトリガーするには、次のようなさまざまなプリミティブ動作があります。
 
--  `UIAttachmentBehavior`–2つの動的項目が一緒に移動するように、または動的な項目を添付ファイルポイントにアタッチするようにアタッチします。
--  `UICollisionBehavior`–動的な項目が競合に参加できるようにします。
--  `UIDynamicItemBehavior`–弾力性、密度、摩擦など、動的な項目に適用するプロパティの一般的なセットを指定します。
--  `UIGravityBehavior`-動的な項目に重力を適用し、gravitational 方向に項目を加速させます。
--  `UIPushBehavior`–動的な項目に強制的に適用されます。
--  `UISnapBehavior`–動的な項目を spring 効果を持つ位置にスナップできるようにします。
+- `UIAttachmentBehavior`–2つの動的項目が一緒に移動するように、または動的な項目を添付ファイルポイントにアタッチするようにアタッチします。
+- `UICollisionBehavior`–動的な項目が競合に参加できるようにします。
+- `UIDynamicItemBehavior`–弾力性、密度、摩擦など、動的な項目に適用するプロパティの一般的なセットを指定します。
+- `UIGravityBehavior`-動的な項目に重力を適用し、gravitational 方向に項目を加速させます。
+- `UIPushBehavior`–動的な項目に強制的に適用されます。
+- `UISnapBehavior`–動的な項目を spring 効果を持つ位置にスナップできるようにします。
 
 
 多くのプリミティブがありますが、UIKit Dynamics を使用して、ビューに物理的に基づく相互作用を追加する一般的なプロセスは、動作間で一貫しています。
 
-1.  動的なアニメーターを作成します。
-1.  動作を作成します。
-1.  動的なアニメーターにビヘイビアーを追加します。
+1. 動的なアニメーターを作成します。
+1. 動作を作成します。
+1. 動的なアニメーターにビヘイビアーを追加します。
 
 
 ### <a name="dynamics-example"></a>Dynamics の例
@@ -230,9 +230,9 @@ var dynBehavior = new UIDynamicItemBehavior (dynItems) {
 
 iOS 7 は、バックグラウンド処理を実行するタイミングと方法を変更します。 タスクがバックグラウンドで実行されている場合、iOS 7 のタスクの完了によってアプリケーションが起動されなくなり、バックグラウンド処理のためにアプリケーションが連続しない方法でウェイクアップされます。 iOS 7 では、バックグラウンドで新しいコンテンツを使用してアプリケーションを更新するために、次の3つの新しい Api も追加されています。
 
--  [バックグラウンドフェッチ] –アプリケーションで、一定の間隔でコンテンツをバックグラウンドで更新できるようにします。
--  リモート通知-アプリケーションがプッシュ通知を受信したときにコンテンツを更新できるようにします。 通知はサイレントにするか、ロック画面にバナーを表示できます。
--  バックグラウンド転送サービス–サイズの大きなファイルなど、一定の時間制限なしでデータをアップロードおよびダウンロードできます。
+- [バックグラウンドフェッチ] –アプリケーションで、一定の間隔でコンテンツをバックグラウンドで更新できるようにします。
+- リモート通知-アプリケーションがプッシュ通知を受信したときにコンテンツを更新できるようにします。 通知はサイレントにするか、ロック画面にバナーを表示できます。
+- バックグラウンド転送サービス–サイズの大きなファイルなど、一定の時間制限なしでデータをアップロードおよびダウンロードできます。
 
 
 新しいマルチタスキング機能の詳細については、Xamarin[バックグラウンド処理 guide](~/ios/app-fundamentals/backgrounding/index.md)の iOS のセクションを参照してください。

@@ -7,12 +7,12 @@ ms.assetid: F4A37564-B18B-42FF-B841-9A1949895AB6
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/27/2018
-ms.openlocfilehash: 2417d6400faf80ad9b3b24a032046e7e867814f5
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 0ce718bf0380c47033129755d6ca9d40c1136e2c
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655484"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529271"
 ---
 # <a name="part-3-xaml-markup-extensions"></a>第 3 部です。 XAML マークアップ拡張機能
 
@@ -441,9 +441,9 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 
 いくつかのマークアップ拡張機能では、XAML に固有し、Xamarin.Forms XAML ファイルでサポートされています。 これらのいくつか非常に多くの場合は使用されませんが、必要なときに不可欠です。
 
--  プロパティがあるない場合`null`が既定値に設定する`null`に設定、`{x:Null}`マークアップ拡張機能。
--  プロパティが型の場合`Type`に割り当てることができます、`Type`オブジェクト マークアップ拡張機能を使用して`{x:Type someClass}`します。
--  XAML を使用して配列を定義することができます、`x:Array`マークアップ拡張機能。 このマークアップ拡張機能がという名前の必須属性`Type`配列内の要素の型を示します。
+- プロパティがあるない場合`null`が既定値に設定する`null`に設定、`{x:Null}`マークアップ拡張機能。
+- プロパティが型の場合`Type`に割り当てることができます、`Type`オブジェクト マークアップ拡張機能を使用して`{x:Type someClass}`します。
+- XAML を使用して配列を定義することができます、`x:Array`マークアップ拡張機能。 このマークアップ拡張機能がという名前の必須属性`Type`配列内の要素の型を示します。
 - `Binding`マークアップ拡張機能は、後ほど[パート 4 です。データ バインディングの基礎](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)します。
 
 ## <a name="the-constraintexpression-markup-extension"></a>ConstraintExpression マークアップ拡張機能

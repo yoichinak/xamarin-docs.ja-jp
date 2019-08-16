@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/13/2019
-ms.openlocfilehash: 51555382e38412b7fa2c5c821b252984758bb1ec
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: e818495d45435546f9d2fc9c5593d9c7caa608ea
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656963"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528874"
 ---
 # <a name="xamarinforms-map"></a>Xamarin.Forms のマップ
 
@@ -56,9 +56,9 @@ Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
 
 この呼び出しは、プラットフォームごとに、次のファイルに追加します。
 
--  **iOS** -AppDelegate.cs ファイルで、`FinishedLaunching`メソッド。
--  **Android** -MainActivity.cs ファイルで、`OnCreate`メソッド。
--  **UWP** -MainPage.xaml.cs ファイルで、`MainPage`コンストラクター。
+- **iOS** -AppDelegate.cs ファイルで、`FinishedLaunching`メソッド。
+- **Android** -MainActivity.cs ファイルで、`OnCreate`メソッド。
+- **UWP** -MainPage.xaml.cs ファイルで、`MainPage`コンストラクター。
 
 NuGet パッケージが追加され、各アプリケーション内部で初期化メソッドが呼び出される`Xamarin.Forms.Maps`と、共通の .NET Standard ライブラリプロジェクトまたは共有プロジェクトコードで api を使用できるようになります。
 
@@ -178,16 +178,16 @@ map.MapType == MapType.Street;
 
 有効な`MapType`値は。
 
--  ハイブリッド
--  サテライト
--  番地 (既定値)
+- ハイブリッド
+- サテライト
+- 番地 (既定値)
 
 ### <a name="map-region-and-mapspan"></a>マップ領域と MapSpan
 
 上記のコード スニペットに示すように指定して、`MapSpan`インスタンス マップ コンストラクターに初期ビューの設定 (ポイントを中心し、ズーム レベル) が読み込まれるときに、マップの。 `MoveToRegion`マップ クラスのメソッドは、マップの位置やズーム レベルを変更し使用できます。 新たに作成する 2 つの方法がある`MapSpan`インスタンス。
 
--  **MapSpan.FromCenterAndRadius()** -からのスパンを作成する静的メソッド、`Position`を指定して、`Distance`します。
--  **新しい MapSpan ()** -コンストラクターを使用する、`Position`と緯度と経度を表示する角度。
+- **MapSpan.FromCenterAndRadius()** -からのスパンを作成する静的メソッド、`Position`を指定して、`Distance`します。
+- **新しい MapSpan ()** -コンストラクターを使用する、`Position`と緯度と経度を表示する角度。
 
 
 場所を変更することがなく、マップのズーム レベルを変更するには、新しい作成`MapSpan`から現在の場所を使用して、`VisibleRegion.Center`マップ コントロールのプロパティ。 A `Slider` (ただし、マップ コントロールに直接ズーム スライダーの値を更新できません現在) は、このようなマップのズームを制御するされる可能性があります。
@@ -220,10 +220,10 @@ map.Pins.Add(pin);
 
 `PinType`は、次のいずれかの値に設定できます。これは、プラットフォームによっては、pin のレンダリング方法に影響を与える可能性があります。
 
--  ジェネリック
--  場所
--  SavedPin
--  SearchResult
+- ジェネリック
+- 場所
+- SavedPin
+- SearchResult
 
 ### <a name="map-clicks"></a>マップのクリック
 

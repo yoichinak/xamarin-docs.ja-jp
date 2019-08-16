@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: efb55b060243950640978ae2cfc3fe6998efdb87
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 3e68ac0a39d3268ce7c84f583c64b247e9f82362
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643469"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524188"
 ---
 # <a name="kitkat-features"></a>KitKat の機能
 
@@ -22,13 +22,13 @@ _Android 4.4 (KitKat) には、ユーザーと開発者向けの生涯の機能�
 
 Android 4.4 (API レベル 19) ("KitKat" とも呼ばれます) は、2013の遅延でリリースされました。 KitKat には、次のようなさまざまな新機能と機能強化が用意されています。
 
--  [ユーザーエクスペリエンス](#user_experience)&ndash;移行フレームワーク、半透明のステータスとナビゲーションバー、全画面のイマーシブモードで簡単なアニメーションを使用すると、ユーザーのエクスペリエンスを向上させることができます。
+- [ユーザーエクスペリエンス](#user_experience)&ndash;移行フレームワーク、半透明のステータスとナビゲーションバー、全画面のイマーシブモードで簡単なアニメーションを使用すると、ユーザーのエクスペリエンスを向上させることができます。
 
--  [ユーザーのコンテンツ](#user_content)&ndash;ストレージアクセスフレームワークを使用したユーザーファイルの管理の簡素化。印刷 api の向上により、画像、web サイト、その他のコンテンツの印刷が簡単になりました。
+- [ユーザーのコンテンツ](#user_content)&ndash;ストレージアクセスフレームワークを使用したユーザーファイルの管理の簡素化。印刷 api の向上により、画像、web サイト、その他のコンテンツの印刷が簡単になりました。
 
--  [ハードウェア](#hardware)Nfc ホストベースのカードエミュレーションを使用してアプリを nfc カードに変換し、 `SensorManager`で低電力センサーを実行します。 &ndash;
+- [ハードウェア](#hardware)Nfc ホストベースのカードエミュレーションを使用してアプリを nfc カードに変換し、 `SensorManager`で低電力センサーを実行します。 &ndash;
 
--  [開発者ツール](#developer_tools)&ndash; Android Debug Bridge クライアントで動作中のアプリケーションを、Android SDK の一部として使用できるようにします。
+- [開発者ツール](#developer_tools)&ndash; Android Debug Bridge クライアントで動作中のアプリケーションを、Android SDK の一部として使用できるようにします。
 
 
 このガイドでは、既存の Xamarin Android アプリケーションを KitKat に移行するためのガイダンスと、Xamarin Android 開発者向けの KitKat の概要について説明します。
@@ -79,11 +79,11 @@ KitKat では、正確な繰り返しアラームを設定できなくなりま�
 
 外部ストレージは、アプリケーションに固有のストレージと複数のアプリケーションによって共有されるデータの2種類に分類されるようになりました。 外部ストレージ上のアプリ固有の場所に対する読み取りと書き込みには、特別なアクセス許可は必要ありません。 共有ストレージ上のデータと対話するに`READ_EXTERNAL_STORAGE`は`WRITE_EXTERNAL_STORAGE` 、またはのアクセス許可が必要です。 この2種類は、次のように分類できます。
 
--  で`Context`メソッドを呼び出すことによってファイルまたはディレクトリのパスを取得している場合は、次のようになります。[`GetExternalFilesDir`](xref:Android.Content.Context.GetExternalFilesDir*)
+- で`Context`メソッドを呼び出すことによってファイルまたはディレクトリのパスを取得している場合は、次のようになります。[`GetExternalFilesDir`](xref:Android.Content.Context.GetExternalFilesDir*)
    もしくは[`GetExternalCacheDirs`](xref:Android.Content.Context.GetExternalCacheDirs)
    - アプリには追加のアクセス許可は必要ありません。
 
--  プロパティにアクセスするか、で`Environment`メソッドを呼び出すことによって、ファイルまたはディレクトリのパスを取得している場合は。[`GetExternalStorageDirectory`](xref:Android.OS.Environment.ExternalStorageDirectory)
+- プロパティにアクセスするか、で`Environment`メソッドを呼び出すことによって、ファイルまたはディレクトリのパスを取得している場合は。[`GetExternalStorageDirectory`](xref:Android.OS.Environment.ExternalStorageDirectory)
    もしくは[`GetExternalStoragePublicDirectory`](xref:Android.OS.Environment.GetExternalStoragePublicDirectory*)
    アプリには、また`READ_EXTERNAL_STORAGE`は`WRITE_EXTERNAL_STORAGE`のアクセス許可が必要です。
 
@@ -284,11 +284,11 @@ TransitionManager.Go (scene1, transition);
 
 KitKat を使用すると、オプションの半透明状態とナビゲーションバーを使用して、アプリのテーマをより細かく制御できます。 Android テーマを定義するために使用するのと同じ XML ファイル内のシステム UI 要素の透明度を変更できます。 KitKat には、次のプロパティが導入されています。
 
--  `windowTranslucentStatus`-True に設定すると、最上位のステータスバーが半透明になります。
+- `windowTranslucentStatus`-True に設定すると、最上位のステータスバーが半透明になります。
 
--  `windowTranslucentNavigation`-True に設定すると、下部のナビゲーションバーが半透明になります。
+- `windowTranslucentNavigation`-True に設定すると、下部のナビゲーションバーが半透明になります。
 
--  `fitsSystemWindows`-上または下のバーを transcluent に設定すると、既定で透過的 UI 要素の下にコンテンツがシフトされます。 このプロパティをに`true`設定することは、コンテンツが半透明のシステム UI 要素と重複しないようにするための簡単な方法です。
+- `fitsSystemWindows`-上または下のバーを transcluent に設定すると、既定で透過的 UI 要素の下にコンテンツがシフトされます。 このプロパティをに`true`設定することは、コンテンツが半透明のシステム UI 要素と重複しないようにするための簡単な方法です。
 
 
 次のコードは、半透明のステータスとナビゲーションバーを持つテーマを定義します。
@@ -537,9 +537,9 @@ Hce では、hce 機能と`Nfc`アクセス許可の両方をアプリケーシ�
 
 作業するには、HCE をバックグラウンドで実行する必要があります。また、HCE を使用しているアプリケーションが実行されていない場合でも、ユーザーが NFC トランザクションを作成したときに開始する必要があります。 これを実現するには、 `Service`hce コードをとして記述します。 Hce サービスは、次`HostApduService`のメソッドを実装するインターフェイスを実装しています。
 
--  *Processcommandapdu* -アプリケーションプロトコルデータユニット (APDU) は、NFC リーダーと Hce サービスの間で送信されます。 このメソッドは、リーダーから ADPU を使用し、応答でデータ単位を返します。
+- *Processcommandapdu* -アプリケーションプロトコルデータユニット (APDU) は、NFC リーダーと Hce サービスの間で送信されます。 このメソッドは、リーダーから ADPU を使用し、応答でデータ単位を返します。
 
--  *Ondeactivated アクティブ*化`HostAdpuService` -hce サービスが NFC リーダーと通信しなくなったときに、が非アクティブになります。
+- *Ondeactivated アクティブ*化`HostAdpuService` -hce サービスが NFC リーダーと通信しなくなったときに、が非アクティブになります。
 
 
 HCE サービスもアプリケーションのマニフェストに登録する必要があり、適切なアクセス許可、インテントフィルター、およびメタデータで修飾する必要があります。 属性を使用して Android マニフェストに`HostApduService`登録されているのコード例を次に示します (属性の詳細については、「Xamarin [Working with android manifest](~/android/platform/android-manifest.md) guide」を参照してください)。 `Service`
@@ -591,9 +591,9 @@ KitKat は、を[`SensorManager`](xref:Android.Hardware.SensorManager)介して�
 
 また、KitKat には、ユーザーの手順を追跡する2つの新しいセンサーの種類も付属しています。 これらは加速度計に基づいており、次のものが含まれます。
 
--  *Stepdetector* -ユーザーがステップを実行したときにアプリに通知され、ウェイクアップされます。この検出機能によって、ステップが発生した時間の値が示されます。
+- *Stepdetector* -ユーザーがステップを実行したときにアプリに通知され、ウェイクアップされます。この検出機能によって、ステップが発生した時間の値が示されます。
 
--  *Stepcounter* -センサーが*次回のデバイスの再起動まで*に登録された後にユーザーが行った手順の数を追跡します。
+- *Stepcounter* -センサーが*次回のデバイスの再起動まで*に登録された後にユーザーが行った手順の数を追跡します。
 
 次のスクリーンショットは、動作中のステップカウンターを示しています。
 
@@ -678,29 +678,29 @@ adb shell screenrecord --bit-rate 8000000 --time-limit 60 /sdcard/screencast.mp4
 
 KitKat では、上記の変更に加えて次のことができます。
 
--  *全画面表示を使用する*-KitKat では、コンテンツを参照したり、ゲームを楽しんだ後に、全画面表示のエクスペリエンスの恩恵を受ける他のアプリケーションを実行したりするための新しい[イマーシブモード](https://developer.android.com/reference/android/view/View.html#setSystemUiVisibility(int))が導入されています。
+- *全画面表示を使用する*-KitKat では、コンテンツを参照したり、ゲームを楽しんだ後に、全画面表示のエクスペリエンスの恩恵を受ける他のアプリケーションを実行したりするための新しい[イマーシブモード](https://developer.android.com/reference/android/view/View.html#setSystemUiVisibility(int))が導入されています。
 
--  *通知のカスタマイズ*-システム通知に関する追加情報を取得します。[`NotificationListenerService`](xref:Android.Service.Notification.NotificationListenerService)
+- *通知のカスタマイズ*-システム通知に関する追加情報を取得します。[`NotificationListenerService`](xref:Android.Service.Notification.NotificationListenerService)
    . これにより、アプリ内で別の方法で情報を表示できます。
 
--  *ミラー*化されるリソースのミラー化されるリソースが新しくなりました[`autoMirrored`](https://developer.android.com/reference/android/R.attr.html#autoMirrored)
+- *ミラー*化されるリソースのミラー化されるリソースが新しくなりました[`autoMirrored`](https://developer.android.com/reference/android/R.attr.html#autoMirrored)
    左から右へのレイアウトの反転が必要なイメージのミラー化されたバージョンをシステムに通知する属性。
 
--  *アニメーションの一時停止*-を使用して作成されたアニメーションを一時停止および再開します。[`Animator`](xref:Android.Animation.Animator)
+- *アニメーションの一時停止*-を使用して作成されたアニメーションを一時停止および再開します。[`Animator`](xref:Android.Animation.Animator)
    クラスの新しいインスタンスを初期化します。
 
--  新しいテキストを使用して動的に更新する UI のテキストを動的に変更する部分を、新しいテキストで "live region" として*読み取り*ます。[`accessibilityLiveRegion`](https://developer.android.com/reference/android/R.attr.html#accessibilityLiveRegion)
+- 新しいテキストを使用して動的に更新する UI のテキストを動的に変更する部分を、新しいテキストで "live region" として*読み取り*ます。[`accessibilityLiveRegion`](https://developer.android.com/reference/android/R.attr.html#accessibilityLiveRegion)
    属性を使用して、新しいテキストがユーザー補助モードで自動的に読み込まれるようにします。
 
--  *オーディオエクスペリエンスの向上*-トラックを大きくすると、[`LoudnessEnhancer`](xref:Android.Media.Audiofx.LoudnessEnhancer)
+- *オーディオエクスペリエンスの向上*-トラックを大きくすると、[`LoudnessEnhancer`](xref:Android.Media.Audiofx.LoudnessEnhancer)
    では、オーディオストリームのピークと RMS を[`Visualizer`](xref:Android.Media.Audiofx.Visualizer.MeasurementModePeakRms)
    オーディオビデオの同期に役立つように、[オーディオタイムスタンプ](xref:Android.Media.AudioTimestamp)から情報を取得します。
 
--  *カスタム間隔での ContentResolver の同期*-KitKat は、同期要求の実行時にいくつかの可変性を追加します。 を呼び出し`ContentResolver` `ContentResolver.RequestSync` 、を`SyncRequest`渡すことによって、カスタムの時刻または間隔でを同期します。
+- *カスタム間隔での ContentResolver の同期*-KitKat は、同期要求の実行時にいくつかの可変性を追加します。 を呼び出し`ContentResolver` `ContentResolver.RequestSync` 、を`SyncRequest`渡すことによって、カスタムの時刻または間隔でを同期します。
 
--  *コントローラーを区別*する-KitKat では、コントローラーには、デバイスの`ControllerNumber`プロパティを使用してアクセスできる一意の整数識別子が割り当てられます。 これにより、ゲームのプレーヤーを区別しやすくなります。
+- *コントローラーを区別*する-KitKat では、コントローラーには、デバイスの`ControllerNumber`プロパティを使用してアクセスできる一意の整数識別子が割り当てられます。 これにより、ゲームのプレーヤーを区別しやすくなります。
 
--  *リモートコントロール*-ハードウェアとソフトウェア側の両方に変更を加えることによって、KitKat では`ConsumerIrService`、を使用して IR トランスミッタでデバイス outfitted をリモートコントロールに変換し、周辺機器と新しい[`RemoteController`](xref:Android.Media.RemoteController)
+- *リモートコントロール*-ハードウェアとソフトウェア側の両方に変更を加えることによって、KitKat では`ConsumerIrService`、を使用して IR トランスミッタでデバイス outfitted をリモートコントロールに変換し、周辺機器と新しい[`RemoteController`](xref:Android.Media.RemoteController)
    Api.
 
 上記の API 変更の詳細については、「Google [Android 4.4 api](https://developer.android.com/about/versions/android-4.4.html)の概要」を参照してください。

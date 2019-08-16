@@ -1,118 +1,118 @@
 ---
 title: バインドのトラブルシューティング
-description: この記事では、考えられる原因と問題を解決する方法をお勧めのバインドを生成するときに発生するいくつかの一般的なエラーを説明します。
+description: この記事では、バインドの生成時に発生する可能性のある一般的なエラーの概要と、考えられる原因と解決方法について説明します。いくつかです。
 ms.prod: xamarin
 ms.assetid: BB81FCCF-F7BF-4C78-884E-F02C49AA819A
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: b0bb7cbb6160865af5b1e40d40c7b999a8bd5ebc
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c752f4acf4bf43c138a7b359b94620dae5e8d46e
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60956534"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524523"
 ---
 # <a name="troubleshooting-bindings"></a>バインドのトラブルシューティング
 
-_この記事では、考えられる原因と問題を解決する方法をお勧めのバインドを生成するときに発生するいくつかの一般的なエラーを説明します。_
+_この記事では、バインドの生成時に発生する可能性のある一般的なエラーの概要と、考えられる原因と解決方法について説明します。いくつかです。_
 
 
 ## <a name="overview"></a>概要
 
-Android のライブラリのバインド (**.aar**または **.jar**) ファイルは、簡単な例ではめったにありません。 追加の作業を Java と .NET 間の違いに起因する問題を軽減するために通常必要があります。
-これらの問題は Xamarin.Android の Android ライブラリのバインドを防止し、ビルド ログのエラー メッセージとして提供します。 このガイドは、問題のトラブルシューティングのヒントを提供より一般的な問題/シナリオの一部を一覧表示し、Android ライブラリを正常にバインド可能なソリューションを提供します。
+Android のライブラリのバインド ( **.aar**または **.jar**) ファイルは、簡単な例ではめったにありません。 追加の作業を Java と .NET 間の違いに起因する問題を軽減するために通常必要があります。
+これらの問題により、Xamarin android は Android ライブラリをバインドできなくなり、ビルドログにエラーメッセージとして表示されます。 このガイドでは、問題のトラブルシューティングを行うためのヒントを紹介し、いくつかの一般的な問題とシナリオの一覧を示し、Android ライブラリを正常にバインドするための解決策を提供します。
 
-既存の Android ライブラリをバインドするときに、次の点に注意する必要があります。
+既存の Android ライブラリをバインドする場合は、次の点に注意する必要があります。
 
-- **ライブラリの外部の依存関係**&ndash;として Xamarin.Android プロジェクトでは、Android ライブラリで必要な任意の Java 依存関係を含める必要がある、 **ReferenceJar**か、または、 **EmbeddedReferenceJar**します。
+- **ライブラリの外部依存関係**Android ライブラリに必要な Java 依存関係は、 **referencejar**または EmbeddedReferenceJar として Xamarin プロジェクトに含める必要があります。 &ndash;
 
-- **Android のライブラリがターゲットとし、Android API レベル** &ndash; Android API レベルを「ダウン グレード」することはできません。 Xamarin.Android バインド プロジェクトのレベル (またはそれ以上) に同じ API をターゲットはことを確認しますが、Android ライブラリとして。
+- **Android ライブラリがターゲットとしている ANDROID API レベル**&ndash; Android API レベルを "ダウングレード" することはできません。 Xamarin の android プロジェクトが、android ライブラリと同じ API レベル (またはそれ以降) を対象としていることを確認してください。
 
-- **Android、Android ライブラリをパッケージ化に使用された JDK のバージョン** &ndash; Android ライブラリの Xamarin.Android で使用しているものよりも JDK の異なるバージョンで作成した場合にバインド エラーが発生する可能性があります。 可能であれば、同じバージョンの Xamarin.Android のインストールで使用される JDK を使用して、Android ライブラリを再コンパイルします。
+- **Android ライブラリのパッケージ化に使用された ANDROID JDK のバージョン**&ndash; Android ライブラリが、Xamarin android で使用されているものとは異なるバージョンの JDK でビルドされている場合、バインドエラーが発生することがあります。 可能であれば、Xamarin Android のインストールで使用されているものと同じバージョンの JDK を使用して、Android ライブラリを再コンパイルします。
 
-有効にするのには、Xamarin.Android ライブラリのバインドに関する問題のトラブルシューティングをまず[診断 MSBuild 出力](~/android/troubleshooting/troubleshooting.md#Diagnostic_MSBuild_Output)します。
-診断の出力を有効にした後 Xamarin.Android バインド プロジェクトをリビルドし、問題の原因に関する手がかりを検索するビルド ログを確認します。
+Xamarin Android ライブラリのバインドに関する問題をトラブルシューティングするための最初の手順は、[診断 MSBuild の出力](~/android/troubleshooting/troubleshooting.md#Diagnostic_MSBuild_Output)を有効にすることです。
+診断出力を有効にした後、Xamarin. Android バインドプロジェクトをリビルドし、ビルドログを調べて、問題の原因に関する手掛かりを見つけます。
 
-これには、Android ライブラリの逆をバインドしようとして Xamarin.Android メソッドや型を確認するのに役立ちますも証明できます。 これについては、このガイドで後で詳しく説明します。
+また、Android ライブラリを逆コンパイルして、Xamarin がバインドしようとしている型とメソッドを確認すると役立つ場合があります。 詳細については、このガイドの後半で説明します。
 
 
-## <a name="decompiling-an-android-library"></a>加えて、Android ライブラリ
+## <a name="decompiling-an-android-library"></a>Android ライブラリの逆コンパイル
 
-クラスと Java クラスのメソッドを調べると、ライブラリのバインドに役立つ貴重な情報を提供できます。
-[JD GUI](http://jd.benow.ca/) 、グラフィカルなユーティリティからの Java ソース コードを表示できるは、**クラス**JAR に含まれるファイル。 実行できますスタンドアロン アプリケーションとして、またはプラグインとして IntelliJ または Eclipse 用。
+Java クラスのクラスとメソッドを検査すると、ライブラリのバインドに役立つ有用な情報が得られます。
+[Jd-GUI](http://jd.benow.ca/)は、JAR に含まれる**クラス**ファイルから Java ソースコードを表示できるグラフィカルユーティリティです。 スタンドアロンアプリケーションとして、または IntelliJ または Eclipse のプラグインとして実行できます。
 
-デコンパイル、Android ライブラリのオープンを**します。JAR** Java デコンパイラを持つファイル。 ライブラリがある場合、**します。AAR**ファイルを抽出する必要があるファイル、 **classes.jar**アーカイブ ファイルから。 JD GUI を使用した分析のサンプルのスクリーン ショットを次に、[Picasso](http://square.github.io/picasso/)JAR:
+Android ライブラリをデコンパイルするには、を開き**ます。** Java デコンパイラの JAR ファイル。 ライブラリがの場合 **。AAR**ファイルの場合は、アーカイブファイルから**jar**ファイルを抽出する必要があります。 JD GUI を使用した分析のサンプルのスクリーン ショットを次に、[Picasso](http://square.github.io/picasso/)JAR:
 
 ![Java デコンパイラを使用して、picasso-2.5.2.jar を分析するには](troubleshooting-bindings-images/troubleshoot-bindings-01.png)
 
-Android のライブラリは、逆コンパイルされたが後、は、ソース コードを調べます。 一般に、検索対象。
+Android ライブラリのデコンパイルが完了したら、ソースコードを確認します。 一般に、次のものを探します。
 
-- **難読化の特性を持つクラス**&ndash;難読化されたクラスの特性が含まれます。
+- **難読化の特性を持つクラス**&ndash;難読化したクラスの特性は次のとおりです。
 
-    - クラス名が含まれています、 **$**、つまり **$.class**
-    - クラス名がつまり侵害の小文字の場合は、まったく**a.class**      
+    - クラス名には **$** 、、つまり **$. クラス**が含まれます。
+    - クラス名は、小文字、つまり **. クラス**で完全に侵害されます。      
 
-- **`import` ステートメントが参照されていないライブラリの**&ndash;参照されていないライブラリを識別し、これらの依存関係を使用して Xamarin.Android バインド プロジェクトに追加、**ビルド アクション**の**ReferenceJar**または**EmbedddedReferenceJar**します。
+- 参照されていない&ndash; **ライブラリのステートメントは、参照されていないライブラリを識別し、referencejar またはのビルドアクションを使用して、これらの依存関係を Xamarin. Android バインドプロジェクトに追加します。 `import`**  **EmbedddedReferenceJar**。
 
 > [!NOTE]
-> Java ライブラリを加えて禁止または法的制限の対象は、現地の法律または Java ライブラリが公開されたこのライセンスに基づきます。 必要に応じて、Java ライブラリをコンパイルし、ソース コードを調査する前に、法務担当者のサービスを登録します。
+> 逆コンパイル Java ライブラリが禁止されている可能性があります。または、Java ライブラリが公開されている地域の法律またはライセンスに基づいて、法的な制限が適用される場合があります。 必要に応じて、Java ライブラリをデコンパイルしてソースコードを検査する前に、法的担当者のサービスを参加させます。
 
 
 ## <a name="inspect-apixml"></a>API を検査します。XML
 
-Xamarin.Android バインド プロジェクトのビルドの一部、として、XML ファイル名が生成されます**obj/Debug/api.xml**:
+バインドプロジェクトのビルドの一部として、Xamarin Android では、XML ファイル名**obj/Debug/api .xml**が生成されます。
 
-![生成された api.xml obj/デバッグ](troubleshooting-bindings-images/troubleshoot-bindings-02.png)
+![生成された api .xml が obj/Debug にあります](troubleshooting-bindings-images/troubleshoot-bindings-02.png)
 
-このファイルは、Xamarin.Android バインドが試行されているすべての Java Api の一覧を提供します。 このファイルの内容、不足している型またはメソッドを識別、重複するバインドを使用できます。 このファイルの検査には、面倒で時間がかかりますが、任意のバインドの問題の原因の手がかりを提供できます。 たとえば、 **api.xml**プロパティが、不適切な型を返すことや、その共有と同じマネージ名の種類が 2 つのことを明らかに可能性があります。
+このファイルには、Xamarin Android でバインドを試行しているすべての Java Api の一覧が表示されます。 このファイルの内容は、欠落している型またはメソッドを特定するのに役立ち、重複するバインドです。 このファイルの検査は面倒で時間がかかりますが、どのようなバインドの問題が発生しているかについての手掛かりを提供できます。 たとえば、 **api .xml**では、プロパティが不適切な型を返していることや、同じマネージ名を共有する2つの型があることが明らかになる場合があります。
 
 
 ## <a name="known-issues"></a>既知の問題
 
-このセクションでは、いくつかの一般的なエラー メッセージまたは現象は一覧を Android のライブラリをバインドしようとするときに発生します。
+このセクションでは、Android ライブラリをバインドしようとしたときに発生する一般的なエラーメッセージまたは現象の一部を示します。
 
 
-### <a name="problem-java-version-mismatch"></a>問題 : Java のバージョンが一致しません
+### <a name="problem-java-version-mismatch"></a>問題 : Java バージョンの不一致
 
-場合によって、型は生成されませんまたは新しいまたは古いバージョンでコンパイルされたライブラリと比較する Java のいずれかを使用しているために、予期しないクラッシュが発生する可能性があります。 同じバージョンの Xamarin.Android プロジェクトを使用している JDK と Android のライブラリを再コンパイルします。
+ライブラリがコンパイルされた場合と比較して、新しいバージョンまたは古いバージョンの Java を使用している場合、型が生成されないか、予期しないクラッシュが発生することがあります。 Xamarin Android プロジェクトで使用している JDK と同じバージョンの Android ライブラリを再コンパイルします。
 
 
-### <a name="problem-at-least-one-java-library-is-required"></a>問題 : 少なくとも 1 つの Java ライブラリが必要です。
+### <a name="problem-at-least-one-java-library-is-required"></a>問題 : 少なくとも1つの Java ライブラリが必要です
 
-エラーが発生した「少なくとも 1 つの Java ライブラリが必要な場合は、」場合でも、します。JAR が追加されました。
+にもかかわらず、"少なくとも1つの Java ライブラリが必要です" というエラーが表示されます。JAR が追加されました。
 
 #### <a name="possible-causes"></a>考えられる原因:
 
-必ずビルド アクションに設定されて`EmbeddedJar`します。 複数のビルド アクションがあるためです。JAR ファイル (など`InputJar`、 `EmbeddedJar`、`ReferenceJar`と`EmbeddedReferenceJar`)、バインド ジェネレーターは、既定で使用するを推測できない自動的にします。 ビルド アクションの詳細については、次を参照してください。[構築アクション](~/android/platform/binding-java-library/index.md)します。
+ビルドアクションがに設定されて`EmbeddedJar`いることを確認します。 には複数のビルドアクションがあるためです。JAR ファイル ( `InputJar`、 `EmbeddedJar` `ReferenceJar` 、`EmbeddedReferenceJar`など) では、バインドジェネレーターが既定で使用するものを自動的に推測することはできません。 ビルドアクションの詳細については、「[ビルドアクション](~/android/platform/binding-java-library/index.md)」を参照してください。
 
 
-### <a name="problem-binding-tools-cannot-load-the-jar-library"></a>問題 : バインディング ツールを読み込むことはできません、します。JAR ライブラリ
+### <a name="problem-binding-tools-cannot-load-the-jar-library"></a>問題 : バインディングツールはを読み込むことができません。JAR ライブラリ
 
-バインディング ライブラリ コード ジェネレーターの読み込みに失敗します。JAR ライブラリです。
+バインドライブラリジェネレーターがの読み込みに失敗しました。JAR ライブラリ。
 
 #### <a name="possible-causes"></a>考えられる原因
 
-いくつか。Java ツールでは、(Proguard などのツール) を使用してコードの難読化を使用して、JAR ライブラリを読み込むことができません。 のツールを使用する Java リフレクションを使用して ASM バイトのコード ライブラリをエンジニア リングため、これらのツールが依存は可能性があります Android ランタイム ツールに渡すことがあります、難読化されたライブラリを拒否します。 この回避策は、バインド ジェネレーターを使用する代わりにこれらのライブラリを手にバインドします。
+一部.コード難読化を使用する JAR ライブラリ (Proguard などのツールを使用) を Java ツールで読み込むことはできません。 このツールでは Java リフレクションと ASM バイトコードエンジニアリングライブラリが使用されるため、これらの依存ツールは、Android ランタイムツールが成功したときに、難読化されたライブラリを拒否する場合があります。 これを回避するには、バインディングジェネレーターを使用する代わりに、これらのライブラリを手動でバインドします。
 
 
 
-### <a name="problem-missing-c-types-in-generated-output"></a>問題 : 不足しているC#で生成された出力の種類。
+### <a name="problem-missing-c-types-in-generated-output"></a>問題 : 生成C#された出力に型がありません。
 
-バインディング **.dll**ビルドしますが、一部の種類の Java または生成に失敗したC#ソースが不足している種類があることを示すエラーのために構築されません。
+バインド .dll は一部の Java 型をビルドし**ます**が、不足C#している型があることを示すエラーのために生成されたソースはビルドしません。
 
 #### <a name="possible-causes"></a>考えられる原因:
 
-このエラーは、次に示すようにいくつかの理由により発生可能性があります。
+このエラーは、次に示すいくつかの理由により発生する可能性があります。
 
--   バインドされているライブラリには、2 つ目の Java ライブラリを参照できます。 バインドされているライブラリのパブリック API では、2 つ目のライブラリから型を使用している場合も、2 つ目のライブラリの管理対象のバインドを参照する必要があります。
+- バインドされているライブラリが2番目の Java ライブラリを参照している可能性があります。 バインドされたライブラリのパブリック API が2番目のライブラリの型を使用している場合は、2番目のライブラリのマネージバインドも参照する必要があります。
 
--   ライブラリが原因で予期しないメタデータの読み込み、上記のライブラリの読み込みエラーの理由のような Java リフレクションにより挿入されたことができます。 Xamarin.Android のツールは、このような状況を現在解決できません。 このような場合は、ライブラリを手動でバインドする必要があります。
+- 上記のライブラリの読み込みエラーの理由と同様に、ライブラリが Java リフレクションによって挿入されたことが原因で、メタデータの予期しない読み込みが発生する可能性があります。 現在、Xamarin Android のツールでは、この状況を解決できません。 このような場合は、ライブラリを手動でバインドする必要があります。
 
--   .NET 4.0 ランタイムがある必要時にアセンブリの読み込みに失敗したにバグがありました。 この問題は .NET 4.5 ランタイムで修正されました。
+- .NET 4.0 ランタイムで、アセンブリの読み込みに失敗したバグが発生しました。 この問題は、.NET 4.5 ランタイムで修正されました。
 
--   Java が非パブリックのクラスからパブリック クラスの派生をできますが、これは .NET でサポートされていません。 バインディング ジェネレーターがパブリックでないクラスのバインドを生成しないので、これらを正しく生成できませんなど、クラスを派生します。 これを解決するには、[削除] ノードを使用してこれらの派生クラスのメタデータ エントリを削除するか**Metadata.xml**、またはパブリック、パブリックでないクラスを行っているメタデータを修正します。 後者の方法は、バインドを作成できるように、C#ソースのビルドは、パブリックでないクラスは使用できません。
+- Java では、パブリッククラス以外のクラスからパブリッククラスを派生させることができますが、これは .NET ではサポートされていません。 バインディングジェネレーターは、パブリックでないクラスのバインドを生成しないため、このような派生クラスを正しく生成することはできません。 この問題を解決するには、 **metadata .xml**で削除ノードを使用してこれらの派生クラスのメタデータエントリを削除するか、パブリックでないクラスを公開するメタデータを修正します。 後者のソリューションでは、 C#ソースがビルドされるようにバインディングが作成されますが、非パブリッククラスを使用することはできません。
 
     例えば:
 
@@ -121,32 +121,32 @@ Xamarin.Android バインド プロジェクトのビルドの一部、として
         name="visibility">public</attr>
     ```
 
--   Java ライブラリを難読化ツールは、Xamarin.Android バインド ジェネレーターおよび生成するには、その機能を妨げる可能性がC#ラッパー クラス。 次のスニペットでは、更新する方法を示しています。 **Metadata.xml** unobfuscate クラス名にします。
+- Java ライブラリを難読化するツールは、Xamarin の Android バインドジェネレーターとラッパークラスを生成C#する機能に干渉する可能性があります。 次のスニペットは、unobfuscate を更新してクラス名を変更する方法を示して**い**ます。
 
     ```xml
     <attr path="/api/package[@name='{package_name}']/class[@name='{name}']"
         name="obfuscated">false</attr>
     ```
 
-### <a name="problem-generated-c-source-does-not-build-due-to-parameter-type-mismatch"></a>問題 : 生成されたC#パラメーターの型が一致しないのためのソースを構築していません。
+### <a name="problem-generated-c-source-does-not-build-due-to-parameter-type-mismatch"></a>問題 : パラメーター C#の型が一致しないため、生成されたソースはビルドされません
 
-生成されたC#ソースをビルドしません。 型が一致しないメソッドのパラメーターをオーバーライドします。
-
-#### <a name="possible-causes"></a>考えられる原因:
-
-Xamarin.Android には、さまざまなで列挙型にマップされている Java フィールドが含まれています、C#バインドします。 生成されたバインドで型の非互換性をによってことができます。 これを解決するには、バインディング ジェネレーターから作成されたメソッドのシグネチャは、列挙型を使用するように変更する必要があります。 詳細についてを参照してください[列挙型を修正する](~/android/platform/binding-java-library/customizing-bindings/java-bindings-metadata.md)します。
-
-### <a name="problem-noclassdeffounderror-in-packaging"></a>問題 : パッケージで NoClassDefFoundError
-
-`java.lang.NoClassDefFoundError` パッケージ化の手順でスローされます。
+生成さC#れたソースはビルドされません。 オーバーライドされたメソッドのパラメーターの型が一致しません。
 
 #### <a name="possible-causes"></a>考えられる原因:
 
-このエラーの最も可能性の高い理由は、必須の Java ライブラリは、アプリケーション プロジェクトに追加する必要があります (**.csproj**)。 .JAR ファイルは自動的に解決されません。 Java ライブラリのバインドは、常に、ターゲット デバイスまたはエミュレーターで存在しないユーザー アセンブリに対しては生成されません (Google Maps など**maps.jar**)。 これは Android ライブラリ プロジェクトのサポートの場合、ライブラリです。JAR は、ライブラリの dll に埋め込まれます。 例:[バグ 4288](https://bugzilla.xamarin.com/show_bug.cgi?id=4288)
+Xamarin. Android には、 C#バインド内の列挙にマップされるさまざまな Java フィールドが含まれています。 これらの場合、生成されたバインディングで型の非互換性が発生する可能性があります。 これを解決するには、バインドジェネレーターから作成されたメソッドシグネチャを、列挙型を使用するように変更する必要があります。 詳細については、「[列挙](~/android/platform/binding-java-library/customizing-bindings/java-bindings-metadata.md)型の修正」を参照してください。
 
-### <a name="problem-duplicate-custom-eventargs-types"></a>問題 : カスタムの EventArgs 型が重複しています
+### <a name="problem-noclassdeffounderror-in-packaging"></a>問題 : パッケージの NoClassDefFoundError
 
-ビルドは、重複するカスタムの EventArgs 型のため失敗します。 このようなエラーが発生します。
+`java.lang.NoClassDefFoundError`は、パッケージ化の手順でスローされます。
+
+#### <a name="possible-causes"></a>考えられる原因:
+
+このエラーの原因として最も可能性が高いのは、必須の Java ライブラリをアプリケーションプロジェクト ( **.csproj**) に追加する必要があることです。 .JAR ファイルは自動的には解決されません。 Java ライブラリのバインドは、ターゲットデバイスまたはエミュレーターに存在しないユーザーアセンブリに対して常に生成されるとは限りません (Google Maps **maps. jar**など)。 これは、ライブラリとしての Android ライブラリプロジェクトのサポートには当てはまりません。JAR はライブラリ dll に埋め込まれています。 例:[バグ4288](https://bugzilla.xamarin.com/show_bug.cgi?id=4288)
+
+### <a name="problem-duplicate-custom-eventargs-types"></a>問題 : カスタム EventArgs の種類が重複しています
+
+カスタム EventArgs の種類が重複しているため、ビルドに失敗します。 次のようなエラーが発生します。
 
 ```shell
 error CS0102: The type `Com.Google.Ads.Mediation.DismissScreenEventArgs' already contains a definition for `p0'
@@ -154,7 +154,7 @@ error CS0102: The type `Com.Google.Ads.Mediation.DismissScreenEventArgs' already
 
 #### <a name="possible-causes"></a>考えられる原因:
 
-同一の名前を持つメソッドを共有する 1 つ以上のインターフェイス「リスナー」型に由来するイベントの種類の間にいくつかの競合があるためにです。 たとえば、次の例のように 2 つの Java インターフェイスがある場合、ジェネレーターが作成されます。`DismissScreenEventArgs`両方の`MediationBannerListener`と`MediationInterstitialListener`、エラーが発生します。
+これは、同じ名前を持つメソッドを共有する複数のインターフェイス "リスナ" 型に由来するイベントの種類が競合するためです。 たとえば、次の例に示すように2つの Java インターフェイスがある場合、ジェネレーター `DismissScreenEventArgs`はと`MediationBannerListener` `MediationInterstitialListener`の両方に対してを作成し、エラーが発生します。
 
 ```java
 // Java:
@@ -166,7 +166,7 @@ public interface MediationInterstitialListener {
 }
 ```
 
-これは、長い名前のイベント引数の型が回避されるよう設計します。 これらの競合を回避するには、いくつかのメタデータの変換が必要です。 編集[ **Transforms\Metadata.xml** ](https://github.com/xamarin/monodroid-samples/blob/master/AdMob/AdMob/Transforms/Metadata.xml)を追加し、`argsType`インターフェイスのどちらかで (またはインターフェイスのメソッド) の属性。
+これは、イベント引数の型の長い名前が回避されるように設計されています。 これらの競合を回避するには、いくつかのメタデータ変換が必要です。 [**Transformraxml**](https://github.com/xamarin/monodroid-samples/blob/master/AdMob/AdMob/Transforms/Metadata.xml)を編集し、インターフェイス ( `argsType`またはインターフェイスメソッド) のいずれかに属性を追加します。
 
 ```xml
 <attr path="/api/package[@name='com.google.ads.mediation']/
@@ -182,9 +182,9 @@ public interface MediationInterstitialListener {
         name="argsType">DialogClickEventArgs</attr>
 ```
 
-### <a name="problem-class-does-not-implement-interface-method"></a>問題 : クラスがインターフェイス メソッドを実装していません
+### <a name="problem-class-does-not-implement-interface-method"></a>問題 : クラスはインターフェイスメソッドを実装していません
 
-生成されたクラスが生成されたクラスを実装するインターフェイスに必要なメソッドを実装しないことを示すエラー メッセージが生成されます。 ただし、生成されたコードを見て確認できます、メソッドが実装されています。
+生成されたクラスが実装しているインターフェイスに必要なメソッドが実装されていないことを示すエラーメッセージが生成されます。 ただし、生成されたコードを見ると、メソッドが実装されていることがわかります。
 
 エラーの例を次に示します。
 
@@ -199,9 +199,9 @@ return type of 'Java.Lang.Object'
 
 #### <a name="possible-causes"></a>考えられる原因:
 
-これは、共変の戻り値の型と Java のメソッドのバインドで発生する問題です。 この例では、メソッドで`Oauth.Signpost.Http.IHttpRequest.UnWrap()`返す必要があります`Java.Lang.Object`します。 ただし、メソッド、`Oauth.Signpost.Basic.HttpURLConnectionRequestAdapter.UnWrap()`の戻り値の型を持つ`HttpURLConnection`します。 この問題を解決する 2 つの方法はあります。
+これは、Java メソッドを共変の戻り値の型と共にバインドする場合に発生する問題です。 この例では、メソッド`Oauth.Signpost.Http.IHttpRequest.UnWrap()`はを返す`Java.Lang.Object`必要があります。 ただし、メソッド`Oauth.Signpost.Basic.HttpURLConnectionRequestAdapter.UnWrap()`の戻り値の`HttpURLConnection`型はです。 この問題を解決するには、次の2つの方法があります。
 
--   部分クラス宣言を追加`HttpURLConnectionRequestAdapter`を明示的に実装および`IHttpRequest.Unwrap()`:
+- の部分クラス宣言を追加`HttpURLConnectionRequestAdapter`し、を`IHttpRequest.Unwrap()`明示的に実装します。
 
     ```csharp
     namespace Oauth.Signpost.Basic {
@@ -213,7 +213,7 @@ return type of 'Java.Lang.Object'
     }
     ```
 
--   生成された共分散を削除するC#コード。 次の変換を追加する必要があります**Transforms\Metadata.xml** 、生成されたはC#コードの戻り値の型に`Java.Lang.Object`:
+- 生成さC#れたコードから共変性を削除します。 これには、次の変換を**transformthe xml**に追加する必要がありC#ます。これにより、生成`Java.Lang.Object`されるコードの戻り値の型はになります。
 
     ```xml
     <attr
@@ -222,11 +222,11 @@ return type of 'Java.Lang.Object'
     </attr>
     ```
 
-### <a name="problem-name-collisions-on-inner-classes--properties"></a>問題 : 名前の内部クラスで競合/プロパティ
+### <a name="problem-name-collisions-on-inner-classes--properties"></a>問題 : 内部クラス/プロパティの名前の競合
 
-継承されたオブジェクトの可視性を競合しています。
+継承されたオブジェクトの可視性が競合しています。
 
-Java では、派生クラスにその親と同じ可視性があることを必要ことはありません。 Java の修正だけですが。 C#、明示的に指定するが、階層内のすべてのクラスが適切な可視性があることを確認する必要があるためです。 次の例から Java パッケージ名を変更する方法を示しています`com.evernote.android.job`に`Evernote.AndroidJob`:。
+Java では、派生クラスの可視性が親と同じである必要はありません。 Java では、これを修正するだけです。 でC#は、これが明示的である必要があるため、階層内のすべてのクラスに適切な可視性があることを確認する必要があります。 次の例では、Java パッケージ名をから`com.evernote.android.job`に`Evernote.AndroidJob`変更する方法を示します。
 
 ```xml
 <!-- Change the visibility of a class -->
@@ -236,11 +236,11 @@ Java では、派生クラスにその親と同じ可視性があることを必
 <attr path="/api/package[@name='namespace']/class[@name='ClassName']/method[@name='MethodName']" name="visibility">public</attr>
 ```
 
-### <a name="problem-a-so-library-required-by-the-binding-is-not-loading"></a>問題 : A **.so**バインドで必要なライブラリが読み込まれていません
+### <a name="problem-a-so-library-required-by-the-binding-is-not-loading"></a>問題 : バインドに必要なライブラリが読み込まれていません
 
-一部のバインド プロジェクトによっても異なります機能、 **.so**ライブラリ。 Xamarin.Android は自動的に読み込まれませんことができます、 **.so**ライブラリ。 Xamarin.Android は JNI の呼び出しと、エラー メッセージを失敗して、ラップされた Java コードの実行時に_java.lang.UnsatisfiedLinkError:ネイティブ メソッドが見つかりません:_ アプリケーションのアウト logcat に表示されます。
+バインドプロジェクトによっては、 **...** ライブラリの機能に依存している場合もあります。 Xamarin. Android では、 **...** ライブラリが自動的に読み込まれない可能性があります。 ラップされた Java コードを実行すると、JNI の呼び出しに失敗し、エラーメッセージ_UnsatisfiedLinkError が発生します。ネイティブメソッドが見つかりませ_ん: アプリケーションの logcat out に表示されます。
 
-この修正プログラムは、手動で読み込む、 **.so**ライブラリへの呼び出しで`Java.Lang.JavaSystem.LoadLibrary`します。 たとえば、Xamarin.Android プロジェクトに共有ライブラリがあると仮定すると**libpocketsphinx_jni.so**のビルド アクションを使用してプロジェクトをバインドに含まれる**EmbeddedNativeLibrary**、次のスニペット(共有ライブラリを使用する前に実行) が読み込まれます、 **.so**ライブラリ。
+この問題を解決するには、の呼び出し`Java.Lang.JavaSystem.LoadLibrary`を使用して、... ライブラリを手動で読み込みます。 たとえば、Xamarin Android プロジェクトに共有ライブラリ libpocketsphinx_jni が含まれていると**します。そのため**、 **EmbeddedNativeLibrary**のビルドアクションを使用してバインドプロジェクトにインクルードします。次のスニペット (共有ライブラリを使用する前に実行)は、 **...** ライブラリを読み込みます。
 
 ```csharp
 Java.Lang.JavaSystem.LoadLibrary("pocketsphinx_jni");
@@ -248,13 +248,13 @@ Java.Lang.JavaSystem.LoadLibrary("pocketsphinx_jni");
 
 ## <a name="summary"></a>まとめ
 
-この記事では Java のバインドに関連付けられている一般的な問題のトラブルシューティングを一覧表示され、問題を解決する方法について説明しました。
+この記事では、Java バインディングに関連する一般的なトラブルシューティングの問題とその解決方法について説明しました。
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [ライブラリ プロジェクト](https://developer.android.com/tools/projects/index.html#LibraryProjects)
-- [JNI の使用](~/android/platform/java-integration/working-with-jni.md)
-- [診断出力を有効にします。](~/android/troubleshooting/troubleshooting.md#Diagnostic_MSBuild_Output)
-- [Android 開発者向けの Xamarin](~/android/get-started/java-developers.md)
+- [ライブラリプロジェクト](https://developer.android.com/tools/projects/index.html#LibraryProjects)
+- [JNI の操作](~/android/platform/java-integration/working-with-jni.md)
+- [診断出力を有効にする](~/android/troubleshooting/troubleshooting.md#Diagnostic_MSBuild_Output)
+- [Android 開発者向け Xamarin](~/android/get-started/java-developers.md)
 - [JD-GUI](http://jd.benow.ca/)

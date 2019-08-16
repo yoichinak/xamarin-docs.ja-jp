@@ -6,12 +6,12 @@ ms.assetid: F87BF587-AB64-4C60-84B1-184CAE36ED65
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: fb58cb000d8179422979d9661950db82d1884414
-ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
+ms.openlocfilehash: a9297d9a19ef56d658e983c38329b1aa400ffd05
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68680941"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69521721"
 ---
 # <a name="async-support-overview"></a>非同期サポートの概要
 
@@ -120,9 +120,9 @@ public async Task<int> DownloadHomepage()
 
 次の点に注意してください。
 
--  メソッドの宣言には`async` 、キーワードが含まれています。
--  戻り`int`値の型`Task<int>`は、呼び出し元のコードがこのメソッドで計算された値にアクセスできるようにするためです。
--  Return ステートメント`return exampleInt;`は整数オブジェクトであり、メソッドが返す`Task<int>`事実は言語の機能強化の一部です。
+- メソッドの宣言には`async` 、キーワードが含まれています。
+- 戻り`int`値の型`Task<int>`は、呼び出し元のコードがこのメソッドで計算された値にアクセスできるようにするためです。
+- Return ステートメント`return exampleInt;`は整数オブジェクトであり、メソッドが返す`Task<int>`事実は言語の機能強化の一部です。
 
 
 ### <a name="calling-an-async-method-1"></a>非同期メソッドの呼び出し1
@@ -148,11 +148,11 @@ GetButton.Click += async (sender, e) => {
 
 メモ:
 
--  匿名デリゲートには、async キーワードプレフィックスがあります。
--  非同期メソッド downloadhomepage は、sizetask <int>変数に格納されているタスクを返します。
--  このコードは、sizeTask 変数を待機しています。  *これ*は、メソッドが中断された場所であり、非同期タスクが独自のスレッドで終了するまで、呼び出し元のコードに制御が返されます。
--  タスクが作成されているにもかかわらず、メソッドの最初の行にタスクが作成されても、実行は一時停止し*ません*。 Await キーワードは、実行が一時停止されている場所を示します。
--  非同期タスクが完了すると、intResult が設定され、await 行から元のスレッドで実行が続行されます。
+- 匿名デリゲートには、async キーワードプレフィックスがあります。
+- 非同期メソッド downloadhomepage は、sizetask\<変数に格納されている > タスク int を返します。
+- このコードは、sizeTask 変数を待機しています。  *これ*は、メソッドが中断された場所であり、非同期タスクが独自のスレッドで終了するまで、呼び出し元のコードに制御が返されます。
+- タスクが作成されているにもかかわらず、メソッドの最初の行にタスクが作成されても、実行は一時停止し*ません*。 Await キーワードは、実行が一時停止されている場所を示します。
+- 非同期タスクが完了すると、intResult が設定され、await 行から元のスレッドで実行が続行されます。
 
 
 ### <a name="calling-an-async-method-2"></a>非同期メソッド2の呼び出し
@@ -181,9 +181,9 @@ async void HandleTouchUpInside (object sender, EventArgs e)
 
 いくつかの重要な点:
 
--  メソッドはとして`async`マークさ`void`れますが、はを返します。 これは通常、イベントハンドラーに対してのみ実行されます`Task` ( `Task<TResult>`それ以外の場合は、またはを返します)。
--  タスクを`await`参照するため`DownloadHomepage`に中間`Task<int>`変数を使用した前の`intResult`例とは異なり、メソッドのコードは、変数 () への代入に直接割り当てられます。  *これ*は、非同期メソッドが別のスレッドで完了するまで、制御が呼び出し元に返される場所です。
--  非同期メソッドが完了して戻ると、で実行が`await`再開されます。これは、整数の結果が返され、UI ウィジェットで表示されることを意味します。
+- メソッドはとして`async`マークさ`void`れますが、はを返します。 これは通常、イベントハンドラーに対してのみ実行されます`Task` ( `Task<TResult>`それ以外の場合は、またはを返します)。
+- タスクを`await`参照するため`DownloadHomepage`に中間`Task<int>`変数を使用した前の`intResult`例とは異なり、メソッドのコードは、変数 () への代入に直接割り当てられます。  *これ*は、非同期メソッドが別のスレッドで完了するまで、制御が呼び出し元に返される場所です。
+- 非同期メソッドが完了して戻ると、で実行が`await`再開されます。これは、整数の結果が返され、UI ウィジェットで表示されることを意味します。
 
 
 ## <a name="summary"></a>まとめ

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 7f21964fff0ac37fd87b8dcc6321e47c42c78a49
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 0a9921706acc4da076e98b1c42c0624c7f56e62f
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644335"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69521199"
 ---
 # <a name="android-graphics-and-animation"></a>Android のグラフィックスとアニメーション
 
@@ -30,18 +30,18 @@ Android の UI API フレームワークは、ほぼ次の2つのカテゴリに
 
 Android には、2D グラフィックスを作成するための2つの異なる API が用意されています。 1つは高レベルの宣言型のアプローチで、もう1つはプログラムによる低レベルの API です。
 
--   描画**リソース**&ndash;これらは、グラフィカルな命令を XML ファイルに埋め込むことによって、プログラムによって、または (通常は) カスタムグラフィックスを作成するために使用されます。 通常、描画リソースは、Android が2D グラフィックをレンダリングするための命令またはアクションを含む XML ファイルとして定義されます。 
+- 描画**リソース**&ndash;これらは、グラフィカルな命令を XML ファイルに埋め込むことによって、プログラムによって、または (通常は) カスタムグラフィックスを作成するために使用されます。 通常、描画リソースは、Android が2D グラフィックをレンダリングするための命令またはアクションを含む XML ファイルとして定義されます。 
 
--   **キャンバス**&ndash;これは、基になるビットマップに直接描画することを必要とする低レベルの API です。 表示される内容を細かく制御できます。 
+- **キャンバス**&ndash;これは、基になるビットマップに直接描画することを必要とする低レベルの API です。 表示される内容を細かく制御できます。 
 
 Android では、これらの2D グラフィックス技術に加えて、いくつかの異なる方法でアニメーションを作成できます。
 
--   描画効果のある**アニメーション**Android では、描画可能なアニメーションと呼ばれるフレーム単位のアニメーションもサポートされています。 &ndash; これは最も単純なアニメーション API です。 Android では、(漫画とよく似ているように) 描画リソースを順番に読み込んで表示します。
+- 描画効果のある**アニメーション**Android では、描画可能なアニメーションと呼ばれるフレーム単位のアニメーションもサポートされています。 &ndash; これは最も単純なアニメーション API です。 Android では、(漫画とよく似ているように) 描画リソースを順番に読み込んで表示します。
 
--   **アニメーションの表示**表示アニメーションは android の元のアニメーション API であり、android のすべてのバージョンで使用できます。 &ndash; この API が制限されるのは、ビューオブジェクトでのみ機能し、これらのビューに対して単純な変換を実行できることだけです。
+- **アニメーションの表示**表示アニメーションは android の元のアニメーション API であり、android のすべてのバージョンで使用できます。 &ndash; この API が制限されるのは、ビューオブジェクトでのみ機能し、これらのビューに対して単純な変換を実行できることだけです。
     ビューアニメーションは、通常、 `/Resources/anim`フォルダー内の XML ファイルで定義されます。
 
--   **プロパティアニメーション**Android 3.0 では、*プロパティアニメーション*と呼ばれる新しい一連のアニメーション API が導入されました。 &ndash; これらの新しい API には、表示オブジェクトだけでなく、任意のオブジェクトのプロパティをアニメーション化するために使用できる、拡張可能で柔軟なシステムが導入されました。 この柔軟性により、アニメーションを個別のクラスにカプセル化して、コードを簡単に共有できるようになります。
+- **プロパティアニメーション**Android 3.0 では、*プロパティアニメーション*と呼ばれる新しい一連のアニメーション API が導入されました。 &ndash; これらの新しい API には、表示オブジェクトだけでなく、任意のオブジェクトのプロパティをアニメーション化するために使用できる、拡張可能で柔軟なシステムが導入されました。 この柔軟性により、アニメーションを個別のクラスにカプセル化して、コードを簡単に共有できるようになります。
 
 
 アニメーションの表示は、以前の Android 3.0 API (API レベル 11) をサポートする必要があるアプリケーションに適しています。 それ以外の場合は、前述の理由により、アプリケーションは新しいプロパティアニメーション API を使用する必要があります。
@@ -75,23 +75,23 @@ Android のユーザー補助 Api を利用する方法の詳細については�
 実行時に、Android アプリケーションはこれらのリソースを読み込み、これらの XML ファイルに含まれている命令を使用して2D グラフィックスを作成します。
 Android では、いくつかの異なる種類の描画リソースを定義しています。
 
--   [図形](https://developer.android.com/guide/topics/resources/drawable-resource.html#Shape)の描画&ndash;これは、プリミティブジオメトリック形状を描画し、その図形に対して限られたグラフィカル効果のセットを適用する、描画できるオブジェクトです。 これらは、ボタンをカスタマイズしたり、テキストビューの背景を設定したりする場合に非常に便利です。 この記事の`ShapeDrawable`後半でを使用する方法の例について説明します。
+- [図形](https://developer.android.com/guide/topics/resources/drawable-resource.html#Shape)の描画&ndash;これは、プリミティブジオメトリック形状を描画し、その図形に対して限られたグラフィカル効果のセットを適用する、描画できるオブジェクトです。 これらは、ボタンをカスタマイズしたり、テキストビューの背景を設定したりする場合に非常に便利です。 この記事の`ShapeDrawable`後半でを使用する方法の例について説明します。
 
--   [Statelistdrawable ル](https://developer.android.com/guide/topics/resources/drawable-resource.html#StateList)&ndash;これは、ウィジェット/コントロールの状態に基づいて外観を変更する、描画できるリソースです。 たとえば、ボタンが押されているかどうかによって、ボタンの外観が変わる場合があります。
+- [Statelistdrawable ル](https://developer.android.com/guide/topics/resources/drawable-resource.html#StateList)&ndash;これは、ウィジェット/コントロールの状態に基づいて外観を変更する、描画できるリソースです。 たとえば、ボタンが押されているかどうかによって、ボタンの外観が変わる場合があります。
 
--   [レイヤー](https://developer.android.com/guide/topics/resources/drawable-resource.html#LayerList)描画&ndash;この描画されたリソースは、他のいくつかの drawables が別の引き出しによって実行できるようにします。 次のスクリーンショットでは、*レイヤー*描画の例を示しています。
+- [レイヤー](https://developer.android.com/guide/topics/resources/drawable-resource.html#LayerList)描画&ndash;この描画されたリソースは、他のいくつかの drawables が別の引き出しによって実行できるようにします。 次のスクリーンショットでは、*レイヤー*描画の例を示しています。
 
     ![レイヤー描画の例](graphics-and-animation-images/image1.png)
 
--   [遷移](https://developer.android.com/guide/topics/resources/drawable-resource.html#Transition)後の描画これはレイヤーの描画を行いますが、違いは1つです。 &ndash; 1つのレイヤーを別のレイヤー上に表示するようにアニメーション化する*ことができ*ます。
+- [遷移](https://developer.android.com/guide/topics/resources/drawable-resource.html#Transition)後の描画これはレイヤーの描画を行いますが、違いは1つです。 &ndash; 1つのレイヤーを別のレイヤー上に表示するようにアニメーション化することができます。
 
--   [Levellistdrawable ル](https://developer.android.com/guide/topics/resources/drawable-resource.html#LevelList)これは、特定の条件に基づいてイメージを表示するという点で、 *statelistdrawable ル*とよく似ています。 &ndash; ただし、 *Statelistdrawable ル*とは異なり、 *levellistdrawable ル*は、整数値に基づいてイメージを表示します。 *Levellistdrawable ル*の例として、WiFi 信号の強さを表示する方法があります。 WiFi 信号の強度が変化すると、表示される描画用の設定が変わります。
+- [Levellistdrawable ル](https://developer.android.com/guide/topics/resources/drawable-resource.html#LevelList)これは、特定の条件に基づいてイメージを表示するという点で、 *statelistdrawable ル*とよく似ています。 &ndash; ただし、 *Statelistdrawable ル*とは異なり、 *levellistdrawable ル*は、整数値に基づいてイメージを表示します。 *Levellistdrawable ル*の例として、WiFi 信号の強さを表示する方法があります。 WiFi 信号の強度が変化すると、表示される描画用の設定が変わります。
 
--   [ScaleDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Scale)/[ClipDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Clip) &ndash;を使用すると、その名前が示すように、これらのdrawablesスケーリングとクリッピングの両方の機能を提供します。 *Scaledrawable*描画可能な場合は、別の描画可能なスケーリングが行われますが、 *clipdrawable*ルは別の描画可能なクリップをクリップします。
+- [ScaleDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Scale)/[ClipDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Clip) &ndash;を使用すると、その名前が示すように、これらのdrawablesスケーリングとクリッピングの両方の機能を提供します。 *Scaledrawable*描画可能な場合は、別の描画可能なスケーリングが行われますが、 *clipdrawable*ルは別の描画可能なクリップをクリップします。
 
--   [Insetdrawable ル](https://developer.android.com/guide/topics/resources/drawable-resource.html#Inset)&ndash;この描画を行うと、別の描画リソースの側にインセットが適用されます。 ビューの実際の境界よりも小さい背景がビューに必要な場合に使用されます。
+- [Insetdrawable ル](https://developer.android.com/guide/topics/resources/drawable-resource.html#Inset)&ndash;この描画を行うと、別の描画リソースの側にインセットが適用されます。 ビューの実際の境界よりも小さい背景がビューに必要な場合に使用されます。
 
--   Xml [bitmapdrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Bitmap) &ndash;このファイルは、実際のビットマップに対して実行される一連の命令 (xml 形式) です。 Android が実行できるアクションには、タイル、ディザリング、アンチエイリアシングなどがあります。 この一般的な用途の1つは、レイアウトの背景全体にビットマップを並べて表示することです。
+- Xml [bitmapdrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Bitmap) &ndash;このファイルは、実際のビットマップに対して実行される一連の命令 (xml 形式) です。 Android が実行できるアクションには、タイル、ディザリング、アンチエイリアシングなどがあります。 この一般的な用途の1つは、レイアウトの背景全体にビットマップを並べて表示することです。
 
 #### <a name="drawable-example"></a>描画の例
 
@@ -214,11 +214,11 @@ public class MyView : View
 
 アプリケーション内を移動するユーザーのようなものです。 アニメーションは、アプリケーションのユーザーエクスペリエンスを向上させ、それを支援するための優れた方法です。最適なアニメーションは、自然であることが理由でユーザーに通知されないものです。 Android には、アニメーション用に次の3つの API が用意されています。
 
--   **アニメーションの表示**&ndash;これは元の API です。 これらのアニメーションは特定のビューに関連付けられており、ビューのコンテンツに対して単純な変換を実行できます。 この API は単純であるため、アルファアニメーションや回転などにも役立ちます。
+- **アニメーションの表示**&ndash;これは元の API です。 これらのアニメーションは特定のビューに関連付けられており、ビューのコンテンツに対して単純な変換を実行できます。 この API は単純であるため、アルファアニメーションや回転などにも役立ちます。
 
--   **プロパティアニメーション**&ndash;プロパティアニメーションは、Android 3.0 で導入されました。 これにより、アプリケーションはほぼすべてをアニメーション化できるようになります。 プロパティアニメーションは、オブジェクトが画面に表示されていない場合でも、任意のオブジェクトのプロパティを変更するために使用できます。
+- **プロパティアニメーション**&ndash;プロパティアニメーションは、Android 3.0 で導入されました。 これにより、アプリケーションはほぼすべてをアニメーション化できるようになります。 プロパティアニメーションは、オブジェクトが画面に表示されていない場合でも、任意のオブジェクトのプロパティを変更するために使用できます。
 
--   描画用の**アニメーション**&ndash;これは特殊な描画リソースで、レイアウトに非常に単純なアニメーション効果を適用するために使用されます。
+- 描画用の**アニメーション**&ndash;これは特殊な描画リソースで、レイアウトに非常に単純なアニメーション効果を適用するために使用されます。
 
 一般に、プロパティアニメーションはより柔軟性が高く、より多くの機能を提供するため、使用する優先システムです。
 
@@ -230,25 +230,25 @@ public class MyView : View
 
 アニメーション XML ファイルは、Xamarin. Android プロジェクト`/Resources/anim`のディレクトリに格納されます。 このファイルには、ルート要素として次のいずれかの要素が含まれている必要があります。
 
--   `alpha`&ndash;フェードインまたはフェードアウトアニメーション。
+- `alpha`&ndash;フェードインまたはフェードアウトアニメーション。
 
--   `rotate`&ndash;回転アニメーション。
+- `rotate`&ndash;回転アニメーション。
 
--   `scale`&ndash;サイズ変更アニメーション。
+- `scale`&ndash;サイズ変更アニメーション。
 
--   `translate`&ndash;水平方向または垂直方向の動き。
+- `translate`&ndash;水平方向または垂直方向の動き。
 
--   `set`&ndash;他の1つ以上のアニメーション要素を保持できるコンテナー。
+- `set`&ndash;他の1つ以上のアニメーション要素を保持できるコンテナー。
 
 既定では、XML ファイル内のすべてのアニメーションが同時に適用されます。 アニメーションを順番に実行するには`android:startOffset` 、上で定義したいずれかの要素に属性を設定します。
 
 *Interpolator*を使用すると、アニメーションの変化率に影響を与える可能性があります。 Interpolator を使用すると、アニメーション効果を加速、繰り返し、または decelerated にすることができます。 Android framework には、いくつかの interpolators が用意されています (ただし、これらに限定されません)。
 
--   `AccelerateInterpolator`これらの interpolators は、アニメーションの変化率を増減させます。 / `DecelerateInterpolator` &ndash;
+- `AccelerateInterpolator`これらの interpolators は、アニメーションの変化率を増減させます。 / `DecelerateInterpolator` &ndash;
 
--   `BounceInterpolator`&ndash;最後に変更がバウンスされています。
+- `BounceInterpolator`&ndash;最後に変更がバウンスされています。
 
--   `LinearInterpolator`&ndash;変化率は一定です。
+- `LinearInterpolator`&ndash;変化率は一定です。
 
 
 次の XML は、これらの要素の一部を組み合わせたアニメーションファイルの例を示しています。
@@ -316,20 +316,20 @@ myImage.StartAnimation(myAnimation);
 
 すべてのプロパティアニメーションは、[アニメーター](xref:Android.Animation.Animator)サブクラスのインスタンスによって作成されます。 アプリケーションは、このクラスを直接使用するのではなく、次のいずれかのサブクラスを使用します。
 
--   [Valueanimator](xref:Android.Animation.ValueAnimator)&ndash;このクラスは、プロパティアニメーション API 全体で最も重要なクラスです。 変更する必要があるプロパティの値を計算します。 は`ViewAnimator` 、これらの値を直接更新しません。代わりに、アニメーション化されたオブジェクトを更新するために使用できるイベントを発生させます。
+- [Valueanimator](xref:Android.Animation.ValueAnimator)&ndash;このクラスは、プロパティアニメーション API 全体で最も重要なクラスです。 変更する必要があるプロパティの値を計算します。 は`ViewAnimator` 、これらの値を直接更新しません。代わりに、アニメーション化されたオブジェクトを更新するために使用できるイベントを発生させます。
 
--   [Objectanimator](xref:Android.Animation.ObjectAnimator)このクラスは、の`ValueAnimator`サブクラスです。 &ndash; ターゲットオブジェクトと更新するプロパティを受け入れることによって、オブジェクトをアニメーション化するプロセスを簡略化することを目的としています。
+- [Objectanimator](xref:Android.Animation.ObjectAnimator)このクラスは、の`ValueAnimator`サブクラスです。 &ndash; ターゲットオブジェクトと更新するプロパティを受け入れることによって、オブジェクトをアニメーション化するプロセスを簡略化することを目的としています。
 
--   [アニメーションの設定](xref:Android.Animation.AnimatorSet)&ndash;このクラスは、アニメーションを互いに相対的に実行する方法を調整します。 アニメーションは、連続して、または指定された間隔で同時に実行できます。
+- [アニメーションの設定](xref:Android.Animation.AnimatorSet)&ndash;このクラスは、アニメーションを互いに相対的に実行する方法を調整します。 アニメーションは、連続して、または指定された間隔で同時に実行できます。
 
 
 *エバリュエーター*は、アニメーション中に新しい値を計算するためにアニメーターによって使用される特殊なクラスです。 既定では、Android には次のエバリュエーターが用意されています。
 
--   [整合性](xref:Android.Animation.IntEvaluator)の&ndash;整数プロパティの値を計算します。
+- [整合性](xref:Android.Animation.IntEvaluator)の&ndash;整数プロパティの値を計算します。
 
--   [FloatEvaluator](xref:Android.Animation.FloatEvaluator)&ndash; Float プロパティの値を計算します。
+- [FloatEvaluator](xref:Android.Animation.FloatEvaluator)&ndash; Float プロパティの値を計算します。
 
--   [Argbevaluator](xref:Android.Animation.ArgbEvaluator)&ndash;色のプロパティの値を計算します。
+- [Argbevaluator](xref:Android.Animation.ArgbEvaluator)&ndash;色のプロパティの値を計算します。
 
 アニメーション化されているプロパティが`float`、、 `int`またはカラーではない場合、アプリケーションは、 `ITypeEvaluator`インターフェイスを実装することによって独自のエバリュエーターを作成できます。 (カスタムエバリュエーターの実装については、このトピックでは扱いません)。
 
@@ -340,9 +340,9 @@ myImage.StartAnimation(myAnimation);
 
 の`ValueAnimator`インスタンスを取得するには、次のファクトリメソッドのいずれかを呼び出します。
 
--  `ValueAnimator.OfInt`
--  `ValueAnimator.OfFloat`
--  `ValueAnimator.OfObject`
+- `ValueAnimator.OfInt`
+- `ValueAnimator.OfFloat`
+- `ValueAnimator.OfObject`
 
 この処理が完了すると`ValueAnimator` 、インスタンスの期間が設定されている必要があります。その後、インスタンスを開始できます。 次の例は、1000ミリ秒の範囲内で0から1の値をアニメーション化する方法を示しています。
 

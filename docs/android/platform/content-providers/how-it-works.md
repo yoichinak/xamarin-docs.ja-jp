@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 64a12f4f797630ad37e5821cd04a14a9d561c53e
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 8fb0b5136cc75463fc35ced2336e0ea321e8aecd
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510679"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524419"
 ---
 # <a name="how-content-providers-work"></a>コンテンツプロバイダーのしくみ
 
@@ -73,10 +73,10 @@ Android では、次のものを使用して`ContentProviders`広範なシステ
 
 API `ContentProvider`を使用すると、コンシューマーは次のようなデータに対してさまざまな操作を実行できます。
 
--  データをクエリして、リストまたは個々のレコードを返します。
--  個々のレコードを変更します。
--  新しいレコードを追加します。
--  レコードを削除します。
+- データをクエリして、リストまたは個々のレコードを返します。
+- 個々のレコードを変更します。
+- 新しいレコードを追加します。
+- レコードを削除します。
 
 このドキュメントには、システム提供`ContentProvider`のを使用する例と、カスタム`ContentProvider`を実装する単純な読み取り専用の例が含まれています。
 

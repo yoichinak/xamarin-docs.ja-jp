@@ -1,6 +1,6 @@
 ---
 title: Android SDK ツールへの変更
-description: Android SDK がインストール済みの API レベルおよび Avd を管理する方法を変更します。
+description: インストールされている API レベルと AVDs を Android SDK が管理する方法を変更しました。
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 5AC61C00-0FF6-4C2D-80E7-D67A3EE30A5A
@@ -8,20 +8,20 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/21/2018
-ms.openlocfilehash: dbd3287e7c646be7fd969699eab685906a1c6c1a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 5446f8e7bbdf2a5f625852bb61637be392bc6bc2
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61093936"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69523216"
 ---
 # <a name="changes-to-the-android-sdk-tooling"></a>Android SDK ツールへの変更
 
-_Android SDK がインストール済みの API レベルおよび Avd を管理する方法を変更します。_
+_インストールされている API レベルと AVDs を Android SDK が管理する方法を変更しました。_
 
-## <a name="changes-to-android-sdk-tooling"></a>Android SDK ツールへの変更
+## <a name="changes-to-android-sdk-tooling"></a>Android SDK ツールに対する変更
 
-Android SDK Tools の最新バージョンに Google が新しい CLI (コマンド ライン インターフェイス) ツールを優先して、既存の AVD および SDK マネージャーを削除します。 **Android**プログラムが削除され、過去の Android SDK Tools バージョン 25.2.5 Visual Studio for Mac と Visual Studio Tools for Xamarin の以前のバージョンで Google GUI (グラフィカル ユーザー インターフェイス) の管理者が機能しなくなります。 たとえば、使用しよう、 **android**コマンドラインを使用してプログラムは、次のようなエラー メッセージになります。
+Android 用の SDK Tools の最近のバージョンでは、新しい CLI (コマンドラインインターフェイス) ツールを優先して、既存の AVD および SDK マネージャーが Google によって削除されました。 **Android**プログラムは削除されており、Visual Studio for Mac の Google GUI (グラフィカルユーザーインターフェイス) マネージャーと、Xamarin 用の古いバージョンの Visual Studio Tools は、バージョン25.2.5 以前の Android SDK Tools を超えて動作しなくなりました。 たとえば、コマンドラインで**android**プログラムを使用しようとすると、次のようなエラーメッセージが表示されます。
 
 ```shell
 The "android" command is deprecated.
@@ -30,41 +30,41 @@ For command-line tools, use tools\bin\sdkmanager.bat
 and tools\bin\avdmanager.bat
 ```
 
-次のセクションでは、Android SDK と Android SDK 25.3.0 を使用して、Android 仮想デバイスを管理する方法を説明します。 以降。
+以下のセクションでは、Android SDK 25.3.0 以降を使用して Android SDK と Android の仮想デバイスを管理する方法について説明します。
 
 ### <a name="ui-tools"></a>UI ツール
 
-Visual Studio と Visual Studio for Mac は、提供が中止された Google GUI ベースのマネージャー用の Xamarin 置換を指定ようになりました。
+Visual Studio と Visual Studio for Mac は、廃止された Google GUI ベースのマネージャーに対して Xamarin の置換を提供するようになりました。
 
--   Android SDK ツール、プラットフォーム、および Xamarin.Android アプリの開発に必要なその他のコンポーネントをダウンロードするには、使用、 [Xamarin Android SDK Manager](~/android/get-started/installation/android-sdk.md)従来の Google SDK Manager の代わりにします。
+- Xamarin Android アプリの開発に必要な Android SDK ツール、プラットフォーム、およびその他のコンポーネントをダウンロードするには、従来の Google SDK Manager の代わりに[xamarin Android SDK Manager](~/android/get-started/installation/android-sdk.md)を使用します。
 
--   作成し、Android 仮想デバイスの構成を使用して、 [Android Device Manager](~/android/get-started/installation/android-emulator/device-manager.md)従来の Google エミュレーター マネージャーではなく。
+- Android 仮想デバイスを作成して構成するには、従来の Google Emulator Manager の代わりに[Android Device Manager](~/android/get-started/installation/android-emulator/device-manager.md)を使用します。
 
-これらのツールは機能的には、Google の GUI ベース マネージャーの代わりになるものです。
+これらのツールは、それらが置き換える Google GUI ベースの管理者と機能的に同等です。
 
 ### <a name="cli-tools"></a>CLI ツール
 
-または、エミュレーター、Android SDK の更新の管理に CLI ツールを使用できます。 次のプログラムは、今すぐ、Android SDK ツールのコマンド ライン インターフェイスを構成します。
+または、CLI ツールを使用して、エミュレーターと Android SDK を管理および更新することもできます。 次のプログラムは、Android SDK ツールのコマンドラインインターフェイスを構成するようになりました。
 
 #### <a name="sdkmanager"></a>sdkmanager
 
-**追加されます。** Android SDK Tools 25.2.3 (2016 年 11 月) 以降。
+**追加:** Android SDK Tools 25.2.3 (11 月、2016) 以降。
 
-呼ばれる新しいプログラムがある**sdkmanager**で、**ツール/bin** Android SDK のフォルダー。 このツールは、コマンドラインでの Android SDK を維持するために使用されます。 詳細については、このツールを使用して、次を参照してください。 [sdkmanager](https://developer.android.com/studio/command-line/sdkmanager.html)します。
+Android SDK の [**ツール]/[bin** ] フォルダーに、 **sdkmanager**という名前の新しいプログラムが追加されています。 このツールは、コマンドラインで Android SDK を維持するために使用されます。 このツールの使用方法の詳細については、「 [sdkmanager](https://developer.android.com/studio/command-line/sdkmanager.html)」を参照してください。
 
 #### <a name="avdmanager"></a>avdmanager
 
-**追加されます。** Android SDK Tools 25.3.0 (2017 年 3 月) 以降。
+**追加:** Android SDK Tools 25.3.0 (3 月、2017) 以降。
 
-呼ばれる新しいプログラムがある**avdmanager**で、**ツール/bin** Android SDK のフォルダー。 このツールは、Android emulator、Avd を維持するために使用されます。 詳細については、このツールを使用して、次を参照してください。 [avdmanager](https://developer.android.com/studio/command-line/avdmanager.html)します。
+**Avdmanager**という新しいプログラムが Android SDK の [**ツール]/[bin** ] フォルダーにあります。 このツールは、Android Emulator の AVDs を維持するために使用されます。 このツールの使用方法の詳細については、「 [avdmanager](https://developer.android.com/studio/command-line/avdmanager.html)」を参照してください。
 
-### <a name="downgrading"></a>ダウン グレード
+### <a name="downgrading"></a>ダウングレード
 
-ダウン グレードすることができます、 **Android SDK Tools**バージョンからの Android SDK の以前のバージョンをインストールすることによって、 [Android デベロッパー web サイト](https://developer.android.com/studio/index.html)します。
+[Android Developer web サイト](https://developer.android.com/studio/index.html)から以前のバージョンの Android SDK をインストールすることによって、 **Android SDK Tools**バージョンをダウングレードできます。
 
-### <a name="using-the-old-gui"></a>古い GUI を使用してください。
+### <a name="using-the-old-gui"></a>古い GUI の使用
 
-実行して、元の GUI を使用することもできます、 **android**プログラム内で、**ツール**フォルダーを使用している限り**Android SDK Tools**バージョン**25.2.5**以下。
+**Android SDK Tools**バージョン**25.2.5 以前**以下であれば、**ツール**フォルダー内で**android**プログラムを実行することで、元の GUI を引き続き使用できます。
 
 
 ## <a name="related-links"></a>関連リンク

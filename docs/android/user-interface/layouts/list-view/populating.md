@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2017
-ms.openlocfilehash: abc7bb09791df115536f552979b48a3a12b4f443
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: e92aada7be8a296baeaa9eebfb18fe906b5c3b63
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646348"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522543"
 ---
 # <a name="populating-a-xamarinandroid-listview-with-data"></a>Xamarin. Android ListView にデータを読み込む
 
@@ -62,14 +62,14 @@ protected override void OnListItemClick(ListView l, View v, int position, long i
 `ArrayAdapter<string>`非常に簡単ですが、非常に限られています。 ただし、多くの場合、バインドする文字列だけではなく、ビジネスエンティティのコレクションが存在することになります。
 たとえば、データが Employee クラスのコレクションで構成されている場合、リストに各従業員の名前のみを表示することができます。 表示されるデータを制御`ListView`するためのの動作をカスタマイズするには、次`BaseAdapter`の4つの項目をオーバーライドするサブクラスを実装する必要があります。
 
--   **カウント**&ndash;データ内の行の数を制御することを指定します。
+- **カウント**&ndash;データ内の行の数を制御することを指定します。
 
--   **Getview**&ndash;各行のビューを返すには、データを設定します。
+- **Getview**&ndash;各行のビューを返すには、データを設定します。
     このメソッドには、 `ListView`再利用のために既存の未使用の行を渡すためのパラメーターがあります。
 
--   **GetItemId**&ndash;行識別子を返します (通常は行番号ですが、任意の long 型の値を指定できます)。
+- **GetItemId**&ndash;行識別子を返します (通常は行番号ですが、任意の long 型の値を指定できます)。
 
--   **この [int]** インデクサー &ndash;は、特定の行番号に関連付けられたデータを返します。
+- **この [int]** インデクサー &ndash;は、特定の行番号に関連付けられたデータを返します。
 
 **Basictableadapter/HomeScreenAdapter**のコード例では、サブクラス`BaseAdapter`化する方法を示しています。
 
@@ -133,7 +133,7 @@ public override View GetView(int position, View convertView, ViewGroup parent)
 }
 ```
 
-カスタムアダプターの実装では、新しいビュー `convertView`を作成する前にオブジェクト*を再利用*して、長いリストを表示するときにメモリが不足しないようにする必要があります。
+カスタムアダプターの実装では、新しいビュー `convertView`を作成する前にオブジェクトを再利用して、長いリストを表示するときにメモリが不足しないようにする必要があります。
 
 一部のアダプター実装 ( `CursorAdapter`など) には`GetView`メソッドがないため、2つの異なるメソッド`NewView`が`BindView`必要であり、の役割を2つに分割`GetView`することによって行の再利用を強制します。メソッド. ドキュメントの後半`CursorAdapter`に例があります。
 
@@ -159,11 +159,11 @@ ListView.FastScrollEnabled = true;
 
 を実装`ISectionIndexer`するには、アダプターに次の3つのメソッドを追加する必要があります。
 
--   **Getsections**&ndash;表示される可能性のあるセクションのインデックスタイトルの完全な一覧を示します。 このメソッドには Java オブジェクトの配列が必要であるため、コード`Java.Lang.Object[]`で .net コレクションからを作成する必要があります。 この例では、リスト内の最初の文字の一覧がと`Java.Lang.String`して返されます。
+- **Getsections**&ndash;表示される可能性のあるセクションのインデックスタイトルの完全な一覧を示します。 このメソッドには Java オブジェクトの配列が必要であるため、コード`Java.Lang.Object[]`で .net コレクションからを作成する必要があります。 この例では、リスト内の最初の文字の一覧がと`Java.Lang.String`して返されます。
 
--   **Getpositionforsection**&ndash;指定されたセクションインデックスの最初の行位置を返します。
+- **Getpositionforsection**&ndash;指定されたセクションインデックスの最初の行位置を返します。
 
--   **Getsectionforposition**&ndash;指定された行に表示されるセクションインデックスを返します。
+- **Getsectionforposition**&ndash;指定された行に表示されるセクションインデックスを返します。
 
 
 この例`SectionIndex/HomeScreenAdapter.cs`のファイルは、これらのメソッドと、コンストラクター内のいくつかの追加コードを実装しています。 コンストラクターは、すべての行をループし、タイトルの最初の文字を抽出することにより、セクションインデックスを作成します (これが機能するには、項目が既に並べ替えられている必要があります)。

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 15ff11c5100f697e1945793da0baca68add082be
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: a4e165f6156bf5224881327049b2c3ed48b5c2fe
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646557"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522762"
 ---
 # <a name="viewpager-with-views"></a>ViewPager とビュー
 
@@ -101,11 +101,11 @@ protected override void OnCreate(Bundle bundle)
 
 このコードでは、次のことを行います。
 
-1.  **メインの axml**レイアウトリソースからビューを設定します。
+1. **メインの axml**レイアウトリソースからビューを設定します。
 
-2.  レイアウトからへの`ViewPager`参照を取得します。
+2. レイアウトからへの`ViewPager`参照を取得します。
 
-3.  新しい`TreeCatalog`をデータソースとしてインスタンス化します。
+3. 新しい`TreeCatalog`をデータソースとしてインスタンス化します。
 
 このコードをビルドして実行すると、次のスクリーンショットのような画面が表示されます。 
 
@@ -120,13 +120,13 @@ protected override void OnCreate(Bundle bundle)
 
 を実装`PagerAdapter`する場合は、次のものをオーバーライドする必要があります。
 
--   **InstantiateItem**指定された`View`位置のページ () を作成`ViewPager`し、そのページのビューのコレクションに追加します。 &ndash; 
+- **InstantiateItem**指定された`View`位置のページ () を作成`ViewPager`し、そのページのビューのコレクションに追加します。 &ndash; 
 
--   **Destroyitem**&ndash;指定された位置からページを削除します。
+- **Destroyitem**&ndash;指定された位置からページを削除します。
 
--   **カウント**&ndash;使用可能なビュー (ページ) の数を返す読み取り専用のプロパティ。 
+- **カウント**&ndash;使用可能なビュー (ページ) の数を返す読み取り専用のプロパティ。 
 
--   **Isviewfromobject 書類**&ndash;ページが特定のキーオブジェクトに関連付けられているかどうかを判断します。 (このオブジェクトは、 `InstantiateItem`メソッドによって作成されます)。この例では、キーオブジェクトは`TreeCatalog`データオブジェクトです。
+- **Isviewfromobject 書類**&ndash;ページが特定のキーオブジェクトに関連付けられているかどうかを判断します。 (このオブジェクトは、 `InstantiateItem`メソッドによって作成されます)。この例では、キーオブジェクトは`TreeCatalog`データオブジェクトです。
 
 **TreePagerAdapter.cs**という名前の新しいファイルを追加し、その内容を次のコードに置き換えます。 
 
@@ -224,14 +224,14 @@ public override Java.Lang.Object InstantiateItem (View container, int position)
 
 このコードでは、次のことを行います。
 
-1.  新しい`ImageView`をインスタンス化して、指定した位置にツリーイメージを表示します。 アプリの`MainActivity`は、 `ImageView`コンストラクターに渡されるコンテキストです。
+1. 新しい`ImageView`をインスタンス化して、指定した位置にツリーイメージを表示します。 アプリの`MainActivity`は、 `ImageView`コンストラクターに渡されるコンテキストです。
 
-2.  リソースを、指定し`TreeCatalog`た位置にあるイメージリソース ID に設定します。 `ImageView`
+2. リソースを、指定し`TreeCatalog`た位置にあるイメージリソース ID に設定します。 `ImageView`
 
-3.  渡されたコンテナー `View`を`ViewPager`参照にキャストします。
+3. 渡されたコンテナー `View`を`ViewPager`参照にキャストします。
     このキャストを適切に`JavaCast<ViewPager>()`実行するには、を使用する必要があることに注意してください (これは、Android が実行時にチェックされる型変換を実行するために必要です)。
 
-4.  インスタンス化`ImageView` `ImageView`されたをに追加し、を呼び出し元に返します。`ViewPager`
+4. インスタンス化`ImageView` `ImageView`されたをに追加し、を呼び出し元に返します。`ViewPager`
 
 `ImageView`で`ViewPager` イメージが表示されると、これが表示されます。`position` 初期状態`InstantiateItem`では、が2回呼び出され、最初の2ページにビューが設定されます。 ユーザーがスクロールすると、現在表示されている項目の前後のビューを維持するためにもう一度呼び出されます。 
 
@@ -253,11 +253,11 @@ public override void DestroyItem(View container, int position, Java.Lang.Object 
 
 このコードでは、次のことを行います。
 
-1.  渡されたコンテナー `View`を`ViewPager`参照にキャストします。
+1. 渡されたコンテナー `View`を`ViewPager`参照にキャストします。
 
-2.  渡された Java オブジェクト (`view`) をC# `View` (`view as View`) にキャストします。
+2. 渡された Java オブジェクト (`view`) をC# `View` (`view as View`) にキャストします。
 
-3.  からビューを削除し`ViewPager`ます。 
+3. からビューを削除し`ViewPager`ます。 
 
 
 

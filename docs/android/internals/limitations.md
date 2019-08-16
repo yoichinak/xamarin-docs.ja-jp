@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 18e6e82011460a51a96df4694f15b36c5ec94ab5
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 57d9d6a91f88d117f0889a8dba9e6198ec6b7f62
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510707"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524768"
 ---
 # <a name="limitations"></a>制限事項
 
@@ -90,7 +90,7 @@ class MyIntentService : IntentService {
 ジェネリックC#クラスは部分的にのみサポートされています。 次の制限事項があります。
 
 
--   ジェネリック型は、また`[Export]`は`[ExportField`を使用できません。 これを行おうとすると、 `XA4207`エラーが発生します。
+- ジェネリック型は、また`[Export]`は`[ExportField`を使用できません。 これを行おうとすると、 `XA4207`エラーが発生します。
 
     ```csharp
     public abstract class Parcelable<T> : Java.Lang.Object, IParcelable
@@ -103,7 +103,7 @@ class MyIntentService : IntentService {
     }
     ```
 
--   ジェネリックメソッドは、また`[Export]`は`[ExportField]`を使用できません。
+- ジェネリックメソッドは、また`[Export]`は`[ExportField]`を使用できません。
 
     ```csharp
     public class Example : Java.Lang.Object
@@ -118,7 +118,7 @@ class MyIntentService : IntentService {
     }
     ```
 
--   `[ExportField]`を返す`void`メソッドでは使用できません。
+- `[ExportField]`を返す`void`メソッドでは使用できません。
 
     ```csharp
     public class Example : Java.Lang.Object
@@ -131,7 +131,7 @@ class MyIntentService : IntentService {
     }
     ```
 
--   ジェネリック型のインスタンスを Java コードから作成することはでき_ません_。
+- ジェネリック型のインスタンスを Java コードから作成することはでき_ません_。
     これらのコードは、マネージコードからのみ安全に作成できます。
 
     ```csharp

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 01/23/2017
-ms.openlocfilehash: 8ed9ab164f6b14d794b29667ec96afab47e3fcde
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: f11e72e433c443fbb9639b1f972ec4d87adf8b58
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655174"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526901"
 ---
 # <a name="handling-touch-in-xamarinios-apps"></a>Xamarin iOS アプリでのタッチ処理
 
@@ -28,9 +28,9 @@ iOS で`UITouch`は、クラスのタッチデータをカプセル化してい�
 
 ## <a name="sections"></a>セクション
 
--  [iOS でのタッチ](touch-in-ios.md)
--  [チュートリアル: iOS でのタッチの使用](ios-touch-walkthrough.md)
--  [マルチタッチ追跡](touch-tracking.md)
+- [iOS でのタッチ](touch-in-ios.md)
+- [チュートリアル: iOS でのタッチの使用](ios-touch-walkthrough.md)
+- [マルチタッチ追跡](touch-tracking.md)
 
 このガイドは、iOS でのタッチの概要として機能します。 Ios での3D タッチと Haptic フィードバックの使用の詳細については、ios 9 と10で導入されました。以下の特定のガイドを参照してください。
 

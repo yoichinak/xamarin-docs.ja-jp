@@ -6,16 +6,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/01/2018
-ms.openlocfilehash: b0f747c37362997563a35d9b94f8e677d4104ee1
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 1df10c4b8eaa30ce417feb2abae7f52b2494edf6
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61013443"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526370"
 ---
 # <a name="android-resource-basics"></a>Android リソースの基本
 
-ほぼすべての Android アプリケーションは何らかのリソースには少なくとも多くの場合、XML ファイルの形式でユーザー インターフェイスのレイアウトがあります。 Xamarin.Android アプリケーションが作成されると、既定のリソースは、Xamarin.Android プロジェクト テンプレートでのセットアップです。
+ほとんどすべての Android アプリケーションには、何らかのリソースが含まれています。少なくとも、多くの場合、XML ファイルの形式でユーザーインターフェイスのレイアウトを持っています。 Xamarin Android アプリケーションを最初に作成すると、既定のリソースは Xamarin. Android プロジェクトテンプレートによって設定されます。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -27,44 +27,44 @@ ms.locfileid: "61013443"
  
 -----
 
-既定のリソースを構成する 5 つのファイルは、リソース フォルダーに作成されました。
+既定のリソースを構成する5つのファイルが Resources フォルダーに作成されました。
 
--  **Icon.png** &ndash;アプリケーションの既定のアイコン
+- **Icon .png** &ndash;アプリケーションの既定のアイコン
 
--  **Main.axml** &ndash;アプリケーションの既定のユーザー インターフェイスのレイアウト ファイルです。 Android 間を使用して、 **.xml**ファイルの拡張機能は、Xamarin.Android で使用して、 **.axml**ファイル拡張子。
+- メインアプリケーションの既定のユーザーインターフェイスレイアウトファイル。 &ndash; Android では **.xml**ファイル拡張子が使用されていますが、Xamarinでは .xml ファイル拡張子が使用されていることに注意してください。
 
--  **Strings.xml** &ndash;アプリケーションのローカライズを支援ストリング テーブル
+- **文字列 .xml** &ndash;アプリケーションのローカライズに役立つ文字列テーブル
 
--  **AboutResources.txt** &ndash;これは必要ありませんし、安全に削除された可能性があります。 だけのリソース フォルダーとファイルが、高レベルな概要を提供します。
+- **リソース** &ndash;に関する情報は必要ありません。削除しても安全です。 ここでは、Resources フォルダーとその中のファイルについて概要を説明します。
 
--  **Resource.designer.cs** &ndash;このファイルが自動的に生成され、Xamarin.Android と一意の保留によって管理される ID の各リソースに割り当てられます。 これは非常に似ています、Java で記述された Android アプリケーションを持つ R.java ファイルと同じ目的です。 Xamarin.Android ツールによって自動的に作成し、時間の経過に再生成されます。
+- Resource.designer.cs&ndash;このファイルは、Xamarin Android によって自動的に生成されて管理され、各リソースに割り当てられた一意の ID を保持します。 これは、Java で記述された Android アプリケーションが持っているのと同じように、その目的は同じです。 これは、Xamarin Android ツールによって自動的に作成され、随時再生成されます。
 
 
-## <a name="creating-and-accessing-resources"></a>作成して、リソースにアクセスします。
+## <a name="creating-and-accessing-resources"></a>リソースの作成とアクセス
 
-リソースの作成は、対象のリソースの種類のディレクトリにファイルを追加するだけです。 以下のスクリーン ショットは、ドイツ語のロケールの文字列リソースがプロジェクトに追加されたかを示しています。 ときに**Strings.xml** 、ファイルに追加された、**ビルド アクション**に自動的に設定された**AndroidResource** Xamarin.Android ツールによって。
+リソースの作成は、該当するリソースの種類のディレクトリにファイルを追加するのと同じように簡単です。 次のスクリーンショットは、ドイツ語のロケールの文字列リソースがプロジェクトに追加されたことを示しています。 **文字列 .xml**がファイルに追加されると、Xamarin Android ツールによって**ビルドアクション**が**androidresource**に自動的に設定されます。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-![ビルド Strings.xml AndroidResource に設定のアクション](android-resource-basics-images/02-build-action-vs.png)
+![文字列のビルドアクション。 xml を AndroidResource に設定します。](android-resource-basics-images/02-build-action-vs.png)
  
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-![ビルド Strings.xml AndroidResource に設定のアクション](android-resource-basics-images/02-build-action-xs.png)
+![文字列のビルドアクション。 xml を AndroidResource に設定します。](android-resource-basics-images/02-build-action-xs.png)
  
 -----
  
 
-これにより、Xamarin.Android ツールを適切にコンパイルし、APK ファイルへのリソースを埋め込みます。 何らかの理由の場合、**ビルド アクション**に設定されていない**Android リソース**はファイル、APK から除外し、読み込みまたはリソースにアクセスしようとすると、実行時エラーになり、アプリケーションがクラッシュします。
+これにより、Xamarin Android ツールはリソースを適切にコンパイルして APK ファイルに埋め込むことができます。 何らかの理由で**ビルドアクション**が**Android リソース**に設定されていない場合、ファイルは apk から除外され、リソースの読み込みまたはアクセスが試行されると、実行時エラーが発生し、アプリケーションがクラッシュします。
 
-または Android には、リソース アイテムのファイル名が小文字のみがサポートされます、Xamarin.Android では少し寛容; に注意してください。これは、大文字と小文字の両方のファイル名をサポートします。 イメージ名の規則は、区切り記号としてアンダー スコアと小文字を使用する (たとえば、**マイ\_イメージ\_name.png**)。 ダッシュやスペースを区切り記号として使用する場合にリソース名を処理できないことに注意してください。
+また、Android ではリソース項目に対して小文字のファイル名のみがサポートされていますが、Xamarin. Android はやや厳格であることに注意してください。大文字と小文字の両方のファイル名がサポートされます。 イメージ名の規則としては、小文字とアンダースコアを区切り記号として使用します (たとえば、 **[\_イメージ\_名 .png**])。 ダッシュまたは空白文字が区切り記号として使用されている場合、リソース名は処理できないことに注意してください。
 
-アプリケーションで使用する 2 つの方法があるリソースがプロジェクトに追加されたら、&ndash;プログラムで (コード) 内や、XML ファイル。
+リソースがプロジェクトに追加されたら、アプリケーション&ndash;でプログラムを使用して (コード内で)、または XML ファイルからリソースを使用する方法が2つあります。
 
 
-## <a name="referencing-resources-programmatically"></a>リソースをプログラムで参照します。
+## <a name="referencing-resources-programmatically"></a>参照 (プログラムによるリソースの)
 
-一意のリソース ID を割り当てられているこれらのファイルをプログラムでアクセスするには このリソース ID と呼ばれる特殊なクラスで定義されている整数`Resource`、ファイル内に存在**Resource.designer.cs**、このようなものになります。
+プログラムによってこれらのファイルにアクセスするには、一意のリソース ID が割り当てられます。 このリソース ID は、という`Resource`特殊なクラスで定義された整数で、 **Resource.designer.cs**ファイルにあり、次のようになります。
 
 ```csharp
 public partial class Resource
@@ -91,37 +91,37 @@ public partial class Resource
 }
 ```
 
-それぞれのリソース ID は、リソースの種類に対応する入れ子になったクラス内に含まれています。 たとえば、ファイル**Icon.png** Xamarin.Android の更新をプロジェクトに追加された、`Resource`という入れ子になったクラスを作成するクラス、`Drawable`定数内で名前付き`Icon`します。
-これにより、ファイル**Icon.png**としてコードで参照される`Resource.Drawable.Icon`します。 `Resource`クラス手動で編集しないでとに加えた変更は、Xamarin.Android によって上書きされます。
+各リソース ID は、リソースの種類に対応する入れ子になったクラス内に含まれています。 たとえば、ファイル**アイコン .png**がプロジェクトに追加されたときに、Xamarin. Android は`Resource`クラスを更新して、という名前`Icon`の定数を持つという`Drawable`入れ子になったクラスを作成します。
+これにより、コード内のファイル**アイコン .png**をとして`Resource.Drawable.Icon`参照できます。 クラス`Resource`に加えられた変更はすべて Xamarin Android によって上書きされるため、クラスは手動で編集しないでください。
 
-プログラムで (コード) 内のリソースを参照するときに、次の構文を使用するリソースのクラス階層を使用してアクセスできます。
+プログラムによって (コード内で) リソースを参照する場合は、次の構文を使用する Resources クラス階層を介してアクセスできます。
 
 ```csharp
 [<PackageName>.]Resource.<ResourceType>.<ResourceName>
 ```
 
--  **PackageName** &ndash;リソースを提供する、のみ、パッケージが必要なときに使用されている他のパッケージからのリソース。
+- **PackageName**&ndash;リソースを提供するパッケージ。他のパッケージのリソースが使用されている場合にのみ必要です。
 
--  **ResourceType** &ndash;上記で説明したリソース クラス内にある入れ子になったリソースの種類します。
+- **ResourceType**&ndash;これは、上記で説明したリソースクラス内にある入れ子になったリソースの種類です。
 
--  **リソース名** &ndash; (拡張子なし)、リソースのファイル名または XML 要素に含まれるリソースの android: name 属性の値になります。
+- **リソース名**&ndash;これは、リソースのファイル名 (拡張子なし)、または XML 要素内のリソースの android: name 属性の値です。
 
 
-## <a name="referencing-resources-from-xml"></a>XML からリソースを参照します。
+## <a name="referencing-resources-from-xml"></a>参照 (XML からリソースを)
 
-XML ファイルにリソースを以下へのアクセス、特別な構文。
+XML ファイル内のリソースには、次の特殊な構文でアクセスします。
 
 ```xml
 @[<PackageName>:]<ResourceType>/<ResourceName>
 ```
 
--  **PackageName** &ndash;リソースを提供する、のみ、パッケージが必要なときに使用されている他のパッケージからのリソース。
+- **PackageName**&ndash;リソースを提供するパッケージ。他のパッケージのリソースが使用されている場合にのみ必要です。
 
--  **ResourceType** &ndash;リソース クラス内にある入れ子になったリソースの種類します。
+- **ResourceType**&ndash;これは、リソースクラス内にある入れ子になったリソースの種類です。
 
--  **リソース名**&ndash;これは、リソースのファイル名 (*せず*ファイルの種類の拡張機能) の値は、 `android:name` XML 要素に含まれるリソースの属性。
+- **リソース名**これは、リソースのファイル名 (ファイルの種類の拡張子を*除く*)、または`android:name` XML 要素内のリソースの属性の値です。 &ndash;
 
-レイアウト ファイルの内容など**Main.axml**、次に示します。
+たとえば、次のようなレイアウトファイルの内容があり**ます。**
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -136,7 +136,7 @@ XML ファイルにリソースを以下へのアクセス、特別な構文。
 </LinearLayout>
 ```
 
-この例では、 [ `ImageView` ](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/imageview)という名前の描画可能なリソースが必要な**フラグ**します。 `ImageView`がその`src`属性に設定`@drawable/flag`します。 Android は、ディレクトリ内になります、アクティビティの開始時に**リソース/ディスプレイ**という名前のファイルの**flag.png** (ファイルの拡張機能が、別のイメージ形式をこのようなにできる**flag.jpg**)そのファイルを読み込むし、表示、`ImageView`します。
+この例には[`ImageView`](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/imageview) 、"**フラグ**" という名前のリソースを必要とするがあります。 で`ImageView`は、 `src`属性がに`@drawable/flag`設定されています。 アクティビティが開始されると、Android は、**フラグ .png**という名前のファイル (たとえば、ファイル拡張子が**flag .jpg**などの別のイメージ形式) であることを確認し、そのファイルをに読み込んで`ImageView`表示します。
 このアプリケーションを実行すると、次の図のようになります。
 
 ![ローカライズされた ImageView](android-resource-basics-images/03-localized-screenshot.png)

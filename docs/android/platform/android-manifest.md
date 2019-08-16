@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/05/2018
-ms.openlocfilehash: 4a5b0e7d45878dcaa0f3e97411c2ef83d2e26c5a
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: ef1ccd07eb4807cd84094cad1200d8a1ed7cea8b
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510694"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524698"
 ---
 # <a name="working-with-the-android-manifest"></a>Android マニフェストの操作
 
@@ -237,18 +237,18 @@ Android マニフェストには、アプリケーション全体のプロパテ
 
 ## <a name="list-of-custom-attributes"></a>カスタム属性の一覧
 
--   [Android. ActivityAttribute](xref:Android.App.ActivityAttribute) :[/Manifest/applicationxml](https://developer.android.com/guide/topics/manifest/activity-element.html)フラグメントを生成します 
--   [Android. ApplicationAttribute](xref:Android.App.ApplicationAttribute) :[/Manifest/application](https://developer.android.com/guide/topics/manifest/application-element.html) XML フラグメントを生成します 
--   [InstrumentationAttribute](xref:Android.App.InstrumentationAttribute) :[//インストルメンテーション](https://developer.android.com/guide/topics/manifest/instrumentation-element.html)XML フラグメントを生成します 
--   [Android. IntentFilterAttribute](xref:Android.App.IntentFilterAttribute) :[フィルター](https://developer.android.com/guide/topics/manifest/intent-filter-element.html) XML フラグメントを生成します 
--   [Android. App.config 属性](xref:Android.App.MetaDataAttribute):[データ](https://developer.android.com/guide/topics/manifest/meta-data-element.html)XML フラグメントを生成します 
--   [PermissionAttribute](xref:Android.App.PermissionAttribute) :[アクセス許可](https://developer.android.com/guide/topics/manifest/permission-element.html)の XML フラグメントを生成します 
--   [Android. アプリケーションの PermissionGroupAttribute](xref:Android.App.PermissionGroupAttribute) :[グループ](https://developer.android.com/guide/topics/manifest/permission-group-element.html)XML フラグメントを生成します 
--   [Android. App.config ツリー属性](xref:Android.App.PermissionTreeAttribute):[ツリー](https://developer.android.com/guide/topics/manifest/permission-tree-element.html) XML フラグメントを生成します 
--   [Android. App. ServiceAttribute](xref:Android.App.ServiceAttribute) :[/Manifest/applicationxml](https://developer.android.com/guide/topics/manifest/service-element.html)フラグメントを生成します 
--   [Android. App.config 属性](xref:Android.App.UsesLibraryAttribute):[/アプリケーションライブラリ](https://developer.android.com/guide/topics/manifest/uses-library-element.html)の XML フラグメントを生成します 
--   [UsesPermissionAttribute](xref:Android.App.UsesPermissionAttribute) :[許可](https://developer.android.com/guide/topics/manifest/uses-permission-element.html)XML フラグメントを生成します。 
--   [BroadcastReceiverAttribute](xref:Android.Content.BroadcastReceiverAttribute) :[/Manifest/application/レシーバー](https://developer.android.com/guide/topics/manifest/receiver-element.html) XML フラグメントを生成します。 
--   [Android. ContentProviderAttribute](xref:Android.Content.ContentProviderAttribute) :[/Manifest/applicationxml](https://developer.android.com/guide/topics/manifest/provider-element.html)フラグメントを生成します 
--   [GrantUriPermissionAttribute](xref:Android.Content.GrantUriPermissionAttribute) :[/Manifest/application/provider/grant-uri-permission](https://developer.android.com/guide/topics/manifest/grant-uri-permission-element.html) XML フラグメントを生成します
+- [Android. ActivityAttribute](xref:Android.App.ActivityAttribute) :[/Manifest/applicationxml](https://developer.android.com/guide/topics/manifest/activity-element.html)フラグメントを生成します 
+- [Android. ApplicationAttribute](xref:Android.App.ApplicationAttribute) :[/Manifest/application](https://developer.android.com/guide/topics/manifest/application-element.html) XML フラグメントを生成します 
+- [InstrumentationAttribute](xref:Android.App.InstrumentationAttribute) :[//インストルメンテーション](https://developer.android.com/guide/topics/manifest/instrumentation-element.html)XML フラグメントを生成します 
+- [Android. IntentFilterAttribute](xref:Android.App.IntentFilterAttribute) :[フィルター](https://developer.android.com/guide/topics/manifest/intent-filter-element.html) XML フラグメントを生成します 
+- [Android. App.config 属性](xref:Android.App.MetaDataAttribute):[データ](https://developer.android.com/guide/topics/manifest/meta-data-element.html)XML フラグメントを生成します 
+- [PermissionAttribute](xref:Android.App.PermissionAttribute) :[アクセス許可](https://developer.android.com/guide/topics/manifest/permission-element.html)の XML フラグメントを生成します 
+- [Android. アプリケーションの PermissionGroupAttribute](xref:Android.App.PermissionGroupAttribute) :[グループ](https://developer.android.com/guide/topics/manifest/permission-group-element.html)XML フラグメントを生成します 
+- [Android. App.config ツリー属性](xref:Android.App.PermissionTreeAttribute):[ツリー](https://developer.android.com/guide/topics/manifest/permission-tree-element.html) XML フラグメントを生成します 
+- [Android. App. ServiceAttribute](xref:Android.App.ServiceAttribute) :[/Manifest/applicationxml](https://developer.android.com/guide/topics/manifest/service-element.html)フラグメントを生成します 
+- [Android. App.config 属性](xref:Android.App.UsesLibraryAttribute):[/アプリケーションライブラリ](https://developer.android.com/guide/topics/manifest/uses-library-element.html)の XML フラグメントを生成します 
+- [UsesPermissionAttribute](xref:Android.App.UsesPermissionAttribute) :[許可](https://developer.android.com/guide/topics/manifest/uses-permission-element.html)XML フラグメントを生成します。 
+- [BroadcastReceiverAttribute](xref:Android.Content.BroadcastReceiverAttribute) :[/Manifest/application/レシーバー](https://developer.android.com/guide/topics/manifest/receiver-element.html) XML フラグメントを生成します。 
+- [Android. ContentProviderAttribute](xref:Android.Content.ContentProviderAttribute) :[/Manifest/applicationxml](https://developer.android.com/guide/topics/manifest/provider-element.html)フラグメントを生成します 
+- [GrantUriPermissionAttribute](xref:Android.Content.GrantUriPermissionAttribute) :[/Manifest/application/provider/grant-uri-permission](https://developer.android.com/guide/topics/manifest/grant-uri-permission-element.html) XML フラグメントを生成します
 

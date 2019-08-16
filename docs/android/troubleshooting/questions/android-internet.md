@@ -7,27 +7,27 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: cd27d5c884086cd0fade4364851039fd0cd915a0
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: dc84ecc0ee3a71cc4e1d4233f4d6d5f22f597b07
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60945462"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69523485"
 ---
 # <a name="why-cant-my-android-release-build-connect-to-the-internet"></a>Android のリリース ビルドがインターネットに接続できないのはなぜですか
 
 ## <a name="cause"></a>原因
 
-この問題の最も一般的な原因は、**インターネット**アクセス許可は、デバッグ ビルドでは自動的に追加しますが、リリース ビルドを手動で設定する必要があります。 これは、"DebugSymbols"の説明に従って、プロセスにアタッチするデバッガーを許可するインターネット アクセス許可が使用されるため[ここ](~/android/deploy-test/building-apps/build-process.md)します。
+この問題の最も一般的な原因は、**インターネット**のアクセス許可がデバッグビルドに自動的に含まれ、リリースビルドに対して手動で設定する必要があることです。 これは、[ここで](~/android/deploy-test/building-apps/build-process.md)"debugsymbols" について説明されているように、デバッガーがプロセスにアタッチできるようにするために、インターネットアクセス許可が使用されるためです。
 
 
-## <a name="fix"></a>修正
+## <a name="fix"></a>Fix
 
-この問題を解決するには、Android マニフェストでインターネット アクセス許可を要求できます。 これは、いずれかを使用してマニフェスト エディターまたはマニフェストのソースコードに実行できます。
+この問題を解決するには、Android マニフェストでインターネットアクセス許可を要求することができます。 これは、マニフェストエディターまたはマニフェストの sourcecode のいずれかを使用して実行できます。
 
--   エディターで修正します。Android プロジェクトに移動**プロパティ AndroidManifest.xml]-> [必要なアクセス許可]-> [** チェックと**インターネット**
+- エディターでの修正:Android プロジェクトで、[プロパティ] **-> AndroidManifest .xml-> 必要なアクセス許可**を指定し、 **[インターネット]** を確認します。
 
--   Sourcecode で修復します。ソース エディターで、AndroidManifest を開き、内部アクセス許可のタグを追加、`<Manifest>`タグ。
+- Sourcecode での修正:ソースエディターで androidmanifest を開き、 `<Manifest>`タグ内に permission タグを追加します。
 
     ```xml
     <Manifest>

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: e4676314b361bac17b3c6df64631572e62f4d870
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 6960fe3db1ddf7d6d911fe8151e49b1a42388d26
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653732"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527849"
 ---
 # <a name="core-image-in-xamarinios"></a>Xamarin のコアイメージ
 
@@ -22,9 +22,9 @@ _コアイメージは、iOS 5 で導入された新しいフレームワーク�
 
 このドキュメントには、次の簡単な例が含まれています。
 
--  顔検出。
--  画像へのフィルターの適用
--  使用可能なフィルターを一覧表示します。
+- 顔検出。
+- 画像へのフィルターの適用
+- 使用可能なフィルターを一覧表示します。
 
 
 これらの例では、Xamarin の iOS アプリケーションにコアイメージ機能を組み込む方法について説明します。
@@ -49,12 +49,12 @@ CIFeature[] features = detector.FeaturesInImage(ciImage);
 
 特徴配列には、 `CIFaceFeature`オブジェクト (任意の顔が検出された場合) が設定されます。 各面`CIFaceFeature`にはがあります。 `CIFaceFeature`には、次のプロパティがあります。
 
--  HasMouthPosition –この顔で口が検出されたかどうかを指定します。
--  HasLeftEyePosition –この顔に対して左目が検出されたかどうかを指定します。
--  HasRightEyePosition –この顔に対して、右目が検出されたかどうかを指定します。 
--  笑顔の位置–この顔の口の座標。
--  LeftEyePosition –この顔の左側の視点の座標です。
--  RightEyePosition –この顔の右目の座標です。
+- HasMouthPosition –この顔で口が検出されたかどうかを指定します。
+- HasLeftEyePosition –この顔に対して左目が検出されたかどうかを指定します。
+- HasRightEyePosition –この顔に対して、右目が検出されたかどうかを指定します。 
+- 笑顔の位置–この顔の口の座標。
+- LeftEyePosition –この顔の左側の視点の座標です。
+- RightEyePosition –この顔の右目の座標です。
 
 
 これらのすべてのプロパティの座標の原点は、左上にあります。これは、左上を原点として使用する UIKit とは異なります。 座標を使用する場合`CIFaceFeature`は、必ず ' 反転 ' してください。 CoreImage\CoreImageViewController.cs のこの非常に基本的なカスタムイメージビューでは、イメージに ' face indicator ' 三角形を描画する`FlipForBottomOrigin`方法を示しています (メソッドに注意してください)。

@@ -1,45 +1,45 @@
 ---
-title: IOS アプリでデータを使用
-description: このドキュメントには、作成するサンプルについては、ユーザー入力を収集し、実行する方法を示します DataAccess_Adv がについて説明します、読み取り、更新、および削除 (CRUD) のデータベースで Xamarin.iOS アプリを操作します。
+title: IOS アプリでのデータの使用
+description: このドキュメントでは、DataAccess_Adv サンプルについて説明します。これは、ユーザー入力を収集し、Xamarin. iOS アプリで作成、読み取り、更新、削除 (CRUD) データベース操作を実行する方法を示しています。
 ms.prod: xamarin
 ms.assetid: 2CB8150E-CD2C-4E97-8605-1EE8CBACFEEC
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/11/2016
-ms.openlocfilehash: a47ab26777c594658810b014025477486bbe5cc2
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 9da0f48a8798a16ccd6410913d0b31c0b4444cb8
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67650150"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527194"
 ---
-# <a name="using-data-in-an-ios-app"></a>IOS アプリでデータを使用
+# <a name="using-data-in-an-ios-app"></a>IOS アプリでのデータの使用
 
-**DataAccess_Adv**サンプル ユーザー入力を許可する実用アプリケーションの表示と*CRUD* (作成、読み取り、更新、削除) のデータベース機能です。 アプリケーションは、2 つの画面で構成されています。 一覧と、データ エントリ フォーム。 すべてのデータ アクセス コードは変更しなくても iOS と Android で再利用できます。
+**DataAccess_Adv**サンプルは、ユーザーの入力と*CRUD* (作成、読み取り、更新、および削除) データベース機能を使用できる動作するアプリケーションを示しています。 アプリケーションは、リストとデータ入力フォームの2つの画面で構成されます。 すべてのデータアクセスコードは、iOS および Android では変更なしで再利用できます。
 
-アプリケーションの画面は、いくつかのデータを追加した後、iOS のようなります。
+データを追加した後、アプリケーション画面は次のようになります。
 
  ![](using-data-in-an-app-images/image9.png "iOS のサンプル一覧")
 
  ![](using-data-in-an-app-images/image10.png "iOS のサンプルの詳細")
 
-IOS プロジェクトを次に示します: このセクションで示すコードが含まれる、 **Orm**ディレクトリ。
+IOS プロジェクトを以下に示します。このセクションで示すコードは、 **Orm**ディレクトリに含まれています。
 
- ![](using-data-in-an-app-images/image13.png "iOS プロジェクトのツリー")
+ ![](using-data-in-an-app-images/image13.png "iOS プロジェクトツリー")
 
-IOS で ViewControllers のネイティブの UI コードは、このドキュメントの対象外です。
-参照してください、 [iOS テーブルとセル操作](~/ios/user-interface/controls/tables/index.md)UI コントロールの詳細についてはガイド。
+IOS の ViewControllers のネイティブ UI コードは、このドキュメントの対象外です。
+UI コントロールの詳細については、「 [iOS のテーブルとセルの操作](~/ios/user-interface/controls/tables/index.md)ガイド」を参照してください。
 
 ## <a name="read"></a>読み取り
 
-このサンプルでの読み取り操作のいくつかがあります。
+サンプルには、次のような読み取り操作がいくつかあります。
 
--  一覧の読み取り
--  個々 のレコードの読み取り
+- リストを読み取っています
+- 個々のレコードの読み取り
 
 
-2 つのメソッド、`StockDatabase`クラスには。
+`StockDatabase`クラスの2つのメソッドは次のとおりです。
 
 ```csharp
 public IEnumerable<Stock> GetStocks ()
@@ -56,12 +56,12 @@ public Stock GetStock (int id)
 }
 ```
 
-iOS には、データがレンダリングされます。 異なる方法でとしてを`UITableView`。
+iOS では、 `UITableView`としてデータが異なる方法で表示されます。
 
-## <a name="create-and-update"></a>作成し、更新
+## <a name="create-and-update"></a>作成と更新
 
-アプリケーション コードを簡素化するには、1 つの save メソッドが挿入は提供または 更新の主キーが設定されているかどうかによって異なります。 `Id`プロパティが付いて、`[PrimaryKey]`属性は、コードで設定しないでください。
-このメソッドが検出されたかどうか、値が前 (主キー プロパティをチェック) を保存し、挿入するか、それに応じてオブジェクトを更新、します。
+アプリケーションコードを簡略化するために、PrimaryKey が設定されているかどうかに応じて挿入または更新を行う1つの save メソッドが用意されています。 プロパティは`[PrimaryKey]`属性でマークされているので、コードで設定しないでください。 `Id`
+このメソッドは、(主キープロパティをチェックして) 値が以前に保存されているかどうかを検出し、それに応じてオブジェクトを挿入または更新します。
 
 ```csharp
 public int SaveStock (Stock item)
@@ -79,13 +79,13 @@ public int SaveStock (Stock item)
 
 
 
-実践的なアプリケーションは (必要なフィールド、最低限の長さやその他のビジネス ルール) などのいくつかの検証に通常必要とします。
-優れたクロスプラット フォーム対応のアプリケーションは、共有コード、プラットフォームの機能に従って表示するための UI へのバックアップの検証エラーを渡すことで可能な論理の検証の実装します。
+実際のアプリケーションでは、通常、いくつかの検証 (必須フィールド、最小長などのビジネスルール) が必要になります。
+優れたクロスプラットフォームアプリケーションでは、共有コードで可能な限り多くの検証論理を実装し、検証エラーをプラットフォームの機能に従って UI に渡すことができます。
 
 ## <a name="delete"></a>削除
 
-異なり、`Insert`と`Update`、メソッド、`Delete<T>`メソッドが完全ではなく主キーの値だけを受け入れる`Stock`オブジェクト。
-この例では、`Stock`オブジェクトは、メソッドに渡されますに Id プロパティのみが渡され、`Delete<T>`メソッド。
+`Delete<T>` `Stock`メソッドとメソッド`Update`とは異なり、メソッドは、完全なオブジェクトではなく、主キーの値のみを受け入れることができます。 `Insert`
+この例`Stock`では、オブジェクトはメソッドに渡されますが、Id プロパティのみが`Delete<T>`メソッドに渡されます。
 
 ```csharp
 public int DeleteStock(Stock stock)
@@ -96,18 +96,18 @@ public int DeleteStock(Stock stock)
 }
 ```
 
-## <a name="using-a-pre-populated-sqlite-database-file"></a>事前設定された SQLite データベース ファイルを使用します。
+## <a name="using-a-pre-populated-sqlite-database-file"></a>事前設定された SQLite データベースファイルの使用
 
-一部のアプリケーションには、データに読み込まれているデータベースは同梱されています。
-簡単にこれを行うモバイル アプリケーションで、アプリで既存の SQLite データベース ファイルを配布して書き込み可能なディレクトリにアクセスする前にコピーすることです。 SQLite は、多くのプラットフォームで使用される標準的なファイル形式であるためには、さまざまな SQLite データベース ファイルの作成に使用できるツールがあります。
+一部のアプリケーションには、既にデータが格納されているデータベースが付属しています。
+モバイルアプリケーションでこれを簡単に実現するには、既存の SQLite データベースファイルをアプリに発送し、書き込み可能なディレクトリにコピーしてからアクセスします。 SQLite は多くのプラットフォームで使用される標準のファイル形式であるため、SQLite データベースファイルを作成するために使用できるツールがいくつかあります。
 
--  **Firefox 拡張機能の SQLite Manager** – iOS および Android と互換性があるファイルを Mac と Windows が生成されます。
--  **コマンド ライン**– を参照してください[www.sqlite.org/sqlite.html](http://www.sqlite.org/sqlite.html)します。
+- **SQLite Manager Firefox Extension** – Mac および Windows で動作し、IOS および Android と互換性のあるファイルを生成します。
+- **コマンドライン**–「 [Www.sqlite.org/sqlite.html](http://www.sqlite.org/sqlite.html) 」を参照してください。
 
 
-アプリを配布用のデータベース ファイルを作成するときと確実に、コードでは、c# のクラスおよびプロパティに一致する名前を必要とする SQLite.NET を使用している場合に特にテーブルと列の名前付けを使用処理 (または、関連付けられているカスタム属性の場合)。
+アプリケーションと共に配布するデータベースファイルを作成する場合は、テーブルと列の名前付けを使用して、コードが期待するものと一致することを確認します。特に、SQLite.NET C#を使用していて、名前がクラスやプロパティと一致することを期待する場合は特に、または、関連付けられているカスタム属性)。
 
-Ios の場合、アプリケーションに sqlite ファイルを含めるし、が付いていることを確認**ビルド アクション。コンテンツ**します。 内のコードを配置、`FinishedLaunching`ファイルを書き込み可能なディレクトリにコピーする*する前に*データ メソッドを呼び出します。 次のコードと呼ばれる既存のデータベースのコピーは**data.sqlite**存在しない場合にのみ、します。
+IOS の場合は、アプリケーションに sqlite ファイルを含め、ビルドアクションで**マークされていることを確認します。コンテンツ**。 データメソッドを呼び出す`FinishedLaunching` *前に*、ファイルを書き込み可能なディレクトリにコピーするコードをに配置します。 次のコードでは、 **data. sqlite**という名前の既存のデータベースがまだ存在しない場合にのみコピーします。
 
 ```csharp
 // Copy the database across (if it doesn't exist)
@@ -119,12 +119,12 @@ if (!File.Exists (Database.DatabaseFilePath))
 }
 ```
 
-データ アクセス コード (かどうか ADO.NET または SQLite.NET を使用して) があるあらかじめ設定されているデータへのアクセスは完了した後に実行します。
+この完了後に実行されるデータアクセスコード (ADO.NET または using SQLite.NET) は、事前に設定されたデータにアクセスできます。
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [DataAccess Basic (サンプル)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
-- [データ アクセスの詳細 (サンプル)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
-- [iOS データ レシピ](https://github.com/xamarin/recipes/tree/master/Recipes/ios/data/sqlite)
-- [Xamarin.Forms のデータ アクセス](~/xamarin-forms/data-cloud/data/databases.md)
+- [このような場合の基本 (サンプル)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
+- [詳細設定 (サンプル)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
+- [iOS データレシピ](https://github.com/xamarin/recipes/tree/master/Recipes/ios/data/sqlite)
+- [Xamarin. フォームデータアクセス](~/xamarin-forms/data-cloud/data/databases.md)

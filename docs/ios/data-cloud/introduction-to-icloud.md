@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/09/2016
-ms.openlocfilehash: e4728d14e4fdb914fbfc950ffe38abee031b4c49
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: d25ad46b0d8797da8f14987f54006b63d2b8233d
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68649650"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527577"
 ---
 # <a name="using-icloud-with-xamarinios"></a>Xamarin で iCloud を使用する
 
@@ -45,9 +45,9 @@ IOS 5 の iCloud ストレージ API を使用すると、アプリケーショ�
 
 ICloud にアクセスするようにアプリケーションを正しく構成するには:
 
--   **TeamID を検索**して[developer.apple.com](https://developer.apple.com)にログインし、**アカウント > メンバーセンターにアクセスして > 開発者アカウントの概要**を参照し、チーム id (または1人の開発者向けの個別の id) を取得します。 これは10文字の文字列 ( **A93A5CM278**など) です。これは "コンテナー識別子" の一部です。
+- **TeamID を検索**して[developer.apple.com](https://developer.apple.com)にログインし、**アカウント > メンバーセンターにアクセスして > 開発者アカウントの概要**を参照し、チーム id (または1人の開発者向けの個別の id) を取得します。 これは10文字の文字列 ( **A93A5CM278**など) です。これは "コンテナー識別子" の一部です。
 
--   **新しいアプリ id を作成**する-アプリ id を作成するには、 [「Device Provisioning guide」の「ストアテクノロジのプロビジョニング」セクション](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md)に記載されている手順に従って、 **iCloud**を許可されたサービスとして確認します。
+- **新しいアプリ id を作成**する-アプリ id を作成するには、 [「Device Provisioning guide」の「ストアテクノロジのプロビジョニング」セクション](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md)に記載されている手順に従って、 **iCloud**を許可されたサービスとして確認します。
 
  [![](introduction-to-icloud-images/icloud-sml.png "ICloud を許可されたサービスとして確認する")](introduction-to-icloud-images/icloud.png#lightbox)
 
@@ -423,7 +423,7 @@ Apple は、ios アプリケーションで開発者が実行できる[Ios デ�
 
 このような大量のデータを格納するアプリケーションでは、バックアップされていないユーザーディレクトリのいずれかに保存する必要があります (例: キャッシュまたは tmp) また`NSFileManager.SetSkipBackupAttribute`はを使用してこれらのファイルにフラグを適用し、iCloud がバックアップ操作中にそれらを無視するようにします。
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
 この記事では、iOS 5 に含まれる iCloud の新機能を紹介しました。 このサンプルでは、iCloud を使用するようにプロジェクトを構成するために必要な手順を確認し、iCloud 機能を実装する方法の例を示しました。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 74d626fb1028c630b67888f84153adeb33ae32b9
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 6daead7962e472c3c7d0b117d545efdbd3c65886
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644691"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69523094"
 ---
 # <a name="xamarinandroid-cardview"></a>Xamarin Android CardView
 
@@ -32,11 +32,11 @@ Android 5.0 (ロリポップ) で導入されたウィジェットは、カー�
 
 Xamarin ベースのアプリで新しい Android 5.0 以降の機能 (を含む`CardView`) を使用するには、次のものが必要です。
 
--  **Xamarin.Android** &ndash; Xamarin.Android 4.20 or later must be installed and configured with either Visual Studio or Visual Studio for Mac.
+- **Xamarin android** &ndash; 4.20 以降をインストールして、Visual Studio または Visual Studio for Mac で構成する必要があります。
 
--  **Android SDK**&ndash; Android SDK Manager を使用して、Android 5.0 (API 21) 以降をインストールする必要があります。
+- **Android SDK**&ndash; Android SDK Manager を使用して、Android 5.0 (API 21) 以降をインストールする必要があります。
 
--  **JAVA JDK 1.8**&ndash;明示的に API レベル23以前をターゲットにする場合は、JDK 1.7 を使用できます。 JDK 1.8 は、 [Oracle](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)から入手できます。
+- **JAVA JDK 1.8**&ndash;明示的に API レベル23以前をターゲットにする場合は、JDK 1.7 を使用できます。 JDK 1.8 は、 [Oracle](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)から入手できます。
 
 アプリにも`Xamarin.Android.Support.v7.CardView`パッケージが含まれている必要があります。 Visual Studio for Mac にパッケージ`Xamarin.Android.Support.v7.CardView`を追加するには、次のようにします。
 
@@ -103,8 +103,8 @@ NuGet パッケージのインストールの詳細について[は、「チュ�
 次のレイアウト例では、カスタマイズ`CardView`されたを使用して、印刷写真 ("スナップショット") のシミュレーションを作成します。 はイメージ`CardView`を表示するためにに追加され、はイメージのタイトル`ImageView`を表示するためにの下に配置されます。 `TextView` `ImageView`
 このレイアウト例では、 `CardView`に次のカスタマイズがあります。
 
--  は`cardElevation` 、大きな影をキャストするために、4dp に増加しています。
--  が`cardCornerRadius` 5dp に上がり、角が丸められるようになりました。
+- は`cardElevation` 、大きな影をキャストするために、4dp に増加しています。
+- が`cardCornerRadius` 5dp に上がり、角が丸められるようになりました。
 
 は`CardView` Android v7 サポートライブラリによって提供されるため、 `android:`名前空間から属性を使用することはできません。 したがって、独自の XML 名前空間を定義し、その名前空間`CardView`を属性プレフィックスとして使用する必要があります。 次のレイアウト例では、次の行を使用してという`cardview`名前空間を定義します。
 
@@ -180,15 +180,15 @@ NuGet パッケージのインストールの詳細について[は、「チュ�
 
 パディングの属性については、次のように説明します。
 
--  `contentPadding`の子ビューとカードのすべての端との間の内部余白。 `CardView` &ndash;
+- `contentPadding`の子ビューとカードのすべての端との間の内部余白。 `CardView` &ndash;
 
--  `contentPaddingBottom`の子ビューとカードの下端との間の内部余白。 `CardView` &ndash;
+- `contentPaddingBottom`の子ビューとカードの下端との間の内部余白。 `CardView` &ndash;
 
--  `contentPaddingLeft`の子ビューとカードの左端との間の内部余白。 `CardView` &ndash;
+- `contentPaddingLeft`の子ビューとカードの左端との間の内部余白。 `CardView` &ndash;
 
--  `contentPaddingRight`の子ビューとカードの右端との間の内部余白。 `CardView` &ndash;
+- `contentPaddingRight`の子ビューとカードの右端との間の内部余白。 `CardView` &ndash;
 
--  `contentPaddingTop`の子ビューとカードの上端の間の内部余白。 `CardView` &ndash;
+- `contentPaddingTop`の子ビューとカードの上端の間の内部余白。 `CardView` &ndash;
 
 コンテンツの埋め込み属性は、コンテンツ領域内にある特定のウィジェットではなく、コンテンツ領域の境界を基準としています。
 たとえば、フォト表示`contentPadding`アプリでが十分に増加した場合、 `CardView`は画像とカードに表示されているテキストの両方をトリミングします。
@@ -203,9 +203,9 @@ NuGet パッケージのインストールの詳細について[は、「チュ�
 
 昇格属性は次のように説明されています。
 
--  `cardElevation`&ndash; の標高(Z軸`CardView`を表します)。
+- `cardElevation`&ndash; の標高(Z軸`CardView`を表します)。
 
--  `cardMaxElevation`&ndash;の昇格`CardView`の最大値。
+- `cardMaxElevation`&ndash;の昇格`CardView`の最大値。
 
 の`cardElevation` 値`CardView`を大きくすると、影のサイズが大きくなり、背景の上の方が手前に見えるようになります。 また、重なり合ったビューの描画順序も決定されます。 `CardView`つまり、は、高いレベルの昇格が設定された別の重なり合うビューの下に描画されます。 `cardElevation`
 この`cardMaxElevation`設定は、アプリが昇格を動的&ndash;に変更したときに、この設定で定義した制限を超えてシャドウが拡張されないようにする場合に便利です。
@@ -219,9 +219,9 @@ NuGet パッケージのインストールの詳細について[は、「チュ�
 
 これらの属性について、次のように説明します。
 
--  `cardCornerRadius`のすべてのコーナーの角の半径。 `CardView` &ndash;
+- `cardCornerRadius`のすべてのコーナーの角の半径。 `CardView` &ndash;
 
--  `cardBackgroundColor`&ndash; の`CardView`背景色。
+- `cardBackgroundColor`&ndash; の`CardView`背景色。
 
 この図では`cardCornerRadius` 、はより丸みのある10dp に`cardBackgroundColor`設定され`"#FFFFCC"` 、は (明るい黄色) に設定されています。
 
@@ -233,15 +233,15 @@ Android 5.0 ロリポップ`CardView`より前のバージョンの android で�
 
 `CardView`ロリポップの前のデバイスで動作が若干異なります (API レベル 21):
 
--  `CardView`プログラムによる影の実装を使用して、パディングを追加します。
+- `CardView`プログラムによる影の実装を使用して、パディングを追加します。
 
--  `CardView`は、 `CardView`の丸い角と交差する子ビューをクリップしません。
+- `CardView`は、 `CardView`の丸い角と交差する子ビューをクリップしません。
 
 これらの互換性の違いを管理する`CardView`ために、には、レイアウトで構成できるいくつかの追加属性が用意されています。
 
--   `cardPreventCornerOverlap`アプリが以前の`true`バージョンの Android で実行されている場合は、この属性をに設定してパディングを追加します (API レベル20以前)。 &ndash; この設定に`CardView`より、 `CardView`コンテンツがの丸い角と交差しないようにします。
+- `cardPreventCornerOverlap`アプリが以前の`true`バージョンの Android で実行されている場合は、この属性をに設定してパディングを追加します (API レベル20以前)。 &ndash; この設定に`CardView`より、 `CardView`コンテンツがの丸い角と交差しないようにします。
 
--   `cardUseCompatPadding`アプリが API レベル`true` 21 以降のバージョンで実行されている場合は、この属性をに設定して、埋め込みを追加します。 &ndash; ロリポップ以前のデバイスで`CardView`を使用して、ロリポップ (またはそれ以降) で同じ外観にする場合は、この属性`true`をに設定します。 この属性が有効な場合`CardView` 、は、事前ロリポップデバイスで実行されるときに影を描画するための余白を追加します。 これは、ロリポップのプログラムシャドウ実装が有効になっている場合に導入されるパディングの違いを克服するのに役立ちます。
+- `cardUseCompatPadding`アプリが API レベル`true` 21 以降のバージョンで実行されている場合は、この属性をに設定して、埋め込みを追加します。 &ndash; ロリポップ以前のデバイスで`CardView`を使用して、ロリポップ (またはそれ以降) で同じ外観にする場合は、この属性`true`をに設定します。 この属性が有効な場合`CardView` 、は、事前ロリポップデバイスで実行されるときに影を描画するための余白を追加します。 これは、ロリポップのプログラムシャドウ実装が有効になっている場合に導入されるパディングの違いを克服するのに役立ちます。
 
 以前のバージョンの Android との互換性を維持する方法の詳細については、「[互換性の維持](https://developer.android.com/training/material/compatibility.html)」を参照してください。
 

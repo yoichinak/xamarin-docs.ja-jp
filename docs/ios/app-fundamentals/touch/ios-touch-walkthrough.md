@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: f772bf1309330b41f9faea812e2cdcdba8e969cb
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 352a312d795ba292b47621ddb84540c2259ea10a
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653136"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527053"
 ---
 # <a name="walkthrough-using-touch-in-xamarinios"></a>チュートリアル: Xamarin でのタッチの使用
 
@@ -181,8 +181,8 @@ ms.locfileid: "68653136"
 [前のセクション](#Touch_Samples)では、タッチイベントを使用して、オブジェクトを画面の周りにドラッグする方法を示していました。
 このセクションでは、タッチイベントを除去し、次のジェスチャレコグナイザーを使用する方法を示します。
 
--  画面の周りのイメージをドラッグするための。 `UIPanGestureRecognizer`
--  画面上のダブルタップに応答する。`UITapGestureRecognizer`
+- 画面の周りのイメージをドラッグするための。 `UIPanGestureRecognizer`
+- 画面上のダブルタップに応答する。`UITapGestureRecognizer`
 
 [開始サンプルコード](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-touch-start)を実行し、 **[ジェスチャ認識エンジンのサンプル]** ボタンをクリックすると、次の画面が表示されます。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 09/06/2018
-ms.openlocfilehash: 30e471174d30e58b126c174fd4eacfdbe87d97b0
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 4d8f467b4dcc5e6c4628ed7afa43779cc48b7ef5
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646061"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522181"
 ---
 # <a name="splash-screen"></a>スプラッシュ スクリーン
 
@@ -25,18 +25,18 @@ Android アプリの起動には時間がかかります。特に、デバイス
 
 このガイドでは、Android アプリケーションでスプラッシュスクリーンを実装する方法の1つについて説明します。 次の手順について説明します。
 
-1.  スプラッシュスクリーンの描画されたリソースを作成します。
+1. スプラッシュスクリーンの描画されたリソースを作成します。
 
-2.  作成されたリソースを表示する新しいテーマを定義します。
+2. 作成されたリソースを表示する新しいテーマを定義します。
 
-3.  前の手順で作成したテーマによって定義されたスプラッシュスクリーンとして使用される、新しいアクティビティをアプリケーションに追加します。
+3. 前の手順で作成したテーマによって定義されたスプラッシュスクリーンとして使用される、新しいアクティビティをアプリケーションに追加します。
 
 [![Xamarin ロゴのスプラッシュスクリーンの後にアプリの画面を表示する例](splash-screen-images/splashscreen-01-sml.png)](splash-screen-images/splashscreen-01.png#lightbox)
 
 
 ## <a name="requirements"></a>必要条件
 
-このガイドでは、アプリケーションが Android API レベル 15 (Android 4.0.3) 以降を対象としていることを前提としています。 また、アプリケーションには、プロジェクトに追加された v7**パッケージと** **xamarin. android** .......
+このガイドでは、アプリケーションが Android API レベル 15 (Android 4.0.3) 以降を対象としていることを前提としています。 また、アプリケーションには、プロジェクトに追加された v7 パッケージと**xamarin. android** .......
 
 このガイドのすべてのコードと XML は、このガイドの[SplashScreen](https://docs.microsoft.com/samples/xamarin/monodroid-samples/splashscreen)サンプルプロジェクトに記載されています。
 
@@ -69,7 +69,7 @@ Android アプリの起動には時間がかかります。特に、デバイス
 </layer-list>
 ```
 
-これ`layer-list`により、 `@color/splash_background`リソースによって指定された背景にスプラッシュイメージの**スプラッシュ**が中央に表示されます。 この XML ファイルは、resources/splash_screen**フォルダーに**配置します (たとえば、 **resources/アブル/** )。
+これ`layer-list`により、 `@color/splash_background`リソースによって指定された背景にスプラッシュイメージの**スプラッシュ**が中央に表示されます。 この XML ファイルは、resources /splash_screen フォルダーに配置します (たとえば、 **resources/アブル/** )。
 
 スプラッシュスクリーンの描画を作成した後、次の手順ではスプラッシュスクリーンのテーマを作成します。
 
@@ -178,11 +178,11 @@ public class MainActivity : AppCompatActivity
     </layer-list>
     ```
 
-3.  **Resources/values-陸**フォルダーがまだ存在しない場合は作成します。
+3. **Resources/values-陸**フォルダーがまだ存在しない場合は作成します。
 
-4.  ファイルの**色 .xml**と**スタイル .xml**を**値-土地**に追加します (これらは、既存の**値/色 .xml**と**値/スタイルの .xml**ファイルからコピーおよび変更できます)。
+4. ファイルの**色 .xml**と**スタイル .xml**を**値-土地**に追加します (これらは、既存の**値/色 .xml**と**値/スタイルの .xml**ファイルからコピーおよび変更できます)。
 
-5.  **Values-land/style .xml**を変更して、用の描画用`windowBackground`のランドスケープバージョンを使用するようにします。 この例では、 **splash_screen_land**が使用されます。
+5. **Values-land/style .xml**を変更して、用の描画用`windowBackground`のランドスケープバージョンを使用するようにします。 この例では、 **splash_screen_land**が使用されます。
 
     ```xml
     <resources>
@@ -200,7 +200,7 @@ public class MainActivity : AppCompatActivity
     </resources>
     ```
 
-6.  **Values-land/colors**を変更して、スプラッシュスクリーンの横バージョンで使用する色を構成します。 この例では、横モードの場合、スプラッシュの背景色が青に変更されます。
+6. **Values-land/colors**を変更して、スプラッシュスクリーンの横バージョンで使用する色を構成します。 この例では、横モードの場合、スプラッシュの背景色が青に変更されます。
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -213,7 +213,7 @@ public class MainActivity : AppCompatActivity
     </resources>
     ```
 
-7.  アプリをもう一度ビルドして実行します。 スプラッシュスクリーンがまだ表示されている状態で、デバイスを横モードに切り替えます。 スプラッシュスクリーンが横向きバージョンに変わります。
+7. アプリをもう一度ビルドして実行します。 スプラッシュスクリーンがまだ表示されている状態で、デバイスを横モードに切り替えます。 スプラッシュスクリーンが横向きバージョンに変わります。
 
     [![スプラッシュスクリーンから横モードへの回転](splash-screen-images/landscape-splash-sml.png)](splash-screen-images/landscape-splash.png#lightbox)
 

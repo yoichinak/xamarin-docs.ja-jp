@@ -6,12 +6,12 @@ ms.assetid: 5F0CEC18-5EF6-4A99-9DCF-1A3B57EA157C
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 9d36101c1416ea8ddf451f5677258972c4f34990
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 1e8723fd8cc2119c6d65ea760d514373d00ce1d2
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511140"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69521825"
 ---
 # <a name="unified-api-overview"></a>Unified API の概要
 
@@ -40,8 +40,8 @@ Xamarin の Unified API を使用すると、Mac と iOS の間でコードを�
 
 この時点から、Api は2つの方法で表示されます。
 
--  **Classic API:** 32ビット (のみ) に制限され、 `monotouch.dll` `XamMac.dll`アセンブリとアセンブリで公開されます。
--  **Unified API:** `Xamarin.iOS.dll` と`Xamarin.Mac.dll`アセンブリで利用できる1つの API を使用して、32と64ビットの両方の開発をサポートします。
+- **Classic API:** 32ビット (のみ) に制限され、 `monotouch.dll` `XamMac.dll`アセンブリとアセンブリで公開されます。
+- **Unified API:** `Xamarin.iOS.dll` と`Xamarin.Mac.dll`アセンブリで利用できる1つの API を使用して、32と64ビットの両方の開発をサポートします。
 
 つまり、企業の開発者 (アプリストアをターゲットにしない) の場合は、引き続き既存のクラシック Api を使用し続けることができます。これは、永続的に維持されます。また、新しい Api にアップグレードすることもできます。
 
@@ -55,8 +55,8 @@ Microsoft では、Mac と iOS の製品間でコードを共有するための�
 
 これにより、条件付きコンパイルを使用せずに、Mac と iOS のプラットフォーム間でコードを簡単に共有できるようになり、ソースコードファイルの先頭でのノイズが軽減されます。
 
--  **Classic API:** 名前空間`MonoTouch.`は`MonoMac.`またはプレフィックスを使用します。
--  **Unified API:** 名前空間プレフィックスがありません
+- **Classic API:** 名前空間`MonoTouch.`は`MonoMac.`またはプレフィックスを使用します。
+- **Unified API:** 名前空間プレフィックスがありません
 
 ## <a name="runtime-defaults"></a>ランタイムの既定値
 
@@ -83,7 +83,7 @@ Unified API は、非推奨のメソッドを削除します。また、クラ�
 
 ## <a name="updating-to-unified"></a>更新 (統合に)
 
-クラシック api で**は、** **従来**の api や非推奨とされている api を使用できません。 `CS0616` 適切`[Obsolete]`な API を作成するための属性メッセージ (警告の一部) があるため、(手動または自動で) アップグレードを開始する前に、警告を修正する方が簡単です。
+クラシック api では、**従来**の api や非推奨とされている api を使用できません。 `CS0616` 適切`[Obsolete]`な API を作成するための属性メッセージ (警告の一部) があるため、(手動または自動で) アップグレードを開始する前に、警告を修正する方が簡単です。
 
 ここでは、プロジェクトの更新の前または後に使用できる、クラシック API と統合 API の変更の[*相違*](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/ios/api_changes/classic-vs-unified-8.6.0/index.md)点を公開しています。 クラシックで obsoletes 呼び出しを修正することは、多くの場合、時間の短縮 (ドキュメント参照の削減) です。
 
@@ -92,7 +92,7 @@ Unified API は、非推奨のメソッドを削除します。また、クラ�
 
 ### <a name="nuget"></a>NuGet
 
-以前に Monotouch10 Classic API でサポートされていた NuGet パッケージは、  platform モニカーを使用してアセンブリを公開しました。
+以前に Monotouch10 Classic API でサポートされていた NuGet パッケージは、 platform モニカーを使用してアセンブリを公開しました。
 
 Unified API には、互換性のあるパッケージの新しいプラットフォーム識別子である**iOS10**が導入されています。 このプラットフォームのサポートを追加するには、Unified API に対してビルドすることによって、既存の NuGet パッケージを更新する必要があります。
 
@@ -179,9 +179,9 @@ public static NSDate DateTimeToNSDate(this DateTime date)
 
 Xamarin. iOS classic API (monotouch.dialog) 内では、 `[Obsolete]`次の2つの方法で属性が使用されていました。
 
--  **非推奨の iOS API:** これは、新しい API によって置き換えられているために、API の使用を停止することを Apple にヒントがある場合です。 Classic API は依然として適切であり、(古いバージョンの iOS をサポートしている場合は) 必要になることがあります。
+- **非推奨の iOS API:** これは、新しい API によって置き換えられているために、API の使用を停止することを Apple にヒントがある場合です。 Classic API は依然として適切であり、(古いバージョンの iOS をサポートしている場合は) 必要になることがあります。
  このような API ( `[Obsolete]`および属性) は、新しい Xamarin. iOS アセンブリに含まれています。
--  **API が正しくありません**API によっては、名前に入力ミスがありました。
+- **API が正しくありません**API によっては、名前に入力ミスがありました。
 
 元のアセンブリ (monotouch.dialog および XamMac) では、古いコードは互換性のために残されていましたが、Unified API アセンブリからは削除されています (Xamarin. iOS .dll と Xamarin. Mac)。
 
@@ -195,7 +195,9 @@ Xamarin. iOS classic API (monotouch.dialog) 内では、 `[Obsolete]`次の2つ�
 
 これらの問題を回避するため`IntPtr`に、コンストラクター `protected`は、サブクラス化のためだけに使用される**統合**API になっています。 これにより、適切な/安全な API を使用して、ハンドルからマネージインスタンスを作成することができます。つまり、
 
-    var label = Runtime.GetNSObject<UILabel> (handle);
+```csharp
+var label = Runtime.GetNSObject<UILabel> (handle);
+```
 
 この API は、(既に存在する場合は) 既存のマネージインスタンスを返すか、または新しいマネージインスタンスを作成します (必要な場合)。 これは、従来の API と統合 API の両方で既に使用できます。
 
@@ -222,15 +224,17 @@ UITapGestureRecognizer singleTap = new UITapGestureRecognizer (() => ShowDropDow
 
 以前`Action`は、 `NSAction`に`NSAction`割り当てることはできないため、コンパイラエラーになり`UITapGestureRecognizer`ました`Action`が、ではなくが使用されるようになったため、統合 api で有効になっています。
 
-### <a name="custom-delegates-replaced-with-actiont"></a>アクションに置き換えられたカスタムデリゲート<T>
+### <a name="custom-delegates-replaced-with-actiont"></a>アクション\<T > に置き換えられたカスタムデリゲート
 
 **統合**では、単純な (1 つのパラメーターなど) .net デリゲート`Action<T>`がに置き換えられました。 たとえば、
 
-    public delegate void NSNotificationHandler (NSNotification notification);
+```csharp
+public delegate void NSNotificationHandler (NSNotification notification);
+```
 
 をとして使用できる`Action<NSNotification>`ようになりました。 これにより、コードの再利用が促進され、Xamarin と独自のアプリケーションの両方でコードの重複が減少します。
 
-### <a name="taskbool-replaced-with-taskbooleannserror"></a>タスク < ブール、:^(nserror error > に置き換えられました><bool>
+### <a name="taskbool-replaced-with-taskbooleannserror"></a>タスク\<bool > タスク < ブール値、:^(nserror error > に置き換えられました >
 
 **クラシック**では、を返す`Task<bool>`非同期 api がいくつかありました。 ただし、が`NSError`シグネチャに含まれていた場合 (つまり、 `bool`が既に存在`true`していて、 `NSError`を取得するために例外をキャッチする必要がある場合) には、が使用されます。
 
@@ -242,11 +246,15 @@ UITapGestureRecognizer singleTap = new UITapGestureRecognizer (() => ShowDropDow
 
 **クラシック**
 
-    public virtual string ReuseIdentifier { get; }
+```csharp
+public virtual string ReuseIdentifier { get; }
+```
 
 **ネットワーク**
 
-    public virtual NSString ReuseIdentifier { get; }
+```csharp
+public virtual NSString ReuseIdentifier { get; }
+```
 
 一般に、.net `System.String`型を優先します。 ただし、Apple のガイドラインにかかわらず、一部のネイティブ API は定数ポインターを比較しています (文字列自体ではありません`NSString`)。これは、定数をとして公開した場合にのみ機能します。
 
@@ -260,11 +268,15 @@ UITapGestureRecognizer singleTap = new UITapGestureRecognizer (() => ShowDropDow
 
 **クラシック**
 
-    public virtual AVAssetResourceLoaderDelegate Delegate { get; }
+```csharp
+public virtual AVAssetResourceLoaderDelegate Delegate { get; }
+```
 
 **ネットワーク**
 
-    public virtual IAVAssetResourceLoaderDelegate Delegate { get; }
+```csharp
+public virtual IAVAssetResourceLoaderDelegate Delegate { get; }
+```
 
 プレフィックス`I`は、特定の型ではなく、objc プロトコルに対して、**統合**されたインターフェイスを公開することを意味します。 これにより、提供されている特定の型をサブクラス化する必要がなくなります。
 
@@ -272,11 +284,15 @@ UITapGestureRecognizer singleTap = new UITapGestureRecognizer (() => ShowDropDow
 
 **クラシック**
 
-    public virtual void SelectionDidChange (NSObject uiTextInput);
+```csharp
+public virtual void SelectionDidChange (NSObject uiTextInput);
+```
 
 **ネットワーク**
 
-    public virtual void SelectionDidChange (IUITextInput uiTextInput);
+```csharp
+public virtual void SelectionDidChange (IUITextInput uiTextInput);
+```
 
 このような API は、ドキュメントを参照しなくても簡単に使用できるようになりました。また、IDE コードを完了すると、プロトコル/インターフェイスに基づいてより有用な提案を得ることができます。
 

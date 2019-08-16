@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/25/2018
-ms.openlocfilehash: 80ec7a2ae13b3c76bccae80d2c6956533b027047
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: e36a8e25c5924ac82356c0f1c3110d1596f81cbf
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643258"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69523887"
 ---
 # <a name="how-to-use-google-maps-and-location-with-xamarinandroid"></a>Xamarin Android で Google Maps と場所を使用する方法
 
@@ -22,9 +22,9 @@ _この記事では、maps と location を Xamarin Android で使用する方�
 
 マッピングテクノロジは、広く普及しているモバイルデバイスです。 デスクトップコンピューターやラップトップには、位置認識が組み込まれていない傾向があります。 一方、モバイルデバイスは、このようなアプリケーションを使用してデバイスを特定し、変更された位置情報を表示します。 Android には、デバイスで利用可能な場所のハードウェアを使用してマップ上の場所データを表示する、強力な組み込みテクノロジがあります。 この記事では、Xamarin での maps アプリケーションの機能について説明します。 Android には次のものが含まれます。 
 
--  組み込みの maps アプリケーションを使用して、マッピング機能をすばやく追加します。
--  Maps API を使用してマップの表示を制御する。
--  さまざまな手法を使用して、グラフィカルなオーバーレイを追加します。
+- 組み込みの maps アプリケーションを使用して、マッピング機能をすばやく追加します。
+- Maps API を使用してマップの表示を制御する。
+- さまざまな手法を使用して、グラフィカルなオーバーレイを追加します。
 
 このセクションのトピックでは、幅広いマッピング機能について説明します。
 まず、Android の組み込みマップアプリケーションを活用する方法と、場所のパノラマビューを表示する方法について説明します。 次に、Maps API を使用して、マッピング機能をアプリケーション内に直接組み込む方法について説明します。また、マップの位置と表示を制御する方法と、グラフィカルなオーバーレイを追加する方法についても説明します。

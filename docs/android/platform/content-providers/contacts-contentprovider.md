@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 01/22/2018
-ms.openlocfilehash: e83b9a594bad5ee3d29800988eb94812600da8a6
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: e5b23973d7784a9116d4c82ef6d892aacbf584a1
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643705"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524473"
 ---
 # <a name="using-the-contacts-contentprovider"></a>連絡先の ContentProvider の使用
 
@@ -33,11 +33,11 @@ Uri からカーソルを作成するには、次の3つの方法があります
 
 これらの各メソッドには、同じ基本的な入力セットがあります。
 
--  **Uri**の完全修飾名。 `ContentProvider` &ndash;
--  **プロジェクション**&ndash;カーソルに対して選択する列を指定します。
--  **選択**&ndash; SQL`WHERE`句に似ています。
--  **Selectionargs**&ndash;選択範囲内で置き換えられるパラメーター。
--  **順序の順序**&ndash;並べ替えの基準となる列。
+- **Uri**の完全修飾名。 `ContentProvider` &ndash;
+- **プロジェクション**&ndash;カーソルに対して選択する列を指定します。
+- **選択**&ndash; SQL`WHERE`句に似ています。
+- **Selectionargs**&ndash;選択範囲内で置き換えられるパラメーター。
+- **順序の順序**&ndash;並べ替えの基準となる列。
 
 
 

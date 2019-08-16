@@ -1,61 +1,61 @@
 ---
 title: 認証と承認
-description: この章では、eShopOnContainers のモバイル アプリで認証と、コンテナー化されたマイクロ サービスに対して承認を実行する方法について説明します。
+description: この章では、eShopOnContainers モバイルアプリがコンテナー化されたマイクロサービスに対して認証と承認を実行する方法について説明します。
 ms.prod: xamarin
 ms.assetid: e3f27b4c-f7f5-4839-a48c-30bcb919c59e
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/08/2017
-ms.openlocfilehash: efaea24e559aa2f3bdfd87c1c083ce1d777dbb3f
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 45008e127286d14ef62c5212976bfd3a8aac651f
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832162"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529181"
 ---
 # <a name="authentication-and-authorization"></a>認証と承認
 
-認証は、ユーザーから名とパスワードなどの資格情報を取得し、機関に対してこれらの資格情報を検証するプロセス。 資格情報が有効な場合、資格情報を送信するエンティティは、認証済みの id と見なされます。 Id が認証されると、承認プロセスは、その id が指定されたリソースへのアクセスを持つかどうかを決定します。
+認証とは、ユーザーからの名前やパスワードなどの id 資格情報を取得し、それらの資格情報を機関に対して検証するプロセスです。 資格情報が有効な場合、資格情報を送信したエンティティは認証済み id と見なされます。 Id が認証されると、その id が特定のリソースにアクセスできるかどうかが承認プロセスによって判断されます。
 
-ASP.NET Core Identity では、Microsoft、Google などの外部認証プロバイダーの使用など、ASP.NET MVC web アプリケーションと通信する Xamarin.Forms アプリに認証と承認を統合する方法はたくさんあります。Facebook、Twitter、や認証のミドルウェア。 EShopOnContainers のモバイル アプリは、認証と承認 IdentityServer 4 を使用する識別情報のコンテナー化されたマイクロ サービスを実行します。 モバイル アプリでは、ユーザーを認証するため、またはリソースにアクセスするために、IdentityServer からセキュリティ トークンを要求します。 ユーザーの代理としてトークンを発行する IdentityServer は、のユーザーする必要がありますにサインイン IdentityServer します。 ただし、IdentityServer は提供しませんユーザー インターフェイスまたはデータベースを認証します。 そのため、eShopOnContainers 参照アプリケーションで ASP.NET Core Identity はこの目的に使用します。
+認証と承認を ASP.NET MVC web アプリケーションと通信する Xamarin. Forms アプリに統合するには、さまざまな方法があります。たとえば、ASP.NET Core Id、外部認証プロバイダー (Microsoft、Google など) を使用します。Facebook、Twitter、および認証ミドルウェア。 EShopOnContainers モバイルアプリは、ユーザー id を使用するコンテナー化された id マイクロサービスで認証と承認を実行します。 モバイルアプリは、ユーザーを認証したり、リソースにアクセスしたりするために、ユーザーのセキュリティトークンを要求します。 ユーザーの代わりにユーザーがトークンを発行するようにするには、ユーザーがユーザーをユーザーに登録する必要があります。 ただし、ユーザーインターフェイスは認証用のユーザーインターフェイスまたはデータベースを提供しません。 そのため、eShopOnContainers 参照アプリケーションでは、ASP.NET Core Id がこの目的に使用されます。
 
 ## <a name="authentication"></a>認証
 
-現在のユーザーの id を把握する必要があるときに、認証が必要です。 ユーザーを識別するための ASP.NET Core の主要なメカニズムは、開発者によって構成されているデータ ストアにユーザー情報を格納する ASP.NET Core Identity メンバーシップ システムです。 通常、このデータ ストアは、カスタム ストアまたはサード パーティ製パッケージを使用して、Azure storage、Azure Cosmos DB、またはその他の場所に id 情報を格納、EntityFramework ストアになります。
+アプリケーションが現在のユーザーの id を認識している必要がある場合は、認証が必要です。 ユーザーを識別するための主なメカニズムは、ASP.NET Core Id メンバーシップシステムで、開発者が構成したデータストアにユーザー情報が格納されます。これには、ASP.NET Core ます。 通常、このデータストアは EntityFramework ストアになりますが、カスタムストアまたはサードパーティのパッケージを使用して、Azure storage、Azure Cosmos DB、またはその他の場所に id 情報を格納することができます。
 
-ローカル ユーザーのデータ ストアを使用する認証シナリオと、cookie などは ASP.NET MVC web アプリケーションで一般的な) を使用して要求間で id 情報を保持する、ASP.NET Core Identity は適切なソリューションです。 ただし、cookie は常にする通常の永続化してデータを送信する方法です。 たとえば、モバイル アプリからアクセスされる RESTful エンドポイントを公開する ASP.NET Core web アプリケーションはこのシナリオでは、cookie を使用できないためにベアラー トークンの認証を使用する通常必要があります。 ただし、ベアラー トークンに簡単に取得して、モバイル アプリからの web 要求の authorization ヘッダーに含まれます。
+ローカルユーザーデータストアを使用する認証シナリオでは、ASP.NET MVC web アプリケーションの一般的なように、cookie を介して要求間で id 情報を保持する認証シナリオでは、ASP.NET Core Id が適切なソリューションです。 ただし、cookie は常にデータを永続化および転送するための自然な手段ではありません。 たとえば、モバイルアプリからアクセスされる RESTful エンドポイントを公開する ASP.NET Core web アプリケーションは、通常、ベアラートークン認証を使用する必要があります。これは、このシナリオでは cookie を使用できないためです。 ただし、ベアラートークンは、モバイルアプリから作成された web 要求の authorization ヘッダーに簡単に取得して含めることができます。
 
-### <a name="issuing-bearer-tokens-using-identityserver-4"></a>IdentityServer 4 を使用してベアラー トークンの発行
+### <a name="issuing-bearer-tokens-using-identityserver-4"></a>サーバー4を使用したベアラートークンの発行
 
-[IdentityServer 4](https://github.com/IdentityServer/IdentityServer4)オープン ソースの OpenID Connect と OAuth 2.0 のフレームワークが、ASP.NET Core は、ローカル ASP.NET Core Identity ユーザーのセキュリティ トークンの発行など多くの認証と承認のシナリオのために使用できます。
-
-> [!NOTE]
-> OpenID Connect と OAuth 2.0 は、さまざまな役割をことができますが、非常に似ています。
-
-OpenID Connect、OAuth 2.0 プロトコル上に、認証レイヤーです。 OAuth 2 は、セキュリティ トークン サービスからアクセス トークンを要求し、Api と通信するために使用してアプリケーションを使用するプロトコルです。 この委任では、認証と承認を集中化できるため、クライアント アプリケーションと Api の両方で複雑さが削減されます。
-
-OpenID Connect と OAuth 2.0 の組み合わせは、認証と API のアクセスの 2 つの基本的なセキュリティ上の懸念を結合し、IdentityServer 4 はこれらのプロトコルの実装です。
-
-EShopOnContainers 参照アプリケーションなど、マイクロ サービスへのクライアントへの直接的な通信を使用するアプリケーションでセキュリティ トークン サービス (STS) として機能する専用認証マイクロ サービスができます、ユーザーを認証する図のように9-1。 マイクロ サービスへのクライアントへの直接的な通信の詳細については、次を参照してください。[クライアント間の通信とマイクロ サービス](~/xamarin-forms/enterprise-application-patterns/containerized-microservices.md#communication_between_client_and_microservices)します。
-
-![](authentication-and-authorization-images/authentication.png "専用認証マイクロ サービスによる認証")
-
-**図 9-1:** 専用認証マイクロ サービスによる認証
-
-EShopOnContainers のモバイル アプリは、id のマイクロ サービスは、IdentityServer は 4 を使用して認証を実行し、Api のアクセス制御と通信します。 そのため、モバイル アプリは、ユーザーを認証するため、またはリソースにアクセスするため、IdentityServer からトークンを要求します。
-
--   モバイル アプリの要求することによって実現されます IdentityServer とユーザーの認証、 *identity*トークンは、認証プロセスの結果を表します。 最低限、ユーザー、およびユーザーが認証された方法とタイミングに関する情報の識別子が含まれます。 また、追加の id データを含めることもできます。
--   モバイル アプリの要求することによって実現されます IdentityServer とのリソースへのアクセス、*アクセス*トークンは、API リソースへのアクセスを許可します。 クライアントは、アクセス トークンを要求し、それらを API に転送します。 アクセス トークンは、(存在する) 場合に、クライアントと、ユーザーに関する情報を格納します。 Api は、データへのアクセスを承認するためにその情報を使用します。
+ユーザー Id [4](https://github.com/IdentityServer/IdentityServer4)は、オープンソースの OpenID Connect および OAuth 2.0 フレームワーク ASP.NET Core 用です。ローカル ASP.NET Core id ユーザーのセキュリティトークンを発行するなど、多くの認証と承認のシナリオで使用できます。
 
 > [!NOTE]
-> トークンを要求することには、IdentityServer とクライアントを登録する必要があります。
+> OpenID Connect と OAuth 2.0 はよく似ていますが、さまざまな役割があります。
 
-### <a name="adding-identityserver-to-a-web-application"></a>IdentityServer を Web アプリケーションに追加します。
+OpenID Connect は、OAuth 2.0 プロトコル上の認証レイヤーです。 OAuth 2 は、アプリケーションが Security Token Service からアクセストークンを要求し、Api との通信に使用できるようにするプロトコルです。 この委任により、認証と承認を一元化できるため、クライアントアプリケーションと Api の両方の複雑さが軽減されます。
 
-ASP.NET Core web アプリケーション IdentityServer 4 を使用するためには、web アプリケーションの Visual Studio ソリューションに追加する必要があります。 詳細については、次を参照してください。[概要](https://identityserver4.readthedocs.io/en/latest/quickstarts/0_overview.html)IdentityServer ドキュメント。
+OpenID Connect と OAuth 2.0 の組み合わせによって、認証と API アクセスの2つの基本的なセキュリティ上の懸念が組み合わされています。また、このプロトコルの実装は、サーバー4です。
 
-IdentityServer は、web アプリケーションの Visual Studio ソリューションに含まれると OpenID Connect と OAuth 2.0 エンドポイントへの要求を使用できるように処理パイプラインでは、web アプリケーションの HTTP 要求に追加する必要があります。 これは、`Configure`メソッドで、web アプリケーションの`Startup`クラスの次のコード例。
+EShopOnContainers 参照アプリケーションなどのクライアントからマイクロサービスへの直接通信を使用するアプリケーションでは、図に示すように、セキュリティトークンサービス (STS) として機能する専用の認証マイクロサービスを使用して、ユーザーを認証できます。9-1。 クライアントからマイクロサービスへの直接通信の詳細については、「[クライアントとマイクロサービス間の通信](~/xamarin-forms/enterprise-application-patterns/containerized-microservices.md#communication_between_client_and_microservices)」を参照してください。
+
+![](authentication-and-authorization-images/authentication.png "専用認証マイクロサービスによる認証")
+
+**図 9-1:** 専用認証マイクロサービスによる認証
+
+EShopOnContainers モバイルアプリは、id マイクロサービスと通信します。これは、認証を実行するためにユーザー id を使用し、Api のアクセス制御を行います。 そのため、モバイルアプリは、ユーザーを認証したり、リソースにアクセスしたりするために、ユーザーのトークンを要求します。
+
+- ユーザーの認証は、認証プロセスの結果を表す*id*トークンを要求するモバイルアプリによって実現されます。 最低でも、ユーザーの識別子と、ユーザーが認証された方法とタイミングに関する情報が含まれています。 また、追加の id データを含めることもできます。
+- サービスを使用してリソースにアクセスするには、*アクセス*トークンを要求するモバイルアプリを使用します。これにより、API リソースにアクセスできるようになります。 クライアントはアクセストークンを要求し、API に転送します。 アクセストークンには、クライアントとユーザーに関する情報 (存在する場合) が含まれます。 Api は、その情報を使用して、データへのアクセスを承認します。
+
+> [!NOTE]
+> クライアントは、トークンを要求できるようにする前に、クライアントをサーバーに登録する必要があります。
+
+### <a name="adding-identityserver-to-a-web-application"></a>Web アプリケーションへのサーバーの追加
+
+ASP.NET Core web アプリケーションで、サーバー4を使用するには、web アプリケーションの Visual Studio ソリューションに追加する必要があります。 詳細については、「サーバーのドキュメント」の「[概要](https://identityserver4.readthedocs.io/en/latest/quickstarts/0_overview.html)」を参照してください。
+
+Web アプリケーションの Visual Studio ソリューションに提供されたサーバーは、web アプリケーションの HTTP 要求処理パイプラインに追加して、OpenID Connect および OAuth 2.0 エンドポイントへの要求を処理できるようにする必要があります。 これは、次の`Configure`コード例に示すように`Startup` 、web アプリケーションのクラスのメソッドで実現されます。
 
 ```csharp
 public void Configure(  
@@ -67,11 +67,11 @@ public void Configure(
 }
 ```
 
-Web アプリケーションの HTTP 要求処理パイプラインで順序が重要です。 そのため、IdentityServer は、ログイン画面を実装する UI フレームワークの前に、のパイプラインに追加する必要があります。
+Web アプリケーションの HTTP 要求処理パイプラインでは順序が重要です。 そのため、ログイン画面を実装する UI フレームワークの前に、ユーザーがパイプラインに追加されている必要があります。
 
-### <a name="configuring-identityserver"></a>IdentityServer の構成
+### <a name="configuring-identityserver"></a>サーバーの構成
 
-IdentityServer で構成する必要があります、 `ConfigureServices` web アプリのメソッドに`Startup`クラスを呼び出すことによって、`services.AddIdentityServer`メソッド、eShopOnContainers 参照アプリケーションから次のコード例で示した。
+EShopOnContainers reference アプリケーションの次のコード`ConfigureServices`例に示すように、 `Startup` `services.AddIdentityServer`メソッドを呼び出すことによって、web アプリケーションのクラスのメソッドで、サービスを構成する必要があります。
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)  
@@ -90,21 +90,21 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-呼び出した後、`services.AddIdentityServer`メソッド、fluent Api の追加は、以下の構成と呼ばれます。
+`services.AddIdentityServer`メソッドを呼び出した後、次を構成するために、追加の fluent api が呼び出されます。
 
--   資格情報の署名に使用します。
--   ユーザーが要求する API と id のリソースへのアクセスします。
--   要求トークンに接続するクライアント。
--   ASP.NET Core Identity です。
+- 署名に使用される資格情報。
+- ユーザーがアクセスを要求する API および id リソース。
+- 要求トークンに接続するクライアント。
+- ASP.NET Core Id。
 
 > [!TIP]
-> IdentityServer 4 構成を動的に読み込みます。 IdentityServer 4 の Api では、構成オブジェクトのメモリ内のリストから IdentityServer を構成できます。 EShopOnContainers 参照アプリケーションで、これらのメモリ内コレクションは、アプリケーションにハードコーディングします。 ただし、運用環境シナリオでできる読み込まれて動的に構成ファイルから、またはデータベースからです。
+> サーバー4の構成を動的に読み込みます。 サーバー4の Api を使用すると、構成オブジェクトのメモリ内の一覧から、サーバーを構成できます。 EShopOnContainers reference アプリケーションでは、これらのメモリ内コレクションはアプリケーションにハードコーディングされています。 ただし、運用環境のシナリオでは、構成ファイルまたはデータベースから動的に読み込むことができます。
 
-ASP.NET Core Identity を使用する IdentityServer の構成方法の詳細については、次を参照してください。[を使用して ASP.NET Core Identity](https://identityserver4.readthedocs.io/en/latest/quickstarts/8_aspnet_identity.html) IdentityServer ドキュメント。
+ASP.NET Core Id を使用するようにユーザーを構成する方法の詳細については、「[ユーザーによる ASP.NET Core id の使用](https://identityserver4.readthedocs.io/en/latest/quickstarts/8_aspnet_identity.html)」のドキュメントを参照してください。
 
-#### <a name="configuring-api-resources"></a>API のリソースの構成
+#### <a name="configuring-api-resources"></a>API リソースの構成
 
-API のリソースを構成するときに、`AddInMemoryApiResources`メソッドが必要ですが、`IEnumerable<ApiResource>`コレクション。 次のコード例は、 `GetApis` eshoponcontainers には、このコレクションを提供するメソッドは、アプリケーションを参照します。
+API リソースを構成する場合`AddInMemoryApiResources` 、メソッドに`IEnumerable<ApiResource>`はコレクションが必要です。 次のコード例は、 `GetApis` eShopOnContainers reference アプリケーションでこのコレクションを提供するメソッドを示しています。
 
 ```csharp
 public static IEnumerable<ApiResource> GetApis()  
@@ -117,11 +117,11 @@ public static IEnumerable<ApiResource> GetApis()
 }
 ```
 
-このメソッドは、IdentityServer は、注文とバスケット Api 保護する必要がありますを指定します。 IdentityServer がアクセスを管理するため、これらの Api を呼び出す際、トークンが必要になります。 詳細については、`ApiResource`入力を参照してください[API リソース](https://identityserver4.readthedocs.io/en/latest/reference/api_resource.html)IdentityServer 4 のドキュメント。
+このメソッドは、サービスが注文とバスケットの Api を保護する必要があることを指定します。 そのため、これらの Api を呼び出す場合は、サービスによって管理されるアクセストークンが必要になります。 型の`ApiResource`詳細については、「azure server 4 のドキュメント」の[API リソース](https://identityserver4.readthedocs.io/en/latest/reference/api_resource.html)を参照してください。
 
 #### <a name="configuring-identity-resources"></a>Id リソースの構成
 
-Id のリソースを構成するときに、`AddInMemoryIdentityResources`メソッドが必要ですが、`IEnumerable<IdentityResource>`コレクション。 Id リソースは、ユーザー ID、名、または電子メール アドレスなどのデータです。 各 id リソースは一意の名前を備え、任意のクレームの種類に割り当て可能、これで、ユーザーの id トークンが含まれます。 次のコード例は、 `GetResources` eshoponcontainers には、このコレクションを提供するメソッドは、アプリケーションを参照します。
+Id リソースを構成する場合`AddInMemoryIdentityResources` 、メソッドに`IEnumerable<IdentityResource>`はコレクションが必要です。 Id リソースとは、ユーザー ID、名前、電子メールアドレスなどのデータのことです。 各 id リソースには一意の名前が付けられ、任意のクレームの種類を割り当てることができます。これは、ユーザーの id トークンに含まれます。 次のコード例は、 `GetResources` eShopOnContainers reference アプリケーションでこのコレクションを提供するメソッドを示しています。
 
 ```csharp
 public static IEnumerable<IdentityResource> GetResources()  
@@ -134,23 +134,23 @@ public static IEnumerable<IdentityResource> GetResources()
 }
 ```
 
-OpenID Connect の仕様では、いくつかを指定します[標準 id リソース](https://openid.net/specs/openid-connect-core-1_0.html#ScopeClaims)します。 最小要件は、ユーザーの一意の ID を出力するためのサポートが提供されることです。 公開することでこれは、 `IdentityResources.OpenId` id リソース。
+OpenID Connect の仕様では、[標準の id リソース](https://openid.net/specs/openid-connect-core-1_0.html#ScopeClaims)が指定されています。 最小要件は、ユーザーの一意の ID を生成するためのサポートが用意されていることです。 これは、id リソースを`IdentityResources.OpenId`公開することで実現されます。
 
 > [!NOTE]
-> `IdentityResources`クラスは、OpenID Connect の仕様 (openid、電子メール、プロファイル、電話番号、およびアドレス) で定義されているスコープのすべてをサポートします。
+> クラス`IdentityResources`は、openid connect 仕様で定義されているすべてのスコープ (openid、電子メール、プロファイル、電話、およびアドレス) をサポートしています。
 
-IdentityServer は、カスタム id リソースの定義もサポートします。 詳細については、次を参照してください。[カスタム id のリソースを定義する](http://docs.identityserver.io/en/latest/topics/resources.html#defining-custom-identity-resources)IdentityServer ドキュメント。 詳細については、`IdentityResource`入力を参照してください[Id リソース](https://identityserver4.readthedocs.io/en/latest/reference/identity_resource.html)IdentityServer 4 のドキュメント。
+また、カスタム id リソースの定義もサポートしています。 詳細については、「[カスタム id リソースの定義](http://docs.identityserver.io/en/latest/topics/resources.html#defining-custom-identity-resources)」を参照してください。 型の`IdentityResource`詳細については、「Identity server 4」ドキュメントの「 [Identity Resource](https://identityserver4.readthedocs.io/en/latest/reference/identity_resource.html) 」を参照してください。
 
 #### <a name="configuring-clients"></a>クライアントの構成
 
-クライアントは、IdentityServer からトークンを要求できるアプリケーションです。 通常、各クライアントの場合、最低でも、次の設定を定義する必要があります。
+クライアントは、サーバーからトークンを要求できるアプリケーションです。 通常、次の設定は、各クライアントに対して最小値として定義する必要があります。
 
--   一意のクライアント id。
--   トークン サービス (、付与の種類と呼ばれます) との相互作用の許可されています。
--   Id とアクセス トークンの送信先となる場所 (リダイレクト URI と呼ばれます)。
--   クライアントへのアクセスを許可されているリソースの一覧 (スコープとも呼ばれます)。
+- 一意のクライアント ID。
+- トークンサービスとの許可された対話 (許可の種類と呼ばれます)。
+- Id トークンとアクセストークンが送信される場所 (リダイレクト URI と呼ばれます)。
+- クライアントがアクセスを許可されているリソースの一覧 (スコープと呼ばれます)。
 
-クライアントを構成するときに、`AddInMemoryClients`メソッドが必要ですが、`IEnumerable<Client>`コレクション。 次のコード例は、eShopOnContainers でモバイル アプリの構成を示しています。、 `GetClients` 、eshoponcontainers には、このコレクションを提供するメソッドは、アプリケーションを参照します。
+クライアントを構成する場合`AddInMemoryClients` 、メソッドに`IEnumerable<Client>`はコレクションが必要です。 次のコード例は、eShopOnContainers 参照アプリケーションでこのコレクションを提供`GetClients`するメソッドでの eShopOnContainers モバイルアプリの構成を示しています。
 
 ```csharp
 public static IEnumerable<Client> GetClients(Dictionary<string,string> clientsUrl)
@@ -188,58 +188,58 @@ public static IEnumerable<Client> GetClients(Dictionary<string,string> clien
 }
 ```
 
-この構成は、次のプロパティのデータを指定します。
+この構成では、次のプロパティのデータを指定します。
 
--   `ClientId`:クライアントの一意の ID。
--   `ClientName`:クライアントは、ログ記録と同意画面で使用される名前を表示します。
--   `AllowedGrantTypes`:クライアントが IdentityServer と対話しようとした方法を指定します。 詳細については、次を参照してください。[認証フローを構成する](#configuring_the_authentication_flow)します。
--   `ClientSecrets`:トークン エンドポイントからトークンを要求するときに使用されるクライアント シークレットの資格情報を指定します。
--   `RedirectUris`:承認コードまたはトークンを返しますを許可されている Uri を指定します。
--   `RequireConsent`:同意画面が必要かどうかを指定します。
--   `RequirePkce`:認証コードを使用してクライアントが証明キーを送信する必要があるかどうかを指定します。
--   `PostLogoutRedirectUris`:ログアウト後にリダイレクトする許可された Uri を指定します。
--   `AllowedCorsOrigins`:IdentityServer が原点からのクロス オリジン呼び出しを許可できるように、クライアントの原点を指定します。
--   `AllowedScopes`:クライアントへのアクセスを持つリソースを指定します。 既定では、クライアントにはすべてのリソースへのアクセスがありません。
--   `AllowOfflineAccess`:クライアントが更新トークンを要求できるかどうかを指定します。
+- `ClientId`:クライアントの一意の ID。
+- `ClientName`:クライアントの表示名。ログと同意画面に使用されます。
+- `AllowedGrantTypes`:クライアントがサーバーと対話する方法を指定します。 詳細について[は、「認証フローの構成](#configuring_the_authentication_flow)」を参照してください。
+- `ClientSecrets`:トークンエンドポイントからトークンを要求するときに使用されるクライアントシークレットの資格情報を指定します。
+- `RedirectUris`:トークンまたは認証コードを返すために使用できる Uri を指定します。
+- `RequireConsent`:同意画面が必要かどうかを指定します。
+- `RequirePkce`:認証コードを使用するクライアントが証明キーを送信する必要があるかどうかを指定します。
+- `PostLogoutRedirectUris`:ログアウト後にリダイレクトすることが許可されている Uri を指定します。
+- `AllowedCorsOrigins`:クライアントの配信元を指定します。これにより、配信元からのクロスオリジン呼び出しが許可されるようになります。
+- `AllowedScopes`:クライアントがアクセスできるリソースを指定します。 既定では、クライアントはリソースにアクセスできません。
+- `AllowOfflineAccess`:クライアントが更新トークンを要求できるかどうかを指定します。
 
 <a name="configuring_the_authentication_flow" />
 
 #### <a name="configuring-the-authentication-flow"></a>認証フローの構成
 
-認証フローで付与タイプを指定することで、クライアントと IdentityServer との間を構成する、`Client.AllowedGrantTypes`プロパティ。 OpenID Connect と OAuth 2.0 仕様では、数などの認証フローを定義します。
+クライアントとサーバー間の認証フローは、 `Client.AllowedGrantTypes`プロパティで許可の種類を指定することによって構成できます。 OpenID Connect と OAuth 2.0 仕様では、次のような多数の認証フローが定義されています。
 
--   暗黙の型。 このフローでは、ブラウザー ベースのアプリケーションは最適化され、ユーザー認証専用、または認証とアクセス トークン要求に使用する必要があります。 すべてのトークンは、ブラウザー経由で送信され、したがって更新トークンは許可されていませんなどの機能を強化します。
--   承認コード。 このフローでは、クライアント認証もサポートしているときに、ブラウザーの前面チャネルではなくのバック チャネルでトークンを取得する機能を提供します。
--   ハイブリッド。 このフローは、暗黙の組み合わせと、承認コード付与の種類。 Id トークンはブラウザー チャネル経由で送信され、認証コードなどの他のアーティファクトと共に署名プロトコルの応答が含まれています。 応答の検証が成功した後は、アクセス権を取得し、トークンを更新するバック チャネルを使用してください。
+- 順序. このフローは、ブラウザーベースのアプリケーション用に最適化されているため、ユーザー認証のみ、または認証とアクセストークン要求のどちらかを使用する必要があります。 すべてのトークンがブラウザーを介して送信されるため、更新トークンなどの高度な機能は使用できません。
+- 認証コード。 このフローでは、クライアント認証もサポートしながら、ブラウザーのフロントチャネルとは対照的に、バックチャネルでトークンを取得する機能が提供されます。
+- ハイブリッド。 このフローは、暗黙的および承認のコード許可の種類を組み合わせたものです。 Id トークンは、ブラウザーチャネルを介して送信されます。また、認証コードなどの他の成果物と共に、署名済みのプロトコル応答が含まれています。 応答が正常に検証されたら、バックチャネルを使用してアクセストークンと更新トークンを取得する必要があります。
 
 > [!TIP]
-> ハイブリッドの認証フローを使用します。 ハイブリッドの認証フローは、多くのブラウザーのチャネルに適用される攻撃を軽減する、ネイティブ アプリケーションのアクセス トークンの取得 (および更新トークンの可能性があります) にすることをお勧めのフローです。
+> ハイブリッド認証フローを使用します。 ハイブリッド認証フローは、ブラウザーチャネルに適用される多数の攻撃を軽減します。また、アクセストークン (および場合によってはトークンを更新することもあります) を取得する必要があるネイティブアプリケーションに推奨されるフローです。
 
-認証フローの詳細については、次を参照してください。[付与タイプ](https://identityserver4.readthedocs.io/en/latest/topics/grant_types.html)IdentityServer 4 のドキュメント。
+認証フローの詳細については、「[付与の種類](https://identityserver4.readthedocs.io/en/latest/topics/grant_types.html)」を参照してください。
 
-### <a name="performing-authentication"></a>認証を実行します。
+### <a name="performing-authentication"></a>認証の実行
 
-ユーザーの代理としてトークンを発行する IdentityServer は、のユーザーする必要がありますにサインイン IdentityServer します。 ただし、IdentityServer は提供しませんユーザー インターフェイスまたはデータベースを認証します。 そのため、eShopOnContainers 参照アプリケーションで ASP.NET Core Identity はこの目的に使用します。
+ユーザーの代わりにユーザーがトークンを発行するようにするには、ユーザーがユーザーをユーザーに登録する必要があります。 ただし、ユーザーインターフェイスは認証用のユーザーインターフェイスまたはデータベースを提供しません。 そのため、eShopOnContainers 参照アプリケーションでは、ASP.NET Core Id がこの目的に使用されます。
 
-EShopOnContainers のモバイル アプリは、IdentityServer とハイブリッドの認証フローを図 9-2 に示すように認証されます。
+EShopOnContainers モバイルアプリは、図9-2 に示すハイブリッド認証フローを使用して、identity Server で認証を行います。
 
-![](authentication-and-authorization-images/sign-in.png "サインイン プロセスの概要")
+![](authentication-and-authorization-images/sign-in.png "サインインプロセスの大まかな概要")
 
-**図 9-2:** サインイン プロセスの概要
+**図 9-2:** サインインプロセスの大まかな概要
 
-サインイン要求が行われた`<base endpoint>:5105/connect/authorize`します。 次の認証が成功は、IdentityServer は、認証コードと id トークンを含む認証の応答を返します。 承認コードに送信し、`<base endpoint>:5105/connect/token`アクセス、id、および更新トークンに応答します。
+へ`<base endpoint>:5105/connect/authorize`のサインイン要求が行われます。 成功した認証の後、ユーザーは認証コードと id トークンを含む認証応答を返します。 次に、認証コードがに`<base endpoint>:5105/connect/token`送信され、アクセス、id、および更新トークンで応答します。
 
-EShopOnContainers モバイル アプリ サイン アウト IdentityServer への要求を送信することによって`<base endpoint>:5105/connect/endsession`、追加のパラメーターを使用します。 サインアウトが発生した後、IdentityServer は、モバイル アプリに post ログアウト リダイレクト URI を送信することによって応答します。 図 9-3 は、このプロセスを示しています。
+EShopOnContainers モバイルアプリは、追加のパラメーターを使用してに要求を`<base endpoint>:5105/connect/endsession`送信することによって、サーバーからサインアウトします。 サインアウトが発生すると、サーバーは、post ログアウトリダイレクト URI をモバイルアプリに送り返すことで応答します。 図9-3 はこのプロセスを示しています。
 
-![](authentication-and-authorization-images/sign-out.png "サインアウト プロセスの概要")
+![](authentication-and-authorization-images/sign-out.png "サインアウトプロセスの大まかな概要")
 
-**図 9-3:** サインアウト プロセスの概要
+**図 9-3:** サインアウトプロセスの大まかな概要
 
-IdentityServer との通信を行った eShopOnContainers のモバイル アプリで、`IdentityService`クラスを実装、`IIdentityService`インターフェイス。 このインターフェイスを実装するクラスを提供する必要がありますを指定します`CreateAuthorizationRequest`、 `CreateLogoutRequest`、および`GetTokenAsync`メソッド。
+EShopOnContainers モバイルアプリでは、 `IdentityService` `IIdentityService`インターフェイスを実装するクラスによって、サービスとの通信が実行されます。 このインターフェイスは、実装するクラスが、 `CreateAuthorizationRequest` `CreateLogoutRequest`、および`GetTokenAsync`の各メソッドを提供する必要があることを指定します。
 
 #### <a name="signing-in"></a>サインイン
 
-ユーザーがタップしたときに、**ログイン**のボタンでは、 `LoginView`、`SignInCommand`で、`LoginViewModel`クラスを実行すると、順番に実行する、`SignInAsync`メソッド。 以下のコード例はこのメソッドを示しています。
+ユーザーがの`LoginView` `SignInAsync` `SignInCommand` [ログイン]ボタンをタップすると、クラスのが実行され`LoginViewModel` 、さらにメソッドが実行されます。 以下のコード例はこのメソッドを示しています。
 
 ```csharp
 private async Task SignInAsync()  
@@ -251,7 +251,7 @@ private async Task SignInAsync()
 }
 ```
 
-このメソッドは、`CreateAuthorizationRequest`メソッドで、`IdentityService`クラスは、次のコード例に示されています。
+このメソッドは、 `CreateAuthorizationRequest`次のコード`IdentityService`例に示すように、クラスのメソッドを呼び出します。
 
 ```csharp
 public string CreateAuthorizationRequest()
@@ -280,18 +280,18 @@ public string CreateAuthorizationRequest()
 
 ```
 
-このメソッドは、IdentityServer の URI を作成します。[承認エンドポイント](https://identityserver4.readthedocs.io/en/latest/endpoints/authorize.html)、必要なパラメーターを使用します。 承認エンドポイントが、 `/connect/authorize` 5105 ユーザー設定として公開される基本のエンドポイントのポートします。 ユーザー設定の詳細については、次を参照してください。[構成管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)します。
+このメソッドは、必要なパラメーターを使用して、identity Server の[承認エンドポイント](https://identityserver4.readthedocs.io/en/latest/endpoints/authorize.html)の URI を作成します。 認証エンドポイントは、 `/connect/authorize`ユーザー設定として公開された基本エンドポイントのポート5105にあります。 ユーザー設定の詳細については、「[構成管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)」を参照してください。
 
 > [!NOTE]
-> EShopOnContainers のモバイル アプリの攻撃対象領域を削減するには、OAuth コード Exchange (PKCE) 拡張機能の証明キーを実装します。 PKCE は、それが傍受された場合に使用されているから認証コードを保護します。 これは、うちハッシュが承認要求で渡されると、シークレットの検証コードを生成するクライアントによって、表示されているハッシュされていない認証コードを使用するときにです。 PKCE の詳細については、次を参照してください。 [OAuth パブリック クライアントでのコードの Exchange 用の Proof Key](https://tools.ietf.org/html/rfc7636) Internet Engineering Task Force の web サイト。
+> EShopOnContainers モバイルアプリの攻撃対象領域を減らすには、OAuth にコード交換 (PKCE) 拡張の証明キーを実装します。 PKCE では、承認コードが傍受された場合に使用されるのを防ぐことができます。 これは、クライアントが秘密検証ツールを生成し、そのハッシュが承認要求で渡され、認証コードの適用時にハッシュされて表示されることによって実現されます。 PKCE の詳細については、インターネット技術標準化委員会の web サイトの「 [OAuth パブリッククライアントによるコード交換のための証明キー](https://tools.ietf.org/html/rfc7636) 」を参照してください。
 
-返された URI が格納されている、`LoginUrl`のプロパティ、`LoginViewModel`クラス。 ときに、`IsLogin`プロパティになります`true`、 [ `WebView` ](xref:Xamarin.Forms.WebView)で、`LoginView`が表示されます。 `WebView`データ バインド、 [ `Source` ](xref:Xamarin.Forms.WebView.Source)プロパティを`LoginUrl`のプロパティ、`LoginViewModel`クラスし、そのため IdentityServer へのサインイン要求時に、`LoginUrl`プロパティに設定IdentityServer の承認エンドポイント。 IdentityServer は、この要求を受信し、ユーザーが認証されていないときに、`WebView`は図 9-4 に示すように構成されているログイン ページにリダイレクトされます。
+返された URI は、 `LoginUrl` `LoginViewModel`クラスのプロパティに格納されます。 プロパティが`IsLogin`になる`true`と、 [`WebView`](xref:Xamarin.Forms.WebView)内`LoginView`のが表示されるようになります。 データ`WebView`は、その[`Source`](xref:Xamarin.Forms.WebView.Source)プロパティ`LoginUrl` `LoginUrl`をクラスのプロパティにバインドします。これにより、プロパティが "identity server" 認証エンドポイントに設定されている場合に、"サーバーにサインイン" 要求が行われます。 `LoginViewModel` ユーザーがこの要求を受信し、ユーザーが認証され`WebView`ていない場合、は、図9-4 に示すように、構成されたログインページにリダイレクトされます。
 
-![](authentication-and-authorization-images/login.png "ログイン ページが WebView で表示されます。")
+![](authentication-and-authorization-images/login.png "WebView によって表示されるログインページ")
 
-**図 9-4:** ログイン ページが WebView で表示されます。
+**図 9-4:** WebView によって表示されるログインページ
 
-ログインが完了すると、 [ `WebView` ](xref:Xamarin.Forms.WebView)戻り値の URI にリダイレクトされます。 これは、`WebView`ナビゲーションが発生、`NavigateAsync`メソッドで、`LoginViewModel`次のコード例に示されているクラスを実行します。
+ログインが完了すると、 [`WebView`](xref:Xamarin.Forms.WebView)が戻り URI にリダイレクトされます。 この`WebView`ナビゲーションにより、 `NavigateAsync`次のコード`LoginViewModel`例に示すように、クラスのメソッドが実行されます。
 
 ```csharp
 private async Task NavigateAsync(string url)  
@@ -316,23 +316,23 @@ private async Task NavigateAsync(string url)
 }
 ```
 
-このメソッドは、戻り値の URI に含まれている認証の応答を解析し、IdentityServer には有効な承認コードが存在する、要求[トークン エンドポイント](https://identityserver4.readthedocs.io/en/latest/endpoints/token.html)、認証コードを渡すこと、PKCE シークレットの検証方法、およびその他の必須パラメーターです。 トークン エンドポイントが、 `/connect/token` 5105 ユーザー設定として公開される基本のエンドポイントのポートします。 ユーザー設定の詳細については、次を参照してください。[構成管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)します。
+このメソッドは、戻り URI に含まれている認証応答を解析します。有効な認証コードが存在する場合は、サービスの[トークンエンドポイント](https://identityserver4.readthedocs.io/en/latest/endpoints/token.html)に対して要求を行い、認証コード、pkce シークレット検証ツール、およびその他の必須パラメーター。 トークンエンドポイントは、 `/connect/token`ユーザー設定として公開されているベースエンドポイントのポート5105にあります。 ユーザー設定の詳細については、「[構成管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)」を参照してください。
 
 > [!TIP]
-> 戻り値の Uri を検証します。 ただし、eShopOnContainers のモバイル アプリでは、戻り値の URI を検証しませんは、戻り値の URI がオープン リダイレクト攻撃を防ぐための既知の場所を指すことを検証することをお勧めします。
+> リターン Uri を検証します。 EShopOnContainers モバイルアプリでは、リターン URI は検証されませんが、オープンリダイレクト攻撃を防ぐために、戻り値 URI が既知の場所を参照していることを検証することをお勧めします。
 
-トークン エンドポイントでは、有効な承認コードと PKCE シークレットの検証を受信する場合は、アクセス トークン、id トークン、更新トークンと応答します。 (これは、API リソースへのアクセスを許可するには) アクセス トークンと id トークンは、アプリケーション設定として格納し、ページ ナビゲーションを実行します。 そのため、これは eShopOnContainers のモバイル アプリでの全体的な結果: に移動されるときのユーザーが、IdentityServer で正常に認証することに、 `MainView`  ページで、これは、 [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage)表示する、`CatalogView`として選択されているそのタブ。
+トークンエンドポイントは、有効な認証コードと PKCE シークレット検証ツールを受け取ると、アクセストークン、id トークン、および更新トークンで応答します。 (API リソースへのアクセスを許可する) アクセストークンと id トークンは、アプリケーション設定として格納され、ページナビゲーションが実行されます。 そのため、eShopOnContainers モバイルアプリの全体的な影響は次のようになります。ユーザーがユーザーの認証に成功した場合は、 `MainView`ページに移動され[`TabbedPage`](xref:Xamarin.Forms.TabbedPage)ます。これ`CatalogView`は、選択したタブとして選択します。
 
-ページ ナビゲーションの詳細については、次を参照してください。[ナビゲーション](~/xamarin-forms/enterprise-application-patterns/navigation.md)します。 方法については[ `WebView` ](xref:Xamarin.Forms.WebView)ナビゲーションとビュー モデルのメソッドを実行するを参照してください[ビヘイビアーを使用して呼び出すナビゲーション](~/xamarin-forms/enterprise-application-patterns/navigation.md#invoking_navigation_using_behaviors)します。 アプリケーションの設定については、次を参照してください。[構成管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)します。
+ページナビゲーションの詳細については、「[ナビゲーション](~/xamarin-forms/enterprise-application-patterns/navigation.md)」を参照してください。 ナビゲーションによって[`WebView`](xref:Xamarin.Forms.WebView)ビューモデルメソッドが実行される方法については、「[動作を使用したナビゲーションの呼び出し](~/xamarin-forms/enterprise-application-patterns/navigation.md#invoking_navigation_using_behaviors)」を参照してください。 アプリケーション設定の詳細については、「[構成管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)」を参照してください。
 
 > [!NOTE]
-> EShopOnContainers できますモックのサインインでモック サービスを使用するアプリが構成されている場合、`SettingsView`します。 このモードで、アプリは、IdentityServer は、代わりに、資格情報を使用してサインインするユーザーを許可すると通信しません。
+> また、eShopOnContainers は、 `SettingsView`アプリがでモックサービスを使用するように構成されている場合にも、モックサインインを許可します。 このモードでは、アプリは、ユーザーが任意の資格情報を使用してサインインできるようにするために、ユーザーがサービスと通信しません。
 
-#### <a name="signing-out"></a>署名アウト
+#### <a name="signing-out"></a>サインアウト
 
-ユーザーがタップしたときに、 **LOG OUT**ボタン、 `ProfileView`、`LogoutCommand`で、`ProfileViewModel`クラスを実行すると、順番に実行する、`LogoutAsync`メソッド。 このメソッドにページ ナビゲーションの実行、`LoginView`渡してページ、`LogoutParameter`インスタンスに設定`true`をパラメーターとして。 ページ ナビゲーション中に渡すパラメーターの詳細については、次を参照してください。[ナビゲーション中にパラメーターを渡す](~/xamarin-forms/enterprise-application-patterns/navigation.md#passing_parameters_during_navigation)します。
+ユーザーがの`ProfileView` `LogoutAsync` `LogoutCommand` [ログアウト]ボタンをタップすると、クラスのが実行され`ProfileViewModel` 、さらにメソッドが実行されます。 このメソッドは、 `LoginView`ページへのページナビゲーションを実行し、に`true`設定された`LogoutParameter`インスタンスをパラメーターとして渡します。 ページナビゲーション中にパラメーターを渡す方法の詳細については、「[ナビゲーション中のパラメーターの引き渡し](~/xamarin-forms/enterprise-application-patterns/navigation.md#passing_parameters_during_navigation)」を参照してください。
 
-ビューが作成されに移動したときに、`InitializeAsync`ビューの関連するビュー モデルのメソッドを実行すると、実行し、`Logout`のメソッド、`LoginViewModel`クラスは、次のコード例に示されています。
+ビューを作成して移動すると、 `InitializeAsync`ビューに関連付けられたビューモデルのメソッドが実行され、次のコード例に示すように、 `LoginViewModel`クラスの`Logout`メソッドが実行されます。
 
 ```csharp
 private void Logout()  
@@ -349,7 +349,7 @@ private void Logout()
 }
 ```
 
-このメソッドは、`CreateLogoutRequest`メソッドで、`IdentityService`をパラメーターとして、クラス、id トークンを渡すことがアプリケーションの設定から取得します。 アプリケーション設定の詳細については、次を参照してください。[構成管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)します。 次のコード例は、`CreateLogoutRequest` メソッドを示しています。
+このメソッドは`CreateLogoutRequest` 、クラスの`IdentityService`メソッドを呼び出し、アプリケーション設定から取得された id トークンをパラメーターとして渡します。 アプリケーション設定の詳細については、「[構成管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)」を参照してください。 次のコード例は、`CreateLogoutRequest` メソッドを示しています。
 
 ```csharp
 public string CreateLogoutRequest(string token)  
@@ -362,11 +362,11 @@ public string CreateLogoutRequest(string token)
 }
 ```
 
-このメソッドは、IdentityServer の URI を作成します。[エンドポイントのセッションを終了](https://identityserver4.readthedocs.io/en/latest/endpoints/endsession.html#refendsession)、必要なパラメーターを使用します。 エンドポイントのセッションが、 `/connect/endsession` 5105 ユーザー設定として公開される基本のエンドポイントのポートします。 ユーザー設定の詳細については、次を参照してください。[構成管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)します。
+このメソッドは、必要なパラメーターを使用して、サービスの[エンドセッションエンドポイント](https://identityserver4.readthedocs.io/en/latest/endpoints/endsession.html#refendsession)への URI を作成します。 エンドセッションエンドポイントは、 `/connect/endsession`ユーザー設定として公開されているベースエンドポイントのポート5105にあります。 ユーザー設定の詳細については、「[構成管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)」を参照してください。
 
-返された URI が格納されている、`LoginUrl`のプロパティ、`LoginViewModel`クラス。 中に、`IsLogin`プロパティは`true`、 [ `WebView` ](xref:Xamarin.Forms.WebView)で、`LoginView`を表示します。 `WebView`データ バインド、 [ `Source` ](xref:Xamarin.Forms.WebView.Source)プロパティを`LoginUrl`のプロパティ、`LoginViewModel`クラス、およびサインアウト要求 IdentityServer になるときに、`LoginUrl`プロパティに設定IdentityServer の最後のセッションのエンドポイント。 IdentityServer は、ユーザーがサインインがこの要求を受け取り、サインアウトの処理が発生します。 認証は、ASP.NET Core から cookie 認証ミドルウェアによって管理される cookie で追跡されます。 そのため、IdentityServer からサインアウトは、認証 cookie を削除し、ログアウト後のリダイレクト URI がクライアントに送り返しますを送信します。
+返された URI は、 `LoginUrl` `LoginViewModel`クラスのプロパティに格納されます。 プロパティが`true`の[場合`WebView`](xref:Xamarin.Forms.WebView) 、内`LoginView`のが表示されます。 `IsLogin` データ`WebView`は、その[`Source`](xref:Xamarin.Forms.WebView.Source)プロパティ`LoginUrl` `LoginUrl`をクラスのプロパティにバインドします。これにより、プロパティが [サービスの終了] セッションエンドポイントに設定されている場合に、このサーバーにサインアウト要求を送信します。 `LoginViewModel` ユーザーがサインインしている場合、ユーザーがこの要求を受信すると、サインアウトが発生します。 認証は、ASP.NET Core からクッキー認証ミドルウェアによって管理される cookie を使用して追跡されます。 このため、サーバーからサインアウトすると、認証クッキーが削除され、ログアウト後のリダイレクト URI がクライアントに返されます。
 
-モバイル アプリで、 [ `WebView` ](xref:Xamarin.Forms.WebView)ログアウトの後のリダイレクト URI にリダイレクトされます。 これは、`WebView`ナビゲーションが発生、`NavigateAsync`メソッドで、`LoginViewModel`次のコード例に示されているクラスを実行します。
+モバイルアプリでは、は[`WebView`](xref:Xamarin.Forms.WebView)ログアウト後のリダイレクト URI にリダイレクトされます。 この`WebView`ナビゲーションにより、 `NavigateAsync`次のコード`LoginViewModel`例に示すように、クラスのメソッドが実行されます。
 
 ```csharp
 private async Task NavigateAsync(string url)  
@@ -380,20 +380,20 @@ private async Task NavigateAsync(string url)
 }
 ```
 
-このメソッドは、id トークンとアプリケーションの設定 からアクセス トークンの両方をクリアし、設定、`IsLogin`プロパティを`false`、原因となる、 [ `WebView` ](xref:Xamarin.Forms.WebView)上、`LoginView`ページを非表示になります. 最後に、`LoginUrl`プロパティが、URI の IdentityServer の[承認エンドポイント](https://identityserver4.readthedocs.io/en/latest/endpoints/authorize.html)、必須のパラメーターを使用して、次回に備えて、ユーザーが開始には、サインインします。
+このメソッドは、アプリケーション設定から id トークンとアクセストークンの両方をクリアし、 `IsLogin`プロパティを`false`に設定します[`WebView`](xref:Xamarin.Forms.WebView) 。これ`LoginView`により、ページ上のが非表示になります。 最後に、 `LoginUrl`プロパティは、ユーザーが次回サインインを開始するときに備えて、必要なパラメーターを指定して、ユーザーの[認証エンドポイント](https://identityserver4.readthedocs.io/en/latest/endpoints/authorize.html)の URI に設定されます。
 
-ページ ナビゲーションの詳細については、次を参照してください。[ナビゲーション](~/xamarin-forms/enterprise-application-patterns/navigation.md)します。 方法については[ `WebView` ](xref:Xamarin.Forms.WebView)ナビゲーションとビュー モデルのメソッドを実行するを参照してください[ビヘイビアーを使用して呼び出すナビゲーション](~/xamarin-forms/enterprise-application-patterns/navigation.md#invoking_navigation_using_behaviors)します。 アプリケーションの設定については、次を参照してください。[構成管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)します。
+ページナビゲーションの詳細については、「[ナビゲーション](~/xamarin-forms/enterprise-application-patterns/navigation.md)」を参照してください。 ナビゲーションによって[`WebView`](xref:Xamarin.Forms.WebView)ビューモデルメソッドが実行される方法については、「[動作を使用したナビゲーションの呼び出し](~/xamarin-forms/enterprise-application-patterns/navigation.md#invoking_navigation_using_behaviors)」を参照してください。 アプリケーション設定の詳細については、「[構成管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)」を参照してください。
 
 > [!NOTE]
-> EShopOnContainers で、SettingsView モック サービスを使用するアプリが構成されている場合、モックをサインアウトしてできます。 このモードでは、アプリは、IdentityServer は通信しませんし、アプリケーションの設定からのすべてのストアド トークンがクリアされます。
+> また、eShopOnContainers は、SettingsView でモックサービスを使用するようにアプリが構成されている場合に、モックサインアウトを許可します。 このモードでは、アプリは、サービスと通信しません。その代わり、アプリケーション設定から格納されているトークンをクリアします。
 
 <a name="authorization" />
 
 ## <a name="authorization"></a>承認
 
-認証、ASP.NET Core の web Api が多くの場合、アクセスを承認する必要がありますこれにより、サービスを Api ように、一部の認証済みユーザーを使用できますが、すべて。
+認証後、ASP.NET Core web Api は、多くの場合、アクセスを承認する必要があります。これにより、サービスは、認証された一部のユーザーだけが Api を使用できるようになります。
 
-コント ローラーに Authorize 属性を適用することで、ASP.NET Core MVC ルートへのアクセス制限を実現できます。 またはアクション、コント ローラーへのアクセスを制限またはアクションを次のコード例に示すように、ユーザーを認証します。
+ASP.NET Core MVC ルートへのアクセスを制限するには、次のコード例に示すように、承認属性をコントローラーまたはアクションに適用します。これにより、コントローラーまたはアクションへのアクセスが認証されたユーザーに制限されます。
 
 ```csharp
 [Authorize]  
@@ -403,22 +403,22 @@ public class BasketController : Controller
 }
 ```
 
-コント ローラーまたはアクションでマークされているアクセスしようとしているユーザーが承認されていない場合、`Authorize`属性、MVC フレームワークは、401 (未承認) HTTP 状態コードを返します。
+承認されていないユーザーが、 `Authorize`属性でマークされたコントローラーまたはアクションにアクセスしようとすると、MVC フレームワークは 401 (未承認) HTTP 状態コードを返します。
 
 > [!NOTE]
-> パラメーターを指定することができます、 `Authorize` API を特定のユーザーに制限する属性。 詳細については、次を参照してください。[承認](/aspnet/core/security/authorization/introduction/)します。
+> 属性でパラメーターを指定し`Authorize`て、API を特定のユーザーに制限することができます。 詳細については、「[承認](/aspnet/core/security/authorization/introduction/)」を参照してください。
 
-IdentityServer は、アクセス トークンの承認を制御を提供するように、承認ワークフローに統合できます。 このアプローチは、図 9-5 に表示されます。
+認証ワークフローには、アクセストークンによって制御承認が提供されるように、サービスを統合することができます。 このアプローチを図9-5 に示します。
 
-![](authentication-and-authorization-images/authorization.png "アクセス トークンによる認証")
+![](authentication-and-authorization-images/authorization.png "アクセストークンによる承認")
 
-**図 9-5:** アクセス トークンによる認証
+**図 9-5:** アクセストークンによる承認
 
-EShopOnContainers のモバイル アプリでは、id マイクロ サービスと通信し、認証プロセスの一環としてアクセス トークンを要求します。 アクセス トークンは、アクセス要求の一部として、順序付けと basket マイクロ サービスによって公開される Api に転送されます。 アクセス トークンは、クライアントと、ユーザーに関する情報を格納します。 Api は、データへのアクセスを承認するためにその情報を使用します。 IdentityServer は、Api の保護を構成する方法については、次を参照してください。 [API リソースの構成](#configuring-api-resources)します。
+EShopOnContainers モバイルアプリは、id マイクロサービスと通信し、認証プロセスの一環としてアクセストークンを要求します。 アクセストークンは、アクセス要求の一部として、順序付けおよびバスケットマイクロサービスによって公開される Api に転送されます。 アクセストークンには、クライアントとユーザーに関する情報が含まれています。 Api は、その情報を使用して、データへのアクセスを承認します。 Api を保護するようにサービスを構成する方法の詳細については、「 [Api リソースの構成](#configuring-api-resources)」を参照してください。
 
-### <a name="configuring-identityserver-to-perform-authorization"></a>IdentityServer は承認を実行するを構成します。
+### <a name="configuring-identityserver-to-perform-authorization"></a>認証を実行するようにサーバーを構成する
 
-IdentityServer による承認を実行するには、web アプリケーションの HTTP 要求パイプラインにその承認ミドルウェアを追加する必要があります。 ミドルウェアが追加された、`ConfigureAuth`メソッドで、web アプリケーションの`Startup`クラスから呼び出される、`Configure`メソッド、eShopOnContainers 参照アプリケーションから次のコード例に示すよう。
+サーバーで承認を実行するには、その承認ミドルウェアを web アプリケーションの HTTP 要求パイプラインに追加する必要があります。 ミドルウェアは、 `ConfigureAuth` `Configure`メソッドから呼び出される web アプリケーションの`Startup`クラスのメソッドに追加されます。これは、eShopOnContainers reference アプリケーションの次のコード例で示されています。
 
 ```csharp
 protected virtual void ConfigureAuth(IApplicationBuilder app)  
@@ -433,23 +433,23 @@ protected virtual void ConfigureAuth(IApplicationBuilder app)
 } 
 ```
 
-このメソッドにより、API は有効なアクセス トークンを使用してのみアクセスできます。 ミドルウェアは、信頼された発行者から送信されることを確認する受信トークンを検証し、トークンが受信する API で使用するは無効であることを検証します。 そのため、順序付けまたはバスケット コント ローラーへの参照には、401 (未承認) HTTP ステータス コードをアクセス トークンが必要であることを示すは返します。
+このメソッドは、有効なアクセストークンを使用してのみ API にアクセスできることを保証します。 ミドルウェアは、受信トークンを検証して信頼された発行者から送信されることを確認し、トークンが受信する API と共に使用できることを検証します。 したがって、注文またはバスケットコントローラーを参照すると、401 (未承認) の HTTP 状態コードが返され、アクセストークンが必要であることが示されます。
 
 > [!NOTE]
-> IdentityServer の認証ミドルウェアは、MVC とを追加する前に、web アプリケーションの HTTP 要求パイプラインに追加する必要があります`app.UseMvc()`または`app.UseMvcWithDefaultRoute()`します。
+> または`app.UseMvc()` `app.UseMvcWithDefaultRoute()`を使用して MVC を追加する前に、サービスの承認ミドルウェアを web アプリケーションの HTTP 要求パイプラインに追加する必要があります。
 
 ### <a name="making-access-requests-to-apis"></a>Api へのアクセス要求の作成
 
-次のコード例に示すように、要求するときに、順序付けと basket マイクロ サービス、アクセス トークンで、認証プロセス中、IdentityServer から取得したが、要求に含める必要があります。
+注文とバスケットのマイクロサービスに要求を行うときは、認証プロセス中に、次のコード例に示すように、認証プロセス中に、サービスから取得したアクセストークンを要求に含める必要があります。
 
 ```csharp
 var authToken = Settings.AuthAccessToken;  
 Order = await _ordersService.GetOrderAsync(Convert.ToInt32(order.OrderNumber), authToken);
 ```
 
-アクセス トークンをプラットフォーム固有のストレージから取得されへの呼び出しに含まれてし、アプリケーション設定として格納されます、`GetOrderAsync`メソッドで、`OrderService`クラス。
+アクセストークンはアプリケーション設定として格納され、プラットフォーム固有のストレージから取得され、 `GetOrderAsync` `OrderService`クラスのメソッドの呼び出しに含まれます。
 
-同様に、アクセス トークンにする必要が含まれる API、IdentityServer は、データを送信する保護されている場合、次のコード例に示すように。
+同様に、次のコード例に示すように、サービスによって保護されている API にデータを送信するときに、アクセストークンを含める必要があります。
 
 ```csharp
 var authToken = Settings.AuthAccessToken;  
@@ -460,26 +460,26 @@ await _basketService.UpdateBasketAsync(new CustomerBasket
 }, authToken);
 ```
 
-アクセス トークンがプラットフォーム固有の記憶域から取得されへの呼び出しに含まれる、`UpdateBasketAsync`メソッドで、`BasketService`クラス。
+アクセストークンはプラットフォーム固有のストレージから取得され、 `UpdateBasketAsync` `BasketService`クラスのメソッドの呼び出しに含まれます。
 
-`RequestProvider`クラス、eShopOnContainers のモバイル アプリでは使用して、 `HttpClient` eShopOnContainers 参照アプリケーションによって公開される RESTful Api に要求を行うクラス。 順序付けとバスケット、承認を必要とする Api に要求を行う場合、有効なアクセス トークンが要求に含まれる場合があります。 ヘッダーにアクセス トークンを追加することでこれは、`HttpClient`の次のコード例に示すように、インスタンスします。
+EShopOnContainers `RequestProvider`モバイルアプリのクラスは、 `HttpClient`クラスを使用して、eShopOnContainers 参照アプリケーションによって公開されている RESTful api に要求を行います。 承認が必要な注文とバスケットの Api に対して要求を行う場合は、要求に有効なアクセストークンを含める必要があります。 これを実現するには、次のコード例に示す`HttpClient`ように、インスタンスのヘッダーにアクセストークンを追加します。
 
 ```csharp
 httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 ```
 
-`DefaultRequestHeaders`のプロパティ、`HttpClient`クラスは、各要求と一緒に送信されるヘッダーを公開し、アクセス トークンに追加されます、`Authorization`ヘッダー文字列で始まる`Bearer`します。 値、RESTful API に要求が送信されると、`Authorization`ヘッダーが抽出され、信頼された発行者から送信されたことと、ユーザーが API を呼び出す権限を持っているかどうかを判断するために使用を受け取ることを確認するために検証します。
+クラスのプロパティは`DefaultRequestHeaders` 、各要求と共に送信されるヘッダーを公開し、アクセス`Authorization`トークンは文字列`Bearer`で始まるヘッダーに追加されます。 `HttpClient` 要求が RESTful API に送信されると、 `Authorization`ヘッダーの値が抽出され、信頼された発行者から送信されることを確認するために検証され、ユーザーがそれを受け取る API を呼び出すためのアクセス許可を持っているかどうかを判断するために使用されます。
 
-EShopOnContainers のモバイル アプリが web 要求を使用する方法の詳細については、次を参照してください。[にアクセスするリモート データ](~/xamarin-forms/enterprise-application-patterns/accessing-remote-data.md)します。
+EShopOnContainers モバイルアプリが web 要求を作成する方法の詳細については、「[リモートデータへのアクセス](~/xamarin-forms/enterprise-application-patterns/accessing-remote-data.md)」を参照してください。
 
 ## <a name="summary"></a>まとめ
 
-ASP.NET MVC web アプリケーションと通信する Xamarin.Forms アプリへの認証と承認の統合に多くの方法はあります。 EShopOnContainers のモバイル アプリは、認証と承認 IdentityServer 4 を使用する識別情報のコンテナー化されたマイクロ サービスを実行します。 IdentityServer は、オープン ソースの OpenID Connect と OAuth 2.0 ベアラー トークン認証を実行する ASP.NET Core Identity と統合する ASP.NET Core のフレームワークです。
+ASP.NET MVC web アプリケーションと通信する Xamarin. Forms アプリに認証と承認を統合するには、さまざまな方法があります。 EShopOnContainers モバイルアプリは、ユーザー id を使用するコンテナー化された id マイクロサービスで認証と承認を実行します。 ユーザー Id は、ASP.NET Core Id と統合してベアラートークン認証を実行する ASP.NET Core 用のオープンソース OpenID Connect および OAuth 2.0 フレームワークです。
 
-モバイル アプリでは、ユーザーを認証するため、またはリソースにアクセスするために、IdentityServer からセキュリティ トークンを要求します。 リソースにアクセスするときは、要求の承認を必要とする Api にアクセス トークンを含める必要があります。 IdentityServer のミドルウェアは、信頼された発行者から送信されることになり、それらが受け取る API で使用する有効なことを確認する受信のアクセス トークンを検証します。
+モバイルアプリは、ユーザーを認証したり、リソースにアクセスしたりするために、ユーザーのセキュリティトークンを要求します。 リソースにアクセスする場合は、承認を必要とする Api に対する要求にアクセストークンを含める必要があります。 ユーザーが信頼された発行者から送信されたことを確認するために、ユーザーが受信アクセストークンを検証し、それらのトークンを受信する API と共に使用することが有効であることを確認します。
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [(2 Mb の PDF) 電子ブックをダウンロードします。](https://aka.ms/xamarinpatternsebook)
+- [電子ブックのダウンロード (2 Mb PDF)](https://aka.ms/xamarinpatternsebook)
 - [eShopOnContainers (GitHub) (サンプル)](https://github.com/dotnet-architecture/eShopOnContainers)
