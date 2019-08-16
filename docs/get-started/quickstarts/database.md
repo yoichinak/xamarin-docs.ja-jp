@@ -484,4 +484,4 @@ XAML スタイルを使用してアプリケーションのスタイルを適用
 ## <a name="related-links"></a>関連リンク
 
 - [Notes (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-database/)
-- [Xamarin. フォームのクイックスタートの詳細](deepdive.md)
+- [Xamarin.Forms のクイックスタートの詳細](deepdive.md)

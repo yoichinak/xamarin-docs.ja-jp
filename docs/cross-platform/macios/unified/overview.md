@@ -319,7 +319,7 @@ Mac の場合、 [mac サンプル](https://github.com/xamarin/mac-samples)リ�
 
 - [IOS アプリの更新](updating-ios-apps.md)
 - [Mac アプリを更新しています](updating-mac-apps.md)
-- [Xamarin. Forms アプリの更新](updating-xamarin-forms-apps.md)
+- [Xamarin.Forms アプリの更新](updating-xamarin-forms-apps.md)
 - [バインドの更新](update-binding.md)
 - [ヒントの更新](updating-tips.md)
 - [クラシックと Unified API の違い](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/ios/api_changes/classic-vs-unified-8.6.0/index.md)

@@ -1,5 +1,5 @@
 ---
-title: Xamarin. フォームのクイックスタートの詳細
+title: Xamarin.Forms のクイックスタートの詳細
 description: この記事では、Xamarin.Forms を使用したアプリケーション開発の基礎について説明します。 たとえば、Xamarin.Forms アプリケーションの構造、アプリケーションのアーキテクチャ、と基礎、ユーザー インターフェイスについて説明しました。
 zone_pivot_groups: platform
 ms.topic: quickstart
@@ -16,7 +16,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 08/02/2019
 ms.locfileid: "68739006"
 ---
-# <a name="xamarinforms-quickstart-deep-dive"></a>Xamarin. フォームのクイックスタートの詳細
+# <a name="xamarinforms-quickstart-deep-dive"></a>Xamarin.Forms のクイックスタートの詳細
 
 Xamarin の[クイックスタート](~/get-started/index.yml)では、note アプリケーションがビルドされました。 この記事では、Xamarin.Forms アプリケーションのしくみの基礎を理解するために、構築された内容を確認します。
 
@@ -35,7 +35,7 @@ Visual Studio は、コードを*ソリューション*と*プロジェクト*�
 - Notes.iOS: このプロジェクトは、ios 固有のコードを保持し、iOS アプリケーションのエントリポイントです。
 - Notes.UWP: このプロジェクトは、ユニバーサル Windows プラットフォーム (UWP) 固有のコードを保持し、UWP アプリケーションのエントリポイントです。
 
-## <a name="anatomy-of-a-xamarinforms-application"></a>Xamarin. Forms アプリケーションの構造
+## <a name="anatomy-of-a-xamarinforms-application"></a>Xamarin.Forms アプリケーションの構造
 
 次のスクリーンショットは、Visual Studio の Notes .NET Standard library プロジェクトの内容を示しています。
 
@@ -43,7 +43,7 @@ Visual Studio は、コードを*ソリューション*と*プロジェクト*�
 
 このプロジェクトには、**NuGet** ノードと **SDK** ノードを含む **Dependencies** ノードがあります。
 
-- **NuGet**&ndash;プロジェクトに追加された Xamarin. Forms および sqlite-net pcl NuGet パッケージ。
+- **NuGet**&ndash;プロジェクトに追加された Xamarin.Forms および sqlite-net pcl NuGet パッケージ。
 - **SDK** &ndash; .NET Standard を定義する NuGet パッケージの完全なセットを参照する `NETStandard.Library` メタパッケージです。
 
 ::: zone-end
@@ -61,7 +61,7 @@ Visual Studio は、コードを*ソリューション*と*プロジェクト*�
 - Notes.Android: このプロジェクトは、android 固有のコードを保持し、Android アプリケーションのエントリポイントです。
 - Notes.iOS: このプロジェクトは、ios 固有のコードを保持し、iOS アプリケーションのエントリポイントです。
 
-## <a name="anatomy-of-a-xamarinforms-application"></a>Xamarin. Forms アプリケーションの構造
+## <a name="anatomy-of-a-xamarinforms-application"></a>Xamarin.Forms アプリケーションの構造
 
 次のスクリーンショットは、Visual Studio for Mac の Notes .NET Standard library プロジェクトの内容を示しています。
 
@@ -69,7 +69,7 @@ Visual Studio は、コードを*ソリューション*と*プロジェクト*�
 
 このプロジェクトには、**NuGet** ノードと **SDK** ノードを含む **Dependencies** ノードがあります。
 
-- **NuGet**&ndash;プロジェクトに追加された Xamarin. Forms および sqlite-net pcl NuGet パッケージ。
+- **NuGet**&ndash;プロジェクトに追加された Xamarin.Forms および sqlite-net pcl NuGet パッケージ。
 - **SDK** &ndash; .NET Standard を定義する NuGet パッケージの完全なセットを参照する `NETStandard.Library` メタパッケージです。
 
 ::: zone-end
@@ -138,7 +138,7 @@ using Xamarin.Forms.Xaml;
 
 ### <a name="ios"></a>iOS
 
-Ios で最初の Xamarin. フォームページを起動するには、次のように`AppDelegate` 、 `FormsApplicationDelegate`クラスを継承するクラスを定義します。
+Ios で最初の Xamarin.Forms ページを起動するには、次のように`AppDelegate` 、 `FormsApplicationDelegate`クラスを継承するクラスを定義します。
 
 ```csharp
 namespace Notes.iOS
@@ -160,7 +160,7 @@ namespace Notes.iOS
 
 ### <a name="android"></a>Android
 
-Android で最初の Xamarin. フォームページを起動するには、 `Activity` `MainLauncher`属性を使用してを作成するコードが含まれています。この`FormsAppCompatActivity`コードには、クラスから継承するアクティビティがあります。
+Android で最初の Xamarin.Forms ページを起動するには、 `Activity` `MainLauncher`属性を使用してを作成するコードが含まれています。この`FormsAppCompatActivity`コードには、クラスから継承するアクティビティがあります。
 
 ```csharp
 namespace Notes.Droid
@@ -202,7 +202,7 @@ if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
 }
 ```
 
-その結果、Xamarin.Forms の UWP 固有の実装がアプリケーションに読み込まれます。 最初の Xamarin. フォームページは、 `MainPage`クラスによって起動されます。
+その結果、Xamarin.Forms の UWP 固有の実装がアプリケーションに読み込まれます。 最初の Xamarin.Forms ページは、 `MainPage`クラスによって起動されます。
 
 ```csharp
 namespace Notes.UWP
@@ -227,7 +227,7 @@ Xamarin.Forms アプリケーションは `LoadApplication` メソッドを使�
 
 ## <a name="user-interface"></a>ユーザーインターフェイス
 
-Xamarin. Forms アプリケーションのユーザーインターフェイスを作成するには、次の4つの主要なコントロールグループが使用されます。
+Xamarin.Forms アプリケーションのユーザーインターフェイスを作成するには、次の4つの主要なコントロールグループが使用されます。
 
 1. **ページ**: Xamarin.Forms のページは、クロスプラットフォーム モバイル アプリケーション画面を表しています。 メモアプリケーションは[`ContentPage`](xref:Xamarin.Forms.ContentPage)クラスを使用して、1つの画面を表示します。 ページの詳細については、「[Xamarin.Forms Pages](~/xamarin-forms/user-interface/controls/pages.md)」(Xamarin.Forms のページ) を参照してください。
 1. **ビュー**: Xamarin.Forms のビューは、ユーザー インターフェイスに表示されるコントロールです。たとえば、ラベル、ボタン、テキスト入力ボックスなどです。 完成したノートアプリケーションは[`ListView`](xref:Xamarin.Forms.ListView)、 [`Editor`](xref:Xamarin.Forms.Editor)、、 [`Button`](xref:Xamarin.Forms.Button)およびの各ビューを使用します。 ビューの詳細については、「[Xamarin.Forms Views](~/xamarin-forms/user-interface/controls/views.md)」(Xamarin.Forms のビュー) を参照してください。
@@ -472,7 +472,7 @@ async void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs e)
 を作成[`Style`](xref:Xamarin.Forms.Style)する場合[`TargetType`](xref:Xamarin.Forms.Style.TargetType) 、プロパティは常に必須です。
 
 > [!NOTE]
-> Xamarin. フォームアプリケーションのスタイル設定は、従来、XAML スタイルを使用して実現されています。 ただし、カスケードスタイルシート (CSS) を使用してビジュアル要素のスタイルを設定することもできます。 詳細については、「[カスケードスタイルシートを使用した Xamarin. フォームアプリのスタイル設定 (CSS)](~/xamarin-forms/user-interface/styles/css/index.md)」を参照してください。
+> Xamarin.Forms アプリケーションのスタイル設定は、従来、XAML スタイルを使用して実現されています。 ただし、カスケードスタイルシート (CSS) を使用してビジュアル要素のスタイルを設定することもできます。 詳細については、「[カスケードスタイルシートを使用した Xamarin.Forms アプリのスタイル設定 (CSS)](~/xamarin-forms/user-interface/styles/css/index.md)」を参照してください。
 
 XAML のスタイルの詳細については、次を参照してください。[XAML スタイルを使った Xamarin.Forms アプリのスタイリング](~/xamarin-forms/user-interface/styles/xaml/index.md)。
 

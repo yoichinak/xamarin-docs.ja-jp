@@ -27,7 +27,7 @@ ms.locfileid: "68646140"
 
 ## <a name="xamarinforms"></a>Xamarin.Forms
 
-[Xamarin. Forms book](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)のいくつかのサンプルがにF#移植されています。 これらのリンクを使用すると、各章の github の場所に移動できます。
+[Xamarin.Forms book](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)のいくつかのサンプルがにF#移植されています。 これらのリンクを使用すると、各章の github の場所に移動できます。
 
 - [第2章アプリの詳細](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/FS)
 - [第3章テキストに進む](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/FS)

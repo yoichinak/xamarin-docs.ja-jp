@@ -1,6 +1,6 @@
 ---
 title: クロスプラットフォーム Xamarin.Forms アプリケーションのスタイルを設定する
-description: この記事では、XAML スタイルを使用してクロスプラットフォームの Xamarin. フォームアプリケーションのスタイルを適用する方法について説明します。
+description: この記事では、XAML スタイルを使用してクロスプラットフォームの Xamarin.Forms アプリケーションのスタイルを適用する方法について説明します。
 zone_pivot_groups: platform
 ms.topic: quickstart
 ms.prod: xamarin
@@ -16,7 +16,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 07/30/2019
 ms.locfileid: "68654663"
 ---
-# <a name="style-a-cross-platform-xamarinforms-application"></a>クロスプラットフォームの Xamarin. フォームアプリケーションのスタイルを適用する
+# <a name="style-a-cross-platform-xamarinforms-application"></a>クロスプラットフォームの Xamarin.Forms アプリケーションのスタイルを適用する
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-styled/)
 
@@ -24,7 +24,7 @@ ms.locfileid: "68654663"
 
 - XAML スタイルを使用して Xamarin アプリケーションのスタイルを適用します。
 
-クイックスタートでは、XAML スタイルを使用してクロスプラットフォームの Xamarin. フォームアプリケーションのスタイルを適用する方法を説明します。 最終的なアプリケーションは、次のとおりです。
+クイックスタートでは、XAML スタイルを使用してクロスプラットフォームの Xamarin.Forms アプリケーションのスタイルを適用する方法を説明します。 最終的なアプリケーションは、次のとおりです。
 
 [メモ] ページ[ ![(styling-images/screenshots1-sml.png " ")]][(styling-images/screenshots1.png#lightbox "メモ] ページ")メモ入力ページの(styling-images/screenshots2.png#lightbox "メモ入力ページ") [ ![(styling-images/screenshots2-sml.png " ")]] 
 
@@ -323,7 +323,7 @@ ms.locfileid: "68654663"
 
 - XAML スタイルを使用して Xamarin アプリケーションのスタイルを適用します。
 
-Xamarin. Forms を使用したアプリケーション開発の基礎について詳しくは、クイックスタートの詳細に関するページをご覧ください。
+Xamarin.Forms を使用したアプリケーション開発の基礎について詳しくは、クイックスタートの詳細に関するページをご覧ください。
 
 > [!div class="nextstepaction"]
 > [次へ](deepdive.md)
@@ -331,4 +331,4 @@ Xamarin. Forms を使用したアプリケーション開発の基礎につい�
 ## <a name="related-links"></a>関連リンク
 
 - [Notes (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-styled/)
-- [Xamarin. フォームのクイックスタートの詳細](deepdive.md)
+- [Xamarin.Forms のクイックスタートの詳細](deepdive.md)

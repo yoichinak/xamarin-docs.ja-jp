@@ -16,17 +16,17 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 07/30/2019
 ms.locfileid: "68653793"
 ---
-# <a name="perform-navigation-in-a-multi-page-xamarinforms-application"></a>複数ページの Xamarin. フォームアプリケーションでナビゲーションを実行する
+# <a name="perform-navigation-in-a-multi-page-xamarinforms-application"></a>複数ページの Xamarin.Forms アプリケーションでナビゲーションを実行する
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-multipage/)
 
 このクイックスタートでは、次の方法について説明します。
 
-- Xamarin. Forms ソリューションにページを追加します。
+- Xamarin.Forms ソリューションにページを追加します。
 - ページ間のナビゲーションを実行します。
 - ユーザーインターフェイス要素とそのデータソースとの間でデータを同期するには、データバインディングを使用します。
 
-このクイックスタートでは、1つのノートを複数ページアプリケーションに格納できる単一ページクロスプラットフォーム Xamarin. Forms アプリケーションを、複数のメモを格納できるようにする方法について説明します。 最終的なアプリケーションは、次のとおりです。
+このクイックスタートでは、1つのノートを複数ページアプリケーションに格納できる単一ページクロスプラットフォーム Xamarin.Forms アプリケーションを、複数のメモを格納できるようにする方法について説明します。 最終的なアプリケーションは、次のとおりです。
 
 [メモ] ページ[ ![(multi-page-images/screenshots1-sml.png " ")]][(multi-page-images/screenshots1.png#lightbox "メモ] ページ")メモ入力ページの(multi-page-images/screenshots2.png#lightbox "メモ入力ページ") [ ![(multi-page-images/screenshots2-sml.png " ")]] 
 
@@ -81,9 +81,9 @@ ms.locfileid: "68653793"
 
     **CTRL + S**キーを押して**Note.cs**への変更内容を保存し、ファイルを閉じます。
 
-7. **ソリューションエクスプローラー**で、**メモ**プロジェクトを右クリックし、[ **> 新しい項目の追加**] を選択します。[**新しい項目の追加**] ダイアログで、[**ビジュアルC#項目 > Xamarin. Forms > コンテンツ] ページ**を選択し、新しいファイルに**NoteEntryPage**という名前を指定して、[**追加**] ボタンをクリックします。
+7. **ソリューションエクスプローラー**で、**メモ**プロジェクトを右クリックし、[ **> 新しい項目の追加**] を選択します。[**新しい項目の追加**] ダイアログで、[**ビジュアルC#項目 > Xamarin.Forms > コンテンツ] ページ**を選択し、新しいファイルに**NoteEntryPage**という名前を指定して、[**追加**] ボタンをクリックします。
 
-    ![](multi-page-images/vs/add-note-entry-page.png "Xamarin. Forms ContentPage の追加")
+    ![](multi-page-images/vs/add-note-entry-page.png "Xamarin.Forms ContentPage の追加")
 
     これにより、 **NoteEntryPage**という名前の新しいページがプロジェクトのルートフォルダーに追加されます。 このページは、アプリケーションの2番目のページになります。
 
@@ -176,7 +176,7 @@ ms.locfileid: "68653793"
       > [!WARNING]
       > この時点でアプリケーションをビルドしようとすると、後続の手順で修正されるエラーが発生します。
 
-10. **ソリューションエクスプローラー**で、**メモ**プロジェクトを右クリックし、[ **> 新しい項目の追加**] を選択します。[**新しい項目の追加**] ダイアログで、[**ビジュアルC#項目 > Xamarin. Forms > コンテンツ] ページ**を選択し、新しいファイルに「**ノート**」という名前を指定して、[**追加**] ボタンをクリックします。
+10. **ソリューションエクスプローラー**で、**メモ**プロジェクトを右クリックし、[ **> 新しい項目の追加**] を選択します。[**新しい項目の追加**] ダイアログで、[**ビジュアルC#項目 > Xamarin.Forms > コンテンツ] ページ**を選択し、新しいファイルに「**ノート**」という名前を指定して、[**追加**] ボタンをクリックします。
 
       これにより、プロジェクトのルートフォルダーに [**ノート] ページ**という名前のページが追加されます。 このページは、アプリケーションのルートページになります。
 
@@ -366,7 +366,7 @@ ms.locfileid: "68653793"
 
 7. **Solution Pad**で、**メモ**プロジェクトを選択し、右クリックして、[ **> 新しいファイルの追加**] を選択します。[**新しいファイル**] ダイアログで、 **[フォーム > フォーム ContentPage XAML**] を選択し、新しいファイルに**NoteEntryPage**という名前を指定して、[**新規**] ボタンをクリックします。
 
-    ![](multi-page-images/vsmac/add-note-entry-page.png "Xamarin. Forms ContentPage の追加")
+    ![](multi-page-images/vsmac/add-note-entry-page.png "Xamarin.Forms ContentPage の追加")
 
     これにより、 **NoteEntryPage**という名前の新しいページがプロジェクトのルートフォルダーに追加されます。 このページは、アプリケーションの2番目のページになります。
 
@@ -606,7 +606,7 @@ ms.locfileid: "68653793"
 
 このクイックスタートでは、次の方法について学習しました。
 
-- Xamarin. Forms ソリューションにページを追加します。
+- Xamarin.Forms ソリューションにページを追加します。
 - ページ間のナビゲーションを実行します。
 - ユーザーインターフェイス要素とそのデータソースとの間でデータを同期するには、データバインディングを使用します。
 
@@ -618,4 +618,4 @@ ms.locfileid: "68653793"
 ## <a name="related-links"></a>関連リンク
 
 - [Notes (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-multipage/)
-- [Xamarin. フォームのクイックスタートの詳細](deepdive.md)
+- [Xamarin.Forms のクイックスタートの詳細](deepdive.md)

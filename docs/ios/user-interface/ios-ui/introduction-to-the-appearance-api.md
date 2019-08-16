@@ -69,7 +69,7 @@ progress2.TrackTintColor = UIColor.FromRGB (197,255,132);
 
 ## <a name="using-uiappearance-in-xamarinforms"></a>Xamarin での UIAppearance の使用
 
-外観 API は、Xamarin. Forms ソリューションで[iOS アプリのスタイル](~/xamarin-forms/platform/ios/formatting.md#uiappearance)を設定するときに役立ちます。 クラスのいくつかの`AppDelegate`行は、[カスタムレンダラー](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)を作成しなくても、特定の配色を実装するのに役立ちます。
+外観 API は、Xamarin.Forms ソリューションで[iOS アプリのスタイル](~/xamarin-forms/platform/ios/formatting.md#uiappearance)を設定するときに役立ちます。 クラスのいくつかの`AppDelegate`行は、[カスタムレンダラー](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)を作成しなくても、特定の配色を実装するのに役立ちます。
 
 ### <a name="custom-themes-and-uiappearance"></a>カスタムテーマと UIAppearance
 
@@ -109,4 +109,4 @@ UISegmentedControl.Appearance.TintColor = UIColor.Magenta;
 
 - [外観 (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/appearance)
 - [UIAppearance プロトコルのリファレンス](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAppearance_Protocol/)
-- [Xamarin. Forms での外観](~/xamarin-forms/platform/ios/formatting.md#uiappearance)
+- [Xamarin.Forms での外観](~/xamarin-forms/platform/ios/formatting.md#uiappearance)

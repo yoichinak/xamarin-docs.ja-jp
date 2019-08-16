@@ -367,5 +367,5 @@ someControl.Text = localizedString;
 - [Tasky (ローカライズされたストーリーボード) (サンプル)](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10nStoryboard)
 - [Apple のローカライズガイド](https://developer.apple.com/library/ios/documentation/MacOSX/Conceptual/BPInternational/InternationalizingYourUserInterface/InternationalizingYourUserInterface.html)
 - [クロスプラットフォームのローカリゼーションの概要](~/cross-platform/app-fundamentals/localization.md)
-- [Xamarin. フォームのローカリゼーション](~/xamarin-forms/app-fundamentals/localization/index.md)
+- [Xamarin.Forms のローカリゼーション](~/xamarin-forms/app-fundamentals/localization/index.md)
 - [Android のローカライズ](~/android/app-fundamentals/localization.md)
