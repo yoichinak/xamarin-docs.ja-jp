@@ -203,7 +203,7 @@ class BasicPinAnnotation : MKAnnotation
 - [アプリの更新](~/cross-platform/macios/unified/updating-apps.md)
 - [IOS アプリの更新](~/cross-platform/macios/unified/updating-ios-apps.md)
 - [Mac アプリを更新しています](~/cross-platform/macios/unified/updating-mac-apps.md)
-- [Xamarin. Forms アプリの更新](~/cross-platform/macios/unified/updating-xamarin-forms-apps.md)
+- [Xamarin.Forms アプリの更新](~/cross-platform/macios/unified/updating-xamarin-forms-apps.md)
 - [バインドの更新](~/cross-platform/macios/unified/update-binding.md)
 - [クロスプラットフォーム アプリでのネイティブ型の使用](~/cross-platform/macios/native-types-cross-platform.md)
 - [クラシックと Unified API の違い](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/ios/api_changes/classic-vs-unified-8.6.0/index.md)

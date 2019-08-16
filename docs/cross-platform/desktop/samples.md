@@ -42,7 +42,7 @@ Xamarin を使用すると、元のアプリは、モバイル、タブレット
 
 * [.NET マイクロサービス電子ブック](https://aka.ms/microservicesebook)
 * [コンテナー化された Docker アプリケーションライフサイクル電子ブック](https://aka.ms/dockerlifecycleebook)
-* [Xamarin. Forms ebook を使用したエンタープライズアプリケーションパターン](~/xamarin-forms/enterprise-application-patterns/index.md)
+* [Xamarin.Forms ebook を使用したエンタープライズアプリケーションパターン](~/xamarin-forms/enterprise-application-patterns/index.md)
 
 ## <a name="mobile-app-samples"></a>モバイルアプリのサンプル
 

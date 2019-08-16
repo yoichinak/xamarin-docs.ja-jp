@@ -19,7 +19,7 @@ _このガイドでは、さまざまな web サービステクノロジを使�
 
 正常に機能するためには、多くのモバイルアプリケーションがクラウドに依存しているため、web サービスをモバイルアプリケーションに統合するのが一般的なシナリオです。 Xamarin プラットフォームは、さまざまな web サービステクノロジの使用をサポートしています。また、RESTful、ASMX、および Windows Communication Foundation (WCF) サービスを使用するための、組み込みのサードパーティサポートが含まれています。
 
-Xamarin. Forms を使用しているお客様には、 [xamarin. Forms Web Services](~/xamarin-forms/data-cloud/index.yml)のドキュメントに記載されている各テクノロジを使用した完全な例があります。
+Xamarin.Forms を使用しているお客様には、 [Xamarin.Forms Web Services](~/xamarin-forms/data-cloud/index.yml)のドキュメントに記載されている各テクノロジを使用した完全な例があります。
 
 > [!IMPORTANT]
 > IOS 9 では、アプリトランスポートセキュリティ (ATS) によって、インターネットリソース (アプリのバックエンドサーバーなど) とアプリの間にセキュリティで保護された接続が適用されるため、機密情報が誤って開示されるのを防ぐことができます。
@@ -445,6 +445,6 @@ HTTP 基本認証の詳細については、REST web サービスのコンテキ
 
 ## <a name="related-links"></a>関連リンク
 
-- [Xamarin. Forms の Web サービス](~/xamarin-forms/data-cloud/index.yml)
+- [Xamarin.Forms の Web サービス](~/xamarin-forms/data-cloud/index.yml)
 - [ServiceModel メタデータユーティリティツール (svcutil.exe)](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)
 - [BasicHttpBinding](https://msdn.microsoft.com/library/system.servicemodel.basichttpbinding.aspx)

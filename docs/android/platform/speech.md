@@ -234,7 +234,7 @@ void TextToSpeech.IOnInitListener.OnInit(OperationResult status)
 
 ## <a name="related-links"></a>関連リンク
 
-- [Xamarin. Forms DependencyService](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice//)
+- [Xamarin.Forms DependencyService](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice//)
 - [Text to Speech (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/platformfeatures-texttospeech)
 - [音声をテキストに変換 (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/platformfeatures-speechtotext)
 - [Android. Speech 名前空間](xref:Android.Speech)

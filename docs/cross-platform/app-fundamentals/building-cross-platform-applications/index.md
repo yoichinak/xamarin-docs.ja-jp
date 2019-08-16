@@ -65,6 +65,6 @@ Xamarin を使用してクロスプラットフォームアプリケーション
 - [コード共有のオプション](~/cross-platform/app-fundamentals/code-sharing.md)
 - [ケーススタディ:Tasky](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)
 - [Tasky サンプルアプリ (github)](https://docs.microsoft.com/samples/xamarin/mobile-samples/taskyportable/)
-- [Xamarin モバイルアプリケーションの開発:クロスプラットフォームC#および Xamarin. Forms の基礎 (Amazon)](http://www.amazon.com/Xamarin-Mobile-Application-Development-Cross-Platform/dp/1484202155/)
+- [Xamarin モバイルアプリケーションの開発:クロスプラットフォームC#および Xamarin.Forms の基礎 (Amazon)](http://www.amazon.com/Xamarin-Mobile-Application-Development-Cross-Platform/dp/1484202155/)
 - [Greg Shackles C#によるモバイル開発 (O'Reilly)](http://shop.oreilly.com/product/0636920024002.do)
 - [Scott Olson、John Hunter、 C# Ben Horgen、Kenny Goers (Wrox) によるプロフェッショナルなクロスプラットフォームモバイル開発](http://www.wrox.com/WileyCDA/WroxTitle/Professional-Cross-Platform-Mobile-Development-in-C-.productCd-1118157702.html)

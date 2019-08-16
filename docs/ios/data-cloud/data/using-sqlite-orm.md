@@ -210,4 +210,4 @@ SqliteConnection.SetConfig(SQLiteConfig.Serialized);
 
 - [このような場合の基本 (サンプル)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
 - [詳細設定 (サンプル)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
-- [Xamarin. フォームデータアクセス](~/xamarin-forms/data-cloud/data/databases.md)
+- [Xamarin.Forms データアクセス](~/xamarin-forms/data-cloud/data/databases.md)
