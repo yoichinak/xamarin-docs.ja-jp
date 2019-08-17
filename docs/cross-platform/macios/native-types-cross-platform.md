@@ -229,9 +229,9 @@ Console.WriteLine ("Rectangle Area: {0}", Transformations.CalculateArea ((Rectan
 アプリケーションのアーキテクチャに基づいて、これらのソリューションの1つ以上を使用して、クロスプラットフォームコードでネイティブデータ型 (必要な場合) をサポートする場合があります。
 
 
-## <a name="xamarinforms-applications"></a>Xamarin.Forms アプリケーション
+## <a name="xamarinforms-applications"></a>Xamarin. フォームアプリケーション
 
-次に示すのは、Unified API アプリケーションと共有されるクロスプラットフォームの Ui に対して Xamarin.Forms を使用する場合です。
+次に示すのは、Unified API アプリケーションと共有されるクロスプラットフォームの Ui に対して Xamarin. Forms を使用する場合です。
 
 - ソリューション全体で、1.3.1 NuGet パッケージのバージョン (またはそれ以降) を使用している必要があります。
 - すべての Xamarin のカスタムレンダリングでは、UI コードの共有 (共有プロジェクトまたは PCL) に基づいて、上記と同じ種類のソリューションを使用します。
@@ -242,7 +242,7 @@ Console.WriteLine ("Rectangle Area: {0}", Transformations.CalculateArea ((Rectan
 
 ## <a name="summary"></a>Summary
 
-この記事では、Unified API アプリケーションでネイティブデータ型を使用する場合と、それによるクロスプラットフォームの影響について説明しました。 クロスプラットフォームライブラリで新しいネイティブデータ型を使用する必要がある場合に使用できるいくつかのソリューションを提供しました。 また、Xamarin.Forms クロスプラットフォームアプリケーションで統合された Api をサポートするための簡単なガイドを見てきました。
+この記事では、Unified API アプリケーションでネイティブデータ型を使用する場合と、それによるクロスプラットフォームの影響について説明しました。 クロスプラットフォームライブラリで新しいネイティブデータ型を使用する必要がある場合に使用できるいくつかのソリューションを提供しました。 また、Xamarin. Forms クロスプラットフォームアプリケーションで統合された Api をサポートするための簡単なガイドを見てきました。
 
 
 
