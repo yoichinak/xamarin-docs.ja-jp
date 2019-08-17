@@ -6,12 +6,12 @@ ms.assetid: 26673CC5-C1E5-4BAC-BEF4-9A386B296FD5
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: c1a374feaadf28898b7fde8e364cf0adab83acd5
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: dc23aed074360a06fcef6ad540d91aa98a19318b
+ms.sourcegitcommit: 9912e57ff6124c583600f9460ebfa3f7f7525960
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509605"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69560291"
 ---
 # <a name="updating-existing-mac-apps"></a>既存の Mac アプリを更新しています
 
@@ -70,7 +70,7 @@ Xamarin. Mac アプリケーションで Unified API を使用するときに選
 
 例:
 
-![](updating-mac-apps-images/csproj3.png "< AssemblyName > 要素の後に、次のコード行を追加します。")
+![AssemblyName > 要素の後に、 \<次のコード行を追加します。](updating-mac-apps-images/csproj3.png)
 
 ### <a name="2-update-project-references"></a>2. プロジェクト参照の更新
 
@@ -88,9 +88,9 @@ Mac アプリケーションプロジェクトの **[参照設定]** ノード�
 
 ### <a name="3-remove-monomac-from-namespaces"></a>3.名前空間からのモノ Mac の削除
 
-ステートメント内の`using`名前空間**から、また**は classname が完全に修飾されている場所 (たとえば、 `MonoMac.AppKit`がだけ`AppKit`になります)。
+ステートメント内の`using`名前空間から、または classname が完全に修飾されている場所 (たとえば、 `MonoMac.AppKit`がだけ`AppKit`になります)。
 
-### <a name="4-remap-types"></a>4。型の再マップ
+### <a name="4-remap-types"></a>4.型の再マップ
 
 以前に使用されていたいくつかの型`CoreGraphics.CGRect` (たとえば、の`System.Drawing.RectangleF`インスタンス) を置き換える[ネイティブ型](~/cross-platform/macios/nativetypes.md)が導入されました。 型の完全な一覧については、「[ネイティブ型](~/cross-platform/macios/nativetypes.md)」ページを参照してください。
 
