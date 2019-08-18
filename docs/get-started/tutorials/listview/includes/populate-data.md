@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: a13426f4213d7c306c0de6922d336d4bb7723d72
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e03d0ada982cbf1d2954f4b677accc7ce7da793e
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61037597"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69541495"
 ---
 `IEnumerable` 型の [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) プロパティを使用して、[`ListView`](xref:Xamarin.Forms.ListView) にデータが取り込まれます。 前の手順で、XAML の `ListView` に文字列の配列を取り込みました。 ただし、通常 `ListView` には、`IEnumerable` を実装するコードビハインドで定義されたコレクションからのデータが取り込まれます。
 
@@ -30,7 +30,7 @@ ms.locfileid: "61037597"
 
     このコードは、サルを表すイメージの名前、場所、および URL を格納する `Monkey` オブジェクトを定義します。 また、クラスは `ToString` メソッドをオーバーライドして `Name` プロパティを返します。
 
-1. **ソリューション エクスプローラー**の **ListViewTutorial** プロジェクトで **[MainPage.xaml]** を展開し、**[MainPage.xaml.cs]** をダブルクリックして開きます。 次に、**MainPage.xaml.cs** のテンプレート コードをすべて削除し、次のコードに置き換えます。
+1. **ソリューション エクスプローラー**の **ListViewTutorial** プロジェクトで **[MainPage.xaml]** を展開し、 **[MainPage.xaml.cs]** をダブルクリックして開きます。 次に、**MainPage.xaml.cs** のテンプレート コードをすべて削除し、次のコードに置き換えます。
 
     ```csharp
     using System.Collections.Generic;
@@ -177,7 +177,7 @@ ms.locfileid: "61037597"
     > [!IMPORTANT]
     > [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) プロパティはビジュアル ツリーを介して継承されます。 したがって、それが [`ContentPage`](xref:Xamarin.Forms.ContentPage) オブジェクトに設定されているため、`ContentPage` の子オブジェクトは [`ListView`](xref:Xamarin.Forms.ListView) を含むその値を継承します。
 
-1.  **MainPage.xaml** で、[`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) プロパティを `Monkeys` コレクションに設定するように [`ListView`](xref:Xamarin.Forms.Image) 宣言を変更します。
+1. **MainPage.xaml** で、[`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) プロパティを `Monkeys` コレクションに設定するように [`ListView`](xref:Xamarin.Forms.Image) 宣言を変更します。
 
     ```xaml
     <ListView ItemsSource="{Binding Monkeys}" />
@@ -185,7 +185,7 @@ ms.locfileid: "61037597"
 
     このコードデータは、[`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) プロパティを `Monkeys` コレクションにバインドします。 実行時に、[`ListView`](xref:Xamarin.Forms.ListView) は `Monkeys` コレクションの [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) を調べ、それにこのコレクションからのデータが取り込まれます。 データ バインディングの詳細については、「[Xamarin.Forms Data Binding](~/xamarin-forms/app-fundamentals/data-binding/index.md)」(Xamarin.Forms データ バインディング) をご覧ください。
 
-1. Visual Studio ツール バーで、**[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択したリモート iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
+1. Visual Studio ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択したリモート iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
     [![iOS および Android でコレクションのデータが取り込まれた ListView のスクリーンショット](../images/populate-data.png "コレクションのデータを表示する ListView")](../images/populate-data-large.png#lightbox "コレクションのデータを表示する ListView")
 
@@ -211,7 +211,7 @@ ms.locfileid: "61037597"
 
     このコードは、サルを表すイメージの名前、場所、および URL を格納する `Monkey` オブジェクトを定義します。 また、クラスは `ToString` メソッドをオーバーライドして `Name` プロパティを返します。
 
-1. **Solution Pad** の **ListViewTutorial** プロジェクトで **[MainPage.xaml]** を展開し、**[MainPage.xaml.cs]** をダブルクリックして開きます。 次に、**MainPage.xaml.cs** のテンプレート コードをすべて削除し、次のコードに置き換えます。
+1. **Solution Pad** の **ListViewTutorial** プロジェクトで **[MainPage.xaml]** を展開し、 **[MainPage.xaml.cs]** をダブルクリックして開きます。 次に、**MainPage.xaml.cs** のテンプレート コードをすべて削除し、次のコードに置き換えます。
 
     ```csharp
     using System.Collections.Generic;
@@ -358,7 +358,7 @@ ms.locfileid: "61037597"
     > [!IMPORTANT]
     > [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) プロパティはビジュアル ツリーを介して継承されます。 したがって、それが [`ContentPage`](xref:Xamarin.Forms.ContentPage) オブジェクトに設定されているため、`ContentPage` の子オブジェクトは [`ListView`](xref:Xamarin.Forms.ListView) を含むその値を継承します。
 
-1.  **MainPage.xaml** で、[`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) プロパティを `Monkeys` コレクションに設定するように [`ListView`](xref:Xamarin.Forms.Image) 宣言を変更します。
+1. **MainPage.xaml** で、[`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) プロパティを `Monkeys` コレクションに設定するように [`ListView`](xref:Xamarin.Forms.Image) 宣言を変更します。
 
     ```xaml
     <ListView ItemsSource="{Binding Monkeys}" />
@@ -366,7 +366,7 @@ ms.locfileid: "61037597"
 
     このコードデータは、[`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) プロパティを `Monkeys` コレクションにバインドします。 実行時に、[`ListView`](xref:Xamarin.Forms.ListView) は `Monkeys` コレクションの [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) を調べ、それにこのコレクションからのデータが取り込まれます。 データ バインディングの詳細については、「[Xamarin.Forms Data Binding](~/xamarin-forms/app-fundamentals/data-binding/index.md)」(Xamarin.Forms データ バインディング) をご覧ください。
 
-1. Visual Studio for Mac ツール バーで、**[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
+1. Visual Studio for Mac ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
     [![iOS および Android でコレクションのデータが取り込まれた ListView のスクリーンショット](../images/populate-data.png "コレクションのデータを表示する ListView")](../images/populate-data-large.png#lightbox "コレクションのデータを表示する ListView")
 
