@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/25/2018
-ms.openlocfilehash: 9387b44419af87785d45a25ab254d3361a5615a3
-ms.sourcegitcommit: c75c1d2132a4f46a7b38e454d5f24705165026bd
+ms.openlocfilehash: 71784e18b9becf9851ad9ed9d4730a82d0ff94f7
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68485920"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69523651"
 ---
 # <a name="using-the-xamarinandroid-designer"></a>Android Designer の使用
 
@@ -25,9 +25,9 @@ Android ユーザーインターフェイスは、XML ファイルを使用す�
 この記事では、Android Designer を使用してユーザーインターフェイスを視覚的に作成する方法について説明します。
 
 > [!TIP]
-> Visual Studio の新しいリリースでは、Android Designer 内で .xml ファイルを開くことがサポートされています。
+> 新しいリリースの Visual Studio では、Android Designer 内で .xml ファイルを開くことができます。
 >
-> Android Designer では、axml ファイルと .xml ファイルの両方がサポートされています。
+> Android Designer では、.axml ファイルと .xml ファイルの両方がサポートされています。
 
 ## <a name="walkthrough"></a>チュートリアル
 
@@ -105,11 +105,11 @@ Android ユーザーインターフェイスは、XML ファイルを使用す�
 
 次の手順では、を左側に表示`ImageView`するように UI を変更し`ImageView`ます`TextView` 。2つのウィジェットがの右側に積み重ねられています。
 
-1.  `ImageView`を選択します。
+1. `ImageView`を選択します。
 
-2.  **プロパティウィンドウ**の 検索 ボックスに「 *width* 」と入力し、**レイアウトの幅** を検索します。
+2. **プロパティウィンドウ**の 検索 ボックスに「 *width* 」と入力し、**レイアウトの幅** を検索します。
 
-3.  [**レイアウトの幅**] の`wrap_content`設定を次のように変更します。
+3. [**レイアウトの幅**] の`wrap_content`設定を次のように変更します。
 
 ![コンテンツの折り返しの設定](designer-walkthrough-images/vs/15-wrap-content-w158.png)
 
@@ -140,7 +140,7 @@ Android ユーザーインターフェイスは、XML ファイルを使用す�
 
 [![パディングの設定](designer-walkthrough-images/vs/19-padding-widths-w158-sml.png)](designer-walkthrough-images/vs/19-padding-widths-w158.png#lightbox)
 
-下、左、右、および上にある余白の設定は、[**埋め込み**] の下に値を入力することによって個別に設定できます。また、[埋め込み]、[**右** **へ**]、[埋め込み]**の各フィールド**にそれぞれ設定できます。
+下、左、右、および上にある余白の設定は、[**埋め込み**] の下に値を入力することによって個別に設定できます。また、[埋め込み]、[**右** **へ**]、[埋め込み] の各フィールドにそれぞれ設定できます。
 たとえば、[**左余白**] フィールドをに`5dp`設定し、[**余白**]、[**右**余白]、[ `10dp`**余白**] の各フィールドをに設定します。
 
 [![カスタム埋め込みの設定](designer-walkthrough-images/vs/20-custom-padding-w158-sml.png)](designer-walkthrough-images/vs/20-custom-padding-w158.png#lightbox)
@@ -153,11 +153,11 @@ Android ユーザーインターフェイスは、XML ファイルを使用す�
 
 `ImageView`はイメージではなく色を表示するために使用されるため、次の手順では、テンプレートによって追加された既定のイメージソースを削除します。
 
-1.  `ImageView` **デザイナー画面**でを選択します。
+1. `ImageView` **デザイナー画面**でを選択します。
 
-2.  [**プロパティ**] で、検索ボックスに「 *src* 」と入力します。
+2. [**プロパティ**] で、検索ボックスに「 *src* 」と入力します。
 
-3.  **Src**プロパティ設定の右側にある小さな四角形をクリックし、[**リセット**] を選択します。
+3. **Src**プロパティ設定の右側にある小さな四角形をクリックし、[**リセット**] を選択します。
 
 [![ImageView src 設定をクリアします。](designer-walkthrough-images/vs/22-clear-img-src-w158-sml.png)](designer-walkthrough-images/vs/22-clear-img-src-w158.png#lightbox)
 
@@ -357,11 +357,11 @@ Visual Studio for Mac で、**ソリューション**パッドの [**リソー�
 
 次の手順では、を左側に表示`ImageView`するように UI を変更し`ImageView`ます`TextView` 。2つのウィジェットがの右側に積み重ねられています。
 
-1.  を選択した状態で、[プロパティ] タブをクリックします。 `ImageView`
+1. を選択した状態で、[プロパティ] タブをクリックします。 `ImageView`
 
-2.  [**プロパティ**] タブのすぐ下にある [**レイアウト**] をクリックします。
+2. [**プロパティ**] タブのすぐ下にある [**レイアウト**] をクリックします。
 
-3.  **ViewGroup**まで下にスクロールし、 `Width`設定を`wrap_content`次のように変更します。
+3. **ViewGroup**まで下にスクロールし、 `Width`設定を`wrap_content`次のように変更します。
 
 [![コンテンツの折り返しの設定](designer-walkthrough-images/xs/15-wrap-content-m75-sml.png)](designer-walkthrough-images/xs/15-wrap-content-m75.png#lightbox)
 
@@ -397,11 +397,11 @@ Visual Studio for Mac で、**ソリューション**パッドの [**リソー�
 
 `ImageView`はイメージではなく色を表示するために使用されるため、次の手順では、テンプレートによって追加された既定のイメージソースを削除します。
 
-1.  `ImageView`を選択します。
+1. `ImageView`を選択します。
 
-2.  [**プロパティ**] の下にある [**ウィジェット**] タブをクリックします。
+2. [**プロパティ**] の下にある [**ウィジェット**] タブをクリックします。
 
-3.  設定を`Src`オフにして、空白にします。
+3. 設定を`Src`オフにして、空白にします。
 
 [![ImageView src 設定をクリアします。](designer-walkthrough-images/xs/23-clear-src-m75-sml.png)](designer-walkthrough-images/xs/23-clear-src-m75.png#lightbox)
 

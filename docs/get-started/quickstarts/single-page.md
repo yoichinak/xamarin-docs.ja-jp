@@ -1,6 +1,6 @@
 ---
 title: 単一ページの Xamarin.Forms アプリケーションを作成する
-description: この記事では、単一ページクロスプラットフォームの Xamarin.Forms アプリケーションを作成する方法について説明します。これにより、メモを入力してデバイスストレージに保存できます。
+description: この記事では、単一ページクロスプラットフォームの Xamarin. Forms アプリケーションを作成する方法について説明します。これにより、メモを入力してデバイスストレージに保存できます。
 zone_pivot_groups: platform-dev16
 ms.topic: quickstart
 ms.prod: xamarin
@@ -16,17 +16,17 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 07/30/2019
 ms.locfileid: "68655008"
 ---
-# <a name="create-a-single-page-xamarinforms-application"></a>単一ページの Xamarin.Forms アプリケーションを作成する
+# <a name="create-a-single-page-xamarinforms-application"></a>単一ページの Xamarin. Forms アプリケーションを作成する
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-singlepage/)
 
 このクイックスタートでは、次の方法について説明します。
 
-- クロスプラットフォームの Xamarin.Forms アプリケーションを作成します。
+- クロスプラットフォームの Xamarin. フォームアプリケーションを作成します。
 - 拡張可能なアプリケーションマークアップ言語 (XAML) を使用して、ページのユーザーインターフェイスを定義します。
 - コードから XAML ユーザーインターフェイス要素を操作します。
 
-このクイックスタートでは、クロスプラットフォームの Xamarin.Forms アプリケーションを作成する方法について説明します。これにより、ノートを入力してデバイスストレージに保存できます。 最終的なアプリケーションは、次のとおりです。
+このクイックスタートでは、クロスプラットフォームの Xamarin. フォームアプリケーションを作成する方法について説明します。これにより、ノートを入力してデバイスストレージに保存できます。 最終的なアプリケーションは、次のとおりです。
 
 [![](single-page-images/screenshots-sml.png "Notes アプリケーション")](single-page-images/screenshots.png#lightbox "Notes アプリケーション")
 
@@ -46,7 +46,7 @@ ms.locfileid: "68655008"
 
     ![](single-page-images/vs/new-solution-2019.png "新しいプロジェクト")
 
-2. [**新しいプロジェクトの作成**] ウィンドウで、[プロジェクトの**種類**] ボックスの一覧の [ **mobile** ] を選択し、**モバイルアプリ (Xamarin.Forms**テンプレート) を選択して、[**次へ**] ボタンをクリックします。
+2. [**新しいプロジェクトの作成**] ウィンドウで、[プロジェクトの**種類**] ボックスの一覧の [ **mobile** ] を選択し、**モバイルアプリ (Xamarin. Forms**テンプレート) を選択して、[**次へ**] ボタンをクリックします。
 
     ![](single-page-images/vs/new-project-2019.png "クロスプラットフォームのプロジェクト テンプレート")
 
@@ -492,7 +492,7 @@ ms.locfileid: "68655008"
 
 このクイックスタートでは、次の方法について学習しました。
 
-- クロスプラットフォームの Xamarin.Forms アプリケーションを作成します。
+- クロスプラットフォームの Xamarin. フォームアプリケーションを作成します。
 - 拡張可能なアプリケーションマークアップ言語 (XAML) を使用して、ページのユーザーインターフェイスを定義します。
 - コードから XAML ユーザーインターフェイス要素を操作します。
 

@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: d3e5b36f2cbc48dac09b55bfba8c3613db12bbc8
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: fa0a3a75a4cc2cfd04b607f17206faa822af0474
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643283"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69523646"
 ---
 # <a name="using-native-libraries"></a>ネイティブ ライブラリの使用
 
@@ -24,8 +24,8 @@ Xamarin Android ライブラリプロジェクトを含むネイティブライ�
 Android では複数のアプリケーションバイナリインターフェイス (ABIs) がサポートされているため、Xamarin では、ネイティブライブラリがどの ABI に対して構築されているかを把握している必要があります。
 これを行うには 2 つの方法があります。
 
-1.  パス "スニッフィング"
-1.  プロジェクトファイル内`AndroidNativeLibrary/Abi`の要素を使用する
+1. パス "スニッフィング"
+1. プロジェクトファイル内`AndroidNativeLibrary/Abi`の要素を使用する
 
 
 パス スニッフィングを使用すると、ネイティブ ライブラリの親ディレクトリ名が、ライブラリがターゲットとする ABI を指定するために使用されます。 したがって、をプロジェクト`lib/armeabi/libfoo.so`に追加すると、ABI はとして`armeabi`"スニッフィングさ" になります。

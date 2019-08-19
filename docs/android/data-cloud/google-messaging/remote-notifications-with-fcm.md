@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/31/2018
-ms.openlocfilehash: 3837e28fa657764312cdbe379ba66caf9ccf18a4
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: df13c1080be5fd466c4875ed8a3bdc2012a70df0
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644202"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526162"
 ---
 # <a name="remote-notifications-with-firebase-cloud-messaging"></a>焼討 Base Cloud Messaging を使用したリモート通知
 
@@ -26,11 +26,11 @@ _このチュートリアルでは、アドインアプリケーションで、�
 
 次のトピックについて詳しく説明します。
 
-1.  バックグラウンド通知
+1. バックグラウンド通知
 
-2.  トピックメッセージ
+2. トピックメッセージ
 
-3.  フォアグラウンド通知
+3. フォアグラウンド通知
 
 このチュートリアルでは、 **Fcmclient**に機能を段階的に追加し、それをデバイスまたはエミュレーターで実行して、fcm との対話方法を理解します。 ログ記録を使用して、FCM サーバーでライブアプリトランザクションを監視します。また、FCM メッセージからの通知の生成方法については、「焼討 Base Console notification GUI」に入力します。
 
@@ -55,9 +55,9 @@ _このチュートリアルでは、アドインアプリケーションで、�
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1.  **Fcmclient**プロジェクトのプロパティを開きます。
+1. **Fcmclient**プロジェクトのプロパティを開きます。
 
-2.  [ **Android マニフェスト**] ページで、パッケージ名を設定します。
+2. [ **Android マニフェスト**] ページで、パッケージ名を設定します。
 
 次の例では、パッケージ名がに`com.xamarin.fcmexample`設定されています。
 
@@ -67,9 +67,9 @@ _このチュートリアルでは、アドインアプリケーションで、�
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1.  **Fcmclient**プロジェクトのプロパティを開きます。
+1. **Fcmclient**プロジェクトのプロパティを開きます。
 
-2.  [ **Android アプリケーション**] ページで、パッケージ名を設定します。
+2. [ **Android アプリケーション**] ページで、パッケージ名を設定します。
 
 次の例では、パッケージ名がに`com.xamarin.fcmexample`設定されています。
 
@@ -88,21 +88,21 @@ _このチュートリアルでは、アドインアプリケーションで、�
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1.  Visual Studio で、[参照] を右クリックし **> [NuGet パッケージの管理**] をクリックします。
+1. Visual Studio で、[参照] を右クリックし **> [NuGet パッケージの管理**] をクリックします。
 
-2.  [**参照**] タブをクリックし、 **GooglePlayServices**を検索します。
+2. [**参照**] タブをクリックし、 **GooglePlayServices**を検索します。
 
-3.  このパッケージを**Fcmclient**プロジェクトにインストールします。
+3. このパッケージを**Fcmclient**プロジェクトにインストールします。
 
     [![Google Play 開発者サービスベースのインストール](remote-notifications-with-fcm-images/02-google-play-services-vs-sml.png)](remote-notifications-with-fcm-images/02-google-play-services-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1.  Visual Studio for Mac で、[パッケージ] を右クリックし **> [パッケージの追加...** ] をクリックします。
+1. Visual Studio for Mac で、[パッケージ] を右クリックし **> [パッケージの追加...** ] をクリックします。
 
-2.  **GooglePlayServices**を検索します。
+2. **GooglePlayServices**を検索します。
 
-3.  このパッケージを**Fcmclient**プロジェクトにインストールします。
+3. このパッケージを**Fcmclient**プロジェクトにインストールします。
 
     [![Google Play 開発者サービスベースのインストール](remote-notifications-with-fcm-images/02-google-play-services-xs-sml.png)](remote-notifications-with-fcm-images/02-google-play-services-xs.png#lightbox)
 
@@ -125,21 +125,21 @@ FCM からメッセージを受信するには、 [Xamarin 焼討 Base Messaging
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1.  Visual Studio で、[参照] を右クリックし **> [NuGet パッケージの管理**] をクリックします。
+1. Visual Studio で、[参照] を右クリックし **> [NuGet パッケージの管理**] をクリックします。
 
 2. 「 **Xamarin. メッセージ**」を検索します。
 
-3.  このパッケージを**Fcmclient**プロジェクトにインストールします。
+3. このパッケージを**Fcmclient**プロジェクトにインストールします。
 
     [![Xamarin 焼討 Base メッセージングのインストール](remote-notifications-with-fcm-images/03-firebase-messaging-vs-sml.png)](remote-notifications-with-fcm-images/03-firebase-messaging-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1.  Visual Studio for Mac で、[パッケージ] を右クリックし **> [パッケージの追加...** ] をクリックします。
+1. Visual Studio for Mac で、[パッケージ] を右クリックし **> [パッケージの追加...** ] をクリックします。
 
-2.  「 **Xamarin. メッセージ**」を検索します。
+2. 「 **Xamarin. メッセージ**」を検索します。
 
-3.  このパッケージを**Fcmclient**プロジェクトにインストールします。
+3. このパッケージを**Fcmclient**プロジェクトにインストールします。
 
     [![Xamarin 焼討 Base メッセージングのインストール](remote-notifications-with-fcm-images/03-firebase-messaging-xs-sml.png)](remote-notifications-with-fcm-images/03-firebase-messaging-xs.png#lightbox)
 
@@ -163,13 +163,13 @@ using Android.Util;
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1.  **Google-** services.msc をプロジェクトフォルダーにコピーします。
+1. **Google-** services.msc をプロジェクトフォルダーにコピーします。
 
-2.  アプリプロジェクトに**google-** services.msc を追加します (**ソリューションエクスプローラー**で [**すべてのファイルを表示**] をクリックし、[ **google-services**] を右クリックして、[**プロジェクトに含める**] を選択します)。
+2. アプリプロジェクトに**google-** services.msc を追加します (**ソリューションエクスプローラー**で [**すべてのファイルを表示**] をクリックし、[ **google-services**] を右クリックして、[**プロジェクトに含める**] を選択します)。
 
-3.  [**ソリューションエクスプローラー** ] ウィンドウで [ **google-** services.msc] を選択します。
+3. [**ソリューションエクスプローラー** ] ウィンドウで [ **google-** services.msc] を選択します。
 
-4.  [**プロパティ**] ペインで、[**ビルド] アクション**を [ **GoogleServicesJson**] に設定します。
+4. [**プロパティ**] ペインで、[**ビルド] アクション**を [ **GoogleServicesJson**] に設定します。
 
     [![ビルドアクションを GoogleServicesJson に設定する](remote-notifications-with-fcm-images/04-google-services-json-vs-sml.png)](remote-notifications-with-fcm-images/04-google-services-json-vs.png#lightbox)
 
@@ -178,13 +178,13 @@ using Android.Util;
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1.  **Google-** services.msc をプロジェクトフォルダーにコピーします。
+1. **Google-** services.msc をプロジェクトフォルダーにコピーします。
 
-2.  **Google-** services.msc をアプリプロジェクトに追加します。
+2. **Google-** services.msc をアプリプロジェクトに追加します。
 
-3.  [ **Google-services. json**] を右クリックします。
+3. [ **Google-services. json**] を右クリックします。
 
-4.  **ビルドアクション**を**GoogleServicesJson**に設定します。
+4. **ビルドアクション**を**GoogleServicesJson**に設定します。
 
     [![ビルドアクションを GoogleServicesJson に設定する](remote-notifications-with-fcm-images/04-google-services-json-xs-sml.png)](remote-notifications-with-fcm-images/04-google-services-json-xs.png#lightbox)
 
@@ -338,11 +338,11 @@ protected override void OnCreate (Bundle bundle)
 
 この XML は、次のことを行います。
 
--   各アプリ`FirebaseInstanceIdReceiver`インスタンスの一意の[識別子](https://developers.google.com/instance-id/)を提供する実装を宣言します。 この受信者は認証し、アクションを承認します。
+- 各アプリ`FirebaseInstanceIdReceiver`インスタンスの一意の[識別子](https://developers.google.com/instance-id/)を提供する実装を宣言します。 この受信者は認証し、アクションを承認します。
 
--   内部宣言`FirebaseInstanceIdInternalReceiver`安全にサービスを開始するために使用する実装。
+- 内部宣言`FirebaseInstanceIdInternalReceiver`安全にサービスを開始するために使用する実装。
 
--   [アプリ ID](./firebase-cloud-messaging.md#fcm-in-action-app-id)は、[プロジェクトに追加](#add-googleplayservices-json)された**google services の json**ファイルに格納されます。 Xamarin の消火ベースのバインドでは、トークン`${applicationId}`はアプリ id に置き換えられます。アプリ id を提供するために、クライアントアプリで追加のコードは必要ありません。
+- [アプリ ID](./firebase-cloud-messaging.md#fcm-in-action-app-id)は、[プロジェクトに追加](#add-googleplayservices-json)された**google services の json**ファイルに格納されます。 Xamarin の消火ベースのバインドでは、トークン`${applicationId}`はアプリ id に置き換えられます。アプリ id を提供するために、クライアントアプリで追加のコードは必要ありません。
 
 `FirebaseMessaging` `FirebaseInstanceId` `FirebaseInstanceIdService`は、イベントとイベントを受け取り、派生元のクラスに配信するです。`WakefulBroadcastReceiver` `FirebaseInstanceIdReceiver`
 
@@ -351,9 +351,9 @@ protected override void OnCreate (Bundle bundle)
 アプリケーションを fcm に登録する作業は、指定したカスタム`FirebaseInstanceIdService`サービスによって処理されます。
 `FirebaseInstanceIdService`では、次の手順を実行します。
 
-1.  [インスタンス ID API](https://developers.google.com/android/reference/com/google/android/gms/iid/InstanceID)を使用して、クライアントアプリが fcm とアプリサーバーにアクセスすることを承認するセキュリティトークンを生成します。 返されると、アプリは FCM から[登録トークン](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md#fcm-in-action-registration-token)を取得します。
+1. [インスタンス ID API](https://developers.google.com/android/reference/com/google/android/gms/iid/InstanceID)を使用して、クライアントアプリが fcm とアプリサーバーにアクセスすることを承認するセキュリティトークンを生成します。 返されると、アプリは FCM から[登録トークン](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md#fcm-in-action-registration-token)を取得します。
 
-2.  アプリサーバーで登録トークンが必要な場合は、アプリサーバーに登録トークンを転送します。
+2. アプリサーバーで登録トークンが必要な場合は、アプリサーバーに登録トークンを転送します。
 
 **MyFirebaseIIDService.cs**という名前の新しいファイルを追加し、テンプレートコードを次のコードに置き換えます。
 
@@ -393,13 +393,13 @@ Log.Debug(TAG, "Refreshed token: " + refreshedToken);
 
 `OnTokenRefresh`次のような場合にトークンを更新するために使用されます。
 
--   アプリがインストールまたはアンインストールされたとき。
+- アプリがインストールまたはアンインストールされたとき。
 
--   ユーザーがアプリデータを削除したとき。
+- ユーザーがアプリデータを削除したとき。
 
--   アプリがインスタンス ID を消去するとき。
+- アプリがインスタンス ID を消去するとき。
 
--   トークンのセキュリティが侵害された場合。
+- トークンのセキュリティが侵害された場合。
 
 Google の[インスタンス id](https://developers.google.com/instance-id/guides/android-implementation)のドキュメントに従って、Fcm instance id サービスは、アプリがトークンを定期的に更新するように要求します (通常は6か月ごと)。
 
@@ -520,7 +520,7 @@ Android デバイス (またはエミュレーター) で、[Android の**概要
 
 前の例では、通知アイコンはアプリケーションアイコンに設定されています。 次の XML は、通知用のカスタムの既定のアイコンを構成します。 Android では、通知アイコンが明示的に設定されていないすべての通知メッセージに対して、このカスタムの既定のアイコンが表示されます。
 
-カスタムの既定の通知アイコンを追加するには、**リソース/** 作成されたディレクトリにアイコンを追加し、**を編集し**て、 `<meta-data>` `<application>`セクションに次の要素を挿入します。
+カスタムの既定の通知アイコンを追加するには、**リソース/** 作成されたディレクトリにアイコンを追加し、を編集して、 `<meta-data>` `<application>`セクションに次の要素を挿入します。
 
 ```xml
 <meta-data
@@ -573,19 +573,19 @@ subscribeButton.Click += delegate {
 
 トピックメッセージを送信するには、次の手順に従います。
 
-1.  [焼討 Base] コンソールで、[**新しいメッセージ**] をクリックします。
+1. [焼討 Base] コンソールで、[**新しいメッセージ**] をクリックします。
 
-2.  [**メッセージの作成**] ページで、メッセージテキストを入力し、[**トピック**] を選択します。
+2. [**メッセージの作成**] ページで、メッセージテキストを入力し、[**トピック**] を選択します。
 
-3.  **トピック**プルダウンメニューで、組み込みトピック [ **news**] を選択します。
+3. **トピック**プルダウンメニューで、組み込みトピック [ **news**] を選択します。
 
     [![ニューストピックを選択する](remote-notifications-with-fcm-images/16-topic-message-sml.png)](remote-notifications-with-fcm-images/16-topic-message.png#lightbox)
 
-4.  Android デバイス (またはエミュレーター) で、[Android の**概要**] ボタンをタップしてホーム画面に触れることによって、アプリの背景を表示します。
+4. Android デバイス (またはエミュレーター) で、[Android の**概要**] ボタンをタップしてホーム画面に触れることによって、アプリの背景を表示します。
 
-5.  デバイスの準備ができたら、焼討 Base コンソールで [**メッセージの送信**] をクリックします。
+5. デバイスの準備ができたら、焼討 Base コンソールで [**メッセージの送信**] をクリックします。
 
-6.  IDE の出力ウィンドウで、ログ出力の次の**トピック**を確認します。
+6. IDE の出力ウィンドウで、ログ出力の次の**トピック**を確認します。
 
     [![/トピック/ニュースからのメッセージが表示されます。](remote-notifications-with-fcm-images/17-message-arrived-sml.png)](remote-notifications-with-fcm-images/17-message-arrived.png#lightbox)
 
@@ -653,19 +653,19 @@ Log.Debug(TAG, "Notification Message Body: " + body);
 
 アプリをアンインストールし、再構築して再実行し、次の手順に従って別のメッセージを送信します。
 
-1.  [焼討 Base] コンソールで、[**新しいメッセージ**] をクリックします。
+1. [焼討 Base] コンソールで、[**新しいメッセージ**] をクリックします。
 
-2.  [**メッセージの作成**] ページで、メッセージテキストを入力し、[**単一デバイス**] を選択します。
+2. [**メッセージの作成**] ページで、メッセージテキストを入力し、[**単一デバイス**] を選択します。
 
-3.  IDE 出力ウィンドウからトークン文字列をコピーし、前と同じように、焼討 Base コンソールの**Fcm 登録トークン**フィールドに貼り付けます。
+3. IDE 出力ウィンドウからトークン文字列をコピーし、前と同じように、焼討 Base コンソールの**Fcm 登録トークン**フィールドに貼り付けます。
 
-4.  アプリがフォアグラウンドで実行されていることを確認し、次に、焼討 Base コンソールで [**メッセージの送信**] をクリックします。
+4. アプリがフォアグラウンドで実行されていることを確認し、次に、焼討 Base コンソールで [**メッセージの送信**] をクリックします。
 
     [![コンソールからの別のメッセージの送信](remote-notifications-with-fcm-images/19-hello-again-sml.png)](remote-notifications-with-fcm-images/19-hello-again.png#lightbox)
 
-5.  [**メッセージの確認**] ダイアログが表示されたら、[**送信**] をクリックします。
+5. [**メッセージの確認**] ダイアログが表示されたら、[**送信**] をクリックします。
 
-6.  受信メッセージは、IDE の出力ウィンドウに記録されます。
+6. 受信メッセージは、IDE の出力ウィンドウに記録されます。
 
     [![出力ウィンドウに出力されるメッセージ本文](remote-notifications-with-fcm-images/20-logged-message.png)](remote-notifications-with-fcm-images/20-logged-message.png#lightbox)
 
@@ -679,7 +679,7 @@ using FCMClient;
 using System.Collections.Generic;
 ```
 
-に次のメソッドを`MyFirebaseMessagingService`追加します。
+次のメソッドを `MyFirebaseMessagingService` に追加します。
 
 <a name="sendnotification-method"></a>
 
@@ -741,13 +741,13 @@ public override void OnMessageReceived(RemoteMessage message)
 
 アプリをアンインストールして再構築し、もう一度実行してから、次の手順を使用して最後のメッセージを送信します。
 
-1.  [焼討 Base] コンソールで、[**新しいメッセージ**] をクリックします。
+1. [焼討 Base] コンソールで、[**新しいメッセージ**] をクリックします。
 
-2.  [**メッセージの作成**] ページで、メッセージテキストを入力し、[**単一デバイス**] を選択します。
+2. [**メッセージの作成**] ページで、メッセージテキストを入力し、[**単一デバイス**] を選択します。
 
-3.  IDE 出力ウィンドウからトークン文字列をコピーし、前と同じように、焼討 Base コンソールの**Fcm 登録トークン**フィールドに貼り付けます。
+3. IDE 出力ウィンドウからトークン文字列をコピーし、前と同じように、焼討 Base コンソールの**Fcm 登録トークン**フィールドに貼り付けます。
 
-4.  アプリがフォアグラウンドで実行されていることを確認し、次に、焼討 Base コンソールで [**メッセージの送信**] をクリックします。
+4. アプリがフォアグラウンドで実行されていることを確認し、次に、焼討 Base コンソールで [**メッセージの送信**] をクリックします。
 
     [![フォアグラウンドメッセージの送信](remote-notifications-with-fcm-images/21-console-fg-msg-sml.png)](remote-notifications-with-fcm-images/21-console-fg-msg.png#lightbox)
 

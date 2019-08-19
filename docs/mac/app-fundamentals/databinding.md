@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: dfc4c8a5f00fd11d1554dcadf5e35018046e49f4
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: beb063d423c860958948751d162af661040004b7
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68642894"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529011"
 ---
 # <a name="data-binding-and-key-value-coding-in-xamarinmac"></a>Xamarin. Mac でのデータバインディングとキー値のコーディング
 
@@ -20,7 +20,7 @@ _この記事では、キーと値のコードを使用して、Xcode の Interf
 
 ## <a name="overview"></a>概要
 
-Xamarin. Mac C#アプリケーションでおよび .net を使用する場合、 *Xcode と* *で作業*する開発者が行うのと同じキー値のコーディングとデータバインディングの手法にアクセスできます。 Xcode は直接統合されているため、コードを記述する代わりに、Xcode の_Interface Builder_を使用して、UI 要素とのデータバインドを行うことができます。
+Xamarin. Mac C#アプリケーションでおよび .net を使用する場合、 *Xcode と*で作業する開発者が行うのと同じキー値のコーディングとデータバインディングの手法にアクセスできます。 Xcode は直接統合されているため、コードを記述する代わりに、Xcode の_Interface Builder_を使用して、UI 要素とのデータバインドを行うことができます。
 
 UI 要素を設定して操作するために、Xamarin. Mac アプリケーションでキー値のコードとデータバインディングの手法を使用することにより、記述して維持する必要があるコードの量を大幅に減らすことができます。 また、フロントエンドのユーザーインターフェイス (_モデルビューコントローラー_) からバッキングデータ (_データモデル_) をさらに分離することもできます。これにより、管理が容易になり、アプリケーションの設計をより柔軟に行うことができます。
 
@@ -334,7 +334,7 @@ public NSArray People {
 次の2つの点に注意してください。
 
 1. これは、 `NSMutableArray` **テーブルビュー**、**アウトラインビュー** 、**コレクション**などの appkit コントロールにデータをバインドするための要件であるため、標準C#の配列またはコレクションではなくを使用していました。
-2. 従業員の配列を公開する`NSArray`には、データバインディングのためにをにキャストし、 C#書式設定`People`された名前を、データバインディング`personModelArray`で想定される形式に変更し**ます (最初**の文字が小文字になっています)。
+2. 従業員の配列を公開するには、 `NSArray`データバインディングのためにをにキャストしC# 、書式設定`People`された名前を、データバインディング`personModelArray`で想定される形式に変更します (最初の文字が小文字になっています)。
 
 次に、**配列コントローラー**と**ツリーコントローラー**をサポートするために、特別な名前のパブリックメソッドをいくつか追加する必要があります。
 
@@ -816,8 +816,8 @@ Now we need to create our Collection View, double-click the **Main.storyboard** 
 
 When you add a Collection View to a User Interface design, two extra elements are also added:
 
-1.  **Collection View Item** -  That manages a single instance of an item in the collection.
-2.  **View** - A custom view that provides the visual size and appearance of each item in the collection. This view is tied to and managed by the **Collection View Item**.
+1. **Collection View Item** -  That manages a single instance of an item in the collection.
+2. **View** - A custom view that provides the visual size and appearance of each item in the collection. This view is tied to and managed by the **Collection View Item**.
 
 Select the view and make it look like the following using an Image View and two Text Fields:
 
