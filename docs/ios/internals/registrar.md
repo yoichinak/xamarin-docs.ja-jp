@@ -27,7 +27,7 @@ ms.locfileid: "61036400"
 - [[Protocol]](xref:Foundation.ProtocolAttribute)属性を持つインターフェースを、Objective-C のプロトコルとして登録します。
 - [[Export]](xref:Foundation.ExportAttribute)属性を持つメンバーを、Objective-C がそれらにアクセスできるようにします。
 
-たとえば、マネージ`Main`Xamarin.iOS アプリケーションで一般的なメソッド。
+たとえば、Xamarin.iOS アプリケーションで一般的なマネージ`Main`メソッドを考えてみます。
 
 ```csharp
 UIApplication.Main (args, null, "AppDelegate");
