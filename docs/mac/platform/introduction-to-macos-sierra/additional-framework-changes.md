@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: d48f7012d0389b262e2dfce560d4f8aa925c21d5
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: b382b7dd66722df6acb4bb7c90e401e5895c0947
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655653"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69620905"
 ---
 # <a name="additional-macos-sierra-framework-changes"></a>追加の macOS Sierra フレームワークの変更
 
@@ -33,18 +33,18 @@ MacOS Sierra の高速化フレームワークには、次の機能強化が行�
 MacOS Sierra の AppKit フレームワークには、次の機能強化が行われています。
 
 - 次のよう`NSCollectionView`ないくつかの機能強化が行われています。
-    - [折りたたみ可能な**セクション**]: ユーザーがコレクションビューセクションを1つの水平行に折りたたむことを許可します。
-    - **フローティングヘッダー** -ヘッダーとフッターは、IOS の[UICOLLECTIONVIEW](https://developer.apple.com/reference/uikit/uicollectionview)と同じ API を使用して (フローレイアウトで) フローティングできるようになりました。
-    - **スクロール可能な背景ビュー** -コレクションビューの背景を、コンテンツと共にスクロールするように設定できるようになりました。
+  - [折りたたみ可能な**セクション**]: ユーザーがコレクションビューセクションを1つの水平行に折りたたむことを許可します。
+  - **フローティングヘッダー** -ヘッダーとフッターは、IOS の[UICOLLECTIONVIEW](https://developer.apple.com/reference/uikit/uicollectionview)と同じ API を使用して (フローレイアウトで) フローティングできるようになりました。
+  - **スクロール可能な背景ビュー** -コレクションビューの背景を、コンテンツと共にスクロールするように設定できるようになりました。
 - 遅延ビューレイアウトパスは、最適化および拡張されています。
 - ドラッグアンドドロップ API に、ドラッグ flocking をサポートする`NSFilePromiseProvider`新しい`NSFilePromiseReceiver`クラスとクラスが追加されました。
 - いくつかの便利なコンストラクターが既存のコントロールに追加されました。
-    -  `NSButton`プッシュボタン、チェックボックス、およびオプションボタンを作成するための新しいコンストラクターが含まれています。
-    -  `NSTextField`折り返しと折り返しのないラベル、属性付きラベル、および編集可能なテキストフィールドを作成するための新しいコンストラクターが含まれています。
-    -  `NSSegmentedControl`には、ラベルまたは画像のグループからセグメント化されたコントロールを作成するための新しいコンストラクターが含まれています。
-    -  `NSSlider`水平方向の線形スライダーを作成するための新しいコンストラクターが含まれています。
-    -  `NSImageView`指定さ`NSImage`れたから編集できないイメージビューを作成するための新しいコンストラクターを追加します。
--  新しい`NSGridView`は、サブビューのコレクションを、動的に非表示にしたり表示したりできる可変サイズの行と列を持つグリッドに自動レイアウトするために追加されました。
+  - `NSButton`プッシュボタン、チェックボックス、およびオプションボタンを作成するための新しいコンストラクターが含まれています。
+  - `NSTextField`折り返しと折り返しのないラベル、属性付きラベル、および編集可能なテキストフィールドを作成するための新しいコンストラクターが含まれています。
+  - `NSSegmentedControl`には、ラベルまたは画像のグループからセグメント化されたコントロールを作成するための新しいコンストラクターが含まれています。
+  - `NSSlider`水平方向の線形スライダーを作成するための新しいコンストラクターが含まれています。
+  - `NSImageView`指定さ`NSImage`れたから編集できないイメージビューを作成するための新しいコンストラクターを追加します。
+- 新しい`NSGridView`は、サブビューのコレクションを、動的に非表示にしたり表示したりできる可変サイズの行と列を持つグリッドに自動レイアウトするために追加されました。
 
 <a name="AVFoundation-Framework-Enhancements" />
 
