@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/07/2017
-ms.openlocfilehash: 8f1e77d112eae951f3441484df94772da1b0f303
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 5abd28dc9a6fc2a0dca5fa31908731a5496ce5fa
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655522"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69621045"
 ---
 # <a name="introduction-to-watchos-3"></a>watchOS 3 の概要
 
@@ -21,17 +21,17 @@ _この記事では、Xamarin 開発者向けの watchOS 3 で利用できる、
 このドキュメントでは、次のトピックについて説明します。
 
 - [WatchOS 3 の新機能](#Whats-New-in-watchOS-3)
-    - [Apple Pay の拡張機能](#Apple-Pay-Enhancements)により、Apple Watch でのアプリ内支払いのサポートが追加されます。
-    - [バックグラウンドタスク](#Background-Tasks)は、ユーザーが必要とするときに、バックグラウンドで情報を更新する機能をアプリに提供します。
-    - WatchOS 3 については、アプリの新機能を提供する複雑な機能[強化](#Complications-Enhancements)が行われています。
-    - [新しく利用できるフレームワーク](#Newly-Available-Frameworks)は、watchOS アプリ向けに公開されています。
-    - [プロアクティブな提案](#Proactive-Suggestions)により、アプリはユーザーに情報を事前に表示できます。
-    * WatchOS 3 には[、セキュリティとプライバシー](#Security-and-Privacy-Enhancements)に関するいくつかの機能強化が行われています。
-    - [スナップショットとドッキング](#Snapshots-and-Dock)により、ユーザーはアプリ watchOS アプリにすばやくアクセスできます。
-    - [ユーザー通知](#User-Notifications)は、ローカル通知とリモート通知の両方をユーザーに提供します。
-    * WatchOS 3 では、いくつかの[監視接続フレームワークの機能強化](#Watch-Connectivity-Framework-Enhancements)が行われています。
-    * WatchOS 3 では、いくつかの[WatchKit Framework の機能強化](#WatchKit-Framework-Enhancements)が行われています。
-    - [トレーニングアプリの機能強化](#Workout-App-Enhancements)により、トレーニング関連の Apple Watch アプリに新しい機能が追加されました。
+  - [Apple Pay の拡張機能](#Apple-Pay-Enhancements)により、Apple Watch でのアプリ内支払いのサポートが追加されます。
+  - [バックグラウンドタスク](#Background-Tasks)は、ユーザーが必要とするときに、バックグラウンドで情報を更新する機能をアプリに提供します。
+  - WatchOS 3 については、アプリの新機能を提供する複雑な機能[強化](#Complications-Enhancements)が行われています。
+  - [新しく利用できるフレームワーク](#Newly-Available-Frameworks)は、watchOS アプリ向けに公開されています。
+  - [プロアクティブな提案](#Proactive-Suggestions)により、アプリはユーザーに情報を事前に表示できます。
+  - WatchOS 3 には[、セキュリティとプライバシー](#Security-and-Privacy-Enhancements)に関するいくつかの機能強化が行われています。
+  - [スナップショットとドッキング](#Snapshots-and-Dock)により、ユーザーはアプリ watchOS アプリにすばやくアクセスできます。
+  - [ユーザー通知](#User-Notifications)は、ローカル通知とリモート通知の両方をユーザーに提供します。
+  - WatchOS 3 では、いくつかの[監視接続フレームワークの機能強化](#Watch-Connectivity-Framework-Enhancements)が行われています。
+  - WatchOS 3 では、いくつかの[WatchKit Framework の機能強化](#WatchKit-Framework-Enhancements)が行われています。
+  - [トレーニングアプリの機能強化](#Workout-App-Enhancements)により、トレーニング関連の Apple Watch アプリに新しい機能が追加されました。
 - WatchOS 3 では、[追加のフレームワークの変更](#Additional-Framework-Changes)が行われています。
 - WatchOS 3 の[非推奨の api](#Deprecated-APIs) 。
 

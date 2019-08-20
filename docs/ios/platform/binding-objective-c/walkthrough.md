@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
-ms.openlocfilehash: 0870139def82317646981f154116a704d84cfa0e
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 4c4aaeaa451a67da16057cd9b345fbbcd0af6f35
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69527997"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69621018"
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>チュートリアル: iOS Objective-C ライブラリのバインド
 
@@ -74,16 +74,16 @@ Xcode の FAQ ドキュメントを使用した、[コマンドラインから](
 
 - **Install Xcode** -Xcode をインストールすると、すべてのコマンドラインツールにバンドルされます。 OS X 10.9 shim (に`/usr/bin`インストールされている) では、に`/usr/bin`含まれる任意のツールを Xcode 内の対応するツールにマップできます。 たとえば`xcrun` 、コマンドを使用すると、コマンドラインから Xcode 内の任意のツールを検索または実行できます。
 - **ターミナルアプリケーション**-ターミナルアプリケーションから、 `xcode-select --install`コマンドを実行してコマンドラインツールをインストールできます。
-    - ターミナルアプリケーションを起動します。
-    - 「 `xcode-select --install` **」** と入力し、enter キーを押します。次に例を示します。
+  - ターミナルアプリケーションを起動します。
+  - 「 `xcode-select --install` **」** と入力し、enter キーを押します。次に例を示します。
 
-    ```bash
-    Europa:~ kmullins$ xcode-select --install
-    ```
+  ```bash
+  Europa:~ kmullins$ xcode-select --install
+  ```
 
-    - コマンドラインツールをインストールするよう求めるメッセージが表示されたら、 **[インストール]** ボタンをクリックします。 [![](walkthrough-images/xcode01.png "コマンドラインツールのインストール")](walkthrough-images/xcode01.png#lightbox)
+  - コマンドラインツールをインストールするよう求めるメッセージが表示されたら、 **[インストール]** ボタンをクリックします。[![](walkthrough-images/xcode01.png "コマンドラインツールのインストール")](walkthrough-images/xcode01.png#lightbox)
 
-    - ツールは、Apple のサーバーからダウンロードしてインストールされます。 [![](walkthrough-images/xcode02.png "ツールをダウンロードする")](walkthrough-images/xcode02.png#lightbox)
+  - ツールは、Apple のサーバーからダウンロードしてインストールされます。[![](walkthrough-images/xcode02.png "ツールをダウンロードする")](walkthrough-images/xcode02.png#lightbox)
 
 - **Apple 開発者向けダウンロード**-コマンドラインツールパッケージは、 [apple 開発者向けのダウンロード](https://developer.apple.com/downloads/index.action)web ページで入手できます。 Apple ID でログインし、コマンドラインツールを検索してダウンロードします。[![](walkthrough-images/xcode03.png "コマンドラインツールの検索")](walkthrough-images/xcode03.png#lightbox)
 
@@ -186,7 +186,8 @@ Fat バイナリの作成は、次の3つの手順で行います。
 
 このようなタスクを自動化するために使用できるツールは多数あります。シェルスクリプト、 [rake](http://rake.rubyforge.org/)、 [xbuild](https://www.mono-project.com/docs/tools+libraries/tools/xbuild/)、 [make](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/make.1.html)などです。 Xcode コマンドラインツールがインストール`make`されている場合は、もインストールされるため、このチュートリアルで使用されるビルドシステムです。 次に示すのは、iOS デバイスで動作するマルチアーキテクチャ共有ライブラリと、任意のライブラリのシミュレーターを作成するために使用できる**メイクファイル**です。
 
-```bash
+<!--markdownlint-disable MD010 -->
+```makefile
 XBUILD=/Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild
 PROJECT_ROOT=./YOUR-PROJECT-NAME
 PROJECT=$(PROJECT_ROOT)/YOUR-PROJECT-NAME.xcodeproj
@@ -212,6 +213,7 @@ lib$(TARGET).a: lib$(TARGET)-i386.a lib$(TARGET)-armv7.a lib$(TARGET)-arm64.a
 clean:
     -rm -f *.a *.dll
 ```
+<!--markdownlint-enable MD010 -->
 
 任意のプレーンテキストエディターで**Makefile**コマンドを入力し、プロジェクト**名**を使用してセクションをプロジェクトの名前に更新します。 指示内のタブを保持したまま、上記の手順を正確に貼り付けることも重要です。
 
@@ -622,21 +624,21 @@ using UIKit;
 
 namespace InfColorPickerSample
 {
-    public class ColorSelectedDelegate:InfColorPickerControllerDelegate
+  public class ColorSelectedDelegate:InfColorPickerControllerDelegate
+  {
+    readonly UIViewController parent;
+
+    public ColorSelectedDelegate (UIViewController parent)
     {
-        readonly UIViewController parent;
-
-        public ColorSelectedDelegate (UIViewController parent)
-        {
-            this.parent = parent;
-        }
-
-        public override void ColorPickerControllerDidFinish (InfColorPickerController controller)
-        {
-            parent.View.BackgroundColor = controller.ResultColor;
-            parent.DismissViewController (false, null);
-        }
+      this.parent = parent;
     }
+
+    public override void ColorPickerControllerDidFinish (InfColorPickerController controller)
+    {
+      parent.View.BackgroundColor = controller.ResultColor;
+      parent.DismissViewController (false, null);
+    }
+  }
 }
 ```
 
@@ -653,9 +655,9 @@ ColorSelectedDelegate selector;
 ```csharp
 public override void ViewDidLoad ()
 {
-    base.ViewDidLoad ();
-    ChangeColorButton.TouchUpInside += HandleTouchUpInsideWithStrongDelegate;
-    selector = new ColorSelectedDelegate (this);
+  base.ViewDidLoad ();
+  ChangeColorButton.TouchUpInside += HandleTouchUpInsideWithStrongDelegate;
+  selector = new ColorSelectedDelegate (this);
 }
 ```
 **HandleTouchUpInsideWithStrongDelegate メソッドを実装**します。次に、ユーザーが**colorchangebutton**に触れるときのイベントハンドラーを実装します。 を`ViewController`編集し、次のメソッドを追加します。

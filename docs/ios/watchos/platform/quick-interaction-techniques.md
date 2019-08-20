@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 83b8b6b443a794b1001c581f45299dbd22133c80
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ddefae8ad24b74a3c9ed05bf46b54430c00beaea
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656417"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69620513"
 ---
 # <a name="quick-interaction-techniques-for-watchos-3-in-xamarin"></a>Xamarin の watchOS 3 のクイック対話技法
 
@@ -35,7 +35,7 @@ WatchOS では、通常、ユーザーは手首を起動し、アプリをすば
 これらの目標を達成するには、Apple Watch 上のアプリが次のようになっている必要があります。
 
 - これは、ユーザーが必要な情報を一目で把握できるようにすることを意味します。 
-- 実行**可能-ユーザー**は、十分な情報に基づいた迅速な意思決定を行うことができることを意味します。
+- 実行可能-ユーザーは、十分な情報に基づいた迅速な意思決定を行うことができることを意味します。
 - **応答性**-ユーザーは必要な情報を受信したり、必要な操作を実行したりすることができないことを意味します。
 
 ### <a name="quick-interactions-length"></a>クイック操作の長さ
@@ -47,12 +47,12 @@ Apple Watch アプリの性質上、Apple は、クイック操作の理想的�
 Apple は、開発者が Apple Watch アプリに迅速な対話を追加するのを支援するために、WatchKit にいくつかの新機能と Api を追加しました。
 
 - watchOS 3 では、次のような新しい種類のユーザー入力にアクセスできます。
-    - ジェスチャレコグナイザー
-    - Digital Crown ローテーション 
+  - ジェスチャレコグナイザー
+  - Digital Crown ローテーション 
 - watchOS 3 には、次のような情報を表示および更新する新しい方法が用意されています。
-    - 強化されたテーブルのナビゲーション
-    - 新しいユーザー通知フレームワークのサポート
-    - SpriteKit と SceneKit の統合
+  - 強化されたテーブルのナビゲーション
+  - 新しいユーザー通知フレームワークのサポート
+  - SpriteKit と SceneKit の統合
 
 これらの新機能を実装することにより、開発者は、watchOS 3 アプリが、実用的で、応答性の高いものであることを確認できます。
 
@@ -63,11 +63,11 @@ Apple は、開発者が Apple Watch アプリに迅速な対話を追加する�
 watchOS 3 では、次の4つのジェスチャレコグナイザーがサポートされます。
 
 - 離散ジェスチャの種類:
-    - スワイプジェスチャ (`WKSwipeGestureRecognizer`)。
-    - Tap ジェスチャ (`WKTapGestureRecognizer`)。
+  - スワイプジェスチャ (`WKSwipeGestureRecognizer`)。
+  - Tap ジェスチャ (`WKTapGestureRecognizer`)。
 - 連続するジェスチャの種類:
-    - パンジェスチャ (`WKPanGestureRecognizer`)。
-    - 長押しジェスチャ (`WKLongPressGestureRecognizer`)。
+  - パンジェスチャ (`WKPanGestureRecognizer`)。
+  - 長押しジェスチャ (`WKLongPressGestureRecognizer`)。
 
 新しいジェスチャレコグナイザーを実装するには、Visual Studio for Mac の iOS デザイナーのデザイン画面にドラッグして、そのプロパティを構成するだけです。
 
@@ -96,8 +96,8 @@ Apple では、watchOS 3 でジェスチャレコグナイザーを使用する�
 - ジェスチャレコグナイザーを個々のコントロールではなくグループ要素に追加します。 Apple Watch の物理的な画面サイズが小さいため、グループの要素は、ユーザーがヒットするよりも大きく、より簡単なターゲットになる傾向があります。 また、ジェスチャレコグナイザーは、ネイティブ UI コントロールに既に組み込まれているジェスチャと競合する可能性があります。
 - Watch アプリのストーリーボードに依存関係を設定します。
 - ジェスチャの中には、次のようなジェスチャの種類が優先されるものがあります。
-    - スクロール
-    - Force Touch
+  - スクロール
+  - Force Touch
  
 ### <a name="digital-crown-rotation"></a>Digital Crown ローテーション
 
@@ -137,28 +137,28 @@ using Foundation;
 
 namespace MonkeyWatch.MonkeySeeExtension
 {
-    public class CrownDelegate : WKCrownDelegate
+  public class CrownDelegate : WKCrownDelegate
+  {
+    #region Computed Properties
+    public double AccumulatedRotations { get; set;}
+    #endregion
+
+    #region Constructors
+    public CrownDelegate ()
     {
-        #region Computed Properties
-        public double AccumulatedRotations { get; set;}
-        #endregion
-
-        #region Constructors
-        public CrownDelegate ()
-        {
-        }
-        #endregion
-
-        #region Override Methods
-        public override void CrownDidRotate (WKCrownSequencer crownSequencer, double rotationalDelta)
-        {
-            base.CrownDidRotate (crownSequencer, rotationalDelta);
-
-            // Accumulate rotations
-            AccumulatedRotations += rotationalDelta;
-        }
-        #endregion
     }
+    #endregion
+
+    #region Override Methods
+    public override void CrownDidRotate (WKCrownSequencer crownSequencer, double rotationalDelta)
+    {
+      base.CrownDidRotate (crownSequencer, rotationalDelta);
+
+      // Accumulate rotations
+      AccumulatedRotations += rotationalDelta;
+    }
+    #endregion
+  }
 }
 ```
 
@@ -225,8 +225,8 @@ MenuTable.PerformSegue (0);
 - 明確に定義されて表示される通知については、ユーザーは何もせず、単に通知を無視します。
 - また、通知をタップして watchOS アプリを起動することもあります。
 - カスタムアクションをサポートする通知の場合、ユーザーはカスタムアクションの1つを選択できます。 次のいずれかを指定できます。
-    - **フォアグラウンドアクション**-アプリを起動してアクションを実行します。
-    - **バックグラウンドアクション**-常に watchOS 2 の iPhone にルーティングされていましたが、watchOS 3 の watchApp にルーティングできます。
+  - **フォアグラウンドアクション**-アプリを起動してアクションを実行します。
+  - **バックグラウンドアクション**-常に watchOS 2 の iPhone にルーティングされていましたが、watchOS 3 の watchApp にルーティングできます。
 
 WatchOS 3 の新:
 
@@ -349,7 +349,7 @@ Apple は次のことを提案します。
 - 可能な限り、アプリ内でのナビゲーションを簡略化します。
 - ユーザーによる待機をしないでください。ユーザーが手首をドロップし、アプリを使用して直ちにオフにすることを許可します。
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
 この記事では、Apple が watchOS 3 で追加したクイック対話手法と、それらを Xamarin に実装する方法 (Apple Watch) について説明しました。
 

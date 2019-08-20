@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 1e3e1a2165c9acee127a543301f00262aa4bdc4f
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 2bd704b17f5aff1b4d3f2da1813d1eb19ef29e59
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69529088"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69620683"
 ---
 # <a name="the-model-view-viewmodel-pattern"></a>モデルビュービューモデルパターン
 
@@ -284,7 +284,7 @@ public ICommand NavigateCommand => new Command<string>(NavigateAsync);
 
 添付プロパティを介してコントロールにアタッチされる動作は、アタッチされる*動作*と呼ばれます。 その後、この動作によって、関連付けられている要素の公開された API を使用して、ビューのビジュアルツリー内のコントロールまたはその他のコントロールに機能を追加できます。 EShopOnContainers モバイルアプリには、 `LineColorBehavior`アタッチされる動作であるクラスが含まれています。 この動作の詳細については、「[検証エラーの表示](~/xamarin-forms/enterprise-application-patterns/validation.md#displaying_validation_errors)」を参照してください。
 
-Xamarin の動作は、クラス[`Behavior`](xref:Xamarin.Forms.Behavior)または[`Behavior<T>`](xref:Xamarin.Forms.Behavior`1)クラスから派生するクラスです。ここ`T `で、はビヘイビアーを適用するコントロールの型です。 これらのクラス`OnAttachedTo`に`OnDetachingFrom`はメソッドとメソッドが用意されており、これをオーバーライドして、動作がコントロールにアタッチされ、コントロールからデタッチされるときに実行されるロジックを提供する必要があります。
+Xamarin の動作は、クラス[`Behavior`](xref:Xamarin.Forms.Behavior)または[`Behavior<T>`](xref:Xamarin.Forms.Behavior`1)クラスから派生するクラスです。ここ`T`で、はビヘイビアーを適用するコントロールの型です。 これらのクラス`OnAttachedTo`に`OnDetachingFrom`はメソッドとメソッドが用意されており、これをオーバーライドして、動作がコントロールにアタッチされ、コントロールからデタッチされるときに実行されるロジックを提供する必要があります。
 
 EShopOnContainers モバイルアプリでは、クラス`BindableBehavior<T>`は[`Behavior<T>`](xref:Xamarin.Forms.Behavior`1)クラスから派生します。 `BindableBehavior<T>`クラスの目的は、添付されたコントロールに動作のを設定する必要がある[`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 、Xamarin の動作の基底クラスを提供することです。
 

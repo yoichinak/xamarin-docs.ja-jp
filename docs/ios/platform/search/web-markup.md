@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: bd4c09b7defcc3038919a4dea841d7bd1d02f39e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 77d526fd49ac62788bea1ab885cb1248ffc5697e
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68654077"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69620953"
 ---
 # <a name="search-with-web-markup-in-xamarinios"></a>Xamarin で Web マークアップを使用して検索する
 
@@ -46,7 +46,7 @@ Apple がアプリの web サイトを検索する最も簡単な方法は、iTu
 
 アプリに明確なリンクを表示するには、web サイトにスマートアプリバナーを提供します。 アプリがまだインストールされていない場合、Safari は自動的にアプリをインストールするようにユーザーに求めます。 それ以外の場合は、 **[表示]** リンクをタップして、web サイトからアプリを起動することができます。 たとえば、スマートアプリバナーを作成するには、次のコードを使用します。
 
-```xml
+```html
 <meta name="AppName" content="app-id=123456, app-argument=http://company.com/AppName">
 ```
 
@@ -65,7 +65,7 @@ IOS 9 の新機能であるユニバーサルリンクを使用すると、次�
 
 Twitter カードを使用して、アプリのコンテンツへのディープリンクを提供できます。 例えば:
 
-```xml
+```html
 <meta name="twitter:app:name:iphone" content="AppName">
 <meta name="twitter:app:id:iphone" content="AppNameID">
 <meta name="twitter:app:url:iphone" content="AppNameURL">
@@ -77,7 +77,7 @@ Twitter カードを使用して、アプリのコンテンツへのディープ
 
 Facebook アプリリンクを使用して、アプリのコンテンツへのディープリンクを提供できます。 例えば:
 
-```xml
+```html
 <meta property="al:ios:app_name" content="AppName">
 <meta property="al:ios:app_store_id" content="AppNameID">
 <meta property="al:ios:url" content="AppNameURL">
@@ -93,23 +93,23 @@ Xamarin. iOS アプリでディープリンクを開いて表示するための�
 public override bool OpenUrl (UIApplication application, NSUrl url, string sourceApplication, NSObject annotation)
 {
 
-    // Handling a URL in the form http://company.com/appname/?123
-    try {
-        var components = new NSUrlComponents(url,true);
-        var path = components.Path;
-        var query = components.Query;
+  // Handling a URL in the form http://company.com/appname/?123
+  try {
+    var components = new NSUrlComponents(url,true);
+    var path = components.Path;
+    var query = components.Query;
 
-        // Is this a known format?
-        if (path == "/appname") {
-            // Display the view controller for the content
-            // specified in query (123)
-            return ContentViewController.LoadContent(query);
-        }
-    } catch {
-        // Ignore issue for now
+    // Is this a known format?
+    if (path == "/appname") {
+      // Display the view controller for the content
+      // specified in query (123)
+      return ContentViewController.LoadContent(query);
     }
+  } catch {
+    // Ignore issue for now
+  }
 
-    return false;
+  return false;
 }
 ```
 
@@ -123,7 +123,7 @@ public override bool OpenUrl (UIApplication application, NSUrl url, string sourc
 
 構造化データマークアップを提供するオプションの1つに、Open Graph を使用する方法があります。 例えば:
 
-```xml
+```html
 <meta property="og:image" content="http://company.com/appname/icon.jpg">
 <meta property="og:audio" content="http://company.com/appname/theme.m4a">
 <meta property="og:video" content="http://company.com/appname/tutorial.mp4">
@@ -133,22 +133,20 @@ public override bool OpenUrl (UIApplication application, NSUrl url, string sourc
 
 構造化データマークアップのもう1つの一般的な形式は、schema. org のマイクロデータ形式です。 例えば:
 
-```xml
+```html
 <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
-    <span itemprop="ratingValue">4** stars -
-    <span itemprop="reviewCount">255** reviews
-
-
+  <span itemprop="ratingValue">4** stars -
+  <span itemprop="reviewCount">255** reviews
 ```
 
 同じ情報は、次のようにスキーマで表すことができます。組織の JSON-LD 形式:
 
-```xml
+```html
 <script type="application/ld+json">
-    "@content":"http://schema.org",
-    "@type":"AggregateRating",
-    "ratingValue":"4",
-    "reviewCount":"255"
+  "@content":"http://schema.org",
+  "@type":"AggregateRating",
+  "ratingValue":"4",
+  "reviewCount":"255"
 </script>
 ```
 
@@ -179,34 +177,28 @@ Web サイトのメタデータの例を次に示します。この例では、�
 
 たとえば、電話番号をダイヤルするアクションを定義すると、次のようになります。
 
-```xml
+```html
 <div itemscope itemtype="http://schema.org/Organization">
-    <span itemprop="telephone">(408) 555-1212**
-
-
+  <span itemprop="telephone">(408) 555-1212**
 ```
 
 この検索結果をエンドユーザーに表示すると、小さいスマートフォンアイコンが結果に表示されます。 ユーザーがアイコンをタップすると、指定した数値が呼び出されます。
 
 次の HTML は、検索結果からオーディオファイルを再生するアクションを追加します。
 
-```xml
+```html
 <div itemscope itemtype="http://schema.org/AudioObject">
-    <span itemprop="contentUrl">http://company.com/appname/greeting.m4a**
-
-
+  <span itemprop="contentUrl">http://company.com/appname/greeting.m4a**
 ```
 
 最後に、次の HTML では、検索結果から方向を取得するアクションを追加します。
 
-```xml
+```html
 <div itemscope itemtype="http://schema.org/PostalAddress">
-    <span itemprop="streetAddress">1 Infinite Loop**
-    <span itemprop="addressLocality">Cupertino**
-    <span itemprop="addressRegion">CA**
-    <span itemprop="postalCode">95014**
-
-
+  <span itemprop="streetAddress">1 Infinite Loop**
+  <span itemprop="addressLocality">Cupertino**
+  <span itemprop="addressRegion">CA**
+  <span itemprop="postalCode">95014**
 ```
 
 詳細については、Apple の[アプリ検索開発者向けサイト](https://developer.apple.com/ios/search/)を参照してください。

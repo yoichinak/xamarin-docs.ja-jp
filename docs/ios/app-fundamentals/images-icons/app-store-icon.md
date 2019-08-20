@@ -1,24 +1,24 @@
 ---
-title: Xamarin.iOS での app Store アイコン
-description: このドキュメントでは、資産カタログを使用して、App Store アイコンの Xamarin.iOS アプリケーションを管理する方法について説明します。 以前は、App Store アイコンは、iTunes Connect で管理されていました。
+title: Xamarin のアプリストアアイコン iOS
+description: このドキュメントでは、アセットカタログを使用して、Xamarin iOS アプリケーションのアプリストアアイコンを管理する方法について説明します。 以前は、アプリストアのアイコンは iTunes Connect で管理されていました。
 ms.prod: xamarin
 ms.assetid: BFB5665A-F557-46E1-B35E-870CC2026AD9
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/26/2017
-ms.openlocfilehash: 53e25ae9f4650254f2aaaa03dc8727fae674c9f0
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 984ef59a4571379f7b2969ed4f15674f8819e4e4
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61258113"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69620337"
 ---
-# <a name="app-store-icons-in-xamarinios"></a>Xamarin.iOS での app Store アイコン
+# <a name="app-store-icons-in-xamarinios"></a>Xamarin のアプリストアアイコン iOS
 
-Xcode 9 の前に、iTunes Connect を通してすべての App Store アイコンが追加されました。 ただし、これは、ケースではなくなりました。 App Store アイコンは、プロジェクトのバンドルの一部として含まれているし、アセット カタログ内に追加するようになりましたする必要があります。 App Store アイコンが含まれていないアプリは、Apple によって拒否されます。
+Xcode 9 より前は、すべての App Store アイコンが iTunes Connect を通じて追加されました。 ただし、これではなくなりました。 アプリストアのアイコンは、プロジェクトバンドルの一部として含まれ、アセットカタログ内に追加される必要があります。 アプリストアアイコンが含まれていないアプリは、Apple によって拒否されます。
 
-App Store のアイコンは、覚えやすい場合がありますので、ユーザーと小さなサイズで適切に表示するアプリケーションの顔です。 覚えやすいアイコンとは、クリーンで単純で、すぐに認識できるものです。
+アプリストアアイコンはユーザーにとってのアプリケーションの顔であるため、覚えやすく、小さいサイズで適切に表示する必要があります。 覚えやすいアイコンとは、クリーンで単純で、すぐに認識できるものです。
 
 Apple では、アプリケーションのアイコンをデザインするときに、次のガイドラインを示しています。
 
@@ -29,30 +29,30 @@ Apple では、アプリケーションのアイコンをデザインすると�
 
 App Store で表示されるアプリ アイコンには、1024 × 1024 ピクセルの画像が必要です。  Apple では、アセット カタログ内の App Store アイコンは、透明だったり、アルファ チャネルを含んだりすることはできないと規定されています。
 
-詳細については、Apple を参照してください。 [iOS ヒューマン インターフェイス ガイドライン](https://developer.apple.com/ios/human-interface-guidelines/icons-and-images/image-size-and-resolution/)します。
+詳細については、Apple の[IOS ヒューマンインターフェイスガイドライン](https://developer.apple.com/ios/human-interface-guidelines/icons-and-images/image-size-and-resolution/)を参照してください。
 
-## <a name="adding-an-app-store-icon"></a>App Store アイコンの追加
+## <a name="adding-an-app-store-icon"></a>アプリストアアイコンの追加
 
 アセット カタログによってアプリケーション ストア アイコンが配信されるようになりました。 
 
-追加するには、App Store アイコンは次の操作を行います。
+アプリストアアイコンを追加するには、次の手順を実行します。
 
-1. 検索、 **AppIcon**イメージ セット、 **Assets.xcassets**プロジェクトのファイル。 
-    - すべての新しいプロジェクトに用意する必要があります、 **Assets.xcassets** AppIcon イメージのセットを含むファイル。
-    - 新しいアセット カタログを追加するには、プロジェクトを選択します右クリックして**追加 > 新しいファイル > 資産カタログ**します。
-    - アプリ アイコンの画像セットを新規に追加するをクリックし、アイコン セットの領域で右クリックし**アプリ アイコンと起動イメージ > 新しいアプリ アイコン**:
-    
-    ![新しいイメージの set オプションを追加します。](app-store-icon-images/image1.png)
+1. プロジェクトの**Assets. xcassets**ファイルで**AppIcon**イメージセットを見つけます。 
+    - すべての新しいプロジェクトには、アセットが含まれている必要があり**ます。 xcassets**には、AppIcon イメージセットを含むファイルが含まれています。
+    - 新しいアセットカタログを追加するには、プロジェクトを右クリックし、 **[追加 > 新しいファイル > アセットカタログ]** を選択します。
+    - 新しいアプリアイコンイメージセットを追加するには、アイコン設定領域内で右クリックし、アプリアイコン を選択して **新しいアプリ > 新しいアプリアイコンを起動 &** ます。
 
-2. スクロールして、 **App Store**リストのアイコン。
+    ![新しいイメージセットオプションの追加](app-store-icon-images/image1.png)
+
+2. 一覧の**App Store**アイコンまでスクロールします。
 
     ![App Store アイコン](app-store-icon-images/image2.png)
 
-3. アイコンをクリックし、1024 × 1024 ピクセルの画像を参照します。 資産カタログを保存します。
+3. アイコンをクリックし、1024 x 1024 ピクセルイメージを参照します。 アセットカタログを保存します。
 
 
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [資産カタログを使用した管理アイコン](~/ios/app-fundamentals/images-icons/app-icons.md#managing)
+- [資産カタログを使用したアイコンの管理](~/ios/app-fundamentals/images-icons/app-icons.md#managing)

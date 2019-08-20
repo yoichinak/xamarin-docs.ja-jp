@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/06/2018
-ms.openlocfilehash: 77174070b227bf8cba94078b1ed1f0a6a8fcf1f8
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 588c46274aa0b4d77742d004bf1fbe91e56a42c6
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528715"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69620607"
 ---
 # <a name="xamarinios-errors"></a>Xamarin. iOS エラー
 
@@ -24,7 +24,7 @@ ms.locfileid: "69528715"
 <!--
  MT0xxx mtouch itself, e.g. parameters, environment (e.g. missing tools)
  https://github.com/xamarin/xamarin-macios/blob/master/tools/mtouch/error.cs
-    -->
+  -->
 
 <a name="MT0000" />
 
@@ -36,7 +36,7 @@ ms.locfileid: "69528715"
 * エラーを再現する最小限のテストケースそして
 * すべてのバージョンの解説
 
-正確なバージョン情報を取得する最も簡単な方法は、[ **Visual Studio for Mac** ] メニューを使用し**て、Visual Studio for Mac**項目、[**詳細の表示**] ボタン、および [バージョン情報のコピー/貼り付け] を使用することです ([情報の**コピー** ] ボタンを使用できます).
+正確なバージョン情報を取得する最も簡単な方法は、 **[Visual Studio for Mac]** メニューを使用し**て、Visual Studio for Mac**項目、 **[詳細の表示]** ボタン、および バージョン情報のコピー/貼り付け を使用することです (情報の **[コピー]** ボタンを使用できます).
 
 <a name="MT0001" />
 
@@ -1975,14 +1975,14 @@ Xamarin では、問題の種類をサポートする必要がある場合は、
 ```csharp
 class MyNSObject : NSObject
 {
-    [Export ("retain")]
-    new void Retain () {}
+  [Export ("retain")]
+  new void Retain () {}
 
-    [Export ("release")]
-    new void Release () {}
+  [Export ("release")]
+  new void Release () {}
 
-    [Export ("dealloc")]
-    new void Dealloc () {}
+  [Export ("dealloc")]
+  new void Dealloc () {}
 }
 ```
 
@@ -1995,14 +1995,14 @@ class MyNSObject : NSObject
 
 class MyCustomNSObject : MyNSObject
 {
-    [Export ("retain")]
-    new void Retain () {}
+  [Export ("retain")]
+  new void Retain () {}
 
-    [Export ("release")]
-    new void Release () {}
+  [Export ("release")]
+  new void Release () {}
 
-    [Export ("dealloc")]
-    new void Dealloc () {}
+  [Export ("dealloc")]
+  new void Dealloc () {}
 }
 ```
 
@@ -2414,8 +2414,8 @@ class MyImports {
 これには主に次の2つの理由があります。
 
 * シンボル名が正しくありません。
-    * シンボル名にアンダースコアを付加しないでください。
-    * 目的の C クラスのシンボルは`OBJC_CLASS_$_<classname>`です。
+  * シンボル名にアンダースコアを付加しないでください。
+  * 目的の C クラスのシンボルは`OBJC_CLASS_$_<classname>`です。
 * シンボルは正しいものですが、通常の方法で既に保持されているシンボルです (一部のビルドオプションでは、動的シンボルの正確な一覧が異なります)。
 
 ### <a name="mt53xx-other-tools"></a>MT53xx:その他のツール

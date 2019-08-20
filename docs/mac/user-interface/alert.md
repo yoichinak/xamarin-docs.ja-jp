@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 14a7fdc21c95b2febcf73497055461830b0df831
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 671a7c8aaa81094157056672c64f0c2dc847d6a7
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645790"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69620911"
 ---
 # <a name="alerts-in-xamarinmac"></a>Xamarin. Mac のアラート
 
@@ -51,9 +51,9 @@ Apple では、次のガイドラインを提案します。
 
 ```csharp
 var alert = new NSAlert () {
-    AlertStyle = NSAlertStyle.Critical,
-    InformativeText = "We need to save the document here...",
-    MessageText = "Save Document",
+  AlertStyle = NSAlertStyle.Critical,
+  InformativeText = "We need to save the document here...",
+  MessageText = "Save Document",
 };
 alert.RunModal ();
 ```
@@ -65,9 +65,9 @@ alert.RunModal ();
 Apple には、アラートをカスタマイズするために使用できるいくつかのプロパティが用意されています。
 
 - **Alertstyle**は、アラートの種類を次のいずれかとして定義します。
-    - **警告**-重要ではない、現在または差し迫ったイベントをユーザーに警告するために使用されます。 これは既定のスタイルです。
-    - **情報**-現在または将来発生するイベントについてユーザーに警告するために使用されます。 現在、**警告**と**情報**の間には、表示される違いはありません。
-    - **重大**-イベント (ファイルの削除など) の重大な結果をユーザーに警告するために使用されます。 この種類のアラートは、控えめに使用する必要があります。
+  - **警告**-重要ではない、現在または差し迫ったイベントをユーザーに警告するために使用されます。 これは既定のスタイルです。
+  - **情報**-現在または将来発生するイベントについてユーザーに警告するために使用されます。 現在、**警告**と**情報**の間には、表示される違いはありません。
+  - **重大**-イベント (ファイルの削除など) の重大な結果をユーザーに警告するために使用されます。 この種類のアラートは、控えめに使用する必要があります。
 - **Messagetext** -アラートのメインメッセージまたはタイトルです。ユーザーに対して状況をすばやく定義します。
 - **InformativeText** -これはアラートの本文であり、状況を明確に定義し、使用可能なオプションをユーザーに提示する必要があります。
 - **アイコン**-ユーザーにカスタムアイコンを表示することを許可します。
@@ -84,9 +84,9 @@ Apple には、アラートをカスタマイズするために使用できる�
 
 ```csharp
 var alert = new NSAlert () {
-    AlertStyle = NSAlertStyle.Informational,
-    InformativeText = "This is the body of the alert where you describe the situation and any actions to correct it.",
-    MessageText = "Alert Title",
+  AlertStyle = NSAlertStyle.Informational,
+  InformativeText = "This is the body of the alert where you describe the situation and any actions to correct it.",
+  MessageText = "Alert Title",
 };
 alert.RunModal ();
 ```
@@ -98,9 +98,9 @@ alert.RunModal ();
 
 ```csharp
 var alert = new NSAlert () {
-    AlertStyle = NSAlertStyle.Informational,
-    InformativeText = "This is the body of the alert where you describe the situation and any actions to correct it.",
-    MessageText = "Alert Title",
+  AlertStyle = NSAlertStyle.Informational,
+  InformativeText = "This is the body of the alert where you describe the situation and any actions to correct it.",
+  MessageText = "Alert Title",
 };
 alert.BeginSheet (this);
 ```
@@ -114,13 +114,13 @@ alert.BeginSheet (this);
 
 ## <a name="working-with-alert-buttons"></a>アラートボタンの操作
 
-既定では、アラートには **[OK** ] ボタンのみが表示されます。 ただし、これに限定されているわけではありませんが、**ボタン**のコレクションに追加することによって追加のボタンを作成できます。 次のコードでは、" **OK**"、"**キャンセル**" **、および "** ボタン" を使用して、フリーフローティングの警告を作成します。
+既定では、アラートには **[OK** ] ボタンのみが表示されます。 ただし、これに限定されているわけではありませんが、**ボタン**のコレクションに追加することによって追加のボタンを作成できます。 次のコードでは、" **OK**"、"**キャンセル**"、および "ボタン" を使用して、フリーフローティングの警告を作成します。
 
 ```csharp
 var alert = new NSAlert () {
-    AlertStyle = NSAlertStyle.Informational,
-    InformativeText = "This is the body of the alert where you describe the situation and any actions to correct it.",
-    MessageText = "Alert Title",
+  AlertStyle = NSAlertStyle.Informational,
+  InformativeText = "This is the body of the alert where you describe the situation and any actions to correct it.",
+  MessageText = "Alert Title",
 };
 alert.AddButton ("Ok");
 alert.AddButton ("Cancel");
@@ -142,15 +142,15 @@ var result = alert.RunModal ();
 
 ```csharp
 var alert = new NSAlert () {
-    AlertStyle = NSAlertStyle.Informational,
-    InformativeText = "This is the body of the alert where you describe the situation and any actions to correct it.",
-    MessageText = "Alert Title",
+  AlertStyle = NSAlertStyle.Informational,
+  InformativeText = "This is the body of the alert where you describe the situation and any actions to correct it.",
+  MessageText = "Alert Title",
 };
 alert.AddButton ("Ok");
 alert.AddButton ("Cancel");
 alert.AddButton ("Maybe");
 alert.BeginSheetForResponse (this, (result) => {
-    Console.WriteLine ("Alert Result: {0}", result);
+  Console.WriteLine ("Alert Result: {0}", result);
 });
 ```
 このコードが実行されると、次のように表示されます。
@@ -168,9 +168,9 @@ alert.BeginSheetForResponse (this, (result) => {
 
 ```csharp
 var alert = new NSAlert () {
-    AlertStyle = NSAlertStyle.Informational,
-    InformativeText = "This is the body of the alert where you describe the situation and any actions to correct it.",
-    MessageText = "Alert Title",
+  AlertStyle = NSAlertStyle.Informational,
+  InformativeText = "This is the body of the alert where you describe the situation and any actions to correct it.",
+  MessageText = "Alert Title",
 };
 alert.AddButton ("Ok");
 alert.AddButton ("Cancel");
@@ -190,16 +190,16 @@ Console.WriteLine ("Alert Result: {0}, Suppress: {1}", result, alert.Suppression
 
 ```csharp
 var alert = new NSAlert () {
-    AlertStyle = NSAlertStyle.Informational,
-    InformativeText = "This is the body of the alert where you describe the situation and any actions to correct it.",
-    MessageText = "Alert Title",
+  AlertStyle = NSAlertStyle.Informational,
+  InformativeText = "This is the body of the alert where you describe the situation and any actions to correct it.",
+  MessageText = "Alert Title",
 };
 alert.AddButton ("Ok");
 alert.AddButton ("Cancel");
 alert.AddButton ("Maybe");
 alert.ShowsSuppressionButton = true;
 alert.BeginSheetForResponse (this, (result) => {
-    Console.WriteLine ("Alert Result: {0}, Suppress: {1}", result, alert.SuppressionButton.State == NSCellStateValue.On);
+  Console.WriteLine ("Alert Result: {0}, Suppress: {1}", result, alert.SuppressionButton.State == NSCellStateValue.On);
 });
 ```
 
@@ -219,7 +219,7 @@ var input = new NSTextField (new CGRect (0, 0, 300, 20));
 var alert = new NSAlert () {
 AlertStyle = NSAlertStyle.Informational,
 InformativeText = "This is the body of the alert where you describe the situation and any actions to correct it.",
-    MessageText = "Alert Title",
+  MessageText = "Alert Title",
 };
 alert.AddButton ("Ok");
 alert.AddButton ("Cancel");
@@ -243,9 +243,9 @@ Console.WriteLine ("Alert Result: {0}, Suppress: {1}", result, alert.Suppression
 var input = new NSTextField (new CGRect (0, 0, 300, 20));
 
 var alert = new NSAlert () {
-    AlertStyle = NSAlertStyle.Informational,
-    InformativeText = "This is the body of the alert where you describe the situation and any actions to correct it.",
-    MessageText = "Alert Title",
+  AlertStyle = NSAlertStyle.Informational,
+  InformativeText = "This is the body of the alert where you describe the situation and any actions to correct it.",
+  MessageText = "Alert Title",
 };
 alert.AddButton ("Ok");
 alert.AddButton ("Cancel");
@@ -254,7 +254,7 @@ alert.ShowsSuppressionButton = true;
 alert.AccessoryView = input;
 alert.Layout ();
 alert.BeginSheetForResponse (this, (result) => {
-    Console.WriteLine ("Alert Result: {0}, Suppress: {1}", result, alert.SuppressionButton.State == NSCellStateValue.On);
+  Console.WriteLine ("Alert Result: {0}, Suppress: {1}", result, alert.SuppressionButton.State == NSCellStateValue.On);
 });
 ```
 

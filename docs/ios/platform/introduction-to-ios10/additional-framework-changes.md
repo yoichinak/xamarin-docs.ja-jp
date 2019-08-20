@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/29/2017
-ms.openlocfilehash: 5aad72de5d894a83d734cd53fce3ac060125d740
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 85dad3bdd46401b1acf9a1cb5acc206508cd611f
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656937"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69620719"
 ---
 # <a name="additional-ios-10-frameworks-changes"></a>IOS 10 フレームワークのその他の変更
 
@@ -182,8 +182,8 @@ IOS 10 の SpriteKit フレームワークには、次の機能強化が行わ�
 IOS 10.3 の ScrollView コントロールには、次の機能強化が行われています。
 
 - `UIScrollView`次に、 `IndexDisplayMode` `UIScrollViewIndexDisplayMode`のようにユーザーがスクロールしているときのインデックスの表示方法を制御するプロパティを含めます。
-    - `Automatic`-インデックスの表示は OS によって制御されます。
-    - `AlwaysHidden`-インデックスの表示は常に非表示になります。
+  - `Automatic`-インデックスの表示は OS によって制御されます。
+  - `AlwaysHidden`-インデックスの表示は常に非表示になります。
 
 使用方法については、 [IOSTenThree サンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios10-iostenthree)を参照してください。
 

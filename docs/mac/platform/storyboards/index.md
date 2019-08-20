@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 75affbdb6e919c15c644a68ae45e7ff657a53f6a
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: afaba327299461af6b71846a39eb6c455125feae
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68652268"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69620383"
 ---
 # <a name="introduction-to-storyboards-in-xamarinmac"></a>Xamarin. Mac でのストーリーボードの概要
 
@@ -79,9 +79,9 @@ Presentation セグエを使用する場合は、表示`PrepareForSegue`する�
 デザイン時 (Xcode の Interface Builder の UI をレイアウトするとき) に、アプリの UI の各要素が構成項目に分割されます。
 
 - **シーン**: 次の要素で構成されます。
-    - **ビューコントローラー** -ビューとそれらをサポートするデータの間のリレーションシップを定義します。
-    - **ビューとサブビュー** -ユーザーインターフェイスを構成する実際の要素。
-    - **コンテインメントセグエ**-シーン間の親子リレーションシップを定義します。
+  - **ビューコントローラー** -ビューとそれらをサポートするデータの間のリレーションシップを定義します。
+  - **ビューとサブビュー** -ユーザーインターフェイスを構成する実際の要素。
+  - **コンテインメントセグエ**-シーン間の親子リレーションシップを定義します。
 - **プレゼンテーションセグエ**-個々のプレゼンテーションモードを定義します。 
 
 各要素をこのように定義することによって、実行時に必要な場合にのみ、各要素の遅延読み込みを行うことができます。 MacOS では、プロセス全体が、開発者が作業を行うために最小限のバックアップコードを必要とする複雑で柔軟なユーザーインターフェイスを作成できるように設計されています。また、可能な限りシステムリソースを効率的に使用できます。

@@ -1,46 +1,46 @@
 ---
 title: F＃ を使った UrhoSharp のプログラミング
-description: このドキュメントは、単純な hello world UrhoSharp を使用してアプリケーションを作成する方法を説明しますF#Visual studio for mac。
+description: このドキュメントでは、Visual Studio for Mac でを使用してF# 、簡単な Hello World UrhoSharp アプリケーションを作成する方法について説明します。
 ms.prod: xamarin
 ms.assetid: F976AB09-0697-4408-999A-633977FEFF64
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 6269a7f2fa097136f492657d0ba7c6a1f056c38c
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: d87749bd74cf2c478e96284060fed7386d10b853
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832315"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69621004"
 ---
-# <a name="programming-urhosharp-with-f"></a>F＃ を使った UrhoSharp のプログラミング
+# <a name="programming-urhosharp-with-f"></a>F を使用した UrhoSharp のプログラミング\#
 
 UrhoSharpは、C＃プログラマーによって使用されるのと同じライブラリーおよび概念を使用して F＃ でプログラムすることができます。 [UrhoSharp の使用](~/graphics-games/urhosharp/using.md) の記事は UrhoSharp エンジンの概要を説明しているので、この記事の前に読むことをお勧めします。
 
-C++ の世界で発生した多くのライブラリと同様には、多くの UrhoSharp 関数は、ブール値または整数の成功または失敗を示す値を返します。 使用する必要があります`|> ignore`をこれらの値を無視します。
+C++世界中の多くのライブラリと同様、多くの UrhoSharp 関数は、ブール値または成功または失敗を示す整数を返します。 これらの値`|> ignore`を無視するには、を使用する必要があります。
 
-[サンプル プログラム](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp)UrhoSharp からは、"Hello World"F#します。
+[サンプルプログラム](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp)は、からF#の urhosharp の "Hello World" です。
 
-## <a name="creating-an-empty-project"></a>空のプロジェクトを作成します。
+## <a name="creating-an-empty-project"></a>空のプロジェクトの作成
 
-あるないF#テンプレート UrhoSharp をまだ使用可能なで始めることができますか、独自の UrhoSharp プロジェクトを作成するには、ので、[サンプル](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp)またはこれらの手順に従います。
+UrhoSharp F#のテンプレートはまだ用意されていないため、独自の urhosharp プロジェクトを作成するには、[サンプル](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp)から始めるか、次の手順を実行します。
 
-1. Visual Studio for Mac では、作成、新しい**ソリューション**します。 選択**iOS > アプリ > 単一ビュー アプリ**選択**F#** 実装言語として。 
-1. 削除、 **Main.storyboard**ファイル。 開く、 **Info.plist**ファイルし、 **iPhone/iPod 展開情報**ウィンドウで、削除、`Main`内の文字列、**メイン インターフェイス**ドロップダウンします。
-1. 削除、 **ViewController.fs**ファイルにもします。
+1. Visual Studio for Mac から、新しい**ソリューション**を作成します。 **[IOS > アプリ > シングルビューアプリ]** を**F#** 選択し、実装言語としてを選択します。 
+1. メインの**ストーリーボード**ファイルを削除します。 情報の**plist**ファイルを開き、 **iPhone/iPod Deployment 情報**ウィンドウで、**メインインターフェイス**の`Main`ドロップダウンから文字列を削除します。
+1. **Viewcontroller**ファイルも削除します。
 
-## <a name="building-hello-world-in-urho"></a>Urho の Hello World を構築
+## <a name="building-hello-world-in-urho"></a>Urho での Hello World の構築
 
-ゲームのクラスの定義を開始する準備が整いました。 少なくとものサブクラスを定義する必要があります`Urho.Application`オーバーライドとその`Start`メソッド。 このファイルを作成するを右クリックし、F#プロジェクトで、選択**新しいファイルを追加しています.** 、空の追加とF#クラスをプロジェクトにします。 新しいファイルは、プロジェクト内のファイルの一覧の末尾に追加されますが、表示されるようにドラッグする必要があります*する前に*で使用される**AppDelegate.fs**します。
+これで、ゲームのクラスの定義を開始する準備ができました。 少なくとも、の`Urho.Application`サブクラスを定義し、その`Start`メソッドをオーバーライドする必要があります。 このファイルを作成するには、 F#プロジェクトを右クリックし、 **[新しいファイルの追加...]** F#を選択して、プロジェクトに空のクラスを追加します。 新しいファイルはプロジェクト内のファイルの一覧の末尾に追加されますが、このファイルは、 **Appdelegate. fs**で使用される*前*に表示されるようにドラッグする必要があります。
 
 1. Urho NuGet パッケージへの参照を追加します。
-1. (大) のディレクトリをコピーすると、既存の Urho プロジェクトから**CoreData/** と**データ/** にプロジェクトの**リソース/** ディレクトリ。 F#プロジェクトを右クリックし、**リソース**フォルダー**追加/既存のフォルダーを追加**これらすべてのファイルをプロジェクトに追加します。
+1. 既存の Urho プロジェクトから、(l) ディレクトリ**Coredata/** と**Data/** をプロジェクトの**リソース/** ディレクトリにコピーします。 プロジェクトで、**リソース** フォルダーを右クリックし、**追加**、既存のフォルダーの追加 の順にクリックして、これらのファイルをすべてプロジェクトに追加します。 F#
 
-プロジェクトの構造は、以下のようになりますようになりました。
+これで、プロジェクトの構造は次のようになります。
 
-![](fsharp-images/solutionpane.png "プロジェクトの構造のようになります")
+![](fsharp-images/solutionpane.png "プロジェクトの構造は次のようになります。")
 
-サブタイプとして、新しく作成されたクラスを定義する`Urho.Application`オーバーライドとその`Start`メソッド。
+新しく作成したクラスをの`Urho.Application`サブタイプとして定義し、その`Start`メソッドをオーバーライドします。
 
 ```fsharp
 namespace HelloWorldUrho1
@@ -69,11 +69,11 @@ override this.Start() =
             
 ```
 
-このコードは非常に簡単です。 使用して、`Urho.Gui.Text`特定のフォントと色のサイズの中央揃えの文字列を表示するクラス。 
+コードは非常に単純です。 `Urho.Gui.Text`クラスを使用して、特定のフォントと色のサイズを持つ中央揃えの文字列を表示します。 
 
-このコードを実行する前に、UrhoSharp を初期化する必要があります。 
+ただし、このコードを実行する前に、UrhoSharp を初期化する必要があります。 
 
-AppDelegate.fs ファイルを開き、変更、`FinishedLaunching`メソッドとして、次のとおりです。
+Appdelegate の fs ファイルを開き、次の`FinishedLaunching`ようにメソッドを変更します。
 
 ```fsharp
 namespace HelloWorldUrho1
@@ -97,14 +97,14 @@ type AppDelegate () =
         true
 ```
 
-`ApplicationOptions.Default`横モードのアプリケーションの既定のオプションを提供します。 これらを渡す`ApplicationOptions`の既定のコンス トラクター、`Application`サブクラス (定義したときに注意してください、`HelloWorld`クラス、行`inherit Application(o)`基底クラスのコンス トラクターを呼び出します)。
+に`ApplicationOptions.Default`は、ランドスケープモードアプリケーションの既定のオプションが用意されています。 これら`ApplicationOptions`を`Application`サブクラスの既定のコンストラクターに渡します ( `HelloWorld`クラスを定義したときに、 `inherit Application(o)`行が基底クラスのコンストラクターを呼び出すことに注意してください)。
 
-`Run`のメソッド、`Application`プログラムを開始します。 返すとして定義されて、`int`にパイプ処理する`ignore`します。
+のメソッドは`Run` 、プログラムを開始します。`Application` これは、にパイプ処理`int`できるを返すように`ignore`定義されています。
 
-結果として得られるプログラムは、このスクリーン ショットのようになります。
+結果として得られるプログラムは、次のスクリーンショットのようになります。
 
-![結果として得られるプログラムのスクリーン ショット](fsharp-images/helloworldfsharp.png)
+![結果として得られるプログラムのスクリーンショット](fsharp-images/helloworldfsharp.png)
 
 ## <a name="related-links"></a>関連リンク
 
-- [GitHub (サンプル) で参照します。](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp)
+- [GitHub で参照 (サンプル)](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp)

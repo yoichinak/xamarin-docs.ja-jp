@@ -6,12 +6,12 @@ ms.assetid: D8B87C4F-178E-48D9-BE43-85066C46F05C
 author: asb3993
 ms.author: amburns
 ms.date: 07/24/2018
-ms.openlocfilehash: c6c279a31b6081f7e20b4047e2a8e82c79aeac23
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: d822a4dc50d3f33ba4c217b8fcc557acc2bfdb3e
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69521808"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69621031"
 ---
 # <a name="building-html-views-using-razor-templates"></a>Razor テンプレートを使用した HTML ビューの作成
 
@@ -167,7 +167,7 @@ class HybridWebViewClient : WebViewClient {
 webView.SetWebViewClient (new HybridWebViewClient ());
 ```
 
-### <a name="calling-javascript-from-c"></a>呼び出し (JavaScript を)C#
+### <a name="calling-javascript-from-c"></a>呼び出し (C から JavaScript を)\#
 
 新しい HTML ページを読み込むように web ビューに指示するだけでC#なく、コードは現在表示されているページ内で JavaScript を実行することもできます。 Javascript コードブロック全体は、文字列をC#使用して作成し、実行できます。また、ページで既に使用可能`script`な javascript のメソッド呼び出しをタグ経由で作成することもできます。
 
@@ -465,7 +465,7 @@ var parameters = System.Web.HttpUtility.ParseQueryString(resources[1]);
 
 URL の処理後、メソッドはナビゲーションを中止して、web ビューがカスタム URL への移動を完了しないようにします。
 
-#### <a name="manipulating-the-template-from-c"></a>テンプレートを操作するC#
+#### <a name="manipulating-the-template-from-c"></a>C からテンプレートを操作する\#
 
 からC#表示される HTML web ビューへの通信は、web ビューで JavaScript を呼び出すことによって行われます。 IOS では、これは uiwebview `EvaluateJavascript`でを呼び出すことによって行われます。
 

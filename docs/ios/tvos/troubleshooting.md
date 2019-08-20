@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: ad0952bb620645a4cbc5fbc17b21f6a977c889ff
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 2503b8a96e8f1c6f08dfcd19672db3b93a5ce7e1
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657323"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69620317"
 ---
 # <a name="troubleshooting-tvos-apps-built-with-xamarin"></a>Xamarin でビルドされた tvOS アプリのトラブルシューティング
 
@@ -26,10 +26,10 @@ _この記事では、Xamarin の tvOS サポートの使用中に発生する�
 Xamarin の tvOS サポートの現在のリリースには、次の既知の問題があります。
 
 - Mono**フレームワーク**– Mono 4.3 ProtectedData は、mono 4.2 からのデータの暗号化解除に失敗します。 その結果、保護された nuget ソースが構成され`Data unprotection failed`ていると、nuget パッケージはエラーが発生して復元に失敗します。
-    - **回避策**: Visual Studio for Mac、パッケージの復元を再試行する前に、パスワード認証を使用するすべての NuGet パッケージソースを追加し直す必要があります。
+  - **回避策**: Visual Studio for Mac、パッケージの復元を再試行する前に、パスワード認証を使用するすべての NuGet パッケージソースを追加し直す必要があります。
 - **Visual Studio for Mac w/ F#アドイン**-Windows で Android テンプレートをF#作成するときにエラーが発生します。 これは Mac でも正常に機能します。
 - **Xamarin. mac** –ターゲットフレームワークがに`Unsupported`設定された xamarin の統合テンプレートプロジェクトを実行すると、ポップアップ`Could not connect to the debugger`が表示される場合があります。
-    - **考えられる回避策**–安定したチャネルで利用できる Mono フレームワークのバージョンをダウングレードします。
+  - **考えられる回避策**–安定したチャネルで利用できる Mono フレームワークのバージョンをダウングレードします。
 - **Xamarin visual studio & xamarin. iOS** – WatchKit アプリケーションを visual studio にデプロイすると、 `The file ‘bin\iPhoneSimulator\Debug\WatchKitApp1WatchKitApp.app\WatchKitApp1WatchKitApp’ does not exist`エラーが表示されることがあります。
 
 [GitHub](https://github.com/xamarin/xamarin-macios/issues/new)で見つかったすべてのバグを報告してください。
@@ -115,7 +115,7 @@ _"Arm64 スライスだけを含むアプリには、UIRequiredDeviceCapabilitie
 ```xml
 <key>UIRequiredDeviceCapabilities</key>
 <array>
-    <string>arm64</string>
+  <string>arm64</string>
 </array>
 ```
 

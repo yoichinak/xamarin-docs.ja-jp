@@ -6,12 +6,12 @@ ms.assetid: 3247fcee-6acc-470d-ab87-c1c511d67363
 author: lobrien
 ms.author: laobri
 ms.date: 06/03/2018
-ms.openlocfilehash: 4541a795d819c3738fffbb3224ef35dce5fc5521
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: ac77977f3832b0ab7ba440a2c795037e8fcf5f2e
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69529048"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69620994"
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
@@ -68,21 +68,21 @@ Xamarin Profiler を使用すると、開発者は Visual Studio for Mac また�
 Xamarin Profiler のサポートは、次のプラットフォームで使用できます。
 
 - Visual Studio for Mac (macOS、エンタープライズライセンス)
-    - Android
-        - デバイスとエミュレーター
-    - iOS
-        - デバイスとシミュレーター
-    - tvOS (時刻のインストルメント化はサポートされていません)
-        - デバイスとシミュレーター
-    - Mac
+  - Android
+    - デバイスとエミュレーター
+  - iOS
+    - デバイスとシミュレーター
+  - tvOS (時刻のインストルメント化はサポートされていません)
+    - デバイスとシミュレーター
+  - Mac
 
 - Visual Studio ( **Enterprise**バージョンのみ)
-    - Android
-        - デバイスとエミュレーター
-    - iOS [試験段階]
-        - デバイスとシミュレーター
-    - tvOS
-        - デバイスとシミュレーター
+  - Android
+    - デバイスとエミュレーター
+  - iOS [試験段階]
+    - デバイスとシミュレーター
+  - tvOS
+    - デバイスとシミュレーター
 
 **デバッグ**構成のプロファイル**のみ**が可能であることに注意してください。
 

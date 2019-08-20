@@ -6,13 +6,13 @@ ms.assetid: f343fc21-dfb1-4364-a332-9da6705d36bc
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 06/03/2019
-ms.openlocfilehash: 0543d35b8bd4160aa84688da21dbc5bda5408444
-ms.sourcegitcommit: 9912e57ff6124c583600f9460ebfa3f7f7525960
+ms.date: 08/19/2019
+ms.openlocfilehash: 0c84b844455b8a792b8cbe2f4dac97097e5ebd97
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69560309"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69621062"
 ---
 # <a name="xamarinforms-in-xamarin-native-projects"></a>Xamarin Native プロジェクトで Xamarin.Forms
 
@@ -43,13 +43,11 @@ Ios では、`FinishedLaunching`で上書き、`AppDelegate`クラスは、ア�
 [Register("AppDelegate")]
 public class AppDelegate : UIApplicationDelegate
 {
-    public static string FolderPath { get; private set; }
-
     public static AppDelegate Instance;
-
     UIWindow _window;
-    UINavigationController _navigation;
-    UIViewController _noteEntryPage;
+    AppNavigationController _navigation;
+
+    public static string FolderPath { get; private set; }
 
     public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
     {
@@ -67,13 +65,13 @@ public class AppDelegate : UIApplicationDelegate
         UIViewController mainPage = new NotesPage().CreateViewController();
         mainPage.Title = "Notes";
 
-        _navigation = new UINavigationController(mainPage);
+        _navigation = new AppNavigationController(mainPage);
         _window.RootViewController = _navigation;
         _window.MakeKeyAndVisible();
 
         return true;
     }
-    ...
+    // ...
 }
 ```
 
@@ -85,8 +83,8 @@ public class AppDelegate : UIApplicationDelegate
 - `FolderPath`プロパティは、ノートデータが格納されるデバイス上のパスに初期化されます。
 - `NotesPage`クラスは、これは、Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-派生ページの XAML で定義されている、作成され、変換、`UIViewController`を使用して、`CreateViewController`拡張メソッド。
 - `Title`のプロパティ、`UIViewController`に表示される設定、`UINavigationBar`します。
-- A`UINavigationController`階層型ナビゲーションを管理するために作成されます。 `UINavigationController`クラスはビュー コント ローラーのスタックを管理し、`UIViewController`に渡されるコンス トラクターがときに表示する最初に、`UINavigationController`が読み込まれます。
-- `UINavigationController`インスタンスは、最上位レベルとして設定`UIViewController`の`UIWindow`と`UIWindow`キー、アプリケーション ウィンドウとして設定されが表示されます。
+- A`AppNavigationController`階層型ナビゲーションを管理するために作成されます。 これは、から`UINavigationController`派生するカスタムナビゲーションコントローラークラスです。 オブジェクト`AppNavigationController`はビューコントローラーのスタックを管理`UIViewController`し、コンストラクターに渡されたは、 `AppNavigationController`が読み込まれるときに最初に表示されます。
+- オブジェクトがの最上位レベル`UIViewController` `UIWindow`として設定され、がアプリケーションのキーウィンドウとして設定され、が表示されるようになります。`UIWindow` `AppNavigationController`
 
 1 回、`FinishedLaunching`メソッドの実行が、UI は、Xamarin.Forms で定義されている`NotesPage`次のスクリーン ショットに示すようにクラスが表示されます。
 
@@ -106,23 +104,42 @@ void OnNoteAddedClicked(object sender, EventArgs e)
 ```csharp
 public void NavigateToNoteEntryPage(Note note)
 {
-    _noteEntryPage = new NoteEntryPage
+    var noteEntryPage = new NoteEntryPage
     {
         BindingContext = note
     }.CreateViewController();
-    _noteEntryPage.Title = "Note Entry";
-    _navigation.PushViewController(_noteEntryPage, true);
+    noteEntryPage.Title = "Note Entry";
+    _navigation.PushViewController(noteEntryPage, true);
 }
 ```
 
-`NavigateToNoteEntryPage`メソッドは、Xamarin.Forms を変換[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-派生にページ、`UIViewController`で、`CreateViewController`拡張メソッド、およびセット、`Title`のプロパティ、`UIViewController`です。 `UIViewController`しプッシュ`UINavigationController`によって、`PushViewController`メソッド。 そのため、UI を Xamarin.Forms で定義されている`NoteEntryPage`次のスクリーン ショットに示すようにクラスが表示されます。
+`NavigateToNoteEntryPage`メソッドは、Xamarin.Forms を変換[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-派生にページ、`UIViewController`で、`CreateViewController`拡張メソッド、およびセット、`Title`のプロパティ、`UIViewController`です。 `UIViewController`しプッシュ`AppNavigationController`によって、`PushViewController`メソッド。 そのため、UI を Xamarin.Forms で定義されている`NoteEntryPage`次のスクリーン ショットに示すようにクラスが表示されます。
 
 Xaml UI で[![定義されている UI を使用する xamarin ios アプリケーションのスクリーンショット](native-forms-images/ios-noteentrypage.png " xaml UI を使用した ios アプリ")](native-forms-images/ios-noteentrypage-large.png#lightbox "XAML UI を使用した Xamarin iOS アプリ")
 
-ときに、`NoteEntryPage`背面をタップして、表示される矢印が表示されます、`UIViewController`の`NoteEntryPage`クラスから、 `UINavigationController`、ユーザーを返す、`UIViewController`の`NotesPage`クラス。
+`AppNavigationController` `NoteEntryPage` `UIViewController` `NotesPage` `UIViewController`が表示されると、戻るナビゲーションによってからクラスのがポップされ、ユーザーがクラスのに返されます。 `NoteEntryPage` ただし、iOS ネイティブ`UIViewController`ナビゲーションスタックからをポップしても、アタッチされ`UIViewController`たオブジェクト`Page`とアタッチされたオブジェクトは自動的に破棄されません。 したがって、 `AppNavigationController`クラスは`PopViewController`メソッドをオーバーライドして、後方ナビゲーション時にビューコントローラーを破棄します。
+
+```csharp
+public class AppNavigationController : UINavigationController
+{
+    //...
+    public override UIViewController PopViewController(bool animated)
+    {
+        UIViewController topView = TopViewController;
+        if (topView != null)
+        {
+            // Dispose of ViewController on back navigation.
+            topView.Dispose();
+        }
+        return base.PopViewController(animated);
+    }
+}
+```
+
+オーバーライド`PopViewController`は、iOS `Dispose`ネイティブナビゲーションスタック`UIViewController`からポップされたオブジェクトに対してメソッドを呼び出します。 この操作を行わないと、オブジェクト`UIViewController`とアタッチ`Page`されたオブジェクトが孤立します。
 
 > [!IMPORTANT]
-> IOS ネイティブ`UIViewController`ナビゲーションスタックからをポップしても、は自動的`UIViewController`に破棄されません。 開発者は、不要`UIViewController`になったの`Dispose` `UIViewController`メソッドが呼び出されるようにする必要があります。それ以外の場合`Page` 、アタッチされたとは孤立し、ガベージコレクターによって収集されません。結果として、メモリリークが発生します。
+> 孤立したオブジェクトはガベージコレクションできないため、メモリリークが発生します。
 
 ## <a name="android"></a>Android
 
