@@ -33,7 +33,7 @@ ms.locfileid: "61036400"
 UIApplication.Main (args, null, "AppDelegate");
 ```
 
-このコードは Objective-C ランタイムに`AppDelegate`と呼ばれる型をアプリケーションのデリゲート クラスとして使用するように指示します。Objective-C ランタイムが C# `AppDelegate`クラスのインスタンスを作成できるようにするためには、そのクラスが登録されている必要があります。
+このコードは Objective-C ランタイムに`AppDelegate`と呼ばれる型をアプリケーションのデリゲート クラスとして使用するように指示します。 Objective-C ランタイムが C# `AppDelegate`クラスのインスタンスを作成できるようにするためには、そのクラスが登録されている必要があります。
 
 Xamarin.iOS は実行時 (動的な登録) またはコンパイル時 (静的登録) に自動的に登録を実行します。
 
