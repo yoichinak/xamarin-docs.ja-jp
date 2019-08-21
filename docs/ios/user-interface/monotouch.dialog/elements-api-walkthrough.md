@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: ab7761071ef0795d054febbfb302702e09d80c53
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 88823aa2d86b7cc5db72b3949453cd6aa464bd74
+ms.sourcegitcommit: 3434624a36a369986b6aeed7959dae60f7112a14
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528463"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69629639"
 ---
 # <a name="creating-a-xamarinios-application-using-the-elements-api"></a>Elements API を使用して Xamarin iOS アプリケーションを作成する
 
@@ -20,9 +20,9 @@ _この記事は、「Monotouch.dialog の概要」の記事に記載されて�
 
 このチュートリアルでは、MT を使用します。D Elements API は、タスク一覧を表示するアプリケーションのマスター/詳細スタイルを作成します。 ユーザーがナビゲーションバーで **+** ボタンを選択すると、タスクのテーブルに新しい行が追加されます。 行を選択すると、次に示すように、タスクの説明と期限を更新できる詳細画面に移動します。
 
- [![](elements-api-walkthrough-images/01-task-list-app.png "行を選択すると、詳細画面に移動し、タスクの説明と期日を更新することができます。")](elements-api-walkthrough-images/01-task-list-app.png#lightbox)
+[![](elements-api-walkthrough-images/01-task-list-app.png "行を選択すると、詳細画面に移動し、タスクの説明と期日を更新することができます。")](elements-api-walkthrough-images/01-task-list-app.png#lightbox)
 
- ## <a name="setting-up-mtd"></a>MT を設定しています。A
+## <a name="setting-up-mtd"></a>MT を設定しています。A
 
 MT.D は、Xamarin. iOS と共に配布されます。 これを使用するには、Visual Studio 2017 または Visual Studio for Mac で Xamarin. iOS プロジェクトの **[参照]** ノードを右クリックし、 **monotouch.dialog**アセンブリへの参照を追加します。 次に、 `using MonoTouch.Dialog`必要に応じて、ソースコードにステートメントを追加します。
 

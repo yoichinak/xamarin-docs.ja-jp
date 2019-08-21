@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 37b04b5aaca269f3053010127010369c92a5cda4
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 4ce217d31811df82f0779a22d0c64464b5295fcc
+ms.sourcegitcommit: 3434624a36a369986b6aeed7959dae60f7112a14
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528395"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69629667"
 ---
 # <a name="watchos-troubleshooting"></a>watchOS のトラブルシューティング
 
@@ -92,7 +92,7 @@ with an alpha channel. Icons should not have an alpha channel.
 Xcode Interface Builder を使用して*いる場合*は、次の手順に従って watch アプリ用の新しいインターフェイスコントローラーを作成し、Xcode との同期を有効C#にして、でアウトレットとアクションを使用できるようにします。
 
 1. **Xcode Interface Builder**で watch アプリのインターフェイスを開きます **。**
-    
+
     ![](troubleshooting-images/add-6.png "Xcode Interface Builder でストーリーボードを開く")
 
 2. 新しい`InterfaceController`をストーリーボードにドラッグします。
@@ -144,7 +144,7 @@ Xcode Interface Builder を使用して*いる場合*は、次の手順に従っ
     ```csharp
     using Foundation;
     using System.CodeDom.Compiler;
-    
+
     namespace HelloWatchExtension  // remember to update this
     {
         [Register ("MyInterfaceController")] // remember to update this
@@ -156,19 +156,20 @@ Xcode Interface Builder を使用して*いる場合*は、次の手順に従っ
         }
     }
     ```
-    
-    ヒント :このファイルを最初のファイルの子ノードにする (必要に応じて) Visual Studio for Mac Solution Pad 内のC#他のファイルにドラッグすることもできます。 その後、次のように表示されます。
-    
+
+    > [!TIP]
+    > このファイルを最初のファイルの子ノードにする (必要に応じて) Visual Studio for Mac Solution Pad 内のC#他のファイルにドラッグすることもできます。 その後、次のように表示されます。
+
     ![](troubleshooting-images/add-5.png "ソリューションパッド")
 
 6. Xcode 同期で、使用した新しいクラス (属性を`Register`使用) が認識されるように、[**ビルド >** ビルド] を選択します。
 
-7. [ウォッチ] アプリのストーリーボードファイルを右クリックし、 **[Open With > Xcode Interface Builder]** を選択して、ストーリーボードを再度開きます。
+7. ウォッチ アプリのストーリーボードファイルを右クリックし、 **Open With > Xcode Interface Builder** を選択して、ストーリーボードを再度開きます。
 
     ![](troubleshooting-images/add-6.png "Interface Builder でストーリーボードを開く")
 
 8. 新しいインターフェイスコントローラーを選択し、前の手順で定義したクラス名を指定します。例を示します。 `MyInterfaceController`。
-すべてが正常に動作している場合は、 **[クラス:]** ドロップダウンリストに自動的に表示され、そこから選択できます。
+    すべてが正常に動作している場合は、 **[クラス:]** ドロップダウンリストに自動的に表示され、そこから選択できます。
 
     ![](troubleshooting-images/add-4.png "カスタムクラスの設定")
 

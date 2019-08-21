@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/22/2018
-ms.openlocfilehash: 37e5e68aff293910db4638c52f592e10fd60abfa
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: d26f8f68b2cf4eca2d28a365c921b533e657c64b
+ms.sourcegitcommit: 3434624a36a369986b6aeed7959dae60f7112a14
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528131"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69629612"
 ---
 # <a name="troubleshooting-tips-for-xamarinios"></a>Xamarin のトラブルシューティングのヒント 
 
@@ -212,7 +212,8 @@ int count = ((ICollection<Foo>) array).Count;
 
 XS logs、 **~/Library/Logs/XamarinStudio-{VERSION}/Ide-{TIMESTAMP}.log**、 **androidtools-{timestamp} .Log**、および**Components-{timestamp} .log**をアタッチしてください (以前のバージョンの xs/MonoDevelop では、 **~/ログを送信するだけです)/モノの開発-(3.0 | 2.8 | 2.6)/MonoDevelop.log**)。
 
- **注: 上記の問題は、XS 2.2 Final で修正されました**
+> [!NOTE]
+> 上記の問題は、XS 2.2 Final * * で修正されました。
 
 ## <a name="compiled-application-is-very-large"></a>コンパイル済みアプリケーションのサイズが非常に大きい
 
@@ -409,11 +410,11 @@ Interface Builder を使用する場合は、Apple の web サイトから入手
 
 この問題はいくつかの形式でマニフェストを作成できますが、常に一貫性のあるエラーが生成されるとは限りません。 アプリケーションに. xib が含まれている場合は、xib の**ビルドアクション**が**interfacedefinition**に設定されていることを確認します。 これは、. xib の既定のビルドアクションです。
 
-ビルドアクションを確認するには、xib ファイルを右クリックし、[**ビルドアクション**] を選択します。
+ビルドアクションを確認するには、xib ファイルを右クリックし、 **[ビルドアクション]** を選択します。
 
 
 ## <a name="systemnotsupportedexception-no-data-is-available-for-encoding-437"></a>NotSupportedException:エンコード437に使用できるデータがありません
 
 Xamarin. iOS アプリにサードパーティ製のライブラリを含めると、次の形式でエラーが表示されることがあります。 "NotSupportedException:アプリをコンパイルして実行しようとすると、エンコード437に使用できるデータがありません。 たとえば、などのライブラリ`Ionic.Zip.ZipFile`では、操作中にこの例外がスローされる場合があります。
 
-これを解決するには、Xamarin. ios プロジェクトのオプションを開き、[ **iOS** > ] [**国際化**] の順に移動して、[**西**国際化] をオンにします。
+これを解決するには、Xamarin. ios プロジェクトのオプションを開き、[ **iOS** > ] **[国際化]** の順に移動して、 **[西]** 国際化 をオンにします。
