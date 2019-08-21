@@ -7,17 +7,17 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 07/09/2019
-ms.openlocfilehash: 78c5f38428e20a2e0c6a15d0964f8fd505a8d082
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.openlocfilehash: a4cfc6c54eb2864707f328106761af029e0734cf
+ms.sourcegitcommit: 9178e2e689f027212ea3e623b556b312985d79fe
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68739411"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69658078"
 ---
 # <a name="xamarinforms-progressbar"></a>Xamarin. フォーム ProgressBar
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-progressbardemos/)
 
-Xamarin. フォーム[`ProgressBar`](xref:Xamarin.Forms.ProgressBar)は、進行状況を、 `float`値で表されるパーセントに設定された水平バーとして視覚的に表すコントロールです。 クラス`ProgressBar`は、から[`View`](xref:Xamarin.Forms.View)継承されます。
+Xamarin. Forms [`ProgressBar`](xref:Xamarin.Forms.ProgressBar)コントロールは、進行状況を、 `float`値で表されるパーセントに設定された水平バーとして視覚的に表します。 クラス`ProgressBar`は、から[`View`](xref:Xamarin.Forms.View)継承されます。
 
 次のスクリーンショットは`ProgressBar` 、iOS と Android のを示しています。
 
@@ -37,7 +37,7 @@ Xamarin. フォーム[`ProgressBar`](xref:Xamarin.Forms.ProgressBar)は、進行
 
 ## <a name="create-a-progressbar"></a>ProgressBar を作成する
 
-は`ProgressBar` 、XAML でインスタンス化できます。 この`Progress`プロパティを設定して、内部の色分けされたバーの塗りつぶしの割合を決定できます。 `Progress`プロパティが設定されていない場合、既定値は0です。 次の例は、省略可能`ProgressBar` `Progress`なプロパティセットを使用して、XAML でをインスタンス化する方法を示しています。
+は`ProgressBar` 、XAML でインスタンス化できます。 この`Progress`プロパティは、内部の色分けされたバーの塗りつぶしの割合を決定します。 既定`Progress`のプロパティ値は0です。 次の例は、省略可能`ProgressBar` `Progress`なプロパティセットを使用して、XAML でをインスタンス化する方法を示しています。
 
 ```xaml
 <ProgressBar Progress="0.5" />
@@ -54,7 +54,7 @@ ProgressBar progressBar = new ProgressBar { Progress = 0.5f };
 
 ## <a name="progressbar-appearance-properties"></a>ProgressBar の外観のプロパティ
 
-プロパティは、 `Progress`プロパティが0より大きい場合に、内部バーの色を定義するように設定できます。 `ProgressColor` 次の例は、 `ProgressBar` `ProgressColor`プロパティセットを使用して、XAML でをインスタンス化する方法を示しています。
+プロパティ`ProgressColor`は、 `Progress`プロパティが0より大きい場合に、内部バーの色を定義します。 次の例は、 `ProgressBar` `ProgressColor`プロパティセットを使用して、XAML でをインスタンス化する方法を示しています。
 
 ```xaml
 <ProgressBar OnColor="Orange" />
@@ -66,7 +66,7 @@ ProgressBar progressBar = new ProgressBar { Progress = 0.5f };
 ProgressBar progressBar = new ProgressBar { ProgressColor = Color.Orange };
 ```
 
-次のスクリーンショットは`ProgressBar` 、iOS `ProgressColor`および Android で`Color.Orange`プロパティがに設定されたを示しています。
+次のスクリーンショットは`ProgressBar` 、iOS `ProgressColor`および Android で`Color.Orange`プロパティがに設定されているを示しています。
 
 ![IOS と Android のスタイルバーのスクリーンショット](progressbar-images/progressbars-styled.png "IOS と Android のスタイルバー")
 

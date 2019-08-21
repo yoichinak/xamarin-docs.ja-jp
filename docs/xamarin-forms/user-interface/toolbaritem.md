@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 07/29/2019
-ms.openlocfilehash: b42a300d9d76a18322891856486720116eb6a8d4
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 9bb041206dbafb68c1bb60bbbb3068f0a2001b55
+ms.sourcegitcommit: 9178e2e689f027212ea3e623b556b312985d79fe
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522029"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69658056"
 ---
 # <a name="xamarinforms-toolbaritem"></a>ToolbarItem
 
@@ -20,21 +20,21 @@ ms.locfileid: "69522029"
 
 Xamarin. Forms [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem)クラスは、 `Page`オブジェクトの`ToolbarItems`コレクションに追加できる特殊なボタンです。 各`ToolbarItem`オブジェクトは、アプリケーションのナビゲーションバーにボタンとして表示されます。 インスタンス`ToolbarItem`はアイコンを持つことができ、プライマリまたはセカンダリのメニュー項目として表示されます。 クラス`ToolbarItem`は、から[`MenuItem`](xref:Xamarin.Forms.MenuItem)継承されます。
 
-次のスクリーンショット`ToolbarItem`は、iOS と Android のナビゲーションバーにあるオブジェクトを示しています。
+次のスクリーンショット`ToolbarItem`では、iOS と Android のナビゲーションバーにオブジェクトが表示されています。
 
 !["Android と iOS の ToolbarItem demo スクリーンショット"](toolbaritem-images/toolbaritem-device-screenshot.png "Android と iOS の ToolbarItem demo スクリーンショット")
 
-コントロール`ToolbarItem`は、次のプロパティを定義します。
+クラス`ToolbarItem`は、次のプロパティを定義します。
 
 * [`Order`](xref:Xamarin.Forms.ToolbarItem.Order)インスタンスをプライマリメニューとセカンダリメニューの`ToolbarItemOrder`どちらに表示するかを決定する列挙`ToolbarItem`値です。
 * [`Priority`](xref:Xamarin.Forms.ToolbarItem.Priority)オブジェクトのコレクション内のアイテムの表示順序を決定する値です。`integer` `ToolbarItems` `Page`
 
 クラス`ToolbarItem`は、 `MenuItem`クラスから次の一般的に使用されるプロパティを継承します。
 
-* [`Text`](xref:Xamarin.Forms.MenuItem.Text)は、 `string` `ToolbarItem`オブジェクトの表示テキストを決定するです。
-* [`IconImageSource`](xref:Xamarin.Forms.MenuItem.IconImageSource)オブジェクトの表示アイコンを決定する値です。`ImageSource` `ToolbarItem`
 * [`Command`](xref:Xamarin.Forms.MenuItem.Command)は、 `ICommand`ユーザー操作 (指タップやクリックなど) を、ビューモデルで定義されているコマンドにバインドできるようにします。
-* [`CommandParameter`](xref:Xamarin.Forms.MenuItem.CommandParameter)に渡す必要があるパラメーターを指定`object`するです`SearchCommand`。
+* [`CommandParameter`](xref:Xamarin.Forms.MenuItem.CommandParameter)に渡す必要があるパラメーターを指定`object`するです`Command`。
+* [`IconImageSource`](xref:Xamarin.Forms.MenuItem.IconImageSource)オブジェクトの表示アイコンを決定する値です。`ImageSource` `ToolbarItem`
+* [`Text`](xref:Xamarin.Forms.MenuItem.Text)は、 `string` `ToolbarItem`オブジェクトの表示テキストを決定するです。
 
 これらのプロパティは、 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) `ToolbarItem`インスタンスがデータバインディングのターゲットになることができるように、オブジェクトによってバックアップされます。
 
@@ -119,3 +119,4 @@ void OnItemClicked(object sender, EventArgs e)
 
 * [ToolbarItem のデモ](https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/userinterface-toolbaritem/)
 * [Xamarin 形式の画像](~/xamarin-forms/user-interface/images.md)
+* [Xamarin. フォーム MenuItem](~/xamarin-forms/user-interface/menuitem.md)

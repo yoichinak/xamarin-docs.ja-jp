@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 07/12/2019
-ms.openlocfilehash: 391820cf2e94c1131f4082798ee9efa05d8489b8
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.openlocfilehash: 41bb9e082f042e7ca2933d72b4b71a4ff6c4fef4
+ms.sourcegitcommit: 9178e2e689f027212ea3e623b556b312985d79fe
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68739396"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69658034"
 ---
 # <a name="xamarinforms-searchbar"></a>Xamarin. Forms SearchBar
 
@@ -22,7 +22,7 @@ Xamarin. Forms [`SearchBar`](xref:Xamarin.Forms.SearchBar)は、検索を開始�
 
 Ios と android の[ ![searchbar on ios と Android のスクリーンショット](searchbar-images/device-searchbars-cropped.png "") ](searchbar-images/device-searchbars.png#lightbox "IOS と Android の Searchbar")
 
-は`SearchBar` 、次のプロパティを定義します。
+クラス`SearchBar`は、次のプロパティを定義します。
 
 * [`CancelButtonColor`](xref:Xamarin.Forms.SearchBar.CancelButtonColor)[キャンセル] ボタンの色を定義するです。`Color`
 * [`FontAttributes`](xref:Xamarin.Forms.SearchBar.FontAttributes)フォントが太字、斜体、または`SearchBar`そのどちらでもないかを決定する列挙値です。`FontAttributes`
@@ -66,7 +66,7 @@ SearchBar searchBar = new SearchBar{ Placeholder = "Search items..." };
            FontAttributes="Italic" />
 ```
 
-これらのプロパティは、コードでを`SearchBar`作成するときに指定することもできます。
+これらのプロパティは、コードでオブジェクトを`SearchBar`作成するときに指定することもできます。
 
 ```csharp
 SearchBar searchBar = new SearchBar
@@ -80,7 +80,7 @@ SearchBar searchBar = new SearchBar
 };
 ```
 
-次のスクリーンショットは、 `SearchBar`その結果を示しています。
+次のスクリーンショットは、 `SearchBar`結果として得られるコントロールを示しています。
 
 Ios および android でカスタマイズされた searchbar for ios と android のカスタマイズされ[![た Searchbar のスクリーンショット](searchbar-images/device-searchbars-styled-cropped.png "") ](searchbar-images/device-searchbars-styled.png#lightbox "IOS および Android でのカスタマイズ")された searchbar
 

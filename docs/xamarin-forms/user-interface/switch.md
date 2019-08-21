@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 07/03/2019
-ms.openlocfilehash: 58755c54ce2afe80a8bf43adc25a0cf2d90a0bb5
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.openlocfilehash: 825561c6106ba2ab8e5886df64c3ff850750587b
+ms.sourcegitcommit: 9178e2e689f027212ea3e623b556b312985d79fe
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68739467"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69658043"
 ---
 # <a name="xamarinforms-switch"></a>Xamarin. フォームスイッチ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-switchdemos/)
 
-Xamarin. フォーム[`Switch`](xref:Xamarin.Forms.Switch)は水平方向のトグルボタンで、ユーザーは`boolean`値によって表されるオンとオフの状態を切り替えることができます。 クラス`Switch`は、から[`View`](xref:Xamarin.Forms.View)継承されます。
+Xamarin [`Switch`](xref:Xamarin.Forms.Switch)コントロールは水平方向のトグルボタンで、ユーザーは`boolean`値で表されるオンとオフの状態を切り替えることができます。 クラス`Switch`は、から[`View`](xref:Xamarin.Forms.View)継承されます。
 
 次のスクリーンショットは`Switch` 、iOS と Android での**オン**と**オフ**の切り替え状態のコントロールを示しています。
 
@@ -44,7 +44,7 @@ Xamarin. フォーム[`Switch`](xref:Xamarin.Forms.Switch)は水平方向のト�
 は`Switch` 、コードで作成することもできます。
 
 ```csharp
-Switch switch = new Switch { IsToggled = true };
+Switch switchControl = new Switch { IsToggled = true };
 ```
 
 ### <a name="switch-style-properties"></a>切り替えスタイルのプロパティ
@@ -58,10 +58,10 @@ Switch switch = new Switch { IsToggled = true };
 プロパティ`OnColor`は、コードでを`Switch`作成するときに設定することもできます。
 
 ```csharp
-Switch switch = new Switch { OnColor = Color.Orange };
+Switch switchControl = new Switch { OnColor = Color.Orange };
 ```
 
-次のスクリーンショットは`Switch` 、オンと**オフ**の切り替え状態のを示し`OnColor`ています。プロパティは iOS と Android ではに`Color.Orange`設定されています。
+次のスクリーンショットで`Switch`は、iOS および Android でプロパティがに`Color.Orange`設定`OnColor`された状態での**オン**と**オフ**の切り替え状態のを示しています。
 
 ![IOS と Android でのオンとオフの状態の切り替えのスクリーンショット](switch-images/switch-states-oncolor.png "IOS と Android でのスイッチ")
 
@@ -87,8 +87,8 @@ void OnToggled(object sender, ToggledEventArgs e)
 イベント`Toggled`ハンドラーは、次のコードでも割り当てることができます。
 
 ```csharp
-Switch switch = new Switch {...};
-switch.Toggled += (sender, e) =>
+Switch switchControl = new Switch {...};
+switchControl.Toggled += (sender, e) =>
 {
     // Perform an action after examining e.Value
 }

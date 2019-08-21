@@ -7,17 +7,17 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 07/10/2019
-ms.openlocfilehash: e13a46e1022f4e33ace6f9f19bb5cea5d1ac784b
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.openlocfilehash: de93927728271e9f0d9d2ef850b70eeeee249c84
+ms.sourcegitcommit: 9178e2e689f027212ea3e623b556b312985d79fe
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68739163"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69658105"
 ---
 # <a name="xamarinforms-activityindicator"></a>Xamarin. Forms ActivityIndicator
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-activityindicatordemos/)
 
-Xamarin. フォーム[`ActivityIndicator`](xref:Xamarin.Forms.ActivityIndicator)は、アプリケーションが時間のかかるアクティビティに関与していることを示すアニメーションを表示するコントロールです。 とは異なり、 `ActivityIndicator`では進行状況が示されません。 [`ProgressBar`](xref:Xamarin.Forms.ProgressBar) は`ActivityIndicator` 、から[`View`](xref:Xamarin.Forms.View)継承されます。
+Xamarin[`ActivityIndicator`](xref:Xamarin.Forms.ActivityIndicator)コントロールには、アプリケーションが長時間のアクティビティに関与していることを示すアニメーションが表示されます。 とは異なり、 `ActivityIndicator`では進行状況が示されません。 [`ProgressBar`](xref:Xamarin.Forms.ProgressBar) は`ActivityIndicator` 、から[`View`](xref:Xamarin.Forms.View)継承されます。
 
 次のスクリーンショットは`ActivityIndicator` 、iOS と Android のコントロールを示しています。
 
@@ -25,14 +25,14 @@ Xamarin. フォーム[`ActivityIndicator`](xref:Xamarin.Forms.ActivityIndicator)
 
 コントロール`ActivityIndicator`は、次のプロパティを定義します。
 
-* [`IsRunning`](xref:Xamarin.Forms.ActivityIndicator.IsRunning)を表示、アニメーション、または`ActivityIndicator`非表示にするかどうかを示す値です。`bool` 値が`false`の場合、 `ActivityIndicator`は表示されません。
 * [`Color`](xref:Xamarin.Forms.ActivityIndicator.Color)の表示色を定義する`Color`値です`ActivityIndicator`。
+* [`IsRunning`](xref:Xamarin.Forms.ActivityIndicator.IsRunning)を表示、アニメーション、または`ActivityIndicator`非表示にするかどうかを示す値です。`bool` 値がの場合`false` 、 `ActivityIndicator`は表示されません。
 
 これらのプロパティは、 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty)オブジェクトによって支えら`ActivityIndicator`れています。つまり、をスタイル設定し、データバインディングのターゲットにすることができます。
 
 ## <a name="create-an-activityindicator"></a>ActivityIndicator を作成する
 
-は`ActivityIndicator` 、XAML でインスタンス化できます。 その`IsRunning`プロパティを設定して、コントロールが表示され、アニメーション化されるかどうかを判断できます。 プロパティが`IsRunning`設定されていない場合`false`は、 `ActivityIndicator`既定でに設定され、は表示されません。 次の例は、省略可能`ActivityIndicator` `IsRunning`なプロパティセットを使用して、XAML でをインスタンス化する方法を示しています。
+クラス`ActivityIndicator`は、XAML でインスタンス化できます。 この`IsRunning`プロパティは、コントロールが表示され、アニメーション化されるかどうかを決定します。 `IsRunning` プロパティでは、既定値が `false` に設定されます。 次の例は、省略可能`ActivityIndicator` `IsRunning`なプロパティセットを使用して、XAML でをインスタンス化する方法を示しています。
 
 ```xaml
 <ActivityIndicator IsRunning="true" />
@@ -46,7 +46,7 @@ ActivityIndicator activityIndicator = new ActivityIndicator { IsRunning = true }
 
 ## <a name="activityindicator-appearance-properties"></a>ActivityIndicator の外観のプロパティ
 
-プロパティを設定して、 `ActivityIndicator`色を定義できます。 `Color` 次の例は、プロパティセットを`ActivityIndicator`使用し`Color`て XAML でをインスタンス化する方法を示しています。
+プロパティ`Color`は、色`ActivityIndicator`を定義します。 次の例は、プロパティセットを`ActivityIndicator`使用し`Color`て XAML でをインスタンス化する方法を示しています。
 
 ```xaml
 <ActivityIndicator Color="Orange" />
@@ -58,7 +58,7 @@ ActivityIndicator activityIndicator = new ActivityIndicator { IsRunning = true }
 ActivityIndicator activityIndicator = new ActivityIndicator { Color = Color.Orange };
 ```
 
-次のスクリーンショットは`ActivityIndicator` 、iOS `Color`および Android で`Color.Orange`プロパティがに設定されたを示しています。
+次のスクリーンショットは`ActivityIndicator` 、iOS `Color`および Android で`Color.Orange`プロパティがに設定されているを示しています。
 
 ![IOS と Android のスタイル付き ActivityIndicator のスクリーンショット](activityindicator-images/activityindicators-styled.png "IOS と Android のスタイル付き ActivityIndicator のスクリーンショット")
 

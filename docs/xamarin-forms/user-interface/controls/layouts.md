@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/21/2018
-ms.openlocfilehash: 82ca106f29eb28672abcbd282b60841bfdb4da8c
-ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
+ms.openlocfilehash: ef73462000de90693e527121d1ebad3a9d670ed3
+ms.sourcegitcommit: 9178e2e689f027212ea3e623b556b312985d79fe
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68980831"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69658122"
 ---
 # <a name="xamarinforms-layouts"></a>Xamarin.Forms のレイアウト
 
@@ -36,7 +36,7 @@ _Xamarin.Forms のレイアウトは、visual 構造にユーザー インター
 
 |     |     |
 | --- | --- |
-| [`ContentView`](xref:Xamarin.Forms.ContentView) 設定されている 1 つの子が含まれています、 [ `Content` ](xref:Xamarin.Forms.ContentView.Content)プロパティ。 `Content`プロパティを任意に設定できます`View`などその他の派生物`Layout`派生クラス。 `ContentView` 構造体の要素として提供されるほとんどの場合と機能する基底クラスとして[ `Frame`](#frame)します。<br /><br />[API ドキュメント](xref:Xamarin.Forms.ContentView) | [![ContentView 例](layouts-images/ContentView.png "ContentView 例")](layouts-images/ContentView-Large.png#lightbox "ContentView 例")<br />[このページの C# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ContentViewDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ContentViewDemoPage.xaml) |
+| [`ContentView`](xref:Xamarin.Forms.ContentView) 設定されている 1 つの子が含まれています、 [ `Content` ](xref:Xamarin.Forms.ContentView.Content)プロパティ。 `Content`プロパティを任意に設定できます`View`などその他の派生物`Layout`派生クラス。 `ContentView` 構造体の要素として提供されるほとんどの場合と機能する基底クラスとして[ `Frame`](#frame)します。<br /><br />[API ドキュメント](xref:Xamarin.Forms.ContentView) / [ガイド](~/xamarin-forms/user-interface/layouts/contentview.md)/[サンプル] (https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/userinterface-cardview/ | [![ContentView 例](layouts-images/ContentView.png "ContentView 例")](layouts-images/ContentView-Large.png#lightbox "ContentView 例")<br />[このページの C# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ContentViewDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ContentViewDemoPage.xaml) |
 |     |     |
 
 <a named="frame" />

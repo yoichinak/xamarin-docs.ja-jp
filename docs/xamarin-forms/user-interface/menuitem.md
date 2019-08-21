@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 08/01/2019
-ms.openlocfilehash: 68560c6cc814f54bb8ba9348bc53334089c36a93
-ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
+ms.openlocfilehash: 396853e2e61904689069b7abd157c73d1da59fed
+ms.sourcegitcommit: 9178e2e689f027212ea3e623b556b312985d79fe
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68984474"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69658094"
 ---
 # <a name="xamarinforms-menuitem"></a>Xamarin. フォーム MenuItem
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/userinterface-menuitem/)
 
-Xamarin [`MenuItem`](xref:Xamarin.Forms.MenuItem)クラスは、 `ListView`項目のコンテキストメニューやシェルアプリケーションのポップアップメニューなどのメニューのメニュー項目を定義するために使用されます。
+Xamarin. Forms [`MenuItem`](xref:Xamarin.Forms.MenuItem)クラスは、 `ListView`項目のコンテキストメニューやシェルアプリケーションのポップアップメニューなどのメニューのメニュー項目を定義します。
 
 次のスクリーンショット`MenuItem`は、iOS `ListView`および Android のコンテキストメニューのオブジェクトを示しています。
 
