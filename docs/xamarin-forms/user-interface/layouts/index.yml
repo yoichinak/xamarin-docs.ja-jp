@@ -60,7 +60,7 @@ sections:
             image:
               src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
               href: contentview.md
-            title: フレーム
+            title: ContentView
           - href: frame.md
             html: 色、ドロップ シャドウなどのオプションを使用して構成できるフレームでビューを折り返す方法について説明します。
             image:
