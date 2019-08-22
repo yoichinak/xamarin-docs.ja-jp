@@ -22,7 +22,7 @@ ms.locfileid: "69888606"
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView) は、さまざまなレイアウト仕様を使用してデータを一覧表示するためのビューです。 これは [ `ListView`](xref:Xamarin.Forms.ListView) の代わりとして、より柔軟でより高パフォーマンスを提供することを目的にしています。 たとえば、次のスクリーンショットは、 `CollectionView` 2 つの列の垂直グリッドを使用し、複数の選択を可能にするを示しています。
 
-[複数選択のある iOS および Android(introduction-images/verticalgrid-multipleselection.png "CollectionView の垂直グリッドレイアウト")![の CollectionView 垂直グリッドレイアウトのスクリーンショット]](introduction-images/verticalgrid-multipleselection-large.png#lightbox "複数選択の CollectionView 垂直グリッドレイアウト")
+[![iOS および Android における垂直グリッドレイアウトの CollectionView のスクリーンショット](introduction-images/verticalgrid-multipleselection.png "複数選択のある垂直グリッドレイアウトの CollectionView")](introduction-images/verticalgrid-multipleselection-large.png#lightbox "複数選択のある垂直グリッドレイアウトの CollectionView")
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView)は、Xamarin. Forms 4.0 で使用できます。 ただし、現在試験段階で、`Forms.Init` を呼ぶ前に、Android では `MainActivity` クラス、iOS では `AppDelegate` クラスに以下の1行を加えることによってのみ使用できます:
 
