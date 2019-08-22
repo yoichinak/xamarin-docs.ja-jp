@@ -6,24 +6,24 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 3c00f074e2f002d82795e9bd445fdf617275089f
-ms.sourcegitcommit: 19b37f33b0eb9a927633a3198574b779374775ff
+ms.openlocfilehash: d20ec990253ff86e7b426baad8da5a919a91ef6c
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50301267"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69525013"
 ---
 # <a name="manually-signing-the-apk"></a>APK に手動で署名する
 
 
 アプリケーションがリリースのためにビルドされたら、Android デバイスで実行できるように、配信に先立ち APK に署名する必要があります。 このプロセスは一般的に IDE で処理されます。ただし、コマンド ラインで、手動で APK に署名することが必要な状況があります。 APK 署名には次の手順が含まれます。
 
-1.   **秘密キーを作成する** &ndash; この手順は 1 回だけ実行する必要があります。 秘密キーは APK のデジタル署名に必要です。
+1. **秘密キーを作成する** &ndash; この手順は 1 回だけ実行する必要があります。 秘密キーは APK のデジタル署名に必要です。
     秘密キーを用意したら、今後のリリース ビルドでは、この手順を省略できます。
 
-2.   **APK に zipalign を実行する** &ndash; *zipalign* はアプリケーション上で実行される最適化プロセスです。 実行時に Android が APK とより効率的に対話できるようにします。 Xamarin.Android は実行時にチェックを実行します。APK に zipalign が実行されていない場合、アプリケーションの実行は許可されません。
+2. **APK に zipalign を実行する** &ndash; *zipalign* はアプリケーション上で実行される最適化プロセスです。 実行時に Android が APK とより効率的に対話できるようにします。 Xamarin.Android は実行時にチェックを実行します。APK に zipalign が実行されていない場合、アプリケーションの実行は許可されません。
 
-3.  **APK に署名する** &ndash; この手順では、Android SDK の **apksigner** ユーティリティを利用し、前の手順で作成された秘密キーで APK に署名します。 v24.0.3 より前の古いバージョンの Android SDK ビルド ツールで開発されたアプリケーションは JDK の **jarsigner** アプリを使用します。 これらのツールについては、以下で詳しく説明します。 
+3. **APK に署名する** &ndash; この手順では、Android SDK の **apksigner** ユーティリティを利用し、前の手順で作成された秘密キーで APK に署名します。 v24.0.3 より前の古いバージョンの Android SDK ビルド ツールで開発されたアプリケーションは JDK の **jarsigner** アプリを使用します。 これらのツールについては、以下で詳しく説明します。 
 
 順序は重要です。APK の署名に利用されるツールによって変わります。 **apksigner** を使用するときは、先にアプリケーションに **zipalign** を実行し、それから **apksigner** で署名することが重要です。  **jarsigner** を使用して APK に署名する必要がある場合、先に APK に署名し、それから **zipalign** を実行することが重要です。 
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 07/15/2017
-ms.openlocfilehash: ce48296ab6e979241630fe8d039ba6b284eed5dc
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 993588a46c8d7048c7494908d6f59a5bbe2ddda6
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865897"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526636"
 ---
 # <a name="manual-provisioning-for-xamarinios"></a>Xamarin.iOS の手動プロビジョニング
 
@@ -193,14 +193,14 @@ Developer ポータルにデバイスを追加した後に、プロビジョニ�
 
 Apple Developer Portal で作成された証明書とプロビジョニング プロファイルが Xcode に自動的に表示されない場合があります。 そのため、Visual Studio for Mac や Visual Studio でアクセスできるようにするために、それらのダウンロード必要な場合があります。 Apple Developer Portal で作成された証明書を更新およびダウンロードするには、次の手順を実行します。
 
-1.   Visual Studio for Mac または Visual Studio を終了します。
-2.   Xcode を起動します。
-3.   **[Xcode メニュー] > [設定]** を選択します。
-4.   **[アカウント]** タブをクリックします。
-5.   チームを選択し、 **[Download Manual Profiles]\(手動プロファイルのダウンロード\)** ボタンをクリックします。[![](manual-provisioning-images/selectteam1.png "手動プロファイルのダウンロード")](manual-provisioning-images/selectteam1.png#lightbox)
+1. Visual Studio for Mac または Visual Studio を終了します。
+2. Xcode を起動します。
+3. **[Xcode メニュー] > [設定]** を選択します。
+4. **[アカウント]** タブをクリックします。
+5. チームを選択し、 **[Download Manual Profiles]\(手動プロファイルのダウンロード\)** ボタンをクリックします。[![](manual-provisioning-images/selectteam1.png "手動プロファイルのダウンロード")](manual-provisioning-images/selectteam1.png#lightbox)
 
-6.   Xcode を終了します。
-7.  Visual Studio for Mac または Visual Studio を起動します。
+6. Xcode を終了します。
+7. Visual Studio for Mac または Visual Studio を起動します。
 
 新しい証明書またはプロビジョニング プロファイルが、Visual Studio for Mac または Visual Studio で使用可能になります。
 

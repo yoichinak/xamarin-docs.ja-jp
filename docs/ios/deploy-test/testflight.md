@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 27fd8cac85cdf139278d3824ebf71e54cdc7d140
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 5729c32ca671a4fcc309d235a34929dcba6a3d03
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865580"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69621110"
 ---
 # <a name="using-testflight-to-distribute-xamarinios-apps"></a>TestFlight を使用して Xamarin.iOS アプリを配布する
 
@@ -55,21 +55,21 @@ TestFlight でビルドをテストするには、新しいベータ資格で "*
 3. ベータ テストを管理します。
     - メタデータを追加します。
     - 内部ユーザーを追加します。
-        - 最大 25 ユーザー。
+      - 最大 25 ユーザー。
     - 外部ユーザーを追加します。
-        - 最大 1000 ユーザー。
-        - ベータ テスト レビューが必要です。そのためには、Apple のガイドラインへの準拠が必要です。
+      - 最大 1000 ユーザー。
+      - ベータ テスト レビューが必要です。そのためには、Apple のガイドラインへの準拠が必要です。
 4. ユーザーからのフィードバックを受け取り、それに対応して、ステップ 2 に戻ります。
 
 ## <a name="create-an-itunes-connect-record"></a>iTunes Connect レコードを作成する
 
-1.  Apple 開発者の資格情報を使って、[iTunes Connect ポータル](https://itunesconnect.apple.com/)にログインします。
-2.  **[My Apps]\(マイ アプリ\)** を選びます。
+1. Apple 開発者の資格情報を使って、[iTunes Connect ポータル](https://itunesconnect.apple.com/)にログインします。
+2. **[My Apps]\(マイ アプリ\)** を選びます。
 
     [![](testflight-images/my-apps.png "[My Apps] を選びます")](testflight-images/my-apps.png#lightbox)
 
 
-3.  **[My Apps]\(マイ アプリ\)** 画面の左上隅にある **[+]** ボタンをクリックして、新しいアプリを追加します。 Mac および iOS の開発者アカウントがある場合は、ここで新しいアプリの種類を選ぶように求められます。
+3. **[My Apps]\(マイ アプリ\)** 画面の左上隅にある **[+]** ボタンをクリックして、新しいアプリを追加します。 Mac および iOS の開発者アカウントがある場合は、ここで新しいアプリの種類を選ぶように求められます。
 
 **[New iOS App]\(新しい iOS アプリ\)** 送信ウィンドウには、アプリの Info.plist とまったく同じ情報が表示される必要があります。
 
@@ -84,12 +84,12 @@ TestFlight でビルドをテストするには、新しいベータ資格で "*
 [![](testflight-images/infoplist.png "アプリの Info.plist")](testflight-images/infoplist.png#lightbox)
 [![](testflight-images/newiosapp.png "iTunes Connect のフォーム")](testflight-images/newiosapp.png#lightbox)
 
--  **[Name]\(名前\)** — アプリ バンドルの設定に使われるわかりやすい名前。 `Info.plist` の**アプリケーション名**エントリと完全に一致する必要があります。
--  **[Primary Language]\(第一言語\)** — アプリ内で使われるベース言語。 通常はユーザーが使っている言語です。
--  **[Bundle ID]\(バンドル ID\)** — 開発者アカウントに作成されているすべてのアプリ ID が一覧表示されるドロップダウン メニュー。
-    *   **[Bundle ID Suffix]\(バンドル ID サフィックス\)** — ワイルド カード バンドル ID (上の例のように * で終わる ID) を選んだ場合、バンドル ID サフィックスの入力を求めるボックスが追加表示されます。 上の例では、**バンドル ID** が `mobi.chkn.*`、サフィックスが **PageView** です。 これらを合わせて、`Info.plist` の**バンドル ID** が作成されます。
--  **[Version]\(バージョン\)** — アップロードされるアプリのバージョン番号。 これは開発者が選びます。
--  **[SKU]\(SKU\)** — SKU は、ユーザーには示されないアプリの一意 ID です。 製品 ID と同じようなものと考えることができます。 上の例では、日付とその日付のバージョン番号にしてあります。
+- **[Name]\(名前\)** — アプリ バンドルの設定に使われるわかりやすい名前。 `Info.plist` の**アプリケーション名**エントリと完全に一致する必要があります。
+- **[Primary Language]\(第一言語\)** — アプリ内で使われるベース言語。 通常はユーザーが使っている言語です。
+- **[Bundle ID]\(バンドル ID\)** — 開発者アカウントに作成されているすべてのアプリ ID が一覧表示されるドロップダウン メニュー。
+  - **[Bundle ID Suffix]\(バンドル ID サフィックス\)** — ワイルド カード バンドル ID (上の例のように * で終わる ID) を選んだ場合、バンドル ID サフィックスの入力を求めるボックスが追加表示されます。 上の例では、**バンドル ID** が `mobi.chkn.*`、サフィックスが **PageView** です。 これらを合わせて、`Info.plist` の**バンドル ID** が作成されます。
+- **[Version]\(バージョン\)** — アップロードされるアプリのバージョン番号。 これは開発者が選びます。
+- **[SKU]\(SKU\)** — SKU は、ユーザーには示されないアプリの一意 ID です。 製品 ID と同じようなものと考えることができます。 上の例では、日付とその日付のバージョン番号にしてあります。
 
 
 ## <a name="upload-your-app"></a>アプリをアップロードする
@@ -190,9 +190,9 @@ TestFlight を使い始めるには、アプリの **[Prerelease]\(プレリリ�
 
 内部テスト担当者は、iTunes Connect で次のロールのいずれかを割り当てられている、開発チームのメンバーです。
 
--  **管理者** – 管理者は、iTunes Connect での新しいユーザーの追加と管理を担当します。
--  **法務担当者** – チーム エージェントは、法務担当者ロールを割り当てられる唯一の管理者ユーザーです。 法的契約書に署名することができます。
--  **技術担当者** – 技術ユーザーは、アプリに関するほとんどのプロパティを変更できます。 たとえば、アプリ情報の編集、バイナリのアップロード、レビュー用のアプリの送信を行うことができます。
+- **管理者** – 管理者は、iTunes Connect での新しいユーザーの追加と管理を担当します。
+- **法務担当者** – チーム エージェントは、法務担当者ロールを割り当てられる唯一の管理者ユーザーです。 法的契約書に署名することができます。
+- **技術担当者** – 技術ユーザーは、アプリに関するほとんどのプロパティを変更できます。 たとえば、アプリ情報の編集、バイナリのアップロード、レビュー用のアプリの送信を行うことができます。
 
 各ビルドは、最大 25 人のメンバーで共有できます。
 

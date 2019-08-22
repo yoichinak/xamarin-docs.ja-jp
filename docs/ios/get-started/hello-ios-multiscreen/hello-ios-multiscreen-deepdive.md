@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: 9ce29df9070ee99bb3de9579025f5b0f366d6331
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 9c7572c3d3a785264e9f26c17e74c41ee28e8af6
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655902"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526530"
 ---
 # <a name="hello-ios-multiscreen--deep-dive"></a>Hello, iOS マルチスクリーン – 詳細
 
@@ -72,17 +72,17 @@ Phoneword アプリケーションでは、複数の画面間のナビゲーシ�
 
 ナビゲーション コントローラーには、主に次の 3 つの機能があります。
 
--  **転送ナビゲーション用のフック機能**: ナビゲーション コントローラーは、コンテンツ ビュー階層が*ナビゲーション スタック*に*プッシュ*される階層ナビゲーションの象徴を使用しています。 ナビゲーション スタックは、積み重ねたトランプと考えることができます。次の図のように、一番上のカードのみが見えます。  
+- **転送ナビゲーション用のフック機能**: ナビゲーション コントローラーは、コンテンツ ビュー階層が*ナビゲーション スタック*に*プッシュ*される階層ナビゲーションの象徴を使用しています。 ナビゲーション スタックは、積み重ねたトランプと考えることができます。次の図のように、一番上のカードのみが見えます。  
 
     [![](hello-ios-multiscreen-deepdive-images/02.png "この図は、ナビゲーションを積み重ねたカードとして示しています")](hello-ios-multiscreen-deepdive-images/02.png#lightbox)
 
 
--  **オプションの戻るボタン機能**: 新しい項目をナビゲーション スタックにプッシュすると、タイトル バーに*戻るボタン*が自動的に表示されます。ユーザーはこのボタンを押して戻る操作を行うことができます。 戻るボタンを押すと、ナビゲーション スタックから現在のビュー コントローラーが*ポップ*され、前のコンテンツ ビュー階層がウィンドウに読み込まれます。  
+- **オプションの戻るボタン機能**: 新しい項目をナビゲーション スタックにプッシュすると、タイトル バーに*戻るボタン*が自動的に表示されます。ユーザーはこのボタンを押して戻る操作を行うことができます。 戻るボタンを押すと、ナビゲーション スタックから現在のビュー コントローラーが*ポップ*され、前のコンテンツ ビュー階層がウィンドウに読み込まれます。  
 
     [![](hello-ios-multiscreen-deepdive-images/03.png "この図は、スタックからのカードの 'ポップ' を示しています")](hello-ios-multiscreen-deepdive-images/03.png#lightbox)
 
 
--  **タイトル バー機能**: ナビゲーション コントローラーの上部は*タイトル バー*と呼ばれます。 次の図のように、ビュー コントローラーのタイトルを表示する処理を担当します。  
+- **タイトル バー機能**: ナビゲーション コントローラーの上部は*タイトル バー*と呼ばれます。 次の図のように、ビュー コントローラーのタイトルを表示する処理を担当します。  
 
     [![](hello-ios-multiscreen-deepdive-images/04.png "タイトル バーは、ビュー コントローラーのタイトルを表示します")](hello-ios-multiscreen-deepdive-images/04.png#lightbox)
 
@@ -191,9 +191,9 @@ CallHistoryButton.TouchUpInside += (object sender, EventArgs e) => {
 
 Phoneword アプリケーションでは、このガイドでは説明していない概念がいくつか導入されています。 たとえば、次のような概念です。
 
--  **ビュー コントローラーの自動作成**: **Properties Pad** でビュー コントローラーのクラス名を入力すると、iOS デザイナーは、クラスが存在するかどうかを確認し、ビュー コントローラー バッキング クラスを自動的に生成します。 この機能と他の iOS デザイナー機能の詳細については、「[Introduction to the iOS Designer](~/ios/user-interface/designer/introduction.md)」(iOS デザイナーの概要) ガイドを参照してください。
--  **テーブル ビュー コントローラー**: `CallHistoryController` はテーブル ビュー コントローラーです。 テーブル ビュー コントローラーには、iOS でよく使われるレイアウトおよびデータ表示ツールであるテーブル ビューが含まれています。 テーブルはこのガイドで取り扱う範囲を超えているので触れません。 テーブル ビュー コントローラーの詳細については、「[Working with Tables and Cells](~/ios/user-interface/controls/tables/index.md)」(テーブルとセルの操作) ガイドを参照してください。
--   **ストーリーボード ID**: ストーリーボード ID を設定すると、ストーリーボードにビュー コントローラーの分離コードを含む Objective-C のビュー コントローラー クラスが作成されます。 ここでは、ストーリーボード ID を使用して Objective-C クラスを検出し、ストーリーボードでビュー コントローラーをインスタンス化します。 ストーリーボード ID の詳細については、「[Introduction to Storyboards](~/ios/user-interface/storyboards/index.md)」(ストーリーボードの概要) ガイドを参照してください。
+- **ビュー コントローラーの自動作成**: **Properties Pad** でビュー コントローラーのクラス名を入力すると、iOS デザイナーは、クラスが存在するかどうかを確認し、ビュー コントローラー バッキング クラスを自動的に生成します。 この機能と他の iOS デザイナー機能の詳細については、「[Introduction to the iOS Designer](~/ios/user-interface/designer/introduction.md)」(iOS デザイナーの概要) ガイドを参照してください。
+- **テーブル ビュー コントローラー**: `CallHistoryController` はテーブル ビュー コントローラーです。 テーブル ビュー コントローラーには、iOS でよく使われるレイアウトおよびデータ表示ツールであるテーブル ビューが含まれています。 テーブルはこのガイドで取り扱う範囲を超えているので触れません。 テーブル ビュー コントローラーの詳細については、「[Working with Tables and Cells](~/ios/user-interface/controls/tables/index.md)」(テーブルとセルの操作) ガイドを参照してください。
+- **ストーリーボード ID**: ストーリーボード ID を設定すると、ストーリーボードにビュー コントローラーの分離コードを含む Objective-C のビュー コントローラー クラスが作成されます。 ここでは、ストーリーボード ID を使用して Objective-C クラスを検出し、ストーリーボードでビュー コントローラーをインスタンス化します。 ストーリーボード ID の詳細については、「[Introduction to Storyboards](~/ios/user-interface/storyboards/index.md)」(ストーリーボードの概要) ガイドを参照してください。
 
 ## <a name="summary"></a>まとめ
 

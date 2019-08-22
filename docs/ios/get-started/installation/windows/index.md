@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/16/2018
-ms.openlocfilehash: 7c7a3e311a6c5f19242b51dd14f59bcdc9a75c64
-ms.sourcegitcommit: 91a4fcb715506e18e8070bc89bf2cb14d079ad32
+ms.openlocfilehash: 2f580571e7b871e724ca1a760060a238098e4f44
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59574716"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526504"
 ---
 # <a name="installing-xamarinios-on-windows"></a>Windows に Xamarin.iOS をインストールする
 
@@ -71,10 +71,10 @@ Visual Studio 2019 を Xamarin.iOS 開発用にセットアップするには、
 
 Windows 上で Visual Studio 2017 を使って Xamarin.iOS アプリを構築するには、次のものが必要です。
 
--  Visual Studio 2017 がインストールされている Windows コンピューター。 物理コンピューターでも仮想マシンでもかまいません。
+- Visual Studio 2017 がインストールされている Windows コンピューター。 物理コンピューターでも仮想マシンでもかまいません。
     - [Windows のシステム要件](~/cross-platform/get-started/requirements.md#windows-requirements)
     
--  Apple のビルド ツールと Xamarin.iOS でセットアップされたネットワーク アクセス可能な Mac。 Visual Studio 2017 は、ネットワーク接続経由でこのマシンにアクセスして Apple のビルド ツールを使用します。ネイティブ iOS アプリケーションをコンパイルするために必要です。 
+- Apple のビルド ツールと Xamarin.iOS でセットアップされたネットワーク アクセス可能な Mac。 Visual Studio 2017 は、ネットワーク接続経由でこのマシンにアクセスして Apple のビルド ツールを使用します。ネイティブ iOS アプリケーションをコンパイルするために必要です。 
     - [Mac のシステム要件](~/cross-platform/get-started/requirements.md#macos-requirements)
 
 ## <a name="setup"></a>セットアップ

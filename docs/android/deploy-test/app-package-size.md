@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/05/2018
-ms.openlocfilehash: a6fe5cc3a126cc42c07f38b89c5d1de308b3c0dc
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 9bff233b5507e3456ba3620315bd967d0ac7018d
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109914"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69525781"
 ---
 # <a name="application-package-size"></a>アプリケーション パッケージのサイズ
 
@@ -63,17 +63,17 @@ Android でのパッケージのコピーとインストールは比較的低速
 
 *迅速なアセンブリの配置*を有効にするには、次の操作を行います。
 
-1.  ソリューション エクスプローラーで Android プロジェクトを右クリックして、**[オプション]** を選択します。
+1. ソリューション エクスプローラーで Android プロジェクトを右クリックして、 **[オプション]** を選択します。
 
-2.  [プロジェクト オプション] ダイアログから、**[Android のビルド]** を選択します。  
+2. [プロジェクト オプション] ダイアログから、 **[Android のビルド]** を選択します。  
 
     ![[プロジェクト オプション] の [Android のビルド]](app-package-size-images/fastdev0.png)
 
-3.  次のように、**[共有 Mono ランタイムを使用]** および **[迅速なアセンブリの配置]** チェック ボックスをオンにします。  
+3. 次のように、 **[共有 Mono ランタイムを使用]** および **[迅速なアセンブリの配置]** チェック ボックスをオンにします。  
 
     ![[パッケージ化] タブでオンになっているチェック ボックス](app-package-size-images/fastdev.png)
 
-4.  **[OK]** ボタンをクリックして変更内容を保存し、[プロジェクト オプション] ダイアログを閉じます。
+4. **[OK]** ボタンをクリックして変更内容を保存し、[プロジェクト オプション] ダイアログを閉じます。
 
 
 デバッグ用のアプリケーションの次回のビルド時に、アセンブリがデバイスに直接インストールされ (まだインストールされていない場合)、(アセンブリを含まない) より小さなアプリケーション パッケージがデバイスにインストールされます。 これで、テスト用に稼働中のアプリケーションを変更するためにかかる時間が短縮されます。

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/05/2017
-ms.openlocfilehash: 6d0e6fe402a657b3df0a03f2a9ce30ce22702f20
-ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
+ms.openlocfilehash: d64f92c9bb145da6ab4bfa688ea52bffb4de22d4
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66741099"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526483"
 ---
 # <a name="xamarin-for-objective-c-developers"></a>Objective-C 開発者向けの Xamarin
 
@@ -28,8 +28,8 @@ iOS を対象とした開発者は Xamarin を使用し、 ユーザーインタ
 
 ドキュメント サイトには Xamarin への移行を簡単にするための情報が多数用意されており、C# コードを使い慣れたコードに統合する方法が示されています。 以下のような情報は特に使い始めに重要です。
 
--   [Objective-C 開発者向けの C# 入門](primer.md) - Xamarin と C# への移行を検討している Objective-C 開発者向けの簡単な入門。 
--   [チュートリアル: Objective-C ライブラリのバインディング](~/ios/platform/binding-objective-c/walkthrough.md) - Xamarin.iOS アプリケーションで既存の Objective-C コードを再利用するための手順に関するチュートリアル。 
+- [Objective-C 開発者向けの C# 入門](primer.md) - Xamarin と C# への移行を検討している Objective-C 開発者向けの簡単な入門。 
+- [チュートリアル: Objective-C ライブラリのバインディング](~/ios/platform/binding-objective-c/walkthrough.md) - Xamarin.iOS アプリケーションで既存の Objective-C コードを再利用するための手順に関するチュートリアル。 
 
 
 ## <a name="binding-objective-c"></a>Objective-C のバインディング

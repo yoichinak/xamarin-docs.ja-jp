@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 0363f6fa1611a15c6925717f7bdf3905f467831e
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 92631fa50dc4826e70df4333bb55f7f69937d053
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107795"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526547"
 ---
 # <a name="fastlane-for-ios---match"></a>fastlane for iOS - match
 
@@ -53,7 +53,9 @@ match はコード署名証明書およびプロプロビジョニング ファ�
 
 自分の端末を使用して、ディレクトリをプロジェクト ディレクトリに変更し、次を実行します。
 
-    fastlane match init
+```
+fastlane match init
+```
 
 プロンプトが表示されたら、Git リポジトリの URL を入力します。
 
@@ -76,11 +78,13 @@ match はコード署名証明書およびプロプロビジョニング ファ�
 
 必要な環境によっては、次のコマンドのいずれかを使用して、新しい証明書とプロビジョニング プロファイルを作成し、新しい Git リポジトリに格納することができます。
 
-    fastlane match appstore
+```
+fastlane match appstore
 
-    fastlane match adhoc
+fastlane match adhoc
 
-    fastlane match development
+fastlane match development
+```
 
 新しい証明書とプロファイルを作成することに加え、これらのコマンドのいずれかを使用して、次のアイテムを Git リポジトリに追加 (またはアイテムが既に存在している場合は更新) することができます。
 
@@ -99,15 +103,21 @@ match はコード署名証明書およびプロプロビジョニング ファ�
 
 管理がきちんとされていない証明書がある場合は、`nuke` を使用して証明書とプロファイルを取り消すことができます。各環境に対して次のコマンドを使用します。
 
-    fastlane match nuke
+```
+fastlane match nuke
+```
 
 特定の環境のすべての証明書とプロビジョニング プロファイルを取り消す場合は、次のコマンドを使用します。
 
-    fastlane match nuke development
+```
+fastlane match nuke development
+```
 
- または
+ or
 
-    fastlane match nuke distribution
+```
+fastlane match nuke distribution
+```
 
 fastlane は、削除する前に、削除されるファイルを確認します。
 
@@ -127,15 +137,21 @@ match を使用する際に、次のオプションを使用して追加のサ�
 
 - 使用可能なすべてのコマンドのリストに `-–help` フラグを使用します。
 
-        fastlane match cert --help
+    ```
+    fastlane match cert --help
+    ```
 
 - 出力の詳細レベルを上げるには、`-–verbose` フラグを使用します。
 
-        fastlane match --development --verbose
+    ```
+    fastlane match --development --verbose
+    ```
 
 - Developer ポータルでのデバイス数が変更されている場合に、プロビジョニング プロファイルの更新を強制するには、`--force_for_new_devices` フラグを使用します。
 
-        fastlane match development --force_for_new_devices
+    ```
+    fastlane match development --force_for_new_devices
+    ```
 
 ## <a name="related-links"></a>関連リンク
 

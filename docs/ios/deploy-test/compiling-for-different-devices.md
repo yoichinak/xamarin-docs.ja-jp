@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: aac558f52423132bef53f1754307e743c69f6f22
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 1b3bc6874a8584b60b15d1d373ad97fde565dfc4
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121208"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527118"
 ---
 # <a name="compiling-for-different-devices-in-xamarinios"></a>Xamarin.iOS の各種デバイス向けコンパイル
 
-実行可能ファイルのビルド プロパティは、プロジェクトの **iOS ビルド**のプロパティ ページから設定できます。このページは、プロジェクト名を右クリックし、**[オプション]、[iOS ビルド]** の順に移動するか (Visual Studio for Mac)、**[プロパティ]** に移動します (Visual Studio)。
+実行可能ファイルのビルド プロパティは、プロジェクトの **iOS ビルド**のプロパティ ページから設定できます。このページは、プロジェクト名を右クリックし、 **[オプション]、[iOS ビルド]** の順に移動するか (Visual Studio for Mac)、 **[プロパティ]** に移動します (Visual Studio)。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -128,8 +128,8 @@ Thumb は、ARM プロセッサで利用される、より簡潔な命令セッ�
 
 これを行うには、次の手順を実行する必要があります。
 
--  **[プロジェクト オプション]** を開き、**[iOS ビルド]** ウィンドウに移動します。
--  弱くリンクする構成ごとに **[追加オプション]** に `'-gcc_flags "-weak_framework iAd"'` を追加します。
+- **[プロジェクト オプション]** を開き、 **[iOS ビルド]** ウィンドウに移動します。
+- 弱くリンクする構成ごとに **[追加オプション]** に `'-gcc_flags "-weak_framework iAd"'` を追加します。
 
 
 [![](compiling-for-different-devices-images/image3.png "追加オプション")](compiling-for-different-devices-images/image3.png#lightbox)

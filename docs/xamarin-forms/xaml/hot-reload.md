@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: maddyleger1
 ms.author: maleger
 ms.date: 08/13/2019
-ms.openlocfilehash: 4f6a0b45d37252c141b2741dd0b37a980c958a51
-ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
+ms.openlocfilehash: 59b72daecdc1159494d069bec044ee1891916d11
+ms.sourcegitcommit: fd349a121164c85545f4b0881940eefdd0cf3b65
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68984534"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69896403"
 ---
 # <a name="xaml-hot-reload-for-xamarinforms-preview"></a>Xamarin. Forms の XAML ホットリロード (プレビュー)
 
@@ -30,7 +30,7 @@ Xamarin.Forms | 4.1 以上
 
 ## <a name="use-xaml-hot-reload-for-xamarinforms"></a>Xamarin. フォームに XAML ホットリロードを使用する
 
-XAML ホットリロードを使用するには、追加のインストールやセットアップは必要ありません。 これは Visual Studio に組み込まれており、IDE の設定で有効にすることができます。 有効にすると、エミュレーター、シミュレーター、または物理デバイスでアプリをデバッグして、XAML ホットリロードの使用を開始できます。
+XAML ホットリロードを使用するには、追加のインストールやセットアップは必要ありません。 これは Visual Studio に組み込まれており、IDE の設定で有効にすることができます。 有効にすると、エミュレーター、シミュレーター、または物理デバイスでアプリをデバッグして、XAML ホットリロードの使用を開始できます。 現時点では、XAML ホットリロードは、iOS または Android でデバッグする場合にのみ機能します。
 
 Windows では、[**ツール** > ]、[**xamarin** > **ホットリロード**] の順に**選択** > して **[xamarin ホットリロードを有効にする]** チェックボックスをオンにすると、XAML ホットリロードを有効にできます。
 

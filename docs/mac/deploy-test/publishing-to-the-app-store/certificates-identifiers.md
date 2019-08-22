@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 5ba09afc477ddaadc07aa415376860eea3c8c28d
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 30731dda1007127caff84eae20696b45803b74f1
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57671469"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528995"
 ---
 # <a name="certificates-and-identifiers-in-xamarinmac"></a>Xamarin.Mac の証明書と ID
 
@@ -28,11 +28,11 @@ _このガイドでは、Xamarin.Mac アプリを発行するのに必要な証�
 
 [![証明書、ID、プロファイルの選択](certificates-identifiers-images/devcenter02.png "証明書、ID、プロファイルの選択")](certificates-identifiers-images/devcenter02-large.png#lightbox)
 
-次に、**[Mac Apps]\(Mac Apps\)** セクションの **[Certificates]\(証明書\)** リンクをクリックします。
+次に、 **[Mac Apps]\(Mac Apps\)** セクションの **[Certificates]\(証明書\)** リンクをクリックします。
 
 [![証明書リンクの選択](certificates-identifiers-images/devcenter03.png "証明書リンクの選択")](certificates-identifiers-images/devcenter03-large.png#lightbox)
 
-**[All]\(すべて\)** リンクをクリックして、**+** ボタンをクリックします。
+**[All]\(すべて\)** リンクをクリックして、 **+** ボタンをクリックします。
 
 [![すべてを選択して新しい項目を追加](certificates-identifiers-images/certif01.png "すべてを選択して新しい項目を追加")](certificates-identifiers-images/certif01-large.png#lightbox)
 
@@ -40,10 +40,10 @@ _このガイドでは、Xamarin.Mac アプリを発行するのに必要な証�
 
 このセクションの残りでは、Mac Developer アカウントの設定を完了する、4 つのセクションについてそれぞれ説明します。
 
--   **Mac App ID を登録する**: アプリケーション開発者は、記述するすべてのアプリケーションで、これらの手順に従う必要があります。
--   **macOS システムを登録する**: これは、テストするコンピューターを追加するときのみ必要です。
--   **証明書を作成する**: 証明書の設定時に 1 回、そしてそれを更新するときのみ必要です。
--   **プロビジョニング プロファイルを作成する**: 開発者は新しいアプリケーションを記述するたびに、および新しいシステムを追加するたびに、これらの手順に従う必要があります。
+- **Mac App ID を登録する**: アプリケーション開発者は、記述するすべてのアプリケーションで、これらの手順に従う必要があります。
+- **macOS システムを登録する**: これは、テストするコンピューターを追加するときのみ必要です。
+- **証明書を作成する**: 証明書の設定時に 1 回、そしてそれを更新するときのみ必要です。
+- **プロビジョニング プロファイルを作成する**: 開発者は新しいアプリケーションを記述するたびに、および新しいシステムを追加するたびに、これらの手順に従う必要があります。
 
 このメニューに戻るには、ページの左上の **[Overview]\(概要\)** リンクをクリックします。
 
@@ -54,18 +54,18 @@ _このガイドでは、Xamarin.Mac アプリを発行するのに必要な証�
 1. **[App ID Description]\(App ID の説明\)** を入力し、アプリケーションで必要なすべての **[App Services]\(アプリ サービス\)** を選択します。 
 
     [![説明とアプリ サービスの入力](certificates-identifiers-images/devcenter04.png "説明とアプリ サービスの入力")](certificates-identifiers-images/devcenter04-large.png#lightbox)
-2. アプリの **[Bundle ID]\(バンドル ID\)** を入力し、**[Continue]\(続行\)** ボタンをクリックします。 
+2. アプリの **[Bundle ID]\(バンドル ID\)** を入力し、 **[Continue]\(続行\)** ボタンをクリックします。 
 
     [![バンドル ID の入力](certificates-identifiers-images/devcenter05.png "バンドル ID の入力")](certificates-identifiers-images/devcenter05-large.png#lightbox)
-3. 情報を確認し、**[Submit]\(送信\)** ボタンをクリックします。 
+3. 情報を確認し、 **[Submit]\(送信\)** ボタンをクリックします。 
 
     [![情報の確認](certificates-identifiers-images/devcenter06.png "情報の確認")](certificates-identifiers-images/devcenter06-large.png#lightbox)
 
-(iCloud など) 一部の **App Services** は、さらに構成する必要がある場合があります。 その場合は、作成したばかりの新しい App ID を選択し、**[Edit]\(編集\)** ボタンをクリックします。
+(iCloud など) 一部の **App Services** は、さらに構成する必要がある場合があります。 その場合は、作成したばかりの新しい App ID を選択し、 **[Edit]\(編集\)** ボタンをクリックします。
 
 [![新しいアプリ ID の編集](certificates-identifiers-images/devcenter07.png "新しいアプリ ID の編集")](certificates-identifiers-images/devcenter07-large.png#lightbox)
 
-iCloud サービスを構成するには、**[Edit]\(編集\)** ボタンをクリックします。
+iCloud サービスを構成するには、 **[Edit]\(編集\)** ボタンをクリックします。
 
 [![iCloud サービスの構成](certificates-identifiers-images/devcenter08.png "iCloud サービスの構成")](certificates-identifiers-images/devcenter08-large.png#lightbox)
 
@@ -77,11 +77,11 @@ iCloud サービスを構成するには、**[Edit]\(編集\)** ボタンをク�
 
 テスト用にプロビジョニング プロファイルを作成するには、開発者はその Mac コンピューターを登録する必要があります。 Mac アプリのテストには、最大 100 台のコンピューターを登録することができます。
 
-Mac Developer Center の **[Devices]\(デバイス\)** セクションで **[All]\(すべて\)** を選択し、**+** ボタンをクリックします。
+Mac Developer Center の **[Devices]\(デバイス\)** セクションで **[All]\(すべて\)** を選択し、 **+** ボタンをクリックします。
 
 [![新しいコンピューターの追加](certificates-identifiers-images/devcenter10.png "新しいコンピューターの追加")](certificates-identifiers-images/devcenter10-large.png#lightbox)
 
-追加するコンピューターの **[Name]\(名前\)** と **[UUID]** を入力し、**[Continue]\(続行\)** ボタンをクリックします。 情報を確認して、**[Register]\(登録\)** ボタンをクリックします。
+追加するコンピューターの **[Name]\(名前\)** と **[UUID]** を入力し、 **[Continue]\(続行\)** ボタンをクリックします。 情報を確認して、 **[Register]\(登録\)** ボタンをクリックします。
 
 [![新しいコンピューター情報の入力](certificates-identifiers-images/devcenter11.png "新しいコンピューター情報の入力")](certificates-identifiers-images/devcenter11-large.png#lightbox)
 
@@ -93,9 +93,9 @@ Mac アプリケーションの署名に使用するさまざまな種類の証�
 
 証明書には、主に次の 3 種類があります。
 
--   **Mac Development の証明書**: 一般的なアプリ開発ではオプションですが、開発者が iCloud やプッシュ通知などの機能を使用する予定の場合は必須です。 これらの機能にアクセスするプロビジョニング プロファイルを作成する前に、開発者には Development 証明書が必要です。
--   **Mac App Store**: 開発者には、アプリ用の証明書と、インストーラー用の別の証明書が必要です。
--   **Developer ID**: Mac App Store 以外で配布する場合、アプリとインストーラー用の証明書が必要です。
+- **Mac Development の証明書**: 一般的なアプリ開発ではオプションですが、開発者が iCloud やプッシュ通知などの機能を使用する予定の場合は必須です。 これらの機能にアクセスするプロビジョニング プロファイルを作成する前に、開発者には Development 証明書が必要です。
+- **Mac App Store**: 開発者には、アプリ用の証明書と、インストーラー用の別の証明書が必要です。
+- **Developer ID**: Mac App Store 以外で配布する場合、アプリとインストーラー用の証明書が必要です。
 
 次のセクションでは、上記のそれぞれの種類の証明書を作成する例を紹介します。
 
@@ -105,7 +105,7 @@ Mac アプリケーションの署名に使用するさまざまな種類の証�
 
 新しい Development の証明書を作成するには、次を実行します。
 
-1. **[Mac Development]\(Mac Development\)** ラジオ ボタンを選択し、**[Continue]\(続行\)** をクリックします。 
+1. **[Mac Development]\(Mac Development\)** ラジオ ボタンを選択し、 **[Continue]\(続行\)** をクリックします。 
 
      [![Development の証明書の追加](certificates-identifiers-images/certif02.png "Development の証明書の追加")](certificates-identifiers-images/certif02-large.png#lightbox)
 2. 次の画面には、キーチェーン アクセスを使用して、アップロードする証明書の署名要求ファイルを作成する方法について説明します。 
@@ -120,7 +120,7 @@ Mac アプリケーションの署名に使用するさまざまな種類の証�
 5. **[Download]\(ダウンロード\)** をクリックして証明書を取得し、ダブルクリックしてそれを **[Keychain]\(キーチェーン\)** にインストールします。 
 
      [![Development の証明書のダウンロード](certificates-identifiers-images/image15.png "Development の証明書のダウンロード")](certificates-identifiers-images/image15-large.png#lightbox)
-6. **[Download]\(ダウンロード\)** をクリックして証明書を取得し、ダブルクリックしてそれを **[Keychain]\(キーチェーン\)** にインストールします。 証明書は、**[Developer Certificate Utility]\(開発者の証明書ユーティリティ\)** に次のように表示されます。 
+6. **[Download]\(ダウンロード\)** をクリックして証明書を取得し、ダブルクリックしてそれを **[Keychain]\(キーチェーン\)** にインストールします。 証明書は、 **[Developer Certificate Utility]\(開発者の証明書ユーティリティ\)** に次のように表示されます。 
 
      [![Developer Certificate Utility](certificates-identifiers-images/image16.png "Developer Certificate Utility")](certificates-identifiers-images/image16-large.png#lightbox)
 7. **[Keychain]\(キーチェーン\)** にも次のように表示されます。 
@@ -133,7 +133,7 @@ Mac アプリケーションの署名に使用するさまざまな種類の証�
 
 App Store にアプリをリリースするには、アプリに署名をするために必要な **Mac App Store** 証明書と Mac Installer Package を作成する必要があります。
 
-1. 証明書の種類として **[Mac App Store]** を選択して、**[Continue]\(続行\)** ボタンをクリックします。 
+1. 証明書の種類として **[Mac App Store]** を選択して、 **[Continue]\(続行\)** ボタンをクリックします。 
 
     [![App Store 証明書の作成](certificates-identifiers-images/certif04.png "App Store 証明書の作成")](certificates-identifiers-images/certif04-large.png#lightbox)
 2. 作成する証明書の種類を選択します (App Store にリリースするには、各種類 1 つずつ必要です)。 
@@ -175,14 +175,14 @@ App Store にアプリをリリースするには、アプリに署名をする�
 
 次の手順で行います。
 
-1. **[Certificates]\(証明書\)** セクションで **+** ボタンをクリックし、**[Developer ID]\(Developer ID\)** ラジオ ボタンを選択します。 
+1. **[Certificates]\(証明書\)** セクションで **+** ボタンをクリックし、 **[Developer ID]\(Developer ID\)** ラジオ ボタンを選択します。 
 
     [![Developer ID の追加](certificates-identifiers-images/certif07.png "Developer ID の追加")](certificates-identifiers-images/certif07-large.png#lightbox)
 2. **[Continue]\(続行\)** ボタンをクリックして、作成する Developer ID の種類を選択します。 
 
     [![Developer ID の種類の選択](certificates-identifiers-images/certif08.png "Developer ID の種類の選択")](certificates-identifiers-images/certif08-large.png#lightbox)
 3. アプリケーション自体の署名用とアプリケーションのインストーラーの署名用に 2 つが必要になります。 これらのキーの証明書の要求を命名する際、後で識別できるよう、`Application` と `Installer` のテキストを含むわかりやすい名前を使用します。
-4. 次の画面には、証明書の作成方法の詳細な手順があります。**[Continue]\(続行\)** ボタンをクリックします。 
+4. 次の画面には、証明書の作成方法の詳細な手順があります。 **[Continue]\(続行\)** ボタンをクリックします。 
 
     [![証明書の作成方法](certificates-identifiers-images/certif09.png "証明書の作成方法")](certificates-identifiers-images/certif09-large.png#lightbox)
 5. わかりやすい**通称**を選択します。たとえば、名前に “Developer ID Application” というテキストを使用します。 
@@ -201,10 +201,10 @@ App Store にアプリをリリースするには、アプリに署名をする�
 10. 証明書の要求ファイル (拡張子 `.certSigningRequest`) は、Mac のローカルに保存されます。 保存先を記憶しておいてください (既定の場所はデスクトップです)。 
 
      [![証明書のアップロード](certificates-identifiers-images/certif10.png "証明書のアップロード")](certificates-identifiers-images/certif10-large.png#lightbox)
-11. 証明書がダウンロードできるようになります。**[Done]\(完了\)** をクリックする前に、**[Download]\(ダウンロード\)** ボタンをクリックします。 
+11. 証明書がダウンロードできるようになります。 **[Done]\(完了\)** をクリックする前に、 **[Download]\(ダウンロード\)** ボタンをクリックします。 
 
      [![証明書のダウンロード](certificates-identifiers-images/certif11.png "証明書のダウンロード")](certificates-identifiers-images/certif11-large.png#lightbox)
-12. **[Download]\(ダウンロード\)** をクリックして証明書を取得し、ダブルクリックしてそれを **[Keychain]\(キーチェーン\)** にインストールします。 証明書は、**[Developer Certificate Utility]\(開発者の証明書ユーティリティ\)** に次のように表示されます。 
+12. **[Download]\(ダウンロード\)** をクリックして証明書を取得し、ダブルクリックしてそれを **[Keychain]\(キーチェーン\)** にインストールします。 証明書は、 **[Developer Certificate Utility]\(開発者の証明書ユーティリティ\)** に次のように表示されます。 
 
      [![Developer Certificate Utility](certificates-identifiers-images/certif12.png "Developer Certificate Utility")](certificates-identifiers-images/certif12-large.png#lightbox)
 13. **キーチェーン**に次の項目が表示されます。 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: e1792eb9150aa92b04b873ae18ccd89723722529
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 8236dc01f31141544bef88011d87a457f18072e8
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108042"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526568"
 ---
 # <a name="fastlane-for-ios--cert"></a>fastlane for iOS – cert
 
@@ -53,11 +53,15 @@ cert は、開発環境と配布環境の両方に、新しいコード署名 ID
 
 cert ユーティリティを使用するには、ターミナルの CLI に次のコマンドを入力します。
 
-    fastlane cert
+```
+fastlane cert
+```
 
 既定では、これにより配布の証明書が作成されます。 開発の証明書を作成するには、`--development` フラグを渡します。
 
-    fastlane cert --development
+```
+fastlane cert --development
+```
 
 cert により Apple ID とパスワードの入力が求められるので、ここで入力します。
 
@@ -68,7 +72,9 @@ cert により Apple ID とパスワードの入力が求められるので、�
 
 次のコマンドを使用して、Apple ID を引数として渡すこともできます。
 
-    fastlane cert -u myemailadress@domain.com
+```
+fastlane cert -u myemailadress@domain.com
+```
 
 Apple ID が複数のチームに接続されている場合は、ここに表示されます。 使用するチームに対応する番号を選択します。
 
@@ -76,7 +82,9 @@ Apple ID が複数のチームに接続されている場合は、ここに表�
 
 次のフラグを使用してチーム ID を渡すこともできます。
 
-    fastlane cert -l 2TU993NY9J
+```
+fastlane cert -l 2TU993NY9J
+```
 
 fastlane は使用可能な署名証明書がローカル コンピューターにインストールされているかどうかを確認し、されている場合はそれを使用します。
 
@@ -99,12 +107,15 @@ cert を使用する際に、次のオプションを使用して追加のサポ
 
 - 使用可能なすべてのコマンドのリストに `-–help` フラグを使用します。
 
-        fastlane cert --help
+    ```
+    fastlane cert --help
+    ```
 
 - 出力の詳細レベルを上げるには、`-–verbose` フラグを使用します。
 
-        fastlane cert --development --verbose
-
+    ```
+    fastlane cert --development --verbose
+    ```
 
 ## <a name="related-links"></a>関連リンク
 

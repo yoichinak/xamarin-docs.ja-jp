@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: aa1093336a79689380e920783dd772c5e68c76b9
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 6fd952fc929fc11d19d8ceb0153aa8d7702a21a7
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650440"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69889226"
 ---
 # <a name="customizing-a-viewcell"></a>ViewCell のカスタマイズ
 
@@ -68,6 +68,7 @@ public class NativeCell : ViewCell
   }
 }
 ```
+
 `NativeCell` クラスが .NET Standard ライブラリ プロジェクト内に作成され、カスタム セル用の API が定義されます。 カスタム セルによって、データ バインディングを利用して表示できる `Name`、`Category`、および `ImageFilename` の各プロパティが公開されます。 データ バインディングの詳細については、「[Data Binding Basics](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)」 (データ バインディングの基礎) を参照してください。
 
 <a name="Consuming_the_Custom_Cell" />

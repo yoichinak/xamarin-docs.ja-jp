@@ -6,12 +6,12 @@ ms.assetid: 7683F2B8-7FDF-48C4-8E7D-649D4D4E79F0
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: b6b95f730b966ef5edaabbe7b0f333c2cacf5bc5
-ms.sourcegitcommit: 64d6da88bb6ba222ab2decd2fdc8e95d377438a6
+ms.openlocfilehash: bc983fb43e0c649e3b7e231f42fce9d6af40e047
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58070840"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526749"
 ---
 # <a name="installing-nunit-264-using-nuget"></a>NuGet を使用する NUnit 2.6.4 のインストール
 
@@ -29,7 +29,7 @@ Visual Studio for Mac または Xamarin.UITest を使用してテストを作成
 
 -----
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 このガイドでは、モバイル アプリ プロジェクトとテスト プロジェクトについて既存のソリューションがあることを前提とします。
 
@@ -44,7 +44,7 @@ Visual Studio for Mac または Xamarin.UITest を使用してテストを作成
 
     [![](installing-nunit-using-nuget-images/add-packages-xs.png "[パッケージ] を右クリックし、ポップアップ メニューから [パッケージの追加] を選択します。")](installing-nunit-using-nuget-images/add-packages-xs.png#lightbox)
     
-1. **`NUnit version:2.6.4` を検索する** - Visual Studio for Mac では、(必要に応じて) NUnit 3.0 をアンインストールしてから NUnit 2.6.4 をダウンロードしてインストールします。 **[パッケージの追加]** ダイアログで、右上隅にある**検索**フィールドに `nunit version:2.6.4` というテキストを入力します。 検索結果から **NUnit** を選択して、**[パッケージの追加]** ボタンをクリックします。
+1. **`NUnit version:2.6.4` を検索する** - Visual Studio for Mac では、(必要に応じて) NUnit 3.0 をアンインストールしてから NUnit 2.6.4 をダウンロードしてインストールします。 **[パッケージの追加]** ダイアログで、右上隅にある**検索**フィールドに `nunit version:2.6.4` というテキストを入力します。 検索結果から **NUnit** を選択して、 **[パッケージの追加]** ボタンをクリックします。
 
     [![](installing-nunit-using-nuget-images/nunit-search-xs.png "検索結果から NUnit を選択して、[パッケージの追加] ボタンをクリックします。")](installing-nunit-using-nuget-images/nunit-search-xs.png#lightbox)
 
@@ -84,25 +84,29 @@ NUnit 3.0 以上が表示された場合は、NUnit 2.6.4 にダウングレー�
 
 1. **NUnit 3.0 をアンインストールする** - `Uninstall-Package` コマンドレットを使用して、NUnit 3.0 をアンインストールします。
 
-        <PM> Uninstall-Package NUnit -Project <TEST PROJECT NAME>
-        Attempting to gather dependencies information for package 'NUnit.3.0.1' with respect to project '<TEST PROJECT NAME>', targeting '.NETFramework,Version=v4.5'
-        Resolving actions to uninstall package 'NUnit.3.0.1'
-        Resolved actions to uninstall package 'NUnit.3.0.1'
-        Removed package 'NUnit.3.0.1' from 'packages.config'
-        Successfully uninstalled 'NUnit.3.0.1' from <TEST PROJECT NAME>
+    ```
+    <PM> Uninstall-Package NUnit -Project <TEST PROJECT NAME>
+    Attempting to gather dependencies information for package 'NUnit.3.0.1' with respect to project '<TEST PROJECT NAME>', targeting '.NETFramework,Version=v4.5'
+    Resolving actions to uninstall package 'NUnit.3.0.1'
+    Resolved actions to uninstall package 'NUnit.3.0.1'
+    Removed package 'NUnit.3.0.1' from 'packages.config'
+    Successfully uninstalled 'NUnit.3.0.1' from <TEST PROJECT NAME>
+    ```
 
 1. **NUnit 2.6.4 をインストールする** - 次のスニペットに示されているように、`Install-Package` コマンドレットを使用して NUnit 2.6.4 をインストールします。
 
-        <PM> Install-Package NUnit -Version 2.6.4 -Project <TEST PROJECT NAME>
-        Attempting to gather dependencies information for package 'NUnit.2.6.4' with respect to project '<TEST PROJECT NAME>', targeting '.NETFramework,Version=v4.5'
-        Attempting to resolve dependencies for package 'NUnit.2.6.4' with DependencyBehavior 'Lowest'
-        Resolving actions to install package 'NUnit.2.6.4'
-        Resolved actions to install package 'NUnit.2.6.4'
-        Adding package 'NUnit.2.6.4' to folder 'Z:\Desktop\DowngradeNunit\packages'
-        Added package 'NUnit.2.6.4' to folder 'Z:\Desktop\DowngradeNunit\packages'
-        Added package 'NUnit.2.6.4' to 'packages.config'
-        Successfully installed 'NUnit 2.6.4' to <TEST PROJECT NAME>
-    
+    ```
+    <PM> Install-Package NUnit -Version 2.6.4 -Project <TEST PROJECT NAME>
+    Attempting to gather dependencies information for package 'NUnit.2.6.4' with respect to project '<TEST PROJECT NAME>', targeting '.NETFramework,Version=v4.5'
+    Attempting to resolve dependencies for package 'NUnit.2.6.4' with DependencyBehavior 'Lowest'
+    Resolving actions to install package 'NUnit.2.6.4'
+    Resolved actions to install package 'NUnit.2.6.4'
+    Adding package 'NUnit.2.6.4' to folder 'Z:\Desktop\DowngradeNunit\packages'
+    Added package 'NUnit.2.6.4' to folder 'Z:\Desktop\DowngradeNunit\packages'
+    Added package 'NUnit.2.6.4' to 'packages.config'
+    Successfully installed 'NUnit 2.6.4' to <TEST PROJECT NAME>
+    ```
+
 ## <a name="summary"></a>まとめ
 
 このガイドでは、Visual Studio 2015 以降でパッケージ マネージャー コンソールを使用して、NUnit 3.0 を NUnit 2.6.4 にダウングレードする方法を説明しました。

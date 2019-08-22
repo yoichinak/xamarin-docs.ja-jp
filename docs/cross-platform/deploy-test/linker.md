@@ -1,15 +1,17 @@
 ---
 title: カスタム リンカーの構成
+description: このドキュメントでは、必要なコードがリンクされているアプリケーションから削除されないことを明示的に確認し、リンカーを構成するために使用できる XML ファイルについて説明します。
 ms.prod: xamarin
 ms.assetid: F8A99E3F-2197-4399-AC81-F1DBAB5729C9
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 333fe4163cea53217456f75249a191d66d181cb5
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: bf934d50c90efaba266cbfac00aa5140ea92009b
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526680"
 ---
 # <a name="custom-linker-configuration"></a>カスタム リンカーの構成
 
@@ -18,12 +20,12 @@ ms.lasthandoff: 05/10/2018
 型、メソッド、フィールドがアプリケーションから削除されないように、追加の定義をリンカーに指定できます。 独自のコードの場合、推奨される方法は `[Preserve]` カスタム属性を使用することです。詳細は、「[iOS でのリンク](~/ios/deploy-test/linker.md)」ガイドと「[Android でのリンク](~/android/deploy-test/linker.md)」ガイドにあります。
 ただし、SDK またはプロダクト アセンブリからの定義をいくつか必要とする場合、(必要な要素がリンカーによって削除されないコードの追加よりも) XML ファイルの利用が最適な解決策となることがあります。
 
-これを行うには、最上位要素 <linker> で XML ファイルを定義します。この要素には*アセンブリ* ノードが含まれ、アセンブリ ノードには*型*ノードが含まれ、型ノードには*メソッド* ノードと*フィールド* ノードが含まれます。
+これを行うには、最上位要素 `<linker>` で XML ファイルを定義します。この要素には*アセンブリ* ノードが含まれ、アセンブリ ノードには*型*ノードが含まれ、型ノードには*メソッド* ノードと*フィールド* ノードが含まれます。
 
 このリンカー記述ファイルが与えられたら、それをプロジェクトに追加し、次の操作を行います。
 
--  **Android の場合**: **[ビルド アクション]** を **LinkDescription** に設定します
--  **iOS の場合**: **[ビルド アクション]** を **LinkDescription** に設定します
+- **Android の場合**: **[ビルド アクション]** を **LinkDescription** に設定します
+- **iOS の場合**: **[ビルド アクション]** を **LinkDescription** に設定します
 
 
 次の例では、XML ファイルがどのようなものであるかを確認できます。

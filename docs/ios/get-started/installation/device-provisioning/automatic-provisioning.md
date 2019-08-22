@@ -8,12 +8,12 @@ author: asb3993
 ms.author: amburns
 ms.custom: video
 ms.date: 01/22/2019
-ms.openlocfilehash: d4bb117273e669cc3c520c42451296e16b6023eb
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 796c196b5c8ebcd70a0529112189cea6116a9ab0
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865318"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69890104"
 ---
 # <a name="automatic-provisioning-for-xamarinios"></a>Xamarin.iOS の自動プロビジョニング
 
@@ -43,12 +43,15 @@ _Xamarin.iOS が正常にインストールされたら、iOS 開発の次の手
 
 > [!IMPORTANT]
 > 開始する前に、[iTunes Connect](https://itunesconnect.apple.com/) または [appleid.apple.com](https://appleid.apple.com) にサインインして、最新の Apple アカウント ポリシーを承諾していることを確認します。 メッセージが表示された場合は、Apple からの新しいアカウント契約に同意する手順を完了します。 2018 年 5 月からのプライバシー契約を承諾しない場合、デバイスをプロビジョニングしようとする際に次のいずれかの警告が表示されます。
+>
 > ```
 > Unexpected authentication failure. Reason: {
 > "authType" : "sa"
 > }
 > ```
+>
 > or
+>
 > ```
 > Authentication Service Is Unavailable
 > ```

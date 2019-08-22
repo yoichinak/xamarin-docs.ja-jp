@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/05/2018
-ms.openlocfilehash: fe2cc5fb7c51425c8030d31015236473a5264efb
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: aa72daae1727e0d100592873a7895a7d8942b4f2
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509019"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69525503"
 ---
 # <a name="gdb"></a>GDB
 
@@ -24,9 +24,9 @@ Xamarin.Android 4.10 では、`_Gdb` MSBuild ターゲットを使用するこ�
 
 `gdb` を使用する場合、次の 3 つの方法があります。
 
-1.  [高速展開を有効にしたデバッグ ビルド](#Debug_Builds_with_Fast_Deployment)。
-1.  [高速展開を無効にしたデバッグ ビルド](#Debug_Builds_without_Fast_Deployment)。
-1.  [リリース ビルド](#Release_Builds)。
+1. [高速展開を有効にしたデバッグ ビルド](#Debug_Builds_with_Fast_Deployment)。
+1. [高速展開を無効にしたデバッグ ビルド](#Debug_Builds_without_Fast_Deployment)。
+1. [リリース ビルド](#Release_Builds)。
 
 
 問題が発生した場合は、「[トラブルシューティング](#Troubleshooting)」セクションを参照してください。
@@ -83,8 +83,8 @@ GNU gdb (GDB) 7.3.1-gg2
 
 次の 2 つの回避策があります。
 
--   `.__override__` ディレクトリが作成されるように、`debug.mono.log` システム プロパティを設定します。
--   `.apk` 内に `gdbserver` を含めます。
+- `.__override__` ディレクトリが作成されるように、`debug.mono.log` システム プロパティを設定します。
+- `.apk` 内に `gdbserver` を含めます。
 
 ### <a name="setting-the-debugmonolog-system-property"></a>`debug.mono.log` システム プロパティの設定
 
@@ -141,9 +141,9 @@ GNU gdb (GDB) 7.3.1-gg2
 
 `gdb` のサポートには次の 3 つが必要になります。
 
-1.  `INTERNET` アクセス許可。
-2.  有効なアプリ デバッグ。
-3.  アクセス可能な `gdbserver`。
+1. `INTERNET` アクセス許可。
+2. 有効なアプリ デバッグ。
+3. アクセス可能な `gdbserver`。
 
 アプリ デバッグでは `INTERNET` アクセス許可は既定で有効になります。 アプリケーションにまだ存在しない場合は、**Properties/AndroidManifest.xml** を編集するか、[[プロジェクトのプロパティ]](https://github.com/xamarin/recipes/tree/master/Recipes/android/general/projects/add_permissions_to_android_manifest) を編集して追加することができます。
 
@@ -161,7 +161,7 @@ GNU gdb (GDB) 7.3.1-gg2
 
 ## <a name="troubleshooting"></a>トラブルシューティング
 
-### <a name="monopmip-doesnt-work"></a>`mono_pmip` が機能しない
+### <a name="mono_pmip-doesnt-work"></a>`mono_pmip` が機能しない
 
 `mono_pmip` 関数 ([マネージド スタック フレームを取得する](https://www.mono-project.com/docs/debug+profile/debug/#debugging-with-gdb)場合に役立つ) が (現在、`_Gdb` ターゲットがプルダウンしていない) `libmonosgen-2.0.so` からエクスポートされます (この問題は今後のリリースで修正される予定です)。
 

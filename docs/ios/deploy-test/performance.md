@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 01/29/2016
-ms.openlocfilehash: 4954b83b75618128f32b0e5fceed2f04df183433
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 47211f60d55f1f355a92307eff53ed9af754eda2
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511479"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527414"
 ---
 # <a name="xamarinios-performance"></a>Xamarin.iOS のパフォーマンス
 
@@ -62,10 +62,10 @@ container.AddSubview (new MyView (container));
 
 含まれるオブジェクトがコンテナーに対するリンクを維持する場合、循環参照の処理に使用できる選択肢がいくつかあります。
 
--  コンテナーへのリンクを `null` に設定することで、手動で循環を中断する。
--  コンテナーに含まれているオブジェクトを手動で削除する。
--  オブジェクトに対して `Dispose` を呼び出す。
--  コンテナーに対して弱い参照を維持することで、循環参照を避ける。 詳細については、弱い参照のセクションを参照してください。
+- コンテナーへのリンクを `null` に設定することで、手動で循環を中断する。
+- コンテナーに含まれているオブジェクトを手動で削除する。
+- オブジェクトに対して `Dispose` を呼び出す。
+- コンテナーに対して弱い参照を維持することで、循環参照を避ける。 詳細については、弱い参照のセクションを参照してください。
 
 ### <a name="using-weakreferences"></a>弱い参照の使用
 

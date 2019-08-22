@@ -9,12 +9,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: 050f084086df02314faecaca42a93007e6cc5246
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: adfc8e34d64b6091ba8ffc56c0f93bcf560128b1
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647046"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527710"
 ---
 # <a name="hello-ios--deep-dive"></a>Hello, iOS – 深い分析
 
@@ -442,14 +442,14 @@ iOS デバイスにアプリが展開されます。
 - [**Sketch**](https://www.sketchapp.com") – Sketch は、ユーザーインターフェイス、アイコンなどをデザインするための Mac アプリです。 これは、Xamarin アプリ アイコンと起動イメージのセットをデザインするために使用されたアプリです。 Sketch 3 は、App Store で入手できます。 無料の [Sketch Tool](http://bohemiancoding.com/sketch/tool/) を試すこともできます。
 - [**Pixelmator**](http://www.pixelmator.com/) – 約 30 ドルの Mac 用の多様な画像編集アプリです。
 - [**Glyphish**](http://www.glyphish.com/) – 無料ダウンロードと有料版がある高品質のビルド済みアイコンのセットです。
-- [**Fiverr**](http://www.fiverr.com/) – 5 ドルから利用でき、さまざまなデザイナーから選択してアイコンのセットを作成できます。  見つかる場合も見つからない場合もありますが、アイコンをすぐにデザインする必要がある場合は有効なリソースです。
+- [**Fiverr**](http://www.fiverr.com/) – 5 ドルから利用でき、さまざまなデザイナーから選択してアイコンのセットを作成できます。 見つかる場合も見つからない場合もありますが、アイコンをすぐにデザインする必要がある場合は有効なリソースです。
 
 ::: zone-end
 ::: zone pivot="windows"
 
 * Visual Studio - これを使用して、アプリ用の単純なアイコン セットを IDE で直接作成できます。
 - [**Glyphish**](http://www.glyphish.com/) – 無料ダウンロードと有料版がある高品質のビルド済みアイコンのセットです。
-- [**Fiverr**](http://www.fiverr.com/) – 5 ドルから利用でき、さまざまなデザイナーから選択してアイコンのセットを作成できます。  見つかる場合も見つからない場合もありますが、アイコンをすぐにデザインする必要がある場合は有効なリソースです。
+- [**Fiverr**](http://www.fiverr.com/) – 5 ドルから利用でき、さまざまなデザイナーから選択してアイコンのセットを作成できます。 見つかる場合も見つからない場合もありますが、アイコンをすぐにデザインする必要がある場合は有効なリソースです。
 
 ::: zone-end
 

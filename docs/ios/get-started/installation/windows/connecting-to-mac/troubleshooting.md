@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 864c801597f251940e55232e8c59d3a6ea19c392
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 5722a3a208942e8ecef6e5b3c092ac6c9825395f
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865797"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69890160"
 ---
 # <a name="connection-troubleshooting-for-a-xamarinios-build-host"></a>Xamarin.iOS ビルド ホストの接続のトラブルシューティング
 
@@ -83,6 +83,7 @@ _このガイドでは、新しい接続マネージャーの使用中に発生�
     ```bash
     ssh amyb@10.1.8.95
     ```
+
     <a name="stepnine" />
 
 9. **手順 8 で成功した**場合、接続状態で `ls` のような単純なコマンドを試します。
@@ -218,7 +219,7 @@ Mac で OS X 10.11 (El Capitan) 以降を実行している限り、このメッ
 
 接続ダイアログに Mac ビルド ホストの IP アドレスが表示されないのであれば、このメッセージは無視できます。 そのダイアログに IP アドレスが_ない_場合でも、[Mac を手動で追加](~/ios/get-started/installation/windows/connecting-to-mac/index.md#manually-add-a-mac)できます。
 
-#### <a name="invalid-user-a-from-101895-and-inputuserauthrequest-invalid-user-a-preauth"></a>"Invalid user a from 10.1.8.95" (10.1.8.95 のユーザー a が無効です) と "input\_userauth\_request: 無効なユーザー a [preauth]"
+#### <a name="invalid-user-a-from-101895-and-input_userauth_request-invalid-user-a-preauth"></a>"Invalid user a from 10.1.8.95" (10.1.8.95 のユーザー a が無効です) と "input\_userauth\_request: 無効なユーザー a [preauth]"
 
 **sshd.log** を見ているとき、このメッセージに気付くことがあります。 このメッセージは通常の接続プロセスの一部です。 _SSH フィンガープリント_の取得時、Xamarin でユーザー名 **a** が一時的に利用されることで表示されます。
 

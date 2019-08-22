@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/05/2017
-ms.openlocfilehash: 4f545893ca4cde441cd05fc3d8e52ecf0f6aae98
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: c67544824f23ea72ad325d39347330a863846c2b
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669493"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526538"
 ---
 # <a name="using-mtouch-to-bundle-xamarinios-apps"></a>mtouch を使用する Xamarin.iOS アプリのバンドル
 
@@ -32,22 +32,22 @@ Mac では、`mtouch` は Xamarin.iOS にバンドルされています。 次�
 
 `mtouch` を使いやすくするには、その親ディレクトリをシステムの `PATH` 環境変数に追加します。  
 
-たとえば、Bash でこれを行うには、**~/.bash_profile** ファイルの末尾に次の行を追加します。
+たとえば、Bash でこれを行うには、 **~/.bash_profile** ファイルの末尾に次の行を追加します。
 
 ```bash
 export PATH=$PATH:/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/bin
 ```
 
 > [!WARNING]
-> `mtouch` を使う場合、**/Developer/MonoTouch/usr/bin** (**/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/bin** を示すシンボリック リンク) が存在することに依存しないでください。 このシンボリック リンクは、**/Library/Frameworks/...** にインストールされなかった古い MonoTouch リリースとの互換性を維持するためにのみ存在し、将来のリリースでは存在しなくなる可能性があります。
+> `mtouch` を使う場合、 **/Developer/MonoTouch/usr/bin** ( **/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/bin** を示すシンボリック リンク) が存在することに依存しないでください。 このシンボリック リンクは、 **/Library/Frameworks/...** にインストールされなかった古い MonoTouch リリースとの互換性を維持するためにのみ存在し、将来のリリースでは存在しなくなる可能性があります。
 
 ## <a name="building"></a>ビルド
 
 `mtouch` コマンドは 3 とおりの方法でコードをコンパイルできます。
 
--  シミュレーター テストのためにコンパイルします。
--  デバイス配置のためにコンパイルします。
--  実行可能ファイルをデバイスに配置します。
+- シミュレーター テストのためにコンパイルします。
+- デバイス配置のためにコンパイルします。
+- 実行可能ファイルをデバイスに配置します。
 
 
 ### <a name="building-for-the-simulator"></a>シミュレーターのビルド

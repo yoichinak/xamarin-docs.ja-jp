@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: c03815776921a61c1f54136e3f09c0996dff71d3
-ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
+ms.openlocfilehash: f632b44e087c0e380ecd81c2af7db3d49c072f7e
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51528417"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69887743"
 ---
 # <a name="the-itunesmetadataplist-file-in-xamarinios-apps"></a>Xamarin.iOS アプリの iTunesMetadata.plist ファイル
 
@@ -108,7 +108,7 @@ iTunes App Store での販売または無料リリースのために iOS アプ�
 
 ### <a name="uirequireddevicecapabilities"></a>UIRequiredDeviceCapabilities
 
-`UIRequiredDeviceCapabilities` キーにより、iTunes は、特定の iOS デバイスにインストールする前に、iOS アプリケーションに必要なデバイス固有機能を認識できます。 機能 (`<key>...</key>`) の辞書 (`<dict>...</dict>`) と各機能のブール値として提供されます。 機能の値が `true` の場合、その機能は存在する必要があります。 `false` の場合、その機能はデバイスに存在することはできません。 例:
+`UIRequiredDeviceCapabilities` キーにより、iTunes は、特定の iOS デバイスにインストールする前に、iOS アプリケーションに必要なデバイス固有機能を認識できます。 機能 (`<key>...</key>`) の辞書 (`<dict>...</dict>`) と各機能のブール値として提供されます。 機能の値が `true` の場合、その機能は存在する必要があります。 `false` の場合、その機能はデバイスに存在することはできません。 次に例を示します。
 
 ```xml
 <key>UIRequiredDeviceCapabilities</key>
@@ -119,6 +119,7 @@ iTunes App Store での販売または無料リリースのために iOS アプ�
     <true/>
 </dict>
 ```
+
 このアプリケーションをデバイスにインストールする前に、iOS デバイスが ARM7 命令をサポートし、前面カメラを持っている必要があることを指定します。 指定できる値の完全な一覧については、Apple のドキュメントで [UIRequiredDeviceCapabilities](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html#//apple_ref/doc/uid/TP40009252-SW3) をご覧ください。
 
 ### <a name="artistname-and-playlistartistname"></a>artistName、playlistArtistName
@@ -298,11 +299,11 @@ iOS アプリケーションの場合、現在定義されているジャンル�
 
 次の手順で行います。
 
-1. **ソリューション エクスプローラー**で Xamarin.iOS プロジェクト ファイルを右クリックし、**[追加]** > **[新しいファイル...]** の順に選びます。
-2. [新しいファイル] ダイアログで、**[iOS]** > **[プロパティ一覧]** の順に選びます。
+1. **ソリューション エクスプローラー**で Xamarin.iOS プロジェクト ファイルを右クリックし、 **[追加]**  >  **[新しいファイル...]** の順に選びます。
+2. [新しいファイル] ダイアログで、 **[iOS]**  >  **[プロパティ一覧]** の順に選びます。
 
     ![](itunesmetadata-images/image01.png "[IOS] の [プロパティ一覧] を選択します")
-3. **[名前]** に「`iTunesMetadata`」と入力し、**[新規]** ボタンをクリックします。
+3. **[名前]** に「`iTunesMetadata`」と入力し、 **[新規]** ボタンをクリックします。
 4. **ソリューション エクスプローラー**で `iTunesMetadata.plist` ファイルをダブルクリックして、編集用に開きます。
 
     ![](itunesmetadata-images/image02.png "iTunesMetadata.plist エディター")
@@ -333,8 +334,8 @@ iOS アプリケーションの場合、現在定義されているジャンル�
 2. 前の「[iTunesMetadata.plist の内容](#iTunesMetadata_contents)」セクションから内容の例をコピーします。
 3. ファイルに内容を貼り付け、必要に応じて編集します。
 4. ファイルを保存し、Visual Studio for Mac に戻ります。
-5. **ソリューション エクスプローラー**で Xamarin.iOS プロジェクト ファイルを右クリックし、**[追加]** > **[既存のファイル...]** の順に選びます。
-6. [ファイルを開く] ダイアログで、上で作成した `iTunesMetadata.plist` ファイルを選び、**[OK]** ボタンをクリックします。
+5. **ソリューション エクスプローラー**で Xamarin.iOS プロジェクト ファイルを右クリックし、 **[追加]**  >  **[既存のファイル...]** の順に選びます。
+6. [ファイルを開く] ダイアログで、上で作成した `iTunesMetadata.plist` ファイルを選び、 **[OK]** ボタンをクリックします。
 7. このファイルの **[ビルド アクション]** は **[なし]** のままにします。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
@@ -347,8 +348,8 @@ Visual Studio の Xamarin プラグインは `Info.plist` および `Entitlement
 2. 前の「[iTunesMetadata.plist の内容](#iTunesMetadata_contents)」セクションから内容の例をコピーします。
 3. ファイルに内容を貼り付け、必要に応じて編集します。
 4. ファイルを保存し、Visual Studio に戻ります。
-5. **ソリューション エクスプローラー**で Xamarin.iOS プロジェクト ファイルを右クリックし、**[追加]** > **[既存のファイル...]** の順に選びます。
-6. [ファイルを開く] ダイアログで、上で作成した `iTunesMetadata.plist` ファイルを選び、**[開く]** ボタンをクリックします。
+5. **ソリューション エクスプローラー**で Xamarin.iOS プロジェクト ファイルを右クリックし、 **[追加]**  >  **[既存のファイル...]** の順に選びます。
+6. [ファイルを開く] ダイアログで、上で作成した `iTunesMetadata.plist` ファイルを選び、 **[開く]** ボタンをクリックします。
 7. このファイルの **[ビルド アクション]** は **[なし]** のままにします。
 
 -----

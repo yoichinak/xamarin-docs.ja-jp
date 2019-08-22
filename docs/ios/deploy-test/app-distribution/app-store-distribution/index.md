@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/23/2017
-ms.openlocfilehash: 8b3782554615c5ce3350294fc3300e3c369f8af7
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: e6f7ec4fe018181b6f470de4201d5e5a3f90d4da
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67831520"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527632"
 ---
 # <a name="app-store-distribution"></a>App Store 配布
 
@@ -64,11 +64,11 @@ Xamarin.iOS アプリケーションをリリースするためにどのよう�
 
 または、Xcode の [Preferences]\(環境設定\) ダイアログを使用して証明書を要求することができます。 この操作を行うには、次の手順に従います。
 
-1.   チームを選択し、 **[証明書の管理...** ] をクリックします。[![](images/selectteam.png "チームを選択して、詳細を表示する")](images/selectteam.png#lightbox)
+1. チームを選択し、 **[証明書の管理...** ] をクリックします。[![](images/selectteam.png "チームを選択して、詳細を表示する")](images/selectteam.png#lightbox)
 
-2.   次に、 **[iOS Distribution Certificate]\(iOS 配布証明書\)** の横の **[作成]** ボタンをクリックします。[![](images/selectcert.png "iOS 配布証明書を作成する")](images/selectcert.png#lightbox)
+2. 次に、 **[iOS Distribution Certificate]\(iOS 配布証明書\)** の横の **[作成]** ボタンをクリックします。[![](images/selectcert.png "iOS 配布証明書を作成する")](images/selectcert.png#lightbox)
 
-3.   チーム権限に応じて、次のように署名 ID が生成されます。チーム エージェントまたは管理者が承認するまで待機する必要がある場合もあります。[![](images/generated.png "署名 ID が生成され、ダイアログが表示されます")](images/generated.png#lightbox)
+3. チーム権限に応じて、次のように署名 ID が生成されます。チーム エージェントまたは管理者が承認するまで待機する必要がある場合もあります。[![](images/generated.png "署名 ID が生成され、ダイアログが表示されます")](images/generated.png#lightbox)
 
 
 <a name="creatingprofile" />

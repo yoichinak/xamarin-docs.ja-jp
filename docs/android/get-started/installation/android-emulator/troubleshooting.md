@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/27/2018
-ms.openlocfilehash: 5f8d977c126cfe4bdfdb48470841ee17de6bda31
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 421d51cbb1ae3adb80aef6e4bf3cf1da38d6de8e
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117734"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69887823"
 ---
 # <a name="android-emulator-troubleshooting"></a>Android Emulator のトラブルシューティング
 
@@ -29,7 +29,7 @@ _この記事では、Android Emulator の構成および実行中に発生す�
 
 エミュレーターでの APK のインストールの失敗、または Android Debug Bridge (**adb**) の実行の失敗に関するエラーが表示された場合は、Android SDK がエミュレーターに接続できることを確認してください。 エミュレーターの接続を確認するには、次の手順を実行します。
 
-1. **Android Device Manager** からエミュレーターを起動します (仮想デバイスを選択し、**[開始]** をクリックします)。
+1. **Android Device Manager** からエミュレーターを起動します (仮想デバイスを選択し、 **[開始]** をクリックします)。
 
 2. コマンド プロンプトを開き、**adb** がインストールされているフォルダーに移動します。 既定の場所に Android SDK がインストールされている場合、**adb** は **C:\\Program Files (x86)\\Android\\android-sdk\\platform-tools\\adb.exe** にあります。そうでない場合は、このパスをお使いのコンピューター上にある Android SDK の場所に変更します。
 
@@ -39,7 +39,7 @@ _この記事では、Android Emulator の構成および実行中に発生す�
    adb devices
    ```
 
-4. Android SDK からエミュレーターにアクセスできる場合は、接続されているデバイスの一覧にエミュレーターが表示されます。 例:
+4. Android SDK からエミュレーターにアクセスできる場合は、接続されているデバイスの一覧にエミュレーターが表示されます。 次に例を示します。
 
    ```shell
    List of devices attached
@@ -152,11 +152,11 @@ VT feature disabled in BIOS/UEFI
 
 ### <a name="hyper-v-issues"></a>Hyper-V の問題
 
-場合によっては、**[Windows の機能の有効化または無効化]** ダイアログで **[Hyper-V]** と **[Windows Hypervisor Platform]** の両方を有効化すると、Hyper-V が正しく有効化されない場合があります。 Hyper-V が有効になっていることを確認するには、次の手順を実行します。
+場合によっては、 **[Windows の機能の有効化または無効化]** ダイアログで **[Hyper-V]** と **[Windows Hypervisor Platform]** の両方を有効化すると、Hyper-V が正しく有効化されない場合があります。 Hyper-V が有効になっていることを確認するには、次の手順を実行します。
 
 1. Windows の検索ボックスに「**powershell**」と入力します。
 
-2. 検索結果で **[Windows PowerShell]** を右クリックし、**[管理者として実行]** を選択します。
+2. 検索結果で **[Windows PowerShell]** を右クリックし、 **[管理者として実行]** を選択します。
 
 3. PowerShell コンソールで、次のコマンドを入力します。
 
@@ -180,6 +180,7 @@ VT feature disabled in BIOS/UEFI
     ```powershell
     Get-WindowsOptionalFeature -FeatureName HypervisorPlatform -Online
     ```
+
     ハイパーバイザーが有効になっていない場合は、HypervisorPlatform の状態が **Disabled** (無効) であることを示す次の例のようなメッセージが表示されます。
 
     ```
@@ -284,34 +285,36 @@ Device Guard と Credential Guard により、Windows コンピューター上�
 
 1. Windows 検索ボックスに「**システム情報**」と入力し、検索結果で **[システム情報]** を選択します。
 
-2. **[システムの概要]** で、**[Device Guard 仮想化ベースのセキュリティ]** があり、**実行**状態になっているかどうかを確認します。
+2. **[システムの概要]** で、 **[Device Guard 仮想化ベースのセキュリティ]** があり、**実行**状態になっているかどうかを確認します。
 
    [![Device Guard があり、実行されている](troubleshooting-images/win/04-device-guard-sml.png)](troubleshooting-images/win/04-device-guard.png#lightbox)
 
 Device Guard が有効になっている場合は、次の手順に従って無効にします。
 
-1. 前のセクションで説明したように、(**[Windows の機能の有効化または無効化**] の下で) **HYPER-V** が無効になっていることを確認します。
+1. 前のセクションで説明したように、( **[Windows の機能の有効化または無効化**] の下で) **HYPER-V** が無効になっていることを確認します。
 
 2. Windows 検索ボックスで、「**gpedit**」を入力し、検索結果で **[グループ ポリシーの編集]** を選択します。 この手順により**ローカル グループ ポリシー エディター**が起動します。
 
-3. **ローカル グループ ポリシー エディター**で、**[コンピューターの構成]、[管理用テンプレート]、[システム]、[Device Guard]** の順に移動します。
+3. **ローカル グループ ポリシー エディター**で、 **[コンピューターの構成]、[管理用テンプレート]、[システム]、[Device Guard]** の順に移動します。
 
    [![ローカル グループ ポリシー エディターでの Device Guard](troubleshooting-images/win/05-group-policy-editor-sml.png)](troubleshooting-images/win/05-group-policy-editor.png#lightbox)
 
 4. (上記のように) **[仮想化ベースのセキュリティを有効にする]** を **[無効]** に変更し、**ローカル グループ ポリシー エディター**を終了します。
 
-5. Windows 検索ボックスに「**cmd**」を入力します。 検索結果に **[コマンド プロンプト]** が表示されたら、**[コマンド プロンプト]** を右クリックして **[管理者として実行]** を選択します。
+5. Windows 検索ボックスに「**cmd**」を入力します。 検索結果に **[コマンド プロンプト]** が表示されたら、 **[コマンド プロンプト]** を右クリックして **[管理者として実行]** を選択します。
 
 6. 次のコマンドをコピーしてコマンド プロンプト ウィンドウに貼り付けます (ドライブ **Z:** が使用中の場合は、代わりに使用する未使用のドライブ文字を選択してください)。
 
-        mountvol Z: /s
-        copy %WINDIR%\System32\SecConfig.efi Z:\EFI\Microsoft\Boot\SecConfig.efi /Y
-        bcdedit /create {0cb3b571-2f2e-4343-a879-d86a476d7215} /d "DebugTool" /application osloader
-        bcdedit /set {0cb3b571-2f2e-4343-a879-d86a476d7215} path "\EFI\Microsoft\Boot\SecConfig.efi"
-        bcdedit /set {bootmgr} bootsequence {0cb3b571-2f2e-4343-a879-d86a476d7215}
-        bcdedit /set {0cb3b571-2f2e-4343-a879-d86a476d7215} loadoptions DISABLE-LSA-ISO,DISABLE-VBS
-        bcdedit /set {0cb3b571-2f2e-4343-a879-d86a476d7215} device partition=Z:
-        mountvol Z: /d
+    ```cmd
+    mountvol Z: /s
+    copy %WINDIR%\System32\SecConfig.efi Z:\EFI\Microsoft\Boot\SecConfig.efi /Y
+    bcdedit /create {0cb3b571-2f2e-4343-a879-d86a476d7215} /d "DebugTool" /application osloader
+    bcdedit /set {0cb3b571-2f2e-4343-a879-d86a476d7215} path "\EFI\Microsoft\Boot\SecConfig.efi"
+    bcdedit /set {bootmgr} bootsequence {0cb3b571-2f2e-4343-a879-d86a476d7215}
+    bcdedit /set {0cb3b571-2f2e-4343-a879-d86a476d7215} loadoptions DISABLE-LSA-ISO,DISABLE-VBS
+    bcdedit /set {0cb3b571-2f2e-4343-a879-d86a476d7215} device partition=Z:
+    mountvol Z: /d
+    ```
 
 7. コンピューターを再起動する 起動画面に、次のようなメッセージのプロンプトが表示されます。
 
@@ -374,7 +377,7 @@ Component Intel x86 Emulator Accelerator (HAXM installer) r6.2.1 [Extra: (Intel 
 
 エミュレーターでの APK のインストールの失敗、または Android Debug Bridge (**adb**) の実行の失敗に関するエラーが表示された場合は、Android SDK がエミュレーターに接続できることを確認してください。 接続を確認するには、次の手順を実行します。
 
-1. **Android Device Manager** からエミュレーターを起動します (仮想デバイスを選択し、**[開始]** をクリックします)。
+1. **Android Device Manager** からエミュレーターを起動します (仮想デバイスを選択し、 **[開始]** をクリックします)。
 
 2. コマンド プロンプトを開き、**adb** がインストールされているフォルダーに移動します。 既定の場所に Android SDK がインストールされている場合、**adb** は **~/Library/Developer/Xamarin/android-sdk-macosx/platform-tools/adb** にあります。そうでない場合は、このパスをご使用のコンピューター上にある Android SDK の場所に変更します。
 
@@ -384,7 +387,7 @@ Component Intel x86 Emulator Accelerator (HAXM installer) r6.2.1 [Extra: (Intel 
    adb devices
    ```
 
-4. Android SDK からエミュレーターにアクセスできる場合は、接続されているデバイスの一覧にエミュレーターが表示されます。 例:
+4. Android SDK からエミュレーターにアクセスできる場合は、接続されているデバイスの一覧にエミュレーターが表示されます。 次に例を示します。
 
    ```shell
    List of devices attached
