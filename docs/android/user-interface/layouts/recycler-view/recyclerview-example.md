@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/30/2018
-ms.openlocfilehash: 82423e48f844cde60bcd5e85c5bbe3cb8bc856b8
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: ca80dc9a064e81d9b81b1cd53237df818d409576
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522470"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69887541"
 ---
 # <a name="a-basic-recyclerview-example"></a>基本的な RecyclerView の例
 
@@ -145,6 +145,7 @@ public class PhotoViewHolder : RecyclerView.ViewHolder
     }
 }
 ```
+
 このコード例`PhotoViewHolder`では、をラップする`PhotoViewHolder`親項目ビュー `CardView`() への参照がコンストラクターに渡されます。 常に親項目ビューを基本コンストラクターに転送することに注意してください。 コンストラクター `PhotoViewHolder`は親`FindViewById`項目ビューでを呼び出して、それぞれの子ビュー参照を`ImageView`検索し`TextView`、それぞれの結果をプロパティ`Image`と`Caption`プロパティに格納します。 アダプターは、この`CardView`子ビューを新しいデータで更新するときに、これらのプロパティからビュー参照を取得します。
 
 の詳細`RecyclerView.ViewHolder`については、 [RecyclerView クラスのリファレンス](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ViewHolder.html)を参照してください。

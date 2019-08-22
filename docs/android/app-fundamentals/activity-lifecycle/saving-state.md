@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 9fafc6965c5d2dec79f440579a5cf3746a545bae
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: febb9b297712a97c03613468b79ca583ec300e77
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644397"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69887725"
 ---
 # <a name="walkthrough---saving-the-activity-state"></a>チュートリアル - アクティビティの状態を保存する
 
@@ -26,7 +26,7 @@ _アクティビティライフサイクルガイドでは、状態の保存の�
 
 ### <a name="viewing-state-transitions"></a>状態遷移の表示
 
-このサンプルの各メソッドは、アクティビティの状態を示すために IDE アプリケーションの出力ウィンドウに書き込みます。 (Visual Studio で [出力] ウィンドウを開くには、 **CTRL + ALT + O キーを押し**ます。 Visual Studio for Mac で [出力] ウィンドウを開くには、[**表示 > パッド > アプリケーション出力**] をクリックします)。
+このサンプルの各メソッドは、アクティビティの状態を示すために IDE アプリケーションの出力ウィンドウに書き込みます。 (Visual Studio で 出力 ウィンドウを開くには、 **CTRL + ALT + O キーを押し**ます。 Visual Studio for Mac で 出力 ウィンドウを開くには、**表示 > パッド > アプリケーション出力** をクリックします)。
 
 アプリが初めて起動すると、[出力] ウィンドウに*アクティビティ A*の状態の変化が表示されます。 
 
@@ -36,7 +36,7 @@ _アクティビティライフサイクルガイドでは、状態の保存の�
 [ActivityLifecycle.MainActivity] Activity A - OnResume
 ```
 
-[**アクティビティ b の開始**] ボタンをクリックすると、アクティビティ*b*が状態の変化を経ている間、*アクティビティ a が*一時停止して停止します。 
+**[アクティビティ b の開始]** ボタンをクリックすると、アクティビティ*b*が状態の変化を経ている間、*アクティビティ a が*一時停止して停止します。 
 
 ```shell
 [ActivityLifecycle.MainActivity] Activity A - OnPause
@@ -50,7 +50,7 @@ _アクティビティライフサイクルガイドでは、状態の保存の�
 
 [![アクティビティ B 画面](saving-state-images/02-activity-b-sml.png)](saving-state-images/02-activity-b.png#lightbox)
 
-[**戻る**] ボタンをクリックすると、*アクティビティ B*が破棄され、*アクティビティ a*が再開されます。 
+**[戻る]** ボタンをクリックすると、*アクティビティ B*が破棄され、*アクティビティ a*が再開されます。 
 
 ```shell
 [ActivityLifecycle.SecondActivity] Activity B - OnPause
@@ -60,6 +60,7 @@ _アクティビティライフサイクルガイドでは、状態の保存の�
 [ActivityLifecycle.SecondActivity] Activity B - OnStop
 [ActivityLifecycle.SecondActivity] Activity B - OnDestroy
 ```
+
 ### <a name="adding-a-click-counter"></a>Click カウンターを追加する
 
 次に、アプリケーションを変更して、クリックされた回数をカウントして表示するボタンを作成します。 まず、インスタンス変数を`_counter`次のように`MainActivity`追加してみましょう。

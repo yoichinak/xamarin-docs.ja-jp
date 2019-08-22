@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: febfa23ecb2f1536631b3009d6ddc614fa355f01
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 3e6bc829ec947f8f3c01c7ef9679a5feadf4a42a
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656500"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69887376"
 ---
 # <a name="databases-in-xamarinmac"></a>Xamarin. Mac のデータベース
 
@@ -50,7 +50,7 @@ Xcode の Interface Builder の UI 要素にバインドされる SQLite デー�
 次の手順で行います。
 
 1. **Solution Pad**で、 **[参照]** フォルダーを右クリックし、 **[参照の編集]** を選択します。
-2. 次のように、 **Mono** **と system.string**の両方のアセンブリを選択します。 
+2. 次のように、 **Mono**と system.string の両方のアセンブリを選択します。 
 
     [![必要な参照を追加しています](databases-images/reference01.png "必要な参照を追加しています")](databases-images/reference01-large.png#lightbox)
 3. **[OK]** ボタンをクリックして変更を保存し、参照を追加します。
@@ -612,6 +612,7 @@ for (nuint n = 0; n < People.Count; ++n) {
     Person.Update (conn);
 }
 ```
+
 #### <a name="loading-a-record"></a>レコードを読み込んでいます
 
 次のコードは、SQLite データベースから既存のレコードを読み込むために追加されました。
@@ -1971,6 +1972,7 @@ namespace MacDatabase
 [PrimaryKey, AutoIncrement]
 public int ID { get; set; }
 ```
+
 ### <a name="initializing-the-database"></a>データベースを初期化しています
 
 データベースへの読み取りと書き込みをサポートするようにデータモデルを変更したうえで、データベースへの接続を開き、最初の実行時に初期化する必要があります。 次のコードを追加してみましょう。

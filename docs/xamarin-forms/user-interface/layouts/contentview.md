@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 08/14/2019
-ms.openlocfilehash: e340b45148c7528eff1aa511ee9902a4ac2658c0
-ms.sourcegitcommit: 9178e2e689f027212ea3e623b556b312985d79fe
+ms.openlocfilehash: 379791d4dda676140425d79eca696cdca94cd55b
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/21/2019
-ms.locfileid: "69658159"
+ms.locfileid: "69888432"
 ---
 # <a name="xamarinforms-contentview"></a>Xamarin. Forms ContentView
 
@@ -61,7 +61,7 @@ Xamarin [`ContentView`](xref:Xamarin.Forms.ContentView)クラスは、単一の`
 > [!NOTE]
 > プロパティ`BorderColor`は、デモンストレーションの目的で複数の項目に影響します。 このプロパティは、必要に応じて3つのプロパティに分けることができます。
 
-各プロパティは、 `BindableProperty`インスタンスによってサポートされます。 バッキング`BindableProperty`では、MVVM パターンを使用して、各プロパティのスタイル設定とバインドを行うことができます。 詳細については、「 [MVVM を使用したデータのバインド](#bind-data-with-mvvm)」を参照してください。
+各プロパティは、 `BindableProperty`インスタンスによってサポートされます。 バッキング`BindableProperty`では、MVVM パターンを使用して、各プロパティのスタイル設定とバインドを行うことができます。
 
 次の例は、バッキング`BindableProperty`を作成する方法を示しています。
 
@@ -151,117 +151,6 @@ CardView card = new CardView
     IconImageSource = ImageSource.FromFile("user.png")
 };
 ```
-
-### <a name="bind-data-with-mvvm"></a>MVVM を使用してデータをバインドする
-
-`CardView`クラス`BindableProperty`のオブジェクトは、モデルビュービューモデル (MVVM) スタイルのバインドを許可します。 サンプルアプリケーションには、 `PersonCollectionViewModel`単一のコレクションプロパティを定義するクラスが含まれています。
-
-```csharp
-public class PersonCollectionViewModel : INotifyPropertyChanged
-{
-    ...
-    public List<PersonViewModel> Items
-    {
-        get
-        {
-            return items;
-        }
-        set
-        {
-            items = value;
-            NotifyPropertyChanged();
-        }
-    }
-    ...
-}
-```
-
-クラス`PersonViewModel`は、個人プロファイルを表します。
-
-```csharp
-public class PersonViewModel : INotifyPropertyChanged
-{
-    ...
-
-    string photo;
-    public string Photo
-    {
-        get
-        {
-            return photo;
-        }
-        set
-        {
-            photo = value;
-            NotifyPropertyChanged();
-        }
-    }
-
-    string name;
-    public string Name
-    {
-        get
-        {
-            return name;
-        }
-        set
-        {
-            name = value;
-            NotifyPropertyChanged();
-        }
-    }
-
-    string bio;
-    public string Bio
-    {
-        get
-        {
-            return bio;
-        }
-        set
-        {
-            bio = value;
-            NotifyPropertyChanged();
-        }
-    }
-    ...
-}
-```
-
-は`CardView` 、オブジェクトの`PersonViewModel`コレクションをカードの一覧として表示するために使用できます。 次の例は、 `PersonViewCollection`インスタンスを XAML の`StackLayout`インスタンスにバインドする方法を示しています。
-
-```xaml
-<StackLayout HorizontalOptions="Fill"
-             VerticalOptions="Fill"
-             BindableLayout.ItemsSource="{Binding Items}">
-    <BindableLayout.ItemTemplate>
-        <DataTemplate>
-            <controls:CardView Margin="4"
-                               BorderColor="DarkGray"
-                               IconBackgroundColor="SlateGray"
-                               BindingContext="{Binding .}"
-                               CardTitle="{Binding Name}"
-                               CardDescription="{Binding Bio}"
-                               IconImageSource="{Binding Photo}"/>
-        </DataTemplate>
-    </BindableLayout.ItemTemplate>
-</StackLayout>
-```
-
-`PersonViewCollection`インスタンスの`StackLayout`プロパティは、バインド可能なレイアウトを使用してにバインドされます。 `Items` は`DataTemplate` 、各`CardView`オブジェクトの外観と、のプロパティに`PersonViewModel`バインドするデータを定義します。 を設定`PersonView` `Items`すると、コレクション内のオブジェクトごとにオブジェクトが作成されます。`CardView` `BindingContext` は`BindingContext` 、次の例に示すように設定されます。
-
-```csharp
-public partial class CardViewMvvmPage : ContentPage
-{
-    public CardViewMvvmPage()
-    {
-        InitializeComponent();
-        BindingContext = DataService.GetPersonCollection();
-    }
-}
-```
-
-データバインディングの詳細については、「 [Xamarin. Forms Data binding](~/xamarin-forms/app-fundamentals/data-binding/index.md)」を参照してください。 `BindableProperty`オブジェクトの詳細については、「バインド可能な[プロパティ](~/xamarin-forms/xaml/bindable-properties.md)」を参照してください。
 
 ## <a name="customize-appearance-with-a-controltemplate"></a>ControlTemplate を使用して外観をカスタマイズする
 

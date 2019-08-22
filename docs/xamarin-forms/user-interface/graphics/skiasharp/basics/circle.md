@@ -7,12 +7,12 @@ ms.assetid: E3A4E373-F65D-45C8-8E77-577A804AC3F8
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 484a3ac742d162e1d6faaa38ad2e4eb056ed64a3
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 876379a1d515517054d9e0fa2657e8bc10dc749f
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644483"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69888519"
 ---
 # <a name="drawing-a-simple-circle-in-skiasharp"></a>SkiaSharp の単純な円を描画
 
@@ -138,6 +138,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
     canvas.DrawCircle(args.Info.Width / 2, args.Info.Height / 2, 100, paint);
 }
 ```
+
 今回は、`DrawCircle`呼び出しの入力の新しいプロパティを使用して、円、`SKPaint`オブジェクト。
 
 IOS、Android、およびユニバーサル Windows プラットフォームで実行されているプログラムを次に示します。

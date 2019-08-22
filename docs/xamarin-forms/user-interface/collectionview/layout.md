@@ -6,13 +6,13 @@ ms.assetid: 5FE78207-1BD6-4706-91EF-B13932321FC9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/01/2019
-ms.openlocfilehash: 5fb92882f443007e5b3dd693f54e582757db1905
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.date: 08/12/2019
+ms.openlocfilehash: e22b79fada5582adfec05ce7c5ebeddd6fe7e5d2
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68739019"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69888656"
 ---
 # <a name="xamarinforms-collectionview-layout"></a>CollectionView レイアウト
 
@@ -105,16 +105,12 @@ ms.locfileid: "68739019"
 </CollectionView>
 ```
 
-または、 [`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout)プロパティを[`ListItemsLayout`](xref:Xamarin.Forms.ListItemsLayout)クラスのオブジェクトに設定し、列挙型の`Vertical` [`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation)メンバーを引数として指定する方法もあります。
+または、 [`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout)プロパティを[`ListItemsLayout`](xref:Xamarin.Forms.ListItemsLayout)クラスのオブジェクトに設定して、列挙体`Orientation`の`Vertical` [`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation)メンバーをプロパティ値として指定する方法もあります。
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}">
     <CollectionView.ItemsLayout>
-        <ListItemsLayout>
-            <x:Arguments>
-                <ItemsLayoutOrientation>Vertical</ItemsLayoutOrientation>    
-            </x:Arguments>
-        </ListItemsLayout>
+        <ListItemsLayout Orientation="Vertical" />
     </CollectionView.ItemsLayout>
     ...
 </CollectionView>
@@ -173,16 +169,12 @@ CollectionView collectionView = new CollectionView
 </CollectionView>
 ```
 
-また[`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout) 、列挙体の[`ListItemsLayout`](xref:Xamarin.Forms.ListItemsLayout) `Horizontal`メンバーを引数として指定して、プロパティをオブジェクトに設定することもできます。 [`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation)
+または、 [`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout)プロパティを[`ListItemsLayout`](xref:Xamarin.Forms.ListItemsLayout)クラスのオブジェクトに設定して、列挙体`Orientation`の`Horizontal` [`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation)メンバーをプロパティ値として指定する方法もあります。
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}">
     <CollectionView.ItemsLayout>
-        <ListItemsLayout>
-            <x:Arguments>
-                <ItemsLayoutOrientation>Horizontal</ItemsLayoutOrientation>    
-            </x:Arguments>
-        </ListItemsLayout>
+        <ListItemsLayout Orientation="Horizontal" />
     </CollectionView.ItemsLayout>
     ...
 </CollectionView>
@@ -313,6 +305,147 @@ CollectionView collectionView = new CollectionView
 既定では、水平[`GridItemsLayout`](xref:Xamarin.Forms.GridItemsLayout)方向には1行に項目が表示されます。 ただし、この例では、`GridItemsLayout.Span` プロパティに 4 を設定しています。 これによって 4 行のグリッドになり、新しい項目が追加されると水平方向に拡大します。
 
 [IOS および Android(layout-images/horizontal-grid.png "CollectionView の水平グリッドレイアウト")![の CollectionView 水平グリッドレイアウトのスクリーンショット]](layout-images/horizontal-grid-large.png#lightbox "CollectionView 水平グリッドレイアウト")
+
+## <a name="headers-and-footers"></a>ヘッダーとフッター
+
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)リスト内の項目と共にスクロールするヘッダーとフッターを表示できます。 ヘッダーとフッターには、文字列、ビュー、また[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)はオブジェクトを指定できます。
+
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)ヘッダーとフッターを指定するための次のプロパティを定義します。
+
+- `Header`型`object`のは、リストの先頭に表示される文字列、バインド、またはビューを指定します。
+- `HeaderTemplate`型[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)のは、の書式`DataTemplate`設定に使用`Header`するを指定します。
+- `Footer`型`object`のは、リストの末尾に表示される文字列、バインド、またはビューを指定します。
+- `FooterTemplate`型[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)のは、の書式`DataTemplate`設定に使用`Footer`するを指定します。
+
+これらのプロパティは、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトでサポートされます。つまり、このプロパティはデータ バインドの対象となることを意味します。
+
+> [!IMPORTANT]
+> 現在、ヘッダーとフッターは Android でのみサポートされています。
+
+水平方向に拡張されるレイアウトにヘッダーが追加されると、左から右にヘッダーが表示されます。 同様に、水平方向に拡大するレイアウトにフッターを追加すると、一覧の右側にフッターが表示されます。
+
+### <a name="display-strings-in-the-header-and-footer"></a>ヘッダーとフッターに文字列を表示する
+
+プロパティ`Header` `string`と`Footer`プロパティは、次の例に示すように、値に設定できます。
+
+```xaml
+<CollectionView ItemsSource="{Binding Monkeys}"
+                Header="Monkeys"
+                Footer="2019">
+    ...
+</CollectionView>
+```
+
+同等のコードをC#で示します。
+
+```csharp
+CollectionView collectionView = new CollectionView
+{
+    Header = "Monkeys",
+    Footer = "2019"
+};
+collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
+```
+
+### <a name="display-views-in-the-header-and-footer"></a>ヘッダーとフッターにビューを表示する
+
+プロパティ`Header` と`Footer`プロパティはそれぞれ、ビューに設定できます。 1つのビュー、または複数の子ビューを含むビューを指定できます。 次の例では`Header` 、 `Footer` [`Label`](xref:Xamarin.Forms.Label)オブジェクトを含む[`StackLayout`](xref:Xamarin.Forms.StackLayout)オブジェクトにそれぞれ設定されているプロパティとプロパティを示しています。
+
+```xaml
+<CollectionView ItemsSource="{Binding Monkeys}">
+    <CollectionView.Header>
+        <StackLayout BackgroundColor="LightGray">
+            <Label Margin="10,0,0,0"
+                   Text="Monkeys"
+                   FontSize="Small"
+                   FontAttributes="Bold" />
+        </StackLayout>
+    </CollectionView.Header>
+    <CollectionView.Footer>
+        <StackLayout BackgroundColor="LightGray">
+            <Label Margin="10,0,0,0"
+                   Text="Friends of Xamarin Monkey"
+                   FontSize="Small"
+                   FontAttributes="Bold" />
+        </StackLayout>
+    </CollectionView.Footer>
+    ...
+</CollectionView>
+```
+
+同等のコードをC#で示します。
+
+```csharp
+CollectionView collectionView = new CollectionView
+{
+    Header = new StackLayout
+    {
+        Children =
+        {
+            new Label { Text = "Monkeys", ... }
+        }
+    },
+    Footer = new StackLayout
+    {
+        Children =
+        {
+            new Label { Text = "Friends of Xamarin Monkey", ... }
+        }
+    }
+};
+collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
+```
+
+### <a name="display-a-templated-header-and-footer"></a>テンプレート化されたヘッダーとフッターを表示する
+
+プロパティ`HeaderTemplate` [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)と`FooterTemplate`プロパティは、ヘッダーとフッターの書式設定に使用されるオブジェクトに設定できます。 このシナリオ`Header`では、次`Footer`の例に示すように、プロパティとプロパティを、適用するテンプレートの現在のソースにバインドする必要があります。
+
+```xaml
+<CollectionView ItemsSource="{Binding Monkeys}"
+                Header="{Binding .}"
+                Footer="{Binding .}">
+    <CollectionView.HeaderTemplate>
+        <DataTemplate>
+            <StackLayout BackgroundColor="LightGray">
+                <Label Margin="10,0,0,0"
+                       Text="Monkeys"
+                       FontSize="Small"
+                       FontAttributes="Bold" />
+            </StackLayout>
+        </DataTemplate>
+    </CollectionView.HeaderTemplate>
+    <CollectionView.FooterTemplate>
+        <DataTemplate>
+            <StackLayout BackgroundColor="LightGray">
+                <Label Margin="10,0,0,0"
+                       Text="Friends of Xamarin Monkey"
+                       FontSize="Small"
+                       FontAttributes="Bold" />
+            </StackLayout>
+        </DataTemplate>
+    </CollectionView.FooterTemplate>
+    ...
+</CollectionView>
+```
+
+同等のコードをC#で示します。
+
+```csharp
+CollectionView collectionView = new CollectionView
+{
+    HeaderTemplate = new DataTemplate(() =>
+    {
+        return new StackLayout { };
+    }),
+    FooterTemplate = new DataTemplate(() =>
+    {
+        return new StackLayout { };
+    })
+};
+collectionView.SetBinding(ItemsView.HeaderProperty, ".");
+collectionView.SetBinding(ItemsView.FooterProperty, ".");
+collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
+```
 
 ## <a name="item-spacing"></a>項目の間隔
 

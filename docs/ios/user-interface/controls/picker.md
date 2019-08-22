@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/14/2018
-ms.openlocfilehash: 4f4855c3928f05f2593d3d80fb7490a115b36e6a
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: c31f68245a459a99604633d23426c4fa1fe5e72c
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655814"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69887393"
 ---
 # <a name="picker-control-in-xamarinios"></a>Xamarin のピッカーコントロール
 
@@ -175,6 +175,7 @@ datePickerView.MaximumDate = NSDate.Now;
 
 > [!TIP]
 > を明示的ににキャスト`DateTime` `NSDate`することができます。
+>
 > ```csharp
 > DatePicker.MinimumDate = (NSDate)DateTime.Today.AddDays (-7);
 > DatePicker.MaximumDate = (NSDate)DateTime.Today.AddDays (7);
@@ -291,9 +292,9 @@ timeFormat.TimeStyle = NSDateFormatterStyle.Short;
 さまざま`NSDateFormatterStyle`な値は、次のように時刻を表示します。
 
 - `NSDateFormatterStyle.Full`:午後7:46:00 時東部夏時間
-- `NSDateFormatterStyle.Long` :7:47:00 PM EDT
+- `NSDateFormatterStyle.Long`:7:47:00 PM EDT
 - `NSDateFormatterStyle.Medium`:7:47:00 PM
-- `NSDateFormatterSytle.Short` :7:47 PM
+- `NSDateFormatterSytle.Short`:7:47 PM
 
 ##### <a name="datestyle"></a>DateStyle
 
@@ -306,9 +307,9 @@ dateTimeformat.DateStyle = NSDateFormatterStyle.Long;
 
 さまざま`NSDateFormatterStyle`な値は、次のように日付を表示します。
 
-- `NSDateFormatterStyle.Full`:2017年8月2日、7:48 PM の水曜日
+- `NSDateFormatterStyle.Full` :2017年8月2日、7:48 PM の水曜日
 - `NSDateFormatterStyle.Long`:2017年8月2日 7:49 PM
-- `NSDateFormatterStyle.Medium` :2017年8月2、7:49 PM
+- `NSDateFormatterStyle.Medium`:2017年8月2、7:49 PM
 - `NSDateFormatterStyle.Short`:8/2/17、7:50 PM
 
 > [!NOTE]

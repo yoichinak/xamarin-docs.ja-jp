@@ -6,13 +6,13 @@ ms.assetid: CE686893-609C-4EC3-9225-6C68D2A9F79C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/10/2019
-ms.openlocfilehash: 6eeafcd943f9d92cf8fb2c19cea40a491413f78b
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.date: 07/18/2019
+ms.openlocfilehash: 03aaf471479a5113aade6bd3f34034afadfb538c
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657272"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69887904"
 ---
 # <a name="consuming-xaml-markup-extensions"></a>XAML マークアップ拡張機能の使用
 
@@ -28,6 +28,7 @@ XAML マークアップ拡張機能は、さまざまなソースから設定す
 - [`OnPlatform`](#onplatform) – プラットフォームごとに UI の外観をカスタマイズします。
 - [`OnIdiom`](#onidiom) – で、アプリケーションが実行されているデバイスの表現形式に基づく UI の外観をカスタマイズします。
 - [`DataTemplate`](#datatemplate-markup-extension)-型[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)をに変換します。
+- [`FontImage`](#fontimage-markup-extension)-を表示`ImageSource`できる任意のビューにフォントアイコンを表示します。
 
 XAML マークアップ拡張機能を追加では、従来の他の XAML 実装によってサポートされていて、Xamarin.Forms でもサポートされます。 これらは、他の記事で詳しく説明されます。
 
@@ -556,6 +557,37 @@ public partial class TypeDemoPage : ContentPage
 この例では`MonkeysPage` 、が[`ContentPage`](xref:Xamarin.Forms.ContentPage)からに[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)変換されます。 `ShellContent.ContentTemplate`これは、プロパティの値として設定されます。 これにより`MonkeysPage` 、は、アプリケーションの起動時ではなく、ページへの移動時にのみ作成されます。
 
 シェルアプリケーションの詳細については、「 [Xamarin. フォームシェル](~/xamarin-forms/app-fundamentals/shell/index.md)」を参照してください。
+
+## <a name="fontimage-markup-extension"></a>FontImage のマークアップ拡張機能
+
+マークアップ拡張機能を使用すると、を`ImageSource`表示できる任意のビューにフォントアイコンを表示できます。 `FontImage` `FontImageSource`クラスと同じ機能を提供しますが、より簡潔な表現を使用します。
+
+マークアップ拡張機能は、次`FontImageExtension`のプロパティを定義するクラスによってサポートされています。 `FontImage`
+
+- `FontFamily`型`string`の場合は、フォントアイコンが属するフォントファミリ。
+- `Glyph`型`string`の場合は、フォントアイコンの unicode 文字値。
+- `Color`型`Color`の場合は、フォントアイコンを表示するときに使用する色。
+- `Size`型`double`の。表示されるフォントアイコンのサイズ (デバイスに依存しない単位)。
+
+> [!NOTE]
+> XAML パーサー `FontImageExtension`では、クラスをとして`FontImage`省略できます。
+
+`Glyph`プロパティは、コンテンツのプロパティの`FontImageExtension`します。 そのため、XAML マークアップの式が中かっこで表された、削除できます、`Glyph=`最初の引数については、式の一部です。
+
+**FontImage Demo**ページは、マークアップ拡張機能`FontImage`の使用方法を示しています。
+
+```xaml
+<Image BackgroundColor="#D1D1D1"
+       Source="{FontImage &#xf30c;, FontFamily={OnPlatform iOS=Ionicons, Android=ionicons.ttf#}, Size=44}" />
+```
+
+この例では、 `FontImageExtension`クラス名の省略版を使用して、 [`Image`](xref:Xamarin.Forms.Image)の Ionicons フォントファミリから XBox アイコンを表示します。 また、この式で`OnPlatform`は、マークアップ拡張`FontFamily`機能を使用して、iOS と Android で異なるプロパティ値を指定します。 また、 `Glyph=`式の一部が削除され、設定されているマークアップ拡張機能プロパティはコンマで区切られます。 アイコンの unicode 文字は`\uf30c`であるのに対し、XAML でエスケープする必要があるため、になり`&#xf30c;`ます。
+
+実行中のプログラムを次に示します。
+
+[ ![FontImage markup Extension](consuming-images/fontimagedemo.png "FontImage Demo")のスクリーンショット](consuming-images/fontimagedemo-large.png#lightbox "FontImage のデモ")
+
+`FontImageSource`オブジェクトのフォントアイコンデータを指定してフォントアイコンを表示する方法の詳細については、「フォントアイコンの[表示](~/xamarin-forms/user-interface/text/fonts.md#display-font-icons)」を参照してください。
 
 ## <a name="define-your-own-markup-extensions"></a>独自のマークアップ拡張機能を定義します。
 

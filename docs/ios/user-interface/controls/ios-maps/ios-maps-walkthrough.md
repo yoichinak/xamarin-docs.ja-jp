@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: dba8fc3c239a8c20795913d6d1e5409a478c4072
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 64b666e8e8621019da4f2acb71ab5b3bf22fad3a
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68642725"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69889771"
 ---
 # <a name="annotations-and-overlays-in-xamarinios"></a>Xamarin. iOS の注釈とオーバーレイ
 
@@ -178,6 +178,7 @@ ms.locfileid: "68642725"
     
     map.AddOverlay (hotelOverlay);  
     ```
+
 これにより、の`ViewDidLoad`コードが完成します。 ここで、注釈とオーバーレイ`MapDelegate`ビューの作成をそれぞれ処理するクラスを実装する必要があります。
 
 
@@ -192,6 +193,7 @@ ms.locfileid: "68642725"
         ...
     }
     ```
+
     ここには1つの注釈しかないので、再利用コードは厳密には必要ありませんが、これを含めることをお勧めします。
 
 1. メソッドを実装して、このチュートリアルに`ConferenceAnnotation`含まれているカンファレンスの **.png**イメージを使用して、のビューを返します。 `GetViewForAnnotation`
@@ -261,6 +263,7 @@ ms.locfileid: "68642725"
         }
     }
     ```
+
     これで、注釈のコードが配置されました。 残っているのは、ホテルオーバーレイのビュー `MapDelegate`を作成するために、にコードを追加することだけです。
 
 1. の次の`GetViewForOverlay`実装を`MapDelegate`に追加します。
@@ -281,7 +284,7 @@ ms.locfileid: "68642725"
 
  [![](ios-maps-walkthrough-images/01-map-image.png "注釈をタップすると、オースティンのイメージが表示されます。")](ios-maps-walkthrough-images/01-map-image.png#lightbox)
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
 この記事では、マップに注釈を追加する方法と、指定した多角形のオーバーレイを追加する方法について説明しました。 また、注釈にタッチサポートを追加して、マップ上でイメージをアニメーション化する方法についても説明します。
 

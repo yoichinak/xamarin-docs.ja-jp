@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/05/2018
-ms.openlocfilehash: ef1ccd07eb4807cd84094cad1200d8a1ed7cea8b
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 1aaacae8cebed2396661a28c189af44c25238e7b
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524698"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69887838"
 ---
 # <a name="working-with-the-android-manifest"></a>Android マニフェストの操作
 
@@ -227,6 +227,7 @@ Android マニフェストには、アプリケーション全体のプロパテ
              android:theme="@android:style/Theme.Light"
                 ... />
 ```
+
 この例では、アプリ内のすべてのアクティビティが既定`Theme.Light`でスタイルになります。 アクティビティの`Theme.Dialog`テーマをに設定すると、そのアクティビティのみが`Theme.Dialog`スタイルを使用しますが、 `Theme.Light`アプリ内の他のすべてのアクティビティは、 `<application>`要素で設定されているスタイルに既定で設定されます。 
 
 要素は、属性を構成`<application>`する唯一の方法ではありません。 `Application` または、 `<application>` **Properties/androidmanifest .xml**の要素に属性を直接挿入することもできます。 これらの設定は、 `<application>` **obj/Debug/android/androidmanifest**に存在する最後の要素にマージされます。 **Properties/AndroidManifest .xml**の内容は、カスタム属性によって提供されるデータを常にオーバーライドすることに注意してください。 

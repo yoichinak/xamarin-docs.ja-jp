@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 0c606e001552f1c4267ffc29bd69b2f38f2ec971
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: a5587d5a4ed5201b8f09dfa3b4d2d292abd008d3
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69527932"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69889840"
 ---
 # <a name="core-graphics-in-xamarinios"></a>Xamarin のコアグラフィック
 
@@ -106,6 +106,7 @@ using (CGContext g = UIGraphics.GetCurrentContext ()) {
 ...
 }
 ```
+
 この行では、最初に描画に使用する現在のグラフィックスコンテキストを取得します。 描画を行うキャンバスとしてグラフィックスコンテキストを考えることができます。これには、ストロークや塗りつぶしの色、描画するジオメトリなど、描画に関するすべての状態が含まれます。
 
 ```csharp

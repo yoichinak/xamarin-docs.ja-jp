@@ -6,13 +6,13 @@ ms.assetid: 22288ABF-57BE-47A9-ACC3-AC604D787C46
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 08/15/2017
-ms.openlocfilehash: f68e192db0b7acceb325ad44f40dce9cb229a26a
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.date: 07/18/2019
+ms.openlocfilehash: 2a17b037803d1ca6e54000ea7ba3f05c8ce6034f
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528989"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69888472"
 ---
 # <a name="colors-in-xamarinforms"></a>Xamarin.Forms での色
 
@@ -20,9 +20,9 @@ ms.locfileid: "69528989"
 
 _Xamarin.Forms は、柔軟なクロスプラット フォーム対応の色クラスを提供します。_
 
-この記事でさまざまな方法について説明、`Color`クラスは、Xamarin.Forms で使用できます。
+この記事では、Xamarin で[`Color`](xref:Xamarin.Forms.Color)クラスを使用するさまざまな方法を紹介します。
 
-`Color`クラスは、さまざまな色のインスタンスを作成するメソッドを提供します。
+クラス[`Color`](xref:Xamarin.Forms.Color)には、color インスタンスを構築するためのさまざまなメソッドが用意されています。
 
 - **名前付きの色**-一般的な名前付きの色などのコレクション`Red`、 `Green`、および`Blue`します。
 - **Fromhex** -HTML で使用される構文に似た文字列値 ("00FF00" など)。 必要に応じて、最初の文字ペア ("CC00FF00") として Alpha を指定できます。
@@ -65,17 +65,18 @@ var accent = new Label      { Text = "Accent",     BackgroundColor = Color.Accen
 
 IOS と Android では、このインスタンスが既定の背景に表示されますが、既定のテキスト色と同じコントラスト色に設定されます。
 
-## <a name="additional-methods"></a>追加のメソッド
+## <a name="additional-methods"></a>その他のメソッド
 
-`Color` インスタンスには、新しい色の作成に使用できる追加のメソッドが含まれます。
+[`Color`](xref:Xamarin.Forms.Color)インスタンスには、次の追加メソッドが含まれます。
 
-- **AddLuminosity** -指定のデルタによって、明るさを変更することで、新しい色を返します。
-- **WithHue** -色合いを指定した値に置き換えて、新しい色を返します。
-- **WithLuminosity**の明るさを指定した値に置き換えて、新しい色を返します。
-- **WithSaturation** -鮮やかさを指定した値に置き換えて、新しい色を返します。
-- **MultiplyAlpha** -、アルファは、指定されたアルファ値を乗算することを変更することで、新しい色を返します。
+- **Addluminosity** -指定さ`Color`れたデルタによって輝度を変更することによって、を返します。
+- **乗数 yalpha** -指定さ`Color`れたアルファ値を乗算して、アルファを変更することによってを返します。
+- **Tohex** -の`Color`16 進数`string`表現を返します。
+- **Withhue** -を`Color`返します。色合いを指定された値に置き換えます。
+- **Withluminosity** -明るさを`Color`指定された値に置き換えて、を返します。
+- **Withsaturation** -を`Color`返します。鮮やかさを指定された値に置き換えます。
 
-## <a name="implicit-conversions"></a>暗黙の型変換
+## <a name="implicit-conversions"></a>暗黙の変換
 
 間の暗黙的な変換、`Xamarin.Forms.Color`と`System.Drawing.Color`型を実行することができます。
 
@@ -104,7 +105,7 @@ ActivityIndicator activityIndicator = new ActivityIndicator
 
 ## <a name="using-from-xaml"></a>XAML から使用します。
 
-定義済みの色の名前または 16 進表現を次に示しますを使用して XAML での色は簡単に参照こともできます。
+次に示す色の名前または16進表現を使用して、XAML で色を参照することもできます。
 
 ```xaml
 <Label Text="Sea color" BackgroundColor="Aqua" />
@@ -116,11 +117,6 @@ ActivityIndicator activityIndicator = new ActivityIndicator
 
 > [!NOTE]
 > XAML のコンパイルを使用して、色の名前が大文字と小文字を区別しないため、小文字で記述することができます。 XAML のコンパイルの詳細については、[XAML のコンパイル](~/xamarin-forms/xaml/xamlc.md) を参照してください。
-
-## <a name="summary"></a>まとめ
-
-Xamarin.Forms`Color`プラットフォームに対応した色の参照を作成するクラスを使用します。 これは、共有コードと XAML で使用できます。
-
 
 ## <a name="related-links"></a>関連リンク
 

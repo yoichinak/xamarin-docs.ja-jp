@@ -6,13 +6,13 @@ ms.assetid: 59CD1344-8248-406C-9144-0C8A67141E5B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 06/13/2019
-ms.openlocfilehash: e818495d45435546f9d2fc9c5593d9c7caa608ea
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.date: 07/18/2019
+ms.openlocfilehash: 4cfedad6ccf87dfef819b677233be1edb2d2c62d
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528874"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69887962"
 ---
 # <a name="xamarinforms-map"></a>Xamarin.Forms のマップ
 
@@ -173,35 +173,41 @@ public class MapPage : ContentPage {
 マップのコンテンツを設定して変更することも、`MapType`正規ストリート マップ (既定)、衛星画像、または両方の組み合わせを表示するプロパティ。
 
 ```csharp
-map.MapType == MapType.Street;
+map.MapType = MapType.Street;
 ```
 
 有効な`MapType`値は。
 
-- ハイブリッド
-- サテライト
-- 番地 (既定値)
+- `Hybrid`
+- `Satellite`
+- `Street` (既定値)
 
 ### <a name="map-region-and-mapspan"></a>マップ領域と MapSpan
 
-上記のコード スニペットに示すように指定して、`MapSpan`インスタンス マップ コンストラクターに初期ビューの設定 (ポイントを中心し、ズーム レベル) が読み込まれるときに、マップの。 `MoveToRegion`マップ クラスのメソッドは、マップの位置やズーム レベルを変更し使用できます。 新たに作成する 2 つの方法がある`MapSpan`インスタンス。
+上記のコード スニペットに示すように指定して、`MapSpan`インスタンス マップ コンストラクターに初期ビューの設定 (ポイントを中心し、ズーム レベル) が読み込まれるときに、マップの。 新たに作成する 2 つの方法がある`MapSpan`インスタンス。
 
 - **MapSpan.FromCenterAndRadius()** -からのスパンを作成する静的メソッド、`Position`を指定して、`Distance`します。
 - **新しい MapSpan ()** -コンストラクターを使用する、`Position`と緯度と経度を表示する角度。
 
-
-場所を変更することがなく、マップのズーム レベルを変更するには、新しい作成`MapSpan`から現在の場所を使用して、`VisibleRegion.Center`マップ コントロールのプロパティ。 A `Slider` (ただし、マップ コントロールに直接ズーム スライダーの値を更新できません現在) は、このようなマップのズームを制御するされる可能性があります。
+`MoveToRegion`マップ クラスのメソッドは、マップの位置やズーム レベルを変更し使用できます。 場所を変更することがなく、マップのズーム レベルを変更するには、新しい作成`MapSpan`から現在の場所を使用して、`VisibleRegion.Center`マップ コントロールのプロパティ。 を`Slider`使用すると、次のようにマップのズームを制御できます (ただし、マップコントロールに直接ズームすると、スライダーの値を現在更新することはできません)。
 
 ```csharp
-var slider = new Slider (1, 18, 1);
-slider.ValueChanged += (sender, e) => {
+Slider slider = new Slider (1, 18, 1);
+slider.ValueChanged += (sender, e) =>
+{
     var zoomLevel = e.NewValue; // between 1 and 18
     var latlongdegrees = 360 / (Math.Pow(2, zoomLevel));
     map.MoveToRegion(new MapSpan (map.VisibleRegion.Center, latlongdegrees, latlongdegrees));
 };
 ```
 
- [![マップと zoom](map-images/maps-zoom-sml.png "マップ コントロールのズーム")](map-images/maps-zoom.png#lightbox "マップ コントロールのズーム")
+[![マップと zoom](map-images/maps-zoom-sml.png "マップ コントロールのズーム")](map-images/maps-zoom.png#lightbox "マップ コントロールのズーム")
+
+さら[`Map`](xref:Xamarin.Forms.Maps.Map)に、クラスに`MoveToLastRegionOnLayoutChange`は、バインド可能な`bool`プロパティによってサポートされる型のプロパティがあります。 既定では、この`true`プロパティはです。これは、デバイスの回転など、レイアウトの変更が発生したときに、表示されているマップ領域が現在の領域から以前に設定された領域に移動することを示します。 このプロパティがに`false`設定されている場合、レイアウトの変更が発生しても、表示されているマップ領域は中央のままになります。 次の例は、このプロパティを設定する方法を示しています。
+
+```csharp
+map.MoveToLastRegionOnLayoutChange = false;
+```
 
 ### <a name="map-pins"></a>ピンのマップ
 
@@ -297,6 +303,7 @@ MyMap.MoveToRegion(
     <Grid>
         ...
         <maps:Map x:Name="map"
+                  MoveToLastRegionOnLayoutChange="false"
                   ItemsSource="{Binding Locations}">
             <maps:Map.ItemTemplate>
                 <DataTemplate>

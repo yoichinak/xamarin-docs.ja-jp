@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: ff406b8bd6630ef9e17011e0b4b6b996fa944d89
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: b95c68b43e4c7fda4d60f6976ab626968800d3dc
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528789"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69889810"
 ---
 # <a name="social-framework-in-xamarinios"></a>Xamarin のソーシャルフレームワーク
 
@@ -252,6 +252,7 @@ var parameters = new NSDictionary ();
 var url = new NSUrl("https://api.twitter.com/1.1/statuses/user_timeline.json?count=10");
 var request = SLRequest.Create (SLServiceKind.Twitter, SLRequestMethod.Get, url, parameters);
 ```
+
 この例では、URL にを含める`?count=10`ことで、返される結果を最後の10個のエントリに限定しています。 最後に、要求を (上記で読み込まれた) Twitter アカウントにアタッチし、Twitter への呼び出しを実行してデータをフェッチします。
 
 ```csharp

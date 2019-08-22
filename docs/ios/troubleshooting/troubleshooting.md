@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/22/2018
-ms.openlocfilehash: d26f8f68b2cf4eca2d28a365c921b533e657c64b
-ms.sourcegitcommit: 3434624a36a369986b6aeed7959dae60f7112a14
+ms.openlocfilehash: 06283987e1d70659653729b4f3d5a00e1877aa5f
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69629612"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69887386"
 ---
 # <a name="troubleshooting-tips-for-xamarinios"></a>Xamarin のトラブルシューティングのヒント 
 
@@ -98,6 +98,7 @@ public partial class MyImageView : UIView {
    public MyImageView (IntPtr handle) : base (handle {}
 }
 ```
+
 ## <a name="systemmissingmethodexception-no-constructor-found-for-foobarctorsystemintptr"></a>MissingMethodException:Foo. Bar:: .ctor (IntPtr) のコンストラクターが見つかりませんでした
 
 このエラーは、コードが Interface Builder ファイルから参照したクラスのインスタンスをインスタンス化しようとすると、実行時に生成されます。 これは、1つの IntPtr をパラメーターとして受け取るコンストラクターを追加し忘れたことを意味します。
@@ -109,6 +110,7 @@ IntPtr ハンドルを持つコンストラクターは、マネージオブジ�
 ```csharp
 public Bar (IntPtr handle) : base (handle) { }
 ```
+
 ## <a name="type-foo--does-not-contain-a-definition-for-getnativefield-and-no-extension-method-getnativefield-of-type-foo-could-be-found"></a>型 {foo} にの`GetNativeField`定義が含まれておらず、型 {foo} の拡張メソッド`GetNativeField`が見つかりませんでした
 
 デザイナーで生成されたファイル (*. xib.designer.cs) でこのエラーが発生した場合は、次の2つのいずれかを意味します。
@@ -388,6 +390,7 @@ Interface Builder を使用する場合は、Apple の web サイトから入手
   at MonoTouch.ObjCRuntime.Runtime.RegisterAssembly (System.Reflection.Assembly)
   at (wrapper runtime-invoke) <Module>.runtime_invoke_void_object (object,intptr,intptr,intptr)
 ```
+
 ...その場合、シミュレーターアプリケーションディレクトリに古いアセンブリが1つ (またはそれ以上) 存在する可能性があります。 このようなアセンブリは、Apple iOS シミュレーターによってファイルが追加および更新されるが、削除されないために存在する可能性があります。 この問題が発生した場合、最も簡単な解決策は、"リセットとコンテンツと設定..." を選択することです。シミュレーターメニューから。   
 
 > [!WARNING]

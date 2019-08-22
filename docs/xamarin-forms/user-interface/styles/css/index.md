@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/11/2019
-ms.openlocfilehash: ed9a376da0fcfebffd707e2e93919237adfef87b
-ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
+ms.openlocfilehash: 1de7ec7dc87fc4ba61e76603240197fc9d041255
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69620839"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69887933"
 ---
 # <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>カスケード スタイル シート (CSS) を使用した Xamarin.Forms アプリのスタイル設定
 
@@ -131,25 +131,7 @@ Xamarin.Forms では、CSS スタイル シートはコンパイル時ではな�
 
 ### <a name="c"></a>C\#
 
-C#、スタイル シートを埋め込みリソースとして読み込まれに追加できる、 [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary):
-
-```csharp
-public partial class MyPage : ContentPage
-{
-    public MyPage()
-    {
-        InitializeComponent();
-
-        this.Resources.Add(StyleSheet.FromAssemblyResource(
-            IntrospectionExtensions.GetTypeInfo(typeof(MyPage)).Assembly,
-            "MyProject.Assets.styles.css"));
-    }
-}
-```
-
-1 番目の引数 `StyleSheet.FromAssemblyResource` メソッドは、スタイル シートを含んでいるアセンブリで、2 番目の引数は、リソース識別子を表す `string` です。 リソース識別子は、CSS ファイルを選択したときに、**プロパティ** ウィンドウから取得することができます。
-
-スタイル シートを読み込むことができます、また、`StringReader`に追加し、 [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary):
+でC#は、スタイルシートをから`StringReader`読み込んで、 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)に追加することができます。
 
 ```csharp
 public partial class MyPage : ContentPage

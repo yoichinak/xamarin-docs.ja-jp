@@ -1,69 +1,70 @@
 ---
-title: 既知の問題と回避策
-description: このドキュメントでは、Xamarin Workbooks の既知の問題と回避策について説明します。 これは、CultureInfo 問題や、JSON の問題について説明します。
+title: 既知の問題 & 回避策
+description: このドキュメントでは、Xamarin Workbooks に関する既知の問題と回避策について説明します。 CultureInfo の問題、JSON の問題などについて説明します。
 ms.prod: xamarin
 ms.assetid: 495958BA-C9C2-4910-9BAD-F48A425208CF
 author: lobrien
 ms.author: laobri
 ms.date: 03/30/2017
-ms.openlocfilehash: 221ed97db17da62f513448b6c85d4df205a7cbaf
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 21f61b4504367dafc2907fd6471af333f636b521
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61268881"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69889397"
 ---
-# <a name="known-issues--workarounds"></a>既知の問題と回避策
+# <a name="known-issues--workarounds"></a>既知の問題 & 回避策
 
-## <a name="persistence-of-cultureinfo-across-cells"></a>すべてのセルの CultureInfo の永続化
+## <a name="persistence-of-cultureinfo-across-cells"></a>セル間の CultureInfo の永続化
 
-設定`System.Threading.CurrentThread.CurrentCulture`または`System.Globalization.CultureInfo.CurrentCulture`はすべてのブックの Mono に基づくターゲット (Mac、iOS、および Android) のブックのセルは保持されないために、 [Mono のバグ`AppContext.SetSwitch` ] [ appcontext-bug]実装.
+`System.Threading.CurrentThread.CurrentCulture` [Monoの`AppContext.SetSwitch`実装でのバグ][appcontext-bug]のため、またはの設定は`System.Globalization.CultureInfo.CurrentCulture` 、mono ベースのブックターゲット (Mac、iOS、および Android) のブックセル間で保持されません。
 
 ### <a name="workarounds"></a>問題回避
 
-* アプリケーション ドメイン ローカル設定`DefaultThreadCurrentCulture`:
+* アプリケーションをドメインローカル`DefaultThreadCurrentCulture`に設定します。
+
 ```csharp
 using System.Globalization;
 CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("de-DE")
 ```
 
-* または、1.2.1 のブックを更新またはそれ以降への割り当てをリライトするされます`System.Threading.CurrentThread.CurrentCulture`と`System.Globalization.CultureInfo.CurrentCulture`(Mono のバグの回避) 目的の動作を提供します。
+* または、ブック1.2.1 以降に更新します。これにより`System.Threading.CurrentThread.CurrentCulture` 、 `System.Globalization.CultureInfo.CurrentCulture`割り当てがに書き直され、目的の動作 (Mono のバグの回避) が提供されます。
 
-## <a name="unable-to-use-newtonsoftjson"></a>Newtonsoft.Json を使用することができません。
+## <a name="unable-to-use-newtonsoftjson"></a>Newtonsoft. Json を使用できません
 
 ### <a name="workaround"></a>回避策
 
-* Newtonsoft.Json 9.0.1 をインストールする 1.2.1、ブックを更新します。
-  ブック 1.3、アルファ チャネルでは、現在では、10 以降のバージョンをサポートしています。
+* ブック1.2.1 に更新します。これにより、Newtonsoft がインストールされます。
+  現在 alpha チャネルにあるブック1.3 では、バージョン10以降がサポートされています。
 
 ### <a name="details"></a>説明
 
-リリースをサポートするバージョンのブックと競合するが同梱されて Microsoft.CSharp への依存性を高く Newtonsoft.Json 10`dynamic`します。 ブック 1.3 のプレビュー リリースでこの問題に対処されますが、ここで取り組んでいますこの問題を回避してピン留め Newtonsoft.Json バージョン 9.0.1 を具体的には。
+Newtonsoft. Json 10 がリリースされました。これにより、サポート`dynamic`に提供されているバージョンのブックと競合する Microsoft CSharp への依存関係がバンプされました。 これについては、ブック1.3 プレビューリリースで取り上げられていますが、ここでは、9.0.1 をバージョンに明示的に固定することでこれを回避しました。
 
-NuGet パッケージ Newtonsoft.Json 10 によって明示的にまたはそれ以降は、現在ブックの 1.3 ではアルファ チャネルでサポートのみされます。
+Newtonsoft. Json 10 以降に明示的に依存している NuGet パッケージは、現在は alpha チャネルにあるブック1.3 でのみサポートされています。
 
-## <a name="code-tooltips-are-blank"></a>コードのツールヒントが空
+## <a name="code-tooltips-are-blank"></a>コードヒントが空白である
 
-[Monaco エディターのバグ][ monaco-bug]コード ツールヒントの表示テキストなしで結果を Safari/WebKit の Mac の Workbooks アプリで使用されています。
+Safari/WebKit の[モナコエディターに][monaco-bug]は、Mac ブックアプリで使用される、テキストなしでコードヒントが表示されるというバグがあります。
 
 ![](general-images/monaco-signature-help-bug.png)
 
 ### <a name="workaround"></a>回避策
 
-* ツールヒントが表示されたらをクリックすると、表示するテキストが実行されます。
+* ツールヒントを表示した後にクリックすると、テキストが強制的にレンダリングされます。
 
-* 1.2.1 ブックへの更新またはまたはそれ以降
+* またはブック1.2.1 以降に更新します。
 
 [appcontext-bug]: https://bugzilla.xamarin.com/show_bug.cgi?id=54448
 [monaco-bug]: https://github.com/Microsoft/monaco-editor/issues/408
 
-## <a name="skiasharp-renderers-are-missing-in-workbooks-13"></a>SkiaSharp のレンダラーがブック 1.3 にありません。
+## <a name="skiasharp-renderers-are-missing-in-workbooks-13"></a>SkiaSharp レンダラーがブック1.3 にありません
 
-ブック 1.3 以降、削除しましたに付属していた SkiaSharp レンダラーで SkiaSharp を使用して、自体のレンダラーを提供することを優先してブック 0.99.0、当社[SDK](~/tools/workbooks/sdk/index.md)します。
+ブック1.3 から、ブック0.99.0 に付属していた SkiaSharp レンダラーが削除されました。これは、microsoft の[SDK](~/tools/workbooks/sdk/index.md)を使用してレンダラー自体を提供する SkiaSharp を優先しています。
 
 ### <a name="workaround"></a>回避策
 
-* SkiaSharp を NuGet の最新バージョンに更新します。 この記事の執筆時に、これは、1.57.1 です。
+* SkiaSharp を NuGet の最新バージョンに更新します。 執筆時点では、これは1.57.1 です。
 
 ## <a name="related-links"></a>関連リンク
 

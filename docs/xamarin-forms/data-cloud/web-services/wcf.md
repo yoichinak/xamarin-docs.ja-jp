@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/28/2019
-ms.openlocfilehash: d170e37b8bf4ce880f9d8f48d30defb42ee6bba2
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 28cb1573262b63cc2b0ccad9f468fe36c682718d
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648009"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69888849"
 ---
 # <a name="consume-a-windows-communication-foundation-wcf-web-service"></a>Windows Communication Foundation (WCF) Web サービスを使用する
 
@@ -232,6 +232,7 @@ Visual Studio 2017 または Visual Studio 2019 では、追加の構成なし�
 既定では、IIS Express はへ`localhost`の要求にのみ応答します。 リモートデバイス (Android デバイス、iPhone、シミュレーターなど) には、ローカル WCF サービスへのアクセス権はありません。 ローカルネットワーク上の Windows 10 ワークステーション IP アドレスを把握しておく必要があります。 この例では、ワークステーションに IP アドレス`192.168.1.143`があることを前提としています。 次の手順では、リモート接続を受け入れ、物理または仮想デバイスからサービスに接続するように Windows 10 と IIS Express を構成する方法について説明します。
 
 1. **Windows ファイアウォールに例外を追加**します。 サブネット上のアプリケーションが WCF サービスとの通信に使用できる Windows ファイアウォールを介してポートを開く必要があります。 ファイアウォールでポート49393を開く受信規則を作成します。 管理コマンドプロンプトで、次のコマンドを実行します。
+
     ```
     netsh advfirewall firewall add rule name="TodoWCFService" dir=in protocol=tcp localport=49393 profile=private remoteip=localsubnet action=allow
     ```

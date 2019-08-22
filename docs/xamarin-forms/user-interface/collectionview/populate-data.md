@@ -6,13 +6,13 @@ ms.assetid: E1783E34-1C0F-401A-80D5-B2BE5508F5F8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/06/2019
-ms.openlocfilehash: ce745109ea2852b597de3a8a5922a171ad83e289
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.date: 08/13/2019
+ms.openlocfilehash: 6942baed6af2a2e9b2c713a8fe08cf4c8ed4416b
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68738915"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69888541"
 ---
 # <a name="xamarinforms-collectionview-data"></a>CollectionView データ
 
@@ -26,6 +26,11 @@ ms.locfileid: "68738915"
 - [`ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate)型[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)のは、表示される項目のコレクション内の各項目に適用するテンプレートを指定します。
 
 これらのプロパティは、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトでサポートされます。つまり、このプロパティはデータ バインドの対象となることを意味します。
+
+> [!NOTE]
+> [`CollectionView`](xref:Xamarin.Forms.CollectionView)新しい項目`ItemsUpdatingScrollMode`が追加され`CollectionView`たときののスクロール動作を表すプロパティを定義します。 このプロパティの詳細については、「[新しい項目が追加されたときのコントロールのスクロール位置](scrolling.md#control-scroll-position-when-new-items-are-added)」を参照してください。
+
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)ユーザーがスクロールするときに、データを徐々に読み込むこともできます。 詳細については、「[データの増分読み込み](#load-data-incrementally)」を参照してください。
 
 ## <a name="populate-a-collectionview-with-data"></a>CollectionView にデータを設定する
 
@@ -244,6 +249,56 @@ public class MonkeyDataTemplateSelector : DataTemplateSelector
 
 > [!IMPORTANT]
 > を使用[`CollectionView`](xref:Xamarin.Forms.CollectionView)する場合は、 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)オブジェクト`ViewCell`のルート要素をに設定しないでください。 これにより、にセルの概念が`CollectionView`ないため、例外がスローされます。
+
+## <a name="load-data-incrementally"></a>データを増分読み込み
+
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)ユーザーが項目をスクロールするごとに、データの読み込みを段階的にサポートします。 これにより、ユーザーがスクロールするときに web サービスからデータページを非同期的に読み込むなどのシナリオが可能になります。 さらに、より多くのデータが読み込まれるポイントは、ユーザーが空白の領域を表示しないように、またはスクロールから停止するように構成できます。
+
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)では、次のプロパティを定義して、データの増分読み込みを制御します。
+
+- `RemainingItemsThreshold`型`int`の、 `RemainingItemsThresholdReached`イベントが発生するリストにまだ表示されていない項目のしきい値。
+- `RemainingItemsThresholdReachedCommand`に到達し`ICommand` `RemainingItemsThreshold`たときに実行される、型の。
+- `RemainingItemsThresholdReachedCommandParameter`: `object` 型、`RemainingItemsThresholdReachedCommand` に渡されるパラメーター。
+
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)また、は`RemainingItemsThresholdReached` 、 `RemainingItemsThreshold`項目が表示され`CollectionView`ていない大きさまでスクロールしたときに発生するイベントも定義します。 このイベントを処理して、さらに多くの項目を読み込むことができます。 さらに、 `RemainingItemsThresholdReached`イベントが発生`RemainingItemsThresholdReachedCommand`すると、が実行され、増分データの読み込みがビューモデルで行われるようになります。
+
+`RemainingItemsThreshold`プロパティの既定値は-1 です。これは、 `RemainingItemsThresholdReached`イベントが発生しないことを示します。 プロパティ値が 0 `RemainingItemsThresholdReached`の場合、の[`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)最後の項目が表示されるときにイベントが発生します。 0 `RemainingItemsThresholdReached`より大きい値の場合、にまだスクロールされて`ItemsSource`いない項目の数が含まれていると、イベントが発生します。
+
+> [!NOTE]
+> [`CollectionView`](xref:Xamarin.Forms.CollectionView)プロパティを`RemainingItemsThreshold`検証して、その値が常に-1 以上であることを確認します。
+
+次の XAML の例は[`CollectionView`](xref:Xamarin.Forms.CollectionView) 、データを増分読み込みするを示しています。
+
+```xaml
+<CollectionView ItemsSource="{Binding Animals}"
+                RemainingItemsThreshold="5"
+                RemainingItemsThresholdReached="OnCollectionViewRemainingItemsThresholdReached">
+    ...
+</CollectionView>
+```
+
+同等のコードをC#で示します。
+
+```csharp
+CollectionView collectionView = new CollectionView
+{
+    RemainingItemsThreshold = 5
+};
+collectionView.RemainingItemsThresholdReached += OnCollectionViewRemainingItemsThresholdReached;
+collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Animals");
+```
+
+このコード例では、 `RemainingItemsThresholdReached`まだスクロールされていない項目が5つある場合にイベントが発生`OnCollectionViewRemainingItemsThresholdReached`し、応答ではイベントハンドラーが実行されます。
+
+```csharp
+void OnCollectionViewRemainingItemsThresholdReached(object sender, EventArgs e)
+{
+    // Retrieve more data here and add it to the CollectionView's ItemsSource collection.
+}
+```
+
+> [!NOTE]
+> をビューモデルの`RemainingItemsThresholdReachedCommand` `ICommand`実装にバインドすることによって、データを徐々に読み込むこともできます。
 
 ## <a name="related-links"></a>関連リンク
 

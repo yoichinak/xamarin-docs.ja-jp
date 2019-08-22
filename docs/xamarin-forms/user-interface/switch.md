@@ -6,13 +6,13 @@ ms.assetId: B2F9CC65-481B-4323-8E77-C6BE29C90DE9
 ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
-ms.date: 07/03/2019
-ms.openlocfilehash: 825561c6106ba2ab8e5886df64c3ff850750587b
-ms.sourcegitcommit: 9178e2e689f027212ea3e623b556b312985d79fe
+ms.date: 07/18/2019
+ms.openlocfilehash: 1f2ef838287e32df5df42f73e4b43816d618552d
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/21/2019
-ms.locfileid: "69658043"
+ms.locfileid: "69887885"
 ---
 # <a name="xamarinforms-switch"></a>Xamarin. フォームスイッチ
 
@@ -26,8 +26,9 @@ Xamarin [`Switch`](xref:Xamarin.Forms.Switch)コントロールは水平方向�
 
 コントロール`Switch`は、次の2つのプロパティを定義します。
 
-* [`OnColor`](xref:Xamarin.Forms.Switch.OnColor)は、が切り替え`Switch`られるか、状態で表示されるかに影響するです。`Color`
 * [`IsToggled`](xref:Xamarin.Forms.Switch.IsToggled)が**オンかどう**か`Switch`を示す値です。 `boolean`
+* [`OnColor`](xref:Xamarin.Forms.Switch.OnColor)は、が切り替え`Switch`られるか、状態で表示されるかに影響するです。`Color`
+* `ThumbColor`は、 `Color`スイッチのつまみのです。
 
 これらのプロパティは[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)オブジェクトによって支えられています。つまり、 `Switch`をスタイル設定し、データバインディングのターゲットにすることができます。
 
@@ -47,23 +48,24 @@ Xamarin [`Switch`](xref:Xamarin.Forms.Switch)コントロールは水平方向�
 Switch switchControl = new Switch { IsToggled = true };
 ```
 
-### <a name="switch-style-properties"></a>切り替えスタイルのプロパティ
+## <a name="switch-appearance"></a>外観の切り替え
 
-プロパティを設定して、状態が`Switch`オンの状態に切り替えられたときの色を定義できます。 `OnColor` 次の例は、 `Switch` `OnColor`プロパティセットを使用して、XAML でをインスタンス化する方法を示しています。
+[`Switch`](xref:Xamarin.Forms.Switch) `Switch` `OnColor` `ThumbColor`クラスから継承されるプロパティに加えて、はプロパティとプロパティも定義します。 [`View`](xref:Xamarin.Forms.View) `Color` `Switch` `ThumbColor`プロパティを設定して、状態がオンの状態に切り替わるときの色を定義できます。また、プロパティを設定して、スイッチのつまみのを定義できます。 `OnColor` 次の例は、これらのプロパティ`Switch`を設定して、XAML でをインスタンス化する方法を示しています。
 
 ```xaml
-<Switch OnColor="Orange" />
+<Switch OnColor="Orange"
+        ThumbColor="Green" />
 ```
 
-プロパティ`OnColor`は、コードでを`Switch`作成するときに設定することもできます。
+プロパティは、コードでを`Switch`作成するときに設定することもできます。
 
 ```csharp
-Switch switchControl = new Switch { OnColor = Color.Orange };
+Switch switch = new Switch { OnColor = Color.Orange, ThumbColor = Color.Green };
 ```
 
-次のスクリーンショットで`Switch`は、iOS および Android でプロパティがに`Color.Orange`設定`OnColor`された状態での**オン**と**オフ**の切り替え状態のを示しています。
+次のスクリーンショットは`Switch` 、プロパティ`OnColor`と`ThumbColor`プロパティが設定されている、**オン**と**オフ**の切り替え状態のを示しています。
 
-![IOS と Android でのオンとオフの状態の切り替えのスクリーンショット](switch-images/switch-states-oncolor.png "IOS と Android でのスイッチ")
+![IOS と Android でのオンとオフの状態の切り替えのスクリーンショット](switch-images/switch-states-colors.png "IOS と Android でのスイッチ")
 
 ## <a name="respond-to-a-switch-state-change"></a>スイッチの状態の変更に応答する
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: d7bd3d64d7e9f4ad8298120a017719b3cbb1410e
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: c989481c1235429091c2a196a66e4abd2c12fb52
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528702"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69887489"
 ---
 # <a name="maps-in-xamarinios"></a>Xamarin. iOS のマップ
 
@@ -28,25 +28,27 @@ map = new MKMapView (UIScreen.MainScreen.Bounds);
 View = map;
 ```
 
- `MKMapView`は、マップを表示するサブクラスです。`UIView` 上記のコードを使用してマップを追加するだけで、対話型のマップが生成されます。
+`MKMapView`は、マップを表示するサブクラスです。`UIView` 上記のコードを使用してマップを追加するだけで、対話型のマップが生成されます。
 
- ![](images/00-map.png "サンプルマップ")
+![](images/00-map.png "サンプルマップ")
 
 ## <a name="map-style"></a>マップスタイル
 
- `MKMapView`では、3種類のマップのスタイルがサポートされています。 マップスタイルを適用するには、単`MapType`にプロパティを`MKMapType`列挙型の値に設定します。
- ```
+`MKMapView`では、3種類のマップのスタイルがサポートされています。 マップスタイルを適用するには、単`MapType`にプロパティを`MKMapType`列挙型の値に設定します。
+
+```
 map.MapType = MKMapType.Standard; //road map
 map.MapType = MKMapType.Satellite;
 map.MapType = MKMapType.Hybrid;
- ```
-  次のスクリーンショットは、使用可能なさまざまなマップスタイルを示しています。
+```
 
- ![](images/01-mapstyles.png "このスクリーンショットは、使用可能なさまざまなマップスタイルを示しています。")
+次のスクリーンショットは、使用可能なさまざまなマップスタイルを示しています。
+
+![](images/01-mapstyles.png "このスクリーンショットは、使用可能なさまざまなマップスタイルを示しています。")
 
 ## <a name="panning-and-zooming"></a>パンとズーム
 
- `MKMapView`には、次のようなマップインタラクティビティ機能のサポートが含まれています。
+`MKMapView`には、次のようなマップインタラクティビティ機能のサポートが含まれています。
 
 - ピンチジェスチャを使用したズーム
 - パンジェスチャによるパン

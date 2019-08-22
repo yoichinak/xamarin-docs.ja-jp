@@ -6,13 +6,13 @@ ms.assetid: 5C08F687-B9E6-4CE4-8726-F287F6D0B6A7
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/06/2019
-ms.openlocfilehash: 25e2d9bad11614cf594980480db14ddc18125a96
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.date: 07/24/2019
+ms.openlocfilehash: 5832cb28162602a41d31026bc4a0ed54ac6bfb34
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68738904"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69888606"
 ---
 # <a name="xamarinforms-collectionview-introduction"></a>CollectionView の概要
 
@@ -20,7 +20,7 @@ ms.locfileid: "68738904"
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)は、さまざまなレイアウト仕様を使用してデータの一覧を表示するためのビューです。 これは [ `ListView`](xref:Xamarin.Forms.ListView) の代わりとして、より柔軟でより高パフォーマンスを提供することを目的にしています。 たとえば、次のスクリーンショットは、 `CollectionView` 2 つの列の垂直グリッドを使用し、複数の選択を可能にするを示しています。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) は、さまざまなレイアウト仕様を使用してデータを一覧表示するためのビューです。 これは [ `ListView`](xref:Xamarin.Forms.ListView) の代わりとして、より柔軟でより高パフォーマンスを提供することを目的にしています。 たとえば、次のスクリーンショットは、 `CollectionView` 2 つの列の垂直グリッドを使用し、複数の選択を可能にするを示しています。
 
 [複数選択のある iOS および Android(introduction-images/verticalgrid-multipleselection.png "CollectionView の垂直グリッドレイアウト")![の CollectionView 垂直グリッドレイアウトのスクリーンショット]](introduction-images/verticalgrid-multipleselection-large.png#lightbox "複数選択の CollectionView 垂直グリッドレイアウト")
 
@@ -57,8 +57,8 @@ Forms.SetFlags("CollectionView_Experimental");
 | 選択ツール | `SelectionMode`, `SelectedItem` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)単一および複数の選択をサポートします。 詳細については、「 [CollectionView Selection](selection.md)」を参照してください。 |
 | 行の高さ | `HasUnevenRows`, `RowHeight` | では`ItemSizingStrategy` 、各項目の行の高さはプロパティによって決定されます。 `CollectionView` 詳細については、「[項目のサイズ](layout.md#item-sizing)設定」を参照してください。|
 | キャッシュ | `CachingStrategy` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)は、基になるネイティブコントロールによって提供される仮想化を自動的に使用します。 |
-| ヘッダーとフッター | `Header`, `HeaderElement`, `HeaderTemplate`, `Footer`, `FooterElement`, `FooterTemplate` | ヘッダーとフッターは、現在で`CollectionView`はサポートされていませんが、今後のリリースで追加される予定です。|
-| グループ化 | `GroupDisplayBinding`, `GroupHeaderTemplate`, `GroupShortNameBinding`, `IsGroupingEnabled` | グループ化は現在で`CollectionView`はサポートされていませんが、今後のリリースで追加される予定です。 |
+| ヘッダーとフッター | `Header`, `HeaderElement`, `HeaderTemplate`, `Footer`, `FooterElement`, `FooterTemplate` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)は、 `Header`、、 `HeaderTemplate`、および`Footer` `FooterTemplate`の各プロパティを使用して、リスト内の項目と共にスクロールするヘッダーとフッターを提供できます。 詳細については、「[ヘッダーとフッター](layout.md#headers-and-footers)」を参照してください。 |
+| グループ化 | `GroupDisplayBinding`, `GroupHeaderTemplate`, `GroupShortNameBinding`, `IsGroupingEnabled` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)`IsGrouped`プロパティをに設定して、適切に`true`グループ化されたデータを表示します。 グループヘッダーとグループフッターは、プロパティ`GroupHeaderTemplate`と`GroupFooterTemplate`プロパティをオブジェクトに[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)設定することによってカスタマイズできます。 詳細については、「 [CollectionView Grouping](grouping.md)」を参照してください。 |
 | プルして更新 | `IsPullToRefreshEnabled`, `IsRefreshing`, `RefreshAllowed`, `RefreshCommand`, `RefreshControlColor`, `BeginRefresh()`, `EndRefresh()` | 現在、での`CollectionView`プル更新はサポートされていませんが、今後のリリースで追加される予定です。 |
 | コンテキスト アクション | `ContextActions` | コンテキストアクションは現在で`CollectionView`はサポートされていませんが、今後のリリースで追加される予定です。 |
 | スクロール | `ScrollTo()` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)項目`ScrollTo`をビューにスクロールするメソッドを定義します。 詳細については、「[スクロール](scrolling.md)」を参照してください。 |
