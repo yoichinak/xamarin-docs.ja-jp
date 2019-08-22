@@ -19,6 +19,12 @@ sections:
         style: cards
         className: cardsB
         items:
+          - href: choose-layout.md
+            html: Xamarin.Forms のメインのレイアウトクラスがどのように子を配置し、サイズを変更するのかについて説明します。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: choose-layout.md
+            title: レイアウトの選択
           - href: stack-layout.md
             html: ビューを 1 次元のスタックで水平方向または垂直方向に整理する方法について学習します。
             image:
@@ -37,18 +43,18 @@ sections:
               src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
               href: flex-layout.md
             title: FlexLayout
-          - href: absolute-layout.md
-            html: 座標とサイズを相対値または絶対値で設定して、ビューを整理する方法について説明します。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
-              href: absolute-layout.md
-            title: AbsoluteLayout
           - href: relative-layout.md
             html: レイアウト ビューや兄弟ビューのプロパティに対する制約を設定して、ビューを整理する方法について説明します。
             image:
               src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
               href: absolute-layout.md
             title: RelativeLayout
+          - href: absolute-layout.md
+            html: 座標とサイズを相対値または絶対値で設定して、ビューを整理する方法について説明します。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: absolute-layout.md
+            title: AbsoluteLayout
           - href: scroll-view.md
             html: ビューが画面の境界内に収まらないときにスクロールを可能にする方法について説明します。
             image:
