@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 08/06/2019
-ms.openlocfilehash: 329edf455a4778efa5f6fbd1ec88cfb274c5cb49
-ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
+ms.openlocfilehash: 619b29a9d65594b1badd805c3361fe1a174d7174
+ms.sourcegitcommit: 1341f2950b775a4daa7d0548a51fdef759afd6e3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68984424"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69976495"
 ---
 # <a name="xamarinforms-frame"></a>Xamarin. Forms Frame
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/userinterface-frame/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-frame/)
 
 Xamarin [`Frame`](xref:Xamarin.Forms.Frame)クラスは、色、影、およびその他のオプションを使用して構成できる境界線を持つビューをラップするために使用されるレイアウトです。 フレームは、通常、コントロールの周囲に境界線を作成するために使用されますが、より複雑な UI を作成するために使用できます。 詳細については、「[高度なフレームの使用](#advanced-frame-usage)」を参照してください。
 
@@ -193,5 +193,5 @@ Frame circleImageFrame = new Frame
 
 ## <a name="related-links"></a>関連リンク
 
-* [フレームのデモ](https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/userinterface-frame/)
+* [フレームのデモ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-frame/)
 * [Xamarin 形式の画像](~/xamarin-forms/user-interface/images.md)

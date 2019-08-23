@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/21/2018
-ms.openlocfilehash: ef73462000de90693e527121d1ebad3a9d670ed3
-ms.sourcegitcommit: 9178e2e689f027212ea3e623b556b312985d79fe
+ms.openlocfilehash: 294b538b0e73344ffe9109a1e1091bc9b7591f63
+ms.sourcegitcommit: 1341f2950b775a4daa7d0548a51fdef759afd6e3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69658122"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69976484"
 ---
 # <a name="xamarinforms-layouts"></a>Xamarin.Forms のレイアウト
 
@@ -36,7 +36,7 @@ _Xamarin.Forms のレイアウトは、visual 構造にユーザー インター
 
 |     |     |
 | --- | --- |
-| [`ContentView`](xref:Xamarin.Forms.ContentView) 設定されている 1 つの子が含まれています、 [ `Content` ](xref:Xamarin.Forms.ContentView.Content)プロパティ。 `Content`プロパティを任意に設定できます`View`などその他の派生物`Layout`派生クラス。 `ContentView` 構造体の要素として提供されるほとんどの場合と機能する基底クラスとして[ `Frame`](#frame)します。<br /><br />[API ドキュメント](xref:Xamarin.Forms.ContentView) / [ガイド](~/xamarin-forms/user-interface/layouts/contentview.md)/[サンプル] (https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/userinterface-cardview/ | [![ContentView 例](layouts-images/ContentView.png "ContentView 例")](layouts-images/ContentView-Large.png#lightbox "ContentView 例")<br />[このページの C# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ContentViewDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ContentViewDemoPage.xaml) |
+| [`ContentView`](xref:Xamarin.Forms.ContentView) 設定されている 1 つの子が含まれています、 [ `Content` ](xref:Xamarin.Forms.ContentView.Content)プロパティ。 `Content`プロパティを任意に設定できます`View`などその他の派生物`Layout`派生クラス。 `ContentView` 構造体の要素として提供されるほとんどの場合と機能する基底クラスとして[ `Frame`](#frame)します。<br /><br />[API ドキュメント](xref:Xamarin.Forms.ContentView) / [ガイド](~/xamarin-forms/user-interface/layouts/contentview.md)/[サンプル] (https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-cardview/ | [![ContentView 例](layouts-images/ContentView.png "ContentView 例")](layouts-images/ContentView-Large.png#lightbox "ContentView 例")<br />[このページの C# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ContentViewDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ContentViewDemoPage.xaml) |
 |     |     |
 
 <a named="frame" />
@@ -45,7 +45,7 @@ _Xamarin.Forms のレイアウトは、visual 構造にユーザー インター
 
 |     |     |
 | --- | --- |
-| クラス[`Frame`](xref:Xamarin.Forms.Frame)はから[`ContentView`](#contentView)派生し、その子の周りに境界線またはフレームを表示します。 クラス`Frame`の既定[`Padding`](xref:Xamarin.Forms.Layout.Padding)値は20で、、 [`CornerRadius`](xref:Xamarin.Forms.Frame.CornerRadius)、および[`HasShadow`](xref:Xamarin.Forms.Frame.HasShadow)の[`BorderColor`](xref:Xamarin.Forms.Frame.BorderColor)各プロパティも定義します。<br /><br />[API ドキュメント](xref:Xamarin.Forms.Frame) / [ガイド](~/xamarin-forms/user-interface/layouts/frame.md) / [サンプル](https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/userinterface-frame/) | [![例のフレーム](layouts-images/Frame.png "フレーム例")](layouts-images/Frame-Large.png#lightbox "フレームの例")<br />[このページの C# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/FrameDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/FrameDemoPage.xaml) |
+| クラス[`Frame`](xref:Xamarin.Forms.Frame)はから[`ContentView`](#contentView)派生し、その子の周りに境界線またはフレームを表示します。 クラス`Frame`の既定[`Padding`](xref:Xamarin.Forms.Layout.Padding)値は20で、、 [`CornerRadius`](xref:Xamarin.Forms.Frame.CornerRadius)、および[`HasShadow`](xref:Xamarin.Forms.Frame.HasShadow)の[`BorderColor`](xref:Xamarin.Forms.Frame.BorderColor)各プロパティも定義します。<br /><br />[API ドキュメント](xref:Xamarin.Forms.Frame) / [ガイド](~/xamarin-forms/user-interface/layouts/frame.md) / [サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-frame/) | [![例のフレーム](layouts-images/Frame.png "フレーム例")](layouts-images/Frame-Large.png#lightbox "フレームの例")<br />[このページの C# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/FrameDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/FrameDemoPage.xaml) |
 |     |     |
 
 <a name="scrollView" />

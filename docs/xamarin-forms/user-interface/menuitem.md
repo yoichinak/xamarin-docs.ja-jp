@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 08/01/2019
-ms.openlocfilehash: 396853e2e61904689069b7abd157c73d1da59fed
-ms.sourcegitcommit: 9178e2e689f027212ea3e623b556b312985d79fe
+ms.openlocfilehash: cbc39ee38ce623ce446d50494829119058fc88dc
+ms.sourcegitcommit: 1341f2950b775a4daa7d0548a51fdef759afd6e3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69658094"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69976473"
 ---
 # <a name="xamarinforms-menuitem"></a>Xamarin. フォーム MenuItem
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/userinterface-menuitem/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-menuitem/)
 
 Xamarin. Forms [`MenuItem`](xref:Xamarin.Forms.MenuItem)クラスは、 `ListView`項目のコンテキストメニューやシェルアプリケーションのポップアップメニューなどのメニューのメニュー項目を定義します。
 
@@ -215,5 +215,5 @@ UWP では、コンテキストメニューは、リスト項目を右クリッ�
 
 ## <a name="related-links"></a>関連リンク
 
-* [MenuItem のデモ](https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/userinterface-menuitem/)
+* [MenuItem のデモ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-menuitem/)
 * [Xamarin 形式の画像](~/xamarin-forms/user-interface/images.md)

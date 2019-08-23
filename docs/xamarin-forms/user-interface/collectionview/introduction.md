@@ -7,22 +7,22 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/24/2019
-ms.openlocfilehash: 5832cb28162602a41d31026bc4a0ed54ac6bfb34
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: 14abf2e7eff64d2e3e9656bf1ca76f4cee615408
+ms.sourcegitcommit: 5ef92b44f0d10c58013d3c3dd6283509f1499587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69888606"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986078"
 ---
 # <a name="xamarinforms-collectionview-introduction"></a>CollectionView の概要
 
-![](~/media/shared/preview.png "この API は、現在プレリリースです")
+![この API は現在プレリリースされています](~/media/shared/preview.png)
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView) は、さまざまなレイアウト仕様を使用してデータを一覧表示するためのビューです。 これは [ `ListView`](xref:Xamarin.Forms.ListView) の代わりとして、より柔軟でより高パフォーマンスを提供することを目的にしています。 たとえば、次のスクリーンショットは、 `CollectionView` 2 つの列の垂直グリッドを使用し、複数の選択を可能にするを示しています。
 
-[![iOS および Android における垂直グリッドレイアウトの CollectionView のスクリーンショット](introduction-images/verticalgrid-multipleselection.png "複数選択のある垂直グリッドレイアウトの CollectionView")](introduction-images/verticalgrid-multipleselection-large.png#lightbox "複数選択のある垂直グリッドレイアウトの CollectionView")
+[複数選択のある iOS および Android(introduction-images/verticalgrid-multipleselection.png "CollectionView の垂直グリッドレイアウト")![の CollectionView 垂直グリッドレイアウトのスクリーンショット]](introduction-images/verticalgrid-multipleselection-large.png#lightbox "複数選択の CollectionView 垂直グリッドレイアウト")
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView)は、Xamarin. Forms 4.0 で使用できます。 ただし、現在試験段階で、`Forms.Init` を呼ぶ前に、Android では `MainActivity` クラス、iOS では `AppDelegate` クラスに以下の1行を加えることによってのみ使用できます:
 
@@ -31,7 +31,7 @@ Forms.SetFlags("CollectionView_Experimental");
 ```
 
 > [!IMPORTANT]
-> [`CollectionView`](xref:Xamarin.Forms.CollectionView)は iOS と Android で使用できますが、ユニバーサル Windows プラットフォームでのみ一部利用できます。
+> [`CollectionView`](xref:Xamarin.Forms.CollectionView)は iOS と Android で使用できますが、ユニバーサル Windows プラットフォームでのみ[一部利用でき](https://gist.github.com/hartez/7d0edd4182dbc7de65cebc6c67f72e14)ます。
 
 ## <a name="collectionview-and-listview-differences"></a>CollectionView と ListView の相違点
 

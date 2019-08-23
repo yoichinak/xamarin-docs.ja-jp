@@ -6,13 +6,13 @@ ms.assetid: 5FE78207-1BD6-4706-91EF-B13932321FC9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 08/12/2019
-ms.openlocfilehash: e22b79fada5582adfec05ce7c5ebeddd6fe7e5d2
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.date: 08/22/2019
+ms.openlocfilehash: ac32e340212dd42c373a39df138436e7ee313958
+ms.sourcegitcommit: 1341f2950b775a4daa7d0548a51fdef759afd6e3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69888656"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69976537"
 ---
 # <a name="xamarinforms-collectionview-layout"></a>CollectionView レイアウト
 
@@ -319,9 +319,6 @@ CollectionView collectionView = new CollectionView
 
 これらのプロパティは、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトでサポートされます。つまり、このプロパティはデータ バインドの対象となることを意味します。
 
-> [!IMPORTANT]
-> 現在、ヘッダーとフッターは Android でのみサポートされています。
-
 水平方向に拡張されるレイアウトにヘッダーが追加されると、左から右にヘッダーが表示されます。 同様に、水平方向に拡大するレイアウトにフッターを追加すると、一覧の右側にフッターが表示されます。
 
 ### <a name="display-strings-in-the-header-and-footer"></a>ヘッダーとフッターに文字列を表示する
@@ -346,6 +343,10 @@ CollectionView collectionView = new CollectionView
 };
 collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 ```
+
+このコードを実行すると、次のスクリーンショットが表示され、iOS のスクリーンショットにヘッダーが表示され、Android のスクリーンショットに示されたフッターが表示されます。
+
+[ ![CollectionView 文字列のヘッダーとフッターのスクリーンショット (IOS と Android]の(layout-images/header-footer-string.png "CollectionView 文字列のヘッダーとフッター") )](layout-images/header-footer-string-large.png#lightbox "CollectionView 文字列のヘッダーとフッター")
 
 ### <a name="display-views-in-the-header-and-footer"></a>ヘッダーとフッターにビューを表示する
 
@@ -395,6 +396,10 @@ CollectionView collectionView = new CollectionView
 };
 collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 ```
+
+このコードを実行すると、次のスクリーンショットが表示され、iOS のスクリーンショットにヘッダーが表示され、Android のスクリーンショットに示されたフッターが表示されます。
+
+[IOS および Android(layout-images/header-footer-view.png "CollectionView view のヘッダーとフッター") ![のビューを使用した CollectionView ヘッダーとフッターのスクリーンショット]](layout-images/header-footer-view-large.png#lightbox "CollectionView ビューのヘッダーとフッター")
 
 ### <a name="display-a-templated-header-and-footer"></a>テンプレート化されたヘッダーとフッターを表示する
 
@@ -446,6 +451,10 @@ collectionView.SetBinding(ItemsView.HeaderProperty, ".");
 collectionView.SetBinding(ItemsView.FooterProperty, ".");
 collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 ```
+
+このコードを実行すると、次のスクリーンショットが表示され、iOS のスクリーンショットにヘッダーが表示され、Android のスクリーンショットに示されたフッターが表示されます。
+
+[![テンプレートを使用した CollectionView ヘッダーとフッターのスクリーンショット (IOS および Android](layout-images/header-footer-template.png "CollectionView テンプレートのヘッダーとフッター") )](layout-images/header-footer-template-large.png#lightbox "CollectionView テンプレートのヘッダーとフッター")
 
 ## <a name="item-spacing"></a>項目の間隔
 

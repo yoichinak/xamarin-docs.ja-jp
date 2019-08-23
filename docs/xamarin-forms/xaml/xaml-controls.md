@@ -8,12 +8,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2019
-ms.openlocfilehash: 9d9d07388c2dc32e82fb780d0ed09e586e401662
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: f146fc25af5b5c62acece5c736522773e6dc455d
+ms.sourcegitcommit: 1341f2950b775a4daa7d0548a51fdef759afd6e3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648640"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69976530"
 ---
 # <a name="xaml-controls"></a>XAML コントロール
 
@@ -40,7 +40,7 @@ Xamarin. Forms で定義されているすべてのビューは、XAML ファイ
 | --- | --- |
 | <h3>ボタン</h3>四角形のオブジェクトにテキストを表示します。<p align="center">![ボタンのスクリーンショット](xaml-controls-images/Button.png "ボタン")</p>[API](xref:Xamarin.Forms.Button) / [ガイド](~/xamarin-forms/user-interface/button.md) | <p valign="center"><pre>&lt;Button Text="Click Me!"<br />        Font="Large"<br />        BorderWidth="1"<br />        HorizontalOptions="Center"<br />        VerticalOptions="CenterAndExpand"<br />        Clicked="OnButtonClicked" /&gt;</pre></p> |
 | <h3>ImageButton</h3>四角形のオブジェクトに画像を表示します。<p align="center">![ImageButton のスクリーンショット](xaml-controls-images/ImageButton.png "ImageButton")</p>[API](xref:Xamarin.Forms.ImageButton) / [ガイド](~/xamarin-forms/user-interface/imagebutton.md) | <p valign="center"><pre>&lt;ImageButton Source="XamarinLogo.png"<br />             HorizontalOptions="Center"<br />             VerticalOptions="CenterAndExpand"<br />             Clicked="OnImageButtonClicked" /&gt;</pre></p> |
-| <h3>SearchBar</h3>検索を実行するための検索バーを表示します。<p align="center">![SearchBar のスクリーンショット](xaml-controls-images/SearchBar.png "Searchbar")</p>[API](xref:Xamarin.Forms.SearchBar) | <p valign="center"><pre>&lt;SearchBar Placeholder="Xamarin.Forms Property"<br />           SearchButtonPressed="OnSearchBarButtonPressed" /&gt;</pre></p> |
+| <h3>SearchBar</h3>検索を実行するための検索バーを表示します。<p align="center">![SearchBar のスクリーンショット](xaml-controls-images/SearchBar.png "Searchbar")</p>[API](xref:Xamarin.Forms.SearchBar) / [ガイド](~/xamarin-forms/user-interface/searchbar.md) | <p valign="center"><pre>&lt;SearchBar Placeholder="Xamarin.Forms Property"<br />           SearchButtonPressed="OnSearchBarButtonPressed" /&gt;</pre></p> |
 |     |     |
 
 ## <a name="views-for-setting-values"></a>値の設定のビュー
@@ -67,8 +67,8 @@ Xamarin. Forms で定義されているすべてのビューは、XAML ファイ
 
 |     |     |
 | --- | --- |
-| <h3>ActivityIndicator</h3>アプリケーションが時間のかかるアクティビティに関与していることを示すアニメーションを表示します。進行状況は示されません。<p align="center">![ActivityIndicator のスクリーンショット](xaml-controls-images/ActivityIndicator.png "Activityindicator")</p>[API](xref:Xamarin.Forms.ActivityIndicator) | <p valign="center"><pre>&lt;ActivityIndicator IsRunning="True"<br />                   VerticalOptions="CenterAndExpand" /&gt;</pre></p> |
-| <h3>ProgressBar</h3>アプリケーションが時間のかかるアクティビティを経て進行していることを示すアニメーションを表示します。<p align="center">![ProgressBar のスクリーンショット](xaml-controls-images/ProgressBar.png "ProgressBar")</p>[API](xref:Xamarin.Forms.ProgressBar) | <p valign="center"><pre>&lt;ProgressBar Progress=".5"<br />             VerticalOptions="CenterAndExpand" /&gt;</pre></p> |
+| <h3>ActivityIndicator</h3>アプリケーションが時間のかかるアクティビティに関与していることを示すアニメーションを表示します。進行状況は示されません。<p align="center">![ActivityIndicator のスクリーンショット](xaml-controls-images/ActivityIndicator.png "Activityindicator")</p>[API](xref:Xamarin.Forms.ActivityIndicator) / [ガイド](~/xamarin-forms/user-interface/activityindicator.md) | <p valign="center"><pre>&lt;ActivityIndicator IsRunning="True"<br />                   VerticalOptions="CenterAndExpand" /&gt;</pre></p> |
+| <h3>ProgressBar</h3>アプリケーションが時間のかかるアクティビティを経て進行していることを示すアニメーションを表示します。<p align="center">![ProgressBar のスクリーンショット](xaml-controls-images/ProgressBar.png "ProgressBar")</p>[API](xref:Xamarin.Forms.ProgressBar) / [ガイド](~/xamarin-forms/user-interface/progressbar.md) | <p valign="center"><pre>&lt;ProgressBar Progress=".5"<br />             VerticalOptions="CenterAndExpand" /&gt;</pre></p> |
 |     |     |
 
 ## <a name="views-that-display-collections"></a>コレクションを表示するビュー

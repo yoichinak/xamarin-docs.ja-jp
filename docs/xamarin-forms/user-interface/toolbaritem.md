@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 07/29/2019
-ms.openlocfilehash: 9bb041206dbafb68c1bb60bbbb3068f0a2001b55
-ms.sourcegitcommit: 9178e2e689f027212ea3e623b556b312985d79fe
+ms.openlocfilehash: e6ce55f25b130c64b72a5a7e2ec2ec9a00291d14
+ms.sourcegitcommit: 1341f2950b775a4daa7d0548a51fdef759afd6e3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69658056"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69976344"
 ---
 # <a name="xamarinforms-toolbaritem"></a>ToolbarItem
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/userinterface-toolbaritem/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-toolbaritem/)
 
 Xamarin. Forms [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem)クラスは、 `Page`オブジェクトの`ToolbarItems`コレクションに追加できる特殊なボタンです。 各`ToolbarItem`オブジェクトは、アプリケーションのナビゲーションバーにボタンとして表示されます。 インスタンス`ToolbarItem`はアイコンを持つことができ、プライマリまたはセカンダリのメニュー項目として表示されます。 クラス`ToolbarItem`は、から[`MenuItem`](xref:Xamarin.Forms.MenuItem)継承されます。
 
@@ -117,6 +117,6 @@ void OnItemClicked(object sender, EventArgs e)
 
 ## <a name="related-links"></a>関連リンク
 
-* [ToolbarItem のデモ](https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/userinterface-toolbaritem/)
+* [ToolbarItem のデモ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-toolbaritem/)
 * [Xamarin 形式の画像](~/xamarin-forms/user-interface/images.md)
 * [Xamarin. フォーム MenuItem](~/xamarin-forms/user-interface/menuitem.md)

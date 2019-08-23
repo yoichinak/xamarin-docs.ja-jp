@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: fb8f4a8e62ea163dc58589382c31c4bf19973c36
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 2445645012e54b1818b1ec72116a85d8b985ead3
+ms.sourcegitcommit: 1341f2950b775a4daa7d0548a51fdef759afd6e3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528274"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69976455"
 ---
 # <a name="in-app-purchasing-in-xamarinios"></a>Xamarin. iOS でのアプリ内購入
 
@@ -59,7 +59,7 @@ iOS アプリケーションでは、StoreKit を使用してデジタル製品�
 
 ## <a name="related-links"></a>関連リンク
 
-- [InAppPurchaseSample](https://docs.microsoft.com/en-us/samples/xamarin/ios-samples/storekit/)
+- [InAppPurchaseSample](https://docs.microsoft.com/samples/xamarin/ios-samples/storekit/)
 - [アプリ購入のプログラミングガイド](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/StoreKitGuide/Introduction.html)
 - [iTunes Connect 開発者ガイド](https://developer.apple.com/library/ios/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/iTunesConnect_Guide.pdf)
 - [ストアキットフレームワークリファレンス](https://developer.apple.com/library/ios/documentation/StoreKit/Reference/StoreKit_Collection/StoreKit_Collection.pdf)
