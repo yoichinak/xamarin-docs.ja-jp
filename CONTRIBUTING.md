@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: db5fd78a7907826bcb60ce1c2635491e01f0c02b
-ms.sourcegitcommit: 215b507b2e5a44bb023abc2c804c824b1a6190d8
+ms.openlocfilehash: afb4da5e424fd86a386b85d8b64bd2a126af6add
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67194937"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69521104"
 ---
 # <a name="contributing"></a>コントリビューション
 
@@ -45,15 +45,17 @@ Xamarin ドキュメントへの投稿に関心をお寄せいただきありが
 
 新しいトピックの場合は、この[テンプレート ファイル](../contributing-guidelines/template.md)を開始点として使用できます。 このファイルには、作成のガイドラインが含まれ、作成者情報など、記事ごとに必要なメタデータについても説明されています。
 
-イメージとその他の静的リソースについては、 **<mypage>-images** という名前のサブフォルダーに追加します。 コンテンツ用の新しいフォルダーを作成する場合は、新しいフォルダーに images フォルダーを追加します。
+イメージとその他の静的リソースについては、 **\<mypage>-images** という名前のサブフォルダーに追加します。 コンテンツ用の新しいフォルダーを作成する場合は、新しいフォルダーに images フォルダーを追加します。
 
 #### <a name="example-structure"></a>構造の例
 
-    docs
-      /android
-          mypage.md
-          /mypage-images
-              some-image.png
+```
+docs
+    /android
+        mypage.md
+        /mypage-images
+            some-image.png
+```
 
 適切なマークダウン構文に従ってください。 詳細については、[スタイル ガイド](../contributing-guidelines/template.md)を参照してください。
 
