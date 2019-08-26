@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/30/2018
-ms.openlocfilehash: 9007157cfd96b82a5781b3bdc3ffb4fe63f4e422
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: a1906d8c5c001c2328a0dbdce58f92092454e2c0
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119619"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69525086"
 ---
 # <a name="editing-android-virtual-device-properties"></a>Android 仮想デバイス プロパティの編集
 
@@ -31,15 +31,15 @@ _この記事では、Android Device Manager を使用して Android 仮想デ�
 
 次のようにしてプロパティを変更できます。
 
--   ブール型のプロパティを変更するには、プロパティの右側にあるチェック マークをクリックします。
+- ブール型のプロパティを変更するには、プロパティの右側にあるチェック マークをクリックします。
 
     ![ブール型プロパティの変更](device-properties-images/win/02-boolean-value.png)
 
--   *enum* (列挙) 型のプロパティを変更するには、プロパティの右側にある下向き矢印をクリックして、新しい値を選びます。
+- *enum* (列挙) 型のプロパティを変更するには、プロパティの右側にある下向き矢印をクリックして、新しい値を選びます。
 
     ![列挙型プロパティの変更](device-properties-images/win/04-enum-value.png)
 
--   文字列型または整数型のプロパティを変更するには、値の列で現在の文字列または整数の設定をダブルクリックし、新しい値を入力します。
+- 文字列型または整数型のプロパティを変更するには、値の列で現在の文字列または整数の設定をダブルクリックし、新しい値を入力します。
 
     ![整数型プロパティの変更](device-properties-images/win/03-integer-value.png)
 
@@ -56,15 +56,15 @@ _この記事では、Android Device Manager を使用して Android 仮想デ�
 
 次のようにしてプロパティを変更できます。
 
--   ブール型のプロパティを変更するには、プロパティの右側にあるチェック マークをクリックします。
+- ブール型のプロパティを変更するには、プロパティの右側にあるチェック マークをクリックします。
 
     ![ブール型プロパティの変更](device-properties-images/mac/02-boolean-value.png)
 
--   *enum* (列挙) 型のプロパティを変更するには、プロパティの右側にあるプルダウン メニューをクリックして、新しい値を選びます。
+- *enum* (列挙) 型のプロパティを変更するには、プロパティの右側にあるプルダウン メニューをクリックして、新しい値を選びます。
 
     ![列挙型プロパティの変更](device-properties-images/mac/04-enum-value.png)
 
--   文字列型または整数型のプロパティを変更するには、値の列で現在の文字列または整数の設定をダブルクリックし、新しい値を入力します。
+- 文字列型または整数型のプロパティを変更するには、値の列で現在の文字列または整数の設定をダブルクリックし、新しい値を入力します。
 
     ![整数型プロパティの変更](device-properties-images/mac/03-integer-value.png)
 

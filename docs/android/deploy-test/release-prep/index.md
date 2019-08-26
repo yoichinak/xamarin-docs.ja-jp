@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2018
-ms.openlocfilehash: 605db1c2e0dc0cf41288f9d6c9252582ce91d525
-ms.sourcegitcommit: 64d6da88bb6ba222ab2decd2fdc8e95d377438a6
+ms.openlocfilehash: 4ddae1ae4f49c01220b2f5ce78dc19122b3015a0
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58071069"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69525281"
 ---
 # <a name="preparing-an-application-for-release"></a>リリースに向けてアプリケーションを準備する
 
@@ -19,19 +19,19 @@ ms.locfileid: "58071069"
 
 次の手順で、リリースに向けてアプリをビルドします。
 
--   **[アプリケーション アイコンを指定する](#Specify_the_Application_Icon)** &ndash; Xamarin.Android アプリケーションごとにアプリケーション アイコンを指定する必要があります。 厳密には必須ではありませんが、Google Play など、一部のマーケットでは要求されます。
+- **[アプリケーション アイコンを指定する](#Specify_the_Application_Icon)** &ndash; Xamarin.Android アプリケーションごとにアプリケーション アイコンを指定する必要があります。 厳密には必須ではありませんが、Google Play など、一部のマーケットでは要求されます。
 
--   **[アプリケーションのバージョン管理](#Versioning)** &ndash; この手順では、バージョン管理情報を初期化または更新します。 これは将来、アプリケーションを更新するために、また、インストールしているアプリケーションのバージョンをユーザーに知らせるために重要です。
+- **[アプリケーションのバージョン管理](#Versioning)** &ndash; この手順では、バージョン管理情報を初期化または更新します。 これは将来、アプリケーションを更新するために、また、インストールしているアプリケーションのバージョンをユーザーに知らせるために重要です。
 
--   **[APK を圧縮する](#shrink_apk)**&ndash; マネージド コードで Xamarin.Android リンカーを使用し、Java バイトコードで ProGuard を使用することで、最終的な APK のサイズを大幅に縮小できます。
+- **[APK を圧縮する](#shrink_apk)** &ndash; マネージド コードで Xamarin.Android リンカーを使用し、Java バイトコードで ProGuard を使用することで、最終的な APK のサイズを大幅に縮小できます。
 
--   **[アプリケーションを保護する](#protect_app)**&ndash; ユーザーや攻撃者によるアプリケーションのデバッグ、改ざん、またはリバース エンジニアリングを防ぐために、マネージド コードを難読化し、アンチデバッグとおよび改ざん防止を追加し、ネイティブ コンパイルを使用します。
+- **[アプリケーションを保護する](#protect_app)** &ndash; ユーザーや攻撃者によるアプリケーションのデバッグ、改ざん、またはリバース エンジニアリングを防ぐために、マネージド コードを難読化し、アンチデバッグとおよび改ざん防止を追加し、ネイティブ コンパイルを使用します。
 
--   **[パッケージング プロパティを設定する](#Set_Packaging_Properties)** &ndash; パッケージ プロパティは、Android アプリケーション パッケージ (APK) の作成を制御します。 この手順は APK を最適化し、そのアセットを保護し、必要に応じてパッケージをモジュール化します。
+- **[パッケージング プロパティを設定する](#Set_Packaging_Properties)** &ndash; パッケージ プロパティは、Android アプリケーション パッケージ (APK) の作成を制御します。 この手順は APK を最適化し、そのアセットを保護し、必要に応じてパッケージをモジュール化します。
 
--   **[コンパイル](#Compile)** &ndash; この手順はコードとアセットをコンパイルし、リリース モードでビルドすることを確認します。
+- **[コンパイル](#Compile)** &ndash; この手順はコードとアセットをコンパイルし、リリース モードでビルドされることを確認します。
 
--   **[発行のためのアーカイブ](#archive)** &ndash;この手順は、アプリをビルドし、署名および発行のためにアーカイブに配置します。
+- **[発行のためのアーカイブ](#archive)** &ndash; この手順は、アプリをビルドし、署名および発行のためにアーカイブに配置します。
 
 各手順について以下で詳しく説明します。
 
@@ -69,9 +69,9 @@ Visual Studio for Mac では、アプリケーション アイコンは、次の
 
 Android アプリケーションの保守と配布には、バージョン管理が重要です。 何らかのバージョン管理がなければ、アプリケーションが更新される必要があるかどうか、またはその方法を決定することが困難です。 バージョン管理に役立てるために、Android は次の 2 つの異なる種類の情報を認識します。 
 
--   **バージョン番号** &ndash; アプリケーションのバージョンを表す (Android とアプリケーションによって内部使用される) 整数値。 ほとんどのアプリケーションは、この値を 1 に設定して開始し、ビルドごとにインクリメントされます。 この値は、バージョン名の属性とは関係ありません (下記参照)。 アプリケーションおよび発行サービスで、この値がユーザーに表示されることはありません。 この値は、**AndroidManifest.xml** ファイルに `android:versionCode` として保存されます。 
+- **バージョン番号** &ndash; アプリケーションのバージョンを表す (Android とアプリケーションによって内部使用される) 整数値。 ほとんどのアプリケーションは、この値を 1 に設定して開始し、ビルドごとにインクリメントされます。 この値は、バージョン名の属性とは関係ありません (下記参照)。 アプリケーションおよび発行サービスで、この値がユーザーに表示されることはありません。 この値は、**AndroidManifest.xml** ファイルに `android:versionCode` として保存されます。 
 
--   **バージョン名** &ndash; (特定のデバイスにインストールされる) アプリケーションのバージョンに関する情報をユーザーに知らせるためにのみ使用される文字列。 バージョン名は、ユーザーまたは Google Play 内に表示されることを意図しています。 この文字列は、Android によって内部的に使用されることはありません。 バージョン名は、ユーザーが自分のデバイスにインストールされているビルドを識別するために役立つ文字列の値になります。 この値は、**AndroidManifest.xml** ファイルに `android:versionName` として保存されます。 
+- **バージョン名** &ndash; (特定のデバイスにインストールされる) アプリケーションのバージョンに関する情報をユーザーに知らせるためにのみ使用される文字列。 バージョン名は、ユーザーまたは Google Play 内に表示されることを意図しています。 この文字列は、Android によって内部的に使用されることはありません。 バージョン名は、ユーザーが自分のデバイスにインストールされているビルドを識別するために役立つ文字列の値になります。 この値は、**AndroidManifest.xml** ファイルに `android:versionName` として保存されます。 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -98,9 +98,9 @@ Visual Studio では、次のスクリーンショットで示すように、こ
 
 リリース モードでは、アプリケーションがランタイムで必要な Xamarin.Android の要素のみを送付するように、共有ランタイムはオフにし、リンクをオンにします。 Xamarin.Android の*リンカー*では、スタティック分析を使用して、Xamarin.Android アプリケーションによって使用または参照されるアセンブリ、型、および型メンバーを決定します。 次に、リンカーは、使用 (または参照) されないすべての未使用のアセンブリ、型、メンバーを破棄します。 この操作を行うと、パッケージ サイズが大幅に削減されます。 たとえば、[HelloWorld](~/android/deploy-test/linker.md) の例を検討します。この例では、APK の最終的なサイズが 83% 削減されます。 
 
--   構成: なし &ndash; Xamarin.Android 4.2.5 サイズ = 17.4 MB。
+- 構成: なし &ndash; Xamarin.Android 4.2.5 サイズ = 17.4 MB。
 
--   構成: SDK アセンブリのみ &ndash; Xamarin.Android 4.2.5 サイズ = 3.0 MB。
+- 構成: SDK アセンブリのみ &ndash; Xamarin.Android 4.2.5 サイズ = 3.0 MB。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -110,12 +110,12 @@ Visual Studio では、次のスクリーンショットで示すように、こ
 
 **[リンク中]** プルダウン メニューには、リンカーを制御するために、次のオプションが用意されています。
 
--   **[なし]** &ndash; リンカーをオフにします。リンクは行われません。
+- **[なし]** &ndash; リンカーをオフにします。リンクは行われません。
 
--   **[SDK アセンブリのみ]** &ndash; [Xamarin.Android で必要になる](~/cross-platform/internals/available-assemblies.md)アセンブリのみがリンクされます。 
+- **[SDK アセンブリのみ]** &ndash; [Xamarin.Android で必要になる](~/cross-platform/internals/available-assemblies.md)アセンブリのみがリンクされます。 
     その他のアセンブリはリンクされません。
 
--   **[SDK およびユーザー アセンブリ]** &ndash; Xamarin.Android で必要になるアセンブリだけでなく、アプリケーションで必要になるすべてのアセンブリがリンクされます。
+- **[SDK およびユーザー アセンブリ]** &ndash; Xamarin.Android で必要になるアセンブリだけでなく、アプリケーションで必要になるすべてのアセンブリがリンクされます。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -125,11 +125,11 @@ Visual Studio では、次のスクリーンショットで示すように、こ
 
 リンカーの制御オプションは次のようになります。
 
--   **[リンクしない]** &ndash; リンカーをオフにします。リンクは行われません。
+- **[リンクしない]** &ndash; リンカーをオフにします。リンクは行われません。
 
--   **[SDK アセンブリのみをリンクする]** &ndash; [Xamarin.Android で必要になる](~/cross-platform/internals/available-assemblies.md)アセンブリのみがリンクされます。 その他のアセンブリはリンクされません。
+- **[SDK アセンブリのみをリンクする]** &ndash; [Xamarin.Android で必要になる](~/cross-platform/internals/available-assemblies.md)アセンブリのみがリンクされます。 その他のアセンブリはリンクされません。
 
--   **[すべてのアセンブリをリンクする]** &ndash; Xamarin.Android で必要になるアセンブリだけでなく、アプリケーションで必要になるすべてのアセンブリがリンクされます。
+- **[すべてのアセンブリをリンクする]** &ndash; Xamarin.Android で必要になるアセンブリだけでなく、アプリケーションで必要になるすべてのアセンブリがリンクされます。
 
 -----
 
@@ -363,10 +363,10 @@ Multi-Dex の詳細については、「[64K を超えるメソッドを使用�
 
 ここでは、配布チャンネルを選択することができます。
 
--   **アドホック** &ndash; Android デバイスにサイドロードできるように、署名済み APK をディスクに保存します。 引き続き[アプリ パッケージの署名](~/android/deploy-test/signing/index.md)に関するセクションに進み、Android の署名 ID を作成する方法、Android アプリケーション用の新しい署名証明書を作成する方法、アプリの&ldquo;アドホック&rdquo; バージョンをディスクに発行する方法を学習してください。 これは、テスト用の APK を作成するための効果的な方法です。
+- **アドホック** &ndash; Android デバイスにサイドロードできるように、署名済み APK をディスクに保存します。 引き続き[アプリ パッケージの署名](~/android/deploy-test/signing/index.md)に関するセクションに進み、Android の署名 ID を作成する方法、Android アプリケーション用の新しい署名証明書を作成する方法、アプリの&ldquo;アドホック&rdquo; バージョンをディスクに発行する方法を学習してください。 これは、テスト用の APK を作成するための効果的な方法です。
 
 
--   **Google Play** &ndash; 署名済み APK を Google Play に発行します。
+- **Google Play** &ndash; 署名済み APK を Google Play に発行します。
     引き続き「[Google Play に公開する](~/android/deploy-test/publishing/publishing-to-google-play/index.md)」に進み、APK を署名して Google Play ストアに発行する方法について学習してください。
 
 -----

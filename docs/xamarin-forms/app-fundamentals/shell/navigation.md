@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
-ms.openlocfilehash: 4c0fc5edd309d5ed8103c5fc3e33817001049241
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.openlocfilehash: c65a1aed79199106d2a754329dd38d87feda66a2
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68739269"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69888967"
 ---
 # <a name="xamarinforms-shell-navigation"></a>Xamarin.Forms シェルのナビゲーション
 
@@ -91,7 +91,7 @@ about
 `dogs` ルートの `ShellContent` オブジェクトに移動するには、絶対ルート URI は `//animals/domestic/dogs` になります。 同様に、`about` ルートの `ShellContent` オブジェクトに移動するには、絶対ルート URI は `//about` になります。
 
 > [!IMPORTANT]
-> ルート名の重複は許可されます。 ただし、ルートの重複は許可されません。 ルートの重複が検出された場合、アプリケーションの起動時に `ArgumentException` がスローされます。
+> ルートの重複が検出された場合、アプリケーションの起動時に `ArgumentException` がスローされます。 この例外は、階層内の同じレベルにある 2 つ以上のルートが 1 つのルート名を共有している場合にもスローされます。
 
 #### <a name="register-page-routes"></a>ページのルートを登録する
 
@@ -123,7 +123,7 @@ Routing.RegisterRoute("elephants/details", typeof(ElephantDetailPage));
 この例では、`monkeys` ルートのページから `details`ルートに移動すると `MonkeyDetailPage` が表示される、コンテキストに応じたページ ナビゲーションを実現しています。 同様に、`elephants` ルートのページから `details` ルートに移動すると `ElephantDetailPage` が表示されます。
 
 > [!IMPORTANT]
-> 現時点では、`Routing.RegisterRoute` メソッドを使用する場合のルート名の重複は許可されており、登録が重複すると前の登録が上書きされます。
+> `Routing.RegisterRoute` メソッドが 2 つ以上の異なる型に同じルートを登録しようとすると、`ArgumentException` がスローされます。
 
 ## <a name="perform-navigation"></a>ナビゲーションを実行する
 

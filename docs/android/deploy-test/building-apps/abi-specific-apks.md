@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: 20e7385c16324643545e156950efaca565eb0e0c
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 4a3ba970f8ca32f0bfa2e5297e8052f3eb572ed0
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643943"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69525721"
 ---
 # <a name="building-abi-specific-apks"></a>ABI 固有の APK のビルド
 
@@ -24,19 +24,19 @@ _このドキュメントでは、Xamarin.Android を使用する単一の ABI �
 
 アプリケーションに複数の APK があると便利な場合があります。各 APK は同じキーストアで署名され、同じパッケージを共有しますが、特定のデバイスや Android 構成用にコンパイルされます。 この方法はお勧めできません。複数のデバイスと構成をサポートできる 1 つの APK を使用するほうが簡単です。 次のような状況では、複数の APK を作成すると便利な場合があります。
 
--  **APK のサイズを小さくする** - Google Play では APK ファイルのサイズが 100 MB に制限されます。 デバイス固有の APK を作成すると、アプリケーションのアセットとリソースのサブセットを提供するだけで済むため、APK のサイズを小さくすることができます。
+- **APK のサイズを小さくする** - Google Play では APK ファイルのサイズが 100 MB に制限されます。 デバイス固有の APK を作成すると、アプリケーションのアセットとリソースのサブセットを提供するだけで済むため、APK のサイズを小さくすることができます。
 
--  **さまざまな CPU アーキテクチャをサポートする** - アプリケーションに特定の CPU の共有ライブラリがある場合、その CPU の共有ライブラリのみを配布できます。
+- **さまざまな CPU アーキテクチャをサポートする** - アプリケーションに特定の CPU の共有ライブラリがある場合、その CPU の共有ライブラリのみを配布できます。
 
 
 APK が複数あると配布が困難になる場合がある - Google Play で対処されている問題。 Google Play は、アプリケーションのバージョン コードと **AndroidManifest.XML** とともに含まれるその他のメタデータに基づいて、正しい APK が確実にデバイスに配布されるようにします。 Google Play がアプリケーションでの複数の APK の使用をサポートする方法に関する詳細と制限事項については、[複数の APK サポートに関する Google のドキュメント](https://developer.android.com/google/play/publishing/multiple-apks.html)を参照してください。
 
 このガイドでは、Xamarin.Android アプリケーションに対する複数の APK (それぞれ特定の ABI をターゲットとする) のビルドをスクリプト化する方法について説明します。 次のトピックが含まれます。
 
-1.  APK に固有の*バージョン コード* を作成する。
-1.  この APK で使用される一時的なバージョンの **AndroidManifest.XML** を作成する。
-1.  前の手順の **AndroidManifest.XML** を使用して、アプリケーションをビルドする。
-1.  署名および zipalign を実行して、リリース用に APK を準備する。
+1. APK に固有の*バージョン コード* を作成する。
+1. この APK で使用される一時的なバージョンの **AndroidManifest.XML** を作成する。
+1. 前の手順の **AndroidManifest.XML** を使用して、アプリケーションをビルドする。
+1. 署名および zipalign を実行して、リリース用に APK を準備する。
 
 
 このガイドの最後は、[Rake](http://martinfowler.com/articles/rake.html) を使用して、これらの手順をスクリプト化する方法を示すチュートリアルです。
@@ -48,20 +48,20 @@ APK が複数あると配布が困難になる場合がある - Google Play で�
 Google では、7 桁のバージョン コードを使用するバージョン コードの特定のアルゴリズムを推奨しています ([複数の APK サポートに関するドキュメント](https://developer.android.com/google/play/publishing/multiple-apks.html)の*バージョン コード スキームの使用* に関するセクションを参照してください)。
 このバージョン コード スキームを 8 桁に拡張することで、Google Play で正しい APK がデバイスに確実に配布されるように、バージョン コードにいくつかの ABI 情報を含めることができます。 以下のリストで、8 桁のバージョン コード形式について説明します (左から右にインデックスが付けられます)。
 
--   **インデックス 0** (下図では赤色で示されている) &ndash; ABI の整数:
-    -   1 &ndash; `armeabi`
-    -   2 &ndash; `armeabi-v7a`
-    -   6 &ndash; `x86`
+- **インデックス 0** (下図では赤色で示されている) &ndash; ABI の整数:
+    - 1 &ndash; `armeabi`
+    - 2 &ndash; `armeabi-v7a`
+    - 6 &ndash; `x86`
 
--   **インデックス 1 から 2** (下図ではオレンジ色で示されている) &ndash; アプリケーションでサポートされる最小の API レベル。
+- **インデックス 1 から 2** (下図ではオレンジ色で示されている) &ndash; アプリケーションでサポートされる最小の API レベル。
 
--   **インデックス 3 から 4** (下図では青色で示されている) &ndash; サポートされる画面サイズ:
-    -   1 &ndash; 小
-    -   2 &ndash; 標準
-    -   3 &ndash; 大
-    -   4 &ndash; 特大
+- **インデックス 3 から 4** (下図では青色で示されている) &ndash; サポートされる画面サイズ:
+    - 1 &ndash; 小
+    - 2 &ndash; 標準
+    - 3 &ndash; 大
+    - 4 &ndash; 特大
 
--   **インデックス 5 から 7** (下図では緑色で示されている) &ndash; バージョン コードに固有の番号。 
+- **インデックス 5 から 7** (下図では緑色で示されている) &ndash; バージョン コードに固有の番号。 
     これは開発者によって設定されます。 アプリケーションの一般リリースごとに増えます。
 
 下図に、上のリストで説明した各コードの位置を示します。
@@ -71,17 +71,17 @@ Google では、7 桁のバージョン コードを使用するバージョン 
 
 Google Play は、`versionCode` と APK 構成に基づいて、正しい APK が確実にデバイスに配布されるようにします。 最高バージョン コードの APK がデバイスに配布されます。 たとえば、アプリケーションに以下のバージョン コードの 3 つの APK があるとします。
 
--  11413456 - ABI は `armeabi` で、API レベル 14 をターゲットとし、画面サイズは小から大で、バージョン番号は 456 です。
--  21423456 - ABI は `armeabi-v7a` で、API レベル 14 をターゲットとし、画面サイズは標準と大で、バージョン番号は 456 です。
--  61423456 - ABI は `x86` で、API レベル 14 をターゲットとし、画面サイズは標準と大で、バージョン番号は 456 です。
+- 11413456 - ABI は `armeabi` で、API レベル 14 をターゲットとし、画面サイズは小から大で、バージョン番号は 456 です。
+- 21423456 - ABI は `armeabi-v7a` で、API レベル 14 をターゲットとし、画面サイズは標準と大で、バージョン番号は 456 です。
+- 61423456 - ABI は `x86` で、API レベル 14 をターゲットとし、画面サイズは標準と大で、バージョン番号は 456 です。
 
 引き続きこの例を使用して、`armeabi-v7a` に固有のバグが修正されたとします。 アプリ バージョンは 457 に増え、`android:versionCode` は 21423457 に設定され、新しい APK がビルドされます。 `armeabi` および `x86` バージョンの versionCode はそのままです。
 
 次に、x86 バージョンが、新しい API (レベル 19) をターゲットとするいくつかの更新プログラムまたはバグ修正を受け取るとします。これでアプリのバージョンが 500 になります。 新しい `versionCode` は 61923500 に変わりますが、armeabi/armeabi-v7a はそのままです。 この時点で、バージョン コードは次のようになります。
 
--  11413456 - ABI は `armeabi` で、API レベル 14 をターゲットとし、画面サイズは小から大で、バージョン名は 456 です。
--  21423457 - ABI は `armeabi-v7a` で、API レベル 14 をターゲットとし、画面サイズは標準と大で、バージョン名は 457 です。
--  61923500 - ABI は `x86` で、API レベル 19 をターゲットとし、画面サイズは標準と大で、バージョン名は 500 です。
+- 11413456 - ABI は `armeabi` で、API レベル 14 をターゲットとし、画面サイズは小から大で、バージョン名は 456 です。
+- 21423457 - ABI は `armeabi-v7a` で、API レベル 14 をターゲットとし、画面サイズは標準と大で、バージョン名は 457 です。
+- 61923500 - ABI は `x86` で、API レベル 19 をターゲットとし、画面サイズは標準と大で、バージョン名は 500 です。
 
 
 これらのバージョン コードを手動で維持することは、開発者にとってかなりの負担になる場合があります。 正しい `android:versionCode` を計算してから APK をビルドするプロセスを自動化する必要があります。
@@ -106,19 +106,19 @@ ABI ごとに APK をビルドする場合、以下のサンプル コマンド 
 
 以下のリストで、各コマンド ライン パラメーターについて説明します。
 
--   `/t:Package` &ndash; デバッグ キーストアを使用して署名される Android APK を作成します。
+- `/t:Package` &ndash; デバッグ キーストアを使用して署名される Android APK を作成します。
 
--   `/p:AndroidSupportedAbis=<TARGET_ABI>` &ndash; これはターゲットとなる ABI です。 `armeabi`、`armeabi-v7a`、`x86` のいずれかである必要があります。
+- `/p:AndroidSupportedAbis=<TARGET_ABI>` &ndash; これはターゲットとなる ABI です。 `armeabi`、`armeabi-v7a`、`x86` のいずれかである必要があります。
 
--   `/p:IntermediateOutputPath=obj.<TARGET_ABI>/` &ndash; これは、ビルドの一環として作成される中間ファイルを保持するディレクトリです。 必要に応じて、Xamarin.Android は、`obj.armeabi-v7a` など、ABI に基づく名前のディレクトリを作成します。 ビルド間でのファイルの "漏洩" に伴い発生する問題を防ぐため、ABI ごとに 1 つのフォルダーを使用することをお勧めします。 この値がディレクトリの区切り記号 (OS X の場合は `/`) で終わっていることに注目してください。
+- `/p:IntermediateOutputPath=obj.<TARGET_ABI>/` &ndash; これは、ビルドの一環として作成される中間ファイルを保持するディレクトリです。 必要に応じて、Xamarin.Android は、`obj.armeabi-v7a` など、ABI に基づく名前のディレクトリを作成します。 ビルド間でのファイルの "漏洩" に伴い発生する問題を防ぐため、ABI ごとに 1 つのフォルダーを使用することをお勧めします。 この値がディレクトリの区切り記号 (OS X の場合は `/`) で終わっていることに注目してください。
 
--   `/p:AndroidManifest` &ndash; このプロパティでは、ビルド時に使用される **AndroidManifest.XML** ファイルへのパスを指定します。
+- `/p:AndroidManifest` &ndash; このプロパティでは、ビルド時に使用される **AndroidManifest.XML** ファイルへのパスを指定します。
 
--   `/p:OutputPath=bin.<TARGET_ABI>` &ndash; これは、最終的な APK を格納するディレクトリです。 Xamarin.Android は、`bin.armeabi-v7a` など、ABI に基づく名前のディレクトリを作成します。
+- `/p:OutputPath=bin.<TARGET_ABI>` &ndash; これは、最終的な APK を格納するディレクトリです。 Xamarin.Android は、`bin.armeabi-v7a` など、ABI に基づく名前のディレクトリを作成します。
 
--   `/p:Configuration=Release` &ndash; APK のリリース ビルドを実行します。 デバッグ ビルドを Google Play にアップロードすることはできません。
+- `/p:Configuration=Release` &ndash; APK のリリース ビルドを実行します。 デバッグ ビルドを Google Play にアップロードすることはできません。
 
--   `<CS_PROJ FILE>` &ndash; これは、Xamarin.Android プロジェクトの `.csproj` ファイルへのパスです。
+- `<CS_PROJ FILE>` &ndash; これは、Xamarin.Android プロジェクトの `.csproj` ファイルへのパスです。
 
 
 
@@ -141,9 +141,9 @@ zipalign -f -v 4 <SIGNED_APK_TO_ZIPALIGN> <PATH/TO/ZIP_ALIGNED.APK>
 
 サンプル プロジェクトの [OneABIPerAPK](https://github.com/xamarin/monodroid-samples/tree/master/OneABIPerAPK) は単純な Android プロジェクトであり、ABI 固有のバージョン番号を計算し、以下の ABI ごとに別個の 3 つの APK をビルドする方法を示します。
 
--  armeabi
--  armeabi-v7a
--  x86
+- armeabi
+- armeabi-v7a
+- x86
 
 
 サンプル プロジェクトの [rakefile](https://github.com/xamarin/monodroid-samples/blob/master/OneABIPerAPK/Rakefile.rb) では、前のセクションで説明した各手順を実行します。

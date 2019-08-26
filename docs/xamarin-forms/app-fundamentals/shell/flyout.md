@@ -6,13 +6,13 @@ ms.assetid: FEDE51EB-577E-4B3E-9890-B7C1A5E52516
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/23/2019
-ms.openlocfilehash: 9f2aecf1bcac8f9603db40e3562f49123e924bfc
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.date: 07/19/2019
+ms.openlocfilehash: eaa29138f91fb8215e2c7c4e651baaf8e311f713
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68739296"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69889201"
 ---
 # <a name="xamarinforms-shell-flyout"></a>Xamarin.Forms シェルのポップアップ
 
@@ -130,6 +130,32 @@ Shell.Current.FlyoutIsPresented = false;
     ...
 </Shell>
 ```
+
+## <a name="flyout-background-image"></a>ポップアップの背景画像
+
+ポップアップには、ポップアップ ヘッダーの下、ポップアップ項目とメニュー項目の背後に表示される、省略可能な背景画像を含めることができます。 背景画像を指定するには、型 [`ImageSource`](xref:Xamarin.Forms.ImageSource) の `FlyoutBackgroundImage` バインド可能プロパティをファイル、埋め込みリソース、URI、またはストリームに設定します。
+
+背景画像の縦横比を構成するには、型 [`Aspect`](xref:Xamarin.Forms.Aspect) の `FlyoutBackgroundImageAspect` バインド可能プロパティを `Aspect` 列挙体のいずれかのメンバーに設定します。
+
+- [`AspectFill`](xref:Xamarin.Forms.Aspect.AspectFill) - 画像をクリップして、縦横比を維持したまま、表示領域を満たすようにします。
+- [`AspectFit`](xref:Xamarin.Forms.Aspect.AspectFit) - 必要に応じて画像をレターボックス化して、画像が表示領域に収まるようにして、画像の横長か縦長かに応じて、上下または左右に空白スペースを追加します。
+- [`Fill`](xref:Xamarin.Forms.Aspect.Fill) - 画像を完全に拡大し、表示領域を完全に塗りつぶします。 これにより、画像の歪みが発生する可能性があります。
+
+既定では、`FlyoutBackgroundImageAspect` プロパティは `AspectFit` に設定されます。
+
+次の例は、これらのプロパティを設定する方法を示しています。
+
+```xaml
+<Shell ...
+       FlyoutBackgroundImage="photo.jpg"
+       FlyoutBackgroundImageAspect="AspectFill">
+    ...
+</Shell>
+```
+
+この結果、ポップアップに背景画像が表示されます。
+
+![ポップアップの背景画像のスクリーンショット](flyout-images/flyout-backgroundimage.png "ポップアップの背景画像")
 
 ## <a name="flyout-items"></a>ポップアップの項目
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/01/2016
-ms.openlocfilehash: b803c1ccfbd8bae008a763f8a31283b653ae4cf3
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: e21ae2c335a1ffe410317ef8870ee074a3a5ebe2
+ms.sourcegitcommit: 3434624a36a369986b6aeed7959dae60f7112a14
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68652162"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69629622"
 ---
 # <a name="xamarinforms-triggers"></a>Xamarin.Forms のトリガー
 
@@ -111,7 +111,8 @@ ms.locfileid: "68652162"
 </Button>
 ```
 
-ヒント: `Path=Text.Length` を評価するときは常に、ターゲット プロパティの既定値が提供されます (例: `Text=""`)。そうしないと `null` になって、トリガーが意図したとおりに動作しないためです。
+> [!TIP]
+> `Path=Text.Length` を評価するときは常に、ターゲット プロパティの既定値が提供されます (例:  `Text=""`)。そうしないと `null` になって、トリガーが意図したとおりに動作しないためです。
 
 `Setter` を指定するだけでなく、[`EnterActions` と `ExitActions`](#enterexit) を提供することもできます。
 
@@ -266,8 +267,8 @@ XAML を以下に示します。 最初のマルチ トリガーの例と次の�
 </Button>
 ```
 
-次のスクリーンショットは、上記の 2 つのマルチ トリガーの例の違いを示したものです。 画面の上部では、 **[Save]** ボタンを有効にするには、1 つの `Entry` へのテキスト入力だけで十分です。
-画面の下部では、両方のフィールドにデータを入力するまで、 **[Login]** ボタンはアクティブになりません。
+次のスクリーンショットは、上記の 2 つのマルチ トリガーの例の違いを示したものです。 画面の上部では、**[Save]** ボタンを有効にするには、1 つの `Entry` へのテキスト入力だけで十分です。
+画面の下部では、両方のフィールドにデータを入力するまで、**[Login]** ボタンはアクティブになりません。
 
 ![](triggers-images/multi-requireall.png "マルチ トリガーの例")
 

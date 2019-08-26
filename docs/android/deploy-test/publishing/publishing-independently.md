@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: d7135611c3c0a13794b1ed538d62a0788227b7bd
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 7d324d1faa045dcfbb2b3e6dcc3000a67b5f9e10
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64977755"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69525381"
 ---
 # <a name="publishing-independently"></a>個別公開
 
@@ -21,18 +21,18 @@ ms.locfileid: "64977755"
 
 Xamarin.Android アプリの開発、デプロイ、および配信には、多数のライセンスが利用可能です。
 
--   **Visual Studio Community** &ndash; Windows を使用する学生、小規模なチーム、およびオープン ソース ソフトウェア (OSS) の開発者向け。
+- **Visual Studio Community** &ndash; Windows を使用する学生、小規模なチーム、およびオープン ソース ソフトウェア (OSS) の開発者向け。
 
--   **Visual Studio Professional** &ndash; 個々の開発者や小規模なチーム向け (Windows のみ)。 このライセンスでは、標準またはクラウド サブスクリプションを提供し、使用制限はありません。
+- **Visual Studio Professional** &ndash; 個々の開発者や小規模なチーム向け (Windows のみ)。 このライセンスでは、標準またはクラウド サブスクリプションを提供し、使用制限はありません。
 
--   **Visual Studio Enterprise** &ndash; すべての規模のチーム向け (Windows のみ)。 このライセンスには、エンタープライズ機能、標準またはクラウド サブスクリプションが含まれています。
+- **Visual Studio Enterprise** &ndash; すべての規模のチーム向け (Windows のみ)。 このライセンスには、エンタープライズ機能、標準またはクラウド サブスクリプションが含まれています。
 
 [visualstudio.com](https://visualstudio.microsoft.com/xamarin/) にアクセスして Community Edition をダウンロードするか、Professional Edition と Enterprise Edition の購入に関する詳細を確認します。
 
 
 ## <a name="allow-installation-from-unknown-sources"></a>不明なソースからのインストールを許可する
 
-既定では、Android は、ユーザーが Google Play 以外の場所からアプリケーションをダウンロードやインストールを行えないようにしています。 マーケットプレース以外のソースからのインストールを許可するには、ユーザーはアプリケーションをインストールする前に、デバイス上で *[不明なソース]* の設定を有効にする必要があります。 この設定は、次の図に示すように、 **[設定] > [セキュリティ]** で確認できます。
+既定では、Android は、ユーザーが Google Play 以外の場所からアプリケーションをダウンロードやインストールを行えないようにしています。 マーケットプレース以外のソースからのインストールを許可するには、ユーザーはアプリケーションをインストールする前に、デバイス上で *[不明なソース]* の設定を有効にする必要があります。 この設定は、次の図に示すように、**[設定] > [セキュリティ]** で確認できます。
 
 [![セキュリティ設定画面](publishing-independently-images/settings.png)](publishing-independently-images/settings.png#lightbox)
 
@@ -60,8 +60,8 @@ Web サーバーでアプリケーションを配布することができます�
 
 手動インストールは、アプリケーションをインストールするための 3 番目のオプションです。 アプリケーションの手動インストールを有効にするには、次の操作を行います。
 
-1.   **ユーザーに APK のコピーを配布する** &ndash; たとえば、このコピーは、CD または USB フラッシュ ドライブで配布される可能性があります。
-1.   **(ユーザーが) Android デバイスにアプリケーションをインストールする** &ndash; コマンドラインの *Android Debug Bridge* (**adb**) ツールを使用します。 **adb** は、エミュレーター インスタンスまたは Android を利用したデバイスのいずれかとの通信を可能にする、多用途のコマンドライン ツールです。 Android SDK には、**adb** が含まれます。これは、 **<sdk>/platform-tools/** ディレクトリで見つけることができます。
+1. **ユーザーに APK のコピーを配布する** &ndash; たとえば、このコピーは、CD または USB フラッシュ ドライブで配布される可能性があります。
+1. **(ユーザーが) Android デバイスにアプリケーションをインストールする** &ndash; コマンドラインの *Android Debug Bridge* (**adb**) ツールを使用します。 **adb** は、エミュレーター インスタンスまたは Android を利用したデバイスのいずれかとの通信を可能にする、多用途のコマンドライン ツールです。 Android SDK には、**adb** が含まれます。これは、**\<sdk>/platform-tools/** ディレクトリで見つけることができます。
 
 Android デバイスは、USB ケーブルを使用してコンピューターに接続されている必要があります。
 また、Windows コンピューターが **adb** によって認識されるには、携帯電話のベンダーから追加の USB ドライバーも必要です。 これらの追加の USB ドライバーのインストール手順は、このドキュメントには含まれていません。

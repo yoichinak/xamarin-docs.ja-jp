@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 12/20/2017
-ms.openlocfilehash: eedfcfe2ed274ddf541addec67e66250deab7899
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 47b9d76cb0b7b2fc48fe83d291479f7d1ed00eb8
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114627"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69525216"
 ---
 # <a name="google-licensing-services"></a>Google ライセンス サービス
 
@@ -30,9 +30,9 @@ Google ライセンスを実装したアプリケーションは、デバイス�
 
 上の図は、このワークフローを示しています。 
 
--   アプリケーションは、パッケージ名、サーバーの応答を検証するために使用する *nonce* (暗号化認証子)、および非同期的に応答を処理できるコールバックを提供します。 
+- アプリケーションは、パッケージ名、サーバーの応答を検証するために使用する *nonce* (暗号化認証子)、および非同期的に応答を処理できるコールバックを提供します。 
 
--   Google Play は、Google アカウントやデバイス自体の情報を提供します (IMSI 番号など)。 
+- Google Play は、Google アカウントやデバイス自体の情報を提供します (IMSI 番号など)。 
 
 また、Google ライセンス サービスは、APK 拡張ファイルの主要なコンポーネントでもあります (このドキュメントで後述されます)。 APK 拡張ファイルでは、Google ライセンス サービスを使用して、ダウンロードされる拡張ファイルの URL を取得します。
 

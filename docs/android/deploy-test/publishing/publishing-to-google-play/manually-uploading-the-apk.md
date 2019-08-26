@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: 76292dac6281837ee48b3bb76a362255108bd62c
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 3852e2a1460cb5659cf5a00dcc17fb9a6e9c26a8
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57667504"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69525301"
 ---
 # <a name="manually-uploading-the-apk"></a>APK を手動でアップロードする
 
@@ -99,15 +99,15 @@ Google Play のすべてのアプリケーションは、Google Play レーテ�
 
 Google Play レーティング システムの 4 つのレベルと、レーティング レベルが必要とされるか適用される機能またはコンテンツのガイドラインを次に示します。 
 
--   **[Everyone]\(全員\)** &ndash; 場所データのアクセス、公開、共有を行うことはできません。 ユーザーが生成したコンテンツをホストすることはできません。 ユーザー間の通信を有効にできません。 
+- **[Everyone]\(全員\)** &ndash; 場所データのアクセス、公開、共有を行うことはできません。 ユーザーが生成したコンテンツをホストすることはできません。 ユーザー間の通信を有効にできません。 
 
--   **[Low maturity]\(成熟度低\)** &ndash; 場所データにアクセスするが共有しないアプリケーション。 軽度または漫画の暴力の表現。 
+- **[Low maturity]\(成熟度低\)** &ndash; 場所データにアクセスするが共有しないアプリケーション。 軽度または漫画の暴力の表現。 
 
--   **[Medium maturity]\(成熟度中\)** &ndash; ドラッグ、アルコール、タバコに対する言及。 ギャンブルのテーマまたはギャンブルのシミュレーション。 扇情的コンテンツ。 冒涜的または下品なユーモア。 挑発的または性的な言及。 
+- **[Medium maturity]\(成熟度中\)** &ndash; ドラッグ、アルコール、タバコに対する言及。 ギャンブルのテーマまたはギャンブルのシミュレーション。 扇情的コンテンツ。 冒涜的または下品なユーモア。 挑発的または性的な言及。 
     激しい空想的な暴力。 現実的な暴力。 ユーザーの相互検索が可能。 ユーザーの相互通信が可能。 
     ユーザーの場所データの共有。 
 
--   **[High maturity]\(成熟度高\)** &ndash; アルコール、タバコ、ドラッグの消費または販売が中心。 挑発的または性的な言及が中心。 写実的な暴力。 
+- **[High maturity]\(成熟度高\)** &ndash; アルコール、タバコ、ドラッグの消費または販売が中心。 挑発的または性的な言及が中心。 写実的な暴力。 
 
 成熟度中のリストの項目は主観的であり、成熟度中のレーティングを示すように思われるガイドラインが成熟度高のレーティングに該当するのに十分な激しさである可能性があります。 
 
@@ -155,36 +155,36 @@ Google Play でのアプリ公開の詳細については、「[Welcome to the G
 
 Google Play Web サイトでアプリケーションを参照するときは、公開されているすべてのアプリケーションを検索できます。 Google Play を Android デバイスから参照すると、結果が若干異なります。 結果は、使われているデバイスとの互換性に従ってフィルター処理されます。 たとえば、アプリケーションが SMS メッセージを送信する必要がある場合、SMS メッセージを送信できないデバイスにはそのアプリケーションは表示されません。 検索に適用されるフィルターは以下から作成されます。
 
-1.  デバイスのハードウェア構成。
-2.  アプリケーション マニフェスト ファイルでの宣言。
-3.  使われている通信事業者 (該当する場合)。
-4.  デバイスの場所。
+1. デバイスのハードウェア構成。
+2. アプリケーション マニフェスト ファイルでの宣言。
+3. 使われている通信事業者 (該当する場合)。
+4. デバイスの場所。
 
 アプリのマニフェストに要素を追加して、Google Play ストアでのアプリのフィルター方法を制御できます。 次の一覧は、アプリケーションのフィルター処理に使うことができるマニフェストの要素と属性です。
 
--   [supports-screen](https://developer.android.com/guide/topics/manifest/supports-screens-element.html) &ndash; Google Play はこの属性を使って、画面サイズに基づいてデバイスにアプリケーションを展開できるかどうかを判断します。 
+- [supports-screen](https://developer.android.com/guide/topics/manifest/supports-screens-element.html) &ndash; Google Play はこの属性を使って、画面サイズに基づいてデバイスにアプリケーションを展開できるかどうかを判断します。 
     Google Play は、Android が小さいレイアウトを大きい画面に対応させることはできても、その逆はできないものと想定します。 したがって、通常画面のサポートを宣言するアプリケーションは、大きい画面の検索には表示されますが、小さい画面には表示されません。 Xamarin.Android アプリケーションのマニフェスト ファイルに `<supports-screen>` 要素がない場合、Google Play はすべての属性の値が true であり、アプリケーションがすべての画面サイズをサポートするものと想定します。 この要素は、**AndroidManifest.xml** に手動で追加する必要があります。 
 
--   [uses-configuration](https://developer.android.com/guide/topics/manifest/uses-configuration-element.html) &ndash; このマニフェスト要素は、キーボードの種類、ナビゲーション デバイス、タッチ スクリーンなど、特定のハードウェア機能を要求するために使われます。この要素は、**AndroidManifest.xml** に手動で追加する必要があります。 
+- [uses-configuration](https://developer.android.com/guide/topics/manifest/uses-configuration-element.html) &ndash; このマニフェスト要素は、キーボードの種類、ナビゲーション デバイス、タッチ スクリーンなど、特定のハードウェア機能を要求するために使われます。この要素は、**AndroidManifest.xml** に手動で追加する必要があります。 
 
--   [uses-feature](https://developer.android.com/guide/topics/manifest/uses-feature-element.html) &ndash; このマニフェスト要素は、アプリケーションが機能するためにデバイスが備えている必要のあるハードウェアまたはソフトウェアの機能を宣言します。 この属性は情報提供のみです。 Google Play は、このフィルターを満たしていないデバイスにアプリケーションを表示しません。 それでも、他の方法 (手動やダウンロード) でアプリケーションをインストールすることはできます。 この要素は、**AndroidManifest.xml** に手動で追加する必要があります。 
+- [uses-feature](https://developer.android.com/guide/topics/manifest/uses-feature-element.html) &ndash; このマニフェスト要素は、アプリケーションが機能するためにデバイスが備えている必要のあるハードウェアまたはソフトウェアの機能を宣言します。 この属性は情報提供のみです。 Google Play は、このフィルターを満たしていないデバイスにアプリケーションを表示しません。 それでも、他の方法 (手動やダウンロード) でアプリケーションをインストールすることはできます。 この要素は、**AndroidManifest.xml** に手動で追加する必要があります。 
 
--   [uses-library](https://developer.android.com/guide/topics/manifest/uses-library-element.html) &ndash; この要素は、特定の共有ライブラリ (Google Maps など) がデバイス上に存在する必要があることを指定します。 この要素は、`Android.App.UsesLibraryAttribute` で指定することもできます。 次に例を示します。 
+- [uses-library](https://developer.android.com/guide/topics/manifest/uses-library-element.html) &ndash; この要素は、特定の共有ライブラリ (Google Maps など) がデバイス上に存在する必要があることを指定します。 この要素は、`Android.App.UsesLibraryAttribute` で指定することもできます。 次に例を示します。 
 
     ```csharp
     [assembly: UsesLibrary("com.google.android.maps", true)]
     ```
 
--   [uses-permission](https://developer.android.com/guide/topics/manifest/uses-permission-element.html) &ndash; この要素は、アプリケーションの実行に必要な特定のハードウェア機能が `<uses-feature>` 要素で適切に宣言されていない可能性があることを示すために使われます。 たとえば、アプリケーションがカメラを使うアクセス許可を要求している場合、Google Play は、カメラを宣言する `<uses-feature>` 要素がない場合でも、デバイスはカメラを備えている必要があるものと見なします。 この要素は、`Android.App.UsesPermissionsAttribute` で設定できます。 次に例を示します。 
+- [uses-permission](https://developer.android.com/guide/topics/manifest/uses-permission-element.html) &ndash; この要素は、アプリケーションの実行に必要な特定のハードウェア機能が `<uses-feature>` 要素で適切に宣言されていない可能性があることを示すために使われます。 たとえば、アプリケーションがカメラを使うアクセス許可を要求している場合、Google Play は、カメラを宣言する `<uses-feature>` 要素がない場合でも、デバイスはカメラを備えている必要があるものと見なします。 この要素は、`Android.App.UsesPermissionsAttribute` で設定できます。 次に例を示します。 
 
     ```csharp
     [assembly: UsesPermission(Manifest.Permission.Camera)]
     ```
 
--   [uses-sdk](https://developer.android.com/guide/topics/manifest/uses-sdk-element.html) &ndash; この要素は、アプリケーションに必要な最低限の Android API レベルを宣言するために使われます。 この要素は、Xamarin.Android プロジェクトの Xamarin.Android オプションで設定できます。 
+- [uses-sdk](https://developer.android.com/guide/topics/manifest/uses-sdk-element.html) &ndash; この要素は、アプリケーションに必要な最低限の Android API レベルを宣言するために使われます。 この要素は、Xamarin.Android プロジェクトの Xamarin.Android オプションで設定できます。 
 
--   [compatible-screens](https://developer.android.com/guide/topics/manifest/compatible-screens-element.html) &ndash; この要素は、この要素で指定されている画面サイズおよび密度と一致しないアプリケーションを除外するために使われます。 ほとんどのアプリケーションではこのフィルターを使わないでください。 これは、アプリケーションの配布を厳密に制御する必要がある特定の高パフォーマンスのゲームまたはアプリケーション用です。 上で説明した `<support-screen>` 属性をお勧めします。 
+- [compatible-screens](https://developer.android.com/guide/topics/manifest/compatible-screens-element.html) &ndash; この要素は、この要素で指定されている画面サイズおよび密度と一致しないアプリケーションを除外するために使われます。 ほとんどのアプリケーションではこのフィルターを使わないでください。 これは、アプリケーションの配布を厳密に制御する必要がある特定の高パフォーマンスのゲームまたはアプリケーション用です。 上で説明した `<support-screen>` 属性をお勧めします。 
 
--   [supports-gl-texture](https://developer.android.com/guide/topics/manifest/supports-gl-texture-element.html) &ndash; この要素は、アプリケーションで必要な GL テクスチャ圧縮フォーメーションを宣言するために使われます。 ほとんどのアプリケーションではこのフィルターを使わないでください。 これは、アプリケーションの配布を厳密に制御する必要がある特定の高パフォーマンスのゲームまたはアプリケーション用です。 
+- [supports-gl-texture](https://developer.android.com/guide/topics/manifest/supports-gl-texture-element.html) &ndash; この要素は、アプリケーションで必要な GL テクスチャ圧縮フォーメーションを宣言するために使われます。 ほとんどのアプリケーションではこのフィルターを使わないでください。 これは、アプリケーションの配布を厳密に制御する必要がある特定の高パフォーマンスのゲームまたはアプリケーション用です。 
 
 アプリ マニフェストの構成方法の詳細については、Android の「[App Manifest](https://developer.android.com/guide/topics/manifest/manifest-intro.html)」(アプリ マニフェスト) トピックをご覧ください。

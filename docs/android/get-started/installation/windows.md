@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/22/2018
-ms.openlocfilehash: 0053bf97dbcc98c5ffbd6fbddb1e40f884810e60
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 4aa549258d3261d00c0623c2b21a2cebaa226e54
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57670754"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524938"
 ---
 # <a name="windows-installation"></a>Windows のインストール
 
@@ -24,13 +24,13 @@ _このガイドでは、Windows で Visual Studio 用の Xamarin.Android をイ
 Xamarin は現在、追加料金なしで Visual Studio のすべてのエディションに含まれ、別個のライセンスは必要ないため、Visual Studio インストーラーを使用して、Xamarin.Android ツールをダウンロードしてインストールすることができます 
 (以前のバージョンの Xamarin.Android では必要だった手動のインストールとライセンス手順は不要になりました)。このガイドでは、次のことを学習します。
 
--   Java Development Kit、Android SDK、および Android NDK のカスタムの場所を構成する方法。
+- Java Development Kit、Android SDK、および Android NDK のカスタムの場所を構成する方法。
 
--   Android SDK マネージャーを起動して、追加の Android SDK コンポーネントをダウンロードしてインストールする方法。
+- Android SDK マネージャーを起動して、追加の Android SDK コンポーネントをダウンロードしてインストールする方法。
 
--   デバッグとテストのために Android デバイスまたはエミュレーターを準備する方法。
+- デバッグとテストのために Android デバイスまたはエミュレーターを準備する方法。
 
--   最初の Xamarin.Android アプリ プロジェクトを作成する方法。
+- 最初の Xamarin.Android アプリ プロジェクトを作成する方法。
 
 このガイドの終わりには、作業中の Xamarin.Android インストールが Visual Studio に統合され、最初の Xamarin.Android アプリケーションのビルドを開始する準備ができます。
 

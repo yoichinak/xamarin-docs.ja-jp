@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/28/2019
-ms.openlocfilehash: a988a99e20af76d071f55c4cd2c97b135ad077f8
-ms.sourcegitcommit: 10b4ccbfcf182be940899c00fc0fecae1e199c5b
+ms.openlocfilehash: 20ac6ad748e7056f7f8037a73a95de66b9eae3b6
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66252278"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69888914"
 ---
 # <a name="xamarinforms-shell"></a>Xamarin.Forms シェル
 
@@ -30,7 +30,7 @@ Xamarin.Forms シェル アプリケーションを作成するプロセスは�
 
 ## <a name="tabstabsmd"></a>[タブ](tabs.md)
 
-ポップアップ後は、シェル アプリケーション内の次のレベルのナビゲーションが下部のタブ バーに表示されます。 または、アプリケーションのナビゲーション パターンを下部のタブから始めて、ポップアップを使用しないようにすることができます。 どちらの場合も下部のタブに複数のページが含まれる場合は、上部のタブからページをナビゲートできます。
+シェル アプリケーションにおけるポップアップの次のレベルのナビゲーションは、下部のタブ バーです。 または、アプリケーションのナビゲーション パターンを下部のタブから始めて、ポップアップを使用しないようにすることができます。 どちらの場合も下部のタブに複数のページが含まれる場合は、上部のタブからページをナビゲートできます。
 
 ## <a name="page-configurationconfigurationmd"></a>[ページの構成](configuration.md)
 
@@ -43,6 +43,10 @@ Xamarin.Forms シェル アプリケーションを作成するプロセスは�
 ## <a name="searchsearchmd"></a>[検索](search.md)
 
 シェル アプリケーションでは、各ページの上部に追加できる検索ボックスとして提供される、統合された検索機能を利用できます。
+
+## <a name="lifecyclelifecyclemd"></a>[ライフサイクル](lifecycle.md)
+
+シェル アプリケーションでは Xamarin.Forms のライフサイクルが尊重され、ページが画面に表示されるときに `Appearing` イベントが発生し、ページが画面から消えるときに `Disappearing` イベントが発生します。
 
 ## <a name="custom-rendererscustomrenderersmd"></a>[カスタム レンダラー](customrenderers.md)
 

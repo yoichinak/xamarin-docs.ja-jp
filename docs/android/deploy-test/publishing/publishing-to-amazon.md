@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: e65030092b1f59b1111bc521a8613cfe8a9160ee
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 430f4fedc8e988c89826e3ae023fc25b7b798727
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118696"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69525340"
 ---
 # <a name="publishing-to-the-amazon-app-store"></a>Amazon App Store に公開する
 
@@ -22,15 +22,15 @@ Amazon のモバイル アプリ配信プログラムでは、モバイル ア�
 Amazon では、APK のサイズに上限を課していません。 ただし、APK が 30MB より大きいと、Amazon Mobile App Distribution Portal ではなく、FTP が配信に利用されます。
 
 
-## <a name="submitting-apps-binary-info"></a>アプリの提出: バイナリ情報
+## <a name="submitting-apps-binary-info"></a>アプリの送信:バイナリ情報
 
 Amazon App Store にアプリケーションを提出する作業は、Google Play にアプリケーションを提出するプロセスと似ています。 Amazon が配信するアプリケーションには次のアセットが必要です。 
 
--   **アイコン** &ndash;   114 x 114 の .png ファイルで、背景が透明のものです。 これは必須です。
--   **サムネイル** &ndash;   上記のアイコンを大きくしたものです。 512 x 512 ピクセルであり、背景は透明にします。 このアイコンも必須です。
--   **スクリーンショット** &ndash;   Amazon では 3 ～ 10 枚のスクリーンショットが必要になります。 スクリーンショットは 1024w x 600h ピクセルまたは 800w x 480h ピクセルにします。 .png 形式と .jpg 形式を利用できます。
--   **宣伝画像** &ndash;   ホーム ページなど、宣伝できる場所でアプリケーションを取り上げてもらうために、宣伝画像を任意で提出できます。 これは 1024w x 500h ピクセルの .png または .jpg ファイルにします。方向は横向きにします。 アニメーションを入れることはできません。
--  5 つの動画の更新を指定できます。
+- **アイコン** &ndash;   114 x 114 の .png ファイルで、背景が透明のものです。 これは必須です。
+- **サムネイル** &ndash;   上記のアイコンを大きくしたものです。 512 x 512 ピクセルであり、背景は透明にします。 このアイコンも必須です。
+- **スクリーンショット** &ndash;   Amazon では 3 ～ 10 枚のスクリーンショットが必要になります。 スクリーンショットは 1024w x 600h ピクセルまたは 800w x 480h ピクセルにします。 .png 形式と .jpg 形式を利用できます。
+- **宣伝画像** &ndash;   ホーム ページなど、宣伝できる場所でアプリケーションを取り上げてもらうために、宣伝画像を任意で提出できます。 これは 1024w x 500h ピクセルの .png または .jpg ファイルにします。方向は横向きにします。 アニメーションを入れることはできません。
+- 5 つの動画の更新を指定できます。
 
 
 

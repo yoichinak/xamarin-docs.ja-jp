@@ -8,19 +8,19 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/03/2018
-ms.openlocfilehash: 400075a1cbd2303f2ecddb9b1cc9465bbcbde32d
-ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
+ms.openlocfilehash: d2999a21debefb05e5aa3cdaace56cb4f3ac2d81
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68680261"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69525573"
 ---
 # <a name="profiling-android-apps"></a>Android アプリのプロファイリング
 
 アプリ ストアにアプリを配置する前に、パフォーマンスのボトルネック、メモリの過剰使用の問題、またはネットワーク リソースの非効率的な使用を識別して修正することが重要です。 この目的を果たすには、次の 2 つのプロファイラー ツールを利用できます。
 
--  Xamarin Profiler 
--  Android Studio 内の Android Profiler
+- Xamarin Profiler 
+- Android Studio 内の Android Profiler
 
 このガイドでは、Xamarin Profiler を紹介し、Android Profiler の使用を開始するための詳細な情報を提供します。
 
@@ -40,48 +40,48 @@ Android Studio 3.0 以降には、Android Profiler ツールが含まれてい�
 
 次の手順では、Android Studio の Android Profiler ツールで Xamarin Android アプリケーションを起動する方法について説明します。 次のスクリーン ショットの例では、Xamarin Forms の [XamagonXuzzle](https://docs.microsoft.com/samples/xamarin/mobile-samples/liveplayer-xamagonxuzzlelp/) アプリがビルドされ、Android Profiler を使用してプロファイリングされています。
 
-1.  Android プロジェクトのビルド オプションで、 **[共有ランタイムの使用]** を無効にします。 これで、Android アプリケーション パッケージ (APK) は、開発時の共有 Mono ランタイムとの依存関係なしで、ビルドされるようになります。
+1. Android プロジェクトのビルド オプションで、**[共有ランタイムの使用]** を無効にします。 これで、Android アプリケーション パッケージ (APK) は、開発時の共有 Mono ランタイムとの依存関係なしで、ビルドされるようになります。
 
     ![[共有ランタイムの使用] の無効化](profiling-images/vswin/01-turn-off-shared-runtime.png)
 
-2.  **デバッグ**用のアプリをビルドし、物理デバイスまたはエミュレーターに配置します。 これにより、APK の署名付き**デバッグ** バージョンがビルドされます。
+2. **デバッグ**用のアプリをビルドし、物理デバイスまたはエミュレーターに配置します。 これにより、APK の署名付き**デバッグ** バージョンがビルドされます。
     **XamagonXuzzle** の例では、結果として得られる APK に **com.companyname.XamagonXuzzle Signed.apk** という名前が付けられます。
 
-3.  プロジェクト フォルダーを開き、**bin/debug** に移動します。 このフォルダー内でアプリの **Signed.apk** バージョンを見つけ、それを便利にアクセスできる場所 (デスクトップなど) にコピーします。 次のスクリーン ショットの例では、APK **com.companyname.XamagonXuzzle Signed.apk** を見つけて、デスクトップにコピーします。
+3. プロジェクト フォルダーを開き、**bin/debug** に移動します。 このフォルダー内でアプリの **Signed.apk** バージョンを見つけ、それを便利にアクセスできる場所 (デスクトップなど) にコピーします。 次のスクリーン ショットの例では、APK **com.companyname.XamagonXuzzle Signed.apk** を見つけて、デスクトップにコピーします。
 
     [![署名された APK ファイルのデバッグの場所](profiling-images/vswin/02-locating-the-debug-apk-sml.png)](profiling-images/vswin/02-locating-the-debug-apk.png#lightbox)
 
-4.  Android Studio を起動し、 **[Profile or debug APK]\(プロファイルまたはデバッグ APK\)** を選択します。
+4. Android Studio を起動し、**[Profile or debug APK]\(プロファイルまたはデバッグ APK\)** を選択します。
 
     ![Android Studio 起動画面からのプロファイラーの起動](profiling-images/vswin/03-android-studio.png)
 
-5.  **[Select APK File]\(APK ファイルの選択\)** ダイアログ内で、前にビルドしてコピーした APK に移動します。 APK を選択し、 **[OK]** をクリックします。 
+5. **[Select APK File]\(APK ファイルの選択\)** ダイアログ内で、前にビルドしてコピーした APK に移動します。 APK を選択し、**[OK]** をクリックします。 
     
     ![[Select APK File]\(APK ファイルの選択\) ダイアログでの APK の選択](profiling-images/vswin/04-select-apk-dialog.png)
 
-6.  Android Studio によって APK が読み込まれ、**classes.dex** が逆アセンブルされます。
+6. Android Studio によって APK が読み込まれ、**classes.dex** が逆アセンブルされます。
 
     ![APK の設定](profiling-images/vswin/05-setting-up-the-apk.png)
 
-7.  APK が読み込まれると、Android Studio によって APK 用の次のプロジェクト画面が表示されます。 左側のツリー ビューでアプリ名を右クリックして、 **[Open Module Settings]\(モジュール設定を開く\)** を選択します。
+7. APK が読み込まれると、Android Studio によって APK 用の次のプロジェクト画面が表示されます。 左側のツリー ビューでアプリ名を右クリックして、**[Open Module Settings]\(モジュール設定を開く\)** を選択します。
 
     [![メニュー項目 [Open Module Settings]\(モジュール設定を開く\) の場所](profiling-images/vswin/06-open-module-settings-sml.png)](profiling-images/vswin/06-open-module-settings.png#lightbox)
 
-8.  **[Project Settings]\(プロジェクト設定\)、[Modules]\(モジュール\)** の順に移動し、アプリの **[-Signed]** ノードを選択し、 **&lt;[No SDK]\(SDK なし\)&gt;** をクリックします。
+8. **[プロジェクトの設定]、[モジュール]** の順に移動し、アプリの **[-Signed]** ノードを選択し、**&lt;[No SDK]\(SDK なし\)&gt;** をクリックします。
 
     [![SDK 設定への移動](profiling-images/vswin/07-project-settings-modules-sml.png)](profiling-images/vswin/07-project-settings-modules.png#lightbox)
 
-9.  **[Module SDK]\(モジュール SDK\)** プルダウン メニューで、アプリをビルドするために使用した Android SDK レベルを選択します (この例では、API レベル 26 を使用して **XamagonXuzzle** がビルドされています)。
+9. **[Module SDK]\(モジュール SDK\)** プルダウン メニューで、アプリをビルドするために使用した Android SDK レベルを選択します (この例では、API レベル 26 を使用して **XamagonXuzzle** がビルドされています)。
 
     [![プロジェクト SDK レベルの設定](profiling-images/vswin/08-project-sdk-level-sml.png)](profiling-images/vswin/08-project-sdk-level.png#lightbox)
 
-    **[Apply]\(適用\)** 、 **[OK]** の順にクリックして、この設定を保存します。
+    **[Apply]\(適用\)**、**[OK]** の順にクリックして、この設定を保存します。
 
 10. ツール バー アイコンからプロファイラーを起動します。
 
     [![プロファイラー ツールバー アイコンの場所](profiling-images/vswin/09-launch-profiler-sml.png)](profiling-images/vswin/09-launch-profiler.png#lightbox)
 
-11. アプリを実行/プロファイリングするために配置ターゲットを選択して、 **[OK]** をクリックします。 配置ターゲットとしては、物理デバイスまたはエミュレーターで実行されている仮想デバイスを指定できます。 この例では、Nexus 5 X デバイスを使用します。
+11. アプリを実行/プロファイリングするために配置ターゲットを選択して、**[OK]** をクリックします。 配置ターゲットとしては、物理デバイスまたはエミュレーターで実行されている仮想デバイスを指定できます。 この例では、Nexus 5 X デバイスを使用します。
 
     ![配置ターゲットの選択](profiling-images/vswin/10-select-deployment-target.png)
 
@@ -107,8 +107,8 @@ Android Studio 3.0 以降には、Android Profiler ツールが含まれてい�
 Android Profiler の使用の詳細については、[Android Studio のドキュメント](https://developer.android.com/studio/profile/android-profiler.html)を参照してください。
 次のトピックは、Xamarin Android 開発者を対象としています。
 
--   [CPU Profiler](https://developer.android.com/studio/profile/cpu-profiler.html) &ndash; アプリの CPU 使用率とスレッド アクティビティをリアルタイムで検査する方法について説明します。
+- [CPU Profiler](https://developer.android.com/studio/profile/cpu-profiler.html) &ndash; アプリの CPU 使用率とスレッド アクティビティをリアルタイムで検査する方法について説明します。
 
--   [Memory Profiler](https://developer.android.com/studio/profile/memory-profiler.html) &ndash; アプリのメモリ使用量のリアルタイム グラフを表示します。分析のためにメモリ割り当てを記録するボタンが含まれています。
+- [Memory Profiler](https://developer.android.com/studio/profile/memory-profiler.html) &ndash; アプリのメモリ使用量のリアルタイム グラフを表示します。分析のためにメモリ割り当てを記録するボタンが含まれています。
 
--   [Network Profiler](https://developer.android.com/studio/profile/network-profiler.html) &ndash; アプリによって送受信されるデータのリアルタイムでのネットワーク アクティビティを表示します。
+- [Network Profiler](https://developer.android.com/studio/profile/network-profiler.html) &ndash; アプリによって送受信されるデータのリアルタイムでのネットワーク アクティビティを表示します。

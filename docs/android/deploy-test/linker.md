@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/30/2018
-ms.openlocfilehash: a79dcf14ddefd13d17e218602030a6467a3f1448
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 4e9a7df9ef418eb9a671979da6d61f7afe03a49f
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643840"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69525422"
 ---
 # <a name="linking-on-android"></a>Android でのリンク
 
@@ -53,11 +53,11 @@ public class MyActivity {
 
 ### <a name="linker-behavior"></a>リンカーの動作
 
-リンカーを制御する主要なメカニズムは、 **[プロジェクト オプション]** ダイアログ ボックスの **[リンカーの動作]** (Visual Studio では *[リンク]* ) ドロップダウンです。 次の 3 つのオプションがあります。
+リンカーを制御する主要なメカニズムは、**[プロジェクト オプション]** ダイアログ ボックスの **[リンカーの動作]** (Visual Studio では *[リンク]*) ドロップダウンです。 次の 3 つのオプションがあります。
 
-1.  **リンクしない** (Visual Studio では "*なし*")
-1.  **SDK アセンブリのみをリンクする** ("*SDK アセンブリのみ*")
-1.  **すべてのアセンブリをリンクする** ("*SDK およびユーザー アセンブリ*")
+1. **リンクしない** (Visual Studio では "*なし*")
+1. **SDK アセンブリのみをリンクする** ("*SDK アセンブリのみ*")
+1. **すべてのアセンブリをリンクする** ("*SDK およびユーザー アセンブリ*")
 
 
 **[リンクしない]** オプションは、リンカーをオフにします。上の "リンクなしのリリース" アプリケーション サイズの例では、この動作を使いました。 このオプションは、実行時の障害をトラブルシューティングする場合、およびリンカーが応答しているかどうかを確認する場合に役立ちます。 通常、運用環境のビルドにはこの設定は推奨されません。
@@ -67,7 +67,7 @@ public class MyActivity {
 
 **[すべてのアセンブリをリンクする]** オプションはすべてのアセンブリをリンクし、静的参照が存在しない場合はユーザーのコードも削除される可能性があることを意味します。
 
-上の例は、 *[リンクしない]* オプションと *[SDK アセンブリのみをリンクする]* オプションでは動作しますが、 *[すべてのアセンブリをリンクする]* 動作では失敗して、次のようなエラーが発生します。
+上の例は、*[リンクしない]* オプションと *[SDK アセンブリのみをリンクする]* オプションでは動作しますが、*[すべてのアセンブリをリンクする]* 動作では失敗して、次のようなエラーが発生します。
 
 ```shell
 E/mono    (17755): [0xafd4d440:] EXCEPTION handling: System.MissingMethodException: Default constructor not found for type ExampleLibrary.Example.
@@ -92,11 +92,11 @@ E/mono    (17755):   at (wrapper dynamic-method) object:95bb4fbe-bef8-4e5b-8e99-
 
 残しておきたいコードがリンカーによって削除される場合があります。 次に例を示します。
 
--   `System.Reflection.MemberInfo.Invoke` を使って直接呼び出しているコードがある場合。
+- `System.Reflection.MemberInfo.Invoke` を使って直接呼び出しているコードがある場合。
 
--   型を動的にインスタンス化する場合、型の既定のコンストラクターを維持したい場合があります。
+- 型を動的にインスタンス化する場合、型の既定のコンストラクターを維持したい場合があります。
 
--   XML シリアル化を利用する場合、型のプロパティを保持することもできます。
+- XML シリアル化を利用する場合は、型のプロパティを保持することができます。
 
 このような場合は、[Android.Runtime.Preserve](xref:Android.Runtime.PreserveAttribute) 属性を使うことができます。 アプリケーションによって静的にリンクされていないすべてのメンバーは削除の対象になるため、この属性を使って、静的に参照されていないが、アプリケーションにとって必要であるメンバーをマークすることができます。 この属性は、ある型のすべてのメンバー、または型自体に適用できます。
 
@@ -198,27 +198,27 @@ class MyActivity {
 
 アセンブリがリンクされるとき、次のカスタム属性の型はすべてのメンバーから削除されます。
 
--  System.ObsoleteAttribute
--  System.MonoDocumentationNoteAttribute
--  System.MonoExtensionAttribute
--  System.MonoInternalNoteAttribute
--  System.MonoLimitationAttribute
--  System.MonoNotSupportedAttribute
--  System.MonoTODOAttribute
--  System.Xml.MonoFIXAttribute
+- System.ObsoleteAttribute
+- System.MonoDocumentationNoteAttribute
+- System.MonoExtensionAttribute
+- System.MonoInternalNoteAttribute
+- System.MonoLimitationAttribute
+- System.MonoNotSupportedAttribute
+- System.MonoTODOAttribute
+- System.Xml.MonoFIXAttribute
 
 
 アセンブリがリンクされるとき、次のカスタム属性の型はリリース ビルドのすべてのメンバーから削除されます。
 
--  System.Diagnostics.DebuggableAttribute
--  System.Diagnostics.DebuggerBrowsableAttribute
--  System.Diagnostics.DebuggerDisplayAttribute
--  System.Diagnostics.DebuggerHiddenAttribute
--  System.Diagnostics.DebuggerNonUserCodeAttribute
--  System.Diagnostics.DebuggerStepperBoundaryAttribute
--  System.Diagnostics.DebuggerStepThroughAttribute
--  System.Diagnostics.DebuggerTypeProxyAttribute
--  System.Diagnostics.DebuggerVisualizerAttribute
+- System.Diagnostics.DebuggableAttribute
+- System.Diagnostics.DebuggerBrowsableAttribute
+- System.Diagnostics.DebuggerDisplayAttribute
+- System.Diagnostics.DebuggerHiddenAttribute
+- System.Diagnostics.DebuggerNonUserCodeAttribute
+- System.Diagnostics.DebuggerStepperBoundaryAttribute
+- System.Diagnostics.DebuggerStepThroughAttribute
+- System.Diagnostics.DebuggerTypeProxyAttribute
+- System.Diagnostics.DebuggerVisualizerAttribute
 
 
 ## <a name="related-links"></a>関連リンク

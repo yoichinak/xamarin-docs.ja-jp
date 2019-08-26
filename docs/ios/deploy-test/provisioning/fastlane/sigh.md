@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 88cc4899956b03d7236d7aa5c2bd30a5f6880507
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: bb2fd504cccb7aa81831288762ba623824e52554
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119515"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526514"
 ---
 # <a name="fastlane-for-ios-sigh"></a>fastlane for iOS – sigh
 
@@ -50,7 +50,7 @@ fastlane のインストールの詳細については、[fastlane](~/ios/deploy
 
 ## <a name="what-is-sigh"></a>sigh とは
 
-sigh は、すべての構成のプロビジョニング プロファイル (Development、App Store Distribution、Ad Hoc Distribution、Enterprise Distribution) を作成および更新することができるターミナル インターフェイスを提供します。 さらに、プロビジョニング プロファイルをダウンロードして修復する簡単な方法を提供します。
+sigh には、次のすべての構成のプロビジョニング プロファイルを作成および更新できるターミナル インターフェイスが用意されています。開発、App Store 配布、アドホック配布、およびエンタープライズ配布。 さらに、プロビジョニング プロファイルをダウンロードして修復する簡単な方法を提供します。
 
 <a name="appid" />
 
@@ -58,7 +58,9 @@ sigh は、すべての構成のプロビジョニング プロファイル (Dev
 
 App ID は、次のコマンドで作成できます。
 
-    fastlane produce -u your@appleid.com -a com.company.appname --skip_itc
+```
+fastlane produce -u your@appleid.com -a com.company.appname --skip_itc
+```
 
 ここで `com.company.appname` はアプリのバンドル ID で、次に示すように、Xamarin.iOS アプリケーションの Info.plist ファイルで見つかります。
 
