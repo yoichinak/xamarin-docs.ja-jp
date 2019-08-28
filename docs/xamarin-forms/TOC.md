@@ -154,6 +154,7 @@
 #### [レイアウト](user-interface/controls/layouts.md)
 #### [ビュー](user-interface/controls/views.md)
 #### [セル](user-interface/controls/cells.md)
+#### [共通のプロパティ、メソッド、およびイベント](user-interface/controls/common-properties.md)
 #### [サードパーティ コントロール](user-interface/controls/thirdparty.md)
 ### [DataPages](user-interface/datapages/index.md)
 #### [開始するには](user-interface/datapages/get-started.md)
@@ -324,6 +325,7 @@
 ### [単位コンバーター](~/essentials/unit-converters.md?context=xamarin/xamarin-forms)
 ### [バージョンの追跡](~/essentials/version-tracking.md?context=xamarin/xamarin-forms)
 ### [バイブレーション](~/essentials/vibrate.md?context=xamarin/xamarin-forms)
+### [Xamarin.Essentials のリリース ノート](https://docs.microsoft.com/xamarin/essentials/release-notes/)
 ### [トラブルシューティング](~/essentials/troubleshooting.md?context=xamarin/xamarin-forms)
 
 ## データと Azure Cloud Services

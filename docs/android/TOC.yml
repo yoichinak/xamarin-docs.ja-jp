@@ -448,6 +448,8 @@
           href: ~/essentials/version-tracking.md?context=xamarin/android
         - name: バイブレーション
           href: ~/essentials/vibrate.md?context=xamarin/android
+        - name: Xamarin.Essentials のリリース ノート
+          href: 'https://docs.microsoft.com/xamarin/essentials/release-notes/'
         - name: トラブルシューティング
           href: ~/essentials/troubleshooting.md?context=xamarin/android
     - name: データとクラウド サービス
