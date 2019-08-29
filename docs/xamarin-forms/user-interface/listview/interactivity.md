@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/27/2019
-ms.openlocfilehash: 833e6d3fc06ceeb5f8f63cb8b8b255b2a940098c
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: MT
+ms.openlocfilehash: 180ffa7cf723d841021a8bf7d1f1a285c882c103
+ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653883"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70065546"
 ---
 # <a name="listview-interactivity"></a>ListView の対話機能
 
@@ -75,7 +75,7 @@ var listView = new ListView { ... SelectionMode = ListViewSelectionMode.None };
 
 既定では、メニュー アイテムにはどのセルが属するを知る方法がありません。 `CommandParameter` 使用できるは`MenuItem`MenuItem の ViewCell の背後にあるオブジェクトなどのオブジェクトを格納します。 `CommandParameter` XAML と C# の両方で設定できます。
 
-### <a name="c"></a>C#  
+### <a name="c"></a>C\#
 
 コンテキスト アクションは、いずれかで実装できる`Cell`サブクラス (グループ ヘッダーとして、使用されていない限り) を作成して`MenuItem`s と追加すること、`ContextActions`セルのコレクション。 次のものをコンテキスト アクションのプロパティを構成できます。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 352a312d795ba292b47621ddb84540c2259ea10a
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
-ms.translationtype: MT
+ms.openlocfilehash: 1e1bba499a14b92965a5fb544ccf321b0e453894
+ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69527053"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70065446"
 ---
 # <a name="walkthrough-using-touch-in-xamarinios"></a>チュートリアル: Xamarin でのタッチの使用
 
@@ -37,7 +37,7 @@ ms.locfileid: "69527053"
 
 
 1. プロジェクト**Touch_Start**を開きます。 まず、プロジェクトを実行してすべて問題ないことを確認し、 **[タッチサンプル]** ボタンにタッチします。 次のような画面が表示されます (ただし、どのボタンも動作しません)。
-    
+
     [![](ios-touch-walkthrough-images/image4.png "動作しないボタンを使用したサンプルアプリの実行")](ios-touch-walkthrough-images/image4.png#lightbox)
 
 
@@ -164,11 +164,11 @@ ms.locfileid: "69527053"
         touchStartedInside = false;
     }
     ```
-    
+
     どちらの方法でも`touchStartedInside`フラグが false にリセットされます。 `TouchesEnded`は画面に`TouchesEnded`も表示されます。
 
 1. この時点で、[タッチサンプル] 画面が完成しました。 次のスクリーンショットに示すように、各イメージを操作すると画面がどのように変化するかに注目してください。
-        
+
     [![](ios-touch-walkthrough-images/image4.png "アプリの開始画面")](ios-touch-walkthrough-images/image4.png#lightbox)
     
     [![](ios-touch-walkthrough-images/image5.png "ユーザーがボタンをドラッグした後の画面")](ios-touch-walkthrough-images/image5.png#lightbox)

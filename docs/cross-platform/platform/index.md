@@ -1,39 +1,39 @@
 ---
-title: Xamarin での言語サポートのプログラミング
-description: このドキュメントでは、Xamarin でサポートされている、さまざまなプログラミング言語について説明します。 説明C#、 F#、移植可能な Visual Basic.NET、および Razor テンプレート。
+title: Xamarin でのプログラミング言語のサポート
+description: このドキュメントでは、Xamarin でサポートされるさまざまなプログラミング言語について説明します。 、、 C#ポータブルF#ビジュアル Basic.NET、および Razor テンプレートについて説明します。
 ms.prod: xamarin
 ms.assetid: CEE8C464-67D7-45F4-9614-EAEF5217CACC
 author: asb3993
 ms.author: amburns
 ms.date: 02/18/2018
-ms.openlocfilehash: 6c0b8e6de0c414fb708c4027f4c536a21b6b011a
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 2ec934b2747f89e959d659615629489e86449660
+ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67864376"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70065156"
 ---
-# <a name="programming-language-support-in-xamarin"></a>Xamarin での言語サポートのプログラミング
+# <a name="programming-language-support-in-xamarin"></a>Xamarin でのプログラミング言語のサポート
 
-## <a name="c"></a>C# 
+## <a name="c"></a>C\#
 
 ### <a name="async-support-overviewcross-platformplatformasyncmd"></a>[非同期サポートの概要](~/cross-platform/platform/async.md)
 
-バージョン 5 のC#非同期操作を表現する 2 つの新しいキーワードの導入: async と await します。 これらのキーワードでは、別のスレッドで (ネットワーク アクセス) などの実行時間の長い操作を実行するには、タスク並列ライブラリを使用する単純なコードを記述し、完了時に結果を簡単にアクセスできます。 最新のバージョンの Xamarin.iOS と Xamarin.Android が非同期のサポートし、await - 説明、および Xamarin を使用した新しい構文を使用する例を説明します。
+Version 5 でC#は、非同期操作を表すために、async と await の2つの新しいキーワードが導入されました。 これらのキーワードを使用すると、タスク並列ライブラリを利用して、別のスレッドで長時間実行される操作 (ネットワークアクセスなど) を実行し、完了時に結果に簡単にアクセスできる単純なコードを記述できます。 最新バージョンの Xamarin. iOS および Xamarin. Android サポート async と await-このドキュメントでは、Xamarin で新しい構文を使用する方法について説明し、例を示します。
 
 ### <a name="c-6-language-featurescross-platformplatformcsharp-sixmd"></a>[C# 6 の言語機能](~/cross-platform/platform/csharp-six.md)
 
-最新バージョンのC#言語 – バージョン 6 – は少ない定型、明確さの向上、および一貫性のある言語の進化を続けています。 使用する機能などがより明確な初期化構文`await`で`catch/finally`ブロック、および null 条件`?`演算子は特に便利です。
+C#言語の最新バージョン (バージョン 6) では、言語を進化させて、定型句を小さくし、わかりやすくし、一貫性を高めることができます。 クリーンな初期化構文、ブロック内で`await` `catch/finally`使用する機能、および null 条件`?`演算子は特に便利です。
 
 ## <a name="ffsharpindexmd"></a>[F#](fsharp/index.md)
 
-モバイル アプリを構築F#と Xamarin。
+と Xamarin を使用F#したモバイルアプリの構築。
 
-## <a name="portable-visual-basicnetcross-platformplatformvisual-basicindexmd"></a>[移植可能な Visual Basic.NET](~/cross-platform/platform/visual-basic/index.md)
+## <a name="portable-visual-basicnetcross-platformplatformvisual-basicindexmd"></a>[ポータブルビジュアル Basic.NET](~/cross-platform/platform/visual-basic/index.md)
 
-Visual Studio では、Xamarin アプリケーションに組み込むことができますが、Visual basic.net を使用して、ポータブル クラス ライブラリの作成をサポートします。 この記事では、サンプル Xamarin.iOS、Xamarin.Android、および Windows Phone アプリケーションで使用して新しい Visual Basic の PCL を作成する方法を示します。
+Visual Studio では、Visual Basic.NET を使用したポータブルクラスライブラリの作成がサポートされており、これを Xamarin アプリケーションに組み込むことができます。 この記事では、新しい Visual Basic PCL を作成し、サンプルの Xamarin、Xamarin、Android、Windows Phone アプリケーションで使用する方法について説明します。
 
-## <a name="building-html-views-using-razor-templatescross-platformplatformrazor-html-templatesindexmd"></a>[Razor テンプレートを使用して構築 HTML ビュー](~/cross-platform/platform/razor-html-templates/index.md)
+## <a name="building-html-views-using-razor-templatescross-platformplatformrazor-html-templatesindexmd"></a>[Razor テンプレートを使用した HTML ビューの作成](~/cross-platform/platform/razor-html-templates/index.md)
 
-と共に ASP.NET MVC で初めて導入、Razor テンプレート エンジンを利用する開発者は XamarinC#コード内の HTML 文字列を手動で構築するための負担をかけず、HTML、Javascript、CSS でのデータを簡単に統合します。
-この記事では、Android および iOS 用の Xamarin を使用した Razor テンプレートを使用する方法を示します。
+Xamarin を使用すると、開発者は ASP.NET MVC で初めて導入されたC# Razor テンプレートエンジンを利用して、コードで html 文字列を手動で作成する手間をかけることなく、データを Html、JAVASCRIPT、CSS と簡単に組み合わせることができます。
+この記事では、Android および iOS 用の Xamarin で Razor テンプレートを使用する方法について説明します。

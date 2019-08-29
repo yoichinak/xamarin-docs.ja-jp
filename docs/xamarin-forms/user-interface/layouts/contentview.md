@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 08/14/2019
-ms.openlocfilehash: 2dde7415f40c9db205351a81d63d273fc211ed2b
-ms.sourcegitcommit: 1341f2950b775a4daa7d0548a51fdef759afd6e3
+ms.openlocfilehash: 86e92ee5293b4c9ed902f1c8d9858e06db1aa458
+ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69976594"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70065510"
 ---
 # <a name="xamarinforms-contentview"></a>Xamarin. Forms ContentView
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-contentview/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-contentviewdemos/)
 
 Xamarin [`ContentView`](xref:Xamarin.Forms.ContentView)クラスは、単一の`Layout`子要素を格納する型であり、通常は、カスタムの再利用可能なコントロールを作成するために使用されます。 クラス`ContentView`は、から[`TemplatedView`](xref:Xamarin.Forms.TemplatedView)継承されます。 この記事および関連するサンプルでは、 `CardView` `ContentView`クラスに基づいてカスタムコントロールを作成する方法について説明します。
 
@@ -205,7 +205,7 @@ CardView card = new CardView
 
 ## <a name="related-links"></a>関連リンク
 
-* [ContentView サンプルアプリケーション](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-contentview/)
+* [ContentView サンプルアプリケーション](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-contentviewdemos/)
 * [Xamarin. フォームデータバインディング](~/xamarin-forms/app-fundamentals/data-binding/index.md)
 * [バインド](~/xamarin-forms/xaml/bindable-properties.md)可能なプロパティ。
 * [Xamarin. フォームコントロールテンプレート](~/xamarin-forms/app-fundamentals/templates/control-templates/index.md)

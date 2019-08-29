@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: a3273b4bed13c3982b9d9b4df874e4ad2ee30e3f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 39c77b4016027171a4e76bc4fb15c77d733cf5ba
+ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645920"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70065371"
 ---
 # <a name="watchos-notifications-in-xamarin"></a>watchOS Xamarin での通知
 
@@ -37,7 +37,7 @@ Watch アプリは、親 iOS アプリには、それらがサポートしてい
 
 2 つの種類の通知があります。
 
-- **短い外観**-システムによって定義された非スクロールの静的ビューです。
+- システムによって定義されている、スクロール不可能な静的ビューです。
 
 - **時間の長い外観**- スクロール可能なカスタマイズ可能なビューが定義しました。 単純化し、静的バージョンより複雑な動的バージョンを指定することができます。
 
@@ -99,21 +99,21 @@ Watch で通知が表示されることを確認するには、するには、(1
 
 Visual Studio for Mac と watch extension を設定すると追加のオプションが表示されます、**スタートアップ プロジェクト**します。
 ウォッチ拡張機能プロジェクトを右クリックし、選択**実行 > カスタム パラメーター.** :
-    
+
 [![](notifications-images/runwith-customparams-sml.png "カスタム プロパティを持つ実行中")](notifications-images/runwith-customparams.png#lightbox)
-    
+
 開き、**実行引数**ウィンドウが含まれていますが、 **WatchKit**タブ。選択**通知**、JSON ペイロードを提供し、キーを押します**Execute** watch アプリをシミュレーターで起動します。
-    
+
 [![](notifications-images/runwith-execargs-sml.png "通知ペイロードの既定値を選択します。")](notifications-images/runwith-execargs.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ウォッチ拡張機能の編集を Visual Studio の右クリックでテスト通知のペイロードを設定する、**プロジェクト プロパティ**します。 移動して、**デバッグ**セクションし、(これは自動的に一覧表示、プロジェクトに含まれるすべての JSON ファイル) の一覧から通知の JSON ファイルを選択します。
-    
+
 [![](notifications-images/runwith-execargs-sml-vs.png "通知の JSON ファイルを選択します。")](notifications-images/runwith-execargs-vs.png#lightbox)
 
 ウォッチ拡張機能の場合、**スタートアップ プロジェクト**、Visual Studio は、次に示す追加のオプションに表示されます。 いずれかの選択、**通知**で watch アプリを起動するオプション**通知**モード ([プロパティ] ウィンドウで選択されている JSON ファイルを使用)。
-    
+
 ![](notifications-images/runwith-vs.png "デバイス メニュー")
 
 -----
@@ -128,7 +128,7 @@ Visual Studio for Mac と watch extension を設定すると追加のオプシ�
 
 [ウォッチ キット カタログ](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)サンプルがありますが、サンプル ペイロードの JSON ファイル**NotificationPayload.json** (下記参照)。
 
-```csharp
+```json
 {
     "aps": {
         "alert": "Test message content",

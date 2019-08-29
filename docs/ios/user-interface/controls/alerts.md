@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 4c47e12468d9107cbe03d4bc45ffa77e4ad918e9
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: MT
+ms.openlocfilehash: e8113a9cefad5f53b66595728340f71101faa9de
+ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68652057"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70065576"
 ---
 # <a name="displaying-alerts-in-xamarinios"></a>Xamarin でのアラートの表示
 
@@ -23,17 +23,17 @@ UIView のサブクラスである、置き換えられたクラスとは異な�
 表示`UIAlertControllerStyle`するアラートの種類を示すには、を使用します。 これらのアラートの種類は次のとおりです。
 
 - **UIAlertControllerStyleActionSheet**
-    * IOS より前の8これは、UIActionSheet でした。
+  * IOS より前の8これは、UIActionSheet でした。
 - **UIAlertControllerStyleAlert**
-    * IOS より前の8これは、UIAlertView になりました 
+  * IOS より前の8これは、UIAlertView になりました 
 
 警告コントローラーを作成するには、次の3つの手順を実行する必要があります。
 
 - 次のものを使用してアラートを作成および構成します。
-    * title
-    * message
-    * preferredStyle
-    
+  * title
+  * message
+  * preferredStyle
+
 - Optionalテキストフィールドを追加する
 - 必要なアクションを追加する
 - ビューコントローラーを表示する

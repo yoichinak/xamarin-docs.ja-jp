@@ -1,79 +1,79 @@
 ---
-title: watchOS で Xamarin プロジェクトの参照
-description: このドキュメントでは、iOS アプリ、watch アプリでは、watch アプリ拡張機能の関係について説明します。 プロジェクトの参照、およびバンドルがについて説明します識別子。
+title: Xamarin での watchOS プロジェクト参照
+description: このドキュメントでは、iOS アプリ、watch アプリ、および watch アプリの拡張機能の関係について説明します。 ここでは、プロジェクト参照とバンドル識別子について説明します。
 ms.prod: xamarin
 ms.assetid: C366E062-C33D-406A-B3FF-CBE82E5D1E7E
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/13/2016
-ms.openlocfilehash: 60eaad98e2d5469e9c43e6b4ad889080e1aa63ba
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 9108f83d76e07d12d70b400075142d9c73519716
+ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832057"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70065606"
 ---
-# <a name="watchos-project-references-in-xamarin"></a>watchOS で Xamarin プロジェクトの参照
+# <a name="watchos-project-references-in-xamarin"></a>Xamarin での watchOS プロジェクト参照
 
-_IOS アプリ、watch アプリ、およびウォッチ拡張機能間のリレーションシップの説明です。_
+_IOS アプリ、watch アプリ、および watch 拡張機能の関係に関する説明。_
 
-WatchOS ソリューションの 3 つのプロジェクトは*自動的に構成された*3 watchOS アプリを構築して正しくバンドルの特定の方法で相互に参照します。 これらのプロジェクト参照とバンドルの識別子の設定は、以下の参照を説明します。
+WatchOS ソリューション内の3つのプロジェクトは、watchOS 3 アプリをビルドして正しくバンドルするために、特定の方法で相互に参照するように*自動的に構成*されます。 以下では、これらのプロジェクト参照とバンドル識別子の設定について説明します。
 
 ## <a name="project-references"></a>プロジェクトの参照
 
-各プロジェクトの参照ノードをダブルクリックして、参照を表示します。
+参照を表示するには、各プロジェクトの [参照] ノードをダブルクリックします。
 
-- **iPhone アプリ**参照**Watch アプリ**
+- **iPhone アプリ**が**ウォッチアプリ**を参照
 
-  ![](project-references-images/catalog-reference1.png "iPhone アプリは、Watch アプリを参照します。")
+  ![](project-references-images/catalog-reference1.png "iPhone アプリがウォッチアプリを参照")
 
-- **アプリを見る**参照**Watch アプリの拡張機能**
+- **アプリ**参照の監視**アプリの拡張機能**を見る
 
-  ![](project-references-images/catalog-reference2.png "iPhone アプリは、Watch アプリを参照します。")
+  ![](project-references-images/catalog-reference2.png "iPhone アプリがウォッチアプリを参照")
 
 
-- **Watch アプリの拡張機能**他のプロジェクトのいずれかを参照していません
+- **Watch アプリの拡張機能**は、他のプロジェクトのいずれも参照していません
 
-  ![](project-references-images/catalog-reference3.png "Watch アプリの拡張機能は、他のプロジェクトを参照していません")
+  ![](project-references-images/catalog-reference3.png "Watch App Extension は他のプロジェクトを参照していません")
 
 
 
 ## <a name="bundle-identifiers"></a>バンドル識別子
 
-確認する必要がありますも、**バンドル識別子**が正しい。
-次の 3 つのすべてのプロジェクトがあります、*同じ*定義済みの拡張機能のある 2 つのウォッチ プロジェクトで、識別子のプレフィックス`watchkitextension`と`watchkitapp`、次のように (用、 **WatchKitCatalog**例):
+また、**バンドル識別子**が正しいことを確認する必要もあります。
+3つのプロジェクトすべての識別子プレフィックスは*同じ*である必要があります。2つ`watchkitextension`の watch プロジェクトでは、次のように、および`watchkitapp`の定義済みの拡張があります ( **WatchKitCatalog**の例の場合)。
 
-- Xamarin.iOS 統合プロジェクト- `com.xamarin.WatchKitCatalog`
+- Xamarin. iOS 統合プロジェクト-`com.xamarin.WatchKitCatalog`
 
-- WatchKit 拡張機能プロジェクト- `com.xamarin.WatchKitCatalog.watchkitextension`
+- WatchKit Extension プロジェクト-`com.xamarin.WatchKitCatalog.watchkitextension`
 
-- Watch アプリ プロジェクトの場合- `com.xamarin.WatchKitCatalog.watchkitapp`
+- アプリプロジェクトの監視-`com.xamarin.WatchKitCatalog.watchkitapp`
 
-確認これら**Info.plist**設定が正しい。
+また、次の**情報の plist**設定が正しいことを確認します。
 
-- Watch アプリ プロジェクトの`WKCompanionAppBundleIdentifier`親/コンテナー アプリのバンドル ID と一致する (ie。 iPhone で実行されている 1 つ)。
+- Watch アプリプロジェクト`WKCompanionAppBundleIdentifier`は、親/コンテナーアプリのバンドル ID (iPhone で実行されるもの) に一致します。
 
-- ウォッチ キットの拡張機能プロジェクトの**WKApp バンドル ID** Watch アプリ プロジェクトのバンドル ID と一致
+- Watch Kit 拡張機能プロジェクトの**WKApp バンドル id**は、watch アプリプロジェクトのバンドル id と一致します。
 
-ダブルクリックすると、識別子を編集することができます、 **Info.plist**各プロジェクト ファイル。
+識別子を編集するには、各プロジェクトの**情報の plist**ファイルをダブルクリックします。
 
-このスクリーン ショットは、**ウォッチ拡張機能の**Info.plist ファイルの表示、 **Watch アプリの**も識別子。
+このスクリーンショットは、watch**アプリの**識別子も表示されている**Watch の拡張機能の**情報 plist ファイルです。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
-    
-![](project-references-images/infoplist-extension.png "このスクリーン ショットは、ウォッチ拡張機能の Info.plist ファイルです。")
+
+![](project-references-images/infoplist-extension.png "このスクリーンショットは、Watch 拡張機能の情報の plist ファイルです。")
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
-    
-![](project-references-images/infoplist-extension-vs.png "このスクリーン ショットは、ウォッチ拡張機能の Info.plist ファイルです。")
+
+![](project-references-images/infoplist-extension-vs.png "このスクリーンショットは、Watch 拡張機能の情報の plist ファイルです。")
 
 -----
 
-このスクリーン ショットは、 **Watch アプリの**Info.plist ファイル。
-現在**ウォッチ OS**バージョンは、8.2、ため、**配置ターゲット**Watch アプリの**8.2**します。 Xcode 6.3 がインストールした場合、8.3 にこの値を設定することがあります -、変更する必要がありますに注意してください 8.2 します。
+このスクリーンショットは、 **Watch アプリの**情報の plist ファイルです。
+現在の**WATCH OS**バージョンは8.2 であるため、ウォッチアプリの**デプロイターゲット**は**8.2**である必要があります。 Xcode 6.3 がインストールされている場合は、この値が8.3 に設定されている可能性があることに注意してください。8.2 を変更する必要があります。
 
-![](project-references-images/infoplist-watchapp.png "ウォッチの Info.plist ファイル")
+![](project-references-images/infoplist-watchapp.png "ウォッチ情報の plist ファイル")
 
-Watch アプリの展開ターゲットは、ウォッチ拡張機能と iOS アプリは別に指定できます。
+Watch アプリのデプロイターゲットは、Watch 拡張機能と iOS アプリとは異なる場合があります。
 

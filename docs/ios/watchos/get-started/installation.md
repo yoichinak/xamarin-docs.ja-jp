@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 12/05/2017
-ms.openlocfilehash: 5109e3a66e22d885d8dc8b685db0817057709464
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: b4d827715870d54de3116067a3e24e229ecda530
+ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653691"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70065623"
 ---
 # <a name="installing-and-using-watchos-in-xamarin"></a>インストールして、Xamarin で watchOS の使用
 
@@ -29,9 +29,9 @@ Watch アプリは、3 つのプロジェクトで構成されます。
 
 - **IPhone アプリの Xamarin.iOS プロジェクト**-これは、通常の iPhone プロジェクト、Xamarin.iOS のテンプレートのいずれかのことができます。 Watch アプリとその拡張機能は、このメイン プロジェクト内でまとめられます。
 
-- **ウォッチ拡張機能プロジェクト**-Watch アプリのコント ローラー クラス) などのコードが含まれます。
+- **Watch Extension プロジェクト**-watch アプリのコード (コントローラークラスなど) が含まれています。
 
-- **Watch アプリ プロジェクト**-Watch アプリのすべての UI リソースとユーザー インターフェイスのストーリー ボード ファイルが含まれます。
+- **アプリプロジェクトを見る**: これには、watch アプリのすべての UI リソースを含むユーザーインターフェイスストーリーボードファイルが含まれています。
 
 [ウォッチ キット Catalog サンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)Xamarin.Studio でこのようなソリューションを示します。
 
@@ -220,10 +220,10 @@ Watch アプリのプロジェクトを右クリックし、選択**実行 > カ
 
 <!--
 To test the functionality in your  and 
-    methods, use the **Hardware > Lock** command in the iOS Simulator.
-    Locking will trigger the `DidDeactivate` method and the watch simulator
-    will indicate that it has been locked. Swipe the iOS Simulator to unlock,
-    which triggers the `WillActivate` method of the watch app.
+  methods, use the **Hardware > Lock** command in the iOS Simulator.
+  Locking will trigger the `DidDeactivate` method and the watch simulator
+  will indicate that it has been locked. Swipe the iOS Simulator to unlock,
+  which triggers the `WillActivate` method of the watch app.
 -->
 
 WatchOS のテンプレート ファイル (など`InterfaceController`、 `ExtensionDelegate`、 `NotificationController`、および`ComplicationController`) 既に実装されている、必要なライフ サイクル メソッドが付属しています。 追加`Console.WriteLine`呼び出しと、読み取り、**アプリケーション出力**イベントのライフ サイクルを理解します。
