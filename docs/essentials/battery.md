@@ -6,12 +6,12 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 01/22/2019
 ms.custom: video
-ms.openlocfilehash: 9ab2f960872386b68063d7af209ec0a7a24ac287
-ms.sourcegitcommit: 2ee36611ef667affee7d417db947fbb614d75315
+ms.openlocfilehash: d5408894a9eda6b782f1f790ed8f1d0bb138a2f3
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54479668"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120148"
 ---
 # <a name="xamarinessentials-battery"></a>Xamarin.Essentials:バッテリ
 
@@ -171,12 +171,12 @@ public class EnergySaverTest
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-* API をテストするには、デバイスを使用する必要があります。 
-* `PowerSource` に対しては、`AC` または `Battery` しか返されません。
+- API をテストするには、デバイスを使用する必要があります。 
+- `PowerSource` に対しては、`AC` または `Battery` しか返されません。
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-* `PowerSource` に対しては、`AC` または `Battery` しか返されません。
+- `PowerSource` に対しては、`AC` または `Battery` しか返されません。
 
 -----
 

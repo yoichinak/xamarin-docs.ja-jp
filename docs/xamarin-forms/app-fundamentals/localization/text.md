@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/06/2016
-ms.openlocfilehash: a00b8052bfa2cd3a762e1b78409ffaa85cdae70c
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 54a1f32d4e2102654a6111dc1fb27bc1ba9aabcc
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646763"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119111"
 ---
 # <a name="localization"></a>ローカリゼーション
 
@@ -28,8 +28,8 @@ _Xamarin.Forms アプリは、.NET リソース ファイルを使用してロ�
 
 このドキュメントに関連付けられているサンプルには、以下の 2 つがあります。
 
-* [UsingResxLocalization](https://github.com/xamarin/xamarin-forms-samples/tree/master/UsingResxLocalization)。概念のとても簡単な説明です。 以下に示すコード スニペットはすべて、このサンプルのものです。
-* [TodoLocalized](https://github.com/xamarin/xamarin-forms-samples/tree/master/TodoLocalized)。これらのローカライズ手法を使用する基本的な作業アプリです。
+- [UsingResxLocalization](https://github.com/xamarin/xamarin-forms-samples/tree/master/UsingResxLocalization)。概念のとても簡単な説明です。 以下に示すコード スニペットはすべて、このサンプルのものです。
+- [TodoLocalized](https://github.com/xamarin/xamarin-forms-samples/tree/master/TodoLocalized)。これらのローカライズ手法を使用する基本的な作業アプリです。
 
 #### <a name="shared-projects-are-not-recommended"></a>共有プロジェクトは推奨されない
 
@@ -64,8 +64,8 @@ Xamarin.Forms .NET 標準ライブラリ アプリケーションをグローバ
 
 次の 2 つのファイルがプロジェクトに追加されます。
 
-* **AppResources.resx**ファイル。ここには、翻訳された文字列が XML 形式で格納されます。
-* **AppResources.designer.cs** ファイル。ここでは、RESX XML ファイルに作成されたすべての要素への参照を含む部分クラスが宣言されます。
+- **AppResources.resx**ファイル。ここには、翻訳された文字列が XML 形式で格納されます。
+- **AppResources.designer.cs** ファイル。ここでは、RESX XML ファイルに作成されたすべての要素への参照を含む部分クラスが宣言されます。
 
 ソリューション ツリーは、ファイルが関連していることを示します。 新しい翻訳可能な文字列に追加するには、RESX ファイルを編集する*必要があります*。 **.designer.cs** ファイルは編集*しないでください*。
 
@@ -112,10 +112,10 @@ Xamarin.Forms .NET 標準ライブラリ アプリケーションをグローバ
 
 残念ながら、Visual Studio for Mac には組み込みの RESX エディターはありません。 新しい翻訳可能な文字列を追加するには、文字列ごとに新しい XML の `data` 要素を追加する必要があります。 各 `data` 要素には次のものを含めることができます。
 
-* `name` 属性 (必須)。これは翻訳可能な文字列のキーです。 有効な C# プロパティ名にする必要があります。したがって、スペースや特殊文字は許可されません。
-* `value` 要素 (必須)。これは、アプリケーションに表示される実際の文字列です。
-* `comment` 要素 (省略可能)。これには、文字列の使用方法について説明する翻訳者に対する指示を含めることができます。
-* `xml:space` 属性 (省略可能)。これにより、文字列の間隔を保持する方法が制御されます。
+- `name` 属性 (必須)。これは翻訳可能な文字列のキーです。 有効な C# プロパティ名にする必要があります。したがって、スペースや特殊文字は許可されません。
+- `value` 要素 (必須)。これは、アプリケーションに表示される実際の文字列です。
+- `comment` 要素 (省略可能)。これには、文字列の使用方法について説明する翻訳者に対する指示を含めることができます。
+- `xml:space` 属性 (省略可能)。これにより、文字列の間隔を保持する方法が制御されます。
 
 `data` 要素の例をいくつか以下に示します。
 
@@ -145,14 +145,14 @@ Xamarin.Forms .NET 標準ライブラリ アプリケーションをグローバ
 サポートする言語ごとに 1 つの RESX ファイルがさらに追加されます。
 言語固有のリソース ファイルでは、特定の名前付け規則に従う必要があります。基本リソース ファイル ( **AppResources** など) と同じファイル名を使用します。その後にはピリオド (.) と言語コードが続きます。 簡単な例を以下に示します。
 
-* **AppResources.fr.resx** - フランス語の言語翻訳。
-* **AppResources.es.resx** - スペイン語の言語翻訳。
-* **AppResources.de.resx** - ドイツ語の言語翻訳。
-* **AppResources.ja.resx** - 日本語の言語翻訳。
-* **AppResources.zh-Hans.resx** - 簡体字中国語の言語翻訳。
-* **AppResources.zh-Hant.resx** - 繁体字中国語の言語翻訳。
-* **AppResources.pt.resx** - ポルトガル語の言語翻訳。
-* **AppResources.pt-BR.resx** - ポルトガル語 (ブラジル) の言語翻訳。
+- **AppResources.fr.resx** - フランス語の言語翻訳。
+- **AppResources.es.resx** - スペイン語の言語翻訳。
+- **AppResources.de.resx** - ドイツ語の言語翻訳。
+- **AppResources.ja.resx** - 日本語の言語翻訳。
+- **AppResources.zh-Hans.resx** - 簡体字中国語の言語翻訳。
+- **AppResources.zh-Hant.resx** - 繁体字中国語の言語翻訳。
+- **AppResources.pt.resx** - ポルトガル語の言語翻訳。
+- **AppResources.pt-BR.resx** - ポルトガル語 (ブラジル) の言語翻訳。
 
 一般的なパターンでは、2 文字の言語コードを使用しますが、異なる形式が使用される例 (中国語など) がいくつかあり、また、4 文字のロケール識別子が必要な例 (ポルトガル語 (ブラジル) など) もあります。
 
@@ -255,10 +255,10 @@ System.Resources.ResourceManager temp =
 ない場合は、`AppResources` クラスでそのリソースを読み込むことができません。
 リソースが見つからない問題を解決するには、以下を確認します。
 
-* プロジェクトの既定の名前空間と、**AppResources.Designer.cs** ファイル内のルート名前空間が一致している。
-* **AppResources.resx** ファイルがサブディレクトリにある場合、そのサブディレクトリ名は、名前空間の一部であり、*かつ*、リソース識別子の一部である必要があります。
-* **AppResources.resx** ファイルの**ビルド アクションがEmbeddedResource** となっている。
-* **[プロジェクト オプション] > [ソース コード] > [.NET の命名ポリシー] > [Use Visual Studio-style resources names]\(Visual Studio スタイルのリソース名を使用\)** がオンになっている。 必要に応じて、これをオフにしてもかまいませんが、RESX リソースの参照時に使用される名前空間をアプリ全体で更新する必要があります。
+- プロジェクトの既定の名前空間と、**AppResources.Designer.cs** ファイル内のルート名前空間が一致している。
+- **AppResources.resx** ファイルがサブディレクトリにある場合、そのサブディレクトリ名は、名前空間の一部であり、*かつ*、リソース識別子の一部である必要があります。
+- **AppResources.resx** ファイルの**ビルド アクションがEmbeddedResource** となっている。
+- **[プロジェクト オプション] > [ソース コード] > [.NET の命名ポリシー] > [Use Visual Studio-style resources names]\(Visual Studio スタイルのリソース名を使用\)** がオンになっている。 必要に応じて、これをオフにしてもかまいませんが、RESX リソースの参照時に使用される名前空間をアプリ全体で更新する必要があります。
 
 #### <a name="doesnt-work-in-debug-mode-android-only"></a>デバッグ モードで動作しない (Android のみ)
 
@@ -654,13 +654,13 @@ namespace UsingResxLocalization
 
 上記のコードの重要な要素については、以下のように箇条書きにして説明します。
 
-* クラスには `TranslateExtension` という名前が付けられていますが、規則により、マークアップでは **Translate** と呼ぶことができます。
-* クラスでは、Xamarin.Forms で動作させるために必要な、`IMarkupExtension` が実装されます。
-* `"UsingResxLocalization.Resx.AppResources"` は、RESX リソースのリソース識別子です。 これは、既定の名前空間、リソース ファイルが配置されるフォルダーおよび既定の RESX ファイル名で構成されます。
-* `ResourceManager` クラスは、リソースの読み込み元の現在のアセンブリを特定するために `IntrospectionExtensions.GetTypeInfo(typeof(TranslateExtension)).Assembly)` を使用して作成され、静的な `ResMgr` フィールドにキャッシュされます。 これは `Lazy` 型として作成されるため、`ProvideValue` メソッドで最初に使用されるまで、その作成は延期されます。
-* `ci` では依存関係サービスを使用して、ネイティブ オペレーティング システムからユーザーが選択した言語を取得します。
-* `GetString` は、リソース ファイルから実際の翻訳された文字列を取得するメソッドです。 ユニバーサル Windows プラットフォームでは、`ILocalize` インターフェイスがそのプラットフォームに実装されないため、`ci` は null となります。 これは、最初のパラメーターのみを使用する `GetString` メソッドの呼び出しに相当します。 代わりに、リソース フレームワークでは自動的にロケールが認識され、適切な RESX ファイルから翻訳された文字列が取得されます。
-* エラー処理は、(`DEBUG` モードのみで) 例外をスローして、欠落しているリソースをデバッグできるように含まれています。
+- クラスには `TranslateExtension` という名前が付けられていますが、規則により、マークアップでは **Translate** と呼ぶことができます。
+- クラスでは、Xamarin.Forms で動作させるために必要な、`IMarkupExtension` が実装されます。
+- `"UsingResxLocalization.Resx.AppResources"` は、RESX リソースのリソース識別子です。 これは、既定の名前空間、リソース ファイルが配置されるフォルダーおよび既定の RESX ファイル名で構成されます。
+- `ResourceManager` クラスは、リソースの読み込み元の現在のアセンブリを特定するために `IntrospectionExtensions.GetTypeInfo(typeof(TranslateExtension)).Assembly)` を使用して作成され、静的な `ResMgr` フィールドにキャッシュされます。 これは `Lazy` 型として作成されるため、`ProvideValue` メソッドで最初に使用されるまで、その作成は延期されます。
+- `ci` では依存関係サービスを使用して、ネイティブ オペレーティング システムからユーザーが選択した言語を取得します。
+- `GetString` は、リソース ファイルから実際の翻訳された文字列を取得するメソッドです。 ユニバーサル Windows プラットフォームでは、`ILocalize` インターフェイスがそのプラットフォームに実装されないため、`ci` は null となります。 これは、最初のパラメーターのみを使用する `GetString` メソッドの呼び出しに相当します。 代わりに、リソース フレームワークでは自動的にロケールが認識され、適切な RESX ファイルから翻訳された文字列が取得されます。
+- エラー処理は、(`DEBUG` モードのみで) 例外をスローして、欠落しているリソースをデバッグできるように含まれています。
 
 次の XAML スニペットは、マークアップ拡張を使用する方法を示しています。 これを動作させるための手順は、次の 2 つです。
 
@@ -691,8 +691,8 @@ namespace UsingResxLocalization
 
 Xamarin.Forms コードでユーザー インターフェイスの翻訳を処理できますが、プラットフォーム固有の各プロジェクトで行う必要がある要素がいくつかあります。 このセクションでは、以下のローカライズ方法について説明します。
 
-* Application Name
-* イメージ
+- Application Name
+- イメージ
 
 サンプル プロジェクトには、次のような C# で参照される、**flag.png** というローカライズされたイメージが含まれています。
 

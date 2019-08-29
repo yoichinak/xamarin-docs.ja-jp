@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: fc14c2279fd8ca7e1d67dcf58f98af33a5e4d87f
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: b976f540fb5b9aa7ea86cabb5b50276e53bed9a6
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525475"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119804"
 ---
 # <a name="publishing-to-google-play"></a>GooglePlay に公開する
 
@@ -143,15 +143,15 @@ Xamarin Android 7.0 では、Visual Studio から Google Play にアプリを公
 5. 証明書でアプリに署名します。
 6. 署名されたアプリを Google Play に公開します。
 
-[公開のためのアーカイブ](~/android/deploy-test/release-prep/index.md#archive)では、**[配布チャネル]** ダイアログに 2 種類の配布方法が表示されていました。**[Ad Hoc]\(アドホック\)** と **[Google Play]** です。 **[署名 ID]** ダイアログが代わりに表示される場合は、**[戻る]** をクリックして **[配布チャネル]** ダイアログに戻ります。 **[Google Play]** を選択して **[Next]\(次へ\)** をクリックします。
+[公開のためのアーカイブ](~/android/deploy-test/release-prep/index.md#archive)では、 **[配布チャネル]** ダイアログに 2 種類の配布方法が表示されていました。 **[Ad Hoc]\(アドホック\)** と **[Google Play]** です。 **[署名 ID]** ダイアログが代わりに表示される場合は、 **[戻る]** をクリックして **[配布チャネル]** ダイアログに戻ります。 **[Google Play]** を選択して **[Next]\(次へ\)** をクリックします。
 
 [![[配布チャネル] ダイアログ](images/vs/01-distribution-channel-sml.png)](images/vs/01-distribution-channel.png#lightbox)
 
-**[署名 ID]** ダイアログで、「[新しい証明書の作成](~/android/deploy-test/signing/index.md#newcert)」で作成した ID を選び、**[続行]** をクリックします。
+**[署名 ID]** ダイアログで、「[新しい証明書の作成](~/android/deploy-test/signing/index.md#newcert)」で作成した ID を選び、 **[続行]** をクリックします。
 
 [![[署名 ID] ダイアログ](images/vs/02-select-identity-sml.png)](images/vs/02-select-identity.png#lightbox)
 
-**[Google Play アカウント]** ダイアログで、**[+]** ボタンをクリックして新しい Google Play アカウントを追加します。
+**[Google Play アカウント]** ダイアログで、 **[+]** ボタンをクリックして新しい Google Play アカウントを追加します。
 
 [![[Google Play アカウント] ダイアログ](images/vs/03-google-play-accounts-sml.png)](images/vs/03-google-play-accounts.png#lightbox)
 
@@ -174,7 +174,7 @@ Visual Studio for Mac は、Google Play にアプリを公開するための統�
 5. 証明書でアプリケーションに署名します。
 6. 署名されたアプリケーションを Google Play に公開します。
 
-「[発行のためのアーカイブ](~/android/deploy-test/release-prep/index.md#archive)」では、**[署名と配布...]** ダイアログに 2 種類の配布方法が表示されました。 **[Google Play]** を選択して **[Next]\(次へ\)** をクリックします。
+「[発行のためのアーカイブ](~/android/deploy-test/release-prep/index.md#archive)」では、 **[署名と配布...]** ダイアログに 2 種類の配布方法が表示されました。 **[Google Play]** を選択して **[Next]\(次へ\)** をクリックします。
 
 [![[Select Android Distribution]\(Android の配布の選択\) ダイアログ](images/xs/01-select-google-play-sml.png)](images/xs/01-select-google-play.png#lightbox)
 
@@ -191,11 +191,11 @@ Visual Studio for Mac は、Google Play にアプリを公開するための統�
 
 最初に、[Google Play 開発者アカウント](https://play.google.com/apps/publish)にサインインします。
 Google Play 開発者アカウントがまだない場合は、「[Get Started with Publishing](https://developer.android.com/distribute/googleplay/start.html)」(公開の概要) をご覧ください。
-また、Google Play 開発者 API の「[Getting Started](https://developers.google.com/android-publisher/getting_started)」(概要) でも、Google Play 開発者 API の使い方が説明されています。 Google Play Developer Console にサインインした後、**[Settings]\(設定\)** をクリックします。
+また、Google Play 開発者 API の「[Getting Started](https://developers.google.com/android-publisher/getting_started)」(概要) でも、Google Play 開発者 API の使い方が説明されています。 Google Play Developer Console にサインインした後、 **[Settings]\(設定\)** をクリックします。
 
 [![[Settings]\(設定\) アイコン](images/01-google-play-developer-console-sml.png)](images/01-google-play-developer-console.png#lightbox)
 
-**[SETTINGS]\(設定\)** ページで、**[API access]\(API アクセス\)** を選び、**[Create new project]\(新しいプロジェクトの作成\)** ボタンをクリックします。
+**[SETTINGS]\(設定\)** ページで、 **[API access]\(API アクセス\)** を選び、 **[Create new project]\(新しいプロジェクトの作成\)** ボタンをクリックします。
 
 [![[Create new project]\(新しいプロジェクトの作成\) ボタン](images/02-create-new-project-sml.png)](images/02-create-new-project.png#lightbox)
 
@@ -218,7 +218,7 @@ OAuth クライアントの既定の名前は *Google Play Android Developer* �
 
 [![表示されたクライアント ID とシークレット](images/06-client-id-and-secret-sml.png)](images/06-client-id-and-secret.png#lightbox)
 
-**[Save]\(保存\)** をクリックして変更を保存します。 **[Credentials]\(資格情報\)** ページに戻るので、**[Download JSON]\(JSON のダウンロード\)** アイコンをクリックして資格情報をダウンロードします。
+**[Save]\(保存\)** をクリックして変更を保存します。 **[Credentials]\(資格情報\)** ページに戻るので、 **[Download JSON]\(JSON のダウンロード\)** アイコンをクリックして資格情報をダウンロードします。
 
 [![[Download JSON]\(JSON のダウンロード\) アイコン](images/07-download-json-sml.png)](images/07-download-json.png#lightbox)
 
@@ -229,7 +229,7 @@ OAuth クライアントの既定の名前は *Google Play Android Developer* �
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-クライアント ID とクライアント シークレットを使って、Visual Studio for Mac の **[Google Play API アカウント]** ダイアログを設定します。 アカウントの説明を入力できます。そうすれば、複数の Google Play アカウントを登録し、後で異なる Google Play アカウントに APK をアップロードできます。 クライアント ID とクライアント シークレットをこのダイアログにコピーし、**[登録]** をクリックします。
+クライアント ID とクライアント シークレットを使って、Visual Studio for Mac の **[Google Play API アカウント]** ダイアログを設定します。 アカウントの説明を入力できます。そうすれば、複数の Google Play アカウントを登録し、後で異なる Google Play アカウントに APK をアップロードできます。 クライアント ID とクライアント シークレットをこのダイアログにコピーし、 **[登録]** をクリックします。
 
 [![[Google API Access の登録] ダイアログ](images/vs/05-enter-client-id-and-secret-sml.png)](images/vs/05-enter-client-id-and-secret.png#lightbox)
 
@@ -240,25 +240,25 @@ Web ブラウザーが開き、Google Play Android 開発者アカウントへ�
 
 #### <a name="publish"></a>公開
 
-**[許可]** をクリックすると、_[Received verification code.Closing...]\(確認コードを受け取りました。閉じています...\)_ と表示され、Visual Studio の Google Play アカウントのリストにアプリが追加されます。 **[Google Play アカウント]** ダイアログで **[続行]** をクリックします。
+**[許可]** をクリックすると、 _[Received verification code.Closing...]\(確認コードを受け取りました。閉じています...\)_ と表示され、Visual Studio の Google Play アカウントのリストにアプリが追加されます。 **[Google Play アカウント]** ダイアログで **[続行]** をクリックします。
 
 [![Google Play アカウントに追加されたアカウント](images/vs/07-account-added-sml.png)](images/vs/07-account-added.png#lightbox)
 
-次に、**[Google Play トラック]** ダイアログが表示されます。 Google Play では、4 種類のアプリのアップロードのトラックが提供されています。
+次に、 **[Google Play トラック]** ダイアログが表示されます。 Google Play では、4 種類のアプリのアップロードのトラックが提供されています。
 
-* **[アルファ]** &ndash; 少数のテスト担当者一覧にごく初期のバージョンのアプリをアップロードするために使います。
-* **[ベータ]** &ndash; 多数のテスト担当者一覧に初期のバージョンのアプリをアップロードするために使います。
-* **[ロールアウト]** &ndash; ある割合のユーザーが、アプリの更新バージョンを受け取れます。たとえば、10% のユーザーから始めて、バグを解決しながら 100% のユーザーまで割合をゆっくり増やすことができます。
-* **[実稼働]** &ndash; アプリが Google Play ストアから完全に配布できる状態のときは、このトラックを選びます。
+- **[アルファ]** &ndash; 少数のテスト担当者一覧にごく初期のバージョンのアプリをアップロードするために使います。
+- **[ベータ]** &ndash; 多数のテスト担当者一覧に初期のバージョンのアプリをアップロードするために使います。
+- **[ロールアウト]** &ndash; ある割合のユーザーが、アプリの更新バージョンを受け取れます。たとえば、10% のユーザーから始めて、バグを解決しながら 100% のユーザーまで割合をゆっくり増やすことができます。
+- **[実稼働]** &ndash; アプリが Google Play ストアから完全に配布できる状態のときは、このトラックを選びます。
 
-アプリのアップロードに使う Google Play トラックを選び、**[アップロード]** をクリックします。 **[ロールアウト]** を選ぶ場合は、割合の値を入力します。
+アプリのアップロードに使う Google Play トラックを選び、 **[アップロード]** をクリックします。 **[ロールアウト]** を選ぶ場合は、割合の値を入力します。
 
 [![[アルファ]、[ベータ]、[ロールアウト]、[実稼働] の選択](images/vs/08-google-play-track-sml.png)](images/vs/08-google-play-track.png#lightbox)
 
 Google Play のテストおよび段階的なロールアウトの詳細については、「[Set up alpha/beta tests](https://support.google.com/googleplay/android-developer/answer/3131213?hl=en)」(アルファ/ベータ テストの設定) をご覧ください。
 
 次に、署名証明書のパスワードを入力するダイアログが表示されます。
-パスワードを入力して、**[OK]** をクリックします。
+パスワードを入力して、 **[OK]** をクリックします。
 
 [![[署名パスワード] ダイアログ](images/vs/09-certificate-password-sml.png)](images/vs/09-certificate-password.png#lightbox)
 
@@ -281,11 +281,11 @@ Google Play のテストおよび段階的なロールアウトの詳細につ�
 
 [![バージョン コード (1) を持つ APK が既にアップロードされています](images/vs/13-version-code-error-sml.png)](images/vs/13-version-code-error.png#lightbox)
 
-このエラーを解決するには、異なるバージョン番号でアプリを再ビルドし、**[配布チャネル]** ダイアログを使って Google Play に再送信します。
+このエラーを解決するには、異なるバージョン番号でアプリを再ビルドし、 **[配布チャネル]** ダイアログを使って Google Play に再送信します。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-クライアント ID とクライアント シークレットを使って、Visual Studio for Mac の **[Google Play API アカウント]** ダイアログを設定します。 アカウントの説明を入力できます。そうすれば、複数の Google Play アカウントを登録し、後で異なる Google Play アカウントに APK をアップロードできます。 クライアント ID とクライアント シークレットをこのダイアログにコピーし、**[登録]** をクリックします。
+クライアント ID とクライアント シークレットを使って、Visual Studio for Mac の **[Google Play API アカウント]** ダイアログを設定します。 アカウントの説明を入力できます。そうすれば、複数の Google Play アカウントを登録し、後で異なる Google Play アカウントに APK をアップロードできます。 クライアント ID とクライアント シークレットをこのダイアログにコピーし、 **[登録]** をクリックします。
 
 [![アクセス承認ダイアログ](images/xs/10-register-sml.png)](images/xs/10-register.png#lightbox)
 
@@ -310,11 +310,11 @@ Google Play では、4 種類のアプリのアップロードのトラックが
 Google Play のテストおよび段階的なロールアウトの詳細については、「[Set up alpha/beta tests](https://support.google.com/googleplay/android-developer/answer/3131213?hl=en)」(アルファ/ベータ テストの設定) をご覧ください。
 
 次に、アプリの署名に使用される署名 ID を選択します。
-既存の署名 ID を使用する場合は **[既存のキーを使用]** を選択します。それ以外の場合は、「[新しい証明書の作成](~/android/deploy-test/signing/index.md#newcert)」ガイドで新しいキーの作成方法をご覧ください。 アプリケーションに署名する証明書を選んだ後、**[次へ]** をクリックします。
+既存の署名 ID を使用する場合は **[既存のキーを使用]** を選択します。それ以外の場合は、「[新しい証明書の作成](~/android/deploy-test/signing/index.md#newcert)」ガイドで新しいキーの作成方法をご覧ください。 アプリケーションに署名する証明書を選んだ後、 **[次へ]** をクリックします。
 
 [![[Android の署名の識別情報] ダイアログ](images/xs/13-android-signing-identity-sml.png)](images/xs/13-android-signing-identity.png#lightbox)
 
-この時点で、アプリを Google Play にアップロードできます。 **[Google Play に公開する]** ダイアログに、アプリに関する情報の要約が表示されます。**[公開]** をクリックして、Google Play にアプリを公開します。
+この時点で、アプリを Google Play にアップロードできます。 **[Google Play に公開する]** ダイアログに、アプリに関する情報の要約が表示されます。 **[公開]** をクリックして、Google Play にアプリを公開します。
 
 [![[Google Play に公開する] ダイアログ](images/xs/14-publish-to-google-play-sml.png)](images/xs/14-publish-to-google-play.png#lightbox)
 

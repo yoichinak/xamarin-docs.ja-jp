@@ -9,12 +9,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: adfc8e34d64b6091ba8ffc56c0f93bcf560128b1
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 42edb04cb6dfe5fca59a6cc96f34cb8f9c5e1e88
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69527710"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120586"
 ---
 # <a name="hello-ios--deep-dive"></a>Hello, iOS – 深い分析
 
@@ -447,7 +447,7 @@ iOS デバイスにアプリが展開されます。
 ::: zone-end
 ::: zone pivot="windows"
 
-* Visual Studio - これを使用して、アプリ用の単純なアイコン セットを IDE で直接作成できます。
+- Visual Studio - これを使用して、アプリ用の単純なアイコン セットを IDE で直接作成できます。
 - [**Glyphish**](http://www.glyphish.com/) – 無料ダウンロードと有料版がある高品質のビルド済みアイコンのセットです。
 - [**Fiverr**](http://www.fiverr.com/) – 5 ドルから利用でき、さまざまなデザイナーから選択してアイコンのセットを作成できます。 見つかる場合も見つからない場合もありますが、アイコンをすぐにデザインする必要がある場合は有効なリソースです。
 

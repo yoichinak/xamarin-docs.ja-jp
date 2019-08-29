@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/23/2017
-ms.openlocfilehash: e57254ce724c5660e53dcd9deaa0f4a27bf91400
-ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
+ms.openlocfilehash: a290f29707bd59a22f612f31e544a211488eba0d
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67675196"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121496"
 ---
 # <a name="xamarinios-testing-and-deployment---troubleshooting"></a>Xamarin.iOS のテストと展開 - トラブルシューティング
 
@@ -20,19 +20,19 @@ ms.locfileid: "67675196"
 
 iOS ではコード署名とプロビジョニングは非常に厄介な場合があるため、コード署名証明書とプロビジョニング プロファイルが整理されていることを確認することが重要です。
 
-* 大規模なチームは、Xcode で [Fix issue]\(問題の修正\) ボタン (下図) の使用は控える必要があります。
+- 大規模なチームは、Xcode で [Fix issue]\(問題の修正\) ボタン (下図) の使用は控える必要があります。
 
     [![](troubleshooting-images/fixissue.png "[Fix Issues] ダイアログ")](troubleshooting-images/fixissue.png#lightbox)
 
     これにより新しいプロビジョニング プロファイルと証明書が作成されます。 最良の場合でも、チーム メンバーがボタンをクリックするたびに、プロビジョニング プロファイルが作成され、プロファイルによる混乱が発生します。 最悪の場合、社内の他の人全員の証明書が無効になり、アプリの停止を引き起こします。
 
-* Keychain Access は整理された状態を保ち、有効期限が切れた証明書とプロファイルを削除します。 Enterprise 証明書は 3 年間有効で、他の証明書は 1 年間有効です。 証明書は更新できないため、古い証明書が期限切れになる直前に新しい証明書を作成する必要があります。 古い証明書を失効させて削除し、新しい証明書でアプリを再署名します。
+- Keychain Access は整理された状態を保ち、有効期限が切れた証明書とプロファイルを削除します。 Enterprise 証明書は 3 年間有効で、他の証明書は 1 年間有効です。 証明書は更新できないため、古い証明書が期限切れになる直前に新しい証明書を作成する必要があります。 古い証明書を失効させて削除し、新しい証明書でアプリを再署名します。
 
-* 新しいプロビジョニング プロファイルがインストールされたら、古いプロビジョニング プロファイルを削除します。 これは Visual Studio for Mac が使用するプロファイルを決定しなければならない立場にないことを意味します。 これを実現するには、最初に、Apple Developer Center でプロファイルを削除してから、 *[Preferences]\(環境設定\) > [Your Account]\(アカウント\) > [View Details...]\(詳細の表示\)* の順に移動します。プロビジョニング プロファイルを選択し、 **[Show in Finder]\(Finder で表示\)** をクリックします。 Mac ファイル システム内のプロファイルの場所が表示されます。ここで、Finder を使用してプロファイルを削除できます。
+- 新しいプロビジョニング プロファイルがインストールされたら、古いプロビジョニング プロファイルを削除します。 これは Visual Studio for Mac が使用するプロファイルを決定しなければならない立場にないことを意味します。 これを実現するには、最初に、Apple Developer Center でプロファイルを削除してから、 *[Preferences]\(環境設定\) > [Your Account]\(アカウント\) > [View Details...]\(詳細の表示\)* の順に移動します。プロビジョニング プロファイルを選択し、 **[Show in Finder]\(Finder で表示\)** をクリックします。 Mac ファイル システム内のプロファイルの場所が表示されます。ここで、Finder を使用してプロファイルを削除できます。
 
-* 必要なすべての証明書および対応する秘密キーが使用できることを確認します。 チームごとに開発者の証明書 (独自のデバイスにアプリをインストールするため) と配布証明書 (その他のデバイスにインストールするため) が必要になります。
+- 必要なすべての証明書および対応する秘密キーが使用できることを確認します。 チームごとに開発者の証明書 (独自のデバイスにアプリをインストールするため) と配布証明書 (その他のデバイスにインストールするため) が必要になります。
 
-* 新しいプロビジョニング プロファイルまたは証明書をインストールする場合は、Xcode と、Visual Studio for Mac または Visual Studio を再起動します。
+- 新しいプロビジョニング プロファイルまたは証明書をインストールする場合は、Xcode と、Visual Studio for Mac または Visual Studio を再起動します。
 
 ## <a name="testflight"></a>TestFlight
 

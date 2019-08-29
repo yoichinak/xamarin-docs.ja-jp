@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 05/06/2018
-ms.openlocfilehash: 7249b699a5f692269d124550a9e7d291f4315903
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 7bb4e142a8b7bd0cf0691da381729dc226028193
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832176"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121368"
 ---
 # <a name="working-with-capabilities-in-xamarinios"></a>Xamarin.iOS の機能の使用
 
@@ -21,28 +21,28 @@ _アプリケーションに機能を追加するには、多くの場合、追�
 Apple は、機能を拡張し、iOS アプリで実行可能な操作の範囲を広げる手段として、_アプリ サービス_としてよく知られる_機能_を開発者に提供しています。 この機能を使用して、開発者はアプリケーションにより緊密に統合されたプラットフォーム機能を追加することができます。これにより、Siri などのアプリの追加デバイス サービスからの金融取引の開始が可能になります。
 これらの機能は、Xamarin.iOS プロジェクトで使用できます。 サービスの完全なリストを以下に示します。
 
-* アプリ グループ
-* 関連付けられているドメイン
-* データの保護
-* Game Center
-* HealthKit
-* HomeKit
-* Wireless Accessory Configuration
-* iCloud
-* アプリ内購入
-* Inter-App オーディオ
-* Apple Pay
-* ウォレット
-* プッシュ通知
-* 個人の VPN
-* Siri
-* マップ
-* バックグラウンド モード
-* キーチェーンの共有
-* ネットワークの拡張機能
-* ホット スポットの構成
-* マルチパス
-* NFC タグの読み取り
+- アプリ グループ
+- 関連付けられているドメイン
+- データの保護
+- Game Center
+- HealthKit
+- HomeKit
+- Wireless Accessory Configuration
+- iCloud
+- アプリ内購入
+- Inter-App オーディオ
+- Apple Pay
+- ウォレット
+- プッシュ通知
+- 個人の VPN
+- Siri
+- マップ
+- バックグラウンド モード
+- キーチェーンの共有
+- ネットワークの拡張機能
+- ホット スポットの構成
+- マルチパス
+- NFC タグの読み取り
 
 これらの機能は、Visual Studio for Mac か Visual Studio 2019 を介して、または Apple Developer ポータルで手動で有効にすることができます。 ウォレット、Apple Pay、および iCloud などの特定の機能には、アプリ ID の追加構成が必要になります。
 
@@ -57,16 +57,16 @@ Apple は、機能を拡張し、iOS アプリで実行可能な操作の範囲�
 > [!IMPORTANT]
 > 自動プロビジョニングでは、追加したり、管理したりできない機能もあります。 次の一覧には、サポートされている機能が含まれています。
 >
->* HealthKit 
->* HomeKit 
->* 個人の VPN 
->* Wireless Accessory Configuration 
->* Inter-App オーディオ 
->* SiriKit 
->* Hotspot 
->* ネットワークの拡張機能 
->* NFC タグの読み取り
->* マルチパス 
+>- HealthKit 
+>- HomeKit 
+>- 個人の VPN 
+>- Wireless Accessory Configuration 
+>- Inter-App オーディオ 
+>- SiriKit 
+>- Hotspot 
+>- ネットワークの拡張機能 
+>- NFC タグの読み取り
+>- マルチパス 
 >
 >プッシュ通知、Game Center、アプリ内購入、マップ、キーチェーンの共有、関連付けられているドメイン、およびデータ保護機能は現在サポートされていません。 これらの機能を追加するには、手動のプロビジョニングを使用し、「[Developer Center](#devcenter)」セクションの手順に従ってください。
 
@@ -85,8 +85,8 @@ Apple は、機能を拡張し、iOS アプリで実行可能な操作の範囲�
     ![entitlements.plist ファイルに機能を追加する](images/image17.png)
 
     機能を選択すると、次の 2 つが実行されます。
-    * その機能をアプリ ID に追加する
-    * 権利のキー/値のペアを Entitlements.plist ファイルに追加する
+    - その機能をアプリ ID に追加する
+    - 権利のキー/値のペアを Entitlements.plist ファイルに追加する
 
     Visual Studio for Mac では、これらのタスクが実行されたときに次の成功メッセージを表示して通知します。
 
@@ -108,8 +108,8 @@ Apple は、機能を拡張し、iOS アプリで実行可能な操作の範囲�
 
     **Entitlement.plist** を保存すると、2 つの動作が行われます。
 
-    * その機能をアプリ ID に追加する
-    * 権利のキー/値のペアを Entitlements.plist ファイルに追加する
+    - その機能をアプリ ID に追加する
+    - 権利のキー/値のペアを Entitlements.plist ファイルに追加する
 
 -----
 
@@ -196,8 +196,8 @@ Developer Center の使用には 2 ステップのプロセスがあります。
 
 サーバー側で機能が有効になっている場合でも、アプリで機能を使用できるようにするために実行する必要がある操作があります。 以下のリストでは、実行する必要がある可能性のある追加の手順について説明します。
 
-*   アプリでフレームワークの名前空間を使用します。
-*   アプリに必要な権利を追加します。 必要な権利とその追加方法については、[権利の概要](~/ios/deploy-test/provisioning/entitlements.md)に関するガイドで詳しく説明しています。
+- アプリでフレームワークの名前空間を使用します。
+- アプリに必要な権利を追加します。 必要な権利とその追加方法については、[権利の概要](~/ios/deploy-test/provisioning/entitlements.md)に関するガイドで詳しく説明しています。
 
 <a name="troubleshooting" />
 

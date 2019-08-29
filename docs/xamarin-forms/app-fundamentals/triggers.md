@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/01/2016
-ms.openlocfilehash: e21ae2c335a1ffe410317ef8870ee074a3a5ebe2
-ms.sourcegitcommit: 3434624a36a369986b6aeed7959dae60f7112a14
+ms.openlocfilehash: d9e3055130a66fe240bf378ad2f63679e71bec14
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69629622"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121140"
 ---
 # <a name="xamarinforms-triggers"></a>Xamarin.Forms のトリガー
 
@@ -24,13 +24,13 @@ ms.locfileid: "69629622"
 
 4 種類のトリガーがあります。
 
-* [プロパティ トリガー](#property) -コントロールのプロパティが特定の値に設定されると発生します。
+- [プロパティ トリガー](#property) -コントロールのプロパティが特定の値に設定されると発生します。
 
-* [データ トリガー](#data) - データ バインディングを使用し、別のコントロールのプロパティに基づいてトリガーします。
+- [データ トリガー](#data) - データ バインディングを使用し、別のコントロールのプロパティに基づいてトリガーします。
 
-* [イベント トリガー](#event) -コントロールでイベントが発生すると発生します。
+- [イベント トリガー](#event) -コントロールでイベントが発生すると発生します。
 
-* [マルチ トリガー](#multi) - アクションが発生する前に、複数のトリガー条件を設定できます。
+- [マルチ トリガー](#multi) - アクションが発生する前に、複数のトリガー条件を設定できます。
 
 <a name="property" />
 
@@ -52,15 +52,15 @@ ms.locfileid: "69629622"
 
 トリガーの宣言の重要な部分は次のとおりです。
 
-* **TargetType** - トリガーを適用するコントロールの種類です。
+- **TargetType** - トリガーを適用するコントロールの種類です。
 
-* **Property** - コントロール上で監視するプロパティです。
+- **Property** - コントロール上で監視するプロパティです。
 
-* **Value** - 監視対象のプロパティがこの値になったら、トリガーをアクティブにします。
+- **Value** - 監視対象のプロパティがこの値になったら、トリガーをアクティブにします。
 
-* **Setter** - トリガー条件が満たされたときの `Setter` 要素のコレクションを追加できます。 設定するには、`Property` と `Value` を指定する必要があります。
+- **Setter** - トリガー条件が満たされたときの `Setter` 要素のコレクションを追加できます。 設定するには、`Property` と `Value` を指定する必要があります。
 
-* **EnterActions と ExitActions** (示されていません) - コードで記述され、`Setter` 要素に加えて (または代えて) 使用できます。 これらについては、[後で説明します](#enterexit)。
+- **EnterActions と ExitActions** (示されていません) - コードで記述され、`Setter` 要素に加えて (または代えて) 使用できます。 これらについては、[後で説明します](#enterexit)。
 
 ### <a name="applying-a-trigger-using-a-style"></a>スタイルを使用してトリガーを適用する
 
@@ -112,7 +112,7 @@ ms.locfileid: "69629622"
 ```
 
 > [!TIP]
-> `Path=Text.Length` を評価するときは常に、ターゲット プロパティの既定値が提供されます (例:  `Text=""`)。そうしないと `null` になって、トリガーが意図したとおりに動作しないためです。
+> `Path=Text.Length` を評価するときは常に、ターゲット プロパティの既定値が提供されます (例: `Text=""`)。そうしないと `null` になって、トリガーが意図したとおりに動作しないためです。
 
 `Setter` を指定するだけでなく、[`EnterActions` と `ExitActions`](#enterexit) を提供することもできます。
 
@@ -140,11 +140,11 @@ ms.locfileid: "69629622"
 
 トリガー アクションは次のように実装する必要があります。
 
-* トリガーの適用対象であるコントロールの種類に対応するジェネリック パラメーターを使用してジェネリック `TriggerAction<T>` クラスを実装します。 `VisualElement` のようなスーパークラスを使用してさまざまなコントロールで動作するトリガーを記述したり、`Entry` のようなコントロールの種類を指定したりできます。
+- トリガーの適用対象であるコントロールの種類に対応するジェネリック パラメーターを使用してジェネリック `TriggerAction<T>` クラスを実装します。 `VisualElement` のようなスーパークラスを使用してさまざまなコントロールで動作するトリガーを記述したり、`Entry` のようなコントロールの種類を指定したりできます。
 
-* `Invoke` メソッドをオーバーライドします。これは、トリガー条件が満たされるたびに呼び出されます。
+- `Invoke` メソッドをオーバーライドします。これは、トリガー条件が満たされるたびに呼び出されます。
 
-* 必要に応じて、トリガーを宣言するときに XAML で設定できるプロパティを公開します (次の例の `Anchor`、`Scale`、`Length` など)。
+- 必要に応じて、トリガーを宣言するときに XAML で設定できるプロパティを公開します (次の例の `Anchor`、`Scale`、`Length` など)。
 
 ```csharp
 public class NumericValidationTriggerAction : TriggerAction<Entry>
@@ -236,9 +236,9 @@ public class MultiTriggerConverter : IValueConverter
 
 XAML を以下に示します。 最初のマルチ トリガーの例と次の点が異なることに注意してください。
 
-* ボタンには、`IsEnabled="false"` が既定で設定されます。
-* マルチ トリガーの条件では、コンバーターを使用して `Text.Length` の値が `boolean` に変換されます。
-* すべての条件が `true` の場合、セッターはボタンの `IsEnabled` プロパティを `true` にします。
+- ボタンには、`IsEnabled="false"` が既定で設定されます。
+- マルチ トリガーの条件では、コンバーターを使用して `Text.Length` の値が `boolean` に変換されます。
+- すべての条件が `true` の場合、セッターはボタンの `IsEnabled` プロパティを `true` にします。
 
 ```xaml
 <Entry x:Name="user" Text="" Placeholder="user name" />
@@ -267,8 +267,8 @@ XAML を以下に示します。 最初のマルチ トリガーの例と次の�
 </Button>
 ```
 
-次のスクリーンショットは、上記の 2 つのマルチ トリガーの例の違いを示したものです。 画面の上部では、**[Save]** ボタンを有効にするには、1 つの `Entry` へのテキスト入力だけで十分です。
-画面の下部では、両方のフィールドにデータを入力するまで、**[Login]** ボタンはアクティブになりません。
+次のスクリーンショットは、上記の 2 つのマルチ トリガーの例の違いを示したものです。 画面の上部では、 **[Save]** ボタンを有効にするには、1 つの `Entry` へのテキスト入力だけで十分です。
+画面の下部では、両方のフィールドにデータを入力するまで、 **[Login]** ボタンはアクティブになりません。
 
 ![](triggers-images/multi-requireall.png "マルチ トリガーの例")
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 07/15/2017
-ms.openlocfilehash: 993588a46c8d7048c7494908d6f59a5bbe2ddda6
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 0702241b5dbc744bf40c59928103d92a73a4c462
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526636"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121225"
 ---
 # <a name="manual-provisioning-for-xamarinios"></a>Xamarin.iOS の手動プロビジョニング
 
@@ -222,9 +222,9 @@ Apple Developer Portal で作成された証明書とプロビジョニング �
 
 Apple では、Xamarin.iOS アプリケーション用にアクティブ化できる機能とも呼ばれる特別なアプリケーション サービスの選択肢を提供します。 **アプリ ID** が作成されるときに、両方の iOS プロビジョニング ポータル、および Xamarin.iOS のプロジェクトの一部である **Entitlements.plist** ファイルでこれらのアプリケーション サービスを構成する必要があります。 アプリにアプリケーション サービスを追加する方法については、「[Introduction to Capabilities](~/ios/deploy-test/provisioning/capabilities/index.md)」(機能の概要) ガイドおよび「[Working with Entitlements](~/ios/deploy-test/provisioning/entitlements.md)」 (権利に関する作業) ガイドを参照してください。
 
-* 必要なアプリ サービスを使用してアプリ ID を作成します。
-* このアプリ ID が含まれる新しい[プロビジョニング プロファイル](#provisioningprofile)を作成します。
-* Xamarin.iOS プロジェクトでの権利を設定します。
+- 必要なアプリ サービスを使用してアプリ ID を作成します。
+- このアプリ ID が含まれる新しい[プロビジョニング プロファイル](#provisioningprofile)を作成します。
+- Xamarin.iOS プロジェクトでの権利を設定します。
 
 ## <a name="deploying-to-a-device"></a>デバイスへの展開
 

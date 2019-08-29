@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 01/18/2017
-ms.openlocfilehash: 654eca1098f9486e0c41fd296b3f8d381ac7ea34
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 2a61a4a313fa23b5cdc629279bee39f1eed792cc
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105377"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120501"
 ---
 # <a name="infoplist-reference-for-xamarinios"></a>Xamarin.iOS の Info.plist リファレンス
 
@@ -22,8 +22,8 @@ Info.Plist キーの使用の詳細については、「[Working with Security a
 
 ユーザーの場所にアクセスするには、Info.plist への変更も必要になります。 位置データに関連する次のキーを設定する必要があります。 
 
-* **NSLocationWhenInUseUsageDescription**: アプリでやり取りしている間にユーザーの場所にアクセスする場合。 
-* **NSLocationAlwaysUsageDescription**: アプリがバック グラウンドでユーザーの場所にアクセスする場合。
+- **NSLocationWhenInUseUsageDescription**: アプリでやり取りしている間にユーザーの場所にアクセスする場合。 
+- **NSLocationAlwaysUsageDescription**: アプリがバック グラウンドでユーザーの場所にアクセスする場合。
 
 ## <a name="photos"></a>写真 
 

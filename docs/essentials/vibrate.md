@@ -1,18 +1,18 @@
 ---
-title: 'Xamarin.Essentials: バイブレーション'
+title: Xamarin.Essentials:振動
 description: このドキュメントでは、バイブレーション機能を開始して一定時間後に停止することができる Xamarin.Essentials の Vibration クラスについて説明します。
 ms.assetid: 7E8B24C4-2625-4DAE-A129-383542D34F1E
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: d9bf7a1e5e0d15f1fdc909745cd439115b6f8463
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.openlocfilehash: 2e4cf713f9ad7478c0d8e288fd3beff4b5015ef5
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52898940"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120116"
 ---
-# <a name="xamarinessentials-vibration"></a>Xamarin.Essentials: バイブレーション
+# <a name="xamarinessentials-vibration"></a>Xamarin.Essentials:振動
 
 **Vibration** クラスを使用すると、バイブレーション機能を開始して一定時間後に停止することができます。
 
@@ -107,9 +107,9 @@ catch (Exception ex)
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-* デバイスが "着信時にバイブレーション" に設定されているときにのみバイブレーションします。
-* 常に 500 ミリ秒だけバイブレーションします。
-* バイブレーションを取り消すことはできません。
+- デバイスが "着信時にバイブレーション" に設定されているときにのみバイブレーションします。
+- 常に 500 ミリ秒だけバイブレーションします。
+- バイブレーションを取り消すことはできません。
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 

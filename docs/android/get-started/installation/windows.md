@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/22/2018
-ms.openlocfilehash: 4aa549258d3261d00c0623c2b21a2cebaa226e54
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 32ededcda1fdfc463269c7e4a2db444edab51d22
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524938"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119776"
 ---
 # <a name="windows-installation"></a>Windows のインストール
 
@@ -21,7 +21,7 @@ _このガイドでは、Windows で Visual Studio 用の Xamarin.Android をイ
 
 ## <a name="overview"></a>概要
 
-Xamarin は現在、追加料金なしで Visual Studio のすべてのエディションに含まれ、別個のライセンスは必要ないため、Visual Studio インストーラーを使用して、Xamarin.Android ツールをダウンロードしてインストールすることができます 
+Xamarin は現在、追加料金なしで Visual Studio のすべてのエディションに含まれ、別個のライセンスは必要ないため、Visual Studio インストーラーを使用して、Xamarin.Android ツールをダウンロードしてインストールすることができます
 (以前のバージョンの Xamarin.Android では必要だった手動のインストールとライセンス手順は不要になりました)。このガイドでは、次のことを学習します。
 
 - Java Development Kit、Android SDK、および Android NDK のカスタムの場所を構成する方法。
@@ -41,7 +41,7 @@ Windows での Visual Studio を使用するための Xamarin のインストー
 
 ## <a name="configuration"></a>構成
 
-Xamarin.Android では Java Development Kit (JDK) と Android SDK を使用して、アプリをビルドします。 インストール中に、Visual Studio インストーラーは既定の場所にこれらのツールを配置し、適切なパス構成で開発環境を構成します。 これらの場所は、**[ツール]、[オプション]、[Xamarin]、[Android 設定]** の順にクリックして表示し、変更することができます。
+Xamarin.Android では Java Development Kit (JDK) と Android SDK を使用して、アプリをビルドします。 インストール中に、Visual Studio インストーラーは既定の場所にこれらのツールを配置し、適切なパス構成で開発環境を構成します。 これらの場所は、 **[ツール]、[オプション]、[Xamarin]、[Android 設定]** の順にクリックして表示し、変更することができます。
 
 ![Xamarin Android の設定ダイアログのスクリーン ショット](windows-images/07-settings.png)
 
@@ -74,9 +74,9 @@ Xamarin Android SDK Manager の使用の詳細については、「[Android SDK 
 
 コンピューターで Android デバイスをエミュレーションするとき、次のコンポーネントが使われます。
 
-* **Google Android Emulator** &ndash; これは [QEMU](https://www.qemu.org/) を基盤とするエミュレーターであり、開発者のワークステーションで動作する仮想化デバイスを作ります。
-* **エミュレーター イメージ** &ndash; _エミュレーター イメージ_は、仮想化するハードウェアやオペレーティング システムのテンプレートまたは仕様です。 たとえば、Google Play サービスがインストールされた Android 7.0 を実行する Nexus 5X のハードウェア要件をエミュレーションしたイメージを用意できます。 あるいは、Android 6.0 を実行する 10 インチ タブレットをエミュレーションできます。
-* **Android 仮想デバイス (AVD)** &ndash; _Android 仮想デバイス_は、エミュレーションされた Android デバイスであり、エミュレーター イメージから作成されます。 Android アプリを実行し、テストすると、Xamarin.Android によって Android Emulator と特定の AVD が起動し、APK がインストールされ、それからアプリが実行されます。
+- **Google Android Emulator** &ndash; これは [QEMU](https://www.qemu.org/) を基盤とするエミュレーターであり、開発者のワークステーションで動作する仮想化デバイスを作ります。
+- **エミュレーター イメージ** &ndash; _エミュレーター イメージ_は、仮想化するハードウェアやオペレーティング システムのテンプレートまたは仕様です。 たとえば、Google Play サービスがインストールされた Android 7.0 を実行する Nexus 5X のハードウェア要件をエミュレーションしたイメージを用意できます。 あるいは、Android 6.0 を実行する 10 インチ タブレットをエミュレーションできます。
+- **Android 仮想デバイス (AVD)** &ndash; _Android 仮想デバイス_は、エミュレーションされた Android デバイスであり、エミュレーター イメージから作成されます。 Android アプリを実行し、テストすると、Xamarin.Android によって Android Emulator と特定の AVD が起動し、APK がインストールされ、それからアプリが実行されます。
 
 x86 基盤のコンピューターで開発するとき、x86 アーキテクチャに合わせて最適化された特別なエミュレーター イメージと次の 2 つの仮想化テクノロジのいずれかを利用することでパフォーマンスが大幅に改善されます。
 

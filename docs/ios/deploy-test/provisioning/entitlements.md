@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/13/2018
-ms.openlocfilehash: 0314ec958b2c38e702c56ef64d1cc2bba1383060
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: bbc01416fe49b361b163808f3502533db8e39d8c
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865846"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121326"
 ---
 # <a name="working-with-entitlements-in-xamarinios"></a>Xamarin.iOS での権利の使用
 
@@ -94,13 +94,13 @@ Entitlements.plist エディターの [ソース] パネルを使用して、権
 
 ### <a name="wallet"></a>ウォレット
 
-*   **説明**: 正式には Passbook として知られるウォレットは、パスを格納して管理するアプリです。 これらのパスには、クレジット カード、ストア カード、搭乗券、チケットなどがあります。
+- **説明**: 正式には Passbook として知られるウォレットは、パスを格納して管理するアプリです。 これらのパスには、クレジット カード、ストア カード、搭乗券、チケットなどがあります。
 
     - **パスの種類の識別子**
-        * **キー**: com.apple.developer.pass-type-identifiers
-        * **文字列**: `$(TeamIdentifierPrefix)*`
+        - **キー**: com.apple.developer.pass-type-identifiers
+        - **文字列**: `$(TeamIdentifierPrefix)*`
 
-* **注**:
+- **注**:
     - これにより、アプリはすべてのパスの種類を許可できるようになります。 アプリを制限し、チームのパスの種類のサブセットのみを許可するには、文字列値を `$(TeamIdentifierPrefix)pass.$(CFBundleIdentifier)` に設定します。
 
     この pass.$(CFBundleIdentifier) は、[ここ](~/ios/platform/passkit.md)で作成されたパス ID です。
@@ -109,7 +109,7 @@ Entitlements.plist エディターの [ソース] パネルを使用して、権
 
 ### <a name="icloud"></a>iCloud
 
-*   **説明**: iCloud は、iOS ユーザーに自分のコンテンツを格納し、デバイス間で共有するための便利で簡単な方法を提供します。 開発者が iCloud を使用してユーザーにストレージの手段を提供するには、次の 4 つの方法があります: Key-Value ストレージ、UIDocument ストレージ、CoreData の各方法の他に、CloudKit を直接使用して個々のファイルおよびディレクトリ用にストレージを提供する方法。 これらの詳細については、iCloud の概要に関するガイドを参照してください。
+- **説明**: iCloud は、iOS ユーザーに自分のコンテンツを格納し、デバイス間で共有するための便利で簡単な方法を提供します。 開発者が iCloud を使用してユーザーにストレージの手段を提供するには、次の 4 つの方法があります: Key-Value ストレージ、UIDocument ストレージ、CoreData の各方法の他に、CloudKit を直接使用して個々のファイルおよびディレクトリ用にストレージを提供する方法。 これらの詳細については、iCloud の概要に関するガイドを参照してください。
 
     - **iCloud ドキュメントと CloudKit**
         - **キー**: com.apple.developer.ubiquity-container-identifiers
@@ -118,7 +118,7 @@ Entitlements.plist エディターの [ソース] パネルを使用して、権
         - **キー**: com.apple.developer.ubiquity-kvstore-identifier
         - **文字列**: `$(TeamIdentifierPrefix)$(CFBundleIdentifier)`
 
-* **注**:
+- **注**:
     - `$(TeamIdentifierPrefix)` 文字列は、developer.apple.com にログインし、 **[メンバー センター]、[あなたのアカウント]、[開発者アカウントの概要]** の順に移動して、チーム ID (または開発者の個別の ID) を取得することで確認できます。 これは 10 桁の文字列 (A93A5CM278 など) になります。
     - `$(CFBundleIdentifier)` 文字列は `iCloud` で始まり、iCloud コンテナーは「[機能の使用](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md)」ガイドの手順に従って作成されるときに設定されます。
     - $`(TeamIdentifierPrefix)` および `$(CFBundleIdentifier)` プレースホルダーを使用することができ、ビルド時に適切な値に置き換えられます。

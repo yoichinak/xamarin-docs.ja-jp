@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: 722dfbb301d6698ee58d42029c8f6b82ecddc37b
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 14be0fec50138aed7b2b3e8d48d49cad86abbb2b
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68508996"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119415"
 ---
 # <a name="xamarinandroid-environment"></a>Xamarin.Android Environment
 
@@ -58,16 +58,16 @@ Xamarin.Android 6.1 で追加されました。
 
 Xamarin.Android は以下のシステム プロパティをサポートしています。これらのシステム プロパティは、`adb shell setprop` または `$(AndroidEnvironment)` のビルド アクションによって設定できます。
 
-* `debug.mono.debug`
-* `debug.mono.env`
-* `debug.mono.gc`
-* `debug.mono.log`
-* `debug.mono.max_grefc`
-* `debug.mono.profile`
-* `debug.mono.runtime_args`
-* `debug.mono.trace`
-* `debug.mono.wref`
-* `XA_HTTP_CLIENT_HANDLER_TYPE`
+- `debug.mono.debug`
+- `debug.mono.env`
+- `debug.mono.gc`
+- `debug.mono.log`
+- `debug.mono.max_grefc`
+- `debug.mono.profile`
+- `debug.mono.runtime_args`
+- `debug.mono.trace`
+- `debug.mono.wref`
+- `XA_HTTP_CLIENT_HANDLER_TYPE`
 
 ### `debug.mono.debug`
 
@@ -90,15 +90,15 @@ Xamarin.Android は以下のシステム プロパティをサポートしてい
 Xamarin.Android が `adb logcat` にログを記録する追加情報を制御します。
 次のいずれかの値を含むコンマ区切りの文字列 (`,`) です。
 
-* `all`:*すべての*メッセージを出力します。 `lref` メッセージが含まれているので、あまりお勧めしません。
-* `assembly`:`.apk` を出力して、解析メッセージをアセンブリします。
-* `gc`:GC 関連のメッセージを出力します。
-* `gref`:JNI グローバル参照メッセージを出力します。
-* `lref`:JNI ローカル参照メッセージを出力します。  
+- `all`:*すべての*メッセージを出力します。 `lref` メッセージが含まれているので、あまりお勧めしません。
+- `assembly`:`.apk` を出力して、解析メッセージをアセンブリします。
+- `gc`:GC 関連のメッセージを出力します。
+- `gref`:JNI グローバル参照メッセージを出力します。
+- `lref`:JNI ローカル参照メッセージを出力します。  
     *注*:これは*実際には*スパム `adb logcat` になります。  
     Xamarin.Android 5.1 では、`.__override__/lrefs.txt` ファイルも作成され、*巨大*なサイズになる可能性があります。  
     そのため、お勧めしません。
-* `timing`:いくつかのメソッド タイミング情報を出力します。 この処理で、ファイル `.__override__/methods.txt` と `.__override__/counters.txt` も作成されます。
+- `timing`:いくつかのメソッド タイミング情報を出力します。 この処理で、ファイル `.__override__/methods.txt` と `.__override__/counters.txt` も作成されます。
 
 
 ### `debug.mono.max_grefc`
@@ -131,15 +131,15 @@ debug.mono.max_grefc` でのみ使用できます。
 
 `debug.mono.wref` システム プロパティを使用すると、既定で検出された JNI の弱い参照メカニズムをオーバーライドすることができます。 サポートされている値は次の 2 つです。
 
-* `jni`:`JNIEnv::NewWeakGlobalRef()` で作成され、`JNIEnv::DeleteWeakGlobalREf()` によって破棄される JNI の弱い参照を使用します。
-* `java`:`java.lang.WeakReference` インスタンスを参照する JNI グローバル参照を使用します。
+- `jni`:`JNIEnv::NewWeakGlobalRef()` で作成され、`JNIEnv::DeleteWeakGlobalREf()` によって破棄される JNI の弱い参照を使用します。
+- `java`:`java.lang.WeakReference` インスタンスを参照する JNI グローバル参照を使用します。
 
 `java` は、既定では API-7 までと、ART が有効な場合は API-19 (Kit Kat) で使用されます (API-8 では `jni` の参照が追加され、ART によって `jni` の参照が*破棄されました*)。
 
 このシステム プロパティは、テストや特定の形式の調査に役立ちます。
 *一般的に*、変更はお勧めしません。
 
-### <a name="xahttpclienthandlertype"></a>XA\_HTTP\_CLIENT\_HANDLER\_TYPE
+### <a name="xa_http_client_handler_type"></a>XA\_HTTP\_CLIENT\_HANDLER\_TYPE
 
 Xamarin.Android 6.1 で初めて導入されたこの環境変数では、`HttpClient` によって使用される既定の `HttpMessageHandler` 実装を宣言します。 既定では、この変数は設定されておらず、Xamarin.Android は `HttpClientHandler` を使用します。
 

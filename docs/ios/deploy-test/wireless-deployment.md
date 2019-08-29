@@ -8,12 +8,12 @@ author: lobrien
 ms.author: laobri
 ms.custom: video
 ms.date: 01/22/2019
-ms.openlocfilehash: 0e7516f030955c9b0f89db6db11b93afd9b358de
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: ac4ae1d8b247a709307841be1ffa1fee2afbf68f
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865501"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121477"
 ---
 # <a name="wireless-deployment-for-xamarinios-and-tvos-apps"></a>Xamarin.iOS および tvOS アプリのワイヤレス展開
 
@@ -95,9 +95,9 @@ iOS または tvOS デバイスに展開するには、次のステップを実�
 
 2. デバイスが Visual Studio に表示されない場合、Xcode の **[Devices and Simulators]** ウィンドウを確認します。 
 
-    * Xcode 上でデバイスが接続済みとして表示**されない**場合には、デバイスの[ペアリング](#pair)をもう一度お試しください。
+    - Xcode 上でデバイスが接続済みとして表示**されない**場合には、デバイスの[ペアリング](#pair)をもう一度お試しください。
 
-    * Xcode でデバイスが接続済みと表示される場合、Visual Studio とデバイスを再起動してみます。
+    - Xcode でデバイスが接続済みと表示される場合、Visual Studio とデバイスを再起動してみます。
 
 3. デバイスの[プロビジョニング](~/ios/get-started/installation/device-provisioning/index.md)をまだ行っていない場合には、プロビジョニングする必要があります。
 

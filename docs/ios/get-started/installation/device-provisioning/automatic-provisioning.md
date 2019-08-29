@@ -8,12 +8,12 @@ author: asb3993
 ms.author: amburns
 ms.custom: video
 ms.date: 01/22/2019
-ms.openlocfilehash: 796c196b5c8ebcd70a0529112189cea6116a9ab0
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: 4f5c28c4ad9b673ac50b404e7d34f718366bd11d
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69890104"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121449"
 ---
 # <a name="automatic-provisioning-for-xamarinios"></a>Xamarin.iOS の自動プロビジョニング
 
@@ -100,11 +100,11 @@ iOS デバイスで開発のためにアプリに自動的に署名するには�
 
 自動署名を有効にすると、次のいずれかの状況になったときに、Visual Studio for Mac で必要に応じてこれらのアーティファクトが更新されます。
 
-* iOS デバイスを Mac に接続した
+- iOS デバイスを Mac に接続した
     - これで、デバイスが Apple Developer Portal に登録されているかどうかが自動的に確認されます。 登録されていない場合は追加され、それを含む新しいプロビジョニング プロファイルが生成されます。
-* アプリのバンドル ID が変更された
+- アプリのバンドル ID が変更された
     - これでアプリ ID が更新されます。 このアプリ ID が含まれる新しいプロビジョニング プロファイルが作成されます。
-* Entitlements.plist ファイルで、サポートされる機能が有効になります。
+- Entitlements.plist ファイルで、サポートされる機能が有効になります。
     - この機能がアプリ ID に追加され、アプリ ID が更新された新しいプロビジョニング プロファイルが生成されます。
     - 現在はサポートされていない機能もあります。 サポートされる機能の詳細については、「[Working with Capabilities](~/ios/deploy-test/provisioning/capabilities/index.md)」(機能の使用) ガイドを参照してください。
 

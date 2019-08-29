@@ -4,13 +4,13 @@ description: アプリケーションで Xamarin.Essentials の Email クラス�
 ms.assetid: 5FBB6FF0-0E7B-4C29-8F06-91642AF12629
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 04/02/2019
-ms.openlocfilehash: f2c275260625fe3842b4473e404f49c71d1d28ae
-ms.sourcegitcommit: 9f37dc00c2adab958025ad1cdba9c37f0acbccd0
+ms.date: 08/20/2019
+ms.openlocfilehash: cccbe5f539e2807e749433623e938438e67965e8
+ms.sourcegitcommit: 9a46ee759ec4a738da348e8f8904d0f482ef0f25
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69012485"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70060094"
 ---
 # <a name="xamarinessentials-email"></a>Xamarin.Essentials:電子メール
 
@@ -62,18 +62,9 @@ public class EmailTest
 }
 ```
 
-
 ## <a name="file-attachments"></a>添付ファイル
 
-![プレビュー機能](~/media/shared/preview.png)
-
-ファイルのメール送信は、Xamarin.Essentials バージョン 1.1.0 で実験的プレビューとして利用できます。 この機能により、アプリではデバイスのメール クライアントでファイルをメール送信できます。 この機能を有効にするには、アプリのスタートアップ コードで次のプロパティを設定します。
-
-```csharp
-ExperimentalFeatures.Enable(ExperimentalFeatures.EmailAttachments);
-```
-
-機能を有効にした後は、すべてのファイルをメールで送信できます。 Xamarin.Essentials では、自動的にファイルの種類 (MIME) が検出されて、ファイルを添付として追加することが要求されます。 すべてのメール クライアントは異なり、特定のファイル拡張子のみをサポートできるか、またはまったくサポートできません。
+この機能により、アプリではデバイスのメール クライアントでファイルをメール送信できます。 Xamarin.Essentials では、自動的にファイルの種類 (MIME) が検出されて、ファイルを添付として追加することが要求されます。 すべてのメール クライアントは異なり、特定のファイル拡張子のみをサポートできるか、またはまったくサポートできません。
 
 テキストをディスクに書き込み、メールの添付ファイルとして追加するサンプルを次に示します。
 

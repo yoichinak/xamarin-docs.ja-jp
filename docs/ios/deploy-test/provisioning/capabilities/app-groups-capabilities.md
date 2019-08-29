@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/15/2017
-ms.openlocfilehash: 0dcc0c9499a1f4085e489fe6d8dcfa3fbf2fa3e0
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 20aa1da478916bf4c8949103a5ce7fbf1f5d8f93
+ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832418"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70064826"
 ---
 # <a name="app-group-capabilities-in-xamarinios"></a>Xamarin.iOS のアプリ グループ機能
 
@@ -20,9 +20,9 @@ _アプリケーションに機能を追加するには、多くの場合、追�
 
 アプリ グループを使用すると、さまざまなアプリケーション (またはアプリケーションとその拡張機能) から共有ファイルの保存場所にアクセスできます。 アプリ グループは次のようなデータに使用できます。
 
-*   [Apple Watch の設定](~/ios/watchos/app-fundamentals/settings.md)
-*   [共有 NSUserDefaults](~/ios/app-fundamentals/user-defaults.md)
-*   [共有ファイル](~/ios/watchos/app-fundamentals/parent-app.md#files)
+* [Apple Watch の設定](~/ios/watchos/app-fundamentals/settings.md)
+* [共有 NSUserDefaults](~/ios/app-fundamentals/user-defaults.md)
+* [共有ファイル](~/ios/watchos/app-fundamentals/parent-app.md#files)
 
 ## <a name="configure-a-new-app-group"></a>新しいアプリ グループを構成する
 

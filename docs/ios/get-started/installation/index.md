@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: 24aa6dae3767255155c6b739e50174214a28d3d8
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: 92081ceed9df0525f49005b636298a8142162a31
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58855251"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120940"
 ---
 # <a name="xamarinios-installation"></a>Xamarin.iOS のインストール
 
@@ -40,5 +40,5 @@ Windows コンピューターに Xamarin.iOS をインストールする手順�
 
 Xamarin.iOS のインストールを正常に完了した後は、デバイスで Xamarin.iOS アプリケーションを開発およびテストできるように、iOS デバイスをプロビジョニングする方法について学びましょう。
 
-* [開発用のデバイスの設定](device-provisioning/index.md)
-* [無料プロビジョニング](~/ios/get-started/installation/device-provisioning/free-provisioning.md)
+- [開発用のデバイスの設定](device-provisioning/index.md)
+- [無料プロビジョニング](~/ios/get-started/installation/device-provisioning/free-provisioning.md)
