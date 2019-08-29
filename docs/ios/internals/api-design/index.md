@@ -411,7 +411,7 @@ web.WeakDelegate = new Notifier ();
 
 ときにこのような Objective C のサンプルを参照してください。
 
-```csharp
+```objc
 foo.delegate = [[SomethingDelegate] alloc] init]
 ```
 
