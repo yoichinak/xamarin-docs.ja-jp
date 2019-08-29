@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/13/2018
-ms.openlocfilehash: 9f8a092b63da413974f387aca02d81efef9c1625
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: c434c39c12403bfc61e146041eb2a0780f29eb3e
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528321"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119184"
 ---
 # <a name="passkit-in-xamarinios"></a>Xamarin. iOS の Pass Kit
 
@@ -326,9 +326,9 @@ Push または Pass Kit API を使用して更新することができます。�
 
 次の方法で、ウォレットに渡すことができます。
 
-* **コンジットアプリ**–これらはパスを直接操作しません。パスファイルを読み込み、ユーザーにウォレットに追加するオプションを提供するだけです。 
+- **コンジットアプリ**–これらはパスを直接操作しません。パスファイルを読み込み、ユーザーにウォレットに追加するオプションを提供するだけです。 
 
-* **コンパニオンアプリ**–パスを配布するためのプロバイダーによって作成され、それらを参照または編集するための追加機能を提供します。 Xamarin iOS アプリケーションは、Pass Kit API に完全にアクセスして、パスを作成および操作します。 これにより、 `PKAddPassesViewController`を使用してウォレットにパスを追加できます。 このプロセスの詳細については、このドキュメントの「**コンパニオンアプリケーション**」セクションを参照してください。
+- **コンパニオンアプリ**–パスを配布するためのプロバイダーによって作成され、それらを参照または編集するための追加機能を提供します。 Xamarin iOS アプリケーションは、Pass Kit API に完全にアクセスして、パスを作成および操作します。 これにより、 `PKAddPassesViewController`を使用してウォレットにパスを追加できます。 このプロセスの詳細については、このドキュメントの「**コンパニオンアプリケーション**」セクションを参照してください。
 
 ### <a name="conduit-applications"></a>コンジットアプリケーション
 
