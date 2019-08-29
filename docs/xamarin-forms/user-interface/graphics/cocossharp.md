@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/03/2016
-ms.openlocfilehash: a6077029a82577cccbf060f14cdd7586c2793a94
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: d6440518149a4fab8e9667a2a41d3df818e2a879
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69529257"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120527"
 ---
 # <a name="using-cocossharp-in-xamarinforms"></a>Xamarin.Forms で CocosSharp を使用します。
 
@@ -28,9 +28,9 @@ _CocosSharp は、正確な図形、イメージ、およびテキストのレ�
 
 CocosSharp では、グラフィックスを表示する、タッチ入力を読み取り、オーディオ、および管理のコンテンツを再生するための柔軟で強力なテクノロジです。 このガイドでは、Xamarin.Forms アプリケーションに CocosSharp を追加する方法について説明します。 次について説明します。
 
-* [CocosSharp とは何ですか。](#what)
-* [CocosSharp の Nuget パッケージを追加します。](#nuget)
-* [チュートリアル: Xamarin. Forms アプリへの CocosSharp の追加](#add)
+- [CocosSharp とは何ですか。](#what)
+- [CocosSharp の Nuget パッケージを追加します。](#nuget)
+- [チュートリアル: Xamarin. Forms アプリへの CocosSharp の追加](#add)
 
 <a name="what" />
 
@@ -39,11 +39,11 @@ CocosSharp では、グラフィックスを表示する、タッチ入力を読
 [CocosSharp](https://github.com/xamarin/docs-archive/blob/master/Docs/CocosSharp/index.md)は、Xamarin プラットフォームで利用可能なオープン ソースのゲーム エンジンです。
 CocosSharp では、次の機能が含まれたランタイムの効率的なライブラリを示します。
 
-* クラスを使用し`CCSprite`たイメージのレンダリング
-* クラスを使用し`CCDrawNode`たシェイプレンダリング
-* `CCNode.Schedule`クラスを使用するすべての-フレームロジック
-* を使用したコンテンツ管理 (.png ファイルなどのリソースの読み込みとアンロード)`CCTextureCache`
-* クラスを使用`CCAction`したアニメーション
+- クラスを使用し`CCSprite`たイメージのレンダリング
+- クラスを使用し`CCDrawNode`たシェイプレンダリング
+- `CCNode.Schedule`クラスを使用するすべての-フレームロジック
+- を使用したコンテンツ管理 (.png ファイルなどのリソースの読み込みとアンロード)`CCTextureCache`
+- クラスを使用`CCAction`したアニメーション
 
 CocosSharp の主な目的は、クロスプラット フォーム 2D ゲーム; の作成を簡略化ただし、Xamarin フォーム アプリケーションに優れた追加ことができます。 通常、ゲームには、効率的なレンダリングやビジュアルを正確に制御が必要があるために、ゲーム以外のアプリケーションに強力な視覚化と効果を追加する CocosSharp を使用できます。
 
@@ -273,9 +273,9 @@ public class GameScene : CCScene
 
 上記の図は、黒色の文字で、画面の外側のピクセル寸法を表示します。 単位は、白いテキストでダイアグラムの内側に表示されます。 上に表示される重要な詳細情報を次に示します。
 
-* CocosSharp ディスプレイの原点は左下にあります。 X の値が増加、右に移動し、上に移動する Y 値が増加します。 確認の Y 値が逆になっていることと比較する他の 2D レイアウト エンジンと、(0, 0) は、キャンバスの左上。
-* CocosSharp の既定の動作は、そのビューの縦横比を維持するためには。 グリッドの最初の行が高さよりも広いため、CocosSharp がピリオドで区切られた白い四角形が示すように、そのセルの幅全体を入力していません。 」の説明に従って、この動作を変更できる、 [CocosSharp での複数の解決を処理ガイド](https://github.com/xamarin/docs-archive/blob/master/Docs/CocosSharp/resolutions.md)します。
-* この例で CocosSharp 幅と高さのサイズに関係なく、100 単位の表示領域、またはそのデバイスの縦横比が維持されます。 これは、こと、CocosSharp の右端にバインドされている X = 100 はレイアウトを表示、管理することすべてのデバイスで一貫性のあるコードは想定できることを意味します。
+- CocosSharp ディスプレイの原点は左下にあります。 X の値が増加、右に移動し、上に移動する Y 値が増加します。 確認の Y 値が逆になっていることと比較する他の 2D レイアウト エンジンと、(0, 0) は、キャンバスの左上。
+- CocosSharp の既定の動作は、そのビューの縦横比を維持するためには。 グリッドの最初の行が高さよりも広いため、CocosSharp がピリオドで区切られた白い四角形が示すように、そのセルの幅全体を入力していません。 」の説明に従って、この動作を変更できる、 [CocosSharp での複数の解決を処理ガイド](https://github.com/xamarin/docs-archive/blob/master/Docs/CocosSharp/resolutions.md)します。
+- この例で CocosSharp 幅と高さのサイズに関係なく、100 単位の表示領域、またはそのデバイスの縦横比が維持されます。 これは、こと、CocosSharp の右端にバインドされている X = 100 はレイアウトを表示、管理することすべてのデバイスで一貫性のあるコードは想定できることを意味します。
 
 #### <a name="ccdrawnode-details"></a>CCDrawNode の詳細
 

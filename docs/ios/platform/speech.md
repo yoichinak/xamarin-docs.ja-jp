@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: fe871985700c5a40db2736ded78588b0b7d4f616
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 65644673bde426fff92530a7a36812d1c95b5995
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655397"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121287"
 ---
 # <a name="speech-recognition-in-xamarinios"></a>Xamarin の音声認識 (iOS)
 
@@ -89,8 +89,8 @@ IOS アプリで音声認識を採用するには、次の4つの主要な手順
 - キーを使用して、アプリの`Info.plist`ファイルに使用方法の説明を入力します。 `NSSpeechRecognitionUsageDescription` たとえば、カメラアプリには次のような説明が含まれている場合があり_ます。 "チーズという単語を言うだけで写真を撮ることができます。"_
 - `SFSpeechRecognizer.RequestAuthorization`メソッドを呼び出して、ダイアログボックスでユーザーに音声認識アクセスを`NSSpeechRecognitionUsageDescription`要求し、受け入れまたは拒否を許可する必要がある理由の説明を提示することによって、承認を要求します。
 - 音声認識要求を作成します。
-    * ディスク上の録音済みオーディオの場合は、 `SFSpeechURLRecognitionRequest`クラスを使用します。
-    * ライブオーディオ (またはメモリからのオーディオ) の場合`SFSPeechAudioBufferRecognitionRequest`は、クラスを使用します。
+    - ディスク上の録音済みオーディオの場合は、 `SFSpeechURLRecognitionRequest`クラスを使用します。
+    - ライブオーディオ (またはメモリからのオーディオ) の場合`SFSPeechAudioBufferRecognitionRequest`は、クラスを使用します。
 - 音声認識要求を音声認識エンジン (`SFSpeechRecognizer`) に渡して、認識を開始します。 アプリは、返さ`SFSpeechRecognitionTask`れたを使用して、認識結果を監視および追跡できます。
 
 これらの手順については、以下で詳しく説明します。

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 08/21/2019
-ms.openlocfilehash: c487442af7df4e4b8dc8860dcea4cd6065087a7f
-ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
-ms.translationtype: HT
+ms.openlocfilehash: 6d10e665c6461655440ddfb2c524cb56a14337f6
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/28/2019
-ms.locfileid: "70075658"
+ms.locfileid: "70121344"
 ---
 # <a name="xamarinforms-common-control-properties-methods-and-events"></a>Xamarin. Forms コモンコントロールのプロパティ、メソッド、およびイベント
 
@@ -80,11 +80,15 @@ Xamarin. forms `VisualElement`クラスは、xamarin アプリケーションで
 
 ### [`MinimumHeightRequest`](xref:Xamarin.Forms.VisualElement.MinimumHeightRequest)
 
-プロパティは、コントロール`double`の必要な最小の高さを決定する値です。 `MinimumHeightRequest` 詳細については、「[要求のプロパティ](#request-properties)」を参照してください。
+プロパティは、2 `double`つの要素が制限された領域に対して競合する場合のオーバーフローの処理方法を決定する値です。 `MinimumHeightRequest` プロパティを`MinimumHeightRequest`設定すると、レイアウトプロセスで、要求された最小の次元に要素をスケールダウンできます。 が指定`MinimumHeightRequest`されていない場合、既定値は-1 です。レイアウトプロセス`HeightRequest`では、が最小値であると見なされます。 これは、値のない`MinimumHeightRequest`要素の高さがスケーラブルではないことを意味します。
+
+詳細については、「[最小要求プロパティ](#minimum-request-properties)」を参照してください。
 
 ### [`MinimumWidthRequest`](xref:Xamarin.Forms.VisualElement.MinimumWidthRequest)
 
-プロパティは、コントロールの目的の最小幅を決定する値です。`double` `MinimumWidthRequest` 詳細については、「[要求のプロパティ](#request-properties)」を参照してください。
+プロパティは、2 `double`つの要素が制限された領域に対して競合する場合のオーバーフローの処理方法を決定する値です。 `MinimumWidthRequest` プロパティを`MinimumWidthRequest`設定すると、レイアウトプロセスで、要求された最小の次元に要素をスケールダウンできます。 が指定`MinimumWidthRequest`されていない場合、既定値は-1 です。レイアウトプロセス`WidthRequest`では、が最小値であると見なされます。 これは、値のない`MinimumWidthRequest`要素の幅が拡張されないことを意味します。
+
+詳細については、「[最小要求プロパティ](#minimum-request-properties)」を参照してください。
 
 ### [`Opacity`](xref:Xamarin.Forms.VisualElement.Opacity)
 
@@ -229,6 +233,35 @@ Android、iOS、UWP の各プラットフォームには、デバイスによっ
 ## <a name="request-properties"></a>要求のプロパティ
 
 名前に "request" が含まれているプロパティは、目的の値を定義しますが、実際に表示される値とは一致しない可能性があります。 たとえば、 `HeightRequest`は150に設定されている場合がありますが、レイアウトでは100ユニット`Height`の領域のみが許可されている場合、コントロールのレンダリングは100のみになります。 表示されるサイズは、使用可能な領域と含まれるコンポーネントの影響を受けます。
+
+## <a name="minimum-request-properties"></a>最小要求プロパティ
+
+最小要求プロパティに`MinimumHeightRequest`は`MinimumWidthRequest`、とが含まれます。これは、要素が互いにどのようにオーバーフローしているかをより正確に制御できるようにするためのものです。 ただし、これらのプロパティに関連するレイアウト動作には、重要な考慮事項がいくつかあります。
+
+### <a name="unspecified-minimum-property-values"></a>指定されていない最小プロパティ値
+
+最小値が設定されていない場合、minimum プロパティの既定値は-1 です。 レイアウトプロセスでは、この値は無視され、絶対値が最小値であると見なされます。 この動作の実際の結果として、最小値が指定されていない要素は圧縮され**ません**。 最小値を指定した要素**が縮小され**ます。
+
+次の XAML は、 `BoxView`水平方向`StackLayout`に2つの要素を示しています。
+
+```xaml
+<StackLayout Orientation="Horizontal">
+    <BoxView HeightRequest="100" BackgroundColor="Purple" WidthRequest="500"></BoxView>
+    <BoxView HeightRequest="100" BackgroundColor="Green" WidthRequest="500" MinimumWidthRequest="250"></BoxView>
+</StackLayout>
+```
+
+最初`BoxView`のインスタンスは、幅500を要求し、最小幅を指定していません。 2番`BoxView`目のインスタンスは、幅500と最小幅250を要求します。 親`StackLayout`要素が、要求された幅で両方のコンポーネントを格納するのに十分`BoxView`な幅ではない場合、レイアウトプロセスでは、他の有効な最小値が指定されていないため、最初のインスタンスは最小幅500を持つと見なされます。 2番`BoxView`目のインスタンスは、250にスケールダウンすることができ、幅が250単位に達するまで縮小されます。
+
+最初`BoxView`のインスタンスが最小幅なしでスケールダウンする必要がある場合は、 `MinimumWidthRequest`を有効な値 (0 など) に設定する必要があります。
+
+### <a name="minimum-and-absolute-property-values"></a>プロパティの最小値と絶対値
+
+最小値が絶対値よりも大きい場合、動作は定義されていません。 たとえば、が 100 `MinimumWidthRequest`に設定されている`WidthRequest`場合、プロパティは100を超えないようにする必要があります。 最小プロパティ値を指定する場合は、絶対値が最小値よりも大きいことを保証するために、常に絶対値を指定する必要があります。
+
+### <a name="minimum-properties-within-a-grid"></a>グリッド内の最小プロパティ
+
+`Grid`レイアウトには、行と列の相対サイズを調整するための独自のシステムがあります。 レイアウト内`MinimumHeightRequest`で`MinimumWidthRequest`またはを使用しても効果はありません。 `Grid` 詳細については、「 [Xamarin. Forms Grid](~/xamarin-forms/user-interface/layouts/grid.md)」を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 

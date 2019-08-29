@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/29/2016
-ms.openlocfilehash: 22efd672c041ad84488f822ac2e7e51a80ea2b61
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: be353c6274dcf69946740e2d195b9e4d64208313
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655327"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121571"
 ---
 # <a name="adding-ios-specific-formatting"></a>IOS 固有の書式設定の追加
 
@@ -20,8 +20,8 @@ IOS 固有の書式設定を行う1つの方法は、コントロールの[カ�
 
 次に、Xamarin の iOS アプリの外観の方法を制御するためのオプションを示します。
 
-* [**情報**](#info-plist)の表示オプションの構成
-* API を使用したコントロールスタイルの設定[ `UIAppearance`](#uiappearance)
+- [**情報**](#info-plist)の表示オプションの構成
+- API を使用したコントロールスタイルの設定[ `UIAppearance`](#uiappearance)
 
 これらの代替方法については、以下で説明します。
 
@@ -56,7 +56,7 @@ nav.BarTextColor = Color.White;
 <false/>
 ```
 
-これでアプリが実行されると、ナビゲーションバーは緑色になり、テキストは白になり (Xamarin 形式の書式設定に*よる)、* iOS 固有の構成によりステータスバーのテキストも白になります。
+これでアプリが実行されると、ナビゲーションバーは緑色になり、テキストは白になり (Xamarin 形式の書式設定による)、iOS 固有の構成によりステータスバーのテキストも白になります。
 
 ![](theme-images/status-white-sml.png "iOS のテーマ")
 

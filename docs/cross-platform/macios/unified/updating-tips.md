@@ -6,12 +6,12 @@ ms.assetid: 8DD34D21-342C-48E9-97AA-1B649DD8B61F
 ms.date: 03/29/2017
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: c0e4152574cf400f5b77b504955b248dd8477a7c
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 2b82de58b9d2f9e8acb8996f484845f9a71b6e80
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509514"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120312"
 ---
 # <a name="tips-for-updating-code-to-the-unified-api"></a>コードを Unified API に更新する場合のヒント
 
@@ -55,43 +55,43 @@ Objective-C exception thrown. Name: NSInvalidArgumentException Reason: Could not
 移行ツールを使用すると、手動操作を必要とするコンパイラエラーが発生する可能性があります。
 手動で修正する必要があるものには、次のようなものがあります。
 
-* を`enum`比較すると、 `(int)`キャストが必要になる場合があります。
+- を`enum`比較すると、 `(int)`キャストが必要になる場合があります。
 
-* `NSDictionary.IntValue`がを返す`nint` `Int32Value`ようになりました。代わりにを使用できます。
+- `NSDictionary.IntValue`がを返す`nint` `Int32Value`ようになりました。代わりにを使用できます。
 
-* `nfloat`および`nint`型をに設定`const`することはできません。  `static readonly nint`は、適切な代替手段です。
+- `nfloat`および`nint`型をに設定`const`することはできません。  `static readonly nint`は、適切な代替手段です。
 
-* `MonoTouch.`名前空間に直接含まれていたものは、一般に`ObjCRuntime.` `MonoTouch.Constants.Version`名前空間にあります (たとえば`ObjCRuntime.Constants.Version`、はになります)。
+- `MonoTouch.`名前空間に直接含まれていたものは、一般に`ObjCRuntime.` `MonoTouch.Constants.Version`名前空間にあります (たとえば`ObjCRuntime.Constants.Version`、はになります)。
 
-* および型をシリアル化しようとすると、 `nint` `nfloat`オブジェクトをシリアル化するコードが壊れている可能性があります。 移行後に、シリアル化コードが期待どおりに動作することを必ず確認してください。
+- および型をシリアル化しようとすると、 `nint` `nfloat`オブジェクトをシリアル化するコードが壊れている可能性があります。 移行後に、シリアル化コードが期待どおりに動作することを必ず確認してください。
 
-* 場合によっては、自動`#if #else`ツールが条件付きコンパイラディレクティブ内のコードをミスすることがあります。 この場合は、手動で修正を行う必要があります (以下の一般的なエラーを参照してください)。
+- 場合によっては、自動`#if #else`ツールが条件付きコンパイラディレクティブ内のコードをミスすることがあります。 この場合は、手動で修正を行う必要があります (以下の一般的なエラーを参照してください)。
 
-* を使用して`[Export]`手動でエクスポートしたメソッドは、移行ツールによって自動的に修正されない場合があります。 `nfloat`たとえば、このコード snippert では、戻り値の型を手動でに更新する必要があります。
+- を使用して`[Export]`手動でエクスポートしたメソッドは、移行ツールによって自動的に修正されない場合があります。 `nfloat`たとえば、このコード snippert では、戻り値の型を手動でに更新する必要があります。
 
     ```csharp
     [Export("tableView:heightForRowAtIndexPath:")]
     public nfloat HeightForRow(UITableView tableView, NSIndexPath indexPath)
     ```
 
-* Unified API は、NSDate と .NET DateTime の間の暗黙の変換を提供しません。これは、可逆変換ではないためです。 に`DateTime` `DateTimeKind.Unspecified` キャストする`NSDate`前に、.net をローカルまたは UTC に変換することに関連するエラーを回避する。
+- Unified API は、NSDate と .NET DateTime の間の暗黙の変換を提供しません。これは、可逆変換ではないためです。 に`DateTime` `DateTimeKind.Unspecified` キャストする`NSDate`前に、.net をローカルまたは UTC に変換することに関連するエラーを回避する。
 
-* 目標-C カテゴリのメソッドが Unified API の拡張メソッドとして生成されるようになりました。 たとえば、以前に使用して`UIView.DrawString`いたコード`NSString.DrawString`は、Unified API で参照されるようになりました。
+- 目標-C カテゴリのメソッドが Unified API の拡張メソッドとして生成されるようになりました。 たとえば、以前に使用して`UIView.DrawString`いたコード`NSString.DrawString`は、Unified API で参照されるようになりました。
 
-* で`VideoSettings` avfoundation クラスを使用するコードは、 `WeakVideoSettings`プロパティを使用するように変更する必要があります。 これには`Dictionary`、設定クラスのプロパティとして使用できるが必要です。次に例を示します。
+- で`VideoSettings` avfoundation クラスを使用するコードは、 `WeakVideoSettings`プロパティを使用するように変更する必要があります。 これには`Dictionary`、設定クラスのプロパティとして使用できるが必要です。次に例を示します。
 
     ```csharp
     vidrec.WeakVideoSettings = new AVVideoSettings() { ... }.Dictionary;
     ```
 
-* NSObject `.ctor(IntPtr)`コンストラクターが public から protected に変更されました ([不適切な使用を防ぐため](~/cross-platform/macios/unified/overview.md#NSObject_ctor))。
+- NSObject `.ctor(IntPtr)`コンストラクターが public から protected に変更されました ([不適切な使用を防ぐため](~/cross-platform/macios/unified/overview.md#NSObject_ctor))。
 
-* `NSAction`は、標準の .NET `Action`に[置き換えら](~/cross-platform/macios/unified/overview.md#NSAction)れました。 一部の単純な (単一パラメーター) デリゲートも、に`Action<T>`置き換えられました。
+- `NSAction`は、標準の .NET `Action`に[置き換えら](~/cross-platform/macios/unified/overview.md#NSAction)れました。 一部の単純な (単一パラメーター) デリゲートも、に`Action<T>`置き換えられました。
 
 最後に、[クラシック v Unified API の違い](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/ios/api_changes/classic-vs-unified-8.6.0/index.md)を参照して、コード内の api の変更を検索します。 [このページ](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/ios/api_changes/classic-vs-unified-8.6.0/index.md)を検索すると、クラシック api と、更新されたものを見つけることができます。
 
 > [!NOTE]
-> 移行`MonoTouch.Dialog`後も名前空間は変わりません。 コードで monotouch.dialog を使用している場合は、その名前空間を使用し続ける`MonoTouch.Dialog`必要`Dialog`があり**ます。** *に変更しない*でください。
+> 移行`MonoTouch.Dialog`後も名前空間は変わりません。 コードで monotouch.dialog を使用している場合は、その名前空間を使用し続ける`MonoTouch.Dialog`必要`Dialog`があり**ます。** に変更しないでください。
 
 ## <a name="common-compiler-errors"></a>一般的なコンパイラエラー
 
@@ -152,13 +152,13 @@ public override nint NumberOfSections (UITableView tableView)
 
 ファイルスペルを`AddEllipseInRect`修正します。 その他の名前変更は次のとおりです。
 
-* "Color. Black" をに`NSColor.Black`変更します。
-* MapKit ' AddAnnotation ' をに`AddAnnotations`変更します。
-* AVFoundation ' Dataencoding ' をに`Encode`変更します。
-* AVFoundation ' Avfoundation. TypeQRCode ' をに`AVMetadataObjectType.QRCode`変更します。
-* AVFoundation ' VideoSettings ' をに`WeakVideoSettings`変更します。
-* Popviewコントローラーのアニメーションを`PopViewController`に変更します。
-* CoreGraphics ' CGBitmapContext ' をに`SetFillColor`変更します。
+- "Color. Black" をに`NSColor.Black`変更します。
+- MapKit ' AddAnnotation ' をに`AddAnnotations`変更します。
+- AVFoundation ' Dataencoding ' をに`Encode`変更します。
+- AVFoundation ' Avfoundation. TypeQRCode ' をに`AVMetadataObjectType.QRCode`変更します。
+- AVFoundation ' VideoSettings ' をに`WeakVideoSettings`変更します。
+- Popviewコントローラーのアニメーションを`PopViewController`に変更します。
+- CoreGraphics ' CGBitmapContext ' をに`SetFillColor`変更します。
 
 **エラー CS0546: ' MapKit... 座標 ' にオーバーライド可能な set アクセサー (CS0546) が含まれていないため、オーバーライドできません**
 
@@ -166,10 +166,10 @@ MKAnnotation をサブクラス化してカスタム注釈を作成する場合�
 
 [修正](https://forums.xamarin.com/discussion/comment/109505/#Comment_109505):
 
-* 座標を追跡するためのフィールドを追加する
-* 座標プロパティの getter にこのフィールドを返します。
-* SetCoordinate メソッドをオーバーライドし、フィールドを設定します。
-* 渡された座標パラメーターを使用して、.ctor で SetCoordinate を呼び出します
+- 座標を追跡するためのフィールドを追加する
+- 座標プロパティの getter にこのフィールドを返します。
+- SetCoordinate メソッドをオーバーライドし、フィールドを設定します。
+- 渡された座標パラメーターを使用して、.ctor で SetCoordinate を呼び出します
 
 次のようになっているはずです。
 

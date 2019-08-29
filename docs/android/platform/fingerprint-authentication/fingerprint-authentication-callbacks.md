@@ -6,21 +6,21 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/06/2017
-ms.openlocfilehash: cb4933695d34a0805be4139c7b345f7a70f33613
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: f1fc484931ba7a574ac660b4856f20b1cb1e08a3
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524325"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119584"
 ---
 # <a name="responding-to-authentication-callbacks"></a>認証コールバックへの応答
 
 指紋スキャナーは、独自のスレッドでバックグラウンドで実行され、完了すると、UI スレッドでの1つの`FingerprintManager.AuthenticationCallback`メソッドを呼び出すことによってスキャンの結果を報告します。 Android アプリケーションは、次のメソッドをすべて実装して、この抽象クラスを拡張する独自のハンドラーを提供する必要があります。
 
-* **`OnAuthenticationError(int errorCode, ICharSequence errString)`** &ndash;回復不可能なエラーが発生したときに呼び出されます。 アプリケーションやユーザーは、このような状況を修正することはできません。ただし、もう一度試してみてください。
-* **`OnAuthenticationFailed()`** &ndash;このメソッドは、指紋が検出されたがデバイスで認識されない場合に呼び出されます。
-* **`OnAuthenticationHelp(int helpMsgId, ICharSequence helpString)`** &ndash;スキャナー経由でスワイプする指など、回復可能なエラーが発生したときに呼び出されます。
-* **`OnAuthenticationSucceeded(FingerprintManagerCompati.AuthenticationResult result)`** &ndash;これは、指紋が認識されたときに呼び出されます。
+- **`OnAuthenticationError(int errorCode, ICharSequence errString)`** &ndash;回復不可能なエラーが発生したときに呼び出されます。 アプリケーションやユーザーは、このような状況を修正することはできません。ただし、もう一度試してみてください。
+- **`OnAuthenticationFailed()`** &ndash;このメソッドは、指紋が検出されたがデバイスで認識されない場合に呼び出されます。
+- **`OnAuthenticationHelp(int helpMsgId, ICharSequence helpString)`** &ndash;スキャナー経由でスワイプする指など、回復可能なエラーが発生したときに呼び出されます。
+- **`OnAuthenticationSucceeded(FingerprintManagerCompati.AuthenticationResult result)`** &ndash;これは、指紋が認識されたときに呼び出されます。
 
 を呼び出す`CryptoObject` `Authenticate`ときにを使用した場合は、で`Cipher.DoFinal` `OnAuthenticationSuccessful`を呼び出すことをお勧めします。
 `DoFinal`は、暗号が改ざんされたか、不適切に初期化された場合に例外をスローします。これは、指紋スキャナーの結果がアプリケーションの外部で改ざんされた可能性があることを示します。

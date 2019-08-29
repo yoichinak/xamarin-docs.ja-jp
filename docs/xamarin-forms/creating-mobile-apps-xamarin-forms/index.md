@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: f4ff4b7b39f589f29f0c4c5df76ff36fe0060d83
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: a350a3ae37b66b8701f977370fcbe79940d84f50
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69529216"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120485"
 ---
 # <a name="creating-mobile-apps-with-xamarinforms-book"></a>Xamarin.Forms book で Mobile Apps を作成します。
 
@@ -26,11 +26,11 @@ ms.locfileid: "69529216"
 
 Microsoft Virtual Academy から、優先される電子ブックをダウンロードします。
 
-* [**PDF (56Mb)** ](https://aka.ms/xamebook)
+- [**PDF (56Mb)** ](https://aka.ms/xamebook)
 
-* [**epub 形式 (151 Mb)** ](https://aka.ms/xamebook/epub)
+- [**epub 形式 (151 Mb)** ](https://aka.ms/xamebook/epub)
 
-* [**Kindle edition (325 Mb)** ](https://aka.ms/xamebook/mobi)
+- [**Kindle edition (325 Mb)** ](https://aka.ms/xamebook/mobi)
 
 できます[個々 章ダウンロード](#download-chapters-and-summaries)PDF ファイルとして。
 

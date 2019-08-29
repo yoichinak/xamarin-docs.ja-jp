@@ -1,109 +1,109 @@
 ---
-title: 展開して、Xamarin で watchOS アプリのテスト
-description: このドキュメントでは、配置、および Xamarin でビルドされた watchOS アプリをテストする方法について説明します。 展開チェックリストを提供します、明示的な説明とワイルドカード アプリ Id を受け取ってアプリ グループを参照してください。
+title: Xamarin を使用した watchOS アプリのデプロイとテスト
+description: このドキュメントでは、Xamarin でビルドされた watchOS アプリをデプロイしてテストする方法について説明します。 デプロイチェックリストを提供し、明示的およびワイルドカードアプリ Id について説明し、アプリグループについて確認します。
 ms.prod: xamarin
 ms.assetid: 98257399-E9B3-4BAB-9204-0E89117DEA6D
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 7d626b8a968835813d87c93e3cead57a00c14000
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: d950ceb18bd13378ced06ec7257300fc5bf4504b
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61293387"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120172"
 ---
-# <a name="deploying-and-testing-watchos-apps-with-xamarin"></a>展開して、Xamarin で watchOS アプリのテスト
+# <a name="deploying-and-testing-watchos-apps-with-xamarin"></a>Xamarin を使用した watchOS アプリのデプロイとテスト
 
-## <a name="deployment-checklist"></a>展開のチェックリスト
+## <a name="deployment-checklist"></a>配置のチェックリスト
 
-テスト Watch へのデプロイまたは、App Store にアップロードするかどうかは、このページで手順を完了する必要があります。
+テストウォッチにデプロイするか、アプリストアにアップロードするかにかかわらず、このページの手順を完了する必要があります。
 
-- **IOS デベロッパー センター**:
-  - [アプリ Id](#App_IDs)が作成されています。
-  - [アプリ グループ](#App_Groups)(必要な場合) を構成します。
-  - 配布プロビジョニング プロファイルを作成
+- **IOS デベロッパーセンター**で、次のようにします。
+  - [アプリ id](#App_IDs)が作成されました。
+  - [アプリグループ](#App_Groups)が構成されている (必要な場合)。
+  - 配布プロビジョニングプロファイルが作成されました
 
-- で、解決方法。
+- ソリューションで次のようにします。
 
-  - 確認、[プロジェクト参照のバンドル Id と](~/ios/watchos/get-started/installation.md)設定されます。
-  - チェック アイコン[正しく構成されている](~/ios/watchos/app-fundamentals/icons.md)します。
-  - すべてのプロジェクトでバンドル バージョン番号の一致を確認します。
-  - 構成、 **Entitlements.plist**アプリ グループ (必要な場合)。
+  - [バンドル id とプロジェクト参照](~/ios/watchos/get-started/installation.md)が設定されていることを確認します。
+  - アイコンが[正しく構成](~/ios/watchos/app-fundamentals/icons.md)されていることを確認します。
+  - すべてのプロジェクトでバンドルバージョン番号が一致していることを確認します。
+  - アプリグループの**権利**を構成します (必要な場合)。
 
-* 次の手順。
-  - [テストのために、Apple Watch デプロイ](~/ios/watchos/deploy-test/device.md)、または
+- 次に、指示に従って操作します。
+  - [テストのために Apple Watch に配置](~/ios/watchos/deploy-test/device.md)します。
   - [App Store にアップロード](~/ios/watchos/deploy-test/appstore.md)します。
 
 <a name="App_IDs"/>
 
 ## <a name="app-ids"></a>アプリ Id
 
-説明したように、[セットアップ手順](~/ios/watchos/get-started/installation.md)、Watch アプリ内のすべての 3 つのプロジェクトがバンドル Id をなどに関連します。
+[セットアップ手順](~/ios/watchos/get-started/installation.md)で説明したように、Watch アプリ内の3つのプロジェクトには、次のような関連するバンドル id があります。
 
-- Xamarin.iOS 統合プロジェクト- `com.xamarin.WatchKitCatalog`
-- WatchKit 拡張機能プロジェクト- `com.xamarin.WatchKitCatalog.watchkitextension`
-- Watch アプリ プロジェクトの場合- `com.xamarin.WatchKitCatalog.watchkitapp`
+- Xamarin. iOS 統合プロジェクト-`com.xamarin.WatchKitCatalog`
+- WatchKit Extension プロジェクト-`com.xamarin.WatchKitCatalog.watchkitextension`
+- アプリプロジェクトの監視-`com.xamarin.WatchKitCatalog.watchkitapp`
 
-次の 3 つのすべてのプロジェクトに必要な配布プロビジョニング プロファイルが一致する、いずれかを使用して明示的にアプリ Id ごとに、またはワイルドカード アプリ id。
+3つのプロジェクトでは、それぞれに対して明示的なアプリ Id を使用するか、ワイルドカードアプリ ID を使用して、一致するディストリビューションプロビジョニングプロファイルが必要です。
 
 ### <a name="explicit-app-ids"></a>明示的なアプリ Id
 
-作成、**アプリ ID** (iOS デベロッパー センターで次のようになりますが) を各プロジェクトのバンドル id:
+各プロジェクトのバンドル ID (iOS デベロッパーセンターでは、次のように表示されます) の**アプリ id**を作成します。
 
-![IOS デベロッパー センター内のバンドル Id](images/appids-specific-sml.png)
+![IOS デベロッパーセンターのバンドル Id](images/appids-specific-sml.png)
 
-を作成またはアプリ Id を構成するときに、アプリに必要な特定の機能を有効にしてください。 これには、プッシュ通知とアプリ グループを含めることができます。
+アプリ Id を作成または構成するときは、アプリに必要な特定の機能を必ず有効にしてください。 これには、プッシュ通知やアプリグループなどがあります。
 
-アプリ ID ごとに配布プロビジョニング プロファイルを作成する必要があります。
+各アプリ ID の配布プロビジョニングプロファイルを作成する必要があります。
 
-### <a name="wildcard-app-id"></a>ワイルドカード アプリ ID
+### <a name="wildcard-app-id"></a>ワイルドカードアプリ ID
 
-ワイルドカードを作成する代わりに、**アプリ ID**などすべての 3 つのプロジェクトに一致する`com.xamarin.*`します。
+または、のような`com.xamarin.*`3 つのプロジェクトすべてに一致するワイルドカード**アプリ ID**を作成することもできます。
 
-プッシュ通知) などのワイルドカード アプリ ID の一部の機能を使用できないことに注意してください。 アプリがこれらの機能が必要な場合は、明示的なアプリ Id を作成してください。
+一部の機能は、ワイルドカードアプリ ID (プッシュ通知など) では使用できないことに注意してください。 アプリがこれらの機能を必要とする場合は、明示的なアプリ Id を作成する必要があります。
 
-配布、だけする必要があります 1 つの配布プロビジョニング プロファイルを作成、ワイルドカード アプリ id。
+配布については、ワイルドカードアプリ ID の配布プロビジョニングプロファイルを1つだけ作成する必要があります。
 
 <a name="App_Groups" />
 
 ## <a name="app-groups"></a>アプリ グループ
 
-アプリ グループを使用して、iOS アプリと Watch Extension 間でデータを共有することができます。 ソリューションが持つことを確認してください。
+アプリグループを使用して、iOS アプリと Watch 拡張機能の間でデータを共有できます。 次のソリューションがあることを確認する必要があります。
 
-- 構成されている、**アプリ グループ**Apple Developer Portal で**証明書, Identifiers & Profiles**セクション。
+- **アプリグループ**は、Apple Developer Portal の**証明書、識別子 & プロファイル**セクションで構成されています。
 
-- 有効になっている**アプリ グループ**(提供されていると、**アプリ グループ ID**) で*両方*iOS App と Watch Extension の**アプリ ID**と**Entitlements.plist**します。
+- IOS アプリと Watch 拡張機能の**アプリ id**および**権利 plist**の*両方*で有効にされた**アプリグループ**(および**アプリグループ ID**)。
 
-### <a name="certificates-identifiers--profiles"></a>証明書, Identifiers & Profiles
+### <a name="certificates-identifiers--profiles"></a>証明書、識別子 & プロファイル
 
-アプリ グループを使用するには、内のエントリを作成、**アプリ グループ**画面。 アプリの id がよく使用される同じ逆引き DNS スタイルを使用して次の例で、グループの名前、`group.`プレフィックス (これは必須)。
+アプリグループを使用するには、 **[アプリグループ]** 画面でエントリを作成します。 次の例では、グループの名前は、アプリ id に対して一般的に使用されるのと同じ逆引き DNS `group.`スタイルで指定されていますが、プレフィックスは (必須) です。
 
 ![識別子](images/appgroups-new-sml.png)
 
-アプリ グループは、一覧に表示されます。
+アプリグループが一覧に表示されます。
 
 ![識別子の一覧](images/appgroups-setup-sml.png)
 
-グループを作成した後で参照できる、**アプリ ID**構成します。 両方、iOS App と Watch Extension を含めることに注意してください**アプリ Id**します。
+作成したグループは、**アプリ ID**構成で参照できます。 IOS アプリと Watch 拡張機能の両方の**アプリ id**を忘れずに含めてください。
 
 ![使用可能な構成](images/appgroups-sml.png)
 
-**いない**Apple Watch アプリ ID でアプリ グループを有効にします。 Watch 自体で有効にする必要はありません。
+Apple Watchアプリ ID ではアプリグループを有効にしないでください。 ウォッチ自体で有効にする必要はありません。
 
 ### <a name="entitlementsplist"></a>Entitlements.plist
 
-一部のアプリ機能 (例: アプリ グループ) では、権利を設定する必要があります。
-編集する をダブルクリック、 **Entitlements.plist**これらのプロジェクト ファイル。
+一部のアプリ機能 ( アプリグループ) では、権利を設定する必要があります。
+をダブルクリックして、次のプロジェクトで**権利の plist**ファイルを編集します。
 
-- iOS アプリ プロジェクト
-- ウォッチ拡張機能プロジェクト
+- iOS アプリプロジェクト
+- 拡張機能プロジェクトのウォッチ
 
-.![Entitlements.plist エディター](images/entitlements-plist-sml.png)
+.![権利の plist エディター](images/entitlements-plist-sml.png)
 
-**いない**Watch アプリ プロジェクトで権利を有効にします。 Watch 自体で有効にする必要はありません。
+Watchアプリプロジェクトでは、権利を有効にしないでください。 ウォッチ自体で有効にする必要はありません。
 
 ## <a name="related-links"></a>関連リンク
 
-- [Apple WatchKit 送信ガイド](https://developer.apple.com/app-store/watch/)
+- [Apple WatchKit 提出ガイド](https://developer.apple.com/app-store/watch/)

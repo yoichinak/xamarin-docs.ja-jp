@@ -1,118 +1,118 @@
 ---
 title: Xamarin Live Player のトラブルシューティング
-description: このドキュメントでは、Xamarin Live Player と考えられる修正内容に関する既知の問題について説明します。 これは、接続の問題や、構成の問題について説明します。
+description: このドキュメントでは、Xamarin Live Player および潜在的な修正に関する既知の問題について説明します。 接続の問題、構成に関する問題などについて説明します。
 ms.prod: xamarin
 ms.assetid: 29A97ADA-80E0-40A1-8B26-C68FFABE7D26
 author: lobrien
 ms.author: laobri
 ms.date: 06/13/2019
-ms.openlocfilehash: bf0186b55b14d9797397b98390f4d825d669d0f4
-ms.sourcegitcommit: 93b1e2255d59c8ca6674485938f26bd425740dd1
+ms.openlocfilehash: 56ffa280481ba6331b01ff27c6fd5bc3ab585f53
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67157696"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121583"
 ---
 # <a name="troubleshooting-xamarin-live-player"></a>Xamarin Live Player のトラブルシューティング
 
 ![プレビュー機能](~/media/shared/preview.png)
 
 > [!WARNING]
-> Xamarin Live Player のプレビューが終了しました。 アプリが使用できなくします。 以下の手順は、Visual Studio 2017 のプレビューを使用して引き続きお客様に提供されます.
+> Xamarin Live Player プレビューが終了しました。 アプリは使用できなくなりました。 以下の手順は、Visual Studio 2017 でプレビューの使用を継続しているお客様向けに提供されています。
 
 > [!TIP]
-> 使用することができます、 [XAML プレビューアー](~/xamarin-forms/xaml/xaml-previewer/index.md)でそれらを編集すると、画面のデザインを表示するには、Visual Studio 2019 または Visual Studio for Mac。
+> Visual Studio 2019 または Visual Studio for Mac の[XAML プレビューアー](~/xamarin-forms/xaml/xaml-previewer/index.md)を使用して、編集時に画面のデザインを表示できます。
 
-この記事では、それらを修正するには、Live Player、および手順に関する一般的な問題の制限事項について説明します。
+この記事では、ライブプレーヤーの制限事項と、それらを修正するための手順に関する一般的な問題について説明します。
 
 ## <a name="limitations-of-xamarin-live-player"></a>Xamarin Live Player の制限事項
 
 ### <a name="ide-requirements"></a>IDE の要件
 
-Live Player のプレビューには、Visual Studio 2017 ではできるだけです。
+Live Player Preview は、Visual Studio 2017 でのみ使用できます。
 
 ### <a name="device-requirements"></a>デバイスの要件
 
-Xamarin Live Player アプリには、次の Android デバイスがサポートされています。
+Xamarin Live Player アプリは、次の Android デバイスをサポートしています。
 
 - Android 4.2 以降。
-- ARM v7a、ARM v8a、ARM64 v8a、x86、または x86_64 プロセッサ。
+- ARM-armeabi-v7a、arm64-v8a、ARM64、arm64-v8a、x86、または x86_64 processor。
 
 ### <a name="ios-limitations"></a>iOS の制限事項
 
-Live Player は、iOS のご利用いただけません。
+Live Player は iOS では使用できません。
 
-### <a name="xamarinforms-limitations"></a>Xamarin.Forms の制限事項
+### <a name="xamarinforms-limitations"></a>Xamarin. Forms の制限事項
 
-- カスタム レンダラーがサポートされていません。
-- 効果がサポートされていません。
-- カスタム バインド可能なプロパティを持つカスタム コントロールがサポートされていません。
-- 埋め込みリソースがサポートされていません (つまり。 PCL の画像やその他のリソースの埋め込み)。
-- サード パーティ製の MVVM フレームワークが (サポートされていませんPrism、Mvvm の間、Mvvm Light など)。
+- カスタムレンダラーはサポートされていません。
+- 効果はサポートされていません。
+- カスタムバインド可能なプロパティを持つカスタムコントロールはサポートされていません。
+- 埋め込みリソースはサポートされていません (つまり、イメージや PCL 内の他のリソースを埋め込む)。
+- サードパーティの MVVM フレームワークはサポートされていません (ie。Prism、Mvvm、Mvvm など)。
 
-### <a name="other-project-type-limitations"></a>その他のプロジェクトの種類の制限事項
+### <a name="other-project-type-limitations"></a>その他のプロジェクトの種類の制限
 
-- Live Player は、(Android XML を使用して、ユーザー インターフェイス) をネイティブの Android プロジェクト用のものではありません。
+- Live Player は、ユーザーインターフェイスに Android XML を使用するネイティブの Android プロジェクトを対象としていません。
 
 ### <a name="miscellaneous-limitations"></a>その他の制限事項
 
-- リフレクションのサポートの制限 (現在、SQLite と Json.NET のように、いくつかの人気のある Nuget に影響します)。 その他の Nuget をサポートも可能性があります。
-- 一部のシステム クラスをオーバーライドすることはできません (たとえば、サブクラスを実装できません)。
-- (ただしに構成されているフォト ギャラリーへのアクセスといった一般的な操作) Xamarin Live Player アプリで動作するプロビジョニングが必要なプラットフォーム機能のことはできません。
-- カスタムのターゲットとビルド手順は無視されます。 たとえば、Fody、改修、AutoFac、および AutoMapper などのツールが組み込まれることはできません。
-- F#プロジェクトがサポートされていません
-- カスタムのジェネリック クラスとインターフェイスを使用して、高度なシナリオは、サポートされていません。
+- リフレクションのサポートが制限されています (現在、SQLite や Json.NET などの一般的な Nuget には影響します)。 その他の Nuget はまだサポートされている可能性があります。
+- 一部のシステムクラス (たとえば、サブクラスを実装することはできません) をオーバーライドすることはできません。
+- プロビジョニングが必要なプラットフォーム機能の中には、Xamarin Live Player アプリでは機能しないものがあります (ただし、フォトギャラリーへのアクセスなどの一般的な操作用に構成されています)。
+- カスタムターゲットとビルドステップは無視されます。 たとえば、"AutoFac"、"フィット"、""、"AutoMapper" などのツールを組み込むことはできません。
+- F#プロジェクトはサポートされていません
+- カスタムジェネリッククラスおよびインターフェイスを使用した高度なシナリオはサポートされない場合があります。
 
-## <a name="mobile-device-does-not-connect-after-scanning-barcode-or-entering-code"></a>モバイル デバイスがバーコードのスキャン (または入力するコード) の後に接続できません。
+## <a name="mobile-device-does-not-connect-after-scanning-barcode-or-entering-code"></a>バーコードをスキャンした後 (またはコードを入力した後)、モバイルデバイスが接続しない
 
-Xamarin Live Player を実行しているモバイル デバイスは、IDE を実行しているコンピューターと同じネットワーク上にないときに発生します。 次を確認します。
+Xamarin Live Player を実行しているモバイルデバイスが、IDE を実行しているコンピューターと同じネットワーク上にない場合に発生します。 次のことを確認してください。
 
-- デバイスとコンピューターの両方を同じ Wi-fi ネットワークでは確認します。
-  - コンピューターがワイヤード (有線) ネットワークに接続しても、ワイヤード (有線) 接続のプラグを抜くを再試行してください。
-- (いくつか企業ネットワークなど)、ネットワークが緊密にセキュリティで保護 Xamarin Live Player で必要なポートをブロックします。
-- Xamarin Live Player アプリを閉じてから再起動します。
+- デバイスとコンピューターの両方が同じ Wi-fi ネットワーク上にあることを確認します。
+  - コンピューターがワイヤード (有線) ネットワークにも接続されている場合は、ワイヤード (有線) 接続を抜いてみてください。
+- ネットワークがセキュリティで保護されている (一部の企業ネットワークなど) と、Xamarin Live Player に必要なポートをブロックしている可能性があります。
+- Xamarin Live Player アプリを閉じて再起動します。
 
-## <a name="error-while-trying-to-deploy-message-in-ide"></a>IDE で「デプロイするときにエラー」メッセージ
+## <a name="error-while-trying-to-deploy-message-in-ide"></a>IDE で "メッセージの展開中にエラーが発生しました" というメッセージが表示される
 
-**"IOException: 転送接続からデータを読み取ることができません。非ブロッキング ソケットでの操作を妨げる"**
+**"IOException: トランスポート接続からデータを読み取ることができません:非ブロッキングソケットに対する操作は "**
 
-Xamarin Live Player を実行しているモバイル デバイスが Visual Studio は; を実行しているコンピューターと同じネットワーク上にないときに、多くの場合、このエラーが発生しましたこれは多くの場合、正常にペアリングが以前デバイスに接続するときに発生します。
+このエラーは、Xamarin Live Player を実行しているモバイルデバイスが、Visual Studio を実行しているコンピューターと同じネットワーク上にない場合に発生することがよくあります。これは、以前に正常にペアリングされたデバイスに接続するときによく発生します。
 
-* デバイスとコンピューターの両方が同じ Wi-fi ネットワークことを確認します。
-* (いくつか企業ネットワークなど)、ネットワークが緊密にセキュリティで保護 Xamarin Live Player で必要なポートをブロックします。 次のポートは、Xamarin Live Player の必要があります。
-  * 37847 – 内部ネットワークへのアクセス 
-  * 8090 – 外部ネットワークへのアクセス
+- デバイスとコンピューターの両方が同じ Wi-fi ネットワーク上にあることを確認します。
+- ネットワークがセキュリティで保護されている (一部の企業ネットワークなど) と、Xamarin Live Player に必要なポートをブロックしている可能性があります。 Xamarin Live Player には、次のポートが必要です。
+  - 37847–内部ネットワークアクセス 
+  - 8090–外部ネットワークアクセス
 
-## <a name="manually-configure-device"></a>デバイスを手動で構成します。
+## <a name="manually-configure-device"></a>デバイスを手動で構成する
 
-いない Wi-fi 経由でデバイスに接続できる場合、次の手順で、構成ファイルを使用してデバイスを手動で構成しようとすることができます。
+Wi-fi 経由でデバイスに接続できない場合は、次の手順に従って、構成ファイルを使用して手動でデバイスを構成することができます。
 
-**手順 1:構成ファイルを開く**
+**ステップ 1: 構成ファイルを開く**
 
-アプリケーション データ フォルダーに移動します。
+アプリケーションデータフォルダーに移動します。
 
-* Windows: **%userprofile%\AppData\Roaming**
-* macOS: **~/Users/$USER/.config**
+- Windows: **%userprofile%\AppData\Roaming**
+- macOS: **~/Users/$USER/.config**
 
-このフォルダーでは紹介**PlayerDeviceList.xml**が存在しない場合は、1 つを作成する必要があります。
+このフォルダーには、 **PlayerDeviceList**が存在しない場合は、作成する必要があります。
 
-**手順 2:IP アドレスを取得します。**
+**手順 2:IP アドレスの取得**
 
-Xamarin Live Player アプリに移動**について > 接続テスト > 接続テストの開始**します。
+Xamarin Live Player アプリで **> 接続テストの概要 > 接続テストを開始**します。
 
-メモ、IP アドレスは、IP アドレスが、デバイスを構成するときに表示されている必要があります。
+IP アドレスをメモしておきます。デバイスを構成するときに、IP アドレスが表示されます。
 
-**手順 3:コードのペアを取得します。**
+**手順 3:ペアリングコードを取得する**
 
-Xamarin Live Player タップ内**ペア**または**ペアをもう一度**、キーを押します**手動で入力**します。 数値のコードが表示されます、これは、構成ファイルを更新する必要があります。
+Xamarin Live Player 内で、**ペアリング**または**ペアをもう一度**タップし、Enter キーを**手動で**押します。 数値のコードが表示されます。構成ファイルを更新する必要があります。
 
-**手順 4:GUID を生成します。**
+**手順 4:GUID の生成**
 
 移動: https://www.guidgenerator.com/online-guid-generator.aspx 新しい guid を生成して、大文字のことを確認します。
 
-**手順 5:デバイスを構成します。**
+**手順 5: デバイスの構成**
 
-開き、 **PlayerDeviceList.xml**など、Visual Studio または Visual Studio Code エディターでセットアップします。 このファイルに手動でデバイスを構成する必要があります。 既定では、ファイルは次の空白を含める必要があります`Devices`XML 要素。
+Visual Studio や Visual Studio Code などのエディターで**PlayerDeviceList**を開きます。 このファイルでデバイスを手動で構成する必要があります。 既定では、ファイルには、次の`Devices`空の XML 要素が含まれている必要があります。
 
 ```xml
 <DeviceList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
@@ -122,7 +122,7 @@ Xamarin Live Player タップ内**ペア**または**ペアをもう一度**、�
 </DeviceList>
 ```
 
-**Android デバイスを追加します。**
+**Android デバイスの追加:**
 
 ```xml
 <PlayerDevice>
@@ -140,28 +140,28 @@ Xamarin Live Player タップ内**ペア**または**ペアをもう一度**、�
 </PlayerDevice>
 ```
 
-**閉じて、再度 Visual Studio を開きます。** デバイスが一覧に表示する必要があります。
+**Visual Studio を閉じて再度開きます。** デバイスが一覧に表示されます。
 
-## <a name="type-or-namespace-cannot-be-found-message-in-ide"></a>IDE で「型または名前空間が見つかりません」メッセージ
+## <a name="type-or-namespace-cannot-be-found-message-in-ide"></a>IDE で "型または名前空間が見つかりません" というメッセージが表示される
 
-選択したことを確認、**スタートアップ プロジェクト**デバイスの種類 (例: に一致します。 Android) し、構成と一致するデバイスの種類 (例。 **デバッグ**Android 用)。
+デバイスの種類に一致する**スタートアッププロジェクト**が選択されていることを確認します (例 Android) と、構成がそのデバイスの種類と一致している (例 Android 用に**デバッグ**)。
 
-## <a name="constructor-on-type-interpretedxamarinformsbutton-not-found-message-in-player"></a>Player での「型 'InterpretedXamarin.Forms.Button' が見つかりません。 コンス トラクター」メッセージ
+## <a name="constructor-on-type-interpretedxamarinformsbutton-not-found-message-in-player"></a>"型のコンストラクターが見つかりません" というメッセージが表示されます。
 
-一部のシステム クラスはオーバーライドできません、たとえば。
+一部のシステムクラスはオーバーライドできません。次に例を示します。
 
 ```csharp
 public class SomeCustomButton : Xamarin.Forms.Button { ... }
 ```
 
-## <a name="mainactivitycs-resourcelayout-does-not-contain-a-definition-for-main"></a>"MainActivity.cs:"Resource.Layout' に 'Main' の定義が含まれていません"
+## <a name="mainactivitycs-resourcelayout-does-not-contain-a-definition-for-main"></a>"MainActivity.cs:' Resource. Layout ' に ' Main ' の定義が含まれていません
 
-このエラーは、AXML ファイルで定義されたユーザー インターフェイスは、Android プロジェクト用に発生します。
-AXML ファイルは Xamarin Live Player で現在サポートされていません。
+このエラーは、AXML ファイルで定義されたユーザーインターフェイスを持つ Android プロジェクトに対して発生します。
+現在、Xamarin Live Player では、AXML ファイルはサポートされていません。
 
-### <a name="android-toolbar-and-tabs-render-incorrectly-using-xamarinforms"></a>Android のツールバーとタブ表示 Xamarin.Forms を正しく使用します。
+### <a name="android-toolbar-and-tabs-render-incorrectly-using-xamarinforms"></a>Android のツールバーとタブが、Xamarin. フォームを使用して正しく表示されない
 
-Xamarin.Forms の Android プロジェクトでは、関連するレイアウト ファイルの名前に"Toolbar.axml"と"Tabbar.axml"を使用する必要があります。 これらの名前を使用する既定のテンプレートそれらの名前を変更すると、レンダリングの問題が発生されます。
+Xamarin. Forms Android プロジェクトでは、関連するレイアウトファイルの名前に "Toolbar. axml" と "Tabbar. axml" を使用する必要があります。 既定のテンプレートでは、これらの名前が使用されます。名前を変更すると、レンダリングの問題が発生します。
 
 ## <a name="related-links"></a>関連リンク
 

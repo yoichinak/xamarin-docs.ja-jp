@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/27/2019
-ms.openlocfilehash: 180ffa7cf723d841021a8bf7d1f1a285c882c103
-ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
-ms.translationtype: HT
+ms.openlocfilehash: 3949dd85492a8181ee53e23b3ba2e986e59f8f47
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/28/2019
-ms.locfileid: "70065546"
+ms.locfileid: "70121623"
 ---
 # <a name="listview-interactivity"></a>ListView の対話機能
 
@@ -79,9 +79,9 @@ var listView = new ListView { ... SelectionMode = ListViewSelectionMode.None };
 
 コンテキスト アクションは、いずれかで実装できる`Cell`サブクラス (グループ ヘッダーとして、使用されていない限り) を作成して`MenuItem`s と追加すること、`ContextActions`セルのコレクション。 次のものをコンテキスト アクションのプロパティを構成できます。
 
-* **テキスト**&ndash;メニュー項目に表示される文字列。
-* **クリックされた**&ndash;項目がクリックされたときのイベント。
-* **IsDestructive** &ndash; true の場合は (省略可能)、項目は異なる方法で iOS でレンダリングされました。
+- **テキスト**&ndash;メニュー項目に表示される文字列。
+- **クリックされた**&ndash;項目がクリックされたときのイベント。
+- **IsDestructive** &ndash; true の場合は (省略可能)、項目は異なる方法で iOS でレンダリングされました。
 
 複数のコンテキストのアクションは、1 つだけである必要がありますが、セルに追加できる`IsDestructive`設定`true`します。 次のコードでは、コンテキスト アクションに追加される方法を示しています、 `ViewCell`:
 

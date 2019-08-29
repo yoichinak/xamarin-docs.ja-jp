@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 1e1bba499a14b92965a5fb544ccf321b0e453894
-ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
-ms.translationtype: HT
+ms.openlocfilehash: bd6f40a117734712941585b6ce0d630105e54693
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/28/2019
-ms.locfileid: "70065446"
+ms.locfileid: "70121041"
 ---
 # <a name="walkthrough-using-touch-in-xamarinios"></a>チュートリアル: Xamarin でのタッチの使用
 
@@ -96,9 +96,9 @@ ms.locfileid: "70065446"
     
     このメソッドは、 `UITouch`オブジェクトをチェックすることによって機能します。また、存在する場合は、タッチの発生箇所に基づいて何らかのアクションを実行します。
 
-    * [_内部 TouchImage_ ] –ラベル`Touches Began`のテキストを表示し、画像を変更します。
-    * _DoubleTouchImage 内_-ジェスチャがダブルタップの場合に表示されるイメージを変更します。
-    * [ _DragImage 内_] –タッチが開始されたことを示すフラグを設定します。 メソッド`TouchesMoved`は、このフラグを使用して`DragImage` 、次の手順で説明するように、画面の周りを移動するかどうかを判断します。
+    - [_内部 TouchImage_ ] –ラベル`Touches Began`のテキストを表示し、画像を変更します。
+    - _DoubleTouchImage 内_-ジェスチャがダブルタップの場合に表示されるイメージを変更します。
+    - [ _DragImage 内_] –タッチが開始されたことを示すフラグを設定します。 メソッド`TouchesMoved`は、このフラグを使用して`DragImage` 、次の手順で説明するように、画面の周りを移動するかどうかを判断します。
 
     上記のコードは個々の操作のみを扱っていますが、ユーザーが画面上で指を動かしても動作はありません。 移動に対応するには`TouchesMoved` 、次のコードに示すようにを実装します。
 

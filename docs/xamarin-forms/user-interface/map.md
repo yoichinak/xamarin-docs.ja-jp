@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2019
-ms.openlocfilehash: 4cfedad6ccf87dfef819b677233be1edb2d2c62d
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: 5eee9fea7ea0fffe9dc254ac4340ff05d087ce33
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69887962"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121559"
 ---
 # <a name="xamarinforms-map"></a>Xamarin.Forms のマップ
 
@@ -115,13 +115,13 @@ Xamarin ドキュメントの指示に従って[v2 Google マップ API キー�
 
 Android プロジェクトを右クリックして適切なアクセス許可を有効にする必要も**オプション > ビルド > Android アプリケーション**と、次の時間を刻みします。
 
-* `AccessCoarseLocation`
-* `AccessFineLocation`
-* `AccessLocationExtraCommands`
-* `AccessMockLocation`
-* `AccessNetworkState`
-* `AccessWifiState`
-* `Internet`
+- `AccessCoarseLocation`
+- `AccessFineLocation`
+- `AccessLocationExtraCommands`
+- `AccessMockLocation`
+- `AccessNetworkState`
+- `AccessWifiState`
+- `Internet`
 
 これらの一部は、次のスクリーン ショットに示します。
 

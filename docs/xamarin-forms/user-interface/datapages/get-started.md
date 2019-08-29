@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: d47a8d4a0fa72cee59a054554e9868f20323d00b
-ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
+ms.openlocfilehash: e6f26fb96c0a538543c8e0b0574461ea99709631
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68980790"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119490"
 ---
 # <a name="getting-started-with-datapages"></a>DataPages の概要
 
@@ -31,9 +31,9 @@ DataPages Preview を使用して単純なデータ ドリブンのページの�
 
 Xamarin.Forms .NET Standard ライブラリとアプリケーション プロジェクトには、次の Nuget パッケージを追加します。
 
-* Xamarin.Forms.Pages
-* Xamarin.Forms.Theme.Base
-* テーマの実装を Nuget (例: (Xamarin. Theme)
+- Xamarin.Forms.Pages
+- Xamarin.Forms.Theme.Base
+- テーマの実装を Nuget (例: (Xamarin. Theme)
 
 ## <a name="2-add-theme-reference"></a>2. テーマの参照を追加します。
 

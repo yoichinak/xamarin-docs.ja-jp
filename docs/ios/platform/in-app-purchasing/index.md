@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 2445645012e54b1818b1ec72116a85d8b985ead3
-ms.sourcegitcommit: 1341f2950b775a4daa7d0548a51fdef759afd6e3
+ms.openlocfilehash: 2e429002923d4bfdd2cf5ded4ef1508f8ebf20b8
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69976455"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121510"
 ---
 # <a name="in-app-purchasing-in-xamarinios"></a>Xamarin. iOS でのアプリ内購入
 
@@ -34,17 +34,17 @@ iOS アプリケーションでは、StoreKit を使用してデジタル製品�
 
 ## <a name="contents"></a>目次
 
-* [アプリ内購入の基本と構成](~/ios/platform/in-app-purchasing/in-app-purchase-basics-and-configuration.md)
+- [アプリ内購入の基本と構成](~/ios/platform/in-app-purchasing/in-app-purchase-basics-and-configuration.md)
 
-* [StoreKit の概要と製品情報の取得](~/ios/platform/in-app-purchasing/store-kit-overview-and-retreiving-product-information.md)
+- [StoreKit の概要と製品情報の取得](~/ios/platform/in-app-purchasing/store-kit-overview-and-retreiving-product-information.md)
 
-* [コンシューマブル製品の購入](~/ios/platform/in-app-purchasing/purchasing-consumable-products.md)
+- [コンシューマブル製品の購入](~/ios/platform/in-app-purchasing/purchasing-consumable-products.md)
 
-* [非コンシューマブル製品の購入](~/ios/platform/in-app-purchasing/purchasing-non-consumable-products.md)
+- [非コンシューマブル製品の購入](~/ios/platform/in-app-purchasing/purchasing-non-consumable-products.md)
 
-* [トランザクションと検証](~/ios/platform/in-app-purchasing/transactions-and-verification.md)
+- [トランザクションと検証](~/ios/platform/in-app-purchasing/transactions-and-verification.md)
 
-* [サブスクリプションとレポート](~/ios/platform/in-app-purchasing/subscriptions-and-reporting.md)
+- [サブスクリプションとレポート](~/ios/platform/in-app-purchasing/subscriptions-and-reporting.md)
 
 ## <a name="summary"></a>Summary
 

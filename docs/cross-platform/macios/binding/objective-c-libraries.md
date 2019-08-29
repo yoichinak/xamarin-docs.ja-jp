@@ -6,12 +6,12 @@ ms.assetid: 8A832A76-A770-1A7C-24BA-B3E6F57617A0
 author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: daca6d1cc5ec8a5e47f068f140f835219bd24c86
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 667a3726a2d214c9e33e20a73f629c9ca532eab1
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522017"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120474"
 ---
 # <a name="binding-objective-c-libraries"></a>バインディングの目的 C ライブラリ
 
@@ -37,7 +37,7 @@ C ライブラリを静的にリンクする方法の詳細については、「
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 バインディングを作成する最も簡単な方法は、Xamarin の iOS バインドプロジェクトを作成することです。
-これを行うには、[プロジェクトの種類]、 **[iOS > ライブラリ > バインドライブラリ]** の順に選択し Visual Studio for Mac します。
+これを行うには、プロジェクトの種類、 **iOS > ライブラリ > バインドライブラリ** の順に選択し Visual Studio for Mac します。
 
 [![](objective-c-libraries-images/00-sml.png "これを行うには、[プロジェクトの種類]、[iOS ライブラリバインドライブラリ] の順に選択し Visual Studio for Mac します。")](objective-c-libraries-images/00.png#lightbox)
 
@@ -918,8 +918,8 @@ public class  XyzOptions {
 
 これを行うには、いくつかの操作を行う必要があります。
 
-* 厳密に型指定されたクラスを作成します。これは、 [Dictionarycontainer](xref:Foundation.DictionaryContainer)をサブクラスにし、各プロパティのさまざまな getter および setter を提供します。
-* 新しい厳密に型指定さ`NSDictionary`れたバージョンを取得するために使用するメソッドのオーバーロードを宣言します。
+- 厳密に型指定されたクラスを作成します。これは、 [Dictionarycontainer](xref:Foundation.DictionaryContainer)をサブクラスにし、各プロパティのさまざまな getter および setter を提供します。
+- 新しい厳密に型指定さ`NSDictionary`れたバージョンを取得するために使用するメソッドのオーバーロードを宣言します。
 
 厳密に型指定されたクラスを手動で作成することも、ジェネレーターを使用して作業を行うこともできます。  まず、何が行われているかを理解し、次に自動アプローチについて理解するために、この方法を手動で試してみましょう。
 
@@ -1404,3 +1404,4 @@ Xamarin. iOS v2.0 では、 [`[Model]`](~/cross-platform/macios/binding/binding-
 ## <a name="related-links"></a>関連リンク
 
 - [バインディングのサンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/bindingsample/)
+ 

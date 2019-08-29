@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: ddefae8ad24b74a3c9ed05bf46b54430c00beaea
-ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
+ms.openlocfilehash: e04b6be1547183869fb49955703245e19365bdb3
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69620513"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120170"
 ---
 # <a name="quick-interaction-techniques-for-watchos-3-in-xamarin"></a>Xamarin の watchOS 3 のクイック対話技法
 
@@ -230,16 +230,16 @@ MenuTable.PerformSegue (0);
 
 WatchOS 3 の新:
 
-* 通知では、すべてのプラットフォーム (iOS、watchOS、tvOS、macOS) で同様の API を使用します。
-* ローカル通知は、Apple Watch でスケジュールできます。
-* Apple Watch でスケジュールされている場合、バックグラウンド通知はアプリの拡張機能にルーティングされます。
+- 通知では、すべてのプラットフォーム (iOS、watchOS、tvOS、macOS) で同様の API を使用します。
+- ローカル通知は、Apple Watch でスケジュールできます。
+- Apple Watch でスケジュールされている場合、バックグラウンド通知はアプリの拡張機能にルーティングされます。
 
 #### <a name="notification-scheduling-and-delivery"></a>通知のスケジュールと配信
 
 ユーザーの iPhone からの通知は、次の場合に Apple Watch に転送されます。
 
-* IPhone の画面がオフになっています。
-* Apple Watch は、ロック解除されています。
+- IPhone の画面がオフになっています。
+- Apple Watch は、ロック解除されています。
 
 WatchOS 3 では、ローカル通知は Apple Watch でスケジュールでき、ウォッチでのみ配信されます。 アプリで必要な場合は、対応する iPhone の通知をスケジュールすることをお勧めします。
 

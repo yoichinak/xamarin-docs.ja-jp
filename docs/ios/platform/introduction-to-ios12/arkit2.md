@@ -7,21 +7,21 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/22/2018
-ms.openlocfilehash: 747eed60c40f7faee0ed7512d6db05116c81b50d
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 4af5e7ea9c1d744cd3b5ea5444312ba68bfcea11
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645744"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120449"
 ---
 # <a name="arkit-2-in-xamarinios"></a>Xamarin. iOS の ARKit 2
 
 ARKit は、iOS 11 の昨年の導入以来、大幅に成熟しています。 まず、縦方向のプレーンを検出できるようになりました。これにより、実用性の室内エクスペリエンスが大幅に向上します。 さらに、次の新機能が追加されています。
 
-* 現実世界とデジタル画像の間の接合としての参照イメージとオブジェクトの認識
-* 実際の照明をシミュレートする新しい照明モード
-* AR 環境を共有して永続化する機能
-* AR コンテンツを格納するために推奨される新しいファイル形式
+- 現実世界とデジタル画像の間の接合としての参照イメージとオブジェクトの認識
+- 実際の照明をシミュレートする新しい照明モード
+- AR 環境を共有して永続化する機能
+- AR コンテンツを格納するために推奨される新しいファイル形式
 
 ## <a name="recognizing-reference-objects"></a>参照オブジェクトの認識
 
@@ -31,11 +31,11 @@ ARKit 2 の1つのショーケース機能は、参照イメージとオブジ�
 
 [3D オブジェクトのスキャンと検出](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-scanninganddetecting3dobjects)のサンプルは、 [Apple プロジェクト](https://developer.apple.com/documentation/arkit/scanning_and_detecting_3d_objects?language=objc)のポートであり、次のことを示しています。
 
-* オブジェクトを使用し[`NSNotification`](xref:Foundation.NSNotification)たアプリケーション状態管理
-* カスタムビジュアル
-* 複雑なジェスチャ
-* オブジェクトのスキャン
-* 格納 ([`ARReferenceObject`](xref:ARKit.ARReferenceObject)
+- オブジェクトを使用し[`NSNotification`](xref:Foundation.NSNotification)たアプリケーション状態管理
+- カスタムビジュアル
+- 複雑なジェスチャ
+- オブジェクトのスキャン
+- 格納 ([`ARReferenceObject`](xref:ARKit.ARReferenceObject)
 
 参照オブジェクトのスキャンはバッテリおよびプロセッサ集中型であり、古いデバイスでは、安定した追跡を実現する際に問題が発生することがよくあります。
 
@@ -43,17 +43,17 @@ ARKit 2 の1つのショーケース機能は、参照イメージとオブジ�
 
 このアプリケーションは、次の状態の間を遷移するステートマシンを使用します。
 
-* `AppState.StartARSession`
-* `AppState.NotReady`
-* `AppState.Scanning`
-* `AppState.Testing`
+- `AppState.StartARSession`
+- `AppState.NotReady`
+- `AppState.Scanning`
+- `AppState.Testing`
 
 さらに、次の`AppState.Scanning`場合には、状態と遷移の埋め込みセットも使用します。
 
-* `Scan.ScanState.Ready`
-* `Scan.ScanState.DefineBoundingBox`
-* `Scan.ScanState.Scanning`
-* `Scan.ScanState.AdjustingOrigin`
+- `Scan.ScanState.Ready`
+- `Scan.ScanState.DefineBoundingBox`
+- `Scan.ScanState.Scanning`
+- `Scan.ScanState.AdjustingOrigin`
 
 このアプリでは、状態遷移通知をに[`NSNotificationCenter`](xref:Foundation.NSNotificationCenter)送信し、これらの通知をサブスクライブするリアクティブアーキテクチャを使用します。 セットアップは次のスニペットの`ViewController.cs`ようになります。
 
@@ -121,9 +121,9 @@ internal void EnterStateTesting()
 
 このポイントクラウドは、 [`ARFrame.RawFeaturePoints`](xref:ARKit.ARFrame.RawFeaturePoints)開発者がプロパティで使用できます。 ポイントクラウドを効率的に視覚化することは、厄介な問題になる可能性があります。 ポイントを繰り返し処理した後、ポイントごとに新しい SceneKit ノードを作成して配置すると、フレームレートが強制終了します。 または、非同期に完了した場合は、遅延が発生します。 このサンプルでは、3つの部分から構成される方法でパフォーマンスを維持します。
 
-* アンセーフコードを使用してデータを適切に固定し、データをバイトの生バッファーとして解釈します。
-* 生のバッファー [`SCNGeometrySource`](xref:SceneKit.SCNGeometrySource)をに変換し、"template" [`SCNGeometryElement`](xref:SceneKit.SCNGeometryElement)オブジェクトを作成します。
-* を使用して生データとテンプレートを迅速に "合成" します。[`SCNGeometry.Create(SCNGeometrySource[], SCNGeometryElement[])`](xref:SceneKit.SCNGeometry.Create(SceneKit.SCNGeometrySource[],SceneKit.SCNGeometryElement[]))
+- アンセーフコードを使用してデータを適切に固定し、データをバイトの生バッファーとして解釈します。
+- 生のバッファー [`SCNGeometrySource`](xref:SceneKit.SCNGeometrySource)をに変換し、"template" [`SCNGeometryElement`](xref:SceneKit.SCNGeometryElement)オブジェクトを作成します。
+- を使用して生データとテンプレートを迅速に "合成" します。[`SCNGeometry.Create(SCNGeometrySource[], SCNGeometryElement[])`](xref:SceneKit.SCNGeometry.Create(SceneKit.SCNGeometrySource[],SceneKit.SCNGeometryElement[]))
 
 ```csharp
 internal static SCNGeometry CreateVisualization(NVector3[] points, UIColor color, float size)
@@ -251,11 +251,11 @@ internal partial class ThresholdRotationGestureRecognizer : UIRotationGestureRec
 
 これで、mixed reality エクスペリエンスの基礎として、次のいずれかを使用できるようになりました。
 
-* デバイス加速度計のみ ([`AROrientationTrackingConfiguration`](xref:ARKit.AROrientationTrackingConfiguration)、iOS 11)
-* 顔 ([`ARFaceTrackingConfiguration`](xref:ARKit.ARFaceTrackingConfiguration)、iOS 11)
-* 参照イメージ ([`ARImageTrackingConfiguration`](xref:ARKit.ARImageTrackingConfiguration)、iOS 12)
-* 3d オブジェクトのスキャン[`ARObjectScanningConfiguration`](xref:ARKit.ARObjectScanningConfiguration)(、iOS 12)
-* ビジュアル慣性 odometry ([`ARWorldTrackingConfiguration`](xref:ARKit.ARWorldTrackingConfiguration)、iOS 12 で改良)
+- デバイス加速度計のみ ([`AROrientationTrackingConfiguration`](xref:ARKit.AROrientationTrackingConfiguration)、iOS 11)
+- 顔 ([`ARFaceTrackingConfiguration`](xref:ARKit.ARFaceTrackingConfiguration)、iOS 11)
+- 参照イメージ ([`ARImageTrackingConfiguration`](xref:ARKit.ARImageTrackingConfiguration)、iOS 12)
+- 3d オブジェクトのスキャン[`ARObjectScanningConfiguration`](xref:ARKit.ARObjectScanningConfiguration)(、iOS 12)
+- ビジュアル慣性 odometry ([`ARWorldTrackingConfiguration`](xref:ARKit.ARWorldTrackingConfiguration)、iOS 12 で改良)
 
 `AROrientationTrackingConfiguration`[このブログの投稿とF#サンプル](https://github.com/lobrien/FSharp_Face_AR)で説明されているのは、最も限定的であり、あまり複雑ではありません。これは、デバイスと画面を実際の世界に結び付けずに、デジタルオブジェクトをデバイスの動きに関連付けて配置するだけであるためです。
 
@@ -284,8 +284,8 @@ configuration.TrackingImages = referenceImages;
 
 この構成には、次の2つの興味深い側面があります。
 
-* 効率的であり、多くの参照イメージで使用できます。
-* デジタル画像は画像に固定されています。実際の世界でその画像が動く場合でも (たとえば、本の表紙が認識された場合、棚から引き出したり、下に並べられているときには、本を追跡します)。
+- 効率的であり、多くの参照イメージで使用できます。
+- デジタル画像は画像に固定されています。実際の世界でその画像が動く場合でも (たとえば、本の表紙が認識された場合、棚から引き出したり、下に並べられているときには、本を追跡します)。
 
 「 `ARObjectScanningConfiguration` 」では、[前述](#recognizing-reference-objects)の「3d オブジェクトをスキャンするための開発者向けの構成」を説明しました。 プロセッサとバッテリが大量に消費されるため、エンドユーザーアプリケーションでは使用しないでください。 「 [3D オブジェクトのスキャンと検出](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-scanninganddetecting3dobjects)」のサンプルでは、この構成の使用方法を示しています。
 
@@ -299,8 +299,8 @@ ARKit 2 では、キャプチャした画像を使用して光源を推定し、
 
 環境テクスチャを使用するには:
 
-* オブジェクトはを使用[`SCNLightingModel.PhysicallyBased`](xref:SceneKit.SCNLightingModel.PhysicallyBased)して[`Metalness.Contents`](xref:SceneKit.SCNMaterial.Metalness) 、0 ~ 1 の範囲の値を and [`Roughness.Contents`](xref:SceneKit.SCNMaterialProperty.Contents)で代入する必要があります。 [`SCNMaterial`](xref:SceneKit.SCNMaterial)
-* 追跡構成では、 [`EnvironmentTexturing`](xref:ARKit.ARWorldTrackingConfiguration.EnvironmentTexturing)次の設定 =  [`AREnvironmentTexturing.Automatic`](xref:ARKit.AREnvironmentTexturing.Automatic)が必要です。
+- オブジェクトはを使用[`SCNLightingModel.PhysicallyBased`](xref:SceneKit.SCNLightingModel.PhysicallyBased)して[`Metalness.Contents`](xref:SceneKit.SCNMaterial.Metalness) 、0 ~ 1 の範囲の値を and [`Roughness.Contents`](xref:SceneKit.SCNMaterialProperty.Contents)で代入する必要があります。 [`SCNMaterial`](xref:SceneKit.SCNMaterial)
+- 追跡構成では、 [`EnvironmentTexturing`](xref:ARKit.ARWorldTrackingConfiguration.EnvironmentTexturing)次の設定 =  [`AREnvironmentTexturing.Automatic`](xref:ARKit.AREnvironmentTexturing.Automatic)が必要です。
 
 ```csharp
 var sphere = SCNSphere.Create(0.33F);

@@ -1,51 +1,51 @@
 ---
-title: IOS 13 の概要
-description: このドキュメントは、リリースを提供する Xamarin のプレビューの一部の iOS 13 Api の概要を説明C#バインドします。
+title: iOS 13 の概要
+description: このドキュメントでは、Xamarin のプレビューリリースでバインドが提供さC#れる IOS 13 api の概要について説明します。
 ms.prod: xamarin
 ms.assetid: AB486B2F-6E3B-4E0B-ABB8-58F5804D56D2
 ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 07/01/2019
-ms.openlocfilehash: eaa479f220c9cd0115fd2d4496fbfb1202fb3aa0
-ms.sourcegitcommit: 8ecfa339d0f3e7687977bfe4fc96448942690183
+ms.openlocfilehash: ea7ebdf5e589f3c24f8c607d1464e86678012f23
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67558710"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120620"
 ---
-# <a name="introduction-to-ios-13"></a>IOS 13 の概要
+# <a name="introduction-to-ios-13"></a>iOS 13 の概要
 
 ![プレビュー機能](~/media/shared/preview.png)
 
-手順に従います。[指示](~/ios/platform/ios13/get-started.md)を開始します。
+開始するには、こちらの[手順](~/ios/platform/ios13/get-started.md)に従ってください。
 
-## <a name="dark-mode"></a>ダーク モード
+## <a name="dark-modedark-modemd"></a>[ダークモード](dark-mode.md)
 
-iOS 13 には、簡単に収まるように、アプリを許可する手段を開発者に提供する新しいダーク モードが導入されています。 新しいツールを使用すると、同時に両方ライトと暗いテーマを使用してアプリケーションを設計できます。
+iOS 13 には新しいダークモードが導入されており、開発者はアプリを簡単にに収めることができます。 新しいツールを使用すると、アプリケーションを、明るいテーマとダークテーマの両方で同時にデザインできます。
 
-## <a name="augmented-reality"></a>Augmented Reality
+## <a name="augmented-reality"></a>拡張現実
 
-Augmented Reality iOS 13 より多くの機能により、アプリの AR のコンテンツを人間の存在を尊重し、それに応じて周囲に移動する新しい「人オクルー ジョン」関数を含むようになりました。
+IOS 13 の拡張された現実には、新しい "People オクルージョン" 機能を含む機能が追加されました。これにより、アプリのコンテンツは人間の存在を尊重し、それに応じて移動することができます。
 
 ## <a name="siri"></a>Siri
 
-Siri がオーディオ コンテンツの処理とショートカットのアプリを使用してショートカットの処理の改善のために拡張されています。
+Siri が拡張され、オーディオコンテンツを処理できるようになりました。また、ショートカットアプリを使用してショートカットをより適切に処理することもできます。
 
 ## <a name="machine-learning"></a>Machine Learning
 
-コア ML 3 できるように簡単に自分のデバイスのハードウェア機能を使用して ML モデルをトレーニングします。
+Core ML 3 では、デバイスのハードウェア機能を使用して ML モデルを簡単にトレーニングできます。
 
 ## <a name="ipados"></a>iPadOS
 
-iPadOS は、具体的に念頭 iPad でビルドされた iOS の拡張です。
+iPadOS は、特に iPad を念頭に置いて構築された iOS の拡張です。
 
-IPadOS、PencilKit を新しいジェスチャを使用して Apple 鉛筆を使用して、複数の windows のアプリ間でさまざまなコンテンツをドラッグ アンド ドロップを使用できるようにすることができます。 iPadOS は、システム全体のフォントを提供するアプリもできます。
+IPadOS を使用すると、新しいジェスチャで PencilKit を使用して Apple 鉛筆をさらに活用し、複数のウィンドウを使用できるようになり、アプリ間でさまざまなコンテンツをドラッグアンドドロップできます。 iPadOS では、アプリがシステム全体のフォントを提供できるようにすることもできます。
 
 ## <a name="privacy-and-security"></a>プライバシーとセキュリティ
 
-iOS 13 は、サインインの対象外の個人情報をより確実にできるように、Apple のデバイスを使用してアプリにサインインするための新しい機能を提供します盗まれたり、提供される、2 fa の利点と制限のセットを取得して何らかの方法で収集。情報。
+iOS 13 では、Apple デバイスでサインインしてアプリにサインインするための新しい機能が提供されています。これにより、2FA と限定されたセットを利用することで、個人情報の盗難や収集が行われないようにすることができます。参照.
 
 ## <a name="related-links"></a>関連リンク
 
-- [Xamarin.iOS リリース ノートのプレビュー](/xamarin/ios/release-notes/12/12.99)
+- [Xamarin iOS preview リリースノート](/xamarin/ios/release-notes/12/12.99)

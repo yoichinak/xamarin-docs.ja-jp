@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 886a6145851720c088e39818b3a6e42a7b66e4bb
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: eaae0859ddce1c7601b0429381c8643c0884c3ac
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68654406"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121395"
 ---
 # <a name="additional-ios-9-frameworks-changes"></a>IOS 9 フレームワークのその他の変更
 
@@ -78,8 +78,8 @@ Apple では、iOS 9 の Foundation framework に次の変更が加えられて�
 
 IOS 9 の[Nsbundle](xref:Foundation.NSBundle)クラスには、次の変更が加えられました。
 
-* `GetPreservationPriorityForTag (NSString tag)`-指定されたタグを持つリソースの現在の保存優先度を取得します。 有効な値はからの`0.0`範囲`1.0`内で、最も低い優先順位のリソースが最初に削除されます。
-* `SetPreservationPriorityForTag (double priority, NSSet tags)`-指定されたタグを持つリソースの現在の保存優先度を設定します。 有効な値はからの`0.0`範囲`1.0`内で、最も低い優先順位のリソースが最初に削除されます。
+- `GetPreservationPriorityForTag (NSString tag)`-指定されたタグを持つリソースの現在の保存優先度を取得します。 有効な値はからの`0.0`範囲`1.0`内で、最も低い優先順位のリソースが最初に削除されます。
+- `SetPreservationPriorityForTag (double priority, NSSet tags)`-指定されたタグを持つリソースの現在の保存優先度を設定します。 有効な値はからの`0.0`範囲`1.0`内で、最も低い優先順位のリソースが最初に削除されます。
 
 詳細については、「Apple の[Nsbundle リファレンス](https://developer.apple.com/library/prerelease/ios/documentation/Cocoa/Reference/Foundation/Classes/NSBundle_Class/index.html#//apple_ref/occ/cl/NSBundle)」を参照してください。
 

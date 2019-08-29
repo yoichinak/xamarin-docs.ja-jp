@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: b865f08c9f6506996b5303bb80677977f1d0fa21
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ac373d20cbe08719fd7aa8e3888bbd608d8549c7
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643564"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119523"
 ---
 # <a name="fingerprint-authentication"></a>指紋認証
 
@@ -27,9 +27,9 @@ FingerprintManager Api は、指紋スキャナーを使用してデバイスを
 
 [FingerprintManager](https://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.html) (およびサポートライブラリ対応の[FingerprintManagerCompat](https://developer.android.com/reference/android/support/v4/hardware/fingerprint/FingerprintManagerCompat.html)) は、指紋スキャンハードウェアを使用するための主要なクラスです。 このクラスは、ハードウェア自体との対話を管理するシステムレベルサービスの Android SDK ラッパーです。 指紋スキャナーを起動し、スキャナーからのフィードバックに応答する役割を担います。 このクラスには、次の3つのメンバーのみを含む非常に単純なインターフェイスがあります。
 
-* **`Authenticate`** &ndash;このメソッドは、ユーザーが指紋をスキャンするのを待機して、ハードウェアスキャナーを初期化し、サービスをバックグラウンドで起動します。
-* **`EnrolledFingerprints`** ユーザーがデバイスに`true` 1 つ以上の指紋を登録している場合、このプロパティはを返します。 &ndash;
-* **`HardwareDetected`** &ndash;このプロパティは、デバイスで指紋スキャンがサポートされているかどうかを判断するために使用されます。
+- **`Authenticate`** &ndash;このメソッドは、ユーザーが指紋をスキャンするのを待機して、ハードウェアスキャナーを初期化し、サービスをバックグラウンドで起動します。
+- **`EnrolledFingerprints`** ユーザーがデバイスに`true` 1 つ以上の指紋を登録している場合、このプロパティはを返します。 &ndash;
+- **`HardwareDetected`** &ndash;このプロパティは、デバイスで指紋スキャンがサポートされているかどうかを判断するために使用されます。
 
 この`FingerprintManager.Authenticate`メソッドは、指紋スキャナーを起動するために Android アプリケーションによって使用されます。 次のスニペットは、サポートライブラリ互換性 Api を使用して呼び出す方法を示しています。
 

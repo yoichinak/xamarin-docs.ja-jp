@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 1f6fa57bbe47bbc2fe97bbd0df7018fc1cd3897a
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: d85c199f6243fc49c1ca924bbd60cfef48b6d91f
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522167"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120005"
 ---
 # <a name="setup-and-installation"></a>セットアップとインストール
 
@@ -63,9 +63,9 @@ Xamarin Android をインストールしたら、次の手順を実行して、A
 
 次の Android SDK とツールがインストールされていることを確認します。
 
-* Android SDK Tools v 24.0.0 以上、
-* Android 4.4 W (API20)、または
-* Android 5.0.1 (API21) 以降。
+- Android SDK Tools v 24.0.0 以上、
+- Android 4.4 W (API20)、または
+- Android 5.0.1 (API21) 以降。
 
 最新の sdk とツールがインストールされていない場合は、必要な sdk ツール*と*api ビットをダウンロードします (次に示すように&ndash; 、api の選択が表示されていることを確認するために少しスクロールする必要があります)。 
 

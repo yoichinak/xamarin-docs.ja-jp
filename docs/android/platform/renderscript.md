@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 9f15ef73e51a2e94e1a1174134f3e69d2cb2c4a3
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 14fb3740f558b006d507ff6875fd2cfc81a04298
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511424"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119730"
 ---
 # <a name="an-introduction-to-renderscript"></a>Renderscript の概要
 
@@ -22,11 +22,11 @@ _このガイドでは、Renderscript について説明し、API レベル17以
 
 Renderscript は、広範なコンピューティングリソースを必要とする Android アプリケーションのパフォーマンスを向上させるために、Google によって作成されたプログラミングフレームワークです。 これは、 [C99](https://en.wikipedia.org/wiki/C99)に基づく低レベルの高パフォーマンス API です。 Cpu、Gpu、または Dsp で実行される低レベルの API であるため、Renderscript は、次のいずれかを実行する必要がある Android アプリに適しています。
 
-* グラフィックス
-* 画像処理
-* 暗号化
-* シグナル処理
-* 数学ルーチン
+- グラフィックス
+- 画像処理
+- 暗号化
+- シグナル処理
+- 数学ルーチン
 
 Renderscript は、 `clang` apk にバンドルされている llvm バイトコードにスクリプトを使用し、コンパイルします。 アプリを初めて実行すると、LLVM バイトコードがデバイス上のプロセッサのマシンコードにコンパイルされます。 このアーキテクチャを使用すると、Android アプリケーションは、開発者自身がデバイス自体の各プロセッサ用に作成する必要がなく、マシンコードの利点を活用できます。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: b5ffa884def5acb01dc07ce39a2189e2570209c3
-ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
+ms.openlocfilehash: 09e4ca561f962e46dfe4eccbaf1cf284f4bb2827
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69620573"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120828"
 ---
 # <a name="table-views-in-xamarinmac"></a>Xamarin. Mac のテーブルビュー
 
@@ -40,8 +40,8 @@ Xamarin. Mac C#アプリケーションでおよび .net を使用する場合�
 
 Apple では、テーブルビューを作成するときに次のことが提案されます。
 
-* 列ヘッダーをクリックして、ユーザーがテーブルを並べ替えることができるようにします。
-* 列に表示されるデータを記述する名詞または短い名詞の語句である列ヘッダーを作成します。
+- 列ヘッダーをクリックして、ユーザーがテーブルを並べ替えることができるようにします。
+- 列に表示されるデータを記述する名詞または短い名詞の語句である列ヘッダーを作成します。
 
 詳細については、「Apple の[OS X ヒューマンインターフェイスガイドライン](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)」の「[コンテンツビュー](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsView.html#//apple_ref/doc/uid/20000957-CH52-SW1) 」セクションを参照してください。
 

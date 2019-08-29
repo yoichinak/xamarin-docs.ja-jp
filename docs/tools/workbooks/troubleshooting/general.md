@@ -6,12 +6,12 @@ ms.assetid: 495958BA-C9C2-4910-9BAD-F48A425208CF
 author: lobrien
 ms.author: laobri
 ms.date: 03/30/2017
-ms.openlocfilehash: 21f61b4504367dafc2907fd6471af333f636b521
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: 3701a2a111c5c18f694def241b1e888fa6f4ce19
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69889397"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120319"
 ---
 # <a name="known-issues--workarounds"></a>既知の問題 & 回避策
 
@@ -21,20 +21,20 @@ ms.locfileid: "69889397"
 
 ### <a name="workarounds"></a>問題回避
 
-* アプリケーションをドメインローカル`DefaultThreadCurrentCulture`に設定します。
+- アプリケーションをドメインローカル`DefaultThreadCurrentCulture`に設定します。
 
 ```csharp
 using System.Globalization;
 CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("de-DE")
 ```
 
-* または、ブック1.2.1 以降に更新します。これにより`System.Threading.CurrentThread.CurrentCulture` 、 `System.Globalization.CultureInfo.CurrentCulture`割り当てがに書き直され、目的の動作 (Mono のバグの回避) が提供されます。
+- または、ブック1.2.1 以降に更新します。これにより`System.Threading.CurrentThread.CurrentCulture` 、 `System.Globalization.CultureInfo.CurrentCulture`割り当てがに書き直され、目的の動作 (Mono のバグの回避) が提供されます。
 
 ## <a name="unable-to-use-newtonsoftjson"></a>Newtonsoft. Json を使用できません
 
 ### <a name="workaround"></a>回避策
 
-* ブック1.2.1 に更新します。これにより、Newtonsoft がインストールされます。
+- ブック1.2.1 に更新します。これにより、Newtonsoft がインストールされます。
   現在 alpha チャネルにあるブック1.3 では、バージョン10以降がサポートされています。
 
 ### <a name="details"></a>説明
@@ -51,9 +51,9 @@ Safari/WebKit の[モナコエディターに][monaco-bug]は、Mac ブックア
 
 ### <a name="workaround"></a>回避策
 
-* ツールヒントを表示した後にクリックすると、テキストが強制的にレンダリングされます。
+- ツールヒントを表示した後にクリックすると、テキストが強制的にレンダリングされます。
 
-* またはブック1.2.1 以降に更新します。
+- またはブック1.2.1 以降に更新します。
 
 [appcontext-bug]: https://bugzilla.xamarin.com/show_bug.cgi?id=54448
 [monaco-bug]: https://github.com/Microsoft/monaco-editor/issues/408
@@ -64,7 +64,7 @@ Safari/WebKit の[モナコエディターに][monaco-bug]は、Mac ブックア
 
 ### <a name="workaround"></a>回避策
 
-* SkiaSharp を NuGet の最新バージョンに更新します。 執筆時点では、これは1.57.1 です。
+- SkiaSharp を NuGet の最新バージョンに更新します。 執筆時点では、これは1.57.1 です。
 
 ## <a name="related-links"></a>関連リンク
 

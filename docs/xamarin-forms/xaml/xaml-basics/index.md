@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: d8b522ce75b2b594242dca167242ad0362f6cbfc
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: a7e98f64672788f13b247aa6cbba8adca84bb319
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528307"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121548"
 ---
 # <a name="xamarinforms-xaml-basics"></a>Xamarin.Forms XAML の基礎
 
@@ -22,12 +22,12 @@ XAML (eXtensible Application Markup Language) を使用すると、開発者は 
 
 ## <a name="xaml-basics-contents"></a>XAML の基礎の内容
 
-* [概要](#Overview)
-* [第 1 部XAML の概要](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
-* [第 2 部基本的な XAML 構文](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
-* [第 3 部XAML マークアップ拡張](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
-* [第 4 部データ バインディングの基礎](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)
-* [第 5 部MVVM へのデータ バインディングから](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)
+- [概要](#Overview)
+- [第 1 部XAML の概要](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
+- [第 2 部基本的な XAML 構文](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
+- [第 3 部XAML マークアップ拡張](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
+- [第 4 部データ バインディングの基礎](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)
+- [第 5 部MVVM へのデータ バインディングから](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)
 
 書籍の章をダウンロードするだけでなく、次の XAML の基礎記事[を Xamarin.Forms での Mobile Apps の作成](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md):
 

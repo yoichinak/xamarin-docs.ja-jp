@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 49e1b382d711f3486782e9e8747ef422c6853979
-ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
+ms.openlocfilehash: 294616e7766a6613a014495e5f9d124f74465072
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69620975"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121414"
 ---
 # <a name="introduction-to-proactive-suggestions-in-xamarinios"></a>Xamarin でのプロアクティブな提案の概要
 
@@ -514,14 +514,14 @@ textField.TextContentType = UITextContentType.FullStreetAddress;
 
 次に、 `UITextContentType`静的クラスの開発者が使用できる一般的な型をいくつか示します。
 
-* `Name`
-* `GivenName`
-* `FamilyName`
-* `Location`
-* `FullStreetAddress`
-* `AddressCityAndState`
-* `TelephoneNumber`
-* `EmailAddress`
+- `Name`
+- `GivenName`
+- `FamilyName`
+- `Location`
+- `FullStreetAddress`
+- `AddressCityAndState`
+- `TelephoneNumber`
+- `EmailAddress`
 
 ### <a name="routing-apps-and-locations-suggestions"></a>アプリと場所をルーティングする提案
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/31/2018
-ms.openlocfilehash: df13c1080be5fd466c4875ed8a3bdc2012a70df0
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: a7276b6a3269c012ad57e13510b6479266c43209
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526162"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119799"
 ---
 # <a name="remote-notifications-with-firebase-cloud-messaging"></a>焼討 Base Cloud Messaging を使用したリモート通知
 
@@ -57,7 +57,7 @@ _このチュートリアルでは、アドインアプリケーションで、�
 
 1. **Fcmclient**プロジェクトのプロパティを開きます。
 
-2. [ **Android マニフェスト**] ページで、パッケージ名を設定します。
+2. **[Android マニフェスト]** ページで、パッケージ名を設定します。
 
 次の例では、パッケージ名がに`com.xamarin.fcmexample`設定されています。
 
@@ -69,13 +69,13 @@ _このチュートリアルでは、アドインアプリケーションで、�
 
 1. **Fcmclient**プロジェクトのプロパティを開きます。
 
-2. [ **Android アプリケーション**] ページで、パッケージ名を設定します。
+2. **[Android アプリケーション]** ページで、パッケージ名を設定します。
 
 次の例では、パッケージ名がに`com.xamarin.fcmexample`設定されています。
 
 [![パッケージ名の設定](remote-notifications-with-fcm-images/01-package-name-xs-sml.png)](remote-notifications-with-fcm-images/01-package-name-xs.png#lightbox)
 
-**Android マニフェスト**を更新するときに、アクセス許可が有効になって`INTERNET`いることを確認します ([**必要なアクセス許可**] の下)。
+**Android マニフェスト**を更新するときに、アクセス許可が有効になって`INTERNET`いることを確認します ( **[必要なアクセス許可]** の下)。
 
 -----
 
@@ -90,7 +90,7 @@ _このチュートリアルでは、アドインアプリケーションで、�
 
 1. Visual Studio で、[参照] を右クリックし **> [NuGet パッケージの管理**] をクリックします。
 
-2. [**参照**] タブをクリックし、 **GooglePlayServices**を検索します。
+2. **[参照]** タブをクリックし、 **GooglePlayServices**を検索します。
 
 3. このパッケージを**Fcmclient**プロジェクトにインストールします。
 
@@ -165,11 +165,11 @@ using Android.Util;
 
 1. **Google-** services.msc をプロジェクトフォルダーにコピーします。
 
-2. アプリプロジェクトに**google-** services.msc を追加します (**ソリューションエクスプローラー**で [**すべてのファイルを表示**] をクリックし、[ **google-services**] を右クリックして、[**プロジェクトに含める**] を選択します)。
+2. アプリプロジェクトに**google-** services.msc を追加します (**ソリューションエクスプローラー**で **[すべてのファイルを表示]** をクリックし、 **[google-services]** を右クリックして、 **[プロジェクトに含める]** を選択します)。
 
-3. [**ソリューションエクスプローラー** ] ウィンドウで [ **google-** services.msc] を選択します。
+3. **[ソリューションエクスプローラー]** ウィンドウで **[google-]** services.msc を選択します。
 
-4. [**プロパティ**] ペインで、[**ビルド] アクション**を [ **GoogleServicesJson**] に設定します。
+4. **[プロパティ]** ペインで、[**ビルド] アクション**を **[GoogleServicesJson]** に設定します。
 
     [![ビルドアクションを GoogleServicesJson に設定する](remote-notifications-with-fcm-images/04-google-services-json-vs-sml.png)](remote-notifications-with-fcm-images/04-google-services-json-vs.png#lightbox)
 
@@ -182,7 +182,7 @@ using Android.Util;
 
 2. **Google-** services.msc をアプリプロジェクトに追加します。
 
-3. [ **Google-services. json**] を右クリックします。
+3. **[Google-services. json]** を右クリックします。
 
 4. **ビルドアクション**を**GoogleServicesJson**に設定します。
 
@@ -444,7 +444,7 @@ logTokenButton.Click += delegate {
 };
 ```
 
-このコードは、[**ログトークン**] ボタンがタップされたときに、現在のトークンを [出力] ウィンドウに記録します。
+このコードは、**ログトークン** ボタンがタップされたときに、現在のトークンを 出力 ウィンドウに記録します。
 
 ### <a name="handle-notification-intents"></a>通知インテントを処理する
 
@@ -466,11 +466,11 @@ if (Intent.Extras != null)
 
 ## <a name="background-notifications"></a>バックグラウンド通知
 
-**Fcmclient**アプリをビルドして実行します。 [ **Log Token** ] ボタンが表示されます。
+**Fcmclient**アプリをビルドして実行します。 **[Log Token]** ボタンが表示されます。
 
 [![[ログトークン] ボタンが表示されます](remote-notifications-with-fcm-images/06-log-token-sml.png)](remote-notifications-with-fcm-images/06-log-token.png#lightbox)
 
-[**ログトークン**] ボタンをタップします。 IDE の出力ウィンドウに次のようなメッセージが表示されます。
+**[ログトークン]** ボタンをタップします。 IDE の出力ウィンドウに次のようなメッセージが表示されます。
 
 [![インスタンス ID トークンが出力ウィンドウに表示されます](remote-notifications-with-fcm-images/07-token-received-sml.png)](remote-notifications-with-fcm-images/07-token-received.png#lightbox)
 
@@ -484,19 +484,19 @@ Log.Debug(TAG, "google app id: " + GetString(Resource.String.google_app_id));
 
 ### <a name="send-a-message"></a>メッセージを送信する
 
-[焼討 Base コンソール](https://console.firebase.google.com)にサインインし、プロジェクトを選択して [**通知**] をクリックし、[**最初のメッセージを送信する**] をクリックします。
+[焼討 Base コンソール](https://console.firebase.google.com)にサインインし、プロジェクトを選択して **[通知]** をクリックし、 **[最初のメッセージを送信する]** をクリックします。
 
 [![最初のメッセージを送信するボタン](remote-notifications-with-fcm-images/08-first-notification-sml.png)](remote-notifications-with-fcm-images/08-first-notification.png#lightbox)
 
-[**メッセージの作成**] ページで、メッセージテキストを入力し、[**単一デバイス**] を選択します。 IDE 出力ウィンドウからインスタンス ID トークンをコピーし、焼討 Base コンソールの**Fcm 登録トークン**フィールドに貼り付けます。
+**[メッセージの作成]** ページで、メッセージテキストを入力し、 **[単一デバイス]** を選択します。 IDE 出力ウィンドウからインスタンス ID トークンをコピーし、焼討 Base コンソールの**Fcm 登録トークン**フィールドに貼り付けます。
 
 [![メッセージの作成ダイアログ](remote-notifications-with-fcm-images/09-compose-message-sml.png)](remote-notifications-with-fcm-images/09-compose-message.png#lightbox)
 
-Android デバイス (またはエミュレーター) で、[Android の**概要**] ボタンをタップしてホーム画面に触れることによって、アプリの背景を表示します。 デバイスの準備ができたら、焼討 Base コンソールで [**メッセージの送信**] をクリックします。
+Android デバイス (またはエミュレーター) で、[Android の**概要**] ボタンをタップしてホーム画面に触れることによって、アプリの背景を表示します。 デバイスの準備ができたら、焼討 Base コンソールで **[メッセージの送信]** をクリックします。
 
 [![[メッセージの送信] ボタン](remote-notifications-with-fcm-images/10-send-message-sml.png)](remote-notifications-with-fcm-images/10-send-message.png#lightbox)
 
-[**メッセージの確認**] ダイアログが表示されたら、[**送信**] をクリックします。
+**[メッセージの確認]** ダイアログが表示されたら、 **[送信]** をクリックします。
 通知アイコンは、デバイス (またはエミュレーター) の通知領域に表示されます。
 
 [![通知アイコンが表示されます](remote-notifications-with-fcm-images/11-notification-icon-sml.png)](remote-notifications-with-fcm-images/11-notification-icon.png#lightbox)
@@ -548,7 +548,7 @@ Android デバイス (またはエミュレーター) で、[Android の**概要
   android:text="Subscribe to Notifications" />
 ```
 
-この XML は、[**通知の購読**] ボタンをレイアウトに追加します。
+この XML は、 **[通知の購読]** ボタンをレイアウトに追加します。
 **MainActivity.cs**を編集し、 `OnCreate`メソッドの末尾に次のコードを追加します。
 
 ```csharp
@@ -559,11 +559,11 @@ subscribeButton.Click += delegate {
 };
 ```
 
-このコードでは、レイアウトの [ **Notification へのサブスクライブ**] ボタンを探し、そのクリックハンドラー `FirebaseMessaging.Instance.SubscribeToTopic`を呼び出して、サブスクライブしたトピックである_news_を渡しているコードに割り当てます。 ユーザーが [**サブスクライブ**] ボタンをタップすると、アプリは_ニュース_トピックをサブスクライブします。 次のセクションでは、アドインのコンソール通知 GUI から_ニュース_トピックメッセージが送信されます。
+このコードでは、レイアウトの **[Notification へのサブスクライブ]** ボタンを探し、そのクリックハンドラー `FirebaseMessaging.Instance.SubscribeToTopic`を呼び出して、サブスクライブしたトピックである_news_を渡しているコードに割り当てます。 ユーザーが **[サブスクライブ]** ボタンをタップすると、アプリは_ニュース_トピックをサブスクライブします。 次のセクションでは、アドインのコンソール通知 GUI から_ニュース_トピックメッセージが送信されます。
 
 ### <a name="send-a-topic-message"></a>トピックメッセージを送信する
 
-アプリをアンインストールしてリビルドし、もう一度実行してください。 [**通知の登録**] ボタンをクリックします。
+アプリをアンインストールしてリビルドし、もう一度実行してください。 **[通知の登録]** ボタンをクリックします。
 
 [![[通知の購読] ボタン](remote-notifications-with-fcm-images/14-subscribe-sml.png)](remote-notifications-with-fcm-images/14-subscribe.png#lightbox)
 
@@ -573,17 +573,17 @@ subscribeButton.Click += delegate {
 
 トピックメッセージを送信するには、次の手順に従います。
 
-1. [焼討 Base] コンソールで、[**新しいメッセージ**] をクリックします。
+1. 焼討 Base コンソールで、**新しいメッセージ** をクリックします。
 
-2. [**メッセージの作成**] ページで、メッセージテキストを入力し、[**トピック**] を選択します。
+2. **[メッセージの作成]** ページで、メッセージテキストを入力し、 **[トピック]** を選択します。
 
-3. **トピック**プルダウンメニューで、組み込みトピック [ **news**] を選択します。
+3. **トピック**プルダウンメニューで、組み込みトピック **[news]** を選択します。
 
     [![ニューストピックを選択する](remote-notifications-with-fcm-images/16-topic-message-sml.png)](remote-notifications-with-fcm-images/16-topic-message.png#lightbox)
 
 4. Android デバイス (またはエミュレーター) で、[Android の**概要**] ボタンをタップしてホーム画面に触れることによって、アプリの背景を表示します。
 
-5. デバイスの準備ができたら、焼討 Base コンソールで [**メッセージの送信**] をクリックします。
+5. デバイスの準備ができたら、焼討 Base コンソールで **[メッセージの送信]** をクリックします。
 
 6. IDE の出力ウィンドウで、ログ出力の次の**トピック**を確認します。
 
@@ -653,17 +653,17 @@ Log.Debug(TAG, "Notification Message Body: " + body);
 
 アプリをアンインストールし、再構築して再実行し、次の手順に従って別のメッセージを送信します。
 
-1. [焼討 Base] コンソールで、[**新しいメッセージ**] をクリックします。
+1. 焼討 Base コンソールで、**新しいメッセージ** をクリックします。
 
-2. [**メッセージの作成**] ページで、メッセージテキストを入力し、[**単一デバイス**] を選択します。
+2. **[メッセージの作成]** ページで、メッセージテキストを入力し、 **[単一デバイス]** を選択します。
 
 3. IDE 出力ウィンドウからトークン文字列をコピーし、前と同じように、焼討 Base コンソールの**Fcm 登録トークン**フィールドに貼り付けます。
 
-4. アプリがフォアグラウンドで実行されていることを確認し、次に、焼討 Base コンソールで [**メッセージの送信**] をクリックします。
+4. アプリがフォアグラウンドで実行されていることを確認し、次に、焼討 Base コンソールで **[メッセージの送信]** をクリックします。
 
     [![コンソールからの別のメッセージの送信](remote-notifications-with-fcm-images/19-hello-again-sml.png)](remote-notifications-with-fcm-images/19-hello-again.png#lightbox)
 
-5. [**メッセージの確認**] ダイアログが表示されたら、[**送信**] をクリックします。
+5. **[メッセージの確認]** ダイアログが表示されたら、 **[送信]** をクリックします。
 
 6. 受信メッセージは、IDE の出力ウィンドウに記録されます。
 
@@ -731,9 +731,9 @@ public override void OnMessageReceived(RemoteMessage message)
 
 アプリがバックグラウンドで実行されている場合、メッセージの処理方法は[メッセージのペイロード](https://firebase.google.com/docs/cloud-messaging/concept-options#notifications_and_data_messages)によって決まります。
 
-* **通知**メッセージはシステムトレイに送信されます。 &ndash; ローカル通知が表示されます。 ユーザーが通知をタップすると、アプリが起動します。
-* **データ**メッセージはによって`OnMessageReceived`処理されます。 &ndash;
-* **両方**&ndash;通知とデータペイロードの両方を含むメッセージがシステムトレイに配信されます。 アプリが起動すると、アプリを起動するために`Extras`使用さ`Intent`れたのにデータペイロードが表示されます。
+- **通知**メッセージはシステムトレイに送信されます。 &ndash; ローカル通知が表示されます。 ユーザーが通知をタップすると、アプリが起動します。
+- **データ**メッセージはによって`OnMessageReceived`処理されます。 &ndash;
+- **両方**&ndash;通知とデータペイロードの両方を含むメッセージがシステムトレイに配信されます。 アプリが起動すると、アプリを起動するために`Extras`使用さ`Intent`れたのにデータペイロードが表示されます。
 
 この例では、アプリが backgrounded `SendNotification`の場合、メッセージにデータペイロードがある場合はが実行されます。 それ以外の場合は、バックグラウンド通知 (このチュートリアルで既に説明したもの) が起動されます。
 
@@ -741,13 +741,13 @@ public override void OnMessageReceived(RemoteMessage message)
 
 アプリをアンインストールして再構築し、もう一度実行してから、次の手順を使用して最後のメッセージを送信します。
 
-1. [焼討 Base] コンソールで、[**新しいメッセージ**] をクリックします。
+1. 焼討 Base コンソールで、**新しいメッセージ** をクリックします。
 
-2. [**メッセージの作成**] ページで、メッセージテキストを入力し、[**単一デバイス**] を選択します。
+2. **[メッセージの作成]** ページで、メッセージテキストを入力し、 **[単一デバイス]** を選択します。
 
 3. IDE 出力ウィンドウからトークン文字列をコピーし、前と同じように、焼討 Base コンソールの**Fcm 登録トークン**フィールドに貼り付けます。
 
-4. アプリがフォアグラウンドで実行されていることを確認し、次に、焼討 Base コンソールで [**メッセージの送信**] をクリックします。
+4. アプリがフォアグラウンドで実行されていることを確認し、次に、焼討 Base コンソールで **[メッセージの送信]** をクリックします。
 
     [![フォアグラウンドメッセージの送信](remote-notifications-with-fcm-images/21-console-fg-msg-sml.png)](remote-notifications-with-fcm-images/21-console-fg-msg.png#lightbox)
 

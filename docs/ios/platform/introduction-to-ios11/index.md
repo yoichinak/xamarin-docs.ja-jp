@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/19/2017
-ms.openlocfilehash: 648b03dc34daa8906adab316c552a9615649800d
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: fa4744ba217d602dbd3134e616ac3bc4d47f7b76
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655819"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120814"
 ---
 # <a name="introduction-to-ios-11"></a>iOS 11 の概要
 
@@ -61,24 +61,24 @@ Siri では、リストやメモなど、さらに多くの相互作用がサポ
 
 使用を開始するためC#の[サンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS11)がいくつか用意されています。
 
-* [ARKit サンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-arkitsample)
-* [オブジェクトを配置する ARKit](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-arkitplacingobjects)
-* [ARKit と UrhoSharp](arkit/urhosharp.md)
-* [CoreML イメージ認識のサンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlimagerecognition)
-* [Azure カスタムモデルを使用した CoreML](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlazuremodel)
-* [CoreNFC タグリーダーのサンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-nfctagreader)
-* [ドラッグ & ドロップテーブルビュー](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddroptableview)
-* [& ドロップコレクションビューをドラッグします](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddropcollectionview)
-* [ドラッグ & ドロップカスタムビュー](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddropcustomview)
-* [DragBoard ドラッグ & ドロップサンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddropdragboard)
-* [MapKit サンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-mapkitsample)
-* [SiriKit のサンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-sirikitsample)
-* [更新された Photos フレームワークのサンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-samplephotoapp)
-* [ビジョン & CoreML サンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlvision)
-* [視覚四角形の検出のサンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionrectangles/)
-* [ビジョン検出のサンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionfaces)
-* [PDKFit ウィジェットのサンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-pdfannotationwidgetsadvanced)
-* [PDFKit 透かしサンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-pdfdocumentwatermark)
+- [ARKit サンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-arkitsample)
+- [オブジェクトを配置する ARKit](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-arkitplacingobjects)
+- [ARKit と UrhoSharp](arkit/urhosharp.md)
+- [CoreML イメージ認識のサンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlimagerecognition)
+- [Azure カスタムモデルを使用した CoreML](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlazuremodel)
+- [CoreNFC タグリーダーのサンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-nfctagreader)
+- [ドラッグ & ドロップテーブルビュー](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddroptableview)
+- [& ドロップコレクションビューをドラッグします](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddropcollectionview)
+- [ドラッグ & ドロップカスタムビュー](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddropcustomview)
+- [DragBoard ドラッグ & ドロップサンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddropdragboard)
+- [MapKit サンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-mapkitsample)
+- [SiriKit のサンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-sirikitsample)
+- [更新された Photos フレームワークのサンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-samplephotoapp)
+- [ビジョン & CoreML サンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlvision)
+- [視覚四角形の検出のサンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionrectangles/)
+- [ビジョン検出のサンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionfaces)
+- [PDKFit ウィジェットのサンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-pdfannotationwidgetsadvanced)
+- [PDFKit 透かしサンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-pdfdocumentwatermark)
 
 ## <a name="related-links"></a>関連リンク
 

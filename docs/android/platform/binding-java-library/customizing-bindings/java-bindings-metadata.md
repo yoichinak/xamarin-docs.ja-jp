@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: 05b8be21373930ae2b501c84757b7be11f794aa9
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: d6cb1e407740fa4c182639a77e3725baec4286ac
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524611"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119854"
 ---
 # <a name="java-bindings-metadata"></a>Java バインド メタデータ
 
@@ -79,9 +79,9 @@ Xamarin.Android **Java バインディング ライブラリ**とも呼ばれる
 既に学習したように、ファイル**メタデータ .xml**はバインドジェネレーターによって使用され、バインディングアセンブリの作成に影響を及ぼします。
 メタデータ形式は[XPath](https://www.w3.org/TR/xpath/)構文を使用し、「 [gapi メタデータ](https://www.mono-project.com/docs/gui/gtksharp/gapi/#metadata)ガイド」で説明されている*gapi メタデータ*とほぼ同じです。 この実装は、ほとんどの場合、XPath 1.0 の完全な実装であるため、1.0 標準の項目をサポートします。 このファイルは、API ファイル内の要素または属性を変更、追加、非表示、または移動するための強力な XPath ベースの機構です。 メタデータ仕様のすべてのルール要素には、ルールが適用されるノードを識別するパス属性が含まれています。 規則は次の順序で適用されます。
 
-* **add-node**&ndash;パス属性で指定されたノードに子ノードを追加します。
-* **attr**&ndash; Path 属性によって指定された要素の属性の値を設定します。
-* **remove-node**&ndash;指定された XPath と一致するノードを削除します。
+- **add-node**&ndash;パス属性で指定されたノードに子ノードを追加します。
+- **attr**&ndash; Path 属性によって指定された要素の属性の値を設定します。
+- **remove-node**&ndash;指定された XPath と一致するノードを削除します。
 
 次に、**メタデータの .xml**ファイルの例を示します。
 
@@ -248,8 +248,8 @@ NavigationManager.2DSignNextManueverEventArgs
 
 Java ライブラリを難読化するツールは、Xamarin の Android バインドジェネレーターとラッパークラスを生成C#する機能に干渉する可能性があります。 難読化したクラスの特性は次のとおりです。 
 
-* クラス名には **$** 、、つまり **$. クラス**が含まれます。
-* クラス名は、小文字、つまり **. クラス**で完全に侵害されます。
+- クラス名には **$** 、、つまり **$. クラス**が含まれます。
+- クラス名は、小文字、つまり **. クラス**で完全に侵害されます。
 
 このスニペットは、"難読化されていない" C#型を生成する方法の例です。
 

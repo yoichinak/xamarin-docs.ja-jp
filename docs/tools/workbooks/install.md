@@ -6,12 +6,12 @@ ms.assetid: 9D4E10E8-A288-4C6C-9475-02969198C119
 author: lobrien
 ms.author: laobri
 ms.date: 06/19/2018
-ms.openlocfilehash: d94a14bcd1486b7b64e9ce6d9fee6d36406b2710
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: dd1e0838fbd3c3606021ddc996bf94cabc084f77
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511850"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119994"
 ---
 # <a name="workbooks-installation-and-requirements"></a>ブックのインストールと要件
 
@@ -78,7 +78,7 @@ ms.locfileid: "68511850"
 
 ブックのメインメニューから、次のようにします。
 
-* **バージョン情報のコピー > ヘルプ**
+- **バージョン情報のコピー > ヘルプ**
 
 #### <a name="instructions-for-workbooks-13-and-earlier"></a>ブック1.3 以前のブックの手順:
 
@@ -111,7 +111,7 @@ IOS または Android ブックの接続に問題があり、[トラブルシュ
 
 [bugs]: https://github.com/Microsoft/workbooks/issues/new
 
-## <a name="uninstall"></a>Uninstall
+## <a name="uninstall"></a>アンインストール
 
 ### <a name="windows"></a>Windows
 

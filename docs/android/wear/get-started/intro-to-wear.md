@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 6a9bb5fae84b6883943410d0c2585ce60a1208a4
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 37bc5bf32bc1d218179ef1176e1632239b1cb45f
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526445"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119538"
 ---
 # <a name="introduction-to-android-wear"></a>Android Wear の概要
 
@@ -183,12 +183,12 @@ Android の摩耗2.0 アプリは、ハンドヘルドアプリから独立し�
 
 Android の磨耗を実行できるデバイスの例をいくつか次に示します。
 
-* [Motorola 360](https://moto360.motorola.com/)
-* [LG G ウォッチ](http://www.lg.com/us/smart-watches/lg-W100-g-watch)
-* [LG G Watch R](http://www.lg.com/us/smartwatch/g-watch-r)
-* [Samsung 歯車ライブ](http://www.samsung.com/global/microsite/gear/gearlive_design.html)
-* [Sony SmartWatch 3](http://www.sonymobile.com/global-en/products/smartwear/smartwatch-3-swr50/)
-* [ASUS ZenWatch](http://www.asus.com/us/Phones/ASUS_ZenWatch_WI500Q/)
+- [Motorola 360](https://moto360.motorola.com/)
+- [LG G ウォッチ](http://www.lg.com/us/smart-watches/lg-W100-g-watch)
+- [LG G Watch R](http://www.lg.com/us/smartwatch/g-watch-r)
+- [Samsung 歯車ライブ](http://www.samsung.com/global/microsite/gear/gearlive_design.html)
+- [Sony SmartWatch 3](http://www.sonymobile.com/global-en/products/smartwear/smartwatch-3-swr50/)
+- [ASUS ZenWatch](http://www.asus.com/us/Phones/ASUS_ZenWatch_WI500Q/)
 
 
 
@@ -196,10 +196,10 @@ Android の磨耗を実行できるデバイスの例をいくつか次に示し
 
 Google の Android の磨耗ドキュメントを確認してください。
 
-* [Android の磨耗について](http://www.android.com/wear/)
-* [Android の摩耗アプリの設計](https://developer.android.com/design/wear/index.html)
-* [android. サポート. ウェアラブルライブラリ](https://developer.android.com/reference/android/support/wearable/view/package-summary.html)
-* [Android の磨耗2.0](https://developer.android.com/wear/preview/index.html)
+- [Android の磨耗について](http://www.android.com/wear/)
+- [Android の摩耗アプリの設計](https://developer.android.com/design/wear/index.html)
+- [android. サポート. ウェアラブルライブラリ](https://developer.android.com/reference/android/support/wearable/view/package-summary.html)
+- [Android の磨耗2.0](https://developer.android.com/wear/preview/index.html)
 
 
 

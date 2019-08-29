@@ -1,74 +1,74 @@
 ---
 ms.assetid: 814857C5-D54E-469F-97ED-EE1CAA0156BB
-title: デスクトップ アプリの移植のガイダンス
-description: UWP と Windows 10 だけなく、macOS、iOS、Android、上で実行するクロスプラット フォーム アプリを作成するには、既存の Windows フォームまたは WPF アプリを分離する方法の簡単な説明です。
+title: デスクトップアプリの移植に関するガイダンス
+description: 既存の Windows フォームまたは WPF アプリを分離して、macOS、iOS、Android、UWP/Windows 10 で実行するクロスプラットフォームアプリを作成する方法について簡単に説明します。
 author: asb3993
 ms.author: amburns
 ms.date: 04/26/2017
-ms.openlocfilehash: 4bf1dea170bd6b63209693963d54cc2e16163eea
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: bdea1c472d95c86037056a2905679b43e12e0468
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61270028"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120388"
 ---
-# <a name="desktop-app-porting-guidance"></a>デスクトップ アプリの移植のガイダンス
+# <a name="desktop-app-porting-guidance"></a>デスクトップアプリの移植に関するガイダンス
 
-ほとんどのアプリケーション コードは、次の領域のいずれかに分類できます。
+ほとんどのアプリケーションコードは、次のいずれかの領域に分類できます。
 
-* ユーザー インターフェイスのコード (例: windows やボタンなど)
-* サードパーティ製のコントロール (例: グラフ)
-* ビジネス ロジック (例: 検証規則)
-* ローカル データの格納とアクセス
-* Web サービスとリモート データ アクセス
+- ユーザーインターフェイスコード (例 ウィンドウとボタン)
+- サードパーティ製のコントロール (例 棒
+- ビジネスロジック (例 検証規則)
+- ローカルデータの格納とアクセス
+- Web サービスとリモートデータアクセス
 
-記述された Windows フォームや WPF アプリケーションのC#(または Visual Basic.NET) 驚くほどのビジネス ロジック、ローカル データ アクセス、および web サービスのコードをプラットフォーム間で共有できます。
+(または Visual Basic.NET) でC#記述された WINDOWS フォームおよび WPF アプリケーションの場合、ビジネスロジック、ローカルデータアクセス、および web サービスのコードは、プラットフォーム間で共有できます。
 
-## <a name="net-portability-analyzer"></a>.NET portability Analyzer
+## <a name="net-portability-analyzer"></a>.NET 移植性アナライザー
 
-Visual Studio 2017 およびそれ以降のサポート、 [.NET Portability Analyzer](https://docs.microsoft.com/dotnet/articles/standard/portability-analyzer) ([Windows 用のダウンロード](https://marketplace.visualstudio.com/items?itemName=ConnieYau.NETPortabilityAnalyzer))、既存のアプリケーションを調べるし、わかりますコードの量は、「現状有姿移植できる他のプラットフォーム。 これから詳細情報を入手できる[Channel 9 のビデオ](https://channel9.msdn.com/Blogs/Seth-Juarez/A-Brief-Look-at-the-NET-Portability-Analyzer)します。
+Visual Studio 2017 以降では、 [.Net 移植性アナライザー](https://docs.microsoft.com/dotnet/articles/standard/portability-analyzer) ([Windows 用ダウンロード](https://marketplace.visualstudio.com/items?itemName=ConnieYau.NETPortabilityAnalyzer)) がサポートされています。これにより、既存のアプリケーションを調査し、他のプラットフォームに対して "その他" のコードを移植することができます。 詳細については、 [Channel 9 のビデオ](https://channel9.msdn.com/Blogs/Seth-Juarez/A-Brief-Look-at-the-NET-Portability-Analyzer)を参照してください。
 
-コマンド ライン ツールをからダウンロードできます[GitHub での移植性アナライザー](https://github.com/Microsoft/dotnet-apiport)と同じレポートを提供するために使用します。
+また、 [GitHub の移植性アナライザー](https://github.com/Microsoft/dotnet-apiport)からコマンドラインツールをダウンロードし、同じレポートを提供するために使用することもできます。
 
-## <a name="x-of-my-code-is-portable-what-next"></a>"x % のコードは移植可能です。 次のステップ"
+## <a name="x-of-my-code-is-portable-what-next"></a>"x% のコードは移植可能です。 次は何ですか? "
 
-うまくいけば、アナライザーを示しています、大規模なコードの一部は移植可能があるすべてのアプリの一部になる確実にする_できません_他のプラットフォームに移動します。
+Analyzer は、コードの大部分が移植可能であることを示していますが、他のプラットフォームに移動_できない_すべてのアプリの一部であることは確かです。
 
-コードの別の部分は、以下で詳しく説明したこれらのバケットのいずれかに分類されます可能性があります。
+コードのチャンクは、次のいずれかのバケットに分類されることがあります。詳細については、以下を参照してください。
 
-* 再利用可能な移植可能なコード
-* 変更を必要とするコード
-* コードを移植できないし、再書き込みが必要です。
+- 再有効な移植可能なコード
+- 変更が必要なコード
+- 移植できず、再書き込みが必要なコード
 
-### <a name="re-useable-portable-code"></a>再利用可能な移植可能なコード
+### <a name="re-useable-portable-code"></a>再有効な移植可能なコード
 
-すべてのプラットフォームで利用可能な Api に対して記述された .NET コードには、クロス プラットフォームの変更を取得できます。 理想的には、このすべてのコードをポータブル クラス ライブラリ、ライブラリの共有、または .NET Standard ライブラリに移動し、既存のアプリ内でテストしてになります。
+すべてのプラットフォームで使用可能な Api に対して記述された .NET コードは、変更されていないクロスプラットフォームにすることができます。 理想的には、すべてのコードをポータブルクラスライブラリ、共有ライブラリ、または .NET Standard ライブラリに移動し、既存のアプリ内でテストすることができます。
 
-共有ライブラリは、その他のプラットフォーム (Android、iOS、macOS) などのアプリケーション プロジェクトに追加できます。
+その共有ライブラリは、他のプラットフォーム (Android、iOS、macOS など) のアプリケーションプロジェクトに追加できます。
 
-### <a name="code-that-requires-changes"></a>変更を必要とするコード
+### <a name="code-that-requires-changes"></a>変更が必要なコード
 
-一部の .NET Api は、すべてのプラットフォームでできない場合があります。 これらの Api は、コードに存在する場合は、クロス プラットフォーム Api を使用してこれらのセクションを再作成する必要があります。
+一部の .NET Api は、すべてのプラットフォームで使用できるとは限りません。 これらの Api がコードに存在する場合は、クロスプラットフォーム Api を使用するようにこれらのセクションを再記述する必要があります。
 
-この追加の例は、リフレクション Api は .NET 4.6 で使用できますが、すべてのプラットフォームで使用されていないを使用します。
+この例には、.NET 4.6 で利用できるリフレクション Api の使用が含まれていますが、すべてのプラットフォームで使用できるわけではありません。
 
-移植可能な Api を使用してコードを再作成した後、そのコードの共有ライブラリをパッケージ化し、既存のアプリ内でテストできる必要があります。
+移植可能な Api を使用してコードを書き直すと、そのコードを共有ライブラリにパッケージ化して、既存のアプリ内でテストできるようになります。
 
-### <a name="code-that-isnt-portable-and-requires-a-re-write"></a>コードを移植できないし、再書き込みが必要です。
+### <a name="code-that-isnt-portable-and-requires-a-re-write"></a>移植できず、再書き込みが必要なコード
 
-クロス プラットフォームである可能性があるコードの例を次のとおりです。
+クロスプラットフォームになる可能性のないコードの例を次に示します。
 
-- **ユーザー インターフェイス**– Windows Forms または WPF の画面をたとえば Android や iOS では、上のプロジェクトで使用できません。 ユーザー インターフェイスを再記述する必要はこれを使用して[コントロールの比較](~/cross-platform/desktop/controls/index.md)として参照します。
+- **ユーザーインターフェイス**– Windows フォームまたは WPF 画面は、Android または iOS 上のプロジェクトでは使用できません。たとえば、のようになります。 この[コントロールの比較](~/cross-platform/desktop/controls/index.md)を参照として使用して、ユーザーインターフェイスを再記述する必要があります。
 
-- **プラットフォーム固有の記憶域**-(ローカルの SQL Server Express データベース) などのプラットフォームに固有のテクノロジに依存するコードです。 再書き込みこれから (データベース エンジンに SQLite) など、クロスプラット フォーム対応の代替を使用する必要があります。
-一部のファイル システム操作は、UWP に Android および iOS (例: に若干異なる Api があるため、調整する必要もあります。 いくつかのファイル システムは、大文字と他のユーザーはありません)。
+- プラットフォーム固有の**ストレージ**-プラットフォーム固有のテクノロジ (ローカル SQL Server Express データベースなど) に依存するコード。 クロスプラットフォームの代替手段 (データベースエンジン用 SQLite など) を使用して、これを再記述する必要があります。
+UWP は Android と iOS に若干異なる Api を使用しているため、一部のファイルシステム操作も調整する必要があります (例として、 一部のファイルシステムでは大文字と小文字が区別され、他のファイルは区別されません
 
-- **サード パーティ製コンポーネント**– アプリケーションでサード パーティ製のコンポーネントが他のプラットフォームで使用できるかどうかを確認します。 他のユーザー (特に visual コントロール グラフやメディア プレーヤーなど) が使用可能ないくつか非ビジュアルの NuGet パッケージなどがあります。
+- **サードパーティのコンポーネント**–アプリケーションのサードパーティコンポーネントが他のプラットフォームで利用可能かどうかを確認します。 Visual NuGet 以外のパッケージなど、一部は使用できる場合があります (特にグラフやメディアプレーヤーのようなビジュアルコントロール)。
 
-## <a name="tips-for-making-code-portable"></a>コードの可搬するためのヒント
+## <a name="tips-for-making-code-portable"></a>コードの移植性を高めるためのヒント
 
-- **依存関係の注入**– 各プラットフォームでは、さまざまな実装を提供し、
+- **依存関係の注入**–プラットフォームごとに異なる実装を提供します。
 
-- **アプローチを階層化**– MVVM、MVC、MVP、またはするのに役立つその他のいくつかのパターンは、プラットフォーム固有のコードから移植可能なコードを区切るかどうか。
+- **レイヤー**化されたアプローチ– MVVM、MVC、MVP など、プラットフォーム固有のコードからポータブルコードを分離するのに役立つその他のパターン。
 
-- **メッセージング**– コードでメッセージ パッシングを使用して、アプリケーションの異なる部分間の相互作用を結合解除できます。
+- **メッセージング**–コードに渡すメッセージを使用して、アプリケーションの異なる部分間の相互作用を逆にすることができます。

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
-ms.openlocfilehash: 634081b63ce4a70368ef7621837932a3ae6de0a8
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: ffd244a77ae75fefcf42f185bad1e8f7ccdbe560
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69890396"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121334"
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>チュートリアル: iOS Objective-C ライブラリのバインド
 
@@ -22,9 +22,9 @@ IOS で作業している場合、サードパーティの目標 C ライブラ�
 
 一般に、iOS エコシステムでは、次の3つのフレーバーでライブラリを見つけることができます。
 
-* 拡張子をヘッダー (.h ファイル) `.a`と共にプリコンパイル済みスタティックライブラリファイルとして使用します。 たとえば、 [Google の分析ライブラリ](https://developers.google.com/analytics/devguides/collection/ios/v3/sdk-download?hl=es#download_sdk)
-* プリコンパイル済みフレームワークとして。 これは、スタティックライブラリ、ヘッダー、および場合によって`.framework`は追加のリソースを含むフォルダーです。 たとえば、 [Google の Admob by ライブラリ](https://developers.google.com/admob/ios/download)です。
-* ソースコードファイルとしてのみ。 たとえば、と`.h`目標 C ファイルのみ`.m`を含むライブラリです。
+- 拡張子をヘッダー (.h ファイル) `.a`と共にプリコンパイル済みスタティックライブラリファイルとして使用します。 たとえば、 [Google の分析ライブラリ](https://developers.google.com/analytics/devguides/collection/ios/v3/sdk-download?hl=es#download_sdk)
+- プリコンパイル済みフレームワークとして。 これは、スタティックライブラリ、ヘッダー、および場合によって`.framework`は追加のリソースを含むフォルダーです。 たとえば、 [Google の Admob by ライブラリ](https://developers.google.com/admob/ios/download)です。
+- ソースコードファイルとしてのみ。 たとえば、と`.h`目標 C ファイルのみ`.m`を含むライブラリです。
 
 1番目と2番目のシナリオでは、プリコンパイル済み CocoaTouch スタティックライブラリが既に存在するため、この記事では3番目のシナリオに焦点を当てます。 バインドの作成を開始する前に、ライブラリで提供されているライセンスを必ず確認して、それを確実にバインドできることを確認してください。
 

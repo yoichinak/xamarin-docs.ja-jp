@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: ca3580648d357d2c943274717af66ad5d825ce75
-ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
-ms.translationtype: HT
+ms.openlocfilehash: f4004b4b9cdc8f8c6555be82cf1da5b92a83d45c
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/28/2019
-ms.locfileid: "70065588"
+ms.locfileid: "70120056"
 ---
 # <a name="tvos-user-interface-styles-in-xamarin"></a>Xamarin の tvOS ユーザーインターフェイススタイル
 
@@ -183,22 +183,22 @@ TvOS 10 では、特徴コレクションに応答するようにアプリのス
 
 Interface Builder で tvOS Storyboard を編集するときに、Apple は次の機能を追加しました。
 
-* 開発者は、**属性インスペクター**の UI テーマに基づいて、さまざまな種類のユーザーインターフェイス要素を指定できます。
+- 開発者は、**属性インスペクター**の UI テーマに基づいて、さまざまな種類のユーザーインターフェイス要素を指定できます。
 
-  * いくつかのプロパティの **+** 横に、UI テーマ固有のバージョンを追加するためにクリックすることができるようになりました。
+  - いくつかのプロパティの **+** 横に、UI テーマ固有のバージョンを追加するためにクリックすることができるようになりました。
 
     [![](user-interface-styles-images/theme08.png "UI テーマ固有のバージョンを追加する")](user-interface-styles-images/theme08.png#lightbox)
 
-  * 開発者は、新しいプロパティを指定したり、 **[x]** ボタンをクリックして削除したりできます。
+  - 開発者は、新しいプロパティを指定したり、 **[x]** ボタンをクリックして削除したりできます。
 
     [![](user-interface-styles-images/theme09.png "新しいプロパティを指定するか、[x] ボタンをクリックして削除します")](user-interface-styles-images/theme09.png#lightbox)
-* 開発者は、Interface Builder 内の明るいテーマまたはダークテーマで UI デザインをプレビューできます。
+- 開発者は、Interface Builder 内の明るいテーマまたはダークテーマで UI デザインをプレビューできます。
 
-  * デザインサーフェイスの下部を使用すると、開発者は現在の UI テーマを切り替えることができます。
+  - デザインサーフェイスの下部を使用すると、開発者は現在の UI テーマを切り替えることができます。
 
     [![](user-interface-styles-images/theme10.png "デザインサーフェイスの下部")](user-interface-styles-images/theme10.png#lightbox)
 
-  * 新しいテーマが Interface Builder に表示され、特徴コレクション固有の調整がすべて表示されます。
+  - 新しいテーマが Interface Builder に表示され、特徴コレクション固有の調整がすべて表示されます。
 
     [![](user-interface-styles-images/theme11.png "Interface Builder に表示されるテーマ")](user-interface-styles-images/theme11.png#lightbox)
 

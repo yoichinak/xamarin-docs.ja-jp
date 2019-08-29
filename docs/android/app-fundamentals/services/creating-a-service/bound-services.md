@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/04/2018
-ms.openlocfilehash: 6b585783f21cc18112ef766819c9851baac96ef1
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ae1e8332f1d62a4690863a97f63c0c1bef1ee127
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644189"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119089"
 ---
 # <a name="bound-services-in-xamarinandroid"></a>Xamarin. Android のバインドされたサービス
 
@@ -22,9 +22,9 @@ _バインドされたサービスは、クライアント (Android アクティ
 
 クライアントがサービスと直接対話するためのクライアントサーバーインターフェイスを提供するサービスは、バインドされた_サービス_と呼ばれます。  サービスの1つのインスタンスに同時に接続されている複数のクライアントが存在する場合があります。 バインドされたサービスとクライアントは相互に分離されます。 代わりに、Android には、2つの間の接続の状態を管理する一連の中間オブジェクトが用意されています。 この状態は、 [`Android.Content.IServiceConnection`](xref:Android.Content.IServiceConnection)インターフェイスを実装するオブジェクトによって維持されます。  このオブジェクトは、クライアントによって作成され、パラメーターと[`BindService`](xref:Android.Content.Context.BindService*)してメソッドに渡されます。 は`BindService` 、任意[`Android.Content.Context`](xref:Android.Content.Context)のオブジェクト (アクティビティなど) で使用できます。 これは、サービスを起動してクライアントをバインドするための Android オペレーティングシステムへの要求です。 クライアントが`BindService`メソッドを使用してサービスにバインドするには、次の3つの方法があります。
 
-* **サービスバインダー**サービスバインダーは、 [`Android.OS.IBinder`](xref:Android.OS.IBinder)インターフェイスを実装するクラスです。 &ndash; ほとんどの[`Android.OS.Binder`](xref:Android.OS.Binder)アプリケーションは、このインターフェイスを直接実装するのではなく、クラスを拡張します。 これは最も一般的な方法であり、サービスとクライアントが同じプロセス内に存在する場合に適しています。
-* **Messenger を使用する**&ndash;この手法は、サービスが別のプロセスに存在する可能性がある場合に適しています。 代わりに、を使用[`Android.OS.Messenger`](xref:Android.OS.Messenger)して、サービス要求をクライアントとサービスの間でマーシャリングします。 要求を`Messenger`処理するサービスに[が作成されます。`Android.OS.Handler`](xref:Android.OS.Handler) これについては、別のガイドで説明します。
-* **Android インターフェイス定義言語 (AIDL) の使用** &ndash; [Aidl](https://developer.android.com/guide/components/aidl) は、このガイドでは説明されていない高度な手法です。
+- **サービスバインダー**サービスバインダーは、 [`Android.OS.IBinder`](xref:Android.OS.IBinder)インターフェイスを実装するクラスです。 &ndash; ほとんどの[`Android.OS.Binder`](xref:Android.OS.Binder)アプリケーションは、このインターフェイスを直接実装するのではなく、クラスを拡張します。 これは最も一般的な方法であり、サービスとクライアントが同じプロセス内に存在する場合に適しています。
+- **Messenger を使用する**&ndash;この手法は、サービスが別のプロセスに存在する可能性がある場合に適しています。 代わりに、を使用[`Android.OS.Messenger`](xref:Android.OS.Messenger)して、サービス要求をクライアントとサービスの間でマーシャリングします。 要求を`Messenger`処理するサービスに[が作成されます。`Android.OS.Handler`](xref:Android.OS.Handler) これについては、別のガイドで説明します。
+- **Android インターフェイス定義言語 (AIDL) の使用** &ndash; [Aidl](https://developer.android.com/guide/components/aidl) は、このガイドでは説明されていない高度な手法です。
 
 クライアントがサービスにバインドされると、2つの間の通信はオブジェクト`Android.OS.IBinder`を介して行われます。  このオブジェクトは、クライアントがサービスと対話できるようにするインターフェイスを担います。 各 Xamarin. Android アプリケーションでは、このインターフェイスを最初から実装する必要はありません。 [`Android.OS.Binder`](xref:Android.OS.Binder) Android SDK には、クライアントとサービスの間でオブジェクトをマーシャリングするために必要なほとんどのコードを処理するクラスが用意されています。
 
@@ -53,10 +53,10 @@ Android アプリケーションでバインドされたサービスを使用す
 
 装飾を使用してサービスを作成するには、 `Service` [`ServiceAttribute`](xref:Android.App.ServiceAttribute)クラスをにサブクラス化し、を使用する必要があります。 この属性は、Xamarin. Android ビルドツールによって使用されます。アクティビティと同様に、アプリの**Androidmanifest .xml**ファイルにサービスを適切に登録するために、バインドされたサービスには、の重要なイベントに関連付けられた独自のライフサイクルとコールバックメソッドがあります。ライフサイクルです。 次の一覧は、サービスが実装する一般的なコールバックメソッドの例を示しています。
 
-* `OnCreate`&ndash;このメソッドは、サービスをインスタンス化しているため、Android によって呼び出されます。 これは、サービスが有効期間中に必要とする変数またはオブジェクトを初期化するために使用されます。 このメソッドは省略可能です。
-* `OnBind`&ndash;このメソッドは、すべてのバインドされたサービスで実装する必要があります。 これは、最初のクライアントがサービスに接続しようとしたときに呼び出されます。 クライアントがサービスと対話できる`IBinder`ように、のインスタンスを返します。 サービスが実行`IBinder`されている限り、このオブジェクトは、サービスにバインドするための将来のクライアント要求を処理するために使用されます。
-* `OnUnbind`&ndash;このメソッドは、バインドされたすべてのクライアントがバインド解除されたときに呼び出されます。 このメソッド`true`から制御が戻ると、サービスは後`OnRebind`で、新しいクライアントが`OnUnbind`それにバインドしたときにに渡されたインテントを使用してを呼び出します。 この操作は、サービスがバインド解除された後も実行を継続する場合に行います。 これは、最近バインドされていないサービスも開始され`StopService`た`StopSelf`サービスであるか、または呼び出されなかった場合に発生します。 このようなシナリオで`OnRebind`は、を使用して目的を取得できます。 既定値は`false`を返します。これは何も行いません。 任意。
-* `OnDestroy`&ndash;このメソッドは、Android がサービスを破棄するときに呼び出されます。 リソースの解放などの必要なクリーンアップは、このメソッドで実行する必要があります。 任意。
+- `OnCreate`&ndash;このメソッドは、サービスをインスタンス化しているため、Android によって呼び出されます。 これは、サービスが有効期間中に必要とする変数またはオブジェクトを初期化するために使用されます。 このメソッドは省略可能です。
+- `OnBind`&ndash;このメソッドは、すべてのバインドされたサービスで実装する必要があります。 これは、最初のクライアントがサービスに接続しようとしたときに呼び出されます。 クライアントがサービスと対話できる`IBinder`ように、のインスタンスを返します。 サービスが実行`IBinder`されている限り、このオブジェクトは、サービスにバインドするための将来のクライアント要求を処理するために使用されます。
+- `OnUnbind`&ndash;このメソッドは、バインドされたすべてのクライアントがバインド解除されたときに呼び出されます。 このメソッド`true`から制御が戻ると、サービスは後`OnRebind`で、新しいクライアントが`OnUnbind`それにバインドしたときにに渡されたインテントを使用してを呼び出します。 この操作は、サービスがバインド解除された後も実行を継続する場合に行います。 これは、最近バインドされていないサービスも開始され`StopService`た`StopSelf`サービスであるか、または呼び出されなかった場合に発生します。 このようなシナリオで`OnRebind`は、を使用して目的を取得できます。 既定値は`false`を返します。これは何も行いません。 任意。
+- `OnDestroy`&ndash;このメソッドは、Android がサービスを破棄するときに呼び出されます。 リソースの解放などの必要なクリーンアップは、このメソッドで実行する必要があります。 任意。
 
 バインドされたサービスのキーライフサイクルイベントは、次の図のようになります。
 
@@ -232,9 +232,9 @@ namespace BoundServiceDemo
 
 バインドされたサービスを使用するには、クライアント (アクティビティなど) がを実装`Android.Content.IServiceConnection`し、 `BindService`メソッドを呼び出すオブジェクトをインスタンス化する必要があります。 `BindService`サービスが`true`にバインドされている場合`false`は、それ以外の場合はを返します。 `BindService` メソッドは 3 つのパラメーターを受け取ります。
 
-* インテントは、接続先のサービスを明示的に識別する必要があります。 **`Intent`** &ndash;
-* **オブジェクト`IServiceConnection`**  。このオブジェクトは、バインドされたサービスの開始時および停止時にクライアントに通知するコールバックメソッドを&ndash;提供する仲介役です。
-* 列挙このパラメーターは、オブジェクトをバインドするときにシステムによって使用されるフラグのセットです。 **[`Android.Content.Bind`](xref:Android.Content.Bind)** &ndash; 最も一般的に使用される[`Bind.AutoCreate`](xref:Android.Content.Bind.AutoCreate)値はで、サービスがまだ実行されていない場合は自動的に開始されます。
+- インテントは、接続先のサービスを明示的に識別する必要があります。 **`Intent`** &ndash;
+- **オブジェクト`IServiceConnection`**  。このオブジェクトは、バインドされたサービスの開始時および停止時にクライアントに通知するコールバックメソッドを&ndash;提供する仲介役です。
+- 列挙このパラメーターは、オブジェクトをバインドするときにシステムによって使用されるフラグのセットです。 **[`Android.Content.Bind`](xref:Android.Content.Bind)** &ndash; 最も一般的に使用される[`Bind.AutoCreate`](xref:Android.Content.Bind.AutoCreate)値はで、サービスがまだ実行されていない場合は自動的に開始されます。
 
 次のコードスニペットは、明示的なインテントを使用して、アクティビティ内のバインドされたサービスを開始する方法の例です。
 

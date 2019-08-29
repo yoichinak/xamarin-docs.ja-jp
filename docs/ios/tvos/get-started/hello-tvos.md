@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 02/02/2018
-ms.openlocfilehash: a3ec307061c47736722c5dacef9a939518586ded
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 59019e08c279a9910281de98fe64db798379e1a4
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528802"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119166"
 ---
 # <a name="hello-tvos-quick-start-guide"></a>Hello, tvOS クイックスタートガイド
 
@@ -327,8 +327,8 @@ IOS Designer とそのしくみの詳細については、「Xamarin Designer fo
 
 IOS デザイナーでコードから追加したコントロールにアクセスするには、主に次の2つの方法があります。
 
-* コントロールにイベントハンドラーを作成する。
-* コントロールに名前を付けて、後で参照できるようにします。
+- コントロールにイベントハンドラーを作成する。
+- コントロールに名前を付けて、後で参照できるようにします。
 
 これらのいずれかが追加されると、内`ViewController.designer.cs`の部分クラスが更新され、変更が反映されます。 これにより、ビューコントローラー内のコントロールにアクセスできるようになります。
 

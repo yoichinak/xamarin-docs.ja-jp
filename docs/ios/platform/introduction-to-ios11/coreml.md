@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/30/2017
-ms.openlocfilehash: c2092cd9e7beb233c9478869ebff91d85b5b30c0
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: c2747b24c47e826e0d832faa36ddb93d8aa06f37
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68649606"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121520"
 ---
 # <a name="introduction-to-coreml-in-xamarinios"></a>Xamarin. iOS の CoreML の概要
 
@@ -171,11 +171,11 @@ void HandleClassification(VNRequest request, NSError error){
 
 次の3つの CoreML サンプルを試すことができます。
 
-* [Mars Habitat Price の予測サンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-marshabitatcoremltimer/)には、単純な数値入力と出力があります。
+- [Mars Habitat Price の予測サンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-marshabitatcoremltimer/)には、単純な数値入力と出力があります。
 
-* この[ビジョン & coreml サンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlvision)は image パラメーターを受け取り、ビジョンフレームワークを使用してイメージ内の四角形領域を識別します。これは、1桁の数字を認識する coreml モデルに渡されます。
+- この[ビジョン & coreml サンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlvision)は image パラメーターを受け取り、ビジョンフレームワークを使用してイメージ内の四角形領域を識別します。これは、1桁の数字を認識する coreml モデルに渡されます。
 
-* 最後に、 [Coreml イメージ認識サンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlimagerecognition)では、coreml を使用して写真内の機能を識別します。 既定では、小さい**SqueezeNet**モデル (5 mb) を使用しますが、大規模な**VGG16**モデル (553mb) をダウンロードして組み込むことができるように記述されています。 詳細については、[サンプルの readme](https://github.com/xamarin/ios-samples/blob/master/ios11/CoreMLImageRecognition/CoreMLImageRecognition/README.md)を参照してください。
+- 最後に、 [Coreml イメージ認識サンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlimagerecognition)では、coreml を使用して写真内の機能を識別します。 既定では、小さい**SqueezeNet**モデル (5 mb) を使用しますが、大規模な**VGG16**モデル (553mb) をダウンロードして組み込むことができるように記述されています。 詳細については、[サンプルの readme](https://github.com/xamarin/ios-samples/blob/master/ios11/CoreMLImageRecognition/CoreMLImageRecognition/README.md)を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 

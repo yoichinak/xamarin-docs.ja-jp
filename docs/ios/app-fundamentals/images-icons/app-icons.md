@@ -7,20 +7,20 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/22/2017
-ms.openlocfilehash: 0f20e7dafaa855e3610595886537ee4910b09d2e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: dd712940ff6e7000ffd9181f808a8ab32093b38d
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643051"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121472"
 ---
 # <a name="application-icons-in-xamarinios"></a>Xamarin. iOS のアプリケーションアイコン
 
 次のトピックで、詳しく説明します。
 
-* [[アプリケーション]、[スポットライト]、および [設定] アイコン](#icon-types)-iOS アプリに必要なさまざまな種類のアイコン。
-* [資産カタログ](#managing)を使用したアイコンの管理-資産カタログを使用したアプリケーションアイコンの管理。
-* [Itunes アートワーク](#itunes)-アプリケーションを提供するために必要な Itunes アートワークを提供します。
+- [[アプリケーション]、[スポットライト]、および [設定] アイコン](#icon-types)-iOS アプリに必要なさまざまな種類のアイコン。
+- [資産カタログ](#managing)を使用したアイコンの管理-資産カタログを使用したアプリケーションアイコンの管理。
+- [Itunes アートワーク](#itunes)-アプリケーションを提供するために必要な Itunes アートワークを提供します。
 
 <a name="icon-types" />
 
@@ -193,7 +193,7 @@ iTunes アートワークは次の手順で指定します。
 2. エディターの**ITunes アートワーク**セクションまでスクロールします。 
 
     ![](app-icons-images/itunes01.png "エディターの iTunes アートワークセクションまでスクロールします。")
-3. イメージが見つからない場合は、エディターでサムネイルをクリックし、[ファイルを開く] ダイアログボックスで目的の iTunes アートワークのイメージファイルを選択して、 **[OK]** ボタンをクリックします。
+3. イメージが見つからない場合は、エディターでサムネイルをクリックし、ファイルを開く ダイアログボックスで目的の iTunes アートワークのイメージファイルを選択して、 **OK** ボタンをクリックします。
 4. アプリに必要なすべてのイメージが指定されるまで、この手順を繰り返します。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)

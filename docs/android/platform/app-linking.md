@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: d1a96c81da8d71d92e3ce5acd9928b293f3cf3dd
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 9ca14ff360fb3f1d7fdc8df277a93b0d30c4394c
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524707"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119691"
 ---
 # <a name="app-linking-in-android"></a>Android でのアプリリンク
 
@@ -55,12 +55,12 @@ Android 6.0 でのアプリリンクの設定には、次の2つの主要な手�
 
 Web サイトの URI (または一連の Uri) を Android アプリケーションのアクティビティにマップするインテントフィルターを構成する必要があります。 Xamarin Android では、この関係は、 [Intentfilterattribute](xref:Android.App.IntentFilterAttribute)を使用してアクティビティを装飾することによって確立されます。 インテントフィルターでは、次の情報を宣言する必要があります。
 
-* **`Intent.ActionView`** &ndash;これにより、情報を表示する要求に応答するインテントフィルターが登録されます
-* **`Categories`** &ndash;  インテント フィルターは、両方を登録する必要があります **[Intent.CategoryBrowsable](xref:Android.Content.Intent.CategoryBrowsable)** と **[Intent.CategoryDefault](xref:Android.Content.Intent.CategoryDefault)** ができなければ正しくweb の URI を処理します。
-* **`DataScheme`** インテントフィルターでは、 `http` /または`https`を宣言する必要があります。 &ndash; これらは、2つの有効なスキームだけです。
-* **`DataHost`** &ndash;これは、uri の生成元となるドメインです。
-* **`DataPathPrefix`** &ndash;これは、web サイト上のリソースへの省略可能なパスです。
-* **`AutoVerify`** 属性は、アプリケーションと web サイト間の関係を確認するように Android に指示し`autoVerify`ます。 &ndash; 詳細については、以下で説明します。
+- **`Intent.ActionView`** &ndash;これにより、情報を表示する要求に応答するインテントフィルターが登録されます
+- **`Categories`** &ndash;  インテント フィルターは、両方を登録する必要があります **[Intent.CategoryBrowsable](xref:Android.Content.Intent.CategoryBrowsable)** と **[Intent.CategoryDefault](xref:Android.Content.Intent.CategoryDefault)** ができなければ正しくweb の URI を処理します。
+- **`DataScheme`** インテントフィルターでは、 `http` /または`https`を宣言する必要があります。 &ndash; これらは、2つの有効なスキームだけです。
+- **`DataHost`** &ndash;これは、uri の生成元となるドメインです。
+- **`DataPathPrefix`** &ndash;これは、web サイト上のリソースへの省略可能なパスです。
+- **`AutoVerify`** 属性は、アプリケーションと web サイト間の関係を確認するように Android に指示し`autoVerify`ます。 &ndash; 詳細については、以下で説明します。
 
 次の例では、 [intentfilterattribute](xref:Android.App.IntentFilterAttribute)を使用して、と`https://www.recipe-app.com/recipes` `http://www.recipe-app.com/recipes`の間のリンクを処理する方法を示します。
 
@@ -90,9 +90,9 @@ Android 6.0 のアプリリンクを使用するには、アプリケーショ�
 
 デジタル資産ファイルには、Android が関連付けを確認するために必要なメタデータが含まれています。 **Assetlinks**ファイルには、次のキーと値のペアがあります。
 
-* `namespace`&ndash; Android アプリケーションの名前空間。
-* `package_name`&ndash; (アプリケーションマニフェストで宣言されている) Android アプリケーションのパッケージ名。
-* `sha256_cert_fingerprints`&ndash;署名されたアプリケーションの SHA256 指紋。 アプリケーションの SHA1 フィンガープリントを取得する方法の詳細については、「[キーストアの MD5 または Sha1 署名の検索](~/android/deploy-test/signing/keystore-signature.md)」ガイドを参照してください。
+- `namespace`&ndash; Android アプリケーションの名前空間。
+- `package_name`&ndash; (アプリケーションマニフェストで宣言されている) Android アプリケーションのパッケージ名。
+- `sha256_cert_fingerprints`&ndash;署名されたアプリケーションの SHA256 指紋。 アプリケーションの SHA1 フィンガープリントを取得する方法の詳細については、「[キーストアの MD5 または Sha1 署名の検索](~/android/deploy-test/signing/keystore-signature.md)」ガイドを参照してください。
 
 次のスニペットは、1つのアプリケーションが一覧表示された**assetlinks**の例です。
 
@@ -173,9 +173,9 @@ https://digitalassetlinks.googleapis.com/v1/statements:list?source.web.site=
     $ adb shell dumpsys package domain-preferred-apps
     ```
 
-    * **`Package`** &ndash;アプリケーションのパッケージ名。
-    * **`Domain`** &ndash;アプリケーションによって処理される web リンクを持つドメイン (スペース区切り)
-    * **`Status`** &ndash;これは、アプリの現在のリンク処理状態です。 値は**常に**、アプリケーション`android:autoVerify=true`がを宣言し、システムの検証に合格したことを意味します。 その後に、設定の Android システムのレコードを表す16進数が続きます。
+    - **`Package`** &ndash;アプリケーションのパッケージ名。
+    - **`Domain`** &ndash;アプリケーションによって処理される web リンクを持つドメイン (スペース区切り)
+    - **`Status`** &ndash;これは、アプリの現在のリンク処理状態です。 値は**常に**、アプリケーション`android:autoVerify=true`がを宣言し、システムの検証に合格したことを意味します。 その後に、設定の Android システムのレコードを表す16進数が続きます。
 
     例えば:
 

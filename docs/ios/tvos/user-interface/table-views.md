@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 3df0d8f686ec521a55948a9eb4632d77e5c3691f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 42749bf07f3b0239a550e66247fc0377fdc1a0b4
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68652319"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121372"
 ---
 # <a name="working-with-tvos-table-views-in-xamarin"></a>Xamarin での tvOS テーブルビューの使用
 
@@ -162,7 +162,7 @@ TvOS アプリでテーブルビューを操作する最も簡単な方法は、
 
 テーブルビューに表示される情報を使いやすくし、詳細情報を簡単に表示できるようにするには (ユーザーがテーブルビューの行を選択または強調表示したときに)、表示される情報のデータモデルとして機能するカスタムクラスまたはクラスを作成します.
 
-旅行予約アプリの例を見てください。これには、ユーザーが選択できる**アトラクション**の一意のリストを含む**都市**の一覧が含まれています。 ユーザーは、引力を*お気に入り*としてマークすることができます。*引力を選択*し、特定の都市に*フライトを予約*します。
+旅行予約アプリの例を見てください。これには、ユーザーが選択できる**アトラクション**の一意のリストを含む**都市**の一覧が含まれています。 ユーザーは、引力を*お気に入り*としてマークすることができます。引力を選択し、特定の都市に*フライトを予約*します。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -848,7 +848,7 @@ namespace tvTable
 
 また、テーブルビュー (`SplitView``AcctractionTableView`) に変更を反映するために使用する分割ビューコントローラー () に戻るショートカットも定義されています。
 
-最後に、カスタムアクション (イベント) は、インターフェイスデザイナー `UIButton`で作成された3つのインスタンスに追加されました。これにより、ユーザーは引力を_お気に入り_としてマークし、_引力に移動_し、指定されたに_フライトを Book_ことができます。city.
+最後に、カスタムアクション (イベント) は、インターフェイスデザイナー `UIButton`で作成された3つのインスタンスに追加されました。これにより、ユーザーは引力を_お気に入り_としてマークし、引力に移動し、指定されたに_フライトを Book_ことができます。city.
 
 <a name="The-Navigation-View-Controller" />
 
@@ -883,8 +883,8 @@ namespace tvTable
 
 ここでも、このクラスは、分割ビューコントローラーの2つの側での通信を容易にするいくつかのショートカットを定義しています。
 
-* `SplitView`-ナビゲーションビューコントローラーが属している分割ビュー`MainSpiltViewController`コントローラー () へのリンクです。
-* `TableController`-ナビゲーションビューコントローラーの最上位`AttractionTableViewController`ビューとして表示されるテーブルビューコントローラー () を取得します。
+- `SplitView`-ナビゲーションビューコントローラーが属している分割ビュー`MainSpiltViewController`コントローラー () へのリンクです。
+- `TableController`-ナビゲーションビューコントローラーの最上位`AttractionTableViewController`ビューとして表示されるテーブルビューコントローラー () を取得します。
 
 <a name="The-Split-View-Controller" />
 
@@ -949,7 +949,7 @@ TvOS は iOS に基づいているため、テーブルビューとテーブル�
 
 <a name="Summary" />
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
 この記事では、tvOS アプリ内でのテーブルビューの設計と操作について説明しました。 とでは、分割ビュー内でテーブルビューを操作する例を示しています。これは、tvOS アプリでのテーブルビューの一般的な使用方法です。
 

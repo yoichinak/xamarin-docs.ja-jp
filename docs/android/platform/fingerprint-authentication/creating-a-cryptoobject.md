@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 8e5d4cf50874a0976c1dd10e35e7bd84518f14c4
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 03796af880aaef74c2d4b54007ac34ef1c5dc180
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511152"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119837"
 ---
 # <a name="creating-a-cryptoobject"></a>CryptoObject の作成
 
@@ -105,10 +105,10 @@ public class CryptoObjectHelper
 
 Android でキーが無効になる場合があることに注意してください。 
 
-* 新しい指紋がデバイスに登録されました。
-* デバイスに登録されている指紋がありません。
-* ユーザーが画面ロックを無効にしました。
-* ユーザーが画面のロック (screenlock の種類または使用されている PIN/パターン) を変更しました。
+- 新しい指紋がデバイスに登録されました。
+- デバイスに登録されている指紋がありません。
+- ユーザーが画面ロックを無効にしました。
+- ユーザーが画面のロック (screenlock の種類または使用されている PIN/パターン) を変更しました。
 
 これが発生する`Cipher.Init`と、は[`KeyPermanentlyInvalidatedException`](https://developer.android.com/reference/android/security/keystore/KeyPermanentlyInvalidatedException.html)をスローします。 上記のサンプルコードでは、その例外をトラップし、キーを削除して、新しいものを作成します。
 
@@ -122,11 +122,11 @@ Android でキーが無効になる場合があることに注意してくださ
 
 次に`KeyGenParameterSpec` 、を`KeyGenParameterSpec.Builder`使用して、が作成されます。 は`KeyGenParameterSpec.Builder` 、作成されるキーに関する次の情報をラップします。
 
-* キー名。
-* キーは、暗号化と復号化の両方に対して有効である必要があります。
-* サンプルコードでは、 `BLOCK_MODE`は_暗号ブロックチェーン_(`KeyProperties.BlockModeCbc`) に設定されています。つまり、各ブロックは前のブロックと xor されます (各ブロック間の依存関係が作成されます)。 
-* は`CryptoObjectHelper` 、[_公開キー暗号化標準 #7_](https://tools.ietf.org/html/rfc2315) (_PKCS7_) を使用して、ブロックに埋め込まれるバイトを生成し、それらがすべて同じサイズであることを確認します。
-* `SetUserAuthenticationRequired(true)`キーを使用する前に、ユーザー認証が必要であることを意味します。
+- キー名。
+- キーは、暗号化と復号化の両方に対して有効である必要があります。
+- サンプルコードでは、 `BLOCK_MODE`は_暗号ブロックチェーン_(`KeyProperties.BlockModeCbc`) に設定されています。つまり、各ブロックは前のブロックと xor されます (各ブロック間の依存関係が作成されます)。 
+- は`CryptoObjectHelper` 、[_公開キー暗号化標準 #7_](https://tools.ietf.org/html/rfc2315) (_PKCS7_) を使用して、ブロックに埋め込まれるバイトを生成し、それらがすべて同じサイズであることを確認します。
+- `SetUserAuthenticationRequired(true)`キーを使用する前に、ユーザー認証が必要であることを意味します。
 
 を作成した後は、キーを生成し`KeyGenerator`てデバイスに安全に格納するを初期化するために使用されます。 `KeyGenParameterSpec` 
 

@@ -6,19 +6,19 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/03/2018
-ms.openlocfilehash: d5b3f084be7adc664dcb52342af617788f4dde48
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 63f815cc974315735220a99fd4cce2af408a8c2f
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526224"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119045"
 ---
 # <a name="creating-a-service"></a>サービスの作成
 
 Xamarin Android サービスは、次の2つの Android サービスの規則に従う必要があります。
 
-* を[`Android.App.Service`](xref:Android.App.Service)拡張する必要があります。
-* これらは、 [`Android.App.ServiceAttribute`](xref:Android.App.ServiceAttribute)で修飾する必要があります。
+- を[`Android.App.Service`](xref:Android.App.Service)拡張する必要があります。
+- これらは、 [`Android.App.ServiceAttribute`](xref:Android.App.ServiceAttribute)で修飾する必要があります。
 
 Android サービスのもう1つの要件は、ユーザーが**Androidmanifest .xml**に登録され、一意の名前が指定されていることです。 Xamarin Android は、ビルド時に必要な XML 属性を使用してサービスをマニフェストに自動的に登録します。
 
