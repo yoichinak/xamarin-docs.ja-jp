@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 10/19/2016
-ms.openlocfilehash: 777e8d2880313b5a793d6257cc0fd9d8299cb94d
-ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
+ms.openlocfilehash: 4a80b14aeb1517bac1e0d994a606ac4e74b2a94a
+ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51528482"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70065636"
 ---
 # <a name="debugging-a-native-crash-in-a-xamarinmac-app"></a>Xamarin.Mac アプリのネイティブ クラッシュをデバッグする
 
@@ -24,7 +24,7 @@ ms.locfileid: "51528482"
 
 ## <a name="example-1-assertion-failure"></a>例 1: アサーション エラー
 
-単純なテスト アプリケーションで発生するクラッシュ例の最初の数行です (この情報は、**[アプリケーション出力]** に表示されます)。
+単純なテスト アプリケーションで発生するクラッシュ例の最初の数行です (この情報は、 **[アプリケーション出力]** に表示されます)。
 
 ```csharp
 2014-10-15 16:18:02.364 NSOutlineViewHottness[79111:1304993] *** Assertion failure in -[NSTableView _uncachedRectHeightOfRow:], /SourceCache/AppKit/AppKit-1343.13/TableView.subproj/NSTableView.m:1855
@@ -32,17 +32,17 @@ ms.locfileid: "51528482"
 2014-10-15 16:18:02.378 NSOutlineViewHottness[79111:1304993] *** Assertion failure in -[NSTableView _uncachedRectHeightOfRow:], /SourceCache/AppKit/AppKit-1343.13/TableView.subproj/NSTableView.m:1855
 2014-10-15 16:18:02.378 NSOutlineViewHottness[79111:1304993] NSTableView variable rowHeight error: The value must be > 0 for row 0, but the delegate <NSOutlineViewHottness_HotnessViewDelegate: 0xaa01860> gave -1.000.
 2014-10-15 16:18:02.381 NSOutlineViewHottness[79111:1304993] (
-    0   CoreFoundation                      0x91888343 __raiseError + 195
-    1   libobjc.A.dylib                     0x9a5e6a2a objc_exception_throw + 276
-    2   CoreFoundation                      0x918881ca +[NSException raise:format:arguments:] + 138
-    3   Foundation                          0x950742b1 -[NSAssertionHandler handleFailureInMethod:object:file:lineNumber:description:] + 118
-    4   AppKit                              0x975db476 -[NSTableView _uncachedRectHeightOfRow:] + 373
-    5   AppKit                              0x975db2f8 -[_NSTableRowHeightStorage _uncachedRectHeightOfRow:] + 143
-    6   AppKit                              0x975db206 -[_NSTableRowHeightStorage _cacheRowHeights] + 167
-    7   AppKit                              0x975db130 -[_NSTableRowHeightStorage _createRowHeightsArray] + 226
-    8   AppKit                              0x975b5851 -[_NSTableRowHeightStorage _ensureRowHeights] + 73
-    9   AppKit                              0x975b5790 -[_NSTableRowHeightStorage computeTableHeightForNumberOfRows:] + 89
-    10  AppKit                              0x975b4c38 -[NSTableView _totalHeightOfTableView] + 220
+  0   CoreFoundation                      0x91888343 __raiseError + 195
+  1   libobjc.A.dylib                     0x9a5e6a2a objc_exception_throw + 276
+  2   CoreFoundation                      0x918881ca +[NSException raise:format:arguments:] + 138
+  3   Foundation                          0x950742b1 -[NSAssertionHandler handleFailureInMethod:object:file:lineNumber:description:] + 118
+  4   AppKit                              0x975db476 -[NSTableView _uncachedRectHeightOfRow:] + 373
+  5   AppKit                              0x975db2f8 -[_NSTableRowHeightStorage _uncachedRectHeightOfRow:] + 143
+  6   AppKit                              0x975db206 -[_NSTableRowHeightStorage _cacheRowHeights] + 167
+  7   AppKit                              0x975db130 -[_NSTableRowHeightStorage _createRowHeightsArray] + 226
+  8   AppKit                              0x975b5851 -[_NSTableRowHeightStorage _ensureRowHeights] + 73
+  9   AppKit                              0x975b5790 -[_NSTableRowHeightStorage computeTableHeightForNumberOfRows:] + 89
+  10  AppKit                              0x975b4c38 -[NSTableView _totalHeightOfTableView] + 220
 ```
 
 先頭に数値が付いている行がネイティブ スタック トレースです。 ここから、行の高さを処理する `NSTableView` 内のどこかでクラッシュが発生したことがわかります。 `NSAssertionHandler` から `NSException (objc_exception_throw)` が生成され、アサーション エラーが表示されます。
@@ -134,7 +134,7 @@ mainWindowController.Window.StandardWindowButton (NSWindowButton.CloseButton).Ac
 
 この問題の根本原因ではありませんが、このようなスタック トレースは、関数 `[Export]` で不適切なメソッド シグネチャが Objective-C にエクスポートされることで発生する可能性があります。 たとえば、メソッドが `out string` というパラメーターを想定している場合、`string` と入力すると、同じようにクラッシュする可能性があります。
 
-## <a name="example-3-callbacks-and-managed-objects"></a>例 3: コールバックとマネージド オブジェクト
+## <a name="example-3-callbacks-and-managed-objects"></a>例 3:コールバックとマネージド オブジェクト
 
 多くの Cocoa API では、何らかのイベントが発生して応答する機会が必要なときや、タスクの実行に何らかのデータが必要なときに、ライブラリによって "コールバック" が発生します。 主に **Delegate** と **DataSource** のパターンが考えられるかもしれませんが、このような動作の API は多数あります。 たとえば、`NSView` のメソッドをオーバーライドしてビジュアル ツリーに挿入すると、特定のイベントが発生したときに AppKit からコールバックされると考えられます。
 

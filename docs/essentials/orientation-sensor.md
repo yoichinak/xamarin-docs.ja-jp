@@ -1,18 +1,18 @@
 ---
-title: 'Xamarin.Essentials: OrientationSensor'
+title: Xamarin.Essentials:OrientationSensor
 description: OrientationSensor クラスでは、3 次元空間内のデバイスの向きを監視できます。
 ms.assetid: F3091D93-E779-41BA-8696-23D296F2F6F5
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: f1fceaef93e7ac30bbbe0f13da7dde3cde5275fd
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.openlocfilehash: 5423872da7966bc7e4bb88e278d76b709f114158
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52898671"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120715"
 ---
-# <a name="xamarinessentials-orientationsensor"></a>Xamarin.Essentials: OrientationSensor
+# <a name="xamarinessentials-orientationsensor"></a>Xamarin.Essentials:OrientationSensor
 
 **OrientationSensor** クラスでは、3 次元空間内のデバイスの向きを監視できます。
 
@@ -98,13 +98,13 @@ public class OrientationSensorTest
 
 次に例を示します。
 
-* デバイスが画面を上に向けてテーブルの上に平らに置かれ、デバイスの上部 (縦向きモード) が北を指している場合、2 つの座標系は揃っています。 `Quaternion` の値は単位四元数 (0, 0, 0, 1) を示します。 すべての回転は、この位置を基準として分析できます。
+- デバイスが画面を上に向けてテーブルの上に平らに置かれ、デバイスの上部 (縦向きモード) が北を指している場合、2 つの座標系は揃っています。 `Quaternion` の値は単位四元数 (0, 0, 0, 1) を示します。 すべての回転は、この位置を基準として分析できます。
 
-* デバイスが画面を上に向けてテーブルの上に平らに置かれ、デバイスの上部 (縦向きモード) が西を指している場合、`Quaternion` の値は (0, 0, 0.707, 0.707) になります。 デバイスは、地球の Z 軸の周りを 90 度回転しています。
+- デバイスが画面を上に向けてテーブルの上に平らに置かれ、デバイスの上部 (縦向きモード) が西を指している場合、`Quaternion` の値は (0, 0, 0.707, 0.707) になります。 デバイスは、地球の Z 軸の周りを 90 度回転しています。
 
-* デバイスの上部 (縦向きモード) が空を指すようにデバイスが垂直に固定され、デバイスの背面が北を向いている場合、デバイスは X 軸の周りを 90 度回転しています。 `Quaternion` の値は (0.707, 0, 0, 0.707) です。
+- デバイスの上部 (縦向きモード) が空を指すようにデバイスが垂直に固定され、デバイスの背面が北を向いている場合、デバイスは X 軸の周りを 90 度回転しています。 `Quaternion` の値は (0.707, 0, 0, 0.707) です。
 
-* デバイスの左端がテーブルに付くようにデバイスが置かれ、上部が北を指している場合、デバイスは Y 軸の周りを &ndash;90 度 (または、負の Y 軸の周りを 90 度) 回転しています。 `Quaternion` の値は (0, -0.707, 0, 0.707) です。
+- デバイスの左端がテーブルに付くようにデバイスが置かれ、上部が北を指している場合、デバイスは Y 軸の周りを &ndash;90 度 (または、負の Y 軸の周りを 90 度) 回転しています。 `Quaternion` の値は (0, -0.707, 0, 0.707) です。
 
 [!include[](~/essentials/includes/sensor-speed.md)]
 

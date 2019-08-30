@@ -4,13 +4,13 @@ description: このドキュメントは、Xamarin.Essentials について説明
 ms.assetid: 4EDC9897-5FD1-44CA-A26D-2E5AB472C99A
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: 08f97263ccb5b4c91a541d06534e82aaaebbae1e
-ms.sourcegitcommit: 64d6da88bb6ba222ab2decd2fdc8e95d377438a6
+ms.date: 08/27/2019
+ms.openlocfilehash: 2101d2e3948cb917e62725731c4895cc57282b3b
+ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58175396"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70065135"
 ---
 # <a name="xamarinessentials"></a>Xamarin.Essentials
 
@@ -34,7 +34,7 @@ Android、iOS、UWP では独自のオペレーティング システムとプ�
 * [色の変換機能](color-converters.md?context=xamarin/xamarin-forms) – System.Drawing.Color のヘルパー メソッド。
 * [コンパス](compass.md?context=xamarin/xamarin-forms) – 変化のコンパスを監視します。
 * [接続](connectivity.md?context=xamarin/xamarin-forms) – 接続状態を確認し、変更を検出します。
-* [シェイクの検出](detect-shake.md?context=xamarin/xamarin-forms) – デバイスを振る動きを検出します。
+* [Detect Shake](detect-shake.md?context=xamarin/xamarin-forms) – デバイスを振る動きを検出します。
 * [デバイス ディスプレイ情報](device-display.md?context=xamarin/xamarin-forms) – デバイスの画面のメトリックと向きを取得します。
 * [デバイス情報](device-information.md?context=xamarin/xamarin-forms) – デバイスの詳細を簡単に確認します。
 * [電子メール](email.md?context=xamarin/xamarin-forms) – 電子メール メッセージを簡単に送信します。
@@ -63,6 +63,10 @@ Android、iOS、UWP では独自のオペレーティング システムとプ�
 ## <a name="troubleshootingtroubleshootingmdcontextxamarinxamarin-forms"></a>[トラブルシューティング](troubleshooting.md?context=xamarin/xamarin-forms)
 
 問題が発生する場合は、ヘルプを検索してください。
+
+## <a name="release-noteshttpsdocsmicrosoftcomxamarinessentialsrelease-notes"></a>[リリース ノート](https://docs.microsoft.com/xamarin/essentials/release-notes/)
+
+Xamarin.Essentials の各リリースの完全なリリースノートを見つけてください。
 
 ## <a name="api-documentationxrefxamarinessentials"></a>[API ドキュメント](xref:Xamarin.Essentials)
 

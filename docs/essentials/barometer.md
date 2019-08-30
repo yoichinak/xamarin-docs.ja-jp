@@ -1,20 +1,20 @@
 ---
-title: 'Xamarin.Essentials: バロメーター'
-description: Xamarin.Essentials の Barometer クラスを使用すると、気圧を測定するデバイスのバロメーター センサーを監視できます。
+title: Xamarin.Essentials:バロメーター
+description: Xamarin.Essentials の Barometer クラスを使用すると、負荷を測定するデバイスのバロメーター センサーを監視できます。
 ms.assetid: DA4F968A-D988-41F5-8745-1BEE693660A1
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: 342ae1b64fefebaa4b3fa82e9f48c6e9a58d4751
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.openlocfilehash: 5a496fc06732be1cf104cfbaffa8ff4b68c8f564
+ms.sourcegitcommit: 1341f2950b775a4daa7d0548a51fdef759afd6e3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52899045"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69976434"
 ---
-# <a name="xamarinessentials-barometer"></a>Xamarin.Essentials: バロメーター
+# <a name="xamarinessentials-barometer"></a>Xamarin.Essentials:バロメーター
 
-**Barometer** クラスを使用すると、気圧を測定するデバイスのバロメーター センサーを監視できます。
+**Barometer** クラスを使用すると、負荷を測定するデバイスのバロメーター センサーを監視できます。
 
 ## <a name="get-started"></a>作業開始
 
@@ -22,13 +22,13 @@ ms.locfileid: "52899045"
 
 ## <a name="using-barometer"></a>バロメーターの使用
 
-自分のクラスに Xamarin.Essentials への参照を追加します。
+自分のクラスの Xamarin.Essentials に参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-バロメーターの機能は、`Start` および `Stop` メソッドを呼び出し、バロメーターの気圧の読み取り値の変化をヘクトパスカル単位でリッスンすることで動作します。 すべての変更は `ReadingChanged` イベントを通じて戻されます。 以下がサンプルの使用方法です。
+バロメーターの機能は、`Start` および `Stop` メソッドを呼び出し、バロメーターの負荷の読み取り値の変化をヘクトパスカル単位でリッスンすることで動作します。 すべての変更は `ReadingChanged` イベントを通じて戻されます。 以下がサンプルの使用方法です。
 
 ```csharp
 
@@ -82,6 +82,8 @@ public class BarometerTest
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
 この API では [CMAltimeter](https://developer.apple.com/documentation/coremotion/cmaltimeter#//apple_ref/occ/cl/CMAltimeter) を使用して気圧の変化を監視します。これは、iPhone 6 以降のデバイスに追加されたハードウェアの機能です。 高度計をサポートしていないデバイスの場合は、`FeatureNotSupportedException` がスローされます。
+
+`SensorSpeed` は、iOS ではサポートされていないため、使用されません。
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 

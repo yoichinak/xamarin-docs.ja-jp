@@ -1,18 +1,18 @@
 ---
-title: 'Xamarin.Essentials: MainThread'
+title: Xamarin.Essentials:MainThread
 description: MainThread クラスを使用すると、アプリケーションでコードをメインの実行スレッドで実行させることができます。
 ms.assetid: CD6D51E7-D933-4FE7-A7F7-392EF27812E1
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: 7ec1420d87c898f63614eb6d980c28834e980afd
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.date: 08/20/2019
+ms.openlocfilehash: 9109e7bff4cfe60479e711240d290d77b60a9af6
+ms.sourcegitcommit: 9a46ee759ec4a738da348e8f8904d0f482ef0f25
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52899006"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70060122"
 ---
-# <a name="xamarinessentials-mainthread"></a>Xamarin.Essentials: MainThread
+# <a name="xamarinessentials-mainthread"></a>Xamarin.Essentials:MainThread
 
 **MainThread** クラスを使用すると、アプリケーションでコードを実行のメイン スレッドで実行させたり、コードの特定のブロックがメイン スレッドで現在実行中であるかどうかを調べたりすることができます。
 
@@ -93,6 +93,18 @@ else
 コードのブロックが既にメイン スレッドで実行されている場合、このチェックによってパフォーマンスが向上するのではないかと思うかもしれません。
 
 _しかし、このチェックは必要ではありません。_ プラットフォームによる `BeginInvokeOnMainThread` の実装自体によって、呼び出しがメイン スレッドで行われたかどうかが確認されます。 不要な `BeginInvokeOnMainThread` を呼び出す場合のパフォーマンスの低下はごくわずかです。
+
+## <a name="additional-methods"></a>他の方法
+
+`MainThread` クラスには、他にも次に示す `static` メソッドが含まれています。これらのメソッドを使用すれば、バックグラウンド スレッドからユーザー インターフェイス要素とやりとりすることができます。
+
+| メソッド | 引数 | 戻り値 | 目的 |
+|---|---|---|---|
+| `InvokeOnMainThreadAsync<T>` | `Func<T>` | `Task<T>` | メイン スレッド上で `Func<T>` を呼び出し、それが完了するまで待機します。 |
+| `InvokeOnMainThreadAsync` | `Action` | `Task` | メイン スレッド上で `Action` を呼び出し、それが完了するまで待機します。 |
+| `InvokeOnMainThreadAsync<T>`| `Func<Task<T>>` | `Task<T>` | メイン スレッド上で `Func<Task<T>>` を呼び出し、それが完了するまで待機します。 |
+| `InvokeOnMainThreadAsync` | `Func<Task>` | `Task` | メイン スレッド上で `Func<Task>` を呼び出し、それが完了するまで待機します。 |
+| `GetMainThreadSynchronizationContextAsync` | | `Task<SynchronizationContext>` | メイン スレッドの `SynchronizationContext` を返します。 |
 
 ## <a name="api"></a>API
 
