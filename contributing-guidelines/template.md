@@ -8,12 +8,12 @@ ms.date: 02/26/2018
 ms.topic: conceptual
 ms.assetid: 11111111-2222-3333-4444-555555555555
 ms.prod: xamarin
-ms.openlocfilehash: eac7d316b65b57231d2fc25ef6b859293650d3f8
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.openlocfilehash: e4c8e404f447dd88b338123335a291bc9f23e449
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "53709616"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119015"
 ---
 # <a name="metadata-and-markdown-template"></a>メタデータとマークダウン テンプレート
 
@@ -65,12 +65,12 @@ ms.custom: Analytics data, a field that gets imported into SkyEye so you can use
 ## <a name="file-name"></a>ファイル名
 
 ファイル名には次の規則を使用します。
-* 小文字、数字、ハイフンのみを使用する。
-* スペースや句読点を使用しない。 ハイフンを使用して、ファイル名の単語と数字を区切る。
-* develop (開発)、buy (購入)、build (ビルド)、troubleshoot (トラブルシューティング) など、具体的な動作動詞を使用する。 -ing 形の語は使用しません。
-* 小さな単語を使用しない。a、and、the、in、or などは含めません。
-* マークダウンで記述し、.md ファイル拡張子を使用する必要がある。
-* ファイル名を極力短くする。 記事の URL の一部となるためです。
+- 小文字、数字、ハイフンのみを使用する。
+- スペースや句読点を使用しない。 ハイフンを使用して、ファイル名の単語と数字を区切る。
+- develop (開発)、buy (購入)、build (ビルド)、troubleshoot (トラブルシューティング) など、具体的な動作動詞を使用する。 -ing 形の語は使用しません。
+- 小さな単語を使用しない。a、and、the、in、or などは含めません。
+- マークダウンで記述し、.md ファイル拡張子を使用する必要がある。
+- ファイル名を極力短くする。 記事の URL の一部となるためです。
 
 
 
