@@ -6,12 +6,12 @@ ms.assetid: 8A832A76-A770-1A7C-24BA-B3E6F57617A0
 author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: 667a3726a2d214c9e33e20a73f629c9ca532eab1
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 36b5ace881ba8f7fb45fef9d0350ffca67e0c951
+ms.sourcegitcommit: 21182d07d4bbddc26cd36f1c5b86b79011f6984a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70120474"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70169263"
 ---
 # <a name="binding-objective-c-libraries"></a>バインディングの目的 C ライブラリ
 
@@ -325,7 +325,7 @@ IntPtr Constructor (CGRect frame);
 
 ### <a name="binding-protocols"></a>プロトコルのバインド
 
-API の設計ドキュメントで説明されているように、[モデルとプロトコルの説明](~/ios/internals/api-design/index.md#Models)に関するセクションでは、Xamarin. iOS は、目的の C プロトコルを、[`[Model]`](~/cross-platform/macios/binding/binding-types-reference.md#ModelAttribute)
+API の設計ドキュメントで説明されているように、[モデルとプロトコルの説明](~/ios/internals/api-design/index.md#models)に関するセクションでは、Xamarin. iOS は、目的の C プロトコルを、[`[Model]`](~/cross-platform/macios/binding/binding-types-reference.md#ModelAttribute)
 属性. これは通常、目的の C デリゲートクラスを実装するときに使用されます。
 
 通常のバインドされたクラスとデリゲートクラスの大きな違いは、デリゲートクラスには1つ以上のオプションのメソッドがある場合があるということです。
@@ -1404,4 +1404,3 @@ Xamarin. iOS v2.0 では、 [`[Model]`](~/cross-platform/macios/binding/binding-
 ## <a name="related-links"></a>関連リンク
 
 - [バインディングのサンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/bindingsample/)
- 
