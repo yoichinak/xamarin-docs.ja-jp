@@ -6,34 +6,34 @@ ms.assetid: D61CC966-1D4A-49A5-8A6F-41572E28329B
 author: asb3993
 ms.author: amburns
 ms.date: 05/08/2018
-ms.openlocfilehash: 7cb802dd60d4e4879a260ff56d4f94ea5acb2965
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 49f0e57af1ad6b6e0f322eb9865ba99db4dd47ec
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61356891"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70199902"
 ---
 # <a name="missing-packages-error-after-updating-nuget-packages"></a>Nuget パッケージを更新した後の不足しているパッケージのエラー
 
-この問題は、Xamarin.Forms サンプル アプリのソリューションで主に報告されていますが、この問題が発生する可能性が NuGet パッケージを使用するプロジェクトで発生することができます。 
+この問題は、主に Xamarin. Forms サンプルアプリソリューションで報告されていますが、この問題の可能性は、NuGet パッケージを使用するプロジェクトで発生する可能性があります。
 
-プロジェクトまたはソリューションの Nuget パッケージを更新した場合は、エラーなど、古いパッケージのバージョン番号の参照を参照してください。
+プロジェクトまたはソリューションで Nuget パッケージを更新した後、古いパッケージのバージョン番号を参照するエラーが表示されます。次に例を示します。
 
 ```csharp
 Error: This project references NuGet package(s) that are missing on this computer.
-Enable NuGet Package Restore to download them.  
+Enable NuGet Package Restore to download them.
 For more information, see http://go.microsoft.com/fwlink/?LinkID=322105
 
 The missing file is ../../packages/Xamarin.Forms.1.3.1.6296/build/portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10/Xamarin.Forms.targets. (FormsGallery)
 ```
 
-この例では*Xamarin.Forms.1.3.1.6296* Nuget パッケージの更新で削除された古いバージョン番号です。
+この例では、 *1.3.1.6296*は Nuget パッケージの更新で削除された古いバージョン番号です。
 
-これは、古いパッケージのバージョン番号を参照する .csproj ファイルの XML 要素が手動で追加した場合に発生することができますか、編集、Nuget はいない削除または更新していた場合を手動で追加/編集、プロジェクトを今すぐパッケージを探して、削除されます。 
+これは、古いパッケージのバージョン番号を参照している .csproj ファイル内の XML 要素が手動で追加または編集された場合に発生する可能性があります。手動で追加または編集された場合、Nuget は削除または更新されないので、プロジェクトは削除.
 
-この問題を解決するには、手動で .csproj ファイルを編集し、すべての以前のバージョン番号を参照する要素を削除します。 
+この問題を解決するには、.csproj ファイルを手動で編集し、以前のバージョン番号を参照するすべての要素を削除します。
 
-(古いパッケージのバージョン番号がある) 場合、削除する要素をサンプル:
+削除するサンプル要素 (パッケージのバージョン番号が古い場合):
 
 ```xml
 <Reference Include="Xamarin.Forms.Maps">

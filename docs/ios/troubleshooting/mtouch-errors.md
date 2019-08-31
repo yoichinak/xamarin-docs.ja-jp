@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/06/2018
-ms.openlocfilehash: d75f46f8b06ef0e743218d5f42d5b2732b6e4158
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: aa8f25af4a394b981fdc7d5dc5a8836b7ff240cc
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70120971"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70200265"
 ---
 # <a name="xamarinios-errors"></a>Xamarin. iOS エラー
 
@@ -2506,7 +2506,7 @@ class MyImports {
 - を実行`csharp -e 'System.Net.Dns.GetHostEntry (System.Net.Dns.GetHostName ()).AddressList'`してみてください (つまり、IP アドレスを指定する必要がありますが、間違いはありません)。
 - "ping \`hostname\`" を実行してみてください。これにより、次のような詳細情報が得られます。`cannot resolve MyHost.local: Unknown host`
 
-場合によっては、"ローカルネットワーク" の問題であり、で`127.0.0.1   MyHost.local` `/etc/hosts`不明なホストを追加することによって対処できます。
+場合によっては、"ローカルネットワーク" の問題であり、で`127.0.0.1    MyHost.local` `/etc/hosts`不明なホストを追加することによって対処できます。
 
 <a name="MT7002" />
 

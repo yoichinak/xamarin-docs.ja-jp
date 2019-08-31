@@ -1,73 +1,73 @@
 ---
-title: Xamarin.Mac のアーキテクチャ
-description: このガイドでは、低レベルでは、OBJECTIVE-C を Xamarin.Mac との関係について説明します。 これには、コンパイル、セレクター、レジストラー、アプリの起動、およびコード ジェネレーターなどの概念について説明します。
+title: Xamarin. Mac アーキテクチャ
+description: このガイドでは、Xamarin の Mac と、下位レベルの目標 C との関係について説明します。 ここでは、コンパイル、セレクター、レジストラー、アプリの起動、ジェネレーターなどの概念について説明します。
 ms.prod: xamarin
 ms.assetid: 74D1FF57-4F2A-4646-8669-003DE99671D4
 ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 04/12/2017
-ms.openlocfilehash: 1ea38b527acaa89b9f25690de4e55664a7afd9e8
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 61a5757c20f3a39df583bda10a11145e04560bf8
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61034154"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70198210"
 ---
-# <a name="xamarinmac-architecture"></a>Xamarin.Mac のアーキテクチャ
+# <a name="xamarinmac-architecture"></a>Xamarin. Mac アーキテクチャ
 
-_このガイドでは、低レベルでは、OBJECTIVE-C を Xamarin.Mac との関係について説明します。これには、コンパイル、セレクター、レジストラー、アプリの起動、およびコード ジェネレーターなどの概念について説明します。_
+_このガイドでは、Xamarin の Mac と、下位レベルの目標 C との関係について説明します。ここでは、コンパイル、セレクター、レジストラー、アプリの起動、ジェネレーターなどの概念について説明します。_
 
 ## <a name="overview"></a>概要
 
-Xamarin.Mac アプリケーションでは、Mono 実行環境内で実行され、Xamarin のコンパイラはジャスト-タイム (JIT) 実行時にネイティブ コードにコンパイルし、中間言語 (IL) までのコンパイルを使用しています。 サイド バイ サイドで実行、OBJECTIVE-C ランタイム。 両方のランタイム環境では、UNIX ライクなカーネル、XNU 具体的には、上で動作し、基になるネイティブまたはマネージ システムにアクセスでき、ユーザー コードにさまざまな Api を公開します。
+Xamarin アプリケーションは Mono 実行環境内で実行され、Xamarin のコンパイラを使用して中間言語 (IL) にコンパイルされます。これは、実行時にネイティブコードにコンパイルされます。 これは、目的 C ランタイムとサイドバイサイドで実行されます。 どちらのランタイム環境も、UNIX のようなカーネル (具体的には XNU) 上で実行され、さまざまな Api をユーザーコードに公開して、開発者が基になるネイティブシステムまたはマネージシステムにアクセスできるようにします。
 
-次の図は、このアーキテクチャの基本的な概要を示します。
+次の図は、このアーキテクチャの基本的な概要を示しています。
 
 [![アーキテクチャの基本的な概要を示す図](architecture-images/mac-arch.png "アーキテクチャの基本的な概要を示す図")](architecture-images/mac-arch-large.png#lightbox)
 
-### <a name="native-and-managed-code"></a>ネイティブおよびマネージ コード
+### <a name="native-and-managed-code"></a>ネイティブコードとマネージコード
 
-Xamarin を開発するときに、用語*ネイティブ*と*管理*コードはよく使用されます。 マネージ コードが .NET Framework 共通言語ランタイム、または Xamarin のケースで管理の実行には: Mono ランタイム。
+Xamarin 用に開発する場合、*ネイティブ*コードと*マネージ*コードという用語がよく使用されます。 マネージコードは、.NET Framework 共通言語ランタイム、または Xamarin のケース (Mono ランタイム) によって管理される実行を持つコードです。
 
-ネイティブ コードとは、（例として、　Objective-C はもちろん、ARM チップ上で、AOT コンパイルされたコードも含む）特定のプラットフォームでネイティブに実行されるコードです。 このガイドは、マネージ コードが、ネイティブ コードにコンパイルされ、Xamarin.Mac アプリケーションの動作方法について説明しますもアクセスすることができますが、バインドを使用して Apple の Mac Api の使用について説明します。NET の BCL となどの高度な言語C#します。
+ネイティブ コードとは、（例として、　Objective-C はもちろん、ARM チップ上で、AOT コンパイルされたコードも含む）特定のプラットフォームでネイティブに実行されるコードです。 このガイドでは、マネージコードがどのようにネイティブコードにコンパイルされるかについて説明し、Xamarin アプリケーションの動作のしくみについて説明します。また、バインディングを使用して Apple の Mac Api を完全に使用し、にもアクセスできるようにします。NET の BCL となどの高度な言語C#。
 
 ## <a name="requirements"></a>必要条件
 
 Xamarin.Mac を使って macOS アプリケーションを開発するには、以下のものが必要です。
 
-- Mac の実行中 macOS Sierra (10.12) 以降。
-- 最新バージョンの Xcode (からインストールされている、 [App Store](https://itunes.apple.com/us/app/xcode/id497799835?mt=12))
-- Xamarin.Mac と Visual Studio for Mac の最新バージョン
+- MacOS Sierra (10.12) 以上を実行している Mac。
+- 最新バージョンの Xcode ( [App Store](https://itunes.apple.com/us/app/xcode/id497799835?mt=12)からインストールされます)
+- 最新バージョンの Xamarin. Mac と Visual Studio for Mac
 
 Xamarin.Mac で作成された Mac アプリケーションを実行するには、次のシステム要件があります。
 
-- X 10.7 以上を Mac OS を実行している Mac。
+- 10.7 以上の Mac OS X 実行されている Mac。
 
 ## <a name="compilation"></a>コンパイル
 
-Mono、Xamarin プラットフォーム アプリケーションをコンパイルするときにC#(またはF#) コンパイラが実行され、コンパイルは、C#とF#に Microsoft Intermediate Language (MSIL または IL) コード。 Xamarin.Mac を使用して、 *Just in Time (JIT)* 時、必要に応じて、適切なアーキテクチャでの実行を許可する、ネイティブ コードをコンパイルするのにはコンパイラ。
+Xamarin platform アプリケーションをコンパイルするC#と、Mono (またはF#) コンパイラが実行され、 C#とF#コードが Microsoft 中間言語 (MSIL または IL) にコンパイルされます。 次に、実行時に*ジャストインタイム (JIT)* コンパイラを使用してネイティブコードをコンパイルし、必要に応じて適切なアーキテクチャで実行できるようにします。
 
-これは、AOT コンパイルを使用する Xamarin.iOS とは対照的です。 AOT コンパイラを使用する場合、すべてのアセンブリとそれらに含まれるすべてのメソッドは、ビルド時にコンパイルされます。 、JIT でコンパイルにのみ実行されるメソッドの要求時に発生します。
+これは、AOT コンパイルを使用する Xamarin とは対照的です。 AOT コンパイラを使用する場合、すべてのアセンブリとその中のすべてのメソッドがビルド時にコンパイルされます。 JIT では、コンパイルは、実行されたメソッドに対してのみ要求時に行われます。
 
-Mono は通常、アプリ バンドルに埋め込ま、Xamarin.Mac アプリケーションで (と呼ばれます**埋め込み Mono**)。 クラシックの Xamarin.Mac API を使用する場合、アプリケーションを使用して、でした代わりに**システム Mono**、ただし、これではサポートされず、Unified API。 システムの Mono は、オペレーティング システムにインストールされている Mono を指します。 アプリケーションの起動時には、Xamarin.Mac アプリはこれで使用されます。
+Xamarin アプリケーションでは、Mono は通常、アプリバンドルに埋め込まれます ("**埋め込み mono**" と呼ばれます)。 従来の Xamarin. Mac API を使用する場合、アプリケーションは**システム Mono**を使用することができますが、これは Unified API ではサポートされていません。 システム Mono とは、オペレーティングシステムにインストールされている Mono を指します。 アプリケーションの起動時に、Xamarin アプリケーションはこれを使用します。
 
 ## <a name="selectors"></a>セレクター
 
-Xamarin では、.NET と Apple の 2 つの独立したエコシステムがあり、最終目標であるスムーズなユーザー エクスペリエンスを実現するために、.NET と Apple を出来るだけシームレスに見えるように結びつける必要があります。 2 つのランタイムが通信する方法、上のセクションで説明した、非常にうまくの用語 'バインド' により、Xamarin で使用されるネイティブの Mac Api 聞いたかもしれませんが。 バインドがで詳しく説明した、 [OBJECTIVE-C バインディング ドキュメント](~/mac/platform/binding.md)ここでは、ため、内部的には、Xamarin.Mac のしくみを見てみましょう。
+Xamarin では、.NET と Apple の 2 つの独立したエコシステムがあり、最終目標であるスムーズなユーザー エクスペリエンスを実現するために、.NET と Apple を出来るだけシームレスに見えるように結びつける必要があります。 上記のセクションでは、2つのランタイムが通信する方法について説明しました。また、ネイティブ Mac Api を Xamarin で使用できるようにする "バインド" という用語についてもよく知られています。 バインディングの詳細については、 [C のバインドに関するドキュメント](~/mac/platform/binding.md)で説明します。そのため、ここでは、Xamarin. Mac が内部でどのように機能するかを見てみましょう。
 
-最初に、OBJECTIVE-C を公開する方法がありますがC#、これは、セレクターを使用して行われます。 セレクターは、オブジェクトまたはクラスに送信されるメッセージです。 Objective C を使用してこれには、 [objc_msgSend](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ObjCRuntimeRef/index.html)関数。 セレクターの使用に関する詳細については、iOS を参照してください[OBJECTIVE-C セレクター](~/ios/internals/objective-c-selectors.md)ガイド。 Objective C をマネージ コードについて何も知らないという事実が原因でより複雑なある OBJECTIVE-C では、マネージ コードを公開する方法もありますがあります。 これを回避するには、使用して、[レジストラー](~/mac/internals/registrar.md)します。 これは、次のセクションで詳しく説明します。
+まず、セレクターを使用して、目的の C をにC#公開する方法が必要です。 セレクターは、オブジェクトまたはクラスに送信されるメッセージです。 目標 C では、 [objc_msgSend](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ObjCRuntimeRef/index.html)関数を使用します。 セレクターの使用方法の詳細については、「iOS の[目標 C セレクター](~/ios/internals/objective-c-selectors.md)ガイド」を参照してください。 また、マネージコードを目的の C に公開する方法が必要です。これは、目的の C でマネージコードについて何も知られていないことが原因で、より複雑になります。 この問題を回避するには、[レジストラー](~/mac/internals/registrar.md)を使用します。 詳細については、次のセクションで説明します。
 
 ## <a name="registrar"></a>レジストラー
 
-レジストラーが OBJECTIVE-C にその公開のマネージ コードのコードで前述したように、 これは、NSObject から派生したすべてのマネージ クラスのリストを作成します。
+前述のように、レジストラーはマネージコードを目的の C に公開するコードです。 これを行うには、NSObject から派生したすべてのマネージクラスのリストを作成します。
 
-- Objective C のメンバーを持つすべての管理対象メンバーのミラーリングと新しい Objective C クラスを作成、既存の OBJECTIVE-C クラスがラップされていないすべてのクラスを`[Export]`属性。
-- – Objective C の各メンバーの実装では、ミラー化された管理対象のメンバーを呼び出す、コードが自動的に追加します。
+- 既存の目的 c クラスをラップしていないすべてのクラスに対して、属性を`[Export]`持つすべてのマネージメンバーをミラーリングする目的の c メンバーを持つ新しい目標 c クラスを作成します。
+- Objective-C の各メンバーの実装では、ミラー化されたマネージ メンバーを呼び出すためのコードが自動的に追加されます。
 
-次の擬似コードでは、これを行う方法の例を示します。
+次の擬似コードは、その方法の例を示しています。
 
-**C#(マネージ コード):**
+**C#(マネージコード):**
 
 ```csharp
 class MyViewController : UIViewController{
@@ -78,7 +78,7 @@ class MyViewController : UIViewController{
  }
  ```
 
-**Objective C (ネイティブ コード):**
+**目的-C (ネイティブコード):**
 
 ```objc
 @interface MyViewController : UIViewController
@@ -92,65 +92,65 @@ class MyViewController : UIViewController{
 @end
 ```
 
-マネージ コードは、属性を含めることができます`[Register]`と`[Export]`レジストラーを使用して、オブジェクトを OBJECTIVE-C に公開される必要があることを確認するには [レジスタ] 属性は、生成された既定の名前が適していない場合に生成された OBJECTIVE-C クラスの名前を指定に使用されます。 NSObject から派生したすべてのクラスは、OBJECTIVE-C と自動的に登録します。 [エクスポート] の必須の属性には、文字列で、生成された OBJECTIVE-C のクラスで使用されるセレクターが含まれています。
+マネージコードには、オブジェクトを目的`[Register]`の`[Export]`C に公開する必要があることをレジストラーが認識するために使用する属性、およびを含めることができます。 既定の生成された名前が適切でない場合に備えて、生成された目的の C クラスの名前を指定するには、[Register] 属性を使用します。 NSObject から派生したすべてのクラスは、自動的にに登録されます。 必須の [Export] 属性には、生成された目的 C クラスで使用されるセレクターである文字列が含まれています。
 
-動的および静的 – Xamarin.Mac で使用されているレジストラーの 2 種類あります。
+Xamarin では、動的と静的の2種類のレジストラーが使用されています。
 
-- 動的なレジストラー – これは、すべての Xamarin.Mac ビルドの既定のレジストラーです。 動的なレジストラーでは、実行時に、アセンブリ内のすべての種類の登録を行います。 この機能を使用するには、OBJECTIVE-C のランタイム API によって提供される関数を使用します。 したがって、動的なレジストラーには、低速スタートアップより高速なが、ビルド時間があります。 領域と呼ばれます (通常は C) でネイティブ関数は、動的なレジストラーを使用する場合、メソッドの実装として使用されます。 これらは、さまざまなアーキテクチャとは異なります。
-- 静的レジストラー – 静的レジストラーでは、スタティック ライブラリにコンパイルされ、実行可能ファイルにリンクされていると、ビルド中に OBJECTIVE-C コードを生成します。 これにより、高速スタートアップが、ビルド時に時間がかかります。
+- 動的レジストラー–これは、すべての Xamarin. Mac ビルドの既定のレジストラーです。 動的レジストラーは、実行時にアセンブリ内のすべての型の登録を行います。 これを行うには、目的 C のランタイム API によって提供される関数を使用します。 そのため、動的レジストラーは起動速度が遅くなり、ビルド時間が短縮されます。 動的レジストラーを使用する場合、ネイティブ関数 (通常は C) は trampolines と呼ばれ、メソッドの実装として使用されます。 アーキテクチャによって異なります。
+- 静的レジストラー–静的レジストラーは、ビルド中に目標 C コードを生成し、その後、スタティックライブラリにコンパイルされ、実行可能ファイルにリンクされます。 これにより、起動が高速になりますが、ビルド時にかかる時間は長くなります。
 
 ## <a name="application-launch"></a>アプリケーションの起動
 
-Xamarin.Mac のスタートアップ ロジックは埋め込まれているかどうかに応じて異なります。 またはシステム Mono が使用されます。 コードと Xamarin.Mac アプリケーションの起動の手順を表示するを参照してください、[起動ヘッダー](https://github.com/xamarin/xamarin-macios/blob/master/runtime/xamarin/launch.h) xamarin macios パブリック リポジトリ内のファイル。
+Xamarin. Mac スタートアップロジックは、埋め込みまたはシステム Mono が使用されているかどうかによって異なります。 Xamarin. Mac アプリケーションの起動のコードと手順を確認するには、xamarin-macios パブリックリポジトリの[起動ヘッダー](https://github.com/xamarin/xamarin-macios/blob/master/runtime/xamarin/launch.h)ファイルを参照してください。
 
 ## <a name="generator"></a>ジェネレーター
 
-Xamarin.Mac には、Mac のすべての API の定義が含まれています。 これらのいずれかを参照できます、 [MaciOS github リポジトリ](https://github.com/xamarin/xamarin-macios/tree/master/src)します。 これらの定義には、インターフェイス、属性を持つだけでなく、必要なメソッドとプロパティが含まれます。 NSBox を定義する次のコードを使用するなど、 [AppKit 名前空間](https://github.com/xamarin/xamarin-macios/blob/master/src/appkit.cs#L1465-L1526)します。 メソッドとプロパティの数がインターフェイスであることを確認します。
+Xamarin. Mac には、すべての Mac API の定義が含まれています。 [Macios github リポジトリ](https://github.com/xamarin/xamarin-macios/tree/master/src)でこれらのいずれかを参照できます。 これらの定義には、属性を持つインターフェイスだけでなく、必要なメソッドとプロパティも含まれています。 たとえば、次のコードは、 [Appkit 名前空間](https://github.com/xamarin/xamarin-macios/blob/master/src/appkit.cs#L1465-L1526)で nsbox を定義するために使用されます。 これは、いくつかのメソッドとプロパティを持つインターフェイスであることに注意してください。
 
 ```csharp
 [BaseType (typeof (NSView))]
 public interface NSBox {
 
-        …
+    …
 
-        [Export ("borderRect")]
-        CGRect BorderRect { get; }
+    [Export ("borderRect")]
+    CGRect BorderRect { get; }
 
-        [Export ("titleRect")]
-        CGRect TitleRect { get; }
+    [Export ("titleRect")]
+    CGRect TitleRect { get; }
 
-        [Export ("titleCell")]
-        NSObject TitleCell { get; }
+    [Export ("titleCell")]
+    NSObject TitleCell { get; }
 
-        [Export ("sizeToFit")]
-        void SizeToFit ();
+    [Export ("sizeToFit")]
+    void SizeToFit ();
 
-        [Export ("contentViewMargins")]
-        CGSize ContentViewMargins { get; set; }
+    [Export ("contentViewMargins")]
+    CGSize ContentViewMargins { get; set; }
 
-        [Export ("setFrameFromContentFrame:")]
-        void SetFrameFromContentFrame (CGRect contentFrame);
+    [Export ("setFrameFromContentFrame:")]
+    void SetFrameFromContentFrame (CGRect contentFrame);
 
-        …
+    …
 
 }
 ```
 
-ジェネレーターと呼ばれる`bmac`Xamarin.Mac でこれらの定義ファイルを受け取り、一時アセンブリにコンパイルする .NET ツールを使用します。 ただし、この一時アセンブリは Objective C コードを呼び出すために有効ではありません。 ジェネレーターは、し、一時アセンブリの読み取りを生成C#実行時に使用できるコード。 これは、理由など、定義の .cs ファイルにランダムな属性を追加する場合に表示されませんで出力されるコード。 コード ジェネレーターは、それについて認識しないため`bmac`一時アセンブリに出力することで探すように認識しません。
+このジェネレーターは、 `bmac` Xamarin. Mac で呼び出され、これらの定義ファイルを受け取り、.net ツールを使用してそれらを一時アセンブリにコンパイルします。 ただし、この一時アセンブリは、目的の C コードを呼び出すことができません。 その後、ジェネレーターは一時アセンブリを読み取りC# 、実行時に使用できるコードを生成します。 このため、たとえば、ランダムな属性を定義の .cs ファイルに追加しても、出力されるコードには表示されません。 ジェネレーターはそれを認識しないため`bmac` 、一時アセンブリ内でそれを出力するように検索することはできません。
 
-Xamarin.Mac.dll が作成されたら、パッケー ジャー、 `mmp`、すべてのコンポーネントを一緒にバンドルされます。
+Xamarin. .dll が作成されると、パッケージャー `mmp`によってすべてのコンポーネントがバンドルされます。
 
-大まかに言えば、これを行う、次のタスクを実行しています。
+大まかに言えば、次のタスクを実行してこれを実現します。
 
-- アプリ バンドルの構造を作成します。
-- マネージ アセンブリをコピーします。
-- リンクが有効になっている場合は、使用されていない部分を削除することによって、アセンブリを最適化するためにマネージ リンカーを実行します。
-- 静的モードの場合、レジストラー コードと共に話題ランチャー コード リンク、ランチャー アプリケーションを作成します。
+- アプリバンドル構造を作成します。
+- をマネージアセンブリにコピーします。
+- リンクが有効になっている場合は、マネージリンカーを実行して、使用されていない部分を削除してアセンブリを最適化します。
+- ランチャーアプリケーションを作成します。ランチャーコードにリンクし、静的モードの場合はレジストラーコードと共に説明します。
 
-これは、ユーザーの一部として実行 が参照する Xamarin.Mac.dll と実行、ユーザー コードをアセンブリにコンパイルするプロセスを構築し、`mmp`パッケージにするには
+これはユーザーのビルドプロセスの一部として実行され、ユーザーコードを、Xamarin. .dll を参照するアセンブリにコンパイル`mmp`して実行し、パッケージにすることができます。
 
-詳細については、リンカーとその使用方法についてを参照してください、iOS[リンカー](~/ios/deploy-test/linker.md)ガイド。
+リンカーとその使用方法の詳細については、iOS[リンカー](~/ios/deploy-test/linker.md)ガイドを参照してください。
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
-このガイドは、Xamarin.Mac アプリ、および探索 Xamarin.Mac OBJECTIVE-C との関係のコンパイル時参照
+このガイドでは、Xamarin. Mac アプリのコンパイルについて見てきました。さらに、Xamarin. Mac とその関係を説明しました。

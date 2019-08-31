@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 4f2d16ca2ff258da1b65bf7c7174c989ead7782c
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 09c20b776f2c5d4ddd36e8b515f5bcbf6d92d7a4
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69527356"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70199711"
 ---
 # <a name="using-adonet-with-xamarinios"></a>Xamarin で ADO.NET を使用する
 
@@ -56,7 +56,7 @@ ADO.NET 経由で SQLite へのアクセスを使用`System.Data`する`Mono.Dat
     ```
 
     既に説明したように、異なるスレッド間で接続を再利用することはできません。 不明な場合は、必要に応じて接続を作成し、完了したら閉じます。しかし、必要以上に多くのことを行うことに注意してください。
-    
+
 3. **データベースコマンドの作成と実行**-接続が確立されたら、それに対して任意の SQL コマンドを実行できます。 次のコードは、実行されている CREATE TABLE ステートメントを示しています。
 
     ```csharp

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 0dc3c8e4c8b4db99b07114e855910ccfe5fe180f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 05dfb419834c2eee94f98d023df3a3fe8d6eee90
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68654566"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70198117"
 ---
 # <a name="working-with-the-watchos-parent-application-in-xamarin"></a>親アプリケーション Xamarin で watchOS の操作
 
@@ -22,11 +22,11 @@ ms.locfileid: "68654566"
 
 Watch アプリとそれにバンドルされている iOS アプリ間で通信するさまざまな方法はあります。
 
-- ウォッチ拡張機能は[メソッドを呼び出す](#code)iPhone のバック グラウンドで実行されている親アプリに対して。
+- Watch extensions は、iPhone のバックグラウンドで実行されている親アプリに対して[メソッドを呼び出す](#code)ことができます。
 
 - ウォッチ拡張機能は[記憶域の場所を共有](#storage)親の iPhone アプリ。
 
-- Handoff を使用して、Watch アプリは、ユーザーをアプリで特定のインターフェイス コント ローラーに送信する通知もからデータを渡します。
+- ハンドオフを使用して、ひとめでもデータを Watch アプリに渡し、ユーザーをアプリ内の特定のインターフェイスコントローラーに送信します。
 
 親アプリは、コンテナー アプリと呼ばれることもあります。
 

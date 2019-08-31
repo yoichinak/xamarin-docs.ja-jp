@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/25/2018
-ms.openlocfilehash: 6ab1b4ad5493075e8806190e77f6d234354af9ff
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ab82b98351b95fbdea9c33a9eae7142c7a54fc77
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648968"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70200307"
 ---
 # <a name="working-with-tvos-progress-indicators-in-xamarin"></a>Xamarin での tvOS 進行状況インジケーターの使用
 
@@ -46,14 +46,14 @@ Apple では、進行状況バーの操作に関して次のような推奨事�
 TvOS アプリで進行状況インジケーターを操作する最も簡単な方法は、iOS デザイナーを使用してアプリの UI に追加することです。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
-    
+
 1. **Solution Pad**で、**メインの storyboard**ファイルをダブルクリックして開き、編集します。
 
-2. [**ツールボックス**] から**アクティビティインジケーター**をドラッグし、ビューにドロップします。 
+2. **[ツールボックス]** から**アクティビティインジケーター**をドラッグし、ビューにドロップします。 
 
     ![アクティビティインジケーター](progress-indicators-images/activity01.png "アクティビティインジケーター")
 
-3. **Properties Pad**の [**ウィジェット**] タブでは、**スタイル**、**動作**、**名前**など、アクティビティインジケーターのいくつかのプロパティを調整できます。 
+3. **Properties Pad**の **[ウィジェット]** タブでは、**スタイル**、**動作**、**名前**など、アクティビティインジケーターのいくつかのプロパティを調整できます。 
 
     ![アクティビティインジケーターの [ウィジェット] タブ](progress-indicators-images/activity02.png "アクティビティインジケーターの [ウィジェット] タブ")
     
@@ -63,7 +63,7 @@ TvOS アプリで進行状況インジケーターを操作する最も簡単な
 
     ![進行状況ビュー](progress-indicators-images/activity03.png "進行状況ビュー")
 
-5. **プロパティエクスプローラー**の [**ウィジェット**] タブでは、[**スタイル**]、[**進行状況**(パーセント完了)]、[**名前**] など、進行状況ビューのいくつかのプロパティを調整できます。 
+5. **プロパティエクスプローラー**の **[ウィジェット]** タブでは、 **[スタイル]** 、 **[進行状況]** (パーセント完了)、 **[名前]** など、進行状況ビューのいくつかのプロパティを調整できます。 
 
     ![進行状況ビューの [ウィジェット] タブ](progress-indicators-images/activity04.png "進行状況ビューの [ウィジェット] タブ")
     
@@ -72,15 +72,15 @@ TvOS アプリで進行状況インジケーターを操作する最も簡単な
 6. 変更内容を保存します。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
-    
+
 1. **ソリューションエクスプローラー**で、**メインの storyboard**ファイルをダブルクリックして開き、編集します。
 
-2. [**ツールボックス**] から**アクティビティインジケーター**をドラッグし、ビューにドロップします。 
+2. **[ツールボックス]** から**アクティビティインジケーター**をドラッグし、ビューにドロップします。 
 
     ![]アクティビティインジケーター。アクティビティインジケーター(progress-indicators-images/activity01-vs.png
     "")
 
-3. **プロパティエクスプローラー**の [**ウィジェット**] タブでは、**スタイル**、**動作**、**名前**など、アクティビティインジケーターのいくつかのプロパティを調整できます。 
+3. **プロパティエクスプローラー**の **[ウィジェット]** タブでは、**スタイル**、**動作**、**名前**など、アクティビティインジケーターのいくつかのプロパティを調整できます。 
 
     ![アクティビティインジケーターの [ウィジェット] タブ](progress-indicators-images/activity02-vs.png "アクティビティインジケーターの [ウィジェット] タブ")
 
@@ -90,7 +90,7 @@ TvOS アプリで進行状況インジケーターを操作する最も簡単な
 
    ![進行状況ビュー](progress-indicators-images/activity03-vs.png "進行状況ビュー")
 
-5. **プロパティエクスプローラー**の [**ウィジェット**] タブでは、[**スタイル**]、[**進行状況**(パーセント完了)]、[**名前**] など、進行状況ビューのいくつかのプロパティを調整できます。 
+5. **プロパティエクスプローラー**の **[ウィジェット]** タブでは、 **[スタイル]** 、 **[進行状況]** (パーセント完了)、 **[名前]** など、進行状況ビューのいくつかのプロパティを調整できます。 
 
     ![進行状況ビューの [ウィジェット] タブ](progress-indicators-images/activity04-vs.png "進行状況ビューの [ウィジェット] タブ")
     
@@ -121,7 +121,7 @@ ActivityIndicator.StopAnimating();
 ```
 
 > [!NOTE]
-> これらのコードスニペットは、iOS デザイナーの [**ウィジェット**] タブでアクティビティインジケーターの**名前**が**activityindicator**に設定されていることを前提としています。
+> これらのコードスニペットは、iOS デザイナーの **[ウィジェット]** タブでアクティビティインジケーターの**名前**が**activityindicator**に設定されていることを前提としています。
 
 ## <a name="working-with-progress-bars"></a>進行状況バーの操作
 
@@ -129,7 +129,7 @@ ActivityIndicator.StopAnimating();
 
 `Progress`プロパティは、完了したタスクの量を 0 ~ 100% (0.0 から 1.0) に設定するために使用されます。 プロパティを使用して、[amount 完了] バーの色を`TrackTintColor`設定し、プロパティを使用して背景色 (未完了の金額) を設定します。 `ProgressTintColor`
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
 この記事では、tvOS アプリ内での進行状況インジケーターの設計と使用について説明しました。
 

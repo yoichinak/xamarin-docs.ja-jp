@@ -1,40 +1,40 @@
 ---
-title: MacOS でのアクセシビリティ
-description: このドキュメントでは、Xamarin.Mac アプリでの macOS ユーザー補助機能を使用する方法について説明します。 これには、ストーリー ボードとコード、カスタム コントロール、およびアクセシビリティのテストの記述の UI 要素について説明します。
+title: MacOS のユーザー補助機能
+description: このドキュメントでは、Xamarin. Mac アプリで macOS ユーザー補助機能を使用する方法について説明します。 ここでは、ストーリーボードとコード、カスタムコントロール、およびアクセシビリティのテストの UI 要素について説明します。
 ms.prod: xamarin
 ms.assetid: D7F4892B-501A-4271-A7E0-BDD1586B63AD
 ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: fdda52309ffdb0d32cc42a4dff052cd9050b1e4f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6d53cda17864a6afa8f8af187df7c4a07e9f8cbe
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61378479"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70198626"
 ---
-# <a name="accessibility-on-macos"></a>MacOS でのアクセシビリティ
+# <a name="accessibility-on-macos"></a>MacOS のユーザー補助機能
 
-このページが macOS ユーザー補助 Api を使用して、に従ってアプリを構築する方法について説明します、[アクセシビリティ チェックリスト](~/cross-platform/app-fundamentals/accessibility.md)します。
-参照してください、 [Android アクセシビリティ](~/android/app-fundamentals/accessibility.md)と[iOS アクセシビリティ](~/ios/app-fundamentals/accessibility.md)他のプラットフォーム Api のページ。
+このページでは、[ユーザー補助のチェックリスト](~/cross-platform/app-fundamentals/accessibility.md)に従って、MacOS アクセシビリティ api を使用してアプリを構築する方法について説明します。
+他のプラットフォーム Api については、 [Android アクセシビリティ](~/android/app-fundamentals/accessibility.md)ページと[iOS アクセシビリティ](~/ios/app-fundamentals/accessibility.md)ページを参照してください。
 
-動作を理解するアクセシビリティ Api macOS (OS X と呼ばれる以前) の最初のレビュー、 [OS X のユーザー補助モデル](https://developer.apple.com/library/mac/documentation/Accessibility/Conceptual/AccessibilityMacOSX/OSXAXmodel.html)します。
+MacOS でアクセシビリティ Api がどのように機能するかを理解するには (旧称 OS X)、まず[Os x アクセシビリティモデル](https://developer.apple.com/library/mac/documentation/Accessibility/Conceptual/AccessibilityMacOSX/OSXAXmodel.html)を確認します。
 
-## <a name="describing-ui-elements"></a>UI 要素を記述します。
+## <a name="describing-ui-elements"></a>UI 要素の記述
 
-AppKit を使用して、`NSAccessibility`ヘルプのユーザー インターフェイスにアクセスできるように Api を公開するプロトコル。 これにより、ボタンの設定などのアクセシビリティのプロパティの意味のある値を設定しようとする既定の動作が含まれます。`AccessibilityLabel`します。 ラベルは、通常、1 つの単語または短い語句が、コントロールまたはビューを記述します。
+Appkit は、 `NSAccessibility`プロトコルを使用して、ユーザーインターフェイスにアクセスできるようにする api を公開します。 これには、ボタンの`AccessibilityLabel`を設定するなど、アクセシビリティプロパティに意味のある値を設定しようとする既定の動作が含まれます。 ラベルは、通常、コントロールまたはビューを説明する1つの単語または短い語句です。
 
-### <a name="storyboard-files"></a>ストーリー ボード ファイル
+### <a name="storyboard-files"></a>ストーリーボードファイル
 
-Xamarin.Mac では、Xcode の Interface Builder を使用して、ストーリー ボード ファイルを編集します。
-編集できるユーザー補助情報、 **Identity inspector** (次のスクリーン ショットで示す) ように、デザイン サーフェイスでコントロールが選択された場合。
+Xcode Interface Builder を使用して、ストーリーボードファイルを編集します。
+コントロールがデザインサーフェイスで選択されている場合は、 **id インスペクター**でアクセシビリティ情報を編集できます (次のスクリーンショットを参照)。
 
-[![Xcode の Interface Builder でのユーザー補助機能の追加](accessibility-images/xcode.png "Xcode の Interface Builder でのユーザー補助機能の追加")](accessibility-images/xcode-large.png#lightbox)
+[![Xcode の Interface Builder にアクセシビリティを追加する](accessibility-images/xcode.png "Xcode の Interface Builder にアクセシビリティを追加する")](accessibility-images/xcode-large.png#lightbox)
 
 ### <a name="code"></a>コード
 
-として現在公開されていない Xamarin.Mac `AccessibilityLabel` set アクセス操作子。  アクセシビリティのラベルを設定するのには、次のヘルパー メソッドを追加します。
+現在、Xamarin は setter として`AccessibilityLabel`公開されていません。  アクセシビリティラベルを設定するには、次のヘルパーメソッドを追加します。
 
 ```csharp
 public static class AccessibilityHelper
@@ -49,44 +49,44 @@ public static class AccessibilityHelper
 }
 ```
 
-ように、このメソッドは、コードで使用できます。
+このメソッドは、次のようにコードで使用できます。
 
 ```csharp
 AccessibilityHelper.SetAccessibilityLabel (someButton, "New Accessible Description");
 ```
 
-`AccessibilityHelp`プロパティは、コントロールまたはビューの詳細については、ラベルは十分な情報を提供しない場合にのみ追加します。 ヘルプ テキストおく必要があるが、できるだけ短くのドキュメントを例「削除」。
+`AccessibilityHelp`プロパティは、コントロールまたはビューの動作を説明するためのものであり、ラベルが十分な情報を提供できない場合にのみ追加する必要があります。 ヘルプテキストは、"ドキュメントを削除する" など、可能な限り短くしておく必要があります。
 
-ユーザー インターフェイス要素の一部では、アクセス可能 (など、独自のアクセシビリティのラベルとヘルプを持つ入力の横にあるラベル) に関係ありません。
-このような場合は、次のように設定します。`AccessibilityElement = false`できるように、これらのコントロールまたはビューはスクリーン リーダーやその他のユーザー補助ツールによってスキップされます。
+ユーザーインターフェイス要素の中には、アクセス可能なアクセスに関係のないものがあります (ユーザー補助ラベルとヘルプを持つ入力の横にあるラベルなど)。
+このような場合は`AccessibilityElement = false` 、これらのコントロールまたはビューがスクリーンリーダーやその他のユーザー補助ツールによってスキップされるように、を設定します。
 
-Apple から提供されて[ユーザ補助ガイドライン](https://developer.apple.com/library/mac/documentation/Accessibility/Conceptual/AccessibilityMacOSX/EnhancingtheAccessibilityofStandardAppKitControls.html)アクセシビリティのラベルとヘルプ テキストのベスト プラクティスを説明します。
+Apple では、アクセシビリティラベルとヘルプテキストのベストプラクティスについて説明する[アクセシビリティのガイドライン](https://developer.apple.com/library/mac/documentation/Accessibility/Conceptual/AccessibilityMacOSX/EnhancingtheAccessibilityofStandardAppKitControls.html)を提供しています。
 
 ## <a name="custom-controls"></a>カスタム コントロール
 
-Apple を参照してください[アクセス可能なカスタム コントロールのガイドライン](https://developer.apple.com/library/mac/documentation/Accessibility/Conceptual/AccessibilityMacOSX/ImplementingAccessibilityforCustomControls.html)のために必要な追加の手順の詳細について。
+必要な追加手順の詳細については、「[アクセス可能なカスタムコントロールに関する](https://developer.apple.com/library/mac/documentation/Accessibility/Conceptual/AccessibilityMacOSX/ImplementingAccessibilityforCustomControls.html)Apple のガイドライン」を参照してください。
 
-## <a name="testing-accessibility"></a>ユーザー補助のテスト
+## <a name="testing-accessibility"></a>アクセシビリティのテスト
 
-macOS の提供、**アクセシビリティ インスペクター**できますが、ユーザー補助機能をテストします。 インスペクターは、Xcode に含まれています。
+macOS には、ユーザー補助機能をテストするための**アクセシビリティインスペクター**が用意されています。 インスペクターは Xcode に含まれています。
 
-これが起動され、最初に、**アクセシビリティ インスペクター**ユーザー補助機能を使用してコンピューターを管理するためのアクセス許可が必要になります。
+**ユーザー補助機能インスペクター**を初めて起動するときは、ユーザー補助機能を使用してコンピューターを制御するアクセス許可が必要です。
 
-![実行するアクセス許可を要求するユーザー補助インスペクター](accessibility-images/accessibility-inspector-1.png "アクセシビリティ インスペクターを実行するアクセス許可を要求します。")
+![実行するためのアクセス許可を要求するアクセシビリティインスペクター](accessibility-images/accessibility-inspector-1.png "実行するためのアクセス許可を要求するアクセシビリティインスペクター")
 
-ティックと (必要な場合、左下に) [設定] 画面のロックを解除、**アクセシビリティ インスペクター**:
+(必要に応じて左下の) 設定画面のロックを解除し、**アクセシビリティインスペクター**を目盛りします。
 
-![ユーザー補助 Inspector を有効にする設定画面](accessibility-images/accessibility-inspector-2.png "アクセシビリティ Inspector を有効にする設定画面")
+![アクセシビリティインスペクターを有効にするための設定画面](accessibility-images/accessibility-inspector-2.png "アクセシビリティインスペクターを有効にするための設定画面")
 
-有効にすると、インスペクターは画面内を移動できるフローティング ウィンドウとして表示されます。 次のスクリーン ショットは、サンプルの Mac アプリの横にある実行されているインスペクターを示しています。 ウィンドウの上でカーソルを移動すると、インスペクターの各コントロールのアクセス可能なすべてのプロパティが表示されます。
+有効にすると、インスペクターは画面の周りを移動できるフローティングウィンドウとして表示されます。 次のスクリーンショットは、サンプルの Mac アプリの横で実行されているインスペクターを示しています。 カーソルがウィンドウ上を移動すると、インスペクターに各コントロールのユーザー補助プロパティがすべて表示されます。
 
-[![実行中のユーザー補助インスペクターの使用例](accessibility-images/accessibility-example.png "アクセシビリティ インスペクターの例の実行")](accessibility-images/accessibility-example-large.png#lightbox)
+[![実行中のアクセシビリティインスペクターの例](accessibility-images/accessibility-example.png "実行中のアクセシビリティインスペクターの例")](accessibility-images/accessibility-example-large.png#lightbox)
 
-詳細については、読み取り、 [OS X のガイドのユーザー補助機能をテスト](https://developer.apple.com/library/mac/documentation/Accessibility/Conceptual/AccessibilityMacOSX/OSXAXTestingApps.html)します。
+詳細については、 [OS X 用のユーザー補助のテスト](https://developer.apple.com/library/mac/documentation/Accessibility/Conceptual/AccessibilityMacOSX/OSXAXTestingApps.html)に関するガイドを参照してください。
 
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [クロス プラットフォームのユーザー補助機能](~/cross-platform/app-fundamentals/accessibility.md)
-- [Mac のユーザー補助機能](https://www.apple.com/accessibility/mac/)
+- [クロスプラットフォームのアクセシビリティ](~/cross-platform/app-fundamentals/accessibility.md)
+- [Mac アクセシビリティ](https://www.apple.com/accessibility/mac/)

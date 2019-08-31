@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: f7290d8284f90db4f53a38dc89f7b5a1a10213c0
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 376f046769e27586d9611d634aef89811c7b3be8
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655537"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70200383"
 ---
 # <a name="walkthrough---using-local-notifications-in-xamarinios"></a>チュートリアル-Xamarin でのローカル通知の使用
 
@@ -27,7 +27,7 @@ _このセクションでは、Xamarin iOS アプリケーションでローカ�
 
 
 1. Visual Studio for Mac で、新しい単一ビューの iOS ソリューションを作成し、 `Notifications`それを呼び出します。
-1. `Main.storyboard`ファイルを開き、ボタンをビューにドラッグします。 **ボタンに**名前を付けて、タイトルを**追加通知**にします。 この時点で、いくつかの[制約](~/ios/user-interface/designer/designer-auto-layout.md)をボタンに設定することもできます。 
+1. `Main.storyboard`ファイルを開き、ボタンをビューにドラッグします。 ボタンに名前を付けて、タイトルを**追加通知**にします。 この時点で、いくつかの[制約](~/ios/user-interface/designer/designer-auto-layout.md)をボタンに設定することもできます。 
 
     ![](local-notifications-in-ios-walkthrough-images/image3.png "ボタンにいくつかの制約を設定する")
 1. `ViewController`クラスを編集し、次のイベントハンドラーを ViewDidLoad メソッドに追加します。
@@ -62,29 +62,28 @@ _このセクションでは、Xamarin iOS アプリケーションでローカ�
 
     ```csharp
     if (UIDevice.CurrentDevice.CheckSystemVersion (8, 0)) {
-            var notificationSettings = UIUserNotificationSettings.GetSettingsForTypes (
-                UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound, null
-            );
+        var notificationSettings = UIUserNotificationSettings.GetSettingsForTypes (
+            UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound, null
+        );
 
-            application.RegisterUserNotificationSettings (notificationSettings);
-        }
+        application.RegisterUserNotificationSettings (notificationSettings);
+    }
     ```
 
 1. まだの`AppDelegate.cs`場合は、通知の受信時に呼び出される次のメソッドを追加します。
 
     ```csharp
     public override void ReceivedLocalNotification(UIApplication application, UILocalNotification notification)
-            {
-                // show an alert
-                UIAlertController okayAlertController = UIAlertController.Create(notification.AlertAction, notification.AlertBody, UIAlertControllerStyle.Alert);
-                okayAlertController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
+    {
+        // show an alert
+        UIAlertController okayAlertController = UIAlertController.Create(notification.AlertAction, notification.AlertBody, UIAlertControllerStyle.Alert);
+        okayAlertController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
 
-                UIApplication.SharedApplication.KeyWindow.RootViewController.PresentViewController(okayAlertController, true, null);
+        UIApplication.SharedApplication.KeyWindow.RootViewController.PresentViewController(okayAlertController, true, null);
 
-                // reset our badge
-                UIApplication.SharedApplication.ApplicationIconBadgeNumber = 0;
-            }
-
+        // reset our badge
+        UIApplication.SharedApplication.ApplicationIconBadgeNumber = 0;
+    }
     ```
 
 1. ローカル通知によって通知が開始されたケースを処理する必要があります。 でメソッド`FinishedLaunching`を編集して、次のコードスニペットを含めます。`AppDelegate`
@@ -111,14 +110,13 @@ _このセクションでは、Xamarin iOS アプリケーションでローカ�
             }
         }
     }
-
     ```
 
 1. 最後に、アプリケーションを実行します。 IOS 8 では、通知を許可するように求められます。 [ **OK]** をクリックし、 **[通知の追加]** ボタンをクリックします。 短い一時停止の後、次のスクリーンショットに示すように、アラートダイアログが表示されます。
 
     ![](local-notifications-in-ios-walkthrough-images/image0.png "通知を送信することを確認する") ![](local-notifications-in-ios-walkthrough-images/image1.png "通知の追加ボタン") ![](local-notifications-in-ios-walkthrough-images/image2.png "通知アラート ダイアログ")
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
 このチュートリアルでは、さまざまな API を使用して、iOS で通知を作成および発行する方法について説明しました。 また、アプリケーションアイコンをバッジで更新して、アプリケーション固有のフィードバックをユーザーに提供する方法についても説明します。
 

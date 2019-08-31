@@ -6,12 +6,12 @@ ms.assetid: B5237770-0FC3-4B01-9E22-766B35C9A952
 author: asb3993
 ms.author: amburns
 ms.date: 01/25/2016
-ms.openlocfilehash: 9d43bbdb49fe4ab1ff909f709a37f979c360ceb9
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 6b6a7b8bb2efdd099d7fde6bb5397e6330258bcc
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509590"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70199396"
 ---
 # <a name="native-types-for-ios-and-macos"></a>IOS と macOS のネイティブ型
 
@@ -45,9 +45,9 @@ Mac および iOS API は、アーキテクチャに固有のデータ型を使�
 
 明示的な変換演算子は、データ損失の可能性がある場合に提供されます (64 ビット値は32または32のストレージの場所に格納されています)。
 
- `int`、 `uint` 、 `float`およびは`nint`すべてに`nfloat`暗黙的に変換可能であり、32ビットは常に32または64ビットに収まります。`nuint`
+`int`、 `uint` 、 `float`およびは`nint`すべてに`nfloat`暗黙的に変換可能であり、32ビットは常に32または64ビットに収まります。`nuint`
 
- `nint`、 `nuint` 、 `nfloat`および`long`はすべてに`double`暗黙的に変換可能であり、32または64ビット値は常に64ビットストレージに収まります。`ulong`
+`nint`、 `nuint` 、 `nfloat`および`long`はすべてに`double`暗黙的に変換可能であり、32または64ビット値は常に64ビットストレージに収まります。`ulong`
 
 ネイティブ型は64ビットの`nint`ストレージを保持し`uint`て`float`いる可能性があるため、 `nuint`と`nfloat` `int`の間の明示的な変換を使用する必要があります。
 

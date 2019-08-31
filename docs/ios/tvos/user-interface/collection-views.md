@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 3246dcbf58a1b6dda6838b5eb81442fdbc429af5
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 616b20872a01b4df6c3f27c636ce7b8ee912414e
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68652348"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70200339"
 ---
 # <a name="working-with-tvos-collection-views-in-xamarin"></a>Xamarin での tvOS Collection ビューの使用
 
@@ -827,7 +827,7 @@ IOS 9 のコレクションビューに最近追加されたのは、コレク�
 
 <a name="Summary" />
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
 この記事では、tvOS アプリ内のコレクションビューの設計と操作について説明しました。 まず、コレクションビューを構成するすべての要素について説明しました。 次に、ストーリーボードを使用してコレクションビューをデザインおよび実装する方法について説明しました。 最後に、カスタムレイアウトの作成と項目の並べ替えに関する情報へのリンクが用意されています。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/05/2017
-ms.openlocfilehash: 13b88619ccd7d01f32afd5b9332c7dcb426380b0
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 16ff511a2984e98eb8a67ef33cdca25a63fff7ab
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69527982"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70200320"
 ---
 # <a name="exception-marshaling-in-xamarinios"></a>Xamarin.iOS における例外のマーシャ リング
 
@@ -270,7 +270,7 @@ xamarin_dyn_objc_msgSend (id obj, SEL sel)
 次のモードを使用できます。
 
 - `Default`:既定値はプラットフォームによって異なります。 GC が`ThrowObjectiveCException`協調モード (watchOS) `UnwindNativeCode`である場合は、それ以外の場合は (iOS/watchOS/macOS) です。 既定値は将来変更される可能性があります。
-- `UnwindNativeCode`:これは、以前の (未定義の) 動作です。 これは、GC を協調モードで使用する場合は使用できません (これは watchOS の唯一のオプションであるため、watchOS では有効なオプションではありません) が、他のすべてのプラットフォームの既定のオプションです。
+- `UnwindNativeCode` :これは、以前の (未定義の) 動作です。 これは、GC を協調モードで使用する場合は使用できません (これは watchOS の唯一のオプションであるため、watchOS では有効なオプションではありません) が、他のすべてのプラットフォームの既定のオプションです。
 - `ThrowObjectiveCException`:マネージ例外を目的の C 例外に変換し、C 例外をスローします。 これは、watchOS の既定値です。
 - `Abort`:プロセスを中止します。
 - `Disable`:例外のインターセプトを無効にします。したがって、イベントハンドラーにこの値を設定するのは理にかなっていませんが、イベントが発生した後で無効にするのは遅すぎます。 どのような場合でも、設定すると、 `UnwindNativeCode`として動作します。
@@ -280,7 +280,7 @@ xamarin_dyn_objc_msgSend (id obj, SEL sel)
 - `Default` :既定値はプラットフォームによって異なります。 GC が`ThrowManagedException`協調モード (watchOS) `UnwindManagedCode`である場合は、それ以外の場合は (iOS/tvOS/macOS) です。 既定値は将来変更される可能性があります。
 - `UnwindManagedCode`:これは、以前の (未定義の) 動作です。 このオプションは、GC を協調モードで使用している場合は使用できません (これは watchOS の有効な GC モードのみであるため、watchOS の有効な GC モードではありません) が、他のすべてのプラットフォームの既定値です。
 - `ThrowManagedException`:目的の C 例外をマネージ例外に変換し、マネージ例外をスローします。 これは、watchOS の既定値です。
-- `Abort` :プロセスを中止します。
+- `Abort`:プロセスを中止します。
 - `Disable`:D isables よって例外が認識されるので、イベントハンドラーにこの値を設定するのは理にかなっていませんが、イベントが発生した後で無効にするのは遅すぎます。 どのような場合でも、設定するとプロセスが中止されます。
 
 したがって、例外がマーシャリングされるたびに、次の操作を行うことができます。

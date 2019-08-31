@@ -6,12 +6,12 @@ ms.assetid: 8A832A76-A770-1A7C-24BA-B3E6F57617A0
 author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: 36b5ace881ba8f7fb45fef9d0350ffca67e0c951
-ms.sourcegitcommit: 21182d07d4bbddc26cd36f1c5b86b79011f6984a
+ms.openlocfilehash: df90bc764200434e8d546a1ebf61e039498517bb
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70169263"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70199411"
 ---
 # <a name="binding-objective-c-libraries"></a>バインディングの目的 C ライブラリ
 
@@ -378,23 +378,23 @@ Monotouch.dialog 7.0 以降では、新たに強化されたプロトコルバ�
 属性を[`[Protocol]`](~/cross-platform/macios/binding/binding-types-reference.md#ProtocolAttribute)含む定義では、次の3つのサポートクラスが生成され、プロトコルの使用方法が大幅に向上します。
 
 ```csharp
-    // Full method implementation, contains all methods
-    class MyProtocol : IMyProtocol {
-        public void Say (string msg);
-        public void Listen (string msg);
-    }
+// Full method implementation, contains all methods
+class MyProtocol : IMyProtocol {
+    public void Say (string msg);
+    public void Listen (string msg);
+}
 
-    // Interface that contains only the required methods
-    interface IMyProtocol: INativeObject, IDisposable {
-        [Export ("say:")]
-        void Say (string msg);
-    }
+// Interface that contains only the required methods
+interface IMyProtocol: INativeObject, IDisposable {
+    [Export ("say:")]
+    void Say (string msg);
+}
 
-    // Extension methods
-    static class IMyProtocol_Extensions {
-        public static void Optional (this IMyProtocol this, string msg);
-        }
+// Extension methods
+static class IMyProtocol_Extensions {
+    public static void Optional (this IMyProtocol this, string msg);
     }
+}
 ```
 
 **クラス実装**は、の個々のメソッドをオーバーライドし、完全なタイプセーフを取得できる、完全な抽象クラスを提供します。  ただし、複数C#の継承がサポートされていないため、異なる基本クラスが必要になる場合もありますが、インターフェイスを実装する必要があります。

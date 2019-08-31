@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 236a64736bc5f92537c858b9cdf938410cf4b0f4
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 64b114cad16095a2afd80b690a4654b91b2aa203
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68649659"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70199945"
 ---
 # <a name="working-with-tvos-tab-bar-controllers-in-xamarin"></a>Xamarin での tvOS タブバーコントローラーの使用
 
@@ -59,7 +59,7 @@ Apple には、タブバーの操作に関する次のような推奨事項が�
 TvOS アプリのタブバーを操作する最も簡単な方法は、iOS デザイナーを使用してアプリの UI に追加することです。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
-    
+
 1. 新しい tvOS アプリを開始し、[ **tvOS** > **app** > ]**タブ付きアプリ**を選択します。 
 
     [![](tab-bars-images/tab02.png "タブ付きアプリの選択")](tab-bars-images/tab02.png#lightbox)
@@ -84,7 +84,7 @@ TvOS アプリのタブバーを操作する最も簡単な方法は、iOS デ�
 1. 変更内容を保存します。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
-    
+
 1. 新しい tvOS アプリを開始し、[ **tvOS** > **app** > ]**タブ付きアプリ**を選択します。 
 
     [![](tab-bars-images/tab02vs.png "タブ付きアプリの選択")](tab-bars-images/tab02vs.png#lightbox)
@@ -107,7 +107,7 @@ TvOS アプリのタブバーを操作する最も簡単な方法は、iOS デ�
 1. コード内でC# UI コントロールを操作するために必要なイベントを公開します。
 1. コードでC#公開する UI コントロールの名前を指定します。
 1. 変更内容を保存します。
-    
+
 -----
 
 > [!IMPORTANT]

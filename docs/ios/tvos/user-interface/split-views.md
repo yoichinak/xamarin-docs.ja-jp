@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 52160d11c8c17a67a5db92e6a95f94815d54a0a6
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 7735f53d96977041f518a0ee56fb103a449e6cba
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648935"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70198200"
 ---
 # <a name="working-with-tvos-split-view-controllers-in-xamarin"></a>Xamarin での tvOS Split ビューコントローラーの使用
 
@@ -85,7 +85,7 @@ TvOS アプリで分割ビューコントローラーを操作する最も簡単
     [![](split-views-images/activity04.png "コンテンツのレイアウト")](split-views-images/activity04.png#lightbox)
 1. コードC#内で UI コントロールを操作するには、**プロパティエクスプローラー**の [**ウィジェット] タブ**で**名前**を割り当てます。
 1. 変更内容を保存します。
-    
+
 -----
 
 ストーリーボードの操作の詳細については、「 [Hello, tvOS クイックスタートガイド](~/ios/tvos/get-started/hello-tvos.md)」を参照してください。

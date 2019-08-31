@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 334ae6db2efa3b9d3212d0faf4d5f1bb730abb3b
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 344bc8f46ecad250c5021be4682f02489aa5cb96
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68654105"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70198454"
 ---
 # <a name="search-apis-in-xamarinios"></a>Xamarin での Api の検索
 
@@ -86,7 +86,7 @@ iOS 10 は、システムが適切なタイミングで有益な情報をユー�
 
 詳細については、「[プロアクティブな提案](~/ios/platform/search/proactive-suggestions.md)ガイド」を参照してください。
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
 この記事では、iOS 9 が Xamarin iOS アプリ用に提供する新しい Search API の機能について説明しました。 ここでは、コンテンツのインデックスを作成するための[Nsuseractivity](nsuseractivity.md)、[コアスポットライト](corespotlight.md)、 [Web マークアップ](web-markup.md)メソッドについて説明しています。 ここでは、特定の検索方法を使用するタイミングと、インデックスを作成する必要があるコンテンツの種類について簡単に説明しました。
 

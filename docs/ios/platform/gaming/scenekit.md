@@ -1,32 +1,32 @@
 ---
-title: Xamarin.iOS である SceneKit
-description: このドキュメントでは、OpenGL の複雑さを取り除くことによって 3D グラフィックスの操作を簡素化する 3D シーン グラフ API である SceneKit を説明します。
+title: Xamarin. iOS の SceneKit
+description: このドキュメントでは、SceneKit について説明します。これは、OpenGL の複雑さを解消することで3D グラフィックスの操作を簡略化する3D シーングラフ API です。
 ms.prod: xamarin
 ms.assetid: 19049ED5-B68E-4A0E-9D57-B7FAE3BB8987
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/14/2017
-ms.openlocfilehash: 0944978b34c8e164acd6e829db177bf4fd72dea9
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 3221764db0fa85f4cd0eb2dbc291f4b7b1d70d66
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61376292"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70199573"
 ---
-# <a name="scenekit-in-xamarinios"></a>Xamarin.iOS である SceneKit
+# <a name="scenekit-in-xamarinios"></a>Xamarin. iOS の SceneKit
 
-SceneKit とは、3 D シーン グラフを 3D グラフィックスの操作を簡略化する API です。 OS X 10.8 で初めて導入し、iOS 8 に来たようになりました。 SceneKit で没入型の 3D 視覚化およびカジュアルの 3D ゲームの作成は必要ありません OpenGL の専門知識。 シーン グラフの一般的な概念に基づき、SceneKit 抽象 OpenGL やことが非常に簡単に追加する 3D コンテンツをアプリケーションに、OpenGL ES の複雑な作業です。 ただし、OpenGL の専門家の場合は、SceneKit も OpenGL と直接リンク付けするための優れたサポートしています。 また、物理学などの 3D グラフィックスを補完する多数の機能が含まれていて、いくつかその他の Apple などのフレームワーク コア アニメーション、Core イメージおよび Sprite Kit と非常にうまく連携します。
+SceneKit は、3d グラフィックスを簡単に操作できる3D シーングラフ API です。 これは OS X 10.8 で初めて導入されましたが、現在は iOS 8 に付属しています。 SceneKit では、イマーシブ3D 視覚エフェクトとカジュアル3D ゲームを作成する際に、OpenGL に関する専門知識は必要ありません。 一般的なシーングラフの概念を基にして構築された SceneKit では、OpenGL と OpenGL ES の複雑さが解消されるため、アプリケーションに3D コンテンツを簡単に追加できます。 しかし、OpenGL の専門家であれば、SceneKit は OpenGL と直接結び付けることをサポートしています。 また、物理などの3D グラフィックスを補完する多くの機能が含まれており、コアアニメーション、コアイメージ、スプライトキットなど、他のいくつかの Apple framework と非常によく統合されています。
 
-SceneKit は非常に簡単に使用します。 レンダリングを処理する宣言型の API になります。 設定するシーンを簡単に、シーンのレンダリング、および SceneKit ハンドルにプロパティを追加します。
+SceneKit は、非常に簡単に操作できます。 レンダリングを処理する宣言型 API です。 シーンを設定し、プロパティを追加するだけで、SceneKit はシーンのレンダリングを処理します。
 
-使用してシーン グラフを作成するである SceneKit を使用する、`SCNScene`クラス。 シーンにはインスタンスによって表されるノードの階層が含まれています`SCNNode`、3 D 空間の場所を定義します。 各ノードは次の図に示すようにジオメトリ、ライティングとマテリアルの外観に影響するなどのプロパティがあります。
+SceneKit を操作するには、 `SCNScene`クラスを使用してシーングラフを作成します。 シーンには、の`SCNNode`インスタンスによって表されるノードの階層が含まれており、3d 空間内の位置を定義します。 各ノードには、次の図に示すように、ジオメトリ、光源、外観に影響を与える素材などのプロパティがあります。
 
-![](scenekit-images/image7.png "SceneKit 階層") 
+![](scenekit-images/image7.png "SceneKit 階層")
 
-## <a name="create-a-scene"></a>シーンを作成します。
+## <a name="create-a-scene"></a>シーンを作成する
 
-シーンを画面に表示するために、追加する、`SCNView`ビューのシーンのプロパティに割り当てるとします。 さらに、シーンを変更する場合は、`SCNView`表示、変更を自動的に更新されます。
+シーンを画面に表示するには、そのシーンをビュー `SCNView`のシーンプロパティに割り当てることによってに追加します。 また、シーンに変更を加えると、 `SCNView`によって変更が反映されます。
 
 ```csharp
 scene = SCNScene.Create ();
@@ -34,7 +34,7 @@ sceneView = new SCNView (View.Frame);
 sceneView.Scene = scene;
 ```
 
-3d モデリング ツールを使用してエクスポート ファイルまたはプログラムでジオメトリ プリミティブから、シーンを設定できます。 たとえば、これは球体を作成して、シーンに追加する方法を示します。
+シーンは、3d モデリングツールを使用してエクスポートされたファイルから、またはプログラムでジオメトリックプリミティブから設定できます。 たとえば、球を作成してシーンに追加する方法を次に示します。
 
 ```csharp
 sphere = SCNSphere.Create (10.0f);
@@ -43,9 +43,9 @@ sphereNode.Position = new SCNVector3 (0, 0, 0);
 scene.RootNode.AddChildNode (sphereNode);
 ```
 
-## <a name="adding-light"></a>ライトを追加します。
+## <a name="adding-light"></a>ライトの追加
 
-この時点で、球体何も表示されません、シーン内のライトがないためです。 アタッチ`SCNLight`ノードにインスタンスである SceneKit でライトを作成します。 いくつかの種類の光の方向にライトのさまざまな形式からアンビエント照明に至るまでがあります。 たとえば、次のコードでは、球体の横にある全方向性の光が作成されます。
+この時点では、シーンにライトがないため、球には何も表示されません。 インスタンス`SCNLight`をノードにアタッチすると、SceneKit にライトが作成されます。 さまざまな形式の光源からアンビエント照明まで、いくつかの種類のライトがあります。 たとえば、次のコードでは、球の横に全方向光が作成されます。
 
 ```csharp
 // omnidirectional light
@@ -58,7 +58,7 @@ lightNode.Position = new SCNVector3 (-40, 40, 60);
 scene.RootNode.AddChildNode (lightNode);
 ```
 
-全方向照明は、拡散反射懐中電灯を当てたなどの偶数の照明の結果を生成します。 方向として、すべての方向に均等に当たりますが、アンビエント ライトを作成すると同様に、しません。 気分が:) 照明のように考える
+全方向照明は拡散反射を生成するため、光が発生した場合と同様に、光が生じます。 アンビエントライトの作成も似ていますが、すべての方向に均等に光がかかるという点はありません。 これは、ムード照明のように考え:)
 
 ```csharp
 // ambient light
@@ -70,13 +70,13 @@ ambientLightNode.Light = ambientLight;
 scene.RootNode.AddChildNode (ambientLightNode);
 ```
 
-インプレース ライト、球体では、シーンに表示されるようになりました。
+ライトが配置された状態で、球がシーンに表示されるようになりました。
 
-![](scenekit-images/image8.png "球が点灯している場合は、シーンに表示されます。")
- 
+![](scenekit-images/image8.png "球は、点灯するとシーンで表示されます。")
+
 ## <a name="adding-a-camera"></a>カメラの追加
 
-カメラ (SCNCamera) をシーンに追加の観点を変更します。 カメラを追加するパターンは似ています。 カメラを作成、ノードにアタッチし、シーンにノードを追加します。
+シーンにカメラ (SCNCamera) を追加すると、視点が変わります。 カメラを追加するパターンも似ています。 カメラを作成し、それをノードにアタッチして、そのノードをシーンに追加します。
 
 ```csharp
 // camera
@@ -91,21 +91,21 @@ cameraNode = new SCNNode {
 scene.RootNode.AddChildNode (cameraNode);
 ```
 
-SceneKit コンス トラクターを使用してオブジェクトを作成する上記のコードまたは Create ファクトリ メソッドからがわかるように 前者は、使用してC#初期化子の構文が、大部分の好みでは、どれを使用します。
+上記のコードからわかるように、SceneKit オブジェクトは、コンストラクターを使用して作成することも、Create factory メソッドから作成することもできます。 前者では初期化C#子構文を使用できますが、どちらを使用するかは基本的に優先されます。
 
-インプレース カメラ、球体全体は、ユーザーに表示されます。
+カメラを配置すると、ユーザーには球全体が表示されます。
 
-![](scenekit-images/image9.png "球体全体は、ユーザーに表示されます。")
- 
-シーンに追加のライトを追加できます。 どのように見えるのいくつかの詳細全方向ライトを次に示します。
+![](scenekit-images/image9.png "ユーザーには球全体が表示されます。")
 
-![](scenekit-images/image10.png "球のいくつかの詳細全方向性ライト")
- 
-設定することによってさらに、`sceneView.AllowsCameraControl = true`ユーザーがタッチ ジェスチャの観点を変更できます。
+シーンにも他のライトを追加できます。 ここでは、次のように、複数の無指向性ライトを使用します。
+
+![](scenekit-images/image10.png "2つ以上の無指向性ライトを持つ球")
+
+さらに、を`sceneView.AllowsCameraControl = true`設定することにより、ユーザーはタッチジェスチャを使用してビューの点を変更できます。
 
 ### <a name="materials"></a>素材
 
-マテリアルは SCNMaterial クラスを使用して作成されます。 球のサーフェイスにイメージを追加する例に、イメージを素材の設定*拡散*内容。
+素材は SCNMaterial クラスを使用して作成されます。 たとえば、球の表面に画像を追加するには、イメージを素材の*拡散*コンテンツに設定します。
 
 ```csharp
 material = SCNMaterial.Create ();
@@ -113,27 +113,27 @@ material.Diffuse.Contents = UIImage.FromFile ("monkey.png");
 sphere.Materials = new SCNMaterial[] { material };
 ```
 
-これは、層の次のようにノード イメージ。
+次に示すように、イメージをノード上にレイヤーします。
 
-![](scenekit-images/image11.png "球体にイメージをレイヤー化")
- 
-他の種類の光のすぎるに応答する素材を設定できます。 たとえば、オブジェクトを光沢のあるできるし、反射の内容を画面で、明るいスポットを次に示すようにその結果、スペキュラ反射を表示する設定。
+![](scenekit-images/image11.png "イメージを球体にレイヤー化する")
 
-![](scenekit-images/image12.png "光沢のあるサーフェイスに明るいスポットで反射のリフレクションを使用して行われたオブジェクト")
- 
-資料は非常に柔軟なごくわずかなコードの多くを達成することができます。 たとえば、設定ではなく拡散の内容をイメージに設定反射内容代わりにします。
+素材は、他の種類の照明にも応答するように設定できます。 たとえば、次に示すように、オブジェクトは光沢を設定し、反射の反射を表示するように設定することができます。
+
+![](scenekit-images/image12.png "オブジェクトが反射反射によって光沢を持つようになりました。その結果、画面が明るくなります。")
+
+素材は非常に柔軟であり、非常に少ないコードで非常に多くのことを実現できます。 たとえば、画像を拡散コンテンツに設定するのではなく、反射コンテンツに設定します。
 
 ```csharp
 material.Reflective.Contents = UIImage.FromFile ("monkey.png");
 ```
 
-内の観点の独立した、球体の視覚的にとどまるように、monkey が表示されます。
+これで、視点は、視点に関係なく、球内に視覚的に見えるようになりました。
 
 ### <a name="animation"></a>アニメーション
 
-SceneKit は、アニメーションで適切に動作設計されています。 明示的または暗黙的のアニメーションを作成したり、コア アニメーションのレイヤーのツリーからシーンのレンダリングもできます。 SceneKit 独自 transition クラスは、暗黙のアニメーションを作成するときに`SCNTransaction`します。
+SceneKit は、アニメーションで適切に動作するように設計されています。 暗黙的または明示的なアニメーションの両方を作成できます。また、コアアニメーションレイヤーツリーからシーンをレンダリングすることもできます。 暗黙的なアニメーションを作成する場合、SceneKit には独自の`SCNTransaction`遷移クラス () が用意されています。
 
-球を回転する例を次に示します。
+球を回転させる例を次に示します。
 
 ```csharp
 SCNTransaction.Begin ();
@@ -142,7 +142,7 @@ sphereNode.Rotation = new SCNVector4 (0, 1, 0, (float)Math.PI * 4);
 SCNTransaction.Commit ();
 ```
 
-アニメーション化できます回転よりはるかに多くただしします。 SceneKit の多数のプロパティはアニメーション化可能です。 たとえば、次のコードがマテリアルをアニメーション化`Shininess`スペキュラ反射を向上させる。
+ただし、回転よりもはるかに多くのアニメーション化を行うことができます。 SceneKit の多くのプロパティは system.windows.media.animation.animatable> です。 たとえば、次のコードは、マテリアルの`Shininess`をアニメーション化して、反射反射を増やします。
 
 ```csharp
 SCNTransaction.Begin ();
@@ -151,4 +151,4 @@ material.Shininess = 0.1f;
 SCNTransaction.Commit ();
 ```
 
-SceneKit は非常に簡単に使用します。 豊富な制約、物理学、宣言型のアクション、3D テキスト フィールドのサポート、Sprite Kit 統合と少しだけ名前を Core イメージ統合の深さを含む追加機能を提供します。
+SceneKit は、非常に簡単に使用できます。 制約、物理、宣言型アクション、3D テキスト、フィールドサポートの深さ、スプライトキットの統合、コアイメージの統合など、いくつかの追加機能が用意されています。

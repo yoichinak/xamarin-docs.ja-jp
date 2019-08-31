@@ -9,12 +9,12 @@ ms.custom: video
 author: conceptdev
 ms.author: crdun
 ms.date: 05/23/2019
-ms.openlocfilehash: 245b41eea556ef36c81b337b57ce58d922e4e8fd
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 2c50ffb37f0fd1d7b0d9fad063c4d6195d6b1f08
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653683"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70199784"
 ---
 # <a name="build-your-first-xamarinforms-app"></a>最初の Xamarin.Forms アプリのビルド
 
@@ -30,11 +30,11 @@ _このビデオを視聴し、作業を進めて、Xamarin.Forms による最�
 
 上記のビデオと共に以下の手順に従います。
 
-1. [**ファイル > 新規 > プロジェクト...** ] を選択するか、[**新しいプロジェクトの作成**...] ボタンをクリックします。
+1. **[ファイル > 新規 > プロジェクト...]** を選択するか、 **[新しいプロジェクトの作成]** ... ボタンをクリックします。
 
     [![新しいプロジェクトを作成する](images/win-2019/01-sml.png)](images/win-2019/01.png#lightbox)
 
-2. "Xamarin" を検索するか、[**プロジェクトの種類**] メニューの [**モバイル**] を選択します。 **モバイルアプリ (Xamarin)** プロジェクトの種類を選択します。
+2. "Xamarin" を検索するか、 **[プロジェクトの種類]** メニューの **[モバイル]** を選択します。 **モバイルアプリ (Xamarin)** プロジェクトの種類を選択します。
 
     [![Xamarin プロジェクトのフィルター](images/win-2019/02-sml.png)](images/win-2019/02.png#lightbox)
 
@@ -48,15 +48,37 @@ _このビデオを視聴し、作業を進めて、Xamarin.Forms による最�
 
 5. NuGet パッケージが復元される (ステータス バーに "復元が完了しました" メッセージが表示される) まで待ちます。
 
-6. デバッグ ボタン (または **[デバッグ]、[デバッグ開始]** メニュー項目) をクリックして、Android エミュレーターを起動します。
+6. 新しい Visual Studio 2019 のインストールには、Android エミュレーターが構成されていません。 **[デバッグ]** ボタンのドロップダウン矢印をクリックし、 **[Android Emulator の作成]** を選択して、エミュレーターの作成画面を起動します。
 
-7. **MainPage.xaml** を編集し、`</StackLayout>` の末尾の前にこの XAML を追加します。
+    ![Android Emulator ドロップダウンの作成](images/win-2019/debug-dropdown.png)
+
+7. エミュレーターの作成画面で、既定の設定を使用し、 **[作成]** ボタンをクリックします。
+
+    [![Android emulator の作成画面](images/win-2019/create-emulator-sml.png)](images/win-2019/create-emulator.png#lightbox)
+
+8. エミュレーターを作成すると、[デバイスマネージャー] ウィンドウに戻ります。 [Start] \ (**開始**\) ボタンをクリックして、新しいエミュレーターを起動します。
+
+    ![デバイスマネージャーの Android emulator](images/win-2019/start-emulator.png)
+
+9. Visual Studio 2019 の **[デバッグ]** ボタンに新しいエミュレーターの名前が表示されるようになりました。
+
+    ![[デバッグ] ボタンの Android emulator 名](images/win-2019/debug-emulator-name.png)
+
+10. **[デバッグ]** ボタンをクリックして、アプリケーションをビルドし、Android エミュレーターにデプロイします。
+
+    ![アプリケーションを表示している Android エミュレーター](images/win-2019/android-emulator.png)
+
+## <a name="customize-the-application"></a>アプリケーションをカスタマイズする
+
+アプリケーションをカスタマイズして、対話機能を追加することができます。 アプリケーションにユーザーの操作を追加するには、次の手順を実行します。
+
+1. **MainPage.xaml** を編集し、`</StackLayout>` の末尾の前にこの XAML を追加します。
 
     ```xaml
     <Button Text="Click Me" Clicked="Button_Clicked" />
     ```
 
-8. **MainPage.xaml.cs** を編集し、クラスの末尾にこのコードを追加します。
+2. **MainPage.xaml.cs** を編集し、クラスの末尾にこのコードを追加します。
 
     ```csharp
     int count = 0;
@@ -67,14 +89,16 @@ _このビデオを視聴し、作業を進めて、Xamarin.Forms による最�
     }
     ```
 
-9. Android 上のアプリのデバッグ:
+3. Android 上のアプリのデバッグ:
 
     ![Android アプリ](images/win/07-sml.png)
 
-    > [!TIP]
-    > ネットワーク接続された Mac コンピューターで Visual Studio から iOS アプリをビルドし、デバッグすることができます。 詳細については、[セットアップ手順](~/ios/get-started/installation/windows/index.md)を参照してください。
+> [!NOTE]
+> このサンプルアプリケーションには、ビデオで説明されていない追加の対話機能が含まれています。
 
 ## <a name="build-an-ios-app-in-visual-studio-2019"></a>Visual Studio 2019 で iOS アプリをビルドする
+
+ネットワークに接続された Mac コンピューターを使用して、Visual Studio から iOS アプリをビルドし、デバッグすることができます。 詳細については、[セットアップ手順](~/ios/get-started/installation/windows/index.md)を参照してください。
 
 このビデオでは、Windows で Visual Studio 2019 を使用して iOS アプリをビルドおよびテストするプロセスについて説明します。
 

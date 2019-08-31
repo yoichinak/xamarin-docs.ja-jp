@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/05/2017
-ms.openlocfilehash: cd38facb62c5864f1c933611d8d9dcda94589066
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 6982f02860db2e89f83b4002d6acb5b28bae906b
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528233"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70200370"
 ---
 # <a name="document-picker-in-xamarinios"></a>Xamarin のドキュメントピッカー。 iOS
 
@@ -292,7 +292,7 @@ private void FindDocument () {
 
     // Register a notification for when the query returns
     NSNotificationCenter.DefaultCenter.AddObserver (this,
-            new Selector("queryDidFinishGathering:"),           NSMetadataQuery.DidFinishGatheringNotification,
+            new Selector("queryDidFinishGathering:"),             NSMetadataQuery.DidFinishGatheringNotification,
             Query);
 
     // Start looking for the file
@@ -460,7 +460,7 @@ Xamarin iOS アプリケーションでドキュメントピッカーを使用�
 
 1. Visual Studio for Mac または Visual Studio でプロジェクトを開きます。
 2. **ソリューションエクスプローラー**で、プロジェクトを右クリックし、[オプション] を選択します。
-3. [オプション] ダイアログボックスで **[IOS アプリケーション]** を選択し、**バンドル識別子**が、アプリケーション用に作成した**アプリ ID**で定義されているものと一致していることを確認します。 
+3. オプション ダイアログボックスで  **IOS アプリケーション** を選択し、**バンドル識別子**が、アプリケーション用に作成した**アプリ ID**で定義されているものと一致していることを確認します。 
 4. 選択 **iOS バンドル署名** を選択、**開発者 Identity** と **プロビジョニング プロファイル** 上記で作成しました。
 5. **[OK]** ボタンをクリックして変更を保存し、ダイアログボックスを閉じます。
 6. `Entitlements.plist` **ソリューションエクスプローラー**内でを右クリックして、エディターで開きます。
@@ -525,7 +525,7 @@ namespace DocPicker
 
             // Build a predicate to locate the file by name and attach it to the query
             var pred = NSPredicate.FromFormat ("%K == %@",
-                new NSObject[] {NSMetadataQuery.ItemFSNameKey
+                 new NSObject[] {NSMetadataQuery.ItemFSNameKey
                 , new NSString(TestFilename)});
             Query.Predicate = pred;
 
@@ -560,7 +560,7 @@ namespace DocPicker
         }
 
         private void LoadDocument (NSMetadataQuery query) {
-            Console.WriteLine ("Loading Document...");  
+            Console.WriteLine ("Loading Document...");    
 
             // Take action based on the returned record count
             switch (query.ResultCount) {
@@ -684,7 +684,7 @@ namespace DocPicker
                     });
                 }
                 else
-                {   
+                {    
                     // Yes, inform caller and save location the Application Container
                     HasiCloud = true;
                     iCloudUrl = uburl;

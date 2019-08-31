@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin. iOS でファイルシス
 ms.prod: xamarin
 ms.assetid: 37DF2F38-901E-8F8E-269A-5EE0CCD28C08
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 11/12/2018
-ms.openlocfilehash: e52f9abb31090f3acc361eb5a3f9ae2e12600b36
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: daa9625ccbac3661d3678889d4efd6319e0bd424
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653527"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70198133"
 ---
 # <a name="file-system-access-in-xamarinios"></a>Xamarin. iOS でのファイルシステムアクセス
 
@@ -153,7 +153,7 @@ Xamarin の iOS と .NET のファイル操作 (iOS と Xamarin) の類似性は
 
 ### <a name="case-sensitivity"></a>大文字と小文字の区別
 
-IOS ファイルシステムでは*大文字と小文字が区別*されることを理解しておくことが重要です。 大文字と小文字の区別は、ファイル名とディレクトリ名が完全に一致する必要があることを意味します。 **readme.txt と** **readme.txt**は、異なるファイル名と見なされます。
+IOS ファイルシステムでは*大文字と小文字が区別*されることを理解しておくことが重要です。 大文字と小文字の区別は、ファイル名とディレクトリ名が完全に一致する必要があることを意味します。 readme.txt と**readme.txt**は、異なるファイル名と見なされます。
 
 これは、Windows ファイルシステムに慣れている .NET 開発者が、**ファイル**、**ファイル**、**ファイル**がすべて同じディレクトリを参照している*場合*に、混乱を招く可能性があります。
 
@@ -241,7 +241,7 @@ var tmp = Path.Combine (documents, "..", "tmp");
 
 ## <a name="sharing-with-the-files-app"></a>ファイルアプリと共有する
 
-iOS 11 では、**ファイルアプリが**導入されました。これは、ユーザーが iCloud でファイルを表示して操作したり、それをサポートするアプリケーションによって保存したりできるようにする、ios 用のファイルブラウザーです。 ユーザーがアプリ内のファイルに直接アクセスできるようにするには、次のように`LSSupportsOpeningDocumentsInPlace` **、ファイルに**新しいブール値の`true`キーを作成し、をに設定します。
+iOS 11 では 、ファイルアプリが導入されました。これは、ユーザーが iCloud でファイルを表示して操作したり、それをサポートするアプリケーションによって保存したりできるようにする、ios 用のファイルブラウザーです。 ユーザーがアプリ内のファイルに直接アクセスできるようにするには、次のように、ファイル`LSSupportsOpeningDocumentsInPlace`に新しいブール値の`true`キーを作成し、をに設定します。
 
 ![LSSupportsOpeningDocumentsInPlace の設定](file-system-images/51-supports-opening.png)
 
@@ -292,7 +292,7 @@ iOS 11 では、**ファイルアプリが**導入されました。これは、
 
 Apple では、iOS 5 で*ICloud バックアップ*機能が導入されました。 Icloud バックアップが有効になっている場合、アプリケーションのホームディレクトリ内のすべてのファイル (通常はバックアップされていないディレクトリ (アプリバンドル`Caches`、 `tmp`、など) は icloud サーバーにバックアップされます。 この機能により、デバイスが紛失、盗難、または破損した場合に備えて、完全なバックアップをユーザーに提供できます。
 
-ICloud では、各ユーザーに 5 Gb の "空き" 領域が提供されるだけなので、不必要に帯域幅を使用しないようにするために、Apple ではユーザーが基本的に生成したデータのみをバックアップすることを想定しています IOS データストレージのガイドラインに準拠するには、次の項目に従うことで、バックアップされるデータの量を制限する必要があります。
+ICloud では、各ユーザーに 5 Gb の空き領域を提供するだけで、帯域幅を不必要に使用しないようにするために、アプリケーションではユーザーが基本的に生成したデータのみをバックアップすることを想定しています。 IOS データストレージのガイドラインに準拠するには、次の項目に従うことで、バックアップされるデータの量を制限する必要があります。
 
 - ユーザーが生成したデータまたは再作成できないデータだけを Documents ディレクトリ (バックアップ対象) に格納します。
 - またはで`Library/Caches`簡単に再作成または`tmp`再ダウンロードできるその他のデータを格納します (バックアップされていない、"クリーニング済み" の場合があります)。

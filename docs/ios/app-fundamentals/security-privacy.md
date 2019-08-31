@@ -7,19 +7,19 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 9fcd4820b5e22254356250ef2d26714dc32a59f4
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 5c818cac3b26e94710a64938a80690b8d4946320
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655207"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70200217"
 ---
 # <a name="ios-security-and-privacy-features"></a>iOS のセキュリティとプライバシーの機能
 
 _この記事では、iOS でのセキュリティとプライバシーの使用方法と、それらが Xamarin iOS アプリに与える影響について説明します。_
 
 Apple は、iOS 10 (およびそれ以降) のセキュリティとプライバシーの両方に対していくつかの機能強化を行っており、開発者がアプリのセキュリティを向上させ、エンドユーザーのプライバシーを確保するのに役立ちます。 この記事では、これらの機能を Xamarin iOS アプリに実装する方法について説明します。
-    
+
 <a name="General-Enhancements" />
 
 ## <a name="general-enhancements"></a>全般的な機能強化
@@ -51,9 +51,9 @@ IOS 10 (またはそれ以降) で実行されているアプリでは、特定�
 - **プライバシー-ヘルス更新の利用状況の説明**(`NSHealthUpdateUsageDescription`)-開発者は、アプリがユーザーの正常性データを編集する理由を記述できます。 詳細については、Apple の[HKHealthStore クラスのリファレンス](https://developer.apple.com/reference/healthkit/hkhealthstore)を参照してください。
 - **プライバシー-ホームキットの利用状況の説明**(`NSHomeKitUsageDescription`)-開発者は、アプリがユーザーのホームキット構成データにアクセスする理由を記述できます。
 - **プライバシー-場所常に使用する説明**(`NSLocationAlwaysUsageDescription`)-開発者は、アプリが常にユーザーの場所にアクセスする必要がある理由を記述できます。
-- れ**プライバシー-場所の使用方法の説明**(`NSLocationUsageDescription`)-開発者は、アプリがユーザーの場所にアクセスする理由を記述できます。 *付箋このキーは、iOS 8 以降では非推奨とされました。代わりに`NSLocationAlwaysUsageDescription` 、 `NSLocationWhenInUseUsageDescription`またはを使用してください。*
+- れ**プライバシー-場所の使用方法の説明**(`NSLocationUsageDescription`)-開発者は、アプリがユーザーの場所にアクセスする理由を記述できます。 *注: このキーは、iOS 8 以降では非推奨とされました。代わりに`NSLocationAlwaysUsageDescription` 、 `NSLocationWhenInUseUsageDescription`またはを使用してください。*
 - **プライバシー-使用中の使用状況の説明**(`NSLocationWhenInUseUsageDescription`)-開発者は、アプリケーションの実行中にユーザーの場所にアクセスする理由を記述できます。
-- れ**プライバシー-メディアライブラリの利用状況の説明**-開発者は、アプリがユーザーのメディアライブラリにアクセスする理由を記述できます。 *付箋このキーは、iOS 8 以降では非推奨とされました。代わりに`NSAppleMusicUsageDescription`を使用してください。*
+- れ**プライバシー-メディアライブラリの利用状況の説明**-開発者は、アプリがユーザーのメディアライブラリにアクセスする理由を記述できます。 *注: このキーは、iOS 8 以降では非推奨とされました。代わりに`NSAppleMusicUsageDescription`を使用してください。*
 - **プライバシー-マイクの使用方法の説明**(`NSMicrophoneUsageDescription`)-開発者は、アプリがデバイスのマイクにアクセスする理由を記述できます。
 - **プライバシー-モーションの使用方法の説明**(`NSMotionUsageDescription`)-開発者は、アプリがデバイスの加速度計にアクセスする理由を記述できます。
 - **プライバシー-フォトライブラリの使用方法の説明**(`NSPhotoLibraryUsageDescription`)-開発者は、アプリがユーザーの写真ライブラリにアクセスする理由を記述できます。
@@ -112,7 +112,7 @@ IOS 10 (またはそれ以降) で実行されているアプリでは、特定�
 
 <a name="Summary" />
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
 この記事では、iOS 10 で Apple が行ったセキュリティとプライバシーの変更点と、それらが Xamarin iOS アプリに与える影響について説明しました。
 

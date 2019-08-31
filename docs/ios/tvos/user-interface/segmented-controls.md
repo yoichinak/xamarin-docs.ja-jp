@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: f4f063cf7004d35aa93f688e71a917caa7a3e5a8
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 622960f73c96209c1a67a08a4f0abe27656331bf
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648946"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70200252"
 ---
 # <a name="working-with-tvos-segmented-controls-in-xamarin"></a>Xamarin での tvOS セグメント化されるコントロールの操作
 
@@ -71,7 +71,7 @@ TvOS アプリでセグメントコントロールを操作する最も簡単な
 1. 変更内容を保存します。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
-    
+
 1. **ソリューションエクスプローラー**で、 `Main.storyboard`ファイルをダブルクリックして開き、編集します。
 1. **[ツールボックス]** から**セグメントコントロール**をドラッグし、ビューにドロップします。 
 
@@ -85,7 +85,7 @@ TvOS アプリでセグメントコントロールを操作する最も簡単な
 
     [![](segmented-controls-images/segment04-vs.png "名前を割り当てる")](segmented-controls-images/segment04-vs.png#lightbox)
 1. 変更内容を保存します。
-    
+
 -----
 
 ストーリーボードの操作の詳細については、「 [Hello, tvOS クイックスタートガイド](~/ios/tvos/get-started/hello-tvos.md)」を参照してください。 

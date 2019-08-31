@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 42749bf07f3b0239a550e66247fc0377fdc1a0b4
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 0d93978d6f7b3dff6d0d7ebf7c9f9afbe3572079
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70121372"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70199910"
 ---
 # <a name="working-with-tvos-table-views-in-xamarin"></a>Xamarin での tvOS テーブルビューの使用
 
@@ -69,7 +69,7 @@ TvOS アプリでテーブルビューを操作する最も簡単な方法は、
 開始するには、次の操作を行います。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
-    
+
 1. Visual Studio for Mac で、新しい tvOS app プロジェクトを開始し、[ **tvOS** > **app** > **Single View app** ] を選択し、 **[次へ]** ボタンをクリックします。 
 
     [![](table-views-images/table02.png "単一ビューアプリを選択する")](table-views-images/table02.png#lightbox)
@@ -112,9 +112,9 @@ TvOS アプリでテーブルビューを操作する最も簡単な方法は、
 
     [![](table-views-images/table15.png "UI レイアウト")](table-views-images/table15.png#lightbox)
 1. ストーリーボードへの変更を保存します。
-    
+
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
-    
+
 1. Visual Studio で、新しい tvOS app プロジェクトを開始し、[ **tvOS** > **Single View app] \ (シングルビューアプリ**の作成 \) を選択して、アプリの名前を入力します。 **[Ok]** をクリックして、新しいソリューションを作成します。 
 
     [![](table-views-images/table02-vs.png "単一ビューアプリを選択する")](table-views-images/table02-vs.png#lightbox)
@@ -153,7 +153,7 @@ TvOS アプリでテーブルビューを操作する最も簡単な方法は、
 
     [![](table-views-images/table15.png "UI レイアウト")](table-views-images/table15.png#lightbox)
 1. ストーリーボードへの変更を保存します。
-    
+
 -----
 
 <a name="Designing-a-Data-Model" />

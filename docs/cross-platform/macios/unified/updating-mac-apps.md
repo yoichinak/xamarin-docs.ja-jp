@@ -6,12 +6,12 @@ ms.assetid: 26673CC5-C1E5-4BAC-BEF4-9A386B296FD5
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: dc23aed074360a06fcef6ad540d91aa98a19318b
-ms.sourcegitcommit: 9912e57ff6124c583600f9460ebfa3f7f7525960
+ms.openlocfilehash: a6d245e60a0d163c054fd74e0fb64780225da031
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69560291"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70197809"
 ---
 # <a name="updating-existing-mac-apps"></a>既存の Mac アプリを更新しています
 
@@ -118,7 +118,7 @@ Unified API サポートを利用するために NuGet に変更が加えられ�
 ## <a name="enabling-64-bit-builds-of-xamarinmac-apps"></a>Xamarin. Mac アプリの64ビットビルドを有効にする
 
 Unified API に変換された Xamarin. Mac モバイルアプリケーションの場合でも、開発者はアプリのオプションから64ビットコンピューター用のアプリケーションのビルドを有効にする必要があります。 64ビットビルドを有効にするための詳細な手順については、 [32/64 ビットプラットフォームに関する考慮事項](~/cross-platform/macios/32-and-64/index.md)に関するドキュメントの**64 ビットビルドの有効化**に関するドキュメントを参照してください。
-    
+
 ## <a name="finishing-up"></a>終了しています
 
 自動または手動のいずれかの方法を使用して、Xamarin アプリケーションをクラシック Api から統合 Api に変換することを選択したかどうかにかかわらず、手動での介入が必要になるインスタンスがいくつかあります。 既知の問題と回避策については[、Unified API ドキュメントにコードを更新するためのヒント](~/cross-platform/macios/unified/updating-tips.md)を参照してください。

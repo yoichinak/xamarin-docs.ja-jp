@@ -1,45 +1,45 @@
 ---
-title: 手順 1. Azure Active Directory を使用するアプリを登録します。
-description: このドキュメントでは、モバイル クライアントによって安全にアクセスできるように、Azure Active Directory を Azure アプリケーションを登録する方法について説明します。
+title: 手順 1. アプリを登録して Azure Active Directory を使用する
+description: このドキュメントでは、モバイルクライアントが安全にアクセスできるように Azure Active Directory に Azure アプリケーションを登録する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 0B17991A-4573-4F6C-9E86-D4B9D1A47E4D
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 3e852e3e7ab3ac5db28052a47af1ebec4dbd2416
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 732c1ee241b39a4bb1422b8c27820631bf8c6b0c
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67864669"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70199053"
 ---
-# <a name="step-1-register-an-app-to-use-azure-active-directory"></a>手順 1. Azure Active Directory を使用するアプリを登録します。
+# <a name="step-1-register-an-app-to-use-azure-active-directory"></a>手順 1. アプリを登録して Azure Active Directory を使用する
 
-1. 移動します[windowsazure.com](https://manage.windowsazure.com) Microsoft アカウントまたは Azure ポータルで組織アカウントでログインします。 Azure サブスクリプションを持っていない場合から試用版を入手できます[azure.com](https://www.azure.com)
+1. [Windowsazure.com](https://manage.windowsazure.com)に移動し、Azure Portal で Microsoft アカウントまたは組織アカウントでログインします。 Azure サブスクリプションをお持ちでない場合は、 [azure.com](https://www.azure.com)から試用版を入手できます。
 
-2. サインインした後に移動、 **Active Directory** (1) セクション (2) アプリケーションを登録するディレクトリを選択
+2. サインインした後、[ **Active Directory** (1)] セクションに移動し、アプリケーションを登録するディレクトリ (2) を選択します。
 
-   [![](register-images/01.-active-directory-in-azure-portal-sml.jpg "セクションし、アプリケーションを登録するディレクトリの選択")](register-images/01.-active-directory-in-azure-portal.jpg#lightbox)
+   [![](register-images/01.-active-directory-in-azure-portal-sml.jpg "セクションで、アプリケーションを登録するディレクトリを選択します。")](register-images/01.-active-directory-in-azure-portal.jpg#lightbox)
 
-3. クリックして**追加**新しいアプリケーションを作成するを選択し、**組織で開発中のアプリケーションを追加**
+3. **[追加]** をクリックして新しいアプリケーションを作成し、 **[組織で開発中のアプリケーションを追加]** する を選択します。
 
-   [![](register-images/02.-add-new-application-sml.jpg "組織で開発中のアプリケーションを追加します。")](register-images/02.-add-new-application.jpg#lightbox)
+   [![](register-images/02.-add-new-application-sml.jpg "組織で開発中のアプリケーションを追加する")](register-images/02.-add-new-application.jpg#lightbox)
 
-4. 次の画面で、アプリに名前を付けます (例。 XAM-DEMO)。
-   選択するかどうかを確認**ネイティブ クライアント アプリケーション**としてアプリケーションの種類。
+4. 次の画面で、アプリに名前を付けます (例として、 XAM-デモ)。
+   アプリケーションの種類として **[ネイティブクライアントアプリケーション]** を選択していることを確認します。
 
-   ![](register-images/03.-app-name.jpg "アプリケーションの種類としてネイティブ クライアント アプリケーションを選択するかどうかを確認します。")
+   ![](register-images/03.-app-name.jpg "アプリケーションの種類として [ネイティブクライアントアプリケーション] を選択していることを確認します。")
 
-5. 最後の画面では、提供、**リダイレクト URI*はアプリケーションに固有の認証が完了したらこの URI に戻ります。
+5. 最後の画面で、認証が完了したときにこの URI に返されるため、アプリケーションに固有の **リダイレクト URI*を指定します。
 
-   ![](register-images/04.-app-redirect.jpg "最後の画面での認証の完了時にこの URI を返すので、アプリケーションに一意のリダイレクト URI を指定します。")
+   ![](register-images/04.-app-redirect.jpg "最後の画面で、アプリケーションに固有のリダイレクト URI を指定します。これは、認証の完了時にこの URI に戻ります。")
 
-6. アプリを作成したらに移動して、**構成**タブ。メモ、**クライアント ID**後で、アプリケーションで使用します。 また、この画面で Active Directory へのモバイル アプリケーション アクセス権を付与したり、Web API または office 365 は、認証が完了すると、モバイル アプリケーションで使用できるように別のアプリケーションを追加できます。
+6. アプリが作成されたら、 **[構成]** タブに移動します。後でアプリケーションで使用する**クライアント ID**を書き留めておきます。 また、この画面では、モバイルアプリケーションに Active Directory へのアクセス権を付与したり、Web API や Office365 などの別のアプリケーションを追加したりできます。認証が完了したら、モバイルアプリケーションで使用できます。
 
-     ![](register-images/05.-configure.jpg "また、この画面で Active Directory へのモバイル アプリケーション アクセス権を付与したり、Web API や office 365 などの別のアプリケーションを追加")
+   ![](register-images/05.-configure.jpg "また、この画面では、モバイルアプリケーションに Active Directory へのアクセス権を付与したり、Web API や Office365 などの別のアプリケーションを追加したりすることもできます。")
 
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [Microsoft NativeClient サンプル](https://github.com/AzureADSamples/NativeClient-MultiTarget-DotNet)
+- [Microsoft NativeClient のサンプル](https://github.com/AzureADSamples/NativeClient-MultiTarget-DotNet)

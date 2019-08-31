@@ -1,35 +1,35 @@
 ---
 title: 高度な統合に関するトピック
-description: このドキュメントでは、Xamarin Workbooks の統合に関連する高度なトピックについて説明します。 Xamarin.Workbook.Integrations NuGet パッケージと、Xamarin のブック内の API の公開がについて説明します。
+description: このドキュメントでは、Xamarin Workbooks 統合に関連する高度なトピックについて説明します。 このトピックでは、xamarin ブック内での Xamarin. Workbook と API の公開について説明します。
 ms.prod: xamarin
 ms.assetid: 002CE0B1-96CC-4AD7-97B7-43B233EF57A6
 author: lobrien
 ms.author: laobri
 ms.date: 03/30/2017
-ms.openlocfilehash: 56ee709b78b8587c2717dc9d25a6357041812d23
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 07dd0e64b90bb0aa11f0a7050e3b86f3203ce7de
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61382246"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70199979"
 ---
 # <a name="advanced-integration-topics"></a>高度な統合に関するトピック
 
-統合のアセンブリを参照する必要があります、 [ `Xamarin.Workbooks.Integrations` NuGet][nuget]します。 チェック アウト、[クイック スタート ドキュメント](~/tools/workbooks/sdk/index.md)NuGet パッケージの概要の詳細についてはします。
+統合アセンブリは[ `Xamarin.Workbooks.Integrations` NuGet][nuget]を参照する必要があります。 NuGet パッケージの概要については、[クイックスタートドキュメント](~/tools/workbooks/sdk/index.md)を参照してください。
 
-クライアント統合もサポートされているし、同じディレクトリに、エージェントの統合のアセンブリと同じ名前の JavaScript や CSS ファイルを配置することによって開始されます。 たとえば、(これは、NuGet を参照) エージェント統合アセンブリの名前が`SampleExternalIntegration.dll`、し`SampleExternalIntegration.js`と`SampleExternalIntegration.css`存在する場合にも、クライアントに統合されます。 クライアントの統合は省略可能です。
+クライアント統合もサポートされており、同じディレクトリ内のエージェント統合アセンブリと同じ名前の JavaScript または CSS ファイルを配置することによって開始されます。 たとえば、(NuGet を参照する) エージェント統合アセンブリにという名前が`SampleExternalIntegration.dll`付け`SampleExternalIntegration.js`られ`SampleExternalIntegration.css`ている場合、とは、クライアントにも統合されます (存在する場合)。 クライアント統合は任意です。
 
-自体外部統合の NuGet としてパッケージ化、提供され、エージェントをホストしている、または単に並行して配置されるアプリケーション内で直接参照されていることができますが、`.workbook`がそれを使用するファイル。
+外部統合自体は、NuGet としてパッケージ化し、エージェントをホストしているアプリケーション内で直接参照することも、単`.workbook`にそれを使用するファイルと共に配置することもできます。
 
-パッケージが参照されると、クイック スタートのドキュメントに従ってブックと共に出荷された統合アセンブリが参照するために必要がありますが、NuGet パッケージの外部の統合 (エージェントとクライアント) は自動的に読み込みます。
+NuGet パッケージの外部統合 (エージェントとクライアント) は、パッケージの参照時に自動的に読み込まれます。クイックスタートドキュメントの場合と同様に、ブックと共に出荷された統合アセンブリは、次のように参照する必要があります。
 
 ```csharp
 #r "SampleExternalIntegration.dll"
 ```
 
-統合この方法を参照するときに読み込まれません、クライアントによってすぐ&mdash;読み込むへの統合からいくつかのコードを呼び出す必要があります。 私たち対処このバグ今後します。
+このように統合を参照する場合は、クライアント&mdash;によって読み込まれないようにするために、統合からコードを呼び出して読み込む必要があります。 今後、このバグに対処する予定です。
 
-`Xamarin.Interactive` PCL は、いくつかの重要な統合 Api を提供します。 すべての統合では、統合エントリ ポイントを提供する必要がありますには少なくとも。
+PCL `Xamarin.Interactive`には、いくつかの重要な統合 api が用意されています。 すべての統合で、少なくとも統合エントリポイントを提供する必要があります。
 
 ```csharp
 using Xamarin.Interactive;
@@ -47,15 +47,15 @@ class AgentIntegration : IAgentIntegration
 }
 ```
 
-この時点では、統合のアセンブリが参照されていると、クライアントは JavaScript と CSS の統合ファイルを読み込む暗黙的に。
+この時点で、統合アセンブリが参照されると、クライアントは JavaScript と CSS の統合ファイルを暗黙的に読み込みます。
 
 ## <a name="apis"></a>API
 
-ブックで参照またはライブである任意のアセンブリでは、セッションを検査、そのパブリック Api のいずれかは、セッションにアクセスできます。 そのためユーザーを探索のための安全かつ実用的な API サーフェスに重要ですが。
+ブックまたはライブ検査セッションによって参照されているアセンブリと同様に、そのパブリック Api はいずれもセッションにアクセスできます。 そのため、ユーザーが調査するために、安全で実用的な API サーフェスを用意することが重要です。
 
-統合のアセンブリは、事実上、アプリケーションまたは関心のある SDK と、セッション間のブリッジです。 セッションを検査またはパブリック Api を指定しないとオブジェクトを生成するように"バック グラウンドで"タスクを実行するだけ、具体的にはライブ ブックのコンテキストで意味のある新しい Api を提供できる[表現](~/tools/workbooks/sdk/representations.md)します。
+統合アセンブリは、実質的にはアプリケーションまたは SDK とセッションの間でブリッジされます。 これは、特にブックまたはライブ検査セッションのコンテキストで意味を持つ新しい Api を提供したり、パブリック Api を提供したり、オブジェクト[表現](~/tools/workbooks/sdk/representations.md)の生成などの "背後で" バックグラウンドで実行したりすることができます。
 
 > [!NOTE]
-> パブリックである必要がありますが、IntelliSense で表示する必要がありますいない Api は、通常でマークできる`[EditorBrowsable (EditorBrowsableState.Never)]`属性。
+> パブリックである必要がありますが、IntelliSense を使用して表示しない api `[EditorBrowsable (EditorBrowsableState.Never)]`は、通常の属性でマークできます。
 
 [nuget]: https://nuget.org/packages/Xamarin.Workbooks.Integration
