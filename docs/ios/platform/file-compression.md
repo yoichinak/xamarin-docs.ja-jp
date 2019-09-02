@@ -1,36 +1,36 @@
 ---
-title: Xamarin.iOS におけるファイル圧縮
-description: このドキュメントでは、Xamarin.iOS で libcompression API を操作する方法について説明します。 縮小された、膨張させること、について説明し、さまざまなアルゴリズムをサポートします。
+title: Xamarin. iOS のファイル圧縮
+description: このドキュメントでは、Xamarin. iOS で libcompression API を使用する方法について説明します。 Deflating、拡大、およびサポートされているさまざまなアルゴリズムについて説明します。
 ms.prod: xamarin
 ms.assetid: 94D05DAB-01E8-4C62-9CEF-9D6417EEA8EB
 ms.technology: xamarin-ios
 author: mandel-macaque
 ms.author: mandel
 ms.date: 03/04/2019
-ms.openlocfilehash: f7a1df65047fd8040dd40e9f7f057d6bfe6dea61
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: bcc63aa4e1926f5502d571bf47c83b0c8ea7e429
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61403032"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70199525"
 ---
-# <a name="file-compression-in-xamarinios"></a>Xamarin.iOS におけるファイル圧縮
+# <a name="file-compression-in-xamarinios"></a>Xamarin. iOS のファイル圧縮
 
-IOS 9.0 または macOS 10.11 (以降) を対象とする Xamarin アプリを使用できます、_圧縮 Framework_を圧縮する (エンコード) を圧縮解除 (デコード) データ。 Xamarin.iOS では、次の Stream API このフレームワークを提供します。 圧縮フレームワークでは、により、開発者は、圧縮と対話して、標準ストリームのコールバックとデリゲートを使用する必要はありませんが、データの圧縮を解除します。
+IOS 9.0 または macOS 10.11 (およびそれ以降) を対象とする Xamarin アプリでは、_圧縮フレームワーク_を使用してデータを圧縮 (エンコード) および圧縮解除 (デコード) できます。 Xamarin. iOS は、Stream API に従ってこのフレームワークを提供します。 圧縮フレームワークを使用すると、開発者は、データの圧縮と圧縮解除を、コールバックやデリゲートを使用しなくても、通常のストリームと同様に行うことができます。
 
-圧縮フレームワークでは、次のアルゴリズムのサポートを提供します。
+圧縮フレームワークでは、次のアルゴリズムがサポートされています。
 
 * LZ4
-* 生の LZ4
+* LZ4 Raw
 * Lzfse
 * Lzma
 * Zlib
 
-圧縮のフレームワークを使用すると、サードパーティ製のライブラリまたは Nuget なしの圧縮操作を実行する開発者ができます。 これにより、外部の依存関係が削減され、によりことと、(ただし、OS の最小要件を満たす場合)、すべてのプラットフォームで、圧縮操作をサポートします。
+圧縮フレームワークを使用すると、開発者はサードパーティのライブラリや Nuget を使用せずに圧縮操作を実行できます。 これにより、外部の依存関係が減少し、すべてのプラットフォーム (OS の最小要件を満たしている限り) で圧縮操作がサポートされるようになります。
 
 ## <a name="general-file-decompression"></a>一般的なファイルの圧縮解除
 
-圧縮フレームワークでは、Xamarin.iOS および Xamarin.Mac でストリーム API を使用します。 この API は、あるデータを圧縮する開発者は、使用 .NET 内の他の IO Api で使用される通常のパターンを意味します。 次の例については、API に似ていますが、圧縮フレームワークでのデータを圧縮解除する方法を示しています、 `System.IO.Compression.DeflateStream` API:
+圧縮フレームワークは、Xamarin. iOS と Xamarin. Mac で stream API を使用します。 この API は、データを圧縮するために、開発者が .NET 内の他の IO Api で使用される通常のパターンを使用できることを意味します。 次のサンプルは、圧縮フレームワークを使用してデータを圧縮解除する方法を示しています`System.IO.Compression.DeflateStream` 。これは、api に含まれる api に似ています。
 
 ```csharp
 // sample zlib data
@@ -45,11 +45,11 @@ using (var reader = new StreamReader (decompressing))
 }
 ```
 
-`CompressionStream`実装、`IDisposable`などその他のインターフェイス`System.IO.Streams`ので、開発者が必要でなくなったとリソースが解放されることを確認してください。
+は`CompressionStream` `IDisposable`インターフェイスを`System.IO.Streams`実装しているため、開発者は不要になったリソースを解放する必要があります。
 
 ## <a name="general-file-compression"></a>一般的なファイルの圧縮
 
-圧縮 API では、次の API は、同じデータを圧縮することもできます。 提供されているアルゴリズムのいずれかを使用してデータを圧縮することができます、`CompressionAlgorithm`列挙子。
+また、圧縮 API を使用すると、開発者は同じ API に従ってデータを圧縮することもできます。 `CompressionAlgorithm`列挙子に示されているアルゴリズムのいずれかを使用してデータを圧縮できます。
 
 ```csharp
 // sample method that copies the data from the source stream to the destination stream
@@ -85,4 +85,4 @@ static void CompressExample ()
 
 ## <a name="async-support"></a>非同期サポート
 
-`CompressionStream`でサポートされているすべての非同期操作をサポートしている、 `System.IO.DeflateStream`、つまり、開発者が UI スレッドをブロックすることがなく、圧縮/圧縮解除の操作を実行する async キーワードを使用できます。
+は、`System.IO.DeflateStream`でサポートされているすべての非同期操作をサポートしています。つまり、開発者は、asyncキーワードを使用して、UIスレッドをブロックせずに圧縮/圧縮解除操作を`CompressionStream`実行できます。
