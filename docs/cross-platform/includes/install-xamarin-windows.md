@@ -1,11 +1,11 @@
 ---
 ms.topic: include
-ms.openlocfilehash: 5fccbcf56037b4c4538ccfa16515ea63aa53c57c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: fedf918a2217a5fd1d5863ee5926057317fd3294
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61264189"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70206231"
 ---
 以下の手順に従って、Xamarin を_新しい_ Visual Studio 2017 のインストールの一部としてインストールできます。
 
@@ -29,7 +29,7 @@ ms.locfileid: "61264189"
 
     ![インストール中の進行状況バー](~/get-started/installation/windows-images/04-progress-bars.png)
 
-6. Visual Studio 2017 のインストールが完了したら、**[起動]** ボタンをクリックして Visual Studio を起動します。
+6. Visual Studio 2017 のインストールが完了したら、 **[起動]** ボタンをクリックして Visual Studio を起動します。
 
     ![[起動] ボタンの場所](~/get-started/installation/windows-images/05-launch.png)
 
