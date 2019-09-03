@@ -49,7 +49,7 @@ public override StartCommandResult OnStartCommand (Android.Content.Intent intent
 
 - **[Startcommandresult. notsticky](xref:Android.App.StartCommandResult.NotSticky)** &ndash;この値は、強制終了されたサービスを再起動する必要がないことを Android に指示します。 この例として、アプリでギャラリーのサムネイルを生成するサービスについて考えてみます。 サービスを強制終了した場合は、サムネイルをすぐに&ndash;再作成することは重要ではなく、次回アプリを実行するときにサムネイルを再作成できます。
 - **[Startcommandresult. スティッキービット](xref:Android.App.StartCommandResult.Sticky)** &ndash;は、サービスを再起動するように Android に指示しますが、サービスを開始した最後のインテントは提供しません。 処理`null`する保留中のインテントがない場合は、インテントパラメーターにが指定されます。 この例としては、音楽プレーヤーアプリがあります。サービスは、音楽を再生する準備ができましたが、最後の曲を再生します。
-- **[StartCommandResult.RedeliverIntent](xref:Android.App.StartCommandResult.RedeliverIntent)** &ndash; This value is will tell Android to restart the service and re-deliver the last `Intent`. この例として、アプリのデータファイルをダウンロードするサービスがあります。 サービスを強制終了した場合でも、データファイルをダウンロードする必要があります。 を返す`StartCommandResult.RedeliverIntent`ことによって、Android がサービスを再起動すると、サービスに対して (ダウンロードするファイルの URL を保持する) インテントも提供されます。 これにより、ダウンロードは再起動または再開できます (コードの正確な実装によって異なります)。
+- **[StartCommandResult.RedeliverIntent](xref:Android.App.StartCommandResult.RedeliverIntent)** &ndash; この値は、Androidにサービスを再起動し、最後のサービスを再配信するように指示します `Intent`. この例として、アプリのデータファイルをダウンロードするサービスがあります。 サービスを強制終了した場合でも、データファイルをダウンロードする必要があります。 を返す`StartCommandResult.RedeliverIntent`ことによって、Android がサービスを再起動すると、サービスに対して (ダウンロードするファイルの URL を保持する) インテントも提供されます。 これにより、ダウンロードは再起動または再開できます (コードの正確な実装によって異なります)。
 
 には4番目の`StartCommandResult` &ndash; `StartCommandResult.ContinuationMask`値があります。 この値はによっ`OnStartCommand`て返され、Android が強制終了したサービスを続行する方法を説明します。 通常、この値はサービスを開始するために使用されません。
 
