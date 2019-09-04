@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: beb063d423c860958948751d162af661040004b7
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 0816afe7831338348f7612576041623abe8ba283
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69529011"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227259"
 ---
 # <a name="data-binding-and-key-value-coding-in-xamarinmac"></a>Xamarin. Mac でのデータバインディングとキー値のコーディング
 
@@ -20,7 +20,7 @@ _この記事では、キーと値のコードを使用して、Xcode の Interf
 
 ## <a name="overview"></a>概要
 
-Xamarin. Mac C#アプリケーションでおよび .net を使用する場合、 *Xcode と*で作業する開発者が行うのと同じキー値のコーディングとデータバインディングの手法にアクセスできます。 Xcode は直接統合されているため、コードを記述する代わりに、Xcode の_Interface Builder_を使用して、UI 要素とのデータバインドを行うことができます。
+Xamarin. Mac C#アプリケーションでおよび .net を使用する場合、 *Xcode と*で作業する開発者が行う*のと同じ*キー値のコーディングとデータバインディングの手法にアクセスできます。 Xcode は直接統合されているため、コードを記述する代わりに、Xcode の_Interface Builder_を使用して、UI 要素とのデータバインドを行うことができます。
 
 UI 要素を設定して操作するために、Xamarin. Mac アプリケーションでキー値のコードとデータバインディングの手法を使用することにより、記述して維持する必要があるコードの量を大幅に減らすことができます。 また、フロントエンドのユーザーインターフェイス (_モデルビューコントローラー_) からバッキングデータ (_データモデル_) をさらに分離することもできます。これにより、管理が容易になり、アプリケーションの設計をより柔軟に行うことができます。
 
@@ -36,7 +36,7 @@ UI 要素を設定して操作するために、Xamarin. Mac アプリケーシ�
 
 キー値のコーディング (KVC) は、オブジェクトのプロパティに間接的にアクセスするためのメカニズムです。キー (特殊な書式設定文字列) を使用して、インスタンス変数また`get/set`はアクセサーメソッド () を使用してアクセスするのではなく、プロパティを識別します。 Xamarin. Mac アプリケーションでキー値のコーディングに準拠したアクセサーを実装することによって、キー値の観察 (KVO)、データバインディング、コアデータ、Cocoa バインド、および scriptability 可能な他の macOS (旧 OS X) 機能にアクセスできるようになります。
 
-UI 要素を設定して操作するために、Xamarin. Mac アプリケーションでキー値のコードとデータバインディングの手法を使用することにより、記述して維持する必要があるコードの量を大幅に減らすことができます。 また、フロントエンドのユーザーインターフェイス (_モデルビューコントローラー_) からバッキングデータ (_データモデル_) をさらに分離することもできます。これにより、管理が容易になり、アプリケーションの設計をより柔軟に行うことができます。 
+UI 要素を設定して操作するために、Xamarin. Mac アプリケーションでキー値のコードとデータバインディングの手法を使用することにより、記述して維持する必要があるコードの量を大幅に減らすことができます。 また、フロントエンドのユーザーインターフェイス (_モデルビューコントローラー_) からバッキングデータ (_データモデル_) をさらに分離することもできます。これにより、管理が容易になり、アプリケーションの設計をより柔軟に行うことができます。
 
 たとえば、KVC 準拠オブジェクトの次のクラス定義を見てみましょう。
 
@@ -50,7 +50,7 @@ namespace MacDatabinding
     public class PersonModel : NSObject
     {
         private string _name = "";
-        
+
         [Export("Name")]
         public string Name {
             get { return _name; }
@@ -60,7 +60,7 @@ namespace MacDatabinding
                 DidChangeValue ("Name");
             }
         }
-        
+
         public PersonModel ()
         {
         }
@@ -68,7 +68,7 @@ namespace MacDatabinding
 }
 ```
 
-まず、属性`[Register("PersonModel")]`はクラスを登録し、それを目的の C に公開します。 次に、クラスは、(また`NSObject`はから`NSObject`継承するサブクラス) から継承する必要があります。これにより、クラスを kvc 準拠にすることができるいくつかの基本メソッドが追加されます。 次に、 `[Export("Name")]`属性は`Name`プロパティを公開し、後で kvc および kvc 手法を使用してプロパティにアクセスするために使用されるキー値を定義します。 
+まず、属性`[Register("PersonModel")]`はクラスを登録し、それを目的の C に公開します。 次に、クラスは、(また`NSObject`はから`NSObject`継承するサブクラス) から継承する必要があります。これにより、クラスを kvc 準拠にすることができるいくつかの基本メソッドが追加されます。 次に、 `[Export("Name")]`属性は`Name`プロパティを公開し、後で kvc および kvc 手法を使用してプロパティにアクセスするために使用されるキー値を定義します。
 
 最後に、プロパティの値に対するキー値の観測された変更を可能にするために、アクセサーは、および`WillChangeValue` `DidChangeValue`メソッドの呼び出しの値に対する変更をラップ`Export`する必要があります (属性と同じキーを指定します)。  例えば:
 
@@ -103,7 +103,7 @@ namespace MacDatabinding
     {
         private string _name = "";
         private PersonModel _child = new PersonModel();
-        
+
         [Export("Name")]
         public string Name {
             get { return _name; }
@@ -113,7 +113,7 @@ namespace MacDatabinding
                 DidChangeValue ("Name");
             }
         }
-        
+
         [Export("Child")]
         public PersonModel Child {
             get { return _child; }
@@ -123,7 +123,7 @@ namespace MacDatabinding
                 DidChangeValue ("Child");
             }
         }
-        
+
         public PersonModel ()
         {
         }
@@ -138,11 +138,11 @@ namespace MacDatabinding
 メソッド`ValueForKey`は、要求を受け取る kvc クラスのインスタンスに`NSString`対して、指定されたキーの値を (として) 返します。 たとえば、が上`Person`で定義された`PersonModel`クラスのインスタンスである場合は、次のようになります。
 
 ```csharp
-// Read value 
+// Read value
 var name = Person.ValueForKey (new NSString("Name"));
 ```
 
-これにより、の`Name` `PersonModel`インスタンスのプロパティの値が返されます。 
+これにより、の`Name` `PersonModel`インスタンスのプロパティの値が返されます。
 
 ### <a name="setting-values-using-key-value-coding"></a>キー値のコードを使用した値の設定
 
@@ -169,7 +169,7 @@ Person.AddObserver ("Name", NSKeyValueObservingOptions.New, (sender) => {
 });
 ```
 
-これで、 `Name` `PersonModel`クラスの`Person`インスタンスのプロパティが変更されるたびに、新しい値がコンソールに書き込まれます。 
+これで、 `Name` `PersonModel`クラスの`Person`インスタンスのプロパティが変更されるたびに、新しい値がコンソールに書き込まれます。
 
 詳細については、「[キー値の監視のプログラミングガイド](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/KeyValueObserving/KeyValueObserving.html#//apple_ref/doc/uid/10000177i)」の Apple の概要を参照してください。
 
@@ -334,7 +334,7 @@ public NSArray People {
 次の2つの点に注意してください。
 
 1. これは、 `NSMutableArray` **テーブルビュー**、**アウトラインビュー** 、**コレクション**などの appkit コントロールにデータをバインドするための要件であるため、標準C#の配列またはコレクションではなくを使用していました。
-2. 従業員の配列を公開するには、 `NSArray`データバインディングのためにをにキャストしC# 、書式設定`People`された名前を、データバインディング`personModelArray`で想定される形式に変更します (最初の文字が小文字になっています)。
+2. 従業員の配列を公開する`NSArray`には、データバインディングのためにをにキャストし、 C#書式設定`People`された名前を、データバインディング`personModelArray`で想定さ**れる形式に**変更します (最初の文字が小文字になっています)。
 
 次に、**配列コントローラー**と**ツリーコントローラー**をサポートするために、特別な名前のパブリックメソッドをいくつか追加する必要があります。
 
@@ -391,7 +391,7 @@ public NSImage Icon {
         }
     }
 }
-``` 
+```
 
 これを修正するには、次のコードを使用します。
 
@@ -419,7 +419,7 @@ public bool isManager {
 
 データモデルを定義したので、Xcode の Interface Builder でのデータバインディングの簡単な例を見てみましょう。 たとえば、前に定義したを編集`PersonModel`するために使用できるフォームを Xamarin. Mac アプリケーションに追加してみましょう。 いくつかのテキストフィールドと、モデルのプロパティを表示および編集するためのチェックボックスを追加します。
 
-まず、Interface Builder の**メインのストーリーボード**ファイルに新しい`SimpleViewController`**ビューコントローラー**を追加し、そのクラスにという名前を指定します。 
+まず、Interface Builder の**メインのストーリーボード**ファイルに新しい`SimpleViewController`**ビューコントローラー**を追加し、そのクラスにという名前を指定します。
 
 [![新しいビューコントローラーの追加](databinding-images/simple01.png "新しいビューコントローラーの追加")](databinding-images/simple01-large.png#lightbox)
 
@@ -465,24 +465,24 @@ public override void ViewDidLoad ()
 
 この`Person`キーを使用して公開`PersonModel`したにフォームをデータバインドするには、次の手順を実行します。
 
-1. [ **Employee Name** ] テキストフィールドを選択し、[**バインド] インスペクター**に切り替えます。
-2. [**バインド先**] ボックスをオンにし、ドロップダウンから [**簡易ビューコントローラー** ] を選択します。 次に`self.Person.Name` 、**キーのパス**を入力します。 
+1. **[Employee Name]** テキストフィールドを選択し、[**バインド] インスペクター**に切り替えます。
+2. **[バインド先]** ボックスをオンにし、ドロップダウンから **[簡易ビューコントローラー]** を選択します。 次に`self.Person.Name` 、**キーのパス**を入力します。
 
     [![キーのパスを入力する](databinding-images/simple03.png "キーのパスを入力する")](databinding-images/simple03-large.png#lightbox)
-3. [**職業**] テキストフィールドを選択し、[**バインド先**] ボックスをオンにして、ドロップダウンから [**簡易ビューコントローラー** ] を選択します。 次に`self.Person.Occupation` 、**キーのパス**を入力します。  
+3. **[職業]** テキストフィールドを選択し、 **[バインド先]** ボックスをオンにして、ドロップダウンから **[簡易ビューコントローラー]** を選択します。 次に`self.Person.Occupation` 、**キーのパス**を入力します。
 
     [![キーのパスを入力する](databinding-images/simple04.png "キーのパスを入力する")](databinding-images/simple04-large.png#lightbox)
-4. [**従業員はマネージャーで**ある] チェックボックスをオンにし、[**バインド先**] チェックボックスをオンにして、ドロップダウンから [**簡易ビューコントローラー** ] を選択します。 次に`self.Person.isManager` 、**キーのパス**を入力します。  
+4. **[従業員はマネージャーで]** ある チェックボックスをオンにし、 **[バインド先]** チェックボックスをオンにして、ドロップダウンから **[簡易ビューコントローラー]** を選択します。 次に`self.Person.isManager` 、**キーのパス**を入力します。
 
     [![キーのパスを入力する](databinding-images/simple05.png "キーのパスを入力する")](databinding-images/simple05-large.png#lightbox)
-5. [ **Number Of Employees Managed** Text] フィールドを選択し、[**バインド先**] ボックスをオンにして、ドロップダウンから [**簡易ビューコントローラー** ] を選択します。 次に`self.Person.NumberOfEmployees` 、**キーのパス**を入力します。  
+5. **[Number Of Employees Managed]** Text フィールドを選択し、 **[バインド先]** ボックスをオンにして、ドロップダウンから **[簡易ビューコントローラー]** を選択します。 次に`self.Person.NumberOfEmployees` 、**キーのパス**を入力します。
 
     [![キーのパスを入力する](databinding-images/simple06.png "キーのパスを入力する")](databinding-images/simple06-large.png#lightbox)
 6. 従業員がマネージャーでない場合は、Employees 管理対象ラベルとテキストフィールドの数を非表示にします。
-7. [ **Number Of Employees** ] \ (従業員管理 \) ラベルを選択し、**非表示**の turndown を展開して [**バインド先**] ボックスをオンにし、ドロップダウンから [**簡易ビューコントローラー** ] を選択します。 次に`self.Person.isManager` 、**キーのパス**を入力します。  
+7. **[Number Of Employees]** \ (従業員管理 \) ラベルを選択し、**非表示**の turndown を展開して **[バインド先]** ボックスをオンにし、ドロップダウンから **[簡易ビューコントローラー]** を選択します。 次に`self.Person.isManager` 、**キーのパス**を入力します。
 
     [![キーのパスを入力する](databinding-images/simple07.png "キーのパスを入力する")](databinding-images/simple07-large.png#lightbox)
-8. [ `NSNegateBoolean` **値トランスフォーマー** ] ドロップダウンから次のように選択します。  
+8. [ `NSNegateBoolean` **値トランスフォーマー** ] ドロップダウンから次のように選択します。
 
     ![NSNegateBoolean キー変換の選択](databinding-images/simple08.png "NSNegateBoolean キー変換の選択")
 9. これにより、 `isManager`プロパティの値が`false`の場合にラベルが非表示になることがデータバインディングに伝えられます。
@@ -576,34 +576,34 @@ public override void AwakeFromNib ()
 
 テーブルにバインドされたデータを提供する**配列コントローラー**を追加する必要があります。次の手順を実行します。
 
-1. **ライブラリインスペクター**から**インターフェイスエディター**に**配列コントローラー**をドラッグします。  
+1. **ライブラリインスペクター**から**インターフェイスエディター**に**配列コントローラー**をドラッグします。
 
     ![ライブラリからの配列コントローラーの選択](databinding-images/table03.png "ライブラリからの配列コントローラーの選択")
-2. **インターフェイス階層**で [**配列コントローラー** ] を選択し、**属性インスペクター**に切り替えます。  
+2. **インターフェイス階層**で **[配列コントローラー]** を選択し、**属性インスペクター**に切り替えます。
 
     [![属性インスペクターの選択](databinding-images/table04.png "属性インスペクターの選択")](databinding-images/table04-large.png#lightbox)
-3. `PersonModel` **クラス名**として「」と入力し、**プラス**ボタンをクリックして、3つのキーを追加します。 名前を、 `Occupation`次`isManager`のように指定します。 `Name`  
+3. `PersonModel` **クラス名**として「」と入力し、**プラス**ボタンをクリックして、3つのキーを追加します。 名前を、 `Occupation`次`isManager`のように指定します。 `Name`
 
     ![必要なキーパスを追加する](databinding-images/table05.png "必要なキーパスを追加する")
 4. これにより、配列がどのように管理しているか、およびキーによって公開する必要があるプロパティが配列コントローラーに伝えられます。
-5. **バインドインスペクター**に切り替え、[**コンテンツ配列**] で [**バインド先**] と [**テーブルビューコントローラー**] を選択します。 **モデルキー**の`self.personModelArray`パスを入力してください:  
+5. **バインドインスペクター**に切り替え、 **[コンテンツ配列]** で **[バインド先]** と **[テーブルビューコントローラー]** を選択します。 **モデルキー**の`self.personModelArray`パスを入力してください:
 
     ![キーのパスを入力する](databinding-images/table06.png "キーのパスを入力する")
 6. これにより、ビューコントローラーで公開さ`PersonModels`れたの配列に配列コントローラーが結び付けられます。
 
 ここで、テーブルビューを配列コントローラーにバインドする必要があります。次の手順を実行します。
 
-1. テーブルビューと**バインドインスペクター**を選択します。  
+1. テーブルビューと**バインドインスペクター**を選択します。
 
     [![バインドインスペクターの選択](databinding-images/table07.png "バインドインスペクターの選択")](databinding-images/table07-large.png#lightbox)
-2. テーブルの**内容**turndown の下で、[ **Bind To** and **Array Controller**] を選択します。 [ `arrangedObjects` **コントローラーキー** ] フィールドに「」と入力します。  
+2. テーブルの**内容**turndown の下で、[ **Bind To** and **Array Controller**] を選択します。 [ `arrangedObjects` **コントローラーキー** ] フィールドに「」と入力します。
 
     ![コントローラーキーの定義](databinding-images/table08.png "コントローラーキーの定義")
-3. [ **Employee** ] 列の下にある**テーブルビューセル**を選択します。 Turndown の**値**の下にある [**バインド] インスペクター**で、[**テーブルセルビュー** **にバインド**] を選択します。 モデル`objectValue.Name`キーの**パス**として「」と入力します。  
+3. **[Employee]** 列の下にある**テーブルビューセル**を選択します。 Turndown の**値**の下にある [**バインド] インスペクター**で、[**テーブルセルビュー** **にバインド**] を選択します。 モデル`objectValue.Name`キーの**パス**として「」と入力します。
 
     [![モデルキーのパスを設定する](databinding-images/table09.png "モデルキーのパスを設定する")](databinding-images/table09-large.png#lightbox)
 4. `objectValue`は、配列`PersonModel`コントローラーによって管理されている配列内の現在のです。
-5. [**職業**] 列の下にある [**テーブルビュー] セル**を選択します。 Turndown の**値**の下にある [**バインド] インスペクター**で、[**テーブルセルビュー** **にバインド**] を選択します。 モデル`objectValue.Occupation`キーの**パス**として「」と入力します。  
+5. **[職業]** 列の下にある [**テーブルビュー] セル**を選択します。 Turndown の**値**の下にある [**バインド] インスペクター**で、[**テーブルセルビュー** **にバインド**] を選択します。 モデル`objectValue.Occupation`キーの**パス**として「」と入力します。
 
     [![モデルキーのパスを設定する](databinding-images/table10.png "モデルキーのパスを設定する")](databinding-images/table10-large.png#lightbox)
 6. 変更を保存し Visual Studio for Mac に戻り、Xcode と同期します。
@@ -618,7 +618,7 @@ public override void AwakeFromNib ()
 
 アウトラインビューに対するデータバインディングは、テーブルビューに対するバインドとよく似ています。 主な違いは、**配列コントローラー**ではなく**ツリーコントローラー**を使用して、バインドされたデータをアウトラインビューに提供することです。 アウトラインビューの操作の詳細については、[アウトラインビュー](~/mac/user-interface/outline-view.md)のドキュメントを参照してください。
 
-まず、Interface Builder の**メインのストーリーボード**ファイルに新しい`OutlineViewController`**ビューコントローラー**を追加し、そのクラスにという名前を指定します。 
+まず、Interface Builder の**メインのストーリーボード**ファイルに新しい`OutlineViewController`**ビューコントローラー**を追加し、そのクラスにという名前を指定します。
 
 [![新しいビューコントローラーの追加](databinding-images/outline01.png "新しいビューコントローラーの追加")](databinding-images/outline01-large.png#lightbox)
 
@@ -694,38 +694,38 @@ public override void AwakeFromNib ()
 
 このアウトラインにバインドされたデータを提供するには、**ツリーコントローラー**を追加する必要があります。次の手順を実行します。
 
-1. **ライブラリインスペクター**から**インターフェイスエディター**に**ツリーコントローラー**をドラッグします。  
+1. **ライブラリインスペクター**から**インターフェイスエディター**に**ツリーコントローラー**をドラッグします。
 
     ![ライブラリからツリーコントローラーを選択する](databinding-images/outline03.png "ライブラリからツリーコントローラーを選択する")
-2. **インターフェイス階層**で [**ツリーコントローラー** ] を選択し、**属性インスペクター**に切り替えます。  
+2. **インターフェイス階層**で **[ツリーコントローラー]** を選択し、**属性インスペクター**に切り替えます。
 
     [![属性インスペクターの選択](databinding-images/outline04.png "属性インスペクターの選択")](databinding-images/outline04-large.png#lightbox)
-3. `PersonModel` **クラス名**として「」と入力し、**プラス**ボタンをクリックして、3つのキーを追加します。 名前を、 `Occupation`次`isManager`のように指定します。 `Name`  
+3. `PersonModel` **クラス名**として「」と入力し、**プラス**ボタンをクリックして、3つのキーを追加します。 名前を、 `Occupation`次`isManager`のように指定します。 `Name`
 
     ![必要なキーパスを追加する](databinding-images/outline05.png "必要なキーパスを追加する")
 4. これにより、ツリーコントローラーがどのように配列を管理しているか、および (キーを使用して) 公開する必要があるプロパティが示されます。
-5. [**ツリーコントローラー** `personModelArray` ] セクションで、[**子**] `NumberOfEmployees`に「」と入力し、 **Count**の下に「」と入力して、 `isEmployee` **リーフ**の下に「」と入力します  
+5. [**ツリーコントローラー** `personModelArray` ] セクションで、 **[子]** `NumberOfEmployees`に「」と入力し、 **Count**の下に「」と入力して、 `isEmployee` **リーフ**の下に「」と入力します
 
     ![ツリーコントローラーのキーパスの設定](databinding-images/outline05.png "ツリーコントローラーのキーパスの設定")
 6. これにより、子ノードを検索する場所、子ノードの数、現在のノードに子ノードがあるかどうかがツリーコントローラーに示されます。
-7. **バインドインスペクター**に切り替え、[**コンテンツ配列**] で、[**バインド先**] と [**ファイルの所有者**] を選択します。 **モデルキー**の`self.personModelArray`パスを入力してください:  
+7. **バインドインスペクター**に切り替え、 **[コンテンツ配列]** で、 **[バインド先]** と **[ファイルの所有者]** を選択します。 **モデルキー**の`self.personModelArray`パスを入力してください:
 
     ![キーのパスを編集する](databinding-images/outline06.png "キーのパスを編集する")
 8. これにより、ビューコントローラーで公開し`PersonModels`たの配列に、ツリーコントローラーが関連付けられます。
 
 ここで、アウトラインビューをツリーコントローラーにバインドし、次の手順を実行します。
 
-1. [アウトライン] ビューを選択し、**バインドインスペクター**で次のように選択します。  
+1. [アウトライン] ビューを選択し、**バインドインスペクター**で次のように選択します。
 
     [![バインドインスペクターの選択](databinding-images/outline07.png "バインドインスペクターの選択")](databinding-images/outline07-large.png#lightbox)
-2. **アウトラインビュー**の [コンテンツ turndown] で、[**バインド先**] と [**ツリーコントローラー**] を選択します。 [ `arrangedObjects` **コントローラーキー** ] フィールドに「」と入力します。  
+2. **アウトラインビュー**の コンテンツ turndown で、**バインド先** と **ツリーコントローラー** を選択します。 [ `arrangedObjects` **コントローラーキー** ] フィールドに「」と入力します。
 
     ![コントローラーキーの設定](databinding-images/outline08.png "コントローラーキーの設定")
-3. [ **Employee** ] 列の下にある**テーブルビューセル**を選択します。 Turndown の**値**の下にある [**バインド] インスペクター**で、[**テーブルセルビュー** **にバインド**] を選択します。 モデル`objectValue.Name`キーの**パス**として「」と入力します。  
+3. **[Employee]** 列の下にある**テーブルビューセル**を選択します。 Turndown の**値**の下にある [**バインド] インスペクター**で、[**テーブルセルビュー** **にバインド**] を選択します。 モデル`objectValue.Name`キーの**パス**として「」と入力します。
 
     [![モデルキーパスの入力](databinding-images/outline09.png "モデルキーパスの入力")](databinding-images/outline09-large.png#lightbox)
 4. `objectValue`は、ツリー `PersonModel`コントローラーによって管理されている配列内の現在のです。
-5. [**職業**] 列の下にある [**テーブルビュー] セル**を選択します。 Turndown の**値**の下にある [**バインド] インスペクター**で、[**テーブルセルビュー** **にバインド**] を選択します。 モデル`objectValue.Occupation`キーの**パス**として「」と入力します。  
+5. **[職業]** 列の下にある [**テーブルビュー] セル**を選択します。 Turndown の**値**の下にある [**バインド] インスペクター**で、[**テーブルセルビュー** **にバインド**] を選択します。 モデル`objectValue.Occupation`キーの**パス**として「」と入力します。
 
     [![モデルキーパスの入力](databinding-images/outline10.png "モデルキーパスの入力")](databinding-images/outline10-large.png#lightbox)
 6. 変更を保存し Visual Studio for Mac に戻り、Xcode と同期します。
@@ -743,7 +743,7 @@ public override void AwakeFromNib ()
 
 <!--KKM 012/16/2015 - Once Apple fixes the issue with Xcode and Collection Views in Storyboards, we can uncomment this section.
 
-First, let's add a new **View Controller** to our **Main.storyboard** file in Interface Builder and name its class `CollectionViewController`: 
+First, let's add a new **View Controller** to our **Main.storyboard** file in Interface Builder and name its class `CollectionViewController`:
 
 ![](databinding-images/collection01.png)
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/30/2019
-ms.openlocfilehash: 438d3462c123cc9c9a8730405bb64a5e9492bfdf
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 4a353d64f0e7e29da6c64f93b8554c3661f4d389
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645551"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228126"
 ---
 # <a name="xamarinforms-style-classes"></a>Xamarin 形式のスタイルクラス
 
@@ -203,7 +203,7 @@ Resources = new ResourceDictionary
 
 この例では、最初[`BoxView`](xref:Xamarin.Forms.BoxView)のは行の区切り記号としてスタイルを`BoxView`設定し、3番目の行は円で示しています。 2つ`BoxView`目のスタイルクラスが適用されます。これにより、角が丸くなり、45度回転します。
 
-![](style-class-images/boxviews.png "BoxViews スタイルクラスでスタイルを適用する")
+![BoxViews スタイルクラスでスタイルを適用する](style-class-images/boxviews.png)
 
 > [!IMPORTANT]
 > [`StyleClass`](xref:Xamarin.Forms.NavigableElement.StyleClass)プロパティが型`IList<string>`であるため、複数のスタイルクラスをコントロールに適用できます。 この場合、スタイルクラスは昇順のリストの順序で適用されます。 したがって、複数のスタイルクラスが同一のプロパティを設定すると、リストの最上位の位置にあるスタイルクラスのプロパティが優先されます。

@@ -7,19 +7,19 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 64b666e8e8621019da4f2acb71ab5b3bf22fad3a
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: c768003e2737fef191a1afb24b7ac50b28ace9b0
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69889771"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226268"
 ---
 # <a name="annotations-and-overlays-in-xamarinios"></a>Xamarin. iOS の注釈とオーバーレイ
 
 このチュートリアルでビルドするアプリケーションは次のようになります。
 
  [![](ios-maps-walkthrough-images/00-map-overlay.png "MapKit アプリの例")](ios-maps-walkthrough-images/00-map-overlay.png#lightbox)
- 
+
 完成したコードは、マップの[チュートリアルのサンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/mapswalkthrough)で確認できます。
 
 まず、新しい IOS の空の**プロジェクト**を作成し、関連する名前を付けます。 まず、ビューコントローラーに MapView を表示するコードを追加し、Mapview の新しいクラスとカスタム注釈を作成します。 以下の手順でビルドします。
@@ -66,7 +66,7 @@ ms.locfileid: "69889771"
     map.ShowsUserLocation = true;
     map.ZoomEnabled = true;
     map.ScrollEnabled = true;
-    
+
     ```
 
 1. 次に、マップを中央に配置し、その領域を設定するためのコードを追加します。
@@ -78,14 +78,14 @@ ms.locfileid: "69889771"
     MKCoordinateRegion mapRegion = MKCoordinateRegion.FromDistance (mapCenter, 100, 100);
     map.CenterCoordinate = mapCenter;
     map.Region = mapRegion;
-    
+
     ```
 
 1. の`MapDelegate`新しいインスタンスを作成し、のに割り当て`Delegate` `MKMapView`ます。 ここでも、すぐに`MapDelegate` implcodeent ます。
 
     ```csharp
     mapDelegate = new MapDelegate ();
-    map.Delegate = mapDelegate;     
+    map.Delegate = mapDelegate;
     ```
 
 1. IOS 8 では、ユーザーが自分の場所を使用するために承認を要求する必要があるので、このサンプルに追加してみましょう。 まず、クラスレベル`CLLocationManager`の変数を定義します。
@@ -98,15 +98,15 @@ ms.locfileid: "69889771"
 
     ```csharp
     if (UIDevice.CurrentDevice.CheckSystemVersion(8,0)){
-                    locationManager.RequestWhenInUseAuthorization ();
-                }
+        locationManager.RequestWhenInUseAuthorization ();
+    }
     ```
 
 1. 最後に、ユーザーが場所を要求する理由をユーザーに通知するために、**情報 plist**ファイルを編集する必要があります。 **情報 plist**の **[ソース]** メニューで、次のキーを追加します。
-    
-    `NSLocationWhenInUseUsageDescription` 
-    
-    および文字列: 
+
+    `NSLocationWhenInUseUsageDescription`
+
+    および文字列:
 
     `Maps Walkthrough Docs Sample`。
 
@@ -120,34 +120,34 @@ ms.locfileid: "69889771"
     using System;
     using CoreLocation;
     using MapKit;
-    
+
     namespace MapsWalkthrough
     {
         public class ConferenceAnnotation : MKAnnotation
         {
             string title;
             CLLocationCoordinate2D coord;
-    
+
             public ConferenceAnnotation (string title,
             CLLocationCoordinate2D coord)
             {
                 this.title = title;
                 this.coord = coord;
             }
-    
+
             public override string Title {
                 get {
                     return title;
                 }
             }
-    
+
             public override CLLocationCoordinate2D Coordinate {
                 get {
                     return coord;
                 }
             }
         }
-    }   
+    }
     ```
 
 ## <a name="viewcontroller---adding-the-annotation-and-overlay"></a>ViewController-注釈とオーバーレイの追加
@@ -155,7 +155,7 @@ ms.locfileid: "69889771"
 1. `ConferenceAnnotation`を配置したら、それをマップに追加できます。 のメソッド`ViewDidLoad`に戻り、次のように、マップの中心座標に注釈を追加します。`ViewController`
 
     ```csharp
-    map.AddAnnotations (new ConferenceAnnotation ("Evolve Conference", mapCenter)); 
+    map.AddAnnotations (new ConferenceAnnotation ("Evolve Conference", mapCenter));
     ```
 
 1. また、ホテルを重ねる必要もあります。 次のコードを追加して`MKPolygon` 、指定されたホテルの座標を使用してを作成し、 `AddOverlay`を呼び出して map に追加します。
@@ -175,8 +175,8 @@ ms.locfileid: "69889771"
         new CLLocationCoordinate2D(30.2650364981811, -97.7385709662122),
         new CLLocationCoordinate2D(30.2650470749025, -97.7386199493406)
     });
-    
-    map.AddOverlay (hotelOverlay);  
+
+    map.AddOverlay (hotelOverlay);
     ```
 
 これにより、の`ViewDidLoad`コードが完成します。 ここで、注釈とオーバーレイ`MapDelegate`ビューの作成をそれぞれ処理するクラスを実装する必要があります。
@@ -202,22 +202,22 @@ ms.locfileid: "69889771"
     public override MKAnnotationView GetViewForAnnotation (MKMapView mapView, NSObject annotation)
     {
         MKAnnotationView annotationView = null;
-    
+
         if (annotation is MKUserLocation)
-            return null; 
-    
+            return null;
+
         if (annotation is ConferenceAnnotation) {
-    
+
             // show conference annotation
             annotationView = mapView.DequeueReusableAnnotation (annotationId);
-    
+
             if (annotationView == null)
                 annotationView = new MKAnnotationView (annotation, annotationId);
-        
+
             annotationView.Image = UIImage.FromFile ("images/conference.png");
             annotationView.CanShowCallout = true;
-        } 
-    
+        }
+
         return annotationView;
     }
     ```
@@ -236,13 +236,13 @@ ms.locfileid: "69889771"
     {
         // show an image view when the conference annotation view is selected
         if (view.Annotation is ConferenceAnnotation) {
-    
+
             venueView = new UIImageView ();
             venueView.ContentMode = UIViewContentMode.ScaleAspectFit;
             venueImage = UIImage.FromFile ("image/venue.png");
             venueView.Image = venueImage;
             view.AddSubview (venueView);
-    
+
             UIView.Animate (0.4, () => {
             venueView.Frame = new CGRect (-75, -75, 200, 200); });
         }
@@ -256,7 +256,7 @@ ms.locfileid: "69889771"
     {
         // remove the image view when the conference annotation is deselected
         if (view.Annotation is ConferenceAnnotation) {
-    
+
             venueView.RemoveFromSuperview ();
             venueView.Dispose ();
             venueView = null;

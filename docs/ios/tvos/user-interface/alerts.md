@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 3f1761df5c2b638c5777e6384f4c0c06e9b3071f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: de7c8918ff500cb2353214fd84eaa4c97713493e
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657290"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227266"
 ---
 # <a name="working-with-tvos-alerts-in-xamarin"></a>Xamarin での tvOS アラートの使用
 
@@ -34,7 +34,7 @@ TvOS ユーザーに注意を喚起する必要がある場合、または破壊
 
 Apple では、アラートの使用に関して次のような提案があります。
 
-- **アラートを控えめに使用する**-アラートはアプリとのユーザーのフローを中断し、ユーザーエクスペリエンスを中断します。そのため、エラー通知、アプリ内購入、破壊的な操作などの重要な状況でのみ使用してください。 
+- **アラートを控えめに使用する**-アラートはアプリとのユーザーのフローを中断し、ユーザーエクスペリエンスを中断します。そのため、エラー通知、アプリ内購入、破壊的な操作などの重要な状況でのみ使用してください。
 - **便利な選択肢を提供**します。アラートによってユーザーにオプションが表示される場合は、各オプションが重要な情報を提供し、ユーザーが実行するのに役立つアクションを提供する必要があります。
 
 <a name="Alert-Titles-and-Messages" />
@@ -44,7 +44,7 @@ Apple では、アラートの使用に関して次のような提案があり�
 Apple では、アラートのタイトルとオプションのメッセージを表示するための次の提案があります。
 
 - **複数の単語のタイトルを使用する**-アラートのタイトルは、単純なままで、状況を明確に把握する必要があります。 1つの単語のタイトルでは、十分な情報が得られない場合があります。
-- **メッセージを必要としない説明のタイトルを使用**する: 可能な場合は、警告のタイトルに必要なメッセージテキストが不要であることを確認してください。 
+- **メッセージを必要としない説明のタイトルを使用**する: 可能な場合は、警告のタイトルに必要なメッセージテキストが不要であることを確認してください。
 - **メッセージを短い、完全な文**にします。アラートのポイントを取得するためにオプションのメッセージが必要な場合は、できるだけ単純なものにして、大文字と小文字を正しく設定した完全な文にします。
 
 <a name="Alert-Buttons" />
@@ -70,15 +70,15 @@ const string acceptButtonTitle = "OK";
 const string cancelButtonTitle = "Cancel";
 const string deleteButtonTitle = "Delete";
 ...
-        
+
 var alertController = UIAlertController.Create (title, message, UIAlertControllerStyle.Alert);
 
 // Create the action.
-var acceptAction = UIAlertAction.Create (acceptButtonTitle, UIAlertActionStyle.Default, _ => 
+var acceptAction = UIAlertAction.Create (acceptButtonTitle, UIAlertActionStyle.Default, _ =>
     Console.WriteLine ("The \"OK/Cancel\" alert's other action occurred.")
 );
 
-var cancelAction = UIAlertAction.Create (cancelButtonTitle, UIAlertActionStyle.Cancel, _ => 
+var cancelAction = UIAlertAction.Create (cancelButtonTitle, UIAlertActionStyle.Cancel, _ =>
     Console.WriteLine ("The \"OK/Cancel\" alert's other action occurred.")
 );
 
@@ -97,7 +97,7 @@ UIAlertController.Create (title, message, UIAlertControllerStyle.Alert)
 次に、アラートに表示する各ボタンについて、ボタンのタイトル、スタイル、およびボタンが押されたときに実行するアクションを定義するアクションを作成します。
 
 ```csharp
-UIAlertAction.Create ("Button Title", UIAlertActionStyle.Default, _ => 
+UIAlertAction.Create ("Button Title", UIAlertActionStyle.Default, _ =>
     // Do something when the button is pressed
     ...
 );
@@ -364,7 +364,7 @@ partial void DisplayTextInputAlert (Foundation.NSObject sender) {
 
 <a name="Summary" />
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
 この記事では、を`UIAlertController`使用して tvOS のユーザーに警告メッセージを表示する方法について説明しました。 まず、簡単なアラートを表示し、ボタンを追加する方法を示しました。 次に、テキストフィールドを警告に追加する方法について説明しました。 最後に、ヘルパークラスを使用して、アラートを表示するために必要な反復的なコードの量を減らす方法を説明しました。
 

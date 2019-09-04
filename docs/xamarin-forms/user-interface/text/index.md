@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2018
-ms.openlocfilehash: 3e30e3d4ea3bf0ec58aff842ffee68885a47d44a
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 7b7cd9445ec9f28211037608ab04ffc45bec705c
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656191"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227971"
 ---
 # <a name="text-in-xamarinforms"></a>Xamarin.Forms でのテキスト
 
@@ -34,7 +34,7 @@ Xamarin.Forms では、テキストを操作するための 3 つのプライマ
 
 `Label`テキストを表示するビューを使用します。 複数行のテキストまたは 1 行のテキストを表示できます。 `Label` インラインで使用される複数の書式設定オプションを使用してテキストを表示できます。 ラベル表示では、ラップしたり、1 つの行に収まらないときにテキストを切り捨てることができます。
 
-![](images/label.png "ラベルの例")
+![ラベルの例](images/label.png)
 
 参照してください、[ラベル](label.md)」の記事より詳細な情報。
 
@@ -46,7 +46,7 @@ Xamarin.Forms では、テキストを操作するための 3 つのプライマ
 
 `Entry` 単一行テキスト入力を受け入れるように使用されます。 `Entry` プランに制御できる色とフォント。 `Entry` パスワードのモードがあり、テキストが入力されるまで、プレース ホルダー テキストを表示することができます。
 
-![](images/entry.png "エントリの例")
+![エントリの例](images/entry.png)
 
 参照してください、[エントリ](entry.md)詳細についてはします。
 
@@ -58,7 +58,7 @@ Xamarin.Forms では、テキストを操作するための 3 つのプライマ
 
 `Editor` 複数行テキスト入力を受け入れるように使用されます。 `Editor` プランに制御できる色とフォント。
 
-![](images/editor.png "エディターの例")
+![エディターの例](images/editor.png)
 
 参照してください、[エディター](editor.md)詳細についてはします。
 

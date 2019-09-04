@@ -7,16 +7,16 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: aee3d81375ab619fa2016a87951cce3e72cdbe47
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 537816213208ed6e71f0986558c9a94a327759e2
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650189"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227907"
 ---
 # <a name="creating-custom-controls-in-xamarinmac"></a>Xamarin. Mac でカスタムコントロールを作成する
 
-Xamarin. Mac C#アプリケーションでと .net を使用する場合、Xcode、 *Swift* 、およびで作業する開発者が同じユーザーコントロールにアクセスできます。 Xcode は直接統合されているため、Xcode の_Interface Builder_を使用してユーザーコントロールを作成および管理できます (また、必要C#に応じて、コード内で直接作成することもできます)。
+Xamarin. Mac C#アプリケーションでと .net を使用する場合、Xcode、 *Swift* *、および*で作業する開発者が同じユーザーコントロールにアクセスできます。 Xcode は直接統合されているため、Xcode の_Interface Builder_を使用してユーザーコントロールを作成および管理できます (また、必要C#に応じて、コード内で直接作成することもできます)。
 
 MacOS には豊富な組み込みのユーザーコントロールが用意されていますが、カスタムコントロールを作成して、すぐには提供されない機能を提供したり、カスタム UI テーマ (ゲームインターフェイスなど) と一致させたりすることが必要になる場合があります。
 
@@ -285,7 +285,7 @@ private void Initialize() {
 
 ### <a name="responding-to-state-change-events"></a>状態変更イベントへの応答
 
-ユーザーがカスタムコントロールの状態を変更するときは、コードの状態変更に応答する方法が必要です (カスタムボタンをクリックしたときに何かを行うなど)。 
+ユーザーがカスタムコントロールの状態を変更するときは、コードの状態変更に応答する方法が必要です (カスタムボタンをクリックしたときに何かを行うなど)。
 
 この機能を提供するには`NSFlipSwitch` 、クラスを編集し、次のコードを追加します。
 
@@ -299,7 +299,7 @@ internal void RaiseValueChanged() {
 
     // Perform any action bound to the control from Interface Builder
     // via an Action.
-    if (this.Action !=null) 
+    if (this.Action !=null)
         NSApplication.SharedApplication.SendAction (this.Action, this.Target, this);
 }
 ## endregion
@@ -320,7 +320,7 @@ private void FlipSwitchState() {
 次に、カスタムコントロールはから`NSControl`継承するため、Xcode の Interface Builder で割り当てることができる**アクション**が自動的に設定されます。 状態が変化したときにこの**アクション**を呼び出すには、次のコードを使用します。
 
 ```csharp
-if (this.Action !=null) 
+if (this.Action !=null)
     NSApplication.SharedApplication.SendAction (this.Action, this.Target, this);
 ```
 
@@ -361,7 +361,7 @@ public override void ViewDidLoad ()
         Console.WriteLine("Option Two: {0}", OptionTwo.Value);
     };
 }
-``` 
+```
 
 ここでは、 `ValueChanged` `NSFlipSwitch`クラスで上で定義したイベントに応答し、ユーザーがコントロールをクリックしたときに現在の**値**を書き込みます。
 

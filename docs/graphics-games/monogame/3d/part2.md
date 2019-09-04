@@ -6,12 +6,12 @@ ms.assetid: 932AF5C2-884D-46E1-9455-4C359FD7C092
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: f125f8f20d22da4e988440cbaa936771d86a7673
-ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
+ms.openlocfilehash: 8bdef9bff975365172a4c215b21cbb07a37e8492
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68680980"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227725"
 ---
 # <a name="drawing-3d-graphics-with-vertices-in-monogame"></a>モノゲームでの頂点を使用した3D グラフィックスの描画
 
@@ -85,7 +85,7 @@ protected override void Draw(GameTime gameTime)
 まず、メンバーを Game1 クラスに追加します。
 
 ```csharp
-VertexPositionTexture[] floorVerts; 
+VertexPositionTexture[] floorVerts;
 ```
 
 次に、で`Game1.Initialize`頂点を定義します。 この記事の前半で参照されているテンプレートには`Game1.Initialize`メソッドが含まれていないため、メソッド全体をに`Game1`追加する必要があります。
@@ -179,7 +179,7 @@ void DrawGround()
             PrimitiveType.TriangleList,
             // The array of verts that we want to render
             floorVerts,
-            // The offset, which is 0 since we want to start 
+            // The offset, which is 0 since we want to start
             // at the beginning of the floorVerts array
             0,
             // The number of triangles to draw
@@ -213,7 +213,7 @@ protected override void Draw (GameTime gameTime)
 
 ### <a name="techniques-and-passes"></a>手法と成功
 
-効果のプロパティを割り当てたら、実際のレンダリングを実行できます。 
+効果のプロパティを割り当てたら、実際のレンダリングを実行できます。
 
 このチュートリアルではプロパティ`CurrentTechnique`を変更しませんが、より高度なゲームでは、さまざまな方法 (色の値の適用方法など) で描画を実行できる1つの効果が得られる場合があります。 これらのレンダリングモードは、レンダリングの前に割り当てることができる手法として表すことができます。 さらに、各方法では、適切にレンダリングするために複数のパスが必要になる場合があります。 光る表面や一番などの複雑なビジュアルをレンダリングする場合、効果には複数のパスが必要になることがあります。
 
@@ -231,7 +231,7 @@ protected override void Draw (GameTime gameTime)
 
 ## <a name="rendering-with-a-texture"></a>テクスチャを使用したレンダリング
 
-この時点で、アプリは白い平面 (パースペクティブ) をレンダリングします。 次に、平面をレンダリングするときに使用するテクスチャをプロジェクトに追加します。 
+この時点で、アプリは白い平面 (パースペクティブ) をレンダリングします。 次に、平面をレンダリングするときに使用するテクスチャをプロジェクトに追加します。
 
 簡単にするために、モノのゲームパイプラインツールを使用するのではなく、プロジェクトに .png を直接追加します。 これを行うには、[この .png ファイル](https://github.com/xamarin/mobile-samples/blob/master/ModelRenderingMG/Resources/checkerboard.png?raw=true)をコンピューターにダウンロードします。 ダウンロードしたら、Solution pad で**コンテンツ**フォルダーを右クリックし、[**追加] > [ファイルの追加**] の順に選択します。 Android で作業している場合、このフォルダーは Android 固有のプロジェクトの**Assets**フォルダーの下に配置されます。 IOS の場合、このフォルダーは iOS プロジェクトのルートにあります。 **チェッカーボード**が保存されている場所に移動し、このファイルを選択します。 ファイルをディレクトリにコピーする場合に選択します。
 
@@ -332,7 +332,7 @@ protected override void Initialize ()
     effect = new BasicEffect (graphics.GraphicsDevice);
 
     base.Initialize ();
-} 
+}
 ```
 
 コードを実行すると、平面にチェッカーボードパターンが表示されることがわかります。
@@ -404,7 +404,7 @@ protected override void Draw(GameTime gameTime)
     DrawModel (new Vector3 ( 4, 4, 3));
 
     base.Draw(gameTime);
-} 
+}
 ```
 
 また、 `Vector3` `Game1`カメラの位置を表すにを作成します。 次に、 `checkerboardTexture`宣言の下にフィールドを追加します。
@@ -413,7 +413,7 @@ protected override void Draw(GameTime gameTime)
 ...
 Texture2D checkerboardTexture;
 // new code:
-Vector3 cameraPosition = new Vector3(0, 10, 10); 
+Vector3 cameraPosition = new Vector3(0, 10, 10);
 ```
 
 次に、 `DrawModel`メソッドから`cameraPosition`ローカル変数を削除します。
@@ -434,7 +434,7 @@ void DrawModel(Vector3 modelPosition)
             var cameraUpVector = Vector3.UnitZ;
 
             effect.View = Matrix.CreateLookAt (
-                cameraPosition, cameraLookAtVector, cameraUpVector); 
+                cameraPosition, cameraLookAtVector, cameraUpVector);
             ...
 ```
 
@@ -450,7 +450,7 @@ void DrawGround()
 
     effect.View = Matrix.CreateLookAt (
         cameraPosition, cameraLookAtVector, cameraUpVector);
-    ... 
+    ...
 ```
 
 コードを実行すると、モデルとグラウンドの両方が同時に表示されるようになります。

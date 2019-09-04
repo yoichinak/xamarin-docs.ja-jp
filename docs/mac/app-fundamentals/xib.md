@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 5e0f096e5f2c05452a285182db4e455769aa737b
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: bdb27d42e872bff4004e8f43d13019dbc8bfeab9
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69529019"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227857"
 ---
 # <a name="xib-files-in-xamarinmac"></a>xib ファイル (Xamarin. Mac)
 
@@ -120,7 +120,7 @@ Xib ベースの UI を使用するように切り替えるには、次の手順
 9. 削除 ダイアログボックスで、**削除** ボタンをクリックします。
 
     ![削除の確認](xib-images/setup04.png "削除の確認")
-10. **Solution Pad**で、ファイルをダブルクリックして編集用に開きます。
+10. **Solution Pad**で **、ファイルを**ダブルクリックして編集用に開きます。
 11. `MainMenu` **メインインターフェイス**のドロップダウンから、次のように選択します。
 
     [![メインメニューの設定](xib-images/setup05.png "メインメニューの設定")](xib-images/setup05-large.png#lightbox)
@@ -293,7 +293,7 @@ Xamarin.Mac 開発者コンセントまたはアクションを作成する (C#)
 
     [![アシスタントエディターの選択](xib-images/outlet01.png "アシスタントエディターの選択")](xib-images/outlet01-large.png#lightbox)
 2. Xcode が分割ビュー モードに切り替わり、一方の側に**インターフェイス エディター**、もう一方の側に**コード エディター**が表示されます。
-3. **コードエディター**で Xcode ファイルが自動的に選択されたことに注意してください。これは正しくありません。 上記のアウトレットとアクションについての説明を忘れた場合は、 **mainwindow.xaml**を選択する必要があります。
+3. **コードエディター**で Xcode ファイルが自動的に選択**された**ことに注意してください。これは正しくありません。 上記のアウトレットとアクションについての説明を忘れた場合は、 **mainwindow.xaml**を選択する必要があります。
 4. **コードエディター**の上部で、[**自動] リンク**をクリックし、 **mainwindow.xaml**ファイルを選択します。
 
     [![正しい .h ファイルを選択する](xib-images/outlet02.png "正しい .h ファイルを選択する")](xib-images/outlet02-large.png#lightbox)
@@ -441,7 +441,7 @@ Xcode の**mainwindow.xaml**ファイルの定義で行アップします。
 新しいウィンドウを追加するには、次の手順を実行します。
 
 1. **Solution Pad**で、プロジェクトを右クリックし、[新しいファイルの**追加** >  **..** .] を選択します。
-2. [新しいファイル] ダイアログボックスで、次のように選択し**ます。**  > 
+2. [新しいファイル] ダイアログボックスで **、次のように選択**し**ます。**  > 
 
     ![新しいウィンドウコントローラーの追加](xib-images/new01.png "新しいウィンドウコントローラーの追加")
 3. **[名前]** に「`PreferencesWindow`」と入力し、 **[新規]** ボタンをクリックします。

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: b61924c78f85c8a1a835cef87f357ec262926935
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 1aa4e6dcf5137d12647fb2a5531218839b6db9a1
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70197729"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70225801"
 ---
 # <a name="kitkat-features"></a>KitKat の機能
 
@@ -80,12 +80,12 @@ KitKat では、正確な繰り返しアラームを設定できなくなりま�
 外部ストレージは、アプリケーションに固有のストレージと複数のアプリケーションによって共有されるデータの2種類に分類されるようになりました。 外部ストレージ上のアプリ固有の場所に対する読み取りと書き込みには、特別なアクセス許可は必要ありません。 共有ストレージ上のデータと対話するに`READ_EXTERNAL_STORAGE`は`WRITE_EXTERNAL_STORAGE` 、またはのアクセス許可が必要です。 この2種類は、次のように分類できます。
 
 - で`Context`メソッドを呼び出すことによってファイルまたはディレクトリのパスを取得している場合は、次のようになります。[`GetExternalFilesDir`](xref:Android.Content.Context.GetExternalFilesDir*)
-   もしくは[`GetExternalCacheDirs`](xref:Android.Content.Context.GetExternalCacheDirs)
-   - アプリには追加のアクセス許可は必要ありません。
+  もしくは[`GetExternalCacheDirs`](xref:Android.Content.Context.GetExternalCacheDirs)
+  - アプリには追加のアクセス許可は必要ありません。
 
 - プロパティにアクセスするか、で`Environment`メソッドを呼び出すことによって、ファイルまたはディレクトリのパスを取得している場合は。[`GetExternalStorageDirectory`](xref:Android.OS.Environment.ExternalStorageDirectory)
-   もしくは[`GetExternalStoragePublicDirectory`](xref:Android.OS.Environment.GetExternalStoragePublicDirectory*)
-   アプリには、また`READ_EXTERNAL_STORAGE`は`WRITE_EXTERNAL_STORAGE`のアクセス許可が必要です。
+  もしくは[`GetExternalStoragePublicDirectory`](xref:Android.OS.Environment.GetExternalStoragePublicDirectory*)
+  アプリには、また`READ_EXTERNAL_STORAGE`は`WRITE_EXTERNAL_STORAGE`のアクセス許可が必要です。
 
 > [!NOTE]
 > `WRITE_EXTERNAL_STORAGE`はアクセス`READ_EXTERNAL_STORAGE`許可を意味するので、1つのアクセス許可のみを設定する必要があります。
@@ -681,27 +681,27 @@ KitKat では、上記の変更に加えて次のことができます。
 - *全画面表示を使用する*-KitKat では、コンテンツを参照したり、ゲームを楽しんだ後に、全画面表示のエクスペリエンスの恩恵を受ける他のアプリケーションを実行したりするための新しい[イマーシブモード](https://developer.android.com/reference/android/view/View.html#setSystemUiVisibility(int))が導入されています。
 
 - *通知のカスタマイズ*-システム通知に関する追加情報を取得します。[`NotificationListenerService`](xref:Android.Service.Notification.NotificationListenerService)
-   . これにより、アプリ内で別の方法で情報を表示できます。
+  . これにより、アプリ内で別の方法で情報を表示できます。
 
 - *ミラー*化されるリソースのミラー化されるリソースが新しくなりました[`autoMirrored`](https://developer.android.com/reference/android/R.attr.html#autoMirrored)
-   左から右へのレイアウトの反転が必要なイメージのミラー化されたバージョンをシステムに通知する属性。
+  左から右へのレイアウトの反転が必要なイメージのミラー化されたバージョンをシステムに通知する属性。
 
 - *アニメーションの一時停止*-を使用して作成されたアニメーションを一時停止および再開します。[`Animator`](xref:Android.Animation.Animator)
-   クラスの新しいインスタンスを初期化します。
+  クラスの新しいインスタンスを初期化します。
 
 - 新しいテキストを使用して動的に更新する UI のテキストを動的に変更する部分を、新しいテキストで "live region" として*読み取り*ます。[`accessibilityLiveRegion`](https://developer.android.com/reference/android/R.attr.html#accessibilityLiveRegion)
-   属性を使用して、新しいテキストがユーザー補助モードで自動的に読み込まれるようにします。
+  属性を使用して、新しいテキストがユーザー補助モードで自動的に読み込まれるようにします。
 
 - *オーディオエクスペリエンスの向上*-トラックを大きくすると、[`LoudnessEnhancer`](xref:Android.Media.Audiofx.LoudnessEnhancer)
-   では、オーディオストリームのピークと RMS を[`Visualizer`](xref:Android.Media.Audiofx.Visualizer.MeasurementModePeakRms)
-   オーディオビデオの同期に役立つように、[オーディオタイムスタンプ](xref:Android.Media.AudioTimestamp)から情報を取得します。
+  では、オーディオストリームのピークと RMS を[`Visualizer`](xref:Android.Media.Audiofx.Visualizer.MeasurementModePeakRms)
+  オーディオビデオの同期に役立つように、[オーディオタイムスタンプ](xref:Android.Media.AudioTimestamp)から情報を取得します。
 
 - *カスタム間隔での ContentResolver の同期*-KitKat は、同期要求の実行時にいくつかの可変性を追加します。 を呼び出し`ContentResolver` `ContentResolver.RequestSync` 、を`SyncRequest`渡すことによって、カスタムの時刻または間隔でを同期します。
 
 - *コントローラーを区別*する-KitKat では、コントローラーには、デバイスの`ControllerNumber`プロパティを使用してアクセスできる一意の整数識別子が割り当てられます。 これにより、ゲームのプレーヤーを区別しやすくなります。
 
 - *リモートコントロール*-ハードウェアとソフトウェア側の両方に変更を加えることによって、KitKat では`ConsumerIrService`、を使用して IR トランスミッタでデバイス outfitted をリモートコントロールに変換し、周辺機器と新しい[`RemoteController`](xref:Android.Media.RemoteController)
-   Api.
+  Api.
 
 上記の API 変更の詳細については、「Google [Android 4.4 api](https://developer.android.com/about/versions/android-4.4.html)の概要」を参照してください。
 

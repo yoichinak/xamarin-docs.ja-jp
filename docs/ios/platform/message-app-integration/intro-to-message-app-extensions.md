@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
-ms.openlocfilehash: 7004c4692158be2e51eca93dece349da2a735bab
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 92b16e4a802411c70bef7d5810a161dbdfedfa09
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68654392"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227498"
 ---
 # <a name="message-app-extension-basics-in-xamarinios"></a>Xamarin. iOS でのメッセージアプリ拡張機能の基本
 
@@ -118,14 +118,14 @@ Xcode の属性インスペクターを使用して、ステッカーパック�
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. Visual Studio for Mac を開始します。
-2. ソリューションを開いて、メッセージアプリの拡張機能を追加します。 
-3. [ **IOS** > **Extensions** iMessage Extension] を選択し、[次へ] ボタンをクリックします。 >  
+2. ソリューションを開いて、メッセージアプリの拡張機能を追加します。
+3. [ **IOS** > **Extensions** iMessage Extension] を選択し、[次へ] ボタンをクリックします。 > 
 
     [![](intro-to-message-app-extensions-images/message01.png "IMessage 拡張機能の選択")](intro-to-message-app-extensions-images/message01.png#lightbox)
-4. **拡張機能の名前**を入力し、 **[次へ]** ボタンをクリックします。 
+4. **拡張機能の名前**を入力し、 **[次へ]** ボタンをクリックします。
 
     [![](intro-to-message-app-extensions-images/message02.png "拡張機能名を入力してください")](intro-to-message-app-extensions-images/message02.png#lightbox)
-5. **[作成]** ボタンをクリックして拡張機能をビルドします。 
+5. **[作成]** ボタンをクリックして拡張機能をビルドします。
 
     [![](intro-to-message-app-extensions-images/message03.png "[作成] ボタンをクリックします。")](intro-to-message-app-extensions-images/message03.png#lightbox)
 
@@ -158,7 +158,7 @@ Messages フレームワークには、ユーザーに使用可能なステッ�
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. **Solution Pad**で、拡張機能のプロジェクト名を右クリックし、[**追加** > ] **[新しいファイル...]** の順に選択します。 >  **iOS |** AppleWatch > **インターフェイスコントローラー**。
-2. 名前`StickerBrowserViewController`として「」と入力し、 **[新規]** ボタンをクリックします。 
+2. 名前`StickerBrowserViewController`として「」と入力し、 **[新規]** ボタンをクリックします。
 
     [![](intro-to-message-app-extensions-images/browser01.png "名前として「StickerBrowserViewController」と入力します。")](intro-to-message-app-extensions-images/browser01.png#lightbox)
 3. 編集する`StickerBrowserViewController.cs`ファイルを開きます。
@@ -166,7 +166,7 @@ Messages フレームワークには、ユーザーに使用可能なステッ�
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. **ソリューションエクスプローラー**で、拡張機能のプロジェクト名を右クリックし、[**追加** > ] **[新しいファイル...]** の順に選択します。 >  **iOS |** AppleWatch > **インターフェイスコントローラー**。
-2. 名前`StickerBrowserViewController`として「」と入力し、 **[新規]** ボタンをクリックします。 
+2. 名前`StickerBrowserViewController`として「」と入力し、 **[新規]** ボタンをクリックします。
 
     [![](intro-to-message-app-extensions-images/browser01.w157-sml.png "名前として「StickerBrowserViewController」と入力します。")](intro-to-message-app-extensions-images/browser01.w157.png#lightbox)
 3. 編集する`StickerBrowserViewController.cs`ファイルを開きます。
@@ -537,7 +537,7 @@ namespace MessageExtension
                 MessagesAppViewController.AddStickerToCollection (NewSticker);
             };
             View.AddSubview (doneButton);
-            
+
             ...
         }
         #endregion
@@ -702,9 +702,9 @@ public override void DidTransition (MSMessagesAppPresentationStyle presentationS
         break;
     }
 }
-``` 
+```
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
 この記事では、Xamarin. iOS ソリューションにおけるメッセージアプリ拡張機能について説明しました。このソリューションは、 **Messages**アプリと統合され、ユーザーに新しい機能を提供します。 拡張機能を使用して、テキスト、ステッカー、メディアファイル、および対話型メッセージを送信します。
 

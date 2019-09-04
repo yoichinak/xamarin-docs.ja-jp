@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2018
-ms.openlocfilehash: fc3837cd0d69d49b9939b04da667010aac919fe2
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 195ed82325ed681f31f9963d5ff0ca0a7fef48ab
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657119"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228146"
 ---
 # <a name="xamarinforms-tableview"></a>Xamarin.Forms テーブル
 
@@ -20,7 +20,7 @@ ms.locfileid: "68657119"
 
 [`TableView`](xref:Xamarin.Forms.TableView)は、同じテンプレートを共有しない行がある場合に、スクロール可能なデータまたは選択肢の一覧を表示するためのビューです。 `ItemsSource` [ListView](~/xamarin-forms/user-interface/listview/index.md) `TableView`とは異なり、にはの概念がないため、項目を子として手動で追加する必要があります。
 
-![](tableview-images/tableview-all-sml.png "テーブルの例")
+![TableView の例](tableview-images/tableview-all-sml.png)
 
 <a name="Use_Cases" />
 
@@ -106,7 +106,7 @@ Xamarin.Forms を収集して情報を表示するための組み込みのセル
 
 [`SwitchCell`](xref:Xamarin.Forms.SwitchCell)また、は`OnChanged`イベントを公開し、セルの状態の変化に応答できるようにします。
 
-![](tableview-images/switch-cell.png "SwitchCell 例")
+![SwitchCell の例](tableview-images/switch-cell.png)
 
 <a name="entrycell" />
 
@@ -123,7 +123,7 @@ Xamarin.Forms を収集して情報を表示するための組み込みのセル
 
 [`EntryCell`](xref:Xamarin.Forms.EntryCell)また、は`Completed` 、ユーザーがテキストの編集中にキーボードの [完了] ボタンをクリックしたときに発生するイベントも公開します。
 
-![](tableview-images/entry-cell.png "EntryCell 例")
+![EntryCell の例](tableview-images/entry-cell.png)
 
 <a name="Custom_Cells" />
 
@@ -135,7 +135,7 @@ Xamarin.Forms を収集して情報を表示するための組み込みのセル
 
 これは、カスタムのセルの例を示します。
 
-![](tableview-images/custom-cell.png "カスタムのセルの例")
+![カスタムセルの例](tableview-images/custom-cell.png)
 
 次の例は、 [`TableView`](xref:Xamarin.Forms.TableView)上記のスクリーンショットでを作成するために使用される XAML を示しています。
 
@@ -252,11 +252,11 @@ void OnViewCellTapped(object sender, EventArgs e)
 
 次のスクリーン ショットは、時に消費する前に、セルを表示します。
 
-![](tableview-images/cell-beforeresize.png "ViewCell のサイズ変更する前に")
+![サイズを変更する前に ViewCell](tableview-images/cell-beforeresize.png)
 
 次のスクリーン ショットでは、タップすると後にセルを表示します。
 
-![](tableview-images/cell-afterresize.png "ViewCell のサイズ変更した後")
+![サイズ変更後の ViewCell](tableview-images/cell-afterresize.png)
 
 > [!IMPORTANT]
 > 強力なパフォーマンスの低下の可能性がある場合、この機能が過剰です。

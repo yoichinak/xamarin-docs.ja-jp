@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 9dbcecf40c742de6e9f3a5c8458dcae3f347501d
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: be4d10eceb4ddf7da44409815f3e9c08117a06f7
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70120742"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227213"
 ---
 # <a name="working-with-tvos-stacked-views-in-xamarin"></a>Xamarin での tvOS 積み上げビューの使用
 
@@ -24,7 +24,7 @@ ms.locfileid: "70120742"
 
 TvOS アプリ`UIStackView`でを使用する場合、開発者は、iOS デザイナーのストーリーボード内でサブビューを定義するか、またはコードでC#サブビューを追加および削除することができます。
 
-## <a name="about-stacked-view-controls"></a>積み上げビューコントロールの概要 
+## <a name="about-stacked-view-controls"></a>積み上げビューコントロールの概要
 
 は非レンダリングコンテナービューとして設計されているため、の`UIView`他のサブクラスと同様にキャンバスに描画されることはありません。 `UIStackView` `BackgroundColor`やのオーバーライド`DrawRect`などのプロパティを設定しても、視覚効果はありません。
 
@@ -98,21 +98,21 @@ TvOS アプリでスタックビューを操作する最も簡単な方法は、
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. **Solution Pad**で、 `Main.storyboard`ファイルをダブルクリックして開き、編集します。
-1. スタックビューに追加する個々の要素のレイアウトをデザインします。 
+1. スタックビューに追加する個々の要素のレイアウトをデザインします。
 
     [![](stacked-views-images/layout01.png "要素のレイアウトの例")](stacked-views-images/layout01.png#lightbox)
 1. 要素に必要な制約を追加して、それらが正しく拡張されるようにします。 要素がスタックビューに追加されると、この手順が重要になります。
-1. 必要な数のコピー (この場合は4つ) を作成します。 
+1. 必要な数のコピー (この場合は4つ) を作成します。
 
     [![](stacked-views-images/layout02.png "必要なコピー数")](stacked-views-images/layout02.png#lightbox)
-1. **[ツールボックス]** から**スタックビュー**をドラッグし、ビューにドロップします。 
+1. **[ツールボックス]** から**スタックビュー**をドラッグし、ビューにドロップします。
 
     [![](stacked-views-images/layout03.png "スタックビュー")](stacked-views-images/layout03.png#lightbox)
-1. [スタック] ビューを選択し、 **Properties Pad**の [**ウィジェット] タブ**で、 **[配置]** の **[塗りつぶし]** `25`を選択し、**配布**に**均等**に入力して、 **[間隔]** に「」と入力します。 
+1. [スタック] ビューを選択し、 **Properties Pad**の [**ウィジェット] タブ**で、 **[配置]** の **[塗りつぶし]** `25`を選択し、**配布**に**均等**に入力して、 **[間隔]** に「」と入力します。
 
     [![](stacked-views-images/layout04.png "[ウィジェット] タブ")](stacked-views-images/layout04.png#lightbox)
 1. 必要に応じて、画面上にスタックビューを配置し、制約を追加して必要な場所に保持します。
-1. 個々の要素を選択し、スタックビューにドラッグします。 
+1. 個々の要素を選択し、スタックビューにドラッグします。
 
     [![](stacked-views-images/layout05.png "スタックビュー内の個々の要素")](stacked-views-images/layout05.png#lightbox)
 1. レイアウトが調整され、上で設定した属性に基づいて、要素がスタックビューに配置されます。
@@ -122,21 +122,21 @@ TvOS アプリでスタックビューを操作する最も簡単な方法は、
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. **ソリューションエクスプローラー**で、 `Main.storyboard`ファイルをダブルクリックして開き、編集します。
-1. スタックビューに追加する個々の要素のレイアウトをデザインします。 
+1. スタックビューに追加する個々の要素のレイアウトをデザインします。
 
     [![](stacked-views-images/layout01.png "要素のレイアウトの例")](stacked-views-images/layout01.png#lightbox)
 1. 要素に必要な制約を追加して、それらが正しく拡張されるようにします。 要素がスタックビューに追加されると、この手順が重要になります。
-1. 必要な数のコピー (この場合は4つ) を作成します。 
+1. 必要な数のコピー (この場合は4つ) を作成します。
 
     [![](stacked-views-images/layout02.png "必要なコピー数")](stacked-views-images/layout02.png#lightbox)
-1. **[ツールボックス]** から**スタックビュー**をドラッグし、ビューにドロップします。 
+1. **[ツールボックス]** から**スタックビュー**をドラッグし、ビューにドロップします。
 
     [![](stacked-views-images/layout03-vs.png "スタックビュー")](stacked-views-images/layout03-vs.png#lightbox)
-1. スタックビューを選択し、**プロパティエクスプローラー**の [**ウィジェット] タブ**で、 **[配置]** の **[塗りつぶし]** を選択`25`し、**分布**に**均等**に入力して、**スペース**として「」と入力します。 
+1. スタックビューを選択し、**プロパティエクスプローラー**の [**ウィジェット] タブ**で、 **[配置]** の **[塗りつぶし]** を選択`25`し、**分布**に**均等**に入力して、**スペース**として「」と入力します。
 
     [![](stacked-views-images/layout04-vs.png "[ウィジェット] タブ")](stacked-views-images/layout04-vs.png#lightbox)
 1. 必要に応じて、画面上にスタックビューを配置し、制約を追加して必要な場所に保持します。
-1. 個々の要素を選択し、スタックビューにドラッグします。 
+1. 個々の要素を選択し、スタックビューにドラッグします。
 
     [![](stacked-views-images/layout05-vs.png "スタックビュー内の個々の要素")](stacked-views-images/layout05-vs.png#lightbox)
 1. レイアウトが調整され、上で設定した属性に基づいて、要素がスタックビューに配置されます。

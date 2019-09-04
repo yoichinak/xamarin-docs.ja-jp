@@ -6,12 +6,12 @@ ms.assetid: B9C56C3B-E196-4ADA-A1DE-AC10D1001C2A
 author: asb3993
 ms.author: amburns
 ms.date: 04/07/2016
-ms.openlocfilehash: e400191b40775cef5d1ab1cba0bd6c4544f8c5fe
-ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
+ms.openlocfilehash: 9018c3e3c976ef7623835055ee989dfd86dc25e1
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68680216"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226226"
 ---
 # <a name="working-with-native-types-in-cross-platform-apps"></a>クロスプラットフォーム アプリでのネイティブ型の使用
 
@@ -207,7 +207,7 @@ namespace NativeShared
 }
 ```
 
-ここでは、標準`CalculateArea` `float`では`nfloat`なくを返すようにメソッドを変更したことに注意してください。 これは、(両方の値が`nfloat`乗算されるため) の計算`nfloat`結果を`float`戻り値に_暗黙_的に変換しようとしたときに、コンパイルエラーが発生しないようにするためです。
+ここでは、標準`CalculateArea` `float`では`nfloat`なくを返すようにメソッドを変更したことに注意してください。 これは、(両方の値が`nfloat`乗算されるため) の計算`nfloat`結果を`float`戻り値に暗黙的に変換しようとしたときに、コンパイルエラーが発生しないようにするためです。
 
 コードをコンパイルし`using nfloat = global::System.Single;`て非 Unified API デバイスで実行すると、はをに`nfloat`マップします。 `Single`これにより、 `float`を使用するフロントエンドアプリケーションが`CalculateArea`メソッドを呼び出すことができるように、に暗黙的に変換されます。変更.
 

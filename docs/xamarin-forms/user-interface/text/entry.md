@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/26/2018
-ms.openlocfilehash: decdcc451927d5e9e1889558bfc9150c98fecf91
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: e712f0b69f87659499f7eab4955a9f943716f5b5
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650272"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227983"
 ---
 # <a name="xamarinforms-entry"></a>Xamarin.Forms のエントリ
 
@@ -105,7 +105,7 @@ C# の場合:
 var MyEntry = new Entry { IsPassword = true };
 ```
 
-![](entry-images/password.png "エントリ IsPassword 例")
+![Entry IsPassword の例](entry-images/password.png)
 
 インスタンスで使用できるプレース ホルダー`Entry`パスワード フィールドとして構成されています。
 
@@ -121,7 +121,7 @@ C# の場合:
 var MyEntry = new Entry { IsPassword = true, Placeholder = "Password" };
 ```
 
-![](entry-images/passwordplaceholder.png "エントリ IsPassword およびプレース ホルダーの例")
+![Entry IsPassword と Placeholder の例](entry-images/passwordplaceholder.png)
 
 ### <a name="setting-the-cursor-position-and-text-selection-length"></a>カーソルの位置とテキスト選択範囲の長さの設定
 
@@ -294,7 +294,7 @@ var entry = new Entry();
 entry.TextColor = Color.Green;
 ```
 
-![](entry-images/textcolor.png "エントリ TextColor 例")
+![エントリの TextColor の例](entry-images/textcolor.png)
 
 プレース ホルダーはありませんが、指定した影響を受ける`TextColor`します。
 
@@ -311,7 +311,7 @@ var entry = new Entry();
 entry.BackgroundColor = Color.FromHex("#2c3e50");
 ```
 
-![](entry-images/textbackgroundcolor.png "エントリの BackgroundColor 例")
+![エントリの BackgroundColor の例](entry-images/textbackgroundcolor.png)
 
 選択した色の背景とテキストの色が各プラットフォームで使用可能なし、任意のプレース ホルダー テキストが不明瞭かどうかを確認するように注意します。
 

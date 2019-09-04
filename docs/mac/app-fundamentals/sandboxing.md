@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 8379b9c9575c5a4f24f6c35c37cf8682e53b78ec
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 5c697ebc4621fa8287bd001bcc4b44bb23fc163e
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70121125"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227241"
 ---
 # <a name="sandboxing-a-xamarinmac-app"></a>Xamarin. Mac アプリのサンドボックス化
 
@@ -68,24 +68,24 @@ Xamarin. Mac C#アプリケーションでおよび .net を使用する場合�
 サンプルプロジェクトを作成するには、次の手順を実行します。
 
 1. Visual Studio for Mac を開始し、**新しいソリューション**をクリックします。 リンクをクリックしてください。
-2. **[新しいプロジェクト]** ダイアログボックスで、[ **Mac** > **アプリ** > **cocoa アプリ**] を選択します。 
+2. **[新しいプロジェクト]** ダイアログボックスで、[ **Mac** > **アプリ** > **cocoa アプリ**] を選択します。
 
     [![新しい Cocoa アプリを作成する](sandboxing-images/sample01.png "新しい Cocoa アプリを作成する")](sandboxing-images/sample01-large.png#lightbox)
-3. **[次へ]** ボタンを`MacSandbox`クリックし、プロジェクト名として「」と入力して、 **[作成]** ボタンをクリックします。 
+3. **[次へ]** ボタンを`MacSandbox`クリックし、プロジェクト名として「」と入力して、 **[作成]** ボタンをクリックします。
 
     [![アプリ名の入力](sandboxing-images/sample02.png "アプリ名の入力")](sandboxing-images/sample02-large.png#lightbox)
-4. **Solution Pad**で、**メインの storyboard**ファイルをダブルクリックして、Xcode で編集するために開きます。 
+4. **Solution Pad**で、**メインの storyboard**ファイルをダブルクリックして、Xcode で編集するために開きます。
 
     [![メインストーリーボードの編集](sandboxing-images/sample03.png "メインストーリーボードの編集")](sandboxing-images/sample03-large.png#lightbox)
-5. **Web ビュー**をウィンドウにドラッグし、コンテンツ領域に合わせてサイズを変更し、ウィンドウで拡大および縮小するように設定します。 
+5. **Web ビュー**をウィンドウにドラッグし、コンテンツ領域に合わせてサイズを変更し、ウィンドウで拡大および縮小するように設定します。
 
     [![Web ビューの追加](sandboxing-images/sample04.png "Web ビューの追加")](sandboxing-images/sample04-large.png#lightbox)
-6. Web ビュー `webView`のアウトレットを次のように作成します。 
+6. Web ビュー `webView`のアウトレットを次のように作成します。
 
     [![新しいアウトレットの作成](sandboxing-images/sample05.png "新しいアウトレットの作成")](sandboxing-images/sample05-large.png#lightbox)
 7. Visual Studio for Mac に戻り、 **Solution Pad**で**ViewController.cs**ファイルをダブルクリックして編集用に開きます。
 8. 次の using ステートメントを追加します。`using WebKit;`
-9. メソッドを`ViewDidLoad`次のようにします。 
+9. メソッドを`ViewDidLoad`次のようにします。
 
     ```csharp
     public override void AwakeFromNib ()
@@ -109,34 +109,34 @@ Xamarin. Mac C#アプリケーションでおよび .net を使用する場合�
 
 次の手順を実行します。
 
-1. Apple Developer Portal にログインします。 
+1. Apple Developer Portal にログインします。
 
     [![Apple Developer ポータルへのログイン](sandboxing-images/sign01.png "Apple Developer ポータルへのログイン")](sandboxing-images/sign01-large.png#lightbox)
-2. **証明書、識別子 & プロファイル**を選択します。 
+2. **証明書、識別子 & プロファイル**を選択します。
 
     [![証明書、ID、プロファイルの選択](sandboxing-images/sign02.png "証明書、ID、プロファイルの選択")](sandboxing-images/sign02-large.png#lightbox)
-3. **[Mac アプリ]** で、 **[識別子]** を選択します。 
+3. **[Mac アプリ]** で、 **[識別子]** を選択します。
 
     [![識別子の選択](sandboxing-images/sign03.png "識別子の選択")](sandboxing-images/sign03-large.png#lightbox)
-4. アプリケーションの新しい ID を作成します。 
+4. アプリケーションの新しい ID を作成します。
 
     [![新しいアプリ ID を作成し]ています(sandboxing-images/sign04.png "新しいアプリ ID を作成し")ています](sandboxing-images/sign04-large.png#lightbox)
-5. **[プロビジョニングプロファイル]** で、 **[開発]** を選択します。 
+5. **[プロビジョニングプロファイル]** で、 **[開発]** を選択します。
 
     [![開発の選択](sandboxing-images/sign05.png "開発の選択")](sandboxing-images/sign05-large.png#lightbox)
-6. 新しいプロファイルを作成し、 **[Mac アプリ開発]** を選択します。 
+6. 新しいプロファイルを作成し、 **[Mac アプリ開発]** を選択します。
 
     [![新しいプロファイルを作成し]ています(sandboxing-images/sign06.png "新しいプロファイルを作成し")ています](sandboxing-images/sign06-large.png#lightbox)
-7. 上で作成したアプリ ID を選択します。 
+7. 上で作成したアプリ ID を選択します。
 
     [![アプリ ID の選択](sandboxing-images/sign07.png "アプリ ID の選択")](sandboxing-images/sign07-large.png#lightbox)
-8. このプロファイルの開発者を選択してください: 
+8. このプロファイルの開発者を選択してください:
 
     [![開発者の追加](sandboxing-images/sign08.png "開発者の追加")](sandboxing-images/sign08-large.png#lightbox)
-9. このプロファイルのコンピューターを選択してください: 
+9. このプロファイルのコンピューターを選択してください:
 
     [![許可するコンピューターの選択](sandboxing-images/sign09.png "許可するコンピューターの選択")](sandboxing-images/sign09-large.png#lightbox)
-10. プロファイルに名前を付けます。 
+10. プロファイルに名前を付けます。
 
     [![プロファイルに名前を付ける](sandboxing-images/sign10.png "プロファイルに名前を付ける")](sandboxing-images/sign10-large.png#lightbox)
 11. **[完了]** ボタンをクリックします。
@@ -146,10 +146,10 @@ Xamarin. Mac C#アプリケーションでおよび .net を使用する場合�
 
 次に、開発用コンピューターに新しいアプリ ID とプロファイルを読み込む必要があります。 次の手順を実行してみましょう。
 
-1. Xcode を起動し、 **Xcode**メニューから **[基本設定]** を選択します。 
+1. Xcode を起動し、 **Xcode**メニューから **[基本設定]** を選択します。
 
     ![Xcode のアカウントの編集](sandboxing-images/sign11.png "Xcode のアカウントの編集")
-2. [詳細の**表示...** ] ボタンをクリックします。 
+2. [詳細の**表示...** ] ボタンをクリックします。
 
     [![詳細の表示] ボタンをクリックする][(sandboxing-images/sign12.png "詳細の表示] ボタンをクリックする")
 3. **[更新]** ボタン (左下隅) をクリックします。
@@ -157,18 +157,18 @@ Xamarin. Mac C#アプリケーションでおよび .net を使用する場合�
 
 次に、Xamarin. Mac プロジェクトで新しいアプリ ID とプロビジョニングプロファイルを選択する必要があります。 次の手順を実行してみましょう。
 
-1. **Solution Pad**で、ファイルをダブルクリックして編集用に開きます。
-2. **バンドル識別子**が、上で作成したアプリ ID と一致して`com.appracatappra.MacSandbox`いることを確認します (例:)。 
+1. **Solution Pad**で **、ファイルを**ダブルクリックして編集用に開きます。
+2. **バンドル識別子**が、上で作成したアプリ ID と一致して`com.appracatappra.MacSandbox`いることを確認します (例:)。
 
     [![バンドル識別子の編集](sandboxing-images/sign13.png "バンドル識別子の編集")](sandboxing-images/sign13-large.png#lightbox)
-3. 次に、**資格の plist**ファイルをダブルクリックし、Icloud のキーと**値のストア**と**icloud コンテナー**が、上記で作成したアプリ ID と一致`com.appracatappra.MacSandbox`していることを確認します (例:)。 
+3. 次に、**資格の plist**ファイルをダブルクリックし、Icloud のキーと**値のストア**と**icloud コンテナー**が、上記で作成したアプリ ID と一致`com.appracatappra.MacSandbox`していることを確認します (例:)。
 
     [![権利の plist ファイルの編集](sandboxing-images/sign17.png "権利の plist ファイルの編集")](sandboxing-images/sign17-large.png#lightbox)
 4. 変更内容を保存します。
-5. **Solution Pad**で、プロジェクトファイルをダブルクリックして、編集用のオプションを開きます。  
+5. **Solution Pad**で、プロジェクトファイルをダブルクリックして、編集用のオプションを開きます。
 
     ![ソリューションのオプションの Editign](sandboxing-images/sign14.png "ソリューションのオプションの Editign")
-6. **[Mac 署名]** を選択し、 **[アプリケーションバンドルの署名]** をオンにして **、インストーラーパッケージに署名**します。 **[プロビジョニングプロファイル]** で、上記で作成したものを選択します。 
+6. **[Mac 署名]** を選択し、 **[アプリケーションバンドルの署名]** をオンにして **、インストーラーパッケージに署名**します。 **[プロビジョニングプロファイル]** で、上記で作成したものを選択します。
 
     ![プロビジョニングプロファイルを設定しています](sandboxing-images/sign15.png "プロビジョニングプロファイルを設定しています")
 7. **[完了]** ボタンをクリックします。
@@ -195,7 +195,7 @@ Xamarin. Mac C#アプリケーションでおよび .net を使用する場合�
 アプリのサンドボックスを有効にするには、プロジェクトのオプションでチェックボックスをオンにします。 次の手順で行います。
 
 1. **Solution Pad**で、**権利の plist**ファイルをダブルクリックして編集用に開きます。
-2. [**権利を有効に**し、**アプリのサンドボックスを有効に**する] をオンにします。 
+2. [**権利を有効に**し、**アプリのサンドボックスを有効に**する] をオンにします。
 
     [![権利の編集とサンドボックスの有効化](sandboxing-images/sign17.png "権利の編集とサンドボックスの有効化")](sandboxing-images/sign17-large.png#lightbox)
 3. 変更内容を保存します。
@@ -208,25 +208,25 @@ Xamarin. Mac C#アプリケーションでおよび .net を使用する場合�
 
 リソースブロックの動作とは別に、Xamarin アプリケーションが正常にサンドボックス化されているかどうかを確認するには、主に次の3つの方法があります。
 
-1. Finder で`~/Library/Containers/`フォルダーの内容を確認します。アプリがサンドボックス化されている場合は、アプリのバンドル識別子のような名前の`com.appracatappra.MacSandbox`フォルダーがあります (例:)。 
+1. Finder で`~/Library/Containers/`フォルダーの内容を確認します。アプリがサンドボックス化されている場合は、アプリのバンドル識別子のような名前の`com.appracatappra.MacSandbox`フォルダーがあります (例:)。
 
     [![アプリのバンドルを開く](sandboxing-images/sample09.png "アプリのバンドルを開く")](sandboxing-images/sample09-large.png#lightbox)
 2. システムにより、アプリはアクティビティモニターでサンドボックス化されていると認識されます。
-    - 利用状況モニター ( `/Applications/Utilities`) を起動します。 
+    - 利用状況モニター ( `/Applications/Utilities`) を起動します。
     - [**列**の**表示** > ] を選択し、 **[サンドボックス]** メニュー項目がオンになっていることを確認します。
-    - アプリケーションのサンドボックス列が`Yes`次のように読み取られていることを確認します。 
+    - アプリケーションのサンドボックス列が`Yes`次のように読み取られていることを確認します。
 
     [![利用状況モニターのアプリを確認し]ています(sandboxing-images/sample10.png "利用状況モニターのアプリを確認し")ています](sandboxing-images/sample10-large.png#lightbox)
 3. アプリのバイナリがサンドボックス化されていることを確認します。
     - ターミナルアプリを起動します。
     - アプリケーション`bin`のディレクトリに移動します。
-    - 次のコマンドを`codesign -dvvv --entitlements :- executable_path`実行し`executable_path`ます (はアプリケーションへのパスです)。 
+    - 次のコマンドを`codesign -dvvv --entitlements :- executable_path`実行し`executable_path`ます (はアプリケーションへのパスです)。
 
     [![コマンドラインでのアプリの確認](sandboxing-images/sample11.png "コマンドラインでのアプリの確認")](sandboxing-images/sample11-large.png#lightbox)
 
 ### <a name="debugging-a-sandboxed-app"></a>サンドボックスアプリのデバッグ
 
-デバッガーは、TCP を通じて Xamarin. Mac アプリに接続します。つまり、サンドボックスを有効にすると、既定ではアプリに接続できないため、適切なアクセス許可を有効にせずにアプリを実行しようとすると、 *"デバッガーに接続できません" というエラーが表示されます。* . 
+デバッガーは、TCP を通じて Xamarin. Mac アプリに接続します。つまり、サンドボックスを有効にすると、既定ではアプリに接続できないため、適切なアクセス許可を有効にせずにアプリを実行しようとすると、 *"デバッガーに接続できません" というエラーが表示されます。* .
 
 [![必須オプションの設定](sandboxing-images/debug01.png "必須オプションの設定")](sandboxing-images/debug01-large.png#lightbox)
 
@@ -246,7 +246,7 @@ Xamarin. Mac アプリケーションでアプリサンドボックス違反が�
 
 1. 問題のアプリをコンパイルし、Visual Studio for Mac から実行します。
 2. (から `/Applications/Utilties/`) コンソールアプリケーションを開きます。
-3. サイドバーで **[すべてのメッセージ]** を`sandbox`選択し、検索に「」と入力します。 
+3. サイドバーで **[すべてのメッセージ]** を`sandbox`選択し、検索に「」と入力します。
 
     [![コンソールでのサンドボックスの問題の例](sandboxing-images/resolve01.png "コンソールでのサンドボックスの問題の例")](sandboxing-images/resolve01-large.png#lightbox)
 
@@ -259,7 +259,7 @@ Xamarin. Mac アプリケーションでアプリサンドボックス違反が�
 次の手順で行います。
 
 1. **Solution Pad**で、**権利の plist**ファイルをダブルクリックして編集用に開きます。
-2. **[権利]** セクションで、 **[発信ネットワーク接続 (クライアント) を許可する]** チェックボックスをオンにします。 
+2. **[権利]** セクションで、 **[発信ネットワーク接続 (クライアント) を許可する]** チェックボックスをオンにします。
 
     [![権利の編集](sandboxing-images/sign17.png "権利の編集")](sandboxing-images/sign17-large.png#lightbox)
 3. アプリケーションに変更を保存します。
@@ -280,7 +280,7 @@ Xamarin. Mac アプリケーションを悪意のあるコードによって悪�
 
 既に説明したように、サンドボックス化されていない Xamarin アプリケーションには、アプリを実行しているユーザーの完全な権限とアクセス権が付与されています。 悪意のあるコードによって侵害された場合、保護されていないアプリは悪意のある動作のためにエージェントとして機能する可能性があります。これは、危害を及ぼす可能性があります。
 
-アプリのサンドボックスを有効にすることで、最小限の特権セットを削除するだけで、Xamarin. Mac アプリの権利を使用して、必要に応じて再度有効にすることができます。 
+アプリのサンドボックスを有効にすることで、最小限の特権セットを削除するだけで、Xamarin. Mac アプリの権利を使用して、必要に応じて再度有効にすることができます。
 
 アプリケーションのアプリサンドボックスのリソースを変更するには、その権利の**plist**ファイルを編集し、エディターのドロップダウンボックスで必要な権限を確認して選択します。
 
@@ -356,13 +356,13 @@ _Powerbox_は、ユーザーと対話して、サンドボックス化された 
 - 開いている [**最近使っ**たファイル] メニューからユーザーが選択したファイルを開きます。
 - コピー & 使用して、他のアプリケーションに貼り付けます。
 - 次の世界で読み取り可能な場所からファイルを読み取ります。
-    - `/bin`
-    - `/sbin`
-    - `/usr/bin`
-    - `/usr/lib`
-    - `/usr/sbin`
-    - `/usr/share`
-    - `/System`
+  - `/bin`
+  - `/sbin`
+  - `/usr/bin`
+  - `/usr/lib`
+  - `/usr/sbin`
+  - `/usr/share`
+  - `/System`
 - によって`NSTemporaryDirectory`作成されたディレクトリ内のファイルの読み取りと書き込みを行います。
 
 既定では、サンドボックス化された Xamarin. Mac アプリによって開かれたファイルまたは保存されたファイルは、アプリが終了するまでアクセスできます (アプリが終了したときにファイルが開いていない場合を除きます)。 開いているファイルは、次回アプリを起動したときに macOS の再開機能を使用して、アプリのサンドボックスに自動的に復元されます。
@@ -401,10 +401,10 @@ _セキュリティスコープのブックマーク_を使用することによ
 
 セキュリティスコープのブックマークと永続的なリソースへのアクセスを使用する場合は、次の2つの sistine のユースケースがあります。
 
-- **アプリスコープのブックマークは、ユーザーが指定したファイルまたはフォルダーへの永続的なアクセスを提供します。** 
+- **アプリスコープのブックマークは、ユーザーが指定したファイルまたはフォルダーへの永続的なアクセスを提供します。**
 
     たとえば、サンドボックス化された Xamarin. Mac アプリケーションでを使用して編集用に (を使用`NSOpenPanel`して) 外部ドキュメントを開くことが許可されている場合、アプリでは、アプリスコープのブックマークを作成して、後で同じファイルに再びアクセスできるようにすることができます。
-- **ドキュメントスコープのブックマークは、特定のドキュメントのサブファイルへの永続的なアクセスを提供します。** 
+- **ドキュメントスコープのブックマークは、特定のドキュメントのサブファイルへの永続的なアクセスを提供します。**
 
 たとえば、個々の画像、ビデオクリップ、および後で1つのムービーに結合されるサウンドファイルにアクセスできるプロジェクトファイルを作成するビデオ編集アプリなどです。
 
@@ -432,7 +432,7 @@ _セキュリティスコープのブックマーク_を使用することによ
 
 ### <a name="the-app-sandbox-and-code-signing"></a>アプリのサンドボックスとコード署名
 
-アプリのサンドボックスを有効にし、(権利を使用して) Xamarin. Mac アプリの特定の要件を有効にした後、サンドボックスが有効になるようにプロジェクトにコード署名する必要があります。 アプリのサンドボックスに必要な資格はアプリの署名にリンクされるため、コード署名を実行する必要があります。 
+アプリのサンドボックスを有効にし、(権利を使用して) Xamarin. Mac アプリの特定の要件を有効にした後、サンドボックスが有効になるようにプロジェクトにコード署名する必要があります。 アプリのサンドボックスに必要な資格はアプリの署名にリンクされるため、コード署名を実行する必要があります。
 
 macOS では、アプリのコンテナーとそのコード署名の間にリンクが適用されます。この方法では、アプリバンドル ID をスプーフィングする場合でも、他のアプリケーションがそのコンテナーにアクセスすることはできません。 このメカニズムは次のように機能します。
 
@@ -529,7 +529,7 @@ find -H [Your-App-Bundle].app -print0 | xargs -0 file | grep "Mach-O .*executabl
 - **ファイルシステムリソースへのアクセスを保持**する-Xamarin アプリケーションがコンテナーの外部にあるリソースへの永続的なアクセスに依存している場合は、セキュリティスコープのブックマークを使用してアクセスを維持します。
 - **アプリのログイン項目を作成**する-アプリサンドボックスを使用して`LSSharedFileList`ログイン項目を作成することはできません`LSRegisterURL`。また、を使用して起動サービスの状態を操作することもできません。 「 `SMLoginItemSetEnabled` [サービス管理フレームワークのドキュメントを使用してログイン項目を追加する](https://developer.apple.com/library/prerelease/mac/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingLoginItems.html#//apple_ref/doc/uid/10000172i-SW5-SW1)」で説明されているように、関数を使用します。
 - **ユーザーデータへのアクセス**-などの POSIX 関数`getpwuid`を使用してディレクトリサービスからユーザーのホームディレクトリを取得する場合は、のような cocoa または Core `NSHomeDirectory`Foundation のシンボルを使用することを検討してください。
-- **他のアプリの基本設定**へのアクセス-アプリのサンドボックスでは、アプリのコンテナーにパス検索 api が指示されるため、設定の変更はそのコンテナー内で行われ、別のアプリの設定へのアクセスは許可されていません。 
+- **他のアプリの基本設定**へのアクセス-アプリのサンドボックスでは、アプリのコンテナーにパス検索 api が指示されるため、設定の変更はそのコンテナー内で行われ、別のアプリの設定へのアクセスは許可されていません。
 - **Web ビューでの HTML5 Embedded ビデオの使用**-Xamarin アプリで WebKit を使用して埋め込み HTML5 ビデオを再生する場合は、アプリを AV Foundation framework にもリンクする必要があります。 アプリのサンドボックスでは、CoreMedia がこれらのビデオを再生できないようにします。
 
 ### <a name="applying-required-app-sandbox-entitlements"></a>必要なアプリサンドボックスの権利を適用しています
@@ -555,7 +555,7 @@ Xamarin. Mac アプリが必要とする権利を確認するには、次の手�
 
 ### <a name="implement-a-migration-strategy"></a>移行戦略を実装する
 
-以前にサンドボックス化されていなかった新しいサンドボックス化されたバージョンの Xamarin アプリケーションをリリースする場合は、現在のユーザーがスムーズなアップグレードパスを持っていることを確認する必要があります。 
+以前にサンドボックス化されていなかった新しいサンドボックス化されたバージョンの Xamarin アプリケーションをリリースする場合は、現在のユーザーがスムーズなアップグレードパスを持っていることを確認する必要があります。
 
  コンテナー移行マニフェストを実装する方法の詳細については、Apple の「[アプリのサンドボックスドキュメントへの移行」を](https://developer.apple.com/library/prerelease/mac/documentation/Security/Conceptual/AppSandboxDesignGuide/MigratingALegacyApp/MigratingAnAppToASandbox.html#//apple_ref/doc/uid/TP40011183-CH6-SW1)参照してください。
 

@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 2958e456aeb25ba39697ad82500d574907e963e4
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 3ae18a2009ee3c34498a2e7586b561c525e76d45
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510759"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70225541"
 ---
 # <a name="xamarinandroid-api-design-principles"></a>Xamarin. Android API 設計の原則
 
@@ -24,39 +24,39 @@ Xamarin.Android のコアがありますが、相互運用機能のエンジン�
 
 これらは、Xamarin Android のバインドの設計原則の一部です。
 
--  [.NET Framework の設計ガイドライン](https://docs.microsoft.com/dotnet/standard/design-guidelines/)に準拠します。
+- [.NET Framework の設計ガイドライン](https://docs.microsoft.com/dotnet/standard/design-guidelines/)に準拠します。
 
--  開発者が Java クラスをサブクラス化できるようにします。
+- 開発者が Java クラスをサブクラス化できるようにします。
 
--  サブクラスは、C# の標準的なコンストラクトで動作します。
+- サブクラスは、C# の標準的なコンストラクトで動作します。
 
--  既存のクラスから派生します。
+- 既存のクラスから派生します。
 
--  チェーンする基本コンストラクターを呼び出します。
+- チェーンする基本コンストラクターを呼び出します。
 
--  メソッドのオーバーライドは、C# の上書きのシステムで行う必要があります。
+- メソッドのオーバーライドは、C# の上書きのシステムで行う必要があります。
 
--  一般的な Java タスクを簡単にし、困難な Java タスクにすることができます。
+- 一般的な Java タスクを簡単にし、困難な Java タスクにすることができます。
 
--  JavaBean プロパティをプロパティC#として公開します。
+- JavaBean プロパティをプロパティC#として公開します。
 
--  厳密に型指定された API を公開します。
+- 厳密に型指定された API を公開します。
 
-    - タイプセーフを増やします。
+  - タイプセーフを増やします。
 
-    - 実行時エラーを最小化します。
+  - 実行時エラーを最小化します。
 
-    - 戻り値の型に対して IDE intellisense を取得します。
+  - 戻り値の型に対して IDE intellisense を取得します。
 
-    - IDE ポップアップドキュメントを使用できるようにします。
+  - IDE ポップアップドキュメントを使用できるようにします。
 
--  API の IDE で探索をお勧めします。
+- API の IDE で探索をお勧めします。
 
-    - フレームワークの代替手段を利用して、Java Classlib の露出を最小限に抑えます。
+  - フレームワークの代替手段を利用して、Java Classlib の露出を最小限に抑えます。
 
-    - 適切なと該当する場合は、単一メソッドのインターフェイスではなく C# のデリゲート (ラムダ、匿名メソッドと System.Delegate) を公開します。
+  - 適切なと該当する場合は、単一メソッドのインターフェイスではなく C# のデリゲート (ラムダ、匿名メソッドと System.Delegate) を公開します。
 
-    - 任意の Java ライブラリ ( [Android. Runtime. jの](xref:Android.Runtime.JNIEnv)) を呼び出すための機構を提供します。
+  - 任意の Java ライブラリ ( [Android. Runtime. jの](xref:Android.Runtime.JNIEnv)) を呼び出すための機構を提供します。
 
 
 ## <a name="assemblies"></a>アセンブリ
@@ -73,13 +73,13 @@ Android プラットフォームへのバインドは、 `Mono.Android.dll`ア�
 
 Android の API は、リスト、セット、およびマップを提供する広範な java.util コレクションを使用します。 これらの要素は、バインディングの[system.object インターフェイスを](xref:System.Collections.Generic)使用して公開されています。 基本的なマッピングは次のとおりです。
 
--   [java. util. マップ<E> ](https://developer.android.com/reference/java/util/Set.html)をシステム型[ICollection<T>](xref:System.Collections.Generic.ICollection`1), helper クラス[JavaSet<T>](xref:Android.Runtime.JavaSet`1)に設定します。
+- [java. util. Set\<E >](https://developer.android.com/reference/java/util/Set.html)は、ヘルパークラス[\<JavaSet t >](xref:Android.Runtime.JavaSet`1)のシステム型[ICollection\<t >](xref:System.Collections.Generic.ICollection`1)にマップされます。
 
--   JavaList は、system 型[IList<T>](xref:System.Collections.Generic.IList`1)、ヘルパークラス、およびにマップ[されます。<T>](xref:Android.Runtime.JavaList`1) [<E> ](https://developer.android.com/reference/java/util/List.html)
+- [\<](https://developer.android.com/reference/java/util/List.html) [JavaListt>のシステム型IListt>にマップされます。リストE>にマップされます。\<](xref:Android.Runtime.JavaList`1) [\<](xref:System.Collections.Generic.IList`1)
 
--   TValue [< K, V >](https://developer.android.com/reference/java/util/Map.html)マップをシステム型[IDictionary < TKey, >](xref:System.Collections.Generic.IDictionary`2), Helper クラス[JavaDictionary < K, v >](xref:Android.Runtime.JavaDictionary`2)にマップします。
+- TValue [< K, V >](https://developer.android.com/reference/java/util/Map.html)マップをシステム型[IDictionary < TKey, >](xref:System.Collections.Generic.IDictionary`2), Helper クラス[JavaDictionary < K, v >](xref:Android.Runtime.JavaDictionary`2)にマップします。
 
--   JavaCollection は、システム型[ICollection<T>](xref:System.Collections.Generic.ICollection`1), helper クラスにマップされます。 [<E> ](https://developer.android.com/reference/java/util/Collection.html) [<T>](xref:Android.Runtime.JavaCollection`1)
+- [\<](https://developer.android.com/reference/java/util/Collection.html) [JavaCollectiont>のシステム型ICollectiont>にマップされます。コレクションE>です。\<](xref:Android.Runtime.JavaCollection`1) [\<](xref:System.Collections.Generic.ICollection`1)
 
 これらの型のより高速なコピーを容易にするヘルパークラスが用意されています。 可能であれば、またはのような[`List<T>`](xref:System.Collections.Generic.List`1)フレームワークの実装では[`Dictionary<TKey, TValue>`](xref:System.Collections.Generic.Dictionary`2)なく、これらの提供されたコレクションを使用することをお勧めします。 [Android のランタイム](xref:Android.Runtime)実装はネイティブ Java コレクションを内部的に使用するため、android API メンバーに渡すときにネイティブコレクションとの間でコピーを行う必要はありません。
 
@@ -108,13 +108,13 @@ if (goodSource.Count != 4) // false
 
 Java メソッドは、必要に応じてプロパティに変換されます。
 
--  Java メソッドのペア`T getFoo()`と`void setFoo(T)`は、 `Foo`プロパティに変換されます。 例:[アクティビティ。インテント](xref:Android.App.Activity.Intent)。
+- Java メソッドのペア`T getFoo()`と`void setFoo(T)`は、 `Foo`プロパティに変換されます。 例:[アクティビティ。インテント](xref:Android.App.Activity.Intent)。
 
--  Java メソッド`getFoo()`は、読み取り専用の Foo プロパティに変換されます。 例:[PackageName](xref:Android.Content.Context.PackageName)。
+- Java メソッド`getFoo()`は、読み取り専用の Foo プロパティに変換されます。 例:[PackageName](xref:Android.Content.Context.PackageName)。
 
--  セットのみのプロパティは生成されません。
+- セットのみのプロパティは生成されません。
 
--  プロパティの型が配列の場合、プロパティは生成され*ません*。
+- プロパティの型が配列の場合、プロパティは生成され*ません*。
 
 
 
@@ -198,17 +198,17 @@ Java の静的な入れ子になったクラスは、C# の入れ子になった
 
 ```csharp
 class CubeWallpaper : WallpaperService {
-        public override WallpaperService.Engine OnCreateEngine ()
-        {
-                return new CubeEngine (this);
-        }
+    public override WallpaperService.Engine OnCreateEngine ()
+    {
+        return new CubeEngine (this);
+    }
 
-        class CubeEngine : WallpaperService.Engine {
-                public CubeEngine (CubeWallpaper s)
-                        : base (s)
-                {
-                }
+    class CubeEngine : WallpaperService.Engine {
+        public CubeEngine (CubeWallpaper s)
+                : base (s)
+        {
         }
+    }
 }
 ```
 
@@ -234,7 +234,7 @@ Java インターフェイスは、次の2つの型に変換されます。
 
 たとえば、 [Parcelable](xref:Android.OS.Parcelable)インターフェイスを考えてみます。
 *Parcelable*インターフェイスには、メソッド、入れ子にされた型、および定数が含まれています。 *Parcelable*インターフェイスメソッドは、 [IParcelable](xref:Android.OS.IParcelable)インターフェイスに配置されます。
-*Parcelable*インターフェイス定数は[ParcelableConsts](xref:Android.OS.ParcelableConsts)型に配置されます。 入れ子になった[ClassLoaderCreator&lt;t >](https://developer.android.com/reference/android/os/Parcelable.ClassLoaderCreator.html)と[>&lt;Parcelable](https://developer.android.com/reference/android/os/Parcelable.Creator.html)の型は現在、ジェネリックサポートの制限のためにバインドされていません。サポートされている場合は、は、 *IParcelableClassLoaderCreator*および*IParcelableCreator*インターフェイスとして表示されます。 たとえば、入れ子になった[DeathRecipient](https://developer.android.com/reference/android/os/IBinder.DeathRecipient.html)インターフェイスは、 [IBinderDeathRecipient](xref:Android.OS.IBinderDeathRecipient)インターフェイスとしてバインドされます。
+*Parcelable*インターフェイス定数は[ParcelableConsts](xref:Android.OS.ParcelableConsts)型に配置されます。 入れ子になった[ClassLoaderCreator\<t >](https://developer.android.com/reference/android/os/Parcelable.ClassLoaderCreator.html)と[>\<Parcelable](https://developer.android.com/reference/android/os/Parcelable.Creator.html)の型は現在、ジェネリックサポートの制限のためにバインドされていません。サポートされている場合は、は、 *IParcelableClassLoaderCreator*および*IParcelableCreator*インターフェイスとして表示されます。 たとえば、入れ子になった[DeathRecipient](https://developer.android.com/reference/android/os/IBinder.DeathRecipient.html)インターフェイスは、 [IBinderDeathRecipient](xref:Android.OS.IBinderDeathRecipient)インターフェイスとしてバインドされます。
 
 > [!NOTE]
 > Xamarin Android 1.9 以降では、java コードの移植を簡素化するために Java インターフェイス定数が_複製_されています。 これは、 [android プロバイダー](https://developer.android.com/reference/android/provider/package-summary.html)のインターフェイス定数に依存する Java コードの移植性を向上させるのに役立ちます。
@@ -268,21 +268,23 @@ Java インターフェイスは、次の2つの型に変換されます。
 
 たとえば、ユーザーインターフェイスレイアウト ( `main.axml`)、国際化テーブル文字列 ( `strings.xml`)、およびいくつかのアイコン ( `drawable-*/icon.png`) を含むサンプル Android アプリでは、リソースはアプリケーションの "resources" ディレクトリに保持されます。
 
-    Resources/
-        drawable-hdpi/
-            icon.png
+```
+Resources/
+    drawable-hdpi/
+        icon.png
 
-        drawable-ldpi/
-            icon.png
+    drawable-ldpi/
+        icon.png
 
-        drawable-mdpi/
-            icon.png
+    drawable-mdpi/
+        icon.png
 
-        layout/
-            main.axml
+    layout/
+        main.axml
 
-        values/
-            strings.xml
+    values/
+        strings.xml
+```
 
 ネイティブ Android API は、ファイル名を直接操作しないが、リソース Id の代わりに動作します。 リソースを使用する Android アプリケーションをコンパイルすると、ビルドシステムによって配布用のリソースがパッケージ化さ`Resource`れ、に含まれるリソースの1つに対応するトークンを含むというクラスが生成されます。 たとえば、上記のリソースレイアウトの場合、R クラスで公開されるものは次のようになります。
 

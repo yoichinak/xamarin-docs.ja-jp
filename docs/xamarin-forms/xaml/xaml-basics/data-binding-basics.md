@@ -7,12 +7,12 @@ ms.assetid: 342288C3-BB4C-4924-B178-72E112D777BA
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: f5c5f0449962dec45a521112b2de92cddefe453f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 3fdc251d3ed24c96d7d3fa9620e483ad47a8491e
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655248"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227937"
 ---
 # <a name="part-4-data-binding-basics"></a>パート 4 です。 データ バインディングの基礎
 
@@ -102,7 +102,7 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 
 実行中のプログラムを次に示します。
 
-[![](data-binding-basics-images/sliderbinding.png "ビューからビューへのバインド")](data-binding-basics-images/sliderbinding-large.png#lightbox "ビューからビューへのバインド ")
+[![ビューからビューへのバインド](data-binding-basics-images/sliderbinding.png)](data-binding-basics-images/sliderbinding-large.png#lightbox)
 
 ## <a name="the-binding-mode"></a>バインド モード
 
@@ -201,7 +201,7 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 
 ただし、バインド、`Scale`プロパティは`TwoWay`します。 これは、ため、`Scale`プロパティを使用して、1 つの既定値を持つ、`TwoWay`バインド エラーの原因、`Slider`初期値を 0 ではなく 1 に設定しています。 場合、そのバインドが`OneWayToSource`、`Scale`プロパティから 0 に初期設定は、`Slider`既定値。 `Label`見えない、およびユーザーにによって混乱が発生する可能性があります。
 
- [![](data-binding-basics-images/slidertransforms.png "下位のバインド")](data-binding-basics-images/slidertransforms-large.png#lightbox "下位のバインド")
+ [![後方バインド](data-binding-basics-images/slidertransforms.png)](data-binding-basics-images/slidertransforms-large.png#lightbox)
 
  > [!NOTE]
  > [ `VisualElement` ](xref:Xamarin.Forms.VisualElement)クラスもあります[ `ScaleX` ](xref:Xamarin.Forms.VisualElement.ScaleX)と[ `ScaleY` ](xref:Xamarin.Forms.VisualElement.ScaleY)スケールのプロパティ、 `VisualElement` x 軸と y 軸にそれぞれします。
@@ -234,7 +234,7 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 
 型の項目が本当には、結果の表示の確立`XamlSamples.NamedColor`:
 
-[![](data-binding-basics-images/listview1.png "コレクションへのバインディング")](data-binding-basics-images/listview1-large.png#lightbox "コレクションへのバインディング")
+[![コレクションへのバインド](data-binding-basics-images/listview1.png)](data-binding-basics-images/listview1-large.png#lightbox)
 
 多くの情報ではありませんが、`ListView`スクロールと選択可能なのです。
 
@@ -259,7 +259,7 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 
 `Label`要素に設定されて、`View`のプロパティ、`ViewCell`します。 (、`ViewCell.View`ため、タグが必要ありません、`View`プロパティは、コンテンツのプロパティの`ViewCell`)。このマークアップの表示、`FriendlyName`の各プロパティ`NamedColor`オブジェクト。
 
-[![](data-binding-basics-images/listview2.png "DataTemplate でコレクションへのバインディング")](data-binding-basics-images/listview2-large.png#lightbox "DataTemplate でコレクションへのバインディング")
+[![System.windows.datatemplate> を使用してコレクションにバインドする](data-binding-basics-images/listview2.png)](data-binding-basics-images/listview2-large.png#lightbox)
 
 ずっといいです。 後のみが必要なは、詳細については、実際の色と項目テンプレートの見栄えをよくです。 このテンプレートをサポートするには、いくつかの値とオブジェクトをページのリソース ディクショナリで定義されています。
 
@@ -396,7 +396,7 @@ namespace XamlSamples
 
 結果を次に示します。
 
-[![](data-binding-basics-images/listview3.png "DataTemplate とコンバーターでコレクションへのバインディング")](data-binding-basics-images/listview3-large.png#lightbox "DataTemplate とコンバーターでコレクションへのバインディング")
+[![System.windows.datatemplate> およびコンバーターを使用したコレクションへのバインド](data-binding-basics-images/listview3.png)](data-binding-basics-images/listview3-large.png#lightbox)
 
 `ListView`がいくつかの手順を実行する場合にのみ、基になるデータで動的に発生した変更の処理では非常に洗練します。 項目のコレクションに割り当てられている場合、`ItemsSource`のプロパティ、`ListView`ランタイム中の変更-に項目を追加できる場合は、またはコレクションから削除する: を使用して、`ObservableCollection`これらの項目のクラス。 `ObservableCollection` 実装して、`INotifyCollectionChanged`インターフェイス、および`ListView`のハンドラーをインストール、`CollectionChanged`イベント。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: aa6db1403a34b7228352e12e1b2f954308db3744
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 3f36ef7541ea00e2a08733c9d47d252477da787a
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528507"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227065"
 ---
 # <a name="custom-controls-in-the-xamarin-designer-for-ios"></a>Xamarin Designer for iOS 内のカスタムコントロール
 
@@ -98,7 +98,7 @@ public class CustomView : UIView {
 ```csharp
 [Register ("CustomView"), DesignTimeVisible (true)]
 public class CustomView : UIView {
-    
+
     [Export ("Counter"), Browsable (true)]
     public int Counter {get; set;}
 
@@ -179,7 +179,8 @@ public class DesignerAwareLabel : UILabel, IComponent {
 
  ![](ios-designable-controls-overview-images/exception-box.png "赤色のプレースホルダーおよび例外の詳細としてのコントロールの不具合")
 
-コントロールでデバッグシンボルを使用できる場合、トレースにはファイル名と行番号が含まれます。 スタックトレース内の行をダブルクリックすると、ソースコード内のその行にジャンプします。
+コントロールでデバッグシンボルを使用できる場合、トレースにはファイル名と行番号が含まれます。
+スタックトレース内の行をダブルクリックすると、ソースコード内のその行にジャンプします。
 
 デザイナーが欠陥のあるコントロールを分離できない場合は、デザイン画面の上部に警告メッセージが表示されます。
 

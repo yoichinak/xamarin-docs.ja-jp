@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: c989481c1235429091c2a196a66e4abd2c12fb52
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: 157f797ebb19de1ae00a00328a9c63b051c7224f
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69887489"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226454"
 ---
 # <a name="maps-in-xamarinios"></a>Xamarin. iOS のマップ
 
@@ -36,7 +36,7 @@ View = map;
 
 `MKMapView`では、3種類のマップのスタイルがサポートされています。 マップスタイルを適用するには、単`MapType`にプロパティを`MKMapType`列挙型の値に設定します。
 
-```
+```csharp
 map.MapType = MKMapType.Standard; //road map
 map.MapType = MKMapType.Satellite;
 map.MapType = MKMapType.Hybrid;
@@ -87,7 +87,7 @@ map.ShowsUserLocation = true;
 ```
 
  ![](images/02-location-alert.png "場所へのアクセスを許可するアラート")
- 
+
 ## <a name="annotations"></a>コメント
 
  `MKMapView`では、マップ上の画像 (注釈) の表示もサポートされています。 これには、カスタムイメージ、またはさまざまな色のシステム定義の pin を使用できます。 たとえば、次のスクリーンショットは、ピンとカスタムイメージの両方を含むマップを示しています。
@@ -250,7 +250,7 @@ var searchResultsController = new SearchResultsViewController (map);
 //Creates a search controller updater
 var searchUpdater = new SearchResultsUpdator ();
 searchUpdater.UpdateSearchResults += searchResultsController.Search;
-            
+
 //add the search controller
 searchController = new UISearchController (searchResultsController) {
                 SearchResultsUpdater = searchUpdater
@@ -264,7 +264,7 @@ searchController.SearchBar.Placeholder = "Enter a search query";
 //the search bar is contained in the navigation bar, so it should be visible
 searchController.HidesNavigationBarDuringPresentation = false;
 
-//Ensure the searchResultsController is presented in the current View Controller 
+//Ensure the searchResultsController is presented in the current View Controller
 DefinesPresentationContext = true;
 
 //Set the search bar in the navigation bar
@@ -279,7 +279,7 @@ NavigationItem.TitleView = searchController.SearchBar;
 この結果、次に示すように、マップ上に検索バーが表示されます。
 
  ![](images/07-searchbar.png "マップ上に表示される検索バー")
- 
+
 
 
 ### <a name="displaying-the-search-results"></a>検索結果の表示
@@ -358,7 +358,7 @@ public class SearchResultsViewController : UITableViewController
 
 ### <a name="updating-the-search-results"></a>検索結果の更新
 
-は`SearchResultsUpdater` 、 `searchController`の検索バーと検索結果の間の媒介として機能します。 
+は`SearchResultsUpdater` 、 `searchController`の検索バーと検索結果の間の媒介として機能します。
 
 この例では、 `SearchResultsViewController`最初にで検索メソッドを作成する必要があります。 これを行うには`MKLocalSearch` 、オブジェクトを作成し、それを使用して`MKLocalSearchRequest`の検索を発行する必要があります。結果は`Start` 、 `MKLocalSearch`オブジェクトのメソッドに渡されたコールバックで取得されます。 結果は、オブジェクトの`MKLocalSearchResponse` `MKMapItem`配列を含むオブジェクトで返されます。
 
@@ -403,7 +403,7 @@ public class SearchResultsUpdator : UISearchResultsUpdating
 上の実装では、次のように、結果から項目が選択されたときにマップに注釈を追加します。
 
  ![](images/08-search-results.png "結果から項目が選択されたときにマップに追加された注釈")
- 
+
 > [!IMPORTANT]
 > `UISearchController`は、iOS 8 で実装されました。 これより前のデバイスをサポートする場合は、を使用`UISearchDisplayController`する必要があります。
 

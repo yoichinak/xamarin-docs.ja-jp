@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/24/2018
-ms.openlocfilehash: 41f1b96a39bde7b94f67f972bfd4ace7e454e2c0
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 8082fc6ab2625e68d64ee9d42a9b630f885d9002
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70120597"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227755"
 ---
 # <a name="displaying-an-image-in-xamarinios"></a>Xamarin でのイメージの表示
 
@@ -41,7 +41,7 @@ IOS 7 で追加された**資産カタログイメージセット**には、ア�
 3. 新しいイメージセットを選択すると、エディターが表示されます。
 
     ![](displaying-an-image-images/imageset03.png "イメージセットエディター")
-4. ここでは、必要なさまざまなデバイスと解像度ごとにイメージをドラッグします。 
+4. ここでは、必要なさまざまなデバイスと解像度ごとにイメージをドラッグします。
 5. [**アセット] ボックスの一覧**で、新しいイメージセットの**名前**をダブルクリックして編集します。![](displaying-an-image-images/imageset04.png "新しいイメージセットの名前を編集しています")
 
 IOS デザイナーで**イメージセット**を使用する場合は、プロパティエディターのドロップダウンリストからセットの名前を選択するだけです。
@@ -54,7 +54,7 @@ IOS デザイナーで**イメージセット**を使用する場合は、プロ
 
     ![](displaying-an-image-images/asset5.png "プラスボタンをクリックします。")
 
-2. **[イメージセットの追加]** を選択すると、新しいイメージセットのイメージセットエディターが表示されます。 ここでは、必要なさまざまなデバイスと解像度ごとにイメージをドラッグします。 
+2. **[イメージセットの追加]** を選択すると、新しいイメージセットのイメージセットエディターが表示されます。 ここでは、必要なさまざまなデバイスと解像度ごとにイメージをドラッグします。
 
     ![](displaying-an-image-images/asset7.png "イメージセットエディター")
 
@@ -193,7 +193,7 @@ Assets カタログ内のイメージを使用する場合、すべてのアプ�
 
 ### <a name="frombundle"></a>FromBundle
 
-`FromBundle`メソッド呼び出しは、さまざまな解像度のイメージファイルのキャッシュサポートや自動処理など、多数のイメージ読み込みおよび管理機能が組み込まれた同期 (ブロッキング) 呼び出しです。  
+`FromBundle`メソッド呼び出しは、さまざまな解像度のイメージファイルのキャッシュサポートや自動処理など、多数のイメージ読み込みおよび管理機能が組み込まれた同期 (ブロッキング) 呼び出しです。
 
 次の例は、のの`UITabBarItem` `UITabBar`イメージを設定する方法を示しています。
 

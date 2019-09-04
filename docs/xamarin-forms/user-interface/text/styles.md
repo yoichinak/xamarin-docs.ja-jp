@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: b639a7fdefb8fca67d833b07ef9aa1a85da67ef6
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 3fe189c0ef524a44dcbb71c883b57063748a06e3
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68642884"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228013"
 ---
 # <a name="xamarinforms-text-styles"></a>Xamarin.Forms のテキストのスタイル
 
@@ -48,7 +48,7 @@ C# での組み込みスタイルが選択されている`Device.Styles`:
 label.Style = Device.Styles.TitleStyle;
 ```
 
-![](styles-images/builtinstyles.png "デバイスのスタイルの例")
+![デバイススタイルの例](styles-images/builtinstyles.png)
 
 <a name="Custom_Styles" />
 
@@ -90,7 +90,7 @@ var label = new Label { Text = "Check out my style.", Style = LabelStyle };
 
 リソース (すべてのスタイルを含む) は内で定義されていることに注意してください。 `ContentPage.Resources`、これは、なじみの兄弟`ContentPage.Content`要素。
 
-![](styles-images/customstyle.png "カスタム スタイルの例")
+![カスタムスタイルの例](styles-images/customstyle.png)
 
 <a name="Applying_Styles" />
 
@@ -137,11 +137,11 @@ label.Style = Device.Styles.TitleStyle;
 
 無効になっています。
 
-![](styles-images/pre-access.png "ユーザー補助機能を無効になっているデバイスのスタイル")
+![ユーザー補助機能が無効になっているデバイスのスタイル](styles-images/pre-access.png)
 
 有効:
 
-![](styles-images/post-access.png "アクセシビリティを有効になっているデバイスのスタイル")
+![ユーザー補助機能が有効になっているデバイスのスタイル](styles-images/post-access.png)
 
 ユーザー補助のために、基準として、アプリ内の任意のテキスト関連スタイルに組み込みのスタイルを使用して、スタイルが一貫して使用していることを確認します。 参照してください[スタイル](~/xamarin-forms/user-interface/styles/index.md)詳細については、拡張して、一般にスタイルを使用します。
 

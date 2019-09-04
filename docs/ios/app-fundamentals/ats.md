@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/13/2017
-ms.openlocfilehash: 6890846a1cb5cd44429c9157b3aeb75c7a1f2f4b
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 67fbd3fb7fb9c7bf1e326404d0d63bc42a3fd8ed
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69521435"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227671"
 ---
 # <a name="app-transport-security-in-xamarinios"></a>Xamarin. iOS のアプリトランスポートセキュリティ
 
@@ -27,7 +27,7 @@ _アプリトランスポートセキュリティ (ATS) は、インターネッ
 
 既存のアプリの場合は`HTTPS` 、可能な限りプロトコルを実装します。 新しい Xamarin iOS アプリでは、インターネットリソースと`HTTPS`通信するときにのみを使用する必要があります。 さらに、高レベルの API 通信は、転送機密性を持つ TLS バージョン1.2 を使用して暗号化する必要があります。
 
-[NCapitan lconnection](xref:Foundation.NSUrlConnection)、 [cfurl](xref:CoreFoundation.CFUrl) 、または nの[lsession](xref:Foundation.NSUrlSession)を使用して確立された接続は、iOS 9 および OS X 10.11 (El) 用に構築されたアプリでは既定で ATS を使用します。
+[NCapitan lconnection](xref:Foundation.NSUrlConnection)、 [cfurl](xref:CoreFoundation.CFUrl) 、または[nの lsession](xref:Foundation.NSUrlSession)を使用して確立された接続は、iOS 9 および OS X 10.11 (El) 用に構築されたアプリでは既定で ATS を使用します。
 
 ## <a name="default-ats-behavior"></a>既定の ATS 動作
 
@@ -41,7 +41,7 @@ ATS は、すべてのインターネット接続に対して次の要件を適�
 - トランスポート層セキュリティ (TLS) プロトコルは、バージョン1.2 以上である必要があります。
 - 少なくとも2048ビットまたはそれ以上の RSA キーを含む SHA256 フィンガープリント、またはすべての証明書に256ビットまたはそれ以上の楕円曲線 (ECC) キーを使用する必要があります。
 
-ここでも、ATS は iOS 9 で既定で有効になっているため、これらの要件を満たしていない接続を確立しようとすると、例外がスローされます。 
+ここでも、ATS は iOS 9 で既定で有効になっているため、これらの要件を満たしていない接続を確立しようとすると、例外がスローされます。
 
 <a name="ATS-Compatible-Ciphers" />
 
@@ -132,7 +132,7 @@ Nの lsession ベースのハンドラーは、ネイティブ`NSUrlSession` API
 マイナス
 
 - IOS 7 以降が必要です。
-- HttpClient の一部の機能およびオプションは使用できません。 
+- HttpClient の一部の機能およびオプションは使用できません。
 
 ## <a name="diagnosing-ats-issues"></a>ATS の問題の診断
 
@@ -153,7 +153,7 @@ IOS 9 および OS X 10.11 (El Capitan) 用に構築されたアプリでは、a
 
 アプリの**情報の plist**ファイルで特定のキーの値を設定することによって、ATS の機能のいくつかを構成できます。 次のキーを使用して、ATS を制御できます (_入れ子になっていることを示すためにインデント_されています)。
 
-```csharp
+```
 NSAppTransportSecurity
     NSAllowsArbitraryLoads
     NSAllowsArbitraryLoadsInWebContent

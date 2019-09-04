@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/29/2018
-ms.openlocfilehash: 9817ac2df7a60b5358316599ce02702448b0c307
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: c761290f43d780b2eafcf416fb9edf1e069f65c3
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70199718"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226039"
 ---
 # <a name="type-registrar-for-xamarinios"></a>Xamarin の型レジストラー。 iOS
 
@@ -129,10 +129,10 @@ class MyClass : IMyProtocol
 この新しい登録システムには、次の新機能が用意されています。
 
 - コンパイル時のプログラマエラーの検出:
-    - 2つのクラスが同じ名前で登録されています。
-    - 同じセレクターに応答するために複数のメソッドがエクスポートされています
+  - 2つのクラスが同じ名前で登録されています。
+  - 同じセレクターに応答するために複数のメソッドがエクスポートされています
 - 未使用のネイティブコードの削除:
-    - 新しい登録システムは、スタティックライブラリで使用されるコードへの強い参照を追加します。これにより、ネイティブリンカーは、結果として得られるバイナリから未使用のネイティブコードを取り除くことができます。 Xamarin のサンプルバインドでは、ほとんどのアプリケーションが少なくとも300k より小さくなります。
+  - 新しい登録システムは、スタティックライブラリで使用されるコードへの強い参照を追加します。これにより、ネイティブリンカーは、結果として得られるバイナリから未使用のネイティブコードを取り除くことができます。 Xamarin のサンプルバインドでは、ほとんどのアプリケーションが少なくとも300k より小さくなります。
 
 - の`NSObject`ジェネリックサブクラスのサポート。詳細については、「 [NSObject ジェネリック](~/ios/internals/api-design/nsobject-generics.md)」を参照してください。 さらに、新しい登録システムは、以前は実行時にランダムな動作を引き起こした、サポートされていないジェネリックコンストラクトをキャッチします。
 
@@ -142,37 +142,37 @@ class MyClass : IMyProtocol
 
 - 同じクラス内で同じセレクターを複数回エクスポートする場合:
 
-    ```csharp
-    [Register]
-    class MyDemo : NSObject
-    {
-        [Export ("foo:")]
-        void Foo (NSString str);
-        [Export ("foo:")]
-        void Foo (string str)
-    }
-    ```
+  ```csharp
+  [Register]
+  class MyDemo : NSObject
+  {
+      [Export ("foo:")]
+      void Foo (NSString str);
+      [Export ("foo:")]
+      void Foo (string str)
+  }
+  ```
 
 - 同じ目的 C 名で複数のマネージクラスをエクスポートする場合:
 
-    ```csharp
-    [Register ("Class")]
-    class MyClass : NSObject {}
+  ```csharp
+  [Register ("Class")]
+  class MyClass : NSObject {}
 
-    [Register ("Class")]
-    class YourClass : NSObject {}
-    ```
+  [Register ("Class")]
+  class YourClass : NSObject {}
+  ```
 
 - ジェネリックメソッドのエクスポート:
 
-    ```csharp
-    [Register]
-    class MyDemo : NSObject
-    {
-        [Export ("foo")]
-        void Foo<T> () {}
-    }
-    ```
+  ```csharp
+  [Register]
+  class MyDemo : NSObject
+  {
+      [Export ("foo")]
+      void Foo<T> () {}
+  }
+  ```
 
 ### <a name="limitations-of-the-new-registrar"></a>新しいレジストラーの制限事項
 

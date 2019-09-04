@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 8bde37c907d2cad327dd2a72f26ee357a4391c43
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 14fbbd72d3ec80d15d2dcae5938f8df28923ca4c
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68649053"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226605"
 ---
 # <a name="working-with-tvos-navigation-bars-in-xamarin"></a>Xamarin での tvOS ナビゲーションバーの使用
 
@@ -34,16 +34,16 @@ TvOS アプリのナビゲーションバーを操作する最も簡単な方法
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. **Solution Pad**で、[ファイル] を`Main.storyboard`ダブルクリックし、編集用に開きます。
-1. **ツールボックス**から**ナビゲーションバー**をドラッグし、画面の上部にあるビューにドロップします。 
+1. **ツールボックス**から**ナビゲーションバー**をドラッグし、画面の上部にあるビューにドロップします。
 
     [![](navigation-bars-images/navbar02.png "ナビゲーションバー")](navigation-bars-images/navbar02.png#lightbox)
-1. ナビゲーション**バー**をダブルクリックして、 **[ナビゲーション項目]** を選択します。 **Properties Pad**の **[ウィジェット]** タブで、次のように**タイトル**を設定できます。 
+1. ナビゲーション**バー**をダブルクリックして、 **[ナビゲーション項目]** を選択します。 **Properties Pad**の **[ウィジェット]** タブで、次のように**タイトル**を設定できます。
 
     [![](navigation-bars-images/navbar03.png "タイトルの設定")](navigation-bars-images/navbar03.png#lightbox)
-1. 次に、バーの両端に1つまたは複数の**バーボタン項目**を追加できます。 
+1. 次に、バーの両端に1つまたは複数の**バーボタン項目**を追加できます。
 
     [![](navigation-bars-images/navbar04.png "バーボタンの項目")](navigation-bars-images/navbar04.png#lightbox)
-1. 最後に、**プロパティエクスプローラー**の **[イベント]** タブで、**バーボタンの項目**を操作に接続します。 
+1. 最後に、**プロパティエクスプローラー**の **[イベント]** タブで、**バーボタンの項目**を操作に接続します。
 
     [![](navigation-bars-images/navbar05.png "バーボタンの項目のアクション")](navigation-bars-images/navbar05.png#lightbox)
 1. 変更内容を保存します。
@@ -53,16 +53,16 @@ TvOS アプリのナビゲーションバーを操作する最も簡単な方法
 
 
 1. **ソリューションエクスプローラー**で、[ファイル] を`Main.storyboard`ダブルクリックし、編集用に開きます。
-1. **ツールボックス**から**ナビゲーションバー**をドラッグし、画面の上部にあるビューにドロップします。 
+1. **ツールボックス**から**ナビゲーションバー**をドラッグし、画面の上部にあるビューにドロップします。
 
     [![](navigation-bars-images/navbar02-vs.png "ナビゲーションバー")](navigation-bars-images/navbar02-vs.png#lightbox)
-1. ナビゲーション**バー**をダブルクリックして、 **[ナビゲーション項目]** を選択します。 **プロパティエクスプローラー**の **[ウィジェット]** タブで、次のように**タイトル**を設定できます。 
+1. ナビゲーション**バー**をダブルクリックして、 **[ナビゲーション項目]** を選択します。 **プロパティエクスプローラー**の **[ウィジェット]** タブで、次のように**タイトル**を設定できます。
 
     [![](navigation-bars-images/navbar03-vs.png "タイトルの設定")](navigation-bars-images/navbar03-vs.png#lightbox)
-1. 次に、バーの両端に1つまたは複数の**バーボタン項目**を追加できます。 
+1. 次に、バーの両端に1つまたは複数の**バーボタン項目**を追加できます。
 
     [![](navigation-bars-images/navbar04-vs.png "バーボタン項目")](navigation-bars-images/navbar04-vs.png#lightbox)
-1. 最後に、**プロパティエクスプローラー**の **[イベント]** タブで、**バーボタンの項目**を操作に接続します。 
+1. 最後に、**プロパティエクスプローラー**の **[イベント]** タブで、**バーボタンの項目**を操作に接続します。
 
     [![](navigation-bars-images/navbar05-vs.png "バーボタン項目のアクション")](navigation-bars-images/navbar05-vs.png#lightbox)
 1. 変更内容を保存します。
@@ -126,11 +126,11 @@ namespace MySingleView
 
 ボタンの`Enabled`プロパティが`true`であり、他のコントロールまたはビューでカバーされていない場合は、siri リモートを使用してフォーカスを設定された項目にすることができます。
 
-ストーリーボードの操作の詳細については、「 [Hello, tvOS クイックスタートガイド](~/ios/tvos/get-started/hello-tvos.md)」を参照してください。 
+ストーリーボードの操作の詳細については、「 [Hello, tvOS クイックスタートガイド](~/ios/tvos/get-started/hello-tvos.md)」を参照してください。
 
 <a name="Summary" />
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
 この記事では、tvOS アプリ内のナビゲーションバーの設計と操作について説明しました。
 
