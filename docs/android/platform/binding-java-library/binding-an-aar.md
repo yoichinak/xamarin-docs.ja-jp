@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/11/2018
-ms.openlocfilehash: 4c612faca90d4b2b4e44cfbb53ff65ec07fcdfd1
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: ee29f54ac68f370cb9499d315116a030247f6044
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524840"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70225709"
 ---
 # <a name="binding-an-aar"></a>.AAR のバインド
 
@@ -83,7 +83,7 @@ public class TextCounter
 
 1. Android バインドライブラリテンプレートを使用して、新しいバインドライブラリプロジェクトを作成します。 Visual Studio for Mac または Visual Studio のいずれかを使用できます (以下のスクリーンショットは Visual Studio を示していますが、Visual Studio for Mac はよく似ています)。 ソリューションに**AarBinding**という名前を指定します。
 
-    [![AarBindings プロジェクトの作成](binding-an-aar-images/01-new-bindings-library-vs-sml.w157.png)](binding-an-aar-images/01-new-bindings-library-vs.w157.png#lightbox)
+    [![AarBindings プロジェクトの作成](binding-an-aar-images/01-new-bindings-library-vs-sml.w160.png)](binding-an-aar-images/01-new-bindings-library-vs.w160.png#lightbox)
 
 2. テンプレートには、を追加する**jar**フォルダーが含まれています。AAR (s) をバインドライブラリプロジェクトに対して行います。 **[Jar]** フォルダーを右クリックし、 **[既存の項目の追加 >]** を選択します。
 

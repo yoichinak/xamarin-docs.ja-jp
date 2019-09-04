@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2019
-ms.openlocfilehash: b13ee05f6d0e17287254b7c30c07b5a4a3c70638
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 9113ff728c382a26d0f0b5c0a6e40575cb8e776f
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70198287"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227952"
 ---
 # <a name="xamarinforms-webview"></a>Xamarin.Forms の WebView
 
@@ -20,7 +20,7 @@ ms.locfileid: "70198287"
 
 [`WebView`](xref:Xamarin.Forms.WebView) アプリで web および HTML コンテンツを表示するためのビューです。 異なり`OpenUri`、ユーザーをデバイス上の web ブラウザーを受け取ります`WebView`アプリ内の HTML コンテンツを表示します。
 
-![](webview-images/in-app-browser.png "アプリのブラウザーで")
+![アプリブラウザーで](webview-images/in-app-browser.png)
 
 ## <a name="content"></a>Content
 
@@ -105,7 +105,7 @@ htmlSource.Html = @"<html><body>
 browser.Source = htmlSource;
 ```
 
-![](webview-images/html-string.png "Web ビューを表示する HTML 文字列")
+![WebView HTML 文字列を表示する](webview-images/html-string.png)
 
 上記のコードで`@`リテラル、つまりすべての通常のエスケープ文字は無視されますを文字列として、HTML を示すために使用します。
 
@@ -147,7 +147,7 @@ body,p,h1 {
 
 次のスクリーン ショットは、ローカル コンテンツを表示する各プラットフォームでの結果を表示します。
 
-![](webview-images/local-content.png "ローカル コンテンツを表示する WebView")
+![Web ビューでローカルコンテンツを表示する](webview-images/local-content.png)
 
 最初のページが読み込まれていますが、`WebView`の HTML の出所に関する知識を持たない。 ローカル リソースを参照するページを処理するときに問題です。 ときに発生する可能性がありますの例には、それぞれにその他 ページは、ローカルのページ リンクを別の JavaScript ファイルの使用し、CSS スタイル シートにページが含まれます。  
 
@@ -176,11 +176,11 @@ Ios では、プロジェクトのルート ディレクトリで web コンテ�
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-![](webview-images/ios-vs.png "IOS 上のローカル ファイル")
+![IOS 上のローカルファイル](webview-images/ios-vs.png)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-![](webview-images/ios-xs.png "IOS 上のローカル ファイル")
+![IOS 上のローカルファイル](webview-images/ios-xs.png)
 
 -----
 
@@ -206,11 +206,11 @@ Android では、ビルド アクションで、Assets フォルダーに HTML�
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-![](webview-images/android-vs.png "Android 上のローカル ファイル")
+![Android 上のローカルファイル](webview-images/android-vs.png)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-![](webview-images/android-xs.png "Android 上のローカル ファイル")
+![Android 上のローカルファイル](webview-images/android-xs.png)
 
 -----
 
@@ -328,7 +328,7 @@ public partial class InAppBrowserXaml : ContentPage
 
 これで完了です。
 
-![](webview-images/in-app-browser.png "Web ビューのナビゲーション ボタン")
+![WebView ナビゲーションボタン](webview-images/in-app-browser.png)
 
 ## <a name="events"></a>イベント
 
@@ -383,11 +383,11 @@ void webviewNavigated(object sender, WebNavigatedEventArgs e)
 
 これは、(読み込み)、次の出力が得られます。
 
-![](webview-images/loading-start.png "WebView を移動するイベントの例")
+![WebView ナビゲーションイベントの例](webview-images/loading-start.png)
 
 完成した読み込み:
 
-![](webview-images/loading-end.png "WebView は、イベントの例を移動します。")
+![WebView ナビゲーションイベントの例](webview-images/loading-end.png)
 
 ## <a name="reloading-content"></a>コンテンツを再読み込み
 

@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/09/2018
-ms.openlocfilehash: efff9edd81f17979ce8f4441da3d512d0a8ec188
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: d9c8fb7e1045d35fa23c85c689cb0e1f9461d8dd
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526268"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70225815"
 ---
 # <a name="walkthrough---using-touch-in-android"></a>チュートリアル-Android でのタッチの使用
 
@@ -25,39 +25,39 @@ ms.locfileid: "69526268"
 
 - プロジェクト**TouchWalkthrough\_Start**を開きます。 **Mainactivity**がすべてに&ndash;設定されているので、アクティビティにタッチ動作を実装することになります。 アプリケーションを実行して **[タッチサンプル]** をクリックすると、次のアクティビティが開始されます。
 
-    [![タッチが開始されたアクティビティのスクリーンショット](android-touch-walkthrough-images/image15.png)](android-touch-walkthrough-images/image15.png#lightbox)
+  [![タッチが開始されたアクティビティのスクリーンショット](android-touch-walkthrough-images/image15.png)](android-touch-walkthrough-images/image15.png#lightbox)
 
 - アクティビティが開始されたことを確認したので、 **TouchActivity.cs**ファイルを開き、の`Touch` `ImageView`イベントのハンドラーを追加します。
 
-    ```csharp
-    _touchMeImageView.Touch += TouchMeImageViewOnTouch;
-    ```
+  ```csharp
+  _touchMeImageView.Touch += TouchMeImageViewOnTouch;
+  ```
 
 - 次に、次のメソッドを**TouchActivity.cs**に追加します。
 
-    ```csharp
-    private void TouchMeImageViewOnTouch(object sender, View.TouchEventArgs touchEventArgs)
-    {
-        string message;
-        switch (touchEventArgs.Event.Action & MotionEventActions.Mask)
-        {
-            case MotionEventActions.Down:
-            case MotionEventActions.Move:
-            message = "Touch Begins";
-            break;
+  ```csharp
+  private void TouchMeImageViewOnTouch(object sender, View.TouchEventArgs touchEventArgs)
+  {
+      string message;
+      switch (touchEventArgs.Event.Action & MotionEventActions.Mask)
+      {
+          case MotionEventActions.Down:
+          case MotionEventActions.Move:
+          message = "Touch Begins";
+          break;
 
-            case MotionEventActions.Up:
-            message = "Touch Ends";
-            break;
+          case MotionEventActions.Up:
+          message = "Touch Ends";
+          break;
 
-            default:
-            message = string.Empty;
-            break;
-        }
+          default:
+          message = string.Empty;
+          break;
+      }
 
-        _touchInfoTextView.Text = message;
-    }
-    ```
+      _touchInfoTextView.Text = message;
+  }
+  ```
 
 上記のコードでは、 `Move`と`Down`アクションを同じものとして扱うことに注意してください。 これは、ユーザーが指`ImageView`をから離していなくても、ユーザーが移動したり、ユーザーが変更する可能性のある圧力用いるが発生したりする可能性があるためです。 これらの種類の変更により`Move` 、アクションが生成されます。
 
@@ -75,170 +75,170 @@ ms.locfileid: "69526268"
 次に、ジェスチャレコグナイザーアクティビティを実装します。 このアクティビティでは、画面の周りにビューをドラッグし、ピンチからズームを実装する方法の1つを示します。
 
 - という名前`GestureRecognizer`のアプリケーションに新しいアクティビティを追加します。
-    次のコードのように、このアクティビティのコードを編集します。
+  次のコードのように、このアクティビティのコードを編集します。
 
-    ```csharp
-    public class GestureRecognizerActivity : Activity
-    {
-        protected override void OnCreate(Bundle bundle)
-        {
-            base.OnCreate(bundle);
-            View v = new GestureRecognizerView(this);
-            SetContentView(v);
-        }
-    }
-    ```
+  ```csharp
+  public class GestureRecognizerActivity : Activity
+  {
+      protected override void OnCreate(Bundle bundle)
+      {
+          base.OnCreate(bundle);
+          View v = new GestureRecognizerView(this);
+          SetContentView(v);
+      }
+  }
+  ```
 
 - 新しい Android ビューをプロジェクトに追加し、という`GestureRecognizerView`名前を指定します。 次の変数をこのクラスに追加します。
 
-    ```csharp
-    private static readonly int InvalidPointerId = -1;
+  ```csharp
+  private static readonly int InvalidPointerId = -1;
 
-    private readonly Drawable _icon;
-    private readonly ScaleGestureDetector _scaleDetector;
+  private readonly Drawable _icon;
+  private readonly ScaleGestureDetector _scaleDetector;
 
-    private int _activePointerId = InvalidPointerId;
-    private float _lastTouchX;
-    private float _lastTouchY;
-    private float _posX;
-    private float _posY;
-    private float _scaleFactor = 1.0f;
-    ```
+  private int _activePointerId = InvalidPointerId;
+  private float _lastTouchX;
+  private float _lastTouchY;
+  private float _posX;
+  private float _posY;
+  private float _scaleFactor = 1.0f;
+  ```
 
 - に次のコンストラクターを`GestureRecognizerView`追加します。 このコンストラクターは、 `ImageView`をアクティビティに追加します。 この時点で、コードはコンパイル&ndash;されません。ユーザーが pinches を使用するときに、のサイズを変更するための`ImageView`クラス`MyScaleListener`を作成する必要があります。
 
-    ```csharp
-    public GestureRecognizerView(Context context): base(context, null, 0)
-    {
-        _icon = context.Resources.GetDrawable(Resource.Drawable.Icon);
-        _icon.SetBounds(0, 0, _icon.IntrinsicWidth, _icon.IntrinsicHeight);
-        _scaleDetector = new ScaleGestureDetector(context, new MyScaleListener(this));
-    }
-    ```
+  ```csharp
+  public GestureRecognizerView(Context context): base(context, null, 0)
+  {
+      _icon = context.Resources.GetDrawable(Resource.Drawable.Icon);
+      _icon.SetBounds(0, 0, _icon.IntrinsicWidth, _icon.IntrinsicHeight);
+      _scaleDetector = new ScaleGestureDetector(context, new MyScaleListener(this));
+  }
+  ```
 
 - アクティビティにイメージを描画するには、次のスニペットに`OnDraw`示すように、ビュークラスのメソッドをオーバーライドする必要があります。 このコードは、 `ImageView`を`_posY`によっ`_posX`て指定された位置に移動するだけでなく、スケールファクターに従ってイメージのサイズを変更します。
 
-    ```csharp
-    protected override void OnDraw(Canvas canvas)
-    {
-        base.OnDraw(canvas);
-        canvas.Save();
-        canvas.Translate(_posX, _posY);
-        canvas.Scale(_scaleFactor, _scaleFactor);
-        _icon.Draw(canvas);
-        canvas.Restore();
-    }
-    ```
+  ```csharp
+  protected override void OnDraw(Canvas canvas)
+  {
+      base.OnDraw(canvas);
+      canvas.Save();
+      canvas.Translate(_posX, _posY);
+      canvas.Scale(_scaleFactor, _scaleFactor);
+      _icon.Draw(canvas);
+      canvas.Restore();
+  }
+  ```
 
 - 次に、 `_scaleFactor` `ImageView`インスタンス変数をユーザーの pinches として更新する必要があります。 という`MyScaleListener`クラスを追加します。 このクラスは、ユーザーがを使用しているときに、 `ImageView`Android によって生成されるスケールイベントをリッスンします。
-    次の内部クラスをに`GestureRecognizerView`追加します。 このクラスは、 `ScaleGesture.SimpleOnScaleGestureListener`です。 このクラスは、ジェスチャのサブセットに関心がある場合にリスナーがサブクラス化できる便利なクラスです。
+  次の内部クラスをに`GestureRecognizerView`追加します。 このクラスは、 `ScaleGesture.SimpleOnScaleGestureListener`です。 このクラスは、ジェスチャのサブセットに関心がある場合にリスナーがサブクラス化できる便利なクラスです。
 
-    ```csharp
-    private class MyScaleListener : ScaleGestureDetector.SimpleOnScaleGestureListener
-    {
-        private readonly GestureRecognizerView _view;
+  ```csharp
+  private class MyScaleListener : ScaleGestureDetector.SimpleOnScaleGestureListener
+  {
+      private readonly GestureRecognizerView _view;
 
-        public MyScaleListener(GestureRecognizerView view)
-        {
-            _view = view;
-        }
+      public MyScaleListener(GestureRecognizerView view)
+      {
+          _view = view;
+      }
 
-        public override bool OnScale(ScaleGestureDetector detector)
-        {
-            _view._scaleFactor *= detector.ScaleFactor;
+      public override bool OnScale(ScaleGestureDetector detector)
+      {
+          _view._scaleFactor *= detector.ScaleFactor;
 
-            // put a limit on how small or big the image can get.
-            if (_view._scaleFactor > 5.0f)
-            {
-                _view._scaleFactor = 5.0f;
-            }
-            if (_view._scaleFactor < 0.1f)
-            {
-                _view._scaleFactor = 0.1f;
-            }
+          // put a limit on how small or big the image can get.
+          if (_view._scaleFactor > 5.0f)
+          {
+              _view._scaleFactor = 5.0f;
+          }
+          if (_view._scaleFactor < 0.1f)
+          {
+              _view._scaleFactor = 0.1f;
+          }
 
-            _view.Invalidate();
-            return true;
-        }
-    }
-    ```
+          _view.Invalidate();
+          return true;
+      }
+  }
+  ```
 
 - で`GestureRecognizerView`オーバーライドする必要がある次のメソッド`OnTouchEvent`は、です。 次のコードは、このメソッドの完全な実装を示しています。 ここには多数のコードが含まれているので、ここで何が起こっているかを見てみましょう。 このメソッドの最初の処理では、必要に&ndash;応じてアイコンのサイズを変更します。これは、を呼び出す`_scaleDetector.OnTouchEvent`ことによって処理されます。 次に、このメソッドと呼ばれるアクションについて説明します。
 
-    - ユーザーがで画面を操作した場合、X と Y の位置と、画面に接した最初のポインターの ID が記録されます。
+  - ユーザーがで画面を操作した場合、X と Y の位置と、画面に接した最初のポインターの ID が記録されます。
 
-    - ユーザーが画面上でタッチを移動した場合は、ユーザーがポインターを移動した距離がわかります。
+  - ユーザーが画面上でタッチを移動した場合は、ユーザーがポインターを移動した距離がわかります。
 
-    - ユーザーが画面から指を持ち上げると、ジェスチャの追跡が停止されます。
+  - ユーザーが画面から指を持ち上げると、ジェスチャの追跡が停止されます。
 
-    ```csharp
-    public override bool OnTouchEvent(MotionEvent ev)
-    {
-        _scaleDetector.OnTouchEvent(ev);
+  ```csharp
+  public override bool OnTouchEvent(MotionEvent ev)
+  {
+      _scaleDetector.OnTouchEvent(ev);
 
-        MotionEventActions action = ev.Action & MotionEventActions.Mask;
-        int pointerIndex;
+      MotionEventActions action = ev.Action & MotionEventActions.Mask;
+      int pointerIndex;
 
-        switch (action)
-        {
-            case MotionEventActions.Down:
-            _lastTouchX = ev.GetX();
-            _lastTouchY = ev.GetY();
-            _activePointerId = ev.GetPointerId(0);
-            break;
+      switch (action)
+      {
+          case MotionEventActions.Down:
+          _lastTouchX = ev.GetX();
+          _lastTouchY = ev.GetY();
+          _activePointerId = ev.GetPointerId(0);
+          break;
 
-            case MotionEventActions.Move:
-            pointerIndex = ev.FindPointerIndex(_activePointerId);
-            float x = ev.GetX(pointerIndex);
-            float y = ev.GetY(pointerIndex);
-            if (!_scaleDetector.IsInProgress)
-            {
-                // Only move the ScaleGestureDetector isn't already processing a gesture.
-                float deltaX = x - _lastTouchX;
-                float deltaY = y - _lastTouchY;
-                _posX += deltaX;
-                _posY += deltaY;
-                Invalidate();
-            }
+          case MotionEventActions.Move:
+          pointerIndex = ev.FindPointerIndex(_activePointerId);
+          float x = ev.GetX(pointerIndex);
+          float y = ev.GetY(pointerIndex);
+          if (!_scaleDetector.IsInProgress)
+          {
+              // Only move the ScaleGestureDetector isn't already processing a gesture.
+              float deltaX = x - _lastTouchX;
+              float deltaY = y - _lastTouchY;
+              _posX += deltaX;
+              _posY += deltaY;
+              Invalidate();
+          }
 
-            _lastTouchX = x;
-            _lastTouchY = y;
-            break;
+          _lastTouchX = x;
+          _lastTouchY = y;
+          break;
 
-            case MotionEventActions.Up:
-            case MotionEventActions.Cancel:
-            // We no longer need to keep track of the active pointer.
-            _activePointerId = InvalidPointerId;
-            break;
+          case MotionEventActions.Up:
+          case MotionEventActions.Cancel:
+          // We no longer need to keep track of the active pointer.
+          _activePointerId = InvalidPointerId;
+          break;
 
-            case MotionEventActions.PointerUp:
-            // check to make sure that the pointer that went up is for the gesture we're tracking.
-            pointerIndex = (int) (ev.Action & MotionEventActions.PointerIndexMask) >> (int) MotionEventActions.PointerIndexShift;
-            int pointerId = ev.GetPointerId(pointerIndex);
-            if (pointerId == _activePointerId)
-            {
-                // This was our active pointer going up. Choose a new
-                // action pointer and adjust accordingly
-                int newPointerIndex = pointerIndex == 0 ? 1 : 0;
-                _lastTouchX = ev.GetX(newPointerIndex);
-                _lastTouchY = ev.GetY(newPointerIndex);
-                _activePointerId = ev.GetPointerId(newPointerIndex);
-            }
-            break;
+          case MotionEventActions.PointerUp:
+          // check to make sure that the pointer that went up is for the gesture we're tracking.
+          pointerIndex = (int) (ev.Action & MotionEventActions.PointerIndexMask) >> (int) MotionEventActions.PointerIndexShift;
+          int pointerId = ev.GetPointerId(pointerIndex);
+          if (pointerId == _activePointerId)
+          {
+              // This was our active pointer going up. Choose a new
+              // action pointer and adjust accordingly
+              int newPointerIndex = pointerIndex == 0 ? 1 : 0;
+              _lastTouchX = ev.GetX(newPointerIndex);
+              _lastTouchY = ev.GetY(newPointerIndex);
+              _activePointerId = ev.GetPointerId(newPointerIndex);
+          }
+          break;
 
-        }
-        return true;
-    }
-    ```
+      }
+      return true;
+  }
+  ```
 
 - 次に、アプリケーションを実行し、ジェスチャレコグナイザーアクティビティを開始します。
-    起動すると、次のスクリーンショットのような画面が表示されます。
+  起動すると、次のスクリーンショットのような画面が表示されます。
 
-    [![Android アイコンを使用したジェスチャ認識エンジンのスタート画面](android-touch-walkthrough-images/image17.png)](android-touch-walkthrough-images/image17.png#lightbox)
+  [![Android アイコンを使用したジェスチャ認識エンジンのスタート画面](android-touch-walkthrough-images/image17.png)](android-touch-walkthrough-images/image17.png#lightbox)
 
 - 次に、アイコンをタッチし、画面の周りにドラッグします。 ピンチ操作でズームするジェスチャを試してください。 ある時点で、画面は次のスクリーンショットのようになります。
 
-    [![ジェスチャ画面の周りを移動するアイコン](android-touch-walkthrough-images/image18.png)](android-touch-walkthrough-images/image18.png#lightbox)
+  [![ジェスチャ画面の周りを移動するアイコン](android-touch-walkthrough-images/image18.png)](android-touch-walkthrough-images/image18.png#lightbox)
 
 この時点で、前に pat を提供する必要があります。これは、Android アプリケーションにピンチによるズームインを実装したばかりです。 このチュートリアル&ndash;では、カスタムジェスチャを使用して、3番目と最後のアクティビティに進むことができます。
 
@@ -250,106 +250,106 @@ ms.locfileid: "69526268"
 
 - 次の内容を使用して、**カスタム\_ジェスチャ\_レイアウト axml**という名前のレイアウトファイルをプロジェクトに追加します。 プロジェクトには、 **Resources**フォルダー内のすべてのイメージが既に存在します。
 
-    ```xml
-    <?xml version="1.0" encoding="utf-8"?>
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
-        <ImageView
-            android:src="@drawable/check_me"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="3"
-            android:id="@+id/imageView1"
-            android:layout_gravity="center_vertical" />
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
-    </LinearLayout>
-    ```
+  ```xml
+  <?xml version="1.0" encoding="utf-8"?>
+  <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+      android:orientation="vertical"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="0dp"
+          android:layout_weight="1" />
+      <ImageView
+          android:src="@drawable/check_me"
+          android:layout_width="match_parent"
+          android:layout_height="0dp"
+          android:layout_weight="3"
+          android:id="@+id/imageView1"
+          android:layout_gravity="center_vertical" />
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="0dp"
+          android:layout_weight="1" />
+  </LinearLayout>
+  ```
 
 - 次に、新しいアクティビティをプロジェクトに追加し、 `CustomGestureRecognizerActivity.cs`という名前を指定します。 次の2行のコードに示すように、クラスに2つのインスタンス変数を追加します。
 
-    ```csharp
-    private GestureLibrary _gestureLibrary;
-    private ImageView _imageView;
-    ```
+  ```csharp
+  private GestureLibrary _gestureLibrary;
+  private ImageView _imageView;
+  ```
 
 - 次のコードのように、このアクティビティのメソッドを編集します。`OnCreate` このコードで何が起こっているかについて説明します。 まず、を`GestureOverlayView`インスタンス化し、アクティビティのルートビューとして設定します。
-    また、 `GesturePerformed`の`GestureOverlayView`イベントにイベントハンドラーを割り当てます。 次に、前に作成したレイアウトファイルを展開し、そのファイルをの子ビュー `GestureOverlayView`として追加します。 最後の手順では、変数`_gestureLibrary`を初期化し、アプリケーションリソースからジェスチャファイルを読み込みます。 何らかの理由でジェスチャファイルを読み込むことができない場合、このアクティビティは実行できないため、シャットダウンされます。
+  また、 `GesturePerformed`の`GestureOverlayView`イベントにイベントハンドラーを割り当てます。 次に、前に作成したレイアウトファイルを展開し、そのファイルをの子ビュー `GestureOverlayView`として追加します。 最後の手順では、変数`_gestureLibrary`を初期化し、アプリケーションリソースからジェスチャファイルを読み込みます。 何らかの理由でジェスチャファイルを読み込むことができない場合、このアクティビティは実行できないため、シャットダウンされます。
 
-    ```csharp
-    protected override void OnCreate(Bundle bundle)
-    {
-        base.OnCreate(bundle);
+  ```csharp
+  protected override void OnCreate(Bundle bundle)
+  {
+      base.OnCreate(bundle);
 
-        GestureOverlayView gestureOverlayView = new GestureOverlayView(this);
-        SetContentView(gestureOverlayView);
-        gestureOverlayView.GesturePerformed += GestureOverlayViewOnGesturePerformed;
+      GestureOverlayView gestureOverlayView = new GestureOverlayView(this);
+      SetContentView(gestureOverlayView);
+      gestureOverlayView.GesturePerformed += GestureOverlayViewOnGesturePerformed;
 
-        View view = LayoutInflater.Inflate(Resource.Layout.custom_gesture_layout, null);
-        _imageView = view.FindViewById<ImageView>(Resource.Id.imageView1);
-        gestureOverlayView.AddView(view);
+      View view = LayoutInflater.Inflate(Resource.Layout.custom_gesture_layout, null);
+      _imageView = view.FindViewById<ImageView>(Resource.Id.imageView1);
+      gestureOverlayView.AddView(view);
 
-        _gestureLibrary = GestureLibraries.FromRawResource(this, Resource.Raw.gestures);
-        if (!_gestureLibrary.Load())
-        {
-            Log.Wtf(GetType().FullName, "There was a problem loading the gesture library.");
-            Finish();
-        }
-    }
-    ```
+      _gestureLibrary = GestureLibraries.FromRawResource(this, Resource.Raw.gestures);
+      if (!_gestureLibrary.Load())
+      {
+          Log.Wtf(GetType().FullName, "There was a problem loading the gesture library.");
+          Finish();
+      }
+  }
+  ```
 
 - 最後に、次のコードスニペットに示すよう`GestureOverlayViewOnGesturePerformed`に、メソッドを実装する必要があります。 が`GestureOverlayView`ジェスチャを検出すると、このメソッドにコールバックします。 最初に、を呼び出し`IList<Prediction>` `_gestureLibrary.Recognize()`てジェスチャに一致するオブジェクトを取得しようとします。 少しの LINQ を使用して、 `Prediction`そのジェスチャのスコアが最も高いを取得します。
 
-    十分なスコアを持つ一致するジェスチャがない場合、イベントハンドラーは何も行わずに終了します。 それ以外の場合は、予測の名前を確認し、ジェスチャの名前に基づいて表示されるイメージを変更します。
+  十分なスコアを持つ一致するジェスチャがない場合、イベントハンドラーは何も行わずに終了します。 それ以外の場合は、予測の名前を確認し、ジェスチャの名前に基づいて表示されるイメージを変更します。
 
-    ```csharp
-    private void GestureOverlayViewOnGesturePerformed(object sender, GestureOverlayView.GesturePerformedEventArgs gesturePerformedEventArgs)
-    {
-        IEnumerable<Prediction> predictions = from p in _gestureLibrary.Recognize(gesturePerformedEventArgs.Gesture)
-        orderby p.Score descending
-        where p.Score > 1.0
-        select p;
-        Prediction prediction = predictions.FirstOrDefault();
+  ```csharp
+  private void GestureOverlayViewOnGesturePerformed(object sender, GestureOverlayView.GesturePerformedEventArgs gesturePerformedEventArgs)
+  {
+      IEnumerable<Prediction> predictions = from p in _gestureLibrary.Recognize(gesturePerformedEventArgs.Gesture)
+      orderby p.Score descending
+      where p.Score > 1.0
+      select p;
+      Prediction prediction = predictions.FirstOrDefault();
 
-        if (prediction == null)
-        {
-            Log.Debug(GetType().FullName, "Nothing seemed to match the user's gesture, so don't do anything.");
-            return;
-        }
+      if (prediction == null)
+      {
+          Log.Debug(GetType().FullName, "Nothing seemed to match the user's gesture, so don't do anything.");
+          return;
+      }
 
-        Log.Debug(GetType().FullName, "Using the prediction named {0} with a score of {1}.", prediction.Name, prediction.Score);
+      Log.Debug(GetType().FullName, "Using the prediction named {0} with a score of {1}.", prediction.Name, prediction.Score);
 
-        if (prediction.Name.StartsWith("checkmark"))
-        {
-            _imageView.SetImageResource(Resource.Drawable.checked_me);
-        }
-        else if (prediction.Name.StartsWith("erase", StringComparison.OrdinalIgnoreCase))
-        {
-            // Match one of our "erase" gestures
-            _imageView.SetImageResource(Resource.Drawable.check_me);
-        }
-    }
-    ```
+      if (prediction.Name.StartsWith("checkmark"))
+      {
+          _imageView.SetImageResource(Resource.Drawable.checked_me);
+      }
+      else if (prediction.Name.StartsWith("erase", StringComparison.OrdinalIgnoreCase))
+      {
+          // Match one of our "erase" gestures
+          _imageView.SetImageResource(Resource.Drawable.check_me);
+      }
+  }
+  ```
 
 - アプリケーションを実行し、カスタムジェスチャレコグナイザーアクティビティを開始します。 次のスクリーンショットのようになります。
 
-    [![チェックマークの画像が表示されるスクリーンショット](android-touch-walkthrough-images/image19.png)](android-touch-walkthrough-images/image19.png#lightbox)
+  [![チェックマークの画像が表示されるスクリーンショット](android-touch-walkthrough-images/image19.png)](android-touch-walkthrough-images/image19.png#lightbox)
 
-    画面にチェックマークを描画します。表示されるビットマップは、次のスクリーンショットに示されているようになります。
+  画面にチェックマークを描画します。表示されるビットマップは、次のスクリーンショットに示されているようになります。
 
-    [![描画チェックマーク、チェックマークが認識されます](android-touch-walkthrough-images/image20.png)](android-touch-walkthrough-images/image20.png#lightbox)
+  [![描画チェックマーク、チェックマークが認識されます](android-touch-walkthrough-images/image20.png)](android-touch-walkthrough-images/image20.png#lightbox)
 
-    最後に、画面に scribble を描きます。 チェックボックスは、次のスクリーンショットに示すように、元のイメージに戻す必要があります。
+  最後に、画面に scribble を描きます。 チェックボックスは、次のスクリーンショットに示すように、元のイメージに戻す必要があります。
 
-    [![画面上の Scribble、元のイメージが表示されます。](android-touch-walkthrough-images/image21.png)](android-touch-walkthrough-images/image21.png#lightbox)
+  [![画面上の Scribble、元のイメージが表示されます。](android-touch-walkthrough-images/image21.png)](android-touch-walkthrough-images/image21.png#lightbox)
 
 Android アプリケーションで、Xamarin を使用してタッチとジェスチャを統合する方法について理解できました。
 

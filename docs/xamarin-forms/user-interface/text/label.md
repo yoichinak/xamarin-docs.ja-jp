@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/26/2019
-ms.openlocfilehash: 5c12b5a5c0e558403362bd12baddfb8201f40759
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 24ab8f4b988277cbbf1162a08e5641332a58bd81
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68642925"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228149"
 ---
 # <a name="xamarinforms-label"></a>Xamarin.Forms のラベル
 
@@ -48,7 +48,7 @@ var bothLabel = new Label { Text = "This is underlined text with strikethrough."
 
 次のスクリーンショットは、`TextDecorations`列挙型のメンバーを[ `Label` ](xref:Xamarin.Forms.Label)のインスタンスに適用した例です。
 
-![](label-images/label-textdecorations.png "ラベルにテキスト装飾を適用")
+![文字装飾付きのラベル](label-images/label-textdecorations.png)
 
 > [!NOTE]
 > テキスト装飾は[ `Span` ](xref:Xamarin.Forms.Span)インスタンスにも適用することができます。 詳細については、`Span`クラスを参照してください（[書式付きテキスト](#Formatted_Text)）。
@@ -91,7 +91,7 @@ public partial class LabelPage : ContentPage
 
 次のスクリーンショットは`TextColor`プロパティを設定した結果の例です。
 
-![](label-images/textcolor.png "ラベル のTextColor 使用例")
+![ラベルの TextColor の例](label-images/textcolor.png)
 
 色の詳細については、次を参照してください。[Xamarin.Formsでの色](~/xamarin-forms/user-interface/colors.md)。
 
@@ -140,7 +140,7 @@ var label =
 
 次のスクリーンショットは、テキストが2行以上のスペースを有する場合に`MaxLines`プロパティに 2 を設定した結果を示しています。
 
-![](label-images/label-maxlines.png "ラベルの MaxLines プロパティ使用例")
+![MaxLines のラベルの例](label-images/label-maxlines.png)
 
 <a name="Formatted_Text" />
 
@@ -223,7 +223,7 @@ public class LabelPageCode : ContentPage
 
 次のスクリーンショットは、`FormattedString`プロパティを3つの`Span`インスタンスに設定した結果を示しています。
 
-![](label-images/formattedtext.png "ラベルの FormattedText の設定例")
+![ラベル FormattedText の例](label-images/formattedtext.png)
 
 ## <a name="line-height"></a>[行間]
 
@@ -254,9 +254,9 @@ var label =
 
 次のスクリーンショットは、[ `Label.LineHeight` ](xref:Xamarin.Forms.Label.LineHeight)プロパティに 1.8 の値を設定した結果を示します。
 
-![](label-images/label-lineheight.png "ラベルの LineHeight プロパティの使用例")
+![ラベル LineHeight の例](label-images/label-lineheight.png)
 
-次の XAML の例は、[ `Span` ](xref:Xamarin.Forms.Span)の [ `LineHeight` ](xref:Xamarin.Forms.Span.LineHeight)プロパティを設定する方法を示しています:
+次の XAML は、 [ `LineHeight` ](xref:Xamarin.Forms.Span.LineHeight)の[ `Span` ](xref:Xamarin.Forms.Span)プロパティ設定する例を示しています:
 
 ```xaml
 <Label LineBreakMode="WordWrap">
@@ -292,9 +292,9 @@ var label = new Label
 };
 ```
 
-次のスクリーンショットは、[ `Span.LineHeight` ](xref:Xamarin.Forms.Span.LineHeight) プロパティに 1.8 設定した結果を示しています。
+次のスクリーンショットは、[ `Span.LineHeight` ](xref:Xamarin.Forms.Span.LineHeight)プロパティに 1.8 の値を設定した結果を示します。
 
-![](label-images/span-lineheight.png "Sapn LineHeight の使用例")
+![Span LineHeight の例](label-images/span-lineheight.png)
 
 ## <a name="hyperlinks"></a>ハイパーリンク
 

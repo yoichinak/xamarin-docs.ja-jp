@@ -7,12 +7,12 @@ ms.assetid: F4A37564-B18B-42FF-B841-9A1949895AB6
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/27/2018
-ms.openlocfilehash: 0ce718bf0380c47033129755d6ca9d40c1136e2c
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 620a986ea9c5a6792d321b0c89dae936ffa256da
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69529271"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227927"
 ---
 # <a name="part-3-xaml-markup-extensions"></a>第 3 部です。 XAML マークアップ拡張機能
 
@@ -297,7 +297,7 @@ _XAML マークアップ拡張機能は、オブジェクトまたはその他�
 
 スクリーン ショットは、一貫性のあるスタイル、およびプラットフォームに依存するスタイル設定を確認します。
 
-[![](xaml-markup-extensions-images/sharedresources.png "スタイルのコントロールを")](xaml-markup-extensions-images/sharedresources-large.png#lightbox "スタイルのコントロール")
+[![スタイルコントロール](xaml-markup-extensions-images/sharedresources.png)](xaml-markup-extensions-images/sharedresources-large.png#lightbox)
 
 定義する最も一般的です、 `Resources` 、ページの上部にあるコレクションに留意する、`Resources`によってプロパティが定義されている`VisualElement`、持つことが可能`Resources`ページ上の他の要素のコレクション。 たとえば、を 1 つを追加してみてください、`StackLayout`この例では。
 
@@ -435,7 +435,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 
 結果のサイズ`BoxView`画面を基準とは、プラットフォームに依存します。
 
- [![](xaml-markup-extensions-images/staticconstants.png "X:static マークアップ拡張機能を使用してコントロール")](xaml-markup-extensions-images/staticconstants-large.png#lightbox "X:static マークアップ拡張機能を使用してコントロール")
+[![X:Static マークアップ拡張機能を使用するコントロール](xaml-markup-extensions-images/staticconstants.png)](xaml-markup-extensions-images/staticconstants-large.png#lightbox)
 
 ## <a name="other-standard-markup-extensions"></a>他の標準のマークアップ拡張機能
 
@@ -551,9 +551,9 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 
 実行中のプログラムを次に示します。
 
-[![](xaml-markup-extensions-images/relativelayout.png "制約を使用して、相対的なレイアウト")](xaml-markup-extensions-images/relativelayout-large.png#lightbox "制約を使用して、相対的なレイアウト")
+[![制約を使用した相対レイアウト](xaml-markup-extensions-images/relativelayout.png)](xaml-markup-extensions-images/relativelayout-large.png#lightbox)
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
 ここで示すように XAML マークアップ拡張機能は、XAML ファイルの重要なサポートを提供します。 おそらく最も重要な XAML マークアップ拡張機能ですが、 `Binding`、このシリーズの次の部分で説明される[パート 4 です。データ バインディングの基礎](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)します。
 

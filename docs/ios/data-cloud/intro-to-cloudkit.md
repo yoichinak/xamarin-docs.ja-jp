@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/11/2016
-ms.openlocfilehash: 29e737e5a6cb6abdae099c0224a2da058c2ea025
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: af0765adb7e059bdc80c0b851b4bdcad8be0e3e4
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69527736"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227830"
 ---
 # <a name="cloudkit-in-xamarinios"></a>Xamarin. iOS の CloudKit
 
@@ -55,7 +55,7 @@ Xamarin アプリケーションで CloudKit フレームワークを利用す�
 
 1. Visual Studio for Mac または Visual Studio でプロジェクトを開きます。
 2. **ソリューションエクスプローラー**で、**情報 plist**ファイルを開き、**バンドル識別子**が、プロビジョニング設定の一部として作成された**アプリ ID**で定義されているものと一致していることを確認します。
- 
+
     [![](intro-to-cloudkit-images/image26a.png "バンドル Id を入力してください")](intro-to-cloudkit-images/image26a-orig.png#lightbox "Info.plist file displaying Bundle Identifier")
 
 3. **情報 plist**ファイルの一番下までスクロールし、 **[有効なバックグラウンドモード]** 、 **[場所の更新]** 、および **[リモート通知]** を選択します。
@@ -80,7 +80,7 @@ Xamarin iOS アプリケーションで CloudKit を実装する前に、この�
 4. **レコードゾーン**–レコードのグループです。
 5. **レコード識別子**: は完全に正規化され、レコードの特定の場所を表します。
 6. **Reference** –特定のデータベース内の関連するレコード間の親子リレーションシップを提供します。
-7. Asset –大規模な非構造化データのファイルを iCloud にアップロードし、特定のレコードに関連付けることができます。
+7. Asset **–大**規模な非構造化データのファイルを iCloud にアップロードし、特定のレコードに関連付けることができます。
 
 
 ### <a name="containers"></a>コンテナー
@@ -471,42 +471,42 @@ Cloudkit では、クエリを`NSPredicates`操作するときに次の種類の
 
 
 1. 名前が変数に格納されている値と等しいレコードを照合します。
-    
-    ```
+
+    ```csharp
     NSPredicate.FromFormat(string.Format("name = '{0}'", recordName))
     ```
-   
+
 2. では、コンパイル時にキーが認識される必要がないように、動的キー値に基づいて照合を行うことができます。
-    
-    ```
+
+    ```csharp
     NSPredicate.FromFormat(string.Format("{0} = '{1}'", key, value))
     ```
-    
+
 3. レコードの値が指定された値を超えるレコードの照合:
-   
-    ```
+
+    ```csharp
     NSPredicate.FromFormat(string.Format("start > {0}", (NSDate)date))
     ```
 
 4. レコードの場所が指定された場所の100メートル内にある場合は、次のように一致します。
-    
-    ```
+
+    ```csharp
     var location = new CLLocation(37.783,-122.404);
     var predicate = NSPredicate.FromFormat(string.Format("distanceToLocation:fromLocation(Location,{0}) < 100", location));
     ```
 
 5. CloudKit はトークン化された検索をサポートしています。 この呼び出しによって2つのトークン`after`が作成さ`session`れます。1つは用、もう1つは用です。 次の2つのトークンを含むレコードが返されます。
-    
-    ```
+
+    ```csharp
     NSPredicate.FromFormat(string.Format("ALL tokenize({0}, 'Cdl') IN allTokens", "after session"))
     ```
-    
+
 6. Cloudkit は、演算子を使用し`AND`て結合された複合述語をサポートしています。
-    
-    ```
+
+    ```csharp
     NSPredicate.FromFormat(string.Format("start > {0} AND name = '{1}'", (NSDate)date, recordName))
     ```
-    
+
 
 
 #### <a name="creating-queries"></a>クエリの作成
@@ -820,40 +820,40 @@ CloudKit を使用するアプリケーションを出荷する前に、**運用
 
 次の手順で行います。
 
-1. Visual Studio for Ma で、**リリース** > **iOS デバイス**用にアプリケーションをコンパイルします。 
+1. Visual Studio for Ma で、**リリース** > **iOS デバイス**用にアプリケーションをコンパイルします。
 
     [![](intro-to-cloudkit-images/shipping01.png "リリース用にアプリケーションをコンパイルする")](intro-to-cloudkit-images/shipping01.png#lightbox)
 
-2. **[ビルド]** メニューの **[アーカイブ]** を選択します。 
+2. **[ビルド]** メニューの **[アーカイブ]** を選択します。
 
     [![](intro-to-cloudkit-images/shipping02.png "アーカイブの選択")](intro-to-cloudkit-images/shipping02.png#lightbox)
 
-3. **アーカイブ**が作成され、Visual Studio for Mac に表示されます。 
+3. **アーカイブ**が作成され、Visual Studio for Mac に表示されます。
 
     [![](intro-to-cloudkit-images/shipping03.png "アーカイブが作成されて表示されます")](intro-to-cloudkit-images/shipping03.png#lightbox)
 
 4. **Xcode** を起動します。
-5. **[ウィンドウ]** メニューの **[オーガナイザー]** を選択します。 
+5. **[ウィンドウ]** メニューの **[オーガナイザー]** を選択します。
 
     [![](intro-to-cloudkit-images/shipping04.png "オーガナイザーの選択")](intro-to-cloudkit-images/shipping04.png#lightbox)
 
-6. アプリケーションのアーカイブを選択し、 **[エクスポート]** ボタンをクリックします。 
+6. アプリケーションのアーカイブを選択し、 **[エクスポート]** ボタンをクリックします。
 
     [![](intro-to-cloudkit-images/shipping05.png "アプリケーションのアーカイブ")](intro-to-cloudkit-images/shipping05.png#lightbox)
-    
-7. エクスポートするメソッドを選択し、 **[次へ]** ボタンをクリックします。 
+
+7. エクスポートするメソッドを選択し、 **[次へ]** ボタンをクリックします。
 
     [![](intro-to-cloudkit-images/shipping06.png "エクスポートする方法の選択")](intro-to-cloudkit-images/shipping06.png#lightbox)
 
-8. ドロップダウンリストから**開発チーム**を選択し、 **[選択]** ボタンをクリックします。 
+8. ドロップダウンリストから**開発チーム**を選択し、 **[選択]** ボタンをクリックします。
 
     [![](intro-to-cloudkit-images/shipping07.png "ドロップダウンリストから開発チームを選択します")](intro-to-cloudkit-images/shipping07.png#lightbox)
 
-9. ドロップダウンリストから **[Production]** を選択し、 **[次へ]** ボタンをクリックします。 
+9. ドロップダウンリストから **[Production]** を選択し、 **[次へ]** ボタンをクリックします。
 
     [![](intro-to-cloudkit-images/shipping08.png "ドロップダウンリストから [運用] を選択します。")](intro-to-cloudkit-images/shipping08.png#lightbox)
 
-10. 設定を確認し、 **[エクスポート]** ボタンをクリックします。 
+10. 設定を確認し、 **[エクスポート]** ボタンをクリックします。
 
     [![](intro-to-cloudkit-images/shipping09.png "設定を確認する")](intro-to-cloudkit-images/shipping09.png#lightbox)
 

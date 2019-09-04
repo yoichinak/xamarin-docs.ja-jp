@@ -7,12 +7,12 @@ ms.assetid: 8FE0F6DC-16BC-435F-9626-DD1790C0145A
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/25/2017
-ms.openlocfilehash: 7802360c95d31f237cf69c69728cffe02ad47e5a
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 9c1ee2e036fc903c7fe8422a32fba44cc93d43f9
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646230"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228273"
 ---
 # <a name="three-types-of-bzier-curves"></a>3 つの種類のベジエ曲線
 
@@ -24,7 +24,7 @@ _SkiaSharp を使用して、円錐、二次方程式、3 次ベジエ曲線を�
 
 ベジエ曲線は、対話型デザインに適していることがわかっています。これらは非常&mdash;に優れた機能を備えています。つまり、曲線が無限または&mdash;扱いにくくなり、通常は見た目になります。
 
-![](beziers-images/beziersample.png "サンプルのベジエ曲線")
+![サンプルのベジエ曲線](beziers-images/beziersample.png)
 
 コンピューターのフォントの文字アウトラインは通常、ベジエ曲線で定義されます。
 
@@ -93,7 +93,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ここでは、実行します。
 
-[![](beziers-images/beziercurve-small.png "ベジエ曲線のページのスクリーン ショットをトリプル")](beziers-images/beziercurve-large.png#lightbox "ベジエ曲線のページの 3 倍になるスクリーン ショット")
+[![[ベジエ曲線] ページのトリプルスクリーンショット](beziers-images/beziercurve-small.png)](beziers-images/beziercurve-large.png#lightbox)
 
 数学的、曲線は、3 次多項式近似が。 曲線では、次の 3 つのポイントで直線が多くてと交差します。 開始時点では、曲線は常に、接線のと同じ方向に、直線の開始からは最初の制御点をポイントします。 曲線は常に、終了時点では、接線のと同じ方向に、直線 2 つ目のコントロールからは終了点をポイントします。
 
@@ -125,7 +125,7 @@ y(t) = (t) 1 日 ~ ³y₀ 3t + (1 – t) ²y₁ 3t² + (1 – t) y₂ + t³y₃�
 
 次の図は、4 つのポイント ラベル`pto`、 `pt1`、 `pt2`、および`pt3`の円弧を近似するベジエ曲線 (赤で表示) を定義します。
 
-![](beziers-images/bezierarc45.png "ベジエ曲線を円弧の近似")
+![ベジエ曲線を持つ円弧の近似値](beziers-images/bezierarc45.png)
 
 制御点を始点と終点から行がタンジェントの円におよび、ベジエ曲線の長さがある*L*します。前述の最初の記事では、最善のベジエ曲線が円弧を近似を示すときにその長さ*L*は次のように計算されます。
 
@@ -211,13 +211,13 @@ float Magnitude(SKPoint v)
 
 さまざまな角度の実行中のプログラムを次に示します。
 
-[![](beziers-images/beziercirculararc-small.png "円弧をベジエ ページのスクリーン ショットをトリプル")](beziers-images/beziercirculararc-large.png#lightbox "円弧をベジエ ページの 3 倍になるスクリーン ショット")
+[![[ベジエ円弧] ページのトリプルスクリーンショット](beziers-images/beziercirculararc-small.png)](beziers-images/beziercirculararc-large.png#lightbox)
 
 3 番目のスクリーン ショットをよく見るし、角度が 180 度が四半期円うまくを角度が 90 度に合わせて見えます iOS の画面を示しています、半円からにベジエ曲線を外れて顕著なことを確認します。
 
 四半期の円がこのような方向は、この 2 つの制御点の座標を計算することは非常に簡単です。
 
-![](beziers-images/bezierarc90.png "ベジエ曲線で 4 分の 1 円の近似")
+![ベジエ曲線を使用した四半期の円の近似値](beziers-images/bezierarc90.png)
 
 100 では、円の半径*L* 55 とを覚えておくの簡単な数では。
 
@@ -293,7 +293,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Sinusoidally 不安定な値に基づいて、ポイントが補間`t`します。 挿入ポイントは、一連の 4 つの接続されたベジエ曲線を作成し、使用されます。 アニメーションの実行を次に示します。
 
-[![](beziers-images/squaringthecircle-small.png "Squaring の 3 倍になるスクリーン ショット円ページ")](beziers-images/squaringthecircle-large.png#lightbox "Squaring の 3 倍になるスクリーン ショット、[円] ページ")
+[![2乗の [円] ページのトリプルスクリーンショット](beziers-images/squaringthecircle-small.png)](beziers-images/squaringthecircle-large.png#lightbox)
 
 このようなアニメーションがなければ曲線は弧と直線の両方としてレンダリングされる柔軟性アルゴリズムになります。
 
@@ -342,7 +342,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 無限大記号を次に示します。
 
-[![](beziers-images/bezierinfinity-small.png "ベジエ無限大ページのスクリーン ショットをトリプル")](beziers-images/bezierinfinity-large.png#lightbox "ベジエ無限大ページの 3 倍になるスクリーン ショット")
+[![ベジエ無限大ページのトリプルスクリーンショット](beziers-images/bezierinfinity-small.png)](beziers-images/bezierinfinity-large.png#lightbox)
 
 によって表示される、無限大記号よりも中央方向に円滑になります、**円弧無限大**ページから、 [**円弧を描画する方法は 3 つ**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/arcs.md)記事。
 
@@ -405,7 +405,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ここで実行しています。
 
-[![](beziers-images/quadraticcurve-small.png "二次曲線ページのスクリーン ショットをトリプル")](beziers-images/quadraticcurve-large.png#lightbox "二次曲線ページの 3 倍になるスクリーン ショット")
+[![2次曲線ページのトリプルスクリーンショット](beziers-images/quadraticcurve-small.png)](beziers-images/quadraticcurve-large.png#lightbox)
 
 点線では、始点と終点の曲線の接線は、コントロール ポイントで交差します。
 
@@ -483,7 +483,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ここでは、実行します。
 
-[![](beziers-images/coniccurve-small.png "曲線の円錐のページのスクリーン ショットをトリプル")](beziers-images/coniccurve-large.png#lightbox "円錐曲線ページの 3 倍になるスクリーン ショット")
+[![[円錐曲線] ページのトリプルスクリーンショット](beziers-images/coniccurve-small.png)](beziers-images/coniccurve-large.png#lightbox)
 
 ご覧のように、コントロール ポイントは、重みが大きいときに詳細が曲線をプルするようです。 重みが 0 の場合、曲線は始点から終点を直線になります。
 
@@ -491,7 +491,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 コントロール ポイントを使用する重みを派生させるのには非常に簡単、`ConicTo`最大の円弧を描画するメソッド (ただしを除く)、半円形。 次の図では、始点と終点の接線は、コントロール ポイントに満たしています。
 
-![](beziers-images/conicarc.png "円弧の円錐円弧レンダリング")
+![円弧の円錐の円弧レンダリング](beziers-images/conicarc.png)
 
 三角を使用すると、円の中心から制御ポイントまでの距離を調べることができます。これは、円の半径をαの半分のコサインで割った値です。 始点と終点の間の円弧を描画するには、その同じコサイン半分の角度の重みを設定します。 角度が 180 度の場合は、接線を満たすことはありませんし、重みは 0 に注意してください。 角度が 180 度未満、数学で正しく動作します。
 
@@ -547,7 +547,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ビジュアルの違いはありません、ご覧のとおり、`ConicTo`赤で表示されているパスと基になる円参照用として表示します。
 
-[![](beziers-images/coniccirculararc-small.png "円錐の円弧のページのスクリーン ショットをトリプル")](beziers-images/coniccirculararc-large.png#lightbox "円錐の円弧のページの 3 倍になるスクリーン ショット")
+[![円錐の円弧ページのトリプルスクリーンショット](beziers-images/coniccirculararc-small.png)](beziers-images/coniccirculararc-large.png#lightbox)
 
 角度を 180 度、および数学失敗に設定します。
 

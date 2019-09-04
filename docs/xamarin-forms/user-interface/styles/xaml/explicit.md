@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 567985b1d6c6aff87e0a6879f05ab711a0095d6f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: b7888ea29dd02733059346bca21fec0a4c510c2e
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647203"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228003"
 ---
 # <a name="explicit-styles-in-xamarinforms"></a>Xamarin.Forms での明示的なスタイル
 
@@ -66,7 +66,7 @@ _明示的なスタイルでは、コントロールにスタイル プロパテ
 
 [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)定義 3*明示的な*をページの適用されるスタイル[ `Label` ](xref:Xamarin.Forms.Label)インスタンス。 各`Style`も、フォント サイズと水平方向および垂直方向のレイアウト オプションを設定中には、異なる色でテキストを表示するために使用します。 各`Style`別に適用される`Label`を設定してその[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)プロパティを使用して、`StaticResource`マークアップ拡張機能。 次のスクリーン ショットに示すように外観が発生します。
 
-[![](explicit-images/explicit-styles.png "明示的なスタイル例")](explicit-images/explicit-styles-large.png#lightbox "明示的なスタイルの例")
+[![明示的スタイルの例](explicit-images/explicit-styles.png)](explicit-images/explicit-styles-large.png#lightbox)
 
 さらに、最終的な[ `Label` ](xref:Xamarin.Forms.Label)が、 [ `Style` ](xref:Xamarin.Forms.Style)それに適用されますもオーバーライド、 [ `TextColor` ](xref:Xamarin.Forms.Label.TextColor)プロパティをさまざまな`Color`値。
 

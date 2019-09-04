@@ -7,12 +7,12 @@ ms.assetid: F1DA55E4-0182-4388-863C-5C340213BF3C
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2017
-ms.openlocfilehash: 97c168460b091b9ada954cacd895a670c31805b2
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ada7ce8fc9365ab4133ddf439353e97e640f39d6
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655183"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228110"
 ---
 # <a name="three-ways-to-draw-an-arc"></a>円弧を描画する 3 つの方法
 
@@ -22,7 +22,7 @@ _SkiaSharp を使用して、次の 3 つの異なる方法で円弧を定義す
 
 この無限大記号の角の丸い部分などの楕円の円周上の曲線を円弧には。
 
-![](arcs-images/arcsample.png "無限大記号")
+![無限大記号](arcs-images/arcsample.png)
 
 その定義の簡単なコード、円弧の描画をすべてのニーズを満たす関数を定義する方法はありませんし、そのため、円弧を描画する最善の方法のグラフィックス システム間で意見の一致なし。このため、`SKPath`クラスは制限されません自体アプローチの 1 つだけにします。
 
@@ -42,21 +42,21 @@ public void ArcTo (SKRect oval, Single startAngle, Single sweepAngle, Boolean fo
 
 両方の方法が始まり、`SKRect`場所と楕円のサイズを定義する値。
 
-![](arcs-images/anglearcoval.png "円弧の角度を開始する楕円")
+![山の円弧を開始する楕円](arcs-images/anglearcoval.png)
 
 円弧は、この楕円の円周の一部です。
 
 `startAngle`引数が右側に楕円の中心から描画された水平線からの角度の時計回りの角度。 `sweepAngle`引数が関連して、`startAngle`します。 ここでは`startAngle`と`sweepAngle`60 度の 100 度をそれぞれ値します。
 
-![](arcs-images/anglearcangles.png "円弧の角度を定義する角度")
+![角度の円弧を定義する角度](arcs-images/anglearcangles.png)
 
 開始角度で、円弧が開始されます。 掃引角度の長さが適用されます。 円弧が赤のとおりです。
 
-![](arcs-images/anglearchighlight.png "強調表示されている角度円弧")
+![強調表示された山の円弧](arcs-images/anglearchighlight.png)
 
 曲線のパスに追加された、`AddArc`または`ArcTo`メソッドは、楕円の円周の部分だけです。
 
-![](arcs-images/anglearc.png "単独で角度円弧")
+![弧の角度](arcs-images/anglearc.png)
 
 引数`startAngle`また`sweepAngle`は引数には負の値を指定できます。弧は、正の値`sweepAngle`の場合は時計回りに、負の値の場合は反時計回りに回転します。
 
@@ -103,7 +103,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ご覧のように、開始角度および掃引角度の両方を負の値で実行できます。
 
-[![](arcs-images/anglearc-small.png "円弧の角度 ページのスクリーン ショットをトリプル")](arcs-images/anglearc-large.png#lightbox "円弧の角度 ページの 3 倍になるスクリーン ショット")
+[![[山の弧] ページのトリプルスクリーンショット](arcs-images/anglearc-small.png)](arcs-images/anglearc-large.png#lightbox)
 
 円弧を生成するには、この方法は簡単、アルゴリズムと円弧を記述するパラメーターの式を派生するは簡単です。楕円、および開始および掃引角度の場所とサイズを知ること、開始と円弧の始点と終点できますを計算する単純な三角関数の使用します。
 
@@ -208,11 +208,11 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 新しい`SKPath`各円スライスのオブジェクトを作成します。 パス、センターからの行から成る、`ArcTo`から中央の結果に戻る、円弧と別の行を描画するために、`Close`を呼び出します。 このプログラムに移動してすべて中央から 50 ピクセルで「分割」円のスライスを表示します。 そのタスクには、各スライスの掃引角度の中心の方向ベクトルが必要です。
 
-[![](arcs-images/explodedpiechart-small.png "分割円グラフの選択 ページのスクリーン ショットをトリプル")](arcs-images/explodedpiechart-large.png#lightbox "分割円グラフの選択 ページの 3 倍になるスクリーン ショット")
+[![分割円グラフページのトリプルスクリーンショット](arcs-images/explodedpiechart-small.png)](arcs-images/explodedpiechart-large.png#lightbox)
 
 どのように見えるなし「展開」を表示するには、単には、コメント アウト、`Translate`呼び出し。
 
-[![](arcs-images/explodedpiechartunexploded-small.png "展開なしの分割円グラフ ページのスクリーン ショットをトリプル")](arcs-images/explodedpiechartunexploded-large.png#lightbox "展開なしの分割円グラフ ページの 3 倍になるスクリーン ショット")
+[![爆発なしの分割円グラフページのトリプルスクリーンショット](arcs-images/explodedpiechartunexploded-small.png)](arcs-images/explodedpiechartunexploded-large.png#lightbox)
 
 ## <a name="the-tangent-arc"></a>接線の円弧
 
@@ -234,31 +234,31 @@ public void ArcTo (Single x1, Single y1, Single x2, Single y2, Single radius)
 - 最初のポイント引数、`ArcTo`というメソッドを*ポイント上にあります。*
 - 2 番目のポイント引数`ArcTo`という、*終点*:
 
-![](arcs-images/tangentarcthreepoints.png "接線の円弧の開始を 3 つのポイント")
+![アークタンジェントを開始する3つの点](arcs-images/tangentarcthreepoints.png)
 
 これら 3 つのポイントは、接続された 2 つの行を定義します。
 
-![](arcs-images/tangentarcconnectinglines.png "接線の円弧の 3 つの点を結ぶ線")
+![アークタンジェントの3つの点を結ぶ線](arcs-images/tangentarcconnectinglines.png)
 
 3 つのポイントが同一線上にある場合&mdash;は、同一直線上に存在する場合&mdash;円弧は描画されません。
 
 `ArcTo`メソッドも含まれています、`radius`パラメーター。 これには、円の半径を定義します。
 
-![](arcs-images/tangentarccircle.png "接線の円弧の円")
+![アークタンジェントの円](arcs-images/tangentarccircle.png)
 
 楕円の接線の円弧が汎用化されていません。
 
 2 つの行を満たす任意の角度で場合、両方の行に接するにある円はそれらの行の間で挿入できます。
 
-![](arcs-images/tangentarctangentcircle.png "2 行の間のアーク タンジェント円")
+![2本の線の間の接線の円弧](arcs-images/tangentarctangentcircle.png)
 
 指定されたポイントのいずれかに追加される曲線に接触しない、`ArcTo`メソッド。 現在のポイントから最初の接点と赤で示される 2 番目接点で終わる円弧を直線で構成されます。
 
-![](arcs-images/tangentarchighlight.png "2 行の間の強調表示されている接線円弧")
+![2本の線の間の強調表示されたタンジェントの円弧](arcs-images/tangentarchighlight.png)
 
 最終的な直線および曲線に追加される円弧を次に示します。
 
-![](arcs-images/tangentarc.png "2 行の間の強調表示されている接線円弧")
+![2本の線の間の強調表示されたタンジェントの円弧](arcs-images/tangentarc.png)
 
 輪郭は、2 つ目の接点から続行することができます。
 
@@ -416,7 +416,7 @@ public partial class TangentArcPage : InteractivePage
 
 ここでは、**タンジェント円弧**実行されているページ。
 
-[![](arcs-images/tangentarc-small.png "タンジェント円弧ページのスクリーン ショットをトリプル")](arcs-images/tangentarc-large.png#lightbox "タンジェント円弧ページの 3 倍になるスクリーン ショット")
+[![アークタンジェントページのトリプルスクリーンショット](arcs-images/tangentarc-small.png)](arcs-images/tangentarc-large.png#lightbox)
 
 接線の円弧は、角が丸い角の丸い四角形などの作成に適しています。 `SKPath`が既に含まれて、`AddRoundedRect`メソッド、**丸め七角形**ページが使用する方法を示します`ArcTo`7 辺の多角形の角を丸める場合。 (コードは、通常の多角形の一般化。)
 
@@ -491,7 +491,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 実行中のプログラムを次に示します。
 
-[![](arcs-images/roundedheptagon-small.png "丸め七角形ページのスクリーン ショットをトリプル")](arcs-images/roundedheptagon-large.png#lightbox "丸め七角形ページの 3 倍になるスクリーン ショット")
+[![丸い Heptagon ページのトリプルスクリーンショット](arcs-images/roundedheptagon-small.png)](arcs-images/roundedheptagon-large.png#lightbox)
 
 ## <a name="the-elliptical-arc"></a>楕円の円弧
 
@@ -507,31 +507,31 @@ public void ArcTo (Single rx, Single ry, Single xAxisRotate, SKPathArcSize large
 
 これら`ArcTo`メソッドは、輪郭の現在のポイントは、2 つのポイント間の円弧を描画し、最後のパラメーターを`ArcTo`メソッド (、`xy`パラメーターまたは個別の`x`と`y`パラメーター)。
 
-![](arcs-images/ellipticalarcpoints.png "楕円の円弧が定義されている 2 つのポイント")
+![楕円の円弧を定義した2つの点](arcs-images/ellipticalarcpoints.png)
 
 最初のポイント パラメーター、`ArcTo`メソッド (`r`、または`rx`と`ry`) ポイントではありませんが、代わりに、楕円の水平および垂直方向の半径を指定します
 
-![](arcs-images/ellipticalarcellipse.png "楕円の円弧を定義する楕円")
+![楕円の円弧を定義した楕円](arcs-images/ellipticalarcellipse.png)
 
 `xAxisRotate`パラメーターはこの楕円を回転する時計回りの角度の数値。
 
-![](arcs-images/ellipticalarctiltedellipse.png "楕円の円弧を定義する楕円を傾斜しています。")
+![楕円の円弧を定義した傾い楕円](arcs-images/ellipticalarctiltedellipse.png)
 
 傾斜しているこの楕円は、2 つの点と接触する配置されているし、ポイントが異なる 2 つの円弧に接続されます。
 
-![](arcs-images/ellipticalarcellipse1.png "楕円の円弧の最初のセット")
+![楕円弧の最初のセット](arcs-images/ellipticalarcellipse1.png)
 
 これら2つの円弧は、次の2つの方法で区別できます。最上位の弧は、下の弧よりも大きくなります。また、円弧が左から右に描画されると、最上位の弧は時計回りの方向に描画され、下円弧は反時計回りの方向に描画されます。
 
 別の方法で 2 つのポイント間の楕円の適合することです。
 
-![](arcs-images/ellipticalarcellipse2.png "楕円の円弧の 2 番目のセット")
+![2番目の楕円弧のセット。](arcs-images/ellipticalarcellipse2.png)
 
 ようになりましたが、時計回りに描画される一番上に小さい円弧あり描画される下部にある大きい円弧反時計回りにあります。
 
 これら 2 つのポイントは、合計で 4 つの方法で傾いている楕円で定義された円弧によってそのため接続できます。
 
-![](arcs-images/ellipticalarccolors.png "すべての 4 つの楕円の円弧")
+![4つの楕円の円弧](arcs-images/ellipticalarccolors.png)
 
 これら 4 つの円弧が 4 つの組み合わせによって識別されます、 [ `SKPathArcSize` ](xref:SkiaSharp.SKPathArcSize)と[ `SKPathDirection` ](xref:SkiaSharp.SKPathDirection)列挙体の型引数、`ArcTo`メソッド。
 
@@ -586,21 +586,21 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ここでは、実行します。
 
-[![](arcs-images/ellipticalarc-small.png "楕円の円弧のページのスクリーン ショットをトリプル")](arcs-images/ellipticalarc-large.png#lightbox "楕円の円弧のページの 3 倍になるスクリーン ショット")
+[![楕円の円弧ページのトリプルスクリーンショット](arcs-images/ellipticalarc-small.png)](arcs-images/ellipticalarc-large.png#lightbox)
 
 **円弧無限大** ページでは、楕円の円弧を使用して、無限大記号に描画します。 無限大記号は、2 つの 100 単位で区切られた 100 単位の半径の円に基づいています。
 
-![](arcs-images/infinitycircles.png "2 つの円")
+![2つの円](arcs-images/infinitycircles.png)
 
 他の何らかの関わり 2 つの行では、両方の円の接線です。
 
-![](arcs-images/infinitycircleslines.png "接線の 2 つの円")
+![接線を持つ2つの円](arcs-images/infinitycircleslines.png)
 
 無限大記号は、これらのサークルと 2 つの行の部分の組み合わせです。 楕円の円弧を無限大記号を描画するために使用するには、2 つの行の円に正接がある座標を決定する必要があります。
 
 円のいずれかで適切な四角形を作成します。
 
-![](arcs-images/infinitytriangle.png "2 つの円の接線と埋め込まれた円")
+![接線と埋め込み円を含む2つの円](arcs-images/infinitytriangle.png)
 
 円の半径が 100 の単位と三角形の斜辺は 150 ユニットは、角度 α は 150、または 41.8 度を分割する 100 のアークサイン (逆正弦)。 三角形の他の辺の長さは、150 回 41.8 の角度のコサインまたは 112 で、ピタゴラスの定理を計算することもできます。
 
@@ -612,7 +612,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 4 つの接点は 100 の円の半径のあるポイント (0, 0) で中央揃え、無限大記号を描画するために必要なことです。
 
-![](arcs-images/infinitycoordinates.png "接線と座標の 2 つの円")
+![接線と座標がある2つの円](arcs-images/infinitycoordinates.png)
 
 `PaintSurface`ハンドラーで、 [ `ArcInfinityPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ArcInfinityPage.cs)クラスは、無限大記号を配置できるように、(0, 0) ポイントが、ページの中央に配置されているし、画面サイズへのパスをスケールします。
 
@@ -654,7 +654,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 コードを使用して、`Bounds`プロパティの`SKPath`キャンバスのサイズに拡大する無限大サインの大きさを決定します。
 
-[![](arcs-images/arcinfinity-small.png "円弧の無限大のページのスクリーン ショットをトリプル")](arcs-images/arcinfinity-large.png#lightbox "円弧無限大ページの 3 倍になるスクリーン ショット")
+[![[弧無限大] ページのトリプルスクリーンショット](arcs-images/arcinfinity-small.png)](arcs-images/arcinfinity-large.png#lightbox)
 
 結果を提案していますが、少し小さいよう、`Bounds`プロパティの`SKPath`パスよりも大きいサイズを報告します。
 
@@ -662,7 +662,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 厳密な適合を取得する、`TightBounds`プロパティで、管理ポイントは含まれません。 使用して、横向きモードで実行されているプログラムを次に示します、`TightBounds`パスの範囲を取得するプロパティ。
 
-[![](arcs-images/arcinfinitytightbounds-small.png "緊密な境界を持つ弧無限大ページのスクリーン ショットをトリプル")](arcs-images/arcinfinitytightbounds-large.png#lightbox "緊密な境界を持つ弧無限大ページの 3 倍になるスクリーン ショット")
+[![狭い範囲を持つ円弧無限大ページのトリプルスクリーンショット](arcs-images/arcinfinitytightbounds-small.png)](arcs-images/arcinfinitytightbounds-large.png#lightbox)
 
 弧と直線間の接続は、滑らかな数学的には、直線を円弧から変更を少し突然に見えるかもしれません。 次の記事でより良い無限大記号が表示される[**ベジエ曲線の型を次の 3 つ**](beziers.md)します。
 

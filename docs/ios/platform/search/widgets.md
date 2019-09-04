@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: f2ac37676dbdfc96c853c9bc679e79c2aae1adb1
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 71c58baee5e98efcfb38b75ffed2b85c90f8a131
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656235"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227368"
 ---
 # <a name="search-and-home-screen-widget-enhancements-in-ios-10"></a>IOS 10 での検索とホーム画面のウィジェットの機能強化
 
@@ -71,7 +71,7 @@ var vibrancy2 = UIVibrancyEffect.CreateSecondaryVibrancyEffectForNotificationCen
 
 IOS 10 の新機能であるウィジェットには、 [NCWidgetDisplayMode](https://developer.apple.com/reference/notificationcenter/ncwidgetdisplaymode)プロパティが含まれるようになりました。これにより、開発者は、利用可能なコンテンツの量を説明し、ユーザーがコンテンツを展開したり折りたたんだりできるようになります。
 
-最初にウィジェットが表示されると、折りたたまれた状態になります。 折りたたまれたウィジェットの高さは、約2と半分の標準的な iOS テーブル行になります。 開発者は、展開されたウィジェットのサイズを要求できますが、理想的には画面の高さよりも小さくする必要があります。 
+最初にウィジェットが表示されると、折りたたまれた状態になります。 折りたたまれたウィジェットの高さは、約2と半分の標準的な iOS テーブル行になります。 開発者は、展開されたウィジェットのサイズを要求できますが、理想的には画面の高さよりも小さくする必要があります。
 
 折りたたまれた状態では、必須のスタンドアロン情報のみがウィジェットに表示されます。 展開すると、ウィジェットには、折りたたまれた状態で表示されるプライマリコンテンツを強化する補足情報が表示されます。 たとえば、気象アプリには、折りたたまれたときの現在の気象条件が表示され、展開されると、時間単位の予測が追加されます。
 

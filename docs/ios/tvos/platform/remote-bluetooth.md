@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 1e1e86c6301214c7117b8f3b21b19554499d7fbd
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 99fafe0ae0186ac68609ebe22dabe64e588ee5e0
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70121441"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226672"
 ---
 # <a name="siri-remote-and-bluetooth-controllers-for-tvos-in-xamarin"></a>Xamarin の tvOS 用 siri リモートおよび Bluetooth コントローラー
 
@@ -67,7 +67,7 @@ Apple では、タッチスクリーンのジェスチャを操作するため�
 
 ## <a name="siri-remote-buttons"></a>Siri のリモートボタン
 
-タッチ画面でのジェスチャに加えて、アプリはタッチ画面をクリックするか、[再生/一時停止] ボタンを押すと、ユーザーに応答できます。 Game Controller フレームワークを使用して Siri リモートにアクセスしている場合は、押されたメニューボタンを検出することもできます。 
+タッチ画面でのジェスチャに加えて、アプリはタッチ画面をクリックするか、[再生/一時停止] ボタンを押すと、ユーザーに応答できます。 Game Controller フレームワークを使用して Siri リモートにアクセスしている場合は、押されたメニューボタンを検出することもできます。
 
 また、メニューボタンの押下は、標準`UIKit`の要素でジェスチャ認識エンジンを使用して検出できます。 押されたメニューボタンをインターセプトした場合は、現在のビューとビューコントローラーを閉じ、前のビューに戻る必要があります。
 
@@ -83,14 +83,14 @@ TvOS アプリで Siri リモートを操作する最も簡単な方法は、イ
 ジェスチャ認識エンジンを追加するには、次の手順を実行します。
 
 1. **ソリューションエクスプローラー**で、 `Main.storyboard`ファイルをダブルクリックして開き、インターフェイスデザイナーを編集します。
-2. **タップジェスチャレコグナイザー**を**ライブラリ**からドラッグし、ビューにドロップします。 
+2. **タップジェスチャレコグナイザー**を**ライブラリ**からドラッグし、ビューにドロップします。
 
     [![](remote-bluetooth-images/storyboard01.png "タップジェスチャレコグナイザー")](remote-bluetooth-images/storyboard01.png#lightbox)
-3. **属性インスペクター**の **[ボタン]** セクションで **[選択] を選択し**ます。 
+3. **属性インスペクター**の **[ボタン]** セクションで **[選択] を選択し**ます。
 
     [![](remote-bluetooth-images/storyboard02.png "選択のチェック")](remote-bluetooth-images/storyboard02.png#lightbox)
 4. **選択**すると、ユーザーに対してジェスチャが Siri リモートの**タッチ画面**をクリックしたときに応答します。 **メニュー**、**再生/一時停止**、**上**、**下**、**左**、**右**の各ボタンに応答するオプションも用意されています。
-5. 次に、**タップジェスチャ認識エンジン**から**アクション**を接続して、 `TouchSurfaceClicked`次のように呼び出します。 
+5. 次に、**タップジェスチャ認識エンジン**から**アクション**を接続して、 `TouchSurfaceClicked`次のように呼び出します。
 
     [![](remote-bluetooth-images/storyboard03.png "タップジェスチャ認識エンジンからのアクション")](remote-bluetooth-images/storyboard03.png#lightbox)
 6. 変更内容を保存し、Visual Studio for Mac に戻ります。
@@ -142,7 +142,7 @@ namespace tvRemote
         #region Override Methods
         public override void ViewDidLoad ()
         {
-            base.ViewDidLoad ();    
+            base.ViewDidLoad ();
 
             // Wire-up gestures
             var upGesture = new UISwipeGestureRecognizer (() => {
@@ -186,9 +186,9 @@ namespace tvRemote
 
 ## <a name="low-level-event-handling"></a>低レベルのイベント処理
 
-TvOS アプリ (など`UIKit` `UIView`) でに基づいてカスタム型を作成する場合は、イベントによる`UIPress`ボタンの押下を低レベルで処理することもできます。 
+TvOS アプリ (など`UIKit` `UIView`) でに基づいてカスタム型を作成する場合は、イベントによる`UIPress`ボタンの押下を低レベルで処理することもできます。
 
-イベントは、iOS に対して`UITouch`イベントを tvOS することです`UIPress` 。ただし、siri リモートまたは接続されている他の Bluetooth デバイス (ゲームコントローラーなど) では、ボタンの押下に関する情報は返されません。 `UIPress` `UIPress`イベントは、押されているボタンとその状態 (開始、キャンセル、変更、または終了) を記述します。 
+イベントは、iOS に対して`UITouch`イベントを tvOS することです`UIPress` 。ただし、siri リモートまたは接続されている他の Bluetooth デバイス (ゲームコントローラーなど) では、ボタンの押下に関する情報は返されません。 `UIPress` `UIPress`イベントは、押されているボタンとその状態 (開始、キャンセル、変更、または終了) を記述します。
 
 Bluetooth ゲームコントローラーなどのデバイス上のアナログボタン`UIPress`の場合は、ボタンに適用されているフォースの量も返されます。 イベントのプロパティは`Type` 、状態が変更された物理ボタンを定義します。プロパティの残りの部分は、発生した変更を示します。 `UIPress`
 
@@ -211,7 +211,7 @@ namespace tvRemote
         }
         #endregion
 
-        #region 
+        #region
         public EventView (IntPtr handle) : base (handle)
         {
         }

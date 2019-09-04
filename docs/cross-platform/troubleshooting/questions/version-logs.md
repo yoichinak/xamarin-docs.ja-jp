@@ -7,38 +7,38 @@ ms.assetid: CF386485-EAB0-4B9E-AA17-CB1B6462E505
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: b421378f8aa99728fa13f104e284b9c410abe2b3
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: cd7a2026a4d1d1458455733a6f2710364cc7fec7
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119967"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226771"
 ---
 # <a name="where-can-i-find-my-version-information-and-logs"></a>バージョン情報とログはどこにありますか
 
 ## <a name="outline"></a>外枠
 
 - [バージョン情報](#version-information)
-    - Windows のバージョン情報
-    - Mac のバージョン情報
-    - Android SDK Tools, プラットフォームツール, ビルドツール
+  - Windows のバージョン情報
+  - Mac のバージョン情報
+  - Android SDK Tools, プラットフォームツール, ビルドツール
 - [IDE およびインストーラーのログ](#ide-and-installer-logs)
-    - [Windows ログ](#windows-logs)
-        - Xamarin Studio
-        - Xamarin for Visual Studio
-        - Xamarin Universal installer
-        - 個々`.msi`のインストーラー、詳細ログ
-        - Visual Studio の起動、詳細ログ
-    - [Mac ログ](#mac-logs)
-        - ビルドホスト
-    - Visual Studio for Mac
-        - Xamarin Studio
-        - Xamarin インストーラー
+  - [Windows ログ](#windows-logs)
+    - Xamarin Studio
+    - Xamarin for Visual Studio
+    - Xamarin Universal installer
+    - 個々`.msi`のインストーラー、詳細ログ
+    - Visual Studio の起動、詳細ログ
+  - [Mac ログ](#mac-logs)
+    - ビルドホスト
+  - Visual Studio for Mac
+    - Xamarin Studio
+    - Xamarin インストーラー
 - [詳細なビルド出力](#verbose-build-output-logs)
 - [Xamarin Android および Xamarin iOS アプリのデバッグログ](#debug-logs-for-xamarin-apps)
-    - Android `adb` logcat ログ
-    - iOS シミュレーターログ (Mac)
-    - iOS デバイスログ (Mac)
+  - Android `adb` logcat ログ
+  - iOS シミュレーターログ (Mac)
+  - iOS デバイスログ (Mac)
 
 ## <a name="a-idversion-information-nameversion-information-version-information"></a><a id="version-information" name="version-information" />バージョン情報
 
@@ -140,7 +140,7 @@ Finder の **[フォルダーに >]** メニュー項目を選択して、これ
 
 1. [診断 MSBuild の出力](~/android/troubleshooting/troubleshooting.md#Diagnostic_MSBuild_Output)を有効にします。
 
-2. Ios アプリの場合は、[プロジェクトのプロパティ] > `-v -v -v -v` [ **ios ビルド > 全般] (タブ >)** で追加の mtouch 引数 > 追加のオプションを追加して、**詳細な mtouch 出力**を有効にすることもできます。
+2. Ios アプリの場合は、[プロジェクトのプロパティ] > `-v -v -v -v` [ **ios ビルド > 全般] (タブ >) で追加の mtouch 引数 >** 追加のオプションを追加して、**詳細な mtouch 出力**を有効にすることもできます。
 
 3. プロジェクトをクリーンし、リビルドします。
 

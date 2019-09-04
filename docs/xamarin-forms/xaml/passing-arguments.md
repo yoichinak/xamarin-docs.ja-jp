@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2016
-ms.openlocfilehash: 7a6ea06d77b8eb170f4165bfc8cf2fd643d56406
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 065c7284970ececacbdb298d773b19f654280513
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68651661"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228092"
 ---
 # <a name="passing-arguments-in-xaml"></a>XAML で引数の受け渡し
 
@@ -91,7 +91,7 @@ _この記事では、工場出荷時のメソッドを呼び出すと、ジェ�
 
 次のスクリーン ショットは、各呼び出しの結果を表示する[ `Color` ](xref:Xamarin.Forms.Color)指定された引数の値を持つコンス トラクター。
 
-![](passing-arguments-images/passing-arguments.png "X: 引数で指定された BoxView.Color")
+![BoxView。 x:Arguments で指定した色](passing-arguments-images/passing-arguments.png)
 
 <a name="factory_methods" />
 
@@ -141,7 +141,7 @@ _この記事では、工場出荷時のメソッドを呼び出すと、ジェ�
 
 次のスクリーン ショットは、各呼び出しの結果を表示する[ `Color` ](xref:Xamarin.Forms.Color)指定された引数の値を持つファクトリ メソッド。
 
-![](passing-arguments-images/factory-methods.png "X:factorymethod x: 引数と共に指定 BoxView.Color")
+![BoxView。 x:FactoryMethod および x:Arguments で指定した色](passing-arguments-images/factory-methods.png)
 
 <a name="generic_type_arguments" />
 

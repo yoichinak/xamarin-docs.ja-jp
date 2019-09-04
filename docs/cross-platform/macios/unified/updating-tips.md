@@ -6,12 +6,12 @@ ms.assetid: 8DD34D21-342C-48E9-97AA-1B649DD8B61F
 ms.date: 03/29/2017
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: 2b82de58b9d2f9e8acb8996f484845f9a71b6e80
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 844730d2ace717b951df2d80b2add6d1094fe997
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70120312"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226095"
 ---
 # <a name="tips-for-updating-code-to-the-unified-api"></a>コードを Unified API に更新する場合のヒント
 
@@ -59,7 +59,7 @@ Objective-C exception thrown. Name: NSInvalidArgumentException Reason: Could not
 
 - `NSDictionary.IntValue`がを返す`nint` `Int32Value`ようになりました。代わりにを使用できます。
 
-- `nfloat`および`nint`型をに設定`const`することはできません。  `static readonly nint`は、適切な代替手段です。
+- `nfloat`および`nint`型をに設定`const`することはできません。`static readonly nint`は、適切な代替手段です。
 
 - `MonoTouch.`名前空間に直接含まれていたものは、一般に`ObjCRuntime.` `MonoTouch.Constants.Version`名前空間にあります (たとえば`ObjCRuntime.Constants.Version`、はになります)。
 
@@ -69,10 +69,10 @@ Objective-C exception thrown. Name: NSInvalidArgumentException Reason: Could not
 
 - を使用して`[Export]`手動でエクスポートしたメソッドは、移行ツールによって自動的に修正されない場合があります。 `nfloat`たとえば、このコード snippert では、戻り値の型を手動でに更新する必要があります。
 
-    ```csharp
-    [Export("tableView:heightForRowAtIndexPath:")]
-    public nfloat HeightForRow(UITableView tableView, NSIndexPath indexPath)
-    ```
+  ```csharp
+  [Export("tableView:heightForRowAtIndexPath:")]
+  public nfloat HeightForRow(UITableView tableView, NSIndexPath indexPath)
+  ```
 
 - Unified API は、NSDate と .NET DateTime の間の暗黙の変換を提供しません。これは、可逆変換ではないためです。 に`DateTime` `DateTimeKind.Unspecified` キャストする`NSDate`前に、.net をローカルまたは UTC に変換することに関連するエラーを回避する。
 
@@ -80,9 +80,9 @@ Objective-C exception thrown. Name: NSInvalidArgumentException Reason: Could not
 
 - で`VideoSettings` avfoundation クラスを使用するコードは、 `WeakVideoSettings`プロパティを使用するように変更する必要があります。 これには`Dictionary`、設定クラスのプロパティとして使用できるが必要です。次に例を示します。
 
-    ```csharp
-    vidrec.WeakVideoSettings = new AVVideoSettings() { ... }.Dictionary;
-    ```
+  ```csharp
+  vidrec.WeakVideoSettings = new AVVideoSettings() { ... }.Dictionary;
+  ```
 
 - NSObject `.ctor(IntPtr)`コンストラクターが public から protected に変更されました ([不適切な使用を防ぐため](~/cross-platform/macios/unified/overview.md#NSObject_ctor))。
 
@@ -91,7 +91,7 @@ Objective-C exception thrown. Name: NSInvalidArgumentException Reason: Could not
 最後に、[クラシック v Unified API の違い](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/ios/api_changes/classic-vs-unified-8.6.0/index.md)を参照して、コード内の api の変更を検索します。 [このページ](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/ios/api_changes/classic-vs-unified-8.6.0/index.md)を検索すると、クラシック api と、更新されたものを見つけることができます。
 
 > [!NOTE]
-> 移行`MonoTouch.Dialog`後も名前空間は変わりません。 コードで monotouch.dialog を使用している場合は、その名前空間を使用し続ける`MonoTouch.Dialog`必要`Dialog`があり**ます。** に変更しないでください。
+> 移行`MonoTouch.Dialog`後も名前空間は変わりません。 コードで monotouch.dialog を使用している場合は、その名前空間を使用し続ける`MonoTouch.Dialog`必要`Dialog`があり**ます。** *に変更しないでください*。
 
 ## <a name="common-compiler-errors"></a>一般的なコンパイラエラー
 

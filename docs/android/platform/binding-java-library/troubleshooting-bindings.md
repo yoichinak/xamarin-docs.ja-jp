@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: c752f4acf4bf43c138a7b359b94620dae5e8d46e
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 2137ff95e65c6841b3e525f0c9755e013310c7e0
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524523"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70225598"
 ---
 # <a name="troubleshooting-bindings"></a>バインドのトラブルシューティング
 
@@ -51,8 +51,8 @@ Android ライブラリのデコンパイルが完了したら、ソースコー
 
 - **難読化の特性を持つクラス**&ndash;難読化したクラスの特性は次のとおりです。
 
-    - クラス名には **$** 、、つまり **$. クラス**が含まれます。
-    - クラス名は、小文字、つまり **. クラス**で完全に侵害されます。      
+  - クラス名には **$** 、、つまり **$. クラス**が含まれます。
+  - クラス名は、小文字、つまり **. クラス**で完全に侵害されます。      
 
 - 参照されていない&ndash; **ライブラリのステートメントは、参照されていないライブラリを識別し、referencejar またはのビルドアクションを使用して、これらの依存関係を Xamarin. Android バインドプロジェクトに追加します。 `import`**  **EmbedddedReferenceJar**。
 
@@ -114,19 +114,19 @@ Android ライブラリのデコンパイルが完了したら、ソースコー
 
 - Java では、パブリッククラス以外のクラスからパブリッククラスを派生させることができますが、これは .NET ではサポートされていません。 バインディングジェネレーターは、パブリックでないクラスのバインドを生成しないため、このような派生クラスを正しく生成することはできません。 この問題を解決するには、 **metadata .xml**で削除ノードを使用してこれらの派生クラスのメタデータエントリを削除するか、パブリックでないクラスを公開するメタデータを修正します。 後者のソリューションでは、 C#ソースがビルドされるようにバインディングが作成されますが、非パブリッククラスを使用することはできません。
 
-    例えば:
+  例えば:
 
-    ```xml
-    <attr path="/api/package[@name='com.some.package']/class[@name='SomeClass']"
-        name="visibility">public</attr>
-    ```
+  ```xml
+  <attr path="/api/package[@name='com.some.package']/class[@name='SomeClass']"
+      name="visibility">public</attr>
+  ```
 
 - Java ライブラリを難読化するツールは、Xamarin の Android バインドジェネレーターとラッパークラスを生成C#する機能に干渉する可能性があります。 次のスニペットは、unobfuscate を更新してクラス名を変更する方法を示して**い**ます。
 
-    ```xml
-    <attr path="/api/package[@name='{package_name}']/class[@name='{name}']"
-        name="obfuscated">false</attr>
-    ```
+  ```xml
+  <attr path="/api/package[@name='{package_name}']/class[@name='{name}']"
+      name="obfuscated">false</attr>
+  ```
 
 ### <a name="problem-generated-c-source-does-not-build-due-to-parameter-type-mismatch"></a>問題 : パラメーター C#の型が一致しないため、生成されたソースはビルドされません
 
@@ -134,7 +134,7 @@ Android ライブラリのデコンパイルが完了したら、ソースコー
 
 #### <a name="possible-causes"></a>考えられる原因:
 
-Xamarin. Android には、 C#バインド内の列挙にマップされるさまざまな Java フィールドが含まれています。 これらの場合、生成されたバインディングで型の非互換性が発生する可能性があります。 これを解決するには、バインドジェネレーターから作成されたメソッドシグネチャを、列挙型を使用するように変更する必要があります。 詳細については、「[列挙](~/android/platform/binding-java-library/customizing-bindings/java-bindings-metadata.md)型の修正」を参照してください。
+Xamarin. Android には、 C#バインド内の列挙にマップされるさまざまな Java フィールドが含まれています。 これらの場合、生成されたバインディングで型の非互換性が発生する可能性があります。 これを解決するには、バインドジェネレーターから作成されたメソッドシグネチャを、列挙型を使用するように変更する必要があります。 詳細については、「列挙型の[修正](~/android/platform/binding-java-library/customizing-bindings/java-bindings-metadata.md)」を参照してください。
 
 ### <a name="problem-noclassdeffounderror-in-packaging"></a>問題 : パッケージの NoClassDefFoundError
 
@@ -203,24 +203,24 @@ return type of 'Java.Lang.Object'
 
 - の部分クラス宣言を追加`HttpURLConnectionRequestAdapter`し、を`IHttpRequest.Unwrap()`明示的に実装します。
 
-    ```csharp
-    namespace Oauth.Signpost.Basic {
-        partial class HttpURLConnectionRequestAdapter {
-            Java.Lang.Object OauthSignpost.Http.IHttpRequest.Unwrap() {
-                return Unwrap();
-            }
-        }
-    }
-    ```
+  ```csharp
+  namespace Oauth.Signpost.Basic {
+      partial class HttpURLConnectionRequestAdapter {
+          Java.Lang.Object OauthSignpost.Http.IHttpRequest.Unwrap() {
+              return Unwrap();
+          }
+      }
+  }
+  ```
 
 - 生成さC#れたコードから共変性を削除します。 これには、次の変換を**transformthe xml**に追加する必要がありC#ます。これにより、生成`Java.Lang.Object`されるコードの戻り値の型はになります。
 
-    ```xml
-    <attr
-        path="/api/package[@name='oauth.signpost.basic']/class[@name='HttpURLConnectionRequestAdapter']/method[@name='unwrap']"
-        name="managedReturn">Java.Lang.Object
-    </attr>
-    ```
+  ```xml
+  <attr
+      path="/api/package[@name='oauth.signpost.basic']/class[@name='HttpURLConnectionRequestAdapter']/method[@name='unwrap']"
+      name="managedReturn">Java.Lang.Object
+  </attr>
+  ```
 
 ### <a name="problem-name-collisions-on-inner-classes--properties"></a>問題 : 内部クラス/プロパティの名前の競合
 
@@ -236,7 +236,7 @@ Java では、派生クラスの可視性が親と同じである必要はあり
 <attr path="/api/package[@name='namespace']/class[@name='ClassName']/method[@name='MethodName']" name="visibility">public</attr>
 ```
 
-### <a name="problem-a-so-library-required-by-the-binding-is-not-loading"></a>問題 : バインドに必要なライブラリが読み込まれていません
+### <a name="problem-a-so-library-required-by-the-binding-is-not-loading"></a>問題 : バインドに必要なライブラリが読み込まれ**ていませ**ん
 
 バインドプロジェクトによっては、 **...** ライブラリの機能に依存している場合もあります。 Xamarin. Android では、 **...** ライブラリが自動的に読み込まれない可能性があります。 ラップされた Java コードを実行すると、JNI の呼び出しに失敗し、エラーメッセージ_UnsatisfiedLinkError が発生します。ネイティブメソッドが見つかりませ_ん: アプリケーションの logcat out に表示されます。
 

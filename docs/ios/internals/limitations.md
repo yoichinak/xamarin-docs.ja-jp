@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/09/2018
-ms.openlocfilehash: f3baa6756b4e72b750ff1b128b72802f8f1ce6d9
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 7d5c9ebec2a1d79df7a9a16da91c79772746f6fc
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69527341"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227535"
 ---
 # <a name="limitations-of-xamarinios"></a>Xamarin. iOS の制限事項
 
@@ -57,11 +57,11 @@ IOS カーネルでは、アプリケーションがコードを動的に生成�
 
 - システムのリフレクションは使用できません。
 - System.string はサポートされていません。
-- 型を動的に作成することはサポートされていません (タイプ gettype ("MyType ' 1"))。ただし、既存の型 (たとえば、GetType ("System.string") は正常に動作します)。 
+- 型を動的に作成することはサポートされていません (タイプ gettype ("MyType ' 1"))。ただし、既存の型 (たとえば、GetType ("System.string") は正常に動作します)。
 - 逆コールバックは、コンパイル時にランタイムに登録する必要があります。
 
 
- 
+
  <a name="System.Reflection.Emit" />
 
 
@@ -71,7 +71,7 @@ IOS カーネルでは、アプリケーションがコードを動的に生成�
 
 - 動的言語ランタイム。
 - 動的言語ランタイムの上に構築されたすべての言語。
-- リモート処理の TransparentProxy、またはランタイムがコードを動的に生成するその他のもの。 
+- リモート処理の TransparentProxy、またはランタイムがコードを動的に生成するその他のもの。
 
 
   > [!IMPORTANT]
@@ -91,7 +91,7 @@ IOS カーネルでは、アプリケーションがコードを動的に生成�
 ```
 System.ExecutionEngineException: Attempting to JIT compile method '(wrapper managed-to-native) YourClass/YourDelegate:wrapper_aot_native(object,intptr,intptr)' while running in aot-only mode.
 ```
- 
+
  <a name="Reverse_Callbacks" />
 
 
@@ -103,7 +103,7 @@ Mono では、これらのブリッジはジャストインタイムコンパイ
 
 - [MonoPInvokeCallbackAttribute](xref:ObjCRuntime.MonoPInvokeCallbackAttribute)を使用して、すべてのコールバックメソッドにフラグを付ける必要があります。
 - メソッドは静的メソッドである必要がありますが、インスタンスメソッドはサポートされていません。
- 
+
 <a name="No_Remoting" />
 
 ## <a name="no-remoting"></a>リモート処理なし

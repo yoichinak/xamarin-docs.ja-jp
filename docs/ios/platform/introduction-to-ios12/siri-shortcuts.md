@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/08/2018
-ms.openlocfilehash: 4fa15e73575e20541df7ee8f606b01ec6e3d875a
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: f0927a6d6d5e3b9db6f203f779fbd50a026ce7e8
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656716"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226569"
 ---
 # <a name="siri-shortcuts-in-xamarinios"></a>Xamarin の siri ショートカット
 
@@ -264,19 +264,19 @@ Xcode**プロジェクトナビゲーター**で、最上位レベルのプロ�
 
 - Xcode 10 コマンドラインツールを使用するようにシステムを構成します。
 
-    > [!WARNING]
-    > 選択したコマンドラインツールを更新すると、システムにインストールされている Xcode のすべてのバージョンに影響します。 スープ Chef サンプルアプリの使用が完了したら、この設定を元の構成に戻すようにしてください。
+  > [!WARNING]
+  > 選択したコマンドラインツールを更新すると、システムにインストールされている Xcode のすべてのバージョンに影響します。 スープ Chef サンプルアプリの使用が完了したら、この設定を元の構成に戻すようにしてください。
 
-    - Xcode で、[ **Xcode] > [> 設定**] の順に選択し、 **[コマンドラインツール]** を、システムで利用可能な最新の Xcode 10 インストールに設定します。
+  - Xcode で、[ **Xcode] > [> 設定**] の順に選択し、 **[コマンドラインツール]** を、システムで利用可能な最新の Xcode 10 インストールに設定します。
 
 - ターミナル`cd`で、 **OrderSoupIntentStaticLib**ディレクトリにします。
 
 - 「 `make`」と入力します。
 
-    - スタティックライブラリ、 **libOrderSoupIntentStaticLib**
-    - **Bo**出力ディレクトリで、バインドC#の定義を次に示します。
-        - **ApiDefinitions.cs**
-        - **StructsAndEnums.cs**
+  - スタティックライブラリ、 **libOrderSoupIntentStaticLib**
+  - **Bo**出力ディレクトリで、バインドC#の定義を次に示します。
+    - **ApiDefinitions.cs**
+    - **StructsAndEnums.cs**
 
 このスタティックライブラリとそれに関連付けられているバインディング定義に依存する**OrderSoupIntentBindings**プロジェクトは、これらの項目を自動的にビルドします。
 ただし、上記のプロセスを通じて手動で実行すると、予期したとおりにビルドされます。
@@ -647,14 +647,14 @@ public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
 
 - アプリケーション Id を3つ作成します。1つはアプリ自体用で、もう1つはインテント拡張用、もう1つはインテント UI 拡張機能用です。 例えば:
 
-    - アプリ: **.Com SoupChef**
-        - このアプリ ID には、SiriKit と**アプリグループ**の機能を割り当てます。
+  - アプリ: **.Com SoupChef**
+    - このアプリ ID には、SiriKit と**アプリグループ**の機能を割り当てます。
 
-    - インテントの拡張子: **SoupChef. インテント**
-        - このアプリ ID に、**アプリグループ**の機能を割り当てます。
+  - インテントの拡張子: **SoupChef. インテント**
+    - このアプリ ID に、**アプリグループ**の機能を割り当てます。
 
-    - インテント UI 拡張機能: **SoupChef. Intentsui**
-        - このアプリ ID には特別な機能は必要ありません。
+  - インテント UI 拡張機能: **SoupChef. Intentsui**
+    - このアプリ ID には特別な機能は必要ありません。
 
 - 上記のアプリ Id を作成したら、アプリに割り当てられている**アプリグループ**機能とインテント拡張機能を編集して、上で作成した特定のアプリグループを指定します。
 
@@ -668,16 +668,16 @@ Visual Studio for Mac または Visual Studio 2017 で、次の操作を行い�
 
 - ソリューション内のさまざまな**情報の plist**ファイルを更新します。 アプリ、インテント拡張、インテント UI 拡張**バンドル識別子**を、上記で定義したアプリ id に設定します。
 
-    - アプリ: **.Com SoupChef**
-    - インテントの拡張子: **SoupChef. インテント**
-    - インテント UI 拡張機能: **SoupChef. Intentsui**
+  - アプリ: **.Com SoupChef**
+  - インテントの拡張子: **SoupChef. インテント**
+  - インテント UI 拡張機能: **SoupChef. Intentsui**
 
 - **SoupChef**プロジェクトの**権利の plist**ファイルを更新します。
-    - **アプリグループ**の機能については、上で作成した新しいアプリグループにグループを設定します (上記の例では、 **SoupChef**)。
-    - **Sirikit**が有効になっていることを確認します。
+  - **アプリグループ**の機能については、上で作成した新しいアプリグループにグループを設定します (上記の例では、 **SoupChef**)。
+  - **Sirikit**が有効になっていることを確認します。
 
 - **SoupChefIntents**プロジェクトの**権利の plist**ファイルを更新します。
-    - **アプリグループ**の機能については、上で作成した新しいアプリグループにグループを設定します (上記の例では、 **SoupChef**)。
+  - **アプリグループ**の機能については、上で作成した新しいアプリグループにグループを設定します (上記の例では、 **SoupChef**)。
 
 - 最後に、 **NSUserDefaultsHelper.cs**を開きます。 変数を新しいアプリグループの値に設定します (たとえば、に`group.com.yourcompanyname.SoupChef`設定します)。 `AppGroup`
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/11/2017
-ms.openlocfilehash: a1fae280f42f91fce4b4fe28c3f728cf14c7a21c
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: dabbd21a2ad2ef3c77017ea92704ccdf69f7b36c
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528905"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228203"
 ---
 # <a name="listview-performance"></a>ListView のパフォーマンス
 
@@ -173,9 +173,9 @@ public class CustomListView : ListView
 - 深くネストされたレイアウトの階層は避けます。 ネストを減らすために、 `AbsoluteLayout` または `Grid` を使用します。
 - `LayoutOptions`に `Fill` ( Fill は最も計算量が少ない）以外を指定することを避けます。
 - `ListView` の内部に `ScrollView` を配置することは以下の理由で避けます。
-    - `ListView` には自身にクロール機能が実装されています。
-    - `ListView`は全てのジェスチャを受け取らない。それらは親である `ScrollView` によって処理されます。
-    - `ListView`リストの要素と同時にスクロールするカスタマイズされたヘッダーとフッターを表示することができ、その機能のために潜在的に `ScrollView` が提供されています。 詳細については、次を参照してください。[ヘッダーとフッター](~/xamarin-forms/user-interface/listview/customizing-list-appearance.md#Headers_and_Footers)
+  - `ListView` には自身にクロール機能が実装されています。
+  - `ListView`は全てのジェスチャを受け取らない。それらは親である `ScrollView` によって処理されます。
+  - `ListView`リストの要素と同時にスクロールするカスタマイズされたヘッダーとフッターを表示することができ、その機能のために潜在的に `ScrollView` が提供されています。 詳細については、次を参照してください。[ヘッダーとフッター](~/xamarin-forms/user-interface/listview/customizing-list-appearance.md#Headers_and_Footers)
 - セルの中で非常に特殊な複雑なデザインが必要な場合は Custom Renderer を検討します。
 
 `AbsoluteLayout` は1回も計測処理を呼ぶことなくレイアウトを実行できる可能性があります。 これはパフォーマンス上で非常に強力です。 場合`AbsoluteLayout`することはできません、使用を検討してください[`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout)です。 `RelativeLayout` を使えば、直接制約を渡すことで式木 API を使うよりもかなり速くなるでしょう。 なぜなら、式木 API は JIT を使い、 iOS ではその式木が実行時に解釈され、それが非常に低速だからです。 式木 API はレイアウトの初期化や回転時にのみ呼ばれるようなページレイアウトに適しています。しかし `ListView` ではその処理がスクロールの間、継続的に実行され、パフォーマンスを損ないます。

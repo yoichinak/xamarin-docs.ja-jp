@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: 7526349c1b4b61495af95dfc200a5055cea5650e
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: b55c9d8a65dbb4e44605295043d1b302295030ce
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69529297"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228064"
 ---
 # <a name="part-2-essential-xaml-syntax"></a>第 2 部です。 重要な XAML 構文
 
@@ -255,7 +255,7 @@ XAML、ただし、この構文は非常に特殊です。 他に何も表示で
 
 次のような見た目に示します。
 
-[![](essential-xaml-syntax-images/griddemo.png "グリッド レイアウト")](essential-xaml-syntax-images/griddemo-large.png#lightbox "グリッド レイアウト")
+[![グリッドレイアウト](essential-xaml-syntax-images/griddemo.png)](essential-xaml-syntax-images/griddemo-large.png#lightbox)
 
 構文からのみ判断これら`Grid.Row`、 `Grid.Column`、`Grid.RowSpan`と`Grid.ColumnSpan`の静的フィールドまたはプロパティに属性が表示されます`Grid`、が十分な大きさで`Grid`という名前が定義されていません。`Row`、 `Column`、 `RowSpan`、または`ColumnSpan`します。
 
@@ -312,7 +312,7 @@ XAML、ただし、この構文は非常に特殊です。 他に何も表示で
 
 ここでは。
 
-[![](essential-xaml-syntax-images/absolutedemo-large.png "絶対レイアウト")](essential-xaml-syntax-images/absolutedemo-large.png#lightbox "絶対レイアウト")
+[![絶対レイアウト](essential-xaml-syntax-images/absolutedemo-large.png)](essential-xaml-syntax-images/absolutedemo-large.png#lightbox)
 
 このようなものの XAML を使用しての知恵を質問可能性があります。 確かに、繰り返しおよびの規制、`LayoutBounds`四角形が、その可能性がありますより適切に含まれているコードを示します。
 

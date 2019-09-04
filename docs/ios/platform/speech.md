@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 65644673bde426fff92530a7a36812d1c95b5995
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 40aa36fa8a89eacd8be7914020c06f3fec75baff
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70121287"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227331"
 ---
 # <a name="speech-recognition-in-xamarinios"></a>Xamarin の音声認識 (iOS)
 
@@ -89,8 +89,8 @@ IOS アプリで音声認識を採用するには、次の4つの主要な手順
 - キーを使用して、アプリの`Info.plist`ファイルに使用方法の説明を入力します。 `NSSpeechRecognitionUsageDescription` たとえば、カメラアプリには次のような説明が含まれている場合があり_ます。 "チーズという単語を言うだけで写真を撮ることができます。"_
 - `SFSpeechRecognizer.RequestAuthorization`メソッドを呼び出して、ダイアログボックスでユーザーに音声認識アクセスを`NSSpeechRecognitionUsageDescription`要求し、受け入れまたは拒否を許可する必要がある理由の説明を提示することによって、承認を要求します。
 - 音声認識要求を作成します。
-    - ディスク上の録音済みオーディオの場合は、 `SFSpeechURLRecognitionRequest`クラスを使用します。
-    - ライブオーディオ (またはメモリからのオーディオ) の場合`SFSPeechAudioBufferRecognitionRequest`は、クラスを使用します。
+  - ディスク上の録音済みオーディオの場合は、 `SFSpeechURLRecognitionRequest`クラスを使用します。
+  - ライブオーディオ (またはメモリからのオーディオ) の場合`SFSPeechAudioBufferRecognitionRequest`は、クラスを使用します。
 - 音声認識要求を音声認識エンジン (`SFSpeechRecognizer`) に渡して、認識を開始します。 アプリは、返さ`SFSpeechRecognitionTask`れたを使用して、認識結果を監視および追跡できます。
 
 これらの手順については、以下で詳しく説明します。
@@ -380,8 +380,8 @@ RecognitionTask.Cancel ();
 IOS アプリで音声認識を使用する場合、Apple では次の制限があります。
 
 - 音声認識はすべてのアプリで無料ですが、使用量は無制限ではありません。
-    - 個々の iOS デバイスには、1日に実行できる認識の数が制限されています。
-    - アプリは、1日あたりの要求に応じてグローバルに調整されます。
+  - 個々の iOS デバイスには、1日に実行できる認識の数が制限されています。
+  - アプリは、1日あたりの要求に応じてグローバルに調整されます。
 - 音声認識のネットワーク接続と使用率の制限のエラーを処理できるように、アプリを準備する必要があります。
 - 音声認識を使用すると、ユーザーの iOS デバイスのバッテリドレインとネットワークトラフィックの両方に対して高いコストがかかることがあります。そのため、Apple では、音声の最大値として約1分間の厳密なオーディオ期間制限が設けられています。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: f2272b90f664331959cfc8f60c6e59adc9550a98
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: eca0f82fd967c28bffc8f20bcc9e2ec6bb3ba737
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522768"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227704"
 ---
 # <a name="viewpager"></a>ViewPager
 
@@ -34,7 +34,7 @@ _ViewPager は、gestural ナビゲーションを実装できるレイアウト
 - [Viewpager とビュー](~/android/user-interface/controls/view-pager/viewpager-and-views.md)。 [treepager](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-treepager)アプリは、を使用`ViewPager`してツリーカタログのビューを表示する方法を示すために開発されています (広葉樹および evergreen ツリーのイメージギャラリー)。 
     `PagerTabStrip`および`PagerTitleStrip`は、ページナビゲーションに役立つタイトルを表示するために使用されます。
 
-- [Viewpager とフラグメント](~/android/user-interface/controls/view-pager/viewpager-and-fragments.md)を使用すると、より複雑な[FlashCardPager](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-treepager)アプリが作成され、 `ViewPager`を`Fragment`使用して、計算問題をフラッシュカードとして表示し、ユーザー入力に応答するアプリをビルドする方法を示すことができます。 
+- [Viewpager とフラグメント](~/android/user-interface/controls/view-pager/viewpager-and-fragments.md)を使用すると、より複雑な[FlashCardPager](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-flashcardpager)アプリが作成され、 `ViewPager`を`Fragment`使用して、計算問題をフラッシュカードとして表示し、ユーザー入力に応答するアプリをビルドする方法を示すことができます。 
 
 
 ## <a name="requirements"></a>必要条件

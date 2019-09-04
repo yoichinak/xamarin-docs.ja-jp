@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/30/2019
-ms.openlocfilehash: 328063fd6924902738722813cfb961e56af5385e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: cdbfaafdac8f965adaf4b840b568154e40ef7e10
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644472"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228184"
 ---
 # <a name="implicit-styles-in-xamarinforms"></a>Xamarin.Forms での暗黙的なスタイル
 
@@ -53,7 +53,7 @@ _暗黙的なスタイルは、いずれかのスタイルを参照するには�
 
 [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) 、1 つを定義します。*暗黙的な*をページの適用されるスタイル[ `Entry` ](xref:Xamarin.Forms.Entry)インスタンス。 `Style`も他の外観のオプションの設定中に、黄色の背景に青色のテキストを表示するために使用します。 `Style`をページの追加は[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)を指定せず、`x:Key`属性。 そのため、`Style`すべてに適用される、`Entry`に合うように暗黙的にインスタンス、 [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)のプロパティ、`Style`正確にします。 ただし、`Style`に適用されない、`CustomEntry`インスタンスの場合、サブクラス化された`Entry`します。 次のスクリーン ショットに示すように外観が発生します。
 
-[![](implicit-images/implicit-styles.png "暗黙的なスタイル例")](implicit-images/implicit-styles-large.png#lightbox "暗黙的スタイルの例")
+[![暗黙的なスタイルの例](implicit-images/implicit-styles.png)](implicit-images/implicit-styles-large.png#lightbox)
 
 さらに、4 番目[ `Entry` ](xref:Xamarin.Forms.Entry)オーバーライド、 [ `BackgroundColor` ](xref:Xamarin.Forms.VisualElement.BackgroundColor)と[ `TextColor` ](xref:Xamarin.Forms.Entry.TextColor)異なるする暗黙的なスタイルのプロパティ`Color`値。
 

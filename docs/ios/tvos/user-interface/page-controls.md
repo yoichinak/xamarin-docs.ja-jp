@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: bb53c11612cf492cda39067db861c1d67e0d3e16
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: decbbdab09b514bd49784f6ba45575ae845c547f
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648978"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226481"
 ---
 # <a name="working-with-tvos-page-controls-in-xamarin"></a>Xamarin での tvOS Page コントロールの使用
 
@@ -35,37 +35,37 @@ TvOS アプリでページコントロールを操作する最も簡単な方法
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-    
+
 1. **Solution Pad**で、 `Main.storyboard`ファイルをダブルクリックして開き、編集します。
-1. **ツールボックス**から**ページコントロール**をドラッグし、ビューにドロップします。 
+1. **ツールボックス**から**ページコントロール**をドラッグし、ビューにドロップします。
 
     [![](page-controls-images/page02.png "ページコントロール")](page-controls-images/page02.png#lightbox)
-1. **Properties Pad**の [**ウィジェット] タブ**では、ページコントロールの**現在のページ**や**ページの**数など、いくつかのプロパティを調整できます。 
+1. **Properties Pad**の [**ウィジェット] タブ**では、ページコントロールの**現在のページ**や**ページの**数など、いくつかのプロパティを調整できます。
 
     [![](page-controls-images/page03.png "[ウィジェット] タブ")](page-controls-images/page03.png#lightbox)
 1. 次に、コントロールまたはジェスチャをビューに追加して、ページのコレクションを前後に移動します。
-1. 最後に、コントロールに**名前**を割り当てて、コードでC#それらに応答できるようにします。 例えば: 
+1. 最後に、コントロールに**名前**を割り当てて、コードでC#それらに応答できるようにします。 例えば:
 
     [![](page-controls-images/page04.png "コントロールに名前を指定する")](page-controls-images/page04.png#lightbox)
 1. 変更内容を保存します。
-    
+
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-    
+
 1. **ソリューションエクスプローラー**で、 `Main.storyboard`ファイルをダブルクリックして開き、編集します。
-1. **ツールボックス**から**ページコントロール**をドラッグし、ビューにドロップします。 
+1. **ツールボックス**から**ページコントロール**をドラッグし、ビューにドロップします。
 
     [![](page-controls-images/page02-vs.png "ページコントロール")](page-controls-images/page02-vs.png#lightbox)
-1. **プロパティエクスプローラー**の [**ウィジェット] タブ**では、**現在のページ**やページ**の**数など、ページコントロールのいくつかのプロパティを調整できます。 
+1. **プロパティエクスプローラー**の [**ウィジェット] タブ**では、**現在のページ**やページ**の**数など、ページコントロールのいくつかのプロパティを調整できます。
 
     [![](page-controls-images/page03-vs.png "[ウィジェット] タブ")](page-controls-images/page03-vs.png#lightbox)
 1. 次に、コントロールまたはジェスチャをビューに追加して、ページのコレクションを前後に移動します。
-1. 最後に、コントロールに**名前**を割り当てて、コードでC#それらに応答できるようにします。 例えば: 
+1. 最後に、コントロールに**名前**を割り当てて、コードでC#それらに応答できるようにします。 例えば:
 
     [![](page-controls-images/page04-vs.png "コントロールに名前を指定する")](page-controls-images/page04-vs.png#lightbox)
 1. 変更内容を保存します。
-    
+
 
 -----
 
@@ -160,7 +160,7 @@ PageView.CurrentPage = PageNumber;
 
 `CurrentPage`プロパティはゼロ (0) に基づいているため、最初のページはゼロになり、最後のページはページの最大数を引いたものになります。
 
-ストーリーボードの操作の詳細については、「 [Hello, tvOS クイックスタートガイド](~/ios/tvos/get-started/hello-tvos.md)」を参照してください。 
+ストーリーボードの操作の詳細については、「 [Hello, tvOS クイックスタートガイド](~/ios/tvos/get-started/hello-tvos.md)」を参照してください。
 
 <a name="Summary" />
 

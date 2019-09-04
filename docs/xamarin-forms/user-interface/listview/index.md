@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2015
-ms.openlocfilehash: 4aae2a206f07ea6caa7fc0d7530fb9fec05ce5f0
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: f05703babd3f6e67713dfccdb1a1fc6a4ea6966e
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648422"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228024"
 ---
 # <a name="xamarinforms-listview"></a>Xamarin.Forms ListView
 
@@ -21,7 +21,7 @@ ms.locfileid: "68648422"
 [`ListView`](xref:Xamarin.Forms.ListView)は、データのリストを表示するためのビューです。特に、スクロールが必要な長いリストです。
 
 > [!IMPORTANT]
-> [`CollectionView`](xref:Xamarin.Forms.CollectionView)は、さまざまなレイアウト仕様を使用してデータの一覧を表示するためのビューです。 これは [ `ListView`](xref:Xamarin.Forms.ListView) の代わりとして、より柔軟でより高パフォーマンスを提供することを目的にしています。 詳細については、「 [CollectionView](~/xamarin-forms/user-interface/collectionview/index.md)」を参照してください。
+> [`CollectionView`](xref:Xamarin.Forms.CollectionView) は、さまざまなレイアウト仕様を使用してデータを一覧表示するためのビューです。 これは [ `ListView`](xref:Xamarin.Forms.ListView) の代わりとして、より柔軟でより高パフォーマンスを提供することを目的にしています。 詳細は、「[Xamarin.Forms CollectionView](~/xamarin-forms/user-interface/collectionview/index.md)」を参照してください。
 
 ## <a name="use-cases"></a>ユース ケース
 
@@ -41,8 +41,8 @@ ListView が、さまざまなコンポーネントの各プラットフォー�
 
 - **[セル](customizing-cell-appearance.md)** &ndash;セルで、ListView でのデータが表示されます。 各セルは、データの行に対応します。 選択する組み込みのセルがまたは独自のカスタムのセルを定義することができます。 組み込みとカスタムの両方のセルには、XAML またはコードで使用される定義を指定できます。
   - **[組み込み](customizing-cell-appearance.md#Built_in_Cells)** &ndash;各プラットフォームのネイティブ コントロールに対応するため、パフォーマンスの優れた設定できます。 セル、特に TextCell と ImageCell、組み込まれています。
-       - **[TextCell](customizing-cell-appearance.md#TextCell)**  &ndash;詳細テキストを必要に応じて、テキストの文字列が表示されます。 詳細なテキストはアクセントの色とフォント サイズを小さくの 2 行目としてレンダリングされます。
-       - **[ImageCell](customizing-cell-appearance.md#ImageCell)**  &ndash;テキストとイメージを表示します。 左側のイメージの TextCell として表示されます。
+    - **[TextCell](customizing-cell-appearance.md#TextCell)**  &ndash;詳細テキストを必要に応じて、テキストの文字列が表示されます。 詳細なテキストはアクセントの色とフォント サイズを小さくの 2 行目としてレンダリングされます。
+    - **[ImageCell](customizing-cell-appearance.md#ImageCell)**  &ndash;テキストとイメージを表示します。 左側のイメージの TextCell として表示されます。
   - **[カスタム セル](customizing-cell-appearance.md#customcells)** &ndash;複雑なデータを表示する必要がある場合は、カスタムのセルは最適です。 たとえば、曲、アルバム、アーティストなどの一覧を提供するカスタム ビューを使用できます。
 
 ![](images/image-cell-default.png "ImageCells と ListView")

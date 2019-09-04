@@ -8,12 +8,12 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2019
 ms.custom: video
-ms.openlocfilehash: a9b9b2d12193161e0cb4514600381c3a7a38495a
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 7c0fffbe626a740c15d85b1277c5158a5e564a15
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69529321"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228077"
 ---
 # <a name="resource-dictionaries"></a>リソース ディクショナリ
 
@@ -107,7 +107,7 @@ Xamarin.Forms のプログラムにはから派生したクラス 1 つだけに
 
 最初の[ `Label` ](xref:Xamarin.Forms.Label)インスタンスを取得し、使用、`LabelPageHeadingStyle`アプリケーション レベルで定義されているリソース`ResourceDictionary`、2 つ目`Label`インスタンスの取得および使用、 `LabelNormalStyle`制御レベルで定義されているリソース`ResourceDictionary`します。 同様に、 [ `Button` ](xref:Xamarin.Forms.Button)インスタンスを取得し、使用、`NormalTextColor`アプリケーション レベルで定義されているリソース`ResourceDictionary`、および`MediumBoldText`制御レベルで定義されているリソース`ResourceDictionary`します。 次のスクリーン ショットに示すように外観が発生します。
 
-[![](resource-dictionaries-images/screenshots-sml.png "ResourceDictionary リソースを消費して")](resource-dictionaries-images/screenshots.png#lightbox "ResourceDictionary リソースを消費")
+[![ResourceDictionary リソースの消費](resource-dictionaries-images/screenshots-sml.png)](resource-dictionaries-images/screenshots.png#lightbox)
 
 > [!NOTE]
 > 1 つのページに固有のリソースは、アプリケーション レベルのリソース ディクショナリをそのため、ページで必要なときに、リソースの代わりに、アプリケーションの起動時に解析されますに含めることはできません。 詳細については、次を参照してください。[アプリケーション リソース ディクショナリのサイズを減らす](~/xamarin-forms/deploy-test/performance.md)します。
@@ -142,7 +142,7 @@ Xamarin.Forms のプログラムにはから派生したクラス 1 つだけに
 
 元の`PageBackgroundColor`と`NormalTextColor`によって、アプリケーション レベルで定義されている、インスタンスが上書きされます、`PageBackgroundColor`と`NormalTextColor`ページ レベルで定義されているインスタンス。 したがって、ページの背景色が青と、次のスクリーン ショットに示すよう、ページ上のテキストが、黄色になります。
 
-[![](resource-dictionaries-images/overridding-screenshots-sml.png "上書きする ResourceDictionary リソース")](resource-dictionaries-images/overridding-screenshots.png#lightbox "ResourceDictionary リソースをオーバーライドします。")
+[![ResourceDictionary リソースの上書き](resource-dictionaries-images/overridding-screenshots-sml.png)](resource-dictionaries-images/overridding-screenshots.png#lightbox)
 
 ただし、注意のバック グラウンド バー、 [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)黄色のまま、ため、 [ `BarBackgroundColor` ](xref:Xamarin.Forms.NavigationPage.BarBackgroundColor)の値に設定されて、`PageBackgroundColor`アプリケーションで定義されているリソースレベル`ResourceDictionary`します。
 

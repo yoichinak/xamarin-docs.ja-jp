@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/15/2017
-ms.openlocfilehash: 27eff717fd1390f54a177cc7636e7d107b69cd24
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ec7523ac2adc3a6b4ba18a7b8a0fe21749bd7856
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656282"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227413"
 ---
 # <a name="app-search-enhancements-in-xamarinios"></a>Xamarin のアプリ検索の機能強化
 
@@ -44,13 +44,13 @@ Xamarin. iOS アプリでディープリンクを実装する方法の詳細に�
 
 新しい[Cssearchquery](https://developer.apple.com/reference/corespotlight/cssearchquery)クラスを実装することで、アプリはスポットライトの検索と照合ルールテクノロジを提供して、ユーザーがアプリを離れる必要はありません (メール、メッセージ、ノートアプリの動作に似ています)。
 
-通常、をサポート`CSSearchQuery`するアプリでは、独自の個別の検索インデックスを維持する必要はありません。 
+通常、をサポート`CSSearchQuery`するアプリでは、独自の個別の検索インデックスを維持する必要はありません。
 
 ## <a name="search-continuation"></a>継続の検索
 
 IOS 9 では、検索 api (コアスポットライト、 `NSUserActivity` web マークアップなど) を使用して、ユーザーがスポットライトと Safari 検索インターフェイスの両方を使用してコンテンツを検索できるようにするための、アプリ内のコンテンツの詳細を提供しています。 詳細については、[新しい Search api](~/ios/platform/search/index.md)のドキュメントを参照してください。
 
-IOS 10 Apple では、ユーザーがスポットライトまたは Safari で検索を開始できるようにすることでこの機能をビルドし、アプリを開いたときに検索を続行します。 
+IOS 10 Apple では、ユーザーがスポットライトまたは Safari で検索を開始できるようにすることでこの機能をビルドし、アプリを開いたときに検索を続行します。
 
 この機能を実装するには、アプリ`Info.plist`のファイルを編集`CoreSpotlightContinuation`し、**ブール**型のキーを追加し`YES`て、その値をに設定します。
 

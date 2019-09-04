@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 5230294dcacf6677e145dd8803d65841b3e22618
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 6f60b52d4fd29aacf319f9de94051e28c9876e33
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655435"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226703"
 ---
 # <a name="manual-camera-controls-in-xamarinios"></a>Xamarin の手動カメラコントロール
 
@@ -32,9 +32,9 @@ IOS デバイスでカメラを使用してビデオまたは静止画像を撮�
 
 IOS 8 に用意されている新しい Api を使用して、アプリケーションは次のカメラ機能を制御できます。
 
--  **手動フォーカス**: エンドユーザーが直接フォーカスを制御できるようにすることで、アプリケーションは、撮影されたイメージをより細かく制御できます。
--  **手動**による露出: 公開を手動で制御することにより、アプリケーションはユーザーに自由に制御し、ユーザーが体裁を整えられるようにすることができます。
--  **手動のホワイトバランス**–画像の色を調整するために使用されます。これは、多くの場合、現実的に見えるようにします。 光源の色温度は異なるため、イメージのキャプチャに使用されるカメラの設定は、これらの違いを補うために調整されます。 この場合も、ユーザーがホワイトバランスを制御できるようにすることで、自動的には実行できない調整を行うことができます。
+- **手動フォーカス**: エンドユーザーが直接フォーカスを制御できるようにすることで、アプリケーションは、撮影されたイメージをより細かく制御できます。
+- **手動**による露出: 公開を手動で制御することにより、アプリケーションはユーザーに自由に制御し、ユーザーが体裁を整えられるようにすることができます。
+- **手動のホワイトバランス**–画像の色を調整するために使用されます。これは、多くの場合、現実的に見えるようにします。 光源の色温度は異なるため、イメージのキャプチャに使用されるカメラの設定は、これらの違いを補うために調整されます。 この場合も、ユーザーがホワイトバランスを制御できるようにすることで、自動的には実行できない調整を行うことができます。
 
 
 iOS 8 では、既存の iOS Api の拡張機能と拡張機能を使用して、イメージキャプチャプロセスをきめ細かく制御できるようになっています。
@@ -49,9 +49,9 @@ iOS 8 では、既存の iOS Api の拡張機能と拡張機能を使用して�
 
 この記事に記載されている手順を完了するには、次のものが必要です。
 
--  **Xcode 7 以降と ios 8**以降– Apple の Xcode 7 と ios 8 以降の api は、開発者のコンピューターにインストールして構成する必要があります。
--  **Visual Studio for Mac** –ユーザーデバイスで Visual Studio for Mac の最新バージョンをインストールして構成する必要があります。
--  **ios 8 デバイス**-ios 8 の最新バージョンを実行している ios デバイス。 IOS シミュレーターでは、カメラの機能をテストできません。
+- **Xcode 7 以降と ios 8**以降– Apple の Xcode 7 と ios 8 以降の api は、開発者のコンピューターにインストールして構成する必要があります。
+- **Visual Studio for Mac** –ユーザーデバイスで Visual Studio for Mac の最新バージョンをインストールして構成する必要があります。
+- **ios 8 デバイス**-ios 8 の最新バージョンを実行している ios デバイス。 IOS シミュレーターでは、カメラの機能をテストできません。
 
 
 ## <a name="general-av-capture-setup"></a>一般的な AV キャプチャのセットアップ
@@ -172,8 +172,8 @@ AV キャプチャセッションは、iOS デバイスのカメラからのラ�
 
 1. ソリューションエクスプローラー内の`AppDelegate.cs`ファイルをダブルクリックして、編集用に開きます。
 1. 次の using ステートメントをファイルの先頭に追加します。
-    
-    ```
+
+    ```csharp
     using System;
     using Foundation;
     using UIKit;
@@ -188,12 +188,12 @@ AV キャプチャセッションは、iOS デバイスのカメラからのラ�
     ```
 
 1. 次のプライベート変数と計算されるプロパティを`AppDelegate`クラスに追加します。
-    
-    ```
+
+    ```csharp
     #region Private Variables
     private NSError Error;
     #endregion
-    
+
     #region Computed Properties
     public override UIWindow Window {get;set;}
     public bool CameraAvailable { get; set; }
@@ -204,16 +204,16 @@ AV キャプチャセッションは、iOS デバイスのカメラからのラ�
     public AVCaptureDeviceInput Input { get; set; }
     #endregion
     ```
-  
+
 1. 完成したメソッドをオーバーライドし、次のように変更します。
-    
-    ```
+
+    ```csharp
     public override void FinishedLaunching (UIApplication application)
     {
         // Create a new capture session
         Session = new AVCaptureSession ();
         Session.SessionPreset = AVCaptureSession.PresetMedium;
-    
+
         // Create a device input
         CaptureDevice = AVCaptureDevice.DefaultDeviceWithMediaType (AVMediaType.Video);
         if (CaptureDevice == null) {
@@ -222,7 +222,7 @@ AV キャプチャセッションは、iOS デバイスのカメラからのラ�
             CameraAvailable = false;
             return;
         }
-    
+
         // Prepare device for configuration
         CaptureDevice.LockForConfiguration (out Error);
         if (Error != null) {
@@ -231,13 +231,13 @@ AV キャプチャセッションは、iOS デバイスのカメラからのラ�
             CaptureDevice.UnlockForConfiguration ();
             return;
         }
-    
+
         // Configure stream for 15 frames per second (fps)
         CaptureDevice.ActiveVideoMinFrameDuration = new CMTime (1, 15);
-    
+
         // Unlock configuration
         CaptureDevice.UnlockForConfiguration ();
-    
+
         // Get input from capture device
         Input = AVCaptureDeviceInput.FromDevice (CaptureDevice);
         if (Input == null) {
@@ -246,27 +246,27 @@ AV キャプチャセッションは、iOS デバイスのカメラからのラ�
             CameraAvailable = false;
             return;
         }
-    
+
         // Attach input to session
         Session.AddInput (Input);
-    
+
         // Create a new output
         var output = new AVCaptureVideoDataOutput ();
         var settings = new AVVideoSettingsUncompressed ();
         settings.PixelFormatType = CVPixelFormatType.CV32BGRA;
         output.WeakVideoSettings = settings.Dictionary;
-    
+
         // Configure and attach to the output to the session
         Queue = new DispatchQueue ("ManCamQueue");
         Recorder = new OutputRecorder ();
         output.SetSampleBufferDelegate (Recorder, Queue);
         Session.AddOutput (output);
-    
+
         // Let tabs know that a camera is available
         CameraAvailable = true;
     }
-    ```  
-  
+    ```
+
 1. 変更内容をファイルに保存します。
 
 
@@ -276,7 +276,7 @@ AV キャプチャセッションは、iOS デバイスのカメラからのラ�
 
 エンドユーザーがフォーカスを直接制御できるようにすることで、アプリケーションは、撮影された画像をより視覚的に制御できます。
 
-たとえば、専門家の写真を使用すると、画像のフォーカスを和らげることができ[ます。](https://en.wikipedia.org/wiki/Bokeh)
+たとえば、専門家の写真を使用すると、画像の[フォーカスを和らげる](https://en.wikipedia.org/wiki/Bokeh)ことができます。
 
 [![](intro-to-manual-camera-controls-images/image2.png "Bokeh 効果")](intro-to-manual-camera-controls-images/image2.png#lightbox)
 
@@ -300,11 +300,11 @@ IOS デバイスでは、レンズは、マグネットとスプリングによ�
 
 フォーカスを処理する際には、開発者が理解しておくべき用語がいくつかあります。
 
--  **[フィールドの深さ]** –最も近い、最も遠い範囲内のオブジェクト間の距離です。 
--  **マクロ**-フォーカススペクトルの近くにあり、レンズが焦点を当てる最も近い距離です。
--  **無限大**–これはフォーカスの範囲の一番上の端で、レンズがフォーカスできる最も遠い距離です。
--  **ハイパーフォーカス距離**–これは、フレーム内の最も遠いオブジェクトがフォーカスの一番端に位置する、フォーカス範囲のポイントです。 言い換えると、これはフィールドの深さを最大にする焦点です。 
--  **レンズの位置**–上記の他のすべての用語を制御します。 これはセンサーからのレンズの距離であり、それによってフォーカスが制御されます。
+- **[フィールドの深さ]** –最も近い、最も遠い範囲内のオブジェクト間の距離です。
+- **マクロ**-フォーカススペクトルの近くにあり、レンズが焦点を当てる最も近い距離です。
+- **無限大**–これはフォーカスの範囲の一番上の端で、レンズがフォーカスできる最も遠い距離です。
+- **ハイパーフォーカス距離**–これは、フレーム内の最も遠いオブジェクトがフォーカスの一番端に位置する、フォーカス範囲のポイントです。 言い換えると、これはフィールドの深さを最大にする焦点です。
+- **レンズの位置**–上記の他のすべての用語を制御します。 これはセンサーからのレンズの距離であり、それによってフォーカスが制御されます。
 
 
 これらの用語と知識を考慮して、新しい手動フォーカス制御を iOS 8 アプリケーションで正常に実装できます。
@@ -313,17 +313,17 @@ IOS デバイスでは、レンズは、マグネットとスプリングによ�
 
 iOS 7 以前のバージョンでは、次のように`FocusMode`プロパティを使用して既存のフォーカス制御を提供していました。
 
--   `AVCaptureFocusModeLocked`–フォーカスは1つのフォーカスポイントでロックされます。
--   `AVCaptureFocusModeAutoFocus`–カメラは、鋭いフォーカスが検出されてそこに残るまで、すべての中心点を通じてレンズをスイープします。
--   `AVCaptureFocusModeContinuousAutoFocus`: カメラは、フォーカスのない状態を検出するたびに refocuses ます。
+- `AVCaptureFocusModeLocked`–フォーカスは1つのフォーカスポイントでロックされます。
+- `AVCaptureFocusModeAutoFocus`–カメラは、鋭いフォーカスが検出されてそこに残るまで、すべての中心点を通じてレンズをスイープします。
+- `AVCaptureFocusModeContinuousAutoFocus`: カメラは、フォーカスのない状態を検出するたびに refocuses ます。
 
 
 また、既存のコントロールは、`FocusPointOfInterest`プロパティを使用して設定可能なポイントを提供し、ユーザーが特定の領域にフォーカスを設定できるようにします。 アプリケーションでは、プロパティを`IsAdjustingFocus`監視して、レンズの動きを追跡することもできます。
 
 さらに、範囲制限は`AutoFocusRangeRestriction`プロパティによって次のように提供されています。
 
--   `AVCaptureAutoFocusRangeRestrictionNear`–自動フォーカスを近くの深度に限定します。 QR コードやバーコードのスキャンなどの状況で役立ちます。
--   `AVCaptureAutoFocusRangeRestrictionFar`–自動フォーカスを遠くの深度に限定します。 関連性のないオブジェクトがビューのフィールド (たとえば、ウィンドウフレーム) に存在する場合に便利です。
+- `AVCaptureAutoFocusRangeRestrictionNear`–自動フォーカスを近くの深度に限定します。 QR コードやバーコードのスキャンなどの状況で役立ちます。
+- `AVCaptureAutoFocusRangeRestrictionFar`–自動フォーカスを遠くの深度に限定します。 関連性のないオブジェクトがビューのフィールド (たとえば、ウィンドウフレーム) に存在する場合に便利です。
 
 
 最後に、 `SmoothAutoFocus`自動フォーカスアルゴリズムの速度を低下させるプロパティがあります。また、ビデオを録画するときにアーティファクトの移動を回避するために、小さなインクリメントでステップインします。
@@ -332,8 +332,8 @@ iOS 7 以前のバージョンでは、次のように`FocusMode`プロパティ
 
 Ios 7 以降で既に提供されている機能に加えて、次の機能を使用して iOS 8 でフォーカスを制御できるようになりました。
 
--  フォーカスをロックするときに、レンズの位置を完全に手動で制御します。
--  任意のフォーカスモードでのレンズ位置のキー値の監視。
+- フォーカスをロックするときに、レンズの位置を完全に手動で制御します。
+- 任意のフォーカスモードでのレンズ位置のキー値の監視。
 
 
 上記の機能を実装するため`AVCaptureDevice`に、クラスは、カメラのレンズの現在`LensPosition`位置を取得するために使用される読み取り専用プロパティを含むように変更されています。
@@ -360,9 +360,9 @@ ThisApp.CaptureDevice.UnlockForConfiguration();
 
 ビューには、次の主な要素が含まれています。
 
--  `UIImageView`ビデオフィードを表示する。
--  フォーカスモードを Automatic から Locked に変更する。`UISegmentedControl`
--  `UISlider`現在のレンズの位置を表示および更新する。
+- `UIImageView`ビデオフィードを表示する。
+- フォーカスモードを Automatic から Locked に変更する。`UISegmentedControl`
+- `UISlider`現在のレンズの位置を表示および更新する。
 
 
 次の手順を実行して、ビューコントローラーを手動フォーカスコントロールに接続します。
@@ -383,8 +383,8 @@ ThisApp.CaptureDevice.UnlockForConfiguration();
     using CoreGraphics;
     using CoreFoundation;
     using System.Timers;
-    ```  
-  
+    ```
+
 1. 次のプライベート変数を追加します。
 
     ```csharp
@@ -392,8 +392,8 @@ ThisApp.CaptureDevice.UnlockForConfiguration();
     private NSError Error;
     private bool Automatic = true;
     #endregion
-    ```  
-  
+    ```
+
 1. 次の計算されるプロパティを追加します。
 
     ```csharp
@@ -403,21 +403,21 @@ ThisApp.CaptureDevice.UnlockForConfiguration();
     }
     public Timer SampleTimer { get; set; }
     #endregion
-    ```  
-  
+    ```
+
 1. `ViewDidLoad`メソッドをオーバーライドし、次のコードを追加します。
 
     ```csharp
     public override void ViewDidLoad ()
     {
         base.ViewDidLoad ();
-    
+
         // Hide no camera label
         NoCamera.Hidden = ThisApp.CameraAvailable;
-    
+
         // Attach to camera view
         ThisApp.Recorder.DisplayView = CameraView;
-    
+
         // Create a timer to monitor and update the UI
         SampleTimer = new Timer (5000);
         SampleTimer.Elapsed += (sender, e) => {
@@ -426,13 +426,13 @@ ThisApp.CaptureDevice.UnlockForConfiguration();
                 Position.Value = ThisApp.Input.Device.LensPosition;
             });
         };
-    
+
         // Watch for value changes
         Segments.ValueChanged += (object sender, EventArgs e) => {
-    
+
             // Lock device for change
             ThisApp.CaptureDevice.LockForConfiguration(out Error);
-    
+
             // Take action based on the segment selected
             switch(Segments.SelectedSegment) {
             case 0:
@@ -450,43 +450,43 @@ ThisApp.CaptureDevice.UnlockForConfiguration();
                 Position.Enabled = true;
                 break;
             }
-    
+
             // Unlock device
             ThisApp.CaptureDevice.UnlockForConfiguration();
         };
-    
+
         // Monitor position changes
         Position.ValueChanged += (object sender, EventArgs e) => {
-    
+
             // If we are in the automatic mode, ignore changes
             if (Automatic) return;
-    
+
             // Update Focus position
             ThisApp.CaptureDevice.LockForConfiguration(out Error);
             ThisApp.CaptureDevice.SetFocusModeLocked(Position.Value,null);
             ThisApp.CaptureDevice.UnlockForConfiguration();
         };
     }
-    ```  
-  
+    ```
+
 1. `ViewDidAppear`メソッドをオーバーライドし、次のを追加して、ビューが読み込まれるときの記録を開始します。
 
     ```csharp
     public override void ViewDidAppear (bool animated)
     {
         base.ViewDidAppear (animated);
-    
+
         // Start udating the display
         if (ThisApp.CameraAvailable) {
             // Remap to this camera view
             ThisApp.Recorder.DisplayView = CameraView;
-    
+
             ThisApp.Session.StartRunning ();
             SampleTimer.Start ();
         }
     }
-    ```  
-  
+    ```
+
 1. Auto モードのカメラでは、カメラがフォーカスを調整するとスライダーが自動的に移動します。
 
     [![](intro-to-manual-camera-controls-images/image6.png "このサンプルアプリでカメラがフォーカスを調整すると、スライダーが自動的に移動します")](intro-to-manual-camera-controls-images/image6.png#lightbox)
@@ -516,9 +516,9 @@ IOS 8 アプリケーションでの公開の制御の詳細について説明�
 
 公開を制御するためにまとめられる3つの基本的な要素は次のとおりです。
 
--  **シャッター速度**–シャッターを開いてカメラセンサーに光を表示する時間の長さです。 シャッターが開いている時間が短いほど、では小さくなり、画像が鮮明になります (モーションブラーは小さくなります)。 シャッターが開いている時間が長いほど、ではより多くの光源が使用され、動きが多くなります。
--  **ISO マッピング**–これはフィルム写真から借用した用語であり、フィルム内の薬品の感度を意味します。 フィルムの低い ISO 値は、粒度が低く、色がより正確に再現されています。デジタルセンサーの ISO の値が低い場合、センサーのノイズは低くなりますが、明るさは低くなります。 ISO の値が大きいほど、イメージは明るくなりますが、センサーノイズが多くなります。 デジタルセンサーの "ISO" は、物理的な機能ではなく、[電子的な利得](https://en.wikipedia.org/wiki/Gain)の尺度です。 
--  **レンズ絞り**–これは、レンズを開くためのサイズです。 すべての iOS デバイスでレンズの絞りが固定されているため、露出の調整に使用できる値はシャッター速度と ISO だけです。
+- **シャッター速度**–シャッターを開いてカメラセンサーに光を表示する時間の長さです。 シャッターが開いている時間が短いほど、では小さくなり、画像が鮮明になります (モーションブラーは小さくなります)。 シャッターが開いている時間が長いほど、ではより多くの光源が使用され、動きが多くなります。
+- **ISO マッピング**–これはフィルム写真から借用した用語であり、フィルム内の薬品の感度を意味します。 フィルムの低い ISO 値は、粒度が低く、色がより正確に再現されています。デジタルセンサーの ISO の値が低い場合、センサーのノイズは低くなりますが、明るさは低くなります。 ISO の値が大きいほど、イメージは明るくなりますが、センサーノイズが多くなります。 デジタルセンサーの "ISO" は、物理的な機能ではなく、[電子的な利得](https://en.wikipedia.org/wiki/Gain)の尺度です。
+- **レンズ絞り**–これは、レンズを開くためのサイズです。 すべての iOS デバイスでレンズの絞りが固定されているため、露出の調整に使用できる値はシャッター速度と ISO だけです。
 
 
 ### <a name="how-continuous-auto-exposure-works"></a>継続的自動露出のしくみ
@@ -541,8 +541,8 @@ IOS 8 アプリケーションでの公開の制御の詳細について説明�
 
 iOS 7 以降では、プロパティを`ExposureMode`使用して次の既存の露出コントロールを提供します。
 
--   `AVCaptureExposureModeLocked`–シーンを1回サンプリングし、その値をシーン全体で使用します。
--   `AVCaptureExposureModeContinuousAutoExposure`–シーンを継続的にサンプリングして、適切に点灯するようにします。
+- `AVCaptureExposureModeLocked`–シーンを1回サンプリングし、その値をシーン全体で使用します。
+- `AVCaptureExposureModeContinuousAutoExposure`–シーンを継続的にサンプリングして、適切に点灯するようにします。
 
 
 を`ExposurePointOfInterest`使用すると、公開するターゲットオブジェクトを選択してシーンを公開できます。また、アプリケーションは`AdjustingExposure`プロパティを監視して、露出が調整されていることを確認できます。
@@ -551,8 +551,8 @@ iOS 7 以降では、プロパティを`ExposureMode`使用して次の既存の
 
 Ios 7 以降で既に提供されている機能に加えて、iOS 8 での公開を制御するために次の機能を使用できるようになりました。
 
--  完全に手動でカスタム公開します。
--  Get、Set、およびキー値は、IOS とシャッタースピード (期間) を監視します。
+- 完全に手動でカスタム公開します。
+- Get、Set、およびキー値は、IOS とシャッタースピード (期間) を監視します。
 
 
 上記の機能を実装するために`AVCaptureExposureModeCustom` 、新しいモードが追加されました。 のカメラがカスタムモードの場合は、次のコードを使用して露出期間と ISO を調整できます。
@@ -573,12 +573,12 @@ CaptureDevice.UnlockForConfiguration();
 
 設定範囲の最小値と最大値は、アプリケーションが実行されているデバイスによって異なります。そのため、ハードコーディングしないでください。 代わりに、次のプロパティを使用して、最小値と最大値の範囲を取得します。
 
--   `CaptureDevice.MinExposureTargetBias` 
--   `CaptureDevice.MaxExposureTargetBias` 
--   `CaptureDevice.ActiveFormat.MinISO` 
--   `CaptureDevice.ActiveFormat.MaxISO` 
--   `CaptureDevice.ActiveFormat.MinExposureDuration` 
--   `CaptureDevice.ActiveFormat.MaxExposureDuration` 
+- `CaptureDevice.MinExposureTargetBias`
+- `CaptureDevice.MaxExposureTargetBias`
+- `CaptureDevice.ActiveFormat.MinISO`
+- `CaptureDevice.ActiveFormat.MaxISO`
+- `CaptureDevice.ActiveFormat.MinExposureDuration`
+- `CaptureDevice.ActiveFormat.MaxExposureDuration`
 
 
 上記のコードに示されているように、露出の変更を行う前に、キャプチャデバイスを構成用にロックする必要があります。
@@ -591,17 +591,17 @@ CaptureDevice.UnlockForConfiguration();
 
 ビューには、次の主な要素が含まれています。
 
--  `UIImageView`ビデオフィードを表示する。
--  フォーカスモードを Automatic から Locked に変更する。`UISegmentedControl`
--  オフセット`UISlider` 、期間、ISO、およびバイアスを表示および更新する4つのコントロール。
+- `UIImageView`ビデオフィードを表示する。
+- フォーカスモードを Automatic から Locked に変更する。`UISegmentedControl`
+- オフセット`UISlider` 、期間、ISO、およびバイアスを表示および更新する4つのコントロール。
 
 
 次の手順を実行して、ビューコントローラーを手動露出コントロール用に接続します。
 
 
 1. 次の using ステートメントを追加します。
-    
-    ```
+
+    ```csharp
     using System;
     using Foundation;
     using UIKit;
@@ -614,19 +614,19 @@ CaptureDevice.UnlockForConfiguration();
     using CoreGraphics;
     using CoreFoundation;
     using System.Timers;
-    ```  
-  
+    ```
+
 1. 次のプライベート変数を追加します。
 
     ```csharp
     #region Private Variables
-    private NSError Error; 
+    private NSError Error;
     private bool Automatic = true;
     private nfloat ExposureDurationPower = 5;
     private nfloat ExposureMinimumDuration = 1.0f/1000.0f;
     #endregion
-    ```  
-  
+    ```
+
 1. 次の計算されるプロパティを追加します。
 
     ```csharp
@@ -636,34 +636,34 @@ CaptureDevice.UnlockForConfiguration();
     }
     public Timer SampleTimer { get; set; }
     #endregion
-    ```  
-  
+    ```
+
 1. `ViewDidLoad`メソッドをオーバーライドし、次のコードを追加します。
 
     ```csharp
     public override void ViewDidLoad ()
     {
         base.ViewDidLoad ();
-    
+
         // Hide no camera label
         NoCamera.Hidden = ThisApp.CameraAvailable;
-    
+
         // Attach to camera view
         ThisApp.Recorder.DisplayView = CameraView;
-    
+
         // Set min and max values
         Offset.MinValue = ThisApp.CaptureDevice.MinExposureTargetBias;
         Offset.MaxValue = ThisApp.CaptureDevice.MaxExposureTargetBias;
-    
+
         Duration.MinValue = 0.0f;
         Duration.MaxValue = 1.0f;
-    
+
         ISO.MinValue = ThisApp.CaptureDevice.ActiveFormat.MinISO;
         ISO.MaxValue = ThisApp.CaptureDevice.ActiveFormat.MaxISO;
-    
+
         Bias.MinValue = ThisApp.CaptureDevice.MinExposureTargetBias;
         Bias.MaxValue = ThisApp.CaptureDevice.MaxExposureTargetBias;
-    
+
         // Create a timer to monitor and update the UI
         SampleTimer = new Timer (5000);
         SampleTimer.Elapsed += (sender, e) => {
@@ -671,7 +671,7 @@ CaptureDevice.UnlockForConfiguration();
             Offset.BeginInvokeOnMainThread(() =>{
                 Offset.Value = ThisApp.Input.Device.ExposureTargetOffset;
             });
-    
+
             Duration.BeginInvokeOnMainThread(() =>{
                 var newDurationSeconds = CMTimeGetSeconds(ThisApp.Input.Device.ExposureDuration);
                 var minDurationSeconds = Math.Max(CMTimeGetSeconds(ThisApp.CaptureDevice.ActiveFormat.MinExposureDuration), ExposureMinimumDuration);
@@ -679,22 +679,22 @@ CaptureDevice.UnlockForConfiguration();
                 var p = (newDurationSeconds - minDurationSeconds) / (maxDurationSeconds - minDurationSeconds);
                 Duration.Value = (float)Math.Pow(p, 1.0f/ExposureDurationPower);
             });
-    
+
             ISO.BeginInvokeOnMainThread(() => {
                 ISO.Value = ThisApp.Input.Device.ISO;
             });
-    
+
             Bias.BeginInvokeOnMainThread(() => {
                 Bias.Value = ThisApp.Input.Device.ExposureTargetBias;
             });
         };
-    
+
         // Watch for value changes
         Segments.ValueChanged += (object sender, EventArgs e) => {
-    
+
             // Lock device for change
             ThisApp.CaptureDevice.LockForConfiguration(out Error);
-    
+
             // Take action based on the segment selected
             switch(Segments.SelectedSegment) {
             case 0:
@@ -722,71 +722,71 @@ CaptureDevice.UnlockForConfiguration();
                 ISO.Enabled = true;
                 break;
             }
-    
+
             // Unlock device
             ThisApp.CaptureDevice.UnlockForConfiguration();
         };
-    
+
         // Monitor position changes
         Duration.ValueChanged += (object sender, EventArgs e) => {
-    
+
             // If we are in the automatic mode, ignore changes
             if (Automatic) return;
-    
+
             // Calculate value
             var p = Math.Pow(Duration.Value,ExposureDurationPower);
             var minDurationSeconds = Math.Max(CMTimeGetSeconds(ThisApp.CaptureDevice.ActiveFormat.MinExposureDuration),ExposureMinimumDuration);
             var maxDurationSeconds = CMTimeGetSeconds(ThisApp.CaptureDevice.ActiveFormat.MaxExposureDuration);
             var newDurationSeconds = p * (maxDurationSeconds - minDurationSeconds) +minDurationSeconds;
-    
+
             // Update Focus position
             ThisApp.CaptureDevice.LockForConfiguration(out Error);
             ThisApp.CaptureDevice.LockExposure(CMTime.FromSeconds(p,1000*1000*1000),ThisApp.CaptureDevice.ISO,null);
             ThisApp.CaptureDevice.UnlockForConfiguration();
         };
-    
+
         ISO.ValueChanged += (object sender, EventArgs e) => {
-    
+
             // If we are in the automatic mode, ignore changes
             if (Automatic) return;
-    
+
             // Update Focus position
             ThisApp.CaptureDevice.LockForConfiguration(out Error);
             ThisApp.CaptureDevice.LockExposure(ThisApp.CaptureDevice.ExposureDuration,ISO.Value,null);
             ThisApp.CaptureDevice.UnlockForConfiguration();
         };
-    
+
         Bias.ValueChanged += (object sender, EventArgs e) => {
-    
+
             // If we are in the automatic mode, ignore changes
             // if (Automatic) return;
-    
+
             // Update Focus position
             ThisApp.CaptureDevice.LockForConfiguration(out Error);
             ThisApp.CaptureDevice.SetExposureTargetBias(Bias.Value,null);
             ThisApp.CaptureDevice.UnlockForConfiguration();
         };
     }
-    ```  
-  
+    ```
+
 1. `ViewDidAppear`メソッドをオーバーライドし、次のを追加して、ビューが読み込まれるときの記録を開始します。
 
     ```csharp
     public override void ViewDidAppear (bool animated)
     {
         base.ViewDidAppear (animated);
-    
+
         // Start udating the display
         if (ThisApp.CameraAvailable) {
             // Remap to this camera view
             ThisApp.Recorder.DisplayView = CameraView;
-    
+
             ThisApp.Session.StartRunning ();
             SampleTimer.Start ();
         }
     }
-    ```  
-  
+    ```
+
 1. カメラを Auto モードで使用すると、カメラが露出を調整したときにスライダーが自動的に移動します。
 
     [![](intro-to-manual-camera-controls-images/image13.png "カメラが露出を調整するとスライダーが自動的に移動する")](intro-to-manual-camera-controls-images/image13.png#lightbox)
@@ -835,8 +835,8 @@ iOS デバイスでは、反対色のゲインを上げることで色のキャ�
 
 iOS 7 以降では、プロパティを使用`WhiteBalanceMode`して次の既存のホワイトバランスコントロールを提供していました。
 
--   `AVCapture WhiteBalance ModeLocked`–シーンを1回サンプリングし、その値をシーン全体で使用します。
--   `AVCapture WhiteBalance ModeContinuousAutoExposure`–シーンを継続的にサンプリングして、バランスが取れていることを確認します。
+- `AVCapture WhiteBalance ModeLocked`–シーンを1回サンプリングし、その値をシーン全体で使用します。
+- `AVCapture WhiteBalance ModeContinuousAutoExposure`–シーンを継続的にサンプリングして、バランスが取れていることを確認します。
 
 
 また、アプリケーションは、プロパティ`AdjustingWhiteBalance`を監視して、公開が調整されていることを確認できます。
@@ -845,17 +845,17 @@ iOS 7 以降では、プロパティを使用`WhiteBalanceMode`して次の既�
 
 Ios 7 以降で既に提供されている機能に加えて、iOS 8 では、次の機能を使用して、ホワイトバランスを制御できるようになりました。
 
--  デバイスの RGB の向上を完全に手動で制御します。
--  Get、Set、およびキー値は、デバイスの RGB の向上を観察します。
--  灰色のカードを使用したホワイトバランスのサポート。
--  デバイスに依存しないカラースペースとの間の変換ルーチン。
+- デバイスの RGB の向上を完全に手動で制御します。
+- Get、Set、およびキー値は、デバイスの RGB の向上を観察します。
+- 灰色のカードを使用したホワイトバランスのサポート。
+- デバイスに依存しないカラースペースとの間の変換ルーチン。
 
 
 上記の機能`AVCaptureWhiteBalanceGain`を実装するために、構造体は次のメンバーと共に追加されています。
 
--   `RedGain` 
--   `GreenGain` 
--   `BlueGain` 
+- `RedGain`
+- `GreenGain`
+- `BlueGain`
 
 
 現在、ホワイトバランスの最大値は 4 (4) であり、 `MaxWhiteBalanceGain`プロパティから準備できます。 そのため、有効な範囲は、現在は 1 `MaxWhiteBalanceGain`から (4) までです。
@@ -866,14 +866,14 @@ Ios 7 以降で既に提供されている機能に加えて、iOS 8 では、�
 
 変換ルーチンは、デバイスに依存しない色空間との間での変換を支援するために、iOS 8 に追加されました。 変換ルーチン`AVCaptureWhiteBalanceChromaticityValues`を実装するために、次のメンバーと共に構造体が追加されています。
 
--   `X`-0 ~ 1 の値です。
--   `Y`-0 ~ 1 の値です。
+- `X`-0 ~ 1 の値です。
+- `Y`-0 ~ 1 の値です。
 
 
 `AVCaptureWhiteBalanceTemperatureAndTintValues`構造体には、次のメンバーも追加されています。
 
--   `Temperature`-ケルビンの浮動小数点値です。
--   `Tint`-は、緑またはマゼンタから150までのオフセットであり、正の値は緑の方向に、マゼンタの場合は負の値になります。
+- `Temperature`-ケルビンの浮動小数点値です。
+- `Tint`-は、緑またはマゼンタから150までのオフセットであり、正の値は緑の方向に、マゼンタの場合は負の値になります。
 
 
 `CaptureDevice.GetTemperatureAndTintValues`との`CaptureDevice.GetDeviceWhiteBalanceGains`メソッドを使用して、温度と濃淡、度、および RGB ゲインの色空間を変換します。
@@ -902,10 +902,10 @@ Apple では、グレー表現という用語を使用して、iOS 8 に組み�
 
 ビューには、次の主な要素が含まれています。
 
--  `UIImageView`ビデオフィードを表示する。
--  フォーカスモードを Automatic から Locked に変更する。`UISegmentedControl`
--  気温`UISlider`と着色を表示および更新する2つのコントロール。
--  灰色のカード (灰色のワールド) 空間をサンプリングし、それらの値を使用してホワイトバランスを設定するために使用される。`UIButton`
+- `UIImageView`ビデオフィードを表示する。
+- フォーカスモードを Automatic から Locked に変更する。`UISegmentedControl`
+- 気温`UISlider`と着色を表示および更新する2つのコントロール。
+- 灰色のカード (灰色のワールド) 空間をサンプリングし、それらの値を使用してホワイトバランスを設定するために使用される。`UIButton`
 
 
 次の手順を実行して、ホワイトバランスの手動制御のビューコントローラーを接続します。
@@ -926,17 +926,17 @@ Apple では、グレー表現という用語を使用して、iOS 8 に組み�
     using CoreGraphics;
     using CoreFoundation;
     using System.Timers;
-    ```  
-  
+    ```
+
 1. 次のプライベート変数を追加します。
 
     ```csharp
     #region Private Variables
-    private NSError Error; 
+    private NSError Error;
     private bool Automatic = true;
     #endregion
     ```
-  
+
 1. 次の計算されるプロパティを追加します。
 
     ```csharp
@@ -946,8 +946,8 @@ Apple では、グレー表現という用語を使用して、iOS 8 に組み�
     }
     public Timer SampleTimer { get; set; }
     #endregion
-    ```  
-  
+    ```
+
 1. 次のプライベートメソッドを追加して、新しい白のバランス温度と濃淡を設定します。
 
     ```csharp
@@ -966,7 +966,7 @@ Apple では、グレー表現という用語を使用して、iOS 8 に組み�
             ThisApp.CaptureDevice.UnlockForConfiguration ();
         }
     }
-    
+
     AVCaptureWhiteBalanceGains NomralizeGains (AVCaptureWhiteBalanceGains gains)
     {
         gains.RedGain = Math.Max (1, gains.RedGain);
@@ -981,8 +981,8 @@ Apple では、グレー表現という用語を使用して、iOS 8 に組み�
         return gains;
     }
     #endregion
-    ```   
-  
+    ```
+
 1. `ViewDidLoad`メソッドをオーバーライドし、次のコードを追加します。
 
     ```csharp
@@ -1086,26 +1086,26 @@ Apple では、グレー表現という用語を使用して、iOS 8 に組み�
             }
         };
     }
-    ``` 
-  
+    ```
+
 1. `ViewDidAppear`メソッドをオーバーライドし、次のを追加して、ビューが読み込まれるときの記録を開始します。
 
     ```csharp
     public override void ViewDidAppear (bool animated)
     {
         base.ViewDidAppear (animated);
-    
+
         // Start udating the display
         if (ThisApp.CameraAvailable) {
             // Remap to this camera view
             ThisApp.Recorder.DisplayView = CameraView;
-    
+
             ThisApp.Session.StartRunning ();
             SampleTimer.Start ();
         }
     }
-    ```  
-  
+    ```
+
 1. 変更内容をコードに保存し、アプリケーションを実行します。
 1. カメラが Auto モードの場合、カメラが白のバランスを調整すると、スライダーが自動的に移動します。
 
@@ -1134,9 +1134,9 @@ IOS 8 の角かっこで囲まれたキャプチャを使用すると、アプ�
 
 ここでも、角かっこで囲まれたキャプチャは、画像間のさまざまな設定で撮影された静止画像のバーストです。 角かっこで囲まれたキャプチャの種類は次のとおりです。
 
--  **自動露出角かっこ**–すべてのイメージのバイアス量が変動します。
--  **[手動露出角かっこ]** –すべてのイメージのシャッター速度 (期間) と ISO 金額が変化します。
--  **単純なバーストブラケット**は、連続して次々に撮影された一連のイメージです。
+- **自動露出角かっこ**–すべてのイメージのバイアス量が変動します。
+- **[手動露出角かっこ]** –すべてのイメージのシャッター速度 (期間) と ISO 金額が変化します。
+- **単純なバーストブラケット**は、連続して次々に撮影された一連のイメージです。
 
 
 ### <a name="new-bracketed-capture-controls-in-ios-8"></a>IOS 8 の新しいかっこ付きキャプチャコントロール
@@ -1145,8 +1145,8 @@ IOS 8 の角かっこで囲まれたキャプチャを使用すると、アプ�
 
 設定を処理するために、次の2つの新しいクラスが実装されています。
 
--   `AVCaptureAutoExposureBracketedStillImageSettings`–自動露出角かっこの`ExposureTargetBias`バイアスを設定するために使用されるプロパティが1つあります。 
--   `AVCaptureManual`  `ExposureBracketedStillImageSettings`–には、 `ExposureDuration`とと`ISO`いう2つのプロパティがあります。これは、手動露出角かっこのシャッター速度と ISO を設定するために使用されます。 
+- `AVCaptureAutoExposureBracketedStillImageSettings`–自動露出角かっこの`ExposureTargetBias`バイアスを設定するために使用されるプロパティが1つあります。
+- `AVCaptureManual`  `ExposureBracketedStillImageSettings`–には、 `ExposureDuration`とと`ISO`いう2つのプロパティがあります。これは、手動露出角かっこのシャッター速度と ISO を設定するために使用されます。
 
 
 ### <a name="bracketed-capture-controls-dos-and-donts"></a>かっこで囲まれたキャプチャコントロールの実行とすべき
@@ -1155,28 +1155,28 @@ IOS 8 の角かっこで囲まれたキャプチャを使用すると、アプ�
 
 次に示すのは、iOS 8 で、角かっこで囲まれたキャプチャコントロールを使用する場合に行う必要がある項目の一覧です。
 
--  `PrepareToCaptureStillImageBracket`メソッドを呼び出すことによって、最悪のケースのキャプチャ状況に対してアプリを準備します。
--  サンプルバッファーが同じ共有プールから取得されるものとします。
--  前の prepare 呼び出しで割り当てられたメモリを解放するに`PrepareToCaptureStillImageBracket`は、を再度呼び出して、1つのオブジェクトの配列を送信します。
+- `PrepareToCaptureStillImageBracket`メソッドを呼び出すことによって、最悪のケースのキャプチャ状況に対してアプリを準備します。
+- サンプルバッファーが同じ共有プールから取得されるものとします。
+- 前の prepare 呼び出しで割り当てられたメモリを解放するに`PrepareToCaptureStillImageBracket`は、を再度呼び出して、1つのオブジェクトの配列を送信します。
 
 
 #### <a name="donts"></a>すべき
 
 次に示すのは、iOS 8 で角かっこで囲まれたキャプチャコントロールを使用している場合に実行すべきものではありません。
 
--  1つのキャプチャには、かっこで囲まれたキャプチャの設定の種類を混在させないでください。
--  1つのキャプチャ`MaxBracketedCaptureStillImageCount`に複数のイメージを要求しないでください。
+- 1つのキャプチャには、かっこで囲まれたキャプチャの設定の種類を混在させないでください。
+- 1つのキャプチャ`MaxBracketedCaptureStillImageCount`に複数のイメージを要求しないでください。
 
 
 ### <a name="bracketed-capture-details"></a>かっこで囲まれるキャプチャの詳細
 
 IOS 8 での角かっこで囲まれたキャプチャを使用する場合は、次の詳細を考慮する必要があります。
 
--  かっこで囲まれた`AVCaptureDevice`設定は、設定を一時的にオーバーライドします。
--  Flash と静止画像の安定化設定は無視されます。
--  すべてのイメージで同じ出力形式 (jpeg、png など) を使用する必要があります。
--  ビデオのプレビューでは、フレームを削除することができます。
--  角かっこで囲まれたキャプチャは、iOS 8 と互換性のあるすべてのデバイスでサポートされています。
+- かっこで囲まれた`AVCaptureDevice`設定は、設定を一時的にオーバーライドします。
+- Flash と静止画像の安定化設定は無視されます。
+- すべてのイメージで同じ出力形式 (jpeg、png など) を使用する必要があります。
+- ビデオのプレビューでは、フレームを削除することができます。
+- 角かっこで囲まれたキャプチャは、iOS 8 と互換性のあるすべてのデバイスでサポートされています。
 
 
 この情報を考慮して、iOS 8 での角かっこで囲まれたキャプチャの使用例を見てみましょう。
@@ -1189,10 +1189,10 @@ IOS 8 での角かっこで囲まれたキャプチャを使用する場合は�
 
 ビューには、次の主な要素が含まれています。
 
--  `UIImageView`ビデオフィードを表示する。
--  キャプチャ`UIImageViews`の結果が表示される3つの。
--  ビデオフィードと結果ビューを格納する。`UIScrollView`
--  いくつ`UIButton`かのプリセット設定を使用して、かっこで囲まれたキャプチャを実行するために使用される。
+- `UIImageView`ビデオフィードを表示する。
+- キャプチャ`UIImageViews`の結果が表示される3つの。
+- ビデオフィードと結果ビューを格納する。`UIScrollView`
+- いくつ`UIButton`かのプリセット設定を使用して、かっこで囲まれたキャプチャを実行するために使用される。
 
 
 次の手順を実行して、角かっこで囲まれたキャプチャのビューコントローラーを接続します。
@@ -1214,8 +1214,8 @@ IOS 8 での角かっこで囲まれたキャプチャを使用する場合は�
     using CoreGraphics;
     using CoreFoundation;
     using CoreImage;
-    ```  
-  
+    ```
+
 1. 次のプライベート変数を追加します。
 
     ```csharp
@@ -1224,8 +1224,8 @@ IOS 8 での角かっこで囲まれたキャプチャを使用する場合は�
     private List<UIImageView> Output = new List<UIImageView>();
     private nint OutputIndex = 0;
     #endregion
-    ```    
-  
+    ```
+
 1. 次の計算されるプロパティを追加します。
 
     ```csharp
@@ -1234,68 +1234,68 @@ IOS 8 での角かっこで囲まれたキャプチャを使用する場合は�
         get { return (AppDelegate)UIApplication.SharedApplication.Delegate; }
     }
     #endregion
-    ```  
-  
+    ```
+
 1. 次のプライベートメソッドを追加して、必要な出力イメージビューを構築します。
 
     ```csharp
     #region Private Methods
     private UIImageView BuildOutputView(nint n) {
-    
+
         // Create a new image view controller
         var imageView = new UIImageView (new CGRect (CameraView.Frame.Width * n, 0, CameraView.Frame.Width, CameraView.Frame.Height));
-    
+
         // Load a temp image
         imageView.Image = UIImage.FromFile ("Default-568h@2x.png");
-    
+
         // Add a label
         UILabel label = new UILabel (new CGRect (0, 20, CameraView.Frame.Width, 24));
         label.TextColor = UIColor.White;
         label.Text = string.Format ("Bracketed Image {0}", n);
         imageView.AddSubview (label);
-    
+
         // Add to scrolling view
         ScrollView.AddSubview (imageView);
-    
+
         // Return new image view
         return imageView;
     }
     #endregion
-    ```  
-  
-1. `ViewDidLoad`メソッドをオーバーライドし、次のコードを追加します。
-    
     ```
+
+1. `ViewDidLoad`メソッドをオーバーライドし、次のコードを追加します。
+
+    ```csharp
     public override void ViewDidLoad ()
     {
         base.ViewDidLoad ();
-    
+
         // Hide no camera label
         NoCamera.Hidden = ThisApp.CameraAvailable;
-    
+
         // Attach to camera view
         ThisApp.Recorder.DisplayView = CameraView;
-    
+
         // Setup scrolling area
         ScrollView.ContentSize = new SizeF (CameraView.Frame.Width * 4, CameraView.Frame.Height);
-    
+
         // Add output views
         Output.Add (BuildOutputView (1));
         Output.Add (BuildOutputView (2));
         Output.Add (BuildOutputView (3));
-    
+
         // Create preset settings
         var Settings = new AVCaptureBracketedStillImageSettings[] {
             AVCaptureAutoExposureBracketedStillImageSettings.Create(-2.0f),
             AVCaptureAutoExposureBracketedStillImageSettings.Create(0.0f),
             AVCaptureAutoExposureBracketedStillImageSettings.Create(2.0f)
         };
-    
+
         // Wireup capture button
         CaptureButton.TouchUpInside += (sender, e) => {
             // Reset output index
             OutputIndex = 0;
-    
+
             // Tell the camera that we are getting ready to do a bracketed capture
             ThisApp.StillImageOutput.PrepareToCaptureStillImageBracket(ThisApp.StillImageOutput.Connections[0],Settings,async (bool ready, NSError err) => {
                 // Was there an error, if so report it
@@ -1303,16 +1303,16 @@ IOS 8 での角かっこで囲まれたキャプチャを使用する場合は�
                     Console.WriteLine("Error: {0}",err.LocalizedDescription);
                 }
             });
-    
+
             // Ask the camera to snap a bracketed capture
             ThisApp.StillImageOutput.CaptureStillImageBracket(ThisApp.StillImageOutput.Connections[0],Settings, (sampleBuffer, settings, err) =>{
                 // Convert raw image stream into a Core Image Image
                 var imageData = AVCaptureStillImageOutput.JpegStillToNSData(sampleBuffer);
                 var image = CIImage.FromData(imageData);
-    
+
                 // Display the resulting image
                 Output[OutputIndex++].Image = UIImage.FromImage(image);
-    
+
                 // IMPORTANT: You must release the buffer because AVFoundation has a fixed number
                 // of buffers and will stop delivering frames if it runs out.
                 sampleBuffer.Dispose();
@@ -1320,26 +1320,26 @@ IOS 8 での角かっこで囲まれたキャプチャを使用する場合は�
         };
     }
     ```
-    
-  
+
+
 1. `ViewDidAppear`メソッドをオーバーライドし、次のコードを追加します。
 
     ```csharp
     public override void ViewDidAppear (bool animated)
     {
         base.ViewDidAppear (animated);
-    
+
         // Start udating the display
         if (ThisApp.CameraAvailable) {
             // Remap to this camera view
             ThisApp.Recorder.DisplayView = CameraView;
-    
+
             ThisApp.Session.StartRunning ();
         }
     }
-    
-    ```  
-    
+
+    ```
+
 1. 変更内容をコードに保存し、アプリケーションを実行します。
 1. シーンをフレームし、[キャプチャの角かっこ] ボタンをタップします。
 

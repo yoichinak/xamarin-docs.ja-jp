@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 885cf4b77d4eac0668a2e70c57187e9b23a91dd1
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 962f06367542cc0e5d0d17f3261411c96f215e44
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69527571"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227479"
 ---
 # <a name="introduction-to-ios-7"></a>iOS 7 の概要
 
@@ -36,14 +36,14 @@ iOS 7 では、UIKit でのアニメーションのサポートが強化され�
 
 ```csharp
 void AnimateWithSpring ()
-{ 
+{
     float springDampingRatio = 0.25f;
     float initialSpringVelocity = 1.0f;
-    
+
     UIView.AnimateNotify (3.0, 0.0, springDampingRatio, initialSpringVelocity, 0, () => {
-    
-        imageView.Center = new CGPoint (imageView.Center.X, 400);   
-            
+
+        imageView.Center = new CGPoint (imageView.Center.X, 400);
+
     }, null);
 }
 ```
@@ -67,11 +67,11 @@ void AnimateViewWithKeyframes ()
     // can now use keyframes directly on UIView without needing to drop directly into Core Animation
 
     UIView.AnimateKeyframes (2.0, 0, UIViewKeyframeAnimationOptions.Autoreverse, () => {
-        UIView.AddKeyframeWithRelativeStartTime (0.0, 0.5, () => { 
+        UIView.AddKeyframeWithRelativeStartTime (0.0, 0.5, () => {
             imageView.Center = new CGPoint (200, 200);
         });
 
-        UIView.AddKeyframeWithRelativeStartTime (0.5, 0.5, () => { 
+        UIView.AddKeyframeWithRelativeStartTime (0.5, 0.5, () => {
             imageView.Transform = CGAffineTransform.MakeRotation ((float)Math.PI / 2);
         });
     }, (finished) => {
@@ -156,7 +156,7 @@ dynAnimator.AddBehavior (gravity);
 
 次に示すように、この結果、画像は重力で下にアニメーション化されます。
 
-![](images/gravity2.png "イメージの終了位置の開始イメージの場所") 
+![](images/gravity2.png "イメージの終了位置の開始イメージの場所")
 ![](images/gravity3.png "")
 
 画面の境界が制限されていないため、イメージビューは単に一番下にありません。 画像が画面の端と競合するようにビューを制限するには、を`UICollisionBehavior`追加します。 これについては、次のセクションで説明します。

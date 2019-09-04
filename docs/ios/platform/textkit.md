@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 0bed0e272293d3462d32fe5134147112e38116f0
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: c0ee125090a2bb817f09a18c34033a1f8a788569
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528720"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227284"
 ---
 # <a name="textkit-in-xamarinios"></a>Xamarin の TextKit
 
@@ -29,7 +29,7 @@ TextKit の機能を標準コントロールで使用できるようにするた
 TextKit には、次のクラスを含む、レイアウトと表示からテキストストレージを分離するレイヤーアーキテクチャが用意されています。
 
 - `NSTextContainer`–テキストのレイアウトに使用される座標系と geometry を提供します。
-- `NSLayoutManager`–テキストをグリフに変えることによってテキストをレイアウトします。 
+- `NSLayoutManager`–テキストをグリフに変えることによってテキストをレイアウトします。
 - `NSTextStorage`–テキストデータを保持し、バッチテキストプロパティの更新を処理します。 バッチ更新は、レイアウトの再計算やテキストの再描画など、実際に変更を処理するためにレイアウトマネージャーに渡されます。
 
 
@@ -160,7 +160,7 @@ TextContainer.ExclusionPaths = new UIBezierPath[] { bezierPath };
 
 次のスクリーンショットは、描画されたパスの周囲にテキストのレイアウトがどのように変化するかを示しています。
 
-<!-- ![](textkit-images/exclusionpath1.png "This screenshot illustrates how the text layout changes to flow around the drawn path")--> 
+<!-- ![](textkit-images/exclusionpath1.png "This screenshot illustrates how the text layout changes to flow around the drawn path")-->
 ![](textkit-images/exclusionpath2.png "このスクリーンショットは、描画されたパスの周囲にテキストレイアウトがどのように変化するかを示しています。")
 
 この場合、レイアウトマネージャーの`AllowsNonContiguousLayout`プロパティが false に設定されていることに注意してください。 これにより、テキストが変更されるすべてのケースに対して、レイアウトが再計算されます。 この値を true に設定すると、大規模なドキュメントの場合は特に、レイアウト全体の更新を回避することでパフォーマンスが向上する可能性があります。 ただし、を`AllowsNonContiguousLayout` true に設定すると、場合によっては、除外パスによってレイアウトが更新されないようにすることができます。たとえば、パスを設定する前に後続のキャリッジリターンを使用せずに実行時にテキストを入力する場合などです。

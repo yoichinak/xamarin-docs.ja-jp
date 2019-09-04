@@ -7,12 +7,12 @@ ms.assetid: 79BD3266-D457-4E50-BDDF-33450035FA0F
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: 68d6cb1df8557b6055feb81b21ed5513592c71c4
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 1e2b50a260ed5f5bbbbfc3c4ba55a33075262f25
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70198144"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228105"
 ---
 # <a name="creating-and-drawing-on-skiasharp-bitmaps"></a>作成して、SkiaSharp ビットマップの描画
 
@@ -24,7 +24,7 @@ ms.locfileid: "70198144"
 SKBitmap bitmap = new SKBitmap(width, height);
 ```
 
-`width`と`height`パラメーターが整数であり、ビットマップのピクセル寸法を指定します。 このコンス トラクターは、1 ピクセルあたり 4 バイトの完全なカラー ビットマップを作成します。 赤、緑、青、およびアルファ (透明度) のコンポーネントの 1 バイトごと。 
+`width`と`height`パラメーターが整数であり、ビットマップのピクセル寸法を指定します。 このコンス トラクターは、1 ピクセルあたり 4 バイトの完全なカラー ビットマップを作成します。 赤、緑、青、およびアルファ (透明度) のコンポーネントの 1 バイトごと。
 
 新しいビットマップを作成した後は、ビットマップの画面上の何かを取得する必要があります。 2 つの方法のいずれかで一般に行います。
 
@@ -56,7 +56,7 @@ using (SKCanvas canvas = new SKCanvas(bitmap))
 
 ビットマップは、表示されます。 後では、プログラムを新規に作成できます`SKCanvas`に依存するオブジェクトが同じ、ビットマップ、さらに描画します。
 
-**こんにちはビットマップ**ページで、 **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** アプリケーションが書き込むテキスト「こんにちは, ビットマップ!」 ビットマップと複数回のビットマップを表示します。  
+**こんにちはビットマップ**ページで、 **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** アプリケーションが書き込むテキスト「こんにちは, ビットマップ!」 ビットマップと複数回のビットマップを表示します。
 
 コンス トラクター、`HelloBitmapPage`作成では、まず、`SKPaint`テキストを表示するオブジェクト。 テキスト文字列の大きさを決定し、その寸法のビットマップを作成します。 これは、後、作成、`SKCanvas`オブジェクトを呼び出し、そのビットマップに基づいて`Clear`、号餧ェヒェマル`DrawText`。 常を呼び出すことをお勧め`Clear`新しいビットマップで新しく作成されたビットマップにランダムなデータが含まれる場合がありますので。
 
@@ -88,7 +88,7 @@ public partial class HelloBitmapPage : ContentPage
             }
         }
 
-        // Create SKCanvasView to view result 
+        // Create SKCanvasView to view result
         SKCanvasView canvasView = new SKCanvasView();
         canvasView.PaintSurface += OnCanvasViewPaintSurface;
         Content = canvasView;
@@ -123,7 +123,7 @@ public partial class HelloBitmapPage : ContentPage
 
 `Clear` の`SKCanvas`メソッドのドキュメントでは、ステートメントについて説明しています。"キャンバスの現在のクリップ内のすべてのピクセルを置き換えます。" "置換" という単語を使用すると、これらのメソッドの重要な特性が明らかになります。のすべての描画メソッド`SKCanvas`は、既存の表示サーフェイスに何かを追加します。 `Clear`メソッド_置換_は既に存在します。
 
-`Clear` 2 つのバージョンに存在します。 
+`Clear` 2 つのバージョンに存在します。
 
 - [ `Clear` ](xref:SkiaSharp.SKCanvas.Clear(SkiaSharp.SKColor))メソッドを`SKColor`パラメーターは、その色のピクセルを使用して、表示画面のピクセルを置き換えます。
 
@@ -167,7 +167,7 @@ Color = new SKColor(0, 0, 0, 0)
 - `Gray8` &mdash; 各ピクセルは白、黒から灰色の網かけを表す 8 ビットです。
 - `RgbaF16` &mdash; 各ピクセルは赤、緑、青、および 16 ビットの浮動小数点形式でアルファとの 64 ビットです。
 
-各ピクセルが 32 ピクセル (4 バイト) を 2 つの形式とも呼ばれます_フルカラー_形式。 ビデオが自身を表示するときに時間から他の形式の日付の多くは完全な色の対応でした。 制限付きの色のビットマップは、これらの表示に適してし、占有するメモリの領域を節約するビットマップを許可します。 
+各ピクセルが 32 ピクセル (4 バイト) を 2 つの形式とも呼ばれます_フルカラー_形式。 ビデオが自身を表示するときに時間から他の形式の日付の多くは完全な色の対応でした。 制限付きの色のビットマップは、これらの表示に適してし、占有するメモリの領域を節約するビットマップを許可します。
 
 最近は、プログラマほぼ常にフルカラー ビットマップを使用して、およびその他の形式を使用する必要はありません。 例外は、`RgbaF16`形式で、色の解像度でもフルカラー形式よりも大きいを許可します。 ただし、この形式は医用画像などの特殊な目的で使用され、標準の完全なカラー ディスプレイを使用すると、あまり意味します。
 
@@ -197,7 +197,7 @@ Color = new SKColor(0, 0, 0, 0)
 
 ## <a name="drawing-on-existing-bitmaps"></a>既存のビットマップの描画
 
-描画するために新しいビットマップを作成する必要はありません。 既存のビットマップを描画することもできます。 
+描画するために新しいビットマップを作成する必要はありません。 既存のビットマップを描画することもできます。
 
 **Monkey あります**ページでは、そのコンス トラクターを使用して、読み込み、 **MonkeyFace.png**イメージ。 これは、後、作成、`SKCanvas`オブジェクトがそのビットマップに基づいて、使用して`SKPaint`と`SKPath`ありますを描画するオブジェクト。
 
@@ -236,7 +236,7 @@ public partial class MonkeyMoustachePage : ContentPage
             }
         }
 
-        // Create SKCanvasView to view result 
+        // Create SKCanvasView to view result
         SKCanvasView canvasView = new SKCanvasView();
         canvasView.PaintSurface += OnCanvasViewPaintSurface;
         Content = canvasView;
@@ -268,7 +268,7 @@ public partial class MonkeyMoustachePage : ContentPage
 
 ![登山愛好者](drawing-images/MountainClimbers.jpg "登山愛好者")
 
-たとえば、アクセス許可は、この写真を公開する左側の monkey から受信していません。 1 つのソリューションと呼ばれる手法を使用して、monkey の顔が見えにくく_pixelization_します。 面のピクセルは、機能することはできませんので、色のブロックに置き換えられます。 色のブロックは、通常、これらのブロックに対応するピクセルの色の平均を計算して、元のイメージから派生します。 ただし、自分でこの平均を実行する必要はありません。 小さいピクセル寸法にビットマップをコピーするときに自動的に発生します。 
+たとえば、アクセス許可は、この写真を公開する左側の monkey から受信していません。 1 つのソリューションと呼ばれる手法を使用して、monkey の顔が見えにくく_pixelization_します。 面のピクセルは、機能することはできませんので、色のブロックに置き換えられます。 色のブロックは、通常、これらのブロックに対応するピクセルの色の平均を計算して、元のイメージから派生します。 ただし、自分でこの平均を実行する必要はありません。 小さいピクセル寸法にビットマップをコピーするときに自動的に発生します。
 
 左 monkey の面では、約 72 ピクセルの正方形の領域 (112、238) 時点で、左上隅を占有します。 8-8 でピクセルの正方形は、それぞれの色付きのブロックの 9-9 で配列を 72 ピクセルの四角形の領域で置換しましょう。
 
@@ -312,7 +312,7 @@ public class PixelizedImagePage : ContentPage
             canvas.DrawBitmap(originalBitmap, new SKPoint());
 
             // Draw tiny bitmap to cover face
-            canvas.DrawBitmap(faceBitmap, 
+            canvas.DrawBitmap(faceBitmap,
                               new SKRect(112, 238, 184, 310));  // destination
         }
 
@@ -369,7 +369,7 @@ using (SKCanvas canvas = new SKCanvas(rotatedBitmap))
     canvas.RotateDegrees(90);
     canvas.DrawBitmap(bitmap, new SKPoint());
 }
-```                        
+```
 
 同様の関数を反時計回りに 90 度回転を次に示します。
 
@@ -402,7 +402,7 @@ using (SKCanvas canvas = new SKCanvas(rotatedBitmap))
 }
 ```
 
-ただし、一般的なケースでは、このロジックは回転したビットマップの角に丸みをトリミングします。 三角関数を使用して、これらの角を含める回転したビットマップのサイズを計算することをお勧めします。 
+ただし、一般的なケースでは、このロジックは回転したビットマップの角に丸みをトリミングします。 三角関数を使用して、これらの角を含める回転したビットマップのサイズを計算することをお勧めします。
 
 この三角法が示した、**ビットマップ ローテータ**ページ。 XAML ファイルのインスタンスを作成、`SKCanvasView`と`Slider`する範囲は 0 ~ 360 度、`Label`現在の値を表示します。
 
@@ -436,7 +436,7 @@ using (SKCanvas canvas = new SKCanvas(rotatedBitmap))
 ```csharp
 public partial class BitmapRotatorPage : ContentPage
 {
-    static readonly SKBitmap originalBitmap = 
+    static readonly SKBitmap originalBitmap =
         BitmapExtensions.LoadBitmapResource(typeof(BitmapRotatorPage),
             "SkiaSharpFormsDemos.Media.Banana.jpg");
 
@@ -514,7 +514,7 @@ public partial class BitmapRotatorPage : ContentPage
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        
+
         <skia:SKCanvasView x:Name="canvasView"
                            Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
                            PaintSurface="OnCanvasViewPaintSurface" />
@@ -532,7 +532,7 @@ public partial class BitmapRotatorPage : ContentPage
 </ContentPage>
 ```
 
-分離コード ファイルでこれら 2 つの操作を実装する、`Clicked`ボタンのハンドラー。 
+分離コード ファイルでこれら 2 つの操作を実装する、`Clicked`ボタンのハンドラー。
 
 ```csharp
 public partial class BitmapFlipperPage : ContentPage
@@ -588,7 +588,7 @@ public partial class BitmapFlipperPage : ContentPage
 }
 ```
 
-水平方向のスケーリング ファクターでスケーリングの変換によって、垂直方向に反転が実現されます&ndash;1。 スケーリングの中心は、ビットマップの垂直方向の中央です。 水平方向に反転の垂直方向のスケーリング ファクターでスケーリングの変換は、 &ndash;1。 
+水平方向のスケーリング ファクターでスケーリングの変換によって、垂直方向に反転が実現されます&ndash;1。 スケーリングの中心は、ビットマップの垂直方向の中央です。 水平方向に反転の垂直方向のスケーリング ファクターでスケーリングの変換は、 &ndash;1。
 
 Monkey のシャツで反転レタリングからわかる、反転の回転と同じではありません。 右側の UWP スクリーン ショットに示すようは 180 度回転と同じでは両方の水平および垂直方向に反転します。
 

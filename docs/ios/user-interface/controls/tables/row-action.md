@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/25/2017
-ms.openlocfilehash: 41aabb5e8b6d3eb46a92ee194c6b6b5e3ca51943
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: e90e108e6b02055a585129b6412641a726afaab4
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655632"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226298"
 ---
 # <a name="working-with-row-actions-in-xamarinios"></a>Xamarin の行アクションの操作 (iOS)
 
@@ -22,7 +22,7 @@ _このガイドでは、Uiswipeactions Configuration または Uiswipeactionsco
 
 iOS には`UISwipeActionsConfiguration` 、テーブルに対して操作を実行する`UITableViewRowAction`2 つの方法 (と) が用意されています。
 
-`UISwipeActionsConfiguration`は、iOS 11 で導入され、ユーザーがテーブルビューの行に対して_いずれかの方向で_スワイプしたときに実行する一連のアクションを定義するために使用されます。 この動作は、ネイティブのメールアプリの動作と似ています。 
+`UISwipeActionsConfiguration`は、iOS 11 で導入され、ユーザーがテーブルビューの行に対して_いずれかの方向で_スワイプしたときに実行する一連のアクションを定義するために使用されます。 この動作は、ネイティブのメールアプリの動作と似ています。
 
 `UITableViewRowAction`クラスは、ユーザーがテーブルビューの行で水平にスワイプたときに実行されるアクションを定義するために使用されます。
 たとえば、テーブルを編集するときに、行を左にスワイプすると、既定で **[削除]** ボタンが表示されます。 `UITableViewRowAction`クラスの複数のインスタンスを`UITableView`にアタッチすることにより、複数のカスタムアクションを定義し、それぞれに独自のテキスト、書式設定、および動作を設定できます。
@@ -32,7 +32,7 @@ iOS には`UISwipeActionsConfiguration` 、テーブルに対して操作を実�
 
 スワイプ操作`UISwipeActionsConfiguration`を実装するには、次の3つの手順が必要です。
 
-1. `GetTrailingSwipeActionsConfiguration`メソッドとメソッドをオーバーライド`GetLeadingSwipeActionsConfiguration`します。 これらのメソッドは`UISwipeActionsConfiguration`を返します。 
+1. `GetTrailingSwipeActionsConfiguration`メソッドとメソッドをオーバーライド`GetLeadingSwipeActionsConfiguration`します。 これらのメソッドは`UISwipeActionsConfiguration`を返します。
 2. 返される`UISwipeActionsConfiguration`をインスタンス化します。 このクラスは、の`UIContextualAction`配列を受け取ります。
 3. `UIContextualAction` を作成します。
 
@@ -40,7 +40,7 @@ iOS には`UISwipeActionsConfiguration` 、テーブルに対して操作を実�
 
 ### <a name="1-implementing-the-swipeactionsconfigurations-methods"></a>1. SwipeActionsConfigurations メソッドの実装
 
-`UITableViewController`(およびも`UITableViewSource` `UITableViewDelegate` )に`GetTrailingSwipeActionsConfiguration`は、テーブルビュー行にスワイプアクションのセットを実装するために使用されるとという2つのメソッドが含まれています。`GetLeadingSwipeActionsConfiguration` 先頭のスワイプ操作では、画面の左側から左から右の言語でスワイプを参照し、右から左に記述する言語で画面の右側からスワイプを参照します。 
+`UITableViewController`(およびも`UITableViewSource` `UITableViewDelegate` )に`GetTrailingSwipeActionsConfiguration`は、テーブルビュー行にスワイプアクションのセットを実装するために使用されるとという2つのメソッドが含まれています。`GetLeadingSwipeActionsConfiguration` 先頭のスワイプ操作では、画面の左側から左から右の言語でスワイプを参照し、右から左に記述する言語で画面の右側からスワイプを参照します。
 
 次の例では、(「行[Wipeactions](https://docs.microsoft.com/samples/xamarin/ios-samples/tableswipeactions)サンプル」から) リーディングスワイプ構成を実装する方法を示しています。 コンテキストアクションからは、[次](#create-uicontextualaction)に説明する2つのアクションが作成されます。 これらのアクションは、戻り値として[`UISwipeActionsConfiguration`](#create-uiswipeactionsconfigurations)使用される、新しく初期化されたに渡されます。
 
@@ -54,11 +54,11 @@ public override UISwipeActionsConfiguration GetLeadingSwipeActionsConfiguration(
 
     //UISwipeActionsConfiguration
     var leadingSwipe = UISwipeActionsConfiguration.FromActions(new UIContextualAction[] { flagAction, definitionAction });
-    
+
     leadingSwipe.PerformsFirstActionWithFullSwipe = false;
-    
+
     return leadingSwipe;
-}  
+}
 ```
 
 <a name="create-uiswipeactionsconfigurations" />
@@ -99,10 +99,10 @@ public UIContextualAction ContextualFlagAction(int row)
                         "Flag",
                         (FlagAction, view, success) => {
                             var alertController = UIAlertController.Create($"Report {words[row]}?", "", UIAlertControllerStyle.Alert);
-                            alertController.AddAction(UIAlertAction.Create("Cancel", UIAlertActionStyle.Cancel, null)); 
+                            alertController.AddAction(UIAlertAction.Create("Cancel", UIAlertActionStyle.Cancel, null));
                             alertController.AddAction(UIAlertAction.Create("Yes", UIAlertActionStyle.Destructive, null));
                             PresentViewController(alertController, true, null);
-                            
+
                             success(true);
                         });
 

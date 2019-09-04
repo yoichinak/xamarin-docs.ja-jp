@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/14/2017
-ms.openlocfilehash: 5e5cc20e9fbeaf2b00e022ccdbf67286aed6d5ef
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 3920445c234344fe7f2a1cdd93ed7f4f6405727d
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528816"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226585"
 ---
 # <a name="photokit-in-xamarinios"></a>Xamarin の PhotoKit
 
@@ -25,13 +25,13 @@ PhotoKit は、モデルオブジェクトを呼び出す対象の資産を表�
 
 ## <a name="querying-model-data"></a>モデルデータのクエリ
 
-PhotoKit を使用すると、さまざまなフェッチ方法でモデルデータのクエリを簡単に実行できます。 たとえば、すべてのイメージを取得するには、 `PFAsset.Fetch`メディアの種類`PHAssetMediaType.Image`を渡してを呼び出します。
+PhotoKit を使用すると、さまざまなフェッチ方法でモデルデータのクエリを簡単に実行できます。 たとえば、すべてのイメージを取得するには、 `PHAsset.Fetch`メディアの種類`PHAssetMediaType.Image`を渡してを呼び出します。
 
 ```csharp
 PHFetchResult fetchResults = PHAsset.FetchAssets (PHAssetMediaType.Image, null);
 ```
 
-インスタンス`PHFetchResult`には、イメージを表す`PFAsset`すべてのインスタンスが含まれます。 イメージ自体を取得するには、 `PHImageManager` (またはのキャッシュ`PHCachingImageManager`バージョン) を使用して、を呼び出し`RequestImageForAsset`てイメージに対する要求を行います。 たとえば、次のコードは、コレクションビューのセルに表示`PHFetchResult`する内の各資産のイメージを取得します。
+インスタンス`PHFetchResult`には、イメージを表す`PHAsset`すべてのインスタンスが含まれます。 イメージ自体を取得するには、 `PHImageManager` (またはのキャッシュ`PHCachingImageManager`バージョン) を使用して、を呼び出し`RequestImageForAsset`てイメージに対する要求を行います。 たとえば、次のコードは、コレクションビューのセルに表示`PHFetchResult`する内の各資産のイメージを取得します。
 
 ```csharp
 public override UICollectionViewCell GetCell (UICollectionView collectionView, NSIndexPath indexPath)

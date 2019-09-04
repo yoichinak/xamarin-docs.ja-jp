@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2018
-ms.openlocfilehash: 5fccc07d35eda1ba420f48a8058d8d2a00b18fd9
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 6a5c06d64a06d8b1a7bcbf32e99905494cd06180
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69523199"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70225496"
 ---
 # <a name="troubleshooting-tips"></a>トラブルシューティングのヒント
 
@@ -95,24 +95,24 @@ Xamarin Android では、次のシステムプロパティがサポートされ�
 
 - *mono. env*:Mono が初期化さ *|* *れる前*に、アプリケーションの起動時にエクスポートする環境変数の、パイプで区切られた (' ') リスト。 これにより、mono ログを制御する環境変数を設定できます。
 
-    - *注*:値は *|* ' ' で区切られているため、値は引用符の追加レベルを持つ必要が\`あります。これは、 *adb シェル*\`コマンドによって一連の引用符が削除されるためです。
+  - *注*:値は *|* ' ' で区切られているため、値は引用符の追加レベルを持つ必要が\`あります。これは、 *adb シェル*\`コマンドによって一連の引用符が削除されるためです。
 
-    - *注*:Android システムプロパティの値の長さは92文字以下でなければなりません。
+  - *注*:Android システムプロパティの値の長さは92文字以下でなければなりません。
 
-    - 例:
+  - 例:
 
-      ```
-      adb shell setprop debug.mono.env "'MONO_LOG_LEVEL=info|MONO_LOG_MASK=asm'"
-      ```
+    ```
+    adb shell setprop debug.mono.env "'MONO_LOG_LEVEL=info|MONO_LOG_MASK=asm'"
+    ```
 
 - *debug.mono.log*:Android デバッグログに追加のメッセージを出力する必要があるコンポーネントのコンマ区切り (' *,* ') リスト。 既定では、何も設定されていません。 コンポーネントは次のとおりです。
 
-    - *すべて*:すべてのメッセージを印刷する
-    - *gc*:GC 関連のメッセージを出力します。
-    - *グリーン*:印刷 (脆弱、グローバル) 参照の割り当てと解放のメッセージ。
-    - *持つ*:ローカル参照の割り当てと解放のメッセージを出力します。
+  - *すべて*:すべてのメッセージを印刷する
+  - *gc*:GC 関連のメッセージを出力します。
+  - *グリーン*:印刷 (脆弱、グローバル) 参照の割り当てと解放のメッセージ。
+  - *持つ*:ローカル参照の割り当てと解放のメッセージを出力します。
 
-    *注*: これらは*非常*に冗長です。 本当に必要な場合を除き、有効にしないでください。
+  *注*: これらは*非常*に冗長です。 本当に必要な場合を除き、有効にしないでください。
 
 - 次のように*トレースし*ます。[Mono--trace](http://docs.go-mono.com/?link=man%3amono(1)) `=PROPERTY_VALUE`設定を設定できます。
 
@@ -181,7 +181,7 @@ D/Mono ( 2073): GC_MAJOR: (user request) pause 2.17ms, total 2.47ms, bridge 28.7
 
 ## <a name="global-reference-messages"></a>グローバル参照メッセージ
 
-グローバル参照 loggig (グリーン) のログ記録を有効にするには、次のように、 *mono. log*システムプロパティに値が含まれている必要があります。
+グローバル参照 loggig (グリーン) のログ記録を有効にするには、次のように、 *mono. log*システムプロパティに値*が含まれ*ている必要があります。
 
 ```shell
 adb shell setprop debug.mono.log gref
@@ -348,14 +348,14 @@ emulator -partition-size 512 -avd MonoDroid
 Android パッケージ名にはピリオド (' *.* ') を含める*必要があり*ます。 パッケージ名を編集して、ピリオドが含まれるようにします。
 
 - Visual Studio 内:
-    - プロジェクトを右クリックし > プロパティ をクリックします。
-    - 左側の [Android マニフェスト] タブをクリックします。
-    - [パッケージ名] フィールドを更新します。
-        - 「No androidmanifest」というメッセージ&ldquo;が表示された場合。 1つを追加する場合にクリックします。&rdquo;で、リンクをクリックし、[パッケージ名] フィールドを更新します。
+  - プロジェクトを右クリックし > プロパティ をクリックします。
+  - 左側の [Android マニフェスト] タブをクリックします。
+  - [パッケージ名] フィールドを更新します。
+    - 「No androidmanifest」というメッセージ&ldquo;が表示された場合。 1つを追加する場合にクリックします。&rdquo;で、リンクをクリックし、[パッケージ名] フィールドを更新します。
 - Visual Studio for Mac 内:
-    - プロジェクト > オプションを右クリックします。
-    - [ビルド/Android アプリケーション] セクションに移動します。
-    - "." が含まれるように [パッケージ名] フィールドを変更します。
+  - プロジェクト > オプションを右クリックします。
+  - [ビルド/Android アプリケーション] セクションに移動します。
+  - "." が含まれるように [パッケージ名] フィールドを変更します。
 
 
 
@@ -364,7 +364,7 @@ Android パッケージ名にはピリオド (' *.* ') を含める*必要があ
 
 このコンテキストの "共有ライブラリ" は、ネイティブ共有ライブラリ (*libfoo.so*) ファイルでは*ありません*。代わりに、Google Maps など、ターゲットデバイスに個別にインストールする必要があるライブラリです。
 
-Android パッケージでは、 `<uses-library/>`要素に必要な共有ライブラリを指定します。 *必要な*ライブラリがターゲットデバイスに存在しない場合 (既定で`//uses-library/@android:required`は*true*に設定されて *\_\_\_いる場合など)、パッケージのインストールは失敗します。\_ライブラリ*。
+Android パッケージでは、 `<uses-library/>`要素に必要な共有ライブラリを指定します。 *必要な*ライブラリがターゲットデバイスに存在しない場合 (既定で`//uses-library/@android:required`は*true*に設定さ*れ\_て\_\_いる場合など)、パッケージのインストールは失敗します。\_ライブラリ*。
 
 どの共有ライブラリが必要かを判断するには、*生成さ*
 れた**androidmanifest .xml**ファイル (例: **obj\\Debug\\android\\androidmanifest .xml**) を表示し、 `<uses-library/>`要素。 `<uses-library/>`要素は、プロジェクトの**プロパティ\\と roidmanifest .xml**ファイルに手動で追加することも、[ユーザー属性のカスタム属性](xref:Android.App.UsesLibraryAttribute)を使用して追加することもできます。
@@ -690,7 +690,7 @@ E/dalvikvm( 123): VM aborting
 
 - おそらく、アプリケーションプロジェクトには、System. .dll、Microsoft. CSharp. .dll への参照が含まれていません。 これらのアセンブリが参照されていることを確認します。
 
-    - 動的コードは常にコストがかかることに注意してください。 効率的なコードが必要な場合は、動的コードを使用しないことを検討してください。
+  - 動的コードは常にコストがかかることに注意してください。 効率的なコードが必要な場合は、動的コードを使用しないことを検討してください。
 
 - 最初のプレビューでは、各アセンブリの型がアプリケーションコードによって明示的に使用されていない限り、これらのアセンブリは除外されていました。 回避策については、次を参照してください。[http://lists.ximian.com/pipermail/mo...il/009798.html](http://lists.ximian.com/pipermail/monodroid/2012-April/009798.html)
 

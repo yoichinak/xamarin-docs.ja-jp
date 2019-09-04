@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2018
-ms.openlocfilehash: f4acadc1153c93ebade7453cfd7a79f5b052e513
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 14f7692c88f5047f1250707940e3871371aecc8b
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528355"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227958"
 ---
 # <a name="part-1-getting-started-with-xaml"></a>第 1 部です。 XAML の概要
 
@@ -30,13 +30,13 @@ _Xamarin.Forms アプリケーションで XAML ページの視覚的内容を�
 
 、Windows で Visual Studio を使用して**ファイル > 新規 > プロジェクト** メニューから。 **新しいプロジェクト**ダイアログ ボックスで、 **Visual C# > クロス プラットフォーム**、左側にあるし、**モバイル アプリ (Xamarin.Forms)** センターの一覧から。
 
-![](get-started-with-xaml-images/win/newprojectdialog.w157.png "新しいプロジェクト ダイアログ ボックス")
+![[新しいプロジェクト] ダイアログ](get-started-with-xaml-images/win/newprojectdialog.w157.png)
 
 ソリューションの場所を選択の名前を付けます**XamlSamples** (またはに応じて)、キーを押します**OK**します。
 
 次の画面で選択、**空のアプリ**テンプレートと **.NET Standard**コード共有方法。
 
-![](get-started-with-xaml-images/win/newcrossplatformapp.png "新しいアプリのダイアログ")
+![新しいアプリダイアログ](get-started-with-xaml-images/win/newcrossplatformapp.png)
 
 **[OK]** を押します。
 
@@ -46,19 +46,19 @@ _Xamarin.Forms アプリケーションで XAML ページの視覚的内容を�
 
 Visual studio for Mac では、次のように選択します。**ファイル > 新しいソリューション** メニューから。 **新しいプロジェクト**ダイアログ ボックスで、**マルチプラット フォーム > アプリ**、左側にあると **空白フォームのアプリ** (*いない* **フォーム アプリ** ) テンプレートの一覧から。
 
-![](get-started-with-xaml-images/mac/newprojectdialog1.png "新しいプロジェクト ダイアログ ボックス 1")
+![[新しいプロジェクト] ダイアログ1](get-started-with-xaml-images/mac/newprojectdialog1.png)
 
 キーを押して**次**します。
 
 次のダイアログで、プロジェクトに名前を付けますの**XamlSamples** (またはに応じて)。 確認します、**使用して .NET Standard**オプション ボタンを選択します。
 
-![](get-started-with-xaml-images/mac/newprojectdialog2.png "新しいプロジェクト ダイアログ ボックス 2")
+![[新しいプロジェクト] ダイアログ2](get-started-with-xaml-images/mac/newprojectdialog2.png)
 
 キーを押して**次**します。
 
 次のダイアログ ボックスで、プロジェクトの場所を選択できます。
 
-![](get-started-with-xaml-images/mac/newprojectdialog3.png "新しいプロジェクト ダイアログ 3")
+![[新しいプロジェクト] ダイアログ3](get-started-with-xaml-images/mac/newprojectdialog3.png)
 
 キーを押して**作成**
 
@@ -141,7 +141,7 @@ Visual Studio では、プロジェクトをビルド、生成する XAML ファ
 
 コンパイルして、このプログラムを実行するときに、`Label`が示すように、XAML 要素は、ページの中央に表示されます。
 
-[![](get-started-with-xaml-images/xamlsamples.png "既定の Xamarin.Forms 表示")](get-started-with-xaml-images/xamlsamples-large.png#lightbox "Xamarin.Forms の既定の表示")
+[![既定の Xamarin. フォームの表示](get-started-with-xaml-images/xamlsamples.png)](get-started-with-xaml-images/xamlsamples-large.png#lightbox)
 
 さらに興味深いビジュアルは、必要な詳細は XAML の興味深いです。
 
@@ -151,13 +151,13 @@ Visual Studio では、プロジェクトをビルド、生成する XAML ファ
 
 その他の XAML ベースを追加する`ContentPage`をプロジェクトにクラスを選択、 **XamlSamples** .NET Standard ライブラリ プロジェクトし、呼び出す、**プロジェクト > 新しい項目の追加**メニュー項目。 左側にある、**新しい項目の追加**ダイアログ ボックスで、 **Visual C#** と**Xamarin.Forms**します。 一覧から選択**コンテンツ ページ**(いない**コンテンツ ページ (C#)** 、コードのみ ページを作成するまたは**コンテンツ ビュー**、ページではない)。 ページの名前、たとえば、 **HelloXamlPage.xaml**:
 
-![](get-started-with-xaml-images/win/addnewitemdialog.w157.png "新しい項目 ダイアログ ボックスを追加します。")
+![[新しい項目の追加] ダイアログ](get-started-with-xaml-images/win/addnewitemdialog.w157.png)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 その他の XAML ベースを追加する`ContentPage`をプロジェクトにクラスを選択、 **XamlSamples** .NET Standard ライブラリ プロジェクトし、呼び出す、**ファイル > 新しいファイル**メニュー項目。 左側にある、**新しいファイル**ダイアログ ボックスで、**フォーム**、左側にあると**フォーム ContentPage Xaml** (いない**フォーム ContentPage**をコードのみ ページを作成または**コンテンツ ビュー**ページではない)。 ページの名前、たとえば、 **HelloXamlPage**:
 
-![](get-started-with-xaml-images/mac/newfiledialog.png "新しいファイル ダイアログ")
+![[新しいファイル] ダイアログ](get-started-with-xaml-images/mac/newfiledialog.png)
 
 -----
 
@@ -278,7 +278,7 @@ public MainPage()
 
 設定、 `Content` 、ページのプロパティの設定が置き換えられます、 `Content` XAML ファイルのプロパティ。 コンパイルし、このプログラムの新しいバージョンを展開すると、画面にボタンが表示されます。 移動する、キーを押して`HelloXamlPage`します。 IPhone、Android、および UWP の結果ページを次に示します。
 
-[![](get-started-with-xaml-images/helloxaml1.png "ラベルのテキストを回転")](get-started-with-xaml-images/helloxaml1-large.png#lightbox "ラベルのテキストの回転")
+[![回転したラベルのテキスト](get-started-with-xaml-images/helloxaml1.png)](get-started-with-xaml-images/helloxaml1-large.png#lightbox)
 
 移動できます`MainPage`を使用して、 **< 戻る**ios では、ページの上部にある、または android では、電話の下部にある左向きの矢印を使用して、または Windows 10 ではページの上部にある左向きの矢印を使用してボタンをクリックします。
 
@@ -288,7 +288,7 @@ public MainPage()
 
 次のような見た目に示します。
 
-[![](get-started-with-xaml-images/helloxaml2.png "Unicode 文字がラベルのテキストを回転")](get-started-with-xaml-images/helloxaml2-large.png#lightbox "Unicode 文字がラベルのテキストの回転")
+[![Unicode 文字を使用したラベルテキストの回転](get-started-with-xaml-images/helloxaml2.png)](get-started-with-xaml-images/helloxaml2-large.png#lightbox)
 
 ## <a name="xaml-and-code-interactions"></a>XAML とコードの相互作用
 
@@ -316,7 +316,7 @@ public MainPage()
 
 この XAML ファイルが構文的に完了して、外観を次に示します。
 
-[![](get-started-with-xaml-images/xamlpluscode1.png "複数のコントロールをページに")](get-started-with-xaml-images/xamlpluscode1-large.png#lightbox "ページ上の複数のコントロール")
+[![ページ上の複数のコントロール](get-started-with-xaml-images/xamlpluscode1.png)](get-started-with-xaml-images/xamlpluscode1-large.png#lightbox)
 
 ただし、このプログラムに機能的には不十分なを検討する可能性がしています。 おそらく、`Slider`が発生することになって、`Label`現在の値を表示して、`Button`プログラム内で作業を行うためのものでは、可能性があります。
 
@@ -407,7 +407,7 @@ void OnSliderValueChanged(object sender, ValueChangedEventArgs args)
 
 最初に、プログラムを実行すると、`Label`が表示されない、`Slider`ため、その値、`ValueChanged`イベントがまだ発生していません。 操作が、`Slider`により値が表示されます。
 
-[![](get-started-with-xaml-images/xamlpluscode2.png "スライダーの値が表示される")](get-started-with-xaml-images/xamlpluscode2-large.png#lightbox "スライダーの値が表示されます")
+[![表示されるスライダーの値](get-started-with-xaml-images/xamlpluscode2.png)](get-started-with-xaml-images/xamlpluscode2-large.png#lightbox)
 
 用に今すぐ、`Button`します。 応答をシミュレーションしてみましょう、`Clicked`イベントのアラートを表示することによって、`Text`ボタンの。 イベント ハンドラーは安全にキャストできます、`sender`への引数、`Button`し、そのプロパティをアクセスします。
 

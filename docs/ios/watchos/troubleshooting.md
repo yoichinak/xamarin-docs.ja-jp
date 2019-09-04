@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 4ce217d31811df82f0779a22d0c64464b5295fcc
-ms.sourcegitcommit: 3434624a36a369986b6aeed7959dae60f7112a14
+ms.openlocfilehash: 1777bfe627d0dc579169c954f7799348befbf6b8
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69629667"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227027"
 ---
 # <a name="watchos-troubleshooting"></a>watchOS のトラブルシューティング
 
@@ -36,7 +36,7 @@ ms.locfileid: "69629667"
 <a name="deploy" />
 
 - 以前のリリースの Visual Studio for Mac では、 **AppleCompanionSettings**アイコンの1つが正しくないとして表示されます。これにより、App Store に送信しようとするとアイコンが表示されないという**エラーが発生**します。
-    このアイコンは 87 x 87 ピクセルである必要があります (29 単位 **@3x** Retina 画面)。 Xcode のイメージ資産を編集するか、([このサンプル](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132)に一致するように ) 手動でファイルを編集すること Visual Studio for Mac で、これを修正することはできません。
+    このアイコンは 87 x 87 ピクセルである必要があります (29 単位 **@3x** Retina 画面)。 Xcode のイメージ資産を編集するか、([このサンプル](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132)に一致するように) 手動で**ファイルを**編集すること Visual Studio for Mac で、これを修正することはできません。
 
 - Watch 拡張機能プロジェクトの**WKApp バンドル id**が watch アプリの**バンドル id**と一致するように[正しく設定](~/ios/watchos/get-started/project-references.md)されていない場合、デバッガーは接続に失敗し、"デバッガーを待機 Visual Studio for Mac しています >。 *"接続"* 。
 
@@ -76,7 +76,7 @@ with an alpha channel. Icons should not have an alpha channel.
 
     ![](troubleshooting-images/remove-alpha-sml.png "アルファチャネルが存在する場合、表示されるダイアログには [アルファ] チェックボックスが表示されます。")
 
-3. **アルファ**チェックボックスをオフにし、正しい場所にファイルを**保存**します。
+3. **アルファ**チェックボックスを*オフにし*、正しい場所にファイルを**保存**します。
 
 4. これで、アイコンイメージは Apple の検証チェックに合格します。
 
