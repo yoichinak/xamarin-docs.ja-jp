@@ -22,14 +22,14 @@ _ビヘイビアーを使うと、ユーザー インターフェイス コン�
 
 ビヘイビアーを使うと、通常はコードビハインドとして記述する必要があるコードを実装できます。それはこれが、コントロールに簡潔にアタッチされるような方法で、コントロールの API と直接やり取りするためです。 この記事では、ビヘイビアーの概要を説明します。
 
-## <a name="attached-behaviorsattachedmd"></a>[関連付けられた動作](attached.md)
+## <a name="attached-behaviorsattachedmd"></a>[関連付けられたビヘイビアー](attached.md)
 
 アタッチされたビヘイビアーは、1 つ以上のアタッチされたプロパティを含む `static` クラスです。 この記事では、アタッチされたビヘイビアーを作成して使用する方法を示します。
 
-## <a name="xamarinforms-behaviorscreatingmd"></a>[Xamarin.Forms の動作](creating.md)
+## <a name="xamarinforms-behaviorscreatingmd"></a>[Xamarin.Forms のビヘイビアー](creating.md)
 
 Xamarin.Forms のビヘイビアーは、[`Behavior`](xref:Xamarin.Forms.Behavior) または [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) クラスから派生させて作成します。 この記事では、Xamarin.Forms のビヘイビアーを作成して使用する方法を示します。
 
-## <a name="reusable-behaviorsreusableindexmd"></a>[再利用可能な動作](reusable/index.md)
+## <a name="reusable-behaviorsreusableindexmd"></a>[再利用可能なビヘイビアー](reusable/index.md)
 
 ビヘイビアーは複数のアプリケーション全体で再利用可能です。 これらの記事では、便利なビヘイビアーを作成して一般的に使用される機能を実行する方法について説明します。
