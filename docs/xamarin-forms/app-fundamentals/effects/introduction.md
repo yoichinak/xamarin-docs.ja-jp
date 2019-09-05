@@ -41,7 +41,7 @@ Xamarin.Forms の [Pages、Layouts、Controls](~/xamarin-forms/user-interface/co
 |プラットフォーム|名前空間|コンテナー|コントロール|
 |--- |--- |--- |--- |
 |iOS|Xamarin.Forms.Platform.iOS|UIView|UIView|
-|Android|Xamarin.Forms.Platform.Android|ViewGroup|表示|
+|Android|Xamarin.Forms.Platform.Android|ViewGroup|View|
 |ユニバーサル Windows プラットフォーム (UWP)|Xamarin.Forms.Platform.UWP|FrameworkElement|FrameworkElement|
 
 プラットフォーム固有の各 `PlatformEffect` クラスは次のプロパティを公開します。
