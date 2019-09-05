@@ -4,15 +4,15 @@ description: このドキュメントでは、Visual Studio を使用して Xama
 ms.prod: xamarin
 ms.assetid: bf3c779f-959f-428d-babb-428f363f7e4e
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 05/02/2018
-ms.openlocfilehash: e6f95713fdf3dbe8983c9f51554df7165637fc9a
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: 45c7c3a90fa0dedfed8f5f325a96b4c7aa7a5a9e
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58855134"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292034"
 ---
 # <a name="introduction-to-xamarinios-for-visual-studio"></a>Xamarin.iOS for Visual Studio の概要
 
@@ -135,7 +135,7 @@ Visual Studio 内からの新しい iOS プロジェクトの作成は、他の�
 
 ![](introduction-to-xamarin-ios-for-visual-studio-images/iosdesigner.png "iOS Designer の Main.storyboard")
 
-オブジェクトをビューに追加するには、**[ツールボックス]** ウィンドウを使用して、デザイン サーフェイスにアイテムをドラッグ アンド ドロップします。 ツールボックスがまだ追加されていない場合は、**[ビュー]、[ツールボックス]** の順に選択して追加できます。 以下のように **[プロパティ]** ウィンドウを使用して、オブジェクト プロパティを変更し、そのレイアウトを調整し、イベントを作成することができます。
+オブジェクトをビューに追加するには、 **[ツールボックス]** ウィンドウを使用して、デザイン サーフェイスにアイテムをドラッグ アンド ドロップします。 ツールボックスがまだ追加されていない場合は、 **[ビュー]、[ツールボックス]** の順に選択して追加できます。 以下のように **[プロパティ]** ウィンドウを使用して、オブジェクト プロパティを変更し、そのレイアウトを調整し、イベントを作成することができます。
 
 ![](introduction-to-xamarin-ios-for-visual-studio-images/properties.png "プロパティ ウィンドウ")
 

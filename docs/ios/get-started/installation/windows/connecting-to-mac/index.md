@@ -4,15 +4,15 @@ description: このガイドでは、[Mac とペアリング] を使って Visua
 ms.prod: xamarin
 ms.assetid: 39DD7B3F-3E69-4E2A-B743-4C26AF613025
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 05/29/2018
-ms.openlocfilehash: e77a5d7863428d743c536b5aa7b2bb88d12cffc0
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 5889859543deaecccb72740fccbc2b3343a8297f
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64978326"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292128"
 ---
 # <a name="pair-to-mac-for-xamarinios-development"></a>Xamarin.iOS 開発のために Mac とペアリングする
 
@@ -39,12 +39,12 @@ Visual Studio 2019 の [Mac とペアリング] 機能は、Windows ベースの
 - Windows のコマンド ラインを使って、iOS アプリケーションをビルドできます。
 
 > [!NOTE]
-> 
+>
 > このガイドの手順の前に、次の手順を実行します。
-> 
+>
 > - Windows コンピューターで、[Visual Studio 2019 をインストール](~/get-started/installation/windows.md)します
 > - Mac で、[Xcode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12) と [Visual Studio for Mac をインストール](https://docs.microsoft.com/visualstudio/mac/installation)します
->    - 任意の追加コンポーネントを追加できるように、_インストール後に手動で Xcode を開く必要があります_。
+>   - 任意の追加コンポーネントを追加できるように、_インストール後に手動で Xcode を開く必要があります_。
 >
 > Visual Studio for Mac をインストールしない方がよい場合は、Visual Studio 2019 は Xamarin.iOS と Mono で Mac ビルド ホストを自動的に構成できます。
 > Xcode は引き続きインストールして実行する必要があります。
@@ -74,28 +74,28 @@ Mac ビルド ホストを設定するには、まずリモート ログイン�
 
 1. Visual Studio 2019 で、既存の iOS プロジェクトを開くか、 **[ファイル] > [新規] > [プロジェクト]** の順に選択し、iOS プロジェクト テンプレートを選択して、新しいプロジェクトを作成します。
 
-2. **[Mac とペアリング]** ダイアログを開きます。 
+2. **[Mac とペアリング]** ダイアログを開きます。
 
     - [iOS] ツール バーの **[Mac とペアリング]** ボタンを使います。
 
-        ![[Mac とペアリング] ボタンが強調表示されている [iOS] ツール バー](images/ios-toolbar.png "[Mac とペアリング] ボタンが強調表示されている [iOS] ツール バー")
+      ![[Mac とペアリング] ボタンが強調表示されている [iOS] ツール バー](images/ios-toolbar.png "[Mac とペアリング] ボタンが強調表示されている [iOS] ツール バー")
 
     - または、 **[ツール] > [iOS] > [Mac とペアリング]** の順に選択します。
 
     - **[Mac とペアリング]** ダイアログに、以前に接続したことがあって現在使用可能なすべての Mac ビルド ホストの一覧が表示されます。
 
-        ![[Mac とペアリング] ダイアログ](images/pairtomac.png "[Mac とペアリング] ダイアログ")
+      ![[Mac とペアリング] ダイアログ](images/pairtomac.png "[Mac とペアリング] ダイアログ")
 
-3. 一覧で Mac を選択します。 **[接続]** をクリックします。 
+3. 一覧で Mac を選択します。 **[接続]** をクリックします。
 
 4. ユーザー名とパスワードを入力します。
 
     - 特定の Mac に初めて接続するときは、そのコンピューターのユーザー名とパスワードの入力を求められます。
 
-        ![Mac のユーザー名とパスワードを入力する](images/auth.png "Mac のユーザー名とパスワードを入力する")
+      ![Mac のユーザー名とパスワードを入力する](images/auth.png "Mac のユーザー名とパスワードを入力する")
 
-        > [!TIP]
-        > ログインするときは、フル ネームではなくシステム ユーザー名を使います。
+      > [!TIP]
+      > ログインするときは、フル ネームではなくシステム ユーザー名を使います。
 
     - [Mac とペアリング] はこれらの資格情報を使用して、Mac への新しい SSH 接続を作成します。 成功した場合、Mac 上の **authorized_keys** ファイルにキーが追加されます。 同じ Mac への以降の接続は自動的にログインします。
 
@@ -107,7 +107,7 @@ Mac ビルド ホストを設定するには、まずリモート ログイン�
 
     - Visual Studio 2019 が Mac に接続されていると、 **[Mac とペアリング]** ダイアログのその Mac の項目に、現在接続されていることを示すアイコンが表示されます。
 
-        ![接続された Mac](images/connected.png "接続された Mac")
+      ![接続された Mac](images/connected.png "接続された Mac")
 
       接続できる Mac は一度に 1 台だけです。
 
@@ -126,18 +126,18 @@ Mac とペアリングできない場合は、[Mac を手動で追加](#manually
 
 **[Mac とペアリング]** ダイアログの一覧に特定の Mac が表示されない場合は、手動で追加します。
 
-1. Mac の IP アドレスを確認します。 
+1. Mac の IP アドレスを確認します。
 
     - Mac で **[システム環境設定] > [共有] > [リモート ログイン]** を開きます。
 
-        [![[システム環境設定] > [共有] で表示される Mac の IP アドレス](images/sharing-ipaddress.png "[システム環境設定] > [共有] で表示される Mac の IP アドレス")](images/sharing.png#lightbox)
+      [![[システム環境設定] > [共有] で表示される Mac の IP アドレス](images/sharing-ipaddress.png "[システム環境設定] > [共有] で表示される Mac の IP アドレス")](images/sharing.png#lightbox)
 
-    - または、コマンド ラインを使用します。 ターミナルで次のコマンドを実行します。 
+    - または、コマンド ラインを使用します。 ターミナルで次のコマンドを実行します。
 
-        ```bash
-        $ ipconfig getifaddr en0
-        196.168.1.8
-        ```
+      ```bash
+      $ ipconfig getifaddr en0
+      196.168.1.8
+      ```
 
       ネットワークの構成によっては、`en0` ではなくインターフェイス名を使用する必要があります。 たとえば、`en1`、`en2` などです。
 
@@ -171,7 +171,7 @@ Visual Studio 2017 が [Mac に接続している](#connect-to-the-mac-from-visu
 
 ### <a name="mono"></a>Mono
 
-[Mac とペアリング] は、Mono がインストールされていることを確認します。 インストールされていない場合、[Mac とペアリング] は最新の安定バージョンの Mono をダウンロードして Mac にインストールします。 
+[Mac とペアリング] は、Mono がインストールされていることを確認します。 インストールされていない場合、[Mac とペアリング] は最新の安定バージョンの Mono をダウンロードして Mac にインストールします。
 
 次のスクリーンショットで示すように (クリックすると拡大します)、さまざまなプロンプトで進行状況が示されます。
 

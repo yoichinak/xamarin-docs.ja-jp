@@ -9,12 +9,12 @@ author: conceptdev
 ms.author: crdun
 ms.custom: video
 ms.date: 01/22/2019
-ms.openlocfilehash: 989d0fe1d8fffd74ea5f64ae7bd5a13487d25c0e
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 200ee3fdee3274063becec19fbc6d1504e132a88
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525735"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226644"
 ---
 # <a name="managing-virtual-devices-with-the-android-device-manager"></a>Android Device Manager による仮想デバイスの管理
 
@@ -47,10 +47,10 @@ Android Device Manager を使用するには、次の項目が必要です。
   Android SDK がまだインストールされていない場合は、その既定の場所にインストールします。**C:\\Program Files (x86)\\Android\\android-sdk**。
 
 - ([Android SDK Manager](~/android/get-started/installation/android-sdk.md) を使用して) 次のパッケージをインストールする必要があります。 
-    - **Android SDK Tools バージョン 26.1.1** 以降
-    - **Android SDK プラットフォーム ツール 27.0.1** 以降
-    - **Android SDK Build Tools 27.0.3** 以降 
-    - **Android Emulator 27.2.7** 以降。 
+  - **Android SDK Tools バージョン 26.1.1** 以降
+  - **Android SDK プラットフォーム ツール 27.0.1** 以降
+  - **Android SDK Build Tools 27.0.3** 以降 
+  - **Android Emulator 27.2.7** 以降。 
 
   これらのパッケージの状態は、次のスクリーンショットのように **[インストール済み]** となります。
 
@@ -217,9 +217,9 @@ Android Device Manager を使用するには、次の項目が必要です。
 - Android SDK をインストールする必要があります (「[Xamarin.Android 向け Android SDK を設定する](~/android/get-started/installation/android-sdk.md)」を参照してください)。
 
 - ([Android SDK Manager](~/android/get-started/installation/android-sdk.md) を使用して) 次のパッケージをインストールする必要があります。 
-    - **SDK Tools バージョン 26.1.1** 以降
-    - **Android SDK Platform-Tools 28.0.1** 以降 
-    - **Android SDK Build-Tools 26.0.3** 以降
+  - **SDK Tools バージョン 26.1.1** 以降
+  - **Android SDK Platform-Tools 28.0.1** 以降 
+  - **Android SDK Build-Tools 26.0.3** 以降
 
   これらのパッケージの状態は、次のスクリーンショットのように **[インストール済み]** となります。
 

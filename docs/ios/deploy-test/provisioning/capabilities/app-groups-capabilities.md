@@ -4,15 +4,15 @@ description: アプリケーションに機能を追加するには、多くの�
 ms.prod: xamarin
 ms.assetid: 0A61220B-BBAC-492B-9D3B-578986E64064
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/15/2017
-ms.openlocfilehash: 20aa1da478916bf4c8949103a5ce7fbf1f5d8f93
-ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
+ms.openlocfilehash: cf79f586e5b0ff71c109ea9664d3cb7a6aa91a02
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70064826"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292374"
 ---
 # <a name="app-group-capabilities-in-xamarinios"></a>Xamarin.iOS のアプリ グループ機能
 
