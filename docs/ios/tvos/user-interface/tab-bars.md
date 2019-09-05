@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin でビルドされた tvOS
 ms.prod: xamarin
 ms.assetid: 99A2D7C6-0324-4DE5-B6E9-D39D0BAD8370
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 64b114cad16095a2afd80b690a4654b91b2aa203
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 799dd40caae0323b71cae2c6715bf8cd16f78356
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70199945"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70283976"
 ---
 # <a name="working-with-tvos-tab-bar-controllers-in-xamarin"></a>Xamarin での tvOS タブバーコントローラーの使用
 

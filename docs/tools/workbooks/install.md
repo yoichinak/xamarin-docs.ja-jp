@@ -3,15 +3,15 @@ title: ブックのインストールと要件
 description: このドキュメントでは、Xamarin Workbooks をダウンロードしてインストールする方法について説明します。サポートされるプラットフォームとシステム要件について説明します。
 ms.prod: xamarin
 ms.assetid: 9D4E10E8-A288-4C6C-9475-02969198C119
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 06/19/2018
-ms.openlocfilehash: dd1e0838fbd3c3606021ddc996bf94cabc084f77
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 5292a052d4f93af9b21cc7cbc51891c99d6f9403
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119994"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70285243"
 ---
 # <a name="workbooks-installation-and-requirements"></a>ブックのインストールと要件
 

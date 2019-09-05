@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin iOS アプリで SiriKit �
 ms.prod: xamarin
 ms.assetid: 20FFB981-EB10-48BA-BF79-40F37F0291EB
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 05/03/2018
-ms.openlocfilehash: 78d39b080a136f66c81b48d6cceb5fbdd9d24c11
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 5c891943d0d23c24169a6d226a10f83964c9257a
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68654937"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290636"
 ---
 # <a name="implementing-sirikit-in-xamarinios"></a>Xamarin での SiriKit の実装
 
@@ -77,10 +77,10 @@ SiriKit は拡張機能に基づいて構築されていますが、アプリに
 3. [ **IOS** > **ライブラリ**クラスライブラリ] を選択し、[次へ] ボタンをクリックします。 >  
 
     [![](implementing-sirikit-images/prep02.png "クラスライブラリの選択")](implementing-sirikit-images/prep02.png#lightbox)
-4. 名前`MonkeyChatCommon`として「」と入力し、[**作成**] ボタンをクリックします。 
+4. 名前`MonkeyChatCommon`として「」と入力し、 **[作成]** ボタンをクリックします。 
 
     [![](implementing-sirikit-images/prep03.png "名前に「MonkeyChatCommon」と入力します。")](implementing-sirikit-images/prep03.png#lightbox)
-5. **ソリューションエクスプローラー**でメインアプリの [**参照**] フォルダーを右クリックし、[**参照の編集**] を選択します。**Monkeychatcommon**プロジェクトを確認し、[ **OK** ] ボタンをクリックします。 
+5. **ソリューションエクスプローラー**でメインアプリの **[参照]** フォルダーを右クリックし、 **[参照の編集]** を選択します。**Monkeychatcommon**プロジェクトを確認し、 **[OK]** ボタンをクリックします。 
 
     [![](implementing-sirikit-images/prep05.png "MonkeyChatCommon プロジェクトを確認する")](implementing-sirikit-images/prep05.png#lightbox)
 6. **ソリューションエクスプローラー**で、メインアプリからネイティブライブラリに共通の共有コードをドラッグします。
@@ -92,11 +92,11 @@ SiriKit は拡張機能に基づいて構築されていますが、アプリに
 
 1. Visual Studio を起動し、MonkeyChat アプリを開きます。
 2. **ソリューションエクスプローラー**でソリューション名を右クリックし、[**新しいプロジェクト**の**追加** > ] を選択します。
-3. [**ビジュアルC#**   > **共有プロジェクト**] を選択し、[**次へ**] ボタンをクリックします。 
+3. [**ビジュアルC#**   > **共有プロジェクト**] を選択し、 **[次へ]** ボタンをクリックします。 
 
     [![](implementing-sirikit-images/prep02.w157-sml.png "クラスライブラリの選択")](implementing-sirikit-images/prep02.w157.png#lightbox)
-4. 名前`MonkeyChatCommon`として「」と入力し、[**作成**] ボタンをクリックします。
-5. **ソリューションエクスプローラー**でメインアプリの [**参照**] フォルダーを右クリックし、[**参照の編集**] を選択します。**Monkeychatcommon**プロジェクトを確認し、[ **OK** ] ボタンをクリックします。 
+4. 名前`MonkeyChatCommon`として「」と入力し、 **[作成]** ボタンをクリックします。
+5. **ソリューションエクスプローラー**でメインアプリの **[参照]** フォルダーを右クリックし、 **[参照の編集]** を選択します。**Monkeychatcommon**プロジェクトを確認し、 **[OK]** ボタンをクリックします。 
 
     [![](implementing-sirikit-images/prep05w.png "MonkeyChatCommon プロジェクトを確認する")](implementing-sirikit-images/prep05w.png#lightbox)
 6. **ソリューションエクスプローラー**で、メインアプリから共有プロジェクトに共通の共有コードをドラッグします。
@@ -167,13 +167,13 @@ SiriKit 統合を含むすべての Xamarin iOS アプリには、正しい権�
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. `Entitlements.plist` **ソリューションエクスプローラー**内のファイルをダブルクリックして、編集用に開きます。
-2. [**ソース**] タブに切り替えます。
+2. **[ソース]** タブに切り替えます。
 3. `Boolean` `Yes`プロパティを追加し、型をに設定し、値をに設定します。 `com.apple.developer.siri` 
 
     [![](implementing-sirikit-images/setup01.png "\"Com...\" プロパティを追加します。")](implementing-sirikit-images/setup01.png#lightbox)
 4. 変更内容をファイルに保存します。
 5. **ソリューションエクスプローラー**内の**プロジェクトファイル**をダブルクリックして、編集用に開きます。
-6. [ **IOS バンドル署名**] を選択し`Entitlements.plist` 、[**カスタム権利**] フィールドでファイルが選択されていることを確認します。 
+6. **[IOS バンドル署名]** を選択し`Entitlements.plist` 、 **[カスタム権利]** フィールドでファイルが選択されていることを確認します。 
 
     [![](implementing-sirikit-images/setup02.png "[カスタム権利] フィールドで、権利の plist ファイルを選択します。")](implementing-sirikit-images/setup02.png#lightbox)
 7. **[OK]** ボタンをクリックして、変更を保存します。
@@ -186,7 +186,7 @@ SiriKit 統合を含むすべての Xamarin iOS アプリには、正しい権�
     [![](implementing-sirikit-images/setup01w.png "\"Com...\" プロパティを追加します。")](implementing-sirikit-images/setup01w.png#lightbox)
 3. 変更内容をファイルに保存します。
 4. **ソリューションエクスプローラー**内の**プロジェクトファイル**をダブルクリックして、編集用に開きます。
-5. [ **IOS バンドル署名**] を選択し`Entitlements.plist` 、[**カスタム権利**] フィールドでファイルが選択されていることを確認します。
+5. **[IOS バンドル署名]** を選択し`Entitlements.plist` 、 **[カスタム権利]** フィールドでファイルが選択されていることを確認します。
 
 -----
 
@@ -211,23 +211,23 @@ Mac で次の操作を行います。
 
 1. Web ブラウザーで、に[https://developer.apple.com](https://developer.apple.com)移動し、アカウントにログインします。
 2. [**証明書**、**識別子**、**プロファイル**] をクリックします。
-3. [**プロビジョニングプロファイル**] を選択し、[**アプリ id**] を選択して、 **+** ボタンをクリックします。
+3. **[プロビジョニングプロファイル]** を選択し、 **[アプリ id]** を選択して、 **+** ボタンをクリックします。
 4. 新しいプロファイルの**名前**を入力します。
 5. Apple の名前付けに関する推奨事項に従って、**バンドル ID**を入力します。
-6. [ **App Services** ] セクションまで下にスクロールし、[ **sirikit** ] を選択して [**続行**] ボタンをクリックします。 
+6. **[App Services]** セクションまで下にスクロールし、 **[sirikit]** を選択して **[続行]** ボタンをクリックします。 
 
     [![](implementing-sirikit-images/setup03.png "SiriKit の選択")](implementing-sirikit-images/setup03.png#lightbox)
 7. すべての設定を確認し、アプリ ID を**送信**します。
-8. [**プロビジョニングプロファイル** > の**開発**] を **+** 選択し、ボタンをクリックして、 **Apple ID**を選択し、[**続行**] をクリックします。
-9. [**すべて**選択] をクリックし、[**続行**] をクリックします。
-10. [**すべて選択**] を再度クリックし、[**続行**] をクリックします。
+8. [**プロビジョニングプロファイル** > の**開発**] を **+** 選択し、ボタンをクリックして、 **Apple ID**を選択し、 **[続行]** をクリックします。
+9. **[すべて]** 選択 をクリックし、 **[続行]** をクリックします。
+10. **[すべて選択]** を再度クリックし、 **[続行]** をクリックします。
 11. Apple の名前付け候補を使用して**プロファイル名**を入力し、[ **Continue (続行**)] をクリックします。
 12. Xcode を起動します。
-13. [Xcode] メニューから [**基本設定...** ] を選択します。
-14. [**アカウント**] を選択し、[**詳細の表示...** ] をクリックします。 ; 
+13. Xcode メニューから **基本設定...** を選択します。
+14. **[アカウント]** を選択し、 **[詳細の表示...]** をクリックします。 ; 
 
     [![](implementing-sirikit-images/setup04.png "アカウントの選択")](implementing-sirikit-images/setup04.png#lightbox)
-15. 左下隅にある [**すべてのプロファイルをダウンロード**] ボタンをクリックします。 
+15. 左下隅にある **[すべてのプロファイルをダウンロード]** ボタンをクリックします。 
 
     [![](implementing-sirikit-images/setup05.png "すべてのプロファイルのダウンロード")](implementing-sirikit-images/setup05.png#lightbox)
 16. 上記で作成した**プロビジョニングプロファイル**が Xcode にインストールされていることを確認します。
@@ -237,8 +237,8 @@ Mac で次の操作を行います。
 
     [![](implementing-sirikit-images/setup06.png "バンドル識別子")](implementing-sirikit-images/setup06.png#lightbox)
 20. **ソリューションエクスプローラー**で、**プロジェクト**を選択します。
-21. プロジェクトを右クリックし、[**オプション**] を選択します。
-22. [ **IOS バンドル署名**] を選択し、上で作成した**署名 Id**と**プロビジョニングプロファイル**を選択します。 
+21. プロジェクトを右クリックし、 **[オプション]** を選択します。
+22. **[IOS バンドル署名]** を選択し、上で作成した**署名 Id**と**プロビジョニングプロファイル**を選択します。 
 
     [![](implementing-sirikit-images/setup07.png "署名 Id とプロビジョニングプロファイルを選択します")](implementing-sirikit-images/setup07.png#lightbox)
 23. **[OK]** ボタンをクリックして、変更を保存します。
@@ -608,28 +608,28 @@ namespace MonkeyChat
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1. **Solution Pad**で**ソリューション名**を右クリックし、[追加] [追加] [**新しいプロジェクト...** ] の順**に選択** > します。
-2. ダイアログボックスで [ **iOS** > **Extensions** > **インテント拡張**] を選択し、[**次へ**] ボタンをクリックします。 
+1. **Solution Pad**で**ソリューション名**を右クリックし、 **追加** > 追加 **新しいプロジェクト...** の順に選択します。
+2. ダイアログボックスで [ **iOS** > **Extensions** > **インテント拡張**] を選択し、 **[次へ]** ボタンをクリックします。 
 
     [![](implementing-sirikit-images/intents05.png "インテント拡張機能の選択")](implementing-sirikit-images/intents05.png#lightbox)
-3. 次に、インテント拡張機能の**名前**を入力し、[**次へ**] ボタンをクリックします。 
+3. 次に、インテント拡張機能の**名前**を入力し、 **[次へ]** ボタンをクリックします。 
 
     [![](implementing-sirikit-images/intents06.png "インテント拡張機能の名前を入力してください")](implementing-sirikit-images/intents06.png#lightbox)
-4. 最後に、[**作成**] ボタンをクリックして、アプリソリューションにインテント拡張を追加します。 
+4. 最後に、 **[作成]** ボタンをクリックして、アプリソリューションにインテント拡張を追加します。 
 
     [![](implementing-sirikit-images/intents07.png "アプリソリューションにインテント拡張機能を追加する")](implementing-sirikit-images/intents07.png#lightbox)
-5. **ソリューションエクスプローラー**で、新しく作成されたインテント拡張機能の [**参照**] フォルダーを右クリックします。 共通の共有コードライブラリプロジェクト (上で作成したアプリ) の名前を確認し、[ **OK** ] ボタンをクリックします。 
+5. **ソリューションエクスプローラー**で、新しく作成されたインテント拡張機能の **[参照]** フォルダーを右クリックします。 共通の共有コードライブラリプロジェクト (上で作成したアプリ) の名前を確認し、 **[OK]** ボタンをクリックします。 
 
     [![](implementing-sirikit-images/intents08.png "共通の共有コードライブラリプロジェクトの名前を選択します")](implementing-sirikit-images/intents08.png#lightbox)
     
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. **ソリューションエクスプローラー**で**ソリューション名**を右クリックし、[追加] [追加] [**新しいプロジェクト...** ] の順**に選択** > します。
-2. ダイアログボックスで [ **Visual C# > IOS Extensions > インテント拡張**] を選択し、[**次へ**] ボタンをクリックします。
+1. **ソリューションエクスプローラー**で**ソリューション名**を右クリックし、 **追加** > 追加 **新しいプロジェクト...** の順に選択します。
+2. ダイアログボックスで **[Visual C# > IOS Extensions > インテント拡張]** を選択し、 **[次へ]** ボタンをクリックします。
 
     [![](implementing-sirikit-images/intents05.w157-sml.png "インテント拡張機能の選択")](implementing-sirikit-images/intents05.w157.png#lightbox)
-3. 次に、インテント拡張機能の**名前**を入力し、[ **OK** ] ボタンをクリックします。
-4. **ソリューションエクスプローラー**で、新しく作成したインテント拡張の [**参照**] フォルダーを右クリックし、[ **> 参照の追加**] を選択します。 共通の共有コードライブラリプロジェクト (上で作成したアプリ) の名前を確認し、[ **OK** ] ボタンをクリックします。
+3. 次に、インテント拡張機能の**名前**を入力し、 **[OK]** ボタンをクリックします。
+4. **ソリューションエクスプローラー**で、新しく作成したインテント拡張の **[参照]** フォルダーを右クリックし、 **[> 参照の追加]** を選択します。 共通の共有コードライブラリプロジェクト (上で作成したアプリ) の名前を確認し、 **[OK]** ボタンをクリックします。
 
     [![](implementing-sirikit-images/intents08w.png "共通の共有コードライブラリプロジェクトの名前を選択します")](implementing-sirikit-images/intents08w.png#lightbox)
     
@@ -872,26 +872,26 @@ public void HandleSetMessageAttribute (INSetMessageAttributeIntent intent, Actio
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1. **Solution Pad**で**ソリューション名**を右クリックし、[追加] [追加] [**新しいプロジェクト...** ] の順**に選択** > します。
-2. ダイアログボックスで [ **iOS** > **Extensions** > **インテント UI Extension** ] を選択し、[**次へ**] ボタンをクリックします。 
+1. **Solution Pad**で**ソリューション名**を右クリックし、 **追加** > 追加 **新しいプロジェクト...** の順に選択します。
+2. ダイアログボックスで [ **iOS** > **Extensions** > **インテント UI Extension** ] を選択し、 **[次へ]** ボタンをクリックします。 
 
     [![](implementing-sirikit-images/intents11.png "インテント UI 拡張機能の選択")](implementing-sirikit-images/intents11.png#lightbox)
-3. 次に、インテント拡張機能の**名前**を入力し、[**次へ**] ボタンをクリックします。 
+3. 次に、インテント拡張機能の**名前**を入力し、 **[次へ]** ボタンをクリックします。 
 
     [![](implementing-sirikit-images/intents12.png "インテント拡張機能の名前を入力してください")](implementing-sirikit-images/intents12.png#lightbox)
-4. 最後に、[**作成**] ボタンをクリックして、アプリソリューションにインテント拡張を追加します。 
+4. 最後に、 **[作成]** ボタンをクリックして、アプリソリューションにインテント拡張を追加します。 
 
     [![](implementing-sirikit-images/intents13.png "アプリソリューションにインテント拡張機能を追加する")](implementing-sirikit-images/intents13.png#lightbox)
-5. **ソリューションエクスプローラー**で、新しく作成されたインテント拡張機能の [**参照**] フォルダーを右クリックします。 共通の共有コードライブラリプロジェクト (上で作成したアプリ) の名前を確認し、[ **OK** ] ボタンをクリックします。 
+5. **ソリューションエクスプローラー**で、新しく作成されたインテント拡張機能の **[参照]** フォルダーを右クリックします。 共通の共有コードライブラリプロジェクト (上で作成したアプリ) の名前を確認し、 **[OK]** ボタンをクリックします。 
 
     [![](implementing-sirikit-images/intents14.png "共通の共有コードライブラリプロジェクトの名前を選択します")](implementing-sirikit-images/intents14.png#lightbox)
     
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. **ソリューションエクスプローラー**で**ソリューション名**を右クリックし、[追加] [**新しいプロジェクトの**追加] の順**に選択** > します。
-2. ダイアログボックスで [ **iOS** > **Extensions** > **インテント UI Extension** ] を選択し、[**次へ**] ボタンをクリックします。
-3. 次に、インテント拡張機能の**名前**を入力し、[ **OK** ] ボタンをクリックします。
-4. **ソリューションエクスプローラー**で、新しく作成されたインテント拡張機能の [**参照**] フォルダーを右クリックします。 共通の共有コードライブラリプロジェクト (上で作成したアプリ) の名前を確認し、[ **OK** ] ボタンをクリックします。
+1. **ソリューションエクスプローラー**で**ソリューション名**を右クリックし、 **[追加]**  > [**新しいプロジェクトの**追加] の順に選択します。
+2. ダイアログボックスで [ **iOS** > **Extensions** > **インテント UI Extension** ] を選択し、 **[次へ]** ボタンをクリックします。
+3. 次に、インテント拡張機能の**名前**を入力し、 **[OK]** ボタンをクリックします。
+4. **ソリューションエクスプローラー**で、新しく作成されたインテント拡張機能の **[参照]** フォルダーを右クリックします。 共通の共有コードライブラリプロジェクト (上で作成したアプリ) の名前を確認し、 **[OK]** ボタンをクリックします。
     
 -----
 
@@ -1061,7 +1061,7 @@ Apple は、意図した UI 拡張機能を設計および実装するときに�
 - **ビューのサイズの最小値と最大値を考慮して**ください。すべての iOS デバイスの種類、サイズ、および向きに対してインテント UI 拡張機能が適切であることを確認してください。 さらに、アプリから Siri に返される目的のサイズを付与できない場合があります。
 - **柔軟でアダプティブなレイアウトパターンを使用**して、すべてのデバイスで UI が最適に見えるようにします。
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
 この記事では、SiriKit について説明しました。また、iOS デバイスで Siri と Maps アプリを使用してユーザーがアクセスできるサービスを提供するために、その機能を Xamarin の iOS アプリに追加する方法についても説明しました。
 

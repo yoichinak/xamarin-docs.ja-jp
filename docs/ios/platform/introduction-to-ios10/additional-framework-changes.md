@@ -4,15 +4,15 @@ description: このドキュメントでは、iOS 10 の既存のフレームワ
 ms.prod: xamarin
 ms.assetid: 0E2217F1-FC96-4D0A-ABAB-D40AD8F96502
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 85dad3bdd46401b1acf9a1cb5acc206508cd611f
-ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
+ms.openlocfilehash: 620b89ba4682d65552fa5555c978b7eb5f437714
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69620719"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290768"
 ---
 # <a name="additional-ios-10-frameworks-changes"></a>IOS 10 フレームワークのその他の変更
 
@@ -104,7 +104,7 @@ IOS 10 の HealthKit フレームワークには、次の機能強化が行わ�
 
 - 気象の種類`HKWeatherConditionClear` (や`HKWeatherConditionCloudy`など) に新しいメタデータキーが追加され、 `HKWorkoutActivityTypeFlexibility`トレーニングの種類 ( `HKWorkoutActivityTypeWheelchairRunPace`やなど) が追加されました。
 - 新しい`HKCDADocument`クラスが追加され、臨床ドキュメントアーキテクチャ (CDA) 形式のドキュメントを表します。
-- 新しい hkworkspace [outconfiguration](https://developer.apple.com/reference/healthkit/hkworkoutconfiguration)クラスを使用して、 `ActivityType`トレーニング`LocationType`のおよびを指定します。
+- 新しい[hkworkspace outconfiguration](https://developer.apple.com/reference/healthkit/hkworkoutconfiguration)クラスを使用して、 `ActivityType`トレーニング`LocationType`のおよびを指定します。
 - 車椅子に関連する正常`WheelchairUse`性データを操作するために、新しい[HKWheelchairUseObject](https://developer.apple.com/reference/healthkit/hkwheelchairuseobject)と[HKHealthStore](https://developer.apple.com/reference/healthkit/hkhealthstore)クラスのメソッドが追加されました。
 
 ## <a name="homekit-enhancements"></a>ホームキットの機能強化

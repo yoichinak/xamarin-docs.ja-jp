@@ -2,15 +2,15 @@
 ms.assetid: 1BB412D1-FC3D-4E69-8B01-B976A3DB6328
 title: WPF とXamarin. フォーム:類似点 & 相違点
 description: このドキュメントでは、WPF と Xamarin. Forms を比較して比較します。 コントロールテンプレート、XAML、バインドインフラストラクチャ、データテンプレート、ItemsControl、UserControl、ナビゲーション、および URL ナビゲーションについて説明します。
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 04/26/2017
-ms.openlocfilehash: 149636719c7f8046b8a32d8d2f4157b663388cb1
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: d23b449382183b0385eac38c0b9205e48dbe0a34
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227608"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290405"
 ---
 # <a name="wpf-vs-xamarinforms-similarities--differences"></a>WPF とXamarin. フォーム:類似点 & 相違点
 

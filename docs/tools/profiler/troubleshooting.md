@@ -3,15 +3,15 @@ title: Xamarin Profiler のトラブルシューティング
 description: このドキュメントでは、Xamarin Profiler に関するトラブルシューティング情報を提供します。 ログ記録と診断、IDE、およびその他のトピックに関連する問題について説明します。
 ms.prod: xamarin
 ms.assetid: 0060E9D1-C003-4E4C-ADE8-B406978FE891
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 10/27/2017
-ms.openlocfilehash: d6125f9d8dd2899a19181f4ccd7f9c06b06e5d5b
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: c6a05e332bf0c08f8c7ea328c2793f7d0bf00fb7
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511577"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70285694"
 ---
 # <a name="xamarin-profiler-troubleshooting"></a>Xamarin Profiler のトラブルシューティング
 

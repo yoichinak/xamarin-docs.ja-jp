@@ -1,52 +1,52 @@
 ---
-title: WatchOS で Xamarin の設定の操作
-description: このドキュメントでは、Xamarin で watchOS の設定を操作する方法について説明します。 Iphone の場合、アプリと、Apple Watch アプリでこれらの設定を使用して、watch アプリ ソリューションに追加の設定について説明します。
+title: Xamarin での watchOS 設定の使用
+description: このドキュメントでは、Xamarin で watchOS 設定を使用する方法について説明します。 ここでは、watch アプリソリューションに設定を追加する方法、アプリで設定を使用する方法、および iPhone で Apple Watch アプリを使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 4B2EB192-F0A2-4010-B141-0431520594C0
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: a8fe2c2765676db52c23fd7c475f218f14697caf
-ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
+ms.openlocfilehash: bcb719451529cd5a9ca829b8693c425d752cc93b
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67675229"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70283222"
 ---
-# <a name="working-with-watchos-settings-in-xamarin"></a>WatchOS で Xamarin の設定の操作
+# <a name="working-with-watchos-settings-in-xamarin"></a>Xamarin での watchOS 設定の使用
 
-Apple Watch アプリは iOS アプリと同じ設定機能を使用することができます - でユーザー インターフェイスの設定が表示されます、 **Apple Watch** iPhone アプリが、値は、iPhone アプリ両方とウォッチ拡張機能でアクセスできるようにします。
+Apple Watch アプリは iOS アプリと同じ設定機能を使用できます。 [設定] ユーザーインターフェイスが**Apple Watch** iphone アプリに表示されますが、値は iphone アプリと Watch 拡張機能の両方でアクセスできます。
 
-![](settings-images/intro.png "Apple Watch アプリは iOS アプリと同じ設定機能を使用することができます。")
+![](settings-images/intro.png "Apple Watch アプリは iOS アプリと同じ設定機能を使用できます")
 
-設定を iOS アプリとによって定義された、watch アプリ拡張機能の両方にアクセスできる共有ファイルの場所に格納されます、**アプリ グループ**します。 必要があります[アプリ グループを構成する](~/ios/watchos/app-fundamentals/app-groups.md)以下の手順を使用して、設定を追加する前にします。
+設定は、**アプリグループ**によって定義された iOS アプリと watch アプリ拡張機能の両方からアクセスできる共有ファイルの場所に格納されます。 次の手順に従って、設定を追加する前に、[アプリグループを構成](~/ios/watchos/app-fundamentals/app-groups.md)する必要があります。
 
-## <a name="add-settings-in-a-watch-solution"></a>監視ソリューションで設定を追加します。
+## <a name="add-settings-in-a-watch-solution"></a>Watch ソリューションに設定を追加する
 
-**IPhone アプリ**ソリューションに (*いない*watch アプリまたは拡張機能)。
+ソリューション内の**iPhone アプリ**(watch アプリまたは拡張機能では*ありません*) で、次のようにします。
 
-1. 右クリックして**追加 > 新しいファイル.** 選択**Settings.bundle** (内の名前を編集することはできません、**新しいファイル**ダイアログ)。
+1. **[新しいファイルの追加 >]** を右クリックし、[設定] を選択し**ます**( **[新しいファイル]** ダイアログで名前を編集することはできません)。
 
-   [![](settings-images/settings-add-sml.png "新しい設定バンドルを追加します。")](settings-images/settings-add.png#lightbox)
+   [![](settings-images/settings-add-sml.png "新しい設定バンドルを追加する")](settings-images/settings-add.png#lightbox)
 
-2. 名を変更して**設定 Watch.bundle** (選択し、入力**command+r**名前を変更する)。
+2. 名前を "**設定-Watch. バンドル**" に変更します (select と type **Command + R**の名前を変更します)。
 
-   ![](settings-images/settings-rename.png "バンドルの名前を変更します。")
+   ![](settings-images/settings-rename.png "バンドルの名前を変更する")
 
-3. 新しいキーを追加`ApplicationGroupContainerIdentifier`を**Root.plist**値 (例: を構成したアプリ グループを設定して `group.com.xamarin.WatchSettings` サンプル)。
+3. 構成したアプリ`ApplicationGroupContainerIdentifier`グループに設定された値を使用して、**ルート plist**に新しいキーを追加します (例として、 `group.com.xamarin.WatchSettings`このサンプルでは、次のことを行います。
 
-   [![](settings-images/settings-appgroup-sml.png "Root.plist ApplicationGroupContainerIdentifier キーを追加します。")](settings-images/settings-appgroup.png#lightbox)
+   [![](settings-images/settings-appgroup-sml.png "ApplicationGroupContainerIdentifier キーをルートに追加します。 plist")](settings-images/settings-appgroup.png#lightbox)
 
-4. 編集、 **Settings-Watch.bundle/Root.plist**テンプレート ファイルには - 使用するオプションを格納するには、グループが含まれています。
-  テキスト フィールド、トグル スイッチおよびスライダーが既定で (これを削除して、独自の設定に置き換えてください)。
+4. 使用するオプションが含まれるように**Settings-Watch/** を編集します。テンプレートファイルには、グループが含まれています。
+  textfield、トグルスイッチ、スライダー (既定では、削除して独自の設定で置き換えることができます):
 
-  [![](settings-images/rootplist-sml.png "Settings-Watch.bundle/Root.plist を編集します。")](settings-images/rootplist.png#lightbox)
+  [![](settings-images/rootplist-sml.png "Settings-Watch/ルートを編集します。")](settings-images/rootplist.png#lightbox)
 
 
-## <a name="use-settings-in-the-watch-app"></a>Watch アプリの設定を使用します。
+## <a name="use-settings-in-the-watch-app"></a>Watch アプリで設定を使用する
 
-ユーザーが選択した値にアクセスするには、作成、`NSUserDefaults`アプリ グループを使用し、指定のインスタンス`NSUserDefaultsType.SuiteName`:
+ユーザーが選択した値にアクセスするには`NSUserDefaults` 、アプリグループを使用して`NSUserDefaultsType.SuiteName`インスタンスを作成し、次のように指定します。
 
 ```csharp
 NSUserDefaults shared = new NSUserDefaults(
@@ -59,9 +59,9 @@ var userName = shared.StringForKey ("name_preference");
 
 ## <a name="apple-watch-app"></a>Apple Watch アプリ
 
-[![](settings-images/settings-app-sml.png "IPhone の新しい Apple Watch アプリ")](settings-images/settings-app.png#lightbox)
+[![](settings-images/settings-app-sml.png "IPhone 上の新しい Apple Watch アプリ")](settings-images/settings-app.png#lightbox)
 
-ユーザーが使用して、新しい設定**Apple Watch** iPhone 上のアプリ。 このアプリには、視聴、およびも編集を使用して、設定が公開でアプリの表示/非表示をユーザーができるように、**設定 Watch.bundle**します。
+ユーザーは、iPhone の新しい**Apple Watch**アプリを使用して設定を操作します。 このアプリを使用すると、ユーザーはウォッチでアプリの表示/非表示を切り替えたり、**設定**を使用して公開された設定を編集したりすることができます。
 
 ![](settings-images/applewatch-1.png "アプリの設定例") ![](settings-images/applewatch-2.png "アプリ設定の例")
 
@@ -69,4 +69,4 @@ var userName = shared.StringForKey ("name_preference");
 
 ## <a name="related-links"></a>関連リンク
 
-- [Apple の設定のドキュメント](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/Settings.html#//apple_ref/doc/uid/TP40014969-CH22-SW1)
+- [Apple の設定ドキュメント](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/Settings.html#//apple_ref/doc/uid/TP40014969-CH22-SW1)

@@ -4,15 +4,15 @@ description: このドキュメントでは、Visual Studio for Mac のグラフ
 ms.prod: xamarin
 ms.assetid: 5E687043-0443-377C-9A12-9C5A05958646
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: ca3622e01d6c7b616dc115b89ffcccf64022b1a1
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: ac1ded56137cf85ec5852358f75240176dbc7671
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69527142"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70286786"
 ---
 # <a name="working-with-property-lists-in-xamarinios"></a>Xamarin のプロパティリストの操作
 
@@ -63,7 +63,7 @@ Visual Studio for Mac は、アプリケーションの共通`Info.plist`エン�
 
  [![](property-lists-images/deployment.png "デバイスの展開")](property-lists-images/deployment.png#lightbox)
 
-上の [**アプリケーションターゲット**] セクションの [**デバイス**] ドロップダウンで選択した内容に応じて、[デバイスの**展開**情報] セクションが選択的に表示されます。 **メインのインターフェイス**ドロップダウンは、ストーリーボード駆動型アプリケーションでは**mainstoryboard.storyboard ファイル**に設定されます。 ユーザーインターフェイスがコードで完全に記述されている場合は、空白のままにすることができます。
+上の **[アプリケーションターゲット]** セクションの **[デバイス]** ドロップダウンで選択した内容に応じて、デバイスの **[展開]** 情報 セクションが選択的に表示されます。 **メインのインターフェイス**ドロップダウンは、ストーリーボード駆動型アプリケーションでは**mainstoryboard.storyboard ファイル**に設定されます。 ユーザーインターフェイスがコードで完全に記述されている場合は、空白のままにすることができます。
 
 ### <a name="supported-device-orientations"></a>サポートされているデバイスの向き
 
@@ -71,7 +71,7 @@ Visual Studio for Mac は、アプリケーションの共通`Info.plist`エン�
 
 ### <a name="status-bar-styles"></a>ステータスバーのスタイル
 
-[**ステータスバーのスタイル**] セクションは、アプリケーション`UIStatusBarStyle`を編集するためのグラフィカルインターフェイスです。
+**[ステータスバーのスタイル]** セクションは、アプリケーション`UIStatusBarStyle`を編集するためのグラフィカルインターフェイスです。
 
  [![](property-lists-images/status.png "ステータスバーのスタイル")](property-lists-images/status.png#lightbox)
 
@@ -134,7 +134,7 @@ Url の最初の部分は、URL スキーム名 (プロトコルとも呼ばれ�
 
 ## <a name="source-panel"></a>ソースパネル
 
-`Info.plist`ファイルの [**ソース**] タブでは、カスタム値の追加または編集を行うことができます。 Visual Studio for Mac では、最も一般的なプロパティの一覧が表示されます。
+`Info.plist`ファイルの **[ソース]** タブでは、カスタム値の追加または編集を行うことができます。 Visual Studio for Mac では、最も一般的なプロパティの一覧が表示されます。
 
  [![](property-lists-images/image31.png "ドロップダウンからの新しいプロパティの追加")](property-lists-images/image31.png#lightbox)
 

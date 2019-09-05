@@ -4,15 +4,15 @@ description: この記事では、watchOS 3 でのアプリのトレーニング
 ms.prod: xamarin
 ms.assetid: F1D19635-A738-43E5-9873-1FC1BA44EEDF
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 9a8c047305d4e91ac588f503eaa98d8bddb4a8a8
-ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
+ms.openlocfilehash: 57aab95e29911722fc3ad4a56c5486218e07242d
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69620752"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292848"
 ---
 # <a name="watchos-workout-apps-in-xamarin"></a>Xamarin での watchOS のトレーニングアプリ
 

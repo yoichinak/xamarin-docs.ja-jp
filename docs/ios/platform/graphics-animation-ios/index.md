@@ -1,35 +1,35 @@
 ---
 title: iOS のグラフィックスとアニメーション
-description: このドキュメントは、Xamarin.iOS で Core イメージ、Core Graphics、コア アニメーション フレームワークを使用する方法について説明するさまざまなガイドにリンクしています。
+description: このドキュメントでは、Xamarin iOS のコアイメージ、コアグラフィックス、およびコアアニメーションフレームワークの使用方法について説明するさまざまなガイドにリンクしています。
 ms.prod: xamarin
 ms.assetid: 3FEF45F2-C0F0-4D66-8796-9674FFE6740F
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: ab0a42fd717d62657e53fcc5c90669168860fdff
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 84e59c81e08bc354199565cb0a91b0aec0797feb
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865748"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70286081"
 ---
 # <a name="graphics-and-animation-in-ios"></a>iOS のグラフィックスとアニメーション
 
-![Images/00_final_app.png](images/00-final-app.png "アプリの実行例")
+![Images/00finalapp.xaml (] _d)(images/00-final-app.png "アプリの実行例")
 
-## <a name="core-imageiosplatformgraphics-animation-iosintroduction-to-coreimagemd"></a>[Core イメージ](~/ios/platform/graphics-animation-ios/introduction-to-coreimage.md)
+## <a name="core-imageiosplatformgraphics-animation-iosintroduction-to-coreimagemd"></a>[コアイメージ](~/ios/platform/graphics-animation-ios/introduction-to-coreimage.md)
 
-CoreImage は、さまざまな組み込みのフィルターと画像および顔検出を含むビデオに適用する効果を提供する iOS 5 で導入された新しいフレームワークです。
+CoreImage は、iOS 5 で導入された新しいフレームワークであり、顔検出など、イメージやビデオに適用するさまざまな組み込みのフィルターや効果を提供します。
 
 ## <a name="core-graphicsiosplatformgraphics-animation-ioscore-graphicsmd"></a>[コア グラフィックス](~/ios/platform/graphics-animation-ios/core-graphics.md)
 
-この記事では、低レベルの描画のサポートを提供するコア グラフィックス iOS フレームワークについて説明します。 コア グラフィックスを使用して、geometry、画像、Pdf を描画する方法を示します。
+この記事では、低レベルの描画をサポートする主要なグラフィックス iOS フレームワークについて説明します。 ここでは、コアグラフィックスを使用して、ジオメトリ、画像、Pdf を描画する方法を示します。
 
 ## <a name="core-animationiosplatformgraphics-animation-ioscore-animationmd"></a>[コア アニメーション](~/ios/platform/graphics-animation-ios/core-animation.md)
 
-この記事では、下位レベルのアニメーション コントロールで直接使用する方法についても、UIKit で滑らかなアニメーションの高パフォーマンスが使用する方法を示す、Core アニメーション フレームワークについて説明します。
+この記事では、主要なアニメーションフレームワークについて説明します。これは、パフォーマンスの向上、UIKit での滑らかなアニメーション、および下位レベルのアニメーションコントロールに対して直接使用する方法を示しています。
 
-## <a name="using-core-graphics-and-core-animationiosplatformgraphics-animation-iosgraphics-animation-walkthroughmd"></a>[コア グラフィックスとアニメーションのコアを使用してください。](~/ios/platform/graphics-animation-ios/graphics-animation-walkthrough.md)
+## <a name="using-core-graphics-and-core-animationiosplatformgraphics-animation-iosgraphics-animation-walkthroughmd"></a>[コアグラフィックスとコアアニメーションの使用](~/ios/platform/graphics-animation-ios/graphics-animation-walkthrough.md)
 
-この記事でステップ バイ ステップ コア グラフィックスとアニメーションのコアを使用するアプリケーションを作成する方法を示します。 ユーザーのタッチへの応答では、画面に描画する方法と、パスに沿って移動するイメージをアニメーション化する方法を示しています。
+この記事では、コアグラフィックスとコアアニメーションを使用するアプリケーションを作成する手順について説明します。 この例では、ユーザータッチに応答して画面上に描画する方法について説明します。また、画像をアニメーション化してパスに沿って移動する方法も示します。

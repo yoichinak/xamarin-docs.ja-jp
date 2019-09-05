@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/05/2016
-ms.openlocfilehash: d13246ddae3f505d04db2a866f785a9f60ce3979
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 2ae78d535edd17d3968d0784194bb7295bb7e889
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68652043"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292686"
 ---
 # <a name="search-data-with-azure-search-and-xamarinforms"></a>Azure Search と Xamarin. フォームを使用してデータを検索する
 
@@ -60,7 +60,7 @@ var searchClient =
 `SearchServiceClient`コンストラクター オーバー ロードは、検索サービスの名前と`SearchCredentials`引数としてオブジェクトを`SearchCredentials`オブジェクト折り返し、*管理者キー* Azure Search サービス。 *管理者キー*インデックスを作成するが必要です。
 
 > [!NOTE]
->  1 つ`SearchServiceClient`インスタンスは、Azure Search への接続が多すぎますを開くを回避するためにアプリケーションで使用する必要があります。
+> 1 つ`SearchServiceClient`インスタンスは、Azure Search への接続が多すぎますを開くを回避するためにアプリケーションで使用する必要があります。
 
 によってインデックスが定義されている、`Index`の次のコード例に示すオブジェクトします。
 

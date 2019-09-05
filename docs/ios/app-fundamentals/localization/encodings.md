@@ -4,15 +4,15 @@ description: このドキュメントでは、使用可能なエンコードに�
 ms.prod: xamarin
 ms.assetid: F5117294-28BB-4583-B6A0-A339B050FDE1
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 04/28/2017
-ms.openlocfilehash: fee3e4d409302204a218a18b52cf51fc46249e95
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: a5430407798dd556532b2cacf592439acc7c02be
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69527041"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290138"
 ---
 # <a name="internationalization-encodings-in-xamarinios"></a>Xamarin の国際化エンコーディングエンコード
 

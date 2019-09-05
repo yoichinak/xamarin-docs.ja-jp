@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin の CloudKit を使用す�
 ms.prod: xamarin
 ms.assetid: 66B207F2-FAA0-4551-B43B-3DB9F620C397
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 05/11/2016
-ms.openlocfilehash: af0765adb7e059bdc80c0b851b4bdcad8be0e3e4
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 09275517a1d081073ab471d1e8c993dc232a4385
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227830"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292444"
 ---
 # <a name="cloudkit-in-xamarinios"></a>Xamarin. iOS の CloudKit
 

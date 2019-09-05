@@ -4,15 +4,15 @@ description: 権利は特殊なアプリの機能およびセキュリティの�
 ms.prod: xamarin
 ms.assetid: 8A3961A2-02AB-4228-A41D-06CB4108D9D0
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 08/13/2018
-ms.openlocfilehash: bbc01416fe49b361b163808f3502533db8e39d8c
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 381cddcef826d00b09f9928746bb4f60ce78a7e0
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70121326"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70284797"
 ---
 # <a name="working-with-entitlements-in-xamarinios"></a>Xamarin.iOS での権利の使用
 
@@ -96,14 +96,14 @@ Entitlements.plist エディターの [ソース] パネルを使用して、権
 
 - **説明**: 正式には Passbook として知られるウォレットは、パスを格納して管理するアプリです。 これらのパスには、クレジット カード、ストア カード、搭乗券、チケットなどがあります。
 
-    - **パスの種類の識別子**
-        - **キー**: com.apple.developer.pass-type-identifiers
-        - **文字列**: `$(TeamIdentifierPrefix)*`
+  - **パスの種類の識別子**
+    - **キー**: com.apple.developer.pass-type-identifiers
+    - **文字列**: `$(TeamIdentifierPrefix)*`
 
 - **注**:
-    - これにより、アプリはすべてのパスの種類を許可できるようになります。 アプリを制限し、チームのパスの種類のサブセットのみを許可するには、文字列値を `$(TeamIdentifierPrefix)pass.$(CFBundleIdentifier)` に設定します。
+  - これにより、アプリはすべてのパスの種類を許可できるようになります。 アプリを制限し、チームのパスの種類のサブセットのみを許可するには、文字列値を `$(TeamIdentifierPrefix)pass.$(CFBundleIdentifier)` に設定します。
 
-    この pass.$(CFBundleIdentifier) は、[ここ](~/ios/platform/passkit.md)で作成されたパス ID です。
+  この pass.$(CFBundleIdentifier) は、[ここ](~/ios/platform/passkit.md)で作成されたパス ID です。
 
 <a name="icloud" />
 
@@ -111,17 +111,17 @@ Entitlements.plist エディターの [ソース] パネルを使用して、権
 
 - **説明**: iCloud は、iOS ユーザーに自分のコンテンツを格納し、デバイス間で共有するための便利で簡単な方法を提供します。 開発者が iCloud を使用してユーザーにストレージの手段を提供するには、次の 4 つの方法があります: Key-Value ストレージ、UIDocument ストレージ、CoreData の各方法の他に、CloudKit を直接使用して個々のファイルおよびディレクトリ用にストレージを提供する方法。 これらの詳細については、iCloud の概要に関するガイドを参照してください。
 
-    - **iCloud ドキュメントと CloudKit**
-        - **キー**: com.apple.developer.ubiquity-container-identifiers
-        - **文字列**: `$(TeamIdentifierPrefix)$(CFBundleIdentifier)`
-    - **iCloud KeyValue ストレージ**
-        - **キー**: com.apple.developer.ubiquity-kvstore-identifier
-        - **文字列**: `$(TeamIdentifierPrefix)$(CFBundleIdentifier)`
+  - **iCloud ドキュメントと CloudKit**
+    - **キー**: com.apple.developer.ubiquity-container-identifiers
+    - **文字列**: `$(TeamIdentifierPrefix)$(CFBundleIdentifier)`
+  - **iCloud KeyValue ストレージ**
+    - **キー**: com.apple.developer.ubiquity-kvstore-identifier
+    - **文字列**: `$(TeamIdentifierPrefix)$(CFBundleIdentifier)`
 
 - **注**:
-    - `$(TeamIdentifierPrefix)` 文字列は、developer.apple.com にログインし、 **[メンバー センター]、[あなたのアカウント]、[開発者アカウントの概要]** の順に移動して、チーム ID (または開発者の個別の ID) を取得することで確認できます。 これは 10 桁の文字列 (A93A5CM278 など) になります。
-    - `$(CFBundleIdentifier)` 文字列は `iCloud` で始まり、iCloud コンテナーは「[機能の使用](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md)」ガイドの手順に従って作成されるときに設定されます。
-    - $`(TeamIdentifierPrefix)` および `$(CFBundleIdentifier)` プレースホルダーを使用することができ、ビルド時に適切な値に置き換えられます。
+  - `$(TeamIdentifierPrefix)` 文字列は、developer.apple.com にログインし、 **[メンバー センター]、[あなたのアカウント]、[開発者アカウントの概要]** の順に移動して、チーム ID (または開発者の個別の ID) を取得することで確認できます。 これは 10 桁の文字列 (A93A5CM278 など) になります。
+  - `$(CFBundleIdentifier)` 文字列は `iCloud` で始まり、iCloud コンテナーは「[機能の使用](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md)」ガイドの手順に従って作成されるときに設定されます。
+  - $`(TeamIdentifierPrefix)` および `$(CFBundleIdentifier)` プレースホルダーを使用することができ、ビルド時に適切な値に置き換えられます。
 
 > [!IMPORTANT]
 > Apple からは、開発者が欧州連合の一般データ保護規則 (GDPR) を適切に処理するための[ツールが提供](https://developer.apple.com/support/allowing-users-to-manage-data/)されています。
@@ -130,16 +130,16 @@ Entitlements.plist エディターの [ソース] パネルを使用して、権
 
 - **説明**: アプリ グループを使用すると、さまざまなアプリケーション (またはアプリケーションとその拡張機能) から共有ファイルの保存場所にアクセスできます。
 
-    - **キー**: com.apple.security.application-groups
-    - **文字列**: group.$(CFBundleIdentifier)
+  - **キー**: com.apple.security.application-groups
+  - **文字列**: group.$(CFBundleIdentifier)
 
 <a name="apple-pay" />
 
 ### <a name="apple-pay"></a>Apple Pay
 
 - **説明**: Apple Pay を使用すると、ユーザーはご自分の iOS デバイスから物理的な商品の支払いができます。
-    - **キー**: com.apple.developer.in-app-payments
-    - **文字列**: merchant.your.mechantid
+  - **キー**: com.apple.developer.in-app-payments
+  - **文字列**: merchant.your.mechantid
 
 ### <a name="push-notifications"></a>プッシュ通知
 
@@ -149,7 +149,7 @@ Entitlements.plist エディターの [ソース] パネルを使用して、権
 ### <a name="siri"></a>Siri
 
 - **説明**: SiriKit を使用すると、iOS アプリでは、App Extensions と新しい Intents および Intents UI フレームワークを使用して、iOS デバイス上のマップ アプリと Siri にアクセス可能なサービスを提供することができます。 詳細については、SiriKit の概要に関するガイドを参照してください。
-    - **キー**: com.apple.developer.siri
+  - **キー**: com.apple.developer.siri
 
 ### <a name="personal-vpn"></a>個人の VPN
 
@@ -159,50 +159,50 @@ Entitlements.plist エディターの [ソース] パネルを使用して、権
 ### <a name="keychain-sharing"></a>キーチェーンの共有
 
 - **説明**: キーチェーンの共有を使用すると、アプリ開発者は、デバイス キーチェーンに格納されているパスワードを、同じチームによって開発された他のアプリと共有できます。 文字列にキーチェーン アクセス グループ識別子を渡すことで、アクセスを制限することができます。
-    - **キー**: keychain-access-groups
-    - **文字列**: $(AppIdentifierPrefix) $(CFBundleIdentifier)
+  - **キー**: keychain-access-groups
+  - **文字列**: $(AppIdentifierPrefix) $(CFBundleIdentifier)
 
 ### <a name="inter-app-audio"></a>Inter-App オーディオ
 
 - **説明**: Inter-App オーディオを使用すると、開発者はアプリ間でオーディオをストリーミングできます。
-    - **キー**: inter-app-audio
-    - **ブール値**: YES
+  - **キー**: inter-app-audio
+  - **ブール値**: YES
 
 ### <a name="associated-domains"></a>関連付けられているドメイン
 
 - **説明**: ユニバーサル リンクとして処理する必要がある関連付けられているドメインは、この権利と共に渡す必要があります。 ユニバーサル リンクを実装することで、アプリと Web サイト間にディープ リンクを設定できます。 アプリでサポートされる各ドメインにエントリを指定する必要があり、各エントリは `applinks:` で始まる必要があります。
-    - **キー**: com.apple.developer.associated-domains
-    - **文字列**: webcredentials:example.com
+  - **キー**: com.apple.developer.associated-domains
+  - **文字列**: webcredentials:example.com
 
 ### <a name="data-protection"></a>データの保護
 
 - **説明**: データの保護を有効にすると、組み込みの暗号化ハードウェアを使用して、アプリで使用される機密データが暗号化された形式で格納されます。 既定では、保護レベルは完全な保護に設定されます (デバイスのロックが解除されたときにのみ、ファイルにアクセスできます)。
-    - **キー**: com.apple.developer.default-data-protection
-    - **文字列**: NSFileProtectionComplete
+  - **キー**: com.apple.developer.default-data-protection
+  - **文字列**: NSFileProtectionComplete
 
 ### <a name="homekit"></a>HomeKit
 
 - **説明**: HomeKit フレームワークでは、サポートされているホーム オートメーション デバイス (iOS デバイスのものすべて) を設定、構成、および管理するためのプラットフォームが提供されます。 HomeKit の使用の詳細については、HomeKit の概要に関するガイドを参照してください。
-    - **キー**: com.apple.developer.homekit
-    - **ブール値**: YES
+  - **キー**: com.apple.developer.homekit
+  - **ブール値**: YES
 
 ### <a name="healthkit"></a>HealthKit
 
 - **説明**: HealthKit は iOS 8 で導入されたフレームワークです。これにより、正常性に関する情報のための集中型の調整されたセキュア データ ストアが提供されます。 HealthKit の使用の詳細については、HealthKit の概要に関するガイドを参照してください。
-    - **キー**: com.apple.developer.healthkit
-    - **ブール値**: YES
+  - **キー**: com.apple.developer.healthkit
+  - **ブール値**: YES
 
 ### <a name="wireless-accessory-configuration"></a>Wireless Accessory Configuration
 
 - **説明**: Wireless Accessory Configuration を使用すると、ご利用のアプリで MFi Wi-Fi アクセサリを構成できます
-    - **キー**: com.apple.external-accessory.wireless-configuration
-    - **ブール値**: YES
+  - **キー**: com.apple.external-accessory.wireless-configuration
+  - **ブール値**: YES
 
 ### <a name="classkit"></a>ClassKit
 
 - **説明**: ClassKit を使用すると、教師は割り当てられた活動に対する学生の進捗状況をアプリで表示できます。
-    - **キー**: com.apple.developer.ClassKit-environment
-    - **文字列**: `development` または `production`
+  - **キー**: com.apple.developer.ClassKit-environment
+  - **文字列**: `development` または `production`
 
 ## <a name="summary"></a>まとめ
 

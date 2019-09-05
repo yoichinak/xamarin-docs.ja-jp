@@ -4,15 +4,15 @@ description: このドキュメントでは、DataAccess_Adv サンプルにつ�
 ms.prod: xamarin
 ms.assetid: 2CB8150E-CD2C-4E97-8605-1EE8CBACFEEC
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 10/11/2016
-ms.openlocfilehash: 9da0f48a8798a16ccd6410913d0b31c0b4444cb8
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 9cd93a94361c11ecaa454a804e58180a33ec08fe
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69527194"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290943"
 ---
 # <a name="using-data-in-an-ios-app"></a>IOS アプリでのデータの使用
 

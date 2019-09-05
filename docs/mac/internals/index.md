@@ -1,29 +1,29 @@
 ---
-title: Xamarin.Mac で内部的には
-description: このドキュメントは、Xamarin.Mac の内部動作を記述するさまざまなガイドにリンクしています。 リンク先のドキュメントでは、事前にコンパイル、Xamarin.Mac アーキテクチャ、および Xamarin.Mac レジストラーについて説明します。
+title: Xamarin. Mac の内部で
+description: このドキュメントでは、Xamarin. Mac の内部動作について説明するさまざまなガイドにリンクしています。 リンクされたドキュメントでは、事前にコンパイル、Xamarin、Mac のアーキテクチャ、および Xamarin. Mac レジストラーについて説明します。
 ms.prod: xamarin
 ms.assetid: 84974D75-0CCE-4455-AA38-00DE68AE33B6
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 11/10/2017
-ms.openlocfilehash: 872f26febf3abbe4d659773d2bf2d27348c64513
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 51cf479ba07a769f5d7a875bb3f1203caef2ad0b
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61033244"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290108"
 ---
-# <a name="under-the-hood-in-xamarinmac"></a>Xamarin.Mac で内部的には
+# <a name="under-the-hood-in-xamarinmac"></a>Xamarin. Mac の内部で
 
-## <a name="ahead-of-time-compilation-aotaotmd"></a>[事前 (AOT) コンパイルの](aot.md)
+## <a name="ahead-of-time-compilation-aotaotmd"></a>[事前コンパイル (AOT)](aot.md)
 
-事前の time (AOT) コンパイルが起動時のパフォーマンスを向上させるための強力な最適化手法です。 ただし、これも影響、ビルド時、アプリケーションのサイズ、およびプログラムの実行、深刻な方法でそのしくみを理解するにはします。
+事前に (AOT) コンパイルは、起動時のパフォーマンスを向上させるための強力な最適化手法です。 ただし、ビルド時間、アプリケーションサイズ、およびプログラムの実行に大きな影響があるため、動作のしくみを理解していることがわかります。
 
 ## <a name="mac-architecturearchitecturemd"></a>[Mac のアーキテクチャ](architecture.md)
 
-Objective-c、コンパイル、セレクター、レジストラー、アプリの起動、およびコード ジェネレーターなどの概念を含む Xamarin.Mac のリレーションシップです。
+Xamarin は、コンパイル、セレクター、レジストラー、アプリの起動、ジェネレーターなどの概念を含む、目標 C との関係を持ちます。
 
-## <a name="xamarinmac-registrarregistrarmd"></a>[Xamarin.Mac registrar](registrar.md)
+## <a name="xamarinmac-registrarregistrarmd"></a>[Xamarin. Mac レジストラー](registrar.md)
 
-Xamarin.Mac は、マネージ環境とアンマネージの OBJECTIVE-C クラスを呼び出し、イベントが発生したときに呼び出されるマネージ クラスを許可する、Cocoa のランタイム間のギャップを橋渡しします。 この「マジック」作業の実行に必要な作業は、レジストラーによって処理されますが、"内部で"何が起こってを理解することもできます。
+Xamarin. Mac は、マネージ環境と Cocoa のランタイムとの間のギャップを橋渡しします。これにより、マネージクラスはアンマネージドの C クラスを呼び出し、イベントが発生したときにコールバックすることができます。 この "マジック" を検査するために必要な作業はレジストラーによって処理されますが、"内部" について理解しておくと役立つ場合があります。

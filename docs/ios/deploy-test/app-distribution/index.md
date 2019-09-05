@@ -4,15 +4,15 @@ description: ここでは、Xamarin.iOS アプリケーションで使用でき�
 ms.prod: xamarin
 ms.assetid: 341D36DB-BB07-FA94-BCC9-5F8C0B18C179
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: d533996a9c4e86efa360bf2ed71165571c7ca260
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: c7b31e05a5b9d75559fae14f467312f5abc8fe94
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865832"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70289807"
 ---
 # <a name="xamarinios-app-distribution-overview"></a>Xamarin.iOS アプリの配布の概要
 

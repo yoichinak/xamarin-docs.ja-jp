@@ -4,15 +4,15 @@ description: このドキュメントでは、macOS Mojave の新機能と更新
 ms.prod: xamarin
 ms.assetid: 4A41CD85-C807-44C9-85AB-B5441B145A73
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 10/05/2018
-ms.openlocfilehash: b765bafe5e7a227a4ad5325046e9f005ba097dc8
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 2878d1bea3590b8c3a7aabfebef8a0f2cca67551
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653145"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292951"
 ---
 # <a name="introduction-to-macos-mojave"></a>macOS Mojave の概要
 
@@ -20,7 +20,7 @@ ms.locfileid: "68653145"
 
 Xamarin を使用した macOS Mojave アプリの構築を開始するには、 [xamarin. Mac 5.0](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/mac/xamarin.mac_5/xamarin.mac_5.0.md)の[ファーストステップガイド](~/mac/platform/introduction-to-macos-mojave/get-started.md)を参照してください。
 
-## <a name="dark-mode"></a>ダークモード
+## <a name="dark-mode"></a>ダーク モード
 
 ダークモードは、macOS Mojave のシステム全体にわたるダークテーマで、動的なダークグレーの配色を使用してユーザーインターフェイス要素を表示します。 また、ユーザーの色の設定に関係なく、サードパーティのアプリの外観を向上させるために、新しいアクセントカラー、色効果、およびコンテンツ濃淡の色が導入されています。
 

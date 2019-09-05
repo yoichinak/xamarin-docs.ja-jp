@@ -4,15 +4,15 @@ description: この記事では、キー値のコードとキー値の監視を�
 ms.prod: xamarin
 ms.assetid: 44FAFDA8-612A-4E0F-8BB4-5C92A3F4D552
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 893a3f76fe21bfe831ae81ffcd64c1538d9f05e1
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 3bcf52d33ebfaba6117a2089419673e0152cbe88
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70200176"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70289115"
 ---
 # <a name="databases-in-xamarinmac"></a>Xamarin. Mac のデータベース
 
@@ -50,7 +50,7 @@ Xcode の Interface Builder の UI 要素にバインドされる SQLite デー�
 次の手順で行います。
 
 1. **Solution Pad**で、 **[参照]** フォルダーを右クリックし、 **[参照の編集]** を選択します。
-2. 次のように、 **Mono**と system.string の両方のアセンブリを選択します。 
+2. 次のように、 **Mono** **と system.string**の両方のアセンブリを選択します。 
 
     [![必要な参照を追加しています](databases-images/reference01.png "必要な参照を追加しています")](databases-images/reference01-large.png#lightbox)
 3. **[OK]** ボタンをクリックして変更を保存し、参照を追加します。

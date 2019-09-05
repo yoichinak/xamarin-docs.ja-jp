@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin. iOS でユーザーイン
 ms.prod: xamarin
 ms.assetid: D8180FEC-F300-42C0-B029-66803E0C1A5F
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 06d7ef896a560040f2e2820945264b92d9cf2ada
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: eb20c73ab66af5ca07bf2efb31d631d9fa9776dc
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528490"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70287035"
 ---
 # <a name="layout-options-in-xamarinios"></a>Xamarin. iOS のレイアウトオプション
 

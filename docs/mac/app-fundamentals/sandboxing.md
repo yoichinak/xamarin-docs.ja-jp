@@ -4,15 +4,15 @@ description: この記事では、App Store でリリースするための Xamar
 ms.prod: xamarin
 ms.assetid: 06A2CA8D-1E46-410F-8C31-00EA36F0735D
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 5c697ebc4621fa8287bd001bcc4b44bb23fc163e
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 052d81ccaefe123eb375ddcd92bee0b1f2a395e2
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227241"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290314"
 ---
 # <a name="sandboxing-a-xamarinmac-app"></a>Xamarin. Mac アプリのサンドボックス化
 

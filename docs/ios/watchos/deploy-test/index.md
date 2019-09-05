@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin でビルドされた watc
 ms.prod: xamarin
 ms.assetid: 98257399-E9B3-4BAB-9204-0E89117DEA6D
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: d950ceb18bd13378ced06ec7257300fc5bf4504b
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: af6d32808e2847c99c4f8a2d90e7dc2d3955ae03
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70120172"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70284673"
 ---
 # <a name="deploying-and-testing-watchos-apps-with-xamarin"></a>Xamarin を使用した watchOS アプリのデプロイとテスト
 
@@ -90,7 +90,7 @@ ms.locfileid: "70120172"
 
 ![使用可能な構成](images/appgroups-sml.png)
 
-Apple Watchアプリ ID ではアプリグループを有効にしないでください。 ウォッチ自体で有効にする必要はありません。
+Apple Watch アプリ ID ではアプリグループ**を有効にしないでください。** ウォッチ自体で有効にする必要はありません。
 
 ### <a name="entitlementsplist"></a>Entitlements.plist
 
@@ -102,7 +102,7 @@ Apple Watchアプリ ID ではアプリグループを有効にしないでく�
 
 .![権利の plist エディター](images/entitlements-plist-sml.png)
 
-Watchアプリプロジェクトでは、権利を有効にしないでください。 ウォッチ自体で有効にする必要はありません。
+Watch アプリプロジェクトでは、権利**を有効にしないでください。** ウォッチ自体で有効にする必要はありません。
 
 ## <a name="related-links"></a>関連リンク
 

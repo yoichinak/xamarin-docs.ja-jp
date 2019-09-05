@@ -4,15 +4,15 @@ description: この記事では、iOS 9 for Xamarin の開発者が利用でき�
 ms.prod: xamarin
 ms.assetid: 4D71BBD9-B948-4B59-9AF5-F199C51CBEB3
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 69a599b6a7534cb77dd9e023d937f10a6b0523fb
-ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
+ms.openlocfilehash: c162912d6762ac1ee9d2896f96bbb35e9fef06f4
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69620670"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70285207"
 ---
 # <a name="introduction-to-ios-9"></a>iOS 9 の概要
 
@@ -52,7 +52,7 @@ IPad のマルチタスキングは、次の機能によってサポートされ
 
 - **スライドオーバー** -ユーザーが、現在実行されているメインアプリの約 25% をカバーするスライドアウトパネル (言語の方向に基づいて、画面の右側または左側) で2番目の iOS アプリを一時的に実行できるようにします。 スライドショーは、iPad Pro、iPad Air、iPad Air 2、iPad ミニ2、iPad ミニ3、iPad ミニ4でのみ利用できます。
 - **分割ビュー** -サポートされている ipad ハードウェア (ipad Air 2、ipad ミニ4、ipad Pro のみ) では、ユーザーは2つ目のアプリを選択して、現在実行中のアプリと並べて分割画面モードで実行できます。 ユーザーは、各アプリが占めるメイン画面の割合を制御できます。
-- 画像の画像-ビデオコンテンツを再生するアプリでは、iOS デバイスで現在実行されている他のアプリの周囲にある、移動してサイズ変更が可能なウィンドウでビデオを再生できるようになりました。 ユーザーは、このウィンドウのサイズと位置を完全に制御できます。 画像の画像は、iPad Pro、iPad Air、iPad Air 2、iPad ミニ2、iPad ミニ3、iPad ミニ4でのみ使用できます。
+- **画像の画像-ビデオ**コンテンツを再生するアプリでは、iOS デバイスで現在実行されている他のアプリの周囲にある、移動してサイズ変更が可能なウィンドウでビデオを再生できるようになりました。 ユーザーは、このウィンドウのサイズと位置を完全に制御できます。 画像の画像は、iPad Pro、iPad Air、iPad Air 2、iPad ミニ2、iPad ミニ3、iPad ミニ4でのみ使用できます。
 
 IOS 9 の新しいマルチタスク機能の詳細については、「 [iPad 用のマルチタスキング](~/ios/platform/multitasking.md)」ガイドを参照してください。
 

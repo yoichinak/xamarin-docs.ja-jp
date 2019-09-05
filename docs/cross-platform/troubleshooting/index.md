@@ -1,18 +1,18 @@
 ---
 title: Xamarin のトラブルシューティング
-description: このドキュメントは、Xamarin の開発についてよく寄せられる質問の回答がコンポーネントの参照、NuGet を更新する方法を説明するコンテンツにリンクしています。 は、サポートのオプションについて説明し、製品固有の質問に回答します。
+description: このドキュメントでは、Xamarin の開発に関してよく寄せられる質問への回答、NuGet へのコンポーネント参照の更新方法、サポートオプションについて説明し、製品固有の質問に回答するコンテンツについて説明します。
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 4513D391-9850-4CDC-BE9B-7FF4B14FEFFC
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 05/10/2018
-ms.openlocfilehash: fe2cfacaa8658357a1c6629b1c1e8676efebd452
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 318e02d30840ed5031f6df8b19f8143fa7b23a8d
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61359080"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70285095"
 ---
 # <a name="xamarin-troubleshooting"></a>Xamarin のトラブルシューティング
 
@@ -20,13 +20,13 @@ ms.locfileid: "61359080"
 
 ### <a name="frequently-asked-questionsquestionsindexmd"></a>[よく寄せられる質問](questions/index.md)
 
-よく寄せられる質問については、Xamarin のプラットフォームと Visual Studio に固有の回答。
+Xamarin プラットフォームに関してよく寄せられる質問と、Visual Studio に固有の回答。
 
 ### <a name="updating-component-references-to-nugetcomponent-nugetmd"></a>[NuGet へのコンポーネント参照の更新](component-nuget.md)
 
-コンポーネントを変更する既存の Xamarin ソリューションを更新する方法は、NuGet パッケージを参照します。
+既存の Xamarin ソリューションを更新して、NuGet パッケージへのコンポーネント参照を変更する方法。
 
-## <a name="product-specific-questions"></a>製品に固有の質問
+## <a name="product-specific-questions"></a>製品固有の質問
 
 - [Android](~/android/troubleshooting/questions/index.md)
 - [iOS](~/ios/troubleshooting/questions/index.md)

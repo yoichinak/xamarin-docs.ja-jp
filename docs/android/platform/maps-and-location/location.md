@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/22/2018
-ms.openlocfilehash: f6bc5891e416d7cb6c9b80c0502a9cc5d2d911d1
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 8366796af47e8915bf0bd9ba680e6144e1cfaebc
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69523992"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70280605"
 ---
 # <a name="location-services-on-android"></a>Android 上のロケーションサービス
 
@@ -336,15 +336,15 @@ else
 ```
 
 > [!NOTE]
->  ユーザーがすべての場所プロバイダーを無効に`GetBestProvider`した`null`場合、はを返します。 実際のデバイスでこのコードがどのように動作するかを確認するには、次のスクリーンショットに示すように、[ **Google 設定 > 場所] > モード**で GPS、wi-fi、および携帯ネットワークを有効にする必要があります。
-
-[![Android フォンの設定場所モード画面](location-images/location-02.png)](location-images/location-02.png#lightbox)
-
-次のスクリーンショットは、を使用し`GetBestProvider`て実行されている場所アプリケーションを示しています。
-
-[![緯度、経度、およびプロバイダーを表示する GetBestProvider アプリ](location-images/location-03.png)](location-images/location-03.png#lightbox)
-
-プロバイダーは動的に`GetBestProvider`変更されないことに注意してください。 代わりに、アクティビティのライフサイクル中に1回だけ、最適なプロバイダーを決定します。 プロバイダーの状態が設定された後で変更された場合、アプリケーションでは`ILocationListener` 、 &ndash; 、 `OnProviderDisabled`、および`OnStatusChanged` &ndash;の各メソッド`OnProviderEnabled`に関連するすべての可能性を処理するために、追加のコードが必要になります。プロバイダースイッチ。
+> ユーザーがすべての場所プロバイダーを無効に`GetBestProvider`した`null`場合、はを返します。 実際のデバイスでこのコードがどのように動作するかを確認するには、次のスクリーンショットに示すように、[ **Google 設定 > 場所] > モード**で GPS、wi-fi、および携帯ネットワークを有効にする必要があります。
+>
+> [![Android フォンの設定場所モード画面](location-images/location-02.png)](location-images/location-02.png#lightbox)
+>
+> 次のスクリーンショットは、を使用し`GetBestProvider`て実行されている場所アプリケーションを示しています。
+>
+> [![緯度、経度、およびプロバイダーを表示する GetBestProvider アプリ](location-images/location-03.png)](location-images/location-03.png#lightbox)
+>
+> プロバイダーは動的に`GetBestProvider`変更されないことに注意してください。 代わりに、アクティビティのライフサイクル中に1回だけ、最適なプロバイダーを決定します。 プロバイダーの状態が設定された後で変更された場合、アプリケーションでは`ILocationListener` 、 &ndash; 、 `OnProviderDisabled`、および`OnStatusChanged` &ndash;の各メソッド`OnProviderEnabled`に関連するすべての可能性を処理するために、追加のコードが必要になります。プロバイダースイッチ。
 
 ## <a name="summary"></a>Summary
 

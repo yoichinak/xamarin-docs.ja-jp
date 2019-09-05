@@ -4,15 +4,15 @@ description: このガイドでは、Xamarin Designer for iOS について説明
 ms.prod: xamarin
 ms.assetid: E7045E41-0DEF-416B-BCDB-52502350F61C
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 01/31/2018
-ms.openlocfilehash: 2f47e655da60c05fe57e5c57b3a3236fee7cbd65
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: f37905f483ad31d05276383718a3295d4a288f28
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528660"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70285863"
 ---
 # <a name="ios-designer-basics"></a>iOS Designer の基本
 
@@ -361,7 +361,7 @@ IOS Designer には、6つの主要なセクションがあります。
 
 1. **ウィジェット**–名前、クラス、スタイルプロパティなど、コントロールの主要なプロパティです。コントロールのコンテンツを管理するためのプロパティは、通常、ここに配置されます。
 2. **Layout** –制約やフレームなど、コントロールの位置とサイズを追跡するプロパティを次に示します。
-3. イベント: イベントとイベントハンドラーがここで指定されます。 タッチ、タップ、ドラッグなどのイベントを処理する場合に便利です。イベントは、コード内で直接処理することもできます。
+3. **イベント: イベント**とイベントハンドラーがここで指定されます。 タッチ、タップ、ドラッグなどのイベントを処理する場合に便利です。イベントは、コード内で直接処理することもできます。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 

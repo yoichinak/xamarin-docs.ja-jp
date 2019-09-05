@@ -4,15 +4,15 @@ description: このガイドでは、Xamarin の Mac と、下位レベルの目
 ms.prod: xamarin
 ms.assetid: 74D1FF57-4F2A-4646-8669-003DE99671D4
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 04/12/2017
-ms.openlocfilehash: 61a5757c20f3a39df583bda10a11145e04560bf8
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 2c9bbd663257e937e35e062f03b4aa84813edb27
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70198210"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70287786"
 ---
 # <a name="xamarinmac-architecture"></a>Xamarin. Mac アーキテクチャ
 
@@ -60,7 +60,7 @@ Xamarin では、.NET と Apple の 2 つの独立したエコシステムがあ
 
 ## <a name="registrar"></a>レジストラー
 
-前述のように、レジストラーはマネージコードを目的の C に公開するコードです。 これを行うには、NSObject から派生したすべてのマネージクラスのリストを作成します。
+前述したように、レジストラーはマネージ コードを Objective-C に公開するコードです。 これは、NSObject から派生したすべてのマネージ クラスのリストを作成することによって行われます。
 
 - 既存の目的 c クラスをラップしていないすべてのクラスに対して、属性を`[Export]`持つすべてのマネージメンバーをミラーリングする目的の c メンバーを持つ新しい目標 c クラスを作成します。
 - Objective-C の各メンバーの実装では、ミラー化されたマネージ メンバーを呼び出すためのコードが自動的に追加されます。

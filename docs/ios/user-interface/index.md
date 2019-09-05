@@ -1,33 +1,33 @@
 ---
-title: Xamarin.iOS でのユーザー インターフェイスを構築
-description: このドキュメントでは、Xamarin.iOS アプリでのユーザー インターフェイスを構築する方法について説明します。 インターフェイス コントロールについては、iOS デザイナー、ストーリー ボード、一般的な iOS インターフェイスの概念、および iOS のユーザー ガイドへのリンクを提供します。
+title: Xamarin を使用したユーザーインターフェイスの構築
+description: このドキュメントでは、Xamarin iOS アプリでユーザーインターフェイスを構築する方法について説明します。 IOS designer、storyboard、一般的な iOS インターフェイスの概念、iOS ユーザーインターフェイスコントロールに関するガイドへのリンクを提供します。
 ms.prod: xamarin
 ms.assetid: 2B3E45FA-C30F-D708-0E8F-3EE02BD1A867
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 06/21/2017
-ms.openlocfilehash: 245c0a61abd0f52e2dc611c0d5d39cb0bad49012
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6715c075c2686eec023948b070a3b49dea779470
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61316961"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70287117"
 ---
-# <a name="building-user-interfaces-with-xamarinios"></a>Xamarin.iOS でのユーザー インターフェイスを構築
+# <a name="building-user-interfaces-with-xamarinios"></a>Xamarin を使用したユーザーインターフェイスの構築
 
 ## <a name="ios-designeriosuser-interfacedesignerindexmd"></a>[iOS Designer](~/ios/user-interface/designer/index.md)
 
-For mac に Visual Studio に完全に統合されている iOS ストーリー ボード形式用のデザイナーを構築しました IOS designer は for mac。 Xcode または Visual Studio のいずれかでファイルを編集できるように、ストーリー ボード形式で完全な互換性を維持します。 さらに、エディターでは、エディターのデザイン時にレンダリングするカスタム コントロールなどの高度な機能をサポートしています。
+Visual Studio for Mac に完全に統合された iOS ストーリーボード形式のデザイナーを構築しました。 IOS デザイナーは、ストーリーボード形式との完全な互換性を維持し、Xcode または Visual Studio for Mac でファイルを編集できるようにします。 また、エディターでは、デザイン時にレンダリングするカスタムコントロールなどの高度な機能がサポートされています。
 
 ## <a name="introduction-to-storyboardsiosuser-interfacestoryboardsindexmd"></a>[ストーリーボードの概要](~/ios/user-interface/storyboards/index.md)
 
-ストーリー ボードは、視覚的外観と、アプリケーションのフローです。 Xamarin の Xamarin.iOS アプリケーションを視覚的に、アプリケーションの画面をデザインして、ビューにアクセスできるように、ストーリー ボードの利用を許可するデザイナーが導入コント ローラーのセグエとC#詳細に制御します。 参照することもできます[このガイド](~/ios/user-interface/designer/introduction.md)説明と Xamarin iOS デザイナーのチュートリアル。
+ストーリーボードは、アプリケーションの外観とフローを視覚的に表現したものです。 Xamarin には、Xamarin iOS アプリケーションがストーリーボードを利用できるようにするデザイナーが導入されました。これにより、アプリケーション画面を視覚的にデザインC#し、を使用してビュー、コントローラー、セグエにアクセスし、より詳細な制御を行うことができます。 [このガイド](~/ios/user-interface/designer/introduction.md)では、の説明とチュートリアルを参照することもでき Xamarin Designer for iOS
 
 ## <a name="user-interface-in-iosiosuser-interfaceios-uiindexmd"></a>[iOS のユーザー インターフェイス](~/ios/user-interface/ios-ui/index.md)
 
-Xamarin.iOS アプリなどで、iOS ユーザー インターフェイスの操作について説明します。 外観 API、ユーザー インターフェイス オブジェクトの作成、レイアウト オプション、ハプティクス フィードバックを提供すること、および UI スレッドで作業します。
+Xamarin. iOS アプリで iOS ユーザーインターフェイスを使用する方法について説明します。これには、表示 API、ユーザーインターフェイスオブジェクトの作成、レイアウトオプション、Haptic フィードバックの提供、UI スレッドの操作などが含まれます。
 
-## <a name="user-interface-controlsiosuser-interfacecontrolsindexmd"></a>[ユーザー インターフェイス コントロール](~/ios/user-interface/controls/index.md)
+## <a name="user-interface-controlsiosuser-interfacecontrolsindexmd"></a>[ユーザーインターフェイスコントロール](~/ios/user-interface/controls/index.md)
 
-Xamarin.iOS は Apple によって提供されるすべてのネイティブ ユーザー インターフェイス オブジェクトを公開します。 IOS Designer、Xcode の Interface Builder を使用して Xamarin.iOS アプリケーションに簡単に追加されるまたはプログラムを使用します。 すべてのユーザー インターフェイス オブジェクトのプロパティとメソッドを選択する方法に関係なく Xamarin.iOS を公開C#します。
+Xamarin は、Apple によって提供されるすべてのネイティブユーザーインターフェイスオブジェクトを公開します。 IOS Designer、Xcode の Interface Builder、プログラムを使用して、Xamarin iOS アプリケーションに簡単に追加できます。 選択する方法に関係なく、Xamarin は、のすべてのユーザーインターフェイスオブジェクトのプロパティおよびメソッドC#を公開します。

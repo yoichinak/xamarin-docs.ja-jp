@@ -3,15 +3,15 @@ title: Android の概要
 description: このドキュメントでは、Android での .NET 埋め込みの使用を開始する方法について説明します。 .NET 埋め込みのインストール、Android ライブラリプロジェクトの作成、Android Studio プロジェクトで生成された出力の使用、およびその他の考慮事項について説明します。
 ms.prod: xamarin
 ms.assetid: 870F0C18-A794-4C5D-881B-64CC78759E30
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/28/2018
-ms.openlocfilehash: d1d05c75b8026112e8b81c91144361b65ad3a8e0
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 9b0da6f5b195ecef5fd4e5e2b4585b660573a5be
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70120033"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70278558"
 ---
 # <a name="getting-started-with-android"></a>Android の概要
 
@@ -262,7 +262,7 @@ v.apply("Hello");
 mono Embeddinator-4000.exe --gen=Java --platform=Android -c -o output YourMainAssembly.dll YourDependencyA.dll YourDependencyB.dll
 ```
 
-Android Studio プロジェクトで必要になる Android 資産やリソースなどが含まれていることがわかっている場合を除き、NuGet からは何も除外する必要があります。 Java から呼び出す必要のない依存関係を省略したり、必要なライブラリの部分をリンカーに含めたりすることもできます。
+Android Studio プロジェクトで必要になる Android 資産やリソースなどが含まれていることがわかっている場合を除き、NuGet からは何も除外する必要があります。 Java から呼び出す必要のない依存関係を省略したり、必要なライブラリの部分_をリンカーに_含めたりすることもできます。
 
 Android Studio に必要な Java 依存関係を追加するために、 **gradle**ファイルは次のようになります。
 

@@ -3,15 +3,15 @@ title: Xamarin Profiler
 description: このガイドでは、Xamarin Profiler の主な機能について説明します。 ここでは、プロファイラー、プロファイリング、使用する時期、および Xamarin アプリケーションをプロファイリングするための標準的なワークフローについて説明します。
 ms.prod: xamarin
 ms.assetid: 3247fcee-6acc-470d-ab87-c1c511d67363
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 06/03/2018
-ms.openlocfilehash: b62c8453049a1e014cd75cbee562c8f1a2c16c31
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: ca26edc0311de2028af529dc43ea1ffde2383cf4
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227901"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70283662"
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 

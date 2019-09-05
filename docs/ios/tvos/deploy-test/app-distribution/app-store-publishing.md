@@ -4,15 +4,15 @@ description: このドキュメントでは、Apple TV App Store にアプリを
 ms.prod: xamarin
 ms.assetid: 52448C93-DC19-40FA-BF8C-608AE680FF49
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: aaffaf3d66bb51d467c40bc3e5707a149154c0a7
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 350cd7e2d0dd79b876a6c1277d40a9c96d97c102
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528735"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70282719"
 ---
 # <a name="publishing-to-the-apple-tv-app-store"></a>Apple TV App Store への発行
 

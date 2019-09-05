@@ -1,35 +1,35 @@
 ---
-title: Objective C の .NET の埋め込みのベスト プラクティス
-description: このドキュメントは、OBJECTIVE-C と .NET の埋め込みを使用するためのさまざまなベスト プラクティスを説明します これは、マネージ コードのサブセットを公開する、chunkier API を公開する、名前付け、および詳細について説明します。
+title: .NET 埋め込みのベストプラクティス-C
+description: このドキュメントでは、.NET 埋め込みを使用して、C を使用するためのさまざまなベストプラクティスについて説明します。 ここでは、マネージコードのサブセットの公開、chunkier API の公開、名前付けなどについて説明します。
 ms.prod: xamarin
 ms.assetid: 63C7F5D2-8933-4D4A-8348-E9CBDA45C472
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 11/14/2017
-ms.openlocfilehash: 33138b7858b8bc04a5be30f9fad1709e916f5575
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: ff04c001193eb897aac81cdc66ed535c76d81717
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61364140"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70285116"
 ---
-# <a name="net-embedding-best-practices-for-objective-c"></a>Objective C の .NET の埋め込みのベスト プラクティス
+# <a name="net-embedding-best-practices-for-objective-c"></a>.NET 埋め込みのベストプラクティス-C
 
-これは下書きであり、可能性がありますとの同期機能を現時点でサポートされていないツール。 お役に長期的な最適な方法でない即時の回避策を提案いたしますつまりこと、このドキュメントはそれぞれ別々 に進化し、最終的に、最終的なツールと一致します。
+これはドラフトであり、ツールで現在サポートされている機能と同期されていない可能性があります。 このドキュメントが個別に進化し、最終的に最終的なツールと一致していることを願っています。つまり、短期的なベストアプローチを提案します。即時の回避策ではありません。
 
-このドキュメントの大部分は、サポートされているその他の言語にも適用されます。 例としてで提供されているすべてただしC#と OBJECTIVE-C
+このドキュメントの大部分は、サポートされている他の言語にも適用されます。 ただし、指定されたC#すべての例は、との C に含まれています。
 
-## <a name="exposing-a-subset-of-the-managed-code"></a>マネージ コードのサブセットを公開します。
+## <a name="exposing-a-subset-of-the-managed-code"></a>マネージコードのサブセットの公開
 
-生成されたネイティブ ライブラリ/フレームワークには、Objective C コード各公開されているマネージ Api を呼び出すことにはが含まれています。 サーフェスを複数の API (パブリックこと) が拡大し、ネイティブ_グルー_ライブラリになります。
+生成されたネイティブライブラリ/フレームワークには、公開されている各マネージ Api を呼び出すための目的の C コードが含まれています。 より多くの API (パブリック) を使用すると、ネイティブ_グルー_ライブラリが大きくなります。
 
-ネイティブの開発者に必要な Api のみを公開する、異なるより小さなアセンブリを作成することをお勧めが考えられます。 そのファサードはまた、可視性、名前付け、エラーが生成されたコードの確認... より詳細に制御できます。
+必要な Api のみをネイティブ開発者に公開するために、別の小さなアセンブリを作成することをお勧めします。 このファサードを使用すると、可視性、名前付け、エラーチェックをより細かく制御することもできます。生成されたコードの。
 
-## <a name="exposing-a-chunkier-api"></a>Chunkier API を公開します。
+## <a name="exposing-a-chunkier-api"></a>Chunkier API の公開
 
-ネイティブ コードからの移行を支払う料金があるにマネージ コード (とバック)。 そのため、公開するほうが_chatty ではなく chunky_ネイティブの開発者に Api 例。
+ネイティブから管理 (およびその逆) への移行には料金が発生します。 そのため、_高い api の代わりに chunky_をネイティブ開発者に公開することをお勧めします。たとえば、
 
-**Chatty です**
+**高い**
 
 ```csharp
 public class Person {
@@ -45,7 +45,7 @@ p.firstName = @"Sebastien";
 p.lastName = @"Pouliot";
 ```
 
-**チャンク化**
+**Chunky**
 
 ```csharp
 public class Person {
@@ -58,17 +58,17 @@ public class Person {
 Person *p = [[Person alloc] initWithFirstName:@"Sebastien" lastName:@"Pouliot"];
 ```
 
-遷移の数が小さいため、パフォーマンスが向上されます。 小規模なネイティブ ライブラリも生成されますので、生成されるコードも必要です。
+移行の回数が少ないため、パフォーマンスが向上します。 また、生成されるコードが少なくなるため、ネイティブライブラリも小さくなります。
 
 ## <a name="naming"></a>名前付け
 
-名前付けすると、コンピューター サイエンス、他のキャッシュの無効化と 1 ではオフのエラーをされている 2 つの最も困難な問題の 1 つです。 うまくいけば .NET を埋め込むことができますからも保護以外のすべての名前付けします。
+名前付けは、コンピューターサイエンスで最も困難な2つの問題の1つであり、キャッシュの無効化と1回目のエラーの発生を防ぎます。 .NET 埋め込みは、名前を付けるだけではなく、すべてのことを防ぐことができます。
 
-### <a name="types"></a>型
+### <a name="types"></a>種類
 
-Objective C では、名前空間はサポートされていません。 一般に、その型が付いて、2 (Apple) の (サード パーティ) の 3 文字のようなプレフィックス、または`UIView`UIKit の表示を示すフレームワーク。
+目標 C は名前空間をサポートしていません。 一般に、この型には、フレームワークを示す uikit のビューのよう`UIView`に、2 (Apple の場合) または 3 (サードパーティの場合) という文字プレフィックスが付いています。
 
-.NET 型の複製、または、混乱を招く名をもたらす可能性があると、名前空間をスキップはことではできません。 これは、ため、既存の .NET 型が非常に長い例。
+名前空間の重複や混乱を招く可能性があるため、.NET 型では名前空間を省略できません。 これにより、既存の .NET 型が非常に長くなります。たとえば、
 
 ```csharp
 namespace Xamarin.Xml.Configuration {
@@ -76,19 +76,19 @@ namespace Xamarin.Xml.Configuration {
 }
 ```
 
-ように使用されます。
+次のように使用されます。
 
 ```objc
 id reader = [[Xamarin_Xml_Configuration_Reader alloc] init];
 ```
 
-ただし、種類としてを再公開できます。
+ただし、型は次のように再公開できます。
 
 ```csharp
 public class XAMXmlConfigReader : Xamarin.Xml.Configuration.Reader {}
 ```
 
-Objective C のよりわかりやすいように例を使用します。
+次のように、使用する目的をさらに C でわかりやすくします。
 
 ```objc
 id reader = [[XAMXmlConfigReader alloc] init];
@@ -96,20 +96,20 @@ id reader = [[XAMXmlConfigReader alloc] init];
 
 ### <a name="methods"></a>メソッド
 
-.NET にも適した名前を Objective C API の理想的なことができない可能性があります。
+優れた .NET 名でも、目的の C API には適していない場合があります。
 
-Objective C での名前付け規則は、.NET (より詳細なパスカル ケースではなくキャメル ケース) と異なります。
-参照してください、 [Cocoa のコーディング ガイドライン](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CodingGuidelines/Articles/NamingMethods.html#//apple_ref/doc/uid/20001282-BCIGIJJF)します。
+目的 C の名前付け規則は .NET とは異なります (pascal 形式ではなく camel 形式の場合は、より詳細です)。
+[Cocoa のコーディングガイドライン](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CodingGuidelines/Articles/NamingMethods.html#//apple_ref/doc/uid/20001282-BCIGIJJF)をお読みください。
 
-OBJECTIVE-C 開発者の観点、使用してメソッドからを`Get`プレフィックスは、つまり、インスタンスを所有していないことを意味、[規則の取得](https://developer.apple.com/library/content/documentation/CoreFoundation/Conceptual/CFMemoryMgmt/Concepts/Ownership.html#//apple_ref/doc/uid/20001148-SW1)します。
+目標 C 開発者の観点から見ると、 `Get`プレフィックスを持つメソッドは、インスタンスを所有していないことを意味します。つまり、 [get 規則](https://developer.apple.com/library/content/documentation/CoreFoundation/Conceptual/CFMemoryMgmt/Concepts/Ownership.html#//apple_ref/doc/uid/20001148-SW1)です。
 
-この名前付け規則、.NET GC における; 一致はありません.NET メソッドを`Create`.NET にプレフィックスが同じ動作です。 ただし、開発者は Objective C、という意味など、返されたインスタンスを所有する、[ルールを作成](https://developer.apple.com/library/content/documentation/CoreFoundation/Conceptual/CFMemoryMgmt/Concepts/Ownership.html#//apple_ref/doc/uid/20001148-103029)です。
+この名前付け規則は、.NET GC の世界では一致しません.net では、プレフィックス`Create`を持つ .net メソッドは同じように動作します。 ただし、C の開発者にとっては、通常、返されたインスタンス (つまり、[作成規則](https://developer.apple.com/library/content/documentation/CoreFoundation/Conceptual/CFMemoryMgmt/Concepts/Ownership.html#//apple_ref/doc/uid/20001148-103029)) を所有していることを意味します。
 
 ## <a name="exceptions"></a>例外
 
-.Net ではエラーを報告する広範な例外を使用する非常に一般的です。 ただし、これらは低速と OBJECTIVE-C でまったく同じです。 可能であれば、OBJECTIVE-C 開発者から非表示にする必要があります。
+.NET では、例外を頻繁に使用してエラーを報告することが非常に一般的です。 ただし、これらは低速であり、目標 C ではまったく同じではありません。 可能な限り、C 開発者からは非表示にする必要があります。
 
-たとえば、.NET`Try`パターンは Objective C コードから使用するはるかに簡単になります。
+たとえば、.net `Try`パターンは、次のように、目的の C コードからはるかに簡単に使用できます。
 
 ```csharp
 public int Parse (string number)
@@ -118,7 +118,7 @@ public int Parse (string number)
 }
 ```
 
-比較
+比べ
 
 ```csharp
 public bool TryParse (string number, out int value)
@@ -127,18 +127,18 @@ public bool TryParse (string number, out int value)
 }
 ```
 
-### <a name="exceptions-inside-init"></a>内部例外 `init*`
+### <a name="exceptions-inside-init"></a>内部の例外`init*`
 
-.NET でのコンス トラクターをする必要がありますか、成功し、返します、、(_できれば_) 有効なインスタンスまたは例外をスローします。
+.NET では、コンストラクターは成功し、(_できれ_ば) 有効なインスタンスを返すか、または例外をスローする必要があります。
 
-OBJECTIVE-C では、これに対し、`init*`を返す`nil`インスタンスを作成できません。 これは、Apple のフレームワークの多くで使用される一般的なしかしされません一般的なパターンです。 その他のいくつかの場合、`assert`発生することができます (および現在のプロセスを強制終了)。
+これに対し、目標値 C `init*`では`nil` 、インスタンスを作成できない場合にを返すことができます。 これは一般的ではありませんが、多くの Apple のフレームワークで使用される一般的なパターンです。 他のケースでは`assert` 、が発生する場合があります (および現在のプロセスを終了します)。
 
-コード ジェネレーターがに従って同じ`return nil`生成パターン`init*`メソッド。 マネージ例外がスローされたかどうかは、印刷される (を使用して`NSLog`) と`nil`が呼び出し元に返されます。
+ジェネレーターは、生成さ`return nil`れた`init*`メソッドに対して同じパターンに従います。 マネージ例外がスローされた場合は、を使用し`NSLog` `nil`て出力され、呼び出し元に返されます。
 
 ## <a name="operators"></a>演算子
 
-Objective C としては、オーバー ロードする演算子を許可しないC#ため、これらは、クラス セレクターに変換します。
+目標 C では、演算子をそのようC#にオーバーロードすることはできないため、これらはクラスセレクターに変換されます。
 
-[「わかりやすい」](https://docs.microsoft.com/dotnet/standard/design-guidelines/operator-overloads)演算子のオーバー ロード方が優先的に名前付きメソッドが生成されるときに検出されより簡単に API を利用して生成できます。
+["わかりやすい"](https://docs.microsoft.com/dotnet/standard/design-guidelines/operator-overloads)名前付きメソッドは、見つかった場合は演算子のオーバーロードに優先して生成され、API を簡単に使用できるようになります。
 
-演算子をオーバーライドするクラス`==`施した`!=`も標準 Equals (Object) メソッドをオーバーライドする必要があります。
+`==` 施し`!=`演算子をオーバーライドするクラスは、標準の Equals (Object) メソッドもオーバーライドする必要があります。

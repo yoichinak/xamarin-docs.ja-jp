@@ -1,65 +1,65 @@
 ---
-title: Xamarin.Mac アプリケーションの基礎
-description: このドキュメントは、Xamarin.Mac アプリケーションを開発する際に理解するために必要なさまざまな概念について説明したガイドにリンクしています。
+title: Xamarin. Mac アプリケーションの基礎
+description: このドキュメントでは、Xamarin アプリケーションを開発するときに理解しておく必要があるさまざまな概念について説明しているガイドにリンクしています。
 ms.prod: xamarin
 ms.assetid: 5A36B3A7-F197-4AC3-A40D-B2C49362FF06
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 12/17/2015
-ms.openlocfilehash: 376286b73c92cba40de183043b86cb4ffb5e699d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 73ec847b697c2d588d0c217bcbf12d4f0b6aa817
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61085306"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291348"
 ---
-# <a name="xamarinmac-application-fundamentals"></a>Xamarin.Mac アプリケーションの基礎
+# <a name="xamarinmac-application-fundamentals"></a>Xamarin. Mac アプリケーションの基礎
 
-## <a name="common-patterns-and-idiomsmacapp-fundamentalspatternsmd"></a>[共通のパターンと成句](~/mac/app-fundamentals/patterns.md)
+## <a name="common-patterns-and-idiomsmacapp-fundamentalspatternsmd"></a>[一般的なパターンと表現](~/mac/app-fundamentals/patterns.md)
 
-C# を使用して公開されている Apple Api、全体で特定の表現形式とパターンが何度も。 Xamarin.iOS を使用したプログラミングの経験がある場合は、これらが使い慣れた見えることがあります。 ドキュメントは多くの場合を参照してこれらのパターンと成句、繰り返しがそれらを確実に理解に役立つ検索するドキュメントを理解するため。
+を通じて公開されC#ている Apple api 全体を通じて、特定の表現とパターンが繰り返し使用されます。 Xamarin. iOS を使用したプログラミングの経験がある場合は、これらの機能がよく見られます。 ドキュメントでは、これらのパターンや表現を繰り返し参照することがよくあるため、これらを十分に理解しておくと、見つけたドキュメントを理解するのに役立ちます。
 
-## <a name="understanding-mac-apismacapp-fundamentalsmac-apismd"></a>[Understanding Mac Api](~/mac/app-fundamentals/mac-apis.md)
+## <a name="understanding-mac-apismacapp-fundamentalsmac-apismd"></a>[Mac Api について](~/mac/app-fundamentals/mac-apis.md)
 
-Xamarin.Mac を使って開発時間の大部分を考えて、読み取り、および基になる Objective C Api を使用した量に関係なく、c# で記述することができます。 ただし、場合があります必要がありますを apple の API のドキュメントを読み取る、問題のソリューションには、Stack Overflow から回答を変換したりする既存のサンプルと比較します。
+Xamarin. Mac を使用した開発時間の大部分では、基礎となる目標 C C# api に関してあまり心配をすることなく、お客様が検討、読み取り、および書き込みを行うことができます。 ただし、場合によっては、Apple から API ドキュメントを読み取り、Stack Overflow からの回答を問題の解決策に変換するか、既存のサンプルと比較する必要があります。
 
 ## <a name="console-appsmacapp-fundamentalsconsolemd"></a>[コンソール アプリ](~/mac/app-fundamentals/console.md)
 
-ネイティブ macOS Api にアクセスする「ヘッドレス」コンソール アプリケーションを構築することもできます。 Xamarin.Mac を使用します。
+また、Xamarin を使用してネイティブ macOS Api にアクセスする "ヘッドレス" コンソールアプリを構築することもできます。
 
-## <a name="working-with-xib-filesmacapp-fundamentalsxibmd"></a>[.Xib ファイルの使用](~/mac/app-fundamentals/xib.md)
+## <a name="working-with-xib-filesmacapp-fundamentalsxibmd"></a>[Xib ファイルの操作](~/mac/app-fundamentals/xib.md)
 
-この記事では、.xib ファイルを作成して、Xamarin.Mac アプリケーションのユーザー インターフェイスを管理する Xcode の Interface Builder で作成した作業について説明します。
+この記事では、Xcode の Interface Builder で作成された xib ファイルを使用して、Xamarin アプリケーションのユーザーインターフェイスを作成および管理する方法について説明します。
 
-## <a name="storyboardxib-less-user-interface-designmacapp-fundamentalsxibless-uimd"></a>[ユーザー インターフェイスの設計より.storyboard/.xib](~/mac/app-fundamentals/xibless-ui.md)
+## <a name="storyboardxib-less-user-interface-designmacapp-fundamentalsxibless-uimd"></a>[. storyboard/xib less ユーザーインターフェイスの設計](~/mac/app-fundamentals/xibless-ui.md)
 
-この記事では、c# コードから直接 .storyboard または .xib ファイルと Xcode の Interface Builder を使用せず、Xamarin.Mac アプリケーションのユーザー インターフェイスを作成するについて説明します。
+この記事では、Xcode の Interface Builder を storyboard または xib ファイルC#と共に使用せずに、コードから直接 Xamarin. Mac アプリケーションのユーザーインターフェイスを作成する方法について説明します。
 
-## <a name="working-with-imagesmacapp-fundamentalsimagemd"></a>[画像の操作](~/mac/app-fundamentals/image.md)
+## <a name="working-with-imagesmacapp-fundamentalsimagemd"></a>[イメージの操作](~/mac/app-fundamentals/image.md)
 
-この記事では、イメージとアイコンは、Xamarin.Mac アプリケーションでの操作について説明します。 作成について説明し、アプリケーションのアイコンと c# コードと Xcode の Interface Builder の両方でイメージを使用して作成するために必要なイメージを維持します。
+この記事では、Xamarin. Mac アプリケーションでのイメージとアイコンの使用について説明します。 この記事では、アプリケーションのアイコンを作成し、コードと Xcode の両方C#の Interface Builder でイメージを使用するために必要なイメージの作成と管理について説明します。
 
-## <a name="data-binding-and-key-value-codingmacapp-fundamentalsdatabindingmd"></a>[データ バインディングとキー値コーディング](~/mac/app-fundamentals/databinding.md)
+## <a name="data-binding-and-key-value-codingmacapp-fundamentalsdatabindingmd"></a>[データバインディングとキー値のコーディング](~/mac/app-fundamentals/databinding.md)
 
-この記事では、キーと値のコーディングと観察の Xcode の Interface Builder での UI 要素へのデータ バインディングを許可するキーと値を使用してについて説明します。 大幅に書き込む必要がある、Xamarin.Mac アプリケーションの c# コードの量を減らすこの手法を使用して。 
+この記事では、キーと値のコードを使用して、Xcode の Interface Builder の UI 要素にデータをバインドできるようにするためのキーと値の監視について説明します。 この手法を使用すると、Xamarin. Mac C#アプリケーション用に書き込む必要があるコードの量を大幅に削減できます。 
 
 ## <a name="working-with-databasesmacapp-fundamentalsdatabasesmd"></a>[データベースの操作](~/mac/app-fundamentals/databases.md)
 
-この記事では、キーと値のコーディングと Xcode の Interface Builder での UI 要素に SQLite データベースに直接アクセスによるデータ バインディングのために観察キーと値を使用してについて説明します。 SQLite.NET ORM を使用して SQLite データへのアクセスを提供することも説明します。
+この記事では、キー値のコードとキー値の監視を使用して、データバインディングで Xcode の Interface Builder の UI 要素に対して SQLite データベースへの直接アクセスを許可する方法について説明します。 また、SQLite.NET ORM を使用して SQLite データへのアクセスを提供する方法についても説明します。
 
 ## <a name="working-with-copy-and-pastemacapp-fundamentalscopy-pastemd"></a>[コピーと貼り付けの操作](~/mac/app-fundamentals/copy-paste.md)
 
-この記事では、コピーを提供して、Xamarin.Mac アプリケーションで貼り付けるクリップボードの操作について説明します。 作業する方法を示しますによりアプリ内でカスタム データをサポートする方法と複数のアプリ間で共有できる標準的なデータ型。
+この記事では、ペーストボードを使用して、Xamarin. Mac アプリケーションにコピーと貼り付けを行う方法について説明します。 ここでは、複数のアプリ間で共有できる標準データ型の操作方法と、アプリ内でカスタムデータをサポートする方法を示します。
 
-## <a name="sandboxing-a-xamarinmac-appmacapp-fundamentalssandboxingmd"></a>[Xamarin.Mac アプリのサンド ボックス化](~/mac/app-fundamentals/sandboxing.md)
+## <a name="sandboxing-a-xamarinmac-appmacapp-fundamentalssandboxingmd"></a>[Xamarin. Mac アプリのサンドボックス化](~/mac/app-fundamentals/sandboxing.md)
 
-この記事では、App Store でのリリース用の Xamarin.Mac アプリケーションのサンド ボックス化について説明します。 すべてのサンド ボックスに移動する要素について説明します。 コンテナー ディレクトリ、権利、ユーザー指定のアクセス許可、特権の分離、およびカーネルの強制実行します。
+この記事では、App Store でリリースするための Xamarin. Mac アプリケーションのサンドボックスについて説明します。 ここでは、サンドボックスに含まれるすべての要素 (コンテナーディレクトリ、権利、ユーザーによって決定されるアクセス許可、特権の分離、およびカーネルの強制) について説明します。
 
 ## <a name="playing-sound-with-avaudioplayermacapp-fundamentalssoundsmd"></a>[AVAudioPlayer でのサウンドの再生](~/mac/app-fundamentals/sounds.md)
 
-この記事では、ヘルパー クラスを使用して、AVAudioPlayer を使用してサウンドの再生を制御する方法を示します。
+この記事では、ヘルパークラスを使用して、AVAudioPlayer を使用してサウンドの再生を制御する方法について説明します。
 
 ## <a name="reporting-bugsmacapp-fundamentalstroubleshootingmd"></a>[バグの報告](~/mac/app-fundamentals/troubleshooting.md)
 
-希望方法を操作する API を取得することができない、またはバグを回避しようとしています。 で、プロジェクトで作業中にスタックでしょう。 Xamarin の目標は、モバイルおよびデスクトップ アプリケーションの作成に成功することですし、リソースについてご紹介します。
+場合によっては、API を手に入れたり、バグに対処したりすることができないときに、プロジェクトの作業中に行き詰まってしまうことがあります。 Xamarin での目標は、モバイルアプリケーションとデスクトップアプリケーションの作成に成功し、役に立ちます。

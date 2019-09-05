@@ -1,47 +1,47 @@
 ---
 title: watchOS 5 の概要
-description: このドキュメントは、いくつかの watchOS 5 の概要を説明を提供します。 Xamarin 用の Api。
+description: このドキュメントでは、Xamarin 用の watchOS 5 Api の概要について説明します。
 ms.prod: xamarin
 ms.assetid: 775BE4E4-F408-4620-AED9-2B48C7B27F38
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 10/05/2018
-ms.openlocfilehash: 5df751f683c530ee9f7ec58d9d6393d9f089314d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e873d476e38c91bad0db805d53e2c396f4ffb9dd
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61222859"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70282039"
 ---
 # <a name="introduction-to-watchos-5"></a>watchOS 5 の概要
 
-このドキュメントは、いくつかの watchOS 5 の概要を説明を提供します。 Api。
+このドキュメントでは、watchOS 5 Api の概要について説明します。
 
-Xamarin で watchOS 5 アプリの構築を開始するを参照してください、[ファースト ステップ ガイド](~/ios/platform/introduction-to-ios12/get-started.md)
+Xamarin で watchOS 5 アプリのビルドを開始するには、[ファーストステップガイド](~/ios/platform/introduction-to-ios12/get-started.md)を参照してください。
 
 ## <a name="workout-improvements"></a>トレーニングの機能強化
 
-WatchOS 5 でトレーニング Api は、トレーニング データを収集、ワークアウトを HealthKit、アプリがクラッシュした後、トレーニングを自動的に続行して、一連の関連する量のデータの操作に保存する新しい機能を提供します。
+WatchOS 5 のトレーニング Api は、データ収集のトレーニング、HealthKit へのワークスペースの保存、アプリがクラッシュした後も自動的にトレーニングを続行し、関連する一連の数量データを操作するための新機能を提供します。
 
-## <a name="siri-shortcuts"></a>Siri のショートカット
+## <a name="siri-shortcuts"></a>Siri ショートカット
 
-WatchOS 5 で Siri ウォッチの文字盤を示していますのショートカットを画面のアプリのコンテンツと機能をユーザーに適切な時間。 Siri を使用すると思われるときに、関連するショートカットを表示する時間の経過と共に学習します。
+WatchOS 5 では、Siri ウォッチフェイスに、アプリのコンテンツと機能を便利なタイミングでユーザーに表示するショートカットが表示されます。 Siri は、使用される可能性が最も高い場合に関連するショートカットを表示するために、時間の経過と共に学習します。
 
-## <a name="background-audio-mode"></a>バック グラウンド オーディオ モード
+## <a name="background-audio-mode"></a>バックグラウンドオーディオモード
 
-watchOS 5 を使うと、AV Foundation フレームワークを通じて、バック グラウンドでオーディオを再生するサード パーティのアプリ。
+watchOS 5 を使用すると、サードパーティ製アプリで AV Foundation framework を通じてバックグラウンドでオーディオを再生できます。
 
-## <a name="movement-disorder-api"></a>誤順序の移動 API
+## <a name="movement-disorder-api"></a>誤順序 API の移動
 
-移動の誤順序 API は、5、watchOS の CoreMotion フレームワークの一部は、パーキンソン病に関連する tremor と dyskinesia の現象をモニター、レコード、およびクエリ watchOS アプリケーションにできます。
+WatchOS 5 の CoreMotion フレームワークの一部である誤順序 API は、watchOS アプリケーションが Dyskinesia の病気に関連する tremor とパーキンソンの症状を監視、記録、および照会できるようにします。
 
 ## <a name="natural-language-framework"></a>自然言語フレームワーク
 
-自然言語、フレームワークは、アプリケーションをさまざまな種類の言語分析を実行できます。 たとえば、品詞を特定し、テキストのブロックで表される言語を決定する、使用できます。
+自然言語フレームワークを使用すると、アプリケーションはさまざまな種類の言語分析を実行できます。 たとえば、音声の一部を識別し、テキストブロックで表される言語を特定するために使用できます。
 
 ## <a name="related-links"></a>関連リンク
 
 - [watchOS – Apple Developer (Apple)](https://developer.apple.com/watchOS/)
-- [新機能については watchOS (Apple) (ビデオ)](https://developer.apple.com/videos/play/wwdc2018/206/)
-- [ウォッチ (Apple)](https://www.apple.com/watch/)
+- [WatchOS (Apple) の新機能 (ビデオ)](https://developer.apple.com/videos/play/wwdc2018/206/)
+- [Watch (Apple)](https://www.apple.com/watch/)

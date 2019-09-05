@@ -4,14 +4,14 @@ description: このドキュメントでは、Xamarin の Unified API を使用�
 ms.prod: xamarin
 ms.assetid: 8DD34D21-342C-48E9-97AA-1B649DD8B61F
 ms.date: 03/29/2017
-author: asb3993
-ms.author: amburns
-ms.openlocfilehash: 844730d2ace717b951df2d80b2add6d1094fe997
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+author: conceptdev
+ms.author: crdun
+ms.openlocfilehash: 0d1f09f8318f1292f6c9b65627d9b659f8fc466b
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70226095"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70280781"
 ---
 # <a name="tips-for-updating-code-to-the-unified-api"></a>コードを Unified API に更新する場合のヒント
 

@@ -4,15 +4,15 @@ description: アプリトランスポートセキュリティ (ATS) は、イン
 ms.prod: xamarin
 ms.assetid: F8C5E444-2D05-4D9B-A2EF-EB052CD6F007
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 06/13/2017
-ms.openlocfilehash: 67fbd3fb7fb9c7bf1e326404d0d63bc42a3fd8ed
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: dc435f486d0020ab339ebd8f537f749f44493fe0
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227671"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70289494"
 ---
 # <a name="app-transport-security-in-xamarinios"></a>Xamarin. iOS のアプリトランスポートセキュリティ
 

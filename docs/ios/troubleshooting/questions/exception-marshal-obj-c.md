@@ -4,26 +4,26 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 8805ABEC-48D4-4CCB-A226-3A5B2ECE4BF0
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 04/03/2018
-ms.openlocfilehash: 3dbb4d9132d5d94e4533704730e95002b5aec0be
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 62a63dc5156d1acf9ad6ca15029978131c151726
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832268"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290468"
 ---
 # <a name="why-does-my-ios-9-app-fail-with-systemexception-failed-to-marshal-the-objective-c-object"></a>iOS 9 アプリが System.Exception: Failed to marshal the Objective-C object(System.Exception: Objective C オブジェクトのマーシャリングが失敗しました) で失敗するのはなぜですか。
 
-このフォームのエラーが表示することがあります。
+次のような形式のエラーが表示されることがあります。
 
-> System.Exception: Objective C のオブジェクトをマーシャ リングできませんでした.このオブジェクトの既存のマネージ インスタンスが見つかりませんでした.
+> System.Exception: 目的の C オブジェクトをマーシャリングできませんでした...このオブジェクトの既存のマネージドインスタンスが見つかりませんでした...
 
-IOS 9 の API の変更は、基になる API を今すぐとしてアンマネージ コードを呼び出すことが期待したときにコールバック コンス トラクターを使用することが必要です。 クラスにコールバック コンス トラクターを追加するのにには、次の行を使用します。 
+IOS 9 での API の変更では、基になる API が想定しているように、アンマネージコードを呼び出すときにコールバックコンストラクターを使用する必要があります。 次の行を使用して、コールバックコンストラクターをクラスに追加します。 
 
 `public foo (IntPtr handle) : base (handle)` 
 
 ### <a name="next-steps"></a>次の手順
 
-問い合わせ、または上記の情報を使用した後でもこの問題が残っている場合を参照してください、詳細については[Xamarin のどのようなサポート オプションを使用しますか?](~/cross-platform/troubleshooting/support-options.md)連絡先オプション、推奨事項は、についてする方法についても必要な場合は、新しいバグをファイルします。 
+詳細については、お問い合わせください。または、上記の情報を利用した後もこの問題が発生する場合は、「 [Xamarin で使用できるサポートオプション](~/cross-platform/troubleshooting/support-options.md)」を参照してください。連絡先オプション、提案、および必要に応じて新しいバグをファイルに登録する方法については、こちらを参照してください. 

@@ -4,15 +4,15 @@ description: このドキュメントでは、大まかに説明し、ネイテ�
 ms.prod: xamarin
 ms.assetid: F40F2275-17DA-4B4D-9678-618FF25C6803
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 2bb682dcd2218291c8a6332cf0c1ad548c0aa3e2
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 7d59a295961c25ecfcc99bb54fdc188c957cf3ee
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70225985"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291952"
 ---
 # <a name="ios-app-architecture"></a>iOS アプリのアーキテクチャ
 

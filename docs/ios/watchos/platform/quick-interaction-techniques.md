@@ -4,15 +4,15 @@ description: この記事では、Apple が watchOS 3 で追加したクイッ�
 ms.prod: xamarin
 ms.assetid: 26697F68-AF7E-4A36-988F-85E2674A4DD1
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: e04b6be1547183869fb49955703245e19365bdb3
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: a0719dce3b7f5484168dc5679237b01286f5de78
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70120170"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70286756"
 ---
 # <a name="quick-interaction-techniques-for-watchos-3-in-xamarin"></a>Xamarin の watchOS 3 のクイック対話技法
 
@@ -34,8 +34,8 @@ WatchOS では、通常、ユーザーは手首を起動し、アプリをすば
 
 これらの目標を達成するには、Apple Watch 上のアプリが次のようになっている必要があります。
 
-- これは、ユーザーが必要な情報を一目で把握できるようにすることを意味します。 
-- 実行可能-ユーザーは、十分な情報に基づいた迅速な意思決定を行うことができることを意味します。
+- これは、ユーザーが必要な情報を一目で**把握できるよう**にすることを意味します。 
+- 実行可能-ユーザーは、**十分な情報**に基づいた迅速な意思決定を行うことができることを意味します。
 - **応答性**-ユーザーは必要な情報を受信したり、必要な操作を実行したりすることができないことを意味します。
 
 ### <a name="quick-interactions-length"></a>クイック操作の長さ

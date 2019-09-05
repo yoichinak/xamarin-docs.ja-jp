@@ -4,15 +4,15 @@ description: この記事では、フォーカスの概念と、tvOS アプリ�
 ms.prod: xamarin
 ms.assetid: DD72E95F-AE9B-47D2-B132-5FA5FBD8026E
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 96b35764da1922ae1810a78e760e8ed39a8a8a3b
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: fdf675e37bec07ef03576313befbaa9309ab9349
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70199626"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291571"
 ---
 # <a name="working-with-tvos-navigation-and-focus-in-xamarin"></a>TvOS ナビゲーションを使用して Xamarin にフォーカスを移動する
 
@@ -74,7 +74,7 @@ Apple には、フォーカスと選択の操作に関して次のような推�
 - 視差を使用して、フォーカスされた**項目の応答性**を小さくし、Siri リモートの円形のジェスチャを使用して、フォーカスがある項目のリアルタイムの移動を実現します。 この[視差効果](#Focus-and-Parallax)は、ユーザー `UIKit`がフォーカスされた項目に接続できるようにするために、_レイヤー図_に組み込まれています。
 - **適切なサイズのフォーカス**がある項目を作成する-十分な間隔を持つ大きな項目は、より小さい項目よりも簡単に選択して移動できます。
 - **UI 要素をデザインして、フォーカスまたは見るを適切に表示**します。通常、Apple TV は、サイズを大きくすることでフォーカスのある項目を表します。 アプリの UI 要素がどのようなプレゼンテーションサイズでも優れていることを確認し、必要に応じて、サイズの大きい要素の資産を提供します。
-- **フォーカス変更を表し**ます。流動的を使用して、フォーカスされている項目と**見る**状態の間をスムーズにフェードし、遷移が jarring にならないようにします。
+- **フォーカス変更を表し**ます。流動的を使用して、フォーカスされて**いる項目と** **見る**状態の間をスムーズにフェードし、遷移が jarring にならないようにします。
 - **カーソルを表示しない**-ユーザーは、画面の上にカーソルを移動するのではなく、フォーカスを使用してアプリの UI 内を移動することを想定しています。 ユーザーインターフェイスは、常にフォーカスモデルを使用して、一貫性のあるユーザーエクスペリエンスを提供する必要があります。
 
 <a name="Working-with-Focus" />

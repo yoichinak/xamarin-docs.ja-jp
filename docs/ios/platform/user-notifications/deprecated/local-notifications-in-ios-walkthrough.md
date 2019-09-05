@@ -4,15 +4,15 @@ description: このセクションでは、Xamarin iOS アプリケーション�
 ms.prod: xamarin
 ms.assetid: 32B9C6F0-2BB3-4295-99CB-A75418969A62
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 376f046769e27586d9611d634aef89811c7b3be8
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: a012d8f166a287dfde4247a2df6d1e82091d9d70
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70200383"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290459"
 ---
 # <a name="walkthrough---using-local-notifications-in-xamarinios"></a>チュートリアル-Xamarin でのローカル通知の使用
 
@@ -27,7 +27,7 @@ _このセクションでは、Xamarin iOS アプリケーションでローカ�
 
 
 1. Visual Studio for Mac で、新しい単一ビューの iOS ソリューションを作成し、 `Notifications`それを呼び出します。
-1. `Main.storyboard`ファイルを開き、ボタンをビューにドラッグします。 ボタンに名前を付けて、タイトルを**追加通知**にします。 この時点で、いくつかの[制約](~/ios/user-interface/designer/designer-auto-layout.md)をボタンに設定することもできます。 
+1. `Main.storyboard`ファイルを開き、ボタンをビューにドラッグします。 **ボタンに名前を付け**て、タイトルを**追加通知**にします。 この時点で、いくつかの[制約](~/ios/user-interface/designer/designer-auto-layout.md)をボタンに設定することもできます。 
 
     ![](local-notifications-in-ios-walkthrough-images/image3.png "ボタンにいくつかの制約を設定する")
 1. `ViewController`クラスを編集し、次のイベントハンドラーを ViewDidLoad メソッドに追加します。

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/27/2018
-ms.openlocfilehash: e2cab7191bb4877deacb3f3f3235a3a4d5c65612
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 6df393d59207cea9c316189059f8d0e08a5e5137
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656362"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290070"
 ---
 # <a name="dependency-resolution-in-xamarinforms"></a>Xamarin.Forms での依存関係の解決
 
@@ -29,9 +29,9 @@ _この記事では、アプリケーションの依存関係注入コンテナ�
 
 ## <a name="injecting-a-dependency-resolution-method"></a>依存関係の解決方法を挿入します。
 
-[ `DependencyResolver` ](xref:Xamarin.Forms.Internals.DependencyResolver)を Xamarin.Forms では、依存関係の解決方法を挿入する機能を提供するクラスを使用して、 [ `ResolveUsing` ](Xamarin.Forms.Internals.DependencyResolver.ResolveUsing*)メソッド。 次に、Xamarin.Forms に特定の型のインスタンスが必要がある場合、依存関係の解決方法にインスタンスを提供する機会が与えられます。 依存関係の解決方法を返す場合`null`の種類を作成しようとしてにフォールバックを Xamarin.Forms では、要求された型のインスタンスを使用して自体、`Activator.CreateInstance`メソッド。
+[ `DependencyResolver` ](xref:Xamarin.Forms.Internals.DependencyResolver)を Xamarin.Forms では、依存関係の解決方法を挿入する機能を提供するクラスを使用して、 [ `ResolveUsing` ](xref:Xamarin.Forms.Internals.DependencyResolver.ResolveUsing*)メソッド。 次に、Xamarin.Forms に特定の型のインスタンスが必要がある場合、依存関係の解決方法にインスタンスを提供する機会が与えられます。 依存関係の解決方法を返す場合`null`の種類を作成しようとしてにフォールバックを Xamarin.Forms では、要求された型のインスタンスを使用して自体、`Activator.CreateInstance`メソッド。
 
-次の例と依存関係の解決方法を設定する方法を示しています、 [ `ResolveUsing` ](Xamarin.Forms.Internals.DependencyResolver.ResolveUsing*)メソッド。
+次の例と依存関係の解決方法を設定する方法を示しています、 [ `ResolveUsing` ](xref:Xamarin.Forms.Internals.DependencyResolver.ResolveUsing*)メソッド。
 
 ```csharp
 using Autofac;

@@ -3,15 +3,15 @@ title: Web サービスの概要
 description: このガイドでは、さまざまな web サービステクノロジを使用する方法について説明します。 ここでは、REST サービス、SOAP サービス、および Windows Communication Foundation サービスとの通信について説明します。
 ms.prod: xamarin
 ms.assetid: 72627B90-586A-02B6-E231-F7CE015A1B97
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: 07ebd61704ed07892eed9ce4d7fd7a21e215bee2
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 3e5ce4496b4a2deb86bb2b7dd6d36e5e9b3f446c
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526726"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70287571"
 ---
 # <a name="introduction-to-web-services"></a>Web サービスの概要
 
@@ -302,7 +302,7 @@ file:///Users/myUserName/projects/MyProjectName/service.wsdl
 
 #### <a name="manually-adding-a-proxy-to-a-project"></a>手動によるプロジェクトへのプロキシの追加
 
-互換性のあるツールを使用して生成された既存のプロキシがある場合は、プロジェクトの一部としてこの出力を含めることができます。 Visual Studio for Mac で、 **[ファイルの追加...]** を使用します。 プロキシを追加するメニューオプション。 さらに、[参照の**追加...** ] を使用して明示的に参照する必要があります。 ダイアログ.
+互換性のあるツールを使用して生成された既存のプロキシがある場合は、プロジェクトの一部としてこの出力を含めることができます。 Visual Studio for Mac で、 **[ファイルの追加...]** を使用します。 プロキシを追加するメニューオプション。 さらに、 **[参照の追加...]** を使用して明示的に参照*する必要があります*。 ダイアログ.
 
 ### <a name="consuming-the-proxy"></a>プロキシを使用する
 

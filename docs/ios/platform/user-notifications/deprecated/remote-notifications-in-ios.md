@@ -4,15 +4,15 @@ description: このドキュメントでは、iOS 9 以前でプッシュ通知�
 ms.prod: xamarin
 ms.assetid: 64B3BE6A-A3E2-4B1B-95ED-02D27A8FDAAC
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: c707cb1afb774d73be7ea441695b88920489eb5f
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: ee2c54f2369682571520370e09d6d39c2cd86fa5
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528759"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290593"
 ---
 # <a name="push-notifications-in-ios"></a>IOS でのプッシュ通知
 
@@ -33,7 +33,7 @@ Apple は APNS の2つの環境を保持します。*サンドボックス*と*�
 プッシュ通知は、APNS のアーキテクチャによって規定された次の規則に従う必要があります。
 
 - **256 バイトのメッセージ制限**-通知のメッセージサイズ全体は、256バイトを超えてはなりません。
-- 確認メッセージが表示されません。 APNS は、送信者に対し、メッセージが目的の受信者にメッセージを送信したことを通知しません。 デバイスにアクセスできない場合に、複数のシーケンシャル通知が送信されると、最新の通知を除くすべての通知が失われます。 最新の通知のみがデバイスに配信されます。
+- **確認メッセージ**が表示されません。 APNS は、送信者に対し、メッセージが目的の受信者にメッセージを送信したことを通知しません。 デバイスにアクセスできない場合に、複数のシーケンシャル通知が送信されると、最新の通知を除くすべての通知が失われます。 最新の通知のみがデバイスに配信されます。
 - **各アプリケーションにはセキュリティで保護された証明書が必要です**。 APNS との通信は SSL 経由で行う必要があります。
 
 

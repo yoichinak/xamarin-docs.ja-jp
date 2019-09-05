@@ -4,15 +4,15 @@ description: このドキュメントでは fastlane の sigh コマンドにつ
 ms.prod: xamarin
 ms.assetid: CD17276F-2C8C-4A46-A54C-DD532EBD5720
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: bb2fd504cccb7aa81831288762ba623824e52554
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: f90ce8dcb8c3ab9d4fee9f684c0e53218b8440a9
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526514"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70285714"
 ---
 # <a name="fastlane-for-ios-sigh"></a>fastlane for iOS – sigh
 
@@ -101,7 +101,7 @@ sigh ユーティリティの使用を開始するには、端末に次のコマ
 fastlane sigh
 ```
 
-既定ではこれが [App Store Distribution](~/ios/deploy-test/app-distribution/app-store-distribution/index.md) プロビジョニング プロファイルを作成します。 開発用にデバイスを設定するには、`--development` フラグ: 
+既定ではこれが [App Store Distribution](~/ios/deploy-test/app-distribution/app-store-distribution/index.md) プロビジョニング プロファイルを作成します。 開発用にデバイスを設定するには、`--development` フラグ:
 
 ```bash
 fastlane sigh --development

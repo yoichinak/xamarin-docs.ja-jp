@@ -1,30 +1,30 @@
 ---
 title: サンプルの統合
-description: このドキュメントには、Xamarin Workbooks の統合を示すサンプルへのリンクがいます。 リンクされたサンプル表現レンダリングと SkiaSharp を使用します。
+description: このドキュメントでは、Xamarin Workbooks 統合を示すサンプルへのリンクを示します。 リンクされたサンプルは、表現レンダリングおよび SkiaSharp と連携します。
 ms.prod: xamarin
 ms.assetid: 327DAD2E-1F76-4EB5-BCD0-9E7384D99E48
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/30/2017
-ms.openlocfilehash: e35577b116180d2745e2f6afb792547f63873214
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: fbe471aa7f08d85a870d68505cf2c983b7e442e9
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61424604"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292810"
 ---
 # <a name="sample-integrations"></a>サンプルの統合
 
-参照してください、[キッチン シンク][KitchenSink]統合の実施例についてはサンプルです。 構築`KitchenSink.sln`Visual studio for Mac または Visual Studio と順に開いて`KitchenSink.workbook`します。
+統合の実際の例については、[キッチンのシンク][KitchenSink]サンプルを参照してください。 Visual Studio for Mac また`KitchenSink.sln`は Visual Studio でビルドし、を`KitchenSink.workbook`開くだけです。
 
-[![キッチンのシンクの統合のスクリーン ショット](samples-images/kitchensinkintegrationscreenshot.png)](samples-images/kitchensinkintegrationscreenshot.png#lightbox)
+[![キッチンシンク統合のスクリーンショット](samples-images/kitchensinkintegrationscreenshot.png)](samples-images/kitchensinkintegrationscreenshot.png#lightbox)
 
-キッチンのシンクのサンプルでは、両方のセットの概念を示しています。
+キッチンのシンクサンプルでは、両方の概念のセットを示しています。
 
-* 表現の部分が使用する方法を示します`RepresentationManager`組み込みの表現を使用してレンダリングを強化するためにします。
-* `Person`オブジェクトとその関連付けられた JavaScript レンダラーは、使用方法をデモンストレーション`ISerializableObject`表現プロバイダーを経由せずにします。
+* この表現は、を使用`RepresentationManager`して、組み込み表現を使用してレンダリングを強化する方法を示しています。
+* オブジェクト`Person`とそれに関連付けられた`ISerializableObject` JavaScript レンダラーは、表現プロバイダーを経由せずにを使用する方法を示しています。
 
-参照してください[SkiaSharp][skiasharp]既存を使用する統合環境の実際の例の[表現](~/tools/workbooks/sdk/representations.md)その型を表示するために、Xamarin Workbooks によって提供されます。
+Xamarin Workbooks によって提供される既存の[表現](~/tools/workbooks/sdk/representations.md)を使用して型をレンダリングする実際の統合例については、「 [SkiaSharp][skiasharp] 」を参照してください。
 
 [KitchenSink]: https://github.com/xamarin/Workbooks/tree/master/SDK/Samples/KitchenSink
 [skiasharp]: https://github.com/mono/SkiaSharp/tree/master/source/SkiaSharp.Workbooks

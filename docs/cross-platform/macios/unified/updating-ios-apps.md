@@ -3,15 +3,15 @@ title: 既存の iOS アプリを更新しています
 description: このドキュメントでは、Classic API から Unified API に Xamarin iOS アプリを更新するために従う必要がある手順について説明します。
 ms.prod: xamarin
 ms.assetid: 303C36A8-CBF4-48C0-9412-387E95024CAB
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: b0999ff6fc3b3042827f11ae1e127ef7bb9fedfe
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: c74efef96a15a950122041eb52dc09835bb8940b
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509610"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70279550"
 ---
 # <a name="updating-existing-ios-apps"></a>既存の iOS アプリを更新しています
 
@@ -75,7 +75,7 @@ IOS アプリケーションプロジェクトを右クリックして**参照�
 
 ステートメント内の`using`名前空間から、または classname が完全に修飾されている場所 (例を含む) から monotouch.dialog プレフィックスを削除します。 `MonoTouch.UIKit`がだけ`UIKit`になります)。
 
-### <a name="4-remap-types"></a>4。型の再マップ
+### <a name="4-remap-types"></a>4.型の再マップ
 
 以前に使用されていたいくつかの型`CoreGraphics.CGRect` (たとえば、の`System.Drawing.RectangleF`インスタンス) を置き換える[ネイティブ型](~/cross-platform/macios/nativetypes.md)が導入されました。 型の完全な一覧については、「[ネイティブ型](~/cross-platform/macios/nativetypes.md)」ページを参照してください。
 

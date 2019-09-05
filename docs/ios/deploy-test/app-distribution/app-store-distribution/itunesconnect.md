@@ -4,15 +4,15 @@ description: この記事では、iTunes Connect で Xamarin.iOS アプリケー
 ms.prod: xamarin
 ms.assetid: 74587317-4b15-4904-9582-dcd914827cbc
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 24cf255d5cf9269a7d0d485ad8a88abe6842b07a
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 910f91478eeb6894e11748c929cc94bc2c0dbe64
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865608"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70283592"
 ---
 # <a name="configuring-an-app-in-itunes-connect"></a>iTunes Connect でのアプリの構成
 
@@ -200,7 +200,7 @@ iTunes Connect アプリケーション レコードのこのセクションで�
 ### <a name="app-icon"></a>アプリ アイコン
 
 > [!IMPORTANT]
->  アプリ アイコンは、iTunes Connect を通して提出されなくなりました。 プロジェクトの **Assets.xcassets** ファイルに設定された **AppIcon** の画像を通して提出する必要があります。 詳細については、[App Store アイコン](~/ios/app-fundamentals/images-icons/app-store-icon.md)のガイドをご覧ください。
+> アプリ アイコンは、iTunes Connect を通して提出されなくなりました。 プロジェクトの **Assets.xcassets** ファイルに設定された **AppIcon** の画像を通して提出する必要があります。 詳細については、[App Store アイコン](~/ios/app-fundamentals/images-icons/app-store-icon.md)のガイドをご覧ください。
 
 アプリのアイコンは、ユーザーにとってアプリケーションの顔です。そのため、覚えやすく、小さなサイズで適切に表示されるものにする必要があります。 覚えやすいアイコンとは、クリーンで単純で、すぐに認識できるものです。
 

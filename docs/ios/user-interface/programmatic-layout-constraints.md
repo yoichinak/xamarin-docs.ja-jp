@@ -4,15 +4,15 @@ description: このガイドでは、ios Designer で作成するC#のではな�
 ms.prod: xamarin
 ms.assetid: 119C8365-B470-4CD4-85F7-086F0A46DCBB
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: c26e064a32762dcb1d088e614830a7a9632f9b1b
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 1c8cc9d810a7555626cb00ab0a05dfe03896c94a
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70120724"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292990"
 ---
 # <a name="programmatic-layout-constraints-in-xamarinios"></a>Xamarin のプログラムによるレイアウトの制約
 

@@ -4,15 +4,15 @@ description: この記事では、開発者が Xamarin. Mac で最新の macOS �
 ms.prod: xamarin
 ms.assetid: F20EE590-246E-40EB-B309-D9D8C090C7F1
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 914afe63136323e3506bb40d4759869f97fb264c
-ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
+ms.openlocfilehash: 04bcf1012800ef2883fef80580bcec869bd8e5a3
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70065696"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291467"
 ---
 # <a name="building-modern-macos-apps"></a>最新の macOS アプリの構築
 

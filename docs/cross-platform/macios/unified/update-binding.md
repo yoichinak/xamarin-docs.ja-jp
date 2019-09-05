@@ -3,15 +3,15 @@ title: バインドの Unified API への移行
 description: この記事では、Xamarin および Xamarin アプリケーション用の統合 Api をサポートするために、既存の Xamarin バインドプロジェクトを更新するために必要な手順について説明します。
 ms.prod: xamarin
 ms.assetid: 5E2A3251-D17F-4F9C-9EA0-6321FEBE8577
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 90ef47d4e105dc401369c92e9196111c060314e3
-ms.sourcegitcommit: 1341f2950b775a4daa7d0548a51fdef759afd6e3
+ms.openlocfilehash: dcee5c6d5324be11f424739a20ba673817553e36
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69976418"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70287376"
 ---
 # <a name="migrating-a-binding-to-the-unified-api"></a>バインドの Unified API への移行
 

@@ -3,15 +3,15 @@ title: クロスプラットフォームのパフォーマンス
 description: このドキュメントでは、モバイル アプリケーションのパフォーマンスを向上させるために使用できるさまざまな手法について説明します。 プロファイラー、IDisposable のリソース、弱い参照、SGen ガベージ コレクター、サイズ縮小の手法などを説明します。
 ms.prod: xamarin
 ms.assetid: 9ce61f18-22ac-4b93-91be-5b499677d661
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 03/24/2017
-ms.openlocfilehash: 75bc540ee518a1f5cfef29886d968648ea5769ed
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: f31fd699aad95ff785ff887b2a2a8b6f2601ad7b
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526702"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290187"
 ---
 # <a name="cross-platform-performance"></a>クロスプラットフォームのパフォーマンス
 

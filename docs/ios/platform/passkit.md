@@ -4,15 +4,15 @@ description: ウォレットアプリを使用すると、iOS ユーザーは自
 ms.prod: xamarin
 ms.assetid: 74B9973B-C1E8-B727-3F6D-59C1F98BAB3A
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 06/13/2018
-ms.openlocfilehash: c434c39c12403bfc61e146041eb2a0780f29eb3e
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 8039482175465a67867f3c70f17518dee8b9500b
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119184"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70277869"
 ---
 # <a name="passkit-in-xamarinios"></a>Xamarin. iOS の Pass Kit
 
@@ -82,7 +82,7 @@ Pass は、チケット、クーポン、またはカードを表すデータの
 
 ### <a name="file-structure"></a>ファイル構造
 
-パスファイルは、実際には、特定の JSON ファイル (必須)、さまざまなイメージファイル (省略可能)、およびローカライズされた文字列 (省略可能) を含む、拡張子が PKPASS ZIP アーカイブです。
+パスファイルは、実際には、特定の JSON ファイル (必須)、さまざまなイメージファイル (省略可能)、およびローカライズされた文字列 (省略可能) を含む、拡張子が**PKPASS** ZIP アーカイブです。
 
 - **pass. json** –必須。 パスのすべての情報が含まれます。
 - **manifest. json** –必須。 署名ファイルとこのファイル (manifest.xml) を除き、パス内の各ファイルの SHA1 ハッシュを格納します。

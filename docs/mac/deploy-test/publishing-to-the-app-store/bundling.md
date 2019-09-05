@@ -4,15 +4,15 @@ description: このドキュメントでは、Mac App Store に公開するた�
 ms.prod: xamarin
 ms.assetid: 00a36d7c-937d-4657-bf6a-0de9684b8f94
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 3394c0ccaa25ff438bd4435321f05c55990fc674
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 283a057723ae399ead65c0c3e40347dbbd1e189e
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122037"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70281181"
 ---
 # <a name="bundling-for-the-mac-app-store"></a>Mac App Store 用のバンドル
 
@@ -23,7 +23,7 @@ ms.locfileid: "50122037"
 
 ## <a name="code-signing-options"></a>コード署名のオプション
 
-コードの署名とパッケージ化のオプションを更新する前に、**[構成]** を **[リリース]** に変更してください。 開発者は、App Store でのリリース用にアプリケーションに署名するときに、前に作成した **ID** とプロビジョニング ファイルを会社が使用していることを確認する必要があります。
+コードの署名とパッケージ化のオプションを更新する前に、 **[構成]** を **[リリース]** に変更してください。 開発者は、App Store でのリリース用にアプリケーションに署名するときに、前に作成した **ID** とプロビジョニング ファイルを会社が使用していることを確認する必要があります。
 
  [![コード署名オプションの編集](bundling-images/config02.png "コード署名オプションの編集")](bundling-images/config02-large.png#lightbox)
 
@@ -33,13 +33,13 @@ ms.locfileid: "50122037"
 
 ## <a name="build"></a>ビルド
 
-ビルドの前に、**[リリース]** 構成が選択されていることを確認します。 開発者がアプリをビルドする際、両方の証明書を使用するよう求められます。
+ビルドの前に、 **[リリース]** 構成が選択されていることを確認します。 開発者がアプリをビルドする際、両方の証明書を使用するよう求められます。
 
  ![アプリによる証明書の使用の許可](bundling-images/image62.png "アプリによる証明書の使用の許可")
 
  ![アプリによる証明書の使用の許可](bundling-images/image63.png "アプリによる証明書の使用の許可")
 
-アプリケーションがビルドされると、開発者はプロジェクトを右クリックし、**[Open Containing Folder]\(含まれているフォルダーを開く\)** を選択して、パッケージ ファイルを (下に示す例の `bin/x86/AppStore` ディレクトリから) 検索することができます。  このパッケージ ファイルには、Mac App Store で含めるように Apple に送信できるアプリのインストーラーが含まれています。
+アプリケーションがビルドされると、開発者はプロジェクトを右クリックし、 **[Open Containing Folder]\(含まれているフォルダーを開く\)** を選択して、パッケージ ファイルを (下に示す例の `bin/x86/AppStore` ディレクトリから) 検索することができます。  このパッケージ ファイルには、Mac App Store で含めるように Apple に送信できるアプリのインストーラーが含まれています。
 
  ![Finder でのビルド パッケージの選択](bundling-images/image64.png "Finder でのビルド パッケージの選択")
 

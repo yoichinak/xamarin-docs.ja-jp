@@ -1,57 +1,57 @@
 ---
-title: watchOS プラットフォーム機能
-description: このドキュメントは、Apple Pay、通知など、複雑な問題、プロアクティブな候補、トレーニングのアプリの詳細は、watchOS プラットフォーム機能を記述するさまざまなガイドにリンクしています。
+title: watchOS プラットフォームの機能
+description: このドキュメントでは、Apple Pay、通知、複雑さ、プロアクティブな提案、トレーニングアプリなど、watchOS プラットフォームの機能について説明するさまざまなガイドにリンクしています。
 ms.prod: xamarin
 ms.assetid: 13F23E01-BAED-43EB-A70E-3B30EF53D379
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 10/05/2018
-ms.openlocfilehash: 09200ba5968838edf829b30a50a8ad0f4a3ab3aa
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 2b987992bcb3dd4d2575a46e21a2302ed78d8d70
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61224561"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70282284"
 ---
-# <a name="watchos-platform-features"></a>watchOS プラットフォーム機能
+# <a name="watchos-platform-features"></a>watchOS プラットフォームの機能
 
 ## <a name="introduction-to-watchos-5introduction-to-watchos5indexmd"></a>[watchOS 5 の概要](introduction-to-watchos5/index.md)
 
-このドキュメントでは、Xamarin で watchOS アプリを構築するときに使用するために使用できる 5 watchOS で新規および更新された機能の概要を提供します。
+このドキュメントでは、Xamarin を使用して watchOS アプリをビルドするときに使用できる watchOS 5 の新機能と更新された機能の概要を示します。
 
 ## <a name="introduction-to-watchos-4introduction-to-watchos4md"></a>[watchOS 4 の概要](introduction-to-watchos4.md)
 
-このドキュメントでは、機能が追加され、watchOS 4 の更新の概要を提供します。
+このドキュメントでは、watchOS 4 で追加および更新された機能の概要について説明します。
 
 ## <a name="introduction-to-watchos-3introduction-to-watchos3indexmd"></a>[watchOS 3 の概要](introduction-to-watchos3/index.md)
 
-この記事では、watchOS 3 で新規および更新された Api について説明します。
+この記事では、watchOS 3 の新しい Api と更新された Api について説明します。
 
-## <a name="apple-pay-enhancementsioswatchosplatformapple-paymd"></a>[Apple Pay 機能強化](~/ios/watchos/platform/apple-pay.md)
+## <a name="apple-pay-enhancementsioswatchosplatformapple-paymd"></a>[Apple Pay の機能強化](~/ios/watchos/platform/apple-pay.md)
 
-WatchOS 3、PassKit framework は、Apple Watch で実行されるアプリ (物理的な商品およびサービスの両方) のセキュリティで保護された、アプリ内の支払いのサポートを許可する拡張されました。
+WatchOS 3 では、Pass Kit フレームワークが拡張され、Apple Watch で実行されているアプリのセキュリティで保護されたアプリ内支払い (物理的な商品とサービスの両方) をサポートできるようになりました。
 
-## <a name="background-tasksioswatchosplatformbackground-tasksmd"></a>[バック グラウンド タスク](~/ios/watchos/platform/background-tasks.md)
+## <a name="background-tasksioswatchosplatformbackground-tasksmd"></a>[バックグラウンドタスク](~/ios/watchos/platform/background-tasks.md)
 
-watchOS 3 では、コンテンツがあることを確認状を開く前に、ユーザーが必要な情報を更新するアプリが使用できるいくつかのバック グラウンド タスクについて説明します。
+watchOS 3 では、アプリで情報を更新するために使用できるバックグラウンドタスクがいくつか導入されています。このタスクを開く前に、ユーザーが必要とするコンテンツがあることを確認します。
 
 ## <a name="notificationsnotificationsmd"></a>[通知](notifications.md)
 
-カスタム通知の watch アプリで処理を提供する方法について説明します。
+Watch アプリでカスタム通知処理を提供する方法について説明します。
 
 ## <a name="complicationscomplicationsmd"></a>[問題点](complications.md)
 
-ウォッチの文字盤で最新のデータを表示するコンプリケーションのサポートを追加します。
+より複雑なサポートを追加して、ウォッチ式に最新のデータを表示します。
 
-## <a name="proactive-suggestionsioswatchosplatformproactive-suggestionsmd"></a>[プロアクティブな候補](~/ios/watchos/platform/proactive-suggestions.md)
+## <a name="proactive-suggestionsioswatchosplatformproactive-suggestionsmd"></a>[プロアクティブな提案](~/ios/watchos/platform/proactive-suggestions.md)
 
-watchOS 3 内のユーザーに積極的に情報を提示するアプリを許可するコンテキストを指定します。 この機能をサポートするために、 [NSUserActivity](https://developer.apple.com/reference/foundation/nsuseractivity)が含まれています、`MapItem`アプリに他のアプリで後で使用できる場所の情報を提供するプロパティ。
+watchOS 3 を使用すると、アプリは特定のコンテキスト内でユーザーに情報を事前に提示できます。 この機能をサポートするために、 [nsuseractivity](https://developer.apple.com/reference/foundation/nsuseractivity)に`MapItem`は、アプリが他のアプリで後で使用するための場所情報を提供できるようにするプロパティが含まれるようになりました。
 
 ## <a name="quick-interaction-techniquesioswatchosplatformquick-interaction-techniquesmd"></a>[クイック操作の手法](~/ios/watchos/platform/quick-interaction-techniques.md)
 
-提供の簡単なユーザー操作は、説得力のある Apple Watch アプリや複雑さを作成するために不可欠です。 新しい watchos 3、Apple がジェスチャ レコグナイザー、デジタル クラウンと新しいユーザー通知とナビゲーション手法へのアクセスのサポートを追加します。 これ、と共に SceneKit とある SpriteKit の両方のサポートを追加できるように、開発者は高速かつ応答性の高い豊富な glanceable のインターフェイスを簡単に作成します。
+ユーザーとの対話を簡単に行うには、説得力のある Apple Watch アプリや複雑さを作成することが不可欠です。 WatchOS 3 の新機能である Apple では、ジェスチャレコグナイザー、Digital Crown へのアクセス、および新しいユーザー通知およびナビゲーション手法のサポートが追加されました。 これに加えて、SceneKit と SpriteKit の両方のサポートが追加されたため、開発者は迅速かつ迅速に対応できる豊富なインターフェイスを簡単に作成できます。
 
-## <a name="workout-app-enhancementsioswatchosplatformworkout-appsmd"></a>[トレーニング アプリの拡張機能](~/ios/watchos/platform/workout-apps.md)
+## <a name="workout-app-enhancementsioswatchosplatformworkout-appsmd"></a>[トレーニングアプリの機能強化](~/ios/watchos/platform/workout-apps.md)
 
-新しい watchOS 3、トレーニングに関連するアプリを Apple Watch でバック グラウンドで実行する機能があります。 この機能を有効にする (および、HealthKit のデータにアクセスできる) に、アプリを含める必要があります、`WKBackgroundModes`キー、`Info.plist`値を持つファイル`workout-processing`します。
+WatchOS 3 の新機能であるトレーニング関連のアプリは、Apple Watch のバックグラウンドで実行することができます。 この機能を有効にする (および HealthKit データへのアクセス権を取得する) `WKBackgroundModes`には、 `Info.plist`アプリで値`workout-processing`を持つキーをファイルに含める必要があります。

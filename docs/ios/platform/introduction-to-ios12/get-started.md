@@ -1,43 +1,43 @@
 ---
-title: IOS 12、12、tvOS と watchOS 5 の概要します。
-description: このドキュメントでは、最大 12 のビルド iOS、tvOS 12、および Xamarin を使った watchOS 5 アプリ設定を取得する方法について説明します。 これには、Xcode の 10 をダウンロードし、Mac と Visual Studio 2017 の Visual Studio を更新する方法について説明します。
+title: IOS 12、tvOS 12、watchOS 5 を使ってみる
+description: このドキュメントでは、Xamarin を使用して iOS 12、tvOS 12、watchOS 5 のアプリをビルドするように設定する方法について説明します。 Xcode 10 をダウンロードし、Visual Studio for Mac と Visual Studio 2017 を更新する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 6C0F0133-1A5F-408B-8BCA-BDCA313A55C2
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 09/19/2018
-ms.openlocfilehash: 71799e4299f01a881c6bc265baa7ad721ec5fc79
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.openlocfilehash: 480e7c1d5ff0aa7335b3f45d8e05f276bc5be208
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67268887"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70287017"
 ---
-# <a name="get-started-with-ios-12-tvos-12-and-watchos-5"></a>IOS 12、12、tvOS と watchOS 5 の概要します。
+# <a name="get-started-with-ios-12-tvos-12-and-watchos-5"></a>IOS 12、tvOS 12、watchOS 5 を使ってみる
 
-このドキュメントでは、12 を iOS、tvOS 12、および watchOS 5 Xcode 10 でリリースされている Api を呼び出す Xamarin アプリの構築を開始する方法について説明します。
+このドキュメントでは、iOS 12、tvOS 12、および watchOS 5 用の Xcode 10 でリリースされた Api を呼び出す Xamarin アプリの構築を開始する方法について説明します。
 
 ## <a name="download-and-install"></a>ダウンロードしてインストールする
 
-1. **Xcode の 10 をインストール**– Apple の登録されている開発者はダウンロードして、Xcode 10 からの最新バージョンをインストール、 [Apple Developer Portal](https://developer.apple.com/download/)または**App Store**します。
+1. **Xcode 10 をインストール**する–登録済みの apple 開発者は、 [apple Developer Portal](https://developer.apple.com/download/)または**App Store**から最新バージョンの Xcode 10 をダウンロードしてインストールできます。
 
-2. **Xcode の 10 を実行して**– ツール、Xamarin の更新といくつかのインストール過程で、for Mac または Visual Studio 2017、Visual Studio を実行する前に、Xcode 10 実行が必要です。
+2. **Xcode 10 を実行**する– Xamarin に必要なツールがインストールされるため、Visual Studio for Mac または Visual Studio 2017 を更新して実行する前に Xcode 10 を実行します。
 
-3. **Mac と Visual Studio 2017 用 Visual Studio の更新プログラム**– Xamarin の最新の安定バージョンがあることを確認します。
+3. **Update Visual Studio for Mac と Visual Studio 2017** – Xamarin の最新の安定バージョンがあることを確認します。
 
-4. _(省略可能)_ **、IOS デバイスで iOS 12 をインストール**–
+4. _(省略可能)_ Ios**デバイスに ios 12 をインストールする**–
 
-   登録済みの Apple の開発者ができるデバイスは、Xcode 10 で導入された Api を使用するアプリのテスト、[ダウンロード](https://developer.apple.com/download)して自分のデバイスで、オペレーティング システムをインストールします。
+   Xcode 10 で導入された Api を使用するアプリのデバイステストでは、登録済みの Apple 開発者は、自分のデバイスにオペレーティングシステムを[ダウンロード](https://developer.apple.com/download)してインストールできます。
 
    > [!TIP]
-   > アプリでは、新しい Api を使用しない場合でも、最新の Xcode 10 Sdk を構築し、期待どおりに動作するすべてのものかどうかを確認することをテストすることを確認します。 アプリは、新しい Api を呼び出す場合は、これらの新しい Sdk と再コンパイルし、新しいオペレーティング システムにまだアップグレードされていないデバイスでテストできます。
+   > アプリで新しい Api を使用しない場合でも、最新の Xcode 10 Sdk を使用してビルドし、テストして、すべてが期待どおりに動作することを確認してください。 アプリが新しい Api を呼び出さない場合は、これらの新しい Sdk を使用して再コンパイルし、新しいオペレーティングシステムにまだアップグレードされていないデバイスでテストすることができます。
    >
-   > Xamarin アプリをテストする Apple からのリリースに最新のオペレーティング システム、デバイスをアップグレードする前に必ずします。
+   > Apple から最新のオペレーティングシステムリリースにデバイスをアップグレードして Xamarin アプリをテストする前に、次のことを確認してください。
    >
-   > - 読み取り[Apple のリリース ノート](https://developer.apple.com/download/)オペレーティング システムを更新します。
-   > - Xamarin のプレビューを読み取る[ブログの投稿をリリース](https://releases.xamarin.com/preview-release-xcode-10-beta-6/)します。
+   > - オペレーティングシステムの更新プログラムについては、 [Apple のリリースノート](https://developer.apple.com/download/)を参照してください。
+   > - Xamarin preview リリースの[ブログ記事](https://releases.xamarin.com/preview-release-xcode-10-beta-6/)をご覧ください。
 
 ## <a name="related-links"></a>関連リンク
 
-- [Xcode をダウンロードします。](https://developer.apple.com/download/)
+- [Xcode のダウンロード](https://developer.apple.com/download/)

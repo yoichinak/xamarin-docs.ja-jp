@@ -1,64 +1,64 @@
 ---
-title: Xamarin.Mac 向けのターゲット フレームワーク
-description: この記事では、Xamarin.Mac の使用可能なターゲット フレームワーク (基本クラス ライブラリ) および Xamarin.Mac プロジェクトで使用する場合の影響について説明します。
+title: Xamarin. Mac 用のターゲットフレームワーク
+description: この記事では、Xamarin. Mac で使用できるターゲットフレームワーク (基本クラスライブラリ) と、それらを Xamarin. Mac プロジェクトで使用することによる影響について説明します。
 ms.prod: xamarin
 ms.assetid: AF21BE16-3F92-4121-AB4C-D51AC863D92D
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 11/10/2017
-ms.openlocfilehash: e9e20b4966e9e6cb8a4ce3ad6724cf0ba2565c33
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 4ae8834427580c387de7a38a69d711207b04821e
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865860"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290881"
 ---
-# <a name="target-framework-for-xamarinmac"></a>Xamarin.Mac 向けのターゲット フレームワーク
+# <a name="target-framework-for-xamarinmac"></a>Xamarin. Mac 用のターゲットフレームワーク
 
-_この記事では、Xamarin.Mac の使用可能なターゲット フレームワーク (基本クラス ライブラリ) および Xamarin.Mac プロジェクトで使用する場合の影響について説明します。_
+_この記事では、Xamarin. Mac で使用できるターゲットフレームワーク (基本クラスライブラリ) と、それらを Xamarin. Mac プロジェクトで使用することによる影響について説明します。_
 
-![Xamarin.Mac 向けのオプションのフレームワークをターゲット](target-framework-images/select-target.png "-target Xamarin.Mac 向けフレームワーク オプション")
+![Xamarin. Mac のターゲットフレームワークオプション](target-framework-images/select-target.png "Xamarin. Mac のターゲットフレームワークオプション")
 
 ## <a name="background"></a>背景
 
-すべての .NET プログラムまたはライブラリは、基本クラス ライブラリ (BCL) によって提供される機能に依存します。 この BCL には、すべての .NET 言語に組み込まれている一般的な機能を提供するアセンブリ、mscorlib、System、System.Net.Http、および System.Xml などが含まれています。
+すべての .NET プログラムまたはライブラリは、基本クラスライブラリ (BCL) によって提供される機能に依存しています。 この BCL には、すべての .NET 言語に組み込まれている共通機能を提供する mscorlib、System、System .Net. Http、System.xml などのアセンブリが含まれています。
 
-長年にわたって開発には、さまざまなユース ケース用に最適化された、この BCL の複数の異なるバージョンがあります。 [デスクトップ] の BCL には、アプリケーションのフット プリントを削減の未使用のコードを削除する可能性のある他のユース ケースのすぎる重い紙 mobile Api は安全にリンクすると、使用するようにすることに重点を置いています中にライブラリの豊富なセットが含まれています。
+長年にわたり、この BCL の複数の異なるバージョンを開発しました。さまざまなユースケースに合わせて最適化されています。 "デスクトップ" BCL には、他のユースケースに対しては重いことがあるライブラリの豊富なセットが含まれていますが、モバイルではリンクに対して Api の安全性を確保することに重点を置いています。
 
-これらの別のターゲット フレームワークの重要な影響の 1 つのすべてのプログラムでアセンブリ*する必要があります*互換性のある BCL アセンブリのターゲットします。 2 つのアセンブリに対してさまざまなバージョンのリンクがある可能性がありますがない場合は場合、 **System.dll** disagreeing について、指定された型のシグネチャ。 共有ライブラリはいずれかのターゲット[.NET Standard の 2](https://blog.xamarin.com/share-code-net-standard-2-0/)、共通のターゲット フレームワーク、または特定のターゲット フレームワークのサブセットであります。
+これらの異なるターゲットフレームワークの大きな影響の1つは、特定のプログラム内のすべてのアセンブリが互換性のある BCL アセンブリをターゲットに*する必要*があることです。 そうでない場合は、異なるバージョンの **.dll**にリンクされている2つのアセンブリを、指定した型のシグネチャについて無効にすることができます。 共有ライブラリは、ターゲットフレームワークの共通のサブセットである[.NET Standard 2](https://blog.xamarin.com/share-code-net-standard-2-0/)、または特定のターゲットフレームワークのいずれかをターゲットにすることができます。
 
-ターゲット フレームワークの 3 つのオプションは Xamarin.Mac、それぞれ異なる利点とトレードオフに使用できます。
+Xamarin. Mac には3つのターゲットフレームワークオプションが用意されており、それぞれに異なる長所とトレードオフがあります。
 
-- **最新**(以前のドキュメントで Mobile と呼ばれます) – どのような高パフォーマンスとサイズを調整べき乗 Xamarin.iOS、サブセットとよく似ています。 このターゲット フレームワークは安全でリンカーは、これらのプロジェクトは、未使用のコードを削除することで大幅に減少しました、最後のフット プリントを持つことができます。
+- **モダン**(以前のドキュメントでは Mobile と呼ばれていましたが、パフォーマンスとサイズのために高度にチューニングされた Xamarin. iOS の機能によく似たサブセットです)。 このターゲットフレームワークはリンカーセーフであるため、使用されていないコードを削除することで、これらのプロジェクトの最終的なフットプリントを大幅に削減できます。
 
-- **完全な**(以前のドキュメントで XM 4.5 と呼ばれます) –、いくつかの小規模な削除を使用して、「デスクトップ」BCL にサブセットとよく似ています。 Net45 (とそれ以降)、ターゲット フレームワークはほぼ同じですが、netstandard2 いずれかを指定しない多くの nuget を簡単に使用することができます。 または特定 Xamarin.Mac をビルドします。 ただし、System.Configuration 使用率に起因リンクと互換性がありません。
+- **完全**(以前のドキュメントでは XM 4.5 と呼ばれていました)。小さな削除がいくつかありますが、"デスクトップ" BCL と非常によく似ています。 ターゲットフレームワークは net45 (およびそれ以降) とほぼ同じであるため、netstandard2 または特定の Xamarin. Mac ビルドを提供しない多くの nuget を簡単に使用できます。 ただし、システム構成の使用により、リンクと互換性がありません。
 
-- **サポートされていない**(システムでは以前のドキュメント) – 代わりに Xamarin.Mac によって提供される BCL にリンクするのには、現在のシステムがインストールされている mono を使用します。 これは、アセンブリ、既知の問題があるものも含めて (たとえば System.Drawing) の機能を最大限のセットを提供します。 このオプションはのみが存在する「最後の手段」があり、その他のオプションを使用する前に使い果たしてしまうことを強くお勧めします。 名前が示すように、使用状況は公式なサポート チャネルによってサポートされていません。
+- **サポート**されない(以前のドキュメントではシステムと呼ばれます)-Xamarin. Mac で提供される BCL にリンクするのではなく、現在インストールされている mono を使用します。 これにより、問題があるとわかっているもの (たとえば、システム図) を含むアセンブリのセットが提供されます。 このオプションには "last リゾート" しか存在しないため、使用前に他のオプションを使用しないことを強くお勧めします。 名前が示すように、使用法は公式サポートチャネルでサポートされていません。
 
-## <a name="setting-the-target-framework"></a>ターゲット フレームワークを設定します。
+## <a name="setting-the-target-framework"></a>ターゲットフレームワークの設定
 
-Xamarin.Mac プロジェクトのターゲット フレームワークの型に変更するには、次の操作を行います。
+Xamarin. Mac プロジェクトの [ターゲットフレームワーク] の種類に変更するには、次の手順を実行します。
 
 1. Visual Studio for Mac で Xamarin.Mac プロジェクトを開きます。
 2. **ソリューション エクスプローラー**で、プロジェクト ファイルをダブルクリックし、 **[プロジェクト オプション]** ダイアログ ボックスを開きます。
-3. **全般**の種類を選択 タブで、**ターゲット フレームワーク**アプリケーションのニーズに合った。
+3. **[全般**] タブで、アプリケーションのニーズに適した**ターゲットフレームワーク**の種類を選択します。
 
-    [![プロジェクト オプション ウィンドウを使用して、ターゲット フレームワークを選択する](target-framework-images/select-target-full.png "プロジェクト オプション ウィンドウを使用して、ターゲット フレームワークを選択するには")](target-framework-images/select-target-full-large.png#lightbox)
+    [[![プロジェクトオプション] ウィンドウを使用したターゲットフレームワークの選択][(target-framework-images/select-target-full.png "プロジェクトオプション] ウィンドウを使用したターゲットフレームワークの選択")](target-framework-images/select-target-full-large.png#lightbox)
 
 4. **[OK]** をクリックして変更内容を保存します。
 
-必要があります**クリーン**し**リビルド**ターゲット フレームワークの型を切り替えた後、Xamarin.Mac プロジェクト。
+ターゲットフレームワークの種類を切り替えた後、Xamarin. Mac プロジェクトを**クリーン**にしてから**リビルド**する必要があります。
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
-この記事には、Xamarin.Mac アプリケーションをおよび各種のフレームワークを使用する必要があります、使用可能なターゲット フレームワーク (基本クラス ライブラリ) のさまざまな種類について簡単にについて説明しました。
+この記事では、Xamarin. Mac アプリケーションで使用できるさまざまな種類のターゲットフレームワーク (基本クラスライブラリ) について簡単に説明し、各種類のフレームワークを使用する必要がある場合について説明しました。
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [iOS および Mac のコードの共有](~/cross-platform/macios/index.md)
+- [iOS と Mac のコード共有](~/cross-platform/macios/index.md)
 - [Unified API](~/cross-platform/macios/unified/index.md)
 - [ポータブル クラス ライブラリ](~/cross-platform/app-fundamentals/pcl.md)
 - [アセンブリ](~/cross-platform/internals/available-assemblies.md)
-- [既存の Mac アプリを更新します。](~/cross-platform/macios/unified/updating-mac-apps.md)
+- [既存の Mac アプリを更新しています](~/cross-platform/macios/unified/updating-mac-apps.md)

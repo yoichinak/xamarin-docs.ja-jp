@@ -1,17 +1,17 @@
 ---
 title: インスペクターのインストールと要件
-description: このドキュメントでは、Xamarin Inspector をインストールする方法について説明し、サポートされるオペレーティング システムや Ide、アプリのプラットフォームについて説明します。
+description: このドキュメントでは、Xamarin Inspector のインストール方法と、サポートされているオペレーティングシステム、Ide、およびアプリプラットフォームについて説明します。
 ms.prod: xamarin
 ms.assetid: 81174493-02D3-4FF5-AD57-04F3288A7F94
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 06/19/2018
-ms.openlocfilehash: 2bbf0bda42b7bce483d9d036ebf39314dcb73072
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 1273a51d29d7abcbecb9b19ae42e111db8ccc06c
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61373470"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292304"
 ---
 # <a name="inspector-installation-and-requirements"></a>インスペクターのインストールと要件
 
@@ -19,79 +19,79 @@ ms.locfileid: "61373470"
 
 # <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
-1. ダウンロードしてインストール[Visual Studio Enterprise](https://visualstudio.microsoft.com/vs/)を選択し、 **.NET によるモバイル開発**ワークロード。
-1. [サインイン](https://docs.microsoft.com/visualstudio/ide/signing-in-to-visual-studio)エンタープライズ サブスクリプションを有効にします。
-1. [検査](~/tools/inspector/inspect.md)独自のアプリです。
+1. [Visual Studio Enterprise](https://visualstudio.microsoft.com/vs/)をダウンロードしてインストールし、 **[.net を使用したモバイル開発]** ワークロードを選択します。
+1. [サインイン](https://docs.microsoft.com/visualstudio/ide/signing-in-to-visual-studio)して、エンタープライズサブスクリプションを有効にします。
+1. 自分のアプリを[調査](~/tools/inspector/inspect.md)してください。
 
 # <a name="macostabmacos"></a>[macOS](#tab/macos)
 
-1. ダウンロードしてインストール[Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/)します。
-1. [サインイン](https://docs.microsoft.com/visualstudio/mac/activation)エンタープライズ サブスクリプションを有効にします。
-1. [検査](~/tools/inspector/inspect.md)独自のアプリです。
+1. [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/)をダウンロードしてインストールします。
+1. [サインイン](https://docs.microsoft.com/visualstudio/mac/activation)して、エンタープライズサブスクリプションを有効にします。
+1. 自分のアプリを[調査](~/tools/inspector/inspect.md)してください。
 
 -----
 
 ## <a name="requirements"></a>必要条件
 
-### <a name="supported-operating-systems"></a>Supported Operating Systems
+### <a name="supported-operating-systems"></a>サポートされるオペレーティング システム
 
-- **Mac** -OS X 10.11 以降
-- **Windows** -Windows 7 以上 (Internet Explorer 11 以降と .NET 4.6.1 以降)
+- **Mac** -OS X 10.11 以上
+- **Windows** -windows 7 以降 (Internet Explorer 11 以降および .net 4.6.1 以上)
 
 ### <a name="supported-ides"></a>サポートされている Ide
 
 - Visual Studio for Mac
-- Visual Studio 2017 と **.NET によるモバイル開発**ワークロード
+- .NET ワークロード**を使用したモバイル開発**を使用した Visual Studio 2017
 
-ライブ アプリの検査は企業のお客様に使用できます。
+企業のお客様は、ライブアプリの検査を利用できます。
 
 <a name="supported-platforms" />
 
-### <a name="supported-app-platforms"></a>サポートされているアプリのプラットフォーム
+### <a name="supported-app-platforms"></a>サポートされているアプリプラットフォーム
 
-|アプリ プラットフォーム|IDE のサポート|メモ|
+|アプリのプラットフォーム|IDE のサポート|メモ|
 |--- |--- |--- |
-|Mac|Visual studio for Mac のみサポート|
-|iOS|Visual Studio 2017 と Visual Studio for Mac のサポート| リンカーの動作に設定する必要があります**リンクしない**( **iOS ビルド**プロジェクト オプション) |
-|Android|Visual Studio 2017 と Visual Studio for Mac のサポート|Android をターゲットする必要があります > = 4.0.3、 **fastdev**を有効にします。<br />Google、Visual Studio または Xamarin Android エミュレーターを使用する必要があります。 Android 7 エミュレーターは、この時点での検査を許可しません。|
-|WPF|Visual Studio 2017 でのみサポートされています|
+|Mac|Visual Studio for Mac でのみサポートされています|
+|iOS|Visual Studio 2017 および Visual Studio for Mac でサポートされています| リンカーの動作は **[リンクしない]** に設定する必要があります ( **[iOS ビルド]** プロジェクトオプション の下) |
+|Android|Visual Studio 2017 および Visual Studio for Mac でサポートされています|**Fastdev**が有効になっている Android > = 4.0.3 を対象とする必要があります。<br />Google、Visual Studio、または Xamarin Android エミュレーターを使用する必要があります。 Android 7 エミュレーターでは、現時点では検査できない場合があります。|
+|WPF|Visual Studio 2017 でのみサポートされます|
 
 <a name="reporting-bugs" />
 
 ## <a name="reporting-bugs"></a>バグの報告
 
-Visual Studio を使用して直接バグを報告する必要があります。
+バグは、Visual Studio を使用して直接報告する必要があります。
 
-- **ヘルプ > フィードバックを送信 > 問題を報告します。**
+- **フィードバックを送信して問題を報告 > > には、ヘルプを参照してください**
 
-すべての次の情報を含めてください。
+次の情報をすべて含めるようにしてください。
 
 ### <a name="platform-version-information"></a>プラットフォームのバージョン情報
 
-この情報は重要です。
+この情報は不可欠です。
 
 Visual Studio For Mac
 
-- **Visual Studio > Visual Studio のバージョン情報 > 詳細を表示 > 情報のコピー**
-- バグ レポートに貼り付けます
+- **Visual studio について > Visual Studio については > 情報のコピー > 詳細の表示**
+- バグレポートに貼り付け
 
 Visual Studio
 
-- **ヘルプ > Visual Studio のバージョン情報 > 情報のコピー**
-- オペレーティング システムのバージョンと 32 ビットまたは 64 ビットの Windows を実行しているかどうかを通知しています。
+- **Visual Studio > コピー情報の > に関するヘルプ**
+- オペレーティングシステムのバージョンと、32ビットまたは64ビットの Windows を実行しているかどうかをお知らせください。
 
 ### <a name="log-files"></a>ログ ファイル
 
-常に IDE およびインスペクターの両方のクライアント ログ ファイルをアタッチします。
+常に IDE とインスペクターの両方のクライアントログファイルをアタッチします。
 
-Inspector クライアント
+インスペクタークライアント
 
-- Mac の場合: `~/Library/Logs/Xamarin/Inspector/Xamarin Inspector {date}.log`
+- Mac`~/Library/Logs/Xamarin/Inspector/Xamarin Inspector {date}.log`
 - Windows: `%LOCALAPPDATA%\Xamarin\Inspector\logs\Xamarin Inspector {date}.log`
 
-1.4.x では、メイン メニューの検索 (macOS) またはエクスプ ローラー (Windows) 直接ログ ファイルを選択する機能も機能します。
+1.4. x では、メインメニューから直接 Finder (macOS) またはエクスプローラー (Windows) のログファイルを選択する機能もあります。
 
-- **ヘルプ > ログ ファイルの表示**
+- **ログファイルの表示 > ヘルプ**
 
 Visual Studio For Mac
 
@@ -100,23 +100,23 @@ Visual Studio For Mac
 Visual Studio
 
 - `%LOCALAPPDATA%\Xamarin\Logs\{VS version}\Inspector {date}.log`
-- Visual Studio の内容**出力**ウィンドウできない可能性がありますも有益です。
+- Visual Studio の **[出力]** ウィンドウの内容が有益な場合もあります。
 
 ### <a name="project-settings"></a>プロジェクト設定
 
-アタッチすることができる場合、 **.csproj**を検査しようとして、プロジェクトの非常に役に立ちます。 これは、個々 の設定について質問するより簡単です。
+調べようとしているプロジェクトに **.csproj**をアタッチできる場合は、それが非常に便利です。 これは、個々の設定について質問するよりも簡単です。
 
-デバッグ構成であることを確認してください。
+また、デバッグ構成であることを確認してください。
 
 ### <a name="selected-devices"></a>選択したデバイス
 
-Android と iOS の場合は、検査するときでデバッグしているデバイスはどのような把握している点が重要です。 知る必要があります。
+Android と iOS の場合、検査するときに、どのデバイスがデバッグ中であるかを把握しておくことが重要です。 次の点を把握しておく必要があります。
 
-- お使いの IDE で示すようにデバイスの名前
+- IDE に表示されているデバイスの名前
 - デバイスの OS バージョン
-- Android:X86 を使用していることを確認しますエミュレーター。
-- Android:どのようなエミュレーターのプラットフォームを使用していますか。 Google エミュレーターでしょうか。 Visual Studio Android Emulator でしょうか。 Xamarin Android Player でしょうか。
-- 適切にデバッグしているアプリが表示され、デバイスで機能しますか。
-- デバイスにはネットワーク接続 (web ブラウザーを使用してチェック) がありますか。
+- AndroidX86 エミュレーターを使用していることを確認する
+- Androidどのエミュレータープラットフォームを使用していますか? Google Emulator ですか? Visual Studio Android Emulator ですか? Xamarin Android Player ますか?
+- デバッグ中のアプリがデバイスで正しく表示され、機能しているか。
+- デバイスはネットワークに接続されていますか (web ブラウザーで確認してください)。
 
 [client-bugs]: https://github.com/Microsoft/workbooks/issues/new

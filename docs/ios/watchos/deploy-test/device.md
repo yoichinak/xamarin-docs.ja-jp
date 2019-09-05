@@ -1,112 +1,112 @@
 ---
 title: Apple Watch デバイスでのテスト
-description: このドキュメントでは、実際の Apple Watch でのテスト、Xamarin でビルドされた watchOS アプリをデプロイする方法について説明します。 プロビジョニング プロファイルをテストするには、デバイスについて説明し、トラブルシューティングのヒントを提供します。
+description: このドキュメントでは、実際の Apple Watch でテストを行うために、Xamarin でビルドされた watchOS アプリをデプロイする方法について説明します。 デバイス、プロビジョニングプロファイル、テストについて説明し、トラブルシューティングのヒントを提供します。
 ms.prod: xamarin
 ms.assetid: A72A7D38-FAE8-4DD2-843D-54B74C5078D7
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 9c15e9205b96a02caa182e47b71c6d36c8bff1aa
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4b1e232259d7b1816e64298b5c0b8853d8385c20
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61282949"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70283863"
 ---
 # <a name="testing-on-apple-watch-devices"></a>Apple Watch デバイスでのテスト
 
-従った後、[展開手順](~/ios/watchos/deploy-test/index.md)、このページに指示を使用 (必要な場合)、アプリ Id とアプリのグループを作成します。
+[デプロイの手順](~/ios/watchos/deploy-test/index.md)に従ってアプリ Id とアプリグループを作成したら (必要な場合)、このページの手順に従って次の操作を行います。
 
-- [セットアップ デバイス](#devices)Apple のデベロッパー センターで、
-- [開発プロビジョニング プロファイルを作成する](#profiles)、し、
-- [配置およびテスト](#testing)Apple Watch にします。
+- Apple デベロッパーセンターで[デバイスをセットアップ](#devices)します。
+- [開発プロビジョニングプロファイルを作成](#profiles)し、
+- Apple Watch に[配置してテスト](#testing)します。
 
 <a name="devices" />
 
-## <a name="devices"></a>デバイス
+## <a name="devices"></a>[デバイス]
 
-実際の iPhone または iPad で iOS アプリをテストすると、デベロッパー センターに登録するデバイスが常に必要です。 次のようなデバイスの一覧 (プラス記号をクリックします。 **+** 新しいデバイスを追加する)。
+実際の iPhone または iPad で iOS アプリをテストするには、常にデベロッパーセンターにデバイスを登録する必要があります。 デバイスの一覧は次のようになります ( **+** 新しいデバイスを追加するには、プラス記号をクリックします)。
 
-![](device-images/devices-sml.png "次のようなデバイスの一覧")
+![](device-images/devices-sml.png "デバイスの一覧は次のようになります。")
 
-ウォッチではありません - 今すぐアプリをデプロイする前に、Apple Watch デバイスを追加する必要があります。 ウォッチの UDID を使用して検索**Xcode** (**Windows > デバイス**リスト)。 ペアになっている電話が接続されている場合、ウォッチの情報も表示されます。
+監視は異なります。アプリを展開する前に、Apple Watch デバイスを追加する必要があります。 **Xcode** (**Windows > Devices** list) を使用して、ウォッチの udid を検索します。 ペアリングされた電話が接続されると、ウォッチの情報も表示されます。
 
-[![](device-images/xcode-devices-sml.png "Watch のペアリング情報")](device-images/xcode-devices.png#lightbox)
+[![](device-images/xcode-devices-sml.png "ペアになっているウォッチ情報")](device-images/xcode-devices.png#lightbox)
 
-わかっている場合、ウォッチの UDID、デベロッパー センターでデバイスの一覧に追加します。
+ウォッチの UDID がわかったら、デベロッパーセンターのデバイスの一覧に追加します。
 
-![](device-images/devices-watch-sml.png "ウォッチのデバイスの一覧で UDID")
+![](device-images/devices-watch-sml.png "デバイス一覧でのウォッチの UDID")
 
-ウォッチ デバイスが追加されると、新規または既存の開発や、アドホックのプロビジョニング プロファイルを作成するで選択されているを確認します。
+監視デバイスを追加したら、新規または既存の開発またはカスタムプロビジョニングプロファイルで作成したものを選択します。
 
 ![](device-images/devices-provisioning.png "使用可能なデバイスの一覧")
 
-ダウンロードし、再インストールする既存のプロビジョニング プロファイルを編集するかどうかは忘れないでください。
+既存のプロビジョニングプロファイルを編集してダウンロードして再インストールするかどうかを忘れないでください。
 
 <a name="profiles" />
 
-## <a name="development-provisioning-profiles"></a>開発プロビジョニング プロファイル
+## <a name="development-provisioning-profiles"></a>開発プロビジョニングプロファイル
 
-作成する必要があるデバイスでテスト用にビルドする、**開発プロビジョニング プロファイル**ソリューション内のアプリ ID ごとにします。
+デバイスでテスト用にビルドするには、ソリューション内の各アプリ ID の**開発プロビジョニングプロファイル**を作成する必要があります。
 
-ワイルドカード アプリ ID がある場合*プロビジョニング プロファイルを 1 つだけが必要になります*; が、プロジェクトごとに個別のアプリ ID があるかどうかは、各アプリ ID のプロビジョニング プロファイルを必要があります。
+ワイルドカードアプリ ID がある場合は、*プロビジョニングプロファイルが1つだけ必要*です。ただし、プロジェクトごとに個別のアプリ ID がある場合は、アプリ ID ごとにプロビジョニングプロファイルが必要になります。
 
-![](device-images/provisioningprofile-development.png "開発プロビジョニング プロファイル")
+![](device-images/provisioningprofile-development.png "開発プロビジョニングプロファイル")
 
-次の 3 つのすべてのプロファイルを作成したら、一覧に表示されます。 ダウンロードし、それぞれのインストールに注意してください。
+3つのプロファイルがすべて作成されると、一覧に表示されます。 各ファイルをダウンロードしてインストールすることを忘れないでください。
 
-![](device-images/provisioningprofiles.png "使用可能な開発プロビジョニング プロファイル")
+![](device-images/provisioningprofiles.png "利用可能な開発プロビジョニングプロファイル")
 
-プロビジョニング プロファイルを確認することができます、**プロジェクト オプション**を選択して、**ビルド > iOS バンドル署名**画面とを選択すると、**リリース**または**IPhone デバッグ**構成します。
+**プロジェクトオプション**でプロビジョニングプロファイルを確認するには、 **[ビルド > iOS バンドル署名]** 画面を選択し、 **[Release]** または **[Debug iPhone]** 構成を選択します。
 
-**プロビジョニング プロファイル**表示されるすべての一致するプロファイル - このドロップダウン リストで作成した一致するプロファイルを表示する必要があります。
+**[プロビジョニングプロファイル]** の一覧には、一致するすべてのプロファイルが表示されます。このドロップダウンリストで作成した一致するプロファイルが表示されます。
 
-![](device-images/options-selectprofile.png "プロビジョニング プロファイルの一覧")
+![](device-images/options-selectprofile.png "プロビジョニングプロファイルの一覧")
 
 
 <a name="testing" />
 
-## <a name="testing-on-a-watch-device"></a>Watch デバイスでのテスト
+## <a name="testing-on-a-watch-device"></a>監視デバイスでのテスト
 
-デバイス、アプリの Id とプロビジョニング プロファイルを構成した後をテストする準備が整いました。
+デバイス、アプリ Id、プロビジョニングプロファイルを構成すると、テストする準備が整います。
 
-1. IPhone が接続されているし、監視は、iPhone と既にペアリングしてください。
+1. IPhone が接続されていて、ウォッチが既に iPhone とペアリングされていることを確認します。
 
-2. 構成設定されている確認**リリース**または**デバッグ**します。
+2. 構成が**Release**または**Debug**に設定されていることを確認します。
 
-3. 接続している iPhone デバイスがターゲットの一覧で選択されていることを確認します。
+3. [ターゲット] ボックスの一覧で、接続されている iPhone デバイスが選択されていることを確認します。
 
-4. IOS アプリのプロジェクト (、ウォッチや拡張機能) を右クリックし、選択**スタートアップ プロジェクトとして設定**します。
+4. (ウォッチまたは拡張機能ではなく) iOS アプリプロジェクトを右クリックし、 **[スタートアッププロジェクトに設定]** を選択します。
 
-5. をクリックして、**実行**ボタン (または選択を**開始**オプションを**実行**メニュー)。
+5. **[実行]** ボタンをクリックします (または、 **[実行]** メニューの **[開始]** オプションを選択します)。
 
-6. ソリューションがビルドされ、iOS アプリを iPhone に配置されます。
-  IOS アプリまたはウォッチ拡張機能のプロビジョニングを正しく設定しない場合は、iPhone へのデプロイは失敗します。
+6. ソリューションがビルドされ、iOS アプリが iPhone にデプロイされます。
+  IOS アプリまたは watch 拡張機能のプロビジョニングが正しく設定されていない場合、iPhone への展開は失敗します。
 
-7. 展開が正常に完了すると、ペアになっているウォッチを watch アプリを送信する、iPhone が自動的に試みます。 アプリのアイコンが循環にウォッチ画面に表示されます*インストール*進行状況インジケーター。
+7. 配置が正常に完了した場合、iPhone は、ペアになっている Watch に自動的に watch アプリを送信しようとします。 アプリアイコンが、[ウォッチ] 画面に円形の*インストール*進行状況インジケーターと共に表示されます。
 
-8. Watch アプリが正常にインストールされている場合、アイコンは引き続き [ウォッチ] 画面のタッチ、アプリのテストを開始するように!
+8. Watch アプリが正常にインストールされている場合、このアイコンは、アプリのテストを開始するために [ウォッチ] 画面に表示されます。
 
 
 ## <a name="troubleshooting"></a>トラブルシューティング
 
-展開の使用中にエラーが発生した場合、**ビュー > パッド > デバイス ログ**エラーに関する詳細を表示します。 一部のエラーとその原因は、以下に示します。
+デプロイ中にエラーが発生した場合は、**ビュー > 埋め込み > デバイスログに埋め込ま**れ、エラーに関する詳細情報が表示されます。 いくつかのエラーとその原因を以下に示します。
 
-### <a name="error-mt3001-could-not-aot-the-assembly"></a>エラー MT3001:AOT アセンブリではない可能性があります。
+### <a name="error-mt3001-could-not-aot-the-assembly"></a>エラー MT3001:アセンブリを AOT にできませんでした
 
-これは、Apple Watch デバイスへの展開をデバッグ モードでビルドする場合に発生する可能性があります。
+これは、Apple Watch デバイスに配置するためにデバッグモードでビルドするときに発生する可能性があります。
 
-*一時的に*この問題を回避するには、無効にする**インクリメンタル ビルド**ウォッチ拡張機能で**プロジェクト オプション > ビルド > watchOS ビルド**ウィンドウ。
+この問題を*一時的*に回避するには、[ウォッチ拡張機能]**プロジェクトオプション > [ビルド > watchOS ビルド**] ウィンドウで**インクリメンタルビルド**を無効にします。
 
-[![](device-images/disable-incremental-sml.png "インクリメンタル ビルドのチェック ボックス")](device-images/disable-incremental.png#lightbox)
+[![](device-images/disable-incremental-sml.png "インクリメンタルビルドチェックボックス")](device-images/disable-incremental.png#lightbox)
 
-これは後インクリメンタル ビルドを有効にできます再ビルド時間の短縮を活用するために、将来のリリースで修正されます。
+これは今後のリリースで修正される予定です。これにより、インクリメンタルビルドを再度有効にして、より高速なビルド時間を利用することができます。
 
 
-### <a name="watch-app-fails-to-start-while-debugging-on-device"></a>Watch アプリのデバイスでのデバッグ中に起動に失敗します。
+### <a name="watch-app-fails-to-start-while-debugging-on-device"></a>デバイスでのデバッグ中に Watch アプリを起動できない
 
-表示アイコン & 読み込みスピナーの物理デバイス上の watch アプリをデバッグしようとしたときに、最終的にタイムアウト。 これは、将来のリリースで解決されます。(これはデバッグはできません)、リリース ビルドを実行する問題を回避することです。
+物理デバイスで watch アプリをデバッグしようとすると、アイコン & の読み込みスピンボタンだけが表示されます (最終的にはタイムアウトになります)。 これについては、今後のリリースで対処されます。回避策としては、デバッグを許可しないリリースビルドを実行する方法があります。
 
 
 ### <a name="invalid-application-executable-or-application-verification-failed"></a>無効なアプリケーション実行可能ファイルまたはアプリケーションの検証に失敗しました
@@ -118,42 +118,42 @@ Invalid executable/Application Verification Failed
 
 ![](device-images/invalid-application-executable.png "無効なアプリケーション実行可能ファイルのアラート")
 
-これらのメッセージが表示されない場合*ウォッチ画面*いくつかの問題がありますが、アプリをインストールしようとしましたが後、。
+アプリをインストールしようとした後に、これらのメッセージが *[ウォッチ] 画面に*表示される場合は、いくつかの問題が考えられます。
 
-- ウォッチ デバイス自体は、Apple のデベロッパー センターでのデバイスとして追加されていません。 指示に従って、[デバイスを正しく構成](#devices)します。
+- ウォッチデバイス自体は、Apple デベロッパーセンターにデバイスとして追加されていません。 指示に従って、[デバイスを正しく構成](#devices)します。
 
-- テストに使用される開発プロビジョニング プロファイルに含まれる; ウォッチ デバイスはありませんでした。または、ウォッチがプロビジョニング プロファイルに追加された後は、再ダウンロードし、再インストール、でした。 指示に従って、[プロビジョニング プロファイルの構成を正しく](#profiles)します。
+- テストに使用されている開発プロビジョニングプロファイルに、監視デバイスが含まれていませんでした。または、監視がプロビジョニングプロファイルに追加された後、再ダウンロードされて再インストールされませんでした。 指示に従って、[プロビジョニングプロファイルを正しく構成](#profiles)します。
 
-- 場合、 **iOS デバイスのログ**を含む`The system version is lower than the minimum OS version specified for bundle...Have 8.2; need 8.3`し、Watch アプリの**Info.plist**間違った**MinimumOSVersion**値。
-  必要があります**8.2** - ソースを手動で編集する必要があります Xcode 6.3 がインストールされている場合は、insert 8.2 に設定します。
+- **IOS デバイスログ**に含まれ`The system version is lower than the minimum OS version specified for bundle...Have 8.2; need 8.3`ている場合、ウォッチ**アプリの** **MinimumOSVersion**の値が間違っています。
+  これは**8.2**である必要があります。 Xcode 6.3 がインストールされている場合は、挿入するソースを手動で編集して8.2 に設定する必要がある場合があります。
 
-- Watch アプリの**Entitlements.plist**正しくが権利を有効にできません (アプリ グループ) などはありません。
+- Watch アプリの**権利**(アプリグループなど) が正しく設定されていません。
 
-- Watch アプリの**アプリ ID** (アプリ グループ) などを有効にする権利を持つことはできませんが、デベロッパー センターでは。
+- Watch アプリの**アプリ ID**が、デベロッパーセンターで使用できない権利 (アプリグループなど) を正しく設定していません。
 
 
 
-### <a name="install-never-finished"></a>インストールが完了しません。
+### <a name="install-never-finished"></a>インストールが完了していません
 
 ```csharp
 SPErrorGizmoInstallNeverFinishedErrorMessage
 ```
 
-このエラーは、Watch アプリの上の不要な (と無効な) キーである可能性があります**Info.plist**ファイル。 Watch アプリで iOS アプリまたはウォッチ拡張機能用のキーを含めないでください。
+このエラーは、Watch アプリの**情報の plist**ファイルで、不要な (および無効な) キーを示している可能性があります。 IOS アプリまたは watch 拡張機能用のキーを Watch アプリに含めないでください。
 
 <!--eg. NSLocationAlwaysUsageDescription -->
 
 
-### <a name="waiting-for-debugger-to-connect"></a>「デバッガーの接続を待機しています」
+### <a name="waiting-for-debugger-to-connect"></a>"デバッガーが接続するのを待機しています"
 
-場合、**アプリケーション出力**表示ウィンドウのままになります。
+**[アプリケーション出力]** ウィンドウにスタックが表示されない場合
 
 ```csharp
 waiting for debugger to connect
 ```
 
-依存しているかどうか、プロジェクトに含まれている Nuget のいずれかを確認**Microsoft.Bcl.Build**します。 など、人気のあるいくつかの Microsoft の発行したライブラリにこれが自動的に追加[Microsoft Http Client Libraries](https://www.nuget.org/packages/Microsoft.Net.Http/)します。
+プロジェクトに含まれている Nuget のいずれかが、 **Microsoft の Bcl. ビルド**に依存しているかどうかを確認します。 これは、一般的な[Microsoft Http クライアントライブラリ](https://www.nuget.org/packages/Microsoft.Net.Http/)を含む一部の microsoft 公開ライブラリと共に自動的に追加されます。
 
-**Microsoft.Bcl.Build.targets**ファイルに追加される、 **.csproj** iOS 拡張機能のデプロイ時にパッケージ化に干渉することができます。 追跡することができます、[バグ](https://bugzilla.xamarin.com/show_bug.cgi?id=29912)します。
-回避策は、.csproj ファイルを編集し、手動で移動する、 **Microsoft.Bcl.Build.targets**最後の要素でなければなりません。
+**.Csproj**に追加され**たファイルは**、展開時に iOS 拡張機能のパッケージ化に干渉する可能性があります。 [バグ](https://bugzilla.xamarin.com/show_bug.cgi?id=29912)を追跡することができます。
+回避策として、.csproj ファイルを編集し、**最後の要素になるように**手動で変更します。
 

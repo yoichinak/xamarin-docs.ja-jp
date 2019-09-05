@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin の ios 11 ビジョンフ
 ms.prod: xamarin
 ms.assetid: 7273ED68-7B7D-4252-B3A0-02DB2E357A8C
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 08/31/2017
-ms.openlocfilehash: c7fd1a933ba166b7c1b708bc102b84ce407b18fd
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: b0f6647ff92c8d8d0b8d2769c85aa24572d1464e
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648357"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70285742"
 ---
 # <a name="vision-framework-in-xamarinios"></a>Xamarin のビジョンフレームワーク
 
@@ -86,7 +86,7 @@ private void HandleRectangles(VNRequest request, NSError error){
 }
 ```
 
-### <a name="4-display-the-results"></a>4。結果を表示する
+### <a name="4-display-the-results"></a>4.結果を表示する
 
 VisionRectangles `OverlayRectangles`サンプルのメソッドには、次の3つの関数があります。
 
@@ -160,7 +160,7 @@ private void HandleRectangles(VNRequest request, NSError error){
 }
 ```
 
-### <a name="4-display-the-results"></a>4。結果を表示する
+### <a name="4-display-the-results"></a>4.結果を表示する
 
 VisionFaces `OverlayRectangles`サンプルのメソッドには、次の3つの関数があります。
 

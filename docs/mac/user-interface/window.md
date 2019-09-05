@@ -4,21 +4,21 @@ description: この記事では、Xamarin. Mac アプリケーションでのウ
 ms.prod: xamarin
 ms.assetid: 4F6C67E9-BBFF-44F7-B29E-AB47D7F44287
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 6d766e74f99e3c69259a41ce13501de80cf0231a
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: b6b370ebbcad04dfe829379685a3a9c5a6b5662b
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653113"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291534"
 ---
 # <a name="windows-in-xamarinmac"></a>Xamarin. Mac のウィンドウ
 
 _この記事では、Xamarin. Mac アプリケーションでのウィンドウとパネルの使用について説明します。Xcode と Interface Builder でのウィンドウとパネルの作成、ストーリーボードと xib ファイルからの読み込み、プログラムによる作業について説明します。_
 
-Xamarin. Mac C#アプリケーションでおよび .net を使用する場合、開発者が*Xcode と* *で作業*するのと同じウィンドウとパネルにアクセスできます。 Xcode は直接統合されているため、Xcode の_Interface Builder_を使用して、ウィンドウとパネルを作成および管理できます (また、 C#必要に応じて、コード内で直接作成することもできます)。
+Xamarin. Mac C#アプリケーションでおよび .net を使用する場合、開発者が*Xcode と* *で作業するのと*同じウィンドウとパネルにアクセスできます。 Xcode は直接統合されているため、Xcode の_Interface Builder_を使用して、ウィンドウとパネルを作成および管理できます (また、 C#必要に応じて、コード内で直接作成することもできます)。
 
 Xamarin アプリケーションでは、その目的に基づいて、画面上に1つまたは複数のウィンドウを表示して、表示および操作する情報を管理および調整できます。 ウィンドウの主な機能は次のとおりです。
 
@@ -110,7 +110,7 @@ Apple では、次のガイドラインが提案されています。
 
 #### <a name="inspectors"></a>インスペクター
 
-最新の macOS アプリケーションでは、パネルウィンドウを使用するのではなく、メインウィンドウの一部である_インスペクター_として、アクティブなドキュメントまたは選択項目に影響を与える補助コントロールとオプションが用意されています。
+最新の macOS**アプリケーションでは**、パネルウィンドウを使用するのではなく、メインウィンドウの一部である_インスペクター_として、アクティブなドキュメントまたは選択項目に影響を与える補助コントロールとオプションが用意されています。
 
 [![](window-images/panel02.png "インスペクターの例")](window-images/panel02.png#lightbox)
 
@@ -212,7 +212,7 @@ UI 要素をコードにC#公開するためのアウトレットとアクショ
 
 変更を保存し、Visual Studio for Mac に戻って Xcode と同期します。
 
-**アウトレット**とアクションの操作の詳細について**は、** [アウトレットとアクション](~/mac/get-started/hello-mac.md#outlets-and-actions)のドキュメントを参照してください。
+**アウトレット** **とアクション**の操作の詳細については、[アウトレットとアクション](~/mac/get-started/hello-mac.md#outlets-and-actions)のドキュメントを参照してください。
 
 <a name="Standard_Window_Workflow" />
 
@@ -752,7 +752,7 @@ Xamarin. Mac アプリケーションで作成して使用する他の種類の�
 新しいパネルを追加するには、次の手順を実行します。
 
 1. **ソリューションエクスプローラー**で、プロジェクトを右クリックし、[新しいファイルの**追加** >  **..** .] を選択します。
-2. [新しいファイル] ダイアログボックスで **、次の**ように選択し**ます。**  > 
+2. [新しいファイル] ダイアログボックスで **、次のように選択**し**ます。**  > 
 
     [![](window-images/panels00.png "新しいウィンドウコントローラーの追加")](window-images/panels00.png#lightbox)
 3. **[名前]** に「`DocumentPanel`」と入力し、 **[新規]** ボタンをクリックします。

@@ -4,15 +4,15 @@ description: この記事では、Xamarin の ios 9 を操作するためのさ�
 ms.prod: xamarin
 ms.assetid: DCE83E36-CBD9-4D96-8E7F-384CB8A54563
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: e6e264d9f1cd959c95a27597649d2ec23d832b1c
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: c624dc9be86161305fddba56e58ae5b99d674770
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70200072"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292929"
 ---
 # <a name="xamarinios-9--troubleshooting"></a>Xamarin iOS 9 –トラブルシューティング
 

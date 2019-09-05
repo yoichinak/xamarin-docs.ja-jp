@@ -3,15 +3,15 @@ title: 非同期サポートの概要
 description: このドキュメントでは、非同期コードを簡単に記述できるC#ように、async と await を使用したプログラミング、5で導入された概念について説明します。
 ms.prod: xamarin
 ms.assetid: F87BF587-AB64-4C60-84B1-184CAE36ED65
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: a9297d9a19ef56d658e983c38329b1aa400ffd05
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 90c391f79d7aa0ffdee0072c84cbdba0c504d551
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69521721"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70280626"
 ---
 # <a name="async-support-overview"></a>非同期サポートの概要
 

@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin. iOS 型レジストラー
 ms.prod: xamarin
 ms.assetid: 610A0834-1141-4D09-A05E-B7ADF99462C5
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 08/29/2018
-ms.openlocfilehash: c761290f43d780b2eafcf416fb9edf1e069f65c3
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 0d8e16c2a651df293b13e7f7586d5a643caa1c9c
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70226039"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291842"
 ---
 # <a name="type-registrar-for-xamarinios"></a>Xamarin の型レジストラー。 iOS
 
@@ -39,7 +39,7 @@ Xamarin.iOS は実行時 (動的な登録) またはコンパイル時 (静的�
 
 動的登録ではリフレクションを使用して、起動時に登録するすべてのクラスとメソッドを検索し、それらを Objective-C ランタイムに渡します。 既定では、シミュレータービルドに動的登録が使用されます。
 
-静的登録では、コンパイル時に、アプリケーションによって使用されるアセンブリが検査されます。 これは、目的の C に登録するクラスとメソッドを決定し、バイナリに埋め込まれているマップを生成します。
+静的登録では、アプリケーションによって使用されるアセンブリをコンパイル時に検査します。 Objective-C に登録するクラスおよびメソッドを決定し、マップを生成します。マップはバイナリに埋め込まれます。
 次に、起動時に、Objective-C ランタイムにマップを登録します。 静的登録は、デバイスのビルドで使用されます。
 
 ### <a name="categories"></a>カテゴリ

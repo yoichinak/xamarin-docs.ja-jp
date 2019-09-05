@@ -3,15 +3,15 @@ title: Xamarin でのプログラミング言語のサポート
 description: このドキュメントでは、Xamarin でサポートされるさまざまなプログラミング言語について説明します。 、、 C#ポータブルF#ビジュアル Basic.NET、および Razor テンプレートについて説明します。
 ms.prod: xamarin
 ms.assetid: CEE8C464-67D7-45F4-9614-EAEF5217CACC
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 02/18/2018
-ms.openlocfilehash: 2ec934b2747f89e959d659615629489e86449660
-ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
+ms.openlocfilehash: 95c63d446f961738ad71242671d632620316b879
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70065156"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290900"
 ---
 # <a name="programming-language-support-in-xamarin"></a>Xamarin でのプログラミング言語のサポート
 

@@ -3,15 +3,15 @@ title: 既存の Mac アプリを更新しています
 description: このドキュメントでは、Classic API から Unified API に Xamarin. Mac アプリを更新するために従う必要がある手順について説明します。
 ms.prod: xamarin
 ms.assetid: 26673CC5-C1E5-4BAC-BEF4-9A386B296FD5
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: a6d245e60a0d163c054fd74e0fb64780225da031
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 43498c0609fdbe6dba59b9ed5926c9c58b72d4db
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70197809"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70280879"
 ---
 # <a name="updating-existing-mac-apps"></a>既存の Mac アプリを更新しています
 
@@ -88,7 +88,7 @@ Mac アプリケーションプロジェクトの **[参照設定]** ノード�
 
 ### <a name="3-remove-monomac-from-namespaces"></a>3.名前空間からのモノ Mac の削除
 
-ステートメント内の`using`名前空間から、または classname が完全に修飾されている場所 (たとえば、 `MonoMac.AppKit`がだけ`AppKit`になります)。
+ステートメント内の`using`名前空間**から、また**は classname が完全に修飾されている場所 (たとえば、 `MonoMac.AppKit`がだけ`AppKit`になります)。
 
 ### <a name="4-remap-types"></a>4.型の再マップ
 

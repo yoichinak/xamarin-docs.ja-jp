@@ -4,15 +4,15 @@ description: この記事では、Xamarin iOS アプリでプロアクティブ�
 ms.prod: xamarin
 ms.assetid: 8DDD084A-0D1E-4DF7-B686-6309DCEFF5D3
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 294616e7766a6613a014495e5f9d124f74465072
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: ecc31fa6aab9e2be1c33f16d2f424b397f4a9a73
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70121414"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291737"
 ---
 # <a name="introduction-to-proactive-suggestions-in-xamarinios"></a>Xamarin でのプロアクティブな提案の概要
 

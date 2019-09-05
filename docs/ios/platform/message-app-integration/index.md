@@ -4,15 +4,15 @@ description: これらの記事では、Messages アプリと統合して、ユ�
 ms.prod: xamarin
 ms.assetid: 00AF2D4C-9BA8-4265-A11F-989C93BDF723
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 08/29/2016
-ms.openlocfilehash: 8f029084982237d7dd16c8f3e5e5ae46f5d0223c
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 7db2f0fee05b60180cdd54f2f2e5ae33339a0430
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70198996"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290874"
 ---
 # <a name="message-app-integration-in-xamarinios"></a>Xamarin. iOS でのメッセージアプリ統合
 
@@ -22,7 +22,7 @@ IOS 10 を初めて使用する場合、メッセージアプリ拡張機能は*
 
 ## <a name="message-app-extension-basicsiosplatformmessage-app-integrationintro-to-message-app-extensionsmd"></a>[メッセージ アプリ拡張機能の基本](~/ios/platform/message-app-integration/intro-to-message-app-extensions.md)
 
-この記事では、メッセージアプリと統合し、ユーザーに新しい機能を提供する Xamarin . iOS ソリューションにメッセージアプリ拡張機能を含める方法を示します。
+この記事では、**メッセージアプリと**統合し、ユーザーに新しい機能を提供する Xamarin. iOS ソリューションにメッセージアプリ拡張機能を含める方法を示します。
 
 ## <a name="advanced-message-app-extensionsiosplatformmessage-app-integrationintro-to-message-app-extensionsmd"></a>[高度なメッセージ アプリ拡張機能](~/ios/platform/message-app-integration/intro-to-message-app-extensions.md)
 

@@ -4,15 +4,15 @@ description: このドキュメントでは、iOS 11 でのアプリストアの
 ms.prod: xamarin
 ms.assetid: 4A7A03FD-B4F2-4969-8676-A17260730FD6
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 09/13/2016
-ms.openlocfilehash: 4a66cd4979e244e6b0a51e7a7a981dcd64446589
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: fa44ba260a62a6e0bd036c08c62371734b38d82d
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70225880"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70286583"
 ---
 # <a name="app-store-changes-in-ios-11"></a>IOS 11 でのアプリストアの変更点
 

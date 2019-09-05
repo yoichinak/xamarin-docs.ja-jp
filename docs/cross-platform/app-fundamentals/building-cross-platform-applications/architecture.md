@@ -3,15 +3,15 @@ title: パート 2 - アーキテクチャ
 description: このドキュメントでは、クロスプラットフォームアプリケーションの構築に役立つアーキテクチャパターンについて説明します。 一般的なアプリケーションレイヤー (データレイヤー、データアクセスレイヤーなど) と一般的なモバイルソフトウェアパターン (MVVM、MVC など) について説明します。
 ms.prod: xamarin
 ms.assetid: 2176DB2D-E84A-3757-CFAB-04A586068D50
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 03/27/2017
-ms.openlocfilehash: 23758e9794904e60b0ba09fe740574da8e7b830c
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 7657985ce14633140adb0e63a9817ddd0e48841d
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526644"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70284568"
 ---
 # <a name="part-2---architecture"></a>パート 2 - アーキテクチャ
 
@@ -53,7 +53,7 @@ ms.locfileid: "69526644"
 - **ビジネスファサード**–マネージャーパターンとも呼ばれ、複雑な作業のための簡単なエントリポイントを提供します。 たとえば、タスク`TaskManager`追跡アプリケーションでは`GetAllTasks()` 、 `GetTask(taskID)` `SaveTask (task)` 、、などのメソッドを含むクラスがある場合があります。クラス`TaskManager`は、タスクオブジェクトの実際の保存/取得の内部動作にファサードを提供します。
 - **シングルトン**–シングルトンパターンは、特定のオブジェクトの1つのインスタンスのみが存在できるようにするために用意されています。 たとえば、モバイルアプリケーションで SQLite を使用する場合、データベースのインスタンスは1つしか必要ありません。 シングルトンパターンを使用することは、これを保証するための簡単な方法です。
 - **プロバイダー** – SILVERLIGHT、WPF、および WinForms アプリケーション間でコードを再利用することを奨励するために、Microsoft によって造語された (戦略、または基本的な依存関係の挿入とほぼ同じ) パターン。 共有コードは、インターフェイスまたは抽象クラスに対して記述できます。また、コードが使用されるときに、プラットフォーム固有の具象実装が記述され、渡されます。
-- Async – async キーワードと混同しないでください。非同期パターンは、実行時間の長い作業を UI または現在の処理を保持せずに実行する必要がある場合に使用されます。 最も単純な形式では、非同期パターンは、現在のスレッドがバックグラウンドプロセスからの応答を処理してリッスンしている間に、長時間実行されるタスクを別のスレッド (またはタスクなどの同様のスレッドの抽象化) で開始する必要があることを単純に記述します。データとまたは状態が返されたときに UI を更新します。
+- **Async – async**キーワードと混同しないでください。非同期パターンは、実行時間の長い作業を UI または現在の処理を保持せずに実行する必要がある場合に使用されます。 最も単純な形式では、非同期パターンは、現在のスレッドがバックグラウンドプロセスからの応答を処理してリッスンしている間に、長時間実行されるタスクを別のスレッド (またはタスクなどの同様のスレッドの抽象化) で開始する必要があることを単純に記述します。データとまたは状態が返されたときに UI を更新します。
 
 
 各パターンの詳細については、「ケーススタディ」で実際の使用法を示しています。 Wikipedia では、 [MVVM](https://en.wikipedia.org/wiki/Model–view–viewmodel)、 [MVC](https://en.wikipedia.org/wiki/Model–view–controller)、[ファサード](https://en.wikipedia.org/wiki/Facade_pattern)、[シングルトン](https://en.wikipedia.org/wiki/Singleton_pattern)、[戦略](https://en.wikipedia.org/wiki/Strategy_pattern)、および[プロバイダー](https://en.wikipedia.org/wiki/Provider_model)のパターン (および[設計パターン](https://en.wikipedia.org/wiki/Design_Patterns)の一般的なパターン) についてより詳細に説明しています。

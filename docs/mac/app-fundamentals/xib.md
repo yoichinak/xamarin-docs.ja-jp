@@ -4,15 +4,15 @@ description: この記事では、Xcode の Interface Builder で作成された
 ms.prod: xamarin
 ms.assetid: 6AF3D216-448D-4B2D-9026-74E4FFF5923A
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: bdb27d42e872bff4004e8f43d13019dbc8bfeab9
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: f0889ecc428c595509fb23710bf3110c1bacad4e
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227857"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290290"
 ---
 # <a name="xib-files-in-xamarinmac"></a>xib ファイル (Xamarin. Mac)
 

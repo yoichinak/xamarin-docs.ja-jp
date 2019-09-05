@@ -4,21 +4,21 @@ description: このドキュメントでは、Xamarin を使用した単純な w
 ms.prod: xamarin
 ms.assetid: AD1DA488-51AB-420A-A0B7-3AE69A964A40
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 12/14/2016
-ms.openlocfilehash: dba84c32390be8017952206de9e23facd58931fe
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: c5527db543a0b0d5218c37f0d75e22afcd59297a
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70199039"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70293145"
 ---
 # <a name="hello-watchos--walkthrough"></a>Hello, watchOS –チュートリアル
 
 「[セットアップとインストール](~/ios/watchos/get-started/installation.md)」の手順に従ってソリューションを作成すると、次の3つのプロジェクトが作成されます。
 
-- セットアップまたはその他のデバイス上の管理タスクに使用される iOS 親アプリ。 (他の種類の iOS 拡張機能では、これは "コンテナー" アプリと呼ばれることがよくあります)。Watch アプリでは、ユーザーは親アプリを実行しなくても、Watchアプリの実行を開始できます。
+- セットアップまたはその他のデバイス上の管理タスクに使用される iOS 親アプリ。 (他の種類の iOS 拡張機能では、これは "コンテナー" アプリと呼ばれることがよくあります)。Watch アプリでは、ユーザーは親アプリを実行**しなくても、** watch アプリの実行を開始できます。
 - Watch アプリのプログラムコードを含む Watch の拡張機能。そして
 - ウォッチアプリ。ウォッチにレンダリングされるストーリーボードとイメージリソースを保持します。
 

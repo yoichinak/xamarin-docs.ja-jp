@@ -4,21 +4,21 @@ description: このドキュメントは、Xamarin の開発者が使用でき�
 ms.prod: xamarin
 ms.assetid: 876B6EC2-E158-43F2-B9C9-03F54F3D2A49
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/27/2018
-ms.openlocfilehash: 7dfd8392abf832e53cb90d0a09990fc5ef57b0bb
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: f1168378104fd40fa7de78297f1f683d0caa0afa
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656320"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70283119"
 ---
 # <a name="macos-user-interface-controls-in-xamarinmac"></a>Xamarin. Mac の macOS ユーザーインターフェイスコントロール
 
 _この記事では、さまざまな macOS UI コントロールについて説明しているガイドにリンクしています。_
 
-Xamarin. Mac C#アプリケーションでと .net を使用する場合、 *Xcode および*で作業している開発者が行うのと同じユーザーインターフェイスコントロールにアクセスできます。 Xcode は直接統合されているため、Xcode の_Interface Builder_を使用してユーザーインターフェイスを作成および管理できます (また、必要C#に応じて、コード内で直接作成することもできます)。
+Xamarin. Mac C#アプリケーションでと .net を使用する場合、 *Xcode および*で作業している開発者が行う*のと同じ*ユーザーインターフェイスコントロールにアクセスできます。 Xcode は直接統合されているため、Xcode の_Interface Builder_を使用してユーザーインターフェイスを作成および管理できます (また、必要C#に応じて、コード内で直接作成することもできます)。
 
 以下のガイドでは、Xamarin. Mac アプリケーションで macOS UI 要素を操作する方法について詳しく説明しています。 最初に、 [Hello, Mac](~/mac/get-started/hello-mac.md)の記事を使用して作業することを強くお勧めします。具体的には、 [Xcode と Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)および[アウトレットとアクション](~/mac/get-started/hello-mac.md#outlets-and-actions)に関するセクションで説明します。これは、で使用する主要な概念と手法に関するものです。すべての記事。
 

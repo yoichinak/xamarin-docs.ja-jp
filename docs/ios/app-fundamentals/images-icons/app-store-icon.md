@@ -4,15 +4,15 @@ description: このドキュメントでは、アセットカタログを使用�
 ms.prod: xamarin
 ms.assetid: BFB5665A-F557-46E1-B35E-870CC2026AD9
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 09/26/2017
-ms.openlocfilehash: 984ef59a4571379f7b2969ed4f15674f8819e4e4
-ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
+ms.openlocfilehash: b6bf2aa8925e29ed5120de5cc2d3146704259d87
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69620337"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70282401"
 ---
 # <a name="app-store-icons-in-xamarinios"></a>Xamarin のアプリストアアイコン iOS
 

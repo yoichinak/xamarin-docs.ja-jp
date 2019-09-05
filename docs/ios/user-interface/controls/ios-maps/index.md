@@ -4,15 +4,15 @@ description: このドキュメントでは、iOS MapKit フレームワーク�
 ms.prod: xamarin
 ms.assetid: 5DD8E56D-51C1-4AFA-B387-79B5734698ED
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 157f797ebb19de1ae00a00328a9c63b051c7224f
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 60bf25d7d88a1772e8b742a336a5faaebdf964fa
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70226454"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290814"
 ---
 # <a name="maps-in-xamarinios"></a>Xamarin. iOS のマップ
 

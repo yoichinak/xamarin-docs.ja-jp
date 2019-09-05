@@ -4,15 +4,15 @@ description: この記事では、tvOS 9 for Xamarin. tvOS 開発者向けの新
 ms.prod: xamarin
 ms.assetid: A7E738E1-9F94-489B-918F-7DF8F0810987
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 06/07/2016
-ms.openlocfilehash: be59ee3f51801c67277aac1a3ec274e81997ff3b
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 2da3e919ec792297f26670c43275bb0c54040835
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657336"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290721"
 ---
 # <a name="introduction-to-tvos-9"></a>tvOS 9 の概要
 

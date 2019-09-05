@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin. iOS で別のアプリア
 ms.prod: xamarin
 ms.assetid: 302fa818-33b9-4ea1-ab63-0b2cb312299a
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: e194edcea75df9dc18d89bba00c0b97e5bd71c34
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: b15b39460b40bc2c9f993b3b0d9bca3275ac7644
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70197878"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70286805"
 ---
 # <a name="alternate-app-icons-in-xamarinios"></a>Xamarin. iOS の別のアプリアイコン
 

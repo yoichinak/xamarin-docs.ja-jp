@@ -1,35 +1,35 @@
 ---
-title: Objective C プラットフォーム
-description: このドキュメントでは、OBJECTIVE-C コードを使用する場合に、.NET の埋め込みが対象とするさまざまなプラットフォームについて説明します。 これは、macOS、iOS、tvOS、watchOS、について説明します。
+title: 目的 C プラットフォーム
+description: このドキュメントでは、.NET 埋め込みが目標 C コードを操作するときにターゲットにできるさまざまなプラットフォームについて説明します。 MacOS、iOS、tvOS、watchOS について説明します。
 ms.prod: xamarin
 ms.assetid: 43253BE4-A03A-4646-9A14-32C05174E672
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 11/14/2017
-ms.openlocfilehash: 8091fb4e8328f61f1471d061b51b4735de3c089c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: f97b595f129cb1ad1ea56e3ae43b0f0a477fef5a
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61230725"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70282724"
 ---
-# <a name="objective-c-platforms"></a>Objective C プラットフォーム
+# <a name="objective-c-platforms"></a>目的 C プラットフォーム
 
-.NET の埋め込みと、OBJECTIVE-C コードを生成するときにさまざまなプラットフォームをターゲットできます。
+.NET 埋め込みは、目標 C コードを生成するときにさまざまなプラットフォームを対象にすることができます。
 
 * macOS
 * iOS
 * tvOS
-* watchOS [未実装]
+* watchOS [まだ実装されていません]
 
-渡すことによって、プラットフォームが選択されている、`--platform=<platform>`コマンドライン引数 .NET の埋め込みを指定します。
+プラットフォームは、 `--platform=<platform>`コマンドライン引数を .net 埋め込みに渡すことによって選択されます。
 
-Ios のビルド時に .NET の埋め込み、tvOS、watchOS のプラットフォームは常に Xamarin.iOS には、これらのプラットフォームで必要なランタイムのサポート コードの多くが含まれているため、Xamarin.iOS を埋め込むためのフレームワークを作成します。
+IOS、tvOS、および watchOS プラットフォーム用にビルドする場合、.NET 埋め込みは、xamarin. iOS を埋め込むフレームワークを常に作成します。これは、Xamarin には、これらのプラットフォームで必要なランタイムサポートコードが多数含まれているためです。
 
-ただし、macOS プラットフォームを構築する場合、生成されたフレームワークに Xamarin.Mac を埋め込む必要があるかどうかどうかを選択することは。 バインドされているアセンブリが Xamarin.Mac.dll を参照していません (直接または間接的に)、およびを渡すことによってこれが選択されている場合に、Xamarin.Mac を組み込まないことは`--platform=macOS`.NET 埋め込みツールにします。
+ただし、macOS プラットフォーム用にビルドする場合は、生成されたフレームワークに Xamarin. Mac を埋め込むかどうかを選択できます。 バインドされたアセンブリが (直接または間接的に) xamarin. .dll を参照しない場合は、xamarin. mac を埋め込むことはできませ`--platform=macOS`ん。これは、.net 埋め込みツールに渡すことで選択します。
 
-バインドされているアセンブリに Xamarin.Mac.dll への参照が含まれている場合は、Xamarin.Mac を埋め込む必要があるし、さらに、embeddinator が使用するには、どのターゲット フレームワークを知る必要があります。
+バインドされたアセンブリに embeddinator への参照が含まれている場合は、Xamarin. Mac を埋め込む必要があります。また、必要に応じて、使用するターゲットフレームワークを認識する必要があります。
 
-次の 3 つの可能な Xamarin.Mac ターゲット フレームワークがあります: `modern` (旧称`mobile`)、`full`と`system`(それぞれの違いについては、「Xamarin.Mac の[ターゲット フレームワーク][ 1]ドキュメント)、それぞれが渡すことによって選択されていると`--platform=macOS-modern`、`--platform=macOS-full`または`--platform=macOS-system`.NET 埋め込みツールにします。
+使用可能な xamarin. `modern` mac ターゲットフレームワークは3つあります。 (以前はと呼ば`mobile`れていました)、 `full`および`system` (それぞれの違いは Xamarin. mac の[ターゲットフレームワーク][1]ドキュメントで説明されています)は、 `--platform=macOS-modern` `--platform=macOS-full`または`--platform=macOS-system` .net 埋め込みツールに渡すことによって選択されます。
 
 [1]: ~/mac/platform/target-framework.md

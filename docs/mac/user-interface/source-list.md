@@ -4,21 +4,21 @@ description: この記事では、Xamarin. Mac アプリケーションでのソ
 ms.prod: xamarin
 ms.assetid: 651A3649-5AA8-4133-94D6-4873D99F7FCC
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 499edcb1420b311c519f1665b4d2effd9088e9e7
-ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
+ms.openlocfilehash: 63ce931abfbe7a39108ae3f8210209b7d43827ed
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70065373"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70278556"
 ---
 # <a name="source-lists-in-xamarinmac"></a>Xamarin. Mac のソースリスト
 
 _この記事では、Xamarin. Mac アプリケーションでのソースリストの使用について説明します。Xcode と Interface Builder でのソースリストの作成と管理、およびコードでC#のソースリストとの対話について説明します。_
 
-Xamarin. Mac C#アプリケーションでおよび .net を使用する場合、 *Xcode と*で作業している開発者が同じソースリストにアクセスできます。 Xcode は直接統合されているため、Xcode の_Interface Builder_を使用してソースリストを作成および管理できます (また、必要C#に応じて、コード内で直接作成することもできます)。
+Xamarin. Mac C#アプリケーションでおよび .net を使用する場合、 *Xcode と*で作業*している*開発者が同じソースリストにアクセスできます。 Xcode は直接統合されているため、Xcode の_Interface Builder_を使用してソースリストを作成および管理できます (また、必要C#に応じて、コード内で直接作成することもできます)。
 
 ソースリストは、Finder または iTunes のサイドバーのような、アクションのソースを表示するために使用される特殊な種類のアウトラインビューです。
 

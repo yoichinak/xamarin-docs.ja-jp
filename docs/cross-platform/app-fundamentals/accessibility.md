@@ -1,79 +1,79 @@
 ---
 title: Xamarin アプリのユーザー補助機能
-description: このドキュメントでは、アクセシビリティ対応アプリの作成のさまざまなヒントを提供します。 たとえば、大きなフォント、ハイ コントラスト、自己記述型のインターフェイス、およびに関する推奨事項が含まれています。
+description: このドキュメントでは、ユーザー補助アプリを作成するためのさまざまなヒントを提供します。 たとえば、大きなフォント、ハイコントラスト、自己記述型のインターフェイスなどに関する推奨事項が含まれています。
 ms.prod: xamarin
 ms.assetid: E587F0CF-7C1D-41F8-B5A8-DA3E738EDA81
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: 0ec264e0f3d381fdac46c79dd479da2bc768954f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: bd97406501df155561e0e240607740430dbf4ac3
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61282190"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70284586"
 ---
 # <a name="accessibility-in-xamarin-apps"></a>Xamarin アプリのユーザー補助機能
 
-_アプリが多くのユーザーから使用可能なことを確認します_
+_アプリが最も多くのユーザーによって利用可能であることを確認する_
 
-アクセシビリティとは、画面閲覧 (音声変換)、visual またはハプティクス フィードバックの手掛かりにズーム イン ハイ コントラストなどの大きな型など、オペレーティング システムの表示と入力支援機能作業もアプリのユーザー インターフェイスの設計の概念と代替の入力方法。
+アクセシビリティとは、大規模な種類、ハイコントラスト、ズームイン、画面の読み取り (音声合成)、ビジュアルまたは haptic フィードバックの手掛かりなど、オペレーティングシステムの表示と入力支援機能を適切に動作させるアプリユーザーインターフェイスの設計の概念を指します。代替の入力方法。
 
-など、iOS、Android、および Windows デスクトップおよびモバイル プラットフォームの提供など、アクセス可能なアプリのビルドを支援するための Api で構築された[Google TalkBack](https://play.google.com/store/apps/details?id=com.google.android.marvin.talkback)と[Apple の VoiceOver](http://www.apple.com/accessibility/ios/voiceover/)します。
+IOS、Android、Windows などのデスクトップおよびモバイルプラットフォームには、開発者が[Google TalkBack](https://play.google.com/store/apps/details?id=com.google.android.marvin.talkback)や[Apple の VoiceOver](http://www.apple.com/accessibility/ios/voiceover/)などのアクセス可能なアプリを構築するのに役立つ組み込み api が用意されています。
 
 ## <a name="platform-specific-apis"></a>プラットフォーム固有の Api
 
-このドキュメントでのガイドラインを実装するには、各プラットフォームで提供される Api を使用します。
+このドキュメントのガイドラインを実装するには、各プラットフォームに用意されている Api を使用します。
 
 - [**Android のアクセシビリティ**](~/android/app-fundamentals/accessibility.md)
-- [**iOS ユーザー補助機能**](~/ios/app-fundamentals/accessibility.md)
-- [**OS X のアクセシビリティ**](~/mac/app-fundamentals/accessibility.md)
+- [**iOS のアクセシビリティ**](~/ios/app-fundamentals/accessibility.md)
+- [**OS X アクセシビリティ**](~/mac/app-fundamentals/accessibility.md)
 - [**Xamarin.Forms**](~/xamarin-forms/app-fundamentals/accessibility/index.md)
 
 <a name="checklist" />
 
-## <a name="accessibility-checklist"></a>ユーザー補助のチェックリスト
+## <a name="accessibility-checklist"></a>アクセシビリティのチェックリスト
 
-アプリが可能な最も幅の広い対象ユーザーにアクセス可能であることを確認する次のヒントに従います。 チェック アウト、 [Android のアクセシビリティのテスト チェックリスト](https://developer.android.com/training/accessibility/testing.html)と[Apple のユーザー補助に関するページ](http://www.apple.com/accessibility/)の追加情報。
+これらのヒントに従って、アプリが可能な限り幅広くアクセスできることを確認します。 詳細については、 [Android アクセシビリティテストチェックリスト](https://developer.android.com/training/accessibility/testing.html)と[Apple のアクセシビリティ](http://www.apple.com/accessibility/)に関するページを参照してください。
 
-### <a name="support-large-fonts-and-high-contrast"></a>大きなフォントおよびハイ コントラストをサポートします。
+### <a name="support-large-fonts-and-high-contrast"></a>大きなフォントとハイコントラストをサポートする
 
-ハードコーディング コントロールのサイズを回避し、代わりに、大きなフォント サイズに合わせてサイズを変更できるレイアウトを使用します。
-読み取り可能であることを確認するハイ コントラスト モードでの配色をテストします。
+コントロールのサイズをハードコーディングしないでください。代わりに、サイズの大きいフォントサイズに合わせてサイズを変更できるレイアウトを優先します。
+ハイコントラストモードでカラースキームをテストして、読み取り可能であることを確認します。
 
-### <a name="make-the-user-interface-self-describing"></a>ユーザー インターフェイス自己記述型
+### <a name="make-the-user-interface-self-describing"></a>ユーザーインターフェイスを自己記述型にする
 
-説明のテキストと、画面の各プラットフォームでの Api の読み取りと互換性があるヒントでユーザー インターフェイスのすべての要素のタグを付けます。
+ユーザーインターフェイスのすべての要素に、説明的なテキストと、各プラットフォームの画面を読み取っているスクリーンと互換性のあるヒントをタグ付けします。
 
-### <a name="ensure-that-images-and-icons-have-an-alternate-text-description"></a>イメージとアイコンが代替テキストの説明があることを確認します。
+### <a name="ensure-that-images-and-icons-have-an-alternate-text-description"></a>イメージとアイコンに代替テキストの説明があることを確認する
 
-ユーザー補助の説明では、イメージとアプリケーションのユーザー インターフェイス (ボタンや状態などのインジケーター) などの一部であるアイコンをタグ付けする必要があります。
+アプリケーションのユーザーインターフェイスの一部であるイメージとアイコン (たとえば、ボタンや状態のインジケーターなど) には、アクセス可能な説明をタグ付けする必要があります。
 
-### <a name="design-the-visual-tree-with-accessible-navigation-in-mind"></a>デザインを考慮してアクセスできるナビゲーションを使用したビジュアル ツリー
+### <a name="design-the-visual-tree-with-accessible-navigation-in-mind"></a>アクセス可能なナビゲーションを考慮してビジュアルツリーをデザインする
 
-適切なレイアウト コントロールを使用して、または Api 代替入力方式を使用してコントロール間を移動できるように、タッチ スクリーンを使用する場合と同じ論理フローに依存しています。
+代替の入力方法を使用してコントロール間を移動する場合、タッチスクリーンを使用する場合と同じ論理フローに従うように、適切なレイアウトコントロールまたは Api を使用します。
 
-(装飾用の画像または既にアクセス可能である、たとえばフィールドのラベル) のスクリーン リーダーから不要な要素を除外します。
+スクリーンリーダーから不要な要素を除外します (たとえば、既にアクセス可能なフィールドの装飾的なイメージまたはラベル)。
 
-### <a name="dont-rely-on-audio-or-color-cues-alone"></a>オーディオまたは色のキューだけに依存しないように
+### <a name="dont-rely-on-audio-or-color-cues-alone"></a>オーディオまたは色の手掛かりのみに依存しない
 
-進行状況、終了した場合、またはその他の状態の唯一の指標がサウンドまたは色の変更状況を回避します。 いずれか (サウンドと強化のみの色) を持つ視覚チェック ボックスをオフまたは特定のユーザー補助のインジケーターを追加するユーザー インターフェイスをデザインします。
+進行状況、完了状態、またはその他の状態が単にサウンドまたは色の変化として示される状況を回避します。 明確な視覚的な手掛かりを含めるようにユーザーインターフェイスをデザインするか (または、強化のためだけにサウンドと色を使用)、または特定のユーザー補助インジケーターを追加します。
 
-色を選択する際に、色覚にユーザーを区別するが難しいパレットを回避するためにお試しください。
+色を選択するときは、色の障碍があるユーザーを区別しにくいパレットを使用しないようにしてください。
 
-### <a name="captioning-for-video-text-for-audio"></a>オーディオ、ビデオ、テキストのキャプション
+### <a name="captioning-for-video-text-for-audio"></a>ビデオのキャプション、音声用のテキスト
 
-ビデオのコンテンツ、およびオーディオのコンテンツの読み取り可能なスクリプトのキャプションを提供します。 オーディオまたはビデオのコンテンツの速度を調整するコントロールを提供し、そのボリュームを確実に便利ですし、再生/一時停止ボタンは簡単に検索を使用できます。
+ビデオコンテンツのキャプション、およびオーディオコンテンツ用の読み取り可能なスクリプトを提供します。 また、オーディオまたはビデオコンテンツの速度を調整し、[ボリューム] ボタンと [再生] ボタンと [一時停止] ボタンを簡単に見つけて使用できるようにするコントロールを提供するのにも役立ちます。
 
 ### <a name="localize"></a>Localize
 
-ユーザー補助の説明できます (および必要があります) は、ローカライズ、アプリケーションが複数の言語をサポートします。
+アプリケーションが複数の言語をサポートしている場合は、ユーザー補助の説明をローカライズする (およびする必要があります) ことができます。
 
 
 
 ## <a name="related-links"></a>関連リンク
 
 - [Android のアクセシビリティ](~/android/app-fundamentals/accessibility.md)
-- [iOS ユーザー補助機能](~/ios/app-fundamentals/accessibility.md)
-- [OS X のアクセシビリティ](~/mac/app-fundamentals/accessibility.md)
-- [Xamarin.Forms のアクセシビリティ](~/xamarin-forms/app-fundamentals/accessibility/index.md)
+- [iOS のアクセシビリティ](~/ios/app-fundamentals/accessibility.md)
+- [OS X アクセシビリティ](~/mac/app-fundamentals/accessibility.md)
+- [Xamarin. フォームのアクセシビリティ](~/xamarin-forms/app-fundamentals/accessibility/index.md)

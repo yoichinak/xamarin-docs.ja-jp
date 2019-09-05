@@ -1,44 +1,44 @@
 ---
 title: Xamarin Workbooks
-description: Xamarin Workbooks は、学習、およびガイドを作成する、補助を教える、ドキュメント、および実験、完全なコードの組み合わせを提供します。
+description: Xamarin Workbooks、実験、学習、作成ガイド、および教育支援に最適なドキュメントとコードを組み合わせることができます。
 ms.prod: xamarin
 ms.assetid: 04275482-0488-4F1C-8808-D03A8E21BE62
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 10/23/2018
-ms.openlocfilehash: d0aed1b501b86a23d4008ba9618b0e459178ca24
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: ea065a0eea9be95b0513acd4ee3950efe9a4e53d
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61257738"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70288088"
 ---
 # <a name="xamarin-workbooks"></a>Xamarin Workbooks
 
-Xamarin Workbooks は、学習、およびガイドを作成する、補助を教える、ドキュメント、および実験、完全なコードの組み合わせを提供します。
+Xamarin Workbooks、実験、学習、作成ガイド、および教育支援に最適なドキュメントとコードを組み合わせることができます。
 
-作成する豊富なC#Android、iOS、Mac、WPF、またはコンソール、および同じインスタント ライブ結果を get のブックには、これらの Api がについて説明します。
+Android、iOS C# 、MAC、WPF、またはコンソール用のリッチブックを作成し、これらの api を学習するときにライブの結果を取得します。
 
-Xamarin Workbooks は、オープン ソース ソフトウェアです。 開発は、GitHub のオープンで行われます。 プロジェクトを取得するには、関心のある方と開発者をご案内いたします。
+Xamarin Workbooks はオープンソースソフトウェアです。 開発は、GitHub で開かれているで行われます。 プロジェクトに参加するために、関心のあるユーザーと開発者を招待します。
 
-[GitHub でご参加ください!](https://github.com/Microsoft/workbooks)
+[GitHub にご参加ください。](https://github.com/Microsoft/workbooks)
 
-試してみて、意見、ご連絡場合する[バグに](~/tools/workbooks/install.md#reporting-bugs)します。 ある、[フォーラム](https://forums.xamarin.com/categories/inspector)すぎます。
+ご意見をお聞かせください。または、[バグ](~/tools/workbooks/install.md#reporting-bugs)が発生した場合は、ぜひご連絡ください。 [フォーラム](https://forums.xamarin.com/categories/inspector)もあります。
 
-[![](images/interactive-1.0.0-urho-planet-earth-small.png "サンプルのベース UrhoSharp ブック")](images/interactive-1.0.0-urho-planet-earth.png#lightbox)
+[![](images/interactive-1.0.0-urho-planet-earth-small.png "サンプルの UrhoSharp ベースのブック")](images/interactive-1.0.0-urho-planet-earth.png#lightbox)
 
 ## <a name="installation-and-requirementsinstallmd"></a>[インストールと要件](install.md)
 
-Mac または Windows コンピューターにインストールされているブックを取得する方法の詳細については説明します。
+Mac または Windows コンピューターにブックをインストールする方法について説明します。
 
 ## <a name="interactive-workbooksworkbookmd"></a>[対話型 Workbooks](workbook.md)
 
-Xamarin Workbooks を使用する方法について概説します。
+Xamarin Workbooks の使用方法について説明します。
 
 ## <a name="samples"></a>サンプル
 
-さまざまな[サンプル ブックを GitHub で入手できます](https://github.com/xamarin/workbooks)します。
+GitHub には、さまざまな[サンプルブックが用意](https://github.com/xamarin/workbooks)されています。
 
 ## <a name="integration-sdksdkindexmd"></a>[統合 SDK](sdk/index.md)
 
-カスタム データ表現とレンダラーを使用して Xamarin Workbooks を拡張することになります。 統合がで記述されたC#および TypeScript と JavaScript です。
+カスタムデータ表現とレンダラーを使用して Xamarin Workbooks を拡張することができます。 統合は、およびC# TypeScript/JavaScript で記述されています。

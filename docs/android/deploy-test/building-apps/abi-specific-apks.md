@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: 4a3ba970f8ca32f0bfa2e5297e8052f3eb572ed0
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: e7c8721254157565461e00657a3ee8a786e3ea00
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525721"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70225767"
 ---
 # <a name="building-abi-specific-apks"></a>ABI 固有の APK のビルド
 
@@ -49,17 +49,17 @@ Google では、7 桁のバージョン コードを使用するバージョン 
 このバージョン コード スキームを 8 桁に拡張することで、Google Play で正しい APK がデバイスに確実に配布されるように、バージョン コードにいくつかの ABI 情報を含めることができます。 以下のリストで、8 桁のバージョン コード形式について説明します (左から右にインデックスが付けられます)。
 
 - **インデックス 0** (下図では赤色で示されている) &ndash; ABI の整数:
-    - 1 &ndash; `armeabi`
-    - 2 &ndash; `armeabi-v7a`
-    - 6 &ndash; `x86`
+  - 1 &ndash; `armeabi`
+  - 2 &ndash; `armeabi-v7a`
+  - 6 &ndash; `x86`
 
 - **インデックス 1 から 2** (下図ではオレンジ色で示されている) &ndash; アプリケーションでサポートされる最小の API レベル。
 
 - **インデックス 3 から 4** (下図では青色で示されている) &ndash; サポートされる画面サイズ:
-    - 1 &ndash; 小
-    - 2 &ndash; 標準
-    - 3 &ndash; 大
-    - 4 &ndash; 特大
+  - 1 &ndash; 小
+  - 2 &ndash; 標準
+  - 3 &ndash; 大
+  - 4 &ndash; 特大
 
 - **インデックス 5 から 7** (下図では緑色で示されている) &ndash; バージョン コードに固有の番号。 
     これは開発者によって設定されます。 アプリケーションの一般リリースごとに増えます。

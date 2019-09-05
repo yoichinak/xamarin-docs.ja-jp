@@ -4,15 +4,15 @@ description: この記事では、Xamarin.iOS 開発のために Visual Studio 2
 ms.prod: xamarin
 ms.assetid: 22D82244-890D-4325-B3CC-C0AC49130BCA
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 04/16/2018
-ms.openlocfilehash: eb6be5cd77dddad553376d18808092c6566021bc
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: b3910bd096f2a8dd301a9ba6e200028d3121c8df
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58854679"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70279225"
 ---
 # <a name="configuring-visual-studio-for-ios-development"></a>iOS 開発用の Visual Studio の構成
 
@@ -40,7 +40,7 @@ Visual Studio 2019 または Visual Studio 2017 で iOS プロジェクトを開
 - **[デバイス ログ]** – デバイス ログを検査できるウィンドウを表示します。 Visual Studio 2019 または Visual Studio 2017 で iOS プロジェクトを開くと有効になります。
 - **[ビルド サーバーに IPA ファイルを表示]** – Mac ビルド ホストで、アプリの .ipa ファイルの場所を示すウィンドウを開きます。 .ipa が作成されたビルドの完了後に有効になります。
 
-このツール バーが表示されない場合は、Visual Studio 2019 または Visual Studio 2017 で **[表示]** メニューを開いて、**[ツール バー] > [iOS]** を選びます。
+このツール バーが表示されない場合は、Visual Studio 2019 または Visual Studio 2017 で **[表示]** メニューを開いて、 **[ツール バー] > [iOS]** を選びます。
 
 ![[iOS] ツール バーを有効にする](config-options-images/ios-toolbar-enable.png "[iOS] ツール バーを有効にする")
 
@@ -56,6 +56,6 @@ Visual Studio 2019 または Visual Studio 2017 で iOS プロジェクトを開
 
 ![[ソリューション プラットフォーム] ドロップダウン メニューを有効にする](config-options-images/solution-platforms-enable.png "[ソリューション プラットフォーム] ドロップダウン メニューを有効にする")
 
-iOS プロジェクトを開くと、**[標準]** および **[iOS]** ツール バーが次のスクリーンショットのようになります。
+iOS プロジェクトを開くと、 **[標準]** および **[iOS]** ツール バーが次のスクリーンショットのようになります。
 
 ![[標準] および [iOS] ツール バー](config-options-images/toolbars.png "[標準] および [iOS] ツール バー")

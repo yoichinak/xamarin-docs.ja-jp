@@ -3,15 +3,15 @@ title: Xamarin Workbooks SDK を使用したはじめに
 description: このドキュメントでは、Xamarin Workbooks の統合を開発するために使用できる Xamarin Workbooks SDK の概要について説明します。
 ms.prod: xamarin
 ms.assetid: FAED4445-9F37-46D8-B408-E694060969B9
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/30/2017
-ms.openlocfilehash: dd75270b3b14b0b770808bbc3ffc88240f868eae
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 8e3dc65f9f615ff893f3526d53d99da25045c794
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511004"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70283967"
 ---
 # <a name="getting-started-with-the-xamarin-workbooks-sdk"></a>Xamarin Workbooks SDK を使用したはじめに
 

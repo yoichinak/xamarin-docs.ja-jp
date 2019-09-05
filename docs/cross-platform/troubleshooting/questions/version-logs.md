@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin のバージョン情報�
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: CF386485-EAB0-4B9E-AA17-CB1B6462E505
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: cd7a2026a4d1d1458455733a6f2710364cc7fec7
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: f2d9921795d2a788a6646aad36712a0691c07d50
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70226771"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291177"
 ---
 # <a name="where-can-i-find-my-version-information-and-logs"></a>バージョン情報とログはどこにありますか
 

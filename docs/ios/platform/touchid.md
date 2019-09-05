@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin iOS アプリでタッチ 
 ms.prod: xamarin
 ms.assetid: 4BC8EFD6-52FC-4793-BA69-D6BFF850FE5F
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: fe0f3c6904255284c01cbb3277086b01ec852d7b
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: bc797d250b4b66ebfd06bad76c3f43759a65e7c3
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68654055"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292513"
 ---
 # <a name="touch-id-in-xamarinios"></a>Xamarin. iOS のタッチ ID
 
@@ -102,15 +102,15 @@ ACL を使用するには、 `SecAccessControl`ポリシーを使用してから
 
 ローカル認証 API を活用してキーチェーンなしで Touch ID を使用するには、使用できる関数がいくつかあります。 これらの詳細を以下に示します。
 
-*   `CanEvaluatePolicy`–デバイスがタッチ ID を受け入れることができるかどうかを確認するだけです。
-*   `EvaluatePolicy`–認証操作を開始し、UI を表示して、また`true`は`false`の応答を返します。
-*   `DeviceOwnerAuthenticationWithBiometrics`-これは、タッチ ID 画面を表示するために使用できるポリシーです。 ここではパスコードフォールバックメカニズムがないことに注意してください。代わりに、ユーザーが Touch ID 認証をスキップできるように、このフォールバックをアプリケーションに実装する必要があります。
+- `CanEvaluatePolicy`–デバイスがタッチ ID を受け入れることができるかどうかを確認するだけです。
+- `EvaluatePolicy`–認証操作を開始し、UI を表示して、また`true`は`false`の応答を返します。
+- `DeviceOwnerAuthenticationWithBiometrics`-これは、タッチ ID 画面を表示するために使用できるポリシーです。 ここではパスコードフォールバックメカニズムがないことに注意してください。代わりに、ユーザーが Touch ID 認証をスキップできるように、このフォールバックをアプリケーションに実装する必要があります。
 
 次に示すローカル認証の使用に関する注意事項がいくつかあります。
 
-*   キーチェーンの場合と同様に、フォアグラウンドでのみ実行できます。 バックグラウンドスレッドでこのメソッドを呼び出すと、エラーが発生します。
-*   ポリシーの評価が失敗する可能性があることに注意してください。 パスコードボタンは、フォールバックとして実装する必要があります。
-*   認証が必要な`localizedReason`理由を説明するには、を指定する必要があります。 これにより、ユーザーとの信頼関係を構築できます。
+- キーチェーンの場合と同様に、フォアグラウンドでのみ実行できます。 バックグラウンドスレッドでこのメソッドを呼び出すと、エラーが発生します。
+- ポリシーの評価が失敗する可能性があることに注意してください。 パスコードボタンは、フォールバックとして実装する必要があります。
+- 認証が必要な`localizedReason`理由を説明するには、を指定する必要があります。 これにより、ユーザーとの信頼関係を構築できます。
 
 次に、以下のセクションでは、これらの注意事項を考慮して API を実装する方法について説明します。
 
@@ -120,14 +120,14 @@ ACL を使用するには、 `SecAccessControl`ポリシーを使用してから
 
 ### <a name="walkthrough"></a>チュートリアル
 
-では、アプリケーションにタッチ ID 認証を追加する方法を見てみましょう。 このチュートリアルでは、ストーリーボードテーブルの[サンプルを](https://docs.microsoft.com/samples/xamarin/ios-samples/data/storyboardtable/)更新します。これは、[ストーリーボードテーブルのローカル認証](https://docs.microsoft.com/samples/xamarin/ios-samples/storyboardtable-localauthentication)サンプルと同様に機能するように、ローカル認証を追加します。これにより、認証されたユーザーのみがリストに作業を追加できるようになります。
+では、アプリケーションにタッチ ID 認証を追加する方法を見てみましょう。 このチュートリアルでは[、ストーリーボードテーブルのサンプルを](https://docs.microsoft.com/samples/xamarin/ios-samples/data/storyboardtable/)更新します。これは、[ストーリーボードテーブルのローカル認証](https://docs.microsoft.com/samples/xamarin/ios-samples/storyboardtable-localauthentication)サンプルと同様に機能するように、ローカル認証を追加します。これにより、認証されたユーザーのみがリストに作業を追加できるようになります。
 
 1. サンプルをダウンロードし、Visual Studio for Mac で実行します。
 2. IOS Designer で`MainStoryboard.Storyboard`サンプルを開くには、[オン] をダブルクリックします。 このサンプルでは、アプリケーションに新しい画面を追加します。これにより、認証が制御されます。 これは、現在`MasterViewController`のの前になります。
 3. 新しい**ビューコントローラー**を**ツールボックス**から**デザインサーフェイス**にドラッグします。 **ナビゲーションコントローラー**から**Ctrl キーを押しながらドラッグ**して、**ルートビューコントローラー**として設定します。
 
     [![](touchid-images/image4.png "ルートビューコントローラーを設定する")](touchid-images/image4.png#lightbox)
-4.  新しいビューコントローラー `AuthenticationViewController`にという名前を指定します。
+4. 新しいビューコントローラー `AuthenticationViewController`にという名前を指定します。
 5. 次に、ボタンをドラッグしてに`AuthenticationViewController`配置します。 これ`AuthenticateButton`を呼び出し、テキスト`Add a Chore`を指定します。
 6. `AuthenticateButton` 呼び出さ`AuthenticateMe`れたでイベントを作成します。
 7. から`AuthenticationViewController`手動セグエを作成するには、下部にある黒いバーをクリックし、 **Ctrl キーを押しながら**バーからにドラッグして [ `MasterViewController` **プッシュ**] を選択します (または、サイズクラスを使用している場合は**show**を選択します)。

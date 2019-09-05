@@ -3,15 +3,15 @@ title: TLS (Transport Layer Security) 1.2
 description: このドキュメントでは、Xamarin の iOS、Xamarin、Android、および Xamarin. Mac プロジェクトの TLS 1.2 を有効にする方法について説明します。 これは、Visual Studio 2019 と Visual Studio for Mac の両方で実行する方法を示しています。
 ms.prod: xamarin
 ms.assetid: 399F71C6-16A4-4ABC-B30D-AF17D066A5FA
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 04/20/2018
-ms.openlocfilehash: 31069199e8ebc89da76b63e58651adea82db6882
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 6175725ae3eea805680b4da81aa0458aa3f8a68c
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526770"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70280353"
 ---
 # <a name="transport-layer-security-tls-12"></a>TLS (Transport Layer Security) 1.2
 
@@ -33,13 +33,13 @@ ms.locfileid: "69526770"
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-これらの設定は、[**プロジェクトのプロパティ > Android オプション**] にあり、[**詳細**設定] ボタンをクリックします。
+これらの設定は、 **[プロジェクトのプロパティ > Android オプション]** にあり、 **[詳細]** 設定 ボタンをクリックします。
 
 [![Visual Studio での HttpClient と TLS の構成](transport-layer-security-images/android-win-sml.png)](transport-layer-security-images/android-win.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-これらの設定は、[**プロジェクトオプション > ビルド > Android ビルド**] タブにあります。
+これらの設定は、 **[プロジェクトオプション > ビルド > Android ビルド]** タブにあります。
 
 [![Visual Studio for Mac での HttpClient と TLS の構成](transport-layer-security-images/android-mac-sml.png)](transport-layer-security-images/android-mac.png#lightbox)
 

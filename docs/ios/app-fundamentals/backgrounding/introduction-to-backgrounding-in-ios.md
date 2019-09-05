@@ -4,15 +4,15 @@ description: このドキュメントでは、iOS でのバックグラウンド
 ms.prod: xamarin
 ms.assetid: E214F2C7-E74E-46C7-B5BA-080B30D61250
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 07/24/2018
-ms.openlocfilehash: 1899ee225d0ea285a38ba7b4d341e5d3a4452639
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 9fe508d5b0f8d15a26f02b110763cc8e3f4a2e25
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69521394"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292131"
 ---
 # <a name="introduction-to-backgrounding-in-ios"></a>iOS におけるバックグラウンド処理の概要
 

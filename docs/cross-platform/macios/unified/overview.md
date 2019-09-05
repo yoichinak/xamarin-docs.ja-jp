@@ -3,15 +3,15 @@ title: Unified API の概要
 description: Xamarin の Unified API を使用すると、Mac と iOS の間でコードを共有し、同じバイナリで32と64ビットのアプリケーションをサポートすることができます。
 ms.prod: xamarin
 ms.assetid: 5F0CEC18-5EF6-4A99-9DCF-1A3B57EA157C
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 99347ccc2490361bedda926b25076158a12e39bf
-ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
+ms.openlocfilehash: 75177daa2f8bd1faa271940713ff8543db3b97c0
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70065171"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70287386"
 ---
 # <a name="unified-api-overview"></a>Unified API の概要
 
@@ -83,7 +83,7 @@ Unified API は、非推奨のメソッドを削除します。また、クラ�
 
 ## <a name="updating-to-unified"></a>更新 (統合に)
 
-クラシック api では、**従来**の api や非推奨とされている api を使用できません。 `CS0616` 適切`[Obsolete]`な API を作成するための属性メッセージ (警告の一部) があるため、(手動または自動で) アップグレードを開始する前に、警告を修正する方が簡単です。
+**クラシック**api では、従来の api や非推奨とされ**ている**api を使用できません。 `CS0616` 適切`[Obsolete]`な API を作成するための属性メッセージ (警告の一部) があるため、(手動または自動で) アップグレードを開始する前に、警告を修正する方が簡単です。
 
 ここでは、プロジェクトの更新の前または後に使用できる、クラシック API と統合 API の変更の[*相違*](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/ios/api_changes/classic-vs-unified-8.6.0/index.md)点を公開しています。 クラシックで obsoletes 呼び出しを修正することは、多くの場合、時間の短縮 (ドキュメント参照の削減) です。
 

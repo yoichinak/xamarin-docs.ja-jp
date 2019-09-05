@@ -4,15 +4,15 @@ description: この記事では、iOS 10 for Xamarin の開発者向けの新し
 ms.prod: xamarin
 ms.assetid: FB91DFFE-CF5E-4253-92CB-78A6371259D9
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: edc585364df2e0b2129135e7bf5977c33a77a6e0
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 465c8df864669ad47acd47ae380574e247a0acd6
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647425"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292863"
 ---
 # <a name="introduction-to-ios-10"></a>iOS 10 の概要
 
@@ -97,7 +97,7 @@ IOS 10 の新しい CallKit API は、VOIP アプリを iPhone UI と統合し�
 
 ## <a name="message-app-integration"></a>メッセージ アプリの統合
 
-iOS 10 では、メッセージアプリと統合し、新しい機能をユーザーに提供する Xamarin. iOS ソリューションにメッセージアプリ拡張機能を含めることができます。 拡張機能は、テキスト、ステッカー、メディアファイル、および対話型メッセージを送信できます。 次の2種類のメッセージアプリ拡張機能を使用できます。
+iOS 10 では、**メッセージアプリと**統合し、新しい機能をユーザーに提供する Xamarin. iOS ソリューションにメッセージアプリ拡張機能を含めることができます。 拡張機能は、テキスト、ステッカー、メディアファイル、および対話型メッセージを送信できます。 次の2種類のメッセージアプリ拡張機能を使用できます。
 
 - **ステッカーパック**-ユーザーがメッセージに追加できるステッカーのコレクションが含まれています。 ステッカーパックは、コードを記述せずに作成できます。
 - **IMessage アプリ**-メッセージアプリ内にカスタムユーザーインターフェイスを提供して、ステッカーの選択、テキストの入力 (オプションの型変換を含む)、および操作メッセージの作成、編集、および送信を行うことができます。
@@ -168,7 +168,7 @@ Siri は通常、すべてのユーザーの操作を処理しますが、アプ
 
 iOS 10 には新しい Speech API が含まれています。これにより、アプリは、音声の音声認識と議事録 (ライブまたは録音されたオーディオストリーム) をテキストにすることができます。
 
-音声認識では、Apple のサーバー上のデータの転送と一時的な保存が必要であるため _、アプリは_ユーザーの`NSSpeechRecognitionUsageDescription` `Info.plist`ファイルにキーを含めて、 `SFSpeechRecognizer.RequestAutorization`メソッド。
+音声認識では、Apple のサーバー上のデータの転送と一時的な保存が必要_であるため、アプリは_ユーザーの`NSSpeechRecognitionUsageDescription` `Info.plist`ファイルにキーを含めて、 `SFSpeechRecognizer.RequestAutorization`メソッド。
 
 詳細については、「[音声認識ガイドの概要](~/ios/platform/speech.md)」を参照してください。
 

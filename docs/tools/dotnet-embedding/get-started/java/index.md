@@ -1,81 +1,81 @@
 ---
 title: Java の概要
-description: このドキュメントでは、Java と .NET の埋め込みの使用を開始する方法について説明します。 これは、システム要件、インストール、およびサポートされているプラットフォームについて説明します。
+description: このドキュメントでは、Java での .NET 埋め込みの使用を開始する方法について説明します。 システム要件、インストール、およびサポートされているプラットフォームについて説明します。
 ms.prod: xamarin
 ms.assetid: B9A25E9B-3EC2-489A-8AD3-F78287609747
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/28/2018
-ms.openlocfilehash: 79a483743946c4f7509833867f2afe4b1e055183
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 8d6bc284d07ce1be11ad273f875b75a70ae14a0f
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61198943"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70278404"
 ---
 # <a name="getting-started-with-java"></a>Java の概要
 
-これは、java のサポートされているすべてのプラットフォームの基本について説明しますが、作業の開始ページです。
+これは、サポートされているすべてのプラットフォームの基本を説明する Java の概要ページです。
 
 ## <a name="requirements"></a>必要条件
 
-Java での .NET の埋め込みを使用するには、必要があります。
+Java で .NET 埋め込みを使用するには、次のものが必要です。
 
 * Java 1.8 以降
 * [Mono 5.0](https://www.mono-project.com/download/)
 
-Mac の場合。
+Mac の場合:
 
-* Xcode 8.3.2 またはそれ以降
+* Xcode 8.3.2 以降
 
-Windows:
+Windows の場合:
 
-* Visual Studio 2017 と C++ のサポート
+* Visual Studio 2017 ( C++サポートあり)
 * Windows 10 SDK
 
-Android:
+Android の場合:
 
-* [Xamarin.Android 7.5](https://visualstudio.microsoft.com/xamarin/)またはそれ以降
-* [Android Studio 3.x](https://developer.android.com/studio/index.html) Java 1.8 を使用
+* [Xamarin Android 7.5](https://visualstudio.microsoft.com/xamarin/)以降
+* Java 1.8 での[Android Studio](https://developer.android.com/studio/index.html) 3.x
 
-使用することができます[Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/)を編集およびコンパイル、C#コード。
+[Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/)を使用すると、コードを編集C#してコンパイルできます。
 
 > [!NOTE]
-> 以前のバージョンの Xcode、Visual Studio、Xamarin.Android、Android Studio、および Mono_可能性があります_機能しますが、テスト、サポートされていません。
+> 以前のバージョンの Xcode、Visual Studio、Xamarin. Android、Android Studio、Mono は動作する_場合があり_ますが、テストおよびサポートされていません。
 
 ## <a name="installation"></a>インストール
 
-現在使用できる .NET の埋め込みは[NuGet](https://www.nuget.org/packages/Embeddinator-4000/):
+現在、.NET 埋め込みは[NuGet](https://www.nuget.org/packages/Embeddinator-4000/)で利用できます。
 
 ```shell
 nuget install Embeddinator-4000
 ```
 
-これは配置**Embeddinator 4000.exe**に、**パッケージ/Embeddinator-4000/ツール**ディレクトリ。
+これにより、 **Embeddinator-4000**が**packages/Embeddinator-4000/tools**ディレクトリに配置されます。
 
-さらに、.NET のソースから埋め込みを構築を参照してください、 [git リポジトリ](https://github.com/mono/Embeddinator-4000/)と[貢献](https://github.com/mono/Embeddinator-4000/blob/master/Contributing.md)手順についてはドキュメントです。
+また、ソースから .NET 埋め込みを作成することもできます。詳細については、 [git リポジトリ](https://github.com/mono/Embeddinator-4000/)と、関連[するドキュメントを](https://github.com/mono/Embeddinator-4000/blob/master/Contributing.md)参照してください。
 
 ## <a name="platforms"></a>プラットフォーム
 
-Java は現在 macOS、Windows、および Android 用のプレビュー状態です。
+現在、Java は macOS、Windows、および Android のプレビュー状態です。
 
-渡すことによって、プラットフォームが選択されている、 `--platform=<platform>` .NET 埋め込みツールのコマンドライン引数。 現在`macOS`、 `Windows`、および`Android`はサポートされています。
+プラットフォームを選択するには、 `--platform=<platform>`コマンドライン引数を .net 埋め込みツールに渡します。 現在`macOS` `Android` 、 `Windows`、、およびがサポートされています。
 
-### <a name="macos-and-windows"></a>macOS および Windows
+### <a name="macos-and-windows"></a>macOS と Windows
 
-開発、Java 1.8 をサポートする任意の Java IDE を使用できる必要があります。 これは Android Studio を使用することもできます。 必要な場合、[こちらをご覧ください](https://stackoverflow.com/questions/16626810/can-android-studio-be-used-to-run-standard-java-projects)します。 標準の Java jar ファイルと JAR ファイルの出力を使用できます。
+開発用には、Java 1.8 をサポートする任意の Java IDE を使用できます。 必要に応じて Android Studio を使用することもできます。[こちらを参照してください](https://stackoverflow.com/questions/16626810/can-android-studio-be-used-to-run-standard-java-projects)。 JAR ファイルの出力は、標準の Java jar ファイルと同じように使用できます。
 
 ### <a name="android"></a>Android
 
-既に設定して 1 つを作成する前に、の Android アプリケーションを開発することを確認してください。 埋め込みの .NET を使用します。 [手順に従って](~/tools/dotnet-embedding/get-started/java/android.md)既に正常にビルドしているコンピューターからの Android アプリケーションのデプロイを前提としています。
+.NET 埋め込みを使用して作成する前に、Android アプリケーションを開発するように既に設定されていることを確認してください。 [次の手順](~/tools/dotnet-embedding/get-started/java/android.md)は、既にコンピューターから Android アプリケーションをビルドして展開していることを前提としています。
 
-Android Studio が開発に推奨されますが、サポートがある限り、他の Ide は動作する必要があります、 [AAR ファイル形式](https://developer.android.com/studio/projects/android-library.html)します。
+開発には Android Studio をお勧めしますが、 [AAR ファイル形式](https://developer.android.com/studio/projects/android-library.html)がサポートされている限り、他の ide が動作します。
 
 ## <a name="further-reading"></a>関連項目
 
-* [Android の概要](~/tools/dotnet-embedding/get-started/java/android.md)
-* [Android コールバック](~/tools/dotnet-embedding/android/callbacks.md)
-* [Android の予備調査](~/tools/dotnet-embedding/android/index.md)
-* [.NET の埋め込みの制限事項](~/tools/dotnet-embedding/limitations.md)
-* [オープン ソース プロジェクトに貢献します。](https://github.com/mono/Embeddinator-4000/blob/master/Contributing.md)
-* [エラー コードと説明](~/tools/dotnet-embedding/errors.md)
+* [Android でのはじめに](~/tools/dotnet-embedding/get-started/java/android.md)
+* [Android でのコールバック](~/tools/dotnet-embedding/android/callbacks.md)
+* [Android の暫定版の研究](~/tools/dotnet-embedding/android/index.md)
+* [.NET 埋め込みの制限事項](~/tools/dotnet-embedding/limitations.md)
+* [オープンソースプロジェクトへの貢献](https://github.com/mono/Embeddinator-4000/blob/master/Contributing.md)
+* [エラーコードと説明](~/tools/dotnet-embedding/errors.md)

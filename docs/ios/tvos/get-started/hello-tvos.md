@@ -4,15 +4,15 @@ description: このガイドでは、最初の tvOS アプリとその開発ツ�
 ms.prod: xamarin
 ms.assetid: 6E0AFE58-A13B-492F-861E-D5D73EB1C4A3
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 02/02/2018
-ms.openlocfilehash: 59019e08c279a9910281de98fe64db798379e1a4
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 30fcf586a280688834e1ae9af61630c2611964a5
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119166"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70281821"
 ---
 # <a name="hello-tvos-quick-start-guide"></a>Hello, tvOS クイックスタートガイド
 
@@ -28,7 +28,7 @@ Xamarin の開発に慣れている場合は、tvOS が非常に単純なもの�
 
 ## <a name="overview"></a>概要
 
-TvOS を使用すると、と .NET でC#完全にネイティブな Apple TV アプリを開発できます。これは、 *Swift* (または) および*Xcode*での開発時に使用されるものと同じ OS X ライブラリおよびインターフェイスコントロールを使用して行います。
+TvOS を使用すると、 C#と .net で完全にネイティブな Apple TV アプリを開発できます。これは、 *Swift* (または) および*Xcode*での開発時に使用されるものと同じ OS X ライブラリおよびインターフェイスコントロールを使用して行います。
 
 さらに、tvOS アプリはと .NET でC#記述されているため、一般的なバックエンドコードを xamarin、Xamarin、Android、および Xamarin. Mac アプリと共有できます。すべてのプラットフォームでネイティブエクスペリエンスを提供します。
 
@@ -343,7 +343,7 @@ IOS デザイナーでコードから追加したコントロールにアクセ�
 3. TouchUpInside イベントを見つけて、という名前`Clicked`のイベントハンドラーを指定します。
 
     [![](hello-tvos-images/event2.png "TouchUpInside イベント")](hello-tvos-images/event2.png#lightbox)
-4. Enter キーを押すと、イベントハンドラーの場所がコードに提示され、 **viewcontroller**.cs ファイルが開きます。 キーボードの方向キーを使用して、場所を設定します。
+4. **Enter キーを**押すと、イベントハンドラーの場所がコードに提示され、 **viewcontroller**.cs ファイルが開きます。 キーボードの方向キーを使用して、場所を設定します。
 
     [![](hello-tvos-images/event3.png "場所の設定")](hello-tvos-images/event3.png#lightbox)
 5. これにより、次のような部分メソッドが作成されます。

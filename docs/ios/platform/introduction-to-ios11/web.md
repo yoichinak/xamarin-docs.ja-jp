@@ -1,50 +1,50 @@
 ---
-title: IOS 11 における WebKit と Safari の変更
-description: このドキュメントでは、WebKit と iOS 11 で Safari サービス フレームワークに加えられた変更について説明します。 これには SFSafariViewController で更新プログラムと WKWebView の新機能をスタイル設定を操作する方法について説明します。
+title: IOS 11 での WebKit と Safari の変更点
+description: このドキュメントでは、iOS 11 の WebKit および Safari サービスフレームワークに加えられた変更について説明します。 SFSafariViewController のスタイル更新と WKWebView の新機能について説明します。
 ms.prod: xamarin
 ms.assetid: C74B2E94-177C-43D4-8D6C-9B528773C120
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 09/12/2017
-ms.openlocfilehash: 5ced73b1f3f5b8207ae1258dcb01a78c94df217d
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.openlocfilehash: b90673559d0b8a3728898b7d8dbc3207bb22520b
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67268920"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70280079"
 ---
-# <a name="webkit-and-safari-changes-in-ios-11"></a>IOS 11 における WebKit と Safari の変更
+# <a name="webkit-and-safari-changes-in-ios-11"></a>IOS 11 での WebKit と Safari の変更点
 
-iOS 11 では、WebKit と SafariServices への変更が含まれています、Safari web ブラウザー – Safari 11.0 – の新しいバージョンが導入されています。 このガイドでは、これらの変更について説明します。
+iOS 11 では、Safari web ブラウザー (Safari 11.0) の新しいバージョンが導入されています。これには、WebKit と Saf サービスの変更が含まれています。 このガイドでは、これらの変更について説明します。
 
-## <a name="safariservices"></a>SafariServices
+## <a name="safariservices"></a>Saf サービス
 
-`SFSafariViewController` web コンテンツを表示するか、アプリからユーザーを認証するためのオプションとして、iOS 9 で導入されました。 その機能の詳細についてで参照できる、 [Web ビュー](~/ios/user-interface/controls/uiwebview.md#safariviewcontroller)ガイド。
+`SFSafariViewController`は、web コンテンツを表示したり、アプリからユーザーを認証したりするためのオプションとして、iOS 9 で導入されました。 機能の詳細については、 [Web ビュー](~/ios/user-interface/controls/uiwebview.md#safariviewcontroller)のガイドを参照してください。
 
-iOS 11 では、アプリと web の間でシームレスなエクスペリエンスをユーザーに与え、Safari ビュー コント ローラー スタイルの更新プログラムを導入されています。 たとえば、アドレス バーにここではミニ ブラウザーではなく、アプリでブラウザーの外観である Safari ビュー コント ローラーの削除。 設定して、アプリの配色でサインイン合わせて配色をカスタマイズすることも、`preferredBarTintColor`と`PreferredControlTintColor`プロパティ。
+iOS 11 では、Safari ビューコントローラーのスタイルの更新が導入されており、アプリと web の間でシームレスなエクスペリエンスを提供しています。 たとえば、アドレスバーを削除すると、Safari ビューコントローラーは、ミニブラウザーではなく、アプリ内ブラウザーを使用できるようになります。 また、プロパティ`preferredBarTintColor`と`PreferredControlTintColor`プロパティを設定して、配色をアプリの配色に合わせてカスタマイズすることもできます。
 
 ```csharp
 sfViewController.PreferredControlTintColor = UIColor.White;
 sfViewController.PreferredBarTintColor = UIColor.Purple;
 ```
 
-次のコード スニペットは、次の図に表示される、紫と白のバーを表示します。
+次の図に示すように、次のコードスニペットは、紫色と白でバーを表示します。
 
-![紫と白でレンダリング SFSafariViewController バー](web-images/image1.png)
+![紫と白でレンダリングされる SFSafariViewController バー](web-images/image1.png)
 
-Safari のビュー コント ローラーに表示される閉じるボタンを設定して変更することも、`DismissButtonStyle`プロパティを`Done`、 `Close`、または`Cancel`:
+Safari ビューコントローラーに表示される [閉じる`DismissButtonStyle` ] ボタンは、プロパティを、 `Done` `Close` `Cancel`、のいずれかに設定することによって変更することもできます。
 
 ```csharp
 sfViewController.DismissButtonStyle = SFSafariViewControllerDismissButtonStyle.Close;
 ```
 
-![ボタン テキストの変更を無視します。](web-images/image2.png)
+![ボタンのテキストの変更を閉じる](web-images/image2.png)
 
-この値を変更するときに`SFSafariViewController`が表示されます。
+この値は、の表示`SFSafariViewController`中に変更できます。
 
 
-Safari のビュー コント ローラー内で表示されるコンテンツによっては、ユーザーがスクロール メニュー バーを縮小しないことを確認する必要があります。 これは、新しい設定で有効になって`BarCollapsedEnabled`プロパティを`false`:
+Safari ビューコントローラー内に表示されるコンテンツによっては、ユーザーがスクロールするときにメニューバーが折りたたまれないようにする必要がある場合があります。 これは、新しい`BarCollapsedEnabled`プロパティをに設定する`false`ことによって有効になります。
 
 ```csharp
 var config = new SFSafariViewControllerConfiguration();
@@ -53,28 +53,28 @@ config.BarCollapsingEnabled = false;
 var sfViewController = new SFSafariViewController(url, config);
 ```
 
-![無効になっている折りたたみバー](web-images/image3.png)
+![バーの折りたたみが無効です](web-images/image3.png)
 
-Apple では、iOS 11 では、Safari ビュー コント ローラーでプライバシーへの更新プログラムが確立もします。 Safari のビュー コント ローラーのすべてのインスタンスではなく、アプリごとの存在のみ cookie、ローカル ストレージなどに、データを参照しています。 これにより、ユーザーの閲覧活動は、アプリ内でプライベートです。
+Apple では、iOS 11 の Safari ビューコントローラーのプライバシーに関する更新も行っています。 現時点では、cookie やローカルストレージなどのデータの参照は、Safari ビューコントローラーのすべてのインスタンスに対してではなく、アプリごとに存在します。 これにより、ユーザーの閲覧アクティビティがアプリ内でプライベートになります。
 
-追加の機能やなどのドラッグと Url のサポートをドロップのサポート`window.open()`にも追加されている`SFSafariViewController`iOS 11 でします。 これらの新機能の詳細については見つかります[Apple の SFSafariViewController ドキュメント](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller?changes=latest_minor)します。
+IOS 11 では、の`window.open()` url およびサポートに対するドラッグアンドドロップのサポートなどの追加機能もに`SFSafariViewController`追加されました。 これらの新機能の詳細については、 [Apple の SFSafariViewController のドキュメント](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller?changes=latest_minor)を参照してください。
 
 
 ## <a name="webkit"></a>WebKit
 
-`WKWebView` ユーザーに web コンテンツを表示するための手段として iOS 8 で WebKit の一部として導入されました。 これがよりもはるかにカスタマイズ可能な`SFSafariViewController`、独自のナビゲーションとユーザー インターフェイスを作成することができます。
+`WKWebView`は、ユーザーに web コンテンツを表示する手段として、iOS 8 の WebKit の一部として導入されました。 これは、独自のナビゲーション`SFSafariViewController`とユーザーインターフェイスを作成できるよりもはるかにカスタマイズできます。
 
-Apple での 3 つの主な機能強化が導入`WKWebView`iOS 11 で。 
+Apple では、iOS 11 に`WKWebView`向けて主に3つの機能強化が導入されています。 
 
 - Cookie を管理する機能
 - コンテンツのフィルター処理
-- カスタム リソースの読み込み。 
+- カスタムリソースの読み込み。 
 
-新しいクッキー管理が行われます[ `WKHttpCookieStore` ](https://developer.apple.com/documentation/webkit/wkhttpcookiestore)クラスを追加およびの変更を保存する cookie を観察して、WKWebView に格納されているすべてのクッキーを取得するのには、cookie を削除することができます。
+Cookie の管理は新しい[`WKHttpCookieStore`](https://developer.apple.com/documentation/webkit/wkhttpcookiestore)クラスによって行われます。これにより、cookie の追加と削除、WKWebView に格納されているすべてのクッキーの取得、およびクッキーストアに対する変更の監視を行うことができます。
 
-コンテンツのフィルター処理、ユーザーが表示されるコンテンツの種類を管理することができますがセキュリティで保護された、ファミリのわかりやすいかどうかを確認することができ、必要に応じて、ユーザーのグループにのみ使用できます。 これには、実装は、新しい[ `WKContentRuleList` ](https://developer.apple.com/documentation/webkit/wkcontentrulelist)トリガーおよびアクションの JSON のペアを入力して、クラス。 これらのトリガーとアクションの詳細については、apple の見つかんだできます[コンテンツ ブロック規則](https://developer.apple.com/library/content/documentation/Extensions/Conceptual/ContentBlockingRules/Introduction/Introduction.html)ガイド。
+コンテンツフィルターを使用すると、ユーザーに表示されるコンテンツの種類を管理できます。これにより、セキュリティで保護された家族が使用できるようになります。また、必要に応じて、選択したユーザーグループのみが利用できます。 これは、新しい[`WKContentRuleList`](https://developer.apple.com/documentation/webkit/wkcontentrulelist)クラスを通じて実装されます。このためには、JSON でトリガーとアクションのペアを指定します。 これらのトリガーとアクションの詳細については、「Apple の[コンテンツブロッキングルール](https://developer.apple.com/library/content/documentation/Extensions/Conceptual/ContentBlockingRules/Introduction/Introduction.html)ガイド」を参照してください。
 
-iOS 11 をカスタマイズできるようになりました`WKWebView`カスタム リソースが、web コンテンツの読み込みとします。 これには、実装を通じて、`IWKUrlSchemeHandler`インターフェイスで、Web のキットをネイティブでない URL スキームを処理することができます。 このインターフェイスは、開始、停止メソッドを実装する必要があります。
+iOS 11 では、web コンテンツ`WKWebView`のカスタムリソース読み込みを使用してカスタマイズできるようになりました。 これは`IWKUrlSchemeHandler`インターフェイスによって実装されます。これにより、Web Kit にネイティブではない URL スキームを処理できます。 このインターフェイスには、次のように実装する必要がある開始および停止メソッドがあります。
 
 ```csharp
 public class MyHandler : NSObject, IWKUrlSchemeHandler {
@@ -97,7 +97,7 @@ public class MyHandler : NSObject, IWKUrlSchemeHandler {
 }
 ``` 
 
-ハンドラーが実装されると、設定を使用、`SetUrlSchemeHandler`プロパティを`WKWebViewConfiguration`します。 次に、カスタムのスキームを使用するものの URL を読み込みます。
+ハンドラーが実装されたら、それを使用して`SetUrlSchemeHandler` 、の`WKWebViewConfiguration`プロパティを設定します。 次に、カスタムスキームを使用するものの URL を読み込みます。
 
 ```csharp
 var config = new WKWebViewConfiguration();

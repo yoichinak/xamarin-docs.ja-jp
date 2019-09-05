@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/29/2017
-ms.openlocfilehash: d6bcecd27e0380221febc34f787f71d20e0fcaf9
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 0828d780ed075a6e3b18ba5020f5908fb8c06189
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526955"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292581"
 ---
 # <a name="create-a-custom-layout-in-xamarinforms"></a>Xamarin. Forms でカスタムレイアウトを作成する
 
@@ -74,8 +74,8 @@ Invalidation は、ページ上の要素の変更によって新しいレイア�
 1. 上書き、 [ `OnMeasure` ](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double))メソッドを呼び出す、 [ `Measure` ](xref:Xamarin.Forms.VisualElement.Measure(System.Double,System.Double,Xamarin.Forms.MeasureFlags))レイアウトのすべての子、および戻り値の要求サイズ、レイアウトのメソッド。 詳細については、次を参照してください。 [OnMeasure メソッドをオーバーライドする](#onmeasure)します。
 1. 上書き、 [ `LayoutChildren` ](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double))メソッドを呼び出す、 [ `Layout` ](xref:Xamarin.Forms.VisualElement.Layout(Xamarin.Forms.Rectangle))レイアウトのすべての子のメソッド。 呼び出しに失敗し、 [ `Layout` ](xref:Xamarin.Forms.VisualElement.Layout(Xamarin.Forms.Rectangle))レイアウトでそれぞれの子のメソッドが適切なサイズまたは位置を受信しない子になります、そのため、子なりませんページに表示します。 詳細については、次を参照してください。 [LayoutChildren メソッドをオーバーライドする](#layoutchildren)します。
 
-  > [!NOTE]
->  内の子を列挙するときに、 [ `OnMeasure` ](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double))と[ `LayoutChildren` ](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double))オーバーライド、すべての子のスキップを[ `IsVisible` ](xref:Xamarin.Forms.VisualElement.IsVisible) に設定されて`false`. カスタム レイアウトが非表示の子の余地を残すされないようになります。
+    > [!NOTE]
+    > 内の子を列挙するときに、 [ `OnMeasure` ](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double))と[ `LayoutChildren` ](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double))オーバーライド、すべての子のスキップを[ `IsVisible` ](xref:Xamarin.Forms.VisualElement.IsVisible) に設定されて`false`. カスタム レイアウトが非表示の子の余地を残すされないようになります。
 
 1. [*省略可能な*] オーバーライド、 [ `InvalidateLayout` ](xref:Xamarin.Forms.Layout.InvalidateLayout)に子が追加またはレイアウトから削除するときに通知するメソッド。 詳細については、次を参照してください。 [InvalidateLayout メソッドをオーバーライドする](#invalidatelayout)します。
 1. [*省略可能な*] オーバーライド、 [ `OnChildMeasureInvalidated` ](xref:Xamarin.Forms.Layout.OnChildMeasureInvalidated)レイアウトの子のいずれかのサイズが変更されたときに通知を受け取るメソッド。 詳細については、次を参照してください。 [OnChildMeasureInvalidated メソッドをオーバーライドする](#onchildmeasureinvalidated)します。

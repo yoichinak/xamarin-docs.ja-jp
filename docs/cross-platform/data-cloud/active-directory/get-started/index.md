@@ -1,32 +1,32 @@
 ---
 title: Azure Active Directory
-description: このドキュメントでは、Azure Active Directory での認証にモバイル アプリを許可に従う必要がある手順について説明します。
+description: このドキュメントでは、モバイルアプリが Azure Active Directory で認証できるようにするために従う必要がある手順について説明します。
 ms.prod: xamarin
 ms.assetid: 70B3C2AB-CB4D-420C-9CFA-20CCFA0E3C78
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: ca33422817f19dbb0a04e8870800d3f5efa8af2a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: f51c6af9ed38910f44db2c0886c474deafa096d7
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61318299"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70289993"
 ---
 # <a name="azure-active-directory"></a>Azure Active Directory
 
-_Azure Active Directory を使用するアプリを登録します。_
+_アプリを登録して Azure Active Directory を使用する_
 
-Azure Active Directory では、ファイル、リンク、および従業員がシステムにサインインまたはが電子メールの確認を使用して、同じ組織アカウントを使用して Web Api などのセキュリティで保護されたリソースにできます。
+Azure Active Directory を使用すると、開発者は、従業員がシステムにサインインしたり、電子メールをチェックしたりするときに使用するのと同じ組織アカウントを使用して、ファイル、リンク、Web Api などのリソースをセキュリティで保護することができます。
 
-Azure Active Directory で認証できますが、モバイル アプリケーションの開発には、次の 3 つの手順が含まれます。
-最初の 2 つの手順は、一般的に使用する予定のサービスに関係なく同じです。 3 番目の手順ではサービスの種類ごとに異なります。
+Azure Active Directory で認証できるモバイルアプリケーションを開発するには、3つの手順が必要です。
+最初の2つの手順は、使用する予定のサービスに関係なく、通常は同じです。 3番目の手順は、サービスの種類ごとに異なります。
 
-  1. [Azure Active Directory に登録](~/cross-platform/data-cloud/active-directory/get-started/register.md)上、 *windowsazure.com*しポータル
-  2. [サービスを構成する](~/cross-platform/data-cloud/active-directory/get-started/configure.md)します。
-  3. サービスを使用してモバイル アプリを開発します。
+  1. *Windowsazure.com* portal での Azure Active Directory への[登録](~/cross-platform/data-cloud/active-directory/get-started/register.md)、
+  2. [サービスを構成](~/cross-platform/data-cloud/active-directory/get-started/configure.md)します。
+  3. サービスを使用してモバイルアプリを開発します。
 
-アクセスできる別のサービスの例は次のとおりです。
+アクセスできるさまざまなサービスの例を次に示します。
 
 - [Graph API](~/cross-platform/data-cloud/active-directory/graph.md)
 - Web API
@@ -35,10 +35,10 @@ Azure Active Directory で認証できますが、モバイル アプリケー�
 
 ## <a name="conclusion"></a>まとめ
 
-上記の手順を使用して Azure Active Directory に対してモバイル アプリを認証できます。 Active Directory Authentication Library (ADAL) がずっと簡単に少数の行のコード、コードの大部分を維持しながらとなり、共有可能なプラットフォーム間で同じです。
+上記の手順を使用して、Azure Active Directory に対してモバイルアプリを認証できます。 Active Directory 認証ライブラリ (ADAL) を使用すると、コードの大部分を維持しながら、プラットフォーム間で共有できるようにするだけで、コードがより簡単になります。
 
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [Microsoft NativeClient サンプル](https://github.com/AzureADSamples/NativeClient-MultiTarget-DotNet)
+- [Microsoft NativeClient のサンプル](https://github.com/AzureADSamples/NativeClient-MultiTarget-DotNet)

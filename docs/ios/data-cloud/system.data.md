@@ -1,44 +1,44 @@
 ---
-title: Xamarin.iOS で System.Data
-description: このドキュメントでは、System.Data、および Mono.Data.Sqlite.dll を使用して Xamarin.iOS アプリケーションでの SQLite のデータにアクセスする方法について説明します。
+title: Xamarin. iOS のシステムデータ
+description: このドキュメントでは、system.string と Mono を使用して、Xamarin. iOS アプリケーションの SQLite データにアクセスする方法について説明します。
 ms.prod: xamarin
 ms.assetid: F10C0C57-7BDE-A3F3-B011-9839949D15C8
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 11/25/2015
-ms.openlocfilehash: e6df2d9d45eb2f898bb3c4957ec7960956a184e0
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 36eeb517fee69742f900a0cf18e1d19d093dfc52
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61240220"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290117"
 ---
-# <a name="systemdata-in-xamarinios"></a>Xamarin.iOS で System.Data
+# <a name="systemdata-in-xamarinios"></a>Xamarin. iOS のシステムデータ
 
-Xamarin.iOS 8.10 のサポートが追加[System.Data](xref:System.Data)など、 `Mono.Data.Sqlite.dll` ADO.NET プロバイダー。 サポートには、次の追加が含まれています[アセンブリ](~/cross-platform/internals/available-assemblies.md):。
+ADO.NET[プロバイダーを含む、system.string のサポート](xref:System.Data)が`Mono.Data.Sqlite.dll`追加さ8.10 れます。 サポートには、次の[アセンブリ](~/cross-platform/internals/available-assemblies.md)の追加が含まれます。
 
--  `System.Data.dll`
--  `System.Data.Service.Client.dll`
--  `System.Transactions.dll`
--  `Mono.Data.Tds.dll`
--  `Mono.Data.Sqlite.dll`
+- `System.Data.dll`
+- `System.Data.Service.Client.dll`
+- `System.Transactions.dll`
+- `Mono.Data.Tds.dll`
+- `Mono.Data.Sqlite.dll`
 
 <a name="Example" />
 
 ## <a name="example"></a>例
 
-次のプログラムでデータベースを作成する`Documents/mydb.db3`、し、データベースが以前存在しないかどうかにはサンプル データが設定されます。 書き込まれた出力で、データベースは、照会`stderr`します。
+次のプログラムでは、に`Documents/mydb.db3`データベースを作成します。データベースが以前に存在していない場合は、サンプルデータが設定されます。 次に、データベースに対してクエリが作成さ`stderr`れ、出力がに書き込まれます。
 
-### <a name="add-references"></a>参照を追加します。
+### <a name="add-references"></a>参照の追加
 
-最初に、右クリックして、**参照**ノード選択**参照の編集.** 選び`System.Data`と`Mono.Data.Sqlite`:
+最初に、 **[参照]** ノードを右クリックし、 **[参照の編集]** を`System.Data`選択します。次に、[and `Mono.Data.Sqlite`] を選択します。
 
 [![](system.data-images/edit-references-sml.png "新しい参照の追加")](system.data-images/edit-references.png#lightbox)
 
 ### <a name="sample-code"></a>サンプル コード
 
-次のコードでは、テーブルを作成すると、埋め込まれた SQL コマンドを使用して行を挿入する単純な例を示します。
+次のコードは、テーブルを作成し、埋め込み SQL コマンドを使用して行を挿入する簡単な例を示しています。
 
 ```csharp
 using System;
@@ -108,12 +108,12 @@ class Demo {
 ```
 
 > [!IMPORTANT]
-> コードを受けやすくために、SQL コマンド文字列を埋め込むには不適切な手法は前述のように上記のコード サンプル、 [SQL インジェクション](https://en.wikipedia.org/wiki/SQL_injection)します。
+> 上記のコードサンプルで説明したように、sql[インジェクション](https://en.wikipedia.org/wiki/SQL_injection)によってコードが脆弱になるため、sql コマンドに文字列を埋め込むことは不適切です。
 
 
 ### <a name="using-command-parameters"></a>コマンド パラメーターの使用
 
-次のコードでは、(テキストには、単一アポストロフィなどの特別な SQL 文字が含まれている) 場合でも、データベースに安全にユーザーが入力したテキストを挿入するコマンドのパラメーターを使用する方法を示します。
+次のコードは、コマンドパラメーターを使用して、ユーザーが入力したテキストをデータベースに安全に挿入する方法を示しています (テキストに単一引用符などの特別な SQL 文字が含まれている場合でも)。
 
 ```csharp
 // user input from Textbox control
@@ -134,40 +134,40 @@ using (var addCmd = conn.CreateCommand ()) {
 
 ## <a name="missing-functionality"></a>不足している機能
 
-両方**System.Data**と**Mono.Data.Sqlite**機能の一部が欠落しています。
+**システムデータ**と**Mono. Sqlite**の両方に、いくつかの機能がありません。
 
 <a name="System.Data" />
 
 ### <a name="systemdata"></a>System.Data
 
-機能が表示されない**System.Data.dll**で構成されます。
+System.string にない機能は次のもので構成さ**れ**ます。
 
--  ものが必要な[System.CodeDom](xref:System.CodeDom) (例。 [System.Data.TypedDataSetGenerator](xref:System.Data.TypedDataSetGenerator) )
--  XML 構成ファイルのサポートの (例。 [System.Data.Common.DbProviderConfigurationHandler](xref:System.Data.Common.DbProviderConfigurationHandler) )
--   [System.Data.Common.DbProviderFactories](xref:System.Data.Common.DbProviderFactories) (XML 構成ファイルのサポートによって異なります)
--   [System.Data.OleDb](xref:System.Data.OleDb)
--   [System.Data.Odbc](xref:System.Data.Odbc)
--  `System.EnterpriseServices.dll`依存関係が*削除*から`System.Data.dll`、削除の結果として得られる、 [SqlConnection.EnlistDistributedTransaction(ITransaction)](xref:System.Data.SqlClient.SqlConnection.EnlistDistributedTransaction*)メソッド。
+- [システム CodeDom](xref:System.CodeDom)が必要なもの ( [TypedDataSetGenerator](xref:System.Data.TypedDataSetGenerator) )
+- XML 構成ファイルのサポート (例: [DbProviderConfigurationHandler](xref:System.Data.Common.DbProviderConfigurationHandler) ) のようになります。
+- [DbProviderFactories](xref:System.Data.Common.DbProviderFactories) (XML 構成ファイルのサポートに依存)
+- [System.Data.OleDb](xref:System.Data.OleDb)
+- [System.Data.Odbc](xref:System.Data.Odbc)
+- 依存関係がから`System.Data.dll`削除されたため、 [EnlistDistributedTransaction (ITransaction)](xref:System.Data.SqlClient.SqlConnection.EnlistDistributedTransaction*)メソッドが削除されました。 `System.EnterpriseServices.dll`
 
 
 <a name="Mono.Data.Sqlite" />
 
-### <a name="monodatasqlite"></a>Mono.Data.Sqlite
+### <a name="monodatasqlite"></a>Mono. Data. Sqlite
 
-一方、 **Mono.Data.Sqlite.dll**ソース コードの変更があっていませんが、代わりに、ホストの数を可能性があります*ランタイム*から発行`Mono.Data.Sqlite.dll`SQLite 3.5 をバインドします。 iOS 8 には SQLite 3.8.5 一方で、含まれています。 これをあえてと事項は、2 つのバージョン間で変更されました。
+一方、 **Mono**は、ソースコードの変更はありませんが、代わりに Sqlite 3.5 をバインドしているため`Mono.Data.Sqlite.dll` 、多くの*実行時*の問題が発生する可能性があります。 一方、iOS 8 には SQLite 3.8.5 が付属しています。 ここでは、2つのバージョンの間で変更されたものがあるとします。
 
-IOS の以前のバージョンは、次のバージョンの SQLite に付属します。
+以前のバージョンの iOS には、次のバージョンの SQLite が付属しています。
 
-- **iOS 7** -3.7.13 のバージョン。
-- **iOS 6** -3.7.13 のバージョン。
-- **iOS 5** -3.7.7 のバージョン。
-- **iOS 4** -3.6.22 のバージョン。
+- **iOS 7** -バージョン3.7.13。
+- **iOS 6** -バージョン3.7.13。
+- **iOS 5** -バージョン3.7.7。
+- **iOS 4** -バージョン3.6.22。
 
-データベース スキーマのクエリに関連する最も一般的な問題が表示されるなど、特定のテーブルに列が存在する実行時に決定する例: `Mono.Data.Sqlite.SqliteConnection.GetSchema` (オーバーライド[DbConnection.GetSchema](xref:System.Data.Common.DbConnection.GetSchema)と`Mono.Data.Sqlite.SqliteDataReader.GetSchemaTable`(オーバーライド[DbDataReader.GetSchemaTable](xref:System.Data.Common.DbDataReader.GetSchemaTable)します。 よっているものを使用して簡単に言えば、 [DataTable](xref:System.Data.DataTable)動作する可能性はほとんどありません。
+最も一般的な問題は、データベーススキーマのクエリに関連して`Mono.Data.Sqlite.SqliteConnection.GetSchema`いるように見えます。たとえば、特定のテーブルに存在する列が実行時に決定されます ( [DbConnection](xref:System.Data.Common.DbConnection.GetSchema)と`Mono.Data.Sqlite.SqliteDataReader.GetSchemaTable`のオーバーライド (オーバーライド) [DbDataReader。 GetSchemaTable](xref:System.Data.Common.DbDataReader.GetSchemaTable)。 つまり、 [DataTable](xref:System.Data.DataTable)を使用しているものはほとんど動作しないように思えます。
 
 <a name="Data_Binding" />
 
 ## <a name="data-binding"></a>データ バインディング
 
-この時点では、データ バインディングはサポートされていません。
+現時点では、データバインディングはサポートされていません。
 

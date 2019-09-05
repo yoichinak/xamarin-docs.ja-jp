@@ -3,15 +3,15 @@ title: IOS/macOS 用の HttpClient と SSL/TLS 実装セレクター
 description: HttpClient スタックと SSL/TLS 実装セレクターによって、Xamarin iOS、tvOS、または macOS アプリで使用される HttpClient と SSL/TLS の実装が決まります。
 ms.prod: xamarin
 ms.assetid: 12101297-BB04-4410-85F0-A0D41B7E6591
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 04/20/2018
-ms.openlocfilehash: f00a25bbb86e9ec57ef2290c1a7e37a8891e1064
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: f3c30e8edc36c6d92b6fac0bd0e199aa26e16993
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69521870"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70280924"
 ---
 # <a name="httpclient-and-ssltls-implementation-selector-for-iosmacos"></a>IOS/macOS 用の HttpClient と SSL/TLS 実装セレクター
 

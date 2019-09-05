@@ -4,15 +4,15 @@ description: このドキュメントでは、バックグラウンドで実行�
 ms.prod: xamarin
 ms.assetid: 8F89BE63-DDB5-4740-A69D-F60AEB21150D
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 67cc2028276b6e1415c88cb8957e2cd567fa5bae
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 044ae7e4a77abb77e766df58b9cda5938ce8fe7b
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69521270"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290616"
 ---
 # <a name="registering-xamarinios-apps-to-run-in-the-background"></a>バックグラウンドで実行する Xamarin iOS アプリを登録しています
 
@@ -24,7 +24,7 @@ ms.locfileid: "69521270"
 
 登録済みアプリはいくつかのカテゴリに分類されます。
 
-- オーディオとオーディオコンテンツを操作するその他のアプリケーションは、アプリがフォアグラウンドになくなった場合でもオーディオの再生を継続するように登録できます。 このカテゴリのアプリが、バックグラウンドでオーディオの再生やダウンロード以外の操作を実行しようとすると、iOS はそれを終了します。
+- **オーディオと**オーディオコンテンツを操作するその他のアプリケーションは、アプリがフォアグラウンドになくなった場合でもオーディオの再生を継続するように登録できます。 このカテゴリのアプリが、バックグラウンドでオーディオの再生やダウンロード以外の操作を実行しようとすると、iOS はそれを終了します。
 - **Voip** -ボイスオーバーインターネットプロトコル (voip) アプリケーションは、オーディオアプリケーションに与えられているのと同じ特権を取得して、オーディオをバックグラウンドで処理し続けます。 また、接続を維持するために、必要に応じて電力を供給する VoIP サービスに応答することもできます。
 - **外部のアクセサリと bluetooth** : bluetooth デバイスやその他の外部ハードウェアのアクセサリと通信する必要があるアプリケーション用に予約されています。これらのカテゴリ下で登録すると、アプリはハードウェアに接続したままにすることができます。
 - **Newsstand** -Newsstand アプリケーションは、バックグラウンドでコンテンツを引き続き同期できます。

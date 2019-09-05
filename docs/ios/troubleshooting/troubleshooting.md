@@ -5,15 +5,15 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: B50FE9BD-9E01-AE88-B178-10061E3986DA
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 05/22/2018
-ms.openlocfilehash: 06283987e1d70659653729b4f3d5a00e1877aa5f
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: a888c29a6409fc803b8a0d06bcc6f8a668e64f5e
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69887386"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292052"
 ---
 # <a name="troubleshooting-tips-for-xamarinios"></a>Xamarin のトラブルシューティングのヒント 
 
@@ -49,7 +49,7 @@ Visual Studio for Mac と Visual Studio の Xamarin Designer for iOS の導入�
 - メンバーに[`[Preserve]`](http://www.go-mono.com/docs/index.aspx?link=T:MonoTouch.Foundation.PreserveAttribute)属性を追加します。  これにより、リンカーによる削除が防止されます。
 - [**Mtouch**](http://www.go-mono.com/docs/index.aspx?link=man:mtouch%281%29)を呼び出すときは、 **-nolink**オプションまたは **-linksdkonly**オプションを使用します。
   - **-nolink は、すべての**リンクを無効にします。
-  - **-linksdkonly**では、ユーザーが作成したアセンブリ (つまり、アプリプロジェクト) 内のすべての種類を保持しながら、xamarin などの ios 提供のアセンブリのみをリンクします。
+  - **-linksdkonly**では、ユーザーが作成したアセンブリ (つまり、アプリプロジェクト) 内のすべての種類を**保持しながら**、xamarin などの ios 提供のアセンブリのみをリンクします。
 
 アセンブリがリンクされ、結果の実行可能ファイルが小さくなることに注意してください。そのため、リンクを無効にすると、実行可能ファイルの方が望ましいよりも大きくなる可能性があります。
 

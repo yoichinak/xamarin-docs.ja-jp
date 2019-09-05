@@ -4,15 +4,15 @@ description: この記事では、tvOS アプリ内のテーブルビューお�
 ms.prod: xamarin
 ms.assetid: D8F80FA9-6400-4DB7-AFC9-A28A54AD04E8
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 0d93978d6f7b3dff6d0d7ebf7c9f9afbe3572079
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 28dfdbd7837f87d003e5b949ea3f7421613997f7
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70199910"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70288300"
 ---
 # <a name="working-with-tvos-table-views-in-xamarin"></a>Xamarin での tvOS テーブルビューの使用
 
@@ -162,7 +162,7 @@ TvOS アプリでテーブルビューを操作する最も簡単な方法は、
 
 テーブルビューに表示される情報を使いやすくし、詳細情報を簡単に表示できるようにするには (ユーザーがテーブルビューの行を選択または強調表示したときに)、表示される情報のデータモデルとして機能するカスタムクラスまたはクラスを作成します.
 
-旅行予約アプリの例を見てください。これには、ユーザーが選択できる**アトラクション**の一意のリストを含む**都市**の一覧が含まれています。 ユーザーは、引力を*お気に入り*としてマークすることができます。引力を選択し、特定の都市に*フライトを予約*します。
+旅行予約アプリの例を見てください。これには、ユーザーが選択できる**アトラクション**の一意のリストを含む**都市**の一覧が含まれています。 ユーザーは、引力を*お気に入り*としてマークすることができます。*引力を選択*し、特定の都市に*フライトを予約*します。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -848,7 +848,7 @@ namespace tvTable
 
 また、テーブルビュー (`SplitView``AcctractionTableView`) に変更を反映するために使用する分割ビューコントローラー () に戻るショートカットも定義されています。
 
-最後に、カスタムアクション (イベント) は、インターフェイスデザイナー `UIButton`で作成された3つのインスタンスに追加されました。これにより、ユーザーは引力を_お気に入り_としてマークし、引力に移動し、指定されたに_フライトを Book_ことができます。city.
+最後に、カスタムアクション (イベント) は、インターフェイスデザイナー `UIButton`で作成された3つのインスタンスに追加されました。これにより、ユーザーは引力を_お気に入り_としてマークし、_引力に移動_し、指定されたに_フライトを Book_ことができます。city.
 
 <a name="The-Navigation-View-Controller" />
 
@@ -939,7 +939,7 @@ namespace tvTable
 
 まず、分割ビュー (`AttractionViewController`) と**マスター**側 (`MasterNavigationController`) の**詳細**な側面へのショートカットを作成します。 この場合も、2つの側の間での通信が容易になります。
 
-次に、分割ビューをメモリに読み込むときに、分割ビューコントローラーを分割ビューの両側にアタッチし、テーブルビュー (`AttractionHighlighted`) の引力を強調表示しているユーザーに応答します。そのためには、新しい引力を分割ビュー。
+次に、分割ビューをメモリに読み込むときに、分割ビューコントローラーを分割ビューの両側にアタッチし、テーブルビュー (`AttractionHighlighted`) の引力を強調表示しているユーザーに応答します。そのために**は、新しい**引力を分割ビュー。
 
 分割ビュー内のテーブルビューの完全な実装については、 [tvTables](https://docs.microsoft.com/samples/xamarin/ios-samples/tvos-tvtable)サンプルアプリを参照してください。
 

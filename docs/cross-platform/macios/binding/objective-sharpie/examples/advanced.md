@@ -1,23 +1,23 @@
 ---
-title: (手動) の実際の例の詳細
-description: このドキュメントでは、目標油性は、内部で洞察を提供する目的油性への入力としての xcodebuild 出力を使用する方法について説明します。
+title: 高度な (手動) 実際の例
+description: このドキュメントでは、マジックペンに対する入力として xcodebuild の出力を使用する方法について説明します。これにより、マジックペンがどのような目的で行われているかについての洞察が得られます。
 ms.prod: xamarin
 ms.assetid: 044FF669-0B81-4186-97A5-148C8B56EE9C
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: e820a0c208907a95dda4a50427bb4dac27b88964
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: a4a6df4916ae5dcc2a0f826d2f0ab9d09167ba5f
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64977903"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290047"
 ---
-# <a name="advanced-manual-real-world-example"></a>(手動) の実際の例の詳細
+# <a name="advanced-manual-real-world-example"></a>高度な (手動) 実際の例
 
-**この例では、 [Facebook から POP ライブラリ](https://github.com/facebook/pop)します。**
+**この例では、 [Facebook の POP ライブラリ](https://github.com/facebook/pop)を使用します。**
 
-ここでは、バインディング、Apple を使用するより高度なアプローチ`xcodebuild`最初 POP プロジェクトをビルドするツールし、目標油性の入力を手動で推測します。 これは基本的に、内部的には、前のセクションの目的油性の実行内容について説明します。
+このセクションでは、より高度なバインド方法について説明します`xcodebuild` 。ここでは、Apple のツールを使用して最初に POP プロジェクトをビルドしてから、目標マジックペンの入力を手動で推測します。 これは、基本的に、前のセクションで説明したマジックペンの目的で行われていることを表します。
 
 ```
  $ git clone https://github.com/facebook/pop.git
@@ -27,7 +27,7 @@ Cloning into 'pop'...
 $ cd pop
 ```
 
-Xcode プロジェクトが POP ライブラリ (`pop.xcodeproj`) を使って`xcodebuild`POP を構築します。 このプロセスは、目標油性が解析する必要があるヘッダー ファイルを生成さらに可能性があります。 これは、ため、ビルド前に、バインドが重要です。 使用して構築するときに`xcodebuild`を渡すことと同じ SDK 識別子とアーキテクチャを目標油性に渡す (および目標油性 3.0 は通常はこれを行うことを忘れないでください!) にします。
+Pop ライブラリには Xcode プロジェクト (`pop.xcodeproj`) があるため、を使用`xcodebuild`して pop を構築するだけで済みます。 このプロセスによって、目的のマジックペンが解析する必要のあるヘッダーファイルが生成される場合があります。 このため、バインド前に構築することが重要です。 を使用`xcodebuild`してビルドするときに、目標マジックペンに渡すのと同じ SDK 識別子とアーキテクチャを使用することを確認してください (ただし、目標マジックペン3.0 は通常これを行うことができます)。
 
 ```
 $ xcodebuild -sdk iphoneos9.0 -arch arm64
@@ -50,9 +50,9 @@ CpHeader pop/POPAnimationTracer.h build/Headers/POP/POPAnimationTracer.h
 ** BUILD SUCCEEDED **
 ```
 
-ある多くのビルド、コンソールに出力される情報の一部として`xcodebuild`します。 "CpHeader"ターゲットが実行されたこと確認できますように、上に表示されるヘッダー ファイルがビルド出力ディレクトリにコピーされた場合。 これは、場合、およびバインディングが容易: ネイティブ ライブラリの構築の一環として、ヘッダー ファイルは多くの場合、"パブリックに"使用できる場所にバインドを容易に解析を行いコピーします。 POP のヘッダー ファイルがあることをわかっていますここで、`build/Headers`ディレクトリ。
+コンソールには、の`xcodebuild`一部として多数のビルド情報が出力されます。 上に示したように、ヘッダーファイルがビルド出力ディレクトリにコピーされると、"CpHeader" ターゲットが実行されていることがわかります。 これは多くの場合、バインドを容易にするために、ネイティブライブラリのビルドの一部として、ヘッダーファイルが "パブリック" の使用可能な場所にコピーされることが多く、これにより、解析が容易になります。 この場合、POP のヘッダーファイルが`build/Headers`ディレクトリにあることがわかります。
 
-私たちは、POP をバインドする準備ができました。 Sdk を構築することがわかって`iphoneos8.1`で、`arm64`アーキテクチャ、および重要なヘッダー ファイルがある`build/Headers`POP の git checkout します。 見る場合、`build/Headers`ディレクトリ、ヘッダー ファイルの数がわかります。
+これで、POP をバインドする準備ができました。 アーキテクチャを`build/Headers` `iphoneos8.1` `arm64`使用して SDK をビルドしたいと考えています。また、注意する必要があるヘッダーファイルは、POP git チェックアウトの下にあります。 ディレクトリを調べると、 `build/Headers`いくつかのヘッダーファイルが表示されます。
 
 ```
 $ ls build/Headers/POP/
@@ -64,7 +64,7 @@ POPAnimationExtras.h     POPCustomAnimation.h     POPSpringAnimation.h
 POPAnimationPrivate.h    POPDecayAnimation.h
 ```
 
-見る場合`POP.h`は、ライブラリのメインの最上位レベルのヘッダー ファイルを確認できます`#import`s 他のファイル。 このため、のみを渡す必要がある`POP.h`に目的の油性 clang はバック グラウンドで残りの部分に操作を行います。
+ご覧のよう`#import`に、その他のファイルであるライブラリの主要なトップレベルヘッダーファイルであることがわかります。`POP.h` このため、目標マジックペンに渡す`POP.h`必要があるだけで、clang がバックグラウンドで残りの部分を実行します。
 
 ```
 $ sharpie bind -output Binding -sdk iphoneos8.1 \
@@ -122,18 +122,18 @@ Submitting usage data to Xamarin...
 Done.
 ```
 
-渡していることを確認は、`-scope build/Headers`目標油性への引数。 C# と OBJECTIVE-C ライブラリにする必要がありますので`#import`または`#include`他のヘッダー ファイルのライブラリと、バインドする API ない実装の詳細を`-scope`引数で定義されていない任意の API を無視する目標油性に指示をファイル内のどこか、`-scope`ディレクトリ。
+目標マジックペンに`-scope build/Headers`引数が渡されたことがわかります。 C との c 言語ライブラリは、 `#import`バインド`#include`する api ではなく、ライブラリの実装の詳細である必要があるため、この`-scope`引数は、マジックペンで定義されていない api を無視するように、目標を指定します。ディレクトリ内の任意`-scope`の場所にファイルを置いてください。
 
-検索は、`-scope`引数が明確に実装されているライブラリの省略可能な多くの場合、ただし、それを明示的に提供することも問題はありません。
+完全に実装されたライブラリでは、多くの場合、引数は省略可能ですが、明示的に指定しても害はありません。`-scope`
 
-さらに、指定した`-c -Ibuild/headers`します。 まず、`-c`引数に指示をコマンドライン引数を解釈を停止し、後続の引数を渡す目的油性_clang コンパイラに直接_します。 そのため、 `-Ibuild/Headers` clang を検索するよう指示する clang コンパイラ引数に含まれる`build/Headers`、POP ヘッダーが住んでいる場所であります。 この引数を指定せず clang はわからないファイルを配置する場所を`POP.h`は`#import`ing します。 _目的の油性の使用に関するほとんどすべて「問題」が clang に渡す方法を見極めるに要約_します。
+さらに、を`-c -Ibuild/headers`指定しました。 最初に、 `-c`引数は、コマンドライン引数の解釈を停止し、後続の引数を_clang コンパイラに直接_渡すことを目標マジックペンに指示します。 したがって`-Ibuild/Headers` 、は、の下`build/Headers`にインクルードを検索するように clang に指示する clang コンパイラ引数です。ここで、POP ヘッダーはライブです。 この引数を指定しない場合、clang は、処理`POP.h`中`#import`のファイルの場所を認識しません。 _目標マジックペンを使用したほとんどすべての "問題" は、clang に渡すものを解明するために要約_されています。
 
 ### <a name="completing-the-binding"></a>バインディングの完了
 
-目標油性が生成されるようになりました`Binding/ApiDefinitions.cs`と`Binding/StructsAndEnums.cs`ファイル。
+目標マジックペンが生成さ`Binding/ApiDefinitions.cs`れ`Binding/StructsAndEnums.cs` 、ファイルが作成されました。
 
-これらは、バインド時では、目標油性の基本的な最初のパスと、いくつかのケースがありますすべて必要があります。 開発者は通常に目標油性が完了したら、生成されたファイルを手動で変更する必要がありますただし前述のよう[問題を修正](~/cross-platform/macios/binding/objective-sharpie/platform/apidefinitions-structsandenums.md)を自動的に処理できなかったツールによって。
+これらは、バインディングでのマジックペンの基本的な最初のパスであり、いくつかのケースで必要になる場合があります。 ただし、前述のように、開発者は、目的のマジックペンが完了した後に、生成されたファイルを手動で変更して、ツールによって自動的に処理されなかった[問題を修正](~/cross-platform/macios/binding/objective-sharpie/platform/apidefinitions-structsandenums.md)する必要があります。
 
-更新が完了したら、これら 2 つのファイルが Mac を Visual Studio でバインド プロジェクトに今すぐ追加するまたはに直接渡される、`btouch`または`bmac`最終的なバインドを生成するツール。
+更新が完了すると、これら2つのファイルを Visual Studio for Mac のバインドプロジェクトに追加できるようになりました。 `btouch`また`bmac`は、またはツールに直接渡して最終的なバインドを作成することもできます。
 
-バインディング プロセスの詳細な説明を参照してください、[完全なチュートリアルの手順](~/ios/platform/binding-objective-c/walkthrough.md)します。
+バインドプロセスの詳しい説明については、[完全なチュートリアルの手順](~/ios/platform/binding-objective-c/walkthrough.md)を参照してください。

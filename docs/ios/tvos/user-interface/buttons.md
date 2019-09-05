@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin でビルドされた tvOS
 ms.prod: xamarin
 ms.assetid: DA6EF400-A4E3-4245-A0D4-F2398CAE2C9B
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/07/2017
-ms.openlocfilehash: c53344d2e2e9458585439fd90a1f71a4869026be
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: aa1dd0b503dd59a89f526fef53d7d7756a3883de
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70200185"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291106"
 ---
 # <a name="working-with-tvos-buttons-in-xamarin"></a>Xamarin での tvOS ボタンの使用
 
@@ -156,7 +156,7 @@ View.AddSubview (button);
 - **システム**-tvOS によって表示される標準のボタンの種類であり、最も頻繁に使用する型です。
 - 詳細情報の**開示**-詳細情報を表示または非表示にするために使用されるボタンの "停止" の種類を示します。
 - **インフォダーク**-[濃い詳細情報] ボタンをクリックすると、円に "i" が表示されます。
-- [ライトの詳細情報] ボタンをクリックすると、円に "i" が表示されます。
+- [**ライトの詳細**情報] ボタンをクリックすると、円に "i" が表示されます。
 - **Addcontact** -ボタンを [Add contact] ボタンとして表示します。
 - **[カスタム]** : ボタンのいくつかの特徴をカスタマイズできます。
 

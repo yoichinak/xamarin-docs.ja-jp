@@ -1,39 +1,39 @@
 ---
-title: IOS でユーザー補助
-description: このドキュメントでは、さまざまなプロパティと使用できるアプリケーションを使用できるようにする多くのユーザーによって可能な機能について説明する、iOS のユーザー補助機能について説明します。
+title: IOS でのユーザー補助
+description: このドキュメントでは、iOS でのユーザー補助について説明し、さまざまなプロパティと機能について説明します。この機能は、アプリケーションをできるだけ多くのユーザーが使用できるようにするために使用できます。
 ms.prod: xamarin
 ms.assetid: 88D59B36-05A3-4356-AE29-EC2B69CE7162
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 05/18/2016
-ms.openlocfilehash: aa3e15797ae1dac621ea8a78345044be1387ebaa
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4a04f0ed4cbb336e331528c3d8265efb31388328
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61179607"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70289519"
 ---
-# <a name="accessibility-on-ios"></a>IOS でユーザー補助
+# <a name="accessibility-on-ios"></a>IOS でのユーザー補助
 
-このページは、iOS ユーザー補助の Api を使用して、に従ってアプリを構築する方法をについて説明します、[アクセシビリティ チェックリスト](~/cross-platform/app-fundamentals/accessibility.md)します。
-参照してください、 [Android アクセシビリティ](~/android/app-fundamentals/accessibility.md)と[OS X アクセシビリティ](~/mac/app-fundamentals/accessibility.md)他のプラットフォーム Api のページ。
+このページでは、[ユーザー補助機能のチェックリスト](~/cross-platform/app-fundamentals/accessibility.md)に従って、IOS アクセシビリティ api を使用してアプリを構築する方法について説明します。
+他のプラットフォーム Api については、 [Android のアクセシビリティ](~/android/app-fundamentals/accessibility.md)に[関するページを参照して](~/mac/app-fundamentals/accessibility.md)ください。
 
-## <a name="describing-ui-elements"></a>UI 要素を記述します。
+## <a name="describing-ui-elements"></a>UI 要素の記述
 
-iOS の提供、`AccessibilityLabel`と`AccessibilityHint`VoiceOver で使用できるわかりやすいテキストを追加する開発者向けプロパティ画面、コントロールをよりアクセスできるようにするリーダー。 コントロールは、アクセス可能なモードで追加のコンテキストを提供する 1 つまたは複数の特徴でもタグ付けすることができます。
+iOS には`AccessibilityLabel` 、 `AccessibilityHint`開発者向けのプロパティとプロパティが用意されており、VoiceOver スクリーンリーダーがコントロールをより使いやすくするために使用できる説明的なテキストを追加します。 コントロールには、アクセス可能なモードで追加のコンテキストを提供する1つ以上の特徴をタグ付けすることもできます。
 
-一部のコントロールは、(例、入力テキストまたは純粋に装飾されるイメージのラベル) – にアクセスできるようにする必要はありません、`IsAccessibilityElement`そのような場合のユーザー補助機能を無効にすることはできます。
+一部のコントロールは、アクセスする必要がない場合があります (たとえば、テキスト入力のラベルや、純粋に装飾され`IsAccessibilityElement`ている画像など)。このような場合、は、ユーザー補助を無効にするために用意されています。
 
 **UI デザイナー**
 
-**Properties Pad**これらの設定を iOS Designer の UI のコントロールが選択されたときに編集できるユーザー補助セクションが含まれています。
+**Properties Pad**には、IOS UI デザイナーでコントロールを選択したときにこれらの設定を編集できるようにするアクセシビリティのセクションが含まれています。
 
 ![](accessibility-images/ios-designer-sml.png "ユーザー補助の設定")
 
 **C#**
 
-これらのプロパティは、コード内で直接設定することもできます。
+これらのプロパティは、コードで直接設定することもできます。
 
 ```csharp
 usernameInput.AccessibilityLabel = "Search";
@@ -42,21 +42,21 @@ someLabel.IsAccessibilityElement = false;
 displayOnlyText.AccessibilityTraits = UIAccessibilityTrait.Header | UIAccessibilityTrait.Selected;
 ```
 
-### <a name="what-is-accessibilityidentifier"></a>AccessibilityIdentifier とは何ですか。
+### <a name="what-is-accessibilityidentifier"></a>AccessibilityIdentifier とは
 
-`AccessibilityIdentifier` UIAutomation API を使用してユーザー インターフェイス要素を指すために使用できる一意のキーを設定するために使用します。
+は`AccessibilityIdentifier` 、uiautomation API を使用してユーザーインターフェイス要素を参照するために使用できる一意のキーを設定するために使用されます。
 
-値`AccessibilityIdentifier`話されるか、ユーザーに表示されることはありませんが。
+の`AccessibilityIdentifier`値が話されていないか、ユーザーに表示されていません。
 
 <a name="postnotification" />
 
-## <a name="postnotification"></a>PostNotification
+## <a name="postnotification"></a>事後通知
 
-`UIAccessibility.PostNotification`メソッドにより、外部 (たとえば、特定のコントロールとやり取りしている場合) の直接の対話でユーザーに発生するイベントです。
+`UIAccessibility.PostNotification`メソッドを使用すると、直接の対話の外部でユーザーにイベントを発生させることができます (たとえば、特定のコントロールと対話する場合など)。
 
 ### <a name="announcement"></a>アナウンス
 
-ユーザー (バック グラウンド操作が完了すると)、いくつかの状態が変更されたことを通知するためにコードからアナウンスを送信できます。 ユーザー インターフェイスを視覚これと共に使用する可能性があります。
+通知は、何らかの状態が変更されたことをユーザーに通知するために、コードから送信できます (バックグラウンド操作の完了など)。 これには、ユーザーインターフェイスでの視覚的な表示が伴います。
 
 ```csharp
 UIAccessibility.PostNotification (
@@ -66,7 +66,7 @@ UIAccessibility.PostNotification (
 
 ### <a name="layoutchanged"></a>LayoutChanged
 
-`LayoutChanged`お知らせが使用されるときに画面のレイアウト。
+`LayoutChanged`アナウンスは、画面レイアウトの場合に使用されます。
 
 ```csharp
 UIAccessibility.PostNotification (
@@ -77,11 +77,11 @@ UIAccessibility.PostNotification (
 
 ## <a name="accessibility-and-localization"></a>アクセシビリティとローカライズ
 
-ユーザー インターフェイスの他のテキストのようなアクセシビリティのプロパティなど、ラベルとヒントを単にローカライズすることができます。
+ラベルやヒントなどのアクセシビリティプロパティは、ユーザーインターフェイス内の他のテキストと同様にローカライズできます。
 
 **MainStoryboard.strings**
 
-ユーザー インターフェイスは、ストーリー ボードのレイアウトは、その他のプロパティと同じ方法でアクセシビリティのプロパティの翻訳を行うことができます。 次の例で、`UITextField`が、**ローカリゼーション ID**の`Pqa-aa-ury`とスペイン語に設定されている 2 つのアクセシビリティのプロパティ。
+ユーザーインターフェイスがストーリーボードにレイアウトされている場合は、他のプロパティと同じ方法でアクセシビリティプロパティの翻訳を提供できます。 次`UITextField`の例では、に`Pqa-aa-ury` **ローカライズ ID**と、スペイン語で設定されているアクセシビリティプロパティが2つあります。
 
 ```csharp
 /* Accessibility */
@@ -89,11 +89,11 @@ UIAccessibility.PostNotification (
 "Pqa-aa-ury.accessibilityHint" = "escriba más información";
 ```
 
-このファイルを配置すると、 **es.lproj**スペイン語のコンテンツのディレクトリ。
+このファイルは、スペイン語のコンテンツの**es. lproj**ディレクトリに配置されます。
 
 **Localizable.strings**
 
-または、翻訳に追加できる、 **Localizable.strings**ローカライズされたコンテンツ ディレクトリ (例: ファイル **es.lproj**スペイン語用)。
+また、ローカライズされたコンテンツディレクトリ内のローカライズ可能な**文字列**ファイルに翻訳を追加することもできます ( ドイツ語の**lproj** ):
 
 ```csharp
 /* Accessibility */
@@ -101,45 +101,45 @@ UIAccessibility.PostNotification (
 "Provide more information" = "escriba más información";
 ```
 
-これらの変換で使用できるC#を使用して、`LocalizedString`メソッド。
+これらの変換は、メソッドC#を使用`LocalizedString`してで使用できます。
 
 ```csharp
 notesText.AccessibilityLabel = NSBundle.MainBundle.LocalizedString ("Notes", "");
 notesText.AccessibilityHint = NSBundle.MainBundle.LocalizedString ("Provide more information", "");
 ```
 
-参照してください、 [iOS ローカリゼーション ガイド](~/ios/app-fundamentals/localization/index.md)コンテンツ ローカライズの詳細についてはします。
+コンテンツのローカライズの詳細については、 [iOS のローカリゼーションガイド](~/ios/app-fundamentals/localization/index.md)を参照してください。
 
 <a name="testing" />
 
 ## <a name="testing-accessibility"></a>アクセシビリティのテスト
 
-ボイスが有効になっている、**設定**アプリに移動して**全般 > アクセシビリティ > VoiceOver**:
+VoiceOver**は、** **全般 > アクセシビリティ > VoiceOver**:
 
 ![](accessibility-images/settings-sml.png "読み上げ速度の設定")
 
-**アクセシビリティ**画面には、ズーム、テキストのサイズ、およびコントラストの色のオプション、音声認識の設定、およびその他の構成オプションの設定も用意されています。
+また、 **[ユーザー補助]** 画面では、ズーム、テキストサイズ、色 & コントラストオプション、音声設定、およびその他の構成オプションの設定も提供されています。
 
-手順に従います。 [VoiceOver 指示](https://developer.apple.com/library/ios/technotes/TestingAccessibilityOfiOSApps/TestAccessibilityonYourDevicewithVoiceOver/TestAccessibilityonYourDevicewithVoiceOver.html)iOS デバイスでのアクセシビリティをテストします。
+IOS デバイスでアクセシビリティをテストするには、次の[VoiceOver の手順](https://developer.apple.com/library/ios/technotes/TestingAccessibilityOfiOSApps/TestAccessibilityonYourDevicewithVoiceOver/TestAccessibilityonYourDevicewithVoiceOver.html)に従います。
 
 
-## <a name="simulator-testing"></a>シミュレーター テスト
+## <a name="simulator-testing"></a>シミュレーターテスト
 
-シミュレーターでテストするときに、**アクセシビリティ インスペクター**はアクセシビリティのプロパティとイベントが正しく構成されているかを確認するために使用できます。 インスペクターで有効にする、**設定**アプリに移動して**全般 > アクセシビリティ > アクセシビリティ インスペクター**:
+シミュレーターでテストする場合、アクセシビリティ**インスペクター**を使用して、ユーザー補助のプロパティとイベントが正しく構成されていることを確認できます。 [全般] > [アクセシビリティ] **> [アクセシビリティ**] [インスペクター] の順に移動して、**設定**アプリのインスペクターをオンにします。
 
-![](accessibility-images/settings-inspector-sml.png "ユーザー補助 Inspector を有効にします。")
+![](accessibility-images/settings-inspector-sml.png "アクセシビリティインスペクターを有効にする")
 
-有効にすると、続いてインスペクター ウィンドウを常に、iOS 画面経由で配置します。
-テーブル ビューの行を選択すると、出力の例を次に示します – に注意してください、**ラベル**行の「完了」コンテンツは、文が含まれています (つまり。 目盛りが表示される)。
+有効にすると、[インスペクター] ウィンドウが常に [iOS] 画面に表示されます。
+テーブルビューの行が選択されたときの出力の例を次に示します。**ラベル**には、行の内容を示す文と、それが "done" であることも示されています (つまり、ティックは表示されています)。
 
-![](accessibility-images/tableview-a11y-sml.png "ユーザー補助 Inspector を使用します。")
+![](accessibility-images/tableview-a11y-sml.png "アクセシビリティインスペクターの使用")
 
-インスペクターが表示されているときに、左上に"X"アイコンを使用して、一時的に表示し、オーバーレイを非表示、およびユーザー補助の設定を有効または無効にします。
+インスペクターが表示されている間、左上にある "X" アイコンを使用して、オーバーレイを一時的に表示および非表示にしたり、ユーザー補助の設定を有効または無効にしたりします。
 
 
 
 ## <a name="related-links"></a>関連リンク
 
 - [クロスプラットフォームのアクセシビリティ](~/cross-platform/app-fundamentals/accessibility.md)
-- [iOS (Apple) のユーザー補助機能](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Accessibility_on_iPhone/Accessibility_on_iPhone.html)
+- [iOS アクセシビリティ (Apple)](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Accessibility_on_iPhone/Accessibility_on_iPhone.html)
 - [iOS VoiceOver](http://www.apple.com/accessibility/ios/voiceover/)

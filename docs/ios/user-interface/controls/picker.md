@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin iOS アプリでピッカ�
 ms.prod: xamarin
 ms.assetid: A2369EFC-285A-44DD-9E80-EC65BC3DF041
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 08/14/2018
-ms.openlocfilehash: c31f68245a459a99604633d23426c4fa1fe5e72c
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: 9eec99ffe244ffdc290050bd54f083ad6582151d
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69887393"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70286386"
 ---
 # <a name="picker-control-in-xamarinios"></a>Xamarin のピッカーコントロール
 
@@ -292,9 +292,9 @@ timeFormat.TimeStyle = NSDateFormatterStyle.Short;
 さまざま`NSDateFormatterStyle`な値は、次のように時刻を表示します。
 
 - `NSDateFormatterStyle.Full`:午後7:46:00 時東部夏時間
-- `NSDateFormatterStyle.Long`:7:47:00 PM EDT
-- `NSDateFormatterStyle.Medium`:7:47:00 PM
-- `NSDateFormatterSytle.Short`:7:47 PM
+- `NSDateFormatterStyle.Long` :7:47:00 PM EDT
+- `NSDateFormatterStyle.Medium` :7:47:00 PM
+- `NSDateFormatterSytle.Short` :7:47 PM
 
 ##### <a name="datestyle"></a>DateStyle
 
@@ -307,10 +307,10 @@ dateTimeformat.DateStyle = NSDateFormatterStyle.Long;
 
 さまざま`NSDateFormatterStyle`な値は、次のように日付を表示します。
 
-- `NSDateFormatterStyle.Full` :2017年8月2日、7:48 PM の水曜日
+- `NSDateFormatterStyle.Full`:2017年8月2日、7:48 PM の水曜日
 - `NSDateFormatterStyle.Long`:2017年8月2日 7:49 PM
 - `NSDateFormatterStyle.Medium`:2017年8月2、7:49 PM
-- `NSDateFormatterStyle.Short`:8/2/17、7:50 PM
+- `NSDateFormatterStyle.Short` :8/2/17、7:50 PM
 
 > [!NOTE]
 > `DateFormat`と`DateStyle`には、日付と時刻の書式設定を指定するさまざまな方法が用意されて/ `TimeStyle`います。 最後に設定したプロパティによって、日付フォーマッタの出力が決まります。

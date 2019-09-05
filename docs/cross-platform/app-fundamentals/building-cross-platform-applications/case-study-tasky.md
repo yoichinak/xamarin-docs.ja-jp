@@ -3,15 +3,15 @@ title: クロスプラットフォームアプリのケーススタディ:Tasky
 description: このドキュメントでは、Tasky ポータブルサンプルアプリケーションをクロスプラットフォームモバイルアプリケーションとして設計および構築する方法について説明します。 アプリの要件、インターフェイス、データモデル、コア機能、実装などについて説明します。
 ms.prod: xamarin
 ms.assetid: B581B2D0-9890-C383-C654-0B0E12DAD5A6
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: 38f4e079529bec0dfc721d0c37686a6d90533b7e
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 798dd1b5df2ea05eb428c9465e996d606c22009b
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69527019"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70281206"
 ---
 # <a name="cross-platform-app-case-study-tasky"></a>クロスプラットフォームアプリのケーススタディ:Tasky
 
@@ -319,7 +319,7 @@ public class TaskDialog {
 ユーザーインターフェイスレイヤーは、次のクラスで構成されています。
 
 1. **Appdelegate** –アプリケーションで使用されるフォントと色のスタイルを表示するための、外観 API の呼び出しが含まれています。 Tasky は単純なアプリケーションであるため、で`FinishedLaunching`実行されている他の初期化タスクはありません。
-2. 画面–各画面`UIViewController`とその動作を定義するのサブクラスです。 画面は、UI とアプリケーションレイヤークラスおよび共通 API ( `TaskItemManager` ) を相互に結び付けます。 この例では、画面はコードで作成されますが、Xcode の Interface Builder またはストーリーボードデザイナーを使用して設計されている可能性があります。
+2. **画面–各**画面`UIViewController`とその動作を定義するのサブクラスです。 画面は、UI とアプリケーションレイヤークラスおよび共通 API ( `TaskItemManager` ) を相互に結び付けます。 この例では、画面はコードで作成されますが、Xcode の Interface Builder またはストーリーボードデザイナーを使用して設計されている可能性があります。
 3. **イメージ**–ビジュアル要素は、すべてのアプリケーションの重要な部分です。 Tasky にはスプラッシュスクリーンとアイコンの画像があります。このイメージは、iOS 用の標準解像度と Retina 解像度で指定する必要があります。
 
  <a name="Home_Screen" />
@@ -391,7 +391,7 @@ Android アプリのユーザーインターフェイスレイヤーは、コー
 
 - **リソース/レイアウト**–画面レイアウトと、axml ファイルとして実装された行セルのデザイン。 AXML は、手動で記述したり、Android 用の Xamarin UI デザイナーを使用して視覚的に配置したりすることができます。
 - **リソース/** 描画機能: イメージ (アイコン) とカスタムボタン。
-- 画面–各画面とその動作を定義するアクティビティサブクラスです。 UI とアプリケーションレイヤークラスおよび共通 API (`TaskItemManager`) を結び付けます。
+- **画面–各**画面とその動作を定義するアクティビティサブクラスです。 UI とアプリケーションレイヤークラスおよび共通 API (`TaskItemManager`) を結び付けます。
 
  <a name="Home_Screen" />
 

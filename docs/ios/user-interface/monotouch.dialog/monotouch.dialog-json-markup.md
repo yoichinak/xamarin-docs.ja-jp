@@ -5,14 +5,14 @@ ms.prod: xamarin
 ms.assetid: 59F3E18C-3A73-69B8-DA5E-21B19B9DFB98
 ms.technology: xamarin-ios
 ms.date: 11/25/2015
-author: lobrien
-ms.author: laobri
-ms.openlocfilehash: 08f10dc02380a09b7ab81ff1539f5da6a9d768f6
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+author: conceptdev
+ms.author: crdun
+ms.openlocfilehash: 5fc5e6c1df911963ab765f5d49016eace8e2733f
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528439"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70284143"
 ---
 # <a name="monotouchdialog-json-markup"></a>MonoTouch.Dialog Json マークアップ
 
@@ -133,7 +133,7 @@ var theBoolean = jsonElement ["the-boolean"] as BooleanElement;
  <a name="type" />
 
 
-### <a name="type"></a>型
+### <a name="type"></a>種類
 
 このがセクションに`"root"`表示される場合は、に設定する必要があります (これは、コントローラーを入れ子にするために使用されます)。
 
@@ -383,7 +383,7 @@ class Foo {
  <a name="type" />
 
 
-### <a name="type"></a>種類
+### <a name="type"></a>型
 
 型は、または`"boolean"` `"checkbox"`のいずれかに設定できます。 ブール値に設定すると、uislider またはイメージが使用さ`"on"`れ`"off"`ます (との両方が設定されている場合)。 Checkbox に設定すると、チェックボックスが使用されます。 `"group"`プロパティを使用して、特定のグループに属するブール型の要素にタグを付けることができます。 これは、包含するルートにも`"group"`プロパティがある場合に便利です。ルートは、同じグループに属するすべてのブール値 (またはチェックボックス) のカウントを使用して結果を集計します。
 

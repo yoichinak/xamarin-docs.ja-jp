@@ -4,15 +4,15 @@ description: このドキュメントでは、iOS 11 の新しい MapKit 機能�
 ms.prod: xamarin
 ms.assetid: 304AE5A3-518F-422F-BE24-92D62CE30F34
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 08/30/2017
-ms.openlocfilehash: 0345a20e20b96e2f219218fc396b11ac508c8add
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: c194f2c9f8ea974bf3d6a8798f8a12e246c7d75b
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656428"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70286693"
 ---
 # <a name="new-features-in-mapkit-on-ios-11"></a>IOS 11 の MapKit の新機能
 
@@ -106,7 +106,7 @@ public class BikeView : MKMarkerAnnotationView
 
 ### <a name="3-create-an-mkannotationview-to-represent-clusters-of-markers"></a>3.マーカーのクラスターを表すを作成する`MKAnnotationView`
 
-_マーカーの_クラスターを表す注釈ビューは単純なイメージである場合がありますが、ユーザーは、グループ化されたマーカーの数について視覚的な手掛かりを提供するようアプリに要求します。
+マーカーのクラスターを表す注釈ビューは単純なイメージ_である場合_がありますが、ユーザーは、グループ化されたマーカーの数について視覚的な手掛かりを提供するようアプリに要求します。
 
 この[サンプルコード](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-mapkitsample)では、coregraphics を使用して、クラスター内のマーカーの数と、各マーカーの種類の比率の円グラフ表現を表示します。
 
@@ -179,7 +179,7 @@ public class ClusterView : MKAnnotationView
 }
 ```
 
-### <a name="4-register-the-view-classes"></a>4。ビュークラスの登録
+### <a name="4-register-the-view-classes"></a>4.ビュークラスの登録
 
 マップビューコントロールを作成してビューに追加するときに、マップが拡大または縮小されたときの自動クラスタリング動作を有効にするために、注釈ビューの種類を登録します。
 

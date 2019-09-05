@@ -3,15 +3,15 @@ title: パート 4 - 複数のプラットフォームを処理する
 description: このドキュメントでは、プラットフォームまたは機能に基づいてアプリケーションの相違を処理する方法について説明します。 画面のサイズ、ナビゲーションのメタファ、タッチとジェスチャ、プッシュ通知、およびリストやタブなどのインターフェイスのパラダイムについて説明します。
 ms.prod: xamarin
 ms.assetid: BBE47BA8-78BC-6A2B-63BA-D1A45CB1D3A5
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: 993a455ff0d376f213c403a55df71b3ac52d0d4b
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: fb01d0ca56365fa95aa563ca99394dea39dc7d31
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69887671"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70288880"
 ---
 # <a name="part-4---dealing-with-multiple-platforms"></a>パート 4 - 複数のプラットフォームを処理する
 

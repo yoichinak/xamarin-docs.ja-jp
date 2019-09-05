@@ -1,74 +1,74 @@
 ---
-title: macOS Xamarin.Mac 開発者向けの Api
-description: このドキュメントでは、OBJECTIVE-C セレクターを読み取る方法と、Xamarin.Mac アプリで c# の対応するメソッドを検索する方法について説明します。
+title: Xamarin. Mac 開発者向け macOS Api
+description: このドキュメントでは、目的 C のセレクターを読み取る方法と、それらにC#対応するメソッドを Xamarin. Mac アプリで検索する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 9F7451FA-E07E-4C7B-B5CF-27AFC157ECDA
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/02/2017
-ms.openlocfilehash: c387bbead1ac56d7f4c4c05a79c430302e50aec1
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c7dfa87d2fa4e3e5b917029451a081640a552cce
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61085282"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70281000"
 ---
-# <a name="macos-apis-for-xamarinmac-developers"></a>macOS Xamarin.Mac 開発者向けの Api
+# <a name="macos-apis-for-xamarinmac-developers"></a>Xamarin. Mac 開発者向け macOS Api
 
 ## <a name="overview"></a>概要
 
-Xamarin.Mac を使って開発時間の大部分を考えて、読み取り、および基になる Objective C Api を使用した量に関係なく、c# で記述することができます。 ただし、場合があります必要がありますを apple の API のドキュメントを読み取る、問題のソリューションには、Stack Overflow から回答を変換したりする既存のサンプルと比較します。
+Xamarin. Mac を使用した開発時間の大部分では、基礎となる目標 C C# api に関してあまり心配をすることなく、お客様が検討、読み取り、および書き込みを行うことができます。 ただし、場合によっては、Apple から API ドキュメントを読み取り、Stack Overflow からの回答を問題の解決策に変換するか、既存のサンプルと比較する必要があります。
 
-## <a name="reading-enough-objective-c-to-be-dangerous"></a>危険であるための十分な OBJECTIVE-C の読み取り
+## <a name="reading-enough-objective-c-to-be-dangerous"></a>目標を達成する-C を危険にする
 
-Objective C の定義を参照する必要する場合があります。 またはメソッドの呼び出しし、同等の c# メソッドに変換します。 Objective C 関数の定義を参照してください、部分を分割してみましょう。 このメソッド (、*セレクター* Objective C で) にある  `NSTableView`:
+場合によっては、目的の C の定義またはメソッドの呼び出しを読み取り、それをC#同等のメソッドに変換する必要があります。 それでは、C 言語の関数定義を見てみましょう。 このメソッド (目的-C の*セレクター* ) は次のものに`NSTableView`あります。
 
 ```objc
 - (BOOL)canDragRowsWithIndexes:(NSIndexSet *)rowIndexes atPoint:(NSPoint)mouseDownPoint
 ```
 
-宣言は、右側に左に読み取ることができます。
+宣言は左から右に読むことができます。
 
-- `-`プレフィックス (静的ではない) インスタンス メソッドであることを意味します。 +、その値がクラス (静的) メソッド
-- `(BOOL)` 戻り値の型 (c# でのブール値) には
-- `canDragRowsWithIndexes` 名前の最初の部分です。
-- `(NSIndexSet *)rowIndexes` 最初のパラメーターの型します。 最初のパラメーターは、形式です。 `(Type) pararmName`
-- `atPoint:(NSPoint)mouseDownPoint` 2 番目のパラメーターとその型です。 1 つ目の後にすべてのパラメーターは、形式を示します。 `selectorPart:(Type) pararmName`
-- このメッセージ セレクタの完全な名前が:`canDragRowsWithIndexes:atPoint:`します。 注、 `:` - 最後にあることが重要です。
-- 実際の Xamarin.Mac c# バインドは次のとおりです。 `bool CanDragRows (NSIndexSet rowIndexes, PointF mouseDownPoint)`
+- プレフィックス`-`は、インスタンス (非静的) メソッドであることを意味します。 + は、クラス (静的) メソッドであることを意味します。
+- `(BOOL)`は戻り値の型です ( C#bool in)
+- `canDragRowsWithIndexes`は、名前の最初の部分です。
+- `(NSIndexSet *)rowIndexes`は、最初のパラメーターであり、型はです。 最初のパラメーターの形式は次のとおりです。`(Type) pararmName`
+- `atPoint:(NSPoint)mouseDownPoint`は2番目のパラメーターとその型です。 最初のパラメーターの後には、次の形式があります。`selectorPart:(Type) pararmName`
+- このメッセージセレクターの完全な名前は`canDragRowsWithIndexes:atPoint:`です。 終了時`:`には注意が必要です。
+- 実際の Xamarin. Mac C#バインドは次のとおりです。`bool CanDragRows (NSIndexSet rowIndexes, PointF mouseDownPoint)`
 
-このセレクターの呼び出しは、同じように読むことができます。
+このセレクター呼び出しは、同じ方法で読み取ることができます。
 
 ```objc
 [v canDragRowsWithIndexes:set atPoint:point];
 ```
 
-- インスタンス`v`があるその`canDragRowsWithIndexes:atPoint`セレクターの 2 つのパラメーターと呼ばれる`set`と`point`、渡されました。
-- C# では、メソッドの呼び出しはようになります。 `x.CanDragRows (set, point);`
+- インスタンス`v`は`set` `point`、2つのパラメーター (と) を使用して、というセレクターを呼び出しました。`canDragRowsWithIndexes:atPoint`
+- でC#は、メソッドの呼び出しは次のようになります。`x.CanDragRows (set, point);`
 
 <a name="finding_selector" />
 
-## <a name="finding-the-c-member-for-a-given-selector"></a>指定されたセレクターの c# メンバーを検索
+## <a name="finding-the-c-member-for-a-given-selector"></a>特定のC#セレクターのメンバーを検索する
 
-呼び出す必要があります、OBJECTIVE-C セレクターが見つかり、これで、次の手順へのマッピングを同等の c# のメンバー。 4 つの方法を試みることができますが (進める、`NSTableView CanDragRows`例)。
+これで、呼び出す必要がある目的の C セレクターが見つかりました。次の手順では、それをC#同等のメンバーにマップします。 次の4つの方法を試してみること`NSTableView CanDragRows`ができます (例をご覧ください)。
 
-1. 同じ名前のものを簡単にスキャンする、自動補完の一覧を使用します。 インスタンスであることがわかっているため`NSTableView`入力することができます。
-
-    - `NSTableView x;`
-    - `x.` [ctrl + スペースの一覧が表示されない場合)。
-    - `CanDrag` [入力]
-    - メソッドを右クリックし、比較できるアセンブリ ブラウザーを開くための宣言に移動、`Export`属性セレクターの問題を
-
-2. クラス全体のバインディングを検索します。 インスタンスであることがわかっているため`NSTableView`入力することができます。
+1. オートコンプリートの一覧を使用して、同じ名前の何かをすばやくスキャンします。 これはのインスタンスであることが`NSTableView`わかったので、次のように入力できます。
 
     - `NSTableView x;`
-    - 右クリックして`NSTableView`、アセンブリ ブラウザーに宣言へ移動
-    - 問題のセレクターを検索します。
+    - `x.`リストが表示されない場合は、ctrl + space キーを押します。
+    - `CanDrag`を入力し
+    - メソッドを右クリックし、[宣言] に移動して、アセンブリブラウザーを開きます`Export` 。ここで、属性を問題のセレクターと比較できます。
 
-3. 使用することができます、 [Xamarin.Mac API のオンライン ドキュメント](https://docs.microsoft.com/dotnet/api/?view=xamarinmac-3.0)します。
+2. クラスバインド全体を検索します。 これはのインスタンスであることが`NSTableView`わかったので、次のように入力できます。
 
-4. Miguel Xamarin.Mac Api の「ロゼッタ ストーン」ビューを提供する[ここ](https://tirania.org/tmp/rosetta.html)を指定の API を検索することができます。 API が AppKit または macOS 固有でない場合があります見つけることがあります。
+    - `NSTableView x;`
+    - 右クリックし`NSTableView`、[アセンブリブラウザーへの宣言] にアクセスします。
+    - 問題のセレクターを検索します
+
+3. [Xamarin. MAC API オンラインドキュメント](https://docs.microsoft.com/dotnet/api/?view=xamarinmac-3.0)を使用できます。
+
+4. Miguel では、特定の API に対して検索できる、Xamarin. [Mac api の](https://tirania.org/tmp/rosetta.html)"ロゼッタストーン" ビューを提供しています。 API が AppKit または macOS 固有でない場合は、そこにあることがわかります。
 
 <!--
 Note: In some cases, the assembly browser can hit a bug where it will open but not jump to the right definition. Keep that tab open, switch back to your source code and try again.

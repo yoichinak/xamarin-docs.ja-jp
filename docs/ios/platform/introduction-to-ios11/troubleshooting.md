@@ -1,29 +1,29 @@
 ---
-title: IOS 11 と Xamarin.iOS のトラブルシューティングのヒント
-description: この記事では、Xamarin.iOS アプリケーションを開発する場合のトラブルシューティングに使用できるリソースについて説明します。 バグの報告について説明します、リリース ノート、Xamarin のリリースのブログ、およびサポート オプション。
+title: IOS 11 および Xamarin のトラブルシューティングのヒント
+description: この記事では、Xamarin iOS アプリケーションを開発する際のトラブルシューティングに使用できるリソースについて説明します。 バグ報告、リリースノート、Xamarin リリースブログ、サポートオプションについて説明します。
 ms.prod: xamarin
 ms.assetid: A90493BF-5298-4A5D-A5D5-8A8FCD078FF7
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 08/31/2017
-ms.openlocfilehash: f7fbd6f19820b8cbefe1a75c148ca1d9ba1395f1
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 570fd554b375c4911028faf412c3c20bac1881aa
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61399262"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70286537"
 ---
-# <a name="troubleshooting-tips-for-ios-11-and-xamarinios"></a>IOS 11 と Xamarin.iOS のトラブルシューティングのヒント
+# <a name="troubleshooting-tips-for-ios-11-and-xamarinios"></a>IOS 11 および Xamarin のトラブルシューティングのヒント
 
-IOS 11 で Xamarin を使用中に問題を解決するのには、次のリソースを使用します。
+IOS 11 で Xamarin を使用しているときの問題を解決するには、次のリソースを使用します。
 
 ## <a name="known-issues-and-troubleshooting"></a>既知の問題とトラブルシューティング
 
-Xamarin を使用した iOS 11 アプリをビルドの問題が発生した場合は、確認、[リリース ノート](https://docs.microsoft.com/xamarin/ios/release-notes/)、 [Xamarin.iOS フォーラム](https://forums.xamarin.com/categories/ios)、 [Xamarin Bugzilla トラッカー](https://bugzilla.xamarin.com/query.cgi?product=iOS)、および[GitHub](https://github.com/xamarin/xamarin-macios/issues)の既存の問題。
+Xamarin を使用した iOS 11 アプリの作成で問題が発生した場合は、[リリースノート](https://docs.microsoft.com/xamarin/ios/release-notes/)、 [Xamarin、iOS フォーラム](https://forums.xamarin.com/categories/ios)、 [xamarin Bugzilla Tracker](https://bugzilla.xamarin.com/query.cgi?product=iOS)、 [GitHub](https://github.com/xamarin/xamarin-macios/issues)で既存の問題を確認してください。
 
-Xamarin.iOS のバグを見つけた場合は、この問題を報告[github](https://github.com/xamarin/xamarin-macios/issues)します。
+Xamarin. iOS でバグが見つかったと思われる場合は、 [GitHub で](https://github.com/xamarin/xamarin-macios/issues)問題を報告してください。
 
 ## <a name="forums-and-stackoverflow"></a>フォーラムと StackOverflow
 
-使用や、Xamarin、Xamarin.iOS での特定の iOS 11 の機能の実装についての特定の質問に対する回答[iOS フォーラム](http://forums.xamarin.com/categories/ios)豊富な情報を提供します。 [StackOverflow](https://stackoverflow.com/search?tab=newest&q=xamarin)別の適切なユーザーのユーザー支援の情報ソースです。
+Xamarin の ios 11 機能の使用または実装に関する具体的な質問に対する回答については、Xamarin [Ios フォーラム](http://forums.xamarin.com/categories/ios)で豊富な情報を提供しています。 [Stackoverflow](https://stackoverflow.com/search?tab=newest&q=xamarin)は、ユーザーにとって役に立つユーザーの情報源です。

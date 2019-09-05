@@ -1,59 +1,59 @@
 ---
 ms.assetid: 7C132A7C-4973-4B2D-98DC-3661C08EA33F
-title: WPF とします。Xamarin.Forms アプリのライフサイクル
-description: このドキュメントの類似点と Xamarin.Forms と WPF アプリケーションのアプリケーションのライフ サイクルの違いを比較します。 ビジュアル ツリー、グラフィックス、リソース、およびスタイルにも見えます。
-author: asb3993
-ms.author: amburns
+title: WPF とXamarin.Forms アプリのライフサイクル
+description: このドキュメントでは、Xamarin. Forms アプリケーションと WPF アプリケーションのアプリケーションライフサイクルの類似点と相違点を比較します。 また、ビジュアルツリー、グラフィックス、リソース、およびスタイルも見られます。
+author: conceptdev
+ms.author: crdun
 ms.date: 04/26/2017
-ms.openlocfilehash: 5f157f2bbf36076e542a5f96b912cb1788a99052
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 8c009c079842a6a110212693a56489ca2ad5d263
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61269342"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290383"
 ---
-# <a name="wpf-vs-xamarinforms-app-lifecycle"></a>WPF とします。Xamarin.Forms アプリのライフサイクル
+# <a name="wpf-vs-xamarinforms-app-lifecycle"></a>WPF とXamarin.Forms アプリのライフサイクル
 
-Xamarin.Forms は、多くのする前に、特に WPF XAML ベースのフレームワークからの設計ガイダンスを受け取ります。 ただし、他の方法で以上逸脱しているが大幅を移行しようとしています。 ユーザーの注釈のポイントであることができます。 このドキュメントは、これらの問題のいくつかを特定し、Xamarin.Forms の WPF サポート技術情報をブリッジに可能なガイダンスを提供を試みます。
+Xamarin. フォームには、XAML ベースのフレームワーク (特に WPF) の設計ガイダンスが多数あります。 ただし、その他の方法では、移行しようとしている方のための固定ポイントとなることがあります。 このドキュメントでは、これらの問題のいくつかを特定し、WPF のナレッジを Xamarin. Forms にブリッジできるようにするためのガイダンスを提供します。
 
 ## <a name="app-lifecycle"></a>アプリのライフサイクル
 
-WPF と Xamarin.Forms アプリケーションのライフ サイクルは似ています。 外部 (プラットフォーム) のコードで開始し、メソッド呼び出しによって UI を起動します。 違いは、Xamarin.Forms が常に初期化し、アプリの UI を作成し、プラットフォーム固有のアセンブリで起動することです。
+WPF と Xamarin の間のアプリケーションのライフサイクルは似ています。 どちらも外部 (platform) コードで開始し、メソッド呼び出しを使用して UI を起動します。 違いは、Xamarin は常にプラットフォーム固有のアセンブリで開始し、その後、アプリの UI を初期化して作成することです。
 
 **WPF**
 
 - `Main method > App > MainWindow`
 
 > [!NOTE]
-> `Main`メソッドは、既定では、自動生成されると、コードでは表示されません。
+> `Main`メソッドは、既定では自動生成され、コードには表示されません。
 
 **Xamarin.Forms**
 
-- **iOS** &ndash; `Main method > AppDelegate > App > ContentPage`
-- **Android** &ndash; `MainActivity > App > ContentPage`
-- **UWP** &ndash; `Main method > App(UWP) > MainPage(UWP) > App > ContentPage`
+- **iOS**&ndash;`Main method > AppDelegate > App > ContentPage`
+- **Android**&ndash;`MainActivity > App > ContentPage`
+- **UWP**&ndash;`Main method > App(UWP) > MainPage(UWP) > App > ContentPage`
 
-### <a name="application-class"></a>アプリケーション クラス
+### <a name="application-class"></a>Application クラス
 
-WPF と Xamarin.Forms の両方が、`Application`クラスをシングルトンとして作成されます。 ほとんどの場合、アプリは WPF では厳密に必要はありませんが、カスタム アプリケーションを提供するには、このクラスから派生します。 両方を公開、`Application.Current`プロパティを作成したシングルトンを検索します。
+WPF と Xamarin の両方に、シングルトン`Application`として作成されたクラスがあります。 ほとんどの場合、アプリは、このクラスから派生させてカスタムアプリケーションを提供しますが、これは WPF では厳密には必須ではありません。 どちらも、 `Application.Current`作成されたシングルトンを検索するためのプロパティを公開します。
 
-### <a name="global-properties--persistence"></a>グローバル プロパティ + 永続化
+### <a name="global-properties--persistence"></a>グローバルプロパティ + 永続化
 
-WPF と Xamarin.Forms の両方が、`Application.Properties`ディクショナリの使用可能なアプリケーションで任意の場所からアクセスできるグローバル アプリ レベルのオブジェクトを格納することができます。 主な違いは、Xamarin.Forms が_保持_アプリが中断されているとは再起動され、ときに再読み込み時に、コレクションに格納されている任意のプリミティブ型。 WPF は自動的にその動作をサポートしていません - 代わりに、ほとんどの開発者は、分離ストレージに依存したり、組み込みを利用`Settings`をサポートします。
+WPF と Xamarin の両方には、 `Application.Properties`アプリケーション内のどこからでもアクセスできるグローバルなアプリレベルオブジェクトを格納できるディクショナリがあります。 主な違いは、Xamarin. Forms は、アプリが中断されたときにコレクションに格納されているプリミティブ型を_保持_し、再起動されると、それらを再読み込みすることです。 WPF はその動作を自動的にサポートしません。代わりに、ほとんどの開発者が分離ストレージに依存`Settings`しているか、組み込みのサポートを利用しています。
 
-## <a name="defining-pages-and-the-visual-tree"></a>ページとビジュアル ツリーを定義します。
+## <a name="defining-pages-and-the-visual-tree"></a>ページとビジュアルツリーの定義
 
-WPF を使用して、`Window`任意の最上位のビジュアル要素のルート要素として。 これは、情報を表示する Windows の世界では、HWND を定義します。 作成し、WPF で好きなように同時に多くの windows を表示できます。
+WPF は、 `Window`トップレベルのビジュアル要素のルート要素としてを使用します。 これにより、情報を表示するための Windows 環境の HWND が定義されます。 WPF では、必要な数のウィンドウを同時に作成して表示できます。
 
-最上位のビジュアルに常に iOS でのプラットフォームで定義されている Xamarin.Forms では、`UIWindow`します。 Xamarin.Forms のレンダリングを使用してこれらのプラットフォームのネイティブ表現にコンテンツが、`Page`クラス。 各`Page`Xamarin.Forms で表すアプリケーションでは、固有の「ページ」場所だけで、一度に 1 つが表示されます。
+Xamarin. Forms では、トップレベルのビジュアルは常にプラットフォームによって定義されます`UIWindow`。たとえば、iOS では、です。 Xamarin は`Page` 、クラスを使用して、これらのネイティブプラットフォーム表現にコンテンツをレンダリングします。 Xamarin `Page`の各は、アプリケーション内の一意の "ページ" を表します。この場合、一度に表示されるのは1つだけです。
 
-両方 WPFs`Window`と Xamarin.Forms`Page`が含まれて、`Title`表示タイトル、および両方に影響するプロパティが、`Icon`ページの特定のアイコンを表示するプロパティを (**注**をタイトルとアイコンは常に表示されません Xamarin.Forms で) です。 さらに、背景色や画像などの両方で共通の visual プロパティを変更できます。
+Wpfs `Window`と Xamarin. フォーム`Page`の両方に`Title`は、表示されるタイトル`Icon`に影響を与えるプロパティが含まれています。また、このプロパティには、ページの特定のアイコンを表示するプロパティがあります (タイトルとアイコンは常にではないことに**注意**してください)。表示されます。 また、背景色や画像のように、共通のビジュアルプロパティを変更することもできます。
 
-技術的には、2 つの別のプラットフォームのビューに表示することは (例: 2 つ定義`UIWindow`外付けディスプレイまたは AirPlay に 2 つ目の 1 つのレンダリングをいてオブジェクト)、そのためにはプラットフォーム固有のコードを必要し、するの直接サポートされている機能ではありません自体 Xamarin.Forms です。
+技術的には、2つの異なるプラットフォームビューにレンダリングできます (2 `UIWindow`つのオブジェクトを定義し、2つ目のオブジェクトを外部ディスプレイまたはエアプレイにレンダリングするなど)。これを行うには、プラットフォーム固有のコードが必要ですが、直接サポートされている機能ではありません。Xamarin. フォーム自体。
 
 ### <a name="views"></a>Views
 
-どちらのフレームワークの階層をビジュアルに似ています。 WPF では、WYSIWYG ドキュメントのサポートのためもう少し深くです。
+両方のフレームワークのビジュアル階層は似ています。 WPF では、WYSIWYG ドキュメントがサポートされているため、もう少し詳しく説明しています。
 
 **WPF**
 
@@ -77,81 +77,81 @@ BindableObject - base class for all bindable things
 
 ### <a name="view-lifecycle"></a>ビュー ライフサイクル
 
-Xamarin.Forms は、モバイルのシナリオを中心指向は主にします。 アプリケーションは、そのため、_アクティブ_、_中断_、および_再アクティブ化_ように、ユーザーがそれらを操作します。 クリックしてに似ています、 `Window` WPF アプリケーションでは、一連のメソッドおよび対応するイベントをオーバーライドしたり、この動作の監視にフックすることができます。
+Xamarin. フォームは主にモバイルシナリオを中心にしています。 そのため、ユーザーがアプリケーションと対話するときに、アプリケーションが_アクティブ化_、_中断_、再_アクティブ_化されます。 これは、 `Window` WPF アプリケーションでをクリックする場合と似ていますが、この動作を監視するためにオーバーライドまたはフックできる一連のメソッドとそれに対応するイベントがあります。
 
-| 目的 | WPF メソッド | Xamarin.Forms メソッド |
+| 目的 | WPF メソッド | Xamarin. Forms メソッド |
 |--- |--- |--- |
-|最初のアクティブ化|ctor + Window.OnLoaded|ctor + Page.OnStart|
-|表示されます。|Window.IsVisibleChanged|Page.Appearing|
-|非表示|Window.IsVisibleChanged|Page.Disappearing|
-|中断/Lost フォーカス|Window.OnDeactivated|Page.OnSleep|
-|アクティブ化/Got フォーカス|Window.OnActivated|Page.OnResume|
-|Closed|Window.OnClosing + Window.OnClosed|適用なし|
+|初期アクティブ化|.ctor + Window. OnLoaded|.ctor + ページ. OnStart|
+|表|IsVisibleChanged|ページを表示します。|
+|非表示|IsVisibleChanged|ページの消失|
+|中断/フォーカスの喪失|Window. OnDeactivated アクティブ化|ページ. OnSleep|
+|アクティブ化/フォーカスの獲得|ウィンドウ. OnActivated 化済み|ページ. OnResume|
+|Closed|Window. OnClosing + Window. Onclosing|N/A|
 
 
-両方サポートは非表示/表示子コントロールも、WPF では、3 つの状態プロパティ`IsVisible`(表示、非表示、および折りたたまれている)。 Xamarin.Forms でのみ表示するかを非表示は、`IsVisible`プロパティ。
+子コントロールの表示/非表示もサポートされています。 WPF では、 `IsVisible` 3 つの状態のプロパティ (表示、非表示、および折りたたみ) がサポートされています。 Xamarin. Forms では、プロパティを使用して表示また`IsVisible`は非表示にするだけです。
 
 ### <a name="layout"></a>レイアウト
 
-ページ レイアウトは、同じ 2 パス (メジャー/配置) WPF で発生するのに発生します。 ページ レイアウトをフックするには、Xamarin.Forms では、次のメソッドをオーバーライドすることで`Page`クラス。
+ページレイアウトは、WPF で同じ2パス (メジャー/配置) に発生します。 Xamarin. Forms `Page`クラスで次のメソッドをオーバーライドすることにより、ページレイアウトにフックできます。
 
 | メソッド | 目的 |
 |--- |--- |
-|OnChildMeasureInvalidated|子の推奨サイズが変更されました。|
-|OnSizeAllocated|ページには、幅と高さが割り当てられています。|
-|LayoutChanged イベント|ページのレイアウトやサイズが変更されました。|
+|OnChildMeasureInvalidated|子の優先サイズが変更されました。|
+|OnSizeAllocated 済み|ページに幅/高さが割り当てられています。|
+|LayoutChanged イベント|ページのレイアウト/サイズが変更されました。|
 
-今日と呼ばれるグローバル レイアウト イベントはありませんもグローバルない`CompositionTarget.Rendering`WPF でのようなイベントを見つけます。
+現在呼び出されているグローバルレイアウトイベントはありません。また、WPF `CompositionTarget.Rendering`のようなグローバルイベントもありません。
 
 #### <a name="common-layout-properties"></a>一般的なレイアウトのプロパティ
 
-WPF と Xamarin.Forms の両方をサポートして`Margin`コントロールの行間を要素の周囲および`Padding`コントロールの行間に_内_要素。 さらに、Xamarin.Forms のレイアウト ビューのほとんどでは、空白文字 (例: 行または列) を制御するプロパティがあります。
+WPF と Xamarin。フォームは、 `Margin`要素の前後の間隔の制御、 `Padding`および要素_内_の間隔の制御をサポートしています。 また、ほとんどの Xamarin のレイアウトビューには、間隔 (行や列など) を制御するプロパティがあります。
 
-さらに、ほとんどの要素には、親コンテナーに配置する方法に影響を与えるプロパティがあります。
+また、ほとんどの要素には、親コンテナーへの配置方法に影響を与えるプロパティがあります。
 
 | WPF | Xamarin.Forms | 目的 |
 |--- |--- |--- |
-|HorizontalAlignment|HorizontalOptions|左、中央、右/Stretch オプション|
-|[Verticalalignment]|\-Options|上部、中央、下/Stretch オプション|
+|HorizontalAlignment|水平オプション|左/中央/右/伸縮オプション|
+|System.windows.frameworkelement.verticalalignment|垂直オプション|上部/中央/下部/伸縮オプション|
 
 > [!NOTE]
-> これらのプロパティの実際の解釈は、親コンテナーに依存します。
+> これらのプロパティの実際の解釈は、親コンテナーによって異なります。
 
-#### <a name="layout-views"></a>レイアウト ビュー
+#### <a name="layout-views"></a>レイアウトビュー
 
-WPF と Xamarin.Forms は、子要素を配置するのにレイアウト コントロールを使用します。 ほとんどの場合、これらは非常に近くなる機能の観点からです。
+WPF と Xamarin は両方ともレイアウトコントロールを使用して子要素を配置します。 ほとんどの場合、これらは、機能に関して非常に近接しています。
 
-| WPF | Xamarin.Forms | レイアウト スタイル |
+| WPF | Xamarin.Forms | レイアウトスタイル |
 |--- |--- |--- |
 |StackPanel|StackLayout|左から右、または上から下の無限スタック|
 |グリッド|グリッド|表形式 (行と列)|
-|DockPanel|適用なし|ウィンドウの端にドッキングします。|
-|Canvas|AbsoluteLayout|座標をピクセル単位/配置|
-|WrapPanel|適用なし|スタックの折り返し|
-|適用なし|RelativeLayout|相対的なルール ベースの配置|
+|DockPanel|N/A|ウィンドウの端にドッキングする|
+|キャンバス|AbsoluteLayout|ピクセル/座標の位置|
+|WrapPanel|N/A|スタックをラップしています|
+|N/A|RelativeLayout|ルールベースの相対的な配置|
 
 > [!NOTE]
-> Xamarin.Forms はサポートしていません、`GridSplitter`します。
+> Xamarin は、を`GridSplitter`サポートしていません。
 
-両方のプラットフォームを使用して、_添付プロパティ_子を微調整します。
+どちらのプラットフォームも、_添付プロパティ_を使用して子を微調整します。
 
-### <a name="rendering"></a>[レンダリング]
+### <a name="rendering"></a>表示
 
-WPF と Xamarin.Forms のレンダリング メカニズムはまったく異なるです。 WPF を直接作成するコントロールは、画面上のピクセルにコンテンツをレンダリングします。 WPF は、2 つのオブジェクト グラフを維持 (_ツリー_) - これを表現する、_論理ツリー_コードまたは XAML で定義されているコントロールを表す、_ビジュアル ツリー_を表す、(仮想 draw メソッドの場合) を使用して実際に表示される画面上で発生する実行ビジュアル要素を直接または XAML 定義によって`ControlTemplate`は交換またはカスタマイズできます。 通常、ビジュアル ツリーは、暗黙的なコンテンツなどのラベルがコントロールの枠などが含まれている複雑です。WPF には、一連 Api にはが含まれています (`LogicalTreeHelper`と`VisualTreeHelper`) 2 つのオブジェクト グラフとこれらを確認します。
+WPF と Xamarin のレンダリング機構は根本的に異なります。 WPF では、直接作成したコントロールが画面上のピクセルにコンテンツをレンダリングします。 WPF では、これを表す2つのオブジェクトグラフ (_ツリー_) を保持しています。_論理ツリー_は、コードまたは XAML で定義されているコントロールを表します。_ビジュアルツリー_は、画面上で実行される実際のレンダリングを表します。(仮想描画メソッドを使用して) ビジュアル要素によって直接、または置換`ControlTemplate`またはカスタマイズできる XAML で定義された。 通常、ビジュアルツリーの方が複雑になります。これには、コントロールの境界線、暗黙的なコンテンツのラベルなどが含まれます。WPF には、これらの 2`LogicalTreeHelper`つ`VisualTreeHelper`のオブジェクトグラフを調べるための api のセット (と) が含まれています。
 
-Xamarin.Forms でのコントロールで定義する、`Page`は実際には単純なデータ オブジェクトです。 これらは、論理ツリー形式に似ていますが、独自のコンテンツをレンダリングことはありません。 代わりが、_データ モデル_要素のレンダリングに影響を与えます。 実際のレンダリングを行う、[のセットを分割_visual レンダラー_コントロールの種類ごとに割り当て先となる](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)します。 これらのレンダラーは、Xamarin.Forms のプラットフォーム固有のアセンブリでの各プラットフォーム固有プロジェクトに登録されます。 一覧を確認できます[ここ](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)します。 に加えて、レンダラーの拡張を置き換えたり、Xamarin.Forms もサポートしています[効果](~/xamarin-forms/app-fundamentals/effects/index.md)プラットフォームごとにネイティブのレンダリングに影響を与える使用できます。
+Xamarin. Forms では、で`Page`定義するコントロールは、実際には単純なデータオブジェクトにすぎません。 これらは論理ツリー表現に似ていますが、独自にコンテンツをレンダリングすることはできません。 代わりに、要素のレンダリングに影響を与える_データモデル_です。 実際のレンダリングは、[各コントロールの種類にマップされる_視覚的レンダラー_の個別のセット](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)によって行われます。 これらのレンダラーは、プラットフォーム固有の Xamarin. Forms アセンブリによってプラットフォーム固有の各プロジェクトに登録されます。 一覧は[こちらで](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)確認できます。 レンダラーの置換や拡張に加えて、Xamarin. Forms は、プラットフォームごとにネイティブレンダリングに影響を与えるために使用できる[効果](~/xamarin-forms/app-fundamentals/effects/index.md)もサポートしています。
 
-#### <a name="the-logicalvisual-tree"></a>論理/ビジュアル ツリー
+#### <a name="the-logicalvisual-tree"></a>論理/ビジュアルツリー
 
-Xamarin.Forms - 内に、論理ツリーをウォークに公開されている API はありませんが、リフレクションを使用して、同じ情報を取得することができます。 たとえば、[論理的な子を列挙するメソッドを次に示します](https://github.com/xamarinhq/xamu-infrastructure/blob/master/src/XamU.Infrastructure/Extensions/ElementExtensions.cs#L108)リフレクションを使用します。
+Xamarin. Forms で論理ツリーをウォークするための API は公開されていませんが、リフレクションを使用して同じ情報を取得することができます。 たとえば、次に示すのは、リフレクションを使用して論理上の[子を列挙できるメソッド](https://github.com/xamarinhq/xamu-infrastructure/blob/master/src/XamU.Infrastructure/Extensions/ElementExtensions.cs#L108)です。
 
 ## <a name="graphics"></a>グラフィックス
 
-Xamarin.Forms では、単純な四角形以外のプリミティブのグラフィックス システムが含まれない (`BoxView`)。 などのサード パーティ製ライブラリを含めることができます[SkiaSharp](~/graphics-games/skiasharp/index.md)クロスプラット フォームの 2D 描画を取得するまたは[UrhoSharp](~/graphics-games/urhosharp/index.md) 3D 用です。
+Xamarin. フォームには、単純な四角形 (`BoxView`) を超えるプリミティブのグラフィックスシステムは含まれていません。 [SkiaSharp](~/graphics-games/skiasharp/index.md)などのサードパーティ製のライブラリを使用して、クロスプラットフォームの2d 描画や、3D の[urhosharp](~/graphics-games/urhosharp/index.md)を取得することができます。
 
 ## <a name="resources"></a>リソース
 
-WPF と Xamarin.Forms 両方のリソースとリソース ディクショナリの概念があります。 任意のオブジェクト型を配置することができます、`ResourceDictionary`キーを持つを検索および`{StaticResource}`の変更されませんが、操作または`{DynamicResource}`の操作の実行時にディクショナリを変更できます。 使用状況とメカニズムは、1 つの違いは同じです。Xamarin.Forms では、定義する必要があります、`ResourceDictionary`に割り当てる、`Resources`プロパティが WPF いずれかを事前に作成し、それをします。
+WPF と Xamarin。フォームには、リソースとリソースディクショナリの概念があります。 任意のオブジェクトの種類を、 `ResourceDictionary`キーを使用してに配置し、変更されない項目や`{DynamicResource}` 、実行時にディクショナリで変更される可能性`{StaticResource}`のあるものを検索することができます。 使用法としくみは同じですが、1つ違いがあります。Xamarin. フォームでは、 `ResourceDictionary` `Resources`プロパティに割り当てるを定義する必要があります。 WPF では、これが事前に作成され、割り当てられます。
 
 たとえば、次の定義を参照してください。
 
@@ -175,15 +175,15 @@ WPF と Xamarin.Forms 両方のリソースとリソース ディクショナリ
 </ContentPage.Resources>
 ```
 
-定義していない場合、 `ResourceDictionary`、ランタイム エラーが生成されます。
+を定義`ResourceDictionary`しない場合は、ランタイムエラーが生成されます。
 
 ## <a name="styles"></a>スタイル
 
-スタイルは、Xamarin.Forms でも完全にサポートし、は、その UI を起動する Xamarin.Forms の要素をテーマに使用します。 トリガー (プロパティ、イベントおよびデータ) の継承を通じてサポート`BasedOn`と値のリソースの参照。 スタイルがいずれかの要素に適用されてから明示的に、`Style`プロパティ、または WPF と同様のリソース キーを指定していないによる暗黙的な。
+スタイルは、Xamarin. Forms でも完全にサポートされており、UI を構成する Xamarin. Forms 要素のテーマを設定するために使用できます。 トリガー (プロパティ、イベント、データ)、値の継承、 `BasedOn`およびリソース参照をサポートしています。 スタイルは、 `Style`プロパティを使用して明示的に要素に適用されるか、WPF と同様にリソースキーを指定せずに暗黙的に適用されます。
 
 ### <a name="device-styles"></a>デバイスのスタイル
 
-WPF が一連の定義済みプロパティ (など、一連の静的クラスで静的な値として格納されている`SystemColors`) システム カラー、フォント、およびメトリックの値とリソース キーの形式でを指定します。 Xamarin.Forms は似ていますが、一連の定義[デバイス スタイル](~/xamarin-forms/user-interface/styles/device.md)を同じものを表します。 これらのスタイルは、framework によって提供され、ランタイム環境 (例: ユーザー補助) に基づく値に設定します。
+WPF には、定義済みプロパティのセットがあります (など`SystemColors`の静的クラスのセットに静的値として格納されます)。これは、システムカラー、フォント、およびメトリックを値とリソースキーの形式で指定します。 Xamarin. Forms は似ていますが、同じものを表す一連の[デバイススタイル](~/xamarin-forms/user-interface/styles/device.md)を定義します。 これらのスタイルは、フレームワークによって提供され、ランタイム環境 (アクセシビリティなど) に基づいて値に設定されます。
 
 **WPF**
 

@@ -4,15 +4,15 @@ description: この記事では、Xamarin iOS アプリで SiriKit を使用し�
 ms.prod: xamarin
 ms.assetid: 84E5681A-F557-4967-AA99-F831169157AA
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 0438ea08bbdcbf0ce3c64e15192cbb90cd835b00
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: e3ef6dd857760d722fe84f98250b8db9e398ea2e
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68654015"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70287184"
 ---
 # <a name="sirikit-in-xamarinios"></a>Xamarin. iOS の SiriKit
 

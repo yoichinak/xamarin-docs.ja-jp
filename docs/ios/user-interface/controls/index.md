@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin の開発者が使用で�
 ms.prod: xamarin
 ms.assetid: C00EA232-ADCC-42AD-BF86-B526414A21C6
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 28dc915e373ed16336551fa28fde8cbae8ee815e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 2979b51c954ab891da5e452e579a650a013a7572
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657483"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70289535"
 ---
 # <a name="user-interface-controls-in-xamarinios"></a>Xamarin のユーザーインターフェイスコントロール
 

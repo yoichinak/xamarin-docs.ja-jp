@@ -3,15 +3,15 @@ title: パート 1-Xamarin Mobile Platform について
 description: このドキュメントでは、コンパイルプロセス、プラットフォーム SDK アクセス、コード共有、ユーザーインターフェイスの作成、ビジュアルデザイナーなど、概要を示す Xamarin プラットフォームについて説明します。
 ms.prod: xamarin
 ms.assetid: FBCEF258-D3D8-A420-79ED-3AAB4A7308E4
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: e3a9afa2780f9cf5816427d282644fb2ac3c8dde
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 5398d99a64e7f6b75c8b9e418da252852aff1322
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526763"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70288677"
 ---
 # <a name="part-1--understanding-the-xamarin-mobile-platform"></a>パート 1-Xamarin Mobile Platform について
 
@@ -52,7 +52,7 @@ Xamarin では、使い慣れた C# 構文を使用して簡単にアクセス�
 
 - **iOS** – Xamarin.iOS は C# から参照できるように名前空間と Apple の CocoaTouch SDK フレームワークを公開します。 たとえば、すべてのユーザー インターフェイス コントロールが含まれた UIKit framework できますに含まれて、単純な`using UIKit;`ステートメントです。
 - **Android** – Xamarin android は、Google の Android SDK を名前空間として公開します。そのため、ユーザーインターフェイスコントロールにアクセス`using Android.Views;`するなど、サポートされている SDK の任意の部分を using ステートメントで参照できます。
-- Windows – windows アプリは、windows 上の Visual Studio を使用してビルドされます。 プロジェクトの種類には、Windows フォーム、WPF、WinRT、ユニバーサル Windows プラットフォーム (UWP) などがあります。
+- **Windows – windows**アプリは、windows 上の Visual Studio を使用してビルドされます。 プロジェクトの種類には、Windows フォーム、WPF、WinRT、ユニバーサル Windows プラットフォーム (UWP) などがあります。
 
 ## <a name="seamless-integration-for-developers"></a>開発者のためのシームレスな統合
 

@@ -4,15 +4,15 @@ description: このドキュメントでは、iOS 11 で SiriKit を使用する
 ms.prod: xamarin
 ms.assetid: 8F75300B-B591-42ED-9D17-001992A5C381
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 09/07/2017
-ms.openlocfilehash: 7aa3b430af28a85cb8b774baa9538306cb9dd673
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: d4fab992121ad6a2b272012f7249df5ed8427513
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656408"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70286737"
 ---
 # <a name="sirikit-updates-in-ios-11"></a>IOS 11 での SiriKit の更新
 
@@ -174,7 +174,7 @@ public void HandleCreateTaskList(INCreateTaskListIntent intent, Action<INCreateT
 ```
 
 が 2 `null`番目のパラメーターとして応答に渡されることに注意してください。これは user activity パラメーターであり、指定されていない場合は既定値が使用されます。
-IOS**アプリでサポート**されている`NSUserActivityTypes`限り、カスタムアクティビティの種類を設定できます。 次に、アプリを開いたときにこのケースを処理し、特定の操作 (関連するビューコントローラーを開き、Siri 操作からデータを読み込むなど) を実行できます。
+IOS `NSUserActivityTypes` **アプリでサポートされて**いる限り、カスタムアクティビティの種類を設定できます。 次に、アプリを開いたときにこのケースを処理し、特定の操作 (関連するビューコントローラーを開き、Siri 操作からデータを読み込むなど) を実行できます。
 
 また、この例では`Success`結果をハードコーディングしていますが、実際のシナリオでは、適切なエラー報告を追加する必要があります。
 

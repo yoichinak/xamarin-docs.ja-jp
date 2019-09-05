@@ -4,15 +4,15 @@ description: このドキュメントでは、iOS のローカライズ機能と
 ms.prod: xamarin
 ms.assetid: DFD9EB4A-E536-18E4-C8FD-679BA9C836D8
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 04/28/2017
-ms.openlocfilehash: 70e9f403e40cff8e1af536acf3a5efc3d12ad20b
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: e394b5487b240f98310ab223371466d62a3bdf23
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70121405"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70278883"
 ---
 # <a name="localization-in-xamarinios"></a>Xamarin. iOS でのローカライズ
 
@@ -114,7 +114,7 @@ IOS の次の機能は、Xamarin で簡単に使用して、ユーザーに表�
 
 .Resx ファイルなどの .NET メカニズムを使用してローカライズされた Xamarin iOS アプリでは、これらの**情報**を提供する必要があります。
 
-これらの情報の詳細については、Apple の[情報プロパティリストキーのリファレンスを参照](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html)してください。
+**これらの情報の**詳細については、Apple の[情報プロパティリストキーのリファレンスを参照](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html)してください。
 
 ### <a name="getlocalizedstring-method"></a>GetLocalizedString メソッド
 
@@ -313,7 +313,7 @@ someControl.Text = localizedString;
 
 ![](images/solution-storyboard.png "リソースツリー")
 
-言語ディレクトリには、ローカライズ済みのイメージのコピーが含まれていなければなりません。
+言語ディレクトリには、ローカライズ済みのイメージのコピーが含まれていなければなり**ません。**
 
 ### <a name="object-id--localization-id"></a>オブジェクト ID/ローカライズ ID
 

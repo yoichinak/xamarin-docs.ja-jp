@@ -4,15 +4,15 @@ description: このドキュメントでは、デバイスに関係なく、無�
 ms.prod: xamarin
 ms.assetid: 635D9CA2-6BCA-53E1-7B10-968029AA3493
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: e09d8511dc74bdf9368497ff8fe39bd87b62565c
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: aa478636b4ab94ab000fd98860646bfa300e9fab
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528297"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291314"
 ---
 # <a name="purchasing-non-consumable-products-in-xamarinios"></a>Xamarin での非消費製品の購入
 

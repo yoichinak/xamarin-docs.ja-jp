@@ -4,20 +4,20 @@ description: このドキュメントでは、xib ファイルをにマップす
 ms.prod: xamarin
 ms.assetid: 365991A8-E07A-0420-D28E-BC4D32065E1A
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 280802adbb5326854b4d47045bbb1569dd123f30
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 367f0b6a44482762f8609eb959e154c942ff14f5
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69527335"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291819"
 ---
 # <a name="xib-code-generation-in-xamarinios"></a>xib でのコード生成
 
 > [!IMPORTANT]
->  このドキュメントでは、Xamarin Designer for iOS でアクションとアウトレットが使用されていないため、Visual Studio for Mac と Xcode の Interface Builder のみとの統合について説明します。 iOS Designer の詳細については、 [iOS Designer](~/ios/user-interface/designer/index.md)ドキュメントを参照してください。
+> このドキュメントでは、Xamarin Designer for iOS でアクションとアウトレットが使用されていないため、Visual Studio for Mac と Xcode の Interface Builder のみとの統合について説明します。 iOS Designer の詳細については、 [iOS Designer](~/ios/user-interface/designer/index.md)ドキュメントを参照してください。
 
 Apple Interface Builder ツール ("IB") を使用すると、ユーザーインターフェイスを視覚的にデザインできます。 IB によって作成されたインターフェイス定義は、 **xib**ファイルに保存されます。 **Xib**ファイル内のウィジェットとその他のオブジェクトには、"クラス id" を与えることができます。これは、カスタムのユーザー定義型にすることができます。 これにより、ウィジェットの動作をカスタマイズしたり、カスタムウィジェットを作成したりすることができます。
 

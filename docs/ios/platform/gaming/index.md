@@ -4,15 +4,15 @@ description: この記事では、iOS 9 によって提供される新しいゲ�
 ms.prod: xamarin
 ms.assetid: 958D38FD-9240-482E-9A42-D6671ED8F2B0
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: 746d901714b4bba2d85e63e52d34781f07cf9923
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: fa78a596495b22ebb2c8b148aadb76261845ccdc
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653286"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70281264"
 ---
 # <a name="ios-gaming-apis-in-xamarinios"></a>Xamarin の iOS ゲーム Api
 
@@ -43,7 +43,7 @@ Apple の新しいゲームプレイキットフレームワークは、実装�
 - デバッグの問題を発生させずに、ランダム化されたゲームの play と困難を提供するツール。
 - 再利用可能なコンポーネント化エンティティベースのアーキテクチャ。
 
-強化[された](https://developer.apple.com/library/prerelease/ios/documentation/GameplayKit/Reference/GameplayKit_Framework/index.html#//apple_ref/doc/uid/TP40015199)プレイキットの詳細については、Apple の「開発者向けのプレイキットの[プログラミングガイド](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/GameplayKit_Guide/index.html#//apple_ref/doc/uid/TP40015172)」と「説明」を参照してください。
+強化されたプレイキットの詳細については、Apple の「開発者向けのプレイキットの[プログラミングガイド](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/GameplayKit_Guide/index.html#//apple_ref/doc/uid/TP40015172)」と「説明」を[参照して](https://developer.apple.com/library/prerelease/ios/documentation/GameplayKit/Reference/GameplayKit_Framework/index.html#//apple_ref/doc/uid/TP40015199)ください。
 
 ## <a name="gameplaykit-examples"></a>お持ちのおプレイキットの例
 

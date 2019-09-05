@@ -4,15 +4,15 @@ description: この記事では、watchOS 3 アプリでプロアクティブな
 ms.prod: xamarin
 ms.assetid: 10CC9F16-963C-44F1-8B98-F09FB2310DFF
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 95e0eb77719a9bcc642dfb1385d7371652943155
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 68ba09ce74f161c728f0a58276a0b0d98fec7d8c
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70198812"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70281287"
 ---
 # <a name="watchos-proactive-suggestions-in-xamarin"></a>Xamarin でのプロアクティブな提案の watchOS
 

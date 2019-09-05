@@ -4,15 +4,15 @@ description: このドキュメントでは、iOS 10 の既存のフレームワ
 ms.prod: xamarin
 ms.assetid: F771640A-F92E-4954-82D5-2D720434971E
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 230da58bba68b9411b67baacd53b534ae832510d
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 88039da5faf911386232d2b189b27a2921f8144c
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657437"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70289573"
 ---
 # <a name="additional-tvos-10-frameworks-changes"></a>追加の tvOS 10 フレームワークの変更
 

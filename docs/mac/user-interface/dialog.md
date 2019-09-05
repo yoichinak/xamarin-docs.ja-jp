@@ -4,19 +4,19 @@ description: この記事では、Xamarin. Mac アプリケーションでのダ
 ms.prod: xamarin
 ms.assetid: 55451990-B77B-4D44-B8BB-F874EC503B0C
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 03fad33d49f1454700c118ad44c8582453a75eee
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 723f751b93af304c7d70fb1250dbda2f0220e77e
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645653"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292210"
 ---
 # <a name="dialogs-in-xamarinmac"></a>Xamarin. Mac のダイアログ
 
-Xamarin. Mac C#アプリケーションでと .net を使用する場合、 *Xcode と* *で作業*している開発者が同じダイアログとモーダルウィンドウにアクセスできます。 Xcode は直接統合されているため、Xcode の_Interface Builder_を使用してモーダルウィンドウを作成および維持できます (または、 C#必要に応じて、コード内で直接作成することもできます)。
+Xamarin. Mac C#アプリケーションでと .net を使用する場合、 *Xcode と* *で作業している*開発者が同じダイアログとモーダルウィンドウにアクセスできます。 Xcode は直接統合されているため、Xcode の_Interface Builder_を使用してモーダルウィンドウを作成および維持できます (または、 C#必要に応じて、コード内で直接作成することもできます)。
 
 ユーザーの操作に応答してダイアログが表示され、通常、ユーザーがアクションを完了する方法が示されます。 ダイアログを閉じるには、ユーザーからの応答が必要です。
 

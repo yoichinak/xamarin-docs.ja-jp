@@ -4,15 +4,15 @@ description: この記事では、ユーザーの他のデバイスで実行さ�
 ms.prod: xamarin
 ms.assetid: 405F966A-4085-4621-AA15-33D663AD15CD
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 28c5086833ceb1dc8550e513b120f7355aa9bebe
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 9fa0d51e02382458535b065377af55542d87913a
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656575"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290754"
 ---
 # <a name="handoff-in-xamarinios"></a>Xamarin のハンドオフ (iOS)
 
@@ -623,7 +623,7 @@ Xamarin iOS アプリでハンドオフを使用する例として、このガ�
 
 ユーザーアクティビティが別の Apple デバイスに正常に送信されると、送信元`NSUserActivity`デバイスのは、ユーザーアクティビティ`UserActivityWasContinued`が別の`NSUserActivityDelegate`デバイスに正常に転送されたことを通知するために、のメソッドへの呼び出しを受信します。ドライブ.
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
 この記事では、ユーザーの Apple デバイスの複数のユーザーアクティビティを続行するために使用されるハンドオフフレームワークの概要について説明しました。 次に、Xamarin iOS アプリでハンドオフを有効にして実装する方法を示しました。 最後に、さまざまな種類のハンドオフ継続の使用方法と、ハンドオフのベストプラクティスについて説明しました。
 

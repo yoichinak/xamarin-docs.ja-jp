@@ -3,15 +3,15 @@ title: 目標マジックペンリリース履歴
 description: このドキュメントでは、目標ペンを使わず、C# Objective C コードへのバインドの作成を自動化するためのツールのリリース履歴について説明します。
 ms.prod: xamarin
 ms.assetid: 1F4A1BE1-7205-43F4-89D0-6C8672F52598
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 10/11/2017
-ms.openlocfilehash: 86c9f46064b66dc31f805e830309cb061a78a2c8
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: b5362c0a809423e2782ee60faa96658cf132d752
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509646"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290858"
 ---
 # <a name="objective-sharpie-release-history"></a>目標マジックペンリリース履歴
 
@@ -85,7 +85,7 @@ ms.locfileid: "68509646"
 
 [ダウンロード2.0.0](https://download.xamarin.com/objective-sharpie/ObjectiveSharpie-2.0.0.pkg)
 
-目標マジックペン2.0 は、Clang ベースのドライバーとパーサーを強化し、新しい NRefactory ベースのバインドエンジンを機能させるメジャーリリースです。 これらの強化されたコンポーネントは、特に型バインドの場合に、_より優れた_バインディングを提供します。 他にも多くの機能強化が行われています。目標マジックペンは、今後のリリースでユーザーに表示できる機能が多数用意されています。
+目標マジックペン2.0 は、Clang ベースのドライバーとパーサーを強化し、新しい NRefactory ベースのバインドエンジンを機能させるメジャーリリースです。 これらの強化されたコンポーネントは、特に型バインドの場合に、_より優れたバインディングを提供_します。 他にも多くの機能強化が行われています。目標マジックペンは、今後のリリースでユーザーに表示できる機能が多数用意されています。
 
 目標マジックペン2.0 は Clang 3.6.1 に基づいています。
 

@@ -4,15 +4,15 @@ description: C#言語のバージョン6では、言語を進化させながら�
 ms.prod: xamarin
 ms.assetid: 4B4E41A8-68BA-4E2B-9539-881AC19971B
 ms.custom: xamu-video
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: 5f51332f84d2f91adbdc8c46e509774f59a8ed9e
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: 2a62ff12869f886e63fc5c78050e9870431e58bb
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69887438"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70280621"
 ---
 # <a name="c-6-new-features-overview"></a>C#6新機能の概要
 
@@ -294,7 +294,7 @@ public async Task<int> LeisureHours => await Task.FromResult<char> (DateTime.Now
 
 ### <a name="exception-filters"></a>例外フィルター
 
-定義上、例外的な状況では例外が発生し、特定の型の例外が発生する可能性がある理由やコードについては、その理由やコードが非常に複雑になることがあります。 C#6では、ランタイムによって評価されるフィルターを使用して実行ハンドラーを保護する機能が導入されています。 これを行うには、 `when (bool)`通常`catch(ExceptionType)`の宣言の後にパターンを追加します。 次の例では、フィルターは、他の解析エラー `date`とは対照的に、パラメーターに関連する解析エラーを識別します。
+定義上、例外的な状況では例外が発生し、特定の型の例外が発生する可能性がある理由やコード*については、* その理由やコードが非常に複雑になることがあります。 C#6では、ランタイムによって評価されるフィルターを使用して実行ハンドラーを保護する機能が導入されています。 これを行うには、 `when (bool)`通常`catch(ExceptionType)`の宣言の後にパターンを追加します。 次の例では、フィルターは、他の解析エラー `date`とは対照的に、パラメーターに関連する解析エラーを識別します。
 
 ```csharp
 public void ExceptionFilters(string aFloat, string date, string anInt)

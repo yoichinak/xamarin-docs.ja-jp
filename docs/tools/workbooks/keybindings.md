@@ -1,27 +1,27 @@
 ---
-title: Xamarin ブック エディターのキーボード ショートカット
-description: このドキュメントでは、Xamarin Workbooks エディターで使用するために使用できるキーボード ショートカットについて説明します。 具体的には、戻り値のキーが使用されるさまざまな方法で検索します。
+title: Xamarin Workbooks エディターのキーボードショートカット
+description: このドキュメントでは、Xamarin Workbooks エディターで使用できるキーボードショートカットについて説明します。 特に、戻り値のキーが使用されるさまざまな方法を見ていきます。
 ms.prod: xamarin
 ms.assetid: 6375A371-3215-4A7C-B97B-A19E58BE96D6
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/30/2017
-ms.openlocfilehash: 87af9f824117b20250c02a3e070652607626de44
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 9904d0f9fb1acfc3c3c197b9881c2add00aba534
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61341051"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70285328"
 ---
-# <a name="xamarin-workbooks-editor-keyboard-shortcuts"></a>Xamarin ブック エディターのキーボード ショートカット
+# <a name="xamarin-workbooks-editor-keyboard-shortcuts"></a>Xamarin Workbooks エディターのキーボードショートカット
 
-## <a name="the-return-key-and-its-nuances"></a>返すキー、およびその微妙な差異
+## <a name="the-return-key-and-its-nuances"></a>Return キー、およびそのニュアンス
 
-次の表では、コードを実行して、markdown を作成するさまざまなショートカット キーについて説明します。 使い慣れたと流動性の両方が賢明かつ一貫性のあるキー バインドを選択する十分な注意を思い出させています。
+次の表では、コードを実行して markdown を作成するためのさまざまなキーバインドについて説明します。 なじみのある一貫性のあるキーのバインドを選択することは、よく知られています。
 
-|キー バインド|コード セル|Markdown のセル|
+|キーバインド|コードセル|Markdown セル|
 |--- |--- |--- |
-|<kbd>Return</kbd>|<p>キャレットのセルのバッファーの末尾にあるセルが正常に解析された場合は実行のバッファーを下に結果が表示され、新しいコード セルが挿入され、セルに実行されたセルの後に重点を置いています。</p><p>解析が成功しなかった場合は、バッファーに新しい行が挿入されます。 解析が成功しなかった場合、コンパイラの診断は生成されません。</p>|<p><kbd>返す</kbd>は、キャレット位置 Markdown コンテキストに応じて異なる動作を示します。</p><ul><li>キャレットは、マークダウン コード ブロックでは、リテラルの新しい行が挿入されます。</li><li>キャレットが Markdown 一覧ブロック内にある場合は、新しいリスト アイテムを作成または現在のリスト項目を分割します。</li><li>キャレットが Markdown ブロックの他の任意の型である場合は、新しい段落ブロックを作成または現在のブロックを分割します。</li></ul>|
-|<dl><dt>Mac</dt><dd><kbd>Command‑Return</kbd></dd><dt>Win</dt><dd><kbd>Control‑Return</kbd></dd></dl>|<p>常に、解析し、セルの内容の実行を試行します。 バッファーを下に (実行例外を含む) の結果が表示されますコンパイルが成功した場合と後続のセルがない場合、新しいものが作成され重点を置いています。</p><p>コンパイル エラーがある場合、診断が表示され、バッファーにキャレットの位置を変更せずにフォーカスがある残ります。</p>|挿入し、新しいコード セルをマークダウンの現在のセルの後に重点を置いています。|
-|<dl><dt>Mac</dt><dd><kbd>Command‑Shift‑Return</kbd><dd><dt>Win</dt><dd><kbd>Control‑Shift‑Return</kbd></dd></dl>|挿入し、現在のセルの後に新しい markdown セル重点を置いています。|同じ動作<kbd>を返す</kbd>|
-|<kbd>Shift‑Return</kbd>|カレットの場所やコンテンツに関係なく、新しい行を常に挿入します。|現在の Markdown ブロック内で、ハード改行を挿入します。|
+|<kbd>Return</kbd>|<p>カーソルがセルバッファーの最後にあり、セルを正常に解析できる場合は、そのセルが実行され、結果がバッファーの下に表示されます。新しいコードセルが挿入され、実行されたセルの後にフォーカスが挿入されます。</p><p>解析が成功しなかった場合は、バッファーに新しい行が挿入されます。 解析が失敗した場合、コンパイラ診断は生成されません。</p>|<p>カーソル位置の Markdown コンテキストによって異なる動作が<kbd>返さ</kbd>れます。</p><ul><li>キャレットが Markdown コードブロック内にある場合は、リテラルの新しい行が挿入されます。</li><li>キャレットが Markdown list ブロック内にある場合は、新しいリスト項目を作成するか、現在のリスト項目を分割します。</li><li>キャレットが他の種類の Markdown ブロックに含まれている場合は、新しい段落ブロックを作成するか、現在のブロックを分割します。</li></ul>|
+|<dl><dt>Mac</dt><dd><kbd>コマンド-Return</kbd></dd><dt>成立</dt><dd><kbd>制御-戻り値</kbd></dd></dl>|<p>は、常にセルの内容の解析と実行を試みます。 コンパイルが成功すると、結果 (実行例外を含む) がバッファーの下に表示されます。後続のセルがない場合は、新しいセルが作成され、フォーカスが設定されます。</p><p>コンパイルエラーが発生した場合は、診断が表示され、バッファーはカーソル位置を変更せずにフォーカスされたままになります。</p>|現在の markdown cell の後に新しいコードセルを挿入し、それに焦点を当てます。|
+|<dl><dt>Mac</dt><dd><kbd>コマンドシフト-戻る</kbd><dd><dt>成立</dt><dd><kbd>制御-シフト-戻る</kbd></dd></dl>|現在のセルの後に新しい markdown セルを挿入してフォーカスを追加します。|<kbd>戻り値</kbd>と同じ動作|
+|<kbd>Shift + Return</kbd>|キャレットの位置または内容に関係なく、常に新しい行を挿入します。|現在の Markdown ブロック内にハード改行を挿入します。|

@@ -5,15 +5,15 @@ ms.prod: xamarin
 ms.assetid: 0F2266D7-21FF-404D-A148-0CFDE76B12AA
 ms.technology: xamarin-ios
 ms.custom: xamu-video
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: 98b68423012fad479f3949452d53c2a49e2a677e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 87de42504081374f830a4fe286476ad822eeed99
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68654301"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70280161"
 ---
 # <a name="multitasking-for-ipad-in-xamarinios"></a>Xamarin の iPad のマルチタスキング
 
@@ -25,7 +25,7 @@ iOS 9 では、特定の iPad ハードウェアで同時に2つのアプリを�
 
 - [**スライドオーバー**](#Slide-Over) -ユーザーが、現在実行されているメインアプリの約 25% をカバーするスライドアウトパネル (言語の方向に基づいて、画面の右側または左側) で2番目の iOS アプリを一時的に実行できるようにします。 スライドショーは、iPad Pro、iPad Air、iPad Air 2、iPad ミニ2、iPad ミニ3、iPad ミニ4でのみ利用できます。
 - [**分割ビュー**](#Split-View) -iPad のサポートされているハードウェア (iPad 空気 2、iPad ミニ 4 および iPad Pro のみ)、ユーザーは、2 番目のアプリを選択し、分割画面表示モードで現在実行中のアプリとサイド バイ サイドを実行します。 ユーザーは、各アプリが占めるメイン画面の割合を制御できます。
-- 画像の[**画像-ビデオ**](#Picture-in-Picture)コンテンツを再生するアプリでは、iOS デバイスで現在実行されている他のアプリの周囲にある、移動してサイズ変更が可能なウィンドウでビデオを再生できるようになりました。 ユーザーは、このウィンドウのサイズと位置を完全に制御できます。 画像の画像は、iPad Pro、iPad Air、iPad Air 2、iPad ミニ2、iPad ミニ3、iPad ミニ4でのみ使用できます。
+- [**画像の画像-ビデオ**](#Picture-in-Picture)コンテンツを再生するアプリでは、iOS デバイスで現在実行されている他のアプリの周囲にある、移動してサイズ変更が可能なウィンドウでビデオを再生できるようになりました。 ユーザーは、このウィンドウのサイズと位置を完全に制御できます。 画像の画像は、iPad Pro、iPad Air、iPad Air 2、iPad ミニ2、iPad ミニ3、iPad ミニ4でのみ使用できます。
 
 [アプリでマルチタスキングをサポート](#Supporting-Multitasking-in-your-App)するには、次のようないくつかの点を考慮する必要があります。
 

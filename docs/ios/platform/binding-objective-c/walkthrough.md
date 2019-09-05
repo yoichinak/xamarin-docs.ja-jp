@@ -4,15 +4,15 @@ description: この記事では、既存の目的 C ライブラリである Inf
 ms.prod: xamarin
 ms.assetid: D3F6FFA0-3C4B-4969-9B83-B6020B522F57
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 05/02/2017
-ms.openlocfilehash: ffd244a77ae75fefcf42f185bad1e8f7ccdbe560
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: b53799f4b1c8d9299ab23191f6a702c2ec0983fb
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70121334"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70285762"
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>チュートリアル: iOS Objective-C ライブラリのバインド
 
@@ -134,7 +134,7 @@ Github で InfColorPicker のコードを調べる場合は、次のようにし
 
     [![](walkthrough-images/image06.png "プロジェクト名として「InfColorPicker」と入力します。")](walkthrough-images/image06.png#lightbox)
 5. プロジェクトを保存する場所を選択し、 **[OK]** ボタンをクリックします。
-6. 次に、ソースを InfColorPicker プロジェクトからスタティックライブラリプロジェクトに追加する必要があります。 (既定では) Xcode ファイルは、スタティックライブラリに既に存在するため、上書きすることはできません。 **Finder**から、GitHub から解凍した元のプロジェクトの infcolorpicker ソースコードに移動し、すべての infcolorpicker ファイルをコピーして、新しいスタティックライブラリプロジェクトに貼り付けます。
+6. 次に、ソースを InfColorPicker プロジェクトからスタティックライブラリプロジェクトに追加する必要があります。 (既定**では) Xcode ファイルは**、スタティックライブラリに既に存在するため、上書きすることはできません。 **Finder**から、GitHub から解凍した元のプロジェクトの infcolorpicker ソースコードに移動し、すべての infcolorpicker ファイルをコピーして、新しいスタティックライブラリプロジェクトに貼り付けます。
 
     [![](walkthrough-images/image12.png "すべての InfColorPicker ファイルをコピーする")](walkthrough-images/image12.png#lightbox)
 
@@ -217,11 +217,11 @@ clean:
 
 任意のプレーンテキストエディターで**Makefile**コマンドを入力し、プロジェクト**名**を使用してセクションをプロジェクトの名前に更新します。 指示内のタブを保持したまま、上記の手順を正確に貼り付けることも重要です。
 
-という名前のファイルを 、上記で作成した InfColorPicker Xcode スタティックライブラリと同じ場所に保存します。
+と**いう名前のファイルを、** 上記で作成した InfColorPicker Xcode スタティックライブラリと同じ場所に保存します。
 
 [![](walkthrough-images/lib00.png "メイクファイルという名前でファイルを保存します。")](walkthrough-images/lib00.png#lightbox)
 
-Mac でターミナルアプリケーションを開き、メイクファイルの場所に移動します。 ターミナル`make`に「」と入力し、enter キーを押すと、**メイクファイル**が実行されます。
+Mac でターミナルアプリケーションを開き、メイクファイルの場所に移動します。 ターミナル`make`に「」と入力**し、enter キーを**押すと、**メイクファイル**が実行されます。
 
 [![](walkthrough-images/lib01.png "メイクファイルの出力の例")](walkthrough-images/lib01.png#lightbox)
 
@@ -334,7 +334,7 @@ Architectures in the fat file: libInfColorPicker.a are: i386 armv7 x86_64 arm64
 
 -----
 
-ファイルがプロジェクトに追加されると、Xamarin によってファイルの**ビルドアクション**が自動的に**objcbindingてライブラリ**に設定され、という名前`libInfColorPickerSDK.linkwith.cs`の特別なファイルが作成されます。
+ファイルがプロジェクトに追加されると、Xamarin によってファイルの**ビルドアクション**が自動的に**Objcbindingてライブラリ**に設定され、という名前`libInfColorPickerSDK.linkwith.cs`の特別なファイルが作成されます。
 
 
 このファイルには`LinkWith` 、追加したスタティックライブラリを処理する方法を示す属性が含まれています。 このファイルの内容を次のコードスニペットに示します。

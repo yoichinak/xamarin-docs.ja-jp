@@ -4,15 +4,15 @@ description: このガイドでは、Apple Pay と共に使用して、食品、
 ms.prod: xamarin
 ms.assetid: A25AE660-B145-465F-9CCE-8D82BFD614C6
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 06/05/2017
-ms.openlocfilehash: 538778d70e175afb8de0c61648f646c4a1669982
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 1cf28f83302d5035652df05aee26a6646df29fc0
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655061"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291812"
 ---
 # <a name="apple-pay-in-xamarinios"></a>Xamarin. iOS の Apple Pay
 
@@ -49,7 +49,7 @@ Apple Pay の基本的な部分の1つは、支払い処理です。 この操�
 
 次の2つのオプションがあります。
 
-- [Stripe.com](https://stripe.com/)にサインアップして、api にアクセスします。
+- [Stripe.com](https://stripe.com/)にサインアップし**て、api**にアクセスします。
 
 - **JudoPay** - [github で Xamarin サンプルコード](https://github.com/Judopay/Xamarin-Sample-App)を確認し、 [JudoPay.com](https://www.judopay.com/)に登録します。
 

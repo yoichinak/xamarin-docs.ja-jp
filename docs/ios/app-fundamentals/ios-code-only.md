@@ -4,15 +4,15 @@ description: このドキュメントでは、コードを使用して Xamarin.i
 ms.prod: xamarin
 ms.assetid: 7CB1FEAE-0BB3-4CDC-9076-5BD555003F1D
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 05/03/2018
-ms.openlocfilehash: 105d06c7cea23ac0873c8de68d7ad1ad62ae1ffc
-ms.sourcegitcommit: 84764b9c51e769d6d6570a362af8451607c7e0d2
+ms.openlocfilehash: d1464ca3accf53a9362d00e279ff9e158d7e34d4
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68665711"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70281634"
 ---
 # <a name="creating-ios-user-interfaces-in-code-in-xamarinios"></a>Xamarin.iOS でのコードで iOS ユーザー インターフェイスの作成
 
@@ -128,7 +128,7 @@ public class AppDelegate : UIApplicationDelegate
 }
 ```
 
-このアプリケーションを今すぐ実行する場合、`Application windows are expected to have a root view controller at the end of application launch`ということを示す例外がスローされる可能性があります。 コントローラーを追加し、それをアプリのルート ビュー コントローラーにします。
+このアプリケーションを今すぐ実行する場合は、ことを示すスローされる例外に得可能性`Application windows are expected to have a root view controller at the end of application launch`します。 コント ローラーを追加し、アプリのルート ビュー コント ローラーになります。
 
 ## <a name="adding-a-controller"></a>コントローラーを追加する
 

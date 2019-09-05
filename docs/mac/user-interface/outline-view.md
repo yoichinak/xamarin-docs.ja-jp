@@ -4,15 +4,15 @@ description: この記事では、Xamarin. Mac アプリケーションでアウ
 ms.prod: xamarin
 ms.assetid: 043248EE-11DA-4E96-83A3-08824A4F2E01
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 3b045d18d66463a1464e446847cb5dbfd531bbf3
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 16a37c7544f7ea364c13789fdc7bb42d89a74f5c
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227887"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70287252"
 ---
 # <a name="outline-views-in-xamarinmac"></a>Xamarin. Mac のアウトラインビュー
 

@@ -1,65 +1,65 @@
 ---
-title: 共通のパターンと成句 Xamarin.Mac で
-description: このドキュメントでは、Xamarin.Mac アプリを構築するときに使用される共通のデザイン パターンについて説明します。 これは、モデル-ビュー-コント ローラー パターンでは、データ ソースとデリゲート パターン、およびプロトコルについて説明します。
+title: Xamarin. Mac での一般的なパターンと表現
+description: このドキュメントでは、Xamarin. Mac アプリをビルドするときに使用する一般的なデザインパターンについて説明します。 モデルビューコントローラーパターン、データソースとデリゲートパターン、およびプロトコルについて説明します。
 ms.prod: xamarin
 ms.assetid: BF0A3517-17D8-453D-87F7-C8A34BEA8FF5
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 06/17/2016
-ms.openlocfilehash: b4266582ce0cec522e207cd06987f2d0eeff8b2d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 188bc8a04b62c97e9d6f80669fe50da1bf4d9340
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61090889"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70289547"
 ---
-# <a name="common-patterns-and-idioms-in-xamarinmac"></a>共通のパターンと成句 Xamarin.Mac で
+# <a name="common-patterns-and-idioms-in-xamarinmac"></a>Xamarin. Mac での一般的なパターンと表現
 
-C# を使用して公開されている Apple Api、全体で特定の表現形式とパターンが何度も。 Xamarin.iOS を使用したプログラミングの経験がある場合は、これらが使い慣れた見えることがあります。 ドキュメントは多くの場合を参照してこれらのパターンと成句、繰り返しがそれらを確実に理解に役立つ検索するドキュメントを理解するため。
+を通じて公開されC#ている Apple api 全体を通じて、特定の表現とパターンが繰り返し使用されます。 Xamarin. iOS を使用したプログラミングの経験がある場合は、これらの機能がよく見られます。 ドキュメントでは、これらのパターンや表現を繰り返し参照することがよくあるため、これらを十分に理解しておくと、見つけたドキュメントを理解するのに役立ちます。
 
-## <a name="mvc---model-view-controller"></a>MVC のモデル ビュー コント ローラー
+## <a name="mvc---model-view-controller"></a>MVC モデルビューコントローラー
 
-モデル ビュー コント ローラー、または略してについては、MVC は、Cocoa 全体で非常に一般的なパターンです。 詳細についてがこのドキュメントの範囲を超えていますが、コンポーネントへのアプリケーションを構築する方法は簡単に説明します。
+モデルビューコントローラー (short 用 MVC) は、Cocoa 全体に見られる非常に一般的なパターンです。 詳細については、このドキュメントでは説明しませんが、簡単に言えば、アプリケーションをコンポーネントに構造化する方法です。
 
-- **モデル**オブジェクトが表示および操作 (アドレス帳のアドレス) と同様に行われる基になるデータを表します
-- **ビュー**オブジェクトを処理し、画面上の特定のオブジェクトの描画 (画面上のアドレスの表示テキスト フィールド) のユーザーとの対話を処理
-- **コント ローラー**オブジェクトは、モデルとビューの間の対話を処理します。 モデルの変更をプッシュするビューを更新し、ユーザーが UI で変更したときに、ビューからのプッシュ「ダウン」変更「上」です。
+- **モデル**オブジェクトは、表示および操作されている基になるデータ (アドレス帳のアドレスなど) を表します。
+- **ビュー**オブジェクトは、画面上の特定のオブジェクトの描画を処理し、ユーザーの操作を処理します (画面上のアドレスを示すテキストフィールド)
+- **コントローラー**オブジェクトは、モデルとビュー間の相互作用を処理します。 ユーザーが UI で変更を行ったときに、ビューを更新し、ビューから "ダウン" 変更をプッシュするために、モデルの変更を "上" にプッシュします。
 
-MVVM (Model View ViewModel) で馴染み WPF などの他のライブラリの場合は、コント ローラー、ビューモデルのような機能しますが、特定の UI 要素をより厳密にバインドされた多くの場合。
+WPF などの他のライブラリの MVVM (モデルビュービューモデル) に慣れている場合、コントローラーはビューモデルに似た動作をしますが、多くの場合、特定の UI 要素により密接にバインドされます。
 
-詳細についてはここにあります。
+詳細については、次を参照してください。
 
-- [Apple の web サイトで MVC の学習](https://developer.apple.com/library/ios/documentation/general/conceptual/devpedia-cocoacore/MVC.html)
+- [Apple の web サイトでの MVC の学習](https://developer.apple.com/library/ios/documentation/general/conceptual/devpedia-cocoacore/MVC.html)
 
-- [Objective C でのモデル ビュー コント ローラー](https://developer.apple.com/library/ios/documentation/general/conceptual/CocoaEncyclopedia/Model-View-Controller/Model-View-Controller.html)
+- [目標のモデルビューコントローラー-C](https://developer.apple.com/library/ios/documentation/general/conceptual/CocoaEncyclopedia/Model-View-Controller/Model-View-Controller.html)
 - [Windows の操作](~/mac/user-interface/window.md)
 
-## <a name="data-source--delegate--subclassing"></a>データ ソース委任/サブクラス化
+## <a name="data-source--delegate--subclassing"></a>データソース/デリゲート/サブクラス化
 
-Cocoa のもう 1 つの非常に一般的なパターンは、UI 要素にデータを提供して、ユーザーの操作への対応について説明します。 使用して`NSTableView`例として、何らかの理由で行ごとにデータを提供する必要がある、いくつか設定 UI 要素のいくつかの行を表す一連のユーザーの操作や可能性があるいくつかのかなりのカスタマイズに対応する動作。 サブクラスに頼ることがなく、ほとんどの場合を処理するためのデータ ソースとデリゲート パターン`NSTableView`自分でします。
+Cocoa のもう1つの一般的なパターンでは、UI 要素にデータを提供し、ユーザーの操作に反応します。 を`NSTableView`例として使用するには、各行のデータ、その行を表す UI 要素のセット、ユーザーの操作に反応する一連の動作、および場合によってはカスタマイズが必要です。 データソースとデリゲートパターンを使用すると、自分でサブクラス`NSTableView`化する必要がなく、ほとんどのケースを処理できます。
 
-- `DataSource`プロパティには、カスタムのサブクラスのインスタンスが割り当てられている`NSTableViewDataSource`テーブルにデータを設定すると呼ばれる (を使用して`GetRowCount`と`GetObjectValue`)。
+- プロパティ`DataSource`には、の`NSTableViewDataSource`カスタムサブクラスのインスタンスが割り当てられます。このインスタンスは、と`GetObjectValue`を`GetRowCount`使用して、テーブルにデータを設定するために呼び出されます。
 
-- `Delegate`プロパティには、カスタムのサブクラスのインスタンスが割り当てられている`NSTableViewDelegate`特定のモデル オブジェクトのビューを提供する (を使用して`GetViewForItem`) し、UI 操作の処理 (を使用して`DidClickTableColumn`、`MouseDownInHeaderOfTableColumn`など)。
+- プロパティ`Delegate`には、の`NSTableViewDelegate`カスタムサブクラスのインスタンスが割り当てられます。このクラスは`DidClickTableColumn`、を介し`GetViewForItem`て特定のモデルオブジェクトのビューを`MouseDownInHeaderOfTableColumn`提供し、UI の相互作用 (、など) を処理します。
 
-場合によっては、デリゲートまたはデータ ソースで指定されたフック以外の方法でコントロールをカスタマイズしたいし、直接サブクラス ビューことができます。 しかし注意場合既定値を上書きする多くの場合の動作し、必要はその動作のすべてを処理する (選択の動作をカスタマイズする必要がありますすべての選択動作を実装)。
+場合によっては、デリゲートまたはデータソースで指定されたフックを超える方法でコントロールをカスタマイズし、ビューを直接サブクラス化することができます。 ただし、多くの場合、既定の動作を上書きすることで、すべての動作を自分で処理する必要があります (選択動作をカスタマイズすると、すべての選択動作を自分で実装することが必要になる場合があります)。
 
-Xamarin.iOS では、一部の Api でなど`UITableView`デリゲートと、データ ソースの両方を実装するプロパティが拡張され (`UITableViewSource`)。 一般的な制限を回避するには、この it を 1 つC#クラスは、1 つの基本クラスを持つことができますのみ、基本クラスを使用して、プロトコルの表示は行われます。
+Xamarin. iOS では、などの一部の`UITableView` api が、デリゲートとデータソース (`UITableViewSource`) の両方を実装するプロパティを使用して拡張されています。 これは、1つC#のクラスが1つの基底クラスしか持つことができないという一般的な制限を回避するためのものであり、プロトコルの提示は基本クラスを介して行われます。
 
-Xamarin.Mac アプリケーションでのテーブル ビューの使用の詳細についてを参照してください、[テーブル ビュー](~/mac/user-interface/table-view.md)ドキュメント。
+Xamarin. Mac アプリケーションでテーブルビューを操作する方法の詳細については、[表ビュー](~/mac/user-interface/table-view.md)のドキュメントを参照してください。
 
 ## <a name="protocols"></a>プロトコル
 
-Objective C でのプロトコルをインターフェイスに比較できるようにC#、多くの場合と同様の状況で使用されます。 たとえば、`NSTableView`上記の例、デリゲートと、データ ソースの両方が実際にはプロトコル。 Xamarin.Mac は、オーバーライド可能な仮想メソッドと基底クラスとしてこれらを公開します。 主な違いC#インターフェイスと OBJECTIVE-C プロトコル、プロトコルの一部のメソッドを実装するために省略可能な可能性があります。 ドキュメントおよび省略可能な新機能を決定するための API の定義を確認する必要があります。
+目標 C のプロトコルは、のC#インターフェイスと比較することができ、多くの場合、同様の状況で使用されます。 たとえば、上記の例では、デリゲートとデータソースの両方が実際にプロトコルです。`NSTableView` これらは、オーバーライド可能な仮想メソッドを使用して基本クラスとして公開されます。 C#インターフェイスと目標 C プロトコルの主な違いは、プロトコルの一部のメソッドを実装することができないことです。 オプションを決定するには、API のドキュメントや定義を確認する必要があります。
 
-詳細についてを参照してください、[デリゲート、プロトコル、およびイベント](~/ios/app-fundamentals/delegates-protocols-and-events.md)ドキュメント。
+詳細について[は、デリゲート、プロトコル、およびイベントに](~/ios/app-fundamentals/delegates-protocols-and-events.md)関するドキュメントを参照してください。
 
 
 
 ## <a name="related-links"></a>関連リンク
 
-- [テーブル ビュー](~/mac/user-interface/table-view.md)
+- [テーブルビュー](~/mac/user-interface/table-view.md)
 - [Windows の操作](~/mac/user-interface/window.md)
 - [デリゲート、プロトコル、およびイベント](~/ios/app-fundamentals/delegates-protocols-and-events.md)
 - [Model-View-Controller](https://developer.apple.com/library/ios/documentation/general/conceptual/CocoaEncyclopedia/Model-View-Controller/Model-View-Controller.html)

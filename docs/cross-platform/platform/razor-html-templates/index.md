@@ -3,15 +3,15 @@ title: Razor テンプレートを使用した HTML ビューの作成
 description: " 全画面の web ページを使用して HTML をレンダリングすることは、複雑な書式をクロスプラットフォーム方式でレンダリングするための簡単で効果的な方法です。特に、HTML、JavaScript、および CSS が web サイトプロジェクトにある場合は特にそうです。"
 ms.prod: xamarin
 ms.assetid: D8B87C4F-178E-48D9-BE43-85066C46F05C
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 07/24/2018
-ms.openlocfilehash: d822a4dc50d3f33ba4c217b8fcc557acc2bfdb3e
-ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
+ms.openlocfilehash: ccad60f749732ae2d0bf8e9852859b13af3a629e
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69621031"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70284921"
 ---
 # <a name="building-html-views-using-razor-templates"></a>Razor テンプレートを使用した HTML ビューの作成
 
@@ -385,7 +385,7 @@ var page = template.GenerateString ();
 
  ![IPhone と Android ソリューションの作成](images/image13_1139x959.png)
 
-既存の Xamarin プロジェクトには簡単に cshtml Razor テンプレートを追加できることに注意して**ください**。これらのソリューションテンプレートを使用する必要はありません。 iOS プロジェクトでは、Razor を使用するためのストーリーボードは必要ありません。プログラムによって任意のビューに UIWebView コントロールを追加するだけで、コードC#内で Razor テンプレート全体をレンダリングできます。
+既存の Xamarin プロジェクトには簡単に**cshtml** Razor テンプレートを追加できることに注意してください。これらのソリューション*テンプレートを使用*する必要はありません。 iOS プロジェクトでは、Razor を使用するためのストーリーボードは必要ありません。プログラムによって任意のビューに UIWebView コントロールを追加するだけで、コードC#内で Razor テンプレート全体をレンダリングできます。
 
 IPhone と Android プロジェクトの既定のテンプレートソリューションコンテンツを次に示します。
 
@@ -417,7 +417,7 @@ JQuery などのフレームワークを含む、必要な任意のスタイル�
 
 ### <a name="razor-cshtml-templates"></a>Razor cshtml テンプレート
 
-このテンプレートには、 HTML/JavaScript とC#の間でデータをやり取りするための事前に記述されたコードを含む Razor ファイルが含まれています。 これによりビルド処理や保存の C# コードを高度なハイブリッドをしないだけ、モデルからの読み取り専用のデータの表示がも HTML 内のユーザー入力を受け付けるとアプリを渡します。
+このテンプレートには、HTML/JavaScript とC#の間でデータをやり取りするための事前に記述されたコードを含む Razor ファイルが含まれています。 これによりビルド処理や保存の C# コードを高度なハイブリッドをしないだけ、モデルからの読み取り専用のデータの表示がも HTML 内のユーザー入力を受け付けるとアプリを渡します。
 
 #### <a name="rendering-the-template"></a>テンプレートを表示する
 
@@ -495,7 +495,7 @@ HTML は、プロトタイプに適しています。また、リッチテキス
 - **RazorNativeTodo** -IOS および Android 用のネイティブのリストビューコントロールを使用しますが、編集画面は HTML および Razor で表示されます。
 
 
-これらの Xamarin アプリは、iOS と Android の両方で動作し、ポータブルクラスライブラリ (Pcl) を利用してデータベースやモデルクラスなどの共通コードを共有します。 Razorテンプレートは、複数のプラットフォーム間で簡単に共有できるように、PCL に含めることもできます。
+これらの Xamarin アプリは、iOS と Android の両方で動作し、ポータブルクラスライブラリ (Pcl) を利用してデータベースやモデルクラスなどの共通コードを共有します。 Razor**テンプレート**は、複数のプラットフォーム間で簡単に共有できるように、PCL に含めることもできます。
 
 両方のサンプル アプリでは、Twitter で共有および Xamarin を使用したハイブリッド アプリケーションでもあるアクセス基になるすべての機能にテンプレート駆動の HTML Razor ビューからのデモ、ネイティブ プラットフォームからの音声合成 API を組み込みます。
 

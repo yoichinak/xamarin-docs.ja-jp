@@ -4,14 +4,14 @@ description: 'PCL のケース スタディ: Microsoft TPL Dataflow NuGet パッ
 ms.prod: xamarin
 ms.assetid: 7986A556-382D-4D00-ACCF-3589B4029DE8
 ms.date: 04/17/2018
-author: asb3993
-ms.author: amburns
-ms.openlocfilehash: 09aef14efdce93e28326deb78292da98f1969ea1
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+author: conceptdev
+ms.author: crdun
+ms.openlocfilehash: e3ced3c989a88c6e759a5bc497147128b0a79868
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69521566"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70288193"
 ---
 # <a name="pcl-case-study-how-can-i-resolve-problems-related-to-systemdiagnosticstracing-for-the-microsoft-tpl-dataflow-nuget-package"></a>PCL のケース スタディ: Microsoft TPL Dataflow NuGet パッケージの System.Diagnostics.Tracing に関連する問題の解決方法
 
@@ -53,7 +53,7 @@ Xamarin iOS と Xamarin Android は、参照として許可されているすべ
 
 ## <a name="details-about-the-three-layers-of-errors"></a>3層のエラーの詳細
 
-1. 現在 、XamarinVS ファサードアセンブリは、すべての Mac バージョンの Xamarin. Android (非パブリックバグ 34888) に含まれておらず、9.0 より低い (または Windows 上の3.11.1443 よりも低い) すべての Xamarin. iOS バージョンからは存在しません。[バグ 32388](https://bugzilla.xamarin.com/show_bug.cgi?id=32388))。 この問題が発生すると、配置ターゲットとリンカーの設定に応じて、次のいずれかのエラーが発生します。
+1. 現在、XamarinVS ファサードアセンブリは、すべての Mac バージョンの Xamarin. Android (非パブリックバグ 34888) に含まれておらず、9.0 より低い (または Windows 上の3.11.1443 よりも低い) すべての Xamarin. iOS バージョンからは存在し**ません。** [バグ 32388](https://bugzilla.xamarin.com/show_bug.cgi?id=32388))。 この問題が発生すると、配置ターゲットとリンカーの設定に応じて、次のいずれかのエラーが発生します。
 
     - Xamarin... targets:エラー :アセンブリの読み込み中に例外が発生しました:FileNotFoundException:アセンブリ ' 4.0.0.0, Version =, Culture = ニュートラル, PublicKeyToken = b03f5f7f11d50a3a ' を読み込むことができませんでした。 Mono for Android プロファイルには存在しない可能性がありますか。
 
@@ -118,7 +118,7 @@ _特に、この2つの手順を使用して問題を解決することはでき
 
 #### <a name="answer"></a>受信
 
-いいえ。 NuGet 3.0 "DNXCore50" パッケージには、"" および "netcore50" のプラットフォーム固有の実装のみが含まれています。 これは、Xamarin android ("モノ Android") と Xamarin ("Monotouch.dialog" および "xamarinios") の実装を明示的に_省略_します。 つまり、パッケージをインストールしても、Xamarin および Xamarin の iOS プロジェクトには_影響しません_。 NuGet パッケージでは、これらの両方のプラットフォームが型の_独自_の実装を提供していることを前提としています。 この前提は、Mono には名前空間の実装があることを意味する "正しい" ことですが、 \#上記の\#3 つのエラー層の詳細については、この実装は現在、まま. そのため、Mono チームが[バグ 27337](https://bugzilla.xamarin.com/show_bug.cgi?id=27337)と[バグ 34890](https://bugzilla.xamarin.com/show_bug.cgi?id=34890)を解決するには、適切な修正が必要です。
+いいえ。 NuGet 3.0 "DNXCore50" パッケージには、"" および "netcore50" のプラットフォーム固有の実装のみが含まれています。 これは、Xamarin android ("モノ Android") と Xamarin ("Monotouch.dialog" および "xamarinios") の実装を明示的に_省略_します。 つまり、パッケージをインストールしても、Xamarin および Xamarin の iOS プロジェクトには_影響しません_。 NuGet パッケージでは、これらの両方のプラットフォームが型の_独自_の実装を提供していることを前提としています。 この前提は、Mono には名前空間の実装があることを意味する "正しい _" ことです_が、 \#上記の\#3 つのエラー層の詳細については、この実装は現在、まま. そのため、Mono チームが[バグ 27337](https://bugzilla.xamarin.com/show_bug.cgi?id=27337)と[バグ 34890](https://bugzilla.xamarin.com/show_bug.cgi?id=34890)を解決するには、適切な修正が必要です。
 
 ## <a name="next-steps"></a>次の手順
 

@@ -4,15 +4,15 @@ description: この記事では、すべての iOS デバイスのアプリ起�
 ms.prod: xamarin
 ms.assetid: 31A489CA-756B-4B9B-B386-4BADF18EDD33
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 05/02/2018
-ms.openlocfilehash: 43c9ee599fe96c107bf10996834d9bcf60847603
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: d0d5452c2b79fb674e473efd50aaf587d64c4544
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70200108"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290250"
 ---
 # <a name="launch-screens-for-xamarinios-apps"></a>Xamarin iOS アプリの起動画面
 
@@ -214,7 +214,7 @@ IOS 8 (以降) では、開発者は、1つまたは複数の静的起動イメ�
 
     ![](launch-screens-images/image013.png "起動画面の名前を入力してください")
 3. **ソリューションエクスプローラー**で、新しく作成したストーリーボードファイルをダブルクリックして開き、編集します。
-4. **Size クラス**が Any と**表示**されていることを確認します **。** 
+4. **Size クラス**が Any と**表示** **され**ていることを確認します **。** 
 
     ![](launch-screens-images/image016.png "Size クラスが any に設定されていることを確認します。")
 5. 起動画面は、サイズクラス、単純な UI 要素 ( `UIImageView`など)、およびアプリケーションのバンドルに含まれているイメージからアセンブリします。 

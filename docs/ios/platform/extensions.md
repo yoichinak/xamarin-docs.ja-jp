@@ -5,15 +5,15 @@ ms.prod: xamarin
 ms.assetid: 3DEB3D43-3E4A-4099-8331-93C1E7A77095
 ms.technology: xamarin-ios
 ms.custom: xamu-video
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: dbc0802b39e8fa736ec3b71dc23f488d08fd8a42
-ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
+ms.openlocfilehash: 5995ba06873b2fb5f75c593fbc7136806e50d982
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69621091"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290602"
 ---
 # <a name="ios-extensions-in-xamarinios"></a>Xamarin の iOS 拡張機能
 

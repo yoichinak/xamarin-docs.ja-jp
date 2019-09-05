@@ -5,15 +5,15 @@ zone_pivot_groups: platform-win
 ms.prod: xamarin
 ms.assetid: abf85d3e-a365-44a2-b1a4-6c572c7f76dd
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 04/16/2018
-ms.openlocfilehash: 2f580571e7b871e724ca1a760060a238098e4f44
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 53f244521e4b916078bdcbaa02f1a79a919be0c4
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526504"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291307"
 ---
 # <a name="installing-xamarinios-on-windows"></a>Windows に Xamarin.iOS をインストールする
 
@@ -52,11 +52,12 @@ Visual Studio 2019 を Xamarin.iOS 開発用にセットアップするには、
 
     iOS アプリケーションを配布用にビルド、デバッグ、署名するには、Apple の開発者ツール (Xcode) と Xamarin.iOS の両方で構成された Mac ビルド ホストに、Visual Studio 2017 がネットワーク アクセスできる必要があります。
 
-    - [Mac App Store から Xcode をダウンロードしてインストールします](https://itunes.apple.com/us/app/xcode/id497799835?mt=12)。 
+    - [Mac App Store から Xcode をダウンロードしてインストールします](https://itunes.apple.com/us/app/xcode/id497799835?mt=12)。
     - [Visual Studio for Mac をインストールします](https://docs.microsoft.com/visualstudio/mac/installation)。Xamarin.iOS もインストールされます。
 
     > [!NOTE]
-    > Visual Studio for Mac をインストールしない方がよい場合、Visual Studio 2019 では、Mac ビルド ホストを Xamarin.iOS アプリケーションのビルドに必要なソフトウェアで[自動的に構成](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes#automatic-macos-provisioning)できます。 詳しくは、「[Mac の自動プロビジョニング](~/ios/get-started/installation/windows/connecting-to-mac/index.md#automatic-mac-provisioning)」をご覧ください。
+    > Visual Studio for Mac をインストールしない方がよい場合、Visual Studio 2019 では、Mac ビルド ホストを Xamarin.iOS アプリケーションのビルドに必要なソフトウェアで[自動的に構成](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes#automatic-macos-provisioning)できます。
+    > 詳しくは、「[Mac の自動プロビジョニング](~/ios/get-started/installation/windows/connecting-to-mac/index.md#automatic-mac-provisioning)」をご覧ください。
 
 3. Mac とペアリング (Visual Studio 2019 を Mac に接続する)
 
@@ -72,10 +73,10 @@ Visual Studio 2019 を Xamarin.iOS 開発用にセットアップするには、
 Windows 上で Visual Studio 2017 を使って Xamarin.iOS アプリを構築するには、次のものが必要です。
 
 - Visual Studio 2017 がインストールされている Windows コンピューター。 物理コンピューターでも仮想マシンでもかまいません。
-    - [Windows のシステム要件](~/cross-platform/get-started/requirements.md#windows-requirements)
-    
-- Apple のビルド ツールと Xamarin.iOS でセットアップされたネットワーク アクセス可能な Mac。 Visual Studio 2017 は、ネットワーク接続経由でこのマシンにアクセスして Apple のビルド ツールを使用します。ネイティブ iOS アプリケーションをコンパイルするために必要です。 
-    - [Mac のシステム要件](~/cross-platform/get-started/requirements.md#macos-requirements)
+  - [Windows のシステム要件](~/cross-platform/get-started/requirements.md#windows-requirements)
+
+- Apple のビルド ツールと Xamarin.iOS でセットアップされたネットワーク アクセス可能な Mac。 Visual Studio 2017 は、ネットワーク接続経由でこのマシンにアクセスして Apple のビルド ツールを使用します。ネイティブ iOS アプリケーションをコンパイルするために必要です。
+  - [Mac のシステム要件](~/cross-platform/get-started/requirements.md#macos-requirements)
 
 ## <a name="setup"></a>セットアップ
 
@@ -84,14 +85,14 @@ Visual Studio 2017 を Xamarin.iOS 開発用にセットアップするには、
 1. Windows をセットアップする (Visual Studio 2017 をインストールする)
 
     Xamarin.iOS は、スタンドアロン マシンまたは仮想マシン上の Visual Studio 2017 Community、Professional、Enterprise エディションで動作します。
-    
+
     - [Visual Studio 2017 をインストールします](~/get-started/installation/windows.md)。
 
 2. Mac をセットアップする (Xcode と Visual Studio for Mac をインストールする)
 
     iOS アプリケーションを配布用にビルド、デバッグ、署名するには、Apple の開発者ツール (Xcode) と Xamarin.iOS の両方で構成された Mac ビルド ホストに、Visual Studio 2017 がネットワーク アクセスできる必要があります。
 
-    - [Mac App Store から Xcode をダウンロードしてインストールします](https://itunes.apple.com/us/app/xcode/id497799835?mt=12)。 
+    - [Mac App Store から Xcode をダウンロードしてインストールします](https://itunes.apple.com/us/app/xcode/id497799835?mt=12)。
     - [Visual Studio for Mac をインストールします](https://docs.microsoft.com/visualstudio/mac/installation)。Xamarin.iOS もインストールされます。
 
     > [!NOTE]

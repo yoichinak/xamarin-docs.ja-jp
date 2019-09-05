@@ -3,15 +3,15 @@ title: 高度な統合に関するトピック
 description: このドキュメントでは、Xamarin Workbooks 統合に関連する高度なトピックについて説明します。 このトピックでは、xamarin ブック内での Xamarin. Workbook と API の公開について説明します。
 ms.prod: xamarin
 ms.assetid: 002CE0B1-96CC-4AD7-97B7-43B233EF57A6
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/30/2017
-ms.openlocfilehash: 07dd0e64b90bb0aa11f0a7050e3b86f3203ce7de
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: f8105c8285e696f8754799c33c30e31ce5356870
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70199979"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70283892"
 ---
 # <a name="advanced-integration-topics"></a>高度な統合に関するトピック
 

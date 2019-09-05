@@ -1,56 +1,56 @@
 ---
-title: Microsoft Jenkins がサポートされていないのはなぜですか
-description: このドキュメントには、Jenkins CI システムでの Xamarin の相互作用が大まかに言えば、について説明します。 Jenkins を使用する場合に生じるいくつかの一般的な問題についても説明します。
+title: Jenkins が Microsoft によってサポートされないのはなぜですか。
+description: このドキュメントでは、大まかな Jenkins CI システムとの対話について説明します。 また、Jenkins を使用するときに発生するいくつかの一般的な問題についても説明します。
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 9951F980-2C6C-47C0-8A35-A78F06C20BEB
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 06/05/2018
-ms.openlocfilehash: c2e409b796d5ef2525079e02aafdd0c6e8db5d81
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4f09f4ca97dcf50891aa0a0415e47d474297c411
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61158937"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70282764"
 ---
-# <a name="why-isnt-jenkins-supported-by-microsoft"></a>Microsoft Jenkins がサポートされていないのはなぜですか
+# <a name="why-isnt-jenkins-supported-by-microsoft"></a>Jenkins が Microsoft によってサポートされないのはなぜですか。
 
 ## <a name="jenkins-support-explanation"></a>Jenkins のサポートの説明
 
-Jenkins は、オープン ソースの CI スイートです。Jenkins によって直接発生する多くの問題があるため*自体*に対してコードを取得した; などの問題として提出する必要があります、 [Jenkins のメイン リポジトリ](https://github.com/jenkinsci/jenkins)、または、リポジトリの[Jenkins.app](https://github.com/stisti/jenkins-app)します。
+Jenkins はオープンソースの CI スイートです。このため、Jenkins*自体*によって直接発生する多くの問題は、コードを入手した場所に対する問題としてファイリングする必要があります。たとえば、[メインの Jenkins リポジトリ](https://github.com/jenkinsci/jenkins)や[Jenkins](https://github.com/stisti/jenkins-app)のリポジトリなどです。
 
-Xamarin のツールでバグを特定するために分離可能性のある問題については、例外です。場合にこれが疑われる場合は、確認、[サポート オプション](~/cross-platform/troubleshooting/support-options.md)できたとして問題からチームでは、Xamarin サポート外のものがあるもう一度、*直接*を支援します。
+この例外は、Xamarin のツールで特定のバグに分離される可能性のある問題を対象としています。この問題が発生したと思われる場合は、[サポートオプション](~/cross-platform/troubleshooting/support-options.md)を確認することができます。ただし、この問題は、Xamarin サポートチームが*直接*支援できるもの以外のものである可能性があります。
 
-## <a name="setup-jenkins-with-xamarin"></a>Xamarin を使用した Jenkins をセットアップします。
+## <a name="setup-jenkins-with-xamarin"></a>Xamarin を使用した Jenkins のセットアップ
 
-Jenkins の問題が私たちのチームで直接サポートされていない前述の中に[と Xamarin を使用して Jenkins](~/tools/ci/jenkins-walkthrough.md)ガイドは、Xamarin と統合されている Jenkins CI サーバーを設定して使用できます。 
+前述のように、Jenkins の問題はチームが直接サポートしていません。xamarin での[Jenkins の使用](~/tools/ci/jenkins-walkthrough.md)に関するガイドを使用して、xamarin と統合された Jenkins CI サーバーを設定できます。 
 
-## <a name="fixes-for-common-issues"></a>一般的な問題の修正プログラム
+## <a name="fixes-for-common-issues"></a>一般的な問題の修正
 
-### <a name="jenkins-is-unable-to-find-the-android-sdk"></a>Jenkins は、Android SDK を見つけることができません。
+### <a name="jenkins-is-unable-to-find-the-android-sdk"></a>Jenkins が Android SDK を見つけることができません
 
-この問題のエラー メッセージは、このようなものです。
+この問題のエラーメッセージは次のようになります。
 
-> エラー XA5205:Android SDK ディレクトリが見つかりませんでした。 /P:AndroidSdkDirectory を使用して設定してください。
+> エラー XA5205:Android SDK ディレクトリが見つかりませんでした。 /P を使用して設定してください: AndroidSdkDirectory
 
-SDK の場所を設定するためのオプションは; を使用している正確な Android の Jenkins プラグインによって異なる場合があります。これを設定する方法を確認するに適してが、プラグインのガイドです。 たとえば、[Android エミュレーター プラグイン](https://wiki.jenkins-ci.org/display/JENKINS/Android+Emulator+Plugin#AndroidEmulatorPlugin-Systemconfiguration)場合は、SDK を自動的に検索が見つかりません。 そのプラグインを Jenkins システムの構成 ページで、場所を設定することもできます。 
+SDK の場所を設定するためのオプションは、使用している Jenkins Android プラグインによって異なる場合があります。この設定方法については、「プラグインガイド」を参照してください。 たとえば、次のようになります。[Android Emulator プラグイン](https://wiki.jenkins-ci.org/display/JENKINS/Android+Emulator+Plugin#AndroidEmulatorPlugin-Systemconfiguration)は SDK を自動的に検索しますが、見つからない場合は検出します。この場所は、そのプラグインの [Jenkins システム構成] ページで設定することもできます。 
 
 
 ## <a name="deprecated-errors"></a>非推奨のエラー
 
 > [!IMPORTANT]
-> Xamarin の最近のバージョンでは、この問題を解決されています。 ただし、ソフトウェアの最新バージョンで問題が発生した場合を提出してください、[新しいバグ](~/cross-platform/troubleshooting/questions/howto-file-bug.md)完全なバージョン管理情報と完全のビルド ログ出力します。
+> この問題は、最新バージョンの Xamarin で解決されました。 ただし、最新バージョンのソフトウェアで問題が発生した場合は、完全なバージョン管理情報と完全ビルドログ出力を使用して[新しいバグを作成](~/cross-platform/troubleshooting/questions/howto-file-bug.md)してください。
 
 
 
-### <a name="jenkins-reports-an-invalid-xamarin-license"></a>Jenkins は、無効な Xamarin ライセンスを報告します。
-この問題のエラー メッセージは、ようなもので、通常
+### <a name="jenkins-reports-an-invalid-xamarin-license"></a>Jenkins は無効な Xamarin ライセンスを報告します
+通常、この問題のエラーメッセージは次のようになります。
 
-> XA9008 エラー:コマンドラインからのビルドには、ビジネス ライセンスが必要です。
+> XA9008 エラー:コマンドラインから構築するには、ビジネスライセンスが必要です
 
 または
 
-> エラー :Xamarin.iOS の Starter Edition では、Xamarin Studio の外部でビルドすることはできません。 
+> エラー :Xamarin の Starter Edition では、Xamarin Studio 外でのビルドはサポートされていません 
 
-このシナリオの最も一般的な原因は、Xamarin ライセンスに関連付けられていないユーザー アカウントでログインして Jenkins の使用です。 これを解決する最も簡単な方法では、ユーザー アカウントを使用して直接アプリとして Jenkins をインストールします。 そのプロセスといくつか追加の考慮事項がここで説明します。 [https://forums.xamarin.com/discussion/comment/99397/#Comment_99397](https://forums.xamarin.com/discussion/comment/99397/#Comment_99397)
+このシナリオの最も一般的な原因は、Xamarin ライセンスに関連付けられていないユーザーアカウントでログインすることによって Jenkins を使用することです。 これを解決する最も簡単な方法は、ユーザーアカウントを使用して直接 Jenkins をアプリとしてインストールすることです。 そのプロセスとその他の考慮事項については、次を参照してください。[https://forums.xamarin.com/discussion/comment/99397/#Comment_99397](https://forums.xamarin.com/discussion/comment/99397/#Comment_99397)

@@ -3,15 +3,15 @@ title: Xamarin での TeamCity の使用
 description: このガイドでは、TeamCity を使用してモバイルアプリケーションをコンパイルし、Xamarin Test Cloud に送信するために必要な手順について説明します。
 ms.prod: xamarin
 ms.assetid: AC2626CB-28A7-4808-B2A9-789D67899546
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: 2880fcbc3366079955945c4780af2be82afe5a4a
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 6ffd1c3e42dbaf0a82b07cd9e0a00228c5fa0604
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511924"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70293135"
 ---
 # <a name="using-team-city-with-xamarin"></a>Xamarin での TeamCity の使用
 
@@ -130,7 +130,7 @@ Android アプリケーションをコンパイルするには、 **xbuild** (�
 /Library/Frameworks/Mono.framework/Commands/xbuild /t:SignAndroidPackage /p:Configuration=Release /path/to/android.csproj
 ```
 
-Xamarin Android アプリケーションをコンパイルすると、 **xbuild**によってプロジェクトが使用され、iOS アプリケーションをビルドするにはソリューション**が必要に**なります。
+Xamarin Android アプリケーションをコンパイルすると、 **xbuild**によってプロジェクトが使用され、iOS アプリケーションをビルドするにはソリューション**が必要になります**。
 
 #### <a name="submitting-xamarinuitests-to-test-cloud"></a>UITests を Test Cloud に送信しています
 

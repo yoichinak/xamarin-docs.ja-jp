@@ -4,15 +4,15 @@ description: このドキュメントでは、さまざまな tvOS リリース�
 ms.prod: xamarin
 ms.assetid: FB705CAD-B43C-4374-B139-92AB81185429
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 10/05/2018
-ms.openlocfilehash: 7bc85c4aba0bf1c217a1cb45c1ac605dc43695cc
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 187e761948a560a96257ffa0ac84415d862a629d
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68651621"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70283526"
 ---
 # <a name="tvos-platform-features"></a>tvOS プラットフォームの機能
 

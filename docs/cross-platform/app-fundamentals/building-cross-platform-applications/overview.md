@@ -3,15 +3,15 @@ title: クロスプラットフォームアプリケーションの構築の概�
 description: このドキュメントでは、クロスプラットフォームアプリケーションの構築の概要について説明します。 の値、MVC/ C#MVVM、ネイティブ ui などの設計パターンについて説明します。
 ms.prod: xamarin
 ms.assetid: E442EEFB-FA9C-40E9-9668-5A3F915C8400
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: c97cfda836f59d4cdbcd234744f723eb9429ace4
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: e129a8c37e6b8780a57636730c072b230354b8b8
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526849"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70288384"
 ---
 # <a name="building-cross-platform-applications-overview"></a>クロスプラットフォームアプリケーションの構築の概要
 
@@ -34,7 +34,7 @@ Xamarin クロスプラットフォームアプリを作成するための主要
 1. Windows では、Visual Studio または Blend の UI デザイナーで作成されたプレゼンテーション層に XAML を使用します。
 1. Mac では、Xcode で作成されたプレゼンテーション層にストーリーボードを使用します。
 
-Xamarin.Forms プロジェクトはすべてのプラットフォームでサポートされており、Xamarin を使用してプラットフォーム間で共有できるユーザーインターフェイスを作成することができます。 
+Xamarin. Forms プロジェクトはすべてのプラットフォームでサポートされており、Xamarin を使用してプラットフォーム間で共有できるユーザーインターフェイスを作成することができます。 
 
 コードの再使用量は、共有コアに保持されるコードの量と、ユーザーインターフェイスに固有のコードの量に大きく左右されます。 コアコードは、ユーザーと直接やり取りしないものですが、代わりに、この情報を収集して表示するアプリケーションの一部のサービスを提供します。
 

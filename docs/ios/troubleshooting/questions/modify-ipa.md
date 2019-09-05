@@ -1,84 +1,84 @@
 ---
-title: ファイルを追加または Visual Studio でビルドした後で IPA ファイルからファイルを削除できますか。
+title: Visual Studio でビルドした後、IPA ファイルにファイルを追加したり、ファイルを削除したりすることはできますか。
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 6C3082FB-C3F1-4661-BE45-64570E56DE7C
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 04/03/2018
-ms.openlocfilehash: 047ee06522d4b2c07937e0e1bd9985248a164f01
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: d1546b83304d8c66f7433bd77c5ebecc9dc95aaa
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865020"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70278477"
 ---
-# <a name="can-i-add-files-to-or-remove-files-from-an-ipa-file-after-building-it-in-visual-studio"></a>ファイルを追加または Visual Studio でビルドした後で IPA ファイルからファイルを削除できますか。
+# <a name="can-i-add-files-to-or-remove-files-from-an-ipa-file-after-building-it-in-visual-studio"></a>Visual Studio でビルドした後、IPA ファイルにファイルを追加したり、ファイルを削除したりすることはできますか。
 
-はい、できますが、再署名する必要は通常、`.app`変更を行った後にバンドルします。
+はい、できますが、変更を行った後でバンドルに`.app`再署名する必要があります。
 
-変更することに注意してください、`.ipa`ファイルは通常の使用に必要ではありません。 この記事では情報提供を目的の純粋に提供します。
+通常の使用で`.ipa`は、ファイルの変更は必要ありません。 この記事は、あくまで情報提供を目的として提供されています。
 
-## <a name="example-removing-a-file-from-a-ipa-archive"></a>例: からファイルを削除する、`.ipa`アーカイブ
+## <a name="example-removing-a-file-from-a-ipa-archive"></a>例: `.ipa`アーカイブからファイルを削除する
 
-この例には、Xamarin.iOS プロジェクトの名前があると仮定`iPhoneApp1`と`generated session id`は `cc530d20d6b19da63f6f1c6f67a0a254`
+この例では、Xamarin. iOS プロジェクトの名前が`iPhoneApp1` `generated session id`で、がであることを前提としています。`cc530d20d6b19da63f6f1c6f67a0a254`
 
-1. ビルド、 `.ipa` Visual Studio からは通常どおりファイルします。
+1. Visual Studio `.ipa`から通常どおりファイルをビルドします。
 
-2. Mac ビルド ホストに切り替えます。
+2. Mac ビルドホストに切り替えます。
 
-3. ビルドの検索、`~/Library/Caches/Xamarin/mtbs/builds`フォルダー。 このパスを貼り付けることができます**Finder > 移動 > フォルダーに移動して**Finder でフォルダーを参照します。 プロジェクト名と一致するフォルダーを探します。 、そのフォルダー内に一致するフォルダーを検索、`generated session id`ビルドします。 ほとんどの場合、最新の変更時刻を含むサブフォルダーになります。
+3. `~/Library/Caches/Xamarin/mtbs/builds`フォルダー内のビルドを検索します。 このパスを Finder に貼り付けることができます **> [フォルダーに移動**] を選択して finder でフォルダーを参照 > ます。 プロジェクト名と一致するフォルダーを探します。 そのフォルダー内で、ビルドのに`generated session id`一致するフォルダーを探します。 これは、ほとんどの場合、最新の変更時刻を持つサブフォルダーです。
 
-4. 新しく開きます`Terminal.app`ウィンドウ。
+4. 新しい`Terminal.app`ウィンドウを開きます。
 
-5. 型`cd`に Terminal.app ウィンドウと、ドラッグ アンド ドロップ、`generated session id`フォルダーに、`Terminal.app`ウィンドウ。
+5. [ `cd`アプリ] ウィンドウに「」と入力し、 `generated session id`フォルダーをドラッグ & て`Terminal.app`ウィンドウにドロップします。
 
-    ![](modify-ipa-images/session-id-folder.png "Finder で生成されるセッション id のフォルダーを検索します。")
+    ![](modify-ipa-images/session-id-folder.png "Finder で生成されたセッション id フォルダーを検索する")
 
-6. ディレクトリを変更する戻り値のキーを入力して、`generated session id`フォルダー。
+6. `generated session id`フォルダーにディレクトリを変更するには、return キーを入力します。
 
-7. 解凍、`.ipa`に一時ファイル`old/`フォルダーの次のコマンドを使用します。 調整、`Ad-Hoc`と`iPhoneApp1`特定のプロジェクトの必要に応じて名前を付けます。
+7. 次のコマンドを使用し`old/`て、一時フォルダーにファイルを解凍します。`.ipa` 特定のプロジェクト`iPhoneApp1`に必要な名前と名前を調整します。`Ad-Hoc`
 
-    > 古い - xk bin/iPhone/Ad-Hoc/iPhoneApp1-1.0.ipa を同じく/
+    > ditto-xk bin/iPhone/Ad-Hoc/iPhoneApp1-1.0. ipa old/
 
-8. 保持、`Terminal.app`ウィンドウを開きます。
+8. ウィンドウを`Terminal.app`開いたままにします。
 
-9. 目的のファイルから削除、`.ipa`します。 Finder を使用してごみ箱に移動またはを使用して、コマンドラインでそれらを削除することができます`Terminal.app`します。 内容を表示する、 `Payload/iPhone` finder で、コントロールのクリック、ファイルのファイルおよび選択した**パッケージの内容**します。
+9. から目的のファイルを削除`.ipa`します。 Finder を使用してごみ箱に移動するか、を使用して`Terminal.app`コマンドラインで削除することができます。 Finder で`Payload/iPhone`ファイルの内容を表示するには、ファイルを管理し、 **[パッケージの内容を表示]** を選択します。
 
-10. ログ ファイルを検索して、手順 3. のように、同じ一般的な方法を使用して`~/Library/Logs/Xamarin/MonoTouchVS/`プロジェクト名を持つ、`generated session id`名。![](modify-ipa-images/build-log.png "Finder で、プロジェクトのビルド ログを見つける")
+10. 手順3と同じ一般的な方法を使用して、の下`~/Library/Logs/Xamarin/MonoTouchVS/`にプロジェクト名`generated session id`とという名前のログファイルを見つけます。![](modify-ipa-images/build-log.png "Finder でプロジェクトビルドログを検索する")
 
-11. ダブルクリックしてなど手順 10 からのビルド ログを開きます。
+11. 手順10のビルドログを開きます。たとえば、ダブルクリックします。
 
-12. 含む行を見つけて`tool /usr/bin/codesign execution started with arguments: -v --force --sign`します。
+12. に含ま`tool /usr/bin/codesign execution started with arguments: -v --force --sign`れる行を探します。
 
-13. 型`/usr/bin/codesign`手順 8. Terminal.app ウィンドウにします。
+13. 手順`/usr/bin/codesign` 8. の [アプリ] ウィンドウに「」と入力します。
 
-14. 以降では、引数をすべてコピー`-v`行では、手順 12 と Terminal.app ウィンドウに貼り付けます。
+14. から始まる`-v`すべての引数を、手順 12. の行からコピーし、それらをターミナルアプリウィンドウに貼り付けます。
 
-15. 変更するのには、最後の引数、`.app`バンドルにある、`old/Payload/`フォルダー、および、コマンドを実行します。
+15. 最後の引数を`.app` `old/Payload/`フォルダー内にあるバンドルになるように変更してから、コマンドを実行します。
 
     ```bash
     /usr/bin/codesign -v --force --sign SOME_LONG_STRING in/iPhone/Ad-Hoc/iPhoneApp1.app/ResourceRules.plist --entitlements obj/iPhone/Ad-Hoc/Entitlements.xcent old/Payload/iPhoneApp1.app
     ```
 
-16. 変更、`old/`ターミナルでディレクトリ。
+16. ターミナルのディレクトリ`old/`に移動します。
 
     ```bash
     cd old
     ```
 
-17. 新しいディレクトリの内容を zip 圧縮`.ipa`ファイルを使用して、`zip`コマンド。 変更することができます、`"$HOME/Desktop/iPhoneApp1-1.0.ipa"`出力への引数、`.ipa`好きな場所にファイルします。
+17. コマンドを使用して、ディレクトリの内容を`.ipa`新しいファイルに圧縮します。 `zip` ファイル`.ipa`を出力する`"$HOME/Desktop/iPhoneApp1-1.0.ipa"`ように引数を変更するには、次のようにします。
 
     ```bash
     zip -yr "$HOME/Desktop/iPhoneApp1-1.0.ipa" *
     ```
 
-## <a name="common-error-messages"></a>一般的なエラー メッセージ
+## <a name="common-error-messages"></a>一般的なエラーメッセージ
 
-表示された場合`Invalid Signature. A sealed resource is missing or invalid.`、一般に内で何かが変更されたことを意味する、`.app`バンドル、および、`.app`バンドル署名されていない正しく再後。 作成する場合、`.ipa`配布プロファイルの場合は、する_する必要があります_構築元`.ipa`配布プロファイルを使用して。 それ以外の場合、`Entitlements.xcent`は不正確になります。
+が表示`Invalid Signature. A sealed resource is missing or invalid.`される場合は、通常、 `.app` `.app`バンドル内で何らかの変更が行われたこと、およびバンドルが後で正しく再署名されていないことを意味します。 配布プロファイルを`.ipa`使用してを作成する場合は、配布プロファイルを使用して元`.ipa`のを作成する必要があることにも注意してください。 それ以外`Entitlements.xcent`の場合、は正しくありません。
 
-次を実行する場合、このエラーは発生する方法の具体的な例を提供する`codesign --verify`コマンド手順 9 の後に、ターミナル ウィンドウで、エラーの正確な原因とエラーが表示されます。
+このエラーが発生する具体的な例を示すために、手順9の後`codesign --verify`にターミナルウィンドウで次のコマンドを実行すると、エラーの正確な原因と共にエラーが表示されます。
 
 ```bash
 $ codesign -dvvv --no-strict --verify old/Payload/iPhoneApp1.app
@@ -86,6 +86,6 @@ old/Payload/iPhoneApp1.app: a sealed resource is missing or invalid
 file missing: /Users/macuser/Library/Caches/Xamarin/mtbs/builds/iPhoneApp1/cc530d20d6b19da63f6f1c6f67a0a254/old/Payload/iPhoneApp1.app/MyFile.png
 ```
 
-アプリ ストアの検証プロセスのようなエラー メッセージが報告されます。
+また、アプリストアの検証プロセスでも、次のようなエラーメッセージが報告されます。
 
-> エラー ITMS-90035:"署名が無効です。 封印されたリソースとは見つからないか無効です。 パス [iPhoneApp1.app/iPhoneApp1] にあるバイナリには、無効な署名が含まれています。 配布証明書、いないアドホックの証明書または開発証明書を使用してアプリケーションに署名を確認します。 (これは、プロジェクト レベルで任意の値を上書きするには)、ターゲット レベルでの Xcode でコード署名の設定が正しいことを確認します。 また、アップロードするバンドルは、Xcode シミュレーター ターゲットではないでリリースのターゲットを使用してビルドされたことを確認してください。 コードの署名の設定が正しい場合は、"クリーン All"を選択して、Xcode で、finder で、「ビルド」ディレクトリを削除およびターゲットのリリースを再構築します。 詳細についてを参照してください[ https://developer.apple.com/library/ios/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html ](https://developer.apple.com/library/ios/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html)"
+> エラー 90035:"署名が無効です。 封印されたリソースがないか、無効です。 パス [iPhoneApp1/iPhoneApp1] のバイナリに無効な署名が含まれています。 アドホック証明書または開発証明書ではなく、配布証明書を使用してアプリケーションに署名していることを確認します。 Xcode のコード署名設定がターゲットレベルで正しいことを確認します (プロジェクトレベルのすべての値をオーバーライドします)。 また、アップロードするバンドルが、シミュレーターターゲットではなく、Xcode のリリースターゲットを使用してビルドされていることを確認します。 コード署名の設定が正しいことがわかっている場合は、Xcode で [すべてクリーン] を選択し、Finder の "build" ディレクトリを削除して、リリースターゲットをリビルドします。 詳細については、 [https://developer.apple.com/library/ios/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html](https://developer.apple.com/library/ios/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html)「」を参照してください。

@@ -4,21 +4,21 @@ description: この記事では、Xamarin. Mac アプリケーションでのア
 ms.prod: xamarin
 ms.assetid: F1DB93A1-7549-4540-AD5E-D7605CCD8435
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: c97006d1afb68d693e2792879788ea92907873fc
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: 1e2ad12e7dc52b44bda079340638298b87ac5f65
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69889539"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291212"
 ---
 # <a name="alerts-in-xamarinmac"></a>Xamarin. Mac のアラート
 
 _この記事では、Xamarin. Mac アプリケーションでのアラートの使用について説明します。ここでは、コードからのC#アラートの作成と表示、およびユーザーの操作への応答について説明します。_
 
-Xamarin. Mac C#アプリケーションでと .net を使用する場合、 *Xcode および*で作業する開発者が行うのと同じアラートにアクセスできます。 
+Xamarin. Mac C#アプリケーションでと .net を使用する場合、 *Xcode および*で作業する開発者が行う*のと同じ*アラートにアクセスできます。 
 
 アラートは、重大な問題 (エラーなど) が発生したとき、または警告 (ファイルの削除の準備など) が発生したときに表示される特別な種類のダイアログです。 アラートはダイアログであるため、閉じる前にユーザーの応答も必要です。
 
@@ -115,7 +115,7 @@ alert.BeginSheet (this);
 
 ## <a name="working-with-alert-buttons"></a>アラートボタンの操作
 
-既定では、アラートには **[OK** ] ボタンのみが表示されます。 ただし、これに限定されているわけではありませんが、**ボタン**のコレクションに追加することによって追加のボタンを作成できます。 次のコードでは、" **OK**"、"**キャンセル**"、および "ボタン" を使用して、フリーフローティングの警告を作成します。
+既定では、アラートには **[OK** ] ボタンのみが表示されます。 ただし、これに限定されているわけではありませんが、**ボタン**のコレクションに追加することによって追加のボタンを作成できます。 次のコードでは、" **OK**"、"**キャンセル**"、および "ボタン" を**使用して**、フリーフローティングの警告を作成します。
 
 ```csharp
 var alert = new NSAlert () {

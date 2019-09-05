@@ -1,46 +1,46 @@
 ---
-title: 既存のライブラリ プロジェクトから NuGet を作成します。
-description: このドキュメントでは、他の開発者と共有するコードをできるように、既存のライブラリ プロジェクトから NuGet パッケージを作成する方法について説明します。
+title: 既存のライブラリプロジェクトから NuGet を作成する
+description: このドキュメントでは、既存のライブラリプロジェクトから NuGet パッケージを作成して、コードを他の開発者と共有できるようにする方法について説明します。
 ms.prod: xamarin
 ms.assetid: EDAC3E5E-DB7D-40A9-AE28-45C52ADA854E
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 04/20/2017
-ms.openlocfilehash: 6e043334d3ca45a573423ebdfdf1ec9149167b55
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: f9d49fc4bff91939c9924dc42a11ef31ffd87362
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67864690"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70289224"
 ---
-# <a name="creating-a-nuget-from-existing-library-projects"></a>既存のライブラリ プロジェクトから NuGet を作成します。
+# <a name="creating-a-nuget-from-existing-library-projects"></a>既存のライブラリプロジェクトから NuGet を作成する
 
-既存の PCL または .NET Standard ライブラリを使用して Nuget に変換できます、**プロジェクト オプション**ウィンドウ。
+既存の PCL または .NET Standard ライブラリは、 **[プロジェクトオプション]** ウィンドウで nuget に切り替えることができます。
 
-1. ライブラリ プロジェクトを右クリックし、 **Solution Pad**選択**オプション**します。
+1. **Solution Pad**でライブラリプロジェクトを右クリックし、 **[オプション]** を選択します。
 
-2. 移動して、 **NuGet パッケージ > メタデータ**セクションし、すべてを入力、[必須情報](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md)で、**全般** タブ。
+2. **[NuGet パッケージ > メタデータ]** セクションにアクセスし、[必要な](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md)すべての情報を **[全般**] タブに入力します。
 
-   [![](existing-library-images/existing-metadata-sml.png "必要なメタデータを入力します。")](existing-library-images/existing-metadata.png#lightbox)
+   [![](existing-library-images/existing-metadata-sml.png "必須のメタデータを入力してください")](existing-library-images/existing-metadata.png#lightbox)
 
-3. 必要に応じて、[メタデータを追加](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md)で、**詳細**タブ。
+3. 必要に応じて、 **[詳細]** タブで[メタデータを追加](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md)します。
 
-4. メタデータを構成すると、プロジェクトを右クリックして選択**NuGet パッケージの作成**と **.nupkg** NuGet パッケージのファイルに保存されます、 **/bin/** フォルダー (デバッグまたはリリースでは、構成によって異なります)。
+4. メタデータを構成したら、プロジェクトを右クリックし、 **[Nuget パッケージの作成]** を選択し**ます。 nupkg** NuGet パッケージファイルは、構成に応じて、[デバッグ] または [リリース **] のいずれかのフォルダーに**保存されます。
 
-   ![](existing-library-images/create-nuget-package.png "NuGet パッケージの作成を右クリック メニューから選択します。")
+   ![](existing-library-images/create-nuget-package.png "右クリックメニューから [NuGet パッケージの作成] を選択します。")
 
-5. NuGet パッケージを作成する_すべて_ビルドまたは配置に移動して、 **NuGet パッケージ > ビルド**セクションとティック**プロジェクトのビルド時に NuGet パッケージを作成**:
+5. _すべて_のビルドまたは配置で nuget パッケージを作成するには、 **Nuget パッケージ > ビルド**セクションにアクセスし、プロジェクトをビルド**するときに nuget パッケージを作成**します。
 
-    [![](existing-library-images/existing-tickbox-sml.png "NuGet パッケージを作成するティック")](existing-library-images/existing-tickbox.png#lightbox)
+    [![](existing-library-images/existing-tickbox-sml.png "NuGet パッケージを作成するためのティック")](existing-library-images/existing-tickbox.png#lightbox)
 
 > [!NOTE]
-> NuGet のビルド パッケージは、ビルド プロセスを低下することができます。 このボックスがオンになっていない場合でも生成できます NuGet パッケージを手動で (上記の手順 4 に示すように) プロジェクトのコンテキスト メニューから、いつでも。
+> NuGet パッケージをビルドすると、ビルドプロセスの速度が低下する可能性があります。 このボックスが表示されていない場合でも、プロジェクトのコンテキストメニュー (上記の手順 4. を参照) からいつでも手動で NuGet パッケージを生成できます。
 
 ## <a name="verifying-the-output"></a>出力を確認しています
 
-NuGet パッケージは、ZIP ファイルではもおり、生成されたパッケージの内部構造を検査することができます。
+NuGet パッケージは ZIP ファイルでもあるため、生成されたパッケージの内部構造を調べることができます。
 
-このスクリーン ショットは、1 つの PCL アセンブリのみが含まれる、PCL ベース NuGet – の内容を示しています。
+このスクリーンショットは、PCL ベースの NuGet の内容を示しています。1つの PCL アセンブリだけが含まれています。
 
 ![](existing-library-images/nuget-output.png "NuGet パッケージに含まれるファイル")
 

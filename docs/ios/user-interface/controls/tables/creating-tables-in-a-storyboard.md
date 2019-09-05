@@ -4,15 +4,15 @@ description: 前のセクションでは、テーブルを使用した開発に�
 ms.prod: xamarin
 ms.assetid: D8416E10-481A-0B6E-4081-B146E6358004
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: 46729df70d08b8d6d1b5b953d74f5619a5dc5858
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 58e57f9406642a3bb0ff108bffa89d77c3f2cebb
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528690"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291377"
 ---
 # <a name="working-with-tables-in-the-ios-designer"></a>iOS Designer でのテーブルの操作
 
@@ -129,7 +129,7 @@ StoryboardTable の例には、ストーリーボードで両方の種類の UIT
 
 テーブルビューを選択し、**プロパティパッド**を開きます。 次のプロパティを更新します。
 
-- **セクション**:_2_ 
+- **セクション**:_3_ 
 - **スタイル**:_ら_
 - **区切り記号**:_None_
 - **選択**:_選択なし_

@@ -1,55 +1,55 @@
 ---
 title: NuGet メタデータの編集
-description: このドキュメントでは、プロジェクトのオプションを使用して、マルチプラット フォーム ライブラリの NuGet メタデータを編集する方法について説明します。 必須およびオプションの両方のメタデータがについて説明します。
+description: このドキュメントでは、プロジェクトオプションを使用して、マルチプラットフォームライブラリの NuGet メタデータを編集する方法について説明します。 必須のメタデータと省略可能なメタデータの両方について説明します。
 ms.prod: xamarin
 ms.assetid: 147BA370-67A7-4E6C-BF17-AA7C536C0A48
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: 3680b02003a844668b0b5c97e5d4c0d296ae3500
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: bf8efad28c7ec6acfd0e43403e8db14639a3c755
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61266883"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70289405"
 ---
 # <a name="editing-nuget-metadata"></a>NuGet メタデータの編集
 
-_プロジェクト オプションを使用して、マルチプラット フォーム ライブラリの NuGet メタデータの編集_
+_プロジェクトオプションを使用して、マルチプラットフォームライブラリの NuGet メタデータを編集する_
 
-ライブラリ (PCL または .NET Standard、または新しい NuGet プロジェクトの種類) などのプロジェクトの種類が、 **NuGet パッケージ**セクション、**プロジェクト オプション**ウィンドウ。
+ライブラリプロジェクトの種類 (PCL、.NET Standard、新しい NuGet プロジェクトの種類など) には、 **[プロジェクトオプション]** ウィンドウに **[nuget パッケージ]** セクションがあります。
 
-**メタデータ**セクションで使用する値を構成する、 [ **.nuspec** NuGet パッケージのマニフェスト ファイル](https://docs.microsoft.com/nuget/create-packages/creating-a-package#the-role-and-structure-of-the-nuspec-file)します。
+**メタデータ**セクションでは、 [ **nuspec** NuGet パッケージマニフェストファイル](https://docs.microsoft.com/nuget/create-packages/creating-a-package#the-role-and-structure-of-the-nuspec-file)で使用される値を構成します。
 
 ## <a name="required-information"></a>必要な情報
 
-**全般** タブには、NuGet パッケージを生成する入力する必要がある 4 つのフィールドが含まれています。
+**[全般**] タブには、NuGet パッケージを生成するために入力する必要がある4つのフィールドがあります。
 
-[![](metadata-images/metadata-general-sml.png "NuGet パッケージに必要なメタデータ ウィンドウ")](metadata-images/metadata-general.png#lightbox)
+[![](metadata-images/metadata-general-sml.png "NuGet パッケージに必要なメタデータウィンドウ")](metadata-images/metadata-general.png#lightbox)
 
-- **ID** – パッケージの識別子。 Nuget.org (または、パッケージを配布する任意の場所) 内で一意である必要があります。 この後に[ガイダンス](https://docs.microsoft.com/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number)URL で有効な文字だけを使用して (スペースなしとほとんどの特殊文字を避けるため)。
-- **バージョン**– で一貫性のあるバージョン番号を選択[NuGet のバージョン管理規則](https://docs.microsoft.com/nuget/create-packages/dependency-versions)します。
-- **作成者**– 名のコンマ区切りリスト。
-- **説明**– ユーザーがパッケージを選択するときに表示されるパッケージの機能の概要。
+- **ID** –パッケージ識別子。 Nuget.org (またはパッケージが配布されるすべての場所) 内で一意である必要があります。 この[ガイダンス](https://docs.microsoft.com/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number)に従って、URL で有効な文字のみを使用します (スペースは不要で、ほとんどの特殊文字は使用しないでください)。
+- **[バージョン]** – [NuGet のバージョン管理ルール](https://docs.microsoft.com/nuget/create-packages/dependency-versions)と一致するバージョン番号を選択します。
+- **作成者**–名前のコンマ区切りのリスト。
+- **説明**–パッケージを選択しているときに表示される、パッケージの機能の概要です。
 
 > [!NOTE]
-> NuGet または他のユーザーに配布するための新しいバージョンを構築するときに、バージョン番号をインクリメントする注意してください。
+> NuGet または他のユーザーに配布するための新しいバージョンをビルドする場合は、バージョン番号を必ず増やしてください。
 
-詳細については、次を参照してください、[要素参照のために必要な](https://docs.microsoft.com/nuget/schema/nuspec#required-metadata-elements)詳細については、同様に、これらの手順の詳細な[一意のパッケージ識別子を選択し、バージョン番号を設定する](https://docs.microsoft.com/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number)と。[パッケージの種類を設定](https://docs.microsoft.com/nuget/create-packages/creating-a-package#setting-a-package-type)します。
+詳細については、「[必須要素リファレンス](https://docs.microsoft.com/nuget/schema/nuspec#required-metadata-elements)」を参照してください。[また、一意のパッケージ識別子を選択し、バージョン番号を設定](https://docs.microsoft.com/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number)し、[パッケージの種類を設定する](https://docs.microsoft.com/nuget/create-packages/creating-a-package#setting-a-package-type)詳細な手順についても説明します。
 
 > [!IMPORTANT]
-> このタブのすべてのフィールドを入力する必要があります。それ以外の場合、エラー メッセージが表示されます。_"プロジェクト メタデータがない NuGet のため、NuGet パッケージは作成されません。プロジェクト オプションのメタデータ セクションでは、NuGet パッケージのメタデータを指定することができます"_
+> このタブのすべてのフィールドを入力する必要があります。それ以外の場合は、エラーメッセージが表示されます。 _"プロジェクトに NuGet メタデータが含まれていないため、NuGet パッケージは作成されません。NuGet パッケージのメタデータは、[プロジェクトオプション] の [メタデータ] セクションで指定できます。_
 
 ## <a name="optional-metadata"></a>省略可能なメタデータ
 
-**詳細** タブには、NuGet パッケージのマニフェスト ファイルに含まれる省略可能なフィールドが含まれています。
+**[詳細]** タブには、NuGet パッケージマニフェストファイルに含めるオプションのフィールドが表示されます。
 
-[![](metadata-images/metadata-detail-sml.png "NuGet パッケージの省略可能なメタデータ ウィンドウ")](metadata-images/metadata-detail.png#lightbox)
+[![](metadata-images/metadata-detail-sml.png "NuGet パッケージのオプションのメタデータウィンドウ")](metadata-images/metadata-detail.png#lightbox)
 
-参照してください、[省略可能な要素のリファレンス](https://docs.microsoft.com/nuget/schema/nuspec#optional-metadata-elements)詳細については、必須および省略可能なフィールド。
+必須フィールドとオプションフィールドの詳細については、[省略可能な要素のリファレンス](https://docs.microsoft.com/nuget/schema/nuspec#optional-metadata-elements)を参照してください。
 
 > [!NOTE]
-> NuGet パッケージが分散される場合[NuGet.org](https://www.nuget.org)できるだけ多くの情報を指定することをお勧めします。
+> NuGet パッケージが[NuGet.org](https://www.nuget.org)に配布されている場合は、できるだけ多くの情報を提供することをお勧めします。
 
 
 ## <a name="related-links"></a>関連リンク

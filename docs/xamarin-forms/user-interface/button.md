@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/19/2018
-ms.openlocfilehash: 8c55fecc8605b8bb7312e658e5edf46008f6b6ce
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: cdf89b55c30b0a4e7ab247c396a870e0bad24886
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68651348"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70287713"
 ---
 # <a name="xamarinforms-button"></a>Xamarin.Forms のボタン
 
@@ -150,7 +150,7 @@ button.Clicked += OnButtonClicked;
 
 このアプローチは、モデル-ビュー-ビューモデル (MVVM) アーキテクチャを実装する場合に特に関連データ バインディング、およびに特に適しています。 これらのトピックが、記事で説明した[データ バインディングの](~/xamarin-forms/app-fundamentals/data-binding/index.md)、[データ バインディングから mvvm まで](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)、および[MVVM](~/xamarin-forms/enterprise-application-patterns/mvvm.md)します。
 
-型のプロパティを定義するビューモデル MVVM アプリケーションで`ICommand`し、XAML に接続されている`Button`データ バインドを持つ要素。 Xamarin.Forms も定義[ `Command` ]((xref:Xamarin.Forms.Command))と[ `Command<T>` ](xref:Xamarin.Forms.Command`1)実装するクラス、`ICommand`インターフェイスし、型のプロパティを定義する際に、ViewModelを支援する`ICommand`.
+型のプロパティを定義するビューモデル MVVM アプリケーションで`ICommand`し、XAML に接続されている`Button`データ バインドを持つ要素。 Xamarin.Forms も定義[ `Command` ](xref:Xamarin.Forms.Command)と[ `Command<T>` ](xref:Xamarin.Forms.Command`1)実装するクラス、`ICommand`インターフェイスし、型のプロパティを定義する際に、ViewModelを支援する`ICommand`.
 
 情報の記事で詳しく説明は、コマンドを実行[**のコマンド インターフェイス**](~/xamarin-forms/app-fundamentals/data-binding/commanding.md)が、**基本的なボタン コマンド**ページで、 [ **ButtonDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)サンプルは、基本的なアプローチを示しています。
 

@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin.iOS の開発者が Apple 
 ms.prod: xamarin
 ms.assetid: A5CE2ECF-8057-49ED-8393-EB0C5977FE4C
 ms.technology: xamarin-ios
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 07/16/2018
-ms.openlocfilehash: 533ab09a73116402e39da65933f26b8f3065357c
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: 8279487fc5effd5c2c019bffa5ceb820d2240400
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58855069"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291433"
 ---
 # <a name="free-provisioning-for-xamarinios-apps"></a>Xamarin.iOS アプリの無料プロビジョニング
 
@@ -27,7 +27,7 @@ ms.locfileid: "58855069"
 > [!IMPORTANT]
 > [自動プロビジョニング](~/ios/get-started/installation/device-provisioning/automatic-provisioning.md)により、Visual Studio for Mac または Visual Studio 2019 で開発者テスト用のデバイスを自動的にセットアップできるようになります。 ただし、自動プロビジョニングは無料プロビジョニングとの互換性がありません。 自動プロビジョニングを使用するには、有料の Apple Developer Program アカウントが必要です。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 無料プロビジョニングを使用して Xamarin.iOS アプリケーションをデバイスに展開するには:
 
@@ -46,15 +46,15 @@ ms.locfileid: "58855069"
 ### <a name="use-xcode-to-create-a-signing-identity-and-provisioning-profile"></a>Xcode を使用して署名 ID とプロビジョニング プロファイルを作成する
 
 1. Apple ID を持っていない場合は、[作成します](https://appleid.apple.com)。
-2. Xcode を開き、**[Xcode]、[Preferences]\(設定\)** の順に移動します。
+2. Xcode を開き、 **[Xcode]、[Preferences]\(設定\)** の順に移動します。
 3. **[Accounts]** \(アカウント\) で **+** ボタンを使用して既存の Apple ID を追加します。 次のスクリーンショットのようになります。
 
     ![Xcode の設定 – アカウント](free-provisioning-images/launchapp1.png "Xcode の設定 – アカウント")
 
 4. Xcode の設定を閉じます。
 5. アプリの展開先に iOS デバイスを接続します。
-6. Xcode で新しいプロジェクトを作成します。 **[File]\(ファイル\)、[New]\(新規\)、[Project]\(プロジェクト\)** の順に移動して、**[Single View App]\(単一ビュー アプリ\)** を選択します。
-7. 新しいプロジェクト ダイアログで、**[Team]\(チーム\)** に今追加した Apple ID を設定します。 ドロップダウン リストでは、**[Your Name (Personal Team)]\(ユーザーの名前 (個人チーム)\)** のように表示されます。
+6. Xcode で新しいプロジェクトを作成します。 **[File]\(ファイル\)、[New]\(新規\)、[Project]\(プロジェクト\)** の順に移動して、 **[Single View App]\(単一ビュー アプリ\)** を選択します。
+7. 新しいプロジェクト ダイアログで、 **[Team]\(チーム\)** に今追加した Apple ID を設定します。 ドロップダウン リストでは、 **[Your Name (Personal Team)]\(ユーザーの名前 (個人チーム)\)** のように表示されます。
 
     ![新しいアプリの作成](free-provisioning-images/launchapp2.png "新しいアプリの作成")
 
@@ -72,7 +72,7 @@ ms.locfileid: "58855069"
     > 異なる場合、無料プロビジョニングを使用して Xamarin.iOS アプリを展開できなくなります。
 
 11. **[Deployment Info]\(展開情報\)** の下で、展開対象の iOS のバージョンが、接続されている iOS デバイスにインストールされているバージョン以下であることを確認します。
-12. **[Signing]\(署名\)** の下で、**[Automatically manage signing]\(署名の自動管理\)** を選択して、ドロップダウン リストから自分のチームを選びます。
+12. **[Signing]\(署名\)** の下で、 **[Automatically manage signing]\(署名の自動管理\)** を選択して、ドロップダウン リストから自分のチームを選びます。
 
     ![署名の自動管理](free-provisioning-images/launchapp6.png "署名の自動管理")
 
@@ -103,14 +103,14 @@ ms.locfileid: "58855069"
     > [!TIP]
     > 署名 ID または正しいプロビジョニング プロファイルが表示されない場合は、必要に応じて Visual Studio for Mac を再起動します。
 
-9. **[OK]** をクリックし、**[プロジェクト オプション]** を保存して閉じます。
+9. **[OK]** をクリックし、 **[プロジェクト オプション]** を保存して閉じます。
 10. iOS デバイスを選択し、アプリを実行します。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. Visual Studio 2019 または Visual Studio 2017 が [Mac ビルド ホストとペアリング](~/ios/get-started/installation/windows/connecting-to-mac/index.md)されていることを確認します。
 2. iOS デバイスを USB 経由または[ワイヤレス](~/ios/deploy-test/wireless-deployment.md)で Mac ビルド ホストに接続します。
-3. Visual Studio 2019 または Visual Studio 2017 の**ソリューション エクスプローラー**で、Xamarin.iOS プロジェクトを右クリックし、**[プロパティ]** を選択します。
+3. Visual Studio 2019 または Visual Studio 2017 の**ソリューション エクスプローラー**で、Xamarin.iOS プロジェクトを右クリックし、 **[プロパティ]** を選択します。
 4. **[iOS バンドル署名]** に移動します。
 5. **[構成]** に **[デバッグ]** を選択します。
 6. **[プラットフォーム]** に **[iPhone]** を選択します。

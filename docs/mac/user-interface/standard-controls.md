@@ -4,21 +4,21 @@ description: この記事では、Xamarin. Mac アプリケーションでのボ
 ms.prod: xamarin
 ms.assetid: d2593883-d255-431f-9781-75f04d8cecea
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: e5868e2cfe9a054e84eeb67432a01c2d98b1c3e6
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 2701b1f8bf343c653da33fd587c9da3302f52335
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648345"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292245"
 ---
 # <a name="standard-controls-in-xamarinmac"></a>Xamarin. Mac の標準コントロール
 
 _この記事では、Xamarin. Mac アプリケーションでのボタン、ラベル、テキストフィールド、チェックボックス、セグメント化されたコントロールなど、標準的な AppKit コントロールの操作について説明します。Interface Builder を使用してインターフェイスに追加し、コードでそれらを操作する方法について説明します。_
 
-Xamarin. Mac C#アプリケーションでと .net を使用する場合、 *Xcode および*で作業している開発者が行うのと同じ appkit コントロールにアクセスできます。 Xcode は直接統合されているため、Xcode の_Interface Builder_を使用して Appkit コントロールを作成および管理できます (また、必要C#に応じて、コード内で直接作成することもできます)。
+Xamarin. Mac C#アプリケーションでと .net を使用する場合、 *Xcode および*で作業している開発者が行う*のと同じ*appkit コントロールにアクセスできます。 Xcode は直接統合されているため、Xcode の_Interface Builder_を使用して Appkit コントロールを作成および管理できます (また、必要C#に応じて、コード内で直接作成することもできます)。
 
 AppKit コントロールは、Xamarin. Mac アプリケーションのユーザーインターフェイスを作成するために使用される UI 要素です。 これらは、ボタン、ラベル、テキストフィールド、チェックボックス、セグメント化されたコントロールなどの要素で構成され、ユーザーが操作すると、インスタントアクションや表示される結果が発生します。
 

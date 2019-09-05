@@ -4,15 +4,15 @@ description: この記事では、Apple が tvOS 10 に追加した軽量の UI 
 ms.prod: xamarin
 ms.assetid: 8BC37683-AD9E-45CD-BE40-96965618AD1D
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: f4004b4b9cdc8f8c6555be82cf1da5b92a83d45c
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 4df67221c367386cddd485fcd1853523d77158e0
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70120056"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290679"
 ---
 # <a name="tvos-user-interface-styles-in-xamarin"></a>Xamarin の tvOS ユーザーインターフェイススタイル
 
@@ -26,7 +26,7 @@ tvOS 10 では、ユーザーの設定に基づいて、すべての組み込み
 
 前述のように、tvOS 10 では、ユーザーの設定に基づいて、すべての組み込み UIKit コントロールが自動的にに適応する、ダークおよびライトの両方のユーザーインターフェイステーマがサポートされるようになりました。
 
-このテーマを切り替えるには、**設定** > **全般** >  全般 に移動し、**明るい** と **ダーク** を切り替えます。
+このテーマを切り替えるには、[**設定** > ] **[全般** > ] [全般] に**移動し、** **[明るい]** と **[ダーク]** を切り替えます。
 
 [![](user-interface-styles-images/theme01.png "設定アプリ")](user-interface-styles-images/theme01.png#lightbox)
 

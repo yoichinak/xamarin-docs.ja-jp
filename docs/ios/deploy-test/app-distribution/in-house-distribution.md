@@ -4,15 +4,15 @@ description: このドキュメントでは、Apple Enterprise Developer Program
 ms.prod: xamarin
 ms.assetid: 9466E51E-303E-466E-85D7-D0525E16BB37
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: a2dc974fba7beb70f1caecf8198181193d32e4c2
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: f81e5a24957d4af1cd2ce27b39d1f398797cce73
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865528"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70289885"
 ---
 # <a name="in-house-distribution-for-xamarinios-apps"></a>Xamarin.iOS アプリ用の社内配布
 
@@ -22,7 +22,7 @@ Xamarin.iOS アプリの開発が完了したら、ソフトウェア開発ラ�
 
 - アプリケーションをレビューのために Apple に提出する必要がありません。
 - アプリケーションを展開先となるデバイスの数に制限がありません。
-    - Apple では、社内アプリケーションは社内でのみ使用することと非常に明確にしていることに留意してください。
+  - Apple では、社内アプリケーションは社内でのみ使用することと非常に明確にしていることに留意してください。
 
 また、Enterprise Program での次の点にも留意してください。
 

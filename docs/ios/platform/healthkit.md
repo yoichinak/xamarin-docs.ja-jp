@@ -4,15 +4,15 @@ description: このドキュメントでは、HealthKit について説明しま
 ms.prod: xamarin
 ms.assetid: E3927A21-507C-43BA-A2AD-957716BA9B52
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 6446bd7ef196fadae25c0e4dc18542d269424d6d
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 7e8230af1e9d4eef43b4142834afc0e90973c768
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70200275"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70288669"
 ---
 # <a name="healthkit-in-xamarinios"></a>Xamarin. iOS の HealthKit
 

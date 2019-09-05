@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin. iOS でのアプリ内購
 ms.prod: xamarin
 ms.assetid: 11FB7F02-41B3-2B34-5A4F-69F12897FE10
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 0c24c0f3a57847a7ecf1a1410a1745419517e0c6
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 9347a801c939fd715101253c6953eeec840af47d
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70198862"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70288586"
 ---
 # <a name="in-app-purchase-basics-and-configuration-in-xamarinios"></a>Xamarin でのアプリ内購入の基本と構成
 
@@ -142,7 +142,7 @@ com.xamarin.storekit.testing.greyscale
 
 アプリ内購入製品には、次の5種類が用意されています。
 
-1. 使用可能–プレーヤーが使用できるゲーム内通貨など、"使用済み" です。 ユーザーがバックアップ/復元を実行した場合、またはその他の方法でデバイスを更新した場合は、使用できるトランザクションも復元されません (これにより、プレーヤーは実質的に同じ特典を再び有効にすることになります)。 アプリケーションコードでは、トランザクションが完了するとすぐに ' 使用可能な項目 ' を提供する必要があります。
+1. 使用**可能–プレーヤー**が使用できるゲーム内通貨など、"使用済み" です。 ユーザーがバックアップ/復元を実行した場合、またはその他の方法でデバイスを更新した場合は、使用できるトランザクションも復元されません (これにより、プレーヤーは実質的に同じ特典を再び有効にすることになります)。 アプリケーションコードでは、トランザクションが完了するとすぐに ' 使用可能な項目 ' を提供する必要があります。
 1. **非**利用-デジタル雑誌の問題やゲームレベルなど、ユーザーが購入した製品を所有している製品。
 1. **自動更新サブスクリプション**–実際の雑誌サブスクリプションと同様に、サブスクリプション期間の終了時に、Apple は顧客に自動的に料金を請求し、無期限に、または顧客が明示的にキャンセルするまでサブスクリプション期間を延長します。 これは、Newsstand アプリのお支払い方法として推奨されています (実際には、アプリはこの支払い方法をサポートして Newsstand 配布を承認する必要があります)。
 1. **無料サブスクリプション**: Newsstand 対応アプリでのみ提供でき、顧客はすべてのデバイスでサブスクリプションコンテンツにアクセスできます。 無料サブスクリプションは期限切れになりません。

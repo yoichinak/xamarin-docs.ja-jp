@@ -5,14 +5,14 @@ ms.prod: xamarin
 ms.assetid: 52A35B24-C23B-8461-A8FF-5928A2128FB0
 ms.technology: xamarin-ios
 ms.date: 11/25/2015
-author: lobrien
-ms.author: laobri
-ms.openlocfilehash: cc7d966e7dd0371e967775d112789af9f0ad7c59
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+author: conceptdev
+ms.author: crdun
+ms.openlocfilehash: cfa82ccec8149acfc7ddd69bff2f68e0e11894d1
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528518"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70282429"
 ---
 # <a name="introduction-to-monotouchdialog-for-xamarinios"></a>Xamarin の Monotouch.dialog の概要
 
@@ -86,7 +86,7 @@ MT.D は、次の4つの部分を使用して画面を構築します。
 
 ### <a name="dialogviewcontroller"></a>DialogViewController
 
-DVCの場合は、を継承`UITableViewController`します。この場合、テーブルを含む画面を表します。 DVCs は、通常の UITableViewController と同様にナビゲーションコントローラーにプッシュできます。
+DVC の場合は、 *を継承* `UITableViewController`します。この場合、テーブルを含む画面を表します。 DVCs は、通常の UITableViewController と同様にナビゲーションコントローラーにプッシュできます。
 
 ### <a name="rootelement"></a>RootElement
 

@@ -1,42 +1,42 @@
 ---
 title: IOS 12 での通知
-description: 'このドキュメントのリンクを iOS 12 で導入されたさまざまな通知関連の機能を使用する方法を説明するガイド: 一時的な通知、グループ化の通知、通知の管理、対話型通知、動的の通知動作設定ボタンおよび重大なアラート。'
+description: このドキュメントでは、iOS 12 で導入された、一時的な通知、グループ化された通知、通知管理、対話型通知、動的通知アクションボタンなど、さまざまな通知に関連する機能の使用方法について説明しているガイドへのリンクを示します。および重大なアラート。
 ms.prod: xamarin
 ms.assetid: 137C719D-6D97-4D5B-9877-F6F35BF85FF0
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 09/04/2018
-ms.openlocfilehash: 8ee42c04c5d79bfd39c34550b5f77427af8f835d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 75a3505294b612789a2e2fc2226e6d6f811f80e9
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61035124"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291254"
 ---
 # <a name="notifications-in-ios-12"></a>IOS 12 での通知
 
 ## <a name="critical-alertscritical-alertsmd"></a>[重要なアラート](critical-alerts.md)
 
-iOS 12 では、重大なアラートを送信します。 重大なアラートは、応答不可が有効にするかどうかに関係なくサウンドを再生または着信音スイッチはオフです。
+iOS 12 を使用すると、重大なアラートを送信できます。 重大なアラートは、"応答不可" が有効になっているかどうか、または着信音スイッチがオフになっているかどうかに関係なく、音を鳴らします。
 
 ## <a name="dynamic-notification-action-buttonsdynamic-actionsmd"></a>[動的な通知アクション ボタン](dynamic-actions.md)
 
-12、iOS で通知は実行時の動作設定ボタンを変更できますようになりました。
-これにより、通知とユーザーの対話のコンテンツに関連性の高いアクションを表示します。
+IOS 12 では、通知は実行時にアクションボタンを変更できるようになりました。
+これにより、通知の内容に関連するアクションと、ユーザーとの対話操作を表示できるようになります。
 
 ## <a name="grouped-notificationsgroupedmd"></a>[グループ化された通知](grouped.md)
 
-ユーザーを受信した多くの通知を管理するために、12 iOS はアプリによって、またはスレッドによって通知をグループことができます。
+受信した多くの通知をユーザーが管理できるようにするため、iOS 12 では、アプリまたはスレッドごとに通知をグループ化することができます。
 
 ## <a name="interactive-notificationsinteractivemd"></a>[対話型通知](interactive.md)
 
-IOS 12、通知のカスタム ユーザー インターフェイスは、対話型コントロールを含めることができます。
+IOS 12 では、通知のカスタムユーザーインターフェイスに対話型コントロールを含めることができます。
 
 ## <a name="notification-managementmanagementmd"></a>[通知の管理](management.md)
 
-iOS 12 できるディープ リンク アプリの通知の管理画面で、有効にまたは特定の種類の通知を無効にするユーザーが簡単にします。
+iOS 12 は、アプリの通知管理画面に深くリンクできるため、ユーザーが特定の種類の通知を有効または無効にするのが容易になります。
 
 ## <a name="provisional-notificationsprovisionalmd"></a>[一時的な通知](provisional.md)
 
-一時的な通知は、オプトインするユーザーを必要とせずにサイレント通知を表示するアプリを許可します。 通知の停止通知しないサウンドを再生するようにし通知センターでのみ表示されます。 アプリ ユーザーが、通知をプレビューする方法を提供することを許可または拒否するかどうかを決定する前に送信します。
+仮通知を使用すると、ユーザーによるオプトインを必要とせずに、アプリで通知を表示することができます。 Quiet 通知はサウンドを再生せず、通知センターにのみ表示されます。 ユーザーは、アプリから送信された通知をプレビューしてから、許可するかどうかを決定する方法を提供します。
