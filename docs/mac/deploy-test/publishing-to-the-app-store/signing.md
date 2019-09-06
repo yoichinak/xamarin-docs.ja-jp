@@ -4,15 +4,15 @@ description: このドキュメントでは、Mac App Store の外で配布で�
 ms.prod: xamarin
 ms.assetid: cf7b733b-e08f-4f56-a233-264b29ee4c97
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 9294080f361d280bcb61ea162320da57f44a2a95
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 9272c522383251a54aff5093c20e4b6b6131e2b2
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117669"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70293047"
 ---
 # <a name="signing-xamarinmac-apps-with-a-developer-id"></a>開発者 ID で Xamarin.Mac アプリに署名する
 
@@ -22,14 +22,14 @@ Apple の Web サイトで、「[Developer ID and Gatekeeper](https://developer.
 
 ## <a name="code-signing-options"></a>コード署名のオプション
 
-アプリを、(Mac App Store を介してではなく) ユーザーに直接配布するよう構築する場合、**[Signing Settings]\(署名の設定\)** を設定して **[Developer ID]** を使用します。 **[Release]\(リリース\)** 構成は必ず編集します。
+アプリを、(Mac App Store を介してではなく) ユーザーに直接配布するよう構築する場合、 **[Signing Settings]\(署名の設定\)** を設定して **[Developer ID]** を使用します。 **[Release]\(リリース\)** 構成は必ず編集します。
 
  [![](signing-images/config02.png "Mac の署名のオプション")](signing-images/config02.png#lightbox)
 
 
 ## <a name="build"></a>ビルド
 
-ビルド前に、正しい構成が選択されていることを確認し、**[Mac Build]\(Mac ビルド\)** 設定にインストール パッケージを作成するよう選択します。
+ビルド前に、正しい構成が選択されていることを確認し、 **[Mac Build]\(Mac ビルド\)** 設定にインストール パッケージを作成するよう選択します。
 
 [![](signing-images/config03.png "ビルド オプション")](signing-images/config03.png#lightbox)
 
@@ -39,7 +39,7 @@ Apple の Web サイトで、「[Developer ID and Gatekeeper](https://developer.
 
  [![](signing-images/image58.png "キーチェーン アクセスの許可")](signing-images/image58.png#lightbox)
 
-アプリケーションがビルドされると、開発者はプロジェクトを右クリックし、**[Open Containing Folder]\(含まれているフォルダーを開く\)** を選択して、パッケージ ファイルを (`bin/Release` ディレクトリから) 検索することができます。 このパッケージ ファイルには、アプリケーションのインストーラーが含まれているので、任意の macOS ユーザーにインストール用に配布することができます。
+アプリケーションがビルドされると、開発者はプロジェクトを右クリックし、 **[Open Containing Folder]\(含まれているフォルダーを開く\)** を選択して、パッケージ ファイルを (`bin/Release` ディレクトリから) 検索することができます。 このパッケージ ファイルには、アプリケーションのインストーラーが含まれているので、任意の macOS ユーザーにインストール用に配布することができます。
 
  [![](signing-images/image59.png "Finder でのアプリ パッケージの選択")](signing-images/image59.png#lightbox)
 

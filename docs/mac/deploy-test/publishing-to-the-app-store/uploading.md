@@ -4,15 +4,15 @@ description: このドキュメントでは、iTunes Connect を使用し、Mac 
 ms.prod: xamarin
 ms.assetid: 30cd0e47-1b2e-47ef-93f6-4bed20b15c03
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: fa5c8a72a469f1a798cbdcfc63c07860363f6608
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: b0bb58fee1c9eaeee391b3a838b3fa2921e97a57
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109849"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70284265"
 ---
 # <a name="upload-to-mac-app-store"></a>Mac App Store へのアップロード
 
@@ -75,11 +75,11 @@ _このガイドでは、Mac App Store に Xamarin.Mac アプリを発行する�
 
     [![](uploading-images/image77.png "Application Loader のインターフェイス")](uploading-images/image77.png#lightbox)
 
-10. **[Ready to Upload Binary]\(バイナリのアップロードの準備ができました\)** の状態のアプリケーション一覧から選択し、**[Next]\(次へ\)** をクリックします。 
+10. **[Ready to Upload Binary]\(バイナリのアップロードの準備ができました\)** の状態のアプリケーション一覧から選択し、 **[Next]\(次へ\)** をクリックします。 
 
     [![](uploading-images/image78.png "読み込むアプリの選択")](uploading-images/image78.png#lightbox)
 
-11. アプリケーションのメタデータを確認し、**[Choose...]\(選択\)** をクリックして、パッケージ ファイルを検索します。 
+11. アプリケーションのメタデータを確認し、 **[Choose...]\(選択\)** をクリックして、パッケージ ファイルを検索します。 
 
     [![](uploading-images/image79.png "アプリのメタデータの確認")](uploading-images/image79.png#lightbox)
 

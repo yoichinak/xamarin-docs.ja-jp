@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin のスライド、スイ�
 ms.prod: xamarin
 ms.assetid: 85BF0EC8-E581-49CD-B9E7-98BE4C5A0F6B
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: be4ae87600e533cdfdf39c204a8ef6af4682ec0c
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: bcb860a88c67b3b2cde7336d53d717d4d9201fd4
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655771"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70288486"
 ---
 # <a name="sliders-switches-and-segmented-controls-in-xamarinios"></a>Xamarin のスライダー、スイッチ、およびセグメント化されたコントロール
 

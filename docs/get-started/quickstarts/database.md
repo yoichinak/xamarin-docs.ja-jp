@@ -27,8 +27,8 @@ ms.locfileid: "68653505"
 
 クイックスタートでは、ローカルの SQLite.NET データベースにデータを格納する方法について説明します。 最終的なアプリケーションは、次のとおりです。
 
-[![](database-images/screenshots1-sml.png "メモページ")](database-images/screenshots1.png#lightbox "メモページ")
-[![](database-images/screenshots2-sml.png "メモ入力ページ")](database-images/screenshots2.png#lightbox "メモ入力ページ")
+[![](database-images/screenshots1-sml.png "メモページ")](database-images/screenshots1.png#lightbox "メモページ\"")
+)[![](database-images/screenshots2-sml.png "メモ入力ページ")](database-images/screenshots2.png#lightbox "メモ入力ページ")
 
 ### <a name="prerequisites"></a>必須コンポーネント
 

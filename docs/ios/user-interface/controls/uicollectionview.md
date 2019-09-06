@@ -4,15 +4,15 @@ description: コレクションビューでは、任意のレイアウトを使�
 ms.prod: xamarin
 ms.assetid: F4B85F25-0CB5-4FEA-A3B5-D22FCDC81AE4
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: 8557a3efca1336f70c0feef2ac4dc9c462eedbf5
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: ae909827df5cc8f4ed5192d88ad067a5e69ce5d4
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69889888"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70282855"
 ---
 # <a name="collection-views-in-xamarinios"></a>Xamarin. iOS のコレクションビュー
 
@@ -184,7 +184,7 @@ public override UICollectionViewCell GetCell (UICollectionView collectionView, F
 
 へ`DequeReusableCell`の呼び出しでは、セルが再利用キューから解除されるか、またはキューでセルが使用できない場合に、の`CollectionView.RegisterClassForCell`呼び出しに登録された型に基づいて作成されます。
 
-この場合、 `AnimalCell`クラスを登録することによって、iOS は`AnimalCell`新しいを作成し、セルを逆キューにする呼び出しが行われたときにそれを返します。その後、animal クラスに含まれているイメージを使用して構成され、次のように表示されるために返されます。`UICollectionView`.
+この場合、 `AnimalCell`クラスを登録することによって、iOS は`AnimalCell`新しいを作成し、セルを逆キューにする呼び出しが行われたときにそれを返します。その後、animal クラスに含まれているイメージを使用して構成され、次のように表示されるために返されます`UICollectionView`。
 
  <a name="Delegate" />
 

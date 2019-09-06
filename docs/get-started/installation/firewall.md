@@ -3,15 +3,15 @@ title: Xamarin ファイアウォールの構成手順
 description: このドキュメントでは、企業環境で Xamarin が動作できるように、ファイアウォールで許可する必要があるホストの一覧を示します。
 ms.prod: xamarin
 ms.assetid: 658f699b-8cca-48f7-ae54-fa956384b6d6
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 07/17/2019
-ms.openlocfilehash: b2509bb99a5caf5b508d34aafc0f0c4862a7e563
-ms.sourcegitcommit: 9a2a21974d35353c3765eb683ef2fd7161c1d94a
+ms.openlocfilehash: 2b52dfd55194ec076f28f8c33e758a39d14f5943
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68329957"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291332"
 ---
 # <a name="xamarin-firewall-configuration-instructions"></a>Xamarin ファイアウォールの構成手順
 

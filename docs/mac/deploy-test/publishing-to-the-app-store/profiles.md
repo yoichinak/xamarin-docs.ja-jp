@@ -4,15 +4,15 @@ description: このガイドでは、Xamarin.Mac アプリを発行するのに�
 ms.prod: xamarin
 ms.assetid: bdff6c32-f7e3-4a97-a093-dbda48be8227
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 04/12/2017
-ms.openlocfilehash: 2b5c6ed77d7bf1c60b9424a138786dafb7a86706
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: c0a4766abf8ded591bf348f2c2a7ba2283cdde00
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108419"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290242"
 ---
 # <a name="provisioning-profiles-for-xamarinmac-apps"></a>Xamarin.Mac アプリのプロビジョニング プロファイル
 
@@ -31,33 +31,33 @@ ms.locfileid: "50108419"
 
 次の手順で行います。
 
-1. 作成するプロビジョニング プロファイルの種類を選択し、**[続行]** ボタンをクリックします。 
+1. 作成するプロビジョニング プロファイルの種類を選択し、 **[続行]** ボタンをクリックします。 
 
-     [![](profiles-images/certif14.png "プロファイルの種類の選択")](profiles-images/certif14.png#lightbox)
-2. プロファイルを作成する対象のアプリケーションの ID を選択し、**[続行]** ボタンをクリックします。 
+    [![](profiles-images/certif14.png "プロファイルの種類の選択")](profiles-images/certif14.png#lightbox)
+2. プロファイルを作成する対象のアプリケーションの ID を選択し、 **[続行]** ボタンをクリックします。 
 
-     [![](profiles-images/certif15.png "アプリ ID の選択")](profiles-images/certif15.png#lightbox)
-3. プロファイルに署名するために使用する開発者 ID を選択し、**[続行]** をクリックします。 
+    [![](profiles-images/certif15.png "アプリ ID の選択")](profiles-images/certif15.png#lightbox)
+3. プロファイルに署名するために使用する開発者 ID を選択し、 **[続行]** をクリックします。 
 
-     [![](profiles-images/certif16.png "開発者 ID の選択")](profiles-images/certif16.png#lightbox)
-4. このプロファイルを使用できるコンピューターを選択し、**[続行]** をクリックします。 
+    [![](profiles-images/certif16.png "開発者 ID の選択")](profiles-images/certif16.png#lightbox)
+4. このプロファイルを使用できるコンピューターを選択し、 **[続行]** をクリックします。 
 
-     [![](profiles-images/certif17.png "許可するコンピューターの選択")](profiles-images/certif17.png#lightbox)
-5. 次に、**プロファイル名**を入力し、**[生成]** ボタンをクリックします。 
+    [![](profiles-images/certif17.png "許可するコンピューターの選択")](profiles-images/certif17.png#lightbox)
+5. 次に、**プロファイル名**を入力し、 **[生成]** ボタンをクリックします。 
 
-     [![](profiles-images/certif18.png "プロファイルの生成")](profiles-images/certif18.png#lightbox)
+    [![](profiles-images/certif18.png "プロファイルの生成")](profiles-images/certif18.png#lightbox)
 6. **[ダウンロード]** ボタンをクリックし、新しいプロファイルをダウンロードします。 
 
-     [![](profiles-images/certif19.png "プロファイルのダウンロード")](profiles-images/certif19.png#lightbox)
+    [![](profiles-images/certif19.png "プロファイルのダウンロード")](profiles-images/certif19.png#lightbox)
 7. Mac の**システム環境設定**アプリケーションの [Profiles Preferences]\(プロファイルの設定\) ウィンドウに開発プロビジョニング プロファイルがインストールされます。 
 
-     [![](profiles-images/certif20.png "プロファイルのインストール")](profiles-images/certif20.png#lightbox)
+    [![](profiles-images/certif20.png "プロファイルのインストール")](profiles-images/certif20.png#lightbox)
 8. [プロファイルの設定] ウィンドウにインストールされているすべてのプロファイルが表示されます。 
 
-     [![](profiles-images/image47.png "すべてのインストールされているプロファイルの表示")](profiles-images/image47.png#lightbox)
-9. もう一度ダウンロードする必要がある場合は、プロファイルは、**[Developer Certificate Utility]** \(開発者の証明書ユーティリティ\) にも表示されます。 
+    [![](profiles-images/image47.png "すべてのインストールされているプロファイルの表示")](profiles-images/image47.png#lightbox)
+9. もう一度ダウンロードする必要がある場合は、プロファイルは、 **[Developer Certificate Utility]** \(開発者の証明書ユーティリティ\) にも表示されます。 
 
-     [![](profiles-images/image48.png "Developer Certificate Utility")](profiles-images/image48.png#lightbox)
+    [![](profiles-images/image48.png "Developer Certificate Utility")](profiles-images/image48.png#lightbox)
 
 新しいアプリごとにまたは新しいコンピューターをテストに追加するたびに新しい開発プロビジョニング プロファイルを作成する必要があります。
 
@@ -69,16 +69,16 @@ Mac App Store に送信するパッケージをビルドするには、実稼働
 
 次の手順で行います。
 
-1. 作成するプロファイルの種類を選択し、**[続行]** ボタンをクリックします。 
+1. 作成するプロファイルの種類を選択し、 **[続行]** ボタンをクリックします。 
 
     [![](profiles-images/certif21.png "プロファイルの種類の選択")](profiles-images/certif21.png#lightbox)
-2. プロファイルを作成する対象のアプリの ID を選択し、**[続行]** ボタンをクリックします。 
+2. プロファイルを作成する対象のアプリの ID を選択し、 **[続行]** ボタンをクリックします。 
 
     [![](profiles-images/certif15.png "アプリ ID の選択")](profiles-images/certif15.png#lightbox)
-3. プロファイルに署名するための会社 ID を選択し、**[続行]** ボタンをクリックします。 
+3. プロファイルに署名するための会社 ID を選択し、 **[続行]** ボタンをクリックします。 
 
     [![](profiles-images/certif23.png "会社 ID の選択")](profiles-images/certif23.png#lightbox)
-4. **プロファイル名**を入力し、**[生成]** ボタンをクリックします。 
+4. **プロファイル名**を入力し、 **[生成]** ボタンをクリックします。 
 
     [![](profiles-images/certif24.png "プロファイルの生成")](profiles-images/certif24.png#lightbox)
 5. **[ダウンロード]** をクリックして、プロビジョニング プロファイル ファイル (拡張子 `.provisionprofile`) を取得します。 

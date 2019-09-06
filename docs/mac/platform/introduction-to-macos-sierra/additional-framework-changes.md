@@ -4,15 +4,15 @@ description: このドキュメントでは、macOS Sierra で導入された既
 ms.prod: xamarin
 ms.assetid: CA701269-D11E-4DE3-89C1-58EF8993A482
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: b382b7dd66722df6acb4bb7c90e401e5895c0947
-ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
+ms.openlocfilehash: 1de3a0a67fb6abbd4423435b38d7712f583ab74d
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69620905"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70284437"
 ---
 # <a name="additional-macos-sierra-framework-changes"></a>追加の macOS Sierra フレームワークの変更
 
@@ -91,7 +91,7 @@ MacOS Sierra の Foundation Framework には、次の機能強化が加えられ
 - ISO 8601 形式の日付を解析および生成するには、 [NSISO8601DateFormatter](https://developer.apple.com/reference/foundation/nsiso8601dateformatter)クラスを使用します。
 - 新しい[Nsdateinterval](https://developer.apple.com/reference/foundation/nsdateinterval)クラスを使用して、間隔の比較と間隔の交差部分のテストを行うために、期間などの日付と時間の間隔を計算します。
 - [NSPersonNameComponentsFormatter](https://developer.apple.com/reference/foundation/nspersonnamecomponentsformatter)クラスを使用して、ユーザー名の要素を文字列から解析します。
-- 新しい Nq&a [Lsessiontaskmetrics](https://developer.apple.com/reference/foundation/nsurlsessiontaskmetrics)クラスを使用して、URL ネットワークセッションのメトリックを取得します。
+- 新しい[Nq&a Lsessiontaskmetrics](https://developer.apple.com/reference/foundation/nsurlsessiontaskmetrics)クラスを使用して、URL ネットワークセッションのメトリックを取得します。
 
 詳細については、「 [OS X v 10.12 と iOS 10 の Apple の基礎リリースノート](https://developer.apple.com/library/prerelease/content/releasenotes/Miscellaneous/RN-Foundation-OSX10.12/index.html)」を参照してください。
 
