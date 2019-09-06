@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin.iOS アプリ用に一時�
 ms.prod: xamarin
 ms.assetid: 9801644A-89BB-4491-AD28-7F3B97D2CD62
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 06/05/2017
-ms.openlocfilehash: 52ae48a0cd911cd90d985b830876ec003d073d2a
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 3d85fa063580e9619ef433e98f6e6a0e4121ee37
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119304"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70288997"
 ---
 # <a name="execution-environment-for-xamarinios-apps"></a>Xamarin.iOS アプリの実行環境
 
@@ -20,7 +20,7 @@ ms.locfileid: "50119304"
 
 ## <a name="temporary-environment-variables"></a>一時的な環境変数
 
-一時的な環境変数はプロジェクトの **[プロパティ]** から **[オプション]** ウィンドウを開き、**[実行] の [全般]** セクションで設定します。 これらの環境変数は、アプリケーションを Visual Studio for Mac で起動したときにのみ有効になります。アプリをタップして手動で起動した場合、これらの環境変数は設定されません。
+一時的な環境変数はプロジェクトの **[プロパティ]** から **[オプション]** ウィンドウを開き、 **[実行] の [全般]** セクションで設定します。 これらの環境変数は、アプリケーションを Visual Studio for Mac で起動したときにのみ有効になります。アプリをタップして手動で起動した場合、これらの環境変数は設定されません。
 
 ## <a name="permanent-environment-variables"></a>永続的な環境変数
 
