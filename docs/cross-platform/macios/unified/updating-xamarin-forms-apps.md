@@ -74,15 +74,15 @@ IOS アプリが Unified API に更新されたら、ソリューションの残
 
 ### <a name="21-update-nuget-in-all-projects"></a>2.1 すべてのプロジェクトの NuGet を更新する
 
-ソリューション内のすべてのプロジェクトについて、NuGet パッケージマネージャーを使用して1.3.1 をプレリリースに更新します。PCL (存在する場合)、iOS、Android、および Windows Phone。 バージョン1.3 に更新するには、Xamarin. Forms NuGet パッケージを**削除してから再度追加**することをお勧めします。
+ソリューション内のすべてのプロジェクトについて、NuGet パッケージマネージャーを使用して1.3.1 をプレリリースに更新します。PCL (存在する場合)、iOS、Android、および Windows Phone。 バージョン1.3 に更新するには、Xamarin.Forms NuGet パッケージを**削除してから再度追加**することをお勧めします。
 
 > [!NOTE]
-> 現在、Xamarin. Forms バージョン1.3.1 は*プレリリース*版です。 つまり、最新のプレリリースバージョンを確認するには、NuGet の**プレリリース**オプションを選択する必要があります (Visual Studio for Mac または Visual Studio のドロップダウンリストから)。
+> 現在、Xamarin.Forms バージョン1.3.1 は*プレリリース*版です。 つまり、最新のプレリリースバージョンを確認するには、NuGet の**プレリリース**オプションを選択する必要があります (Visual Studio for Mac または Visual Studio のドロップダウンリストから)。
 
 > [!IMPORTANT]
-> Visual Studio を使用している場合は、最新バージョンの NuGet パッケージマネージャーがインストールされていることを確認してください。 以前のバージョンの Visual Studio では、統合されたバージョンの Xamarin. Forms 1.3.1 が正しくインストールされません。 [**ツール] > [拡張機能と更新プログラム**] にアクセスし、 **[インストール済み]** の一覧をクリックして、 **Visual Studio の NuGet パッケージマネージャー**がバージョン2.8.5 以降であることを確認します。 古いバージョンの場合は、 **[更新プログラム]** の一覧をクリックして最新バージョンをダウンロードします。
+> Visual Studio を使用している場合は、最新バージョンの NuGet パッケージマネージャーがインストールされていることを確認してください。 以前のバージョンの Visual Studio では、統合されたバージョンの Xamarin.Forms 1.3.1 が正しくインストールされません。 [**ツール] > [拡張機能と更新プログラム**] にアクセスし、 **[インストール済み]** の一覧をクリックして、 **Visual Studio の NuGet パッケージマネージャー**がバージョン2.8.5 以降であることを確認します。 古いバージョンの場合は、 **[更新プログラム]** の一覧をクリックして最新バージョンをダウンロードします。
 
-NuGet パッケージを Xamarin. Forms 1.3.1 に更新したら、各プロジェクトで次の変更を行って、新しい`Xamarin.Forms.Application`クラスにアップグレードします。
+NuGet パッケージを Xamarin.Forms 1.3.1 に更新したら、各プロジェクトで次の変更を行って、新しい`Xamarin.Forms.Application`クラスにアップグレードします。
 
 ### <a name="22-portable-class-library-or-shared-project"></a>2.2 ポータブルクラスライブラリ (または共有プロジェクト)
 
@@ -176,7 +176,7 @@ public class MainActivity :
 **MainPage.xaml.cs**ファイルを次のように変更します。
 
 - クラスは、( `FormsApplicationPage`以前ので`PhoneApplicationPage`はなく) から継承されます。
-- `LoadApplication`は、Xamarin. Forms `App`クラスの新しいインスタンスを使用して呼び出されます。 独自`App`のクラスが既に定義されている Windows Phone ため、この参照を完全修飾する必要がある場合があります。
+- `LoadApplication`は、Xamarin.Forms `App`クラスの新しいインスタンスを使用して呼び出されます。 独自`App`のクラスが既に定義されている Windows Phone ため、この参照を完全修飾する必要がある場合があります。
 
 ```csharp
 public partial class MainPage : global::Xamarin.Forms.Platform.WinPhone.FormsApplicationPage // superclass new in 1.3
