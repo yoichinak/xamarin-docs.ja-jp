@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 0b11f5c290f07debb61d511bdd27ad1a7ad0b0b0
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 54f036b2a845b7d2f6603b6b9f54472ad2af8bcd
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526086"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70754718"
 ---
 # <a name="touch-and-gestures-in-xamarinandroid"></a>Xamarin. Android でのタッチとジェスチャ
 
@@ -39,8 +39,6 @@ Android と iOS のどちらで作業している場合でも、タッチ認識�
 ## <a name="summary"></a>Summary
 
 このガイドでは、Android でのタッチについて説明します。 どちらのオペレーティングシステムでも、タッチを有効にし、タッチイベントに応答する方法を学習しました。 次に、いくつかの一般的なシナリオを処理するために Android と iOS の両方で提供されるジェスチャとジェスチャ認識機能について学習しました。 カスタムジェスチャを作成し、アプリケーションに実装する方法について説明します。 チュートリアルでは、動作している各オペレーティングシステムの概念と Api について説明しました。また、個々の指を追跡する方法についても説明しました。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

@@ -1,18 +1,18 @@
 ---
 title: Xamarin.Forms ListView
-description: このガイドでは、美しい、対話型のリストでデータを表示するために使用する Xamarin.Forms ListView が導入されています。
+description: このガイドでは、対話型リストにデータを表示するために使用できる、Xamarin. Forms ListView を紹介します。
 ms.prod: xamarin
 ms.assetid: FEFDF7E0-720F-4BD1-863F-4477226AA695
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/14/2015
-ms.openlocfilehash: f05703babd3f6e67713dfccdb1a1fc6a4ea6966e
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.date: 09/04/2019
+ms.openlocfilehash: 5d09d76a44a6322285a143230173d244848ba4a6
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70228024"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770226"
 ---
 # <a name="xamarinforms-listview"></a>Xamarin.Forms ListView
 
@@ -23,42 +23,58 @@ ms.locfileid: "70228024"
 > [!IMPORTANT]
 > [`CollectionView`](xref:Xamarin.Forms.CollectionView) は、さまざまなレイアウト仕様を使用してデータを一覧表示するためのビューです。 これは [ `ListView`](xref:Xamarin.Forms.ListView) の代わりとして、より柔軟でより高パフォーマンスを提供することを目的にしています。 詳細は、「[Xamarin.Forms CollectionView](~/xamarin-forms/user-interface/collectionview/index.md)」を参照してください。
 
-## <a name="use-cases"></a>ユース ケース
+## <a name="use-cases"></a>使用事例
 
-ListView は、ニーズに応じて適切なコントロールを確認します。 ListView は、データのスクロール可能なリストを表示しているどのような状況で使用できます。 Listview は、コンテキスト アクションとデータ バインディングをサポートします。
+`ListView`コントロールは、スクロール可能なデータリストが表示されている状況で使用できます。 クラス`ListView`は、コンテキストアクションとデータバインディングをサポートしています。
 
-ListView と混同しない[テーブル](~/xamarin-forms/user-interface/tableview.md)します。 テーブル コントロールは、オプションまたはデータの非バインド リストがあるたびより優れたオプションです。 たとえば、オプションのほとんどの場合に定義済みセットを持つ、iOS 設定アプリは、ListView よりテーブルを使用する適しています。
+コントロールと混同しないように[してください。`TableView`](~/xamarin-forms/user-interface/tableview.md) `ListView` オプション`TableView`やデータのバインドされていないリストがある場合は常に、コントロールの方が適しています。これは、XAML で定義済みのオプションを指定できるためです。 たとえば、iOS 設定アプリは、ほとんどの場合、事前に定義されているオプションのセットを使用`TableView` `ListView`することをお勧めします。
 
-同種データも、ListView は、最適なが適しています&ndash;同じ型のすべてのデータは必ず、します。 これは、セルの 1 つだけの種類を一覧内の行ごとに使用されるためです。 ビューを混在させる必要がある場合より適切なオプションをされるため、TableViews は複数のセルの種類をサポートできます。
+クラス`ListView`は、XAML でのリスト項目の`ItemsSource`定義`ItemTemplate`をサポートしていません。リスト内の項目を定義するには、プロパティまたはデータバインディングをで使用する必要があります。
+
+は、1つのデータ型で構成されるコレクションに最適です。`ListView` この要件は、リストの各行に使用できるセルの種類が1つだけであるためです。 コントロール`TableView`は複数のセルの種類をサポートするため、複数のデータ型を表示する必要がある場合は、より適切なオプションになります。
+
+`ListView`インスタンスにデータをバインドする方法の詳細については、「 [ListView データソース](~/xamarin-forms/user-interface/listview/data-and-databinding.md)」を参照してください。
 
 ## <a name="components"></a>コンポーネント
-ListView が、さまざまなコンポーネントの各プラットフォームのネイティブ機能を実行するために使用できます。 これらの各コンポーネントは、以下について説明します。
+`ListView`コントロールには、各プラットフォームのネイティブ機能を実行するために使用できる多数のコンポーネントがあります。 これらのコンポーネントは、次のセクションで定義されています。
 
-- **[ヘッダーとフッター](customizing-list-appearance.md#Headers_and_Footers)**  &ndash;リストのデータから先頭と、リストの末尾に表示するには、テキストまたはビューを分離します。 ヘッダーとフッター バインドできますしないデータ ソースに個別に ListView のデータ ソースから。
-- **[グループ](customizing-list-appearance.md#Grouping)** &ndash;簡単に移動、ListView 内のデータをグループ化することができます。 通常、グループは、バインドされたデータです。
+### <a name="headers-and-footerscustomizing-list-appearancemdheaders-and-footers"></a>[ヘッダーとフッター](customizing-list-appearance.md#headers-and-footers)
 
-![](images/grouping-depth.png "グループ化されたデータと ListView")
+ヘッダーとフッターのコンポーネントは、リストのデータとは別に、リストの先頭と末尾に表示されます。 ヘッダーとフッターは、ListView のデータソースとは別のデータソースにバインドできます。
 
-- **[セル](customizing-cell-appearance.md)** &ndash;セルで、ListView でのデータが表示されます。 各セルは、データの行に対応します。 選択する組み込みのセルがまたは独自のカスタムのセルを定義することができます。 組み込みとカスタムの両方のセルには、XAML またはコードで使用される定義を指定できます。
-  - **[組み込み](customizing-cell-appearance.md#Built_in_Cells)** &ndash;各プラットフォームのネイティブ コントロールに対応するため、パフォーマンスの優れた設定できます。 セル、特に TextCell と ImageCell、組み込まれています。
-    - **[TextCell](customizing-cell-appearance.md#TextCell)**  &ndash;詳細テキストを必要に応じて、テキストの文字列が表示されます。 詳細なテキストはアクセントの色とフォント サイズを小さくの 2 行目としてレンダリングされます。
-    - **[ImageCell](customizing-cell-appearance.md#ImageCell)**  &ndash;テキストとイメージを表示します。 左側のイメージの TextCell として表示されます。
-  - **[カスタム セル](customizing-cell-appearance.md#customcells)** &ndash;複雑なデータを表示する必要がある場合は、カスタムのセルは最適です。 たとえば、曲、アルバム、アーティストなどの一覧を提供するカスタム ビューを使用できます。
+### <a name="groupscustomizing-list-appearancemdgrouping"></a>[グループ](customizing-list-appearance.md#grouping)
 
-![](images/image-cell-default.png "ImageCells と ListView")
+ナビゲーションを容易`ListView`にするために、のデータをグループ化することができます。 グループは通常、データバインドされます。 次のスクリーンショットは`ListView` 、グループ化されたデータを含むを示しています。
 
-ListView 内のセルのカスタマイズに関する詳細については、[ListView セルの外観のカスタマイズ](customizing-cell-appearance.md)を参照してください。
+(images/grouping-depth-cropped.png)](images/grouping-depth.png#lightbox "Listview 内のグループ化")されたデータのグループ化されたデータ[ ![]
+
+### <a name="cellscustomizing-cell-appearancemd"></a>[セル](customizing-cell-appearance.md)
+
+内のデータ項目`ListView`は、セルと呼ばれます。 各セルは、データの行に対応します。 選択する組み込みのセルがまたは独自のカスタムのセルを定義することができます。 組み込みとカスタムの両方のセルには、XAML またはコードで使用される定義を指定できます。
+
+- `TextCell`やなど`ImageCell`の[組み込みセル](customizing-cell-appearance.md#built-in-cells)は、ネイティブコントロールに対応しており、特にパフォーマンスに優れています。
+  - に[`TextCell`](customizing-cell-appearance.md#textcell)は、テキストの文字列が表示されます。オプションで、詳細テキストを表示できます。 詳細なテキストはアクセントの色とフォント サイズを小さくの 2 行目としてレンダリングされます。
+  - に[`ImageCell`](customizing-cell-appearance.md#imagecell)は、画像とテキストが表示されます。 は、 `TextCell`左側にイメージを含むとして表示されます。
+- [カスタムセル](customizing-cell-appearance.md#customcells)は、複雑なデータを表示するために使用されます。 たとえば、カスタムセルを使用して、アルバムとアーティストを含む曲の一覧を表示できます。
+
+次のスクリーンショットは`ListView` 、with ImageCell items を示しています。
+
+Listview の["ImageCell items in a listview" ImageCell items ![](images/image-cell-default-cropped.png)](images/image-cell-default.png#lightbox "")
+
+で`ListView`のセルのカスタマイズの詳細については、「 [ListView セルの外観のカスタマイズ](customizing-cell-appearance.md)」を参照してください。
 
 ## <a name="functionality"></a>機能
-ListView は、さまざまな相互作用のスタイル (など) をサポートしています。
+クラス`ListView`は、さまざまな相互作用スタイルをサポートしています。
 
-- **[プルして更新](interactivity.md#Pull_to_Refresh)** &ndash; ListView は、各プラットフォームでプルして更新をサポートしています。
-- **[コンテキスト アクション](interactivity.md#Context_Actions)** &ndash; ListView は、リスト内の個々 のアイテムに対するアクションの実行をサポートしています。 たとえば、ios では、スワイプのアクションを実装したり時間の長い Android でのアクションをタップできます。
-- **[選択範囲](interactivity.md#selectiontaps)** &ndash;選択、および行がタップされたときに、アクションを実行する deselections をリッスンすることができます。
+- [プルから更新](interactivity.md#pull-to-refresh)を行うことで、 `ListView`ユーザーはコンテンツを最新の状態に更新できます。
+- [コンテキストアクション](interactivity.md#context-actions)を使用すると、開発者は個々のリスト項目に対してカスタムアクションを指定できます。 たとえば、ios では、スワイプのアクションを実装したり時間の長い Android でのアクションをタップできます。
+- [選択](interactivity.md#selectiontaps)すると、開発者はリスト項目の選択イベントおよび deselection イベントに機能をアタッチできます。
 
-![](images/context-default.png "コンテキスト アクションを含む ListView")
+次のスクリーンショットは`ListView` 、コンテキストアクションを含むを示しています。
 
-ListView の対話機能の詳細については、[ListView の対話機能 (&)、アクション](interactivity.md)を参照してください。
+(images/context-default-cropped.png)](images/context-default.png#lightbox "Listview における") ["listview" コンテキストアクションのコンテキストアクション![]
+
+の対話機能の詳細について`ListView`は、「 [ListView との対話 & 操作](interactivity.md)」を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 

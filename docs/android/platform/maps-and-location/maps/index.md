@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/25/2018
-ms.openlocfilehash: e36a8e25c5924ac82356c0f1c3110d1596f81cbf
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 194f82757b0b4cb5e148e06d4303dc0d22afb9b3
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69523887"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761709"
 ---
 # <a name="how-to-use-google-maps-and-location-with-xamarinandroid"></a>Xamarin Android で Google Maps と場所を使用する方法
 
@@ -28,7 +28,6 @@ _この記事では、maps と location を Xamarin Android で使用する方�
 
 このセクションのトピックでは、幅広いマッピング機能について説明します。
 まず、Android の組み込みマップアプリケーションを活用する方法と、場所のパノラマビューを表示する方法について説明します。 次に、Maps API を使用して、マッピング機能をアプリケーション内に直接組み込む方法について説明します。また、マップの位置と表示を制御する方法と、グラフィカルなオーバーレイを追加する方法についても説明します。
-
 
 ## <a name="related-links"></a>関連リンク
 

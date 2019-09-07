@@ -6,12 +6,12 @@ ms.assetid: C6618E9D-07FA-4C84-D014-10DAC989E48D
 author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: 52c4f6b45a44eaa9df253e9d049d1016de4a6e30
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: ef94c90cec11c374b24ddfb159674adb468e72de
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70199354"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765786"
 ---
 # <a name="binding-types-reference-guide"></a>バインディングの種類のリファレンスガイド
 
@@ -52,7 +52,6 @@ interface UITextField : UITextInput {
 ```
 
 他の属性をインターフェイスに適用したり、 [`[BaseType]`](#BaseTypeAttribute)属性を構成したりすることによって、コード生成の他の多くの側面を制御できます。
-
 
 ### <a name="generating-events"></a>生成 (イベントを)
 
@@ -207,7 +206,6 @@ public interface UIAccelerometer {
 public interface UIAccelerometerDelegate {
 }
 ```
-
 
 #### <a name="basetypekeeprefuntil"></a>BaseType.KeepRefUntil
 
@@ -538,7 +536,6 @@ public partial class UIImagePickerImagePickedEventArgs : EventArgs {
 public event EventHandler<UIImagePickerImagePickedEventArgs> FinishedPickingImage { add; remove; }
 ```
 
-
 ### <a name="eventnameattribute"></a>EventNameAttribute
 
 この属性は、クラスで生成されたイベントまたはプロパティの名前をジェネレーターが変更できるようにするために使用されます。 モデルクラスのメソッドの名前がモデルクラスにとって意味があるものの、元のクラスではイベントまたはプロパティとして奇妙に見える場合に役立つことがあります。
@@ -706,11 +703,9 @@ interface Robot : SpeakProtocol {
 }
 ```
 
-
 ## <a name="member-definitions"></a>メンバーの定義
 
 このセクションの属性は、型の個々のメンバー (プロパティとメソッド宣言) に適用されます。
-
 
 ### <a name="alignattribute"></a>AlignAttribute
 
@@ -724,7 +719,6 @@ public interface GLKBaseEffect {
     Vector4 ConstantColor { [Align (16)] get; set;  }
 }
 ```
-
 
 ### <a name="appearanceattribute"></a>外観属性
 
@@ -1161,8 +1155,7 @@ public NSObject this [NSObject idx] {
 この属性は、メソッドがネイティブ (目的 C) の例外をサポートするようにします。
 呼び出しは、 `objc_msgSend`直接呼び出すのではなく、特定の trampoline ec 例外をキャッチし、それらをマネージ例外にマーシャリングするカスタムのを経由します。
 
-現在のところ、 `objc_msgSend`サポートされているシグネチャはごくわずかです (バインディングを使用するアプリのネイティブリンクが不足しているために署名がサポートされていないかどうかを確認してください monotouch_)。ただし、要求に追加することもできます。
-
+現在のところ、 `objc_msgSend`サポートされているシグネチャはごくわずかです (バインディングを使用するアプリのネイティブリンクが不足しているために署名がサポートされていないかどうかを確認して*ください monotouch_)* 。ただし、要求に追加することもできます。
 
 ### <a name="newattribute"></a>NewAttribute
 
@@ -1405,7 +1398,6 @@ NSObject GetAndRetainObject ();
 
 さらに、この属性は生成されたコードに反映されるため、Xamarin の iOS ランタイムは、このような関数から目的の C に戻るときにオブジェクトを保持する必要があることを認識します。
 
-
 ### <a name="sealedattribute"></a>SealedAttribute
 
 生成されたメソッドにシールとしてフラグを付けるようジェネレーターに指示します。 この属性が指定されていない場合、既定では、仮想メソッド (仮想メソッド、抽象メソッド、または他の属性の使用方法に応じたオーバーライド) が生成されます。
@@ -1415,7 +1407,6 @@ NSObject GetAndRetainObject ();
 ### <a name="staticattribute"></a>StaticAttribute
 
 メソッドまたはプロパティに属性を適用すると、静的メソッドまたは静的プロパティが生成されます。`[Static]` この属性が指定されていない場合、ジェネレーターはインスタンスメソッドまたはプロパティを生成します。
-
 
 ### <a name="transientattribute"></a>TransientAttribute
 
@@ -1634,7 +1625,6 @@ public class RetainAttribute {
 }
 ```
 
-
 ### <a name="retainlistattribute"></a>RetainListAttribute
 
 パラメーターへのマネージ参照を保持するか、パラメーターへの内部参照を削除するようジェネレーターに指示します。 これは、オブジェクトを参照するために使用されます。
@@ -1651,7 +1641,6 @@ public class RetainListAttribute: Attribute {
 
 例については、「 [foundation.cs](https://github.com/mono/maccore/blob/master/src/foundation.cs) and [NSNotificationCenter.cs](https://github.com/mono/maccore/blob/master/src/Foundation/NSNotificationCenter.cs) 」を参照してください。
 
-
 ### <a name="transientattribute"></a>TransientAttribute
 
 この属性はパラメーターに適用され、目的の C からにC#移行する場合にのみ使用されます。  これらの遷移では、さまざまな`NSObject`目的 C パラメーターがオブジェクトのマネージ表現にラップされます。
@@ -1665,7 +1654,6 @@ public class RetainListAttribute: Attribute {
 規則は単純です。ランタイムがネイティブオブジェクトから新しいマネージ表現を作成する必要がある場合、関数の末尾で、ネイティブオブジェクトの保持カウントが削除され、マネージオブジェクトの Handle プロパティがクリアされます。   つまり、マネージオブジェクトへの参照を保持した場合、その参照は役に立たなくなります (メソッドを呼び出すと例外がスローされます)。
 
 渡されたオブジェクトが作成されなかった場合、またはオブジェクトの未処理のマネージ表現が既に存在していた場合、強制破棄は行われません。 
-
 
 ## <a name="property-attributes"></a>プロパティ属性
 

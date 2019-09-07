@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 09/07/2017
-ms.openlocfilehash: d4fab992121ad6a2b272012f7249df5ed8427513
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 8983ac0c860dafb3a3a0e4c90bd82bdf87c4c4f8
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286737"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752394"
 ---
 # <a name="sirikit-updates-in-ios-11"></a>IOS 11 での SiriKit の更新
 
@@ -210,7 +210,6 @@ IOS `NSUserActivityTypes` **アプリでサポートされて**いる限り、�
 - " _MonkeyNotes_での bananas と pears による食料品の一覧の作成"
 - " _Monkeytodo_でのタスクの wwdc の追加"
 
-
 ## <a name="troubleshooting"></a>トラブルシューティング
 
 サンプルを実行するとき、または独自のアプリケーションに SiriKit を追加するときに発生する可能性があるエラーを次に示します。
@@ -225,7 +224,6 @@ _目標-C 例外がスローされました。名前:NSInternalInconsistencyExce
   [![権利が正しく設定されたプロジェクトオプション](sirikit-images/set-entitlements-sml.png)](sirikit-images/set-entitlements.png#lightbox)
 
 - (デバイス展開の場合)アプリ ID には、SiriKit が有効になっており、プロビジョニングプロファイルがダウンロードされています。
-
 
 ## <a name="related-links"></a>関連リンク
 

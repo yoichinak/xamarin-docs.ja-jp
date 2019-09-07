@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/02/2018
-ms.openlocfilehash: d0d5452c2b79fb674e473efd50aaf587d64c4544
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 18d33dfcef109fd29f32969b9bdd15b8a2dc475a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290250"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70764048"
 ---
 # <a name="launch-screens-for-xamarinios-apps"></a>Xamarin iOS アプリの起動画面
 
@@ -131,7 +131,7 @@ IOS 8 (以降) では、開発者は、1つまたは複数の静的起動イメ�
     - ストーリーボードファイルを編集するには、Visual Studio に Mac ビルドホストへのアクティブな接続が必要です。 詳細については、「 [Mac への接続](~/ios/get-started/installation/windows/connecting-to-mac/index.md)」ガイドを参照してください。
 
 7. IOS Designer で起動画面のストーリーボードをプレビューするデバイスと向きを選択します。 下部のツールバーの [デバイスの選択] パネルを開き、[ **IPhone 4S** and**縦長**] を選択します。 
- 
+
     ![[デバイスの選択] ツールバー](launch-screens-images/launch07-vs.png)
 
     - デバイスと向きを選択すると、iOS デザイナーによるデザインのプレビュー方法が変更されることに注意してください。 ここで選択した内容に関係なく、新たに追加された制約は、 **[特徴の編集]** ボタンを使用して指定しない限り、すべてのデバイスと方向に適用されます。 
@@ -196,7 +196,6 @@ IOS 8 (以降) では、開発者は、1つまたは複数の静的起動イメ�
 次に、**ソリューションエクスプローラー**内の`Info.plist`ファイルをダブルクリックして、編集用に開きます。 **[起動画面]** で、上で作成した新しいストーリーボードファイルを選択します。
 
 ![](launch-screens-images/storyboard09.png "上で作成した新しいストーリーボードファイルを選択します")
-
 
 新しいストーリーボードを起動画面として使用するには、次の手順を実行します。
 

@@ -7,40 +7,40 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/26/2018
-ms.openlocfilehash: 7ec8ad6ce428107d2255dd07c7e69c9e77780c09
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 0363213d76d9a67b559614741edf37d296848075
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61026313"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761653"
 ---
-# <a name="fragments-walkthrough-ndash-landscape"></a>フラグメントのチュートリアル&ndash;ランドス ケープ
+# <a name="fragments-walkthrough-ndash-landscape"></a>フラグメントの&ndash;チュートリアルランドスケープ
 
-[フラグメント チュートリアル&ndash;第 1 部](./walkthrough.md)を作成し、小さい画面は、スマート フォンを対象とする Android アプリでフラグメントを使用する方法を示しました。 このチュートリアルでは、次の手順がタブレットの横に余分な空き領域を活用するためにアプリケーションを変更するには&ndash;アプローチの一覧では常に 1 つのアクティビティがあります (、 `TitlesFragment`) と`PlayQuoteFragment`が動的に追加されますユーザーによる選択への応答内のアクティビティ。
+この[ &ndash;チュートリアルのパート 1](./walkthrough.md)では、スマートフォンの小さな画面を対象とする、Android アプリでフラグメントを作成して使用する方法を説明しました。 このチュートリアルの次の手順では、アプリケーションを変更してタブレット&ndash;上の余分な水平領域を活用します`TitlesFragment`。1つのアクティビティ () が常に再生され`PlayQuoteFragment` 、動的に追加されます。次のように、ユーザーが選択した内容に応じてアクティビティに対して実行します。
 
 [![タブレットで実行されているアプリ](./walkthrough-landscape-images/01-tablet-screenshot-sml.png)](./walkthrough-landscape-images/01-tablet-screenshot.png#lightbox)
 
-横モードで実行されているスマート フォンは、この機能強化からも活用できます。
+横モードで実行されている電話では、この拡張機能のメリットも得られます。
 
-[![Android フォンで横モードで実行されているアプリ](./images/intro-screenshot-phone-land-sml.png)](./images/intro-screenshot-phone-land.png#lightbox)
+[![ランドスケープモードの Android フォンで実行されているアプリ](./images/intro-screenshot-phone-land-sml.png)](./images/intro-screenshot-phone-land.png#lightbox)
 
-## <a name="updating-the-app-to-handle-landscape-orientation"></a>横向きを処理するためにアプリを更新します。
+## <a name="updating-the-app-to-handle-landscape-orientation"></a>ランドスケープの向きを処理するようにアプリを更新しています
 
-次の変更で行った作業の上に構築、[フラグメントのチュートリアル - 電話](./walkthrough.md)
+次の変更は、「[チュートリアル-電話](./walkthrough.md)」で実行した作業に基づいて作成されます。
 
-1. 両方を表示する代替レイアウトを作成、`TitlesFragment`と`PlayQuoteFragment`します。
-1. Update`TitlesFragment`をデバイスが両方のフラグメントを同時に表示するかどうかを検出し、それに応じて動作を変更します。
-1. Update`PlayQuoteActivity`をデバイスが横モードを閉じます。
+1. `TitlesFragment` と`PlayQuoteFragment`の両方を表示する代替レイアウトを作成します。
+1. デバイスで両方のフラグメントが同時に表示されているかどうかを検出し、それに応じて動作を変更します。`TitlesFragment`
+1. デバイス`PlayQuoteActivity`が横モードのときに更新して閉じます。
 
-## <a name="1-create-an-alternate-layout"></a>1.代替のレイアウトを作成します。
+## <a name="1-create-an-alternate-layout"></a>1. 代替レイアウトを作成する
 
-Android デバイスでメイン アクティビティが作成されると、Android は、デバイスの向きに基づいてをロードするレイアウトを決定します。 既定では、Android の提供、 **Resources/layout/activity_main.axml**レイアウト ファイルです。 Android デバイスを横モードで読み込むが提供する、 **Resources/layout-land/activity_main.axml**レイアウト ファイルです。 ガイド[Android リソース](/xamarin/android/app-fundamentals/resources-in-android)Android がアプリケーション用に読み込むファイルのどのリソースが決定する方法の詳細が含まれています。
+Android デバイスでメインアクティビティを作成すると、デバイスの向きに基づいて読み込むレイアウトが Android によって決定されます。 既定では、Android は**Resources/layout/activity_main**レイアウトファイルを提供します。 ランドスケープモードで読み込まれるデバイスの場合、Android は**Resources/layout-land/activity_main**レイアウトファイルを提供します。 Android[リソース](/xamarin/android/app-fundamentals/resources-in-android)のガイドでは、アプリケーション用に読み込むリソースファイルを android が決定する方法の詳細について説明します。
 
-対象とする別のレイアウトを作成**ランドス ケープ**次で説明されている手順に従って、向き、[代替レイアウト](/xamarin/android/user-interface/android-designer/alternative-layout-views)ガイド。 これには、プロジェクトに新しいレイアウト リソース ファイルを追加する必要があります**Resources/layout/activity_main.axml**:
+[代替](/xamarin/android/user-interface/android-designer/alternative-layout-views)レイアウトガイドで説明されている手順に従って、**横向き**のレイアウトを作成します。 これにより、新しいレイアウトリソースファイルが**Resources/layout/activity_main**というプロジェクトに追加されます。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![ソリューション エクスプ ローラーで代替レイアウト](./walkthrough-landscape-images/02-alternate-layout.w157-sml.png)](./walkthrough-landscape-images/02-alternate-layout.w157.png#lightbox)
+[![ソリューションエクスプローラーの代替レイアウト](./walkthrough-landscape-images/02-alternate-layout.w157-sml.png)](./walkthrough-landscape-images/02-alternate-layout.w157.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -48,7 +48,7 @@ Android デバイスでメイン アクティビティが作成されると、An
 
 -----
 
-代替レイアウトを作成した後、ファイルのソースを編集**Resources/layout-land/activity_main.axml**この XML に一致します。
+代替レイアウトを作成した後、次の XML に一致するように、file **Resources/layout-land/activity_main**のソースを編集します。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -74,21 +74,21 @@ Android デバイスでメイン アクティビティが作成されると、An
 </LinearLayout>
 ```
 
-アクティビティのルート ビューには、リソース ID が与えられます`two_fragments_layout`2 つのサブ ビューであり、`fragment`と`FrameLayout`します。 中に、`fragment`が静的に読み込まれて、`FrameLayout`によって実行時に置き換えられる"placeholder"として機能、`PlayQuoteFragment`します。 新しいプレイを選択するたびに、 `TitlesFragment`、`playquote_container`の新しいインスタンスに反映されます、`PlayQuoteFragment`します。
+アクティビティのルートビューにはリソース ID `two_fragments_layout`が割り当てられ、 `fragment`と`FrameLayout`という2つのサブビューがあります。 が静的に読み込まれている`FrameLayout`間、は、によって`PlayQuoteFragment`実行時に置換される "プレースホルダー" として機能します。 `fragment` で`TitlesFragment`新しいplay`PlayQuoteFragment`を選択するたびに、の新しいインスタンスでが更新されます。`playquote_container`
 
-各サブ ビューは、親の全体の高さを占有します。 各サブビューの幅がによって制御される、`android:layout_weight`と`android:layout_width`属性。 この例では、各サブビューが幅の 50% を占める親によって提供されます。 参照してください[Google のドキュメントで、LinearLayout](https://developer.android.com/guide/topics/ui/layout/linear.html)の詳細について_レイアウト重み_します。
+各サブビューでは、親の全体の高さが占有されます。 各サブビューの幅は、属性`android:layout_weight`と`android:layout_width`属性によって制御されます。 この例では、各サブビューは、親によって提供される幅の 50% を占有します。 _レイアウトの重み_の詳細について[は、LinearLayout に関する Google のドキュメント](https://developer.android.com/guide/topics/ui/layout/linear.html)を参照してください。
 
-## <a name="2-changes-to-titlesfragment"></a>2.TitlesFragment への変更
+## <a name="2-changes-to-titlesfragment"></a>2. TitlesFragment への変更
 
-更新する必要は代替のレイアウトが作成されたら、`TitlesFragment`します。 ときにアプリが表示されて、2 つのフラグメント 1 つのアクティビティし`TitlesFragment`読み込む必要があります、`PlayQuoteFragment`アクティビティの親にします。 それ以外の場合、`TitlesFragment`起動する必要があります、`PlayQuoteActivity`ホスト、`PlayQuoteFragment`します。 ブール型のフラグが役立つ`TitlesFragment`を使用するどの動作を決定します。 このフラグはで初期化する、`OnActivityCreated`メソッド。
+代替レイアウトを作成したら、を更新`TitlesFragment`する必要があります。 アプリで2つのフラグメントが1つのアクティビティに表示`TitlesFragment`されて`PlayQuoteFragment`いる場合、はを親アクティビティに読み込む必要があります。 それ以外`TitlesFragment`の場合は`PlayQuoteActivity` 、をホスト`PlayQuoteFragment`するを起動します。 ブール型のフラグは`TitlesFragment` 、どの動作を使用する必要があるかを判断するのに役立ちます。 このフラグは、 `OnActivityCreated`メソッドで初期化されます。
 
-最初に、上部にあるインスタンス変数を追加、`TitlesFragment`クラス。
+まず、 `TitlesFragment`クラスの先頭にインスタンス変数を追加します。
 
 ```csharp
 bool showingTwoFragments;
 ```
 
-次のコード スニペットを追加し、`OnActivityCreated`変数を初期化します。 
+次に、次のコードスニペットを`OnActivityCreated`に追加して、変数を初期化します。 
 
 ```csharp
 var quoteContainer = Activity.FindViewById(Resource.Id.playquote_container);
@@ -101,9 +101,9 @@ if (showingTwoFragments)
 }
 ```
 
-デバイスが、横向きモードで実行されている場合、`FrameLayout`リソース ID を持つ`playquote_container`が画面に表示されるように`showingTwoFragments`に初期化されます`true`します。 デバイスが縦モードの場合で、実行されているかどうかは`playquote_container`されません画面で、そのため`showingTwoFragments`なります`false`します。
+デバイスが横モードで実行されている場合`FrameLayout`は、リソース ID `playquote_container`を持つが画面に表示され`showingTwoFragments`ます。そのため`true`、はに初期化されます。 デバイスが縦モードで実行されている`playquote_container`場合、は画面に表示され`showingTwoFragments`ないため`false`、はになります。
 
-`ShowPlayQuote`メソッドは、見積もりを表示する方法を変更する必要があります&ndash;フラグメントまたは新しいアクティビティを起動します。  更新プログラム、`ShowPlayQuote`メソッドを 2 つのフラグメントを表示するときに、フラグメントを読み込むアクティビティを起動する必要がありますそれ以外の場合。
+メソッド`ShowPlayQuote`は、フラグメントに引用符&ndash;を表示する方法、または新しいアクティビティを起動する方法を変更する必要があります。  2つ`ShowPlayQuote`のフラグメントが表示されたときにフラグメントを読み込むようにメソッドを更新します。それ以外の場合は、アクティビティを起動します。
 
 ```csharp
 void ShowPlayQuote(int playId)
@@ -134,11 +134,11 @@ void ShowPlayQuote(int playId)
 }
 ```
 
-ユーザーに現在表示されているとは異なるアプローチを選択した場合`PlayQuoteFragment`、し、新しい`PlayQuoteFragment`が作成されの内容を置き換える、`playquote_container`のコンテキスト内で、`FragmentTransaction`します。
+ユーザーがで`PlayQuoteFragment`現在表示されている play とは異なる再生を選択した場合は、新しい`PlayQuoteFragment`が作成され、のコンテキスト`playquote_container` `FragmentTransaction`内でのコンテンツが置き換えられます。
 
 ### <a name="complete-code-for-titlesfragment"></a>TitlesFragment の完全なコード
 
-以前のすべての変更の完了後`TitlesFragment`、完全なクラスがこのコードと一致する必要があります。
+に`TitlesFragment`対する以前の変更をすべて完了した後、完全なクラスは次のコードと一致する必要があります。
 
 ```csharp
 public class TitlesFragment : ListFragment
@@ -155,7 +155,6 @@ public class TitlesFragment : ListFragment
         {
             selectedPlayId = savedInstanceState.GetInt("current_play_id", 0);
         }
-
 
         var quoteContainer = Activity.FindViewById(Resource.Id.playquote_container);
         showingTwoFragments = quoteContainer != null &&
@@ -211,7 +210,7 @@ public class TitlesFragment : ListFragment
 
 ## <a name="3-changes-to-playquoteactivity"></a>3.PlayQuoteActivity への変更
 
-ように注意する 1 つの最終的な詳細がある:`PlayQuoteActivity`とき、デバイスが横モードでは必要ありません。 デバイスが横モードである場合、`PlayQuoteActivity`は表示されません。 更新プログラム、`OnCreate`メソッドの`PlayQuoteActivity`自体に閉じることができるようにします。 このコードの最終バージョンは、 `PlayQuoteActivity.OnCreate`:
+最後の1つの詳細情報があります`PlayQuoteActivity` 。デバイスが横モードの場合は必要ありません。 デバイスが横モードの場合、は`PlayQuoteActivity`表示されません。 `OnCreate` の`PlayQuoteActivity`メソッドを更新して、それ自体が閉じられるようにします。 このコードは、の`PlayQuoteActivity.OnCreate`最終バージョンです。
 
 ```csharp
 protected override void OnCreate(Bundle savedInstanceState)
@@ -231,12 +230,12 @@ protected override void OnCreate(Bundle savedInstanceState)
 }
 ```
 
-この変更は、デバイスの向きのチェックを追加します。 横向きモードである場合`PlayQuoteActivity`自体を閉じます。
+この変更により、デバイスの向きのチェックが追加されます。 横モードの場合、 `PlayQuoteActivity`はそれ自体を閉じます。
 
 ## <a name="4-run-the-application"></a>4.アプリケーションの実行
 
-これらの変更が完了し、アプリの実行し、は横長表示モード (必要な) 場合、デバイスの回転を再生 を選択します。 見積もりは、再生リストとして同じ画面に表示する必要があります。
+これらの変更が完了したら、アプリを実行し、デバイスを横向きモード (必要な場合) に回転させて、再生を選択します。 この見積もりは、再生の一覧と同じ画面に表示されます。
 
-[![Android フォンで横モードで実行されているアプリ](./images/intro-screenshot-phone-land-sml.png)](./images/intro-screenshot-phone-land.png#lightbox)
+[![ランドスケープモードの Android フォンで実行されているアプリ](./images/intro-screenshot-phone-land-sml.png)](./images/intro-screenshot-phone-land.png#lightbox)
 
 [![Android タブレットで実行されているアプリ](./images/intro-screenshot-tablet-sml.png)](./images/intro-screenshot-tablet.png#lightbox)

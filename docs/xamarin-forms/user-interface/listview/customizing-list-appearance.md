@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/13/2018
-ms.openlocfilehash: 1355f65a192cf8f7f119a2ee77f334c115650578
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: fc0664ff32e63af5d0c80f69ff69f4992ad0c708
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70121633"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770308"
 ---
 # <a name="customizing-listview-appearance"></a>ListView の外観のカスタマイズ
 
@@ -294,12 +294,10 @@ XAML:
 
 ![](customizing-list-appearance-images/height-custom.png "固定の行の高さを持つ ListView")
 
-
 ### <a name="uneven-rows"></a>不均一な行
 
 設定することができますが異なる高さの個々 の行が希望される場合、`HasUnevenRows`プロパティを`true`します。
 1 回手動で設定する行の高さがないことに注意してください`HasUnevenRows`に設定されている`true`高さは、Xamarin.Forms が自動的に計算されます。
-
 
 C#:
 
@@ -337,8 +335,6 @@ void OnImageTapped (object sender, EventArgs args)
 ![](customizing-list-appearance-images/dynamic-row-resizing.png "ランタイムの行のサイズを変更することで ListView")
 
 パフォーマンスの低下の可能性が高い場合、この機能が過剰に注意してください。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

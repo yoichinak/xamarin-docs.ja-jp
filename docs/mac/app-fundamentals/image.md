@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2017
-ms.openlocfilehash: b014c84a7bb23e723fbfbb7ead5e8dc9d9fdc549
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 99604b59e5557ba5a7aa3d5ba61bc1bff414f000
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281700"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770319"
 ---
 # <a name="images-in-xamarinmac"></a>Xamarin. Mac のイメージ
 
@@ -36,7 +36,6 @@ MacOS (旧称 Mac OS X) アプリケーション内でイメージアセット�
 [![アプリの実行例](image-images/intro01.png "アプリの実行例")](image-images/intro01-large.png#lightbox)
 
 この記事では、Xamarin. Mac アプリケーションでイメージとアイコンを操作するための基本について説明します。 最初に、 [Hello, Mac](~/mac/get-started/hello-mac.md)の記事を使用して作業することを強くお勧めします。具体的には、 [Xcode と Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)および[アウトレットとアクション](~/mac/get-started/hello-mac.md#outlets-and-actions)に関するセクションで説明します。これは、で使用する主要な概念と手法に関するものです。この記事をご覧ください。
-
 
 ## <a name="adding-images-to-a-xamarinmac-project"></a>Xamarin. Mac プロジェクトへのイメージの追加
 
@@ -101,7 +100,6 @@ Assets カタログ内のイメージを使用する場合、すべてのイメ�
 
 ここからは、既定のアセットと同じ方法でコレクションを操作でき**ます。 xcassets**コレクションは、プロジェクトに自動的に含まれます。
 
-
 ### <a name="adding-images-to-resources"></a>リソースへのイメージの追加
 
 > [!IMPORTANT]
@@ -132,7 +130,6 @@ Xamarin. Mac アプリケーションでは、任意の png、jpg、または pd
 
 Xamarin. Mac アプリケーションに追加するグラフィック資産 (アイコン、カスタムコントロール、カスタムカーソル、カスタムアートワークなど) には、標準解像度のバージョンに加えて、高解像度バージョンが必要です。 これは、Retina に装備されている Mac コンピューターで実行した場合にアプリケーションが最適な状態になるようにするために必要です。
 
-
 ### <a name="adopt-the-2x-naming-convention"></a>名前付け@2x規則を採用する
 
 > [!IMPORTANT]
@@ -150,7 +147,6 @@ Xamarin. Mac アプリケーションに追加するグラフィック資産 (�
 イメージが Interface Builder の UI 要素に割り当てられている場合は、そのファイルを_ImageName_内で単に選択し**ます。** _ファイル名拡張子の_形式 (例: **.png**)。 コード内C#のイメージを使用する場合と同じように、 _ImageName_でファイルを選択し**ます。** _ファイル名-拡張子の_形式。
 
 Xamarin アプリケーションが Mac で実行されている場合は、 _ImageName_ **。** _ファイル名-拡張子_の形式の画像は、標準的な解像度の **ImageName@2x.filename-extension** 表示で使用されます。イメージは、Retina ディスプレイベースの mac で自動的に選択されます。
-
 
 ## <a name="using-images-in-interface-builder"></a>Interface Builder でのイメージの使用
 
@@ -444,12 +440,9 @@ view.TextField.AutoresizingMask = NSViewResizingMask.WidthSizable;
 
 アウトラインビューの操作の詳細については、[アウトラインビュー](~/mac/user-interface/outline-view.md)のドキュメントを参照してください。
 
-
 ## <a name="summary"></a>まとめ
 
 この記事では、Xamarin. Mac アプリケーションでイメージとアイコンを操作する方法について詳しく説明しました。 ここでは、さまざまな種類と画像の使用方法、Xcode の Interface Builder での画像とアイコンの使用方法、およびコードでC#画像とアイコンを操作する方法について説明しました。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

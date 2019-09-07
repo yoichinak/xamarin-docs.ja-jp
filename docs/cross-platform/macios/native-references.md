@@ -6,19 +6,19 @@ ms.assetid: E53185FB-CEF5-4AB5-94F9-CC9B57C52300
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: de34dcdd194bd3777214d23fded7e5f42ec5141c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 1ad7a98b92c34cf956e50ebc7a6cec73580f8f04
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287550"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765504"
 ---
 # <a name="native-references-in-ios-mac-and-bindings-projects"></a>IOS、Mac、およびバインドプロジェクトでのネイティブ参照
 
 _ネイティブ参照を使用すると、ネイティブフレームワークを Xamarin または Xamarin のプロジェクトまたはバインドプロジェクトに埋め込むことができます。_
 
 IOS 8.0 以降、アプリ拡張機能と Xcode のメインアプリ間でコードを共有するための埋め込みフレームワークを作成できるようになりました。 ネイティブ参照機能を使用すると、Xcode で作成されたこれらの埋め込みフレームワークを使用することができます。
- 
+
 > [!IMPORTANT]
 > 任意の種類の Xamarin. iOS プロジェクトまたは Xamarin. Mac プロジェクトから埋め込みフレームワークを作成することはできません。ネイティブ参照では、既存のネイティブ (目標 C) フレームワークの使用のみが許可されます。
 
@@ -98,4 +98,3 @@ IOS を対象とする拡張機能とアプリがないアプリ
 ## <a name="summary"></a>Summary
 
 この記事では、ネイティブフレームワークを Xamarin iOS または Xamarin. Mac アプリケーションに埋め込む方法について詳しく説明しました。
-

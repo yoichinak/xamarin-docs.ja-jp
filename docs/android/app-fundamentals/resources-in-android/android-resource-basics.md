@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/01/2018
-ms.openlocfilehash: 1df10c4b8eaa30ce417feb2abae7f52b2494edf6
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: c248949024d0e13a24863368e88aa559fa496806
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526370"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755245"
 ---
 # <a name="android-resource-basics"></a>Android リソースの基本
 
@@ -20,25 +20,24 @@ ms.locfileid: "69526370"
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ![リソース ファイル](android-resource-basics-images/01-resource-files-vs.png)
- 
+
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 ![リソース ファイル](android-resource-basics-images/01-resource-files-xs.png)
- 
+
 -----
 
 既定のリソースを構成する5つのファイルが Resources フォルダーに作成されました。
 
 - **Icon .png** &ndash;アプリケーションの既定のアイコン
 
-- メインアプリケーションの既定のユーザーインターフェイスレイアウトファイル。 &ndash; Android では **.xml**ファイル拡張子が使用されていますが、Xamarinでは .xml ファイル拡張子が使用されていることに注意してください。
+- メインアプリケーションの既定のユーザーインターフェイスレイアウトファイル。 &ndash; Android では **.xml**ファイル拡張子が使用されていますが、Xamarin で**は .xml ファイル拡張子が使用**されていることに注意してください。
 
 - **文字列 .xml** &ndash;アプリケーションのローカライズに役立つ文字列テーブル
 
 - **リソース** &ndash;に関する情報は必要ありません。削除しても安全です。 ここでは、Resources フォルダーとその中のファイルについて概要を説明します。
 
 - Resource.designer.cs&ndash;このファイルは、Xamarin Android によって自動的に生成されて管理され、各リソースに割り当てられた一意の ID を保持します。 これは、Java で記述された Android アプリケーションが持っているのと同じように、その目的は同じです。 これは、Xamarin Android ツールによって自動的に作成され、随時再生成されます。
-
 
 ## <a name="creating-and-accessing-resources"></a>リソースの作成とアクセス
 
@@ -47,20 +46,18 @@ ms.locfileid: "69526370"
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ![文字列のビルドアクション。 xml を AndroidResource に設定します。](android-resource-basics-images/02-build-action-vs.png)
- 
+
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 ![文字列のビルドアクション。 xml を AndroidResource に設定します。](android-resource-basics-images/02-build-action-xs.png)
- 
+
 -----
- 
 
 これにより、Xamarin Android ツールはリソースを適切にコンパイルして APK ファイルに埋め込むことができます。 何らかの理由で**ビルドアクション**が**Android リソース**に設定されていない場合、ファイルは apk から除外され、リソースの読み込みまたはアクセスが試行されると、実行時エラーが発生し、アプリケーションがクラッシュします。
 
 また、Android ではリソース項目に対して小文字のファイル名のみがサポートされていますが、Xamarin. Android はやや厳格であることに注意してください。大文字と小文字の両方のファイル名がサポートされます。 イメージ名の規則としては、小文字とアンダースコアを区切り記号として使用します (たとえば、 **[\_イメージ\_名 .png**])。 ダッシュまたは空白文字が区切り記号として使用されている場合、リソース名は処理できないことに注意してください。
 
 リソースがプロジェクトに追加されたら、アプリケーション&ndash;でプログラムを使用して (コード内で)、または XML ファイルからリソースを使用する方法が2つあります。
-
 
 ## <a name="referencing-resources-programmatically"></a>参照 (プログラムによるリソースの)
 
@@ -106,7 +103,6 @@ public partial class Resource
 
 - **リソース名**&ndash;これは、リソースのファイル名 (拡張子なし)、または XML 要素内のリソースの android: name 属性の値です。
 
-
 ## <a name="referencing-resources-from-xml"></a>参照 (XML からリソースを)
 
 XML ファイル内のリソースには、次の特殊な構文でアクセスします。
@@ -136,7 +132,7 @@ XML ファイル内のリソースには、次の特殊な構文でアクセス�
 </LinearLayout>
 ```
 
-この例には[`ImageView`](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/imageview) 、"**フラグ**" という名前のリソースを必要とするがあります。 で`ImageView`は、 `src`属性がに`@drawable/flag`設定されています。 アクティビティが開始されると、Android は、**フラグ .png**という名前のファイル (たとえば、ファイル拡張子が**flag .jpg**などの別のイメージ形式) であることを確認し、そのファイルをに読み込んで`ImageView`表示します。
+この例には[`ImageView`](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/imageview) 、"**フラグ**" という名前のリソースを必要とするがあります。 で`ImageView`は、 `src`属性がに`@drawable/flag`設定されています。 アクティビティが開始されると、Android は、**フラグ .png**という名前のファイル (たとえば、ファイル拡張子が**flag .jpg**などの別のイメージ形式 **) である**ことを確認し、そのファイルをに読み込んで`ImageView`表示します。
 このアプリケーションを実行すると、次の図のようになります。
 
 ![ローカライズされた ImageView](android-resource-basics-images/03-localized-screenshot.png)

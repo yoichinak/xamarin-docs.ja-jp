@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: a14930d52b551b35dcf5a36e2475b021e5bf27d1
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ad7e2e16784a309286d42d4562a52ef57671e477
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646588"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70764566"
 ---
 # <a name="xamarinandroid-gridlayout"></a>Xamarin Android GridLayout
 
@@ -20,7 +20,6 @@ ms.locfileid: "68646588"
  [![4つのセルを表示するトリミング GridLayout](grid-layout-images/21-gridlayoutcropped.png)](grid-layout-images/21-gridlayoutcropped.png#lightbox)
 
  `GridLayout`では、フラットビュー階層を使用します。ここで、子ビューでは、行と列を指定することにより、グリッド内の位置が設定されます。 これにより、 *GridLayout*は、TableLayout で使用されるテーブル行に表示されるように、中間ビューがテーブル構造を提供しなくても、グリッドにビューを配置できます。 フラットな階層を維持することで、 *GridLayout*は子ビューをより迅速にレイアウトできます。 コードでこの概念が実際に意味するものを示す例を見てみましょう。
-
 
 ## <a name="creating-a-grid-layout"></a>グリッドレイアウトの作成
 
@@ -56,8 +55,6 @@ ms.locfileid: "68646588"
 
  [![4つのセルを表示する GridLayoutDemo アプリのスクリーンショット](grid-layout-images/01-gridlayout.png)](grid-layout-images/01-gridlayout.png#lightbox)
 
-
-
 ## <a name="specifying-orientation"></a>方向の指定
 
 上記の XML では、 `TextView`各行または列が指定されていないことに注意してください。 これらが指定されてい`GridLayout`ない場合、では、向きに基づいて各子ビューが順番に割り当てられます。 たとえば、次のように、GridLayout の向きを既定値から垂直方向に変更してみましょう。
@@ -79,8 +76,6 @@ ms.locfileid: "68646588"
 これにより、実行時に次のユーザーインターフェイスが生成されます。
 
  [![垂直方向に配置されたセルを含む GridLayoutDemo のスクリーンショット](grid-layout-images/02-gridlayout.png)](grid-layout-images/02-gridlayout.png#lightbox)
-
-
 
 ### <a name="specifying-explicit-position"></a>明示的な位置の指定
 
@@ -115,8 +110,6 @@ ms.locfileid: "68646588"
             android:layout_column="1"  />
 </GridLayout>
 ```
-
-
 
 ### <a name="specifying-spacing"></a>間隔の指定
 
@@ -175,8 +168,6 @@ ms.locfileid: "68646588"
  [![スペースを含む大きなセルを示す GridLayoutDemo のスクリーンショット](grid-layout-images/03-gridlayout.png)](grid-layout-images/03-gridlayout.png#lightbox)
 
 新しい`Space`ビューを使用する利点は、スペースを許可し、すべての子ビューに属性を設定する必要がないことです。
-
-
 
 ### <a name="spanning-columns-and-rows"></a>列と行のスパニング
 
@@ -241,7 +232,6 @@ ms.locfileid: "68646588"
 これを行うと、前に示し`TextViews`たレイアウトに似たのレイアウトが生成されます。次に示すように、 `GridLayout`ボタンがの下部に追加されます。
 
  [![両方の列にまたがるボタンを含む GridLayoutDemo のスクリーンショット](grid-layout-images/05-gridlayout.png)](grid-layout-images/05-gridlayout.png#lightbox)
-
 
 ## <a name="related-links"></a>関連リンク
 

@@ -7,12 +7,12 @@ ms.assetid: 9E6C986F-3FBA-4599-8367-FB0C565C0ADE
 author: conceptdev
 ms.author: crdun
 ms.date: 04/18/2018
-ms.openlocfilehash: 7feec9f2fa136b96d81a54e4b2650918c53b5832
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 6d40555c70072a4c057739b39cc24a4f885f2dc9
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281601"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765294"
 ---
 # <a name="updating-component-references-to-nuget"></a>コンポーネント参照を NuGet に更新しています
 
@@ -141,7 +141,6 @@ NuGet パッケージは **[パッケージ]** ノードに表示されたまま
 
 ![NuGet パッケージの更新](component-nuget-images/nuget-update-sml.png)
 
-
 <a name="replace" />
 
 ## <a name="components-with-nuget-replacements"></a>NuGet の置換を含むコンポーネント
@@ -201,7 +200,6 @@ NuGet パッケージは、すべての依存関係と共にプロジェクト�
 - 別の NuGet パッケージを調査するか、コンポーネントがオープンソースの場合はソースコードをシークします。
 
 多くのコンポーネントベンダは NuGet への移行に取り組んでいますが、他のベンダー (市販製品を含む) は、別の配信オプションを調査している可能性があります。
-
 
 ## <a name="related-links"></a>関連リンク
 - [一般的な Xamarin プラグインとライブラリの一覧](https://github.com/xamarin/XamarinComponents/blob/master/README.md)

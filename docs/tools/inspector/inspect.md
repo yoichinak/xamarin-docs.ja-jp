@@ -6,12 +6,12 @@ ms.assetid: 91B3206E-B2A5-4660-A6E5-B924B8FE69A7
 author: conceptdev
 ms.author: crdun
 ms.date: 06/19/2018
-ms.openlocfilehash: 2ce4b0366e85580b6d9d816bd91f9ced93997b63
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 2ccf6966e85eddaa10b5651e1b0b48dec9203b28
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291487"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772202"
 ---
 # <a name="inspecting-live-applications"></a>Live アプリケーションの検査
 
@@ -52,4 +52,3 @@ del.Database.AddCustomer (...)
 - プロパティグリッドの編集は Mac では使用できません。 Windows では、いくつかのデータ型に制限されています。 REPL を使用して、より強力な編集を行います。
 - IDE でインスペクターのアドイン/拡張機能がインストールされ、有効になっている限り、デバッグモードで起動するたびに、アプリにコードが挿入されます。 アプリで奇妙な動作が発生した場合は、インスペクターのアドイン/拡張機能の無効化またはアンインストール、IDE の再起動、およびノートを試してください。 ご意見[をお聞かせください。](~/tools/inspector/install.md#reporting-bugs)
 - UI 要素を検査しても変更されない場合は、[お知らせください。](~/tools/inspector/install.md#reporting-bugs)これはバグを示している可能性があるためです。
-

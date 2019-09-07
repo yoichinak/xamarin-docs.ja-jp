@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 8cf2eaf381b0e9f87b5d91bccb6f4aa86dc68e4d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: efd120e785e55bfa3806cd193bd5f155f35a5e18
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292838"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767726"
 ---
 # <a name="watchos-troubleshooting"></a>watchOS のトラブルシューティング
 
@@ -80,14 +80,12 @@ with an alpha channel. Icons should not have an alpha channel.
 
 4. これで、アイコンイメージは Apple の検証チェックに合格します。
 
-
 <a name="add" />
 
 ## <a name="manually-adding-interface-controller-files"></a>手動によるインターフェイスコントローラーファイルの追加
 
 > [!IMPORTANT]
 > Xamarin の WatchKit サポートには、iOS デザイナー (Visual Studio for Mac と Visual Studio の両方) で watch のストーリーボードをデザインする機能が含まれています。これについては、以下に説明する手順は必要ありません。 インターフェイスコントローラーにクラス名を Visual Studio for Mac プロパティパッドに指定すると、 C#コードファイルが自動的に作成されます。
-
 
 Xcode Interface Builder を使用して*いる場合*は、次の手順に従って watch アプリ用の新しいインターフェイスコントローラーを作成し、Xcode との同期を有効C#にして、でアウトレットとアクションを使用できるようにします。
 
@@ -210,14 +208,12 @@ Xcode Interface Builder を使用して*いる場合*は、次の手順に従っ
 
 これで、でコントロールを参照 (またはアクションを実装C#) できるようになりました。
 
-
 <a name="command_line" />
 
 ## <a name="launching-the-watch-app-from-the-command-line"></a>コマンドラインからの Watch アプリの起動
 
 > [!IMPORTANT]
 > 既定では、Watch アプリは通常のアプリモードで起動できます。また、Visual Studio for Mac と Visual Studio の[カスタム実行パラメーター](~/ios/watchos/get-started/installation.md#custommodes)を使用して、**ひとめ**でも**通知**モードでもかまいません。
-
 
 コマンドラインを使用して iOS シミュレーターを制御することもできます。 Watch アプリを起動するために使用されるコマンドラインツールは**mtouch**です。
 
@@ -243,7 +239,6 @@ Xcode Interface Builder を使用して*いる場合*は、次の手順に従っ
 --launchsimwatch=/path/to/watchkitproject/watchsample/bin/iPhoneSimulator/Debug/watchsample.app
 ```
 
-
 ## <a name="notification-mode"></a>通知モード
 
 アプリの[**通知**モード](~/ios/watchos/platform/notifications.md)をテストするには、 `watchlaunchmode`パラメーターを`Notification`に設定し、テスト通知ペイロードを含む JSON ファイルへのパスを指定します。
@@ -255,7 +250,6 @@ Xcode Interface Builder を使用して*いる場合*は、次の手順に従っ
 ```bash
 --watchlaunchmode=Notification --watchnotificationpayload=/path/to/file.json
 ```
-
 
 ## <a name="other-arguments"></a>その他の引数
 
@@ -296,8 +290,6 @@ Xcode Interface Builder を使用して*いる場合*は、次の手順に従っ
 ```bash
 --device=:v2:runtime=com.apple.CoreSimulator.SimRuntime.iOS-8-2,devicetype=com.apple.CoreSimulator.SimDeviceType.iPhone-6
 ```
-
-
 
 ## <a name="related-links"></a>関連リンク
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 01/06/2016
-ms.openlocfilehash: 7d4ad4ca7f15e20bed3cd9bb4050c5a0a9cba63a
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 1d888cbc779cbb4fcaf8312b87627f1bd18fe719
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284166"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768405"
 ---
 # <a name="working-with-tables-and-cells-in-xamarinios"></a>Xamarin でのテーブルとセルの操作
 
@@ -36,11 +36,11 @@ Xamarin を使用したクロスプラットフォームアプリケーション
  [テーブルの外観のカスタマイズ](~/ios/user-interface/controls/tables/customizing-table-appearance.md)
 
  [編集](~/ios/user-interface/controls/tables/editing.md)
- 
+
  [行の操作](~/ios/user-interface/controls/tables/row-action.md)
 
  [ストーリーボードでのテーブルの作成](~/ios/user-interface/controls/tables/creating-tables-in-a-storyboard.md)
- 
+
  [行の高さの自動サイズ変更](~/ios/user-interface/controls/tables/autosizing-row-height.md)
 
 ## <a name="related-links"></a>関連リンク

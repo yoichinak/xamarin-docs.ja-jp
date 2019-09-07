@@ -5,12 +5,12 @@ description: このドキュメントでは、Xamarin. Forms アプリケーシ�
 author: conceptdev
 ms.author: crdun
 ms.date: 04/26/2017
-ms.openlocfilehash: 8c009c079842a6a110212693a56489ca2ad5d263
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 1d1c207672baf37c91d39fca1d9f628d85971577
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290383"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765902"
 ---
 # <a name="wpf-vs-xamarinforms-app-lifecycle"></a>WPF とXamarin.Forms アプリのライフサイクル
 
@@ -87,7 +87,6 @@ Xamarin. フォームは主にモバイルシナリオを中心にしていま�
 |中断/フォーカスの喪失|Window. OnDeactivated アクティブ化|ページ. OnSleep|
 |アクティブ化/フォーカスの獲得|ウィンドウ. OnActivated 化済み|ページ. OnResume|
 |Closed|Window. OnClosing + Window. Onclosing|N/A|
-
 
 子コントロールの表示/非表示もサポートされています。 WPF では、 `IsVisible` 3 つの状態のプロパティ (表示、非表示、および折りたたみ) がサポートされています。 Xamarin. Forms では、プロパティを使用して表示また`IsVisible`は非表示にするだけです。
 

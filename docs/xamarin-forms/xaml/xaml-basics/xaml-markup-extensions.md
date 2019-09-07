@@ -7,12 +7,12 @@ ms.assetid: F4A37564-B18B-42FF-B841-9A1949895AB6
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/27/2018
-ms.openlocfilehash: 620a986ea9c5a6792d321b0c89dae936ffa256da
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 3eb02dbc4e77fcd8b237b85e21e577d0c4566794
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227927"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772728"
 ---
 # <a name="part-3-xaml-markup-extensions"></a>第 3 部です。 XAML マークアップ拡張機能
 
@@ -556,8 +556,6 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 ## <a name="summary"></a>Summary
 
 ここで示すように XAML マークアップ拡張機能は、XAML ファイルの重要なサポートを提供します。 おそらく最も重要な XAML マークアップ拡張機能ですが、 `Binding`、このシリーズの次の部分で説明される[パート 4 です。データ バインディングの基礎](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)します。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

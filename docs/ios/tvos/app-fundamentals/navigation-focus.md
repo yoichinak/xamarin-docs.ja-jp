@@ -7,17 +7,16 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: fdf675e37bec07ef03576313befbaa9309ab9349
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: b84150c8fdca04a9b21c28d126d221d2a9bc5a3f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291571"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769264"
 ---
 # <a name="working-with-tvos-navigation-and-focus-in-xamarin"></a>TvOS ナビゲーションを使用して Xamarin にフォーカスを移動する
 
 _この記事では、フォーカスの概念と、tvOS アプリ内のナビゲーションの表示と処理に使用する方法について説明します。_
-
 
 この記事では、[フォーカス](#Focus-and-Selection)の概念と、tvOS アプリのユーザーインターフェイスでの[ナビゲーション](#Navigation)の処理に使用する方法について説明します。 ここでは、組み込みの tvOS ナビゲーションコントロールでフォーカス、強調表示、および選択を使用して、tvOS アプリのユーザーインターフェイスナビゲーションを提供する方法について説明します。
 
@@ -125,9 +124,6 @@ playButton.PreferredFocusedView = true;
 > [!IMPORTANT]
 > を`SetNeedsUpdateFocus`呼び出すことができるのは、呼び出し元のビューコントローラーに現在フォーカスがあるビューが含まれている場合のみです。
 
-
-
-
 <a name="Working-with-Focus-Guides" />
 
 ### <a name="working-with-focus-guides"></a>フォーカスガイドの操作
@@ -139,7 +135,7 @@ TvOS に組み込まれているフォーカスエンジンは、水平グリッ
 例については、次の UI レイアウトを実行してください。
 
  [![](navigation-focus-images/guide01.png "フォーカスガイドの操作の例")](navigation-focus-images/guide01.png#lightbox)
- 
+
 **[詳細情報]** ボタンは、 **[購入]** ボタンが付いた水平方向および垂直方向のグリッドには収まらないため、ユーザーはアクセスできません。 ただし、フォーカス_ガイド_を使用すると、フォーカスエンジンに移動ヒントを提供することで、簡単に修正できます。 
 
 フォーカスガイド (`UIFocusGuide`) では、フォーカスエンジンにフォーカスを設定できるビュー領域が表示されないため、フォーカスを別のビューにリダイレクトすることができます。
@@ -277,9 +273,6 @@ myImageView.AdjustsImageWhenAncestorFocused = true;
 ## <a name="summary"></a>Summary
 
 この記事では、フォーカスの概念と、それを使用して tvOS アプリのユーザーインターフェイスでのナビゲーションを処理する方法について説明しました。 ここでは、組み込みの tvOS ナビゲーションコントロールでフォーカス、強調表示、および選択を使用してナビゲーションを行う方法を確認します。 次に、視差とレイヤー化されたイメージでフォーカスを使用して、エンドユーザーに現在のナビゲーション状態を視覚的に把握する方法について見てきました。 最後に、フォーカスを操作し、更新をフォーカスし、コレクションに焦点を当て、視差を有効にします。
-
-
-
 
 ## <a name="related-links"></a>関連リンク
 

@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 2b8e524d95fb60c8eb45b3dd5b64b68469d97ad1
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 06817c563f12425e5c339cb8f2560f37f9ace0b5
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510732"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756689"
 ---
 # <a name="architecture"></a>アーキテクチャ
 
@@ -28,27 +28,20 @@ Xamarin.Android 開発者アクセス (の低レベルのアクセス許可) が
 
 Android クラスが Android ランタイムクラスと通信する方法の詳細については、 [API の設計](~/android/internals/api-design.md)に関するドキュメントを参照してください。
 
-
 ## <a name="application-packages"></a>アプリケーション パッケージ
 
 Android アプリケーションパッケージは、ファイル拡張子が*apk*の ZIP コンテナーです。 Xamarin Android アプリケーションパッケージの構造とレイアウトは、通常の Android パッケージと同じですが、次の点が追加されています。
 
--   アプリケーションアセンブリ (IL を含む) は、[*アセンブリ*] フォルダー内に圧縮されずに*格納*されます。 リリースでのプロセスの開始時に、がビルドされ*ます。 apk*はプロセスに対して*mmap ()* され、アセンブリはメモリから読み込まれます。 これにより、アセンブリを実行前に抽出する必要がないため、アプリの起動時間が短縮されます。  
--   *注:* アセンブリの場所情報 ([アセンブリの場所](xref:System.Reflection.Assembly.Location)や[アセンブリ](xref:System.Reflection.Assembly.CodeBase)
-    など) をリリースビルドで使用*することはできません*。 これらは、個別のファイルシステムエントリとして存在せず、使用できる場所がありません。
+- アプリケーションアセンブリ (IL を含む) は、[*アセンブリ*] フォルダー内に圧縮されずに*格納*されます。 リリースでのプロセスの開始時に、がビルドされ*ます。 apk*はプロセスに対して*mmap ()* され、アセンブリはメモリから読み込まれます。 これにより、アセンブリを実行前に抽出する必要がないため、アプリの起動時間が短縮されます。  
+- *注:* アセンブリの場所情報 ([アセンブリの場所](xref:System.Reflection.Assembly.Location)や[アセンブリ](xref:System.Reflection.Assembly.CodeBase)など) をリリースビルドで使用*することはできません*。 これらは、個別のファイルシステムエントリとして存在せず、使用できる場所がありません。
 
-
--   Mono ランタイムを含むネイティブライブラリは、 *apk*内に存在します。 Xamarin Android アプリケーションには、必要な Android アーキテクチャ ( *armeabi* 、 *armeabi-armeabi-v7a* 、 *x86*など) 用のネイティブライブラリが含まれている必要があります。 適切なランタイムライブラリが含まれていない場合、Xamarin Android アプリケーションをプラットフォームで実行することはできません。
-
+- Mono ランタイムを含むネイティブライブラリは、 *apk*内に存在します。 Xamarin Android アプリケーションには、必要な Android アーキテクチャ ( *armeabi* 、 *armeabi-armeabi-v7a* 、 *x86*など) 用のネイティブライブラリが含まれている必要があります。 適切なランタイムライブラリが含まれていない場合、Xamarin Android アプリケーションをプラットフォームで実行することはできません。
 
 Xamarin android アプリケーションには、android からマネージコードを呼び出せるようにするための*Android 呼び出し可能ラッパー*も含まれています。
-
-
 
 ## <a name="android-callable-wrappers"></a>Android 呼び出し可能ラッパー
 
 - **Android 呼び出し可能ラッパー**は、android ランタイムがマネージコードを呼び出す必要があるときに常に使用される[JNI](https://en.wikipedia.org/wiki/Java_Native_Interface) bridge です。 Android 呼び出し可能ラッパーは、仮想メソッドをオーバーライドし、Java インターフェイスを実装する方法を示します。 詳細については、 [Java 統合の概要](~/android/platform/java-integration/index.md)に関するドキュメントを参照してください。
-
 
 <a name="Managed_Callable_Wrappers" />
 
@@ -59,13 +52,11 @@ Xamarin android アプリケーションには、android からマネージコ�
 
 作成されたマネージ呼び出し可能ラッパーはそれぞれ、Java グローバル参照を保持します。これには、 [IJavaObject](xref:Android.Runtime.IJavaObject.Handle)プロパティを使用してアクセスできます。 グローバル参照は、Java インスタンスとマネージインスタンスの間のマッピングを提供するために使用されます。 グローバル参照は限られたリソースです。エミュレーターでは、2000のグローバル参照だけを同時に存在させることができます。一方、ほとんどのハードウェアでは、52000のグローバル参照を一度に存在させることができます。
 
-グローバル参照がいつ作成され、破棄されるかを追跡するには、 ["システムの](~/android/troubleshooting/index.md)プロパティ" プロパティを設定し[ます。](~/android/troubleshooting/index.md)
+グローバル参照がいつ作成[され、](~/android/troubleshooting/index.md)破棄されるかを追跡するに[は、"システムの](~/android/troubleshooting/index.md)プロパティ" プロパティを設定します。
 
 グローバル参照を明示的に解放するには、マネージ呼び出し可能ラッパーで[()](xref:Java.Lang.Object.Dispose)を呼び出します。 これにより、Java インスタンスとマネージインスタンスの間のマッピングが削除され、Java インスタンスを収集できるようになります。 マネージコードから Java インスタンスに再度アクセスする場合は、新しいマネージ呼び出し可能ラッパーが作成されます。
 
 インスタンスが他のスレッドからの参照に影響を与えるように、インスタンスが誤ってスレッド間で共有される可能性がある場合は、マネージ呼び出し可能ラッパーを破棄するときに注意が必要です。 安全性を最大限に確保`Dispose()`するために、*または*メソッド`new`から割り当てられたインスタンスのうち *、常に*新しいインスタンスを割り当てていて、キャッシュされていないインスタンスの場合、レッド.
-
-
 
 ## <a name="managed-callable-wrapper-subclasses"></a>マネージド呼び出し可能ラッパーサブクラス
 
@@ -73,7 +64,6 @@ Xamarin android アプリケーションには、android からマネージコ�
 
 マネージ呼び出し可能ラッパーと同様に、マネージ呼び出し可能ラッパーサブクラスにもグローバル参照が含まれています。これは、 [Java... Handle](xref:Java.Lang.Object.Handle)プロパティを通じてアクセスできます。 マネージ呼び出し可能ラッパーと同様に、グローバル参照は、 [Java. Object. Dispose ()](xref:Java.Lang.Object.Dispose)を呼び出すことによって明示的に解放できます。
 マネージ呼び出し可能ラッパーとは異なり、このようなインスタンスを破棄する前に細心の*注意*を払う必要があります。これは、インスタンスの*Dispose ()* によって Java インスタンス (Android 呼び出し可能ラッパーのインスタンス) とマネージドの間のマッピングが解除されるためです。instance.
-
 
 ### <a name="java-activation"></a>Java のアクティブ化
 
@@ -94,23 +84,23 @@ Xamarin android アプリケーションには、android からマネージコ�
 
 イベントの順序:
 
-1.  レイアウト XML は、 [Contentview](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox1.cs#L41)に読み込まれます。
+1. レイアウト XML は、 [Contentview](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox1.cs#L41)に読み込まれます。
 
-2.  Android はレイアウトオブジェクトグラフをインスタンス化し、ACW の*インスタンスをインスタンス*化します。これは*logtextbox*の場合に使用します。
+2. Android はレイアウトオブジェクトグラフをインスタンス化し、ACW の*インスタンスをインスタンス*化します。これは*logtextbox*の場合に使用します。
 
-3.  このようにして、*monodroid.apidemo.LogTextBox* というコンストラクターが [android.widget.TextView](https://developer.android.com/reference/android/widget/TextView.html#TextView%28android.content.Context,%20android.util.AttributeSet%29) コンストラクターを実行します。
+3. このようにして、"*モノの id. apide* " という[コンストラクターが実行](https://developer.android.com/reference/android/widget/TextView.html#TextView%28android.content.Context,%20android.util.AttributeSet%29)されます。
 
-4.  *TextView*コンストラクターでは、 *getDefaultMovementMethod ()* を呼び出しています。
+4. *TextView*コンストラクターでは、 *getDefaultMovementMethod ()* を呼び出しています。
 
-5.  *monodroid.apidemo.LogTextBox.getDefaultMovementMethod()* invokes *LogTextBox.n_getDefaultMovementMethod()* , which invokes *TextView.n_GetDefaultMovementMethod()* , which invokes [Java.Lang.Object.GetObject&lt;TextView&gt; (handle, JniHandleOwnership.DoNotTransfer)](xref:Java.Lang.Object.GetObject*) .
+5. *getDefaultMovementMethod ()* は*n_getDefaultMovementMethod (* ) を呼び出し、n_getDefaultMovementMethod () を呼び出して () を呼び出します。これにより、 *(* ) が[呼び出されます。&lt;TextView&gt; (ハンドル、j/handle、所有権の移動)](xref:Java.Lang.Object.GetObject*) 。
 
-6.  *Java.Lang.Object.GetObject&lt;TextView&gt;()* checks to see if there is already a corresponding C# instance for *handle* . 存在する場合は、それが返されます。 このシナリオでは、オブジェクトがないため、 *GetObject&lt;t&gt;()* で作成する必要があります。
+6. *Java.Lang.Object.GetObject&lt;TextView&gt;()* checks to see if there is already a corresponding C# instance for *handle* . 存在する場合は、それが返されます。 このシナリオでは、オブジェクトがないため、 *GetObject&lt;t&gt;()* で作成する必要があります。
 
-7.  *GetObject&lt;T&gt;()* は*logtextbox (IntPtr, JniHandleOwneship)* コンストラクターを検索し、それを呼び出して、*ハンドル*と作成されたインスタンスの間のマッピングを作成し、作成されたインスタンスを返します。
+7. *GetObject&lt;T&gt;()* は*logtextbox (IntPtr, JniHandleOwneship)* コンストラクターを検索し、それを呼び出して、*ハンドル*と作成されたインスタンスの間のマッピングを作成し、作成されたインスタンスを返します。
 
-8.  *N_GetDefaultMovementMethod ()* は、 *Logtextbox. DefaultMovementMethod*プロパティ getter を呼び出します。
+8. *N_GetDefaultMovementMethod ()* は、 *Logtextbox. DefaultMovementMethod*プロパティ getter を呼び出します。
 
-9.  コントロールは、実行を終了する、 *android. TextView. TextView*コンストラクターに戻ります。
+9. コントロールは、実行を終了する、 *android. TextView. TextView*コンストラクターに戻ります。
 
 10. *Typemanager. ap$ mo. LogTextBox*コンストラクターが実行され、 *Typemanager. Activate ()* が呼び出されます。
 
@@ -172,8 +162,6 @@ I/mono-stdout( 2993): [Managed: Value=]
 ```
 
 Java オブジェクトが使用されなくなったことがわかっている場合、またはサブクラスにインスタンスデータが含まれておらず、 *(IntPtr, j、所有権)* コンストラクターが指定されている場合は、マネージ呼び出し可能ラッパーサブクラスの*Dispose ()* のみを実行します。
-
-
 
 ## <a name="application-startup"></a>アプリケーションの起動
 

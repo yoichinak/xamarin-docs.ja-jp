@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/08/2017
-ms.openlocfilehash: 45008e127286d14ef62c5212976bfd3a8aac651f
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 667de4d579f43558d9a811c386e355433f526077
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69529181"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760456"
 ---
 # <a name="authentication-and-authorization"></a>認証と承認
 
@@ -477,7 +477,6 @@ EShopOnContainers モバイルアプリが web 要求を作成する方法の詳
 ASP.NET MVC web アプリケーションと通信する Xamarin. Forms アプリに認証と承認を統合するには、さまざまな方法があります。 EShopOnContainers モバイルアプリは、ユーザー id を使用するコンテナー化された id マイクロサービスで認証と承認を実行します。 ユーザー Id は、ASP.NET Core Id と統合してベアラートークン認証を実行する ASP.NET Core 用のオープンソース OpenID Connect および OAuth 2.0 フレームワークです。
 
 モバイルアプリは、ユーザーを認証したり、リソースにアクセスしたりするために、ユーザーのセキュリティトークンを要求します。 リソースにアクセスする場合は、承認を必要とする Api に対する要求にアクセストークンを含める必要があります。 ユーザーが信頼された発行者から送信されたことを確認するために、ユーザーが受信アクセストークンを検証し、それらのトークンを受信する API と共に使用することが有効であることを確認します。
-
 
 ## <a name="related-links"></a>関連リンク
 

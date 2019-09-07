@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: a0719dce3b7f5484168dc5679237b01286f5de78
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 6aa5eede658f13a36220398f92192eefa2473bab
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286756"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768589"
 ---
 # <a name="quick-interaction-techniques-for-watchos-3-in-xamarin"></a>Xamarin の watchOS 3 のクイック対話技法
 
@@ -98,7 +98,7 @@ Apple では、watchOS 3 でジェスチャレコグナイザーを使用する�
 - ジェスチャの中には、次のようなジェスチャの種類が優先されるものがあります。
   - スクロール
   - Force Touch
- 
+
 ### <a name="digital-crown-rotation"></a>Digital Crown ローテーション
 
 WatchOS 3 アプリにサポート Digital Crown を実装することにより、開発者はユーザーのナビゲーション速度と精度を向上させることができます。
@@ -169,7 +169,6 @@ Apple では、更新される UI 要素に対する変更の感度に応じて�
 回転デルタの`+/-`符号 () は、ユーザーが Digital Crown をオンにする方向を示します。
 
 [![](quick-interaction-techniques-images/quick03.png "回転デルタの符号は、ユーザーが旋回する方向を示し Digital Crown")](quick-interaction-techniques-images/quick03.png#lightbox)
-
 
 ユーザーがスクロールしている場合、WatchKit は正のデルタを返し、スクロールすると負のデルタが返されます。ユーザーがどの向きを使用しているかは関係ありません。
 

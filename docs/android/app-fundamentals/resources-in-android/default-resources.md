@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/13/2018
-ms.openlocfilehash: e8277ff92c2ac1891c60b8da385a904af1bd299d
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: a1f2016af3bcac338f47b7315a26fe50ae76fee7
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526294"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755095"
 ---
 # <a name="default-resources"></a>既定のリソース
 
@@ -35,7 +35,7 @@ ms.locfileid: "69526294"
 
 - 描画&ndash;描画可能なリソースは、アプリケーションにコンパイルして API 呼び出しによってアクセスしたり、他の XML リソースから参照したりできる、グラフィックスの一般的な概念です。
    Drawables 確認可能な例としては、ビットマップファイル (.png、.gif、.jpg)、 [9 パッチ](https://developer.android.com/guide/topics/graphics/2d-graphics.html#nine-patch)、状態リスト、XML で定義されている汎用図形などがあります。
- 
+
 - **レイアウト**&ndash;アクティビティやリスト内の行など、ユーザーインターフェイスのレイアウトを記述する XML ファイル。
 
 - **メニュー**[オプション *] メニュー*、*コンテキストメニュー*、*サブメニュー*などのアプリケーションメニューを記述する XML ファイル。 &ndash; メニューの例については、[ポップアップメニューのデモ](https://docs.microsoft.com/samples/xamarin/monodroid-samples/popupmenudemo)または[標準コントロール](https://docs.microsoft.com/samples/xamarin/mobile-samples/standardcontrols/)のサンプルを参照してください。
@@ -45,7 +45,6 @@ ms.locfileid: "69526294"
 - **値**&ndash;単純な値を含む XML ファイル。 値ディレクトリ内の XML ファイルは、1つのリソースを定義するのではなく、複数のリソースを定義できます。 たとえば、1つの XML ファイルに文字列値の一覧を保持し、別の xml ファイルには色の値の一覧を保持することができます。
 
 - .net 構成ファイルと同様の機能を持つ**xml** &ndash; xml ファイル。 これらは、アプリケーションによって実行時に読み取ることができる任意の XML です。
-
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 

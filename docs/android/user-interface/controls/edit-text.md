@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/09/2018
-ms.openlocfilehash: a937de27fc032b0d88dfdf717339b47e0df8e58d
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: e8ffe337e1f5c74bc348b9600a466f1232f40b0b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644634"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758839"
 ---
 # <a name="xamarinandroid-edit-text"></a>Xamarin Android のテキストの編集
 
@@ -60,12 +60,11 @@ using Android.Views;
 
 このコード例では、レイアウトから[EditText](xref:Android.Widget.EditText)要素を増えし、ウィジェットにフォーカスがあるときにキーが押されたときに実行されるアクションを定義する[KeyPress](xref:Android.Views.View.KeyPress)ハンドラーを追加します。 この場合、メソッドは**enter**キーをリッスンするように定義されています (タップした場合)。その後、入力されたテキストを含む[トースト](xref:Android.Widget.Toast)メッセージをポップアップ表示します。 イベントが処理された場合、[処理済み](xref:Android.Views.View.KeyEventArgs.Handled)のプロパティは常に `true` にする必要があることに注意してください。 これは、イベントがバブルアップされないようにするために必要です (これにより、テキストフィールドに復帰が返されます)。
 
-アプリケーションを実行し、テキストフィールドにテキストを入力します。 Enter**キーを**押すと、右側に表示されるようにトーストが表示されます。
+アプリケーションを実行し、テキストフィールドにテキストを入力します。 **Enter キーを**押すと、右側に表示されるようにトーストが表示されます。
 
 [![EditText にテキストを入力する例](edit-text-images/edit-text-sml.png)](edit-text-images/edit-text.png#lightbox)
 
 *このページの部分は、作成された作業に基づいて変更されます*。[*Android オープンソースプロジェクトによって共有されます*](http://code.google.com/policies.html)*および「」で説明されている用語に従って使用されます*。[*Creative Commons 2.5 属性のライセンス*](http://creativecommons.org/licenses/by/2.5/) *.このチュートリアルは、* [*Android フォーム*](https://developer.android.com/resources/tutorials/views/hello-formstuff.html)に関するチュートリアルに基づいてい*ます。*
-
 
 ## <a name="related-links"></a>関連リンク
 

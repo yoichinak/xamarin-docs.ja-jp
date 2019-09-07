@@ -6,12 +6,12 @@ ms.assetid: E442EEFB-FA9C-40E9-9668-5A3F915C8400
 author: conceptdev
 ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: e129a8c37e6b8780a57636730c072b230354b8b8
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: c7673e7cd79844130117963bc56fd6e1b3c2b5c7
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288384"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758109"
 ---
 # <a name="building-cross-platform-applications-overview"></a>クロスプラットフォームアプリケーションの構築の概要
 
@@ -34,7 +34,7 @@ Xamarin クロスプラットフォームアプリを作成するための主要
 1. Windows では、Visual Studio または Blend の UI デザイナーで作成されたプレゼンテーション層に XAML を使用します。
 1. Mac では、Xcode で作成されたプレゼンテーション層にストーリーボードを使用します。
 
-Xamarin.Forms プロジェクトはすべてのプラットフォームでサポートされており、Xamarin を使用してプラットフォーム間で共有できるユーザーインターフェイスを作成することができます。 
+Xamarin. Forms プロジェクトはすべてのプラットフォームでサポートされており、Xamarin を使用してプラットフォーム間で共有できるユーザーインターフェイスを作成することができます。 
 
 コードの再使用量は、共有コアに保持されるコードの量と、ユーザーインターフェイスに固有のコードの量に大きく左右されます。 コアコードは、ユーザーと直接やり取りしないものですが、代わりに、この情報を収集して表示するアプリケーションの一部のサービスを提供します。
 
@@ -45,11 +45,9 @@ Xamarin.Forms プロジェクトはすべてのプラットフォームでサポ
 1. [Json.NET](https://www.nuget.org/packages/Newtonsoft.Json/)など、Xamarin プロジェクトと互換性のある[NuGet パッケージ](https://nuget.org)
 1. ネットワーク、web サービス、IO などに .NET framework の機能を使用します。
 
-
 これらのコンポーネントの一部は、 *Tasky*のケーススタディで実装されています。
 
  <a name="Separate_Reusable_Code_into_a_Core_Library" />
-
 
 ## <a name="separate-reusable-code-into-a-core-library"></a>再利用可能なコードをコアライブラリに分離する
 
@@ -58,7 +56,6 @@ Xamarin.Forms プロジェクトはすべてのプラットフォームでサポ
  ![](overview-images/layers2.png "アプリケーションアーキテクチャを階層化し、プラットフォームに依存しないコア機能を再利用可能なコアライブラリに移動することで、責任の分離の原則に従うことで、プラットフォーム間でのコード共有を最大化できます。")
 
  <a name="Case_Studies" />
-
 
 ## <a name="case-studies"></a>ケーススタディ
 

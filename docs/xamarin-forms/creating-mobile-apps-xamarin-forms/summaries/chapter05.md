@@ -1,18 +1,18 @@
 ---
 title: 第 5 章の概要です。 サイズの処理
-description: Xamarin.Forms によるモバイル アプリの作成。第 5 章の概要です。 サイズの処理
+description: Xamarin を使用した Mobile Apps の作成:第 5 章の概要です。 サイズの処理
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 486800E9-C09F-4B95-9AC2-C0F8FE563BCF
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: fd6694de756938ff564bed0923427fe62153116a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c082bdb10732e42b37511cf050e50f46990a5b5b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61334392"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771138"
 ---
 # <a name="summary-of-chapter-5-dealing-with-sizes"></a>第 5 章の概要です。 サイズの処理
 
@@ -80,15 +80,13 @@ Windows のスマート フォンとモバイル デバイスでは、160 のデ
 
 ## <a name="accessibility-issues"></a>アクセシビリティの問題
 
-**EstimatedFontSize**プログラムと**FitToSizeClock**両方のプログラムには微妙な欠陥が含まれています。ユーザーは、Android または Windows 10 Mobile のスマート フォンのユーザー補助の設定を変更する場合、プログラムされなく見積もることができますサイズ、テキストのレンダリング フォント サイズに基づいています。 [ **AccessibilityTest** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/AccessibilityTest)サンプルは、この問題を示します。
+**EstimatedFontSize**プログラムと**Fittosizeclock**プログラムには、次のような小さな欠陥が含まれています。ユーザーが Android または Windows 10 Mobile で電話のユーザー補助機能の設定を変更した場合、そのプログラムでは、フォントサイズに基づいてテキストがどの程度の大きさで表示されるかを推定できなくなります。 [ **AccessibilityTest** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/AccessibilityTest)サンプルは、この問題を示します。
 
 ## <a name="empirically-fitting-text"></a>経験的調整テキスト
 
 四角形にテキストに合わせて別の方法を経験的にレンダリングされたテキストのサイズを計算し、アップまたはスケール ダウンを調整することです。 書籍の呼び出しでプログラム[ `GetSizeRequest` ](xref:Xamarin.Forms.VisualElement.GetSizeRequest(System.Double,System.Double))要素の目的のサイズを取得するビジュアル要素にします。 メソッドは非推奨とされて、そのプログラムが代わりに呼び出す必要があります[ `Measure`](xref:Xamarin.Forms.VisualElement.Measure(System.Double,System.Double,Xamarin.Forms.MeasureFlags))します。
 
 `Label`、最初の引数 (折り返しを許可) するコンテナーの幅をする必要があります、2 番目に、引数を設定する必要がありますに`Double.PositiveInfinity`に制約なしの高さに揃えます。 [ **EmpiricalFontSize** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/EmpiricalFontSize)サンプルは、この手法を示します。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

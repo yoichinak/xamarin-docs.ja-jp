@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 91003f9a23c667b38028a9852b28dba656ba13db
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 56372bb643cab545529d6a4a89c804471f3344bc
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510336"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70762456"
 ---
 # <a name="togglebutton"></a>ToggleButton
 
@@ -46,12 +46,10 @@ togglebutton.Click += (o, e) => {
 
 アプリケーションを実行します。
 
-
 > [!TIP]
 > 状態を自分で変更する必要がある場合 (保存され[`CheckBoxPreference`](xref:Android.Preferences.CheckBoxPreference)たの読み込み時など) は、[`Checked`](xref:Android.Widget.CompoundButton.Checked)
 > プロパティセッターまたは[`Toggle()`](xref:Android.Widget.CompoundButton.Toggle)
 > メソッドをオーバーライドします。
-
 
 ## <a name="related-links"></a>関連リンク
 

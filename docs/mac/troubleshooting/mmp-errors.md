@@ -8,12 +8,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/27/2018
-ms.openlocfilehash: 35de496d0684473fe3f6bc4ebadddc471b6b0cfe
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: ac50c665955f9bf234c46b3d4082fb628b61a33d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292895"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770025"
 ---
 # <a name="xamarinmac-error-messages-mmp"></a>Xamarin. Mac エラーメッセージ (mmp)
 
@@ -616,7 +616,7 @@ App Store は、32ビットのバリアントを含むライブラリとフレ�
 <a name="MM8026" />
 
 #### <a name="mm8026--is-not-supported-when-the-dynamic-registrar-has-been-linked-away"></a>MM8026: * は、動的レジスタがリンクされている場合はサポートされません。
- 
+
 これは通常、必要に応じて動的レジストラーをリンクしないようにする必要があるため、Xamarin. Mac のバグを示します。 バグを送信してください [https://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)です。
- 
+
 プロジェクトの Mac ビルドオプションの追加の mmp 引数にを追加`--optimize=-remove-dynamic-registrar`することによって、動的レジストラーを保持するようにリンカーを設定することができます。

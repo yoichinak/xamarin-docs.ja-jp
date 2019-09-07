@@ -7,12 +7,12 @@ ms.assetid: 785F4D13-7430-492E-B24E-3B45C560E9F1
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/14/2017
-ms.openlocfilehash: f526be2156c4d74cf695b6b11706e3bbb7f355bb
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: eb7057d40e6ff0c48c6dc1b5dc38af2eb92de2e0
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68642993"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772779"
 ---
 # <a name="non-affine-transforms"></a>非アフィン変換
 
@@ -468,7 +468,6 @@ static SKMatrix ComputeMatrix(SKSize size, SKPoint ptUL, SKPoint ptUR, SKPoint p
 `a`と`b`3 番目の変換がアフィン変換できるように、値が計算されます。 コードでは、アフィン変換の逆元を取得し、を使用して、右下隅にマップします。 (A、b) のポイントです。
 
 非アフィン変換の別の使用は、3 次元グラフィックスを模倣するためです。 次の記事で[ **3D 回転**](3d-rotation.md) 3D 空間で 2 次元グラフィックを回転させる方法を参照してください。
-
 
 ## <a name="related-links"></a>関連リンク
 

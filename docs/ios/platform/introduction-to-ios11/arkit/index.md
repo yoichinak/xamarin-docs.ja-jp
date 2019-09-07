@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 08/30/2017
-ms.openlocfilehash: 9e6b5c763d620bf5ef17e4fdb613d4bed9c00279
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: b05991be60e34cad6b7bfc5af15fe521e1ff6dd1
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290916"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752596"
 ---
 # <a name="introduction-to-arkit-in-xamarinios"></a>Xamarin の ARKit の概要
 
@@ -36,7 +36,6 @@ ARKit は、拡張されたさまざまな現実のアプリケーションや�
 アセットは、 **SceneKitAsset**ビルドアクションを使用してプロジェクトに追加する必要があります。
 
 ![プロジェクト内の SceneKit アセット](images/scene-assets.png)
-
 
 ### <a name="2-configure-the-view"></a>2. ビューを構成する
 
@@ -109,7 +108,6 @@ SceneView.Session.Pause();
 上記のコードでは、単純な ARKit アプリケーションが生成されます。 さらに複雑な例としては、拡張された現実`IARSCNViewDelegate`セッションをホストするビューコントローラーがを実装し、追加のメソッドを実装することが想定されています。
 
 ARKit は、surface tracking やユーザー操作など、より高度な機能を備えています。 ARKit の追跡と UrhoSharp の組み合わせの例については、 [urhosharp デモ](urhosharp.md)を参照してください。
-
 
 ## <a name="related-links"></a>関連リンク
 

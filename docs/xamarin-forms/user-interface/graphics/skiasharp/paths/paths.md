@@ -7,12 +7,12 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 370fec5b9323187f6345d3e6bf9d3e38145cedff
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: eee338461593ad131f679d32cadf63fe3b1a4c40
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68652785"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759342"
 ---
 # <a name="path-basics-in-skiasharp"></a>SkiaSharp のパスの基礎
 
@@ -194,7 +194,6 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 [![](paths-images/strokejoins-small.png "ストロークの結合 ページのスクリーン ショットをトリプル")](paths-images/strokejoins-large.png#lightbox "3 倍になるページのスクリーン ショット、ストロークの結合")
 
 マイター結合は、行の接続先シャープなポイントで構成されます。 2 つの行は、小さい角度に参加させる、マイター結合は非常に長くなります。 極端に長いマイター結合を防ぐためには、マイター結合の長さがの値によって制限されます、 [ `StrokeMiter` ](xref:SkiaSharp.SKPaint.StrokeMiter)プロパティの`SKPaint`します。 この長さを超えるマイター結合はベベル結合に切り取ったします。
-
 
 ## <a name="related-links"></a>関連リンク
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 04bcf1012800ef2883fef80580bcec869bd8e5a3
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 4be5670829b2b8c1a5a73f564b4c031b6a26bd54
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291467"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769857"
 ---
 # <a name="building-modern-macos-apps"></a>最新の macOS アプリの構築
 
@@ -951,8 +951,6 @@ Apple には、次のように、開発者が最も多くの Mac プラットフ
 ## <a name="summary"></a>まとめ
 
 この記事では、開発者が Xamarin. Mac で最新の macOS アプリを構築するために使用できるいくつかのヒント、機能、および手法について説明しました。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

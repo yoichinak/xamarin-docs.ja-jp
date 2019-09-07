@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 6cbcd6612323acc8619004d56fff82461e005e9e
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 72ffa4508f2c8f050f505313a28ce8278f2570b4
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69529141"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760266"
 ---
 # <a name="dependency-injection"></a>依存関係の挿入
 
@@ -144,7 +144,7 @@ _container = builder.Build();
 
 <a name="resolution" />
 
-## <a name="resolution"></a>解決方法
+## <a name="resolution"></a>解決策
 
 型が登録されると、依存関係として解決または挿入されることがあります。 型が解決され、コンテナーが新しいインスタンスを作成する必要がある場合、そのインスタンスに依存関係が挿入されます。
 
@@ -197,7 +197,6 @@ Autofac には、追加のインスタンススコープが含まれています
 依存関係の挿入を使用すると、これらの型に依存するコードから具象型を切り離すことができます。 通常は、インターフェイスと抽象型の間の登録とマッピングのリストを保持するコンテナーと、これらの型を実装または拡張する具象型を使用します。
 
 Autofac は疎結合アプリの構築を容易にし、依存関係挿入コンテナーによく見られるすべての機能を提供します。これには、型マッピングとオブジェクトインスタンスの登録、オブジェクトの解決、オブジェクトの有効期間の管理、挿入などのメソッドが含まれます。解決するオブジェクトのコンストラクターに依存するオブジェクト。
-
 
 ## <a name="related-links"></a>関連リンク
 

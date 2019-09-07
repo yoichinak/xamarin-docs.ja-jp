@@ -7,17 +7,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/05/2018
-ms.openlocfilehash: c0a35414cce6ff9981ad7825c8158a2f6f707585
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: cb7e8aaca13405aedd422288421d497653ddbfe8
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119494"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761203"
 ---
 # <a name="firebase-job-dispatcher"></a>Firebase ジョブ ディスパッチャー
 
 _このガイドでは、Google の焼討ベースのジョブディスパッチャーライブラリを使用して、バックグラウンド作業をスケジュールする方法について説明します。_
-
 
 ## <a name="overview"></a>概要
 
@@ -62,10 +61,9 @@ Android には、バックグラウンドでの作業の実行に役立つ次の
 
 ## <a name="using-the-firebase-job-dispatcher-library-in-xamarinandroid"></a>Xamarin. Android での焼討 Base ジョブディスパッチャーライブラリの使用
 
-焼討ベースのジョブディスパッチャーの使用を開始するには、最初に xamarin. の[NuGet パッケージ](https://www.nuget.org/packages/Xamarin.Firebase.JobDispatcher)を Xamarin. Android プロジェクトに追加します。 NuGet パッケージマネージャーを検索します 。このパッケージは、まだプレリリース段階にあります。
+焼討ベースのジョブディスパッチャーの使用を開始するには、最初に xamarin. の[NuGet パッケージ](https://www.nuget.org/packages/Xamarin.Firebase.JobDispatcher)を Xamarin. Android プロジェクトに追加します。 NuGet パッケージマネージャーを検索します。このパッケージは、まだプレリリース段階**にあります**。
 
 焼討 base ジョブディスパッチャーライブラリを追加した後、 `JobService`クラスを作成し、 `FirebaseJobDispatcher`のインスタンスを使用して実行するようにスケジュールを設定します。
-
 
 ### <a name="creating-a-jobservice"></a>JobService の作成
 
@@ -108,7 +106,7 @@ public class DemoJob : JobService
 ### <a name="creating-a-firebasejobdispatcher"></a>焼討 Basejobdispatcher の作成
 
 作業をスケジュールする前に、オブジェクトを`Firebase.JobDispatcher.FirebaseJobDispatcher`作成する必要があります。 は、をスケジュールする`JobService`役割を担います。 `FirebaseJobDispatcher` 次のコードスニペットは、 `FirebaseJobDispatcher`のインスタンスを作成する方法の1つです。 
- 
+
  ```csharp
 // This is the "Java" way to create a FirebaseJobDispatcher object
 IDriver driver = new GooglePlayDriver(context);
@@ -163,7 +161,7 @@ int scheduleResult = dispatcher.Schedule(myJob);
 - `FirebaseJobDispatcher.ScheduleResultNoDriverAvailable`無効なが使用され`IDriver`たか、何らかの方法で使用できませんでした。 `IDriver` &ndash; 
 - `FirebaseJobDispatcher.ScheduleResultUnsupportedTrigger`&ndash; は`Trigger`サポートされていませんでした。
 - `FirebaseJobDispatcher.ScheduleResultBadService`&ndash;サービスが正しく構成されていないか、使用できません。
- 
+
 ### <a name="configuring-a-job"></a>ジョブの構成
 
 ジョブをカスタマイズすることもできます。 ジョブをカスタマイズする方法の例を次に示します。
@@ -243,7 +241,7 @@ Job myJob = dispatcher.NewJobBuilder()
 #### <a name="setting-a-retrystrategy"></a>RetryStrategy の設定
 
 は`Firebase.JobDispatcher.RetryStrategy` 、失敗したジョブを再実行する前にデバイスが使用する遅延の量を指定するために使用されます。 には、失敗したジョブのスケジュールを再設定するために使用する時間ベースのアルゴリズムと、ジョブをスケジュールするウィンドウを指定する実行ウィンドウを定義するポリシーがあります。 `RetryStrategy` この再_スケジュールウィンドウ_は、2つの値によって定義されます。 最初の値は、ジョブを再スケジュールする前に待機する秒数 (_初期バックオフ_値) です。2番目の数値は、ジョブを実行するまでの最大秒数 (_バックオフの最大_値) です。 
- 
+
 次の2種類の再試行ポリシーは、これらの int 値によって識別されます。
 
 - `RetryStrategy.RetryPolicyExponential`_指数バックオフ_ポリシーでは、エラーが発生するたびに初期バックオフ値が指数関数的に増加します。 &ndash; ジョブが初めて失敗したとき、ライブラリは、ジョブ&ndash;の例を30秒に再スケジュールする前に、指定されている最初の間隔を待機します。 ジョブが2回目に失敗した場合、ライブラリはジョブの実行を試行する前に少なくとも60秒間待機します。 3回目の試行が失敗すると、ライブラリは120秒ほど待機します。 の既定`RetryStrategy`値は、 `RetryStrategy.DefaultExponential`オブジェクトによって表示されます。 初期バックオフは30秒、最大バックオフは3600秒です。
@@ -286,7 +284,6 @@ int cancelResult = dispatcher.Cancel("unique-tag-for-job");
 ## <a name="summary"></a>Summary
 
 このガイドでは、焼討ベースのジョブディスパッチャーを使用して、バックグラウンドで作業をインテリジェントに実行する方法について説明しました。 ここで`JobService` `JobTrigger`は、として実行される作業をカプセル化する方法と`FirebaseJobDispatcher` 、を使用して、で条件を指定し、を使用してエラーを`RetryStrategy`処理する方法について説明しました。
-
 
 ## <a name="related-links"></a>関連リンク
 

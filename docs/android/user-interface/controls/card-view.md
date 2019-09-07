@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 6daead7962e472c3c7d0b117d545efdbd3c65886
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 2051c7c904dedf8b41f405d3ec7b9c1a003b7fd5
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69523094"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758780"
 ---
 # <a name="xamarinandroid-cardview"></a>Xamarin Android CardView
 
@@ -57,7 +57,6 @@ Visual Studio で`Xamarin.Android.Support.v7.CardView`パッケージを追加�
 Android 5.0 アプリケーションプロジェクトを構成する方法については、「 [android 5.0 プロジェクトの設定](~/android/platform/lollipop.md)」を参照してください。
 NuGet パッケージのインストールの詳細について[は、「チュートリアル:プロジェクト](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)に NuGet を含めます。
 
-
 ## <a name="introducing-cardview"></a>CardView の概要
 
 既定値`CardView`は、最小の角が付いた白いカードと、小さな影を持つ白いカードに似ています。 次の例では、を`TextView`含む単一`CardView`のウィジェットが表示され**ます。**
@@ -94,7 +93,6 @@ NuGet パッケージのインストールの詳細について[は、「チュ�
 [![白の背景とテキスト行を含む CardView のスクリーンショット](card-view-images/02-basic-cardview-sml.png)](card-view-images/02-basic-cardview.png#lightbox)
 
 この例では、アプリのスタイルを明るいマテリアルのテーマ (`Theme.Material.Light`) に設定して、 `CardView`影とエッジが見やすくなるようにしています。 Android 5.0 アプリのテーマの詳細については、「[マテリアルのテーマ](~/android/user-interface/material-theme.md)」を参照してください。 次のセクションでは、アプリケーションのをカスタマイズ`CardView`する方法について説明します。
-
 
 ## <a name="customizing-cardview"></a>CardView のカスタマイズ
 
@@ -161,7 +159,6 @@ NuGet パッケージのインストールの詳細について[は、「チュ�
 
 では、 `CardView`複数の子ビューをコンテンツ領域に表示できることに注意してください。 たとえば、上記の写真表示アプリの例では、コンテンツ領域は`ListView` `ImageView`とを`TextView`含むで構成されています。 多くの場合、`CardView` インスタンスは垂直方向に配置されますが、水平方向に配置することもできます(例のスクリーンショットについては、「[カスタムビュースタイルの作成](~/android/user-interface/material-theme.md#customview)」を参照してください)。
 
-
 ### <a name="cardview-layout-options"></a>CardView レイアウトオプション
 
 `CardView`レイアウトをカスタマイズするには、埋め込み、標高、角の半径、および背景色に影響を与える1つ以上の属性を設定します。
@@ -170,7 +167,6 @@ NuGet パッケージのインストールの詳細について[は、「チュ�
 
 各属性は、対応する`CardView`メソッドを呼び出すことによって動的に変更することもできます ( `CardView`メソッドの詳細については、「 [CardView クラスのリファレンス](https://developer.android.com/reference/android/support/v7/widget/CardView.html)」を参照してください)。
 これらの属性 (背景色を除く) では、ディメンション値 (10 進数の後に単位が続く) を受け取ることに注意してください。 たとえば、は`11.5dp` 11.5 の密度に依存しないピクセルを指定します。
-
 
 #### <a name="padding"></a>[間隔]
 
@@ -193,8 +189,6 @@ NuGet パッケージのインストールの詳細について[は、「チュ�
 コンテンツの埋め込み属性は、コンテンツ領域内にある特定のウィジェットではなく、コンテンツ領域の境界を基準としています。
 たとえば、フォト表示`contentPadding`アプリでが十分に増加した場合、 `CardView`は画像とカードに表示されているテキストの両方をトリミングします。
 
-
-
 #### <a name="elevation"></a>高度
 
 `CardView`は、昇格を制御する2つの昇格属性と、結果として、影のサイズを提供します。
@@ -210,7 +204,6 @@ NuGet パッケージのインストールの詳細について[は、「チュ�
 の`cardElevation` 値`CardView`を大きくすると、影のサイズが大きくなり、背景の上の方が手前に見えるようになります。 また、重なり合ったビューの描画順序も決定されます。 `CardView`つまり、は、高いレベルの昇格が設定された別の重なり合うビューの下に描画されます。 `cardElevation`
 この`cardMaxElevation`設定は、アプリが昇格を動的&ndash;に変更したときに、この設定で定義した制限を超えてシャドウが拡張されないようにする場合に便利です。
 
-
 #### <a name="corner-radius-and-background-color"></a>角の半径と背景色
 
 `CardView`には、コーナー半径と背景色を制御するために使用できる属性が用意されています。 この2つのプロパティを使用すると、 `CardView`の全体的なスタイルを変更できます。
@@ -224,7 +217,6 @@ NuGet パッケージのインストールの詳細について[は、「チュ�
 - `cardBackgroundColor`&ndash; の`CardView`背景色。
 
 この図では`cardCornerRadius` 、はより丸みのある10dp に`cardBackgroundColor`設定され`"#FFFFCC"` 、は (明るい黄色) に設定されています。
-
 
 ## <a name="compatibility"></a>互換性
 
@@ -245,11 +237,9 @@ Android 5.0 ロリポップ`CardView`より前のバージョンの android で�
 
 以前のバージョンの Android との互換性を維持する方法の詳細については、「[互換性の維持](https://developer.android.com/training/material/compatibility.html)」を参照してください。
 
-
 ## <a name="summary"></a>まとめ
 
 このガイドでは、 `CardView` Android 5.0 (ロリポップ) に含まれる新しいウィジェットを導入しました。 既定`CardView`の外観を示し、その昇格、角`CardView`の丸み、コンテンツの埋め込み、および背景色を変更してカスタマイズする方法を説明しました。 `CardView`レイアウト属性 (参照図を含む) を一覧表示し、android 5.0 ロリポップ`CardView`より前の android デバイスでを使用する方法について説明しました。 の詳細`CardView`については、 [CardView クラスのリファレンス](https://developer.android.com/reference/android/support/v7/widget/CardView.html)を参照してください。
-
 
 ## <a name="related-links"></a>関連リンク
 

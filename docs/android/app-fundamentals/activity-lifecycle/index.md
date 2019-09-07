@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/28/2018
-ms.openlocfilehash: 91e49c387818ca4d7472325efa665a5c2bfd9e64
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 8ebc52936dfdcb6b5262424eba5652de0b8908e0
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522047"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755595"
 ---
 # <a name="activity-lifecycle"></a>アクティビティのライフサイクル
 
@@ -32,7 +32,6 @@ _アクティビティは Android アプリケーションの基本的な構成�
 - アクティビティの状態
 - ライフサイクル メソッド
 - アプリケーションの状態を保持する
-
 
 このセクションには、アクティビティのライフサイクル中に状態を効率的に保存する方法についての実用的な例を提供する[チュートリアル](~/android/app-fundamentals/activity-lifecycle/saving-state.md)も含まれています。 この章を終了すると、アクティビティのライフサイクルと、Android アプリケーションでそれをサポートする方法を理解できるようになります。
 
@@ -56,7 +55,6 @@ Android OS は、その状態に基づいてアクティビティを判別しま
     停止したアクティビティは、可能な限り、状態とメンバーの情報を保持しようとしますが、停止されたアクティビティは3つの状態の最も低い優先度と見なされます。そのため、OS は、この状態のアクティビティを最初に終了してリソースを満たすようにします。優先順位の高いアクティビティの要件。
 
 1. *再起動*&ndash; Android によってメモリから削除されるまで、ライフサイクル内で一時停止から停止されるまでのアクティビティが発生する可能性があります。 ユーザーがアクティビティに戻ると、再起動する必要があります。これは、以前に保存された状態に復元され、ユーザーに表示されます。
-
 
 ### <a name="activity-re-creation-in-response-to-configuration-changes"></a>構成の変更に応じたアクティビティの再作成
 
@@ -122,7 +120,6 @@ protected override void OnCreate(Bundle bundle)
 - 関連するアラートまたはダイアログを表示する
 - 外部イベントハンドラーの接続
 
-
 例として、次のコードスニペットはカメラを初期化する方法を示しています。
 
 ```csharp
@@ -174,7 +171,6 @@ public void OnPause()
 1. `OnResume`アクティビティがフォアグラウンドに返される場合は、が呼び出されます。
 1. `OnStop`アクティビティがバックグラウンドで配置されている場合は、が呼び出されます。
 
-
 #### <a name="onstop"></a>OnStop
 
 [OnStop](xref:Android.App.Activity.OnStop)は、アクティビティがユーザーに表示されなくなったときに呼び出されます。 これは、次のいずれかが発生した場合に発生します。
@@ -182,7 +178,6 @@ public void OnPause()
 - 新しいアクティビティが開始され、このアクティビティがカバーされます。
 - 既存のアクティビティがフォアグラウンドに取り込まれます。
 - アクティビティが破棄されています。
-
 
 `OnStop`は、Android がリソースを使用していない場合や、アクティビティを適切にバックグラウンドで処理できない場合など、メモリ不足の状況では常に呼び出されるとは限りません。 このため、破棄のためにアクティビティを準備する`OnStop`ときに、の呼び出しに依存しないことをお勧めします。 この`OnDestroy`後に呼び出される可能性がある次のライフサイクルメソッドは、アクティビティが終了した場合`OnRestart` 、またはアクティビティがユーザーとの対話に戻る場合に発生します。
 
@@ -325,7 +320,6 @@ protected override void OnRestoreInstanceState(Bundle savedState)
 
 を使用して`Bundle`状態を保存する例については、「[チュートリアル-アクティビティの状態を保存](saving-state.md)する」を参照してください。
 
-
 #### <a name="bundle-limitations"></a>バンドルの制限事項
 
 `OnSaveInstanceState`では一時的なデータを簡単に保存できますが、いくつかの制限があります。
@@ -337,7 +331,6 @@ protected override void OnRestoreInstanceState(Bundle savedState)
 - バンドルを使用して保存されたデータはシリアル化されるため、遅延が発生する可能性があります。
 
 バンドル状態は、大量のメモリを使用しない単純なデータに役立ちます。一方、*非構成インスタンスデータ*は、より複雑なデータや、web サービス呼び出しや複雑なデータベースクエリなどのデータの取得に負荷がかかるデータには役立ちます。 構成以外のインスタンスデータは、必要に応じてオブジェクトに保存されます。 次のセクションで`OnRetainNonConfigurationInstance`は、構成の変更によってより複雑なデータ型を保持する方法を紹介します。
-
 
 ### <a name="persisting-complex-data"></a>複合データの保持
 
@@ -477,7 +470,6 @@ public override Java.Lang.Object OnRetainNonConfigurationInstance ()
 ## <a name="summary"></a>Summary
 
 Android アクティビティのライフサイクルは、アプリケーション内のアクティビティの状態管理のための強力なフレームワークを提供しますが、理解して実装するのは厄介です。 この章では、アクティビティの有効期間中に発生する可能性のあるさまざまな状態と、それらの状態に関連付けられているライフサイクルメソッドについて説明しました。 次に、これらの各メソッドで実行する必要があるロジックの種類に関するガイダンスが提供されました。
-
 
 ## <a name="related-links"></a>関連リンク
 

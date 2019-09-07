@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: dd325fbdf9d2619df94077eed74f9e6c61796a26
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: a18572b0f28cb8d6c699d0bbd062bdb067471a34
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68651401"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770881"
 ---
 # <a name="consume-an-azure-cosmos-db-document-database-in-xamarinforms"></a>Xamarin. Forms で Azure Cosmos DB ドキュメントデータベースを使用する
 
@@ -226,7 +226,6 @@ await client.DeleteDatabaseAsync(UriFactory.CreateDatabaseUri(Constants.Database
 ## <a name="summary"></a>まとめ
 
 この記事では、Azure Cosmos DB .NET Standard クライアント ライブラリを使用して、Xamarin.Forms アプリケーションに Azure Cosmos DB ドキュメント データベースを統合する方法について説明します。 Azure Cosmos DB ドキュメント データベースは、JSON ドキュメント、シームレスなスケーリングとグローバル レプリケーションを必要とするアプリケーションの高速、高可用性でスケーラブルなデータベース サービスを提供するための低待機時間のアクセスを提供する NoSQL データベースです。
-
 
 ## <a name="related-links"></a>関連リンク
 

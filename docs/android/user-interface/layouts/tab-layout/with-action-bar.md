@@ -7,17 +7,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 4673b178512a886e5fdb154c57c8d659276bb392
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: d37537f345a1532e38ab4d016cfbd5b26eae8b3a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522333"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758531"
 ---
 # <a name="tabbed-layouts-with-the-actionbar"></a>ActionBar を使用したタブ付きレイアウト
 
 _このガイドでは、ActionBar Api を使用して、Xamarin Android アプリケーションでタブ付きユーザーインターフェイスを作成する方法について説明します。_
-
 
 ## <a name="overview"></a>概要
 
@@ -25,15 +24,11 @@ _このガイドでは、ActionBar Api を使用して、Xamarin Android アプ�
 
 は、の`ActionBar`代わりに使用する必要がある、より新しい一般化されたアクション`Toolbar`バーコンポーネントであることに注意してください (を置き換える`ActionBar`ように設計されています)。 `Toolbar` 詳細については、「[ツールバー](~/android/user-interface/controls/tool-bar/index.md)」を参照してください。 
 
-
-
 ## <a name="requirements"></a>必要条件
 
 API レベル 11 (Android 3.0) 以降を対象とするすべての Xamarin Android アプリケーションは、ネイティブ Android Api の一部として ActionBar Api にアクセスできます。 
 
 いくつかの ActionBar Api は、API レベル 7 (Android 2.1) に移植されており、 [V7 AppCompat ライブラリ](https://developer.android.com/tools/support-library/features.html#v7-appcompat)を通じて入手できます。このライブラリは、Xamarin [android Support library-V7](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/)パッケージを介して xamarin android アプリで使用できます。
-
-
 
 ## <a name="introducing-tabs-in-the-actionbar"></a>ActionBar でのタブの概要
 
@@ -59,8 +54,6 @@ Xamarin は、 `ActionBar.ITabListener` `ActionBar.Tab`クラスのイベント�
 - TabReselected
 - TabUnselected
 
-
-
 ### <a name="adding-tabs-to-the-actionbar"></a>ActionBar へのタブの追加
 
 ActionBar は Android 3.0 (API レベル 11) 以上にネイティブであり、この API を最小として対象とするすべての Xamarin Android アプリケーションで使用できます。 
@@ -79,7 +72,6 @@ ActionBar は Android 3.0 (API レベル 11) 以上にネイティブであり�
 3. イベントハンドラーを割り当てるか、また`ActionBar.ITabListener`はユーザーが actionbar タブと対話したときに発生するイベントに応答するカスタム実装を提供します。
 
 4. 前の手順で作成したタブをに`ActionBar`追加します。
-
 
 次のコードは、イベントハンドラーを使用して状態の変更に応答するアプリケーションにタブを追加するために、これらの手順を使用する例の1つです。 
 
@@ -107,14 +99,11 @@ protected override void OnCreate(Bundle bundle)
 }
 ```
 
-
 #### <a name="event-handlers-vs-actionbaritablistener"></a>イベントハンドラーと ActionBar. ITabListener
 
 アプリケーションでは、さまざまな`ActionBar.ITabListener`シナリオでイベントハンドラーとを使用する必要があります。 イベントハンドラーでは、一定量の構文上の利便性を提供します。これにより、クラスを作成してを実装`ActionBar.ITabListener`する必要がなくなります。 このような&ndash;利便性は Xamarin にあります。 Android では、この変換を実行して、 `ActionBar.ITabListener` 1 つのクラスを作成し、を実装します。 これは、アプリケーションのタブの数が限られている場合には問題ありません。 
 
 多くのタブを処理する場合、または actionbar タブ間で共通の機能を共有する場合、メモリとパフォーマンスの観点から、クラスの 1 `ActionBar.ITabListener`つのインスタンスを実装し、共有するカスタムクラスを作成する方が効率的な場合があります。 これにより、Xamarin Android アプリケーションで使用されている複素数を減らすことができます。 
-
-
 
 ### <a name="backwards-compatibility-for-older-devices"></a>古いデバイスの旧バージョンとの互換性
 
@@ -171,11 +160,9 @@ public class MainActivity : ActionBarActivity, ActionBar.ITabListener
 }
 ```
 
-
 ## <a name="summary"></a>まとめ
 
 このガイドでは、ActionBar を使用して Xamarin Android でタブ付きユーザーインターフェイスを作成する方法について説明しました。 ここでは、actionbar にタブを追加する方法と、 `ActionBar.ITabListener`インターフェイスを使用してアクティビティが tab イベントと対話する方法について説明します。 また、Android サポートライブラリの v7 AppCompat パッケージ backports が、以前のバージョンの Android に ActionBar タブを戻す方法についても説明しました。 
-
 
 ## <a name="related-links"></a>関連リンク
 

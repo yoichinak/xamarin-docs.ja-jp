@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/10/2018
-ms.openlocfilehash: 056ab7a9fe4bcb7f07a9a7cd7c841a3d9f7574b6
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 4c3c0e51348d2435ce5042485b214e6e5fe159b2
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648022"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758418"
 ---
 # <a name="hello-wear"></a>Wear の基本
 
@@ -38,7 +38,6 @@ _初めての Android 用の磨耗アプリを作成し、それを磨耗エミ�
 
 -----
 
-
 このテンプレートには、 **Xamarin Android ウェアラブルライブラリ**NuGet (および依存関係) が自動的に含まれるため、摩耗固有のウィジェットにアクセスできます。 [磨耗] テンプレートが表示されない場合は、[インストールとセットアップ](~/android/wear/get-started/installation.md)のガイドを参照して、サポートされている Android SDK がインストールされていることを確認します。 
 
 ### <a name="2-choose-the-correct-target-framework"></a>2.適切な**ターゲットフレームワーク**を選択する
@@ -58,7 +57,6 @@ _初めての Android 用の磨耗アプリを作成し、それを磨耗エミ�
 -----
 
 ターゲットフレームワークの設定の詳細については、「 [ANDROID API レベルについ](~/android/app-fundamentals/android-api-levels.md)て」を参照してください。
-
 
 ### <a name="3-edit-the-mainaxml-layout"></a>3.メインの**axml**レイアウトを編集する
 
@@ -137,7 +135,6 @@ Android の磨耗 Smartwatch などの Android 磨耗デバイスがない場合
 
 Android の磨耗 Smartwatch などの Android の磨耗デバイスがある場合は、エミュレーターを使用する代わりに、デバイスでアプリを実行できます。 磨耗デバイスでのデバッグの詳細については、「[磨耗デバイスでのデバッグ](~/android/wear/deploy-test/debug-on-device.md)」を参照してください。
 
-
 ### <a name="6-run-the-android-wear-app"></a>6.Android の磨耗アプリを実行する
 
 Android の磨耗デバイスが [デバイス] プルダウンメニューに表示されます。 デバッグを開始する前に、適切な Android の磨耗デバイスまたは AVD を選択してください。 デバイスを選択した後、[再生] ボタンをクリックして、エミュレーターまたはデバイスにアプリをデプロイします。
@@ -166,13 +163,11 @@ Watch emulator を使用している場合は、アプリの起動に時間が�
 
 [![3回のクリック後の磨耗アプリのスクリーンショット](hello-wear-images/mainactivity-counts.png)](hello-wear-images/mainactivity-counts.png#lightbox)
 
-
 ## <a name="next-steps"></a>次の手順
 
 関連する電話アプリを含む、Android の摩耗アプリを含む[磨耗のサンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Android+wear)を確認してください。
 
 アプリを配布する準備ができたら、「[パッケージングの操作](~/android/wear/deploy-test/packaging.md)」を参照してください。
-
 
 ## <a name="related-links"></a>関連リンク
 

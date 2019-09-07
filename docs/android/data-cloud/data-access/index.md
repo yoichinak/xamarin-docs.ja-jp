@@ -1,52 +1,51 @@
 ---
 title: Xamarin.Android Data Access
-description: ほとんどのアプリケーションでは、デバイスにローカルにデータを保存するには、いくつか要件があります。 データの量が普通に小規模でない限り、通常が必要です、データベースとデータベースへのアクセスを管理するアプリケーションでのデータ層。  Android デバイスには組み込みの SQLite データベース エンジンと Xamarin のプラットフォームでデータを格納および取得のアクセスが簡略化されます。 このドキュメントでは、クロスプラット フォーム対応の方法で SQLite データベースにアクセスする方法を示します。
+description: ほとんどのアプリケーションでは、デバイスにデータをローカルに保存する必要があります。 データ量が非常に小さい場合を除き、通常、データベースアクセスを管理するには、アプリケーションにデータベースとデータ層が必要です。  Android には、SQLite データベースエンジンが組み込まれています。また、データの格納と取得に対するアクセスは、Xamarin のプラットフォームによって簡略化されています。 このドキュメントでは、クロスプラットフォーム方式で SQLite データベースにアクセスする方法について説明します。
 ms.prod: xamarin
 ms.assetid: 6B47E864-C6E7-4AA2-8DEF-2C8BF551D17C
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 6858e290d93007d6054ba0ef63dce86e6e2e53e3
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 2343603199661ea39b1f0af172ce0ccf48a2cd66
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67649615"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70754585"
 ---
 # <a name="xamarinandroid-data-access"></a>Xamarin.Android Data Access
 
-_ほとんどのアプリケーションでは、デバイスにローカルにデータを保存するには、いくつか要件があります。データの量が普通に小規模でない限り、通常が必要です、データベースとデータベースへのアクセスを管理するアプリケーションでのデータ層。Android デバイスには組み込みの SQLite データベース エンジンと Xamarin のプラットフォームでデータを格納および取得のアクセスが簡略化されます。このドキュメントでは、クロスプラット フォーム対応の方法で SQLite データベースにアクセスする方法を示します。_
+_ほとんどのアプリケーションでは、デバイスにデータをローカルに保存する必要があります。データ量が非常に小さい場合を除き、通常、データベースアクセスを管理するには、アプリケーションにデータベースとデータ層が必要です。Android には、SQLite データベースエンジンが組み込まれています。また、データの格納と取得に対するアクセスは、Xamarin のプラットフォームによって簡略化されています。このドキュメントでは、クロスプラットフォーム方式で SQLite データベースにアクセスする方法について説明します。_
 
-## <a name="data-access-overview"></a>データ アクセスの概要
+## <a name="data-access-overview"></a>データアクセスの概要
 
-ほとんどのアプリケーションでは、デバイスにローカルにデータを保存するには、いくつか要件があります。 データの量が普通に小規模でない限り、通常が必要です、データベースとデータベースへのアクセスを管理するアプリケーションでのデータ層。 Android の両方が「組み込み」SQLite データベース エンジンと、SQLite のデータ プロバイダーに付属する Xamarin のプラットフォームによって、データへのアクセスが簡略化します。
+ほとんどのアプリケーションでは、デバイスにデータをローカルに保存する必要があります。 データ量が非常に小さい場合を除き、通常、データベースアクセスを管理するには、アプリケーションにデータベースとデータ層が必要です。 Android には、SQLite データベースエンジンが組み込まれています。また、データへのアクセスは、SQLite Data Provider に付属している Xamarin のプラットフォームによって簡素化されています。
 
-Xamarin.Android などのデータベース アクセス Api をサポートします。
+Xamarin Android は、次のようなデータベースアクセス Api をサポートします。
 
-- ADO.NET フレームワークです。
-- SQLite NET サード パーティのライブラリ。
+- ADO.NET フレームワーク。
+- SQLite-NET サードパーティライブラリ。
 
-このセクションでは、コードの大部分は、クロス プラットフォームの完全には、され、変更しなくても iOS または Android で実行されます。 説明した 2 つのサンプル アプリがあります。
+このセクションのコードの大部分は完全にクロスプラットフォームなので、iOS または Android では変更せずに実行できます。 ここでは、次の2つのサンプルアプリについて説明します。
 
-- [**DataAccess_Basic** ](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic) &ndash;単純なデータ操作が、結果をテキスト コントロールの表示を書き込みます
+- [**DataAccess_Basic**](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)&ndash;単純なデータ操作では、結果がテキスト表示コントロールに書き込まれます。
 
-- [**DataAccess_Advanced** ](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced) &ndash;一覧が表示され、単純なデータ構造の編集作業アプリケーションを小さなデータ操作に統合します。
+- [**DataAccess_Advanced**](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)&ndash;データ操作を、単純なデータ構造の一覧表示と編集を行う小さな動作アプリケーションに統合します。
 
-両方のサンプル ソリューションには、iOS と Android のサンプル アプリケーションのプロジェクトが含まれます。
+どちらのサンプルソリューションにも、iOS と Android のサンプルアプリケーションプロジェクトが含まれています。
 
-Xamarin.Forms アプリケーションでは、読み取る[データベースでの作業](~/xamarin-forms/data-cloud/data/databases.md)PCL ライブラリを Xamarin.Forms での SQLite を使用する方法を説明しています。
+Xamarin のアプリケーションについては、「[データベースの操作](~/xamarin-forms/data-cloud/data/databases.md)」を参照してください。これは、xamarin を使用した PCL ライブラリで SQLite を操作する方法について説明しています。
 
-このセクションのトピックでは、データベース エンジンに SQLite を使用して Xamarin.Android でのデータ アクセスについて説明します。 ADO.NET の構文を使用して「直接」、データベースにアクセスしたり、SQLite.NET ORM を追加し、c# でのデータの操作を実行できます。
+このセクションのトピックでは、データベースエンジンとして SQLite を使用した Xamarin. Android のデータアクセスについて説明します。 ADO.NET 構文を使用してデータベースに直接アクセスできます。または、SQLite.NET ORM を含め、でC#データ操作を実行することもできます。
 
-2 つのサンプルを確認します。 更新と削除機能をテキスト フィールドには、単純なアプリケーションを含む出力の作成、読み取り、非常に単純なデータ アクセス コードを含む 1 つ。 スレッド処理、および事前設定された SQLite データベースを使用してアプリケーションをシードする方法も説明しました。
+2つのサンプルが確認されます。1つは、テキストフィールドに出力する非常に単純なデータアクセスコードと、作成、読み取り、更新、削除の機能を含む単純なアプリケーションです。 スレッド処理と、事前に設定された SQLite データベースを使用してアプリケーションをシード処理する方法についても説明します。
 
-クロス プラットフォームのデータ アクセスの他の例を参照してください、 [Tasky Pro](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)ケース スタディ。
-
+クロスプラットフォームデータアクセスのその他の例については、 [Tasky Pro](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)のケーススタディを参照してください。
 
 ## <a name="related-links"></a>関連リンク
 
-- [DataAccess Basic (サンプル)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
-- [データ アクセスの詳細 (サンプル)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
-- [Android のデータのレシピ](https://github.com/xamarin/recipes/tree/master/Recipes/android/data)
-- [Xamarin.Forms のデータ アクセス](~/xamarin-forms/data-cloud/data/databases.md)
+- [このような場合の基本 (サンプル)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
+- [詳細設定 (サンプル)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
+- [Android データレシピ](https://github.com/xamarin/recipes/tree/master/Recipes/android/data)
+- [Xamarin.Forms データアクセス](~/xamarin-forms/data-cloud/data/databases.md)

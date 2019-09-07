@@ -7,17 +7,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2018
-ms.openlocfilehash: 95d4194e0ed1a1da435a233e40a74f506c49b539
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: e2bfc64626d658cbcb22ba5f2ebd1f1ff069ec19
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119874"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70757760"
 ---
 # <a name="android-job-scheduler"></a>Android ジョブのスケジューラ
 
 _このガイドでは、android ジョブスケジューラ API を使用してバックグラウンド作業をスケジュールする方法について説明します。 android 5.0 (API レベル 21) 以降を実行している Android デバイスで使用できます。_
-
 
 ## <a name="overview"></a>概要 
 
@@ -78,7 +77,6 @@ Android ジョブスケジューラライブラリによって実行されるす
 4. `OnStartJob`メソッドをオーバーライドして、作業を実行するコードを追加します。 Android は、ジョブを実行するアプリケーションのメインスレッドでこのメソッドを呼び出します。 アプリケーションがブロックされないようにするために、スレッドに対して数ミリ秒の実行時間がかかる作業です。
 5. 作業が完了したら、は`JobService` `JobFinished`メソッドを呼び出す必要があります。 このメソッドは、 `JobService` `JobScheduler`がその動作を行う方法を示しています。 を呼び出さ`JobFinished`ないと、デバイス`JobService`に不要な要求が発生し、バッテリの寿命が短縮されます。 
 6. `OnStopJob`メソッドをオーバーライドすることもお勧めします。 このメソッドは、 `JobService`ジョブが完了する前にシャットダウンされるときに Android によって呼び出され、リソースを適切に破棄する機会をに提供します。 ジョブを再スケジュール`true`する必要がある場合、またはジョブを`false`再実行する望ましいがない場合は、このメソッドはを返します。
-   
 
 次のコードは、TPL を使用し`JobService`て何らかの処理を非同期に実行するアプリケーションの最も単純な例です。
 
@@ -115,7 +113,6 @@ Xamarin Android アプリケーションは、を`JobService`直接インスタ�
 
 - **JobId**これは、`JobScheduler`に対するジョブを識別するために使用される値です。`int` &ndash; この値を再利用すると、既存のジョブがすべて更新されます。 この値は、アプリケーションに対して一意である必要があります。 
 - **Jobservice**このパラメーターは、がジョブの実行に使用する`JobScheduler`型を明示的に識別するです。`ComponentName` &ndash; 
-  
 
 この拡張メソッドは、アクティビティなどの`JobInfo.Builder` Android `Context`を使用してを作成する方法を示しています。
 
@@ -138,7 +135,6 @@ var jobInfo = jobBuilder.Build();  // creates a JobInfo object.
 
 Android ジョブスケジューラの強力な機能として、ジョブを実行するタイミングや、ジョブが実行される条件を制御できます。 次の表では、ジョブの実行`JobInfo.Builder`時にアプリが影響を与えるようにするのメソッドの一部について説明します。  
 
-
 |  メソッド | 説明   |
 |---|---|
 | `SetMinimumLatency`  | ジョブが実行されるまでの待機時間 (ミリ秒単位) を指定します。 |
@@ -149,7 +145,6 @@ Android ジョブスケジューラの強力な機能として、ジョブを実
 | `SetDeviceIdle` | デバイスがビジー状態のときにジョブが実行されます。 |
 | `SetPeriodic` | ジョブを定期的に実行することを指定します。 |
 | `SetPersisted` | このジョブは、デバイスの再起動に perisist 必要があります。 | 
-
 
 では、ジョブの実行を再試行`JobScheduler`するまでの待機時間について、いくつかのガイダンスを提供しています。`SetBackoffCriteria` バックオフ条件には2つの部分があります。遅延時間はミリ秒 (既定値は30秒)、もう1つは使用する必要があります (バックオフ_ポリシー_または_再試行ポリシー_と呼ばれることもあります)。 2つのポリシーは`Android.App.Job.BackoffPolicy`列挙型にカプセル化されます。
 
@@ -206,7 +201,7 @@ else
     snackBar.Show();
 }
 ```
- 
+
 ### <a name="cancelling-a-job"></a>ジョブの取り消し
 
 スケジュールされているすべてのジョブ、または`JobsScheduler.CancelAll()`メソッド`JobScheduler.Cancel(jobId)`またはメソッドを使用して1つのジョブだけを取り消すことができます。

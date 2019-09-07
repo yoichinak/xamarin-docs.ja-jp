@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: de0db40fb678bf88a18c6be42d89644d41583b99
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: cd2490bfad880d128f5eaeebd4aac58ad3a4d8fa
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280101"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772723"
 ---
 # <a name="toolbars-in-xamarinmac"></a>Xamarin. Mac のツールバー
 
@@ -357,7 +357,6 @@ public override void AwakeFromNib ()
 ## <a name="summary"></a>まとめ
 
 この記事では、Xamarin. Mac アプリケーションでのツールバーとツールバー項目の使用方法について詳しく説明しました。 ここでは、Xcode の Interface Builder でツールバーを作成して管理する方法、いくつかの UI コントロールがツールバーの項目をC#自動的に操作する方法、ツールバーをコードで操作する方法、およびツールバーの項目を有効または無効にする方法について説明しています。
-
 
 ## <a name="related-links"></a>関連リンク
 

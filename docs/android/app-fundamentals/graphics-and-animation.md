@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 0a9921706acc4da076e98b1c42c0624c7f56e62f
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: ea713b2b56f18c435f3ec676b42d0aa4802abc6a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69521199"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755429"
 ---
 # <a name="android-graphics-and-animation"></a>Android のグラフィックスとアニメーション
 
@@ -43,11 +43,9 @@ Android では、これらの2D グラフィックス技術に加えて、いく
 
 - **プロパティアニメーション**Android 3.0 では、*プロパティアニメーション*と呼ばれる新しい一連のアニメーション API が導入されました。 &ndash; これらの新しい API には、表示オブジェクトだけでなく、任意のオブジェクトのプロパティをアニメーション化するために使用できる、拡張可能で柔軟なシステムが導入されました。 この柔軟性により、アニメーションを個別のクラスにカプセル化して、コードを簡単に共有できるようになります。
 
-
 アニメーションの表示は、以前の Android 3.0 API (API レベル 11) をサポートする必要があるアプリケーションに適しています。 それ以外の場合は、前述の理由により、アプリケーションは新しいプロパティアニメーション API を使用する必要があります。
 
 これらのフレームワークはすべて実行可能なオプションですが、可能な限り、プロパティアニメーションに設定することをお勧めします。これは、より柔軟な API であるためです。 プロパティアニメーションを使用すると、アニメーションロジックを個別のクラスにカプセル化できるため、コードの共有が容易になり、コードの保守が簡単になります。
-
 
 ## <a name="accessibility"></a>ユーザー補助
 
@@ -58,8 +56,6 @@ Android では、これらの2D グラフィックス技術に加えて、いく
 
 Android のユーザー補助 Api を利用する方法の詳細については、 [Google のアクセシビリティガイド](https://developer.android.com/guide/topics/ui/accessibility/)を参照してください。
 
-
-
 ## <a name="2d-graphics"></a>2D グラフィックス
 
 描画リソースは、Android アプリケーションで一般的な手法です。 他のリソースと同様に、組み込みリソース&ndash;は XML ファイルで定義されている宣言型のリソースです。 この方法により、リソースからコードを明確に分離できます。 これにより、Android アプリケーションのグラフィックスを更新または変更するためにコードを変更する必要がないため、開発と保守が簡単になります。 ただし、合成されたリソースは、多くの単純で一般的なグラフィック要件に役立ちますが、キャンバス API のパワーと制御はありません。
@@ -67,7 +63,6 @@ Android のユーザー補助 Api を利用する方法の詳細については�
 [Canvas](xref:Android.Graphics.Canvas)オブジェクトを使用したもう1つの手法は、他の従来の API フレームワーク (例、Drawing や IOS のコア描画) によく似ています。 Canvas オブジェクトを使用すると、2D グラフィックスの作成方法を最も細かく制御できます。 これは、描画可能なリソースが動作しない場合や、操作が困難な場合に適しています。 たとえば、スライダーの値に関連する計算に基づいて外観が変化するカスタムスライダーコントロールを描画する必要がある場合があります。
 
 まず、事前に用意されたリソースを調べてみましょう。 これらは単純で、最も一般的なカスタム描画ケースをカバーしています。
-
 
 ### <a name="drawable-resources"></a>描画リソース
 
@@ -83,7 +78,7 @@ Android では、いくつかの異なる種類の描画リソースを定義し
 
     ![レイヤー描画の例](graphics-and-animation-images/image1.png)
 
-- [遷移](https://developer.android.com/guide/topics/resources/drawable-resource.html#Transition)後の描画これはレイヤーの描画を行いますが、違いは1つです。 &ndash; 1つのレイヤーを別のレイヤー上に表示するようにアニメーション化することができます。
+- [遷移](https://developer.android.com/guide/topics/resources/drawable-resource.html#Transition)後の描画これはレイヤーの描画を行いますが、違いは1つです。 &ndash; 1*つのレイヤー*を別のレイヤー上に表示するようにアニメーション化することができます。
 
 - [Levellistdrawable ル](https://developer.android.com/guide/topics/resources/drawable-resource.html#LevelList)これは、特定の条件に基づいてイメージを表示するという点で、 *statelistdrawable ル*とよく似ています。 &ndash; ただし、 *Statelistdrawable ル*とは異なり、 *levellistdrawable ル*は、整数値に基づいてイメージを表示します。 *Levellistdrawable ル*の例として、WiFi 信号の強さを表示する方法があります。 WiFi 信号の強度が変化すると、表示される描画用の設定が変わります。
 
@@ -148,7 +143,6 @@ tv.SetBackgroundResource(Resource.Drawable.shape_rounded_blue_rect);
 
 XML 要素および描画リソースの構文の詳細については、 [Google のドキュメント](https://developer.android.com/guide/topics/resources/drawable-resource.html#Shape)を参照してください。
 
-
 ### <a name="using-the-canvas-drawing-api"></a>キャンバス描画 API の使用
 
 Drawables 強力ですが、制限があります。 特定の項目が不可能または非常に複雑な場合 (たとえば、デバイスのカメラによって撮影された画像にフィルターを適用する場合)。 描画可能なリソースを使用すると、赤目の縮小を適用することが非常に困難になります。
@@ -209,7 +203,6 @@ public class MyView : View
 
 ![赤の描画オブジェクトと緑色の描画オブジェクトを含む画面](graphics-and-animation-images/image3.png)
 
-
 ## <a name="animation"></a>アニメーション
 
 アプリケーション内を移動するユーザーのようなものです。 アニメーションは、アプリケーションのユーザーエクスペリエンスを向上させ、それを支援するための優れた方法です。最適なアニメーションは、自然であることが理由でユーザーに通知されないものです。 Android には、アニメーション用に次の3つの API が用意されています。
@@ -221,7 +214,6 @@ public class MyView : View
 - 描画用の**アニメーション**&ndash;これは特殊な描画リソースで、レイアウトに非常に単純なアニメーション効果を適用するために使用されます。
 
 一般に、プロパティアニメーションはより柔軟性が高く、より多くの機能を提供するため、使用する優先システムです。
-
 
 ### <a name="view-animations"></a>アニメーションの表示
 
@@ -249,7 +241,6 @@ public class MyView : View
 - `BounceInterpolator`&ndash;最後に変更がバウンスされています。
 
 - `LinearInterpolator`&ndash;変化率は一定です。
-
 
 次の XML は、これらの要素の一部を組み合わせたアニメーションファイルの例を示しています。
 
@@ -308,7 +299,6 @@ myImage.StartAnimation(myAnimation);
 
 これで、ビューアニメーションのしくみについての基本的な理解が得られたので、プロパティアニメーションに移動できるようになりました。
 
-
 ### <a name="property-animations"></a>プロパティアニメーション
 
 プロパティアニメーターは、Android 3.0 で導入された新しい API です。
@@ -321,7 +311,6 @@ myImage.StartAnimation(myAnimation);
 - [Objectanimator](xref:Android.Animation.ObjectAnimator)このクラスは、の`ValueAnimator`サブクラスです。 &ndash; ターゲットオブジェクトと更新するプロパティを受け入れることによって、オブジェクトをアニメーション化するプロセスを簡略化することを目的としています。
 
 - [アニメーションの設定](xref:Android.Animation.AnimatorSet)&ndash;このクラスは、アニメーションを互いに相対的に実行する方法を調整します。 アニメーションは、連続して、または指定された間隔で同時に実行できます。
-
 
 *エバリュエーター*は、アニメーション中に新しい値を計算するためにアニメーターによって使用される特殊なクラスです。 既定では、Android には次のエバリュエーターが用意されています。
 
@@ -385,7 +374,6 @@ animator.Start();
 
 前のコードスニペットからわかるように、は`ObjectAnimator` 、オブジェクトをアニメーション化するために必要なコードを削減し、簡略化することができます。
 
-
 ### <a name="drawable-animations"></a>描画効果のあるアニメーション
 
 最終的なアニメーション API は、描画用のアニメーション API です。 描画されたアニメーションは、一連の描画リソースをもう一方の後に1つずつ読み込み、反転 it の漫画と同様に順番に表示します。
@@ -429,12 +417,9 @@ protected override void OnCreate(Bundle bundle)
 
 この時点で、Android アプリケーションで使用できるアニメーション Api の基礎について説明しました。
 
-
 ## <a name="summary"></a>Summary
 
 この記事では、Android アプリケーションにいくつかのグラフィックスを追加するのに役立つ、多数の新しい概念と API を紹介しました。 まず、さまざまな2D グラフィックス API について説明し、Android が Canvas オブジェクトを使用してアプリケーションを画面に直接描画できるようにする方法を示しました。 また、XML ファイルを使用して、グラフィックスを宣言によって作成できる代替技法もいくつか紹介しました。 次に、Android でアニメーションを作成するための古い API と新しい API について説明しました。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2016
-ms.openlocfilehash: 065c7284970ececacbdb298d773b19f654280513
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 80f332e45d6c46ad49543923e85cbb2eceadb378
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70228092"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767593"
 ---
 # <a name="passing-arguments-in-xaml"></a>XAML で引数の受け渡し
 
@@ -168,7 +168,6 @@ _この記事では、工場出荷時のメソッドを呼び出すと、ジェ�
 ## <a name="summary"></a>まとめ
 
 この記事では、工場出荷時のメソッドを呼び出すと、ジェネリック引数の型を指定する既定以外のコンス トラクターに引数を渡すに使用できる XAML 属性を使用して示されています。
-
 
 ## <a name="related-links"></a>関連リンク
 

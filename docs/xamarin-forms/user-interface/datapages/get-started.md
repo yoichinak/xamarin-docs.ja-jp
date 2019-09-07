@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: e6f26fb96c0a538543c8e0b0574461ea99709631
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: c6534067388b59c1e191426011fd0e6b8560348f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119490"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759733"
 ---
 # <a name="getting-started-with-datapages"></a>DataPages の概要
 
@@ -52,7 +52,6 @@ Xamarin.Forms .NET Standard ライブラリとアプリケーション プロジ
 
 > [!IMPORTANT]
 > また、iOS `AppDelegate`および Android `MainActivity`に定型コードを追加して、[テーマアセンブリ (下記) を読み込む](#loadtheme)手順にも従う必要があります。 これは、将来のプレビュー リリースで改善されます。
-
 
 ## <a name="3-add-a-xaml-page"></a>3.XAML ページを追加します。
 
@@ -175,9 +174,7 @@ JSON データの例、[デモ ソース](http://demo3143189.mockable.io/session
 SetBinding (TitleProperty, new DataSourceBinding ("title"));
 ```
 
-
 最初からテーマを作成するのはもう少しの作業ですが、今後のプレビューリリースではこれが簡単になります。
-
 
 ## <a name="troubleshooting"></a>トラブルシューティング
 
@@ -206,8 +203,6 @@ var x = typeof(Xamarin.Forms.Themes.DarkThemeResources);
 x = typeof(Xamarin.Forms.Themes.LightThemeResources);
 x = typeof(Xamarin.Forms.Themes.Android.UnderlineEffect);
 ```
-
-
 
 ## <a name="related-links"></a>関連リンク
 

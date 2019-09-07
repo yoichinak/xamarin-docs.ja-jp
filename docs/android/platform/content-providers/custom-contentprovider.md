@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/07/2018
-ms.openlocfilehash: e16aa1b96749047554b4f8e6887791d8ed4ff63b
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: f72baaa4c74eb4bf0bb5eec64211d6ea2b18076c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643690"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756675"
 ---
 # <a name="creating-a-custom-contentprovider"></a>カスタム ContentProvider の作成
 
@@ -28,7 +28,6 @@ _前のセクションでは、組み込みの ContentProvider 実装からデ�
 
 Mono for Android の場合、コンテンツプロバイダークラスには、 `[ContentProvider]` **androidmanifest**に追加する uri (または uri) を指定する属性が必要です。
 
-
 ### <a name="mime-type"></a>Mime の種類
 
 MIME の種類の一般的な形式は、2つの部分で構成されています。 Android `ContentProviders`では、通常、次の2つの文字列を MIME の種類の最初の部分に使用します。
@@ -39,7 +38,6 @@ MIME の種類の一般的な形式は、2つの部分で構成されていま�
 
 MIME の種類の2番目の部分はアプリケーションに固有であり、 `vnd.`プレフィックスを持つ逆引き DNS 標準を使用する必要があります。 このサンプルコードで`vnd.com.xamarin.sample.Vegetables`は、を使用します。
 
-
 ### <a name="data-model-metadata"></a>データモデルのメタデータ
 
 使用するアプリケーションでは、さまざまな種類のデータにアクセスするために Uri クエリを作成する必要があります。 ベース Uri は、特定のデータテーブルを参照するように拡張できます。また、結果をフィルター処理するためのパラメーターを含めることもできます。 データを表示するために、結果のカーソルで使用される列と句も宣言する必要があります。
@@ -47,7 +45,6 @@ MIME の種類の2番目の部分はアプリケーションに固有であり�
 有効な Uri クエリのみが構築されるようにするには、有効な文字列を定数値として指定することが慣例です。 これにより、コード補完に`ContentProvider`よって値が探索可能になるため、に簡単にアクセスできるようになり、文字列の入力ミスを防ぐことができます。
 
 前の例では`android.provider.ContactsContract` 、クラスが連絡先データのメタデータを公開していました。 カスタム`ContentProvider`の場合は、クラス自体の定数を公開するだけです。
-
 
 ## <a name="implementation"></a>実装
 
@@ -60,7 +57,6 @@ MIME の種類の2番目の部分はアプリケーションに固有であり�
 3. **`ContentProvider`**  Uri を`CursorAdapter`使用してにアクセスし&ndash; 、 `ContentProvider`uri を使用してにアクセスします。
 
 既に説明し`ContentProviders`たように、は、それが定義されている以外のアプリケーションから使用できます。 この例では、データは同じアプリケーションで使用されますが、スキーマに関する Uri と情報がわかっている限り、他のアプリケーションもアクセスできることに注意してください (通常、定数値として公開されます)。
-
 
 ## <a name="create-a-database"></a>データベースを作成する
 
@@ -94,11 +90,9 @@ class VegetableDatabase  : SQLiteOpenHelper {
 
 データベースの実装自体では`ContentProvider`、には特別な考慮事項は必要ありませんが、 `ContentProvider's`データを`ListView`コントロールにバインドする場合は、という`_id`一意の整数型の列が結果セット。 コントロールの`ListView`使用方法の詳細については、 [listviews とアダプター](~/android/user-interface/layouts/list-view/index.md)のドキュメントを参照してください。
 
-
 ## <a name="create-the-contentprovider"></a>ContentProvider を作成する
 
 このセクションの残りの部分では、 **SimpleContentProvider/VegetableProvider**クラスの作成方法について、手順を追って説明します。
-
 
 ### <a name="initialize-the-database"></a>データベースを初期化します
 
@@ -117,8 +111,6 @@ public class VegetableProvider : ContentProvider
 ```
 
 コードの残りの部分では、データの検出とクエリの実行を可能にする実際のコンテンツプロバイダーの実装を形成します。
-
-
 
 ## <a name="add-metadata-for-consumers"></a>コンシューマーのメタデータを追加する
 
@@ -158,7 +150,6 @@ public class VegetableProvider : ContentProvider
 }
 ```
 
-
 ## <a name="implement-the-uri-parsing-helper"></a>URI 解析ヘルパーを実装する
 
 コードを使用する場合は uri を使用し`ContentProvider`ての要求を行うため、返されるデータを決定するためにこれらの要求を解析できる必要があります。 クラス`UriMatcher`は、 `ContentProvider`がサポートする uri パターンで初期化された後、uri の解析に役立ちます。
@@ -186,7 +177,6 @@ static UriMatcher BuildUriMatcher()
 ```
 
 このコードは、すべてクラスに`ContentProvider`対してプライベートです。 詳細については、 [Google の UriMatcher のドキュメント](xref:Android.Content.UriMatcher)を参照してください。
-
 
 ## <a name="implement-the-querymethod"></a>QueryMethod を実装する
 
@@ -232,7 +222,6 @@ public override String GetType(Android.Net.Uri uri)
 }
 ```
 
-
 ## <a name="implement-the-other-overrides"></a>その他のオーバーライドを実装する
 
 単純な例では、データの編集や削除は許可されていませんが、Insert、Update、Delete の各メソッドを実装して実装せずに追加する必要があります。
@@ -254,11 +243,9 @@ public override int Update(Android.Net.Uri uri, ContentValues values, string sel
 
 これで、基本的`ContentProvider`な実装が完了します。 アプリケーションがインストールされると、アプリケーション内で公開されているデータは、アプリケーション内でも、参照する Uri を認識している他のアプリケーションにも使用できるようになります。
 
-
 ## <a name="access-the-contentprovider"></a>ContentProvider にアクセスする
 
 `VegetableProvider`が実装されると、このドキュメントの冒頭にある Contacts プロバイダーと同じ方法でアクセスできます。指定した Uri を使用してカーソルを取得し、アダプターを使用してデータにアクセスします。
-
 
 ## <a name="bind-a-listview-to-a-contentprovider"></a>ListView を ContentProvider にバインドする
 
@@ -285,8 +272,6 @@ listView.Adapter = adapter;
 結果のアプリケーションは次のようになります。
 
 [![アプリ一覧の野菜、果物、花 Buds、Legumes、電球、Tubers のスクリーンショット](custom-contentprovider-images/api11-contentprovider2.png)](custom-contentprovider-images/api11-contentprovider2.png#lightbox)
-
-
 
 ## <a name="retrieve-a-single-item-from-a-contentprovider"></a>ContentProvider から1つの項目を取得する
 
@@ -315,7 +300,6 @@ protected void OnListItemClick(object sender, AdapterView.ItemClickEventArgs e)
   vegeCursor.Close();
 }
 ```
-
 
 ## <a name="related-links"></a>関連リンク
 

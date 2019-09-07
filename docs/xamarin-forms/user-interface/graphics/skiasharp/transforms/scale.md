@@ -7,12 +7,12 @@ ms.assetid: 54A43F3D-9DA8-44A7-9AE4-7E3025129A0B
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/23/2017
-ms.openlocfilehash: 2e9259bed6ad0ae5a926cb75ea74c1f379897220
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 1adade4e66a6df504ba7c8ac3ff1f668c014fe93
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68649285"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770450"
 ---
 # <a name="the-scale-transform"></a>スケール変換
 
@@ -342,7 +342,6 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 によって 10% と赤から青に徐々 に色を変更するたびに、スケーリングの減少を考慮、コードが他にもスター 10 に表示されます。
 
 [![](scale-images/isotropicscaling-small.png "アイソトロ ピック スケーリング ページのスクリーン ショットをトリプル")](scale-images/isotropicscaling-large.png#lightbox "アイソトロ ピック スケール ページの 3 倍になるスクリーン ショット")
-
 
 ## <a name="related-links"></a>関連リンク
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/18/2016
-ms.openlocfilehash: 4a04f0ed4cbb336e331528c3d8265efb31388328
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 943cdfaee07bc4fd4ed3273840036055ad40b89a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289519"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766750"
 ---
 # <a name="accessibility-on-ios"></a>IOS でのユーザー補助
 
@@ -74,7 +74,6 @@ UIAccessibility.PostNotification (
     someControl);  // someControl gets focus
 ```
 
-
 ## <a name="accessibility-and-localization"></a>アクセシビリティとローカライズ
 
 ラベルやヒントなどのアクセシビリティプロパティは、ユーザーインターフェイス内の他のテキストと同様にローカライズできます。
@@ -122,7 +121,6 @@ VoiceOver**は、** **全般 > アクセシビリティ > VoiceOver**:
 
 IOS デバイスでアクセシビリティをテストするには、次の[VoiceOver の手順](https://developer.apple.com/library/ios/technotes/TestingAccessibilityOfiOSApps/TestAccessibilityonYourDevicewithVoiceOver/TestAccessibilityonYourDevicewithVoiceOver.html)に従います。
 
-
 ## <a name="simulator-testing"></a>シミュレーターテスト
 
 シミュレーターでテストする場合、アクセシビリティ**インスペクター**を使用して、ユーザー補助のプロパティとイベントが正しく構成されていることを確認できます。 [全般] > [アクセシビリティ] **> [アクセシビリティ**] [インスペクター] の順に移動して、**設定**アプリのインスペクターをオンにします。
@@ -135,8 +133,6 @@ IOS デバイスでアクセシビリティをテストするには、次の[Voi
 ![](accessibility-images/tableview-a11y-sml.png "アクセシビリティインスペクターの使用")
 
 インスペクターが表示されている間、左上にある "X" アイコンを使用して、オーバーレイを一時的に表示および非表示にしたり、ユーザー補助の設定を有効または無効にしたりします。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

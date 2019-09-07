@@ -6,12 +6,12 @@ ms.assetid: 46E0578A-7EB9-C105-ABB0-A043E501F36B
 author: conceptdev
 ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: 049f01d47d303f07edd57c659361d9a123993ede
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 0e513ecb67f5b902afd91546b1de6720cb0369c1
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288656"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761981"
 ---
 # <a name="part-6---testing-and-app-store-approvals"></a>パート 6 - テストと App Store の承認
 
@@ -39,7 +39,6 @@ Windows phone、タブレット、およびデスクトップデバイスで .NE
 
 - **配布**–プロビジョニングプロセスを管理し (特に iOS デバイスの場合)、更新されたバージョンのソフトウェアをテスト担当者に提供します。
 - **フィードバック**–アプリケーションの使用状況に関する情報、および発生する可能性のあるエラーに関する詳細情報を収集します。
-
 
 これらの問題に対処するには、さまざまなサービスが用意されています。アプリケーションに組み込まれているインフラストラクチャを使用して、使用状況やエラーを収集してレポートしたり、プロビジョニングプロセスを合理化して、テスト担当者とそのデバイスを管理したりすることができます.
 

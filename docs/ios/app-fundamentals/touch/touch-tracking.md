@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 00fa1a65d2a73220675d8142e70ac904a93e3042
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: eca8a1bdc3c60ae4dbaabf022a9dbe91f7e30402
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281981"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767039"
 ---
 # <a name="multi-touch-finger-tracking-in-xamarinios"></a>Xamarin のマルチタッチ指トラッキング
 
@@ -41,7 +41,6 @@ class FingerPaintPolyline
 ```
 
 各ポリラインには、色、ストロークの幅、および、描画[`CGPath`](xref:CoreGraphics.CGPath)中の線の複数のポイントを蓄積してレンダリングするための iOS グラフィックスオブジェクトがあります。
-
 
 次に示すコードの残りの部分はすべて、と`UIView`いう`FingerPaintCanvasView`派生物に含まれています。 このクラスは、1つまたは複数`FingerPaintPolyline`の指によってアクティブに描画されているときに、型のオブジェクトのディクショナリを保持します。
 
@@ -187,8 +186,6 @@ public override void TouchesCancelled(NSSet touches, UIEvent evt)
 [![](touch-tracking-images/image01.png "個々の指を追跡して結果を画面に描画する")](touch-tracking-images/image01.png#lightbox)
 
 これで、画面上の個々の指を追跡し、それらを区別する方法がわかりました。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

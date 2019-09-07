@@ -1,18 +1,18 @@
 ---
 title: 19 章の概要です。 コレクション ビュー
-description: Xamarin.Forms によるモバイル アプリの作成。19 章の概要です。 コレクション ビュー
+description: Xamarin を使用した Mobile Apps の作成:19 章の概要です。 コレクション ビュー
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 0AEC3A5C-586E-4D0F-9895-67E99A053A79
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2018
-ms.openlocfilehash: 795478805b582b956ee491bdfecd84485c1bc30e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: bad46bead106304713bae91a7bf752db8080760a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61334527"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760622"
 ---
 # <a name="summary-of-chapter-19-collection-views"></a>19 章の概要です。 コレクション ビュー
 
@@ -113,7 +113,7 @@ XAML で設定することは、 [ `ViewCell` ](xref:Xamarin.Forms.ViewCell)を`
 
 ### <a name="grouping-the-listview-items"></a>ListView の項目をグループ化
 
-`ListView` 項目のグループ化し、それらのグループ間の移動をサポートしています。 `ItemsSource`コレクションのコレクションにプロパティを設定する必要があります。オブジェクトを`ItemsSource`必要がありますに設定されている実装`IEnumerable`、し、コレクション内の各項目を実装する必要がありますも`IEnumerable`します。 各グループは、2 つのプロパティを含める必要があります: グループと、3 文字の省略形のテキストの説明。
+`ListView` 項目のグループ化し、それらのグループ間の移動をサポートしています。 プロパティ`ItemsSource`は、コレクションのコレクションに設定する必要があります。に設定さ`ItemsSource`れたオブジェクトはを`IEnumerable`実装する必要があります。また、コレクション`IEnumerable`内の各項目もを実装する必要があります。 各グループは、2 つのプロパティを含める必要があります: グループと、3 文字の省略形のテキストの説明。
 
 [ `NamedColorGroup` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/NamedColorGroup.cs)クラス、 [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit)ライブラリの 7 つのグループが作成`NamedColor`オブジェクト。 [ **ColorGroupList** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/ColorGroupList)サンプルでは、これらのグループを使用して、 [ `IsGroupingEnabled` ](xref:Xamarin.Forms.ListView.IsGroupingEnabled)プロパティの`ListView`に設定`true`、および、 [ `GroupDisplayBinding` ](xref:Xamarin.Forms.ListView.GroupDisplayBinding)と[ `GroupShortNameBinding` ](xref:Xamarin.Forms.ListView.GroupShortNameBinding)プロパティは、各グループのプロパティにバインドします。
 
@@ -225,8 +225,6 @@ XAML で設定することは、 [ `ViewCell` ](xref:Xamarin.Forms.ViewCell)を`
 ### <a name="a-tableview-menu"></a>テーブルのメニュー
 
 別の用途を`TableView`メニューします。 [ **Menucommand** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/MenuCommands)サンプルでは少し移動することができます] メニューの [`BoxView`画面。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

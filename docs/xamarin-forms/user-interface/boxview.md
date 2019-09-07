@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/26/2018
-ms.openlocfilehash: 06b4764570205a39734d38e3e118b7dc1fa35d18
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: 2da2af2a57fb0ec737927024d497530c2a3aac5b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69888728"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759879"
 ---
 # <a name="xamarinforms-boxview"></a>Xamarin.Forms BoxView
 
@@ -783,7 +783,6 @@ public partial class MainPage : ContentPage
 ## <a name="conclusion"></a>まとめ
 
 `BoxView`としてするが、最初で単純に見えますが、きわめて用途が広くなりますグラフィックスやベクター グラフィックスをのみで通常使用できるビジュアルほぼを再現できる説明しました。 高度なグラフィックスを参照してください。 [Xamarin.Forms で SkiaSharp を使用して](~/xamarin-forms/user-interface/graphics/skiasharp/index.md)します。
-
 
 ## <a name="related-links"></a>関連リンク
 

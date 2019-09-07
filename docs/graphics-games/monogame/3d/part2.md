@@ -6,12 +6,12 @@ ms.assetid: 932AF5C2-884D-46E1-9455-4C359FD7C092
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: 8bdef9bff975365172a4c215b21cbb07a37e8492
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 1f2fce14f1839e3d9aff4c68dc0dffc0e8059e6c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227725"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766815"
 ---
 # <a name="drawing-3d-graphics-with-vertices-in-monogame"></a>モノゲームでの頂点を使用した3D グラフィックスの描画
 
@@ -117,7 +117,6 @@ protected override void Initialize ()
 
 まず、位置や光源などのレンダリング`BasicEffect`用のパラメーターを保持するインスタンスを定義する必要があります。 これを行うには、 `BasicEffect` `floorVerts`フィールドが定義`Game1`されている下のクラスにメンバーを追加します。
 
-
 ```csharp
 ...
 VertexPositionTexture[] floorVerts;
@@ -168,7 +167,6 @@ void DrawGround()
 
     effect.Projection = Matrix.CreatePerspectiveFieldOfView(
         fieldOfView, aspectRatio, nearClipPlane, farClipPlane);
-
 
     foreach (var pass in effect.CurrentTechnique.Passes)
     {
@@ -246,7 +244,6 @@ Texture2D checkerboardTexture;
 
 次`Game1.LoadContent`のように変更します。
 
-
 ```csharp
 protected override void LoadContent()
 {
@@ -306,7 +303,6 @@ void DrawGround()
 
 最後に、頂点のテクスチャ座標`Game1.Initialize`も割り当てるようにメソッドを変更する必要があります。
 
-
 ```csharp
 protected override void Initialize ()
 {
@@ -349,7 +345,6 @@ protected override void Initialize ()
 
 1つの変数を繰り返し回数として使用するように、テクスチャ座標の割り当てを変更できます。
 
-
 ```csharp
 protected override void Initialize ()
 {
@@ -382,7 +377,6 @@ protected override void Initialize ()
 この結果、テクスチャが20回繰り返されます。
 
 ![](part2-images/image10.png "この結果、テクスチャが20回繰り返されます。")
-
 
 ## <a name="rendering-vertices-with-models"></a>モデルを使用した頂点のレンダリング
 

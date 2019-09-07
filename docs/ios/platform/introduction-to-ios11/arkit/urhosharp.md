@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 08/01/2017
-ms.openlocfilehash: 4c23caade91a1a46d6b2b9bb2425a5bdead40030
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7f53108460c4e0799ab6c4078d8bb26788b0bf6e
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289233"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752547"
 ---
 # <a name="using-arkit-with-urhosharp-in-xamarinios"></a>Xamarin の UrhoSharp で ARKit を使用する
 
@@ -114,14 +114,12 @@ ARKit API は非常に単純です。[ARFrame](https://developer.apple.com/docum
 
 ただし、この2つのワールドをブレンドするための2つの問題に直面しています。
 
-
 1. IOS では、GPU テクスチャの解像度は2である必要がありますが、カメラから取得するフレームには2の累乗の解像度がありません。次に例を示します。1280 x 720.
 2. フレームは、3つのイメージ (ルミナンスとクロマ) で表される、 [YUV](https://en.wikipedia.org/wiki/YUV)形式でエンコードされます。
 
 YUV フレームには、2つの異なる解像度があります。  輝度 (基本的にはグレースケールイメージ) と、クロミナンスコンポーネントの 640 x 360 を表す、1280 x 720 のイメージ。
 
 ![Y と UV コンポーネントの組み合わせを示す画像](urhosharp-images/image3.png)
-
 
 OpenGL を使用して全色の画像を描画するには、テクスチャスロットから輝度 (Y 成分) とクロミナンス (UV 平面) を取得する小さなシェーダーを作成する必要があります。  UrhoSharp には、"SsNormalMap Map" と "" という名前が付いており、それらを RGB 形式に変換します。
 
@@ -165,7 +163,6 @@ CameraNode.Position = new Vector3(row.X, row.Y, -row.Z);
 ```
 
 Arkit `-row.Z`は右手座標系を使用するため、を使用します。
-
 
 ### <a name="plane-detection"></a>平面の検出
 
@@ -217,7 +214,6 @@ UrhoSharp は、[すべての主要なオペレーティングシステムで実
 HoloLens は、それが実行されている最も魅力的なプラットフォームの1つです。   これは、iOS と HoloLens を簡単に切り替えて、UrhoSharp を使用してすばらしい拡張現実アプリケーションを構築できることを意味します。
 
 [Github.com/EgorBo/ARKitXamarinDemo](https://github.com/EgorBo/ARKitXamarinDemo)で、ミューテーターのデモソースを見つけることができます。
-
 
 ## <a name="related-links"></a>関連リンク
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 9dc34f412549c4be6099b373ddae7cbd2e8d21c8
-ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
+ms.openlocfilehash: 1dc62066b71842e1d3b07495912fa35a549c0f1e
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68980770"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759681"
 ---
 # <a name="xamarinforms-datapages"></a>DataPages
 
@@ -33,7 +33,7 @@ DataPages の迅速かつ簡単に構築済みのビューにデータ ソース
 
 データソースと関連付けられたデータページを使用すると、開発者はサポートされているデータソースをすばやく簡単に使用し、テーマでカスタマイズできる組み込みの UI スキャフォールディングを使用してレンダリングできます。
 
-DataPages Nuget パッケージをインクルードすることにより、Xamarin. forms アプリケーションに追加されます。
+DataPages Nuget パッケージをインクルードすることに**より、xamarin** . forms アプリケーションに追加されます。
 
 ### <a name="data-sources"></a>Data Sources
 
@@ -44,7 +44,6 @@ DataPages Nuget パッケージをインクルードすることにより、Xama
 * **AzureEasyTableDataSource**(個別の Nuget)
 
 の使用`JsonDataSource`例については、[ファーストステップガイド](get-started.md)を参照してください。
-
 
 ### <a name="pages--controls"></a>ページ & コントロール
 
@@ -59,8 +58,6 @@ DataPages Nuget パッケージをインクルードすることにより、Xama
 * **ListItem** : ネイティブの IOS および Android のリスト項目と同様のレイアウトを備えた、あらかじめ構築されたビューです。
 
 例については、「 [DataPages controls reference](controls.md) 」を参照してください。
-
-
 
 ### <a name="under-the-hood"></a>内部
 

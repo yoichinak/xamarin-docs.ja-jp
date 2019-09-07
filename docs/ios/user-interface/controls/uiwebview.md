@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: e593a594bbf0fd6398c277d531258f6fded515f1
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: bc97f14066456a07ee7ce62131985194bbe83811
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282547"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768369"
 ---
 # <a name="web-views-in-xamarinios"></a>Xamarin. iOS の Web ビュー
 
@@ -27,9 +27,9 @@ iOS 11 では、と`WKWebView` `SFSafariViewController`の両方に新しい変�
 `UIWebView`は、アプリに web コンテンツを提供する従来の方法です。 IOS 2.0 でリリースされ、8.0 の時点で非推奨とされています。
 
 8\.0 より前の iOS バージョンをサポートする予定の場合は、を使用`UIWebView`する必要があります。 パフォーマンスに対して最適化`UIWebView`されるのは代替手段よりも低いため、ユーザーの iOS バージョンを確認することをお勧めします。 8\.0 以上の場合、次のいずれかのオプションを使用すると、より優れたユーザーエクスペリエンスが得られます。
- 
+
 UIWebView を Xamarin iOS アプリに追加するには、次のコードを使用します。
- 
+
 ```
 webView = new UIWebView (View.Bounds);
 View.AddSubview(webView);
@@ -43,7 +43,6 @@ webView.LoadRequest(new NSUrlRequest(new NSUrl(url)));
 [![](uiwebview-images/webview.png "ScalesPagesToFit の効果")](uiwebview-images/webview.png#lightbox)
 
 の使用方法`UIWebView`の詳細については、次のレシピを参照してください。
-
 
 - [Web ページを読み込む](https://github.com/xamarin/recipes/tree/master/Recipes/ios/content_controls/web_view/load_a_web_page)
 - [ローカルコンテンツの読み込み](https://github.com/xamarin/recipes/tree/master/Recipes/ios/content_controls/web_view/load_local_content)
@@ -79,11 +78,11 @@ webView.LoadRequest(new NSUrlRequest(new NSUrl(url)));
 <a name="safariviewcontroller" />
 
 ## <a name="sfsafariviewcontroller"></a>SFSafariViewController
- 
+
  `SFSafariViewController`は、アプリから web コンテンツを提供するための最新の方法であり、iOS 9 以降で使用できます。 また`UIWebView`は`WKWebView`と`SFSafariViewController`は異なり、はビューコントローラーであるため、他のビューと一緒に使用することはできません。 ビューコントローラーを`SFSafariViewController`表示するのと同じように、新しいビューコントローラーとして表示する必要があります。
- 
+
  `SFSafariViewController`は、基本的には ' ミニ safari ' であり、アプリに埋め込むことができます。 WKWebView と同様に、同じ Nitro Javascript エンジンを使用しますが、オートフィル、閲覧者、モバイル Safari で cookie とデータを共有する機能など、さまざまな Safari 機能も用意されています。 ユーザーとの`SFSafariViewController`間の対話は、アプリにはアクセスできません。 アプリは、既定の Safari 機能のいずれにもアクセスできません。
- 
+
 また、既定では、 **[完了]** ボタンが実装されています。これにより、ユーザーはアプリに簡単に戻ることができ、ナビゲーションボタンを転送および戻ることができ、ユーザーは web ページのスタック内を移動できます。 また、ユーザーには、予期された web ページ上にあることを安心して提供するアドレスバーを提供します。 アドレスバーでは、ユーザーが url を変更することはできません。 
 
 これらの実装は変更できない`SFSafariViewController`ため、アプリがカスタマイズなしで web ページを表示する必要がある場合は、既定のブラウザーとしてを使用することをお勧めします。

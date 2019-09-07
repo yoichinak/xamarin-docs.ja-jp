@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 09/09/2018
-ms.openlocfilehash: 1d0341af35d3c580141c5bfc76e9f170cd7ff4c5
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 4d91ba7b71f2eb61d003700269675c785cbfb0c8
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119106"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755040"
 ---
 # <a name="fonts"></a>フォント
 
@@ -278,7 +278,6 @@ public class FontDownloadHelper : FontsContractCompat.FontRequestCallback
     {
         // just an empty delegate to avoid null reference exceptions.  
     };
-
 
     public void DownloadFonts(Context context)
     {

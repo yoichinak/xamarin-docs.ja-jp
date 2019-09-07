@@ -7,17 +7,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/01/2018
-ms.openlocfilehash: d23b29b7e49c210dc44163e41735fa96b55d12f2
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: ec1cb6fcce320ed5ea9154b42d0a5361940c1015
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526321"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755009"
 ---
 # <a name="android-resources"></a>Android リソース
 
 _この記事では、Xamarin Android の Android リソースの概念を紹介し、それらの使用方法について説明します。Android アプリケーションのリソースを使用してアプリケーションのローカリゼーションをサポートする方法と、さまざまな画面サイズや密度を含む複数のデバイスを使用する方法について説明します。_
-
 
 ## <a name="overview"></a>概要
 
@@ -39,14 +38,14 @@ Android アプリケーションは、ほとんどの場合、ソースコード
 
 ![リソースのフォルダーと内容](images/resources-folder-vs.png)
 
-上の図では、アプリケーションのリソースは、その種類に応じて次のサブディレクトリに編成されています。イメージは、構成済みのディレクトリにあります。ビューは、**レイアウト**サブディレクトリなどに表示されます。
- 
+上の図では、アプリケーションのリソースは、その種類に応じて次のサブディレクトリに編成されています。イメージは、構成済み**のディレクトリに**あります。ビューは、**レイアウト**サブディレクトリなどに表示されます。
+
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 ![リソースのフォルダーと内容](images/resources-folder-xs.png)
 
 上の図では、アプリケーションリソースは、種類に応じて次のサブディレクトリに編成されています。イメージは**mipmap**ディレクトリに配置されます。ビューは、**レイアウト**サブディレクトリなどに表示されます。
- 
+
 -----
 
 Xamarin Android アプリケーションでこれらのリソースにアクセスするには、次の2つの方法があります。*プログラムによっ*てコード内で、または特殊な xml 構文を使用して xml で*宣言*します。
@@ -66,7 +65,6 @@ Xamarin Android アプリケーションでこれらのリソースにアクセ�
 - **デバイス固有の構成**&ndash;アプリケーションでのさまざまな画面解像度と密度のサポート。
 
 - **ローカリゼーション**&ndash;リソースを使用して、アプリケーションを使用できるさまざまなリージョンをサポートします。
-
 
 ## <a name="related-links"></a>関連リンク
 

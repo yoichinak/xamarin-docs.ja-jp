@@ -7,17 +7,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: ac373d20cbe08719fd7aa8e3888bbd608d8549c7
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: a58242e89033d6cd2652495f9466379f63f498f0
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119523"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761247"
 ---
 # <a name="fingerprint-authentication"></a>指紋認証
 
 _このガイドでは、Android 6.0 で導入された指紋認証を Xamarin Android アプリケーションに追加する方法について説明します。_
-
 
 ## <a name="fingerprint-authentication-overview"></a>指紋認証の概要
 
@@ -51,11 +50,6 @@ fingerprintManager.Authenticate(FingerprintManager.CryptoObject crypto,
 指紋認証には、Android 6.0 (API レベル 23) 以上、および指紋スキャナーを使用するデバイスが必要です。 
 
 認証されるユーザーごとに、デバイスに指紋が既に登録されている必要があります。 これには、パスワード、PIN、スワイプパターン、または顔認識を使用する画面ロックの設定が含まれます。 Android Emulator では、一部の指紋認証機能をシミュレートすることができます。  これらの2つのトピックの詳細については、「[指紋の登録](enrolling-fingerprint.md)」セクションを参照してください。 
-
-
-
-
-
 
 ## <a name="related-links"></a>関連リンク
 

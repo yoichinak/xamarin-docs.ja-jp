@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: eb20c73ab66af5ca07bf2efb31d631d9fa9776dc
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 335c385b5be77736f0e19852eb71f2a2329eb9a2
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287035"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768254"
 ---
 # <a name="layout-options-in-xamarinios"></a>Xamarin. iOS のレイアウトオプション
 
@@ -40,7 +40,6 @@ textfield1.Frame = new RectangleF(15, 277, 79, 27);
 textfield1.AutoresizingMask = UIViewAutoresizing.FlexibleRightMargin | UIViewAutoresizing.FlexibleBottomMargin;
 ```
 
-
 自動サイズ調整の設定をテストするには、プロジェクトのオプションで、**サポートされている**さまざまなデバイスの向きを有効にします。
 
  [![](layout-options-images/image43a.png "自動サイズ調整の設定")](layout-options-images/image43a.png#lightbox)
@@ -53,7 +52,6 @@ textfield1.AutoresizingMask = UIViewAutoresizing.FlexibleWidth;
 imageview1.AutoresizingMask = UIViewAutoresizing.FlexibleTopMargin | UIViewAutoresizing.FlexibleLeftMargin;
 ```
 
-
 デザイナーを使用してコントロールを調整することもできます。 次に示すように struts を選択すると、ビューの下部からクリップされずに画像が右に固定されます。
 
  [![](layout-options-images/autoresize.png "回転")](layout-options-images/autoresize.png#lightbox)
@@ -63,10 +61,6 @@ imageview1.AutoresizingMask = UIViewAutoresizing.FlexibleTopMargin | UIViewAutor
  [![](layout-options-images/image44a.png "回転")](layout-options-images/image44a.png#lightbox)
 
 設定が`FlexibleWidth`原因で、テキストビューとテキストフィールドの両方が、同じ左右の余白を維持するように拡張されていることに注意してください。 画像は、上下左右の余白を維持します。つまり、画面の回転時に画像を表示したままにします。 通常、複雑なレイアウトでは、表示されているすべてのコントロールに対してこれらの設定を組み合わせて、ユーザーインターフェイスの一貫性を保ち、ビューの境界が変更されたとき (回転やその他のサイズ変更イベントによって) コントロールの重なりを防止する必要があります。
-
-
-
-
 
 ## <a name="related-links"></a>関連リンク
 

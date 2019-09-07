@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: f931397f50b6b7aece099efb775a6dda560bf0eb
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: d1047ae8cae6a8e86b72690fe5d80d0ba9e752a4
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280001"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768414"
 ---
 # <a name="auto-layout-with-the-xamarin-designer-for-ios"></a>Xamarin Designer for iOS を使用した自動レイアウト
 
@@ -47,7 +47,6 @@ View.AddConstraint (NSLayoutConstraint.Create (Button1, NSLayoutAttribute.Left, 
 
     ![](designer-auto-layout-images/image01.png "プロパティパネルの [オートレイアウトを使用する] チェックボックス")
 
-
 既定では、画面上に制約が作成または表示されません。 代わりに、コンパイル時にフレーム情報から自動的に推論されます。 制約を追加するには、デザイン画面で要素を選択し、制約を追加する必要があります。 これは、[**制約] ツールバー**を使用して行うことができます。
 
 ## <a name="constraints-toolbar"></a>制約ツールバー
@@ -63,7 +62,6 @@ View.AddConstraint (NSLayoutConstraint.Create (Button1, NSLayoutAttribute.Left, 
 - **[制約の更新] ボタン:** 制約編集モードになっているかどうかによって変わることに注意する必要があります。
   - 制約編集モードでは、このボタンによって、要素フレームに合わせて制約が調整されます。
   - フレーム編集モードでは、このボタンは、制約が定義されている位置と一致するように要素フレームを調整します。
-
 
 ## <a name="surface-based-constraint-editing"></a>サーフェイスベースの制約の編集
 
@@ -87,8 +85,6 @@ IOS デザイナーツールには、デザインサーフェイス上の要素�
 
 > [!IMPORTANT]
 > レイアウトガイドは、さまざまな種類の制約ターゲットで、ステータスバーやツールバーなどのシステムバーの存在を考慮して、上下の制約を作成できます。 主な用途の1つは、iOS 6 と iOS 7 の間でアプリとの互換性を持たせることです。これは、最新バージョンでは、コンテナービューがステータスバーの下に拡張されるためです。 上部のレイアウトガイドの詳細については、 [Apple のドキュメント](https://developer.apple.com/library/ios/documentation/userexperience/conceptual/transitionguide/AppearanceCustomization.html#//apple_ref/doc/uid/TP40013174-CH15-SW2)を参照してください。
-
-
 
 次の3つのセクションでは、さまざまな種類の制約の使用について説明します。
 
@@ -129,7 +125,6 @@ Square ハンドルは、コンテキストに応じて、 *system.windows.media
 - **制約が競合**しています。これは、複数の制約によって要素の属性の値が競合し、制約エンジンがその属性を調整できない場合に発生します。
 - **Underconstrained items** —要素のプロパティ (location + size) は、制約のセットと有効な固有のサイズによって完全にカバーされている必要があります。 これらの値があいまいである場合、項目は underconstrained と呼ばれます。
 - **Frame misplacement** -これは、要素のフレームとその制約のセットで2つの異なる結果の四角形が定義されている場合に発生します。
-
 
 このセクションでは、上記の3つの問題について説明し、その処理方法の詳細を示します。詳述
 

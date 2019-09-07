@@ -6,12 +6,12 @@ ms.assetid: 1F4A1BE1-7205-43F4-89D0-6C8672F52598
 author: conceptdev
 ms.author: crdun
 ms.date: 10/11/2017
-ms.openlocfilehash: b5362c0a809423e2782ee60faa96658cf132d752
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: fa50ae16b69436936f0a7a8a5cf0aeaa54dfedfb
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290858"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765667"
 ---
 # <a name="objective-sharpie-release-history"></a>目標マジックペンリリース履歴
 
@@ -142,4 +142,3 @@ ms.locfileid: "70290858"
 [V2.0 のダウンロード](https://download.xamarin.com/objective-sharpie/ObjectiveSharpie-1.1.1.pkg)
 
 1.1.1 は2013年4月にマジックペンの目標の初期プレビューに従って、Xamarin での1.5 年後の最初のメジャーリリースでした。 このリリースは、一般に、新しい Clang バックエンドを利用して、さまざまなネイティブライブラリで安定し、使用可能であると考えられる最初のリリースです。
-

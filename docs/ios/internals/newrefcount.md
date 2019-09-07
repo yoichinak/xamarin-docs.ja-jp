@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 11/25/2015
-ms.openlocfilehash: 8b1b82a1707a4aa58ef1e3dadbaeb79ada1ad6a1
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 56e35662230a3c529eb48a0ae742c2b063c1ac10
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291872"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753342"
 ---
 # <a name="new-reference-counting-system-in-xamarinios"></a>Xamarin. iOS の新しい参照カウントシステム
 
@@ -46,10 +46,8 @@ Xamarin 9.2.1 の As では、新しい参照カウントシステムが既定�
 
  新しい参照カウント拡張は、Unified API に必要であり、既定で有効になっている必要があります。 以前のバージョンの IDE では、この値が自動的にチェックされない場合があるため、自分で確認を行う必要がある場合があります。
 
-
 > [!IMPORTANT]
 > この機能の以前のバージョンは、Monotouch.dialog 5.2 以降のものですが、試用版**プレビューとし**てのみ使用できました。 この新しい拡張バージョンは、 **Boehm**ガベージコレクターでも使用できるようになりました。
-
 
 従来、Xamarin によって管理されるオブジェクトには2種類ありました。これは、ネイティブオブジェクト (ピアオブジェクト) のラッパーであるだけでなく、新しい機能 (派生オブジェクト) を拡張または導入したものです。通常は、メモリ内の状態を追加します。 以前は、(イベントハンドラーをC#追加するなどして) 状態を持つピアオブジェクトを拡張できるようになりましたが、オブジェクトが参照されず、収集されるようになりました。 これにより、後でクラッシュが発生する可能性があります (たとえば、目的の C ランタイムがマネージオブジェクトにコールバックされた場合など)。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: 6eb942c0276bda28cb4be14fb31cdf820b9ccd5e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: e81504b3411674c8f8f92bf9018d617dd1c4bc4c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291352"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768912"
 ---
 # <a name="customizing-a-tables-appearance-in-xamarinios"></a>Xamarin でのテーブルの外観のカスタマイズ
 
@@ -26,7 +26,6 @@ ms.locfileid: "70291352"
 - **サブタイトル**–との`UIImageView`サブタイトルをサポートします。
 - **Value1** –右にアラインされ`UIImageView`たサブタイトルは、をサポートします。
 - **Value2** –タイトルは右揃えになり、サブタイトルは左揃えになります (ただし、イメージは含まれません)。
-
 
 これらのスクリーンショットは、各スタイルの表示方法を示しています。
 
@@ -57,7 +56,6 @@ cell.ImageView.Image = UIImage.FromFile("Images/" + tableItems[indexPath.Row].Im
 - **[入力] ボタン**–セルの残りの部分とは無関係にタッチに応答します。これにより、別の関数を実行してセル自体に触れることができます (たとえば`UINavigationController` 、ポップアップやスタックの一部ではない新しいウィンドウを開くなど)。
 - **DisclosureIndicator** –通常、セルをタッチすると別のビューが開くことを示すために使用します。
 - **DetailDisclosureButton** – `DetailButton`と`DisclosureIndicator`の組み合わせ。
-
 
 次のようになります。
 
@@ -128,7 +126,6 @@ Cellcustomtable の例では`UITableViewCell` 、の`UILabel`カスタムレイ�
 - **UpdateCell** –セルのプロパティ`UITableView.GetCell`を設定するために使用するのメソッド。
 - **Layoutsubviews**ビュー– UI コントロールの位置を設定します。 この例では、すべてのセルに同じレイアウトが使用されていますが、表示されるコンテンツによっては、より複雑なセル (特にサイズが変化する) でレイアウト位置が異なる場合があります。
 
-
 **Cellcustomtable > CustomVegeCell.cs**の完全なサンプルコードは次のとおりです。
 
 ```csharp
@@ -184,8 +181,6 @@ public override UITableViewCell GetCell (UITableView tableView, NSIndexPath inde
     return cell;
 }
 ```
-
-
 
 ## <a name="related-links"></a>関連リンク
 

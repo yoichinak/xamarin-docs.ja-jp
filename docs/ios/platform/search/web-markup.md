@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: 87037c8c3797c7c305ce2689172bda1babbc26bd
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 52da0cfcab56c0acd339f4f0a0f2456a66d002a8
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291720"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769479"
 ---
 # <a name="search-with-web-markup-in-xamarinios"></a>Xamarin で Web マークアップを使用して検索する
 
@@ -202,8 +202,6 @@ Web サイトのメタデータの例を次に示します。この例では、�
 ```
 
 詳細については、Apple の[アプリ検索開発者向けサイト](https://developer.apple.com/ios/search/)を参照してください。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

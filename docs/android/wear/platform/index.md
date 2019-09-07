@@ -1,23 +1,23 @@
 ---
-title: Xamarin.Android で Wear OS のプラットフォーム機能
-description: Wear の OS プラットフォームの主要なコンポーネント
+title: Xamarin Android での磨耗 OS のプラットフォーム機能
+description: 磨耗 OS プラットフォームの主要コンポーネント
 ms.prod: xamarin
 ms.assetid: E86688B5-B2FE-476A-A2AA-F8CC26EA8D2B
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 56d9c80890c0caeb703c1409ad91cd5aa707100e
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 95b7958ea936d2f2c2e5d8fac903fc3042615989
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67864734"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70762139"
 ---
 # <a name="platform-features"></a>プラットフォーム機能
 
-このセクションのドキュメントでは、Android Wear に固有の機能について説明します。 ここで、WatchFace を作成する方法を説明するトピックが見つかります。
- 
+このセクションのドキュメントでは、Android の磨耗に固有の機能について説明します。 ここでは、WatchFace を作成する方法について説明するトピックを紹介します。
+
 ## <a name="creating-a-watch-faceandroidwearplatformcreating-a-watchfacemd"></a>[ウォッチの文字盤を作成する](~/android/wear/platform/creating-a-watchface.md)
 
-Android Wear 用カスタム ウォッチ face サービスを実装するためのステップ バイ ステップ チュートリアルです。 デジタル ウォッチ顔のサービスを停止、削除を構築するための手順が提供されているし、余分な機能を備えた、アナログ スタイル ウォッチの文字盤を作成するコードを追加します。
+Android 用のカスタムウォッチフェイスサービスを実装する手順を説明したチュートリアルです。 ここでは、削除したデジタルウォッチフェイスサービスを構築するための手順について説明します。さらに多くのコードを追加して、追加機能でアナログスタイルのウォッチ式を作成します。

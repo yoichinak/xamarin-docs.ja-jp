@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 18e7873eede87e9bb81c1c0b304bfc87c317c27a
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: f9367eda7651ca61a8a3cb0928ad11cb320faab6
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291510"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769957"
 ---
 # <a name="watchos-image-controls-in-xamarin"></a>Xamarin の watchOS Image コントロール
 
@@ -32,7 +32,6 @@ watchOS の提供、 [`WKInterfaceImage`](xref:WatchKit.WKInterfaceImage)イメ�
 
 ![](image-images/asset-watch-sml.png "アセットカタログイメージで Watch Kit のサイズ38mm と 42 mm を使用して、表示サイズごとに異なるイメージを指定できます。")
 
-
 ## <a name="images-on-the-watch"></a>ウォッチの画像
 
 画像を表示する最も効率的な方法は、*それらを watch アプリプロジェクトに含め*、 `SetImage(string imageName)`メソッドを使用して表示することです。
@@ -51,7 +50,6 @@ myOtherImageControl.SetImage("Worry");
 ### <a name="background-images"></a>背景画像
 
 、、および`SetBackgroundImage (string imageName)` `Group` `Button`クラスのに対しても同じロジックが適用されます。`InterfaceController` 最適なパフォーマンスを得るには、画像を watch アプリ自体に格納します。
-
 
 ## <a name="images-in-the-watch-extension"></a>Watch 拡張機能の画像
 
@@ -74,7 +72,6 @@ using (var image = UIImage.FromBundle ("Bumblebee")) {
 }
 ```
 
-
 ## <a name="animations"></a>アニメーション
 
 一連のイメージをアニメーション化するには、すべてが同じプレフィックスで始まり、数字のサフィックスを持つ必要があります。
@@ -95,7 +92,6 @@ animatedImage.StartAnimating ();
 ```csharp
 animatedImage.StopAnimating ();
 ```
-
 
 <a name="cache" />
 
@@ -122,12 +118,9 @@ using (var image = UIImage.FromBundle ("Bumblebee")) {
 
 を使用して`WKInterfaceDevice.CurrentDevice.WeakCachedImages`、コード内のイメージキャッシュの内容を照会できます。
 
-
 ### <a name="managing-the-cache"></a>キャッシュの管理
 
 キャッシュのサイズは約 20 MB です。 アプリの再起動間に保持されます。また、 `RemoveCachedImage` `WKInterfaceDevice.CurrentDevice`オブジェクトに対してメソッドまたは`RemoveAllCachedImages`メソッドを使用してファイルをクリアする必要があります。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

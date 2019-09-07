@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: b2660ec18d075279f9cb84be4521429c05974e59
-ms.sourcegitcommit: 9912e57ff6124c583600f9460ebfa3f7f7525960
+ms.openlocfilehash: 28a4fc6527a8c6990c47cdbbdc3163fc9350db83
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69560286"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770274"
 ---
 # <a name="xamarinforms-stacklayout"></a>Xamarin.Forms の StackLayout
 
@@ -220,8 +220,6 @@ Title="StackLayouts">
 ![](stack-layout-images/stack.png "複雑な StackLayout")
 
 が入れ子に`StackLayouts`なっていることに注意してください。入れ子になったレイアウトは、同じレイアウト内のすべての要素を表示するよりも簡単な場合があるためです。 またため、いることを確認`StackLayout`ページがいくつかのレイアウト盛り込んでいますを見つけた他のレイアウトのページで、アイテムの重なりをサポートしません。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

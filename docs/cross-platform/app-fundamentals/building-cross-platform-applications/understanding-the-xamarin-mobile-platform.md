@@ -6,12 +6,12 @@ ms.assetid: FBCEF258-D3D8-A420-79ED-3AAB4A7308E4
 author: conceptdev
 ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: 5398d99a64e7f6b75c8b9e418da252852aff1322
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: af2b8cd39d5fb1b0ce6c12f7d6ad87e245b9a594
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288677"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761969"
 ---
 # <a name="part-1--understanding-the-xamarin-mobile-platform"></a>パート 1-Xamarin Mobile Platform について
 
@@ -36,7 +36,6 @@ Xamarin では、アプリを作成しC#、複数のプラットフォーム間�
 - **Android** – C# は IL にコンパイルおよび MonoVM + JIT'ing と共にパッケージ化します。 フレームワークで使用されていないクラスは、リンク時に削除されます。 アプリケーションの実行によってサイドで Java/クリップアートを (Android ランタイム) と対話して JNI 経由でのネイティブ型 (を参照してください[Xamarin.Android 制限](~/android/internals/limitations.md))。
 - **Windows** – C# IL にコンパイルされ、組み込みのランタイムによって実行および Xamarin ツールは必要ありません。 Windows アプリケーションの設計ガイドの次の Xamarin が簡単 iOS および Android のコードを再利用します。
   ユニバーサル Windows プラットフォームには、Xamarin. iOS ' AOT のコンパイルと同様に動作する **.NET ネイティブ**オプションもあります。
-
 
 [Xamarin. iOS](~/ios/deploy-test/linker.md)および[xamarin. Android](~/android/deploy-test/linker.md)のリンカードキュメントでは、コンパイルプロセスのこの部分について詳しく説明しています。
 

@@ -6,30 +6,26 @@ ms.assetid: 4139A6C2-D477-C563-C1AB-98CCD0D10A93
 author: conceptdev
 ms.author: crdun
 ms.date: 03/27/2017
-ms.openlocfilehash: f8b8f13f323f404554ca73c3e75c23713e0fbe35
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: acec74585487e9f0a0a13a80c5da49a187a4042f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288844"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758152"
 ---
 # <a name="part-3---setting-up-a-xamarin-cross-platform-solution"></a>パート 3-Xamarin クロスプラットフォームソリューションの設定
 
 どのプラットフォームが使用されているかにかかわらず、Xamarin プロジェクトはすべて、同じソリューションファイル形式 (Visual Studio **.sln**ファイル形式) を使用します。 ソリューションは、個々のプロジェクトを読み込むことができない場合でも (Visual Studio for Mac の Windows プロジェクトなど)、開発環境間で共有できます。
 
-
-
 新しいクロスプラットフォームアプリケーションを作成する場合、最初の手順は空のソリューションを作成することです。 このセクションでは、次の処理について説明します。クロスプラットフォームモバイルアプリをビルドするためのプロジェクトを設定します。
 
  <a name="Sharing_Code" />
-
 
 ## <a name="sharing-code"></a>コードの共有
 
 プラットフォーム間でコード共有を実装する方法の詳細については、[コード共有オプション](~/cross-platform/app-fundamentals/code-sharing.md)に関するドキュメントを参照してください。
 
  <a name="Shared_Asset_Projects" />
-
 
 ### <a name="shared-projects"></a>共有プロジェクト
 
@@ -39,7 +35,6 @@ ms.locfileid: "70288844"
 
  <a name="Portable_Class_Libraries" />
 
-
 ### <a name="portable-class-libraries-pcl"></a>ポータブル クラス ライブラリ (PCL)
 
 従来、.NET プロジェクトファイル (および生成されたアセンブリ) は特定のバージョンのフレームワークを対象としていました。 これにより、プロジェクトまたはアセンブリが異なるフレームワークによって共有されるのを防ぐことができます。
@@ -48,17 +43,13 @@ ms.locfileid: "70288844"
 
 Xamarin の[ポータブルクラスライブラリのサポートの](~/cross-platform/app-fundamentals/pcl.md)詳細を確認し、そこに記載されている手順に従って[taskyportable サンプル](https://github.com/xamarin/mobile-samples/tree/master/TaskyPortable)がどのように機能するかを確認できます。
 
-
 ### <a name="net-standard"></a>.NET Standard
 
 2016で導入された[.NET Standard](~/cross-platform/app-fundamentals/net-standard.md)プロジェクトを使用すると、プラットフォーム間でコードを簡単に共有でき、Windows、Xamarin プラットフォーム (IOS、Android、Mac)、Linux で使用できるアセンブリが生成されます。
 
 .NET Standard ライブラリは、PCLs のように作成および使用できます。ただし、各バージョン (1.0 から 1.6) で利用可能な Api はより簡単に検出でき、各バージョンは下位バージョンの番号と下位互換性があります。
 
-
-
  <a name="Populating_the_Solution" />
-
 
 ## <a name="populating-the-solution"></a>ソリューションの設定
 
@@ -68,9 +59,7 @@ Xamarin のアプローチでは、コードを次の2つのプロジェクト�
 - **コアプロジェクト**-再利用可能なコードを1か所に記述し、異なるプラットフォーム間で共有します。 カプセル化の原則を使用して、可能な限り実装の詳細を非表示にします。
 - **プラットフォーム固有のアプリケーションプロジェクト**: 可能な限り少ない結合で再利用可能なコードを使用します。 このレベルでは、プラットフォーム固有の機能が追加されています。コアプロジェクトで公開されているコンポーネントに基づいて構築されています。
 
-
  <a name="Core_Project" />
-
 
 ### <a name="core-project"></a>コアプロジェクト
 
@@ -83,9 +72,7 @@ Xamarin のアプローチでは、コードを次の2つのプロジェクト�
 - **サービスアクセスレイヤー** –アプリケーションにクラウドサービスを提供するためのオプションのレイヤーです。 リモートネットワークリソース (web サービス、イメージのダウンロードなど) にアクセスし、場合によっては結果をキャッシュするコードが含まれています。
 - **ビジネス層**–モデルクラスの定義と、プラットフォーム固有のアプリケーションに機能を公開するファサードまたはマネージャークラス。
 
-
  <a name="Platform-Specific_Application_Projects" />
-
 
 ### <a name="platform-specific-application-projects"></a>プラットフォーム固有のアプリケーションプロジェクト
 
@@ -96,9 +83,7 @@ Xamarin のアプローチでは、コードを次の2つのプロジェクト�
 - **アプリケーションレイヤー** –プラットフォーム固有の機能と、ビジネス層オブジェクトとユーザーインターフェイスの間のバインディング/変換。
 - **ユーザーインターフェイスレイヤー** –画面、カスタムユーザーインターフェイスコントロール、検証ロジックの表示。
 
-
 <a name="Example" />
-
 
 ### <a name="example"></a>例
 
@@ -110,9 +95,7 @@ Xamarin のアプローチでは、コードを次の2つのプロジェクト�
 
  ![](setting-up-a-xamarin-cross-platform-solution-images/core-solution-example.png "共有プロジェクトには、各アーキテクチャレイヤー (ビジネス、サービス、データ、およびデータアクセスコード) に関連するコードが含まれています。")
 
-
  <a name="Project_References" />
-
 
 ## <a name="project-references"></a>プロジェクトの参照
 
@@ -123,16 +106,13 @@ Xamarin のアプローチでは、コードを次の2つのプロジェクト�
 
 ![](setting-up-a-xamarin-cross-platform-solution-images/solution-android.png "アプリケーションは、共有プロジェクトの参照をプロジェクト") ![](setting-up-a-xamarin-cross-platform-solution-images/solution-ios.png "アプリケーション プロジェクトの共有プロジェクトの参照")
 
-
 ケーススタディでは、プロジェクトを構造化する方法の具体的な例を示します。
 
  <a name="Adding_Files" />
 
-
 ## <a name="adding-files"></a>ファイルの追加
 
  <a name="Build_Action" />
-
 
 ### <a name="build-action"></a>ビルド アクション
 
@@ -145,11 +125,9 @@ Xamarin のアプローチでは、コードを次の2つのプロジェクト�
 - **Windows プロジェクトの XAML ファイル**–ビルドアクション:ページ
 - **Xamarin .xaml XAML ファイル**–ビルドアクション:EmbeddedResource
 
-
 一般に、IDE はファイルの種類を検出し、正しいビルドアクションを提案します。
 
  <a name="Case_Sensitivity" />
-
 
 ### <a name="case-sensitivity"></a>大文字と小文字の区別
 

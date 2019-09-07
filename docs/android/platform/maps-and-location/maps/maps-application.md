@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/25/2018
-ms.openlocfilehash: b436ea4f5d8c70f0ca641bea72d1230fc07c5086
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: b950326eb5a124d5040caa0044309630a2a53d38
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69523784"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761672"
 ---
 # <a name="launching-the-maps-application"></a>Maps アプリケーションの起動
 
@@ -21,7 +21,6 @@ Xamarin でマップを操作する最も簡単な方法は、次に示す組み
 [![組み込みの Google Maps アプリのスクリーンショットの例](maps-application-images/01-mapsapplication.png)](maps-application-images/01-mapsapplication.png#lightbox)
 
 Maps アプリケーションを使用する場合、マップはアプリケーションの一部にはなりません。 代わりに、アプリケーションは maps アプリケーションを起動し、外部にマップを読み込みます。 次のセクションでは、Xamarin を使用して、上記のようなマップを起動する方法を確認します。
-
 
 ## <a name="creating-the-intent"></a>インテントの作成
 
@@ -35,7 +34,6 @@ StartActivity (mapIntent);
 
 このコードは、前のスクリーンショットに示されているマップを起動するために必要なすべてのコードです。 緯度と経度を指定するだけでなく、maps の URI スキームでは、他のいくつかのオプションがサポートされています。
 
-
 ## <a name="geo-uri-scheme"></a>Geo URI スキーム
 
 上記のコードでは、geo スキームを使用して URI を作成しています。 この URI スキームでは、次のようないくつかの形式がサポートされています。
@@ -48,15 +46,11 @@ StartActivity (mapIntent);
 
 - `geo:0,0?q=business+near+city`&ndash; Maps アプリケーションを開き、注釈付き検索結果を表示します。 
 
-
 クエリを受け取る URI のバージョン (つまり、番地または検索語) は、Google の geocoder サービスを使用して、マップに表示される場所を取得します。 たとえば、URI `geo:0,0?q=coop+Cambridge`は次のようなマップになります。
 
 [![検索用語を含む Google マップを示すスクリーンショットの例](maps-application-images/02-mapsearch.png)](maps-application-images/02-mapsearch.png#lightbox)
 
-
-
 Geo URI スキームの詳細については、「[マップ上の場所の表示](https://developer.android.com/guide/components/intents-common.html#Maps)」を参照してください。
-
 
 ## <a name="street-view"></a>番地ビュー
 
@@ -92,6 +86,5 @@ google.streetview:cbll=lat,lng&cbp=1,yaw,,pitch,zoom&mz=mapZoom
 - `zoom`&ndash;ストリートビューパノラマのズーム乗数 (1.0 = 通常のズーム、2.0 = 拡大、3.0、拡大した4倍など)。
 
 - `mz`&ndash;ストリートビューから maps アプリケーションに移動するときに使用されるマップのズームレベル。
-
 
 組み込みの maps アプリケーションまたは [番地] ビューを使用すると、簡単にマッピングサポートを追加することができます。 ただし、Android の Maps API では、マッピングエクスペリエンスをより細かく制御できます。

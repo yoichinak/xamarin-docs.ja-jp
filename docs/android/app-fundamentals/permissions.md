@@ -6,22 +6,21 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: ef73b8e1cf9747c9ba426894f37aab620ac0095f
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 550883de571951bb05f0634632fd6b7688e1ab8c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119151"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755284"
 ---
 # <a name="permissions-in-xamarinandroid"></a>Xamarin. Android のアクセス許可
-
 
 ## <a name="overview"></a>概要
 
 Android アプリケーションは独自のサンドボックスで実行され、セキュリティ上の理由から、デバイス上の特定のシステムリソースやハードウェアにアクセスすることはできません。 ユーザーは、これらのリソースを使用する前に、アプリに対するアクセス許可を明示的に付与する必要があります。 たとえば、アプリケーションは、ユーザーからの明示的なアクセス許可なしにデバイスの GPS にアクセスすることはできません。 アプリがアクセス許可`Java.Lang.SecurityException`なしに保護されたリソースにアクセスしようとすると、Android によってがスローされます。
 
 アクセス許可は、アプリの開発時にアプリケーション開発者が**Androidmanifest .xml**で宣言します。 Android には、これらのアクセス許可に対するユーザーの同意を取得するための2つの異なるワークフローがあります。
- 
+
 - Android 5.1 (API レベル 22) 以下を対象とするアプリの場合、アプリのインストール時にアクセス許可要求が発生しました。 ユーザーがアクセス許可を付与しなかった場合、アプリはインストールされません。 アプリをインストールした後は、アプリをアンインストールしない限り、アクセス許可を取り消すことはできません。
 - Android 6.0 (API レベル 23) 以降では、ユーザーはアクセス許可をより細かく制御できるようになりました。アプリがデバイスにインストールされている限り、アクセス許可の付与または取り消しを行うことができます。 このスクリーンショットは、Google Contacts アプリのアクセス許可の設定を示しています。 さまざまなアクセス許可の一覧が表示され、ユーザーはアクセス許可を有効または無効にすることができます。
 
@@ -47,17 +46,14 @@ Android サポートライブラリには、以前のバージョンの Android 
 
 このドキュメントでは、Xamarin Android アプリケーションにアクセス許可を追加する方法と、Android 6.0 (API レベル 23) 以降を対象とするアプリで実行時のアクセス許可チェックを実行する方法について説明します。
 
-
 > [!NOTE]
 > ハードウェアのアクセス許可が、Google Play によるアプリのフィルター処理に影響を与える可能性があります。 たとえば、アプリにカメラのアクセス許可が必要な場合、Google Play は、カメラがインストールされていないデバイスの Google Play ストアにアプリを表示しません。
-
 
 <a name="requirements" />
 
 ## <a name="requirements"></a>必要条件
 
 Xamarin Android プロジェクトには、 [xamarin. android. Support. 互換](https://www.nuget.org/packages/Xamarin.Android.Support.Compat/)NuGet パッケージを含めることを強くお勧めします。 このパッケージは、アクセス許可固有の Api を以前のバージョンの Android にバックポートし、アプリが実行されている Android のバージョンを常に確認する必要がない1つの共通インターフェイスを提供します。
-
 
 ## <a name="requesting-system-permissions"></a>システムアクセス許可の要求
 
@@ -67,7 +63,6 @@ Android 6.0 以降を対象とするアプリでは、ユーザーが過去の�
 
 > [!NOTE]
 > アプリケーションは、必要なアクセス許可のみを要求します。
-
 
 ### <a name="declaring-permissions-in-the-manifest"></a>マニフェストでのアクセス許可の宣言
 
@@ -115,7 +110,6 @@ Visual Studio for Mac に組み込まれているツールのサポートを使�
 Xamarin では、ビルド時に一部のアクセス許可がデバッグビルドに自動的に追加されます。 これにより、アプリケーションのデバッグが容易になります。 特に、と`INTERNET` `READ_EXTERNAL_STORAGE`の2つの注目すべきアクセス許可があります。 これらの自動的に設定されたアクセス許可は、 **[必要なアクセス許可]** の一覧で有効になっていません。 ただし、リリースビルドでは、**必要なアクセス許可**一覧に明示的に設定されているアクセス許可のみを使用します。 
 
 Android 5.1 (API レベル 22) 以下を対象とするアプリの場合は、それ以上の作業は必要ありません。 Android 6.0 (API 23 レベル 23) 以降で実行されるアプリは、実行時のアクセス許可チェックを実行する方法について、次のセクションに進む必要があります。 
-
 
 ### <a name="runtime-permission-checks-in-android-60"></a>Android 6.0 でのランタイムアクセス許可の確認
 
@@ -209,11 +203,9 @@ public override void OnRequestPermissionsResult(int requestCode, string[] permis
 }
 ```  
 
-
 ## <a name="summary"></a>Summary
 
 このガイドでは、Android デバイスでアクセス許可を追加および確認する方法について説明しました。 以前の Android アプリ間でアクセス許可がどのように機能するか (API レベル < 23) と新しい Android アプリ (API レベル > 22) の違いについて説明します。 Android 6.0 で実行時のアクセス許可チェックを実行する方法について説明しました。
-
 
 ## <a name="related-links"></a>関連リンク
 

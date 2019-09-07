@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 4fe1bd4dda9a54eb3a1692f07d1069adb39345cb
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: d5edb5f4e2ce1ca39ba27a1de1a51760ea167e8b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69523293"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70757129"
 ---
 # <a name="what-version-of-xamarinandroid-added-lollipop-support"></a>Lollipop のサポートが追加された Xamarin.Android のバージョンを教えてください
 
@@ -74,6 +74,5 @@ Error: Could not find android.jar for API Level 21.**
     2. [1] を **/Users/username/Library/Developer/Xamarin/android-sdk-macosx**に抽出して、 **android-L**フォルダーを作成します。
 
 -----
-
 
 [1] - [https://dl-ssl.google.com/android/repository/android-L_r04.zip](https://dl-ssl.google.com/android/repository/android-L_r04.zip)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 9fa0d51e02382458535b065377af55542d87913a
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 52ee92eca5fa0b3108b2ef96ef81bfb939e61a6c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290754"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752920"
 ---
 # <a name="handoff-in-xamarinios"></a>Xamarin のハンドオフ (iOS)
 
@@ -626,8 +626,6 @@ Xamarin iOS アプリでハンドオフを使用する例として、このガ�
 ## <a name="summary"></a>Summary
 
 この記事では、ユーザーの Apple デバイスの複数のユーザーアクティビティを続行するために使用されるハンドオフフレームワークの概要について説明しました。 次に、Xamarin iOS アプリでハンドオフを有効にして実装する方法を示しました。 最後に、さまざまな種類のハンドオフ継続の使用方法と、ハンドオフのベストプラクティスについて説明しました。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

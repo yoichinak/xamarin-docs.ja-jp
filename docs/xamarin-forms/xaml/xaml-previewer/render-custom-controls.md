@@ -1,30 +1,30 @@
 ---
-title: XAML プレビューアーでカスタム コントロールをレンダリングします。
-description: この記事では、カスタム コントロールを XAML プレビューアーで表示する方法について説明します。
+title: XAML プレビューアーでカスタムコントロールを表示する
+description: この記事では、XAML プレビューアーでカスタムコントロールを表示する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 4D795372-CB8F-48F4-B63D-845E44B261F7
 ms.technology: xamarin-forms
 author: maddyleger1
 ms.author: maleger
 ms.date: 03/27/2019
-ms.openlocfilehash: 977c29312e0be8b92f216c224414f9bd03f8562d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 5b87c631574f159230e1dc23285b9087bcc94255
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60875978"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767318"
 ---
-# <a name="render-custom-controls-in-the-xaml-previewer"></a>XAML プレビューアーでカスタム コントロールをレンダリングします。
+# <a name="render-custom-controls-in-the-xaml-previewer"></a>XAML プレビューアーでカスタムコントロールを表示する
 
-_カスタム コントロールは、XAML プレビューアーで想定どおり使用機能しない場合があります。この記事では、ガイダンスを使用すると、カスタム コントロールのプレビューの制限事項を把握できます。_
+_カスタムコントロールは、XAML プレビューアーで期待どおりに動作しないことがあります。カスタムコントロールをプレビューする際の制限事項については、この記事のガイダンスを参考にしてください。_
 
-## <a name="basic-preview-mode"></a>基本のプレビュー モード
+## <a name="basic-preview-mode"></a>基本プレビューモード
 
-プロジェクトをビルドしていない場合でも、XAML プレビューアーには、ページが表示されます。 構築するまで、その基本 Xamarin.Forms の型が分離コードに依存している任意のコントロールに表示されます。 プロジェクトのビルド時に XAML プレビューアーはデザイン時の表示を有効になっていると、カスタム コントロールを表示しようとします。 レンダリングに失敗した場合は、Xamarin.Forms の基本の型が表示されます。
+プロジェクトをビルドしていない場合でも、XAML プレビューアーによってページが表示されます。 ビルドするまで、分離コードに依存するコントロールには、その基本となる Xamarin. Forms 型が表示されます。 プロジェクトがビルドされると、XAML プレビューアーは、デザイン時の表示が有効になっているカスタムコントロールを表示しようとします。 レンダリングが失敗した場合は、基本の Xamarin. Forms 型が表示されます。
 
-## <a name="enable-design-time-rendering-for-custom-controls"></a>カスタム コントロールのデザイン時のレンダリングを有効にします。
+## <a name="enable-design-time-rendering-for-custom-controls"></a>カスタムコントロールのデザイン時の表示を有効にする
 
-場合は、独自のカスタム コントロールを作成またはサード パーティ製のライブラリからコントロールを使用して、プレビューアーが正しく表示されないに。 カスタム コントロールがデザイン タイムでレンダリングにコントロールを記述またはライブラリからインポートするかどうかは、プレビューアーで表示されるオプトインする必要があります。 作成した、コントロールを追加、 [ `[DesignTimeVisible(true)]` ](xref:System.ComponentModel.DesignTimeVisibleAttribute)プレビューアーで表示するのには、コントロールのクラスに。
+独自のカスタムコントロールを作成したり、サードパーティのライブラリのコントロールを使用したりすると、プレビューアーによって正しく表示されない場合があります。 カスタムコントロールは、コントロールを作成したかライブラリからインポートしたかにかかわらず、プレビューに表示されるデザイン時のレンダリングをオプトインする必要があります。 作成したコントロールで、をコントロール[`[DesignTimeVisible(true)]`](xref:System.ComponentModel.DesignTimeVisibleAttribute)のクラスに追加して、プレビューアーに表示します。
 
 ```csharp
 namespace MyProject
@@ -38,22 +38,21 @@ namespace MyProject
 }
 ```
 
-使用[ImageCirclePlugin James Montemagno 氏の基本クラス](https://github.com/jamesmontemagno/ImageCirclePlugin/blob/master/src/ImageCircle/CircleImage.shared.cs)など。
+例として、 [James Montemagno の ImageCirclePlugin's 基底クラス](https://github.com/jamesmontemagno/ImageCirclePlugin/blob/master/src/ImageCircle/CircleImage.shared.cs)を使用します。
 
+## <a name="skiasharp-controls"></a>SkiaSharp コントロール
 
-## <a name="skiasharp-controls"></a>SkiaSharp のコントロール
-
-現時点では、iOS でプレビューしているときに SkiaSharp コントロールのみサポートされます。 Android のプレビューに表示されません。
+現時点では、SkiaSharp コントロールは、iOS でプレビューしている場合にのみサポートされます。 Android preview ではレンダリングされません。
 
 ## <a name="troubleshooting"></a>トラブルシューティング
 
-### <a name="check-your-xamarinforms-version"></a>Xamarin.Forms バージョンを確認してください。
-以上であることを確認 Xamarin.Forms 3.6 がインストールされています。 NuGet で Xamarin.Forms バージョンを更新することができます。
+### <a name="check-your-xamarinforms-version"></a>Xamarin. Forms バージョンを確認する
+少なくとも Xamarin. Forms 3.6 がインストールされていることを確認します。 NuGet で Xamarin. Forms バージョンを更新できます。
 
-### <a name="even-with-designtimevisibletrue-my-custom-control-isnt-rendering-properly"></a>使用しても`[DesignTimeVisible(true)]`、カスタム コントロールが正しく表示されていません。
-コード ビハインドまたはバックエンドのデータに大きく依存するカスタム コントロールは、XAML プレビューアーで常に機能しません。 行うことができます。
-* コントロールを移動して、場合に初期化しないため[デザイン モードが有効になっています。](index.md#detect-design-mode)
-* 設定する[デザイン時データ](design-time-data.md)バックエンドからの仮のデータを表示するには
+### <a name="even-with-designtimevisibletrue-my-custom-control-isnt-rendering-properly"></a>で`[DesignTimeVisible(true)]`も、カスタムコントロールは正しくレンダリングされません。
+分離コードやバックエンドデータに大きく依存するカスタムコントロールは、常に XAML プレビューアーで動作するわけではありません。 次の操作を実行できます。
+* [デザインモードが有効になっ](index.md#detect-design-mode)ている場合に初期化されないようにコントロールを移動する
+* バックエンドからの偽のデータを表示するように[デザイン時データ](design-time-data.md)を設定する
 
-### <a name="the-xaml-previewer-shows-the-error-custom-controls-arent-rendering-properly"></a>XAML プレビューアーは、「カスタム コントロールは正しくレンダリングされません」というエラーを示します
-Try クリーニングし、プロジェクトをリビルドまたは閉じて XAML ファイル。
+### <a name="the-xaml-previewer-shows-the-error-custom-controls-arent-rendering-properly"></a>XAML プレビューアーに "カスタムコントロールが正しくレンダリングされていません" というエラーが表示される
+プロジェクトをクリーニングしてリビルドするか、XAML ファイルを閉じてから開き直してみてください。

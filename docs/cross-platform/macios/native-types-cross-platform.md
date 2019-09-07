@@ -6,17 +6,16 @@ ms.assetid: B9C56C3B-E196-4ADA-A1DE-AC10D1001C2A
 author: conceptdev
 ms.author: crdun
 ms.date: 04/07/2016
-ms.openlocfilehash: dde5b2429622c967fa4419700ce8fe9860afbb10
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 273b7f2eb40f1fa8495e0a0e8e18fa947241f389
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290851"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765414"
 ---
 # <a name="working-with-native-types-in-cross-platform-apps"></a>クロスプラットフォーム アプリでのネイティブ型の使用
 
 _この記事では、Android や Windows Phone Os などの iOS 以外のデバイスでコードを共有するクロスプラットフォームアプリケーションで、新しい iOS Unified API ネイティブ型 (nint、nuint、nint) を使用する方法について説明します。_
-
 
 64型のネイティブ型は、iOS および Mac Api と連携して動作します。 Android または Windows で実行される共有コードを記述する場合は、統合型を共有できる通常の .NET 型に変換することを管理する必要があります。
 
@@ -211,7 +210,6 @@ namespace NativeShared
 
 コードをコンパイルし`using nfloat = global::System.Single;`て非 Unified API デバイスで実行すると、はをに`nfloat`マップします。 `Single`これにより、 `float`を使用するフロントエンドアプリケーションが`CalculateArea`メソッドを呼び出すことができるように、に暗黙的に変換されます。変更.
 
-
 #### <a name="using-type-conversions-in-the-front-end-app"></a>フロントエンドアプリでの型変換の使用
 
 フロントエンドアプリケーションが共有コードライブラリへの呼び出しをごく一部しか行わない場合、別の解決策として、ライブラリを変更せずに、既存のルーチンを呼び出すときに Xamarin または Xamarin. Mac アプリケーションで型キャストを行うことができます。 例えば:
@@ -228,10 +226,9 @@ Console.WriteLine ("Rectangle Area: {0}", Transformations.CalculateArea ((Rectan
 
 アプリケーションのアーキテクチャに基づいて、これらのソリューションの1つ以上を使用して、クロスプラットフォームコードでネイティブデータ型 (必要な場合) をサポートする場合があります。
 
-
 ## <a name="xamarinforms-applications"></a>Xamarin.Forms アプリケーション
 
-次に示すのは、Unified API アプリケーションと共有されるクロスプラットフォームの Ui に対して Xamarin.Forms を使用する場合です。
+次に示すのは、Unified API アプリケーションと共有されるクロスプラットフォームの Ui に対して Xamarin. Forms を使用する場合です。
 
 - ソリューション全体で、1.3.1 NuGet パッケージのバージョン (またはそれ以降) を使用している必要があります。
 - すべての Xamarin のカスタムレンダリングでは、UI コードの共有 (共有プロジェクトまたは PCL) に基づいて、上記と同じ種類のソリューションを使用します。
@@ -242,9 +239,7 @@ Console.WriteLine ("Rectangle Area: {0}", Transformations.CalculateArea ((Rectan
 
 ## <a name="summary"></a>Summary
 
-この記事では、Unified API アプリケーションでネイティブデータ型を使用する場合と、それによるクロスプラットフォームの影響について説明しました。 クロスプラットフォームライブラリで新しいネイティブデータ型を使用する必要がある場合に使用できるいくつかのソリューションを提供しました。 また、Xamarin.Forms クロスプラットフォームアプリケーションで統合された Api をサポートするための簡単なガイドを見てきました。
-
-
+この記事では、Unified API アプリケーションでネイティブデータ型を使用する場合と、それによるクロスプラットフォームの影響について説明しました。 クロスプラットフォームライブラリで新しいネイティブデータ型を使用する必要がある場合に使用できるいくつかのソリューションを提供しました。 また、Xamarin. Forms クロスプラットフォームアプリケーションで統合された Api をサポートするための簡単なガイドを見てきました。
 
 ## <a name="related-links"></a>関連リンク
 

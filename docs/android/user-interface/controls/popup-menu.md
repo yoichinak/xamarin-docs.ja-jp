@@ -7,19 +7,18 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/31/2018
-ms.openlocfilehash: 9b3e4177d6be5854e80952d091aa78787d9645bb
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 8a808e6ea49338de5b6bd1618fc2227e6cf5f0b1
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644933"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70764893"
 ---
 # <a name="xamarinandroid-popup-menu"></a>Xamarin. Android ポップアップメニュー
 
 [PopupMenu](xref:Android.Widget.PopupMenu) (_ショートカットメニュー_とも呼ばれます) は、特定のビューに固定されたメニューです。 次の例では、1つのアクティビティにボタンが含まれています。 ユーザーがボタンをタップすると、3項目のポップアップメニューが表示されます。
 
 [![ボタンと3項目のポップアップメニューを使用したアプリの例](popup-menu-images/01-app-example-sml.png)](popup-menu-images/01-app-example.png#lightbox)
-
 
 ## <a name="creating-a-popup-menu"></a>ポップアップメニューの作成
 
@@ -47,7 +46,7 @@ showPopupMenu.Click += (s, arg) => {
 };
 ```
 
-最後に、ポップアップメニューは、前に作成したメニュー*リソースで拡大*する必要があります。 次の例では、メニューの[膨張](xref:Android.Views.LayoutInflater.Inflate*)メソッドの呼び出しが追加され、 [Show](xref:Android.Widget.PopupMenu.Show)メソッドが呼び出されて表示されます。
+最後に、ポップアップメニューは、前に作成したメニュー*リソースで拡大する必要*があります。 次の例では、メニューの[膨張](xref:Android.Views.LayoutInflater.Inflate*)メソッドの呼び出しが追加され、 [Show](xref:Android.Widget.PopupMenu.Show)メソッドが呼び出されて表示されます。
 
 ```csharp
 showPopupMenu.Click += (s, arg) => {
@@ -56,7 +55,6 @@ showPopupMenu.Click += (s, arg) => {
     menu.Show ();
 };
 ```
-
 
 ## <a name="handling-menu-events"></a>メニューイベントの処理
 
@@ -77,8 +75,6 @@ showPopupMenu.Click += (s, arg) => {
     menu.Show ();
 };
 ```
-
-
 
 ## <a name="related-links"></a>関連リンク
 

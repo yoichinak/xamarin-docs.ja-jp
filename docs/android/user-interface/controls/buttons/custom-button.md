@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: ecb745f2f50b5aa0e22e331a4def0be9d8f86aa5
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 4504045eb1692d95ee1e981bbec3da3a45699db3
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510394"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758926"
 ---
 # <a name="custom-button"></a>カスタム ボタン
 
@@ -35,7 +35,6 @@ ms.locfileid: "68510394"
 ```
 
 これにより、1つの描画リソースが定義されます。これにより、ボタンの現在の状態に基づいてイメージが変更されます。 最初`<item>`のは、ボタンが押されたときにイメージとして**android_pressed**を定義します (アクティブ化`<item>`されています)。2番目のは、ボタンがフォーカスされたときにイメージとして**android_focused**を定義します (ボタンがトラックボールまたは方向パッドを使用して強調表示);3番目`<item>`のは、通常の状態 (押されていない場合またはフォーカスされていない場合) のイメージとして**android_normal**を定義します。 この XML ファイルは、 [`Button`](xref:Android.Widget.Button) 1 つの作成されたリソースを表し、によってバックグラウンドで参照されるときに、この3つの状態に基づいて表示されるイメージを変更します。
-
 
 > [!NOTE]
 > `<item>`要素の順序は重要です。 この描画が参照されて`<item>`いる場合、現在のボタンの状態に適しているかどうかを判断するために、が走査されます。
@@ -68,7 +67,6 @@ button.Click += (o, e) => {
 これにより[`Button`](xref:Android.Widget.Button) 、レイアウトからがキャプチャされ[`Toast`](xref:Android.Widget.Toast) 、 [`Button`](xref:Android.Widget.Button)がクリックされたときに表示されるメッセージが追加されます。
 
 次に、アプリケーションを実行します。
-
 
 *このページの一部は、Android オープンソースプロジェクトによって作成および共有*
 され、[*Creative Commons 2.5 属性*](http://creativecommons.org/licenses/by/2.5/)で説明されている条項に従って使用される作業に基づいて変更されます。

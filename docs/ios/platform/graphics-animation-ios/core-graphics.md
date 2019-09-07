@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 72c233dc492fe1c93546121bc9103e666c2127ac
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 65ccbe397093833e3af58d1165bc1dad8287ba5d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286259"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752943"
 ---
 # <a name="core-graphics-in-xamarinios"></a>Xamarin のコアグラフィック
 
@@ -28,7 +28,6 @@ iOS には、低レベルの描画をサポートするための[*コアグラ�
 - [メモリまたは画面にイメージを描画](#Drawing_Images_and_Text)します。
 - PDF の作成と描画。
 - 既存の PDF の読み取りと描画。
-
 
 ## <a name="geometric-space"></a>幾何学的空間
 
@@ -276,7 +275,6 @@ public override void Draw (RectangleF rect)
 - コンテキストからイメージを取得する
 - コンテキストの削除
 
-
 ビューによってコンテキストが提供されるメソッドとは異なり、この場合は、次の2つの方法のいずれかでコンテキストを作成します。`Draw`
 
 1. (また`UIGraphics.BeginImageContext`は`BeginImageContextWithOptions`) を呼び出すことによって
@@ -422,7 +420,6 @@ UIGraphics.EndPDFContent ();
 ```
 
 生成されたテキストは PDF に描画され、保存、アップロード`NSData` 、電子メールなどのに含まれます。
-
 
 ## <a name="summary"></a>Summary
 

@@ -1,18 +1,18 @@
 ---
 title: 第 15 章の概要です。 対話型インターフェイス
-description: Xamarin.Forms によるモバイル アプリの作成。第 15 章の概要です。 対話型インターフェイス
+description: Xamarin を使用した Mobile Apps の作成:第 15 章の概要です。 対話型インターフェイス
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: F54E86F4-1CDA-474E-9B09-242060C2C13D
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 974ef2a141ec7175c2306d4af63f534a5c77ecb2
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 1c30f87b9173d2ca4de0b2d91ad13145031e9b0a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61335297"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760758"
 ---
 # <a name="summary-of-chapter-15-the-interactive-interface"></a>第 15 章の概要です。 対話型インターフェイス
 
@@ -24,12 +24,12 @@ ms.locfileid: "61335297"
 
 Xamarin.Forms には 20 のインスタンス化可能なクラスから派生した`View`なく`Layout`します。 これらの 6 つ前の章で説明します。
 
-- `Label`:[**第 2 章です。アプリの詳細**](chapter02.md)
-- `BoxView`:[**第 3 章です。スタックをスクロール**](chapter03.md)
-- `Button`:[**第 6 章です。ボタンのクリック**](chapter06.md)
-- `Image`:[**第 13 章です。ビットマップ**](chapter13.md)
-- `ActivityIndicator`:[**第 13 章です。ビットマップ**](chapter13.md)
-- `ProgressBar`:[**第 14 章です。AbsoluteLayout**](chapter14.md)
+- `Label`:[**第2章アプリの詳細**](chapter02.md)
+- `BoxView`:[**第3章スタックをスクロール**](chapter03.md)
+- `Button`:[**第6章ボタンのクリック**](chapter06.md)
+- `Image`:[**第13章ビットマップ**](chapter13.md)
+- `ActivityIndicator`:[**第13章ビットマップ**](chapter13.md)
+- `ProgressBar`:[**第14章AbsoluteLayout**](chapter14.md)
 
 この章では 8 つのビューは、.NET の基本データ型と対話するユーザーを効果的に許可します。
 
@@ -44,12 +44,12 @@ Xamarin.Forms には 20 のインスタンス化可能なクラスから派生�
 
 次の章では、残りの 6 つのビューが含まれます。
 
-- `WebView`:[**第 16 章です。データ バインディング**](chapter16.md)
-- `Picker`:[**第 19 章です。コレクション ビュー**](chapter19.md)
-- `ListView`:[**第 19 章です。コレクション ビュー**](chapter19.md)
-- `TableView`:[**第 19 章です。コレクション ビュー**](chapter19.md)
-- `Map`:[**第 28 章です。場所とマップ**](chapter28.md)
-- `OpenGLView`:この本 (と Windows プラットフォームはサポートされていません) は、「not
+- `WebView` :[**Chapter 16.データ バインディング**](chapter16.md)
+- `Picker` :[**第19章コレクション ビュー**](chapter19.md)
+- `ListView` :[**第19章コレクション ビュー**](chapter19.md)
+- `TableView`:[**第19章コレクション ビュー**](chapter19.md)
+- `Map`:[**第28章場所とマップ**](chapter28.md)
+- `OpenGLView`:この書籍には記載されていません (Windows プラットフォームはサポートされていません)
 
 ## <a name="slider-and-stepper"></a>スライダーとステッパ
 
@@ -238,8 +238,6 @@ Xamarin.Forms では、ユーザーを入力し、テキストを編集できる
 [ **SetTimer** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/SetTimer)プログラムが使用する方法を示します、`TimePicker`タイマーの時間を指定します。 プログラムは、フォア グラウンドで保持する場合にのみ機能します。
 
 **SetTimer**も示しますを使用して、 [ `DisplayAlert` ](xref:Xamarin.Forms.Page.DisplayAlert(System.String,System.String,System.String))メソッドの`Page`警告ボックスを表示します。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

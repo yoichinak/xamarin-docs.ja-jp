@@ -7,31 +7,26 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 90bffc2360654f571728f76810f144e702a81e57
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 7a30d438b5340f071dd3c1c785f1a3fae0485ade
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646103"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70764571"
 ---
 # <a name="viewpager-with-fragments"></a>ViewPager とフラグメント
 
 _ViewPager は、gestural ナビゲーションを実装できるレイアウトマネージャーです。Gestural ナビゲーションを使用すると、ユーザーは左右にスワイプしてデータのページをステップ実行できます。このガイドでは、データページとしてフラグメントを使用して ViewPager で swipeable UI を実装する方法について説明します。_
 
- 
 ## <a name="overview"></a>概要
 
 `ViewPager`は、の各ページのライフサイクルを簡単に管理できるように、 `ViewPager`フラグメントと組み合わせて使用されることがよくあります。 このチュートリアルでは`ViewPager` 、を使用して、 **FlashCardPager**という名前のアプリを作成し、フラッシュカードに一連の計算問題を提示します。 各フラッシュカードは、フラグメントとして実装されます。 ユーザーは、フラッシュカードを左右にスワイプし、数値演算の問題をタップしてその答えを明らかにします。 このアプリは、 `Fragment`各フラッシュカードのインスタンスを作成し、から`FragmentPagerAdapter`派生したアダプターを実装します。 [Viewpager とビュー](~/android/user-interface/controls/view-pager/viewpager-and-views.md)では、ほとんどの作業はライフサイクル`MainActivity`メソッドで実行されていました。 **FlashCardPager**では、ほとんどの作業はライフサイクルメソッドの`Fragment` 1 つでによって行われます。 
 
-このガイドでは、Xamarin Android のフラグメント&ndash;についてまだよく知らない場合のフラグメントの基本については説明しません。フラグメントの概要については、「フラグメント」[を参照し](~/android/platform/fragments/index.md)てください。 
-
-
+このガイドでは、Xamarin Android のフラグメント&ndash;についてまだよく知らない場合のフラグメントの基本については説明しません。フラグメントの概要については、 [「フラグメント」を参照し](~/android/platform/fragments/index.md)てください。 
 
 ## <a name="start-an-app-project"></a>アプリプロジェクトを開始する
 
 **FlashCardPager**という名前の新しい Android プロジェクトを作成します。 次に、nuget パッケージマネージャーを起動します (nuget パッケージのインストールの詳細[については、「チュートリアル:プロジェクト](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)に NuGet を含めます)。 「 [Viewpager とビュー](~/android/user-interface/controls/view-pager/viewpager-and-views.md)」で説明されているように、 **Xamarin. Android. サポート**パックを見つけてインストールします。 
-
-
 
 ## <a name="add-an-example-data-source"></a>サンプルデータソースを追加する
 
@@ -57,8 +52,6 @@ string answer = flashCardDeck[3].Answer;
 のソースコード`FlashCardDeck`は、 [FlashCardDeck.cs](https://github.com/xamarin/monodroid-samples/blob/master/UserInterface/FlashCardPager/FlashCardPager/FlashCardDeck.cs)で入手できます。
 このソースファイルをダウンロードして (またはコードをコピーして新しい**FlashCardDeck.cs**ファイルに貼り付け)、プロジェクトに追加します。
 
-
-
 ## <a name="create-a-viewpager-layout"></a>ViewPager レイアウトを作成する
 
 **Resources/layout/Main**を開き、その内容を次の xml に置き換えます。
@@ -75,7 +68,6 @@ string answer = flashCardDeck[3].Answer;
 ```
 
 この XML は、 `ViewPager`画面全体を占有するを定義します。 `ViewPager`はサポートライブラリにパッケージされているので、完全修飾名の "android... **viewpager** " を使用する必要があることに注意してください。 `ViewPager`は、 [Android サポートライブラリ v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)からのみ使用できます。Android SDK では使用できません。
-
 
 ## <a name="set-up-viewpager"></a>ViewPager の設定
 
@@ -106,11 +98,11 @@ protected override void OnCreate(Bundle bundle)
 
 このコードでは、次のことを行います。
 
-1.  **メインの axml**レイアウトリソースからビューを設定します。
+1. **メインの axml**レイアウトリソースからビューを設定します。
 
-2.  レイアウトからへの`ViewPager`参照を取得します。
+2. レイアウトからへの`ViewPager`参照を取得します。
 
-3.  新しい`FlashCardDeck`をデータソースとしてインスタンス化します。
+3. 新しい`FlashCardDeck`をデータソースとしてインスタンス化します。
 
 このコードをビルドして実行すると、次のスクリーンショットのような画面が表示されます。 
 
@@ -120,14 +112,10 @@ protected override void OnCreate(Bundle bundle)
 
 次の`FlashCardFragment`セクションでは、が作成され、各フラッシュカードの機能が実装さ`FragmentPagerAdapter`れ`FlashCardDeck`ます。また、 `ViewPager`は、のデータから作成されたフラグメントに接続するために作成されます。 
 
-
-
 ## <a name="create-the-fragment"></a>フラグメントを作成する
 
 各フラッシュカードは、という`FlashCardFragment`UI フラグメントによって管理されます。 `FlashCardFragment`のビューには、1つのフラッシュカードに含まれる情報が表示されます。 の`FlashCardFragment`各インスタンスは、 `ViewPager`によってホストされます。 
 `FlashCardFragment`のビューは、フラッシュカード`TextView`の問題のテキストを表示するで構成されます。 このビューは、ユーザーが flash カードの質問`Toast`をタップしたときにを使用して回答を表示するイベントハンドラーを実装します。 
-
-
 
 ### <a name="create-the-flashcardfragment-layout"></a>FlashCardFragment レイアウトを作成する
 
@@ -153,8 +141,6 @@ protected override void OnCreate(Bundle bundle)
 ```
 
 このレイアウトでは、1つのフラッシュカードフラグメントを定義します。各フラグメントは、large ( `TextView` 100sp) フォントを使用して数値演算の問題を表示するで構成されます。 このテキストは、フラッシュカードの垂直方向および水平方向に中央揃えで配置されます。 
-
-
 
 ### <a name="create-the-initial-flashcardfragment-class"></a>最初の FlashCardFragment クラスを作成する
 
@@ -194,8 +180,6 @@ namespace FlashCardPager
 ライフ`OnCreateView`サイクルメソッドは、を`TextView`作成して構成します。 この例では、フラグメントの`TextView`のレイアウトを増え、呼び出し元`TextView`に大きくなったを返します。 `LayoutInflater`と`ViewGroup`は、レイアウト`OnCreateView`を膨張させるためにに渡されます。 バンドルには、 `OnCreateView` `TextView`が保存された状態からを再作成するために使用するデータが含まれています。 `savedInstanceState` 
 
 フラグメントのビューは、の呼び出し`inflater.Inflate`によって明示的に拡大されます。 引数はビューの親であり、フラグは`false` inflater に、ビューの親に対して拡大されたビューを追加しないように指示し`ViewPager`ます (これは、 `GetItem`後でアダプターのメソッドを呼び出したときに追加されます)。 `container`チュートリアル)。 
-
-
 
 ### <a name="add-state-code-to-flashcardfragment"></a>FlashCardFragment に状態コードを追加する
 
@@ -240,7 +224,6 @@ public override View OnCreateView(LayoutInflater inflater, ViewGroup container, 
 
 ここでは変数は使用されませんが、後でイベントハンドラーコードをこのファイルに追加するときに使用されます。 `answer` 
 
-
 ## <a name="create-the-adapter"></a>アダプターを作成する
 
 `ViewPager`は、データソース`ViewPager`とデータソースの間にあるアダプターコントローラーオブジェクトを使用します (viewpager[アダプター](~/android/user-interface/controls/view-pager/index.md#adapter)の記事の図を参照してください)。 このデータにアクセスする`ViewPager`には、から`PagerAdapter`派生したカスタムアダプターを指定する必要があります。 この例ではフラグメントを使用して`FragmentPagerAdapter`いるため、 `PagerAdapter`はから派生したを&ndash; `FragmentPagerAdapter`使用します。 
@@ -248,9 +231,9 @@ public override View OnCreateView(LayoutInflater inflater, ViewGroup container, 
 
 を実装`FragmentPagerAdapter`する場合は、次のものをオーバーライドする必要があります。
 
--   **カウント**&ndash;使用可能なビュー (ページ) の数を返す読み取り専用のプロパティ。
+- **カウント**&ndash;使用可能なビュー (ページ) の数を返す読み取り専用のプロパティ。
 
--   **GetItem**&ndash;指定されたページに表示するフラグメントを返します。
+- **GetItem**&ndash;指定されたページに表示するフラグメントを返します。
 
 **FlashCardDeckAdapter.cs**という名前の新しいファイルを追加し、その内容を次のコードに置き換えます。
 
@@ -284,8 +267,6 @@ namespace FlashCardPager
 
 このコードは、重要`FragmentPagerAdapter`な実装をスタブにします。 次のセクションでは、これらの各メソッドが作業コードに置き換えられています。 コンストラクターの目的は、フラグメントマネージャーを`FlashCardDeckAdapter`の基底クラスコンストラクターに渡すことです。 
 
-
-
 ### <a name="implement-the-adapter-constructor"></a>アダプターコンストラクターを実装する
 
 アプリによってが`FlashCardDeckAdapter`インスタンス化されると、フラグメントマネージャーとインスタンス化`FlashCardDeck`されたへの参照が提供されます。 `FlashCardDeckAdapter` **FlashCardDeckAdapter.cs**のクラスの先頭に、次のメンバー変数を追加します。 
@@ -302,8 +283,6 @@ this.flashCardDeck = flashCards;
 
 このコード行は、 `FlashCardDeck` `FlashCardDeckAdapter`が使用するインスタンスを格納します。 
 
-
-
 ### <a name="implement-count"></a>実装数
 
 `Count`実装は比較的単純で、フラッシュカードデッキのフラッシュカードの数を返します。 `Count` を次のコードに置き換えます。 
@@ -315,10 +294,7 @@ public override int Count
 }
 ```
 
-
 `NumCards` の`FlashCardDeck`プロパティは、データセット内のフラッシュカード (フラグメントの数) の数を返します。 
-
-
 
 ### <a name="implement-getitem"></a>GetItem を実装する
 
@@ -335,17 +311,15 @@ public override Android.Support.V4.App.Fragment GetItem(int position)
 
 このコードでは、次のことを行います。
 
-1.  指定された位置について`FlashCardDeck` 、デッキ内の数値演算の問題文字列を検索します。 
+1. 指定された位置について`FlashCardDeck` 、デッキ内の数値演算の問題文字列を検索します。 
 
-2.  指定された位置につい`FlashCardDeck`て、デッキ内の応答文字列を検索します。 
+2. 指定された位置につい`FlashCardDeck`て、デッキ内の応答文字列を検索します。 
 
-3.  `FlashCardFragment`ファクトリメソッド`newInstance`を呼び出し、フラッシュカードの問題と応答文字列を渡します。 
+3. `FlashCardFragment`ファクトリメソッド`newInstance`を呼び出し、フラッシュカードの問題と応答文字列を渡します。 
 
-4.  その位置の質問と回答の`Fragment`テキストを含む新しいフラッシュカードを作成して返します。 
+4. その位置の質問と回答の`Fragment`テキストを含む新しいフラッシュカードを作成して返します。 
 
 が`ViewPager` で`Fragment` `TextBox` `position`レンダリングされると、フラッシュカードデッキのにある数学問題文字列を含むが表示されます。 `position` 
-
-
 
 ## <a name="add-the-adapter-to-the-viewpager"></a>ViewPager にアダプターを追加する
 
@@ -363,8 +337,6 @@ viewPager.Adapter = adapter;
 次のスクリーンショットの左側に示すように、フラッシュカードデッキの最初の画像が画面に表示されます。 左にスワイプしてさらにフラッシュカードを確認し、次にスワイプして、フラッシュカードデッキに戻ります。
 
 [![ページャーインジケーターのない FlashCardPager アプリのスクリーンショットの例](viewpager-and-fragments-images/02-example-views-sml.png)](viewpager-and-fragments-images/02-example-views.png#lightbox)
-
-
 
 ## <a name="add-a-pager-indicator"></a>ページャーインジケーターの追加
 
@@ -394,8 +366,6 @@ viewPager.Adapter = adapter;
 
 [![テキストを含まない PagerTabStrip のクローズアップ](viewpager-and-fragments-images/03-empty-pagetabstrip-sml.png)](viewpager-and-fragments-images/03-empty-pagetabstrip.png#lightbox)
 
-
-
 ### <a name="display-a-title"></a>タイトルを表示する
 
 各ページタブにタイトルを追加するには、 `GetPageTitleFormatted`アダプターにメソッドを実装します。 `ViewPager`( `GetPageTitleFormatted`実装されている場合) を呼び出して、指定した位置にあるページを説明するタイトル文字列を取得します。 `FlashCardDeckAdapter` **FlashCardDeckAdapter.cs**のクラスに次のメソッドを追加します。 
@@ -412,8 +382,6 @@ public override Java.Lang.ICharSequence GetPageTitleFormatted(int position)
 [![各ページの上に表示されている問題番号を含む FlashCardPager のスクリーンショット](viewpager-and-fragments-images/04-pagetabstrip-sml.png)](viewpager-and-fragments-images/04-pagetabstrip.png#lightbox)
 
 各フラッシュカードの上部に表示される flash カードデッキの問題番号は、前後にスワイプして確認できます。 
-
-
 
 ## <a name="handle-user-input"></a>ユーザー入力を処理する
 
@@ -435,13 +403,9 @@ questionBox.Click += delegate
 
 このチュートリアルで示されている FlashCardPager `MainActivity`は、 `FragmentActivity`から派生したを使用`MainActivity`し`AppCompatActivity`ますが、から派生することもできます (これは、フラグメントの管理もサポートします)。 `AppCompatActivity` 例を確認するには、サンプルギャラリーの「[FlashCardPager](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-flashcardpager)」を参照してください。
 
-
-
 ## <a name="summary"></a>まとめ
 
 このチュートリアルでは、を使用して`ViewPager` `Fragment`基本的なベースのアプリを構築する方法の手順について説明しました。 この例では、 `ViewPager` `ViewPager`フラッシュカードの質問と回答、フラッシュカード`FragmentPagerAdapter`を表示するレイアウト、をデータソースに接続するサブクラスを含むデータソースの例を紹介しています。 Flash カード内を移動するために、を`PagerTabStrip`追加して各ページの上部に問題番号を表示する方法を説明する手順が含まれていました。 最後に、ユーザーがフラッシュカードの問題をタップしたときに回答を表示するために、イベント処理コードが追加されました。 
-
-
 
 ## <a name="related-links"></a>関連リンク
 

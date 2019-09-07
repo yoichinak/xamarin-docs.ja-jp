@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: e9c27233e0905435e14505195b7b0e4d3283790b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 4b50ba09488f1f052f3e41302a42c691089727ff
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283827"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769652"
 ---
 # <a name="tvos-resources-and-data-storage-in-xamarin"></a>Xamarin でのリソースとデータストレージの tvOS
 
@@ -36,9 +36,6 @@ IOS デバイスとは異なり、新しい Apple TV は、tvOS アプリまた�
 
 > [!IMPORTANT]
 > 必要に応じて他のアセットやリソースをダウンロードすることができますが、アプリのキャッシュ内のすべての領域を消費することに対して警告が表示されます。これは予測できない結果につながる可能性があるためです。
-
-
-
 
 <a name="Managing-Resources" />
 
@@ -75,16 +72,11 @@ Xcode を使用して、リソースの提供タグに関連付けられてい�
 > [!IMPORTANT]
 > 必要に応じて、アプリがオンデマンドリソースをダウンロードする回数と個々のダウンロードのサイズとのバランスを取る必要があります。 ゲームプレイが継続的に中断されて新しいコンテンツをダウンロードする場合や、1回のダウンロードに時間がかかりすぎる場合は、ユーザーがアプリに不満を感じてしまう可能性があります。
 
-
-
-
 <a name="Summary" />
 
 ## <a name="summary"></a>Summary
 
 この記事では、tvOS システムによって tvOS アプリに適用されるサイズ、リソース、およびデータストレージの制限事項について説明しました。 アプリの優れたユーザーエクスペリエンスを実現するために、これらの制限と提案を回避するオプションが示されています。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

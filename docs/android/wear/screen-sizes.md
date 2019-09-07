@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 93e6797f2b00df32b8d3ae361f40fd487b7adac3
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 4673bc6898da06f07a624b4aa585e62009a575e1
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647725"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758313"
 ---
 # <a name="working-with-screen-sizes"></a>画面サイズの操作
 
@@ -45,13 +45,11 @@ Android の磨耗デバイスは、四角形または丸いディスプレイを
 
 ![[リソース/レイアウト] の下に表示されるファイル](screen-sizes-images/solution.png)
 
-
 ### <a name="boxinsetlayout"></a>BoxInsetLayout
 
 画面の種類ごとに異なるレイアウトを作成するのではなく、四角形または丸い画面に適応する1つのビューを作成することもできます。
 
 この[Google の例](https://developer.android.com/training/wearables/ui/layouts.html#same-layout)では、を`BoxInsetLayout`使用して、四角形と丸い両方の画面で同じレイアウトを使用する方法を示します。
-
 
 ## <a name="wear-ui-designer"></a>摩耗 UI デザイナー
 
@@ -66,7 +64,6 @@ Xamarin Android Designer は、四角形と丸い両方の画面をサポート�
 次のように、ラウンドスタイルのデザイン画面が表示されます。
 
 ![デザインサーフェイスのラウンドスタイル](screen-sizes-images/design-round.png)
-
 
 ## <a name="wear-simulator"></a>磨耗シミュレーター
 
@@ -85,4 +82,3 @@ Xamarin Android Designer は、四角形と丸い両方の画面をサポート�
 ## <a name="video"></a>ビデオ
 
 [Developers.google.com](https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw)から[の Android 磨耗用の全画面アプリ](https://www.youtube.com/watch?v=naf_WbtFAlY)。
-

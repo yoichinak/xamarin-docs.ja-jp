@@ -7,17 +7,16 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 92f028a632a32392a349c06c0b7ab8e15b308b9f
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: ef3d25974f61bb1ac763831ab9a1f6b62d11abbe
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70279532"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769679"
 ---
 # <a name="configure-your-tvos-app-in-itunes-connect"></a>iTunes Connect での tvOS アプリの構成
 
 _この記事では、tvOS 固有の構成のために、iTunes Connect でアプリを構成するための補足ガイドを提供します。_
-
 
 「 [ITunes Connect でアプリを構成](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md)する」ガイドで説明されている構成と設定に加えて、このドキュメントでは、Apple TV アプリで tvOS アプリをリリースするために必要な特定の構成について説明します。ソース.
 
@@ -78,8 +77,6 @@ TvOS アプリを確認のために Apple TV App Store に送信する準備が�
 ## <a name="summary"></a>Summary
 
 この記事では、iTunes Connect で tvOS アプリを Apple TV App Store にリリースするために必要な tvOS 固有の設定の概要を説明しました。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

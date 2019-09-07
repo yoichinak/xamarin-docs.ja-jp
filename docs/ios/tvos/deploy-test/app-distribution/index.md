@@ -7,23 +7,20 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 0ea96eb3808daeb9f8764695d1b4b3d432727ff2
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: f47d4228fc1d3ec1b3b428b917f3c774103577d7
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292485"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769196"
 ---
 # <a name="tvos-app-distribution-overview"></a>tvOS アプリの配布の概要
 
 _このドキュメントでは、tvOS アプリで使用できる分布手法の概要を示し、トピックに関する詳細なドキュメントへのポインターとして機能します。_
 
-
 TvOS アプリの開発が完了したら、ソフトウェア開発ライフサイクルの次の手順は、次の図の強調表示されたセクションに示すように、ユーザーにアプリを配布することです。
 
-
 [![ソフトウェア開発ライフサイクルの概要](images/publishingdiagram.png)](images/publishingdiagram.png#lightbox)
-
 
 Apple では、tvOS でサポートされている tvOS アプリを配布するための次の方法を提供しています。
 
@@ -83,8 +80,6 @@ TvOS アプリは、 **Apple Developer program**と**Apple developer Enterprise 
 ## <a name="summary"></a>Summary
 
 この記事では、tvOS アプリで使用できる配布メカニズムの概要について説明しました。 Apple TV App Store、アドホック展開、社内展開が導入され、詳細情報へのリンクが提供されました。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

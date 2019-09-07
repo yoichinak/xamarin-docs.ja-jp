@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 14fb3740f558b006d507ff6875fd2cfc81a04298
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: fee63906d30f68d397b60a465a87bd96d4106d14
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119730"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70757435"
 ---
 # <a name="an-introduction-to-renderscript"></a>Renderscript の概要
 
@@ -63,7 +63,6 @@ Renderscript エンジンはランタイムチェックを実行し、各割り�
 
 すべての Renderscript カーネルは、の子孫である型によってラップされます。[`Android.Renderscripts.Script`](xref:Android.Renderscripts.Script)
 クラスの新しいインスタンスを初期化します。 クラスは、renderscript のパラメーターを設定し、適切な`Allocations`を設定して、renderscript を実行するために使用されます。 `Script` Android SDK には`Script` 、次の2つのサブクラスがあります。
-
 
 - **`Android.Renderscripts.ScriptIntrinsic`** &ndash;いくつかの一般的な renderscript タスクは、Android SDK にバンドルされており、[scriptintrinsic](xref:Android.Renderscripts.ScriptIntrinsic) クラスのサブクラスからアクセスできます。 開発者は、既に提供されているように、これらのスクリプトをアプリケーションで使用する必要はありません。
 
@@ -153,8 +152,6 @@ blurScript.ForEach(outputAllocation);
 ## <a name="summary"></a>まとめ
 
 このガイドでは、Renderscript と、それを Xamarin Android アプリケーションで使用する方法を紹介しました。 ここでは、Renderscript の概要と、それが Android アプリケーションでどのように機能するかについて簡単に説明しました。 ここでは、Renderscript の主要なコンポーネントと、_ユーザースクリプト_と_ているかスクリプト_の違いについて説明しています。 最後に、このガイドでは、「Xamarin Android アプリケーションでの組み込みスクリプトの使用」の手順について説明しました。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

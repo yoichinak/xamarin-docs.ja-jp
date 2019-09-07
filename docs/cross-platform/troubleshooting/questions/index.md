@@ -6,12 +6,12 @@ ms.assetid: C7E6E54D-3957-407D-BB87-22B095148C6B
 author: conceptdev
 ms.author: crdun
 ms.date: 05/08/2018
-ms.openlocfilehash: 3b940199a1384540bcc9f7134dabf8b69ac3767e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: de70eda2898f29a1e7afed9440d5f5fae496e069
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285011"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765112"
 ---
 # <a name="general-frequently-asked-questions"></a>一般的によく寄せられる質問
 
@@ -42,7 +42,6 @@ Visual Studio for Mac & Visual Studio には、古いバージョンのパッケ
 ### <a name="where-are-the-components-stored-on-my-machinecomponent-storagemd"></a>[コンポーネントはマシンのどこに保存されていますか](component-storage.md)
 Xamarin コンポーネントをアプリプロジェクトにインストールするたびに、このガイドに記載されている2つの場所に配置されます。
 
-
 ## <a name="troubleshooting"></a>トラブルシューティング
 ### <a name="where-can-i-find-my-version-information-and-logsversion-logsmd"></a>[バージョン情報とログはどこにありますか](version-logs.md)
 このガイドでは、Xamarin の問題のトラブルシューティングに使用できるほとんどの診断情報を確認する方法について詳しく説明します。
@@ -55,4 +54,3 @@ Jenkins はオープンソースの CI スイートです。このため、Jenki
 
 ### <a name="what-project-settings-are-required-for-the-debuggerdebugger-settingsmd"></a>[デバッガーに必要なプロジェクト設定を教えてください](debugger-settings.md)
 デバッガーが想定どおりに動作するようにするには (ブレークポイントにヒットし、デバッグログを表示するなど)、開発者のインストルメンテーションとデバッグ情報の表示を両方とも有効にする必要があります。 このガイドでは、これらの設定を検索してアクティブ化する方法について詳しく説明します。
-

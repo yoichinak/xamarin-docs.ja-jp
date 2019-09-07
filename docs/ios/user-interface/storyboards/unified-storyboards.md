@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: cf3a3f6638547acf8d22854b6d8a32622c304932
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 07a61eb9d0c16f82d6c367cefc9e3050ca8dfc25
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280860"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768828"
 ---
 # <a name="unified-storyboards-in-xamarinios"></a>Xamarin の統合されたストーリーボード
 
@@ -31,7 +31,6 @@ IOS 8 より前の開発者は`UIInterfaceOrientation` 、 `UIInterfaceIdiom`と
 - **Regular** –これは、サイズの大きい画面 (iPad など)、または大きなサイズの印象を与えるガジェット (たとえば、`UIScrollView`
 - **Compact** –これは、より小さなデバイス (iPhone など) を対象としています。 このサイズでは、デバイスの向きが考慮されます。
 
-
 2つの概念が一緒に使用されている場合は、次の図に示すように、異なる向きの両方で使用できるさまざまなサイズを定義する2つの x 2 グリッドが生成されます。
 
  [![](unified-storyboards-images/sizeclassgrid.png "標準とコンパクトの向きで使用できるさまざまなサイズを定義する2×2のグリッド")](unified-storyboards-images/sizeclassgrid.png#lightbox)
@@ -43,7 +42,6 @@ IOS 8 より前の開発者は`UIInterfaceOrientation` 、 `UIInterfaceIdiom`と
 IPad は、サイズが原因で、両方の向きに対して**通常**のクラスサイズが使用されます。
 
  [![](unified-storyboards-images/image1.png "iPad サイズクラス")](unified-storyboards-images/image1.png#lightbox)
-
 
 ### <a name="iphone-size-classes"></a>iPhone サイズクラス
 
@@ -97,7 +95,6 @@ IOS 8 を初めて使用する場合、開発者は、 `.xib` Auto Layout クラ
 - コントローラー ( `UIViewController` ) を表示します。
 - Views ( `UIView` )。
 - プレゼンテーションコントローラー ( `UIPresentationController` )。
-
 
 開発者は、特徴環境によって返される特徴コレクションを使用して、ユーザーインターフェイスをどのようにレイアウトするかを決定します。
 
@@ -234,14 +231,12 @@ iOS 8 には、次の表に示すように、開発者が特徴の変更に参�
 - 既定では、分割ビューコントローラーは、折りたたみが発生した後に、ビューとしてプライマリビューコントローラーを使用します。 開発者は、の`GetPrimaryViewControllerForCollapsingSplitViewController`メソッドをオーバーライドし、折りたたまれた状態で表示するビューコントローラーを提供することで、 `UISplitViewControllerDelegate`この動作をオーバーライドできます。
 - セカンダリビューコントローラーは、プライマリビューコントローラーにマージする必要があります。 通常、開発者はこの手順に対して何らかの操作を行う必要はありません。分割ビューコントローラーには、ハードウェアデバイスに基づくこのフェーズの自動的な処理が含まれます。 ただし、開発者がこの変更を操作する必要がある特殊なケースもあります。 `CollapseSecondViewController` のメソッドを呼び出すと、詳細ビューではなく、折りたたみが発生したときにマスタービューコントローラーが`UISplitViewControllerDelegate`表示されます。
 
-
 ### <a name="expanding-the-split-view-controller"></a>分割ビューコントローラーを展開する
 
 ここで、分割ビューコントローラーが折りたたまれた状態から展開された場合の動作について詳しく見ていきましょう。 この場合も、次の2つの段階があります。
 
 - まず、新しいプライマリビューコントローラーを定義します。 既定では、分割ビューコントローラーは、折りたたまれたビューのプライマリビューコントローラーを自動的に使用します。 ここでも、開発者はの`GetPrimaryViewControllerForExpandingSplitViewController`メソッドを使用して、 `UISplitViewControllerDelegate`この動作をオーバーライドできます。
 - プライマリビューコントローラーを選択したら、セカンダリビューコントローラーを再作成する必要があります。 ここでも、分割ビューコントローラーには、ハードウェアデバイスに基づくこのフェーズの自動処理が含まれています。 開発者は、の`SeparateSecondaryViewController`メソッドを呼び出すことによって、 `UISplitViewControllerDelegate`この動作をオーバーライドできます。
-
 
 分割ビューコントローラーでは、プライマリビューコントローラーは、 `CollapseSecondViewController` `UISplitViewControllerDelegate`のメソッドと`SeparateSecondaryViewController`メソッドを実装することによって、ビューの展開と折りたたみの両方でパーツを再生します。 `UINavigationController`は、これらのメソッドを実装して、セカンダリビューコントローラーを自動的にプッシュしてポップします。
 
@@ -253,7 +248,6 @@ Apple が iOS 8 に加えたもう1つの変更は、開発者がビューコン
 
 - `ShowViewController`–環境に基づいて新しいビューコントローラーを表示するように適応します。 たとえば、では、 `UINavigationController`新しいビューをスタックにプッシュするだけです。 分割ビューコントローラーでは、新しいビューコントローラーが新しいプライマリビューコントローラーとして左側に表示されます。 コンテナービューコントローラーが存在しない場合、新しいビューはモーダルビューコントローラーとして表示されます。
 - `ShowDetailViewController`–はと同様の方法`ShowViewController`で機能しますが、詳細ビューを渡される新しいビューコントローラーに置き換えるために、分割ビューコントローラーに実装されます。 (IPhone アプリケーションで見られるように) 分割ビューコントローラーが折りたたまれている場合は、呼び出しが`ShowViewController`メソッドにリダイレクトされ、新しいビューがプライマリビューコントローラーとして表示されます。 ここでも、コンテナービューコントローラーが存在しない場合、新しいビューはモーダルビューコントローラーとして表示されます。
-
 
 これらのメソッドは、リーフビューコントローラーから開始し、新しいビューの表示を処理する適切なコンテナービューコントローラーが見つかるまでビュー階層をウォークします。
 
@@ -269,7 +263,6 @@ Apple が iOS 8 に加えたもう1つの変更は、開発者がビューコン
 
 1. `ShowViewController`メソッドが呼び出されると、このメソッドを実装するチェーン内の最初のビューコントローラーがナビゲーションコントローラーになるため、新しいビューの親として使用されます。
 1. `ShowDetailViewController`メソッドが代わりに呼び出された場合、分割ビューコントローラーは、それを実装するための最初のビューコントローラーであるため、親として使用されます。
-
 
 メソッド`GetTargetForAction`は、指定されたアクションを実装するビューコントローラーを特定し、そのアクションを受信するかどうかをそのビューコントローラーに要求することによって機能します。 このメソッドはパブリックであるため、開発者は、組み込みの`ShowViewController`メソッドと`ShowDetailViewController`メソッドと同様に機能する独自のカスタムメソッドを作成できます。
 
@@ -690,7 +683,6 @@ IPhone シミュレーターを停止し、iPad シミュレーターでアプ�
 新しい iphone 6 および iphone 6 Plus デバイス (および今後の Apple Watch) と、既存のすべての iphone および iPad デバイスとの間では、さまざまなサイズ、向き、およびスタートアップ画面`Default.png`イメージ資産の解像度を表します。作成および管理されます。 さらに、これらのファイルは非常に大きくなる可能性があり、成果物アプリケーションバンドルを "肥大化" し、iTunes App Store からアプリケーションをダウンロードするために必要な時間を増やします (携帯ネットワークを介して配信できない場合もあります)。さらに、エンドユーザーのデバイスで必要とされるストレージの量を増やします。
 
 IOS 8 を初めて使用する場合、開発者は、 `.xib` Auto Layout クラスと Size クラスを使用して、すべてのデバイス、解像度、および向きに対して機能する*動的起動画面*を作成する、Xcode で単一のアトミックファイルを作成できます。 これにより、開発者が必要なすべてのイメージ資産を作成して維持するために必要な作業量を削減できるだけでなく、アプリケーションのインストール済みバンドルのサイズを大幅に削減できます。
-
 
 動的起動画面には、次の制限事項と考慮事項があります。
 

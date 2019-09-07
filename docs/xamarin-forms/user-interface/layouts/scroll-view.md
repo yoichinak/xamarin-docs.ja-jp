@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: 79f3f88dba37899bcb9467fcd6d1bd7e9dc5eb10
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 131b9dc64db1ea0dba3982bd71459c2a281743bc
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657158"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770286"
 ---
 # <a name="xamarinforms-scrollview"></a>Xamarin.Forms ScrollView
 
@@ -115,7 +115,6 @@ scroll.Scrolled += (object sender, ScrolledEventArgs e) => {
 ```
 
 負の場合、一覧の最後にスクロールする場合、バウンド効果のためのスクロール位置である可能性がありますに注意してください。
-
 
 ## <a name="related-links"></a>関連リンク
 

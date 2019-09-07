@@ -1,18 +1,18 @@
 ---
 title: 第 3 章の概要です。 テキストに進む
-description: Xamarin.Forms によるモバイル アプリの作成。第 3 章の概要です。 テキストに進む
+description: Xamarin を使用した Mobile Apps の作成:第 3 章の概要です。 テキストに進む
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 2E5581A6-4D3E-4BD5-9FDB-ACBA0F0FC734
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2018
-ms.openlocfilehash: 11b0a9c5b165df2b0d02bb09fb282cc18290e6ca
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e37175240825c0fed350589649469c99f1bbf69a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61334657"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771225"
 ---
 # <a name="summary-of-chapter-3-deeper-into-text"></a>第 3 章の概要です。 テキストに進む
 
@@ -28,7 +28,7 @@ ms.locfileid: "61334657"
 
 ときに、`HorizontalOptions`と`VerticalOptions`プロパティが以外の値に設定されます`LayoutOptions.Fill`、サイズ、`Label`サイズのコンテナーが利用できるようにするまで、テキストのレンダリングに必要な領域に準拠するもの、 `Label`。 `Label`言います*制約のない*し、独自のサイズを決定します。
 
-(メモ: 条件*制約付き*と*制約のない*制約なしのビューは、制約付きのビューよりも概して小さいため、逆があります。 また、これらの用語は使用されません一貫した方法で書籍の前半の章。)
+(メモ: 制約*付き*ビューと*制約の*ない用語は、通常、制約されたビューよりも制約のないビューが小さいので、非常に直感的である可能性があります。 また、これらの用語は使用されません一貫した方法で書籍の前半の章。)
 
 などのビューを`Label`1 つのディメンションでは制限し、制約、それ以外のことができます。 A`Label`水平方向に指定されている場合、複数の行にテキストを折り返すだけされます。
 
@@ -48,7 +48,7 @@ ms.locfileid: "61334657"
 
 [ `Color` ](xref:Xamarin.Forms.Color)構造では、赤、緑、青 (RGB) の値、または色合い-鮮やかさ-明るさ (HSL) の値、または色の名前を持つ色を指定することができます。 アルファ チャネルをもを透明度を示すために使用できます。
 
-使用して、`Color`コンス トラクターを指定します。
+使用して、`Color`コンストラクターを指定します。
 
 - [灰色の網掛け](xref:Xamarin.Forms.Color.%23ctor(System.Double))
 - [RGB 値](xref:Xamarin.Forms.Color.%23ctor(System.Double,System.Double,System.Double))
@@ -99,9 +99,9 @@ ms.locfileid: "61334657"
 
 `Color.Default` 目的は、プラットフォームの配色を適用して、さまざまなプラットフォームでさまざまなコンテキストで異なる意味を持ちます。 既定では、プラットフォームの配色がされます。
 
-- iOS の場合:明るい背景に濃いテキスト
-- Android:(書籍) の暗い背景にテキストまたは明るい背景に濃いテキストのライト (マテリアル デザインに AppCompat 経由での**マスター**サンプル コード リポジトリのブランチ)
-- UWP:明るい背景に濃いテキスト
+- IOS明るい背景にある濃いテキスト
+- Android暗い背景の明るいテキスト (本内) または明るい背景の暗いテキスト (サンプルコードリポジトリの**マスター**ブランチで AppCompat を使用したマテリアル設計の場合)
+- UWP明るい背景にある濃いテキスト
 
 `Color.Accent`暗色または明色の背景に表示されているプラットフォーム固有 (および場合によってユーザーが選択可能な) の色で結果の値します。
 
@@ -134,8 +134,6 @@ Android を対象とする場合になっても Android.Manifest.xml ファイ�
 [![変数の 3 倍になるスクリーン ショットは、段落を書式設定された](images/ch03fg06-small.png "形式のラベル テキストを変数")](images/ch03fg06-large.png#lightbox "変数の書式設定されたラベルのテキスト")
 
 [ **NamedFontSizes** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/NamedFontSizes)プログラムは、1 つを使用して`Label`と`FormattedString`すべてのプラットフォームごとに名前付きのフォント サイズを表示するオブジェクト。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

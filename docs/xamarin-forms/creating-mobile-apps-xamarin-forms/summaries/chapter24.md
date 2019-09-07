@@ -1,18 +1,18 @@
 ---
 title: 第 24 章の概要です。 ページのナビゲーション
-description: Xamarin.Forms によるモバイル アプリの作成。第 24 章の概要です。 ページのナビゲーション
+description: Xamarin を使用した Mobile Apps の作成:第 24 章の概要です。 ページのナビゲーション
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: DDCDB49C-6008-4F72-B095-463EE21D7C23
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: ce56c30cd631e87d39c9c5bda101b67252a0762a
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 340aa8c7327ba75986b960d5e0f6bda66c116fc5
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926895"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770924"
 ---
 # <a name="summary-of-chapter-24-page-navigation"></a>第 24 章の概要です。 ページのナビゲーション
 
@@ -170,8 +170,6 @@ Xamarin.Forms [ `MessagingCenter` ](xref:Xamarin.Forms.MessagingCenter)クラス
 ### <a name="something-like-a-real-life-app"></a>以下のような実際のアプリ
 
 [ **NoteTaker** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24/NoteTaker)サンプルも使用`MultiPageRestorableApp`入力と編集のノートに保存されていることができ、`Properties`ディクショナリ。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

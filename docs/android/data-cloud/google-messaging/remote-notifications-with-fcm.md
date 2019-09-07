@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/31/2018
-ms.openlocfilehash: a7276b6a3269c012ad57e13510b6479266c43209
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: c76b22c84851c8952dc4e9181966632cf6e38041
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119799"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70754680"
 ---
 # <a name="remote-notifications-with-firebase-cloud-messaging"></a>焼討 Base Cloud Messaging を使用したリモート通知
 
@@ -35,7 +35,6 @@ _このチュートリアルでは、アドインアプリケーションで、�
 このチュートリアルでは、 **Fcmclient**に機能を段階的に追加し、それをデバイスまたはエミュレーターで実行して、fcm との対話方法を理解します。 ログ記録を使用して、FCM サーバーでライブアプリトランザクションを監視します。また、FCM メッセージからの通知の生成方法については、「焼討 Base Console notification GUI」に入力します。
 
 ## <a name="requirements"></a>必要条件
-
 
 これは、焼討 Base Cloud Messaging から送信できる[さまざまな種類のメッセージ](https://firebase.google.com/docs/cloud-messaging/concept-options#notifications_and_data_messages)を理解するのに役立ちます。 メッセージのペイロードによって、クライアントアプリがメッセージを受信して処理する方法が決まります。
 
@@ -192,7 +191,6 @@ using Android.Util;
 
 Google **GoogleServicesJson**がプロジェクトに追加されると (および、ビルドアクションが設定された場合)、ビルドプロセスはクライアント ID と[API キー](./firebase-cloud-messaging.md#fcm-in-action-api-key)を抽出し、これらの資格情報をマージ/生成さ **れたに追加します。** **Obj/Debug/Android/androidmanifest**に存在する AndroidManifest .xml。 このマージプロセスでは、FCM サーバーへの接続に必要なすべてのアクセス許可とその他の FCM 要素が自動的に追加されます。
 
-
 ## <a name="check-for-google-play-services-and-create-a-notification-channel"></a>Google Play 開発者サービスを確認し、通知チャネルを作成します
 
 Google では、Google Play 開発者サービス機能にアクセスする前に、Android アプリで APK Google Play 開発者サービスが存在するかどうかを確認することをお勧めします (詳細については、「 [Google Play サービスの確認](https://firebase.google.com/docs/cloud-messaging/android/client#sample-play)」を参照してください)。
@@ -218,7 +216,6 @@ Google では、Google Play 開発者サービス機能にアクセスする前�
 
 これ`TextView`は Google Play 開発者サービスがインストールされているかどうかを示すメッセージを表示するために使用されます。 変更内容を**メインの axml**に保存します。
 
-
 **MainActivity.cs**を編集し、次のインスタンス変数を`MainActivity`クラスに追加します。
 
 ```csharp
@@ -233,7 +230,6 @@ public class MainActivity : AppCompatActivity
 ```
 
 これらの`CHANNEL_ID`変数`NOTIFICATION_ID`とは、このチュートリアルの[`CreateNotificationChannel`](#create-notification-channel-code) `MainActivity`後半で追加されるメソッドで使用されます。
-
 
 次の例`OnCreate`では、メソッドは、アプリが fcm サービスを使用しようとする前に Google Play 開発者サービスが使用可能であることを確認します。
 次のメソッドを`MainActivity`クラスに追加します。
@@ -310,7 +306,6 @@ protected override void OnCreate (Bundle bundle)
 
 この結果が得られない場合は、Google Play 開発者サービス APK がデバイスにインストールされていることを確認します (詳細については、「 [Google Play 開発者サービスのセットアップ](https://developers.google.com/android/guides/setup)」を参照してください)。
 また、前に説明したように、 **Fcmclient**プロジェクトに**Xamarin. Google. service.** .............................
-
 
 ## <a name="add-the-instance-id-receiver"></a>インスタンス ID レシーバーを追加する
 
@@ -463,7 +458,6 @@ if (Intent.Extras != null)
 
 ユーザーが通知メッセージ`Intent`をタップすると、アプリのランチャーが発生します。そのため、このコードでは`Intent` 、に含まれるすべてのデータが出力ウィンドウに記録されます。 別`Intent`のを起動する必要がある`click_action`場合は、通知メッセージのフィールドをその`Intent`フィールドに設定する必要があります`click_action` (が指定されていない場合はランチャー `Intent`が使用されます)。
 
-
 ## <a name="background-notifications"></a>バックグラウンド通知
 
 **Fcmclient**アプリをビルドして実行します。 **[Log Token]** ボタンが表示されます。
@@ -512,7 +506,6 @@ Android デバイス (またはエミュレーター) で、[Android の**概要
 この例では、 **from**キーはアプリの焼討 base プロジェクト番号 (この例`41590732`では) に設定され、 **collapse_key**はパッケージ名 (**com. xamarin. fcmexample**) に設定されています。
 メッセージが表示されない場合は、デバイス (またはエミュレーター) で**Fcmclient**アプリを削除してみて、上記の手順を繰り返します。
 
-
 > [!NOTE]
 > アプリを強制的に閉じると、FCM によって通知の配信が停止されます。 Android では、停止したアプリケーションのコンポーネントが誤って、または不必要に起動されるのを防ぐことができます。 (この動作の詳細については、「停止した[アプリケーションでのコントロールの起動](https://developer.android.com/about/versions/android-3.1.html#launchcontrols)」を参照してください)。このため、アプリを実行するたびに手動でアンインストールし、デバッグセッション&ndash;から停止する必要があります。これにより、fcm によって新しいトークンが生成され、メッセージが引き続き受信されるようになります。
 
@@ -520,7 +513,7 @@ Android デバイス (またはエミュレーター) で、[Android の**概要
 
 前の例では、通知アイコンはアプリケーションアイコンに設定されています。 次の XML は、通知用のカスタムの既定のアイコンを構成します。 Android では、通知アイコンが明示的に設定されていないすべての通知メッセージに対して、このカスタムの既定のアイコンが表示されます。
 
-カスタムの既定の通知アイコンを追加するには、**リソース/** 作成されたディレクトリにアイコンを追加し、を編集して、 `<meta-data>` `<application>`セクションに次の要素を挿入します。
+カスタムの既定の通知アイコンを追加するには、**リソース/** 作成されたディレクトリにアイコンを追加し、**を編集し**て、 `<meta-data>` `<application>`セクションに次の要素を挿入します。
 
 ```xml
 <meta-data
@@ -648,7 +641,6 @@ Log.Debug(TAG, "Notification Message Body: " + body);
 > [!NOTE]
 > に`FirebaseMessagingService`ブレークポイントを設定した場合、fcm によってメッセージが配信されるため、デバッグセッションでこれらのブレークポイントにヒットするかどうかを確認できます。
 
-
 ### <a name="send-another-message"></a>別のメッセージを送信する
 
 アプリをアンインストールし、再構築して再実行し、次の手順に従って別のメッセージを送信します。
@@ -668,7 +660,6 @@ Log.Debug(TAG, "Notification Message Body: " + body);
 6. 受信メッセージは、IDE の出力ウィンドウに記録されます。
 
     [![出力ウィンドウに出力されるメッセージ本文](remote-notifications-with-fcm-images/20-logged-message.png)](remote-notifications-with-fcm-images/20-logged-message.png#lightbox)
-
 
 ### <a name="add-a-local-notification-sender"></a>ローカル通知の送信者を追加する
 
@@ -759,7 +750,6 @@ public override void OnMessageReceived(RemoteMessage message)
 
 [![前景の通知を前面に表示するアイコン](remote-notifications-with-fcm-images/23-foreground-msg-sml.png)](remote-notifications-with-fcm-images/23-foreground-msg.png#lightbox)
 
-
 ## <a name="disconnecting-from-fcm"></a>FCM からの切断
 
 トピックの購読を解除するには、[焼討 Basemessaging](https://firebase.google.com/docs/reference/android/com/google/firebase/messaging/FirebaseMessaging)クラスで[UnsubscribeFromTopic](https://firebase.google.com/docs/reference/android/com/google/firebase/messaging/FirebaseMessaging.html#unsubscribeFromTopic%28java.lang.String%29)メソッドを呼び出します。 たとえば、前の手順で購読した_ニュース_トピックからサブスクライブを解除するために、次のハンドラーコードを使用して、登録**解除**ボタンをレイアウトに追加することができます。
@@ -780,7 +770,6 @@ FirebaseInstanceId.Instance.DeleteInstanceId();
 
 このメソッドを呼び出すと、インスタンス ID とそれに関連付けられているデータが削除されます。 その結果、デバイスへの FCM データの定期的な送信が停止されます。
 
-
 ## <a name="troubleshooting"></a>トラブルシューティング
 
 次に、Xamarin. Android での焼討 Base Cloud Messaging の使用時に発生する可能性がある問題と回避策について説明します。
@@ -799,7 +788,6 @@ Make sure to call FirebaseApp.initializeApp(Context) first.
 ## <a name="summary"></a>まとめ
 
 このチュートリアルでは、Xamarin Android アプリケーションでの焼討 Base Cloud Messaging リモート通知の実装手順について詳しく説明します。 ここでは、FCM 通信に必要なパッケージをインストールする方法と、FCM サーバーにアクセスするために Android マニフェストを構成する方法について説明しました。 Google Play 開発者サービスの存在を確認する方法を示すサンプルコードが用意されています。 この例では、登録トークンに対して FCM とネゴシエートするインスタンス ID リスナーサービスを実装する方法を説明しました。また、アプリの backgrounded 中にこのコードがバックグラウンド通知を作成する方法についても説明しました。 ここでは、トピックメッセージをサブスクライブする方法について説明し、アプリケーションがフォアグラウンドで実行されているときにリモート通知を受信して表示するために使用されるメッセージリスナーサービスの実装例を示しました。
-
 
 ## <a name="related-links"></a>関連リンク
 

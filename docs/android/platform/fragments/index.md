@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2018
-ms.openlocfilehash: b04ecf0685e78b73346ea5af815ed46f98b5da0f
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: f25c587f6a51a6b196f201c1b5060ff401f8cad2
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524359"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761861"
 ---
 # <a name="fragments"></a>フラグメント
 
@@ -46,7 +46,6 @@ _Android 3.0 では、スマートフォンやタブレットで検出された�
 - **フラグメントの管理とトランザクション**–実行時にフラグメントを操作する方法について説明します。
 - **Android サポートパッケージ**–以前のバージョンの Android でフラグメントを使用できるようにするライブラリを使用する方法について説明します。
 
-
 ## <a name="requirements"></a>必要条件
 
 フラグメントは、次のスクリーンショットに示すように、API レベル 11 (Android 3.0) 以降の Android SDK で使用できます。
@@ -58,7 +57,6 @@ _Android 3.0 では、スマートフォンやタブレットで検出された�
 [![プロジェクトオプションでのターゲットフレームワーク API レベルの設定](images/03-sml.png)](images/03.png#lightbox)
 
 Android サポートパッケージと Xamarin Android 4.2 以降を使用して、以前のバージョンの Android でフラグメントを使用することができます。 この方法については、このセクションのドキュメントで詳しく説明します。
-
 
 ## <a name="related-links"></a>関連リンク
 

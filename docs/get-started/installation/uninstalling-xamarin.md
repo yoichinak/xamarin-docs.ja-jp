@@ -6,12 +6,12 @@ ms.assetid: b83a85ec-842a-444c-8f82-c2464eda099b
 author: conceptdev
 ms.author: crdun
 ms.date: 04/08/2017
-ms.openlocfilehash: ff40ed55c06df41c418b694d02f7d6e9c1c5316c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: a5a9ddfe92bd8f5b743da2c535a93c282542c860
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291444"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756781"
 ---
 # <a name="uninstalling-xamarin"></a>Xamarin のアンインストール
 
@@ -266,7 +266,6 @@ Visual Studio 2017 を完全にアンインストールするには、 **[起動
 >
 >これは、Visual Studio インストーラーで **[修復]** オプションを実行すると、不足しているコンポーネントが再インストールされ、解決します。
 
-
 ## <a name="uninstalling-older-and-unsupported-products"></a>古い製品とサポート非対象の製品のアンインストール
 
 <a name="uninstallvs2015"></a>
@@ -361,7 +360,6 @@ rm -rf ~/Library/XamarinStudio-*
 ## <a name="summary"></a>Summary
 
 この記事では、ターミナル コマンドを使用して Mac から完全に Xamarin をアンインストールする方法について説明しました。 **[プログラムと機能]** オプション (Visual Studio 2015 以前の場合) を使用して Windows コンピューターから Xamarin をアンインストールする方法と、Visual Studio 2017 で **Visual Studio インストーラー**を使用する方法も説明しました。
-
 
 ## <a name="related-links"></a>関連リンク
 

@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: conceptdev
 ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: a3adbf18e18e4f2a42ed3c89162455040a9fe699
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: bde76891b4b01800384ee0579e3fbe14987c5420
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282687"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768387"
 ---
 # <a name="stack-views-in-xamarinios"></a>Xamarin. iOS のスタックビュー
 
@@ -270,8 +270,6 @@ UIView.Animate(0.25, ()=>{
 
 この記事では、Xamarin `UIStackView` ios アプリで水平方向または垂直方向に配置された一連のサブビューを管理する新しいコントロール (iOS 9 用) について説明しました。
 ここでは、スタックビューを使用して UI を作成する簡単な例から始めて、スタックビューとそのプロパティと機能について詳しく見ていきました。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

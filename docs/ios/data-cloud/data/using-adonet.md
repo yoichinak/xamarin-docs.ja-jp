@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 3526ee254a3986e1ff59288adeb95a49129b8b60
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: a9df85a405bc086f86dae73fea615581bf9d28d0
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290962"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767384"
 ---
 # <a name="using-adonet-with-xamarinios"></a>Xamarin で ADO.NET を使用する
 
@@ -37,7 +37,6 @@ ADO.NET 経由で SQLite へのアクセスを使用`System.Data`する`Mono.Dat
 ## <a name="about-monodatasqlite"></a>Mono. Data. Sqlite の概要
 
 `Mono.Data.Sqlite.SqliteConnection`クラスを使用して、空のデータベースファイルを作成し、その`SqliteCommand`後、データベースに対して SQL 命令を実行するために使用できるオブジェクトをインスタンス化します。
-
 
 1. **空のデータベースの作成**-有効`CreateFile`な (つまり、書き込み可能な) ファイルパスを使用してメソッドを呼び出します。 このメソッドを呼び出す前に、ファイルが既に存在するかどうかを確認する必要があります。そうしないと、新しい (空の) データベースが古いデータベースの先頭に作成され、古いファイルのデータは失われます。
 
@@ -153,7 +152,6 @@ SQLite ではデータに対して任意の SQL コマンドを実行できる�
 - **ExecuteReader** –行のコレクションがとして`SqlDataReader`返される必要がある場合に使用します。
 - **ExecuteScalar** –1つの値 (集計など) を取得します。
 
-
 ### <a name="executenonquery"></a>EXECUTENONQUERY
 
 INSERT、UPDATE、および DELETE ステートメントは、影響を受けた行数を返します。 その他の SQL ステートメントはすべて-1 を返します。
@@ -199,7 +197,6 @@ ExecuteReader メソッドは、SqliteDataReader オブジェクトを返しま�
 - **RowsAffected** –クエリの影響を受ける行の数。
 - **Hasrows** –行が返されたかどうかを指定します。
 
-
 ### <a name="executescalar"></a>EXECUTESCALAR
 
 この値は、1つの値 (集計など) を返す SELECT ステートメントに使用します。
@@ -212,7 +209,6 @@ using (var contents = connection.CreateCommand ()) {
 ```
 
 メソッド`ExecuteScalar`の戻り値の型`object`は、データベースクエリに応じて結果をキャストする必要があります。 結果には、カウントクエリの整数、または1つの列の SELECT クエリの文字列を指定できます。 これは、リーダーオブジェクトを返す他の Execute メソッド、または影響を受ける行の数のカウントとは異なることに注意してください。
-
 
 ## <a name="related-links"></a>関連リンク
 

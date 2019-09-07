@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: 314b341b7cfb40c62a5d6469ca22d2889f5a8057
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 9714d78419754413ae5f1d0e5015a418fa8ab884
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291757"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769558"
 ---
 # <a name="search-with-nsuseractivity-in-xamarinios"></a>Xamarin で NSUserActivity を検索します。 iOS
 
@@ -165,8 +165,6 @@ activity.BecomeCurrent();
 - **ハンドオフ**-アプリの検索では、ハンドオフ (`NSUserActivity`) と同じメカニズムを使用してコンテンツ、ナビゲーション、または機能を公開しているため、アプリのユーザーが1つのデバイスでアクティビティを開始して別のデバイスで続行できるようにすることが簡単にできます。
 - **Siri の提案**-Siri の提案によって通常作成される標準の提案と共に、アプリからの在職者を自動的に提案することができます。
 - **Siri スマートリマインダー** -ユーザーは、アプリからのアクティビティに関する通知を siri に要求できます。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

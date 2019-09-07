@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 09/25/2017
-ms.openlocfilehash: aabbbb706d4b6fcd022e30f726696b5d4f46167f
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 9f15d586a0ca209fec088fc48ca975efae4ab8fc
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70279515"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768359"
 ---
 # <a name="working-with-row-actions-in-xamarinios"></a>Xamarin の行アクションの操作 (iOS)
 
@@ -26,7 +26,6 @@ iOS には`UISwipeActionsConfiguration` 、テーブルに対して操作を実�
 
 `UITableViewRowAction`クラスは、ユーザーがテーブルビューの行で水平にスワイプたときに実行されるアクションを定義するために使用されます。
 たとえば、テーブルを編集するときに、行を左にスワイプすると、既定で **[削除]** ボタンが表示されます。 `UITableViewRowAction`クラスの複数のインスタンスを`UITableView`にアタッチすることにより、複数のカスタムアクションを定義し、それぞれに独自のテキスト、書式設定、および動作を設定できます。
-
 
 ## <a name="uiswipeactionsconfiguration"></a>UISwipeActionsConfiguration
 
@@ -43,7 +42,6 @@ iOS には`UISwipeActionsConfiguration` 、テーブルに対して操作を実�
 `UITableViewController`(およびも`UITableViewSource` `UITableViewDelegate` )に`GetTrailingSwipeActionsConfiguration`は、テーブルビュー行にスワイプアクションのセットを実装するために使用されるとという2つのメソッドが含まれています。`GetLeadingSwipeActionsConfiguration` 先頭のスワイプ操作では、画面の左側から左から右の言語でスワイプを参照し、右から左に記述する言語で画面の右側からスワイプを参照します。
 
 次の例では、(「行[Wipeactions](https://docs.microsoft.com/samples/xamarin/ios-samples/tableswipeactions)サンプル」から) リーディングスワイプ構成を実装する方法を示しています。 コンテキストアクションからは、[次](#create-uicontextualaction)に説明する2つのアクションが作成されます。 これらのアクションは、戻り値として[`UISwipeActionsConfiguration`](#create-uiswipeactionsconfigurations)使用される、新しく初期化されたに渡されます。
-
 
 ```csharp
 public override UISwipeActionsConfiguration GetLeadingSwipeActionsConfiguration(UITableView tableView, NSIndexPath indexPath)
@@ -180,8 +178,6 @@ table.Delegate = tableDelegate;
 [![](row-action-images/action01.png "[削除] ボタンの代わりに表示される [Hi] ボタン")](row-action-images/action01.png#lightbox)
 
 ユーザーが **[こんにちは]** ボタンをタップ`Hello World!`すると、アプリケーションがデバッグモードで実行されるときに、Visual Studio for Mac または Visual Studio のコンソールにが出力されます。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

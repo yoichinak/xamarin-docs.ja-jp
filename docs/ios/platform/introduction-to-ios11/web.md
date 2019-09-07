@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 09/12/2017
-ms.openlocfilehash: b90673559d0b8a3728898b7d8dbc3207bb22520b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 6068dd148bfc3c2a778ca34753374bcecccb55d9
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280079"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752217"
 ---
 # <a name="webkit-and-safari-changes-in-ios-11"></a>IOS 11 での WebKit と Safari の変更点
 
@@ -43,7 +43,6 @@ sfViewController.DismissButtonStyle = SFSafariViewControllerDismissButtonStyle.C
 
 この値は、の表示`SFSafariViewController`中に変更できます。
 
-
 Safari ビューコントローラー内に表示されるコンテンツによっては、ユーザーがスクロールするときにメニューバーが折りたたまれないようにする必要がある場合があります。 これは、新しい`BarCollapsedEnabled`プロパティをに設定する`false`ことによって有効になります。
 
 ```csharp
@@ -58,7 +57,6 @@ var sfViewController = new SFSafariViewController(url, config);
 Apple では、iOS 11 の Safari ビューコントローラーのプライバシーに関する更新も行っています。 現時点では、cookie やローカルストレージなどのデータの参照は、Safari ビューコントローラーのすべてのインスタンスに対してではなく、アプリごとに存在します。 これにより、ユーザーの閲覧アクティビティがアプリ内でプライベートになります。
 
 IOS 11 では、の`window.open()` url およびサポートに対するドラッグアンドドロップのサポートなどの追加機能もに`SFSafariViewController`追加されました。 これらの新機能の詳細については、 [Apple の SFSafariViewController のドキュメント](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller?changes=latest_minor)を参照してください。
-
 
 ## <a name="webkit"></a>WebKit
 
@@ -106,4 +104,3 @@ config.SetUrlSchemeHandler(new MyHandler(), "xamarin-asset");
 webView = new WKWebView (View.Frame, config);
 webView.LoadRequest (new NSUrlRequest("xamarin-asset://xamarin.com"));
 ```
-

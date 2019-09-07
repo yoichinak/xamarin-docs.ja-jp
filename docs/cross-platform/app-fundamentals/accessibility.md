@@ -6,12 +6,12 @@ ms.assetid: E587F0CF-7C1D-41F8-B5A8-DA3E738EDA81
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: bd97406501df155561e0e240607740430dbf4ac3
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 55d531036336cdd6c3ac7efa1c5ba21b09a7be9e
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284586"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758133"
 ---
 # <a name="accessibility-in-xamarin-apps"></a>Xamarin アプリのユーザー補助機能
 
@@ -68,8 +68,6 @@ IOS、Android、Windows などのデスクトップおよびモバイルプラ�
 ### <a name="localize"></a>Localize
 
 アプリケーションが複数の言語をサポートしている場合は、ユーザー補助の説明をローカライズする (およびする必要があります) ことができます。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

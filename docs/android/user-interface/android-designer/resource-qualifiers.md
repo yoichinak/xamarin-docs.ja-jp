@@ -7,17 +7,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/25/2018
-ms.openlocfilehash: 750cf801d8ae9dfe63f9b2259d4a3f6a386a4404
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 6ae10e73c3f41226560beb8cf8c50608fc6adf3f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69523235"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70762619"
 ---
 # <a name="resource-qualifiers-and-visualization-options"></a>リソース修飾子と視覚化オプション
 
 _このトピックでは、一部の修飾子値が一致した場合にのみ使用されるリソースを定義する方法について説明します。単純な例として、言語で修飾された文字列リソースがあります。文字列リソースは既定値として定義でき、他の言語で使用するために他のリソースが定義されています。すべてのリソースの種類は、レイアウトそのものを含めて修飾できます。_
-
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -45,7 +44,7 @@ _このトピックでは、一部の修飾子値が一致した場合にのみ�
 
 ![言語の一覧](resource-qualifiers-images/vs/10-languages.png "言語の一覧")
 
-この例では、フランス語の地域言語に対して**fr (フランス語)** を選択しています。 特定の地域に関係なく多くの言語を指定できるため、 **Region**フィールドは省略可能です。 **[言語]** プルダウンメニューを再び開くと、新しく追加された言語/地域のリソースが表示されます。
+この例では、フランス語の地域言語に対して**fr (フランス語)** **を選択して**います。 特定の地域に関係なく多くの言語を指定できるため、 **Region**フィールドは省略可能です。 **[言語]** プルダウンメニューを再び開くと、新しく追加された言語/地域のリソースが表示されます。
 
 選択された![言語と地域]選択された(resource-qualifiers-images/vs/11-language-region-added.png "言語と地域")
 
@@ -55,10 +54,9 @@ _このトピックでは、一部の修飾子値が一致した場合にのみ�
 
 **[UI モード]** プルダウンメニューをクリックすると、**通常**、**車ドック**、**机ドック**、**テレビ**、**アプライアンス**、**ウォッチ**などのモードの一覧が表示されます。
 
-
 [![UI モードメニュー](resource-qualifiers-images/vs/12-ui-mode-sml.png)](resource-qualifiers-images/vs/12-ui-mode.png#lightbox)
 
-この一覧の下には、夜と夜では**なく**、レイアウトの方向が**左**から右 、右から左に表示されます (**左から**右および右から左へのオプションについては、「」を参照してください [)。LayoutDirection](xref:Android.Util.LayoutDirection))。
+この一覧の下には、**夜と夜**では**なく**、レイアウトの方向が**左**から右、右**から左に**表示されます (**左から**右および右から左へ**のオプションに**ついては、「」を参照してください[)。LayoutDirection](xref:Android.Util.LayoutDirection))。
 **[リソース修飾子のオプション]** ダイアログの最後の項目は、**ラウンド画面**です (Android の磨耗で使用)。または、**ラウンドスクリーンではありません**。
 ラウンド画面と非ラウンドスクリーンの詳細については、「[レイアウト](https://developer.android.com/training/wearables/ui/layouts.html)」を参照してください。
 Android UI モードの詳細については、「 [Uimodemanager](xref:Android.App.UiModeManager)」を参照してください。
@@ -95,11 +93,9 @@ Android**バージョン**セレクターは、デザイナーでレイアウト
 
 ターゲットフレームワークのバージョンは、プロジェクトの設定の **プロパティ > アプリケーション > Android バージョンを使用してコンパイル**するように設定できます。 ターゲットフレームワークのバージョンの詳細については、「 [ANDROID API レベル](~/android/app-fundamentals/android-api-levels.md)について」を参照してください。
 
-ツールボックスで使用できるウィジェットのセットは、プロジェクトのターゲットフレームワークのバージョンによって決まります。 これは、[**プロパティ] ウィンドウ**で使用できるプロパティにも当てはまります。 使用できるウィジェットの一覧は、ツールバーの **[バージョン]** セレクターで選択した値によって決まります。 たとえば、プロジェクトのターゲットバージョンを Android 4.4 に設定した場合でも、ツールバーバージョンセレクターで Android 6.0 を選択して、Android 6.0 でのプロジェクトの外観を確認できますが、Android 6.0 &ndash;に固有のウィジェットを追加することはできません。 Android 4.4 で利用できるウィジェットに限定されます。
+ツールボックスで使用できるウィジェットのセットは、プロジェクトのターゲットフレームワークのバージョンによって決まります。 これは、[**プロパティ] ウィンドウ**で使用できるプロパティにも当てはまります。 使用できるウィジェットの一覧は、ツールバーの **[バージョン]** セレクターで選択した値によっ*て決まります*。 たとえば、プロジェクトのターゲットバージョンを Android 4.4 に設定した場合でも、ツールバーバージョンセレクターで Android 6.0 を選択して、Android 6.0 でのプロジェクトの外観を確認できますが、Android 6.0 &ndash;に固有のウィジェットを追加することはできません。 Android 4.4 で利用できるウィジェットに限定されます。
 
 リソースの種類の詳細については、「 [Android Resources](~/android/app-fundamentals/resources-in-android/index.md)」を参照してください。
-
-
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -127,7 +123,7 @@ Android**バージョン**セレクターは、デザイナーでレイアウト
 
 [![言語の一覧](resource-qualifiers-images/xs/10-languages-m75-sml.png)](resource-qualifiers-images/xs/10-languages-m75.png#lightbox)
 
-この例では、フランス語の地域言語に対して**fr (フランス語)** を選択しています。 特定の地域に関係なく多くの言語を指定できるため、 **Region**フィールドは省略可能です。 **[言語]** プルダウンメニューを再び開くと、新しく追加された言語/地域のリソースが表示されます。
+この例では、フランス語の地域言語に対して**fr (フランス語)** **を選択して**います。 特定の地域に関係なく多くの言語を指定できるため、 **Region**フィールドは省略可能です。 **[言語]** プルダウンメニューを再び開くと、新しく追加された言語/地域のリソースが表示されます。
 
 [![選択された言語と地域](resource-qualifiers-images/xs/11-language-region-added-m75-sml.png)](resource-qualifiers-images/xs/11-language-region-added-m75.png#lightbox)
 
@@ -139,11 +135,10 @@ Android**バージョン**セレクターは、デザイナーでレイアウト
 
 [![UI モードメニュー](resource-qualifiers-images/xs/12-ui-mode-m75-sml.png)](resource-qualifiers-images/xs/12-ui-mode-m75.png#lightbox)
 
-この一覧の下には、夜と夜では**なく**、レイアウトの方向が左から右、**右から左** **に**なる夜間モードがあります。 オプションの最後のペアでは、**ラウンドスクリーン**または**四角形の画面**のいずれかを選択できます (Android の磨耗デバイスの場合に便利です)。
+この一覧の下には、**夜と夜**では**なく**、レイアウトの方向が左から右、**右から左** **に**なる夜間モードがあります。 オプションの最後のペアでは、**ラウンドスクリーン**または**四角形の画面**のいずれかを選択できます (Android の磨耗デバイスの場合に便利です)。
 
 Android UI モードの詳細については、「 [Uimodemanager](xref:Android.App.UiModeManager)」を参照してください。
 **左から右**、**右から左**へのオプションの詳細については、「 [layoutdirection](xref:Android.Util.LayoutDirection)」を参照してください。
-
 
 ## <a name="action-bar-settings"></a>操作バーの設定
 
@@ -177,7 +172,7 @@ Android**バージョン**セレクターは、デザイナーでレイアウト
 
 ターゲットフレームワークのバージョンは、プロジェクトの設定の **[プロジェクトオプション > ビルド > 全般]** セクションで設定できます。 ターゲットフレームワークのバージョンの詳細については、「 [ANDROID API レベル](~/android/app-fundamentals/android-api-levels.md)について」を参照してください。
 
-ツールボックスで使用できるウィジェットのセットは、プロジェクトのターゲットフレームワークのバージョンによって決まります。 これは、**プロパティパッド**で使用できるプロパティにも当てはまります。 使用できるウィジェットの一覧は、ツールバーの **[バージョン]** セレクターで選択した値によって決まります。 たとえば、プロジェクトのターゲットバージョンを Android 4.4 に設定した場合でも、ツールバーバージョンセレクターで Android 6.0 を選択して、Android 6.0 でのプロジェクトの外観を確認できますが、Android 6.0 &ndash;に固有のウィジェットを追加することはできません。 Android 4.4 で利用できるウィジェットに限定されます。
+ツールボックスで使用できるウィジェットのセットは、プロジェクトのターゲットフレームワークのバージョンによって決まります。 これは、**プロパティパッド**で使用できるプロパティにも当てはまります。 使用できるウィジェットの一覧は、ツールバーの **[バージョン]** セレクターで選択した値によっ*て決まります*。 たとえば、プロジェクトのターゲットバージョンを Android 4.4 に設定した場合でも、ツールバーバージョンセレクターで Android 6.0 を選択して、Android 6.0 でのプロジェクトの外観を確認できますが、Android 6.0 &ndash;に固有のウィジェットを追加することはできません。 Android 4.4 で利用できるウィジェットに限定されます。
 
 リソースの種類の詳細については、「 [Android Resources](~/android/app-fundamentals/resources-in-android/index.md)」を参照してください。
 

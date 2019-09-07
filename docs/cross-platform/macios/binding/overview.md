@@ -6,12 +6,12 @@ ms.assetid: 9EE288C5-8952-C5A9-E542-0BD847300EC6
 author: conceptdev
 ms.author: crdun
 ms.date: 11/25/2015
-ms.openlocfilehash: 3b0e5d12f47ffb46ad009530bcc9c0b373496f63
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: db37a6a912cae3c2d53d8838ba2d2bd0224e8df7
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70279792"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765594"
 ---
 # <a name="overview-of-objective-c-bindings"></a>目的 C のバインドの概要
 
@@ -37,7 +37,6 @@ Xamarin で使用する目的の C ライブラリをバインドするには、
 
 (Xamarin. Mac `btouch-native`を使用している場合`bmac-native`は) を使用して、バインドを直接構築できます。 これは、手動でC#作成した API 定義 (または、目標マジックペンを使用) をコマンドラインツール (`btouch-native` iOS また`bmac-native`は Mac 用) に渡すことによって機能します。
 
-
 これらのツールを呼び出すための一般的な構文は次のとおりです。
 
 ```csharp
@@ -51,7 +50,6 @@ bash$ bmac-native -e cocos2d.cs -s:enums.cs -x:extensions.cs
 ```
 
 上のコマンドを実行すると`cocos2d.dll` 、現在のディレクトリにファイルが生成され、プロジェクトで使用できる完全バインドライブラリが含まれます。 これは、バインドプロジェクト ([以下](#bindingproject)で説明) を使用してバインドを作成するために Visual Studio for Mac 使用するツールです。
-
 
 <a name="bindingproject" />
 

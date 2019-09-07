@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 9f3ac33df34f5046fad6d392a6b7edf8a9a7f23f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 1b7bed0fc6dba1d9f80524ac3429b7fdcb751ab9
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644140"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755071"
 ---
 # <a name="started-services-with-xamarinandroid"></a>Xamarin Android でサービスを開始しました
 
@@ -42,7 +42,7 @@ public override StartCommandResult OnStartCommand (Android.Content.Intent intent
 
 - `StartCommandFlag.Redelivery`これは、 `Intent`が以前`Intent`のの再配信であることを意味します。 &ndash; この値は、サービスが返さ`StartCommandResult.RedeliverIntent`れたときに、正常にシャットダウンされる前に停止された場合に提供されます。
 -`StartCommandFlag.Retry`この値は、前回`OnStartCommand`の呼び出しが失敗し、Android が前回失敗した試行と同じ目的でサービスを再開しようとしたときに受信されます。 &dash;
- 
+
 最後に、3番目のパラメーターは、要求を識別するアプリケーションに固有の整数値です。 複数の呼び出し元が同じサービスオブジェクトを呼び出す可能性があります。 この値は、サービスを停止する要求を、サービスを開始するための特定の要求に関連付けるために使用されます。 詳細については、「[サービスを停止](#Stopping_the_Service)する」セクションを参照してください。 
 
 この値`StartCommandResult`は、リソースの制約によってサービスが強制終了された場合の対処方法について、サービスから Android への提案として返されます。 には、次の 3 `StartCommandResult`つの値を指定できます。

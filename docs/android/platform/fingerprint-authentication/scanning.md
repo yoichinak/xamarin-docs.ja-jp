@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/23/2016
-ms.openlocfilehash: 15afd5b1812e0423097e889cd8c2558ca01a8074
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 4ead912b55790caf3e2e1f22e149f5682e6bb697
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119740"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761219"
 ---
 # <a name="scanning-for-fingerprints"></a>指紋のスキャン
 
@@ -59,9 +59,6 @@ protected void FingerPrintAuthenticationExample()
 ユーザー (またはアプリケーション) が、開始後に指紋スキャンをキャンセルする必要がある場合があります。 このよう[`CancellationSignal`](https://developer.android.com/reference/android/os/CancellationSignal.html)な場合は、 [`IsCancelled`](https://developer.android.com/reference/android/os/CancellationSignal.html#isCanceled())に渡されたで、に`FingerprintManager.Authenticate`よって指定されたメソッドを呼び出して、指紋スキャンを開始します。
 
 `Authenticate`メソッドについて説明したので、さらに重要なパラメーターをいくつか詳しく見ていきましょう。 まず、[認証コールバックへの対応](~/android/platform/fingerprint-authentication/fingerprint-authentication-callbacks.md)について説明します。ここでは、 [FingerprintManager コールバック](https://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.AuthenticationCallback.html)をサブクラス化して、Android アプリケーションが指紋スキャナーによって得られた結果に反応できるようにする方法について説明します。
-
-
-
 
 ## <a name="related-links"></a>関連リンク
 

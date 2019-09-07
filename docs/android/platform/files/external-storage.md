@@ -1,125 +1,122 @@
 ---
-title: Xamarin.Android での外部ストレージにファイル アクセス
-description: このガイドは Xamarin.Android での外部ストレージにファイルへのアクセスについて説明します
+title: Xamarin Android を使用した外部ストレージでのファイルアクセス
+description: このガイドでは、Xamarin. Android の外部ストレージでのファイルアクセスについて説明します。
 ms.prod: xamarin
 ms.assetid: 40da10b2-a207-4f9c-a2dd-165d9b662f33
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/23/2018
-ms.openlocfilehash: 78051fce44239eea86948988a4d19ac37c5ea0d5
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e30f726cfb783fc47bc09f7590a523eb0e487105
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60953241"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756525"
 ---
 # <a name="external-storage"></a>外部ストレージ
 
-外部ストレージは、内部ストレージではなく、ファイルを担当するアプリにのみアクセス可能なファイル ストレージを参照します。 外部ストレージの主な目的では、ファイルは、アプリ間で共有するためのものをや内部の記憶域に収まらないファイルを配置する場所を提供します。
+外部ストレージとは、ファイルストレージを指します。このファイルは、ファイルの役割を果たすアプリから排他的にアクセスできるわけではありません。 外部ストレージの主な目的は、アプリ間で共有されるファイルや、内部ストレージには大きすぎるファイルを配置する場所を提供することです。
 
-SD カードなどのリムーバブル メディア上のディスク パーティションをこれまでは、外部のストレージと呼ばれます (と呼ばれていた_ポータブル ストレージ_)。 この区別は Android デバイスが進化し、多くの Android デバイスがリムーバブル記憶域をサポートしなくほどには関連はありません。 代わりに一部のデバイスが割り当て、内部の非揮発性メモリの一部と同じ関数のリムーバブル メディアを実行するには、どの Android られます。 呼ばれます_エミュレート_記憶域および外部記憶域は依然と見なされます。 代わりに、一部の Android デバイスには、複数の外部ストレージのパーティションがあります。 たとえば、Android タブレット (に加えて、その内部ストレージ) ストレージがエミュレートされた可能性がありますと SD カードの 1 つまたは複数のスロット。 これらのパーティションのすべては Android で外部のストレージとして扱われます。
+これまで、外部ストレージは SD カードなどのリムーバブルメディアのディスクパーティションを指していました (_ポータブルストレージ_とも呼ばれていました)。 この区別は、Android デバイスが進化し、多くの Android デバイスでリムーバブル記憶域がサポートされなくなったため、関連するものではなくなりました。 一部のデバイスでは、同じ機能のリムーバブルメディアを実行するために、Android が使用する内部の非揮発性メモリの一部が割り当てられます。 これは_エミュレート_されたストレージと呼ばれ、依然として外部ストレージと見なされます。 また、Android デバイスによっては、複数の外部ストレージパーティションが存在する場合もあります。 たとえば、Android タブレット (内部記憶域に加えて) には、エミュレートされた記憶域と SD カード用の1つ以上のスロットがあります。 これらのパーティションはすべて、Android によって外部ストレージとして扱われます。
 
-複数のユーザーがデバイスでは、各ユーザーを外部ストレージの外部ストレージのプライマリ パーティション上の専用ディレクトリとなります。 1 人のユーザーとして実行されているアプリはありませんアクセスのファイルに、デバイス上の別のユーザーから。 すべてのユーザーのファイルは、まだ世界が判読できると世界の書き込み可能です。ただし、Android は、サンド ボックスを他のユーザーからは、各ユーザー プロファイル。
+複数のユーザーがいるデバイスでは、各ユーザーが外部ストレージのプライマリ外部ストレージパーティションに専用のディレクトリを持つことになります。 1人のユーザーとして実行されているアプリは、デバイス上の別のユーザーのファイルにアクセスできません。 すべてのユーザーのファイルは、世界中でも読み取り可能であり、世界中でも書き込み可能です。ただし、Android では、各ユーザープロファイルをサンドボックスにサンドボックスします。
 
-他の .NET アプリケーションには、読み取りと書き込みをファイルは Xamarin.Android でとほぼ同じです。 Xamarin.Android アプリでは、し、使用して標準的な .NET の表現方法ファイル アクセス、ファイル操作されるへのパスを決定します。 内部および外部の記憶域への実際のパスがデバイスからデバイスに異なる場合がありますので、または Android のバージョンの Android バージョンから、これは推奨されませんハード コードするファイルへのパス。 代わりに、Xamarin.Android を内部および外部の記憶域上のファイルへのパスを判断できるように、ネイティブの Android API を公開します。
+ファイルの読み取りと書き込みは、他の .NET アプリケーションと同様に、Xamarin. Android でもほぼ同じです。 Xamarin Android アプリでは、操作するファイルへのパスを決定し、ファイルアクセスに標準の .NET 表現方式を使用します。 内部および外部のストレージへの実際のパスは、デバイスやデバイスによって異なる場合があるため、ファイルへのパスをハードコーディングしないことをお勧めします。 代わりに、Xamarin.Android を内部および外部の記憶域上のファイルへのパスを判断できるように、ネイティブの Android API を公開します。
 
 このガイドは、概念と Android で外部ストレージに固有の API について説明します。
 
-## <a name="public-and-private-files-on-external-storage"></a>外部ストレージにファイルをパブリックおよびプライベート
+## <a name="public-and-private-files-on-external-storage"></a>外部ストレージ上のパブリックファイルとプライベートファイル
 
-2 つの異なる種類のアプリは可能性がありますの外部ストレージに保持するファイルがあります。
+アプリで外部ストレージに保持できるファイルには、次の2種類があります。
 
-* **プライベート**ファイル&ndash;プライベート ファイルは、アプリケーション (ただしはまだ世界が判読できる、書き込める) に固有のファイルです。 Android では特定のディレクトリの外部ストレージにプライベート ファイルが保存される必要があります。 ファイルは"private"と呼ばれるも表示され、デバイス上の他のアプリからアクセスできるは、それらでは不十分な特別な保護 Android で。
+* **プライベートファイル**のプライベートファイルは、アプリケーションに固有のファイルです(ただし、世界中から読み取り可能で、世界でも書き込み可能です)。&ndash; Android では、プライベートファイルが外部ストレージの特定のディレクトリに格納されていることを前提としています。 ファイルは "プライベート" と呼ばれていますが、デバイス上の他のアプリからは引き続き表示され、アクセスできます。 Android で特別な保護を行うことはできません。
 
-* **パブリック**ファイル&ndash;ファイル、アプリケーションに固有のものと見なされないは自由に共有するためのものです。
+* **パブリック**ファイル&ndash;これらのファイルは、アプリケーションに固有ではないと見なされ、自由に共有することを意図しています。
 
-これらのファイル間の相違点は、主に概念です。 プライベート ファイルは、という意味でプライベートをパブリック ファイルの外部ストレージに存在するその他のファイルとは、アプリケーションの一部であると見なされます。 Android プライベートおよびパブリックのファイルへのパスを解決するための 2 つの API を提供しますが、これらのファイルを読み書きする同じ .NET API を使用するそれ以外の場合。 これらは、セクションに記載されているのと同じ API[読み取りと書き込み](~/android/platform/files/index.md#reading-or-writing-to-files-on-internal-storage)します。
+これらのファイルの違いは、主に概念です。 プライベートファイルは、アプリケーションの一部と見なされますが、パブリックファイルは外部ストレージに存在するその他のファイルであるという意味でプライベートになります。 Android プライベートおよびパブリックのファイルへのパスを解決するための 2 つの API を提供しますが、これらのファイルを読み書きする同じ .NET API を使用するそれ以外の場合。 これらは、セクションに記載されているのと同じ API[読み取りと書き込み](~/android/platform/files/index.md#reading-or-writing-to-files-on-internal-storage)します。
 
-### <a name="private-external-files"></a>プライベートの外部ファイル
+### <a name="private-external-files"></a>プライベート外部ファイル
 
-プライベートの外部ファイルは、アプリケーション (内部のファイルに似ています) に固有のものと見なされますが、いくつかの理由 (される内部記憶域に対して大きすぎます) などの外部ストレージに保持されています。 内部のファイルと同様に、これらのファイルは削除されます、ユーザーが、アプリがアンインストールされます。
+プライベート外部ファイルはアプリケーションに固有であると見なされますが (内部ファイルに似ています)、さまざまな理由で外部ストレージに保持されています (内部ストレージに対して大きすぎるなど)。 内部ファイルと同様に、ユーザーがアプリをアンインストールすると、これらのファイルは削除されます。
 
-メソッドを呼び出してプライベート外部ファイルの 1 次拠点が見つかった`Android.Content.Context.GetExternalFilesDir(string type)`します。 このメソッドは、`Java.IO.File`アプリのプライベート外部ストレージ ディレクトリを表すオブジェクト。 渡す`null`このメソッドを返すパスをアプリケーションのユーザーのストレージ ディレクトリ。 たとえば、パッケージ名を持つアプリケーションの`com.companyname.app`、プライベートの外部のファイルの"root"ディレクトリになります。
+プライベート外部ファイルのプライマリロケーションは、メソッド`Android.Content.Context.GetExternalFilesDir(string type)`を呼び出すことによって検出されます。 このメソッドは、アプリ`Java.IO.File`のプライベートな外部ストレージディレクトリを表すオブジェクトを返します。 この`null`メソッドに渡すと、アプリケーションのユーザーのストレージディレクトリへのパスが返されます。 たとえば、パッケージ名`com.companyname.app`を持つアプリケーションの場合、プライベート外部ファイルの "ルート" ディレクトリは次のようになります。
 
 ```bash
 /storage/emulated/0/Android/data/com.companyname.app/files/
 ```
 
-このドキュメントとしての外部ストレージにファイルをプライベート ストレージ ディレクトリを参照してください_プライベート\_外部\_ストレージ_します。
+このドキュメントでは、外部ストレージ上のプライベートファイルのストレージディレクトリを_プライベート\_外部\_ストレージ_と呼びます。
 
-
-パラメーターを`GetExternalFilesDir()`を指定する文字列、_アプリケーション ディレクトリ_します。 これは、ディレクトリのファイルの論理の組織の標準的な場所を指定するためのものです。 文字列値が定数でご利用ください、`Android.OS.Environment`クラス。
+の`GetExternalFilesDir()`パラメーターは、_アプリケーションディレクトリ_を指定する文字列です。 これは、ファイルの論理編成の標準的な場所を提供するためのディレクトリです。 文字列値は、クラスの`Android.OS.Environment`定数を通じて使用できます。
 
 | `Android.OS.Environment` | ディレクトリ |
 |-|-|
-| DirectoryAlarms | **_PRIVATE\_EXTERNAL\_STORAGE_/Alarms** |
+| DirectoryAlarms | **_プライベート\_外部\_ストレージ_/アラーム** |
 | DirectoryDcim | **_プライベート\_外部\_ストレージ_/DCIM** |
-| DirectoryDownloads | **_プライベート\_外部\_ストレージ_  /ダウンロード** |
-| DirectoryDocuments | **_プライベート\_外部\_ストレージ_ドキュメント/** |
-| DirectoryMovies | **_プライベート\_外部\_ストレージ_/Movies** |
-| DirectoryMusic | **_PRIVATE\_EXTERNAL\_STORAGE_/Music** |
-| DirectoryNotifications | **_PRIVATE\_EXTERNAL\_STORAGE_/Notifications** |
-| DirectoryPodcasts | **_PRIVATE\_EXTERNAL\_STORAGE_/Podcasts** |
-| DirectoryRingtones | **_プライベート\_外部\_ストレージ_/Ringtones** |
-| DirectoryPictures | **_PRIVATE\_EXTERNAL\_STORAGE_/Pictures** |
+| DirectoryDownloads | **_プライベート\_外部\_ストレージ_/ダウンロード** |
+| DirectoryDocuments | **_プライベート\_外部\_ストレージ_/ドキュメント** |
+| DirectoryMovies | **_プライベート\_外部\_ストレージ_/ムービー** |
+| DirectoryMusic | **_プライベート\_外部\_ストレージ_/音楽** |
+| DirectoryNotifications | **_プライベート\_外部\_ストレージ_/通知** |
+| DirectoryPodcasts | **_プライベート\_外部\_ストレージ_/ポッドキャスト** |
+| DirectoryRingtones 音 | **_プライベート\_外部\_ストレージ_/着信音** |
+| DirectoryPictures | **_プライベート\_外部\_ストレージ_/画像** |
 
-デバイスの外部記憶域の複数のパーティションがある場合、各パーティションは、プライベート ファイルが想定されているディレクトリがあります。 メソッド`Android.Content.Context.GetExternalFilesDirs(string type)`の配列を返す`Java.IO.Files`します。 各オブジェクトはプライベート アプリケーション固有のディレクトリを表す、所有するすべての共有/外部ストレージ デバイスをアプリケーションがファイルを配置できます。
+複数の外部ストレージパーティションを持つデバイスの場合、各パーティションには、プライベートファイル用のディレクトリがあります。 メソッド`Android.Content.Context.GetExternalFilesDirs(string type)`は、の`Java.IO.Files`配列を返します。 各オブジェクトは、アプリケーションが所有するファイルを配置できるすべての共有/外部記憶装置上の、アプリケーション固有のプライベートディレクトリを表します。
 
 > [!IMPORTANT]
-> プライベート exteral ストレージ ディレクトリへの正確なパスは、デバイスから、デバイスおよび Android のバージョンとの間に異なります。 このため、アプリする必要がありますハード コード、このディレクトリのパスを代わりに API を使用して、Xamarin.Android など`Android.Content.Context.GetExternalFilesDir()`します。
+> プライベート exteral ストレージディレクトリへの正確なパスは、デバイスとデバイス、Android のバージョンによって異なります。 このため、アプリする必要がありますハード コード、このディレクトリのパスを代わりに API を使用して、Xamarin.Android など`Android.Content.Context.GetExternalFilesDir()`します。
 
-### <a name="public-external-files"></a>パブリックの外部ファイル
+### <a name="public-external-files"></a>パブリック外部ファイル
 
-パブリックのファイルは、Android を割り当てるプライベート ファイルのディレクトリに格納されていない外部ストレージに存在するファイルです。 アプリがアンインストールされるときに、パブリックのファイルは削除されません。 すべてのパブリック ファイルを読み書きできる前ににより、android アプリに権限を許可する必要があります。 パブリック ファイルに外部のストレージに任意の場所に存在することはできますが、Android 慣例には、プロパティで識別されたディレクトリに存在するファイルをパブリックが必要ですが`Android.OS.Environment.ExternalStorageDirectory`します。 このプロパティは、`Java.IO.File`外部ストレージのプライマリ ディレクトリを表すオブジェクト。 たとえば、`Android.OS.Environment.ExternalStorageDirectory`が次のディレクトリを参照してください。
+パブリックファイルとは、Android がプライベートファイル用に割り当てたディレクトリに格納されていない外部ストレージ上に存在するファイルのことです。 アプリをアンインストールしても、パブリックファイルは削除されません。 Android アプリでパブリックファイルの読み取りまたは書き込みを行うには、アクセス許可が付与されている必要があります。 パブリックファイルが外部ストレージ上の任意の場所に存在する可能性はありますが、規約によっては、プロパティ`Android.OS.Environment.ExternalStorageDirectory`で識別されるディレクトリにパブリックファイルが存在することが必要になります。 このプロパティは、プライマリ`Java.IO.File`外部ストレージディレクトリを表すオブジェクトを返します。 例として`Android.OS.Environment.ExternalStorageDirectory` 、は次のディレクトリを参照する場合があります。
 
 ```bash
 /storage/emulated/0/
 ```
 
-このドキュメントは外部のストレージとしてのパブリック ファイルのストレージ ディレクトリを参照してください_パブリック\_外部\_ストレージ_します。
+このドキュメントでは、外部ストレージ上のパブリックファイルのストレージディレクトリを_パブリック\_外部\_ストレージ_と呼びます。
 
+Android では、 _\_パブリック外部\_ストレージ_上のアプリケーションディレクトリの概念もサポートされています。 これらのディレクトリは、の`_PRIVATE\_EXTERNAL\_STORAGE_`アプリケーションディレクトリとまったく同じであり、前のセクションの表で説明されています。 メソッド`Android.OS.Environment.GetExternalStoragePublicDirectory(string directoryType)`は、パブリックアプリケーション`Java.IO.File`ディレクトリに対応するオブジェクトを返します。 パラメーターは必須パラメーターであり、にする`null`ことはできません。 `directoryType`
 
-Android 上のアプリケーション ディレクトリの概念もサポートされます_パブリック\_外部\_ストレージ_します。 これらのディレクトリは、アプリケーション ディレクトリと同じではまったく`_PRIVATE\_EXTERNAL\_STORAGE_`と前のセクションの表で説明します。 メソッド`Android.OS.Environment.GetExternalStoragePublicDirectory(string directoryType)`が返されます、`Java.IO.File`パブリック アプリケーション ディレクトリに対応するオブジェクト。 `directoryType`パラメーターは必須パラメーターでありすることはできません`null`します。
-
-たとえば、呼び出し`Environment.GetExternalStoragePublicDirectory(Environment.DirectoryDocuments).AbsolutePath`のようになります文字列が返されます。
+たとえば、を呼び`Environment.GetExternalStoragePublicDirectory(Environment.DirectoryDocuments).AbsolutePath`出すと、次のような文字列が返されます。
 
 ```bash
 /storage/emulated/0/Documents
 ```
 
 > [!IMPORTANT]
-> パブリックの外部ストレージ ディレクトリの正確なパスは、デバイスから、デバイスおよび Android のバージョンとの間に異なります。 このため、アプリする必要がありますハード コード、このディレクトリのパスを代わりに API を使用して、Xamarin.Android など`Android.OS.Environment.ExternalStorageDirectory`します。
+> パブリック外部ストレージディレクトリへの正確なパスは、デバイスとデバイス、Android のバージョンによって異なります。 このため、アプリする必要がありますハード コード、このディレクトリのパスを代わりに API を使用して、Xamarin.Android など`Android.OS.Environment.ExternalStorageDirectory`します。
 
-## <a name="working-with-external-storage"></a>外部ストレージの使用
+## <a name="working-with-external-storage"></a>外部ストレージの操作
 
-Xamarin.Android アプリがファイルへの完全パスを取得した後の作成、読み取り、書き込み、またはファイルを削除する標準の .NET API のいずれかを利用する必要があります。 これには、クロス プラットフォーム アプリの互換性のあるコードの量が最大化します。 ただし、ファイルへのアクセスを試みる前に、Xamarin.Android アプリはそのファイルにアクセスすることを確認する必要があります。
+Xamarin.Android アプリがファイルへの完全パスを取得した後の作成、読み取り、書き込み、またはファイルを削除する標準の .NET API のいずれかを利用する必要があります。 これにより、アプリのクロスプラットフォームと互換性のあるコードの量が最大化されます。 ただし、ファイルへのアクセスを試みる前に、Xamarin Android アプリでそのファイルにアクセスできることを確認する必要があります。
 
-1. **記憶域を外部確認** &ndash; 、外部の記憶域の性質に応じてその可能性がありますいないマウントを可能であると、アプリで使用可能なが。 すべてのアプリは、それを使用する前に、外部の記憶域の状態を確認する必要があります。
-2. **ランタイムのアクセス許可チェックを実行して** &ndash; An Android アプリは外部ストレージにアクセスするために、ユーザーからのアクセス許可を要求する必要があります。 これにより、実行時のファイルにアクセスする前に、アクセス許可要求を実行する必要があります。 このガイド[アクセス許可で Xamarin.Android](~/android/app-fundamentals/permissions.md)の詳細については、Android のアクセス許可が含まれています。
+1. **外部ストレージの検証**&ndash;外部ストレージの性質によっては、アプリによってマウントされて使用できなくなる可能性があります。 すべてのアプリは、使用を試みる前に外部ストレージの状態を確認する必要があります。
+2. **ランタイムのアクセス許可チェックを実行する**&ndash; Android アプリは、外部ストレージにアクセスするためにユーザーにアクセス許可を要求する必要があります。 これは、ファイルアクセスの前に実行時のアクセス許可要求を実行する必要があることを意味します。 Android のアクセス許可の詳細については、「 [Xamarin. Android の](~/android/app-fundamentals/permissions.md)ガイド」を参照してください。
 
-これら 2 つのタスクについては、以下の説明します。
+これらの2つのタスクについては、以下で説明します。
 
-### <a name="verifying-that-external-storage-is-available"></a>外部ストレージの使用可能な可能性の確認
+### <a name="verifying-that-external-storage-is-available"></a>外部ストレージが使用可能であることを確認しています
 
-外部ストレージに書き込む前に、最初の手順では、読み取り可能または書き込み可能なことを確認します。 `Android.OS.Environment.ExternalStorageState`プロパティは、外部の記憶域の状態を識別する文字列を保持します。 このプロパティでは、状態を表す文字列を返します。 このテーブルは、の一覧、`ExternalStorageState`によって返される値`Environment.ExternalStorageState`:
+外部ストレージに書き込む前の最初の手順は、読み取り可能または書き込み可能であることを確認することです。 プロパティ`Android.OS.Environment.ExternalStorageState`は、外部ストレージの状態を識別する文字列を保持します。 このプロパティは、状態を表す文字列を返します。 次の表は、によっ`ExternalStorageState`て`Environment.ExternalStorageState`返される可能性がある値の一覧です。
 
 | ExternalStorageState | 説明  |
 |----------------------|---|
-| MediaBadRemoval      | メディアが正しくマウント解除せず突然削除されました。 |
-| MediaChecking        | メディアが存在するが、中であるため、ディスクを確認します。  |
-| MediaEjecting        | メディアは、マウント解除し、排出される予定です。  |
-| MediaMounted         | メディアがマウントされていると、読み取りまたは書き込みをすることができます。  |
-| MediaMountedReadOnly | マウントされている、メディアがからのみ読み取ることができます。 |
-| MediaNofs            | メディアが存在するが、Android に適したファイルシステムが含まれていません。 |
-| MediaRemoved         | メディアが存在することはありません。 |
-| MediaShared          | メディアはあるが、マウントされていません。 別のデバイスを USB 経由で共有されています。|
-| MediaUnknown         | メディアの状態は、Android によって認識されません。 |
-| MediaUnmountable     | メディアが存在するが、Android でマウントすることはできません。 |
-| MediaUnmounted       | メディアが存在するが、マウントされていません。 |
+| MediaBadRemoval      | メディアは、正しくマウント解除されずに突然削除されました。 |
+| MediaChecking        | メディアは存在しますが、ディスクチェックが行われています。  |
+| MediaEjecting        | メディアがマウント解除され、取り出されています。  |
+| MediaMounted         | メディアはマウントされていて、読み取りまたは書き込みが可能です。  |
+| MediaMountedReadOnly | メディアはマウントされていますが、読み取ることができるのはのみです。 |
+| MediaNofs            | メディアは存在しますが、Android に適したファイルシステムが含まれていません。 |
+| メディアが削除されました         | メディアが存在しません。 |
+| Mediash          | メディアは存在しますが、マウントされていません。 USB 経由で他のデバイスと共有されています。|
+| メディア不明         | メディアの状態が Android で認識されません。 |
+| MediaUnmountable     | メディアは存在しますが、Android ではマウントできません。 |
+| メディアマウント解除       | メディアは存在しますが、マウントされていません。 |
 
-
-ほとんどの Android アプリは、外部ストレージがマウントされているかを確認するだけです。 次のコード スニペットでは、外部ストレージが読み取り専用アクセスまたは読み取り/書き込みアクセスでマウントされていることを確認する方法を示します。
+ほとんどの Android アプリでは、外部ストレージがマウントされているかどうかのみを確認する必要があります。 次のコードスニペットは、外部ストレージが読み取り専用アクセスまたは読み取り/書き込みアクセス用にマウントされていることを確認する方法を示しています。
 
 ```csharp
 bool isReadonly = Environment.MediaMountedReadOnly.Equals(Environment.ExternalStorageState);
@@ -128,9 +125,9 @@ bool isWriteable = Environment.MediaMounted.Equals(Environment.ExternalStorageSt
 
 ## <a name="external-storage-permissions"></a>外部ストレージのアクセス許可
 
-Android を考慮する外部ストレージへのアクセス、_危険なアクセス許可_、通常、ユーザーへのリソースのアクセス許可を付与する必要があります。 ユーザーは、いつでもこのアクセス許可を取り消すことができます。  これにより、実行時のファイルにアクセスする前に、アクセス許可要求を実行する必要があります。 アプリは、独自のプライベート ファイルを読み書きするアクセス許可を自動的に付与されます。 アプリの後に他のアプリに属しているプライベート ファイルを読み書きする可能性があります[アクセス許可を付与](~/android/app-fundamentals/permissions.md)ユーザー。
+Android では、外部ストレージへのアクセスを_危険なアクセス許可_と見なします。通常、リソースへのアクセス許可をユーザーに付与する必要があります。 ユーザーは、いつでもこのアクセス許可を取り消すことができます。  これは、ファイルアクセスの前に実行時のアクセス許可要求を実行する必要があることを意味します。 アプリには、独自のプライベートファイルの読み取りと書き込みを行うためのアクセス許可が自動的に付与されます。 アプリは、ユーザーによって[アクセス許可が付与](~/android/app-fundamentals/permissions.md)された後、他のアプリに属するプライベートファイルの読み取りと書き込みを行うことができます。
 
-すべての Android アプリは、外部の記憶域の 2 つの権限のいずれかを宣言する必要があります、 **AndroidManifest.xml**します。 次の 2 つのいずれかのアクセス許可を識別するために`uses-permission`に要素を追加する必要があります**AndroidManifest.xml**:
+すべての Android アプリは、 **Androidmanifest .xml**の外部ストレージに対する2つのアクセス許可のいずれかを宣言する必要があります。 アクセス許可を特定するには、次の`uses-permission` 2 つの要素のいずれかを**androidmanifest**に追加する必要があります。
 
 ```xml
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -138,31 +135,31 @@ Android を考慮する外部ストレージへのアクセス、_危険なア�
 ```
 
 > [!NOTE]
-> ユーザーによって付与される場合`WRITE_EXTERNAL_STORAGE`、し`READ_EXTERNAL_STORAGE`も暗黙的に与えられます。 両方のアクセス許可を要求する必要はありません**AndroidManifest.xml**します。
+> ユーザーが`WRITE_EXTERNAL_STORAGE` `READ_EXTERNAL_STORAGE`を許可すると、も暗黙的に付与されます。 **Androidmanifest .xml**で両方のアクセス許可を要求する必要はありません。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-使用して、アクセス許可を追加することがありますも、 **Android マニフェスト**のタブ、**ソリューションのプロパティ**:
+アクセス許可は、**ソリューションのプロパティ**の **[Android マニフェスト]** タブを使用して追加することもできます。
 
-![ソリューション エクスプ ローラー - Visual Studio の必要なアクセス許可](./images/required-permissions.w157.png)
+![ソリューションエクスプローラー-Visual Studio に必要なアクセス許可](./images/required-permissions.w157.png)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-使用して、アクセス許可を追加することがありますも、 **Android マニフェスト**のタブ、**ソリューション プロパティ パッド**:
+アクセス許可は、[**ソリューションのプロパティ] パッド**の **[Android マニフェスト]** タブを使用して追加することもできます。
 
-[![Solution Pad - for Visual Studio for Mac の必要なアクセス許可](./images/required-permissions.m752-sml.png)](./images/required-permissions.m752.png#lightbox)
+[![Solution Pad-Visual Studio for Mac に必要なアクセス許可](./images/required-permissions.m752-sml.png)](./images/required-permissions.m752.png#lightbox)
 
 -----
 
-一般に、ユーザーがすべて危険なアクセス許可を承認する必要があります。 外部ストレージのアクセス許可は、アプリが実行されている Android のバージョンに応じて、この規則の例外が、異常は。
+一般に、すべての危険なアクセス許可は、ユーザーが承認する必要があります。 外部ストレージのアクセス許可は、アプリが実行されている Android のバージョンによっては、この規則に例外があるという点で異常です。
 
-![外部ストレージのアクセス許可のフローチャートを確認します](./images/external-permission-check-flowchart.png)
+![外部ストレージのアクセス許可チェックのフローチャート](./images/external-permission-check-flowchart.png)
 
-ランタイムのアクセス許可要求を実行する方法の詳細については、このガイドを参照してください[アクセス許可で Xamarin.Android](~/android/app-fundamentals/permissions.md)します。 **Monodroid サンプル** [LocalFiles](https://github.com/xamarin/monodroid-samples/tree/master/LocalFiles)のランタイム アクセス許可チェックを実行する方法も示します。
+ランタイムアクセス許可要求の実行の詳細については、「 [Xamarin Android のアクセス許可](~/android/app-fundamentals/permissions.md)」を参照してください。 また、**モノサンプル**の[localfiles](https://github.com/xamarin/monodroid-samples/tree/master/LocalFiles)は、実行時のアクセス許可のチェックを実行する1つの方法も示しています。
 
-#### <a name="granting-and-revoking-permissions-with-adb"></a>許可および ADB を使用した権限の取り消し
+#### <a name="granting-and-revoking-permissions-with-adb"></a>ADB を使用したアクセス許可の付与と取り消し
 
-Android アプリを作成する過程を与えるし、アクセス許可のチェックをランタイムに関連するさまざまな作業のフローをテストするアクセス許可の取り消しに必要な場合があります。 ADB を使用してコマンド プロンプトでこれを行うことができます。 次のコマンド ライン スニペットまたは ADB を使用して、パッケージ名を持つ Android アプリのアクセス許可を取り消す方法をデモンストレーションする**com.companyname.app**:
+Android アプリを開発する過程で、実行時のアクセス許可のチェックに関係するさまざまな作業フローをテストするためのアクセス許可の付与と取り消しが必要になる場合があります。 この操作は、コマンドプロンプトで ADB を使用して行うことができます。 次のコマンドラインスニペットは、パッケージ名が " **com. companyname. アプリ**" である Android アプリの ADB を使用してアクセス許可を付与または取り消す方法を示しています。
 
 ```bash
 $ adb shell pm grant com.companyname.app android.permission.WRITE_EXTERNAL_STORAGE
@@ -170,7 +167,7 @@ $ adb shell pm grant com.companyname.app android.permission.WRITE_EXTERNAL_STORA
 $ adb shell pm revoke com.companyname.app android.permission.WRITE_EXTERNAL_STORAGE
 ```
 
-## <a name="deleting-files"></a>ファイルを削除します。
+## <a name="deleting-files"></a>ファイルの削除
 
 など、外部のストレージからファイルを削除する (C#) API を使用できる標準的な[ `System.IO.File.Delete`](xref:System.IO.File.Delete*)します。 コードの移植性を犠牲 Java API を使用することもできます。 例:
 
@@ -180,5 +177,5 @@ System.IO.File.Delete("/storage/emulated/0/Android/data/com.companyname.app/file
 
 ## <a name="related-links"></a>関連リンク
 
-* [ローカル ファイルの Xamarin.Android サンプル**monodroid サンプル**](https://github.com/xamarin/monodroid-samples/tree/master/LocalFiles)
-* [Xamarin.Android でのアクセス許可](~/android/app-fundamentals/permissions.md)
+* [モノの Xamarin のローカルファイルのサンプル **-サンプル**](https://github.com/xamarin/monodroid-samples/tree/master/LocalFiles)
+* [Xamarin. Android のアクセス許可](~/android/app-fundamentals/permissions.md)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 10f240a8e245f24d4b8f646eb972cbe21d28b75c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 008858f987a5a3f83b518b98a0647ac5a68b0672
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289937"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768741"
 ---
 # <a name="working-with-watchos-localization-in-xamarin"></a>WatchOS で Xamarin のローカライズの操作
 
@@ -200,8 +200,6 @@ displayText.SetText (localizedDisplay);
 ウォッチでテストするときは、ウォッチの言語を変更、 **Apple Watch**ペアになっている iPhone 上のアプリ。
 
   ![](localization-images/phone-settings-sml.png "ペアになっている iphone、Apple Watch アプリで、ウォッチの言語を変更します。")
-
-
 
 ## <a name="related-links"></a>関連リンク
 

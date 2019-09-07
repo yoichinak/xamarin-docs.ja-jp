@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: f0caa2dd2c2b675fe85000a73e5d58ce7e277488
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: e9c87b76dc6845962450b8cb6fab921ea1748832
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281463"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768324"
 ---
 # <a name="working-with-watchos-screen-sizes-in-xamarin"></a>Xamarin での watchOS 画面サイズの操作
 
@@ -39,7 +39,6 @@ Apple Watch は、次の2つの画面サイズで使用できます。
 画面のサイズが大きいほど、小さい画面では、切り詰められたり非表示になるコンテンツが表示されることがあります。
 必ず両方のサイズでテストしてください。
 
-
 ### <a name="interface-design"></a>インターフェイスのデザイン
 
 アプリでは、サイズに関係なく同じコンテンツを画面に表示する必要があります。また、必要に応じて、要素を展開またはコントラクトします。 Visual Studio for Mac デザイナーの属性インスペクターでは、コンテンツを固定サイズに**合わせるために**、コンテナーまたはサイズ**に対して相対的**なを使用する必要があります。
@@ -48,13 +47,11 @@ Apple Watch は、次の2つの画面サイズで使用できます。
 
 [ウォッチ] 画面は黒いベゼルで囲まれているため、インターフェイスの周囲に埋め込みを指定することはお勧めしません。 要素を画面の端に対して残し、ベゼルがアプリの周りを自然に境界線にするようにします。
 
-
 ## <a name="watchos-simulator"></a>watchOS シミュレーター
 
 シミュレーターでテストする場合、 **[ハードウェア > デバイス]** メニューを使用して、2つの画面サイズを簡単に切り替えることができます。
 
 ![](screen-sizes-images/simulator.png "シミュレーターでは、[ハードウェアデバイス] メニューを使用して、2つの画面サイズを切り替えることができます。")
-
 
 ## <a name="image-resources"></a>イメージリソース
 
@@ -80,8 +77,6 @@ using (var image = UIImage.FromBundle (large ? "42mm-Walkway" : "38mm-Walkway"))
 ```
 
 詳細については、「[イメージコントロール](~/ios/watchos/user-interface/image.md)の使用」を参照してください。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/11/2018
-ms.openlocfilehash: 6aa9367495ba00138a38816ffab51c1ab43eec94
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 9a9e7e9c5d189527d4fbdcc2001d6f003fa63dd7
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524813"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70757878"
 ---
 # <a name="binding-a-jar"></a>.JAR のバインド
 
@@ -33,7 +33,6 @@ Xamarin ツールは、1つ以上の入力からバインドライブラリを�
 このガイドでは、1つのにバインドライブラリを作成する方法の基本について説明します。JAR ファイル。 ここでは、バインドのカスタマイズやデバッグが&ndash;不要な場合に、すべてが適切に動作する例を示します。 
 [メタデータを使用してバインディングを作成](~/android/platform/binding-java-library/customizing-bindings/java-bindings-metadata.md)すると、バインディングプロセスが完全に自動ではなく、一部の手動操作が必要になる、より高度なシナリオの例が提供されます。 一般的な Java ライブラリバインディングの概要 (基本的なコード例を含む) については、「 [Java ライブラリのバインド](~/android/platform/binding-java-library/index.md)」を参照してください。 
 
- 
 ## <a name="walkthrough"></a>チュートリアル
 
 次のチュートリアルでは、バインド ライブラリを作成します[Picasso](http://square.github.io/picasso/)、人気のある Android。イメージの読み込みとキャッシュ機能を提供する JAR です。 次の手順を使用してバインドは**picasso-2.x.x.jar** Xamarin.Android プロジェクトで使用できる新しい .NET アセンブリを作成します。 
@@ -74,7 +73,6 @@ Picasso.With (this)
 
 ```
 
-
 ### <a name="creating-the-bindings-library"></a>バインドライブラリの作成
 
 次の手順を開始する前にダウンロード[picasso-2.x.x.jar](http://repo1.maven.org/maven2/com/squareup/picasso/picasso/2.5.2/picasso-2.5.2.jar)します。
@@ -113,10 +111,7 @@ Java バインドライブラリプロジェクトを作成する場合は、を
 
 [![API 19 に設定されるターゲット API レベル](binding-a-jar-images/06-set-target-framework-sml.png)](binding-a-jar-images/06-set-target-framework.png#lightbox)
 
-
 最後に、バインドライブラリをビルドします。 いくつかの警告メッセージが表示される場合がありますが、バインドライブラリプロジェクトは正常にビルドされ、出力が生成されます。次の場所にある DLL:**JarBinding/bin/Debug/JarBinding**
-    
-
 
 ### <a name="using-the-bindings-library"></a>バインドライブラリの使用
 
@@ -191,13 +186,10 @@ public class MainActivity : Activity
 [![BindingTest が実行されているスクリーンショット](binding-a-jar-images/11-result-sml.png)](binding-a-jar-images/11-result.png#lightbox)
 
 おめでとうございます! Java ライブラリが正常にバインドされました。JAR を作成し、Xamarin. Android アプリで使用します。
- 
- 
+
 ## <a name="summary"></a>まとめ
 
 このチュートリアルでは、サードパーティのバインドライブラリを作成しました。JAR ファイルは、最小限のテストアプリにバインドライブラリを追加し、アプリを実行して、 C#コードが内に存在する Java コードを呼び出すことができることを確認します。JAR ファイル。 
-
-
 
 ## <a name="related-links"></a>関連リンク
 

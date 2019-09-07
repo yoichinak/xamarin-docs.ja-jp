@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/05/2017
-ms.openlocfilehash: 67ee8f1ef7f254eb77cfb186a478993b6fd3847c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 11c022298cbac60b86f4ef549e30cef3aa4d4660
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280025"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753405"
 ---
 # <a name="document-picker-in-xamarinios"></a>Xamarin のドキュメントピッカー。 iOS
 
@@ -202,7 +202,6 @@ IOS 8 より前の`NSMetadataQuery`では、ローカルファイルの変更 (�
 1. アプリケーションによって、アプリケーションコンテナーに新しいファイルが作成されます。
 1. アプリケーションコンテナーの変更を`NSMetadataQuery`確認し、必要な`NSMetadata`レコードを作成するまでに、遅延が発生します。
 
-
 `NSMetadata`レコードの作成には遅延があるため、アプリケーションでは、ローカルファイルの変更用とクラウドベースの変更用の2つのデータソースを開く必要がありました。
 
 ### <a name="stitching"></a>ステッチ
@@ -218,14 +217,10 @@ IOS 8 では`NSMetadataQuery` 、を、合成と呼ばれる新機能で直接�
 1. アプリケーションコンテナーのフックは、変更を確認し、 `NSMetadataQuery`を呼び出して必要`NSMetadata`なレコードを作成します。
 1. `NSMetadata`レコードは、ファイルの直後に作成され、アプリケーションで使用できるようになります。
 
-
 アプリケーションでは、結合を使用することによって、ローカルおよびクラウドベースのファイル変更を監視するためにデータソースを開く必要がなくなりました。 これで、アプリケーションは直接`NSMetadataQuery`に依存できます。
 
 > [!IMPORTANT]
 > 合成は、前のセクションで説明したように、アプリケーションがファイル調整を使用している場合にのみ機能します。 ファイルの調整が使用されていない場合、Api は既定で iOS 8 の既存の動作に設定されます。
-
-
-
 
 ### <a name="new-ios-8-metadata-features"></a>新しい iOS 8 メタデータ機能
 
@@ -236,12 +231,10 @@ IOS 8 では、次の新`NSMetadataQuery`機能がに追加されています。
 - ファイルのファイル属性`NSUrl_PromisedItems`にアクセスするための新しい API が用意されています。これらのファイルには、ローカルで使用可能なコンテンツが含まれていなくてもかまいません。
 - メソッドを使用して、指定されたファイルに関する`GetPromisedItemResourceValues`情報を取得します。または、メソッドを使用して、一度に複数のファイルに関する情報を取得します。 `GetPromisedItemResourceValue`
 
-
 メタデータを処理するために、2つの新しいファイル調整フラグが追加されました。
 
 - `NSFileCoordinatorReadImmediatelyAvailableMetadataOnly` 
 - `NSFileCoordinatorWriteContentIndependentMetadataOnly` 
-
 
 上記のフラグでは、ドキュメントファイルを使用するために、ドキュメントファイルの内容をローカルで使用する必要はありません。
 
@@ -256,7 +249,6 @@ using Foundation;
 using UIKit;
 using ObjCRuntime;
 using System.IO;
-
 
 #region Static Properties
 public const string TestFilename = "test.txt"; 
@@ -439,7 +431,6 @@ IOS 8 より前では、ドキュメントのプレビューを表示するに�
 
 既存の API の変更と共に、iCloud ベースのドキュメントを使用するための基本については、Xamarin iOS 8 モバイルアプリケーションでドキュメントピッカービューコントローラーを実装する準備が整いました。
 
-
 ## <a name="enabling-icloud-in-xamarin"></a>Xamarin での iCloud の有効化
 
 Xamarin iOS アプリケーションでドキュメントピッカーを使用するには、アプリケーションと Apple の両方で iCloud のサポートを有効にする必要があります。 
@@ -451,8 +442,6 @@ Xamarin iOS アプリケーションでドキュメントピッカーを使用�
 3. このアプリ ID を含むプロビジョニングプロファイルを作成します。
 
 「[機能の使用](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md)」ガイドでは、最初の2つの手順について説明します。 プロビジョニングプロファイルを作成するには、[プロビジョニングプロファイル](~/ios/get-started/installation/device-provisioning/index.md#provisioning-your-device)ガイドの手順に従います。
-
-
 
 次の手順では、iCloud 用にアプリケーションを構成するプロセスについて説明します。
 
@@ -539,7 +528,6 @@ namespace DocPicker
             Query.StartQuery ();
             Console.WriteLine ("Querying: {0}", Query.IsGathering);
         }
-
 
         [Export("queryDidFinishGathering:")]
         public void DidFinishGathering (NSNotification notification) {
@@ -833,7 +821,6 @@ IOS 8 より前の外部ドキュメントへのアクセスを見てみまし�
 1. ドキュメントが選択`UIDocumentInteractionController`され、新しいアプリケーションにドキュメントを送信するためにが使用されます。
 1. 最後に、元のドキュメントのコピーが新しいアプリケーションのコンテナーに配置されます。
 
-
 このドキュメントから、2つ目のアプリケーションが開いて編集できるようになります。
 
 ### <a name="discovering-documents-outside-of-an-apps-container"></a>アプリのコンテナー外のドキュメントの検出
@@ -910,20 +897,19 @@ if (presentationPopover!=null) {
 IPhone デバイスで実行したときに、上記のコードでドキュメントピッカーを表示する方法の例を次に示します。
 
 1. ユーザーがアプリケーションを起動し、メインインターフェイスが表示されます。   
- 
+
     [![](document-picker-images/image33.png "メインインターフェイスが表示されます。")](document-picker-images/image33.png#lightbox)
 1. ユーザーは画面の上部にある **[アクション]** ボタンをタップすると、利用可能なプロバイダーの一覧から**ドキュメントプロバイダー**を選択するよう求められます。   
- 
+
     [![](document-picker-images/image34.png "利用可能なプロバイダーの一覧からドキュメントプロバイダーを選択します")](document-picker-images/image34.png#lightbox)
 1. 選択した**ドキュメントプロバイダー**の**ドキュメントピッカービューコントローラー**が表示されます。   
- 
+
     [![](document-picker-images/image35.png "ドキュメントピッカービューコントローラーが表示されます")](document-picker-images/image35.png#lightbox)
 1. ユーザーは、**ドキュメントフォルダー**をタップしてその内容を表示します。   
- 
+
     [![](document-picker-images/image36.png "ドキュメントフォルダーの内容")](document-picker-images/image36.png#lightbox)
 1. ユーザーが**ドキュメント**を選択すると、**ドキュメントピッカー**が閉じられます。
 1. メインインターフェイスが再表示され、**ドキュメント**が外部コンテナーとそのコンテンツから読み込まれます。
-
 
 ドキュメントピッカービューコントローラーの実際の表示は、ユーザーがデバイスにインストールしたドキュメントプロバイダーと、どのドキュメントピッカーモードが実装されているかによって異なります。 上の例では、オープンモードを使用しています。他のモードの種類については、以下で詳しく説明します。
 
@@ -1021,13 +1007,12 @@ if (Bookmark != null) {
 ドキュメントピッカービューコントローラーには、2つの異なる操作モードがあります。
 
 1. **オープンモード**–このモードでは、ユーザーが外部ドキュメントを選択すると、ドキュメントピッカーによって、アプリケーションコンテナーにセキュリティスコープのブックマークが作成されます。   
- 
+
     [![](document-picker-images/image37.png "アプリケーションコンテナー内のセキュリティスコープのブックマーク")](document-picker-images/image37.png#lightbox)
 1. **インポートモード**–このモードでは、ユーザーが外部ドキュメントを選択すると、ドキュメントピッカーはブックマークを作成しません。代わりに、ファイルを一時的な場所にコピーし、次の場所にあるドキュメントへのアクセスをアプリケーションに提供します。   
- 
+
     [![](document-picker-images/image38.png "ドキュメントピッカーは、ファイルを一時的な場所にコピーし、この場所にあるドキュメントへのアクセスをアプリケーションに提供します。")](document-picker-images/image38.png#lightbox)   
  アプリケーションが何らかの理由で終了すると、一時的な場所が空になり、ファイルが削除されます。 アプリケーションがファイルへのアクセスを維持する必要がある場合は、コピーを作成して、アプリケーションコンテナーに配置する必要があります。
-
 
 Open モードは、アプリケーションが別のアプリケーションと共同作業を行い、そのアプリケーションでドキュメントに加えられた変更を共有する場合に便利です。 インポートモードは、アプリケーションがその変更を他のアプリケーションとドキュメントに共有したくない場合に使用されます。
 
@@ -1042,7 +1027,6 @@ Open モードは、アプリケーションが別のアプリケーションと
 1. 新しいドキュメントピッカービューコントローラーを開き、 `NSUrl`という`MoveToService`モードでに渡します。 
 1. ユーザーが新しい場所を選択すると、ドキュメントは現在の場所から新しい場所に移動されます。
 1. 作成中のアプリケーションがファイルにアクセスできるように、参照ドキュメントがアプリのアプリケーションコンテナーに書き込まれます。
-
 
 ドキュメントを外部の場所に移動するには、次のコードを使用します。`var picker = new UIDocumentPickerViewController (srcURL, UIDocumentPickerMode.MoveToService);`
 
@@ -1067,7 +1051,6 @@ IOS 8 では、Apple は、エンドユーザーが実際に存在する場所�
 - **ドキュメントピッカー拡張機能**–ユーザー `UIViewController`が別の保存場所からドキュメントを選択するためのグラフィカルインターフェイスを提供するサブクラスを提供します。 このサブクラスは、ドキュメントピッカービューコントローラーの一部として表示されます。
 - **ファイルの拡張子を指定**します。これは、実際にファイルの内容を提供する、UI 以外の拡張機能です。 これらの拡張機能は、ファイル調整`NSFileCoordinator` () によって提供されます。 これは、ファイル調整が必要なもう1つの重要なケースです。
 
-
 次の図は、ドキュメントプロバイダーの拡張機能を使用する場合の一般的なデータフローを示しています。
 
  [![](document-picker-images/image39.png "次の図は、ドキュメントプロバイダーの拡張機能を使用する場合の一般的なデータフローを示しています。")](document-picker-images/image39.png#lightbox)
@@ -1082,7 +1065,6 @@ IOS 8 では、Apple は、エンドユーザーが実際に存在する場所�
 1. ファイルコーディネーターは、カスタムファイルプロバイダー拡張機能を呼び出してファイルを取得します。
 1. ファイルの内容がファイルコーディネーターに返されます。
 1. ファイルの内容がアプリケーションに返されます。
-
 
 ### <a name="security-and-bookmarks"></a>セキュリティとブックマーク
 
@@ -1108,7 +1090,6 @@ IOS 8 では、Apple は、エンドユーザーが実際に存在する場所�
 1. `NSUrl`ファイルの URL を使用して、ファイルプロバイダーの拡張子を呼び出します。
 1. ファイル拡張子プロバイダーは、ファイルにアクセスして、ファイルの場所を`NSUrl`に返します。
 1. ファイルの場所はセキュリティ情報と共にバンドルされ、アプリケーションに返されます。
-
 
 ここから、アプリケーションはファイルにアクセスして通常どおり操作できます。
 

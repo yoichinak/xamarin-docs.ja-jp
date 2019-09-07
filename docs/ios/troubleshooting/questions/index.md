@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 57908027c6e9215504f410c0f9c989d6fbe3adad
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: a8549e03c96a5e21f7a235064ebd72fc671cf2b8
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290506"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769280"
 ---
 # <a name="ios-frequently-asked-questions"></a>iOS に関してよく寄せられる質問
 
@@ -35,7 +35,6 @@ Ios のバグによっては、ios バージョンを更新した後に開発者
 
 ### <a name="where-can-i-find-the-dsym-file-to-symbolicate-ios-crash-logssymbolicate-ios-crashmd"></a>[iOS クラッシュ ログにシンボル名を付加するための .dSYM ファイルはどこで入手できますか。](symbolicate-ios-crash.md)
 このガイドでは、クラッシュの診断に役立つように、iOS のクラッシュログを symbolicating するための基本的な手順について説明します。 また、iOS のクラッシュログを解釈する方法について & 詳細な情報を参照するための追加リソースへのリンクもあります。
-
 
 ### <a name="how-do-i-set-mono-runtime-environment-variables-for-ios-projects-in-xamarin-studioxs-mono-runtimemd"></a>[Xamarin Studio で iOS プロジェクトの Mono ランタイム環境変数を設定する方法を教えてください。](xs-mono-runtime.md)
 Mono のランタイム環境変数を設定する必要がある場合は **> [全般] ページで [プロジェクトオプション > 実行**する] を設定できます。
@@ -61,7 +60,6 @@ Xamarin 4 の時点では、 `.xcarchive` `ArchiveOnBuild`プロパティをに`
 ### <a name="why-does-my-app-submission-fail-with-disallowed-paths--itunesmetadataplist--found-at--itunesmetadata-disallowed-pathsmd"></a>[アプリの送信が "Disallowed paths ( "iTunesMetadata.plist" ) found at ..."\(許可されていないパス ("iTunesMetadata.plist") が...で見つかりました\) で失敗するのはなぜですか。](itunesmetadata-disallowed-paths.md)
 このエラーは、Apple の App Store の検証プロセスが変更された結果です。 この特定のエラーは、インストールした Xamarin の特定のバージョンには関連して_いない_ため、ダウングレードは役に立ち_ません_。 このガイドでは、この問題の解決方法に関する詳細情報へのリンクを示します。
 
-
 ## <a name="diagnosing-specific-error-messages"></a>特定のエラーメッセージの診断
 
 ### <a name="ios-designer-error-with-registerserviceporterror-registerserviceportmd"></a>[RegisterServicePort での iOS Designer エラー](error-registerserviceport.md)
@@ -83,8 +81,6 @@ IOS 9 での API の変更では、基になる API が想定しているよう�
 
 > [!IMPORTANT]
 > 以下の記事は、Xamarin の最近のバージョンで解決された問題に適用されます。 ただし、最新バージョンのソフトウェアで問題が発生した場合は、完全なバージョン管理情報と完全ビルドログ出力を使用して[新しいバグを作成](~/cross-platform/troubleshooting/questions/howto-file-bug.md)してください。
-
-
 
 ### <a name="ipa-file-is-0-bytesipa-zero-bytesmd"></a>[IPA ファイルが 0 バイトです](ipa-zero-bytes.md)
 以前のバージョンの Xamarin では、Windows 上の IPA ファイルが0バイトになる可能性があるという既知の問題がいくつかありました。

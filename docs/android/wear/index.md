@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2018
-ms.openlocfilehash: 13a9a02984828781cc6402e982a4b5151c077c52
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 5768a8fb402304d399e619ddb111aea24d975daf
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648331"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758326"
 ---
 # <a name="android-wear"></a>Android Wear
 
@@ -42,8 +42,6 @@ Android の摩耗デバイス、または磨耗用に構成された Android emu
 
 Android 開発者サイトでは、[ウェアラブルアクティビティ](https://developer.android.com/reference/android/support/wearable/activity/package-summary.html)、[インテント](https://developer.android.com/reference/com/google/android/wearable/intent/package-summary.html)、[認証](https://developer.android.com/reference/android/support/wearable/authentication/package-summary.html)、[複雑さ](https://developer.android.com/reference/android/support/wearable/complications/package-summary.html)、[複雑さの表示](https://developer.android.com/reference/android/support/wearable/complications/rendering/package-summary.html)、[通知](https://developer.android.com/reference/android/support/wearable/notifications/package-summary.html)[など、主要な磨耗 api に関する詳細情報を提供しています。ビュー](https://developer.android.com/reference/android/support/wearable/view/package-summary.html)と[WatchFace](https://developer.android.com/reference/android/support/wearable/watchface/package-summary.html)。
 
-
-
 ## <a name="samples"></a>サンプル
 
 Android の磨耗 (または[github](https://github.com/xamarin/monodroid-samples/tree/master/wear)に直接アクセス) を使用して、多数の[サンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Android+wear)を見つけることができます。
@@ -57,7 +55,6 @@ Android の磨耗 (または[github](https://github.com/xamarin/monodroid-sample
 |[GridViewPager](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-gridviewpager)|GridViewPager は2D ナビゲーションパターンを実装します。このパターンでは、ユーザーは垂直方向にスワイプし、水平方向に移動して、オプションやコンテンツを移動できます。|![GridViewPager のスクリーンショット](images/gridviewpager.png)|
 |[WatchFace](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-watchface)|WatchFace は、時間、分、および秒のアナログスタイルを使用したカスタムウォッチフェイスです。 このサンプルでは、現在の時刻を描画し、アンビエントモードと可視性の変更イベントを処理する watch face サービスを作成する方法を示します。 これには、タイムゾーンの変更をリッスンし、それに応じて自動的に時刻を更新するブロードキャストレシーバーが含まれます。|![WatchFace のスクリーンショット](images/gridviewpager.png)|
 
-
 ## <a name="videos"></a>ビデオ
 
 以下のビデオリンクをご確認ください。
@@ -67,7 +64,6 @@ Android の磨耗 (または[github](https://github.com/xamarin/monodroid-sample
 |[Android L など](https://blog.xamarin.com/webinar-recording-android-l-and-so-much-more/)&ndash; Android L Developer Preview では、多くの開発者向けに大量の新しい api が導入されました。これには、素材のデザイン、通知、新しいアニメーションなどを利用して、いくつかの名前を指定できます。|![プレゼンテーションのビデオスクリーンショット](images/video-android-l.png)|
 |[C#耳の中にあります。Google グラスと Android](https://www.youtube.com/watch?v=80H8tXByZQc) &ndash;のウェアラブルコンピューティングは、将来のもの (またはインスペクターガジェットエピソード) のように見えますが、多くの人が既に将来を採用しています。 C#開発者はこれを把握しており、ウェアラブルデバイスの力を活用するためのツールとスキルが既に用意されています (2014 の進化から)。|![プレゼンテーションのビデオスクリーンショット](images/video-eyes-ears.png)|
 |[Xamarin Android の新機能](https://www.youtube.com/watch?v=Gpqc2XZIQfU)&ndash; Android L、android 磨耗、android TV、android Auto、マテリアル設計、および ART は、2014の進化から、Xamarin の開発者として何を意味していますか。|![プレゼンテーションのビデオスクリーンショット](Images/video-whats-new.png)|
-
 
 <!--
 

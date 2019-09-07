@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/07/2017
-ms.openlocfilehash: aa1dd0b503dd59a89f526fef53d7d7756a3883de
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 869e2e5c3b074c928f3c49ca87c1c1801154df91
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291106"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769977"
 ---
 # <a name="working-with-tvos-buttons-in-xamarin"></a>Xamarin での tvOS ボタンの使用
 
@@ -63,7 +63,6 @@ TvOS アプリのボタンを操作する最も簡単な方法は、Xamarin Desi
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-
 1. **ソリューションエクスプローラー**で、 `Main.storyboard`ファイルをダブルクリックして開き、編集します。
 1. **ライブラリ**から**ボタン**をドラッグし、ビューにドロップします。 
 
@@ -82,7 +81,6 @@ TvOS アプリのボタンを操作する最も簡単な方法は、Xamarin Desi
     [![](buttons-images/storyboard05.png "コードエディター")](buttons-images/storyboard05.png#lightbox)
 1. すべてのファイルに変更を保存します。
 
-
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. **ソリューションエクスプローラー**で、 `Main.storyboard`ファイルをダブルクリックして開き、編集します。
@@ -97,10 +95,7 @@ TvOS アプリのボタンを操作する最も簡単な方法は、Xamarin Desi
     [![](buttons-images/storyboard03vs.png "[イベント] タブ")](buttons-images/storyboard03vs.png#lightbox)
 1. すべてのファイルに変更を保存します。
 
-
-
 ビューコントローラー (例`ViewController.cs`) ファイルを編集し、選択されているボタンを処理する次のコードを追加します。
-
 
 ```
 
@@ -128,9 +123,6 @@ namespace tvRemote
 
 > [!IMPORTANT]
 > `TouchUpInside` **イベントハンドラー**の作成時に、などの`UIButton`アクションを iOS デザイナーでに割り当てることはできますが、Apple TV にタッチスクリーンやタッチイベントのサポートがないため、このようなアクションは呼び出されません。 TvOS ユーザーインターフェイス要素の**アクション**を作成するときは、常に既定の**アクションの種類**を使用する必要があります。
-
-
-
 
 ストーリーボードの操作の詳細については、「 [Hello, tvOS クイックスタートガイド](~/ios/tvos/get-started/hello-tvos.md)」を参照してください。
 
@@ -189,9 +181,6 @@ View.AddSubview (button);
 
 > [!IMPORTANT]
 > など`TouchUpInside` の`UIButton`アクションをに割り当てることはできますが、Apple TV はタッチスクリーンやサポートタッチイベントを持っていないため、呼び出されません。 **AllEvents**や**primaryactiontriggered**などのイベントを常に使用する必要があります。
-
-
-
 
 <a name="Styling-a-Button" />
 
@@ -262,8 +251,6 @@ button.SetImage(UIImage.FromFile("my image.png"), UIControlState.Normal);
 ## <a name="summary"></a>Summary
 
 この記事では、tvOS アプリ内のボタンの設計と操作について説明しました。 ここでは、iOS デザイナーでボタンを操作する方法と、コードでC#ボタンを作成する方法を示しました。 最後に、ボタンのタイトルを変更し、そのスタイルと外観を変更する方法を示しました。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

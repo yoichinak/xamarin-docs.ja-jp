@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 15f5705fcf625d7c9aa6901cc919cea399f252e9
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 08d12a58b4a0d8a8f757df965bd9dfb73f1639b1
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70197702"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755384"
 ---
 # <a name="android-localization"></a>Android のローカライズ
 
@@ -72,11 +72,11 @@ Android のローカライズ戦略には、次の重要な部分があります
 Android アプリケーションは、次のようなリソースフォルダーのほとんどのコンテンツを管理します。
 
 - **layout** : axml レイアウトファイルが含まれます。
-- 描画用-イメージとその他の描画リソースを含みます。
+- 描画用-イメージとその他の描画**リソースを含み**ます。
 - **値**-文字列が含まれます。
 - **raw** -データファイルが含まれます。
 
-ほとんどの開発者は、あらかじめ用意されたディレクトリでの**dpi**サフィックスを使用してイメージの複数のバージョンを提供することに慣れています。 Android では、デバイスごとに適切なバージョンを選択します。 言語とカルチャの識別子を使用してリソースディレクトリを suffixing することで、複数の言語翻訳を提供する場合にも同じメカニズムが使用されます。
+ほとんどの開発者は、あらかじめ用意**されたディレクトリで**の**dpi**サフィックスを使用してイメージの複数のバージョンを提供することに慣れています。 Android では、デバイスごとに適切なバージョンを選択します。 言語とカルチャの識別子を使用してリソースディレクトリを suffixing することで、複数の言語翻訳を提供する場合にも同じメカニズムが使用されます。
 
 ![複数のカルチャ識別子のリソース/描画されたリソース/値フォルダーのスクリーンショット](localization-images/resources.png)
 
@@ -194,14 +194,13 @@ var translated = Resources.GetQuantityString (
 
 ### <a name="images"></a>画像
 
-ローカライズされたイメージは、文字列ファイルと同じ規則に従います。アプリケーションで参照されているすべてのイメージは、フォールバックされたディレクトリに配置する必要があります。
+ローカライズされたイメージは、文字列ファイルと同じ規則に従います。アプリケーションで参照されているすべてのイメージは、フォールバックされ**たディレクトリに**配置する必要があります。
 
-ロケール固有のイメージは、描画可能なフォルダーに配置する必要があります。これには、描画可能なフォルダーや、描画可能な **-ja** (dpi 指定子も追加できます) などがあります。
+ロケール固有のイメージは、描画可能なフォルダーに配置する必要があります。これには、描画可能なフォルダーや、描画可能な **-ja** (dpi 指定子も追加できます **) などが**あります。
 
-このスクリーンショットでは、4つのイメージが、描画できるディレクトリに保存されていますが、1つの**フラグ .png**のみが、他のディレクトリにローカライズされたコピーを持っています。
+このスクリーンショットでは、4つのイメージが、描画できるディレクトリに保存されていますが、1つの**フラグ .png**のみが、他**のディレクトリに**ローカライズされたコピーを持っています。
 
 ![複数の描画フォルダーのスクリーンショット (それぞれに1つ以上のローカライズされた .png ファイルが含まれています)](localization-images/drawable.png)
-
 
 #### <a name="other-resource-types"></a>その他のリソースの種類
 
@@ -210,7 +209,6 @@ var translated = Resources.GetQuantityString (
 Android 4.2 では、アプリケーション設定`android:supportsRtl="true"`を設定すると[右から左 (RTL) 言語](http://android-developers.blogspot.fr/2013/03/native-rtl-support-in-android-42.html)のサポートが導入されました。 リソース修飾子`"ldrtl"`をディレクトリ名に含めて、RTL 表示用にデザインされたカスタムレイアウトを含めることができます。
 
 リソースディレクトリの名前付けとフォールバックの詳細については、別の[リソースを提供](https://developer.android.com/guide/topics/resources/providing-resources.html#AlternativeResources)するための Android のドキュメントを参照してください。
-
 
 ### <a name="app-name"></a>アプリ名
 
@@ -256,12 +254,9 @@ adb shell setprop persist.sys.locale fr-CA;stop;sleep 5;start
 > [!TIP]
 > メニュー項目のアイコンと場所をメモしておき、言語を元の設定に戻すことができるようにします。
 
-
 ## <a name="summary"></a>Summary
 
 この記事では、組み込みのリソース処理を使用した Android アプリケーションのローカライズの基本について説明します。 [このクロスプラットフォームガイド](~/cross-platform/app-fundamentals/localization.md)では、IOS、Android、クロスプラットフォーム (Xamarin. Forms) アプリの I18n と L10n の詳細について説明します。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

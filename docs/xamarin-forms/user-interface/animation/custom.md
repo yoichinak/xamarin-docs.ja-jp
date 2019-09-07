@@ -7,19 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/14/2016
-ms.openlocfilehash: b195e63bcc88c4d1c659216f99ab698773f73e9e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 86fac9dd0c2f9281a0c828ace68fbf77679dce5b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656805"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759836"
 ---
 # <a name="custom-animations-in-xamarinforms"></a>Xamarin.Forms でのカスタム アニメーション
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-custom)
 
 _アニメーション クラスは、1 つまたは複数のアニメーション オブジェクトを作成する ViewExtensions クラスで拡張メソッドで、すべての Xamarin.Forms のアニメーションのビルディング ブロックです。この記事では、アニメーション クラスを使用して作成、アニメーションを取り消すと、複数のアニメーションを同期するには、既存のアニメーションの方法でアニメーション化するプロパティをアニメーション化するカスタムのアニメーションを作成する方法を示します。_
-
 
 作成時に、パラメーターの数を指定する必要があります、`Animation`をアニメーション化するプロパティの開始と終了値を含むオブジェクトとプロパティの値を変更するコールバック。 `Animation`オブジェクト実行および同期が可能な子アニメーションのコレクションの管理もできます。 詳細については、次を参照してください。[子アニメーション](#child)します。
 
@@ -180,7 +179,6 @@ await boxView.ColorTo(Color.Blue, Color.Red, c => boxView.Color = c, 4000);
 ## <a name="summary"></a>まとめ
 
 この記事では、使用する方法を示しました、 [ `Animation` ](xref:Xamarin.Forms.Animation)クラスを作成、アニメーションをキャンセル、複数のアニメーションを同期するには、既存のアニメーションによってアニメーション化するプロパティをアニメーション化するカスタムのアニメーションを作成するにはメソッド。 `Animation`クラスは、すべての Xamarin.Forms のアニメーションのビルド ブロックです。
-
 
 ## <a name="related-links"></a>関連リンク
 

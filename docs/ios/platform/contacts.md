@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: 96dbb60b8754223203394745bc86af2297cb5ff3
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: fa2e287775e6669bd8bdf2728d9c676c451af69b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70278535"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753295"
 ---
 # <a name="contacts-and-contactsui-in-xamarinios"></a>ContactsUI の Contacts と連絡先
 
@@ -31,9 +31,6 @@ Ios 9 の導入により、Apple は2つの新しいフレームワーク`Contac
 
 > [!IMPORTANT]
 > Ios 8 `AddressBook` ( `AddressBookUI`およびそれ以前) で使用されていた既存のおよびフレームワークは、ios 9 では非`Contacts`推奨`ContactsUI`とされており、既存の Xamarin iOS アプリでできるだけ早く新しいとフレームワークに置き換える必要があります。 新しいアプリは、新しいフレームワークに対して作成する必要があります。
-
-
-
 
 以下のセクションでは、これらの新しいフレームワークと、それらを Xamarin iOS アプリに実装する方法について説明します。
 
@@ -359,7 +356,6 @@ PresentViewController(view, true, null);
 ## <a name="summary"></a>まとめ
 
 この記事では、Xamarin. iOS アプリケーションで連絡先と連絡先の UI フレームワークを操作する方法について詳しく説明しました。 まず、Contact framework が提供するさまざまな種類のオブジェクトと、それらを使用して新規作成や既存の連絡先へのアクセスを行う方法について説明します。 また、連絡先 UI フレームワークを調べて既存の連絡先を選択し、連絡先情報を表示します。
-
 
 ## <a name="related-links"></a>関連リンク
 

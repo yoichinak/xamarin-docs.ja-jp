@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: c40d21a95db564d0fdcbea5772a88e94446c07ce
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: 5c9a11073a7e65d90e0776d0b43c9e3bd100a10d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69887521"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758639"
 ---
 # <a name="xamarinandroid-listview"></a>Xamarin Android ListView
 
@@ -214,11 +214,9 @@ ListAdapter = new ArrayAdapter<string> (this, Resource.Layout.list_item, countri
 - [ContentProvider の使用](~/android/user-interface/layouts/list-view/content-provider.md)
 - [ListView とアクティビティのライフサイクル](~/android/user-interface/layouts/list-view/activity-lifecycle.md)
 
-
 ## <a name="summary"></a>まとめ
 
 この一連のトピック`ListView`では、 `ListActivity`の組み込み機能を使用する方法の例をいくつか紹介しました。 ここでは、カラフル`ListView`なレイアウトと SQLite データベースの使用を許可するのカスタム実装について説明し、 `ListView`実装におけるアクティビティのライフサイクルの関連性について簡単に触れました。
-
 
 ## <a name="related-links"></a>関連リンク
 

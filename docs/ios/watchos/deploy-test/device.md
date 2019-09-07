@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 4b1e232259d7b1816e64298b5c0b8853d8385c20
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 6d3756f4215174e17ec45518f430dc38270e3289
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283863"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768699"
 ---
 # <a name="testing-on-apple-watch-devices"></a>Apple Watch デバイスでのテスト
 
@@ -64,7 +64,6 @@ ms.locfileid: "70283863"
 
 ![](device-images/options-selectprofile.png "プロビジョニングプロファイルの一覧")
 
-
 <a name="testing" />
 
 ## <a name="testing-on-a-watch-device"></a>監視デバイスでのテスト
@@ -88,7 +87,6 @@ ms.locfileid: "70283863"
 
 8. Watch アプリが正常にインストールされている場合、このアイコンは、アプリのテストを開始するために [ウォッチ] 画面に表示されます。
 
-
 ## <a name="troubleshooting"></a>トラブルシューティング
 
 デプロイ中にエラーが発生した場合は、**ビュー > 埋め込み > デバイスログに埋め込ま**れ、エラーに関する詳細情報が表示されます。 いくつかのエラーとその原因を以下に示します。
@@ -103,11 +101,9 @@ ms.locfileid: "70283863"
 
 これは今後のリリースで修正される予定です。これにより、インクリメンタルビルドを再度有効にして、より高速なビルド時間を利用することができます。
 
-
 ### <a name="watch-app-fails-to-start-while-debugging-on-device"></a>デバイスでのデバッグ中に Watch アプリを起動できない
 
 物理デバイスで watch アプリをデバッグしようとすると、アイコン & の読み込みスピンボタンだけが表示されます (最終的にはタイムアウトになります)。 これについては、今後のリリースで対処されます。回避策としては、デバッグを許可しないリリースビルドを実行する方法があります。
-
 
 ### <a name="invalid-application-executable-or-application-verification-failed"></a>無効なアプリケーション実行可能ファイルまたはアプリケーションの検証に失敗しました
 
@@ -131,8 +127,6 @@ Invalid executable/Application Verification Failed
 
 - Watch アプリの**アプリ ID**が、デベロッパーセンターで使用できない権利 (アプリグループなど) を正しく設定していません。
 
-
-
 ### <a name="install-never-finished"></a>インストールが完了していません
 
 ```csharp
@@ -142,7 +136,6 @@ SPErrorGizmoInstallNeverFinishedErrorMessage
 このエラーは、Watch アプリの**情報の plist**ファイルで、不要な (および無効な) キーを示している可能性があります。 IOS アプリまたは watch 拡張機能用のキーを Watch アプリに含めないでください。
 
 <!--eg. NSLocationAlwaysUsageDescription -->
-
 
 ### <a name="waiting-for-debugger-to-connect"></a>"デバッガーが接続するのを待機しています"
 
@@ -156,4 +149,3 @@ waiting for debugger to connect
 
 **.Csproj**に追加され**たファイルは**、展開時に iOS 拡張機能のパッケージ化に干渉する可能性があります。 [バグ](https://bugzilla.xamarin.com/show_bug.cgi?id=29912)を追跡することができます。
 回避策として、.csproj ファイルを編集し、**最後の要素になるように**手動で変更します。
-

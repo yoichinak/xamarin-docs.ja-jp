@@ -6,20 +6,18 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: 4d9bf7b7a43c7c258bc60e9dfea1626e5c304b03
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 9fb5c696e830710e6ad99140477eedcbfe0e8823
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522871"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70764689"
 ---
 # <a name="adding-a-second-toolbar"></a>2 番目のツール バーの追加
-
 
 ## <a name="overview"></a>概要 
 
 は`Toolbar` 、1つのアクティビティ内で複数&ndash;回使用できる操作バーを置き換える以外にも、画面上の任意の場所に配置するようにカスタマイズすることができ、画面の部分的な幅にのみまたがるように構成できます。 次の例では、2番目`Toolbar`のを作成し、画面の下部に配置する方法を示しています。 これ`Toolbar`は、**コピー**、**切り取り**、および**貼り付け**の各メニュー項目を実装します。 
-
 
 ## <a name="define-the-second-toolbar"></a>2番目のツールバーを定義する 
 
@@ -78,8 +76,6 @@ android:background="?android:attr/colorAccent
 
 [![画面の下部に黄色い2番目のツールバーがあるアプリのスクリーンショット](adding-a-second-toolbar-images/01-second-toolbar-sml.png)](adding-a-second-toolbar-images/01-second-toolbar.png#lightbox)
 
-
- 
 ## <a name="add-edit-menu-items"></a>編集メニュー項目の追加 
 
 ここでは、[編集] メニュー項目を下部`Toolbar`に追加する方法について説明します。 
@@ -95,8 +91,6 @@ android:background="?android:attr/colorAccent
 4. 新しいメニュー項目に対し`OnCreate`て、のクリックハンドラーを実装します。 
 
 以下のセクションでは、このプロセスの詳細について説明します。**切り取り**、**コピー**、**貼り付け**の各メニュー項目が下部`Toolbar`に追加されます。 
-
-
 
 ### <a name="define-the-edit-menu-resource"></a>[編集] メニューリソースの定義
 
@@ -125,8 +119,6 @@ android:background="?android:attr/colorAccent
 
 この XML は、**切り取り**、**コピー**、**貼り付け**の各メニュー項目を作成します (操作バー `mipmap-`を[置き換える](~/android/user-interface/controls/tool-bar/replacing-the-action-bar.md)ためにフォルダーに追加されたアイコンを使用します)。
 
-
-
 ### <a name="inflate-the-menus"></a>メニューを拡大する
 
 `OnCreate` **MainActivity.cs**のメソッドの最後に、次のコード行を追加します。 
@@ -140,7 +132,7 @@ editToolbar.MenuItemClick += (sender, e) => {
 };
 ```
 
-このコードは`edit_toolbar` 、増えで定義されているビューを検索し、そのタイトルを**編集用**に設定して、そのメニュー項目 ( **edit_menus**で定義) をします。 これは、タップされた編集アイコンを示すトーストを表示するメニュークリックハンドラーを定義します。 
+`edit_toolbar`このコードは、増えで定義されているビューを検索**し、その**タイトルを**編集用**に設定して、そのメニュー項目 ( **edit_menus**で定義) をします。 これは、タップされた編集アイコンを示すトーストを表示するメニュークリックハンドラーを定義します。 
 
 アプリケーションをビルドし、実行します。 アプリを実行すると、上に追加されたテキストとアイコンが次のように表示されます。 
 
@@ -153,8 +145,6 @@ editToolbar.MenuItemClick += (sender, e) => {
 いずれかのツールバーの [メニュー項目] をタップすると、結果の toasts が表示されます。 
 
 [![[保存]、[コピー]、[貼り付け] の各メニュー項目のスクリーンショット](adding-a-second-toolbar-images/04-menu-action-sml.png)](adding-a-second-toolbar-images/04-menu-action.png#lightbox)
-
-
 
 ## <a name="the-up-button"></a>[上へ] ボタン 
 
@@ -183,9 +173,7 @@ SupportActionBar.SetHomeButtonEnabled (true);
 
 [![ツールバーの上のボタンの左矢印のスクリーンショットの例](adding-a-second-toolbar-images/05-up-button-sml.png)](adding-a-second-toolbar-images/05-up-button.png#lightbox)
 
-このボタンをタップすると、アプリはに`MainActivity`戻ります。 複数レベルの階層を持つより複雑なアプリでは、このボタンをタップすると、ユーザーが前の画面ではなく、アプリの次の最上位レベルに戻ります。 
-
-
+**このボタンをタップ**すると、アプリはに`MainActivity`戻ります。 複数レベルの階層を持つより複雑なアプリでは、このボタンをタップすると、ユーザーが前の画面ではなく、アプリの次の最上位レベルに戻ります。 
 
 ## <a name="related-links"></a>関連リンク
 

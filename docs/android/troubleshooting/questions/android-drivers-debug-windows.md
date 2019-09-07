@@ -7,28 +7,27 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/22/2018
-ms.openlocfilehash: 85045967f5c63eb39c45f917b957d2a393a3a068
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 8be3f1b8803aa7e052ebc89af51dad3b659f95f5
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60945563"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70757329"
 ---
 # <a name="what-usb-drivers-do-i-need-to-debug-android-on-windows"></a>Windows 上で Android をデバッグするために必要な USB ドライバーを教えてください
 
-## <a name="finding-usb-drivers"></a>USB ドライバーを見つける
+## <a name="finding-usb-drivers"></a>USB ドライバーの検索
 
-Windows で開発するときに、Android デバイスでデバッグするには互換性のある USB ドライバーをインストールする必要があります。 Android SDK Manager には、既定では、ここの説明に従って、Nexus デバイスのサポートを追加する"Google USB Driver"が含まれています。 [https://developer.android.com/sdk/win-usb.html](https://developer.android.com/sdk/win-usb.html)
+Windows で開発するときに Android デバイスでデバッグするには互換性のある USB ドライバーをインストールする必要があります。 Android SDK マネージャーには、既定で "Google USB ドライバー" が含まれています。これにより、次の説明に従って、デバイスの追加がサポートされます。[https://developer.android.com/sdk/win-usb.html](https://developer.android.com/sdk/win-usb.html)
 
-その他のデバイスには、具体的には、デバイスの製造元によって発行された USB ドライバーが必要です。 このガイドでは、最も一般的な製造元のいくつかのリンクが含まれています。 [https://developer.android.com/tools/extras/oem-usb.html](https://developer.android.com/tools/extras/oem-usb.html)
+その他のデバイスには、デバイスの製造元によって特別に発行された USB ドライバーが必要です。 このガイドには、最も一般的な製造元向けのリンクがいくつか含まれています。[https://developer.android.com/tools/extras/oem-usb.html](https://developer.android.com/tools/extras/oem-usb.html)
 
-## <a name="alternatives"></a>代替手段
+## <a name="alternatives"></a>選択肢
 
-Manfacturer によっては難しいために必要な正確な USB ドライバーを追跡することができます。 Android アプリをテストするためのいくつかの代替は、Windows、Android エミュレーターを使用して、外部のテスト サービスの使用などで開発します。 その例には次のものがあります。
+Manfacturer よっては、必要な USB ドライバーを正確に追跡するのが困難な場合があります。 Windows で開発された Android アプリをテストするための代替手段として、Android エミュレーターの使用や外部テストサービスの使用などがあります。 その例には次のものがあります。
 
-- [App Center テスト](https://docs.microsoft.com/appcenter/test-cloud/)- クラウド サービスを何百もの実際の Android デバイスで実行をテストします。
+- [App Center テスト](https://docs.microsoft.com/appcenter/test-cloud/)-クラウドテストサービスは、数百の実際の Android デバイスで実行されます。
 
 - [Visual Studio Emulator for Android](https://visualstudio.microsoft.com/vs/msft-android-emulator/)
 
 - [Android Emulator でのデバッグ](~/android/deploy-test/debugging/debug-on-emulator.md)
-

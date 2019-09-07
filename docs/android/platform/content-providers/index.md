@@ -7,17 +7,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: 2533ad80571e2c8fe94cb4a2dcb0ec0ff0dd68cb
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 3dd321840c4be0729b843897ad51cf5bd2b61196
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643588"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758913"
 ---
 # <a name="intro-to-contentproviders"></a>ContentProviders の概要
 
 _Android オペレーティングシステムでは、コンテンツプロバイダーを使用して、メディアファイル、連絡先、予定表情報などの共有データへのアクセスを容易にします。この記事では、ContentProvider クラスについて説明し、その使用方法の2つの例を示します。_
-
 
 ## <a name="content-providers-overview"></a>コンテンツプロバイダーの概要
 
@@ -40,8 +39,6 @@ _Android オペレーティングシステムでは、コンテンツプロバ�
 カスタム`ContentProviders`は、独自のアプリ内で使用するデータをパッケージ化したり、他のアプリケーション (カスタム検索、コピー/貼り付けなどの特殊な用途を含む) で使用したりするための便利な方法です。
 
 このセクションのトピックでは、コードの使用と記述`ContentProvider`の簡単な例をいくつか紹介します。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

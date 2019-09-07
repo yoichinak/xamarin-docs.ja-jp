@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 28dfdbd7837f87d003e5b949ea3f7421613997f7
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 10f065d6e7b1cacb217cb510c57707662a196664
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288300"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768569"
 ---
 # <a name="working-with-tvos-table-views-in-xamarin"></a>Xamarin での tvOS テーブルビューの使用
 
@@ -952,8 +952,6 @@ TvOS は iOS に基づいているため、テーブルビューとテーブル�
 ## <a name="summary"></a>Summary
 
 この記事では、tvOS アプリ内でのテーブルビューの設計と操作について説明しました。 とでは、分割ビュー内でテーブルビューを操作する例を示しています。これは、tvOS アプリでのテーブルビューの一般的な使用方法です。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

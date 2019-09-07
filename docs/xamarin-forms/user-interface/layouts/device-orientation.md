@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/09/2015
-ms.openlocfilehash: dccae3b3da4ab84c8ba14f204263e4230f31e833
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: d988be9163c0a6e12735425a139c03d9641fa95c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656783"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772760"
 ---
 # <a name="device-orientation"></a>デバイスの向き
 
@@ -225,7 +225,6 @@ protected override void OnSizeAllocated (double width, double height){
 
 - `outerStack` 最適な活用するために使用可能な領域の向きに応じて、水平または垂直スタックとして、画像とコントロールを表示するには、調整されます。
 
-
 ### <a name="absolutelayout"></a>AbsoluteLayout
 
 縦に表示される、次のアプリケーションを検討してください。
@@ -277,7 +276,6 @@ Title="AbsoluteLayout - XAML" BackgroundImageSource="deer.jpg">
 
 - ページのレイアウトされているため、手続き型コードの応答性を導入する必要はありません。
 - `ScrollView`が場合でも、画面の高さのボタンとイメージの固定の高さの合計より小さいかを表示するラベルに使用されています。
-
 
 ### <a name="relativelayout"></a>RelativeLayout
 
@@ -471,7 +469,6 @@ protected override void OnSizeAllocated (double width, double height){
 次の点に注意してください。
 
 - ページのレイアウトされているため、コントロールのグリッドの配置を変更する方法があります。
-
 
 ## <a name="related-links"></a>関連リンク
 

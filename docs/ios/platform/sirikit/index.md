@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: e3ef6dd857760d722fe84f98250b8db9e398ea2e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 802cf60f88f80ce7d67cd9fd8ec85ca343fd2916
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287184"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769389"
 ---
 # <a name="sirikit-in-xamarinios"></a>Xamarin. iOS の SiriKit
 
@@ -38,10 +38,6 @@ Siri は、**ドメイン**の概念、関連するタスクの既知のアク�
 ## <a name="implementing-sirikitiosplatformsirikitimplementing-sirikitmd"></a>[SiriKit の実装](~/ios/platform/sirikit/implementing-sirikit.md)
 
 この記事では、Xamarin iOS アプリで SiriKit サポートを実装するために必要な手順について説明します。 開発者は、SiriKit のサポートをアプリに追加する前に、前述の「SiriKit の概念を理解する」ガイドを読む必要があります。これは、実装を成功させるために必要な重要な概念について説明しています。
-
-
-
-
 
 ## <a name="related-links"></a>関連リンク
 

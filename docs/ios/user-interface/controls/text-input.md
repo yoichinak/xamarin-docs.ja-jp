@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: ef9067f3a0694c66d21d6614277e8543aebbc299
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 8f47ebdd8c1ba220229c6e652af99e8fa3ae2960
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70279342"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768818"
 ---
 # <a name="text-input-in-xamarinios"></a>Xamarin. iOS でのテキスト入力
 
@@ -27,7 +27,6 @@ ms.locfileid: "70279342"
 アウトレットに名前を付けてストーリーボードファイルを保存すると、Visual Studio for Mac に`.designer.cs`よって部分クラスが更新C#され、コントロールを参照するコードをクラスファイルに追加できます。 各コントロールには、 C#コード内でアクセスできる独自の固有のプロパティとイベントがあります。
 
  <a name="UITextField" />
-
 
 ## <a name="uitextfield"></a>UITextField
 
@@ -46,7 +45,6 @@ ms.locfileid: "70279342"
 - **[表示]** –キーボードの外観スタイルを制御します。濃いまたは淡色のテーマが適用されます。
 - **Return key** –返されるアクションをより正確に反映するために、リターンキーのラベルを変更します。 サポートされる値は、[検索]、[結合]、[次へ]、[ルート]、[完了]、[検索] です。
 - **Secure** –入力がマスクされているかどうか (パスワード入力など) を識別します。
-
 
 という名前`textfield1`の uitextfield がデザイナーを使用して画面に追加されている場合は、次C#のようにのプロパティを設定または変更できます。
 
@@ -72,7 +70,6 @@ View.Add(textfield1);
 
  <a name="UITextView" />
 
-
 ## <a name="uitextview"></a>UITextView
 
 コントロール`UITextView`を使用して、読み取り専用のテキストを表示したり、複数行のテキスト入力を許可したりできます。 と同じオプションが多数あります`UITextField` (大文字と小文字の修正など)。
@@ -84,7 +81,6 @@ View.Add(textfield1);
 - **動作**–テキストを編集可能にするか、読み取り専用にするかを指定します。
 - **検出**–入力データを検出し、呼び出しをトリガーできる電話番号、マップへのリンクになるアドレス、Safari で開かれている Url、カレンダーでイベントになる日付と時刻などの、クリック可能な要素に変換します。
 
-
 UITextView がデザイナーを使用して画面に追加されている場合は、次のようにプロパティを設定または変更できます。
 
 ```csharp
@@ -92,8 +88,6 @@ textview1.Text = "Lorem ipsum..."; // lots of text can go here
 textview1.Editable = true;
 textview1.DataDetectorTypes = UIDataDetectorType.PhoneNumber | UIDataDetectorType.Link;
 ```
-
-
 
 ## <a name="related-links"></a>関連リンク
 

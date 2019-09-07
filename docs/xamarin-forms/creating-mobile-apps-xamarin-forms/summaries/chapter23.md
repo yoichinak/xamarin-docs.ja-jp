@@ -1,18 +1,18 @@
 ---
 title: 第 23 章の概要です。 トリガーと動作
-description: Xamarin.Forms によるモバイル アプリの作成。第 23 章の概要です。 トリガーと動作
+description: Xamarin を使用した Mobile Apps の作成:第 23 章の概要です。 トリガーと動作
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 19E84B5D-46B4-4B6D-A255-87BEFB011261
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: ddbb96836fa1aa9611701bd7d645d9e85ad28027
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 8a1274a8447f49ce39f9c92703bbaec9e875b9e9
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61332133"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760588"
 ---
 # <a name="summary-of-chapter-23-triggers-and-behaviors"></a>第 23 章の概要です。 トリガーと動作
 
@@ -183,8 +183,6 @@ A [ `RotateAction` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/
 最後のサンプルでは、 [ **MultiColorSliders** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/MultiColorSliders)ラジオ ボタンを使用して次の 3 つの異なる色の選択ビューの間で切り替えることができます。 3 つのビュー フェードインとフェードアウトを使用して、 [ `FadeEnableAction` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/FadeEnableAction.cs)で、 [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit)ライブラリ。
 
 方向を縦長と横長の使用の間での変更にも対応して、プログラム、 [ `GridOrientationBehavior` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/GridOrientationBehavior.cs)で、 **Xamarin.FormsBook.Toolkit**ライブラリ。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

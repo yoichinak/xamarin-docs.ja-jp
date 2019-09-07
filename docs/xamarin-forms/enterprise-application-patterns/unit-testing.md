@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: c631ca73d69ea630592920a32804512f89d5baaf
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 0fb63c650e73bce5a08b204f942f0c19583e4899
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69529074"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770685"
 ---
 # <a name="unit-testing-enterprise-apps"></a>エンタープライズアプリの単体テスト
 
@@ -225,7 +225,6 @@ public void CheckValidationFailsWhenOnlyForenameHasDataTest()
 依存オブジェクトを、依存オブジェクトの動作をシミュレートするモックオブジェクトに置き換えることにより、テスト対象のオブジェクトの動作を分離できます。 これにより、web サービスやデータベースなどの扱いにくいリソースを必要とせずに、単体テストを実行できるようになります。
 
 MVVM アプリケーションからモデルをテストし、モデルを表示することは、他のクラスのテストと同じであり、同じツールと手法を使用できます。
-
 
 ## <a name="related-links"></a>関連リンク
 

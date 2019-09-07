@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: conceptdev
 ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: 87de42504081374f830a4fe286476ad822eeed99
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 8f38200e8274a36783ac7bd1aec4b695036f83e2
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280161"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769637"
 ---
 # <a name="multitasking-for-ipad-in-xamarinios"></a>Xamarin の iPad のマルチタスキング
 
@@ -40,7 +40,6 @@ iOS 9 では、特定の iPad ハードウェアで同時に2つのアプリを�
 > [!VIDEO https://youtube.com/embed/GctYAozoLr8]
 
 **IPad 用のマルチタスキングビデオ**
-
 
 <a name="Multitasking-QuickStart" />
 
@@ -251,8 +250,6 @@ PIP ビデオの再生を無効にするには、アプリで次の操作を行�
 ## <a name="summary"></a>Summary
 
 この記事では、Ipad の新しいマルチタスキング機能である Xamarin iOS アプリを正常に動作させるために必要な手順について説明しました。 さらに、最適ではないアプリのマルチタスクのオプトアウトについても説明しています。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

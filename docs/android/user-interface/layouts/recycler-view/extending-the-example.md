@@ -7,18 +7,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/13/2018
-ms.openlocfilehash: ea3bfccd9133f6bb4cdf2e2a72bd20a307fb80d1
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 2fc2eabb26a9635b569cc6d3a51195fb554ca950
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522496"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758606"
 ---
 # <a name="extending-the-recyclerview-example"></a>RecyclerView の例を拡張する
 
-
 [基本的な RecyclerView の例](~/android/user-interface/layouts/recycler-view/recyclerview-example.md)で説明されている基本的な&ndash;アプリでは、実際にはスクロールするだけではなく、写真項目の固定リストが表示されます。 実際のアプリケーションでは、ユーザーはディスプレイの項目をタップすることで、アプリと対話できることを期待しています。 また、基になるデータソースが変更される (またはアプリによって変更される) 可能性があります。また、表示の内容は、これらの変更との整合性が維持されている必要があります。 以下のセクションでは、アイテムクリックイベントを処理し、基になるデータ`RecyclerView`ソースが変更されたときに更新する方法について説明します。
-
 
 ### <a name="handling-item-click-events"></a>項目クリックイベントの処理
 
@@ -164,7 +162,6 @@ randomPickBtn.Click += delegate
 [![スワップ前の最初のスクリーンショット、スワップ後の2番目のスクリーンショット](extending-the-example-images/02-random-pick-sml.png)](extending-the-example-images/02-random-pick.png#lightbox)
 
 もちろん、2 `NotifyDataSetChanged`つの`NotifyItemChanged`呼び出しを行うのではなく、を呼び出すこともできます`RecyclerView`が、コレクション内の項目が2つしか変更されていなくても、はコレクション全体を強制的に更新します。 の呼び出しは、を呼び出す`NotifyDataSetChanged`よりもはるかに効率的です。 `NotifyItemChanged`
-
 
 ## <a name="related-links"></a>関連リンク
 

@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: 7e3f871d9d5992429c6f6619b2f5ff7059558045
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 69d5222bb6c50870d0c42bea6ff71236e3d1580c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525950"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70754564"
 ---
 # <a name="introduction"></a>概要
 
@@ -38,7 +38,6 @@ ms.locfileid: "69525950"
 - 既存のデータベーススキルを持つ開発者は、その知識を活用してデータベースとデータアクセスコードを設計できます。
 - 接続されたアプリケーションのサーバーコンポーネントからのデータモデルは、モバイルアプリケーションで (全体または一部で) 再利用される場合があります。
 
-
 ## <a name="sqlite-database-engine"></a>SQLite データベースエンジン
 
 SQLite は、モバイルプラットフォーム用に Google によって採用されたオープンソースのデータベースエンジンです。 SQLite データベースエンジンは両方のオペレーティングシステムに組み込まれているため、開発者はこれを利用することはできません。 SQLite は、次の理由により、クロスプラットフォームモバイル開発に適しています。
@@ -48,13 +47,11 @@ SQLite は、モバイルプラットフォーム用に Google によって採�
 - ファイル形式は、32-または64ビット、ビッグエンディアン、リトルエンディアンのいずれのシステムでも、プラットフォーム間で簡単に使用できます。
 - ほとんどの SQL92 標準が実装されています。
 
-
 SQLite は小規模で高速なので、使用に関していくつかの注意事項があります。
 
 - 一部の外部結合構文はサポートされていません。
 - Table RENAME と ADDCOLUMN のみがサポートされています。 スキーマに対して他の変更を行うことはできません。
 - ビューは読み取り専用です。
-
 
 SQLite の詳細については、 [SQLite.org](http://SQLite.org)を参照してください。ただし、Xamarin で sqlite を使用するために必要なすべての情報は、このドキュメントおよび関連するサンプルに含まれています。 Android 2 以降では、SQLite データベースエンジンが Android でサポートされています。
 この章では説明しませんが、SQLite は Windows Phone および Windows アプリケーションでも使用できます。
@@ -63,7 +60,6 @@ SQLite の詳細については、 [SQLite.org](http://SQLite.org)を参照し�
 
 SQLite は Windows プラットフォームでも使用できますが、このドキュメントでは説明しません。
 詳細については、「 [Tasky](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)と[tasky Pro](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)ケーススタディ」と「 [Tim heuer のブログ](http://timheuer.com/blog/archive/2012/06/28/seeding-your-metro-style-app-with-sqlite-database.aspx)」を参照してください。
-
 
 ## <a name="related-links"></a>関連リンク
 

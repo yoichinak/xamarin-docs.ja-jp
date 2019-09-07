@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: a153c6115605ca2a58df233186fa45d200d8b99f
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: c1e7d6cbb2598f64a331257c9b14ecfa119193f6
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287297"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768795"
 ---
 # <a name="creating-user-interface-objects-in-xamarinios"></a>Xamarin でのユーザーインターフェイスオブジェクトの作成
 
@@ -43,11 +43,11 @@ IOS Designer でユーザーインターフェイスの作成を開始するに�
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
  [![](creating-ui-objects-images/image2b.png "ツールボックスパッド")](creating-ui-objects-images/image2b.png#lightbox)
- 
+
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
  [![](creating-ui-objects-images/image2b-vs.png "ツールボックスパッド-Visual Studio")](creating-ui-objects-images/image2b.png#lightbox)
- 
+
 -----
 
 デザインサーフェイスでコントロールを選択すると、そのコントロールの属性が**Properties Pad**に表示されます。 次のスクリーンショットに入力されている**ウィジェット > id > 名**フィールドは、*アウトレット*名として使用されます。 でコントロールを参照するには、次C#の手順を実行します。
@@ -65,7 +65,7 @@ Xcode でストーリーボードを開くには、右クリックしてスト�
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
  [![](creating-ui-objects-images/imagexcode.png "ストーリーボードコンテキストメニュー-Xcode")](creating-ui-objects-images/imagexcode.png#lightbox)
- 
+
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![](creating-ui-objects-images/imagexcode-vs.png "ストーリーボードコンテキストメニュー-Xcode")](creating-ui-objects-images/imagexcode-vs.png#lightbox)
@@ -168,8 +168,6 @@ public override void ViewDidLoad () {
 ファイル`designer.cs`を手動で編集することはできません。 IDE (Visual Studio for Mac または Visual Studio) は、ストーリーボードとの同期を維持する役割を担います。
 
 ユーザーインターフェイスオブジェクトがプログラムによって`View`またはに追加される場合は`ViewController`、オブジェクト参照を自分でインスタンス化して管理するため、デザイナーファイルは必要ありません。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

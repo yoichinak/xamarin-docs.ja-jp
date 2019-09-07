@@ -6,12 +6,12 @@ ms.assetid: 3247fcee-6acc-470d-ab87-c1c511d67363
 author: conceptdev
 ms.author: crdun
 ms.date: 06/03/2018
-ms.openlocfilehash: ca26edc0311de2028af529dc43ea1ffde2383cf4
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 745c59ad50f0e8ad50a8ec56549d99b7b5e72228
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283662"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772470"
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
@@ -307,7 +307,6 @@ Xamarin Profiler は、次に示す5つのセクションで構成されてい�
 現時点では、プロファイルできるのは既定のデバッグ構成のみです。
 
 他の構成でアプリをプロファイルすると、次のメッセージダイアログが表示されます。
-
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 

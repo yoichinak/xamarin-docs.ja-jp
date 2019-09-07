@@ -7,19 +7,18 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 00df2edc1acc45c0302ecc793f4670eafa1dd91c
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 7d5f8d2e80a6583cf49af883db8f2f33e6496e09
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69523751"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70757472"
 ---
 # <a name="marshmallow-features"></a>Marshmallow の機能
 
 _この記事は、android 6.0 Marshmallow 用アプリを開発するために Xamarin を使用してを使用する場合に役立ちます。_
 
 この記事では、Android 6.0 Marshmallow の新機能の概要、android Marshmallow 開発用に Xamarin を準備する方法、および新しい Android Marshmallow を使用する方法を示すサンプルアプリケーションへのリンクを示します。Xamarin Android アプリの機能。 
-
 
 ## <a name="overview"></a>概要
 
@@ -70,7 +69,6 @@ Xamarin ベースのアプリで新しい Android Marshmallow 機能を使用す
 
 特に API レベル23以前を開発している場合は、 [JDK 1.7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)を使用し続けることができます。 
 
-
 ## <a name="getting-started"></a>作業の開始
 
 Android Marshmallow と Xamarin android の使用を開始するには、Android Marshmallow プロジェクトを作成する前に、最新のツールと SDK パッケージをダウンロードしてインストールする必要があります。 
@@ -85,11 +83,9 @@ Android Marshmallow と Xamarin android の使用を開始するには、Android
 
 これらの各手順については、次のセクションで説明します。
 
-
 ### <a name="install-xamarin-updates"></a>Xamarin の更新プログラムのインストール
 
 Android 6.0 Marshmallow のサポートが含まれるように Xamarin を更新するには、更新チャネルを**安定**させ、すべての更新プログラムをインストールします。 更新プログラムのチャネルから更新プログラムをインストールする方法の詳細については、「[更新プログラムのチャネルを変更](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/change_updates_channel)する」を参照してください。 
-
 
 ### <a name="install-the-android-60-sdk"></a>Android 6.0 SDK のインストール
 
@@ -106,15 +102,11 @@ Android Marshmallow 用の Xamarin Android プロジェクトを作成するに�
 Android SDK Tools revision 24.3.4 以降をインストールする必要があります。
 Android SDK Manager を使用した Android 6.0 SDK のインストールの詳細については、「 [SDK Manager](https://developer.android.com/tools/help/sdk-manager.html)」を参照してください。
 
-
-
 ### <a name="start-a-xamarinandroid-project"></a>Xamarin. Android プロジェクトを開始する
 
 新しい Xamarin. Android プロジェクトを作成します。 Xamarin を使用した Android 開発を初めて使用する場合は、「 [Hello, android](~/android/get-started/hello-android/index.md) 」を参照して、android プロジェクトの作成について学習してください。 
 
 Android プロジェクトを作成するときは、バージョン設定を Android 6.0 MarshMallow を対象とするように構成する必要があります。 Marshmallow のプロジェクトを対象にするには、 **API レベル 23 (Xamarin Android v2.0 のサポート)** 用にプロジェクトを構成する必要があります。 Android API レベルレベルの構成の詳細については、「 [ANDROID Api レベルについ](~/android/app-fundamentals/android-api-levels.md)て」を参照してください。
-
-
 
 ### <a name="configure-an-emulator-or-device"></a>エミュレーターまたはデバイスを構成する
 
@@ -130,13 +122,9 @@ Android プロジェクトを作成するときは、バージョン設定を An
 
 1つの物理デバイス (たとえば、Marshmallow)、6、または9を使用している場合は、Android のプレビューイメージをインストールできます。 デバイスを Android Marshmallow に更新する方法の詳細については、「[ハードウェアシステムイメージ](https://developer.android.com/preview/download.html#images)」を参照してください。
 
-
-
 ## <a name="new-features"></a>新機能
 
 Android Marshmallow で導入された変更の多くは、Android ユーザーエクスペリエンスの向上、パフォーマンスの向上、およびバグの修正に重点を置いています。 ただし、Marshmallow では、Android プラットフォームの基本に対するいくつかの広範な変更も導入されました。 以下のセクションでは、これらの機能強化について説明し、アプリで新しい Android Marshmallow 機能の使用を開始する際に役立つリンクを示します。 
-
-
 
 ### <a name="runtime-permissions"></a>実行時のアクセス許可
 
@@ -157,8 +145,6 @@ Xamarin には、Android Marshmallow (およびそれ以降) でランタイム�
 
 Android Marshmallow の新しいランタイムアクセス許可機能の詳細については、「[システムアクセス許可の操作](https://developer.android.com/preview/features/runtime-permissions.html)」を参照してください。
 
-
-
 ### <a name="authentication-enhancements"></a>認証の機能強化
 
 Android Marshmallow には、パスワードの必要性をなくすために役立つ2つの認証拡張機能が用意されています。
@@ -168,7 +154,6 @@ Android Marshmallow には、パスワードの必要性をなくすために役
 - **資格情報の確認**&ndash;デバイスのロックが解除された期間に基づいてユーザーを認証します。
 
 次に説明するリンクとサンプルアプリは、これらの新機能を理解するのに役立ちます。
-
 
 #### <a name="fingerprint-authentication"></a>指紋認証
 
@@ -185,16 +170,12 @@ Xamarin には、アプリで登録済みの指紋を使用してユーザーを
 このサンプルアプリでは、指紋リーダーを備えたデバイスが必要であることに注意してください。
 このアプリには、指紋 (またはパスワード) は保存されません。
 
-
-
 #### <a name="voice-interactions"></a>音声操作
 
 Android Marshmallow で導入された新しい音声操作機能を使用すると、アプリのユーザーは、音声を使用してアクションを確認し、オプションの一覧から選択できます。 音声操作の詳細については、「[音声対話 API の概要](https://developers.google.com/voice-actions/interaction/)」を参照してください。 
 
 Xamarin Android アプリでの音声操作の実装に関する詳細 (コード例を含む) については、「[音声対話による Android アプリへのメッセージ交換の追加](https://blog.xamarin.com/add-a-conversation-to-your-android-app-with-voice-interactions/)」を参照してください。
 Android アプリで音声対話 API を使用する方法を示すサンプルアプリが用意されています。[音声操作](https://github.com/jamesmontemagno/MarshmallowSamples/tree/master/VoiceInteractions)。
-
-
 
 #### <a name="confirm-credential"></a>資格情報の確認
 
@@ -207,8 +188,6 @@ Xamarin には、アプリでデバイスの資格情報 (PIN、パターン、�
 
 1. デバイスにセキュリティで保護されたロック画面を設定します (セキュリティで保護された **> セキュリティ > Screenlock**)。
 2. **購入** ボタンをタップし、セキュリティで保護されたロック画面 の資格情報を確認します。
-
-
 
 ### <a name="chrome-custom-tabs"></a>Chrome カスタムタブ
 
@@ -226,8 +205,6 @@ Xamarin には、アプリでデバイスの資格情報 (PIN、パターン、�
 
 Xamarin Android アプリでこの機能を利用するには、 [Android Support カスタムタブライブラリ](https://www.nuget.org/packages/Xamarin.Android.Support.CustomTabs/)をダウンロードしてインストールします。
 この機能の詳細については、「 [Chrome カスタムタブ](https://developer.chrome.com/multidevice/android/customtabs)」を参照してください。
-
-
 
 ### <a name="material-design-support-library"></a>マテリアルデザインサポートライブラリ
 
@@ -253,7 +230,6 @@ Xamarin Android アプリでのマテリアルデザインサポートライブ�
 Xamarin には、 &ndash; [Cheesesquare](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android50-cheesesquare)の新しい android デザインライブラリをデモするサンプルアプリが用意されています。
 このサンプルでは、デザインライブラリの次の機能を示します。
 
-
 - 折りたたみ (ツールバーを)
 - 浮動アクションボタン
 - 表示アンカー
@@ -261,7 +237,6 @@ Xamarin には、 &ndash; [Cheesesquare](https://docs.microsoft.com/samples/xama
 - Snackbar
 
 デザインライブラリの詳細については、Android 開発者ブログの「 [Android Design Support library](http://android-developers.blogspot.co.at/2015/05/android-design-support-library.html) 」を参照してください。
-
 
 ### <a name="additional-library-updates"></a>追加のライブラリの更新
 
@@ -273,11 +248,9 @@ Android Marshmallow に加えて、Google はいくつかのコア Android ラ�
 
 - [Android ウェアラブルライブラリ](https://www.nuget.org/packages/Xamarin.Android.Wear)&ndash;この NuGet には Google Play 開発者サービスバインドが含まれています。 最新バージョンのウェアラブルライブラリは、Android の磨耗プラットフォームへの新しい機能 (カスタムアプリの簡単なナビゲーションを含む) を提供します。 
 
-
 ## <a name="summary"></a>まとめ
 
 この記事では、Android Marshmallow を導入し、Marshmallow で Xamarin Android 開発用の最新のツールとパッケージをインストールして構成する方法について説明しました。 また、Xamarin Android の開発で最も魅力的な新しい Android Marshmallow 機能の概要についても説明しました。
-
 
 ## <a name="related-links"></a>関連リンク
 

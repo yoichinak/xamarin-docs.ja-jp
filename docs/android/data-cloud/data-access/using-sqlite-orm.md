@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/18/2018
-ms.openlocfilehash: c684efe9bcb292869eb25b36067fcaa42b546a04
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 65c8466e2649c6d48cf5651f25d14c073dbcf5e3
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525926"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70754433"
 ---
 # <a name="using-sqlitenet-with-android"></a>Android での SQLite.NET の使用
 
@@ -61,7 +61,6 @@ SQLite.NET ライブラリを使用できるようになったら、次の3つ�
 ## <a name="basic-data-access-sample"></a>基本的なデータアクセスのサンプル
 
 このドキュメントの*DataAccess_Basic*サンプルコードは、Android で実行すると次のようになります。 このコードは、単純な SQLite.NET 操作を実行し、結果をアプリケーションのメインウィンドウのテキストとして表示する方法を示しています。
-
 
 **Android**
 
@@ -140,7 +139,6 @@ public static void DoSomeDataAccess () {
 
 - **[一意]** &ndash;基になるデータベース列の値が一意であることを確認します。
 
-
 これらの属性のほとんどは省略可能で、SQLite はテーブル名と列名に既定値を使用します。 データに対して選択と削除のクエリを効率的に実行できるように、常に整数の主キーを指定する必要があります。
 
 ## <a name="more-complex-queries"></a>より複雑なクエリ
@@ -158,7 +156,6 @@ public static void DoSomeDataAccess () {
 - **クエリ&lt;T&gt;では、複数**の行(オブジェクトとして)を返すSQLクエリを実行します。&ndash;
 
 - **実行**SQL から行が返され`Query`ない場合 (INSERT、UPDATE、DELETE など) は、このメソッドを使用します。 &ndash;
-
 
 ### <a name="getting-an-object-by-the-primary-key"></a>主キーによるオブジェクトの取得
 

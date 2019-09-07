@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 1c477f030dc69394ba601b31d71a772f5037af48
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 0e09bf2364df9b672a9612829eaa7a8ba343b0e9
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522299"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758399"
 ---
 # <a name="xamarinandroid-tablelayout"></a>Xamarin Android TableLayout
 
@@ -123,8 +123,6 @@ protected override void OnCreate (Bundle savedInstanceState)
 アプリケーションを実行します。 次のように表示されます。
 
 [![複数のテーブル行を表示している TableLayout アプリのスクリーンショットの例](table-layout-images/helloviews3.png)](table-layout-images/helloviews3.png#lightbox)
-
-
 
 ## <a name="references"></a>リファレンス
 

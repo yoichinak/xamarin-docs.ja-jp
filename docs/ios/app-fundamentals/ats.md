@@ -7,19 +7,18 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/13/2017
-ms.openlocfilehash: dc435f486d0020ab339ebd8f537f749f44493fe0
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 039a73b45f93525631635a9a73bf153c7938bc92
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289494"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766673"
 ---
 # <a name="app-transport-security-in-xamarinios"></a>Xamarin. iOS のアプリトランスポートセキュリティ
 
 _アプリトランスポートセキュリティ (ATS) は、インターネットリソース (アプリのバックエンドサーバーなど) とアプリの間にセキュリティで保護された接続を適用します。_
 
 この記事では、iOS 9 アプリでアプリトランスポートセキュリティによって適用されるセキュリティの変更について説明します。また、Xamarin のプロジェクトでは、この方法について説明します。また、 [ats の構成オプション](#config)について説明し、 [ats のオプトアウト](#optout)方法についても説明し[ます。](#xamarinsupport)ATS (必要な場合)。 この記事はATS構成オプションと必要な場合にATSからオプトアウトする方法を説明します。ATSは既定で有効となっているため、iOS 9アプリでは(明示的に許可しない限り)あらゆるセキュアでないインターネット接続によって例外が発生します。
-
 
 ## <a name="about-app-transport-security"></a>アプリトランスポートセキュリティについて
 
@@ -90,7 +89,6 @@ IOS アプリで使用される HTTPClient 実装を設定するには、**ソ�
 
 ![](ats-images/client01.png "IOS のビルドオプションの設定")
 
-
 #### <a name="managed-handler"></a>マネージハンドラー
 
 マネージハンドラーは、以前のバージョンの Xamarin. iOS に付属していた、完全に管理された HttpClient ハンドラーであり、既定のハンドラーです。
@@ -145,7 +143,6 @@ IOS9 では、アプリトランスポートセキュリティ (ATS) は、イ�
 IOS 9 および OS X 10.11 (El Capitan) 用に構築されたアプリでは、ats が既定で`NSURLConnection`有効`CFURL`に`NSURLSession`なっているため、またはを使用するすべての接続は、ats のセキュリティ要件の対象となります。 接続がこれらの要件を満たしていない場合、例外が発生して失敗します。
 
 また、Apple は、 [TLSTool サンプルアプリ](https://developer.apple.com/library/mac/samplecode/sc1236/Introduction/Intro.html#//apple_ref/doc/uid/DTS40014927-Intro-DontLinkElementID_2)を提供しています。このアプリはC#、コンパイル (または、必要に応じて Xamarin とにトランスコードされます) し、ATS/TLS の問題の診断に使用できます。 この問題を解決する方法については、以下の「 [ATS のオプトアウト](#optout)」セクションを参照してください。
-
 
 <a name="config" />
 
@@ -217,7 +214,6 @@ Visual Studio for Mac 内で、**ソリューションエクスプローラー**
 
 [![](ats-images/ats01.png "情報 plist ファイルのソースビュー")](ats-images/ats01.png#lightbox)
 
-
 アプリでセキュリティで保護されていないサイトの web コンテンツを読み込んで表示する必要がある場合は、アプリの**情報 plist**ファイルに次の内容を追加して、web ページが正しく読み込まれるようにします。ただし、Apple Transport SECURITY (ATS) 保護はアプリの残りの部分でも有効になっています。
 
 ```xml
@@ -245,9 +241,6 @@ Visual Studio for Mac 内で、**ソリューションエクスプローラー**
 > [!IMPORTANT]
 > アプリケーションがセキュリティで保護されていない web サイトへの接続を必要とする場合は`NSExceptionDomains` 、を`NSAllowsArbitraryLoads`使用して完全にオフにするのではなく、**常に**を使用してドメインを例外として入力してください。 `NSAllowsArbitraryLoads` 極端な緊急の状況でのみ使用する必要があります。
 
-
-
-
 ここでも、セキュリティで保護された接続への切り替えが利用できないか、または実用的でない場合は、最後の手段として_のみ_、ATS を無効にしてください。
 
 <a name="Summary" />
@@ -255,8 +248,6 @@ Visual Studio for Mac 内で、**ソリューションエクスプローラー**
 ## <a name="summary"></a>Summary
 
 この記事では、アプリトランスポートセキュリティ (ATS) を導入し、インターネットとのセキュリティで保護された通信を実施する方法について説明しました。 まず、iOS 9 で実行されている Xamarin の iOS アプリに対して、ATS に必要な変更について説明します。 次に、ATS の機能とオプションの制御について説明します。 最後に、Xamarin. iOS アプリの使用を停止します。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

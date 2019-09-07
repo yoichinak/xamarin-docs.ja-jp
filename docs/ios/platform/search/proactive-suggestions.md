@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: ecc31fa6aab9e2be1c33f16d2f424b397f4a9a73
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: b79f64f154dbd7dde623d13385f111d3d5a5d3f2
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291737"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769548"
 ---
 # <a name="introduction-to-proactive-suggestions-in-xamarinios"></a>Xamarin でのプロアクティブな提案の概要
 
@@ -534,7 +534,6 @@ textField.TextContentType = UITextContentType.FullStreetAddress;
 
 アプリケーションが mapkit `MKDirectionsRequest`オブジェクトを使用して起動されると、要求された場所へのユーザーの指示が自動的に開始されるか、ユーザーが簡単に方向を開始できるようにするための UI が表示されます。 例えば:
 
-
 ```csharp
 using System;
 using Foundation;
@@ -607,7 +606,6 @@ IOS 10 を使用して、ポッドキャストアプリや、オーディオや�
   - 自宅または職場に到着した後。 
 
 IOS 10 に単純な API 呼び出しを含めることにより、開発者はメディアアプリのユーザーに対してより魅力的なロック画面エクスペリエンスを作成できます。 `MPPlayableContentManager`クラスを使用してメディアの再生を管理することで、アプリのロック画面にフルメディアコントロール (音楽アプリによって表示されるものと同様) が表示されます。
-
 
 ```csharp
 using System;
@@ -682,8 +680,6 @@ namespace MonkeyPlayer
 ## <a name="summary"></a>Summary
 
 この記事では、プロアクティブな提案について説明し、開発者が Xamarin. iOS アプリへのトラフィックを促進する方法について説明しました。 ここでは、プロアクティブな提案を実装し、使用ガイドラインを提示する手順について説明します。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

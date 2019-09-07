@@ -1,23 +1,23 @@
 ---
-title: Xamarin.Androi で Wear OS のユーザー インターフェイスの作成
-description: ユーザー インターフェイスの作成 Wear OS アプリ
+title: Xamarin を使用して磨耗 OS のユーザーインターフェイスを作成する
+description: 磨耗 OS アプリ用のユーザーインターフェイスの作成
 ms.prod: xamarin
 ms.assetid: 092A6E08-FB07-4AC2-A5BD-8A9D4E6268D8
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 59d62fe7df3538063e28f5a8ff9e45f327d0c6d3
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 8dcf8868a91ab0dbfa78ff6c46de2d7fa5970ef8
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67864684"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70762126"
 ---
 # <a name="user-interface"></a>ユーザー インターフェイス
 
-次のセクションでは、さまざまなツールと Android Wear アプリでのユーザー インターフェイスの作成に使用されるビルド ブロックについて説明します。
- 
+以下のセクションでは、Android の摩耗アプリでユーザーインターフェイスを作成するために使用されるさまざまなツールと構成要素について説明します。
+
 ## <a name="controlsandroidwearuser-interfacecontrolsindexmd"></a>[コントロール](~/android/wear/user-interface/controls/index.md)
 
-Android Wear 固有が制御し、これらのコントロールを使用する方法を示すサンプルへのリンクを提供するについて説明します。
+Android の磨耗に固有のコントロールについて説明し、これらのコントロールの使用方法を示すサンプルへのリンクを示します。

@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 758134b0c5171e46c47ff6fd8071b13a44d5789b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7b341ee5ee72c3a89ab14161862896585ed498fc
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291621"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772687"
 ---
 # <a name="table-views-in-xamarinmac"></a>Xamarin. Mac のテーブルビュー
 
@@ -407,7 +407,6 @@ public override void SortDescriptorsChanged (NSTableView tableView, NSSortDescri
 
 変更を保存し Visual Studio for Mac に戻り、Xcode と同期します。
 
-
 次に、 `ProductTableDelegate.cs`ファイルを編集し、次のメソッドを追加します。
 
 ```csharp
@@ -435,7 +434,6 @@ public override bool ShouldSelectRow (NSTableView tableView, nint row)
 [![](table-view-images/select02.png "属性インスペクター")](table-view-images/select02.png#lightbox)
 
 変更を保存し Visual Studio for Mac に戻り、Xcode と同期します。
-
 
 次に、 `ProductTableDelegate.cs`ファイルを編集し、次のメソッドを追加します。
 

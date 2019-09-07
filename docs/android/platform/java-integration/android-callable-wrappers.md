@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: fb00bf4a817ad8188d5a127b23b4a910dd4f23a7
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: b55cffc19eec5ae95a0a0aba8053bdaaa49e7747
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524135"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761471"
 ---
 # <a name="android-callable-wrappers-for-xamarinandroid"></a>Xamarin android の呼び出し可能ラッパー
 
@@ -19,9 +19,7 @@ Android ランタイムがマネージコードを呼び出すときは常に、
 
 *毎回*Android コードは、マネージコード`virtual`で実装または実装`overridden`されているまたはインターフェイスメソッドを実行する必要があります。 Xamarin は、このメソッドが適切なマネージ型にディスパッチされるように Java プロキシを提供する必要があります。 これらの Java プロキシ型は、マネージ型として "同じ" 基底クラスと Java インターフェイスリストを持つ Java コードです。同じコンストラクターを実装し、オーバーライドされた基底クラスとインターフェイスメソッドを宣言します。 
 
-Android 呼び出し可能ラッパーは、[ビルド処理](~/android/deploy-test/building-apps/build-process.md)中に、(直接または間接的に) [Java](xref:Java.Lang.Object)を継承するすべての型に対して生成されます。 
-
-
+Android 呼び出し可能ラッパーは、[ビルド処理](~/android/deploy-test/building-apps/build-process.md)中**に、(** 直接または間接的に) [Java](xref:Java.Lang.Object)を継承するすべての型に対して生成されます。 
 
 ## <a name="android-callable-wrapper-naming"></a>Android 呼び出し可能ラッパーの名前付け
 
@@ -40,7 +38,7 @@ java.lang.ClassNotFoundException: Didn't find class "com.company.app.MainActivit
 on path: DexPathList[[zip file "/data/app/com.company.App-1.apk"] ...
 ```
 
-名前で型にアクセスする必要がある場合は、属性宣言でその型の名前を宣言できます。 たとえば、次に示すのは、完全修飾名`My.ActivityType`を持つアクティビティを宣言するコードです。
+名前で型にアクセス*する必要がある場合*は、属性宣言でその型の名前を宣言できます。 たとえば、次に示すのは、完全修飾名`My.ActivityType`を持つアクティビティを宣言するコードです。
 
 ```csharp
 namespace My {
@@ -72,8 +70,6 @@ namespace My {
 
 MD5SUM ベースの ACW の名前付けは、Xamarin. Android 5.0 で導入されました。 属性の名前付けの詳細については、「 [Registerattribute](xref:Android.Runtime.RegisterAttribute)」を参照してください。 
 
-
-
 ## <a name="implementing-interfaces"></a>インターフェイスの実装
 
 Android インターフェイス ( [IComponentCallbacks](xref:Android.Content.IComponentCallbacks)など) の実装が必要になる場合があります。 すべての Android のクラスとインターフェイスは[IJavaObject](xref:Android.Runtime.IJavaObject)インターフェイスを拡張するので、次のよう`IJavaObject`な疑問が生じます。 
@@ -94,7 +90,6 @@ class MyComponentCallbacks : Java.Lang.Object, Android.Content.IComponentCallbac
     }
 }
 ```
-
 
 ## <a name="implementation-details"></a>実装の詳細
 

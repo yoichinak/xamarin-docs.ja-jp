@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/02/2017
-ms.openlocfilehash: b53799f4b1c8d9299ab23191f6a702c2ec0983fb
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 1cf22f070864492e14e1865c1cbbf8cf32e0df29
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285762"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753914"
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>チュートリアル: iOS Objective-C ライブラリのバインド
 
@@ -56,15 +56,11 @@ Xamarin でこの特定の目標 C API を使用するために必要なすべ�
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-
 前述のように、このチュートリアルでは、Xcode コマンドラインツール`make` ( `lipo`具体的にはと) を使用します。 コマンドは、プログラムの構築方法を指定する_メイクファイル_を使用して、実行可能プログラムとライブラリのコンパイルを自動化する、非常に一般的な Unix ユーティリティです。 `make` コマンド`lipo`は、マルチアーキテクチャファイルを作成するための OS X コマンドラインユーティリティです。これに`.a`より、複数のファイルが、すべてのハードウェアアーキテクチャで使用できる1つのファイルに結合されます。
-
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-
 前述のように、このチュートリアルでは、 **Mac ビルドホスト**(具体的`make`にはと`lipo`) で Xcode コマンドラインツールを使用します。 コマンドは、メイクファイルを使用してプログラムのビルド方法を指定することにより、実行可能プログラムおよびライブラリのコンパイルを自動化する、非常に一般的な Unix ユーティリティです。 `make` コマンド`lipo`は、マルチアーキテクチャファイルを作成するための OS X コマンドラインユーティリティです。これに`.a`より、複数のファイルが、すべてのハードウェアアーキテクチャで使用できる1つのファイルに結合されます。
-
 
 -----
 
@@ -272,9 +268,7 @@ Architectures in the fat file: libInfColorPicker.a are: i386 armv7 x86_64 arm64
 
 ![](walkthrough-images/bind03.png "ソリューションエクスプローラー内のソリューション構造")
 
-
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
-
 
 1. Visual Studio を起動します。
 
@@ -336,7 +330,6 @@ Architectures in the fat file: libInfColorPicker.a are: i386 armv7 x86_64 arm64
 
 ファイルがプロジェクトに追加されると、Xamarin によってファイルの**ビルドアクション**が自動的に**Objcbindingてライブラリ**に設定され、という名前`libInfColorPickerSDK.linkwith.cs`の特別なファイルが作成されます。
 
-
 このファイルには`LinkWith` 、追加したスタティックライブラリを処理する方法を示す属性が含まれています。 このファイルの内容を次のコードスニペットに示します。
 
 ```csharp
@@ -347,7 +340,6 @@ using ObjCRuntime;
 
 属性`LinkWith`は、プロジェクトのスタティックライブラリと、いくつかの重要なリンカーフラグを識別します。
 
-
 次に、InfColorPicker プロジェクトの API 定義を作成する必要があります。 このチュートリアルでは、目的のマジックペンを使用して、 **ApiDefinition.cs**ファイルを生成します。
 
 <a name="Using_Objective_Sharpie"/>
@@ -356,15 +348,11 @@ using ObjCRuntime;
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-
 目標マジックペンは、(Xamarin によって提供される) コマンドラインツールです。このツールを使用すると、サードパーティの目的 C C#ライブラリをにバインドするために必要な定義を作成できます。 このセクションでは、目的のマジックペンを使用して、InfColorPicker プロジェクトの初期**ApiDefinition.cs**を作成します。
-
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-
 目標マジックペンは、(Xamarin によって提供される) コマンドラインツールです。このツールを使用すると、サードパーティの目的 C C#ライブラリをにバインドするために必要な定義を作成できます。 このセクションでは、 **Mac ビルドホスト**で目標マジックペンを使用して、InfColorPicker プロジェクトの初期**ApiDefinition.cs**を作成します。
-
 
 -----
 
@@ -466,17 +454,13 @@ Europa:Resources kmullins$
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-
 上記で作成したバインドプロジェクトで、これらの両方のファイルを開きます。 **InfColorPicker.cs**ファイルの内容をコピーし、 **ApiDefinition.cs**ファイルに貼り付けて、 `namespace ...`既存のコードブロックを**InfColorPicker.cs**ファイルの内容に置き換えます (ステートメントを`using`そのまま使用します)。そのままです):
 
 ![](walkthrough-images/os07.png "InfColorPickerControllerDelegate ファイル")
 
-
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-
 上記で作成したバインドプロジェクトで、これらの両方のファイルを開きます。 ( **Mac ビルドホスト**から) **InfColorPicker.cs**ファイルの内容をコピーし、 **ApiDefinition.cs**ファイルに貼り付けて、既存`namespace ...`のコードブロックを**InfColorPicker.cs**ファイルの内容に置き換えます (ステートメントを`using`そのまま残します)。
-
 
 -----
 
@@ -503,17 +487,13 @@ Europa:Resources kmullins$
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-
 この時点で、バインドプロジェクトは完成し、ビルドする準備ができています。 バインドプロジェクトをビルドし、エラーが発生していないことを確認してみましょう。
 
 [バインドプロジェクトをビルドし、エラーがないことを確認します。](walkthrough-images/os12.png)
 
-
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-
 この時点で、バインドプロジェクトは完成し、ビルドする準備ができています。 バインドプロジェクトをビルドし、エラーが発生していないことを確認してみましょう。
-
 
 -----
 
@@ -702,7 +682,6 @@ private void HandleTouchUpInsideWithWeakDelegate (object sender, EventArgs e)
 ```
 
 **Update ViewDidLoad** -先ほど作成し`ViewDidLoad`たイベントハンドラーを使用するように変更する必要があります。 次`ViewController`のコード`ViewDidLoad`スニペットのように、を編集して変更します。
-
 
 ```csharp
 public override void ViewDidLoad ()

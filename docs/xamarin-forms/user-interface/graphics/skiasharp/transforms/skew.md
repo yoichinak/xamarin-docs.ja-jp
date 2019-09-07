@@ -7,12 +7,12 @@ ms.assetid: FDD16186-E3B7-4FF6-9BC2-8A2974BFF616
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/20/2017
-ms.openlocfilehash: 0592f80b7d7352463ba22d7d371cc1b18ac3e0be
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: bfc1bec06c773039529cd85aac604a9a9031cb54
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655579"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70773028"
 ---
 # <a name="the-skew-transform"></a>傾斜変換
 
@@ -249,7 +249,6 @@ canvas.Translate(-xText, -yText - textBounds.Bottom);
 今すぐそれらディセンダーの下部にあるシャドウを拡張します。
 
 [![](skew-images/skewshadowtext3-small.png "ディセンダーの調整、傾斜シャドウ テキスト ページの 3 倍になるスクリーン ショット")](skew-images/skewshadowtext3-large.png#lightbox "ディセンダーの調整、傾斜シャドウ テキスト ページの 3 倍になるスクリーン ショット")
-
 
 ## <a name="related-links"></a>関連リンク
 

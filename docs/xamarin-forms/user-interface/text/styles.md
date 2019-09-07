@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: 3fe189c0ef524a44dcbb71c883b57063748a06e3
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 66d7ae722281d9034cb4cdf1501662a7de396c2d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70228013"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770251"
 ---
 # <a name="xamarinforms-text-styles"></a>Xamarin.Forms のテキストのスタイル
 
@@ -144,7 +144,6 @@ label.Style = Device.Styles.TitleStyle;
 ![ユーザー補助機能が有効になっているデバイスのスタイル](styles-images/post-access.png)
 
 ユーザー補助のために、基準として、アプリ内の任意のテキスト関連スタイルに組み込みのスタイルを使用して、スタイルが一貫して使用していることを確認します。 参照してください[スタイル](~/xamarin-forms/user-interface/styles/index.md)詳細については、拡張して、一般にスタイルを使用します。
-
 
 ## <a name="related-links"></a>関連リンク
 

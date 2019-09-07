@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: conceptdev
 ms.author: crdun
-ms.openlocfilehash: cfa82ccec8149acfc7ddd69bff2f68e0e11894d1
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: cbe1b374b97f64e0c28b2f89ca9f6d510511b74d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282429"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768838"
 ---
 # <a name="introduction-to-monotouchdialog-for-xamarinios"></a>Xamarin の Monotouch.dialog の概要
 
@@ -57,7 +57,6 @@ MT.D では、すべてのコードをテーブル作成用の汎用 API にカ�
 - **低レベル要素 api** – *elements api*は、画面とそのコンポーネントを表す要素の階層ツリーを作成することに基づいています。 Elements API を使用すると、開発者は Ui を作成する際の柔軟性と制御を最大限に高めることができます。 さらに、Elements API は JSON による宣言型定義の高度なサポートを備えています。これにより、非常に高速な宣言と、サーバーからの動的 UI 生成が可能になります。 
 - **高度なリフレクション API** – とも呼ばれる、*バインド*  *API* クラスは UI のヒントとし、山で注釈を付けるでD は自動的にオブジェクトに基づく画面を作成し、バックアップ、基になるオブジェクトとの間のバインドを表示 (および必要に応じて編集) 画面とを提供します。 上記の例では、リフレクション API の使用方法を示しています。 この API は、elements API が行う細かい制御を提供していませんが、クラス属性に基づいて要素階層を自動的に構築することで、複雑さをさらに軽減します。 
 
-
 MT.D には、画面作成用の多数の組み込み UI 要素が用意されていますが、カスタマイズされた要素や高度な画面レイアウトが必要であることも認識しています。 そのため、拡張機能は API に組み込まれているファーストクラスの機能です。 開発者は、既存の要素を拡張したり、新しい要素を作成してシームレスに統合したりできます。
 
 さらに、MT.D には、多くの一般的な iOS UX 機能が組み込まれています。これには、"更新の取得"、"非同期のイメージ読み込み"、"検索のサポート" などがあります。
@@ -82,7 +81,6 @@ MT.D は、次の4つの部分を使用して画面を構築します。
 - **RootElement**
 - **セクション**
 - **要素**
-
 
 ### <a name="dialogviewcontroller"></a>DialogViewController
 
@@ -249,7 +247,6 @@ new StringElement ("Click me", () => {
 - プレースホルダーテキスト (これは、ユーザーにヒントを提供するグレー表示のテキストです)。 
 - テキストの値。
 
-
 プレースホルダーと値には null を指定できます。 ただし、キャプションは必須です。
 
 任意の時点で、その値プロパティにアクセスすると、 `EntryElement`の値を取得できます。
@@ -260,7 +257,6 @@ new StringElement ("Click me", () => {
 - 電話番号
 - URL
 - 電子メール
-
 
 ### <a name="boolean-element"></a>ブール型の要素
 
@@ -427,7 +423,6 @@ dvc.ReloadComplete ();
 - `FinishSearch`
 - `PerformFilter`
 
-
 システムは拡張可能なので、必要に応じてこの動作を変更できます。
 
 ### <a name="background-image-loading"></a>背景画像の読み込み
@@ -575,7 +570,6 @@ Web ページおよびデスクトップアプリケーションに適したモ�
 ## <a name="summary"></a>まとめ
 
 この記事では、Monotouch.dialog に関するさまざまな情報について説明します。 ここでは、MT の基礎について説明しました。D は、MT を構成するさまざまなコンポーネントを対象としています。A. また、MT によってサポートされるさまざまな要素とテーブルのカスタマイズについても説明しました。D では、MT について説明しました。D はカスタム要素で拡張できます。 さらに、MT での JSON サポートについても説明しました。JSON から動的に要素を作成できる D。
-
 
 ## <a name="related-links"></a>関連リンク
 

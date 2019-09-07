@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: ab5355459f12c8b3cb7fa5f262f015bfd64d3e08
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 0caed670e09c268bce4fe66cd5857313ac8ed174
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290158"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770001"
 ---
 # <a name="data-binding-and-key-value-coding-in-xamarinmac"></a>Xamarin. Mac でのデータバインディングとキー値のコーディング
 
@@ -888,7 +888,6 @@ For more information on working with Collection Views, please see our [Collectio
 ## <a name="summary"></a>まとめ
 
 この記事では、Xamarin. Mac アプリケーションでのデータバインディングとキー値のコーディングの使用について詳しく説明しました。 まず、キー値のコード ( C# kvc) とキー値の観測 (kvc) を使用して、目的の C にクラスを公開する方法を見てきました。 次に、KVO に準拠したクラスを使用し、データを Xcode の Interface Builder の UI 要素にバインドする方法について説明しました。 最後に、**配列コントローラー**と**ツリーコントローラー**を使用した複雑なデータバインディングについて説明しました。
-
 
 ## <a name="related-links"></a>関連リンク
 

@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 8fb0b5136cc75463fc35ced2336e0ea321e8aecd
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 9d8710b3b88b59871b88a1d42ec4f4bb3e515ff5
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524419"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756505"
 ---
 # <a name="how-content-providers-work"></a>コンテンツプロバイダーのしくみ
 
@@ -23,12 +23,9 @@ ms.locfileid: "69524419"
 
 通常、コンテンツプロバイダーは SQLite データベースによってサポートされますが、API は、基になる SQL について、コードを使用する必要がないことを意味します。 クエリは、列名を参照するために定数を使用する Uri (基になるデータ構造に対する依存関係`ICursor`を減らすため) を介して実行されます。また、を使用するコードを反復処理するためにが返されます。
 
-
 ## <a name="consuming-a-contentprovider"></a>ContentProvider の使用
 
 `ContentProviders`データを発行するアプリケーションの**Androidmanifest .xml**に登録されている Uri を使用して機能を公開します。 データに簡単にバインドできるように、公開されている Uri とデータ列を定数として使用できるようにするための規則があります。 Android の組み込みのすべて`ContentProviders`に、 [`Android.Providers`](xref:Android.Provider)名前空間のデータ構造を参照する定数を持つ便利なクラスが用意されています。
-
-
 
 ### <a name="built-in-providers"></a>組み込みプロバイダー
 
@@ -47,8 +44,6 @@ Android では、次のものを使用して`ContentProviders`広範なシステ
 - *Userdictionary*&ndash;予測テキスト入力に使用されるユーザー定義の辞書の内容。
 
 - *ボイスメール*&ndash;ボイスメールメッセージの履歴。
-
-
 
 ## <a name="classes-overview"></a>クラスの概要
 
@@ -79,4 +74,3 @@ API `ContentProvider`を使用すると、コンシューマーは次のよう�
 - レコードを削除します。
 
 このドキュメントには、システム提供`ContentProvider`のを使用する例と、カスタム`ContentProvider`を実装する単純な読み取り専用の例が含まれています。
-

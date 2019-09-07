@@ -6,12 +6,12 @@ ms.assetid: A4130995-48FD-4E2E-9C2B-ADCEFF35BE3A
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: c44e6b76751096d817727df759ecbeca5bd5a8f3
-ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
+ms.openlocfilehash: 2f5e66ae58f471be62839de17fe4edd12ccef457
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68680992"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70763995"
 ---
 # <a name="3d-coordinates-in-monogame"></a>モノゲームの3D 座標
 
@@ -34,13 +34,11 @@ _3d の座標系を理解することは、3D ゲームを開発する上で重�
 
 ![](part3-images/image1.gif "完了すると、アプリにはロボットが円で移動するプロジェクトと、タッチ入力で制御できるカメラが含まれます。")
 
-
 ## <a name="creating-a-project"></a>Visual C++ プロジェクト
 
 このチュートリアルでは、3D 空間でオブジェクトを移動する方法について説明します。 [ここ](https://docs.microsoft.com/samples/xamarin/mobile-samples/modelsandvertsmg/)では、モデルと頂点配列をレンダリングするためのプロジェクトについて説明します。 ダウンロードが完了したら、プロジェクトを解凍して開き、実行されていることを確認します。次のように表示されます。
 
 ![](part3-images/image2.png "ダウンロードが完了したら、プロジェクトを解凍して開いて、実行されていることを確認します。このビューが表示されます。")
-
 
 ## <a name="creating-a-robot-entity"></a>ロボットエンティティの作成
 
@@ -94,7 +92,6 @@ namespace MonoGame3D
 
                     effect.Projection = Matrix.CreatePerspectiveFieldOfView(
                         fieldOfView, aspectRatio, nearClipPlane, farClipPlane);
-
 
                 }
 

@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/08/2018
-ms.openlocfilehash: 76a66b4dbde65a3fc44d3490e0147ff66b088466
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: ff29b51cec6f612f4dac497e75eddba4dbd4c1e2
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525966"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70754469"
 ---
 # <a name="using-adonet-with-android"></a>Android での ADO.NET の使用
 
@@ -30,7 +30,6 @@ ADO.NET 経由で SQLite へのアクセスを使用`System.Data`する`Mono.Dat
 ![Visual Studio for Mac での Android リファレンス](using-adonet-images/image5.png "Visual Studio for Mac での Android リファレンス") 
 
 -----
-
 
 [参照の**編集] >** 右クリックし、[参照の編集] をクリックして必要なアセンブリを選択します。
 
@@ -151,7 +150,6 @@ SQLite ではデータに対して任意`CREATE` `UPDATE`の SQL コマンドを
 
 - **ExecuteScalar**&ndash; 1 つの値 (集計など) を取得します。
 
-
 ### <a name="executenonquery"></a>EXECUTENONQUERY
 
 `INSERT`、 `UPDATE`、および`DELETE`の各ステートメントは、影響を受けた行数を返します。 その他の SQL ステートメントはすべて-1 を返します。
@@ -199,7 +197,6 @@ public static string MoreComplexQuery ()
 
 - **Hasrows**&ndash;行が返されたかどうか。
 
-
 ### <a name="executescalar"></a>EXECUTESCALAR
 
 この値は`SELECT` 、1つの値 (集計など) を返すステートメントに使用します。
@@ -212,8 +209,6 @@ using (var contents = connection.CreateCommand ()) {
 ```
 
 メソッドの戻り値の型`object`は&ndash; 、データベースクエリに応じて結果をキャストする必要があります。 `ExecuteScalar` 結果として、 `COUNT`クエリからの整数、または単一列`SELECT`クエリの文字列を指定できます。 これは、リーダーオブジェクトを返す`Execute`他のメソッド、または影響を受ける行の数のカウントとは異なることに注意してください。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

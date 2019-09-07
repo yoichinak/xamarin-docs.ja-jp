@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 10/25/2017
-ms.openlocfilehash: ce2f62869057fc83b04b58af37d6ffffd5ad7fb8
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 084e1e9a4af8d7e27bee955ff4f27af28f9db08a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646472"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758685"
 ---
 # <a name="using-cursoradapters-with-xamarinandroid"></a>Xamarin Android でのカーソルの使用
 
@@ -22,7 +22,6 @@ Android には、SQLite データベースクエリのデータを表示する�
  **カーソル**: レイアウトコントロールへのデータ値のバインドをより詳細に制御する必要がある場合に継承できる基本クラス (コントロールの表示/非表示、プロパティの変更など)。
 
 カーソルアダプターは、SQLite に格納されているデータの長い一覧をスクロールするための高パフォーマンスな方法を提供します。 コンシューマーコードでは、 `Cursor`オブジェクトで SQL クエリを定義し、各行のビューを作成および設定する方法を記述する必要があります。
-
 
 ## <a name="creating-an-sqlite-database"></a>SQLite データベースの作成
 
@@ -58,7 +57,6 @@ class VegetableDatabase  : SQLiteOpenHelper {
 
 を機能させるには、 `CursorAdapter`カーソル`_id`クエリに整数型の列が*必要*です。 基になるテーブルにという名前`_id`の整数型の列がない場合は、 `RawQuery`カーソルを構成する内の別の一意の整数に対して列の別名を使用します。 詳細については、 [Android のドキュメント](xref:Android.Widget.CursorAdapter)を参照してください。
 
-
 ### <a name="creating-the-cursor"></a>カーソルの作成
 
 この例では`RawQuery` 、を使用して、SQL `Cursor`クエリをオブジェクトに変換します。 カーソルから返される列リストによって、カーソルアダプターに表示できるデータ列が定義されます。 **SimpleCursorTableAdapter/HomeScreen** `OnCreate`メソッドでデータベースを作成するコードを次に示します。
@@ -78,7 +76,6 @@ cursor.Close();
 ```
 
 アプリケーションで SQLite データベースを使用可能にし、そのオブジェクトを表示されているように作成する`SimpleCursorAdapter`と、の`CusorAdapter`またはサブクラスを使用`ListView`して、に行を表示できます。
-
 
 ## <a name="using-simplecursoradapter"></a>SimpleCursorAdapter の使用
 
@@ -112,7 +109,6 @@ listView.Adapter = new SimpleCursorAdapter (this, Android.Resource.Layout.Simple
 
 `SimpleCursorAdapter`は、SQLite データをで`ListView`すばやく簡単に表示する方法です。 主な制限事項として、列の値をバインドできるのは、コントロールの表示のみです。また、行のレイアウトの他の側面 (コントロールの表示/非表示、プロパティの変更など) を変更することはできません。
 
-
 ## <a name="subclassing-cursoradapter"></a>サブクラスカーソルのサブクラス化
 
 サブクラスには、 `SimpleCursorAdapter` SQLite からデータを表示する場合と同じパフォーマンス上の利点がありますが、各行ビューの作成とレイアウトを完全に制御することもできます。 `CursorAdapter` `GetItemId` `GetView`実装は`this[]` 、、、 `BaseAdapter` また`Count`はインデクサーをオーバーライドしないため、サブクラス化とは大きく異なります。 `CursorAdapter`
@@ -124,7 +120,6 @@ listView.Adapter = new SimpleCursorAdapter (this, Android.Resource.Layout.Simple
 - **Newview** –で新しいビュー `ListView`を表示する必要がある場合に呼び出されます。 は`CursorAdapter` 、(通常のアダプターの`GetView`メソッドとは異なり) リサイクルビューを処理します。
 
 前の例のアダプターサブクラスには、行の数を返し、現在の項目を取得する`CursorAdapter`メソッドがあります。この情報はカーソル自体から収集される可能性があるため、ではこれらのメソッドは必要ありません。 各ビューの作成と作成をこれらの2つのメソッドに分割`CursorAdapter`することで、によってビューの再利用が強制されます。 これは、 `convertView` `BaseAdapter.GetView`メソッドのパラメーターを無視できる通常のアダプターとは対照的です。
-
 
 ### <a name="implementing-the-cursoradapter"></a>カーソルアダプターの実装
 
@@ -150,7 +145,6 @@ public class HomeScreenCursorAdapter : CursorAdapter {
 }
 ```
 
-
 ### <a name="assigning-the-cursoradapter"></a>カーソルアダプターの割り当て
 
 が表示されるで、カーソルを作成し`CursorAdapter` 、リストビューに割り当てます。 `Activity` `ListView`
@@ -168,8 +162,6 @@ listView.Adapter = (IListAdapter)new HomeScreenCursorAdapter(this, cursor, false
 ```
 
 メソッド`OnDestroy`には、 `StopManagingCursor`前に説明したメソッドの呼び出しが含まれています。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: b95f60676a1c58463fc6e384ea3738122a1c76fe
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 9f4708b56b8cf8a243785816440c63b743059cf5
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286822"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756277"
 ---
 # <a name="walkthrough---background-location-in-xamarinios"></a>チュートリアル-Xamarin のバックグラウンドの場所
 
@@ -21,7 +21,6 @@ ms.locfileid: "70286822"
 このチュートリアルでは、バックグラウンドで必要なアプリケーションとしてのアプリの登録、アプリが backgrounded されたときの UI 更新の中断、および`WillEnterBackground` `WillEnterForeground` `AppDelegate`メソッドの操作など、いくつかの重要なバックグラウンド処理の概念について説明します.
 
 ## <a name="application-set-up"></a>アプリケーションのセットアップ
-
 
 1. 最初に、**単一ビューアプリケーション > 新しい iOS > アプリC#** を作成します ()。 その_場所_を呼び出し、IPad と iPhone の両方が選択されていることを確認します。
 
@@ -84,7 +83,6 @@ ms.locfileid: "70286822"
 1. 場所データへ`NSLocationAlwaysUsageDescription`の`NSLocationWhenInUseUsageDescription`アクセスを要求する警告で、ユーザーに表示されるキーまたは文字列を追加します。
 
 1. iOS 9 `AllowsBackgroundLocationUpdates`では、**情報**を使用するときに、キー `UIBackgroundModes`と値`location`が含まれている必要があります。 このチュートリアルの手順2を完了している場合は、既に情報 plist ファイルに含まれています。
-
 
 1. クラス内で、次のコードを`StartLocationUpdates`使用してというメソッドを作成します。 `LocationManager` このコードは、 `CLLocationManager`から場所の更新の受信を開始する方法を示しています。
 
@@ -202,7 +200,6 @@ public override void ViewDidLoad ()
 }
 ```
 
-
 アプリケーションを実行すると、次のようになります。
 
 [![](location-walkthrough-images/image5.png "アプリの実行例")](location-walkthrough-images/image5.png#lightbox)
@@ -278,7 +275,6 @@ UIApplication.Notifications.ObserveDidBecomeActive ((sender, args) => {
 これで、アプリケーションの初回起動時に UI が更新を開始し、アプリがフォアグラウンドに戻るたびに更新が再開されます。
 
 このチュートリアルでは、画面とアプリケーションの両方の出力ウィンドウに位置データを出力する、適切に動作するバックグラウンド対応の iOS アプリケーションを構築しています。
-
 
 ## <a name="related-links"></a>関連リンク
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/13/2017
-ms.openlocfilehash: b01fbbe813b778d3c2e1cabeba620ed48a46ecac
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 0e0336e65532c4487e3ec8c1984b132544b5b547
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287156"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768658"
 ---
 # <a name="watchos-background-tasks-in-xamarin"></a>watchOS のバックグラウンドタスク (Xamarin)
 
@@ -109,7 +109,6 @@ watchOS 3 では、アプリを開く前にユーザーが必要とするコン�
 
 タスクの実行時に、アプリは、複雑なタイムラインを更新したり、を`NSUrlSession`使用して必要なデータを取得したりするなど、あらゆる種類のローカル処理を実行できます。
 
-
 <a name="WKURLSessionRefreshBackgroundTask" />
 
 ### <a name="wkurlsessionrefreshbackgroundtask"></a>WKURLSessionRefreshBackgroundTask
@@ -142,9 +141,6 @@ WatchOS 3 では、Apple がドッキングを追加し、ユーザーがお気�
 
 > [!IMPORTANT]
 > アプリが新しいデータを受信し`WKSnapshotRefreshBackgroundTask`てユーザーインターフェイスを更新した後にを常にスケジュールすることが重要です。そうしないと、変更された情報がユーザーに表示されません。
-
-
-
 
 さらに、ユーザーがアプリから通知を受信し、タップしてアプリをフォアグラウンドにすると、起動画面としても動作しているため、スナップショットを最新の状態にする必要があります。
 
@@ -700,8 +696,6 @@ Apple には次のような提案があります。
 ## <a name="summary"></a>Summary
 
 この記事では、Apple が watchOS に加えた拡張機能と、それらを使用して監視アプリを最新の状態に保つ方法について説明しました。 まず、Apple によって watchOS 3 に追加された新しいバックグラウンドタスクのすべてについて説明しました。 次に、バックグラウンド API のライフサイクルと、Xamarin watchOS アプリにバックグラウンドタスクを実装する方法について説明します。 最後に、スケジューリングのしくみとベストプラクティスについて説明しました。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

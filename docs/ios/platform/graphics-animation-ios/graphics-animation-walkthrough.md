@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: cae0196fc29944ba8ae87fe43d256da090942f3a
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 919eff45e11f60db51109904269addeec1038558
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286118"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752874"
 ---
 # <a name="using-core-graphics-and-core-animation-in-xamarinios"></a>Xamarin でのコアグラフィックスとコアアニメーションの使用
 
@@ -25,7 +25,6 @@ ms.locfileid: "70286118"
 このガイドに付属する*GraphicsDemo*サンプルのダウンロードを開始する前に、こちらを参照してください。 [ここで](https://docs.microsoft.com/samples/xamarin/ios-samples/graphicsandanimation)ダウンロードできます。 **GraphicsWalkthrough**ディレクトリ内に配置されている場合は、 **GraphicsDemo_starter**という名前のプロジェクトを開き、 `DemoView`ダブルクリックしてクラスを開きます。
 
 ## <a name="drawing-a-path"></a>パスの描画
-
 
 1. で`DemoView` 、 `CGPath`変数をクラスに追加し、コンストラクターでインスタンス化します。 また、パス`CGPoint`を構築`initialPoint`するためのタッチポイントをキャプチャするために使用するとという2つの変数も宣言し`latestPoint`ます。
 
@@ -179,7 +178,6 @@ ms.locfileid: "70286118"
 ## <a name="summary"></a>まとめ
 
 この記事では、グラフィックスとアニメーションの概念を連携させる例について説明します。 まず、コアグラフィックスを使用して、ユーザータッチへの応答と`UIView`してでパスを描画する方法を説明しました。 次に、コアアニメーションを使用して、そのパスに沿ってイメージを移動する方法を説明しました。
-
 
 ## <a name="related-links"></a>関連リンク
 

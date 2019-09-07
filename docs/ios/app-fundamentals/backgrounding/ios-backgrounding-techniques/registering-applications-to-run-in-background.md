@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 044ae7e4a77abb77e766df58b9cda5938ce8fe7b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 6466d4c7edf6fde38fd3e9e8a6aaa48c2e5f9b4a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290616"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70757695"
 ---
 # <a name="registering-xamarinios-apps-to-run-in-the-background"></a>バックグラウンドで実行する Xamarin iOS アプリを登録しています
 
@@ -31,7 +31,6 @@ ms.locfileid: "70290616"
 - **場所**-GPS またはネットワークの場所データを使用するアプリケーションは、バックグラウンドで位置情報の更新を送受信できます。
 - **Fetch (iOS 7 以降)** -バックグラウンドフェッチ権限用に登録されたアプリケーションでは、プロバイダーが定期的に新しいコンテンツを確認し、アプリケーションに戻ったときに更新されたコンテンツをユーザーに提示できます。
 - **リモート通知 (iOS 7 以降)** -アプリケーションは、プロバイダーからの通知を受信するように登録できます。また、通知を使用して、ユーザーがアプリケーションを開く前に更新プログラムを開始します。 通知はプッシュ通知の形式で提供されます。または、アプリケーションをサイレントモードでスリープ解除することを選択できます。
-
 
 アプリケーションを登録するには、アプリケーションの*情報*で **[必要なバックグラウンドモード]** プロパティを設定します。 アプリケーションは、必要な数だけカテゴリに登録できます。
 

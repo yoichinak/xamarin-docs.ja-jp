@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/25/2018
-ms.openlocfilehash: 6cb001a42f0cc98d0054523dffa0772b29188d73
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: a56405aaed84be5015e5d58ef9a13ba8e270ea58
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69523825"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70757534"
 ---
 # <a name="obtaining-a-google-maps-api-key"></a>Google マップ API キーを取得する
 
@@ -23,7 +23,6 @@ Maps API v2 キーを取得するには、次の手順を実行します。
 1. アプリケーションの署名に使用されるキーストアの SHA-1 フィンガープリントを取得します。
 2. Google Api コンソールでプロジェクトを作成します。
 3. API キーを取得しています。
-
 
 ## <a name="obtaining-your-signing-key-fingerprint"></a>署名キーの指紋を取得する
 
@@ -52,7 +51,6 @@ Google から Maps API キーを要求するには、アプリケーションの
 
 -----
 
-
 次のコマンドを使用して keytool を実行します (上記のファイルパスを使用)。
 
 ```shell
@@ -76,7 +74,6 @@ keytool -list -v -keystore /Users/[USERNAME]/.local/share/Xamarin/Mono\ for\ And
 ```
 
 -----
-
 
 ### <a name="production-keys"></a>運用キー
 
@@ -110,19 +107,19 @@ Certificate fingerprints:
 
 署名キーストアの SHA-1 フィンガープリントを取得した後、Google Api コンソールで新しいプロジェクトを作成する必要があります (または Google Maps Android API v2 サービスを既存のプロジェクトに追加する必要があります)。
 
-1. ブラウザーで[Google 開発者コンソール API & サービスダッシュボード](https://console.developers.google.com/apis/dashboard/)に移動し、[**プロジェクトの選択**] をクリックします。 プロジェクト名をクリックするか、[**新しいプロジェクト**] をクリックして新しい名前を作成します。
+1. ブラウザーで[Google 開発者コンソール API & サービスダッシュボード](https://console.developers.google.com/apis/dashboard/)に移動し、 **[プロジェクトの選択]** をクリックします。 プロジェクト名をクリックするか、 **[新しいプロジェクト]** をクリックして新しい名前を作成します。
 
    [![Google Developer Console の [プロジェクトの作成] ボタン](obtaining-a-google-maps-api-key-images/01-google-developer-console-vs-sml.png)](obtaining-a-google-maps-api-key-images/01-google-developer-console-vs.png#lightbox)
 
-2. 新しいプロジェクトを作成した場合は、表示される [**新しいプロジェクト**] ダイアログボックスにプロジェクト名を入力します。 このダイアログでは、プロジェクト名に基づいて一意のプロジェクト ID が作成されます。 次に、次の例に示すように、[**作成**] ボタンをクリックします。
+2. 新しいプロジェクトを作成した場合は、表示される **[新しいプロジェクト]** ダイアログボックスにプロジェクト名を入力します。 このダイアログでは、プロジェクト名に基づいて一意のプロジェクト ID が作成されます。 次に、次の例に示すように、 **[作成]** ボタンをクリックします。
 
    [![新しいプロジェクトには XamarinMapsDemo という名前が付けられます。](obtaining-a-google-maps-api-key-images/02-new-project-vs-sml.png)](obtaining-a-google-maps-api-key-images/02-new-project-vs.png#lightbox)
 
-3. 1分以上経過すると、プロジェクトが作成され、プロジェクトの [**ダッシュボード**] ページに移動します。 そこから、[ **API とサービスを有効にする**] をクリックします。
+3. 1分以上経過すると、プロジェクトが作成され、プロジェクトの **[ダッシュボード]** ページに移動します。 そこから、 **[API とサービスを有効にする]** をクリックします。
 
    [![[ライブラリ] セクションの [Google Maps Android API] をクリックします。](obtaining-a-google-maps-api-key-images/03-api-selection-vs-sml.png)](obtaining-a-google-maps-api-key-images/03-api-selection-vs.png#lightbox)
 
-4. [ **API ライブラリ**] ページで、[ **Maps SDK for Android**] をクリックします。 次のページで、[**有効**] をクリックして、このプロジェクトのサービスを有効にします。
+4. **[API ライブラリ]** ページで、 **[Maps SDK for Android]** をクリックします。 次のページで、 **[有効]** をクリックして、このプロジェクトのサービスを有効にします。
 
    [![[ダッシュボード] セクションの [有効にする] ボタンをクリックします。](obtaining-a-google-maps-api-key-images/04-enable-api-vs-sml.png)](obtaining-a-google-maps-api-key-images/04-enable-api-vs.png#lightbox)
 
@@ -132,23 +129,23 @@ Certificate fingerprints:
 
 **Google Developer Console** api プロジェクトを作成したら、Android API キーを作成する必要があります。 Android Map API v2 へのアクセス権を付与するには、Xamarin Android アプリケーションに API キーが必要です。
 
-1. 表示される [ **MAPS SDK For Android** ] ページ (前の手順で [**有効に**する] をクリックした後) で、[**資格情報**] タブに進み、[**資格情報の作成**] ボタンをクリックします。
+1. 表示される **[MAPS SDK For Android]** ページ (前の手順で **[有効に]** する をクリックした後) で、 **[資格情報]** タブに進み、 **[資格情報の作成]** ボタンをクリックします。
 
    [![Android 用 SDK の資格情報メッセージのマップ](obtaining-a-google-maps-api-key-images/05-api-is-enabled-vs-sml.png)](obtaining-a-google-maps-api-key-images/05-api-is-enabled-vs.png#lightbox)
 
-2. [ **API キー**] をクリックします。
+2. **[API キー]** をクリックします。
 
    [![[プロジェクトへの資格情報の追加] ダイアログ](obtaining-a-google-maps-api-key-images/06-add-credentials-to-your-project-vs-sml.png)](obtaining-a-google-maps-api-key-images/06-add-credentials-to-your-project-vs.png#lightbox)
 
-3. このボタンをクリックすると、API キーが生成されます。 次に、アプリだけがこのキーを使用して Api を呼び出すことができるように、このキーを制限する必要があります。 [**キーの制限**] をクリックします。
+3. このボタンをクリックすると、API キーが生成されます。 次に、アプリだけがこのキーを使用して Api を呼び出すことができるように、このキーを制限する必要があります。 **[キーの制限]** をクリックします。
 
    [![[資格情報] ページで [キーの制限] をクリックする](obtaining-a-google-maps-api-key-images/07-generate-api-key-vs-sml.png)](obtaining-a-google-maps-api-key-images/07-generate-api-key-vs.png#lightbox)
 
-4. [**名前**] フィールドを**API キー 1**から名前に変更します。これにより、キーがどのように使用されるかを覚えやすくなります (この例では**XamarinMapsDemoKey**が使用されています)。 次に、[ **Android アプリ**] ラジオボタンをクリックします。
+4. **[名前]** フィールドを**API キー 1**から名前に変更します。これにより、キーがどのように使用されるかを覚えやすくなります (この例では**XamarinMapsDemoKey**が使用されています)。 次に、 **[Android アプリ]** ラジオボタンをクリックします。
 
    [![[資格情報] ページで Android アプリを選択する](obtaining-a-google-maps-api-key-images/08-key-restriction-vs-sml.png)](obtaining-a-google-maps-api-key-images/08-key-restriction-vs.png#lightbox)
 
-5. SHA-1 フィンガープリントを追加するには、[ **+ パッケージ名と指紋の追加**] をクリックします。
+5. SHA-1 フィンガープリントを追加するには、 **[+ パッケージ名と指紋の追加]** をクリックします。
 
    [![[パッケージ名と指紋の追加] をクリックします。](obtaining-a-google-maps-api-key-images/09-add-package-fingerprint-vs-sml.png)](obtaining-a-google-maps-api-key-images/09-add-package-fingerprint-vs.png#lightbox)
 
@@ -156,7 +153,7 @@ Certificate fingerprints:
 
    [![入力されたパッケージ名は、"com.... android...](obtaining-a-google-maps-api-key-images/10-enter-package-and-sha1-vs-sml.png)](obtaining-a-google-maps-api-key-images/10-enter-package-and-sha1-vs.png#lightbox)
 
-7. 注意してください、APK を Google Maps にアクセスするためには、する必要があります sha-1 指紋が含まれますすべてキーストアの (デバッグとリリース)、APK の署名に使用する名前をパッケージ化します。 たとえば、デバッグおよびリリース APK を生成するための別のコンピュータを 1 台のコンピューターを使用する場合を含める必要がありますデバッグ キーストアを最初のコンピューターから、sha-1 証明書フィンガー プリントのリリース キーストアから sha-1 証明書フィンガー プリント2 番目のコンピューター。 [ **+ パッケージ名と指紋の追加**] をクリックして、次の例に示すように、別の指紋とパッケージ名を追加します。
+7. 注意してください、APK を Google Maps にアクセスするためには、する必要があります sha-1 指紋が含まれますすべてキーストアの (デバッグとリリース)、APK の署名に使用する名前をパッケージ化します。 たとえば、デバッグおよびリリース APK を生成するための別のコンピュータを 1 台のコンピューターを使用する場合を含める必要がありますデバッグ キーストアを最初のコンピューターから、sha-1 証明書フィンガー プリントのリリース キーストアから sha-1 証明書フィンガー プリント2 番目のコンピューター。 **[+ パッケージ名と指紋の追加]** をクリックして、次の例に示すように、別の指紋とパッケージ名を追加します。
 
    [![別の指紋を追加すると、別の SHA-1 証明書が作成されます。](obtaining-a-google-maps-api-key-images/11-second-fingerprint-vs-sml.png)](obtaining-a-google-maps-api-key-images/11-second-fingerprint-vs.png#lightbox)
 
@@ -172,7 +169,7 @@ Certificate fingerprints:
 
    [![ハンバーガーメニューの [課金] セクションを選択します。](obtaining-a-google-maps-api-key-images/13-goto-billing-vs-sml.png)](obtaining-a-google-maps-api-key-images/13-goto-billing-vs.png#lightbox)
 
-2. 課金アカウントにプロジェクトをリンクするには、[**課金アカウントのリンク**] をクリックし、表示されたポップアップで [**課金アカウントの作成**] をクリックします (アカウントがない場合は、新しいアカウントを作成します)。
+2. 課金アカウントにプロジェクトをリンクするには、 **[課金アカウントのリンク]** をクリックし、表示されたポップアップで **[課金アカウントの作成]** をクリックします (アカウントがない場合は、新しいアカウントを作成します)。
 
    [![プロジェクトを請求先アカウントにリンク](obtaining-a-google-maps-api-key-images/14-link-billing-account-vs-sml.png)](obtaining-a-google-maps-api-key-images/14-link-billing-account-vs.png#lightbox)
 

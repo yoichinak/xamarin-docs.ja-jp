@@ -7,18 +7,17 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 0049d69caabce545b2813dbd2b3905fe96f28fed
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 0f3e56ab90d5205318539994bae7f4db153bb163
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292738"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768088"
 ---
 # <a name="working-with-the-watchos-parent-application-in-xamarin"></a>親アプリケーション Xamarin で watchOS の操作
 
 > [!IMPORTANT]
 > 次の例をのみを使用して、親アプリケーションへのアクセスは、watchOS 1 watch アプリで機能します。
-
 
 Watch アプリとそれにバンドルされている iOS アプリ間で通信するさまざまな方法はあります。
 
@@ -30,7 +29,6 @@ Watch アプリとそれにバンドルされている iOS アプリ間で通信
 
 親アプリは、コンテナー アプリと呼ばれることもあります。
 
-
 <a name="code" />
 
 ## <a name="run-code"></a>コードを実行します。
@@ -39,8 +37,6 @@ Watch アプリとそれにバンドルされている iOS アプリ間で通信
 ウォッチ拡張機能は、その代理の使用に関するいくつかの処理を実行して、親 iOS アプリを要求できる、`OpenParentApplication`メソッド。
 
 これは、機能は、長時間実行されるタスク (などのネットワーク要求) - のみ親 iOS アプリを利用してこれらのタスクを完了して、ウォッチ拡張機能にアクセスできる場所で取得したデータを保存するためにバック グラウンド処理のために特に便利です。
-
-
 
 ### <a name="watch-kit-app-extension"></a>キット アプリ拡張機能をご覧ください。
 
@@ -57,12 +53,10 @@ WKInterfaceController.OpenParentApplication (new NSDictionary (), (replyInfo, er
 });
 ```
 
-
 ### <a name="ios-app"></a>iOS アプリ
 
 Watch アプリ拡張機能からのすべての呼び出しは、iPhone アプリのを介してルーティングされます`HandleWatchKitExtensionRequest`メソッド。
 Watch アプリでさまざまな要求を行っているかどうかは、このメソッドがクエリを実行する必要があります、`userInfo`要求を処理する方法を決定するためのディクショナリ。
-
 
 ```csharp
 [Register ("AppDelegate")]
@@ -81,7 +75,6 @@ public partial class AppDelegate : UIApplicationDelegate
     }
 }
 ```
-
 
 <a name="storage" />
 
@@ -142,8 +135,6 @@ wormHole = new Wormhole ("group.com.your-company.watchstuff", "messageDir");
 ```
 
 ダウンロード、C#バージョン[WormHoleSharp](https://github.com/Clancey/WormHoleSharp)します。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

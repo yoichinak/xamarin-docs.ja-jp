@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 7f455d2164573d68db0a9c764f2b2cef5cc6d739
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 81e8f5c1beafeaafcf0d5dcbcc3bf4d66ee05a66
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284040"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752676"
 ---
 # <a name="subscriptions-and-reporting-in-xamarinios"></a>Xamarin. iOS のサブスクリプションとレポート
 
@@ -28,7 +28,6 @@ ms.locfileid: "70284040"
 - 実装の概要
 - 更新以外のサブスクリプションは、通常、サーバー側で配信されるワークフローと、使用可能なマネージド製品を使用して実装する必要があります。 
 
-
 ## <a name="about-free-subscriptions"></a>無料サブスクリプションについて
 
 無料サブスクリプションを使用すると、開発者は無料のコンテンツを Newsstand アプリに配置できます (Newsstand 以外のアプリでは使用できません)。 無料のサブスクリプションが開始されると、すべてのユーザーのデバイスで使用できるようになります。 無料サブスクリプションは期限切れになりません。アプリケーションがアンインストールされたときにのみ終了します。
@@ -36,7 +35,6 @@ ms.locfileid: "70284040"
 ### <a name="implementation-overview"></a>実装の概要
 
 無料サブスクリプションは、自動更新サブスクリプションと同じように動作します。 アプリケーションには、iTunes Connect で ' purchase ' に使用できる無料のサブスクリプション製品が必要です。 ユーザーが購入した場合は、無料サブスクリプションの購入を、自動更新可能なサブスクリプション製品と同様に検証する必要があります。 無料のサブスクリプショントランザクションは復元できます。
-
 
 ## <a name="about-auto-renewable-subscriptions"></a>自動更新サブスクリプションについて
 
@@ -53,7 +51,7 @@ ms.locfileid: "70284040"
 ITunes Connect のホームページから、 **[マイアプリ]** を選択します。   
    
  [![](subscriptions-and-reporting-images/image2.png "[My Apps] を選びます")](subscriptions-and-reporting-images/image2.png#lightbox)  
- 
+
 アプリケーションを選択し、 **[アプリ内購入]** タブをクリックします。
 
 [![](subscriptions-and-reporting-images/image6.png "[アプリ内購入] タブをクリックします。")](subscriptions-and-reporting-images/image6.png#lightbox)
@@ -63,10 +61,8 @@ ITunes Connect のホームページから、 **[マイアプリ]** を選択し
  [![](subscriptions-and-reporting-images/image40.png "[共有シークレットの表示または生成] を選択します。")](subscriptions-and-reporting-images/image40.png#lightbox)
 
  [![](subscriptions-and-reporting-images/image41.png "共有シークレットを生成する")](subscriptions-and-reporting-images/image41.png#lightbox)   
-   
-   
-   
- 共有シークレットを使用するには、次のように、自動更新可能なサブスクリプションのアプリ内購入確認を検証するときに、Apple のサーバーに送信される JSON ペイロードにそれを含めます。
+
+共有シークレットを使用するには、次のように、自動更新可能なサブスクリプションのアプリ内購入確認を検証するときに、Apple のサーバーに送信される JSON ペイロードにそれを含めます。
 
 ```csharp
 {
@@ -95,10 +91,8 @@ ITunes Connect のホームページから、 **[マイアプリ]** を選択し
 #### <a name="restoring-auto-renewable-subscriptions"></a>自動更新可能なサブスクリプションを復元しています
 
 複数のトランザクションが返されます。つまり、元の購入トランザクションと、サブスクリプションが更新された期間ごとに個別のトランザクションが返されます。 有効期間を把握するには、開始日と使用条件を追跡する必要があります。   
-   
-   
-   
- SKPaymentTransaction オブジェクトにはサブスクリプションの用語が含まれていません。用語ごとに異なる製品 ID を使用し、トランザクションの購入日からサブスクリプション期間を推定できるコードを記述する必要があります。
+
+SKPaymentTransaction オブジェクトにはサブスクリプションの用語が含まれていません。用語ごとに異なる製品 ID を使用し、トランザクションの購入日からサブスクリプション期間を推定できるコードを記述する必要があります。
 
 #### <a name="testing-auto-renewal"></a>自動更新のテスト
 

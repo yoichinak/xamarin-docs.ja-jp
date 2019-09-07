@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/01/2017
-ms.openlocfilehash: b795a53fc78adee19e1e2d1c57c9c4344aa4281b
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: e829c953278d8edeb697d27da8e3707ee1c91784
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119642"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70757585"
 ---
 # <a name="binding-a-java-library"></a>Java ライブラリのバインド
 
@@ -65,7 +65,6 @@ com.company.package
 using Com.Company.Package;
 ```
 
-
 既存の Android ライブラリをバインドする場合は、次の点に注意する必要があります。
 
 - **ライブラリの外部依存関係はありますか。** &ndash;Android ライブラリに必要な Java 依存関係は、 **Referencejar**または**EmbeddedReferenceJar**として Xamarin プロジェクトに含める必要があります。 すべてのネイティブアセンブリは、 **EmbeddedNativeLibrary**としてバインドプロジェクトに追加する必要があります。  
@@ -73,7 +72,6 @@ using Com.Company.Package;
 - **Android ライブラリの対象となる Android API のバージョンを教えてください。** &ndash;Android API レベルを "ダウングレード" することはできません。Xamarin. Android バインドプロジェクトが、Android ライブラリと同じ API レベル (またはそれ以降) を対象としていることを確認します。
 
 - **ライブラリをコンパイルするために使用された JDK のバージョン** &ndash;Android ライブラリが、Xamarin Android で使用されているものとは異なるバージョンの JDK でビルドされている場合、バインドエラーが発生することがあります。 可能であれば、Xamarin Android のインストールで使用されているものと同じバージョンの JDK を使用して、Android ライブラリを再コンパイルします。
-
 
 ## <a name="build-actions"></a>ビルド アクション
 
@@ -85,11 +83,11 @@ using Com.Company.Package;
 
 - `LibraryProjectZip`&ndash;を埋め込みます。AAR ファイルを結果のバインドライブラリに挿入します。DLL. これは、バインドされたのリソース (およびコード) にアクセスできる点を除いて、EmbeddedJar に似ています。AAR ファイル。 を埋め込む場合は、このオプションを使用します。AAR をバインドライブラリに挿入します。
 
-- `ReferenceJar`参照を指定します。 jar: 参照。 jar は、バインドされた .jar またはのいずれかの .jar です。 &ndash;AAR ファイルはに依存します。 この参照は、コンパイル時の依存関係を満たすためにのみ使用されます。 このビルドアクションを使用するとC# 、バインドは参照**jar**に対して作成されず、結果のバインドライブラリには埋め込まれません。DLL. このオプションは、参照**jar**のバインドライブラリを作成する場合に使用しますが、まだ実行していない場合は、このオプションを使用します。 このビルドアクションは、複数の **.jar**s (やなど) をパッケージ化する場合に便利です。複数の相互に依存するバインディングライブラリにします。
+- `ReferenceJar`参照を指定します。 jar: 参照。 jar は、バインドされた .jar またはのいずれかの .jar です。 &ndash;AAR ファイルはに依存します。 この参照は、コンパイル**時の依存**関係を満たすためにのみ使用されます。 このビルドアクションを使用するとC# 、バインドは参照**jar**に対して作成されず、結果のバインドライブラリには埋め込まれません。DLL. このオプションは、参照**jar**のバインドライブラリを作成する場合に使用しますが、まだ実行していない場合は、このオプションを使用します。 このビルドアクションは、複数の **.jar**s (やなど) をパッケージ化する場合に便利です。複数の相互に依存するバインディングライブラリにします。
 
 - `EmbeddedReferenceJar`結果として得られるバインディングライブラリに参照 .jar を埋め込みます。 &ndash;DLL. このビルドアクションは、入力 **.jar** (またC#はの両方のバインドを作成する場合に使用します。AAR) とそのすべての参照 **.jar**をバインドライブラリに作成します。
 
-- `EmbeddedNativeLibrary`ネイティブなをバインドに埋め込み**ます。** &ndash; このビルドアクションは、バインドされている **.jar**ファイルに必要なファイルに対して使用され**ます。** Java ライブラリからコードを実行する前に、ライブラリを手動で読み込む必要がある場合があります。 詳細については、以下を参照してください。
+- `EmbeddedNativeLibrary`ネイティブなをバインドに埋め込み**ます。** &ndash; このビルドアクションは、バインドされている **.jar**ファイルに必要なファイルに対して使用され**ます。** Java ライブラリからコードを実行する前に、ライブラリを手動で読み込む必要がある場合が**あります。** 詳細については、以下を参照してください。
 
 これらのビルドアクションの詳細については、次のガイドで説明します。
 
@@ -125,8 +123,6 @@ Xamarin Android のバインドジェネレーターは、一部の Java 表現�
 
 - Java の_内部クラス_は、の C#インスタンスコンストラクターを持つ入れ子になったクラスです。
 
-
-
 ## <a name="binding-scenarios"></a>バインドのシナリオ
 
 次のバインドシナリオガイドは、アプリに組み込むために Java ライブラリ (またはライブラリ) をバインドするのに役立ちます。
@@ -140,7 +136,6 @@ Xamarin Android のバインドジェネレーターは、一部の Java 表現�
 - [バインディングのカスタマイズ](~/android/platform/binding-java-library/customizing-bindings/index.md)では、ビルドエラーを解決し、結果として得られる API の構造を ""C#のようなものにするために、バインディングに手動で変更を加える方法について説明します。
 
 - [バインディングのトラブルシューティング](~/android/platform/binding-java-library/troubleshooting-bindings.md)では、一般的なバインドエラーのシナリオ、考えられる原因、およびこれらのエラーを解決するための提案を示します。
-
 
 ## <a name="related-links"></a>関連リンク
 

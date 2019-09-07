@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: ac1ded56137cf85ec5852358f75240176dbc7671
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 35c35e702b7f992e0661630783edd4f00abce5c7
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286786"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767373"
 ---
 # <a name="working-with-property-lists-in-xamarinios"></a>Xamarin のプロパティリストの操作
 
@@ -32,7 +32,6 @@ Information プロパティリスト ( `Info.plist`) は、アプリケーショ
 - **[詳細設定] パネル**-[詳細設定] パネルは、サポートされているドキュメントの種類、uti、および URL の種類を指定する場所です。
 - [**ソース] パネル**-[ソース] パネルでは、アプリケーションのカスタムプロパティだけでなく、あまり一般的ではないプロパティも制御します。
 
-
 次の3つのセクションでは、各パネルの機能について詳しく説明します。
 
 ## <a name="application-panel"></a>アプリケーションパネル
@@ -46,11 +45,9 @@ Visual Studio for Mac は、アプリケーションの共通`Info.plist`エン�
 1. アイコンと起動画面
 1. マップとバックグラウンドモード
 
-
 これらの詳細については、次のセクションで詳しく説明します。
 
  <a name="iOS_Application_Target" />
-
 
 ### <a name="ios-application-target"></a>iOS アプリケーションのターゲット
 
@@ -77,13 +74,9 @@ Visual Studio for Mac は、アプリケーションの共通`Info.plist`エン�
 
  <a name="Icons" />
 
-
 ### <a name="icons-launch-images-and-itunes-artwork"></a>アイコン、起動画像、iTunes アートワーク
 
 情報 plist ファイルでのアイコン、画像、およびアートワークの使用方法については、「[イメージの操作](~/ios/app-fundamentals/images-icons/index.md)」ガイドを参照してください。
-
-
-
 
 ### <a name="maps-integration-and-background-modes"></a>統合とバックグラウンドモードのマップ
 
@@ -104,7 +97,6 @@ Visual Studio for Mac は、アプリケーションの共通`Info.plist`エン�
  [![](property-lists-images/image34.png "[詳細設定] パネル")](property-lists-images/image34.png#lightbox)
 
  <a name="Document_Types" />
-
 
 ## <a name="document-types"></a>ドキュメントの種類
 
@@ -127,8 +119,6 @@ Visual Studio for Mac は、アプリケーションの共通`Info.plist`エン�
 Url の最初の部分は、URL スキーム名 (プロトコルとも呼ばれます) です。 たとえば、 `http://`と`https://`は一般的な URL スキームです。 アプリケーションのカスタム URL スキームを作成することもできます。 カスタム URL スキームは、他のアプリケーションとの間で送受信されるデータのやり取りに使用されます。 次のスクリーンショットは、という`monkeys://`新しいカスタム URL スキームを作成する方法を示しています。
 
  [![](property-lists-images/url.png "カスタム Url")](property-lists-images/url.png#lightbox)
-
-
 
 カスタム URL スキームの実装の詳細については、[このガイドの「Apple のカスタム Url スキームの実装」](https://developer.apple.com/library/ios/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/AdvancedAppTricks/AdvancedAppTricks.html)を参照してください。
 
@@ -153,7 +143,6 @@ Url の最初の部分は、URL スキーム名 (プロトコルとも呼ばれ�
 ## <a name="summary"></a>Summary
 
 この記事では、グラフィカルおよび上級の plist エディターを使用して、共通のアプリ構成を編集すると共に、アイコンと起動イメージを指定する方法について説明します。 また、アプリの`Entitlements.plist`機能を追加および管理するためのも導入されました。
-
 
 ## <a name="related-links"></a>関連リンク
 

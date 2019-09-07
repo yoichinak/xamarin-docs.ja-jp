@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 052d81ccaefe123eb375ddcd92bee0b1f2a395e2
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 4558a9bd19810f8759010861d8a2e4b8cab09c56
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290314"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770300"
 ---
 # <a name="sandboxing-a-xamarinmac-app"></a>Xamarin. Mac アプリのサンドボックス化
 
@@ -562,8 +562,6 @@ Xamarin. Mac アプリが必要とする権利を確認するには、次の手�
 ## <a name="summary"></a>まとめ
 
 この記事では、Xamarin. Mac アプリケーションのサンドボックス化について詳しく説明しました。 まず、アプリのサンドボックスの基本を示す単なる Xamarin. Mac アプリを作成しました。 次に、サンドボックス違反の解決方法を説明しました。 次に、アプリのサンドボックスについて詳しく説明しました。最後に、アプリのサンドボックス用の Xamarin. Mac アプリの設計について見てきました。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

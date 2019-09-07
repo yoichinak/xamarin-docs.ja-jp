@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/05/2018
-ms.openlocfilehash: 161fda52002e8bb757db23c9b2a20a6befd132f5
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 5afb87eb3f84e00427072ef6c4e2c19b46de0186
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289341"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766580"
 ---
 # <a name="backgrounding-in-xamarinios"></a>Xamarin. iOS のバックグラウンド処理
 
@@ -35,8 +35,6 @@ IOS では、バックグラウンド処理はアプリケーションの状態�
 ## <a name="summary"></a>Summary
 
 このガイドでは、iOS でバックグラウンド処理を行うさまざまな方法を紹介しました。 Ios アプリケーションの状態について説明し、iOS アプリケーションのライフサイクルでバックグラウンド処理が果たす役割を確認します。 また、iOS のバックグラウンドで動作するように個々のタスクまたはアプリケーション全体を登録する方法についても説明しました。 最後に、バックグラウンドで更新を実行するアプリケーションを構築することにより、iOS でのバックグラウンド処理に関する理解を深めます。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 722e09cc292bad682a49ee0cba4ff0ca0f39a844
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: ff29ac58db618d4a644bbaa5a95ac8624726827f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291639"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770047"
 ---
 # <a name="introduction-to-storyboards-in-xamarinmac"></a>Xamarin. Mac でのストーリーボードの概要
 
@@ -111,7 +111,6 @@ SourceWriter コード全体に詳細なコメントが付いていて、可能�
 ## <a name="summary"></a>Summary
 
 この記事では、Xamarin. Mac アプリでストーリーボードを操作する方法について簡単に説明しました。 ストーリーボードを使用して新しいアプリを作成する方法と、ユーザーインターフェイスを定義する方法を説明しました。 また、セグエを使用して、さまざまなウィンドウ間を移動し、状態を表示する方法についても説明しました。
-
 
 ## <a name="related-links"></a>関連リンク
 

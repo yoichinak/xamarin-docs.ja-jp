@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 60bf25d7d88a1772e8b742a336a5faaebdf964fa
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 1a91b92cc3e82bad02d630dde8ced1d1ba63e3fd
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290814"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768472"
 ---
 # <a name="maps-in-xamarinios"></a>Xamarin. iOS のマップ
 
@@ -52,7 +52,6 @@ map.MapType = MKMapType.Hybrid;
 
 - ピンチジェスチャを使用したズーム
 - パンジェスチャによるパン
-
 
 これらの機能は、 `ZoomEnabled` `MKMapView`インスタンスのプロパティとプロパティを設定`ScrollEnabled`するだけで有効または無効にすることができます。この場合、既定値は両方とも true になります。 たとえば、静的マップを表示するには、適切なプロパティを false に設定するだけです。
 
@@ -100,7 +99,6 @@ map.ShowsUserLocation = true;
 
 - 注釈のタイトルや場所など、注釈に関するモデルデータを含むオブジェクト。`MKAnnotation`
 - `MKAnnotationView`表示するイメージと、ユーザーが注釈をタップしたときに表示されるコールアウトを格納する。
-
 
 マップキットでは、iOS の委任パターンを使用して、の`Delegate`プロパティ`MKMapView`がのインスタンス`MKMapViewDelegate`に設定されているマップに注釈を追加します。 これは、このデリゲートの実装であり、 `MKAnnotationView`注釈のを返します。
 
@@ -183,7 +181,6 @@ public override void CalloutAccessoryControlTapped (MKMapView mapView, MKAnnotat
 - ポリライン-多くの場合、ルートを表示するときに見られます。
 - 円-マップの円形の領域を強調表示するために使用されます。
 
-
 さらに、カスタムオーバーレイを作成して、カスタマイズされた詳細な描画コードを持つ任意のジオメトリを表示することもできます。 たとえば、気象レーダーはカスタムオーバーレイの候補として適しています。
 
 #### <a name="adding-an-overlay"></a>オーバーレイの追加
@@ -192,7 +189,6 @@ public override void CalloutAccessoryControlTapped (MKMapView mapView, MKAnnotat
 
 - オーバーレイのモデルオブジェクトを作成し、 `MKMapView`に追加します。
 - でオーバーレイのビューを作成`MKMapViewDelegate`します。
-
 
 オーバーレイのモデルには、任意`MKShape`のサブクラスを指定できます。 Xamarin. iOS に`MKShape`は`MKPolygon`、、、 `MKPolyline`および`MKCircle`の各クラスを使用して、多角形、ポリライン、および円のサブクラスが含まれています。
 
@@ -231,7 +227,6 @@ iOS には、マップキットを使用したローカル検索 API が含ま�
 1. からオブジェクトを作成します。 `MKLocalSearchRequest` `MKLocalSearch`
 1. オブジェクトに対してメソッドを`Start`呼び出します。 `MKLocalSearch`
 1. コールバック`MKLocalSearchResponse`内のオブジェクトを取得します。
-
 
 ローカル検索 API 自体は、ユーザーインターフェイスを提供しません。 マップを使用する必要もありません。 ただし、ローカル検索を実際に使用するには、アプリケーションで検索クエリを指定して結果を表示する方法が用意されている必要があります。 また、結果には位置データが含まれるため、多くの場合、マップに表示するのが理にかなっています。
 
@@ -279,8 +274,6 @@ NavigationItem.TitleView = searchController.SearchBar;
 この結果、次に示すように、マップ上に検索バーが表示されます。
 
  ![](images/07-searchbar.png "マップ上に表示される検索バー")
-
-
 
 ### <a name="displaying-the-search-results"></a>検索結果の表示
 
@@ -351,7 +344,6 @@ public class SearchResultsViewController : UITableViewController
             }
         });
 
-
     }
 }
 ```
@@ -382,7 +374,6 @@ public void Search (string forSearchString)
         }
     });
 
-
 }
 ```
 
@@ -406,8 +397,6 @@ public class SearchResultsUpdator : UISearchResultsUpdating
 
 > [!IMPORTANT]
 > `UISearchController`は、iOS 8 で実装されました。 これより前のデバイスをサポートする場合は、を使用`UISearchDisplayController`する必要があります。
-
-
 
 ## <a name="summary"></a>まとめ
 

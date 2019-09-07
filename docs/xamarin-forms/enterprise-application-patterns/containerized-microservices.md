@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 07bb1f7024f3518e0e547563d1bd611b2a37d474
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: dc71da512519cdd7fcc56df1ff987ffbc1354663
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69529165"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760392"
 ---
 # <a name="containerized-microservices"></a>コンテナー化 Microservices
 
@@ -149,7 +149,6 @@ RabbitMQ を使用して実装される eShopOnContainers イベントバスは�
 マイクロサービスは、最新のクラウドアプリケーションの機敏性、拡張性、信頼性の要件に適した、アプリケーションの開発とデプロイに対するアプローチを提供します。 マイクロサービスの主な利点の1つは、個別にスケールアウトできることです。つまり、特定の機能領域をスケールアウトして、要求をサポートするためにより多くの処理能力やネットワーク帯域幅を必要とします。要求が増加していないアプリケーション。
 
 コンテナーは、分離、リソース制御、およびポータブルオペレーティング環境で、アプリケーションは他のコンテナーのリソースやホストに関係なく実行できます。 マイクロサービスベースのアプリケーションを実装するときに、企業はコンテナーを導入することがますます高まっており、Docker は、ほとんどのソフトウェアプラットフォームとクラウドベンダーが採用している標準のコンテナー実装になっています。
-
 
 ## <a name="related-links"></a>関連リンク
 

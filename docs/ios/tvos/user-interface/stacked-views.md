@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: a48e7bd780783a7b33008a5d86011f5497b042d5
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 194f1a260adc49083a8d4365a310447acbcc96f2
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287978"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769021"
 ---
 # <a name="working-with-tvos-stacked-views-in-xamarin"></a>Xamarin での tvOS 積み上げビューの使用
 
@@ -74,9 +74,6 @@ TvOS アプリ`UIStackView`でを使用する場合、開発者は、iOS デザ�
 
 > [!IMPORTANT]
 > ベースラインの配置は、拡張または圧縮されたサブビューのサイズに対しては機能しません。これは、ベースラインが間違った位置に計算されるためです。 ベースラインの配置では、サブビューの**高さ**が組み込みコンテンツビューの**高さ**と一致していることを確認します。
-
-
-
 
 <a name="Common-Stack-View-Uses" />
 
@@ -309,8 +306,6 @@ UIView.Animate(0.25, ()=>{
 ## <a name="summary"></a>Summary
 
 この記事では、tvOS アプリ内の積み上げビューの設計と操作について説明しました。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

@@ -7,18 +7,17 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 065c68ce6fbe816e503ace0ab42b3e86aa6916a7
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: a0ca1aa42d9173abbc86a38ae26b14bfb4865a58
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522840"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70764619"
 ---
 # <a name="toolbar"></a>ツール バー
 
 _ツールバーは、既定の操作バーよりも柔軟な操作バーコンポーネントです。アプリ内の任意の場所に配置でき、そのサイズを変更できます。また、アプリのテーマとは異なる配色を使用できます。また、各アプリの画面には複数のツールバーがあります。_
 
- 
 ## <a name="overview"></a>概要
 
 Android アクティビティの主要なデザイン要素は、*アクションバー*です。 アクションバーは、Android アプリのナビゲーション、検索、メニュー、およびブランド化に使用される UI コンポーネントです。 Android 5.0 をロリポップにする前の Android バージョンでは、操作バー (*アプリバー*とも呼ばれます) が、この機能を提供するために推奨されるコンポーネントでした。 
@@ -69,15 +68,10 @@ Google の[マテリアルデザインガイドライン](https://material.googl
 
 - Android**サポートライブラリ v7 AppCompat**ライブラリ (このガイドの残りの部分では*appcompat*と呼ばれます) `Toolbar`を使用して、以前のバージョンの android にデプロイします。 
 
- 
- 
 ## <a name="requirements"></a>必要条件
 
 `Toolbar`は、Android 5.0 ロリポップ (API 21) 以降で使用できます。 Android 5.0 より前の android リリースを対象としている場合は、 [android サポートライブラリ v7 AppCompat](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/)を`Toolbar`使用します。これにより、NuGet パッケージでの下位互換性がサポートされます。 
 [ツールバーの互換性](~/android/user-interface/controls/tool-bar/toolbar-compatibility.md)このライブラリの使用方法について説明します。 
-
-
-
 
 ## <a name="related-links"></a>関連リンク
 

@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/31/2018
-ms.openlocfilehash: 186dab1d48d928426d223c8961ce21846c351107
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 575235569351d0856c7fbffbf38a981ede1a35ce
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69523079"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70762436"
 ---
 # <a name="auto-complete-for-xamarinandroid"></a>Xamarin Android のオートコンプリート
 
@@ -47,7 +47,6 @@ ms.locfileid: "69523079"
 
 はラベルであり、 [`TextView`](xref:Android.Widget.TextView)[`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
 ウィジェット.
-
 
 ## <a name="tutorial"></a>チュートリアル
 
@@ -166,8 +165,6 @@ static string[] COUNTRIES = new string[] {
 
 [!["Ca" を含む名前を一覧表示する例のオートコンプリートスクリーンショット](auto-complete-images/helloautocomplete.png)](auto-complete-images/helloautocomplete.png#lightbox)
 
-
-
 ## <a name="more-information"></a>説明
 
 ハードコーディングされた文字列配列を使用することは推奨されません。これは、アプリケーションコードがコンテンツではなく動作を重視する必要があるためです。 コンテンツを簡単に変更し、コンテンツのローカライズを容易にするために、文字列などのアプリケーションコンテンツをコードから外部化する必要があります。 このチュートリアルでは、ハードコーディングされた文字列を単純なものにして、[`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
@@ -195,7 +192,6 @@ static string[] COUNTRIES = new string[] {
 string[] countries = Resources.GetStringArray (Resource.array.countries_array);
 var adapter = new ArrayAdapter<String> (this, Resource.layout.list_item, countries);
 ```
-
 
 ### <a name="references"></a>リファレンス
 

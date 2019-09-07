@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/03/2018
-ms.openlocfilehash: 63f815cc974315735220a99fd4cce2af408a8c2f
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 4cec06287963fb607ba2f523c6f47e56c08e655f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119045"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70754891"
 ---
 # <a name="creating-a-service"></a>サービスの作成
 
@@ -104,7 +104,6 @@ Android に暗黙的なインテントに関して複数の一致候補がある
 
 インテントのディスパッチ方法は、サービスの種類によって異なります。詳細については、各サービスの種類に固有のガイドの後半で説明します。
 
-
 ### <a name="creating-an-intent-filter-for-implicit-intents"></a>暗黙的インテントのインテントフィルターを作成する
 
 サービスを暗黙的なインテントに関連付けるには、Android アプリがサービスの機能を識別するためにいくつかのメタデータを提供する必要があります。 このメタデータは、_インテントフィルター_によって提供されます。 インテントフィルターには、サービスを開始する目的で存在する必要がある、アクションやデータの種類など、いくつかの情報が含まれています。 Xamarin Android では、インテントフィルターは、 [`IntentFilterAttribute`](xref:Android.App.IntentFilterAttribute)を使用してサービスを装飾することによって、 **androidmanifest .xml**に登録されます。 たとえば、次のコードでは、に`com.xamarin.DemoService`関連付けられたアクションを使用してインテントフィルターを追加しています。
@@ -128,7 +127,6 @@ public class DemoService : Service
 ```
 
 Xamarin. Android サービスの基本については、サービスのさまざまなサブタイプについて詳しく説明します。
-
 
 ## <a name="related-links"></a>関連リンク
 

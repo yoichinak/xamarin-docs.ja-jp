@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 63530595d9892ed99b7eace3d248e1bc0d0b37d4
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: f0cc04896b5c6e9b620b24c84d5c9d2a09b9cf4a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288402"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752636"
 ---
 # <a name="in-app-purchasing-in-xamarinios"></a>Xamarin. iOS でのアプリ内購入
 
@@ -55,7 +55,6 @@ iOS アプリケーションでは、StoreKit を使用してデジタル製品�
 - **ストアキット**–アプリ内購入機能の構築に使用されるクラスについて説明します。
 - **アプリを購入用にコーディング**する-アプリ内購入を Xamarin iOS アプリに組み込む方法の例。
 - **レポート**– iTunes Connect で使用できる統計の概要。
-
 
 ## <a name="related-links"></a>関連リンク
 

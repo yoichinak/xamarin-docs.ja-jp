@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 638840bafd43961cdce6ebe0fa2fb6cbe8b33e16
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 960be485f6997ed8c861d47181fa89397cff9c0a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291518"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753151"
 ---
 # <a name="eventkit-in-xamarinios"></a>Xamarin. iOS の EventKit
 
@@ -24,7 +24,6 @@ EventKit フレームワークを使用すると、Calendar データベース�
 
 - **Eventkit の基本**: 主要なクラスを使用して eventkit の基本的な部分を紹介し、それらの使用方法について理解を深めます。 ドキュメントの次の部分に取り組む前に、このセクションを読む必要があります。 
 - **一般的な作業**: 一般的なタスクのセクションは、次のような一般的な作業を行う方法に関するクイックリファレンスとして使用することを目的としています。カレンダーを列挙したり、カレンダーイベントやアラームを作成、保存、取得したり、カレンダーイベントを作成および変更するための組み込みのコントローラーを使用したりします。 このセクションは、特定のタスクを参照することを意図しているため、前方からさかのぼって読み取る必要はありません。 
-
 
 このガイドのすべてのタスクは、付属のサンプルアプリケーションで利用できます。
 
@@ -376,7 +375,6 @@ App.Current.EventStore.FetchReminders (
 ## <a name="summary"></a>Summary
 
 このドキュメントでは、EventKit フレームワークの重要な部分と、多くの一般的なタスクの概要について説明しました。 ただし、EventKit フレームワークは非常に大規模で強力な機能を備えています。また、バッチ更新、アラームの構成、イベントの繰り返しの構成、カレンダーデータベースでの変更の登録とリッスンなど、ここでは紹介されていない機能が含まれています。ジオフェンスなどを設定します。  詳細については、「Apple の[予定表とアラームのプログラミングガイド](https://developer.apple.com/library/prerelease/ios/#documentation/DataManagement/Conceptual/EventKitProgGuide/Introduction/Introduction.html)」を参照してください。
-
 
 ## <a name="related-links"></a>関連リンク
 

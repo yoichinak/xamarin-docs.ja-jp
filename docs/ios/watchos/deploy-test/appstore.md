@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 92ad0353268c414a1394e98a7b2d23d23dc4df07
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7b80573a728e1868254b5a89254ebc385b3baa12
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285373"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768076"
 ---
 # <a name="deploying-watchos-apps-to-the-app-store"></a>WatchOS アプリを App Store にデプロイする
 
@@ -82,7 +82,6 @@ ITunes Connect でアプリを構成するときは、忘れずにウォッチ�
 これらは312x390 ピクセルであり、Watch アプリの動作を示しています。
 42 mm watch シミュレーターを使用すると、このサイズでスクリーンショットを撮ることができます。
 
-
 <a name="xamarin_studio" />
 
 ## <a name="visual-studio-for-mac"></a>Visual Studio for Mac
@@ -128,7 +127,6 @@ Xcode Visual Studio for Mac で作成されたアーカイブが自動的に表�
    [![](appstore-images/itc-prerelease-sml.png "ITunes Connect の [アプリの構成] ページ")](appstore-images/itc-prerelease.png#lightbox)
 
 その後、 **[バージョン]** ページで、承認のためにアプリを送信できます。 詳細については、 [「iOS アプリの配布の概要」](~/ios/deploy-test/app-distribution/index.md)を参照してください。
-
 
 ## <a name="troubleshooting"></a>トラブルシューティング
 
@@ -179,10 +177,7 @@ Visual Studio for Mac の最新バージョンがあることと、 **AppIcon ap
 > [!IMPORTANT]
 > Visual Studio for Mac のウォッチアイコンのサポートには既知のバグがあります。これには、 **29x29@3x** イメージに対してサイズが 88 x 88 ピクセルのイメージ (87x87 ピクセル) が必要です。
 
-
 Xcode のイメージ資産を編集するか、([このサンプル](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132)に一致するように) 手動で**ファイルを**編集すること Visual Studio for Mac で、これを修正することはできません。
-
-
 
 ### <a name="invalid-watchkit-support"></a>無効な WatchKit サポート
 
@@ -198,10 +193,7 @@ Ensure you are using the latest version of Xcode and Xamarin's tools.
 > [!IMPORTANT]
 > アプリを Visual Studio for Mac で**アーカイブ**した後、Xcode 6.2 + に切り替えて検証し、iTunes Connect にアップロードする必要があります。
 
-
 安定した Xamarin チャネルと Xcode 6.2 + を使用します。
-
-
 
 ### <a name="invalid-provisioning-profile"></a>プロビジョニングプロファイルが無効です
 
@@ -261,8 +253,6 @@ Error MT5309: Native linking error: clang: error: no such file or directory:
 ```
 
 このエラーは、Xcode インストールの名前が**Xcode**から変更されたことが原因である可能性があります。 たとえば、インストールの名前を**XCode**に変更すると、このエラーが発生します。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

@@ -6,12 +6,12 @@ ms.assetid: 71388B83-699B-4E42-8CBF-8557A4A3CABF
 author: conceptdev
 ms.author: crdun
 ms.date: 05/06/2018
-ms.openlocfilehash: 9629d775b45951279178dffa3600e7cd5073dd38
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 65945a303375863f7b92b20405aa78e6b2edacda
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290631"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766122"
 ---
 # <a name="apple-account-management"></a>Apple のアカウント管理
 
@@ -55,7 +55,7 @@ Apple アカウントの管理は、Visual Studio for Mac、Visual Studio 2019�
     ![fastlane ダイアログ。](apple-account-management-images/image2.png)
 
 3. Apple ID とパスワードを入力し、 **[サインイン]** ボタンをクリックします。 これにより、このコンピューターのセキュリティで保護されたキーチェーンに資格情報が保存されます。 [fastlane](~/ios/deploy-test/provisioning/fastlane/index.md)は、資格情報を安全に処理し、Apple の開発者ポータルに渡すために使用されます。
- 
+
 4. アラートダイアログで **[常に許可]** を選択して、Visual Studio で資格情報を使用できるようにします。
 
     ![アラートダイアログを常に許可する](apple-account-management-images/image4.png)
@@ -81,13 +81,12 @@ Apple アカウントの管理は、Visual Studio for Mac、Visual Studio 2019�
     ![[ユーザー名とパスワード] ダイアログ](apple-account-management-images/prov1a.png)
 
 1. アカウントが正常に追加されると、Apple ID と、Apple ID が含まれているすべてのチームが表示されます。
- 
+
 1. 任意のチームを選択し、 **[詳細の表示...]** をクリックします。 を追加します。 これにより、コンピューターにインストールされているすべての署名 Id とプロビジョニングプロファイルの一覧が表示されます。
 
     ![[ユーザー名とパスワード] ダイアログ](apple-account-management-images/prov2.png)
 
 -----
-
 
 ## <a name="managing-signing-identities-and-provisioning-profiles"></a>署名 Id とプロビジョニングプロファイルの管理
 

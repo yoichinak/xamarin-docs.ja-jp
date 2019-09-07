@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 2bd704b17f5aff1b4d3f2da1813d1eb19ef29e59
-ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
+ms.openlocfilehash: d6c9b74c9abc1a2c493c31699b52969a7d129429
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69620683"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760198"
 ---
 # <a name="the-model-view-viewmodel-pattern"></a>モデルビュービューモデルパターン
 
@@ -363,7 +363,6 @@ public class EventToCommandBehavior : BindableBehavior<View>
 モデルビュービューモデル (MVVM) パターンは、アプリケーションのビジネスロジックとプレゼンテーションロジックをユーザーインターフェイス (UI) から明確に分離するのに役立ちます。 アプリケーションロジックと UI を明確に分離することによって、さまざまな開発上の問題に対処し、アプリケーションを簡単にテスト、保守、および進化させることができます。 また、コードの再利用の機会を大幅に向上させることができ、開発者や UI デザイナーはアプリの各部分を開発する際により簡単に共同作業を行うことができます。
 
 MVVM パターンを使用すると、アプリの UI と基になるプレゼンテーションとビジネスロジックが、UI と UI ロジックをカプセル化したビューという3つの異なるクラスに分割されます。ビューモデル。プレゼンテーションロジックと状態をカプセル化します。およびモデル。アプリのビジネスロジックとデータをカプセル化します。
-
 
 ## <a name="related-links"></a>関連リンク
 

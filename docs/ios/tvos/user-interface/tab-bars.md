@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 799dd40caae0323b71cae2c6715bf8cd16f78356
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: df19dcf542bd3a62a696c0d7d533b4e14390336e
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283976"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768992"
 ---
 # <a name="working-with-tvos-tab-bar-controllers-in-xamarin"></a>Xamarin での tvOS タブバーコントローラーの使用
 
@@ -121,7 +121,6 @@ TvOS アプリのタブバーを操作する最も簡単な方法は、iOS デ�
 
 のプロパティを使用し`UITabBar`て、に格納さ`UITabBarItems`れているのコレクションに、ゼロ (0) のインデックス付き配列としてアクセスします。 `Items` プロパティは、現在選択され`UITabBarItem`ているタブ (カテゴリ) をとして返します。 `SelectedItem`
 
-
 <a name="Working-with-Tab-Bar-Items" />
 
 ## <a name="working-with-tab-bar-items"></a>タブバー項目の操作
@@ -144,9 +143,6 @@ TabBar.Items [2].BadgeValue = "10";
 ## <a name="summary"></a>Summary
 
 この記事では、tvOS アプリ内でのタブバーコントローラーの設計と操作について説明しました。
-
-
-
 
 ## <a name="related-links"></a>関連リンク
 

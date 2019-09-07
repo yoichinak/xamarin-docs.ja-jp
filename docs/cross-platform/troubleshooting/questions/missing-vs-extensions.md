@@ -6,12 +6,12 @@ ms.assetid: 066d36a3-e553-48d6-8769-c972274d7641
 author: conceptdev
 ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: c81ef4e07a90f09d6e06d0d1f565febfcaacf922
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 180db6789ab9cc665ad815b943013b117a562709
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288395"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70757066"
 ---
 # <a name="missing-visual-studio-extensions-after-installation"></a>インストール後に見つからない Visual Studio の拡張機能がある
 
@@ -44,7 +44,6 @@ Visual Studio 2017 (Community、Professional、または Enterprise) 以降が�
     `C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\Extensions\Xamarin\Xamarin\3.1.228.0`
 
     拡張機能が正しくインストールされている場合 (バージョン3.1.228 の場合)、次のフォルダーに60項目が表示されます。
-
 
     ![](missing-vs-extensions-images/folder.png "エクスプローラーでの ' Xamarin\3.1.228.0 ' フォルダーの内容の一覧")
 

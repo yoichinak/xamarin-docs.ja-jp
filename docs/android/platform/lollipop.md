@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 7cc7eeabebbfbcd4b264202235307638b88842d8
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: a14ac0be141a473855dd2e9e19a57fd2d01649bb
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524213"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761929"
 ---
 # <a name="lollipop-features"></a>ロリポップ機能
 
@@ -40,7 +40,6 @@ Android 5.0 には、マテリアルテーマを通じて行われる UI の機�
 
 - **新しい api**&ndash; Android 5.0 では、複数のネットワークサポートのための新しい api の追加、Bluetooth 接続の向上、記憶域の管理の簡素化、マルチメディアプレーヤーとカメラデバイスの柔軟な制御が可能になりました。 スケジュールされた時刻にタスクを非同期に実行するために、新しいジョブスケジュール機能を使用できます。 この機能を使用すると、バッテリの寿命を向上させることができます。たとえば、デバイスが電源に接続され、充電されたときに実行されるスケジュールタスクなどです。
 
-
 ## <a name="requirements"></a>必要条件
 
 Xamarin ベースのアプリで新しい Android 5.0 機能を使用するには、次のものが必要です。
@@ -52,7 +51,6 @@ Xamarin ベースのアプリで新しい Android 5.0 機能を使用するに�
 - **Java Developer Kit**API レベル24以上を開発している場合は、Xamarin Android には[jdk 1.8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)以降が必要です (jdk 1.8 では、ロリポップを含む、24より前の api レベルもサポートされています)。 &ndash; カスタムコントロールまたはフォームプレビューアーを使用する場合は、64ビットバージョンの JDK 1.8 が必要です。
 
 特に API レベル23以前を開発している場合は、 [JDK 1.7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)を使用し続けることができます。
-
 
 ## <a name="setting-up-an-android-50-project"></a>Android 5.0 プロジェクトの設定
 
@@ -101,7 +99,6 @@ Android 5.0 では、Dalvik ではなく、既定のランタイムとして新�
 
 既存のアプリは、アート下で&ndash;は動作しない可能性がある前の Dalvik ランタイムに固有の手法を利用するアプリを除き、アートの下では変更なしで動作します。 これらの変更の詳細については、「 [Android ランタイムでのアプリの動作の検証 (アート)](https://developer.android.com/guide/practices/verifying-apps-art.html)」を参照してください。
 
-
 ### <a name="notification-changes"></a>通知の変更
 
 Android 5.0 で通知が大幅に変更されました。
@@ -142,11 +139,9 @@ Android 5.0 では、左側に表示されるホーム画面が greets ます。
 
 Xamarin Android アプリでのマテリアルテーマ機能の使用の詳細については、「[マテリアルテーマ](~/android/user-interface/material-theme.md)」を参照してください。
 
-
 ## <a name="animations"></a>Animations
 
 Android 5.0 では、アプリインターフェイスを直感的に使用できるように、タッチフィードバックアニメーション、アクティビティ遷移アニメーション、およびビューステート遷移アニメーションが提供されています。 また、Android 5.0 アプリでは、[*効果*の表示] アニメーションを使用してビューを非表示にしたり表示したりできます。 *曲線のモーション*設定を使用して、すばやくまたは緩やかにアニメーションを表示する方法を構成できます。
-
 
 ### <a name="touch-feedback-animations"></a>タッチフィードバックのアニメーション
 
@@ -157,7 +152,6 @@ Android 5.0 では、アプリインターフェイスを直感的に使用で�
 ボタンを使用した最初のタッチコンタクトは、左側の最初のイメージで発生しますが、残りのシーケンス (左から右) は、ripple 効果がボタンの端にどのように拡散するかを示しています。 Ripple アニメーションが終了すると、ビューは元の外観に戻ります。 既定の ripple アニメーションは、1秒間に何度も実行されますが、アニメーションの長さは、時間を長くしたり短くしたりするようにカスタマイズできます。
 
 Android 5.0 のタッチフィードバックアニメーションの詳細については、「[タッチフィードバックのカスタマイズ](https://developer.android.com/training/material/animations.html#Touch)」を参照してください。
-
 
 ### <a name="activity-transition-animations"></a>アクティビティ遷移のアニメーション
 
@@ -207,7 +201,6 @@ Enter 遷移の場合、Android 5.0 では次の3種類のアニメーション�
 
 Android 5.0 でのアクティビティ遷移のアニメーションの詳細については、「[アクティビティ遷移のカスタマイズ](https://developer.android.com/training/material/animations.html#Transitions)」を参照してください。
 
-
 ### <a name="view-state-transition-animations"></a>状態遷移のアニメーションを表示する
 
 Android 5.0 を使用すると、ビューの状態が変化したときにアニメーションを実行できます。 ビューステートの遷移は、次のいずれかの方法を使用してアニメーション化できます。
@@ -217,7 +210,6 @@ Android 5.0 を使用すると、ビューの状態が変化したときにア�
 - ビューの状態が変化したときに実行されるアニメーション機能を定義します。 新しい`StateListAnimator`クラスを使用すると、ビューの状態が変化したときに実行されるアニメーターを定義できます。
 
 Android 5.0 でのビューステート遷移のアニメーションの詳細については、「[ビューステートの変更をアニメーション化](https://developer.android.com/training/material/animations.html#ViewState)する」を参照してください。
-
 
 ### <a name="reveal-effect"></a>効果の表示
 
@@ -233,7 +225,6 @@ Android 5.0 でのビューステート遷移のアニメーションの詳細�
 
 での Android 5.0 の影響の詳細については、「[効果を使用する](https://developer.android.com/training/material/animations.html#Reveal)」を参照してください。
 
-
 ### <a name="curved-motion"></a>曲線の動き
 
 これらのアニメーション機能に加えて、Android 5.0 では、アニメーションの時間とモーション曲線を指定できる新しい Api も提供されています。 Android 5.0 では、これらの曲線を使用して、アニメーション中のテンポラルと空間移動を補間します。 Android 5.0 では、3つの曲線が定義されています。
@@ -245,7 +236,6 @@ Android 5.0 でのビューステート遷移のアニメーションの詳細�
 - **で\_の\_線形出力の遅延\_** は、ピーク速度で始まり、アニメーションの終わりに減速ます。 &ndash;
 
 新しい`PathInterpolator`クラスを使用して、モーション補間の実行方法を指定できます。 `PathInterpolator`は、指定された制御点とモーション曲線に従ってアニメーションのパスをトラバースする interpolator です。 Android 5.0 で曲線のモーション設定を指定する方法の詳細については、「[曲線モーションの使用](https://developer.android.com/training/material/animations.html#CurvedMotion)」を参照してください。
-
 
 ## <a name="view-shadows--elevation"></a>影 & 仰角を表示する
 
@@ -259,7 +249,6 @@ Android 5.0 では、新しい`Z`プロパティを設定して、ビューの*�
 
 Android 5.0 のビューの影の詳細については、「[影とクリッピングビューの定義](https://developer.android.com/training/material/shadows-clipping.html)」を参照してください。
 
-
 ## <a name="color-features"></a>色の特徴
 
 Android 5.0 では、アプリの色を管理するための2つの新機能が提供されています。
@@ -267,7 +256,6 @@ Android 5.0 では、アプリの色を管理するための2つの新機能が�
 - 描画の*色合い*を使用すると、レイアウト属性を変更することによって、画像アセットの色を変更できます。
 
 - *目立つ色の抽出*により、アプリの配色テーマを動的にカスタマイズして、表示されるイメージのカラーパレットと調整することができます。
-
 
 ### <a name="drawable-tinting"></a>描画の色合い
 
@@ -282,7 +270,6 @@ Android 5.0 のレイアウトでは`tint` 、異なる色を表示するため�
 ![濃淡の設定が異なる上記のロゴの例](lollipop-images/drawable-tinting.png)
 
 Android 5.0 での描画の色合いの詳細については、「描画の[色合い](https://developer.android.com/training/material/drawables.html#DrawableTint)」を参照してください。
-
 
 ### <a name="prominent-color-extraction"></a>目立つ色の抽出
 
@@ -308,7 +295,6 @@ Android 5.0 での描画の色合いの詳細については、「描画の[色�
 
 Android 5.0 での色の抽出の詳細については、「[イメージからの目立つ色の抽出](https://developer.android.com/training/material/drawables.html#ColorExtract)」を参照してください。
 
-
 ## <a name="new-ui-widgets"></a>新しい UI ウィジェット
 
 Android 5.0 では、2つの新しい UI ウィジェットが導入されています。
@@ -322,7 +308,6 @@ Android 5.0 では、2つの新しい UI ウィジェットが導入されてい
 [![RecyclerView でビルドされたアプリのスクリーンショット](lollipop-images/recyclerview-cardview-sml.png)](lollipop-images/recyclerview-cardview.png#lightbox)
 
 左側のスクリーンショットは、電子メールアプリ`RecyclerView`で使用されるの例であり、右側のスクリーンショットは旅行予約アプリ`CardView`で使用されるの例です。
-
 
 ### <a name="recyclerview"></a>RecyclerView
 
@@ -342,7 +327,6 @@ Android 5.0 では、2つの新しい UI ウィジェットが導入されてい
 
 の詳細に`RecyclerView`ついては、「 [RecyclerView](~/android/user-interface/layouts/recycler-view/index.md)」を参照してください。
 
-
 ### <a name="cardview"></a>CardView
 
 `CardView`は、角が丸いフリーカードをシミュレートする単純なビューです。 に`CardView`は組み込みのビューの影が付いているため、アプリに視覚的な奥行を簡単に追加することができます。 次のスクリーンショットは、の3つの`CardView`テキスト指向の例を示しています。
@@ -352,7 +336,6 @@ Android 5.0 では、2つの新しい UI ウィジェットが導入されてい
 上の例の各カードには`TextView`が含まれています。背景色は属性に`cardBackgroundColor`よって設定されます。
 
 の詳細に`CardView`ついては、「 [CardView](~/android/user-interface/controls/card-view.md)」を参照してください。
-
 
 ## <a name="enhanced-notifications"></a>強化された通知
 
@@ -389,7 +372,6 @@ Android 5.0 では、Android の並べ替えと表示をよりインテリジェ
 通知カテゴリは、デバイスが [*応答不可*] モードのときに表示できる通知をフィルター処理するために使用されます。
 
 最新の Android 5.0 機能を使用した通知の作成と起動の詳細については、「[ローカル通知](~/android/app-fundamentals/notifications/local-notifications.md)」を参照してください。
-
 
 ## <a name="new-apis"></a>新しい API
 
@@ -485,8 +467,6 @@ Android 5.0 の新しいジョブスケジュール Api の詳細については
 
 Xamarin Android の開発を初めて使用する場合は、「[セットアップとインストール](~/android/get-started/installation/index.md)」を参照して、xamarin android の使用を開始することができます。
 Android プロジェクトを作成する方法の詳細については[、「Hello」](~/android/get-started/hello-android/index.md)をご紹介します。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

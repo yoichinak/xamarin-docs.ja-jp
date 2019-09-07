@@ -7,15 +7,14 @@ ms.assetid: 6968606B-C287-424F-A321-2492E12BC0BB
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: c75db8bd29b7a57c46610abdd5e4024938fc9e1b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: fec6cef22ddbc47aca0027aa026e0524b38bec4e
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280330"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768059"
 ---
 # <a name="working-with-watchos-app-groups-in-xamarin"></a>Xamarin での watchOS App Groups の使用
-
 
 アプリ グループを使用すると、さまざまなアプリケーション (またはアプリケーションとその拡張機能) から共有ファイルの保存場所にアクセスできます。 アプリ グループは次のようなデータに使用できます。
 
@@ -39,14 +38,11 @@ ms.locfileid: "70280330"
 
 [![](app-groups-images/entitlements-sml.png "Plist を構成して ID を入力する")](app-groups-images/entitlements.png#lightbox)
 
-
 ### <a name="deployment"></a>展開
 
 [デプロイ](~/ios/watchos/deploy-test/index.md#App_Groups)のプロビジョニングで、アプリグループが正しく構成されていることを確認します。
 
-
 詳細についてを参照してください、[アプリ グループ機能](~/ios/deploy-test/provisioning/capabilities/app-groups-capabilities.md)ドキュメント。
-
 
 ## <a name="related-links"></a>関連リンク
 

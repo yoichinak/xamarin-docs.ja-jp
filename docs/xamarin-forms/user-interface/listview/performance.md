@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/11/2017
-ms.openlocfilehash: dabbd21a2ad2ef3c77017ea92704ccdf69f7b36c
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: f92a338b58dfb82ff5d442ed856e246f4a8a5a8f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70228203"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761857"
 ---
 # <a name="listview-performance"></a>ListView のパフォーマンス
 
@@ -181,7 +181,6 @@ public class CustomListView : ListView
 `AbsoluteLayout` は1回も計測処理を呼ぶことなくレイアウトを実行できる可能性があります。 これはパフォーマンス上で非常に強力です。 場合`AbsoluteLayout`することはできません、使用を検討してください[`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout)です。 `RelativeLayout` を使えば、直接制約を渡すことで式木 API を使うよりもかなり速くなるでしょう。 なぜなら、式木 API は JIT を使い、 iOS ではその式木が実行時に解釈され、それが非常に低速だからです。 式木 API はレイアウトの初期化や回転時にのみ呼ばれるようなページレイアウトに適しています。しかし `ListView` ではその処理がスクロールの間、継続的に実行され、パフォーマンスを損ないます。
 
 [ `ListView` ](xref:Xamarin.Forms.ListView) やセルの custom renderer を作成することは、スクロール実行時のレイアウト計算の処理を減らす1つのアプローチです。 詳細については、 [ListView のカスタマイズ](~/xamarin-forms/app-fundamentals/custom-renderer/listview.md) や [ViewCell のカスタマイズ](~/xamarin-forms/app-fundamentals/custom-renderer/viewcell.md) を参照してください。
-
 
 ## <a name="related-links"></a>関連リンク
 

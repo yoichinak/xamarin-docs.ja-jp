@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 9ca50171e43ef98e5b4e5fbd7bd236f74d35da8f
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: ae6a4fb45eb53c514c888d671780a5ceaeba6624
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286763"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768612"
 ---
 # <a name="watchos-notifications-in-xamarin"></a>watchOS Xamarin での通知
 
@@ -34,7 +34,6 @@ Watch アプリは、親 iOS アプリには、それらがサポートしてい
 
 ![](notifications-images/notifications-segue.png "通知のプロパティ")
 
-
 2 つの種類の通知があります。
 
 - システムによって定義されて**いる、スクロール不可能な静的**ビューです。
@@ -46,7 +45,6 @@ Watch アプリは、親 iOS アプリには、それらがサポートしてい
 短い外観 UI は、アプリのアイコン、アプリ名、および通知のタイトル文字列で構成されます。
 
 ユーザーが通知を無視しない場合は、システムが情報を提供する時間の長い確認通知を自動的に切り替わります。
-
 
 ### <a name="long-look-notification-controller"></a>通知コント ローラーの時間の長い検索
 
@@ -63,7 +61,6 @@ OS は、さまざまな要因に基づく静的または動的なビューを�
 動的ビューより多くのデータを表示でき、他のインタラクティビティを提供することができます。
 
 ![](notifications-images/notification-dynamic.png "動的ビュー")
-
 
 ## <a name="generating-notifications"></a>通知を生成します。
 
@@ -146,8 +143,6 @@ Visual Studio for Mac と watch extension を設定すると追加のオプシ�
         "customKey": "Use this file to define a testing payload for your notifications. The aps dictionary specifies the category, alert text and title. The WatchKit Simulator Actions array can provide info for one or more action buttons in addition to the standard Dismiss button. Any other top level keys are custom payload. If you have multiple such JSON files in your project, you'll be able to choose between them in when selecting to debug the notification interface of your Watch App."
     }
 ```
-
-
 
 ## <a name="related-links"></a>関連リンク
 

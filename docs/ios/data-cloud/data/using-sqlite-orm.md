@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 04/18/2018
-ms.openlocfilehash: 6711a16ba0035190d10687ef821831559c07b797
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 45205859a55974414ee865b2141d2bb127e85bcc
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289837"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70763145"
 ---
 # <a name="using-sqlitenet-with-xamarinios"></a>Xamarin で SQLite.NET を使用する
 
@@ -136,7 +136,6 @@ public static void DoSomeDataAccess () {
 - **[無視]** – SQLite.NET がこのプロパティを無視するようにします。 これは、データベースに格納できない型を持つプロパティや、自動的に解決できないモデルコレクションを使用するプロパティを SQLite として使用する場合に特に便利です。
 - **[Unique]** –基になるデータベース列の値が一意であることを確認します。
 
-
 これらの属性のほとんどは省略可能で、SQLite はテーブル名と列名に既定値を使用します。 データに対して選択と削除のクエリを効率的に実行できるように、常に整数の主キーを指定する必要があります。
 
 ## <a name="more-complex-queries"></a>より複雑なクエリ
@@ -149,7 +148,6 @@ public static void DoSomeDataAccess () {
 - **Delete** –主キーを使用してオブジェクトを削除します。
 - **クエリ\<T >** -複数の行 (オブジェクトとして) を返す SQL クエリを実行します。
 - **実行**– SQL からの行が返さ`Query`れない場合 (INSERT、UPDATE、DELETE の各命令など) に、このメソッドを使用します。
-
 
 ### <a name="getting-an-object-by-the-primary-key"></a>主キーによるオブジェクトの取得
 

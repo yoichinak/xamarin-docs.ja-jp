@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/08/2018
-ms.openlocfilehash: e49f12dd656d5e07feccd34e231a00124d81048a
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 8d4dcedae6298d9a56ba52d4da3d081d4d69afe1
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524275"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70757557"
 ---
 # <a name="specialized-fragment-classes"></a>特殊なフラグメント クラス
 
@@ -23,14 +23,11 @@ Fragment API は、アプリケーションで検出されたより一般的な�
 
 - **PreferenceFragment**&ndash;このフラグメントは、ユーザー設定オブジェクトをリストとして表示するために使用されます。
 
-
-
 ## <a name="the-listfragment"></a>ListFragment
 
 は、の概念と機能`ListActivity`とよく似て`ListView` います。これは、フラグメント内のをホストするラッパーです。`ListFragment` 次の図は、 `ListFragment`タブレットと電話で実行されているを示しています。
 
 [![タブレットと電話における ListFragment のスクリーンショット](specialized-fragment-classes-images/intro-screenshot-sml.png)](specialized-fragment-classes-images/intro-screenshot.png#lightbox)
-
 
 ### <a name="binding-data-with-the-listadapter"></a>ListAdapter を使用してデータをバインドする
 
@@ -48,8 +45,6 @@ public override void OnActivityCreated(Bundle savedInstanceState)
 ```
 
 `ListAdapter`を設定するときは、プロパティではなく`ListFragment.ListAdapter` `ListView.ListAdapter` 、プロパティを使用することが重要です。 を`ListView.ListAdapter`使用すると、重要な初期化コードがスキップされます。
-
-
 
 ### <a name="responding-to-user-selection"></a>ユーザー選択への応答
 
@@ -81,8 +76,6 @@ public override void OnListItemClick(ListView l, View v, int index, long id)
 
 上のコードでは、 `ListFragment`ユーザーが内の項目を選択すると、ホストアクティビティに新しいフラグメントが表示され、選択された項目に関する詳細が表示されます。
 
-
-
 ## <a name="dialogfragment"></a>DialogFragment
 
 表示*フラグメント*は、アクティビティのウィンドウの上でフローティングするフラグメント内のダイアログオブジェクトを表示するために使用されるフラグメントです。 これは、(Android 3.0 以降で) マネージドダイアログ Api を置き換えることを意図しています。 次のスクリーンショットは、 `DialogFragment`の例を示しています。
@@ -100,8 +93,6 @@ public override void OnListItemClick(ListView l, View v, int index, long id)
 - **OnCreateView**&ndash;これにより、ビューが作成されて返されます。
 
 - **Oncreatedialog**&ndash;これにより、カスタムダイアログが作成されます。 これは通常、 *Alertdialog*を示すために使用されます。 このメソッドをオーバーライドする場合は、をオーバーライド`OnCreateView`する必要はありません。
-
-
 
 ### <a name="a-simple-dialogfragment"></a>単純なコードフラグメント
 
@@ -140,7 +131,6 @@ public class MyDialogFragment : DialogFragment
 }
 ```
 
-
 ### <a name="displaying-a-fragment"></a>フラグメントの表示
 
 `DialogFragment` すべて`FragmentTransaction`のフラグメントと同様に、はのコンテキストで表示されます。
@@ -158,12 +148,10 @@ public void ShowDialog()
 }
 ```
 
-
 ### <a name="dismissing-a-fragment"></a>フラグメントを終了する
 
 のインスタンスでを呼び出す`Dismiss()`と、フラグメントがアクティビティから削除され、そのトランザクションがコミットされます。 `DialogFragment`
 フラグメントの破棄に関連する標準的なフラグメントライフサイクルメソッドが呼び出されます。
-
 
 ### <a name="alert-dialog"></a>警告ダイアログ
 
@@ -187,15 +175,12 @@ public class AlertDialogFragment : DialogFragment
 }
 ```
 
-
-
 ## <a name="preferencefragment"></a>PreferenceFragment
 
 基本設定を管理するために、fragment API `PreferenceFragment`はサブクラスを提供します。 は[PreferenceActivity に似](xref:Android.Preferences.PreferenceActivity)ていますが、フラグメント内のユーザーに対する基本設定の階層が表示されます。 `PreferenceFragment` &ndash; ユーザーが設定を操作すると、自動的に[Sharedpreferences](https://developer.android.com/reference/android/content/SharedPreferences.html)に保存されます。
 Android 3.0 以降のアプリケーションでは、 `PreferenceFragment`を使用してアプリケーションの基本設定を処理します。 次の図は、 `PreferenceFragment`の例を示しています。
 
 [![インライン、ダイアログ、起動の設定を使用した PreferencesFragment の例](specialized-fragment-classes-images/preferences-dialog.png)](specialized-fragment-classes-images/preferences-dialog.png#lightbox)
-
 
 ### <a name="create-a-preference-fragment-from-a-resource"></a>リソースから基本設定フラグメントを作成する
 
@@ -266,8 +251,6 @@ public class PrefFragment : PreferenceFragment
     }
 }
 ```
-
-
 
 ### <a name="querying-activities-to-create-a-preference-fragment"></a>アクティビティを照会して基本設定フラグメントを作成する
 

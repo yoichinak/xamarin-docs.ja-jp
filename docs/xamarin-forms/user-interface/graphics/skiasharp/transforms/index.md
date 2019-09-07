@@ -7,12 +7,12 @@ ms.assetid: E9BE322E-ECB3-4395-AFE4-4474A0F25551
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 39de35c8e43ebf2b3db25724ad761e3576ba5057
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: d9c153f8da44c525b8851afb48682bd7a14a8c47
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644957"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770505"
 ---
 # <a name="skiasharp-transforms"></a>SkiaSharp の変換
 
@@ -84,7 +84,6 @@ SkiaSharp の回転変換で可能なアニメーションと効果について�
 ## <a name="3d-rotation3d-rotationmd"></a>[3 次元回転](3d-rotation.md)
 
 非アフィン変換を使用して、3 D 空間で 2D オブジェクトを回転させます。
-
 
 ## <a name="related-links"></a>関連リンク
 

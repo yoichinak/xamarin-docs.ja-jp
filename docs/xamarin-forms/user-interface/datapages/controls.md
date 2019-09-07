@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 2af4bc3bd4dc6ae47f573c58c84aad54f41d42cd
-ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
+ms.openlocfilehash: e92669d9938b9fe48a1a589e0465acd03f129716
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68980814"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759894"
 ---
 # <a name="datapages-controls-reference"></a>DataPages コントロールのリファレンス
 
@@ -67,7 +67,6 @@ DataPages Nuget には、データソースバインドを利用できる多数�
 
 ![](controls-images/heroimage-light-ios.png "IOS で HeroImage コントロール") ![](controls-images/heroimage-dark-ios.png "ios HeroImage コントロール")
 
-
 <a name="listitem" />
 
 ### <a name="listitem"></a>ListItem
@@ -101,7 +100,6 @@ DataPages Nuget には、データソースバインドを利用できる多数�
 **iOS**
 
 ![](controls-images/listitem-light-ios.png "IOS で ListItem コントロール") ![](controls-images/listitem-dark-ios.png "ios ListItem コントロール")
-
 
 ## <a name="custom-control-example"></a>カスタムコントロールの例
 
@@ -307,7 +305,6 @@ public class CardView : DataView
       VerticalOptions="End"
       Style="{ StaticResource CardViewTextStyle }"
     />
-
 
     <!-- CARDVIEW DETAIL -->
     <Label

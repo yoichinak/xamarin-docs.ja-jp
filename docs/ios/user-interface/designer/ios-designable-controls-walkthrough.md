@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: 9104d1c7c92ac9de9cb6ae44197b4f16851563bb
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 651df247e3b5616a3baa38e85159c6a6d5247807
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287309"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768803"
 ---
 # <a name="using-custom-controls-with-the-ios-designer"></a>iOS Designer でのカスタム コントロールの使用
 
@@ -26,7 +26,6 @@ Xamarin Designer for iOS は Visual Studio for Mac と Visual Studio 2017 以降
 
 > [!IMPORTANT]
 > Xamarin. Studio 5.5 以降では、カスタムコントロールの作成方法は、以前のバージョンと少し異なります。 カスタムコントロール`IComponent`を作成するには、インターフェイスが (関連付けられている実装メソッドを使用して) 必要で`[DesignTimeVisible(true)]`あるか、またはクラスに注釈を付けることができます。 後者の方法は、次のチュートリアルの例で使用されています。
-
 
 1. IOS > アプリから新しいソリューションを作成し`ScratchTicket`、[**シングルビューアプリケーションC# ] > テンプレート >** して、名前を指定し、新しいプロジェクトウィザードを続行します。
 
@@ -157,23 +156,19 @@ Xamarin Designer for iOS は Visual Studio for Mac と Visual Studio 2017 以降
     }
     ```
 
-
 1. `FillTexture.png`、`FillTexture2.png`、および`Monkey.png` ([GitHub から](https://github.com/xamarin/ios-samples/blob/master/ScratchTicket/Resources/images.zip?raw=true)入手できる) ファイルを **Resources** フォルダーに追加します。
 
 1. `Main.storyboard`ファイルをダブルクリックして、デザイナーで開きます。
 
     [![](ios-designable-controls-walkthrough-images/03new.png "IOS デザイナー")](ios-designable-controls-walkthrough-images/03new.png#lightbox)
 
-
 1. **[ツールボックス]** から**イメージビュー**をストーリーボードのビューにドラッグアンドドロップします。
 
     [![](ios-designable-controls-walkthrough-images/04new.png "レイアウトに追加されたイメージビュー")](ios-designable-controls-walkthrough-images/04new.png#lightbox)
 
-
 1. **イメージビュー**を選択し、その**イメージ**プロパティを`Monkey.png`に変更します。
 
     [![](ios-designable-controls-walkthrough-images/05new.png "画像表示イメージのプロパティを「サル .png」に設定します。")](ios-designable-controls-walkthrough-images/05new.png#lightbox)
-
 
 1. サイズクラスを使用しているため、このイメージビューを制限する必要があります。 イメージを2回クリックして、制約モードにします。 中央にピン留めするハンドルをクリックし、垂直方向と水平方向に並べて配置します。
 
@@ -183,16 +178,13 @@ Xamarin Designer for iOS は Visual Studio for Mac と Visual Studio 2017 以降
 
     [![](ios-designable-controls-walkthrough-images/07new.png "制約の追加")](ios-designable-controls-walkthrough-images/07new.png#lightbox)
 
-
 1. ツールバーの [更新] ボタンをクリックして、制約に基づいてフレームを更新します。
 
     [![](ios-designable-controls-walkthrough-images/08new.png "[制約] ツールバー")](ios-designable-controls-walkthrough-images/08new.png#lightbox)
 
-
 1. 次に、プロジェクトをビルドして、ツールボックス の **カスタムコンポーネント** の下に **スクラッチチケット ビュー**が表示されるようにします。
 
     [![](ios-designable-controls-walkthrough-images/09new.png "カスタムコンポーネントツールボックス")](ios-designable-controls-walkthrough-images/09new.png#lightbox)
-
 
 1. **スクラッチチケットビュー**をドラッグアンドドロップして、サル画像の上に表示されるようにします。 次に示すように、スクラッチチケットビューがサルを完全にカバーするように、ドラッグハンドルを調整します。
 
@@ -201,7 +193,6 @@ Xamarin Designer for iOS は Visual Studio for Mac と Visual Studio 2017 以降
 1. 両方のビューを選択するには、外接する四角形を描画して、スクラッチチケットビューをイメージビューに制限します。 次に示すように、制約に基づいて、幅、高さ、中心、中央に制限するオプションを選択し、制約に基づいてフレームを更新します。
 
     [![](ios-designable-controls-walkthrough-images/11new.png "制約の中心と追加")](ios-designable-controls-walkthrough-images/11new.png#lightbox)
-
 
 1. アプリケーションを実行し、イメージを "ゼロオフ" にして、サルを表示します。
 
@@ -272,8 +263,6 @@ public override void Draw(CGRect rect)
 ## <a name="summary"></a>まとめ
 
 この記事では、iOS デザイナーを使用して、カスタムコントロールを作成し、iOS アプリケーションで使用する方法について説明します。 デザイナーの**ツールボックス**で、コントロールを作成してビルドし、アプリケーションで使用できるようにする方法を説明しました。 また、デザイン時と実行時の両方で適切にレンダリングされるようにコントロールを実装する方法についても説明しました。また、デザイナーでカスタムコントロールのプロパティを公開する方法についても説明しました。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

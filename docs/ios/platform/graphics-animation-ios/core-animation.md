@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 366932e32443a7284f15f51a7a9a437d4b177438
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 730359824ec5a51a53261fbfc9519ac8560a77f5
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286252"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753067"
 ---
 # <a name="core-animation-in-xamarinios"></a>Xamarin のコアアニメーション
 
@@ -44,7 +44,6 @@ UIKit には、アプリケーションにアニメーションを簡単に追�
 - ビュー間の切り替え
 - プロパティアニメーションの表示
 
-
 ### <a name="view-controller-transitions"></a>ビュー コントローラーの切り替え
 
  `UIViewController`には、メソッドを使用した`PresentViewController`ビューコントローラー間の移行のサポートが組み込まれています。 を使用`PresentViewController`する場合、2つ目のコントローラーへの切り替えをアニメーション化することもできます。
@@ -62,7 +61,6 @@ SecondViewController vc2 = new SecondViewController {
 - `CoverVertical`–画面の下部からスライドアップします。
 - `CrossDissolve`–新しいビューがフェードイン & 前のビューがフェードアウトします。
 - `FlipHorizontal`-右から左への水平方向の反転。 無視では、遷移は左から右へとフリップします。
-
 
 遷移をアニメーション化するに`true`は、次のよう`PresentViewController`に2番目の引数としてを渡します。
 
@@ -106,7 +104,6 @@ Uikit では、 `UIView`クラスのさまざまなプロパティを自由に�
 - [アルファ]
 - 変換
 - 色
-
 
 これらのアニメーションは、静的`NSAction` `UIView.Animate`メソッドに渡されるデリゲートでプロパティの変更を指定することによって暗黙的に行われます。 たとえば、次のコードでは、 `UIImageView`の中心点をアニメーション化しています。
 
@@ -233,7 +230,7 @@ public override void ViewDidAppear (bool animated)
 次のスクリーンショットは、指定されたパスをアニメーション化するイメージを含むレイヤーを示しています。
 
  ![](core-animation-images/12-explicit-animation.png "このスクリーンショットは、指定されたパスをアニメーション化している画像を含むレイヤーを示しています。")
- 
+
 ## <a name="summary"></a>Summary
 
 この記事では、*主要なアニメーション*フレームワークによって提供されるアニメーション機能について説明しました。 ここでは、UIKit でのアニメーションの動作と、下位レベルのアニメーションコントロールに対して直接使用する方法の両方を示す、コアアニメーションを検証しています。

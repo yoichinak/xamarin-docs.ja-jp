@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 42ac6c9c729498ad4b70e1e209d63c1ec2e11f8d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: cf6835b99ea70c3922dd68bc21af3e44815cc92e
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291225"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769938"
 ---
 # <a name="copy-and-paste-in-xamarinmac"></a>Xamarin. Mac にコピーして貼り付ける
 
@@ -603,7 +603,7 @@ namespace MacCopyPaste
 ここでも、現在の最上位ウィンドウを取得し`ImageDocument` 、そのクラスのインスタンスを使用して、必要なイメージデータが存在するかどうかを確認します。 次に、メソッド`MenuWillHighlightItem`を使用して、この状態に基づいて各項目を有効または無効にします。
 
 **AppDelegate.cs**ファイルを編集し、メソッド`DidFinishLaunching`を次のようにします。
- 
+
 ```csharp
 public override void DidFinishLaunching (NSNotification notification)
 {
@@ -1275,8 +1275,6 @@ if (ok) {
 ## <a name="summary"></a>まとめ
 
 この記事では、コピーと貼り付け操作をサポートするために、Xamarin. Mac アプリケーションでのクリップボードの操作方法について詳しく説明しました。 まず、標準的な pasteboards 操作について理解を深めるための簡単な例を紹介しました。 次に、ペーストボードについて詳しく説明し、データの読み取りと書き込みを行う方法を説明しました。 最後に、カスタムデータ型を使用して、アプリ内での複合データ型のコピーと貼り付けをサポートする方法を見てきました。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

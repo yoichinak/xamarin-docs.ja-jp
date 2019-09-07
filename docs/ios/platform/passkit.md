@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/13/2018
-ms.openlocfilehash: 8039482175465a67867f3c70f17518dee8b9500b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 150a4e3c1deafbabea892d5adb786374c3d97d12
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70277869"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769589"
 ---
 # <a name="passkit-in-xamarinios"></a>Xamarin. iOS の Pass Kit
 
@@ -74,7 +74,6 @@ Pass は、チケット、クーポン、またはカードを表すデータの
 - **店舗カード**–クレジットカードまたはデビットカードのように、上に切り上げられます。
 - **クーポン**–上部に沿って perforated。
 - **Generic** –店舗カードと同じで、上に切り上げられます。
-
 
 このスクリーンショットには、次の5つのパスの種類が示されています (注文: クーポン、汎用、店舗カード、採用パス、およびイベントチケット)。
 
@@ -204,10 +203,8 @@ Push または Pass Kit API を使用して更新することができます。�
 1. 証明書を使用して`manifest.json`ファイルに署名し、その結果をと`signature`いう名前のファイルに書き込みます。
 1. すべてを ZIP 形式にし、結果ファイルに`.pkpass`ファイル拡張子を付けます。
 
-
 パスの署名には秘密キーが必要であるため、このプロセスは、ユーザーが制御するセキュリティで保護されたサーバー上でのみ実行する必要があります。 アプリケーションのパスを試して生成するためにキーを配布しないようにしてください。
 
- 
 ## <a name="configuration-and-setup"></a>構成とセットアップ
 
 このセクションでは、プロビジョニングの詳細を設定し、最初のパスを作成するための手順について説明します。
@@ -229,7 +226,6 @@ Push または Pass Kit API を使用して更新することができます。�
 
 2. パスの**説明**(名前) と**識別子**(一意の文字列) を指定します。 すべてのパスの種類 id は、次の例`pass.` `pass.com.xamarin.coupon.banana`の文字列で始まる必要があることに注意してください。[![](passkit-images/register.png "説明と識別子を入力してください")](passkit-images/register.png#lightbox)
 
-
 3. [Register] \ (**登録**\) ボタンを押して、パス ID を確認します。
 
 #### <a name="generate-a-certificate"></a>証明書を生成する
@@ -242,13 +238,11 @@ Push または Pass Kit API を使用して更新することができます。�
 
     [![](passkit-images/cert-dist.png "証明書の作成の選択")](passkit-images/cert-dist.png#lightbox)
 
-
 2. 証明書署名要求 (CSR) を作成する手順に従います。
   
 3. 開発者ポータルの **[続行]** ボタンをクリックし、CSR をアップロードして証明書を生成します。
 
 4. 証明書をダウンロードし、ダブルクリックしてキーチェーンにインストールします。
-
 
 これで、このパスの種類 ID の証明書が作成されました。次のセクションでは、パスを手動で作成する方法について説明します。
 
@@ -264,7 +258,6 @@ Push または Pass Kit API を使用して更新することができます。�
 - フォルダー内のすべてのファイルについて SHA1 ハッシュを計算し、manifest に書き込みます。
 - ダウンロードした証明書の p12 ファイルで、マニフェストに署名します。
 - ディレクトリの内容を ZIP 形式にし、拡張子を pkpass して名前を変更します。
-
 
 この記事の[サンプルコード](https://docs.microsoft.com/samples/xamarin/ios-samples/passkit)には、パスを生成するために使用できるソースファイルがいくつかあります。 Createapassmanually ディレクトリ`CouponBanana.raw`のディレクトリにあるファイルを使用します。 次のファイルが存在します。
 
@@ -338,7 +331,6 @@ Push または Pass Kit API を使用して更新することができます。�
 - **Safari** –パス URL リンクがクリックされたときに、パスのコンテンツの種類を認識します。
 - **その他のカスタムアプリ**–添付ファイルを受信したり、リンクを開いたりするアプリ (ソーシャルメディアクライアント、メールリーダーなど)。
 
-
 このスクリーンショットは、iOS 6 の**メール**がパスの添付ファイルを認識し、(操作された場合に) ウォレットに**追加**するように提供する方法を示しています。
 
  [![](passkit-images/image22.png "このスクリーンショットは、iOS 6 のメールがパスの添付ファイルを認識する方法を示しています。")](passkit-images/image22.png#lightbox)
@@ -350,7 +342,6 @@ Push または Pass Kit API を使用して更新することができます。�
 - **ファイル拡張子**-pkpass
 - **MIME の種類**-application/vnd. apple. pkpass
 - **UTI** – com. pkpass
-
 
 コンジットアプリケーションの基本的な操作では、pass ファイルを取得し、pass kit `PKAddPassesViewController`を呼び出して、ウォレットにパスを追加するオプションをユーザーに付与します。 このビューコントローラーの実装については、**コンパニオンアプリケーション**の次のセクションで説明します。
 
@@ -383,7 +374,6 @@ Solution Pad の**権利の plist**ファイルをダブルクリックして、
 ウォレット セクションで、**ウォレットを有効にする** オプションを選択します。
 
 ![](passkit-images/image32.png "ウォレットの権利を有効にする")
-
 
 既定のオプションでは、アプリはすべてのパスの種類を許可します。 ただし、アプリを制限し、チームのパスの種類のサブセットのみを許可することができます。 これを有効にするには、[**チームのパスの種類のサブセットを許可**する] を選択し、許可するサブセットのパスの種類の識別子を入力します。
 

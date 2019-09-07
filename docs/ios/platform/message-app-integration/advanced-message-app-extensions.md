@@ -7,17 +7,16 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 4e488f43f966ca8efd58de4d2bb8f16997d1322e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: bf6853ef94ff0be5382bab02192070a20884c31e
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290957"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769690"
 ---
 # <a name="advanced-message-app-extensions-in-xamarinios"></a>Xamarin. iOS の高度なメッセージアプリ拡張機能
 
 _この記事では、Xamarin. iOS ソリューションでメッセージアプリ拡張機能を使用するための高度な手法について説明します。このソリューションは、メッセージアプリと統合され、ユーザーに新しい機能を提供します。_
-
 
 IOS 10 を初めて使用する場合、メッセージアプリ拡張機能は**Messages**アプリと統合され、ユーザーに新しい機能を提供します。 拡張機能は、テキスト、ステッカー、メディアファイル、および対話型メッセージを送信できます。
 
@@ -55,7 +54,6 @@ IOS 10 の新機能であるメッセージアプリには、独自の専用の�
 受信側のユーザーは、メッセージ履歴内のメッセージバブルをタップして、それを作成したメッセージアプリ拡張機能を読み込むことで、対話型メッセージに応答できます。 拡張機能が全画面表示され、ユーザーは応答を作成して、送信元のユーザーに返信することができます。
 
 [![](advanced-message-app-extensions-images/interactive02.png "拡張機能が全画面表示を開始しました。")](advanced-message-app-extensions-images/interactive02.png#lightbox)
-
 
 次のトピックについては、以下で詳しく説明します。
 
@@ -427,7 +425,6 @@ using Foundation;
 using Messages;
 using UIKit;
 
-
 namespace MessageExtension
 {
     public partial class MessagesViewController : MSMessagesAppViewController
@@ -605,7 +602,6 @@ WatchOS では、メッセージアプリは、ユーザーが応答を作成で
 ## <a name="summary"></a>Summary
 
 この記事では、Xamarin. iOS ソリューションでメッセージアプリ拡張機能を使用するための高度な手法について説明しました。このソリューションは、**メッセージ**アプリと統合され、ユーザーに新しい機能を提供します。
-
 
 ## <a name="related-links"></a>関連リンク
 

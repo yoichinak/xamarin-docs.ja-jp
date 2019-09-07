@@ -7,19 +7,18 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/02/2018
-ms.openlocfilehash: 2abc4b9b39fa90e525c3562a27ffd5d8c67f0078
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 128982abdee7a0fea8df79f7b7b9ecd6a290775a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69523796"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761258"
 ---
 # <a name="nougat-features"></a>Nougat の機能
 
 _Android Nougat 用のアプリを開発するために Xamarin の使用を開始する方法について説明します。_
 
 この記事では、Android Nougat で導入された機能の概要を説明し、android Nougat 開発用に Xamarin を準備する方法について説明します。また、で Android Nougat 機能を使用する方法を示すサンプルアプリケーションへのリンクを示します。Xamarin Android アプリ。
-
 
 ## <a name="overview"></a>概要
 
@@ -42,7 +41,6 @@ Android Nougat は、Xamarin Android 開発者にとって関心のある多く�
 
 この記事では、Android Nougat を使用してアプリの構築を開始する方法について説明します。新しい機能を試すことができます。また、新しい Android Nougat プラットフォームを対象とする移行や機能の作業を計画します。
 
-
 ## <a name="requirements"></a>必要条件
 
 Xamarin ベースのアプリで新しい Android Nougat 機能を使用するには、次のものが必要です。
@@ -60,8 +58,6 @@ Xamarin ベースのアプリで新しい Android Nougat 機能を使用する�
 
 Android Nougat で確実に動作させるには、Xamarin C6SR4 以降を使用してアプリを再構築する必要があることに注意してください。 Android Nougat は、 [NDK によって提供されるネイティブライブラリ](https://developer.android.com/about/versions/nougat/android-7.0-changes.html)にのみリンクできるため、適切に再構築されていない場合、android Nougat で実行すると、 **Mono**などのライブラリを使用する既存のアプリがクラッシュすることがあります。
 
-
-
 ## <a name="getting-started"></a>作業の開始
 
 Android Nougat と Xamarin android の使用を開始するには、Android Nougat プロジェクトを作成する前に、最新のツールと SDK パッケージをダウンロードしてインストールする必要があります。
@@ -76,12 +72,9 @@ Android Nougat と Xamarin android の使用を開始するには、Android Noug
 
 これらの各手順については、次のセクションで説明します。
 
-
 ### <a name="install-xamarin-updates"></a>Xamarin の更新プログラムのインストール
 
 Android Nougat の Xamarin サポートを追加するには、Visual Studio または Visual Studio for Mac の更新チャネルを安定したチャネルに変更し、最新の更新プログラムを適用します。 現在、アルファチャネルまたはベータチャネルでのみ使用できる機能が必要な場合は、アルファチャネルまたはベータチャネルに切り替えることができます (アルファチャネルとベータチャネルは Android 2.x もサポートしています)。 更新プログラム (リリース) チャネルを変更する方法の詳細については、「[更新チャネルの変更](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/change_updates_channel)」を参照してください。
-
-
 
 ### <a name="install-the-android-sdk"></a>Android SDK のインストール
 
@@ -105,19 +98,14 @@ Xamarin Android 7.0 を使用してプロジェクトを作成するには、最
 
     Visual Studio でこの設定を表示するには、**ツール > オプション > Xamarin > Android 設定** の順にクリックします。 Visual Studio for Mac で、設定 をクリックして、 **Android > > SDK の場所の > プロジェクト** をクリックします。
 
-
-
 ### <a name="start-a-xamarinandroid-project"></a>Xamarin. Android プロジェクトを開始する
 
 新しい Xamarin. Android プロジェクトを作成します。 Xamarin を使用した Android 開発を初めて使用する場合は、「 [Hello, android](~/android/get-started/hello-android/index.md) 」を参照して、xamarin android プロジェクトの作成について学習してください。
 
 Android プロジェクトを作成するときは、バージョン設定を Android 7.0 以降を対象とするように構成する必要があります。 たとえば、Android 7.0 のプロジェクトを対象にするには、プロジェクトのターゲットの Android API レベルを**android 7.0 (API 24-Nougat)** に構成する必要があります。 ターゲットフレームワークレベルを API 24 以降に設定することをお勧めします。 Android API レベルレベルの構成の詳細については、「 [ANDROID Api レベルについ](~/android/app-fundamentals/android-api-levels.md)て」を参照してください。
 
-
 > [!NOTE]
 > 現時点では、android Nougat デバイスまたはエミュレーターにアプリをデプロイするには、android の**最小バージョン**を**ANDROID 7.0 (API 24 Nougat)** に設定する必要があります。
-
-
 
 ### <a name="configure-an-emulator-or-device"></a>エミュレーターまたはデバイスを構成する
 
@@ -135,13 +123,9 @@ Android プロジェクトを作成するときは、バージョン設定を An
 
 Android Nougat では、対応する5つのデバイスがサポートされていないことに注意してください。
 
-
-
 ## <a name="new-features"></a>新機能
 
 Android Nougat では、複数のウィンドウのサポート、通知の強化、データセーバーなど、さまざまな新機能が導入されています。 以下のセクションでは、これらの機能について説明し、アプリでの使用を開始するのに役立つリンクを示します。
-
-
 
 ### <a name="multi-window-mode"></a>複数ウィンドウモード
 
@@ -164,12 +148,9 @@ if (!IsInMultiWindowMode) {
 
 マルチウィンドウモードの詳細については、[マルチウィンドウのサポート](https://developer.android.com/guide/topics/ui/multi-window.html)に関する説明を参照してください。
 
-
-
 ### <a name="enhanced-notifications"></a>強化された通知
 
 Android Nougat では、再設計された通知システムが導入されています。 この機能には、ユーザーが通知 UI で直接受信したテキストメッセージの通知にすばやく応答できるようにする新しい直接応答機能があります。 Android 7.0 以降では、複数のメッセージを受信したときに、通知メッセージを1つのグループとしてまとめることができます。 また、通知ビューをカスタマイズしたり、通知のシステム装飾を利用したり、通知の生成時に新しい通知テンプレートを活用したりできます。
-
 
 #### <a name="direct-reply"></a>直接応答
 
@@ -212,7 +193,6 @@ NotificationCompat.Builder builder = new NotificationCompat.Builder (Application
 
 [Messaging Service](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-messagingservice)サンプルアプリにはC# 、 `RemoteInput`オブジェクトを使用して通知を拡張する方法を示すコードが含まれています。 Android 7.0 以降のアプリにインライン応答アクションを追加する方法の詳細については、「Android[への通知へ](https://developer.android.com/guide/topics/ui/notifiers/notifications.html#direct)の応答」を参照してください。
 
-
 #### <a name="bundled-notifications"></a>バンドル通知
 
 Android Nougat では、通知メッセージをグループ化する (たとえば、メッセージトピック別) ことができ、個別のメッセージではなくグループを表示できます。
@@ -222,20 +202,15 @@ Android Nougat では、通知メッセージをグループ化する (たとえ
 
 バンドルされた通知をサポートするために、アプリでは、[ビルダー. SetGroup](xref:Android.App.Notification.Builder.SetGroup*)メソッドを使用して同様の通知をバンドルできます。 Android N でバンドルされている通知グループの詳細については、「Android の[バンドル通知](https://developer.android.com/guide/topics/ui/notifiers/notifications.html#bundle)」を参照してください。
 
-
 #### <a name="custom-views"></a>カスタム ビュー
 
 Android Nougat を使用すると、システム通知ヘッダー、アクション、および展開可能なレイアウトでカスタム通知ビューを作成できます。 Android Nougat のカスタム通知ビューの詳細については、「Android [notification の拡張機能](https://developer.android.com/about/versions/nougat/android-7.0.html#notification_enhancements)」を参照してください。
-
-
 
 ### <a name="data-saver"></a>データセーバー
 
 Android Nougat 以降では、ユーザーは、バックグラウンドデータの使用をブロックする新しい*データセーバー*設定を有効にすることができます。 また、この設定により、可能な限り、フォアグラウンドで使用するデータが少なくなるようにアプリに通知されます。 [ConnectivityManager](xref:Android.Net.ConnectivityManager)は Android Nougat で拡張されています。これにより、アプリはデータセーバーが有効になっているかどうかを確認できるようになり、データセーバーが有効になっているときにアプリでデータ使用量を制限できるようになりました。
 
 Android Nougat の新しいデータセーバー機能の詳細については、「Android の[ネットワークデータ使用量の最適化](https://developer.android.com/training/basics/network-ops/data-saver.html)」を参照してください。
-
-
 
 ### <a name="app-shortcuts"></a>アプリのショートカット
 
@@ -247,7 +222,6 @@ Android 7.1 では*アプリのショートカット*機能が導入され、ユ
 
 この機能は、API レベル25以上でのみ使用できます。
 Android 7.1 の新しいアプリショートカット機能の詳細については、「Android[アプリのショートカット](https://developer.android.com/guide/topics/ui/shortcuts.html)」を参照してください。
-
 
 ### <a name="sample-code"></a>サンプル コード
 
@@ -263,11 +237,9 @@ Android Nougat 機能を活用する方法を示すために、いくつかの X
 
 - [直接ブート](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-directboot)デバイスで暗号化されたストレージにデータを格納する方法を説明します。この記憶域は、ユーザーの資格情報 (PIN/パターン/パスワード) が入力される前と後の両方でデバイスが起動されている間は常に使用できます。
 
-
 ## <a name="summary"></a>Summary
 
 この記事では、Android Nougat について紹介し、android Nougat で Xamarin の開発用の最新のツールとパッケージをインストールして構成する方法について説明しました。 また、android Nougat で使用できる主な機能の概要と、Android Nougat 用アプリの作成を開始する際に役立つサンプルソースコードへのリンクも示しました。
-
 
 ## <a name="related-links"></a>関連リンク
 

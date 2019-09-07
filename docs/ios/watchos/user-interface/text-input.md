@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 2d4b77431c6cda1b8a7718b04a35b179ff45e0ba
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: a0e45c51ba5460da87b80f21d4e9e54c13deabde
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291668"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766777"
 ---
 # <a name="working-with-watchos-text-input-in-xamarin"></a>Xamarin での watchOS テキスト入力の操作
 
@@ -101,8 +101,6 @@ PresentTextInputController (new string[0], WatchKit.WKTextInputMode.Plain, (resu
 ![](text-input-images/dictation.png "ユーザーが話しているときに、認識されたテキストが [ウォッチ] 画面に表示されます。")
 
 **[完了]** ボタンを押すと、テキストが返されます。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/02/2018
-ms.openlocfilehash: 2a6de91772b1b6135a5b3567f691b8cd3522a924
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 14cce06399b804ba8fd982a40347fb3146b281c8
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643254"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70757417"
 ---
 # <a name="android-speech"></a>Android の音声
 
@@ -170,7 +170,7 @@ Android では、ユーザーは`SpeechRate`と`Pitch` (音声の速度と音声
 
 ### <a name="step-4---testing-and-loading-new-languages"></a>手順 4-新しい言語のテストと読み込み
 
-新しい言語のダウンロードは、 `Intent`を使用して実行されます。 このインテントの結果により、 [Onactivityresult](xref:Android.App.Activity.OnActivityResult*)メソッドが呼び出されます。 音声からテキストへの変換の例 ( `PutExtra`の`Intent`パラメーターと[して認識](xref:Android.Speech.RecognizerIntent)を使用していた) とは異なり、の`Intent`テストと`Action`読み込みはに基づいています。
+新しい言語のダウンロードは、 `Intent`を使用して実行されます。 このインテントの結果により、 [Onactivityresult](xref:Android.App.Activity.OnActivityResult*)メソッドが呼び出されます。 音声からテキストへの変換の例 ( `PutExtra`の`Intent`パラメーターと[して認識を使用して](xref:Android.Speech.RecognizerIntent)いた) とは異なり、の`Intent`テストと`Action`読み込みはに基づいています。
 
 - [Texttospeech. actioncheckttsdata](xref:Android.Speech.Tts.TextToSpeech.Engine.ActionCheckTtsData) &ndash;は、プラットフォーム`TextToSpeech`エンジンからアクティビティを開始して、デバイスでの言語リソースの適切なインストールと可用性を検証します。
 
@@ -206,7 +206,6 @@ protected override void OnActivityResult(int req, Result res, Intent data)
 
 このデータは、ダウンロードの完了後に自動的にインストールされます。
 
-
 ### <a name="step-5---the-ioninitlistener"></a>手順 5-IOnInitListener
 
 アクティビティがテキストを音声に変換できるようにするには、インターフェイスメソッド`OnInit`を実装する必要があります (これは、 `TextToSpeech`クラスのインスタンス化に対して指定された2番目のパラメーターです)。 これにより、リスナーが初期化され、結果がテストされます。
@@ -226,11 +225,9 @@ void TextToSpeech.IOnInitListener.OnInit(OperationResult status)
 }
 ```
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
 このガイドでは、テキストを音声と音声に変換する方法の基本について説明し、独自のアプリ内にテキストを含める方法について説明しました。 すべてのケースに対応しているわけではありませんが、音声の解釈方法、新しい言語のインストール方法、アプリの inclusivity を向上させる方法についての基本的な理解を得られるようになりました。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

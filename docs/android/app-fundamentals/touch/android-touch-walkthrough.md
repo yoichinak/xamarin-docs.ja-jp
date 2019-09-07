@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/09/2018
-ms.openlocfilehash: d9c8fb7e1045d35fa23c85c689cb0e1f9461d8dd
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: fc3fb6e7c3391092b33ce1d162a60ce6528e0ab0
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70225815"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70754861"
 ---
 # <a name="walkthrough---using-touch-in-android"></a>チュートリアル-Android でのタッチの使用
 
@@ -68,7 +68,6 @@ ms.locfileid: "70225815"
 ユーザーがに触れる`ImageView`間、タッチが**開始** `TextView`されます。 ユーザーがに`ImageView`触れていない場合は、次のスクリーンショットに示すように`TextView`、メッセージタッチの**終了**がに表示されます。
 
 [![タッチエンドによるアクティビティのスクリーンショット](android-touch-walkthrough-images/image16.png)](android-touch-walkthrough-images/image16.png#lightbox)
-
 
 ## <a name="gesture-recognizer-activity"></a>ジェスチャレコグナイザーアクティビティ
 
@@ -352,7 +351,6 @@ ms.locfileid: "70225815"
   [![画面上の Scribble、元のイメージが表示されます。](android-touch-walkthrough-images/image21.png)](android-touch-walkthrough-images/image21.png#lightbox)
 
 Android アプリケーションで、Xamarin を使用してタッチとジェスチャを統合する方法について理解できました。
-
 
 ## <a name="related-links"></a>関連リンク
 

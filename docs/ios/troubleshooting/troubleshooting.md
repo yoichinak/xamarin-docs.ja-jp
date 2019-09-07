@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/22/2018
-ms.openlocfilehash: a888c29a6409fc803b8a0d06bcc6f8a668e64f5e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: e6a1b6f4d35a6b8774901ed5a505b5333511c848
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292052"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769703"
 ---
 # <a name="troubleshooting-tips-for-xamarinios"></a>Xamarin のトラブルシューティングのヒント 
 
@@ -26,7 +26,6 @@ ms.locfileid: "70292052"
 - **Visual Studio 2017 更新プログラム 2**(バージョン15.2 以降) は、4.3.1 またはそれ以降のバージョンとのみ互換性があり**ます**。
 
 Visual Studio 2017 のインストールに対応する適切な system.servicemodel タプル NuGet を選択してください。
-
 
 ## <a name="receiving-error-retrieving-update-information-error-message"></a>' 更新情報の取得エラー ' エラーメッセージを受信しています
 
@@ -143,7 +142,6 @@ public Bar (IntPtr handle) : base (handle) { }
 1. Mac OS X Leopard を使用する (10.5)
 1. シミュレーター内でアプリを実行します。
 
-
 問題は、Mono がリストで iphonesimulator の`libsqlite3.dylib` `libsqlite3.dylib`ファイルではなく OS X を選択していることです。 アプリ*は*デバイスで動作しますが、シミュレーターでは動作しません。
 
 ## <a name="deploy-to-device-fails-with-systemexception-amdeviceinstallapplication-returned-3892346901"></a>デバイスへの展開がシステムで失敗します。例外:AMDeviceInstallApplication から3892346901が返されました
@@ -209,8 +207,6 @@ int count = ((ICollection<Foo>) array).Count;
 1. "" (スポットライトを使用して見つけることができます) "開発者ツールを使用して" ビーム同期 "を無効にし、ソースエディターのパフォーマンスが正常に復元されているかどうかを確認します。
 1. ビーム同期を無効にしたまま、ステップ (1) を繰り返してみてください。
 1. エディターが数秒間ハングした場合は、ハングしているときに、ターミナルで "終了しました。" [Visual Studio for Mac] "を実行してみてください。 エディターがハングしている間に kill コマンドが発生するのは困難な場合がありますが、コマンドによってすべてのスレッドのスタックトレースが MD ログに書き込まれます。これは、XS がハングしている間のスレッドの状態を検出するために使用できます。
-
-
 
 XS logs、 **~/Library/Logs/XamarinStudio-{VERSION}/Ide-{TIMESTAMP}.log**、 **androidtools-{timestamp} .Log**、および**Components-{timestamp} .log**をアタッチしてください (以前のバージョンの xs/MonoDevelop では、 **~/ログを送信するだけです)/モノの開発-(3.0 | 2.8 | 2.6)/MonoDevelop.log**)。
 
@@ -293,7 +289,6 @@ Visual Studio for Mac 2.2 には、コンマを含む配布証明書を検出し
 Xamarin. iOS と Visual Studio for Mac の現在のリリースは、プロジェクト名またはソリューションまたはプロジェクトに格納されているディレクトリにスペースが含まれていると失敗します。
 これを修正するには、次を実行してください。
 
-
 - プロジェクトまたは格納されているディレクトリにスペースが含まれていないことを確認してください。
 - プロジェクトの [メイン設定] で、プロジェクト名にスペースが含まれていないことを確認します。
 
@@ -324,11 +319,9 @@ Xamarin. iOS と Visual Studio for Mac の現在のリリースは、プロジ�
 
 この例外は、次の3つのうちのいずれかによって発生します。
 
-
 1. 対応する [Export] 属性をメソッドに適用せずに、目的の C ランタイムのセレクターを指定しました
 1. 完全リンクを有効にし、[Export] ed メソッドに [Preserve] 属性を適用していません。
 1. 継承された型のプライベートメソッドに [Export] 属性を適用しました。
-
 
 ## <a name="mainwindowxibdesignercs-file-is-not-updated"></a>MainWindow.xib.designer.cs ファイルが更新されていません
 
@@ -414,7 +407,6 @@ Interface Builder を使用する場合は、Apple の web サイトから入手
 この問題はいくつかの形式でマニフェストを作成できますが、常に一貫性のあるエラーが生成されるとは限りません。 アプリケーションに. xib が含まれている場合は、xib の**ビルドアクション**が**interfacedefinition**に設定されていることを確認します。 これは、. xib の既定のビルドアクションです。
 
 ビルドアクションを確認するには、xib ファイルを右クリックし、 **[ビルドアクション]** を選択します。
-
 
 ## <a name="systemnotsupportedexception-no-data-is-available-for-encoding-437"></a>NotSupportedException:エンコード437に使用できるデータがありません
 

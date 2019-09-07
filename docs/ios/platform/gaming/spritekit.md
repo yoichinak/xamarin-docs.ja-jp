@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/14/2017
-ms.openlocfilehash: dfda8b1ec3e7cfbdec3fe313d305d78422487f08
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: d2466de4891c289f4686c37bc9fe73c24a5a48ca
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289313"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753060"
 ---
 # <a name="spritekit-in-xamarinios"></a>Xamarin. iOS の SpriteKit
 
@@ -26,7 +26,7 @@ SpriteKit には、2D の固定ボディ物理 API が含まれています。 �
 SpriteKit は、テクスチャからスプライトの物理ボディを派生することをサポートするようになりました。 これにより、より自然な衝突を簡単に実装できます。
 
 たとえば、次の衝突では、バナナとサルが各イメージの表面でほぼどのように衝突しているかがわかります。
- 
+
 ![](spritekit-images/image13.png "バナナとサルの衝突は、各イメージの表面でほぼ同じです。")
 
 SpriteKit を使用すると、1行のコードで可能な物理本体を作成できます。 テクスチャと`SKPhysicsBody.Create`サイズを使用してを単にスプライトとして呼び出します。PhysicsBody = SKPhysicsBody (スプライト)。テクスチャ、スプライト。サイズ);
@@ -44,7 +44,7 @@ sprite.PhysicsBody = SKPhysicsBody.Create (sprite.Texture, 0.7f, sprite.Size);
 次のように、アルファしきい値を調整することによって前の衝突が微調整され、バナナを使用すると、サルがフォールオーバーするようになります。
 
 ![](spritekit-images/image14.png "バナナが衝突すると、サルがフォールオーバーします。")
- 
+
 ## <a name="physics-fields"></a>物理フィールド
 
 SpriteKit のもう1つの優れた機能は、新しい物理フィールドのサポートです。 これらを使用すると、渦のようなフィールド、放射状の重心フィールド、および spring フィールドなどをいくつでも追加できます。
@@ -86,7 +86,7 @@ public override void TouchesBegan (NSSet touches, UIEvent evt)
 これにより、bananas は、次のように、フィールドノードの周りの spring のように oscillate されます。
 
 ![](spritekit-images/image15.png "Bananas oscillate [field] ノードの周りにある spring のようになります。")
- 
+
 ## <a name="radial-gravity-field"></a>放射状重力フィールド
 
 別のフィールドを追加することも似ています。 たとえば、次のコードでは放射状重力フィールドが作成されます。

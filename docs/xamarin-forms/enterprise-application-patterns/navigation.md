@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 3ca06ae6fb26fce87f14b9cdb34a700ef49655e1
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 0f523c7149366cff85164f26f3f47b87801002cb
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528382"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770758"
 ---
 # <a name="enterprise-app-navigation"></a>エンタープライズアプリのナビゲーション
 
@@ -305,7 +305,6 @@ private async Task NavigateAsync(string url)
 Xamarin. フォームには、ページナビゲーションのサポートが含まれています。これは通常、ユーザーが UI と対話するか、アプリ自体から、ロジックに基づく状態の内部的な変更の結果として発生します。 ただし、MVVM パターンを使用するアプリでは、ナビゲーションが複雑になることがあります。
 
 この章では`NavigationService` 、ビューモデルからビューモデルの最初のナビゲーションを実行するために使用されるクラスについて説明します。 ビューモデルクラスにナビゲーションロジックを配置すると、自動テストでロジックを実行できるようになります。 さらに、ビューモデルは、ナビゲーションを制御するロジックを実装して、特定のビジネスルールを確実に適用することができます。
-
 
 ## <a name="related-links"></a>関連リンク
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 11/25/2015
-ms.openlocfilehash: 36eeb517fee69742f900a0cf18e1d19d093dfc52
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 44d2e468efeacea919af2d243588d0da6d72945d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290117"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766538"
 ---
 # <a name="systemdata-in-xamarinios"></a>Xamarin. iOS のシステムデータ
 
@@ -110,7 +110,6 @@ class Demo {
 > [!IMPORTANT]
 > 上記のコードサンプルで説明したように、sql[インジェクション](https://en.wikipedia.org/wiki/SQL_injection)によってコードが脆弱になるため、sql コマンドに文字列を埋め込むことは不適切です。
 
-
 ### <a name="using-command-parameters"></a>コマンド パラメーターの使用
 
 次のコードは、コマンドパラメーターを使用して、ユーザーが入力したテキストをデータベースに安全に挿入する方法を示しています (テキストに単一引用符などの特別な SQL 文字が含まれている場合でも)。
@@ -149,7 +148,6 @@ System.string にない機能は次のもので構成さ**れ**ます。
 - [System.Data.Odbc](xref:System.Data.Odbc)
 - 依存関係がから`System.Data.dll`削除されたため、 [EnlistDistributedTransaction (ITransaction)](xref:System.Data.SqlClient.SqlConnection.EnlistDistributedTransaction*)メソッドが削除されました。 `System.EnterpriseServices.dll`
 
-
 <a name="Mono.Data.Sqlite" />
 
 ### <a name="monodatasqlite"></a>Mono. Data. Sqlite
@@ -170,4 +168,3 @@ System.string にない機能は次のもので構成さ**れ**ます。
 ## <a name="data-binding"></a>データ バインディング
 
 現時点では、データバインディングはサポートされていません。
-

@@ -1,18 +1,18 @@
 ---
 title: 第 18 章の概要です。 MVVM
-description: Xamarin.Forms によるモバイル アプリの作成。第 18 章の概要です。 MVVM
+description: Xamarin を使用した Mobile Apps の作成:第 18 章の概要です。 MVVM
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 6A774510-7709-4F60-8EF5-29D478176F8F
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 6379bafb8c879237171951756441d1227f65b825
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 32c16409f30d6b6d502b7cc074eafb182898594a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61334636"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771076"
 ---
 # <a name="summary-of-chapter-18-mvvm"></a>第 18 章の概要です。 MVVM
 
@@ -81,19 +81,17 @@ MVVM はデータのバインドを操作し、MVVM を処理する際に不十�
 
 ### <a name="simple-method-executions"></a>単純なメソッドの実行
 
-[ **PowersOfThree** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18/PowersOfThree)サンプル ViewModel のコマンド インターフェイスを使用する方法を示します。 [ `PowersViewModel` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter18/PowersOfThree/PowersOfThree/PowersOfThree/PowersViewModel.cs)クラス型の 2 つのプロパティを定義`ICommand`も、最も簡単なに渡される 2 つのプライベート プロパティを定義および[`Command`コンス トラクター](xref:Xamarin.Forms.Command.%23ctor(System.Action))します。 プログラムにはこの ViewModel からのデータ バインドが含まれています、 `Command` 2 つのプロパティ`Button`要素。
+[ **PowersOfThree** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18/PowersOfThree)サンプル ViewModel のコマンド インターフェイスを使用する方法を示します。 [ `PowersViewModel` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter18/PowersOfThree/PowersOfThree/PowersOfThree/PowersViewModel.cs)クラス型の 2 つのプロパティを定義`ICommand`も、最も簡単なに渡される 2 つのプライベート プロパティを定義および[`Command`コンストラクター](xref:Xamarin.Forms.Command.%23ctor(System.Action))します。 プログラムにはこの ViewModel からのデータ バインドが含まれています、 `Command` 2 つのプロパティ`Button`要素。
 
 `Button`で、要素を簡単に置き換えることができます`TapGestureRecognizer`コードの変更を XAML 内のオブジェクト。
 
 ### <a name="a-calculator-almost"></a>電卓、ほぼ
 
-[ **AddingMachine** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18/AddingMachine)によりサンプルの両方を使用して、`Execute`と`CanExecute`メソッドの`ICommand`します。 使用して、 [ `AdderViewModel` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AdderViewModel.cs)クラス、 [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AdderViewModel.cs)ライブラリ。 ViewModel には型の 6 つのプロパティが含まれています`ICommand`します。 これらがから初期化される、 [ `Command`コンス トラクター](xref:Xamarin.Forms.Command.%23ctor(System.Action))と[`Command`コンス トラクター](xref:Xamarin.Forms.Command.%23ctor(System.Action,System.Func{System.Boolean}))の`Command`と[`Command<T>`コンス トラクター](https://docs.microsoft.com/dotnet/api/xamarin.forms.command.-ctor?view=xamarin-forms#Xamarin_Forms_Command__ctor_System_Action_System_Object__System_Func_System_Object_System_Boolean__)`Command<T>`します。 計算機の数値キーはすべて使用して初期化されるプロパティにバインド`Command<T>`と`string`引数`Execute`と`CanExecute`特定のキーを識別します。
+[ **AddingMachine** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18/AddingMachine)によりサンプルの両方を使用して、`Execute`と`CanExecute`メソッドの`ICommand`します。 使用して、 [ `AdderViewModel` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AdderViewModel.cs)クラス、 [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AdderViewModel.cs)ライブラリ。 ViewModel には型の 6 つのプロパティが含まれています`ICommand`します。 これらがから初期化される、 [ `Command`コンストラクター](xref:Xamarin.Forms.Command.%23ctor(System.Action))と[`Command`コンストラクター](xref:Xamarin.Forms.Command.%23ctor(System.Action,System.Func{System.Boolean}))の`Command`と[`Command<T>`コンストラクター](https://docs.microsoft.com/dotnet/api/xamarin.forms.command.-ctor?view=xamarin-forms#Xamarin_Forms_Command__ctor_System_Action_System_Object__System_Func_System_Object_System_Boolean__)`Command<T>`します。 計算機の数値キーはすべて使用して初期化されるプロパティにバインド`Command<T>`と`string`引数`Execute`と`CanExecute`特定のキーを識別します。
 
 ## <a name="viewmodels-and-the-application-lifecycle"></a>ビューモデル、およびアプリケーションのライフ サイクル
 
 `AdderViewModel`で使用される、 **AddingMachine**サンプルでは、という 2 つのメソッドも定義します`SaveState`と`RestoreState`します。 これらのメソッドは、もう一度開始日時をスリープ状態になったときに、アプリケーションから呼び出されます。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

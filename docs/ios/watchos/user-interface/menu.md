@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 497ac23ae6fe094b8049ac1b3460d327716e4ece
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: c37d8592b7aadc2c88c31826bc954abfa3c0836d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291678"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766802"
 ---
 # <a name="watchos-menu-control-force-touch-in-xamarin"></a>Xamarin の watchOS Menu コントロール (Force Touch)
 
@@ -28,7 +28,6 @@ Watch Kit は、ウォッチアプリ画面に実装されたときにメニュ�
 強制タッチは、画面上の特定の要素に関連付けられていません。インターフェイスコントローラーにアタッチできるメニューは1つだけです。このメニューは、画面上での Force Touch の押し方に関係なく表示されます。
 
 1 ~ 4 つのメニューオプションを表示できます。
-
 
 ## <a name="adding-a-menu"></a>メニューの追加
 
@@ -56,7 +55,6 @@ partial void MenuItemTapped ()
 IOS のタブ画像と同様に、メニュー項目イメージには、背景を表示するためのアルファチャネルを持つ不透明なパターンが必要です。
 
 最適なパフォーマンスを得るには、メニューに使用するイメージを watch アプリのプロジェクト (watch app extension プロジェクトではなく) に追加する必要があります。
-
 
 ## <a name="changing-the-menu-items"></a>メニュー項目の変更
 
@@ -90,8 +88,6 @@ void MenuItemTapped ()
 メソッド`ClearAllMenuItems`を呼び出して、*プログラムによって追加された*すべてのメニュー項目を削除できます。
 
 ストーリーボードで構成されているメニュー項目を消去することはできません。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

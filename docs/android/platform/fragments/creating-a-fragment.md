@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/07/2018
-ms.openlocfilehash: 1948c700827f1cc235de5857cde9a2a149af8412
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: f7dd62af7cfa37f136b4c72c7c34907ad8ebf36f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524371"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761188"
 ---
 # <a name="creating-a-fragment"></a>フラグメントの作成
 
@@ -25,7 +25,6 @@ public override View OnCreateView(LayoutInflater inflater, ViewGroup container, 
 ```
 
 上記のコードは、ビュー `Resource.Layout.Example_Fragment`を拡大し、子ビューとして`ViewGroup`コンテナーに追加します。
-
 
 > [!NOTE]
 > フラグメントサブクラスには、パブリックな既定の引数コンストラクターを指定することはできません。
@@ -102,14 +101,12 @@ OR
 <fragment class="Com.Example.DetailsFragment" android:id="@+id/fragment_content" android:layout_width="match_parent" android:layout_height="match_parent" />
 ```
 
-
 ## <a name="fragment-lifecycle"></a>フラグメントのライフサイクル
 
 フラグメントには、[ホストアクティビティのライフサイクル](~/android/app-fundamentals/activity-lifecycle/index.md)によって多少独立していても影響を受けている独自のライフサイクルがあります。
 たとえば、アクティビティが一時停止すると、関連付けられているすべてのフラグメントが一時停止されます。 次の図は、フラグメントのライフサイクルの概要を示しています。
 
 [![フラグメントのライフサイクルを示すフロー図](creating-a-fragment-images/fragment-lifecycle.png)](creating-a-fragment-images/fragment-lifecycle.png#lightbox)
-
 
 ### <a name="fragment-creation-lifecycle-methods"></a>フラグメント作成ライフサイクルメソッド
 
@@ -132,7 +129,6 @@ OR
 
 - **`OnResume()`** &ndash;これは、ユーザーがフラグメントを操作できるようになる前に最後に呼び出されたメソッドです。 このメソッドで実行する必要があるコードの種類の例としては、ユーザーが対話できるデバイス (ロケーションサービスのカメラなど) の機能を有効にすることが考えられます。 ただし、このようなサービスを使用するとバッテリが過剰に消費される可能性があり、アプリケーションではバッテリ寿命を節約するために使用を最小限に抑える必要があります。
 
-
 ### <a name="fragment-destruction-lifecycle-methods"></a>フラグメント破棄ライフサイクルメソッド
 
 次の一覧では、フラグメントとして呼び出されるライフサイクルメソッドについて説明します。
@@ -147,11 +143,9 @@ OR
 
 - **`OnDetach()`** &ndash;このメソッドは、フラグメントがアクティビティに関連付けられなくなる直前に呼び出されます。 フラグメントのビュー階層は存在しなくなり、フラグメントによって使用されるすべてのリソースがこの時点で解放されます。
 
-
 ### <a name="using-setretaininstance"></a>SetRetainInstance の使用
 
 フラグメントは、アクティビティを再作成する場合に完全に破棄しないように指定することができます。 クラス`Fragment`は、この目的`SetRetainInstance`のためのメソッドを提供します。 この`true`メソッドにが渡された場合、アクティビティが再開されると、フラグメントの同じインスタンスが使用されます。 これが発生すると、および`OnCreate` `OnDestroy`ライフサイクルコールバックを除くすべてのコールバックメソッドが呼び出されます。 このプロセスは、上に示したライフサイクル図 (緑色の点線) で示されています。
-
 
 ## <a name="fragment-state-management"></a>フラグメント状態の管理
 
@@ -189,7 +183,6 @@ public override void OnActivityCreated(Bundle savedInstanceState)
 
 コントロールにはが`OnSaveInstanceState`割り当てられているため、が呼び出されると、フラグメントはウィジェットにデータを自動的に保存します。 `id` `EditText`
 
-
 ### <a name="bundle-limitations"></a>バンドルの制限事項
 
 を使用`OnSaveInstanceState`すると、一時的なデータを簡単に保存できますが、このメソッドの使用にはいくつかの制限があります。
@@ -197,7 +190,6 @@ public override void OnActivityCreated(Bundle savedInstanceState)
 - フラグメントが戻るスタックに追加されていない場合、ユーザーが **[戻る]** ボタンを押しても、その状態は復元されません。
 
 - バンドルを使用してデータを保存すると、そのデータがシリアル化されます。 これにより、処理の遅延が発生する可能性があります。
-
 
 ## <a name="contributing-to-the-menu"></a>メニューに貢献する
 

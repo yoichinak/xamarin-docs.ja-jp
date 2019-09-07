@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 5272921cade2b9dadd24a4c917e6251ac591e178
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 0f9f8981325785d69d36ccd9d4de1cd69956a155
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292319"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768750"
 ---
 # <a name="working-with-watchos-layout-in-xamarin"></a>WatchOS で Xamarin のレイアウトの操作
 
@@ -34,7 +34,6 @@ Apple Watch のレイアウトを設計[画面サイズ](~/ios/watchos/app-funda
 
 - 使用して、 [ `Menu`コントロール](~/ios/watchos/user-interface/menu.md)明確かつ簡潔なアプリの設計を維持する公開の使用頻度の低い機能にします。
 
-
 ## <a name="implementation"></a>実装
 
 ウォッチ キットには、魅力的の watch アプリのレイアウトを構築するための次のコントロールが含まれています。
@@ -55,7 +54,6 @@ Apple Watch のレイアウトを設計[画面サイズ](~/ios/watchos/app-funda
 
 ![](layout-images/button-attributes.png "比例値とオフセットの調整を提供します。")
 
-
 ### <a name="group"></a>グループ化
 
 `WKInterfaceGroup` 垂直方向または水平方向にスタックを構成できるシンプルなレイアウト コンテナーが制御します。 既定では、各コントロール間の間隔が含まれていますでの間隔 (およびくぼみ) を変更することができます、**属性**インスペクター。
@@ -65,7 +63,6 @@ Apple Watch のレイアウトを設計[画面サイズ](~/ios/watchos/app-funda
 グループできます自体は、サイズ、周囲のコントロールに対して相対的に配置されているし、複雑なレイアウトを作成するグループを入れ子にすることができます。
 
 ![](layout-images/group-scene.png "複雑なレイアウトを作成するグループを入れ子にすることができます。")
-
 
 ### <a name="separator"></a>区切り記号
 
@@ -79,8 +76,6 @@ Apple Watch のレイアウトを設計[画面サイズ](~/ios/watchos/app-funda
 
 レイアウトは完璧とはせず、 `Label`、 `Image`、 `Button`、 `Switch`、 `Slider`、 `Map`、および[他のコントロール](~/ios/watchos/user-interface/index.md)します。
 これらを使用して、レイアウトに配置できる**グループ**または各コントロールの位置とサイズを設定します。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

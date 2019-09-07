@@ -9,12 +9,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/02/2019
-ms.openlocfilehash: e26a71ad72b557a27841bfee1d26001126e2a2a2
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 688b0e87bb6281923d3099c0d269b1c2554b6c7a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68654663"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756756"
 ---
 # <a name="style-a-cross-platform-xamarinforms-application"></a>クロスプラットフォームの Xamarin.Forms アプリケーションのスタイルを適用する
 
@@ -26,8 +26,8 @@ ms.locfileid: "68654663"
 
 クイックスタートでは、XAML スタイルを使用してクロスプラットフォームの Xamarin.Forms アプリケーションのスタイルを適用する方法を説明します。 最終的なアプリケーションは、次のとおりです。
 
-[メモ] ページ[ ![(styling-images/screenshots1-sml.png " ")]][(styling-images/screenshots1.png#lightbox "メモ] ページ")メモ入力ページの(styling-images/screenshots2.png#lightbox "メモ入力ページ") [ ![(styling-images/screenshots2-sml.png " ")]] 
-
+[![](styling-images/screenshots1-sml.png "メモページ")](styling-images/screenshots1.png#lightbox "メモページ\"")
+)[![](styling-images/screenshots2-sml.png "メモ入力ページ")](styling-images/screenshots2.png#lightbox "メモ入力ページ")
 
 ### <a name="prerequisites"></a>必須コンポーネント
 
@@ -315,7 +315,6 @@ ms.locfileid: "68654663"
     [**ノート] ページ**で、 **+** ボタンを押して**NoteEntryPage**に移動し、メモを入力します。 各ページで、前のクイックスタートでスタイルがどのように変更されたかを確認します。
 
 ::: zone-end
-
 
 ## <a name="next-steps"></a>次の手順
 

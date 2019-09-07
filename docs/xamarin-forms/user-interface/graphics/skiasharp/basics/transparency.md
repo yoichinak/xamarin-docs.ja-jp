@@ -7,12 +7,12 @@ ms.assetid: B62F9487-C30E-4C63-BAB1-4C091FF50378
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
-ms.openlocfilehash: 4e8c909ce7dfd9c8f6dccbf2685ff2658931b6a5
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 74335de66e74f6adc7c9488a1b78c31d36d03f14
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656355"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759405"
 ---
 # <a name="skiasharp-transparency"></a>SkiaSharp の透過性
 
@@ -139,7 +139,6 @@ paint.Color = SKColors.Blue.WithAlpha((byte)(0xFF * transparency));
 アニメーションは、2 つの単語、またはの間に「コードの詳細は」ユーザーのアクション (おそらく「コード」を要求する) 代替します。
 
 [![さらにコードをコード](transparency-images/CodeMoreCode.png "より多くのコードのコード")](transparency-images/CodeMoreCode-Large.png#lightbox)
-
 
 に関する前回のコラムで[ **SkiaSharp のビットマップ基本**](bitmaps.md)のいずれかを使用してビットマップを表示する方法を説明する、 [ `DrawBitmap` ](xref:SkiaSharp.SKCanvas.DrawBitmap*)メソッドの`SKCanvas`します。 すべての`DrawBitmap`メソッドには、`SKPaint`最後のパラメーターとしてオブジェクト。 既定では、このパラメーターに設定`null`し、これを無視することができます。 
 

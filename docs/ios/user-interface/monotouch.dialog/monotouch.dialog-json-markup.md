@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: conceptdev
 ms.author: crdun
-ms.openlocfilehash: 5fc5e6c1df911963ab765f5d49016eace8e2733f
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: d9174e9b2d6c056c94b405033a25eeb787c92f9f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284143"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768764"
 ---
 # <a name="monotouchdialog-json-markup"></a>MonoTouch.Dialog Json マークアップ
 
@@ -91,7 +91,6 @@ var theBoolean = jsonElement ["the-boolean"] as BooleanElement;
 
  <a name="Root_Element_Syntax" />
 
-
 ## <a name="root-element-syntax"></a>ルート要素の構文
 
 ルート要素には、次の値が含まれます。
@@ -99,11 +98,9 @@ var theBoolean = jsonElement ["the-boolean"] as BooleanElement;
 - `title`
 - `sections` (省略可能)
 
-
 ルート要素は、入れ子になったコントローラーを作成するための要素としてセクション内に表示できます。 その場合は、追加のプロパティ`"type"`をに設定する必要があります。`"root"`
 
  <a name="url" />
-
 
 ### <a name="url"></a>url
 
@@ -111,13 +108,11 @@ var theBoolean = jsonElement ["the-boolean"] as BooleanElement;
 
  <a name="group" />
 
-
 ### <a name="group"></a>グループ (group)
 
 設定すると、ルート要素の groupname が設定されます。 グループ名は、要素内の入れ子になった要素の1つからルート要素の値として表示される概要を選択するために使用されます。 これは、チェックボックスの値、またはラジオボタンの値のいずれかです。
 
  <a name="radioselected" />
-
 
 ### <a name="radioselected"></a>radioselected
 
@@ -125,27 +120,23 @@ var theBoolean = jsonElement ["the-boolean"] as BooleanElement;
 
  <a name="title" />
 
-
 ### <a name="title"></a>title
 
 存在する場合は、RootElement に使用されるタイトルになります。
 
  <a name="type" />
 
-
-### <a name="type"></a>種類
+### <a name="type"></a>型
 
 このがセクションに`"root"`表示される場合は、に設定する必要があります (これは、コントローラーを入れ子にするために使用されます)。
 
  <a name="sections" />
-
 
 ### <a name="sections"></a>sections
 
 これは、個々のセクションを含む Json 配列です
 
  <a name="Section_Syntax" />
-
 
 ## <a name="section-syntax"></a>セクションの構文
 
@@ -155,9 +146,7 @@ var theBoolean = jsonElement ["the-boolean"] as BooleanElement;
 - `footer` (省略可能)
 - `elements` 配列
 
-
  <a name="header" />
-
 
 ### <a name="header"></a>ヘッダー
 
@@ -165,13 +154,11 @@ var theBoolean = jsonElement ["the-boolean"] as BooleanElement;
 
  <a name="footer" />
 
-
 ### <a name="footer"></a>フッター
 
 存在する場合は、セクションの下部にフッターが表示されます。
 
  <a name="elements" />
-
 
 ### <a name="elements"></a>要素
 
@@ -182,11 +169,9 @@ var theBoolean = jsonElement ["the-boolean"] as BooleanElement;
 - `entry`行 (標準またはパスワード)
 - `boolean`値 (スイッチまたはイメージを使用)
 
-
 文字列要素は、ユーザーがセルまたはアクセサリをタップしたときに呼び出すメソッドを提供することで、ボタンとして使用できます。
 
  <a name="Rendering_Elements" />
-
 
 ## <a name="rendering-elements"></a>レンダリング要素
 
@@ -230,7 +215,6 @@ var theBoolean = jsonElement ["the-boolean"] as BooleanElement;
 
  <a name="accessory" />
 
-
 ### <a name="accessory"></a>アクセサリ
 
 表示要素に表示されるアクセサリの種類を決定します。有効な値は次のとおりです。
@@ -239,11 +223,9 @@ var theBoolean = jsonElement ["the-boolean"] as BooleanElement;
 - `detail-disclosure`
 - `disclosure-indicator`
 
-
 値が存在しない場合、アクセサリは表示されません。
 
  <a name="background" />
-
 
 ### <a name="background"></a>バックグラウンド
 
@@ -251,20 +233,17 @@ Background プロパティは、セルの背景色を設定します。 値は�
 
  <a name="caption" />
 
-
 ### <a name="caption"></a>キャプション
 
 表示要素に表示されるメイン文字列。 フォントと色をカスタマイズするには、プロパティ`"textcolor"`と`"font"`プロパティを設定します。 表示スタイルは、 `"style"`プロパティによって決定されます。
 
  <a name="color_and_detailcolor" />
 
-
 ### <a name="color-and-detailcolor"></a>色と色の色
 
 メインテキストまたは詳細テキストに使用する色。
 
  <a name="detailfont_and_font" />
-
 
 ### <a name="detailfont-and-font"></a>[すべてのフォントとフォント]
 
@@ -274,9 +253,7 @@ Background プロパティは、セルの背景色を設定します。 値は�
 - Helvetica,
 - "Helvetica,-14"
 
-
  <a name="linebreak" />
-
 
 ### <a name="linebreak"></a>改行
 
@@ -289,11 +266,9 @@ Background プロパティは、セルの背景色を設定します。 値は�
 - `tail-truncation`
 - `word-wrap`
 
-
 と`character-wrap` `"lines"`の両方を、0に設定されたプロパティと共に使用して、レンダリング要素を複数行の要素に変換することができます。 `word-wrap`
 
  <a name="ontap_and_onaccessorytap" />
-
 
 ### <a name="ontap-and-onaccessorytap"></a>ontap と onaccessorytap
 
@@ -316,13 +291,11 @@ class Foo {
 
  <a name="lines" />
 
-
 ### <a name="lines"></a>lines
 
 この値が0に設定されている場合は、含まれている文字列の内容に応じて、要素の自動サイズが設定されます。 これを機能させるには、 `"linebreak"`プロパティをまたは`"character-wrap"` `"word-wrap"`に設定する必要もあります。
 
  <a name="style" />
-
 
 ### <a name="style"></a>style
 
@@ -334,9 +307,7 @@ class Foo {
 - `"value2"`
 - `"subtitle"`: サブタイトルを含むテキスト。
 
-
  <a name="subtitle" />
-
 
 ### <a name="subtitle"></a>サブタイトル
 
@@ -345,20 +316,17 @@ class Foo {
 
  <a name="textcolor" />
 
-
 ### <a name="textcolor"></a>textcolor
 
 テキストに使用する色。
 
  <a name="value" />
 
-
 ### <a name="value"></a>value
 
 表示要素に表示される2番目の値。 こののレイアウトは、 `"style"`設定の影響を受けます。 フォントと色をカスタマイズするには、 `"detailfont"`とを`"detailcolor"`設定します。
 
  <a name="Boolean_Elements" />
-
 
 ## <a name="boolean-elements"></a>ブール型の要素
 
@@ -382,13 +350,11 @@ class Foo {
 
  <a name="type" />
 
-
 ### <a name="type"></a>型
 
 型は、または`"boolean"` `"checkbox"`のいずれかに設定できます。 ブール値に設定すると、uislider またはイメージが使用さ`"on"`れ`"off"`ます (との両方が設定されている場合)。 Checkbox に設定すると、チェックボックスが使用されます。 `"group"`プロパティを使用して、特定のグループに属するブール型の要素にタグを付けることができます。 これは、包含するルートにも`"group"`プロパティがある場合に便利です。ルートは、同じグループに属するすべてのブール値 (またはチェックボックス) のカウントを使用して結果を集計します。
 
  <a name="Entry_Elements" />
-
 
 ## <a name="entry-elements"></a>Entry 要素
 
@@ -423,13 +389,11 @@ class Foo {
 
  <a name="autocorrect" />
 
-
 ### <a name="autocorrect"></a>自動修正
 
 エントリに使用する自動修正スタイルを決定します。 有効な値は、true または false (また`"yes"`は`"no"`文字列と) です。
 
  <a name="capitalization" />
-
 
 ### <a name="capitalization"></a>大文字使用
 
@@ -440,16 +404,13 @@ class Foo {
 - `sentences`
 - `words`
 
-
  <a name="caption" />
-
 
 ### <a name="caption"></a>キャプション
 
 エントリに使用するキャプション
 
  <a name="keyboard" />
-
 
 ### <a name="keyboard"></a>キーボード
 
@@ -465,16 +426,13 @@ class Foo {
 - `twitter`
 - `url`
 
-
  <a name="placeholder" />
-
 
 ### <a name="placeholder"></a>ホルダー
 
 エントリに空の値が含まれている場合に表示されるヒントテキスト。
 
  <a name="return-key" />
-
 
 ### <a name="return-key"></a>return キー
 
@@ -492,9 +450,7 @@ Return キーに使用されるラベルです。 次の値を指定できます
 - `send`
 - `yahoo`
 
-
  <a name="value" />
-
 
 ### <a name="value"></a>value
 
@@ -502,14 +458,12 @@ Return キーに使用されるラベルです。 次の値を指定できます
 
  <a name="Radio_Elements" />
 
-
 ## <a name="radio-elements"></a>ラジオ要素
 
 ラジオ要素には`"radio"`型があります。 選択された項目は、それを`radioselected`含むルート要素のプロパティによって選択されます。
 また、 `"group"`プロパティに値が設定されている場合、このオプションボタンはそのグループに属しています。
 
  <a name="Date_and_Time_Elements" />
-
 
 ## <a name="date-and-time-elements"></a>日付と時刻の要素
 
@@ -535,7 +489,6 @@ Return キーに使用されるラベルです。 次の値を指定できます
 ```
 
  <a name="Html/Web_Element" />
-
 
 ## <a name="htmlweb-element"></a>Html/Web 要素
 

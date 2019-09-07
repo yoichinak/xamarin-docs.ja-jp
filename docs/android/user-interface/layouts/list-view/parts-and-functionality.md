@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2017
-ms.openlocfilehash: 3ab7a923dabd6b98c509870abaa51b12fb63c8d2
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 4566ee5d203b5d098133aebe2c32dbaec712e17a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510120"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70764211"
 ---
 # <a name="xamarinandroid-listview-parts-and-functionality"></a>Xamarin. Android ListView のパーツと機能
 
@@ -31,26 +31,21 @@ ms.locfileid: "68510120"
 
 を構成する要素の詳細`ListView`については、以下を参照してください。
 
-
 ## <a name="rows"></a>行
 
 各行には独自`View`のがあります。 ビューには、で`Android.Resources`定義されている組み込みビュー、またはカスタムビューのいずれかを指定できます。 各行で同じビューレイアウトを使用することも、すべて異なる行を使用することもできます。 このドキュメントには、組み込みのレイアウトを使用する例があります。また、カスタムレイアウトの定義方法について説明しています。
-
 
 ## <a name="adapter"></a>アダプター
 
 コントロール`ListView`では、 `Adapter`行ごとに書式`View`設定されたを指定するためにが必要です。 Android には、使用できる組み込みのアダプターとビュー、またはカスタムクラスを作成することができます。
 
-
 ## <a name="fast-scrolling"></a>高速スクロール
 
 に多数`ListView`のデータ行が含まれている場合は、ユーザーが一覧の任意の部分に移動できるように、高速スクロールを有効にすることができます。 高速スクロール ' スクロールバー ' は、必要に応じて有効にすることができます (API レベル11以降でカスタマイズ)。
 
-
 ## <a name="section-index"></a>セクションのインデックス
 
 長い一覧をスクロールしているときに、オプションのセクションインデックスを使用すると、現在表示しているリストのどの部分についてのフィードバックもユーザーに提供されます。 これは、長いリストにのみ適しており、通常は高速スクロールと組み合わせて使用します。
-
 
 ## <a name="classes-overview"></a>クラスの概要
 
@@ -71,4 +66,3 @@ ms.locfileid: "68510120"
 - **カーソルアダプター**またはを使用`CursorAdapter`して、SQLite クエリに基づいてデータを表示します。 `SimpleCursorAdapter` &ndash;
 
 このドキュメントには、を使用する`ArrayAdapter`簡単な例と、または`CursorAdapter`の`BaseAdapter`カスタム実装を必要とする複雑な例が含まれています。
-

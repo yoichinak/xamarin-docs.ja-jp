@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: 1e003a80b58f783829f5af3b74801fc3c91c88e9
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 769ff7efedca453734b6db2dd2dcb2ad503ba272
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655615"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759799"
 ---
 # <a name="xamarinforms-cells"></a>Xamarin.Forms のセル
 
@@ -57,7 +57,6 @@ Xamarin.Forms には、次のセルの種類がサポートされています。
 | --- | --- |
 | [ `EntryCell` ](xref:Xamarin.Forms.EntryCell)定義、 [ `Label` ](xref:Xamarin.Forms.EntryCell.Label)セルと編集可能なテキストでの 1 行を識別するプロパティ、 [ `Text` ](xref:Xamarin.Forms.EntryCell.Text)プロパティ。 処理、 [ `Completed` ](xref:Xamarin.Forms.EntryCell.Completed)ユーザーには、テキスト入力が完了したときに通知するイベントです。<br /><br />[API ドキュメント](xref:Xamarin.Forms.EntryCell) / [ガイド](~/xamarin-forms/user-interface/tableview.md#entrycell) | [![EntryCell 例](cells-images/EntryCell.png "EntryCell 例")](cells-images/EntryCell-Large.png#lightbox "EntryCell 例")<br />[このページの C# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/EntryCellDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/EntryCellDemoPage.xaml) |
 |     |     |
-
 
 ## <a name="related-links"></a>関連リンク
 

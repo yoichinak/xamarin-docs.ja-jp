@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: 90ef335bd3683028d5f9951cdf2ca341158209b9
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 9960167e2f71531e5ffeaecac94aede5d5ea3340
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284213"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768888"
 ---
 # <a name="editing-tables-with-xamarinios"></a>Xamarin を使用したテーブルの編集
 
@@ -30,7 +30,6 @@ ms.locfileid: "70284213"
 - **Commit編集スタイル**–テーブルソースは、このメソッドがオーバーライドされたかどうかを検出し、スワイプして自動的に削除するジェスチャを有効にします。 メソッドの実装では、 `DeleteRows` `UITableView`でを呼び出して、セルを非表示にしたり、モデルから基になるデータ (配列、ディクショナリ、データベースなど) を削除したりする必要があります。 
 - **Caneditrow** – Commit編集スタイルがオーバーライドされると、すべての行が編集可能であると見なされます。 このメソッドが実装されていて、false (特定の行またはすべての行) が返された場合、そのセルでは、[削除] ジェスチャを使用できません。 
 - **TitleForDeleteConfirmation** –必要に応じて、 **[削除]** ボタンのテキストを指定します。 このメソッドが実装されていない場合、ボタンのテキストは "Delete" になります。 
-
 
 これらのメソッドは、 `TableSource`クラスで次のように実装されます。
 
@@ -61,7 +60,6 @@ public override string TitleForDeleteConfirmation (UITableView tableView, NSInde
 
 この例では`UITableViewSource` 、はコレクションの項目の`List<TableItem>`追加と削除をサポートしているため、(文字列配列ではなく) をデータソースとして使用するようにが更新されています。
 
-
 ## <a name="edit-mode"></a>編集モード
 
 テーブルが編集モードの場合、行ごとに赤い "stop" ウィジェットが表示され、操作すると [削除] ボタンが表示されます。 また、このテーブルには、行をドラッグして順序を変更できることを示す "ハンドル" アイコンも表示されます。
@@ -75,7 +73,6 @@ public override string TitleForDeleteConfirmation (UITableView tableView, NSInde
 - **CanMoveRow** – move ' handle ' または false を有効にして移動を回避するには true を返します。 
 - 編集**スタイルの行**–テーブルが編集モードの場合、このメソッドからの戻り値によって、そのセルに赤い削除アイコンと緑色の [追加] アイコンのどちらが表示されるかが決まります。 行`UITableViewCellEditingStyle.None`を編集可能にしない場合は、を返します。 
 - **MoveRow** – テーブルに表示されるデータを一致するように、基になるデータ構造を変更できるように行が移動したときに呼び出されます。 
-
 
 最初の3つのメソッドの実装は比較的単純です。を使用`indexPath`して特定の行の動作を変更する場合を除き、テーブル全体の戻り値をハードコーディングするだけです。
 
@@ -128,7 +125,6 @@ table.SetEditing (true, true);
 table.SetEditing (false, true);
 ```
 
-
 ## <a name="row-insertion-editing-style"></a>行の挿入の編集スタイル
 
 テーブル内からの行の挿入は、一般的ではないユーザーインターフェイスです。標準的な iOS アプリの主な例は、 **[連絡先の編集]** 画面です。 このスクリーンショットは、行の挿入機能のしくみを示しています。編集モードでは、追加の行が追加されています (クリックすると、追加の行がデータに挿入されます)。 編集が完了すると、一時的な **([新規追加])** 行が削除されます。
@@ -141,12 +137,10 @@ table.SetEditing (false, true);
 - **カスタマイズの Emovetarget** –ユーザーがセルを移動するときに、この省略可能なメソッドから戻り値を使用して、場所の選択をオーバーライドできます。 つまり、この例では、 **(新しい行の追加)** 行の後に行が移動されないようにするために、特定の位置にあるセルが "ドロップ" されるのを防ぐことができます。 
 - **CanMoveRow** – move ' handle ' または false を有効にして移動を回避するには true を返します。 この例では、最後の行の move ' handle ' が非表示になっています。これは、サーバーを insert ボタンとして使用するためです。 
 
-
 また、"insert" 行を追加する2つのカスタムメソッドを追加し、不要になったときにもう一度削除します。 これらは、 **[編集]** ボタンと **[完了]** ボタンから呼び出されます。
 
 - **Begintableedit** – **[編集]** ボタンに触れると、が`SetEditing`呼び出され、テーブルが編集モードになります。 これにより、"挿入ボタン" として機能するために、テーブルの末尾に **(新しい行の追加)** 行が表示されている場合に、このメソッドがトリガーされます。 
 - **DidFinishTableEditing** – [完了] ボタンがタッチ`SetEditing`されたときに、編集モードを無効にするためにもう一度呼び出されます。 このコード例では、編集が不要になったときに、テーブルから **(add new)** 行を削除します。 
-
 
 これらのメソッドのオーバーライドは、 **Tableeditmodeadd/Code/Tableource**というサンプルファイルに実装されています。
 
@@ -219,7 +213,6 @@ edit = new UIBarButtonItem(UIBarButtonSystemItem.Edit, (s,e)=>{
 ```
 
 この行挿入 UI パターンはあまり頻繁には使用されませんが、 `UITableView.BeginUpdates`メソッド`EndUpdates`とメソッドを使用して、テーブル内のセルの挿入や削除をアニメーション化することもできます。 これらのメソッドを使用するためのルールでは、と`RowsInSection` `EndUpdates`の`BeginUpdates`呼び出しの間で返される値の差が、メソッド`InsertRows`および`DeleteRows`メソッドで追加または削除されたセルの数と一致する必要があります。 基になるデータソースが、テーブルビューでの挿入または削除に合わせて変更されていない場合は、エラーが発生します。
-
 
 ## <a name="related-links"></a>関連リンク
 

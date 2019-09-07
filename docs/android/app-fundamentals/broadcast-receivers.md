@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/20/2018
-ms.openlocfilehash: 8f7dd6f0a2e6db2580982a877cab2137cf28fab2
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 9266d8c4e1723adfb7e5e55dce7ede6d47f6f116
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68508709"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755481"
 ---
 # <a name="broadcast-receivers-in-xamarinandroid"></a>Xamarin. Android で受信者をブロードキャストする
 
@@ -62,7 +62,7 @@ public class SampleReceiver : BroadcastReceiver
 ```
 
 Xamarin Android はクラスをコンパイルするときに、必要なメタデータを使用して AndroidManifest を更新し、受信者を登録します。 静的に登録されたブロードキャストレシーバーの`Enabled`場合、をに`true`設定する必要があります。そうしないと、Android は受信側のインスタンスを作成できません。
- 
+
 プロパティ`Exported`は、ブロードキャスト受信者がアプリケーションの外部からメッセージを受信できるかどうかを制御します。 プロパティが明示的に設定されていない場合、ブロードキャストレシーバーに関連付けられているインテントフィルターがあるかどうかに基づいて、プロパティの既定値が Android によって決定されます。 ブロードキャストレシーバーに対して少なくとも1つのインテントフィルターがある場合、Android で`Exported`はプロパティ`true`がであると想定されます。 ブロードキャストレシーバーに関連付けられているインテントフィルターがない場合、Android は値が`false`であると想定します。 
 
 メソッド`OnReceive`は、ブロードキャストレシーバーにディスパッチ`Intent`されたへの参照を受け取ります。 これにより、送信側がブロードキャストレシーバーに値を渡すことができるようになります。

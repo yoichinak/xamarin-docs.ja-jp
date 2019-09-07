@@ -1,6 +1,6 @@
 ---
-title: PathTooLongException エラーを解決する方法
-description: この記事では、アプリのビルド中になる可能性がある PathTooLongException を解決する方法について説明します。
+title: PathTooLongException エラーを解決操作方法には
+description: この記事では、アプリのビルド中に発生する可能性がある PathTooLongException の解決方法について説明します。
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 60EE1C8D-BE44-4612-B3B5-70316D71B1EA
@@ -8,32 +8,32 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/29/2018
-ms.openlocfilehash: 443c3cc742ceb919e64a781e18c5a97c342abb44
-ms.sourcegitcommit: 450106d5f05b4473bf7f5b9100b2eaf18c9110de
+ms.openlocfilehash: 915f557db7955dc7b8b9f1bc5e014a683740052b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67522925"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760812"
 ---
-# <a name="how-do-i-resolve-a-pathtoolongexception-error"></a>PathTooLongException エラーを解決する方法
+# <a name="how-do-i-resolve-a-pathtoolongexception-error"></a>PathTooLongException エラーを解決操作方法には
 
 ## <a name="cause"></a>原因
 
-Xamarin.Android プロジェクトで生成されるパス名は非常に長くすることはできます。
-たとえば、ビルド中に、次のようなパスを生成できませんでした。
+Xamarin. Android プロジェクトで生成されたパス名は非常に長くなることがあります。
+たとえば、ビルド中に次のようなパスが生成される可能性があります。
 
-**C:\\一部\\ディレクトリ\\ソリューション\\プロジェクト\\obj\\デバッグ\\__library_projects__ \\Xamarin.Forms.Platform.Android\\library_project_imports\\資産**
+**C:\\いくつ\\か\\の\\ディレクトリソリューションプロジェクト\\objDebug\\library_projects\\\\\\library_project_importsアセット\\**
 
-Windows 上 (パスの最大長が[260 文字](https://msdn.microsoft.com/library/windows/desktop/aa365247.aspx))、 **PathTooLongException**生成されるパスが最大長を超える場合、プロジェクトのビルド時に生成される可能性があります。 
+Windows の場合 (パスの最大長は[260 文字](https://msdn.microsoft.com/library/windows/desktop/aa365247.aspx))、生成されたパスが最大長を超えた場合にプロジェクトをビルドするときに**PathTooLongException**が生成されることがあります。 
 
-## <a name="fix"></a>修正
+## <a name="fix"></a>Fix
 
-`UseShortFileNames` MSBuild プロパティに設定されて`True`既定でこのエラーを回避するためにします。 このプロパティに設定しているときに`True`、ビルド プロセスが生成する可能性を減らすために短いパス名を使用、 **PathTooLongException**します。
-たとえば、`UseShortFileNames`に設定されている`True`は、次のようなパスに、上記のパスを短縮します。
+MSBuild `UseShortFileNames`プロパティは、既定で`True`このエラーを回避するようにに設定されています。 このプロパティがに`True`設定されている場合、ビルドプロセスでは短いパス名を使用して、 **PathTooLongException**を生成する可能性を減らします。
+たとえば、がに`UseShortFileNames` `True`設定されている場合、上記のパスは次のようなパスに短縮されます。
 
-**C:\\一部\\ディレクトリ\\ソリューション\\プロジェクト\\obj\\デバッグ\\lp\\1\\jl\\資産**
+**C:\\いくつ\\か\\の\\ディレクトリソリューションプロジェクト\\objデバッグ\\lp\\1jlアセット\\\\\\**
 
-このプロパティを手動で設定するには、プロジェクトに次の MSBuild プロパティを追加 **.csproj**ファイル。
+このプロパティを手動で設定するには、次の MSBuild プロパティをプロジェクトの **.csproj**ファイルに追加します。
 
 ```xml
 <PropertyGroup>
@@ -41,7 +41,7 @@ Windows 上 (パスの最大長が[260 文字](https://msdn.microsoft.com/librar
 </PropertyGroup>
 ```
 
-このフラグを設定する場合が解決しない、 **PathTooLongException**を指定するエラー、別の方法は、[共通の中間出力ルート](https://blogs.msdn.microsoft.com/kirillosenkov/2015/04/04/using-a-common-intermediate-and-output-directory-for-your-solution/)を設定して、ソリューション内のプロジェクトの`IntermediateOutputPath`で、プロジェクト **.csproj**ファイル。 比較的短いパスを使用してください。 例えば:
+このフラグを設定しても**PathTooLongException**エラーが解決しない場合は、別の方法として、プロジェクトの **.csproj**ファイルで`IntermediateOutputPath`を設定して、ソリューション内のプロジェクトに[共通の中間出力ルート](https://blogs.msdn.microsoft.com/kirillosenkov/2015/04/04/using-a-common-intermediate-and-output-directory-for-your-solution/)を指定します。 比較的短いパスを使用してください。 例えば:
 
 ```xml
 <PropertyGroup>
@@ -49,4 +49,4 @@ Windows 上 (パスの最大長が[260 文字](https://msdn.microsoft.com/librar
 </PropertyGroup>
 ```
 
-ビルドのプロパティの設定の詳細については、次を参照してください。[ビルド プロセス](~/android/deploy-test/building-apps/build-process.md)します。
+ビルドプロパティの設定の詳細については、「[ビルドプロセス](~/android/deploy-test/building-apps/build-process.md)」を参照してください。

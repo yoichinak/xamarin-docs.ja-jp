@@ -6,12 +6,12 @@ ms.assetid: 0B17991A-4573-4F6C-9E86-D4B9D1A47E4D
 author: conceptdev
 ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: 2811297e24aac726ae3c91e5354675499d4b9ddb
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: f93b741f5f091410a7f045a8e2a8538b3340208e
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290086"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766330"
 ---
 # <a name="step-1-register-an-app-to-use-azure-active-directory"></a>手順 1. アプリを登録して Azure Active Directory を使用する
 
@@ -37,8 +37,6 @@ ms.locfileid: "70290086"
 6. アプリが作成されたら、 **[構成]** タブに移動します。後でアプリケーションで使用する**クライアント ID**を書き留めておきます。 また、この画面では、モバイルアプリケーションに Active Directory へのアクセス権を付与したり、Web API や Office365 などの別のアプリケーションを追加したりできます。認証が完了したら、モバイルアプリケーションで使用できます。
 
    ![](register-images/05.-configure.jpg "また、この画面では、モバイルアプリケーションに Active Directory へのアクセス権を付与したり、Web API や Office365 などの別のアプリケーションを追加したりすることもできます。")
-
-
 
 ## <a name="related-links"></a>関連リンク
 

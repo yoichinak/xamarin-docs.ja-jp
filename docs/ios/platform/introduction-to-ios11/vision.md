@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 08/31/2017
-ms.openlocfilehash: b0f6647ff92c8d8d0b8d2769c85aa24572d1464e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: efe3f2d4c79dc6e5e2a7f13408de52e05006e10a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285742"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752268"
 ---
 # <a name="vision-framework-in-xamarinios"></a>Xamarin のビジョンフレームワーク
 
@@ -102,7 +102,6 @@ VisionRectangles `OverlayRectangles`サンプルのメソッドには、次の3�
 
 四角形の検出は、多くの場合、操作チェーンの最初の手順にすぎません。[たとえば、この CoreMLVision の例](~/ios/platform/introduction-to-ios11/coreml.md#coremlvision)では、四角形を coreml モデルに渡して、手書きの数字を解析します。
 
-
 <a name="faces" />
 
 ## <a name="face-detection"></a>顔検出
@@ -175,7 +174,6 @@ VisionFaces `OverlayRectangles`サンプルのメソッドには、次の3つの
 ### <a name="5-further-processing"></a>5。その他の処理
 
 ビジョンフレームワークには、顔の特徴 (目や口など) を検出するための追加機能が含まれています。 この型を使用します。 `VNFaceObservation`これは、上記の手順3のように`VNFaceLandmark`結果を返しますが、追加のデータが含まれます。 `VNDetectFaceLandmarksRequest`
-
 
 ## <a name="related-links"></a>関連リンク
 

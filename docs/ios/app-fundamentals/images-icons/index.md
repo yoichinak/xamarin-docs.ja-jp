@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: af7dbad29c156964f154053dac00255b1b32e4ff
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 6940e07c51dbc19615454e0c51188152db22c63f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289094"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767213"
 ---
 # <a name="images-and-icons-in-xamarinios"></a>Xamarin. iOS のイメージとアイコン
 
@@ -33,7 +33,6 @@ IOS アプリ内でイメージアセットを使用するには、いくつか�
 
 IOS アプリのイメージ資産を作成する際には、いくつかの考慮事項を考慮する必要があります。また、これらの資産が使用される場所もいくつかあります。 これらはいずれも、必要なイメージアセットの数だけでなく、アセットの作成方法にも影響を与えます。 次のトピックでは、必要なイメージ資産の種類、それらの資産をアプリケーションのバンドルに含める方法、およびイメージ資産を使用して必要な機能を提供する方法について説明します。
 
-
 ## <a name="displaying-an-imageiosapp-fundamentalsimages-iconsdisplaying-an-imagemd"></a>[イメージの表示](~/ios/app-fundamentals/images-icons/displaying-an-image.md)
 
 この記事では、Xamarin の iOS アプリにイメージ資産を含め、コードを使用するかC# 、ios デザイナーのコントロールに割り当てることによって、イメージを表示する方法について説明します。
@@ -51,7 +50,6 @@ Apple では、アプリによるアイコンの管理を可能にする iOS 10.
 - `AlternateIconName`-現在選択されている代替アイコンの名前`null`を返します。プライマリアイコンを使用する場合はを返します。
 - `SetAlternameIconName`-アプリのアイコンを指定した代替アイコンに切り替えるには、このメソッドを使用します。
 
-
 ## <a name="launch-screensiosapp-fundamentalsimages-iconslaunch-screensmd"></a>[起動画面](~/ios/app-fundamentals/images-icons/launch-screens.md)
 
 この記事では、さまざまな種類のストーリーボードを使用して、iOS デバイスのサイズと解像度ごとにユニバーサル起動画面を提供する方法について説明します。
@@ -59,8 +57,6 @@ Apple では、アプリによるアイコンの管理を可能にする iOS 10.
 ## <a name="custom-document-typesiosapp-fundamentalsimages-iconscustom-document-typesmd"></a>[カスタム ドキュメント タイプ](~/ios/app-fundamentals/images-icons/custom-document-types.md)
 
 この記事では、カスタムドキュメントの種類のアイコンとして使用する Xamarin. iOS アプリでのイメージアセットの追加と管理について説明します。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

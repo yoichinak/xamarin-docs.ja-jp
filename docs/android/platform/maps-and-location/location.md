@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/22/2018
-ms.openlocfilehash: 8366796af47e8915bf0bd9ba680e6144e1cfaebc
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 61532eb1e31db6a862275180394b2b5ba9b05f8e
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280605"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761727"
 ---
 # <a name="location-services-on-android"></a>Android 上のロケーションサービス
 
@@ -75,11 +75,10 @@ else
 
 アプリは、ユーザーがアクセス許可を付与しない (またはアクセス許可を失効させた) シナリオを許容し、その状況を適切に処理する方法を備えている必要があります。 Xamarin Android での実行時のアクセス許可チェックの実装の詳細については、[アクセス許可ガイド](~/android/app-fundamentals/permissions.md)を参照してください。
 
-
 ## <a name="using-the-fused-location-provider"></a>ヒューズを持つ場所プロバイダーの使用
 
 デバイスから場所の更新を受信するために、デバイスから場所の更新を受信するために、ヒューズを使用することをお勧めします。これは、ベストロケーション情報をバッテリ効率の高い方法で提供するために、実行時に場所プロバイダーを効率的に選択するためです。 たとえば、屋外を歩いているユーザーが GPS を使用した最適な場所を取得します。 その後、GPS が正常に機能しない (ある場合は) 屋内でにステップ実行すると、屋内での機能が向上します。
- 
+
 ジオフェンシングとアクティビティの監視など、場所に対応したアプリケーションを支援するためのさまざまなツールを提供します。 このセクションでは、を設定`LocationClient`する方法、プロバイダーを確立する方法、およびユーザーの場所を取得する方法について重点的に説明します。
 
 [Google Play 開発者サービス](https://developer.android.com/google/play-services/index.html)の一部としては、ヒューズが組み込まれています。

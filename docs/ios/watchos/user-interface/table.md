@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: d1e5602643ba5578c4bc2a26e6db2d9f49033469
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 2bed40c3ac2853a5f99c2b487e909164e12e676d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291694"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766954"
 ---
 # <a name="watchos-table-controls-in-xamarin"></a>Xamarin の watchOS Table コントロール
 
@@ -39,9 +39,6 @@ WatchOS `WKInterfaceTable`コントロールは、対応する iOS よりもは�
 
 行のコントローラーのクラスが設定されると、IDE によってプロジェクト内C#に対応するファイルが作成されます。 コントロール (ラベルなど) を行にドラッグし、コードで参照できるように名前を付けます。
 
-
-
-
 ## <a name="create-and-populate-rows"></a>行の作成と設定
 
 `SetNumberOfRows`を使用して`Identifier`正しい列を選択することにより、各行の行コントローラークラスを作成します。 行コントローラーにカスタムを設定`Identifier`した場合は、次のコードスニペットの**既定値**を、使用した識別子に変更します。 が`RowController`呼び出され、テーブルが表示`SetNumberOfRows`されると、*すべての行に対し*てが作成されます。
@@ -65,7 +62,6 @@ for (var i = 0; i < rows.Count; i++) {
 
 > [!IMPORTANT]
 > を`SetNumberOfRows`使用し、を使用`GetRowController`してループすると、テーブル全体がウォッチに送信されます。 テーブルの後続のビューでは、特定の行を追加または削除する`InsertRowsAt`必要`RemoveRowsAt`がある場合は、とを使用してパフォーマンスを向上させます。
-
 
 ## <a name="respond-to-taps"></a>タップに応答する
 
@@ -142,7 +138,6 @@ for (var i = 0; i < rows.Count; i++) {
 }
 ```
 
-
 ## <a name="vertical-detail-paging"></a>垂直方向の詳細ページング
 
 watchOS 3 ではテーブルの新機能が導入されました。テーブルに戻って別の行を選択しなくても、各行に関連する詳細ページをスクロールできます。 詳細画面をスクロールするには、上下にスワイプするか、Digital Crown を使用します。
@@ -210,8 +205,6 @@ namespace WatchTables.OnWatchExtension
 ```
 
 ここで宣言されているコンセントとアクションは、コードで参照できます。ただし、 **designer.cs**ファイルは直接編集しないでください。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

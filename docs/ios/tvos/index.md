@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: conceptdev
 ms.author: crdun
 ms.date: 02/02/2018
-ms.openlocfilehash: 688b2b431ca385e8e5bc4ae721e3eaf4049a193d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: e95d7a01b2743db119f7982db1f9ed34bc4d02a9
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283648"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769622"
 ---
 # <a name="introduction-to-tvos-in-xamarin"></a>Xamarin での tvOS の概要
 
@@ -71,7 +71,6 @@ Xamarin でビルドされた tvOS アプリのサンプル:
 Xamarin で tvOS を構築するときに問題が発生した場合は、[リリースノート](https://docs.microsoft.com/xamarin/ios/release-notes/)、 [Xamarin、iOS フォーラム](https://forums.xamarin.com/categories/ios)、 [xamarin Bugzilla Tracker](https://bugzilla.xamarin.com/query.cgi?product=iOS)、 [GitHub](https://github.com/xamarin/xamarin-macios/issues)で既存の問題を確認してください。
 
 [GitHub で](https://github.com/xamarin/xamarin-macios/issues)新しい問題と提案を報告します。
-
 
 ## <a name="related-links"></a>関連リンク
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 07bf50bdee9243141d1f266a88f82770d9503969
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 9bde1140f6590daa4b1d40a8b56edec314bfc66d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69529097"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760231"
 ---
 # <a name="introduction-to-enterprise-app-development"></a>エンタープライズアプリ開発の概要
 
@@ -163,7 +163,6 @@ EShopOnContainers PCL プロジェクトには、次のフォルダーが含ま�
 Xamarin のクロスプラットフォームモバイルアプリ開発ツールとプラットフォームは、B2E、B2B、B2C モバイルクライアントアプリ向けの包括的なソリューションを提供します。これにより、すべてのターゲットプラットフォーム (iOS、Android、および Windows) 間でコードを共有し、総保有コスト。 アプリは、ネイティブプラットフォームのルックアンドフィールを維持しながら、ユーザーインターフェイスとアプリロジックコードを共有できます。
 
 エンタープライズアプリの開発者は、開発中にアプリのアーキテクチャを変更できるいくつかの課題に直面しています。 そのため、アプリをビルドして、時間の経過と共に変更または拡張できるようにすることが重要です。 このような適応性のための設計は困難ですが、通常はアプリをアプリに簡単に統合できる不連続で疎結合されたコンポーネントにアプリをパーティション分割する必要があります。
-
 
 ## <a name="related-links"></a>関連リンク
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 367f0b6a44482762f8609eb959e154c942ff14f5
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 474e8ba772773f437bc30a07a34f6bfbb286cd82
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291819"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768488"
 ---
 # <a name="xib-code-generation-in-xamarinios"></a>xib でのコード生成
 
@@ -72,7 +72,6 @@ Visual Studio for Mac は、標準の .NET プロジェクト namespacing と一
 
 1. 非デザイナークラス`partial`部分のクラス本体を入力すると、Visual Studio for Mac は、実装されていないすべての部分メソッドのシグネチャをオートコンプリートするようにを提供します。
 2. 部分メソッドシグネチャには、それらを目的の C 言語に公開する属性が適用されているので、対応するアクションとして処理できます。
-
 
 必要に応じて、部分メソッドを無視し、別のメソッドに属性を適用することによってアクションを実装するか、基底クラスにフォールスルーすることができます。
 

@@ -7,12 +7,12 @@ ms.assetid: F6E20077-687C-45C4-A375-31D4F49BBFA4
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: 846b7fa3c905b208771a110a013283bd77214b72
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 8c0b60a5064bbcf605f66a7b9dcce5da1f84a015
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511697"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770892"
 ---
 # <a name="summary-of-chapter-28-location-and-maps"></a>第 28 章の概要です。 場所とマップ
 
@@ -234,8 +234,6 @@ Ios の場合、 **info.plist**ファイルは、そのユーザーの場所の�
 [ **Xamarin.Forms.Maps** ](xref:Xamarin.Forms.Maps)アセンブリも含まれています、 [ `Geocoder` ](xref:Xamarin.Forms.Maps.Geocoder)クラス、 [ `GetPositionsForAddressAsync` ](xref:Xamarin.Forms.Maps.Geocoder.GetPositionsForAddressAsync(System.String))に変換するメソッド0 またはより多くの地理的位置や別のメソッドにテキスト アドレス[ `GetAddressesForPositionAsync` ](xref:Xamarin.Forms.Maps.Geocoder.GetAddressesForPositionAsync(Xamarin.Forms.Maps.Position))他の方向に変換します。
 
 [GeocoderRoundTrip.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/GeocoderRoundTripPage.xaml)ファイルと[GeocoderRoundTrip.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/GeocoderRoundTripPage.xaml.cs)分離コード ファイルは、この機能を示します。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: c23515c7fc7a3fef836cba76ec30279c94150da2
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: f48f84c704fa8ce20ce24dfbfaca2df23a8494eb
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281535"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752718"
 ---
 # <a name="purchasing-consumable-products-in-xamarinios"></a>Xamarin での消費製品の購入
 
@@ -41,24 +41,14 @@ ms.locfileid: "70281535"
 ## <a name="consumable-products-example"></a>使用できる製品の例
 
 [InAppPurchaseSample コード](https://docs.microsoft.com/samples/xamarin/ios-samples/storekit)には、基本的な ' ゲーム内通貨 ' ("サルクレジット" と呼ばれます) を実装する*消耗品*と呼ばれるプロジェクトが含まれています。 このサンプルでは、2つのアプリ内購入製品を実装し、ユーザーが希望どおりに "サルのクレジット" を購入できるようにする方法を示します。実際のアプリケーションでは、これを使用する方法もあります。   
-   
-   
-   
- アプリケーションは次のスクリーンショットに示されています。購入するたびに、ユーザーの残高に "サルクレジット" が追加されます。   
-   
-   
-   
- [![購入ごとに、ユーザーの残高に対してより多くのサルクレジットが追加されます](purchasing-consumable-products-images/image27.png)](purchasing-consumable-products-images/image27.png#lightbox)   
-   
-   
-   
- カスタムクラス、StoreKit、アプリストア間の相互作用は次のようになります。   
-   
-   
-   
- [![カスタムクラス、StoreKit、およびアプリストア間の相互作用](purchasing-consumable-products-images/image28.png)](purchasing-consumable-products-images/image28.png#lightbox)
 
-&nbsp;
+アプリケーションは次のスクリーンショットに示されています。購入するたびに、ユーザーの残高に "サルクレジット" が追加されます。   
+
+ [![購入ごとに、ユーザーの残高に対してより多くのサルクレジットが追加されます](purchasing-consumable-products-images/image27.png)](purchasing-consumable-products-images/image27.png#lightbox)   
+
+カスタムクラス、StoreKit、アプリストア間の相互作用は次のようになります。   
+
+ [![カスタムクラス、StoreKit、およびアプリストア間の相互作用](purchasing-consumable-products-images/image28.png)](purchasing-consumable-products-images/image28.png#lightbox)
 
 ### <a name="viewcontroller-methods"></a>ViewController メソッド
 
@@ -69,10 +59,8 @@ NSObject succeededObserver, failedObserver;
 ```
 
 `SKProductsRequestDelegate`また、コンストラクターはサブクラス ( `InAppPurchaseManager`) を作成し、 `SKPaymentTransactionObserver` ( `CustomPaymentObserver`) を作成して登録します。   
-   
-   
-   
- アプリ内購入トランザクションの処理の最初の部分は、次のサンプルアプリケーションのコードに示すように、ユーザーが何かを購入するときにボタンの押下を処理することです。
+
+アプリ内購入トランザクションの処理の最初の部分は、次のサンプルアプリケーションのコードに示すように、ユーザーが何かを購入するときにボタンの押下を処理することです。
 
 ```csharp
 buy5Button.TouchUpInside += (sender, e) => {
@@ -83,9 +71,7 @@ buy10Button.TouchUpInside += (sender, e) => {
 };
 ```
 
-   
-   
- ユーザーインターフェイスの2番目の部分では、表示されたバランスを更新することで、トランザクションが成功したという通知を処理します。
+ユーザーインターフェイスの2番目の部分では、表示されたバランスを更新することで、トランザクションが成功したという通知を処理します。
 
 ```csharp
 priceObserver = NSNotificationCenter.DefaultCenter.AddObserver (InAppPurchaseManager.InAppPurchaseManagerTransactionSucceededNotification,
@@ -118,10 +104,8 @@ public void PurchaseProduct(string appStoreProductId)
 ```
 
 キューへの支払いの追加は、非同期操作です。 StoreKit によってトランザクションが処理され、Apple のサーバーに送信される間、アプリケーションは制御を取り戻すことができます。 この時点で、iOS はユーザーがアプリストアにログインしていることを確認し、必要に応じて Apple ID とパスワードの入力を求めます。   
-   
-   
-   
- ユーザーが App Store での認証に成功し、トランザクションに同意した`SKPaymentTransactionObserver`場合、は storekit の応答を受け取り、次のメソッドを呼び出してトランザクションを実行して完了します。
+
+ユーザーが App Store での認証に成功し、トランザクションに同意した`SKPaymentTransactionObserver`場合、は storekit の応答を受け取り、次のメソッドを呼び出してトランザクションを実行して完了します。
 
 ```csharp
 public void CompleteTransaction (SKPaymentTransaction transaction)
@@ -250,10 +234,8 @@ requestObserver = NSNotificationCenter.DefaultCenter.AddObserver (InAppPurchaseM
 ### <a name="purchase-transactions"></a>トランザクションの購入
 
 StoreKit の支払キューは、可能な場合は購入要求を格納して転送します。そのため、ネットワークの停止の影響は、購入プロセス中にネットワークが失敗した場合によって異なります。   
-   
-   
-   
- トランザクションの実行中にエラーが発生した`SKPaymentTransactionObserver`場合、 `CustomPaymentObserver`サブクラス () `UpdatedTransactions`によってメソッド`SKPaymentTransaction`が呼び出され、クラスは "失敗" の状態になります。
+
+トランザクションの実行中にエラーが発生した`SKPaymentTransactionObserver`場合、 `CustomPaymentObserver`サブクラス () `UpdatedTransactions`によってメソッド`SKPaymentTransaction`が呼び出され、クラスは "失敗" の状態になります。
 
 ```csharp
 public override void UpdatedTransactions (SKPaymentQueue queue, SKPaymentTransaction[] transactions)
@@ -307,14 +289,10 @@ Applications may detect and respond to specific error codes, or handle them in t
 ## <a name="handling-restrictions"></a>処理の制限
 
 IOS の**設定 > 全般 > 制限**機能を使用すると、ユーザーは自分のデバイスの特定の機能をロックできます。   
-   
-   
-   
- ユーザーが`SKPaymentQueue.CanMakePayments`メソッドを使用してアプリ内購入を行うことを許可されているかどうかをクエリできます。 False が返された場合、ユーザーはアプリ内購入にアクセスできません。 購入が試行された場合、StoreKit はユーザーにエラーメッセージを自動的に表示します。 この値を確認することで、アプリケーションで購入ボタンを非表示にしたり、他の操作を行ってユーザーを支援したりすることができます。   
-   
-   
-   
- このファイルでは`CanMakePayments` 、メソッドは次のように storekit 関数をラップします。 `InAppPurchaseManager.cs`
+
+ユーザーが`SKPaymentQueue.CanMakePayments`メソッドを使用してアプリ内購入を行うことを許可されているかどうかをクエリできます。 False が返された場合、ユーザーはアプリ内購入にアクセスできません。 購入が試行された場合、StoreKit はユーザーにエラーメッセージを自動的に表示します。 この値を確認することで、アプリケーションで購入ボタンを非表示にしたり、他の操作を行ってユーザーを支援したりすることができます。   
+
+このファイルでは`CanMakePayments` 、メソッドは次のように storekit 関数をラップします。 `InAppPurchaseManager.cs`
 
 ```csharp
 public bool CanMakePayments()
@@ -324,14 +302,10 @@ public bool CanMakePayments()
 ```
 
 このメソッドをテストするには、iOS の**制限**機能を使用して、**アプリ内購入**を無効にします。   
-   
-   
-   
+
  [![IOS の制限機能を使用してアプリ内購入を無効にする](purchasing-consumable-products-images/image31.png)](purchasing-consumable-products-images/image31.png#lightbox)   
-   
-   
-   
- このコード`ConsumableViewController`例では、 `CanMakePayments`無効になっているボタンに**appstore の無効**なテキストを表示することによって、false が返されるようになりました。
+
+このコード`ConsumableViewController`例では、 `CanMakePayments`無効になっているボタンに**appstore の無効**なテキストを表示することによって、false が返されるようになりました。
 
 ```csharp
 // only if we can make payments, request the prices
@@ -348,21 +322,11 @@ if (iap.CanMakePayments()) {
 ```
 
 **アプリ内購入**機能が制限されている場合、アプリケーションは次のようになります。 [購入] ボタンは無効になっています。   
-   
-   
-   
+
  [![アプリ内購入機能が制限されている場合、アプリケーションは次のようになります。購入ボタンは無効になります。](purchasing-consumable-products-images/image32.png)](purchasing-consumable-products-images/image32.png#lightbox)   
-   
-   
-   
 
 が false の場合`CanMakePayments`でも製品情報を要求できます。そのため、アプリでは引き続き価格を取得して表示できます。 つまり、コードからチェックを`CanMakePayments`削除した場合でも、[購入] ボタンはアクティブのままになります。ただし、購入した場合、ユーザーには、**アプリ内購入が許可**されていないことを示すメッセージが表示されます (支払キューがの場合、storekit によって生成されます)アクセスされる:   
-   
-   
-   
- [![アプリ内購入は使用できません](purchasing-consumable-products-images/image33.png)](purchasing-consumable-products-images/image33.png#lightbox)   
-   
-   
-   
- 実際のアプリケーションでは、ボタンを完全に非表示にしたり、StoreKit によって自動的に表示されるアラートよりも詳細なメッセージを提供するなど、さまざまな方法で制限を処理することがあります。
 
+ [![アプリ内購入は使用できません](purchasing-consumable-products-images/image33.png)](purchasing-consumable-products-images/image33.png#lightbox)   
+
+実際のアプリケーションでは、ボタンを完全に非表示にしたり、StoreKit によって自動的に表示されるアラートよりも詳細なメッセージを提供するなど、さまざまな方法で制限を処理することがあります。

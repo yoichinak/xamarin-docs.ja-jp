@@ -6,20 +6,18 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/05/2018
-ms.openlocfilehash: 1aaacae8cebed2396661a28c189af44c25238e7b
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: f1cc2f4685354687390866c0922a802591c7c054
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69887838"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70757704"
 ---
 # <a name="working-with-the-android-manifest"></a>Android マニフェストの操作
 
 **Androidmanifest .xml**は、android プラットフォームの強力なファイルで、アプリケーションの機能と要件を android に記述することができます。 ただし、それを使用するのは簡単ではありません。 カスタム属性をクラスに追加することで、このような問題を最小限に抑えることができます。これは、マニフェストを自動的に生成するために使用されます。 目標は、ユーザーの 99% が**Androidmanifest .xml**を手動で変更する必要がないことです。 
 
 **Androidmanifest .xml**はビルドプロセスの一部として生成され、 **Properties/androidmanifest** XML 内にある xml は、カスタム属性から生成された xml とマージされます。 結果として得られるマージされた**Androidmanifest .xml**は、 **obj**サブディレクトリに存在します。たとえば、デバッグビルドの場合、 **obj/debug/android/AndroidManifest**に存在します。 マージプロセスは簡単です。コード内でカスタム属性を使用して XML 要素を生成し、それらの要素を**Androidmanifest .xml**に*挿入*します。 
-
-
 
 ## <a name="the-basics"></a>基本事項
 
@@ -55,8 +53,6 @@ namespace Demo
 
 属性`[Activity]`は型に`abstract`は影響しません。`abstract`型は無視されます。
 
-
-
 ### <a name="activity-name"></a>活動名
 
 Xamarin Android 5.1 以降では、アクティビティの型名は、エクスポートされる型のアセンブリ修飾名の MD5SUM に基づいています。 これにより、2つの異なるアセンブリから同じ完全修飾名を指定できるようになり、パッケージ化エラーは発生しません。 (Xamarin Android 5.1 より前では、アクティビティの既定の型名は、小文字の名前空間とクラス名から作成されていました)。 
@@ -78,7 +74,6 @@ public class MyActivity : Activity
 
 *注*: プロパティは、下位`Name`互換性のためにのみ使用する必要があります。このような名前を変更すると、実行時に型の検索速度が低下する可能性があります。 アクティビティの既定の型名を小文字の名前空間とクラス名に基づいて要求するレガシコードがある場合は、「 [Android 呼び出し可能ラッパーの名前付け](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/android/xamarin.android_5/xamarin.android_5.1/index.md#Android_Callable_Wrapper_Naming)」で互換性の維持に関するヒントを参照してください。 
 
-
 ### <a name="activity-title-bar"></a>アクティビティのタイトルバー
 
 既定では、Android は実行時にアプリケーションにタイトルバーを提供します。 このに使用される値[`/manifest/application/activity/@android:label`](https://developer.android.com/guide/topics/manifest/activity-element.html#label)はです。 ほとんどの場合、この値はクラス名とは異なります。 タイトルバーにアプリのラベルを指定するには[`Label`](xref:Android.App.ActivityAttribute.Label) 、プロパティを使用します。
@@ -97,7 +92,6 @@ public class MyActivity : Activity
 <activity android:label="Awesome Demo App" 
           android:name="md5a7a3c803e481ad8926683588c7e9031b.MainActivity" />
 ```
-
 
 ### <a name="launchable-from-application-chooser"></a>アプリケーションの選択からの起動可能な
 
@@ -122,8 +116,6 @@ public class MyActivity : Activity
 </activity>
 ```
 
-
-
 ### <a name="activity-icon"></a>アクティビティアイコン
 
 既定では、システムによって提供される既定のランチャーアイコンがアクティビティに与えられます。 カスタムアイコンを使用するには、まず、 **.png**を**リソース/** 作成元に追加し、そのビルドアクションを**androidresource**に[`Icon`](xref:Android.App.ActivityAttribute.Icon)設定します。次に、プロパティを使用して、使用するアイコンを指定します。 例: 
@@ -147,7 +139,6 @@ public class MyActivity : Activity
 </activity>
 ```
 
-
 ### <a name="permissions"></a>アクセス許可
 
 Android マニフェストにアクセス許可を追加すると (「 [Android マニフェストにアクセス許可を追加](https://github.com/xamarin/recipes/tree/master/Recipes/android/general/projects/add_permissions_to_android_manifest)する」の説明を参照)、これらのアクセス許可は**Properties/AndroidManifest .xml**に記録されます。 たとえば、 `INTERNET`アクセス許可を設定すると、次の要素が**Properties/androidmanifest**に追加されます。 
@@ -167,11 +158,7 @@ Android マニフェストにアクセス許可を追加すると (「 [Android 
 
 マニフェストのリリースビルドバージョン ( **obj/Debug/android/AndroidManifest**) では、これらのアクセス許可は自動的には構成され*ません*。 リリースビルドへの切り替えによって、デバッグビルドで使用できるアクセス許可がアプリに付与されていない場合は、アプリに対して**必要なアクセス**許可の設定でこのアクセス許可を明示的に設定していることを確認してください (「 **build > Android」を参照してください)。** Visual Studio for Mac 内のアプリケーション「Visual Studio での**Android マニフェスト > プロパティ**」を参照してください)。 
 
-
-
-
 ## <a name="advanced-features"></a>高度な機能
-
 
 ### <a name="intent-actions-and-features"></a>インテントアクションと機能
 
@@ -206,7 +193,6 @@ public class MyActivity : Activity
 </activity>
 ```
 
-
 ### <a name="application-element"></a>Application 要素
 
 Android マニフェストには、アプリケーション全体のプロパティを宣言する手段も用意されています。 これは、 `<application>`要素とそれに対応する[アプリケーション](xref:Android.App.ApplicationAttribute)カスタム属性を使用して行います。 これらは、アクティビティごとの設定ではなく、アプリケーション全体 (アセンブリ全体) の設定であることに注意してください。 通常は、アプリケーション`<application>`全体のプロパティを宣言してから、アクティビティごとにこれらの設定 (必要に応じて) をオーバーライドします。 
@@ -234,8 +220,6 @@ Android マニフェストには、アプリケーション全体のプロパテ
 
 `<application>`要素で構成できるアプリケーション全体の属性は多数あります。これらの設定の詳細については、「 [applicationattribute](xref:Android.App.ApplicationAttribute)」の「[パブリックプロパティ](xref:Android.App.ApplicationAttribute)」セクションを参照してください。 
 
-
-
 ## <a name="list-of-custom-attributes"></a>カスタム属性の一覧
 
 - [Android. ActivityAttribute](xref:Android.App.ActivityAttribute) :[/Manifest/applicationxml](https://developer.android.com/guide/topics/manifest/activity-element.html)フラグメントを生成します 
@@ -252,4 +236,3 @@ Android マニフェストには、アプリケーション全体のプロパテ
 - [BroadcastReceiverAttribute](xref:Android.Content.BroadcastReceiverAttribute) :[/Manifest/application/レシーバー](https://developer.android.com/guide/topics/manifest/receiver-element.html) XML フラグメントを生成します。 
 - [Android. ContentProviderAttribute](xref:Android.Content.ContentProviderAttribute) :[/Manifest/applicationxml](https://developer.android.com/guide/topics/manifest/provider-element.html)フラグメントを生成します 
 - [GrantUriPermissionAttribute](xref:Android.Content.GrantUriPermissionAttribute) :[/Manifest/application/provider/grant-uri-permission](https://developer.android.com/guide/topics/manifest/grant-uri-permission-element.html) XML フラグメントを生成します
-

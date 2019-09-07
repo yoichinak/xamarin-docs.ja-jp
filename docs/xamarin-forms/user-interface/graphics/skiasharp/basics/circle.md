@@ -7,12 +7,12 @@ ms.assetid: E3A4E373-F65D-45C8-8E77-577A804AC3F8
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 876379a1d515517054d9e0fa2657e8bc10dc749f
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: 110b2646fb7e1bda00c628749489c14a540e2b54
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69888519"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759540"
 ---
 # <a name="drawing-a-simple-circle-in-skiasharp"></a>SkiaSharp の単純な円を描画
 
@@ -157,7 +157,6 @@ IOS、Android、およびユニバーサル Windows プラットフォームで�
 円の輪郭の幅は25ピクセル&mdash; 、または円&mdash;の半径の1分の1になるように指定されていますが、細いことがあります。青の円では、線の幅の半分が見えません。 引数、`DrawCircle`メソッドは、円の抽象の幾何学的座標を定義します。 青の内部のサイズは、最も近いピクセルにそのディメンションが 25 ピクセル幅のアウトラインがジオメトリの円をまたぐ&mdash;内側と外側の半分の半分です。
 
 次のサンプル、 [Xamarin.Forms との統合](~/xamarin-forms/user-interface/graphics/skiasharp/basics/integration.md)記事では、これを視覚的に示します。
-
 
 ## <a name="related-links"></a>関連リンク
 

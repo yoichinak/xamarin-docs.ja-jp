@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 0d001c39b2111785911d678bdeb2e83d761fba11
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7596f79119f28997cbcda6e7057e682edfd760b8
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286996"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756357"
 ---
 # <a name="ios-backgrounding-with-tasks"></a>タスクを使用した iOS バックグラウンド処理
 
@@ -23,7 +23,6 @@ IOS でバックグラウンド処理を実行する最も簡単な方法は、�
 1. **バックグラウンドセーフタスク**-アプリケーション内の任意の場所で呼び出されます。中断したくないタスクは、アプリケーションによってバックグラウンドで入力されます。
 1. **DidEnterBackground Tasks** -クリーンアップおよび状態`DidEnterBackground`保存を支援するために、アプリケーションライフサイクルメソッド中に呼び出されます。
 1. **バックグラウンド転送 (ios 7 以降)** -ios 7 でネットワーク転送を実行するために使用される、特殊な種類のバックグラウンドタスク。 通常のタスクとは異なり、バックグラウンド転送には事前に決められた時間制限はありません。
-
 
 バックグラウンドセーフおよび`DidEnterBackground`タスクは、ios 6 と ios 7 の両方で安全に使用できますが、若干の違いがあります。 これらの2種類のタスクについて詳しく説明します。
 
@@ -47,7 +46,6 @@ UIApplication.SharedApplication.EndBackgroundTask(taskID);
 > [!IMPORTANT]
 > バックグラウンドセーフタスクは、アプリケーションのニーズに応じて、メインスレッドまたはバックグラウンドスレッドで実行できます。
 
-
 ## <a name="performing-tasks-during-didenterbackground"></a>DidEnterBackground 中のタスクの実行
 
 実行時間の長いタスクをバックグラウンドセーフにするだけでなく、アプリケーションがバックグラウンドに配置されているときにタスクを開始するために登録を使用することもできます。 iOS では、アプリケーションの状態の保存、ユーザー `DidEnterBackground`データの保存、およびアプリケーションがバックグラウンドに入る前に機密コンテンツを暗号化するために使用できるという名前の*appdelegate*クラスにイベントメソッドが用意されています。 アプリケーションはこのメソッドから返されるまでに約5秒かかります。また、アプリケーションは終了します。 そのため、完了するまでに5秒以上かかる可能性のあるクリーンアップタスクは、 `DidEnterBackground`メソッド内から呼び出すことができます。 これらのタスクは、別のスレッドで呼び出す必要があります。
@@ -68,7 +66,6 @@ public override void DidEnterBackground (UIApplication application) {
 
 > [!IMPORTANT]
 > iOS では、[ウォッチドッグメカニズム](https://developer.apple.com/library/ios/qa/qa1693/_index.html)を使用して、アプリケーションの UI の応答性を維持します。 時間がかかりすぎるアプリケーション`DidEnterBackground`は、UI で応答しなくなります。 バックグラウンドで実行するタスクを開始オフに`DidEnterBackground`することで、UI の応答性を維持し、ウォッチドッグがアプリケーションを強制終了するのを防ぐことができます。
-
 
 ## <a name="handling-background-task-time-limits"></a>バックグラウンドタスクの時間制限の処理
 
@@ -133,7 +130,6 @@ IOS 7 でのバックグラウンド転送のバックボーンは、新しい`N
 1. ネットワークとデバイスの中断によってコンテンツを転送します。
 1. 大きなファイルをアップロードしてダウンロードします (*バックグラウンド転送サービス*)。
 
-
 これがどのように動作するかについて詳しく見ていきましょう。
 
 ### <a name="nsurlsession-api"></a>NSURLSession API
@@ -157,7 +153,6 @@ else {
 > [!IMPORTANT]
 > Ios 6 はバックグラウンド UI 更新をサポートしておらず、アプリケーションを終了するため、iOS 6 に準拠したコードのバックグラウンドから UI を更新する呼び出しは避けてください。
 
-
 `NSURLSession` API には、認証の処理、失敗した転送の管理、およびレポートクライアント側でのサーバー側エラーではない機能の豊富なセットが含まれています。 これは、iOS 7 で導入されたタスクの実行時間の中断をブリッジするのに役立ちます。また、大規模なファイルを迅速かつ確実に転送するためのサポートも提供します。 次のセクションでは、この2番目の機能について説明します。
 
 ### <a name="background-transfer-service"></a>バックグラウンド転送サービス
@@ -167,4 +162,3 @@ IOS 7 より前では、バックグラウンドでのファイルのアップ�
 バックグラウンド転送サービスを使用して開始される転送は、オペレーティングシステムによって管理され、認証とエラーを処理するための Api を提供します。 転送は、任意の時間制限によってバインドされていないため、大きなファイルのアップロードやダウンロード、バックグラウンドでのコンテンツの自動更新などに使用できます。 サービスを実装する方法の詳細については、[バックグラウンド転送のチュートリアル](~/ios/app-fundamentals/backgrounding/ios-backgrounding-walkthroughs/background-transfer-walkthrough.md)を参照してください。
 
 バックグラウンド転送サービスは、アプリケーションがバックグラウンドでコンテンツを更新できるように、バックグラウンドフェッチまたはリモート通知と組み合わせられることがよくあります。 次の2つのセクションでは、iOS 6 と iOS 7 の両方で、アプリケーション全体をバックグラウンドで実行するための概念を紹介します。
-

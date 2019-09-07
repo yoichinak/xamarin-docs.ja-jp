@@ -1,18 +1,18 @@
 ---
 title: 第 14 章の概要です。 絶対レイアウト
-description: Xamarin.Forms によるモバイル アプリの作成。第 14 章の概要です。 絶対レイアウト
+description: Xamarin を使用した Mobile Apps の作成:第 14 章の概要です。 絶対レイアウト
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 88882A48-3226-42D1-96ED-241250B64A84
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: 7371f134944d7492e51aa2d02247c0ab48345a47
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c489bf244396cf180ed8e1272308048a14b67300
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61334413"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771128"
 ---
 # <a name="summary-of-chapter-14-absolute-layout"></a>第 14 章の概要です。 絶対レイアウト
 
@@ -28,7 +28,7 @@ ms.locfileid: "61334413"
 
 子を追加することができます、`Children`のコレクション、`AbsoluteLayout`標準を使用して[ `Add` ](xref:System.Collections.Generic.ICollection`1.Add*)メソッドが`AbsoluteLayout`も拡張を提供します[ `Add` ](xref:Xamarin.Forms.AbsoluteLayout.IAbsoluteList`1.Add*)メソッドを指定することができます、 [ `Rectangle`](xref:Xamarin.Forms.Rectangle)します。 別[ `Add` ](xref:Xamarin.Forms.AbsoluteLayout.IAbsoluteList`1.Add*)メソッドにのみが必要です、 [ `Point` ](xref:Xamarin.Forms.Point)、この場合、子は制約がありませんされ自体のサイズを設定します。
 
-作成することができます、`Rectangle`値を[コンス トラクター](xref:Xamarin.Forms.Rectangle.%23ctor(System.Double,System.Double,System.Double,System.Double)) 4 つの値が必要な&mdash;親に対する相対的な子の左上隅の位置を示す最初の 2 つとを示す 2 つ目の 2 つ、子のサイズ。 使用することができます、[コンス トラクター](xref:Xamarin.Forms.Rectangle.%23ctor(Xamarin.Forms.Point,Xamarin.Forms.Size))を必要とする、`Point`と[ `Size` ](xref:Xamarin.Forms.Size)値。
+作成することができます、`Rectangle`値を[コンストラクター](xref:Xamarin.Forms.Rectangle.%23ctor(System.Double,System.Double,System.Double,System.Double)) 4 つの値が必要な&mdash;親に対する相対的な子の左上隅の位置を示す最初の 2 つとを示す 2 つ目の 2 つ、子のサイズ。 使用することができます、[コンストラクター](xref:Xamarin.Forms.Rectangle.%23ctor(Xamarin.Forms.Point,Xamarin.Forms.Size))を必要とする、`Point`と[ `Size` ](xref:Xamarin.Forms.Size)値。
 
 これら`Add`でメソッドが示されています[ **AbsoluteDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/AbsoluteDemo)、どの位置`BoxView`を使用して要素`Rectangle`値、および`Label`だけを使用して要素`Point`値。
 
@@ -98,8 +98,6 @@ layoutBounds.Y = (fractionalChildCoordinate.Y/(1 - layoutBounds.Height))
 [![ドット マトリックス クロックのスクリーン ショットをトリプル](images/ch14fg08-small.png "ドット マトリックス クロック")](images/ch14fg08-large.png#lightbox "ドット マトリックス クロック")
 
 [ **BouncingText** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/BouncingText)プログラムが 2 つをアニメーション化`Label`画面全体で水平方向および垂直方向にするオブジェクト。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

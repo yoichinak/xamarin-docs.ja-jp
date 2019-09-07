@@ -7,12 +7,12 @@ ms.assetid: 95167D1F-A718-405A-AFCC-90E596D422F3
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/29/2017
-ms.openlocfilehash: f43c4dac1811a54ee0ceeb70e2b2b1835a5ca030
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 82755a6a87ec0a47c10aac7078beeab6e14c218d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70228246"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759379"
 ---
 # <a name="path-effects-in-skiasharp"></a>SkiaSharp のパスの効果
 
@@ -943,7 +943,6 @@ public static SKPathEffect CreateDiscrete (Single segLength, Single deviation, U
 
 最後の引数には、効果のために使用する擬似乱数シーケンスの生成に使用されるシードです。 ジッターの効果の外観は、異なるシードを少し異なります。 引数が、既定値は 0 で、効果が同じであるプログラムを実行するたびにです。 シードを設定するにはさまざまなジッターが必要なは、画面が再描画されるたびに場合、`Millisecond`のプロパティを`DataTime.Now`値 (たとえば)。
 
-
 **実験ジッター**  ページでは、さまざまな値で四角形を描画できます。
 
 [![JitterExperiment ページのトリプルスクリーンショット](effects-images/jitterexperiment-small.png)](effects-images/jitterexperiment-large.png#lightbox)
@@ -1412,8 +1411,6 @@ public class DashedHatchLinesPage : ContentPage
 [![破線の [ハッチ線] ページのトリプルスクリーンショット](effects-images/dashedhatchlines-small.png)](effects-images/dashedhatchlines-large.png#lightbox)
 
 奇妙な組み合わせに単純なドットとダッシュからその範囲は、パスの効果を確認したら、想像して作成することができますを参照してください。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

@@ -7,12 +7,12 @@ ms.assetid: 288224F1-7AEE-4148-A88D-A70C03F83D7A
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/09/2017
-ms.openlocfilehash: 586cf0eaa7b0f38af61c9f7d619b30a39023a19e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 33ed7f3477f44662f3392d2125b61818b3ed885f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68652956"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759449"
 ---
 # <a name="integrating-with-xamarinforms"></a>Xamarin.Forms との統合
 
@@ -238,7 +238,6 @@ HSV モデルでは、純粋な色は、飽和状態と値の両方が 100 を�
 それらを自分で実験の 2 つのモデルを理解する最善の方法です。
 
 [![](integration-images/colorexplore-large.png "色の詳細ページのスクリーン ショットをトリプル")](integration-images/colorexplore-small.png#lightbox "色の詳細ページの 3 倍になるスクリーン ショット")
-
 
 ## <a name="related-links"></a>関連リンク
 

@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/02/2018
-ms.openlocfilehash: 4301022ae665498eaf90ca1e1786afbd6d19094a
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: fa35f6fe2388484875180594f18041947963ef7a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70198397"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70763976"
 ---
 # <a name="packaging-wear-apps"></a>パッケージウェアアプリ
 
@@ -47,7 +47,6 @@ Xamarin Android 5.0 以降では、ハンドヘルドプロジェクトから磨
 
 -----
 
-
 磨耗アプリのパッケージ名が、ハンドヘルドアプリのパッケージ名と一致しない場合、 **XA5211**エラーが表示されることに注意してください。 例えば:
 
 ```shell
@@ -75,7 +74,6 @@ app package name (com.companyname.mywearapp != com.companyname.myapp). (XA5211)
     ```
 
 - ハンドヘルドプロジェクトに**未加工**のリソースとして、磨耗アプリを追加します。 
-
 
 ## <a name="manual-packaging"></a>手動パッケージング
 
@@ -105,4 +103,3 @@ Android の摩耗アプリは、バージョン5.0 より前の Xamarin Android 
     ```
 
 Android 開発者サイトの[マニュアルパックの手順](https://developer.android.com/training/wearables/apps/packaging.html#PackageManually)も参照してください。
-

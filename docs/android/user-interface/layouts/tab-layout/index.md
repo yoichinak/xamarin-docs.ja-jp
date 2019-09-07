@@ -7,15 +7,14 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/08/2017
-ms.openlocfilehash: 5f67ec30ce04993701634387f7c2023a0f92004f
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 1e0632eb921b25fef40b8f0483ab80d62c9e1235
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522348"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70762188"
 ---
 # <a name="tabbed-layouts"></a>タブ付きレイアウト
-
 
 ## <a name="overview"></a>概要
 
@@ -29,8 +28,6 @@ ms.locfileid: "69522348"
 - **ツールバー**は、を置き換える`ActionBar`新しいより柔軟な操作バーコンポーネントです。 &ndash; `Toolbar` `Toolbar`は、android 5.0 のロリポップ以降で使用できます。また、android [Support Library v7](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/) NuGet パッケージを使用して、以前のバージョンの android でも使用できます。 
     `Toolbar`は現在、Android アプリで使用するために推奨されるアクションバーコンポーネントです。
     詳細については、「[ツールバー](~/android/user-interface/controls/tool-bar/index.md)」を参照してください。 
-
-
 
 ## <a name="related-links"></a>関連リンク
 

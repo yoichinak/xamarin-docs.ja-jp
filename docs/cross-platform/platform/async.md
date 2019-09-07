@@ -6,12 +6,12 @@ ms.assetid: F87BF587-AB64-4C60-84B1-184CAE36ED65
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: 90c391f79d7aa0ffdee0072c84cbdba0c504d551
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 8b88d6c33671f36d2d4106f45a267322320639c7
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280626"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765337"
 ---
 # <a name="async-support-overview"></a>非同期サポートの概要
 
@@ -124,7 +124,6 @@ public async Task<int> DownloadHomepage()
 - 戻り`int`値の型`Task<int>`は、呼び出し元のコードがこのメソッドで計算された値にアクセスできるようにするためです。
 - Return ステートメント`return exampleInt;`は整数オブジェクトであり、メソッドが返す`Task<int>`事実は言語の機能強化の一部です。
 
-
 ### <a name="calling-an-async-method-1"></a>非同期メソッドの呼び出し1
 
 このボタンクリックイベントハンドラーは、上記で説明したメソッドを呼び出す Android サンプルアプリケーションにあります。
@@ -153,7 +152,6 @@ GetButton.Click += async (sender, e) => {
 - このコードは、sizeTask 変数を待機しています。  *これ*は、メソッドが中断された場所であり、非同期タスクが独自のスレッドで終了するまで、呼び出し元のコードに制御が返されます。
 - タスクが作成されているにもかかわらず、メソッドの最初の行にタスクが作成されても、実行は一時停止し*ません*。 Await キーワードは、実行が一時停止されている場所を示します。
 - 非同期タスクが完了すると、intResult が設定され、await 行から元のスレッドで実行が続行されます。
-
 
 ### <a name="calling-an-async-method-2"></a>非同期メソッド2の呼び出し
 
@@ -185,14 +183,11 @@ async void HandleTouchUpInside (object sender, EventArgs e)
 - タスクを`await`参照するため`DownloadHomepage`に中間`Task<int>`変数を使用した前の`intResult`例とは異なり、メソッドのコードは、変数 () への代入に直接割り当てられます。  *これ*は、非同期メソッドが別のスレッドで完了するまで、制御が呼び出し元に返される場所です。
 - 非同期メソッドが完了して戻ると、で実行が`await`再開されます。これは、整数の結果が返され、UI ウィジェットで表示されることを意味します。
 
-
 ## <a name="summary"></a>まとめ
 
 Async と await を使用すると、メインスレッドをブロックせずに、バックグラウンドスレッドで長時間実行される操作を生成するために必要なコードを大幅に簡略化できます。 また、タスクの完了時に結果に簡単にアクセスすることもできます。
 
 このドキュメントでは、Xamarin と Xamarin Android の新しい言語キーワードと例の概要について説明しました。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 08738a751fd630c6a413b1c7393f8007f5c97060
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 4d406b492e2f55604daf8a1c6b4be32f23b63f54
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643547"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761233"
 ---
 # <a name="fingerprint-authentication-guidance"></a>指紋認証ガイダンス
 
@@ -27,15 +27,13 @@ ms.locfileid: "68643547"
     
 4. **ユーザーへの通知**&ndash;アプリケーションでは、指紋スキャナーがアクティブであり、タッチまたはスワイプを待機していることをユーザーに通知する必要があります。 
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>Summary
 
 指紋認証は、ユーザーがアプリ内購入などの重要な機能を簡単に操作できるようにするために、Xamarin Android アプリケーションでユーザーを迅速に検証するための優れた方法です。 このガイドでは、Android 6.0 指紋 API を Xamarin Android アプリケーションに組み込むために必要な概念とコードについて説明しました。
 
 まず、指紋 API 自体、 `FingerprintManager` (と`FingerprintManagerCompat`) について説明しました。 ここでは、 `FingerprintManager.AuthenticationCallbacks`抽象クラスをアプリケーションによって拡張する必要があること、および指紋ハードウェアとアプリケーション自体の仲介役として使用する方法について説明します。 次に、Java `Cipher`オブジェクトを使用して、フィンガープリントスキャナーの結果の整合性を確認する方法について説明します。 最後に、デバイスに指紋を登録し、 **adb**を使用してエミュレーターで指紋のスワイプをシミュレートする方法を説明することによって、テストについて少し触れます。 
 
 まだ行っていない場合は、このガイドに付属する[サンプルアプリケーション](https://github.com/xamarin/monodroid-samples/tree/master/FingerprintGuide)を参照してください。 [フィンガープリントダイアログのサンプル](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-m-fingerprintdialog)は Java から Xamarin android に移植されており、android アプリケーションに指紋認証を追加する方法についてもう1つの例を示しています。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

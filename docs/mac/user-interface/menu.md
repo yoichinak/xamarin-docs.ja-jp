@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 27eb5679bbc4825ab2bf0e1990b00d97ab207619
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7a19b2e70ff18ae43cb65804c6c125890fa1851b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292436"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770985"
 ---
 # <a name="menus-in-xamarinmac"></a>Xamarin. Mac のメニュー
 
@@ -1071,7 +1071,6 @@ public override void DidFinishLaunching (NSNotification notification)
 ## <a name="summary"></a>まとめ
 
 この記事では、Xamarin. Mac アプリケーションでメニューとメニュー項目を操作する方法について詳しく説明しました。 まず、アプリケーションのメニューバーを調べてから、コンテキストメニューを作成しました。次に、ステータスバーのメニューとカスタムドックメニューを調べました。 最後に、ポップアップメニューとプルダウンリストについて説明します。
-
 
 ## <a name="related-links"></a>関連リンク
 

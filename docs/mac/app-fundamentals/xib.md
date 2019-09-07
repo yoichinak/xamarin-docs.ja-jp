@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: f0889ecc428c595509fb23710bf3110c1bacad4e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: be737dfb92cf2ce90dc64dd527f908d52cf2c580
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290290"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770350"
 ---
 # <a name="xib-files-in-xamarinmac"></a>xib ファイル (Xamarin. Mac)
 
@@ -33,11 +33,9 @@ Xib ファイルは、Xcode の Interface Builder でグラフィカルに作成
 
 確認することも、 [C# を公開するクラス/Objective-C メソッド](~/mac/internals/how-it-works.md)のセクション、 [Xamarin.Mac 内部](~/mac/internals/how-it-works.md)が説明されても、ドキュメント、`Register`と`Export`属性ネットワーク上での C# クラスを Objective-C オブジェクトと UI への要素に使用されます。
 
-
 ## <a name="introduction-to-xcode-and-interface-builder"></a>Xcode と Interface Builder の概要
 
 Xcode の一部として、Apple は Interface Builder というツールを作成しました。これにより、デザイナーでユーザーインターフェイスを視覚的に作成できます。 Xamarin.MacはInterface Builderとうまく統合されており、Objective-Cユーザーと同じツールでUIを作成することができます。
-
 
 ### <a name="components-of-xcode"></a>Xcode のコンポーネント
 
@@ -47,23 +45,19 @@ Visual Studio for Mac から Xcode で xib ファイルを開くと、左側に*
 
 これらの Xcode の各セクションの内容と、それらを使用して Xamarin. Mac アプリケーションのインターフェイスを作成する方法を見てみましょう。
 
-
 #### <a name="project-navigation"></a>プロジェクトのナビゲーション
 
 Xcode で編集するために xib ファイルを開くと、Visual Studio for Mac は、自身と Xcode の間で変更を通知するために、バックグラウンドで Xcode プロジェクトファイルを作成します。 その後、Xcode から Visual Studio for Mac に戻ると、このプロジェクトに加えられたすべての変更が Visual Studio for Mac によって Xamarin. Mac プロジェクトと同期されます。
 
 **[プロジェクトのナビゲーション]** セクションでは、この_shim_ Xcode プロジェクトを構成するすべてのファイル間を移動できます。 通常、必要なのは、 **xib**や**mainwindow.xaml**など、この一覧の xib ファイルのみです。
 
-
 #### <a name="interface-hierarchy"></a>インターフェイス階層
 
 **[インターフェイス階層]** セクションでは、**プレースホルダー**やメイン**ウィンドウ**など、ユーザーインターフェイスのいくつかの主要なプロパティに簡単にアクセスできます。 また、このセクションを使用して、ユーザーインターフェイスを構成する個々の要素 (ビュー) にアクセスしたり、階層内でドラッグして入れ子にする方法を調整したりすることもできます。
 
-
 #### <a name="interface-editor"></a>インターフェイスエディター
 
 **インターフェイスエディター**のセクションには、ユーザーインターフェイスをグラフィカルにレイアウトするためのサーフェイスが用意されています。 **[プロパティ & ユーティリティ]** セクションの **[ライブラリ]** セクションから要素をドラッグして、デザインを作成します。 ユーザーインターフェイス要素 (ビュー) をデザインサーフェイスに追加すると、インターフェイス**エディター**に表示される順序で**インターフェイス階層**セクションに追加されます。
-
 
 #### <a name="properties--utilities"></a>ユーティリティ & プロパティ
 
@@ -93,7 +87,6 @@ Xcode で編集するために xib ファイルを開くと、Visual Studio for 
 ![ライブラリインスペクターの例](xib-images/xcode06.png "ライブラリインスペクターの例")
 
 Xcode IDE と Interface Builder について理解したところで、それを使用してユーザーインターフェイスを作成する方法を見てみましょう。
-
 
 ## <a name="creating-and-maintaining-windows-in-xcode"></a>Xcode でのウィンドウの作成と保守
 
@@ -176,7 +169,6 @@ namespace MacXib
 
 [![Mainwindow.xaml を編集しています。 xib](xib-images/edit02.png "Mainwindow.xaml を編集しています。 xib")](xib-images/edit02-large.png#lightbox)
 
-
 ### <a name="standard-window-workflow"></a>標準ウィンドウワークフロー
 
 Xamarin. Mac アプリケーションで作成および操作するウィンドウについては、基本的にプロセスは同じです。
@@ -188,7 +180,6 @@ Xamarin. Mac アプリケーションで作成および操作するウィンド�
 5. **サイズインスペクター**を使用して、UI 要素のサイズ変更を処理します。
 6. ウィンドウの UI 要素を、コンセントC#とアクションを使用してコードに公開します。
 7. 変更を保存し、Visual Studio for Mac に戻って Xcode と同期します。
-
 
 ### <a name="designing-a-window-layout"></a>ウィンドウレイアウトのデザイン
 
@@ -240,11 +231,9 @@ Xamarin. Mac アプリケーションで作成および操作するウィンド�
 
 Xamarin. Mac アプリケーションで Windows を操作する方法の詳細については、 [windows](~/mac/user-interface/window.md)のドキュメントを参照してください。
 
-
 ## <a name="exposing-ui-elements-to-c-code"></a>公開 (UI 要素C#をコードに)
 
 Interface Builder でユーザーインターフェイスのルックアンドフィールをレイアウトしたら、UI の要素を公開して、コードからC#アクセスできるようにする必要があります。 これを行うには、アクションとアウトレットを使用します。
-
 
 ### <a name="setting-a-custom-main-window-controller"></a>カスタムメインウィンドウコントローラーの設定
 
@@ -266,7 +255,6 @@ UI 要素をコードにC#公開するためのアウトレットとアクショ
 
     [![Xcode の対応する .h ファイル](xib-images/windowcontroller03.png "Xcode の対応する .h ファイル")](xib-images/windowcontroller03-large.png#lightbox)
 
-
 ### <a name="outlets-and-actions"></a>アウトレットとアクション
 
 では、アウトレットとアクションとは何ですか。 従来の .NET ユーザー インターフェイス プログラミングでは、ユーザー インターフェイスのコントロールは追加時にプロパティとして自動的に公開されます。 Mac では事情が異なり、ビューにコントロールを追加しただけでは、コントロールはコードにアクセスできません。 開発者は、UI 要素を明示的にコードに公開する必要があります。 これを行うために、Apple は2つのオプションを提供しています。
@@ -281,7 +269,6 @@ Xamarin.Mac 開発者コンセントまたはアクションを作成する (C#)
 [![Xcode の .h ファイルの例](xib-images/xcode16.png "Xcode の .h ファイルの例")](xib-images/xcode16-large.png#lightbox)
 
 この**MainWindow.designer.cs**ファイルは、新しい`NSWindow`が作成されたときに Xamarin. Mac プロジェクトに自動的に追加されるを反映しています。 このファイルは、Interface Builder によって行われた変更を同期するために使用されます。また、UI 要素がコードにC#公開されるように、アウトレットとアクションを作成します。
-
 
 #### <a name="adding-an-outlet"></a>アウトレットの追加
 
@@ -312,7 +299,6 @@ Xamarin.Mac 開発者コンセントまたはアクションを作成する (C#)
     ![完了]したアウトレット(xib-images/outlet06.png "完了")したアウトレット
 10. 変更内容をファイルに保存します。
 
-
 #### <a name="adding-an-action"></a>アクションの追加
 
 次に、UI 要素とのユーザー操作をコードに公開するアクションを作成する方法C#を見てみましょう。
@@ -335,7 +321,6 @@ Xamarin.Mac 開発者コンセントまたはアクションを作成する (C#)
 6. 変更内容をファイルに保存します。
 
 ユーザーインターフェイスをワイヤードに接続し、コードにC#公開したら Visual Studio for Mac に戻り、Xcode と Interface Builder の変更を同期させます。
-
 
 ### <a name="writing-the-code"></a>コードの記述
 
@@ -400,7 +385,6 @@ void OpenDialog (NSObject sender)
 
 メニューの操作の詳細については、[メニュー](~/mac/user-interface/menu.md)のドキュメントを参照してください。
 
-
 ## <a name="synchronizing-changes-with-xcode"></a>Xcode との変更の同期
 
 Xcode から Visual Studio for Mac に戻ると、Xcode で行ったすべての変更が自動的に Xamarin. Mac プロジェクトと同期されます。
@@ -432,7 +416,6 @@ Xcode の**mainwindow.xaml**ファイルの定義で行アップします。
 
 > [!IMPORTANT]
 > ほとんどの場合、Visual Studio for Mac は Xcode で行われた変更を自動的に確認し、それらを Xamarin. Mac プロジェクトに同期します。 同期が自動的に行われないときは Xcode に戻り、再び Visual Studio for Mac に戻ります。 こうすると通常、同期サイクルが開始します。
-
 
 ## <a name="adding-a-new-window-to-a-project"></a>プロジェクトへの新しいウィンドウの追加
 
@@ -471,7 +454,6 @@ void ShowPreferences (NSObject sender)
 ![サンプルアプリの実行](xib-images/new04.png "サンプルアプリの実行")
 
 Xamarin. Mac アプリケーションで Windows を操作する方法の詳細については、 [windows](~/mac/user-interface/window.md)のドキュメントを参照してください。
-
 
 ## <a name="adding-a-new-view-to-a-project"></a>新しいビューをプロジェクトに追加する
 
@@ -581,11 +563,9 @@ DisplaySubview(new SubviewTableController(), SubviewType.TableView);
 
 Xamarin. Mac アプリケーションで Windows を操作する方法の詳細については、 [windows](~/mac/user-interface/window.md)と[ダイアログ](~/mac/user-interface/dialog.md)のドキュメントを参照してください。
 
-
 ## <a name="summary"></a>まとめ
 
 この記事では、Xamarin. Mac アプリケーションでの xib ファイルの使用について詳しく説明しました。 ここでは、アプリケーションのユーザーインターフェイスを作成するためのさまざまな型と xib ファイルの使用方法、Xcode の Interface Builder で xib ファイルを作成および管理する方法、およびコードでC# xib ファイルを操作する方法について説明しました。
-
 
 ## <a name="related-links"></a>関連リンク
 

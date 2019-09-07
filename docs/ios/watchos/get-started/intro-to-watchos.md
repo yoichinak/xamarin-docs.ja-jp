@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 09/13/2016
-ms.openlocfilehash: 59d02db9fa2787e93ad88e4b6f37e0fef50572a5
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: df1177d55510571da3369d298bd05aa9bd0734a9
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70293112"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767926"
 ---
 # <a name="introduction-to-watchos"></a>WatchOS の概要
 
@@ -102,7 +102,6 @@ Apple Watch には、次の2つの顔サイズがあります。38mm と 42 mm�
 
 詳細をご覧ください[操作画面サイズ](~/ios/watchos/app-fundamentals/screen-sizes.md)します。
 
-
 ## <a name="limitations-of-watchos"></a>WatchOS の制限事項
 
 これには、watchOS アプリを開発するときに認識する watchOS のいくつかの制限があります。
@@ -119,7 +118,6 @@ Apple Watch には、次の2つの顔サイズがあります。38mm と 42 mm�
 
 - 接続されている電話で iTunes を制御するウォッチができるようにする Api はプライベートです。
 
-
 ## <a name="further-reading"></a>関連項目
 
 Apple のドキュメントをご覧ください。
@@ -129,7 +127,6 @@ Apple のドキュメントをご覧ください。
 - [キットのプログラミング ガイドをご覧ください。](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/DesigningaWatchKitApp.html)
 
 - [Apple Watch のヒューマン インターフェイス ガイドライン](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/WatchHumanInterfaceGuidelines/index.html#//apple_ref/doc/uid/TP40014992-CH3-SW1)
-
 
 ## <a name="related-links"></a>関連リンク
 

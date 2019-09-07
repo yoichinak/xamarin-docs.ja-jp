@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: b55c9d8a65dbb4e44605295043d1b302295030ce
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: f79a07a04eddeea1441f7938fdef210a37fb920a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70228064"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772883"
 ---
 # <a name="part-2-essential-xaml-syntax"></a>第 2 部です。 重要な XAML 構文
 
@@ -85,7 +85,6 @@ _XAML は、ほとんどの場合、インスタンス化して、オブジェ�
 - `Label` *オブジェクト要素*します。 これは Xamarin.Forms オブジェクトが XML 要素として表されます。
 - `Text`、 `VerticalOptions`、`FontAttributes`と`FontSize`は*プロパティ属性*します。 これらは Xamarin.Forms プロパティを XML 属性として表されます。
 - その最終的なスニペットで`TextColor`になりますが、*プロパティ要素*します。 Xamarin.Forms プロパティですが、XML 要素ではようになりました。
-
 
 最初の要素があるプロパティの定義を XML の構文の違反となると思われるはありません。 XML では、期間の特別な意味がありません。 XML デコーダーでは、`Label.TextColor`通常の子要素だけです。
 

@@ -7,12 +7,12 @@ ms.assetid: 8FE0F6DC-16BC-435F-9626-DD1790C0145A
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/25/2017
-ms.openlocfilehash: 9c1ee2e036fc903c7fe8422a32fba44cc93d43f9
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 1cf061f2ff27720ad78567bc26f00d99c5456f04
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70228273"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759417"
 ---
 # <a name="three-types-of-bzier-curves"></a>3 つの種類のベジエ曲線
 
@@ -552,7 +552,6 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 角度を 180 度、および数学失敗に設定します。
 
 残念ながら、ここでを`ConicTo`理論上は (パラメーターの式に基づく)、円を別の呼び出しをで実行できるため、負の重みをサポートしません`ConicTo`で同じポイントが、重みの負の値。 これは、2 つだけで完全な円を作成するようにすると`ConicTo`間 (が含まれていない) すべての角度に基づいて曲線度、180 度は 0。
-
 
 ## <a name="related-links"></a>関連リンク
 

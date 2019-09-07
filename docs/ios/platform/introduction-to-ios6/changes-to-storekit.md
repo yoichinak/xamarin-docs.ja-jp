@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 4197dfb38ac6118d20da2b87d0c686558d77b0f6
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 6dc0838bf63492dd06d5452cedbaf1d7fb8313c9
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281573"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752310"
 ---
 # <a name="changes-to-storekit-in-ios-6"></a>iOS 6 の StoreKit の変更点
 
@@ -246,7 +246,6 @@ Apple にアップロードするコンテンツファイルは、次の制限�
 
 - テキストファイル
 - チャプターを表すイメージ。
-
 
 まず、メニューから **[ファイル > 新しいプロジェクト]** を選択し、 **[アプリ内購入コンテンツ]** を選択します。
 
@@ -484,7 +483,6 @@ public void SaveDownload (SKDownload download)
 ```
 
 が`FinishTransaction`呼び出されると、ダウンロードされたファイルは`Cache`ディレクトリに存在する保証がなくなります。 を呼び出す`FinishTransaction`前に、すべてのファイルをコピーする必要があります。
-
 
 ## <a name="other-considerations"></a>その他の注意事項
 

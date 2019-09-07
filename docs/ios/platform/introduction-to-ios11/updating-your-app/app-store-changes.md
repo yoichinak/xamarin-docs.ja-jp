@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 09/13/2016
-ms.openlocfilehash: fa44ba260a62a6e0bd036c08c62371734b38d82d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 0ac9b486defb74cac7ccd946d2b35b283e6aeca5
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286583"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752321"
 ---
 # <a name="app-store-changes-in-ios-11"></a>IOS 11 でのアプリストアの変更点
 
@@ -33,7 +33,6 @@ IOS アプリストアには完全な再設計がありました。これによ�
 ストアアイコン (またはマーケティングアイコン) は、iTunes Connect では管理されなくなりました。代わりに、アプリのアイコンと同様に、アプリのバイナリに[アセットカタログ](~/ios/app-fundamentals/images-icons/app-icons.md)として含める必要があります。 IOS 11 アプリを正常に送信するには、PNG 形式の 1024 x 1024 ストアアイコンがアセットカタログに含まれている必要があります。
 
 アプリ thinning を使用すると、この追加のアセットカタログによってアプリのサイズが増加しないようにすることができます。
-
 
 ## <a name="in-app-purchases-promoted-in-the-app-store"></a>アプリストアで昇格されたアプリ内購入
 
@@ -96,7 +95,6 @@ ITunes Connect では、段階的なリリースが有効になっています�
 ![自動更新の段階的リリースを示すオプション](app-store-changes-images/image6.png)
 
 更新プログラムは、App Store の [更新プログラム] タブですぐにダウンロードできます。 段階的リリースは、自動ダウンロードが選択されているユーザーのみが使用できます。
-
 
 ## <a name="related-links"></a>関連リンク
 

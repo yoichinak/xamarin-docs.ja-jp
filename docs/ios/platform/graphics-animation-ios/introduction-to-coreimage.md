@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: a537926ab28bc355af5c5c4993ccff4a736b15aa
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: ffaa6553830a64589818c991e8f729ff7232e367
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288573"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752841"
 ---
 # <a name="core-image-in-xamarinios"></a>Xamarin のコアイメージ
 
@@ -25,7 +25,6 @@ _コアイメージは、iOS 5 で導入された新しいフレームワーク�
 - 顔検出。
 - 画像へのフィルターの適用
 - 使用可能なフィルターを一覧表示します。
-
 
 これらの例では、Xamarin の iOS アプリケーションにコアイメージ機能を組み込む方法について説明します。
 
@@ -55,7 +54,6 @@ CIFeature[] features = detector.FeaturesInImage(ciImage);
 - 笑顔の位置–この顔の口の座標。
 - LeftEyePosition –この顔の左側の視点の座標です。
 - RightEyePosition –この顔の右目の座標です。
-
 
 これらのすべてのプロパティの座標の原点は、左上にあります。これは、左上を原点として使用する UIKit とは異なります。 座標を使用する場合`CIFaceFeature`は、必ず ' 反転 ' してください。 CoreImage\CoreImageViewController.cs のこの非常に基本的なカスタムイメージビューでは、イメージに ' face indicator ' 三角形を描画する`FlipForBottomOrigin`方法を示しています (メソッドに注意してください)。
 

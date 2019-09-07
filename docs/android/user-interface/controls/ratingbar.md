@@ -7,19 +7,18 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/29/2018
-ms.openlocfilehash: de63a0f3f6564671a50594c66b55ed095329c95c
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: 51f88dba25ca2b4f7e33bb8b5c813c43a214c062
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69887635"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70764851"
 ---
 # <a name="xamarinandroid-ratingbar"></a>Xamarin Android RatingBar
 
 RatingBar は、1 ~ 5 個の星の評価を表示する UI ウィジェットです。 ユーザーは、このセクションの星にタップで評価を選択できます。ウィジェットを作成し、ユーザーが[`RatingBar`](xref:Android.Widget.RatingBar)ウィジェットで評価を提供できるようにします。
 
 ![RatingBar の例](ratingbar-images/01-ratingbar.png)
-
 
 ## <a name="creating-a-ratingbar"></a>RatingBar の作成
 
@@ -50,4 +49,3 @@ RatingBar は、1 ~ 5 個の星の評価を表示する UI ウィジェットで
     これにより[`RatingBar`](xref:Android.Widget.RatingBar) 、を使用[`FindViewById`](xref:Android.App.Activity.FindViewById*)してレイアウトからウィジェットをキャプチャし、次にイベントメソッドを設定して、ユーザーが評価を設定したときに実行するアクションを定義します。 この場合、単純な[`Toast`](xref:Android.Widget.Toast)メッセージに新しい評価が表示されます。
 
 3. アプリケーションを実行します。
-

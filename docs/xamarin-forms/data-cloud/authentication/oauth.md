@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/19/2017
-ms.openlocfilehash: 12f34e7bc77fd3978ccfdfb57cc95747123c5603
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 3bc001c048129851a3604752fdfbd45d72d4c3d3
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657245"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760481"
 ---
 # <a name="authenticate-users-with-an-identity-provider"></a>Id プロバイダーを使用したユーザーの認証
 
@@ -263,7 +263,6 @@ var account = AccountStore.Create ().FindAccountsForService (Constants.AppName).
 ## <a name="summary"></a>まとめ
 
 この記事では、Xamarin.Auth を使用して、Xamarin.Forms アプリケーションの認証プロセスを管理する方法について説明します。 Xamarin.Auth を提供、`OAuth2Authenticator`と`OAuth2Request`Google、Microsoft、Facebook、Twitter などの id プロバイダーを使用する Xamarin.Forms アプリケーションで使用されるクラス。
-
 
 ## <a name="related-links"></a>関連リンク
 

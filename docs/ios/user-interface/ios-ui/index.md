@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/14/2017
-ms.openlocfilehash: 106cadc6fef43c06597cf1e3b846bd48cecb6fa5
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 954e3b8f612fd710dd178cfc296889c9da372183
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287047"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768306"
 ---
 # <a name="user-interfaces-in-ios"></a>iOS のユーザー インターフェイス
 
@@ -35,7 +35,3 @@ Apple は、関連する機能の一部を "フレームワーク" にグルー�
 ## <a name="working-with-the-ui-threadiosuser-interfaceios-uiui-threadmd"></a>[UI スレッドの操作](~/ios/user-interface/ios-ui/ui-thread.md)
 
 コードでは、メイン (または UI) スレッドからのユーザーインターフェイスコントロールに対してのみ変更を行う必要があります。 別のスレッド (コールバックやバックグラウンドスレッドなど) で発生した UI の更新が画面に表示されない場合や、クラッシュが発生する場合もあります。
-
-
-
-

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: ec4b99fd1c8ec28f6b4bbb30695613da6c40d60c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 8bb517eaa549567ae92695fbad300d055f42771f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288953"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769046"
 ---
 # <a name="working-with-tvos-page-controls-in-xamarin"></a>Xamarin での tvOS Page コントロールの使用
 
@@ -35,7 +35,6 @@ TvOS アプリでページコントロールを操作する最も簡単な方法
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-
 1. **Solution Pad**で、 `Main.storyboard`ファイルをダブルクリックして開き、編集します。
 1. **ツールボックス**から**ページコントロール**をドラッグし、ビューにドロップします。
 
@@ -49,9 +48,7 @@ TvOS アプリでページコントロールを操作する最も簡単な方法
     [![](page-controls-images/page04.png "コントロールに名前を指定する")](page-controls-images/page04.png#lightbox)
 1. 変更内容を保存します。
 
-
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
-
 
 1. **ソリューションエクスプローラー**で、 `Main.storyboard`ファイルをダブルクリックして開き、編集します。
 1. **ツールボックス**から**ページコントロール**をドラッグし、ビューにドロップします。
@@ -65,7 +62,6 @@ TvOS アプリでページコントロールを操作する最も簡単な方法
 
     [![](page-controls-images/page04-vs.png "コントロールに名前を指定する")](page-controls-images/page04-vs.png#lightbox)
 1. 変更内容を保存します。
-
 
 -----
 
@@ -167,8 +163,6 @@ PageView.CurrentPage = PageNumber;
 ## <a name="summary"></a>Summary
 
 この記事では、tvOS アプリ内でのページコントロールの設計と操作について説明しました。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

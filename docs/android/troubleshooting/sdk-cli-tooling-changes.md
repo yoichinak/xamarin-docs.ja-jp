@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/21/2018
-ms.openlocfilehash: 5446f8e7bbdf2a5f625852bb61637be392bc6bc2
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 897daef3aba1166018a0ac796e9c7956c5f0c711
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69523216"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761885"
 ---
 # <a name="changes-to-the-android-sdk-tooling"></a>Android SDK ツールへの変更
 
@@ -65,7 +65,6 @@ Android SDK の [**ツール]/[bin** ] フォルダーに、 **sdkmanager**と�
 ### <a name="using-the-old-gui"></a>古い GUI の使用
 
 **Android SDK Tools**バージョン**25.2.5 以前**以下であれば、**ツール**フォルダー内で**android**プログラムを実行することで、元の GUI を引き続き使用できます。
-
 
 ## <a name="related-links"></a>関連リンク
 

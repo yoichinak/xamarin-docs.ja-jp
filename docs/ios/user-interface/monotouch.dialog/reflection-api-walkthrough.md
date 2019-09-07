@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: conceptdev
 ms.author: crdun
-ms.openlocfilehash: 27f025d80b3259da32581811ae6c900358a07e4e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7acd43597d033b4c6daac59016a9bdf41ade6f68
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70278515"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768140"
 ---
 # <a name="creating-a-xamarinios-application-using-the-reflection-api"></a>リフレクション API を使用して Xamarin iOS アプリケーションを作成する
 
@@ -29,7 +29,6 @@ MT.D は、Xamarin. iOS と共に配布されます。 これを使用するに�
 1. MT で修飾されたクラスを作成します。D 属性。
 1. `BindingContext`インスタンスを作成し、上記のクラスのインスタンスを渡します。 
 1. を作成し、を渡し`BindingContext’s` `RootElement`ます。 `DialogViewController` 
-
 
 リフレクション API の使用方法を示す例を見てみましょう。 この例では、次のように単純なデータ入力画面を作成します。
 
@@ -138,11 +137,9 @@ public class Expense
 
  <a name="Summary" />
 
-
 ## <a name="summary"></a>まとめ
 
 この記事では、リフレクション API のチュートリアルについて説明します。 クラスに属性を追加して、表示される内容を制御する方法を説明しました。 また、を`BindingContext`使用して、クラスから作成された要素階層にデータをバインドする方法や、MT の使用方法についても説明しました。を`UINavigationController`持つ D。
-
 
 ## <a name="related-links"></a>関連リンク
 

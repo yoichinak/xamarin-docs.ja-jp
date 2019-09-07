@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 350cd7e2d0dd79b876a6c1277d40a9c96d97c102
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 4dface536504b0a79d376ab0979443a5ed19e901
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282719"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769244"
 ---
 # <a name="publishing-to-the-apple-tv-app-store"></a>Apple TV App Store への発行
 
@@ -24,7 +24,6 @@ Apple TV App Store にアプリケーションを送信するプロセスには�
 2. *配布プロビジョニング プロファイル*の作成。
 3. このプロファイルを使用してアプリをビルドします。
 4. *ITunes Connect*を使用してアプリを送信します。
-
 
 この記事では、Apple TV App Store 配布用アプリのプロビジョニング、ビルド、および送信に必要なすべての手順について説明します。
 
@@ -39,7 +38,6 @@ Apple TV App Store にアプリケーションを送信するプロセスには�
 
 1. アプリの説明がアプリに含まれる機能と一致していることを確認します。
 2. アプリが通常の使用でクラッシュしないことをテストします。 これには、サポートするすべての Apple TV デバイスでの使用が含まれます。
-
 
 Apple では、Apple TV App Store の提出に関するヒントの一覧も保持しています。 これらは、[App Store での配布](https://developer.apple.com/appstore/resources/submission/tips.html)に関するページで確認できます。
 
@@ -121,7 +119,6 @@ tvOS では、*プロビジョニングプロファイル*を使用して、特�
 
 詳しい手順については、[配布プロファイルの作成](~/ios/deploy-test/app-distribution/app-store-distribution/index.md#creatingprofile)と [Xamarin.iOS プロジェクトでの配布プロファイルの選択](~/ios/deploy-test/app-distribution/app-store-distribution/index.md#selectprofile)に関するページを参照してください。 ここでも、これらのドキュメントはどちらも iOS に固有のものですが、tvOS アプリでも同じ手法が使用されます。
 
-
 <a name="Setting_the_Build_Configuration_for_your_Application" />
 
 ### <a name="setting-the-build-configuration-for-your-application"></a>アプリケーションのビルド構成の設定
@@ -137,7 +134,6 @@ tvOS では、*プロビジョニングプロファイル*を使用して、特�
 5. Apple では、tvOS アプリで bitcode を使用する必要もあります。 **リリース**構成の下で、[ `--bitcode=asmonly`追加の**mtouch 引数**] ボックスにを追加します。
 6. アプリの成果物のサイズをさらに小さくするために、[ **iOS 用 PNG イメージファイルを最適化**する] チェックボックスをオンにする必要があります。
 7. デバッグを有効にし*ない*でください。ビルドが不必要に大きくなります。
-
 
 <a name="Building_and_Submitting_the_Distributable" />
 
@@ -189,7 +185,6 @@ TvOS アプリが適切に構成されたら、レビューとリリースのた
 
 配布ビルドが完了したら、審査のために Apple に iOS アプリケーションを提出し、App Store でリリースできます。
 
-
 を保存`.ipa`すると、Visual Studio for Mac のアーカイブワークフローによってアプリケーションローダーが自動的に開きます。
 
 1. *[Deliver Your App]\(アプリの配信\)* を選択して、 *[選択]* ボタンをクリックします。
@@ -225,7 +220,6 @@ TvOS アプリを Apple TV App Store に送信する際に問題が発生した�
 ## <a name="summary"></a>Summary
 
 この記事では、Apple TV App Store 発行用アプリの構成、ビルド、および提出に関するステップバイステップガイドを紹介しています。 最初に、配布プロビジョニング プロファイルの作成とインストールに必要な手順を説明しました。 次に、Visual Studio for Mac を使用して配布ビルドを作成する方法を説明しました。 最後に、iTunes Connect と Xcode Archive ツールを使用して、Apple TV App Store にアプリケーションを送信する方法について説明しました。
-
 
 ## <a name="related-links"></a>関連リンク
 

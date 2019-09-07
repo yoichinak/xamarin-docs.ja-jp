@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: fca8ee02fc48979db1d29716374ba300a0e8bbbf
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: aa84c13c51e459f93ee9e122a410cb957c390261
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522364"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758384"
 ---
 # <a name="material-theme"></a>マテリアル テーマ
 
@@ -36,7 +36,6 @@ Android には、次の3つの素材テーマがあります。
 
 マテリアルのテーマは Android 5.0 以降でのみサポートされているため、以前のバージョンの Android で実行するためにアプリのテーマを作成することはできません (または、マテリアルテーマから派生したカスタムテーマを使用することはできません)。 ただし、Android 5.0 デバイスで素材のテーマを使用するようにアプリを構成し、以前のバージョンの Android で動作する場合は以前のテーマに適切にフォールバックできます (詳細については、この記事の「[互換性](#compatibility)」セクションを参照してください)。
 
-
 ## <a name="requirements"></a>要件
 
 Xamarin ベースのアプリで新しい Android 5.0 のマテリアルテーマ機能を使用するには、次のものが必要です。
@@ -49,11 +48,9 @@ Xamarin ベースのアプリで新しい Android 5.0 のマテリアルテー�
 
 Android 5.0 アプリケーションプロジェクトを構成する方法については、「 [android 5.0 プロジェクトの設定](~/android/platform/lollipop.md)」を参照してください。
 
-
 ## <a name="using-the-built-in-themes"></a>組み込みテーマの使用
 
 マテリアルテーマを使用する最も簡単な方法は、カスタマイズせずに組み込みのテーマを使用するようにアプリを構成することです。 テーマを明示的に構成しない場合、アプリは既定で ( `Theme.Material`ダークテーマ) に設定されます。 アプリにアクティビティが1つしかない場合は、アクティビティレベルでテーマを構成できます。 アプリに複数のアクティビティがある場合は、すべてのアクティビティで同じテーマを使用するようにアプリケーションレベルでテーマを構成するか、異なるテーマを別のアクティビティに割り当てることができます。 以下のセクションでは、アプリレベルとアクティビティレベルでテーマを構成する方法について説明します。
-
 
 ### <a name="theming-an-application"></a>アプリケーションのテーマを適用する
 
@@ -80,7 +77,6 @@ Android 5.0 アプリケーションプロジェクトを構成する方法に�
 ```
 
 アプリケーションテーマがに`@android:style/Theme.Material.Light`設定されている場合、 *MyApp*のすべてのアクティビティ`Theme.Material.Light`がを使用して表示されます。
-
 
 ### <a name="theming-an-activity"></a>アクティビティのテーマを行う
 
@@ -120,7 +116,6 @@ Android 5.0 アプリケーションプロジェクトを構成する方法に�
 [![属性とそれに関連付けられた画面領域の図](material-theme-images/screen-attributes-sml.png)](material-theme-images/screen-attributes.png#lightbox)
 
 既定では`statusBarColor` 、はの`colorPrimaryDark`値に設定されます。 を純色`statusBarColor`に設定することも、ステータスバーを透明に`@android:color/transparent`するように設定することもできます。 をに設定`navigationBarColor`する`@android:color/transparent`と、ナビゲーションバーを透明にすることもできます。
-
 
 ### <a name="creating-a-custom-app-theme"></a>カスタムアプリのテーマの作成
 
@@ -220,7 +215,6 @@ Android 5.0 では、個々のビューのスタイルを設定することも�
 
 この例では、カスタム`CardView`は背景色`my_blue`と18dp コーナー半径と共に表示されます。
 
-
 ## <a name="compatibility"></a>互換性
 
 Android 5.0 で素材のテーマを使用するようにアプリのスタイルを設定し、古い Android バージョンで自動的に下互換性のあるスタイルに戻すには、次の手順を使用します。
@@ -269,8 +263,6 @@ Android 5.0 デバイスでアプリを実行すると、 **Resources/values-v21
 ## <a name="summary"></a>まとめ
 
 この記事では、Android 5.0 (ロリポップ) に含まれる新しいマテリアルテーマのユーザーインターフェイススタイルについて紹介しました。 ここでは、アプリのスタイルを設定するために使用できる3つの組み込みの素材テーマの種類について説明し、アプリをブランド化するためのカスタムテーマを作成する方法を説明しました。また、個々のビューをテーマする方法の例を示しました。 最後に、この記事では、以前のバージョンの Android との下位互換性を維持しながら、アプリで素材のテーマを使用する方法について説明しました。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

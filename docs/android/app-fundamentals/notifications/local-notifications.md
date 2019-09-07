@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/16/2018
-ms.openlocfilehash: 3ff6bc9c603360232b22a36dadb42b6caf31cada
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 0d5cde38c9bb9ef4771ec17ef34ebf7e1b8cf74c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522398"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755512"
 ---
 # <a name="local-notifications-on-android"></a>Android でのローカル通知
 
@@ -83,7 +83,6 @@ Android では、通知の並べ替えと表示をインテリジェントに行
 
 > [!NOTE]
 > **可視性** と **カテゴリ** Android 5.0 およびそれ以前のバージョンの Android では使用できないで導入されました。 Android 8.0 以降では、[通知チャネル](#notif-chan)を使用して、ユーザーに通知を表示する方法を制御します。
-
 
 ### <a name="expanded-layouts"></a>展開されたレイアウト
 
@@ -329,10 +328,9 @@ notificationManager.Notify (notificationId, notification);
 
 Android の通知を更新する方法の詳細については、「[通知を変更する](https://developer.android.com/training/notify-user/managing.html#Updating)」を参照してください。
 
-
 ### <a name="starting-an-activity-from-a-notification"></a>通知からのアクティビティの開始
 
-Android では、通知は、ユーザーが通知をタップした &ndash;ときに起動されるアクティビティに関連付けられるのが一般的です。 このアクティビティは、別のアプリケーションまたは別のタスクに配置できます。 通知にアクションを追加するには、 [pendingintent](xref:Android.App.PendingIntent)オブジェクトを作成し、を`PendingIntent`通知に関連付けます。 `PendingIntent`は、受信者アプリケーションが送信側アプリケーションのアクセス許可を持つ定義済みのコードを実行できるようにする特殊なインテントです。 ユーザーが通知をタップすると、Android はによって`PendingIntent`指定されたアクティビティを開始します。
+Android では、通知は、ユーザーが通知をタップしたときに起動される*アクティビティに関連* &ndash;付けられるのが一般的です。 このアクティビティは、別のアプリケーションまたは別のタスクに配置できます。 通知にアクションを追加するには、 [pendingintent](xref:Android.App.PendingIntent)オブジェクトを作成し、を`PendingIntent`通知に関連付けます。 `PendingIntent`は、受信者アプリケーションが送信側アプリケーションのアクセス許可を持つ定義済みのコードを実行できるようにする特殊なインテントです。 ユーザーが通知をタップすると、Android はによって`PendingIntent`指定されたアクティビティを開始します。
 
 次のコードスニペットは、を`PendingIntent`使用して通知を作成し、元の`MainActivity`アプリのアクティビティを起動する方法を示しています。
 
@@ -709,7 +707,7 @@ builder.SetCategory (Notification.CategoryCall);
 
 ![スクリーンスイッチに応答しない](local-notifications-images/26-do-not-disturb.png)
 
-ユーザーが、(上のスクリーンショットに示されているように) 電話以外のすべての割り込みをブロックするように構成すると、Android `Notification.CategoryCall`では、デバイスがに存在しないときに、カテゴリ設定の通知が表示されるようになります。 *応答*モード。 通知は`Notification.CategoryAlarm` 、*応答不可*モードではブロックされないことに注意してください。
+ユーザーが、(上のスクリーンショットに示されているように) 電話以外のすべての割り込みを*ブロックするよう*に構成すると、Android `Notification.CategoryCall`では、デバイスがに存在しないときに、カテゴリ設定の通知が表示されるようになります。 *応答*モード。 通知は`Notification.CategoryAlarm` 、*応答不可*モードではブロックされないことに注意してください。
 
 [Localnotifications](https://docs.microsoft.com/samples/xamarin/monodroid-samples/localnotifications)サンプルでは、を使用`NotificationCompat.Builder`して、通知から2番目のアクティビティを起動する方法を示します。 このサンプルコードについては、 [「Xamarin. Android でのローカル通知の使用](~/android/app-fundamentals/notifications/local-notifications-walkthrough.md)」チュートリアルで説明しています。
 

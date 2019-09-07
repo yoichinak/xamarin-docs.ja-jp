@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/11/2016
-ms.openlocfilehash: fc316a9e6ab4261eaa956a987b47aeaf546344a2
-ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
+ms.openlocfilehash: 7045bd4d3343d0c11c6cd52fa02cdc005175b8a7
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67675269"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772933"
 ---
 # <a name="using-urhosharp-in-xamarinforms"></a>Xamarin.Forms で urhosharp の使用
 
@@ -43,7 +43,7 @@ UrhoSharp.Forms NuGet パッケージをプロジェクトに追加されます�
 
 プラットフォーム固有プロジェクト (iOS と Android) などの上記の手順を繰り返します。
 
-## <a name="walkthrough-adding-urhosharp-to-a-xamarinforms-app"></a>チュートリアル: UrhoSharp の Xamarin.Forms アプリへの追加
+## <a name="walkthrough-adding-urhosharp-to-a-xamarinforms-app"></a>チュートリアル: Xamarin. Forms アプリへの UrhoSharp の追加
 
 次の手順では、Xamarin.Forms UrhoSharp のサンプル コードについて説明します。
 
@@ -223,7 +223,6 @@ selectedBarSlider.ValueChanged += OnValuesSliderValueChanged;
 ## <a name="summary"></a>まとめ
 
 このページは、UrhoSharp を使用して、Xamarin.Forms の 3D のデータの視覚化を追加する方法を示します。 読み取り、 [UrhoSharp ドキュメント](~/graphics-games/urhosharp/index.md)前に示したメソッドを使用して Xamarin.Forms アプリに含めることができる Urho シーンを構築する方法の詳細について。
-
 
 ## <a name="related-links"></a>関連リンク
 

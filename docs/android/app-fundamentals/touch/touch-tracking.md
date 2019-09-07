@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 26dfc4f9327f12d6854d72349dc46e0b4427fa72
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 6dd3bf848d38f0211dcda100994f6f7ec8831fce
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643926"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70754691"
 ---
 # <a name="multi-touch-finger-tracking"></a>複数タッチの指トラッキング
 
@@ -196,7 +196,6 @@ public override bool OnTouchEvent(MotionEvent args)
 [![FingerPaint の例のスクリーンショットの例](touch-tracking-images/image01.png)](touch-tracking-images/image01.png#lightbox)
 
 これで、画面上の個々の指を追跡し、それらを区別する方法がわかりました。
-
 
 ## <a name="related-links"></a>関連リンク
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: f98cd3110719827d8cfeceef4dc9e73776c79f3f
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: a004ea539bab264f6a1418826be451ffb7d43d47
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292726"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753045"
 ---
 # <a name="homekit-in-xamarinios"></a>Xamarin. iOS のホームキット
 
@@ -267,7 +267,6 @@ ThisApp.HomeManager.AddHome(HomeName.Text,(home,error) =>{
 > [!IMPORTANT]
 > 上記のサンプルコードで使用されているメソッドは、iOSアラートを簡単に操作できるようにするHomeKitIntroアプリケーションのヘルパークラスです。`AlertView.PresentOKAlert`
 
-
 ## <a name="finding-new-accessories"></a>新しいアクセサリの検索
 
 ホームマネージャーでプライマリホームが定義または読み込まれると、Xamarin iOS アプリはを呼び出して、 `HMAccessoryBrowser`新しいホームオートメーションアクセサリを検索し、自宅に追加することができます。
@@ -426,7 +425,7 @@ ThisApp.HomeManager.PrimaryHome.AddAccessory (_controller.AccessoryBrowser.Disco
 - 製造元
 - モデル
 - MotionDetected
-- 名前
+- Name
 - ObstructionDetected
 - OccupancyDetected
 - Out・ Inuse
@@ -705,8 +704,6 @@ IOS 9 のホームキットの新機能の詳細については、Apple の[ホ�
 ## <a name="summary"></a>Summary
 
 この記事では、Apple のホームキット home automation フレームワークについて紹介しました。 この例では、ホームキットアクセサリシミュレーターを使用してテストデバイスをセットアップして構成する方法と、簡単な Xamarin. iOS アプリを作成して、home Kit を使用してホームオートメーションデバイスを検出、通信、および制御する方法を示しました。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

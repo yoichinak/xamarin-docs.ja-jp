@@ -8,12 +8,12 @@ ms.custom: video
 author: conceptdev
 ms.author: crdun
 ms.date: 07/06/2018
-ms.openlocfilehash: 798819176c741d8afc07f9cd097a61d753debbc9
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 0387cd91bd24080417a5e9763410d68b6e688555
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69523774"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70757491"
 ---
 # <a name="oreo-features"></a>Oreo の機能
 
@@ -25,7 +25,6 @@ _Android の最新バージョン用のアプリを開発するために、Xamar
 
 この記事は、Android 8.0 Oreo 向けの Xamarin Android アプリの開発を始めるのに役立つように構成されています。 ここでは、必要な更新プログラムをインストールし、SDK を構成し、テスト用のエミュレーター (またはデバイス) を作成する方法について説明します。 また、Android 8.0 Oreo の新機能の概要と、Xamarin Android アプリで Android Oreo 機能を使用する方法を示すサンプルアプリへのリンクも示します。
 
-
 ## <a name="requirements"></a>必要条件
 
 Xamarin ベースのアプリで Android Oreo 機能を使用するには、次のものが必要です。
@@ -35,8 +34,6 @@ Xamarin ベースのアプリで Android Oreo 機能を使用するには、次�
 - **Xamarin android** &ndash; 8.0 以降がインストールされ、Visual Studio で構成されている必要があります。
 
 - **Android SDK**&ndash; Android SDK Manager を使用して Android SDK 8.0 (API 26) 以降をインストールする必要があります。
-
-
 
 ## <a name="getting-started"></a>作業の開始
 
@@ -74,8 +71,6 @@ Android Oreo support を Visual Studio に追加するには、次の手順を�
 
 Xamarin support for Android Oreo の詳細については、 [xamarin 8.0 のリリースノート](https://docs.microsoft.com/xamarin/android/release-notes/8/8.0/)を参照してください。
 
-
-
 ### <a name="install-the-android-sdk"></a>Android SDK のインストール
 
 Xamarin Android 8.0 を使用してプロジェクトを作成するには、最初に Xamarin Android SDK Manager を使用して、 **android 8.0-Oreo**以降の SDK プラットフォームをインストールする必要があります。 Android SDK Tools 26.0 以降もインストールする必要があります。
@@ -106,14 +101,11 @@ Xamarin Android 8.0 を使用してプロジェクトを作成するには、最
 
 -----
 
-
-
 ### <a name="start-a-xamarinandroid-project"></a>Xamarin. Android プロジェクトを開始する
 
 新しい Xamarin. Android プロジェクトを作成します。 Xamarin を使用した Android 開発を初めて使用する場合は、「 [Hello, android](~/android/get-started/hello-android/index.md) 」を参照して、xamarin android プロジェクトの作成について学習してください。
 
 Android プロジェクトを作成するときは、バージョン設定を Android 8.0 以降を対象とするように構成する必要があります。 たとえば、Android 8.0 のプロジェクトを対象にするには、プロジェクトのターゲットの Android API レベルを**android 8.0 (API 26)** に構成する必要があります。 また、ターゲットフレームワークレベルを API 26 以降に設定することをお勧めします。 Android API レベルレベルの構成の詳細については、「 [ANDROID Api レベルについ](~/android/app-fundamentals/android-api-levels.md)て」を参照してください。
-
 
 ### <a name="configure-an-emulator-or-device"></a>エミュレーターまたはデバイスを構成する
 
@@ -133,7 +125,6 @@ Android SDK Tools 26.0 以降をインストールした後で既定の Google G
 
 Android Device Manager を使用して仮想デバイスを作成および管理するには、「 [Android Device Manager を使用した仮想デバイスの管理](~/android/get-started/installation/android-emulator/device-manager.md)」を参照してください。
 Android Device Manager を使用せずに仮想デバイスを作成するには、次のセクションの手順に従います。
-
 
 #### <a name="creating-virtual-devices-using-avdmanager"></a>Avdmanager を使用した仮想デバイスの作成
 
@@ -162,7 +153,7 @@ Android Device Manager を使用せずに仮想デバイスを作成するには
 
 4. **[カスタムハードウェアプロファイルを作成**しますか?] というメッセージが表示されたら、「**いいえ**」と入力して既定のハードウェアプロファイルをそのまま使用します。 **「はい」** と入力すると、 **avdmanager**によって、ハードウェアプロファイルをカスタマイズするための質問の一覧が表示されます。
 
-仮想デバイスを作成するために**avdmanager**を avした後、デバイスのプルダウンメニューには、次のように表示されます。
+仮想デバイスを作成するために**avdmanager を avし**た後、デバイスのプルダウンメニューには、次のように表示されます。
 
 [![新しい AVD がデバイスのプルダウンメニューに追加されました](oreo-images/win/04-android-o-avd-sml.png)](oreo-images/win/04-android-o-avd.png#lightbox)
 
@@ -192,13 +183,9 @@ Android Device Manager を使用せずに仮想デバイスを作成するには
 
 このような物理デバイスを使用している場合は、デバイスを無線 (OTA) 更新で自動で更新するか、システムイメージをダウンロードしてデバイスを直接フラッシュすることができます。 デバイスを Android Oreo に手動で更新する方法の詳細については、「デバイス[のデバイスの出荷時のイメージ](https://developers.google.com/android/images)」を参照してください。
 
-
-
 ## <a name="new-features"></a>新機能
 
 Android Oreo では、通知チャンネル、通知バッジ、XML でのカスタムフォント、ダウンロード可能なフォント、オートフィル、画像の画像など、さまざまな新機能が導入されています。 以下のセクションでは、これらの機能について説明し、アプリでの使用を開始するのに役立つリンクを示します。
-
-
 
 ### <a name="notification-channels"></a>通知チャネル
 
@@ -206,8 +193,6 @@ Android Oreo では、通知チャンネル、通知バッジ、XML でのカス
 送信する必要がある通知の種類ごとに通知チャネルを作成し、アプリのユーザーが選択した内容を反映する通知チャネルを作成することができます。 新しい通知チャネル機能を使用すると、ユーザーがさまざまな種類の通知をきめ細かく制御できるようになります。 たとえば、メッセージングアプリを実装する場合は、ユーザーが作成したメッセージ交換グループごとに個別の通知チャネルを作成できます。
 
 [通知](~/android/app-fundamentals/notifications/local-notifications.md#notif-chan)チャネルは、通知チャネルを作成し、それを使用してローカル通知を送信する方法を説明します。 実際のコード例については、 [Notificationchannels](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-notificationchannels)サンプルを参照してください。このサンプルアプリでは、2つのチャネルを管理し、追加の通知オプションを設定します。
-
-
 
 ### <a name="notification-badges"></a>通知バッジ
 
@@ -219,15 +204,13 @@ Android Oreo では、通知チャンネル、通知バッジ、XML でのカス
 
 通知バッジの詳細については、「Android 開発者[通知バッジ](https://developer.android.com/guide/topics/ui/notifiers/notifications.html#Badges)」を参照してください。
 
-
-
 ### <a name="custom-fonts-in-xml"></a>XML でのカスタムフォント
 
 Android Oreo では、 *XML 形式のフォント*が導入されています。これにより、カスタムフォントをリソースとして組み込むことができるようになります。 OpenType ( **.otf**) および TrueType ( **...** ) フォント形式がサポートされています。 フォントをリソースとして追加するには、次の手順を実行します。
 
 1. **リソース/フォント**フォルダーを作成します。
 
-2. フォントファイル (例、 **.otf**ファイル ) を**Resources/font**にコピーします。 
+2. フォントファイル (例、 **.otf**ファイル) を**Resources/font**にコピー**します。** 
 
 3. 必要に応じて、各フォントファイルの名前を Android ファイルの名前付け規則に従って変更します (つまり、ファイル名には小文字*の a-z*、 *0-9*、およびアンダースコアのみを使用します)。 たとえば、フォントファイル`Pacifico-Regular.ttf`の名前をなど`pacifico.ttf`に変更できます。
 
@@ -242,7 +225,6 @@ Android Oreo では、 *XML 形式のフォント*が導入されています。
    ```
 
 また、複数のフォントとスタイルおよび太さの詳細を記述するフォントファミリ XML ファイルを作成することもできます。 詳細については、「 [XML で](https://developer.android.com/guide/topics/ui/look-and-feel/fonts-in-xml.html)の Android Developer フォント」トピックを参照してください。
-
 
 ### <a name="downloadable-fonts"></a>ダウンロード可能なフォント
 
@@ -266,8 +248,6 @@ Android Oreo 以降では、アプリは APK にバンドルするのではな�
 
 フォントのダウンロードの詳細については、「Android 開発者向けダウンロード可能な[フォント](https://developer.android.com/guide/topics/ui/look-and-feel/downloadable-fonts.html)」を参照してください。
 
-
-
 ### <a name="autofill"></a>コンプリート
 
 Android Oreo の新しい_オートフィル_フレームワークにより、ユーザーは、ログイン、アカウントの作成、クレジットカードのトランザクションなど、繰り返し発生するタスクを簡単に処理できるようになります。 ユーザーは、(入力エラーにつながる可能性がある) 情報を再入力する時間が短縮されます。 アプリでオートフィルフレームワークを使用するには、システム設定でオートフィルサービスを有効にする必要があります (ユーザーはオートコンプリートを有効または無効にすることができます)。
@@ -275,8 +255,6 @@ Android Oreo の新しい_オートフィル_フレームワークにより、�
 [Autofillframework](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-autofillframework)サンプルは、オートフィルフレームワークの使用方法を示しています。 自動入力が必要なビューを含むクライアントアクティビティの実装と、クライアントアクティビティにオートフィルデータを提供できるサービスが含まれています。
 
 オートフィルの新機能と、アプリをオートコンプリート用に最適化する方法の詳細については、「Android 開発者による[オートコンプリートフレームワーク](https://developer.android.com/guide/topics/text/autofill.html)」を参照してください。
-
-
 
 ### <a name="picture-in-picture-pip"></a>画像の画像 (PIP)
 
@@ -296,18 +274,13 @@ PIP モードの場合のアクティビティの動作を指定するには、�
 
 Picture [inpicture](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-pictureinpicture)サンプルは、Oreo で導入されたハンドヘルドデバイス用の画像 (PiP) モードの基本的な使用方法を示しています。 このサンプルでは、表示モードまたは他のアクティビティを切り替えながら中断され続けるビデオを再生します。
 
-
-
 ### <a name="other-features"></a>その他の機能
 
 Android Oreo には、絵文字サポートライブラリ、Location API、バックグラウンドの制限、アプリのための大規模な色の色、新しいオーディオコーデック、WebView の機能強化、キーボードナビゲーションサポートの向上、新しい AAudio (pro オーディオ) API など、他の多くの新機能が含まれています。高パフォーマンスの低待機時間オーディオ。これらの機能の詳細については、Android Developer [Android Oreo の機能と api](https://developer.android.com/about/versions/oreo/android-8.0.html)に関するトピックを参照してください。
 
-
-
 ## <a name="behavior-changes"></a>動作の変更
 
 Android Oreo には、既存のアプリの機能に影響を与える可能性があるさまざまなシステムおよび API の動作の変更が含まれています。 これらの変更について、次に説明します。
-
 
 ### <a name="background-execution-limits"></a>バックグラウンド実行の制限
 
@@ -319,7 +292,6 @@ Android Oreo では、ユーザーエクスペリエンスを向上させるた�
 
 新しいバックグラウンド実行の制限の詳細については、「Android Developer の[バックグラウンド実行の制限](https://developer.android.com/about/versions/oreo/background.html)」を参照してください。
 
-
 ### <a name="breaking-changes"></a>互換性に影響する変更点
 
 Android Oreo 以降を対象とするアプリでは、次の変更をサポートするようにアプリを変更する必要があります (該当する場合)。
@@ -327,7 +299,6 @@ Android Oreo 以降を対象とするアプリでは、次の変更をサポー�
 - Android Oreo update-settings は、個々の通知の優先度を設定する機能を備えています。 代わりに、通知チャネルを作成するときに推奨される重要度レベルを設定します。 通知チャネルに割り当てる重要度レベルは、通知メッセージに投稿するすべての通知メッセージに適用されます。
 
 - Android Oreo を対象とする`PendingIntent.GetService()`アプリでは、バックグラウンドで開始されたサービスに新しい制限があるため、は機能しません。 Android Oreo を対象としている場合は、代わりに[Pendingintent](xref:Android.App.PendingIntent.GetBroadcast*)を使用する必要があります。  
-
 
 ## <a name="sample-code"></a>サンプル コード
 
@@ -347,18 +318,15 @@ Android Oreo 機能を活用する方法を示すために、いくつかの Xam
 
 - [Location Updates フォアグラウンドサービス](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-androidplaylocation-locupdfgservice)は、location API を使用して、バインドされて開始されたフォアグラウンドサービスを使用してデバイスの場所に関する更新を取得する方法を示します。
 
-
 ## <a name="video"></a>ビデオ
 
 > [!VIDEO https://youtube.com/embed/OuvEcaMO-Ho]
 
 **Android 8.0 Oreo development withC#**
 
-
 ## <a name="summary"></a>Summary
 
 この記事では、Android Oreo について紹介し、android Oreo で Xamarin の開発用の最新のツールとパッケージをインストールして構成する方法について説明しました。 Android Oreo で使用できる主な機能の概要と、いくつかの新機能のソースコード例へのリンクが用意されています。 Android Oreo 用のアプリの作成を開始する際に役立つ API ドキュメントおよび Android 開発者向けのトピックへのリンクが含まれています。 また、既存のアプリに影響する可能性がある、最も重要な Android Oreo 動作の変更も強調表示されています。
-
 
 ## <a name="related-links"></a>関連リンク
 

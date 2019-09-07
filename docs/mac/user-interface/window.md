@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: b6b370ebbcad04dfe829379685a3a9c5a6b5662b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: df623efcc1da617ac6b700b42d3ac058dea817ca
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291534"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772648"
 ---
 # <a name="windows-in-xamarinmac"></a>Xamarin. Mac のウィンドウ
 
@@ -747,7 +747,6 @@ Xamarin. Mac アプリケーションで作成して使用する他の種類の�
 - **スタイル**-パネルのスタイルを次のように調整できます。通常のパネル (標準のウィンドウのように見えます)、[ユーティリティ] パネル (タイトルバーが小さい)、[HUD] パネル (半透明、タイトルバーは背景の一部です)。
 - **非アクティブ化**-パネル内のがキーウィンドウになるかどうかを判断します。
 - **ドキュメントモーダル**-ドキュメントモーダルの場合、パネルはアプリケーションのウィンドウの上にのみ表示され、それ以外の場合はすべてを超えます。
-
 
 新しいパネルを追加するには、次の手順を実行します。
 

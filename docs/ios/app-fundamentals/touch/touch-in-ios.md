@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 492682b1f7647201f15678a5162281e0a7a916d6
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 577bc7af34c463aec65148bd97dc5dd49262d699
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280098"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767084"
 ---
 # <a name="touch-events-and-gestures-in-xamarinios"></a>Xamarin のタッチイベントとジェスチャ (iOS)
 
@@ -41,7 +41,6 @@ imgTouchMe.UserInteractionEnabled = true;
 - `TouchesBegan`–これは、画面に最初に触れたときに呼び出されます。
 - `TouchesMoved`–これは、ユーザーが画面の周りに指を置いたときにタッチの位置が変化したときに呼び出されます。
 - `TouchesEnded`また`TouchesCancelled`は`TouchesEnded` –ユーザーの指が画面から離れたときに呼び出されます。  `TouchesCancelled`iOS がタッチをキャンセルした場合に呼び出されます。たとえば、ユーザーがボタンから指を押したときに、押しをキャンセルした場合などです。
-
 
 Touch イベントは、UIViews のスタックを介して再帰的に移動し、タッチイベントがビューオブジェクトの境界内にあるかどうかを確認します。 これは、しばしば_ヒットテスト_と呼ばれます。 これらは、 `UIView`最初に最上位のまたは`UIViewController`で呼び出され、次にビュー `UIViewControllers`階層内のとの`UIView`下で呼び出されます。
 
@@ -126,7 +125,6 @@ Xamarin iOS は、次の`UIGestureRecognizer`組み込みのジェスチャレ�
 - *UIRotationGestureRecognizer* –2本の指を時計回りまたは反時計回りに回転させます。
 - *UILongPressGestureRecognizer* –プレスアンドホールド。長押しまたは長いクリックと呼ばれることもあります。
 
-
 ジェスチャ認識エンジンを使用する基本的なパターンは次のとおりです。
 
 1. **ジェスチャ認識エンジンをインスタンス化**します。 `UIGestureRecognizer`最初にサブクラスをインスタンス化します。 インスタンス化されたオブジェクトはビューによって関連付けられ、ビューが破棄されるときにガベージコレクションされます。 このビューをクラスレベル変数として作成する必要はありません。
@@ -152,7 +150,6 @@ _tapGesture.Recognizer.CancelsTouchesInView = false;
 1. *不連続*-これらのジェスチャは、初めて認識されたときにのみ起動します。
 1. *Continuous* –これらのジェスチャは、認識されている限り、引き続き起動します。
 
-
 ジェスチャレコグナイザーは、次のいずれかの状態にあります。
 
 - *可能*: すべてのジェスチャレコグナイザーの初期状態です。 これは、State プロパティの既定値です。
@@ -162,7 +159,6 @@ _tapGesture.Recognizer.CancelsTouchesInView = false;
 - *認識*済み–ジェスチャ認識エンジンが一連のタッチに一致し、ジェスチャが終了したことをサブスクライバーに通知するときに、状態が設定されます。
 - *終了*: 認識された状態のエイリアスです。
 - *Failed* –ジェスチャ認識エンジンがリッスンしているタッチと一致しなくなると、状態が "失敗" に変わります。
-
 
 Xamarin は、 `UIGestureRecognizerState`列挙体のこれらの値を表します。
 
@@ -178,7 +174,6 @@ IOS でジェスチャを無効にすることもできます。 ジェスチャ
 
 1. *ShouldReceiveTouch* –このデリゲートは、ジェスチャレコグナイザーがタッチイベントに渡される直前に呼び出され、タッチを調べて、ジェスチャ認識エンジンによって処理されるタッチを決定する機会を提供します。
 1. [*開始*] –これは、レコグナイザーが状態を可能から他の状態に変更しようとしたときに呼び出されます。 False を返すと、ジェスチャ認識エンジンの状態が "失敗" に変更されます。
-
 
 これらのメソッドは、次のコードスニペット`UIGestureRecognizerDelegate`に示すように、厳密に型指定された弱いデリゲートでオーバーライドすることも、イベントハンドラー構文を使用してバインドすることもできます。
 
@@ -199,6 +194,5 @@ IOS にはいくつかの既定のジェスチャレコグナイザーが用意�
 1. サブ`UIGestureRecognizer`クラスです。
 1. 適切な touch イベントメソッドをオーバーライドします。
 1. 基本クラスの State プロパティを使用して、認識状態をバブルアップします。
-
 
 実際の例については、 [「iOS でのタッチの使用」](ios-touch-walkthrough.md)チュートリアルで説明します。

@@ -7,12 +7,12 @@ ms.assetid: 8022FBF9-2208-43DB-94D8-0A4E9A5DA07F
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: 133d7ffdeafdced3f909c21cf08f2241666015fa
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 1daf4822dd7debe98aabd58d42cb6ed29f95b90d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70228259"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759353"
 ---
 # <a name="clipping-with-paths-and-regions"></a>パスおよび領域でのクリッピング
 
@@ -56,7 +56,6 @@ public class MonkeyThroughKeyholePage : ContentPage
 ```
 
 ただし、`keyholePath`オブジェクトについて、keyhole のアウトラインを説明します、座標は完全に任意と内容は、パスのデータが考案されたときに便利でしたが反映されます。 このため、`PaintSurface`ハンドラーは、このパスと呼び出しの境界を取得します。`Translate`と`Scale`画面とほぼ同じ高さには、画面の中央にパスを移動します。
-
 
 ```csharp
 public class MonkeyThroughKeyholePage : ContentPage
@@ -510,7 +509,6 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 4 つ-リーフ クローバー、ように実際には見えませんが、クリッピングなしで表示するためにハードされるイメージ。
 
 [![4つのリーフページのトリプルスクリーンショット](clipping-images//fourleafclover-small.png)](clipping-images/fourleafclover-large.png#lightbox)
-
 
 ## <a name="related-links"></a>関連リンク
 

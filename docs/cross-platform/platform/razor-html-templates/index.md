@@ -6,12 +6,12 @@ ms.assetid: D8B87C4F-178E-48D9-BE43-85066C46F05C
 author: conceptdev
 ms.author: crdun
 ms.date: 07/24/2018
-ms.openlocfilehash: ccad60f749732ae2d0bf8e9852859b13af3a629e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7f9f45976d0d7db42be18fede2f21825a385bea4
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284921"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765344"
 ---
 # <a name="building-html-views-using-razor-templates"></a>Razor テンプレートを使用した HTML ビューの作成
 
@@ -198,7 +198,6 @@ webView.EvaluateJavascript (js);
 - コード内のC#ナビゲーション要求をインターセプトする機能
 - コードからC# JavaScript を呼び出すことができる。
 
-
 次のセクションでは、ハイブリッドアプリで使用する HTML を簡単に作成できる Razor について説明します。
 
 ## <a name="what-is-razor"></a>Razor とは
@@ -235,7 +234,6 @@ Razor テンプレートファイルの拡張子は、 **cshtml**です。 こ�
 - IDE によって、テンプレートの部分クラスが自動的に生成されます (ファイル拡張子は**cshtml** )。 このコードを表示することはできますが、編集することはできません。
  ![RazorView 部分クラスは、cshtml テンプレートファイル名と一致するように RazorView という名前が付けられています。](images/image6_125x34.png) この名前は、コードでC#テンプレートを参照するために使用されます。
 - `@using`ステートメントを Razor テンプレートの先頭に追加して、追加の名前空間を含めることもできます。
-
 
 最終的な HTML 出力は、次の C# コードを生成できます。 モデルは、表示されるテンプレートの出力に組み込まれる文字列 "Hello World" として指定されていることに注意してください。
 
@@ -379,8 +377,6 @@ var page = template.GenerateString ();
 - **iOS > アプリ > WebView アプリケーション**
 - **ASP.NET MVC プロジェクト**
 
-
-
 **新しいソリューション**ウィンドウは、IPhone と Android プロジェクトの場合は次のようになります。右側のソリューションの説明では、Razor テンプレートエンジンのサポートが強調表示されています。
 
  ![IPhone と Android ソリューションの作成](images/image13_1139x959.png)
@@ -399,7 +395,6 @@ IPhone と Android プロジェクトの既定のテンプレートソリュー�
 - **RazorView**のような Razor テンプレートファイル。
 - **ExampleModel.cs**などの Razor テンプレートで参照されるモデルクラス。
 - Web ビューを作成してテンプレートをレンダリングするプラットフォーム固有のクラス。たとえば、 `MainActivity` Android `iPhoneHybridViewController`の場合は、iOS の場合はです。
-
 
 次のセクションでは、プロジェクトの動作について説明します。
 
@@ -494,7 +489,6 @@ HTML は、プロトタイプに適しています。また、リッチテキス
 - **RazorTodo** -Razor テンプレートを使用する完全な HTML 駆動型アプリ。
 - **RazorNativeTodo** -IOS および Android 用のネイティブのリストビューコントロールを使用しますが、編集画面は HTML および Razor で表示されます。
 
-
 これらの Xamarin アプリは、iOS と Android の両方で動作し、ポータブルクラスライブラリ (Pcl) を利用してデータベースやモデルクラスなどの共通コードを共有します。 Razor**テンプレート**は、複数のプラットフォーム間で簡単に共有できるように、PCL に含めることもできます。
 
 両方のサンプル アプリでは、Twitter で共有および Xamarin を使用したハイブリッド アプリケーションでもあるアクセス基になるすべての機能にテンプレート駆動の HTML Razor ビューからのデモ、ネイティブ プラットフォームからの音声合成 API を組み込みます。
@@ -507,7 +501,6 @@ HTML は、プロトタイプに適しています。また、リッチテキス
 
 - パフォーマンス-ネイティブスクロールコントロールでは仮想化を使用して、データのリストが非常に長い場合でも、高速でスムーズにスクロールできるようにします。
 - ネイティブエクスペリエンス-プラットフォーム固有の UI 要素は、iOS および Android での高速スクロールインデックスのサポートなど、簡単に有効にすることができます。
-
 
 Xamarin を使用してハイブリッドアプリを構築する主な利点は、(最初のサンプルのように) HTML 駆動型のユーザーインターフェイスを使用して開始し、必要に応じてプラットフォーム固有の機能を追加できることです (2 番目のサンプルで示すように)。 IOS と Android の両方のネイティブリスト画面と HTML Razor 編集画面を次に示します。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/09/2016
-ms.openlocfilehash: 364775ae8e8874d87022b5e45bd23ea29e82382d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: df91699e0880bfae780b69f4b30be6667e8d64d9
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292419"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70763110"
 ---
 # <a name="using-icloud-with-xamarinios"></a>Xamarin で iCloud を使用する
 
@@ -63,7 +63,6 @@ ICloud にアクセスするようにアプリケーションを正しく構成�
 - **ICloud をテストするにはデバイスを使用する必要があり**ます。これはシミュレーターでは機能しません。
 実際には、複数のデバイスが同じ Apple ID でサインインしていて、iCloud が動作していることを確認する必要があります。
 
-
 ## <a name="key-value-storage"></a>キー値のストレージ
 
 キー値ストレージは少量のデータを対象としています。ユーザーは、本や雑誌で最後に閲覧したページなど、デバイス間で永続化することができます。 キー値の記憶域は、バックアップデータには使用しないでください。
@@ -81,8 +80,6 @@ ICloud にアクセスするようにアプリケーションを正しく構成�
 **ICloudKeyValue**の例は、そのしくみを示しています。 このサンプルコードでは、各デバイスに対してという名前のキーを作成します。1つのデバイスにこのキーを設定し、値が他のデバイスに反映されるようにすることができます。 また、任意のデバイスで編集可能な "共有" という名前のキーも作成します。多数のデバイスで一度に編集すると、iCloud によって、"wins" (変更でタイムスタンプを使用) と反映される値が決まります。
 
 このスクリーンショットは、使用されているサンプルを示しています。 ICloud から変更通知を受信すると、画面の下部にあるスクロールテキストビューに印刷され、入力フィールドで更新されます。
-
-
 
  [![](introduction-to-icloud-images/icloud-kv-arrows.png "デバイス間でのメッセージフロー")](introduction-to-icloud-images/icloud-kv-arrows.png#lightbox)
 
@@ -406,8 +403,6 @@ doc.UpdateChangeCount (UIDocumentChangeKind.Done);
 
  [![](introduction-to-icloud-images/icloudstorage.png "ICloud ドキュメントの管理ワークフロー")](introduction-to-icloud-images/icloudstorage.png#lightbox)
 
-
-
 また、iCloud が有効になっているアプリケーションをデバイスから削除しようとすると、そのアプリケーションに関連する iCloud ドキュメントの状態を通知するために、異なる警告が表示されます。
 
  [![](introduction-to-icloud-images/icloud-delete1.png "ユーザーが iCloud 対応アプリケーションをデバイスから削除しようとしたときのサンプルダイアログ")](introduction-to-icloud-images/icloud-delete1.png#lightbox)
@@ -430,8 +425,6 @@ Apple は、ios アプリケーションで開発者が実行できる[Ios デ�
 キー値ストレージの例では、データを格納するために iCloud を使用する方法を示しています。 NSUserPreferences の格納方法に似ています。 UIDocument の例では、iCloud を使用して複数のデバイス間でより複雑なデータを格納および同期する方法を示しました。
 
 最後に、iCloud のバックアップの追加がアプリケーションの設計にどのように影響するかについて簡単に説明します。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

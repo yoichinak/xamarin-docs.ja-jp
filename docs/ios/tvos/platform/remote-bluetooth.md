@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 32deee1ea1e47438f4f671ac3ccaa09f4218a88b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 71a74d8f9046cd978a40b03da1921cd1fac9405f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290741"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769177"
 ---
 # <a name="siri-remote-and-bluetooth-controllers-for-tvos-in-xamarin"></a>Xamarin の tvOS 用 siri リモートおよび Bluetooth コントローラー
 
@@ -364,8 +364,6 @@ TvOS でゲームコントローラーの入力を直接処理する場合は、
 ## <a name="summary"></a>Summary
 
 この記事では、Apple TV、タッチスクリーンジェスチャ、Siri リモートボタンに付属する新しい Siri リモコンについて説明しました。 次に、ジェスチャとストーリーボード、ジェスチャ、コードおよび低レベルのイベントの操作について説明します。 最後に、ゲームコントローラーの操作について説明します。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

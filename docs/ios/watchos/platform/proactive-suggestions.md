@@ -7,20 +7,18 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 68ba09ce74f161c728f0a58276a0b0d98fec7d8c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 42284ded0bbb5dab36470b7d2f291df64c6df264
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281287"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767770"
 ---
 # <a name="watchos-proactive-suggestions-in-xamarin"></a>Xamarin でのプロアクティブな提案の watchOS
 
 _この記事では、watchOS 3 アプリでプロアクティブな提案を使用して、システムが有益な情報をユーザーに事前に自動的に提示できるようにすることで、エンゲージメントを促進する方法について説明します。_
 
-
 WatchOS 3 を初めて使用する場合は、ユーザーが適切なタイミングで有益な情報をユーザーに事前に自動的に提示することによって、ユーザーが Xamarin. iOS アプリを使用する方法についてのニュースを提供しています。
-
 
 ## <a name="about-proactive-suggestions"></a>プロアクティブな提案について
 
@@ -300,7 +298,6 @@ Apple では、アクティビティを操作するときに、次のベスト�
 
 アプリケーションが mapkit `MKDirectionsRequest`オブジェクトを使用して起動されると、要求された場所へのユーザーの指示が自動的に開始されるか、ユーザーが簡単に方向を開始できるようにするための UI が表示されます。 例えば:
 
-
 ```csharp
 using System;
 using Foundation;
@@ -362,7 +359,6 @@ geocoder.GeocodeAddress(address, (place, err)=> {
 ## <a name="summary"></a>Summary
 
 この記事では、プロアクティブな提案について説明し、開発者が Xamarin. iOS app for watchOS へのトラフィックを促進する方法について説明しました。 ここでは、プロアクティブな提案を実装し、使用ガイドラインを提示する手順について説明します。
-
 
 ## <a name="related-links"></a>関連リンク
 

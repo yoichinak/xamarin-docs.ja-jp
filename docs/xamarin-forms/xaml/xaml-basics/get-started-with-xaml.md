@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2018
-ms.openlocfilehash: 14f7692c88f5047f1250707940e3871371aecc8b
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: fde0a5145f82e75fd6d75280c1cd2230f35a4c29
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227958"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772801"
 ---
 # <a name="part-1-getting-started-with-xaml"></a>第 1 部です。 XAML の概要
 
@@ -448,8 +448,6 @@ public partial class XamlPlusCodePage : ContentPage {
 ## <a name="summary"></a>まとめ
 
 概要については、このクラスの定義に、XAML ファイルとコード ファイルが協力する方法と、XAML とコード ファイルを操作する方法を説明しました。 XAML も非常に柔軟な方法で使用できるようにする独自の構文機能を備えています。 これらの探索を開始できます[第 2 部です。重要な XAML 構文](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)します。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

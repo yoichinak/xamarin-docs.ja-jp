@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 005f858408ec4d10563e3d945cadb0f1af65a407
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: dd9d93572ac10622345b1dff4145b737baf8aaae
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292980"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769008"
 ---
 # <a name="tab-bars-and-tab-bar-controllers-in-xamarinios"></a>タブ バーと Xamarin.iOS でのタブ バー コント ローラー
 
@@ -28,7 +28,6 @@ ms.locfileid: "70292980"
 
 - 複数のコント ローラーを追加することができます。
 - 使用して、タブ付きのユーザー インターフェイスを提供する、`UITabBar`クラスは、コント ローラーとビューを切り替えるユーザーを許可します。 
-
 
 コント ローラーに追加、`UITabBarController`経由でその`ViewControllers`であるプロパティを`UIViewController`配列。 `UITabBarController`自体の処理の適切なコント ローラーの読み込みと選択されたタブに基づいてそのビューを表示します。
 
@@ -46,7 +45,6 @@ ms.locfileid: "70292980"
 
  <a name="Creating_the_Application" />
 
-
 ### <a name="creating-the-application"></a>アプリケーションの作成
 
 新しいアプリケーションを作成してみましょう。
@@ -56,8 +54,6 @@ ms.locfileid: "70292980"
 [![](creating-tabbed-applications-images/newsolution1.png "空のプロジェクト テンプレートを選択します。")](creating-tabbed-applications-images/newsolution1.png#lightbox)
 
 [![](creating-tabbed-applications-images/newsolution2.png "TabbedApplication プロジェクトを名前します。")](creating-tabbed-applications-images/newsolution2.png#lightbox)
-
-
 
 ### <a name="adding-the-uitabbarcontroller"></a>UITabBarController を追加します。
 
@@ -72,7 +68,6 @@ ms.locfileid: "70292980"
 1. 基本クラスを設定する`TabController`に`UITabBarController`します。 
 1. 作成`UIViewController`に追加するインスタンス、`TabController`します。 
 1. 追加、`UIViewController`インスタンスに割り当てられた配列を`ViewControllers`のプロパティ、`TabController`します。 
-
 
 次のコードを追加、`TabController`を次の手順を実現するクラス。
 
@@ -146,13 +141,11 @@ public partial class AppDelegate : UIApplicationDelegate
 
  <a name="Modifying_TabBarItems" />
 
-
 ### <a name="modifying-tabbaritems"></a>TabBarItems を変更します。
 
 実行中のアプリケーションのタブで、変更してみましょう取得したので、`TabBarItem`イメージと表示されるテキストを変更するだけでなく、タブのいずれかにバッジを追加します。
 
  <a name="Setting_a_System_Item" />
-
 
 #### <a name="setting-a-system-item"></a>システムの項目の設定
 
@@ -167,7 +160,6 @@ tab1.TabBarItem = new UITabBarItem (UITabBarSystemItem.Favorites, 0);
  ![](creating-tabbed-applications-images/04a-tabimage.png "星のアイコンでは、最初のタブ")
 
  <a name="Setting_the_Title_and_Image" />
-
 
 #### <a name="setting-the-title-and-image"></a>タイトルとイメージの設定
 
@@ -201,7 +193,6 @@ tab2.View.BackgroundColor = UIColor.Orange;
 
  <a name="Setting_the_Badge_Value" />
 
-
 #### <a name="setting-the-badge-value"></a>バッジ値の設定
 
 タブには、バッジも表示できます。 たとえば、次の 3 番目のタブにバッジを設定するコードの行を追加します。
@@ -222,13 +213,11 @@ tab3.TabBarItem.BadgeValue = null;
 
  <a name="Tabs_in_Non-RootViewController_Scenarios" />
 
-
 ## <a name="tabs-in-non-rootviewcontroller-scenarios"></a>RootViewController 以外のシナリオでのタブ
 
 上記の例で使用する方法を紹介しました、`UITabBarController`場合、`RootViewController`ウィンドウ。 使用する方法について、この例では、`UITabBarController`ではない場合、`RootViewController`ストーリー ボードを使用して、これを作成する方法を表示するとします。
 
  <a name="Initial_Screen_Example" />
-
 
 ### <a name="initial-screen-example"></a>最初の画面の例
 
@@ -237,7 +226,6 @@ tab3.TabBarItem.BadgeValue = null;
 [![](creating-tabbed-applications-images/inital-screen-application.png "このスクリーン ショットは、アプリケーション フローを示しています。")](creating-tabbed-applications-images/inital-screen-application.png#lightbox)
 
 この例では新しいアプリケーションを起動してみましょう。 使用して、もう一度、 **iPhone > アプリ > 空のプロジェクト (C#)** テンプレート、今度は、プロジェクトの名前を付け`InitialScreenDemo`します。
-
 
 この例では、ストーリー ボードのビュー コント ローラーを保持する必要があります。 ストーリー ボードを追加するには。
 
@@ -251,7 +239,6 @@ tab3.TabBarItem.BadgeValue = null;
 
 いくつかの重要な手順に記載されていますが、以前ストーリー ボード ファイルにストーリー ボードを追加するときに注意してください、[ストーリー ボードの概要](~/ios/user-interface/storyboards/index.md)ガイド。 これらの数値は、次のとおりです。
 
- 
 1. ストーリー ボード名を追加、**メイン インターフェイス**のセクション、 `Info.plist`:
 
     [![](creating-tabbed-applications-images/project-options.png "MainStoryboard にメインのインターフェイスを設定します。")](creating-tabbed-applications-images/project-options.png#lightbox)
@@ -276,7 +263,6 @@ MainStoryboard.storyboard ファイルをダブルクリックしてデザイナ
 
  <a name="Creating_the_UI" />
 
-
 #### <a name="creating-the-ui"></a>UI を作成します。
 
 次に、作成しますシンプルなユーザー インターフェイスの各 ViewController のビューでは、Xamarin iOS デザイナーを使用しています。
@@ -285,7 +271,6 @@ MainStoryboard.storyboard ファイルをダブルクリックしてデザイナ
 
 - **ラベル**:`Text` = **目**
 - **ボタン**:`Title` = **ユーザーが初期アクションを実行する**
-
 
 ボタンの可視性を制御します、`TouchUpInside`イベント、および私たちは、分離コードで参照する必要があります。 みましょうを識別、**名前**`aButton`プロパティ パッドで、次のスクリーン ショットに示すようにします。
 
@@ -329,7 +314,7 @@ partial void InitialActionCompleted (UIButton sender)
 私たちのストーリー ボードの Segues、TabBarController と、ビュー コント ローラー間の遷移を処理するために使用できます。 初期表示を対話したら、それをユーザーに提示 TabBarController にロードします。 みましょうこれデザイナーで設定します。
 
 **Ctrl-クリック**と**ドラッグ**TabBarController にボタンをクリックします。 マウス時に、コンテキスト メニューが表示されます。 モーダルのセグエを使用します。 
- 
+
 各タブを設定する**Ctrl-クリック**から 3、およびリレーションシップを選択する 1 つの順序でこれらのビュー コント ローラーの各 TabBarController から**タブ**下図のように、コンテキスト メニューから。
 
 [![](creating-tabbed-applications-images/context-menu.png "タブのリレーションシップを選択します。")](creating-tabbed-applications-images/context-menu.png#lightbox)
@@ -366,7 +351,6 @@ public override void ViewDidLoad ()
 ## <a name="summary"></a>まとめ
 
 この記事では、使用する方法を説明する`UITabBarController`アプリケーションでします。 私たちは、各タブにコント ローラーを読み込む方法と、このようなタイトル、イメージおよびバッジのタブでプロパティを設定する方法を説明しました。 いますしを使用して調べる、ストーリー ボードを読み込む方法、`UITabBarController`できない場合に、実行時に、`RootViewController`ウィンドウの。
-
 
 ## <a name="related-links"></a>関連リンク
 

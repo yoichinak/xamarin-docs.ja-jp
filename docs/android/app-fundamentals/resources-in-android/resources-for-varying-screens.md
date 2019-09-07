@@ -6,17 +6,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/28/2018
-ms.openlocfilehash: 49e0de909e2255d850211e51596efdaa43f293ae
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 0a82c84b334cbfcf3ab978b5ebd0e256bcd64815
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509370"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755055"
 ---
 # <a name="creating-resources-for-varying-screens"></a>さまざまな画面用のリソースの作成
 
 Android 自体はさまざまなデバイスで実行され、それぞれの解像度、画面サイズ、画面密度がさまざまです。 Android では、スケールとサイズ変更を行って、アプリケーションがこれらのデバイスで動作するようにしますが、これにより、ユーザーエクスペリエンスが最適化される可能性があります。 たとえば、画像がぼやけて表示されたり、表示に期待どおりに配置されたりする可能性があります。
-
 
 ## <a name="concepts"></a>概念
 
@@ -38,7 +37,6 @@ Android 自体はさまざまなデバイスで実行され、それぞれの解
 
 この複雑さに対処するために、Android framework では画面レイアウトに*密度に依存しないピクセル (dp)* を使用することを推奨しています。 密度に依存しないピクセルを使用すると、ユーザーには、異なる密度を持つ画面で同じ物理サイズの UI 要素が表示されます。
 
-
 ## <a name="supporting-various-screen-sizes-and-densities"></a>さまざまな画面サイズと密度のサポート
 
 Android では、ほとんどの作業を処理して、画面構成ごとにレイアウトを正しくレンダリングします。 ただし、システムの提供を支援するために実行できる操作がいくつかあります。
@@ -46,7 +44,6 @@ Android では、ほとんどの作業を処理して、画面構成ごとにレ
 密度に依存しないピクセルの使用は、ほとんどの場合、レイアウトで実際のピクセルの代わりに使用するだけで十分です。
 Android では、実行時に、適切なサイズになるように、実行可能な drawables スケーリングします。
 ただし、拡大縮小によってビットマップがぼやけて表示される可能性があります。 この問題を回避するには、異なる密度の代替リソースを指定します。 複数の解像度と画面密度用にデバイスを設計する場合、解像度や密度の高いイメージで開始し、スケールダウンする方が簡単です。
-
 
 ### <a name="declare-the-supported-screen-size"></a>サポートされている画面サイズを宣言する
 
@@ -87,7 +84,6 @@ Android では、実行時に、適切なサイズになるように、実行可
 
 ### <a name="provide-alternate-layouts-for-different-screen-sizes"></a>さまざまな画面サイズに別のレイアウトを指定する
 
-
 代替レイアウトを使用すると、特定の画面サイズのビューをカスタマイズし、コンポーネントの UI 要素の位置やサイズを変更することができます。
 
 API レベル 13 (Android 3.2) 以降では、sw*N*dp 修飾子の使用を優先するため、画面サイズは非推奨となりました。 この新しい修飾子は、特定のレイアウトに必要な領域のサイズを宣言します。 Android 3.2 以降で実行するように設計されたアプリケーションでは、これらの新しい修飾子を使用することをお勧めします。
@@ -103,7 +99,6 @@ API レベル 13 (Android 3.2) 以降では、sw*N*dp 修飾子の使用を優�
 ![700 dp 画面の幅のレイアウトフォルダー](resources-for-varying-screens-images/03-layout-sw700dp-xs.png)
 
 -----
-
 
 ガイドラインとして、さまざまなデバイスのいくつかの数値を次に示します。
 
@@ -150,8 +145,6 @@ API レベル13以上の新しい画面サイズ修飾子は、API レベル12�
 
 -----
 
-
-
 ### <a name="provide-different-bitmaps-for-different-screen-densities"></a>画面の密度に応じて異なるビットマップを指定する
 
 Android では、必要に応じてデバイスのビットマップが拡張されますが、ビットマップ自体は洗練されていたり、ぼやけたりする場合があります。 画面の密度に適したビットマップを提供することで、この問題を軽減できます。
@@ -164,7 +157,6 @@ Android では、必要に応じてデバイスのビットマップが拡張さ
 
 ![密度固有のリソースを含むスクリーンショット](resources-for-varying-screens-images/07-density-specific-resources.png)
 
-
 ### <a name="create-varying-density-resources-with-android-asset-studio"></a>Android Asset Studio を使用してさまざまな密度リソースを作成する
 
 さまざまな密度のビットマップの作成は、少し面倒になることがあります。 そのため、Google は、 [**Android Asset Studio**](https://romannurik.github.io/AndroidAssetStudio/)と呼ばれるこれらのビットマップの作成に関連する面倒な作業の一部を減らすことができるオンラインユーティリティを作成しました。
@@ -172,7 +164,6 @@ Android では、必要に応じてデバイスのビットマップが拡張さ
 [![Android Asset Studio](resources-for-varying-screens-images/08-android-asset-studio-sml.png)](resources-for-varying-screens-images/08-android-asset-studio.png#lightbox)
 
 この web サイトは、1つのイメージを提供することで、4つの一般的な画面密度を対象とするビットマップの作成に役立ちます。 Android Asset Studio は、いくつかのカスタマイズでビットマップを作成し、zip ファイルとしてダウンロードできるようにします。
-
 
 ## <a name="tips-for-multiple-screens"></a>複数の画面に関するヒント
 
@@ -185,10 +176,9 @@ Android は困惑のデバイスで実行され、画面のサイズと画面密
 - **避ける**[AbsoluteLayout](xref:Android.Widget.AbsoluteLayout)
   **可能**な限り&ndash; 、API レベル 3 (Android 1.5) では非推奨とされます。これにより、レイアウトが不安定になります。 使用しないでください。 代わりに、 [**LinearLayout**](xref:Android.Widget.LinearLayout)、 [**RelativeLayout**](xref:Android.Widget.RelativeLayout)、new [**GridLayout**](xref:Android.Widget.GridLayout)などのより柔軟なレイアウトウィジェットを使用してみてください。
 
-- **既定のレイアウトの向きを1つ選択する**   たとえば、代替リソースレイアウトとレイアウトポートを提供するのではなく、横長のリソースをレイアウトに、縦のリソースをレイアウトポートに配置します。 &ndash;
+- **既定のレイアウトの向きを1つ選択する**たとえば、代替リソースレイアウトとレイアウトポートを提供するのではなく、横長のリソースをレイアウトに、縦のリソースをレイアウトポートに配置します。 &ndash;
 
 - **Height と Width に LayoutParams を使用する**-XML レイアウトファイルで UI 要素を定義する場合、 **wrap_content**と**fill_parent**の値を使用する Android アプリケーションでは、ピクセルまたは密度に依存しない単位を使用します。 これらのディメンション値により、Android はビットマップリソースを必要に応じてスケーリングします。 これと同じ理由から、密度に依存しない単位は、UI 要素の余白と埋め込みを指定する場合に最適です。
-
 
 ## <a name="testing-multiple-screens"></a>複数の画面のテスト
 

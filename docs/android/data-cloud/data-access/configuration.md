@@ -6,20 +6,20 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 10/11/2016
-ms.openlocfilehash: f12efdbc0d5bf43a7515603a67fedd180cd87587
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 5ebafa70239305210da631c3e9c34278f83b272b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67649652"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70754664"
 ---
 # <a name="configuration"></a>構成
 
-SQLite を使用して、Xamarin.Android アプリケーションには、データベース ファイルの正しいファイルの場所を決定する必要があります。
+SQLite を Xamarin Android アプリケーションで使用するには、データベースファイルの正しいファイルの場所を決定する必要があります。
 
-## <a name="database-file-path"></a>データベース ファイルのパス
+## <a name="database-file-path"></a>データベースファイルのパス
 
-使用するデータ アクセス方法に関係なく、SQLite の使用データを格納できる前に、データベース ファイルを作成する必要があります。 対象とするプラットフォームに応じて、ファイルの場所が変更されます。 Android 用の次のコード スニペットに示すように、有効なパスを構築するのに Environment クラスを使用できます。
+使用するデータアクセス方法に関係なく、SQLite を使用してデータを格納する前に、データベースファイルを作成する必要があります。 対象となるプラットフォームによって、ファイルの場所が異なります。 Android の場合、次のコードスニペットに示すように、環境クラスを使用して有効なパスを構築できます。
 
 ```csharp
 string dbPath = Path.Combine (
@@ -28,9 +28,9 @@ string dbPath = Path.Combine (
 // dbPath contains a valid file path for the database file to be stored
 ```
 
-データベース ファイルを格納する場所を決定する際に考慮するその他の点があります。 たとえば、Android でできます内部または外部の記憶域を使用するかどうか。
+データベースファイルの格納場所を決定する際には、他にも考慮する必要があります。 たとえば、Android では、内部ストレージと外部ストレージのどちらを使用するかを選択できます。
 
-クロスプラット フォーム アプリケーションでは、各プラットフォーム上で別の場所を使用する場合はディレクティブを使用するコンパイラに示すようプラットフォームごとに別のパスを生成します。
+クロスプラットフォームアプリケーションの各プラットフォームで別の場所を使用する場合は、次に示すようにコンパイラディレクティブを使用して、プラットフォームごとに異なるパスを生成できます。
 
 ```csharp
 var sqliteFilename = "MyDatabase.db3";
@@ -46,13 +46,13 @@ string libraryPath = Path.Combine (documentsPath, "..", "Library"); // Library f
 var path = Path.Combine (libraryPath, sqliteFilename);
 ```
 
-Android では、ファイル システムの使用に関するヒントを参照してください、[参照ファイル](https://github.com/xamarin/recipes/tree/master/Recipes/android/data/files/browse_files)レシピです。 参照してください、[クロス プラットフォーム アプリケーションの構築](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)コンパイラ ディレクティブを使用して、それぞれのプラットフォームに固有のコードを記述する方法についてのドキュメント。
+Android でファイルシステムを使用する場合のヒントについては、[ファイルの参照](https://github.com/xamarin/recipes/tree/master/Recipes/android/data/files/browse_files)に関するレシピを参照してください。 コンパイラディレクティブを使用して各プラットフォームに固有のコードを記述する方法の詳細については、[クロスプラットフォームアプリケーションのビルド](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)に関するドキュメントを参照してください。
 
 ## <a name="threading"></a>スレッド
 
-複数のスレッド間で同じの SQLite データベース接続を使用する必要があります。 開き、使用し、同じスレッドで作成するすべての接続を閉じるように注意します。
+複数のスレッド間で同じ SQLite データベース接続を使用しないでください。 同じスレッドで作成したすべての接続を開いて使用し、閉じるように注意してください。
 
-コードが複数のスレッドから同時に SQLite データベースへのアクセスを試みていないことを確認するには、手動でロックを取得したら、次のように、データベースにアクセスするたびに。
+コードが同時に複数のスレッドから SQLite データベースにアクセスしようとしていないことを確認するには、次のように、データベースにアクセスするたびにロックを手動で行います。
 
 ```csharp
 object locker = new object(); // class level private field
@@ -62,12 +62,11 @@ lock (locker){
 }
 ```
 
-すべてのデータベース アクセス (読み取り、書き込み、更新プログラムなど) は、同じロックでラップする必要があります。 ロック句内での作業が単純な保持され、ロックがかかる場合がありますもその他の方法呼び出しませんことを確認して、デッドロックを回避するために注意する必要があります。
-
+すべてのデータベースアクセス (読み取り、書き込み、更新など) は、同じロックでラップする必要があります。 デッドロックの状況を回避するには、ロック句内の作業を単純なままにして、ロックを受け取る可能性のある他のメソッドを呼び出さないようにする必要があります。
 
 ## <a name="related-links"></a>関連リンク
 
-- [DataAccess Basic (サンプル)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
-- [データ アクセスの詳細 (サンプル)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
-- [Android のデータのレシピ](https://github.com/xamarin/recipes/tree/master/Recipes/android/data)
-- [Xamarin.Forms のデータ アクセス](~/xamarin-forms/data-cloud/data/databases.md)
+- [このような場合の基本 (サンプル)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
+- [詳細設定 (サンプル)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
+- [Android データレシピ](https://github.com/xamarin/recipes/tree/master/Recipes/android/data)
+- [Xamarin.Forms データアクセス](~/xamarin-forms/data-cloud/data/databases.md)

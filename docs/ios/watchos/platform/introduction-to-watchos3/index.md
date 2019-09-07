@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 10/07/2017
-ms.openlocfilehash: 50278eaa6d3518b8de85685c1faf64eabac4531d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: b167ddca86148818c534b7a9b0e338f8a4406b15
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292197"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767767"
 ---
 # <a name="introduction-to-watchos-3"></a>watchOS 3 の概要
 
@@ -187,7 +187,6 @@ WatchOS 3 では、次の Api が非推奨とされています。
 - Uikit の`UILocalNotification`クラスは非推奨とされており、ユーザー通知フレームワークに置き換える必要があります。
 
 廃止と変更の完全な一覧については、Apple の[watchOS 2.2 To watchOS 3.0 API の相違点](https://developer.apple.com/library/prerelease/content/releasenotes/General/watchOS30APIDiffs/index.html)に関するドキュメントを参照してください。
-
 
 ## <a name="related-links"></a>関連リンク
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/25/2018
-ms.openlocfilehash: 77b0bc28bc4156092cb2b12d0c8b234d3f021239
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 67755baf18ad5277e7c2fe8be705522a9b668ff3
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69523441"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756823"
 ---
 # <a name="xamarinandroid-designer-material-design-features"></a>Xamarin. Android Designer 素材のデザイン機能
 
@@ -54,10 +54,9 @@ Android Designer には、マテリアルデザインに準拠したレイアウ
 
 [![Grid、keyline、および spacing の構成](material-design-features-images/vs/03-grid-configuration-w158-sml.png)](material-design-features-images/vs/03-grid-configuration-w158.png#lightbox)
 
-新しい keyline を追加するには、 **[オフセット]** ボックスに新しいオフセット値を入力し、場所 (**left**、 **top**、 **right**、または**bottom**) を選択し、[+] アイコンをクリックして新しい keyline を追加します。 同様に、新しいスペースを追加するには、サイズ ボックスと **オフセット**ボックスにそれぞれサイズとオフセット (dp) を入力します。 場所 (**左**、**上**、**右**、**下**) を選択し、[+] アイコンをクリックして新しい間隔を追加します。
+新しい keyline を追加するには、 **[オフセット]** ボックスに新しいオフセット値を入力し、場所 (**left**、 **top**、 **right**、または**bottom**) を選択し、[+] アイコンをクリックして新しい keyline を追加します。 同様に、新しいスペースを追加するには、 **[サイズ]** ボックスと **[オフセット]** ボックスにそれぞれサイズとオフセット (dp) を入力します。 場所 (**左**、**上**、**右**、**下**) を選択し、[+] アイコンをクリックして新しい間隔を追加します。
 
 これらの構成値を変更すると、レイアウト XML ファイルに保存され、再度レイアウトを開いたときに再利用されます。
-
 
 ## <a name="theme-editor"></a>テーマエディター
 
@@ -158,9 +157,6 @@ Android Designer には、マテリアルデザインに準拠したレイアウ
 このトピックでは、Android Designer で使用できるマテリアルデザイン機能について説明します。 ここでは、[マテリアルデザイン] グリッドを有効にして構成する方法について説明しました。また、テーマエディターを使用して、マテリアルデザインガイドラインに準拠する新しいカスタムテーマを作成する方法についても説明しました。
 Xamarin の詳細については、マテリアル設計の詳細については、「[マテリアルのテーマ](~/android/user-interface/material-theme.md)」を参照してください。
 
-
-
-
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 このガイドでは、デザイナーの次の機能について説明します。
@@ -197,7 +193,7 @@ Xamarin の詳細については、マテリアル設計の詳細については
 
 [![Grid、keyline、および spacing の構成](material-design-features-images/xs/03-grid-configuration-sml.png)](material-design-features-images/xs/03-grid-configuration.png#lightbox)
 
-新しい keyline を追加するには、 **[オフセット]** ボックスに新しいオフセット値を入力し、場所 (**left**、 **top**、 **right**、または**bottom**) を選択し、[+] アイコン (値を入力したときに右側に表示されます) をクリックして、新しい keyline を追加します。 同様に、新しいスペースを追加するには、サイズ ボックスと **オフセット**ボックスにそれぞれサイズとオフセット (dp) を入力します。 場所 (**左**、**上**、**右**、**下**) を選択し、[+] アイコンをクリックして新しい間隔を追加します。
+新しい keyline を追加するには、 **[オフセット]** ボックスに新しいオフセット値を入力し、場所 (**left**、 **top**、 **right**、または**bottom**) を選択し、[+] アイコン (値を入力したときに右側に表示されます) をクリックして、新しい keyline を追加します。 同様に、新しいスペースを追加するには、 **[サイズ]** ボックスと **[オフセット]** ボックスにそれぞれサイズとオフセット (dp) を入力します。 場所 (**左**、**上**、**右**、**下**) を選択し、[+] アイコンをクリックして新しい間隔を追加します。
 
 これらの構成値を変更すると、レイアウト XML ファイルに保存され、再度レイアウトを開いたときに再利用されます。
 
@@ -279,7 +275,6 @@ Xamarin の詳細については、マテリアル設計の詳細については
 
 [![カラーピッカー](material-design-features-images/xs/14-color-picker-sml.png)](material-design-features-images/xs/14-color-picker.png#lightbox)
 
-
 この例では、さまざまな方法で**背景**色を任意の値に変更できます。
 
 - 色を直接クリックします。
@@ -320,13 +315,11 @@ Xamarin の詳細については、マテリアル設計の詳細については
 
 - **&#8984; + S**キーを押して、**カスタム**という名前の新しいテーマへの変更を保存します。
 
-
 ## <a name="summary"></a>Summary
 
 このトピックでは、Android Designer で使用できるマテリアルデザイン機能について説明します。 ここでは、マテリアルデザイングリッドを有効にして構成する方法、素材デザインカラーパレットを使用して色のプロパティを編集する方法、およびタイポグラフィスケールセレクターを使用してテキストプロパティを構成する方法について説明しました。 また、テーマエディターを使用して、マテリアルデザインガイドラインに準拠する新しいカスタムテーマを作成する方法についても説明します。 Xamarin の詳細については、マテリアル設計の詳細については、「[マテリアルのテーマ](~/android/user-interface/material-theme.md)」を参照してください。
 
 -----
-
 
 ## <a name="related-links"></a>関連リンク
 

@@ -6,12 +6,12 @@ ms.assetid: 67246203-D78E-4DCC-9E55-7D3D93968E54
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: b6ac960770320ed100e8b082cabf8240efed070b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 10ab9b379344ab6c514eba84f1ef3fd9c7400b73
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290837"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765543"
 ---
 # <a name="apple-platform-ios-and-mac"></a>Apple プラットフォーム (iOS および Mac)
 
@@ -31,7 +31,6 @@ IOS プロジェクトと Mac プロジェクトの Unified API では、同じ�
 > **クラシックプロファイルの非推奨:** 新しいプラットフォームが Xamarin に追加されるにつれて、クラシックプロファイル (monotouch.dialog) の機能が徐々に廃止されるようになります。 たとえば、NRC 以外のオプション (新しい参照カウント) が削除されました。 NRC は、すべての統合アプリケーションに対して常に有効になっています (つまり、NRC 以外のオプションはありません)。また、既知の問題はありません。 将来のリリースでは、Boehm をガベージコレクターとして使用するオプションが削除されます。 これは、統合アプリケーションで使用できないオプションでもあります。 クラシックサポートを完全に削除するには、Xamarin. iOS 10.0 のリリースで2016の秋が予定されています。
 
 ネイティブフレームワーク`MonoTouch.`にはまたは`MonoMac.`名前空間プレフィックスがあるため、元の (統合されていない) xamarin. iOS および xamarin. Mac api は、コード共有をより困難にしました。  同じファイルで、モノの mac と monotouch.dialog の両方の名前`using`空間を参照するステートメントを追加することにより、開発者がコードを共有できるようにする空の名前空間がいくつか用意されていますが、これは少し厄介です。 Classic API は、内部で配布されたレガシアプリでのみ使用できます (Unified API へのアップグレードをお勧めします)。
-
 
 ### <a name="updating-from-classic-to-the-unified-api"></a>クラシックから Unified API への更新
 

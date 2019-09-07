@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 01/22/2018
-ms.openlocfilehash: e5b23973d7784a9116d4c82ef6d892aacbf584a1
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 0784fe5fe42fc82d7067c976bdda6f0436e140b5
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524473"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70757577"
 ---
 # <a name="using-the-contacts-contentprovider"></a>連絡先の ContentProvider の使用
 
@@ -30,7 +30,6 @@ Uri からカーソルを作成するには、次の3つの方法があります
 1. **カーソルローダー ()。** &ndash; Android 3.0 (API レベル`CursorLoader` 11) で導入された loadinbackground () は、を`ContentProvider`使用するために推奨される方法です。 `CursorLoader`バックグラウンドスレッド`ContentResolver`でを照会して、UI がブロックされないようにします。
    このクラスには、旧バージョンの Android の v4 互換性ライブラリを使用してアクセスできます。
 
-
 これらの各メソッドには、同じ基本的な入力セットがあります。
 
 - **Uri**の完全修飾名。 `ContentProvider` &ndash;
@@ -38,8 +37,6 @@ Uri からカーソルを作成するには、次の3つの方法があります
 - **選択**&ndash; SQL`WHERE`句に似ています。
 - **Selectionargs**&ndash;選択範囲内で置き換えられるパラメーター。
 - **順序の順序**&ndash;並べ替えの基準となる列。
-
-
 
 ## <a name="creating-inputs-for-a-query"></a>クエリの入力の作成
 
@@ -58,13 +55,9 @@ string[] projection = {
 
 この例`selection` `sortOrder`では、、、 `null`およびは、をに設定することによって無視されます。`selectionArgs`
 
-
-
 ## <a name="creating-a-cursor-from-a-content-provider-uri"></a>コンテンツプロバイダーの Uri からのカーソルの作成
 
 パラメーターオブジェクトを作成したら、次の3つの方法のいずれかで使用できます。
-
-
 
 ### <a name="using-a-managed-query"></a>マネージクエリの使用
 
@@ -75,8 +68,6 @@ var cursor = activity.ManagedQuery(uri, projection, null, null, null);
 ```
 
 このカーソルは Android によって管理されるため、閉じる必要はありません。
-
-
 
 ### <a name="using-contentresolver"></a>ContentResolver の使用
 
@@ -95,8 +86,6 @@ cursor.Close();
 
 または、を呼び出し`StartManagingCursor()`て`StopManagingCursor()` 、カーソルを "管理" できます。 マネージカーソルは、アクティビティが停止して再起動されたときに、自動的に非アクティブになり、再度クエリが行われます。
 
-
-
 ### <a name="using-cursorloader"></a>カーソルローダーの使用
 
 Android 3.0 (API レベル 11) 以降用にビルドされたアプリケーションでは、次の方法を使用する必要があります。
@@ -109,8 +98,6 @@ var cursor = (ICursor)loader.LoadInBackground();
 は`CursorLoader` 、すべてのカーソル操作がバックグラウンドスレッドで実行されることを保証します。また、アクティビティが再起動されたとき (構成の変更などによって)、アクティビティインスタンス間で既存のカーソルをインテリジェントに再利用し、データを再度読み込むことができます。
 
 以前のバージョンの`CursorLoader` Android では、 [v4 サポートライブラリ](https://developer.android.com/tools/support-library/index.html)を使用してクラスを使用することもできます。
-
-
 
 ## <a name="displaying-the-cursor-data-with-a-custom-adapter"></a>カスタムアダプターを使用したカーソルデータの表示
 
@@ -188,8 +175,6 @@ public override View GetView (int position, View convertView, ViewGroup parent)
 同様のコードパターンを使用すると、アプリケーションは、ユーザーの写真、ビデオ、音楽などのさまざまなシステムデータにアクセスできます。
 一部のデータ型では、プロジェクトの**Androidmanifest .xml**で特別なアクセス許可を要求する必要があります。
 
-
-
 ## <a name="displaying-the-cursor-data-with-a-simplecursoradapter"></a>SimpleCursorAdapter を使用してカーソルデータを表示する
 
 カーソルは、 `SimpleCursorAdapter`と共に表示することもできます (ただし、名前のみが表示され、写真は表示されません)。 このコードは、 `ContentProvider`をと共`SimpleCursorAdapter`に使用する方法を示しています (このコードはサンプルには記載されていません)。
@@ -209,7 +194,6 @@ listView.Adapter = adapter;
 ```
 
 の実装`SimpleCursorAdapter`の詳細については、 [listviews とアダプター](~/android/user-interface/layouts/list-view/index.md)に関する説明を参照してください。
-
 
 ## <a name="related-links"></a>関連リンク
 

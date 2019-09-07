@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2018
-ms.openlocfilehash: 53dce7cc6cc614cde252aa34248fa299c89fafa3
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: e96f9a0ce4d1eec9bf853faceeb85a2acb4840af
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69887706"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761019"
 ---
 # <a name="how-do-i-automate-an-android-nunit-test-project"></a>Android NUnit テスト プロジェクトを自動化する方法を教えてください
 
@@ -91,10 +91,8 @@ adb shell am instrument
 
 `adb shell am instrument`コマンドを使用して単体テストを実行する方法の詳細については、「 [ADB でテストを実行](https://developer.android.com/studio/test/command-line.html#RunTestsDevice)する Android 開発者向けのトピック」を参照してください。
 
-
 > [!NOTE]
 > [Xamarin 5.0](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/android/xamarin.android_5/xamarin.android_5.1/index.md#Android_Callable_Wrapper_Naming)リリースでは、android 呼び出し可能ラッパーの既定のパッケージ名は、エクスポートされる型のアセンブリ修飾名の MD5SUM に基づきます。 これにより、2つの異なるアセンブリから同じ完全修飾名を指定できるようになり、パッケージ化エラーは発生しません。 そのため、 `Name` `Instrumentation`属性のプロパティを使用して、読み取り可能な ACW/クラス名を生成するようにしてください。
 
 _ACW 名は、上記の`adb`コマンドで使用する必要があり_ます。
 クラスのC#名前を変更したりリファクタリングしたり`RunTests`するには、正しい ACW 名を使用するようにコマンドを変更する必要があります。
-

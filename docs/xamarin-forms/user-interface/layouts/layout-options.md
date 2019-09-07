@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/10/2017
-ms.openlocfilehash: 2e4fa5f1fb96077b0237dbeac9074006e761bc09
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 63c8cb285c51d7c10e2109c9d0b7cffbd0fb0898
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655306"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770342"
 ---
 # <a name="layout-options-in-xamarinforms"></a>Xamarin.Forms のレイアウト オプション
 
@@ -155,8 +155,6 @@ Content = new StackLayout
 ## <a name="summary"></a>まとめ
 
 この記事では、効果を説明する各[ `LayoutOptions` ](xref:Xamarin.Forms.LayoutOptions)構造体の値がその親に対する相対的なビューの拡張と配置にします。 `Start`、 `Center`、`End`と`Fill`フィールドを使用して、親レイアウト内のビューの配置を定義し、 `StartAndExpand`、 `CenterAndExpand`、`EndAndExpand`と`FillAndExpand`定義に使用されるフィールド配置基本設定内で、使用可能な場合に、ビューがより多くの領域を占有するかどうかを判断して、 [ `StackLayout`](xref:Xamarin.Forms.StackLayout)します。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

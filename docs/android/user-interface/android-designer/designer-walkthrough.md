@@ -7,17 +7,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/25/2018
-ms.openlocfilehash: 71784e18b9becf9851ad9ed9d4730a82d0ff94f7
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: a4867ef779e55d16ef49b2f8ad0dc5bd0ec7024f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69523651"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761452"
 ---
 # <a name="using-the-xamarinandroid-designer"></a>Android Designer の使用
 
 _この記事は、Android Designer のチュートリアルです。これは、小さいカラーブラウザーアプリのユーザーインターフェイスを作成する方法を示しています。このユーザーインターフェイスは、デザイナーで完全に作成されます。_
-
 
 ## <a name="overview"></a>概要
 
@@ -31,34 +30,32 @@ Android ユーザーインターフェイスは、XML ファイルを使用す�
 
 ## <a name="walkthrough"></a>チュートリアル
 
-このチュートリアルの目的は、Android Designer を使用して、サンプルのカラーブラウザーアプリ用のユーザーインターフェイスを作成することです。 カラーブラウザーアプリでは、色、名前、および RGB 値の一覧が表示されます。 **デザインサーフェイス**にウィジェットを追加する方法と、これらのウィジェットを視覚的にレイアウトする方法についても説明します。 その後、**デザインサーフェイス**で対話的にウィジェットを変更する方法、またはデザイナーの [**プロパティ**] ペインを使用してウィジェットを変更する方法を学習します。 最後に、デバイスまたはエミュレーターでアプリを実行すると、デザインがどのように見えるかを確認できます。
-
+このチュートリアルの目的は、Android Designer を使用して、サンプルのカラーブラウザーアプリ用のユーザーインターフェイスを作成することです。 カラーブラウザーアプリでは、色、名前、および RGB 値の一覧が表示されます。 **デザインサーフェイス**にウィジェットを追加する方法と、これらのウィジェットを視覚的にレイアウトする方法についても説明します。 その後、**デザインサーフェイス**で対話的にウィジェットを変更する方法、またはデザイナーの **[プロパティ]** ペインを使用してウィジェットを変更する方法を学習します。 最後に、デバイスまたはエミュレーターでアプリを実行すると、デザインがどのように見えるかを確認できます。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ### <a name="creating-a-new-project"></a>新しいプロジェクトを作成します。
 
-最初の手順では、新しい Xamarin. Android プロジェクトを作成します。 Visual Studio を起動し、[**新しいプロジェクト...** ] をクリックし、 **\# visual C > android > android アプリ (Xamarin)** テンプレートを選択します。
+最初の手順では、新しい Xamarin. Android プロジェクトを作成します。 Visual Studio を起動し、 **[新しいプロジェクト...]** をクリックし、 **\# visual C > android > android アプリ (Xamarin)** テンプレートを選択します。
 新しいアプリデザイナの**チュートリアル**に名前を指定し、[ **OK]** をクリックします。
 
 [![Android の空のアプリ](designer-walkthrough-images/vs/01-android-app-w158-sml.png)](designer-walkthrough-images/vs/01-android-app-w158.png#lightbox)
 
-[**新しい Android アプリ**] ダイアログで、[**空のアプリ**] を選択し、[ **OK**] をクリックします。
+**[新しい Android アプリ]** ダイアログで、 **[空のアプリ]** を選択し、 **[OK]** をクリックします。
 
 [![Android の空のアプリテンプレートを選択する](designer-walkthrough-images/vs/02-blank-app-w158-sml.png)](designer-walkthrough-images/vs/02-blank-app-w158.png#lightbox)
 
-
 ### <a name="adding-a-layout"></a>レイアウトの追加
 
-次の手順では、ユーザーインターフェイス要素を保持する**LinearLayout**を作成します。 **ソリューションエクスプローラー**で [**リソース/レイアウト**] を右クリックし、[**新しい項目の追加 >** ] を選択します。[**新しい項目の追加**] ダイアログで、[ **Android レイアウト**] を選択します。 ファイルに**list_item**という名前を指定し、[**追加**] をクリックします。
+次の手順では、ユーザーインターフェイス要素を保持する**LinearLayout**を作成します。 **ソリューションエクスプローラー**で **[リソース/レイアウト]** を右クリックし、 **[新しい項目の追加 >]** を選択します。 **[新しい項目の追加]** ダイアログで、 **[Android レイアウト]** を選択します。 ファイルに**list_item**という名前を指定し、 **[追加]** をクリックします。
 
 [![新しいレイアウト](designer-walkthrough-images/vs/03-new-layout-w158-sml.png)](designer-walkthrough-images/vs/03-new-layout-w158.png#lightbox)
 
-新しい**list_item**レイアウトがデザイナーに表示されます。 2つのペインが表示&ndash;されていることを確認してください。 **list_item**の*デザインサーフェイス*が左側のウィンドウに表示されていますが、右ペインに XML ソースが表示されています。 次の2つのウィンドウの間にある [**スワップウィンドウ**] アイコンをクリックすると、**デザインサーフェイス**ペインと**ソース**ペインの位置を入れ替えることができます。
+新しい**list_item**レイアウトがデザイナーに表示されます。 2つのペインが表示&ndash;されていることを確認してください。 **list_item**の*デザインサーフェイス*が左側のウィンドウに表示されていますが、右ペインに XML ソースが表示されています。 次の2つのウィンドウの間にある **[スワップウィンドウ]** アイコンをクリックすると、**デザインサーフェイス**ペインと**ソース**ペインの位置を入れ替えることができます。
 
 [![デザイナービュー](designer-walkthrough-images/vs/04-designer-view-w158-sml.png)](designer-walkthrough-images/vs/04-designer-view-w158.png#lightbox)
 
-[**表示**] メニューの [**その他の Windows > ドキュメントアウトライン**] をクリックして、**ドキュメントアウトライン**を開きます。 **ドキュメントアウトライン**には、現在、レイアウトに1つの**LinearLayout**ウィジェットが含まれていることが示されています。
+**[表示]** メニューの **[その他の Windows > ドキュメントアウトライン]** をクリックして、**ドキュメントアウトライン**を開きます。 **ドキュメントアウトライン**には、現在、レイアウトに1つの**LinearLayout**ウィジェットが含まれていることが示されています。
 
 [![ドキュメントアウトライン](designer-walkthrough-images/vs/06-document-outline-w158-sml.png)](designer-walkthrough-images/vs/06-document-outline-w158.png#lightbox)
 
@@ -66,7 +63,7 @@ Android ユーザーインターフェイスは、XML ファイルを使用す�
 
 ### <a name="creating-the-list-item-user-interface"></a>リスト項目のユーザーインターフェイスを作成する
 
-**ツールボックス**ウィンドウが表示されていない場合は、左側の [**ツールボックス**] タブをクリックします。 [**ツールボックス**] で、[ **Images &** ] セクションまで下にスクロールし、 `ImageView`次の場所まで下にスクロールします。
+**ツールボックス**ウィンドウが表示されていない場合は、左側の **[ツールボックス]** タブをクリックします。 **[ツールボックス]** で、 **[Images &]** セクションまで下にスクロールし、 `ImageView`次の場所まで下にスクロールします。
 
 [![ImageView の検索](designer-walkthrough-images/vs/07-locate-imageview-w158-sml.png)](designer-walkthrough-images/vs/07-locate-imageview-w158.png#lightbox)
 
@@ -100,7 +97,6 @@ Android ユーザーインターフェイスは、XML ファイルを使用す�
 
 `textView` 2 つのウィジェットが含ま`linearLayout1`れていない場合は`linearLayout1` 、**ドキュメントアウトライン**内のにドラッグして、前のスクリーンショットのように表示さ`linearLayout1`れるように配置できます (下にインデントが付きます)。
 
-
 ### <a name="arranging-the-user-interface"></a>ユーザーインターフェイスの配置
 
 次の手順では、を左側に表示`ImageView`するように UI を変更し`ImageView`ます`TextView` 。2つのウィジェットがの右側に積み重ねられています。
@@ -109,7 +105,7 @@ Android ユーザーインターフェイスは、XML ファイルを使用す�
 
 2. **プロパティウィンドウ**の 検索 ボックスに「 *width* 」と入力し、**レイアウトの幅** を検索します。
 
-3. [**レイアウトの幅**] の`wrap_content`設定を次のように変更します。
+3. **[レイアウトの幅]** の`wrap_content`設定を次のように変更します。
 
 ![コンテンツの折り返しの設定](designer-walkthrough-images/vs/15-wrap-content-w158.png)
 
@@ -117,11 +113,11 @@ Android ユーザーインターフェイスは、XML ファイルを使用す�
 
 ![ドラッグして幅を設定](designer-walkthrough-images/vs/15b-width-arrow-w158.png)
 
-もう一度三角形をクリックする`Width`と、 `match_parent`設定がに戻ります。 次に、[**ドキュメントアウトライン**] ウィンドウにアクセスして`LinearLayout`、ルートを選択します。
+もう一度三角形をクリックする`Width`と、 `match_parent`設定がに戻ります。 次に、 **[ドキュメントアウトライン]** ウィンドウにアクセスして`LinearLayout`、ルートを選択します。
 
 [![ルート LinearLayout の選択](designer-walkthrough-images/vs/16-root-linearlayout-w158-sml.png)](designer-walkthrough-images/vs/16-root-linearlayout-w158.png#lightbox)
 
-ルート`LinearLayout`を選択した状態で、[**プロパティ**] ペインに戻り、[検索] ボックスに「 *orientation* 」と入力して、[**印刷の向き**] 設定を探します。 **方向**を次`horizontal`のように変更します。
+ルート`LinearLayout`を選択した状態で、**プロパティ** ペインに戻り、検索 ボックスに「 *orientation* 」と入力して、**印刷の向き** 設定を探します。 **方向**を次`horizontal`のように変更します。
 
 ![水平方向の選択](designer-walkthrough-images/vs/17-horizontal-orientation-w158.png)
 
@@ -132,20 +128,20 @@ Android ユーザーインターフェイスは、XML ファイルを使用す�
 
 ### <a name="modifying-the-spacing"></a>間隔の変更
 
-次の手順では、UI の埋め込みと余白の設定を変更して、ウィジェットの間により多くの領域を確保します。 デザイン画面`ImageView`でを選択します。 [**プロパティ**] ペインで、 `min` [検索] ボックスに「」と入力します。 [ `70dp` **最小の高さ**] `50dp`と [**最小の幅**] に「」と入力します。
+次の手順では、UI の埋め込みと余白の設定を変更して、ウィジェットの間により多くの領域を確保します。 デザイン画面`ImageView`でを選択します。 **[プロパティ]** ペインで、 `min` [検索] ボックスに「」と入力します。 [ `70dp` **最小の高さ**] `50dp`と **[最小の幅]** に「」と入力します。
 
 [![高さと幅の設定](designer-walkthrough-images/vs/18b-set-height-width-sml.png)](designer-walkthrough-images/vs/18b-set-height-width.png#lightbox)
 
-[**プロパティ**] ペインの [ `padding`検索] ボックスに「」 `10dp`と入力し、「 **Padding**」と入力します。 これら`minHeight` `minWidth`の設定`padding`により、`ImageView`のすべての辺の周囲にパディングが追加され、垂直方向に elongate されます。 次の値を入力すると、レイアウト XML が変更されます。
+**[プロパティ]** ペインの [ `padding`検索] ボックスに「」 `10dp`と入力し、「 **Padding**」と入力します。 これら`minHeight` `minWidth`の設定`padding`により、`ImageView`のすべての辺の周囲にパディングが追加され、垂直方向に elongate されます。 次の値を入力すると、レイアウト XML が変更されます。
 
 [![パディングの設定](designer-walkthrough-images/vs/19-padding-widths-w158-sml.png)](designer-walkthrough-images/vs/19-padding-widths-w158.png#lightbox)
 
-下、左、右、および上にある余白の設定は、[**埋め込み**] の下に値を入力することによって個別に設定できます。また、[埋め込み]、[**右** **へ**]、[埋め込み] の各フィールドにそれぞれ設定できます。
-たとえば、[**左余白**] フィールドをに`5dp`設定し、[**余白**]、[**右**余白]、[ `10dp`**余白**] の各フィールドをに設定します。
+下、左、右、および上にある余白の設定は、**埋め込み** の下に値を入力することによって個別に設定できます。また、埋め込み、**右** **へ**、埋め込み**の各フィールド**にそれぞれ設定できます。
+たとえば、 **[左余白]** フィールドをに`5dp`設定し、 **[余白]** 、 **[右]** 余白、[ `10dp`**余白**] の各フィールドをに設定します。
 
 [![カスタム埋め込みの設定](designer-walkthrough-images/vs/20-custom-padding-w158-sml.png)](designer-walkthrough-images/vs/20-custom-padding-w158.png#lightbox)
 
-次に、2つ`LinearLayout` `TextView`のウィジェットを含むウィジェットの位置を調整します。 [**ドキュメントアウトライン**] で、 `linearLayout1`[] を選択します。 [**プロパティ**] ウィンドウで、 `margin`検索ボックスに「」と入力します。 **レイアウトの余白の下部**、レイアウトの余白の**左**、およびレイアウトの**余白を上**に`5dp`設定します。 **レイアウトの余白**を次`0dp`のように設定します。
+次に、2つ`LinearLayout` `TextView`のウィジェットを含むウィジェットの位置を調整します。 **[ドキュメントアウトライン]** で、 `linearLayout1`[] を選択します。 **[プロパティ]** ウィンドウで、 `margin`検索ボックスに「」と入力します。 **レイアウトの余白の下部**、レイアウトの余白の**左**、およびレイアウトの**余白を上**に`5dp`設定します。 **レイアウトの余白**を次`0dp`のように設定します。
 
 [![余白の設定](designer-walkthrough-images/vs/21-margins-w158-sml.png)](designer-walkthrough-images/vs/21-margins-w158.png#lightbox)
 
@@ -155,9 +151,9 @@ Android ユーザーインターフェイスは、XML ファイルを使用す�
 
 1. `ImageView` **デザイナー画面**でを選択します。
 
-2. [**プロパティ**] で、検索ボックスに「 *src* 」と入力します。
+2. **[プロパティ]** で、検索ボックスに「 *src* 」と入力します。
 
-3. **Src**プロパティ設定の右側にある小さな四角形をクリックし、[**リセット**] を選択します。
+3. **Src**プロパティ設定の右側にある小さな四角形をクリックし、 **[リセット]** を選択します。
 
 [![ImageView src 設定をクリアします。](designer-walkthrough-images/vs/22-clear-img-src-w158-sml.png)](designer-walkthrough-images/vs/22-clear-img-src-w158.png#lightbox)
 
@@ -283,29 +279,27 @@ namespace DesignerWalkthrough
 
 [![最終的なスクリーンショット](designer-walkthrough-images/vs/25-final-screenshot-sml.png)](designer-walkthrough-images/vs/25-final-screenshot.png#lightbox)
 
-
-
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 ### <a name="creating-a-new-project"></a>新しいプロジェクトを作成します。
 
 最初の手順では、新しい Xamarin. Android プロジェクトを作成します。
 
-Visual Studio for Mac を起動し、[**新しいプロジェクト**] をクリックします。**Android アプリ**テンプレートを選択し、[**次へ**] をクリックします。
+Visual Studio for Mac を起動し、 **[新しいプロジェクト]** をクリックします。**Android アプリ**テンプレートを選択し、 **[次へ]** をクリックします。
 
 [![Android の空のアプリ](designer-walkthrough-images/xs/01-android-app-m75-sml.png)](designer-walkthrough-images/xs/01-android-app-m75.png#lightbox)
 
-新しいアプリデザイナの**チュートリアル**に名前を指定します。 [**ターゲットプラットフォーム**] で、[**最新] と [最大**] を選択し、[**次へ**] をクリックします。
+新しいアプリデザイナの**チュートリアル**に名前を指定します。 **[ターゲットプラットフォーム]** で、[**最新] と [最大**] を選択し、 **[次へ]** をクリックします。
 
 [![アプリの名前](designer-walkthrough-images/xs/02-designer-walkthrough-m75-sml.png)](designer-walkthrough-images/xs/02-designer-walkthrough-m75.png#lightbox)
 
-次のダイアログ画面で、[**作成**] をクリックします。
+次のダイアログ画面で、 **[作成]** をクリックします。
 
 ### <a name="adding-a-layout"></a>レイアウトの追加
 
 次の手順では、ユーザーインターフェイス要素を保持する**LinearLayout**を作成します。
 
-Visual Studio for Mac で、**ソリューション**パッドの [**リソース/レイアウト**] を右クリックし、[ **> 新しいファイルの追加**] を選択します。[**新しいファイル**] ダイアログで、[ **Android > レイアウト**] を選択します。 ファイルに**list_item**という名前を指定し、[**新規**] をクリックします。
+Visual Studio for Mac で、**ソリューション**パッドの **[リソース/レイアウト]** を右クリックし、 **[> 新しいファイルの追加]** を選択します。 **[新しいファイル]** ダイアログで、 **[Android > レイアウト]** を選択します。 ファイルに**list_item**という名前を指定し、 **[新規]** をクリックします。
 
 [![新しいレイアウト](designer-walkthrough-images/xs/03-new-layout-m75-sml.png)](designer-walkthrough-images/xs/03-new-layout-m75.png#lightbox)
 
@@ -313,7 +307,7 @@ Visual Studio for Mac で、**ソリューション**パッドの [**リソー�
 
 [![デザイナービュー](designer-walkthrough-images/xs/04-designer-view-m75-sml.png)](designer-walkthrough-images/xs/04-designer-view-m75.png#lightbox)
 
-デザイナーの下部にある [**ソース**] タブをクリックすると、このレイアウトの XML ソースが表示されます。 右側の [**ドキュメントアウトライン**] タブをクリックすると、現在レイアウトに1つの**LinearLayout**ウィジェットが含まれていることが示されます。
+デザイナーの下部にある **[ソース]** タブをクリックすると、このレイアウトの XML ソースが表示されます。 右側の **[ドキュメントアウトライン]** タブをクリックすると、現在レイアウトに1つの**LinearLayout**ウィジェットが含まれていることが示されます。
 
 [![デザイナー XML](designer-walkthrough-images/xs/05-designer-xml-m75-sml.png)](designer-walkthrough-images/xs/05-designer-xml-m75.png#lightbox)
 
@@ -321,7 +315,7 @@ Visual Studio for Mac で、**ソリューション**パッドの [**リソー�
 
 ### <a name="creating-the-list-item-user-interface"></a>リスト項目のユーザーインターフェイスを作成する
 
-画面の下部にある [**デザイナー** ] タブをクリックして、**デザイナー画面**に戻ります。 右側の [**ツールボックス**] ウィンドウで、下にスクロールして [ **Images & Media** ] セクションに移動し、次の場所に移動`ImageView`します。
+画面の下部にある **[デザイナー]** タブをクリックして、**デザイナー画面**に戻ります。 右側の **[ツールボックス]** ウィンドウで、下にスクロールして **[Images & Media]** セクションに移動し、次の場所に移動`ImageView`します。
 
 [![ImageView の検索](designer-walkthrough-images/xs/06-locate-imageview-m75-sml.png)](designer-walkthrough-images/xs/06-locate-imageview-m75.png#lightbox)
 
@@ -352,14 +346,13 @@ Visual Studio for Mac で、**ソリューション**パッドの [**リソー�
 
 `textView` 2 つのウィジェットが含ま`linearLayout1`れていない場合は`linearLayout1` 、**ドキュメントアウトライン**内のにドラッグして、前のスクリーンショット (下`linearLayout1`にインデント) で表示されるように配置できます。
 
-
 ### <a name="arranging-the-user-interface"></a>ユーザーインターフェイスの配置
 
 次の手順では、を左側に表示`ImageView`するように UI を変更し`ImageView`ます`TextView` 。2つのウィジェットがの右側に積み重ねられています。
 
 1. を選択した状態で、[プロパティ] タブをクリックします。 `ImageView`
 
-2. [**プロパティ**] タブのすぐ下にある [**レイアウト**] をクリックします。
+2. **[プロパティ]** タブのすぐ下にある **[レイアウト]** をクリックします。
 
 3. **ViewGroup**まで下にスクロールし、 `Width`設定を`wrap_content`次のように変更します。
 
@@ -369,14 +362,13 @@ Visual Studio for Mac で、**ソリューション**パッドの [**リソー�
 
 [![ドラッグして幅を設定](designer-walkthrough-images/xs/16-width-arrow-m75-sml.png)](designer-walkthrough-images/xs/16-width-arrow-m75.png#lightbox)
 
-もう一度三角形をクリックする`Width`と、 `match_parent`設定がに戻ります。 次に、[**ドキュメントアウトライン**] ウィンドウにアクセスして`LinearLayout`、ルートを選択します。
+もう一度三角形をクリックする`Width`と、 `match_parent`設定がに戻ります。 次に、 **[ドキュメントアウトライン]** ウィンドウにアクセスして`LinearLayout`、ルートを選択します。
 
 [![ルート LinearLayout の選択](designer-walkthrough-images/xs/17-root-linearlayout-m75-sml.png)](designer-walkthrough-images/xs/17-root-linearlayout-m75.png#lightbox)
 
-ルート`LinearLayout`を選択した状態で、[**プロパティ**] タブに戻り、[**ウィジェット**] をクリックします。 次に`Orientation`示すよう`horizontal`に、設定をに変更します。 この時点で、**デザインサーフェイス**は次のスクリーンショットのようになります。 ウィジェットが`TextView`の右側`ImageView`に移動したことに注意してください。
+ルート`LinearLayout`を選択した状態で、 **[プロパティ]** タブに戻り、 **[ウィジェット]** をクリックします。 次に`Orientation`示すよう`horizontal`に、設定をに変更します。 この時点で、**デザインサーフェイス**は次のスクリーンショットのようになります。 ウィジェットが`TextView`の右側`ImageView`に移動したことに注意してください。
 
 [![水平方向の選択](designer-walkthrough-images/xs/18-horizontal-orientation-m75-sml.png)](designer-walkthrough-images/xs/18-horizontal-orientation-m75.png#lightbox)
-
 
 ### <a name="modifying-the-spacing"></a>間隔の変更
 
@@ -389,7 +381,7 @@ Visual Studio for Mac で、**ソリューション**パッドの [**リソー�
 
 [![カスタム埋め込みの設定](designer-walkthrough-images/xs/21-custom-padding-m75-sml.png)](designer-walkthrough-images/xs/21-custom-padding-m75.png#lightbox)
 
-次に、2つ`LinearLayout` `TextView`のウィジェットを含むウィジェットの位置を調整します。 [**ドキュメントアウトライン**] で、 `linearLayout1`[] を選択します。 **プロパティ**ペインで、[**レイアウト**] タブを選択します。[ **ViewGroup** ] セクションまで下にスクロールし`Left`、、 `Right`、、 `Bottom`およびの`5dp`余白`5dp`を`0dp` `5dp`それぞれ、、、、に設定`Top`します。
+次に、2つ`LinearLayout` `TextView`のウィジェットを含むウィジェットの位置を調整します。 **[ドキュメントアウトライン]** で、 `linearLayout1`[] を選択します。 **プロパティ**ペインで、 **[レイアウト]** タブを選択します。 **[ViewGroup]** セクションまで下にスクロールし`Left`、、 `Right`、、 `Bottom`およびの`5dp`余白`5dp`を`0dp` `5dp`それぞれ、、、、に設定`Top`します。
 
 [![余白の設定](designer-walkthrough-images/xs/22-margins-m75-sml.png)](designer-walkthrough-images/xs/22-margins-m75.png#lightbox)
 
@@ -399,7 +391,7 @@ Visual Studio for Mac で、**ソリューション**パッドの [**リソー�
 
 1. `ImageView`を選択します。
 
-2. [**プロパティ**] の下にある [**ウィジェット**] タブをクリックします。
+2. **[プロパティ]** の下にある **[ウィジェット]** タブをクリックします。
 
 3. 設定を`Src`オフにして、空白にします。
 
@@ -528,7 +520,6 @@ namespace DesignerWalkthrough
 [![最終的なスクリーンショット](designer-walkthrough-images/xs/26-final-screenshot-sml.png)](designer-walkthrough-images/xs/26-final-screenshot.png#lightbox)
 
 -----
-
 
 ## <a name="summary"></a>Summary
 

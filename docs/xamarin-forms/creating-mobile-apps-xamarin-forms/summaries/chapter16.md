@@ -1,18 +1,18 @@
 ---
 title: 16 章の概要です。 データ バインディング
-description: Xamarin.Forms によるモバイル アプリの作成。16 章の概要です。 データ バインディング
+description: Xamarin を使用した Mobile Apps の作成:16 章の概要です。 データ バインディング
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: ED997DB0-C229-4868-A5FB-928703B377D6
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2018
-ms.openlocfilehash: df3cee3fe71553b63bf4b050cad141b66ad98a06
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 2d61413fb1d8c28a3957da53601d0ad682f35518
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61334201"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771098"
 ---
 # <a name="summary-of-chapter-16-data-binding"></a>16 章の概要です。 データ バインディング
 
@@ -138,8 +138,6 @@ ms.locfileid: "61334201"
 代わりに、 [ `NewCheckBox.cs.xaml` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/NewCheckBox.xaml)ファイルがデータ バインドを使用で、コントロールのビジュアルのすべてのマークアップを含む、`Label`分離コード ファイルで定義されたプロパティに基づいて要素。
 
 [ **NewCheckBoxDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/NewCheckBoxDemo)サンプルでは、`NewCheckBox`カスタム コントロール。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

@@ -1,51 +1,49 @@
 ---
-title: エミュレーターで Android Wear をデバッグします。
-description: これらの記事では、エミュレーターで Xamarin.Android Wear アプリケーションをデバッグする方法について説明します。
+title: エミュレーターで Android の磨耗をデバッグする
+description: これらの記事では、エミュレーターで Xamarin. Android の磨耗アプリケーションをデバッグする方法について説明します。
 ms.prod: xamarin
 ms.assetid: 225684B2-3122-4E3B-A028-A3A400976D31
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/21/2018
-ms.openlocfilehash: 699fb3cc3a5730e8ab2c677feb7cdfbdcf106aeb
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: f085aaffbedb2965222b98a22cf6a4bb2393642b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61308278"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70764036"
 ---
-# <a name="debug-android-wear-on-an-emulator"></a>エミュレーターで Android Wear をデバッグします。
+# <a name="debug-android-wear-on-an-emulator"></a>エミュレーターで Android の磨耗をデバッグする
 
-_これらの記事では、エミュレーターで Xamarin.Android Wear アプリケーションをデバッグする方法について説明します。_
+_これらの記事では、エミュレーターで Xamarin. Android の磨耗アプリケーションをデバッグする方法について説明します。_
 
-## <a name="debug-wear-on-emulator-overview"></a>Wear Emulator の概要でのデバッグします。
+## <a name="debug-wear-on-emulator-overview"></a>エミュレーターのデバッグ磨耗の概要
 
-Android Wear のアプリケーションの開発には、物理ハードウェア上でアプリケーションを実行して、または、エミュレーターまたはシミュレーターを使用する必要があります。 ハードウェアを使用するのが最適な方法ですが、常に実用的というわけではありません。 多くの場合でより簡単かつコスト効率、以下に示すようにエミュレーターを使用して Android Wear のハードウェアをシミュレートまたはエミュレートがあります。 ない場合の展開および実行するプロセスに詳しく Android Wear アプリを参照してください[こんにちは、Wear](~/android/wear/get-started/hello-wear.md)します。
+Android の磨耗アプリケーションを開発するには、物理ハードウェア上で、またはエミュレーターまたはシミュレーターを使用して、アプリケーションを実行する必要があります。 ハードウェアを使用するのが最適な方法ですが、常に実用的というわけではありません。 多くの場合、以下に示すエミュレーターを使用して Android の磨耗ハードウェアをシミュレート/エミュレートすることで、より簡単かつコスト効率が向上します。 Android の摩耗アプリの展開と実行のプロセスにまだ慣れていない場合は、「 [Hello, 磨耗](~/android/wear/get-started/hello-wear.md)」を参照してください。
 
-## <a name="configure-the-android-emulator"></a>Android エミュレーターを構成します。
+## <a name="configure-the-android-emulator"></a>Android Emulator を構成する
 
-Wear アプリをエミュレーターで実行するには、は、Android SDK Android エミュレーターをインストールし、Android Wear 用に構成する必要があります。 全体的な Android SDK エミュレーターのインストールと構成については、次を参照してください。 [Android Emulator のセットアップ](~/android/get-started/installation/android-emulator/index.md)します。
+エミュレーターで摩耗アプリを実行するには、Android SDK Android Emulator をインストールし、Android 用の磨耗用に構成する必要があります。 Android SDK Emulator のインストールと構成に関する全体的な情報については、「 [Android Emulator セットアップ](~/android/get-started/installation/android-emulator/index.md)」を参照してください。
 
-Wear 仮想デバイスを作成するときに、Android Wear デバイス プロファイルを選択 (など**Android Wear の正方形**)。 パフォーマンスを向上させるには、使用、Wear **x86** CPU/ABI この例のように。
+摩耗仮想デバイスを作成するときに、Android の磨耗装置プロファイル (たとえば、 **android の磨耗四角**) を選択します。 パフォーマンスを向上させるには、次の例に示すように、磨耗**x86** CPU/ABI を使用します。
 
-[![Wear 仮想デバイスの構成の例](debug-on-emulator-images/01-wear-avd-example-sml.png)](debug-on-emulator-images/01-wear-avd-example.png#lightbox)
+[![磨耗仮想デバイス構成の例](debug-on-emulator-images/01-wear-avd-example-sml.png)](debug-on-emulator-images/01-wear-avd-example.png#lightbox)
 
+## <a name="launch-the-wear-virtual-device"></a>摩耗仮想デバイスを起動する 
 
-## <a name="launch-the-wear-virtual-device"></a>Wear 仮想デバイスを起動します。 
+Android の磨耗仮想デバイスを作成した後は、デバッグを開始する前に、IDE の [デバイス] プルダウンメニューから選択できます。 仮想デバイスがデバイスのプルダウンで利用できない場合は、プロジェクトが (Android アプリプロジェクトではなく) Android の*磨耗*アプリケーションプロジェクトであり、そのターゲット API レベルが仮想デバイスと同じ api レベルに設定されていることを確認します。 例えば:
 
-Android Wear の仮想デバイスを作成した後に選択できますが、IDE で、デバイス プルダウン メニューからデバッグを開始する前に。 仮想デバイスがデバイスのプルダウン メニューで利用できない場合は、プロジェクトが Android であることを確認*Wear*仮想デバイスとレベルのアプリのプロジェクト (Android アプリ プロジェクトされません) と同じ API にそのターゲット API レベルが設定されています。 例えば:
+[![Visual Studio デバイスメニューでの磨耗 AVD の選択](debug-on-emulator-images/vs/choose-wear-sim.png)](debug-on-emulator-images/vs/choose-wear-sim.png#lightbox)
 
-[![Visual Studio メニューでデバイスを着用 AVD を選択します。](debug-on-emulator-images/vs/choose-wear-sim.png)](debug-on-emulator-images/vs/choose-wear-sim.png#lightbox)
+Android エミュレーターが起動すると、Xamarin Android によって、アプリがエミュレーターに展開されます。 エミュレーターは、構成済みの仮想デバイス イメージを使用してアプリを実行します。
 
-Android エミュレーターが開始されると、Xamarin.Android はエミュレーターに Wear アプリを展開します。 エミュレーターは、構成済みの仮想デバイス イメージを使用してアプリを実行します。
+この (または他のスポット画面) が最初に表示された場合は、驚くことはありません。 Watch emulator の起動には時間がかかることがあります。 
 
-これを表示する場合も驚かないでください (または別のスポット画面) 最初。 ウォッチ エミュレーターが起動にかかる可能性があります。 
-
-![エミュレーターは、わずか 1 分を表示を見る.](debug-on-emulator-images/please-wait.png)
+![Watch emulator が1分で表示されます...](debug-on-emulator-images/please-wait.png)
 
 エミュレーターは実行したままでかまいません。アプリが実行されるたびにシャットダウンして再起動する必要はありません。
 
- 
 ## <a name="summary"></a>まとめ
- 
-このガイドでは、Wear 開発用の Android エミュレーターを構成して、デバッグ用 Wear 仮想デバイスを起動する方法について説明します。
+
+このガイドでは、磨耗開発用の Android Emulator を構成し、デバッグ用の磨耗仮想デバイスを起動する方法について説明しました。

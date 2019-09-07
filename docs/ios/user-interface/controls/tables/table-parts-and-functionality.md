@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: edc5ec51499116fc2fabeb03327b32a689dc0c49
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 158b3575589df5854a32e95ec80c6ef02d21e661
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70279336"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768353"
 ---
 # <a name="table-parts-and-functionality-in-xamarinios"></a>Xamarin. iOS のテーブルパーツと機能
 
@@ -67,7 +67,6 @@ UITableView は、"グループ化" または "plain" スタイルを持つこ�
 - 新しいセルの挿入 (アニメーションあり)。
 
 このドキュメントの残りの部分では、これらすべての UITableView 機能を Xamarin. iOS で実装する方法について説明します。
-
 
 ## <a name="classes-overview"></a>クラスの概要
 

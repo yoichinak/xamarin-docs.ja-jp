@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 07/26/2018
-ms.openlocfilehash: b3968f211ff5445e8b704bbd7897f4c46ecc2be9
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: e0bf9ec1553e6638398695157a11242b9885b168
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292592"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768097"
 ---
 # <a name="working-with-watchos-icons-in-xamarin"></a>Xamarin での watchOS アイコンの使用
 
@@ -82,7 +82,6 @@ Ios アプリのアイコンが正しく構成されていることを確認す�
 
 > [!NOTE]
 > アイコンにはアルファチャネルを含めることができません (アルファチャネルが存在する場合、アプリストアの送信中にアプリは拒否されます)。 [Mac OS X のプレビューアプリを使用して](~/ios/watchos/troubleshooting.md#noalpha)、アルファチャネルが存在するかどうかを確認し、削除することができます。
-
 
 ## <a name="related-links"></a>関連リンク
 

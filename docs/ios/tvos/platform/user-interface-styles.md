@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 4df67221c367386cddd485fcd1853523d77158e0
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 89756d5b897b39dd0cf45074474189a4a0a8ada8
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290679"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769986"
 ---
 # <a name="tvos-user-interface-styles-in-xamarin"></a>Xamarin の tvOS ユーザーインターフェイススタイル
 
@@ -101,9 +101,6 @@ TvOS 10 アプリで明るいテーマとダークテーマをサポートする
 
 > [!IMPORTANT]
 > TvOS 10 の tvOS 早期プレビューでは、まだを完全`UIUserInterfaceStyle`に`UITraitCollection`サポートしていません。 完全なサポートは、今後のリリースで追加される予定です。
-
-
-
 
 <a name="Customizing-Appearance-Based-on-Theme" />
 
@@ -209,8 +206,6 @@ Interface Builder で tvOS Storyboard を編集するときに、Apple は次の
 ## <a name="summary"></a>Summary
 
 この記事では、Apple が tvOS 10 に追加した軽量の UI テーマと、tvOS アプリでそれらを実装する方法について説明しました。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

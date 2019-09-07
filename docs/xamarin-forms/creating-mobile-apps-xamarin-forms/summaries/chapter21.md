@@ -1,18 +1,18 @@
 ---
 title: 第 21 章の概要です。 変換
-description: Xamarin.Forms によるモバイル アプリの作成。第 21 章の概要です。 変換
+description: Xamarin を使用した Mobile Apps の作成:第 21 章の概要です。 変換
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 3642F112-C7FA-4A74-9000-F9087BA89AD9
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 313348952b87d94db63d1682f8e1b9413d56714d
-ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
+ms.openlocfilehash: 40c091d0c5042d172108709f89774e41e9339d4b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67513016"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760577"
 ---
 # <a name="summary-of-chapter-21-transforms"></a>第 21 章の概要です。 変換
 
@@ -122,8 +122,6 @@ Ios での既定以外の値を使用して`AnchorX`と`AnchorY`プロパティ�
 Xamarin.Forms で暗黙的に指定する 3D 座標系は、左手座標系です。 ポイントした場合は、(右) に増加の X 方向に左手の人差し指を調整し、中指を Y の増加方向には、(ダウン)、Z 座標 (画面) 外を増加させる方向で、thumb ポイントし、調整します。
 
 また、3 つの軸のいずれかの値を増加させる方向で、左側の親指をポイントする場合、指の曲線方向を示します正の回転角度の回転の。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

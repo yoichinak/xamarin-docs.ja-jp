@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 94ab5ca9fa34487457b93758dfac0ab514e702c8
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 2091e710352b25167b740e409955787ffec99e1c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286286"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768956"
 ---
 # <a name="annotations-and-overlays-in-xamarinios"></a>Xamarin. iOS の注釈とオーバーレイ
 
@@ -25,7 +25,6 @@ ms.locfileid: "70286286"
 まず、新しい IOS の空の**プロジェクト**を作成し、関連する名前を付けます。 まず、ビューコントローラーに MapView を表示するコードを追加し、Mapview の新しいクラスとカスタム注釈を作成します。 以下の手順でビルドします。
 
 ## <a name="viewcontroller"></a>ViewController
-
 
 1. に次の名前空間を`ViewController`追加します。
 
@@ -110,9 +109,7 @@ ms.locfileid: "70286286"
 
     `Maps Walkthrough Docs Sample`。
 
-
 ## <a name="conferenceannotationcs--a-class-for-custom-annotations"></a>ConferenceAnnotation.cs –カスタム注釈のクラス
-
 
 1. ここでは、という`ConferenceAnnotation`注釈にカスタムクラスを使用します。 次のクラスをプロジェクトに追加します。
 
@@ -180,7 +177,6 @@ ms.locfileid: "70286286"
     ```
 
 これにより、の`ViewDidLoad`コードが完成します。 ここで、注釈とオーバーレイ`MapDelegate`ビューの作成をそれぞれ処理するクラスを実装する必要があります。
-
 
 ## <a name="mapdelegate"></a>MapDelegate
 
@@ -287,7 +283,6 @@ ms.locfileid: "70286286"
 ## <a name="summary"></a>Summary
 
 この記事では、マップに注釈を追加する方法と、指定した多角形のオーバーレイを追加する方法について説明しました。 また、注釈にタッチサポートを追加して、マップ上でイメージをアニメーション化する方法についても説明します。
-
 
 ## <a name="related-links"></a>関連リンク
 

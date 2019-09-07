@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 01/03/2018
-ms.openlocfilehash: 7c98686a1aa99e250b3fd1d0fcc6ae64d625a11f
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: e6c5f6e19599624899f74b99dcaaae734d098b3a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522410"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70764207"
 ---
 # <a name="recyclerview"></a>RecyclerView
 
@@ -33,7 +33,6 @@ _RecyclerView は、コレクションを表示するためのビューグルー
 
 このガイドでは、xamarin `RecyclerView` android アプリケーションでを使用する方法について説明し`RecyclerView`ます。このガイドでは、xamarin android プロジェクトにパッケージ`RecyclerView`を追加する方法について説明し、一般的なアプリケーションの機能について説明します。 実際のコード例を使用すると、アプリケーションに`RecyclerView`統合する方法、項目ビューのクリックを実装する方法、基になる`RecyclerView`データが変更されたときに更新する方法を示すことができます。 このガイドでは、Xamarin Android の開発について理解していることを前提としています。
 
-
 ### <a name="requirements"></a>必要条件
 
 は多くの場合 android 5.0 ロリポップに関連付けられていますが&ndash; 、サポートライブラリ`RecyclerView`として提供されており、API レベル 7 (android 2.1) 以降を対象とするアプリで動作します。 `RecyclerView` Xamarin ベースのアプリケーションでを`RecyclerView`使用するには、次のものが必要です。
@@ -41,7 +40,6 @@ _RecyclerView は、コレクションを表示するためのビューグルー
 - **Xamarin android** &ndash; 4.20 以降をインストールして、Visual Studio または Visual Studio for Mac で構成する必要があります。
 
 - アプリプロジェクトには、 **v7**パッケージが含まれている必要があります。 NuGet パッケージのインストールの詳細について[は、「チュートリアル:プロジェクト](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)に NuGet を含めます。
-
 
 ### <a name="overview"></a>概要
 
@@ -60,7 +58,6 @@ _RecyclerView は、コレクションを表示するためのビューグルー
 
 - `RecyclerView`には、項目の追加と削除のための組み込みアニメーションが含まれています。 `ListView`アニメーションでは、アプリ開発者の一部に対して追加の作業が必要になります。
 
-
 ### <a name="sections"></a>セクション
 
 #### <a name="recyclerview-parts-and-functionalityandroiduser-interfacelayoutsrecycler-viewparts-and-functionalitymd"></a>[RecyclerView のパーツと機能](~/android/user-interface/layouts/recycler-view/parts-and-functionality.md)
@@ -76,13 +73,11 @@ _RecyclerView は、コレクションを表示するためのビューグルー
 
 このトピックでは、[基本的な RecyclerView の例](~/android/user-interface/layouts/recycler-view/recyclerview-example.md)に示されているサンプルアプリにコードを追加して、項目クリック`RecyclerView`イベントを処理し、基になるデータソースが変更されたときに更新する方法を示します。
 
-
 ### <a name="summary"></a>まとめ
 
 このガイドでは、 `RecyclerView` android ウィジェットについて説明し`RecyclerView`ました。これは、Xamarin android プロジェクト`RecyclerView`にサポートライブラリを追加する方法、ビューを再利用する方法、効率のためにビューホルダーパターンを適用する方法、およびさまざまな方法について説明しました。コレクションを表示するため`RecyclerView`に共同作業を行うヘルパークラス。 ここでは、をアプリケーションに`RecyclerView`統合する方法を示すコード例を紹介し、 `RecyclerView`さまざまなレイアウトマネージャーをプラグインしてレイアウトポリシーを調整する方法について説明し、項目クリックイベントを処理して通知`RecyclerView`する方法について説明しました。データソースの変更。
 
 の詳細`RecyclerView`については、 [RecyclerView クラスのリファレンス](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.html)を参照してください。
-
 
 ## <a name="related-links"></a>関連リンク
 

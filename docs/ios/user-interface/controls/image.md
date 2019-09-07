@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 07/13/2018
-ms.openlocfilehash: 191d037d12d27e2c6ab475467853023f440c71d4
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 255f308078c892605b9ce20b17fd737c5582eaed
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291362"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768990"
 ---
 # <a name="displaying-images-with-xamarinios"></a>Xamarin を使用したイメージの表示
 
@@ -50,7 +50,6 @@ Visual Studio for Mac は通常、適切な**ビルドアクション**を自動
 
 - 既定のスタートアップイメージやアプリケーションアイコンなど、アプリケーションのプロパティで構成されたイメージを格納する。
 - 他のイメージやファイルをコードとは別に格納すると、管理が容易になります (リソースディレクトリの内容がコピーされるときにサブディレクトリが保持されます)。
-
 
 **リソース**ディレクトリは、ライブラリプロジェクトで特に便利です。コードでは、それらのイメージが使用中のアプリケーションのルートにコピーされることを想定して、イメージ、サウンド、ビデオ、XML を必要とする共有コードライブラリを作成しやすくするためです。その他のファイル。
 

@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/13/2018
-ms.openlocfilehash: f8a542b58fa891b63f43d1c87dea911b83e01949
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: e3b7ccf74773e5a391b8f133ccc241ca0e18bfcb
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509317"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755156"
 ---
 # <a name="using-android-assets"></a>Android アセットの使用
 
@@ -19,7 +19,6 @@ _アセット_を使用すると、テキスト、xml、フォント、音楽、
 
 プロジェクトに追加されたアセットは、 [AssetManager](xref:Android.Content.Res.AssetManager)を使用してアプリケーションで読み取ることができるファイルシステムと同様に表示されます。
 この簡単なデモでは、プロジェクトにテキストファイル資産を追加し、を使用し`AssetManager`てそれを読み取って、TextView に表示します。
-
 
 ## <a name="add-asset-to-project"></a>プロジェクトへの資産の追加
 
@@ -40,7 +39,6 @@ Visual Studio for Mac は、このファイルの**ビルドアクション**を
 -----
 
 適切な**BuildAction**を選択すると、コンパイル時にファイルが apk にパッケージ化されるようになります。
-
 
 ## <a name="reading-assets"></a>アセットの読み取り
 
@@ -69,13 +67,11 @@ protected override void OnCreate (Bundle bundle)
 }
 ```
 
-
 ## <a name="running-the-application"></a>アプリケーションの実行
 
 アプリケーションを実行すると、次のように表示されます。
 
 ![スクリーンショットの例](android-assets-images/screenshot.png)
-
 
 ## <a name="related-links"></a>関連リンク
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 01/18/2017
-ms.openlocfilehash: 22c3217eec1b2e531ad4534fc1cb35a701a06e34
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: a9d239140cee9eb600414a1bfb0733c9af6488bc
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524079"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761424"
 ---
 # <a name="java-integration-with-xamarinandroid"></a>Java と Xamarin Android の統合
 
@@ -38,12 +38,9 @@ JNI を使用する2番目の手法は、はるかに低いレベルで動作し
 
 3番目の手法は、前の2つの手法 (Java からへC#のコードの移植) とは大きく異なります。 ある言語から別の言語へのコードの移植は非常に手間のかかるプロセスですが、*シャープ*と呼ばれるツールを使用すると、その作業を減らすことができます。 シャープは、Java からC#コンバーターのオープンソースツールです。 
 
-
-
 ## <a name="summary"></a>Summary
 
 このドキュメントでは、Java からのライブラリを Xamarin Android アプリケーションで再利用するさまざまな方法の概要を説明しました。 ここでは、バインディングとマネージ呼び出し可能ラッパーの概念と、Java コードをに移植C#するためのオプションについて説明しました。 
-
 
 ## <a name="related-links"></a>関連リンク
 

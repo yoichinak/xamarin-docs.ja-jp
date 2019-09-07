@@ -7,17 +7,16 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 57aab95e29911722fc3ad4a56c5486218e07242d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: f5a2b17491b026e08abf2262a998576cbb4356c5
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292848"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767829"
 ---
 # <a name="watchos-workout-apps-in-xamarin"></a>Xamarin での watchOS のトレーニングアプリ
 
 _この記事では、watchOS 3 でのアプリのトレーニングと Xamarin での実装方法について、Apple が行った機能強化について説明します。_
-
 
 WatchOS 3 の新機能であるトレーニング関連のアプリには、Apple Watch のバックグラウンドで実行し、HealthKit データにアクセスできるようになりました。 また、その親 iOS 10 ベースのアプリには、ユーザーの介入なしに watchOS 3 ベースのアプリを起動する機能もあります。
 
@@ -188,7 +187,6 @@ namespace MonkeyWorkout.MWWatchExtension
     {
       if (this.Failed != null) this.Failed ();
     }
-
 
     public event OutdoorRunEventDelegate Paused;
     internal void RaisePaused ()
@@ -614,7 +612,6 @@ public HKHealthStore HealthStore { get; private set; }
 public List<HKSample> WorkoutSamples { get; set; } = new List<HKSample> ();
 ...
 
-
 private void SaveWorkoutSamples (HKWorkout workout)
 {
   // Add samples to saved workout
@@ -715,7 +712,6 @@ public OutdoorRunDelegate RunDelegate { get; set; }
 #endregion
 ...
 
-
 public override void HandleWorkoutConfiguration (HKWorkoutConfiguration workoutConfiguration)
 {
   // Create workout session
@@ -765,8 +761,6 @@ public override void HandleWorkoutConfiguration (HKWorkoutConfiguration workoutC
 
 > [!IMPORTANT]
 > 次のセクションに示すコードには、watchOS 3 のトレーニングアプリに用意されている新しい拡張機能を実装するために必要な部分のみが含まれています。 UI を表示および更新するためのすべてのサポートコードとコードは含まれていませんが、他の watchOS のドキュメントに従って簡単に作成できます。<p/>
-
-
 
 ### <a name="viewcontrollercs"></a>ViewController.cs
 
@@ -1209,7 +1203,6 @@ namespace MonkeyWorkout.MWWatchExtension
       if (this.Failed != null) this.Failed ();
     }
 
-
     public event OutdoorRunEventDelegate Paused;
     internal void RaisePaused ()
     {
@@ -1257,8 +1250,6 @@ Apple では、watchOS 3 および iOS 10 でトレーニングアプリを設�
 ## <a name="summary"></a>Summary
 
 この記事では、watchOS 3 でのアプリのトレーニングと Xamarin での実装方法について、Apple が行った機能強化について説明しました。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

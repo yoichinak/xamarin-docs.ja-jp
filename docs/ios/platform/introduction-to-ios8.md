@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/14/2017
-ms.openlocfilehash: 1b3c1af480db2c5642ef0b16aed795d2bb43290f
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 713e433f852f3bafc13b3ac32074c574d12ef7f1
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292390"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752011"
 ---
 # <a name="introduction-to-ios-8"></a>iOS 8 の概要
 
@@ -49,7 +49,7 @@ IPhone からアプライアンスを制御することは、新しいテクノ�
 次の図は、ホームキットのアクセサリの構成の基本階層を示しています。
 
 ![](introduction-to-ios8-images/image1.png "この図は、ホームキットのアクセサリの構成の基本階層を示しています。")
- 
+
 ホームキットの使用を開始するには、開発者は、プロビジョニングプロファイルに [ホームキット] サービスが選択されていることを確認する必要があります。 Apple では、Xcode 用のホームキットシミュレーターアドインも開発者に提供しています。 これは、 [Apple Developer Center](https://developer.apple.com/downloads/index.action)のの下`Hardware IO Tools for Xcode`にあります。 
 
 詳細については、「[ホームキット](~/ios/platform/homekit.md)ガイド」を参照してください。
@@ -71,7 +71,7 @@ IOS8 を使用すると、開発者は、アプリを使用できるユーザー
 **[新しいプロジェクト]** ダイアログで、 **C#**  > 次のスクリーンショットに示すように、 **iOS** > **Unified API** > の**拡張機能**に移動します。
 
 ![](introduction-to-ios8-images/image2.png "新しい拡張機能の作成")
- 
+
 [新しいプロジェクト] ダイアログには、アプリ拡張機能を作成するための7つの新しいプロジェクトテンプレートが用意されています。次に説明します。 拡張機能の多くは、iOS の他の新しい Api (ドキュメントピッカーなど) に関連しています。
 
 - **アクション**–開発者は、ユーザーが特定のタスクを実行できるように、独自のカスタムアクションボタンを作成できます。
@@ -122,7 +122,7 @@ IOS8 より前の開発者`UIInterfaceOrientation`は、縦モードと横モー
 2つの概念が一緒に使用されている場合は、次の図に示すように、異なる向きの両方で使用できるさまざまなサイズを定義する2つの x 2 グリッドが生成されます。
 
 ![](introduction-to-ios8-images/image3.png "異なる向きの両方で使用できるさまざまなサイズを定義する 2 x 2 グリッドを表す図")
- 
+
 サイズクラスの詳細については、「[統合ストーリーボードの概要](~/ios/user-interface/storyboards/unified-storyboards.md)」を参照してください。
 
 ## <a name="photo-kit"></a>フォトキット
@@ -163,8 +163,6 @@ IOS 8 で加えられたすべての機能強化により、いくつかの Api 
 
 ## <a name="summary"></a>Summary
 この記事では、iOS 8 で Apple によって導入された新機能について説明しました。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

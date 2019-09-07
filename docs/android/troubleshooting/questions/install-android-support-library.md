@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: a43a2ed4498be76a99ab4b6b54d3048f2f80af5c
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: 107fcd39a64ef1d7758d211ab47a07e1ece52f4e
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69887657"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70757239"
 ---
 # <a name="how-can-i-manually-install-the-android-support-libraries-required-by-the-xamarinandroidsupport-packages"></a>Xamarin.Android.Support パッケージに必要な Android サポート ライブラリを手動でインストールする方法を教えてください
 
@@ -127,7 +127,6 @@ Optionalファイルをに解凍します。
 
 -----
 
-
 ## <a name="additional-references"></a>その他の参照情報
 
 - [バグ 43245](https://bugzilla.xamarin.com/show_bug.cgi?id=43245) -正しくない "ダウンロードに失敗しました。 ダウンロード{0}して{1}ディレクトリに配置してください。 " "SDK インストーラーで利用可能な{0}パッケージ: ' ' をインストールしてください" というエラーメッセージが表示されます。サポートパッケージ
@@ -137,4 +136,3 @@ Optionalファイルをに解凍します。
 このドキュメントでは、2016年8月時点の現在の動作について説明します。 このドキュメントで説明されている手法は、Xamarin の安定したテストスイートの一部ではないため、将来中断する可能性があります。
 
 詳細については、お問い合わせください。または、上記の情報を利用した後もこの問題が発生する場合は、「 [Xamarin で使用できるサポートオプション](~/cross-platform/troubleshooting/support-options.md)」を参照してください。連絡先オプション、提案、および必要に応じて新しいバグをファイルに登録する方法については、こちらを参照してください.
-

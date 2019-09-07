@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 10/11/2016
-ms.openlocfilehash: 9cd93a94361c11ecaa454a804e58180a33ec08fe
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 9441596cd457c3cc3a881e5db319ec3bbfc5a312
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290943"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766858"
 ---
 # <a name="using-data-in-an-ios-app"></a>IOS アプリでのデータの使用
 
@@ -37,7 +37,6 @@ UI コントロールの詳細については、「 [iOS のテーブルとセ�
 
 - リストを読み取っています
 - 個々のレコードの読み取り
-
 
 `StockDatabase`クラスの2つのメソッドは次のとおりです。
 
@@ -77,8 +76,6 @@ public int SaveStock (Stock item)
 }
 ```
 
-
-
 実際のアプリケーションでは、通常、いくつかの検証 (必須フィールド、最小長などのビジネスルール) が必要になります。
 優れたクロスプラットフォームアプリケーションでは、共有コードで可能な限り多くの検証論理を実装し、検証エラーをプラットフォームの機能に従って UI に渡すことができます。
 
@@ -104,7 +101,6 @@ public int DeleteStock(Stock stock)
 - **SQLite Manager Firefox Extension** – Mac および Windows で動作し、IOS および Android と互換性のあるファイルを生成します。
 - **コマンドライン**–「 [Www.sqlite.org/sqlite.html](http://www.sqlite.org/sqlite.html) 」を参照してください。
 
-
 アプリケーションと共に配布するデータベースファイルを作成する場合は、テーブルと列の名前付けを使用して、コードが期待するものと一致することを確認します。特に、SQLite.NET C#を使用していて、名前がクラスやプロパティと一致することを期待する場合は特に、または、関連付けられているカスタム属性)。
 
 IOS の場合は、アプリケーションに sqlite ファイルを含め、ビルドアクションで**マークされていることを確認します。コンテンツ**。 データメソッドを呼び出す`FinishedLaunching` *前に*、ファイルを書き込み可能なディレクトリにコピーするコードをに配置します。 次のコードでは、 **data. sqlite**という名前の既存のデータベースがまだ存在しない場合にのみコピーします。
@@ -120,7 +116,6 @@ if (!File.Exists (Database.DatabaseFilePath))
 ```
 
 この完了後に実行されるデータアクセスコード (ADO.NET または using SQLite.NET) は、事前に設定されたデータにアクセスできます。
-
 
 ## <a name="related-links"></a>関連リンク
 

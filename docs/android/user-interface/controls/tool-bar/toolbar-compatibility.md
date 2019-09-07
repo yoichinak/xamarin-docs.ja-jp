@@ -6,15 +6,14 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: 31602b14179691d13d8058c90cf20a6f7f667124
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: f8dcda63c97c15367157b6a6cb857c0bfef79a27
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522824"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70764586"
 ---
 # <a name="toolbar-compatibility"></a>ツール バーの互換性
-
 
 ## <a name="overview"></a>概要
 
@@ -34,14 +33,11 @@ AppCompat バージョンのツールバーを使用するようにアプリを�
 
 これらの各手順の詳細については、次のセクションで説明します。
 
-
-
 ## <a name="set-the-minimum-and-target-android-version"></a>Android の最小バージョンとターゲットを設定する
 
 アプリのターゲットフレームワークは、API レベル21以上に設定する必要があります。それ以外の場合、アプリは適切にデプロイされません。 アプリのデプロイ中に、**パッケージ ' tileModeX ' の属性 ' ' にリソース識別子が見つからない**などのエラーが表示された場合、これは、ターゲットフレームワークが**ANDROID 5.0 (API レベル 21-ロリポップ)** 以上に設定されていないことが原因です。 
 
 ターゲットフレームワークレベルを API レベル21以上に設定し、Android API レベルのプロジェクト設定を、アプリがサポートする最小の Android バージョンに設定します。 Android API レベルの設定の詳細については、「 [ANDROID Api レベル](~/android/app-fundamentals/android-api-levels.md)について」を参照してください。 `ToolbarFun`この例では、Android の最小バージョンは KitKat (API レベル 4.4) に設定されています。 
-
 
 ## <a name="install-the-appcompat-nuget-package"></a>AppCompat NuGet パッケージをインストールする
 
@@ -49,13 +45,11 @@ AppCompat バージョンのツールバーを使用するようにアプリを�
 
 [![NuGet パッケージの管理」で選択した V7 Appcompat パッケージのスクリーンショット](toolbar-compatibility-images/01-appcompat-nuget-sml.png)](toolbar-compatibility-images/01-appcompat-nuget.png#lightbox)
 
-この NuGet がインストールされている場合は、他のいくつかの NuGet パッケージがまだ存在していない場合にもインストールされます( **xamarin** **.....................................Xamarin. Android**... Vector. NuGet パッケージのインストールの詳細について[は、「チュートリアル:プロジェクト](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)に NuGet を含めます。 
-
+この NuGet がインストールされている場合は、他のいくつかの NuGet パッケージがまだ存在していない**場合にも**インストールされます ( **xamarin** **.....................................Xamarin. Android**... Vector. NuGet パッケージのインストールの詳細について[は、「チュートリアル:プロジェクト](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)に NuGet を含めます。 
 
 ## <a name="use-an-appcompat-theme-and-toolbar"></a>AppCompat テーマとツールバーを使用する
 
 Appcompat ライブラリには、appcompat `Theme.AppCompat`ライブラリでサポートされているすべてのバージョンの Android で使用できるテーマがいくつか付属しています。 サンプル`ToolbarFun`アプリのテーマはから`Theme.Material.Light.DarkActionBar`派生しています。これは、ロリポップより前の Android バージョンでは使用できません。 したがって`ToolbarFun` 、この`Theme.AppCompat.Light.DarkActionBar`テーマに対応する AppCompat を使用するには、を適合させる必要があります。 また、は`Toolbar`ロリポップより前のバージョンの Android では使用できないため、の`Toolbar`AppCompat バージョンを使用する必要があります。 したがって、レイアウトで`android.support.v7.widget.Toolbar`は、 `Toolbar`の代わりにを使用する必要があります。 
-
 
 ### <a name="update-layouts"></a>レイアウトの更新
 
@@ -86,7 +80,6 @@ Appcompat ライブラリには、appcompat `Theme.AppCompat`ライブラリで�
 
 値の`?attr`前にプレフィックスが付け`android:`られていないこと`?`に注意してください (記法は、現在のテーマのリソースを参照していることを思い出してください)。 ここ`?android:attr`でがまだ使用されている場合、Android は、AppCompat ライブラリからではなく、現在実行中のプラットフォームから属性値を参照します。 この例では、 `actionBarSize` AppCompat ライブラリ`android:`によって定義されたを使用しているため、プレフィックスは削除されます。 同様に`@android:style` 、はに`@style`変更され`android:theme` 、属性が AppCompat `ThemeOverlay.Material.Dark.ActionBar`ライブラリ&ndash;のテーマ`ThemeOverlay.AppCompat.Dark.ActionBar`に設定されるようになりました。これは、ではなく、ここでテーマが使用されるようにするためです。 
 
-
 ### <a name="update-the-style"></a>スタイルを更新する
 
 **Resources/values/styles .xml**を編集し、その内容を次の xml に置き換えます。 
@@ -105,8 +98,6 @@ Appcompat ライブラリには、appcompat `Theme.AppCompat`ライブラリで�
 ```
 
 この例の項目名と親テーマには、AppCompat ライブラリを`android:`使用しているため、プレフィックスが付けられなくなりました。 また、親テーマは、の`Light.DarkActionBar`AppCompat バージョンに変更されます。 
-
-
 
 ### <a name="update-menus"></a>メニューの更新
 
@@ -173,7 +164,6 @@ local:showAsAction="ifRoom"
 
 API レベル11より前のバージョンの Android `showAsAction`では、この名前空間スイッチで属性をどのようにサポートしていますか? AppCompat NuGet を`showAsAction`インストールすると、カスタム属性と使用可能なすべての値がアプリに含まれます。 
 
-
 ## <a name="subclass-appcompatactivity"></a>サブクラス AppCompatActivity
 
 変換の最後の手順は、の`MainActivity` `AppCompactActivity`サブクラスになるようにを変更することです。 **MainActivity.cs**を編集し、次`using`のステートメントを追加します。 
@@ -203,9 +193,6 @@ SupportActionBar.Title = "My AppCompat Toolbar";
 [![KitKat デバイスで実行されているアプリの完全なスクリーンショット。両方のツールバーが表示されます。](toolbar-compatibility-images/02-running-on-kitkat-sml.png)](toolbar-compatibility-images/02-running-on-kitkat.png#lightbox)
 
 Appcompat ライブラリが使用されている場合、android のバージョン&ndash;に基づいてテーマを切り替える必要はありません。 appcompat ライブラリにより、サポートされているすべての Android バージョンで一貫したユーザーエクスペリエンスを実現できます。 
-
-
-
 
 ## <a name="related-links"></a>関連リンク
 

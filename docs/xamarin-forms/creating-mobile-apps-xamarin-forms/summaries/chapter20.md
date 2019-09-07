@@ -1,18 +1,18 @@
 ---
 title: 第 20 章の概要です。 非同期およびファイル I/O
-description: Xamarin.Forms によるモバイル アプリの作成。第 20 章の概要です。 非同期およびファイル I/O
+description: Xamarin を使用した Mobile Apps の作成:第 20 章の概要です。 非同期およびファイル I/O
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: D595862D-64FD-4C0D-B0AD-C1F440564247
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2018
-ms.openlocfilehash: cf870cebfdd29e679b767728d1bea723f9310b17
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 283273e6ee28cc5cd1a61169f38bfcd1dd1726d8
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67650466"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771040"
 ---
 # <a name="summary-of-chapter-20-async-and-file-io"></a>第 20 章の概要です。 非同期およびファイル I/O
 
@@ -166,8 +166,6 @@ Windows ランタイムで実行されるプログラム クラスを使用し�
 ## <a name="back-to-the-web"></a>Web に戻る
 
 [ `WebRequest` ](xref:System.Net.WebRequest)一部のサンプルで使用されるクラスは、非同期プログラミング モデル、または APM と呼ばれる昔ながらの非同期プロトコルを使用します。 このようなクラスのいずれかを使用して、最新のタップ プロトコルに変換できます、`FromAsync`メソッド、 [ `TaskFactory` ](xref:System.Threading.Tasks.TaskFactory`1)クラス。 [ **ApmToTap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/ApmToTap)のサンプルで例示します。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

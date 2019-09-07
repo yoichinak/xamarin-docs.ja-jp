@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 12/14/2016
-ms.openlocfilehash: c5527db543a0b0d5218c37f0d75e22afcd59297a
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 292734c0622ab35d5e48eec47593c3ffe4dc27e6
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70293145"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768690"
 ---
 # <a name="hello-watchos--walkthrough"></a>Hello, watchOS –チュートリアル
 
@@ -42,7 +42,6 @@ ms.locfileid: "70293145"
 
 Watch アプリで Xcode をダブルクリックして Xamarin iOS Designer を起動します (Mac を使用している場合は、右クリックして、 **> Interface Builder で開く**こともできます)
 
-
 1. **ツールボックス**と**プロパティ**パッドが表示されていることを確認します。
 1. インターフェイスコントローラーをクリックして選択します。
 1. インターフェイスコントローラーの識別子とタイトルを**interfaceController**と**Hi Watch**に設定します。
@@ -62,7 +61,6 @@ Visual Studio で Xamarin iOS Designer を使用して編集するには、Watch
     ![](hello-watch-images/vs-interfacecontrollerattributes.png "インターフェイスコントローラーの識別子とタイトルを interfaceController と Hi Watch に設定します。")
 
 -----
-
 
 UI を作成します。
 
@@ -154,7 +152,6 @@ partial void OnButtonPress (WatchKit.WKInterfaceButton sender)
 これで、ウォッチアプリを作成できました。
 
 ![](hello-watch-images/running.png "シミュレーターで実行されているアプリ")
-
 
 ## <a name="related-links"></a>関連リンク
 

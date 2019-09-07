@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: e934059f5428780ea19917068503b58961ac5673
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 51afbdf79248af6f76426dd0e0c862e506a0a22f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284180"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768782"
 ---
 # <a name="custom-controls-in-the-xamarin-designer-for-ios"></a>Xamarin Designer for iOS 内のカスタムコントロール
 
@@ -41,7 +41,6 @@ Xamarin Designer for iOS は、アプリケーションのユーザーインタ�
 1. プロパティには[Exportattribute](xref:Foundation.ExportAttribute)と[BrowsableAttribute](xref:System.ComponentModel.BrowsableAttribute)が True に設定されています。
 1. プロパティの型は、数値型、列挙型、文字列、ブール値、 [SizeF](xref:System.Drawing.SizeF)、 [UIColor](xref:UIKit.UIColor)、または[uiimage](xref:UIKit.UIImage)です。 サポートされている種類のこの一覧は、今後拡張される可能性があります。
 
-
 プロパティは[Displaynameattribute](xref:System.ComponentModel.DisplayNameAttribute)で修飾して、プロパティパネルに表示されるラベルを指定することもできます。
 
 ## <a name="initialization"></a>初期化
@@ -49,7 +48,6 @@ Xamarin Designer for iOS は、アプリケーションのユーザーインタ�
 サブ`UIViewController`クラスの場合は、デザイナーで作成したビューに依存するコードに[ViewDidLoad](xref:UIKit.UIViewController.ViewDidLoad)メソッドを使用する必要があります。
 
 および`UIView`その他`NSObject`のサブクラスの場合、 [AwakeFromNib](xref:Foundation.NSObject.AwakeFromNib)メソッドは、レイアウトファイルから読み込まれた後にカスタムコントロールの初期化を実行するために推奨される場所です。 これは、プロパティパネルで設定されたカスタムプロパティは、コントロールのコンストラクターの実行時には設定されませんが、 `AwakeFromNib`が呼び出される前に設定されるためです。
-
 
 ```csharp
 [Register ("CustomView"), DesignTimeVisible (true)]
@@ -131,7 +129,6 @@ public class CustomView : UIView {
 - メソッドが実行され、コンポーネントの`Initialize`メソッドが呼び出されます。 `AwakeFromNib`
 - プロパティの値の中`Initialize`で、ゼロ (0) にリセットされています。 `Counter`
 
-
 上記の状況を解決するには、 `Counter`プロパティを別の場所 (コンポーネントのコンストラクターなど) で初期化するか`AwakeFromNib` 、メソッドを`Initialize`オーバーライドしないで、コンポーネントがそれ以外の初期化を必要としない場合はを呼び出します。は現在、コンストラクターによって処理されています。
 
 ## <a name="design-mode"></a>デザインモード
@@ -140,7 +137,6 @@ public class CustomView : UIView {
 
 - アプリバンドルリソースはデザインモードでは使用できません。 画像は、 [uiimage メソッド](xref:UIKit.UIImage)を使用して読み込まれるときに使用できます。
 - Web 要求などの非同期操作は、デザインモードでは実行できません。 デザインサーフェイスでは、コントロールの UI に対するアニメーションまたはその他の非同期更新はサポートされていません。
-
 
 カスタムコントロールは[IComponent](xref:System.ComponentModel.IComponent)を実装し、 [designmode](xref:System.ComponentModel.ISite.DesignMode)プロパティを使用して、デザインサーフェイス上にあるかどうかを確認できます。 この例では、ラベルのデザイン画面に "デザインモード" が表示され、実行時には "Runtime" と表示されます。
 
