@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: c9980dff866a176d4a4a1f1f6bc1bd8c92bd7097
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 8fcedd4f7dca4527b37c6b83fbd205014cffcaaf
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280218"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769132"
 ---
 # <a name="working-with-tvos-collection-views-in-xamarin"></a>Xamarin での tvOS Collection ビューの使用
 
@@ -96,7 +96,6 @@ TvOS アプリでコレクションビューを操作する最も簡単な方法
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-    
 1. Visual Studio for Mac で新しい**単一ビュー TvOS アプリ**を開始します。
 1. **ソリューションエクスプローラー**で、 `Main.storyboard`ファイルをダブルクリックして、iOS Designer で開きます。
 1. イメージビュー、ラベル、ボタンを既存のビューに追加し、次のように構成します。 
@@ -132,11 +131,9 @@ TvOS アプリでコレクションビューを操作する最も簡単な方法
 
     [![](collection-views-images/collection11.png "Id を CityCell に設定します。")](collection-views-images/collection11.png#lightbox)
 1. 変更内容を保存します。
-    
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-    
 1. Visual Studio で新しい**単一ビュー TvOS アプリ**を開始します。
 1. **ソリューションエクスプローラー**で、 `Main.storyboard`ファイルをダブルクリックして、iOS Designer で開きます。
 1. イメージビュー、ラベル、ボタンを既存のビューに追加し、次のように構成します。 
@@ -170,7 +167,6 @@ TvOS アプリでコレクションビューを操作する最も簡単な方法
 
     [![](collection-views-images/collection11vs.png "Id を CityCell に設定します。")](collection-views-images/collection11vs.png#lightbox)
 1. 変更内容を保存します。
-    
 
 -----
 
@@ -286,7 +282,6 @@ CityView.AdjustsImageWhenAncestorFocused = true;
 ```
 
 ナビゲーションとフォーカスの詳細については、「[ナビゲーションとフォーカス](~/ios/tvos/app-fundamentals/navigation-focus.md)、 [Siri リモートおよび Bluetooth コントローラー](~/ios/tvos/platform/remote-bluetooth.md)の操作」を参照してください。
-
 
 <a name="The-Collection-View-Data-Provider" />
 
@@ -469,7 +464,6 @@ public CityInfo SelectedCity { get; set;} = new CityInfo("City02.jpg", "Turning 
 ### <a name="the-collection-view-delegate"></a>コレクションビューデリゲート
 
 次に、新しい`CityViewDelegate`クラスをプロジェクトに追加し、次のように表示します。
-
 
 ```csharp
 using System;
@@ -684,7 +678,6 @@ public override void DidUpdateFocus (UIFocusUpdateContext context, UIFocusAnimat
 
 前の項目の transparence を0に設定し、次の項目の transparence にフォーカスを 100% に設定します。 これらの移行もアニメーション化されます。
 
-
 ## <a name="configuring-the-collection-view-controller"></a>コレクションビューコントローラーの構成
 
 次に、コレクションビューの最後の構成を行い、ユーザーが選択した後にコレクションビューを閉じることができるように定義したプロパティをコントローラーが設定できるようにする必要があります。
@@ -824,14 +817,11 @@ public override void ViewWillAppear (bool animated)
 
 IOS 9 のコレクションビューに最近追加されたのは、コレクション内の項目の並べ替えを簡単に許可することでした。 ここでも、tvOS 9 は iOS 9 のサブセットであるため、同じように実行されます。 詳細については、[コレクションビューの変更](~/ios/user-interface/controls/uicollectionview.md)に関するドキュメントを参照してください。
 
-
 <a name="Summary" />
 
 ## <a name="summary"></a>Summary
 
 この記事では、tvOS アプリ内のコレクションビューの設計と操作について説明しました。 まず、コレクションビューを構成するすべての要素について説明しました。 次に、ストーリーボードを使用してコレクションビューをデザインおよび実装する方法について説明しました。 最後に、カスタムレイアウトの作成と項目の並べ替えに関する情報へのリンクが用意されています。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

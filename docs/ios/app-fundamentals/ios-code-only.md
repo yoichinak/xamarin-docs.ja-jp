@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/03/2018
-ms.openlocfilehash: d1464ca3accf53a9362d00e279ff9e158d7e34d4
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 4b829cf3f440b1c94c5232d258c86b6ea4b0f181
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281634"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767519"
 ---
 # <a name="creating-ios-user-interfaces-in-code-in-xamarinios"></a>Xamarin.iOS でのコードで iOS ユーザー インターフェイスの作成
 
@@ -59,16 +59,13 @@ Visual studio for Mac では、[iOS 用の Xamarin デザイナー](~/ios/user-i
 1. **Info.plist** -アプリケーションの構成情報を含むプロパティ一覧ファイル。
 1. **Entitlements.plist** – 機能と、アプリケーションのアクセス許可に関する情報を含むプロパティ一覧ファイル。
 
-
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 ## <a name="ios-templates"></a>iOS のテンプレート
 
-
 Visual Studio for Mac では、空のテンプレートが提供されません。 すべてのテンプレートが付属してストーリー ボードのサポートは、Apple は、UI を作成する主な方法としてお勧めします。 ただし、コードで完全に UI を作成することができます。
 
 次の手順に従って、アプリケーションからストーリー ボードを削除します。
-
 
 1. 新しい iOS プロジェクトを作成するのにには、単一ビュー アプリ テンプレートを使用します。
 

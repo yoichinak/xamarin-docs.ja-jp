@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/07/2018
-ms.openlocfilehash: 3171a89678e88a924198c3921d197c0f0378d29b
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 14e9b352a309de94a374b52141e3fd61715d8f75
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522628"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70764377"
 ---
 # <a name="xamarinandroid-linearlayout"></a>Xamarin Android LinearLayout
 
@@ -128,7 +128,6 @@ protected override void OnCreate (Bundle savedInstanceState)
 
 XML 属性によって各ビューの動作が定義されていることに注意してください。 の`android:layout_weight`さまざまな値を試してみると、各要素の重みに基づいて画面の実際の資産がどのように分布しているかがわかります。 方法の詳細については、[一般的なレイアウトオブジェクト](https://developer.android.com/guide/topics/ui/declaring-layout.html)に関するドキュメントを参照してください。[`LinearLayout`](xref:Android.Widget.LinearLayout)
 属性を`android:layout_weight`処理します。
-
 
 ## <a name="references"></a>リファレンス
 

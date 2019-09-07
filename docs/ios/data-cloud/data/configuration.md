@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 10/11/2016
-ms.openlocfilehash: c0a8f57e3f4f351cf5b874ded2639b975ea71cad
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7b60c8f306ad815cd3292cc94bd80f87b49df547
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281906"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766995"
 ---
 # <a name="configuring-sqlite-in-xamarinios"></a>Xamarin での SQLite の構成
 
@@ -64,7 +64,6 @@ lock (locker){
 ```
 
 すべてのデータベースアクセス (読み取り、書き込み、更新など) は、同じロックでラップする必要があります。 デッドロックの状況を回避するには、ロック句内の作業を単純なままにして、ロックを受け取る可能性のある他のメソッドを呼び出さないようにする必要があります。
-
 
 ## <a name="related-links"></a>関連リンク
 

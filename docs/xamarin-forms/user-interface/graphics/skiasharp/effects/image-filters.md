@@ -7,12 +7,12 @@ ms.assetid: 173E7B22-AEC8-4F12-B657-1C0CEE01AD63
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/27/2018
-ms.openlocfilehash: 10b61a7279964e8e1fb76a88be4f253e96b59908
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: f93f0462d476daaaa551833391b1be1865795476
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70199204"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770533"
 ---
 # <a name="skiasharp-image-filters"></a>SkiaSharp の画像のフィルター
 
@@ -76,7 +76,6 @@ public static SkiaSharp.SKImageFilter CreateBlur (float sigmaX, float sigmaY,
 ```
 
 分離コード ファイルで使用する 2 つ`Slider`を呼び出す値`SKImageFilter.CreateBlur`の`SKPaint`テキストとビットマップの両方を表示するために使用するオブジェクト。
-
 
 ```csharp
 public partial class ImageBlurExperimentPage : ContentPage

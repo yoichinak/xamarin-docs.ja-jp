@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: d85c199f6243fc49c1ca924bbd60cfef48b6d91f
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 190e38e525288dbc2b7f6bd9e785c723c80c6271
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70120005"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70762232"
 ---
 # <a name="setup-and-installation"></a>セットアップとインストール
 
@@ -45,7 +45,6 @@ Xamarin Android をインストールしたら、次の手順を実行して、A
 
 これらの手順については、次のセクションで説明します。
 
-
 ### <a name="install-android-sdk-and-tools"></a>Android SDK とツールのインストール 
 
 **Android SDK マネージャー**を起動します。 
@@ -59,7 +58,6 @@ Xamarin Android をインストールしたら、次の手順を実行して、A
 ![Visual Studio for Mac で Android SDK マネージャーを起動する方法](installation-images/xs/sdk-menu.png)
 
 -----
-
 
 次の Android SDK とツールがインストールされていることを確認します。
 
@@ -79,11 +77,9 @@ Xamarin Android をインストールしたら、次の手順を実行して、A
 
 -----
 
-
 ## <a name="configuration"></a>構成
 
 アプリのテストを使用する前に、Android の磨耗エミュレーターまたは実際の Android の磨耗デバイスを構成する必要があります。 
-
 
 ### <a name="android-wear-emulator"></a>Android の磨耗エミュレーター
 
@@ -101,16 +97,13 @@ Android の摩耗エミュレーターを使用するには、 **Google Emulator
 
 Android の磨耗エミュレーターの設定の詳細については、「[エミュレーターでの android の磨耗のデバッグ](~/android/wear/deploy-test/debug-on-emulator.md)」を参照してください。
 
-
 ### <a name="android-wear-device"></a>Android の磨耗デバイス
 
 Android の磨耗 Smartwatch などの Android の磨耗デバイスがある場合は、エミュレーターを使用する代わりに、このデバイスでアプリをデバッグすることができます。 磨耗デバイスを使用した開発の詳細については、「[磨耗デバイスでのデバッグ](~/android/wear/deploy-test/debug-on-device.md)」を参照してください。
 
-
 ## <a name="create-your-first-android-wear-app"></a>初めての Android 用の磨耗アプリを作成する
 
 [Hello, 磨耗](~/android/wear/get-started/hello-wear.md)の指示に従って、初めての watch アプリを作成します。
-
 
 ## <a name="packaging-your-app"></a>アプリのパッケージ化
 
@@ -119,7 +112,6 @@ Android の磨耗アプリケーションは、常にコンパニオン Android 
 Android の磨耗アプリケーションをメインの Android アプリケーションへの参照として追加すると、自動的に Android の磨耗プロジェクトと見なされ、必要なすべての XML とメタデータが自動的に生成されます。 また、パッケージとバージョン番号が一致していることを確認して、アプリを Google Play に簡単に配布できます。 
 
 摩耗アプリのパッケージ化の詳細については、「[パッケージングの](~/android/wear/deploy-test/packaging.md)使用」を参照してください。
-
 
 ## <a name="related-links"></a>関連リンク
 

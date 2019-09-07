@@ -1,43 +1,43 @@
 ---
-title: AppCompat と素材のデザインを追加します。
-description: この記事では、AppCompat と素材のデザインを使用する既存の Xamarin.Forms の Android アプリに変換する方法について説明します。
+title: AppCompat とマテリアルデザインの追加
+description: この記事では、既存の Xamarin Android アプリを変換して、AppCompat とマテリアル設計を使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 045FBCDF-4D45-48BB-9911-BD3938C87D58
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/27/2017
-ms.openlocfilehash: cade72aaad60c30993f6b11e98704addd218ffae
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a5b6466b1d2489cced4b1e3205ef672b8f6a4da7
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61293445"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770659"
 ---
-# <a name="adding-appcompat-and-material-design"></a>AppCompat と素材のデザインを追加します。
+# <a name="adding-appcompat-and-material-design"></a>AppCompat とマテリアルデザインの追加
 
-_AppCompat と素材のデザインを使用する既存の Xamarin.Forms の Android アプリに変換する次の手順します。_
+_次の手順に従って、既存の Xamarin. Forms Android アプリを変換して、AppCompat とマテリアル設計を使用する_
 
 <!-- source https://gist.github.com/jassmith/a3b2a543f99126782936
 https://blog.xamarin.com/material-design-for-your-xamarin-forms-android-apps/ -->
 
 ## <a name="overview"></a>概要
 
-これらの手順では、AppCompat ライブラリを使用し、Xamarin.Forms アプリの Android バージョン マテリアル デザインを有効にする既存の Xamarin.Forms の Android アプリケーションを更新する方法について説明します。
+次の手順では、既存の Xamarin. Forms Android アプリケーションを更新して AppCompat ライブラリを使用し、Android バージョンの Xamarin. Forms アプリで素材の設計を有効にする方法について説明します。
 
-### <a name="1-update-xamarinforms"></a>1.Xamarin.Forms を更新します。
+### <a name="1-update-xamarinforms"></a>1. Xamarin. フォームを更新する
 
-ソリューションが 2.0 以降、Xamarin.Forms を使用することを確認します。 必要な場合は、2.0 に Xamarin.Forms Nuget パッケージを更新します。
+ソリューションが Xamarin. Forms 2.0 以降を使用していることを確認します。 必要に応じて、Xamarin. Forms Nuget パッケージを2.0 に更新します。
 
-### <a name="2-check-android-version"></a>2.Android のバージョンを確認してください。
+### <a name="2-check-android-version"></a>2. Android のバージョンを確認する
 
-Android プロジェクトのターゲット フレームワークが Android 6.0 (Marshmallow) であることを確認します。 チェック、 **Android プロジェクト > オプション > ビルド > 全般**正しい framework の設定を選択。
+Android プロジェクトのターゲットフレームワークが Android 6.0 (Marshmallow) であることを確認します。 **Android プロジェクト > オプション > ビルド > 全般設定**をオンにして、corrent フレームワークが選択されていることを確認します。
 
- ![](appcompat-images/target-android-6-sml.png "Android の一般的なビルド構成")
+ ![](appcompat-images/target-android-6-sml.png "Android の一般ビルド構成")
 
-### <a name="3-add-new-themes-to-support-material-design"></a>3.マテリアル デザインをサポートするために新しいテーマを追加します。
+### <a name="3-add-new-themes-to-support-material-design"></a>3.新しいテーマを追加してマテリアル設計をサポートする
 
-Android プロジェクトに次の 3 つのファイルを作成し、以下の内容を貼り付けます。 Google が提供、[スタイル ガイド](http://www.google.com/design/spec/style/color.html#color-color-palette)と[色パレット ジェネレーター](http://www.materialpalette.com/)に指定されている別の配色を選択するのに役立ちます。
+Android プロジェクトに次の3つのファイルを作成し、以下の内容を貼り付けます。 Google には、[スタイルガイド](http://www.google.com/design/spec/style/color.html#color-color-palette)と[カラーパレットジェネレーター](http://www.materialpalette.com/)が用意されています。このジェネレーターを使用すると、指定した配色に対して代替配色を選択できます。
 
 **Resources/values/colors.xml**
 
@@ -66,7 +66,7 @@ Android プロジェクトに次の 3 つのファイルを作成し、以下の
 </resources>
 ```
 
-追加のスタイルを含める必要がある、**値 v21** Android Lollipop 以降を実行しているときに、特定のプロパティを適用するフォルダー。
+Android ロリポップ以降で実行するときに特定のプロパティを適用するには、 **v21**フォルダーに追加のスタイルを含める必要があります。
 
 **Resources/values-v21/style.xml**
 
@@ -80,9 +80,9 @@ Android プロジェクトに次の 3 つのファイルを作成し、以下の
 </resources>
 ```
 
-### <a name="4-update-androidmanifestxml"></a>4.AndroidManifest.xml を更新します。
+### <a name="4-update-androidmanifestxml"></a>4.Update AndroidManifest .xml
 
-情報がで使用されている設定のテーマをこの新しいテーマを使用して、 **AndroidManifest**ファイルを追加して`android:theme="@style/MyTheme"`(であったため、XML の残りの部分のまま)。
+この新しいテーマ情報が使用されていることを確認するには、を追加`android:theme="@style/MyTheme"`して**androidmanifest**ファイルのテーマを設定します (XML の残りの部分はそのままにします)。
 
 **Properties/AndroidManifest.xml**
 
@@ -93,9 +93,9 @@ Android プロジェクトに次の 3 つのファイルを作成し、以下の
 ...
 ```
 
-### <a name="5-provide-toolbar-and-tab-layouts"></a>5.ツールバーとタブのレイアウトを提供します。
+### <a name="5-provide-toolbar-and-tab-layouts"></a>5。ツールバーとタブレイアウトの提供
 
-作成**Tabbar.axml**と**Toolbar.axml**内のファイル、**リソース/レイアウト**ディレクトリとそのコンテンツからの下に貼り付けます。
+**Resources/layout**ディレクトリに**tabbar. Axml**ファイルと**Toolbar. axml**ファイルを作成し、以下の内容を貼り付けます。
 
 **Resources/layout/Tabbar.axml**
 
@@ -113,10 +113,10 @@ Android プロジェクトに次の 3 つのファイルを作成し、以下の
     app:tabMode="fixed" />
 ```
 
-タブの重力を含むタブについて、いくつかのプロパティが設定されて`fill`とするモード`fixed`します。
-多くのタブがある場合は、これを切り替えることがあるスクロール可能な - を通して、Android [TabLayout ドキュメント](https://developer.android.com/reference/android/support/design/widget/TabLayout.html)詳細。
+タブのいくつかのプロパティが設定されています。これ`fill`には、 `fixed`タブの [重力] と [モード] を含めます。
+多数のタブがある場合、詳細については、Android [TabLayout のドキュメント](https://developer.android.com/reference/android/support/design/widget/TabLayout.html)を参照してください。
 
-**Resources/layout/Toolbar.axml**
+**Resources/layout/Toolbar. axml**
 
 ```xml
 <android.support.v7.widget.Toolbar
@@ -132,13 +132,12 @@ Android プロジェクトに次の 3 つのファイルを作成し、以下の
     app:layout_scrollFlags="scroll|enterAlways" />
 ```
 
-これらのファイルでは、アプリケーションの異なる可能性があるツールバーの特定のテーマを作成しています。
-参照してください、[こんにちはツールバー](https://blog.xamarin.com/android-tips-hello-toolbar-goodbye-action-bar/)の詳細はブログの投稿。
+これらのファイルでは、アプリケーションによって異なる可能性があるツールバーの特定のテーマを作成しています。
+詳細については、 [Hello ツールバー](https://blog.xamarin.com/android-tips-hello-toolbar-goodbye-action-bar/)のブログ記事を参照してください。
 
+### <a name="6-update-the-mainactivity"></a>6。を更新します。`MainActivity`
 
-### <a name="6-update-the-mainactivity"></a>6.更新プログラム、 `MainActivity`
-
-既存の Xamarin.Forms アプリで、 **MainActivity.cs**クラスが継承`FormsApplicationActivity`します。 これで置き換える必要がある`FormsAppCompatActivity`新しい機能が有効にします。
+既存の Xamarin. Forms アプリでは、 **MainActivity.cs**クラスは`FormsApplicationActivity`を継承します。 新しい機能を有効`FormsAppCompatActivity`にするには、これをに置き換える必要があります。
 
 **MainActivity.cs**
 
@@ -146,7 +145,7 @@ Android プロジェクトに次の 3 つのファイルを作成し、以下の
 public class MainActivity : FormsAppCompatActivity  // was FormsApplicationActivity
 ```
 
-最後に、「接続」の手順 5 で、新しいレイアウト、`OnCreate`メソッドを次に示します。
+最後に、次に示すように、メソッドの`OnCreate`手順 5. の新しいレイアウトを "接続" します。
 
 ```csharp
 protected override void OnCreate(Bundle bundle)

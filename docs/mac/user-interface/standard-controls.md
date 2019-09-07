@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 2701b1f8bf343c653da33fd587c9da3302f52335
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 18ce7eb4dcd68596027f739579fd5a4b70497829
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292245"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772704"
 ---
 # <a name="standard-controls-in-xamarinmac"></a>Xamarin. Mac の標準コントロール
 
@@ -215,7 +215,6 @@ namespace AppKit
 
 [![](standard-controls-images/edit13.png "アウトレットまたはアクションを構成する")](standard-controls-images/edit13.png#lightbox)
 
-
 **アウトレット**と**アクション**の操作の詳細については、 [Xcode と Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)のドキュメントの概要に関する記事の「[アウトレットとアクション](~/mac/get-started/hello-mac.md#outlets-and-actions)」セクションを参照してください。
 
 <a name="Synchronizing_Changes_with_Xcode" />
@@ -324,7 +323,6 @@ DisclosureButton.Activated += (sender, e) => {
 AppKit には、ユーザーインターフェイスの設計で使用できる複数の種類のチェックボックスとオプションボタングループが用意されています。 詳細については、「Apple の[OS X ヒューマンインターフェイスガイドライン](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)」の「[ボタン](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsButtons.html#//apple_ref/doc/uid/20000957-CH48-SW1)」セクションを参照してください。 
 
 [![](standard-controls-images/buttons02.png "使用可能な checkbox 型の例")](standard-controls-images/buttons02.png#lightbox)
-
 
 チェックボックスおよびラジオボタン (**コンセント**経由**で**公開されます) には状態 (オンと**オフ**など) があり、 `State` `NSCellStateValue`列挙型に対してプロパティを使用して状態を確認または設定できます。 例えば:
 
@@ -637,7 +635,6 @@ UI 要素を設定して操作するために、Xamarin. Mac アプリケーシ�
 キー値のコーディング (KVC) は、オブジェクトのプロパティに間接的にアクセスするためのメカニズムです。キー (特殊な書式設定文字列) を使用して、インスタンス変数また`get/set`はアクセサーメソッド () を使用してアクセスするのではなく、プロパティを識別します。 Xamarin. Mac アプリケーションでキー値のコーディングに準拠したアクセサーを実装することによって、キー値の観察 (KVO)、データバインディング、コアデータ、Cocoa バインド、および scriptability などの他の macOS 機能にアクセスできます。
 
 詳細については、[データバインディングとキー値のコーディング](~/mac/app-fundamentals/databinding.md)に関するドキュメントの「[単純なデータバインディング](~/mac/app-fundamentals/databinding.md#Simple_Data_Binding)」を参照してください。
-
 
 <a name="Summary" />
 

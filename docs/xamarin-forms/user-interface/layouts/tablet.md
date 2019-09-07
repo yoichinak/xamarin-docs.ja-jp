@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/01/2016
-ms.openlocfilehash: 7455e9b8f8e164dd5733b44db4aaac8a93133a05
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 87d99c62f20e6cfd23605d1917a577ac0d95038f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70121597"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772458"
 ---
 # <a name="layout-for-tablet-and-desktop-apps"></a>タブレットアプリとデスクトップアプリのレイアウト
 
@@ -61,13 +61,11 @@ Windows タブレットおよびデスクトップで実行されているアプ
 
 Windows 分割画面の例[ ![(tablet-images/splitscreen-sml.png " ")]](tablet-images/splitscreen.png#lightbox "Windows 分割画面の例")
 
-
 <a name="optimize" />
 
 ## <a name="optimizing-for-tablet-and-desktop"></a>タブレットおよびデスクトップ向けの最適化
 
 スマートフォンまたはタブレット/デスクトップデバイスが使用されているかどうかに応じて、Xamarin. フォームユーザーインターフェイスを調整できます。 これは、タブレットやデスクトップコンピューターなどの大画面デバイスのユーザーエクスペリエンスを最適化できることを意味します。
-
 
 ### <a name="deviceidiom"></a>Device.Idiom
 
@@ -89,8 +87,6 @@ if (Device.Idiom == TargetIdiom.Phone)
 は、大規模な画面に最適[`UISplitViewController`](xref:UIKit.UISplitViewController) [です。特に、を使用してネイティブのiOSエクスペリエンスを提供するiPadでは最適です。`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage)
 
 [この Xamarin のブログ記事](https://blog.xamarin.com/bringing-xamarin-forms-apps-to-tablets/)をご覧になり、1つのレイアウトを使用するスマートフォンで別の`MasterDetailPage`レイアウトを使用できるようにユーザーインターフェイスを調整する方法をご確認ください。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

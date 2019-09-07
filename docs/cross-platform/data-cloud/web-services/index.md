@@ -6,12 +6,12 @@ ms.assetid: 72627B90-586A-02B6-E231-F7CE015A1B97
 author: conceptdev
 ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: 3e5ce4496b4a2deb86bb2b7dd6d36e5e9b3f446c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: f914a158135d34b59fa3d1b95972c988a44dd36b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287571"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765982"
 ---
 # <a name="introduction-to-web-services"></a>Web サービスの概要
 
@@ -19,7 +19,7 @@ _このガイドでは、さまざまな web サービステクノロジを使�
 
 正常に機能するためには、多くのモバイルアプリケーションがクラウドに依存しているため、web サービスをモバイルアプリケーションに統合するのが一般的なシナリオです。 Xamarin プラットフォームは、さまざまな web サービステクノロジの使用をサポートしています。また、RESTful、ASMX、および Windows Communication Foundation (WCF) サービスを使用するための、組み込みのサードパーティサポートが含まれています。
 
-Xamarin.Forms を使用しているお客様には、 [Xamarin.Forms Web Services](~/xamarin-forms/data-cloud/index.yml)のドキュメントに記載されている各テクノロジを使用した完全な例があります。
+Xamarin. Forms を使用しているお客様には、 [xamarin. Forms Web Services](~/xamarin-forms/data-cloud/index.yml)のドキュメントに記載されている各テクノロジを使用した完全な例があります。
 
 > [!IMPORTANT]
 > IOS 9 では、アプリトランスポートセキュリティ (ATS) によって、インターネットリソース (アプリのバックエンドサーバーなど) とアプリの間にセキュリティで保護された接続が適用されるため、機密情報が誤って開示されるのを防ぐことができます。
@@ -181,7 +181,6 @@ client.GetAsync<CustomersResponse>("",
 
 > [!IMPORTANT]
 > ServiceStack や RestSharp などのツールを使用すると REST サービスを簡単に呼び出すことができますが、標準の_DataContract_シリアル化規則に準拠していない XML または JSON を使用するのは簡単ではないことがあります。 必要に応じて、要求を呼び出し、後で説明する ServiceStack. テキストライブラリを使用して、適切なシリアル化を明示的に処理します。
-
 
 <a name="Options_for_consuming_RESTful_data" />
 

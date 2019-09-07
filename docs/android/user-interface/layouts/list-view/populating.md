@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2017
-ms.openlocfilehash: e92aada7be8a296baeaa9eebfb18fe906b5c3b63
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: e934dd0f35b7c734228d637fe646d0e2c20e9dad
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522543"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758625"
 ---
 # <a name="populating-a-xamarinandroid-listview-with-data"></a>Xamarin. Android ListView にデータを読み込む
 
@@ -37,7 +37,6 @@ public class HomeScreen : ListActivity {
 }
 ```
 
-
 ### <a name="handling-row-clicks"></a>行のクリックの処理
 
 通常、 `ListView`では、ユーザーが何らかの操作 (楽曲の再生、連絡先の呼び出し、別の画面の表示など) を実行できるようにすることもできます。 ユーザーへの対応には、次`ListActivity`のように、 &ndash; `OnListItemClick` &ndash;に実装するメソッドをもう1つ追加する必要があります。
@@ -55,7 +54,6 @@ protected override void OnListItemClick(ListView l, View v, int position, long i
 これで、ユーザーは行`Toast`に触れることができ、アラートが表示されます。
 
 [![行にタッチしたときに表示されるトーストのスクリーンショット](populating-images/basictable2.png)](populating-images/basictable2.png#lightbox)
-
 
 ## <a name="implementing-a-listadapter"></a>ListAdapter の実装
 
@@ -102,7 +100,6 @@ public class HomeScreenAdapter : BaseAdapter<string> {
 }
 ```
 
-
 ### <a name="using-a-custom-adapter"></a>カスタムアダプターの使用
 
 カスタムアダプターの使用は組み込み`ArrayAdapter`の`context`と似ています。これは、と`string[]`表示する値のを渡します。
@@ -112,7 +109,6 @@ ListAdapter = new HomeScreenAdapter(this, items);
 ```
 
 この例では同じ行レイアウト (`SimpleListItem1`) を使用しているため、結果のアプリケーションは前の例と同じになります。
-
 
 ### <a name="row-view-re-use"></a>行ビューの再利用
 
@@ -133,10 +129,9 @@ public override View GetView(int position, View convertView, ViewGroup parent)
 }
 ```
 
-カスタムアダプターの実装では、新しいビュー `convertView`を作成する前にオブジェクトを再利用して、長いリストを表示するときにメモリが不足しないようにする必要があります。
+カスタムアダプターの実装*では、* 新しいビュー `convertView`を作成する前にオブジェクトを再利用して、長いリストを表示するときにメモリが不足しないようにする必要があります。
 
 一部のアダプター実装 ( `CursorAdapter`など) には`GetView`メソッドがないため、2つの異なるメソッド`NewView`が`BindView`必要であり、の役割を2つに分割`GetView`することによって行の再利用を強制します。メソッド. ドキュメントの後半`CursorAdapter`に例があります。
-
 
 ## <a name="enabling-fast-scrolling"></a>高速スクロールを有効にする
 
@@ -149,7 +144,6 @@ public override View GetView(int position, View convertView, ViewGroup parent)
 ```csharp
 ListView.FastScrollEnabled = true;
 ```
-
 
 ### <a name="adding-a-section-index"></a>セクションインデックスの追加
 
@@ -164,7 +158,6 @@ ListView.FastScrollEnabled = true;
 - **Getpositionforsection**&ndash;指定されたセクションインデックスの最初の行位置を返します。
 
 - **Getsectionforposition**&ndash;指定された行に表示されるセクションインデックスを返します。
-
 
 この例`SectionIndex/HomeScreenAdapter.cs`のファイルは、これらのメソッドと、コンストラクター内のいくつかの追加コードを実装しています。 コンストラクターは、すべての行をループし、タイトルの最初の文字を抽出することにより、セクションインデックスを作成します (これが機能するには、項目が既に並べ替えられている必要があります)。
 
@@ -213,8 +206,6 @@ public int GetSectionForPosition(int position)
 
 セクションのインデックスタイトルでは、1:1 を実際のセクションにマップする必要はありません。 `GetPositionForSection`メソッドが存在する理由は次のようになります。
 `GetPositionForSection`では、インデックスリスト内の任意のインデックスを、リストビュー内のセクションにマップすることができます。 たとえば、インデックスに "z" があるとしても、すべての文字に対応するテーブルセクションがない場合があります。したがって、"z" を26にマッピングするのではなく、25または24にマップしたり、"z" というセクションにマップする必要があるすべてのセクションにマップしたりすることができます。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

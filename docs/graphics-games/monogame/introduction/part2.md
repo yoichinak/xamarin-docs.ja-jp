@@ -6,12 +6,12 @@ ms.assetid: F0622A01-DE7F-451A-A51F-129876AB6FFD
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: 44ba9188a059cc28c7b4d89143cef1921a0b1701
-ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
+ms.openlocfilehash: 2c290ac7d66147342087342bda5e5a19b4e6e6f7
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68978477"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70763621"
 ---
 # <a name="part-2--implementing-the-walkinggame"></a>パート2–ゲームの実装
 
@@ -141,7 +141,7 @@ protected override void Draw(GameTime gameTime)
 - `X`および Y プロパティを指定して、文字の位置を制御します。
 - 自分自身を更新する機能。具体的には、タッチスクリーンから値を読み取り、位置を適切に調整します。
 
-ゲーム`CharacterEntity`にを追加するには、[プレイ] プロジェクトを右クリックまたはクリックし、 **[新しいファイルの追加 >]** を選択します。 **[空のクラス]** オプションを選択し、新しいファイルに「文字**エンティティ**」という名前を指定し、 **[新規作成]** をクリックします。
+ゲーム`CharacterEntity`にを追加するには、 **[プレイ] プロジェクトを**右クリックまたはクリックし、 **[新しいファイルの追加 >]** を選択します。 **[空のクラス]** オプションを選択し、新しいファイルに「文字**エンティティ**」という名前を指定し、 **[新規作成]** をクリックします。
 
 まず、 `CharacterEntity`を`Texture2D`読み込み、それ自体を描画する機能を追加します。 新しく追加さ`CharacterEntity.cs`れたファイルを次のように変更します。
 
@@ -150,7 +150,6 @@ using System;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input.Touch;
-
 
 namespace WalkingGame
 {
@@ -255,7 +254,6 @@ protected override void LoadContent()
 
 最後に、次のように Draw メソッドを変更できます。
 
-
 ```csharp
 protected override void Draw(GameTime gameTime)
 {
@@ -312,7 +310,6 @@ namespace WalkingGame
 
 `Animation`クラスを追加するには、 **[プレイ]** の共有プロジェクトを右クリックまたはクリックし、 **[新しいファイルの追加 >]** を選択します。名前の**アニメーション**を入力し、 **[新規]** ボタンをクリックします。 次のコードが`Animation.cs`含まれるようにファイルを変更します。
 
-
 ```csharp
 using System;
 using System.Collections.Generic;
@@ -355,7 +352,6 @@ namespace WalkingGame
         {
             double secondsIntoAnimation = 
                 timeIntoAnimation.TotalSeconds + gameTime.ElapsedGameTime.TotalSeconds;
-
 
             double remainder = secondsIntoAnimation % Duration.TotalSeconds;
 
@@ -461,7 +457,6 @@ public CharacterEntity (GraphicsDevice graphicsDevice)
 ```
 
 既に説明したように、 `Animation.Update`時間ベースのアニメーションを再生するには、を呼び出す必要があります。 また、 `currentAnimation`を割り当てる必要もあります。 ここでは、 `currentAnimation`をに割り当てますが、このコードは後で、移動ロジックを`walkDown`実装するときに置き換えます。 次のように`Update` 、メソッド`CharacterEntity`をに追加します。
-
 
 ```csharp
 public void Update(GameTime gameTime)
@@ -661,7 +656,6 @@ public void Update(GameTime gameTime)
 
     this.X += velocity.X * (float)gameTime.ElapsedGameTime.TotalSeconds;
     this.Y += velocity.Y * (float)gameTime.ElapsedGameTime.TotalSeconds;
-
 
     if (velocity != Vector2.Zero)
     {

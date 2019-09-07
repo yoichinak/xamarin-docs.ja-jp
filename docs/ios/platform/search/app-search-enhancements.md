@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2017
-ms.openlocfilehash: 2a2475bcc5eea48584c4aa128aafeeb326e41f8d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 8c3ea0e190bc75d771adf587f5b1bcf27d906f02
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280366"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769531"
 ---
 # <a name="app-search-enhancements-in-xamarinios"></a>Xamarin のアプリ検索の機能強化
 
@@ -115,8 +115,6 @@ Web マークアップの使用方法の詳細については、 [Web マーク�
 ## <a name="summary"></a>Summary
 
 この記事では、iOS 10 でアプリ検索に加えられた Apple の拡張機能と、それらを Xamarin. iOS で実装する方法について説明しました。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

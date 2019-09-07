@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: ee2c54f2369682571520370e09d6d39c2cd86fa5
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 31c3c629686d6c7be03b95d7bfe0740599228bbd
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290593"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769407"
 ---
 # <a name="push-notifications-in-ios"></a>IOS でのプッシュ通知
 
@@ -35,7 +35,6 @@ Apple は APNS の2つの環境を保持します。*サンドボックス*と*�
 - **256 バイトのメッセージ制限**-通知のメッセージサイズ全体は、256バイトを超えてはなりません。
 - **確認メッセージ**が表示されません。 APNS は、送信者に対し、メッセージが目的の受信者にメッセージを送信したことを通知しません。 デバイスにアクセスできない場合に、複数のシーケンシャル通知が送信されると、最新の通知を除くすべての通知が失われます。 最新の通知のみがデバイスに配信されます。
 - **各アプリケーションにはセキュリティで保護された証明書が必要です**。 APNS との通信は SSL 経由で行う必要があります。
-
 
 ## <a name="creating-and-using-certificates"></a>証明書の作成と使用
 
@@ -174,7 +173,6 @@ APNS は、*フィードバックサービス*を提供するために使用さ�
 ## <a name="summary"></a>まとめ
 
 このセクションでは、iOS でのプッシュ通知に関する主要な概念を紹介します。 Apple Push Notification Gateway サービス (APNS) の役割について説明しました。 次に、APNS に不可欠なセキュリティ証明書の作成と使用について説明します。 最後に、このドキュメントでは、アプリケーションサーバーが*フィードバックサービス*を使用して、期限切れのデバイストークンの追跡を停止する方法について説明しました。
-
 
 ## <a name="related-links"></a>関連リンク
 

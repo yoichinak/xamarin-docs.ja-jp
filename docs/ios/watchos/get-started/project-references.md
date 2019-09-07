@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 09/13/2016
-ms.openlocfilehash: 72a1fe3541eb4ece67dd137ebcd33f8e81ae9553
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: dcadb5146df39aa4887e28b65078acc9454f3d34
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292263"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767987"
 ---
 # <a name="watchos-project-references-in-xamarin"></a>Xamarin での watchOS プロジェクト参照
 
@@ -32,12 +32,9 @@ WatchOS ソリューション内の3つのプロジェクトは、watchOS 3 ア�
 
   ![](project-references-images/catalog-reference2.png "iPhone アプリがウォッチアプリを参照")
 
-
 - **Watch アプリの拡張機能**は、他のプロジェクトのいずれも参照していません
 
   ![](project-references-images/catalog-reference3.png "Watch App Extension は他のプロジェクトを参照していません")
-
-
 
 ## <a name="bundle-identifiers"></a>バンドル識別子
 
@@ -76,4 +73,3 @@ WatchOS ソリューション内の3つのプロジェクトは、watchOS 3 ア�
 ![](project-references-images/infoplist-watchapp.png "ウォッチ情報の plist ファイル")
 
 Watch アプリのデプロイターゲットは、Watch 拡張機能と iOS アプリとは異なる場合があります。
-

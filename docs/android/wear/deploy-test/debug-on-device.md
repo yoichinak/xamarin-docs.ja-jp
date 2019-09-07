@@ -7,17 +7,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 2a0c21f5a985e7a0bbe5b2afac1520280a0bd5e8
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 9596ff34352337d892fc22df5651b2f78f8c33f6
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522132"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70762161"
 ---
 # <a name="debug-on-a-wear-device"></a>Wear デバイスでのデバッグ
 
 _この記事では、摩耗デバイスで Xamarin の Android の磨耗アプリケーションをデバッグする方法について説明します。_
-
 
 ## <a name="overview"></a>概要
 
@@ -37,11 +36,9 @@ Android の磨耗デバイスでデバッグを有効にするには、次の手
 
 5. **ADB デバッグ**が有効になっていることを確認します。
 
-
 ## <a name="debugging-over-usb"></a>USB 経由でのデバッグ
 
 デバイスに USB ポートがある場合は、コンピューターに磨耗デバイスを接続してデプロイし、Android フォンを使用する場合と同じようにアプリを実行/デバッグすることができます (詳細については、「[デバイスでのデバッグ](~/android/deploy-test/debugging/debug-on-device.md)」を参照してください)。
-
 
 ## <a name="debugging-over-bluetooth"></a>Bluetooth でのデバッグ
 
@@ -121,7 +118,6 @@ adb -s 127.0.0.1:4444 pull /sdcard/DCIM/screencap.png
 adb -s 127.0.0.1:4444 shell rm /sdcard/DCIM/screencap.png
 ```
 
-
 ### <a name="uninstalling-an-app"></a>アプリのアンインストール
 
 次のコマンドを入力して、磨耗デバイスからアプリをアンインストールできます。
@@ -138,7 +134,6 @@ adb -s 127.0.0.1:4444 uninstall com.xamarin.weartest
 
 Bluetooth 経由での Android の磨耗デバイスのデバッグの詳細については、「 [bluetooth 経由](https://developer.android.com/training/wearables/apps/bt-debugging.html)でのデバッグ」を参照してください。
 
-
 ## <a name="debugging-a-wear-app-with-a-companion-phone-app"></a>コンパニオン電話アプリでの磨耗アプリのデバッグ
 
 Android の摩耗アプリは、Google Play で配布するためのコンパニオン Android phone アプリと共にパッケージ化されます (詳細については、「[パッケージングの](~/android/wear/deploy-test/packaging.md)使用」を参照してください)。 ただし、引き続き、磨耗アプリとそのコンパニオンアプリを別々に開発しています。 Google Play ストアを通じてアプリをリリースすると、アプリがコンパニオンアプリと共にパッケージ化され、可能であれば自動的にインストールされます。
@@ -153,7 +148,6 @@ Android の摩耗アプリは、Google Play で配布するためのコンパニ
 
 4. デバイスでの磨耗アプリの実行とデバッグを行います。
 
- 
 ## <a name="summary"></a>まとめ
 
 この記事では、Bluetooth を使用して Visual Studio からの磨耗デバッグ用に Android の磨耗デバイスを構成する方法、およびコンパニオン電話アプリを使用して磨耗アプリをデバッグする方法について説明しました。 また、Bluetooth を使用して磨耗アプリをデバッグするための一般的なデバッグのヒントも提供しました。

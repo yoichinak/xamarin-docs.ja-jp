@@ -6,12 +6,12 @@ ms.assetid: D8BC4906-805F-4AFB-8D1A-88B7BF87E17F
 author: conceptdev
 ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: d3f756b1a551c7b6bcbe48129235d537312edff6
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 73f44acad3e30e4301a69e5f2422cd4dd1a3dbf5
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282148"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766571"
 ---
 # <a name="creating-new-platform-specific-library-projects-for-nuget"></a>NuGet 用の新しいプラットフォーム固有のライブラリプロジェクトを作成する
 
@@ -55,7 +55,6 @@ NuGet には、iOS と Android 固有の両方のコードに加え、両方に�
 
     ![](platform-specific-images/create-nuget-package.png "NuGet パッケージファイルは、構成に応じて、デバッグまたはリリースのいずれかの bin フォルダーに保存されます。")
 
-
 ## <a name="verifying-the-output"></a>出力を確認しています
 
 NuGet パッケージは ZIP ファイルでもあるため、生成されたパッケージの内部構造を調べることができます。
@@ -63,7 +62,6 @@ NuGet パッケージは ZIP ファイルでもあるため、生成されたパ
 このスクリーンショットは、iOS と Android をサポートし、2つの参照アセンブリが選択されているプラットフォーム固有の NuGet の内容を示しています。
 
 ![](platform-specific-images/nuget-output.png "NuGet パッケージに含まれるファイル")
-
 
 ## <a name="related-links"></a>関連リンク
 

@@ -7,12 +7,12 @@ ms.assetid: 32C95DFF-9065-42D7-966C-D3DBD16906B3
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: 47fd6323e309353446c707730679a191cb8e923c
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.openlocfilehash: 80f2b686e9802a93b0cf32420ccaef3e8877727c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68738889"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759548"
 ---
 # <a name="bitmap-basics-in-skiasharp"></a>SkiaSharp のビットマップの基礎
 
@@ -68,7 +68,6 @@ HttpClient httpClient = new HttpClient();
 使用する場合`HttpClient`iOS と Android アプリケーションでは、に関するドキュメントで説明したように、プロジェクトのプロパティを設定する必要あります **[トランスポート層セキュリティ (TLS) 1.2](~/cross-platform/app-fundamentals/transport-layer-security.md)** します。
 
 使用する最も便利なので、`await`演算子`HttpClient`では、コードを実行できません、`BasicBitmapsPage`コンス トラクター。 代わりの一部では、`OnAppearing`をオーバーライドします。 ここで、URL は、いくつかのサンプルのビットマップの Xamarin の web サイト上の領域を指します。 Web サイト上のパッケージでは特定の幅にビットマップのサイズを変更するための仕様を追加できます。
-
 
 ```csharp
 protected override async void OnAppearing()

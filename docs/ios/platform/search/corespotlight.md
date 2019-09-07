@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: 845257bc11d24865a01a992e99d39ad6c578b42c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 00a973e670ff5100a44ba158fe50f134781a97e2
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291459"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769503"
 ---
 # <a name="search-with-core-spotlight-in-xamarinios"></a>Xamarin のコアスポットライトで検索する
 
@@ -132,8 +132,6 @@ CSSearchableIndex.DefaultSearchableIndex.DeleteAll((error) => {
 - **バッチ更新のサポート**–アプリで大規模なインデックスのグループを同時に作成または変更する必要がある場合は、バッチ全体を`Index` 1 回の`CSSearchableIndex`呼び出しでクラスのメソッドに送信できます。
 - **インデックスの変更に応答する**– `CSSearchableIndexDelegate`アプリを使用して、検索可能なインデックスからの変更と通知に応答できます。
 - **データ保護の適用**–データ保護クラスを使用して、コアスポットライトを使用して検索可能なインデックスに追加するアイテムにセキュリティを実装できます。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

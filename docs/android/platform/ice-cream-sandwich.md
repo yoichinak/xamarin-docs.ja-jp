@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: f8d9841deff485a67919aea9fede75044541ba5f
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 8cbb7c9c3da92b1ea5140e6f85accf53dab0bf80
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524202"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761459"
 ---
 # <a name="ice-cream-sandwich-features"></a>アイスクリームサンドイッチの機能
 
@@ -27,7 +27,6 @@ Android OS バージョン 4.0 (API レベル 14) は、Android オペレーテ�
 - **新しいデータ api** –カレンダーデータやデバイス所有者のユーザープロファイルなど、以前は正式にアクセスできなかったデータへの新しいアクセス権があります。 
 - **アプリ データの共有**– アプリケーションとデバイス間のデータを共有するが、テクノロジ経由でこれまでよりも簡単になど、 `ShareActionProvider` 、しやすく、操作バーから共有アクションを作成して*Android ビーム*  *近距離通信 (NFC)* 、相互に近接デバイス間でデータを共有する簡単になります。 
 
-
 この記事では、Android 4.0 API に加えられたこれらの機能とその他の変更について説明します。また、各機能を Xamarin Android で使用する方法についても説明します。
 
 ## <a name="user-interface-features"></a>ユーザーインターフェイスの機能
@@ -38,7 +37,6 @@ Android 4 では、次のようなさまざまな新しいユーザーインタ�
 - **[ウィジェットの切り替え](~/android/user-interface/controls/switch.md)** –オンとオフを切り替えることができます。 
 - **[Textureview](~/android/user-interface/controls/texture-view.md)** –ビュー内でビデオと OpenGL のコンテンツを有効にします。 
 - **[ナビゲーションバー](~/android/user-interface/controls/navigation-bar.md)** – [戻る]、[ホーム]、および [マルチタスク] の仮想ボタンが表示されます。 
-
 
 さらに、他の UI 要素も強化されて`<a href"/guides/android/user_interface/popup_menus">PopupMenu</a>`います。たとえば、より使いやすく、より洗練された外観を備えたタブを使用できます。
 
@@ -59,8 +57,6 @@ ICS は、x86 エミュレーターを使用した開発をまだサポートし
 
 この記事では、Android 4 で利用できるようになったさまざまな新しいテクノロジについて説明しました。 *GridLayout*、 *PopupMenu*、 *Switch*の各ウィジェットなどの新しいユーザーインターフェイス機能を確認しています。 また、システム UI の制御に関する新しいサポートと、 *Textureview*の使用方法についても説明しました。 次に、さまざまな新しい共有テクノロジについて説明しました。 ここでは、 *Android ビーム*で、 *NFC*を使用するデバイス間で情報を共有する方法、新しい*Calendar API*について説明し、組み込みの共有*actionprovider*の使用方法について説明しました。
 最後に、 *ContactsContract*プロバイダーを使用してユーザープロファイルデータにアクセスする方法を説明します。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

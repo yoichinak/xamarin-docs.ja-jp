@@ -6,17 +6,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 4a0d0e46147a37da4787224e797d403ab7b1097e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: f472f19429f21c659e28ba1c7a8d2670e22ea6a4
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643044"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758952"
 ---
 # <a name="actionbar-for-xamarinandroid"></a>Xamarin. Android の ActionBar
 
 を使用`TabActivity`する場合、タブアイコンを作成するコードは、Android 4.0 フレームワークに対して実行しても効果がありません。 2\.3 より前のバージョンの Android と同様に機能しますが、 `TabActivity`クラス自体は4.0 で非推奨とされています。 次に説明する操作バーを使用する、タブ付きインターフェイスを作成する新しい方法が導入されました。
-
 
 ## <a name="action-bar-tabs"></a>操作バータブ
 
@@ -56,7 +55,6 @@ class SampleTabFragment: Fragment
             view.FindViewById<TextView> (Resource.Id.sampleTextView);            
         sampleTextView.Text = "sample fragment text";
 
-
         return view;
     }
 }
@@ -79,11 +77,9 @@ this.ActionBar.AddTab (tab);
 
 完全な例については、このドキュメントのサンプルコードの*HelloTabsICS*プロジェクトを参照してください。
 
-
 ## <a name="shareactionprovider"></a>ShareActionProvider
 
 `ShareActionProvider`クラスを使用すると、操作バーから共有アクションを実行できます。 共有の目的を処理し、以前に使用したアプリケーションの履歴を保存しておくことによって、操作バーから後で簡単にアクセスできるようにするアプリの一覧を使用して、アクションビューを作成します。 これにより、Android 全体で一貫性のあるユーザーエクスペリエンスを使用してアプリケーションがデータを共有できるようになります。
-
 
 ### <a name="image-sharing-example"></a>イメージ共有の例
 
@@ -91,11 +87,9 @@ this.ActionBar.AddTab (tab);
 
 [![操作バーのメッセージングアプリケーションアイコンのスクリーンショット](action-bar-images/09-shareactionprovider.png)](action-bar-images/09-shareactionprovider.png#lightbox)
 
-
 ユーザーが操作バーの項目をクリックすると、次のように、共有イメージを含むメッセージングアプリが起動されます。
 
 [![サル画像を表示しているメッセージングアプリのスクリーンショット](action-bar-images/10-messagewithimage.png)](action-bar-images/10-messagewithimage.png#lightbox)
-
 
 ### <a name="specifying-the-action-provider-class"></a>アクションプロバイダークラスの指定
 
@@ -110,7 +104,6 @@ this.ActionBar.AddTab (tab);
       android:actionProviderClass="android.widget.ShareActionProvider" />
 </menu>
 ```
-
 
 ### <a name="inflating-the-menu"></a>メニューの拡大
 
@@ -128,7 +121,6 @@ public override bool OnCreateOptionsMenu (IMenu menu)
 }
 ```
 
-
 ### <a name="creating-the-intent"></a>インテントの作成
 
 は`ShareActionProvider` 、上記のコードの`SetShareIntent`メソッドに渡されたインテントを使用して、適切なアクティビティを起動します。 この例では、次のコードを使用してイメージを送信するインテントを作成します。
@@ -145,8 +137,6 @@ Intent CreateIntent ()
 ```
 
 上のコード例のイメージは、アプリケーションと共に資産として含まれており、アクティビティの作成時にパブリックにアクセスできる場所にコピーされます。そのため、メッセージングアプリなどの他のアプリケーションからアクセスできるようになります。 この記事に付属するサンプルコードには、この例の使用方法を示す完全なソースが含まれています。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

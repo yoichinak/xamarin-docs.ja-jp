@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/23/2017
-ms.openlocfilehash: 683587e4857ede20096be731b3cfa3b88b3a668d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 25b4e5a564c8dabf4cb44881c25e0a10ade47350
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282517"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767733"
 ---
 # <a name="custom-document-icons-in-xamarinios"></a>Xamarin. iOS のカスタムドキュメントアイコン
 
@@ -30,7 +30,7 @@ Xamarin iOS アプリで特定の種類のドキュメントの読み込みが�
 これらの値を Visual Studio for Mac に割り当てるには、 `Info.plist`エディターの **[詳細設定]** タブにある ドキュメントの **[種類]** セクションを使用して、ドキュメントの種類を追加し、イメージアイコンを割り当てます。 たとえば、PDF サポートの登録を示すスクリーンショットを次に示します。
 
  [![](custom-document-types-images/18.png "[情報] エディターの [詳細設定] タブにある [ドキュメントの種類] セクション")](custom-document-types-images/18.png#lightbox)
- 
+
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 これらの値を Visual Studio で割り当てるには、の`Info.plist` **[詳細設定]** タブの **[ドキュメントの種類]** セクションを使用します。
@@ -43,9 +43,7 @@ Xamarin iOS アプリで特定の種類のドキュメントの読み込みが�
 
 -----
 
-
 ドキュメントの種類の詳細については、「Apple の[Uniform Type Identifier リファレンス](https://developer.apple.com/library/ios/#documentation/Miscellaneous/Reference/UTIRef/Articles/System-DeclaredUniformTypeIdentifiers.html)」および「 [IOS のドキュメント相互作用プログラミング](https://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Introduction/Introduction.html)に関するトピック」を参照してください。
-
 
 ## <a name="related-links"></a>関連リンク
 

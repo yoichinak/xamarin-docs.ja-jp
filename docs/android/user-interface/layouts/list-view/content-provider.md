@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 142541dcc35b55e43b54eeb729c486ac9fc88b54
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 5948d4b5db53db97c4e76cb7568c109b5faf90fe
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510067"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70762201"
 ---
 # <a name="using-a-contentprovider-with-xamarinandroid"></a>コンテンツプロバイダーと Xamarin Android の使用
 
@@ -21,4 +21,3 @@ ContentProviders を使用すると、他のアプリケーションによって
 ContentProvider にアクセスするには、LoaderManager を使用するカーソルローダーを使用することをお勧めします。 LoaderManager は、Android 3.0 (API レベル11、Honeycomb) で、ブロックしているタスクをメインスレッドから移動するために導入されました。カーソルローダーを使用すると、ListView にバインドされる前に、データをスレッドに読み込むことができます。
 
 詳細については、「 [ContentProviders の概要](~/android/platform/content-providers/index.md)」を参照してください。
-

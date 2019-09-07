@@ -7,17 +7,16 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/02/2017
-ms.openlocfilehash: 797bc4199b79944c7b2b6e9c939e2584bb21246a
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 3b99e4485bfb621b32fa001a49d75038b2072775
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292565"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769461"
 ---
 # <a name="understanding-sirikit-concepts"></a>SiriKit の概念の理解
 
 _この記事では、Xamarin iOS アプリで SiriKit を操作するために必要な主要な概念について説明します。_
-
 
 IOS 10 の新機能である SiriKit を使用すると、Xamarin iOS アプリは、Siri と、iOS デバイス上の Maps アプリを使用して、ユーザーがアクセスできるサービスを提供できます。 この機能は、新しい**インテント**および**インテント UI**フレームワークを使用して1つ以上のアプリ拡張機能に用意されています。
 
@@ -461,9 +460,6 @@ Siri との会話 (アプリに代わって) を使用することは、自然�
 ## <a name="summary"></a>Summary
 
 この記事では、SiriKit を使用するために必要な主要な概念について説明しました。また、この記事では、Xamarin iOS アプリと対話して、Siri および iOS デバイス上の Maps アプリを使用してユーザーがアクセスできるサービスを提供することができます。
-
-
-
 
 ## <a name="related-links"></a>関連リンク
 

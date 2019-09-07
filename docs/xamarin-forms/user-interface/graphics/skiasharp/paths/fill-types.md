@@ -7,12 +7,12 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 46442e2377400cb3488f1a9e2fc8d47f27bbacfc
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 924b66b3bdb66c2197b708d87e20eeb6f3ed9f46
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655790"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770511"
 ---
 # <a name="the-path-fill-types"></a>パスの塗りつぶしの種類
 
@@ -224,7 +224,6 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 最小限のコードで作成した興味深いイメージであります。
 
 [![](fill-types-images/overlappingcircles-small.png "円の重複するページのスクリーン ショットをトリプル")](fill-types-images/overlappingcircles-large.png#lightbox "円の重複するページの 3 倍になるスクリーン ショット")
-
 
 ## <a name="related-links"></a>関連リンク
 

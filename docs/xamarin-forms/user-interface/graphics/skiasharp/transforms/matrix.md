@@ -7,12 +7,12 @@ ms.assetid: 9EDED6A0-F0BF-4471-A9EF-E0D6C5954AE4
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/12/2017
-ms.openlocfilehash: e44dfd85d9d4480d56ac75d61fd379b04fb8fb12
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 6e78e3930ec731bc970ef39ddb7fe7051d62f63a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648618"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770437"
 ---
 # <a name="matrix-transforms-in-skiasharp"></a>SkiaSharp の行列変換
 
@@ -649,7 +649,6 @@ Z が 1、2 次元平面上に留まりますすべてが、`SkewXZ`と`SkewYZ`�
 </pre>
 
 非ゼロ値`Persp0`と`Persp1`Z が 1、2 次元面をオブジェクトの移動変換が発生します。 記事で説明がそれらのオブジェクトはその平面に戻すときに起こる[**非アフィン変換**](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/non-affine.md)します。
-
 
 ## <a name="related-links"></a>関連リンク
 

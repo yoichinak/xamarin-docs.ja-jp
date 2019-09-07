@@ -7,12 +7,12 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: f326a2ef449b7c807be150a002a4afc600d9908d
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: f635e6e20a4cec9b8cc735bc733b678263cd024a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68652705"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759174"
 ---
 # <a name="polylines-and-parametric-equations"></a>多角形やパラメーターの式
 
@@ -120,7 +120,6 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 [![](polylines-images/archimedeanspiral-small.png "Archimedean スパイラル ページのスクリーン ショットをトリプル")](polylines-images/archimedeanspiral-large.png#lightbox "Archimedean スパイラル ページの 3 倍になるスクリーン ショット")
 
 注意、`SKPath`で作成、`using`ブロックします。 これは、`SKPath`より多くのメモリを消費、`SKPath`を提案しています、前のプログラム内のオブジェクトを`using`ブロックがすべてのアンマネージ リソースを破棄するより適しています。
-
 
 ## <a name="related-links"></a>関連リンク
 

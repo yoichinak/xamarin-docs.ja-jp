@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 13b19d60569884f244f2ea9c79aaa6989838d0d3
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 2129281f389c440d9ae746c4b9b06c4ddb32d1dc
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290705"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770034"
 ---
 # <a name="xamarinmac-extension-support"></a>Xamarin.Mac 拡張機能のサポート
 
@@ -45,7 +45,6 @@ ms.locfileid: "70290705"
     [![](extensions-images/extension02.png "システムログ")](extensions-images/extension02.png#lightbox)
 - 前述のように、拡張機能ホストアプリケーションを実行すると、システムに登録されます。 登録を解除してアプリケーションバンドルを削除しています。 
 - アプリの拡張機能の "存在しない" バージョンが登録されている場合は、次のコマンドを使用してそれらを見つけます (削除することもできます)。`plugin kit -mv`
-
 
 <a name="Walkthrough-and-Sample-App" />
 

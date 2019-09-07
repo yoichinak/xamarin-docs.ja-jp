@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/02/2016
-ms.openlocfilehash: c8be9220f17a0f0f046f09ff61ae76d1fed7e15f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: b5d1ddc4cf3a6817851d22aba920abb29d9f746f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644800"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767646"
 ---
 # <a name="attached-properties"></a>アタッチされるプロパティ
 
@@ -141,7 +141,6 @@ ShadowEffect.SetHasShadow (label, true);
 ## <a name="summary"></a>まとめ
 
 この記事では、添付プロパティの概要について説明し、作成し、これらを使用する方法を示しました。 添付プロパティは、特殊な種類のバインド可能なプロパティ、属性クラスとピリオドで区切ったプロパティ名が含まれていると、その他のオブジェクトにアタッチされていると、XAML で認識可能な 1 つのクラスで定義されています。
-
 
 ## <a name="related-links"></a>関連リンク
 

@@ -7,12 +7,12 @@ ms.assetid: 1D53067B-3502-4D74-B89D-7EC496901AE2
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/24/2017
-ms.openlocfilehash: a645ef4ed55c8b4c78bad94865777088f62f1175
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 467863dba2f5757e0590ccf64927ae2af292f285
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647404"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770572"
 ---
 # <a name="svg-path-data-in-skiasharp"></a>SkiaSharp の SVG パス データ
 
@@ -428,7 +428,6 @@ public class PrettyAnalogClockPage : ContentPage
 ただし、2 番目の手札で行う特殊なは。 クロックが更新されるため、16 ミリ秒ごと、`Millisecond`のプロパティ、`DateTime`可能性のあるいずれかの不連続なジャンプで移動するのではなく 2 つ目は、手動スイープをアニメーション化する値を使用できます 2 番目の 2 番目の。 ただし、このコードでは、スムーズに移動することはできません。 Xamarin.Forms を使用する代わりに、 [ `SpringIn` ](xref:Xamarin.Forms.Easing.SpringIn)と[ `SpringOut` ](xref:Xamarin.Forms.Easing.SpringOut)イージング関数の移動のさまざまな種類のアニメーション。 イージング関数によって、不自然になる方法で移動する 2 番目の手札&mdash;引いて、もう少し移動して、少し過剰撮影効果、変換先、残念ながらその再現できないこれらの静的なスクリーン ショットで前に。
 
 [![](path-data-images/prettyanalogclock-small.png "かなりアナログ時計のページのスクリーン ショットをトリプル")](path-data-images/prettyanalogclock-large.png#lightbox "アナログ時計かなりページの 3 倍になるスクリーン ショット")
-
 
 ## <a name="related-links"></a>関連リンク
 

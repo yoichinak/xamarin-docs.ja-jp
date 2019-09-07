@@ -7,12 +7,12 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 9e12e901a4224580f72a4b92a4319e02a60efe46
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 2d02e79ff51468572250d1a7ce7c6d3da103c03a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643022"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770527"
 ---
 # <a name="dots-and-dashes-in-skiasharp"></a>ドットとダッシュで SkiaSharp
 
@@ -165,7 +165,6 @@ float[] GetPickerArray(Picker picker)
 これまでにメンションが加えられていない 2 番目のパラメーターの`SKPathEffect.CreateDash`メソッド。 このパラメータの名前は`phase`と行の先頭のドットの破線パターン内のオフセットを指しています。 たとえば、dash 配列 {10, 10} と`phase`10 では、ドットではなく、ギャップで始まる行。
 
 1 つの興味深いアプリケーション、`phase`パラメーターは、アニメーションにできます。 **アニメーション スパイラル**に似ている、 **Archimedean スパイラル**ページのことを除いて、 [ `AnimatedSpiralPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/AnimatedSpiralPage.cs)クラスがアニメーション化、`phase`パラメーターを使用して、Xamarin.Forms`Device.Timer`メソッド。
-
 
 ```csharp
 public class AnimatedSpiralPage : ContentPage

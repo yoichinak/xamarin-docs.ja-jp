@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 8ab832028d4474bbb3c34805b245638695eae75e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 2578272dcd38399f23f2aac67503ea4e1b09a027
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291126"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769078"
 ---
 # <a name="working-with-tvos-alerts-in-xamarin"></a>Xamarin での tvOS アラートの使用
 
@@ -361,14 +361,11 @@ partial void DisplayTextInputAlert (Foundation.NSObject sender) {
 #endregion
 ```
 
-
 <a name="Summary" />
 
 ## <a name="summary"></a>Summary
 
 この記事では、を`UIAlertController`使用して tvOS のユーザーに警告メッセージを表示する方法について説明しました。 まず、簡単なアラートを表示し、ボタンを追加する方法を示しました。 次に、テキストフィールドを警告に追加する方法について説明しました。 最後に、ヘルパークラスを使用して、アラートを表示するために必要な反復的なコードの量を減らす方法を説明しました。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 07/28/2016
-ms.openlocfilehash: 75180152c3ed7056102038b9019f8017183c17ee
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 16e6d66cd41ead7a4d234cf45bb73e53e41aa5eb
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70279944"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769575"
 ---
 # <a name="referencing-native-libraries-in-xamarinios"></a>Xamarin でのネイティブライブラリの参照
 
@@ -56,7 +56,6 @@ lipo -create -output libMyLibrary.a libMyLibrary-i386.a libMyLibrary-arm64.a lib
 
 これに`libMyLibrary.a`より、ユニバーサル (fat) ライブラリが作成されます。これは、すべての iOS 開発ターゲットで使用するのに適しています。
 
-
 ### <a name="missing-required-architecture-i386"></a>必要なアーキテクチャの i386 がありません
 
 IOS シミュレーターで目的の`does not implement methodSignatureForSelector` C `does not implement doesNotRecognizeSelector`ライブラリを使用しようとしたときに、ランタイムの出力にまたはメッセージが表示される場合は、そのライブラリが i386 アーキテクチャ用にコンパイルされていない可能性があります (「 [Universal ネイティブを構築する」を参照してください)。「ライブラリ](#building_native)」セクションを参照してください)。
@@ -80,7 +79,6 @@ lipo -info /full/path/to/libraryname.a
 - ライブラリをプロジェクトに取り込む
 - ライブラリをリンクするように Xamarin を構成する
 - ライブラリからメソッドにアクセスします。
-
 
 **ライブラリをプロジェクトに取り込む**には、ソリューションエクスプローラーからプロジェクトを選択し、**コマンド + オプション + a**キーを押します。 LibMyLibrary. a に移動し、プロジェクトに追加します。 プロンプトが表示されたら Visual Studio for Mac または Visual Studio でプロジェクトにコピーするように指示します。 追加した後、プロジェクトで libFoo を見つけて右クリックし、[**ビルド] アクション**を **[なし]** に設定します。
 
@@ -113,7 +111,6 @@ IOS で使用できるネイティブライブラリには、次の2種類があ
 - オペレーティングシステムの一部である共有ライブラリ。
 
 - アプリケーションに付属するスタティックライブラリ。
-
 
 これらのいずれかで定義されているメソッドにアクセスするには、 [Mono の P/Invoke 機能](https://www.mono-project.com/docs/advanced/pinvoke/)を使用します。これは、.net で使用するのと同じテクノロジです。これは、ほぼ次のようになります。
 
@@ -174,4 +171,3 @@ public static extern double AnimalLibraryVersion();
 IOS ではスタティックライブラリしか使用できないため、リンク先となる外部共有ライブラリがないため、DllImport 属性の path パラメーターには特別な名前`__Internal`を使用する必要があります (名前の先頭にある2つのアンダースコア文字に注意してください)。パス名。
 
 これにより、DllImport は、共有ライブラリから読み込まれるのではなく、現在のプログラムで参照しているメソッドのシンボルを検索します。
-

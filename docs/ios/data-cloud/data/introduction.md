@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 10/11/2016
-ms.openlocfilehash: 71a1b4df1d57d489efd7f3171a8c36aac1017cca
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 4000e4cc5d260457c0e0da275e3a7beecafd1a98
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281715"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767027"
 ---
 # <a name="introduction-to-data-storage-in-xamarinios-apps"></a>Xamarin. iOS アプリのデータストレージの概要
 
@@ -25,7 +25,6 @@ ms.locfileid: "70281715"
 - **シリアル化**されたデータファイル-ファイルシステム上でオブジェクトを XML または JSON として永続化できます。 .NET framework には、オブジェクトのシリアル化と逆シリアル化を簡単にするためのライブラリが用意されています。 適切な名前を使用して、データファイルを整理します。
 - **データベース**– SQLite データベースエンジンは iOS で使用でき、クエリ、並べ替え、またはその他の操作に必要な構造化データを格納する場合に便利です。 データベースストレージは、多くのプロパティを持つデータの一覧に適しています。
 - **イメージファイル**–バイナリデータをモバイルデバイスのデータベースに格納することはできますが、ファイルシステムに直接格納することをお勧めします。 必要に応じて、データベースにファイル名を格納して、画像を他のデータに関連付けることができます。 大きなイメージまたは多くのイメージを扱う場合は、ユーザーの記憶領域をすべて消費しないようにするために不要になったファイルを削除するキャッシュ戦略を計画することをお勧めします。
-
 
 データベースがアプリの適切なストレージメカニズムである場合、このドキュメントの残りの部分では、Xamarin プラットフォームで SQLite を使用する方法について説明します。
 
@@ -40,7 +39,6 @@ ms.locfileid: "70281715"
 - 既存のデータベーススキルを持つ開発者は、その知識を活用してデータベースとデータアクセスコードを設計できます。
 - 接続されたアプリケーションのサーバーコンポーネントからのデータモデルは、モバイルアプリケーションで (全体または一部で) 再利用される場合があります。
 
-
 ## <a name="sqlite-database-engine"></a>SQLite データベースエンジン
 
 SQLite は、モバイルプラットフォーム用に Apple によって採用されたオープンソースのデータベースエンジンです。 SQLite データベースエンジンは iOS に組み込まれているため、開発者はこれを利用することはできません。 SQLite は、次の理由により、クロスプラットフォームモバイル開発に適しています。
@@ -50,13 +48,11 @@ SQLite は、モバイルプラットフォーム用に Apple によって採用
 - ファイル形式は、32-または64ビット、ビッグエンディアン、リトルエンディアンのいずれのシステムでも、プラットフォーム間で簡単に使用できます。
 - ほとんどの SQL92 標準が実装されています。
 
-
 SQLite は小規模で高速なので、使用に関していくつかの注意事項があります。
 
 - 一部の外部結合構文はサポートされていません。
 - Table RENAME と ADDCOLUMN のみがサポートされています。 スキーマに対して他の変更を行うことはできません。
 - ビューは読み取り専用です。
-
 
 SQLite の詳細については、 [SQLite.org](http://SQLite.org)を参照してください。ただし、Xamarin で sqlite を使用するために必要なすべての情報は、このドキュメントおよび関連するサンプルに含まれています。 SQLite データベースエンジンは、すべてのバージョンの iOS に組み込まれています。
 この章では説明しませんが、SQLite は Windows Phone および Windows アプリケーションでも使用できます。
@@ -65,8 +61,6 @@ SQLite の詳細については、 [SQLite.org](http://SQLite.org)を参照し�
 
 SQLite は Windows プラットフォームでも使用できますが、このドキュメントでは説明しません。
 詳細については、「 [Tasky](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)と[tasky Pro](http://docs.xamarin.com/guides/cross-platform/application_fundamentals/building_cross_platform_applications/case_study%3A_tasky)ケーススタディ」と「 [Tim heuer のブログ](http://timheuer.com/blog/archive/2012/06/28/seeding-your-metro-style-app-with-sqlite-database.aspx)」を参照してください。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

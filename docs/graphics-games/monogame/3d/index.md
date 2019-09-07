@@ -1,31 +1,30 @@
 ---
-title: MonoGame を使用した 3D グラフィックスの概要
-description: MonoGame には、リアルタイムの 3D グラフィックスを表示するための柔軟で効率的な API が提供しています。 下位レベルのグラフィックス リソースへのアクセスもおよびレンダリングの高度なコンストラクトを含みます。
+title: モノゲームを使用した3D グラフィックスの概要
+description: モノゲームには、リアルタイム3D グラフィックスを表示するための柔軟で効率的な API が用意されています。 これには、レンダリングのための上位レベルのコンストラクトが含まれ、下位レベルのグラフィックスリソースにもアクセスできます。
 ms.prod: xamarin
 ms.assetid: 8706826E-8BA5-4E00-A7D6-4072626E3292
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: dc0f8b34bbd85d5687431d8a20db4a31c72f5298
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: d5deef3056b3ce645c509b9754306214704ed7b9
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61381398"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70763849"
 ---
-# <a name="introduction-to-3d-graphics-with-monogame"></a>MonoGame を使用した 3D グラフィックスの概要
+# <a name="introduction-to-3d-graphics-with-monogame"></a>モノゲームを使用した3D グラフィックスの概要
 
-_MonoGame には、リアルタイムの 3D グラフィックスを表示するための柔軟で効率的な API が提供しています。下位レベルのグラフィックス リソースへのアクセスもおよびレンダリングの高度なコンストラクトを含みます。_
+_モノゲームには、リアルタイム3D グラフィックスを表示するための柔軟で効率的な API が用意されています。これには、レンダリングのための上位レベルのコンストラクトが含まれ、下位レベルのグラフィックスリソースにもアクセスできます。_
 
-MonoGame API は、3 D ゲームとアプリケーションを開発するため、広範なクラスのセットを提供します。 さまざまなプラットフォーム間で同一の構文を維持しながらパフォーマンスを高めるため、ハードウェアに直接アクセスできます。
+モノゲーム API は、3D ゲームおよびアプリケーションを開発するための広範なクラスのセットを提供します。 これにより、ハードウェアへの直接アクセスが可能になり、さまざまなプラットフォームで同じ構文を維持しながら、パフォーマンスが最大になります。
 
-MonoGame はほぼマイクロソフトに同一の XNA、XNA に慣れている開発者は MonoGame 開発なじみやすいものです。 XNA を使用していないが、DirectX や OpenGL を 3D のゲームで使用する開発者はクラスや概念の多くなじみやすいものにもします。
+モノゲームは Microsoft の XNA とほぼ同じであるため、XNA を経験した開発者は、モノのゲーム開発を理解していることがわかります。 XNA を使用していないものの、3D ゲームで DirectX または OpenGL を使用している開発者は、多くのクラスと概念を理解しています。
 
-最初のセクションでは、.fbx ファイルからゲームを 3D モデルを追加する方法について説明します。 次のセクションでは、移動や、まわりなどの一般的なコントロールを含む 3D カメラを作成する方法について説明します。 最後のセクションについて詳しくは、 `VertexBuffer` .fbx ファイルからのレンダリング モデルと比較した 3D レンダリングをより細かく制御できるクラスが読み込まれます。
-
+最初のセクションでは、fbx ファイルからゲームに3D モデルを追加する方法について説明します。 次のセクションでは、移動や検索などの一般的なコントロールを含む3D カメラの作成方法について説明します。 最後のセクションでは、クラスについ`VertexBuffer`てさらに詳しく説明します。これにより、fbx ファイルから読み込まれたレンダリングモデルと比較して、3d レンダリングをより詳細に制御できるようになります。
 
 ## <a name="topics"></a>トピック
 
-- [モデル クラスを使用します。](~/graphics-games/monogame/3d/part1.md)
-- [頂点を 3D グラフィックスの描画](~/graphics-games/monogame/3d/part2.md)
+- [モデルクラスの使用](~/graphics-games/monogame/3d/part1.md)
+- [3D グラフィックスを頂点で描画する](~/graphics-games/monogame/3d/part2.md)
 - [3D 座標](~/graphics-games/monogame/3d/part3.md)

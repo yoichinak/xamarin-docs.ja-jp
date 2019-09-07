@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: fd94cd7a6d37e7fa00489e788f232842b319e5d3
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 6008663276151ef9512e4a370252da6861fa1b19
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292667"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769442"
 ---
 # <a name="social-framework-in-xamarinios"></a>Xamarin のソーシャルフレームワーク
 
@@ -58,7 +58,6 @@ if (SLComposeViewController.IsAvailable (SLServiceKind.Twitter)) {
 - `SetInitialText`–ツイートに表示する最初のテキストを追加します。
 - `AddUrl`–ツイートに Url を追加します。
 - `AddImage`–イメージをツイートに追加します。
-
 
 初期化される`PresentVIewController`と、を呼び出すと`SLComposeViewController`、によって作成されたビューが表示されます。 ユーザーは必要に応じて、ツイートを編集して送信することも、送信をキャンセルすることもできます。 どちらの場合も、コントローラーはで`CompletionHandler`破棄される必要があります。この場合、次に示すように、ツイートが送信またはキャンセルされたかどうかを確認するために結果を確認することもできます。
 
@@ -473,7 +472,6 @@ accountStore.RequestAccess (accountType, options, (granted, error) => {
 ## <a name="summary"></a>Summary
 
 この記事では、ソーシャルフレームワークを使用して Twitter と Facebook を操作する方法について説明しました。 このチュートリアルでは、デバイス設定でソーシャルネットワークごとにアカウントを構成する場所を示しました。 また、を使用して、 `SLComposeViewController`ソーシャルネットワークに投稿するための統合ビューを提供する方法についても説明しました。 さらに、各ソーシャル`SLRequest`ネットワークの API の呼び出しに使用されるクラスを調べています。
-
 
 ## <a name="related-links"></a>関連リンク
 

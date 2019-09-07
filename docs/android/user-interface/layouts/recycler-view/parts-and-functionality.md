@@ -7,15 +7,14 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/13/2018
-ms.openlocfilehash: 89b7f70ae69987edbd465d669f1bac17ddebc7c8
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: bea058a1f275d6f02fe4cbdf70f8e47a11d1cf8e
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522445"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70764117"
 ---
 # <a name="recyclerview-parts-and-functionality"></a>RecyclerView のパーツと機能
-
 
 `RecyclerView`は、一部のタスクを内部で処理します (たとえば、ビューのスクロールやリサイクルなど)。ただし、基本的には、コレクションを表示するようにヘルパークラスを調整するマネージャーです。 `RecyclerView`次のヘルパークラスにタスクを委任します。
 
@@ -51,7 +50,6 @@ ms.locfileid: "69522445"
 
 `RecyclerView`および`ItemDecoration` を拡張しない場合、では既定の実装が使用されます。`ItemAnimator` このガイドではカスタムを作成する方法については説明しません`ItemDecoration`と`ItemAnimator`クラスですこれらのクラスの詳細については、次を参照してください。 [RecyclerView.ItemDecoration](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ItemDecoration.html)と[RecyclerView.ItemAnimator](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ItemAnimator.html)。
 
-
 <a name="recycling" />
 
 ### <a name="how-view-recycling-works"></a>ビューのリサイクルのしくみ
@@ -74,8 +72,6 @@ ms.locfileid: "69522445"
 6. ユーザーがを一覧の次の項目`RecyclerView`にスクロールすると、リサイクルされたビューが画面上に表示されます。 一方、別のビューが表示されなくなり、上記の手順に従ってリサイクルされます。
 
 項目ビューの再利用に加えて`RecyclerView` 、では、もう1つの効率の最適化 (ビューホルダー) も使用します。 *ビューホルダー*は、ビュー参照をキャッシュする単純なクラスです。 アダプターが項目レイアウトファイルを増えするたびに、対応するビューホルダーも作成されます。 ビューホルダーは、 `FindViewById`を使用して、拡大された項目レイアウトファイル内のビューへの参照を取得します。 これらの参照は、新しいデータを表示するためにレイアウトがリサイクルされるたびに、新しいデータをビューに読み込むために使用されます。
- 
-
 
 ### <a name="the-layout-manager"></a>レイアウトマネージャー
 
@@ -96,7 +92,6 @@ ms.locfileid: "69522445"
 
 レイアウトマネージャーの詳細については、 [RecyclerView クラスのリファレンス](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.LayoutManager.html)を参照してください。
 
-
 ### <a name="the-view-holder"></a>ビューホルダー
 
 ビューの所有者は、ビュー参照をキャッシュするために定義するクラスです。 アダプターは、これらのビュー参照を使用して、各ビューをそのコンテンツにバインドします。 内のすべての`RecyclerView`項目には、その項目のビュー参照をキャッシュするビューホルダーインスタンスが関連付けられています。 ビューホルダーを作成するには、次の手順を使用して、項目ごとのビューの正確なセットを保持するクラスを定義します。
@@ -107,7 +102,6 @@ ms.locfileid: "69522445"
 
 `ViewHolder`実装の詳細な例については、[基本的な RecyclerView の例](~/android/user-interface/layouts/recycler-view/recyclerview-example.md)を参考にしてください。
 の詳細`RecyclerView.ViewHolder`については、 [RecyclerView クラスのリファレンス](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ViewHolder.html)を参照してください。
-
 
 ### <a name="the-adapter"></a>アダプター
 
@@ -131,8 +125,6 @@ ms.locfileid: "69522445"
 
 レイアウトマネージャーは、内に項目を配置するときに、 `RecyclerView`これらのメソッドを呼び出します。 
 
-
-
 ### <a name="notifying-recyclerview-of-data-changes"></a>データ変更の RecyclerView への通知
 
 `RecyclerView`は、データソースの内容が変更されたときに、表示を自動的に更新しません。アダプターは、データ`RecyclerView`セットが変更されたときに通知を受け取る必要があります。 データセットはさまざまな方法で変更できます。たとえば、項目内の内容が変更されたり、データの全体的な構造が変更される可能性があります。
@@ -155,7 +147,6 @@ ms.locfileid: "69522445"
 データセットがどのように変更されたかを正確に把握している場合は`RecyclerView` 、上記の適切なメソッドを呼び出して、最も効率的な方法で更新することができます。 データセットがどのように変更されたかわからない場合は、 `NotifyDataSetChanged`を呼び出すことができます`RecyclerView` 。これは、ユーザーに表示されるすべてのビューを更新する必要があるためです。 これらのメソッドの詳細については、「 [RecyclerView](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.Adapter.html)」を参照してください。
 
 次のトピック「[基本的な RecyclerView の例](~/android/user-interface/layouts/recycler-view/recyclerview-example.md)」では、上記のパーツと機能の実際のコード例を示すために、サンプルアプリが実装されています。
-
 
 ## <a name="related-links"></a>関連リンク
 

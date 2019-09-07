@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/30/2018
-ms.openlocfilehash: ca80dc9a064e81d9b81b1cd53237df818d409576
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: 0c6568f9283491f0e55c79c77fb8efb2ae75f33c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69887541"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758617"
 ---
 # <a name="a-basic-recyclerview-example"></a>基本的な RecyclerView の例
 
@@ -21,7 +21,6 @@ ms.locfileid: "69887541"
 [![カードビューを使用して写真を表示する RecyclerView アプリの2つのスクリーンショット](recyclerview-example-images/01-recyclerviewer-sml.png)](recyclerview-example-images/01-recyclerviewer.png#lightbox)
 
 **RecyclerViewer**は、 [CardView](~/android/user-interface/controls/card-view.md)を使用して、 `RecyclerView`レイアウトに各写真項目を実装します。 `RecyclerView`パフォーマンス上の利点があるため、このサンプルアプリでは、大きな写真のコレクションをすばやくスクロールできます。
-
 
 ### <a name="an-example-data-source"></a>データソースの例
 
@@ -46,7 +45,6 @@ mPhotoAlbum.RandomSwap ();
 ```
 
 の実装の`PhotoAlbum`詳細は理解`RecyclerView`には関係がないため`PhotoAlbum` 、ソースコードはここには記載されていません。 のソースコード`PhotoAlbum`は、 [RecyclerViewer](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android50-recyclerviewer)サンプルアプリの[PhotoAlbum.cs](https://github.com/xamarin/monodroid-samples/blob/master/android5.0/RecyclerViewer/RecyclerViewer/PhotoAlbum.cs)で入手できます。
-
 
 ### <a name="layout-and-initialization"></a>レイアウトと初期化
 
@@ -150,7 +148,6 @@ public class PhotoViewHolder : RecyclerView.ViewHolder
 
 の詳細`RecyclerView.ViewHolder`については、 [RecyclerView クラスのリファレンス](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ViewHolder.html)を参照してください。
 
-
 ### <a name="adapter"></a>アダプター
 
 アダプターは、各行`RecyclerView`を特定の写真のデータと共に読み込みます。 たとえば、行位置*p*の特定の写真の場合、アダプターはデータソース内の位置*p*にある関連データを検索し、 `RecyclerView`コレクションの位置*p*にある行項目にこのデータをコピーします。 アダプターはビューの所有者を使用して、その`ImageView`位置`TextView`でとの参照を検索します。これ`FindViewById`により、ユーザーが写真コレクションをスクロールしてビューを再利用するときに、これらのビューを繰り返し呼び出す必要がなくなります。
@@ -179,7 +176,6 @@ public class PhotoAlbumAdapter : RecyclerView.Adapter
 - **`ItemCount`** &ndash;データソース内の項目の数を返します。
 
 レイアウトマネージャーは、内に項目を配置するときに、 `RecyclerView`これらのメソッドを呼び出します。 これらのメソッドの実装については、次のセクションで説明します。
-
 
 #### <a name="oncreateviewholder"></a>OnCreateViewHolder
 
@@ -243,7 +239,6 @@ public override RecyclerView.ViewHolder
 
 結果のビューホルダーインスタンス`vh`は、呼び出し元 (レイアウトマネージャー) に返されます。
 
-
 #### <a name="onbindviewholder"></a>OnBindViewHolder
 
 レイアウトマネージャーは、表示されている画面領域に`RecyclerView`特定のビューを表示する準備ができたら、アダプターの`OnBindViewHolder`メソッドを呼び出して、指定した行の位置にある項目にデータソースの内容を読み込みます。 `OnBindViewHolder`指定した行の位置 (写真のイメージリソースと写真のキャプションの文字列) の写真情報を取得し、このデータを関連付けられたビューにコピーします。 ビューは、ビューホルダーオブジェクト (パラメーターを`holder`通じて渡されます) に格納されている参照によって検索されます。
@@ -267,7 +262,6 @@ public override void
 
 は、 `OnBindViewHolder`データの構造を直接処理するコードであることに注意してください。 この場合、は`OnBindViewHolder` 、データソース内の`RecyclerView`関連付けられているデータ項目に項目の位置をマップする方法を理解します。 この場合のマッピングは簡単です。この場合、位置はフォトアルバムの配列インデックスとして使用できます。ただし、より複雑なデータソースでは、このようなマッピングを確立するために余分なコードが必要になる場合があります。
 
-
 #### <a name="itemcount"></a>ItemCount
 
 メソッド`ItemCount`は、データコレクション内の項目の数を返します。 フォトビューアーアプリの例では、項目数はフォトアルバムの写真の数です。
@@ -280,7 +274,6 @@ public override int ItemCount
 ```
 
 の詳細`RecyclerView.Adapter`については、 [RecyclerView クラスのリファレンス](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.Adapter.html)を参照してください。
-
 
 ### <a name="putting-it-all-together"></a>まとめ
 
@@ -377,9 +370,6 @@ android:hardwareAccelerated="true"
 
 この basic アプリでは、フォトアルバムの閲覧のみがサポートされています。 項目タッチイベントに応答せず、基になるデータの変更を処理しません。 この機能は[、RecyclerView の例を拡張することによって](~/android/user-interface/layouts/recycler-view/extending-the-example.md)追加されます。
 
-
-
-
 ### <a name="changing-the-layoutmanager"></a>LayoutManager の変更
 
 `RecyclerView`柔軟性があるため、別のレイアウトマネージャーを使用するようにアプリを変更するのは簡単です。 次の例では、垂直方向の線形レイアウトではなく水平方向にスクロールするグリッドレイアウトでフォトアルバムを表示するように変更されています。 これを行うために、次の`GridLayoutManager`ようにを使用するようにレイアウトマネージャーのインスタンス化が変更されます。
@@ -396,8 +386,6 @@ mLayoutManager = new GridLayoutManager(this, 2, GridLayoutManager.Horizontal, fa
 レイアウトスタイルを変更するために、アダプターコードもレイアウト XML も変更する必要がないことに注意してください。 
 
 次のトピックでは、 [RecyclerView の例を拡張](~/android/user-interface/layouts/recycler-view/extending-the-example.md)しています。この基本的なサンプルアプリは、項目`RecyclerView`クリックイベントを処理し、基になるデータソースが変更されたときに更新するように拡張されています。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

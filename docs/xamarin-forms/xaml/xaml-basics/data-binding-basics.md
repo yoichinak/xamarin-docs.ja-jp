@@ -7,12 +7,12 @@ ms.assetid: 342288C3-BB4C-4924-B178-72E112D777BA
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: 3fdc251d3ed24c96d7d3fa9620e483ad47a8491e
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 7b34e7658ad38f80cffa22d99eea42901a905a38
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227937"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767626"
 ---
 # <a name="part-4-data-binding-basics"></a>パート 4 です。 データ バインディングの基礎
 
@@ -405,8 +405,6 @@ namespace XamlSamples
 ## <a name="summary"></a>まとめ
 
 データ バインドでは、プロパティ ページ内の 2 つのオブジェクト間、またはビジュアル オブジェクト間のリンクと、基になるデータの強力なメカニズムを提供します。 便利なパラダイムとして登場する一般的なアプリケーション アーキテクチャ パターンを開始、アプリケーションのデータ ソースでの作業の開始時にします。 これについては[パート 5 です。MVVM へのデータ バインディングから](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)します。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

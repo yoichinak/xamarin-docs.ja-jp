@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: f33e3f4f27afe7e0b98c4a1f71d77c4a1c7195ac
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 73474aaeb138d52536dd8ad5a7dca9be566475af
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289080"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769088"
 ---
 # <a name="working-with-tvos-navigation-bars-in-xamarin"></a>Xamarin での tvOS ナビゲーションバーの使用
 
@@ -48,9 +48,7 @@ TvOS アプリのナビゲーションバーを操作する最も簡単な方法
     [![](navigation-bars-images/navbar05.png "バーボタンの項目のアクション")](navigation-bars-images/navbar05.png#lightbox)
 1. 変更内容を保存します。
 
-
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
-
 
 1. **ソリューションエクスプローラー**で、[ファイル] を`Main.storyboard`ダブルクリックし、編集用に開きます。
 1. **ツールボックス**から**ナビゲーションバー**をドラッグし、画面の上部にあるビューにドロップします。
@@ -66,7 +64,6 @@ TvOS アプリのナビゲーションバーを操作する最も簡単な方法
 
     [![](navigation-bars-images/navbar05-vs.png "バーボタン項目のアクション")](navigation-bars-images/navbar05-vs.png#lightbox)
 1. 変更内容を保存します。
-
 
 -----
 
@@ -133,8 +130,6 @@ namespace MySingleView
 ## <a name="summary"></a>Summary
 
 この記事では、tvOS アプリ内のナビゲーションバーの設計と操作について説明しました。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

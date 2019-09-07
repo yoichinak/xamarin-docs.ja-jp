@@ -6,12 +6,12 @@ ms.assetid: AD0A7971-51B1-4E38-B412-7907CE43CDDF
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: 013e169770fa2e52f89915d1b74c7292a049f87e
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: c5702780b6a0f0732d846a2cd4226aec5e49fc21
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70197820"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766832"
 ---
 # <a name="using-the-model-class"></a>モデルクラスの使用
 
@@ -38,7 +38,6 @@ _モデルクラスは、従来の3D グラフィックスレンダリングの�
 先に進む前に、プロジェクトが開いて正しく配置されていることを確認する必要があります。 デプロイされると、空のブルースクリーンが表示されます。
 
 ![空の青いゲーム画面](part1-images/image2.png)
-
 
 ## <a name="including-the-xnbs-in-the-game-project"></a>ゲームプロジェクトに XNBs を含める
 
@@ -210,7 +209,6 @@ var cameraPosition = new Vector3 (0, 30, 0);
 ## <a name="rendering-multiple-models"></a>複数のモデルのレンダリング
 
 前述のように、1 `Model`つのを複数回描画できます。 これを簡単にするために、パラメーター `Model`として目的`Model`の位置を取得する独自のメソッドに描画コードを移動します。 完了する`Draw`と、メソッド`DrawModel`とメソッドは次のようになります。
-
 
 ```csharp
 protected override void Draw(GameTime gameTime)

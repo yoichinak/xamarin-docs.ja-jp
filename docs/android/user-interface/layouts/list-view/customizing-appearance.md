@@ -6,17 +6,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/26/2018
-ms.openlocfilehash: a2487fd0f7d90b70ec0dc1fb1978ca06a3108822
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 2787e814d330bf8262ba05e38c7827211e07fd72
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522607"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70764259"
 ---
 # <a name="customizing-a-listviews-appearance-with-xamarinandroid"></a>Xamarin Android を使用した ListView の外観のカスタマイズ
 
 ListView の外観は、表示されている行のレイアウトによって決まります。 の外観を変更するに`ListView`は、別の行レイアウトを使用します。
-
 
 ## <a name="built-in-row-views"></a>組み込みの行ビュー
 
@@ -82,8 +81,6 @@ view = context.LayoutInflater.Inflate(Android.Resource.Layout.SimpleExpandableLi
 
 グループビューと子ビューのプロパティは、上記のように、標準`Text1` `Text2`識別子とコントロール識別子を参照することによって設定できます。 SimpleExpandableListItem スクリーンショット (上図参照) は、1行のグループビュー (SimpleExpandableListItem1) と2行の子ビュー (SimpleExpandableListItem2) の例を示しています。 または、2つの行 (SimpleExpandableListItem2) に対してグループビューを構成し、子ビューを1つの行 (SimpleExpandableListItem1) に対して構成することも、グループビューと子ビューの両方に同じ行数を設定することもできます。 
 
-
-
 ## <a name="accessories"></a>Accessories
 
 行では、ビューの右側にアクセサリを追加して、選択状態を示すことができます。
@@ -105,7 +102,6 @@ ListAdapter = new ArrayAdapter<String>(this, Android.Resource.Layout.SimpleListI
 ```
 
 は`ListView` 、表示されているアクセサリに関係なく、さまざまな選択モードをサポートしています。 混乱を避けるには`Single` 、 `SingleChoice`アクセサリを使用し`Checked`て選択`Multiple`モードを、 `MultipleChoice`スタイルにはまたはモードを使用します。 選択モードは、 `ChoiceMode` `ListView`のプロパティによって制御されます。
-
 
 ### <a name="handling-api-level"></a>API レベルの処理
 
@@ -129,7 +125,6 @@ lv.ChoiceMode = 1; // Single
 //lv.ChoiceMode = 3; // MultipleModal
 */
 ```
-
 
 ### <a name="selecting-items-programmatically"></a>プログラムによる項目の選択
 
@@ -157,7 +152,6 @@ for (var i = 0; i < sparseArray.Size(); i++ )
 Console.WriteLine();
 ```
 
-
 ## <a name="creating-custom-row-layouts"></a>カスタム行レイアウトの作成
 
 4つの組み込みの行ビューは非常に単純です。 より複雑なレイアウト (メールのリスト、ツイート、連絡先情報など) を表示するには、カスタムビューが必要です。 カスタムビューは一般に、 **Resources/Layout**ディレクトリでは axml ファイルとして宣言され、その後、カスタムアダプターによってリソース Id を使用して読み込まれます。 ビューには、任意の数の表示クラス (TextViews、ImageViews、その他のコントロールなど) を、カスタムの色、フォント、およびレイアウトで含めることができます。
@@ -176,9 +170,7 @@ Console.WriteLine();
 
 - `ItemClick`を異なる方法で宣言する必要があります ( `ListView.ItemClick`のオーバーライド`OnListItemClick`で`ListActivity`はなく、にアタッチされるイベントハンドラーです)。
 
-
 これらの変更については、以下で詳しく説明します。アクティビティのビューとカスタムの行ビューを作成してから、アダプターとアクティビティに加えられた変更について説明します。
-
 
 ### <a name="adding-a-listview-to-an-activity-layout"></a>アクティビティレイアウトへの ListView の追加
 
@@ -209,7 +201,6 @@ Console.WriteLine();
 ```
 
 (では`ListActivity`なく) `Activity`カスタムレイアウトでを使用すると、この例の見出し`TextView`などのコントロールを画面に追加できるようになります。
-
 
 ### <a name="creating-a-custom-row-layout"></a>カスタムの行レイアウトの作成
 
@@ -256,7 +247,6 @@ Console.WriteLine();
 
 カスタムの行レイアウトにはさまざまなコントロールを含めることができますが、スクロールのパフォーマンスは複雑なデザインやイメージの使用によって影響を受ける可能性があります (特にネットワーク経由で読み込む必要がある場合)。 スクロールのパフォーマンスの問題に対処する方法の詳細については、Google の記事を参照してください。
 
-
 ### <a name="referencing-a-custom-row-view"></a>カスタム行ビューの参照
 
 カスタムアダプターの実装例は、「」 `HomeScreenAdapter.cs`にあります。 キーメソッドは`GetView` 、リソース ID `Resource.Layout.CustomView`を使用してカスタムの axml を読み込み、それを返す前にビュー内の各コントロールのプロパティを設定します。 完全なアダプタークラスが表示されます。
@@ -297,7 +287,6 @@ public class HomeScreenAdapter : BaseAdapter<TableItem> {
 }
 ```
 
-
 ### <a name="referencing-the-custom-listview-in-the-activity"></a>アクティビティでのカスタム ListView の参照
 
 クラスは`HomeScreen`から`Activity`継承するようになっ`ListView`たため、クラスでは、axml で宣言されたコントロールへの参照を保持するフィールドが宣言されています。
@@ -331,8 +320,6 @@ void OnListItemClick(object sender, AdapterView.ItemClickEventArgs e)
 結果の画面は次のようになります。
 
 [![結果の CustomRowView のスクリーンショット](customizing-appearance-images/customrowview.png)](customizing-appearance-images/customrowview.png#lightbox)
-
-
 
 ### <a name="customizing-the-row-selector-color"></a>行セレクターの色のカスタマイズ
 
@@ -374,13 +361,9 @@ android:background="@drawable/CustomSelector"
 
 [![[選択した行の名前を表示するトーストメッセージを含むオレンジ色で選択された行]](customizing-appearance-images/customselectcolor.png)](customizing-appearance-images/customselectcolor.png#lightbox)
 
-
-
 ### <a name="preventing-flickering-on-custom-layouts"></a>カスタムレイアウトのちらつきを防止する
 
 Android では、レイアウト情報を`ListView`キャッシュすることで、スクロールのパフォーマンスを向上させようとしています。 データのスクロールリストが長い場合は、アクティビティの axml `android:cacheColorHint`定義の`ListView`宣言のプロパティも設定する必要があります (カスタムの行レイアウトの背景と同じ色の値に設定します)。 このヒントを含めないと、ユーザーがカスタムの行背景色でリストをスクロールしたときに "ちらつき" が発生する可能性があります。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

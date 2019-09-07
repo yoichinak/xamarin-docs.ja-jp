@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: b846d034c31069c02e3c97fba0ac0d68e6df2e23
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 66bea7d2a9660018c7cec9b7bafeadafd5029ed9
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292522"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769421"
 ---
 # <a name="speech-recognition-in-xamarinios"></a>Xamarin の音声認識 (iOS)
 
@@ -128,9 +128,6 @@ IOS アプリで音声認識を採用するには、次の4つの主要な手順
 
 > [!IMPORTANT]
 > 上記`Info.plist`のいずれかのキーを指定し`NSSpeechRecognitionUsageDescription`ない`NSMicrophoneUsageDescription`と (または)、音声認識またはマイクを使用してライブオーディオにアクセスしようとすると、アプリが警告なしに失敗する可能性があります。
-
-
-
 
 ### <a name="requesting-authorization"></a>承認の要求
 
@@ -398,8 +395,6 @@ IOS アプリで音声認識を使用する場合、Apple は透過的であり�
 ## <a name="summary"></a>Summary
 
 この記事では、新しい Speech API について説明し、それを Xamarin. iOS アプリに実装する方法を示しました。これにより、音声認識を継続的に (ライブまたは録音されたオーディオストリームから) テキストに変換することができます。 
-
-
 
 ## <a name="related-links"></a>関連リンク
 

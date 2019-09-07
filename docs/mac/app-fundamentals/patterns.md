@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 06/17/2016
-ms.openlocfilehash: 188bc8a04b62c97e9d6f80669fe50da1bf4d9340
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: b4934fa82d862ad2e8ab53579137873ed9e4bcca
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289547"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770165"
 ---
 # <a name="common-patterns-and-idioms-in-xamarinmac"></a>Xamarin. Mac での一般的なパターンと表現
 
@@ -54,8 +54,6 @@ Xamarin. Mac アプリケーションでテーブルビューを操作する方�
 目標 C のプロトコルは、のC#インターフェイスと比較することができ、多くの場合、同様の状況で使用されます。 たとえば、上記の例では、デリゲートとデータソースの両方が実際にプロトコルです。`NSTableView` これらは、オーバーライド可能な仮想メソッドを使用して基本クラスとして公開されます。 C#インターフェイスと目標 C プロトコルの主な違いは、プロトコルの一部のメソッドを実装することができないことです。 オプションを決定するには、API のドキュメントや定義を確認する必要があります。
 
 詳細について[は、デリゲート、プロトコル、およびイベントに](~/ios/app-fundamentals/delegates-protocols-and-events.md)関するドキュメントを参照してください。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/06/2017
-ms.openlocfilehash: f1fc484931ba7a574ac660b4856f20b1cb1e08a3
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 57e6ed2c01e382d7daee2933ac49c8282199a3fc
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119584"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758865"
 ---
 # <a name="responding-to-authentication-callbacks"></a>認証コールバックへの応答
 
@@ -24,7 +24,6 @@ ms.locfileid: "70119584"
 
 を呼び出す`CryptoObject` `Authenticate`ときにを使用した場合は、で`Cipher.DoFinal` `OnAuthenticationSuccessful`を呼び出すことをお勧めします。
 `DoFinal`は、暗号が改ざんされたか、不適切に初期化された場合に例外をスローします。これは、指紋スキャナーの結果がアプリケーションの外部で改ざんされた可能性があることを示します。
-
 
 > [!NOTE]
 > コールバッククラスは比較的軽量で、アプリケーション固有のロジックを解放することをお勧めします。 コールバックは、Android アプリケーションと指紋スキャナーの結果との間で "traffic cop" として機能する必要があります。
@@ -103,55 +102,29 @@ class MyAuthCallbackSample : FingerprintManagerCompat.AuthenticationCallback
 
 エラーコードとヘルプコードの一覧と説明については、FingerprintManager クラスの[Android SDK のドキュメント](https://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.html#FINGERPRINT_ACQUIRED_GOOD)を参照してください。 Xamarin では、 `Android.Hardware.Fingerprints.FingerprintState`次の列挙値を使用してこれらの値を表します。
 
-
 - **`AcquiredGood`** &ndash; (値 0) 取得したイメージが正常であった。
-
 
 - **`AcquiredImagerDirty`** &ndash; (値 3) センサーの汚れが疑われるか、検出された汚れが原因で、指紋画像が雑音を超えました。 たとえば、センサーの汚れを複数`AcquiredInsufficient`または実際に検出した後に、これを返すことは妥当です (スタックピクセル、膨大など)。 ユーザーは、これが返されたときにセンサーをクリーニングするためのアクションを実行する必要があります。
 
-
 - **`AcquiredInsufficient`** (値 2) 検出された状態 (つまりドライスキン) またはダーティセンサー (場合によっては、「」を参照し`AcquiredImagerDirty`てください。 &ndash;
-
-
 
 - **`AcquiredPartial`** &ndash; (値 1) 部分的なフィンガープリントイメージのみが検出されました。 登録時には、この問題を解決するために何が必要なのかをユーザーに&ldquo;通知する必要があります。たとえば、センサーでしっかりと押します。&rdquo;
 
-
-
 - **`AcquiredTooFast`** &ndash; (値 5) クイックモーションが原因で、フィンガープリントイメージが不完全でした。 線形配列センサーに適していますが、これは、取得中に指が移動された場合にも発生する可能性があります。 ユーザーは、指をゆっくり (線状) に移動するか、または指をもっと長くするように求められます。
-
-
-
 
 - **`AcquiredToSlow`** &ndash; (値 4) 動作が不足しているために指紋イメージを読み取ることができませんでした。 これは、スワイプモーションが必要な線形配列センサーに最適です。
 
-
-
 - **`ErrorCanceled`** &ndash; (値 5) 指紋センサーが使用できないため、操作が取り消されました。 たとえば、ユーザーが切り替えられた場合、デバイスがロックされている場合、または別の保留中の操作によってブロックまたは無効化された場合に発生する可能性があります。
-
-
 
 - **`ErrorHwUnavailable`** &ndash; (値 1) ハードウェアは使用できません。 後でもう一度お試しください。
 
-
-
-
 - **`ErrorLockout`** &ndash; (値 7) 試行回数が多すぎるために API がロックアウトされたため、操作が取り消されました。
-
-
-
 
 - **`ErrorNoSpace`** &ndash; (値 4) 登録などの操作に対して返されたエラー状態。操作を完了するのに十分なストレージが残っていないため、操作を完了できません。
 
-
-
 - **`ErrorTimeout`** &ndash; (値 3) 現在の要求の実行時間が長すぎる場合に返されるエラー状態。 これは、プログラムが指紋センサーを無期限に待機するのを防ぐためのものです。 タイムアウトはプラットフォームとセンサー固有ですが、通常は約30秒です。
 
-
-
 - **`ErrorUnableToProcess`** &ndash; (値 2) センサーが現在のイメージを処理できなかった場合に返されるエラー状態。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

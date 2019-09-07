@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: 145c616cc0af8156f10b9db1d3fa36264cecd18b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: cf181cf6c27476b7073073467ef186c352645e39
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284326"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768880"
 ---
 # <a name="introduction-to-storyboards-in-xamarinios"></a>Xamarin のストーリーボードの概要
 
@@ -21,7 +21,6 @@ ms.locfileid: "70284326"
 IOS アプリケーションの UI を視覚的に表現するために、Apple によってストーリーボードファイル形式が導入される前に、開発者は各ビューコントローラーに対して XIB ファイルを作成し、各ビュー間の移動を手動でプログラミングしました。  ストーリーボードを使用すると、開発者は、ビューコントローラーと、デザインサーフェイス上のビューコントローラー間のナビゲーションの両方を定義し、アプリケーションのユーザーインターフェイスを WYSIWYG で編集できます。
 
 ストーリーボードを作成し、開いて、Xamarin iOS Designer で編集することができます。 このガイドでは、を使用してナビゲーションをプログラミングするときに、 C#デザイナーを使用してストーリーボードを作成する方法についても説明します。
-
 
 ## <a name="requirements"></a>必要条件
 
@@ -77,7 +76,7 @@ IOS アプリケーションの UI を視覚的に表現するために、Apple 
 ### <a name="adaptive-segue-types"></a>Adaptive セグエの種類
 
  iOS 8 では、使用可能なすべての画面サイズで iOS ストーリーボードファイルを操作できるように[サイズクラス](~/ios/user-interface/storyboards/unified-storyboards.md#size-classes)が導入されました。これにより、開発者はすべての ios デバイス用に1つの UI を作成できます。 既定では、すべての新しい Xamarin iOS アプリケーションでサイズクラスが使用されます。 以前のプロジェクトのサイズクラスを使用するには、統合された[ストーリーボードの概要](~/ios/user-interface/storyboards/unified-storyboards.md)に関するガイドを参照してください。 
- 
+
 サイズクラスを使用するアプリケーションでは、新しい[*Adaptive セグエ*](~/ios/user-interface/storyboards/unified-storyboards.md)も使用されます。 サイズクラスを使用する場合は、iPhone または iPad を使用しているかどうかを直接指定していないことに注意してください。 つまり、どのくらいの作業が必要であるかに関係なく、常に同じように表示される1つの UI を作成しています。 Adaptive セグエ work は、環境を審査し、コンテンツをどの程度最適に提示するかを決定します。 Adaptive セグエを次に示します。 
 
 [![](images/adaptivesegue.png "Adaptive セグエドロップダウン")](images/adaptivesegue.png#lightbox)
@@ -92,7 +91,6 @@ IOS アプリケーションの UI を視覚的に表現するために、Apple 
 ### <a name="transferring-data-with-segues"></a>セグエを使用したデータの転送
 
 セグエの利点は遷移で終了しません。 また、ビューコントローラー間のデータ転送を管理するために使用することもできます。 これは、初期ビューコントローラー `PrepareForSegue`でメソッドをオーバーライドし、データを処理することで実現されます。 セグエがトリガーされると (たとえば、ボタンが押された場合)、アプリケーションはこのメソッドを呼び出し、ナビゲーションが発生*する前に*新しいビューコントローラーを準備する機会を提供します。 次のコードは、[Phoneword](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios) の例では、これを示しています。 
-
 
 ```csharp
 public override void PrepareForSegue (UIStoryboardSegue segue, 
@@ -252,7 +250,6 @@ public MainViewController (IntPtr handle) : base (handle)
 }
 ```
 
-
 デザイナーを使用してストーリーボードを作成する場合、IDE は`designer.cs`クラスの最上部に[[Register]](xref:Foundation.RegisterAttribute)属性を自動的に追加し、前の手順で指定したストーリーボード ID と同じ文字列識別子を渡します。 これにより、 C#がストーリーボードの関連シーンにリンクされます。
 
 ある時点で、デザイナーで作成され**ていない**既存のクラスを追加することが必要になる場合があります。 この場合は、このクラスを通常のように登録します。
@@ -340,7 +337,6 @@ public partial class MainViewController : UIViewController
 3. セグエをクリックして、*識別子* `SegueToPink`を指定します。
 
     [![](images/namesegue.png "セグエをクリックし、Id を SegueToPink に指定します。")](images/namesegue.png#lightbox)  
-    
 
 4. 最後に、次の ShouldPerformSegue メソッドを`MainViewController`クラスに追加します。
 
@@ -489,8 +485,6 @@ public partial class MainViewController : UIViewController
 ## <a name="summary"></a>まとめ
 
 この記事では、ストーリーボードの概念と、iOS アプリケーションの開発においてどのように役立つかについて説明します。 バックグラウンド、ビューコントローラー、ビュー、およびビュー階層について説明し、さまざまな種類のセグエと共にシーンをリンクする方法について説明します。  また、ストーリーボードからビューコントローラーを手動でインスタンス化し、条件付きセグエを作成する方法についても説明します。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

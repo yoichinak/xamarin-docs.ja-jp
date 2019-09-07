@@ -1,33 +1,32 @@
 ---
-title: Android でのアクセシビリティ
+title: Android でのユーザー補助機能
 ms.prod: xamarin
 ms.assetid: 157F0899-4E3E-4538-90AF-B59B8A871204
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/28/2018
-ms.openlocfilehash: d004b753c89f3995e8dc511877bd115a894396fc
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 982d5b81a22d6e69227081420a5947aed4d3aab1
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61018621"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755681"
 ---
-# <a name="accessibility-on-android"></a>Android でのアクセシビリティ
+# <a name="accessibility-on-android"></a>Android でのユーザー補助機能
 
-このページは、Android のユーザー補助の Api を使用して、に従ってアプリを構築する方法をについて説明します、[アクセシビリティ チェックリスト](~/cross-platform/app-fundamentals/accessibility.md)します。
-参照してください、 [iOS アクセシビリティ](~/ios/app-fundamentals/accessibility.md)と[OS X アクセシビリティ](~/mac/app-fundamentals/accessibility.md)他のプラットフォーム Api のページ。
+このページでは、[ユーザー補助のチェックリスト](~/cross-platform/app-fundamentals/accessibility.md)に従って、Android アクセシビリティ api を使用してアプリを構築する方法について説明します。
+他のプラットフォーム Api については、 [iOS のアクセシビリティ](~/ios/app-fundamentals/accessibility.md)に[関するページを参照して](~/mac/app-fundamentals/accessibility.md)ください。
 
+## <a name="describing-ui-elements"></a>UI 要素の記述
 
-## <a name="describing-ui-elements"></a>UI 要素を記述します。
+Android には`ContentDescription` 、コントロールの目的についてのユーザー補助の説明を提供するために、画面読み取り api によって使用されるプロパティが用意されています。
 
-Android に用意されて、`ContentDescription`コントロールの目的のユーザー補助の説明を提供する Api の読み取り 画面で使用されるプロパティです。
-
-いずれかでコンテンツの説明を設定できますC#または AXML レイアウト ファイルです。
+コンテンツの説明は、AXML レイアウトC#ファイルのまたはで設定できます。
 
 **C#**
 
-説明は、任意の文字列 (または文字列リソース) をコードで設定できます。
+説明は、任意の文字列 (または文字列リソース) にコードで設定できます。
 
 ```csharp
 saveButton.ContentDescription = "Save data";
@@ -35,7 +34,7 @@ saveButton.ContentDescription = "Save data";
 
 **AXML レイアウト**
 
-レイアウトを使用して、xml、`android:contentDescription`属性。
+XML レイアウトでは、 `android:contentDescription`属性を使用します。
 
 ```xml
 <ImageButton
@@ -44,14 +43,14 @@ saveButton.ContentDescription = "Save data";
     android:contentDescription="Save data" />
 ```
 
-### <a name="use-hint-for-textview"></a>TextView のヒントを使用します。
+### <a name="use-hint-for-textview"></a>TextView のヒントを使用する
 
-`EditText`と`TextView`データの入力コントロールを使用して、`Hint`想定されているどのような入力の説明を入力するプロパティ (の代わりに`ContentDescription`)。
-いくつかのテキストを入力すると、テキスト自体がする「読み取り」、ヒントの代わりにします。
+データ入力`TextView`用のおよびコントロールについて`EditText`は、 `ContentDescription`プロパティを使用して、必要な入力(ではなく)の説明を指定します。`Hint`
+テキストが入力されると、ヒントの代わりにテキスト自体が "読み取り" になります。
 
 **C#**
 
-設定、`Hint`コード内のプロパティ。
+次の`Hint`コードでプロパティを設定します。
 
 ```csharp
 someText.Hint = "Enter some text"; // displays (and is "read") when control is empty
@@ -59,7 +58,7 @@ someText.Hint = "Enter some text"; // displays (and is "read") when control is e
 
 **AXML レイアウト**
 
-レイアウト ファイルを使用して、xml、`android:hint`属性。
+XML レイアウトファイルでは、 `android:hint`属性を使用します。
 
 ```xml
 <EditText
@@ -67,14 +66,13 @@ someText.Hint = "Enter some text"; // displays (and is "read") when control is e
     android:hint="Enter some text" />
 ```
 
+### <a name="labelfor-links-input-fields-with-labels"></a>ラベルを含むリンクの入力フィールド
 
-### <a name="labelfor-links-input-fields-with-labels"></a>LabelFor リンク ラベルを持つフィールドを入力します。
-
-データの入力コントロールにラベルを関連付けるには、`LabelFor`プロパティを
+データ入力コントロールにラベルを関連付けるには、プロパティを`LabelFor`使用します。
 
 **C#**
 
-C#、設定、`LabelFor`プロパティをこのコンテンツを表すコントロールのリソース ID (通常このプロパティがラベルに設定およびその他のいくつかの入力コントロールを参照)。
+でC#、 `LabelFor`プロパティを、このコンテンツが記述するコントロールのリソース ID に設定します (通常、このプロパティはラベルに設定され、他の入力コントロールを参照します)。
 
 ```csharp
 EditText edit = FindViewById<EditText> (Resource.Id.editFirstName);
@@ -84,7 +82,7 @@ tv.LabelFor = Resource.Id.editFirstName;
 
 **AXML レイアウト**
 
-レイアウト XML で使用で、`android:labelFor`別のコントロールの識別子を参照するプロパティ。
+レイアウト XML では、 `android:labelFor`プロパティを使用して別のコントロールの識別子を参照します。
 
 ```xml
 <TextView
@@ -96,11 +94,11 @@ tv.LabelFor = Resource.Id.editFirstName;
     android:hint="Enter some text" />
 ```
 
-### <a name="announce-for-accessibility"></a>ユーザー補助機能を発表します。
+### <a name="announce-for-accessibility"></a>ユーザー補助のためのアナウンス
 
-使用して、`AnnounceForAccessibility`いずれかのメソッドは、ユーザー補助機能が有効にすると、ユーザーに、イベントまたは状態変更を通信するためにコントロールを表示します。 このメソッドは、ナレーションの組み込みが、十分なフィードバックを提供しますが、追加情報をユーザーの役に立ちますを使用するほとんどの操作に必要です。
+ユーザー補助が有効になっている場合は、任意のビューコントロールに対してメソッドを使用して、イベントまたは状態の変更をユーザーに通知します。`AnnounceForAccessibility` この方法は、組み込みのナレーションによって十分なフィードバックが得られるが、ユーザーにとって追加情報が役に立つ場合に使用する必要があるほとんどの操作には必要ありません。
 
-次のコードは、簡単な例の呼び出しを示しています`AnnounceForAccessibility`:。
+次のコードは、を呼び出す`AnnounceForAccessibility`簡単な例を示しています。
 
 ```csharp
 button.Click += delegate {
@@ -109,13 +107,13 @@ button.Click += delegate {
 };
 ```
 
-## <a name="changing-focus-settings"></a>フォーカスの設定の変更
+## <a name="changing-focus-settings"></a>フォーカス設定の変更
 
-アクセス可能なナビゲーションは、使用可能な操作を理解することで、ユーザーを支援するためにフォーカスを持つコントロールに依存します。 Android に用意されて、`Focusable`プロパティを具体的には、ナビゲーション中にフォーカスを受け取ることができるようにコントロールのタグを付けることができます。
+アクセス可能なナビゲーションは、使用可能な操作をユーザーが理解できるように、フォーカスを持つコントロールに依存します。 Android には`Focusable` 、ナビゲーション中にフォーカスを受け取ることができるように、コントロールにタグを付けることができるプロパティが用意されています。
 
 **C#**
 
-コントロールがフォーカスを取得するを防ぐためにC#、設定、`Focusable`プロパティを`false`:
+コントロールがでフォーカスを得らC#れ`Focusable`ないようにするには、プロパティをに`false`設定します。
 
 ```csharp
 label.Focusable = false;
@@ -123,18 +121,17 @@ label.Focusable = false;
 
 **AXML レイアウト**
 
-XML ファイル セットのレイアウトで、`android:focusable`属性。
+レイアウト XML ファイルで、次`android:focusable`の属性を設定します。
 
 ```xml
 <android:focusable="false" />
 ```
 
-フォーカスの順序を制御することも、 `nextFocusDown`、 `nextFocusLeft`、 `nextFocusRight`、 `nextFocusUp` AXML レイアウトで通常設定の属性。 これらの属性を使用して、ユーザーが画面上のコントロールを簡単に移動できます。
-
+`nextFocusDown`フォーカスの順序は`nextFocusLeft` `nextFocusUp` 、、、、の各属性を使用して制御することもできます。通常はレイアウト axml で設定します。 `nextFocusRight` これらの属性を使用して、ユーザーが画面上のコントロールを簡単に移動できるようにします。
 
 ## <a name="accessibility-and-localization"></a>アクセシビリティとローカライズ
 
-ヒントとコンテンツの説明は、上記の例では、表示値に直接設定します。 値を使用することをお勧め、 **Strings.xml**このなどのファイル。
+上の例では、ヒントとコンテンツの説明が、表示値に直接設定されています。 次のように、**文字列 .xml**ファイルの値を使用することをお勧めします。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -144,11 +141,11 @@ XML ファイル セットのレイアウトで、`android:focusable`属性。
 </resources>
 ```
 
-文字列のファイルからテキストを使用して、以下に示したC#と AXML レイアウト ファイル。
+文字列ファイルからテキストを使用する方法を次C#に示します。
 
 **C#**
 
-コードで文字列リテラルを使用する代わりに検索翻訳済みの値を持つ文字列ファイルを`Resources.GetText`:
+コードで文字列リテラルを使用する代わりに、次のようにして`Resources.GetText`文字列ファイルから翻訳された値を検索します。
 
 ```csharp
 someText.Hint = Resources.GetText (Resource.String.enter_info);
@@ -157,7 +154,7 @@ saveButton.ContentDescription = Resources.GetText (Resource.String.save_info);
 
 **AXML**
 
-アクセシビリティ属性などの XML のレイアウトで`hint`と`contentDescription`文字列識別子に設定することができます。
+では、および`hint` `contentDescription`のような XML アクセシビリティ属性を文字列識別子に設定できます。
 
 ```xml
 <TextView
@@ -169,15 +166,13 @@ saveButton.ContentDescription = Resources.GetText (Resource.String.save_info);
     android:contentDescription="@string/save_info" />
 ```
 
-別のファイルにテキストを格納する利点は、アプリ、ファイルの複数の言語の翻訳を指定することができますです。 参照してください、 [Android ローカリゼーション ガイド](~/android/app-fundamentals/localization.md)については、アプリケーション プロジェクトにファイルのローカライズされた文字列を追加する方法。
-
+テキストを別のファイルに格納することの利点は、複数の言語翻訳ファイルをアプリで提供できることです。 ローカライズされた文字列ファイルをアプリケーションプロジェクトに追加する方法については、「 [Android のローカリゼーションガイド](~/android/app-fundamentals/localization.md)」を参照してください。
 
 ## <a name="testing-accessibility"></a>アクセシビリティのテスト
 
-次の[手順](https://developer.android.com/training/accessibility/testing.html#how-to)Android デバイスでのアクセシビリティをテストするには、TalkBack とタッチして探索を有効にします。
+[次の手順](https://developer.android.com/training/accessibility/testing.html#how-to)に従って、TalkBack を有効にし、タッチで探索して、Android デバイスでアクセシビリティをテストします。
 
-インストールする必要があります[TalkBack](https://play.google.com/store/apps/details?id=com.google.android.marvin.talkback)が表示されない場合、Google Play から**設定 > ユーザー補助**します。
-
+Google Play からの[TalkBack](https://play.google.com/store/apps/details?id=com.google.android.marvin.talkback)のインストールが必要になる場合があります。 [**設定] > [ユーザー補助**] に表示されません。
 
 ## <a name="related-links"></a>関連リンク
 

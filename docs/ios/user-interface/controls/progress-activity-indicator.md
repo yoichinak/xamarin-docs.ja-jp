@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 07/11/2017
-ms.openlocfilehash: 62dadffbc4b8a5629969203938e4fa0130971664
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: a2197a1ff9c37546fd97eb5a2459764ec05d4412
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283339"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768925"
 ---
 # <a name="progress-and-activity-indicators-in-xamarinios"></a>Xamarin. iOS の進行状況とアクティビティインジケーター
 
@@ -46,7 +46,6 @@ IOS Designer を使用して UI を作成する場合は、[ツールボック�
 
 が呼び出さ`HidesWhenStopped`れた`true`後`StopAnimating()`にアクティビティインジケーターが非表示になるようにするには、プロパティをに設定します。 既定では、 `true`これはに設定されています。 どの時点でも、プロパティを`IsAnimating`チェックすることで、アクティビティインジケーターがスピン中のアニメーションを実行しているかどうかを確認できます。 
 
-
 ### <a name="managing-activity-indicator-appearances"></a>アクティビティインジケーターの外観を管理する
 
 アクティビティ`UIActivityIndicatorViewStyle`インジケーターをインスタンス化するときに、列挙体をパラメーターとして渡すことができます。 これを使用すると、visual スタイルを、 `Gray` `White`、または`WhiteLarge`に設定できます。たとえば、次のようになります。
@@ -77,7 +76,6 @@ IOS Designer を使用しているときに、進行状況バーを UI に追加
 プロパティパッドでは、次のプロパティを調整できます。
 
 ![Properties Pad](progress-activity-indicator-images/progress-indicator3.png)
-
 
 ### <a name="managing-progress-bar-behavior"></a>進行状況バーの動作の管理
 
@@ -110,6 +108,3 @@ progressBar = new UIProgressView(UIProgressViewStyle.Default)
                 TrackTintColor = UIColor.Magenta
             }; 
 ```
-
-
-
