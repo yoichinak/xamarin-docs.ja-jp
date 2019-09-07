@@ -7,20 +7,19 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 09/25/2017
-ms.openlocfilehash: e29432504f3b8554c387d277004d3cc779aade95
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 37e91070ea10defedbeebdbb06220fabbd2554fc
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524644"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756641"
 ---
 # <a name="customizing-bindings"></a>バインドのカスタマイズ
 
 _バインドプロセスを制御するメタデータを編集することで、Xamarin の Android バインドをカスタマイズできます。これらの手動による変更は、ビルドエラーを解決し、/.NET. とC#の一貫性を高めるために生成される API を整形するために必要になることがよくあります。これらのガイドでは、このメタデータの構造、メタデータの変更方法、および JavaDoc を使用してメソッドパラメーターの名前を回復する方法について説明します。_
 
-
 ## <a name="overview"></a>概要
- 
+
 Xamarin. Android では、バインドプロセスの多くが自動化されます。ただし、場合によっては、次の問題に対処するために手動で変更を行う必要があります。
 
 - 不足している型、難読化された型、重複する名前、クラスの可視性の問題、および Xamarin Android ツールで解決できないその他の状況によって発生するビルドエラーを解決しています。 
@@ -33,7 +32,6 @@ Xamarin. Android では、バインドプロセスの多くが自動化されま
 
 バインドプロセスを制御するメタデータを変更することで、これらの変更の一部またはすべてを行うことができます。
 
-
 ## <a name="guides"></a>ガイド
 
 次のガイドでは、バインドプロセスを制御するメタデータについて説明し、これらの問題に対処するためにこのメタデータを変更する方法を説明します。
@@ -42,7 +40,3 @@ Xamarin. Android では、バインドプロセスの多くが自動化されま
     ここでは、Java バインドライブラリを完成させるために必要となる可能性があるさまざまな手動手順について説明します。また、.NET の設計ガイドラインに従うために、バインディングによって公開される API を整形する方法についても説明します。
 
 - [Javadoc を使用したパラメーターの名前付け](~/android/platform/binding-java-library/customizing-bindings/naming-parameters-with-javadoc.md)では、バインドされた java プロジェクトから生成された Javadoc を使用して Java バインドプロジェクトのパラメーター名を回復する方法について説明します。
-
-
- 
-

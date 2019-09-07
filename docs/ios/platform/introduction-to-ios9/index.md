@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: c162912d6762ac1ee9d2896f96bbb35e9fef06f4
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 3ce1c802fb276e271cddc75e8ebabd2237d84d39
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285207"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70751996"
 ---
 # <a name="introduction-to-ios-9"></a>iOS 9 の概要
 
@@ -67,7 +67,6 @@ IOS 9 の導入により、Apple は2つの新しいフレームワークであ�
 
 詳細については、[連絡先と連絡先の UI](~/ios/platform/contacts.md)に関するドキュメントを参照してください。
 
-
 ## <a name="new-search-apis"></a>新しい検索 Api
 
 IOS 9 で Search が拡張され、Xamarin iOS アプリ内の情報に新しい方法でアクセスできるようになりました。 新しい検索 Api を使用して、スポットライトおよび Safari の検索結果、ハンドオフおよび Siri のリマインダーと提案を使用して、アプリのコンテンツを検索可能にすることができます。 これにより、ユーザーはアプリ内のアクティビティや情報にすばやくアクセスできるようになります。
@@ -83,7 +82,6 @@ IOS 9 で Search が拡張され、Xamarin iOS アプリ内の情報に新しい
 スタックビューコントロールを使用すると、ユーザーインターフェイスのレイアウトに必要な作業量が大幅に削減されます。 スタックビューにアタッチされているすべてのサブビューのレイアウトは、軸、分布、配置、間隔など、開発者が定義したプロパティに基づいて自動的に管理されます。
 
 詳細については、スタックビューのドキュメントの[概要を](~/ios/user-interface/controls/uistackview.md)参照してください。
-
 
 ## <a name="collection-view-changes"></a>コレクションビューの変更
 
@@ -145,7 +143,6 @@ IOS 9 では、次のように、Secure エンクレーブおよびその他の�
 
 詳細については、「 [TOUCH ID](~/ios/platform/touchid.md)ドキュメントの概要」を参照してください。
 
-
 ## <a name="right-to-left-language-support"></a>右から左へ記述する言語サポート
 
 IOS 9 では、右から左へ記述する言語を完全にサポートすることにより、以前よりも簡単にフリップされたユーザーインターフェイスを提供してきました。 これには、次の内容が含まれます。
@@ -155,8 +152,6 @@ IOS 9 では、右から左へ記述する言語を完全にサポートする�
 - [Uiimage](xref:UIKit.UIImage)クラスの[FlipsForRightToLeftLayoutDirection](xref:UIKit.UIImage.FlipsForRightToLeftLayoutDirection)プロパティを使用して、プログラムによってイメージを反転する機能。
 
 詳細については、Apple の[右から左へ記述する言語](https://developer.apple.com/library/prerelease/ios/documentation/MacOSX/Conceptual/BPInternational/SupportingRight-To-LeftLanguages/SupportingRight-To-LeftLanguages.html#//apple_ref/doc/uid/10000171i-CH17)のドキュメントを参照してください。
-
-
 
 ## <a name="additional-framework-changes"></a>追加のフレームワークの変更
 
@@ -205,8 +200,6 @@ Apple では、iOS 9 の次の Api と関数が非推奨とされています。
 
 - [AgentsCatalog](https://github.com/xamarin/mac-ios-samples/tree/master/AgentsCatalog)
 - [MetalKitEssentials](https://github.com/xamarin/mac-ios-samples/tree/master/MetalKitEssentials)
-
-
 
 ## <a name="related-links"></a>関連リンク
 

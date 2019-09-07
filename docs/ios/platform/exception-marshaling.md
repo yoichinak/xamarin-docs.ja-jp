@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/05/2017
-ms.openlocfilehash: a5dea7358e48ebb1961c1fa3253ad096d041c0cf
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 936c5b91a27fed1c00f3cf0c61d0184d5532c25a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70279694"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753084"
 ---
 # <a name="exception-marshaling-in-xamarinios"></a>Xamarin.iOS における例外のマーシャ リング
 
@@ -270,17 +270,17 @@ xamarin_dyn_objc_msgSend (id obj, SEL sel)
 次のモードを使用できます。
 
 - `Default`:既定値はプラットフォームによって異なります。 GC が`ThrowObjectiveCException`協調モード (watchOS) `UnwindNativeCode`である場合は、それ以外の場合は (iOS/watchOS/macOS) です。 既定値は将来変更される可能性があります。
-- `UnwindNativeCode`:これは、以前の (未定義の) 動作です。 これは、GC を協調モードで使用する場合は使用できません (これは watchOS の唯一のオプションであるため、watchOS では有効なオプションではありません) が、他のすべてのプラットフォームの既定のオプションです。
+- `UnwindNativeCode` :これは、以前の (未定義の) 動作です。 これは、GC を協調モードで使用する場合は使用できません (これは watchOS の唯一のオプションであるため、watchOS では有効なオプションではありません) が、他のすべてのプラットフォームの既定のオプションです。
 - `ThrowObjectiveCException`:マネージ例外を目的の C 例外に変換し、C 例外をスローします。 これは、watchOS の既定値です。
 - `Abort`:プロセスを中止します。
-- `Disable` :例外のインターセプトを無効にします。したがって、イベントハンドラーにこの値を設定するのは理にかなっていませんが、イベントが発生した後で無効にするのは遅すぎます。 どのような場合でも、設定すると、 `UnwindNativeCode`として動作します。
+- `Disable`:例外のインターセプトを無効にします。したがって、イベントハンドラーにこの値を設定するのは理にかなっていませんが、イベントが発生した後で無効にするのは遅すぎます。 どのような場合でも、設定すると、 `UnwindNativeCode`として動作します。
 
 ターゲット C の例外をマネージコードにマーシャリングする場合、次のモードを使用できます。
 
-- `Default`:既定値はプラットフォームによって異なります。 GC が`ThrowManagedException`協調モード (watchOS) `UnwindManagedCode`である場合は、それ以外の場合は (iOS/tvOS/macOS) です。 既定値は将来変更される可能性があります。
+- `Default` :既定値はプラットフォームによって異なります。 GC が`ThrowManagedException`協調モード (watchOS) `UnwindManagedCode`である場合は、それ以外の場合は (iOS/tvOS/macOS) です。 既定値は将来変更される可能性があります。
 - `UnwindManagedCode`:これは、以前の (未定義の) 動作です。 このオプションは、GC を協調モードで使用している場合は使用できません (これは watchOS の有効な GC モードのみであるため、watchOS の有効な GC モードではありません) が、他のすべてのプラットフォームの既定値です。
-- `ThrowManagedException` :目的の C 例外をマネージ例外に変換し、マネージ例外をスローします。 これは、watchOS の既定値です。
-- `Abort` :プロセスを中止します。
+- `ThrowManagedException`:目的の C 例外をマネージ例外に変換し、マネージ例外をスローします。 これは、watchOS の既定値です。
+- `Abort`:プロセスを中止します。
 - `Disable`:D isables よって例外が認識されるので、イベントハンドラーにこの値を設定するのは理にかなっていませんが、イベントが発生した後で無効にするのは遅すぎます。 どのような場合でも、設定するとプロセスが中止されます。
 
 したがって、例外がマーシャリングされるたびに、次の操作を行うことができます。
@@ -330,7 +330,6 @@ Runtime.MarshalObjectiveCException += (object sender, MarshalObjectiveCException
 C は、目的 C の例外を`objc_msgSend`キャッチするときに、関数ファミリに対してのみ P/invoke をインターセプトします。 これは、別の C 関数への P/Invoke が、その後、目的の C の例外をスローすることを意味しますが、以前の動作と未定義の動作が実行されます (これは将来改善される可能性があります)。
 
 [2]: https://developer.apple.com/reference/foundation/1409609-nssetuncaughtexceptionhandler?language=objc
-
 
 ## <a name="related-links"></a>関連リンク
 

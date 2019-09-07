@@ -7,12 +7,12 @@ ms.assetid: 846B59D3-F66A-48F3-A78C-84217697194E
 author: conceptdev
 ms.author: crdun
 ms.date: 09/25/2017
-ms.openlocfilehash: 6da32e22fbdb3b5b7d96d7ee93c2f25bba84cd78
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: c7a9d359842dde916fc14ffea5ec6e3f453dfee0
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286624"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752430"
 ---
 # <a name="core-nfc-in-xamarinios"></a>Xamarin のコア NFC
 
@@ -141,7 +141,6 @@ Session?.BeginSession();
 - `queue`–コールバックが処理されるキュー。 この場合`null`、(サンプルに示されているように`DispatchQueue.MainQueue` ) ユーザーインターフェイスコントロールを更新するときに必ずを使用する必要があります。
 - `invalidateAfterFirstRead`–の`true`場合、スキャンは最初に成功した後に`false`停止します。スキャンが続行され、複数の結果が返されるまで、スキャンが取り消されるか、60秒のタイムアウトに達します。
 
-
 ### <a name="3-cancel-the-scanning-session"></a>3.スキャンセッションをキャンセルする
 
 ユーザーは、ユーザーインターフェイスのシステム指定のボタンを使用して、スキャンセッションを取り消すことができます。
@@ -159,7 +158,6 @@ Session.InvalidateSession();
 ## <a name="summary"></a>まとめ
 
 CoreNFC を使用すると、アプリは NFC タグからデータを読み取ることができます。 さまざまなタグ形式 (NDEF types 1 ~ 5) の読み取りをサポートしますが、書き込みや書式設定はサポートしていません。
-
 
 ## <a name="related-links"></a>関連リンク
 

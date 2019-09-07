@@ -7,17 +7,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: d6cb1e407740fa4c182639a77e3725baec4286ac
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 046c392709f2c94664120e9fac3f4198e9f50dbf
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119854"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756606"
 ---
 # <a name="java-bindings-metadata"></a>Java バインド メタデータ
 
 _C#Xamarin のコードは、バインドを使用して Java ライブラリを呼び出します。これは、Java ネイティブインターフェイス (JNI) で指定されている下位レベルの詳細を抽象化するメカニズムです。Xamarin Android には、これらのバインドを生成するツールが用意されています。このツールを使用すると、メタデータを使用してバインディングを作成する方法を開発者が制御できます。これにより、名前空間の変更やメンバーの名前変更などの手順が可能になります。このドキュメントでは、メタデータの動作、メタデータでサポートされる属性の概要、およびこのメタデータを変更してバインディングの問題を解決する方法について説明します。_
-
 
 ## <a name="overview"></a>概要
 
@@ -73,7 +72,6 @@ Xamarin.Android **Java バインディング ライブラリ**とも呼ばれる
 
 **メタデータ**の詳細については、「」を参照してください。
 
-
 ## <a name="metadataxml-transform-file"></a>Metadata .xml 変換ファイル
 
 既に学習したように、ファイル**メタデータ .xml**はバインドジェネレーターによって使用され、バインディングアセンブリの作成に影響を及ぼします。
@@ -111,8 +109,6 @@ Xamarin.Android **Java バインディング ライブラリ**とも呼ばれる
 
 - `parameter`&ndash;メソッドのパラメーターを指定します。 など.`/parameter[@name='p0']`
 
-
-
 ### <a name="adding-types"></a>型の追加
 
 要素は、新しいラッパークラスを**api .xml**に追加するように、Xamarin. Android バインドプロジェクトに指示します。 `add-node` たとえば、次のスニペットは、コンストラクターと1つのフィールドを持つクラスを作成するようにバインドジェネレーターに指示します。
@@ -125,7 +121,6 @@ Xamarin.Android **Java バインディング ライブラリ**とも呼ばれる
     </class>
 </add-node>
 ```
-
 
 ### <a name="removing-types"></a>型の削除
 
@@ -180,15 +175,13 @@ NavigationManager.2DSignNextManueverEventArgs
 ```
 
 これは、有効C#なクラス名ではありません。 この問題を解決するには、バインド作成者`argsType`が属性を使用しC# 、 `EventArgs`サブクラスに有効な名前を指定する必要があります。
- 
+
 ```xml
 <attr path="/api/package[@name='com.someapp.android.mpa.guidance']/
     interface[@name='NavigationManager.Listener']/
     method[@name='on2DSignNextManeuver']" 
     name="argsType">NavigationManager.TwoDSignNextManueverEventArgs</attr>
 ```
-
- 
 
 ## <a name="supported-attributes"></a>サポートされる属性
 
@@ -339,12 +332,9 @@ Android ライブラリが整数定数を使用して、ライブラリのプロ
 realReachSettings.MeasurementUnit = SKMeasurementUnit.Second;
 ```
 
-
 ## <a name="summary"></a>まとめ
 
 この記事では、Xamarin Android がメタデータを使用して、API 定義を*Google*のデータ*形式*から変換する方法について説明しました。 *メタデータ*を使用して可能な変更について説明した後、メンバーの名前を変更するときに発生する制限を調べ、各属性を使用するタイミングについて説明します。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

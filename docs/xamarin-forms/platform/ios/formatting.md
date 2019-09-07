@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/29/2016
-ms.openlocfilehash: be353c6274dcf69946740e2d195b9e4d64208313
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 24d86c54ea4b346e1c165b28c6b62f5a98390d64
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70121571"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760141"
 ---
 # <a name="adding-ios-specific-formatting"></a>IOS 固有の書式設定の追加
 
@@ -56,7 +56,7 @@ nav.BarTextColor = Color.White;
 <false/>
 ```
 
-これでアプリが実行されると、ナビゲーションバーは緑色になり、テキストは白になり (Xamarin 形式の書式設定による)、iOS 固有の構成によりステータスバーのテキストも白になります。
+これでアプリが実行されると、ナビゲーションバーは緑色になり、テキストは白になり (Xamarin 形式の書式設定に*よる)、iOS 固有の構成*によりステータスバーのテキストも白になります。
 
 ![](theme-images/status-white-sml.png "iOS のテーマ")
 
@@ -118,8 +118,6 @@ UISwitch.Appearance.OnTintColor = UIColor.FromRGB(0x91, 0xCA, 0x47); // green
 ### <a name="other-controls"></a>その他のコントロール
 
 多くの iOS ユーザーインターフェイスコントロールは、 [ `UIAppearance` ](~/ios/user-interface/ios-ui/introduction-to-the-appearance-api.md)既定の色やその他の属性を API を使用して設定できます。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

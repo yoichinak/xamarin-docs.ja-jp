@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 7e8230af1e9d4eef43b4142834afc0e90973c768
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: eb944b062f75ceec8ca8dbe22cde64b0fdd15625
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288669"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752955"
 ---
 # <a name="healthkit-in-xamarinios"></a>Xamarin. iOS の HealthKit
 
@@ -43,9 +43,6 @@ Health Kit は、ユーザーの正常性に関連する情報のセキュリテ
 > [!IMPORTANT]
 > Health Kit は、iOS 8 で導入されました。 現在、iOS シミュレーターでは正常性キットを使用できません。また、デバッグを行うには、物理的な iOS デバイスに接続する必要があります。
 
-
-
-
 ## <a name="creating-and-provisioning-a-health-kit-app"></a>正常性キットアプリの作成とプロビジョニング
 Xamarin iOS 8 アプリケーションでは、HealthKit API を使用する前に、適切に構成してプロビジョニングする必要があります。 このセクションでは、Xamarin アプリケーションを適切に設定するために必要な手順について説明します。
 
@@ -66,16 +63,14 @@ IOS アプリのプロビジョニングの詳細については、Xamarin の**
 明示的な**アプリ ID**と適切な**プロビジョニングプロファイル**の作成は、Apple の[iOS デベロッパーセンター](https://developer.apple.com/devcenter/ios/index.action)内で行われます。 
 
 現在の**アプリ id**は、デベロッパーセンターの [ [Certificates, identifier & Profiles](https://developer.apple.com/account/ios/identifiers/bundle/bundleList.action) ] セクション内に一覧表示されます。 多くの場合、この一覧にはの`*`**id** 値が表示されます。これは、**アプリ id** - **名**を任意の数のサフィックスと共に使用できることを示します。 このような*ワイルドカードアプリ id*を正常性キットと一緒に使用することはできません。
- 
-明示的な**アプリ id**を作成するに **+** は、右上のボタンをクリックして、 **[iOS アプリ id の登録]** ページに移動します。
 
+明示的な**アプリ id**を作成するに **+** は、右上のボタンをクリックして、 **[iOS アプリ id の登録]** ページに移動します。
 
 [![](healthkit-images/image02.png "Apple Developer ポータルでのアプリの登録")](healthkit-images/image02.png#lightbox)
 
 上の図に示されているように、アプリの説明を作成した後、 **[明示的なアプリ id]** セクションを使用してアプリケーションの id を作成します。 **[App Services]** セクションで、 **[サービスの有効化]** セクションの **[Health Kit]** をオンにします。
 
 完了したら、 **[続行]** ボタンをクリックして、アカウントに**アプリ ID**を登録します。 **[証明書、識別子、およびプロファイル]** ページに戻ります。 **[プロビジョニングプロファイル]** をクリックして現在のプロビジョニングプロファイルの一覧に移動し、 **+** 右上隅にあるボタンをクリックして **[iOS プロビジョニングプロファイルの追加]** ページに移動します。 **[IOS アプリ開発]** オプションを選択し、 **[続行]** をクリックして **[アプリ ID の選択]** ページに移動します。 ここでは、前に指定した明示的な**アプリ ID**を選択します。
-
 
 [![](healthkit-images/image03.png "明示的なアプリ ID を選択します")](healthkit-images/image03.png#lightbox)
 
@@ -171,7 +166,6 @@ Xamarin iOS 8 プロジェクトを手動で作成するプロセスを実行す
 ### <a name="permissions-walkthrough"></a>アクセス許可のチュートリアル
 
 正常性キットによってプロビジョニングされた`AppDelegate.cs`プロジェクトで、ファイルを開きます。 ファイルの先頭に`HealthKit`ある; を使用して、ステートメントに注意してください。
-
 
 次のコードは、正常性キットのアクセス許可に関連しています。
 
@@ -410,11 +404,9 @@ IOS シミュレーターでは、Health Kit はサポートされていませ�
 
 プロビジョニングが適切に設定されていると仮定すると、アプリケーションが起動します。 その`OnActivated`メソッドに到達すると、正常性キットの承認を要求します。 オペレーティングシステムによって初めて検出された場合、ユーザーには次のダイアログが表示されます。
 
-
 [![](healthkit-images/image12.png "ユーザーにこのダイアログが表示されます")](healthkit-images/image12.png#lightbox)
 
 アプリでハートレートデータを更新できるようにします。アプリは再び表示されます。 `ReactToHealthCarePermissions`コールバックは非同期にアクティブ化されます。 これにより、 `HeartRateModel’s`プロパティが`Enabled`変更され、イベントが`EnabledChanged` `HKPermissionsViewController.OnEnabledChanged()`発生します。これにより、イベントハンドラーが実行され`StoreData` 、ボタンが有効になります。 次の図は、シーケンスを示しています。
-
 
 [![](healthkit-images/image13.png "次の図は、イベントのシーケンスを示しています。")](healthkit-images/image13.png#lightbox)
 

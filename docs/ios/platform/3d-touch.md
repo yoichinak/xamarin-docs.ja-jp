@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 46db28dab32f14fa476b9fbb42b788feb669aa74
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 3a0737a5a28ced1ec55246d0586d4cfe28363f3a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291863"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753447"
 ---
 # <a name="introduction-to-3d-touch-in-xamarinios"></a>Xamarin での3D タッチの概要
 
@@ -66,9 +66,6 @@ public override void TouchesMoved (NSSet touches, UIEvent evt)
 
 > [!IMPORTANT]
 > X/Y 座標が変更`TouchesMoved`されていない場合でも、負荷が変化すると、イベントが発生します。 この動作が変更されたため、イベントが`TouchesMoved`頻繁に呼び出されるように iOS アプリを準備し、X/Y 座標が最後`TouchesMoved`の呼び出しと同じになるように準備する必要があります。
-
-
-
 
 詳細については、Apple の[TouchCanvas を参照してください。UITouch を効率的かつ効果的](https://developer.apple.com/library/prerelease/ios/samplecode/TouchCanvas/)に使用して、app and [UITouch クラス参照](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UITouch_Class/)を効率的に使用します。
 
@@ -210,7 +207,6 @@ public override void ViewDidLoad ()
 
 [![](3d-touch-images/quickactions01.png "クイックアクションメニューの例")](3d-touch-images/quickactions01.png#lightbox)
 
-
 ### <a name="defining-static-quick-actions"></a>静的クイックアクションの定義
 
 アプリで必要な1つ以上のクイックアクションが静的であり、変更する必要がない場合は、アプリの`Info.plist`ファイルで定義できます。 外部エディターでこのファイルを編集し、次のキーを追加します。
@@ -282,10 +278,6 @@ public override void ViewDidLoad ()
 
 > [!IMPORTANT]
 > `Info.plist`ファイルに設定されているクイックアクションのショートカット項目は、 `Application.ShortcutItems`プロパティを使用してアクセスできません。 これらは、 `HandleShortcutItem`イベントハンドラーにのみ渡されます。
-
-
-
-
 
 ### <a name="identifying-quick-action-items"></a>クイックアクション項目の識別
 
@@ -387,7 +379,6 @@ public override void PerformActionForShortcutItem (UIApplication application, UI
 
 最後に、アプリが既に実行`PerformActionForShortcutItem`されている場合は、クイックアクション項目を処理するためにメソッドが呼び出されます。そのため、このメソッドをオーバーライドし、ここで`HandleShortcutItem`メソッドを呼び出す必要があります。
 
-
 ### <a name="creating-dynamic-quick-action-items"></a>動的クイックアクションアイテムの作成
 
 アプリの`Info.plist`ファイルに静的クイックアクション項目を定義するだけでなく、動的なクイックアクションを動的に作成することもできます。 2つの新しい動的クイックアクションを定義する`AppDelegate.cs`には、ファイルを`FinishedLaunching`もう一度編集し、次のようにメソッドを変更します。
@@ -446,8 +437,6 @@ Xcode を有効にして、互換性のある Force Touch Mac で最新バージ
 ## <a name="summary"></a>Summary
 
 この記事では、iPhone 6s と iPhone 6s Plus の iOS 9 で利用可能な新しい 3D Touch Api を紹介しました。 アプリへの圧力感度の追加について説明します。Peek と Pop を使用して、ナビゲーションなしで現在のコンテキストからアプリ内の情報をすばやく表示する。また、クイックアクションを使用して、アプリの最も一般的に使用される機能へのショートカットを提供します。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

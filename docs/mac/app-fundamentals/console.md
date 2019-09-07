@@ -1,24 +1,24 @@
 ---
-title: Xamarin.Mac のバインドを使用して、コンソール アプリ向け
-description: Xamarin.Mac を使用してネイティブ macOS Api にアクセスするヘッドレスのコンソール アプリを作成します。
+title: コンソールアプリ用の Xamarin. Mac バインドの使用
+description: Xamarin. Mac を使用して、ネイティブ macOS Api にアクセスするヘッドレスコンソールアプリを作成します。
 ms.prod: xamarin
 ms.assetid: 9E52B4CC-F530-4B3E-984A-7F5719A6D528
 ms.technology: xamarin-mac
 author: migueldeicaza
 ms.author: miguel
 ms.date: 07/27/2018
-ms.openlocfilehash: 135ef06cd044235023c3acc970c8e7a33f144b47
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a38543d575f655a3b1b70ff94eece7fef1bf2d40
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61378277"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769891"
 ---
-# <a name="xamarinmac-bindings-in-console-apps"></a>コンソール アプリケーションで Xamarin.Mac バインド
+# <a name="xamarinmac-bindings-in-console-apps"></a>コンソールアプリの Xamarin. Mac バインド
 
-ヘッドレス アプリケーションを構築する (C#) Apple のネイティブ Api の一部を使用するいくつかのシナリオがある&ndash;いずれかのユーザー インターフェイスがない&ndash;c# を使用します。
+でC#一部の Apple ネイティブ api を使用して、を使用&ndash; C#するユーザーインターフェイス&ndash;を持たないヘッドレスアプリケーションを作成する場合があります。
 
-Mac アプリケーションのプロジェクト テンプレートへの呼び出しを含める`NSApplication.Init()`への呼び出し後に`NSApplication.Main(args)`、ように、通常は表示されます。
+Mac アプリケーション用のプロジェクトテンプレートには、の`NSApplication.Init()`呼び出しの後にの`NSApplication.Main(args)`呼び出しが含まれます。通常、次のようになります。
 
 ```csharp
 static class MainClass {
@@ -30,45 +30,45 @@ static class MainClass {
 }
 ```
 
-呼び出し`Init`、Xamarin.Mac のランタイムへの呼び出しを準備します`Main(args)`Cocoa のアプリケーション メイン ループには、キーボードとマウスのイベントを受信し、アプリケーションのメイン ウィンドウを表示するアプリケーションの準備を開始します。   呼び出し`Main`試みます Cocoa リソースを見つけ、最上位ウィンドウを準備して、アプリケーション バンドルの一部として、プログラムが必要です (ディレクトリに分散プログラム、`.app`拡張機能と非常に特定のレイアウト)。
+の呼び出し`Init`によって、Xamarin. Mac ランタイムが準備さ`Main(args)`れます。を呼び出すと、cocoa アプリケーションのメインループが開始されます。これにより、アプリケーションがキーボードイベントとマウスイベントを受信し、アプリケーションのメインウィンドウを表示するように準備されます。   の呼び出し`Main`では、cocoa リソースの検索、toplevel ウィンドウの準備、およびプログラムがアプリケーションバンドル ( `.app`拡張機能と非常に限定的なレイアウトのディレクトリで配布されたプログラム) の一部であることが要求されます。
 
-ヘッドレス アプリケーションでは、ユーザーは必要はありません、インターフェイスし、アプリケーション バンドルの一部として実行する必要はありません。
+ヘッドレスアプリケーションはユーザーインターフェイスを必要とせず、アプリケーションバンドルの一部として実行する必要もありません。
 
-## <a name="creating-the-console-app"></a>コンソール アプリケーションの作成
+## <a name="creating-the-console-app"></a>コンソールアプリの作成
 
-したがって、通常の .NET コンソール プロジェクトの種類を開始することをお勧めします。
+そのため、通常の .NET コンソールプロジェクトの種類から始めることをお勧めします。
 
-いくつかの作業を行う必要があります。
+次の操作を行う必要があります。
 
 - 空のプロジェクトを作成します。
-- Xamarin.Mac.dll ライブラリを参照します。
-- プロジェクトには、非管理対象の依存関係を表示します。
+- Xamarin. Mac .dll ライブラリを参照します。
+- アンマネージ依存関係をプロジェクトに取り込みます。
 
-次の手順については、以下で詳しく説明します。
+これらの手順については、以下で詳しく説明します。
 
-### <a name="create-an-empty-console-project"></a>空のコンソール プロジェクトを作成します。
+### <a name="create-an-empty-console-project"></a>空のコンソールプロジェクトを作成する
 
-新しい .NET コンソール プロジェクトを作成、.NET と .NET Core ではなく、Xamarin.Mac.dll としては、.NET Core ランタイムで実行されません、Mono ランタイムで実行のみであることを確認します。
+新しい .NET コンソールプロジェクトを作成し、.net Core ではなく .NET であることを確認します。 Xamarin は .net core ランタイムでは実行されず、Mono ランタイムでのみ実行されます。
 
-### <a name="reference-the-xamarinmac-library"></a>Xamarin.Mac のライブラリを参照します。
+### <a name="reference-the-xamarinmac-library"></a>Xamarin. Mac ライブラリを参照する
 
-コードをコンパイルするを参照するが、`Xamarin.Mac.dll`このディレクトリからアセンブリ。 `/Library/Frameworks/Xamarin.Mac.framework/Versions/Current//lib/x86_64/full`
+コードをコンパイルするには、このディレクトリから`Xamarin.Mac.dll`アセンブリを参照します。`/Library/Frameworks/Xamarin.Mac.framework/Versions/Current//lib/x86_64/full`
 
-これを行うには、プロジェクト間参照移動、 **.NET アセンブリ**タブをクリックし、をクリックして、**参照**ファイル システム上のファイルを検索するボタンをクリックします。  上記のパスに移動して選択し、 **Xamarin.Mac.dll**そのディレクトリから。
+これを行うには、プロジェクト参照に移動し、 **[.Net アセンブリ]** タブを選択します。次に、 **[参照]** ボタンをクリックして、ファイルシステム上のファイルを指定します。  上のパスに移動し、そのディレクトリから**Xamarin. Mac .dll**を選択します。
 
-Cocoa Api へアクセスを付与すると、コンパイル時にこれは。   この時点では、追加することができます`using AppKit`、ファイル、および呼び出しの先頭に、`NSApplication.Init()`メソッド。   1 つ以上のステップがあるアプリケーションを実行する前にします。
+これにより、コンパイル時に Cocoa Api にアクセスできるようになります。   この時点で、ファイルの先頭`using AppKit`にを追加し、 `NSApplication.Init()`メソッドを呼び出すことができます。   アプリケーションを実行する前に、もう1つの手順があります。
 
-### <a name="bring-the-unmanaged-support-library-into-your-project"></a>非管理対象のサポート ライブラリをプロジェクトに取り込む
+### <a name="bring-the-unmanaged-support-library-into-your-project"></a>アンマネージドサポートライブラリをプロジェクトに取り込む
 
-アプリケーションを実行すると、前にする必要がある、`Xamarin.Mac`をプロジェクトにライブラリをサポートします。   これを行うには、プロジェクトに新しいファイルを追加 (プロジェクトのオプションを選択**追加**、し**既存ファイルの追加**) このディレクトリに移動します。
+アプリケーションを実行する前に、 `Xamarin.Mac`サポートライブラリをプロジェクトに取り込む必要があります。   これを行うには、プロジェクトに新しいファイルを追加します (プロジェクトオプション で、**追加**、**既存ファイルの追加** の順に選択し、このディレクトリに移動します)。
 
 `/Library/Frameworks/Xamarin.Mac.framework/Versions/Current/lib`
 
-ここでは、ファイルを選択します。 **libxammac.dylib**します。   コピー、移動、およびリンクの選択肢が提供されます。   リンク、個人的に好きですが、同様に機能をコピーします。    ファイルを選択する必要がありますとプロパティ パッド (選択**ビュー > パッド > プロパティ**プロパティ パッドが表示されない場合) に移動、**ビルド**セクションし、設定、**出力ディレクトリにコピーディレクトリ**設定**新しい場合はコピー**します。
+ここで、 **libxammac**ファイルを選択します。   コピー、リンク、移動のいずれかを選択できます。   私はリンクを気に入っていますが、コピーも同様に機能します。    次に、ファイルを選択し、プロパティパッド (プロパティパッドが表示されていない場合は **[表示 > パッド > プロパティ]** を選択します) で、 **[ビルド]** セクションにアクセスし、 **[出力ディレクトリにコピー]** 設定を **[新しい場合はコピー]** する に設定します。
 
-Xamarin.Mac アプリケーションを実行できます。
+これで、Xamarin. Mac アプリケーションを実行できるようになりました。
 
-結果、bin ディレクトリでは、次のようになります。
+Bin ディレクトリの結果は次のようになります。
 
 ```
 Xamarin.Mac.dll
@@ -78,13 +78,13 @@ consoleapp.pdb
 libxammac.dylib
 ```
 
-このアプリを実行するには、これらのファイルを同じディレクトリにする必要があります。
+このアプリを実行するには、すべてのファイルが同じディレクトリに存在する必要があります。
 
-## <a name="building-a-standalone-application-for-distribution"></a>配布用のスタンドアロン アプリケーションの構築
+## <a name="building-a-standalone-application-for-distribution"></a>配布用のスタンドアロンアプリケーションを構築する
 
-ユーザーに 1 つの実行可能ファイルを配布する場合があります。  これを行うには、使用することができます、`mkbundle`自己完結型の実行可能ファイルに、さまざまなファイルを有効にするツール。
+1つの実行可能ファイルをユーザーに配布することができます。  これを行うには、 `mkbundle`ツールを使用して、さまざまなファイルを自己完結型の実行可能ファイルに変換します。
 
-まず、アプリケーションをコンパイルして実行することを確認してください。   結果に満足したら後、は、コマンドラインから次のコマンドを実行できます。
+まず、アプリケーションがコンパイルされて実行されていることを確認します。   結果に問題がなければ、コマンドラインから次のコマンドを実行できます。
 
 ```
 $ mkbundle --simple -o /tmp/consoleapp consoleapp.exe --library libxammac.dylib --config /Library/Frameworks/Mono.framework/Versions/Current/etc/mono/config --machine-config /Library/Frameworks/Mono.framework/Versions/Current//etc/mono/4.5/machine.config
@@ -92,13 +92,13 @@ $ mkbundle --simple -o /tmp/consoleapp consoleapp.exe --library libxammac.dylib 
 $ _
 ```
 
-上記のコマンドライン呼び出し、オプションで`-o`が生成された出力を指定するために、この場合は、渡された`/tmp/consoleapp`します。   これは、ここで配布できるスタンドアロン アプリケーションを完全に自己完結型の実行可能ファイルは、Mono または Xamarin.Mac で外部の依存関係がありません。
+上記のコマンドライン呼び出しでは、オプション`-o`を使用して、生成された出力を指定します`/tmp/consoleapp`。この例では、を渡しています。   これは、配布できるスタンドアロンアプリケーションであり、Mono または Xamarin. Mac に外部依存関係がありません。これは完全に完結している実行可能ファイルです。
 
-手動で指定されたコマンドライン、 **machine.config**ファイルを使用して、システム全体のライブラリのマッピングの構成ファイル。   これらは、すべてのアプリケーションは必要ありませんが、.NET の多くの機能を使用するときに使用すると、それらをバンドルすると便利です。
+コマンドラインでは、使用する**machine.config**ファイルと、システム全体のライブラリマッピング構成ファイルを手動で指定しました。   これらは、すべてのアプリケーションに必要なわけではありませんが、.NET の機能をより多く使用するときに使用されるため、バンドルすると便利です。
 
 ## <a name="project-less-builds"></a>プロジェクトのないビルド
 
-自己完結型の Xamarin.Mac アプリケーションを作成する完全なプロジェクトを必要としない、ジョブの実行を取得する単純な Unix メイクファイルを使用することもできます。   次の例では、シンプルなコマンド ライン アプリケーションのメイクファイルをセットアップする方法を示しています。
+自己完結型の Xamarin. Mac アプリケーションを作成するための完全なプロジェクトは必要ありませんが、単純な Unix makefile を使用してジョブを実行することもできます。   次の例は、単純なコマンドラインアプリケーションのメイクファイルを設定する方法を示しています。
 
 ```
 XAMMAC_PATH=/Library/Frameworks/Xamarin.Mac.framework/Versions/Current//lib/x86_64/full/
@@ -113,13 +113,12 @@ consoelapp.exe: consoleapp.cs Makefile
 run: consoleapp.exe
     MONO_PATH=$(XAMMAC_PATH) DYLD_LIBRARY_PATH=$(DYLD) mono --debug consoleapp.exe $(COMMAND)
 
-
 bundle: consoleapp.exe
     mkbundle --simple consoleapp.exe -o ncsharp -L $(XAMMAC_PATH) --library $(DYLD)/libxammac.dylib --config $(MONODIR)/config --machine-config $(MONODIR)/4.5/machine.config
 ```
 
-上記`Makefile`3 つのターゲットを提供します。
+上記`Makefile`は、3つのターゲットを提供します。
 
-- `make` プログラムをビルドします。
-- `make run` ビルドし、現在のディレクトリでプログラムを実行
-- `make bundle` 自己完結型の実行可能ファイルが作成されます。
+- `make`プログラムをビルドします
+- `make run`現在のディレクトリにプログラムをビルドして実行します
+- `make bundle`自己完結型の実行可能ファイルを作成します

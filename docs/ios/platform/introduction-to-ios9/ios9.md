@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: f46b60a0567a5486a5c22a6ff36561e976d07b47
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 246653cee7917141ddd0f911a7c4d1b21f945360
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292901"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70751971"
 ---
 # <a name="ios-9-compatibility"></a>iOS 9 の互換性
 
@@ -32,13 +32,10 @@ Xamarin のインストールを最新の安定したチャネルリリースに
 
 _IOS 9 の機能でアプリをすぐに更新する予定がない場合でも、最新バージョンの Xamarin で再構築し、App Store に再送信することをお勧めし_ます。
 
-
-
 これにより、お客様のアップグレード後、アプリが iOS 9 で動作するようになります。
 IOS 8 のサポートを継続できます。最新のリリースでの再構築は、アプリケーションのターゲットバージョンには影響しません。
 
 IOS 9 で既存のアプリのテスト中にさらに問題が発生した場合は、以下の「[互換性の向上](#compat)」セクションを参照してください。
-
 
 ### <a name="updating-with-visual-studio"></a>Visual Studio を使用した更新
 
@@ -50,7 +47,6 @@ Visual Studio が最新の安定したバージョンに更新されているこ
 これらの問題は、Xamarin. iOS の最新の安定したリリースを使用してアプリを再構築するだけで修正されます。
 
 同様に、コンポーネントベンダーと Nuget の作成者は、前述の2つの問題を修正するためだけに新しいビルドを送信する必要は**ありません**。 ただし、コンポーネントまたは Nuget で**Xib**ファイル`UICollectionView`のビューを使用したり読み込みたりする場合は、以下で説明する iOS 9 の互換性の問題に対処するために更新が必要に*なることがあり*ます。
-
 
 <a name="compat" />
 
@@ -74,8 +70,6 @@ public YourCellClassName (CGRect frame) : base (frame)
 
 関連するサンプル:[Motiongraph](https://github.com/xamarin/monotouch-samples/commit/3c1b7a4170c001e7290db9babb2b7a6dddeb8bcb)、 [TextKitDemo](https://github.com/xamarin/monotouch-samples/commit/23ea01b37326963b5ebf68bbcc1edd51c66a28d6)
 
-
-
 ### <a name="uiview-fails-to-init-with-coder-when-loading-a-view-from-a-xibnib"></a>Xib/Nib からビューを読み込むときに、UIView がプログラマによる初期化に失敗する
 
 **理由**`initWithCoder:`コンストラクターは、Interface Builder Xib ファイルからビューを読み込むときに呼び出されるコンストラクターです。 このコンストラクターがエクスポートされていない場合、アンマネージコードはマネージバージョンのマネージドバージョンを呼び出すことができません。 以前 ( iOS 8 では、 `IntPtr`コンストラクターはビューを初期化するために呼び出されました。
@@ -92,7 +86,6 @@ public YourClassName (NSCoder coder) : base (coder)
 
 関連するサンプル:[コミュニティ](https://github.com/xamarin/monotouch-samples/commit/7b81138d52e5f3f1aa3769fcb08f46122e9b6a88)
 
-
 ### <a name="dyld-message-no-cache-image-with-name"></a>Dyld メッセージ: 名前のキャッシュイメージがありません...
 
 ログに次の情報が表示された場合、クラッシュが発生する可能性があります。
@@ -105,8 +98,6 @@ Dyld Message: no cache image with name (/System/Library/PrivateFrameworks/JavaSc
 **理由**これは、Apple のネイティブリンカーのバグであり、プライベートフレームワークをパブリックにすると (JavaScriptCore は iOS 7 で公開されていましたが、プライベートフレームワークではなくなりました)、アプリのデプロイターゲットは、フレームワークがプライベートであるときの iOS バージョン用です。 この場合、Apple のリンカーは、パブリックバージョンではなく、フレームワークのプライベートバージョンとリンクします。
 
 **ファイル**これは iOS 9 に対応していますが、その間にすぐに適用できる簡単な回避策があります。 (この場合は、iOS 7 を試すことができます)、後で簡単に適用できます。 他のフレームワークでも同様の問題が発生する可能性があります。たとえば、WebKit フレームワークは iOS 8 で公開されています (したがって、iOS 7 を対象とすると、このエラーが発生します。アプリで WebKit を使用するには、iOS 8 を対象にする必要があります)。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

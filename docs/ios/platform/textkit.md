@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: c153e653cc57d35f125ef58ebc8df0013f77e7c1
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: dba65eb11b6ae22a51610804e3a6a73549f4565b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283009"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769766"
 ---
 # <a name="textkit-in-xamarinios"></a>Xamarin の TextKit
 
@@ -31,7 +31,6 @@ TextKit には、次のクラスを含む、レイアウトと表示からテキ
 - `NSTextContainer`–テキストのレイアウトに使用される座標系と geometry を提供します。
 - `NSLayoutManager`–テキストをグリフに変えることによってテキストをレイアウトします。
 - `NSTextStorage`–テキストデータを保持し、バッチテキストプロパティの更新を処理します。 バッチ更新は、レイアウトの再計算やテキストの再描画など、実際に変更を処理するためにレイアウトマネージャーに渡されます。
-
 
 これら3つのクラスは、テキストを表示するビューに適用されます。 `UITextView` `UIView` 、`UILabel` 、などの組み込みのテキスト処理ビューでは、既に設定されていますが、インスタンスを作成して任意のインスタンスに適用することもできます。 `UITextField`
 
@@ -144,8 +143,6 @@ public class ExclusionPathView : UITextView
 > [!IMPORTANT]
 > この例で`UITextView`は、サブクラスを使用してタッチ描画サポートを追加しています。 サブ`UITextView`クラス化は、textkit の機能を取得するためには必要ありません。
 
-
-
 ユーザーがテキストビューに描画した後、次`CGPath`のように`UIBezierPath.CGPath`プロパティ`UIBezierPath`を設定することによって、描画がインスタンスに適用されます。
 
 ```csharp
@@ -164,7 +161,6 @@ TextContainer.ExclusionPaths = new UIBezierPath[] { bezierPath };
 ![](textkit-images/exclusionpath2.png "このスクリーンショットは、描画されたパスの周囲にテキストレイアウトがどのように変化するかを示しています。")
 
 この場合、レイアウトマネージャーの`AllowsNonContiguousLayout`プロパティが false に設定されていることに注意してください。 これにより、テキストが変更されるすべてのケースに対して、レイアウトが再計算されます。 この値を true に設定すると、大規模なドキュメントの場合は特に、レイアウト全体の更新を回避することでパフォーマンスが向上する可能性があります。 ただし、を`AllowsNonContiguousLayout` true に設定すると、場合によっては、除外パスによってレイアウトが更新されないようにすることができます。たとえば、パスを設定する前に後続のキャリッジリターンを使用せずに実行時にテキストを入力する場合などです。
-
 
 ## <a name="related-links"></a>関連リンク
 

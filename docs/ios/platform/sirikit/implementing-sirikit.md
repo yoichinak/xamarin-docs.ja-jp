@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/03/2018
-ms.openlocfilehash: 5c891943d0d23c24169a6d226a10f83964c9257a
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 40bea05c86e83a0b96ad35b49b25bdada89f4201
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290636"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769796"
 ---
 # <a name="implementing-sirikit-in-xamarinios"></a>Xamarin での SiriKit の実装
 
@@ -50,7 +50,6 @@ MonkeyChat では、ユーザーの友人に固有の連絡先ブックが保持
 3. **アプリ**-アプリケーションにユーザー固有のボキャブラリを提供して、siri を使用できるようにします。 
 
 これらの要素とアプリに追加する手順については、以下のセクションで詳しく説明します。
-
 
 ## <a name="preparing-the-app"></a>アプリの準備
 
@@ -156,7 +155,6 @@ namespace MonkeyChat
 2つのオプションのいずれかを選択するには、意図が一体になっているかどうかを確認します。 たとえば、オーディオとビデオの呼び出しを行ったアプリでは、同様のタスクを処理しているため、コードを再利用することができるため、これらのインテントを1つのインテント拡張に含めることが必要になる場合があります。
 
 既存のグループに適合しないインテントまたはインテントのグループについては、アプリのソリューションに新しいインテント拡張を作成し、それらを含めることができます。
-
 
 ### <a name="setting-the-required-entitlements"></a>必要な権利を設定する
 
@@ -266,7 +264,6 @@ Mac で次の操作を行います。
 
 アプリが`RequestSiriAuthorization`初めて起動`INPreferences`するときに、クラスのメソッドを呼び出します。 クラスを編集し、メソッド`FinishedLaunching`を次のようにします。 `AppDelegate.cs`
 
-
 ```csharp
 using Intents;
 ...
@@ -288,7 +285,6 @@ public override bool FinishedLaunching (UIApplication application, NSDictionary 
             break;
         }
     });
-
 
     return true;
 }
@@ -684,7 +680,6 @@ namespace MonkeyChat
 
 -----
 
-
 使用可能なインテントドメインの完全な一覧については、「Apple の[インテントドメインのリファレンス](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/SiriDomains.html#//apple_ref/doc/uid/TP40016875-CH9-SW2)」を参照してください。
 
 ### <a name="configuring-the-main-class"></a>Main クラスの構成
@@ -743,7 +738,6 @@ MonkeyChat アプリの例の場合、インテント拡張機能では、メッ
 また、MonkeyChat では、メッセージ本文の内容が必要です。 ユーザーがこれを指定していない場合、Siri はユーザーにコンテンツの入力を求める必要があります。
 
 インテント拡張機能では、これらの各ケースを適切に処理する必要があります。
-
 
 ```csharp
 [Export ("resolveRecipientsForSearchForMessages:withCompletion:")]
@@ -810,7 +804,6 @@ public void ConfirmSendMessage (INSendMessageIntent intent, Action<INSendMessage
 ### <a name="processing-the-intent"></a>インテントの処理
 
 これは、インテント拡張が実際にユーザーの要求を満たすタスクを実行し、結果を Siri に渡してユーザーに通知できるようにするためのポイントです。
-
 
 ```csharp
 public void HandleSendMessage (INSendMessageIntent intent, Action<INSendMessageIntentResponse> completion)
@@ -1064,9 +1057,6 @@ Apple は、意図した UI 拡張機能を設計および実装するときに�
 ## <a name="summary"></a>Summary
 
 この記事では、SiriKit について説明しました。また、iOS デバイスで Siri と Maps アプリを使用してユーザーがアクセスできるサービスを提供するために、その機能を Xamarin の iOS アプリに追加する方法についても説明しました。
-
-
-
 
 ## <a name="related-links"></a>関連リンク
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 706efdd9cb39db63ab0c7b9cd4404b7b84f4c14b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: cb16ad3889453f866f3dc9e66f5bcc8860bd094a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292406"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70751983"
 ---
 # <a name="additional-ios-9-frameworks-changes"></a>IOS 9 フレームワークのその他の変更
 
@@ -55,9 +55,6 @@ CloudKit フレームワークを使用すると、iCloud にアクセスする�
 
 > [!IMPORTANT]
 > CloudKit JS を使用して CloudKit データベースのコンテンツにアクセスしたり、表示したり、更新したりするには、そのデータベースのスキーマを事前に定義しておく必要があります。
-
-
-
 
 詳細については、次のドキュメントを参照してください。
 
@@ -261,8 +258,6 @@ IOS 9 では、この自動サイズ変更は発生せず、画面のサイズ�
 ### <a name="new-uitextinputassistantitem-class"></a>New UITextInputAssistantItem クラス
 
 新しい`UITextInputAssistantItem`クラスを使用して、_ショートカットバー_のレイアウトバーボタングループにします。 ショートカットバーは、ソフトキーボードで入力ショートカットを提供するために使用できる新しい領域です。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

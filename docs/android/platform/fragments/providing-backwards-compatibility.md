@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/12/2017
-ms.openlocfilehash: f1f886f0e4c14f2da29342a2a651f91ed510fd25
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 838f8bdcf3bd82a31bf0d033eee628bd19ad1c30
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524264"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70757548"
 ---
 # <a name="providing-backwards-compatibility-with-the-android-support-package"></a>Android サポートパッケージとの下位互換性の提供
 
@@ -19,7 +19,6 @@ ms.locfileid: "69524264"
 
 > [!NOTE]
 > `ListFragment` とは、Androidサポートパッケージを通じて`DialogFragment`のみ使用できます。 などの他のフラグメントサブクラス`PreferenceFragment,`は、Android サポートパッケージではサポートされていません。 Android 3.0 より前のアプリケーションでは機能しません。 
-
 
 ## <a name="adding-the-support-package"></a>サポートパッケージの追加
 
@@ -47,7 +46,6 @@ fragmentTx.Commit();
 ```
 
 これらの変更が適用されると、Android 1.6 または2.x だけでなく、Honeycomb とアイスクリームでもフラグメントベースのアプリケーションを実行できるようになります。 
-
 
 ## <a name="related-links"></a>関連リンク
 

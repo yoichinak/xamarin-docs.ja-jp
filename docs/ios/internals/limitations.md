@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 04/09/2018
-ms.openlocfilehash: 1d6f4dc20a32810bb218ce3aa2281fa1355a584d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 83c71ebf844102a7d3a16969868f187237fb0d04
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291903"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753333"
 ---
 # <a name="limitations-of-xamarinios"></a>Xamarin. iOS の制限事項
 
@@ -21,7 +21,6 @@ Xamarin を使用するアプリケーションは静的コードにコンパイ
 次に示したのは、デスクトップの Mono と比較した、iOS の制限事項です。
 
  <a name="Limited_Generics_Support" />
-
 
 ## <a name="limited-generics-support"></a>制限付きジェネリックのサポート
 
@@ -32,7 +31,6 @@ Mono の[完全な AOT](https://www.mono-project.com/docs/advanced/aot/#full-aot
 開発者が実行する一般的な問題には、次のようなものがあります。
 
  <a name="Generic_Subclasses_of_NSObjects_are_limited" />
-
 
 ### <a name="generic-subclasses-of-nsobjects-are-limited"></a>NSObjects の汎用サブクラスは制限されています
 
@@ -47,9 +45,7 @@ class Foo<T> : UIView {
 > [!NOTE]
 > NSObjects の汎用サブクラスは可能ですが、いくつかの制限があります。 詳細については、 [NSObject ドキュメントの汎用サブクラス](~/ios/internals/api-design/nsobject-generics.md)を参照してください。
 
-
  <a name="No_Dynamic_Code_Generation" />
-
 
 ## <a name="no-dynamic-code-generation"></a>動的なコード生成なし
 
@@ -60,10 +56,7 @@ IOS カーネルでは、アプリケーションがコードを動的に生成�
 - 型を動的に作成することはサポートされていません (タイプ gettype ("MyType ' 1"))。ただし、既存の型 (たとえば、GetType ("System.string") は正常に動作します)。
 - 逆コールバックは、コンパイル時にランタイムに登録する必要があります。
 
-
-
  <a name="System.Reflection.Emit" />
-
 
 ### <a name="systemreflectionemit"></a>System.Reflection.Emit
 
@@ -72,7 +65,6 @@ IOS カーネルでは、アプリケーションがコードを動的に生成�
 - 動的言語ランタイム。
 - 動的言語ランタイムの上に構築されたすべての言語。
 - リモート処理の TransparentProxy、またはランタイムがコードを動的に生成するその他のもの。
-
 
   > [!IMPORTANT]
   > リフレクションを混同**し**ないでください。**リフレクション**を使用して出力します。 リフレクションは、コードを動的に生成し、そのコードを Jit してネイティブコードにコンパイルします。 IOS の制限 (JIT コンパイルなし) のため、これはサポートされていません。
@@ -94,7 +86,6 @@ System.ExecutionEngineException: Attempting to JIT compile method '(wrapper mana
 
  <a name="Reverse_Callbacks" />
 
-
 ### <a name="reverse-callbacks"></a>逆コールバック
 
 標準 Mono では、関数ポインターのC#代わりにデリゲートインスタンスをアンマネージコードに渡すことができます。 通常、ランタイムは、これらの関数ポインターを小さなサンクに変換し、アンマネージコードがマネージコードにコールバックできるようにします。
@@ -110,9 +101,7 @@ Mono では、これらのブリッジはジャストインタイムコンパイ
 
 リモート処理スタックは、Xamarin. iOS では使用できません。
 
-
  <a name="Runtime_Disabled_Features" />
-
 
 ## <a name="runtime-disabled-features"></a>実行時に無効な機能
 
@@ -125,14 +114,10 @@ Mono の iOS ランタイムでは、次の機能が無効になっています�
 - JIT エンジン
 - メタデータ検証機能 (JIT がないため)
 
-
  <a name=".NET_API_Limitations" />
-
 
 ## <a name="net-api-limitations"></a>.NET API の制限事項
 
 公開されている .NET API は完全なフレームワークのサブセットであり、すべての iOS で利用できるわけではありません。 [現在サポートされているアセンブリの一覧](~/cross-platform/internals/available-assemblies.md)については、FAQ を参照してください。
-
-
 
 具体的には、Xamarin. iOS で使用される API プロファイルには、System. Configuration が含まれていないため、外部 XML ファイルを使用してランタイムの動作を構成することはできません。

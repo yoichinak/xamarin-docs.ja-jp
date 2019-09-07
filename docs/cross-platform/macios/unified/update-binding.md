@@ -6,12 +6,12 @@ ms.assetid: 5E2A3251-D17F-4F9C-9EA0-6321FEBE8577
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: dcee5c6d5324be11f424739a20ba673817553e36
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: da877cc10829c4067596263b2a3676413103282d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287376"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765426"
 ---
 # <a name="migrating-a-binding-to-the-unified-api"></a>バインドの Unified API への移行
 
@@ -134,7 +134,6 @@ IntPtr Constructor (CGRect frame);
 
 統合された api を使用するようにバインドプロジェクトを更新する最後の手順として`MakeFile` 、プロジェクトのビルドに使用するを変更するか、Xamarin プロジェクトの種類 (Visual Studio for Mac 内からバインドする場合) を変更して、 _btouch_にバインドするように指示する必要があります。従来の Api ではなく、統合された Api に対して。
 
-
 ### <a name="updating-a-makefile"></a>メイクファイルの更新
 
 メイクファイルを使用して、バインドプロジェクトを Xamarin にビルドする場合。DLL では、 `--new-style`コマンドラインオプションを指定し、の`btouch`代わり`btouch-native`にを呼び出す必要があります。
@@ -149,7 +148,6 @@ PROJECT_ROOT=XMBindingLibrarySample
 PROJECT=$(PROJECT_ROOT)/XMBindingLibrarySample.xcodeproj
 TARGET=XMBindingLibrarySample
 BTOUCH=/Developer/MonoTouch/usr/bin/btouch
-
 
 all: XMBindingLibrary.dll
 
@@ -214,8 +212,6 @@ Visual Studio for Mac バインドプロジェクトテンプレートを使用�
 ## <a name="summary"></a>Summary
 
 この記事では、新しい統合 Api と64ビットデバイスをサポートするために、既存の Xamarin バインドプロジェクトに加える必要がある変更と、API の新しい64ビット互換バージョンを構築するために必要な手順について説明しました。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

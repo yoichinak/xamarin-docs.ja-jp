@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 1aa4e6dcf5137d12647fb2a5531218839b6db9a1
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 6f3df1c7c4664f4138e0f399419ac95e15231916
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70225801"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70757529"
 ---
 # <a name="kitkat-features"></a>KitKat の機能
 
@@ -29,7 +29,6 @@ Android 4.4 (API レベル 19) ("KitKat" とも呼ばれます) は、2013の遅
 - [ハードウェア](#hardware)Nfc ホストベースのカードエミュレーションを使用してアプリを nfc カードに変換し、 `SensorManager`で低電力センサーを実行します。 &ndash;
 
 - [開発者ツール](#developer_tools)&ndash; Android Debug Bridge クライアントで動作中のアプリケーションを、Android SDK の一部として使用できるようにします。
-
 
 このガイドでは、既存の Xamarin Android アプリケーションを KitKat に移行するためのガイダンスと、Xamarin Android 開発者向けの KitKat の概要について説明します。
 
@@ -248,10 +247,8 @@ sceneButton.Click += (o, e) => {
 
 [![アニメーションが完了した後のアプリのスクリーンショット](kitkat-images/scene.png)](kitkat-images/scene.png#lightbox)
 
-
 > [!NOTE]
 > Android の遷移ライブラリには[既知のバグ](https://code.google.com/p/android/issues/detail?id=62450)があります。これに`GetSceneForLayout`より、を使用して作成されたシーンは、ユーザーが2回目にアクティビティを移動したときに中断されます。 Java の回避策については、[こちら](http://www.doubleencore.com/2013/11/new-transitions-framework/)を参照してください。
-
 
 ##### <a name="custom-transitions-in-scenes"></a>バックグラウンドでのカスタム遷移
 
@@ -289,7 +286,6 @@ KitKat を使用すると、オプションの半透明状態とナビゲーシ�
 - `windowTranslucentNavigation`-True に設定すると、下部のナビゲーションバーが半透明になります。
 
 - `fitsSystemWindows`-上または下のバーを transcluent に設定すると、既定で透過的 UI 要素の下にコンテンツがシフトされます。 このプロパティをに`true`設定することは、コンテンツが半透明のシステム UI 要素と重複しないようにするための簡単な方法です。
-
 
 次のコードは、半透明のステータスとナビゲーションバーを持つテーマを定義します。
 
@@ -405,11 +401,8 @@ KitKat に付属しているほとんどのデバイスでは、最初に WiFi �
 
 [![[印刷の設定] 画面のスクリーンショットの例](kitkat-images/printing.png)](kitkat-images/printing.png#lightbox)
 
-
 > [!NOTE]
 > 既定では、印刷 Api は Google Cloud Print と連動するように設定されていますが、開発者は、新しい Api を使用して印刷コンテンツを準備し、それを他のアプリケーションに送信して印刷処理を行うことができます。
-
-
 
 #### <a name="printing-html-content"></a>HTML コンテンツの印刷
 
@@ -425,7 +418,6 @@ Web コンテンツの読み込みと印刷には、インターネットのア�
 [オプション] メニューを使用すると、ユーザーはアクティビティに対してアクションを実行できます。 画面の右上隅にあり、次のように表示されます。
 
 [![画面の右上隅に表示される [印刷] メニュー項目のスクリーンショットの例](kitkat-images/menu.png)](kitkat-images/menu.png#lightbox)
-
 
 追加のメニュー項目は、[*リソース*] の下の*メニュー*ディレクトリで定義できます。 次のコードでは、 [Print](xref:Android.Print.PrintManager)という名前のサンプルメニュー項目を定義しています。
 
@@ -541,7 +533,6 @@ Hce では、hce 機能と`Nfc`アクセス許可の両方をアプリケーシ�
 
 - *Ondeactivated アクティブ*化`HostAdpuService` -hce サービスが NFC リーダーと通信しなくなったときに、が非アクティブになります。
 
-
 HCE サービスもアプリケーションのマニフェストに登録する必要があり、適切なアクセス許可、インテントフィルター、およびメタデータで修飾する必要があります。 属性を使用して Android マニフェストに`HostApduService`登録されているのコード例を次に示します (属性の詳細については、「Xamarin [Working with android manifest](~/android/platform/android-manifest.md) guide」を参照してください)。 `Service`
 
 ```csharp
@@ -645,10 +636,8 @@ protected override void OnPause()
 
 デバイスを再起動すると、ステップ数が0にリセットされます。 アプリは、センサーを使用する他のアプリケーションやデバイスの状態に関係なく、アプリケーションの正確な数を報告するために、追加のコードを必要とします。
 
-
 > [!NOTE]
 > ステップの検出とカウントの API には KitKat が付属していますが、すべての電話がセンサーに outfitted されるわけではありません。 を実行`PackageManager.HasSystemFeature(PackageManager.FeatureSensorStepCounter);`してセンサーが使用可能かどうかを確認するか、の`GetDefaultSensor`戻り値が`null`でないことを確認します。
-
 
 <a name="developer_tools" />
 
@@ -672,7 +661,6 @@ adb shell screenrecord --bit-rate 8000000 --time-limit 60 /sdcard/screencast.mp4
 ```
 
 ビデオはデバイスにあります。録画が完了すると、ギャラリーに表示されます。
-
 
 ## <a name="other-kitkat-additions"></a>その他の KitKat の追加
 
@@ -705,11 +693,9 @@ KitKat では、上記の変更に加えて次のことができます。
 
 上記の API 変更の詳細については、「Google [Android 4.4 api](https://developer.android.com/about/versions/android-4.4.html)の概要」を参照してください。
 
-
 ## <a name="summary"></a>Summary
 
 この記事では、Android 4.4 (API レベル 19) で利用できる新しい Api のいくつかを紹介し、アプリケーションを KitKat に移行する際のベストプラクティスについて説明しました。 *移行フレームワーク*や*テーマ*の新しいオプションなど、ユーザーエクスペリエンスに影響する api の変更について説明しています。 次に、*ストレージアクセスフレームワーク*と`DocumentsProvider`クラス、および新しい*印刷 api*が導入されました。 ここでは、 *NFC ホストベースのカードエミュレーション*と、ユーザーの手順を追跡する2つの新しいセンサーを含む*低電力センサー*の使用方法について説明しています。 最後に、*画面記録*を使用してアプリケーションのリアルタイムのデモをキャプチャし、KitKat API の変更と追加の詳細な一覧を示しました。
-
 
 ## <a name="related-links"></a>関連リンク
 

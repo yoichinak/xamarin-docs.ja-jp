@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 69f43df64ccf7de75b00e1a0b3f6e2ececc5bbb3
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: d3a3c28e30e38562035b4d0c7c05366865157dd5
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292020"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752061"
 ---
 # <a name="introduction-to-ios-7"></a>iOS 7 の概要
 
@@ -30,7 +30,6 @@ iOS 7 では、UIKit でのアニメーションのサポートが強化され�
 
 - `springWithDampingRatio`–0から1までの値。振幅の値は、小さい値になります。
 - `initialSpringVelocity`–1秒あたりのアニメーション距離の合計に対する割合で示す、最初の spring velocity。
-
 
 次のコードでは、イメージビューの中心が変化したときに spring effect が生成されます。
 
@@ -104,13 +103,11 @@ API は本質的に宣言されています。 オブジェクトと呼ばれる
 - `UIPushBehavior`–動的な項目に強制的に適用されます。
 - `UISnapBehavior`–動的な項目を spring 効果を持つ位置にスナップできるようにします。
 
-
 多くのプリミティブがありますが、UIKit Dynamics を使用して、ビューに物理的に基づく相互作用を追加する一般的なプロセスは、動作間で一貫しています。
 
 1. 動的なアニメーターを作成します。
 1. 動作を作成します。
 1. 動的なアニメーターにビヘイビアーを追加します。
-
 
 ### <a name="dynamics-example"></a>Dynamics の例
 
@@ -233,7 +230,6 @@ iOS 7 は、バックグラウンド処理を実行するタイミングと方�
 - [バックグラウンドフェッチ] –アプリケーションで、一定の間隔でコンテンツをバックグラウンドで更新できるようにします。
 - リモート通知-アプリケーションがプッシュ通知を受信したときにコンテンツを更新できるようにします。 通知はサイレントにするか、ロック画面にバナーを表示できます。
 - バックグラウンド転送サービス–サイズの大きなファイルなど、一定の時間制限なしでデータをアップロードおよびダウンロードできます。
-
 
 新しいマルチタスキング機能の詳細については、Xamarin[バックグラウンド処理 guide](~/ios/app-fundamentals/backgrounding/index.md)の iOS のセクションを参照してください。
 

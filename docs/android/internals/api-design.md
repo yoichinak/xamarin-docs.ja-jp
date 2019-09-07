@@ -6,19 +6,18 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 3ae18a2009ee3c34498a2e7586b561c525e76d45
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 0b3d8fc4836f6f6d1f6bf30b555e3c5c285678f0
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70225541"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756861"
 ---
 # <a name="xamarinandroid-api-design-principles"></a>Xamarin. Android API 設計の原則
 
 Mono の一部である基本クラス ライブラリのコアだけでなく Xamarin.Android Mono とネイティブ Android アプリケーションを作成するためにさまざまな Android API のバインドに付属します。
 
 Xamarin.Android のコアがありますが、相互運用機能のエンジン、Java の世界中でそのブリッジ、C# の世界と、C# または他の .NET 言語からの Java API にアクセス権を持つ開発者。
-
 
 ## <a name="design-principles"></a>設計原則
 
@@ -58,16 +57,13 @@ Xamarin.Android のコアがありますが、相互運用機能のエンジン�
 
   - 任意の Java ライブラリ ( [Android. Runtime. jの](xref:Android.Runtime.JNIEnv)) を呼び出すための機構を提供します。
 
-
 ## <a name="assemblies"></a>アセンブリ
 
 Xamarin Android には、*モノモバイルプロファイル*を構成するさまざまなアセンブリが含まれています。 [[アセンブリ](~/cross-platform/internals/available-assemblies.md)] ページに詳細情報があります。
 
 Android プラットフォームへのバインドは、 `Mono.Android.dll`アセンブリに含まれています。 このアセンブリには、使用の Android API 全体のバインドと Android ランタイム VM との通信が含まれています。
 
-
 ## <a name="binding-design"></a>バインディングのデザイン
-
 
 ### <a name="collections"></a>コレクション
 
@@ -103,7 +99,6 @@ if (goodSource.Count != 4) // false
     throw new InvalidOperationException ("should not be reached.");
 ```
 
-
 ### <a name="properties"></a>プロパティ
 
 Java メソッドは、必要に応じてプロパティに変換されます。
@@ -115,8 +110,6 @@ Java メソッドは、必要に応じてプロパティに変換されます。
 - セットのみのプロパティは生成されません。
 
 - プロパティの型が配列の場合、プロパティは生成され*ません*。
-
-
 
 ### <a name="events-and-listeners"></a>イベントとリスナー
 
@@ -156,7 +149,6 @@ C#イベントまたはプロパティは、Android イベント登録方法の�
 
 1. は、パラメーターを1つだけ受け取ります。パラメーターの型はインターフェイスで、インターフェイスにはメソッドが1つだけ`Listener`あり、インターフェイス名はのようになります (例: [OnClick *Listener*](xref:Android.Views.View.IOnClickListener))。
 
-
 さらに、リスナーインターフェイスメソッドの戻り値の型が**void**ではなく**ブール**型である場合、生成された*EventArgs*サブクラスには、*処理*されたプロパティが含まれます。 *処理*されたプロパティの値は、*リスナー*メソッドの戻り値として使用され、 `true`既定でになります。
 
 たとえば、Android ビューの[setonkeylistener ()](xref:Android.Views.View.SetOnKeyListener*)メソッドは、[ビュー. onkeylistener](xref:Android.Views.View.IOnKeyListener)インターフェイスを受け取り、 [onKey (View, int, keyevent)](xref:Android.Views.View.IOnKeyListener.OnKey*)メソッドにはブール型の戻り値の型があります。 Xamarin では[、対応する](xref:Android.Views.View.KeyPress)system.windows.forms.keyeventargs.handled [&lt;&gt;](xref:Android.Views.View.KeyEventArgs)イベントが生成されます。これは、EventHandler ビューです。
@@ -167,7 +159,6 @@ C#イベントまたはプロパティは、Android イベント登録方法の�
 すべてのリスナーインターフェイスは、[`Android.Runtime.IJavaObject`](xref:Android.Runtime.IJavaObject)
 インターフェイス。バインディングの実装の詳細があるため、リスナークラスはこのインターフェイスを実装する必要があります。 これを行うには、 [java](xref:Java.Lang.Object)のサブクラスまたはその他のラップされた java オブジェクト (Android アクティビティなど) にリスナーインターフェイスを実装します。
 
-
 ### <a name="runnables"></a>Runnables
 
 Java では、 [java](xref:Java.Lang.Runnable)の実行可能インターフェイスを利用して委任メカニズムを提供します。 [.Java](xref:Java.Lang.Thread)クラスは、このインターフェイスの注目すべきコンシューマーです。 Android は API でもインターフェイスを採用しています。
@@ -176,7 +167,6 @@ Java では、 [java](xref:Java.Lang.Runnable)の実行可能インターフェ�
 この`Runnable`インターフェイスには、1つの void メソッド、 [run ()](xref:Java.Lang.Runnable.Run)が含まれています。 そのために適していると C# でのバインディングを[System.Action](xref:System.Action)を委任します。 ネイティブ api `Action`でを`Runnable`使用するすべての api メンバー (たとえば、 [Activity. runonuithread ()](xref:Android.App.Activity.RunOnUiThread*)および[View.Post ())](xref:Android.Views.View.Post*)のパラメーターを受け取るオーバーロードをバインドに提供しています。
 
 いくつかの型がインターフェイスを実装しているため、runnables として直接渡すことができるため、[irunnable](xref:Java.Lang.IRunnable) 可能なオーバーロードを代わりに使用したままにしました。
-
 
 ### <a name="inner-classes"></a>内部クラス
 
@@ -249,7 +239,6 @@ Java インターフェイスは、次の2つの型に変換されます。
 
 1. *料金*型は互換性のために残されています。
 
-
 *Parcelable*インターフェイスの場合、これは定数を格納するための[*Parcelable*](xref:Android.OS.Parcelable)型となることを意味します。 たとえば、 [Parcelable](https://developer.android.com/reference/android/os/Parcelable.html#CONTENTS_FILE_DESCRIPTOR)定数は*ParcelableConsts*定数としてではなく、 [*ContentsFileDescriptor*](xref:Android.OS.Parcelable.ContentsFileDescriptor)定数としてバインドされます。
 
 さらに多くの定数を含む他のインターフェイスを実装する定数を含むインターフェイスの場合は、すべての定数の和集合が生成されるようになりました。 たとえば、 [MediaColumns](xref:Android.Provider.MediaStore.MediaColumns)インターフェイスには、android............... [videocolumns](https://developer.android.com/reference/android/provider/MediaStore.Video.VideoColumns.html) . ただし、1.9 より前では、 [VideoColumnsConsts](xref:Android.Provider.MediaStore.Video.VideoColumnsConsts)型には、 [MediaColumnsConsts](xref:Android.Provider.MediaStore.MediaColumnsConsts)で宣言された定数にアクセスする方法がありませんでした。
@@ -259,7 +248,6 @@ Java インターフェイスは、次の2つの型に変換されます。
 以前は、この式をにC#移植するには、実装されているすべてのインターフェイスを調べて、 *CONTENTS_FILE_DESCRIPTOR*の送信元の型を確認する必要がありました。 Xamarin Android 1.9 以降では、定数を含む Java インターフェイスを実装するクラスには、継承されたすべてのインターフェイス定数を含む*InterfaceConsts*型が入れ子になっています。 これにより、 *CONTENTS_FILE_DESCRIPTOR*を[*InterfaceConsts. ContentsFileDescriptor*](xref:Android.OS.Bundle.InterfaceConsts.ContentsFileDescriptor)に変換することができます。
 
 最後に、 *ParcelableConsts*などの*料金*サフィックスが付いている型は、新しく導入された InterfaceConsts 入れ子になった型以外は、互換性のために残されています。 これらは、Xamarin Android 3.0 で削除されます。
-
 
 ## <a name="resources"></a>リソース
 
@@ -306,7 +294,6 @@ public class Resource {
 ```
 
 次に、を`Resource.Drawable.icon`使用して`drawable/icon.png`ファイルを参照`Resource.Layout.main`するか、 `layout/main.xml`ファイルを参照`Resource.String.first_string`するか、またはディクショナリファイル`values/strings.xml`の最初の文字列を参照します。
-
 
 ## <a name="constants-and-enumerations"></a>定数と列挙体
 

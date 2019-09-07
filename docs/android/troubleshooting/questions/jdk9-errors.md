@@ -8,17 +8,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/29/2018
-ms.openlocfilehash: 3f1f49a5f63d8159644bd2bb247287a91c27023a
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 58b1b29a34bfb03661959af4dea8ed57b8f504cc
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70225556"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760869"
 ---
 # <a name="xamarinandroid-and-java-development-kit-9-or-later"></a>Xamarin Android および Java Development Kit 9 以降
 
 _この記事では、Xamarin Android で Java Development Kit (JDK) 9 以降のエラーを解決する方法について説明します。_
-
 
 ## <a name="overview"></a>概要
 
@@ -34,7 +33,6 @@ Building with JDK Version `9.0.4` is not supported. Please install JDK version `
 
 これらのエラーを解決するには、「 [Java Development Kit (jdk) のバージョンを更新操作方法](~/android/troubleshooting/questions/update-jdk.md)」で説明されているように、jdk 8 (1.8) をインストールする必要があります。
 または、 [Microsoft Mobile Openjdk Preview](~/android/get-started/installation/openjdk.md)をインストールすることもできます。これにより、Microsoft Mobile openjdk によって、Xamarin Android 開発用の jdk 8 が最終的に置き換えられます。
-
 
 ## <a name="checking-the-jdk-version"></a>JDK のバージョンを確認しています
 

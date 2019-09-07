@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 09/05/2017
-ms.openlocfilehash: d6848c478e0704fab16a2f8cc64bb8aa80f9a174
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 8f1e9cabb78152374ee3eede80dcfc5dcba8dde1
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286614"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752375"
 ---
 # <a name="drag-and-drop-in-xamarinios"></a>Xamarin. iOS にドラッグアンドドロップ
 
@@ -184,7 +184,6 @@ public void PerformDrop(UITableView tableView, IUITableViewDropCoordinator coord
 別のアプリ (メモなど) と共にサンプルを開き、行とテキストをドラッグします。
 
 ![ドラッグ操作のスクリーンショットが進行中です](drag-and-drop-images/01-sml.png)
-
 
 ## <a name="related-links"></a>関連リンク
 

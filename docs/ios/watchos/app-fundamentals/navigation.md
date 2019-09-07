@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 7502998e8e8da5e011ef1ec0ab7dcc6e3d892d3d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 05da84949f6613bce24f103df4d86f1bdcd30764
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286051"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768719"
 ---
 # <a name="working-with-watchos-navigation-in-xamarin"></a>WatchOS Xamarin でのナビゲーションの操作
 
@@ -97,7 +97,6 @@ public override NSObject GetContextForSegue (string segueIdentifier)
 
 ![](navigation-images/paged-1.png "サンプルの最初のページ") ![](navigation-images/paged-2.png "サンプル 2 ページ目") ![](navigation-images/paged-5.png "5 ページ目のサンプル")
 
-
 ページ ベースのインターフェイスを watch アプリのメイン UI にするを使用して`ReloadRootControllers`インターフェイス コント ローラーとコンテキストの配列。
 
 ```csharp
@@ -113,8 +112,6 @@ var controllerNames = new [] { "pageController", "pageController", "pageControll
 var contexts = new [] { "First", "Second", "Third", "Fourth", "Fifth" };
 PresentController (controllerNames, contexts);
 ```
-
-
 
 ## <a name="related-links"></a>関連リンク
 

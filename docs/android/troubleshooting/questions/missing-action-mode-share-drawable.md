@@ -7,30 +7,29 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: ff2a586773e33a1f4cf78657c3c69c22e79ed047
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: b8961c9e58d4336a952649ce8181ca6ebdfe3165
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61153374"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70757220"
 ---
 # <a name="androidsupportv7appcompat---no-resource-found-that-matches-the-given-name-attr-androidactionmodesharedrawable"></a>Android.Support.v7.AppCompat - 指定された名前: 属性 'android:actionModeShareDrawable' と一致するリソースが見つかりません
 
-1. 最新の他の機能と、Android 5.0 (API 21)、Android SDK Manager を使用して SDK をダウンロードすることを確認します。
+1. Android SDK Manager を使用して、最新のエクストラと Android 5.0 (API 21) SDK をダウンロードしてください。
 
-2. CompileSdkVersion 21 に設定を使って、アプリケーションをコンパイルすることを確認します。 21 のように、[targetsdkversion] オプションで設定できます。
+2. Compilesdkversion を21に設定してアプリケーションをコンパイルしていることを確認します。 必要に応じて、targetSdkVersion を21に設定することもできます。
 
-3. API 19 などの以前のバージョンを必要とする場合は、Nuget のページにそれぞれのバージョンをダウンロードしてください。
+3. API 19 などの以前のバージョンが必要な場合は、Nuget のページに記載されているバージョンをダウンロードしてください。
 
 [https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/)
 
-*注*:手動でパッケージ マネージャー コンソールを使用してこれをインストールする場合も Xamarin.Android.Support.v4 の同じバージョンをインストールすることを確認してください。
+*注*:パッケージマネージャーコンソールを使用して手動でインストールした場合は、同じバージョンの Xamarin. Android. Android. サポートをインストールする必要があります。
 
 [https://www.nuget.org/packages/Xamarin.Android.Support.v4/](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)
 
-スタック オーバーフロー リファレンス: [https://stackoverflow.com/questions/26431676/appcompat-v721-0-0-no-resource-found-that-matches-the-given-name-attr-andro](https://stackoverflow.com/questions/26431676/appcompat-v721-0-0-no-resource-found-that-matches-the-given-name-attr-andro)
+Stack Overflow リファレンス:[https://stackoverflow.com/questions/26431676/appcompat-v721-0-0-no-resource-found-that-matches-the-given-name-attr-andro](https://stackoverflow.com/questions/26431676/appcompat-v721-0-0-no-resource-found-that-matches-the-given-name-attr-andro)
 
 ## <a name="see-also"></a>関連項目
 
 - [インストールする必要がある Android SDK パッケージを教えてください](~/android/troubleshooting/questions/install-android-sdk-packages.md)
-

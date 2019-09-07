@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 09/13/2016
-ms.openlocfilehash: aa99d50295e214b7926d0655ea434c851b3ba099
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: bd3adf5d01be0cdb709c752e1ace131b8b3e8d83
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286321"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752254"
 ---
 # <a name="visual-design-updates-in-ios-11"></a>IOS 11 でのビジュアルデザインの更新
 
@@ -113,11 +113,9 @@ iOS 11 では、行アクションの機能が拡張されています。 `UISwi
 
 テーブルビューでは、iOS 11 でのドラッグアンドドロップがサポートされています。 詳細については、「[ドラッグアンドドロップ](~/ios/platform/introduction-to-ios11/drag-and-drop.md#uitableview)ガイド」を参照してください。
 
-
 ## <a name="related-links"></a>関連リンク
 
 - [IOS 11 (Apple) の新機能](https://developer.apple.com/ios/)
 - [更新された App Store 製品ページ (Apple)](https://developer.apple.com/app-store/product-page/)
 - [IPhone X (Apple) 用の設計 (ビデオ)](https://developer.apple.com/videos/play/fall2017/801/)
 - [IOS 11 (WWDC) 用のアプリの更新 (ビデオ)](https://developer.apple.com/videos/play/wwdc2017/204/)
-

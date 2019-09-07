@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: c81cc7ff176ab4863498a03169a2c6a3711a0ded
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: b505f4a4f7a8f50a6044d01a327eef76a7b1ce3b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525098"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758047"
 ---
 |プロパティ|説明|オプション|
 |--- |--- |--- |
@@ -65,4 +65,3 @@ ms.locfileid: "69525098"
 |`skin.name`|**スキン名** &ndash; Android エミュレーター スキンの名前。 スキンは、エミュレーター ディスプレイの視覚および制御要素を定義するファイルのコレクションです。開発コンピューターでの AVD のウィンドウの外観を説明します。 スキンは画面のサイズ、ボタン、全体のデザインを説明しますが、アプリの操作には影響しません。||
 |`skin.path`|**スキン パス** &ndash; skin.name で指定されたエミュレーターのスキン ファイルを含むディレクトリへのパス。このディレクトリには、hardware.ini レイアウト ファイルと、スキンの表示要素に対するイメージ ファイルが含まれます。||
 |`skin.dynamic`|**スキンが動的** &ndash; スキンが動的であるかどうか。 エミュレーターが指定された幅と高さに基づいて特定のサイズのスキンを構築する場合、エミュレーター スキンは動的スキンとなります。|Ｘ|
-

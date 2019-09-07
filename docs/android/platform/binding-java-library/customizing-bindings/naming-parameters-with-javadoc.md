@@ -7,17 +7,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/20/2017
-ms.openlocfilehash: 77cd5ac86a24769947eefb6941229c56efc3297b
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: fa1fb0656384455322a2d0a3562fc0ee3ca52397
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524563"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70757601"
 ---
 # <a name="naming-parameters-with-javadoc"></a>Javadoc を使用したパラメーターの名前付け
 
 _この記事では、java プロジェクトから生成された Javadoc を使用して Java バインドプロジェクトのパラメーター名を回復する方法について説明します。_
-
 
 ## <a name="overview"></a>概要
 
@@ -35,12 +34,9 @@ Javadoc HTML を Java バインドプロジェクトに統合するには、次�
 
 この処理が完了したら、Java バインドプロジェクトによってバインドされた Api に元の Java パラメーター名が存在する必要があります。 
 
-
 > [!NOTE]
 > JavaDoc の出力には、多くの分散があります。 、.JAR バインディングツールチェーンは、考えられるすべての順列をサポートしているわけではないため、一部のパラメーターに適切な名前を付けることはできません。
-
 
 ## <a name="summary"></a>Summary
 
 この記事では、Java バインドプロジェクトで Javadoc を使用して、バインドされた Api に対して意味のあるパラメーター名を指定する方法について説明しました。 
-
