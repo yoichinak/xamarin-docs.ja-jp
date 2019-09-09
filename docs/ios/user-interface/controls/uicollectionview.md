@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: ae909827df5cc8f4ed5192d88ad067a5e69ce5d4
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 29483ca184786f8f0d2a7d0d9345608542d30e61
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282855"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768856"
 ---
 # <a name="collection-views-in-xamarinios"></a>Xamarin. iOS のコレクションビュー
 
@@ -43,7 +43,6 @@ iOS には、という`UICollectionViewFlowLayout`レイアウトクラスが用
 - `ContentView`–このビューには、セルに表示されるコンテンツが含まれます。 画面の最上位の z オーダーで表示されます。
 - `SelectedBackgroundView`–セルには、選択のためのサポートが組み込まれています。 このビューは、セルが選択されていることを視覚的に示すために使用されます。 セルが選択されると`ContentView` 、のすぐ下に表示されます。
 - `BackgroundView`–セルには、 `BackgroundView`によって表示される背景を表示することもできます。 このビューは、の下`SelectedBackgroundView`に表示されます。
-
 
 `ContentView` `SelectedBackgroundView` `BackgroundView` `SelectedBackgroundView`をおよびよりも小さい値に設定すると、を使用してコンテンツを視覚的に表示できます。次に示すように、セルを選択すると、が表示されます。 `BackgroundView`
 
@@ -85,7 +84,6 @@ public class AnimalCell : UICollectionViewCell
 
  <a name="Supplementary_Views" />
 
-
 ## <a name="supplementary-views"></a>補助ビュー
 
 補助ビューは、 `UICollectionView`の各セクションに関連付けられている情報を表示するビューです。 補助ビューは、セルと同様にデータドリブンです。 データソースからのアイテムデータをセルに表示する補助ビューには、ブックのカテゴリや音楽ライブラリ内の音楽のジャンルなどのセクションデータが表示されます。
@@ -117,7 +115,6 @@ public override UICollectionReusableView GetViewForSupplementaryElement (UIColle
 
  <a name="Decoration_Views" />
 
-
 ## <a name="decoration-views"></a>装飾ビュー
 
 装飾ビューは、 `UICollectionView`で表示できる純粋な視覚ビューです。 セルや補助ビューとは異なり、データドリブンではありません。 これらは常にレイアウトのサブクラス内に作成され、その後、コンテンツのレイアウトとして変更できます。 たとえば、次に示すように、装飾ビューを使用すると、の`UICollectionView`コンテンツと共にスクロールする背景ビューを表示できます。
@@ -136,7 +133,6 @@ public override UICollectionReusableView GetViewForSupplementaryElement (UIColle
     }
   }
  ```
-
 
 ## <a name="data-source"></a>データ ソース
 
@@ -188,7 +184,6 @@ public override UICollectionViewCell GetCell (UICollectionView collectionView, F
 
  <a name="Delegate" />
 
-
 ### <a name="delegate"></a>Delegate
 
 クラス`UICollectionView`は、型`UICollectionViewDelegate`のデリゲートを使用して、 `UICollectionView`のコンテンツとの対話をサポートします。 これにより、次の制御が可能になります。
@@ -197,11 +192,9 @@ public override UICollectionViewCell GetCell (UICollectionView collectionView, F
 - **セルの強調表示**–セルが現在タッチされているかどうかを判断します。
 - **セルメニュー** –長いプレスジェスチャに応じてセルに表示されるメニューです。
 
-
 データソース`UICollectionViewController`と同様に、は既定でのデリゲート`UICollectionView`として構成されます。
 
  <a name="Cell_HighLighting" />
-
 
 #### <a name="cell-highlighting"></a>セルの強調表示
 
@@ -227,7 +220,6 @@ public override void ItemUnhighlighted (UICollectionView collectionView, NSIndex
 
  <a name="Disabling_Selection" />
 
-
 #### <a name="disabling-selection"></a>選択範囲を無効にします。
 
 で`UICollectionView`は、既定で選択が有効になっています。 選択を無効にする`ShouldHighlightItem`には、次に示すように、をオーバーライドして false を返します。
@@ -245,7 +237,6 @@ public override bool ShouldHighlightItem (UICollectionView collectionView, NSInd
 
  <a name="Cell_Menus" />
 
-
 #### <a name="cell-menus"></a>セルメニュー
 
 の各セル`UICollectionView`は、必要に応じて、切り取り、コピー、および貼り付けを許可するメニューを表示できます。 セルに [編集] メニューを作成するには、次のようにします。
@@ -254,13 +245,11 @@ public override bool ShouldHighlightItem (UICollectionView collectionView, NSInd
 1. を`CanPerformAction`オーバーライドし、項目が実行できるすべてのアクション (切り取り、コピー、または貼り付け) に対して true を返します。
 1. を`PerformAction`オーバーライドして、編集、貼り付けのコピー操作を実行します。
 
-
 次のスクリーンショットは、セルが長押されたときのメニューを示しています。
 
  [![](uicollectionview-images/04a-menu.png "このスクリーンショットは、セルが長押しされたときのメニューを示しています。")](uicollectionview-images/04a-menu.png#lightbox)
 
  <a name="Layout" />
-
 
 ## <a name="layout"></a>レイアウト
 
@@ -269,7 +258,6 @@ public override bool ShouldHighlightItem (UICollectionView collectionView, NSInd
 
  <a name="Layout_Basics" />
 
-
 ### <a name="layout-basics"></a>レイアウトの基本
 
 のレイアウトは`UICollectionView` 、から`UICollectionViewLayout`継承するクラスで定義されます。 レイアウト実装は、 `UICollectionView`内のすべての項目のレイアウト属性を作成する役割を担います。 レイアウトを作成するには、次の2つの方法があります。
@@ -277,9 +265,7 @@ public override bool ShouldHighlightItem (UICollectionView collectionView, NSInd
 - 組み込みのを使用し`UICollectionViewFlowLayout`ます。
 - から`UICollectionViewLayout`継承することにより、カスタムレイアウトを提供します。
 
-
  <a name="Flow_Layout" />
-
 
 ### <a name="flow-layout"></a>フロー レイアウト
 
@@ -289,13 +275,11 @@ public override bool ShouldHighlightItem (UICollectionView collectionView, NSInd
 
 - の`UICollectionViewFlowLayout`インスタンスを作成します。
 
-
 ```csharp
 var layout = new UICollectionViewFlowLayout ();
 ```
 
 - インスタンスをのコンストラクター `UICollectionView`に渡します。
-
 
 ```csharp
 simpleCollectionViewController = new SimpleCollectionViewController (layout);
@@ -306,7 +290,6 @@ simpleCollectionViewController = new SimpleCollectionViewController (layout);
  [![](uicollectionview-images/05-layout-orientation.png "方向の変更の例")](uicollectionview-images/05-layout-orientation.png#lightbox)
 
  <a name="Section_Inset" />
-
 
 #### <a name="section-inset"></a>セクションの埋め込み
 
@@ -323,7 +306,6 @@ layout.SectionInset = new UIEdgeInsets (50,50,50,50);
 
  <a name="Subclassing_UICollectionViewFlowLayout" />
 
-
 #### <a name="subclassing-uicollectionviewflowlayout"></a>UICollectionViewFlowLayout のサブクラス化
 
 を直接使用`UICollectionViewFlowLayout`するためのエディションでは、行に沿ってコンテンツのレイアウトをさらにカスタマイズするために、サブクラス化することもできます。 たとえば、次に示すように、この方法を使用して、セルをグリッドにラップしないレイアウトを作成できます。代わりに、次に示すように、水平スクロール効果を使用して1つの行を作成します。
@@ -336,7 +318,6 @@ layout.SectionInset = new UIEdgeInsets (50,50,50,50);
 - を`ShouldInvalidateLayoutForBoundsChange`オーバーライドして true を返すことで、 `UICollectionView`変更の範囲が変化したときにセルのレイアウトが再計算されるようになります。 この場合、中央のセルに適用される変換のコードがスクロール中に適用されることを確認します。
 - スクロール`TargetContentOffset`が停止すると、 `UICollectionView`中央のセルをの中央にスナップするようにをオーバーライドします。
 - を`LayoutAttributesForElementsInRect`オーバーライドして、の`UICollectionViewLayoutAttributes`配列を返します。 それぞれ`UICollectionViewLayoutAttribute`には`Center` 、、 `Size` 、 `ZIndex` などのプロパティを含む、特定の項目のレイアウト方法に関する情報が含まれ`Transform3D`ています。
-
 
 次のコードは、このような実装を示しています。
 
@@ -409,7 +390,6 @@ namespace SimpleCollectionView
 
  <a name="Custom_Layout" />
 
-
 ### <a name="custom-layout"></a>カスタム レイアウト
 
 を使用`UICollectionViewFlowLayout`するだけでなく、から`UICollectionViewLayout`直接継承することによってレイアウトを完全にカスタマイズすることもできます。
@@ -420,16 +400,13 @@ namespace SimpleCollectionView
 - `CollectionViewContentSize`–コンテンツの表示に使用される領域のサイズを返します。
 - `LayoutAttributesForElementsInRect`–前に示した UICollectionViewFlowLayout の例と同様に、このメソッドを使用して`UICollectionView` 、各項目のレイアウト方法に関する情報をに提供します。 ただし、とは`UICollectionViewFlowLayout`異なり、カスタムレイアウトを作成する場合は、選択した項目を配置できます。
 
-
 たとえば、次に示すように、同じコンテンツを円形のレイアウトで表示できます。
 
  [![](uicollectionview-images/08-circle-layout.png "次に示すように、円形のカスタムレイアウト")](uicollectionview-images/08-circle-layout.png#lightbox)
 
 レイアウトに関する強力な点は、グリッドに似たレイアウトから水平スクロールレイアウトに変更することです。その後、この循環レイアウトに対して指定`UICollectionView`されたレイアウトクラスのみが変更されます。 、 `UICollectionView`そのデリゲート、またはデータソースコードはまったく変更されません。
 
-
 ## <a name="changes-in-ios-9"></a>IOS 9 での変更点
-
 
 IOS 9 では、コレクションビュー (`UICollectionView`) で、新しい既定のジェスチャレコグナイザーといくつかの新しいサポートメソッドを追加することによって、ボックスの外にある項目のドラッグ操作がサポートされるようになりました。
 
@@ -1045,7 +1022,6 @@ namespace CollectionView
       var end = unionRects.Count;
       List<UICollectionViewLayoutAttributes> attrs = new List<UICollectionViewLayoutAttributes> ();
 
-
       for (int i = 0; i < end; i++) {
         if (rect.IntersectsWith(unionRects[i])) {
           begin = i * (int)unionSize;
@@ -1235,7 +1211,6 @@ IOS 9 では、 `UICollectionViewController`クラスに次の変更または追
 - `GetTargetContentOffset`-指定されたコレクションビューアイテムのオフセットを取得するために使用されます。
 - `GetTargetIndexPathForMove`–ドラッグ操作`indexPath`のために指定された項目のを取得します。
 - `MoveItem`–リスト内の指定された項目の順序を移動します。
-
 
 ### <a name="uicollectionviewdatasource"></a>UICollectionViewDataSource
 

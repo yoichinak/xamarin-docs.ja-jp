@@ -1,18 +1,18 @@
 ---
 title: 第 17 章の概要です。 マスター グリッド
-description: Xamarin.Forms によるモバイル アプリの作成。第 17 章の概要です。 マスター グリッド
+description: Xamarin を使用した Mobile Apps の作成:第 17 章の概要です。 マスター グリッド
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 71EDEF9C-4220-4D2E-A235-43F1EC8746C1
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 3aaf8e9d1eb8e0d98ad32a6b5a1286f14c7bb906
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 37b5e2bbafa816de27390771ae6daa33c74f7651
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61333737"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760627"
 ---
 # <a name="summary-of-chapter-17-mastering-the-grid"></a>第 17 章の概要です。 マスター グリッド
 
@@ -30,7 +30,7 @@ ms.locfileid: "61333737"
 
 `RowDefinition` [ `Height` ](xref:Xamarin.Forms.RowDefinition.Height)プロパティと`ColumnDefinition`が、 [ `Width` ](xref:Xamarin.Forms.ColumnDefinition.Width)プロパティは、両方の種類の[ `GridLength` ](xref:Xamarin.Forms.GridLength)、構造体。
 
-XAML、 [ `GridLengthTypeConverter` ](xref:Xamarin.Forms.GridLengthTypeConverter)に単純なテキスト文字列に変換する`GridLength`値。 バック グラウンドで、 [ `GridLength`コンス トラクター](xref:Xamarin.Forms.GridLength.%23ctor(System.Double,Xamarin.Forms.GridUnitType))を作成、`GridLength`値が、数と型の値に基づく[ `GridUnitType` ](xref:Xamarin.Forms.GridUnitType)、3 つのメンバーを持つ列挙体。
+XAML、 [ `GridLengthTypeConverter` ](xref:Xamarin.Forms.GridLengthTypeConverter)に単純なテキスト文字列に変換する`GridLength`値。 バック グラウンドで、 [ `GridLength`コンストラクター](xref:Xamarin.Forms.GridLength.%23ctor(System.Double,Xamarin.Forms.GridUnitType))を作成、`GridLength`値が、数と型の値に基づく[ `GridUnitType` ](xref:Xamarin.Forms.GridUnitType)、3 つのメンバーを持つ列挙体。
 
 - [`Absolute`](xref:Xamarin.Forms.GridUnitType.Absolute) &mdash; 幅または高さがデバイスに依存しない単位 (XAML の番号) で指定されます。
 - [`Auto`](xref:Xamarin.Forms.GridUnitType.Auto) &mdash; 高さまたは幅がセルの内容 (XAML では"Auto") に基づく自動調整です。
@@ -101,8 +101,6 @@ XAML では、これらの値を設定するため、次の属性を使用しま
 `Grid`向きの変更に応答するプログラムを構成できます。 [ **GridRgbSliders** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/GridRgbSliders)縦向きでスマート フォンの 2 つ目の行と横向きのスマート フォンの 2 番目の列の間の要素を移動する方法を示します。
 
 プログラムを初期化します`Slider`範囲 0 ~ 255 の 16 進数で、スライダーの値を表示するデータ バインドを使用する要素。 `Slider`ポイント、および .NET の 16 進数の整数でのみ動作の文字列の書式設定に値が浮動小数点、 [ `DoubleToIntConvert` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/DoubleToIntConverter.cs)クラス、 [ **Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit)ライブラリに役立ちます。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

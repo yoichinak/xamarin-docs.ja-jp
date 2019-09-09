@@ -6,32 +6,28 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 610f9be346b761c4d20e4bbf97ecfcda74c0bee0
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 63796fc46b126c1e7f99cd1754b58e28f5e36767
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69523053"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70762425"
 ---
 # <a name="xamarinandroid-calendar"></a>Xamarin Android カレンダー
-
 
 ## <a name="calendar-api"></a>Calendar API
 
 Android 4 で導入された新しい一連のカレンダー Api は、カレンダープロバイダーに対してデータの読み取りまたは書き込みを行うように設計されたアプリケーションをサポートしています。 これらの Api は、イベント、出席者、リマインダーの読み取りと書き込みなど、カレンダーデータを使用した豊富な相互作用オプションをサポートしています。 アプリケーションで calendar プロバイダーを使用すると、API を通じて追加したデータが、Android 4 に付属する組み込みの予定表アプリに表示されます。
 
-
 ## <a name="adding-permissions"></a>アクセス許可の追加
 
 アプリケーションで新しい calendar Api を使用する場合は、まず、Android マニフェストに適切なアクセス許可を追加する必要があります。 追加する必要のあるアクセス許可`android.permisson.READ_CALENDAR`は`android.permission.WRITE_CALENDAR`、予定表データの読み取りと書き込みのどちらであるかによって異なります。
-
 
 ## <a name="using-the-calendar-contract"></a>カレンダーコントラクトの使用
 
 アクセス許可を設定すると、 `CalendarContract`クラスを使用してカレンダーデータを操作できます。 このクラスは、アプリケーションがカレンダープロバイダーと対話するときに使用できるデータモデルを提供します。 を`CalendarContract`使用すると、アプリケーションは、カレンダーやイベントなどの予定表エンティティの uri を解決できます。 また、カレンダーの名前や ID、イベントの開始日と終了日など、各エンティティのさまざまなフィールドを操作する方法も提供されます。
 
 Calendar API の使用例を見てみましょう。 この例では、カレンダーとそのイベントを列挙する方法と、カレンダーに新しいイベントを追加する方法について説明します。
-
 
 ## <a name="listing-calendars"></a>カレンダーの一覧表示
 
@@ -119,8 +115,6 @@ ListAdapter = adapter;
 次に`ListView`、最終的な結果を示すスクリーンショットを示します。カレンダー情報がに表示されます。
 
 [![2つのカレンダーエントリを表示する、エミュレーターで実行されている CalendarDemo](calendar-images/11-calendar.png)](calendar-images/11-calendar.png#lightbox)
-
-
 
 ## <a name="listing-calendar-events"></a>カレンダーイベントの一覧表示
 
@@ -218,8 +212,6 @@ class ViewBinder : Java.Lang.Object, SimpleCursorAdapter.IViewBinder
 
 [![3つのカレンダーイベントを表示しているアプリの例のスクリーンショット](calendar-images/12-events.png)](calendar-images/12-events.png#lightbox)
 
-
-
 ## <a name="adding-a-calendar-event"></a>カレンダーイベントの追加
 
 カレンダーデータを読み取る方法についても説明しました。 次に、カレンダーにイベントを追加する方法を見てみましょう。 これを機能させるには、前に`android.permission.WRITE_CALENDAR`説明したアクセス許可を必ず含めてください。 カレンダーにイベントを追加するには、次の操作を行います。
@@ -228,7 +220,6 @@ class ViewBinder : Java.Lang.Object, SimpleCursorAdapter.IViewBinder
 1. クラスの`CalendarContract.Events.InterfaceConsts`キーを使用して、 `ContentValues`インスタンスにデータを設定します。
 1. イベントの開始時刻と終了時刻のタイムゾーンを設定します。
 1. イベントデータ`ContentResolver`をカレンダーに挿入するには、を使用します。
-
 
 次のコードは、これらの手順を示しています。
 
@@ -281,7 +272,6 @@ long GetDateTimeMS (int yr, int month, int day, int hr, int min)
 [![選択したカレンダーイベントを表示している予定表アプリのスクリーンショット](calendar-images/14.png)](calendar-images/14.png#lightbox)
 
 ご覧のように、Android では、カレンダーデータを取得して保持するための強力で簡単なアクセスが可能になり、アプリケーションが予定表の機能をシームレスに統合できるようになります。
-
 
 ## <a name="related-links"></a>関連リンク
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 5776855039120b0c856a76a31334420ded2a2d65
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: bcc176f8d3eb97751e6957039c2a14ed02aad653
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283326"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770158"
 ---
 # <a name="storyboardxib-less-user-interface-design-in-xamarinmac"></a>. xib のユーザーインターフェイスの設計 (Xamarin. Mac)
 
@@ -45,7 +45,6 @@ _この記事では、storyboard ファイル、xib ファイル、または Int
 次に、 **MainWindow.cs**ファイルを変更してウィンドウのレイアウトを定義し、 **ViewController.cs**または**MainWindowController.cs**ファイルを変更して`MainWindow`クラスのインスタンスを作成する必要があります。これは、を使用しなくなったためです。storyboard または xib ファイル。
 
 ユーザーインターフェイスにストーリーボードを使用する最新の Xamarin. Mac アプリには、 **MainWindow.cs**、 **ViewController.cs** 、 **MainWindowController.cs**の各ファイルが自動的に含まれない場合があります。 必要にC#応じて、新しい空のクラスをプロジェクトに追加します (新しいファイルの**追加** >  **...** 一般的な**空のクラス**) で、見つからないファイルと同じ名前を付けます。  >  > 
-
 
 ### <a name="defining-the-window-in-code"></a>コードでのウィンドウの定義
 
@@ -178,7 +177,6 @@ MacOS には特定の_ラベル_の UI 要素がないため、ラベルとし�
 
 ここでも`ContentView.AddSubview (ClickMeLabel)` 、メソッドは`NSTextField` 、をコンテンツビューに追加して、アプリケーションの実行時とウィンドウの開閉時に画面に表示されるようにします。
 
-
 ### <a name="adjusting-the-window-controller"></a>ウィンドウコントローラーの調整
 
 の`MainWindow`デザインは、storyboard または xib ファイルから読み込まれなくなったため、ウィンドウコントローラーに何らかの調整を加える必要があります。 **MainWindowController.cs**ファイルを編集し、次のように表示します。
@@ -268,7 +266,6 @@ Window.AwakeFromNib ();
 
 これにより、storyboard または xib ファイルから読み込まれた標準ウィンドウと同様に、ウィンドウに対してコードを作成できます。
 
-
 ### <a name="displaying-the-window"></a>ウィンドウの表示
 
 Xib ファイルまたは**MainWindow.cs**ファイルと**MainWindowController.cs**ファイルを削除し、Xcode の Interface Builder で作成された通常のウィンドウと同様に、xib ファイルを使用してウィンドウを使用します。
@@ -287,7 +284,6 @@ mainWindowController.Window.MakeKeyAndOrderFront (this);
 
 ![アプリの実行例](xibless-ui-images/run01.png "アプリの実行例")
 
-
 ## <a name="adding-a-code-only-window"></a>コードのみのウィンドウの追加
 
 既存の xibless アプリケーションにコードのみを追加する場合は、 **Solution Pad**でプロジェクトを右クリックし、**新しいファイル**の**追加** >  を選択します。次の図に示すように、**新しいファイル** ダイアログボックスで、コントローラーを使用して  **Xamarin. Mac** > **cocoa ウィンドウ**を選択します。
@@ -295,7 +291,6 @@ mainWindowController.Window.MakeKeyAndOrderFront (this);
 ![新しいウィンドウコントローラーの追加](xibless-ui-images/add01.png "新しいウィンドウコントローラーの追加")
 
 前と同様に、プロジェクト (この例では**xib**) から既定のストーリーボードまたは xib ファイルを削除し、上のコードセクションを使用した[ウィンドウの切り替え](#Switching_a_Window_to_use_Code)に関するセクションの手順に従って、ウィンドウの定義をコードに適用します。
-
 
 ## <a name="adding-a-ui-element-to-a-window-in-code"></a>コード内のウィンドウに UI 要素を追加する
 
@@ -309,7 +304,6 @@ MyWindow.ContentView.AddSubview (ClickMeButton);
 ```
 
 上のコードでは、 `NSButton`新しいを作成し、 `MyWindow`それをウィンドウインスタンスに追加して表示します。 基本的には、Xcode の Interface Builder で定義できるすべての UI 要素を、コードで作成し、ウィンドウに表示することができます。
-
 
 ## <a name="defining-the-menu-bar-in-code"></a>コードでのメニューバーの定義
 
@@ -359,12 +353,9 @@ public override void DidFinishLaunching (NSNotification notification)
 
 上の例では、コードからステータスバーメニューを作成し、アプリケーションの起動時に表示します。 メニューの操作の詳細については、[メニュー](~/mac/user-interface/menu.md)のドキュメントを参照してください。
 
-
 ## <a name="summary"></a>まとめ
 
 この記事では、Xcode の Interface Builder を storyboard または xib ファイルで使用するのC#ではなく、コードで Xamarin アプリケーションのユーザーインターフェイスを作成する方法について詳しく説明しました。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

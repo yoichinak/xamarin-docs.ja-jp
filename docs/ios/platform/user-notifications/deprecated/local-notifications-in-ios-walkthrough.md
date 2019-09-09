@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: a012d8f166a287dfde4247a2df6d1e82091d9d70
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 1ad0200d083f7b190184f631de51483f4f651d17
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290459"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769753"
 ---
 # <a name="walkthrough---using-local-notifications-in-xamarinios"></a>チュートリアル-Xamarin でのローカル通知の使用
 
@@ -24,7 +24,6 @@ _このセクションでは、Xamarin iOS アプリケーションでローカ�
 ## <a name="walkthrough"></a>チュートリアル
 
 ローカル通知を実際に表示する単純なアプリケーションを作成してみましょう。 このアプリケーションには1つのボタンがあります。 ボタンをクリックすると、ローカル通知が作成されます。 指定された期間が経過すると、通知が表示されます。
-
 
 1. Visual Studio for Mac で、新しい単一ビューの iOS ソリューションを作成し、 `Notifications`それを呼び出します。
 1. `Main.storyboard`ファイルを開き、ボタンをビューにドラッグします。 **ボタンに名前を付け**て、タイトルを**追加通知**にします。 この時点で、いくつかの[制約](~/ios/user-interface/designer/designer-auto-layout.md)をボタンに設定することもできます。 
@@ -88,7 +87,6 @@ _このセクションでは、Xamarin iOS アプリケーションでローカ�
 
 1. ローカル通知によって通知が開始されたケースを処理する必要があります。 でメソッド`FinishedLaunching`を編集して、次のコードスニペットを含めます。`AppDelegate`
 
-
     ```csharp
     // check for a notification
 
@@ -119,7 +117,6 @@ _このセクションでは、Xamarin iOS アプリケーションでローカ�
 ## <a name="summary"></a>Summary
 
 このチュートリアルでは、さまざまな API を使用して、iOS で通知を作成および発行する方法について説明しました。 また、アプリケーションアイコンをバッジで更新して、アプリケーション固有のフィードバックをユーザーに提供する方法についても説明します。
-
 
 ## <a name="related-links"></a>関連リンク
 

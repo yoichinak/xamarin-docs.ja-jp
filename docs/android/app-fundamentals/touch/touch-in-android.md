@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 0619dd9a81c40633c7c61f23ef9e8f3ef92c2e6a
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: e9810eed3affb15f581b95aec1aff9ae560ff63c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70197626"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70754754"
 ---
 # <a name="touch-in-android"></a>Android でのタッチ
 
@@ -22,7 +22,6 @@ IOS と同様に、Android では、ユーザーの画面&ndash; `Android.View.M
 - タッチが行われている場所、タッチが発生`MotionEvent`したとき、使用された圧力など、の移動プロパティおよびその他の移動プロパティの位置を表す軸値のセット。
    軸の値はデバイスによって異なる場合があるため、前の一覧にはすべての軸の値が記述されていません。
 
-
 オブジェクト`MotionEvent`は、アプリケーション内の適切なメソッドに渡されます。 Xamarin Android アプリケーションがタッチイベントに応答するには、次の3つの方法があります。
 
 - *イベントハンドラーをに`View.Touch`割り当てる*- `Android.Views.View`クラスには、 `EventHandler<View.TouchEventArgs>`ハンドラーを割り当てることができるアプリケーションがあります。 これは、一般的な .NET の動作です。
@@ -30,7 +29,6 @@ IOS と同様に、Android では、ユーザーの画面&ndash; `Android.View.M
 - このインターフェイスの*実装`View.IOnTouchListener`* インスタンスは、ビューを使用してビューオブジェクトに割り当てることができます。 `SetOnListener`b.これは、 `View.Touch`イベントハンドラーをイベントに割り当てることと機能的には同じです。 いくつかの一般的なロジックや共有ロジックがあり、それらのビューを操作するときにさまざまなビューが必要になることがある場合は、クラスを作成し、各ビューに独自のイベントハンドラーを割り当てるよりも、このメソッドを実装する方が効率的です。
 
 - *上書き`View.OnTouchEvent`*  -Android サブクラス`Android.Views.View`のすべてのビュー。 ビューにタッチすると、Android はを呼び出し`OnTouchEvent` 、パラメーターとし`MotionEvent`てオブジェクトを渡します。
-
 
 > [!NOTE]
 > すべての Android デバイスがタッチスクリーンをサポートしているわけではありません。 
@@ -78,7 +76,6 @@ public override bool OnTouchEvent(MotionEvent e)
 - *Onshowpress*は、ondown が発生し、move または up イベントが実行されていない状態で呼び出されました。
 
 - *OnSingleTapUp* -シングルタップが発生したときに呼び出されます。
-
 
 多くの場合、アプリケーションはジェスチャのサブセットのみを対象にすることができます。 この場合、アプリケーションは GestureDetector クラスを拡張し、関心のあるイベントに対応するメソッドをオーバーライドする必要があります。
 
@@ -164,8 +161,6 @@ private void GestureOverlayViewOnGesturePerformed(object sender, GestureOverlayV
 ```
 
 これにより、Xamarin Android アプリケーションでタッチとジェスチャを使用する方法を理解できるようになります。 チュートリアルに進んで、実用的なサンプルアプリケーションのすべての概念を確認しましょう。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: d409787661491a6922434a12157c494851644412
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: d180345c36531b58c13eebbd97dc4f7555b8f13c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291629"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768868"
 ---
 # <a name="populating-a-table-with-data-in-xamarinios"></a>Xamarin のデータを使用してテーブルにデータを読み込む
 
@@ -25,7 +25,6 @@ ms.locfileid: "70291629"
 - インデックスの追加
 - ヘッダーとフッターの追加
 
-
 <a name="Subclassing_UITableViewSource" />
 
 ## <a name="subclassing-uitableviewsource"></a>UITableViewSource のサブクラス化
@@ -36,7 +35,6 @@ ms.locfileid: "70291629"
 
 - **Rowsinsection** –テーブルに[`nint`](~/cross-platform/macios/nativetypes.md)表示されるデータ行の合計数を返します。
 - **Getcell** –メソッドに`UITableCellView`渡される対応する行インデックスのデータが設定されたを返します。
-
 
 BasicTable サンプルファイル**TableSource.cs**には、の`UITableViewSource`最も簡単な実装があります。 次のコードスニペットでは、テーブルに表示する文字列の配列を受け取り、各文字列を含む既定のセルスタイルを返しています。
 
@@ -139,13 +137,9 @@ public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
 }
 ```
 
-
 これで、ユーザーは行に触れることができ、アラートが表示されます。
 
-
-
  [![](populating-a-table-with-data-images/image4.png "選択された行の警告")](populating-a-table-with-data-images/image4.png#lightbox)
-
 
 ## <a name="cell-reuse"></a>セルの再利用
 
@@ -246,7 +240,6 @@ keys = indexedTableItems.Keys.ToArray ();
 - **Rowsinsection** –指定したセクションの行の数を返します。
 - **Sectionindextitles** –インデックスを表示するために使用される文字列の配列を返します。 このサンプルコードは、文字の配列を返します。
 
-
 サンプルファイル**Basictableindex/Tableource**の更新されたメソッドは次のようになります。
 
 ```csharp
@@ -266,7 +259,6 @@ public override string[] SectionIndexTitles (UITableView tableView)
 
 通常、インデックスは、Plain table スタイルでのみ使用されます。
 
-
 <a name="Adding_Headers_and_Footers" />
 
 ## <a name="adding-headers-and-footers"></a>ヘッダーとフッターの追加
@@ -280,7 +272,6 @@ public override string[] SectionIndexTitles (UITableView tableView)
 
 - **タイトル forheader** –ヘッダーとして使用するテキストを返します
 - **タイトル forfooter** –フッターとして使用するテキストを返します。
-
 
 サンプルファイル**Basictableheaderfooter/Code/Tableource**の更新されたメソッドは次のようになります。
 
@@ -296,7 +287,6 @@ public override string TitleForFooter (UITableView tableView, nint section)
 ```
 
 で`GetViewForFooter` `GetViewForHeader` は、メソッドとメソッドのオーバーライドを使用して、ビューオブジェクトでヘッダーとフッターの外観をカスタマイズできます。`UITableViewSource`
-
 
 ## <a name="related-links"></a>関連リンク
 

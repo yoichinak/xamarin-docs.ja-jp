@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/06/2017
-ms.openlocfilehash: 83fa64ca207358b712341e1923a3a9a67a449e1f
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 4d294b7aee9d4a6c2118a5ff12968a7f95fb981c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524729"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70757860"
 ---
 # <a name="android-beam"></a>Android ビーム
 
@@ -27,9 +27,7 @@ Android では、Android ビームでメッセージを設定する2つの方法
 
 - `SetNdefPushMessageCallback`-Android ビームが開始されると、アプリケーションは、NdefMessage を作成するためのコールバックを処理できます。 このメカニズムにより、デバイスが範囲内になるまでメッセージの作成を遅延させることができます。 アプリケーションで発生している内容に応じてメッセージが変化するシナリオをサポートします。
 
-
 どちらの場合も、Android ビームでデータを送信するために、 `NdefMessage`アプリケーションはを送信し、 `NdefRecords`データをいくつかの方法でパッケージ化します。 Android ビームをトリガーする前に対処する必要がある重要な点を見てみましょう。 まず、を作成するため`NdefMessage`のコールバックスタイルを使用します。
-
 
 ## <a name="creating-a-message"></a>メッセージの作成
 
@@ -65,7 +63,6 @@ public NdefRecord CreateMimeRecord (String mimeType, byte [] payload)
 }
 ```
 
-
 ## <a name="receiving-a-message"></a>メッセージを受信する
 
 受信側では、システムは`ActionNdefDiscovered`アクションを使用してインテントを呼び出します。この場合、次のように ndefmessage を抽出できます。
@@ -78,8 +75,6 @@ NdefMessage msg = (NdefMessage) rawMsgs [0];
 以下のスクリーンショットのように、Android ビームを使用する完全なコード例については、サンプルギャラリーの[Android ビームデモ](https://docs.microsoft.com/samples/xamarin/monodroid-samples/androidbeamdemo)を参照してください。
 
 [![Android ビームデモのスクリーンショットの例](android-beam-images/24.png)](android-beam-images/24.png#lightbox)
-
-
 
 ## <a name="related-links"></a>関連リンク
 
