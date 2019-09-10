@@ -1,90 +1,58 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Xamarin.Mac
+summary: Xamarin.Mac では、C# を使用し、ネイティブ Mac アプリケーションを構築する .NET 開発者向けの macOS SDK をすべて公開しています。
 metadata:
-  description: Xamarin.Mac は、.NET 開発者向けに macOS SDK 全体を公開しています。
+  title: Xamarin.Mac
+  description: Xamarin.Mac では、C# を使用し、ネイティブ Mac アプリケーションを構築する .NET 開発者向けの macOS SDK をすべて公開しています。
   author: conceptdev
   ms.author: crdun
-  ms.date: 07/27/2018
+  ms.date: 08/27/2019
   ms.topic: landing-page
   ms.technology: xamarin-mac
-abstract:
-  description: Xamarin.Mac は、.NET 開発者向けに macOS SDK 全体を公開しています。 Visual Studio for Mac で完全にネイティブなアプリを構築できます。
-  menu:
-    items:
-      - href: ~/mac/samples/index.yml
-        text: Mac サンプル
-      - href: 'https://docs.microsoft.com/xamarin/mac/release-notes/'
-        text: リリース ノート
-      - href: 'https://developer.apple.com/documentation/'
-        text: Apple の開発者向けドキュメント
-      - href: /visualstudio/mac/
-        text: Visual Studio for Mac
-sections:
-  - title: 開始するには
-    items:
-      - type: paragraph
-        text: 'Xamarin と C# で最初の Mac アプリを構築する方法について説明します。'
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: 'https://docs.microsoft.com/media/common/i_setup.svg'
-            text: セットアップ
-            href: ~/mac/get-started/installation.md
-          - image:
-              src: 'https://docs.microsoft.com/media/common/i_xplat-code.svg'
-            text: Hello Mac
-            href: ~/mac/get-started/hello-mac.md
-  - title: ガイド
-    items:
-      - type: list
-        style: cards
-        className: cardsB
-        items:
-          - href: ~/mac/get-started/index.md
-            html: すぐに Xamarin.Mac を活用できるようになるチュートリアルです。 インストールがすべて完了していることを確認し、最初の Mac アプリを構築してみましょう。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_get-started.svg'
-              href: ~/mac/get-started/index.md
-            title: 作業の開始
-          - href: ~/mac/app-fundamentals/
-            html: ファイル、画像、データベースの扱いなど、Mac アプリを構築するために必要なすべての情報を説明します。
-            image:
-              src: ~/media/icons/i_app-build.svg
-              href: ~/mac/app-fundamentals/
-            title: アプリケーションの基礎
-          - href: ~/mac/user-interface
-            html: AppKit で macOS に使用できるすべてのユーザー インターフェイス コントロールについて説明します。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: ~/mac/user-interface/
-            title: ユーザー インターフェイス
-          - href: ~/mac/platform/
-            html: ストーリーボード、OpenTK、macOS の最新機能などの Mac プラットフォーム機能を使用します。
-            image:
-              src: ~/media/icons/i_platform.svg
-              href: ~/mac/platform/
-            title: プラットフォーム機能
-          - href: ~/mac/deploy-test/
-            html: アプリを構築して App Store に配置する手順と、事前にテストする場合のヒントについて説明します。
-            image:
-              src: ~/media/icons/i_deploy-test.svg
-              href: ~/mac/deploy-test/
-            title: 配置とテスト
-          - href: ~/mac/internals/
-            html: Xamarin.Mac の内部構造の詳細と、アクセシビリティなどの機能について説明します。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_config-tools.svg'
-              href: ~/mac/internals/
-            title: 高度な概念と内部構造
-  - title: 関連項目
-    items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - title: API
-            html: '<p><a href="https://docs.microsoft.com/dotnet/api/AppKit">Mac API ドキュメント</a></p><p><a href="https://docs.microsoft.com/dotnet/api/?view=xamarinmac-3.0">基本クラス ライブラリ</a></p>'
-          - title: サンプル
-            html: '<p><a href="https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Mac">Mac サンプル</a></p>'
+  ms.openlocfilehash: 14411712cbb1e72e279749ce23b587584aea9be6
+  ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/06/2019
+  ms.locfileid: "70770067"
+landingContent:
+- title: 作業開始
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Hello Mac
+      url: ~/mac/get-started/hello-mac.md
+  - linkListType: download
+    links:
+    - text: Xamarin.Mac サンプル
+      url: https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Mac
+    - text: Visual Studio for Mac
+      url: /visualstudio/mac/installation/
+- title: Mac の構築
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: アプリケーションの基礎
+      url: ~/mac/app-fundamentals/index.md
+    - text: ユーザー インターフェイス コントロール
+      url: ~/mac/user-interface/index.md
+    - text: Mac プラットフォーム機能
+      url: ~/mac/platform/index.md
+    - text: 高度な概念と内部構造
+      url: ~/mac/internals/index.md
+  - linkListType: deploy
+    links:
+    - text: Mac App Store への発行
+      url: ~/mac/deploy-test/publishing-to-the-app-store/index.md
+- title: API とリリースの検索
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Xamarin.Mac API ドキュメント
+      url: https://docs.microsoft.com/dotnet/api/?view=xamarin-mac-sdk-14
+    - text: Xamarin.Mac で使用できる基本クラス ライブラリ
+      url: https://docs.microsoft.com/dotnet/api/?view=xamarinmac-3.0
+    - text: Xamarin.Mac リリースノート
+      url: https://docs.microsoft.com/xamarin/mac/release-notes/
+    - text: Apple の開発者向けドキュメント
+      url: https://developer.apple.com/documentation/
