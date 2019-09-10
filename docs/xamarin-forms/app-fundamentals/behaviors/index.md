@@ -30,6 +30,6 @@ _ビヘイビアーを使うと、ユーザー インターフェイス コン�
 
 Xamarin.Forms のビヘイビアーは、[`Behavior`](xref:Xamarin.Forms.Behavior) または [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) クラスから派生させて作成します。 この記事では、Xamarin.Forms のビヘイビアーを作成して使用する方法を示します。
 
-## <a name="reusable-behaviorsreusableindexmd"></a>[再利用可能な動作](reusable/index.md)
+## <a name="reusable-behaviorsreusableindexmd"></a>[再利用可能なビヘイビアー](reusable/index.md)
 
 ビヘイビアーは複数のアプリケーション全体で再利用可能です。 これらの記事では、便利なビヘイビアーを作成して一般的に使用される機能を実行する方法について説明します。
