@@ -108,7 +108,7 @@ checkBox.CheckedChanged += (sender, e) =>
 
 次のスクリーン[`Label`](xref:Xamarin.Forms.Label)ショットでは、 `CheckBox`が空の場合、iOS のスクリーンショットに書式が表示されます。一方`CheckBox` 、Android のスクリーンショットでは、がオンになっているときに`Label`書式が示されています。
 
-[IOS と Android の(checkbox-images/checkbox-databinding.png "データバインドチェック")ボックス![の [データバインド] チェックボックスのスクリーンショット]](checkbox-images/checkbox-databinding-large.png#lightbox "データバインドチェックボックス")
+[![iOS と Android のデータバインドされたチェックボックスのスクリーンショット](checkbox-images/checkbox-databinding.png "データバインドされたチェックボックス")](checkbox-images/checkbox-databinding-large.png#lightbox "データバインドされたチェックボックス")
 
 トリガーの詳細については、「 [Xamarin. Forms triggers](~/xamarin-forms/app-fundamentals/triggers.md)」を参照してください。
 
