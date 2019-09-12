@@ -42,7 +42,7 @@ ms.locfileid: "70771509"
 ![](creating-images/screenshots-1.png "各プラットフォームでのフォーカス効果")
 ![](creating-images/screenshots-2.png "各プラットフォームでのフォーカス効果")
 
-## <a name="creating-the-effect-on-each-platform"></a>各プラットフォームでの効果の作成
+## <a name="creating-the-effect-on-each-platform"></a>各プラットフォームでのエフェクトの作成
 
 次のセクションで、`FocusEffect` クラスのプラットフォーム固有の実装について説明します。
 
@@ -95,9 +95,9 @@ namespace EffectsDemo.iOS
 }
 ```
 
-`OnAttached` メソッドでは、`UIColor.FromRGB` メソッドを使用してコントロールを紫色にすると共にその色をフィールドに格納する `BackgroundColor` プロパティ が設定されます。 効果がアタッチされているコントロールに `BackgroundColor` プロパティがない場合に備えて、この機能が `try`/`catch` ブロック内にラップされます。 クリーンアップする必要がないので、`OnDetached` メソッドによる実装は提供されません。
+`OnAttached` メソッドでは、`UIColor.FromRGB` メソッドを使用してコントロールを紫色にすると共にその色をフィールドに格納する `BackgroundColor` プロパティ が設定されます。 エフェクトがアタッチされているコントロールに `BackgroundColor` プロパティがない場合に備えて、この機能が `try`/`catch` ブロック内にラップされます。 クリーンアップする必要がないので、`OnDetached` メソッドによる実装は提供されません。
 
-`OnElementPropertyChanged` オーバーライドで、Xamarin.Forms コントロールのバインド可能プロパティの変更に応答します。 [`IsFocused`](xref:Xamarin.Forms.VisualElement.IsFocused) プロパティが変更されたときに、コントロールがフォーカスを取得している場合は、コントロールの `BackgroundColor` プロパティが白に変更され、それ以外の場合は明るい紫に変更されます。 効果がアタッチされているコントロールに `BackgroundColor` プロパティがない場合に備えて、この機能が `try`/`catch` ブロック内にラップされます。
+`OnElementPropertyChanged` オーバーライドで、Xamarin.Forms コントロールのバインド可能プロパティの変更に応答します。 [`IsFocused`](xref:Xamarin.Forms.VisualElement.IsFocused) プロパティが変更されたときに、コントロールがフォーカスを取得している場合は、コントロールの `BackgroundColor` プロパティが白に変更され、それ以外の場合は明るい紫に変更されます。 エフェクトがアタッチされているコントロールに `BackgroundColor` プロパティがない場合に備えて、この機能が `try`/`catch` ブロック内にラップされます。
 
 ## <a name="android-project"></a>Android プロジェクト
 
@@ -160,9 +160,9 @@ namespace EffectsDemo.Droid
 }
 ```
 
-`OnAttached` メソッドでは、`SetBackgroundColor` メソッドを呼び出して、コントロールの背景色を明るい緑にすると共にその色をフィールドに格納します。 効果がアタッチされているコントロールに `SetBackgroundColor` プロパティがない場合に備えて、この機能が `try`/`catch` ブロック内にラップされます。 クリーンアップする必要がないので、`OnDetached` メソッドによる実装は提供されません。
+`OnAttached` メソッドでは、`SetBackgroundColor` メソッドを呼び出して、コントロールの背景色を明るい緑にすると共にその色をフィールドに格納します。 エフェクトがアタッチされているコントロールに `SetBackgroundColor` プロパティがない場合に備えて、この機能が `try`/`catch` ブロック内にラップされます。 クリーンアップする必要がないので、`OnDetached` メソッドによる実装は提供されません。
 
-`OnElementPropertyChanged` オーバーライドで、Xamarin.Forms コントロールのバインド可能プロパティの変更に応答します。 [`IsFocused`](xref:Xamarin.Forms.VisualElement.IsFocused) プロパティが変更されたときに、コントロールがフォーカスを取得している場合は、コントロールの背景色が白に変更され、それ以外の場合は明るい緑に変更されます。 効果がアタッチされているコントロールに `BackgroundColor` プロパティがない場合に備えて、この機能が `try`/`catch` ブロック内にラップされます。
+`OnElementPropertyChanged` オーバーライドで、Xamarin.Forms コントロールのバインド可能プロパティの変更に応答します。 [`IsFocused`](xref:Xamarin.Forms.VisualElement.IsFocused) プロパティが変更されたときに、コントロールがフォーカスを取得している場合は、コントロールの背景色が白に変更され、それ以外の場合は明るい緑に変更されます。 エフェクトがアタッチされているコントロールに `BackgroundColor` プロパティがない場合に備えて、この機能が `try`/`catch` ブロック内にラップされます。
 
 ## <a name="universal-windows-platform-projects"></a>ユニバーサル Windows プラットフォーム プロジェクト
 
@@ -198,19 +198,19 @@ namespace EffectsDemo.UWP
 }
 ```
 
-`OnAttached` メソッドでは、コントロールの `Background` プロパティをシアンに設定し、`BackgroundFocusBrush` プロパティを白に設定します。 効果がアタッチされているコントロールにこれらのプロパティがない場合に備えて、この機能が `try`/`catch` ブロック内にラップされます。 クリーンアップする必要がないので、`OnDetached` メソッドによる実装は提供されません。
+`OnAttached` メソッドでは、コントロールの `Background` プロパティをシアンに設定し、`BackgroundFocusBrush` プロパティを白に設定します。 エフェクトがアタッチされているコントロールにこれらのプロパティがない場合に備えて、この機能が `try`/`catch` ブロック内にラップされます。 クリーンアップする必要がないので、`OnDetached` メソッドによる実装は提供されません。
 
-## <a name="consuming-the-effect"></a>効果の使用
+## <a name="consuming-the-effect"></a>エフェクトの使用
 
-Xamarin.Forms .NET Standard ライブラリまたは共有ライブラリ プロジェクトから効果を使用するプロセスは次のとおりです。
+Xamarin.Forms .NET Standard ライブラリまたは共有ライブラリ プロジェクトからエフェクトを使用するプロセスは次のとおりです。
 
-1. 効果によってカスタマイズされるコントロールを宣言します。
-1. コントロールの [`Effects`](xref:Xamarin.Forms.Element.Effects) コレクションに追加することによって、効果をコントロールにアタッチします。
+1. エフェクトによってカスタマイズされるコントロールを宣言します。
+1. コントロールの [`Effects`](xref:Xamarin.Forms.Element.Effects) コレクションに追加することによって、エフェクトをコントロールにアタッチします。
 
 > [!NOTE]
-> 効果インスタンスは単一のコントロールにのみアタッチできます。 このため、2 つのコントロールで使用するには、効果を 2 回解決する必要があります。
+> エフェクト インスタンスは単一のコントロールにのみアタッチできます。 このため、2 つのコントロールで使用するには、エフェクトを 2 回解決する必要があります。
 
-## <a name="consuming-the-effect-in-xaml"></a>XAML での効果の使用
+## <a name="consuming-the-effect-in-xaml"></a>XAML でのエフェクトの使用
 
 `FocusEffect` がアタッチされている [`Entry`](xref:Xamarin.Forms.Entry) コントロールを、次の XAML コード例に示します。
 

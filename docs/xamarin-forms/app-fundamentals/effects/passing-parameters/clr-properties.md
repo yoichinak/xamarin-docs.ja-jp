@@ -1,6 +1,6 @@
 ---
-title: 共通言語ランタイム プロパティとして効果のパラメーターを渡す
-description: 共通言語ランタイム (CLR) プロパティは、実行時のプロパティの変更に応答しない効果のパラメーターの定義に使用できます。 この記事では、CLR プロパティを使用して効果にパラメーターを渡す方法について説明します。
+title: 共通言語ランタイム プロパティとしてエフェクトのパラメーターを渡す
+description: 共通言語ランタイム (CLR) プロパティは、実行時のプロパティの変更に応答しないエフェクトのパラメーターの定義に使用できます。 この記事では、CLR プロパティを使用してエフェクトにパラメーターを渡す方法について説明します。
 ms.prod: xamarin
 ms.assetid: 4B50466C-5DBD-45DD-B1E6-BE9524C92F27
 ms.technology: xamarin-forms
@@ -14,19 +14,19 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 09/06/2019
 ms.locfileid: "70771470"
 ---
-# <a name="passing-effect-parameters-as-common-language-runtime-properties"></a>共通言語ランタイム プロパティとして効果のパラメーターを渡す
+# <a name="passing-effect-parameters-as-common-language-runtime-properties"></a>共通言語ランタイム プロパティとしてエフェクトのパラメーターを渡す
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)
 
 _共通言語ランタイム (CLR) プロパティは、実行時のプロパティの変更に応答しない効果のパラメーターの定義に使用できます。この記事では、CLR プロパティを使用して効果にパラメーターを渡す方法について説明します。_
 
-実行時のプロパティの変更に応答しない効果のパラメーターを作成するプロセスは、次のとおりです。
+実行時のプロパティの変更に応答しないエフェクトのパラメーターを作成するプロセスは、次のとおりです。
 
-1. [`RoutingEffect`](xref:Xamarin.Forms.RoutingEffect) クラスをサブクラス化する `public` クラスを作成します。 `RoutingEffect` クラスは、通常はプラットフォーム固有となる内部の効果をラップするプラットフォームに依存しない効果を表します。
-1. 解像度グループ名と、各プラットフォーム固有の効果クラスで指定された一意の ID を連結したものを渡して、基底クラス コンストラクターを呼び出すコンストラクターを作成します。
-1. 効果に渡す各パラメーターのクラスにプロパティを追加します。
+1. [`RoutingEffect`](xref:Xamarin.Forms.RoutingEffect) クラスをサブクラス化する `public` クラスを作成します。 `RoutingEffect` クラスは、通常はプラットフォーム固有となる内部のエフェクトをラップするプラットフォームに依存しないエフェクトを表します。
+1. 解決グループ名と、各プラットフォーム固有のエフェクトクラスで指定された一意の ID を連結したものを渡して、基底クラス コンストラクターを呼び出すコンストラクターを作成します。
+1. エフェクトに渡す各パラメーターのクラスにプロパティを追加します。
 
-効果をインスタンス化するときに各プロパティの値を指定することで、パラメーターを効果に渡すことができます。
+エフェクトをインスタンス化するときに各プロパティの値を指定することで、パラメーターをエフェクトに渡すことができます。
 
 このサンプル アプリケーションは、[`Label`](xref:Xamarin.Forms.Label) コントロールによって表示されるテキストに影を追加する `ShadowEffect` を示しています。 次の図に、サンプル アプリケーション内の各プロジェクトの役割とそれらの関係を示します。
 
@@ -36,9 +36,9 @@ _共通言語ランタイム (CLR) プロパティは、実行時のプロパテ
 
 ![](clr-properties-images/screenshots.png "各プラットフォーム上の影効果")
 
-## <a name="creating-effect-parameters"></a>効果のパラメーターを作成する
+## <a name="creating-effect-parameters"></a>エフェクトのパラメーターを作成する
 
-次のコード例に示すように、効果のパラメーターを表すには、[`RoutingEffect`](xref:Xamarin.Forms.RoutingEffect) クラスをサブクラス化する `public` クラスを作成する必要があります。
+次のコード例に示すように、エフェクトのパラメーターを表すには、[`RoutingEffect`](xref:Xamarin.Forms.RoutingEffect) クラスをサブクラス化する `public` クラスを作成する必要があります。
 
 ```csharp
 public class ShadowEffect : RoutingEffect
@@ -57,9 +57,9 @@ public class ShadowEffect : RoutingEffect
 }
 ```
 
-`ShadowEffect` には、各プラットフォーム固有の `LabelShadowEffect` に渡されるパラメーターを表す 4 つのプロパティが含まれています。 クラス コンストラクターから基底クラスのコンストラクターが呼び出され、解像度グループ名と、各プラットフォーム固有の効果クラスで指定された一意の ID を連結したもので構成されるパラメーターが渡されます。 そのため、`ShadowEffect` がインスタンス化されると、`MyCompany.LabelShadowEffect` の新しいインスタンスがコントロールの [`Effects`](xref:Xamarin.Forms.Element.Effects) コレクションに追加されます。
+`ShadowEffect` には、各プラットフォーム固有の `LabelShadowEffect` に渡されるパラメーターを表す 4 つのプロパティが含まれています。 クラス コンストラクターから基底クラスのコンストラクターが呼び出され、解像度グループ名と、各プラットフォーム固有のエフェクト クラスで指定された一意の ID を連結したもので構成されるパラメーターが渡されます。 そのため、`ShadowEffect` がインスタンス化されると、`MyCompany.LabelShadowEffect` の新しいインスタンスがコントロールの [`Effects`](xref:Xamarin.Forms.Element.Effects) コレクションに追加されます。
 
-## <a name="consuming-the-effect"></a>効果を使用する
+## <a name="consuming-the-effect"></a>エフェクトを使用する
 
 `ShadowEffect` がアタッチされている [`Label`](xref:Xamarin.Forms.Label) コントロールを次の XAML コード例に示します。
 
@@ -111,7 +111,7 @@ label.Effects.Add (new ShadowEffect {
 
 どちらのコード例でも、`ShadowEffect` クラスのインスタンスは、各プロパティに指定された値でインスタンス化されてから、コントロールの [`Effects`](xref:Xamarin.Forms.Element.Effects) コレクションに追加されます。 `ShadowEffect.Color` プロパティにはプラットフォーム固有の色の値が使用されることに注意してください。 詳細については、[デバイス クラス](~/xamarin-forms/platform/device.md)に関するページを参照してください。
 
-## <a name="creating-the-effect-on-each-platform"></a>各プラットフォーム上で効果を作成する
+## <a name="creating-the-effect-on-each-platform"></a>各プラットフォーム上でエフェクトを作成する
 
 以下のセクションでは、`LabelShadowEffect` クラスのプラットフォーム固有の実装について説明します。
 
@@ -148,7 +148,7 @@ namespace EffectsDemo.iOS
 }
 ```
 
-`OnAttached` メソッドで `ShadowEffect` インスタンスを取得し、指定されたプロパティ値に `Control.Layer` プロパティを設定して影を作成します。 効果が添付されているコントロールに `Control.Layer` プロパティがない場合に備えて、この機能が `try`/`catch` ブロック内にラップされます。 クリーンアップする必要がないので、`OnDetached` メソッドによる実装は提供されません。
+`OnAttached` メソッドで `ShadowEffect` インスタンスを取得し、指定されたプロパティ値に `Control.Layer` プロパティを設定して影を作成します。 エフェクトがアタッチされているコントロールに `Control.Layer` プロパティがない場合に備えて、この機能が `try`/`catch` ブロック内にラップされます。 クリーンアップする必要がないので、`OnDetached` メソッドによる実装は提供されません。
 
 ### <a name="android-project"></a>Android プロジェクト
 
@@ -185,7 +185,7 @@ namespace EffectsDemo.Droid
 }
 ```
 
-`OnAttached` メソッドで `ShadowEffect` インスタンスを取得し、指定されたプロパティ値を使用して [`TextView.SetShadowLayer`](xref:Android.Widget.TextView.SetShadowLayer*) メソッドを呼び出して影を作成します。 効果が添付されているコントロールに `Control.Layer` プロパティがない場合に備えて、この機能が `try`/`catch` ブロック内にラップされます。 クリーンアップする必要がないので、`OnDetached` メソッドによる実装は提供されません。
+`OnAttached` メソッドで `ShadowEffect` インスタンスを取得し、指定されたプロパティ値を使用して [`TextView.SetShadowLayer`](xref:Android.Widget.TextView.SetShadowLayer*) メソッドを呼び出して影を作成します。 エフェクトがアタッチされているコントロールに `Control.Layer` プロパティがない場合に備えて、この機能が `try`/`catch` ブロック内にラップされます。 クリーンアップする必要がないので、`OnDetached` メソッドによる実装は提供されません。
 
 ### <a name="universal-windows-platform-project"></a>ユニバーサル Windows プラットフォーム プロジェクト
 
@@ -232,16 +232,16 @@ namespace EffectsDemo.UWP
 }
 ```
 
-ユニバーサル Windows プラットフォームは影効果を提供しないため、両方のプラットフォーム上の `LabelShadowEffect` 実装は 2 番目のオフセット [`Label`](xref:Xamarin.Forms.Label) をプライマリ `Label` の背後に追加することで、その 1 つをシミュレートします。 `OnAttached` メソッドによって `ShadowEffect` インスタンスが取得され、新しい `Label` を作成され、`Label` にいくつかのレイアウト プロパティが設定されます。 次に、`Label` の色と場所を制御する [`TextColor`](xref:Xamarin.Forms.Label.TextColor)、[`TranslationX`](xref:Xamarin.Forms.VisualElement.TranslationX)、[`TranslationY`](xref:Xamarin.Forms.VisualElement.TranslationY) プロパティを設定することで影が作成されます。 これにより、`shadowLabel` のプライマリ `Label` の背後にオフセットが挿入されます。 効果が添付されているコントロールに `Control.Layer` プロパティがない場合に備えて、この機能が `try`/`catch` ブロック内にラップされます。 クリーンアップする必要がないので、`OnDetached` メソッドによる実装は提供されません。
+ユニバーサル Windows プラットフォームは影エフェクトを提供しないため、両方のプラットフォーム上の `LabelShadowEffect` 実装は 2 番目のオフセット [`Label`](xref:Xamarin.Forms.Label) をプライマリ `Label` の背後に追加することで、その 1 つをシミュレートします。 `OnAttached` メソッドによって `ShadowEffect` インスタンスが取得され、新しい `Label` を作成され、`Label` にいくつかのレイアウト プロパティが設定されます。 次に、`Label` の色と場所を制御する [`TextColor`](xref:Xamarin.Forms.Label.TextColor)、[`TranslationX`](xref:Xamarin.Forms.VisualElement.TranslationX)、[`TranslationY`](xref:Xamarin.Forms.VisualElement.TranslationY) プロパティを設定することで影が作成されます。 これにより、`shadowLabel` のプライマリ `Label` の背後にオフセットが挿入されます。 エフェクトがアタッチされているコントロールに `Control.Layer` プロパティがない場合に備えて、この機能が `try`/`catch` ブロック内にラップされます。 クリーンアップする必要がないので、`OnDetached` メソッドによる実装は提供されません。
 
 ## <a name="summary"></a>まとめ
 
-この記事では、CLR プロパティを使用して効果にパラメーターを渡す方法について説明しました。 CLR プロパティは、実行時のプロパティの変更に応答しない効果のパラメーターの定義に使用できます。
+この記事では、CLR プロパティを使用してエフェクトにパラメーターを渡す方法について説明しました。 CLR プロパティは、実行時のプロパティの変更に応答しないエフェクトのパラメーターの定義に使用できます。
 
 ## <a name="related-links"></a>関連リンク
 
 - [カスタム レンダラー](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)
-- [効果](xref:Xamarin.Forms.Effect)
+- [Effect](xref:Xamarin.Forms.Effect)
 - [PlatformEffect](xref:Xamarin.Forms.PlatformEffect`2)
 - [RoutingEffect](xref:Xamarin.Forms.RoutingEffect)
-- [影効果 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)
+- [影エフェクト (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)

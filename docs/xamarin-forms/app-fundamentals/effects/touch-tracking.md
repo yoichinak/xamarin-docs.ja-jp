@@ -355,7 +355,7 @@ static Dictionary<long, TouchRecognizer> idToTouchDictionary =
 この `TouchRecognizer` クラスの構造の大部分は Android `TouchEffect` クラスと似通っています。
 
 > [!IMPORTANT]
-> `UIKit` のビューの多くは、既定ではタッチが有効になっていません。 タッチを有効にするには、iOS プロジェクトの `TouchEffect` クラス内で `OnAttached` オーバーライドに `view.UserInteractionEnabled = true;` を追加します。 これは、効果が添付されている要素に対応する`UIView` が取得されてから行う必要があります。
+> `UIKit` のビューの多くは、既定ではタッチが有効になっていません。 タッチを有効にするには、iOS プロジェクトの `TouchEffect` クラス内で `OnAttached` オーバーライドに `view.UserInteractionEnabled = true;` を追加します。 これは、エフェクトがアタッチされている要素に対応する`UIView` が取得されてから行う必要があります。
 
 ## <a name="putting-the-touch-effect-to-work"></a>タッチ エフェクトを動かす
 

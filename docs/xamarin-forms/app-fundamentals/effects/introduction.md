@@ -1,5 +1,5 @@
 ---
-title: 効果の概要
+title: エフェクトの概要
 description: 効果を使用すると、各プラットフォーム上のネイティブ コントロールをカスタマイズできます。通常は、小規模なスタイル変更のために使用します。 この記事では、効果の概要、および効果とカスタム レンダラーの境界の概要について説明するほか、PlatformEffect クラスについて説明します。
 ms.prod: xamarin
 ms.assetid: 30CB8615-8F39-4762-BDB7-333D2B57D112
@@ -14,7 +14,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 09/06/2019
 ms.locfileid: "70771460"
 ---
-# <a name="introduction-to-effects"></a>効果の概要
+# <a name="introduction-to-effects"></a>エフェクトの概要
 
 _効果を使用すると、各プラットフォーム上のネイティブ コントロールをカスタマイズできます。通常は、小規模なスタイル変更のために使用します。この記事では、効果の概要、および効果とカスタム レンダラーの境界の概要について説明するほか、PlatformEffect クラスについて説明します。_
 
