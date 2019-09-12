@@ -7,19 +7,18 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: e24f450c16e144b313d5f8e3da0221fccdaa145b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: dd6fac2434c5205acfec10e4830dc72ea42aa340
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285412"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756160"
 ---
 # <a name="compiling-for-different-devices-in-xamarinios"></a>Xamarin.iOS の各種デバイス向けコンパイル
 
 実行可能ファイルのビルド プロパティは、プロジェクトの **iOS ビルド**のプロパティ ページから設定できます。このページは、プロジェクト名を右クリックし、 **[オプション]、[iOS ビルド]** の順に移動するか (Visual Studio for Mac)、 **[プロパティ]** に移動します (Visual Studio)。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
-
 
 [![](compiling-for-different-devices-images/image1.png "プロジェクト iOS ビルドのプロパティ ページ")](compiling-for-different-devices-images/image1.png#lightbox) 
 
@@ -35,7 +34,6 @@ UI で利用できる構成オプションに加え、独自のコマンド ラ�
 
  <a name="SDK_Options" />
 
-
 ## <a name="sdk-options"></a>SDK オプション
 
 Visual Studio for Mac では、SDK に関連する 2 つの重要なプロパティを構成できます。ソフトウェアのビルドに利用される iOS SDK バージョンと配置ターゲット (または必要な最小 iOS バージョン) です。
@@ -48,13 +46,11 @@ iOS **SDK バージョン** オプションでは、Apple が公開している 
 
  <a name="Linking" />
 
-
 ## <a name="linking"></a>リンク
 
 Microsoft の[リンカー](~/ios/deploy-test/linker.md)専用ページをご覧ください。実行可能ファイルのサイズを減らし、実行可能ファイルを効果的に使用するためにリンカーがいかに役立つかをご確認いただけます。
 
  <a name="Code_Generation_Engine" />
-
 
 ## <a name="code-generation-engine"></a>コード生成エンジン
 
@@ -71,7 +67,6 @@ LLVM 最適化バックエンド エンジンは、Mono エンジンより簡潔
 [![](compiling-for-different-devices-images/image2a.png "LLVM を有効にする")](compiling-for-different-devices-images/image2a.png#lightbox)
 
  <a name="ARMV7_and_ARMV7s_support" />
-
 
 ## <a name="architecture-support"></a>アーキテクチャ サポート
 
@@ -114,13 +109,11 @@ App Store に提出するビルドには、64 ビット サポートを含める
 
  <a name="ARM_Thumb_Support" />
 
-
 ### <a name="arm-thumb-2-support"></a>ARM Thumb-2 サポート
 
 Thumb は、ARM プロセッサで利用される、より簡潔な命令セットです。 Thumb サポートを有効にすれば、実行時間が長くなりますが、実行可能ファイルのサイズを減らすことができます。 Thumb は ARMv7 と ARMv7s でサポートされています。
 
  <a name="Conditional_framwork_useage" />
-
 
 ## <a name="conditional-framework-usage"></a>フレームワークの条件付き利用
 
@@ -131,13 +124,9 @@ Thumb は、ARM プロセッサで利用される、より簡潔な命令セッ�
 - **[プロジェクト オプション]** を開き、 **[iOS ビルド]** ウィンドウに移動します。
 - 弱くリンクする構成ごとに **[追加オプション]** に `'-gcc_flags "-weak_framework iAd"'` を追加します。
 
-
 [![](compiling-for-different-devices-images/image3.png "追加オプション")](compiling-for-different-devices-images/image3.png#lightbox)
 
-
 これに加え、型の処理が旧バージョンの iOS で実行されないようにする必要があります。その型が旧バージョンにはない可能性があります。 これを行う方法はいくつかありますが、その 1 つは `UIDevice.CurrentDevice.SystemVersion` を解析することです。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

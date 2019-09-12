@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: 37403b9e33ccd54baac4fd36afbe50504e0380f0
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: a3b9653651e3000b954cb6d16154cddc8d5d363a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528955"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772098"
 ---
 # <a name="create-xamarinforms-behaviors"></a>Xamarin.Forms のビヘイビアーを登録する
 
@@ -207,7 +207,6 @@ entry.Behaviors.Clear();
 ## <a name="summary"></a>まとめ
 
 この記事では、Xamarin.Forms のビヘイビアーを作成して使用する方法を示しました。 Xamarin.Forms のビヘイビアーは、[`Behavior`](xref:Xamarin.Forms.Behavior) または [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) クラスから派生させて作成されます。
-
 
 ## <a name="related-links"></a>関連リンク
 

@@ -7,17 +7,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/22/2018
-ms.openlocfilehash: b9cecc8863cb4e68338d3226c5bf3744b7010e43
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.openlocfilehash: c561ab94d8cae28ac180c201795f67518aa2d8f9
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617411"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70757973"
 ---
 # <a name="setup-and-installation"></a>セットアップとインストール
 
 このセクションのトピックでは、Windows および macOS 上の Visual Studio で使用できるよう Xamarin.Android をインストールおよび構成する方法、アプリのビルドとテストに必要な Android SDK ツールをダウンロードおよびインストールするために使用する Android SDK Manager を使用する方法、デバッグ用に Android エミュレーターを構成する方法、アプリのデバッグと最終テスト用に開発用のコンピューターに物理 Android デバイスを接続する方法を説明します。
-
 
 ## <a name="windows-installationandroidget-startedinstallationwindowsmd"></a>[Windows のインストール](~/android/get-started/installation/windows.md)
 

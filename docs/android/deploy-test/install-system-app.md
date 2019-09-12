@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: 5a6f950ec7c9af0422beeb2d1af2be602fcaf947
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 9ef13816dc1bc11eab0105ec223c2ef98366e4e5
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113808"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753998"
 ---
 # <a name="installing-xamarinandroid-as-a-system-app"></a>システム アプリケーションとして Xamarin.Android をインストールする
 
@@ -44,7 +44,7 @@ Xamarin.Android アプリケーションをシステム アプリケーション
 
 1. **Xamarin.Android アプリケーションのリリース APK をパッケージ化する** &ndash; 詳細については、「[Publishing an Application](~/android/deploy-test/publishing/index.md)」(アプリケーションの公開) ガイドを参照してください。
 
-2. **共有ライブラリを APK から抽出する** &ndash; ZIP ユーティリティ プログラムを使用して APK ファイルを開き、**/lib/** フォルダーの内容を確認します。 このフォルダーには、アプリケーションがサポートする_アプリケーション バイナリ インターフェイス_ (ABI) のサブディレクトリがあります。このフォルダー内には、その ABI でアプリケーションに必要なすべての共有ライブラリがあります。
+2. **共有ライブラリを APK から抽出する** &ndash; ZIP ユーティリティ プログラムを使用して APK ファイルを開き、 **/lib/** フォルダーの内容を確認します。 このフォルダーには、アプリケーションがサポートする_アプリケーション バイナリ インターフェイス_ (ABI) のサブディレクトリがあります。このフォルダー内には、その ABI でアプリケーションに必要なすべての共有ライブラリがあります。
 
     ![taskypro.zip の armeabi-v7a フォルダーにある .so ファイルのスクリーン ショット](install-system-app-images/install-system-app-01.png)
 
@@ -54,12 +54,9 @@ Xamarin.Android アプリケーションをシステム アプリケーション
 
 4. **APK ファイルを /system/app にコピーする** &ndash; 最後の手順は、APK ファイルを ROM 上の **/system/app** フォルダーにコピーすることです。
 
-
 ## <a name="summary"></a>まとめ
 
 このガイドでは、_システム アプリケーション_と_ユーザー アプリケーション_ の違いと、Xamarin.Android アプリケーションをシステム アプリケーションとしてインストールする方法について説明しました。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

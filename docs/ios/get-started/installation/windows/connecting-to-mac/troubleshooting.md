@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 8a6cdd5ccec0d2c60eba18418327fd786201f11b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 41a5a30cdd5017046415f1d678abf1d44e83e678
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285631"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753680"
 ---
 # <a name="connection-troubleshooting-for-a-xamarinios-build-host"></a>Xamarin.iOS ビルド ホストの接続のトラブルシューティング
 
@@ -25,11 +25,9 @@ _このガイドでは、新しい接続マネージャーの使用中に発生�
 
 ログ ファイルは、Visual Studio で **[ヘルプ]、[Xamarin]、[ログの Zip]** の順に参照すると見つけることができます。
 
-
 ## <a name="wheres-the-xamarin-build-host-app"></a>Xamarin Build Host アプリはどこにありますか?
 
 古いバージョンの Xamarin.iOS の Xamarin Build Host は必要なくなりました。 Visual Studio はリモート ログイン経由でエージェントを自動的に展開し、バックグラウンドで実行するようになりました。 Mac と Windows マシンのいずれかで実行される追加アプリはありません。
-
 
 ## <a name="troubleshooting-remote-login"></a>リモート ログインのトラブルシューティング
 
@@ -64,7 +62,6 @@ _このガイドでは、新しい接続マネージャーの使用中に発生�
     たとえば、下のスクリーンショットでは、アカウント名が **Amy Burns** ではなく **amyb** になります。
 
     [![](troubleshooting-images/troubleshooting-image5a.png "ターミナル アプリからのアカウント名の取得")](troubleshooting-images/troubleshooting-image5a.png#lightbox)
-
 
 6. Mac に使用している IP アドレスが正しいことを確認します。 Mac で IP アドレスを見つけるには、 **[システム環境設定]、[共有]、[リモート ログイン]** の順に選択します。
 
@@ -373,7 +370,6 @@ killall mono
 2. **mtbs** フォルダーをコントロール クリックし、 **[ごみ箱に入れる]** を選択します。
 
     [![](troubleshooting-images/troubleshooting-image9.png "mtbs フォルダーをごみ箱に移動します")](troubleshooting-images/troubleshooting-image9.png#lightbox)
-
 
 ## <a name="related-links"></a>関連リンク
 

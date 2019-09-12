@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 283a057723ae399ead65c0c3e40347dbbd1e189e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 129ba01a41f9e5f58802c4d4da65d1662a103adc
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281181"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770122"
 ---
 # <a name="bundling-for-the-mac-app-store"></a>Mac App Store 用のバンドル
 
@@ -42,7 +42,6 @@ ms.locfileid: "70281181"
 アプリケーションがビルドされると、開発者はプロジェクトを右クリックし、 **[Open Containing Folder]\(含まれているフォルダーを開く\)** を選択して、パッケージ ファイルを (下に示す例の `bin/x86/AppStore` ディレクトリから) 検索することができます。  このパッケージ ファイルには、Mac App Store で含めるように Apple に送信できるアプリのインストーラーが含まれています。
 
  ![Finder でのビルド パッケージの選択](bundling-images/image64.png "Finder でのビルド パッケージの選択")
-
 
 ## <a name="related-links"></a>関連リンク
 

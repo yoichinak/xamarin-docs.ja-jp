@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 9272c522383251a54aff5093c20e4b6b6131e2b2
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 925a110025092ce6efa4e4d5f8e80b640b7f3dd1
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70293047"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770087"
 ---
 # <a name="signing-xamarinmac-apps-with-a-developer-id"></a>開発者 ID で Xamarin.Mac アプリに署名する
 
@@ -25,7 +25,6 @@ Apple の Web サイトで、「[Developer ID and Gatekeeper](https://developer.
 アプリを、(Mac App Store を介してではなく) ユーザーに直接配布するよう構築する場合、 **[Signing Settings]\(署名の設定\)** を設定して **[Developer ID]** を使用します。 **[Release]\(リリース\)** 構成は必ず編集します。
 
  [![](signing-images/config02.png "Mac の署名のオプション")](signing-images/config02.png#lightbox)
-
 
 ## <a name="build"></a>ビルド
 

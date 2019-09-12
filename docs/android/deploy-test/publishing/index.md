@@ -6,17 +6,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: b5f09413379de13aaf12e8113e8deb0f3c2bf0c3
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: fe1422aa55e5c1518134e6d0fbbf40047b577767
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525460"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753805"
 ---
 # <a name="publishing-an-application"></a>アプリケーションの発行
 
 優れたアプリケーションを開発されると、人はそれを使ってみたくなります。 このセクションには、電子メール、プライベート Web サーバー、Google Play、Amazon Android アプリ ストアなどのチャネルによって、Xamarin.Android で作成したアプリケーションを公開配信するための手順が含まれます。
-
 
 ## <a name="overview"></a>概要
 
@@ -36,7 +35,6 @@ Xamarin.Android アプリケーション開発の最終手順は、アプリケ�
 - **電子メールで** &ndash; ユーザーは Xamarin.Android アプリケーションを電子メールからインストールできます。 Android 搭載デバイスで添付ファイルを開くと、アプリケーションがインストールされます。
 - **マーケットから** &ndash; [Google Play](http://play.google.com/) や [Amazon App Store for Android](http://www.amazon.com/mobile-apps/b?ie=UTF8&node=2350149011) など、配信を行っているアプリケーション マーケットプレイスがいくつかあります。
 
-
 人気のマーケットプレイスをアプリケーション公開に使うことが一般的です。市場が広く、配布管理が行き届いています。 ただし、マーケットプレイスでアプリケーションを公開する場合、さらに一手間かかります。
 
 Xamarin.Android アプリケーションは複数のチャンネルで同時に配信できます。 たとえば、Google Play と Amazon App Store for Android でアプリケーションを公開し、Web サーバーからもダウンロードできるようにします。
@@ -51,7 +49,6 @@ Amazon のモバイル アプリ配信プログラムでは、モバイル ア�
 [![Google Play スクリーンショット](images/google-play-app.png)](images/google-play-app.png#lightbox)
 
 このセクションでは、適切なプロモーション素材と共に、Google Play などのストアにアプリケーションをアップロードする方法を示します。 APK 拡張ファイルの概念的な概要としくみについて示し、APK 拡張ファイルについて説明しています。 Google のライセンス サービスについても説明します。 最後に、HTTP Web サーバーの使用、単純な電子メールの配信、Amazon Android アプリ ストアなど、配信の代替方法について紹介しています。
-
 
 ## <a name="related-links"></a>関連リンク
 

@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/27/2018
-ms.openlocfilehash: 230c72539388028aaf8f05d200d8779105102644
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: add9c602f4c04f1d95db4cee578fdadf0b41cf33
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70225621"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758004"
 ---
 # <a name="hardware-acceleration-for-emulator-performance-hyper-v--haxm"></a>エミュレーターのパフォーマンスのためのハードウェア高速化 (Hyper-V と HAXM)
 
@@ -31,7 +31,7 @@ Android エミュレーターの高速化には、次の仮想化テクノロジ
 1. **Microsoft の Hyper-V と Hypervisor Platform**。
    [Hyper-V](https://docs.microsoft.com/virtualization/hyper-v-on-windows/) は Windows の仮想化技術の 1 つであり、物理的ホスト コンピューター上で、仮想化されたコンピューター システムを実行できます。
 
-2. **Intel の Hardware Accelerated Execution Manager (HAXM)** 。
+2. **Intel の Hardware Accelerated Execution Manager (HAXM)**。
    HAXM は Intel CPU を実行するコンピューターのための仮想化エンジンです。
 
 最適なパフォーマンスのためには、Hyper-V を使用して Android エミュレーターを高速化することをお勧めします。 お使いのコンピューターで Hyper-V を使用できない場合は、HAXM を使用できます。 Android エミュレーターは、次の条件が満たされている場合、ハードウェア高速化を自動的に利用します。
@@ -71,7 +71,7 @@ Hyper-V は Windows ハイパーバイザー プラットフォーム上で動�
 
   1. Windows 検索ボックスに「**バージョン情報**」と入力します。
   2. 検索結果から **[PC 情報]** を選択します。
-  3. **[バージョン情報]** ダイアログ内で下にスクロールし、 **[Windows の仕様]** セクションを表示します。
+  3. **[バージョン情報]** ダイアログ内で下にスクロールし、**[Windows の仕様]** セクションを表示します。
   4. **[バージョン]** が 1803 以降であることを確認します。
 
       [![Windows の仕様](hardware-acceleration-images/win/01-about-windows-w10-sml.png)](hardware-acceleration-images/win/01-about-windows-w10.png#lightbox)
@@ -85,7 +85,6 @@ systeminfo
 表示されているすべての Hyper-V 要件の値が **[はい]** の場合、コンピューターは Hyper-V をサポートできます。 次に例を示します。
 
 [![systeminfo の出力例](hardware-acceleration-images/win/02-systeminfo-w158-sml.png)](hardware-acceleration-images/win/02-systeminfo-w158.png#lightbox)
-
 
 ### <a name="enabling-hyper-v-acceleration"></a>Hyper-V の高速化を有効にする
 
@@ -103,9 +102,7 @@ systeminfo
 
     [![[Android SDK とツール] ダイアログ](hardware-acceleration-images/win/04-sdk-manager-w158-sml.png)](hardware-acceleration-images/win/04-sdk-manager-w158.png#lightbox)
 
-
 仮想デバイスを作成する (「[Android Device Manager による仮想デバイスの管理](~/android/get-started/installation/android-emulator/device-manager.md)」を参照) ときに、必ず **x86** ベースのイメージを選択してください。 ARM ベースのシステム イメージを使用すると、仮想デバイスは高速化されず、低速で実行されます。
-
 
 ## <a name="accelerating-with-haxm"></a>HAXM による高速化
 
@@ -142,7 +139,6 @@ Windows 版の HAXM インストール パッケージは、どちらも「[Inte
 
    ![Intel Hardware Accelerated Execution Manager のセットアップ ウィンドウ](hardware-acceleration-images/win/06-haxm-installer.png)
 
-
 仮想デバイスを作成する (「[Android Device Manager による仮想デバイスの管理](~/android/get-started/installation/android-emulator/device-manager.md)」を参照) ときに、必ず **x86** ベースのイメージを選択してください。 ARM ベースのシステム イメージを使用すると、仮想デバイスは高速化されず、低速で実行されます。
 
 ## <a name="troubleshooting"></a>トラブルシューティング
@@ -159,7 +155,7 @@ Android エミュレーターの高速化には、次の仮想化テクノロジ
 1. **Apple の Hypervisor フレームワーク**
    [Hypervisor](https://developer.apple.com/documentation/hypervisor) は、Mac 上で仮想マシンを実行できるようにする macOS 10.10 以降の機能です。
 
-2. **Intel の Hardware Accelerated Execution Manager (HAXM)** 。
+2. **Intel の Hardware Accelerated Execution Manager (HAXM)**。
    [HAXM](https://software.intel.com/articles/intel-hardware-accelerated-execution-manager-intel-haxm) は Intel CPU を実行するコンピューターのための仮想化エンジンです。
 
 最適なパフォーマンスのためには、Hypervisor フレームワークを使用して Android エミュレーターを高速化することをお勧めします。 お使いの Mac 上で Hypervisor フレームワークを使用できない場合は、HAXM を使用できます。 Android エミュレーターは、次の条件が満たされている場合、ハードウェア高速化を自動的に利用します。
@@ -206,7 +202,7 @@ Hypervisor フレームワークがお使いの Mac でサポートされてい�
     ~/Library/Developer/Xamarin/android-sdk-macosx/tools/emulator -accel-check
     ```
 
-   このコマンドでは、Android SDK が既定の場所 ( **~/Library/Developer/Xamarin/android-sdk-macosx**) にインストールされていることを前提としています。そうでない場合は、上記のパスをお使いの Mac 上にある Android SDK の場所に変更します。
+   このコマンドでは、Android SDK が既定の場所 (**~/Library/Developer/Xamarin/android-sdk-macosx**) にインストールされていることを前提としています。そうでない場合は、上記のパスをお使いの Mac 上にある Android SDK の場所に変更します。
 
 2. HAXM がインストールされている場合、上記のコマンドで次の結果のようなメッセージが返されます。
 
@@ -227,7 +223,6 @@ HAXM がインストールされていない場合は、次のセクションの
 ### <a name="installing-haxm"></a>HAXM のインストール
 
 macOS 版の HAXM インストール パッケージは、どちらも「[Intel Hardware Accelerated Execution Manager](https://software.intel.com/android/articles/intel-hardware-accelerated-execution-manager)」ページから入手できます。 次の手順に従って、HAXM をダウンロードしてインストールします。
-
 
 1. Intel の Web サイトから macOS 版の最新の [HAXM 仮想化エンジン](https://software.intel.com/android/articles/intel-hardware-accelerated-execution-manager/)のインストーラーをダウンロードします。
 

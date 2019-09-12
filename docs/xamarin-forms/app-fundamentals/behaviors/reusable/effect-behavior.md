@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: 38ecd765b1c6bc81054b2c42426b6c15bb99b9d9
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ca03dce3bd39664a07b7bf56d22d7c2e000e931f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650988"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771999"
 ---
 # <a name="reusable-effectbehavior"></a>再利用可能な EffectBehavior
 
@@ -164,7 +164,6 @@ label.Behaviors.Add (new EffectBehavior {
 ## <a name="summary"></a>まとめ
 
 この記事では、ビヘイビアーを使用してエフェクトをコントロールに追加しました。 `EffectBehavior` クラスは再利用可能な Xamarin.Forms カスタム ビヘイビアーであり、このビヘイビアーがコントロールにアタッチされるとき、コントロールに [`Effect`](xref:Xamarin.Forms.Effect) インスタンスを追加し、コントロールからデタッチされるとき、`Effect` インスタンスを削除します。
-
 
 ## <a name="related-links"></a>関連リンク
 

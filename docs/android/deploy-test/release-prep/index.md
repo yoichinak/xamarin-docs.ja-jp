@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2018
-ms.openlocfilehash: 3560c58c6fbb9920cfaf9c3830cd442bca443571
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: b3e34022af4e83b172b7ae7cedfb13e95e92beba
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119631"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756119"
 ---
 # <a name="preparing-an-application-for-release"></a>リリースに向けてアプリケーションを準備する
 
@@ -92,7 +92,6 @@ Visual Studio では、次のスクリーンショットで示すように、こ
 ## <a name="shrink-the-apk"></a>APK を圧縮する
 
 不要な*マネージド* コードを削除する Xamarin.Android リンカーと、使用しない *Java バイトコード*を削除する Android SDK の *ProGuard* ツールを組み合わせることで、Xamarin.Android APK を小さくすることができます ビルド プロセスでは最初に Xamarin.Android リンカーを使用してマネージド (C#) コード レベルでアプリを最適化し、次に ProGuard (有効になっている場合) を使用して Java バイトコード レベルで APK を最適化します。
-
 
 ### <a name="configure-the-linker"></a>リンカーを構成する
 
@@ -229,7 +228,6 @@ Dotfuscator CE を構成するには、「[Using Dotfuscator Community Edition w
 
 _LLVM 最適化コンパイラ_では、より小さく高速なコンパイル済みコードを作成し、AOT コンパイルによるアセンブリをネイティブ コードに変換しますが、その分ビルド時間がかかります。 LLVM コンパイラは既定では無効です。 LLVM コンパイラを使用するには、最初に ([[パッケージング プロパティ]](#Set_Packaging_Properties) ページで) **[AOT コンパイル]** オプションを有効にする必要があります。
 
-
 > [!NOTE]
 > **LLVM 最適化コンパイラ** オプションには、エンタープライズ ライセンスが必要です。  
 
@@ -364,7 +362,6 @@ Multi-Dex の詳細については、「[64K を超えるメソッドを使用�
 ここでは、配布チャンネルを選択することができます。
 
 - **アドホック** &ndash; Android デバイスにサイドロードできるように、署名済み APK をディスクに保存します。 引き続き[アプリ パッケージの署名](~/android/deploy-test/signing/index.md)に関するセクションに進み、Android の署名 ID を作成する方法、Android アプリケーション用の新しい署名証明書を作成する方法、アプリの&ldquo;アドホック&rdquo; バージョンをディスクに発行する方法を学習してください。 これは、テスト用の APK を作成するための効果的な方法です。
-
 
 - **Google Play** &ndash; 署名済み APK を Google Play に発行します。
     引き続き「[Google Play に公開する](~/android/deploy-test/publishing/publishing-to-google-play/index.md)」に進み、APK を署名して Google Play ストアに発行する方法について学習してください。

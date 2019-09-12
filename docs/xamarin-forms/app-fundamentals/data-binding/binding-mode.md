@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/01/2018
-ms.openlocfilehash: 20a6dab34f290c6e5f170d861183dabbfe382970
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 1991be6961cbc296501a1df92fe3c89dda01d190
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650218"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771687"
 ---
 # <a name="xamarinforms-binding-mode"></a>Xamarin.Forms のバインディング モード
 
@@ -680,7 +680,6 @@ public partial class SampleSettingsPage : ContentPage
 他のスクリーンショットは、変更された設定を示しています。 このページを試してみる場合は、プログラムが実行されているデバイスまたはエミュレーター上でプログラムをスリープ状態にするか、または終了することを忘れないでください。 Visual Studio デバッガーからプログラムを終了すると、`App` クラス内の `OnSleep` オーバーライドは呼び出されません。
 
 次の記事では、`Label` の `Text` プロパティで設定されたデータ バインディングの[**文字列の書式設定**](string-formatting.md)を指定する方法を説明します。
-
 
 ## <a name="related-links"></a>関連リンク
 

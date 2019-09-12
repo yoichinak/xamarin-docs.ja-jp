@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 7d324d1faa045dcfbb2b3e6dcc3000a67b5f9e10
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: bd505e97ce4fcca2197f6c7da2de8411931900ab
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525381"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753773"
 ---
 # <a name="publishing-independently"></a>個別公開
 
@@ -29,18 +29,14 @@ Xamarin.Android アプリの開発、デプロイ、および配信には、多�
 
 [visualstudio.com](https://visualstudio.microsoft.com/xamarin/) にアクセスして Community Edition をダウンロードするか、Professional Edition と Enterprise Edition の購入に関する詳細を確認します。
 
-
 ## <a name="allow-installation-from-unknown-sources"></a>不明なソースからのインストールを許可する
 
-既定では、Android は、ユーザーが Google Play 以外の場所からアプリケーションをダウンロードやインストールを行えないようにしています。 マーケットプレース以外のソースからのインストールを許可するには、ユーザーはアプリケーションをインストールする前に、デバイス上で *[不明なソース]* の設定を有効にする必要があります。 この設定は、次の図に示すように、**[設定] > [セキュリティ]** で確認できます。
+既定では、Android は、ユーザーが Google Play 以外の場所からアプリケーションをダウンロードやインストールを行えないようにしています。 マーケットプレース以外のソースからのインストールを許可するには、ユーザーはアプリケーションをインストールする前に、デバイス上で *[不明なソース]* の設定を有効にする必要があります。 この設定は、次の図に示すように、 **[設定] > [セキュリティ]** で確認できます。
 
 [![セキュリティ設定画面](publishing-independently-images/settings.png)](publishing-independently-images/settings.png#lightbox)
 
-
 > [!IMPORTANT]
 > ネットワーク プロバイダーは、この設定に関係なく、不明なソースからのアプリケーションのインストールを禁止する可能性があります。
-
-
 
 ## <a name="publishing-by-e-mail"></a>電子メールでの発行
 
@@ -50,18 +46,16 @@ Xamarin.Android アプリの開発、デプロイ、および配信には、多�
 
 電子メールによる配布が簡単ですが、プライバシーや承認されていない配布に対してほとんど保護を提供しません。 アプリケーションの受信者が少なく、受信者がアプリケーションを配布しないことが信頼できる場合の予備の方法として最適です。
 
-
 ## <a name="publishing-by-web"></a>Web での発行
 
 Web サーバーでアプリケーションを配布することができます。 これは、Web サーバーにアプリケーションをアップロードして、ユーザーにダウンロードのリンクを提供することで完了します。 Android を利用したデバイスでリンクを参照して、アプリケーションをダウンロードする場合、アプリケーションはダウンロードが完了すると、自動的にインストールされます。
-
 
 ## <a name="manually-installing-an-apk"></a>APK の手動インストール
 
 手動インストールは、アプリケーションをインストールするための 3 番目のオプションです。 アプリケーションの手動インストールを有効にするには、次の操作を行います。
 
 1. **ユーザーに APK のコピーを配布する** &ndash; たとえば、このコピーは、CD または USB フラッシュ ドライブで配布される可能性があります。
-1. **(ユーザーが) Android デバイスにアプリケーションをインストールする** &ndash; コマンドラインの *Android Debug Bridge* (**adb**) ツールを使用します。 **adb** は、エミュレーター インスタンスまたは Android を利用したデバイスのいずれかとの通信を可能にする、多用途のコマンドライン ツールです。 Android SDK には、**adb** が含まれます。これは、**\<sdk>/platform-tools/** ディレクトリで見つけることができます。
+1. **(ユーザーが) Android デバイスにアプリケーションをインストールする** &ndash; コマンドラインの *Android Debug Bridge* (**adb**) ツールを使用します。 **adb** は、エミュレーター インスタンスまたは Android を利用したデバイスのいずれかとの通信を可能にする、多用途のコマンドライン ツールです。 Android SDK には、**adb** が含まれます。これは、 **\<sdk>/platform-tools/** ディレクトリで見つけることができます。
 
 Android デバイスは、USB ケーブルを使用してコンピューターに接続されている必要があります。
 また、Windows コンピューターが **adb** によって認識されるには、携帯電話のベンダーから追加の USB ドライバーも必要です。 これらの追加の USB ドライバーのインストール手順は、このドキュメントには含まれていません。

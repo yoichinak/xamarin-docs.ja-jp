@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/06/2018
-ms.openlocfilehash: 6014bb0889c84c35edc991011bae46065d4ff8d7
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: d7a2f14b55d9f8de2ea01bdfa5c68c5c9f8f2555
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287104"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756150"
 ---
 # <a name="working-with-capabilities-in-xamarinios"></a>Xamarin.iOS の機能の使用
 
@@ -113,7 +113,6 @@ Apple は、機能を拡張し、iOS アプリで実行可能な操作の範囲�
 
 -----
 
-
 <a name="devcenter" />
 
 ## <a name="using-the-developer-center"></a>Developer Center の使用
@@ -146,7 +145,6 @@ Developer Center の使用には 2 ステップのプロセスがあります。
     ![アプリ ID の確認](images/image9.png)
 
 9. **[登録]** をクリックしてから **[完了]** をクリックします。 新しく作成されたアプリ ID は、iOS のアプリ ID リストに表示されます。
-
 
 <a name="provisioningprofile" />
 

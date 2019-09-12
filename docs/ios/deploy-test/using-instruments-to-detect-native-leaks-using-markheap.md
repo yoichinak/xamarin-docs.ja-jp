@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 9492c90274e28f14dee0e8cbcb2aaa1a55de2420
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 866ebd2a66557cda5372c5bc3d7a909e18c762d7
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282746"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756090"
 ---
 # <a name="profiling-xamarinios-applications-with-instruments"></a>Instruments を使用した Xamarin.iOS アプリケーションのプロファイリング
 
@@ -31,8 +31,7 @@ Xcode Instruments は Mac でのみ実行されます。
 2. **[Debug|iPhone]\(デバッグ|iPhone\)** 構成を選択します。
 3. iOS デバイスをコンピューターに接続します。
 4. **[実行]** メニューで **[デバイスにアップロード]** を選択します。 これでアプリケーションがビルドされ、デバイスにアップロードされます。
-5. **[ツール]** メニューで、 **[Instruments の起動]** を選択します。
-
+5. **[ツール]** メニューで、**[Instruments の起動]** を選択します。
 
 Instruments が開き、次のダイアログが表示されます。
 
@@ -44,7 +43,7 @@ Instruments が開き、次のダイアログが表示されます。
 
 [![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments2.png "デバイスとアプリケーションを選択する")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments2.png#lightbox)
 
-ウィンドウの上部にあるメニューで iOS デバイスを選択し、その横でプロファイルするアプリケーションを選択します (上記のスクリーン ショットの **[MemoryDemo]** )。
+ウィンドウの上部にあるメニューで iOS デバイスを選択し、その横でプロファイルするアプリケーションを選択します (上記のスクリーン ショットの [**MemoryDemo**])。
 
 メニューにデバイスが一覧表示されない場合は、Visual Studio for Mac の**コンソール** で、アプリがデバイスに展開されたときに表示された可能性のあるエラー メッセージを確認します。 また、Xcode オーガナイザーによってデバイスが開発用にプロビジョニングされていることを確認します。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 08/23/2017
-ms.openlocfilehash: 5cf57a42092535363071acffe993cd38a91b9805
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 05034989c60868f8bff8164da7da90a7ff8788a3
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290992"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70763218"
 ---
 # <a name="app-store-distribution"></a>App Store 配布
 
@@ -70,7 +70,6 @@ Xamarin.iOS アプリケーションをリリースするためにどのよう�
 
 3. チーム権限に応じて、次のように署名 ID が生成されます。チーム エージェントまたは管理者が承認するまで待機する必要がある場合もあります。[![](images/generated.png "署名 ID が生成され、ダイアログが表示されます")](images/generated.png#lightbox)
 
-
 <a name="creatingprofile" />
 
 ## <a name="creating-a-distribution-profile"></a>配布プロファイルの作成
@@ -81,7 +80,6 @@ Xamarin.iOS アプリケーションをリリースするためにどのよう�
 
 作成する他のプロビジョニング プロファイルと同じように、ユーザーのデバイスに配布するアプリを識別するためにアプリ ID が必要になります。 ID をまだ作成していない場合は、次の手順に従って作成します。
 
-
 1. [Apple Developer Center](https://developer.apple.com/account/overview.action) で *[Certificate, Identifiers and Profiles]\(証明書、ID、およびプロファイル\)* セクションを参照します。 **[Identifiers]** \(ID\) の下で **[App IDs]** \(App ID\) を選択します。
 2. **+** ボタンをクリックして、ポータルで識別するための**名前**を指定します。
 3. アプリのプレフィックスは、チーム ID として既に設定されており、変更できません。 明示的またはワイルドカード アプリ ID を選択し、次のように逆引き DNS 形式でバンドル ID を入力します。
@@ -89,7 +87,6 @@ Xamarin.iOS アプリケーションをリリースするためにどのよう�
     - **ワイルドカード**: com.[DomainName].*
 4. アプリで必要な任意の [App Services](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#appservices) を選択します。
 5. **[Continue]\(続行\)** ボタンをクリックし、画面の指示に従って新しいアプリ ID を作成します。
-
 
 ### <a name="creating-a-provisioning-profile"></a>プロビジョニング プロファイルの作成
 
@@ -120,7 +117,6 @@ Xamarin.iOS アプリケーションをリリースするためにどのよう�
     [![](images/distribute06.png "新しい配布プロファイルの名前を入力します")](images/distribute06.png#lightbox)
 
 7. **[Generate]\(生成\)** ボタンをクリックし、新しいプロファイルを作成してプロセスを終了します。
-
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/19/2016
-ms.openlocfilehash: 2b2b5726f4ca28ae37f027a700abdd688aa0b1d7
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: ad2868a82f662f45066a6111a1dd3bd2aacad671
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108432"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771879"
 ---
 # <a name="introduction-to-custom-renderers"></a>カスタム レンダラーの概要
 
@@ -92,7 +92,6 @@ var temp = new ClassInPCL(); // in AppDelegate, but temp not used anywhere
 ## <a name="summary"></a>まとめ
 
 この記事では、カスタム レンダラーの概要を示し、カスタム レンダラーを作成するプロセスについて説明しました。 カスタム レンダラーにより、Xamarin.Forms コントロールの外観とビヘイビアーをカスタマイズするための強力な方法が提供されます。 それらは、スタイルに関する小さな変更や、洗練されたプラットフォーム固有のレイアウトおよびビヘイビアーのカスタマイズのために使用できます。
-
 
 ## <a name="related-links"></a>関連リンク
 

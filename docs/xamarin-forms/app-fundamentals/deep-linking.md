@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/28/2018
-ms.openlocfilehash: 36069bc20a5341b87d55b60f83466e89f263b2ec
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ff5c7cb36305780d12b5fd69b7cbadec0eaef551
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646129"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771556"
 ---
 # <a name="application-indexing-and-deep-linking"></a>アプリケーション インデックス作成とディープ リンクの設定
 
@@ -24,7 +24,6 @@ _アプリケーション インデックス作成を使用すると、何度か
 > [!VIDEO https://youtube.com/embed/UJv4jUs7cJw]
 
 **Xamarin.Forms と Azure でのディープ リンク設定のビデオ**
-
 
 Xamarin.Forms アプリケーション インデックス作成とディープ リンクの設定では、ユーザーがアプリケーション間を移動するとき、アプリケーション インデックス作成用のメタデータを発行する API が提供されます。 インデックスが付けられたコンテンツは、Spotlight 検索、Google 検索、または Web 検索で検索することができます。 ディープ リンクが含まれている検索結果をタップすると、アプリケーションによって処理できるイベントが開始されます。これは、通常、ディープ リンクから参照されているページに移動するために使用されます。
 

@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: ccdf1e3fc0c42f8af8f9219a8b472827048a90dc
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: e542336cfd3bf1eac50c343a3edfeb0efa414d0c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525231"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753606"
 ---
 # <a name="apk-expansion-files"></a>APK 拡張ファイル
 
@@ -29,10 +29,8 @@ ms.locfileid: "69525231"
 - **メイン拡張** &ndash; このファイルは、APK サイズ制限に収まらないリソースやアセットのための主要な拡張ファイルです。 メイン拡張ファイルには、アプリケーションにとって必須であり、めったに更新しない主要なアセットを含めます。
 - **パッチ拡張** &ndash; これは、メイン拡張ファイルの小規模な更新を意図するものです。 このファイルは更新できます。 このファイルから必要なパッチや更新を行うのはアプリケーションの担当です。
 
-
 拡張ファイルは、APK のアップロードと同時にアップロードする必要があります。
 Google Play では、拡張ファイルを既存の APK にアップロードしたり、既存の APK を更新したりできません。 既存のファイルを更新する必要がある場合、`versionCode` を更新し、新しい APK をアップロードする必要があります。
-
 
 ## <a name="expansion-file-storage"></a>拡張ファイル ストレージ
 
@@ -41,7 +39,6 @@ Google Play では、拡張ファイルを既存の APK にアップロードし
 - **_shared-store_** &ndash; `Android.OS.Environment.ExternalStorageDirectory` によって指定されるディレクトリです。
 - **_package-name_** &ndash; アプリケーションの Java スタイルのパッケージ名です。
 
-
 ダウンロード後、拡張ファイルはデバイス上の保存先から移動したり、作り替えたり、名前を変更したり、削除しないでください。 そのような行為を行った場合、拡張ファイルが再びダウンロードされ、古いファイルが削除されます。 また、拡張ファイル ディレクトリには、拡張パック ファイルのみを含めます。
 
 拡張ファイルでは、そのコンテンツに何のセキュリティも保護も適用されません。共有ストレージに保存されているファイルには他のアプリケーションやユーザーがアクセスできます。
@@ -49,7 +46,6 @@ Google Play では、拡張ファイルを既存の APK にアップロードし
 拡張ファイルを解凍する必要がある場合、解凍したパックは別のディレクトリに保存してください。たとえば、 `Android.OS.Environment.ExternalStorageDirectory` の別ディレクトリに保存します。
 
 拡張ファイルのファイル抽出に代わる方法は、拡張ファイルから直接、アセットやリソースを読み取ることです。 拡張ファイルは、適切な `ContentProvider` と併用できる zip ファイルです。 [Android.Play.ExpansionLibrary](https://github.com/mattleibow/Android.Play.ExpansionLibrary) にはアセンブリの [System.IO.Compression.Zip](https://github.com/mattleibow/Android.Play.ExpansionLibrary/tree/master/System.IO.Compression.Zip) が含まれています。このアセンブリには、一部のメディア ファイルの直接ファイル アクセスを可能にする `ContentProvider` が含まれています。 メディア ファイルが zip ファイルにパッケージ化されている場合、メディア再生呼び出しでは、その zip ファイルを解凍することなく、zip のファイルを直接利用できることがあります。 zip ファイルに追加するとき、メディア ファイルを圧縮しないでください。 
-
 
 ### <a name="filename-format"></a>FileName 形式
 
@@ -65,9 +61,7 @@ Google Play では、拡張ファイルを既存の APK にアップロードし
 - `<expansion-version>` &ndash; これは、ファイルが最初に関連付けられた APK の `versionCode` に一致する整数です。
 - `<package-name>` &ndash; これはアプリケーションの Java スタイルのパッケージ名です。
 
-
 たとえば、APK バージョンが 21 で、パッケージ名が `mono.samples.helloworld` であれば、メイン拡張ファイルには **main.21.mono.samples.helloworld** と名前が付けられます。
-
 
 ## <a name="download-process"></a>ダウンロード プロセス
 
@@ -81,7 +75,6 @@ Google Play では、拡張ファイルを既存の APK にアップロードし
 - **ファイル名** &ndash; これは拡張パックを保存する現在のデバイスでのファイル名です。
 - **ダウンロード用の URL** &ndash; 拡張パックのダウンロードに利用する URL です。 ダウンロードごとに一意となっており、提供後、短期間で有効期限が切れます。
 
-
 LVL 確認後、アプリケーションは拡張ファイルをダウンロードします。その際、ダウンロードの一環として、次の点が考慮されます。
 
 - 拡張ファイルを保存するための十分な領域がデバイスにない可能性があります。
@@ -89,8 +82,6 @@ LVL 確認後、アプリケーションは拡張ファイルをダウンロー�
 - ユーザー操作の邪魔にならないように、拡張ファイルはバックグラウンドでダウンロードされます。
 - ダウンロードがバックグラウンドで進行している間、進捗状況インジケーターを表示します。
 - ダウンロード中に発生したエラーは回復可能であり、正常に処理されます。
-
-
 
 ## <a name="architectural-overview"></a>アーキテクチャの概要
 
@@ -103,6 +94,5 @@ LVL 確認後、アプリケーションは拡張ファイルをダウンロー�
 - **ダウンローダー ライブラリ** &ndash; これは、アプリケーションで拡張ファイルを統合するために必要な労力を減らすライブラリです。 このライブラリはバックグラウンド サービスで拡張ファイルをダウンロードしたり、ユーザー通知を処理したり、ネットワーク接続問題を処理したり、ダウンロードを再開したりします。
 - **LVL (License Verification Library)** &ndash; アプリケーション ライセンス サービスを呼び出し、処理するためのライブラリです。 ライセンス確認にも利用できます。アプリケーションをデバイスで使用する許可を得ているか確認できます。
 - **APK 拡張 Zip ライブラリ (オプション)** &ndash; 拡張ファイルが zip ファイルの場合、このライブラリはコンテンツ プロバイダーとして機能し、zip ファイルを展開しなくても、zip ファイルから直接、リソースやアセットを読み取ることをアプリケーションに許可します。
-
 
 これらのライブラリは C# に移植されており、Apache 2.0 ライセンスの下で利用できます。 拡張ファイルを既存のアプリケーションが手早く統合する目的で、ライブラリを既存の Xamarin.Android アプリケーションに追加できます。 このコードは GitHub の [Android.Play.ExpansionLibrary](https://github.com/mattleibow/Android.Play.ExpansionLibrary) にあります。

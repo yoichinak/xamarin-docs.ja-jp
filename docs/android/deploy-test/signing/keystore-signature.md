@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: d32b2a20fee6b2bb007ee620e0ae4203e950bb98
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 6cada2c7426cc50723321d77e21852a92fe64d63
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112465"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755796"
 ---
 # <a name="finding-your-keystores-signature"></a>キーストアの署名の検索
 
@@ -59,13 +59,11 @@ Certificate fingerprints:
          Version: 3
 ```
 
-
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 アプリの署名に利用された Xamarin **debug.keystore** ファイルを見つけます。 既定では、Xamarin.Android アプリケーションのデバッグ バージョンの署名に利用されたキーストアは次の場所にあります。
 
 **~/.local/share/Xamarin/Mono for Android/debug.keystore**
-
 
 キーストアに関する情報は、JDK から **keytool** コマンドを実行して取得できます。 このツールは通常、次の場所にあります。
 
@@ -126,7 +124,6 @@ Visual Studio の **[配布]** ウィザードで Xamarin.Android アプリに�
 
 Xamarin.Android アプリに署名する方法については、「[Android アプリケーション パッケージに署名する](~/android/deploy-test/signing/index.md)」を参照してください。
 
-
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 Visual Studio for Mac の **[署名と配布...]** ウィザードでアプリに署名すると、結果のキーストアは次の場所に置かれます。
@@ -138,6 +135,5 @@ Visual Studio for Mac の **[署名と配布...]** ウィザードでアプリ�
 **~/Library/Developer/Xamarin/Keystore/chimp/chimp.keystore**
 
 Xamarin.Android アプリに署名する方法については、「[Android アプリケーション パッケージに署名する](~/android/deploy-test/signing/index.md)」を参照してください。
-
 
 -----

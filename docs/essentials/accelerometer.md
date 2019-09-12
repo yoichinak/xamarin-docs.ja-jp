@@ -6,12 +6,12 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 04/02/2019
 ms.custom: video
-ms.openlocfilehash: f22563aeaeb7bec2f87ca7892005f2cfb1c4e84b
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.openlocfilehash: dd99d09f227809bf8834eea9749c4d5379abebdb
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58870379"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765047"
 ---
 # <a name="xamarinessentials-accelerometer"></a>Xamarin.Essentials:加速度計
 
@@ -78,7 +78,7 @@ public class AccelerometerTest
 
 X 軸は水平方向で右に、Y 軸は垂直方向で上に、Z 軸は画面前面から外側に向かいます。 このシステムでは画面より後ろにある座標の Z 値は負の値になります。
 
-次に例を示します。 
+次に例を示します。
 
 - テーブルの上に水平に置いたデバイスを、左側から右側に向かって押した場合、X の加速値は正の値になります。
 
@@ -90,12 +90,11 @@ X 軸は水平方向で右に、Y 軸は垂直方向で上に、Z 軸は画面�
 
 ## <a name="api"></a>API
 
-- [Accelerometer のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Accelerometer)
-- [Accelerometer API のドキュメント](xref:Xamarin.Essentials.Accelerometer)
+- [加速度計のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Accelerometer)
+- [加速度計の API ドキュメント](xref:Xamarin.Essentials.Accelerometer)
 
 ## <a name="related-video"></a>関連ビデオ
 
 > [!Video https://channel9.msdn.com/Shows/XamarinShow/Accelerometer-XamarinEssentials-API-of-the-Week/player]
 
 [!include[](~/essentials/includes/xamarin-show-essentials.md)]
-

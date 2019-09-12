@@ -7,21 +7,20 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/22/2018
-ms.openlocfilehash: 32ededcda1fdfc463269c7e4a2db444edab51d22
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 315cb8e58b0b9f29c06e4d0af2b8cf9adffb06e3
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119776"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758524"
 ---
 # <a name="windows-installation"></a>Windows のインストール
 
 _このガイドでは、Windows で Visual Studio 用の Xamarin.Android をインストールする手順と、最初の Xamarin.Android アプリケーションをビルドするための Xamarin.Android の構成方法について説明します。_
 
-
 ## <a name="overview"></a>概要
 
-Xamarin は現在、追加料金なしで Visual Studio のすべてのエディションに含まれ、別個のライセンスは必要ないため、Visual Studio インストーラーを使用して、Xamarin.Android ツールをダウンロードしてインストールすることができます
+Xamarin は現在、追加料金なしで Visual Studio のすべてのエディションに含まれ、別個のライセンスは必要ないため、Visual Studio インストーラーを使用して、Xamarin.Android ツールをダウンロードしてインストールすることができます 
 (以前のバージョンの Xamarin.Android では必要だった手動のインストールとライセンス手順は不要になりました)。このガイドでは、次のことを学習します。
 
 - Java Development Kit、Android SDK、および Android NDK のカスタムの場所を構成する方法。
@@ -38,10 +37,9 @@ Xamarin は現在、追加料金なしで Visual Studio のすべてのエディ
 
 Windows での Visual Studio を使用するための Xamarin のインストールについては、[Windows インストール](~/get-started/installation/windows.md)のガイドをご覧ください。
 
-
 ## <a name="configuration"></a>構成
 
-Xamarin.Android では Java Development Kit (JDK) と Android SDK を使用して、アプリをビルドします。 インストール中に、Visual Studio インストーラーは既定の場所にこれらのツールを配置し、適切なパス構成で開発環境を構成します。 これらの場所は、 **[ツール]、[オプション]、[Xamarin]、[Android 設定]** の順にクリックして表示し、変更することができます。
+Xamarin.Android では Java Development Kit (JDK) と Android SDK を使用して、アプリをビルドします。 インストール中に、Visual Studio インストーラーは既定の場所にこれらのツールを配置し、適切なパス構成で開発環境を構成します。 これらの場所は、**[ツール]、[オプション]、[Xamarin]、[Android 設定]** の順にクリックして表示し、変更することができます。
 
 ![Xamarin Android の設定ダイアログのスクリーン ショット](windows-images/07-settings.png)
 
@@ -51,7 +49,6 @@ Xamarin.Android は [JDK 8](https://www.oracle.com/technetwork/java/javase/downl
 
 > [!IMPORTANT]
 > Xamarin.Android は JDK 9 をサポートしていません。
-
 
 ### <a name="android-sdk-manager"></a>Android SDK Manager
 
@@ -88,13 +85,11 @@ Android Emulator、Hyper-V、HAXM の詳細については、「[エミュレー
 > [!NOTE]
 > Windows 10 の 2018 年 4 月更新より前のバージョンでは、HAXM は Hyper-V と互換性がありません。 この場合、[Hyper-V を無効にする](~/android/get-started/installation/android-emulator/troubleshooting.md#disable-hyperv)か、x86 最適化のない、遅いエミュレーター イメージを使用する必要があります。
 
-
 <a name="device" />
 
 ### <a name="android-device"></a>Android デバイス
 
 テストに使用する物理的な Android デバイスがある場合は、開発用に設定する良いタイミングです。 「[Set Up Device for Development](~/android/get-started/installation/set-up-device-for-development.md)」 (開発用のデバイスの設定) を参照して、開発用に Android デバイスを構成してから、Xamarin.Android アプリケーションの実行とデバッグのためにコンピューターに接続してください。
-
 
 ## <a name="create-an-application"></a>アプリケーションの作成
 
@@ -108,13 +103,11 @@ Xamarin.Android をインストールしたので、Visual Studio を起動し�
 
 これで完了です。 これで、Xamarin.Android を使用して Android アプリケーションを作成する準備ができました。
 
-
 ## <a name="summary"></a>まとめ
 
 この記事では、Windows で Xamarin.Android プラットフォームを設定してインストールする方法、(必要に応じて) カスタムの Java JDK と Android SDK インストールの場所で Visual Studio を構成する方法、SDK マネージャーを起動して追加の Android SDK コンポーネントをインストールする方法、Android デバイスまたはエミュレーターを設定する方法、および最初のアプリケーションのビルドを開始する方法を学習しました。
 
 次の手順では、「[Hello, Android](~/android/get-started/hello-android/index.md)」チュートリアルを参照して、作業用 Xamarin.Android アプリを作成する方法を学習します。
-
 
 ## <a name="related-links"></a>関連リンク
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/05/2017
-ms.openlocfilehash: 437db399d1a8cafb19dbc57d7f2ea4141900d8db
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 9b2cb44dff7712953454a9add71f092956e3c759
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292359"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70762769"
 ---
 # <a name="using-mtouch-to-bundle-xamarinios-apps"></a>mtouch を使用する Xamarin.iOS アプリのバンドル
 
@@ -49,7 +49,6 @@ export PATH=$PATH:/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/bin
 - デバイス配置のためにコンパイルします。
 - 実行可能ファイルをデバイスに配置します。
 
-
 ### <a name="building-for-the-simulator"></a>シミュレーターのビルド
 
 使用を開始するときに、最も一般的に利用されるシナリオは、シミュレーターでアプリケーションを試すことです。`mtouch -sim` を利用し、コードをシミュレーター パッケージにコンパイルします。 これは次のように行われます。
@@ -70,9 +69,7 @@ $ mtouch -dev -c "iPhone Developer: Miguel de Icaza" foo.exe
 
  <a name="Running_your_Application" />
 
-
 ## <a name="running-your-application"></a>アプリケーションを実行する
-
 
 ### <a name="launching-on-the-simulator"></a>シミュレーターで起動する
 
@@ -95,8 +92,6 @@ PID: 98460
 Press enter to terminate the application
 ```
 
-
-
 標準出力のログと標準エラー ファイルも保存しておくことを強くお勧めします。デバッグに役に立ちます。 `Console.WriteLine` は `stdout` に出力され、`Console.Error.WriteLine` とその他の実行時エラー メッセージは `stderr` に出力されます。
 
 これを行うには、`--stdout` フラグと `--stderr` フラグを使用します。
@@ -106,7 +101,6 @@ Press enter to terminate the application
 ```
 
 アプリケーションにエラーが発生した場合、出力とエラーを表示し、問題を診断できます。
-
 
 ### <a name="deploying-to-a-device"></a>デバイスの展開
 
@@ -125,8 +119,6 @@ $ mtouch —sdkroot /Applications/Xcode.app -installdev=MyApp.app
 ## <a name="reference"></a>関連項目
 
 その他のコマンド ライン オプションについては、[mtouch(1)](http://docs.go-mono.com/?link=man%3amtouch(1)) マニュアル ページをご覧ください。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

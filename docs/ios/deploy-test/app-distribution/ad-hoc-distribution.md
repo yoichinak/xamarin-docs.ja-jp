@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 35596d5231f7e485cf8217e35a5641277dcab11d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: ca524e9ff3c1d3c938905093f55a6482ea085963
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285596"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70763201"
 ---
 # <a name="ad-hoc-distribution-for-xamarinios-apps"></a>Xamarin.iOS アプリ用のアドホック配布
 
@@ -44,7 +44,6 @@ Xamarin.iOS アプリケーションは、*アドホック*配布を使用して
 <a name="createcertificate" />
 
 ## <a name="create-a-distribution-certificate"></a>配布証明書の作成
-
 
 1. Apple Developer Member Center の *[Certificates, Identifiers & Profiles]\(証明書、ID、およびプロファイル\)* セクションに移動します。
 2. *[Certificates]\(証明書\)* の下で **[Production]\(運用\)** を選択します。
@@ -79,7 +78,6 @@ Xamarin.iOS アプリケーションは、*アドホック*配布を使用して
 
 ### <a name="create-an-app-id"></a>アプリ ID の作成
 作成する他のプロビジョニング プロファイルと同じように、ユーザーのデバイスに配布されるアプリを識別するため、アプリ ID が必要になります。 ID をまだ作成していない場合は、次の手順に従って作成します。
-
 
 1. [Apple Developer Center](https://developer.apple.com/account/overview.action) で *[Certificate, Identifiers and Profiles]\(証明書、ID、およびプロファイル\)* セクションを参照します。 **[Identifiers]** \(ID\) の下で **[App IDs]** \(App ID\) を選択します。
 2. **+** ボタンをクリックして、ポータルで識別するための**名前**を指定します。
@@ -179,7 +177,6 @@ IPA の作成の詳細については、「[IPA のサポート](~/ios/deploy-te
 ## <a name="summary"></a>まとめ
 
 この記事では、Xamarin.iOS アプリケーションをテストするために必要なアドホック配布メカニズムについて説明します。
-
 
 ## <a name="related-links"></a>関連リンク
 

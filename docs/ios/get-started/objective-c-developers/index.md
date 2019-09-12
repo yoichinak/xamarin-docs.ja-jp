@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/05/2017
-ms.openlocfilehash: 96a7e6b9587d696479afd084613c79e2b03f956c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 2970253ec15ca207b9f69e2b764e0a69f8037938
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292001"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753513"
 ---
 # <a name="xamarin-for-objective-c-developers"></a>Objective-C 開発者向けの Xamarin
 
@@ -30,7 +30,6 @@ iOS を対象とした開発者は Xamarin を使用し、 ユーザーインタ
 
 - [Objective-C 開発者向けの C# 入門](primer.md) - Xamarin と C# への移行を検討している Objective-C 開発者向けの簡単な入門。 
 - [チュートリアル: Objective-C ライブラリのバインディング](~/ios/platform/binding-objective-c/walkthrough.md) - Xamarin.iOS アプリケーションで既存の Objective-C コードを再利用するための手順に関するチュートリアル。 
-
 
 ## <a name="binding-objective-c"></a>Objective-C のバインディング
 

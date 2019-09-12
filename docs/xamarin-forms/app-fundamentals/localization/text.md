@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/06/2016
-ms.openlocfilehash: 54a1f32d4e2102654a6111dc1fb27bc1ba9aabcc
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 8e347d5d0c80f7aaac121ca1e68eec618ff2ff88
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119111"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760993"
 ---
 # <a name="localization"></a>ローカリゼーション
 
@@ -33,7 +33,7 @@ _Xamarin.Forms アプリは、.NET リソース ファイルを使用してロ�
 
 #### <a name="shared-projects-are-not-recommended"></a>共有プロジェクトは推奨されない
 
-TodoLocalized サンプルには[共有プロジェクト デモ](https://github.com/xamarin/xamarin-forms-samples/tree/master/TodoLocalized/SharedProject/)が含まれていますが、ビルド システムの制限により、リソース ファイルでは、コード内の厳密に型指定されて翻訳された文字列にアクセスする機能を中断させる、 **.designer.cs** ファイルは生成されません。
+TodoLocalized サンプルには[共有プロジェクト デモ](https://github.com/xamarin/xamarin-forms-samples/tree/master/TodoLocalized/SharedProject/)が含まれていますが、ビルド システムの制限により、リソース ファイルでは、コード内の厳密に型指定されて翻訳された文字列にアクセスする機能を中断させる、**.designer.cs** ファイルは生成されません。
 
 このドキュメントの残りの部分は、Xamarin.Forms .NET 標準ライブラリ テンプレートを使用するプロジェクトに関連します。
 
@@ -56,9 +56,9 @@ Xamarin.Forms .NET 標準ライブラリ アプリケーションをグローバ
 
 #### <a name="base-language-resource"></a>基本言語リソース
 
-基本リソース (RESX) ファイルには、既定の言語文字列が含まれます (サンプルでは、英語が既定の言語であると仮定します)。 Xamarin.Forms の一般的なコード プロジェクトにファイルを追加する場合は、プロジェクトを右クリックし、 **[追加] > [新しいファイル...]** の順に選択します。
+基本リソース (RESX) ファイルには、既定の言語文字列が含まれます (サンプルでは、英語が既定の言語であると仮定します)。 Xamarin.Forms の一般的なコード プロジェクトにファイルを追加する場合は、プロジェクトを右クリックし、**[追加] > [新しいファイル...]** の順に選択します。
 
-**AppResources** などのわかりやすい名前を選んで、 **[OK]** を押します。
+**AppResources** などのわかりやすい名前を選んで、**[OK]** を押します。
 
 [![リソース ファイルを追加する](text-images/resx-new-file-sml.png "[新しいファイル] ダイアログ")](text-images/resx-new-file.png#lightbox "[新しいファイル] ダイアログ")
 
@@ -67,7 +67,7 @@ Xamarin.Forms .NET 標準ライブラリ アプリケーションをグローバ
 - **AppResources.resx**ファイル。ここには、翻訳された文字列が XML 形式で格納されます。
 - **AppResources.designer.cs** ファイル。ここでは、RESX XML ファイルに作成されたすべての要素への参照を含む部分クラスが宣言されます。
 
-ソリューション ツリーは、ファイルが関連していることを示します。 新しい翻訳可能な文字列に追加するには、RESX ファイルを編集する*必要があります*。 **.designer.cs** ファイルは編集*しないでください*。
+ソリューション ツリーは、ファイルが関連していることを示します。 新しい翻訳可能な文字列に追加するには、RESX ファイルを編集する*必要があります*。**.designer.cs** ファイルは編集*しないでください*。
 
 ![](text-images/appresources-tree.png "AppResources.resx ファイル")
 
@@ -75,8 +75,7 @@ Xamarin.Forms .NET 標準ライブラリ アプリケーションをグローバ
 
 既定では、文字列への厳密に型指定された参照が生成されると、アセンブリに対して `internal` になります。 これは、RESX ファイルの既定のビルド ツールによって、`internal` プロパティを使用して **.designer.cs** ファイルが生成されるためです。
 
-**AppResources.resx** ファイルを選択し、 **[プロパティ]** パッドを表示して、このビルド ツールが構成されている場所を確認します。 以下のスクリーンショットには、**カスタム ツールがResXFileCodeGenerator** と示されています。
-
+**AppResources.resx** ファイルを選択し、**[プロパティ]** パッドを表示して、このビルド ツールが構成されている場所を確認します。 以下のスクリーンショットには、**カスタム ツールがResXFileCodeGenerator** と示されています。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -90,7 +89,6 @@ Xamarin.Forms .NET 標準ライブラリ アプリケーションをグローバ
 
 厳密に型指定された文字列プロパティを `public` にするには、以下のスクリーンショットに示すように、**カスタム ツールがPublicResXFileCodeGenerator** になるように構成を手動で変更する必要があります。
 
-
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![](text-images/vs-resx-public-sml.png "AppResources.Resx の [プロパティ] ウィンドウ")](text-images/vs-resx-public.png#lightbox)
@@ -98,7 +96,6 @@ Xamarin.Forms .NET 標準ライブラリ アプリケーションをグローバ
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 [![](text-images/xs-resx-internal-sml.png "AppResources.Resx の [プロパティ] パッド")](text-images/xs-resx-internal.png#lightbox)
-
 
 [![](text-images/xs-resx-public-sml.png "AppResources.Resx の [プロパティ] パッド")](text-images/xs-resx-public.png#lightbox)
 
@@ -262,7 +259,7 @@ System.Resources.ResourceManager temp =
 
 #### <a name="doesnt-work-in-debug-mode-android-only"></a>デバッグ モードで動作しない (Android のみ)
 
-翻訳された文字列が Android のリリース ビルドで動作しているが、デバッグ中は動作しない場合、 **[Android プロジェクト]** を右クリックし、 **[オプション] > [ビルド] > [Android のビルド]** の順に選択し、 **[迅速なアセンブリの配置]** がオフになっていることを確認します。 このオプションにより、リソースの読み込みに関する問題が発生するため、ローカライズされたアプリをテストする場合は使用しないでください。
+翻訳された文字列が Android のリリース ビルドで動作しているが、デバッグ中は動作しない場合、**[Android プロジェクト]** を右クリックし、**[オプション] > [ビルド] > [Android のビルド]** の順に選択し、**[迅速なアセンブリの配置]** がオフになっていることを確認します。 このオプションにより、リソースの読み込みに関する問題が発生するため、ローカライズされたアプリをテストする場合は使用しないでください。
 
 ### <a name="displaying-the-correct-language"></a>適切な言語の表示
 
@@ -433,11 +430,11 @@ namespace UsingResxLocalization.iOS
 >
 > Xamarin.Forms の場合、iOS でいくつかのロケールが有効ですが、.NET の有効な `CultureInfo` には対応しておらず、上記のコードでこの処理が試行されます。
 >
-> たとえば、iOS の **[設定] > [General Language &amp; Region]\(一般的な言語とリージョン\)** 画面では、電話の **[言語]** を **[英語]** に設定し、 **[リージョン]** を **[スペイン]** に設定できます。その結果、ロケール文字列は `"en-ES"` となります。 `CultureInfo` の作成に失敗すると、コードでは、表示言語を選択するために最初の 2 文字のみを使用するようにフォールバックします。
+> たとえば、iOS の **[設定] > [General Language &amp; Region]\(一般的な言語とリージョン\)** 画面では、電話の **[言語]** を **[英語]** に設定し、**[リージョン]** を **[スペイン]** に設定できます。その結果、ロケール文字列は `"en-ES"` となります。 `CultureInfo` の作成に失敗すると、コードでは、表示言語を選択するために最初の 2 文字のみを使用するようにフォールバックします。
 >
 > 開発者は `iOSToDotnetLanguage` および `ToDotnetFallbackLanguage` メソッドを変更し、サポートされている言語に必要な特定のケースを処理する必要があります。
 
-`Picker` コントロールの **[完了]** ボタンなど、iOS によって自動的に翻訳されるシステム定義のユーザー インターフェイス要素がいくつかあります。 iOS でこれらの要素を強制的に翻訳するには、**Info.plist** ファイルでサポートする言語を示す必要があります。 以下に示すように、 **[Info.plist] > [ソース]** を使用して、これらの値を追加できます。
+`Picker` コントロールの **[完了]** ボタンなど、iOS によって自動的に翻訳されるシステム定義のユーザー インターフェイス要素がいくつかあります。 iOS でこれらの要素を強制的に翻訳するには、**Info.plist** ファイルでサポートする言語を示す必要があります。 以下に示すように、**[Info.plist] > [ソース]** を使用して、これらの値を追加できます。
 
 ![Info.plist のローカライズ キー](text-images/info-plist.png "Info.plist のローカライズ キー")
 
@@ -464,7 +461,7 @@ namespace UsingResxLocalization.iOS
 
 > [!NOTE]
 > Apple では、予期したものとは若干異なる方法でポルトガル語が扱われることに注意してください。
-> [そのドキュメント](https://developer.apple.com/library/ios/documentation/MacOSX/Conceptual/BPInternational/LocalizingYourApp/LocalizingYourApp.html#//apple_ref/doc/uid/10000171i-CH5-SW2)からの引用: _"ブラジルで使用される場合は、ポルトガル語の言語 ID として pt を使用し、ポルトガルで使用される場合は、ポルトガル語の言語 ID として pt-PT を使用します"_ 。
+> [そのドキュメント](https://developer.apple.com/library/ios/documentation/MacOSX/Conceptual/BPInternational/LocalizingYourApp/LocalizingYourApp.html#//apple_ref/doc/uid/10000171i-CH5-SW2)からの引用: _"ブラジルで使用される場合は、ポルトガル語の言語 ID として pt を使用し、ポルトガルで使用される場合は、ポルトガル語の言語 ID として pt-PT を使用します"_。
 > これは、非標準ロケールでポルトガルの言語が選択されると、(上記の `ToDotnetFallbackLanguage` など) この動作を変更するためにコードが書き込まれない限り、iOS ではフォールバック言語がポルトガル語 (ブラジル) になることを意味します。
 
 iOS のローカライズについて詳しくは、[iOS のローカライズ](~/ios/app-fundamentals/localization/index.md)に関するページを参照してください。
@@ -562,7 +559,7 @@ namespace UsingResxLocalization.Android
 このコードが Android アプリケーション プロジェクトに追加されたら、翻訳された文字列を自動的に表示できます。
 
 > [!WARNING]
-> 翻訳された文字列が Android のリリース ビルドで動作しているが、デバッグ中は動作しない場合、 **[Android プロジェクト]** を右クリックし、 **[オプション] > [ビルド] > [Android のビルド]** の順に選択し、 **[迅速なアセンブリの配置]** がオフになっていることを確認します。 このオプションにより、リソースの読み込みに関する問題が発生するため、ローカライズされたアプリをテストする場合は使用しないでください。
+> 翻訳された文字列が Android のリリース ビルドで動作しているが、デバッグ中は動作しない場合、**[Android プロジェクト]** を右クリックし、**[オプション] > [ビルド] > [Android のビルド]** の順に選択し、**[迅速なアセンブリの配置]** がオフになっていることを確認します。 このオプションにより、リソースの読み込みに関する問題が発生するため、ローカライズされたアプリをテストする場合は使用しないでください。
 
 Android のローカライズについて詳しくは、「[Android のローカライズ](~/android/app-fundamentals/localization.md)」を参照してください。
 
@@ -727,7 +724,7 @@ switch (Device.RuntimePlatform)
 
 ### <a name="ios-application-project"></a>iOS アプリケーション プロジェクト
 
-iOS では、イメージおよび文字列リソースを含めるために、ローカライズ プロジェクト (つまり、 **.lproj**) ディレクトリという命名標準が使用されます。 これらのディレクトリには、アプリで使用されるローカライズされたバージョンのイメージを含めることができます。また、アプリ名をローカライズするために使用できる、**InfoPlist.strings** ファイルも含めることができます。 iOS のローカライズについて詳しくは、[iOS のローカライズ](~/ios/app-fundamentals/localization/index.md)に関するページを参照してください。
+iOS では、イメージおよび文字列リソースを含めるために、ローカライズ プロジェクト (つまり、**.lproj**) ディレクトリという命名標準が使用されます。 これらのディレクトリには、アプリで使用されるローカライズされたバージョンのイメージを含めることができます。また、アプリ名をローカライズするために使用できる、**InfoPlist.strings** ファイルも含めることができます。 iOS のローカライズについて詳しくは、[iOS のローカライズ](~/ios/app-fundamentals/localization/index.md)に関するページを参照してください。
 
 #### <a name="images"></a>イメージ
 

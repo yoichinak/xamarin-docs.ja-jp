@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 910f91478eeb6894e11748c929cc94bc2c0dbe64
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 01e6ae4362c902c0982f7b93cc1f65b003db1020
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283592"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70763243"
 ---
 # <a name="configuring-an-app-in-itunes-connect"></a>iTunes Connect でのアプリの構成
 
@@ -304,7 +304,6 @@ Apple の Game Center をサポートする iOS ゲーム アプリケーショ�
 
     [![](itunesconnect-images/review02.png "iTunes Connect でのリリース情報の編集")](itunesconnect-images/review02.png#lightbox)
 7. 画面の上部にある **[Save]\(保存\)** ボタンをクリックして、変更を保存します。
-
 
 ## <a name="maintaining-pricing-information"></a>価格情報の保持
 

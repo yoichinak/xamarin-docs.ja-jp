@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/30/2019
-ms.openlocfilehash: 49370813f50e3b5f1a9193c542b9f5f13d65a8e1
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: f24fdb768cc0c4e12fdc58f6e5386edd0db98527
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67829960"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753952"
 ---
 # <a name="multi-core-devices--xamarinandroid"></a>マルチコア デバイスと Xamarin.Android
 
@@ -79,7 +79,7 @@ Xamarin.Android 5.1 ではこのアーキテクチャのサポートが導入さ
 > [!NOTE]
 > Google TV は x86 上で実行されますが、Android の NDK ではサポートされていません。
 
-#### <a name="x8664"></a>x86_64
+#### <a name="x86_64"></a>x86_64
 
 これは、64 ビット x86 命令セット (*x64* または *AMD64* とも呼ばれます) をサポートする CPU の ABI の名前です。 Xamarin.Android 5.1 ではこのアーキテクチャのサポートが導入されています (詳細については「[64-bit runtime support (64 ビット ランタイムのサポート)](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/android/xamarin.android_5/xamarin.android_5.1/index.md#64-bit-runtime-support)」を参照)。
 
@@ -191,7 +191,6 @@ $APP/lib/libtwo.so # armeabi, NOT armeabi-v7a!
 ```
 
 その結果、`armeabi` `libmonodroid.so` は最初に `.apk` 内で見つかり、`armeabi-v7a` `libmonodroid.so`が存在し、ターゲット用に最適化されていても、抽出されるのは `armeabi` `libmonodroid.so` になります。 `armeabi` が SMP セーフではないため、あいまいな実行時エラーが発生する可能性もあります。
-
 
 ##### <a name="installing-native-libraries-android-404-and-later"></a>ネイティブ ライブラリのインストール: Android 4.0.4 以降
 

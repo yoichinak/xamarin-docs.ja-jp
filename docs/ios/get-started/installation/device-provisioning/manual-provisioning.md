@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 07/15/2017
-ms.openlocfilehash: 5f56a99e341f58bc06e8bf49305b5527a92f0413
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: c190e92c8366644c00e0f03c314d535f43f8046b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289711"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768636"
 ---
 # <a name="manual-provisioning-for-xamarinios"></a>Xamarin.iOS の手動プロビジョニング
 
@@ -265,7 +265,6 @@ Apple では、Xamarin.iOS アプリケーション用にアクティブ化で�
 
 4. ビルド構成がシミュレーターではなく **[iPhone]** または **[iPad]** に設定されていることを確認します。
 5. Visual Studio で **[実行]** をクリックして、デバイスで実行されているアプリを表示します。
-
 
 -----
 

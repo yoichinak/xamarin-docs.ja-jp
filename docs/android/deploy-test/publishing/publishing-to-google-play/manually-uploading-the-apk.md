@@ -6,18 +6,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: 3852e2a1460cb5659cf5a00dcc17fb9a6e9c26a8
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 47dd1da8c82c47ee07ad2b4e5a22a32010462de2
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525301"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756067"
 ---
 # <a name="manually-uploading-the-apk"></a>APK を手動でアップロードする
 
-
 APK を Google Play に初めて送信するときは (または、古いバージョンの Xamarin.Android が使われている場合は)、[Google Play Developer Console](https://play.google.com/apps/publish) を使って APK を手動でアップロードする必要があります。 このガイドでは、このプロセスに必要な手順について説明します。 
-
 
 ## <a name="google-play-developer-console"></a>Google Play Developer Console
 
@@ -25,15 +23,15 @@ APK のコンパイルとプロモーション アセットの準備が済んだ
 
 [![Google Play Developer Console](manually-uploading-the-apk-images/00-google-play-developer-console-sml.png)](manually-uploading-the-apk-images/00-google-play-developer-console.png#lightbox)
 
-Google Play に登録されたアプリが既にある場合は、**[Add new application]\(新しいアプリを追加する\)** ボタンをクリックします。
+Google Play に登録されたアプリが既にある場合は、 **[Add new application]\(新しいアプリを追加する\)** ボタンをクリックします。
 
 [![[Add new application]\(新しいアプリを追加する\) ボタン](manually-uploading-the-apk-images/01-existing-app-sml.png)](manually-uploading-the-apk-images/01-existing-app.png#lightbox)
 
-**[ADD NEW APPLICATION]\(新しいアプリケーションの追加\)** ダイアログが表示されたら、アプリの名前を入力して、**[Upload APK]\(APK のアップロード\)** をクリックします。
+**[ADD NEW APPLICATION]\(新しいアプリケーションの追加\)** ダイアログが表示されたら、アプリの名前を入力して、 **[Upload APK]\(APK のアップロード\)** をクリックします。
 
 [![[Upload APK]\(APK のアップロード\) ボタン](manually-uploading-the-apk-images/02-add-new-application-sml.png)](manually-uploading-the-apk-images/02-add-new-application.png#lightbox)
 
-次の画面では、アルファ テスト用、ベータ テスト用、または運用用にアプリを公開できます。 次の例では、**[ALPHA TESTING]\(アルファ テスト\)** タブが選ばれています。 **[MyApp]\(マイ アプリ\)** ではライセンス サービスは使われないので、この例では **[Get license key]\(ライセンス キーの取得\)** ボタンをクリックする必要はありません。 ここで、**[Upload your first APK to Alpha]\(最初の APK をアルファにアップロードする\)** ボタンをクリックしてアルファ チャネルに公開します。
+次の画面では、アルファ テスト用、ベータ テスト用、または運用用にアプリを公開できます。 次の例では、 **[ALPHA TESTING]\(アルファ テスト\)** タブが選ばれています。 **[MyApp]\(マイ アプリ\)** ではライセンス サービスは使われないので、この例では **[Get license key]\(ライセンス キーの取得\)** ボタンをクリックする必要はありません。 ここで、 **[Upload your first APK to Alpha]\(最初の APK をアルファにアップロードする\)** ボタンをクリックしてアルファ チャネルに公開します。
 
 [![[Upload your first APK to Alpha]\(最初の APK をアルファにアップロードする\) ボタン](manually-uploading-the-apk-images/03-upload-to-alpha-sml.png)](manually-uploading-the-apk-images/03-upload-to-alpha.png#lightbox)
 
@@ -54,13 +52,11 @@ APK をアップロードした後は、テスト方法を選ぶことができ�
 
 アップロードされた APK は、下書きとして保存されます。 次に説明するように Google Play に詳細を提供するまで、公開することはできません。
 
-
 ## <a name="store-listing"></a>ストアの一覧
 
 **Google Play Developer Console** で **[Store Listing]\(ストアの一覧\)** をクリックして、アプリケーションの潜在ユーザーに対して Google Play で表示される情報を入力します。 
 
 [![[Store Listing]\(ストアの一覧\) ダイアログ](manually-uploading-the-apk-images/07-store-listing-sml.png)](manually-uploading-the-apk-images/07-store-listing.png#lightbox)
-
 
 ### <a name="graphics-assets"></a>グラフィックス アセット
 
@@ -70,7 +66,6 @@ APK をアップロードした後は、テスト方法を選ぶことができ�
 
 それまでに準備されているすべてのプロモーション アセットがこのセクションにアップロードされます。 提供する必要のあるプロモーション アセットとそ形式に関するガイダンスが表示されます。
 
-
 ### <a name="categorization"></a>分類
 
 **[GRAPHICS ASSETS]\(グラフィックス アセット\)** セクションの次の **[CATEGORIZATION]\(分類\)** セクションでは、アプリケーションの種類とカテゴリを選びます。
@@ -79,7 +74,6 @@ APK をアップロードした後は、テスト方法を選ぶことができ�
 
 コンテンツのレーティングについては次のセクションの後で説明します。
 
-
 ### <a name="contact-details"></a>連絡先の詳細
 
 このページの最後のセクションは **[CONTACT DETAILS]\(連絡先の詳細\)** セクションです。 このセクションでは、アプリケーション開発者の連絡先情報を収集します。
@@ -87,7 +81,6 @@ APK をアップロードした後は、テスト方法を選ぶことができ�
 [![[Contact Details]\(連絡先の詳細\) セクション](manually-uploading-the-apk-images/10-contact-details-sml.png)](manually-uploading-the-apk-images/10-contact-details.png#lightbox)
 
 アプリのプライバシー ポリシーの URL を **[PRIVACY POLICY]\(プライバシー ポリシー\)** セクションで指定できます (上図)。
-
 
 ## <a name="content-rating"></a>コンテンツのレーティング
 
@@ -111,17 +104,15 @@ Google Play レーティング システムの 4 つのレベルと、レーテ�
 
 成熟度中のリストの項目は主観的であり、成熟度中のレーティングを示すように思われるガイドラインが成熟度高のレーティングに該当するのに十分な激しさである可能性があります。 
 
-
 ## <a name="pricing-amp-distribution"></a>価格と配布
 
 **Google Play Developer Console** と **[Pricing and Distribution]\(価格と配布\)** をクリックします。 このページでは、アプリが有料の場合に価格を設定します。
 全ユーザーに無料でアプリケーションを配布することもできます。 いったん無料として指定したアプリケーションは、ずっと無料のままにする必要があります。
 Google Play では、無料のアプリケーションを有料に変更することはできません (ただし、無料アプリでアプリ内課金によりコンテンツを販売することはできます)。 有料アプリを無料アプリに変更することはいつでもできます。
 
-有料アプリを公開するには、事前に販売者アカウントが必要です。そのためには、**[set up a merchant account]\(販売者アカウントのセットアップ\)** をクリックして、指示に従います。
+有料アプリを公開するには、事前に販売者アカウントが必要です。そのためには、 **[set up a merchant account]\(販売者アカウントのセットアップ\)** をクリックして、指示に従います。
 
 [![[Pricing and Distribution]\(価格と配布\) ダイアログ](manually-uploading-the-apk-images/12-pricing-sml.png)](manually-uploading-the-apk-images/12-pricing.png#lightbox)
-
 
 ### <a name="manage-countries"></a>国の管理
 
@@ -129,15 +120,13 @@ Google Play では、無料のアプリケーションを有料に変更する�
 
 [![[Manage Countries]\(国の管理\) ダイアログ](manually-uploading-the-apk-images/13-manage-countries-sml.png)](manually-uploading-the-apk-images/13-manage-countries.png#lightbox)
 
-
 ### <a name="other-information"></a>その他の情報
 
-さらに下にスクロールして、アプリに広告が含まれるかどうかを指定します。 また、**[DEVICE CATEGORIES]\(デバイス カテゴリ\)** セクションには、オプションで Android Wear、Android TV、または Android Auto にアプリを配布するオプションがあります。
+さらに下にスクロールして、アプリに広告が含まれるかどうかを指定します。 また、 **[DEVICE CATEGORIES]\(デバイス カテゴリ\)** セクションには、オプションで Android Wear、Android TV、または Android Auto にアプリを配布するオプションがあります。
 
 [![[Contains Ads]\(広告の有無\) セクション](manually-uploading-the-apk-images/14-contains-ads-sml.png)](manually-uploading-the-apk-images/14-contains-ads.png#lightbox)
 
-このセクションの後には、**[Designed for Families]\(ファミリー向けデザイン\)** や Google Play for Education 経由のアプリ配布など、選択可能な追加オプションがあります。
-
+このセクションの後には、 **[Designed for Families]\(ファミリー向けデザイン\)** や Google Play for Education 経由のアプリ配布など、選択可能な追加オプションがあります。
 
 ### <a name="consent"></a>同意
 
@@ -148,8 +137,6 @@ Google Play では、無料のアプリケーションを有料に変更する�
 
 Xamarin.Android アプリの公開に関しては、このガイドでは説明しきれません。
 Google Play でのアプリ公開の詳細については、「[Welcome to the Google Play Developer Console Help Center](https://support.google.com/googleplay/android-developer#topic=3450769)」(Google Play Developer Console ヘルプ センターへようこそ) をご覧ください。
-
-
 
 ## <a name="google-play-filters"></a>Google Play フィルター
 

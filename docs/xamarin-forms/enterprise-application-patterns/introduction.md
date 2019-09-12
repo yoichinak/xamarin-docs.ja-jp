@@ -106,7 +106,7 @@ EShopOnContainers モバイルアプリは、次の Xamarin. フォーム機能�
 - コマンド
 - ビヘイビアー
 - トリガー
-- エフェクト
+- Effects
 - カスタム レンダラー
 - MessagingCenter
 - カスタム コントロール
@@ -142,7 +142,7 @@ EShopOnContainers PCL プロジェクトには、次のフォルダーが含ま�
 |ビヘイビアー|ビュークラスに公開される動作を格納します。|
 |コントロール|アプリによって使用されるカスタムコントロールが含まれます。|
 |コンバーター|カスタムロジックをバインディングに適用する値コンバーターを格納します。|
-|エフェクト|`EntryLineColorEffect` 特定`Entry`のコントロールの境界線の色を変更するために使用されるクラスが含まれています。|
+|Effects|`EntryLineColorEffect` クラスを含みます。これは特定の`Entry`コントロールの境界線の色を変更するために使用されます。|
 |例外|カスタム`ServiceAuthenticationException`を格納します。|
 |拡張機能|クラス`VisualElement` および`IEnumerable`クラスの拡張メソッドが含まれています。|
 |支援|アプリのヘルパークラスが含まれています。|

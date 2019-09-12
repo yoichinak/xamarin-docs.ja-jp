@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 12/02/2016
-ms.openlocfilehash: 170bd30d65b9f5947bdb9d23d3100a8048f73ac7
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 4bbfbaf2b7efc7e1d2f75a7462d6a2559ed7a9c0
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67864057"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755700"
 ---
 # <a name="hello-android-multiscreen"></a>Hello Android のマルチスクリーン
 
@@ -26,7 +26,6 @@ _このガイドは 2 つに分かれています。2 つ目の画面を処理�
 ## <a name="part-2-deep-diveandroidget-startedhello-android-multiscreenhello-android-multiscreen-deepdivemd"></a>[第 2 部: 詳しく調べる](~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-deepdive.md)
 
 このドキュメントの後半では、ビルドした内容を確認し、アーキテクチャ、ナビゲーション、およびその過程で遭遇したその他の新しい Android の概念について説明します。
-
 
 ## <a name="related-links"></a>関連リンク
 

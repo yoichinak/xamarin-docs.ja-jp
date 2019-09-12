@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 11/10/2017
-ms.openlocfilehash: 00d5d5cf9cda38fbfc09fcfe8b4dcb56d00dee5b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 4b538df5e8e615f8594bd38cb13d9b45b0961dac
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291425"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770135"
 ---
 # <a name="xamarinmac-linker-options"></a>Xamarin.Mac リンカー オプション
 
@@ -53,7 +53,6 @@ Xamarin.Mac プロジェクトのリンカー構成に変更するには、次�
 
 4. Full のターゲット フレームワークのプラットフォーム リンクは、今後更新されるまで IDE に表示されません。 それまでは、代わりに `--linkplatform` を **追加の mmp 引数**に追加します。
 5. **[OK]** をクリックして変更内容を保存します。
-
 
 ## <a name="related-links"></a>関連リンク
 

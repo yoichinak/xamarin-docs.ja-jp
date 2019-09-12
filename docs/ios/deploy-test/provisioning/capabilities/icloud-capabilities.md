@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2017
-ms.openlocfilehash: 0972b7c6fa686f40ca548f8267f8e514e9244f05
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 3fd3ec0207ac3ae1e5fcaa7d11d91247cd73666d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286140"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70762903"
 ---
 # <a name="icloud-capabilities-in-xamarinios"></a>Xamarin.iOS の iCloud 機能
 
@@ -92,7 +92,7 @@ Developer Center から新しいアプリをプロビジョニングするとき
     ![コンテナーの選択画面](icloud-capabilities-images/image34.png)
 
 10. コンテナーの割り当てを確認し、 **[Assign]\(割り当て\)** を押します。
- 
+
 これでこのアプリ ID を使用して、新しいプロビジョニング プロファイルの生成または再生成ができます。手順については、[機能の使用](~/ios/deploy-test/provisioning/capabilities/index.md)に関するガイドを参照してください。 
 
 iCloud の使用に関する詳細は、次のガイドを参照してください。
@@ -102,7 +102,7 @@ iCloud の使用に関する詳細は、次のガイドを参照してくださ�
 * [Document Picker の概要](~/ios/platform/document-picker.md)
 
 ## <a name="next-steps"></a>次の手順
- 
+
 以下のリストでは、実行する必要がある可能性のある追加の手順について説明します。
 
 * アプリでフレームワークの名前空間を使用します。

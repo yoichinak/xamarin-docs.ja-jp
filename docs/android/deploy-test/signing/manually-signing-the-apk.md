@@ -6,15 +6,14 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: d20ec990253ff86e7b426baad8da5a919a91ef6c
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 3be55c2149aa58bf6d8462e5c1ff24166078355f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525013"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755899"
 ---
 # <a name="manually-signing-the-apk"></a>APK に手動で署名する
-
 
 アプリケーションがリリースのためにビルドされたら、Android デバイスで実行できるように、配信に先立ち APK に署名する必要があります。 このプロセスは一般的に IDE で処理されます。ただし、コマンド ラインで、手動で APK に署名することが必要な状況があります。 APK 署名には次の手順が含まれます。
 
@@ -27,15 +26,11 @@ ms.locfileid: "69525013"
 
 順序は重要です。APK の署名に利用されるツールによって変わります。 **apksigner** を使用するときは、先にアプリケーションに **zipalign** を実行し、それから **apksigner** で署名することが重要です。  **jarsigner** を使用して APK に署名する必要がある場合、先に APK に署名し、それから **zipalign** を実行することが重要です。 
 
-
-
 ## <a name="prerequisites"></a>必須コンポーネント
 
 このガイドでは、Android SDK ビルド ツール v24.0.3 以降の **apksigner** を利用します。 APK が既にビルドされていると想定しています。
 
 以前のバージョンの Android SDK ビルド ツールでビルドされたアプリケーションの場合、以下の「[jarsigner で APK に署名する](#Sign_the_APK_with_jarsigner)」の説明どおりに **jarsigner** を使用する必要があります。
-
-
 
 ## <a name="create-a-private-keystore"></a>プライベート キーストアを作成する
 
@@ -48,8 +43,6 @@ ms.locfileid: "69525013"
 
 このキーストアを保護することが重要です。 失った場合、Google Play でアプリケーションの更新プログラムを公開できなくなります。
 失われたキーストアで引き起こされた問題を解決する唯一の策は、新しいキーストアを作成し、新しいキーで APK にもう一度署名し、新しいアプリケーションを提出することです。 古いアプリケーションは Google Play から削除する必要があります。 同様に、新しいキーストアが危険にさらされたり、公的に配布されたりした場合、アプリケーションの非公式バージョンや悪意のあるバージョンが配布される可能性があります。
-
-
 
 ### <a name="create-a-new-keystore"></a>キーストアの新規作成
 
@@ -95,7 +88,6 @@ Re-enter new password:
 $ keytool -list -keystore xample.keystore
 ```
 
-
 ## <a name="zipalign-the-apk"></a>APK に zipalign を実行する
 
 **apksigner** で APK に署名する前に、Android SDK の **zipalign** ツールでファイルを最適化することが重要です。 **zipalign** は 4 バイト境界に沿って APK でリソースを再構築します。 この配置では、Android は APK からリソースをすばやくロードできます。アプリケーションのパフォーマンスが上がるほか、メモリの使用率が減る可能性もあります。 Xamarin.Android はランタイム チェックを実行し、APK に zipalign が実行されているかどうかを判断します。 APK に zipalign が実行されていない場合、アプリケーションは実行されません。
@@ -105,7 +97,6 @@ $ keytool -list -keystore xample.keystore
 ```shell
 $ zipalign -f -v 4 mono.samples.helloworld-unsigned.apk helloworld.apk
 ```
-
 
 ## <a name="sign-the-apk"></a>APK に署名する
 
@@ -129,7 +120,6 @@ $ apksigner sign --ks xample.keystore --ks-key-alias publishingdoc mono.samples.
 > [!NOTE]
 > [Google 問題 62696222](https://issuetracker.google.com/issues/62696222) によると、**apksigner** は Android SDK から "消えています"。 これを回避する方法は、Android SDK ビルド ツール v25.0.3 をインストールし、そのバージョンの **apksigner** を使用することです。  
 
-
 <a name="Sign_the_APK_with_jarsigner" />
 
 ### <a name="sign-the-apk-with-jarsigner"></a>jarsigner で APK に署名する
@@ -147,8 +137,6 @@ $ jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore xample.keysto
 
 > [!NOTE]
 > **jarsigner** を利用するとき、_先に_ APK に署名し、それから **zipalign** を使用することが重要です。  
-
-
 
 ## <a name="related-links"></a>関連リンク
 

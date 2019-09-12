@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/05/2016
-ms.openlocfilehash: c5271aab5342f065694e598bd5c2892ef1f18aeb
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 04d96dad455cbcf8360f12ee97a0540e7e746d62
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656673"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771470"
 ---
 # <a name="passing-effect-parameters-as-common-language-runtime-properties"></a>共通言語ランタイム プロパティとして効果のパラメーターを渡す
 
@@ -237,7 +237,6 @@ namespace EffectsDemo.UWP
 ## <a name="summary"></a>まとめ
 
 この記事では、CLR プロパティを使用して効果にパラメーターを渡す方法について説明しました。 CLR プロパティは、実行時のプロパティの変更に応答しない効果のパラメーターの定義に使用できます。
-
 
 ## <a name="related-links"></a>関連リンク
 

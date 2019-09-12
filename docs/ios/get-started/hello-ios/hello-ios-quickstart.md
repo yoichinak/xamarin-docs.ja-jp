@@ -9,12 +9,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 10/05/2018
-ms.openlocfilehash: 45eda150b0cff9462cfe5f09be4b04ea64ec391d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 5508636905acbb513aec4c6e065e9296293310d3
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284560"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768672"
 ---
 # <a name="hello-ios--quickstart"></a>Hello, iOS – クイックスタート
 
@@ -329,7 +329,6 @@ Xamarin.iOS は次のセットアップで機能します。
 
     ![](hello-ios-quickstart-images/vs-image14.png "ボタンの幅がテキスト フィールドやラベルの幅と同じになるように幅を調整します")
 
-
 1. デザイン サーフェイスで**ボタン**が選択されている状態で、 **[プロパティ]** パッドの **[ID]** セクションの **[名前]** プロパティを `TranslateButton` に変更します。 **[タイトル]** プロパティを "Translate" に変更します。
 
     ![](hello-ios-quickstart-images/vs-image15.png "[タイトル] プロパティを「Translate」に変更します")
@@ -424,7 +423,6 @@ Xamarin.iOS は次のセットアップで機能します。
 1. ハンドルとボタンの相互作用にロジックを追加できるように、**ソリューション エクスプローラー**の **ViewController.cs** をダブルクリックして開きます。
 
     ![](hello-ios-quickstart-images/vs-image20.png "ボタンとの相互作用を処理するために追加されたロジック")
-
 
 1. 最初に `TranslateButton` を接続します。 **ViewController** クラスで、`ViewDidLoad` メソッドを見つけます。 `ViewDidLoad` 内の `base.ViewDidLoad()` 呼び出しの下に次のボタン コードを追加します。
 

@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 19da0de80819a48259a28b30e003c32923d37378
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: af6e491725ac3dad843238c1adb547ac76a9c9ea
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650681"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771866"
 ---
 # <a name="highlighting-a-route-on-a-map"></a>マップ上でのルートの強調表示
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-map-polyline)
 
-"_この記事では、マップにポリラインのオーバーレイを追加する方法について説明します。ポリラインのオーバーレイは一連の接続された線分であり、通常はマップ上のルートを示すため、または必要な任意の図形を形成するために使用されます。_ "
+"_この記事では、マップにポリラインのオーバーレイを追加する方法について説明します。ポリラインのオーバーレイは一連の接続された線分であり、通常はマップ上のルートを示すため、または必要な任意の図形を形成するために使用されます。_"
 
 ## <a name="overview"></a>概要
 
@@ -300,7 +300,6 @@ namespace MapOverlay.UWP
 ## <a name="summary"></a>まとめ
 
 この記事では、ポリラインのオーバーレイをマップに追加して、ルートやその他の必要な形状をマップ上に表示する方法について説明しました。
-
 
 ## <a name="related-links"></a>関連リンク
 

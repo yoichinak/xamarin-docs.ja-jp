@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/09/2018
-ms.openlocfilehash: 54b57097c7742cb5c09f97b40c68c72b6f9c3bf1
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: da0a441be9cd07af456b1600155151e48d44162c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525111"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758060"
 ---
 # <a name="setting-up-the-android-sdk-for-xamarinandroid"></a>Xamarin.Android 向け Android SDK を設定する
 
@@ -50,7 +50,6 @@ Xamarin Android SDK Manager には、Java Development Kit (Xamarin.Android と�
 > [!IMPORTANT]
 > Xamarin.Android は JDK 9 をサポートしていません。
 
- 
 ## <a name="sdk-manager"></a>SDK Manager 
 
 Visual Studio で SDK Manager を起動するには、**[ツール]、[Android]、[Android SDK Manager]** の順にクリックします。
@@ -62,7 +61,6 @@ Android SDK Manager が [**Android SDK とツール**] 画面で開きます。 
 [![[プラットフォーム] タブが開かれた Android SDK Manager のスクリーン ショット](android-sdk-images/win/03-sdk-manager-platforms-sml.png)](android-sdk-images/win/03-sdk-manager-platforms.png#lightbox)
 
 [**Android SDK とツール**] 画面の詳細については、以降のセクションで詳しく説明します。
-
 
 ### <a name="android-sdk-location"></a>Android SDK の場所
 
@@ -78,12 +76,10 @@ Android SDK の場所を設定するには、[**Android SDK の場所**] の右�
 
 [**OK**] をクリックすると、選択された場所にインストールされている Android SDK が SDK Manager によって管理されます。
 
-
 ### <a name="tools-tab"></a>[ツール] タブ
 
 [**ツール**] タブには_ツール_と_その他_の一覧が表示されます。 Android SDK のツール、プラットフォーム ツールおよびビルド ツールをインストールするには、このタブを使用します。
 また、Android Emulator、低レベル デバッガー (LLDB)、NDK HAXM アクセラレータ、および Google Play ライブラリをインストールすることもできます。
-
 
 たとえば、Google Android Emulator パッケージをダウンロードするには、[**Android Emulator**] の横のチェック マークをクリックし、[**変更の適用**] ボタンをクリックします。
 
@@ -127,7 +123,6 @@ Google リポジトリを選択すると、以前は使用できなかった追�
 
 プラットフォームとツールのサポート対象のリポジトリに戻すには、[**Microsoft (推奨)**] をクリックします。 これにより、パッケージとツールの一覧が、既定の選択に戻ります。
 
-
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 ## <a name="requirements"></a>必要条件
@@ -146,11 +141,11 @@ Xamarin Android SDK Manager には、Java Development Kit (Xamarin.Android と�
 
 > [!IMPORTANT]
 > Xamarin.Android は JDK 9 をサポートしていません。
- 
+
 ## <a name="sdk-manager"></a>SDK Manager 
 
 Visual Studio for Mac で SDK Manager を起動するには、**[ツール]、[SDK Manager]** の順にクリックします。
- 
+
 [![Android SDK Manager のメニュー アイテムの場所](android-sdk-images/mac/01-sdk-manager-menu-item-m75-sml.png)](android-sdk-images/mac/01-sdk-manager-menu-item-m75.png#lightbox)
 
 **Android SDK Manager** は、[**プラットフォーム**]、[**ツール**]、および [**場所**] の 3 つのタブがある [**Preferences window**]\(環境設定ウィンドウ\) に開きます。
@@ -158,7 +153,6 @@ Visual Studio for Mac で SDK Manager を起動するには、**[ツール]、[S
 [![[プラットフォーム] タブが開かれた Android SDK Manager のスクリーン ショット](android-sdk-images/mac/02-sdk-manager-platforms-m75-sml.png)](android-sdk-images/mac/02-sdk-manager-platforms-m75.png#lightbox)
 
 Android SDK Manager のタブは以降のセクションで説明します。
-
 
 ### <a name="locations-tab"></a>[場所] タブ
 
@@ -186,7 +180,6 @@ Android SDK および Java JDK の場所を変更する場合、通常は [**場
 [![[ライセンスの同意] 画面](android-sdk-images/mac/05-license-acceptance-m75-sml.png)](android-sdk-images/mac/05-license-acceptance-m75.png#lightbox)
 
 使用条件に同意する場合、[**同意**] をクリックします。 ウィンドウの下部に、ダウンロードとインストールの進行状況を示す進行状況バーが表示されます。 インストールが完了すると、[**ツール**] タブに選択したツールとその他の機能がインストールされたことが表示されます。
-
 
 ### <a name="platforms-tab"></a>[プラットフォーム] タブ
 
@@ -222,11 +215,9 @@ Google リポジトリを選択すると、以前は使用できなかった追�
 
 -----
 
- 
 ## <a name="summary"></a>まとめ
 
 このガイドでは、Visual Studio および Visual Studio for Mac に Xamarin Android SDK Manager ツールをインストールして使用する方法を説明しました。
-
 
 ## <a name="related-links"></a>関連リンク
 

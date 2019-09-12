@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 04/12/2017
-ms.openlocfilehash: c0a4766abf8ded591bf348f2c2a7ba2283cdde00
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 8b2d9d49e37b195dadf3aa89fefb0911e4215d14
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290242"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769926"
 ---
 # <a name="provisioning-profiles-for-xamarinmac-apps"></a>Xamarin.Mac アプリのプロビジョニング プロファイル
 
@@ -90,7 +90,6 @@ Mac App Store に送信するパッケージをビルドするには、実稼働
 7. プロビジョニング プロファイルも一覧に表示されます。 
 
     [![](profiles-images/certif26.png "インストールされているプロファイルの表示")](profiles-images/certif26.png#lightbox)
-
 
 開発者が、アプリ ID で使用されている機能を変更する場合 ( iCloud またはプッシュ通知の有効化など)、そのアプリ ID のプロビジョニング プロファイルを再作成する必要があります。
 

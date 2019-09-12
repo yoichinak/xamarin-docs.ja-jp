@@ -6,12 +6,12 @@ ms.assetid: 9ce61f18-22ac-4b93-91be-5b499677d661
 author: conceptdev
 ms.author: crdun
 ms.date: 03/24/2017
-ms.openlocfilehash: f31fd699aad95ff785ff887b2a2a8b6f2601ad7b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7fcb482fd17cba267d25dbea5d25232f2cf6ff2f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290187"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765943"
 ---
 # <a name="cross-platform-performance"></a>クロスプラットフォームのパフォーマンス
 
@@ -173,7 +173,6 @@ public class Subscriber : IDisposable
 
 遅延初期化を使用して、最初に使用されるまでオブジェクトの作成を遅らせることができます。 この手法は主に、パフォーマンスの改善、計算の回避、メモリ要件の縮小を目的として利用されます。
 
-
 以下の 2 つのシナリオの場合は作成コストのかかるオブジェクトに対して遅延初期化を使用することを検討してください。
 
 - アプリケーションでオブジェクトを使用しない可能性がある。
@@ -246,8 +245,6 @@ public class FaceDetection
 
 > [!IMPORTANT]
 > `CancellationTokenSource` クラスは `IDisposable` インターフェイスを実装します。そのため、`CancellationTokenSource` インスタンスが終了したら `CancellationTokenSource.Dispose` メソッドを呼び出す必要があります。
-
-
 
 詳細については、「[非同期サポートの概要](~/cross-platform/platform/async.md)」を参照してください。
 

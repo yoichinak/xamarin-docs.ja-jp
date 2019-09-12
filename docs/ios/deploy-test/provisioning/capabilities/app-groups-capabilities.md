@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2017
-ms.openlocfilehash: cf79f586e5b0ff71c109ea9664d3cb7a6aa91a02
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 72e0c27502c10fe3522d80c6345a847ca424d49f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292374"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70762790"
 ---
 # <a name="app-group-capabilities-in-xamarinios"></a>Xamarin.iOS のアプリ グループ機能
 
@@ -73,7 +73,7 @@ _アプリケーションに機能を追加するには、多くの場合、追�
 12. アプリ グループを使用するすべてのアプリ (または拡張機能) についてこれらの手順を繰り返します。
 
 ## <a name="next-steps"></a>次の手順
- 
+
 以下のリストでは、実行する必要がある可能性のある追加の手順について説明します。
 
 * アプリでフレームワークの名前空間を使用します。

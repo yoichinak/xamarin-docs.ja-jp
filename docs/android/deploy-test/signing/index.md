@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/02/2018
-ms.openlocfilehash: 5bdd95409e71955b4f1549eece42b15cee38131a
-ms.sourcegitcommit: a7170494e1975f0f1be547a45444752fd8e57819
+ms.openlocfilehash: 0a60031481f16a3a600cca090d39ec47cbb8ca9a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58506994"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756055"
 ---
 # <a name="signing-the-android-application-package"></a>Android アプリケーション パッケージに署名する
 
@@ -20,13 +20,13 @@ ms.locfileid: "58506994"
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[公開のためのアーカイブ](~/android/deploy-test/release-prep/index.md#archive)では、**[配布チャネル]** ダイアログに 2 種類の配布方法が表示されていました。 **[アドホック]** を選択します。
+[公開のためのアーカイブ](~/android/deploy-test/release-prep/index.md#archive)では、 **[配布チャネル]** ダイアログに 2 種類の配布方法が表示されていました。 **[アドホック]** を選択します。
 
 [![[配布チャネル] ダイアログ](images/vs/01-distribution-channel-sml.png)](images/vs/01-distribution-channel.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-[公開のためのアーカイブ](~/android/deploy-test/release-prep/index.md#archive)では、**[署名と配布...]** ダイアログに 2 種類の配布方法が表示されました。 **[アドホック]** を選択して **[次へ]** をクリックします。
+[公開のためのアーカイブ](~/android/deploy-test/release-prep/index.md#archive)では、 **[署名と配布...]** ダイアログに 2 種類の配布方法が表示されました。 **[アドホック]** を選択して **[次へ]** をクリックします。
 
 [![[署名と配布] ダイアログ](images/xs/01-select-ad-hoc-sml.png)](images/xs/01-select-ad-hoc.png#lightbox)
 
@@ -42,7 +42,7 @@ ms.locfileid: "58506994"
 
 **[アドホック]** を選択すると、次のスクリーンショットに示されているように、Visual Studio でダイアログの **[署名 ID]** ページが開きます。 .APK を公開するには、まず署名キー (証明書とも呼ばれます) で署名する必要があります。
 
-既存の証明書を使用するには、**[インポート]** ボタンをクリックし、[[APK の署名]](#sign-the-apk) に進みます。 または、**[+]** ボタンをクリックして、新しい証明書を作成します。
+既存の証明書を使用するには、 **[インポート]** ボタンをクリックし、[[APK の署名]](#sign-the-apk) に進みます。 または、 **[+]** ボタンをクリックして、新しい証明書を作成します。
 
 [![アドホック署名 ID](images/vs/02-ad-hoc-signing-identity-vs-sml.png)](images/vs/02-ad-hoc-signing-identity-vs.png#lightbox)
 
@@ -69,11 +69,11 @@ ms.locfileid: "58506994"
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-**[アドホック]** をクリックすると、次のスクリーンショットに示すように、Visual Studio for Mac で **[Android の署名の識別情報]** ダイアログが開きます。 .APK を公開するには、まず署名キー (証明書とも呼ばれます) で署名する必要があります。 証明書が既に存在する場合は、**[既存のキーをインポート]** ボタンをクリックしてインポートし、[[APK の署名]](#sign-the-apk) に進みます。または、**[キーの新規作成]** ボタンをクリックして新しい証明書を作成します。
+**[アドホック]** をクリックすると、次のスクリーンショットに示すように、Visual Studio for Mac で **[Android の署名の識別情報]** ダイアログが開きます。 .APK を公開するには、まず署名キー (証明書とも呼ばれます) で署名する必要があります。 証明書が既に存在する場合は、 **[既存のキーをインポート]** ボタンをクリックしてインポートし、[[APK の署名]](#sign-the-apk) に進みます。または、 **[キーの新規作成]** ボタンをクリックして新しい証明書を作成します。
 
 [![[Android の署名の識別情報] ダイアログ](images/xs/02-android-signing-identity-sml.png)](images/xs/02-android-signing-identity.png#lightbox)
 
-**[新しい証明書を作成]** ダイアログは、Android アプリケーションの署名に使用できる新しい署名証明書を作成するために使用されます。 必要な情報を入力したら、**[OK]** をクリックします。
+**[新しい証明書を作成]** ダイアログは、Android アプリケーションの署名に使用できる新しい署名証明書を作成するために使用されます。 必要な情報を入力したら、 **[OK]** をクリックします。
 
 [![[新しい証明書を作成] ダイアログ](images/xs/03-create-new-certificate-sml.png)](images/xs/03-create-new-certificate.png#lightbox)
 
@@ -84,7 +84,6 @@ ms.locfileid: "58506994"
 たとえば、上記の手順では、次の場所に新しい署名キーが作成される場合があります。
 
 **~/Library/Developer/Xamarin/Keystore/chimp/chimp.keystore**
-
 
 > [!NOTE]
 > 結果として得られるキーストア ファイルとパスワードは、必ず安全な場所にバックアップを作成しておきます &ndash; これはソリューションには含まれません。 (たとえば、別のコンピューターに移動したり macOS を再インストールしたりしたことが原因で) キーストア ファイルを紛失した場合、以前のバージョンと同じ証明書を使用してアプリに署名できなくなります。
@@ -97,20 +96,20 @@ ms.locfileid: "58506994"
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-**[作成]** をクリックすると、新しいキー ストア (新しい証明書を含む) が保存され、次のスクリーンショットに示すように、**[署名 ID]** の下に一覧表示されます。 Google Play でアプリを公開するには、**[キャンセル]** をクリックして「[Google Play に公開する](~/android/deploy-test/publishing/publishing-to-google-play/index.md)」に進みます。
-*アドホック*を公開するには、署名に使用する署名 ID を選択し、**[名前を付けて保存]** をクリックして独立したディストリビューション用にアプリを公開します。 たとえば、このスクリーンショットでは、(以前に作成した) **chimp** 署名 ID が選択されています。
+**[作成]** をクリックすると、新しいキー ストア (新しい証明書を含む) が保存され、次のスクリーンショットに示すように、 **[署名 ID]** の下に一覧表示されます。 Google Play でアプリを公開するには、 **[キャンセル]** をクリックして「[Google Play に公開する](~/android/deploy-test/publishing/publishing-to-google-play/index.md)」に進みます。
+*アドホック*を公開するには、署名に使用する署名 ID を選択し、 **[名前を付けて保存]** をクリックして独立したディストリビューション用にアプリを公開します。 たとえば、このスクリーンショットでは、(以前に作成した) **chimp** 署名 ID が選択されています。
 
 [![署名 ID の例](images/vs/05-save-as-vs-sml.png)](images/vs/05-save-as-vs.png#lightbox)
 
-次に、**[アーカイブ マネージャー]** に公開の進行状況が表示されます。 公開プロセスが完了すると、**[名前を付けて保存]** ダイアログが開き、生成された .APK ファイルを格納する場所を尋ねられます。
+次に、 **[アーカイブ マネージャー]** に公開の進行状況が表示されます。 公開プロセスが完了すると、 **[名前を付けて保存]** ダイアログが開き、生成された .APK ファイルを格納する場所を尋ねられます。
 
 [![[名前を付けて保存] ダイアログ](images/vs/06-save-as-dialog-vs-sml.png)](images/vs/06-save-as-dialog-vs.png#lightbox)
 
-目的の場所に移動し、**[保存]** をクリックします。 キー パスワードが不明の場合、**[署名パスワード]** ダイアログが表示され、選択した証明書のパスワードが求められます。
+目的の場所に移動し、 **[保存]** をクリックします。 キー パスワードが不明の場合、 **[署名パスワード]** ダイアログが表示され、選択した証明書のパスワードが求められます。
 
 [![[署名パスワード] ダイアログ](images/vs/07-signing-password-vs-sml.png)](images/vs/07-signing-password-vs.png#lightbox)
 
-署名プロセスが完了したら、**[ディストリビューションを開く]** をクリックします。
+署名プロセスが完了したら、 **[ディストリビューションを開く]** をクリックします。
 
 [![[ディストリビューションを開く] ボタン](images/vs/08-open-distribution-sml.png)](images/vs/08-open-distribution.png#lightbox)
 
@@ -121,13 +120,12 @@ ms.locfileid: "58506994"
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-
-既に説明したように、新しい証明書がキー ストアに追加されました。 Google Play でアプリを公開するには、**[キャンセル]** をクリックして「[Google Play に公開する](~/android/deploy-test/publishing/publishing-to-google-play/index.md)」に進みます。
-または、**[次へ]** をクリックして、この例で示すように (独立したディストリビューション用に) アプリの*アドホック*を公開します。
+既に説明したように、新しい証明書がキー ストアに追加されました。 Google Play でアプリを公開するには、 **[キャンセル]** をクリックして「[Google Play に公開する](~/android/deploy-test/publishing/publishing-to-google-play/index.md)」に進みます。
+または、 **[次へ]** をクリックして、この例で示すように (独立したディストリビューション用に) アプリの*アドホック*を公開します。
 
 [![[署名と配布] ダイアログ](images/xs/04-select-identity-sml.png)](images/xs/04-select-identity.png#lightbox)
 
-**[アドホックとして公開します]** ダイアログでは、公開前の署名済みアプリの概要を提供します。 この情報が正しければ、**[公開]** をクリックします。
+**[アドホックとして公開します]** ダイアログでは、公開前の署名済みアプリの概要を提供します。 この情報が正しければ、 **[公開]** をクリックします。
 
 [![[アドホックとして公開します] ダイアログ](images/xs/05-publish-ad-hoc-sml.png)](images/xs/05-publish-ad-hoc.png#lightbox)
 
@@ -135,7 +133,7 @@ ms.locfileid: "58506994"
 
 ![[APK ファイルを出力] ダイアログ](images/xs/06-output-apk-file.png)
 
-次に、証明書のパスワード (**[新しい証明書を作成]** ダイアログで使用したパスワード) を入力し、**[OK]** をクリックします。
+次に、証明書のパスワード ( **[新しい証明書を作成]** ダイアログで使用したパスワード) を入力し、 **[OK]** をクリックします。
 
 ![証明書パスワードの入力](images/xs/07-signing-certificate.png)
 
@@ -150,8 +148,6 @@ APK が証明書で署名され、指定した場所に保存されます。 **[
 Finder から APK をコピーして最終的な宛先に送信することができます。 配布する前に、Android デバイスに APK をインストールして試すことをお勧めします。 *アドホック* APK の公開に関する詳細は、「[個別公開](~/android/deploy-test/publishing/publishing-independently.md)」を参照してください。
 
 -----
-
-
 
 ## <a name="next-steps"></a>次の手順
 

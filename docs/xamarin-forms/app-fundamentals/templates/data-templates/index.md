@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/11/2017
-ms.openlocfilehash: 6cb828f59505159c972d40905f22995055f207df
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 5d130a6644af4e5831263c6de137513c021e0b6a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646858"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760801"
 ---
 # <a name="xamarinforms-data-templates"></a>Xamarin.Forms のデータ テンプレート
 
@@ -31,7 +31,6 @@ Xamarin.Forms のデータ テンプレートを使うと、サポートされ�
 ## <a name="creating-a-datatemplateselectorselectormd"></a>[DataTemplateSelector の作成](selector.md)
 
 [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector) を使って、データ バインドされたプロパティの値に基づいて実行時に [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) を選択できます。 これにより、複数の `DataTemplate` インスタンスを同じ種類のオブジェクトに適用し、特定のオブジェクトの外観をカスタマイズできます。 この記事では、`DataTemplateSelector` を作成して使用する方法を示します。
-
 
 ## <a name="related-links"></a>関連リンク
 

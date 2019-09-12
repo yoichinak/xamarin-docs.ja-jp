@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2017
-ms.openlocfilehash: 8afe9e703d357c246ec46756a87a7337859d5888
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 1844136bb62930341cf00ec871fdd2ff8ff8fe1f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287026"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70762741"
 ---
 # <a name="wallet-capabilities-in-xamarinios"></a>Xamarin.iOS のウォレット機能
 
@@ -54,13 +54,12 @@ _アプリケーションに機能を追加するには、多くの場合、追�
 
 ![新しく作成したアプリ ID を使用してプロビジョニング プロファイルを作成する](wallet-capabilities-images/image20.png)
 
-
 ウォレットの使用の詳細については、次のガイドを参照してください。
 
 * [PassKit の概要](~/ios/platform/passkit.md)
- 
+
 ## <a name="next-steps"></a>次の手順
- 
+
 以下のリストでは、実行する必要がある可能性のある追加の手順について説明します。
 
 * アプリでフレームワークの名前空間を使用します。

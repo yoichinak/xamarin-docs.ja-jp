@@ -8,12 +8,12 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/22/2019
 ms.custom: video
-ms.openlocfilehash: 8cec67ec582edad506aecb0945257b9baae3da90
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: d981307ae96f75c67442d3898255c8bed62f1cf7
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650345"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771716"
 ---
 # <a name="xamarinforms-basic-bindings"></a>Xamarin.Forms の基本的なバインディング
 
@@ -328,7 +328,6 @@ XAML マークアップ拡張は、通常は中かっこで区切りますが、
 [![バインディング コンテキストの継承](basic-bindings-images/bindingcontextinheritance-small.png "バインディング コンテキストの継承")](basic-bindings-images/bindingcontextinheritance-large.png#lightbox "バインディング コンテキストの継承")
 
 [次の記事](binding-mode.md)では、ターゲット オブジェクトとソース オブジェクトの間のデータ フローが*バインディング モード*によってどのように変わるかについて説明します。
-
 
 ## <a name="related-links"></a>関連リンク
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: e14008341e531844851452daeee4c730565a2843
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 177a7f9017559daad528885da90edbc8a0760920
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650487"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771789"
 ---
 # <a name="creating-the-platform-video-players"></a>プラットフォーム ビデオ プレーヤーの作成
 
@@ -155,7 +155,6 @@ Xamarin.Forms 2.5 以降、Android レンダラーには、`Context` 引数を�
 
 `OnElementChanged` オーバーライドは、`VideoView` と `RelativeLayout` の両方を作成し、`VideoView` を `RelativeLayout` の中央に配置するようにレイアウト パラメーターを設定します。
 
-
 ```csharp
 namespace FormsVideoLibrary.Droid
 {
@@ -284,7 +283,6 @@ namespace FormsVideoLibrary.UWP
 プラットフォームに含まれるすべてのビデオ プレーヤーは、既定のトランスポート コントロール セットをサポートします。このコントロール セットには、ビデオの再生ボタンと一時停止ボタン、ビデオ内の現在の位置を示し、新しい位置に移動できるバーが含まれます。
 
 `VideoPlayer` クラスは、`AreTransportControlsEnabled` という名前のプロパティを定義し、既定値を `true` に設定します。
-
 
 ```csharp
 namespace FormsVideoLibrary
@@ -463,7 +461,6 @@ namespace FormsVideoLibrary.UWP
 ```
 
 ビデオの再生を開始するには、1 つ以上のプロパティが必要です。これは、ビデオ ファイルを参照する重要な `Source` プロパティです。 次の記事「[Playing a Web Video](web-videos.md)」(Web ビデオの再生) では、`Source` プロパティの実装について説明します。
-
 
 ## <a name="related-links"></a>関連リンク
 

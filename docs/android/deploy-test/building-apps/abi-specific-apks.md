@@ -7,18 +7,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: e7c8721254157565461e00657a3ee8a786e3ea00
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 0c3bb547a21457a1666db5fe84560e10e3bb8eb1
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70225767"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70754272"
 ---
 # <a name="building-abi-specific-apks"></a>ABI 固有の APK のビルド
 
 _このドキュメントでは、Xamarin.Android を使用する単一の ABI をターゲットとする APK のビルド方法について説明します。_
-
-
 
 ## <a name="overview"></a>概要
 
@@ -27,7 +25,6 @@ _このドキュメントでは、Xamarin.Android を使用する単一の ABI �
 - **APK のサイズを小さくする** - Google Play では APK ファイルのサイズが 100 MB に制限されます。 デバイス固有の APK を作成すると、アプリケーションのアセットとリソースのサブセットを提供するだけで済むため、APK のサイズを小さくすることができます。
 
 - **さまざまな CPU アーキテクチャをサポートする** - アプリケーションに特定の CPU の共有ライブラリがある場合、その CPU の共有ライブラリのみを配布できます。
-
 
 APK が複数あると配布が困難になる場合がある - Google Play で対処されている問題。 Google Play は、アプリケーションのバージョン コードと **AndroidManifest.XML** とともに含まれるその他のメタデータに基づいて、正しい APK が確実にデバイスに配布されるようにします。 Google Play がアプリケーションでの複数の APK の使用をサポートする方法に関する詳細と制限事項については、[複数の APK サポートに関する Google のドキュメント](https://developer.android.com/google/play/publishing/multiple-apks.html)を参照してください。
 
@@ -38,10 +35,7 @@ APK が複数あると配布が困難になる場合がある - Google Play で�
 1. 前の手順の **AndroidManifest.XML** を使用して、アプリケーションをビルドする。
 1. 署名および zipalign を実行して、リリース用に APK を準備する。
 
-
 このガイドの最後は、[Rake](http://martinfowler.com/articles/rake.html) を使用して、これらの手順をスクリプト化する方法を示すチュートリアルです。
-
-
 
 ### <a name="creating-the-version-code-for-the-apk"></a>APK のバージョン コードの作成
 
@@ -68,7 +62,6 @@ Google では、7 桁のバージョン コードを使用するバージョン 
 
 [![色分けされた、8 桁のバージョン コード形式の図](abi-specific-apks-images/image00.png)](abi-specific-apks-images/image00.png#lightbox)
 
-
 Google Play は、`versionCode` と APK 構成に基づいて、正しい APK が確実にデバイスに配布されるようにします。 最高バージョン コードの APK がデバイスに配布されます。 たとえば、アプリケーションに以下のバージョン コードの 3 つの APK があるとします。
 
 - 11413456 - ABI は `armeabi` で、API レベル 14 をターゲットとし、画面サイズは小から大で、バージョン番号は 456 です。
@@ -83,18 +76,14 @@ Google Play は、`versionCode` と APK 構成に基づいて、正しい APK �
 - 21423457 - ABI は `armeabi-v7a` で、API レベル 14 をターゲットとし、画面サイズは標準と大で、バージョン名は 457 です。
 - 61923500 - ABI は `x86` で、API レベル 19 をターゲットとし、画面サイズは標準と大で、バージョン名は 500 です。
 
-
 これらのバージョン コードを手動で維持することは、開発者にとってかなりの負担になる場合があります。 正しい `android:versionCode` を計算してから APK をビルドするプロセスを自動化する必要があります。
 この実行方法の例は、このドキュメントの最後のチュートリアルで説明します。
-
 
 ### <a name="create-a-temporary-androidmanifestxml"></a>一時的な AndroidManifest.XML を作成する
 
 必ずしも必要ではありませんが、ABI ごとに一時的な **AndroidManifest.XML** を作成しておくと、APK 間での情報漏洩に伴い発生する可能性のある問題を防ぐのに役立つ場合があります。 たとえば、`android:versionCode` 属性が APK ごとに一意であることは非常に重要です。
 
 この実行方法は関連するスクリプト システムによって異なりますが、通常は、開発時に使用される Android マニュフェストのコピーを作成し、それを変更してから、ビルド プロセス時にその変更したマニュフェストを使用します。
-
-
 
 ### <a name="compiling-the-apk"></a>APK のコンパイル
 
@@ -120,8 +109,6 @@ ABI ごとに APK をビルドする場合、以下のサンプル コマンド 
 
 - `<CS_PROJ FILE>` &ndash; これは、Xamarin.Android プロジェクトの `.csproj` ファイルへのパスです。
 
-
-
 ### <a name="sign-and-zipalign-the-apk"></a>APK に署名して zipalign を実行する
 
 Google Play を使用して配布する前に APK に署名する必要があります。 これは、Java Developer's Kit の一部である `jarsigner` アプリケーションを使用して実行できます。 以下のコマンド ラインでは、コマンド ラインでの `jarsigner` の使用方法を示します。
@@ -136,7 +123,6 @@ jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore <PATH/TO/KEYSTO
 zipalign -f -v 4 <SIGNED_APK_TO_ZIPALIGN> <PATH/TO/ZIP_ALIGNED.APK>
 ```
 
-
 ## <a name="automating-apk-creation-with-rake"></a>Rake による APK 作成の自動化
 
 サンプル プロジェクトの [OneABIPerAPK](https://github.com/xamarin/monodroid-samples/tree/master/OneABIPerAPK) は単純な Android プロジェクトであり、ABI 固有のバージョン番号を計算し、以下の ABI ごとに別個の 3 つの APK をビルドする方法を示します。
@@ -144,7 +130,6 @@ zipalign -f -v 4 <SIGNED_APK_TO_ZIPALIGN> <PATH/TO/ZIP_ALIGNED.APK>
 - armeabi
 - armeabi-v7a
 - x86
-
 
 サンプル プロジェクトの [rakefile](https://github.com/xamarin/monodroid-samples/blob/master/OneABIPerAPK/Rakefile.rb) では、前のセクションで説明した各手順を実行します。
 
@@ -157,7 +142,6 @@ zipalign -f -v 4 <SIGNED_APK_TO_ZIPALIGN> <PATH/TO/ZIP_ALIGNED.APK>
 1. 運用キーストアで [APK に署名する](https://github.com/xamarin/monodroid-samples/blob/master/OneABIPerAPK/Rakefile.rb#L66)。
 
 1. APK に [zipalign を実行する](https://github.com/xamarin/monodroid-samples/blob/master/OneABIPerAPK/Rakefile.rb#L67)。
-
 
 アプリケーションの APK をすべてビルドするには、次のようにコマンド ラインから `build` Rake タスクを実行します。
 
@@ -172,16 +156,12 @@ rake タスクが完了すると、ファイル `xamarin.helloworld.apk` を含�
 
 [![xamarin.helloworld.apk を含むプラットフォーム固有のフォルダーの場所](abi-specific-apks-images/image01.png)](abi-specific-apks-images/image01.png#lightbox)
 
-
 > [!NOTE]
 > このガイドで概説されているビルド プロセスは、さまざまなビルド システムのいずれかに実装できます。 事前に記述した例はありませんが、これは [Powershell](https://technet.microsoft.com/scriptcenter/powershell.aspx) / [psake](https://github.com/psake/psake) または [Fake](http://fsharp.github.io/FAKE/) でも可能です。
-
 
 ## <a name="summary"></a>まとめ
 
 このガイドでは、特定の API をターゲットとする Android APK の作成方法を含め、いくつかの提案事項を提供しました。 また、APK が対象となる CPU アーキテクチャを特定する `android:versionCodes` を作成するための 1 つの考えられるスキーマについて説明しました。 チュートリアルには、Rake を使用してビルドがスクリプト化されたサンプル プロジェクトが含まれていました。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

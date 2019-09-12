@@ -7,22 +7,20 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/05/2018
-ms.openlocfilehash: 9bff233b5507e3456ba3620315bd967d0ac7018d
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 6d391bd804e1c59d06d78dd7cffe3f11f9276468
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525781"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70754637"
 ---
 # <a name="application-package-size"></a>アプリケーション パッケージのサイズ
 
 _この記事では Xamarin.Android アプリケーション パッケージの構成部分と、開発のデバッグおよびリリース段階で効果的なパッケージ開発を行うために使用できる関連戦略について検証します。_
 
-
 ## <a name="overview"></a>概要
 
 Xamarin.Android では、効果的なデバッグおよびリリース配置プロセスを維持しながら、さまざまなメカニズムを使用してパッケージ サイズを最小化します。 この記事では、Xamarin.Android のリリースおよびデバッグ配置ワークフローと、Xamarin.Android プラットフォームでどのように小さいアプリケーション パッケージをビルドしてリリースできるかを確認します。
-
 
 ## <a name="release-packages"></a>リリース パッケージ
 
@@ -41,7 +39,6 @@ Xamarin.Android では、効果的なデバッグおよびリリース配置プ�
 ![リンク後の ApiDemo パッケージ サイズ](app-package-size-images/api-demo-package-size-after-linker.png)
 
 ここに示すとおり、アプリケーション パッケージのサイズは一般的に約 2.9 MB で、アプリケーションとその依存関係より大きくなります。
-
 
 ## <a name="debug-packages"></a>デバッグ パッケージ
 
@@ -75,11 +72,9 @@ Android でのパッケージのコピーとインストールは比較的低速
 
 4. **[OK]** ボタンをクリックして変更内容を保存し、[プロジェクト オプション] ダイアログを閉じます。
 
-
 デバッグ用のアプリケーションの次回のビルド時に、アセンブリがデバイスに直接インストールされ (まだインストールされていない場合)、(アセンブリを含まない) より小さなアプリケーション パッケージがデバイスにインストールされます。 これで、テスト用に稼働中のアプリケーションを変更するためにかかる時間が短縮されます。
 
 共有ランタイムと共有プラットフォームの初回の配置には長い時間がかかりますが、それを我慢すれば、アプリケーションを変更するたびに、新しいバージョンをすばやく簡単に配置できるため、変更/配置/実行サイクルが速くなります。
-
 
 ## <a name="summary"></a>まとめ
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2017
-ms.openlocfilehash: 78270ee181f56f4b82637ed74a10a916d8fa4a77
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 9d0ffbd0da99134dfae3e42fe8baf4111c80935f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285450"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70763001"
 ---
 # <a name="apple-pay-capabilities-in-xamarinios"></a>Xamarin.iOS の Apple Pay 機能
 
@@ -35,7 +35,7 @@ Developer Center から新しいアプリをプロビジョニングするとき
 マーチャント ID は、支払いを受け取れることを Apple Pay に知らせるために使用され、PassKit の `PaymentRequest` メソッドに渡され、Apple Pay のエンタイトルメントで使用されます。
 
 1. [Apple Developer Center](https://developer.apple.com/account/) の [Certificate, Identifiers and Profiles]\(証明書、ID、およびプロファイル\) セクションを参照します。 
- 
+
     ![Developer Center でのマーチャント ID の選択](apple-pay-capabilities-images/image57.png)
 
 2. **[Identifiers]\(ID\)** の下で **[Merchant IDs]\(マーチャント ID\)** を選択し、 **+** を選択して新しいコンテナーを作成します。  
@@ -149,7 +149,7 @@ Apple Pay の使用に関する詳細は、次のガイドを参照してくだ�
 * [ Apple Pay の概要](~/ios/platform/apple-pay.md)
 
 ## <a name="next-steps"></a>次の手順
- 
+
 以下のリストでは、実行する必要がある可能性のある追加の手順について説明します。
 
 * アプリでフレームワークの名前空間を使用します。

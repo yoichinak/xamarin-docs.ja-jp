@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 8a83fd7fca15214711dd90dcbf80eb0d56a3df34
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 3dfdb83f99e7b15866abcc4980473ddf075dff69
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650450"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771766"
 ---
 # <a name="binding-video-sources-to-the-player"></a>プレーヤーへのビデオ ソースのバインド
 
@@ -77,7 +77,7 @@ namespace VideoPlayerDemos
 
 [![Web ビデオの選択](source-bindings-images/selectwebvideo-small.png "Web ビデオの選択")](source-bindings-images/selectwebvideo-large.png#lightbox "Web ビデオの選択")
 
-`VideoPlayer` の `Source` プロパティはバインド可能なプロパティによってサポートされています。つまり、データ バインディングのターゲットにすることができます。 この実例は、 **[Bind to VideoPlayer]\(VideoPlayer へのバインド\)** ページで示されています。 **BindToVideoPlayer.xaml** ファイルのマークアップは、ビデオのタイトルと対応する `VideoSource` オブジェクトをカプセル化する次のクラスによってサポートされています。
+`VideoPlayer` の `Source` プロパティはバインド可能なプロパティによってサポートされています。つまり、データ バインディングのターゲットにすることができます。 この実例は、**[Bind to VideoPlayer]\(VideoPlayer へのバインド\)** ページで示されています。 **BindToVideoPlayer.xaml** ファイルのマークアップは、ビデオのタイトルと対応する `VideoSource` オブジェクトをカプセル化する次のクラスによってサポートされています。
 
 ```csharp
 namespace VideoPlayerDemos
@@ -138,7 +138,6 @@ namespace VideoPlayerDemos
 `VideoPlayer` の `Source` プロパティは `ListView` にバインドされています。 バインドの `Path` は `SelectedItem.VideoSource` として指定されます。これは、2 つのプロパティから構成される複合パスです。`SelectedItem` は `ListView` のプロパティです。 選択されている項目は、種類が `VideoInfo` でプロパティが `VideoSource` です。
 
 最初の **[Select Web Video]\(Web ビデオの選択\)** ページと同様に、最初は `ListView` から項目が選択されていないため、再生を開始する前にいずれかのビデオを選択する必要があります。
-
 
 ## <a name="related-links"></a>関連リンク
 

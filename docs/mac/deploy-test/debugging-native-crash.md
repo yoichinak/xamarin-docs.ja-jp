@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 10/19/2016
-ms.openlocfilehash: bb33d9f85dfc1215e91caa20fab3800645e13111
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7340df1d65768363f39c6f080a5d50e2ac250400
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282188"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769884"
 ---
 # <a name="debugging-a-native-crash-in-a-xamarinmac-app"></a>Xamarin.Mac アプリのネイティブ クラッシュをデバッグする
 
@@ -251,4 +251,3 @@ void AddObject ()
 すべてのマネージド/ネイティブ境界でマネージド例外をキャッチするためのインフラストラクチャを設定する場合、技術的な理由で行き詰まることがなく、それほど費用がかからず、多くの一般的な処理で発生する遷移が_多数_あります。 多くの処理、特に UI スレッドを含む処理は短時間で完了する必要があります。そうしないと、アプリが中断し、許容できないパフォーマンスの問題が発生します。 これらのコールバックの多くは、スローされる可能性がほとんどない非常に単純なものなので、このオーバーヘッドはコストが高く、このような場合には不要です。
 
 そのため、try/catches を自動的に設定しません。 (ブール値や単純な計算を返すなどの処理よりも) 重要な処理をコーディングする場合は、手動でキャッチすることができます。 
-

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 9c6edddd70fa7a74a72857a94dbed613b5b0d66d
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 7d442d14589b35632bce2b6caec09235138ec585
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657147"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771632"
 ---
 # <a name="the-xamarinforms-command-interface"></a>Xamarin.Forms のコマンド インターフェイス
 
@@ -338,7 +338,6 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
 `NewCommand` の `execute` メソッドで `RefreshCanExecutes` が呼び出されると、`NewCommand` プロパティは `ChangeCanExecute` の呼び出しを取得します。`Button` では `canExecute` メソッドが呼び出されて、`IsEditing` プロパティが `true` であるためメソッドは `false` を返します。
 
 新しい `PersonViewModel` オブジェクトの `PropertyChanged` ハンドラーでは、`SubmitCommand` の `ChangeCanExecute` メソッドが呼び出されます。 そのコマンド プロパティの実装方法を次に示します。
-
 
 ```csharp
 public class PersonCollectionViewModel : INotifyPropertyChanged

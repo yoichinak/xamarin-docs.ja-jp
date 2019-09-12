@@ -7,17 +7,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/27/2018
-ms.openlocfilehash: 6ce8f633cdc0fd4616673eb047d640a8703b3a30
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: cb8dc64a8c40496aaf2ea23a834effb58436618a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50102530"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759087"
 ---
 # <a name="android-emulator-setup"></a>Android Emulator のセットアップ
 
 _このガイドでは、アプリをテストするために Android Emulator を準備する方法について説明します。_
-
 
 ## <a name="overview"></a>概要
 
@@ -45,7 +44,5 @@ Android Device Manager を使用して仮想デバイスのプロファイル �
 
 Android Emulator を構成した後は、「[Debugging on the Android Emulator](~/android/deploy-test/debugging/debug-on-emulator.md)」(Android Emulator でのデバッグ) でエミュレーターの起動方法と、アプリのテストとデバッグでの使用方法を確認してください。
 
-
 > [!NOTE]
 > Android SDK Tools バージョン **26.0.1** 以降、Google は、新しい CLI (コマンド ライン インターフェイス) ツールを優先して、既存の AVD/SDK マネージャーのサポートを削除しました。 この非推奨に関する変更のため、Android Tools 26.0.1 以降には、Google SDK/Device Manager の代わりに、Xamarin SDK/Device Manager が使用されるようになりました。 Xamarin SDK Manager の詳細については、「[Xamarin.Android 向け Android SDK を設定する](~/android/get-started/installation/android-sdk.md)」を参照してください。
-

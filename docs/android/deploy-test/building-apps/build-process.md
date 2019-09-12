@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2019
-ms.openlocfilehash: 84910bd499aa6894d86778a9bc4eb1467f063134
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: c331747677ee56f87458f51ef36a9bb2034beab1
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70225737"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70754262"
 ---
 # <a name="build-process"></a>ビルド プロセス
 
@@ -44,7 +44,6 @@ Xamarin.Android ビルド システムが生成できる Android アプリケー
 高速展開は、`adb` のディレクトリ `/data/data/@PACKAGE_NAME@/files/.__override__` への同期をブロックするデバイスでは失敗することがわかっています。
 
 高速展開は、既定で有効になっており、`$(EmbedAssembliesIntoApk)` プロパティを `True` に設定することで、デバッグ ビルドで無効にすることができます。
-
 
 ## <a name="msbuild-projects"></a>MSBuild プロジェクト
 
@@ -128,7 +127,6 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
   # Use `/Library/Frameworks/Mono.framework/Commands/msbuild` on OS X
   MSBuild /t:Install ProjectName.csproj /p:AdbTarget=-e
   ```
-
 
 ### <a name="packaging-properties"></a>パッケージング プロパティ
 
@@ -234,7 +232,7 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
 
   このプロパティは既定で `True` です。
 
-- **AndroidFastDeploymentType** &ndash; `$(EmbedAssembliesIntoApk)` MSBuild プロパティが `False` の場合に、ターゲット デバイスの[高速展開ディレクトリ](#Fast_Deployment)に展開できる型を制御する値の `:` (コロン) 区切りのリスト。 リソースが高速展開される場合、そのリソースが生成された `.apk` に埋め込まれ*ない*ため、展開時間を短縮することができます (高速展開が増えるほど、`.apk` を再ビルドする頻度が減り、インストール プロセスを高速化できます)。有効な値を次に示します。
+- **AndroidFastDeploymentType** &ndash; `$(EmbedAssembliesIntoApk)` MSBuild プロパティが `False` の場合に、ターゲット デバイスの[高速展開ディレクトリ](#Fast_Deployment)に展開できる型を制御する値の `:` (コロン) 区切りのリスト。 リソースが高速展開される場合、そのリソースが生成された `.apk` に埋め込まれ*ない*ため、展開時間を短縮することができます  (高速展開が増えるほど、`.apk` を再ビルドする頻度が減り、インストール プロセスを高速化できます)。有効な値を次に示します。
 
   - `Assemblies`:アプリケーション アセンブリを展開します。
 
@@ -520,16 +518,15 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
 
   - **All**: 利用可能なすべてのエンコードが含まれます。
 
-  - **CJK**: *日本語 (EUC)* \[enc-jp, CP51932\]、*日本語 (Shift-JIS)* \[iso-2022-jp, shift\_jis, CP932\]、*日本語 (JIS)* \[CP50220\]、*簡体字中国語 (GB2312)* \[gb2312, CP936\]、*韓国語 (UHC)* \[ks\_c\_5601-1987, CP949\]、*韓国語 (EUC)* \[euc-kr, CP51949\]、*繁体字中国語 (Big5)* \[big5, CP950\]、および*簡体字中国語 (GB18030)* \[GB18030, CP54936\] などの中国語、日本語、および韓国語のエンコードが含まれます。
+  - **CJK**: *日本語 (EUC)* \[enc-jp, CP51932\]、*日本語 (Shift-JIS)* \[iso-2022-jp, shift\_jis, CP932\]、*日本語 (JIS)* \[CP50220\]、*簡体字中国語 (GB2312)*\[gb2312, CP936\]、*韓国語 (UHC)* \[ks\_c\_5601-1987, CP949\]、*韓国語 (EUC)* \[euc-kr, CP51949\]、*繁体字中国語 (Big5)* \[big5, CP950\]、および*簡体字中国語 (GB18030)* \[GB18030, CP54936\] などの中国語、日本語、および韓国語のエンコードが含まれます。
 
   - **MidEast**: *トルコ語 (Windows)* \[iso-8859-9, CP1254\]、*ヘブライ語 (Windows)* \[windows-1255, CP1255\]、*アラビア語 (Windows)* \[windows-1256, CP1256\]、*アラビア語 (ISO)* \[iso-8859-6, CP28596\]、*ヘブライ語 (ISO)* \[iso-8859-8, CP28598\]、*ラテン 5 (ISO)* \[iso-8859-9, CP28599\]、および*ヘブライ語 (Iso 代替)* \[iso-8859-8, CP38598\] などの中東のエンコードが含まれます。
 
   - **Other**: *キリル語 (Windows)* \[CP1251\]、*バルト語 (Windows)* \[iso-8859-4, CP1257\]、*ベトナム語 (Windows)* \[CP1258\]、*キリル語 (KOI8-R)* \[koi8-r, CP1251\]、*ウクライナ語 (KOI8 U)* \[koi8-u, CP1251\]、*バルト語 (ISO)* \[iso-8859-4, CP1257\]、*キリル語 (ISO)* \[iso-8859-5, CP1251\]、*ISCII デーヴァナーガリー語* \[x-iscii-de, CP57002\]、*ISCII ベンガル語* \[x-iscii-be, CP57003\]、*ISCII タミール語* \[x-iscii-ta, CP57004\]、*ISCII テルグ語* \[x-iscii-te, CP57005\]、*ISCII アッサム語* \[x-iscii-as, CP57006\]、*ISCII オリヤー語* \[x-iscii-or, CP57007\]、*ISCII カンナダ語* \[x-iscii-ka, CP57008\]、*ISCII マラヤーラム語* \[x-iscii-ma, CP57009\]、*ISCII グジャラート語* \[x-iscii-gu, CP57010\]、*ISCII パンジャーブ語* \[x-iscii-pa, CP57011\]、および*タイ語 (Windows)* \[CP874\] などのその他のエンコードが含まれます。
 
-  - **Rare**: *IBM EBCDIC (トルコ語)* \[CP1026\]、*IBM EBCDIC (オープン システム ラテン 1)* \[CP1047\]、*IBM EBCDIC (米国-カナダとユーロ)* \[CP1140\]、*IBM EBCDIC (ドイツとユーロ)* \[CP1141\]、*IBM EBCDIC (デンマーク/ノルウェーとユーロ)* \[CP1142\]、*IBM EBCDIC (フィンランド/スウェーデンとユーロ)* \[CP1143\]、*IBMEBCDIC (イタリアとユーロ)* \[CP1144\]、*IBM EBCDIC (ラテン アメリカ/スペインとユーロ)* \[CP1145\]、*IBM EBCDIC (イギリスとユーロ)* \[CP1146\]、*IBM EBCDIC (フランスとユーロ)* \[CP1147\]、*IBM EBCDIC (インターナショナルとユーロ)* \[CP1148\]、*IBM EBCDIC (アイスランド語とユーロ)* \[CP1149\]、*IBM EBCDIC (ドイツ)* \[CP20273\]、*IBM EBCDIC (デンマーク/ノルウェー)* \[CP20277\]、*IBM EBCDIC (フィンランド/スウェーデン)* \[CP20278\]、*IBM EBCDIC (イタリア)* \[CP20280\]、*IBM EBCDIC (ラテン アメリカ/スペイン)* \[CP20284\]、*IBM EBCDIC (イギリス)* \[CP20285\]、*IBM EBCDIC (日本語カタカナ拡張)* \[CP20290\]、*IBM EBCDIC (フランス)* \[CP20297\]、*IBM EBCDIC (アラビア語)* \[CP20420\]、*IBM EBCDIC (ヘブライ語)* \[CP20424\]、*IBM EBCDIC (アイスランド語)* \[CP20871\]、*IBM EBCDIC (キリル、セルビア語、ブルガリア語)* \[CP21025\]、*IBM EBCDIC (米国-カナダ)* \[CP37\]、*IBM EBCDIC (インターナショナル)* \[CP500\]、*アラビア語 (ASMO 708)* \[CP708\]、*中央ヨーロッパ言語 (DOS)* \[CP852\] *, キリル言語 (DOS)* \[CP855\]、*トルコ語 (DOS)* \[CP857\]*西ヨーロッパ言語 (DOS とユーロ)* \[CP858\]、*ヘブライ語 (DOS)* \[CP862\]、*アラビア語 (DOS)* \[CP864\]、*ロシア語 (DOS)* \[CP866\]、*ギリシャ語 (DOS)* \[CP869\]、*IBM EBCDIC (ラテン 2)* \[CP870\]、*IBM EBCDIC (ギリシャ語)* \[CP875\] などのまれなエンコードが含まれます。
+  - **Rare**: *IBM EBCDIC (トルコ語)*\[CP1026\]、*IBM EBCDIC (オープン システム ラテン 1)*\[CP1047\]、*IBM EBCDIC (米国-カナダとユーロ)*\[CP1140\]、*IBM EBCDIC (ドイツとユーロ)*\[CP1141\]、*IBM EBCDIC (デンマーク/ノルウェーとユーロ)*\[CP1142\]、*IBM EBCDIC (フィンランド/スウェーデンとユーロ)*\[CP1143\]、*IBMEBCDIC (イタリアとユーロ)*\[CP1144\]、*IBM EBCDIC (ラテン アメリカ/スペインとユーロ)*\[CP1145\]、*IBM EBCDIC (イギリスとユーロ)*\[CP1146\]、*IBM EBCDIC (フランスとユーロ)*\[CP1147\]、*IBM EBCDIC (インターナショナルとユーロ)*\[CP1148\]、*IBM EBCDIC (アイスランド語とユーロ)*\[CP1149\]、*IBM EBCDIC (ドイツ)*\[CP20273\]、*IBM EBCDIC (デンマーク/ノルウェー)*\[CP20277\]、*IBM EBCDIC (フィンランド/スウェーデン)*\[CP20278\]、*IBM EBCDIC (イタリア)*\[CP20280\]、*IBM EBCDIC (ラテン アメリカ/スペイン)*\[CP20284\]、*IBM EBCDIC (イギリス)*\[CP20285\]、*IBM EBCDIC (日本語カタカナ拡張)*\[CP20290\]、*IBM EBCDIC (フランス)*\[CP20297\]、*IBM EBCDIC (アラビア語)*\[CP20420\]、*IBM EBCDIC (ヘブライ語)*\[CP20424\]、*IBM EBCDIC (アイスランド語)*\[CP20871\]、*IBM EBCDIC (キリル、セルビア語、ブルガリア語)*\[CP21025\]、*IBM EBCDIC (米国-カナダ)*\[CP37\]、*IBM EBCDIC (インターナショナル)*\[CP500\]、*アラビア語 (ASMO 708)*\[CP708\]、*中央ヨーロッパ言語 (DOS)*\[CP852\]*, キリル言語 (DOS)*\[CP855\]、*トルコ語 (DOS)*\[CP857\]*西ヨーロッパ言語 (DOS とユーロ)*\[CP858\]、*ヘブライ語 (DOS)*\[CP862\]、*アラビア語 (DOS)*\[CP864\]、*ロシア語 (DOS)*\[CP866\]、*ギリシャ語 (DOS)*\[CP869\]、*IBM EBCDIC (ラテン 2)*\[CP870\]、*IBM EBCDIC (ギリシャ語)*\[CP875\] などのまれなエンコードが含まれます。
 
   - **West**: *西ヨーロッパ言語 (Mac)* \[macintosh, CP10000\]、*アイスランド語 (Mac)* \[x-mac-icelandic, CP10079\]、*中央ヨーロッパ言語 (Windows)* \[iso-8859-2, CP1250\]、*西ヨーロッパ言語 (Windows)* \[iso-8859-1, CP1252\]、*ギリシャ語 (Windows)* \[iso-8859-7, CP1253\]、*中央ヨーロッパ言語 (ISO)* \[iso-8859-2, CP28592\]、*ラテン 3 (ISO)* \[iso-8859-3, CP28593\]、*ギリシャ語 (ISO)* \[iso-8859-7, CP28597\]、*ラテン 9 (ISO)* \[iso-8859-15, CP28605\]、*OEM 米国* \[CP437\]、*西ヨーロッパ言語 (DOS)* \[CP850\]、*ポルトガル語 (DOS)* \[CP860\]、*アイスランド語 (DOS)* \[CP861\]、*フランス語 (カナダ) (DOS)* \[CP863\]、および*北欧語 (DOS)* \[CP865\] などの欧文のエンコードが含まれます。
-
 
   ```xml
   <MandroidI18n>West</MandroidI18n>
@@ -548,7 +545,6 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
 - **AndroidClassParser** &ndash; `.jar` ファイルの解析方法を制御する文字列プロパティ。 次のような値となる場合があります。
 
   - **class-parse**: JVM を利用せずに、`class-parse.exe` を使用して直接 Java バイトコードを解析します。 この値は試験的です。
-
 
   - **jar2xml**: Java リフレクションを使用して `.jar` ファイルから型とメンバーを抽出するには、`jar2xml.jar` を使用します。
 
@@ -579,7 +575,6 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
     - マネージド サブクラスに対して Java 呼び出し可能ラッパー コンストラクターに `jmethodID` キャッシュを使用。
 
     既定値は `XAJavaInterop1` です。
-
 
 ### <a name="resource-properties"></a>リソースのプロパティ
 
@@ -680,13 +675,11 @@ Enter key password for keystore.alias
 
 *ビルド アクション*は、プロジェクト内の[ファイルに適用](https://docs.microsoft.com/visualstudio/msbuild/common-msbuild-project-items)され、ファイルの処理方法を制御します。
 
-
 ### <a name="androidaarlibrary"></a>AndroidAarLibrary
 
 .aar ファイルを直接参照するには、`AndroidAarLibrary` のビルド アクションを使用する必要があります。 このビルド アクションは、Xamarin コンポーネントで最もよく使用されます。 つまり、Google Play やその他のサービスを動作させるのに必要な .aar ファイルへの参照を含めるためです。
 
 このビルド アクションを使用するファイルは、ライブラリ プロジェクトで見つかる埋め込みリソースと同様に扱われます。 .aar は、中間ディレクトリに抽出されます。 次に、すべてのアセット、リソース、.jar ファイルが、適切な項目グループに含まれます。
-
 
 ### <a name="androidboundlayout"></a>AndroidBoundLayout
 
@@ -696,7 +689,6 @@ Enter key password for keystore.alias
 <AndroidBoundLayout Include="Resources\layout\Main.axml" />
 ```
 
-
 <a name="AndroidEnvironment" />
 
 ### <a name="androidenvironment"></a>AndroidEnvironment
@@ -704,28 +696,23 @@ Enter key password for keystore.alias
 `AndroidEnvironment` のビルド アクションを持つファイルは、[プロセスの起動時に環境変数とシステム プロパティを初期化する](~/android/deploy-test/environment.md)ために使用されます。
 `AndroidEnvironment` ビルド アクションは、複数のファイルに適用でき、任意の順序で評価されます (そのため、複数のファイルで同じ環境変数またはシステム プロパティを指定しないでください)。
 
-
 ### <a name="androidfragmenttype"></a>AndroidFragmentType
 
 レイアウト バインディング コードを生成するときに、すべての `<fragment>` レイアウト要素に使用される既定の完全修飾型を指定します。 プロパティの既定値は、標準の Android `Android.App.Fragment` 型になります。
-
 
 ### <a name="androidjavalibrary"></a>AndroidJavaLibrary
 
 `AndroidJavaLibrary` のビルド アクションを持つファイルは、最終的な Android パッケージに含まれる Java アーカイブ (`.jar` ファイル) です。
 
-
 ### <a name="androidjavasource"></a>AndroidJavaSource
 
 `AndroidJavaSource` のビルド アクションを持つファイルは、最終的な Android パッケージに含まれる Java ソース コードです。
-
 
 ### <a name="androidlintconfig"></a>AndroidLintConfig
 
 ビルド アクション 'AndroidLintConfig' は、`AndroidLintEnabled` ビルド プロパティと組み合わせて使用する必要があります。 このビルド アクションを含むファイルはマージされ、Android の `lint` ツールに渡されます。 これは、どのテストを有効および無効にするかに関する情報を含んだ XML ファイルになります。
 
 詳細については、[Lint に関するドキュメント](https://developer.android.com/studio/write/lint)を参照してください。
-
 
 ### <a name="androidnativelibrary"></a>AndroidNativeLibrary
 
@@ -738,7 +725,6 @@ Android では、複数のアプリケーション バイナリ インターフ�
 
 パス スニッフィングを使用すると、ネイティブ ライブラリの親ディレクトリ名が、ライブラリがターゲットとする ABI を指定するために使用されます。 したがって、ビルドに `lib/armeabi-v7a/libfoo.so` を追加すると、ABI は `armeabi-v7a` として "スニッフィング" されます。
 
-
 #### <a name="item-attribute-name"></a>項目属性名
 
 **Abi** &ndash; ネイティブ ライブラリの ABI を指定します。
@@ -750,7 +736,6 @@ Android では、複数のアプリケーション バイナリ インターフ�
   </AndroidNativeLibrary>
 </ItemGroup>
 ```
-
 
 ### <a name="androidresource"></a>AndroidResource
 
@@ -789,18 +774,15 @@ Android では、複数のアプリケーション バイナリ インターフ�
 </ItemGroup>
 ```
 
-
 ### <a name="content"></a>Content
 
 通常の `Content` ビルド アクションはサポートされていません (コストのかかる可能性がある最初の実行手順を行わずにサポートする方法が見つかっていないからです)。
 
 Xamarin.Android 5.1 以降では、`@(Content)` ビルド アクションを使用しようとすると、`XA0101` 警告が発生します。
 
-
 ### <a name="linkdescription"></a>LinkDescription
 
 *LinkDescription* ビルド アクションを持つファイルは、[リンカーの動作を制御](~/cross-platform/deploy-test/linker.md)するために使用されます。
-
 
 <a name="ProguardConfiguration" />
 
@@ -809,7 +791,6 @@ Xamarin.Android 5.1 以降では、`@(Content)` ビルド アクションを使�
 *ProguardConfiguration* ビルド アクションを持つファイルは、`proguard` 動作を制御するために使用されます。 このビルド アクションの詳細については、「[ProGuard](~/android/deploy-test/release-prep/proguard.md)」を参照してください。
 
 `$(EnableProguard)` MSBuild プロパティが `True` でない限り、これらのファイルは無視されます。
-
 
 ## <a name="target-definitions"></a>ターゲットの定義
 

@@ -6,12 +6,12 @@ ms.assetid: F8A99E3F-2197-4399-AC81-F1DBAB5729C9
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: f0d51d9aa5cde17498124b74cc35011a6d942fae
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 230fe0f168b5718c2bc91cff6dbdc078b0e6834d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284846"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765927"
 ---
 # <a name="custom-linker-configuration"></a>カスタム リンカーの構成
 
@@ -26,7 +26,6 @@ ms.locfileid: "70284846"
 
 - **Android の場合**: **[ビルド アクション]** を **LinkDescription** に設定します
 - **iOS の場合**: **[ビルド アクション]** を **LinkDescription** に設定します
-
 
 次の例では、XML ファイルがどのようなものであるかを確認できます。
 
@@ -60,8 +59,6 @@ ms.locfileid: "70284846"
 2 番目のセクションは `My.Own.Assembly.dll` の定義ですが、これによって型 `Foo` はすべてのフィールド (すなわち、`preserve="fields"` 属性) とすべてのコンストラクター (すなわち、IL のすべての `.ctor` メソッド) を保持します。 型 `Bar` は 1 つのコンストラクター (文字列パラメーターを 1 つ受け取る) のためと特定の文字列フィールド `_blah` のために特定の署名 (名前ではなく) を保持します。
 名前空間 `My.Own.Namespace` はそれに含まれているすべての型を保持します。
 最後になりますが、完全名 (名前空間を含む) がワイルドカード パターン "My.Other\*" に一致する型はすべて、そのすべてのフィールドとメソッドを保持します。 ワイルドカード文字 `*` は "type fullname" パターン内に複数回含めることができます。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

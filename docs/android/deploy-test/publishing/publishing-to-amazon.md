@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 430f4fedc8e988c89826e3ae023fc25b7b798727
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 818b6afef395b081768f8bdd6538d5a8ecbad178
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525340"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753741"
 ---
 # <a name="publishing-to-the-amazon-app-store"></a>Amazon App Store に公開する
 
@@ -20,7 +20,6 @@ Amazon のモバイル アプリ配信プログラムでは、モバイル ア�
 [![Amazon App Store の画面](publishing-to-amazon-images/amazon-app-store.png)](publishing-to-amazon-images/amazon-app-store.png#lightbox)
 
 Amazon では、APK のサイズに上限を課していません。 ただし、APK が 30MB より大きいと、Amazon Mobile App Distribution Portal ではなく、FTP が配信に利用されます。
-
 
 ## <a name="submitting-apps-binary-info"></a>アプリの送信:バイナリ情報
 
@@ -31,8 +30,6 @@ Amazon App Store にアプリケーションを提出する作業は、Google Pl
 - **スクリーンショット** &ndash;   Amazon では 3 ～ 10 枚のスクリーンショットが必要になります。 スクリーンショットは 1024w x 600h ピクセルまたは 800w x 480h ピクセルにします。 .png 形式と .jpg 形式を利用できます。
 - **宣伝画像** &ndash;   ホーム ページなど、宣伝できる場所でアプリケーションを取り上げてもらうために、宣伝画像を任意で提出できます。 これは 1024w x 500h ピクセルの .png または .jpg ファイルにします。方向は横向きにします。 アニメーションを入れることはできません。
 - 5 つの動画の更新を指定できます。
-
-
 
 ## <a name="approval-process"></a>承認プロセス
 

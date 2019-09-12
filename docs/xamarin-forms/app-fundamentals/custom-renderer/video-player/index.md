@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 8e6f37fb607f4b0bc0ddfd41ad86dfe7ecbc03df
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 28e424f4946d05798b9ba309891845d9eab998b1
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650531"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771819"
 ---
 # <a name="implementing-a-video-player"></a>ビデオ プレーヤーの実装
 
@@ -60,15 +60,11 @@ Xamarin.Forms アプリケーション内でビデオ ファイルを再生す�
 
 ## <a name="custom-video-transport-controlscustom-transportmd"></a>[カスタムのビデオ トランスポート コントロール](custom-transport.md)
 
-各プラットフォーム上のビデオ プレーヤーには、 **[再生]** や **[一時停止]** ボタンという形でそれぞれのトランスポート コントロールが備わっていますが、そのボタンを表示させないようにしてご自身のものを指定できます。 この記事ではその方法を説明します。
+各プラットフォーム上のビデオ プレーヤーには、**[再生]** や **[一時停止]** ボタンという形でそれぞれのトランスポート コントロールが備わっていますが、そのボタンを表示させないようにしてご自身のものを指定できます。 この記事ではその方法を説明します。
 
 ## <a name="custom-video-positioningcustom-positioningmd"></a>[ビデオのカスタム配置](custom-positioning.md)
 
 各プラットフォームのビデオ プレーヤーには、ビデオの進行状況を示し、特定の位置まで前後にスキップできる位置バーが備わっています。 この記事では、その位置バーをカスタム コントロールで置き換える方法を示します。
-
-
-
-
 
 ## <a name="related-links"></a>関連リンク
 

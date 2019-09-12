@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/26/2018
-ms.openlocfilehash: 2deee2bd7fa07f562bee02409d1a7a19cdac0be9
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: dccc47d8ee69686fe2ac7409f75284c64c99a2d4
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650862"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772014"
 ---
 # <a name="customizing-an-entry"></a>Entry のカスタマイズ
 
@@ -212,7 +212,6 @@ namespace CustomRenderer.UWP
 ## <a name="summary"></a>まとめ
 
 この記事では、Xamarin.Forms の [`Entry`](xref:Xamarin.Forms.Entry) コントロール用のカスタム コントロール レンダラーを作成する方法を示しました。これにより、開発者は既定のネイティブ レンダリングを、各自のプラットフォーム固有のレンダリングでオーバーライドできるようになります。 カスタム レンダラーにより、Xamarin.Forms コントロールの外観をカスタマイズするための強力な方法が提供されます。 それらは、スタイルに関する小さな変更や、洗練されたプラットフォーム固有のレイアウトおよびビヘイビアーのカスタマイズのために使用できます。
-
 
 ## <a name="related-links"></a>関連リンク
 

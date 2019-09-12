@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: f90ce8dcb8c3ab9d4fee9f684c0e53218b8440a9
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: c9b6f6c29b86ee40c2d7b04dbe6fa4ce24a745ea
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285714"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70762626"
 ---
 # <a name="fastlane-for-ios-sigh"></a>fastlane for iOS – sigh
 
@@ -101,7 +101,7 @@ sigh ユーティリティの使用を開始するには、端末に次のコマ
 fastlane sigh
 ```
 
-既定ではこれが [App Store Distribution](~/ios/deploy-test/app-distribution/app-store-distribution/index.md) プロビジョニング プロファイルを作成します。 開発用にデバイスを設定するには、`--development` フラグ:
+既定ではこれが [App Store Distribution](~/ios/deploy-test/app-distribution/app-store-distribution/index.md) プロビジョニング プロファイルを作成します。 開発用にデバイスを設定するには、`--development` フラグ: 
 
 ```bash
 fastlane sigh --development
@@ -154,7 +154,6 @@ sigh を使用する際に、次のオプションを使用して追加のサポ
     ```
     
     ここで `Amy cert` はコード署名 ID の名前です。
-
 
 ## <a name="related-links"></a>関連リンク
 

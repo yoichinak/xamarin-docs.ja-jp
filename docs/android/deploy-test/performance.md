@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: d7d6bf128d3814917633bdd69e3c9c54c8d6a20c
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 88e1acecdc96af596a0151bbd3f64dc4547d4cce
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70197509"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753820"
 ---
 # <a name="xamarinandroid-performance"></a>Xamarin.Android のパフォーマンス
 
@@ -34,7 +34,6 @@ Xamarin.Android でビルドされたアプリケーションのパフォーマ�
 - [未使用のイメージ リソースの破棄](#disposeimages)
 - [浮動小数点演算の使用を避ける](#avoidfloats)
 - [ダイアログを閉じる](#dismissdialogs)
-
 
 > [!NOTE]
 > この記事を読む前に、まず、「[Cross-Platform Performance](~/cross-platform/deploy-test/memory-perf-best-practices.md)」(クロスプラットフォーム パフォーマンス) をお読みください。Xamarin プラットフォームを使用してビルドされたアプリケーションのメモリ使用量とパフォーマンスを改善するための、プラットフォーム固有ではない手法について説明されています。
@@ -246,7 +245,6 @@ using (Bitmap smallPic = BitmapFactory.DecodeByteArray(smallImageByte, 0, smallI
 
 破棄可能なリソースの解放の詳細については、「[IDisposable のリソースを解放する](~/cross-platform/deploy-test/memory-perf-best-practices.md#idisposable)」を参照してください。  
 
-
 <a name="avoidfloats" />
 
 ## <a name="avoid-floating-point-arithmetic"></a>浮動小数点演算の使用を避ける
@@ -265,7 +263,6 @@ Android デバイスでは、浮動小数点演算が、整数演算の場合よ
 ## <a name="summary"></a>まとめ
 
 この記事では、Xamarin.Android でビルドされたアプリケーションのパフォーマンスを高めるための手法について説明しました。 これらの手法をすべて使用することで、CPU で実行される作業量や、アプリケーションで消費されるメモリ量を大幅に減らすことができます。
-
 
 ## <a name="related-links"></a>関連リンク
 

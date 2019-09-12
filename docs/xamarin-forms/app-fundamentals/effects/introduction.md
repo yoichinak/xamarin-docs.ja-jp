@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 8fae741f308a8269facef5ca84d34adb48868aec
-ms.sourcegitcommit: c75c1d2132a4f46a7b38e454d5f24705165026bd
+ms.openlocfilehash: e9325c34c645b75f28c7e2070f6bb095780ddb02
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68486011"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771460"
 ---
 # <a name="introduction-to-effects"></a>効果の概要
 
@@ -38,7 +38,7 @@ Xamarin.Forms の [Pages、Layouts、Controls](~/xamarin-forms/user-interface/co
 
 次の表に、各プラットフォーム上の `PlatformEffect` の名前空間と、そのプロパティの型の一覧を示します。
 
-|プラットフォーム|名前空間|コンテナー|コントロール|
+|プラットフォーム|名前空間|コンテナー|Control|
 |--- |--- |--- |--- |
 |iOS|Xamarin.Forms.Platform.iOS|UIView|UIView|
 |Android|Xamarin.Forms.Platform.Android|ViewGroup|View|
@@ -58,7 +58,6 @@ Xamarin.Forms の [Pages、Layouts、Controls](~/xamarin-forms/user-interface/co
 - [`OnDetached`](xref:Xamarin.Forms.Effect.OnDetached) - 効果が Xamarin.Forms コントロールからデタッチされると呼び出されます。 各プラットフォーム固有の効果クラス内でオーバーライドされたバージョンのこのメソッドは、イベント ハンドラーの登録解除など、あらゆる効果のクリーンアップを行う場所です。
 
 さらに、`PlatformEffect` は [`OnElementPropertyChanged`](xref:Xamarin.Forms.PlatformEffect`2.OnElementPropertyChanged(System.ComponentModel.PropertyChangedEventArgs)) メソッドを公開します。こちらもオーバーライドできます。 このメソッドは要素のプロパティが変更されると呼び出されてます。 各プラットフォーム固有の効果クラス内でオーバーライドされたバージョンのこのメソッドは、Xamarin.Forms コントロール上でバインド可能なプロパティの変更に応答する場所です。 このオーバーライドは何度も呼び出されることがあるため、変更になったプロパティのチェックは常に行われる必要があります。
-
 
 ## <a name="related-links"></a>関連リンク
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 676523e461737d7820278ca8c319794d3347088d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 70646999154297592137c6966626b318fb73897c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289795"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771267"
 ---
 # <a name="introduction-to-xamarinforms-control-templates"></a>Xamarin.Forms のコントロール テンプレートの概要
 
@@ -51,7 +51,6 @@ _Xamarin.Forms のコントロール テンプレートには、実行時にア�
 - アプリケーションレベルで定義された [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) インスタンスは、アプリケーション全体のページに適用できます。
 
 ビュー階層で下位にあるコントロール テンプレートは、上位の定義済みコントロール テンプレートよりも優先されます。 たとえば、ページレベルで定義されている `DarkTheme` という [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) は、アプリケーションレベルで定義されている同じ名前のテンプレートよりも優先されます。 そのため、アプリケーションの各ページに適用されるテーマを定義するコントロール テンプレートは、アプリケーションレベルで定義する必要があります。
-
 
 ## <a name="related-links"></a>関連リンク
 

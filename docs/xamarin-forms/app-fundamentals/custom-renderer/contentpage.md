@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 73d57c632cfcd36bd7f38865c39acb7fecb55e3e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 64367ded8dcd173f7c9e57cfc234aa66712aefd4
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650915"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772025"
 ---
 # <a name="customizing-a-contentpage"></a>ContentPage のカスタマイズ
 
@@ -253,7 +253,6 @@ UWP 上で `PageRenderer` から派生したカスタム レンダラーを実�
 ## <a name="summary"></a>まとめ
 
 この記事では、[`ContentPage`](xref:Xamarin.Forms.ContentPage) ページ用のカスタム レンダラーを作成する方法について説明しました。これにより、開発者は既定のネイティブ レンダリングを、各自のプラットフォームに固有のカスタマイズでオーバーライドできるようになります。 `ContentPage` は、単一ビューを表示し、画面の大部分を占めるビジュアル要素です。
-
 
 ## <a name="related-links"></a>関連リンク
 

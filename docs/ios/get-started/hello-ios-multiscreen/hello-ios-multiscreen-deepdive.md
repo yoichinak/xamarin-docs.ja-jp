@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 10/05/2018
-ms.openlocfilehash: 8ab7f24d69e4f20cb1a732f32d220c85b178deef
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 72e421e088a582e4d2de1cf830a0978cca9f45c8
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288718"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70762640"
 ---
 # <a name="hello-ios-multiscreen--deep-dive"></a>Hello, iOS マルチスクリーン – 詳細
 
@@ -52,7 +52,7 @@ MVC は、モデルの*データの永続性*と*アクセス*をまったく認
 > [!NOTE]
 > 資料によっては、MVC パターンのモデル部分は、UI に表示されるデータだけでなく、アプリケーション バックエンド全体を指すことがあります。 このガイドでは、モデルの最新の解釈を使用しますが、違いは特に重要ではありません。
 
-### <a name="view"></a>表示
+### <a name="view"></a>View
 
 ビューは、ユーザー インターフェイスのレンダリングを担当するコンポーネントです。 MVC パターンを使用するほぼすべてのプラットフォームで、ユーザー インターフェイスは複数ビューの階層で構成されます。 MVC のビューは、階層の最上位に単一のビュー (ルート ビューと呼ばれます) があり、その下位に任意の数の子ビュー (サブビューと呼ばれます) があるビュー階層と考えることができます。 iOS では、画面のコンテンツ ビュー階層は MVC のビュー コンポーネントに対応します。
 
@@ -76,11 +76,9 @@ Phoneword アプリケーションでは、複数の画面間のナビゲーシ�
 
     [![](hello-ios-multiscreen-deepdive-images/02.png "この図は、ナビゲーションを積み重ねたカードとして示しています")](hello-ios-multiscreen-deepdive-images/02.png#lightbox)
 
-
 - **オプションの戻るボタン機能**: 新しい項目をナビゲーション スタックにプッシュすると、タイトル バーに*戻るボタン*が自動的に表示されます。ユーザーはこのボタンを押して戻る操作を行うことができます。 戻るボタンを押すと、ナビゲーション スタックから現在のビュー コントローラーが*ポップ*され、前のコンテンツ ビュー階層がウィンドウに読み込まれます。  
 
     [![](hello-ios-multiscreen-deepdive-images/03.png "この図は、スタックからのカードの 'ポップ' を示しています")](hello-ios-multiscreen-deepdive-images/03.png#lightbox)
-
 
 - **タイトル バー機能**: ナビゲーション コントローラーの上部は*タイトル バー*と呼ばれます。 次の図のように、ビュー コントローラーのタイトルを表示する処理を担当します。  
 

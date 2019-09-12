@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/22/2018
-ms.openlocfilehash: fd28143a2d4678a240d9d6f9f1cc3b1c5da80222
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: ef3ba27b9056e1de92aabb87f86416b2985d6e1d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525713"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70754221"
 ---
 # <a name="android-debug-log"></a>Android のデバッグ ログ
 
@@ -29,7 +29,6 @@ ms.locfileid: "69525713"
 > **デバッグ ログ** ツールは、Xamarin Live Player では動きません。
 
 **デバッグ ログ**では、デバイスのアプリがスタンドアロンで (つまり、Visual Studio から切断されて) 実行している間に生成されるログ メッセージは表示されません。
-
 
 ## <a name="accessing-the-debug-log-from-visual-studio"></a>Visual Studio からデバッグ ログにアクセスする
 
@@ -60,13 +59,11 @@ ms.locfileid: "69525713"
 
 - **検索ボックス** &ndash; ログ エントリのサブセットをフィルター処理するには、このボックスに検索文字列を入力します。
 
-
 **デバッグ ログ** ツール ウィンドウが表示されているときは、デバイス プルダウン メニューを使って監視対象の Android デバイスを選びます。
 
 [![デバイス セレクターの場所](android-debug-log-images/vswin-02-devices-combo-sml.png)](android-debug-log-images/vswin-02-devices-combo.png#lightbox)
 
 デバイスを選択すると、**デバイス ログ** ツールは実行中のアプリからのログ エントリを自動的に追加します。これらのログ エントリは、ログ エントリのテーブルに表示されます。 デバイスを切り替えると、デバイスのログはいったん停止してから開始します。 デバイス セレクターにデバイスが表示されるためには、先に Android プロジェクトを読み込む必要があることに注意してください。 デバイスがデバイス セレクターに表示されない場合は、Visual Studio の **[開始]** ボタンの横にあるデバイス ドロップダウン メニューでデバイスが使用できることを確認します。
-
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -104,7 +101,6 @@ ms.locfileid: "69525713"
 
 -----
 
-
 ## <a name="accessing-from-the-command-line"></a>コマンド ラインからのアクセス
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
@@ -129,11 +125,9 @@ $ ./adb logcat
 
 -----
 
-
 複数のデバイスが接続されている場合は、デバイスを明示的に指定する必要があります。 たとえば、**adb -d logcat** では、接続されている物理デバイスのログのみが表示されます。また、**adb -e logcat** では、実行されているエミュレーターのログのみが表示されます。
 
 その他のコマンドについては、「**adb**」と入力してヘルプ メッセージをご覧ください。
-
 
 ## <a name="writing-to-the-debug-log"></a>デバッグ ログへの書き込み
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: 176f41d4b7349af2cf7cc49de8ba0789ad2f8c11
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: d62ba6b025b2fe9865df8279a5e98eba254bb5a2
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995815"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772046"
 ---
 # <a name="introduction-to-behaviors"></a>ビヘイビアーの概要
 
@@ -33,8 +33,6 @@ Xamarin.Forms は、2 つの異なるスタイルのビヘイビアーをサポ�
 - **アタッチされたビヘイビアー**: 1 つ以上のプロパティがアタッチされている `static` クラス。 アタッチされたビヘイビアーの詳細については、「[Attached Behaviors](~/xamarin-forms/app-fundamentals/behaviors/attached.md)」(アタッチされたビヘイビアー) を参照してください。
 
 このガイドでは、ビヘイビアーの構築に推奨されるアプローチなので Xamarin.Forms ビヘイビアーに重点を置いています。
-
-
 
 ## <a name="related-links"></a>関連リンク
 

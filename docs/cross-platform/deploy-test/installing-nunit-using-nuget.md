@@ -6,12 +6,12 @@ ms.assetid: 7683F2B8-7FDF-48C4-8E7D-649D4D4E79F0
 author: conceptdev
 ms.author: crdun
 ms.date: 03/24/2017
-ms.openlocfilehash: 8fc4ca3063e88f17fc1e22ad35667b2086e63e89
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 2437a26ae0f9187d3042ef6e6064ddafa808804c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280475"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766014"
 ---
 # <a name="installing-nunit-264-using-nuget"></a>NuGet を使用する NUnit 2.6.4 のインストール
 
@@ -39,7 +39,6 @@ Visual Studio for Mac または Xamarin.UITest を使用してテストを作成
 
 次の手順では、NUnit 2.6.4 のインストール方法について説明します。
 
-
 1. **パッケージ マネージャーを開く** - **[パッケージ]** を右クリックし、ポップアップ メニューから **[パッケージの追加]** を選択します。
 
     [![](installing-nunit-using-nuget-images/add-packages-xs.png "[パッケージ] を右クリックし、ポップアップ メニューから [パッケージの追加] を選択します。")](installing-nunit-using-nuget-images/add-packages-xs.png#lightbox)
@@ -47,7 +46,6 @@ Visual Studio for Mac または Xamarin.UITest を使用してテストを作成
 1. **`NUnit version:2.6.4` を検索する** - Visual Studio for Mac では、(必要に応じて) NUnit 3.0 をアンインストールしてから NUnit 2.6.4 をダウンロードしてインストールします。 **[パッケージの追加]** ダイアログで、右上隅にある**検索**フィールドに `nunit version:2.6.4` というテキストを入力します。 検索結果から **NUnit** を選択して、 **[パッケージの追加]** ボタンをクリックします。
 
     [![](installing-nunit-using-nuget-images/nunit-search-xs.png "検索結果から NUnit を選択して、[パッケージの追加] ボタンをクリックします。")](installing-nunit-using-nuget-images/nunit-search-xs.png#lightbox)
-
 
 Solution Pad で NUnit パッケージのバージョン番号を調べ、NUnit 2.6.4 がインストールされていることを確認できます。
 
@@ -57,13 +55,11 @@ Solution Pad で NUnit パッケージのバージョン番号を調べ、NUnit 
 
 このガイドでは、Visual Studio for Mac でパッケージ マネージャー コンソールを使用して、NUnit 3.0 を NUnit 2.6.4 にダウングレードする方法を説明しました。
 
-
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ## <a name="installing-nunit-264-in-visual-studio"></a>Visual Studio での NUnit 2.6.4 のインストール
 
 このセクションでは、Visual Studio 2015 以降で _NuGet パッケージ マネージャー コンソール_を使用して、NUnit 3.0 をアンインストールし、NUnit 2.6.4 をインストールする方法に焦点を当てています。
-
 
 1. **NuGet パッケージ マネージャー コンソールを起動する** - **[ツール]、[NuGet パッケージ マネージャー]、[パッケージ マネージャー コンソール]** の順に選択します。
 

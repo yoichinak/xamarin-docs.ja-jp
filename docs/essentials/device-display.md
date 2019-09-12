@@ -5,12 +5,12 @@ ms.assetid: 2821C908-C613-490D-8E8C-1BD3269FCEEA
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: 9c0eb4f856dbbb05e891a07326f40528a4e99bea
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 77af173bc3297ac9ccdef22dccbeab054895f772
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70120100"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756904"
 ---
 # <a name="xamarinessentials-device-display-information"></a>Xamarin.Essentials:デバイス ディスプレイ情報
 
@@ -98,7 +98,6 @@ public class KeepScreenOnTest
 違いはありません。
 
 --------------
-
 
 ## <a name="api"></a>API
 

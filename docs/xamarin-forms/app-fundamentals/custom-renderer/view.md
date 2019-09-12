@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2018
-ms.openlocfilehash: e8070894bab89ab2e38772518c94482409e4d17f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: c93feb9527892b7b4c60c9d213361d19d3bc4b93
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650426"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771726"
 ---
 # <a name="implementing-a-view"></a>ページの実装
 
@@ -331,7 +331,6 @@ namespace CustomRenderer.UWP
 ## <a name="summary"></a>まとめ
 
 この記事では、デバイスのカメラからビデオ ストリームのプレビューを表示するために使う、Xamarin.Forms のカスタム コントロール用のカスタム レンダラーを作成する方法について説明しました。 Xamarin.Forms のカスタム ユーザー インターフェイス コントロールは、[`View`](xref:Xamarin.Forms.View) クラスから派生させる必要があります。これは画面上にレイアウトとコントロールを配置するために使われます。
-
 
 ## <a name="related-links"></a>関連リンク
 

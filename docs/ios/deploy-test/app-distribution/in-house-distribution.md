@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: f81e5a24957d4af1cd2ce27b39d1f398797cce73
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: a27536585cbd320a5595d71b156459e25a1fa7a9
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289885"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70763063"
 ---
 # <a name="in-house-distribution-for-xamarinios-apps"></a>Xamarin.iOS アプリ用の社内配布
 
@@ -94,7 +94,6 @@ Apple Developer Enterprise Program 証明書は、3 年間有効で、プロビ�
 
 作成する他のプロビジョニング プロファイルと同じく、ユーザーのデバイスに配布するアプリを識別するため、App ID が必要になります。 ID をまだ作成していない場合は、次の手順に従って作成します。
 
-
 1. [Apple Developer Center](https://developer.apple.com/account/overview.action) で *[Certificate, Identifiers and Profiles]\(証明書、ID、およびプロファイル\)* セクションを参照します。 **[Identifiers]** \(ID\) の下で **[App IDs]** \(App ID\) を選択します。
 2. **+** ボタンをクリックして、ポータルで識別するための**名前**を指定します。
 3. アプリのプレフィックスは、チーム ID として既に設定されており、変更できません。 明示的またはワイルドカード アプリ ID を選択し、次のように逆引き DNS 形式でバンドル ID を入力します。**明示的**: com.[ドメイン名].[アプリ名] **ワイルドカード**: com.[ドメイン名].*
@@ -150,13 +149,11 @@ Apple Developer Enterprise Program では、ライセンス所有者がアプリ
 
 これらのいずれかの方法でアプリを配布するには、次のセクションで説明するように、最初に IPA ファイルを作成する必要があります。
 
-
 ### <a name="creating-an-ipa-for-in-house-deployment"></a>社内展開用に IPA を作成する
 
 プロビジョニングが終ったら、アプリケーションを *IPA* と呼ばれるファイルにパッケージ化できます。 これは、アプリケーションとその他のメタデータとアイコンを含む zip ファイルです。 IPA は、アプリケーションをローカルに iTunes に追加して、プロビジョニング プロファイルに含まれているデバイスと直接同期できるようにするために使用されます。
 
 IPA の作成の詳細については、「[IPA のサポート](~/ios/deploy-test/app-distribution/ipa-support.md)」を参照してください。
-
 
 ## <a name="summary"></a>まとめ
 

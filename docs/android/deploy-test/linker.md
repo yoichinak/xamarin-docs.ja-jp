@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/30/2018
-ms.openlocfilehash: 4e9a7df9ef418eb9a671979da6d61f7afe03a49f
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: e5f494c2f41500b660bf333e7c63f0120536f52a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525422"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753841"
 ---
 # <a name="linking-on-android"></a>Android でのリンク
 
@@ -26,9 +26,7 @@ Xamarin.Android アプリケーションは、"*リンカー*" を使ってア�
 
 リンクの結果、1.2.0 ではパッケージのサイズが元の (リンクされていない) パッケージの 30% に、4.0.1 では 18% になります。
 
-
-
-## <a name="control"></a>コントロール
+## <a name="control"></a>Control
 
 リンクは "*スタティック分析*" に基づいています。 したがって、ランタイム環境に依存するものはすべて検出されません。
 
@@ -50,15 +48,13 @@ public class MyActivity {
 }
 ```
 
-
 ### <a name="linker-behavior"></a>リンカーの動作
 
-リンカーを制御する主要なメカニズムは、**[プロジェクト オプション]** ダイアログ ボックスの **[リンカーの動作]** (Visual Studio では *[リンク]*) ドロップダウンです。 次の 3 つのオプションがあります。
+リンカーを制御する主要なメカニズムは、 **[プロジェクト オプション]** ダイアログ ボックスの **[リンカーの動作]** (Visual Studio では *[リンク]* ) ドロップダウンです。 次の 3 つのオプションがあります。
 
 1. **リンクしない** (Visual Studio では "*なし*")
 1. **SDK アセンブリのみをリンクする** ("*SDK アセンブリのみ*")
 1. **すべてのアセンブリをリンクする** ("*SDK およびユーザー アセンブリ*")
-
 
 **[リンクしない]** オプションは、リンカーをオフにします。上の "リンクなしのリリース" アプリケーション サイズの例では、この動作を使いました。 このオプションは、実行時の障害をトラブルシューティングする場合、およびリンカーが応答しているかどうかを確認する場合に役立ちます。 通常、運用環境のビルドにはこの設定は推奨されません。
 
@@ -67,7 +63,7 @@ public class MyActivity {
 
 **[すべてのアセンブリをリンクする]** オプションはすべてのアセンブリをリンクし、静的参照が存在しない場合はユーザーのコードも削除される可能性があることを意味します。
 
-上の例は、*[リンクしない]* オプションと *[SDK アセンブリのみをリンクする]* オプションでは動作しますが、*[すべてのアセンブリをリンクする]* 動作では失敗して、次のようなエラーが発生します。
+上の例は、 *[リンクしない]* オプションと *[SDK アセンブリのみをリンクする]* オプションでは動作しますが、 *[すべてのアセンブリをリンクする]* 動作では失敗して、次のようなエラーが発生します。
 
 ```shell
 E/mono    (17755): [0xafd4d440:] EXCEPTION handling: System.MissingMethodException: Default constructor not found for type ExampleLibrary.Example.
@@ -86,7 +82,6 @@ E/mono    (17755):   at LinkerScratch2.Activity1.OnCreate (Android.OS.Bundle bun
 E/mono    (17755):   at Android.App.Activity.n_OnCreate_Landroid_os_Bundle_ (IntPtr jnienv, IntPtr native__this, IntPtr native_savedInstanceState) [0x00000] in <filename unknown>:0
 E/mono    (17755):   at (wrapper dynamic-method) object:95bb4fbe-bef8-4e5b-8e99-ca83a5d7a124 (intptr,intptr,intptr)
 ```
-
 
 ### <a name="preserving-code"></a>コードの維持
 
@@ -149,8 +144,6 @@ namespace Android.Runtime
 
 上記の例で、`Preserve` 属性は `Android.Runtime` 名前空間で宣言されています。ただし、リンカーは型名でこの属性を検索するため、`Preserve` 属性はどの名前空間でも使用することができます。
 
-
-
 ### <a name="falseflag"></a>falseflag
 
 [Preserve] 属性を使うことができない場合は、型が使われていることをリンカーに判断させながら、実行時には実行されないようなコード ブロックを提供すると役に立つことがよくあります。 この手法を使うには次のようにします。
@@ -173,8 +166,6 @@ class MyActivity {
 }
 ```
 
-
-
 ### <a name="linkskip"></a>linkskip
 
 [AndroidLinkSkip MSBuild プロパティ](~/android/deploy-test/building-apps/build-process.md)を使うことにより、ユーザー提供のアセンブリのセットがまったくリンクされないように指定しながら、他のユーザー アセンブリを "*SDK アセンブリのみをリンクする*" 動作でスキップさせることができます。
@@ -185,14 +176,11 @@ class MyActivity {
 </PropertyGroup>
 ```
 
-
 ### <a name="linkdescription"></a>LinkDescription
 
 [カスタム リンカー構成ファイル](~/cross-platform/deploy-test/linker.md)を含むことができるファイルに対して、[`@(LinkDescription)`](~/android/deploy-test/building-apps/build-process.md)
 **ビルド アクション**が使われる場合があります。
 ファイルの SSDL セクションに次の  要素を追加します。 維持する必要がある `internal` または `private` メンバーを維持するには、カスタム リンカー構成ファイルが必要な場合があります。
-
-
 
 ### <a name="custom-attributes"></a>カスタム属性
 
@@ -207,7 +195,6 @@ class MyActivity {
 - System.MonoTODOAttribute
 - System.Xml.MonoFIXAttribute
 
-
 アセンブリがリンクされるとき、次のカスタム属性の型はリリース ビルドのすべてのメンバーから削除されます。
 
 - System.Diagnostics.DebuggableAttribute
@@ -219,7 +206,6 @@ class MyActivity {
 - System.Diagnostics.DebuggerStepThroughAttribute
 - System.Diagnostics.DebuggerTypeProxyAttribute
 - System.Diagnostics.DebuggerVisualizerAttribute
-
 
 ## <a name="related-links"></a>関連リンク
 

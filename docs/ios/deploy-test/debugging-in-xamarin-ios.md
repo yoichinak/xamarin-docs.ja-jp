@@ -7,19 +7,18 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: a307641b466eae680c8eb43c1b8fff7623195cde
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 8a1a110bf1ff021c3280e19dea777180d71dba1a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283094"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70763358"
 ---
 # <a name="debugging-xamarinios-apps"></a>Xamarin.iOS アプリのデバッグ
 
 _Xamarin.iOS アプリケーションは Visual Studio for Mac や Visual Studio に内蔵されているデバッガーでデバッグできます。_
 
 C# やその他のマネージド言語コードのデバッグには、Visual Studio for Mac のネイティブ デバッグ サポートを利用します。Xamarin.iOS プロジェクトにリンクする可能性がある C、C++、Objective C コードのデバッグには、[LLDB](http://lldb.llvm.org/tutorial.html) を利用します。
-
 
 > [!NOTE]
 > デバッグ モードでアプリケーションをコンパイルすると、Xamarin.iOS は動作が遅く、大容量のアプリケーションを生成します。すべてのコード行をインストルメント化しなければならないためです。 リリース前に、リリース ビルドを行ってください。
@@ -49,13 +48,13 @@ Xamarin.iOS デバッガーは [Mono Soft Debugger](https://www.mono-project.com
 [![](debugging-in-xamarin-ios-images/image0a.png "[ブレークポイント] パッド")](debugging-in-xamarin-ios-images/image0a.png#lightbox)
 
  [ブレークポイント] パッドが自動的に表示されない場合、 _[表示]、[デバッグ ウィンドウ]、[ブレークポイント]_ の順に選択すると表示されます。
- 
+
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![](debugging-in-xamarin-ios-images/image0.png "[ブレークポイント] パッド")](debugging-in-xamarin-ios-images/image0.png#lightbox)
 
  [ブレークポイント] パッドが自動的に表示されない場合、 _[デバッグ]、[ウィンドウ]、[ブレークポイント]_ の順に選択すると表示されます。
- 
+
 -----
 
 アプリケーションのデバッグを始める前に、構成が **[デバッグ]** に設定されていることを必ず確認してください。この構成には、ブレークポイント、データ ビジュアライザーの使用、コール スタックの表示など、デバッグに役立つ便利なツールが揃っています。
@@ -85,8 +84,6 @@ Xamarin.iOS デバッガーは [Mono Soft Debugger](https://www.mono-project.com
 
 -----
 
-
-
 **[再生]** ボタンを押してアプリケーションを展開します。
 
 ブレークポイントにヒットすると、コードは黄色で強調表示されます。
@@ -105,7 +102,6 @@ Xamarin.iOS デバッガーは [Mono Soft Debugger](https://www.mono-project.com
 
 条件付きブレークポイントを設定するには、 **[ブレークポイントのプロパティ] ウィンドウ**にアクセスします。アクセスする方法は 2 つあります。
 
-
 - 新しい条件付きブレークポイントを追加するには、ブレークポイントを設定するコードの行番号の左にあるエディターの余白を右クリックし、[ブレークポイントの作成] を選択します。
 
   [![](debugging-in-xamarin-ios-images/image4.png "[ブレークポイントの作成] を選択します")](debugging-in-xamarin-ios-images/image4.png#lightbox)
@@ -113,7 +109,6 @@ Xamarin.iOS デバッガーは [Mono Soft Debugger](https://www.mono-project.com
 - 既存のブレークポイントに条件を追加するには、ブレークポイントを右クリックし、 **[ブレークポイントのプロパティ]** を選択します。あるいは**ブレークポイント パッド**で、次の画像にあるプロパティを選択します。
 
   [![](debugging-in-xamarin-ios-images/image5.png "[ブレークポイント] パッド")](debugging-in-xamarin-ios-images/image5.png#lightbox)
-
 
 この画面で、ブレークポイントが発生する条件を入力できます。
 
@@ -199,7 +194,6 @@ Xamarin.iOS は新しい Mono Soft Debugger を使用します。 オペレー�
 
 <a name="Accessing_the_Console" />
 
-
 ## <a name="accessing-the-console"></a>コンソールにアクセスする
 
 クラッシュ ログとコンソール クラスの出力は iPhone コンソールに送信されます。 このコンソールには Xcode でアクセスできます。"オーガナイザー" を利用し、オーガナイザーからデバイスを選択します。
@@ -212,7 +206,6 @@ Visual Studio をご利用の場合、出力ウィンドウにもログがあり
 
 <a name="Debugging_Mono's_Class_Libraries" />
 
-
 ## <a name="debugging-monos-class-libraries"></a>Mono のクラス ライブラリのデバッグ
 
 Xamarin.iOS には Mono のクラス ライブラリのソース コードが付属しているため、そのソース コードを利用してデバッガーからシングル ステップ実行し、内部でどのような処理が実行されているかを確認できます。
@@ -220,7 +213,6 @@ Xamarin.iOS には Mono のクラス ライブラリのソース コードが付
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 この機能はデバッグ中に大量のメモリを使用するため、既定ではオフになっています。
-
 
 この機能を有効にするには、下の画像のように、 _[Visual Studio for Mac]、[環境設定]、[デバッガー]_ メニューで **[プロジェクト コードのみをデバッグします。フレームワーク コードにはステップ インしません。]** オプションの選択を解除します。
 
@@ -235,7 +227,6 @@ Visual Studio でクラス ライブラリをデバッグするには、 _[デ�
 -----
 
 完了したら、アプリケーションを起動し、Mono のコア クラス ライブラリをシングル ステップ実行できます。
-
 
 ## <a name="related-links"></a>関連リンク
 

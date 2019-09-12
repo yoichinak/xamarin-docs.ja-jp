@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: db666fc6a547e3fa089475ba5912774c1af3be0d
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 551dea5455ffd060d808aa11e8996c5984745fda
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650758"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771910"
 ---
 # <a name="highlighting-a-circular-area-on-a-map"></a>マップ上での円形の領域の強調表示
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-map-circle)
 
-"_この記事では、円形のオーバーレイをマップに追加して、マップの円形の領域を強調表示する方法について説明します。_ "
+"_この記事では、円形のオーバーレイをマップに追加して、マップの円形の領域を強調表示する方法について説明します。_"
 
 ## <a name="overview"></a>概要
 
@@ -305,7 +305,6 @@ namespace MapOverlay.UWP
 - `MapPolygon` オブジェクトをインスタンス化することで、円形が作成されます。 `MapPolygon` クラスを使用して、その `Path` プロパティを図形の座標が含まれる `Geopath` オブジェクトに設定することで、マップ上にマルチポイント図形が表示されます。
 - `MapControl.MapElements` コレクションに追加することで、多角形がマップ上にレンダリングされます。
 
-
 ```
 List<Position> GenerateCircleCoordinates(Position position, double radius)
 {
@@ -331,7 +330,6 @@ List<Position> GenerateCircleCoordinates(Position position, double radius)
 ## <a name="summary"></a>まとめ
 
 この記事では、円形のオーバーレイをマップに追加し、マップの円形の領域を強調表示する方法について説明しました。
-
 
 ## <a name="related-links"></a>関連リンク
 

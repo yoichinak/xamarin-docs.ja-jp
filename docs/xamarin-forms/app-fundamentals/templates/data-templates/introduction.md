@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/11/2017
-ms.openlocfilehash: 7308222e64d64efdbad218186bb9a6e4dca3b26e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 10bba38de1dc8908ad853d5e4ca2bb845b4ac8c6
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68651924"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771274"
 ---
 # <a name="introduction-to-xamarinforms-data-templates"></a>Xamarin.Forms データ テンプレートの概要
 
@@ -133,7 +133,6 @@ public class Person
 - アプリケーション レベルで定義された [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) は、アプリケーション全体の有効なコントロールに適用できます。
 
 `x:Key` 属性を共有する場合、ビュー階層で下位にあるデータ テンプレートは、上位の定義済みコントロール テンプレートよりも優先されます。 たとえば、アプリケーションレベルのデータ テンプレートはページレベルのデータ テンプレートでオーバーライドされ、ページレベルのデータ テンプレートはコントロールレベルのデータ テンプレートまたはインライン データ テンプレートによってオーバーライドされます。
-
 
 ## <a name="related-links"></a>関連リンク
 

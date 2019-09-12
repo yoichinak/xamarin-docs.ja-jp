@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/06/2017
-ms.openlocfilehash: dac059576b8821d218cca44ae1c049010e364cfc
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.openlocfilehash: 71e509d87dc2a2947821084aea5668055f6f4678
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68739357"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771490"
 ---
 # <a name="picking-a-photo-from-the-picture-library"></a>画像ライブラリから写真を選択する
 
@@ -214,7 +214,6 @@ namespace DependencyServiceDemos.Droid
 ## <a name="uwp-implementation"></a>UWP での実装
 
 iOS や Android での実装とは異なり、ユニバーサル Windows プラットフォーム用の写真ピッカーの実装では、`TaskCompletionSource` クラスは必要ありません。 [`PhotoPickerService`](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceDemos.UWP/Services/PhotoPickerService.cs) クラスでは、[`FileOpenPicker`](/uwp/api/Windows.Storage.Pickers.FileOpenPicker/) クラスを使用してフォト ライブラリへのアクセスが取得されます。 `FileOpenPicker` の `PickSingleFileAsync` メソッド自体が非同期なので、`GetImageStreamAsync` メソッドでは、そのメソッド (および他の非同期メソッド) で `await` を単に使用して、`Stream` オブジェクトを返すことができます。
-
 
 ```csharp
 [assembly: Dependency(typeof(PhotoPickerService))]

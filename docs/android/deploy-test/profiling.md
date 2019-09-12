@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/03/2018
-ms.openlocfilehash: d2999a21debefb05e5aa3cdaace56cb4f3ac2d81
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 44bed11e4d2ccf7baa39734a1b20e49b9ecf5f10
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525573"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753992"
 ---
 # <a name="profiling-android-apps"></a>Android アプリのプロファイリング
 
@@ -24,14 +24,13 @@ ms.locfileid: "69525573"
 
 このガイドでは、Xamarin Profiler を紹介し、Android Profiler の使用を開始するための詳細な情報を提供します。
 
- 
 ## <a name="xamarin-profiler"></a>Xamarin Profiler
 
 Xamarin Profiler は、IDE 内から Xamarin アプリをプロファイリングするために Visual Studio および Visual Studio for Mac に統合されているスタンドアロン アプリケーションです。 Xamarin Profiler の使用の詳細については、「[Xamarin Profiler](~/tools/profiler/index.md)」を参照してください。
 
 > [!NOTE]
 > Windows 用 Visual Studio Enterprise または Visual Studio for Mac のいずれかで Xamarin Profiler 機能のロックを解除するには、[Visual Studio Enterprise](https://visualstudio.microsoft.com/vs/compare/) のサブスクライバーである必要があります。
- 
+
 ## <a name="android-studio-profiler"></a>Android Studio Profiler
 
 Android Studio 3.0 以降には、Android Profiler ツールが含まれています。 Android Profiler を使用すれば、Visual Studio Enterprise のライセンスがなくても、Visual Studio でビルドされた Xamarin Android アプリのパフォーマンスを測定することができます。 ただし、Android Profiler は、Xamarin Profiler とは異なり、Visual Studio に統合されていないため、あらかじめビルドされ Android Profiler にインポートされた Android アプリケーション パッケージ (APK) をプロファイリングする場合にのみ使用できます。
@@ -40,7 +39,7 @@ Android Studio 3.0 以降には、Android Profiler ツールが含まれてい�
 
 次の手順では、Android Studio の Android Profiler ツールで Xamarin Android アプリケーションを起動する方法について説明します。 次のスクリーン ショットの例では、Xamarin Forms の [XamagonXuzzle](https://docs.microsoft.com/samples/xamarin/mobile-samples/liveplayer-xamagonxuzzlelp/) アプリがビルドされ、Android Profiler を使用してプロファイリングされています。
 
-1. Android プロジェクトのビルド オプションで、**[共有ランタイムの使用]** を無効にします。 これで、Android アプリケーション パッケージ (APK) は、開発時の共有 Mono ランタイムとの依存関係なしで、ビルドされるようになります。
+1. Android プロジェクトのビルド オプションで、 **[共有ランタイムの使用]** を無効にします。 これで、Android アプリケーション パッケージ (APK) は、開発時の共有 Mono ランタイムとの依存関係なしで、ビルドされるようになります。
 
     ![[共有ランタイムの使用] の無効化](profiling-images/vswin/01-turn-off-shared-runtime.png)
 
@@ -51,11 +50,11 @@ Android Studio 3.0 以降には、Android Profiler ツールが含まれてい�
 
     [![署名された APK ファイルのデバッグの場所](profiling-images/vswin/02-locating-the-debug-apk-sml.png)](profiling-images/vswin/02-locating-the-debug-apk.png#lightbox)
 
-4. Android Studio を起動し、**[Profile or debug APK]\(プロファイルまたはデバッグ APK\)** を選択します。
+4. Android Studio を起動し、 **[Profile or debug APK]\(プロファイルまたはデバッグ APK\)** を選択します。
 
     ![Android Studio 起動画面からのプロファイラーの起動](profiling-images/vswin/03-android-studio.png)
 
-5. **[Select APK File]\(APK ファイルの選択\)** ダイアログ内で、前にビルドしてコピーした APK に移動します。 APK を選択し、**[OK]** をクリックします。 
+5. **[Select APK File]\(APK ファイルの選択\)** ダイアログ内で、前にビルドしてコピーした APK に移動します。 APK を選択し、 **[OK]** をクリックします。 
     
     ![[Select APK File]\(APK ファイルの選択\) ダイアログでの APK の選択](profiling-images/vswin/04-select-apk-dialog.png)
 
@@ -63,11 +62,11 @@ Android Studio 3.0 以降には、Android Profiler ツールが含まれてい�
 
     ![APK の設定](profiling-images/vswin/05-setting-up-the-apk.png)
 
-7. APK が読み込まれると、Android Studio によって APK 用の次のプロジェクト画面が表示されます。 左側のツリー ビューでアプリ名を右クリックして、**[Open Module Settings]\(モジュール設定を開く\)** を選択します。
+7. APK が読み込まれると、Android Studio によって APK 用の次のプロジェクト画面が表示されます。 左側のツリー ビューでアプリ名を右クリックして、 **[Open Module Settings]\(モジュール設定を開く\)** を選択します。
 
     [![メニュー項目 [Open Module Settings]\(モジュール設定を開く\) の場所](profiling-images/vswin/06-open-module-settings-sml.png)](profiling-images/vswin/06-open-module-settings.png#lightbox)
 
-8. **[プロジェクトの設定]、[モジュール]** の順に移動し、アプリの **[-Signed]** ノードを選択し、**&lt;[No SDK]\(SDK なし\)&gt;** をクリックします。
+8. **[プロジェクトの設定]、[モジュール]** の順に移動し、アプリの **[-Signed]** ノードを選択し、 **&lt;[No SDK]\(SDK なし\)&gt;** をクリックします。
 
     [![SDK 設定への移動](profiling-images/vswin/07-project-settings-modules-sml.png)](profiling-images/vswin/07-project-settings-modules.png#lightbox)
 
@@ -75,13 +74,13 @@ Android Studio 3.0 以降には、Android Profiler ツールが含まれてい�
 
     [![プロジェクト SDK レベルの設定](profiling-images/vswin/08-project-sdk-level-sml.png)](profiling-images/vswin/08-project-sdk-level.png#lightbox)
 
-    **[Apply]\(適用\)**、**[OK]** の順にクリックして、この設定を保存します。
+    **[Apply]\(適用\)** 、 **[OK]** の順にクリックして、この設定を保存します。
 
 10. ツール バー アイコンからプロファイラーを起動します。
 
     [![プロファイラー ツールバー アイコンの場所](profiling-images/vswin/09-launch-profiler-sml.png)](profiling-images/vswin/09-launch-profiler.png#lightbox)
 
-11. アプリを実行/プロファイリングするために配置ターゲットを選択して、**[OK]** をクリックします。 配置ターゲットとしては、物理デバイスまたはエミュレーターで実行されている仮想デバイスを指定できます。 この例では、Nexus 5 X デバイスを使用します。
+11. アプリを実行/プロファイリングするために配置ターゲットを選択して、 **[OK]** をクリックします。 配置ターゲットとしては、物理デバイスまたはエミュレーターで実行されている仮想デバイスを指定できます。 この例では、Nexus 5 X デバイスを使用します。
 
     ![配置ターゲットの選択](profiling-images/vswin/10-select-deployment-target.png)
 
@@ -100,7 +99,6 @@ Android Studio 3.0 以降には、Android Profiler ツールが含まれてい�
 15. **XamagonXuzzle** 上の **[RANDOMIZE]\(ランダム化\)** ボタンをタップすると (これによって、タイルがシフトおよびランダム化されます)、アプリのランダム化の間隔中に CPU の使用率が高くなるのがわかります。
 
     [![[RANDOMIZE]\(ランダム化\) ボタンをタップしたときの CPU 使用率](profiling-images/vswin/14-tap-randomize-sml.png)](profiling-images/vswin/14-tap-randomize.png#lightbox)
-
 
 ### <a name="using-the-android-profiler"></a>Android Profiler の使用
 

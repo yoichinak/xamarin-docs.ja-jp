@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 87972df2b15a5bc1f6323a6953f809379cae4a50
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ba7148ecabf7f534a953fda3c3d3021abeaa034c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644526"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771565"
 ---
 # <a name="xamarinforms-string-formatting"></a>Xamarin.Forms の文字列の書式設定
 
@@ -183,7 +183,6 @@ RGB (赤、緑、青) の値を従来の 2 桁の 16 進数形式でどのよう
 もう 1 つの手法はより一般的です。後の記事の[**値コンバーターのバインディング**](converters.md)に関する記事で示されているように、*値コンバーターのバインディング*を記述することができます。
 
 次の記事では、[**バインディング パス**](binding-path.md)の詳細を参照し、バインディング パスを使って、コレクションのサブ プロパティとアイテムを参照する方法について示しています。
-
 
 ## <a name="related-links"></a>関連リンク
 
