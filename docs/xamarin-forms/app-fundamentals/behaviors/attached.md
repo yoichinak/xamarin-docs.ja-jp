@@ -123,7 +123,7 @@ var entry = new Entry { Placeholder = "Enter a System.Double" };
 NumericValidationBehavior.SetAttachBehavior (entry, false);
 ```
 
-実行時に、`AttachBehavior` 添付プロパティの値が `false` に設定されていると、`OnAttachBehaviorChanged` メソッドが実行されます。 `OnAttachBehaviorChanged` メソッドによって [`TextChanged`](xref:Xamarin.Forms.Entry.TextChanged) イベントのイベント ハンドラーの登録が解除され、ユーザーがコントロールを操作してもその動作が実行されなくなります。
+実行時に、`AttachBehavior` 添付プロパティの値が `false` に設定されていると、`OnAttachBehaviorChanged` メソッドが実行されます。 `OnAttachBehaviorChanged` メソッドによって [`TextChanged`](xref:Xamarin.Forms.Entry.TextChanged) イベントのイベント ハンドラーの登録が解除され、ユーザーがコントロールを操作してもそのビヘイビアーが実行されなくなります。
 
 ## <a name="summary"></a>まとめ
 
@@ -131,4 +131,4 @@ NumericValidationBehavior.SetAttachBehavior (entry, false);
 
 ## <a name="related-links"></a>関連リンク
 
-- [アタッチされた動作 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-attachednumericvalidationbehavior)
+- [アタッチされたビヘイビアー (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-attachednumericvalidationbehavior)
