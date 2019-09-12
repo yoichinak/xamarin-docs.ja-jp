@@ -1,6 +1,6 @@
 ---
-title: '摩耗 OS のインストールとセットアップ '
-description: この記事では、Android の磨耗開発のためにコンピューターとデバイスを準備するために必要なインストール手順と構成の詳細について説明します。 この記事を終了すると、Visual Studio for Mac や Microsoft Visual Studio に統合された、作業中の Xamarin. Android のインストールが可能になります。また、最初の Xamarin. Android 磨耗アプリケーションの構築を開始する準備が整います。
+title: 'Wear OS のインストールとセットアップ '
+description: この記事では、Android Wear 開発のためにコンピューターとデバイスを準備するために必要なインストール手順と構成の詳細について説明します。 この記事を終了すると、Visual Studio for Mac や Microsoft Visual Studio に統合された、作業中の Xamarin.Android のインストールが可能になります。また、最初の Xamarin.Android Wear アプリケーションの構築を開始する準備が整います。
 ms.prod: xamarin
 ms.assetid: 3BB395FA-0545-4024-A18F-98CF5E9CA55F
 ms.technology: xamarin-android
@@ -16,11 +16,11 @@ ms.locfileid: "70762232"
 ---
 # <a name="setup-and-installation"></a>セットアップとインストール
 
-_この記事では、Android の磨耗開発のためにコンピューターとデバイスを準備するために必要なインストール手順と構成の詳細について説明します。この記事を終了すると、Visual Studio for Mac や Microsoft Visual Studio に統合された、作業中の Xamarin. Android のインストールが可能になります。また、最初の Xamarin. Android 磨耗アプリケーションの構築を開始する準備が整います。_
+_この記事では、Android Wear 開発のためにコンピューターとデバイスを準備するために必要なインストール手順と構成の詳細について説明します。この記事を終了すると、Visual Studio for Mac や Microsoft Visual Studio に統合された、作業中の Xamarin.Android のインストールが可能になります。また、最初の Xamarin.Android Wear アプリケーションの構築を開始する準備が整います。_
 
 ## <a name="requirements"></a>必要条件
 
-Xamarin ベースの Android 磨耗アプリを作成するには、次のものが必要です。
+Xamarin ベースの Android Wear アプリを作成するには、次のものが必要です。
 
 - **Visual Studio または Visual Studio for Mac**&ndash; Visual Studio 2017 Community 以降が必要です。
 
@@ -37,11 +37,11 @@ Xamarin ベースの Android 磨耗アプリを作成するには、次のもの
 
 ## <a name="installation"></a>インストール
 
-Xamarin Android をインストールしたら、次の手順を実行して、Android の磨耗アプリをビルドしてテストする準備ができていることを確認します。 
+Xamarin Android をインストールしたら、次の手順を実行して、Android Wear アプリをビルドしてテストする準備ができていることを確認します。 
 
 1. 必要な Android SDK とツールをインストールします。
 2. テストデバイスを構成します。
-3. 初めての Android 用の磨耗アプリを作成します。
+3. 初めての Android Wear アプリを作成します。
 
 これらの手順については、次のセクションで説明します。
 
@@ -79,11 +79,11 @@ Xamarin Android をインストールしたら、次の手順を実行して、A
 
 ## <a name="configuration"></a>構成
 
-アプリのテストを使用する前に、Android の磨耗エミュレーターまたは実際の Android の磨耗デバイスを構成する必要があります。 
+アプリのテストを使用する前に、Android Wear エミュレーターまたは実際の Android Wear デバイスを構成する必要があります。 
 
-### <a name="android-wear-emulator"></a>Android の磨耗エミュレーター
+### <a name="android-wear-emulator"></a>Android Wear エミュレーター
 
-Android の摩耗エミュレーターを使用するには、 **Google Emulator Manager**を使用して Android の摩耗 Android 仮想デバイス (avd) を構成する必要があります。
+Android Wear エミュレーターを使用するには、 **Google Emulator Manager**を使用して Android Wear Android 仮想デバイス (avd) を構成する必要があります。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -95,23 +95,23 @@ Android の摩耗エミュレーターを使用するには、 **Google Emulator
 
 -----
 
-Android の磨耗エミュレーターの設定の詳細については、「[エミュレーターでの android の磨耗のデバッグ](~/android/wear/deploy-test/debug-on-emulator.md)」を参照してください。
+Android Wear エミュレーターの設定の詳細については、「[エミュレーターでの Android Wear のデバッグ](~/android/wear/deploy-test/debug-on-emulator.md)」を参照してください。
 
-### <a name="android-wear-device"></a>Android の磨耗デバイス
+### <a name="android-wear-device"></a>Android Wear デバイス
 
-Android の磨耗 Smartwatch などの Android の磨耗デバイスがある場合は、エミュレーターを使用する代わりに、このデバイスでアプリをデバッグすることができます。 磨耗デバイスを使用した開発の詳細については、「[磨耗デバイスでのデバッグ](~/android/wear/deploy-test/debug-on-device.md)」を参照してください。
+Android Wear Smartwatch などの Android Wear デバイスがある場合は、エミュレーターを使用する代わりに、このデバイスでアプリをデバッグすることができます。 Wear デバイスを使用した開発の詳細については、「[Wear デバイスでのデバッグ](~/android/wear/deploy-test/debug-on-device.md)」を参照してください。
 
-## <a name="create-your-first-android-wear-app"></a>初めての Android 用の磨耗アプリを作成する
+## <a name="create-your-first-android-wear-app"></a>初めての Android Wear アプリを作成する
 
-[Hello, 磨耗](~/android/wear/get-started/hello-wear.md)の指示に従って、初めての watch アプリを作成します。
+[Hello, Wear](~/android/wear/get-started/hello-wear.md)の指示に従って、初めての watch アプリを作成します。
 
 ## <a name="packaging-your-app"></a>アプリのパッケージ化
 
-Android の磨耗アプリケーションは、常にコンパニオン Android phone アプリと共に配布されます。 
+Android Wear アプリケーションは、常にコンパニオン Android phone アプリと共に配布されます。 
 
-Android の磨耗アプリケーションをメインの Android アプリケーションへの参照として追加すると、自動的に Android の磨耗プロジェクトと見なされ、必要なすべての XML とメタデータが自動的に生成されます。 また、パッケージとバージョン番号が一致していることを確認して、アプリを Google Play に簡単に配布できます。 
+Android Wear アプリケーションをメインの Android アプリケーションへの参照として追加すると、自動的に Android Wear プロジェクトと見なされ、必要なすべての XML とメタデータが自動的に生成されます。 また、パッケージとバージョン番号が一致していることを確認して、アプリを Google Play に簡単に配布できます。 
 
-摩耗アプリのパッケージ化の詳細については、「[パッケージングの](~/android/wear/deploy-test/packaging.md)使用」を参照してください。
+Wear アプリのパッケージ化の詳細については、「[パッケージングの](~/android/wear/deploy-test/packaging.md)使用」を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 

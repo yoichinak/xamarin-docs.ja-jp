@@ -19,7 +19,7 @@ ms.locfileid: "70758209"
 
 ![正方形ディスプレイの GridViewPager のスクリーンショットの例](gridviewpager-images/gridviewpager.png)
 
-まず、 [Xamarin Android 磨耗サポート](https://www.nuget.org/packages/Xamarin.Android.Wear/)NuGet パッケージをプロジェクトに追加します。
+まず、 [Xamarin Android Wear サポート](https://www.nuget.org/packages/Xamarin.Android.Wear/)NuGet パッケージをプロジェクトに追加します。
 
 レイアウト XML は次のようになります。
 
