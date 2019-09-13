@@ -5,12 +5,12 @@ ms.assetid: 63FA28A5-6F52-4CB7-AF39-8DF7B436B5A4
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 08/20/2019
-ms.openlocfilehash: 6175e6ca6c09f1e85302df309fd58b8278aaf90c
-ms.sourcegitcommit: 9a46ee759ec4a738da348e8f8904d0f482ef0f25
+ms.openlocfilehash: b12606317fd6cbc9a6a0f59364270595f1250abf
+ms.sourcegitcommit: ab51d32f4ea0e0d4701f0bf2f1465c9323cd070b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70060075"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70887343"
 ---
 # <a name="platform-support"></a>プラットフォームのサポート
 
@@ -74,4 +74,3 @@ Xamarin.Essentials では、すべてのプラットフォームに機能を提�
 | [単位コンバーター](unit-converters.md?context=xamarin/xamarin-forms) | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
 | [バージョンの追跡](version-tracking.md?context=xamarin/xamarin-forms) | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
 | [バイブレーション](vibrate.md?context=xamarin/xamarin-forms) | ✔ | ✔ | ✔ | ❌ | ❌ | ✔ |
-

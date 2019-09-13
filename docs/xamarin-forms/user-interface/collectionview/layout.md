@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/22/2019
-ms.openlocfilehash: ac32e340212dd42c373a39df138436e7ee313958
-ms.sourcegitcommit: 1341f2950b775a4daa7d0548a51fdef759afd6e3
+ms.openlocfilehash: 376e35c8b82973ea1343966fad814db2d3a5e673
+ms.sourcegitcommit: e83035c746f165ee6d03f2e9fd0066ee4f20a9fb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69976537"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70906463"
 ---
 # <a name="xamarinforms-collectionview-layout"></a>CollectionView レイアウト
 
@@ -528,7 +528,7 @@ CollectionView collectionView = new CollectionView
 
 このコードを実行すると、垂直方向の2列グリッドが生成されます。このグリッドには、各項目の周りに20の垂直方向の間隔があり、各項目の前後に30の水平方向の間隔があります。
 
-[![項目の間隔がある CollectionView のスクリーンショット (IOS と Android の](layout-images/vertical-grid-spacing.png "CollectionView 項目の間隔"))](layout-images/vertical-grid-spacing-large.png#lightbox "CollectionView item の間隔")
+[Android(layout-images/vertical-grid-spacing.png "CollectionView item スペーシング")![での項目間隔を含む CollectionView のスクリーンショット]](layout-images/vertical-grid-spacing-large.png#lightbox "CollectionView item の間隔")
 
 ## <a name="item-sizing"></a>項目のサイズ変更
 

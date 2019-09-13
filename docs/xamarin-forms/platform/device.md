@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/12/2019
-ms.openlocfilehash: eb1358f039cc5d5a200f929fcc7dfa71ca863d2a
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 77cc414cd9b15f99f95d4a54f7af5ce6f028c41a
+ms.sourcegitcommit: ab51d32f4ea0e0d4701f0bf2f1465c9323cd070b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70121315"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70887447"
 ---
 # <a name="xamarinforms-device-class"></a>Xamarin.Forms のデバイス クラス
 
@@ -114,7 +114,7 @@ if (Device.Idiom == TargetIdiom.Phone) {
 [ `Device.FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection)値の取得、 [ `FlowDirection` ](xref:Xamarin.Forms.FlowDirection)デバイスで使用されている現在のフローの方向を表す列挙値。 フロー方向とは、ページ上の UI 要素を視覚でスキャンしていく方向のことです。 列挙値は、次のとおりです。
 
 - [`LeftToRight`](xref:Xamarin.Forms.FlowDirection.LeftToRight)
-- [`RightToRight`](xref:Xamarin.Forms.FlowDirection.RightToLeft)
+- [`RightToLeft`](xref:Xamarin.Forms.FlowDirection.RightToLeft)
 - [`MatchParent`](xref:Xamarin.Forms.FlowDirection.MatchParent)
 
 XAML、 [ `Device.FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection)を使用して値を取得することができます、`x:Static`マークアップ拡張機能。
@@ -191,11 +191,11 @@ IOS、Android、およびユニバーサル Windows プラットフォームを�
 | メソッド | 引数 | 戻り値 | 目的 |
 |---|---|---|---|
 | `BeginInvokeOnMainThread` | `Action` | `void` | メインスレッド`Action`でを呼び出し、完了するまで待機しません。 |
-| `InvokeOnMainThreadAsync<T>` | `Func<T>` | `Task<T>` | メインスレッド`Func<T>`でを呼び出し、完了するまで待機します。 |
-| `InvokeOnMainThreadAsync` | `Action` | `Task` | メインスレッド`Action`でを呼び出し、完了するまで待機します。 |
-| `InvokeOnMainThreadAsync<T>`| `Func<Task<T>>` | `Task<T>` | メインスレッド`Func<Task<T>>`でを呼び出し、完了するまで待機します。 |
-| `InvokeOnMainThreadAsync` | `Func<Task>` | `Task` | メインスレッド`Func<Task>`でを呼び出し、完了するまで待機します。 |
-| `GetMainThreadSynchronizationContextAsync` | | `Task<SynchronizationContext>` | メインスレッド`SynchronizationContext`のを返します。 |
+| `InvokeOnMainThreadAsync<T>` | `Func<T>` | `Task<T>` | メイン スレッド上で `Func<T>` を呼び出し、それが完了するまで待機します。 |
+| `InvokeOnMainThreadAsync` | `Action` | `Task` | メイン スレッド上で `Action` を呼び出し、それが完了するまで待機します。 |
+| `InvokeOnMainThreadAsync<T>`| `Func<Task<T>>` | `Task<T>` | メイン スレッド上で `Func<Task<T>>` を呼び出し、それが完了するまで待機します。 |
+| `InvokeOnMainThreadAsync` | `Func<Task>` | `Task` | メイン スレッド上で `Func<Task>` を呼び出し、それが完了するまで待機します。 |
+| `GetMainThreadSynchronizationContextAsync` | | `Task<SynchronizationContext>` | メイン スレッドの `SynchronizationContext` を返します。 |
 
 次のコードは、 `BeginInvokeOnMainThread`メソッドの使用例を示しています。
 

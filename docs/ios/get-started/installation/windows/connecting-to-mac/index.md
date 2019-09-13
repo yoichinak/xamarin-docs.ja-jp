@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/29/2018
-ms.openlocfilehash: 5889859543deaecccb72740fccbc2b3343a8297f
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 00245b7b4b0db73f66d88474be2052f311499e7a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292128"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753765"
 ---
 # <a name="pair-to-mac-for-xamarinios-development"></a>Xamarin.iOS 開発のために Mac とペアリングする
 
@@ -30,7 +30,7 @@ Visual Studio 2019 の [Mac とペアリング] 機能は、Windows ベースの
 
 - Visual Studio 2019 は、Mac ビルド ホストへのネットワーク接続を開き、そのマシン上のビルド ツールを使って iOS アプリのコンパイルと署名を行います。
 
-- Mac 上で別のアプリケーションを実行する必要はありません。Visual Studio 2017 は SSH 経由で Mac ビルドを安全に呼び出します。
+- Mac 上で別のアプリケーションを実行する必要はありません。Visual Studio 2019 では SSH 経由で Mac ビルドを安全に呼び出します。
 
 - 変更が行われるとすぐに Visual Studio 2019 は通知を受け取ります。 たとえば、iOS デバイスが Mac に接続されたり、ネットワーク上で使用できるようになったりすると、iOS ツール バーが即座に更新されます。
 

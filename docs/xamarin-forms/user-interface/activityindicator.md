@@ -7,17 +7,17 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 07/10/2019
-ms.openlocfilehash: de93927728271e9f0d9d2ef850b70eeeee249c84
-ms.sourcegitcommit: 9178e2e689f027212ea3e623b556b312985d79fe
+ms.openlocfilehash: 0694439f5e363399e0442c9883426c0f0bf5d989
+ms.sourcegitcommit: ab51d32f4ea0e0d4701f0bf2f1465c9323cd070b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69658105"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70887432"
 ---
 # <a name="xamarinforms-activityindicator"></a>Xamarin. Forms ActivityIndicator
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-activityindicatordemos/)
 
-Xamarin[`ActivityIndicator`](xref:Xamarin.Forms.ActivityIndicator)コントロールには、アプリケーションが長時間のアクティビティに関与していることを示すアニメーションが表示されます。 とは異なり、 `ActivityIndicator`では進行状況が示されません。 [`ProgressBar`](xref:Xamarin.Forms.ProgressBar) は`ActivityIndicator` 、から[`View`](xref:Xamarin.Forms.View)継承されます。
+Xamarin [`ActivityIndicator`](xref:Xamarin.Forms.ActivityIndicator)コントロールには、アプリケーションが長時間のアクティビティに関与していることを示すアニメーションが表示されます。 とは異なり、 `ActivityIndicator`では進行状況が示されません。 [`ProgressBar`](xref:Xamarin.Forms.ProgressBar) は`ActivityIndicator` 、から[`View`](xref:Xamarin.Forms.View)継承されます。
 
 次のスクリーンショットは`ActivityIndicator` 、iOS と Android のコントロールを示しています。
 
