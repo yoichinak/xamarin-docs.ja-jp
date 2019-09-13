@@ -1,5 +1,5 @@
 ---
-title: Android の磨耗1.0 のウォッチ式の作成
+title: Android Wear 1.0 のウォッチ式の作成
 description: このガイドでは、Android 用のカスタムウォッチフェイス1.0 を実装する方法について説明します。 デジタルウォッチフェイスサービスを削除した後、アナログスタイルのウォッチ式を作成するためのより多くのコードを作成する手順について説明します。
 ms.prod: xamarin
 ms.assetid: 4D3F9A40-A820-458D-A12A-D784BB11F643
@@ -20,7 +20,7 @@ _このガイドでは、Android 用のカスタムウォッチフェイス1.0 �
 
 ## <a name="overview"></a>概要
 
-このチュートリアルでは、カスタムの Android 磨耗1.0 ウォッチ式の作成の要点を示すために、基本的な watch face service が作成されています。
+このチュートリアルでは、カスタムの Android Wear 1.0 ウォッチ式の作成の要点を示すために、基本的な watch face service が作成されています。
 最初の watch face サービスには、現在の時間を時間と分で表示するシンプルなデジタルウォッチが表示されます。
 
 [![デジタルウォッチの顔](creating-a-watchface-images/01-initial-face.png "最初のデジタルウォッチ顔のスクリーンショットの例")](creating-a-watchface-images/01-initial-face.png#lightbox)
@@ -29,29 +29,29 @@ _このガイドでは、Android 用のカスタムウォッチフェイス1.0 �
 
 [![アナログウォッチフェイス](creating-a-watchface-images/02-example-watchface.png "最後のアナログウォッチ式のスクリーンショットの例")](creating-a-watchface-images/02-example-watchface.png#lightbox)
 
-Watch face services は、摩耗1.0 アプリの一部としてバンドルされ、インストールされます。 次の例では`MainActivity` 、には、摩耗1.0 アプリテンプレートのコードよりも多くのコードが含まれています。これにより、ウォッチフェイスサービスをパッケージ化して、アプリの一部としてスマートウォッチにデプロイできるようになります。 実際には、このアプリは、デバッグとテストのために watch のサービスを磨耗1.0 デバイス (エミュレーター) に読み込むための手段として純粋に機能します。
+Watch face services は、Wear 1.0 アプリの一部としてバンドルされ、インストールされます。 次の例では`MainActivity` 、には、Wear 1.0 アプリテンプレートのコードよりも多くのコードが含まれています。これにより、ウォッチフェイスサービスをパッケージ化して、アプリの一部としてスマートウォッチにデプロイできるようになります。 実際には、このアプリは、デバッグとテストのために watch のサービスを Wear 1.0 デバイス (エミュレーター) に読み込むための手段として純粋に機能します。
 
 ## <a name="requirements"></a>必要条件
 
 Watch face service を実装するには、次のものが必要です。
 
-- Android 5.0 (API レベル 21) 以上 (磨耗デバイスまたはエミュレーターの場合)。
+- Android 5.0 (API レベル 21) 以上 (Wear デバイスまたはエミュレーターの場合)。
 
-- Xamarin [android の磨耗サポートライブラリ](https://www.nuget.org/packages/Xamarin.Android.Wear)を xamarin android プロジェクトに追加する必要があります。
+- Xamarin [Android Wear サポートライブラリ](https://www.nuget.org/packages/Xamarin.Android.Wear)を xamarin android プロジェクトに追加する必要があります。
 
-Android 5.0 は watch face service を実装するための最小 API レベルですが、Android 5.1 以降をお勧めします。 Android 5.1 (API 22) 以降を実行している android の磨耗デバイスでは、デバイスが低電力の*アンビエント*モードであるときに画面に表示される内容を、磨耗アプリで制御できます。 デバイスが低電力の*アンビエント*モードのままになっている場合は、*対話*モードになります。 これらのモードの詳細については、「[アプリの表示の維持](https://developer.android.com/training/wearables/apps/always-on.html)」を参照してください。
+Android 5.0 は watch face service を実装するための最小 API レベルですが、Android 5.1 以降をお勧めします。 Android 5.1 (API 22) 以降を実行している Android Wear デバイスでは、デバイスが低電力の*アンビエント*モードであるときに画面に表示される内容を、Wear アプリで制御できます。 デバイスが低電力の*アンビエント*モードのままになっている場合は、*対話*モードになります。 これらのモードの詳細については、「[アプリの表示の維持](https://developer.android.com/training/wearables/apps/always-on.html)」を参照してください。
 
 ## <a name="start-an-app-project"></a>アプリプロジェクトを開始する
 
-**WatchFace**という名前の新しい Android の磨耗1.0 プロジェクトを作成します (新しい Xamarin Android プロジェクトの作成の詳細については、「 [Hello, android](~/android/get-started/hello-android/hello-android-quickstart.md)」を参照してください)。
+**WatchFace**という名前の新しい Android Wear 1.0 プロジェクトを作成します (新しい Xamarin Android プロジェクトの作成の詳細については、「 [Hello, android](~/android/get-started/hello-android/hello-android-quickstart.md)」を参照してください)。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[[![新しいプロジェクト] ダイアログ][(creating-a-watchface-images/03-wear-project-vs-sml.png "新しいプロジェクト] ダイアログボックスで [磨耗アプリ] を選択します")。](creating-a-watchface-images/03-wear-project-vs.png#lightbox)
+[[![新しいプロジェクト] ダイアログ][(creating-a-watchface-images/03-wear-project-vs-sml.png "新しいプロジェクト] ダイアログボックスで [Wear アプリ] を選択します")。](creating-a-watchface-images/03-wear-project-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-[[![新しいプロジェクト] ダイアログ][(creating-a-watchface-images/03-wear-project-xs-sml.png "新しいプロジェクト] ダイアログボックスで [磨耗アプリ] を選択します")。](creating-a-watchface-images/03-wear-project-xs.png#lightbox)
+[[![新しいプロジェクト] ダイアログ][(creating-a-watchface-images/03-wear-project-xs-sml.png "新しいプロジェクト] ダイアログボックスで [Wear アプリ] を選択します")。](creating-a-watchface-images/03-wear-project-xs.png#lightbox)
 
 -----
 
@@ -84,7 +84,7 @@ Android の最小バージョンを**android 5.1 (API レベル 22)** に設定�
 
 次に、このチュートリアルの後半で、ダウンロード[し](creating-a-watchface-images/preview.png) &ndash;たプレビューファイルを**drawables**実行可能フォルダーに追加します。
 
-## <a name="add-the-xamarinandroid-wear-package"></a>Xamarin. Android の磨耗パッケージを追加する
+## <a name="add-the-xamarinandroid-wear-package"></a>Xamarin.Android Wear パッケージを追加する
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -104,15 +104,15 @@ NuGet パッケージマネージャーを起動します (Visual Studio for Mac
 
 -----
 
-アプリをビルドして、磨耗デバイスまたはエミュレーターで実行します (詳細については、[はじめに](~/android/wear/get-started/index.md)ガイドを参照してください)。 次のアプリ画面が磨耗デバイスに表示されます。
+アプリをビルドして、Wear デバイスまたはエミュレーターで実行します (詳細については、[はじめに](~/android/wear/get-started/index.md)ガイドを参照してください)。 次のアプリ画面が Wear デバイスに表示されます。
 
-[![アプリのスクリーンショット](creating-a-watchface-images/08-app-screen.png "磨耗デバイスでのアプリ画面")](creating-a-watchface-images/08-app-screen.png#lightbox)
+[![アプリのスクリーンショット](creating-a-watchface-images/08-app-screen.png "Wear デバイスでのアプリ画面")](creating-a-watchface-images/08-app-screen.png#lightbox)
 
-この時点では、基本の摩耗アプリにはウォッチフェイス機能がありません。これは、まだ watch のサービス実装が提供されていないためです。 このサービスは次に追加されます。
+この時点では、基本の Wear アプリにはウォッチフェイス機能がありません。これは、まだ watch のサービス実装が提供されていないためです。 このサービスは次に追加されます。
 
 ## <a name="canvaswatchfaceservice"></a>CanvasWatchFaceService
 
-Android 磨耗では、クラスを`CanvasWatchFaceService`使用してウォッチフェイスを実装します。 `CanvasWatchFaceService`はから`WatchFaceService`派生し、次の図に`WallpaperService`示すようにから派生します。
+Android Wear では、クラスを`CanvasWatchFaceService`使用してウォッチフェイスを実装します。 `CanvasWatchFaceService`はから`WatchFaceService`派生し、次の図に`WallpaperService`示すようにから派生します。
 
 [![継承ダイアグラム](creating-a-watchface-images/09-inheritance-diagram-sml.png "CanvasWatchFaceService 継承ダイアグラム")](creating-a-watchface-images/09-inheritance-diagram.png#lightbox)
 
@@ -211,7 +211,7 @@ public override void OnCreate(ISurfaceHolder holder)
 }
 ```
 
-`OnCreate`は、の開始`MyWatchFaceEngine`直後に呼び出されます。 `WatchFaceStyle` (磨耗デバイスがユーザーとどのように対話するかを制御する) を設定し`Paint` 、時刻を表示するために使用されるオブジェクトをインスタンス化します。
+`OnCreate`は、の開始`MyWatchFaceEngine`直後に呼び出されます。 `WatchFaceStyle` (Wear デバイスがユーザーとどのように対話するかを制御する) を設定し`Paint` 、時刻を表示するために使用されるオブジェクトをインスタンス化します。
 
 を`SetWatchFaceStyle`呼び出すと、次のことが行われます。
 
@@ -262,7 +262,7 @@ public override void OnTimeTick()
 
 ## <a name="register-the-canvaswatchfaceservice"></a>CanvasWatchFaceService を登録する
 
-`MyWatchFaceService`関連する磨耗アプリの**Androidmanifest .xml**に登録する必要があります。 これを行うには、次の XML を`<application>`セクションに追加します。
+`MyWatchFaceService`関連する Wear アプリの**Androidmanifest .xml**に登録する必要があります。 これを行うには、次の XML を`<application>`セクションに追加します。
 
 ```xml
 <service
@@ -320,11 +320,11 @@ Watch サービスを実行する前に、 **watch_face**リソースとプレ�
 このリソースファイルは、ウォッチ`wallpaper`の顔に使用される単純な要素を定義します。
 
 まだ行っていない場合は[、ダウンロードしてください。](creating-a-watchface-images/preview.png)
-**Resources/の描画/プレビュー**ファイルにインストールします。 必ずこのファイルを`WatchFace`プロジェクトに追加してください。 このプレビューイメージは、磨耗デバイスの ウォッチ盤ピッカーのユーザーに表示されます。 独自のウォッチ顔のプレビューイメージを作成するには、実行中にウォッチフェイスのスクリーンショットを撮影します。 (摩耗デバイスからスクリーンショットを取得する方法の詳細については、「[スクリーンショットの撮影](~/android/wear/deploy-test/debug-on-device.md#screenshots)」を参照してください)。
+**Resources/の描画/プレビュー**ファイルにインストールします。 必ずこのファイルを`WatchFace`プロジェクトに追加してください。 このプレビューイメージは、Wear デバイスの ウォッチ盤ピッカーのユーザーに表示されます。 独自のウォッチ顔のプレビューイメージを作成するには、実行中にウォッチフェイスのスクリーンショットを撮影します。 (Wear デバイスからスクリーンショットを取得する方法の詳細については、「[スクリーンショットの撮影](~/android/wear/deploy-test/debug-on-device.md#screenshots)」を参照してください)。
 
 ## <a name="try-it"></a>お試しください!
 
-アプリをビルドして、磨耗デバイスにデプロイします。 [磨耗] アプリ画面が前と同じように表示されます。 新しいウォッチ式を有効にするには、次の手順を実行します。
+アプリをビルドして、Wear デバイスにデプロイします。 [Wear] アプリ画面が前と同じように表示されます。 新しいウォッチ式を有効にするには、次の手順を実行します。
 
 1. ウォッチ画面の背景が表示されるまで右にスワイプします。
 
@@ -338,9 +338,9 @@ Watch サービスを実行する前に、 **watch_face**リソースとプレ�
 
 5. **Xamarin サンプル**ウォッチフェイスをタップして選択します。
 
-これにより、これまでに実装されたカスタムウォッチフェイスサービスを使用するように、磨耗デバイスのウォッチ式が変更されます。
+これにより、これまでに実装されたカスタムウォッチフェイスサービスを使用するように、Wear デバイスのウォッチ式が変更されます。
 
-[![デジタルウォッチの顔](creating-a-watchface-images/12-digital-watchface.png "摩耗デバイスで実行されているカスタムデジタルウォッチ")](creating-a-watchface-images/12-digital-watchface.png#lightbox)
+[![デジタルウォッチの顔](creating-a-watchface-images/12-digital-watchface.png "Wear デバイスで実行されているカスタムデジタルウォッチ")](creating-a-watchface-images/12-digital-watchface.png#lightbox)
 
 これは、アプリの実装が非常に少ないため (たとえば、ウォッチフェイスの背景が含まれておらず、外観を向上さ`Paint`せるためにアンチエイリアスメソッドを呼び出さない)、比較的見やすい顔です。
 ただし、カスタムウォッチフェイスを作成するために必要なベアボーン機能が実装されています。
@@ -357,7 +357,7 @@ Watch サービスを実行する前に、 **watch_face**リソースとプレ�
 
 3. アンビエントモードと対話モードの間の変更に応答します。
 
-4. 基になる磨耗デバイスのプロパティを読み取ります。
+4. 基になる Wear デバイスのプロパティを読み取ります。
 
 5. タイムゾーンの変更が行われる時刻を自動的に更新します。
 
@@ -401,13 +401,13 @@ Watch サービスを実行する前に、 **watch_face**リソースとプレ�
 
 #### <a name="onpropertieschanged"></a>OnPropertiesChanged
 
-このメソッドは、磨耗デバイス`MyWatchFaceEngine`のプロパティ (低ビットのアンビエントモードや書き込み保護など) について通知するために呼び出されます。 で`MyWatchFaceEngine`は、このメソッドは低いビットのアンビエントモードのみをチェックします (低ビットのアンビエントモードでは、画面は各色に対してより少ないビットをサポートします)。
+このメソッドは、Wear デバイス`MyWatchFaceEngine`のプロパティ (低ビットのアンビエントモードや書き込み保護など) について通知するために呼び出されます。 で`MyWatchFaceEngine`は、このメソッドは低いビットのアンビエントモードのみをチェックします (低ビットのアンビエントモードでは、画面は各色に対してより少ないビットをサポートします)。
 
 このメソッドの詳細については、Android [Onpropertieschanged](https://developer.android.com/reference/android/support/wearable/watchface/WatchFaceService.Engine.html#onPropertiesChanged%28android.os.Bundle%29) API のドキュメントを参照してください。
 
 #### <a name="onambientmodechanged"></a>OnAmbientModeChanged
 
-このメソッドは、摩耗デバイスがアンビエントモードに入ったり終了したりしたときに呼び出されます。 `MyWatchFaceEngine`実装では、ウォッチフェイスがアンビエントモードのときにアンチエイリアシングを無効にします。
+このメソッドは、Wear デバイスがアンビエントモードに入ったり終了したりしたときに呼び出されます。 `MyWatchFaceEngine`実装では、ウォッチフェイスがアンビエントモードのときにアンチエイリアシングを無効にします。
 
 このメソッドの詳細については、Android [onAmbientModeChanged](https://developer.android.com/reference/android/support/wearable/watchface/WatchFaceService.Engine.html#onAmbientModeChanged%28boolean%29) API のドキュメントを参照してください。
 
@@ -461,15 +461,15 @@ Application.Context.UnregisterReceiver (timeZoneReceiver);
 
 ### <a name="run-the-improved-watch-face"></a>強化されたウォッチフェイスを実行する
 
-アプリをビルドして、もう一度アプリを磨耗デバイスに配置します。 前と同じように、[ウォッチ盤] ピッカーからウォッチフェイスを選択します。 ウォッチピッカーのプレビューが左側に表示され、新しいウォッチフェイスが右側に表示されます。
+アプリをビルドして、もう一度アプリを Wear デバイスに配置します。 前と同じように、[ウォッチ盤] ピッカーからウォッチフェイスを選択します。 ウォッチピッカーのプレビューが左側に表示され、新しいウォッチフェイスが右側に表示されます。
 
 [![アナログウォッチフェイス](creating-a-watchface-images/13-analog-watchface.png "ピッカーおよびデバイスでのアナログフェイスの向上")](creating-a-watchface-images/13-analog-watchface.png#lightbox)
 
-このスクリーンショットでは、2番目のハンドが1秒間に1回移動しています。 このコードを磨耗デバイスで実行すると、ウォッチがアンビエントモードになると2番目のハンドが消えます。
+このスクリーンショットでは、2番目のハンドが1秒間に1回移動しています。 このコードを Wear デバイスで実行すると、ウォッチがアンビエントモードになると2番目のハンドが消えます。
 
 ## <a name="summary"></a>まとめ
 
-このチュートリアルでは、カスタム Android 磨耗 1.0 watchface を実装し、テストしました。 クラス`CanvasWatchFaceService` と`CanvasWatchFaceService.Engine`クラスが導入されました。また、エンジンクラスの重要なメソッドが実装され、単純なデジタルウォッチ面が作成されました。 この実装は、アナログウォッチ式を作成するためのより多くの機能で更新されました。また、デバイスプロパティの可視性、アンビエントモード、および違いの変化を処理するために、追加のメソッドが実装されています。 最後に、タイムゾーンブロードキャストレシーバーが実装されました。これにより、ウォッチがタイムゾーンを超えた時間が自動的に更新されます。
+このチュートリアルでは、カスタム Android Wear 1.0 watchface を実装し、テストしました。 クラス`CanvasWatchFaceService` と`CanvasWatchFaceService.Engine`クラスが導入されました。また、エンジンクラスの重要なメソッドが実装され、単純なデジタルウォッチ面が作成されました。 この実装は、アナログウォッチ式を作成するためのより多くの機能で更新されました。また、デバイスプロパティの可視性、アンビエントモード、および違いの変化を処理するために、追加のメソッドが実装されています。 最後に、タイムゾーンブロードキャストレシーバーが実装されました。これにより、ウォッチがタイムゾーンを超えた時間が自動的に更新されます。
 
 ## <a name="related-links"></a>関連リンク
 
