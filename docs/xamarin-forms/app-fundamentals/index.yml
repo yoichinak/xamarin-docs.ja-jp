@@ -72,7 +72,7 @@ sections:
             image:
               src: ~/media/icons/i_platform.svg
               href: effects/index.md
-            title: 効果
+            title: エフェクト
           - href: gestures/index.md
             html: ジェスチャ レコグナイザーを使用して、アプリケーションのタップ、ピンチ、パン、スワイプのジェスチャのサポートを追加する方法について説明します。
             image:

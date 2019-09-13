@@ -8,12 +8,12 @@ ms.date: 02/26/2018
 ms.topic: conceptual
 ms.assetid: 11111111-2222-3333-4444-555555555555
 ms.prod: xamarin
-ms.openlocfilehash: 50bcdcc23d1291071a6045544faad9388755116b
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 69682372e2b1ac84db2c6464ac3b05a58645a9e3
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70225467"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753563"
 ---
 # <a name="metadata-and-markdown-template"></a>メタデータとマークダウン テンプレート
 
@@ -71,8 +71,6 @@ ms.custom: Analytics data, a field that gets imported into SkyEye so you can use
 - 小さな単語を使用しない。a、and、the、in、or などは含めません。
 - マークダウンで記述し、.md ファイル拡張子を使用する必要がある。
 - ファイル名を極力短くする。 記事の URL の一部となるためです。
-
-
 
 ## <a name="headings"></a>見出し
 
@@ -158,7 +156,6 @@ UID に特殊文字 \` または \# が含まれている場合は、UID 値は�
 1. 順序あり
 1. リスト
 
-
 #### <a name="ordered-list-with-an-embedded-list"></a>埋め込みリストを含む番号付きリスト
 
 1. Here
@@ -170,7 +167,6 @@ UID に特殊文字 \` または \# が含まれている場合は、UID 値は�
 1. ordered
 1. リスト
 
-
 ### <a name="unordered-lists"></a>記号付きリスト
 
 - This
@@ -178,7 +174,6 @@ UID に特殊文字 \` または \# が含まれている場合は、UID 値は�
 - a
 - bulleted
 - リスト
-
 
 ##### <a name="unordered-list-with-an-embedded-list"></a>埋め込みリストを含む記号付きリスト
 
@@ -193,7 +188,6 @@ UID に特殊文字 \` または \# が含まれている場合は、UID 値は�
     1. Mrs. White
 - 一覧
 
-
 ## <a name="horizontal-rule"></a>水平線
 
 ---
@@ -207,7 +201,6 @@ UID に特殊文字 \` または \# が含まれている場合は、UID 値は�
 | 列 1 は既定の | 左揃え     |    $1 |
 
 [Markdown Table Generator ツール](http://www.tablesgenerator.com/markdown_tables)を使用して、より簡単にテーブルを作成できます。
-
 
 ### <a name="inline-code-blocks-with-language-identifier"></a>言語識別子を持つインライン コード ブロック
 
