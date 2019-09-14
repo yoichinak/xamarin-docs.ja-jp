@@ -1,6 +1,6 @@
 ---
 title: Wear の基本
-description: 初めての Android 用の Wear アプリを作成し、それを Wear エミュレーターまたはデバイスで実行します。 このチュートリアルでは、ボタンのクリックを処理し、Wear デバイスに click カウンターを表示する小さな Android 用の Wear プロジェクトを作成する手順について説明します。 この例では、アプリをデバッグする方法について説明します。これには、デバイスの Wear エミュレーター、または Bluetooth 経由で Android フォンに接続されている Wear デバイスを使用します。 また、Android Wear に関する一連のデバッグのヒントも提供します。
+description: 初めての Android 用の磨耗アプリを作成し、それを磨耗エミュレーターまたはデバイスで実行します。 このチュートリアルでは、ボタンのクリックを処理し、磨耗デバイスに click カウンターを表示する小さな Android 用の磨耗プロジェクトを作成する手順について説明します。 この例では、アプリをデバッグする方法について説明します。これには、デバイスの摩耗エミュレーター、または Bluetooth 経由で Android フォンに接続されている磨耗デバイスを使用します。 また、Android の磨耗に関する一連のデバッグのヒントも提供します。
 ms.prod: xamarin
 ms.assetid: 86BCD0E7-E9DC-40F1-9B44-887BC51BB48D
 ms.technology: xamarin-android
@@ -16,13 +16,13 @@ ms.locfileid: "70758418"
 ---
 # <a name="hello-wear"></a>Wear の基本
 
-_初めての Android 用の Wear アプリを作成し、それを Wear エミュレーターまたはデバイスで実行します。このチュートリアルでは、ボタンのクリックを処理し、Wear デバイスに click カウンターを表示する小さな Android 用の Wear プロジェクトを作成する手順について説明します。この例では、アプリをデバッグする方法について説明します。これには、デバイスの Wear エミュレーター、または Bluetooth 経由で Android フォンに接続されている Wear デバイスを使用します。また、Android Wear に関する一連のデバッグのヒントも提供します。_
+_初めての Android 用の磨耗アプリを作成し、それを磨耗エミュレーターまたはデバイスで実行します。このチュートリアルでは、ボタンのクリックを処理し、磨耗デバイスに click カウンターを表示する小さな Android 用の磨耗プロジェクトを作成する手順について説明します。この例では、アプリをデバッグする方法について説明します。これには、デバイスの摩耗エミュレーター、または Bluetooth 経由で Android フォンに接続されている磨耗デバイスを使用します。また、Android の磨耗に関する一連のデバッグのヒントも提供します。_
 
 ![このチュートリアルで完了する必要がある Wear アプリのスクリーンショット](hello-wear-images/example.png)
 
 ## <a name="your-first-wear-app"></a>最初の Wear アプリ
 
-次の手順に従って、最初の Xamarin. Android Wear アプリを作成します。
+次の手順に従って、最初の Xamarin. Android の磨耗アプリを作成します。
 
 ### <a name="1-create-a-new-android-project"></a>1.新しい Android プロジェクトを作成する
 
@@ -135,7 +135,7 @@ Android Wear Smartwatch などの Android Wear デバイスがない場合は、
 
 Android Wear Smartwatch などの Android Wear デバイスがある場合は、エミュレーターを使用する代わりに、デバイスでアプリを実行できます。 Wear デバイスでのデバッグの詳細については、「[Wear デバイスでのデバッグ](~/android/wear/deploy-test/debug-on-device.md)」を参照してください。
 
-### <a name="6-run-the-android-wear-app"></a>6.Android Wear アプリを実行する
+### <a name="6-run-the-android-wear-app"></a>6.Android の磨耗アプリを実行する
 
 Android Wear デバイスが [デバイス] プルダウンメニューに表示されます。 デバッグを開始する前に、適切な Android Wear デバイスまたは AVD を選択してください。 デバイスを選択した後、[再生] ボタンをクリックして、エミュレーターまたはデバイスにアプリをデプロイします。
 

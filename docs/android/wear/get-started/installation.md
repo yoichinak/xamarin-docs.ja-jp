@@ -1,6 +1,6 @@
 ---
-title: 'Wear OS のインストールとセットアップ '
-description: この記事では、Android Wear 開発のためにコンピューターとデバイスを準備するために必要なインストール手順と構成の詳細について説明します。 この記事を終了すると、Visual Studio for Mac や Microsoft Visual Studio に統合された、作業中の Xamarin.Android のインストールが可能になります。また、最初の Xamarin.Android Wear アプリケーションの構築を開始する準備が整います。
+title: '摩耗 OS のインストールとセットアップ '
+description: この記事では、Android の磨耗開発のためにコンピューターとデバイスを準備するために必要なインストール手順と構成の詳細について説明します。 この記事を終了すると、Visual Studio for Mac や Microsoft Visual Studio に統合された、作業中の Xamarin. Android のインストールが可能になります。また、最初の Xamarin. Android 磨耗アプリケーションの構築を開始する準備が整います。
 ms.prod: xamarin
 ms.assetid: 3BB395FA-0545-4024-A18F-98CF5E9CA55F
 ms.technology: xamarin-android
@@ -16,7 +16,7 @@ ms.locfileid: "70762232"
 ---
 # <a name="setup-and-installation"></a>セットアップとインストール
 
-_この記事では、Android Wear 開発のためにコンピューターとデバイスを準備するために必要なインストール手順と構成の詳細について説明します。この記事を終了すると、Visual Studio for Mac や Microsoft Visual Studio に統合された、作業中の Xamarin.Android のインストールが可能になります。また、最初の Xamarin.Android Wear アプリケーションの構築を開始する準備が整います。_
+_この記事では、Android の磨耗開発のためにコンピューターとデバイスを準備するために必要なインストール手順と構成の詳細について説明します。この記事を終了すると、Visual Studio for Mac や Microsoft Visual Studio に統合された、作業中の Xamarin. Android のインストールが可能になります。また、最初の Xamarin. Android 磨耗アプリケーションの構築を開始する準備が整います。_
 
 ## <a name="requirements"></a>必要条件
 

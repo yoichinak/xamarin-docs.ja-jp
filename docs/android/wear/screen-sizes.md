@@ -1,5 +1,5 @@
 ---
-title: Xamarin. Android および Wear OS での画面サイズの操作
+title: Xamarin. Android および磨耗 OS での画面サイズの操作
 ms.prod: xamarin
 ms.assetid: 77831169-C663-4D42-B742-B8B556B1DA4B
 ms.technology: xamarin-android
@@ -15,7 +15,7 @@ ms.locfileid: "70758313"
 ---
 # <a name="working-with-screen-sizes"></a>画面サイズの操作
 
-Android Wear デバイスは、四角形または丸いディスプレイを持つことができます。サイズも異なる場合があります。
+Android の磨耗デバイスは、四角形または丸いディスプレイを持つことができます。サイズも異なる場合があります。
 
 ![四角形と丸い Wear の画面のスクリーンショット](screen-sizes-images/moyeu-wear.png)
 

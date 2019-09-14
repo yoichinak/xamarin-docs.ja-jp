@@ -16,7 +16,7 @@ ms.locfileid: "70762161"
 ---
 # <a name="debug-on-a-wear-device"></a>Wear デバイスでのデバッグ
 
-_この記事では、Wear デバイスで Xamarin の Android Wear アプリケーションをデバッグする方法について説明します。_
+_この記事では、摩耗デバイスで Xamarin の Android の磨耗アプリケーションをデバッグする方法について説明します。_
 
 ## <a name="overview"></a>概要
 
@@ -26,7 +26,7 @@ Android Wear Smartwatch などの Android Wear デバイスがある場合は、
 
 Android Wear デバイスでデバッグを有効にするには、次の手順に従います。
 
-1. Android Wear デバイスで **[設定]** メニューを開きます。
+1. Android の磨耗デバイスで **[設定]** メニューを開きます。
 
 2. メニューの一番下までスクロールし、 **[バージョン情報]** をタップします。
 

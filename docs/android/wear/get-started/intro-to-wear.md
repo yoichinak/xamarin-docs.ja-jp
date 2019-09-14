@@ -16,13 +16,13 @@ ms.locfileid: "70758498"
 ---
 # <a name="introduction-to-android-wear"></a>Android Wear の概要
 
-_Google の Android Wear が導入されたことで、優れた Android アプリの開発に関しては、スマートフォンとタブレットのみに制限されなくなりました。Android で Android Wear がサポートされるため、手首でコードをC#実行できるようになります。この概要では、Android Wear の基本的な概要と主な機能について説明し、Android Wear 2.0 で使用できる機能の概要を示します。この記事では、より一般的な Android Wear デバイスのいくつかを紹介し、さらに参考になる、Google Android の重要なドキュメントへのリンクを示します。_
+_Google の Android 磨耗が導入されたことで、優れた Android アプリの開発に関しては、スマートフォンとタブレットのみに制限されなくなりました。Android で Android Wear がサポートされるため、手首でコードをC#実行できるようになります。この概要では、Android Wear の基本的な概要と主な機能について説明し、Android Wear 2.0 で使用できる機能の概要を示します。この記事では、より一般的な Android 用の磨耗デバイスのいくつかを紹介し、さらに参考になる、Google Android の重要なドキュメントへのリンクを示します。_
 
 ## <a name="overview"></a>概要
 
 Android Wear は、Motorola 360、LG の G watch、Samsung 歯車など、さまざまなデバイスで実行されます。 Sony の SmartWatch 3 を含む2つ目の世代も、組み込みの GPS やオフラインの音楽再生などの追加機能と共にリリースされました。 Android Wear 2.0 では、Google は LG Watch のスポーツと LG Watch のスタイルの2つの新しいウォッチを LG と協力しました。
 
-![Android Wear 2.0 デバイス](intro-to-wear-images/hero-image.png "Android Wear 2.0 デバイスの例")
+![Android 磨耗2.0 デバイス](intro-to-wear-images/hero-image.png "Android の磨耗2.0 デバイスの例")
 
 Xamarin android 5.0 以降では、android 4.4 W (API 20) のサポートと、Wear に特化した UI コントロールを追加する NuGet パッケージを通じて、Android Wear がサポートされます。 Xamarin Android 5.0 以降には、Wear アプリをパッケージ化するための機能も含まれています。 このガイドで後述するように、NuGet パッケージは Android Wear 2.0 でも利用できます。
 
@@ -46,7 +46,7 @@ Android Wear をサポートする最も簡単な方法は、ハンドヘルド�
 
 Wear の主要なナビゲーションパターンは、垂直方向に並べられた一連のカードです。 これらの各カードには、同じ行に重なっているアクションを関連付けることができます。 クラス`GridViewPager`は、この機能を提供します。と`ListView`同じアダプターの概念に従います。 通常、 `GridViewPager`を`FragmentGridPagerAdaptor` (または`GridPagerAdaptor`) に関連付けて、各行と列のセルを`Fragment`として表すことができます。 
 
-[![Wear のナビゲーション](intro-to-wear-images/2d-picker-sml.png "Wear のナビゲーション")](intro-to-wear-images/2d-picker.png#lightbox)
+[![磨耗のナビゲーション](intro-to-wear-images/2d-picker-sml.png "磨耗のナビゲーション")](intro-to-wear-images/2d-picker.png#lightbox)
 
 また、Wear では、上の図に示すように、小さな説明のテキストを含む大きな色の円で構成されるアクションボタンも使用します。  [GridViewPager](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-gridviewpager)サンプルは、Wear アプリで`GridViewPager`および`GridPagerAdapter`を使用する方法を示しています。
 
@@ -77,9 +77,9 @@ Android Wear に慣れるための最善の方法は、最初のアプリをビ�
 
 1. [セットアップ & のインストール](~/android/wear/get-started/installation.md)では、Xamarin Android のアプリをビルドするための開発環境をインストールして構成するための詳細な手順を提供します。 
 
-2. 必要なパッケージをインストールし、エミュレーターまたはデバイスを構成したら、「 [Hello, Wear](~/android/wear/get-started/hello-wear.md)」を参照して、ボタンのクリックを処理し、Wear に click カウンターを表示する小さな Android Wear プロジェクトを作成する方法を説明した手順を実行します。ドライブ. 
+2. 必要なパッケージをインストールし、エミュレーターまたはデバイスを構成したら、「 [Hello, 磨耗](~/android/wear/get-started/hello-wear.md)」を参照して、ボタンのクリックを処理し、磨耗に click カウンターを表示する小さな Android 用の磨耗プロジェクトを作成する方法を説明した手順を実行します。ドライブ. 
 
-3. [展開 & テスト](~/android/wear/deploy-test/index.md)では、エミュレーターとデバイスの構成と展開に関する詳細情報を提供します。これには、Bluetooth 経由でアプリを Wear デバイスに展開する方法についての説明が含まれます。
+3. [展開 & テスト](~/android/wear/deploy-test/index.md)では、エミュレーターとデバイスの構成と展開に関する詳細情報を提供します。これには、Bluetooth 経由でアプリを摩耗デバイスに展開する方法についての説明が含まれます。
 
 4. [画面のサイズ](~/android/wear/screen-sizes.md)を使用すると、Wear デバイスで使用できるさまざまな画面サイズに合わせてユーザーインターフェイスをプレビューおよび最適化する方法について説明します。 
 
