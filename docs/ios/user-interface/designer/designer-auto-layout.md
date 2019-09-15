@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: d1047ae8cae6a8e86b72690fe5d80d0ba9e752a4
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: a2f637677620f9bfb2bd26a5af55fb9fb56a7af9
+ms.sourcegitcommit: cf56d2bae34dc0f8e94c2d3d28d5f460d59807bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768414"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70985697"
 ---
 # <a name="auto-layout-with-the-xamarin-designer-for-ios"></a>Xamarin Designer for iOS を使用した自動レイアウト
 
@@ -63,9 +63,23 @@ View.AddConstraint (NSLayoutConstraint.Create (Button1, NSLayoutAttribute.Left, 
   - 制約編集モードでは、このボタンによって、要素フレームに合わせて制約が調整されます。
   - フレーム編集モードでは、このボタンは、制約が定義されている位置と一致するように要素フレームを調整します。
 
+## <a name="constraints-editing-popover"></a>制約の編集 segue
+
+[制約エディター] ポップアップを使用すると、選択ビューに対して一度に複数の制約を追加および更新できます。 2つのビューの左端にビューを配置するなど、複数の間隔、縦横比、および配置の制約を作成できます。
+
+選択したビューの制約を編集するには、省略記号をクリック![して segue: constraints 編集 segue を表示します。](designer-auto-layout-images/constraints-popup.png)
+
+制約を開くと、segue は、ビューに対する事前設定された制約を表示します。 右上隅にあるコンボボックスからすべての**辺**を選択し、 **[すべてクリア]** を選択して削除します。 
+
+**W**は幅を設定し、 **H**は高さの制約を設定します。 **縦横比**を確認すると、ビューの高さと幅がさまざまな画面サイズで制御されます。ビューの幅は、その比率の分子として、および高さを分母として使用されます。
+
+![制約の間隔](designer-auto-layout-images/constraints-spacing.png)
+
+スペーシング制約の4つのコンボボックスには、制約を固定するための隣接するビューが一覧表示されます。
+
 ## <a name="surface-based-constraint-editing"></a>サーフェイスベースの制約の編集
 
-前のセクションでは、[制約] ツールバーを使用して、既定の制約を追加し、制約を削除する方法を学習しました。 より細かく調整された制約を編集するために、デザインサーフェイスで直接制約を操作できます。 このセクションでは、ピン間隔コントロール、領域のドロップ、さまざまな種類の制約の操作など、サーフェスベースの制約編集の基本について説明します。
+より細かく調整された制約を編集するために、デザインサーフェイスで直接制約を操作できます。 このセクションでは、ピン間隔コントロール、領域のドロップ、さまざまな種類の制約の操作など、サーフェスベースの制約編集の基本について説明します。
 
 ### <a name="creating-constraints"></a>制約の作成
 

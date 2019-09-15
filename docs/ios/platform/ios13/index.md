@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 07/01/2019
-ms.openlocfilehash: ea7ebdf5e589f3c24f8c607d1464e86678012f23
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 48e7f97bf37ec5204ec1798ec1fdd7dfe5954cc5
+ms.sourcegitcommit: cf56d2bae34dc0f8e94c2d3d28d5f460d59807bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70120620"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70985980"
 ---
 # <a name="introduction-to-ios-13"></a>iOS 13 の概要
 
@@ -23,6 +23,10 @@ ms.locfileid: "70120620"
 ## <a name="dark-modedark-modemd"></a>[ダークモード](dark-mode.md)
 
 iOS 13 には新しいダークモードが導入されており、開発者はアプリを簡単にに収めることができます。 新しいツールを使用すると、アプリケーションを、明るいテーマとダークテーマの両方で同時にデザインできます。
+
+## <a name="sign-in-with-applesign-inmd"></a>[Apple でサインインする](sign-in.md)
+
+iOS 13 では、Apple デバイスでサインインしてアプリにサインインするための新しい機能が提供されています。これにより、2FA と限定されたセットを利用することで、個人情報の盗難や収集が行われないようにすることができます。参照.
 
 ## <a name="augmented-reality"></a>拡張現実
 
@@ -41,10 +45,6 @@ Core ML 3 では、デバイスのハードウェア機能を使用して ML モ
 iPadOS は、特に iPad を念頭に置いて構築された iOS の拡張です。
 
 IPadOS を使用すると、新しいジェスチャで PencilKit を使用して Apple 鉛筆をさらに活用し、複数のウィンドウを使用できるようになり、アプリ間でさまざまなコンテンツをドラッグアンドドロップできます。 iPadOS では、アプリがシステム全体のフォントを提供できるようにすることもできます。
-
-## <a name="privacy-and-security"></a>プライバシーとセキュリティ
-
-iOS 13 では、Apple デバイスでサインインしてアプリにサインインするための新しい機能が提供されています。これにより、2FA と限定されたセットを利用することで、個人情報の盗難や収集が行われないようにすることができます。参照.
 
 ## <a name="related-links"></a>関連リンク
 
