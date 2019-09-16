@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/30/2018
-ms.openlocfilehash: 9855255464b32b99d78d7a1cdb24acce22d01648
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: aa968562470a1e3405bf68be7eb0294273970386
+ms.sourcegitcommit: a5ef4497db04dfa016865bc7454b3de6ff088554
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68654758"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "70998025"
 ---
 # <a name="listview-data-sources"></a>ListView のデータ ソース
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-switchentrytwobinding)
 
-A [ `ListView` ](xref:Xamarin.Forms.ListView)データのリストを表示するためです。 データ、私たちが選択した項目にバインドする方法と、ListView の設定について説明します。
+データの一覧を[`ListView`](xref:Xamarin.Forms.ListView)表示するには、Xamarin. フォームを使用します。 この記事では、 `ListView`にデータを設定する方法と、選択した項目にデータをバインドする方法について説明します。
 
 ## <a name="itemssource"></a>ItemsSource
 
@@ -62,7 +62,7 @@ listView.ItemsSource = new string[]
 
 ![](data-and-databinding-images/itemssource-simple.png "ListView 文字列の一覧を表示します。")
 
-上記の方法が設定されます、`ListView`文字列のリスト。 既定では、`ListView`が呼び出す`ToString`で結果を表示し、`TextCell`行ごとにします。 データの表示方法をカスタマイズするを参照してください。[セルの外観](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md)します。
+この方法では、 `ListView`に文字列のリストが設定されます。 既定では、`ListView`が呼び出す`ToString`で結果を表示し、`TextCell`行ごとにします。 データの表示方法をカスタマイズするを参照してください。[セルの外観](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md)します。
 
 `ItemsSource`コンテンツは、基になるリストまたは配列の変更としては更新されません、配列に送信されました。 使用する必要があります、ListView の項目が追加、削除、および基になるリストの変更に応じて自動的に更新する場合は、`ObservableCollection`します。 [`ObservableCollection`](xref:System.Collections.ObjectModel.ObservableCollection`1) 定義されている`System.Collections.ObjectModel`が同様と`List`に通知する点を除いて、`ListView`すべての変更。
 
@@ -74,16 +74,16 @@ listView.ItemsSource = employees;
 employees.Add(new Employee(){ DisplayName="Mr. Mono"});
 ```
 
-<a name="Data_Binding" />
-
 ## <a name="data-binding"></a>データ バインディング
-データ バインディングは、ユーザー インターフェイス オブジェクトのプロパティを ViewModel でクラスなど、いくつかの CLR オブジェクトのプロパティにバインドする「グルー」です。 データ バインディングは、多くの退屈な定型コードを置き換えることで、ユーザー インターフェイスの開発が簡略化されますので便利です。
 
-データ バインディングは、バインドされた値が変更、オブジェクトを同期維持することで動作します。 コントロールの値が変更されるたびにイベント ハンドラーを記述するのではなく、バインドを確立し、ViewModel でバインディングを有効にします。
+データバインディングは、ユーザーインターフェイスオブジェクトのプロパティを、ビューモデルのクラスなど、一部の CLR オブジェクトのプロパティにバインドする "グルー" です。 データ バインディングは、多くの退屈な定型コードを置き換えることで、ユーザー インターフェイスの開発が簡略化されますので便利です。
+
+データ バインディングは、バインドされた値が変更、オブジェクトを同期維持することで動作します。 コントロールの値が変更されるたびにイベントハンドラーを作成するのではなく、バインドを確立し、ビューモデルでバインドを有効にします。
 
 データ バインディングの詳細については、[データ バインディングの基礎](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)4 つの一部では、[記事シリーズを Xamarin.Forms XAML の基礎](~/xamarin-forms/xaml/xaml-basics/index.md)を参照してください。
 
 ### <a name="binding-cells"></a>セルのバインド
+
 内のオブジェクトのプロパティにバインドできるプロパティのセル (セルの子)、`ItemsSource`します。 たとえば、を`ListView`使用して従業員の一覧を表示できます。
 
 Employee クラス:
@@ -95,7 +95,7 @@ public class Employee
 }
 ```
 
-が作成され、 `ListView`次の`ItemsSource`ように設定されます。 `ObservableCollection<Employee>`
+が作成され、 `ListView` `ItemsSource`として設定され、リストにデータが設定されます。 `ObservableCollection<Employee>`
 
 ```csharp
 ObservableCollection<Employee> employees = new ObservableCollection<Employee>();
@@ -103,26 +103,21 @@ public ObservableCollection<Employee> Employees { get { return employees; }}
 
 public EmployeeListPage()
 {
-  //defined in XAML to follow
-  EmployeeView.ItemsSource = employees;
-  ...
+    EmployeeView.ItemsSource = employees;
+
+    // ObservableCollection allows items to be added after ItemsSource
+    // is set and the UI will react to changes
+    employees.Add(new Employee{ DisplayName="Rob Finnerty"});
+    employees.Add(new Employee{ DisplayName="Bill Wrestler"});
+    employees.Add(new Employee{ DisplayName="Dr. Geri-Beth Hooper"});
+    employees.Add(new Employee{ DisplayName="Dr. Keith Joyce-Purdy"});
+    employees.Add(new Employee{ DisplayName="Sheri Spruce"});
+    employees.Add(new Employee{ DisplayName="Burt Indybrick"});
 }
 ```
 
-一覧には、データが設定されます。
-
-```csharp
-public EmployeeListPage()
-{
-  ...
-  employees.Add(new Employee{ DisplayName="Rob Finnerty"});
-  employees.Add(new Employee{ DisplayName="Bill Wrestler"});
-  employees.Add(new Employee{ DisplayName="Dr. Geri-Beth Hooper"});
-  employees.Add(new Employee{ DisplayName="Dr. Keith Joyce-Purdy"});
-  employees.Add(new Employee{ DisplayName="Sheri Spruce"});
-  employees.Add(new Employee{ DisplayName="Burt Indybrick"});
-}
-```
+> [!WARNING]
+> `ObservableCollection`はスレッドセーフではありません。 を変更すると、変更を行ったのと同じスレッドで UI の更新が発生します。 `ObservableCollection` スレッドがプライマリ UI スレッドでない場合は、例外が発生します。
 
 次のスニペットを示しています、`ListView`従業員の一覧にバインドします。
 
@@ -154,13 +149,13 @@ public EmployeeListPage()
 
 ```xaml
 <ListView x:Name="listView"
- SelectedItem="{Binding Source={x:Reference SomeLabel},
- Path=Text}">
+          SelectedItem="{Binding Source={x:Reference SomeLabel},
+          Path=Text}">
  …
 </ListView>
 ```
 
-想定`listView`の`ItemsSource`文字列のリストは、 `SomeLabel` text プロパティにバインドする必要があります、 `SelectedItem`。
+`listView`が文字列`SomeLabel`のリストであると仮定すると`SelectedItem`、プロパティがにバインドされます。`Text` `ItemsSource`
 
 ## <a name="related-links"></a>関連リンク
 

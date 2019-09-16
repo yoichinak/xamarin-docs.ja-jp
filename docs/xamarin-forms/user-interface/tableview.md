@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2018
-ms.openlocfilehash: 195ed82325ed681f31f9963d5ff0ca0a7fef48ab
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 558eb9f476fd6b566f1f161c01fc809498a4c4a8
+ms.sourcegitcommit: a5ef4497db04dfa016865bc7454b3de6ff088554
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70228146"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "70997994"
 ---
 # <a name="xamarinforms-tableview"></a>Xamarin.Forms テーブル
 
@@ -90,7 +90,7 @@ Content = new TableView
 
 Xamarin.Forms を収集して情報を表示するための組み込みのセルが付属します。 [`ListView`](xref:Xamarin.Forms.ListView) `TableView` [と`EntryCell`](xref:Xamarin.Forms.EntryCell)は同じ[セル`SwitchCell`](xref:Xamarin.Forms.SwitchCell)のすべてを使用できますが、はシナリオに最も適しています。 [`TableView`](xref:Xamarin.Forms.TableView)
 
-[TextCell](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md)と[ImageCell](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md#TextCell)の詳細な説明は、[ListView セルの外観](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md#ImageCell)を参照してください。
+[TextCell](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md)と[ImageCell](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md#textcell)の詳細な説明は、[ListView セルの外観](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md#imagecell)を参照してください。
 
 <a name="switchcell" />
 
