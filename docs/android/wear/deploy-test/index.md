@@ -21,7 +21,7 @@ ms.locfileid: "70758306"
 
 ## <a name="debug-android-wear-on-an-emulatorandroidweardeploy-testdebug-on-emulatormd"></a>[エミュレーターで Android Wear をデバッグする](~/android/wear/deploy-test/debug-on-emulator.md)
 
-Android SDK エミュレーターで Xamarin. Android の磨耗アプリケーションをデバッグする方法。
+Android SDK エミュレーターで Xamarin. Android Wear アプリケーションをデバッグする方法。
 
 ## <a name="debug-on-a-wear-deviceandroidweardeploy-testdebug-on-devicemd"></a>[Wear デバイスでのデバッグ](~/android/wear/deploy-test/debug-on-device.md)
 

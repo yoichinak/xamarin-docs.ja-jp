@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/04/2019
-ms.openlocfilehash: 5d09d76a44a6322285a143230173d244848ba4a6
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 9d7dd98b98c7722d6fcdcb49c10e326732fa9f0b
+ms.sourcegitcommit: a5ef4497db04dfa016865bc7454b3de6ff088554
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770226"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "70997982"
 ---
 # <a name="xamarinforms-listview"></a>Xamarin.Forms ListView
 
@@ -36,6 +36,7 @@ ms.locfileid: "70770226"
 `ListView`インスタンスにデータをバインドする方法の詳細については、「 [ListView データソース](~/xamarin-forms/user-interface/listview/data-and-databinding.md)」を参照してください。
 
 ## <a name="components"></a>コンポーネント
+
 `ListView`コントロールには、各プラットフォームのネイティブ機能を実行するために使用できる多数のコンポーネントがあります。 これらのコンポーネントは、次のセクションで定義されています。
 
 ### <a name="headers-and-footerscustomizing-list-appearancemdheaders-and-footers"></a>[ヘッダーとフッター](customizing-list-appearance.md#headers-and-footers)
@@ -55,7 +56,7 @@ ms.locfileid: "70770226"
 - `TextCell`やなど`ImageCell`の[組み込みセル](customizing-cell-appearance.md#built-in-cells)は、ネイティブコントロールに対応しており、特にパフォーマンスに優れています。
   - に[`TextCell`](customizing-cell-appearance.md#textcell)は、テキストの文字列が表示されます。オプションで、詳細テキストを表示できます。 詳細なテキストはアクセントの色とフォント サイズを小さくの 2 行目としてレンダリングされます。
   - に[`ImageCell`](customizing-cell-appearance.md#imagecell)は、画像とテキストが表示されます。 は、 `TextCell`左側にイメージを含むとして表示されます。
-- [カスタムセル](customizing-cell-appearance.md#customcells)は、複雑なデータを表示するために使用されます。 たとえば、カスタムセルを使用して、アルバムとアーティストを含む曲の一覧を表示できます。
+- [カスタムセル](customizing-cell-appearance.md#custom-cells)は、複雑なデータを表示するために使用されます。 たとえば、カスタムセルを使用して、アルバムとアーティストを含む曲の一覧を表示できます。
 
 次のスクリーンショットは`ListView` 、with ImageCell items を示しています。
 
@@ -64,11 +65,12 @@ Listview の["ImageCell items in a listview" ImageCell items ![](images/image-ce
 で`ListView`のセルのカスタマイズの詳細については、「 [ListView セルの外観のカスタマイズ](customizing-cell-appearance.md)」を参照してください。
 
 ## <a name="functionality"></a>機能
+
 クラス`ListView`は、さまざまな相互作用スタイルをサポートしています。
 
 - [プルから更新](interactivity.md#pull-to-refresh)を行うことで、 `ListView`ユーザーはコンテンツを最新の状態に更新できます。
 - [コンテキストアクション](interactivity.md#context-actions)を使用すると、開発者は個々のリスト項目に対してカスタムアクションを指定できます。 たとえば、ios では、スワイプのアクションを実装したり時間の長い Android でのアクションをタップできます。
-- [選択](interactivity.md#selectiontaps)すると、開発者はリスト項目の選択イベントおよび deselection イベントに機能をアタッチできます。
+- [選択](interactivity.md#selection-and-taps)すると、開発者はリスト項目の選択イベントおよび deselection イベントに機能をアタッチできます。
 
 次のスクリーンショットは`ListView` 、コンテキストアクションを含むを示しています。
 

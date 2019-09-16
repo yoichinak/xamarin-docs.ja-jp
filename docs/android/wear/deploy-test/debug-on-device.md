@@ -16,7 +16,7 @@ ms.locfileid: "70762161"
 ---
 # <a name="debug-on-a-wear-device"></a>Wear デバイスでのデバッグ
 
-_この記事では、摩耗デバイスで Xamarin の Android の磨耗アプリケーションをデバッグする方法について説明します。_
+_この記事では、Wear デバイスで Xamarin の Android Wear アプリケーションをデバッグする方法について説明します。_
 
 ## <a name="overview"></a>概要
 

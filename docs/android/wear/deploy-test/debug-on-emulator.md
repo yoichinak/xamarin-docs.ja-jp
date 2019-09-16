@@ -1,6 +1,6 @@
 ---
 title: エミュレーターで Android Wear をデバッグする
-description: これらの記事では、エミュレーターで Xamarin. Android の磨耗アプリケーションをデバッグする方法について説明します。
+description: これらの記事では、エミュレーターで Xamarin. Android Wear アプリケーションをデバッグする方法について説明します。
 ms.prod: xamarin
 ms.assetid: 225684B2-3122-4E3B-A028-A3A400976D31
 ms.technology: xamarin-android
@@ -16,7 +16,7 @@ ms.locfileid: "70764036"
 ---
 # <a name="debug-android-wear-on-an-emulator"></a>エミュレーターで Android Wear をデバッグする
 
-_これらの記事では、エミュレーターで Xamarin. Android の磨耗アプリケーションをデバッグする方法について説明します。_
+_これらの記事では、エミュレーターで Xamarin. Android Wear アプリケーションをデバッグする方法について説明します。_
 
 ## <a name="debug-wear-on-emulator-overview"></a>エミュレーターの Wear のデバッグ概要
 
