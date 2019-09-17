@@ -1,58 +1,56 @@
 ---
-title: を概要F#
-description: このドキュメントを理解する方法を説明しますF#を Visual Studio 2019 と Visual Studio for mac の Xamarin アプリケーションをビルドする.
+title: はじめにF#
+description: このドキュメントでは、Visual F# Studio 2019 および Visual Studio for Mac で Xamarin アプリケーションを構築する方法について説明し、使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 1A0E627D-A4C1-4F95-BAED-76A0E40B9054
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 03/24/2017
-ms.openlocfilehash: 2f67983addd03a065383a2940d6e6dfc7076f2be
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 074670045a8e0d02b719e4c361b1bf351759f335
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61036456"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765447"
 ---
-# <a name="getting-started-with-f35"></a>F の概要&#35;
+# <a name="getting-started-with-f35"></a>F を使用したはじめに&#35;
 
 ## <a name="requirements"></a>必要条件
 
-F#既定では、Visual Studio for mac。 に含まれています。
+F#は、既定で Visual Studio for Mac に含まれています。
 
-Windows では、スタンドアロンをインストールする必要がありますF#コンパイラ ツールは、上の指示に従って[FSharp.org サイト](http://fsharp.org/use/windows/)します。
+Windows では、 [FSharp.org サイト](http://fsharp.org/use/windows/)のF#指示に従って、スタンドアロンコンパイラツールをインストールする必要があります。
 
-## <a name="creating-an-f35-project"></a>F を作成する&#35;プロジェクト
+## <a name="creating-an-f35-project"></a>F&#35;プロジェクトの作成
 
-新しいを作成するF#アプリケーションが同じで行われる**新しいプロジェクト**に使用されるウィンドウC#します。
+新しいF#アプリケーションの作成は、に使用されるのC#と同じ **[新しいプロジェクト]** ウィンドウで実行されます。
 
-Visual Studio for Mac で次のように選択します。**ファイル > 新しいソリューション**します。 **新しいプロジェクト**ダイアログ ボックスで、プロジェクト テンプレートを選択します。 使用する言語を選択して、テンプレートの右側のドロップダウン リストを使用します。
+Visual Studio for Mac **[ファイル > 新しいソリューション]** を選択します。 **[新しいプロジェクト]** ダイアログボックスで、プロジェクトテンプレートを選択します。 テンプレートの右側にあるドロップダウンを使用して、使用する言語を選択します。
 
- [![](overview-images/choosefsharp.png "使用する言語を選択して、テンプレートの右側のドロップダウン リストを使用します。")](overview-images/choosefsharp.png#lightbox)
+ [![](overview-images/choosefsharp.png "テンプレートの右側にあるドロップダウンリストを使用して、使用する言語を選択します。")](overview-images/choosefsharp.png#lightbox)
 
-プロジェクトの種類を選択し、クリックして**次**名前を指定し、それを作成します。
+プロジェクトの種類を選択し、名前 の **次へ** をクリックして作成します。
 
+これで、優れF#たアプリケーションの作成を開始する準備が整いました。
 
-機能の作成を開始する準備が整いましたF#アプリケーション。
+## <a name="learning-to-use-f35"></a>F の使用方法を学習する&#35;
 
-## <a name="learning-to-use-f35"></a>F の使用方法&#35;
+F#チュートリアルは、Visual Studio for Mac の **[新しいソリューション]** ダイアログ内から作成することもできます。 次の図で説明するように、**他の > .net F# > チュートリアル**に移動します。
 
-F#内からチュートリアルを作成することも、**新しいソリューション**Visual Studio for mac でのダイアログ 移動します**他 > .NET >F#チュートリアル**、次の図で説明されています。
+ [![](overview-images/fsharptutorial.png "[その他]、[ F# .net]、[チュートリアル] に移動します。")](overview-images/fsharptutorial.png#lightbox)
 
- [![](overview-images/fsharptutorial.png "他の移動/.NET/F#チュートリアル")](overview-images/fsharptutorial.png#lightbox)
+これにより、新しい対話型ソリューションが開きます。 これを調べることは、言語の基本をグリップにするための優れた方法です。
 
-これは、新しい対話型のソリューションを開きます。 この探索を交える、言語の基本を取得する優れた方法です。
+ [![](overview-images/newtutorial-sml.png "これを調べることは、言語の基本をグリップにするための優れた方法です。")](overview-images/newtutorial.png#lightbox)
 
- [![](overview-images/newtutorial-sml.png "言語の基本なじみませんを表示する優れた方法は、これを調べる")](overview-images/newtutorial.png#lightbox)
+実際に動作する[サンプルの一覧](~/cross-platform/platform/fsharp/samples.md)をF#確認してください。
 
-チェック アウト、[サンプルの一覧](~/cross-platform/platform/fsharp/samples.md)してF#の動作。
+## <a name="references"></a>リファレンス
 
-## <a name="references"></a>参照
+すべての proficiencies に対応した、 F#言語を最大限に活用するために、オンラインで大量の情報が含まれています。 いくつかの推奨事項を次に示します。
 
-多くの高速に取得するためのオンライン情報がある、F#すべてお粗末をカバーする言語。 以下に、いくつかの推奨事項。
-
--  [F# ソフトウェアの基礎](http://fsharp.org)
--  [VisualF#開発ポータル](http://go.microsoft.com/fwlink/?LinkID=234174)
--  [VisualF#コード ギャラリー](http://go.microsoft.com/fwlink/?LinkID=124614)
--  [VisualF#数学/統計プログラミング](http://go.microsoft.com/fwlink/?LinkId=235173)
--  [VisualF#グラフ作成](http://go.microsoft.com/fwlink/?LinkId=235176)
-
+- [F# ソフトウェアの基礎](http://fsharp.org)
+- [Visual F# Development ポータル](http://go.microsoft.com/fwlink/?LinkID=234174)
+- [ビジュアルF#コードギャラリー](http://go.microsoft.com/fwlink/?LinkID=124614)
+- [ビジュアルF#数値演算/統計プログラミング](http://go.microsoft.com/fwlink/?LinkId=235173)
+- [ビジュアルF#グラフ](http://go.microsoft.com/fwlink/?LinkId=235176)

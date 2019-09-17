@@ -1,41 +1,40 @@
 ---
-title: Android Wear コントロール
+title: Android の磨耗の制御
 ms.prod: xamarin
 ms.assetid: 5B62A5F8-5E55-4B3C-BFC4-E21CDB27C08B
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 9620362b48e9cf1db4c25e4470851fb518a8e0f3
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 9f03d9b16a9035a792623dd5571ac1cde8c9f313
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61285586"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758200"
 ---
-# <a name="android-wear-controls"></a>Android Wear コントロール
+# <a name="android-wear-controls"></a>Android の磨耗の制御
 
-Android Wear アプリ多く使用できますのと同じコントロールの既になど、標準の Android アプリの使用で`Button`、 `TextView`、余白とイメージのドローアブルします。 などのレイアウト コントロール`ScrollView`、 `LinearLayout`、および`RelativateLayout`こともできます。
+Android の磨耗アプリでは`Button`、通常の android アプリに既に使用されている多くのコントロールを使用できます。これには、、 `TextView`、およびイメージの引き出しが可能です。 、 `ScrollView` 、`LinearLayout`およびを含むレイアウトコントロールを使用すること`RelativateLayout`もできます。
 
-このページからの Android Wear 固有のコントロールにリンク、[ウェアラブルの UI ライブラリ](https://developer.android.com/training/wearables/apps/layouts.html#UiLibrary)経由での Xamarin プロジェクトで使用できる、[ウェアラブル サポート](https://www.nuget.org/packages/Xamarin.Android.Wear/)NuGet パッケージ。 これらのコントロールを以下に示します。
+このページでは、[ウェアラブルサポート](https://www.nuget.org/packages/Xamarin.Android.Wear/)NuGet パッケージを使用して、Xamarin プロジェクトで使用可能な[ウェアラブル UI ライブラリ](https://developer.android.com/training/wearables/apps/layouts.html#UiLibrary)から、Android の磨耗に固有のコントロールにリンクします。 これらのコントロールには、次のものが含まれます。
 
--   **GridViewPager** &ndash;選択のため、ユーザーが左からをスクロールする、2 次元のナビゲーション インターフェイスを作成 (詳細については、次を参照してください。 [GridViewPager](~/android/wear/user-interface/controls/gridviewpager.md))。
+- **GridViewPager**2次元ナビゲーションインターフェイスを作成します。このインターフェイスでは、ユーザーが下にスクロールして選択を行います (詳細については、「[GridViewPager](~/android/wear/user-interface/controls/gridviewpager.md)」を参照してください)。&ndash;
 
-    ![GridViewPager の例のスクリーン ショット](images/gridviewpager.png)
+    ![GridViewPager のスクリーンショットの例](images/gridviewpager.png)
 
-Wear アプリの重要なその他のコントロールは次のとおりです。
+磨耗アプリのその他の重要な制御は次のとおりです。
 
-* `BoxInsetLayout` (を参照してください[操作画面サイズ](~/android/wear/screen-sizes.md))、
+- `BoxInsetLayout`(「[画面サイズの操作](~/android/wear/screen-sizes.md)」を参照)。
 
-* `WatchViewStub` (を参照してください[操作画面サイズ](~/android/wear/screen-sizes.md))、
+- `WatchViewStub`(「[画面サイズの操作](~/android/wear/screen-sizes.md)」を参照)。
 
-* `CardFrame` (を参照してください[Android 作成カード](https://developer.android.com/training/wearables/ui/cards.html))、
+- `CardFrame`(「 [Android カードを作成する](https://developer.android.com/training/wearables/ui/cards.html)」を参照してください)。
 
-* `CardScrollView` (を参照してください[Android 作成カード](https://developer.android.com/training/wearables/ui/cards.html))、
+- `CardScrollView`(「 [Android カードを作成する](https://developer.android.com/training/wearables/ui/cards.html)」を参照してください)。
 
-* `WearableListView` (を参照してください[Android 作成を一覧表示](https://developer.android.com/training/wearables/ui/lists.html))。
-
+- `WearableListView`(「 [Android 作成リスト](https://developer.android.com/training/wearables/ui/lists.html)」を参照してください)。
 
 ## <a name="related-links"></a>関連リンク
 
-- [Android.Support.Wearable docs](https://developer.android.com/reference/android/support/wearable/view/package-summary.html)
+- [Android. ウェアラブルドキュメント](https://developer.android.com/reference/android/support/wearable/view/package-summary.html)

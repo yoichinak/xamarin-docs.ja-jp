@@ -1,62 +1,55 @@
 ---
 title: iOS 6 の概要
-description: このドキュメントは、iOS 6 で導入された機能について説明するガイドにリンクしています。 コレクション ビュー、PassKit、ソーシャル フレームワーク、および StoreKit の変更内容はすべて説明します。
+description: このドキュメントは、iOS 6 で導入された機能について説明しているガイドにリンクしています。 コレクションビュー、Pass Kit、ソーシャルフレームワーク、および StoreKit の変更についてすべて説明します。
 ms.prod: xamarin
 ms.assetid: 242DA7E3-8FD8-5F20-285D-603259CA622D
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: f0cfeaa049355c2b524ead748696eafd884a1c54
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: dc8f2c3a11dd283db46fd0a2530fcca435da75f9
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865699"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752052"
 ---
 # <a name="introduction-to-ios-6"></a>iOS 6 の概要
 
-_iOS 6 には、さまざまな Xamarin.iOS 6 を提供するには、アプリを開発するための新しいテクノロジが含まれていますC#開発者。_
+_iOS 6 には、アプリを開発するためのさまざまな新しいテクノロジが含まれてC#います。 Xamarin は、開発者を対象としています。_
 
 [![](images/ios6-large.jpg "IOS 6 ロゴ")](images/ios6-large.jpg#lightbox)
 
-開発者で、iOS 6 と Xamarin.iOS 6 を含め、iOS アプリケーションを作成するには、そのターゲット iPhone 5 を最大限豊富な機能があるようになりました。
-このドキュメントでは、利用できるより魅力的な新しい機能とこのトピックでは、次の各記事へのリンクの一部を示します。 さらに重要なは、iOS 6 および iPhone 5 の新しい解像度に移行する開発者となるいくつかの変更に当てはめます。
+IOS 6 と Xamarin. iOS 6 を使用すると、開発者は、iPhone 5 を対象とするアプリを含む iOS アプリケーションを作成するための豊富な機能を利用できるようになりました。
+このドキュメントでは、利用可能な新機能をいくつか紹介し、各トピックの記事へのリンクを示します。 さらに、開発者が iOS 6 に移行する際に重要になるいくつかの変更と、iPhone 5 の新しい解決策についても触れています。
 
+## <a name="introduction-to-collection-viewsiosuser-interfacecontrolsuicollectionviewmd"></a>[コレクションビューの概要](~/ios/user-interface/controls/uicollectionview.md)
 
-## <a name="introduction-to-collection-viewsiosuser-interfacecontrolsuicollectionviewmd"></a>[コレクション ビューの概要](~/ios/user-interface/controls/uicollectionview.md)
-
-コレクション ビューでは、任意のレイアウトで表示されるコンテンツを許可します。 カスタム レイアウトもサポートしているときにすぐに使えるグリッドのようなレイアウトを簡単に作成できます。 詳細については、次を参照してください。、[コレクション ビューの概要](~/ios/user-interface/controls/uicollectionview.md) [](~/ios/user-interface/controls/uicollectionview.md)ガイド。
-
+コレクションビューでは、任意のレイアウトを使用してコンテンツを表示できます。 カスタムレイアウトをサポートすると同時に、グリッドに似たレイアウトをすぐに作成できます。 詳細については、「[コレクションビューの概要](~/ios/user-interface/controls/uicollectionview.md) [](~/ios/user-interface/controls/uicollectionview.md)」ガイドを参照してください。
 
 ## <a name="introduction-to-passkitiosplatformpasskitmd"></a>[PassKit の概要](~/ios/platform/passkit.md)
 
-PassKit framework Passbook アプリで管理されているデジタルのパスとの対話を可能です。 詳細については、次を参照してください。、[渡すキット ガイドの概要](~/ios/platform/passkit.md)します。
-
+Pass Kit フレームワークを使用すると、アプリケーションは、Pass Book アプリで管理されているデジタルパスと対話できます。 詳細については、「 [Pass Kit guide (パススルーキットガイド](~/ios/platform/passkit.md))」を参照してください。
 
 ## <a name="introduction-to-eventkitiosplatformeventkitmd"></a>[EventKit の概要](~/ios/platform/eventkit.md)
 
-EventKit フレームワークでは、予定表、予定表イベント、およびカレンダーのデータベースに保存されるアラーム データにアクセスする手段を提供します。 アクセスの予定表、予定表をイベントでしたが使用可能な iOS 4 以降、iOS 6 は今すぐアラーム データへのアクセスを公開します。 詳細については、次を参照してください。、[は](~/ios/platform/eventkit.md) [EventKit 概要](~/ios/platform/eventkit.md)ガイド。
+EventKit フレームワークを使用すると、Calendar データベースに格納されているカレンダー、カレンダーイベント、およびアラームデータにアクセスできます。 IOS 4 以降、カレンダーとカレンダーイベントへのアクセスが利用可能になりましたが、iOS 6 ではリマインダーデータへのアクセスが公開されるようになりました。 詳細につい[ては、](~/ios/platform/eventkit.md) 「 [eventkit](~/ios/platform/eventkit.md)の使用」ガイドを参照してください。
 
+## <a name="introduction-to-the-social-frameworkiosplatformsocial-frameworkmd"></a>[ソーシャルフレームワークの概要](~/ios/platform/social-framework.md)
 
-## <a name="introduction-to-the-social-frameworkiosplatformsocial-frameworkmd"></a>[ソーシャル フレームワークの概要](~/ios/platform/social-framework.md)
-
-ソーシャル フレームワークは、中国でのユーザーの Twitter および Facebook、ほか SinaWeibo をなどのソーシャル ネットワークと対話するための統一された API を提供します。 詳細については、次を参照してください。、[ソーシャル フレームワークの概要](~/ios/platform/social-framework.md)ガイド。
-
+ソーシャルフレームワークは、Twitter や Facebook などのソーシャルネットワークや中国のユーザー向けの SinaWeibo と対話するための統一された API を提供します。 詳細については、[ソーシャルフレームワークの概要に](~/ios/platform/social-framework.md)関するガイドを参照してください。
 
 ## <a name="changes-to-storekitchanges-to-storekitmd"></a>[StoreKit の変更点](changes-to-storekit.md)
 
-Apple がストア キットの 2 つの新しい機能を導入しました。 購入と iTunes または、アプリ内からアプリ ストアのコンテンツをダウンロードし、アプリ内購入のコンテンツ ファイルをホストしています。 詳細については、次を参照してください。、[ストア キットへの変更](changes-to-storekit.md)ガイド。
-
+Apple では、ストアキットに2つの新機能が導入されています。アプリ内から iTunes または App Store のコンテンツを購入してダウンロードし、アプリ内購入用にコンテンツファイルをホストします。 詳細については、「 [Store Kit に対する変更](changes-to-storekit.md)」ガイドを参照してください。
 
 ## <a name="other-changes"></a>その他の変更
 
+### <a name="viewwillunload-and-viewdidunload-deprecated"></a>ViewWillUnload と ViewDidUnload は非推奨とされます
 
-### <a name="viewwillunload-and-viewdidunload-deprecated"></a>ViewWillUnload と ViewDidUnload 非推奨とされます。
+の`ViewWillUnload` `ViewDidUnload`メソッドとメソッドは、iOS 6 では呼び出されなくなりました。 `UIViewController` 以前のバージョンの iOS では、これらのメソッドは、ビューがアンロードされる前に状態を保存するためにアプリケーションによって使用されている可能性があります。
 
-`ViewWillUnload`と`ViewDidUnload`メソッドの`UIViewController`iOS 6 では不要になったと呼ばれます。 IOS の以前のバージョンでこれらのメソッドがアプリケーションで使用されてそれぞれビューをアンロードする前に、の状態とクリーンアップ コードを保存するためです。
-
-Visual Studio for Mac が呼び出されるメソッドを作成するなど、`ReleaseDesignerOutlets`からを呼び出すことはし、次に示す`ViewDidUnload`:
+たとえば、次のようにという`ReleaseDesignerOutlets`メソッドが作成されます。このメソッドは、から呼び出されます。次に Visual Studio for Mac 例を示します。このメソッドは、から`ViewDidUnload`呼び出されます。
 
 ```csharp
 void ReleaseDesignerOutlets ()
@@ -68,11 +61,9 @@ void ReleaseDesignerOutlets ()
 }
 ```
 
-ただし、6、iOS では不要になったを呼び出すために必要な`ReleaseDesignerOutlets`します。   
-   
-   
-   
-クリーンアップ コードでは、iOS 6 アプリケーションを使用する必要があります`DidReceiveMemoryWarning`します。 ただし、その呼び出しをコード`Dispose`控えめに使用して、メモリ集中型のオブジェクトに示すように以下に対してのみ。
+ただし、iOS 6 では、を呼び出す`ReleaseDesignerOutlets`必要がなくなりました。   
+
+クリーンアップコードでは、iOS 6 アプリケーションで`DidReceiveMemoryWarning`を使用する必要があります。 ただし、を呼び出す`Dispose`コードは、以下に示すように、メモリを集中的に使用するオブジェクトに対してのみ使用してください。
 
 ```csharp
 if (myImageView != null){
@@ -83,26 +74,25 @@ if (myImageView != null){
 }
 ```
 
-ここでも、呼び出す`Dispose`上記と同じことはほとんどありません必要です。 一般に、ほとんどのアプリケーションが行う必要がありますイベント ハンドラーを削除することです。
+ここでも`Dispose` 、上記のようにを呼び出す必要はほとんどありません。 一般に、ほとんどのアプリケーションでは、イベントハンドラーを削除する必要があります。
 
-状態を保存する場合は、アプリケーションを実行できますで`ViewWillDisappear`と`ViewDidDisappear`の代わりに`ViewWillUnload`します。
+状態を保存する場合、アプリケーションはの`ViewWillDisappear` `ViewWillUnload`代わりにと`ViewDidDisappear`を実行できます。
 
+### <a name="iphone-5-resolution"></a>iPhone 5 の解決策
 
-### <a name="iphone-5-resolution"></a>iPhone 5 の解決
+iPhone 5 デバイスには、640x1136 解決策があります。 以前のバージョンの iOS を対象とするアプリケーションは、次に示すように、iPhone 5 で実行すると letterboxed と表示されます。
 
-iPhone 5 デバイスでは、640 x 1136 解像度があります。 以前のバージョンの iOS を対象とするアプリケーションが表示されます letterboxed iPhone 5 を実行すると次に示すよう。
+ [![](images/01-letterboxed.png "以前のバージョンの iOS を対象とするアプリケーションが iPhone 5 で実行されると、letterboxed が表示される")](images/01-letterboxed.png#lightbox)
 
- [![](images/01-letterboxed.png "以前のバージョンの iOS を対象とするアプリケーションを iPhone 5 の実行と letterboxed に表示されます。")](images/01-letterboxed.png#lightbox)
+IPhone 5 でアプリケーションが全画面表示されるようにするには、"640x1136" という名前`Default-568h@2x.png`のイメージを追加するだけです。 次のスクリーンショットは、このイメージを含めた後に実行中のアプリケーションを示しています。
 
-表示されるアプリケーションのために全画面表示している iPhone 5 に追加するだけでという名前のイメージ`Default-568h@2x.png`640 x 1136 の解像度を持ちます。 次のスクリーン ショットは、このイメージが含まれている後に実行されるアプリケーションを示しています。
+ [![](images/02-fullscreen.png "このスクリーンショットは、このイメージを含めた後に実行中のアプリケーションを示しています。")](images/02-fullscreen.png#lightbox)
 
- [![](images/02-fullscreen.png "このスクリーン ショットは、このイメージが含まれている後に実行されるアプリケーションを示しています。")](images/02-fullscreen.png#lightbox)
+### <a name="subclassing-uinavigationbar"></a>UINavigationBar のサブクラス化
 
-### <a name="subclassing-uinavigationbar"></a>UINavigationBar をサブクラス化
+IOS 6 `UINavigationBar`では、サブクラス化することができます。 これにより、 `UINavigationBar`のルックアンドフィールをさらに制御できます。 たとえば、アプリケーションでサブビューを追加し、それらのビューをアニメーション化し、の`UINavigationBar`境界を変更することができます。
 
-IOS 6 で`UINavigationBar`をサブクラス化できます。 これにより、追加のコントロールの外観の`UINavigationBar`します。 たとえば、アプリケーションがサブクラス サブビューを追加、これらのビューをアニメーション化するの境界を変更することができます、`UINavigationBar`します。
-
-次のコードは、サブクラスの例を示します`UINavigationBar`を追加する、 `UIImageView`:
+次のコードは、を`UINavigationBar` `UIImageView`追加するサブクラスの例を示しています。
 
 ```csharp
 public class CustomNavBar : UINavigationBar
@@ -122,19 +112,19 @@ public class CustomNavBar : UINavigationBar
 }
 ```
 
-サブクラスを追加する`UINavigationBar`を`UINavigationController`を使用して、`UINavigationController`の型を受け取るコンス トラクター、`UINavigationBar`と`UIToolbar`以下に示すように。
+`UINavigationBar`サブクラス`UINavigationController` `UINavigationBar` `UIToolbar`をに追加するには、次に示すように、との型を受け取るコンストラクターを使用します。 `UINavigationController`
 
 ```csharp
 navController = new UINavigationController (typeof(CustomNavBar), typeof(UIToolbar));
 ```
 
-これを使用して`UINavigationBar`サブクラスの結果の次のスクリーン ショットに示すように表示されるイメージの表示。
+この`UINavigationBar`サブクラスを使用すると、次のスクリーンショットに示すように、イメージビューが表示されます。
 
- [![](images/03-navbar.png "このスクリーン ショットで示すように表示されているイメージ ビューでこの UINavigationBar サブクラスの結果の使用")](images/03-navbar.png#lightbox)
+ [![](images/03-navbar.png "この UINavigationBar サブクラスを使用すると、次のスクリーンショットに示すようにイメージビューが表示されます。")](images/03-navbar.png#lightbox)
 
 ### <a name="interface-orientation"></a>インターフェイスの向き
 
-IOS の前に、6 アプリケーションをオーバーライドできます`ShouldAutorotateToInterfaceOrientation`、特定のコント ローラーがサポートされている任意の向きについて true を返します。 たとえば、次のコードを使用して、縦向きのみをサポートするためには。
+IOS 6 アプリケーションより前`ShouldAutorotateToInterfaceOrientation`では、特定のコントローラーがサポートされている方向に対して true を返すことができました。 たとえば、次のコードは、縦方向のみをサポートするために使用されます。
 
 ```csharp
 public override bool ShouldAutorotateToInterfaceOrientation (UIInterfaceOrientation toInterfaceOrientation)
@@ -143,8 +133,8 @@ public override bool ShouldAutorotateToInterfaceOrientation (UIInterfaceOrientat
     }
 ```
 
-IOS 6 で`ShouldAutorotateToInterfaceOrientation`は非推奨とされます。
-代わりにアプリケーションを上書きできます`GetSupportedInterfaceOrientations`ルート ビュー コント ローラー次に示すようにします。
+IOS 6 `ShouldAutorotateToInterfaceOrientation`のは非推奨とされます。
+代わりに、次に`GetSupportedInterfaceOrientations`示すように、アプリケーションはルートビューコントローラーでオーバーライドできます。
 
 ```csharp
 public override UIInterfaceOrientationMask GetSupportedInterfaceOrientations ()
@@ -153,4 +143,4 @@ public override UIInterfaceOrientationMask GetSupportedInterfaceOrientations ()
     }
 ```
 
-IPad 上の既定値は 4 つすべての向き場合`GetSupportedInterfaceOrientation`は実装されていません。 IPhone と iPod Touch で、既定ではすべての向きを除く`PortraitUpsideDown`します。
+IPad では、が実装されてい`GetSupportedInterfaceOrientation`ない場合、これは既定で4つの方向になります。 IPhone と iPod Touch の既定値は、を除く`PortraitUpsideDown`すべての向きです。

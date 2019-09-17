@@ -1,42 +1,41 @@
 ---
-title: Visual Studio から .xcarchive アーカイブを作成することはできますか。
+title: Visual Studio から .xcarchive アーカイブを作成することはできますか?
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 417D84FB-1BA9-4DB9-A683-66E960BA3D0D
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 04/03/2018
-ms.openlocfilehash: 952777b3178b82657c8f64d5882c532c188c7a79
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 1b078b8cb4d1129127997e9fabdd0b128e09c90f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61422023"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769368"
 ---
-# <a name="is-it-possible-to-create-a-xcarchive-archive-from-visual-studio"></a>Visual Studio から .xcarchive アーカイブを作成することはできますか。
+# <a name="is-it-possible-to-create-a-xcarchive-archive-from-visual-studio"></a>Visual Studio から .xcarchive アーカイブを作成することはできますか?
 
-## <a name="for-xamarin-4"></a>Xamarin 4
+## <a name="for-xamarin-4"></a>Xamarin 4 の場合
 
-Xamarin の時点で 4.x に今すぐ作成することは、 `.xcarchive` Windows を設定してから、`ArchiveOnBuild`プロパティを`true`します。 たとえばを使用して`MSBuild`コマンドラインで。
+Xamarin 4.x の時点では、 `.xcarchive` `ArchiveOnBuild`プロパティをに`true`設定することによって、Windows からを作成できるようになりました。 たとえば、コマンドライン`MSBuild`でを使用すると、次のようになります。
 
 ```bash
 msbuild /p:Configuration=Release /p:ServerAddress=10.211.55.2 /p:ServerUser=xamUser /p:Platform=iPhone /p:ArchiveOnBuild=true /t:"Build" MyProject.csproj
 ```
 
-`.xcarchive`に配置されます、`$HOME/Library/Developer/Xcode/Archives`ディレクトリ Xcode と Xamarin Studio の両方が既にビルドされて表示アーカイブに検索を Mac ビルド ホストにします。
+は`.xcarchive` 、以前に作成し`$HOME/Library/Developer/Xcode/Archives`たアーカイブを表示するために Xcode と Xamarin Studio 検索の両方を実行する Mac ビルドホスト上のディレクトリに配置されます。
 
-これを参照してください[Xamarin のフォーラム投稿](https://forums.xamarin.com/discussion/comment/156635/#Comment_156635)に関するその他のメモの簡単ないくつかの`ArchiveOnBuild`プロパティ。 のドキュメントを参照して[Windows 上の Xamarin.iOS コマンド ライン ビルド](~/ios/get-started/installation/windows/connecting-to-mac/index.md)の詳細については、`ServerAddress`と`ServerUser`プロパティ。
+プロパティに関するその他の注意事項については`ArchiveOnBuild` 、この[Xamarin フォーラムの投稿](https://forums.xamarin.com/discussion/comment/156635/#Comment_156635)を参照してください。 および`ServerAddress` プロパティの詳細については、[Windows上のXamarinのコマンドラインビルド](~/ios/get-started/installation/windows/connecting-to-mac/index.md)に関するドキュメントを参照して`ServerUser`ください。
 
 * * *
 
-## <a name="for-xamarin-3-and-earlier"></a>3 およびそれ以前の Xamarin 用
+## <a name="for-xamarin-3-and-earlier"></a>Xamarin 3 以前の場合
 
-Xamarin 3.x の Visual Studio 拡張機能が生成するためのメカニズムを提供していない`.xcarchive`をアーカイブします。 ただし、作成に使用されるロジック`.xcarchive`Mac で Xamarin Studio でアーカイブ[ここに記載されて](https://bugzilla.xamarin.com/show_bug.cgi?id=35#c5)で独自に作成することがおそらくあるため、`.xcarchive`を希望する場合に手動でします。
+Xamarin 3.x Visual Studio 拡張機能には、アーカイブを作成`.xcarchive`するためのメカニズムが用意されていません。 ただし、ここでは、Mac 上`.xcarchive`の Xamarin Studio にアーカイブを作成するために使用するロジックに[つい](https://bugzilla.xamarin.com/show_bug.cgi?id=35#c5)て説明`.xcarchive`します。そのため、必要に応じて手動で作成することもできます。
 
-注意する必要はありませんが、`.xcarchive`アプリ ストアに送信します。 App Store 配布プロファイル (、アドホック配布プロファイルではなく) で署名されている限り、IPA ファイルを送信できます。
+しかし、アプリストアに送信するための`.xcarchive`が不要であることに注意してください。 IPA ファイルは、アプリストア配布プロファイル (アドホック配布プロファイルではありません) で署名されている限り送信できます。
 
-Zip だけは実際には、`.app`つまり署名されて、アプリ ストアの配布プロファイル) は、バンドル、および送信する`.zip`app store へのファイル。
+実際には、バンドルを (アプリストア配布`.app`プロファイルで署名された) zip 形式で圧縮し、その`.zip`ファイルを app store に送信することもできます。
 
-どちらの場合、アプリ (なく Xcode) を送信する、アプリケーション ローダー アプリを使用できます。
-
+どちらの場合も、アプリケーションローダーアプリを使用して、(Xcode ではなく) アプリを送信できます。
