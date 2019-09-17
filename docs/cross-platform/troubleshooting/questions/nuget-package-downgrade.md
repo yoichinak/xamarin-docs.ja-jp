@@ -6,18 +6,18 @@ ms.assetid: 2375F833-A630-471E-B8E9-5AD2CB81F264
 author: conceptdev
 ms.author: crdun
 ms.date: 05/08/2018
-ms.openlocfilehash: 33f542d0da48f0cd3f7e1bcb85ae06137d8be3cd
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: fc504d1d7a9e990b3bcd90b3404e7db3d9fe7527
+ms.sourcegitcommit: 13e43f510da37ad55f1c2f5de1913fb0aede6362
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288329"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71021141"
 ---
 # <a name="how-do-i-downgrade-a-nuget-package"></a>NuGet パッケージをダウングレードする方法を教えてください
 
 Visual Studio for Mac & Visual Studio には、古いバージョンのパッケージを選択して自動的にインストールする機能があります。更新パッケージの動作と同様です。 これらの手順については、以下で説明します。
 
-## <a name="visual-studio"></a>Visual Studio
+## <a name="visual-studio"></a>Visual Studio
 
 1. [**ツール] > [NuGet パッケージマネージャー] > [パッケージマネージャーコンソール**] にアクセス
 2. **[既定のプロジェクト]** でプロジェクトを設定する
@@ -43,4 +43,5 @@ Visual Studio for Mac & Visual Studio には、古いバージョンのパッケ
 
     `Xamarin.Forms version:1.4`
 
-*注:バージョン番号 & の間`version:`に空白を追加すると、バージョンが指定されていないように検索が動作します。*
+> [!NOTE]
+> バージョン番号 & の間`version:`に空白を追加すると、バージョンが指定されていないように検索が動作します。

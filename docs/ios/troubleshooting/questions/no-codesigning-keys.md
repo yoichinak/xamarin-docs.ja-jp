@@ -7,19 +7,21 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 04/03/2018
-ms.openlocfilehash: aa2f52be4e485fb55a949a0327161bd1c301334c
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: e10a04627b903c02140a6a2ead5c379c1e8bdcf6
+ms.sourcegitcommit: 13e43f510da37ad55f1c2f5de1913fb0aede6362
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769716"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71021386"
 ---
 # <a name="why-does-my-ios-build-fail-with-no-valid-iphone-code-signing-keys-found-in-keychain"></a>iOS のビルドが失敗して "no valid iPhone code signing keys found in keychain" (キーチェーンに有効な iPhone コード署名キーがありません) と表示されるのはなぜですか。
 
 ## <a name="cause-of-the-error"></a>エラーの原因
-このエラーメッセージは、問題のプロジェクトが、有効なコード署名資格情報を探しているものの、見つからない場合に発生します。 物理 iOS デバイスでのテストと展開には、コード署名が必要です。また、アドホック & App store ビルドもあります。 
+
+このエラーメッセージは、問題のプロジェクトが、有効なコード署名資格情報を探しているものの、見つからない場合に発生します。 物理 iOS デバイスでのテストと展開には、コード署名が必要です。また、アドホック & App store ビルドもあります。
 
 ### <a name="provisioning-devices"></a>デバイスをプロビジョニングする
+
 前に iOS デバイスをプロビジョニングしていない場合は、次のガイドで完全な手順を実行します。[デバイスプロビジョニングガイド](~/ios/get-started/installation/device-provisioning/index.md)
 
 ## <a name="bug-when-using-ios-simulator"></a>IOS シミュレーターを使用する場合のバグ
@@ -30,9 +32,11 @@ ms.locfileid: "70769716"
 Xamarin. Visual Studio 3.11 でバグが発生しました。これにより、Xamarin. Forms テンプレートの iOS プロジェクトが、シミュレータービルドに codesign の権利を追加するようになりました。シミュレーターを使用してテストを効果的にブロックします。
 
 ### <a name="how-to-fix"></a>修正方法
+
 .Csproj ファイルのデバッグビルドからフラグを`<CodesignEntitlements>`削除することで、この問題を回避できます。 これは、次のようにして行うことができます。
 
-*警告:.Csproj ファイルのエラーによってプロジェクトが破壊される可能性があるため、ファイルをバックアップしてから実行することをお勧めします。*
+> [!WARNING]
+> .Csproj ファイルのエラーによってプロジェクトが破壊される可能性があるため、ファイルをバックアップしてから実行することをお勧めします。
 
 1. ソリューションウィンドウで iOS プロジェクトを右クリックし、 **[プロジェクトのアンロード]** を選択します。
 2. プロジェクトをもう一度右クリックし、[**編集] [ProjectName] を選択します。 .csproj**
@@ -43,4 +47,4 @@ Xamarin. Visual Studio 3.11 でバグが発生しました。これにより、X
 5. プロジェクトを再読み込みすると、シミュレーターに配置できるようになります。
 
 ### <a name="next-steps"></a>次の手順
-詳細については、お問い合わせください。または、上記の情報を利用した後もこの問題が発生する場合は、「 [Xamarin で使用できるサポートオプション](~/cross-platform/troubleshooting/support-options.md)」を参照してください。連絡先オプション、提案、および必要に応じて新しいバグをファイルに登録する方法については、こちらを参照してください. 
+詳細については、お問い合わせください。または、上記の情報を利用した後もこの問題が発生する場合は、「 [Xamarin で使用できるサポートオプション](~/cross-platform/troubleshooting/support-options.md)」を参照してください。連絡先オプション、提案、および必要に応じて新しいバグをファイルに登録する方法については、こちらを参照してください.

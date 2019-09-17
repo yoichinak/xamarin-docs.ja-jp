@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/10/2019
-ms.openlocfilehash: ae4cccc900396c7ebd6e737160e38c5e9dcdc74e
-ms.sourcegitcommit: cf56d2bae34dc0f8e94c2d3d28d5f460d59807bf
+ms.openlocfilehash: a8ea06d81fcc79a24f155a1562818daea3ba982a
+ms.sourcegitcommit: 13e43f510da37ad55f1c2f5de1913fb0aede6362
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70986166"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71021396"
 ---
 # <a name="sign-in-with-apple-in-xamarinios"></a>Xamarin で Apple にサインインします。 iOS
 
@@ -25,10 +25,11 @@ Apple でのサインインは、サードパーティの認証サービスの�
 ## <a name="requirements"></a>必要条件
 
 この機能には次のものが必要です。
+
 * iOS 13
 * Xamarin. iOS 12.99
-* Xcode 11 をサポートする visual Studio 2019 または Visual Studio 2019 for Mac。 
- 
+* Xcode 11 をサポートする visual Studio 2019 または Visual Studio 2019 for Mac。
+
 詳細[につい](get-started.md)ては、「はじめに」を参照してください。
 
 ## <a name="apple-developer-setup"></a>Apple developer セットアップ
@@ -218,7 +219,7 @@ public UIWindow GetPresentationAnchor (ASAuthorizationController controller) => 
 
 ## <a name="summary"></a>Summary
 
-この記事では、iOS 用 Apple でのサインインについて紹介しました。 
+この記事では、iOS 用 Apple でのサインインについて紹介しました。
 
 ## <a name="related-links"></a>関連リンク
 

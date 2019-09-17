@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/05/2018
-ms.openlocfilehash: f1cc2f4685354687390866c0922a802591c7c054
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 2d65f0c8e717e8e8c995209f7dda1e8a44ee621c
+ms.sourcegitcommit: 13e43f510da37ad55f1c2f5de1913fb0aede6362
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70757704"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71021111"
 ---
 # <a name="working-with-the-android-manifest"></a>Android マニフェストの操作
 
@@ -72,7 +72,8 @@ public class MyActivity : Activity
 <activity android:name="awesome.demo.activity" />
 ```
 
-*注*: プロパティは、下位`Name`互換性のためにのみ使用する必要があります。このような名前を変更すると、実行時に型の検索速度が低下する可能性があります。 アクティビティの既定の型名を小文字の名前空間とクラス名に基づいて要求するレガシコードがある場合は、「 [Android 呼び出し可能ラッパーの名前付け](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/android/xamarin.android_5/xamarin.android_5.1/index.md#Android_Callable_Wrapper_Naming)」で互換性の維持に関するヒントを参照してください。 
+> [!NOTE]
+> プロパティは旧バージョン`Name`との互換性のためにのみ使用してください。そのため、実行時に型の参照が遅くなる可能性があります。 アクティビティの既定の型名を小文字の名前空間とクラス名に基づいて要求するレガシコードがある場合は、「 [Android 呼び出し可能ラッパーの名前付け](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/android/xamarin.android_5/xamarin.android_5.1/index.md#Android_Callable_Wrapper_Naming)」で互換性の維持に関するヒントを参照してください。 
 
 ### <a name="activity-title-bar"></a>アクティビティのタイトルバー
 
