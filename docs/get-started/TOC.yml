@@ -45,7 +45,7 @@
           href: tutorials/stacklayout/index.yml
         - name: group1
           href: tutorials/label/index.yml
-        - name: ボタン
+        - name: Button
           href: tutorials/button/index.yml
         - name: テキスト入力
           href: tutorials/entry/index.yml
@@ -76,8 +76,6 @@
           href: ~/cross-platform/desktop/index.md
         - name: Java 開発者
           href: ~/android/get-started/java-developers.md
-        - name: Swift 開発者
-          href: ~/ios/get-started/objective-c-developers/index.md
         - name: Objective-C 開発者
           href: ~/ios/get-started/objective-c-developers/index.md
         - name: Azure

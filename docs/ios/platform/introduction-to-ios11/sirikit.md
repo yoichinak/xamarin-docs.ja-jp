@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 09/07/2017
-ms.openlocfilehash: 8983ac0c860dafb3a3a0e4c90bd82bdf87c4c4f8
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 27adc8aa2ed0fec09fe38b9ea31834ea6e75f845
+ms.sourcegitcommit: 61a35d0643eb3bf5adb8f8831da54771d8dde626
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70752394"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71033086"
 ---
 # <a name="sirikit-updates-in-ios-11"></a>IOS 11 での SiriKit の更新
 
@@ -147,6 +147,7 @@ public partial class IntentHandler : INExtension, IINNotebookDomainHandling
 クラスはから`INExtension`継承する必要があります。また、サンプルはリストとメモインテントを処理するため`IINNotebookDomainHandling`、も実装します。
 
 > [!NOTE]
+>
 > - .Net では、インターフェイスのプレフィックスとして大文字`I`を付ける規則があります。これは、iOS SDK からプロトコルをバインドするときに Xamarin に準拠します。
 > - Xamarin では、iOS の型名も保持し、Apple は型名の最初の2文字を使用して、型が属しているフレームワークを反映します。
 > - フレームワークでは、型にプレフィックスが`IN*`付きます (例として、 `Intents` `INExtension`) ですが、これらはインターフェイスでは_ありません_。

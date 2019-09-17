@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: ba86567213fe76847459df3df9b4450881e0651e
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 3ef916dbd277544309f1803f923cde302494e4f1
+ms.sourcegitcommit: 61a35d0643eb3bf5adb8f8831da54771d8dde626
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769232"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71033503"
 ---
 # <a name="ipa-file-is-0-bytes"></a>IPA ファイルが 0 バイトです
 
@@ -22,9 +22,11 @@ ms.locfileid: "70769232"
 以前のバージョンの Xamarin では、Windows 上の IPA ファイルが0バイトになる可能性があるという既知の問題がいくつかありました。 
 
 ### <a name="fixed-in-xamarin-for-visual-studio-311584"></a>Xamarin for Visual Studio 3.11.584 で修正済み 
+
 - [バグ 24416-コマンドラインから "アドホック" 構成をビルドしても、IPA ファイルが Windows にコピーされない](https://bugzilla.xamarin.com/show_bug.cgi?id=24416)
 - [バグ 24417-"プロジェクトのプロパティ-> iOS IPA のオプション-> パッケージ名" を変更すると、IPA が Windows にコピーされないようにする](https://bugzilla.xamarin.com/show_bug.cgi?id=24417)
 - [バグ 29822-[XVS. iOS 3.11] 設定 "Build" の番号が "Version" の番号と異なると、IPA が Windows にコピーされません](https://bugzilla.xamarin.com/show_bug.cgi?id=29822)
 
 ### <a name="fixed-in-xamarin-for-visual-studio-410496"></a>Xamarin for Visual Studio 4.1.0.496 で修正済み
+
 - [バグ 27989-ビルドサーバーでの ipa ファイルの表示が、アセンブリ名がプロジェクト名と一致しない場合に失敗する](https://bugzilla.xamarin.com/show_bug.cgi?id=27989)

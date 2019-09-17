@@ -1,47 +1,47 @@
 ---
-title: IOS 13、iPadOS 13、13、tvOS、watchOS 6 の概要します。
-description: このドキュメントでは、最大ビルド iOS 13、iPadOS 13、13、tvOS、および Xamarin を使った watchOS 6 アプリ設定を取得する方法について説明します。 Xcode 11 をダウンロードして for mac。 Visual Studio を更新する方法について説明します
+title: IOS 13、iPadOS 13、tvOS 13、および watchOS 6 を使ってみる
+description: このドキュメントでは、Xamarin を使用して iOS 13、iPadOS 13、tvOS 13、および watchOS 6 アプリをビルドするように設定する方法について説明します。 Xcode 11 をダウンロードし Visual Studio for Mac を更新する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 97414545-85D2-433C-9246-63B6763F488A
 ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 07/01/2019
-ms.openlocfilehash: 554cddf5717401f912cab38c78a6af17659a0cf7
-ms.sourcegitcommit: 8ecfa339d0f3e7687977bfe4fc96448942690183
+ms.openlocfilehash: 9dc6f234c4bc14c3644d953eef0d2e0f397436e5
+ms.sourcegitcommit: 61a35d0643eb3bf5adb8f8831da54771d8dde626
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67558690"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71033075"
 ---
-# <a name="get-started-with-ios-13"></a>IOS 13 を概要します。
+# <a name="get-started-with-ios-13"></a>IOS 13 を使ってみる
 
 ![プレビュー機能](~/media/shared/preview.png)
 
-このドキュメントでは、Xcode の 11 でリリースされている Api を呼び出す iOS 13 の Xamarin アプリの構築を開始する方法について説明します。 MacOS 10.14.4 (Mojave)、プレビューを使用する必要がありますまたはそれ以降。
+このドキュメントでは、iOS 13 用に Xcode 11 でリリースされた Api を呼び出す Xamarin アプリの構築を開始する方法について説明します。 プレビューを使用するには、macOS 10.14.4 (Mojave) 以降が必要です。
 
 ## <a name="download-and-install"></a>ダウンロードしてインストールする
 
-1. **Xcode 11 beta のインストール**– Apple の登録されている開発者はダウンロードして、最新のバージョンから Xcode 11 beta のインストール、 [Apple Developer Portal](https://developer.apple.com/download/)または**App Store**します。
+1. **Install Xcode 11 beta** –登録済みの apple 開発者は、 [apple Developer Portal](https://developer.apple.com/download/)または**App Store**から最新バージョンの Xcode 11 beta をダウンロードしてインストールできます。
 
-2. **Xcode 11 beta が実行**– ツール、Xamarin の更新といくつかのインストール過程で、for Mac、Visual Studio を実行する前に、Xcode 11 実行が必要です。
+2. **Run Xcode 11 beta** – Xamarin に必要なツールがインストールされるため、Visual Studio for Mac を更新して実行する前に Xcode 11 を実行します。
 
-3. Visual studio for Mac では、次のように選択します**Visual Studio > 更新プログラムを確認しています.。** を選択、 **Xcode 11 プレビュー**チャネルを開いて、使用可能な更新プログラムをインストールします。
+3. Visual Studio for Mac で、[Visual Studio] を選択し**て [更新プログラムの確認**] を >、 **Xcode 11 のプレビュー**チャネルを選択して、利用可能な更新プログラムをインストールします。 このチャンネルが表示されない場合は、 **Visual Studio > アカウント**からアカウントにログインしていることを確認してください...
 
-4. Visual studio for Mac では、次のように選択します。 **Visual Studio > 設定 > プロジェクト > SDK の場所 > Apple**選択**Xcode beta.app**します。
+4. Visual Studio for Mac で、[ **Visual Studio] > [基本設定] を選択し > プロジェクト > SDK の場所 > Apple**を選択し、 **[Xcode-beta]** を選択します。
 
-5. (省略可能)このプレビューを使用して評価する場合_Xcode 11 beta 3_、リンクを有効にする必要があります。 プロジェクトを右クリックしに移動します**オプション > iOS ビルド > リンカーの動作**リンカーの動作の値を設定および**リンク フレームワーク Sdk のみ**します。 この回避策は今後のプレビューで不要になります。
+5. Optional_Xcode 11 beta 3_を使用してこのプレビューを評価する場合は、リンクを有効にする必要があります。 プロジェクトを右クリックし、**オプション > IOS ビルド > リンカーの動作** の順に移動して、リンカーの動作 の値を **フレームワーク Sdk のみをリンク**する に設定します。 この回避策は、今後のプレビューでは必要ありません。
 
-6. (省略可能) **、IOS デバイスで iOS 13 をインストール**-デバイスの登録済み Apple の開発者は、Xcode 11 で導入された Api を使用するアプリのテストの[ダウンロード](https://developer.apple.com/download)して自分のデバイスで、オペレーティング システムをインストールします。 IOS では、ベータ版であるためには、プライマリ デバイスにインストールするように注意します。
+6. OptionalIos**デバイスに ios 13 をインストール**する– Xcode 11 で導入された api を使用するアプリのデバイステストでは、登録されている Apple 開発者は、デバイスにオペレーティングシステムを[ダウンロード](https://developer.apple.com/download)してインストールできます。 IOS はベータ版なので、プライマリデバイスにインストールすることをお勧めします。
 
    > [!TIP]
-   > アプリでは、新しい Api を使用しない場合でも、最新の Xcode 11 Sdk を構築し、期待どおりに動作するすべてのものかどうかを確認することをテストすることを確認します。 アプリは、新しい Api を呼び出す場合は、これらの新しい Sdk と再コンパイルし、新しいオペレーティング システムにまだアップグレードされていないデバイスでテストできます。
+   > アプリで新しい Api を使用しない場合でも、最新の Xcode 11 Sdk を使用してビルドし、テストして、すべてが期待どおりに動作することを確認してください。 アプリが新しい Api を呼び出さない場合は、これらの新しい Sdk を使用して再コンパイルし、新しいオペレーティングシステムにまだアップグレードされていないデバイスでテストすることができます。
    >
-   > Xamarin アプリをテストする Apple からのリリースに最新のオペレーティング システム、デバイスをアップグレードする前に必ずします。
+   > Apple から最新のオペレーティングシステムリリースにデバイスをアップグレードして Xamarin アプリをテストする前に、次のことを確認してください。
    >
-   > - 読み取り[Apple のリリース ノート](https://developer.apple.com/download/)オペレーティング システムを更新します。
+   > - オペレーティングシステムの更新プログラムについては、 [Apple のリリースノート](https://developer.apple.com/download/)を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 
-- [Xcode をダウンロードします。](https://developer.apple.com/download/)
-- [Xamarin.iOS リリース ノートのプレビュー](/xamarin/ios/release-notes/12/12.99)
+- [Xcode のダウンロード](https://developer.apple.com/download/)
+- [Xamarin iOS preview リリースノート](/xamarin/ios/release-notes/12/12.99)

@@ -6,12 +6,12 @@ ms.assetid: 5F0CEC18-5EF6-4A99-9DCF-1A3B57EA157C
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 75177daa2f8bd1faa271940713ff8543db3b97c0
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: cc27b3162c03f0292d3910f86fac9ed89b117f6f
+ms.sourcegitcommit: 61a35d0643eb3bf5adb8f8831da54771d8dde626
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287386"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71033323"
 ---
 # <a name="unified-api-overview"></a>Unified API の概要
 
@@ -19,6 +19,7 @@ Xamarin の Unified API を使用すると、Mac と iOS の間でコードを�
 
 > [!IMPORTANT]
 > Unified API の前にある Xamarin Classic API は非推奨とされました。 
+>
 > - Classic API (monotouch.dialog) をサポートする最新バージョンの Xamarin. iOS 9.10 がありました。
 > - Classic API は引き続き Xamarin. Mac でサポートされますが、更新されなくなりました。 非推奨とされているため、開発者はアプリケーションを Unified API に移行する必要があります。
 
