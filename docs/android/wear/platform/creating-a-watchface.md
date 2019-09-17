@@ -47,11 +47,11 @@ Android 5.0 は watch face service を実装するための最小 API レベル�
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[[![新しいプロジェクト] ダイアログ][(creating-a-watchface-images/03-wear-project-vs-sml.png "新しいプロジェクト] ダイアログボックスで [磨耗アプリ] を選択します")。](creating-a-watchface-images/03-wear-project-vs.png#lightbox)
+[[![新しいプロジェクト] ダイアログ][(creating-a-watchface-images/03-wear-project-vs-sml.png "新しいプロジェクト] ダイアログボックスで [Wear アプリ] を選択します")。](creating-a-watchface-images/03-wear-project-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-[[![新しいプロジェクト] ダイアログ][(creating-a-watchface-images/03-wear-project-xs-sml.png "新しいプロジェクト] ダイアログボックスで [磨耗アプリ] を選択します")。](creating-a-watchface-images/03-wear-project-xs.png#lightbox)
+[[![新しいプロジェクト] ダイアログ][(creating-a-watchface-images/03-wear-project-xs-sml.png "新しいプロジェクト] ダイアログボックスで [Wear アプリ] を選択します")。](creating-a-watchface-images/03-wear-project-xs.png#lightbox)
 
 -----
 
@@ -84,7 +84,7 @@ Android の最小バージョンを**android 5.1 (API レベル 22)** に設定�
 
 次に、このチュートリアルの後半で、ダウンロード[し](creating-a-watchface-images/preview.png) &ndash;たプレビューファイルを**drawables**実行可能フォルダーに追加します。
 
-## <a name="add-the-xamarinandroid-wear-package"></a>Xamarin. Android の磨耗パッケージを追加する
+## <a name="add-the-xamarinandroid-wear-package"></a>Xamarin.Android Wear パッケージを追加する
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -106,9 +106,9 @@ NuGet パッケージマネージャーを起動します (Visual Studio for Mac
 
 アプリをビルドして、Wear デバイスまたはエミュレーターで実行します (詳細については、[はじめに](~/android/wear/get-started/index.md)ガイドを参照してください)。 次のアプリ画面が Wear デバイスに表示されます。
 
-[![アプリのスクリーンショット](creating-a-watchface-images/08-app-screen.png "磨耗デバイスでのアプリ画面")](creating-a-watchface-images/08-app-screen.png#lightbox)
+[![アプリのスクリーンショット](creating-a-watchface-images/08-app-screen.png "Wear デバイスでのアプリ画面")](creating-a-watchface-images/08-app-screen.png#lightbox)
 
-この時点では、基本の摩耗アプリにはウォッチフェイス機能がありません。これは、まだ watch のサービス実装が提供されていないためです。 このサービスは次に追加されます。
+この時点では、基本の Wear アプリにはウォッチフェイス機能がありません。これは、まだ watch のサービス実装が提供されていないためです。 このサービスは次に追加されます。
 
 ## <a name="canvaswatchfaceservice"></a>CanvasWatchFaceService
 
@@ -340,7 +340,7 @@ Watch サービスを実行する前に、 **watch_face**リソースとプレ�
 
 これにより、これまでに実装されたカスタムウォッチフェイスサービスを使用するように、Wear デバイスのウォッチ式が変更されます。
 
-[![デジタルウォッチの顔](creating-a-watchface-images/12-digital-watchface.png "摩耗デバイスで実行されているカスタムデジタルウォッチ")](creating-a-watchface-images/12-digital-watchface.png#lightbox)
+[![デジタルウォッチの顔](creating-a-watchface-images/12-digital-watchface.png "Wear デバイスで実行されているカスタムデジタルウォッチ")](creating-a-watchface-images/12-digital-watchface.png#lightbox)
 
 これは、アプリの実装が非常に少ないため (たとえば、ウォッチフェイスの背景が含まれておらず、外観を向上さ`Paint`せるためにアンチエイリアスメソッドを呼び出さない)、比較的見やすい顔です。
 ただし、カスタムウォッチフェイスを作成するために必要なベアボーン機能が実装されています。
