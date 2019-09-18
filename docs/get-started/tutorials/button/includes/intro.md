@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 6d4be81bac872177cb15bad004b581702b17b9ac
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.openlocfilehash: 42b42e8013032b684b31e8bd974c433ef176be52
+ms.sourcegitcommit: 61a35d0643eb3bf5adb8f8831da54771d8dde626
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67277306"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71059713"
 ---
 このチュートリアルを試行する前に、以下を正常に完了しておく必要があります。
 
@@ -14,6 +14,7 @@ ms.locfileid: "67277306"
 このチュートリアルでは、次の作業を行う方法について説明します。
 
 > [!div class="checklist"]
+>
 > - XAML で Xamarin.Forms [`Button`](xref:Xamarin.Forms.Button) を作成する。
 > - タップされた `Button` に応答する。
 > - `Button` の外観を変更する。

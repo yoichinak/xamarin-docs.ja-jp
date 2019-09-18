@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 98eb75948ec2b53919b8de7cdc80d39d7c3ebf4c
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.openlocfilehash: 19276826e1996e68fd27107d23e0def76a1025a5
+ms.sourcegitcommit: 61a35d0643eb3bf5adb8f8831da54771d8dde626
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67277326"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71059719"
 ---
 このチュートリアルを試行する前に、以下を正常に完了しておく必要があります。
 
@@ -15,6 +15,7 @@ ms.locfileid: "67277326"
 このチュートリアルでは、次の作業を行う方法について説明します。
 
 > [!div class="checklist"]
+>
 > - アラートを表示して、ユーザーに選択を求める。
 > - アクション シートを表示して、タスクが完了するまでユーザーをガイドする。
 
