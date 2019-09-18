@@ -1,5 +1,5 @@
 ---
-title: 効果にパラメーターを渡す
+title: エフェクトにパラメーターを渡す
 description: 効果パラメーターはプロパティによって定義できます。これにより、効果を再利用できます。 効果をインスタンス化するときに各プロパティの値を指定することで、パラメーターを効果に渡すことができます。
 ms.prod: xamarin
 ms.assetid: F6429859-6EF7-48BE-A0CB-8F42B8A75215
@@ -14,7 +14,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 09/06/2019
 ms.locfileid: "70771423"
 ---
-# <a name="passing-parameters-to-an-effect"></a>効果にパラメーターを渡す
+# <a name="passing-parameters-to-an-effect"></a>エフェクトにパラメーターを渡す
 
 _効果パラメーターはプロパティによって定義できます。これにより、効果を再利用できます。効果をインスタンス化するときに各プロパティの値を指定することで、パラメーターを効果に渡すことができます。_
 
