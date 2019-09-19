@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 406d65145017e4c82743bc920ff19696a90afc33
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 5cd0a1ec43f0e56ec1ec72ebd614a7e0a5fa2225
+ms.sourcegitcommit: a5ef4497db04dfa016865bc7454b3de6ff088554
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70771707"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "70998054"
 ---
 # <a name="customizing-a-viewcell"></a>ViewCell のカスタマイズ
 
@@ -146,7 +146,7 @@ public class NativeCellPageCS : ContentPage
 }
 ```
 
-Xamarin.Forms の [`ListView`](xref:Xamarin.Forms.ListView) コントロールを使用して、データの一覧が表示されます。一覧は [`ItemSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) プロパティを利用して設定されます。 [`RecycleElement`](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) キャッシング戦略では、一覧のセルをリサイクルすることで、`ListView` のメモリ占有領域を最小化し、実行速度を短縮しようとします。 詳細については、「[Caching Data](~/xamarin-forms/user-interface/listview/performance.md#cachingstrategy)」(キャッシング戦略) を参照してください。
+Xamarin.Forms の [`ListView`](xref:Xamarin.Forms.ListView) コントロールを使用して、データの一覧が表示されます。一覧は [`ItemSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) プロパティを利用して設定されます。 [`RecycleElement`](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) キャッシング戦略では、一覧のセルをリサイクルすることで、`ListView` のメモリ占有領域を最小化し、実行速度を短縮しようとします。 詳細については、「[Caching Data](~/xamarin-forms/user-interface/listview/performance.md#caching-strategy)」(キャッシング戦略) を参照してください。
 
 一覧の各行には、名前、カテゴリ、および画像ファイルの名前という 3 つの項目が含まれます。 [`ListView.ItemTemplate`](xref:Xamarin.Forms.ItemsView`1.ItemTemplate) バインド可能プロパティを利用して参照される `DataTemplate` によって、一覧の各行のレイアウトが定義されます。 `DataTemplate` によって、一覧の各データ行が、データ バインディングを利用して `Name`、`Category` および `ImageFilename` の各プロパティを表示する `NativeCell` であることが定義されます。 `ListView` コントロールの詳細については、「[ListView](~/xamarin-forms/user-interface/listview/index.md)」を参照してください。
 

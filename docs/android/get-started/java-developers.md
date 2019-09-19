@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/13/2018
-ms.openlocfilehash: dfd6c9d6419f663b1ef474066f7918859d42b3c5
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: f4c8c8b19d7738478cdc2c8f83c6fc8d1f361466
+ms.sourcegitcommit: cf56d2bae34dc0f8e94c2d3d28d5f460d59807bf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70757293"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70985660"
 ---
 # <a name="xamarin-for-java-developers"></a>Java 開発者向け Xamarin
 
@@ -240,7 +240,7 @@ C# で基底クラスのコンストラクターを呼び出すには、コロ�
 public class PictureLayout : ViewGroup
 {
     ...
-    public class PictureLayout (Context context)
+    public PictureLayout (Context context)
            : base (context)
     {
         ...
@@ -377,7 +377,7 @@ Xamarin.Android のコードでは、通常、イベント ハンドラーの宣
 
 C# には、`async` および `await` キーワードによる言語レベルでの非同期プログラミングのサポートが含まれます。 これらの言語機能を使うと、アプリケーションのメイン スレッドをブロックすることなく、実行時間の長いタスクを実行するコードを、とても簡単に記述できます。 簡単に説明すると、メソッドで `async` キーワードを使うことにより、メソッドのコードが非同期に実行され、呼び出し元のスレッドをブロックしないことを示します。 `async` でマークされているメソッドを呼び出すときは、`await` キーワードを使います。 コンパイラは、`await` を、メソッドの実行がバックグラウンド スレッドに移動される (タスクが呼び出し元に返される) ポイントとして解釈します。 このタスクが完了すると、コードの `await` ポイントで呼び出し元のスレッドでのコード実行が再開されて、`async` の呼び出しの結果が返されます。 慣例として、非同期に実行するメソッドの名前にはサフィックス `Async` を付けます。
 
-Xamarin.Android アプリケーションでは、実行時間の長い操作がバックグラウンド タスクで行われている間は、通常、`async` と `await` を使って、ユーザー入力 (**[キャンセル]** ボタンのタップなど) に応答できるように UI スレッドを解放します。
+Xamarin.Android アプリケーションでは、実行時間の長い操作がバックグラウンド タスクで行われている間は、通常、`async` と `await` を使って、ユーザー入力 ( **[キャンセル]** ボタンのタップなど) に応答できるように UI スレッドを解放します。
 
 次の例では、ボタン クリック イベント ハンドラーにより、非同期操作が Web からイメージをダウンロードします。
 

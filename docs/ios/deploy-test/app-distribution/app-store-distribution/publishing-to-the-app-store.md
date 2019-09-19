@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/25/2018
-ms.openlocfilehash: 51e802b1e142955fb3988432f9d9c7393f2ee0ea
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 5d299112da87207f7486247e0ed6f00c35a35fe5
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292329"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71106043"
 ---
 # <a name="publishing-xamarinios-apps-to-the-app-store"></a>App Store への Xamarin.iOS アプリの公開
 
@@ -21,6 +21,7 @@ ms.locfileid: "70292329"
 このガイドでは、App Store 用のアプリを準備し、審査のために Apple に送信する場合に従う手順について説明します。 具体的には、以下の作業について説明します。
 
 > [!div class="checklist"]
+>
 > - App Store 審査ガイドラインに従う
 > - App ID と権利の設定
 > - App Store アイコンとアプリ アイコンの提供
@@ -316,12 +317,11 @@ App Store プロビジョニング プロファイルを作成してインスト
        <MtouchFloat32>true</MtouchFloat32>
        <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
        <MtouchLink>SdkOnly</MtouchLink>
-       <MtouchArch>;ARMv7, ARM64</MtouchArch>
+       <MtouchArch>ARMv7, ARM64</MtouchArch>
        <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
        <MtouchTlsProvider>Default</MtouchTlsProvider>
-       <PlatformTarget>x86&</PlatformTarget>
        <BuildIpa>true</BuildIpa>
-       <IpaPackageDir>$(OutputPath</IpaPackageDir>
+       <IpaPackageDir>$(OutputPath)</IpaPackageDir>
     </PropertyGroup>
     ```
 

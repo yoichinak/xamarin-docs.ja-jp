@@ -1,7 +1,16 @@
+---
+ms.openlocfilehash: 4d045c0025effae4f5e4cd30e03f8776be0c1270
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71105753"
+---
 # <a name="voice-and-tone-guidelines"></a>スタイルとトーンのガイドライン
 
 開発者は、Xamarin を学んで通常の作業に使用するためにドキュメントを読みます。
 執筆者の目標は、読者の目的達成を助ける有益なドキュメントを作成することです。 このガイドラインはその役に立ちます。 このスタイル ガイドには、次の 4 つの推奨事項が含まれています。
+
 - [会話調を使用する](#use-a-conversational-tone)
 - [二人称で書く](#write-in-2nd-person)
 - [能動態を使用する](#use-active-voice)

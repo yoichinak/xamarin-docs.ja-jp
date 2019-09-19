@@ -8,12 +8,12 @@ ms.date: 02/26/2018
 ms.topic: conceptual
 ms.assetid: 11111111-2222-3333-4444-555555555555
 ms.prod: xamarin
-ms.openlocfilehash: 69682372e2b1ac84db2c6464ac3b05a58645a9e3
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 8374e90ea6d460a0e0c22763db023654c3008b32
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70753563"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71105743"
 ---
 # <a name="metadata-and-markdown-template"></a>メタデータとマークダウン テンプレート
 
@@ -65,6 +65,7 @@ ms.custom: Analytics data, a field that gets imported into SkyEye so you can use
 ## <a name="file-name"></a>ファイル名
 
 ファイル名には次の規則を使用します。
+
 - 小文字、数字、ハイフンのみを使用する。
 - スペースや句読点を使用しない。 ハイフンを使用して、ファイル名の単語と数字を区切る。
 - develop (開発)、buy (購入)、build (ビルド)、troubleshoot (トラブルシューティング) など、具体的な動作動詞を使用する。 -ing 形の語は使用しません。
@@ -75,6 +76,7 @@ ms.custom: Analytics data, a field that gets imported into SkyEye so you can use
 ## <a name="headings"></a>見出し
 
 文スタイルで大文字化します。 次のものは必ず大文字にします。
+
 - 見出しの最初の文字。
 - タイトルまたは見出し内のコロンの後に続く文字 (たとえば、"How to:Sort an array" のようにします)。
 
@@ -131,6 +133,7 @@ URL がマークダウン ファイルに表示されると、クリック可能
 API にリンクする場合は、ソース コードから自動生成される一意識別子 (UID) を使用できます。
 
 次のいずれかの構文を使用できます。
+
 1. マークダウン リンク: `[link_text](xref:UID)`
 2. 自動リンク: `<xref:UID>`
 3. 短縮形: `@UID`
@@ -143,6 +146,7 @@ API にリンクする場合は、ソース コードから自動生成される
 > 現時点では、UID を検索する簡単な方法はありません。 API の UID を検索する最善の方法は、このリポジトリ [docascode/coreapi](https://github.com/docascode/coreapi) 内で検索する方法です。 将来的により優れたシステムを提供できるように取り組んでいます。
 
 UID に特殊文字 \` または \# が含まれている場合は、UID 値は次の例のようにそれぞれ %60 と %23 として HTML エンコードする必要があります。
+
 - 例:@System.Threading.Tasks.Task\`1 は `@System.Threading.Tasks.Task%601` になります
 - 例: @System.Exception \#ctor は `@System.Exception.%23ctor` になります
 
