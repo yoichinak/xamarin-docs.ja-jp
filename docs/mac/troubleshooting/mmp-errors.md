@@ -396,7 +396,7 @@ Apple は、32ビットアプリの macOS アプリストアの送信を許可�
 
 <a name="MM2106" />
 
-#### <a name="mm2106-could-not-optimize-the-call-to-blockliteralsetupblockunsafe-in--at-offset--because-"></a>MM2106:ブロックの呼び出しを最適化することができませんでした。 SetupBlock [Unsafe] * で * のオフセット * で * です。
+#### <a name="mm2106-could-not-optimize-the-call-to-blockliteralsetupblockunsafe-in--at-offset--because-"></a>MM2106:ブロックの呼び出しを最適化することができませんでした。 SetupBlock [Unsafe] * で * のオフセット * で です。
 
 リンカーは、または`BlockLiteral.SetupBlock` `Block.SetupBlockUnsafe`の呼び出しを最適化できない場合に、この警告を報告します。
 

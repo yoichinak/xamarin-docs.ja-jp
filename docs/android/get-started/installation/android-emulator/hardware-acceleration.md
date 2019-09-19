@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/27/2018
-ms.openlocfilehash: add9c602f4c04f1d95db4cee578fdadf0b41cf33
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 5c6eb6e49c7c8a4071591e46a5afc02a6ff6b4e6
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70758004"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71105905"
 ---
 # <a name="hardware-acceleration-for-emulator-performance-hyper-v--haxm"></a>エミュレーターのパフォーマンスのためのハードウェア高速化 (Hyper-V と HAXM)
 
@@ -22,19 +22,27 @@ _この記事では、お使いのコンピューターのハードウェア高�
 Visual Studio で開発すると、Android デバイスが利用できないか、実用的でない状況でも、Android エミュレーターを利用することで Xamarin.Android アプリケーションを簡単にテストしたり、デバッグしたりできます。
 ただし、Android エミュレーターを実行するコンピューターにハードウェア高速化がない場合、エミュレーターの実行速度があまりにも遅くなります。 特殊な x86 仮想デバイス イメージとコンピューターの仮想化機能を組み合わせることで、Android エミュレーターのパフォーマンスを大幅に向上することができます。
 
+| シナリオ    | HAXM        | WHPX       | Hypervisor.Framework |
+| ----------- | ----------- | -----------| ----------- |
+| Intel プロセッサを所有している | x | x | x |
+| AMD プロセッサを所有している   |   | x |   |
+| Hyper-V をサポートする |   | x |   |
+| 入れ子になった仮想化をサポートする |   | 制限 |   |
+| Docker などのテクノロジを使用する  |   | x | x |
+
 ::: zone pivot="windows"
 
 ## <a name="accelerating-android-emulators-on-windows"></a>Windows 上での Android エミュレーターの高速化
 
 Android エミュレーターの高速化には、次の仮想化テクノロジを利用できます。
 
-1. **Microsoft の Hyper-V と Hypervisor Platform**。
+1. **Microsoft の Hyper-V と Windows Hypervisor Platform (WHPX)** 。
    [Hyper-V](https://docs.microsoft.com/virtualization/hyper-v-on-windows/) は Windows の仮想化技術の 1 つであり、物理的ホスト コンピューター上で、仮想化されたコンピューター システムを実行できます。
 
-2. **Intel の Hardware Accelerated Execution Manager (HAXM)**。
+2. **Intel の Hardware Accelerated Execution Manager (HAXM)** 。
    HAXM は Intel CPU を実行するコンピューターのための仮想化エンジンです。
 
-最適なパフォーマンスのためには、Hyper-V を使用して Android エミュレーターを高速化することをお勧めします。 お使いのコンピューターで Hyper-V を使用できない場合は、HAXM を使用できます。 Android エミュレーターは、次の条件が満たされている場合、ハードウェア高速化を自動的に利用します。
+Windows で最適なエクスペリエンスを実現するには、HAXM を使用して Android エミュレーターを高速化することをお勧めします。 コンピューターで HAXM を使用できない場合は、Windows ハイパーバイザー プラットフォーム (WHPX) を使用できます。 Android エミュレーターは、次の条件が満たされている場合、ハードウェア高速化を自動的に利用します。
 
 - 開発コンピューターにハードウェア高速化機能があり、それが有効になっている。
 
@@ -71,7 +79,7 @@ Hyper-V は Windows ハイパーバイザー プラットフォーム上で動�
 
   1. Windows 検索ボックスに「**バージョン情報**」と入力します。
   2. 検索結果から **[PC 情報]** を選択します。
-  3. **[バージョン情報]** ダイアログ内で下にスクロールし、**[Windows の仕様]** セクションを表示します。
+  3. **[バージョン情報]** ダイアログ内で下にスクロールし、 **[Windows の仕様]** セクションを表示します。
   4. **[バージョン]** が 1803 以降であることを確認します。
 
       [![Windows の仕様](hardware-acceleration-images/win/01-about-windows-w10-sml.png)](hardware-acceleration-images/win/01-about-windows-w10.png#lightbox)
@@ -155,10 +163,10 @@ Android エミュレーターの高速化には、次の仮想化テクノロジ
 1. **Apple の Hypervisor フレームワーク**
    [Hypervisor](https://developer.apple.com/documentation/hypervisor) は、Mac 上で仮想マシンを実行できるようにする macOS 10.10 以降の機能です。
 
-2. **Intel の Hardware Accelerated Execution Manager (HAXM)**。
+2. **Intel の Hardware Accelerated Execution Manager (HAXM)** 。
    [HAXM](https://software.intel.com/articles/intel-hardware-accelerated-execution-manager-intel-haxm) は Intel CPU を実行するコンピューターのための仮想化エンジンです。
 
-最適なパフォーマンスのためには、Hypervisor フレームワークを使用して Android エミュレーターを高速化することをお勧めします。 お使いの Mac 上で Hypervisor フレームワークを使用できない場合は、HAXM を使用できます。 Android エミュレーターは、次の条件が満たされている場合、ハードウェア高速化を自動的に利用します。
+Android エミュレーターを高速化するには、ハイパーバイザー フレームワークを使用することをお勧めします。 お使いの Mac 上で Hypervisor フレームワークを使用できない場合は、HAXM を使用できます。 Android エミュレーターは、次の条件が満たされている場合、ハードウェア高速化を自動的に利用します。
 
 - 開発コンピューターにハードウェア高速化機能があり、それが有効になっている。
 
@@ -180,7 +188,7 @@ Hypervisor フレームワークで Android エミュレーターを使用する
 
 - Mac の CPU が Hypervisor フレームワークをサポートできる必要がある。
 
-お使いの Mac がこれらの条件を満たしている場合、(HAXM がインストールされている場合でも) Android エミュレーターは高速化に Hypervisor フレームワークを自動的に使用します。 Hypervisor フレームワークがお使いの Mac でサポートされているかどうか不明な場合は、[トラブルシューティング](~/android/get-started/installation/android-emulator/troubleshooting.md?tabs=vsmac#hypervisor-issues) ガイドで Mac が Hypervisor をサポートしていることを確認する方法を参照してください。
+お使いの Mac がこれらの条件を満たしている場合、Android エミュレーターは高速化に Hypervisor フレームワークを自動的に使用します。 Hypervisor フレームワークがお使いの Mac でサポートされているかどうか不明な場合は、[トラブルシューティング](~/android/get-started/installation/android-emulator/troubleshooting.md?tabs=vsmac#hypervisor-issues) ガイドで Mac が Hypervisor をサポートしていることを確認する方法を参照してください。
 
 Hypervisor フレームワークがお使いの Mac でサポートされていない場合は、Android エミュレーターの高速化に HAXM を使用できます (次に説明します)。
 
@@ -202,7 +210,7 @@ Hypervisor フレームワークがお使いの Mac でサポートされてい�
     ~/Library/Developer/Xamarin/android-sdk-macosx/tools/emulator -accel-check
     ```
 
-   このコマンドでは、Android SDK が既定の場所 (**~/Library/Developer/Xamarin/android-sdk-macosx**) にインストールされていることを前提としています。そうでない場合は、上記のパスをお使いの Mac 上にある Android SDK の場所に変更します。
+   このコマンドでは、Android SDK が既定の場所 ( **~/Library/Developer/Xamarin/android-sdk-macosx**) にインストールされていることを前提としています。そうでない場合は、上記のパスをお使いの Mac 上にある Android SDK の場所に変更します。
 
 2. HAXM がインストールされている場合、上記のコマンドで次の結果のようなメッセージが返されます。
 

@@ -230,7 +230,7 @@
               href: user-interface/controls/ratingbar.md
             - name: Spinner
               href: user-interface/controls/spinner.md
-            - name: 切り替え
+            - name: Switch
               href: user-interface/controls/switch.md
             - name: TextureView
               href: user-interface/controls/texture-view.md
@@ -303,6 +303,8 @@
               href: platform/fragments/providing-backwards-compatibility.md
         - name: アプリのリンク
           href: platform/app-linking.md
+        - name: Android 10
+          href: platform/android-10.md
         - name: Android 9 Pie
           href: platform/pie.md
         - name: Android 8 Oreo
