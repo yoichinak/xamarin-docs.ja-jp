@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: 29483ca184786f8f0d2a7d0d9345608542d30e61
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 078d5a2d5c05f39a9c6d8d081b08faa7b4b8ec67
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768856"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71106109"
 ---
 # <a name="collection-views-in-xamarinios"></a>Xamarin. iOS のコレクションビュー
 
@@ -459,6 +459,7 @@ public override void MoveItem (UICollectionView collectionView, NSIndexPath sour
 [![](uicollectionview-images/quick04.png "コレクションビューのサイズを設定する")](uicollectionview-images/quick04.png#lightbox)
 
 次に、既定のセルを編集します。
+
 - 背景色を青に変更する
 - セルのタイトルとして機能するラベルを追加します。
 - 再利用識別子を**セル**に設定する
