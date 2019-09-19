@@ -1,14 +1,15 @@
 ---
-ms.openlocfilehash: 07934bfdd924a0b52cbb240124e073c82aeb41ef
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: a0f2e909d4c7003ba1314b848fd01e604d190a1b
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68669718"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71107284"
 ---
 これでこのチュートリアルは完了です。ここでは、次のことを学習しました。
 
 > [!div class="checklist"]
+>
 > - NuGet パッケージ マネージャーを使用して、SQLite.NET を Xamarin.Forms プロジェクトに追加する。
 > - データ アクセス クラスを作成する。
 > - データ アクセス クラスを使用する。

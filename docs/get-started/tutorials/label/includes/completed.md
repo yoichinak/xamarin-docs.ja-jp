@@ -1,14 +1,15 @@
 ---
-ms.openlocfilehash: b2a15ab67cdf6498a2ca92b29bebda2998349314
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: b1c6e031d30dc4c30007e04cd8e883c8ddf2e6a0
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68669717"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71107275"
 ---
 これでこのチュートリアルは完了です。ここでは以下の方法を学習しました。
 
 > [!div class="checklist"]
+>
 > - XAML で Xamarin.Forms [`Label`](xref:Xamarin.Forms.Label) を作成する。
 > - `Label` の外観を変更する。
 > - 複数の形式を持つテキストを、単一の `Label` で示す。

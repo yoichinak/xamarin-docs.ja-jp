@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 164befeb08d7cb6691cb037b1f6b7f31c390afea
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.openlocfilehash: 552251490665b673e02eb58c50c643daed9c1aed
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67277315"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71107279"
 ---
 このチュートリアルを試行する前に、以下を正常に完了しておく必要があります。
 
@@ -17,6 +17,7 @@ ms.locfileid: "67277315"
 このチュートリアルでは、次の作業を行う方法について説明します。
 
 > [!div class="checklist"]
+>
 > - XAML で Xamarin.Forms [`ListView`](xref:Xamarin.Forms.ListView) を作成する。
 > - `ListView` にデータを読み込む。
 > - 選択されている `ListView` 項目に応答する。
