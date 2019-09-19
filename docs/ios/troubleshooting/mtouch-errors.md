@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: 870765a7a32874dfa17a9b0cf7176e4a721abf47
-ms.sourcegitcommit: cf56d2bae34dc0f8e94c2d3d28d5f460d59807bf
+ms.openlocfilehash: e001f22759ac70bbf81a10bf5e56790497dab767
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70985957"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71105987"
 ---
 # <a name="xamarinios-errors"></a>Xamarin. iOS エラー
 
@@ -1598,6 +1598,7 @@ Parameter name: instruction
 生成されたバインドコードを最適化しようとしたときに、予期しない問題が発生しました。 問題の原因となっている要素の名前は、エラーメッセージで示されます。 この問題を解決するには、(またはという名前の型またはメソッドを含む) という名前のアセンブリを[github](https://github.com/xamarin/xamarin-macios/issues/new)の新しい問題に追加し、詳細を有効`-v -v -v -v`にした完全なビルドログ (**追加の mtouch 引数**など) を提供する必要があります。
 
 最後の桁`x`は次のようになります。
+
 - `0`アセンブリ名の場合は、
 - `1`型名の場合は。
 - `3`メソッド名の場合は。

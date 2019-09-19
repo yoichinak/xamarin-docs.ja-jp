@@ -5,12 +5,12 @@ description: このドキュメントでは、WPF と Xamarin. Forms を比較�
 author: conceptdev
 ms.author: crdun
 ms.date: 04/26/2017
-ms.openlocfilehash: d23b449382183b0385eac38c0b9205e48dbe0a34
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: de8e3445679e185b488311e58221ae5f4c28f85c
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290405"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71106028"
 ---
 # <a name="wpf-vs-xamarinforms-similarities--differences"></a>WPF とXamarin. フォーム:類似点 & 相違点
 
@@ -65,6 +65,7 @@ WPF と同じように、1つの必須`ProvideValue`メソッドは、マーク�
 ### <a name="defining-bindable-properties"></a>バインド可能なプロパティを定義します。
 
 Xamarin. Forms のバインド可能なプロパティの定義は、WPF と同じです。
+
 1. オブジェクトは、から`BindableObject`派生する必要があります。
 2. プロパティのバッキングストレージキーを定義するため`BindableProperty`に、型のパブリック静的フィールドが宣言されている必要があります。
 3. `GetValue` と`SetValue`を使用してプロパティ値を取得および変更するパブリックインスタンスプロパティラッパーが必要です。

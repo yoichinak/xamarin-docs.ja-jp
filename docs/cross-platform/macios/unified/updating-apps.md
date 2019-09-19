@@ -6,17 +6,18 @@ ms.assetid: 8A654C95-5DCA-4BB5-A582-F96C2BECC81C
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 3379b9672b344e8e424f95e273683f4c5e241b71
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: c7742622bae16e874411fad1374c3ee522dba183
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280799"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71106059"
 ---
 # <a name="updating-existing-apps-to-the-unified-api"></a>既存のアプリを Unified API に更新する
 
 > [!IMPORTANT]
 > Unified API の前にある Xamarin Classic API は非推奨とされました。
+>
 > - Classic API (monotouch.dialog) をサポートする最新バージョンの Xamarin. iOS 9.10 がありました。
 > - Classic API は引き続き Xamarin. Mac でサポートされますが、更新されなくなりました。 非推奨とされているため、開発者はアプリケーションを Unified API に移行する必要があります。
 
@@ -42,7 +43,7 @@ ms.locfileid: "70280799"
 
 ### <a name="xamarinforms-appscross-platformmaciosunifiedupdating-xamarin-forms-appsmd"></a>[Xamarin.Forms アプリ](~/cross-platform/macios/unified/updating-xamarin-forms-apps.md)
 
-次の手順に従って、Unified API を使用するように既存の Xamarin.Forms ソリューションを iOS プロジェクトに更新します。 Unified API サポートは、Xamarin.Forms 1.3 以降でのみ使用できます。この[手順](~/cross-platform/macios/unified/updating-xamarin-forms-apps.md)では、Xamarin.Forms アプリをバージョン1.3 に更新する方法についても説明します。 これらの[ヒント](~/cross-platform/macios/unified/updating-tips.md)は、カスタムレンダラーまたは依存関係サービスのネイティブな iOS コードを更新するのに役立ちます。
+次の手順に従って、Unified API を使用するように既存の Xamarin. Forms ソリューションを iOS プロジェクトに更新します。 Unified API サポートは、Xamarin.Forms 1.3 以降でのみ使用できます。この[手順](~/cross-platform/macios/unified/updating-xamarin-forms-apps.md)では、Xamarin.Forms アプリをバージョン1.3 に更新する方法についても説明します。 これらの[ヒント](~/cross-platform/macios/unified/updating-tips.md)は、カスタムレンダラーまたは依存関係サービスのネイティブな iOS コードを更新するのに役立ちます。
 
 ## <a name="working-with-native-types-in-cross-platform-appscross-platformmaciosnativetypesmd"></a>[クロスプラットフォーム アプリでのネイティブ型の使用](~/cross-platform/macios/nativetypes.md)
 

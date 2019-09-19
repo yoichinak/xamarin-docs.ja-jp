@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2018
-ms.openlocfilehash: 7123d7d491bb32a8a506b308cac5ecb6458a1add
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 042878fa8d30acb55de68f63e3491aacb5dbdfb5
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70754871"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71105875"
 ---
 # <a name="creating-android-services"></a>Android サービスの作成
 
@@ -66,6 +66,7 @@ Android 8.0 (API レベル 26) 以降では、Android アプリケーション�
 * 別のアプリがフォアグラウンドにあり、他の方法でバックグラウンドで使用されているコンポーネントをアプリから使用しています。 この例としては、フォアグラウンドにあるアプリケーション A がアプリケーション B によって提供されるサービスにバインドされている場合などがあります。アプリケーション B はフォアグラウンドでも考慮され、バックグラウンドでの Android によって終了されることはありません。
 
 アプリがバックグラウンドで実行されている場合でも、Android はアプリを起動して数分でこれらの制限を緩和し、アプリで何らかの作業を実行できるようにします。
+
 * 優先順位の高い焼討ベースクラウドメッセージがアプリによって受信されます。
 * アプリはブロードキャストを受信します。 
 * アプリケーションは、通知に応答`PendingIntent`してを受信して実行します。

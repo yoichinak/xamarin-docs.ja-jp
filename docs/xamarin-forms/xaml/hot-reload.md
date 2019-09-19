@@ -7,18 +7,21 @@ ms.technology: xamarin-forms
 author: maddyleger1
 ms.author: maleger
 ms.date: 08/13/2019
-ms.openlocfilehash: 59b72daecdc1159494d069bec044ee1891916d11
-ms.sourcegitcommit: fd349a121164c85545f4b0881940eefdd0cf3b65
+ms.openlocfilehash: 2a47876b7b53cf557014c772333e651146afe53f
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69896403"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71106012"
 ---
 # <a name="xaml-hot-reload-for-xamarinforms-preview"></a>Xamarin. Forms の XAML ホットリロード (プレビュー)
 
 ![プレビュー機能](~/media/shared/preview.png)
 
 XAML ホットリロードは、生産性を向上させ、時間を節約するために、既存のワークフローにプラグインします。 Xaml のホットリロードを使用しない場合は、XAML の変更を確認するたびに、アプリをビルドして配置する必要があります。 ホットリロードでは、XAML ファイルを保存すると、実行中のアプリに変更が反映されます。 また、ナビゲーションの状態とデータが保持されるため、アプリ内の場所を失うことなく、UI をすばやく繰り返すことができます。 そのため、XAML のホットリロードでは、UI の変更を検証するためのアプリの再構築とデプロイにかかる時間が短縮されます。
+
+> [!NOTE]
+> WPF または UWP アプリを作成する場合は、「 [uwp と wpf の XAML ホットリロード](/visualstudio/debugger/xaml-hot-reload)」を参照してください。
 
 ## <a name="system-requirements"></a>システム要件
 
@@ -34,7 +37,7 @@ XAML ホットリロードを使用するには、追加のインストールや
 
 Windows では、[**ツール** > ]、[**xamarin** > **ホットリロード**] の順に**選択** > して **[xamarin ホットリロードを有効にする]** チェックボックスをオンにすると、XAML ホットリロードを有効にできます。
 
-Mac では、 **Visual Studio** > の [**基本設定** >  > ]、[ **xamarin ホットリロード**] の順にオンにして、XAML ホットリロードを有効にすることができます。
+Mac では、 **Visual Studio** > の [**基本設定** >  > ] **、[** **xamarin ホットリロード**] の順にオンにして、XAML ホットリロードを有効にすることができます。
 
 ## <a name="resilient-reloading"></a>回復力のある再読み込み
 
@@ -62,4 +65,4 @@ XAML ホットリロードで再読み込みできないように変更すると
 - XAML ファイルの保存時に何も起こらない場合は、IDE でホットリロードが有効になっていることを確認します。
 - 物理 iPhone でデバッグしているときに、アプリが応答しなくなった場合は、インタープリターが有効になっていることを確認します。 有効にするには、iOS のビルド設定の **[追加の mtouch 引数]** フィールドに **--インタープリター**を追加します。
 
-バグを報告するには、Windows の [フィードバック >  >  > の**送信**] レポートの **[問題の報告]** メニューと、Mac の **[問題の報告]** メニューを使用して、フィードバックツールを使用します。
+バグを報告するには、Windows の [**フィードバック** > の送信 > ] レポート**の [**  > **問題の報告**] メニューと **、Mac**の **[問題の報告]** メニューを使用して、フィードバックツールを使用します。

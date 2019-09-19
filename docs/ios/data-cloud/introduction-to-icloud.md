@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/09/2016
-ms.openlocfilehash: df91699e0880bfae780b69f4b30be6667e8d64d9
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: f2bc6ce6c709f99c744554d80b065e34961904ac
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70763110"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71105855"
 ---
 # <a name="using-icloud-with-xamarinios"></a>Xamarin で iCloud を使用する
 
@@ -339,8 +339,7 @@ void LoadDocument (NSMetadataQuery metadataQuery)
 
 ### <a name="displaying-icloud-documents"></a>ICloud ドキュメントの表示
 
-UIDocument の表示は、他のモデルクラスと異なることはできません。
-- プロパティは UI コントロールに表示され、ユーザーによって編集された後、モデルに書き戻されます。
+UIDocument を他のモデルクラスと同じように表示することはできません。 UI コントロールにはプロパティが表示され、ユーザーによって編集された後、モデルに書き戻される可能性があります。
 
 **ICloudUIDoc\MonkeyDocumentViewController.cs**の例では、に`UITextView`monkeydocument テキストを表示します。 `ViewDidLoad``MonkeyDocument.LoadFromContents`メソッドで送信された通知をリッスンします。 `LoadFromContents`iCloud がファイルの新しいデータを持っている場合に、ドキュメントが更新されたことを通知に示すために、が呼び出されます。
 

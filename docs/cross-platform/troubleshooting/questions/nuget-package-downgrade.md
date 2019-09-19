@@ -6,12 +6,12 @@ ms.assetid: 2375F833-A630-471E-B8E9-5AD2CB81F264
 author: conceptdev
 ms.author: crdun
 ms.date: 05/08/2018
-ms.openlocfilehash: fc504d1d7a9e990b3bcd90b3404e7db3d9fe7527
-ms.sourcegitcommit: 13e43f510da37ad55f1c2f5de1913fb0aede6362
+ms.openlocfilehash: daa8159dd7cac1f727904ca5de08908fd3ca1af9
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71021141"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71105667"
 ---
 # <a name="how-do-i-downgrade-a-nuget-package"></a>NuGet パッケージをダウングレードする方法を教えてください
 
@@ -35,6 +35,7 @@ Visual Studio for Mac & Visual Studio には、古いバージョンのパッケ
     `[PackageName] version:*`
 
 ### <a name="examples"></a>使用例 
+
 - すべての Xamarin. Forms パッケージを一覧表示します。 
 
     `Xamarin.Forms version:`
