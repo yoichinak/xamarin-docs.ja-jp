@@ -46,7 +46,7 @@ Android Wear をサポートする最も簡単な方法は、ハンドヘルド�
 
 Wear の主要なナビゲーションパターンは、垂直方向に並べられた一連のカードです。 これらの各カードには、同じ行に重なっているアクションを関連付けることができます。 クラス`GridViewPager`は、この機能を提供します。と`ListView`同じアダプターの概念に従います。 通常、 `GridViewPager`を`FragmentGridPagerAdaptor` (または`GridPagerAdaptor`) に関連付けて、各行と列のセルを`Fragment`として表すことができます。 
 
-[![磨耗のナビゲーション](intro-to-wear-images/2d-picker-sml.png "磨耗のナビゲーション")](intro-to-wear-images/2d-picker.png#lightbox)
+[![Wear のナビゲーション](intro-to-wear-images/2d-picker-sml.png "Wear のナビゲーション")](intro-to-wear-images/2d-picker.png#lightbox)
 
 また、Wear では、上の図に示すように、小さな説明のテキストを含む大きな色の円で構成されるアクションボタンも使用します。  [GridViewPager](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-gridviewpager)サンプルは、Wear アプリで`GridViewPager`および`GridPagerAdapter`を使用する方法を示しています。
 
@@ -77,9 +77,9 @@ Android Wear に慣れるための最善の方法は、最初のアプリをビ�
 
 1. [セットアップ & のインストール](~/android/wear/get-started/installation.md)では、Xamarin Android のアプリをビルドするための開発環境をインストールして構成するための詳細な手順を提供します。 
 
-2. 必要なパッケージをインストールし、エミュレーターまたはデバイスを構成したら、「 [Hello, 磨耗](~/android/wear/get-started/hello-wear.md)」を参照して、ボタンのクリックを処理し、磨耗に click カウンターを表示する小さな Android 用の磨耗プロジェクトを作成する方法を説明した手順を実行します。ドライブ. 
+2. 必要なパッケージをインストールし、エミュレーターまたはデバイスを構成したら、「 [Hello, Wear](~/android/wear/get-started/hello-wear.md)」を参照して、ボタンのクリックを処理し、Wear に click カウンターを表示する小さな Android Wear プロジェクトを作成する方法を説明した手順を実行します。ドライブ. 
 
-3. [展開 & テスト](~/android/wear/deploy-test/index.md)では、エミュレーターとデバイスの構成と展開に関する詳細情報を提供します。これには、Bluetooth 経由でアプリを摩耗デバイスに展開する方法についての説明が含まれます。
+3. [展開 & テスト](~/android/wear/deploy-test/index.md)では、エミュレーターとデバイスの構成と展開に関する詳細情報を提供します。これには、Bluetooth 経由でアプリを Wear デバイスに展開する方法についての説明が含まれます。
 
 4. [画面のサイズ](~/android/wear/screen-sizes.md)を使用すると、Wear デバイスで使用できるさまざまな画面サイズに合わせてユーザーインターフェイスをプレビューおよび最適化する方法について説明します。 
 
