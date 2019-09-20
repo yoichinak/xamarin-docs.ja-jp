@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: 80e338319e4eeddcb3df287f86bcf89397d423f1
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 076e6bfd1155c0eba4045af59a599a34b0fca1d5
+ms.sourcegitcommit: 13e43f510da37ad55f1c2f5de1913fb0aede6362
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70754036"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71021180"
 ---
 # <a name="xamarinandroid-environment"></a>Xamarin.Android Environment
 
@@ -93,10 +93,11 @@ Xamarin.Android が `adb logcat` にログを記録する追加情報を制御�
 - `assembly`:`.apk` を出力して、解析メッセージをアセンブリします。
 - `gc`:GC 関連のメッセージを出力します。
 - `gref`:JNI グローバル参照メッセージを出力します。
-- `lref`:JNI ローカル参照メッセージを出力します。  
-    *注*:これは*実際には*スパム `adb logcat` になります。  
-    Xamarin.Android 5.1 では、`.__override__/lrefs.txt` ファイルも作成され、*巨大*なサイズになる可能性があります。  
-    そのため、お勧めしません。
+- `lref`:JNI ローカル参照メッセージを出力します。
+  > [!NOTE]
+  > これは*実際には*スパム `adb logcat` になります。
+  > Xamarin.Android 5.1 では、`.__override__/lrefs.txt` ファイルも作成され、*巨大*なサイズになる可能性があります。
+  > そのため、お勧めしません。
 - `timing`:いくつかのメソッド タイミング情報を出力します。 この処理で、ファイル `.__override__/methods.txt` と `.__override__/counters.txt` も作成されます。
 
 ### `debug.mono.max_grefc`
