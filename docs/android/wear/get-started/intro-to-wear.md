@@ -22,7 +22,7 @@ _Google の Android 磨耗が導入されたことで、優れた Android アプ
 
 Android Wear は、Motorola 360、LG の G watch、Samsung 歯車など、さまざまなデバイスで実行されます。 Sony の SmartWatch 3 を含む2つ目の世代も、組み込みの GPS やオフラインの音楽再生などの追加機能と共にリリースされました。 Android Wear 2.0 では、Google は LG Watch のスポーツと LG Watch のスタイルの2つの新しいウォッチを LG と協力しました。
 
-![Android 磨耗2.0 デバイス](intro-to-wear-images/hero-image.png "Android の磨耗2.0 デバイスの例")
+![Android Wear 2.0 デバイス](intro-to-wear-images/hero-image.png "Android Wear 2.0 デバイスの例")
 
 Xamarin android 5.0 以降では、android 4.4 W (API 20) のサポートと、Wear に特化した UI コントロールを追加する NuGet パッケージを通じて、Android Wear がサポートされます。 Xamarin Android 5.0 以降には、Wear アプリをパッケージ化するための機能も含まれています。 このガイドで後述するように、NuGet パッケージは Android Wear 2.0 でも利用できます。
 
