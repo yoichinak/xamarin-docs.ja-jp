@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2018
-ms.openlocfilehash: 40fa2d93b7fd756c284727566e8043f5084bd483
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: def8bf236ec25d3b75e435ff525a683343d9b861
+ms.sourcegitcommit: f324193bcfb1c674e421955cf6ee2a4249d61ac3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70757489"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71119234"
 ---
 # <a name="platform-features"></a>プラットフォーム機能
 
@@ -41,6 +41,10 @@ Android 3.0 では、スマートフォンやタブレットで検出された�
 ## <a name="app-linkingandroidplatformapp-linkingmd"></a>[App-Linking](~/android/platform/app-linking.md)
 
 このガイドでは、モバイルアプリが web サイトの Url に応答できるようにするための手法である Android 6.0 での_アプリリンク_のサポートについて説明します。 Android 6.0 アプリケーションでのアプリリンクの実装方法と、ドメインのアプリリンクを処理するためのアクセス許可をモバイルアプリに付与するように web サイトを構成する方法について説明します。
+
+## <a name="android-10androidplatformandroid-10md"></a>[Android 10](~/android/platform/android-10.md)
+
+この記事では、Android 10 の新機能の概要を説明し、android 10 開発用に Xamarin を準備する方法について説明します。また、Xamarin android アプリで Android Oreo 機能を使用する方法を示すサンプルアプリケーションへのリンクも示します。
 
 ## <a name="android-9-pieandroidplatformpiemd"></a>[Android 9 円](~/android/platform/pie.md)
 
