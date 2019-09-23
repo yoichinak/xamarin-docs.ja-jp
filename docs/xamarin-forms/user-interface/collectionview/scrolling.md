@@ -211,7 +211,7 @@ CollectionView collectionView = new CollectionView
 
 既定[`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType)では、プロパティはに`SnapPointsType.None`設定されます。これにより、次のスクリーンショットに示すように、スクロールによって項目がスナップされません。
 
-スナップポイント[![のない CollectionView 縦の一覧のスクリーンショット、IOS と Android の](scrolling-images/snappoints-none.png "CollectionView 縦の一覧 (スナップポイントなし"))](scrolling-images/snappoints-none-large.png#lightbox "スナップポイントのない垂直方向の CollectionView リスト")
+スナップポイント[![のない CollectionView 縦の一覧のスクリーンショット、IOS と Android の](scrolling-images/snappoints-none.png "CollectionView 縦の一覧 (スナップポイントなし") ] (scrolling-images/snappoints-none-large.png#lightbox "スナップポイントのない垂直方向の CollectionView リスト")
 
 ### <a name="snap-points-alignment"></a>スナップポイントの配置
 
