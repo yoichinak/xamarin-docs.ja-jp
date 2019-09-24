@@ -5,12 +5,12 @@ description: Visual Studio for Mac を使用すると、Xamarin とC++ C#を使�
 author: mikeparker104
 ms.author: miparker
 ms.date: 12/17/2018
-ms.openlocfilehash: 685d4f5de197c6b3664d63306fa206bea17409e1
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: a10d63e8ed152fae3c9e87cbae7bacb25a0d019c
+ms.sourcegitcommit: 09bc69d7119a04684c9e804c5cb113b8b1bb7dfc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70766363"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71206380"
 ---
 # <a name="use-cc-libraries-with-xamarin"></a>Xamarin で CC++ /ライブラリを使用する
 
@@ -132,7 +132,7 @@ extern "C" {
 
 ## <a name="wrapping-the-native-library-stage-2"></a>ネイティブライブラリのラップ (ステージ 2)
 
-この段階では、[前のセクション](##creating-the-native-libraries-stage-1)で説明した[プリコンパイル済みライブラリ](https://github.com/xamarin/mobcat/tree/master/samples/cpp_with_xamarin/Sample/Artefacts)が必要です。
+この段階では、[前のセクション](#creating-the-native-libraries-stage-1)で説明した[プリコンパイル済みライブラリ](https://github.com/xamarin/mobcat/tree/master/samples/cpp_with_xamarin/Sample/Artefacts)が必要です。
 
 ### <a name="creating-the-visual-studio-solution"></a>Visual Studio ソリューションの作成
 
@@ -480,7 +480,7 @@ NuGet を使用してライブラリをパッケージ化して配布するた�
 1. ソリューション**MathFuncs**を CTRL **+ クリック**し、 **[追加]** メニューの **[ソリューションフォルダーの追加]** を選択し**ます。**
 2. **[Solutionitems]** フォルダーを**クリック**し、 **[追加]** メニューの **[新しいファイル]** をクリックします。
 3. **[新しいファイル]** ウィンドウで **[空の XML ファイル]** を選択し、「 **MathFuncs. nuspec** 」という名前を指定して、 **[新規作成]** をクリックします。
-4. **NuGet**コンシューマーに表示される基本的なパッケージメタデータを使用して、 **MathFuncs**を更新します。 例:
+4. **NuGet**コンシューマーに表示される基本的なパッケージメタデータを使用して、 **MathFuncs**を更新します。 次に例を示します。
 
     ```xml
     <?xml version="1.0"?>
@@ -588,7 +588,7 @@ NuGet フィードの最も単純な形式は、ローカルディレクトリ�
 
 1. **ビルド構成**を **[リリース]** に設定し、**コマンド + B**を使用してビルドを実行します。
 2. **ターミナル**を開き、ディレクトリを**nuspec**ファイルが格納されているフォルダーに変更します。
-3. **ターミナル**で、[前の手順](https://docs.microsoft.com/xamarin/cross-platform/cpp/index#creating-a-local-nuget-feed) **で作成したフォルダーを使用して、nuspec ファイル、バージョン (1.0.0 など)、および outputdirectory を指定する nuget pack コマンドを実行します。ローカル-nuget フィード**。 例:
+3. **ターミナル**で、[前の手順](https://docs.microsoft.com/xamarin/cross-platform/cpp/index#creating-a-local-nuget-feed) **で作成したフォルダーを使用して、nuspec ファイル、バージョン (1.0.0 など)、および outputdirectory を指定する nuget pack コマンドを実行します。ローカル-nuget フィード**。 次に例を示します。
 
     ```bash
     nuget pack MathFuncs.nuspec -Version 1.0.0 -OutputDirectory ~/local-nuget-feed

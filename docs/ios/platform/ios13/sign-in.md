@@ -7,30 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/10/2019
-ms.openlocfilehash: a8ea06d81fcc79a24f155a1562818daea3ba982a
-ms.sourcegitcommit: 13e43f510da37ad55f1c2f5de1913fb0aede6362
+ms.openlocfilehash: 5c5191a6a7490ec0301bdea7b7f5aa2217b80c96
+ms.sourcegitcommit: 09bc69d7119a04684c9e804c5cb113b8b1bb7dfc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71021396"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71206365"
 ---
 # <a name="sign-in-with-apple-in-xamarinios"></a>Xamarin で Apple にサインインします。 iOS
-
-![この API は現在プレビューの段階です](~/media/shared/preview.png)
 
 Apple でのサインインは、サードパーティの認証サービスのユーザーの id 保護を提供する新しいサービスです。 IOS 13 以降では、サードパーティの認証サービスを使用する新しいアプリでも、Apple でのサインインを提供する必要があります。 更新中の既存のアプリは、2020年4月まで Apple にサインインを追加する必要はありません。
 
 このドキュメントでは、Apple for iOS 13 アプリケーションにサインインを追加する方法について説明します。
-
-## <a name="requirements"></a>必要条件
-
-この機能には次のものが必要です。
-
-* iOS 13
-* Xamarin. iOS 12.99
-* Xcode 11 をサポートする visual Studio 2019 または Visual Studio 2019 for Mac。
-
-詳細[につい](get-started.md)ては、「はじめに」を参照してください。
 
 ## <a name="apple-developer-setup"></a>Apple developer セットアップ
 
@@ -217,7 +205,7 @@ public UIWindow GetPresentationAnchor (ASAuthorizationController controller) => 
 #endregion
 ```
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>まとめ
 
 この記事では、iOS 用 Apple でのサインインについて紹介しました。
 

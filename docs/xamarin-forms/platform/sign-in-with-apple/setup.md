@@ -7,16 +7,14 @@ ms.technology: xamarin-forms
 author: davidortinau
 ms.author: daortin
 ms.date: 09/10/2019
-ms.openlocfilehash: c46da6b4ed877cc85f98e6ef0ab2b9a28d811723
-ms.sourcegitcommit: cf56d2bae34dc0f8e94c2d3d28d5f460d59807bf
+ms.openlocfilehash: c1f75f4872d787e261ab6bbac3624e31538c6ff0
+ms.sourcegitcommit: 09bc69d7119a04684c9e804c5cb113b8b1bb7dfc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70986124"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71206528"
 ---
 # <a name="setup-sign-in-with-apple-for-xamarinforms"></a>Xamarin 用の Apple でのサインインの設定
-
-![この API は現在プレビューの段階です](~/media/shared/preview.png)
 
 このガイドでは、Apple で高度なサインインを行うためにクロスプラットフォームアプリケーションをセットアップするために必要な一連の手順について説明します。 Apple のセットアップは Apple Developer Portal で簡単に実行できますが、Android と Apple の間にセキュリティで保護された関係を作成するには追加の手順が必要です。 
 
@@ -114,7 +112,7 @@ DHF5Svq0
 
 このキー `P8FileContents`に名前を設定し、安全な場所に保管します。 このサービスをモバイルアプリケーションに統合するときに使用します。
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>まとめ
 
 この記事では、Xamarin アプリケーションで使用するために Apple でサインインを設定するために必要な手順について説明しました。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/25/2018
-ms.openlocfilehash: d88832dd4fd69019f9905fb779c5572ba9a689eb
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: c6385ff193c54fdab8f252c757cad810751b3f08
+ms.sourcegitcommit: 09bc69d7119a04684c9e804c5cb113b8b1bb7dfc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281024"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71206304"
 ---
 # <a name="ios-platform-features-overview"></a>iOS プラットフォームの機能の概要
 
@@ -22,7 +22,7 @@ ms.locfileid: "70281024"
 
 |  |  |
 |-------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [IOS 13 Preview の概要](~/ios/platform/ios13/index.md) | このドキュメントでは、Xamarin. iOS 13 Preview について説明します。|
+| [IOS 13 の概要](~/ios/platform/ios13/index.md) | このドキュメントでは、Xamarin. iOS 13 について説明します。|
 | [iOS 12 の概要](~/ios/platform/introduction-to-ios12/index.md) | このドキュメントでは、Xamarin iOS アプリケーションをビルドするときに使用できる iOS 12 の機能について説明します。|
 | [iOS 11 の概要](~/ios/platform/introduction-to-ios11/index.md) | このドキュメントでは、ARKit、Core ML、コア NFC、ドラッグアンドドロップ、MapKit、PDFKit、SiriKit、ビジョンなど、iOS 11 および Xcode 9 の新機能と更新された機能について説明します。 これらの機能を Xamarin で使用する方法について説明しているガイドにリンクしています。 |
 | [iOS 10 の概要](~/ios/platform/introduction-to-ios10/index.md) | iOS 10 には、新しい機能を備えたアプリの開発を可能にする新しい Api とサービスがいくつか含まれています。 IOS 10 では、マップ、メッセージ、電話、Siri の拡張などの新機能がアプリに搭載されています。 このセクションでは、他社アプリでこれらの機能を利用する方法について説明します。 |

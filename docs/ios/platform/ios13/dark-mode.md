@@ -7,22 +7,20 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 08/28/2019
-ms.openlocfilehash: d21afcc7d7b130528e9cceac47840acd49b91f59
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: be487ab839e2fb4d21b85719a56dc34303317a5f
+ms.sourcegitcommit: 09bc69d7119a04684c9e804c5cb113b8b1bb7dfc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70129974"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71206394"
 ---
 # <a name="dark-mode-in-xamarinios"></a>Xamarin. iOS のダークモード
-
-![この API は現在プレビューの段階です](~/media/shared/preview.png)
 
 ダークモードは、明るいテーマとダークテーマのシステム全体のオプションです。 iOS ユーザーがテーマを選択できるようになりました。または、iOS が環境や時刻に基づいて外観を動的に変更できるようになります。
 
 このドキュメントでは、iOS 13 アプリケーションでのダークモードとダークモードのサポートについて説明します。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 ダークモードでは、iOS 13 と Xcode 11、Xamarin 12.99、Visual Studio 2019 または Visual Studio 2019 for Mac (Xcode 11 サポート付き) が必要です。
 
@@ -48,7 +46,7 @@ Asset **. xcassets**には、色の定義である**BackgroundColor**と**TitleC
 
 Apple では、新しいダークモードの設定に基づいて外観を動的に調整する新しいセマンティック色が導入されました。
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>まとめ
 
 この記事では、iOS の場合はダークモードが導入され、アセットカタログを使用して各モードのイメージと色が指定されています。
 

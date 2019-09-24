@@ -7,18 +7,16 @@ ms.technology: xamarin-forms
 author: davidortinau
 ms.author: daortin
 ms.date: 09/10/2019
-ms.openlocfilehash: c852a80136c8aae3a4da0fd3d8a8fa259e08aa4d
-ms.sourcegitcommit: 13e43f510da37ad55f1c2f5de1913fb0aede6362
+ms.openlocfilehash: 105088b612ffc35d18bdf800b48cc700ce6f4a48
+ms.sourcegitcommit: 09bc69d7119a04684c9e804c5cb113b8b1bb7dfc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71021165"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71206526"
 ---
 # <a name="use-sign-in-with-apple-in-xamarinforms"></a>Xamarin での Apple でのサインインの使用
 
-![この API は現在プレビューの段階です](~/media/shared/preview.png)
-
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://github.com/Redth/Xamarin.AppleSignIn.Sample)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/Redth/Xamarin.AppleSignIn.Sample)
 
 Apple でのサインインは、サードパーティの認証サービスを使用する iOS 13 のすべての新しいアプリケーションを対象としています。 IOS と Android の間の実装の詳細は大きく異なります。 このガイドでは、Xamarin. フォームでこの操作を行う方法について説明します。
 
@@ -243,7 +241,7 @@ public class WebAppleSignInService : IAppleSignInService
 }
 ```
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>まとめ
 
 この記事では、Xamarin アプリケーションで使用するために Apple でサインインを設定するために必要な手順について説明しました。
 
