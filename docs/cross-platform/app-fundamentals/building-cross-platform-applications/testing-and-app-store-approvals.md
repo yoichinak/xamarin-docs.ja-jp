@@ -6,16 +6,16 @@ ms.assetid: 46E0578A-7EB9-C105-ABB0-A043E501F36B
 author: conceptdev
 ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: 0e513ecb67f5b902afd91546b1de6720cb0369c1
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: bf6ea18c73226a620ce002797d2d2b04b48c7cc8
+ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70761981"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71198424"
 ---
 # <a name="part-6---testing-and-app-store-approvals"></a>パート 6 - テストと App Store の承認
 
-## <a name="testing"></a>Testing (テスト)
+## <a name="testing"></a>テスト
 
 多くのアプリ (一部のストア) では、発行前に承認プロセスを渡す必要があります。そのため、アプリが市場に到達したことを確認するためにテストが不可欠です (お客様に対してのみ成功します)。 テストでは、開発者レベルの単体テストからさまざまなハードウェアでのベータテストの管理まで、さまざまな形を取ることができます。
 
@@ -100,7 +100,7 @@ Apple と Microsoft は、それぞれのプラットフォーム (App Store と
 
 ### <a name="guidelines-are-more-than-just-a-guide"></a>ガイドラインは、単なるガイドではありません。
 
-Apple は、プラットフォームの重要な強みの1つが整合性であるという点で、人間のインターフェイスガイドラインに準拠することを厳密に認識しています (さらに、使いやすさが向上しています)。 Microsoft は、Metro スタイルの UI を実装する Windows アプリケーションと同様のアプローチを採用しています。 両方のプラットフォームの承認プロセスでは、関連する設計思想に準拠するために、アプリが評価されます。
+Apple は、プラットフォームの重要な強みの1つが整合性であるという点で、人間のインターフェイスガイドラインに準拠することを厳密に認識しています (さらに、使いやすさが向上しています)。 Microsoft は、 [Fluent デザインシステム](https://microsoft.com/design/fluent)を実装する Windows アプリケーションと同様のアプローチを採用しています。 両方のプラットフォームの承認プロセスでは、関連する設計思想に準拠するために、アプリが評価されます。
 
 これは、ユーザーインターフェイスのイノベーションがサポートまたは推奨されていないということではありませんが、"何もする必要がありません" またはアプリが拒否されることがあります。
 

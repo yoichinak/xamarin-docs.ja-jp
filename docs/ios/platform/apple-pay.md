@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/05/2017
-ms.openlocfilehash: f264f210a9228fd213f0c041abb5b26023c796f4
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 1d9a65ab34cb0c02368f53679d38f1d07ec1f257
+ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70753267"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71198557"
 ---
 # <a name="apple-pay-in-xamarinios"></a>Xamarin. iOS の Apple Pay
 
@@ -20,7 +20,7 @@ _このガイドでは、Apple Pay と共に使用して、食品、エンター
 
 Apple Pay は、iOS 8 と共に導入され、ユーザーは iOS デバイスを介して食品、エンターテイメント、メンバーシップなどの物理的な商品を支払うことができます。 IPhone 6 および iPhone 6 Plus で利用できます。また、ストア内購入の Apple Watch と組み合わせて使用することもできます。 IPhone で使用する場合、ユーザーのクレジットカードまたはデビットカードに対するトランザクションを確認して承認する手段として、Touch ID を使用します。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 Apple Pay は、iOS 8 以降でのみ使用できます。したがって、少なくとも Xcode 6 が必要です。
 
@@ -43,8 +43,7 @@ Apple Pay では、 [Apple は](https://developer.apple.com/apple-pay/Getting-St
 
 ## <a name="using-a-payment-processor-platform"></a>支払いプロセッサプラットフォームの使用
 
-Apple Pay の基本的な部分の1つは、支払い処理です。 この操作は自分で行うことができますが、暗号化に関するかなりの知識が必要です。
-- 詳細については、「Apple の[支払い処理ガイド](https://developer.apple.com/library/ios/ApplePay_Guide/ProcessPayment.html)」を参照してください。
+Apple Pay の基本的な部分の1つは、支払い処理です。 この操作は自分で行うことができますが、暗号化に関する重要な知識が必要です。詳細については、「Apple の[支払い処理ガイド](https://developer.apple.com/library/ios/ApplePay_Guide/ProcessPayment.html)」を参照してください。
 一方、支払い処理プラットフォームでは、これらの操作を処理して、アプリの構築に専念することができます。
 
 次の2つのオプションがあります。
@@ -114,7 +113,7 @@ IOS 10 では、開発者が iOS デバイスで直接テスト用の支払い�
 > [!IMPORTANT]
 > ICloud アカウントを切り替えると、デバイスは自動的に新しいテスト環境に切り替わります。 ただし、Apple では、iTunes App Store に送信する前に、実稼働環境で実際のカードを使用してアプリをテストする**必要があり**ます。
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>まとめ
 
 この記事では、アプリ内で Apple Pay を使用するために必要なさまざまな項目について説明します。 ここでは、マーチャント ID を作成する方法と、手動で変更する必要がある**権利を plist**で使用する方法について説明しました。
 

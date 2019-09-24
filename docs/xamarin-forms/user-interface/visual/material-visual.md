@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/12/2019
-ms.openlocfilehash: 6c529c8df7ef1e4372285a157f489941d795d7f6
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: b735541d51321231775b025745e68c54552697d3
+ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655218"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71198492"
 ---
 # <a name="xamarinforms-material-visual"></a>Xamarin. フォーム素材ビジュアル
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-visualdemos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-visualdemos)
 
 [マテリアルの設計](https://material.io)は、Google によって作成されたこだわりデザインシステムで、ビューやレイアウトの外観と動作について、サイズ、色、スペース、およびその他の側面を規定します。
 
@@ -30,7 +30,7 @@ Xamarin. Forms Material ビジュアルを使用すると、マテリアルデ�
 1. optionalマテリアルレンダラーをカスタマイズします。 詳細については、「[マテリアルレンダラーをカスタマイズ](#customize-material-renderers)する」を参照してください。
 
 > [!IMPORTANT]
-> Android では、マテリアルレンダラーには 5.0 (API 21) 以上のバージョンと、バージョン 9.0 (API 28) の TargetFramework が必要です。 さらに、プラットフォームプロジェクトには Android サポートライブラリ28.0.0 以上が必要です。また、そのテーマは、マテリアルコンポーネントのテーマを継承するか、AppCompat テーマから継承する必要があります。 詳細については、[Android 用資料のコンポーネントの概要](https://github.com/material-components/material-components-android/blob/master/docs/getting-started.md)を参照してください。
+> Android では、マテリアルレンダラーには 5.0 (API 21) 以上のバージョンと、バージョン 9.0 (API 28) の TargetFramework が必要です。 さらに、プラットフォームプロジェクトには Android サポートライブラリ28.0.0 以上が必要です。また、そのテーマは、マテリアルコンポーネントのテーマを継承するか、AppCompat テーマから継承する必要があります。 詳細については、次を参照してください。 [Android 用資料のコンポーネントの概要](https://github.com/material-components/material-components-android/blob/master/docs/getting-started.md)します。
 
 次のビューについては、現在、マテリアルレンダラーが[Xamarin. Forms. material](https://www.nuget.org/packages/Xamarin.Forms.Visual.Material/) NuGet パッケージに含まれています。
 
@@ -53,18 +53,18 @@ Xamarin. Forms Material ビジュアルを使用すると、マテリアルデ�
 
 [Xamarin. Forms. material](https://www.nuget.org/packages/Xamarin.Forms.Visual.Material/) NuGet パッケージをインストールした後、マテリアルレンダラーを各プラットフォームプロジェクトで初期化する必要があります。
 
-IOS では、 `Xamarin.Forms.Forms.Init`メソッドの*後*にメソッドを`FormsMaterial.Init`呼び出すことによって、 **AppDelegate.cs**でこれを行う必要があります。
+IOS では、 `Xamarin.Forms.Forms.Init`メソッドの*後*にメソッドを`Xamarin.Forms.FormsMaterial.Init`呼び出すことによって、 **AppDelegate.cs**でこれを行う必要があります。
 
 ```csharp
 global::Xamarin.Forms.Forms.Init();
-FormsMaterial.Init();
+global::Xamarin.Forms.FormsMaterial.Init();
 ```
 
-Android では、 `Xamarin.Forms.Forms.Init`メソッドの*後*にメソッドを`FormsMaterial.Init`呼び出すことによって、 **MainActivity.cs**でこれを行う必要があります。
+Android では、 `Xamarin.Forms.Forms.Init`メソッドの*後*にメソッドを`Xamarin.Forms.FormsMaterial.Init`呼び出すことによって、 **MainActivity.cs**でこれを行う必要があります。
 
 ```csharp
 global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-FormsMaterial.Init(this, savedInstanceState);
+global::Xamarin.Forms.FormsMaterial.Init(this, savedInstanceState);
 ```
 
 ## <a name="consume-material-renderers"></a>素材レンダラーを使用する
@@ -78,7 +78,7 @@ FormsMaterial.Init(this, savedInstanceState);
 </ContentPage>
 ```
 
-同等の C# コードに示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 ContentPage contentPage = new ContentPage();

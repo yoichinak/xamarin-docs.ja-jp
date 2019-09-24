@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/29/2017
-ms.openlocfilehash: 0828d780ed075a6e3b18ba5020f5908fb8c06189
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 9442116bf053768fe22d123d1c7e3d146f9b2834
+ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292581"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71198510"
 ---
 # <a name="create-a-custom-layout-in-xamarinforms"></a>Xamarin. Forms でカスタムレイアウトを作成する
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-customlayout-wraplayout)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-customlayout-wraplayout)
 
-_Xamarin.Forms – StackLayout、AbsoluteLayout、[相対レイアウト]、およびグリッドの 4 つのレイアウト クラスを定義し、別の方法でその子を配置それぞれします。ただし、場合によっては必要 Xamarin.Forms が提供していないレイアウトを使用してページのコンテンツを整理します。この記事では、カスタム レイアウト クラスを作成する方法と、ページ間で、その子を水平方向に整列し、追加の行に後続の子の表示をラップし、印刷の向きを区別する. WrapLayout クラスを説明します。_
+_Xamarin は5つのレイアウトクラス (StackLayout、AbsoluteLayout、RelativeLayout、Grid、および FlexLayout) を定義し、それぞれが異なる方法で子を整列します。ただし、場合によっては必要 Xamarin.Forms が提供していないレイアウトを使用してページのコンテンツを整理します。この記事では、カスタム レイアウト クラスを作成する方法と、ページ間で、その子を水平方向に整列し、追加の行に後続の子の表示をラップし、印刷の向きを区別する. WrapLayout クラスを説明します。_
 
 Xamarin.Forms でから派生してレイアウトのすべてのクラス、 [ `Layout<T>` ](xref:Xamarin.Forms.Layout`1)クラスおよびをジェネリック型を制約する[ `View` ](xref:Xamarin.Forms.View)とその派生型。 さらに、`Layout<T>`クラスから派生、 [ `Layout` ](xref:Xamarin.Forms.Layout)クラスを要素の位置とサイズ変更の子のメカニズムを提供します。
 
@@ -427,7 +427,7 @@ async Task<ImageList> GetImageListAsync()
 
 - [WrapLayout (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-customlayout-wraplayout)
 - [カスタム レイアウト](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter26.md)
-- [Xamarin.Forms でのカスタム レイアウトを作成する (ビデオ)](https://evolve.xamarin.com/session/56e20f83bad314273ca4d81c)
+- [Xamarin.Forms でのカスタム レイアウトを作成する (ビデオ)](https://www.youtube.com/watch?v=sxjOqNZFhKU)
 - [レイアウト\<T >](xref:Xamarin.Forms.Layout`1)
 - [レイアウト](xref:Xamarin.Forms.Layout)
 - [VisualElement](xref:Xamarin.Forms.VisualElement)
