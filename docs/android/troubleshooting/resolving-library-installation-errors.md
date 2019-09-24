@@ -105,7 +105,7 @@ Download failed. Please download https://dl-ssl.google.com/android/repository/an
 
 3. ファイルを Xamarin **zip**フォルダーにコピーします。 
 
-    - Windows では、このフォルダーは **\\C: Users\\ユーザー***名***\\AppData\\ローカル\\Xamarin\\zip**にあります。 
+    - Windows では、このフォルダーは **\\C: Users\\***ユーザー 名***\\AppData\\ローカル\\Xamarin\\zip**にあります。 
 
     - Mac OS X では、このフォルダーは **//.local/share/Xamarin/zips**にあります。 
 
@@ -125,7 +125,7 @@ Unzipping failed. Please download https://dl-ssl.google.com/android/repository/a
 
 **M2repository**をダウンロードし、その内容をインストールするには、次の手順を実行します。
 
-1. エラーメッセージに対応するライブラリフォルダーの内容を削除します。 たとえば、上記のエラーメッセージでは、 **C:\\Users\\\\\\ユーザー***名***\\AppData ローカル Xamarin\\Android. Support. v4の内容を削除します。23.1.1.0\\** 。 
+1. エラーメッセージに対応するライブラリフォルダーの内容を削除します。 たとえば、上記のエラーメッセージでは、 **C:\\Users\\***ユーザー 名***\\AppData\\ローカル\\Xamarin\\Android. Support. v4の内容を削除します。23.1.1.0\\** 。 
     前述のように、このディレクトリの内容全体を削除する必要があります。
 
     [![23.1.1.0 フォルダーからのコンテンツ、埋め込み、および android_m2repository フォルダーの削除](resolving-library-installation-errors-images/04-delete-contents-vs.png)](resolving-library-installation-errors-images/04-delete-contents-vs.png#lightbox)
