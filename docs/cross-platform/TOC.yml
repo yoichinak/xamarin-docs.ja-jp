@@ -9,8 +9,6 @@
         - name: 必要条件
           displayName: System requirements
           href: get-started/requirements.md
-        - name: Xamarin とは
-          href: get-started/introduction-to-mobile-development.md
         - name: モバイル ソフトウェア開発ライフ サイクル
           href: get-started/introduction-to-mobile-sdlc.md
         - name: クロス プラットフォーム アプリの構築チュートリアル
