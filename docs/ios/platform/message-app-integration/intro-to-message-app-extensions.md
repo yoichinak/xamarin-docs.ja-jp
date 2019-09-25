@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/02/2017
-ms.openlocfilehash: ca782e57964adadd85412030db2247f0de690a6b
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 37f2942c97f7604fbd72a6dd38de518d3668ee9e
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769666"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71250130"
 ---
 # <a name="message-app-extension-basics-in-xamarinios"></a>Xamarin. iOS でのメッセージアプリ拡張機能の基本
 
@@ -37,7 +37,7 @@ IOS 10 の新機能であるメッセージアプリには、独自の専用の�
 
 また、iOS 10 の新機能である Apple では、ユーザーがアプリを簡単に検出できるようにするインラインアプリの属性が追加されています。 たとえば、1人のユーザーが、2番目のユーザーがインストールしていないアプリから別のユーザーにコンテンツを送信した場合 (ステッカーなど)、送信元アプリの名前はメッセージ履歴のコンテンツの下に一覧表示されます。 ユーザーがアプリ名をタップすると、メッセージアプリストアが開き、ストアでアプリが選択されます。
 
-メッセージアプリの拡張機能は、開発者が作成に慣れている既存の iOS アプリに似ており、標準の iOS アプリのすべての標準フレームワークと機能にアクセスできます。 例えば:
+メッセージアプリの拡張機能は、開発者が作成に慣れている既存の iOS アプリに似ており、標準の iOS アプリのすべての標準フレームワークと機能にアクセスできます。 次に例を示します。
 
 - アプリ内購入にアクセスできます。
 - Apple Pay にアクセスできます。
@@ -115,9 +115,11 @@ Xcode の属性インスペクターを使用して、ステッカーパック�
 
 カスタムのステッカーエクスペリエンスを作成するには、次の手順を実行します。
 
+<!-- markdownlint-disable MD001 -->
+
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1. Visual Studio for Mac を開始します。
+1. Visual Studio for Mac を起動します。
 2. ソリューションを開いて、メッセージアプリの拡張機能を追加します。
 3. [ **IOS** > **Extensions** iMessage Extension] を選択し、[次へ] ボタンをクリックします。 > 
 
@@ -703,7 +705,7 @@ public override void DidTransition (MSMessagesAppPresentationStyle presentationS
 }
 ```
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>まとめ
 
 この記事では、Xamarin. iOS ソリューションにおけるメッセージアプリ拡張機能について説明しました。このソリューションは、 **Messages**アプリと統合され、ユーザーに新しい機能を提供します。 拡張機能を使用して、テキスト、ステッカー、メディアファイル、および対話型メッセージを送信します。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: d4a3ba0ae860f2e6b42fc4cf349ec1bc8e83979e
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 96d2fe0b03ad7067d6fece072742ea2796224f8b
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69527074"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71250116"
 ---
 # <a name="images-in-xamarinforms"></a>Xamarin.Forms でのイメージ
 
@@ -52,12 +52,12 @@ Xamarin.Forms を使用して、 [ `Image` ](xref:Xamarin.Forms.Image)をペー�
 
 すべてのアプリ間で 1 つのイメージを使用する*すべてのプラットフォームで同じファイル名を使用する必要があります*、有効な Android のリソース名を指定する必要があります (つまり。 のみ小文字、数字、アンダー スコア、および期間が許可されている)。
 
-- **iOS** - 管理し、iOS 9 は、使用するために、イメージをサポートする方法を優先**資産カタログの画像セット**、すべてのスケール ファクターのさまざまなデバイスをサポートするために必要なイメージのバージョンを含める必要がありますが、アプリケーション。 詳細については、[資産カタログ イメージ セットに追加するイメージ](~/ios/app-fundamentals/images-icons/displaying-an-image.md)を参照してください。
+- **iOS** - 管理し、iOS 9 は、使用するために、イメージをサポートする方法を優先**資産カタログの画像セット**、すべてのスケール ファクターのさまざまなデバイスをサポートするために必要なイメージのバージョンを含める必要がありますが、アプリケーション。 詳細については、次を参照してください。[資産カタログ イメージ セットに追加するイメージ](~/ios/app-fundamentals/images-icons/displaying-an-image.md)します。
 - **Android** -ビルドアクションを使用して、**リソース/** 作成された**ディレクトリにイメージを配置します。AndroidResource**。 高 DPI と低いバージョンの画像が指定することもできます (で適切に名前付き**リソース**など、サブディレクトリ**ldpi drawable**、 **drawable hdpi**と**drawable xhdpi**)。
 - **ユニバーサル Windows プラットフォーム (UWP)** -ビルドアクションを使用して **、アプリケーションのルートディレクトリにイメージを配置します。コンテンツ**。
 
 > [!IMPORTANT]
-> IOS 9 より前のイメージは、通常、ビルドアクションを使用**して Resources フォルダーに配置されていました。BundleResource**。 ただし、apple の iOS アプリで画像の操作には、このメソッドは廃止されました。 詳細については、[画像のサイズとファイル名](~/ios/app-fundamentals/images-icons/displaying-an-image.md)を参照してください。
+> IOS 9 より前のイメージは、通常、ビルドアクションを使用**して Resources フォルダーに配置されていました。BundleResource**。 ただし、apple の iOS アプリで画像の操作には、このメソッドは廃止されました。 詳細については、次を参照してください。[画像のサイズとファイル名](~/ios/app-fundamentals/images-icons/displaying-an-image.md)します。
 
 ファイルの名前付けおよび配置についてこれらの規則に準拠するには、次の XAML を読み込み、すべてのプラットフォーム イメージを表示することができます。
 
@@ -65,7 +65,7 @@ Xamarin.Forms を使用して、 [ `Image` ](xref:Xamarin.Forms.Image)をペー�
 <Image Source="waterfront.jpg" />
 ```
 
-同等の C# コードは次のとおりです。
+同等の c# コードは次のとおりです。
 
 ```csharp
 var image = new Image { Source = "waterfront.jpg" };
@@ -73,7 +73,7 @@ var image = new Image { Source = "waterfront.jpg" };
 
 次のスクリーン ショットは、ローカル イメージを表示する各プラットフォームでの結果を表示します。
 
-[![ローカルの ImageSource](images-images/local-sml.png "サンプル アプリケーションをローカルのイメージを表示する")](images-images/local.png#lightbox "サンプル アプリケーションをローカルのイメージを表示します。")
+[![ローカル ImageSource](images-images/local-sml.png "ローカルイメージを表示するサンプルアプリケーション")](images-images/local.png#lightbox "ローカルイメージを表示するサンプルアプリケーション")
 
 柔軟性を高めるため、`Device.RuntimePlatform`このコード例で示すように、別のイメージ ファイルまたはパスの一部またはすべてのプラットフォームを選択するプロパティを使用できます。
 
@@ -88,13 +88,13 @@ image.Source = Device.RuntimePlatform == Device.Android ? ImageSource.FromFile("
 
 iOS、Android、および UWP には、オペレーティング システムがデバイスの機能に基づいて実行時に適切なイメージを選択、さまざまな画像の解像度のサポートが含まれます。 Xamarin.Forms では、ローカルのイメージを読み込み、ファイルが正しくという名前し、プロジェクト内にある場合に自動的に代替の解像度をサポートに、ネイティブ プラットフォームの Api を使用します。
 
-IOS 9 以降のイメージの管理の推奨される方法は、適切な資産カタログの画像セットに必要な各解像度のイメージをドラッグすることです。 詳細については、[資産カタログ イメージ セットに追加するイメージ](~/ios/app-fundamentals/images-icons/displaying-an-image.md)を参照してください。
+IOS 9 以降のイメージの管理の推奨される方法は、適切な資産カタログの画像セットに必要な各解像度のイメージをドラッグすることです。 詳細については、次を参照してください。[資産カタログ イメージ セットに追加するイメージ](~/ios/app-fundamentals/images-icons/displaying-an-image.md)します。
 
-Retina のバージョンのイメージは、iOS 9 より前に配置する可能性があります、 **リソース** フォルダー - 2 と 3 回の解像度、 **@2x** または **@3x** (例: ファイル拡張子の前に、ファイル名のサフィックス **myimage@2x.png** ). ただし、apple の iOS アプリで画像の操作には、このメソッドは廃止されました。 詳細については、[画像のサイズとファイル名](~/ios/app-fundamentals/images-icons/displaying-an-image.md)を参照してください。
+Retina のバージョンのイメージは、iOS 9 より前に配置する可能性があります、 **リソース** フォルダー - 2 と 3 回の解像度、 **@2x** または **@3x** (例: ファイル拡張子の前に、ファイル名のサフィックス **myimage@2x.png** ). ただし、apple の iOS アプリで画像の操作には、このメソッドは廃止されました。 詳細については、次を参照してください。[画像のサイズとファイル名](~/ios/app-fundamentals/images-icons/displaying-an-image.md)します。
 
 Android の代替解像度のイメージを配置する必要があります[特別という名前のディレクトリ](https://developer.android.com/guide/practices/screens_support.html)に次のスクリーン ショットに示すように、Android プロジェクトで。
 
-[![Android の複数の解像度のイメージの場所](images-images/xs-highdpisolution-sml.png "Android の複数の解像度のイメージの場所")](images-images/xs-highdpisolution.png#lightbox "Android の複数の解像度のイメージの場所")
+[![Android の複数解像度の画像の場所](images-images/xs-highdpisolution-sml.png "Android の複数解像度の画像の場所")](images-images/xs-highdpisolution.png#lightbox "Android の複数解像度の画像の場所")
 
 イメージ ファイルの名前を UWP[付くことができます`.scale-xxx`ファイル拡張子の前に](https://docs.microsoft.com/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast)ここで、`xxx`など、資産に適用されるスケーリングの割合をパーセント**myimage.scale 200.png**。 イメージは、コードまたは XAML スケール修飾子を指定せず、だけなどに参照する**myimage.png**します。 プラットフォームでは、ディスプレイの現在の DPI に基づいて最も近い適切な資産のスケールを選択します。
 
@@ -115,6 +115,8 @@ Android の代替解像度のイメージを配置する必要があります[�
 埋め込み画像は (ローカルのイメージ) のようなアプリケーションにも付属しますが、各アプリケーションのファイル構造、イメージ、イメージのコピーではなく、ファイルがリソースとしてアセンブリに埋め込まれました。 イメージの配布には、このメソッドは、各プラットフォームで同じイメージを使用する場合に推奨し、コードにバンドルされているイメージは、コンポーネントの作成に特に適しています。
 
 プロジェクトには、画像を埋め込む、新しい項目を追加し、追加するイメージ/秒を選択して右クリックします。 既定では、イメージに**はビルドアクションがあります。なし**。ビルドアクションに**設定する必要があります。[EmbeddedResource]** になっていることを確認します。
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -154,7 +156,7 @@ var embeddedImage = new Image { Source = ImageSource.FromResource("WorkingWithIm
 
 次のスクリーン ショットは、埋め込み画像を表示する各プラットフォームでの結果を表示します。
 
-[![ResourceImageSource](images-images/resource-sml.png "サンプル アプリケーションの埋め込み画像を表示する")](images-images/resource.png#lightbox "サンプル アプリケーションの埋め込み画像を表示します。")
+[![Resourceimagesource](images-images/resource-sml.png "埋め込み画像を表示するサンプルアプリケーション")](images-images/resource.png#lightbox "埋め込み画像を表示するサンプルアプリケーション")
 
 ### <a name="using-xaml"></a>XAML を使用します。
 
@@ -244,7 +246,7 @@ var imageSource = ImageSource.FromResource("filename.png", typeof(MyClass).GetTy
 </ContentPage>
 ```
 
-同等の C# コードは次のとおりです。
+同等の c# コードは次のとおりです。
 
 ```csharp
 var webImage = new Image { Source = ImageSource.FromUri(new Uri("https://xamarin.com/content/images/pages/forms/example-app.png")) };
@@ -260,7 +262,7 @@ webImage.Source = "https://xamarin.com/content/images/pages/forms/example-app.pn
 
 次のスクリーン ショットは、リモート イメージを表示する各プラットフォームでの結果を表示します。
 
-[![ダウンロード ImageSource](images-images/download-sml.png "サンプル アプリケーションをダウンロードしたイメージを表示する")](images-images/download.png#lightbox "サンプル アプリケーションをダウンロードしたイメージを表示します。")
+[ダウンロードされた![ImageSource](images-images/download-sml.png "ダウンロードしたイメージを表示するサンプルアプリケーション")](images-images/download.png#lightbox "ダウンロードしたイメージを表示するサンプルアプリケーション")
 
 ### <a name="downloaded-image-caching"></a>ダウンロードしたイメージのキャッシュ
 

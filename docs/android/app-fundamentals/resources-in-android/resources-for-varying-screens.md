@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/28/2018
-ms.openlocfilehash: 0a82c84b334cbfcf3ab978b5ebd0e256bcd64815
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 6db927409e07b97ef5b7b1e7f54b6bcbdc60e115
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70755055"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71249661"
 ---
 # <a name="creating-resources-for-varying-screens"></a>さまざまな画面用のリソースの作成
 
@@ -50,6 +50,8 @@ Android では、実行時に、適切なサイズになるように、実行可
 画面サイズを宣言すると、サポートされているデバイスだけがアプリケーションをダウンロードできるようになります。 これを行うには、 **Androidmanifest .xml**ファイルで "[サポート-画面](https://developer.android.com/guide/topics/manifest/supports-screens-element.html)" 要素を設定します。 この要素は、アプリケーションでサポートされる画面サイズを指定するために使用されます。 指定された画面は、アプリケーションが画面に合わせてレイアウトを適切に配置できる場合、サポートされていると見なされます。 このマニフェスト要素を使用すると、画面の仕様を満たしていないデバイスの[*Google Play*](https://play.google.com/)にアプリケーションが表示されません。 ただし、アプリケーションは、サポートされていない画面を持つデバイスでも実行されますが、レイアウトがぼやけて見えないように見える場合があります。
 
 サポートされているスクリーン sixes は、ソリューションの**caching/AndroidManifest .xml**ファイルで宣言されています。
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 

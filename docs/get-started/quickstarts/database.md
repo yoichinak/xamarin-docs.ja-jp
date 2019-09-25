@@ -9,16 +9,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/01/2019
-ms.openlocfilehash: ff07af00e1e647255ac56318c0685552823f510c
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 2cd4726566e73aece5d0deef90ad1feedefaa2d8
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653505"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71249679"
 ---
 # <a name="store-data-in-a-local-sqlitenet-database"></a>ローカルの SQLite.NET データベースにデータを格納する
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-database/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-database/)
 
 このクイックスタートでは、次の方法について説明します。
 
@@ -27,10 +27,10 @@ ms.locfileid: "68653505"
 
 クイックスタートでは、ローカルの SQLite.NET データベースにデータを格納する方法について説明します。 最終的なアプリケーションは、次のとおりです。
 
-[![](database-images/screenshots1-sml.png "メモページ")](database-images/screenshots1.png#lightbox "メモページ\"")
-)[![](database-images/screenshots2-sml.png "メモ入力ページ")](database-images/screenshots2.png#lightbox "メモ入力ページ")
+[![](database-images/screenshots1-sml.png "メモ")](database-images/screenshots1.png#lightbox "[メモ] ページ")ページ
+[(database-images/screenshots2-sml.png "メモの入力")ページ![]](database-images/screenshots2.png#lightbox "メモの入力ページ")
 
-### <a name="prerequisites"></a>必須コンポーネント
+## <a name="prerequisites"></a>必須コンポーネント
 
 このクイックスタートを試行する前に、[前のクイックスタート](multi-page.md)を正常に完了している必要があります。 または、[前のクイックスタートサンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-multipage/)をダウンロードし、このクイックスタートの出発点として使用してください。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/25/2018
-ms.openlocfilehash: a4867ef779e55d16ef49b2f8ad0dc5bd0ec7024f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: f696e8159d929bf41596c4dc9498e682e361f412
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70761452"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71249985"
 ---
 # <a name="using-the-xamarinandroid-designer"></a>Android Designer の使用
 
@@ -31,6 +31,8 @@ Android ユーザーインターフェイスは、XML ファイルを使用す�
 ## <a name="walkthrough"></a>チュートリアル
 
 このチュートリアルの目的は、Android Designer を使用して、サンプルのカラーブラウザーアプリ用のユーザーインターフェイスを作成することです。 カラーブラウザーアプリでは、色、名前、および RGB 値の一覧が表示されます。 **デザインサーフェイス**にウィジェットを追加する方法と、これらのウィジェットを視覚的にレイアウトする方法についても説明します。 その後、**デザインサーフェイス**で対話的にウィジェットを変更する方法、またはデザイナーの **[プロパティ]** ペインを使用してウィジェットを変更する方法を学習します。 最後に、デバイスまたはエミュレーターでアプリを実行すると、デザインがどのように見えるかを確認できます。
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -521,7 +523,7 @@ namespace DesignerWalkthrough
 
 -----
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>まとめ
 
 この記事では、Visual Studio の Android Designer を使用して、基本的なアプリのユーザーインターフェイスを作成するプロセスについて説明します。
 ここでは、リスト内の1つの項目のインターフェイスを作成する方法を説明し、ウィジェットを追加して視覚的にレイアウトする方法を示します。

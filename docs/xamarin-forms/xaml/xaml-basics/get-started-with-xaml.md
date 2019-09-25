@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2018
-ms.openlocfilehash: fde0a5145f82e75fd6d75280c1cd2230f35a4c29
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 32f809c5b21e56497328ce00bf49a7337ac0270a
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70772801"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71250040"
 ---
 # <a name="part-1-getting-started-with-xaml"></a>第 1 部です。 XAML の概要
 
@@ -25,6 +25,8 @@ _Xamarin.Forms アプリケーションで XAML ページの視覚的内容を�
 ## <a name="creating-the-solution"></a>ソリューションの作成
 
 最初の XAML ファイルの編集を開始するには、Visual Studio または Visual Studio for Mac を使用して新しい Xamarin.Forms ソリューションを作成します。 (環境に合わせて下にあるタブを選択します)。
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 

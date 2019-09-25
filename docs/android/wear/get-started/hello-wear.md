@@ -1,18 +1,18 @@
 ---
 title: Wear の基本
-description: 初めての Android 用の磨耗アプリを作成し、それを Wear エミュレーターまたはデバイスで実行します。 このチュートリアルでは、ボタンのクリックを処理し、Wear デバイスに click カウンターを表示する小さな Android 用の Wear プロジェクトを作成する手順について説明します。 この例では、アプリをデバッグする方法について説明します。これには、デバイスの Wear エミュレーター、または Bluetooth 経由で Android フォンに接続されている Wear デバイスを使用します。 また、Android Wear に関する一連のデバッグのヒントも提供します。
+description: 初めての Android 用の磨耗アプリを作成し、それを磨耗エミュレーターまたはデバイスで実行します。 このチュートリアルでは、ボタンのクリックを処理し、Wear デバイスに click カウンターを表示する小さな Android 用の Wear プロジェクトを作成する手順について説明します。 この例では、アプリをデバッグする方法について説明します。これには、デバイスの Wear エミュレーター、または Bluetooth 経由で Android フォンに接続されている Wear デバイスを使用します。 また、Android Wear に関する一連のデバッグのヒントも提供します。
 ms.prod: xamarin
 ms.assetid: 86BCD0E7-E9DC-40F1-9B44-887BC51BB48D
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/10/2018
-ms.openlocfilehash: 4c3c0e51348d2435ce5042485b214e6e5fe159b2
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: ce82f10fdb8159d2007d490747329c1a3b5aeecd
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70758418"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71250069"
 ---
 # <a name="hello-wear"></a>Wear の基本
 
@@ -27,6 +27,8 @@ _初めての Android 用の Wear アプリを作成し、それを Wear エミ�
 ### <a name="1-create-a-new-android-project"></a>1.新しい Android プロジェクトを作成する
 
 新しい Android 用の **Wear アプリケーション**を作成します。
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 

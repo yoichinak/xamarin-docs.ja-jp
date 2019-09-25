@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/03/2018
-ms.openlocfilehash: 40bea05c86e83a0b96ad35b49b25bdada89f4201
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 27bf22403c9411d300e67bfdaef4aa4dfe74f6e0
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769796"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71250182"
 ---
 # <a name="implementing-sirikit-in-xamarinios"></a>Xamarin での SiriKit の実装
 
@@ -43,7 +43,7 @@ MonkeyChat では、ユーザーの友人に固有の連絡先ブックが保持
 
 [![](implementing-sirikit-images/elements01.png "SiriKit 図を使用したアプリの拡張")](implementing-sirikit-images/elements01.png#lightbox)
 
-不足している機能には次が含まれます。
+次の設定があります。
 
 1. **インテント拡張**-ユーザーの応答を検証し、アプリが要求を処理できることを確認し、実際にユーザーの要求を満たすためにタスクを実行します。
 2. **インテント ui 拡張** - *オプション*は、siri 環境の応答にカスタム UI を提供し、ユーザーのエクスペリエンスを向上させるためにアプリの ui とブランド化を siri に取り込むことができます。
@@ -66,6 +66,8 @@ SiriKit は拡張機能に基づいて構築されていますが、アプリに
 サンプルアプリ MonkeyChat の場合、データモデルと、ネットワークやデータベースへのアクセスなどの処理コードは、ネイティブライブラリに移動されます。
 
 次の手順で行います。
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -296,7 +298,7 @@ public override bool FinishedLaunching (UIApplication application, NSDictionary 
 
 ### <a name="localization-and-siri"></a>ローカリゼーションと Siri
 
-IOS デバイスでは、ユーザーは、システムの既定値とは異なる、Siri の言語を選択できます。 ローカライズされたデータを使用する場合、アプリは、 `SiriLanguageCode` `INPreferences`クラスのメソッドを使用して、siri から言語コードを取得する必要があります。 例えば:
+IOS デバイスでは、ユーザーは、システムの既定値とは異なる、Siri の言語を選択できます。 ローカライズされたデータを使用する場合、アプリは、 `SiriLanguageCode` `INPreferences`クラスのメソッドを使用して、siri から言語コードを取得する必要があります。 次に例を示します。
 
 ```csharp
 var language = INPreferences.SiriLanguageCode();
@@ -320,7 +322,7 @@ if (language == "en-US") {
 
 カスタムボキャブラリとして登録する用語を選択するときは、アプリに慣れていないユーザーによって誤解される可能性のある用語のみを選択してください。 "マイトレーニング" や "マイアルバム" などの一般的な用語を登録しないでください。 たとえば、MonkeyChat アプリは、ユーザーのアドレス帳の各連絡先に関連付けられているニックネームを登録します。
 
-アプリは、 `SetVocabularyStrings` `INVocabulary`クラスのメソッドを呼び出し、メインアプリからコレクションを`NSOrderedSet`渡すことによって、ユーザー固有のボキャブラリを提供します。 新しい用語を追加する前`RemoveAllVocabularyStrings`に、アプリは常にメソッドを呼び出して、既存の用語を削除する必要があります。 例えば:
+アプリは、 `SetVocabularyStrings` `INVocabulary`クラスのメソッドを呼び出し、メインアプリからコレクションを`NSOrderedSet`渡すことによって、ユーザー固有のボキャブラリを提供します。 新しい用語を追加する前`RemoveAllVocabularyStrings`に、アプリは常にメソッドを呼び出して、既存の用語を削除する必要があります。 次に例を示します。
 
 ```csharp
 using System;
@@ -684,7 +686,7 @@ namespace MonkeyChat
 
 ### <a name="configuring-the-main-class"></a>Main クラスの構成
 
-次に、開発者は、インテント拡張機能のメインエントリポイントとして機能するメインクラスを Siri に構成する必要があります。 デリゲートに準拠するの`INExtension`サブクラスである必要があります。 `IINIntentHandler` 例えば:
+次に、開発者は、インテント拡張機能のメインエントリポイントとして機能するメインクラスを Siri に構成する必要があります。 デリゲートに準拠するの`INExtension`サブクラスである必要があります。 `IINIntentHandler` 次に例を示します。
 
 ```csharp
 using System;
@@ -928,7 +930,7 @@ public void HandleSetMessageAttribute (INSetMessageAttributeIntent intent, Actio
 
 ### <a name="configuring-the-main-class"></a>Main クラスの構成
 
-インテント UI 拡張機能のメインエントリポイントとして機能するメインクラスを Siri に構成します。 これは、 `IINUIHostedViewController`インターフェイスに準拠`UIViewController`するのサブクラスである必要があります。 例えば:
+インテント UI 拡張機能のメインエントリポイントとして機能するメインクラスを Siri に構成します。 これは、 `IINUIHostedViewController`インターフェイスに準拠`UIViewController`するのサブクラスである必要があります。 次に例を示します。
 
 ```csharp
 using System;
@@ -1046,7 +1048,7 @@ public bool DisplaysMessage {
 }
 ```
 
-### <a name="considerations"></a>考慮事項
+### <a name="considerations"></a>注意事項
 
 Apple は、意図した UI 拡張機能を設計および実装するときに、開発者が次の考慮事項を考慮することを提案します。
 
@@ -1054,7 +1056,7 @@ Apple は、意図した UI 拡張機能を設計および実装するときに�
 - **ビューのサイズの最小値と最大値を考慮して**ください。すべての iOS デバイスの種類、サイズ、および向きに対してインテント UI 拡張機能が適切であることを確認してください。 さらに、アプリから Siri に返される目的のサイズを付与できない場合があります。
 - **柔軟でアダプティブなレイアウトパターンを使用**して、すべてのデバイスで UI が最適に見えるようにします。
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>まとめ
 
 この記事では、SiriKit について説明しました。また、iOS デバイスで Siri と Maps アプリを使用してユーザーがアクセスできるサービスを提供するために、その機能を Xamarin の iOS アプリに追加する方法についても説明しました。
 

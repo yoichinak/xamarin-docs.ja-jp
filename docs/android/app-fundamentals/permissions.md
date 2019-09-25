@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: 550883de571951bb05f0634632fd6b7688e1ab8c
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: d3513dc086998306ae79855a2c4d8c1a3060ac47
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70755284"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71249707"
 ---
 # <a name="permissions-in-xamarinandroid"></a>Xamarin. Android のアクセス許可
 
@@ -51,7 +51,7 @@ Android サポートライブラリには、以前のバージョンの Android 
 
 <a name="requirements" />
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 Xamarin Android プロジェクトには、 [xamarin. android. Support. 互換](https://www.nuget.org/packages/Xamarin.Android.Support.Compat/)NuGet パッケージを含めることを強くお勧めします。 このパッケージは、アクセス許可固有の Api を以前のバージョンの Android にバックポートし、アプリが実行されている Android のバージョンを常に確認する必要がない1つの共通インターフェイスを提供します。
 
@@ -72,6 +72,8 @@ Android 6.0 以降を対象とするアプリでは、ユーザーが過去の�
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 ```
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -203,7 +205,7 @@ public override void OnRequestPermissionsResult(int requestCode, string[] permis
 }
 ```  
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>まとめ
 
 このガイドでは、Android デバイスでアクセス許可を追加および確認する方法について説明しました。 以前の Android アプリ間でアクセス許可がどのように機能するか (API レベル < 23) と新しい Android アプリ (API レベル > 22) の違いについて説明します。 Android 6.0 で実行時のアクセス許可チェックを実行する方法について説明しました。
 

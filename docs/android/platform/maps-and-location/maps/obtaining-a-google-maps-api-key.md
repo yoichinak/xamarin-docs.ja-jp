@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/25/2018
-ms.openlocfilehash: a56405aaed84be5015e5d58ef9a13ba8e270ea58
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 3868b2a35894cdcd7a11c626268307338744ecb4
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70757534"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71250059"
 ---
 # <a name="obtaining-a-google-maps-api-key"></a>Google マップ API キーを取得する
 
@@ -28,6 +28,8 @@ Maps API v2 キーを取得するには、次の手順を実行します。
 
 Google から Maps API キーを要求するには、アプリケーションの署名に使用されるキーストアの SHA-1 フィンガープリントを把握している必要があります。
 通常、これは、デバッグキーストアの SHA-1 フィンガープリントと、アプリケーションのリリースに署名するために使用されるキーストアの SHA-1 フィンガープリントを決定する必要があることを意味します。
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 

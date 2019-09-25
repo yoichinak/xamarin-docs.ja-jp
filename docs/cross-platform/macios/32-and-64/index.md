@@ -6,12 +6,12 @@ ms.assetid: F7126340-04B2-4A10-B14D-394E23527C1A
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 7f41d65c8981d4ef6ffcf1b812fbbbb7e72e7719
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: bcee9c7e09a9470cbf80e99c047a7c52f61f888a
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509744"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71249802"
 ---
 # <a name="3264-bit-platform-considerations"></a>32/64 ビットプラットフォームに関する考慮事項
 
@@ -33,6 +33,8 @@ Xamarin の Classic API (`XamMac.dll`および`monotouch.dll`) では、32ビッ
 > このセクションは、歴史的な理由のために含まれており、古い Xamarin. iOS プロジェクトを Unified API に移動し、64ビットをサポートします。 すべての新しい Xamarin. iOS プロジェクトでは、既定で Unified API とターゲット64が使用されます。
 
 Unified API に変換された Xamarin の iOS モバイルアプリケーションでは、開発者はビルド設定を64ビットのターゲットに手動で更新する必要があります。
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 

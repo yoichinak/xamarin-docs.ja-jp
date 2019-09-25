@@ -6,12 +6,12 @@ ms.assetid: B581B2D0-9890-C383-C654-0B0E12DAD5A6
 author: conceptdev
 ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: 798dd1b5df2ea05eb428c9465e996d606c22009b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 246ee002404fdf6fe1120c19701aceb3c2dee7db
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281206"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71249784"
 ---
 # <a name="cross-platform-app-case-study-tasky"></a>クロスプラットフォームアプリのケーススタディ:Tasky
 
@@ -25,7 +25,7 @@ ms.locfileid: "70281206"
 
  <a name="Requirements" />
 
-### <a name="requirements"></a>必要条件
+### <a name="requirements"></a>要件
 
 アプリケーションを設計するための最初の手順は、目的の機能を特定することです。 これには、高レベルの目標や詳細なユースケースがあります。 Tasky には、簡単な機能要件があります。
 
@@ -475,7 +475,7 @@ Mainpage.xaml クラスは、を`TaskListViewModel`使用して、XAML のデー
 
  <a name="iOS" />
 
-#### <a name="ios"></a>iOS
+### <a name="ios"></a>iOS
 
 アプリケーションでは、[追加] ボタンをナビゲーションバーに配置し、組み込みの**正符号 (+)** アイコンを使用するなど、iOS 標準のユーザーインターフェイスデザインを使用します。 また、既定`UINavigationController`の [戻る] ボタンの動作も使用され、テーブル内の "スワイプして削除" をサポートしています。
 
@@ -483,7 +483,7 @@ Mainpage.xaml クラスは、を`TaskListViewModel`使用して、XAML のデー
 
  <a name="Android" />
 
-#### <a name="android"></a>Android
+### <a name="android"></a>Android
 
 Android アプリでは、' ティック ' を必要とする行に組み込みのレイアウトを含む組み込みのコントロールを使用します。 ハードウェア/システムのバック動作は、画面上に戻るボタンに加えてサポートされています。
 
@@ -491,7 +491,7 @@ Android アプリでは、' ティック ' を必要とする行に組み込み�
 
  <a name="Windows_Phone" />
 
-#### <a name="windows-phone"></a>Windows Phone
+### <a name="windows-phone"></a>Windows Phone
 
 Windows Phone アプリでは、標準レイアウトを使用して、上部にナビゲーションバーではなく、画面の下部にアプリバーを設定します。
 

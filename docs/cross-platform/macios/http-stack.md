@@ -6,12 +6,12 @@ ms.assetid: 12101297-BB04-4410-85F0-A0D41B7E6591
 author: conceptdev
 ms.author: crdun
 ms.date: 04/20/2018
-ms.openlocfilehash: f3c30e8edc36c6d92b6fac0bd0e199aa26e16993
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 305c0c939d99207e39a469f7e8c5370cc5555d38
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280924"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71249978"
 ---
 # <a name="httpclient-and-ssltls-implementation-selector-for-iosmacos"></a>IOS/macOS 用の HttpClient と SSL/TLS 実装セレクター
 
@@ -24,7 +24,7 @@ Xamarin. iOS、tvOS、および xamarin の**httpclient 実装セレクター**�
 >
 > アプリがこれらのサーバーとサービスを引き続き使用できるようにするに**は、次に示す`NSUrlSession`設定を使用して Xamarin プロジェクトを更新してから、アプリを再構築してユーザーに再デプロイする必要があり**ます。
 
-### <a name="selecting-an-httpclient-stack"></a>HttpClient スタックの選択
+## <a name="selecting-an-httpclient-stack"></a>HttpClient スタックの選択
 
 アプリによっ`HttpClient`て使用されているを調整するには、次のようにします。
 
@@ -42,12 +42,12 @@ Xamarin. iOS、tvOS、および xamarin の**httpclient 実装セレクター**�
 ベースのハンドラーは、iOS 7 以降で`NSURLSession`使用可能なネイティブフレームワークに基づいています。 `NSURLSession` 
 **これは推奨される設定です。**
 
-#### <a name="pros"></a>長所
+#### <a name="pros"></a>プロフェッショナル
 
 - パフォーマンスを向上させ、実行可能ファイルのサイズを小さくするためにネイティブ Api を使用しています。
 - TLS 1.2 などの最新の標準がサポートされます。
 
-#### <a name="cons"></a>短所
+#### <a name="cons"></a>マイナス
 
 - IOS 7 以降が必要です。
 - 一部`HttpClient`の機能またはオプションは使用できません。
@@ -56,12 +56,12 @@ Xamarin. iOS、tvOS、および xamarin の**httpclient 実装セレクター**�
 
 ベースのハンドラーは、iOS 6 以降で`CFNetwork`使用可能なネイティブフレームワークに基づいています。 `CFNetwork`
 
-#### <a name="pros"></a>長所
+#### <a name="pros"></a>プロフェッショナル
 
 - パフォーマンスを向上させ、実行可能ファイルのサイズを小さくするためにネイティブ Api を使用しています。
 - TLS 1.2 などの新しい標準がサポートされます。
 
-#### <a name="cons"></a>短所
+#### <a name="cons"></a>マイナス
 
 - IOS 6 以降が必要です。
 - WatchOS では使用できません。
@@ -71,11 +71,11 @@ Xamarin. iOS、tvOS、および xamarin の**httpclient 実装セレクター**�
 
 マネージハンドラーは、以前のバージョンの Xamarin に付属していた、完全に管理された HttpClient ハンドラーです。
 
-#### <a name="pros"></a>長所
+#### <a name="pros"></a>プロフェッショナル
 
 - これには、Microsoft .NET 以前の Xamarin バージョンと互換性のある機能セットがあります。
 
-#### <a name="cons"></a>短所
+#### <a name="cons"></a>マイナス
 
 - Apple Os と完全には統合されておらず、TLS 1.0 に制限されています。 今後、セキュリティで保護された web サーバーまたはクラウドサービスに接続できない可能性があります。
 - 一般に、ネイティブ Api よりも暗号化のような場合には非常に遅くなります。

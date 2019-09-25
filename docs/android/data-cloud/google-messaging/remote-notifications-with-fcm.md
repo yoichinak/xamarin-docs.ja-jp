@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/31/2018
-ms.openlocfilehash: c76b22c84851c8952dc4e9181966632cf6e38041
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: ece503ee305fc1319e766ee5ad52ad86cee122bc
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70754680"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71249936"
 ---
 # <a name="remote-notifications-with-firebase-cloud-messaging"></a>焼討 Base Cloud Messaging を使用したリモート通知
 
@@ -34,7 +34,7 @@ _このチュートリアルでは、アドインアプリケーションで、�
 
 このチュートリアルでは、 **Fcmclient**に機能を段階的に追加し、それをデバイスまたはエミュレーターで実行して、fcm との対話方法を理解します。 ログ記録を使用して、FCM サーバーでライブアプリトランザクションを監視します。また、FCM メッセージからの通知の生成方法については、「焼討 Base Console notification GUI」に入力します。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 これは、焼討 Base Cloud Messaging から送信できる[さまざまな種類のメッセージ](https://firebase.google.com/docs/cloud-messaging/concept-options#notifications_and_data_messages)を理解するのに役立ちます。 メッセージのペイロードによって、クライアントアプリがメッセージを受信して処理する方法が決まります。
 
@@ -51,6 +51,8 @@ _このチュートリアルでは、アドインアプリケーションで、�
 ### <a name="set-the-package-name"></a>パッケージ名を設定する
 
 「[焼討 Base Cloud Messaging](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md)」で、fcm 対応アプリのパッケージ名を指定しました。 このパッケージ名は、 [API キー](firebase-cloud-messaging.md#fcm-in-action-api-key)に関連付けられている[*アプリケーション ID*](./firebase-cloud-messaging.md#fcm-in-action-app-id)としても機能します。 このパッケージ名を使用するようにアプリを構成します。
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -762,7 +764,7 @@ unSubscribeButton.Click += delegate {
 };
 ```
 
-FCM からデバイスの登録を解除するには、[消火 baseinstanceid](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId)クラスの[deleteinstanceid](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId.html#deleteInstanceId%28%29)メソッドを呼び出して、インスタンス ID を削除します。 例:
+FCM からデバイスの登録を解除するには、[消火 baseinstanceid](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId)クラスの[deleteinstanceid](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId.html#deleteInstanceId%28%29)メソッドを呼び出して、インスタンス ID を削除します。 次に例を示します。
 
 ```csharp
 FirebaseInstanceId.Instance.DeleteInstanceId();

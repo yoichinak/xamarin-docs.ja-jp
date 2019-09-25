@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 01/31/2018
-ms.openlocfilehash: fa772add96eb17b0a80470210f42b4d9df220a9c
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: bb772d2b0cd50c1bac9b1d119adf4e9a04a341a3
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768937"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71250151"
 ---
 # <a name="ios-designer-basics"></a>iOS Designer の基本
 
@@ -20,7 +20,7 @@ _このガイドでは、Xamarin Designer for iOS について説明します。
 
 Xamarin Designer for iOS は、Xcode の Interface Builder や Android Designer に似たビジュアルインターフェイスデザイナーです。 多くの機能の中には、Visual Studio for Windows および Mac とのシームレスな統合、ドラッグアンドドロップ編集、イベントハンドラーを設定するためのインターフェイス、カスタムコントロールのレンダリング機能などがあります。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 IOS デザイナーは、Visual Studio for Mac と Visual Studio 2017 以降の Windows で使用できます。 Visual Studio for Windows では、iOS Designer は適切に構成された Mac ビルドホストへの接続を必要としますが、Xcode は実行されている必要はありません。
 
@@ -35,6 +35,8 @@ IOS デザイナーは、Visual Studio for Mac と Visual Studio 2017 以降の 
 IOS Designer を使用すると、開発者はアプリケーションのユーザーインターフェイスを視覚的にデザインできます。 「ストーリーボードの[概要](~/ios/user-interface/storyboards/index.md)」ガイドで説明したように、ストーリーボードは、アプリを構成する画面 (ビューコントローラー)、それらのビューコントローラーに配置されているインターフェイス要素 (ビュー)、およびアプリ全体のナビゲーションフローを記述します。 
 
 ビューコントローラーには、iOS デザイナーのビジュアル表現と関連付けられC#たクラスの2つの部分があります。
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 

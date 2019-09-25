@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/02/2019
-ms.openlocfilehash: 813bb59cf11f35f69620c30e8ba12281df08df75
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: a59f824e1d97966d8d0af92bc9bbcc8d80fcfa4d
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70754502"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71249924"
 ---
 # <a name="remote-notifications-with-google-cloud-messaging"></a>Google Cloud Messaging を使用したリモート通知
 
@@ -312,7 +312,7 @@ public RegistrationIntentService() : base ("RegistrationIntentService") { }
 
 の`RegistrationIntentService`コア機能は、 `OnHandleIntent`メソッドに存在します。 このコードを使用して、アプリケーションを GCM に登録する方法を見てみましょう。
 
-##### <a name="request-a-registration-token"></a>登録トークンを要求する
+#### <a name="request-a-registration-token"></a>登録トークンを要求する
 
 `OnHandleIntent`まず、GCM から登録トークンを要求するために、Google の[InstanceID. GetToken](https://developers.google.com/android/reference/com/google/android/gms/iid/InstanceID.html#getToken&#40;java.lang.String,%20java.lang.String&#41;)メソッドを呼び出します。 このコードをで`lock`ラップすることで、複数の登録インテントが同時&ndash;に発生する`lock`可能性を防ぐことができます。これにより、これらのインテントが順番に処理されます。 登録トークンの取得に失敗した場合は、例外がスローされ、エラーがログに記録されます。 登録が成功した`token`場合、は GCM から返された登録トークンに設定されます。 
 
@@ -334,7 +334,7 @@ catch (Exception e)
     Log.Debug ...
 ```
 
-##### <a name="forward-the-registration-token-to-the-app-server"></a>アプリサーバーに登録トークンを転送する
+#### <a name="forward-the-registration-token-to-the-app-server"></a>アプリサーバーに登録トークンを転送する
 
 登録トークンを取得した場合 (つまり、例外がスローされなかった場合`SendRegistrationToAppServer` )、を呼び出して、アプリケーションによって管理されているサーバー側アカウント (存在する場合) にユーザーの登録トークンを関連付けます。 この実装はアプリサーバーの設計に依存しているため、空のメソッドを次に示します。 
 
@@ -347,7 +347,7 @@ void SendRegistrationToAppServer (string token)
 
 場合によっては、アプリサーバーにユーザーの登録トークンは必要ありません。この場合、このメソッドは省略できます。 登録トークンがアプリサーバーに送信されると、 `SendRegistrationToAppServer`は、トークンがサーバーに送信されたかどうかを示すブール値を保持する必要があります。 このブール値が false の`SendRegistrationToAppServer`場合、はアプリサーバー &ndash;にトークンを送信します。それ以外の場合、トークンは既に以前の呼び出しでアプリサーバーに送信されています。 
 
-##### <a name="subscribe-to-the-notification-topic"></a>通知トピックを購読する
+#### <a name="subscribe-to-the-notification-topic"></a>通知トピックを購読する
 
 次に、 `Subscribe`メソッドを呼び出して、通知トピックをサブスクライブする GCM を指定します。 「 `Subscribe`」では、 [gcmpubsub subscribe](https://developers.google.com/android/reference/com/google/android/gms/gcm/GcmPubSub.html#subscribe&#40;java.lang.String,%20java.lang.String,%20android.os.Bundle&#41;) API を呼び出して、 `/topics/global`以下のすべてのメッセージに対してクライアントアプリをサブスクライブします。
 
@@ -398,7 +398,7 @@ namespace ClientApp
 
 #### <a name="test-registration-with-gcm"></a>GCM を使用した登録のテスト
 
-アプリを完全にリビルドして実行してみましょう。 GCM から登録トークンを正常に受信した場合は、[出力] ウィンドウに登録トークンが表示されます。 例: 
+アプリを完全にリビルドして実行してみましょう。 GCM から登録トークンを正常に受信した場合は、[出力] ウィンドウに登録トークンが表示されます。 次に例を示します。 
 
 ```shell
 D/Mono    ( 1934): Assembly Ref addref ClientApp[0xb4ac2400] -> Xamarin.GooglePlayServices.Gcm[0xb4ac2640]: 2
