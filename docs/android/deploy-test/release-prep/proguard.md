@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: e5c8e02397e778cf3e71a0c8b4aa544074521cac
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: b85289d9dbd60d5ee0238540e67773ed9085b672
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70755937"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71249970"
 ---
 # <a name="proguard"></a>ProGuard
 
@@ -59,7 +59,7 @@ Xamarin.Android リンカーは、アプリケーションの静的分析を使�
 
 - 実際に使われているメンバー。 
 
-リンカーは常に ProGuard ステップの前に実行されます。 このため、リンカーは、ProGuard で処理されると予想されるアセンブリ/型/メンバーを除去することがあります  (Xamarin.Android でのリンクの詳細については、「[Linking on Android](~/android/deploy-test/linker.md)」(Android でのリンク) をご覧ください)。
+リンカーは常に ProGuard ステップの前に実行されます。 このため、リンカーは、ProGuard で処理されると予想されるアセンブリ/型/メンバーを除去することがあります (Xamarin.Android でのリンクの詳細については、「[Linking on Android](~/android/deploy-test/linker.md)」(Android でのリンク) をご覧ください)。
 
 ### <a name="proguard-step"></a>ProGuard ステップ
 
@@ -123,7 +123,7 @@ ProGuard をアプリ プロジェクトで有効にするには、次の手順�
 
 ### <a name="customizing-proguard"></a>ProGuard のカスタマイズ
 
-必要に応じて、カスタム ProGuard 構成ファイルを追加し、ProGuard ツールをより厳密に制御することができます。 たとえば、ProGuard に維持するクラスを明示的に指示できます。 そのためには、新しい **.cfg** ファイルを作成し、**[ソリューション エクスプローラー]** の **[プロパティ]** ウィンドウで `ProGuardConfiguration` ビルド アクションを適用します。 
+必要に応じて、カスタム ProGuard 構成ファイルを追加し、ProGuard ツールをより厳密に制御することができます。 たとえば、ProGuard に維持するクラスを明示的に指示できます。 そのためには、新しい **.cfg** ファイルを作成し、 **[ソリューション エクスプローラー]** の **[プロパティ]** ウィンドウで `ProGuardConfiguration` ビルド アクションを適用します。 
 
 [![ProguardConfiguration ビルド アクションの選択](proguard-images/04-build-action-sml.png)](proguard-images/04-build-action.png#lightbox)
 
@@ -266,7 +266,7 @@ java -jar proguard.jar options ...
 
 ProGuard タスクは **Xamarin.Android.Build.Tasks.dll** アセンブリ内にあります。 `_CompileToDalvikWithDx` ターゲットの一部であり、これは `_CompileDex` ターゲットの一部です。 
 
-次のリストでは、**[ファイル] > [新しいプロジェクト]** を使って新しいプロジェクトを作成した後に生成される既定のパラメーターの例を示します。 
+次のリストでは、 **[ファイル] > [新しいプロジェクト]** を使って新しいプロジェクトを作成した後に生成される既定のパラメーターの例を示します。 
 
 ```
 ProGuardJarPath = C:\Android\android-sdk\tools\proguard\lib\proguard.jar
@@ -314,9 +314,11 @@ Unknown option '-keep' in line 1 of file 'proguard.cfg'
 
 Windows でこの問題が発生するのは、通常、`.cfg` ファイルのエンコーディングが正しくないためです。 ProGuard は、テキスト ファイルに存在する可能性がある "_バイト オーダー マーク_" (BOM) を処理できません。 BOM が存在する場合、ProGuard は上記のエラーで終了します。 
 
+<!-- markdownlint-disable MD001 -->
+
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-この問題を回避するには、BOM なしでファイルを保存できるテキスト エディターでカスタム構成ファイルを編集します。 この問題を解決するには、テキスト エディターのエンコードを `UTF-8` に設定します。 たとえば、[Notepad++](https://notepad-plus-plus.org/) テキスト エディターでは、**[Encoding]\(エンコード\) &gt; [Encode in UTF-8 Without BOM]\(BOM なしの UTF-8 でエンコードする\)** を選ぶことにより、BOM を使わずにファイルを保存できます。 
+この問題を回避するには、BOM なしでファイルを保存できるテキスト エディターでカスタム構成ファイルを編集します。 この問題を解決するには、テキスト エディターのエンコードを `UTF-8` に設定します。 たとえば、[Notepad++](https://notepad-plus-plus.org/) テキスト エディターでは、 **[Encoding]\(エンコード\) &gt; [Encode in UTF-8 Without BOM]\(BOM なしの UTF-8 でエンコードする\)** を選ぶことにより、BOM を使わずにファイルを保存できます。 
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 

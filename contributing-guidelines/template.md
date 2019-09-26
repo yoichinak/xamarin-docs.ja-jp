@@ -8,12 +8,12 @@ ms.date: 02/26/2018
 ms.topic: conceptual
 ms.assetid: 11111111-2222-3333-4444-555555555555
 ms.prod: xamarin
-ms.openlocfilehash: 8374e90ea6d460a0e0c22763db023654c3008b32
-ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
+ms.openlocfilehash: d6300d6d3fdebf851c3710aa2a949575e6fe3f68
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71105743"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71249564"
 ---
 # <a name="metadata-and-markdown-template"></a>メタデータとマークダウン テンプレート
 
@@ -179,7 +179,7 @@ UID に特殊文字 \` または \# が含まれている場合は、UID 値は�
 - bulleted
 - リスト
 
-##### <a name="unordered-list-with-an-embedded-list"></a>埋め込みリストを含む記号付きリスト
+#### <a name="unordered-list-with-an-embedded-list"></a>埋め込みリストを含む記号付きリスト
 
 - This
 - bulleted
@@ -210,7 +210,7 @@ UID に特殊文字 \` または \# が含まれている場合は、UID 値は�
 
 3 つのバッククォート (\`\`\`) と言語 ID を使用して、言語固有のカラー コーディングをコード ブロックに適用します。 以下に [GFM 言語 ID](https://github.com/jmm/gfm-lang-ids/wiki/GitHub-Flavored-Markdown-(GFM)-language-IDs) のリスト全体を示します。
 
-##### <a name="c9839"></a>C&#9839;
+#### <a name="c9839"></a>C&#9839;
 
 ```c#
 using System;

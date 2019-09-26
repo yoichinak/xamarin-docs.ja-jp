@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/29/2018
-ms.openlocfilehash: 00245b7b4b0db73f66d88474be2052f311499e7a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 9296fa60a454fe83f9ec9b383067576b67e5f037
+ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70753765"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71198544"
 ---
 # <a name="pair-to-mac-for-xamarinios-development"></a>Xamarin.iOS 開発のために Mac とペアリングする
 
@@ -163,6 +163,7 @@ Mac とペアリングできない場合は、[Mac を手動で追加](#manually
 [Visual Studio 2019 バージョン 15.6](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes#automatic-macos-provisioning) より、[Mac とペアリング] によって、Xamarin.iOS アプリケーションを構築するために必要な、次のソフトウェアが Mac に自動的にプロビジョニングされます。Mono、Xamarin.iOS (ソフトウェア フレームワーク、Visual Studio for Mac の IDE ではない)、およびさまざまな Xcode 関連のツール (ただし、Xcode 自体ではない)。
 
 > [!IMPORTANT]
+>
 > - [Mac とペアリング] は Xcode をインストールできません。手動で Mac ビルド ホストにインストールする必要があります。 これは Xamarin.iOS の開発に必要です。
 > - Mac の自動プロビジョニングには、Mac でリモート ログインが有効になっている必要があり、Mac はネットワーク経由で Windows コンピューターにアクセスできる必要があります。 詳しくは、「[Mac でリモート ログインを有効にする](#enable-remote-login-on-the-mac)」をご覧ください。
 > - 自動 Mac プロビジョニングで Xamarin.iOS をインストールするには、Mac に 3GB の空き容量が必要です。
@@ -185,6 +186,7 @@ Visual Studio 2017 が [Mac に接続している](#connect-to-the-mac-from-visu
 
 > [!IMPORTANT]
 > [Mac とペアリング] は、Mac 上の Xamarin.iOS をアルファ/ベータから安定にダウングレードすることはありません。 Visual Studio for Mac をインストールした場合は、[リリース チャネル](https://docs.microsoft.com/visualstudio/mac/update)を次のように設定します。
+>
 > - Visual Studio 2019 を使用している場合は、Visual Studio for Mac で **[安定]** 更新チャネルを選択します。
 > - Visual Studio 2019 Preview を使用している場合は、Visual Studio for Mac で **[アルファ]** 更新チャネルを選択します。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 43dce7fe6d2a4a976879b1f583711d767dcacc7c
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 8267c49302a755dcc433345b6a53aa9f2e2c71e6
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70756208"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71250174"
 ---
 # <a name="using-testflight-to-distribute-xamarinios-apps"></a>TestFlight を使用して Xamarin.iOS アプリを配布する
 
@@ -91,11 +91,13 @@ iTunes Connect レコードが作成されたら、新しいビルドをアッ�
 
 最初に、IDE で[最終的な配布可能アプリ](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)をビルドした後、アプリケーション ローダーまたは Xcode のアーカイブ機能を使って [Apple にアプリを送信](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)します。
 
+<!-- markdownlint-disable MD001 -->
+
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 ### <a name="create-an-archive"></a>アーカイブを作成する
 
- Visual Studio for Mac でバイナリをビルドするには、"_アーカイブ_" 機能を使う必要があります。 プロジェクトを右クリックし、**[発行のためのアーカイブ]** を選びます (下図参照)。
+ Visual Studio for Mac でバイナリをビルドするには、"_アーカイブ_" 機能を使う必要があります。 プロジェクトを右クリックし、 **[発行のためのアーカイブ]** を選びます (下図参照)。
 
  [![](testflight-images/new-archive.png "[発行のためのアーカイブ] を選択します")](testflight-images/new-archive.png#lightbox)
 
@@ -103,11 +105,11 @@ iTunes Connect レコードが作成されたら、新しいビルドをアッ�
 
 ### <a name="sign-and-distribute-your-app"></a>アプリに署名して配布する
 
- アーカイブを作成すると**アーカイブ ビュー**が自動的に開き、アーカイブされているすべてのプロジェクトがソリューション別にグループ化されて表示されます。 アプリに署名して配布の準備をするには、**[署名と配布...]** を選びます (下図参照)。
+ アーカイブを作成すると**アーカイブ ビュー**が自動的に開き、アーカイブされているすべてのプロジェクトがソリューション別にグループ化されて表示されます。 アプリに署名して配布の準備をするには、 **[署名と配布...]** を選びます (下図参照)。
 
 [![](testflight-images/archive-view.png "アーカイブを作成するとアーカイブ ビューが自動的に開きます")](testflight-images/archive-view.png#lightbox)
 
- これにより、発行ウィザードが開きます。 **[App Store]** 配布チャネルを選んでパッケージを作成し、アプリケーション ローダーを開きます。 [プロビジョニング プロファイル] 画面で、署名 ID とプロビジョニング プロファイルを選ぶか、別の ID で再署名します。 パッケージの詳細を確認し、**[発行]** をクリックして `.ipa` を保存します。
+ これにより、発行ウィザードが開きます。 **[App Store]** 配布チャネルを選んでパッケージを作成し、アプリケーション ローダーを開きます。 [プロビジョニング プロファイル] 画面で、署名 ID とプロビジョニング プロファイルを選ぶか、別の ID で再署名します。 パッケージの詳細を確認し、 **[発行]** をクリックして `.ipa` を保存します。
 
 [![](testflight-images/group.png "署名 ID とプロビジョニング プロファイルを選ぶか、別の ID で再署名します")](testflight-images/group.png#lightbox)
 
@@ -131,7 +133,7 @@ iTunes Connect レコードが作成されたら、新しいビルドをアッ�
 ### <a name="submitting-your-build"></a>ビルドを送信する
  Apple にアプリを送信するには、ビルド ホストに移動し、アプリケーション ローダー プログラムを使う必要があります。このプログラムは、Xcode の一部としてインストールされます。 アプリケーション ローダーへのアクセスの詳細については、Apple の「[Access Application Loader (アプリケーション ローダーにアクセスする)](http://help.apple.com/itc/apploader/#/apdATD1E927-D1E1A1303-D1E927A1126)」ガイドをご覧ください。
 
-開いたら、**[Deliver Your App]\(アプリの配信\)** オプションを選び、前に作成した zip または `.ipa` ファイルをアップロードします。 アプリケーション ローダーがビルドを検証して iTunes Connect にアップロードします。
+開いたら、 **[Deliver Your App]\(アプリの配信\)** オプションを選び、前に作成した zip または `.ipa` ファイルをアップロードします。 アプリケーション ローダーがビルドを検証して iTunes Connect にアップロードします。
 
  手順について詳しくは、「[Submitting your App to Apple](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)」(Apple へのアプリの送信) セクションをご覧ください。
 
@@ -171,7 +173,7 @@ TestFlight を使い始めるには、アプリの **[Prerelease]\(プレリリ�
 
 [![](testflight-images/turn-on-testing.png "[TestFlight Beta Testing] スイッチをオンにします")](testflight-images/turn-on-testing.png#lightbox)
 
-各ビルドは、[TestFlight Beta Testing]\(TestFlight ベータ テスト\) をオンにしてから **60 日**間アクティブになります。 各ビルドの残り日数は、**[Test Information]\(テスト情報\)** ページで確認できます。
+各ビルドは、[TestFlight Beta Testing]\(TestFlight ベータ テスト\) をオンにしてから **60 日**間アクティブになります。 各ビルドの残り日数は、 **[Test Information]\(テスト情報\)** ページで確認できます。
 
 [![](testflight-images/daysleft.png "テスト情報ページ")](testflight-images/daysleft.png#lightbox)
 
@@ -191,11 +193,11 @@ TestFlight を使い始めるには、アプリの **[Prerelease]\(プレリリ�
 
 [![](testflight-images/users-and-roles.png "iTunes Connect メイン画面の [Users and Roles]\(ユーザーとロール\)")](testflight-images/users-and-roles.png#lightbox)
 
-既存の iTunes Connect ユーザーが一覧に表示されます。 ユーザーを選ぶには、名前をクリックし、**[Internal Tester]\(内部テスト担当者\)** スイッチをオンにして、**[Save]\(保存\)** をクリックします。
+既存の iTunes Connect ユーザーが一覧に表示されます。 ユーザーを選ぶには、名前をクリックし、 **[Internal Tester]\(内部テスト担当者\)** スイッチをオンにして、 **[Save]\(保存\)** をクリックします。
 
 [![](testflight-images/internal-tester.png "[Internal Tester] \(内部テスト担当者\) スイッチをオンにします")](testflight-images/internal-tester.png#lightbox)
 
-一覧にないユーザーを追加するには、*[Users]\(ユーザー\)* の横の **[+]** を選び、名、姓、メール アドレスを指定してアカウントを作成します。 アカウントをアクティブ化するには、ユーザーがメールを確認する必要があります。
+一覧にないユーザーを追加するには、 *[Users]\(ユーザー\)* の横の **[+]** を選び、名、姓、メール アドレスを指定してアカウントを作成します。 アカウントをアクティブ化するには、ユーザーがメールを確認する必要があります。
 
 [![](testflight-images/add-new-user.png "ユーザーの追加")](testflight-images/add-new-user.png#lightbox)
 
@@ -223,7 +225,7 @@ TestFlight を使い始めるには、アプリの **[Prerelease]\(プレリリ�
 
 [![](testflight-images/add-external.png "テスターを招待します")](testflight-images/add-external.png#lightbox)
 
-外部テスト担当者の数が多い場合は、**[Import File]\(ファイルのインポート\)** リンクを使い、次のような形式の行を含む `CSV` ファイルをインポートできます。
+外部テスト担当者の数が多い場合は、 **[Import File]\(ファイルのインポート\)** リンクを使い、次のような形式の行を含む `CSV` ファイルをインポートできます。
 
 ``` 
 first name, last name, email address
@@ -231,13 +233,13 @@ first name, last name, email address
 
 また、外部テスト担当者を異なるグループに追加して、テスト担当者を整理することもできます。
 
-外部テスト担当者の詳細を入力した後、**[Add]\(追加\)** をクリックして、招待に対するユーザーの同意があることを確認します。
+外部テスト担当者の詳細を入力した後、 **[Add]\(追加\)** をクリックして、招待に対するユーザーの同意があることを確認します。
 
 [![](testflight-images/confirm-consent.png "招待に対するユーザーの同意があることを確認します")](testflight-images/confirm-consent.png#lightbox)
 
-ベータ アプリ レビューが正常に行われた後でのみ、外部テスト担当者に招待を送信できます。 この時点で、ビルド ページの **[External]\(外部\)** の下のテキストが、**[Send Invites]\(招待の送信\)** に変わります。 これをクリックして、既に追加しているすべてのテスト担当者に招待を送信します。
+ベータ アプリ レビューが正常に行われた後でのみ、外部テスト担当者に招待を送信できます。 この時点で、ビルド ページの **[External]\(外部\)** の下のテキストが、 **[Send Invites]\(招待の送信\)** に変わります。 これをクリックして、既に追加しているすべてのテスト担当者に招待を送信します。
 
-アプリが却下された場合は、**[Resolution Center]\(解決センター\)** で示されている問題を修正し、更新されたバイナリ全体をレビューのために再送信する必要があります。
+アプリが却下された場合は、 **[Resolution Center]\(解決センター\)** で示されている問題を修正し、更新されたバイナリ全体をレビューのために再送信する必要があります。
 
 ## <a name="as-a-beta-tester"></a>ベータ テスト担当者として
 
