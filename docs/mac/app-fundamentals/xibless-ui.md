@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
 ms.openlocfilehash: bcc176f8d3eb97751e6957039c2a14ed02aad653
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70770158"
 ---
 # <a name="storyboardxib-less-user-interface-design-in-xamarinmac"></a>. xib のユーザーインターフェイスの設計 (Xamarin. Mac)
@@ -20,7 +20,7 @@ _この記事では、storyboard ファイル、xib ファイル、または Int
 
 ## <a name="overview"></a>概要
 
-同じユーザー インターフェイス要素にアクセスし、ツールで作業する開発者 Xamarin.Mac アプリケーションでは、C# と .NET で作業するとき*Objective-C*と*Xcode*はします。 通常、Xamarin. Mac アプリケーションを作成するときは、Xcode の Interface Builder を使用して、アプリケーションのユーザーインターフェイスを作成して維持するために、storyboard または xib ファイルを使用します。
+同じユーザー インターフェイス要素にアクセスし、ツールで作業する開発者 Xamarin.Mac アプリケーションでは、c# と .NET で作業するとき*Objective-C*と*Xcode*はします。 通常、Xamarin. Mac アプリケーションを作成するときは、Xcode の Interface Builder を使用して、アプリケーションのユーザーインターフェイスを作成して維持するために、storyboard または xib ファイルを使用します。
 
 また、Xamarin. Mac アプリケーションの UI の一部またはすべてをコード内でC#直接作成することもできます。 この記事では、コードでC#ユーザーインターフェイスと UI 要素を作成するための基本について説明します。
 
@@ -294,7 +294,7 @@ mainWindowController.Window.MakeKeyAndOrderFront (this);
 
 ## <a name="adding-a-ui-element-to-a-window-in-code"></a>コード内のウィンドウに UI 要素を追加する
 
-ウィンドウがコードで作成されたか、または storyboard または xib ファイルから読み込まれたかにかかわらず、コードからウィンドウに UI 要素を追加することが必要になる場合があります。 例:
+ウィンドウがコードで作成されたか、または storyboard または xib ファイルから読み込まれたかにかかわらず、コードからウィンドウに UI 要素を追加することが必要になる場合があります。 次に例を示します。
 
 ```csharp
 var ClickMeButton = new NSButton (new CGRect (10, 10, 100, 30)){
