@@ -8,17 +8,17 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
 ms.openlocfilehash: f1a3e8bb8959588e64339f70268370440f356be9
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/02/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "68738973"
 ---
 # <a name="xamarinforms-collectionview-selection"></a>Xamarin CollectionView の選択
 
-![](~/media/shared/preview.png "この API は、現在プレリリースです")
+![](~/media/shared/preview.png "この API は現在プレリリースです")
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView)項目の選択を制御する次のプロパティを定義します。
 
@@ -55,7 +55,7 @@ ms.locfileid: "68738973"
 </CollectionView>
 ```
 
-同等のコードをC#で示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CollectionView collectionView = new CollectionView
@@ -82,7 +82,7 @@ void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e
 
 次のスクリーンショットは、 [`CollectionView`](xref:Xamarin.Forms.CollectionView)での単一項目の選択を示しています。
 
-1つの選択を使用した[ ![CollectionView 縦の一覧のスクリーンショット (](selection-images/single-selection.png "1 つの選択を使用した")iOS および Android CollectionView の縦の一覧)](selection-images/single-selection-large.png#lightbox "1 つの選択項目を含む CollectionView 縦の一覧")
+[![IOS と Android での単一選択による CollectionView 縦の一覧のスクリーンショット](selection-images/single-selection.png "1 つの選択項目を含む CollectionView 縦の一覧")](selection-images/single-selection-large.png#lightbox "1つの選択項目を含む CollectionView 縦の一覧")
 
 ## <a name="multiple-selection"></a>複数選択
 
@@ -98,7 +98,7 @@ void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e
 </CollectionView>
 ```
 
-同等のコードをC#で示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CollectionView collectionView = new CollectionView
@@ -125,7 +125,7 @@ void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e
 
 次のスクリーンショットは、 [`CollectionView`](xref:Xamarin.Forms.CollectionView)での複数の項目の選択を示しています。
 
-複数の選択がある[ ![CollectionView 縦の一覧のスクリーンショット (IOS と Android の](selection-images/multiple-selection.png "CollectionView 縦の一覧と複数選択"))](selection-images/multiple-selection-large.png#lightbox "複数選択を含む CollectionView の一覧")
+[![IOS と Android での複数選択がある CollectionView 縦の一覧のスクリーンショット](selection-images/multiple-selection.png "複数選択を含む CollectionView の一覧")](selection-images/multiple-selection-large.png#lightbox "複数選択を含む CollectionView の一覧")
 
 ## <a name="single-pre-selection"></a>1つの事前選択
 
@@ -139,7 +139,7 @@ void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e
 </CollectionView>
 ```
 
-同等のコードをC#で示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CollectionView collectionView = new CollectionView
@@ -188,7 +188,7 @@ public class MonkeysViewModel : INotifyPropertyChanged
 
 そのため、が[`CollectionView`](xref:Xamarin.Forms.CollectionView)表示されたら、一覧の4番目の項目が事前に選択されています。
 
-1つの事前選択が設定された[ ![、IOS および Android の CollectionView 縦の一覧の CollectionView 縦の一覧のスクリーンショット](selection-images/single-pre-selection.png "") ](selection-images/single-pre-selection-large.png#lightbox "1 つの事前選択を含む CollectionView 縦の一覧")
+[![IOS と Android での1つの事前選択を含む CollectionView の一覧のスクリーンショット](selection-images/single-pre-selection.png "1 つの事前選択を含む CollectionView 縦の一覧")](selection-images/single-pre-selection-large.png#lightbox "1つの事前選択を含む CollectionView 縦の一覧")
 
 ## <a name="multiple-pre-selection"></a>複数の事前選択
 
@@ -203,7 +203,7 @@ public class MonkeysViewModel : INotifyPropertyChanged
 </CollectionView>
 ```
 
-同等のコードをC#で示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CollectionView collectionView = new CollectionView
@@ -256,7 +256,7 @@ namespace CollectionViewDemos.ViewModels
 
 したがって、が[`CollectionView`](xref:Xamarin.Forms.CollectionView)表示された場合、一覧の2番目、4番目、および5番目の項目が事前に選択されています。
 
-複数の事前選択が設定された[ ![CollectionView の一覧のスクリーンショット (IOS と Android の](selection-images/multiple-pre-selection.png "CollectionView 縦の一覧と複数の事前選択を含む"))](selection-images/multiple-pre-selection-large.png#lightbox "複数の事前選択を含む CollectionView 縦の一覧")
+[![IOS と Android での複数の事前選択を含む CollectionView の一覧のスクリーンショット](selection-images/multiple-pre-selection.png "複数の事前選択を含む CollectionView 縦の一覧")](selection-images/multiple-pre-selection-large.png#lightbox "複数の事前選択を含む CollectionView 縦の一覧")
 
 ## <a name="clearing-selections"></a>選択のクリア
 
@@ -305,7 +305,7 @@ namespace CollectionViewDemos.ViewModels
 
 この例では、 [`Style.TargetType`](xref:Xamarin.Forms.Style.TargetType)の[`ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate)ルート[`Grid`](xref:Xamarin.Forms.Grid)要素がで`Grid`あるため、プロパティ値はに設定されています。 [`CollectionView`](xref:Xamarin.Forms.CollectionView) [`BackgroundColor`](xref:Xamarin.Forms.VisualElement.BackgroundColor) `LightSkyBlue`の項目が選択されている場合、項目のは次のように設定されることを[指定します。`VisualState`](xref:Xamarin.Forms.VisualState) `Selected`
 
-カスタム単一選択色が設定された、 [ ![IOS および Android の CollectionView 縦の一覧の CollectionView 縦の一覧のスクリーンショット](selection-images/single-selection-color.png "") ](selection-images/single-selection-color-large.png#lightbox "カスタムの単一選択の色を持つ CollectionView 縦の一覧")
+[![IOS と Android でのカスタム単一選択の色を使用した CollectionView 縦の一覧のスクリーンショット](selection-images/single-selection-color.png "カスタムの単一選択の色を持つ CollectionView 縦の一覧")](selection-images/single-selection-color-large.png#lightbox "カスタムの単一選択の色を持つ CollectionView 縦の一覧")
 
 表示状態の詳細については、「 [Xamarin. Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md)」を参照してください。
 
@@ -318,7 +318,7 @@ namespace CollectionViewDemos.ViewModels
                 SelectionMode="None" />
 ```
 
-同等のコードをC#で示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CollectionView collectionView = new CollectionView

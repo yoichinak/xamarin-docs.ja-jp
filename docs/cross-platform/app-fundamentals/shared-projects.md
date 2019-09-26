@@ -1,16 +1,16 @@
 ---
 title: 共有プロジェクトを使用してコードを共有する
-description: 共有プロジェクトを使用すると、さまざまなアプリケーションプロジェクトによって参照される共通のコードを記述できます。 コードは、参照している各プロジェクトの一部としてコンパイルされ、プラットフォーム固有の機能を共有コードベースに組み込むのに役立つコンパイラディレクティブを含めることができます。
+description: 共有プロジェクトを使用すると、さまざまなアプリケーションプロジェクトによって参照される共通のコードを記述できます。 コードは、参照している各プロジェクトの一部としてコンパイルされ、プラットフォーム固有の機能を共有コード ベースに組み込むのに役立つコンパイラ ディレクティブを含めることができます。
 ms.prod: xamarin
 ms.assetid: 191c71fb-44a4-4e6c-af4b-7b1107dce6af
 author: conceptdev
 ms.author: crdun
 ms.date: 07/18/2018
 ms.openlocfilehash: ed58b0810d3c4fd3a3dd99cddd16227f9ac30273
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/02/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "68739062"
 ---
 # <a name="shared-projects-code-sharing"></a>共有プロジェクトコード共有

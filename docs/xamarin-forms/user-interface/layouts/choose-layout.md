@@ -8,21 +8,21 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/21/2018
 ms.openlocfilehash: 161da8948f356fef997a411855598bc99d2f49b7
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "69893999"
 ---
 # <a name="choose-a-xamarinforms-layout"></a>Xamarin. フォームレイアウトを選択する
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
 
 Xamarin. Forms layout クラスを使用すると、アプリケーションで UI コントロールを配置してグループ化できます。 レイアウトクラスを選択するには、レイアウトが子要素を配置する方法と、レイアウトがその子要素をどのようにサイズ調整するかについての知識が必要です。 また、レイアウトを入れ子にして目的のレイアウトを作成することが必要になる場合もあります。
 
 次の図は、メインの Xamarin. フォームレイアウトクラスで実現できる典型的なレイアウトを示しています。
 
-[Xamarin. forms(images/layouts.png "layout クラス")の![メインレイアウトクラス]](images/layouts-large.png#lightbox "Xamarin. フォームレイアウトクラス")
+[![Xamarin. Forms のメインレイアウトクラス](images/layouts.png "Xamarin. フォームレイアウトクラス")](images/layouts-large.png#lightbox "Xamarin. フォームレイアウトクラス")
 
 ## <a name="stacklayout"></a>StackLayout
 

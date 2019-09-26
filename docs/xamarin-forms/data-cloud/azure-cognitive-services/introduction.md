@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
 ms.openlocfilehash: 52774b387644b14e3d4612dffa6d3c3b28a37f25
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "68652313"
 ---
 # <a name="xamarinforms-and-azure-cognitive-services-introduction"></a>Xamarin. Forms と Azure Cognitive Services の概要
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 
 _Microsoft Cognitive Services では、Api、Sdk、および開発者は、顔認識、音声認識、および言語の理解などの機能を追加することで、アプリケーションをよりインテリジェントに利用可能なサービスのセットです。この記事では、いくつかの Microsoft Cognitive Service Api を呼び出す方法を示すサンプル アプリケーションを紹介します。_
 
@@ -64,7 +64,7 @@ _Microsoft Cognitive Services では、Api、Sdk、および開発者は、顔�
 
 共有コードプロジェクトには、いくつかの重要なファイルも含まれています。
 
-|File|目的|
+|ファイル|目的|
 |--- |--- |
 |Constants.cs|`Constants`クラスは、呼び出される Microsoft Cognitive Service Api の API キーとエンドポイントを指定します。 API キーの定数は、さまざまな Cognitive Service Api にアクセスする更新が必要です。|
 |App.xaml.cs|`App`クラスは、各プラットフォームでアプリケーションによって表示される両方の最初のページをインスタンス化を担当し、`TodoManager`データベース操作の呼び出しに使用されるクラスです。|

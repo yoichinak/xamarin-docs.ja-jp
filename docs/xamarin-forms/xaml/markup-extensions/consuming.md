@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2019
 ms.openlocfilehash: 03aaf471479a5113aade6bd3f34034afadfb538c
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "69887904"
 ---
 # <a name="consuming-xaml-markup-extensions"></a>XAML マークアップ拡張機能の使用
@@ -143,7 +143,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 
 サンプルの実行を次に示します。
 
-[![X:static デモ](consuming-images/staticdemo-small.png "X:static デモ")](consuming-images/staticdemo-large.png#lightbox "X:static デモ")
+[![X:Static デモ](consuming-images/staticdemo-small.png "X:Static デモ")](consuming-images/staticdemo-large.png#lightbox "x:Static デモ")
 
 <a name="reference" />
 
@@ -187,13 +187,13 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 
 両方`x:Reference`式の短縮形を使用して、`ReferenceExtension`クラス名と、削除、`Name=`式の一部です。 最初の例では、`x:Reference`にマークアップ拡張機能が埋め込まれた、`Binding`マークアップ拡張機能。 なお、`Source`と`StringFormat`設定は、コンマで区切られます。 実行中のプログラムを次に示します。
 
-[![X:reference デモ](consuming-images/referencedemo-small.png "X:reference デモ")](consuming-images/referencedemo-large.png#lightbox "X:reference デモ")
+[![x:Reference のデモ](consuming-images/referencedemo-small.png "x:Reference のデモ")](consuming-images/referencedemo-large.png#lightbox "x:Reference のデモ")
 
 <a name="type" />
 
 ## <a name="xtype-markup-extension"></a>x:Type マークアップ拡張機能
 
-`x:Type`マークアップ拡張機能は、XAML と同等の C# [ `typeof` ](/dotnet/csharp/language-reference/keywords/typeof/)キーワード。 サポートされている、 [ `TypeExtension` ](xref:Xamarin.Forms.Xaml.TypeExtension)という名前の 1 つのプロパティを定義するクラスを[ `TypeName` ](xref:Xamarin.Forms.Xaml.TypeExtension.TypeName)型の`string`クラスまたは構造体の名前に設定されています。 `x:Type`マークアップ拡張機能を返します、 [ `System.Type` ](xref:System.Type)そのクラスまたは構造体のオブジェクト。 `TypeName` コンテンツ プロパティ`TypeExtension`ため、`TypeName=`必要でない場合に`x:Type`中かっこが表示されます。
+`x:Type`マークアップ拡張機能は、XAML と同等の c# [ `typeof` ](/dotnet/csharp/language-reference/keywords/typeof/)キーワード。 サポートされている、 [ `TypeExtension` ](xref:Xamarin.Forms.Xaml.TypeExtension)という名前の 1 つのプロパティを定義するクラスを[ `TypeName` ](xref:Xamarin.Forms.Xaml.TypeExtension.TypeName)型の`string`クラスまたは構造体の名前に設定されています。 `x:Type`マークアップ拡張機能を返します、 [ `System.Type` ](xref:System.Type)そのクラスまたは構造体のオブジェクト。 `TypeName` コンテンツ プロパティ`TypeExtension`ため、`TypeName=`必要でない場合に`x:Type`中かっこが表示されます。
 
 Xamarin.Forms 内では、いくつかのプロパティ型の引数を持つ`Type`します。 例としては、 [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)プロパティの`Style`、および[X:typearguments](~/xamarin-forms/xaml/passing-arguments.md#generic_type_arguments)属性をジェネリック クラスの引数を指定するために使用します。 ただし、XAML パーサーの実行、`typeof`操作自動的には、および`x:Type`マークアップ拡張機能は、このような場合は使用されません。
 
@@ -242,7 +242,7 @@ Xamarin.Forms 内では、いくつかのプロパティ型の引数を持つ`Ty
 
 先頭のメイン ページを次に示します**マークアップ拡張機能**:
 
-[![メイン ページ](consuming-images/mainpage-small.png "メイン ページ")](consuming-images/mainpage-large.png#lightbox "メイン ページ")
+[![メインページ](consuming-images/mainpage-small.png "メインページ")](consuming-images/mainpage-large.png#lightbox "メインページ")
 
 各`CommandParameter`プロパティに設定されて、`x:Type`いずれかの他のページを参照するマークアップ拡張機能。 `Command`プロパティという名前のプロパティにバインドする`NavigateCommand`します。 このプロパティが定義されている、`MainPage`分離コード ファイル。
 
@@ -266,7 +266,7 @@ public partial class MainPage : ContentPage
 }
 ```
 
-`NavigateCommand`プロパティは、`Command`型の引数と execute コマンドを実装するオブジェクト`Type`&mdash;の値`CommandParameter`します。 メソッドを使用して`Activator.CreateInstance`ページをインスタンス化するに移動するとします。 コンストラクターは、最後に設定して、`BindingContext`これにより、ページ自体への`Binding`で`Command`させる。 参照してください、 [**データ バインディングの**](~/xamarin-forms/app-fundamentals/data-binding/index.md)記事と、特に[ **Commanding** ](~/xamarin-forms/app-fundamentals/data-binding/commanding.md)この種のコードの詳細については資料。
+`NavigateCommand`プロパティは、`Command`型の引数と execute コマンドを実装するオブジェクト`Type`&mdash;の値`CommandParameter`します。 メソッドを使用して`Activator.CreateInstance`ページをインスタンス化するに移動するとします。 コンス トラクターは、最後に設定して、`BindingContext`これにより、ページ自体への`Binding`で`Command`させる。 参照してください、 [**データ バインディングの**](~/xamarin-forms/app-fundamentals/data-binding/index.md)記事と、特に[ **Commanding** ](~/xamarin-forms/app-fundamentals/data-binding/commanding.md)この種のコードの詳細については資料。
 
 **X:type デモ**ページに追加して Xamarin.Forms の要素をインスタンス化する同様の手法を使用して、`StackLayout`します。 XAML ファイルには、3 つの最初に`Button`を持つ要素が`Command`プロパティに設定、`Binding`と`CommandParameter`プロパティが 3 つの Xamarin.Forms のビューの種類に設定。
 
@@ -325,7 +325,7 @@ public partial class TypeDemoPage : ContentPage
 
 メソッドはときに実行を`Button`が押された引数の新しいインスタンスを作成、設定、`VerticalOptions`プロパティに追加します、`StackLayout`します。 3 つ`Button`し、要素は動的に作成されたビューと、ページを共有します。
 
-[![X:type デモ](consuming-images/typedemo-small.png "X:type デモ")](consuming-images/typedemo-large.png#lightbox "X:type のデモ")
+[![x:Type のデモ](consuming-images/typedemo-small.png "x:Type のデモ")](consuming-images/typedemo-large.png#lightbox "x:Type のデモ")
 
 <a name="array" />
 
@@ -382,7 +382,7 @@ public partial class TypeDemoPage : ContentPage
 
 `ViewCell` 、単純な作成`BoxView`色エントリごとに。
 
-[![X:array デモ](consuming-images/arraydemo-small.png "X:array デモ")](consuming-images/arraydemo-large.png#lightbox "X:array のデモ")
+[![x:Array のデモ](consuming-images/arraydemo-small.png "x:Array のデモ")](consuming-images/arraydemo-large.png#lightbox "x:Array のデモ")
 
 個人を指定するいくつかの方法がある`Color`この配列内の項目。 使用することができます、`x:Static`マークアップ拡張機能。
 
@@ -402,13 +402,13 @@ public partial class TypeDemoPage : ContentPage
 <local:HslColor H="0.5" S="1.0" L="0.5" />
 ```
 
-文字列や数値などの一般的な型の配列を定義するときに、記載タグを使用して、 [**コンストラクターの引数を渡す**](~/xamarin-forms/xaml/passing-arguments.md#constructor_arguments)値を区切るための記事。
+文字列や数値などの一般的な型の配列を定義するときに、記載タグを使用して、 [**コンス トラクターの引数を渡す**](~/xamarin-forms/xaml/passing-arguments.md#constructor_arguments)値を区切るための記事。
 
 <a name="null" />
 
 ## <a name="xnull-markup-extension"></a>x:Null のマークアップ拡張機能
 
-`x:Null`によってマークアップ拡張機能がサポートされている、 [ `NullExtension` ](xref:Xamarin.Forms.Xaml.NullExtension)クラス。 プロパティは持たず、C# の XAML と同じだけ[ `null` ](/dotnet/csharp/language-reference/keywords/null/)キーワード。
+`x:Null`によってマークアップ拡張機能がサポートされている、 [ `NullExtension` ](xref:Xamarin.Forms.Xaml.NullExtension)クラス。 プロパティは持たず、c# の XAML と同じだけ[ `null` ](/dotnet/csharp/language-reference/keywords/null/)キーワード。
 
 `x:Null`ことの必要性が見つかった場合は、ある場合が存在する、よかったが、マークアップ拡張機能をほとんど必要し、めったに使用します。
 
@@ -455,7 +455,7 @@ public partial class TypeDemoPage : ContentPage
 
 実行中のプログラムを次に示します。
 
-[![X:null デモ](consuming-images/nulldemo-small.png "X:null デモ")](consuming-images/nulldemo-large.png#lightbox "X:null デモ")
+[![x:Null のデモ](consuming-images/nulldemo-small.png "x:Null のデモ")](consuming-images/nulldemo-large.png#lightbox "x:Null のデモ")
 
 その 4 つの通知、`Label`要素中心がセリフ フォントのある`Label`が既定の sans-serif フォント。
 
@@ -499,7 +499,7 @@ public partial class TypeDemoPage : ContentPage
 
 実行中のプログラムを次に示します。
 
-[![OnPlatform デモ](consuming-images/onplatformdemo-small.png "OnPlatform デモ")](consuming-images/onplatformdemo-large.png#lightbox "OnPlatform デモ")
+[![Onplatform デモ](consuming-images/onplatformdemo-small.png "Onplatform デモ")](consuming-images/onplatformdemo-large.png#lightbox "OnPlatform デモ")
 
 <a name="onidiom" />
 
@@ -537,7 +537,7 @@ public partial class TypeDemoPage : ContentPage
 
 実行中のプログラムを次に示します。
 
-[![OnIdiom デモ](consuming-images/onidiomdemo-small.png "OnIdiom デモ")](consuming-images/onidiomdemo-large.png#lightbox "OnIdiom デモ")
+[![Onidiom のデモ](consuming-images/onidiomdemo-small.png "Onidiom のデモ")](consuming-images/onidiomdemo-large.png#lightbox "OnIdiom のデモ")
 
 ## <a name="datatemplate-markup-extension"></a>System.windows.datatemplate> のマークアップ拡張機能
 
@@ -585,7 +585,7 @@ public partial class TypeDemoPage : ContentPage
 
 実行中のプログラムを次に示します。
 
-[ ![FontImage markup Extension](consuming-images/fontimagedemo.png "FontImage Demo")のスクリーンショット](consuming-images/fontimagedemo-large.png#lightbox "FontImage のデモ")
+[![FontImage マークアップ拡張機能のスクリーンショット](consuming-images/fontimagedemo.png "FontImage のデモ")](consuming-images/fontimagedemo-large.png#lightbox "FontImage のデモ")
 
 `FontImageSource`オブジェクトのフォントアイコンデータを指定してフォントアイコンを表示する方法の詳細については、「フォントアイコンの[表示](~/xamarin-forms/user-interface/text/fonts.md#display-font-icons)」を参照してください。
 

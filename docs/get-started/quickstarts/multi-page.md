@@ -10,15 +10,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 04/01/2019
 ms.openlocfilehash: 9ce02b4c6412eab1f4b1003b262573c59940286c
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "68653793"
 ---
 # <a name="perform-navigation-in-a-multi-page-xamarinforms-application"></a>複数ページの Xamarin.Forms アプリケーションでナビゲーションを実行する
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-multipage/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-multipage/)
 
 このクイックスタートでは、次の方法について説明します。
 
@@ -28,8 +28,8 @@ ms.locfileid: "68653793"
 
 このクイックスタートでは、1つのノートを複数ページアプリケーションに格納できる単一ページクロスプラットフォーム Xamarin.Forms アプリケーションを、複数のメモを格納できるようにする方法について説明します。 最終的なアプリケーションは、次のとおりです。
 
-[メモ] ページ[ ![(multi-page-images/screenshots1-sml.png " ")]][(multi-page-images/screenshots1.png#lightbox "メモ] ページ")メモ入力ページの(multi-page-images/screenshots2.png#lightbox "メモ入力ページ") [ ![(multi-page-images/screenshots2-sml.png " ")]] 
-
+[![](multi-page-images/screenshots1-sml.png "メモ")](multi-page-images/screenshots1.png#lightbox "[メモ] ページ")ページ
+[(multi-page-images/screenshots2-sml.png "メモの入力")ページ![]](multi-page-images/screenshots2.png#lightbox "メモの入力ページ")
 
 ### <a name="prerequisites"></a>必須コンポーネント
 
@@ -81,7 +81,7 @@ ms.locfileid: "68653793"
 
     **CTRL + S**キーを押して**Note.cs**への変更内容を保存し、ファイルを閉じます。
 
-7. **ソリューションエクスプローラー**で、**メモ**プロジェクトを右クリックし、 **[> 新しい項目の追加]** を選択します。 **[新しい項目の追加]** ダイアログで、[**ビジュアルC#項目 > Xamarin.Forms> コンテンツ] ページ**を選択し、新しいファイルに**NoteEntryPage**という名前を指定して、 **[追加]** ボタンをクリックします。
+7. **ソリューションエクスプローラー**で、**メモ**プロジェクトを右クリックし、 **[> 新しい項目の追加]** を選択します。 **[新しい項目の追加]** ダイアログで、[**ビジュアルC#項目 > Xamarin. Forms > コンテンツ] ページ**を選択し、新しいファイルに**NoteEntryPage**という名前を指定して、 **[追加]** ボタンをクリックします。
 
     ![](multi-page-images/vs/add-note-entry-page.png "Xamarin.Forms ContentPage の追加")
 
@@ -169,14 +169,14 @@ ms.locfileid: "68653793"
       }
       ```
 
-      このコードは、 `Note`ページ[`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)の内に1つのノートを表すインスタンスを格納します。 `Editor` **保存** [`Button`](xref:Xamarin.Forms.Button)を押す`OnSaveButtonClicked`と、イベントハンドラーが実行されます。これにより、の内容がランダムに生成されたファイル名を持つ新しいファイルに保存されるか、またはメモが更新されている場合は既存のファイルに保存されます。 どちらの場合も、ファイルはアプリケーションのローカルアプリケーションデータフォルダーに格納されます。 次に、メソッドは前のページに戻ります。 **削除** `Button`が押さ`OnDeleteButtonClicked`れると、イベントハンドラーが実行されます。これにより、ファイルが存在する場合は削除され、前のページに戻ります。 ナビゲーションの詳細については、「 [Xamarin のクイックスタート](deepdive.md)の[ナビゲーション](deepdive.md#navigation)」を参照してください。
+      このコードは、 `Note`ページ[`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)の内に1つのノートを表すインスタンスを格納します。 `Editor` [保存`Button`](xref:Xamarin.Forms.Button)を押す`OnSaveButtonClicked`と、イベントハンドラーが実行されます。これにより、の内容がランダムに生成されたファイル名を持つ新しいファイルに保存されるか、またはメモが更新されている場合は既存のファイルに保存されます。 どちらの場合も、ファイルはアプリケーションのローカルアプリケーションデータフォルダーに格納されます。 次に、メソッドは前のページに戻ります。 削除`Button`が押さ`OnDeleteButtonClicked`れると、イベントハンドラーが実行されます。これにより、ファイルが存在する場合は削除され、前のページに戻ります。 ナビゲーションの詳細については、「 [Xamarin のクイックスタート](deepdive.md)の[ナビゲーション](deepdive.md#navigation)」を参照してください。
 
       **CTRL + S**キーを押して**NoteEntryPage.xaml.cs**への変更内容を保存し、ファイルを閉じます。
 
       > [!WARNING]
       > この時点でアプリケーションをビルドしようとすると、後続の手順で修正されるエラーが発生します。
 
-10. **ソリューションエクスプローラー**で、**メモ**プロジェクトを右クリックし、 **[> 新しい項目の追加]** を選択します。 **[新しい項目の追加]** ダイアログで、[**ビジュアルC#項目 > Xamarin.Forms > コンテンツ] ページ**を選択し、新しいファイルに「**ノート**」という名前を指定して、 **[追加]** ボタンをクリックします。
+10. **ソリューションエクスプローラー**で、**メモ**プロジェクトを右クリックし、 **[> 新しい項目の追加]** を選択します。 **[新しい項目の追加]** ダイアログで、[**ビジュアルC#項目 > Xamarin. Forms > コンテンツ] ページ**を選択し、新しいファイルに「**ノート**」という名前を指定して、 **[追加]** ボタンをクリックします。
 
       これにより、プロジェクトのルートフォルダーに [**ノート] ページ**という名前のページが追加されます。 このページは、アプリケーションのルートページになります。
 
@@ -452,7 +452,7 @@ ms.locfileid: "68653793"
       }
       ```
 
-      このコードは、 `Note`ページ[`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)の内に1つのノートを表すインスタンスを格納します。 `Editor` **保存** [`Button`](xref:Xamarin.Forms.Button)を押す`OnSaveButtonClicked`と、イベントハンドラーが実行されます。これにより、の内容がランダムに生成されたファイル名を持つ新しいファイルに保存されるか、またはメモが更新されている場合は既存のファイルに保存されます。 どちらの場合も、ファイルはアプリケーションのローカルアプリケーションデータフォルダーに格納されます。 次に、メソッドは前のページに戻ります。 **削除** `Button`が押さ`OnDeleteButtonClicked`れると、イベントハンドラーが実行されます。これにより、ファイルが存在する場合は削除され、前のページに戻ります。 ナビゲーションの詳細については、「 [Xamarin のクイックスタート](deepdive.md)の[ナビゲーション](deepdive.md#navigation)」を参照してください。
+      このコードは、 `Note`ページ[`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)の内に1つのノートを表すインスタンスを格納します。 `Editor` [保存`Button`](xref:Xamarin.Forms.Button)を押す`OnSaveButtonClicked`と、イベントハンドラーが実行されます。これにより、の内容がランダムに生成されたファイル名を持つ新しいファイルに保存されるか、またはメモが更新されている場合は既存のファイルに保存されます。 どちらの場合も、ファイルはアプリケーションのローカルアプリケーションデータフォルダーに格納されます。 次に、メソッドは前のページに戻ります。 削除`Button`が押さ`OnDeleteButtonClicked`れると、イベントハンドラーが実行されます。これにより、ファイルが存在する場合は削除され、前のページに戻ります。 ナビゲーションの詳細については、「 [Xamarin のクイックスタート](deepdive.md)の[ナビゲーション](deepdive.md#navigation)」を参照してください。
 
       **[ファイル > 保存]** を選択し (または **&#8984; + S**キーを押して)、 **NoteEntryPage.xaml.cs**への変更内容を保存してから、ファイルを閉じます。
 

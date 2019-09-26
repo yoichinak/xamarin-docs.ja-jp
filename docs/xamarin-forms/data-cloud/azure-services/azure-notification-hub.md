@@ -8,10 +8,10 @@ author: profexorgeek
 ms.author: jusjohns
 ms.date: 05/23/2019
 ms.openlocfilehash: c4237e9315ccc095abc72fdec24d58ffe1faebdf
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/02/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "68739227"
 ---
 # <a name="send-and-receive-push-notifications-with-azure-notification-hubs-and-xamarinforms"></a>Azure Notification Hubs と Xamarin. Forms を使用してプッシュ通知を送信および受信する
@@ -125,7 +125,7 @@ public static class AppConstants
 
 通知を受信して処理するように Android アプリケーションを構成するには、次の手順を実行します。
 
-1. パッケージ名を 、焼討 base コンソールのパッケージ名と一致するように構成します。
+1. パッケージ名を、焼討 Base コンソールのパッケージ名と一致**するように**構成します。
 1. 次の NuGet パッケージをインストールして、Google Play、焼討ベース、Azure Notification Hubs と対話します。
     1. GooglePlayServices。
     1. Xamarin. Messaging。

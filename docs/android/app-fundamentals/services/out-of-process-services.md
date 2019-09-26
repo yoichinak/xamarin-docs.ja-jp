@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
 ms.openlocfilehash: 5429f260399602b7ef15e8263bc74cb8ae940f4f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70754882"
 ---
 # <a name="running-android-services-in-remote-processes"></a>リモートプロセスでの Android サービスの実行
@@ -58,7 +58,7 @@ _一般に、Android アプリケーションのすべてのコンポーネン�
 > [!IMPORTANT]
 > `IsolatedProcess` [Bugzilla 51940/GitHub 1950-分離プロセスおよびカスタムアプリケーションクラスを使用したサービスは、オーバーロードを正しく解決でき](https://github.com/xamarin/xamarin-android/issues/1950)ません。がに`true`設定されている場合、Xamarin. Android サービスが正しく起動しないことを報告します。 このガイドは、リファレンスのために用意されています。 Xamarin Android アプリケーションは、Java で記述されたアウトプロセスサービスと引き続き通信できなければなりません。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 このガイドは、サービスの作成に関する知識を前提としています。
 
@@ -471,7 +471,7 @@ Service apk でアクセス許可を作成するには`permission` 、要素を*
 
 [![アプリケーションに付与されたアクセス許可を検索する方法を示す、Android デバイスのスクリーンショット](out-of-process-services-images/ipc-06-sml.png)](out-of-process-services-images/ipc-06.png#lightbox)
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>まとめ
 
 このガイドでは、リモートプロセスで Android サービスを実行する方法について詳しく説明しました。 ローカルサービスとリモートサービスの違いについて説明しました。また、リモートサービスが Android アプリの安定性とパフォーマンスに役立つ可能性がある理由についても説明しました。 リモートサービスを実装する方法と、クライアントがサービスと通信する方法について説明した後、このガイドでは、承認されたクライアントのみからサービスへのアクセスを制限する方法の1つを紹介しました。
 

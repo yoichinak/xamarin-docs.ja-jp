@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
 ms.openlocfilehash: 9bde1140f6590daa4b1d40a8b56edec314bfc66d
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70760231"
 ---
 # <a name="introduction-to-enterprise-app-development"></a>エンタープライズアプリ開発の概要
@@ -34,7 +34,7 @@ ms.locfileid: "70760231"
 - 再利用が促進され、アプリの水平機能 (認証とデータアクセスなど) と、アプリ固有のビジネス機能などの垂直機能の間の問題が明確に分離されます。 これにより、アプリコンポーネント間の依存関係と相互作用をより簡単に管理できるようになります。
 - さまざまな個人またはチームが専門知識に基づいて特定のタスクや機能に専念できるようにすることで、ロールの分離を維持するのに役立ちます。 具体的には、ユーザーインターフェイスとアプリのビジネスロジックを明確に区別します。
 
-ただし、アプリを疎結合された個別のコンポーネントにパーティション分割する場合は、解決する必要がある多くの問題があります。 不足している機能には次が含まれます。
+ただし、アプリを疎結合された個別のコンポーネントにパーティション分割する場合は、解決する必要がある多くの問題があります。 次の設定があります。
 
 - ユーザーインターフェイスコントロールとそのロジックとの間の問題を明確に分離する方法を決定します。 Xamarin enterprise アプリを作成する際の最も重要な決定の1つは、分離コードファイルにビジネスロジックを配置するかどうか、またはユーザーインターフェイスコントロールとそのロジックの間に問題の明確な分離を作成してアプリをさらに活用するかどうかです。保守とテストが可能です。 詳細については、「[モデルビュー-ビューモデル](~/xamarin-forms/enterprise-application-patterns/mvvm.md)」を参照してください。
 - 依存関係挿入コンテナーを使用するかどうかを判断します。 依存関係の挿入コンテナーを使用すると、オブジェクト間の依存関係の結合が軽減されます。これにより、依存関係が挿入されたクラスのインスタンスを構築する機能が提供され、コンテナーの構成に基づいて有効期間が管理されます。 詳細については、「[依存関係の挿入](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md)」を参照してください。
@@ -89,7 +89,7 @@ Web アプリケーションの詳細については、「 [ASP.NET Core と Mic
 
 このガイドでは、Xamarin を使用したクロスプラットフォームエンタープライズアプリの構築に焦点を当て、eShopOnContainers mobile アプリを例として使用します。 図1-2 に、前に説明した機能を提供する eShopOnContainers モバイルアプリのページを示します。
 
-[ ![(introduction-images/screenshots.png " ")]EShopOnContainers モバイルアプリ](introduction-images/screenshots-large.png#lightbox "EShopOnContainers モバイルアプリ")
+[![](introduction-images/screenshots.png "EShopOnContainers モバイルアプリ")](introduction-images/screenshots-large.png#lightbox "EShopOnContainers モバイルアプリ")
 
 **図 1-2**:EShopOnContainers モバイルアプリ
 
@@ -99,10 +99,10 @@ EShopOnContainers モバイルアプリは、次の Xamarin. フォーム機能�
 
 - XAML
 - コントロール
-- バインド
+- バインディング
 - コンバーター
 - スタイル
-- アニメーション
+- Animations
 - コマンド
 - ビヘイビアー
 - トリガー
@@ -119,7 +119,7 @@ EShopOnContainers モバイルアプリは、次の Xamarin. フォーム機能�
 
 EShopOnContainers mobile app ソリューションは、ソースコードとその他のリソースをプロジェクトに編成します。 すべてのプロジェクトは、フォルダーを使用してソースコードやその他のリソースをカテゴリに整理します。 次の表に、eShopOnContainers モバイルアプリを構成するプロジェクトの概要を示します。
 
-|プロジェクト|説明|
+|Project|説明|
 |--- |--- |
 |eShopOnContainers.Core|このプロジェクトは、共有コードと共有 UI を含む、ポータブルクラスライブラリ (PCL) プロジェクトです。|
 |eShopOnContainers.Droid|このプロジェクトは Android 固有のコードを保持し、Android アプリのエントリポイントです。|
@@ -138,7 +138,7 @@ EShopOnContainers PCL プロジェクトには、次のフォルダーが含ま�
 
 |フォルダー|説明|
 |--- |--- |
-|アニメーション|XAML でアニメーションを使用できるようにするクラスが含まれています。|
+|Animations|XAML でアニメーションを使用できるようにするクラスが含まれています。|
 |ビヘイビアー|ビュークラスに公開される動作を格納します。|
 |コントロール|アプリによって使用されるカスタムコントロールが含まれます。|
 |コンバーター|カスタムロジックをバインディングに適用する値コンバーターを格納します。|
@@ -148,7 +148,7 @@ EShopOnContainers PCL プロジェクトには、次のフォルダーが含ま�
 |支援|アプリのヘルパークラスが含まれています。|
 |モデル|アプリのモデルクラスが含まれています。|
 |プロパティ|.Net `AssemblyInfo.cs`アセンブリメタデータファイルを含みます。|
-|Services|アプリに提供されるサービスを実装するインターフェイスとクラスが含まれています。|
+|サービス|アプリに提供されるサービスを実装するインターフェイスとクラスが含まれています。|
 |トリガー|XAML でアニメーションを呼び出すために使用されるトリガーが含まれています。`BeginAnimation`|
 |検証|データ入力の検証に関連するクラスが含まれています。|
 |ViewModels|ページに公開されているアプリケーションロジックを格納します。|
@@ -158,7 +158,7 @@ EShopOnContainers PCL プロジェクトには、次のフォルダーが含ま�
 
 プラットフォームプロジェクトには、エフェクトの実装、カスタムレンダラーの実装、およびその他のプラットフォーム固有のリソースが含まれています。
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>まとめ
 
 Xamarin のクロスプラットフォームモバイルアプリ開発ツールとプラットフォームは、B2E、B2B、B2C モバイルクライアントアプリ向けの包括的なソリューションを提供します。これにより、すべてのターゲットプラットフォーム (iOS、Android、および Windows) 間でコードを共有し、総保有コスト。 アプリは、ネイティブプラットフォームのルックアンドフィールを維持しながら、ユーザーインターフェイスとアプリロジックコードを共有できます。
 

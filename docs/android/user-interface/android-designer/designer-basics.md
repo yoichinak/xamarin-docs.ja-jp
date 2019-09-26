@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 09/05/2018
 ms.openlocfilehash: 0089f8681142b1d3d3446c21ba89ab2648e4a638
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70761410"
 ---
 # <a name="xamarinandroid-designer-basics"></a>Xamarin. Android Designer の基礎
@@ -236,7 +236,7 @@ Android Designer は、**デザインサーフェイス**の特定のプロパ�
 新しいテキスト文字列でキーを押すと、Shift キーを押し<kbd>ながら</kbd> +
 <kbd>enter</kbd>キーを押すと、入力したテキストを新しいリソースに自動的にリンクすることができます。
 
-### <a name="margin"></a>Margin
+### <a name="margin"></a>余白
 
 ウィジェットを選択すると、ウィジェットのサイズや余白を対話的に変更できるハンドルがデザイナーに表示されます。 選択中にウィジェットをクリックすると、余白編集モードとサイズ編集モードが切り替わります。
 
@@ -460,7 +460,7 @@ Android Designer は、デザインサーフェイスの特定のプロパティ
 新しいテキスト文字列でキーを押すと、Shift キーを押し<kbd>ながら</kbd> +
 <kbd>enter</kbd>キーを押すと、入力したテキストを新しいリソースに自動的にリンクすることができます。
 
-### <a name="margin"></a>Margin
+### <a name="margin"></a>余白
 
 ウィジェットを選択すると、ウィジェットのサイズや余白を対話的に変更できるハンドルがデザイナーに表示されます。 選択中にウィジェットをクリックすると、余白編集モードとサイズ編集モードが切り替わります。
 

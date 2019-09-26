@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2019
 ms.openlocfilehash: f08146d4439ff1fc22edea71ab1cbb337f64c037
-ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "68984394"
 ---
 # <a name="xamarinforms-controls-class-hierarchy"></a>Xamarin. Forms Controls クラスの階層構造
@@ -22,7 +22,7 @@ Xamarin は、複数の名前空間で、数百の型で構成されています
 
 次のクラス図は、Xamarin でユーザーインターフェイスを構築するために通常使用される型の階層を示しています。
 
-[ ![Xamarin. Forms Controls クラス図](class-hierarchy-images/class-diagram.png "xamarin. forms controls クラス図")](class-hierarchy-images/class-diagram-large.png#lightbox "Xamarin. Forms controls クラスダイアグラム")
+[![Xamarin. Forms Controls クラスダイアグラム](class-hierarchy-images/class-diagram.png "Xamarin. Forms controls クラスダイアグラム")](class-hierarchy-images/class-diagram-large.png#lightbox "Xamarin. Forms controls クラスダイアグラム")
 
 > [!NOTE]
 > クラスダイアグラムの高解像度バージョンは、[こちら](class-hierarchy-images/class-diagram-high-resolution.png)からダウンロードできます。 ただし、この図では、型と`CarouselView` `CollectionView`型は現在表示されていないことに注意してください。 これらは、コントロールがプレビューから除外されると追加されます。 さらに、図にはシェルの種類が1つだけ表示されます。

@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/18/2018
 ms.openlocfilehash: a824c892d21df9264b772bed09a4aef893f3b949
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "68647902"
 ---
 # <a name="bindable-layouts-in-xamarinforms"></a>Xamarin. Forms のバインド可能なレイアウト
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-bindablelayouts)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-bindablelayouts)
 
 バインド可能なレイアウトでは、 [`Layout<T>`](xref:Xamarin.Forms.Layout`1)クラスから派生した任意のレイアウトクラスを使用して、項目のコレクションにバインドすることによってコンテンツを生成できます。また、を[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)使用して各項目の外観を設定することもできます。 バインド可能なレイアウトは、 `BindableLayout`クラスによって提供されます。このクラスは、次の添付プロパティを公開します。
 
@@ -44,7 +44,7 @@ ms.locfileid: "68647902"
 <Grid BindableLayout.ItemsSource="{Binding Items}" />
 ```
 
-同等の C# コードに示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 IEnumerable<string> items = ...;
@@ -74,7 +74,7 @@ BindableLayout.SetItemsSource(grid, items);
 </StackLayout>
 ```
 
-同等の C# コードに示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 DataTemplate circleImageTemplate = ...;
@@ -99,7 +99,7 @@ BindableLayout.SetItemTemplate(stackLayout, circleImageTemplate);
             ... />
 ```
 
-同等の C# コードに示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 DataTemplateSelector dataTemplateSelector = new TechItemTemplateSelector { ... };

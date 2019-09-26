@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
 ms.openlocfilehash: be737dfb92cf2ce90dc64dd527f908d52cf2c580
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70770350"
 ---
 # <a name="xib-files-in-xamarinmac"></a>xib ファイル (Xamarin. Mac)
@@ -23,7 +23,7 @@ _この記事では、Xcode の Interface Builder で作成された xib ファ�
 
 ## <a name="overview"></a>概要
 
-同じユーザー インターフェイス要素にアクセスし、ツールで作業する開発者 Xamarin.Mac アプリケーションでは、C# と .NET で作業するとき*Objective-C*と*Xcode*はします。 Xcode は直接統合されているため、Xcode の_Interface Builder_を使用してユーザーインターフェイスを作成および管理できます (また、必要C#に応じて、コード内で直接作成することもできます)。
+同じユーザー インターフェイス要素にアクセスし、ツールで作業する開発者 Xamarin.Mac アプリケーションでは、c# と .NET で作業するとき*Objective-C*と*Xcode*はします。 Xcode は直接統合されているため、Xcode の_Interface Builder_を使用してユーザーインターフェイスを作成および管理できます (また、必要C#に応じて、コード内で直接作成することもできます)。
 
 Xib ファイルは、Xcode の Interface Builder でグラフィカルに作成および維持される、アプリケーションのユーザーインターフェイス (メニュー、ウィンドウ、ビュー、ラベル、テキストフィールドなど) の要素を定義するために macOS によって使用されます。
 
@@ -31,7 +31,7 @@ Xib ファイルは、Xcode の Interface Builder でグラフィカルに作成
 
 この記事では、xib ファイルを Xamarin. Mac アプリケーションで操作するための基本について説明します。 この記事で使用する主要な概念と手法について説明しているため、最初に[Hello, Mac](~/mac/get-started/hello-mac.md)の記事を通じて作業することを強くお勧めします。
 
-確認することも、 [C# を公開するクラス/Objective-C メソッド](~/mac/internals/how-it-works.md)のセクション、 [Xamarin.Mac 内部](~/mac/internals/how-it-works.md)が説明されても、ドキュメント、`Register`と`Export`属性ネットワーク上での C# クラスを Objective-C オブジェクトと UI への要素に使用されます。
+確認することも、 [c# を公開するクラス/Objective-C メソッド](~/mac/internals/how-it-works.md)のセクション、 [Xamarin.Mac 内部](~/mac/internals/how-it-works.md)が説明されても、ドキュメント、`Register`と`Export`属性ネットワーク上での c# クラスを Objective-C オブジェクトと UI への要素に使用されます。
 
 ## <a name="introduction-to-xcode-and-interface-builder"></a>Xcode と Interface Builder の概要
 
@@ -557,7 +557,7 @@ private void DisplaySubview(NSViewController controller, SubviewType type) {
 DisplaySubview(new SubviewTableController(), SubviewType.TableView);
 ```
 
-これにより、表示する新しいビューのビューコントローラーの新しいインスタンスが作成され、その型 (プロジェクトに追加された列挙型によって指定`DisplaySubview` ) が設定され、ウィンドウのクラスに追加されたメソッドを使用してビューが実際に表示されます。 例えば:
+これにより、表示する新しいビューのビューコントローラーの新しいインスタンスが作成され、その型 (プロジェクトに追加された列挙型によって指定`DisplaySubview` ) が設定され、ウィンドウのクラスに追加されたメソッドを使用してビューが実際に表示されます。 次に例を示します。
 
 [![サンプルアプリの実行](xib-images/view04.png "サンプルアプリの実行")](xib-images/view04-large.png#lightbox)
 

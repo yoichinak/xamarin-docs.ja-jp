@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2019
 ms.openlocfilehash: 242673efb38931eb678432a28f24db0ad9b8cb7d
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70228219"
 ---
 # <a name="xamarinforms-map"></a>Xamarin.Forms のマップ
@@ -25,7 +25,7 @@ Xamarin.Forms.Maps は、各プラットフォームでネイティブ マップ
 
 マップ コントロールが使用されて、 [MapsSample](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)サンプルは、次のとおりです。
 
- [![MobileCRM サンプル内の対応付け](map-images/maps-zoom-sml.png "マップ コントロールの例")](map-images/maps-zoom.png#lightbox "マップ コントロールの例")
+ [![MobileCRM サンプルのマップ](map-images/maps-zoom-sml.png "マップコントロールの例")](map-images/maps-zoom.png#lightbox "マップコントロールの例")
 
 作成することによって、マップ機能をさらに拡張できます、[カスタム レンダラーをマップ](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md)します。
 
@@ -58,7 +58,7 @@ Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
 
 - **iOS** -AppDelegate.cs ファイルで、`FinishedLaunching`メソッド。
 - **Android** -MainActivity.cs ファイルで、`OnCreate`メソッド。
-- **UWP** -MainPage.xaml.cs ファイルで、`MainPage`コンストラクター。
+- **UWP** -MainPage.xaml.cs ファイルで、`MainPage`コンス トラクター。
 
 NuGet パッケージが追加され、各アプリケーション内部で初期化メソッドが呼び出される`Xamarin.Forms.Maps`と、共通の .NET Standard ライブラリプロジェクトまたは共有プロジェクトコードで api を使用できるようになります。
 
@@ -140,7 +140,7 @@ Android プロジェクトを右クリックして適切なアクセス許可を
 
 ### <a name="universal-windows-platform"></a>ユニバーサル Windows プラットフォーム
 
-ユニバーサル Windows プラットフォームでマップを使用するには、認証トークンを生成する必要があります。 詳細については、[マップ認証キーを要求](https://msdn.microsoft.com/library/windows/apps/mt219694.aspx)msdn を参照してください。
+ユニバーサル Windows プラットフォームでマップを使用するには、認証トークンを生成する必要があります。 詳細については、次を参照してください。[マップ認証キーを要求](https://msdn.microsoft.com/library/windows/apps/mt219694.aspx)msdn です。
 
 認証トークンを指定し、必要があります、`FormsMaps.Init("AUTHORIZATION_TOKEN")`メソッドの呼び出し、Bing Maps を使用したアプリを認証します。
 
@@ -184,10 +184,10 @@ map.MapType = MapType.Street;
 
 ### <a name="map-region-and-mapspan"></a>マップ領域と MapSpan
 
-上記のコード スニペットに示すように指定して、`MapSpan`インスタンス マップ コンストラクターに初期ビューの設定 (ポイントを中心し、ズーム レベル) が読み込まれるときに、マップの。 新たに作成する 2 つの方法がある`MapSpan`インスタンス。
+上記のコード スニペットに示すように指定して、`MapSpan`インスタンス マップ コンス トラクターに初期ビューの設定 (ポイントを中心し、ズーム レベル) が読み込まれるときに、マップの。 新たに作成する 2 つの方法がある`MapSpan`インスタンス。
 
 - **MapSpan.FromCenterAndRadius()** -からのスパンを作成する静的メソッド、`Position`を指定して、`Distance`します。
-- **新しい MapSpan ()** -コンストラクターを使用する、`Position`と緯度と経度を表示する角度。
+- **新しい MapSpan ()** -コンス トラクターを使用する、`Position`と緯度と経度を表示する角度。
 
 `MoveToRegion`マップ クラスのメソッドは、マップの位置やズーム レベルを変更し使用できます。 場所を変更することがなく、マップのズーム レベルを変更するには、新しい作成`MapSpan`から現在の場所を使用して、`VisibleRegion.Center`マップ コントロールのプロパティ。 を`Slider`使用すると、次のようにマップのズームを制御できます (ただし、マップコントロールに直接ズームすると、スライダーの値を現在更新することはできません)。
 
@@ -201,7 +201,7 @@ slider.ValueChanged += (sender, e) =>
 };
 ```
 
-[![マップと zoom](map-images/maps-zoom-sml.png "マップ コントロールのズーム")](map-images/maps-zoom.png#lightbox "マップ コントロールのズーム")
+[![ズーム付きのマップ](map-images/maps-zoom-sml.png "マップコントロールズーム")](map-images/maps-zoom.png#lightbox "マップコントロールズーム")
 
 さら[`Map`](xref:Xamarin.Forms.Maps.Map)に、クラスに`MoveToLastRegionOnLayoutChange`は、バインド可能な`bool`プロパティによってサポートされる型のプロパティがあります。 既定では、この`true`プロパティはです。これは、デバイスの回転など、レイアウトの変更が発生したときに、表示されているマップ領域が現在の領域から以前に設定された領域に移動することを示します。 このプロパティがに`false`設定されている場合、レイアウトの変更が発生しても、表示されているマップ領域は中央のままになります。 次の例は、このプロパティを設定する方法を示しています。
 
@@ -324,7 +324,7 @@ MyMap.MoveToRegion(
 
 次のスクリーンショットは[`Map`](xref:Xamarin.Forms.Maps.Map) 、データ[`Pin`](xref:Xamarin.Forms.Maps.Pin)バインディングを使用してコレクションを表示する方法を示しています。
 
-データバインドされ[![た pin を使用したマップのスクリーンショット (](map-images/pins-itemssource.png "データバインドされた pin を使用")した iOS および Android マップ)](map-images/pins-itemssource-large.png#lightbox "データバインドされた pin を使用したマップ")
+[![IOS と Android でのデータバインドされた pin を使用したマップのスクリーンショット](map-images/pins-itemssource.png "データバインドされた pin を使用したマップ")](map-images/pins-itemssource-large.png#lightbox "データバインドされた pin を使用したマップ")
 
 ### <a name="choose-item-appearance-at-runtime"></a>実行時に項目の外観を選択する
 

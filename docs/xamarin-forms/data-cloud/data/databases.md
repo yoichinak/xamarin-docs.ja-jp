@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 06/21/2018
 ms.openlocfilehash: 9ea105b27aacef9ca9d63af0c57de880d039ff53
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/02/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "68739180"
 ---
 # <a name="xamarinforms-local-databases"></a>Xamarin.Forms のローカル データベース
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)
 
 "_Xamarin.Forms では、SQLite データベース エンジンを使ったデータベース駆動型アプリケーションがサポートされています。これにより、共有コードでのオブジェクトの読み込みと保存が可能になります。この記事では、Xamarin.Forms アプリケーションで SQLite.Net を使用して、ローカルの SQLite データベースに対してデータの読み取りと書き込みを行う方法について説明します。_ "
 
@@ -26,7 +26,7 @@ Xamarin.Forms アプリケーションでは、[SQLite.NET PCL NuGet](https://ww
 
 付随している[サンプル アプリケーション](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)は、単純な Todo-list アプリケーションです。 次のスクリーンショットで、各プラットフォーム上でサンプルがどのように表示されるかを示します。
 
-[![Xamarin.Forms データベース サンプルのスクリーンショット](databases-images/todo-list-sml.png "TodoList の 1 ページ目のスクリーンショット")](databases-images/todo-list.png#lightbox "TodoList の 1 ページ目のスクリーンショット") [![Xamarin.Forms データベース サンプルのスクリーンショット](databases-images/todo-list-sml.png "TodoList の 1 ページ目のスクリーンショット")](databases-images/todo-list.png#lightbox "TodoListの 1 ページ目のスクリーンショット")
+[![Xamarin. フォームデータベースの例のスクリーンショット](databases-images/todo-list-sml.png "TodoList 最初のページのスクリーンショット")](databases-images/todo-list.png#lightbox "TodoList 最初のページのスクリーンショット")[ ![Xamarin. フォームデータベースの例スクリーン]ショット(databases-images/todo-list-sml.png "TodoList 最初のページのスクリーンショット")](databases-images/todo-list.png#lightbox "TodoList 最初のページのスクリーンショット")
 
 <a name="Using_SQLite_with_PCL" />
 
@@ -114,7 +114,7 @@ public Task<int> DeleteItemAsync(TodoItem item)
 > [!NOTE]
 > 非同期 SQLite.Net API を使用することの利点は、データベース操作がバックグラウンドのスレッドに移動することです。 さらに、追加の同時実行処理は API によって処理されるため、そのコードを記述する必要はありません。
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>まとめ
 
 Xamarin.Forms では、SQLite データベース エンジンを使ったデータベース駆動型アプリケーションがサポートされています。これにより、共有コードでのオブジェクトの読み込みと保存が可能になります。
 

@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
 ms.openlocfilehash: 7a19b2e70ff18ae43cb65804c6c125890fa1851b
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70770985"
 ---
 # <a name="menus-in-xamarinmac"></a>Xamarin. Mac のメニュー
@@ -226,7 +226,7 @@ NSDocumentController.SharedDocumentController.NoteNewRecentDocumentURL(url);
 
 アプリがを`NSDocuments`使用していない場合でも、を`SharedDocumentController` `NSDocumentController`使用して、ファイル`NoteNewRecentDocumentURL`の場所が`NSUrl`のをに送信することにより、[**最近**使ったもの] メニューを維持します。
 
-次に、[**最近使っ**た`OpenFile`もの] メニューからユーザーが選択したファイルを開くために、アプリのデリゲートのメソッドをオーバーライドする必要があります。 例えば:
+次に、[**最近使っ**た`OpenFile`もの] メニューからユーザーが選択したファイルを開くために、アプリのデリゲートのメソッドをオーバーライドする必要があります。 次に例を示します。
 
 ```csharp
 public override bool OpenFile (NSApplication sender, string filename)
@@ -425,7 +425,7 @@ NSDocumentController.SharedDocumentController.NoteNewRecentDocumentURL(url);
 
 標準メニュー項目に事前に接続されている、組み込みの**最初の応答側**アクションと同じように、新しいカスタムアクションを作成し、それらを Interface Builder のメニュー項目に接続することができます。
 
-まず、アプリのウィンドウコントローラーの1つにカスタムアクションを定義します。 例えば:
+まず、アプリのウィンドウコントローラーの1つにカスタムアクションを定義します。 次に例を示します。
 
 ```csharp
 [Action("defineKeyword:")]

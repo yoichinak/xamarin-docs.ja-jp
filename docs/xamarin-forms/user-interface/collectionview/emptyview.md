@@ -8,24 +8,24 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
 ms.openlocfilehash: c6a2a53f267a7f6764ec441944193e8c5ecd9189
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/02/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "68739187"
 ---
 # <a name="xamarinforms-collectionview-emptyview"></a>Xamarin. Forms CollectionView EmptyView
 
-![](~/media/shared/preview.png "この API は、現在プレリリースです")
+![](~/media/shared/preview.png "この API は現在プレリリースです")
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView)表示するデータがない場合にユーザーフィードバックを提供するために使用できる次のプロパティを定義します。
 
 - [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView)型`object`の、 [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)プロパティが`null`のときに表示される文字列、バインディング、またはビュー、または`ItemsSource`プロパティによって指定された`null`コレクションがまたは空の場合に表示される。 既定値は `null` です。
 - [`EmptyViewTemplate`](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate)型[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)の。指定した`EmptyView`の書式設定に使用するテンプレート。 既定値は `null` です。
 
-これらのプロパティは、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトでサポートされます。つまり、このプロパティはデータ バインドの対象となることを意味します。
+これらのプロパティは、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトによりサポートされます。つまりデータバインディングの対象となる可能性があるという意味です。
 
 [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView)プロパティを設定するための主な使用シナリオでは、 [`CollectionView`](xref:Xamarin.Forms.CollectionView)に対するフィルター処理操作によってデータが得られず、web サービスからデータを取得しているときにユーザーフィードバックが表示される場合に、ユーザーフィードバックが表示されます。
 
@@ -43,7 +43,7 @@ ms.locfileid: "68739187"
                 EmptyView="No items to display" />
 ```
 
-同等のコードをC#で示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CollectionView collectionView = new CollectionView
@@ -55,7 +55,7 @@ collectionView.SetBinding(ItemsView.ItemsSourceProperty, "EmptyMonkeys");
 
 その結果、データバインドコレクションが`null`であるため、 [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView)プロパティ値として設定された文字列が表示されます。
 
-テキストが空の[![ビューを含む CollectionView 縦の一覧のスクリーンショット](emptyview-images/null-itemssource.png "テキストを空にした CollectionView の一覧")]表示(emptyview-images/null-itemssource-large.png#lightbox "テキストを空にした CollectionView の一覧表示")
+[![IOS および Android での空の表示テキストを含む CollectionView 縦の一覧のスクリーンショット](emptyview-images/null-itemssource.png "テキストを空にした CollectionView の一覧表示")](emptyview-images/null-itemssource-large.png#lightbox "テキストを空にした CollectionView の一覧表示")
 
 ## <a name="display-views-when-data-is-unavailable"></a>データが使用できないときにビューを表示する
 
@@ -92,7 +92,7 @@ collectionView.SetBinding(ItemsView.ItemsSourceProperty, "EmptyMonkeys");
 </StackLayout>
 ```
 
-同等のコードをC#で示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 SearchBar searchBar = new SearchBar { ... };
@@ -112,7 +112,7 @@ collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView)がを[`SearchBar`](xref:Xamarin.Forms.SearchBar)実行すると、によって表示されるコレクションは、 [`SearchBar.Text`](xref:Xamarin.Forms.SearchBar.Text)プロパティに格納されている検索用語に対してフィルター処理されます。 `FilterCommand` フィルター処理操作によっ[`StackLayout`](xref:Xamarin.Forms.StackLayout) [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView)てデータが生成されない場合、プロパティ値としてセットが表示されます。
 
-カスタムの空の[![ビューが表示された CollectionView の一覧のスクリーンショット (](emptyview-images/filter-multiple-views.png "カスタムの空のビューを使用した")iOS および Android CollectionView の垂直リスト)](emptyview-images/filter-multiple-views-large.png#lightbox "カスタムの空のビューを使用した CollectionView の垂直方向の一覧表示")
+[![IOS と Android 上のカスタムの空のビューを使用した CollectionView の一覧のスクリーンショット](emptyview-images/filter-multiple-views.png "カスタムの空のビューを使用した CollectionView の垂直方向の一覧表示")](emptyview-images/filter-multiple-views-large.png#lightbox "カスタムの空のビューを使用した CollectionView の垂直方向の一覧表示")
 
 ## <a name="display-a-templated-custom-type-when-data-is-unavailable"></a>データが使用できないときに、テンプレート化されたカスタム型を表示する
 
@@ -147,7 +147,7 @@ collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 </StackLayout>
 ```
 
-同等の C# コードに示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 SearchBar searchBar = new SearchBar { ... };
@@ -178,7 +178,7 @@ public class FilterData : BindableObject
 
 プロパティは`FilterData`オブジェクトに設定され、プロパティデータ`Filter`はプロパティに[`SearchBar.Text`](xref:Xamarin.Forms.SearchBar.Text)バインドされます。 [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView) [`CollectionView`](xref:Xamarin.Forms.CollectionView)がを[`SearchBar`](xref:Xamarin.Forms.SearchBar)実行すると、によって表示されるコレクションは、 `Filter`プロパティに格納されている検索用語に対してフィルター処理されます。 `FilterCommand` フィルター処理操作によってデータ[`Label`](xref:Xamarin.Forms.Label)が生成されない場合、 [`EmptyViewTemplate`](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate)プロパティ値として設定された[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)で定義されているが表示されます。
 
-空のビューテンプレートが表示された[ ![CollectionView の一覧のスクリーンショット (](emptyview-images/emptyviewtemplate.png "空のビューテンプレートを使用した")iOS および Android CollectionView の縦の一覧)](emptyview-images/emptyviewtemplate-large.png#lightbox "空のビューテンプレートを含む CollectionView の一覧")
+[![IOS と Android の空のビューテンプレートを含む CollectionView の一覧のスクリーンショット](emptyview-images/emptyviewtemplate.png "空のビューテンプレートを含む CollectionView の一覧")](emptyview-images/emptyviewtemplate-large.png#lightbox "空のビューテンプレートを含む CollectionView の一覧")
 
 > [!NOTE]
 > データが使用できない[`EmptyViewTemplate`](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate)ときに、テンプレート化されたカスタム型を表示する場合は、複数の子ビューを含むビューにプロパティを設定できます。
@@ -253,7 +253,7 @@ void ToggleEmptyView(bool isToggled)
 
 メソッド`ToggleEmptyView`は、 `collectionView` [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView) [`Switch.IsToggled`](xref:Xamarin.Forms.Switch.IsToggled)プロパティの値に基づいて、オブジェクトのプロパティ[`ContentView`](xref:Xamarin.Forms.ContentView)を、に格納されている2つのオブジェクトのいずれかに設定します。 [`CollectionView`](xref:Xamarin.Forms.CollectionView)がを[`SearchBar`](xref:Xamarin.Forms.SearchBar)実行すると、によって表示されるコレクションは、 [`SearchBar.Text`](xref:Xamarin.Forms.SearchBar.Text)プロパティに格納されている検索用語に対してフィルター処理されます。 `FilterCommand` フィルター処理操作によっ`ContentView` `EmptyView`てデータが生成されない場合、プロパティとして設定されたオブジェクトが表示されます。
 
-空のビューをスワップ[![した CollectionView 縦の一覧のスクリーンショット (](emptyview-images/swap.png "空のビューをスワップした")iOS および Android CollectionView の縦の一覧)](emptyview-images/swap-large.png#lightbox "スワップされる空のビューを含む CollectionView 縦の一覧")
+[![IOS と Android で空のビューをスワップした CollectionView の一覧のスクリーンショット](emptyview-images/swap.png "スワップされる空のビューを含む CollectionView 縦の一覧")](emptyview-images/swap-large.png#lightbox "スワップされる空のビューを含む CollectionView 縦の一覧")
 
 リソースディクショナリの詳細については、「 [Xamarin. フォームリソースディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)」を参照してください。
 
@@ -290,7 +290,7 @@ void ToggleEmptyView(bool isToggled)
 </ContentPage>
 ```
 
-同等のコードをC#で示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 SearchBar searchBar = new SearchBar { ... };
@@ -324,7 +324,7 @@ public class SearchTermDataTemplateSelector : DataTemplateSelector
 
 クラス`SearchTermTemplateSelector`は、さまざま`OtherTemplate`なデータテンプレートに設定されるプロパティと[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)プロパティを定義`DefaultTemplate`します。 上書き`OnSelectTemplate`は、 `DefaultTemplate`検索クエリが "xamarin" と等しくない場合に、ユーザーにメッセージを表示するを返します。 検索クエリが "xamarin" と等しい場合、オーバーライドは`OnSelectTemplate`を返し`OtherTemplate`ます。これにより、ユーザーに基本的なメッセージが表示されます。
 
-[ ![CollectionView ランタイムの空のビューテンプレートの選択のスクリーンショット CollectionView での IOS および Android](emptyview-images/datatemplateselector.png "ランタイムの空の表示テンプレートの選択")](emptyview-images/datatemplateselector-large.png#lightbox "CollectionView でのランタイムの空のビューテンプレートの選択")
+[![IOS と Android での CollectionView runtime の空のビューテンプレートの選択のスクリーンショット](emptyview-images/datatemplateselector.png "CollectionView でのランタイムの空のビューテンプレートの選択")](emptyview-images/datatemplateselector-large.png#lightbox "CollectionView でのランタイムの空のビューテンプレートの選択")
 
 データテンプレートセレクターの詳細については、「 [DataTemplateSelector を作成する](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)」を参照してください。
 

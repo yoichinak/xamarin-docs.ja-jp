@@ -8,17 +8,17 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/13/2019
 ms.openlocfilehash: 303266f44664f7f57aeaf36869a3a06c8eb91870
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "69888649"
 ---
 # <a name="xamarinforms-collectionview-scrolling"></a>CollectionView のスクロール
 
-![](~/media/shared/preview.png "この API は、現在プレリリースです")
+![](~/media/shared/preview.png "この API は現在プレリリースです")
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView)項目を[`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*)ビューにスクロールする2つのメソッドを定義します。 オーバーロードの 1 つは、ビュー内の指定したインデックスにある項目にスクロールし、もう一つは、ビュー内の指定した項目にスクロールします。 どちらのオーバーロードにも、スクロールの完了後に項目の正確な位置を示すために指定できる追加の引数と、スクロールをアニメーション化するかどうかを指定できます。
 
@@ -42,7 +42,7 @@ ms.locfileid: "69888649"
 </CollectionView>
 ```
 
-同等のコードをC#で示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CollectionView collectionView = new CollectionView();
@@ -115,7 +115,7 @@ collectionView.ScrollTo(monkey, position: ScrollToPosition.MakeVisible);
 
 このコード例では、項目をスクロールして表示するために必要な最小限のスクロールが実行されます。
 
-スクロールされた[(scrolling-images/scrolltoposition-makevisible.png "項目が")表示されて![いる、iOS および Android の CollectionView 縦の一覧の項目がスクロールされた CollectionView 縦の一覧のスクリーンショット]](scrolling-images/scrolltoposition-makevisible-large.png#lightbox "スクロールした項目を含む CollectionView の一覧")
+[![IOS と Android でスクロールして項目が表示されている CollectionView の一覧のスクリーンショット](scrolling-images/scrolltoposition-makevisible.png "スクロールした項目を含む CollectionView の一覧")](scrolling-images/scrolltoposition-makevisible-large.png#lightbox "スクロールした項目を含む CollectionView の一覧")
 
 > [!NOTE]
 > メンバーは、メソッドの`ScrollTo`呼び出し時に`position`引数が指定されていない場合に、既定で使用されます。 [`ScrollToPosition.MakeVisible`](xref:Xamarin.Forms.ScrollToPosition)
@@ -130,7 +130,7 @@ collectionView.ScrollTo(monkey, position: ScrollToPosition.Start);
 
 次のコード例では、項目がビューの先頭にスクロールされます。
 
-スクロールされた[(scrolling-images/scrolltoposition-start.png "項目が")表示されて![いる、iOS および Android の CollectionView 縦の一覧の項目がスクロールされた CollectionView 縦の一覧のスクリーンショット]](scrolling-images/scrolltoposition-start-large.png#lightbox "スクロールした項目を含む CollectionView の一覧")
+[![IOS と Android でスクロールして項目が表示されている CollectionView の一覧のスクリーンショット](scrolling-images/scrolltoposition-start.png "スクロールした項目を含む CollectionView の一覧")](scrolling-images/scrolltoposition-start-large.png#lightbox "スクロールした項目を含む CollectionView の一覧")
 
 ### <a name="center"></a>中央揃え
 
@@ -142,7 +142,7 @@ collectionView.ScrollTo(monkey, position: ScrollToPosition.Center);
 
 次のコード例では、アイテムがビューの中央にスクロールされます。
 
-スクロールされた[(scrolling-images/scrolltoposition-center.png "項目が")表示されて![いる、iOS および Android の CollectionView 縦の一覧の項目がスクロールされた CollectionView 縦の一覧のスクリーンショット]](scrolling-images/scrolltoposition-center-large.png#lightbox "スクロールした項目を含む CollectionView の一覧")
+[![IOS と Android でスクロールして項目が表示されている CollectionView の一覧のスクリーンショット](scrolling-images/scrolltoposition-center.png "スクロールした項目を含む CollectionView の一覧")](scrolling-images/scrolltoposition-center-large.png#lightbox "スクロールした項目を含む CollectionView の一覧")
 
 ### <a name="end"></a>終了
 
@@ -154,7 +154,7 @@ collectionView.ScrollTo(monkey, position: ScrollToPosition.End);
 
 次のコード例では、ビューの最後までスクロールされる項目になります。
 
-スクロールされた[(scrolling-images/scrolltoposition-end.png "項目が")表示されて![いる、iOS および Android の CollectionView 縦の一覧の項目がスクロールされた CollectionView 縦の一覧のスクリーンショット]](scrolling-images/scrolltoposition-end-large.png#lightbox "スクロールした項目を含む CollectionView の一覧")
+[![IOS と Android でスクロールして項目が表示されている CollectionView の一覧のスクリーンショット](scrolling-images/scrolltoposition-end.png "スクロールした項目を含む CollectionView の一覧")](scrolling-images/scrolltoposition-end-large.png#lightbox "スクロールした項目を含む CollectionView の一覧")
 
 ## <a name="disable-scroll-animation"></a>スクロールアニメーションを無効にする
 
@@ -180,7 +180,7 @@ collectionView.ScrollTo(monkey, animate: false);
 </CollectionView>
 ```
 
-同等のコードをC#で示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CollectionView collectionView = new CollectionView
@@ -196,7 +196,7 @@ CollectionView collectionView = new CollectionView
 - [`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType)型[`SnapPointsType`](xref:Xamarin.Forms.SnapPointsType)のは、スクロール時のスナップポイントの動作を指定します。
 - [`SnapPointsAlignment`](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment)(型[`SnapPointsAlignment`](xref:Xamarin.Forms.SnapPointsAlignment)) では、スナップポイントを項目と整列する方法を指定します。
 
-これらのプロパティは、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトでサポートされます。つまり、このプロパティはデータ バインドの対象となることを意味します。
+これらのプロパティは、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトによりサポートされます。つまりデータバインディングの対象となる可能性があるという意味です。
 
 > [!NOTE]
 > スナップが発生すると、動きが最も少ない方向に発生します。
@@ -211,7 +211,7 @@ CollectionView collectionView = new CollectionView
 
 既定[`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType)では、プロパティはに`SnapPointsType.None`設定されます。これにより、次のスクリーンショットに示すように、スクロールによって項目がスナップされません。
 
-スナップポイント[![のない CollectionView 縦の一覧のスクリーンショット、IOS と Android の](scrolling-images/snappoints-none.png "CollectionView 縦の一覧 (スナップポイントなし") ] (scrolling-images/snappoints-none-large.png#lightbox "スナップポイントのない垂直方向の CollectionView リスト")
+[![IOS と Android 上のスナップポイントのない CollectionView 縦の一覧のスクリーンショット](scrolling-images/snappoints-none.png "スナップポイントのない垂直方向の CollectionView リスト")](scrolling-images/snappoints-none-large.png#lightbox "スナップポイントのない垂直方向の CollectionView リスト")
 
 ### <a name="snap-points-alignment"></a>スナップポイントの配置
 
@@ -220,7 +220,7 @@ CollectionView collectionView = new CollectionView
 > [!IMPORTANT]
 > プロパティの[`SnapPointsAlignment`](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment)値は、プロパティがまたは`MandatorySingle`に[`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType) `Mandatory`設定されている場合にのみ尊重されます。
 
-#### <a name="start"></a>開始
+#### <a name="start"></a>[開始]
 
 メンバー `SnapPointsAlignment.Start`は、スナップポイントが項目の先頭端に合わせて整列されていることを示します。
 
@@ -245,7 +245,7 @@ CollectionView collectionView = new CollectionView
 </CollectionView>
 ```
 
-同等の C# コードに示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CollectionView collectionView = new CollectionView
@@ -264,7 +264,7 @@ CollectionView collectionView = new CollectionView
 
 ユーザーがスクロールを開始しようとすると、最上位の項目がビューの上部にスワイプます。
 
-スタート[![スナップポイントがある CollectionView 縦の一覧と、](scrolling-images/snappoints-start.png "スタートスナップポイントを使用")した iOS および Android の CollectionView 縦の一覧のスクリーンショット](scrolling-images/snappoints-start-large.png#lightbox "開始スナップポイントを含む CollectionView 縦の一覧")
+[![スタートスナップポイントがある CollectionView 縦のリストのスクリーンショット (iOS と Android)](scrolling-images/snappoints-start.png "開始スナップポイントを含む CollectionView 縦の一覧")](scrolling-images/snappoints-start-large.png#lightbox "開始スナップポイントを含む CollectionView 縦の一覧")
 
 #### <a name="center"></a>中央揃え
 
@@ -289,7 +289,7 @@ CollectionView collectionView = new CollectionView
 </CollectionView>
 ```
 
-同等の C# コードに示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CollectionView collectionView = new CollectionView
@@ -308,7 +308,7 @@ CollectionView collectionView = new CollectionView
 
 ユーザーがスクロールを開始しようとすると、最上位の項目は、ビューの上部に中央揃えで配置されます。スワイプ
 
-中央のスナップポイントがある[ ![CollectionView 縦向きのリストのスクリーンショット (](scrolling-images/snappoints-center.png "中央のスナップポイントがある")iOS と Android の CollectionView 縦の一覧)](scrolling-images/snappoints-center-large.png#lightbox "中心のスナップポイントを含む CollectionView 縦の一覧")
+[![IOS と Android の center スナップポイントがある CollectionView 縦の一覧のスクリーンショット](scrolling-images/snappoints-center.png "中心のスナップポイントを含む CollectionView 縦の一覧")](scrolling-images/snappoints-center-large.png#lightbox "中心のスナップポイントを含む CollectionView 縦の一覧")
 
 #### <a name="end"></a>終了
 
@@ -333,7 +333,7 @@ CollectionView collectionView = new CollectionView
 </CollectionView>
 ```
 
-同等の C# コードに示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CollectionView collectionView = new CollectionView
@@ -352,7 +352,7 @@ CollectionView collectionView = new CollectionView
 
 ユーザーがスクロールを開始しようとすると、下の項目はビューの下部にスワイプます。
 
-終了スナップポイントがある[ ![CollectionView 縦のリストのスクリーンショット、IOS と Android の](scrolling-images/snappoints-end.png "CollectionView 縦の一覧と終了スナップポイント")](scrolling-images/snappoints-end-large.png#lightbox "終了スナップポイントを含む CollectionView 縦の一覧")
+[![IOS と Android のエンドスナップポイントがある CollectionView 縦の一覧のスクリーンショット](scrolling-images/snappoints-end.png "終了スナップポイントを含む CollectionView 縦の一覧")](scrolling-images/snappoints-end-large.png#lightbox "終了スナップポイントを含む CollectionView 縦の一覧")
 
 ## <a name="related-links"></a>関連リンク
 

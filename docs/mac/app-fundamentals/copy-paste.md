@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
 ms.openlocfilehash: cf6835b99ea70c3922dd68bc21af3e44815cc92e
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70769938"
 ---
 # <a name="copy-and-paste-in-xamarinmac"></a>Xamarin. Mac にコピーして貼り付ける
@@ -31,7 +31,7 @@ Xamarin. Mac C#アプリケーションでおよび .net を使用する場合�
 
 この記事では、コピーと貼り付け操作をサポートするために、Xamarin. Mac アプリケーションでの貼り付け操作の基本について説明します。 最初に、 [Hello, Mac](~/mac/get-started/hello-mac.md)の記事を使用して作業することを強くお勧めします。具体的には、 [Xcode と Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)および[アウトレットとアクション](~/mac/get-started/hello-mac.md#outlets-and-actions)に関するセクションで説明します。これは、で使用する主要な概念と手法に関するものです。この記事をご覧ください。
 
-確認することも、 [C# を公開するクラス/Objective-C メソッド](~/mac/internals/how-it-works.md)のセクション、 [Xamarin.Mac 内部](~/mac/internals/how-it-works.md)が説明されても、ドキュメント、`Register`と`Export`属性ネットワーク上での C# クラスを Objective-C オブジェクトと UI への要素に使用されます。
+確認することも、 [c# を公開するクラス/Objective-C メソッド](~/mac/internals/how-it-works.md)のセクション、 [Xamarin.Mac 内部](~/mac/internals/how-it-works.md)が説明されても、ドキュメント、`Register`と`Export`属性ネットワーク上での c# クラスを Objective-C オブジェクトと UI への要素に使用されます。
 
 ## <a name="getting-started-with-the-pasteboard"></a>クリップボードの概要
 
@@ -541,7 +541,7 @@ void PasteImage (NSObject sender)
 var window = NSApplication.SharedApplication.KeyWindow as ImageWindow;
 ```
 
-そこから、そのウィンドウ`ImageDocument`のクラスインスタンスを呼び出して、コピーと貼り付けの操作を処理します。 例えば: 
+そこから、そのウィンドウ`ImageDocument`のクラスインスタンスを呼び出して、コピーと貼り付けの操作を処理します。 次に例を示します。 
 
 ```csharp
 window.Document.CopyImage (sender);
@@ -703,7 +703,7 @@ MacOS (旧称 OS X) では、貼り付け (`NSPasteboard`) によって、コピ
 
 コピー操作を実行するには、まず、ペーストボードにアクセスし、既存の内容を消去して、ペーストボードに必要な数だけデータの表現を書き込みます。
 
-例えば:
+次に例を示します。
 
 ```csharp
 // Get the standard pasteboard
@@ -937,7 +937,7 @@ public class ImageInfo : NSObject, INSCoding, INSPasteboardWriting, INSPasteboar
 ...
 ```
 
-また、クラスは、 `Register`ディレクティブを使用して目的の C に公開する必要があります。また、を使用`Export`して必要なプロパティまたはメソッドを公開する必要があります。 例えば:
+また、クラスは、 `Register`ディレクティブを使用して目的の C に公開する必要があります。また、を使用`Export`して必要なプロパティまたはメソッドを公開する必要があります。 次に例を示します。
 
 ```csharp
 [Export("name")]

@@ -1,6 +1,6 @@
 ---
 title: IOS 上の ListView グループヘッダーのスタイル
-description: プラットフォーム仕様はカスタム レンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ利用できる機能の使用を可能にします。 この記事では、スクロール中に ListView ヘッダーセルをフローティングにするかどうかを制御する iOS プラットフォーム固有のを使用する方法について説明します。
+description: プラットフォーム仕様はカスタム レンダラーや特殊効果を実装することなく、特定のプラットフォーム上でのみ利用できる機能の使用を可能にします。 この記事では、スクロール中に ListView ヘッダーセルをフローティングにするかどうかを制御する iOS プラットフォーム固有のを使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 099B2C7F-727F-4BCF-903B-87E728108C24
 ms.technology: xamarin-forms
@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
 ms.openlocfilehash: f40737799f63c6e0c61fcc6f4f59584222a49d6d
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "68648320"
 ---
 # <a name="listview-group-header-style-on-ios"></a>IOS 上の ListView グループヘッダーのスタイル
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 この iOS プラットフォーム固有の設定は[`ListView`](xref:Xamarin.Forms.ListView) 、スクロール中にヘッダーセルをフローティングにするかどうかを制御します。 このメソッドは、バインド可能なプロパティ`ListView.GroupHeaderStyle`を`GroupHeaderStyle`列挙体の値に設定することにより、XAML で使用されます。
 
@@ -31,7 +31,7 @@ ms.locfileid: "68648320"
 </ContentPage>
 ```
 
-代わりに、fluent API を使用して C# から使用できます。
+代わりに、fluent API を使用して c# から使用できます。
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -50,10 +50,10 @@ listView.On<iOS>().SetGroupHeaderStyle(GroupHeaderStyle.Grouped);
 
 結果として、指定`GroupHeaderStyle`された値が[`ListView`](xref:Xamarin.Forms.ListView)に適用されます。これは、スクロール中にヘッダーセルをフローティングするかどうかを制御します。
 
-フローティングおよび非フローティング[(listview-group-header-style-images/group-header-styles.png "ヘッダーセルを使用した iOS listview") ![でのフローティングおよび非フローティングの ListView ヘッダーセルのスクリーンショット]](listview-group-header-style-images/group-header-styles-large.png#lightbox "フローティングおよび非フローティングヘッダーセルを含む ListView")
+[![IOS 上のフローティングおよび非フローティング ListView ヘッダーセルのスクリーンショット](listview-group-header-style-images/group-header-styles.png "フローティングおよび非フローティングヘッダーセルを含む ListView")](listview-group-header-style-images/group-header-styles-large.png#lightbox "フローティングおよび非フローティングヘッダーセルを含む ListView")
 
 ## <a name="related-links"></a>関連リンク
 
 - [プラットフォーム仕様 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
-- [プラットフォーム仕様の作成](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
+- [プラットフォーム固有設定の作成](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific の API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 06/11/2019
 ms.openlocfilehash: f78ca9d2cf7a9e57b81c5d923c64b36a7982c4b0
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/02/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "68739156"
 ---
 # <a name="xamarinforms-checkbox"></a>Xamarin. フォームチェックボックス
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-checkboxdemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-checkboxdemos/)
 
 Xamarin. Forms `CheckBox`は、チェックまたは空にすることができるボタンの一種です。 チェックボックスがオンになっている場合は、オンになっていると見なされます。 チェックボックスが空の場合は、オフになっていると見なされます。
 
@@ -108,7 +108,7 @@ checkBox.CheckedChanged += (sender, e) =>
 
 次のスクリーン[`Label`](xref:Xamarin.Forms.Label)ショットでは、 `CheckBox`が空の場合、iOS のスクリーンショットに書式が表示されます。一方`CheckBox` 、Android のスクリーンショットでは、がオンになっているときに`Label`書式が示されています。
 
-[![iOS と Android のデータバインドされたチェックボックスのスクリーンショット](checkbox-images/checkbox-databinding.png "データバインドされたチェックボックス")](checkbox-images/checkbox-databinding-large.png#lightbox "データバインドされたチェックボックス")
+[![IOS と Android でのデータバインドチェックボックスのスクリーンショット](checkbox-images/checkbox-databinding.png "データバインドチェックボックス")](checkbox-images/checkbox-databinding-large.png#lightbox "データバインドチェックボックス")
 
 トリガーの詳細については、「 [Xamarin. Forms triggers](~/xamarin-forms/app-fundamentals/triggers.md)」を参照してください。
 

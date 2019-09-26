@@ -9,10 +9,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
 ms.openlocfilehash: 5995ba06873b2fb5f75c593fbc7136806e50d982
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70290602"
 ---
 # <a name="ios-extensions-in-xamarinios"></a>Xamarin の iOS 拡張機能
@@ -27,13 +27,13 @@ Ios 8 で導入され`UIViewControllers`た拡張機能は、ios によって、
 
 ## <a name="extension-points"></a>拡張ポイント
 
-|種類|説明|拡張ポイント|ホストアプリ|
+|型|説明|拡張ポイント|ホストアプリ|
 |--- |--- |--- |--- |
-|アクション|特定のメディアの種類の特殊なエディターまたはビューアー|`com.apple.ui-services`|任意|
+|アクション|特定のメディアの種類の特殊なエディターまたはビューアー|`com.apple.ui-services`|どれでも可|
 |ドキュメントプロバイダー|アプリがリモートドキュメントストアを使用できるようにします|`com.apple.fileprovider-ui`|[UIDocumentPickerViewController](xref:UIKit.UIDocumentPickerViewController)を使用するアプリ|
-|キーボード|代替キーボード|`com.apple.keyboard-service`|任意|
+|キーボード|代替キーボード|`com.apple.keyboard-service`|どれでも可|
 |写真の編集|写真の操作と編集|`com.apple.photo-editing`|Photos アプリエディター|
-|共有|ソーシャルネットワークやメッセージングサービスなどを使用してデータを共有します。|`com.apple.share-services`|任意|
+|共有|ソーシャルネットワークやメッセージングサービスなどを使用してデータを共有します。|`com.apple.share-services`|どれでも可|
 |今日|今日の画面または通知センターに表示される "ウィジェット"|`com.apple.widget-extensions`|今日と通知センター|
 
 IOS 10 で[追加の拡張ポイント](~/ios/platform/introduction-to-ios10/index.md#app-extensions)が追加されました。

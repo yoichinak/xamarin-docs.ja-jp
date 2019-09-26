@@ -7,10 +7,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 01/28/2016
 ms.openlocfilehash: 2c630e58ff5a1221ec9e95099df4781041ecf2b4
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70288053"
 ---
 # <a name="building-cross-platform-applications"></a>クロスプラットフォーム アプリケーションの構築
@@ -50,7 +50,7 @@ Xamarin を使用してクロスプラットフォームアプリケーション
 
 [Tasky のケーススタディ](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)を参照してください。
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>まとめ
 
 このセクションでは、Xamarin のアプリケーション開発ツールについて説明し、複数のモバイルプラットフォームを対象とするアプリケーションを構築する方法について説明します。
 
@@ -65,6 +65,6 @@ Xamarin を使用してクロスプラットフォームアプリケーション
 - [コード共有のオプション](~/cross-platform/app-fundamentals/code-sharing.md)
 - [ケーススタディ:Tasky](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)
 - [Tasky サンプルアプリ (github)](https://docs.microsoft.com/samples/xamarin/mobile-samples/taskyportable/)
-- [Xamarin モバイルアプリケーションの開発:クロスプラットフォームC#および Xamarin.Forms の基礎 (Amazon)](http://www.amazon.com/Xamarin-Mobile-Application-Development-Cross-Platform/dp/1484202155/)
+- [Xamarin モバイルアプリケーションの開発:クロスプラットフォームC#および Xamarin. Forms の基礎 (Amazon)](http://www.amazon.com/Xamarin-Mobile-Application-Development-Cross-Platform/dp/1484202155/)
 - [Greg Shackles C#によるモバイル開発 (O'Reilly)](http://shop.oreilly.com/product/0636920024002.do)
 - [Scott Olson、John Hunter、 C# Ben Horgen、Kenny Goers (Wrox) によるプロフェッショナルなクロスプラットフォームモバイル開発](http://www.wrox.com/WileyCDA/WroxTitle/Professional-Cross-Platform-Mobile-Development-in-C-.productCd-1118157702.html)

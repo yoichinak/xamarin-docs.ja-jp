@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: d46968f9c53314abe561e7f4871cfbf6e07b7002
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "61047858"
 ---
 ## <a name="firewall-configuration"></a>ファイアウォールの構成

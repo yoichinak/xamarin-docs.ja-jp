@@ -7,10 +7,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/23/2017
 ms.openlocfilehash: 6ffd1c3e42dbaf0a82b07cd9e0a00228c5fa0604
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70293135"
 ---
 # <a name="using-team-city-with-xamarin"></a>Xamarin での TeamCity の使用
@@ -39,7 +39,7 @@ TeamCity の設定には、次のようないくつかの手順が含まれま�
 
 - **TeamCity プロジェクトの作成**–前の3つの手順が完了したら、ソースコードを取得し、プロジェクトをコンパイルして、テストを Xamarin Test Cloud に送信するために必要なすべてのメタデータを含む teamcity プロジェクトを作成する必要があります。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 [App Center テスト](https://docs.microsoft.com/appcenter/test-cloud/)の経験が必要です。
 

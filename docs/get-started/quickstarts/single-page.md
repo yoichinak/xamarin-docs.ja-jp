@@ -10,15 +10,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 04/01/2019
 ms.openlocfilehash: 48af81856ebe92a712b5d41d8d856bb00a526982
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "68655008"
 ---
 # <a name="create-a-single-page-xamarinforms-application"></a>単一ページの Xamarin. Forms アプリケーションを作成する
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-singlepage/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-singlepage/)
 
 このクイックスタートでは、次の方法について説明します。
 
@@ -28,7 +28,7 @@ ms.locfileid: "68655008"
 
 このクイックスタートでは、クロスプラットフォームの Xamarin. フォームアプリケーションを作成する方法について説明します。これにより、ノートを入力してデバイスストレージに保存できます。 最終的なアプリケーションは、次のとおりです。
 
-[![](single-page-images/screenshots-sml.png "Notes アプリケーション")](single-page-images/screenshots.png#lightbox "Notes アプリケーション")
+[![](single-page-images/screenshots-sml.png "メモアプリケーション")](single-page-images/screenshots.png#lightbox "メモアプリケーション")
 
 ::: zone pivot="windows"
 
@@ -42,22 +42,22 @@ ms.locfileid: "68655008"
 
 ## <a name="get-started-with-visual-studio-2019"></a>Visual Studio 2019 を使ってみる
 
-1. Visual Studio 2019 を起動し、[スタート] ウィンドウで [**新しいプロジェクトの作成**] をクリックして、新しいプロジェクトを作成します。
+1. Visual Studio 2019 を起動し、スタート ウィンドウで **新しいプロジェクトの作成** をクリックして、新しいプロジェクトを作成します。
 
     ![](single-page-images/vs/new-solution-2019.png "新しいプロジェクト")
 
-2. [**新しいプロジェクトの作成**] ウィンドウで、[プロジェクトの**種類**] ボックスの一覧の [ **mobile** ] を選択し、**モバイルアプリ (Xamarin. Forms**テンプレート) を選択して、[**次へ**] ボタンをクリックします。
+2. **[新しいプロジェクトの作成]** ウィンドウで、プロジェクトの **[種類]** ボックスの一覧の **[mobile]** を選択し、**モバイルアプリ (Xamarin. Forms**テンプレート) を選択して、 **[次へ]** ボタンをクリックします。
 
     ![](single-page-images/vs/new-project-2019.png "クロスプラットフォームのプロジェクト テンプレート")
 
-3. [**新しいプロジェクトの構成**] ウィンドウで、**プロジェクト名**を [**メモ**] に設定し、プロジェクトの適切な場所を選択し、[**作成**] ボタンをクリックします。
+3. **[新しいプロジェクトの構成]** ウィンドウで、**プロジェクト名**を **[メモ]** に設定し、プロジェクトの適切な場所を選択し、 **[作成]** ボタンをクリックします。
 
     ![](single-page-images/vs/configure-project.png "プロジェクトを構成する")
 
     > [!IMPORTANT]
     > このクイックスタートの C# スニペットと XAML スニペットでは、**Notes** という名前のソリューションが必要です。 別の名前を使用すると、コードをこのクイック スタートからソリューションにコピーするときに、ビルド エラーが発生します。
 
-4. [**新しいクロスプラットフォームアプリ**] ダイアログで、[**空のアプリ**] をクリックし、[ **OK** ] ボタンをクリックします。
+4. **[新しいクロスプラットフォームアプリ]** ダイアログで、 **[空のアプリ]** をクリックし、 **[OK]** ボタンをクリックします。
 
     ![](single-page-images/vs/new-app-2019.png "新しいクロスプラット フォーム アプリ")
 
@@ -177,7 +177,7 @@ ms.locfileid: "68655008"
 
     ![](single-page-images/vs/ios-start.png "Visual Studio iOS ツール バー")
 
-    IOS シミュレーターのメモ[ ![(single-page-images/vs/notes-ios.png " ")]](single-page-images/vs/notes-ios-large.png#lightbox "IOS シミュレーターのメモ")
+    [![](single-page-images/vs/notes-ios.png "IOS シミュレーターのメモ")](single-page-images/vs/notes-ios-large.png#lightbox "IOS シミュレーターのメモ")
 
     メモを入力して **[保存]** ボタンを押します。
 
@@ -196,7 +196,7 @@ ms.locfileid: "68655008"
 
 ## <a name="get-started-with-visual-studio-2017"></a>Visual Studio 2017 を使ってみる
 
-1. Visual Studio 2017 を起動し、スタートページで [**新しいプロジェクトの作成**] をクリックして、新しいプロジェクトを作成します。
+1. Visual Studio 2017 を起動し、スタートページで **[新しいプロジェクトの作成]** をクリックして、新しいプロジェクトを作成します。
 
     ![](single-page-images/vs/new-solution.png "新しいプロジェクト")
 
@@ -327,7 +327,7 @@ ms.locfileid: "68655008"
 
     ![](single-page-images/vs/ios-start.png "Visual Studio iOS ツール バー")
 
-    IOS シミュレーターのメモ[ ![(single-page-images/vs/notes-ios.png " ")]](single-page-images/vs/notes-ios-large.png#lightbox "IOS シミュレーターのメモ")
+    [![](single-page-images/vs/notes-ios.png "IOS シミュレーターのメモ")](single-page-images/vs/notes-ios-large.png#lightbox "IOS シミュレーターのメモ")
 
     メモを入力して **[保存]** ボタンを押します。
 
@@ -346,7 +346,7 @@ ms.locfileid: "68655008"
 
 ## <a name="get-started-with-visual-studio-for-mac"></a>Visual Studio for Mac の概要
 
-1. Visual Studio for Mac を起動し、[スタート] ウィンドウで [**新規**] をクリックして新しいプロジェクトを作成します。
+1. Visual Studio for Mac を起動し、スタート ウィンドウで **新規** をクリックして新しいプロジェクトを作成します。
 
     ![](single-page-images/vsmac/new-project.png "新しいソリューション")
 
@@ -460,7 +460,7 @@ ms.locfileid: "68655008"
 
     エラーがある場合は、プロジェクトが正常にビルドされるまで、前の手順を繰り返して誤りを修正します。
 
-2. **Solution Pad**で、[ **Notes** ] プロジェクトを選択し、右クリックし**て [スタートアッププロジェクトに設定**] を選択します。
+2. **Solution Pad**で、 **[Notes]** プロジェクトを選択し、右クリックし**て [スタートアッププロジェクトに設定**] を選択します。
 
       ![](single-page-images/vsmac/set-startup-project-ios.png "iOS をスタートアップ プロジェクトとして設定")
 
@@ -468,13 +468,13 @@ ms.locfileid: "68655008"
 
       ![](single-page-images/vsmac/start.png "Visual Studio for Mac ツール バー")
 
-      IOS シミュレーターのメモ[ ![(single-page-images/vsmac/notes-ios.png " ")]](single-page-images/vsmac/notes-ios-large.png#lightbox "IOS シミュレーターのメモ")
+      [![](single-page-images/vsmac/notes-ios.png "IOS シミュレーターのメモ")](single-page-images/vsmac/notes-ios-large.png#lightbox "IOS シミュレーターのメモ")
 
     メモを入力して **[保存]** ボタンを押します。
 
     各プラットフォームでアプリケーションを起動する方法の詳細については、「 [Xamarin](deepdive.md)の概要」の「[各プラットフォームでのアプリケーションの起動](deepdive.md#launching-the-application-on-each-platform)」を参照してください。
 
-4. **Solution Pad**で [ **Notes id** ] プロジェクトを選択し、右クリックし**て [スタートアッププロジェクトに設定**] を選択します。
+4. **Solution Pad**で **[Notes id]** プロジェクトを選択し、右クリックし**て [スタートアッププロジェクトに設定**] を選択します。
 
       ![](single-page-images/vsmac/set-startup-project-android.png "Android をスタートアップ プロジェクトとして設定")
 

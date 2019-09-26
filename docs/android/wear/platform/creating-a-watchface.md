@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 08/23/2018
 ms.openlocfilehash: a6dfab949eb19708f69d838a7c792f2e7bbd76b3
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70758516"
 ---
 # <a name="creating-a-watch-face"></a>ウォッチの文字盤を作成する
@@ -31,7 +31,7 @@ _このガイドでは、Android 用のカスタムウォッチフェイス1.0 �
 
 Watch face services は、摩耗1.0 アプリの一部としてバンドルされ、インストールされます。 次の例では`MainActivity` 、には、摩耗1.0 アプリテンプレートのコードよりも多くのコードが含まれています。これにより、ウォッチフェイスサービスをパッケージ化して、アプリの一部としてスマートウォッチにデプロイできるようになります。 実際には、このアプリは、デバッグとテストのために watch のサービスを磨耗1.0 デバイス (エミュレーター) に読み込むための手段として純粋に機能します。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 Watch face service を実装するには、次のものが必要です。
 

@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2017
 ms.openlocfilehash: 99604b59e5557ba5a7aa3d5ba61bc1bff414f000
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70770319"
 ---
 # <a name="images-in-xamarinmac"></a>Xamarin. Mac のイメージ
@@ -243,7 +243,7 @@ MyIcon.Image = ImageTintedWithColor (MyIcon.Image, NSColor.Red);
 
 ## <a name="using-images-with-table-views"></a>テーブルビューでのイメージの使用
 
-画像を`NSTableView`内のセルの一部として含めるには、テーブルビューの`GetViewForItem` `NSTableViewDelegate's`メソッドによるデータの取得方法を変更して、通常`NSTextField`の`NSTableCellView`の代わりにを使用する必要があります。 例:
+画像を`NSTableView`内のセルの一部として含めるには、テーブルビューの`GetViewForItem` `NSTableViewDelegate's`メソッドによるデータの取得方法を変更して、通常`NSTextField`の`NSTableCellView`の代わりにを使用する必要があります。 次に例を示します。
 
 ```csharp
 public override NSView GetViewForItem (NSTableView tableView, NSTableColumn tableColumn, nint row)
@@ -341,7 +341,7 @@ view.TextField.AutoresizingMask = NSViewResizingMask.WidthSizable;
 
 ## <a name="using-images-with-outline-views"></a>アウトラインビューでのイメージの使用
 
-画像を`NSOutlineView`内のセルの一部として含めるには、アウトラインビューの`GetView` `NSTableViewDelegate's`メソッドによるデータの取得方法を変更して、通常`NSTextField`の`NSTableCellView`の代わりにを使用する必要があります。 例:
+画像を`NSOutlineView`内のセルの一部として含めるには、アウトラインビューの`GetView` `NSTableViewDelegate's`メソッドによるデータの取得方法を変更して、通常`NSTextField`の`NSTableCellView`の代わりにを使用する必要があります。 次に例を示します。
 
 ```csharp
 public override NSView GetView (NSOutlineView outlineView, NSTableColumn tableColumn, NSObject item) {

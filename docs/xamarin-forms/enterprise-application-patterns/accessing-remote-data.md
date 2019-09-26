@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
 ms.openlocfilehash: 9c793f4d5f0cda5bff2dedef5e4e5e5bdfca69e5
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70770802"
 ---
 # <a name="accessing-remote-data"></a>リモート データへのアクセス
@@ -53,7 +53,7 @@ EShopOnContainers モバイルアプリでは、 `HttpClient`クラスを使用�
 
 図10-1 は、 `CatalogView`によって表示されるようにカタログマイクロサービスからカタログデータを読み取るクラスの相互作用を示しています。
 
-[カタログマイクロサービスからデータを取得する![(accessing-remote-data-images/catalogdata.png " ")]](accessing-remote-data-images/catalogdata-large.png#lightbox "カタログマイクロサービスからデータを取得する")
+[![](accessing-remote-data-images/catalogdata.png "カタログマイクロサービスからデータを取得する")](accessing-remote-data-images/catalogdata-large.png#lightbox "カタログマイクロサービスからデータを取得する")
 
 **図 10-1**:カタログマイクロサービスからデータを取得する
 
@@ -158,7 +158,7 @@ public async Task<IActionResult> Items(
 
 図10-2 は、によって`BasketView`表示されるバスケットデータを送信するクラスの相互作用をバスケットマイクロサービスに示しています。
 
-[バスケットマイクロサービスにデータを送信しています![(accessing-remote-data-images/basketdata.png " ")]](accessing-remote-data-images/basketdata-large.png#lightbox "バスケットマイクロサービスにデータを送信しています")
+[![](accessing-remote-data-images/basketdata.png "バスケットマイクロサービスにデータを送信しています")](accessing-remote-data-images/basketdata-large.png#lightbox "バスケットマイクロサービスにデータを送信しています")
 
 **図 10-2**:バスケットマイクロサービスにデータを送信しています
 

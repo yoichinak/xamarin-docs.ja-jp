@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/28/2017
 ms.openlocfilehash: bbeab6a6ab0d4a9d0e3a962240317fc0d54f9e25
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "68656638"
 ---
 # <a name="xamarinforms-web-services-introduction"></a>Xamarin. Forms Web Services の概要
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)
 
 _このトピックでは、別の web サービスと通信する方法について説明する Xamarin.Forms のサンプル アプリケーションのチュートリアルを示します。別のサンプル アプリケーションを使用すると、各 web サービスが機能的に似ており共通クラスを共有します。_
 
@@ -48,7 +48,7 @@ _このトピックでは、別の web サービスと通信する方法につ�
 
 各アプリケーションの共有コードプロジェクトも、いくつかの重要なファイルで構成されています。
 
-|File|目的|
+|ファイル|目的|
 |--- |--- |
 |Constants.cs|`Constants`クラスは、web サービスと通信するために、アプリケーションで使用される任意の定数を指定します。 これらの定数は、プロバイダー上に作成、個人のバックエンド サービスにアクセスする更新が必要です。|
 |ITextToSpeech.cs|`ITextToSpeech`インターフェイスでは、ことを指定します、`Speak`メソッドを実装するクラスによって提供される必要があります。|

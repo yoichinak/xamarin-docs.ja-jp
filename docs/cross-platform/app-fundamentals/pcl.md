@@ -7,10 +7,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 07/18/2018
 ms.openlocfilehash: a4ee81f7d59c9fb680dfd371a7aaba7660fb3343
-ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/31/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "68681075"
 ---
 # <a name="portable-class-libraries-pcl"></a>ポータブル クラス ライブラリ (PCL)
@@ -39,8 +39,8 @@ ms.locfileid: "68681075"
 
 |機能|.NET Framework|UWP アプリ|Silverlight|Windows Phone|Xamarin|
 |---|---|---|---|---|---|
-|Core|Y|Y|Y|Y|Y|
-|LINQ (LINQ)|Y|Y|Y|Y|Y|
+|コア|Y|Y|Y|Y|Y|
+|LINQ|Y|Y|Y|Y|Y|
 |IQueryable|Y|Y|Y|7.5 +|Y|
 |シリアル化|Y|Y|Y|Y|Y|
 |データの注釈|4.0.3 +|Y|Y||Y|
@@ -56,7 +56,7 @@ Xamarin 列には、Visual Studio に付属しているすべてのプロファ�
 
 [Microsoft の web サイト](https://msdn.microsoft.com/library/gg597391(v=vs.110).aspx)にあるさまざまなプロファイルの機能の詳細を確認し、サポートされているフレームワーク情報やその他の注意事項を含む別のコミュニティメンバーの[PCL プロファイルの概要](http://embed.plnkr.co/03ck2dCtnJogBKHJ9EjY)を参照できます。
 
-**利点**
+**特典**
 
 1. 一元化されたコード共有–1つのプロジェクトでコードを記述し、テストして、他のライブラリやアプリケーションが使用できるようにします。
 2. リファクタリング操作は、ソリューションに読み込まれたすべてのコード (ポータブルクラスライブラリおよびプラットフォーム固有のプロジェクト) に影響します。
@@ -98,7 +98,7 @@ PCL は、コードを追加する準備ができました。 他のプロジェ
 
 ### <a name="editing-pcl-settings"></a>PCL 設定の編集
 
-このプロジェクトの PCL 設定を表示および変更するには、プロジェクトを右クリックし、[オプション] をクリックして **[> 全般]** を選択し、次に示す画面を表示 > ます。
+このプロジェクトの PCL 設定を表示および変更するには、プロジェクトを右クリックし、オプション をクリックして  **> 全般** を選択し、次に示す画面を表示 > ます。
 
 [![プロファイルを設定する PCL プロジェクトオプション](pcl-images/image4-sml.png)](pcl-images/image4.png#lightbox)
 
@@ -266,7 +266,7 @@ public static extern Result Close(IntPtr db);
 
 完全な実装については、サンプルコードを参照してください。
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>まとめ
 
 この記事では、Visual Studio for Mac と Visual Studio の内部から PCLs を作成および使用する方法を示した、ポータブルクラスライブラリの利点と落とし穴について簡単に説明しました。最後に、作業中の PCL を示す完全なサンプルアプリケーション (TaskyPortable) が導入されました。
 

@@ -8,15 +8,15 @@ author: pauldipietro
 ms.author: padipi
 ms.date: 09/09/2019
 ms.openlocfilehash: 7979f6ed362c580d9cf80f19b3bc0ea7550ca70c
-ms.sourcegitcommit: cf56d2bae34dc0f8e94c2d3d28d5f460d59807bf
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70985971"
 ---
 # <a name="xamarinforms-carouselview-introduction"></a>CarouselView の概要
 
-![](~/media/shared/preview.png "この API は、現在プレリリースです")
+![](~/media/shared/preview.png "この API は現在プレリリースです")
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView)は、カルーセルに似た方法で情報を提示するためのビューです。
 

@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
 ms.openlocfilehash: 35f8dad3590c07ceb3c93aa735b8c02d75098498
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70228165"
 ---
 # <a name="introduction-to-xamarinforms-styles"></a>Xamarin. Forms スタイルの概要
@@ -82,7 +82,7 @@ public class NoStylesPageCS : ContentPage
 }
 ```
 
-各[`Label`](xref:Xamarin.Forms.Label)インスタンスには、 `Label`によって表示されるテキストの外観を制御するためのプロパティ値が同一です。 次のスクリーン ショットに示すように外観が発生します。
+各[`Label`](xref:Xamarin.Forms.Label)インスタンスには、 `Label`によって表示されるテキストの外観を制御するためのプロパティ値が同一です。 これで、次のスクリーンショットのような結果になります。
 
 [![スタイルを使用しないラベルの外観](introduction-images/no-styles.png)](introduction-images/no-styles-large.png#lightbox)
 

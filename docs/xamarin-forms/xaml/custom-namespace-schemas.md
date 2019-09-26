@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/21/2018
 ms.openlocfilehash: d76b5eefcaf0edeb12f128c60e9b8fffff8bcf3b
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "68644708"
 ---
 # <a name="xaml-custom-namespace-schemas-in-xamarinforms"></a>Xamarin 形式の XAML カスタム名前空間スキーマ
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-customnamespaceschemas)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-customnamespaceschemas)
 
 ライブラリ内の型は、XAML でライブラリの XAML 名前空間を宣言することで参照できます。このとき、共通言語ランタイム (CLR) の名前空間名とアセンブリ名を指定する名前空間宣言を使用します。
 

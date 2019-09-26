@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
 ms.openlocfilehash: 0caed670e09c268bce4fe66cd5857313ac8ed174
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70770001"
 ---
 # <a name="data-binding-and-key-value-coding-in-xamarinmac"></a>Xamarin. Mac でのデータバインディングとキー値のコーディング
@@ -28,7 +28,7 @@ UI 要素を設定して操作するために、Xamarin. Mac アプリケーシ�
 
 この記事では、Xamarin. Mac アプリケーションでのキー値のコーディングとデータバインディングの操作の基本について説明します。 最初に、 [Hello, Mac](~/mac/get-started/hello-mac.md)の記事を使用して作業することを強くお勧めします。具体的には、 [Xcode と Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)および[アウトレットとアクション](~/mac/get-started/hello-mac.md#outlets-and-actions)に関するセクションで説明します。これは、で使用する主要な概念と手法に関するものです。この記事をご覧ください。
 
-確認することも、 [C# を公開するクラス/Objective-C メソッド](~/mac/internals/how-it-works.md)のセクション、 [Xamarin.Mac 内部](~/mac/internals/how-it-works.md)が説明されても、ドキュメント、`Register`と`Export`属性ネットワーク上での C# クラスを Objective-C オブジェクトと UI への要素に使用されます。
+確認することも、 [c# を公開するクラス/Objective-C メソッド](~/mac/internals/how-it-works.md)のセクション、 [Xamarin.Mac 内部](~/mac/internals/how-it-works.md)が説明されても、ドキュメント、`Register`と`Export`属性ネットワーク上での c# クラスを Objective-C オブジェクトと UI への要素に使用されます。
 
 <a name="What_is_Key-Value_Coding" />
 
@@ -70,7 +70,7 @@ namespace MacDatabinding
 
 まず、属性`[Register("PersonModel")]`はクラスを登録し、それを目的の C に公開します。 次に、クラスは、(また`NSObject`はから`NSObject`継承するサブクラス) から継承する必要があります。これにより、クラスを kvc 準拠にすることができるいくつかの基本メソッドが追加されます。 次に、 `[Export("Name")]`属性は`Name`プロパティを公開し、後で kvc および kvc 手法を使用してプロパティにアクセスするために使用されるキー値を定義します。
 
-最後に、プロパティの値に対するキー値の観測された変更を可能にするために、アクセサーは、および`WillChangeValue` `DidChangeValue`メソッドの呼び出しの値に対する変更をラップ`Export`する必要があります (属性と同じキーを指定します)。  例えば:
+最後に、プロパティの値に対するキー値の観測された変更を可能にするために、アクセサーは、および`WillChangeValue` `DidChangeValue`メソッドの呼び出しの値に対する変更をラップ`Export`する必要があります (属性と同じキーを指定します)。  次に例を示します。
 
 ```csharp
 set {
@@ -159,7 +159,7 @@ Person.SetValueForKey(new NSString("Jane Doe"), new NSString("Name"));
 
 ### <a name="observing-value-changes"></a>値の変更の観察
 
-キー値の観察 (KVO) を使用すると、KVO 準拠クラスの特定のキーにオブザーバーをアタッチし、そのキーの値が変更されるたびに通知を受け取ることができます (KVO の手法をC#使用するか、コード内の特定のプロパティに直接アクセスします)。 例えば:
+キー値の観察 (KVO) を使用すると、KVO 準拠クラスの特定のキーにオブザーバーをアタッチし、そのキーの値が変更されるたびに通知を受け取ることができます (KVO の手法をC#使用するか、コード内の特定のプロパティに直接アクセスします)。 次に例を示します。
 
 ```csharp
 // Watch for the name value changing

@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
 ms.openlocfilehash: 202ce8d674a39b06fd1b07460dff4bf573062592
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70291413"
 ---
 # <a name="working-with-tvos-progress-indicators-in-xamarin"></a>Xamarin での tvOS 進行状況インジケーターの使用
@@ -129,7 +129,7 @@ ActivityIndicator.StopAnimating();
 
 `Progress`プロパティは、完了したタスクの量を 0 ~ 100% (0.0 から 1.0) に設定するために使用されます。 プロパティを使用して、[amount 完了] バーの色を`TrackTintColor`設定し、プロパティを使用して背景色 (未完了の金額) を設定します。 `ProgressTintColor`
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>まとめ
 
 この記事では、tvOS アプリ内での進行状況インジケーターの設計と使用について説明しました。
 

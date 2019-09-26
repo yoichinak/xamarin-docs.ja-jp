@@ -10,10 +10,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/02/2019
 ms.openlocfilehash: 688b0e87bb6281923d3099c0d269b1c2554b6c7a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70756756"
 ---
 # <a name="style-a-cross-platform-xamarinforms-application"></a>クロスプラットフォームの Xamarin.Forms アプリケーションのスタイルを適用する
@@ -26,8 +26,8 @@ ms.locfileid: "70756756"
 
 クイックスタートでは、XAML スタイルを使用してクロスプラットフォームの Xamarin.Forms アプリケーションのスタイルを適用する方法を説明します。 最終的なアプリケーションは、次のとおりです。
 
-[![](styling-images/screenshots1-sml.png "メモページ")](styling-images/screenshots1.png#lightbox "メモページ\"")
-)[![](styling-images/screenshots2-sml.png "メモ入力ページ")](styling-images/screenshots2.png#lightbox "メモ入力ページ")
+[![](styling-images/screenshots1-sml.png "メモ")](styling-images/screenshots1.png#lightbox "[メモ] ページ")ページ
+[(styling-images/screenshots2-sml.png "メモの入力")ページ![]](styling-images/screenshots2.png#lightbox "メモの入力ページ")
 
 ### <a name="prerequisites"></a>必須コンポーネント
 

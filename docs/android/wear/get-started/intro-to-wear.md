@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
 ms.openlocfilehash: 80c24765022a916fa36e97aaf47b36435b3f7a7b
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70758498"
 ---
 # <a name="introduction-to-android-wear"></a>Android Wear の概要
@@ -52,7 +52,7 @@ Wear の主要なナビゲーションパターンは、垂直方向に並べら
 
 Android Wear 2.0 は、ナビゲーションドロワー、アクションドロワー、およびインラインアクションボタンを Wear ユーザーインターフェイスに追加します。 Android Wear 2.0 ユーザーインターフェイス要素の詳細については、Android の[構造](https://www.google.com/design/spec-wear/system-overview/anatomy.html)に関するトピックを参照してください。 
 
-### <a name="communications"></a>Communications
+### <a name="communications"></a>通信
 
 Android Wear には、ウェアラブルアプリとコンパニオンハンドヘルドアプリ間の通信を容易にする2つの異なる通信 Api が用意されています。 
 
@@ -66,7 +66,7 @@ Android Wear には、ウェアラブルアプリとコンパニオンハンド�
 このサービスは、Android Wear によって自動的にインスタンス化されます。
 [FindMyPhone](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-findmyphonesample)サンプルは、を`WearableListenerService`実装する方法を示しています。
 
-### <a name="deployment"></a>展開
+### <a name="deployment"></a>配置
 
 各ウェアラブルアプリは、メインアプリケーション APK 内に埋め込まれた独自の APK ファイルを使用してデプロイされます。 このパッケージは、Xamarin. Android 5.0 以降で自動的に処理されますが、バージョン5.0 より前の Xamarin. Android のバージョンでは、手動で実行する必要があります。 
 [パッケージ化を](~/android/wear/deploy-test/packaging.md)使用すると、展開の詳細が説明されます。 
@@ -167,7 +167,7 @@ Google の Android Wear ドキュメントを確認してください。
 - [android.support.wearable ライブラリ](https://developer.android.com/reference/android/support/wearable/view/package-summary.html)
 - [Android Wear 2.0](https://developer.android.com/wear/preview/index.html)
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>まとめ
 
 この概要では、Android の磨耗の概要について説明しました。 Android の磨耗の基本的な機能について概説し、Android 磨耗2.0 で導入された機能の概要を説明しました。 この記事では、開発者が Xamarin. Android の磨耗開発を始めるのに役立つ重要な情報へのリンクを提供し、現在市場にある一部の Android 劣化デバイスの例を示しました。
 

@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 08/14/2018
 ms.openlocfilehash: 9eec99ffe244ffdc290050bd54f083ad6582151d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70286386"
 ---
 # <a name="picker-control-in-xamarinios"></a>Xamarin のピッカーコントロール
@@ -260,7 +260,7 @@ dateLabel.Text = "Alarm set for:" + coundownTimeformat.ToString(finishCountdown)
 
 `NSDate`の書式を設定するに[`NSDateFormatter`](xref:Foundation.NSDateFormatter)は、を使用します。
 
-を使用`NSDateFormatter`するには、 [`ToString`](xref:Foundation.NSDateFormatter.ToString(Foundation.NSDate))メソッドを呼び出します。 例えば:
+を使用`NSDateFormatter`するには、 [`ToString`](xref:Foundation.NSDateFormatter.ToString(Foundation.NSDate))メソッドを呼び出します。 次に例を示します。
 
 ```csharp
 var date = NSDate.Now;
@@ -292,9 +292,9 @@ timeFormat.TimeStyle = NSDateFormatterStyle.Short;
 さまざま`NSDateFormatterStyle`な値は、次のように時刻を表示します。
 
 - `NSDateFormatterStyle.Full`:午後7:46:00 時東部夏時間
-- `NSDateFormatterStyle.Long` :7:47:00 PM EDT
-- `NSDateFormatterStyle.Medium` :7:47:00 PM
-- `NSDateFormatterSytle.Short` :7:47 PM
+- `NSDateFormatterStyle.Long`:7:47:00 PM EDT
+- `NSDateFormatterStyle.Medium`:7:47:00 PM
+- `NSDateFormatterSytle.Short`:7:47 PM
 
 ##### <a name="datestyle"></a>DateStyle
 
@@ -310,7 +310,7 @@ dateTimeformat.DateStyle = NSDateFormatterStyle.Long;
 - `NSDateFormatterStyle.Full`:2017年8月2日、7:48 PM の水曜日
 - `NSDateFormatterStyle.Long`:2017年8月2日 7:49 PM
 - `NSDateFormatterStyle.Medium`:2017年8月2、7:49 PM
-- `NSDateFormatterStyle.Short` :8/2/17、7:50 PM
+- `NSDateFormatterStyle.Short`:8/2/17、7:50 PM
 
 > [!NOTE]
 > `DateFormat`と`DateStyle`には、日付と時刻の書式設定を指定するさまざまな方法が用意されて/ `TimeStyle`います。 最後に設定したプロパティによって、日付フォーマッタの出力が決まります。

@@ -8,19 +8,19 @@ author: profexorgeek
 ms.author: jusjohns
 ms.date: 07/12/2019
 ms.openlocfilehash: 41bb9e082f042e7ca2933d72b4b71a4ff6c4fef4
-ms.sourcegitcommit: 9178e2e689f027212ea3e623b556b312985d79fe
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "69658034"
 ---
 # <a name="xamarinforms-searchbar"></a>Xamarin. Forms SearchBar
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-searchbardemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-searchbardemos/)
 
 Xamarin. Forms [`SearchBar`](xref:Xamarin.Forms.SearchBar)は、検索を開始するために使用されるユーザー入力コントロールです。 コントロール`SearchBar`は、プレースホルダーテキスト、クエリ入力、検索実行、およびキャンセルをサポートしています。 次のスクリーンショットは`SearchBar` 、結果がに表示さ`ListView`れるクエリを示しています。
 
-Ios と android の[ ![searchbar on ios と Android のスクリーンショット](searchbar-images/device-searchbars-cropped.png "") ](searchbar-images/device-searchbars.png#lightbox "IOS と Android の Searchbar")
+[![IOS と Android の SearchBar のスクリーンショット](searchbar-images/device-searchbars-cropped.png "IOS と Android の Searchbar")](searchbar-images/device-searchbars.png#lightbox "IOS と Android の SearchBar")
 
 クラス`SearchBar`は、次のプロパティを定義します。
 
@@ -82,7 +82,7 @@ SearchBar searchBar = new SearchBar
 
 次のスクリーンショットは、 `SearchBar`結果として得られるコントロールを示しています。
 
-Ios および android でカスタマイズされた searchbar for ios と android のカスタマイズされ[![た Searchbar のスクリーンショット](searchbar-images/device-searchbars-styled-cropped.png "") ](searchbar-images/device-searchbars-styled.png#lightbox "IOS および Android でのカスタマイズ")された searchbar
+[![IOS および Android でのカスタマイズされた SearchBar のスクリーンショット](searchbar-images/device-searchbars-styled-cropped.png "IOS および Android でのカスタマイズ")された searchbar](searchbar-images/device-searchbars-styled.png#lightbox "IOS および Android でのカスタマイズされた SearchBar")
 
 ## <a name="perform-a-search-with-event-handlers"></a>イベントハンドラーを使用した検索の実行
 
