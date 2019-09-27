@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/01/2016
-ms.openlocfilehash: 31dfcc26121b0683db476b0c4be9a420efe5b66f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 9e49dfa99ccb6aae49a72ce044bb8071c210336e
+ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70771235"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71198566"
 ---
 # <a name="xamarinforms-triggers"></a>Xamarin.Forms のトリガー
 
@@ -144,7 +144,7 @@ ms.locfileid: "70771235"
 
 - `Invoke` メソッドをオーバーライドします。これは、トリガー条件が満たされるたびに呼び出されます。
 
-- 必要に応じて、トリガーを宣言するときに XAML で設定できるプロパティを公開します (次の例の `Anchor`、`Scale`、`Length` など)。
+- 必要に応じて、トリガーを宣言するときに XAML で設定できるプロパティを公開します。 この例については、付属のサンプル アプリケーションの `VisualElementPopTriggerAction` クラスを参照してください。
 
 ```csharp
 public class NumericValidationTriggerAction : TriggerAction<Entry>
@@ -158,7 +158,7 @@ public class NumericValidationTriggerAction : TriggerAction<Entry>
 }
 ```
 
-トリガー アクションによって公開されるプロパティは、次のように XAML の宣言で設定できます。
+これにより、イベント トリガーを XAML から使用できるようになります。
 
 ```xaml
 <EventTrigger Event="TextChanged">

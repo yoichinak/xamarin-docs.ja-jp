@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/25/2018
-ms.openlocfilehash: 5d299112da87207f7486247e0ed6f00c35a35fe5
-ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
+ms.openlocfilehash: 9f9504890b12f6a3d8046e98ce537cc0d742f2ed
+ms.sourcegitcommit: 159f250ae7535fca7ab3bc4dc7395dc4cc2af93f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71106043"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71278145"
 ---
 # <a name="publishing-xamarinios-apps-to-the-app-store"></a>App Store への Xamarin.iOS アプリの公開
 
@@ -180,50 +180,27 @@ App Store プロビジョニング プロファイルを作成してインスト
     ![ビルド構成とプラットフォームの選択](publishing-to-the-app-store-images/chooseConfig-m157.png "ビルド構成とプラットフォームの選択")
 
 2. **[ビルド]** メニューから、 **[発行のためのアーカイブ]** を選択します。
-3. アーカイブが作成されると、 **[アーカイブ]** ビューが表示されます。
+3. アーカイブが作成されると、 **[アーカイブ]** ビューが表示されます。 **[署名と配布]** をクリックして、発行ウィザードを開きます。
 
-    ![[アーカイブ] ビュー](publishing-to-the-app-store-images/archives-m157.png "[アーカイブ] ビュー")
+
+    ![[アーカイブ] ビューの [署名と配布] ボタンの場所のスクリーンショット。](publishing-to-the-app-store-images/archives-mac.png "[アーカイブ] ビューの [署名と配布] ボタンの場所のスクリーンショット。")
 
     > [!NOTE]
     > 既定では、 **[アーカイブ]** ビューには開いているソリューションのアーカイブのみが表示されます。 アーカイブのあるソリューションをすべて表示するには、 **[アーカイブをすべて表示]** チェック ボックスをオンにします。 古いアーカイブを保持し、その中に含まれるデバッグ情報を、必要に応じてクラッシュ レポートにシンボル名を付加するために使用できるようにしておくことをお勧めします。
 
-4. **[署名と配布]** をクリックして、発行ウィザードを開きます。
-5. **[App Store]** 配布チャネルを選択します。 **[次へ]** をクリックします。
+4. **[App Store]** 配布チャネルを選択します。 **[次へ]** をクリックします。
 
-    ![配布チャネルの選択](publishing-to-the-app-store-images/distChannel-m157.png "配布チャネルの選択")
+5. **[アップロード]** を宛先として選択します。 **[次へ]** をクリックします。
 
 6. **[プロビジョニング プロファイル]** ウィンドウで、署名 ID、アプリ、およびプロビジョニング プロファイルを選択します。 **[次へ]** をクリックします。
 
-    ![プロビジョニング プロファイルの選択](publishing-to-the-app-store-images/provProfileSelect-m157.png "プロビジョニング プロファイルの選択")
+    ![有効な署名 ID、アプリ、プロビジョニング プロファイルの選択を示すプロビジョニング プロファイル ウィザード ページのスクリーンショット。](publishing-to-the-app-store-images/provProfileSelect-mac.png "有効な署名 ID、アプリ、プロビジョニング プロファイルが選択されたプロビジョニング プロファイル ウィザード ページのスクリーンショット。")
 
-7. パッケージの詳細を確認し、 **[発行]** をクリックして、ご利用のアプリの .ipa ファイルを保存します。
+7. **[App Store Connect information]\(App Store Connect の情報\)** ウィンドウで、メニューから Apple ID のユーザー名を選択し、[アプリ固有のパスワード](https://support.apple.com/ht204397)を入力します。 **[次へ]** をクリックします。
 
-    ![アプリの詳細の確認](publishing-to-the-app-store-images/publish-m157.png "アプリの詳細の確認")
+    ![Apple ID ユーザー名が選択されていることを示す [App Store Connect information]\(App Store Connect の情報\) ウィザード ページのスクリーンショット。](publishing-to-the-app-store-images/connectInfo-mac.png "Apple ID ユーザー名が選択されていることを示す [App Store Connect information]\(App Store Connect の情報\) ウィザード ページのスクリーンショット。")
 
-8. .ipa が保存されたら、アプリを iTunes Connect にアップロードできます。
-
-    ![提出準備完了](publishing-to-the-app-store-images/readyToGo-m157.png "提出準備完了")
-
-9. **[Application Loader を開く]** をクリックしてログインします (Apple ID 用の[アプリ固有のパスワードを作成する](https://support.apple.com/ht204397)必要があることに注意してください)。
-
-    > [!NOTE]
-    > ツールの詳細については、[Application Loader に関する Apple のドキュメント](https://help.apple.com/itc/apploader/#/apdS673accdb)を参照してください。
-
-10. **[Deliver Your App]\(アプリの配信\)** を選択して、 **[選択]** ボタンをクリックします。
-
-    ![[Deliver Your App]\(アプリの配信\) の選択](publishing-to-the-app-store-images/publishvs01.png "[Deliver Your App]\(アプリの配信\) の選択")
-
-11. 前の手順で作成した .ipa ファイルを選択し、 **[OK]** ボタンをクリックします。
-12. アプリケーション ローダーはファイルを検証します。
-
-    ![検証画面](publishing-to-the-app-store-images/publishvs02.png "検証画面")
-
-13. **[次へ]** ボタンをクリックすると、アプリケーションは App Store に対して検証されます。
-
-    ![App Store に対する検証](publishing-to-the-app-store-images/publishvs03.png "App Store に対する検証")
-
-14. **[送信]** ボタンをクリックして、審査のために Apple にアプリケーションを送信します。
-15. アプリケーション ローダーは、ファイルが正常にアップロードされたときに通知します。
+8. パッケージの詳細を確認し、 **[発行]** をクリックします。 .ipa ファイルを保存する場所を選択すると、アプリが App Store Connect にアップロードされます。
 
     > [!NOTE]
     > Apple では、.ipa ファイルに **iTunesMetadata.plist** が含まれるアプリは、次のようなエラーが発生するため、却下する場合があります。
