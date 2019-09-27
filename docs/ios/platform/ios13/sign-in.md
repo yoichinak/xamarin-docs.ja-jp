@@ -7,14 +7,16 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/10/2019
-ms.openlocfilehash: 5c5191a6a7490ec0301bdea7b7f5aa2217b80c96
-ms.sourcegitcommit: 09bc69d7119a04684c9e804c5cb113b8b1bb7dfc
+ms.openlocfilehash: d8c458ad30d7e281427dad0e29092c55fede7347
+ms.sourcegitcommit: fc689c1a6b641c124378dedc1bd157d96fc759a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71206365"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71319524"
 ---
 # <a name="sign-in-with-apple-in-xamarinios"></a>Xamarin で Apple にサインインします。 iOS
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/ios-samples/ios13-addingthesigninwithappleflowtoyourapp/)
 
 Apple でのサインインは、サードパーティの認証サービスのユーザーの id 保護を提供する新しいサービスです。 IOS 13 以降では、サードパーティの認証サービスを使用する新しいアプリでも、Apple でのサインインを提供する必要があります。 更新中の既存のアプリは、2020年4月まで Apple にサインインを追加する必要はありません。
 
@@ -204,10 +206,6 @@ public UIWindow GetPresentationAnchor (ASAuthorizationController controller) => 
 
 #endregion
 ```
-
-## <a name="summary"></a>まとめ
-
-この記事では、iOS 用 Apple でのサインインについて紹介しました。
 
 ## <a name="related-links"></a>関連リンク
 
