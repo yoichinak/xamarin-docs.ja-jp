@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: 96d2fe0b03ad7067d6fece072742ea2796224f8b
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.openlocfilehash: baf5d7a348c96cc2c43fd909bcc543fbfbfe81ce
+ms.sourcegitcommit: 58b21bf0eda3a7cea91a95b479f499c9d499b6d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71250116"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71310786"
 ---
 # <a name="images-in-xamarinforms"></a>Xamarin.Forms でのイメージ
 
@@ -274,7 +274,7 @@ A [ `UriImageSource` ](xref:Xamarin.Forms.UriImageSource)も、次のプロパ�
 キャッシュは既定で有効になっているし、24 時間のローカルでイメージを格納します。 特定のイメージのキャッシュを無効にするには、イメージ ソースを次のようにインスタンス化します。
 
 ```csharp
-image.Source = new UriImageSource { CachingEnabled = false, Uri="http://server.com/image" };
+image.Source = new UriImageSource { CachingEnabled = false, Uri = new Uri("http://server.com/image") };
 ```
 
 特定のキャッシュ期間 (たとえば、5 日) を設定するには、次のように イメージ ソースをインスタンス化します。
