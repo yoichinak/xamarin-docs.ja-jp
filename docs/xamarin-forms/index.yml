@@ -56,29 +56,29 @@ sections:
         style: cards
         className: cardsB
         items:
-          - href: ~/xamarin-forms/app-fundamentals/
+          - href: ~/xamarin-forms/app-fundamentals/index.yml
             html: ナビゲーション、ジェスチャ、データ バインディングなど、Xamarin.Forms アプリを開発するために必要なことすべて。
             image:
               src: ~/media/icons/i_app-build.svg
-              href: ~/xamarin-forms/app-fundamentals/
+              href: ~/xamarin-forms/app-fundamentals/index.yml
             title: アプリケーションの基礎
-          - href: ~/xamarin-forms/user-interface
+          - href: ~/xamarin-forms/user-interface/index.yml
             html: Xamarin.Forms XAML で使用できるすべてのユーザー インターフェイス コントロールについて説明します。
             image:
               src: ~/media/icons/i_user-interface.svg
-              href: ~/xamarin-forms/user-interface/
+              href: ~/xamarin-forms/user-interface/index.yml
             title: ユーザー インターフェイス
-          - href: ~/xamarin-forms/xaml/
+          - href: ~/xamarin-forms/xaml/index.yml
             html: ユーザー インターフェイスを宣言によってビルドし、モバイルおよびデスクトップのプラットフォーム間で共有します。
             image:
               src: ~/media/icons/i_xaml-forms.svg
-              href: ~/xamarin-forms/xaml/
+              href: ~/xamarin-forms/xaml/index.yml
             title: XAML
-          - href: ~/xamarin-forms/platform/
+          - href: ~/xamarin-forms/platform/index.yml
             html: カスタム レンダラーなど、Xamarin.Forms プラットフォームの機能と、各リリースのその他の重要な機能を使用します。
             image:
               src: ~/media/icons/i_platform.svg
-              href: ~/xamarin-forms/platform/
+              href: ~/xamarin-forms/platform/index.yml
             title: プラットフォーム機能
           - href: ~/essentials/index.md?context=xamarin/xamarin-forms
             html: ファイル アクセス、デバイス情報、ハードウェア機能のような一般的なタスクのためのクロスプラットフォーム API。
@@ -86,25 +86,25 @@ sections:
               src: 'https://docs.microsoft.com/media/common/i_multi-connect.svg'
               href: ~/essentials/index.md?context=xamarin/xamarin-forms
             title: Xamarin.Essentials
-          - href: ~/xamarin-forms/data-cloud/
+          - href: ~/xamarin-forms/data-cloud/index.yml
             html: ローカル データとリモートデータの格納と取得、およびその他の Azure のクラウド ベース サービス。
             image:
               src: ~/media/icons/i_data-cloud.svg
-              href: ~/xamarin-forms/data-cloud/
+              href: ~/xamarin-forms/data-cloud/index.yml
             title: データと Azure Cloud Services
-          - href: ~/xamarin-forms/deploy-test/
+          - href: ~/xamarin-forms/deploy-test/index.yml
             html: アプリを構築して配置する手順と、事前にテストする場合のヒントについて説明します。
             image:
               src: ~/media/icons/i_deploy-test.svg
-              href: ~/xamarin-forms/deploy-test/
+              href: ~/xamarin-forms/deploy-test/index.yml
             title: 配置とテスト
-          - href: ~/xamarin-forms/internals/
+          - href: ~/xamarin-forms/internals/index.yml
             html: Xamarin.Forms の内部構造の詳細と、ローカライズやアクセシビリティなどの機能について説明します。
             image:
               src: 'https://docs.microsoft.com/media/common/i_config-tools.svg'
-              href: ~/xamarin-forms/internals/
+              href: ~/xamarin-forms/internals/index.yml
             title: 高度な概念と内部構造
-  - title: 関連項目
+  - title: 参照
     items:
       - type: list
         style: cards
