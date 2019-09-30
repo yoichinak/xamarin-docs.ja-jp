@@ -1,0 +1,233 @@
+### YamlMime:Hub
+title: Xamarin ドキュメント
+summary: Xamarin を使用すると、.NET のコードとプラットフォームに固有のユーザー インターフェイスを使用して、Android、iOS、および macOS 用のネイティブ アプリを構築できます。 Xamarin.Forms を使用すると、C# または XAML で記述された共有 UI コードを使用してネイティブ アプリを構築できます。
+brand: xamarin
+metadata:
+  title: Xamarin ドキュメント
+  description: Xamarin を使用すると、.NET のコードとプラットフォームに固有のユーザー インターフェイスを使用して、Android、iOS、および macOS 用のネイティブ アプリを構築できます。 Xamarin.Forms を使用すると、C# または XAML で記述された共有 UI コードを使用してネイティブ アプリを構築できます。
+  ms.topic: hub-page
+  author: conceptdev
+  ms.author: crdun
+  ms.date: 09/26/2019
+  ms.openlocfilehash: c0509abcaaa10263c3f0c4c3d19fd765ded521e1
+  ms.sourcegitcommit: fc689c1a6b641c124378dedc1bd157d96fc759a7
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/27/2019
+  ms.locfileid: "71326197"
+highlightedContent:
+  items:
+  - title: セットアップとインストール
+    itemType: download
+    url: ~/get-started/installation/index.md
+  - title: Xamarin とは
+    itemType: overview
+    url: ~/get-started/what-is-xamarin.md
+  - title: Xamarin ドキュメントの新着記事
+    itemType: get-started
+    url: ~/whats-new/index.yml
+  - title: モバイル開発スキルを向上させる
+    itemType: learn
+    url: https://docs.microsoft.com/learn/browse/?roles=developer&products=xamarin
+productDirectory:
+  items:
+  - title: Xamarin.Forms クロスプラットフォーム
+    imageSrc: https://docs.microsoft.com/media/logos/logo_xamarin.svg
+    links:
+    - url: ~/get-started/what-is-xamarin-forms.md
+      text: Xamarin.Forms とは
+    - url: ~/get-started/index.yml
+      text: Android および iOS のアプリを構築する
+    - url: ~/xamarin-forms/xaml/index.yml
+      text: Xamarin.Forms XAML
+    - url: ~/xamarin-forms/index.yml
+      text: プラットフォーム ドキュメント
+  - title: Android
+    imageSrc: https://docs.microsoft.com/media/logos/logo_android.svg
+    links:
+    - url: ~/android/get-started/hello-android/hello-android-quickstart.md
+      text: Android アプリを構築する
+    - url: ~/android/platform/android-10.md
+      text: Android 10
+    - url: ~/android/index.yml
+      text: プラットフォーム ドキュメント
+  - title: iOS
+    imageSrc: https://docs.microsoft.com/media/common/i_web-apps.svg
+    links:
+    - url: ~/ios/get-started/hello-ios/hello-ios-quickstart.md
+      text: iOS アプリを構築する
+    - url: ~/ios/platform/ios13/index.md
+      text: iOS 13
+    - url: ~/ios/index.yml
+      text: プラットフォーム ドキュメント
+  - title: Mac
+    imageSrc: https://docs.microsoft.com/media/common/i_xplat-code.svg
+    links:
+    - url: ~/mac/get-started/hello-mac.md
+      text: Mac アプリを構築する
+    - url: ~/mac/index.yml
+      text: プラットフォーム ドキュメント
+conceptualContent:
+  title: Xamarin.Forms の概要
+  summary: Windows および macOS 上の Visual Studio で C# と .NET を使用し、クロスプラットフォームの Android および iOS アプリを構築します。
+  items:
+  - title: 最初のアプリをビルドする
+    links:
+    - text: ファイル > 新規
+      url: ~/get-started/quickstarts/single-page.md
+      itemType: get-started
+    - text: ナビゲーションを追加する
+      url: ~/get-started/quickstarts/multi-page.md
+      itemType: get-started
+    - text: データベースを追加する
+      url: ~/get-started/quickstarts/database.md
+      itemType: get-started
+    - text: アプリのスタイルを設定する
+      url: ~/get-started/quickstarts/styling.md
+      itemType: get-started
+    footerLink:
+      url: https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms%20get%20started
+      text: サンプルを検索する
+  - title: チュートリアルを実行する
+    links:
+    - text: スタック レイアウト
+      url: ~/get-started/tutorials/stacklayout/index.yml
+      itemType: tutorial
+    - text: ラベル
+      url: ~/get-started/tutorials/label/index.yml
+      itemType: tutorial
+    - text: ボタン
+      url: ~/get-started/tutorials/button/index.yml
+      itemType: tutorial
+    - text: イメージ
+      url: ~/get-started/tutorials/image/index.yml
+      itemType: tutorial
+    footerLink:
+      url: ~/get-started/tutorials/index.yml
+      text: 関連項目
+  - title: 既存の知識を活用する
+    links:
+    - text: .NET デスクトップ (UWP、WPF、WinForms)
+      itemType: overview
+      url: ~/cross-platform/desktop/index.md
+    - text: Android と Java
+      itemType: overview
+      url: ~/android/get-started/java-developers.md
+    - text: iOS と Objective-C
+      itemType: overview
+      url: ~/ios/get-started/objective-c-developers/index.md
+    - text: その他の開発ガイダンス
+      itemType: get-started
+      url: ~/cross-platform/index.yml
+additionalContent:
+  sections:
+  - title: Xamarin.Forms の一般的なタスク
+    summary: Xamarin.Forms を使用して Android および iOS アプリを構築するための重要な概念
+    items:
+    - title: アプリのライフサイクルについて
+      summary: アプリがどのように開始され、バックグラウンドに移行するかを理解します。
+      url: ~/xamarin-forms/app-fundamentals/app-lifecycle.md
+    - title: データの一覧を表示する
+      summary: ListView でデータをスクロールして選択します。
+      url: ~/xamarin-forms/user-interface/listview/index.md
+    - title: XAML およびデータ バインディングを使用する
+      summary: MVVM パターンを使用して UI にデータを表示します。
+      url: ~/xamarin-forms/xaml/xaml-basics/index.md
+    - title: プラットフォーム固有の機能を公開する
+      summary: Xamarin.Forms アプリで Android または iOS 固有の機能を使用します。
+      url: ~/xamarin-forms/platform/index.yml
+    - title: Xamarin.Essentials
+      summary: 一般的なデバイスの機能用のクロスプラットフォーム API。
+      url: ~/essentials/platform-feature-support.md
+    - title: REST Web サービスにアクセスする
+      summary: Git や TFVC などのバージョン コントロール テクノロジを使ってコードを共有します。
+      url: ~/xamarin-forms/data-cloud/web-services/rest.md
+    - title: Android および iOS デバイスに展開する
+      summary: テスト デバイスとアプリ ストアにアップロードします。
+      url: ~/xamarin-forms/deploy-test/index.yml
+    - title: SkiaSharp のグラフィックスをレンダリングする
+      summary: クロスプラットフォームの 2D ベクターグラフィックスをレンダリングします。
+      url: ~/xamarin-forms/user-interface/graphics/skiasharp/index.md
+  - title: モバイル開発者ツール
+    items:
+    - title: iOS Simulator for Windows
+      summary: Windows 上で Visual Studio を使用して iOS Simulator を操作する方法について説明します。
+      url: ~/tools/ios-simulator/index.md
+    - title: プロファイラー
+      summary: パフォーマンスの問題を特定して修正することができます。
+      url: ~/tools/profiler/index.md
+    - title: .NET の埋め込み
+      summary: 既存の .NET コードを他のプログラミング言語から使用できるようにします。
+      url: ~/tools/dotnet-embedding/index.md
+    - title: MonoGame
+      summary: C# を使用して、デスクトップ、モバイル、およびコンソール ゲームを構築します。
+      url: ~/graphics-games/monogame/introduction/index.md
+  - title: Xamarin プラットフォームの概要
+    items:
+    - title: Xamarin.Forms クロスプラットフォーム
+      links:
+      - text: アプリの基礎
+        url: ~/xamarin-forms/app-fundamentals/index.yml
+      - text: ユーザー インターフェイス
+        url: ~/xamarin-forms/user-interface/index.yml
+      - text: Xamarin.Forms XAML
+        url: ~/xamarin-forms/xaml/index.yml
+      - text: プラットフォーム機能
+        url: ~/xamarin-forms/platform/index.yml
+      - text: Azure Cloud Services
+        url: ~/xamarin-forms/data-cloud/index.yml
+      - text: デプロイとテスト
+        url: ~/xamarin-forms/deploy-test/index.yml
+      - text: 高度な概念と内部構造
+        url: ~/xamarin-forms/internals/index.yml
+      - text: サンプル
+        url: https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms
+    - title: Android
+      links:
+      - text: アプリの基礎
+        url: ~/android/app-fundamentals/index.md
+      - text: ユーザー インターフェイス
+        url: ~/android/user-interface/index.md
+      - text: プラットフォーム機能
+        url: ~/android/platform/index.md
+      - text: Azure Cloud Services
+        url: ~/android/data-cloud/index.md
+      - text: デプロイとテスト
+        url: ~/android/deploy-test/index.md
+      - text: 高度な概念と内部構造
+        url: ~/android/internals/index.md
+      - text: サンプル
+        url: https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Android
+    - title: iOS
+      links:
+      - text: アプリの基礎
+        url: ~/android/app-fundamentals/index.md
+      - text: ユーザー インターフェイス
+        url: ~/android/user-interface/index.md
+      - text: プラットフォーム機能
+        url: ~/android/platform/index.md
+      - text: Azure Cloud Services
+        url: ~/android/data-cloud/index.md
+      - text: デプロイとテスト
+        url: ~/android/deploy-test/index.md
+      - text: 高度な概念と内部構造
+        url: ~/android/internals/index.md
+      - text: サンプル
+        url: https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS
+    - title: Mac
+      links:
+      - text: アプリの基礎
+        url: ~/android/app-fundamentals/index.md
+      - text: ユーザー インターフェイス
+        url: ~/android/user-interface/index.md
+      - text: プラットフォーム機能
+        url: ~/android/platform/index.md
+      - text: Azure Cloud Services
+        url: ~/android/data-cloud/index.md
+      - text: デプロイとテスト
+        url: ~/android/deploy-test/index.md
+      - text: 高度な概念と内部構造
+        url: ~/android/internals/index.md
+      - text: サンプル
+        url: https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Mac
+  footer: '[ブログ](https://devblogs.microsoft.com/xamarin/) - [Twitter](https://twitter.com/xamarinhq) - [Stack Overflow](https://stackoverflow.com/questions/tagged/xamarin) - [Developer Community](https://developercommunity.visualstudio.com/spaces/8/index.html)'
