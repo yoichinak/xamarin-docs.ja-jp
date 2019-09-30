@@ -26,7 +26,7 @@ ms.locfileid: "70760456"
 
 ローカルユーザーデータストアを使用する認証シナリオでは、ASP.NET MVC web アプリケーションの一般的なように、cookie を介して要求間で id 情報を保持する認証シナリオでは、ASP.NET Core Id が適切なソリューションです。 ただし、cookie は常にデータを永続化および転送するための自然な手段ではありません。 たとえば、モバイルアプリからアクセスされる RESTful エンドポイントを公開する ASP.NET Core web アプリケーションは、通常、ベアラートークン認証を使用する必要があります。これは、このシナリオでは cookie を使用できないためです。 ただし、ベアラートークンは、モバイルアプリから作成された web 要求の authorization ヘッダーに簡単に取得して含めることができます。
 
-### <a name="issuing-bearer-tokens-using-identityserver-4"></a>サーバー4を使用したベアラートークンの発行
+### <a name="issuing-bearer-tokens-using-identityserver-4"></a>IdentityServer 4 を使用したベアラートークンの発行
 
 ユーザー [Id 4](https://github.com/IdentityServer/IdentityServer4)は、オープンソースの OpenID Connect および OAuth 2.0 フレームワーク ASP.NET Core 用です。ローカル ASP.NET Core id ユーザーのセキュリティトークンを発行するなど、多くの認証と承認のシナリオで使用できます。
 
