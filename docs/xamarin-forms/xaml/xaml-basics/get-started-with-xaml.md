@@ -6,13 +6,13 @@ ms.assetid: 9073FA0E-BD5A-4492-8A93-54C466F6EDB9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/10/2018
-ms.openlocfilehash: 32f809c5b21e56497328ce00bf49a7337ac0270a
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.date: 09/30/2019
+ms.openlocfilehash: a35a3750957073168bca4903e1cef79ed53a3de9
+ms.sourcegitcommit: bb6a103de620386187a08151a4cdc29a4dc53a10
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71250040"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71679972"
 ---
 # <a name="part-1-getting-started-with-xaml"></a>第 1 部です。 XAML の概要
 
@@ -30,17 +30,19 @@ _Xamarin.Forms アプリケーションで XAML ページの視覚的内容を�
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-、Windows で Visual Studio を使用して**ファイル > 新規 > プロジェクト** メニューから。 **新しいプロジェクト**ダイアログ ボックスで、 **Visual C# > クロス プラットフォーム**、左側にあるし、**モバイル アプリ (Xamarin.Forms)** センターの一覧から。
+Windows で Visual Studio 2019 を起動し、スタート ウィンドウで **新しいプロジェクトの作成** をクリックして新しいプロジェクトを作成します。
 
-![[新しいプロジェクト] ダイアログ](get-started-with-xaml-images/win/newprojectdialog.w157.png)
+![新しいソリューションウィンドウ](get-started-with-xaml-images/win/new-solution-2019.png)
 
-ソリューションの場所を選択の名前を付けます**XamlSamples** (またはに応じて)、キーを押します**OK**します。
+**[新しいプロジェクトの作成]** ウィンドウで、プロジェクトの **[種類]** ボックスの一覧の **[mobile]** を選択し、 **[モバイルアプリ (Xamarin)]** テンプレートを選択して、 **[次へ]** ボタンをクリックします。
 
-次の画面で選択、**空のアプリ**テンプレートと **.NET Standard**コード共有方法。
+![[新しいプロジェクト] ウィンドウ](get-started-with-xaml-images/win/new-project-2019.png)
 
-![新しいアプリダイアログ](get-started-with-xaml-images/win/newcrossplatformapp.png)
+**[新しいプロジェクトの構成]** ウィンドウで、**プロジェクト名**を**xamlsamples** (または任意のもの) に設定し、 **[作成]** ボタンをクリックします。
 
-**[OK]** を押します。
+**[新しいクロスプラットフォームアプリ]** ダイアログで、 **[空白]** をクリックし、 **[OK]** ボタンをクリックします。
+
+![新しいアプリダイアログ](get-started-with-xaml-images/win/new-cross-platform-app.png)
 
 4 つのプロジェクトがソリューションに作成されます。 **XamlSamples** .NET Standard ライブラリは、 **XamlSamples.Android**、 **XamlSamples.iOS**、およびユニバーサル Windows プラットフォームソリューション、 **XamlSamples.UWP**します。
 
@@ -151,9 +153,9 @@ Visual Studio では、プロジェクトをビルド、生成する XAML ファ
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-その他の XAML ベースを追加する`ContentPage`をプロジェクトにクラスを選択、 **XamlSamples** .NET Standard ライブラリ プロジェクトし、呼び出す、**プロジェクト > 新しい項目の追加**メニュー項目。 左側にある、**新しい項目の追加**ダイアログ ボックスで、 **Visual C#** と**Xamarin.Forms**します。 一覧から選択**コンテンツ ページ**(いない**コンテンツ ページ (C#)** 、コードのみ ページを作成するまたは**コンテンツ ビュー**、ページではない)。 ページの名前、たとえば、 **HelloXamlPage.xaml**:
+他の XAML ベースの `ContentPage` クラスをプロジェクトに追加するには、 **Xamlsamples** .NET Standard ライブラリプロジェクトを選択し、右クリックして、 **[> 新しい項目の追加]** を選択します。 **[新しい項目の追加]** ダイアログボックスで、 **[ C#ビジュアル項目 > Xamarin. Forms > コンテンツページ]** を選択します (**コンテンツページ (C#)** ではありません。これにより、コードのみのページが作成されます。コンテンツ**ビュー**はページではありません)。 ページの名前、たとえば、 **HelloXamlPage**:
 
-![[新しい項目の追加] ダイアログ](get-started-with-xaml-images/win/addnewitemdialog.w157.png)
+![[新しい項目の追加] ダイアログ](get-started-with-xaml-images/win/add-new-item-dialog-2019.png)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 

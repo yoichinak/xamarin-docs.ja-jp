@@ -9,16 +9,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/01/2019
-ms.openlocfilehash: 48af81856ebe92a712b5d41d8d856bb00a526982
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.openlocfilehash: c1d7aa1535fe979df222aaedc6ba2cf3bae0d51c
+ms.sourcegitcommit: bb6a103de620386187a08151a4cdc29a4dc53a10
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "68655008"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71679980"
 ---
 # <a name="create-a-single-page-xamarinforms-application"></a>単一ページの Xamarin. Forms アプリケーションを作成する
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-singlepage/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-singlepage/)
 
 このクイックスタートでは、次の方法について説明します。
 
@@ -32,7 +32,7 @@ ms.locfileid: "68655008"
 
 ::: zone pivot="windows"
 
-### <a name="prerequisites"></a>必須コンポーネント
+### <a name="prerequisites"></a>前提条件
 
 - Visual Studio 2019 (最新リリース)。 .NET ワークロード**を使用したモバイル開発**がインストールされています。
 - のC#知識。
@@ -46,7 +46,7 @@ ms.locfileid: "68655008"
 
     ![](single-page-images/vs/new-solution-2019.png "新しいプロジェクト")
 
-2. **[新しいプロジェクトの作成]** ウィンドウで、プロジェクトの **[種類]** ボックスの一覧の **[mobile]** を選択し、**モバイルアプリ (Xamarin. Forms**テンプレート) を選択して、 **[次へ]** ボタンをクリックします。
+2. **[新しいプロジェクトの作成]** ウィンドウで、プロジェクトの **[種類]** ボックスの一覧の **[mobile]** を選択し、 **[モバイルアプリ (Xamarin)]** テンプレートを選択して、 **[次へ]** ボタンをクリックします。
 
     ![](single-page-images/vs/new-project-2019.png "クロスプラットフォームのプロジェクト テンプレート")
 
@@ -186,7 +186,7 @@ ms.locfileid: "68655008"
 ::: zone-end
 ::: zone pivot="win-vs2017"
 
-### <a name="prerequisites"></a>必須コンポーネント
+### <a name="prerequisites"></a>前提条件
 
 - Visual Studio 2017。 .NET ワークロード**を使用したモバイル開発**がインストールされています。
 - のC#知識。
@@ -336,7 +336,7 @@ ms.locfileid: "68655008"
 ::: zone-end
 ::: zone pivot="macos"
 
-### <a name="prerequisites"></a>必須コンポーネント
+### <a name="prerequisites"></a>前提条件
 
 - IOS と Android プラットフォームのサポートがインストールされている Visual Studio for Mac (最新リリース)。
 - Xcode (最新リリース)。
@@ -499,7 +499,7 @@ ms.locfileid: "68655008"
 このシングルページアプリケーションをマルチページアプリケーションにするには、次のクイックスタートに進んでください。
 
 > [!div class="nextstepaction"]
-> [次へ](multi-page.md)
+> [Next](multi-page.md)
 
 ## <a name="related-links"></a>関連リンク
 
