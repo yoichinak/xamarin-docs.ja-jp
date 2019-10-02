@@ -104,7 +104,7 @@ sections:
               src: 'https://docs.microsoft.com/media/common/i_config-tools.svg'
               href: ~/xamarin-forms/internals/index.yml
             title: 高度な概念と内部構造
-  - title: 参照
+  - title: 関連項目
     items:
       - type: list
         style: cards
@@ -115,4 +115,4 @@ sections:
           - title: サンプル
             html: '<p><a href="https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms">Xamarin.Forms のサンプル</a></p>'
           - title: ブック
-            html: <p><a href="~/xamarin-forms/creating-mobile-apps-xamarin-forms">Mobile Apps の電子ブックを作成する</a></p><p><a href="~/xamarin-forms/enterprise-application-patterns">エンタープライズ アプリケーション パターン電子ブック</a></p><p><a href="~/xamarin-forms/user-interface/graphics/skiasharp/">Xamarin.Forms での SkiaSharp グラフィックス (電子ブック)</a></p>
+            html: <p><a href="~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md">Mobile Apps の電子ブックを作成する</a></p><p><a href="~/xamarin-forms/enterprise-application-patterns/index.md">エンタープライズ アプリケーション パターン電子ブック</a></p><p><a href="~/xamarin-forms/user-interface/graphics/skiasharp/index.md">Xamarin.Forms での SkiaSharp グラフィックス (電子ブック)</a></p>

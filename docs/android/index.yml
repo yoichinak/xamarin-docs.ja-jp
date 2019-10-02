@@ -56,23 +56,23 @@ sections:
               src: 'https://docs.microsoft.com/media/common/i_get-started.svg'
               href: ~/android/get-started/index.md
             title: 作業の開始
-          - href: ~/android/app-fundamentals/
+          - href: ~/android/app-fundamentals/index.md
             html: ファイル、画像、データベースの扱いなど、Android アプリを構築するために必要なすべての情報を説明します。
             image:
               src: ~/media/icons/i_app-build.svg
-              href: ~/android/app-fundamentals/
+              href: ~/android/app-fundamentals/index.md
             title: アプリケーションの基礎
-          - href: ~/android/user-interface
+          - href: ~/android/user-interface/index.md
             html: Android で使用できるすべてのユーザー インターフェイス コントロール ウィジェットについて説明します。
             image:
               src: ~/media/icons/i_user-interface.svg
-              href: ~/android/user-interface/
+              href: ~/android/user-interface/index.md
             title: ユーザー インターフェイス
-          - href: ~/android/platform/
+          - href: ~/android/platform/index.md
             html: 指紋認証などの Android プラットフォーム機能、Android 8.0 Oreo の最新機能について説明します。
             image:
               src: ~/media/icons/i_platform.svg
-              href: ~/android/platform/
+              href: ~/android/platform/index.md
             title: プラットフォーム機能
           - href: ~/essentials/index.md?context=xamarin/android
             html: モバイル アプリケーション用のクロスプラットフォーム API。
@@ -80,29 +80,29 @@ sections:
               src: 'https://docs.microsoft.com/media/common/i_multi-connect.svg'
               href: ~/essentials/index.md?context=xamarin/android
             title: Xamarin.Essentials
-          - href: ~/android/data-cloud/
+          - href: ~/android/data-cloud/index.md
             html: ローカル データとリモートデータの格納と取得、その他のクラウド ベースのサービスについて説明します。
             image:
               src: ~/media/icons/i_data-cloud.svg
-              href: ~/android/data-cloud/
+              href: ~/android/data-cloud/index.md
             title: データとクラウド サービス
-          - href: ~/android/deploy-test/
+          - href: ~/android/deploy-test/index.md
             html: アプリを構築して Google Play に配置する手順と、事前にテストする場合のヒントについて説明します。
             image:
               src: ~/media/icons/i_deploy-test.svg
-              href: ~/android/deploy-test/
+              href: ~/android/deploy-test/index.md
             title: 配置とテスト
-          - href: ~/android/internals/
+          - href: ~/android/internals/index.md
             html: Xamarin.Android の内部構造の詳細と、ローカライズやアクセシビリティなどの機能について説明します。
             image:
               src: 'https://docs.microsoft.com/media/common/i_advanced.svg'
-              href: ~/android/internals/
+              href: ~/android/internals/index.md
             title: 高度な概念と内部構造
-          - href: ~/android/wear/
+          - href: ~/android/wear/index.md
             html: Android Wear 用アプリを構築します。
             image:
               src: ~/media/icons/i_android-wear.svg
-              href: ~/android/wear/
+              href: ~/android/wear/index.md
             title: Android Wear
   - title: 関連項目
     items:

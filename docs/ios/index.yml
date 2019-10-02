@@ -56,23 +56,23 @@ sections:
               src: 'https://docs.microsoft.com/media/common/i_get-started.svg'
               href: ~/ios/get-started/index.md
             title: 作業の開始
-          - href: ~/ios/app-fundamentals/
+          - href: ~/ios/app-fundamentals/index.md
             html: ファイル、画像、データベースの扱いなど、iOS アプリを構築するために必要なすべての情報を説明します。
             image:
               src: ~/media/icons/i_app-build.svg
-              href: ~/ios/app-fundamentals/
+              href: ~/ios/app-fundamentals/index.md
             title: アプリケーションの基礎
-          - href: ~/ios/user-interface
+          - href: ~/ios/user-interface/index.md
             html: UIKit で iOS に使用できるすべてのユーザー インターフェイス コントロール ウィジェットについて説明します。
             image:
               src: ~/media/icons/i_user-interface.svg
-              href: ~/ios/user-interface/
+              href: ~/ios/user-interface/index.md
             title: ユーザー インターフェイス
-          - href: ~/ios/platform/
+          - href: ~/ios/platform/index.md
             html: ARKit や CoreML などの iOS プラットフォーム機能、iOS 11 のその他の新機能の使用方法について説明します。
             image:
               src: ~/media/icons/i_platform.svg
-              href: ~/ios/platform/
+              href: ~/ios/platform/index.md
             title: プラットフォーム機能
           - href: ~/essentials/index.md?context=xamarin/ios
             html: モバイル アプリケーション用のクロスプラットフォーム API。
@@ -80,35 +80,35 @@ sections:
               src: 'https://docs.microsoft.com/media/common/i_multi-connect.svg'
               href: ~/essentials/index.md?context=xamarin/ios
             title: Xamarin.Essentials
-          - href: ~/ios/data-cloud/
+          - href: ~/ios/data-cloud/index.md
             html: ローカル データとリモートデータの格納と取得、その他のクラウド ベースのサービスについて説明します。
             image:
               src: ~/media/icons/i_data-cloud.svg
-              href: ~/ios/data-cloud/
+              href: ~/ios/data-cloud/index.md
             title: データとクラウド サービス
-          - href: ~/ios/deploy-test/
+          - href: ~/ios/deploy-test/index.md
             html: アプリを構築して App Store に配置する手順と、事前にテストする場合のヒントについて説明します。
             image:
               src: ~/media/icons/i_deploy-test.svg
-              href: ~/ios/deploy-test/
+              href: ~/ios/deploy-test/index.md
             title: 配置とテスト
-          - href: ~/ios/internals/
+          - href: ~/ios/internals/index.md
             html: Xamarin.iOS のしくみについて詳しく説明します。
             image:
               src: 'https://docs.microsoft.com/media/common/i_config-tools.svg'
-              href: ~/ios/internals/
+              href: ~/ios/internals/index.md
             title: 高度な概念と内部構造
-          - href: ~/ios/watchos/
+          - href: ~/ios/watchos/index.md
             html: Apple Watch 用アプリを構築しましょう。
             image:
               src: ~/media/icons/i_watchos.svg
-              href: ~/ios/watchos/
+              href: ~/ios/watchos/index.md
             title: watchOS
-          - href: ~/ios/tvos/
+          - href: ~/ios/tvos/index.md
             html: Apple TV 用アプリを構築しましょう。
             image:
               src: ~/media/icons/i_tvos.svg
-              href: ~/ios/tvos/
+              href: ~/ios/tvos/index.md
             title: tvOS
   - title: 関連項目
     items:

@@ -27,12 +27,12 @@ sections:
         items:
           - image:
               src: 'https://docs.microsoft.com/media/common/i_setup.svg'
-            text: 要件
+            text: 必要条件
             href: ~/cross-platform/get-started/requirements.md
           - image:
               src: ~/media/icons/i_desktop-phone.svg
             text: Xamarin.Forms
-            href: ~/get-started/quickstarts/index.md
+            href: ~/get-started/quickstarts/index.yml
           - image:
               src: 'https://docs.microsoft.com/media/common/i_mobileapp.svg'
             text: Android
@@ -57,17 +57,17 @@ sections:
               src: 'https://docs.microsoft.com/media/common/i_get-started.svg'
               href: ~/cross-platform/get-started/index.md
             title: モバイル アプリの構築
-          - href: ~/cross-platform/platform
+          - href: ~/cross-platform/platform/index.md
             html: 'Xamarin では、C#、F#、および Razor テンプレート エンジンがサポートされます。'
             image:
               src: ~/media/icons/i_app-build.svg
-              href: ~/cross-platform/platform
+              href: ~/cross-platform/platform/index.md
             title: 言語サポート
-          - href: ~/cross-platform/app-fundamentals/
+          - href: ~/cross-platform/app-fundamentals/index.md
             html: アプリを構築するために必要なすべての情報について説明します。
             image:
               src: ~/media/icons/i_platform.svg
-              href: ~/cross-platform/app-fundamentals/
+              href: ~/cross-platform/app-fundamentals/index.md
             title: コードの共有
           - href: ~/cross-platform/deploy-test/performance.md
             html: アプリのパフォーマンスとセキュリティのガイドラインを示します。
@@ -75,15 +75,15 @@ sections:
               src: 'https://docs.microsoft.com/media/common/i_code-performance.svg'
               href: ~/cross-platform/deploy-test/performance.md
             title: パフォーマンスとセキュリティ
-          - href: ~/cross-platform/deploy-test/
+          - href: ~/cross-platform/deploy-test/index.md
             html: デバッグと配置のヒントを紹介します。
             image:
               src: ~/media/icons/i_deploy-test.svg
-              href: ~/cross-platform/deploy-test/
+              href: ~/cross-platform/deploy-test/index.md
             title: 配置とデバッグ
-          - href: ~/cross-platform/desktop/
+          - href: ~/cross-platform/desktop/index.md
             html: モバイル アプリの構築に関心のある .NET デスクトップ開発者向けガイダンスです。
             image:
               src: 'https://docs.microsoft.com/media/common/i_xplat-code.svg'
-              href: ~/cross-platform/desktop/
+              href: ~/cross-platform/desktop/index.md
             title: デスクトップ開発者
