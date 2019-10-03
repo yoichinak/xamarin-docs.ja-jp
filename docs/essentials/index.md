@@ -32,7 +32,7 @@ Android、iOS、UWP では独自のオペレーティング システムとプ�
 * [バッテリ](battery.md?context=xamarin/xamarin-forms) – バッテリ レベル、ソース、および状態を簡単に検出します。
 * [クリップボード](clipboard.md?context=xamarin/xamarin-forms) – クリップボード上のテキストをすばやく簡単に設定したり読み取ったりします。
 * [色の変換機能](color-converters.md?context=xamarin/xamarin-forms) – System.Drawing.Color のヘルパー メソッド。
-* [コンパス](compass.md?context=xamarin/xamarin-forms) – 変化のコンパスを監視します。
+* [コンパス](compass.md?context=xamarin/xamarin-forms) – コンパスの変化を監視します。
 * [接続](connectivity.md?context=xamarin/xamarin-forms) – 接続状態を確認し、変更を検出します。
 * [Detect Shake](detect-shake.md?context=xamarin/xamarin-forms) – デバイスを振る動きを検出します。
 * [デバイス ディスプレイ情報](device-display.md?context=xamarin/xamarin-forms) – デバイスの画面のメトリックと向きを取得します。
