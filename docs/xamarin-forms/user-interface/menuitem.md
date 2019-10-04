@@ -22,7 +22,7 @@ Xamarin. Forms [`MenuItem`](xref:Xamarin.Forms.MenuItem)クラスは、 `ListVie
 
 次のスクリーンショット`MenuItem`は、iOS `ListView`および Android のコンテキストメニューのオブジェクトを示しています。
 
-[!["iOS と Android の MenuItems"](menuitem-images/menuitem-demo-cropped.png "iOS と Android の MenuItems")](menuitem-images/menuitem-demo-full.png#lightbox "iOS と Android の MenuItems の全体イメージ")
+[!["iOS と Android の MenuItems"](menuitem-images/menuitem-demo-cropped.png " \"iOS と Android の MenuItems")](menuitem-images/menuitem-demo-full.png#lightbox "iOS と Android の MenuItems の全体イメージfull image")
 
 クラス`MenuItem`は、次のプロパティを定義します。
 
