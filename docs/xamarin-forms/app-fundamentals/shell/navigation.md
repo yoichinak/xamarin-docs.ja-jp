@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
-ms.openlocfilehash: c65a1aed79199106d2a754329dd38d87feda66a2
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: 70f8f630558730f6074373eb3a814209921235de
+ms.sourcegitcommit: 2798da316a3e9d9de3ea36ff6444f60f60553424
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69888967"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71674564"
 ---
 # <a name="xamarinforms-shell-navigation"></a>Xamarin.Forms シェルのナビゲーション
 
@@ -302,7 +302,7 @@ public partial class ElephantDetailPage : ContentPage
 
 - `Command`: `ICommand`型、戻るボタンが押されたときに実行されます。
 - `CommandParameter`: `object` 型、`Command`に渡されるパラメーターです。
-- `IconOveride`: [`ImageSource`](xref:Xamarin.Forms.ImageSource) 型、戻るボタンに使用されるアイコンです。
+- `IconOverride`: [`ImageSource`](xref:Xamarin.Forms.ImageSource) 型、戻るボタンに使用されるアイコンです。
 - `boolean` 型の `IsEnabled`は、戻るボタンが有効かどうかを示します。 既定値は `true` です。
 - `TextOverride`: `string` 型、戻るボタンに使用されるテキスト。
 
@@ -335,7 +335,7 @@ Shell.SetBackButtonBehavior(this, new BackButtonBehavior
 
 `Command` プロパティは、戻るボタンが押されたときに実行されるように `ICommand`に設定され、`IconOverride` プロパティは、戻るボタンに使用されるアイコンに設定されます。
 
-[![iOS および Android 上でシェルの戻るボタン アイコンをオバーライドするスクリーンショット](navigation-images/back-button.png "シェルの戻るボタン アイコンのオーバーライド")](navigation-images/back-button-large.png#lightbox "シェルの戻るボタン アイコンのオーバーライド")
+[![iOS および Android 上でシェルの戻るボタン アイコンをオーバーライドするスクリーンショット](navigation-images/back-button.png "シェルの戻るボタン アイコンのオーバーライド")](navigation-images/back-button-large.png#lightbox "シェルの戻るボタン アイコンのオーバーライド")
 
 ## <a name="related-links"></a>関連リンク
 

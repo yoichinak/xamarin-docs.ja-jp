@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/25/2018
-ms.openlocfilehash: 9f9504890b12f6a3d8046e98ce537cc0d742f2ed
-ms.sourcegitcommit: 159f250ae7535fca7ab3bc4dc7395dc4cc2af93f
+ms.openlocfilehash: b6fb02697d3df59181750bf6fd7c840129554ac3
+ms.sourcegitcommit: 84d788f7dbabc1c83ac795ed3952d589074fa8e8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71278145"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71811181"
 ---
 # <a name="publishing-xamarinios-apps-to-the-app-store"></a>App Store への Xamarin.iOS アプリの公開
 
@@ -121,9 +121,38 @@ App Store プロビジョニング プロファイルを作成してインスト
 
 15. **[OK]** をクリックして、プロジェクト プロパティへの変更を保存します。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio-2019tabwindows"></a>[Visual Studio 2019](#tab/windows)
 
-1. Visual Studio 2019 または Visual Studio 2017 が [Mac ビルド ホストとペアリング](~/ios/get-started/installation/windows/connecting-to-mac/index.md)されていることを確認します。
+1. Visual Studio 2019 が [Mac ビルド ホストとペアリング](~/ios/get-started/installation/windows/connecting-to-mac/index.md)されていることを確認します。
+2. **ソリューション エクスプローラー**で **[プロジェクト名]** を右クリックし、 **[プロパティ]** を選択します。
+3. **[iOS ビルド]** タブに移動して、 **[構成]** を **[リリース]** に、 **[プラットフォーム]** を **[iPhone]** に設定します。
+4. 特定の iOS SDK でビルドするには、 **[SDK バージョン]** リストからそれを選択します。 それ以外の場合は、この値を**既定**のままにしておきます。
+5. リンクを設定し、未使用のコードを削除することで、アプリケーションの全体のサイズが小さくなります。 ほとんどの場合、 **[リンカーの動作]** は既定値の **[フレームワーク SDK のみをリンクする]** に設定する必要があります。 いくつかのサード パーティ製ライブラリを使用するときなど、必要なコードが削除されないようにするため、この値を **[リンクしない]** に設定する必要がある場合もあります。 詳細については、「[Xamarin.iOS アプリをリンクする](~/ios/deploy-test/linker.md)」ガイドを参照してください。
+6. **[PNG 画像を最適化する]** をオンにして、アプリケーションのサイズをさらに小さくします。
+7. デバッグはビルド サイズが不必要に大きくなるため、有効にしないでください。
+8. iOS 11 の場合は、**ARM64** をサポートするデバイス アーキテクチャの 1 つを選択します。 64 ビット iOS デバイスのビルドの詳細については、「[32/64 ビット プラットフォームの考慮事項](~/cross-platform/macios/32-and-64/index.md)」ドキュメントの「**Enabling 64-Bit Builds of Xamarin.iOS Apps**」 (Xamarin.iOS アプリの 64 ビット ビルドの有効化) セクションを参照してください。
+9. **LLVM** コンパイラを使用すれば、より小さく高速なコードをビルドすることができます。 しかし、このオプションではコンパイル時間が増加します。
+10. アプリケーションのニーズに基づいて、**国際化**対応のために使用および設定する**ガベージ コレクション**の種類を調整することもできます。
+
+    上記のオプションを設定した後のビルド設定は次のようになります。
+
+    ![iOS ビルド設定](publishing-to-the-app-store-images/build-w157.png "iOS ビルド設定")
+
+    ビルド設定について詳しく説明されている、こちらの「[iOS ビルドのしくみ](~/ios/deploy-test/ios-build-mechanics.md)」ガイドも参照してください。
+
+11. **[iOS バンドル署名]** タブに移動します。 **[構成]** が **[リリース]** に、 **[プラットフォーム]** が **[iPhone]** に設定され、かつ **[手動プロビジョニング]** が選択されていることを確認します。
+12. **[署名 ID]** を **[配布 (自動)]** に設定します。
+13. **[プロビジョニング プロファイル]** では、[前の手順で作成した](#create-and-install-an-app-store-provisioning-profile) App Store プロビジョニング プロファイルを選択します。
+
+    これで、プロジェクトのバンドル署名オプションは次のようになります。
+
+    ![iOS バンドル署名の設定](publishing-to-the-app-store-images/bundleSigning-w157.png "iOS バンドル署名の設定")
+
+14. ビルド構成を保存して閉じます。
+
+# <a name="visual-studio-2017tabwin-vs2017"></a>[Visual Studio 2017](#tab/win-vs2017)
+
+1. Visual Studio 2017 が [Mac ビルド ホストとペアリング](~/ios/get-started/installation/windows/connecting-to-mac/index.md)されていることを確認します。
 2. **ソリューション エクスプローラー**で **[プロジェクト名]** を右クリックし、 **[プロパティ]** を選択します。
 3. **[iOS ビルド]** タブに移動して、 **[構成]** を **[リリース]** に、 **[プラットフォーム]** を **[iPhone]** に設定します。
 4. 特定の iOS SDK でビルドするには、 **[SDK バージョン]** リストからそれを選択します。 それ以外の場合は、この値を**既定**のままにしておきます。
@@ -182,7 +211,6 @@ App Store プロビジョニング プロファイルを作成してインスト
 2. **[ビルド]** メニューから、 **[発行のためのアーカイブ]** を選択します。
 3. アーカイブが作成されると、 **[アーカイブ]** ビューが表示されます。 **[署名と配布]** をクリックして、発行ウィザードを開きます。
 
-
     ![[アーカイブ] ビューの [署名と配布] ボタンの場所のスクリーンショット。](publishing-to-the-app-store-images/archives-mac.png "[アーカイブ] ビューの [署名と配布] ボタンの場所のスクリーンショット。")
 
     > [!NOTE]
@@ -209,12 +237,42 @@ App Store プロビジョニング プロファイルを作成してインスト
     >
     > このエラーの回避策については、[Xamarin フォーラムのこちらの投稿](https://forums.xamarin.com/discussion/40388/disallowed-paths-itunesmetadata-plist-found-at-when-submitting-to-app-store/p1)を参照してください。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio-2019tabwindows"></a>[Visual Studio 2019](#tab/windows)
 
 > [!NOTE]
-> Visual Studio 2017 では、現在、Visual Studio for Mac で検出される**発行のためのアーカイブ** ワークフローはサポートされていません。
+> App Store への発行は、Visual Studio 2019 バージョン 16.3 以降でサポートされています。
 
-1. Visual Studio 2019 または Visual Studio 2017 が [Mac ビルド ホストとペアリング](~/ios/get-started/installation/windows/connecting-to-mac/index.md)されていることを確認します。
+1. Visual Studio 2019 が [Mac ビルド ホストとペアリング](~/ios/get-started/installation/windows/connecting-to-mac/index.md)されていることを確認します。
+2. **[ソリューション構成]** ドロップダウンからは **[リリース]** を、 **[ソリューション プラットフォーム]** ドロップダウンからは **[iPhone]** を選択します。
+
+    ![[ソリューション構成] が [リリース]、[ソリューション プラットフォーム] が [iPhone]、[ターゲット] が [デバイス] に設定されている Visual Studio ツール バーのスクリーンショット。](publishing-to-the-app-store-images/chooseConfig-w157.png "[ソリューション構成] が [リリース]、[ソリューション プラットフォーム] が [iPhone]、[ターゲット] が [デバイス] に設定されている Visual Studio ツール バーのスクリーンショット。")
+
+3. **[ビルド]** メニューの **[アーカイブ]** を選択します。これにより、 **[アーカイブ マネージャー]** が開き、アーカイブの作成が開始されます。
+
+4. アーカイブが作成されたら、 **[配布]** をクリックして、発行ウィザードを開きます。
+
+    ![[アーカイブ マネージャー] ビューの [配布] ボタンの場所のスクリーンショット。](publishing-to-the-app-store-images/archives-win.png "[アーカイブ マネージャー] ビューの [配布] ボタンの場所のスクリーンショット。")
+
+5. **[App Store]** 配布チャネルを選択します。
+
+6. 署名 ID とプロビジョニング プロファイルを選択します。 **[Upload to Store]\(Store にアップロード\)** をクリックします。
+
+    ![有効な署名 ID とプロビジョニング プロファイルの選択を示す発行ウィザードのスクリーンショット。](publishing-to-the-app-store-images/provProfileSelect-win.png "有効な署名 ID とプロビジョニング プロファイルの選択を示す発行ウィザードのスクリーンショット。")
+
+7. Apple ID と[アプリ固有のパスワード](https://support.apple.com/ht204397)を入力します。 **[OK]** をクリックして、App Store Connect へのアプリのアップロードを開始します。
+
+    ![Apple ID とアプリ固有のパスワードを入力するポップアップ ウィンドウのスクリーンショット。](publishing-to-the-app-store-images/connectInfo-win.png "Apple ID とアプリ固有のパスワードを入力するポップアップ ウィンドウのスクリーンショット。")
+
+# <a name="visual-studio-2017tabwin-vs2017"></a>[Visual Studio 2017](#tab/win-vs2017)
+
+> [!NOTE]
+> Visual Studio 2017 では、Visual Studio for Mac と Visual Studio 2019 にある完全発行のワークフローはサポートしていません。
+>
+> 次のステップは、Xcode 10 を対象としています。
+>
+> 引き続き、以下のステップに従って .IPA ファイルを構築できますが、Xcode 11 (iOS 13 のサポートのために必要) を使用して App Store に展開するには、[Visual Studio for Mac を使用する](?tabs=macos#build-and-submit-your-app)必要があります。
+
+1. Visual Studio 2017 が [Mac ビルド ホストとペアリング](~/ios/get-started/installation/windows/connecting-to-mac/index.md)されていることを確認します。
 2. Visual Studio 2017 の **[ソリューション構成]** ドロップダウンからは **[リリース]** を、 **[ソリューション プラットフォーム]** ドロップダウンからは **[iPhone]** を選択します。
 
     ![ビルド構成とプラットフォームの選択](publishing-to-the-app-store-images/chooseConfig-w157.png "ビルド構成とプラットフォームの選択")
@@ -226,6 +284,13 @@ App Store プロビジョニング プロファイルを作成してインスト
 
 4. Windows コンピューター上の .ipa ファイルを検索するには、Visual Studio 2019 または Visual Studio 2017 の**ソリューション エクスプローラー**で Xamarin.iOS プロジェクト名を右クリックし、 **[エクスプローラーでフォルダーを開く]** を選択します。 次に、開いた Windows の**エクスプローラー**で、**bin/iPhone/Release** サブディレクトリに移動します。 [.ipa ファイルの出力場所をカスタマイズ](#customize-the-ipa-location)していない限り、このディレクトリにあります。
 5. 代わりに Mac ビルド ホスト上の .ipa ファイルを表示するには、Visual Studio 2019 または Visual Studio 2017 の**ソリューション エクスプローラー** (Windows 上) で Xamarin.iOS プロジェクト名を右クリックし、 **[ビルド サーバーに IPA ファイルを表示]** を選択します。 これで、Mac ビルド ホストに、.ipa ファイルが選択された状態で **Finder** ウィンドウが開きます。
+
+    > [!TIP]
+    >
+    > 次のステップは、Xcode 10 を使用していて、ビルドの対象が iOS 12 以前である場合にのみ有効です。
+    >
+    > Xcode 11 (iOS 13 用) を使用して App Store に展開するには、[Visual Studio for Mac を使用](?tabs=macos#build-and-submit-your-app)してアプリをビルドし、アップロードする必要があります。 Xcode 11 では**アプリケーション ローダー**を使用できません。
+
 6. Mac ビルド ホストで、**Application Loader** を開きます。 Xcode で、 **[Xcode]、[開発者ツールを開く]、[Application Loader]** の順に選択します。
 
     > [!NOTE]
@@ -331,4 +396,3 @@ msbuild /p:Configuration="Release" /p:Platform="iPhone" /p:IpaPackageDir="$HOME/
 - [iTunes Connect でのアプリの構成](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md)
 - [Xamarin.iOS のアプリケーション アイコン](~/ios/app-fundamentals/images-icons/app-icons.md)
 - [Xamarin.iOS アプリの起動画面](~/ios/app-fundamentals/images-icons/launch-screens.md)
-- [Application Loader のドキュメント (Apple)](https://help.apple.com/itc/apploader/#/apdS673accdb)
