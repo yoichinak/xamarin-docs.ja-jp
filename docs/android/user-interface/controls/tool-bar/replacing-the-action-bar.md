@@ -210,7 +210,7 @@ ActionBar.Title = "My Toolbar";
 
 - アイコンのない**基本設定**メニュー項目。
 
-`Toolbar` &ndash; `ifRoom` `showAsAction` **[編集]** および **[保存]** メニュー項目の属性をこの設定に設定すると、これらのメニュー項目が表示されるのに十分な領域がある場合は、これらのメニュー項目がに表示されます。 **[基本設定]** メニュー `showAsAction`項目`never`をこれに設定&ndash;すると、[**設定] メニューが***オーバーフロー*メニューに表示されます (3 つの垂直ドット)。 
+`Toolbar` &ndash; `ifRoom` `showAsAction` **[編集]** および **[保存]** メニュー項目の属性をこの設定に設定すると、これらのメニュー項目が表示されるのに十分な領域がある場合は、これらのメニュー項目がに表示されます。 **[基本設定]** メニュー `showAsAction`項目`never`をこれに設定&ndash;すると、[**設定] メニューが** *オーバーフロー*メニューに表示されます (3 つの垂直ドット)。 
 
 ### <a name="implement-oncreateoptionsmenu"></a>OnCreateOptionsMenu を実装する
 
