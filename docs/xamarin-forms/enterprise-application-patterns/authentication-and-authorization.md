@@ -198,7 +198,7 @@ public static IEnumerable<Client> GetClients(Dictionary<string,string> clien
 - `RequireConsent`:同意画面が必要かどうかを指定します。
 - `RequirePkce`:認証コードを使用するクライアントが証明キーを送信する必要があるかどうかを指定します。
 - `PostLogoutRedirectUris`:ログアウト後にリダイレクトすることが許可されている Uri を指定します。
-- `AllowedCorsOrigins`:クライアントの配信元を指定します。これにより、配信元からのクロスオリジン呼び出しが許可されるようになります。
+- `AllowedCorsOrigins`:クライアントの配信元を指定します。これにより、配信元からのクロスオリジン呼び出しが IdentityServer によって許可されるようになります。
 - `AllowedScopes`:クライアントがアクセスできるリソースを指定します。 既定では、クライアントはリソースにアクセスできません。
 - `AllowOfflineAccess`:クライアントが更新トークンを要求できるかどうかを指定します。
 
@@ -285,7 +285,7 @@ public string CreateAuthorizationRequest()
 > [!NOTE]
 > EShopOnContainers モバイルアプリの攻撃対象領域を減らすには、OAuth にコード交換 (PKCE) 拡張の証明キーを実装します。 PKCE では、承認コードが傍受された場合に使用されるのを防ぐことができます。 これは、クライアントが秘密検証ツールを生成し、そのハッシュが承認要求で渡され、認証コードの適用時にハッシュされて表示されることによって実現されます。 PKCE の詳細については、インターネット技術標準化委員会の web サイトの「 [OAuth パブリッククライアントによるコード交換のための証明キー](https://tools.ietf.org/html/rfc7636) 」を参照してください。
 
-返された URI は、 `LoginUrl` `LoginViewModel`クラスのプロパティに格納されます。 プロパティが`IsLogin`になる`true`と、 [`WebView`](xref:Xamarin.Forms.WebView)内`LoginView`のが表示されるようになります。 データ`WebView`は、その[`Source`](xref:Xamarin.Forms.WebView.Source)プロパティ`LoginUrl` `LoginUrl`をクラスのプロパティにバインドします。これにより、プロパティが "identity server" 認証エンドポイントに設定されている場合に、"サーバーにサインイン" 要求が行われます。 `LoginViewModel` ユーザーがこの要求を受信し、ユーザーが認証され`WebView`ていない場合、は、図9-4 に示すように、構成されたログインページにリダイレクトされます。
+返された URI は、 `LoginUrl` `LoginViewModel`クラスのプロパティに格納されます。 プロパティが`IsLogin`になる`true`と、 [`WebView`](xref:Xamarin.Forms.WebView)内`LoginView`のが表示されるようになります。 データ`WebView`は、その[`Source`](xref:Xamarin.Forms.WebView.Source)プロパティ`LoginUrl` `LoginUrl`をクラスのプロパティにバインドします。これにより、プロパティが "Identity Server" 認証エンドポイントに設定されている場合に、"IdentityServer にサインイン" 要求が行われます。 `LoginViewModel` ユーザーがこの要求を受信し、ユーザーが認証され`WebView`ていない場合、は、図9-4 に示すように、構成されたログインページにリダイレクトされます。
 
 ![](authentication-and-authorization-images/login.png "WebView によって表示されるログインページ")
 
@@ -316,12 +316,12 @@ private async Task NavigateAsync(string url)
 }
 ```
 
-このメソッドは、戻り URI に含まれている認証応答を解析します。有効な認証コードが存在する場合は、サービスの[トークンエンドポイント](https://identityserver4.readthedocs.io/en/latest/endpoints/token.html)に対して要求を行い、認証コード、pkce シークレット検証ツール、およびその他の必須パラメーター。 トークンエンドポイントは、 `/connect/token`ユーザー設定として公開されているベースエンドポイントのポート5105にあります。 ユーザー設定の詳細については、「[構成管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)」を参照してください。
+このメソッドは、戻り URI に含まれている認証応答を解析します。有効な認証コードが存在する場合は、IdentityServer の[トークンエンドポイント](https://identityserver4.readthedocs.io/en/latest/endpoints/token.html)に対して要求を行い、認証コード、pkce シークレット検証ツール、およびその他の必須パラメーター。 トークンエンドポイントは、 `/connect/token`ユーザー設定として公開されているベースエンドポイントのポート5105にあります。 ユーザー設定の詳細については、「[構成管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)」を参照してください。
 
 > [!TIP]
 > リターン Uri を検証します。 EShopOnContainers モバイルアプリでは、リターン URI は検証されませんが、オープンリダイレクト攻撃を防ぐために、戻り値 URI が既知の場所を参照していることを検証することをお勧めします。
 
-トークンエンドポイントは、有効な認証コードと PKCE シークレット検証ツールを受け取ると、アクセストークン、id トークン、および更新トークンで応答します。 (API リソースへのアクセスを許可する) アクセストークンと id トークンは、アプリケーション設定として格納され、ページナビゲーションが実行されます。 そのため、eShopOnContainers モバイルアプリの全体的な影響は次のようになります。ユーザーがユーザーの認証に成功した場合は、 `MainView`ページに移動され[`TabbedPage`](xref:Xamarin.Forms.TabbedPage)ます。これ`CatalogView`は、選択したタブとして選択します。
+トークンエンドポイントは、有効な認証コードと PKCE シークレット検証ツールを受け取ると、アクセストークン、id トークン、および更新トークンで応答します。 (API リソースへのアクセスを許可する) アクセストークンと id トークンは、アプリケーション設定として格納され、ページナビゲーションが実行されます。 そのため、eShopOnContainers モバイルアプリの全体的な影響は次のようになります。ユーザーが IdentityServer の認証に成功した場合は、 `MainView`ページに移動され[`TabbedPage`](xref:Xamarin.Forms.TabbedPage)ます。これ`CatalogView`は、選択したタブとして選択します。
 
 ページナビゲーションの詳細については、「[ナビゲーション](~/xamarin-forms/enterprise-application-patterns/navigation.md)」を参照してください。 ナビゲーションによって[`WebView`](xref:Xamarin.Forms.WebView)ビューモデルメソッドが実行される方法については、「[動作を使用したナビゲーションの呼び出し](~/xamarin-forms/enterprise-application-patterns/navigation.md#invoking_navigation_using_behaviors)」を参照してください。 アプリケーション設定の詳細については、「[構成管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)」を参照してください。
 
@@ -385,7 +385,7 @@ private async Task NavigateAsync(string url)
 ページナビゲーションの詳細については、「[ナビゲーション](~/xamarin-forms/enterprise-application-patterns/navigation.md)」を参照してください。 ナビゲーションによって[`WebView`](xref:Xamarin.Forms.WebView)ビューモデルメソッドが実行される方法については、「[動作を使用したナビゲーションの呼び出し](~/xamarin-forms/enterprise-application-patterns/navigation.md#invoking_navigation_using_behaviors)」を参照してください。 アプリケーション設定の詳細については、「[構成管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)」を参照してください。
 
 > [!NOTE]
-> また、eShopOnContainers は、SettingsView でモックサービスを使用するようにアプリが構成されている場合に、モックサインアウトを許可します。 このモードでは、アプリは、サービスと通信しません。その代わり、アプリケーション設定から格納されているトークンをクリアします。
+> また、eShopOnContainers は、SettingsView でモックサービスを使用するようにアプリが構成されている場合に、モックサインアウトを許可します。 このモードでは、アプリは、IdentityServer と通信しません。その代わり、アプリケーション設定から格納されているトークンをクリアします。
 
 <a name="authorization" />
 
