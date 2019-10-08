@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/23/2018
-ms.openlocfilehash: 5992be5963c315c4f93fc4e03c24e3776087d418
-ms.sourcegitcommit: 621649fb4a119981290fed7a1061cbae30b982a6
+ms.openlocfilehash: c67f58a4b1886d3f89f7bd1639e1cd687d329869
+ms.sourcegitcommit: 4ff181101d76f048b949c9613b2c72cf02618f8b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/06/2019
-ms.locfileid: "71975798"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "71994819"
 ---
 # <a name="external-storage"></a>外部ストレージ
 
@@ -78,7 +78,7 @@ ms.locfileid: "71975798"
 
 このドキュメントでは、外部ストレージ上のパブリックファイルのストレージディレクトリを、 _public @ no__t-1EXTERNAL @ no__t-2storage_と呼びます。
 
-Android では、 _PUBLIC @ no__t-1EXTERNAL @ no__t-2STORAGE_のアプリケーションディレクトリの概念もサポートされています。 これらのディレクトリは `_PRIVATE\_EXTERNAL\_STORAGE_` のアプリケーションディレクトリとまったく同じであり、前のセクションの表で説明されています。 メソッド `Android.OS.Environment.GetExternalStoragePublicDirectory(string directoryType)` は、パブリックアプリケーションディレクトリに対応する @no__t 1 オブジェクトを返します。 @No__t-0 パラメーターは必須パラメーターであり、`null` にすることはできません。
+Android では、 _PUBLIC @ no__t-1EXTERNAL @ no__t-2STORAGE_のアプリケーションディレクトリの概念もサポートされています。 これらのディレクトリは `PRIVATE_EXTERNAL_STORAGE` のアプリケーションディレクトリとまったく同じであり、前のセクションの表で説明されています。 メソッド `Android.OS.Environment.GetExternalStoragePublicDirectory(string directoryType)` は、パブリックアプリケーションディレクトリに対応する @no__t 1 オブジェクトを返します。 @No__t-0 パラメーターは必須パラメーターであり、`null` にすることはできません。
 
 たとえば、`Environment.GetExternalStoragePublicDirectory(Environment.DirectoryDocuments).AbsolutePath` を呼び出すと、次のような文字列が返されます。
 

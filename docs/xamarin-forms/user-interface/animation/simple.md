@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/27/2017
-ms.openlocfilehash: 71972f13f991bc5ad3ddf3c1c631fa7413290204
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 26068973fd91d5229b7e2108f5df46ae4476ef74
+ms.sourcegitcommit: 4cf434b126eb7df6b2fd9bb1d71613bf2b6aac0e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70759904"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "71997200"
 ---
 # <a name="simple-animations-in-xamarinforms"></a>Xamarin.Forms での単純なアニメーション
 
@@ -23,7 +23,7 @@ _ViewExtensions クラスは、単純なアニメーションを作成するた�
 [ `ViewExtensions` ](xref:Xamarin.Forms.ViewExtensions)クラスは、単純なアニメーションを作成するために使用できる次の拡張メソッドを提供します。
 
 - [`TranslateTo`](xref:Xamarin.Forms.ViewExtensions.TranslateTo(Xamarin.Forms.VisualElement,System.Double,System.Double,System.UInt32,Xamarin.Forms.Easing)) アニメーション化、 [ `TranslationX` ](xref:Xamarin.Forms.VisualElement.TranslationX)と[ `TranslationY` ](xref:Xamarin.Forms.VisualElement.TranslationY)のプロパティを[ `VisualElement`](xref:Xamarin.Forms.VisualElement)します。
-- [`ScaleTo`](xref:Xamarin.Forms.VisualElement.Scale) アニメーション化、 [ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale)のプロパティを[ `VisualElement`](xref:Xamarin.Forms.VisualElement)します。
+- [`ScaleTo`](xref:Xamarin.Forms.ViewExtensions.ScaleTo*) アニメーション化、 [ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale)のプロパティを[ `VisualElement`](xref:Xamarin.Forms.VisualElement)します。
 - [`RelScaleTo`](xref:Xamarin.Forms.ViewExtensions.RelScaleTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing)) アニメーション化された増分増加または減少に適用されます、 [ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale)のプロパティを[ `VisualElement`](xref:Xamarin.Forms.VisualElement)します。
 - [`RotateTo`](xref:Xamarin.Forms.ViewExtensions.RotateTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing)) アニメーション化、 [ `Rotation` ](xref:Xamarin.Forms.VisualElement.Rotation)のプロパティを[ `VisualElement`](xref:Xamarin.Forms.VisualElement)します。
 - [`RelRotateTo`](xref:Xamarin.Forms.ViewExtensions.RelRotateTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing)) アニメーション化された増分増加または減少に適用されます、 [ `Rotation` ](xref:Xamarin.Forms.VisualElement.Rotation)のプロパティを[ `VisualElement`](xref:Xamarin.Forms.VisualElement)します。
@@ -79,13 +79,13 @@ await image.RelRotateTo (360, 2000);
 
 ### <a name="scaling"></a>スケーリング
 
-次のコード例に示しますを使用して、 [ `ScaleTo` ](xref:Xamarin.Forms.VisualElement.Scale)をアニメーション化するメソッド、 [ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale)のプロパティ、 [ `Image` ](xref:Xamarin.Forms.Image):
+次のコード例に示しますを使用して、 [ `ScaleTo` ](xref:Xamarin.Forms.ViewExtensions.ScaleTo*)をアニメーション化するメソッド、 [ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale)のプロパティ、 [ `Image` ](xref:Xamarin.Forms.Image):
 
 ```csharp
 await image.ScaleTo (2, 2000);
 ```
 
-このコードをアニメーション化、 [ `Image` ](xref:Xamarin.Forms.Image)インスタンスのスケール アップで 2 倍のサイズを超える 2 秒 (2000 ミリ秒)。 [ `ScaleTo` ](xref:Xamarin.Forms.VisualElement.Scale)メソッドは現在、取得[ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale)アニメーション、および最初の引数 (2) にその値から、スケールの開始のプロパティの値 (既定値の 1)。 イメージのサイズを 2 倍のサイズに拡大の効果があります。
+このコードをアニメーション化、 [ `Image` ](xref:Xamarin.Forms.Image)インスタンスのスケール アップで 2 倍のサイズを超える 2 秒 (2000 ミリ秒)。 [ `ScaleTo` ](xref:Xamarin.Forms.ViewExtensions.ScaleTo*)メソッドは現在、取得[ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale)アニメーション、および最初の引数 (2) にその値から、スケールの開始のプロパティの値 (既定値の 1)。 イメージのサイズを 2 倍のサイズに拡大の効果があります。
 
 次のスクリーン ショットは、各プラットフォームでの進行状況でのスケーリングを示しています。
 
@@ -106,7 +106,7 @@ await image.RelScaleTo (2, 2000);
 
 ### <a name="scaling-and-rotation-with-anchors"></a>拡大縮小および回転のアンカー
 
-[ `AnchorX` ](xref:Xamarin.Forms.VisualElement.AnchorX)と[ `AnchorY` ](xref:Xamarin.Forms.VisualElement.AnchorY)プロパティの拡大縮小や回転の中心を設定する、 [ `Rotation` ](xref:Xamarin.Forms.VisualElement.Rotation)と[ `Scale`](xref:Xamarin.Forms.VisualElement.Scale)プロパティ。 そのため、その値にも影響、 [ `RotateTo` ](xref:Xamarin.Forms.ViewExtensions.RotateTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing))と[ `ScaleTo` ](xref:Xamarin.Forms.VisualElement.Scale)メソッド。
+[ `AnchorX` ](xref:Xamarin.Forms.VisualElement.AnchorX)と[ `AnchorY` ](xref:Xamarin.Forms.VisualElement.AnchorY)プロパティの拡大縮小や回転の中心を設定する、 [ `Rotation` ](xref:Xamarin.Forms.VisualElement.Rotation)と[ `Scale`](xref:Xamarin.Forms.VisualElement.Scale)プロパティ。 そのため、その値にも影響、 [ `RotateTo` ](xref:Xamarin.Forms.ViewExtensions.RotateTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing))と[ `ScaleTo` ](xref:Xamarin.Forms.ViewExtensions.ScaleTo*)メソッド。
 
 指定された、 [ `Image` ](xref:Xamarin.Forms.Image)ですが、レイアウトの中央に配置されている、次のコード例に示しますを設定して、イメージ、レイアウトの中心を回転、 [ `AnchorY` ](xref:Xamarin.Forms.VisualElement.AnchorY)プロパティ:
 
@@ -179,7 +179,7 @@ await image.ScaleTo (2, 2000);
 await image.ScaleTo (1, 2000);
 ```
 
-この例で、 [ `Image` ](xref:Xamarin.Forms.Image)スケーリングおよび 4 秒 (4000 ミリ秒単位) を同時に回転します。 スケーリング、`Image`回転と同時に発生する 2 つの連続アニメーションを使用します。 [ `RotateTo` ](xref:Xamarin.Forms.ViewExtensions.RotateTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing))せずにメソッドを実行、`await`演算子最初がすぐに返されます[ `ScaleTo` ](xref:Xamarin.Forms.VisualElement.Scale)アニメーションを開始します。 `await`最初の演算子`ScaleTo`メソッドの呼び出し、2 つ目の遅延`ScaleTo`最初までメソッドの呼び出し`ScaleTo`メソッドの呼び出しが完了します。 この時点で、`RotateTo`アニメーションが完了したことの半分と`Image`180 度回転されます。 最後の 2 秒 (2000 ミリ秒) 間、2 つ目`ScaleTo`アニメーションと`RotateTo`アニメーション両方を完了します。
+この例で、 [ `Image` ](xref:Xamarin.Forms.Image)スケーリングおよび 4 秒 (4000 ミリ秒単位) を同時に回転します。 スケーリング、`Image`回転と同時に発生する 2 つの連続アニメーションを使用します。 [ `RotateTo` ](xref:Xamarin.Forms.ViewExtensions.RotateTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing))せずにメソッドを実行、`await`演算子最初がすぐに返されます[ `ScaleTo` ](xref:Xamarin.Forms.ViewExtensions.ScaleTo*)アニメーションを開始します。 `await`最初の演算子`ScaleTo`メソッドの呼び出し、2 つ目の遅延`ScaleTo`最初までメソッドの呼び出し`ScaleTo`メソッドの呼び出しが完了します。 この時点で、`RotateTo`アニメーションが完了したことの半分と`Image`180 度回転されます。 最後の 2 秒 (2000 ミリ秒) 間、2 つ目`ScaleTo`アニメーションと`RotateTo`アニメーション両方を完了します。
 
 ### <a name="running-multiple-asynchronous-methods-concurrently"></a>複数の非同期メソッドを同時に実行
 
@@ -194,7 +194,7 @@ await Task.WhenAny<bool>
 await image.ScaleTo (1, 2000);
 ```
 
-この例で、`Task.WhenAny`メソッドの呼び出しには、2 つのタスクが含まれています。 最初のタスクは 4 秒 (4000 のミリ秒単位)、画像を回転し、2 番目のタスクは 2 秒 (2000 ミリ秒) を超えるイメージを縮小します。 2 番目のタスクが完了したら、`Task.WhenAny`メソッドの呼び出しが完了するとします。 ただし、場合でも、 [ `RotateTo` ](xref:Xamarin.Forms.ViewExtensions.RotateTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing))メソッドがまだ実行されている 2 つ目[ `ScaleTo` ](xref:Xamarin.Forms.VisualElement.Scale)メソッドを開始できます。
+この例で、`Task.WhenAny`メソッドの呼び出しには、2 つのタスクが含まれています。 最初のタスクは 4 秒 (4000 のミリ秒単位)、画像を回転し、2 番目のタスクは 2 秒 (2000 ミリ秒) を超えるイメージを縮小します。 2 番目のタスクが完了したら、`Task.WhenAny`メソッドの呼び出しが完了するとします。 ただし、場合でも、 [ `RotateTo` ](xref:Xamarin.Forms.ViewExtensions.RotateTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing))メソッドがまだ実行されている 2 つ目[ `ScaleTo` ](xref:Xamarin.Forms.ViewExtensions.ScaleTo*)メソッドを開始できます。
 
 `Task.WhenAll`メソッドの完了がコレクション内のすべてのメソッドが完了したら、次のコード例で示した。
 
