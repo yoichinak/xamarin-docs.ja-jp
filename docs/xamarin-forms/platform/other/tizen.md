@@ -1,36 +1,36 @@
 ---
 title: Tizen .NET
-description: Tizen .NET には、Tv、ウェアラブル、モバイル デバイス、およびその他の IoT デバイスを含む、Samsung のデバイス上で実行され、Tizen オペレーティング システム用のアプリケーションを開発することができます。
+description: Tizen .NET を使用すると、Tizen オペレーティングシステム用のアプリケーションを開発できます。これは、テレビ、ウェアラブル、モバイルデバイス、その他の IoT デバイスを含む Samsung デバイスで実行されます。
 ms.prod: xamarin
 ms.assetid: 5A22A354-A4DD-480D-A1BB-6D0C38592E55
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/26/2018
-ms.openlocfilehash: 69e8b919c5cc925be813cf1f768833ccfd948ada
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: f33fc1860d716921b7af18639837eaef27e56491
+ms.sourcegitcommit: 4cf434b126eb7df6b2fd9bb1d71613bf2b6aac0e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61311278"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "71997140"
 ---
 # <a name="tizen-net"></a>Tizen .NET
 
-_Tizen .NET には、Tv、ウェアラブル、モバイル デバイス、およびその他の IoT デバイスを含む、Samsung のデバイスで実行する Tizen アプリケーションを開発することができます。_
+_Tizen .NET を使用すると、Tv、ウェアラブル、モバイルデバイス、その他の IoT デバイスなど、Samsung デバイスで実行する Tizen アプリケーションを開発できます。_
 
-Tizen .NET では、Xamarin.Forms と Tizen .NET framework での .NET アプリケーションをビルドすることができます。 Xamarin.Forms は、TizenFX API、ウェアラブルに転送し、IoT デバイスは、モバイル、最新のテレビに存在するハードウェアにインターフェイスを提供しますが、ユーザー インターフェイスを簡単に作成することができます。 Tizen .NET の詳細については、次を参照してください。 [Tizen .NET アプリケーションの概要](https://developer.tizen.org/development/training/.net-application)します。
+Tizen .NET を使用すると、.net アプリケーションを Xamarin. Forms と Tizen .NET framework でビルドできます。 Tizen .NET プラットフォームは Samsung によってサポートされています。 Xamarin を使用すると、ユーザーインターフェイスを簡単に作成できます。一方、TizenFX API は、最新の TV、モバイル、ウェアラブル、および IoT デバイスで検出されたハードウェアへのインターフェイスを提供します。 Tizen .NET の詳細については、「 [Tizen .Net アプリケーションの概要](https://developer.tizen.org/development/training/.net-application)」を参照してください。
 
 ## <a name="get-started"></a>作業開始
 
-Tizen .NET アプリケーションの開発を開始するには、最初に、開発環境を設定する必要があります。 詳細については、次を参照してください。 [Tizen 用の Visual Studio Tools のインストール](https://developer.tizen.org/development/visual-studio-tools-tizen/installing-visual-studio-tools-tizen)します。
+Tizen .NET アプリケーションの開発を開始する前に、まず開発環境を設定する必要があります。 詳細については、「 [Tizen の Visual Studio Tools のインストール](https://developer.tizen.org/development/visual-studio-tools-tizen/installing-visual-studio-tools-tizen)」を参照してください。
 
-Tizen .NET プロジェクトを既存の Xamarin.Forms ソリューションに追加する方法については、次を参照してください。[初めて Tizen .NET アプリケーションの作成](https://developer.tizen.org/development/training/.net-application/creating-your-first-tizen-.net-application)です。
+Tizen .NET プロジェクトを既存の Xamarin. Forms ソリューションに追加する方法の詳細については、「初めての[Tizen .Net アプリケーションの作成](https://developer.tizen.org/development/training/.net-application/creating-your-first-tizen-.net-application)」を参照してください。
 
 ## <a name="documentation"></a>ドキュメント
 
 - [Xamarin.Forms ドキュメント](~/xamarin-forms/index.yml) &ndash; C# と Xamarin.Forms のクロスプラット フォーム対応のアプリケーションを構築する方法。
-- [**developer.tizen.org** ](https://developer.tizen.org/development) &ndash;ドキュメントおよびビデオを構築および Tizen アプリケーションをデプロイできます。
+- [**developer.tizen.org**](https://developer.tizen.org/development) @no__t、tizen アプリケーションを構築して展開するのに役立つドキュメントとビデオが2つあります。
 
 ## <a name="samples"></a>サンプル
 
-Samsung のフォークの維持、[追加 Tizen プロジェクトと Xamarin.Forms のサンプル](https://github.com/Samsung/xamarin-forms-samples)、別のリポジトリがあると[Tizen-Csharp-サンプル](https://github.com/Samsung/Tizen-CSharp-Samples)ウェアラブルをなど、追加のプロジェクトを格納しているとテレビに固有のデモです。
+Samsung は、 [Tizen プロジェクトが追加された Xamarin サンプル](https://github.com/Samsung/xamarin-forms-samples)のフォークを維持しています。また、ウェアラブルや TV 固有のデモを含む追加のプロジェクトを含む別のリポジトリ[Tizen サンプル](https://github.com/Samsung/Tizen-CSharp-Samples)もあります。

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/21/2018
-ms.openlocfilehash: 8d30cdd4a50e912208d29e2171ef4c3db174718a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: fb3bbda3caee9fdbd490aaea7e119baf470eedd1
+ms.sourcegitcommit: 4cf434b126eb7df6b2fd9bb1d71613bf2b6aac0e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70760565"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "71997157"
 ---
 # <a name="file-handling-in-xamarinforms"></a>Xamarin.Forms でのファイル処理
 
@@ -22,7 +22,7 @@ _Xamarin.Forms を使ったファイルの処理は、.NET Standard ライブラ
 
 ## <a name="overview"></a>概要
 
-Xamarin.Forms コードはマルチプラットフォームで実行されますが、各プラットフォームには独自のファイルシステムがあります。 そのことは以前、各プラットフォームでネイティブ ファイル API を使用することが最も簡単なファイルの読み書き方法であったことを意味しました。 代替的に、アプリでデータ ファイルを配布する方法として埋め込みリソースが最も単純な解決策となります。 しかし、.NET Standard 2.0 を使えば、 .NET Standard ライブラリでファイルへアクセスするコードを共有することができます。
+Xamarin.Forms コードは複数のプラットフォームで実行されますが、各プラットフォームには独自のファイルシステムがあります。 そのことは以前、各プラットフォームでネイティブ ファイル API を使用することが最も簡単なファイルの読み書き方法であったことを意味しました。 代替的に、アプリでデータ ファイルを配布する方法として埋め込みリソースが最も単純な解決策となります。 ただし、.NET Standard 2.0 の場合、.NET Standard ライブラリでファイル アクセス コードを共有できます。
 
 イメージ ファイルの処理方法については、[イメージの使用](~/xamarin-forms/user-interface/images.md)に関するページを参照してください。
 
@@ -58,7 +58,7 @@ string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFold
 
 このような操作はサンプル アプリでデモとして示されています。これには、テキストを保存し、読み込むページが含まれています。
 
-[![テキストの保存と読み込み](files-images/saveandload-sml.png "アプリでファイルを保存し、読み込む")](files-images/saveandload.png#lightbox "アプリでファイルを保存し、読み込む")
+[ファイルの保存![と読み込み](files-images/saveandload-sml.png "アプリでのファイルの保存と読み込み")](files-images/saveandload.png#lightbox "アプリでのファイルの保存と読み込み")
 
 <a name="Loading_Files_Embedded_as_Resources" />
 
@@ -68,34 +68,35 @@ string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFold
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![埋め込みリソースのビルド アクションの構成](files-images/vs-embeddedresource-sml.png "EmbeddedResource BuildAction の設定")](files-images/vs-embeddedresource.png#lightbox "EmbeddedResource BuildAction の設定")
+[![埋め込みリソースビルドアクション](files-images/vs-embeddedresource-sml.png "設定 EmbeddedResource BuildAction")を構成しています](files-images/vs-embeddedresource.png#lightbox "EmbeddedResource BuildAction の設定")
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-[![PCL で埋め込まれているテキスト ファイル、埋め込みリソースのビルド アクションの構成](files-images/xs-embeddedresource-sml.png "EmbeddedResource BuildAction の設定")](files-images/xs-embeddedresource.png#lightbox "EmbeddedResource BuildAction の設定")
+[![.Net standard library に埋め込まれたテキストファイル、埋め込みリソースビルドアクション](files-images/xs-embeddedresource-sml.png "設定 EmbeddedResource BuildAction")](files-images/xs-embeddedresource.png#lightbox "EmbeddedResource BuildAction の設定")
 
 -----
 
-`GetManifestResourceStream` は、その**リソース ID** を使用して埋め込みファイルにアクセスするために使用されます。 既定では、プレフィックスとしてそれが埋め込まれているプロジェクトの既定の名前空間が付けられたファイル名がリソース ID となります。この例では、アセンブリが **WorkingWithFiles** で、ファイル名が **PCLTextResource.txt** のため、リソース ID は `WorkingWithFiles.PCLTextResource.txt` です。
+`GetManifestResourceStream` は、その**リソース ID** を使用して埋め込みファイルにアクセスするために使用されます。 既定では、リソース ID は、そのファイルが埋め込まれるプロジェクトの既定の名前空間で始まるファイル名です。この場合、アセンブリは**WorkingWithFiles** 、ファイル名は**libtextresource .txt**になります。そのため、リソース id は `WorkingWithFiles.LibTextResource.txt` です。
 
 ```csharp
 var assembly = IntrospectionExtensions.GetTypeInfo(typeof(LoadResourceText)).Assembly;
-Stream stream = assembly.GetManifestResourceStream("WorkingWithFiles.PCLTextResource.txt");
+Stream stream = assembly.GetManifestResourceStream("WorkingWithFiles.LibTextResource.txt");
 string text = "";
-using (var reader = new System.IO.StreamReader (stream)) {
+using (var reader = new System.IO.StreamReader (stream))
+{  
     text = reader.ReadToEnd ();
 }
 ```
 
 それから `text` 変数を利用してテキストを表示するか、利用しない場合、コードで使用します。 [サンプル アプリ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfiles)のこのスクリーンショットで、`Label` コントロールでレンダリングされたテキストを確認できます。
 
- [![PCL で埋め込まれたテキスト ファイル](files-images/pcltext-sml.png "アプリに表示されている PCL で埋め込まれているテキスト ファイル")](files-images/pcltext.png#lightbox "アプリに表示されている PCL で埋め込まれているテキスト ファイル")
+ [(files-images/pcltext-sml.png "アプリに表示される .NET Standard ライブラリの") ![.Net Standard Library embedded テキストファイルに埋め込まれたテキストファイル]](files-images/pcltext.png#lightbox "アプリに表示される .NET Standard ライブラリ内の埋め込みテキストファイル")
 
 XML の読み込みと逆シリアル化は同じくらい簡単です。 次のコードは、リソースから読み込まれ、逆シリアル化され、表示のために `ListView` にバインドされる XML ファイルを示します。 この XML ファイルには `Monkey` オブジェクトの配列が含まれています (クラスはサンプル コードで定義されています)。
 
 ```csharp
 var assembly = IntrospectionExtensions.GetTypeInfo(typeof(LoadResourceText)).Assembly;
-Stream stream = assembly.GetManifestResourceStream("WorkingWithFiles.PCLXmlResource.xml");
+Stream stream = assembly.GetManifestResourceStream("WorkingWithFiles.LibXmlResource.xml");
 List<Monkey> monkeys;
 using (var reader = new System.IO.StreamReader (stream)) {
     var serializer = new XmlSerializer(typeof(List<Monkey>));
@@ -105,7 +106,7 @@ var listView = new ListView ();
 listView.ItemsSource = monkeys;
 ```
 
- [![PCL で埋め込まれた XML ファイル、ListView で表示](files-images/pclxml-sml.png "PCL で埋め込まれた XML ファイル、ListView で表示")](files-images/pclxml.png#lightbox "PCL で埋め込まれた XML ファイル、ListView で表示")
+ [![.Net standard library に埋め込まれた Xml ファイル]。(files-images/pclxml-sml.png "Listview に表示される .net Standard library の LISTVIEW 埋め込み xml ファイル")に表示されます。](files-images/pclxml.png#lightbox "ListView に表示される .NET standard library の埋め込み XML ファイル")
 
 <a name="Embedding_in_Shared_Projects" />
 
@@ -139,9 +140,9 @@ Stream stream = assembly.GetManifestResourceStream
 
 ### <a name="organizing-resources"></a>リソースを整理する
 
-上の例では、.NET Standard ライブラリ プロジェクトのルートにファイルが埋め込まれるものと想定されています。その場合、リソース ID の形式は **Namespace.Filename.Extension** で、`WorkingWithFiles.PCLTextResource.txt` や `WorkingWithFiles.iOS.SharedTextResource.txt` のようになります。
+上の例では、.NET Standard ライブラリ プロジェクトのルートにファイルが埋め込まれるものと想定されています。その場合、リソース ID の形式は **Namespace.Filename.Extension** で、`WorkingWithFiles.LibTextResource.txt` や `WorkingWithFiles.iOS.SharedTextResource.txt` のようになります。
 
-埋め込みリソースはフォルダーで整理できます。 埋め込みリソースをフォルダーに入れると、フォルダー名がリソース ID の一部になります (ピリオドで区切られます)。そのため、リソース ID の形式は **Namespace.Folder.Filename.Extension** になります。 サンプル アプリで使用するファイルをフォルダー **MyFolder** に入れると、対応するリソース ID が `WorkingWithFiles.MyFolder.PCLTextResource.txt` と `WorkingWithFiles.iOS.MyFolder.SharedTextResource.txt` になります。
+埋め込みリソースはフォルダーで整理できます。 埋め込みリソースをフォルダーに入れると、フォルダー名がリソース ID の一部になります (ピリオドで区切られます)。そのため、リソース ID の形式は **Namespace.Folder.Filename.Extension** になります。 サンプル アプリで使用するファイルをフォルダー **MyFolder** に入れると、対応するリソース ID が `WorkingWithFiles.MyFolder.LibTextResource.txt` と `WorkingWithFiles.iOS.MyFolder.SharedTextResource.txt` になります。
 
 <a name="Debugging_Embedded_Resources" />
 
