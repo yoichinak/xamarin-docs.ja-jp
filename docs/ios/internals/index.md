@@ -35,12 +35,12 @@ API バインディングの背後にある設計原則について説明しま�
 
 ## <a name="ios-architectureiosinternalsarchitecturemd"></a>[iOS のアーキテクチャ](~/ios/internals/architecture.md)
 
-Xamarin iOS アプリケーションは Mono 実行環境内で実行され、完全な事前 (AOT) コンパイルを使用しC#てコードを ARM アセンブリ言語にコンパイルします。 このガイドでは、低レベルでの Xamarin の詳細について説明します。
+Xamarin.iOS アプリケーションは Mono 実行環境内で実行され、完全な事前 (AOT) コンパイルを使用して C# コードを ARM アセンブリ言語にコンパイルします。 このガイドでは、低レベルでの Xamarin.iOS の詳細について説明します。
 
-## <a name="objective-c-selectorsiosinternalsobjective-c-selectorsmd"></a>[目標-C セレクター](~/ios/internals/objective-c-selectors.md)
+## <a name="objective-c-selectorsiosinternalsobjective-c-selectorsmd"></a>[Objective-C セレクター](~/ios/internals/objective-c-selectors.md)
 
-目的 C セレクター (メソッド) を直接呼び出す場合の注意と使用方法。
+Objective-C セレクター (メソッド) を直接呼び出す場合の注意と使用方法。
 
 ## <a name="limitationslimitationsmd"></a>[制限事項](limitations.md)
 
-Xamarin. iOS で認識できる落とし穴と制限。
+Xamarin.iOS で注意すべき落とし穴と制限。
