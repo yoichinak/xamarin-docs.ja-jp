@@ -1,6 +1,6 @@
 ---
 title: Xamarin. iOS の Objective-C セレクター
-description: このドキュメントでは、C# の Objective-C セレクターを操作する方法について説明します。 セレクターを呼び出す方法と、その際に考慮する必要がある技術的な考慮事項について説明します。
+description: このドキュメントでは、C# の Objective-C セレクターを操作する方法について説明します。 セレクターを呼び出す方法と、その際に考慮する必要がある技術的な事項について説明します。
 ms.prod: xamarin
 ms.assetid: A80904C4-6A89-389B-0487-057AFEB70989
 ms.technology: xamarin-ios
@@ -204,4 +204,4 @@ X86 用にビルドする場合は、を使用します。[`objc_msgSend_stret`]
 
 ## <a name="related-links"></a>関連リンク
 
-- [Objective-C セレクターの](https://developer.xamarin.com/samples/mac-ios/Objective-C/)サンプル
+- [Objective-C セレクター](https://developer.xamarin.com/samples/mac-ios/Objective-C/) のサンプル
