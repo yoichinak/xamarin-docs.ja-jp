@@ -16,11 +16,11 @@ ms.locfileid: "70753467"
 ---
 # <a name="xamarinios-api-design"></a>Xamarin. iOS API の設計
 
-[Xamarin.iOS](http://www.xamarin.com/iOS)には、Mono の一部であるコアの基本クラス ライブラリだけでなく、開発者が Mono を利用してネイティブの iOS アプリケーションの作成を可能にするために、さまざまな iOS API へのバインドが付属しています。
+[Xamarin.iOS](http://www.xamarin.com/iOS) には、Mono の一部であるコアの基本クラス ライブラリだけでなく、開発者が Mono を利用してネイティブの iOS アプリケーションの作成を可能にするために、さまざまな iOS API へのバインドが付属しています。
 
 Xamarin.iOS のコアには、C# の世界と Objective-C の世界をブリッジする相互運用機能および、CoreGraphics や [OpenGL ES](#opengles) などの iOS C ベースの API のバインドがあります。
 
-Objective-C のコードと通信する低レベルのランタイムは、[MonoTouch.ObjCRuntime](#objcruntime) にあります。 この上には、 [Foundation](#foundation)、CoreFoundation、および[UiKit](#uikit)のバインドが用意されています。
+Objective-C のコードと通信する低レベルのランタイムは、[MonoTouch.ObjCRuntime](#objcruntime) にあります。 この上には、 [Foundation](#foundation)、CoreFoundation、および[UiKit](#uikit) のバインドが用意されています。
 
 ## <a name="design-principles"></a>設計原則
 
