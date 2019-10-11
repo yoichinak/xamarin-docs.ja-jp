@@ -42,7 +42,7 @@ sections:
             image:
               src: ~/media/icons/i_user-interface.svg
               href: button.md
-            title: ボタン
+            title: Button
           - href: checkbox.md
             html: チェックボックスを使用し、ブール値を設定する方法について説明します。
             image:
@@ -144,7 +144,13 @@ sections:
             image:
               src: ~/media/icons/i_user-interface.svg
               href: slider.md
-            title: スライダー
+            title: Slider
+          - href: splashscreen.md
+            html: Xamarin.Forms アプリケーションのスプラッシュ スクリーンを作成する方法について説明します。
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: splashscreen.md
+            title: スプラッシュ スクリーン
           - href: stepper.md
             html: ステッパ コントロールを使用し、値の範囲からユーザーが数値を選択できるようにする方法について説明します。
             image:
@@ -162,7 +168,7 @@ sections:
             image:
               src: ~/media/icons/i_user-interface.svg
               href: switch.md
-            title: 切り替え
+            title: Switch
           - href: tableview.md
             html: TableView を使用し、行で同じテンプレートが使用されていないときにスクロール可能なデータまたは選択肢を表示する方法について説明します。
             image:

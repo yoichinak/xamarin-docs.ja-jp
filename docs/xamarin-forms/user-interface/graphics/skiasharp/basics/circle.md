@@ -7,12 +7,12 @@ ms.assetid: E3A4E373-F65D-45C8-8E77-577A804AC3F8
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 110b2646fb7e1bda00c628749489c14a540e2b54
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: a3eca2036b0e4c2722e034e48ad4ca3054343a89
+ms.sourcegitcommit: 5110d1279809a2af58d3d66cd14c78113bb51436
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70759540"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72032582"
 ---
 # <a name="drawing-a-simple-circle-in-skiasharp"></a>SkiaSharp の単純な円を描画
 
@@ -26,14 +26,14 @@ _SkiaSharp 描画、キャンバスのなどの基本を学習し、オブジェ
 
 ![](circle-images/circleexample.png "赤で、青色の円")
 
-[ `SimpleCirle` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs)ページ クラスから派生`ContentPage`含まれていると`using`SkiaSharp 名前空間のディレクティブ。
+[ `SimpleCircle` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs)ページ クラスから派生`ContentPage`含まれていると`using`SkiaSharp 名前空間のディレクティブ。
 
 ```csharp
 using SkiaSharp;
 using SkiaSharp.Views.Forms;
 ```
 
-次のクラスのコンストラクターを作成、 [ `SKCanvasView` ](xref:SkiaSharp.Views.Forms.SKCanvasView)オブジェクト、ハンドラーをアタッチします、 [ `PaintSurface` ](xref:SkiaSharp.Views.Forms.SKCanvasView.PaintSurface)イベント、およびセット、`SKCanvasView`オブジェクトをページのコンテンツ。
+次のクラスのコンス トラクターを作成、 [ `SKCanvasView` ](xref:SkiaSharp.Views.Forms.SKCanvasView)オブジェクト、ハンドラーをアタッチします、 [ `PaintSurface` ](xref:SkiaSharp.Views.Forms.SKCanvasView.PaintSurface)イベント、およびセット、`SKCanvasView`オブジェクトをページのコンテンツ。
 
 ```csharp
 public SimpleCirclePage()
@@ -143,7 +143,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 IOS、Android、およびユニバーサル Windows プラットフォームで実行されているプログラムを次に示します。
 
-[![](circle-images/simplecircle-small.png "単純な円のページのスクリーン ショットをトリプル")](circle-images/simplecircle-large.png#lightbox "単純な円のページの 3 倍になるスクリーン ショット")
+[![](circle-images/simplecircle-small.png "単純な円ページのトリプルスクリーンショット")](circle-images/simplecircle-large.png#lightbox "単純な円ページのトリプルスクリーンショット")
 
 プログラムを自分で実行するときに、電話またはグラフィックを描画する方法を確認するシミュレーターを横方向が有効にできます。 グラフィックが再描画する必要があるたびに、`PaintSurface`イベント ハンドラーが再度呼び出されます。
 
@@ -154,7 +154,7 @@ IOS、Android、およびユニバーサル Windows プラットフォームで�
 > [!NOTE]
 > `SKPaint`クラスを定義、 [ `IsAntialias` ](xref:SkiaSharp.SKPaint.IsAntialias)グラフィックスのレンダリングにアンチエイリアシングを有効にします。 アンチエイリアシング通常、結果視覚的により滑らかなエッジは、このプロパティに設定する可能性がありますので`true`のほとんどで、`SKPaint`オブジェクト。 このプロパティは、わかりやすくするためのために、_いない_のほとんどのサンプル ページで設定します。
 
-円の輪郭の幅は25ピクセル&mdash; 、または円&mdash;の半径の1分の1になるように指定されていますが、細いことがあります。青の円では、線の幅の半分が見えません。 引数、`DrawCircle`メソッドは、円の抽象の幾何学的座標を定義します。 青の内部のサイズは、最も近いピクセルにそのディメンションが 25 ピクセル幅のアウトラインがジオメトリの円をまたぐ&mdash;内側と外側の半分の半分です。
+円の輪郭の幅は25ピクセル &mdash; または円の半径の1分 @no__t ますが、-1 の場合は幅が薄く、そのような理由があります。青の円では、線の幅の半分が見えません。 引数、`DrawCircle`メソッドは、円の抽象の幾何学的座標を定義します。 青の内部のサイズは、最も近いピクセルにそのディメンションが 25 ピクセル幅のアウトラインがジオメトリの円をまたぐ&mdash;内側と外側の半分の半分です。
 
 次のサンプル、 [Xamarin.Forms との統合](~/xamarin-forms/user-interface/graphics/skiasharp/basics/integration.md)記事では、これを視覚的に示します。
 

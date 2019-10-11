@@ -1,5 +1,5 @@
 ---
-title: Xamarin. iOS の Objective-C セレクター
+title: Xamarin. iOS の目標 C セレクター
 description: このドキュメントでは、C# の Objective-C セレクターを操作する方法について説明します。 セレクターを呼び出す方法と、その際に考慮する必要がある技術的な事項について説明します。
 ms.prod: xamarin
 ms.assetid: A80904C4-6A89-389B-0487-057AFEB70989
@@ -14,7 +14,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 09/04/2019
 ms.locfileid: "70291846"
 ---
-# <a name="objective-c-selectors-in-xamarinios"></a>Xamarin. iOS の Objective-C セレクター
+# <a name="objective-c-selectors-in-xamarinios"></a>Xamarin. iOS の目標 C セレクター
 
 Objective-C 言語は*セレクター*に基づいています。 セレクターは、オブジェクトまたは*クラス*に送信できるメッセージです。 [Xamarin.iOS](~/ios/internals/api-design/index.md)はインスタンス セレクターをインスタンスメソッドにマッピングし、クラス セレクターを静的メソッドにマッピングします。
 

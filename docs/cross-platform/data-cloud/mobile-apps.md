@@ -6,14 +6,18 @@ ms.assetid: 7B9AA8D9-C181-4C33-8AB0-2F56E4DBFC03
 author: conceptdev
 ms.author: crdun
 ms.date: 04/02/2017
-ms.openlocfilehash: b94bae8fb1b7c990c5b2478a0da143960a0bcc55
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 7d39615f20cdd52bb862d9ee998e9a45bbb6834e
+ms.sourcegitcommit: d116fdcad9f5f0587ce64749cd8d791eee87f8aa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70765974"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72246535"
 ---
 # <a name="microsoft-azure-mobile-apps"></a>Microsoft Azure Mobile Apps
+
+> [!NOTE]
+> Visual Studio App Center は、エンドツーエンドの統合サービスをモバイルアプリ開発の中心としてサポートします。 開発者は、**ビルド**、**テスト**、および**配布**のサービスを使用して、継続的インテグレーションと配信パイプラインを設定できます。 アプリがデプロイされると、開発者は、**分析**と**診断**サービスを使用してアプリの状態と使用状況を監視し、**プッシュ**サービスを使用しているユーザーと連携できます。 開発者は、**認証**を利用してユーザーを認証し、**データ**サービスを使用してクラウド内のアプリデータを永続化して同期することもできます。
+> モバイルアプリケーションにクラウドサービスを統合する場合は、今すぐ[App Center](https://appcenter.ms/signup?utm_source=XamarinDocs&utm_medium=Azure&utm_campaign=docs)でサインアップしてください。
 
 _Azure portal のドキュメントについては、サンプルとコードをダウンロードしてください。_
 

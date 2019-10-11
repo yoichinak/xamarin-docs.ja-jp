@@ -200,6 +200,7 @@
 ### [ProgressBar](user-interface/progressbar.md)
 ### [SearchBar](user-interface/searchbar.md)
 ### [Slider](user-interface/slider.md)
+### [スプラッシュ スクリーン](user-interface/splashscreen.md)
 ### [ステッパ](user-interface/stepper.md)
 ### [スタイル](user-interface/styles/index.md)
 #### [XAML スタイルを使用した Xamarin.Forms アプリのスタイル設定](user-interface/styles/xaml/index.md)

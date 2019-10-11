@@ -43,4 +43,4 @@ Objective-C セレクター (メソッド) を直接呼び出す場合の注意�
 
 ## <a name="limitationslimitationsmd"></a>[制限事項](limitations.md)
 
-Xamarin.iOS で注意すべき落とし穴と制限。
+Xamarin. iOS で認識できる落とし穴と制限。
