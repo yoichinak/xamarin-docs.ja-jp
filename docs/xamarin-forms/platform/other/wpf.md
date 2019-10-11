@@ -62,13 +62,13 @@ Windows 7、8、および10のデスクトップで実行される WPF アプリ
 
     共有プロジェクト参照![の参照](wpf-images/reference-shared-project.png "共有プロジェクト")
 
-8. WPF プロジェクトの**mainwindow.xaml**ファイルを編集します。 @No__t-0 タグに、 **Xamarin** . .xml アセンブリと名前空間の XML 名前空間宣言を追加します。
+8. WPF プロジェクトの**mainwindow.xaml**ファイルを編集します。 `Window` タグに、 **Xamarin** . .xml アセンブリと名前空間の XML 名前空間宣言を追加します。
 
     ```xaml
     xmlns:wpf="clr-namespace:Xamarin.Forms.Platform.WPF;assembly=Xamarin.Forms.Platform.WPF"
     ```
 
-    ここで、`Window` タグを `wpf:FormsApplicationPage` に変更します。 @No__t-0 設定をアプリケーションの名前 ( **Boxviewclock**など) に変更します。 完成した XAML ファイルは次のようになります。
+    ここで、`Window` タグを `wpf:FormsApplicationPage` に変更します。 `Title` 設定をアプリケーションの名前 ( **Boxviewclock**など) に変更します。 完成した XAML ファイルは次のようになります。
 
     ```xaml
     <wpf:FormsApplicationPage x:Class="BoxViewClock.WPF.MainWindow"
@@ -93,14 +93,14 @@ Windows 7、8、および10のデスクトップで実行される WPF アプリ
     using Xamarin.Forms.Platform.WPF;
     ```
 
-    @No__t-0 の基本クラスを `Window` から `FormsApplicationPage` に変更します。 @No__t-0 呼び出しの後に、次の2つのステートメントを追加します。
+    `MainWindow` の基本クラスを `Window` から `FormsApplicationPage` に変更します。 `InitializeComponent` 呼び出しの後に、次の2つのステートメントを追加します。
 
     ```csharp
     Forms.Init();
     LoadApplication(new BoxViewClock.App());
     ```
 
-    コメントや未使用の @no__t 0 ディレクティブを除き、完全な**MainWindows.xaml.cs**ファイルは次のようになります。
+    コメントや未使用の `using` ディレクティブを除き、完全な**MainWindows.xaml.cs**ファイルは次のようになります。
 
     ```csharp
     using Xamarin.Forms;
