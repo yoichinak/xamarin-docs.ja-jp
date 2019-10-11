@@ -35,7 +35,7 @@ _このチュートリアルでは、Android から Xamarin Android Java バイ�
 
 ## <a name="walkthrough"></a>チュートリアル
 
-Android Studio、 [aar](https://github.com/xamarin/monodroid-samples/blob/master/JavaIntegration/AarBinding/Resources/textanalyzer.aar?raw=true)で作成したサンプルの Android アーカイブファイルのバインドライブラリを作成します。 これ。AAR には、文字列の母音と子音の数をカウントする静的メソッドを含む @no__t 0 のクラスが含まれています。 さらに、aar には、カウントの結果を表示するのに役立つイメージリソースが含まれてい**ます。**
+Android Studio、 [aar](https://github.com/xamarin/monodroid-samples/blob/master/JavaIntegration/AarBinding/Resources/textanalyzer.aar?raw=true)で作成したサンプルの Android アーカイブファイルのバインドライブラリを作成します。 これ。AAR には、文字列の母音と子音の数をカウントする静的メソッドを含む `TextCounter` のクラスが含まれています。 さらに、aar には、カウントの結果を表示するのに役立つイメージリソースが含まれてい**ます。**
 
 からバインドライブラリを作成するには、次の手順を使用します。AAR ファイル (i):
 
@@ -51,7 +51,7 @@ Android Studio、 [aar](https://github.com/xamarin/monodroid-samples/blob/master
 
 バインドライブラリを作成したら、ユーザーにテキスト文字列を要求する小さな Android アプリを開発し、を呼び出します。AAR メソッドは、テキストを分析するために、からイメージを取得します。AAR を使用すると、イメージと共に結果が表示されます。
 
-サンプルアプリは、 **textanalyzer. aar**の @no__t 0 クラスにアクセスします。
+サンプルアプリは、 **textanalyzer. aar**の `TextCounter` クラスにアクセスします。
 
 ```java
 package com.xamarin.textcounter;
@@ -122,13 +122,13 @@ public class TextCounter
 
 4. **Bindingtest**プロジェクトの **[参照設定]** ノードを開き、 **AarBinding**参照が存在することを確認します。
 
-    [@no__t 1AarBinding が [参照] の下に一覧表示されます。](binding-an-aar-images/10-references-shows-aarbinding-vs-sml.png)](binding-an-aar-images/10-references-shows-aarbinding-vs.png#lightbox)
+    [[AarBinding が [参照] の下に一覧表示されます。](binding-an-aar-images/10-references-shows-aarbinding-vs-sml.png)](binding-an-aar-images/10-references-shows-aarbinding-vs.png#lightbox)
 
 バインドライブラリプロジェクトの内容を表示するには、参照をダブルクリックして、**オブジェクトブラウザー**で開きます。 (Java `com.xamarin.textanalyzezr` パッケージからマップされた) `Com.Xamarin.Textcounter` 名前空間のマップされた内容を確認できます。また、`TextCounter` クラスのメンバーを表示できます。
 
 [![ オブジェクトブラウザーを表示しています](binding-an-aar-images/11-object-browser-vs-sml.png)](binding-an-aar-images/11-object-browser-vs.png#lightbox)
 
-上のスクリーンショットでは、例のアプリが呼び出す2つの @no__t 0 メソッドが強調表示されています。 `NumConsonants` (基になる Java `numConsonants` メソッドをラップします)、および `NumVowels` (基になる Java `numVowels` メソッドをラップ) です。
+上のスクリーンショットでは、例のアプリが呼び出す2つの `TextAnalyzer` メソッドが強調表示されています。 `NumConsonants` (基になる Java `numConsonants` メソッドをラップします)、および `NumVowels` (基になる Java `numVowels` メソッドをラップ) です。
 
 ### <a name="accessing-aar-types"></a>しよう.AAR 型
 
@@ -141,7 +141,7 @@ int numVowels = TextCounter.NumVowels (myText);
 int numConsonants = TextCounter.NumConsonants (myText);
 ```
 
-上の例では、`TextCounter` クラスで静的メソッドを呼び出しています。 ただし、クラスをインスタンス化して、インスタンスメソッドを呼び出すこともできます。 たとえば、の場合はです。AAR は、インスタンスメソッド `buildFullName` を持つ `Employee` というクラスをラップします。 @no__t をインスタンス化して、次のように使用することができます。
+上の例では、`TextCounter` クラスで静的メソッドを呼び出しています。 ただし、クラスをインスタンス化して、インスタンスメソッドを呼び出すこともできます。 たとえば、の場合はです。AAR は、インスタンスメソッド `buildFullName` を持つ `Employee` というクラスをラップします。 `MyClass` をインスタンス化して、次のように使用することができます。
 
 ```csharp
 var employee = new Com.MyCompany.MyProject.Employee();
@@ -150,7 +150,7 @@ var name = employee.BuildFullName ();
 
 次の手順では、ユーザーにテキストの入力を求めるコードをアプリに追加し、`TextCounter` を使用してテキストを分析し、結果を表示します。
 
-**Bindingtest**レイアウト (メインの**axml**) を次の XML に置き換えます。 このレイアウトには、テキスト入力の場合は 0 @no__t、母音と子音のカウントを開始する場合は2つのボタンがあります。
+**Bindingtest**レイアウト (メインの**axml**) を次の XML に置き換えます。 このレイアウトには、テキスト入力の場合は `EditText` と、母音と子音のカウントを開始する場合は2つのボタンがあります。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -246,7 +246,7 @@ namespace BindingTest
 }
 ```
 
-**Bindingtest**プロジェクトをコンパイルして実行します。 アプリが起動し、左側にスクリーンショットが表示されます (@no__t 0 はいくつかのテキストで初期化されますが、それをタップして変更できます)。 [母音の**カウント**] をタップすると、右側に示されている母音の数がトーストによって表示されます。
+**Bindingtest**プロジェクトをコンパイルして実行します。 アプリが起動し、左側にスクリーンショットが表示されます (`EditText` はいくつかのテキストで初期化されますが、それをタップして変更できます)。 [母音の**カウント**] をタップすると、右側に示されている母音の数がトーストによって表示されます。
 
 [![Bindingtest の実行中のスクリーンショット](binding-an-aar-images/12-count-vowels.png)](binding-an-aar-images/12-count-vowels.png#lightbox)
 
@@ -256,7 +256,7 @@ namespace BindingTest
 
 Xamarin ツールは、から**R**データをマージします。アプリの**リソース**クラスに AAR します。 このため、にアクセスできます。プロジェクトの**resources**パスにあるリソースにアクセスするのと同じように、レイアウト (および分離コード) からリソースを AAR します。
 
-イメージリソースにアクセスするには、内でパックされたイメージに対して、**リソース**の作成可能な名前を使用します。AAR. たとえば、で**イメージ**を参照できます。@No__t-1 を使用した AAR ファイル:
+イメージリソースにアクセスするには、内でパックされたイメージに対して、**リソース**の作成可能な名前を使用します。AAR. たとえば、で**image.png**を参照できます。`@drawable/image` を使用した AAR ファイル:
 
 ```xml
 <ImageView android:src="@drawable/image" ... />
@@ -270,7 +270,7 @@ var a = new ArrayAdapter<string>(this, Resource.Layout.row_layout, ...);
 
 **Aar**の例には、 **res//サル**に存在するイメージファイルが含まれています。 このイメージリソースにアクセスして、サンプルアプリで使用してみましょう。
 
-**Bindingtest**レイアウト (メインの**axml**) を編集し、@no__t 3 コンテナーの末尾に `ImageView` を追加します。 この `ImageView` は、 **@no__t**で見つかったイメージを表示します。このイメージは、 **textanalyzer. aar**のリソースセクションから読み込まれます。
+**Bindingtest**レイアウト (メインの**axml**) を編集し、`LinearLayout` コンテナーの末尾に `ImageView` を追加します。 この `ImageView` は、 **\@drawable/monkey**で見つかったイメージを表示します。このイメージは、 **textanalyzer. aar**のリソースセクションから読み込まれます。
 
 ```xml
     ...
