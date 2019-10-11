@@ -214,7 +214,7 @@ GtkThemes.LoadCustomTheme ("Themes/gtkrc");
 
 ### <a name="native-forms"></a>ネイティブ フォーム
 
-ネイティブフォームを使用すると、Xamarin [`ContentPage`](xref:Xamarin.Forms.ContentPage)の派生ページを、GTK # プロジェクトなどのネイティブプロジェクトで使用できます。 これを行うには、 [`ContentPage`](xref:Xamarin.Forms.ContentPage)-派生ページのインスタンスを作成し、`CreateContainer` の拡張メソッドを使用してネイティブの GTK # 型に変換します。
+ネイティブフォームを使用すると、Xamarin [`ContentPage`](xref:Xamarin.Forms.ContentPage)の派生ページを、GTK # プロジェクトなどのネイティブプロジェクトで使用できます。 これを行うには、 [`ContentPage`](xref:Xamarin.Forms.ContentPage)-派生ページのインスタンスを作成し、@no__t の拡張メソッドを使用してネイティブの GTK # 型に変換します。
 
 ```csharp
 var settingsView = new SettingsView().CreateContainer();

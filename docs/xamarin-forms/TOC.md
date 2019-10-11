@@ -253,7 +253,7 @@
 #### [エントリのカーソルの色](platform/ios/entry-cursor-color.md)
 #### [エントリのフォント サイズ](platform/ios/entry-font-size.md)
 #### [書式設定](platform/ios/formatting.md)
-#### [iPad モーダル ページの表示スタイル](platform/ios/ipad-page-presentation-style.md)
+#### [モーダル ページのプレゼンテーション スタイル](platform/ios/page-presentation-style.md)
 #### [ラージ ページ タイトル](platform/ios/page-large-title.md)
 #### [ListView グループ ヘッダーのスタイル](platform/ios/listview-group-header-style.md)
 #### [ListView の行のアニメーション](platform/ios/listview-row-animations.md)
