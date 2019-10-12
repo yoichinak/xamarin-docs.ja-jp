@@ -122,7 +122,7 @@ public class TextCounter
 
 4. **Bindingtest**プロジェクトの **[参照設定]** ノードを開き、 **AarBinding**参照が存在することを確認します。
 
-    [[AarBinding が [参照] の下に一覧表示されます。](binding-an-aar-images/10-references-shows-aarbinding-vs-sml.png)](binding-an-aar-images/10-references-shows-aarbinding-vs.png#lightbox)
+    [![AarBinding が [参照] の下に一覧表示されます。](binding-an-aar-images/10-references-shows-aarbinding-vs-sml.png)](binding-an-aar-images/10-references-shows-aarbinding-vs.png#lightbox)
 
 バインドライブラリプロジェクトの内容を表示するには、参照をダブルクリックして、**オブジェクトブラウザー**で開きます。 (Java `com.xamarin.textanalyzezr` パッケージからマップされた) `Com.Xamarin.Textcounter` 名前空間のマップされた内容を確認できます。また、`TextCounter` クラスのメンバーを表示できます。
 
@@ -150,7 +150,7 @@ var name = employee.BuildFullName ();
 
 次の手順では、ユーザーにテキストの入力を求めるコードをアプリに追加し、`TextCounter` を使用してテキストを分析し、結果を表示します。
 
-**Bindingtest**レイアウト (メインの**axml**) を次の XML に置き換えます。 このレイアウトには、テキスト入力の場合は `EditText` と、母音と子音のカウントを開始する場合は2つのボタンがあります。
+**Bindingtest**レイアウト (メインの**axml**) を次の XML に置き換えます。 このレイアウトには、テキスト入力の場合は 0 `EditText`、母音と子音のカウントを開始する場合は2つのボタンがあります。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -256,7 +256,7 @@ namespace BindingTest
 
 Xamarin ツールは、から**R**データをマージします。アプリの**リソース**クラスに AAR します。 このため、にアクセスできます。プロジェクトの**resources**パスにあるリソースにアクセスするのと同じように、レイアウト (および分離コード) からリソースを AAR します。
 
-イメージリソースにアクセスするには、内でパックされたイメージに対して、**リソース**の作成可能な名前を使用します。AAR. たとえば、で**image.png**を参照できます。`@drawable/image` を使用した AAR ファイル:
+イメージリソースにアクセスするには、内でパックされたイメージに対して、**リソース**の作成可能な名前を使用します。AAR. たとえば、で**イメージ**を参照できます。`@drawable/image` を使用した AAR ファイル:
 
 ```xml
 <ImageView android:src="@drawable/image" ... />
@@ -270,7 +270,7 @@ var a = new ArrayAdapter<string>(this, Resource.Layout.row_layout, ...);
 
 **Aar**の例には、 **res//サル**に存在するイメージファイルが含まれています。 このイメージリソースにアクセスして、サンプルアプリで使用してみましょう。
 
-**Bindingtest**レイアウト (メインの**axml**) を編集し、`LinearLayout` コンテナーの末尾に `ImageView` を追加します。 この `ImageView` は、 **\@drawable/monkey**で見つかったイメージを表示します。このイメージは、 **textanalyzer. aar**のリソースセクションから読み込まれます。
+**Bindingtest**レイアウト (メインの**axml**) を編集し、`LinearLayout` コンテナーの末尾に `ImageView` を追加します。 この `ImageView` は、 **\@** で見つかったイメージを表示します。このイメージは、 **textanalyzer. aar**のリソースセクションから読み込まれます。
 
 ```xml
     ...
