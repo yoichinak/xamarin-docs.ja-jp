@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/01/2019
-ms.openlocfilehash: a79f22fa96c4c34d2a9704e9aa3be3825895a15b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: e4584867e457661b2dfaa43fcbde7b1adcabeb85
+ms.sourcegitcommit: e354aabfb39598e0ce11115db3e6bcebb9f68338
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291594"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72273107"
 ---
 # <a name="xamarinforms-requirements"></a>Xamarin.Forms の要件
 
@@ -24,9 +24,11 @@ _Xamarin.Forms のプラットフォームと開発システムの要件_
 
 Xamarin.Forms アプリケーションは次のオペレーティング システム用として記述できます。
 
-- iOS 8 以上
-- Android[5.0 (API](#android)21) 以上 (詳細)
+- iOS 9 以降
+- Android 4.4 (API 19) 以上 ([詳細](#android))
 - Windows 10 ユニバーサル Windows プラットフォーム ([詳細](#windows10))
+
+ただし、最小 API として Android 5.0 (API 21) をお勧めします。 これにより、ほとんどの android デバイスを対象としながら、すべての Android サポートライブラリとの完全な互換性が確保されます。
 
 開発者が[.NET Standard](~/cross-platform/app-fundamentals/net-standard.md)について理解していることを前提としています。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/13/2018
-ms.openlocfilehash: 150a4e3c1deafbabea892d5adb786374c3d97d12
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: ec44e32c3eb0d0d436a497ddb14c86af1de8d703
+ms.sourcegitcommit: e354aabfb39598e0ce11115db3e6bcebb9f68338
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769589"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72273164"
 ---
 # <a name="passkit-in-xamarinios"></a>Xamarin. iOS の Pass Kit
 
@@ -23,11 +23,11 @@ IOS ウォレットアプリを使用すると、ユーザーは自分のデバ�
 
  [![](passkit-images/image1.png "ウォレットは、電話のすべてのパスを保存して整理します。")](passkit-images/image1.png#lightbox)
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 このドキュメントで説明されている Pass Kit の機能には、iOS 6 と Xcode 4.5、および Xamarin. iOS 6.0 が必要です。
 
-## <a name="introduction"></a>概要
+## <a name="introduction"></a>はじめに
 
 Pass Kit が解決する主な問題は、バーコードの分布と管理です。 現在、バーコードを使用する実際の例を次に示します。
 
@@ -56,7 +56,7 @@ Pass Kit は、CocoaTouch 内の API ではなく、アプリケーション、�
 - **ウォレット**–パスを保存および表示する Apple の組み込み iOS アプリです。 これは、実際の世界で使用するためにパスがレンダリングされる唯一の場所です (コードバーが表示され、パス内のすべてのローカライズされたデータが表示されます)。
 - **コンパニオンアプリ**– pass プロバイダーによって構築された iOS 6 アプリは、店舗カードへの値の追加、ボードパスまたはその他のビジネス固有の機能の座席の変更など、問題が発生したパスの機能を拡張します。 パスを利用するには、コンパニオンアプリは必要ありません。
 - **サーバー** : パスを生成し、配布用に署名できる、セキュリティで保護されたサーバー。 コンパニオンアプリはサーバーに接続して、新しいパスを生成したり、既存のパスへの更新を要求したりすることができます。 必要に応じて、ウォレットが更新パスを呼び出す web サービス API を実装することもできます。
-- **Apns サーバー** –サーバーは、apns を使用して、特定のデバイスでのパスに対する更新をウォレットに通知する機能を備えています。 ウォレットに通知をプッシュします。これにより、変更の詳細がサーバーに接続されます。 コンパニオンアプリでは、 `PKPassLibraryDidChangeNotification`この機能に APNS を実装する必要はありません (をリッスンできます)。
+- **Apns サーバー** –サーバーは、apns を使用して、特定のデバイスでのパスに対する更新をウォレットに通知する機能を備えています。 ウォレットに通知をプッシュします。これにより、変更の詳細がサーバーに接続されます。 コンパニオンアプリでは、この機能に APNS を実装する必要はありません (`PKPassLibraryDidChangeNotification` をリッスンできます)。
 - **コンジットアプリ**-パスを直接操作しないアプリケーション (コンパニオンアプリの場合など)。ただし、パスを認識してウォレットに追加できるようにすることで、ユーティリティを改善できます。 メールクライアント、ソーシャルネットワークブラウザー、およびその他のデータ集計アプリでは、すべての添付ファイルまたはパスへのリンクが発生する可能性があります。
 
 エコシステム全体は複雑であるため、一部のコンポーネントはオプションであり、はるかに簡単な Pass Kit の実装が可能であることに注意してください。
@@ -65,7 +65,7 @@ Pass Kit は、CocoaTouch 内の API ではなく、アプリケーション、�
 
 Pass は、チケット、クーポン、またはカードを表すデータのコレクションです。 個人による1回の使用を目的としており (したがって、フライト番号や座席割り当てなどの詳細が含まれます)、または任意の数のユーザーが共有できる複数の使用トークン (割引クーポンなど) を使用することができます。 詳細な説明については、Apple の[パスファイル](https://developer.apple.com/library/prerelease/ios/#documentation/UserExperience/Reference/PassKit_Bundle/Chapters/Introduction.html)のドキュメントを参照してください。
 
-### <a name="types"></a>型
+### <a name="types"></a>種類
 
 現在、5種類のサポートされています。ウォレットアプリでは、パスのレイアウトと上端で区別できます。
 
@@ -85,7 +85,7 @@ Pass は、チケット、クーポン、またはカードを表すデータの
 
 - **pass. json** –必須。 パスのすべての情報が含まれます。
 - **manifest. json** –必須。 署名ファイルとこのファイル (manifest.xml) を除き、パス内の各ファイルの SHA1 ハッシュを格納します。
-- **signature** –必須。 IOS プロビジョニングポータルで`manifest.json`生成された証明書を使用してファイルに署名することによって作成されます。
+- **signature** –必須。 IOS プロビジョニングポータルで生成された証明書を使用して `manifest.json` ファイルに署名することによって作成されます。
 - **logo .png** –省略可能。
 - **background .png** –省略可能。
 - **icon .png** –省略可能。
@@ -101,11 +101,11 @@ Pass は、チケット、クーポン、またはカードを表すデータの
 
 - **Teamidentifier** –生成したすべてのパスを App Store アカウントにリンクします。 この値は、iOS プロビジョニングポータルに表示されます。
 - **passTypeIdentifier** –プロビジョニングポータルに登録して、グループのパスをグループ化します (複数の種類を作成した場合)。 たとえば、コーヒーショップでは、顧客がロイヤルティクレジットを獲得するための店舗カードパスの種類を作成し、割引クーポンを作成および配布するために別のクーポンパスの種類を作成する場合があります。 同じコーヒーショップが、ライブミュージックイベントを保持し、それらのイベントチケットパスを発行する場合もあります。
-- **シリアル**値: この`passTypeidentifier`内の一意の文字列。 値はウォレットに対して非透過的ですが、サーバーと通信するときに特定のパスを追跡するために重要です。
+- **シリアル**値: この @no__t 内の一意の文字列-1。 値はウォレットに対して非透過的ですが、サーバーと通信するときに特定のパスを追跡するために重要です。
 
 各パスには、次に示すような多数の JSON キーがあります。その例を次に示します。
 
-``` 
+```
 {
    "passTypeIdentifier":"com.xamarin.passkitdoc.banana",  //Type Identifier (iOS Provisioning Portal)
    "formatVersion":1,                                     //Always 1 (for now)
@@ -192,16 +192,16 @@ Push または Pass Kit API を使用して更新することができます。�
 
 ### <a name="localization"></a>ローカリゼーション
 
-パスを複数の言語に変換することは、iOS アプリケーションをローカライズすることと似て`.lproj`います。拡張機能を使用して言語固有のディレクトリを作成し、その中にローカライズされた要素を配置します。 テキスト変換は`pass.strings`ファイルに入力する必要がありますが、ローカライズされたイメージはパスルートで置き換えるイメージと同じ名前にする必要があります。
+パスを複数の言語に変換することは、iOS アプリケーションをローカライズすることと似ています。 @no__t 0 拡張子を持つ言語固有のディレクトリを作成し、その中にローカライズされた要素を配置します。 テキスト変換は @no__t 0 のファイルに入力する必要があります。ローカライズされたイメージは、パスルートで置き換えるイメージと同じ名前にする必要があります。
 
 ## <a name="security"></a>セキュリティ
 
 パスは、iOS プロビジョニングポータルで生成したプライベート証明書で署名されます。 パスに署名する手順は次のとおりです。
 
-1. パスディレクトリ内の各ファイルについて SHA1 ハッシュを計算します ( `manifest.json`また`signature`はファイルを含めないでください。この段階では、そのいずれも存在すべきではありません)。
-1. 各`manifest.json`ファイル名の JSON キー/値リストとしてハッシュを使用して書き込みます。
-1. 証明書を使用して`manifest.json`ファイルに署名し、その結果をと`signature`いう名前のファイルに書き込みます。
-1. すべてを ZIP 形式にし、結果ファイルに`.pkpass`ファイル拡張子を付けます。
+1. パスディレクトリ内の各ファイルについて SHA1 ハッシュを計算します (`manifest.json` または `signature` ファイルは含めないでください。この段階では、どちらも存在すべきではありません)。
+1. 各ファイル名の JSON キー/値リストとして `manifest.json` をハッシュで書き込みます。
+1. 証明書を使用して `manifest.json` ファイルに署名し、その結果を `signature` という名前のファイルに書き込みます。
+1. すべてを ZIP 形式にし、結果ファイルに @no__t 0 のファイル拡張子を付けます。
 
 パスの署名には秘密キーが必要であるため、このプロセスは、ユーザーが制御するセキュリティで保護されたサーバー上でのみ実行する必要があります。 アプリケーションのパスを試して生成するためにキーを配布しないようにしてください。
 
@@ -222,9 +222,9 @@ Push または Pass Kit API を使用して更新することができます。�
 
 最初の手順では、サポートされる異なる_種類_のパスごとにパスの種類 ID を設定します。 パス ID (またはパスの種類の識別子) によって、パスの一意の識別子が作成されます。 この ID を使用して、証明書を使用して開発者アカウントにパスを関連付けます。
 
-1. [IOS プロビジョニングポータルの [証明書]、[識別子]、[プロファイル] セクション](https://developer.apple.com/account/overview.action)で、 **[識別子]** に移動して、 **[パスの種類 id]** を選択します。 次に、 **+** ボタンを選択して新しいパスの種類を作成します。[![](passkit-images/passid.png "新しいパスの種類を作成する")](passkit-images/passid.png#lightbox)
+1. [IOS プロビジョニングポータルの [証明書]、[識別子]、[プロファイル] セクション](https://developer.apple.com/account/overview.action)で、 **[識別子]** に移動して、 **[パスの種類 id]** を選択します。 次に、 **+**  ボタンを選択して、新しいパスの種類を作成します。[![](passkit-images/passid.png "新しいパスの種類を作成する")](passkit-images/passid.png#lightbox)
 
-2. パスの**説明**(名前) と**識別子**(一意の文字列) を指定します。 すべてのパスの種類 id は、次の例`pass.` `pass.com.xamarin.coupon.banana`の文字列で始まる必要があることに注意してください。[![](passkit-images/register.png "説明と識別子を入力してください")](passkit-images/register.png#lightbox)
+2. パスの**説明**(名前) と**識別子**(一意の文字列) を指定します。 すべてのパスの種類 Id は、文字列 @no__t で始まる必要があります。この例では、`pass.com.xamarin.coupon.banana` を使用します。[![](passkit-images/register.png "説明と識別子を入力してください")](passkit-images/register.png#lightbox)
 
 3. [Register] \ (**登録**\) ボタンを押して、パス ID を確認します。
 
@@ -259,20 +259,20 @@ Push または Pass Kit API を使用して更新することができます。�
 - ダウンロードした証明書の p12 ファイルで、マニフェストに署名します。
 - ディレクトリの内容を ZIP 形式にし、拡張子を pkpass して名前を変更します。
 
-この記事の[サンプルコード](https://docs.microsoft.com/samples/xamarin/ios-samples/passkit)には、パスを生成するために使用できるソースファイルがいくつかあります。 Createapassmanually ディレクトリ`CouponBanana.raw`のディレクトリにあるファイルを使用します。 次のファイルが存在します。
+この記事の[サンプルコード](https://docs.microsoft.com/samples/xamarin/ios-samples/passkit)には、パスを生成するために使用できるソースファイルがいくつかあります。 CreateAPassManually ディレクトリの `CouponBanana.raw` ディレクトリにあるファイルを使用します。 次のファイルが存在します。
 
  [![](passkit-images/image18.png "これらのファイルは存在します")](passkit-images/image18.png#lightbox)
 
-[Pass. json] を開き、JSON を編集します。 Apple Developer アカウントと一致さ`passTypeIdentifier`せる`teamIdentifer`には、少なくともとを更新する必要があります。
+[Pass. json] を開き、JSON を編集します。 Apple Developer アカウントに一致するように、少なくとも `passTypeIdentifier` と `teamIdentifer` を更新する必要があります。
 
-```csharp
+```json
 "passTypeIdentifier" : "pass.com.xamarin.coupon.banana",
 "teamIdentifier" : "?????????",
 ```
 
-次に、各ファイルのハッシュを計算して、 `manifest.json`ファイルを作成する必要があります。 完了すると、次のようになります。
+次に、各ファイルのハッシュを計算し、`manifest.json` ファイルを作成する必要があります。 完了すると、次のようになります。
 
-```csharp
+```json
 {
   "icon@2x.png" : "30806547dcc6ee084a90210e2dc042d5d7d92a41",
   "icon.png" : "87e9ffb203beb2cce5de76113f8e9503aeab6ecc",
@@ -286,15 +286,15 @@ Push または Pass Kit API を使用して更新することができます。�
 
 #### <a name="signing-on-a-mac"></a>Mac での署名
 
-[Apple ダウンロード](https://developer.apple.com/downloads/index.action?name=Passbook)サイトから**ウォレットシードサポート資料**をダウンロードします。 `signpass`ツールを使用して、フォルダーをパスに変換します (これにより、SHA1 ハッシュも計算され、出力が pkpass ファイルに圧縮されます)。
+[Apple ダウンロード](https://developer.apple.com/downloads/index.action?name=Passbook)サイトから**ウォレットシードサポート資料**をダウンロードします。 @No__t-0 ツールを使用して、フォルダーをパスに変換します (これにより、SHA1 ハッシュも計算され、出力が pkpass ファイルに圧縮されます)。
 
-#### <a name="testing"></a>テスト
+#### <a name="testing"></a>Testing (テスト)
 
-これらのツールの出力を調べると (ファイル名を .zip に設定して開く)、次のファイルが表示されます (ファイル`manifest.json`と`signature`ファイルが追加されていることに注意してください)。
+これらのツールの出力を調べる (ファイル名を .zip に設定してから開く) と、次のファイルが表示されます (`manifest.json` と `signature` ファイルが追加されていることに注意してください)。
 
  [![](passkit-images/image19.png "これらのツールの出力を調べる")](passkit-images/image19.png#lightbox)
 
-署名が完了し、ファイルの名前が変更された (例 に`BananaCoupon.pkpass`移動するには、シミュレーターにドラッグしてテストするか、自分自身に電子メールで送信して実際のデバイスで取得します。 次のように、パスを**追加**するための画面が表示されます。
+署名が完了し、ファイルの名前が変更された (例 @no__t 0) をシミュレーターにドラッグしてテストしたり、実際のデバイスで取得するために自分自身に電子メールで送信したりすることができます。 次のように、パスを**追加**するための画面が表示されます。
 
  [![](passkit-images/image20.png "パス画面を追加する")](passkit-images/image20.png#lightbox)
 
@@ -321,7 +321,7 @@ Push または Pass Kit API を使用して更新することができます。�
 
 - **コンジットアプリ**–これらはパスを直接操作しません。パスファイルを読み込み、ユーザーにウォレットに追加するオプションを提供するだけです。 
 
-- **コンパニオンアプリ**–パスを配布するためのプロバイダーによって作成され、それらを参照または編集するための追加機能を提供します。 Xamarin iOS アプリケーションは、Pass Kit API に完全にアクセスして、パスを作成および操作します。 これにより、 `PKAddPassesViewController`を使用してウォレットにパスを追加できます。 このプロセスの詳細については、このドキュメントの「**コンパニオンアプリケーション**」セクションを参照してください。
+- **コンパニオンアプリ**–パスを配布するためのプロバイダーによって作成され、それらを参照または編集するための追加機能を提供します。 Xamarin iOS アプリケーションは、Pass Kit API に完全にアクセスして、パスを作成および操作します。 これにより、`PKAddPassesViewController` を使用して、ウォレットに渡すことができます。 このプロセスの詳細については、このドキュメントの「**コンパニオンアプリケーション**」セクションを参照してください。
 
 ### <a name="conduit-applications"></a>コンジットアプリケーション
 
@@ -343,7 +343,7 @@ Push または Pass Kit API を使用して更新することができます。�
 - **MIME の種類**-application/vnd. apple. pkpass
 - **UTI** – com. pkpass
 
-コンジットアプリケーションの基本的な操作では、pass ファイルを取得し、pass kit `PKAddPassesViewController`を呼び出して、ウォレットにパスを追加するオプションをユーザーに付与します。 このビューコントローラーの実装については、**コンパニオンアプリケーション**の次のセクションで説明します。
+コンジットアプリケーションの基本的な操作では、pass ファイルを取得し、pass Kit の `PKAddPassesViewController` を呼び出して、ウォレットにパスを追加するオプションをユーザーに付与します。 このビューコントローラーの実装については、**コンパニオンアプリケーション**の次のセクションで説明します。
 
 パイプアプリケーションは、コンパニオンアプリケーションと同じように、特定のパスの種類 ID に対してプロビジョニングする必要はありません。
 
@@ -381,7 +381,7 @@ Solution Pad の**権利の plist**ファイルをダブルクリックして、
 
 **権限の plist**ファイルをダブルクリックして、XML ソースファイルを開きます。
 
-ウォレットの権利を追加するには 、ドロップ`Passbook Identifiers`ダウンでプロパティをに設定します。これにより、自動的に**型** `Array`が設定されます。 次に、文字列**値**をに`$(TeamIdentifierPrefix)*`設定します。
+ウォレットの権利を追加するには、ドロップダウンリストの**プロパティ**を `Passbook Identifiers` に設定します。これにより、**型**`Array` が自動的に設定されます。 次に、文字列**値**を `$(TeamIdentifierPrefix)*` に設定します。
 
 ![](passkit-images/image33.png "ウォレットの権利を有効にする")
 
@@ -395,15 +395,15 @@ Solution Pad の**権利の plist**ファイルをダブルクリックして、
 
 ### <a name="debugging"></a>デバッグ
 
-アプリケーションの展開で問題が発生した場合は、正しい**プロビジョニングプロファイル**を使用している`Entitlements.plist`こと、および**iPhone バンドル署名**オプションでが**カスタム権利**ファイルとして選択されていることを確認してください。
+アプリケーションの展開で問題が発生した場合は、正しい**プロビジョニングプロファイル**を使用していることと、 **iPhone バンドル署名**オプションで `Entitlements.plist` が**カスタム権利**ファイルとして選択されていることを確認してください。
 
 展開時にこのエラーが発生した場合は、次の手順を実行します。
 
-```csharp
+```
 Installation failed: Your code signing/provisioning profiles are not correctly configured (error: 0xe8008016)
 ```
 
-その後`pass-type-identifiers` 、権利配列が正しくありません (または**プロビジョニングプロファイル**と一致しません)。 パスの種類 Id とチーム ID が正しいことを確認してください。
+その後、@no__t 0 の権利配列が正しくありません (または**プロビジョニングプロファイル**と一致しません)。 パスの種類 Id とチーム ID が正しいことを確認してください。
 
 ## <a name="classes"></a>クラス
 
@@ -472,7 +472,7 @@ string passInfo =
 
  [![](passkit-images/image30.png "サンプルで選択されているクーポンのアラート")](passkit-images/image30.png#lightbox)
 
-また、 `LocalizedValueForFieldKey()`メソッドを使用して、デザインしたパス内のフィールドからデータを取得することもできます (どのフィールドが存在する必要があるかがわかります)。 コード例では、これは示されていません。
+@No__t-0 メソッドを使用して、デザインしたパスのフィールドからデータを取得することもできます (どのフィールドが存在する必要があるかがわかっているため)。 コード例では、これは示されていません。
 
 ### <a name="loading-a-pass-from-a-file"></a>ファイルからのパスの読み込み
 
@@ -509,17 +509,17 @@ PKPass は変更できないため、コード内の pass オブジェクトを�
 
 パスは、プライベートで安全な状態に保つ必要がある証明書を使用して署名する必要があるため、サーバー上でパスファイルの作成を行う必要があります。
 
-更新されたパスファイルが生成されたら`Replace` 、メソッドを使用して、デバイス上の古いデータを上書きします。
+更新されたパスファイルが生成されたら、`Replace` メソッドを使用して、デバイス上の古いデータを上書きします。
 
 ### <a name="display-a-pass-for-scanning"></a>スキャンのためのパスを表示する
 
-前述のように、スキャンのパスを表示できるのはウォレットだけです。 次に示すように、 `OpenUrl`メソッドを使用してパスを表示できます。
+前述のように、スキャンのパスを表示できるのはウォレットだけです。 次に示すように、`OpenUrl` メソッドを使用してパスを表示できます。
 
  `UIApplication.SharedApplication.OpenUrl (p.PassUrl);`
 
 ### <a name="receiving-notifications-of-changes"></a>変更通知の受信
 
-アプリケーションは、を使用して、 `PKPassLibraryDidChangeNotification`パスライブラリに対して行われた変更をリッスンできます。 変更は、通知によってバックグラウンドで更新がトリガーされることによって発生する可能性があるため、アプリでリッスンすることをお勧めします。
+アプリケーションは、`PKPassLibraryDidChangeNotification` を使用して、パスライブラリに対して行われた変更をリッスンできます。 変更は、通知によってバックグラウンドで更新がトリガーされることによって発生する可能性があるため、アプリでリッスンすることをお勧めします。
 
 ```csharp
 noteCenter = NSNotificationCenter.DefaultCenter.AddObserver (PKPassLibrary.DidChangeNotification, (not) => {
@@ -549,7 +549,7 @@ Pkpass Library はシングルトンではないため、通知の登録時に�
 
 詳細について[は、「パスガイドを更新する](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/PassKit_PG/Updating.html#//apple_ref/doc/uid/TP40012195-CH5-SW1)」を参照してください。
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>まとめ
 
 この記事では、役に立ついくつかの理由と、完全な Pass Kit ソリューションに実装する必要があるさまざまな部分について説明しました。 この記事では、パスを作成するために Apple Developer アカウントを構成するために必要な手順、手動でパスを作成するプロセス、および Xamarin. iOS アプリケーションからの Pass Kit Api へのアクセス方法について説明しています。
 

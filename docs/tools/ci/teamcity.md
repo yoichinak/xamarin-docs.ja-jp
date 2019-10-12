@@ -6,12 +6,12 @@ ms.assetid: AC2626CB-28A7-4808-B2A9-789D67899546
 author: conceptdev
 ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: 6ffd1c3e42dbaf0a82b07cd9e0a00228c5fa0604
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.openlocfilehash: ee1ef1ecda18ee9817fcf10b7dda0c7b4489bf9f
+ms.sourcegitcommit: e354aabfb39598e0ce11115db3e6bcebb9f68338
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "70293135"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72273131"
 ---
 # <a name="using-team-city-with-xamarin"></a>Xamarin での TeamCity の使用
 
@@ -61,7 +61,7 @@ TeamCity 8.1 に関する知識が必要です。 TeamCity のインストール
 3. **Xcode** – Xcode は、iOS アプリケーションをコンパイルして署名するために必要です。
 4. **Xcode コマンドラインツール**–「 [Ruby With rbenv の更新](https://github.com/calabash/calabash-ios/wiki)」ガイドの「インストール」セクションの手順 1. で説明されています。
 5. **& プロビジョニングプロファイルの署名 id** : XCode を使用して証明書とプロビジョニングプロファイルをインポートします。 詳細については[、「署名 id とプロビジョニングプロファイルのエクスポート](https://developer.apple.com/library/ios/recipes/xcode_help-accounts_preferences/articles/export_signing_assets.html)に関する Apple のガイド」を参照してください。
-6. **Android キーストア**–必要な android キーストアを、teamcity ユーザーがアクセスできるディレクトリにコピーします`~/Documents/keystores/MyAndroidApp1`。
+6. **Android キーストア**–必要な android キーストアを teamcity ユーザーがアクセスできるディレクトリにコピーします。つまり、`~/Documents/keystores/MyAndroidApp1` です。
 7. **Calabash** –アプリケーションに calabash を使用して記述されたテストがある場合は、これは省略可能な手順です。 詳細については、「 [OS X Mavericks に Calabash をインストールする](https://github.com/calabash/calabash-ios/wiki)」および「 [Ruby With rbenv を更新](https://github.com/calabash/calabash-ios/wiki)する」ガイドを参照してください。
 
 次の図は、これらすべてのコンポーネントを示しています。
@@ -134,7 +134,7 @@ Xamarin Android アプリケーションをコンパイルすると、 **xbuild*
 
 #### <a name="submitting-xamarinuitests-to-test-cloud"></a>UITests を Test Cloud に送信しています
 
-UITests は、次の`test-cloud.exe`スニペットに示すように、アプリケーションを使用して送信されます。
+UITests は、次のスニペットに示すように @no__t 0 アプリケーションを使用して送信されます。
 
 ```bash
 test-cloud.exe <path-to-apk-or-ipa-file> <test-cloud-team-api-key> --devices <device-selection-id> --assembly-dir <path-to-tests-containing-test-assemblies> --nunit-xml report.xml --user <email>
@@ -142,11 +142,11 @@ test-cloud.exe <path-to-apk-or-ipa-file> <test-cloud-team-api-key> --devices <de
 
 テストが実行されると、テスト結果は、**レポート xml**という NUnit 形式の xml ファイルの形式で返されます。 TeamCity によって、ビルドログに情報が表示されます。
 
-Test Cloud に UITests を送信する方法の詳細については、[アップロードのための UITests の準備](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/uitest/)に関するこのガイドを参照してください。
+UITests を Test Cloud に送信する方法の詳細については、「 [Xamarin Android アプリの準備](/appcenter/test-cloud/preparing-for-upload/xamarin-android-uitest)」または「 [Xamarin の IOS アプリの準備](/appcenter/test-cloud/preparing-for-upload/xamarin-ios-uitest)」を参照してください。
 
 #### <a name="submitting-calabash-tests-to-test-cloud"></a>Test Cloud に対する Calabash テストの送信
 
-Calabash テストは、次の`test-cloud`スニペットに示すように gem を使用して送信されます。
+Calabash テストは、次のスニペットに示すように @no__t 0 の gem を使用して送信されます。
 
 ```bash
 test-cloud submit /path/to/APK-or-IPA <test-cloud-team-api-key> --devices <device-id> --user <email>
@@ -167,35 +167,35 @@ TeamCity がインストールされ Visual Studio for Mac、プロジェクト�
 
 1. Web ブラウザーを使用して TeamCity にログインすることで開始されます。 ルートプロジェクトに移動します。
 
-    ![ルートプロジェクトに移動します]。(teamcity-images/image2.png "ルートプロジェクトに移動します")。ルートプロジェクトの下に、新しいサブプロジェクトを作成します。
+    ルート![プロジェクトに移動]し、ルートプロジェクトの下(teamcity-images/image2.png "にあるルートプロジェクトに移動")して、新しいサブプロジェクトを作成します。
 
-    ルート![プロジェクトの下にあるルートプロジェクトに移動し、新しいサブプロジェクトを作成]します。ルート(teamcity-images/image3.png "プロジェクトの下にあるルートプロジェクトに移動し、新しいサブプロジェクトを作成")します。
+    ルートプロジェクト![の下にあるルートプロジェクトに移動し、新しいサブプロジェクトを作成]します。ルートプロジェクトの下にあるルートプロジェクト(teamcity-images/image3.png "に移動し、新しいサブプロジェクトを作成")します。
 2. サブプロジェクトが作成されたら、新しいビルド構成を追加します。
 
-    ![サブプロジェクトが作成されたら、新しいビルド構成を追加します]。(teamcity-images/image5.png "サブプロジェクトが作成されたら、新しいビルド構成を追加します")。
+    ![サブプロジェクトが作成されたら、](teamcity-images/image5.png "サブプロジェクトが作成さ")れた後に新しいビルド構成を追加し、新しいビルド構成を追加します。
 3. ビルド構成に VCS プロジェクトをアタッチします。 これを行うには、[バージョンコントロールの設定] 画面を使用します。
 
-    ![これは、[バージョンコントロールの設定] 画面で行います]。(teamcity-images/image6.png "これは、[バージョンコントロールの設定] 画面で行います")。
+    ![これを行うには]、バージョンコントロールの設定画面を使用(teamcity-images/image6.png "します。これは、[バージョンコントロールの設定] 画面で行います")。
 
     VCS プロジェクトが作成されていない場合は、次に示す新しい VCS ルートページから作成することもできます。
 
-    ![Vcs プロジェクトが作成されていない場合は、新しい Vcs ルートページから作成することもでき]ます。(teamcity-images/image7.png "Vcs プロジェクトが作成されていない場合は、新しい Vcs ルートページから作成することもでき")ます。
+    ![Vcs プロジェクトが作成]されていない場合は、新しい vcs ルートページから作成することもできます。(teamcity-images/image7.png "vcs プロジェクトが作成")されていない場合は、新しい vcs ルートページから作成することもできます。
 
     VCS のルートがアタッチされると、TeamCity によってプロジェクトがチェックアウトされ、ビルドのステップが自動的に検出されます。 TeamCity を使い慣れている場合は、検出されたビルドステップのいずれかを選択できます。 現時点では、検出されたビルドの手順を無視しても安全です。
 
 4. 次に、ビルドトリガーを構成します。 これにより、ユーザーがリポジトリにコードをコミットしたときなど、特定の条件が満たされたときにビルドがキューに入れられます。 次のスクリーンショットは、ビルドトリガーを追加する方法を示しています。
 
-    ![このスクリーンショットは、ビルドトリガーを追加する方法を示し]ています。(teamcity-images/image8.png "このスクリーンショットは、ビルドトリガーを追加する方法を示し")ています。ビルドトリガーを構成する例を次のスクリーンショットに示します。
+    ![このスクリーンショット]は、ビルドトリガーを追加する方法を示しています。このスクリーンショットでは、ビルドトリガーを(teamcity-images/image8.png "追加する方法を示し")ています。次のスクリーンショットを参照してください。
 
-    ![ビルドトリガーを構成する例については、このスクリーンショット]をご覧ください。(teamcity-images/image9.png "ビルドトリガーを構成する例については、このスクリーンショット")をご覧ください。
+    ![ビルドトリガーを構成する例]については、このスクリーンショットをご覧ください。(teamcity-images/image9.png "ビルドトリガーを構成する例については、このスクリーンショット")をご覧ください。
 
 5. 前のセクション「ビルドスクリプトのパラメーター化」では、環境変数としていくつかの値を格納することを推奨していました。 これらの変数は、[パラメーター] 画面を使用してビルド構成に追加できます。 次のスクリーンショットに示すように、Test Cloud API キー、iOS デバイス ID、および Android デバイス ID の変数を追加します。
 
-    ![TEST CLOUD API キー、iOS デバイス id、および Android デバイス id の変数を追加]します。(teamcity-images/image11.png "TEST CLOUD API キー、iOS デバイス id、および Android デバイス id の変数を追加")します。
+    ![TEST CLOUD Api キー、ios デバイス id、および Android デバイス id の変数を追加]して、(teamcity-images/image11.png "Test Cloud API キー、ios デバイス Id、および android デバイス id の変数を追加")します。
 
 6. 最後の手順では、ビルドスクリプトを呼び出してアプリケーションをコンパイルし、アプリケーションを Test Cloud にエンキューするビルドステップを追加します。 次のスクリーンショットは、Rakefile を使用してアプリケーションをビルドするビルドステップの例です。
 
-    ![このスクリーンショットは、Rakefile を使用してアプリケーションをビルドするビルドステップの例です]。(teamcity-images/image12.png "このスクリーンショットは、Rakefile を使用してアプリケーションをビルドするビルドステップの例です")。
+    ![このスクリーンショットは、Rakefile を使用してアプリケーションをビルドするビルドステップの例]です。(teamcity-images/image12.png "このスクリーンショットは、rakefile を使用してアプリケーションをビルドするビルドステップの例です")。
 
 7. この時点で、ビルド構成が完了します。 ビルドをトリガーして、プロジェクトが適切に構成されていることを確認することをお勧めします。 これを行うには、小規模で重要ではない変更をリポジトリにコミットすることをお勧めします。 TeamCity はコミットを検出し、ビルドを開始する必要があります。
 
@@ -209,5 +209,6 @@ TeamCity がインストールされ Visual Studio for Mac、プロジェクト�
 
 ## <a name="related-links"></a>関連リンク
 
-- [UITests fpr アップロードを準備しています](/appcenter/test-cloud/preparing-for-upload/uitest/)
+- [Xamarin Android アプリを準備する](/appcenter/test-cloud/preparing-for-upload/xamarin-android-uitest)
+- [Xamarin iOS アプリを準備しています](/appcenter/test-cloud/preparing-for-upload/xamarin-ios-uitest)
 - [TeamCity のインストールと構成](http://confluence.jetbrains.com/display/TCD8/Installing+and+Configuring+the+TeamCity+Server)
