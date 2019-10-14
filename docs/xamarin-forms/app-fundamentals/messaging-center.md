@@ -6,19 +6,21 @@ ms.assetid: EDFE7B19-C5FD-40D5-816C-FAE56532E885
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/30/2019
-ms.openlocfilehash: a4d246419c7449c2395759cf5a8b04469e7a2309
-ms.sourcegitcommit: 266e75fa6893d3732e4e2c0c8e79c62be2804468
+ms.date: 10/08/2019
+ms.openlocfilehash: 8d5de8bac6cc61b0874c978a6443ca4490015457
+ms.sourcegitcommit: eb23b7d745d1090376f9def07e0f11cb089494d0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68821011"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72170962"
 ---
 # <a name="xamarinforms-messagingcenter"></a>Xamarin.Forms の MessagingCenter
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/usingmessagingcenter)
 
 発行/サブスクライブ パターンは、パブリッシャーがサブスクライバーと呼ばれる受信者を知らずに、メッセージを送信するメッセージング パターンです。 同様に、サブスクライバーは、パブリッシャーを知らずに特定のメッセージをリッスンします。
+
+.NET のイベントでは、発行/サブスクライブ パターンが実装されます。こうしたイベントは、コントロールやそれを含むページなど、疎結合が不要な場合に、コンポーネント間の通信レイヤーに対して最もシンプルで簡単な方法です。 ただし、パブリッシャーとサブスクライバーの有効期間はオブジェクト参照によって相互に結合され、サブスクライバーの種類にはパブリッシャーの種類への参照が含まれている必要があります。 これにより、特に、静的なオブジェクトまたは有効期間の長いオブジェクトのイベントをサブスクライブする、有効期間が短いオブジェクトがある場合に、メモリ管理の問題が発生する可能性があります。 イベント ハンドラーが削除されていない場合、サブスクライバーは、パブリッシャー内のサブスクライバーへの参照によって保持されます。これにより、サブスクライバーのガベージ コレクションが妨げられるか、または遅延します。
 
 Xamarin.Forms の [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) クラスでは、発行/サブスクライブ パターンが実装され、オブジェクトと型の参照によってリンクしにくいコンポーネント間で、メッセージ ベースの通信を行うことができます。 このメカニズムにより、パブリッシャーとサブスクライバーは相互に参照することなく通信できるため、相互の依存関係を減らすことができます。
 

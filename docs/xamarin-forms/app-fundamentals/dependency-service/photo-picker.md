@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/06/2017
-ms.openlocfilehash: 71e509d87dc2a2947821084aea5668055f6f4678
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 335fb03cd190752d488f047bdf22f67d72f30c2e
+ms.sourcegitcommit: 5110d1279809a2af58d3d66cd14c78113bb51436
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70771490"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72032561"
 ---
 # <a name="picking-a-photo-from-the-picture-library"></a>画像ライブラリから写真を選択する
 
@@ -85,7 +85,7 @@ namespace DependencyServiceDemos.iOS
 
 この時点で、`GetImageStreamAsync` メソッドから呼び出し元のコードに `Task<Stream>` オブジェクトを返す必要があります。 このタスクは、ユーザーがフォト ライブラリとの対話を終了し、イベント ハンドラーの 1 つが呼び出されたときにのみ、実行できます。 このような状況に対しては、[`TaskCompletionSource`](https://msdn.microsoft.com/library/dd449174(v=vs.110).aspx) クラスが不可欠です。 このクラスでは、`GetImageStreamAsync` メソッドから戻すための適切なジェネリック型の `Task` オブジェクトが提供されており、後でタスクが完了したときに通知を受け取ることができます。
 
-ユーザーが画像を選択すると、`FinishedPickingMedia` イベント ハンドラーが呼び出されます。 ただし、ハンドラーでは `UIImage` オブジェクトが提供されますが、`Task` からは .NET の `Stream` オブジェクトが返される必要があります。 これは 2 つのステップで行われます。最初に `UIImage` オブジェクトがメモリ内で JPEG ファイルに変換されて `NSData` オブジェクトに格納され、次に `NSData` オブジェクトが .NET の `Stream` オブジェクトに変換されます。 `TaskCompletionSource` オブジェクトの `SetResult` メソッドに対する呼び出しでは、`Stream` オブジェクトを提供することによってタスクが完了されます。
+ユーザーが画像を選択すると、`FinishedPickingMedia` イベント ハンドラーが呼び出されます。 ただし、ハンドラーでは `UIImage` オブジェクトが提供されますが、`Task` からは .NET の `Stream` オブジェクトが返される必要があります。 これは 2 つのステップで行われます。最初に `UIImage` オブジェクトが、`NSData` オブジェクトに格納されているメモリ内の PNG ファイルまたは JPEG ファイルに変換され、次に `NSData` オブジェクトが .NET の `Stream` オブジェクトに変換されます。 `TaskCompletionSource` オブジェクトの `SetResult` メソッドに対する呼び出しでは、`Stream` オブジェクトを提供することによってタスクが完了されます。
 
 ```csharp
 namespace DependencyServiceDemos.iOS
@@ -102,7 +102,15 @@ namespace DependencyServiceDemos.iOS
             if (image != null)
             {
                 // Convert UIImage to .NET Stream object
-                NSData data = image.AsJPEG(1);
+                NSData data;
+                if (args.ReferenceUrl.PathExtension.Equals("PNG") || args.ReferenceUrl.PathExtension.Equals("png"))
+                {
+                    data = image.AsPNG();
+                }
+                else
+                {
+                    data = image.AsJPEG(1);
+                }
                 Stream stream = data.AsStream();
 
                 UnregisterEventHandlers();

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/01/2016
-ms.openlocfilehash: 9e49dfa99ccb6aae49a72ce044bb8071c210336e
-ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
+ms.openlocfilehash: 66323974fa44f5397e21541595a187ce0ba4d061
+ms.sourcegitcommit: 4cf434b126eb7df6b2fd9bb1d71613bf2b6aac0e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71198566"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "71997154"
 ---
 # <a name="xamarinforms-triggers"></a>Xamarin.Forms のトリガー
 
@@ -278,6 +278,11 @@ XAML を以下に示します。 最初のマルチ トリガーの例と次の�
 
 トリガーが発生したときの変更を実装するもう 1 つの方法は、`EnterActions` および `ExitActions` コレクションを追加して、`TriggerAction<T>` の実装を指定することです。
 
+[`EnterActions`](xref:Xamarin.Forms.TriggerBase.EnterActions) コレクションは、トリガー条件が満たされると呼び出される [`TriggerAction`](xref:Xamarin.Forms.TriggerAction) オブジェクトの `IList` を定義するのに使用されます。 [`ExitActions`](xref:Xamarin.Forms.TriggerBase.ExitActions) コレクションは、トリガー条件が満たされなくなったら呼び出される `TriggerAction` オブジェクトの `IList` を定義するのに使用されます。
+
+> [!NOTE]
+> `EnterActions` コレクションと `ExitActions` コレクションで定義されている [`TriggerAction`](xref:Xamarin.Forms.TriggerAction) オブジェクトは、[`EventTrigger`](xref:Xamarin.Forms.EventTrigger) クラスによって無視されます。    
+
 トリガーで `Setter` と共に `EnterActions` と `ExitActions` の "*両方*" を提供できますが、`Setter` はすぐに呼び出されることに注意してください (`EnterAction` または `ExitAction` が完了するのを待機しません)。 代わりに、コードですべてを実行し、`Setter` をまったく使用しないこともできます。
 
 ```xaml
@@ -292,7 +297,7 @@ XAML を以下に示します。 最初のマルチ トリガーの例と次の�
             <Trigger.ExitActions>
                 <local:FadeTriggerAction StartsFrom="1" />
             </Trigger.ExitActions>
-                        <!-- You can use both Enter/Exit and Setter together if required -->
+            <!-- You can use both Enter/Exit and Setter together if required -->
         </Trigger>
     </Entry.Triggers>
 </Entry>
@@ -327,8 +332,6 @@ public class FadeTriggerAction : TriggerAction<VisualElement>
     }
 }
 ```
-
-注: `EnterActions` と `ExitActions` は、**イベント トリガー**では無視されます。
 
 ## <a name="related-links"></a>関連リンク
 
