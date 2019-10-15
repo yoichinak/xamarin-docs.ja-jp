@@ -157,7 +157,7 @@ public static class MyStringCategory
 }
 ```
 
-この例では、native toUpper instance メソッドを NSString クラスに追加します。これは、目標-C から呼び出すことができます。
+この例では、native toUpper instance メソッドを NSString クラスに追加します。これは、Objective-C から呼び出すことができます。
 
 ```csharp
 [Category (typeof (UIViewController))]
@@ -212,9 +212,9 @@ OpenGLES 3.0 機能は、 [ES30.GL 型](xref:OpenTK.Graphics.ES30.GL)を介し�
 
 ### <a name="binding-design"></a>バインディングのデザイン
 
-Xamarin。 iOS は、基礎となる目的 C プラットフォームへのバインディングにすぎません。 Blend C#と目標を向上させるために、.net 型システムとディスパッチシステムを拡張します。
+Xamarin.iOS は、基礎となる Objective-C プラットフォームへのバインディングにすぎません。 C# と Objective-C を上手く混在させるために、.net 型システムとディスパッチシステムを拡張しています。
 
-P/Invoke は、Windows および Linux でネイティブライブラリを呼び出すための便利なツールです。また、Windows の COM 相互運用機能に対して IJW サポートを使用することもできC#ます。そのため、Xamarin はランタイムを拡張して、目的の C オブジェクトへのバインドオブジェクトをサポートします。
+P/Invoke が、Windows および Linux でネイティブライブラリを呼び出すための便利なツールであるように、また、Windows の COM 相互運用機能に対して IJW サポートを使用できるように、Xamarin はランタイムを拡張して、C# オブジェクトの Objective-C オブジェクトへのバインドオブジェクトをサポートします。
 
 次のいくつかのセクションでは、Xamarin アプリケーションを作成しているユーザーには必要ありませんが、複雑なアプリケーションを作成するときに、開発者がどのような作業を行っているかを理解するのに役立ちます。
 
@@ -240,9 +240,9 @@ UIView [] GetViews ();
 
 #### <a name="inheritance"></a>継承
 
-Xamarin. iOS API の設計により、開発者は、派生クラスで "override" キーワードを使用し、 C# "base" C#を使用して基本実装にチェーンするのと同じ方法で、ネイティブの目的 C の型を拡張できます。キーワード.
+Xamarin. iOS API の設計により、開発者は派生クラスで "override" キーワードを使用してC# 型を拡張することも、 "base" C# キーワードを使用して基本実装にチェーンするのと同じ方法でネイティブの Objective-C の型を拡張することもできます。
 
-このように設計することで、開発プロセスの一部としての目的 C のセレクターの処理を避けることができます。これは、目的 C システム全体が既に Xamarin. iOS ライブラリ内にラップされているためです。
+このように設計することで、開発プロセスの一部としての Objective-C のセレクターの処理を避けることができます。これは、Objective-C システム全体が既に Xamarin.iOS ライブラリ内にラップされているためです。
 
 #### <a name="types-and-interface-builder"></a>型と Interface Builder
 
@@ -271,7 +271,7 @@ public partial class void MyView : UIView {
 
 プログラミングパターンは、コントロールの動作を変更するための派生クラスの作成を最小限にするように設計されています。 このソリューションは、長年にわたって他の GUI ツールキットによって実行されていたものと似ています。Gtk のシグナル、Qt スロット、Winforms イベント、WPF/Silverlight イベントなど。 数百のインターフェイス (アクションごとに1つ) を使用したり、不要なメソッドを実装したりする必要がないようにするには、省略可能なメソッドの定義をサポートします。 これは、すべてC#のメソッドを実装する必要があるインターフェイスとは異なります。
 
-目的 C クラスでは、このプログラミングパターンを使用するクラスは、通常と呼ば`delegate`れるプロパティを公開しています。このプロパティは、インターフェイスの必須の部分および0個以上のオプションの部分を実装するために必要です。
+Objective-C クラスでは、このプログラミングパターンを使用するクラスは、通常`delegate`と呼ばれるプロパティを公開しています。このプロパティは、インターフェイスの必須の部分および 0 個以上のオプションの部分を実装するために必要です。
 
 Xamarin では、これらのデリゲートにバインドする相互排他的な3つのメカニズムが用意されています。
 
@@ -385,7 +385,7 @@ web.WeakDelegate = new Notifier ();
 
 `WeakDelegate`プロパティが割り当てられると`Delegate` 、プロパティは使用されないことに注意してください。 さらに、継承された基本クラスで [Export] を使用する場合は、メソッドをパブリックメソッドにする必要があります。
 
-## <a name="mapping-of-the-objective-c-delegate-pattern-to-c"></a>目的 C デリゲートパターンの C へのマッピング\#
+## <a name="mapping-of-the-objective-c-delegate-pattern-to-c"></a>Objective-C デリゲートパターンの C\# へのマッピング
 
 次のような Objective-C サンプルが表示されます。
 
@@ -393,7 +393,7 @@ web.WeakDelegate = new Notifier ();
 foo.delegate = [[SomethingDelegate] alloc] init]
 ```
 
-これにより、言語に対して "すべてのデリゲート" クラスのインスタンスを作成して構築し、値を foo 変数の delegate プロパティに割り当てるように指示します。 このメカニズムは、Xamarin. iOS C#でサポートされています。構文は次のとおりです。
+これにより、言語に対して "すべてのデリゲート" クラスのインスタンスを作成して構築し、値を foo 変数の delegate プロパティに割り当てるように指示します。 このメカニズムは、Xamarin.iOS C# でサポートされています。構文は次のとおりです。
 
 ```csharp
 foo.Delegate = new SomethingDelegate ();
@@ -401,7 +401,7 @@ foo.Delegate = new SomethingDelegate ();
 
 Xamarin では、Objective-C デリゲートクラスにマップされる厳密に型指定されたクラスを提供しています。 これらを使用するには、Xamarin の実装で定義されているメソッドをサブクラス化し、オーバーライドします。 動作の詳細については、以下の「モデル」を参照してください。
 
-### <a name="mapping-delegates-to-c"></a>デリゲートの C へのマッピング\#
+### <a name="mapping-delegates-to-c"></a>デリゲートの C\# へのマッピング
 
 通常、UIKit では、2 つの形式で Objective-C デリゲートを使用します。
 
