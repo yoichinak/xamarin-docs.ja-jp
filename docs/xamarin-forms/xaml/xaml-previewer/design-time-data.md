@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: maddyleger1
 ms.author: maleger
 ms.date: 03/27/2019
-ms.openlocfilehash: a6a34615adc9cf290ff6bf9dd344487e5f29cfa2
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.openlocfilehash: 47171c3853fa8f5eb572971e119d51733cb53a40
+ms.sourcegitcommit: 43423d4018cc0d4b0b8c98a4b3da0704495eb0cf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "69887850"
+ms.lasthandoff: 10/14/2019
+ms.locfileid: "72303245"
 ---
 # <a name="use-design-time-data-with-the-xaml-previewer"></a>XAML プレビューアーでデザイン時データを使用する
 
-_一部のレイアウトでは、データなしで視覚化するのが困難です。これらのヒントを使用すると、データの多いページを XAML プレビューアーで最大限にプレビューすることができます。_
+_Some はデータなしで視覚化するのが困難です。これらのヒントを使用すると、データの多いページを XAML プレビューアーで最大限にプレビューすることができます。_
 
 ## <a name="design-time-data-basics"></a>デザイン時のデータの基礎
 
@@ -28,7 +28,7 @@ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 mc:Ignorable="d"
 ```
 
-名前空間を追加した後、 `d:`任意の属性またはコントロールの前に配置して、XAML プレビューアーに表示することができます。 の`d:`要素は実行時に表示されません。
+名前空間を追加した後、任意の属性またはコントロールの前に `d:` を配置して、XAML プレビューアーに表示することができます。 @No__t 0 の要素は実行時に表示されません。
 
 たとえば、通常、データがバインドされているラベルにテキストを追加できます。
 
@@ -36,17 +36,17 @@ mc:Ignorable="d"
 <Label Text="{Binding Name}" d:Text="Name!" />
 ```
 
-[![ラベル内のテキストを使用したデザイン時データ](xaml-previewer-images/designtimedata-label-sm.png "テキストでラベルをデザインする時間データ")](xaml-previewer-images/designtimedata-label-lg.png#lightbox)
+[ラベルデザイン時の![テキストを使用したデザイン時データ]ラベルに(xaml-previewer-images/designtimedata-label-sm.png "テキストを表示する")](xaml-previewer-images/designtimedata-label-lg.png#lightbox)
 
-この例では、 `d:Text`を指定しないと、XAML プレビューアーによってラベルに対して何も表示されません。 代わりに、"Name!" と表示されます。 実行時に、ラベルに実際のデータが格納されます。
+この例では、@no__t 0 を指定しないと、XAML プレビューアーによってラベルに対して何も表示されません。 代わりに、"Name!" と表示されます。 実行時に、ラベルに実際のデータが格納されます。
 
-は、カラー `d:` 、フォントサイズ、空白文字など、Xamarin の任意の属性と共に使用できます。 コントロール自体に追加することもできます。
+@No__t-0 は、カラー、フォントサイズ、空白文字など、Xamarin のフォームコントロールの任意の属性と共に使用できます。 コントロール自体に追加することもできます。
 
 ```xaml
 <d:Button Text="Design Time Button" />
 ```
 
-[![ボタンコントロールを使用したデザイン時データ](xaml-previewer-images/designtimedata-controls-sm.png "ボタンコントロールを使用したデザイン時データ")](xaml-previewer-images/designtimedata-controls-lg.png#lightbox)
+[ボタンコントロールを![使用したデザイン時のデータ](xaml-previewer-images/designtimedata-controls-sm.png "ボタンコントロールを使用したデザイン時データ")](xaml-previewer-images/designtimedata-controls-lg.png#lightbox)
 
 この例では、ボタンはデザイン時にのみ表示されます。 このメソッドは、 [XAML プレビューアーでサポートされていないカスタムコントロール](render-custom-controls.md)のプレースホルダーをに配置するために使用します。
 
@@ -58,7 +58,7 @@ mc:Ignorable="d"
 <Image Source={Binding ProfilePicture} d:Source="DesignTimePicture.jpg" />
 ```
 
-[![イメージを使用したデザイン時データ](xaml-previewer-images/designtimedata-image-sm.png "Iamges を使用したデザイン時データ")](xaml-previewer-images/designtimedata-image-lg.png#lightbox)
+[(xaml-previewer-images/designtimedata-image-sm.png "Iamges を使用")したイメージのデザイン時データ![を使用したデザイン時データ]](xaml-previewer-images/designtimedata-image-lg.png#lightbox)
 
 ## <a name="design-time-data-for-listviews"></a>ListViews のデザイン時データ
 
@@ -84,15 +84,54 @@ ListViews は、モバイルアプリでデータを表示するための一般�
 </StackLayout>
 ```
 
-[![ListView を使用したデザイン時データ](xaml-previewer-images/designtimedata-itemssource-sm.png "ListView を使用したデザイン時データ")](xaml-previewer-images/designtimedata-itemssource-lg.png#lightbox)
+[Listview を使用した ListView の(xaml-previewer-images/designtimedata-itemssource-sm.png "デザイン時データ")を![使用したデザイン時データ]](xaml-previewer-images/designtimedata-itemssource-lg.png#lightbox)
 
-この例では、XAML プレビューアー内の3つの TextCells の ListView が表示されます。 プロジェクト内の`x:String`既存のデータモデルに変更できます。
+この例では、XAML プレビューアー内の3つの TextCells の ListView が表示されます。 @No__t-0 は、プロジェクト内の既存のデータモデルに変更できます。
 
-より複雑な例については、 [James Montemagno のマン Selman. Forms アプリ](https://github.com/jamesmontemagno/Hanselman.Forms/blob/vnext/src/Hanselman/Views/Podcasts/PodcastDetailsPage.xaml#L26-L47)を参照してください。
+また、データオブジェクトの配列を作成することもできます。 たとえば、@no__t 0 のデータオブジェクトのパブリックプロパティは、デザイン時のデータとして構築できます。
+
+```csharp
+namespace Monkeys.Models
+{
+    public class Monkey
+    {
+        public string Name { get; set; }
+        public string Location { get; set; }
+    }
+}
+```
+
+XAML でクラスを使用するには、ルートノードに名前空間をインポートする必要があります。
+
+```xaml
+xmlns:models="clr-namespace:Monkeys.Models"
+```
+
+```xaml
+<StackLayout>
+    <ListView ItemsSource="{Binding Items}">
+        <d:ListView.ItemsSource>
+            <x:Array Type="{x:Type models:Monkey}">
+                <models:Monkey Name="Baboon" Location="Africa and Asia"/>
+                <models:Monkey Name="Capuchin Monkey" Location="Central and South America"/>
+                <models:Monkey Name="Blue Monkey" Location="Central and East Africa"/>
+            </x:Array>
+        </d:ListView.ItemsSource>
+        <ListView.ItemTemplate>
+            <DataTemplate x:DataType="models:Monkey">
+                <TextCell Text="{Binding Name}"
+                          Detail="{Binding Location}" />
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</StackLayout>
+```
+
+ここでの利点は、使用する予定の実際のモデルにバインドできることです。
 
 ## <a name="alternative-hardcode-a-static-viewmodel"></a>ソリューション静的ビューモデルをハードコーディングする
 
-デザイン時のデータを個々のコントロールに追加しない場合は、ページにバインドするためのモックデータストアを設定できます。 XAMLの静的なViewModelにバインドする方法については、James Montemagnoの[デザイン時のデータの追加に関するブログ記事](http://motzcod.es/post/143702671962/xamarinforms-xaml-previewer-design-time-data)を参照してください。
+デザイン時のデータを個々のコントロールに追加しない場合は、ページにバインドするためのモックデータストアを設定できます。 XAMLの静的なViewModelにバインドする方法については、James Montemagnoの[デザイン時のデータの追加に関するブログ記事](https://montemagno.com/xamarin-forms-design-time-data-tips-best-practices/)を参照してください。
 
 ## <a name="troubleshooting"></a>トラブルシューティング
 
