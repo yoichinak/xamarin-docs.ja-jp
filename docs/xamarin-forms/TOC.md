@@ -101,6 +101,7 @@
 #### [ピンチ](app-fundamentals/gestures/pinch.md)
 #### [パン](app-fundamentals/gestures/pan.md)
 #### [スワイプ](app-fundamentals/gestures/swipe.md)
+### [ローカル通知](app-fundamentals/local-notifications.md)
 ### [ローカリゼーション](app-fundamentals/localization/index.md)
 #### [文字列とイメージのローカライズ](app-fundamentals/localization/text.md)
 #### [右から左へのローカライズ](app-fundamentals/localization/right-to-left.md)
