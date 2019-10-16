@@ -88,11 +88,11 @@ Android 10 では、さまざまな新機能が導入されています。 こ�
 
 ## <a name="enhance-your-app-with-android-10-features-and-apis"></a>Android 10 の機能と Api を使用してアプリを強化する
 
-次に、Android 10 について説明し、使用可能な [新しい機能と api](https://developer.android.com/preview/api-overview.html) について説明します。 ここでは、基本的な機能をいくつか紹介します。
+次に、Android 10 について説明し、使用可能な [新しい機能と api](https://developer.android.com/preview/api-overview.html)@no__t について説明します。 ここでは、基本的な機能をいくつか紹介します。
 
 すべてのアプリに対して、次の機能をお勧めします。
 
-- **ダークテーマ:** - [ダークテーマ](https://developer.android.com/preview/features/darktheme) を追加するか、 [強制濃色](https://developer.android.com/preview/features/darktheme#force_dark)を有効にすることによって、システム全体のダークテーマを有効にするユーザーに一貫したエクスペリエンスを確保します。
+- **ダークテーマ:** @no__t- [1ensure テーマ](https://developer.android.com/preview/features/darktheme) or 追加するか、 [強制濃色](https://developer.android.com/preview/features/darktheme#force_dark)を有効にすることによって、システム全体のダークテーマを有効にするユーザーに一貫したエクスペリエンスを確保します。
 
 ![ダーク テーマ](~/android/platform/android-10-images/darktheme.png)
 
@@ -100,7 +100,7 @@ Android 10 では、さまざまな新機能が導入されています。 こ�
 
 ![ジェスチャのナビゲーション](~/android/platform/android-10-images/gesturenavigation.png)
 
-- **Optimize for foldables:** [foldables 用に最適化する](https://developer.android.com/preview/features/foldables)ことにより、現在の革新的なデバイス上でシームレスなエッジツーエッジのエクスペリエンスを実現します。
+- **Optimize for foldables:** @no__t は、 [foldables 用に最適化する](https://developer.android.com/preview/features/foldables)ことにより、現在の革新的なデバイス上でシームレスなエッジツーエッジのエクスペリエンスを実現します。
 
 ![たたみ込み](~/android/platform/android-10-images/foldable.png)
 
@@ -108,8 +108,8 @@ Android 10 では、さまざまな新機能が導入されています。 こ�
 
 - **より対話的な通知:**   通知にメッセージが含まれている場合は、 [通知の返信とアクション](https://developer.android.com/preview/features#smart-suggestions) を有効にすると、ユーザーの関与を促し、ユーザーがすぐにアクションを実行できるようになります。
 - **生体認証の向上:**   生体認証を使用する場合は、 [BiometricPrompt](https://developer.android.com/reference/androidx/biometric/BiometricPrompt)に移動します。これは、最新のデバイスで指紋認証をサポートするための推奨される方法です。
-- **記録の強化:** キャプションやゲームプレイの記録をサポートするには、 [オーディオ再生のキャプチャ](https://developer.android.com/preview/features/playback-capture)を有効にします。 これは、より多くのユーザーにリーチし、アプリをより使いやすくするための優れた方法です。
-- **より優れたコーデック:** メディアアプリの場合は、ビデオストリーミングには [AV1](https://en.wikipedia.org/wiki/AV1) を、高ダイナミックレンジのビデオでは [HDR10+](https://en.wikipedia.org/wiki/High-dynamic-range_video#HDR10+) を試してください。 Speech および音楽ストリーミングの場合は、 [Opus](http://opus-codec.org/)encoding を使用できます。また、ミュージシャンでは、 [ネイティブ MIDI API](https://developer.android.com/preview/features/midi) が使用可能です。
+- **記録**の強化 @no__t: 1To のサポートキャプションやゲームプレイの記録、 [オーディオ再生のキャプチャ](https://developer.android.com/preview/features/playback-capture)を有効にします。 これは、より多くのユーザーにリーチし、アプリをより使いやすくするための優れた方法です。
+- **より優れたコーデック:** @no__t メディアアプリの場合は、ビデオストリーミングには [AV1](https://en.wikipedia.org/wiki/AV1) for 高ダイナミックレンジのビデオでは [HDR10 +](https://en.wikipedia.org/wiki/High-dynamic-range_video#HDR10+) for 試してください。 Speech および音楽ストリーミングの場合は、 [傑作](http://opus-codec.org/)encoding を使用できます。また、ミュージシャンでは、 [ネイティブ MIDI API](https://developer.android.com/preview/features/midi) is 使用可能です。
 - **より優れたネットワーク api:**   アプリが wi-fi 経由で IoT デバイスを管理する場合は、構成、ダウンロード、印刷などの機能に対して、新しい [ネットワーク接続 api](https://developer.android.com/preview/features#peer2peer) を試してみてください。
 
 これらは、Android 10 の多くの新機能と Api のほんの一部です。 すべてを表示するには、 [開発者向けの Android 10 サイト](https://developer.android.com/about/versions/10/highlights)にアクセスしてください。
