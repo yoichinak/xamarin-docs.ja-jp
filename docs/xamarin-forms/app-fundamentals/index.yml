@@ -79,6 +79,12 @@ sections:
               src: 'https://docs.microsoft.com/media/common/i_form.svg'
               href: gestures/index.md
             title: ジェスチャ
+          - href: local-notifications.md
+            html: Xamarin. Forms でローカル通知を送受信する方法について説明します。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_push-notification.svg'
+              href: local-notifications.md
+            title: ローカル通知
           - href: localization/index.md
             html: Xamarin.Forms を使用して多言語アプリケーションを開発する方法について説明します。
             image:
