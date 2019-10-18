@@ -6,13 +6,13 @@ ms.assetid: eecaf6a5-567c-49b2-ac83-2a195596c5bf
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/01/2019
-ms.openlocfilehash: e4584867e457661b2dfaa43fcbde7b1adcabeb85
-ms.sourcegitcommit: e354aabfb39598e0ce11115db3e6bcebb9f68338
-ms.translationtype: MT
+ms.date: 10/16/2019
+ms.openlocfilehash: 3d215519a2046c19fb1d9d5dbf7d140ae1452de6
+ms.sourcegitcommit: 841590e3ed1b46473ab84e357e045afa7cfef549
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72273107"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72531804"
 ---
 # <a name="xamarinforms-requirements"></a>Xamarin.Forms の要件
 
@@ -71,14 +71,16 @@ Xamarin.Forms アプリは macOS と Windows で開発できます。 ただし�
 
 ## <a name="mac-system-requirements"></a>Mac のシステム要件
 
-Visual Studio for Mac を使用して、macOS High (10.13) 以降で Xamarin. Forms アプリを開発できます。 IOS アプリを開発するには、少なくとも iOS 10 SDK と Xcode 9 をインストールすることをお勧めします。
+Visual Studio for Mac を使用して、macOS High (10.13) 以降で Xamarin. Forms アプリを開発できます。 IOS アプリを開発するには、最新バージョンの Xcode、iOS、macOS を使用することをお勧めします。
 
 > [!NOTE]
 > Windows アプリを macOS で開発することはできません。
 
 ## <a name="windows-system-requirements"></a>Windows のシステム要件
 
-iOS と Android 向けの Xamarin.Forms アプリは Xamarin 開発に対応しているあらゆる Windows インストールでビルドできます。 Visual Studio 2017 以降を Windows 7 以上で実行する必要があります。 iOS 開発には、ネットワークに接続した Mac が必要です。
+iOS と Android 向けの Xamarin.Forms アプリは Xamarin 開発に対応しているあらゆる Windows インストールでビルドできます。 現在のプラットフォーム機能を完全にサポートするには、最新バージョンの Visual Studio を使用します。 
+
+Xcode の最新バージョンと Apple によって指定された最小バージョンの macOS を使用した iOS 開発では、ネットワークに接続された Mac が必要です。
 
 <a name="windows10" />
 
@@ -88,7 +90,7 @@ UWP 用の Xamarin.Forms アプリの開発に必要なもの:
 
 - Windows 10 (推奨されている最新バージョン、更新プログラムの最小更新プログラム)
 
-- Visual Studio 2019 を推奨します (Visual Studio 2017 バージョン15.8 以上)
+- Visual Studio 2019 をお勧めします
 
 - [Windows 10 SDK](https://dev.windows.com/downloads/windows-10-sdk)
 

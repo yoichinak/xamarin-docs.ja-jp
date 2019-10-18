@@ -6,24 +6,24 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: ad7e2e16784a309286d42d4562a52ef57671e477
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: bd05596ce8c6f8acb81b3ca68c6393a0be47768a
+ms.sourcegitcommit: cb13fadbaa6d19dea94b9005bda20c2efd1b8039
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70764566"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72541915"
 ---
 # <a name="xamarinandroid-gridlayout"></a>Xamarin Android GridLayout
 
-は`GridLayout` 、次に`ViewGroup`示すように、HTML テーブルと同様に、2d グリッドでのビューのレイアウトをサポートする新しいサブクラスです。
+@No__t_0 は、次に示すように、HTML テーブルと同様に、2D グリッドでのビューのレイアウトをサポートする新しい `ViewGroup` サブクラスです。
 
- [![4つのセルを表示するトリミング GridLayout](grid-layout-images/21-gridlayoutcropped.png)](grid-layout-images/21-gridlayoutcropped.png#lightbox)
+ [4つのセルを表示する ![Cropped GridLayout](grid-layout-images/21-gridlayoutcropped.png)](grid-layout-images/21-gridlayoutcropped.png#lightbox)
 
- `GridLayout`では、フラットビュー階層を使用します。ここで、子ビューでは、行と列を指定することにより、グリッド内の位置が設定されます。 これにより、 *GridLayout*は、TableLayout で使用されるテーブル行に表示されるように、中間ビューがテーブル構造を提供しなくても、グリッドにビューを配置できます。 フラットな階層を維持することで、 *GridLayout*は子ビューをより迅速にレイアウトできます。 コードでこの概念が実際に意味するものを示す例を見てみましょう。
+ `GridLayout` は、フラットビュー階層を使用します。この場合、子ビューでは、グリッド内の位置が、列に含まれる行と列を指定することによって設定されます。 これにより、 *GridLayout*は、TableLayout で使用されるテーブル行に表示されるように、中間ビューがテーブル構造を提供しなくても、グリッドにビューを配置できます。 フラットな階層を維持することで、 *GridLayout*は子ビューをより迅速にレイアウトできます。 コードでこの概念が実際に意味するものを示す例を見てみましょう。
 
 ## <a name="creating-a-grid-layout"></a>グリッドレイアウトの作成
 
-次の XML は、 `TextView` *GridLayout*に複数のコントロールを追加します。
+次の XML は、 *GridLayout*にいくつかの `TextView` コントロールを追加します。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -49,15 +49,15 @@ ms.locfileid: "70764566"
 
 次の図に示すように、レイアウトは行と列のサイズを調整して、セルがコンテンツに適合するようにします。
 
- [![左側の2つのセルが右側より小さい場合のレイアウトの図](grid-layout-images/gridlayout-cells.png)](grid-layout-images/gridlayout-cells.png#lightbox)
+ [左側の2つのセルが右側より小さい場合に表示されるレイアウトの ![Diagram](grid-layout-images/gridlayout-cells.png)](grid-layout-images/gridlayout-cells.png#lightbox)
 
 この結果、アプリケーションで次のユーザーインターフェイスが実行されます。
 
- [![4つのセルを表示する GridLayoutDemo アプリのスクリーンショット](grid-layout-images/01-gridlayout.png)](grid-layout-images/01-gridlayout.png#lightbox)
+ [4つのセルを表示する GridLayoutDemo アプリの ![Screenshot](grid-layout-images/01-gridlayout.png)](grid-layout-images/01-gridlayout.png#lightbox)
 
 ## <a name="specifying-orientation"></a>方向の指定
 
-上記の XML では、 `TextView`各行または列が指定されていないことに注意してください。 これらが指定されてい`GridLayout`ない場合、では、向きに基づいて各子ビューが順番に割り当てられます。 たとえば、次のように、GridLayout の向きを既定値から垂直方向に変更してみましょう。
+上記の XML では、各 `TextView` が行または列を指定していないことに注意してください。 これらが指定されていない場合、`GridLayout` は、方向に基づいて各子ビューを順番に割り当てます。 たとえば、次のように、GridLayout の向きを既定値から垂直方向に変更してみましょう。
 
 ```xml
 <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -69,17 +69,17 @@ ms.locfileid: "70764566"
 </GridLayout>
 ```
 
-次に示す`GridLayout`ように、では、左から右ではなく、各列のセルが上から下に移動します。
+次に示すように、`GridLayout` では、左から右ではなく、各列のセルが上から下に配置されます。
 
- [![セルを垂直方向に配置する方法を示す図](grid-layout-images/gridlayoutorientation.png)](grid-layout-images/gridlayoutorientation.png#lightbox)
+ [セルが垂直方向に配置される方法を示す ![Diagram](grid-layout-images/gridlayoutorientation.png)](grid-layout-images/gridlayoutorientation.png#lightbox)
 
 これにより、実行時に次のユーザーインターフェイスが生成されます。
 
- [![垂直方向に配置されたセルを含む GridLayoutDemo のスクリーンショット](grid-layout-images/02-gridlayout.png)](grid-layout-images/02-gridlayout.png#lightbox)
+ [垂直方向に配置されたセルを含む GridLayoutDemo の ![Screenshot](grid-layout-images/02-gridlayout.png)](grid-layout-images/02-gridlayout.png#lightbox)
 
 ### <a name="specifying-explicit-position"></a>明示的な位置の指定
 
-で`GridLayout`子ビューの位置を明示的に制御する場合は、属性`layout_row`と属性を`layout_column`設定できます。 たとえば、次の XML では、向きに関係なく、最初のスクリーンショット (上の図を参照) にレイアウトが表示されます。
+@No__t_0 内の子ビューの位置を明示的に制御する場合は、それらの `layout_row` と `layout_column` 属性を設定します。 たとえば、次の XML では、向きに関係なく、最初のスクリーンショット (上の図を参照) にレイアウトが表示されます。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -113,7 +113,7 @@ ms.locfileid: "70764566"
 
 ### <a name="specifying-spacing"></a>間隔の指定
 
-の子ビュー `GridLayout`の間隔を指定するオプションがいくつかあります。 次に示すよう`layout_margin`に、属性を使用して、各子ビューの余白を直接設定できます。
+@No__t_0 の子ビューの間隔を指定するオプションがいくつかあります。 次に示すように、`layout_margin` 属性を使用して、各子ビューの余白を直接設定できます。
 
 ```xml
 <TextView
@@ -124,8 +124,8 @@ ms.locfileid: "70764566"
             android:layout_margin="10dp" />
 ```
 
-さらに、Android 4 では、という名前`Space`の新しい汎用的なスペースビューが使用できるようになりました。 これを使用するには、単に子ビューとして追加します。
-たとえば、次の XML では`GridLayout` 、を`Space` 3 `rowcount`に設定してに追加の行を追加し、との間に`TextViews`スペースを提供するビューを追加しています。
+さらに、Android 4 では `Space` という名前の新しい汎用的なスペースビューが使用できるようになりました。 これを使用するには、単に子ビューとして追加します。
+たとえば、次の XML では、その `rowcount` を3に設定して `GridLayout` に行を追加し、`TextViews` 間の間隔を提供する `Space` ビューを追加しています。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -163,15 +163,15 @@ ms.locfileid: "70764566"
 </GridLayout>
 ```
 
-この XML は、 `GridLayout`に次のようにスペースを作成します。
+次に示すように、この XML では `GridLayout` にスペースが作成されます。
 
- [![スペースを含む大きなセルを示す GridLayoutDemo のスクリーンショット](grid-layout-images/03-gridlayout.png)](grid-layout-images/03-gridlayout.png#lightbox)
+ [空白を含む大きなセルを示す GridLayoutDemo の ![Screenshot](grid-layout-images/03-gridlayout.png)](grid-layout-images/03-gridlayout.png#lightbox)
 
-新しい`Space`ビューを使用する利点は、スペースを許可し、すべての子ビューに属性を設定する必要がないことです。
+新しい `Space` ビューを使用する利点は、スペースを許可し、すべての子ビューに属性を設定する必要がないことです。
 
 ### <a name="spanning-columns-and-rows"></a>列と行のスパニング
 
-で`GridLayout`は、複数の列および行にまたがるセルもサポートされています。 たとえば、次に示すように、ボタンを含む別の`GridLayout`行をに追加したとします。
+@No__t_0 は、複数の列および行にまたがるセルもサポートしています。 たとえば、次に示すように、ボタンを含む別の行を `GridLayout` に追加するとします。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -214,9 +214,9 @@ ms.locfileid: "70764566"
 </GridLayout>
 ```
 
-これにより、次に示すように`GridLayout` 、ボタンのサイズに合わせての最初の列が拡張されます。
+これにより、次に示すように、ボタンのサイズに合わせて `GridLayout` の最初の列が拡張されます。
 
-[![最初の列にのみまたがるボタンを含む GridLayoutDemo のスクリーンショット](grid-layout-images/04-gridlayout.png)](grid-layout-images/04-gridlayout.png#lightbox)
+[最初の列にのみまたがるボタンを含む GridLayoutDemo の ![Screenshot](grid-layout-images/04-gridlayout.png)](grid-layout-images/04-gridlayout.png#lightbox)
 
 最初の列の伸縮を維持するには、次のように columnspan を設定して、2つの列をスパンするようにボタンを設定します。
 
@@ -229,12 +229,12 @@ ms.locfileid: "70764566"
     android:layout_columnSpan="2" />
 ```
 
-これを行うと、前に示し`TextViews`たレイアウトに似たのレイアウトが生成されます。次に示すように、 `GridLayout`ボタンがの下部に追加されます。
+これを行うと、前に示したレイアウトに似た `TextViews` のレイアウトが生成されます。次に示すように、ボタンが `GridLayout` の下部に追加されます。
 
- [![両方の列にまたがるボタンを含む GridLayoutDemo のスクリーンショット](grid-layout-images/05-gridlayout.png)](grid-layout-images/05-gridlayout.png#lightbox)
+ [2つの列にまたがるボタンを使用した GridLayoutDemo の ![Screenshot](grid-layout-images/05-gridlayout.png)](grid-layout-images/05-gridlayout.png#lightbox)
 
 ## <a name="related-links"></a>関連リンク
 
-- [GridLayoutDemo (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/platformfeatures-ics-samples-gridlayoutdemo)
+- [GridLayoutDemo (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/gridlayoutdemo)
 - [アイスクリームサンドイッチの導入](http://www.android.com/about/ice-cream-sandwich/)
 - [Android 4.0 プラットフォーム](https://developer.android.com/sdk/android-4.0.html)
