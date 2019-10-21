@@ -100,7 +100,7 @@ Windows 7、8、および10のデスクトップで実行される WPF アプリ
     LoadApplication(new BoxViewClock.App());
     ```
 
-    コメントや未使用の @no__t 0 ディレクティブを除き、完全な**MainWindows.xaml.cs**ファイルは次のようになります。
+    コメントや未使用の `using` ディレクティブを除き、完全な**MainWindows.xaml.cs**ファイルは次のようになります。
 
     ```csharp
     using Xamarin.Forms;

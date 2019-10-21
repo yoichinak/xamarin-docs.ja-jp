@@ -150,7 +150,7 @@ var name = employee.BuildFullName ();
 
 次の手順では、ユーザーにテキストの入力を求めるコードをアプリに追加し、`TextCounter` を使用してテキストを分析し、結果を表示します。
 
-**Bindingtest**レイアウト (メインの**axml**) を次の XML に置き換えます。 このレイアウトには、テキスト入力の場合は 0 `EditText`、母音と子音のカウントを開始する場合は2つのボタンがあります。
+**Bindingtest**レイアウト (メインの**axml**) を次の XML に置き換えます。 このレイアウトには、テキスト入力の場合は `EditText` と、母音と子音のカウントを開始する場合は2つのボタンがあります。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -270,7 +270,7 @@ var a = new ArrayAdapter<string>(this, Resource.Layout.row_layout, ...);
 
 **Aar**の例には、 **res//サル**に存在するイメージファイルが含まれています。 このイメージリソースにアクセスして、サンプルアプリで使用してみましょう。
 
-**Bindingtest**レイアウト (メインの**axml**) を編集し、`LinearLayout` コンテナーの末尾に `ImageView` を追加します。 この `ImageView` は、 **\@** で見つかったイメージを表示します。このイメージは、 **textanalyzer. aar**のリソースセクションから読み込まれます。
+**Bindingtest**レイアウト (メインの**axml**) を編集し、`LinearLayout` コンテナーの末尾に `ImageView` を追加します。 この `ImageView` は、 **\@drawable/monkey**で見つかったイメージを表示します。このイメージは、 **textanalyzer. aar**のリソースセクションから読み込まれます。
 
 ```xml
     ...
