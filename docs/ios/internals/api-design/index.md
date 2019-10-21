@@ -24,7 +24,7 @@ Objective-C のコードと通信する低レベルのランタイムは、[Mono
 
 ## <a name="design-principles"></a>設計原則
 
-次に、Xamarin の iOS のバインドに関する設計原則をいくつか示します。これらは、macOS での目的 C の Mono バインドである Xamarin. Mac にも適用されます。
+次に、Xamarin の iOS のバインドに関する設計原則をいくつか示します。これらは、macOS での Objective-C の Mono バインドである Xamarin.Mac にも適用されます。
 
 - フレームワークの[デザインガイドライン](https://docs.microsoft.com/dotnet/standard/design-guidelines)に従う
 - 開発者が Objective-C クラスをサブクラス化できるようにします。
@@ -89,15 +89,15 @@ Xamarin.iOS には、 *Xamarin.IOS Profile*を構成するさまざまなアセ�
 
 #### <a name="foundation"></a>Team
 
-[Foundation](xref:Foundation)名前空間は、iOS の一部である目的の C Foundation フレームワークと相互運用できるように設計された基本データ型を提供します。これは、目標 c でのオブジェクト指向プログラミングの基本となります。
+[Foundation](xref:Foundation)名前空間は、iOS の一部である Objective-C Foundation フレームワークと相互運用できるように設計された基本データ型を提供します。これは、Objective-C でのオブジェクト指向プログラミングの基本となります。
 
-Xamarin. iOS は、 C#目標 C からクラスの階層内にミラー化されています。 たとえば、 [NSObject](https://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference.html)の基本クラスであるC# [NSObject](xref:Foundation.NSObject)を使用することもできます。
+Xamarin.iOS は、C# で Objective-C のクラスの階層をミラーリングしています。 たとえば、Objective-C の基本クラスである  [NSObject](https://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference.html)は[NSObject](xref:Foundation.NSObject)を介して C# から使用できます。
 
 この名前空間には、基になる Objective-C からの型のバインドが用意されていますが、いくつかのケースでは、基になる型を .NET 型にマップしています。 例えば:
 
 - このランタイムでは、 [nsstring](https://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString.html)と[nsstring](https://developer.apple.com/library/ios/#documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html)を処理する代わりにC#、これらを[文字列型](xref:System.String)および厳密に型指定された[配列](xref:System.Array)として API 全体に公開しています。
 
-- ここでは、開発者が Xamarin. iOS によって現在バインドされていないサードパーティの目標 C Api、他の iOS Api、Api をバインドできるようにするために、さまざまなヘルパー Api が公開されています。
+- ここでは、開発者が Xamarin.iOS によって現在バインドされていないサードパーティの Objective-C Api、他の iOS Api、Api をバインドできるようにするために、さまざまなヘルパー Api が公開されています。
 
 バインディング Api の詳細については、「 [Xamarin のバインドジェネレーター](~/cross-platform/macios/binding/binding-types-reference.md) 」を参照してください。
 
@@ -113,7 +113,7 @@ Mono はすべてのオブジェクトに対してガベージコレクション
 
 ##### <a name="categories"></a>カテゴリ
 
-Xamarin. iOS 8.10 以降では、からのC#目標 C カテゴリを作成できます。
+Xamarin. iOS 8.10 以降では、C# から Objective-C のカテゴリを作成できます。
 
 これを行うには`Category` 、属性を使用して、属性の引数として拡張する型を指定します。 次の例では、インスタンスを拡張 NSString です。
 
