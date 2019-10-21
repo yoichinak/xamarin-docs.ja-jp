@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 551dea5455ffd060d808aa11e8996c5984745fda
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: ecc4686e9966de7a184730589c44a951e4daddb2
+ms.sourcegitcommit: 403e3ec789d075cf1ca23473190aeb6b87220d52
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70771910"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72424865"
 ---
 # <a name="highlighting-a-circular-area-on-a-map"></a>マップ上での円形の領域の強調表示
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-map-circle)
 
-"_この記事では、円形のオーバーレイをマップに追加して、マップの円形の領域を強調表示する方法について説明します。_"
+"_この記事では、円形のオーバーレイをマップに追加して、マップの円形の領域を強調表示する方法について説明します。_ "
 
 ## <a name="overview"></a>概要
 
@@ -229,7 +229,6 @@ namespace MapOverlay.Droid
             {
                 var formsMap = (CustomMap)e.NewElement;
                 circle = formsMap.Circle;
-                Control.GetMapAsync(this);
             }
         }
 
@@ -250,7 +249,7 @@ namespace MapOverlay.Droid
 }
 ```
 
-カスタム レンダラーが新しい Xamarin.Forms 要素にアタッチされていることを条件として、`OnElementChanged` メソッドによって `MapView.GetMapAsync` メソッドが呼び出され、ビューに関連付けられている基になる `GoogleMap` が取得されます。 `GoogleMap` インスタンスが使用可能になると、`OnMapReady` メソッドが呼び出され、各ポイントの緯度と経度を指定する `CircleOptions` をインスタンス化することで、円形が作成されます。 `NativeMap.AddCircle` メソッドを呼び出すことで、円がマップに追加されます。
+カスタム レンダラーが新しい Xamarin.Forms 要素にアタッチされている場合は、`OnElementChanged` メソッドによってカスタムの円データが取得されます。 `GoogleMap` インスタンスが使用可能になると、`OnMapReady` メソッドが呼び出され、各ポイントの緯度と経度を指定する `CircleOptions` をインスタンス化することで、円形が作成されます。 `NativeMap.AddCircle` メソッドを呼び出すことで、円がマップに追加されます。
 
 #### <a name="creating-the-custom-renderer-on-the-universal-windows-platform"></a>ユニバーサル Windows プラットフォーム上でのカスタム レンダラーの作成
 

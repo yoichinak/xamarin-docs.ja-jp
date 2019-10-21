@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 8df5b373fccdef93a8ffbc66fd53a94378f47a6e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 94a537c88f28971bf7f2778f33a35e4c251afd38
+ms.sourcegitcommit: 403e3ec789d075cf1ca23473190aeb6b87220d52
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650826"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72424853"
 ---
 # <a name="customizing-a-map-pin"></a>マップ ピンのカスタマイズ
 
@@ -22,11 +22,11 @@ _この記事では、各プラットフォーム上でカスタマイズされ�
 
 すべての Xamarin.Forms ビューに、ネイティブ コントロールのインスタンスを作成する各プラットフォーム用のレンダラーが付属しています。 iOS で Xamarin.Forms アプリケーションによって [`Map`](xref:Xamarin.Forms.Maps.Map) がレンダリングされると、`MapRenderer` クラスがインスタンス化され、次に、ネイティブの `MKMapView` コントロールがインスタンス化されます。 Android プラットフォーム上では、`MapRenderer` クラスによってネイティブの `MapView` コントロールがインスタンス化されます。 ユニバーサル Windows プラットフォーム (UWP) 上では、`MapRenderer` クラスによってネイティブの `MapControl` がインスタンス化されます。 Xamarin.Forms コントロールによってマップされるレンダラーとネイティブ コントロール クラスの詳細については、「[Renderer Base Classes and Native Controls](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)」(レンダラーの基底クラスとネイティブ コントロール) を参照してください。
 
-次の図は、[`Map`](xref:Xamarin.Forms.Maps.Map) と、それを実装する、対応するネイティブ コントロールの関係を示しています。
+次の図は、[`Map`](xref:Xamarin.Forms.Maps.Map) と、それを実装する、対応しているネイティブ コントロールの関係を示しています。
 
-![](customized-pin-images/map-classes.png "マップ コントロールと実装するネイティブ コントロールの関係")
+![](customized-pin-images/map-classes.png "Relationship Between the Map Control and the Implementing Native Controls")
 
-レンダリング プロセスを使用して、各プラットフォーム上で [`Map`](xref:Xamarin.Forms.Maps.Map) 用のカスタム レンダラーを作成することで、プラットフォーム固有のカスタマイズを実装することができます。 これを行うプロセスは次のとおりです。
+レンダリング プロセスを使用して各プラットフォーム上の [`Map`](xref:Xamarin.Forms.Maps.Map) にカスタム レンダラーを作成することで、プラットフォーム固有のカスタマイズを実装することができます。 これを行うプロセスは次のとおりです。
 
 1. Xamarin.Forms カスタム マップを[作成](#Creating_the_Custom_Map)します。
 1. Xamarin.Forms からカスタム マップを[使用](#Consuming_the_Custom_Map)します。
@@ -142,11 +142,11 @@ public MapPage ()
 
 次の図に、サンプル アプリケーション内の各プロジェクトの役割と、それらの関係を示します。
 
-![](customized-pin-images/solution-structure.png "CustomMap カスタム レンダラーのプロジェクトの役割")
+![](customized-pin-images/solution-structure.png "CustomMap Custom Renderer Project Responsibilities")
 
 `CustomMap` コントロールはプラットフォーム固有のレンダラー クラスによってレンダリングされます。このクラスは各プラットフォームの `MapRenderer` クラスから派生しています。 この結果、次のスクリーンショットに示すように、プラットフォーム固有のコントロールを使用して、それぞれの `CustomMap` コントロールがレンダリングされます。
 
-![](customized-pin-images/screenshots.png "各プラットフォームの CustomMap")
+![](customized-pin-images/screenshots.png "CustomMap on each Platform")
 
 `MapRenderer` クラスでは `OnElementChanged` メソッドを公開します。このメソッドは、対応するネイティブ コントロールをレンダリングするために、Xamarin.Forms カスタム マップの作成時に呼び出されます。 このメソッドでは、`OldElement` および `NewElement` プロパティを含む `ElementChangedEventArgs` パラメーターを受け取ります。 これらのプロパティは、レンダラーが接続して*いた* Xamarin.Forms 要素と、レンダラーが現在接続して*いる* Xamarin.Forms 要素をそれぞれ表しています。 サンプル アプリケーションでは、`OldElement` プロパティが `null` になり、`NewElement` プロパティに `CustomMap` インスタンスへの参照が含まれます。
 
@@ -179,7 +179,7 @@ protected override void OnElementChanged (ElementChangedEventArgs<Xamarin.Forms.
 
 次のスクリーンショットは、カスタマイズの前と後のマップを示しています。
 
-![](customized-pin-images/map-layout-ios.png "カスタマイズの前と後のマップ コントロール")
+![](customized-pin-images/map-layout-ios.png "Map Control Before and After Customization")
 
 iOS では、ピンは*注釈*と呼ばれ、カスタム イメージまたはさまざまな色のシステム定義のピンにすることができます。 注釈では、必要に応じて、注釈を選択するユーザーへの応答として表示される、*吹き出し*を示すことができます。 吹き出しでは、`Pin` インスタンスの `Label` および `Address` プロパティが表示され、オプションの左側と右側のアクセサリ ビューが示されます。 上記のスクリーンショットでは、左側のアクセサリ ビューはサルのイメージで、右側のアクセサリ ビューは*情報* ボタンとなっています。
 
@@ -352,7 +352,7 @@ void OnDidDeselectAnnotationView (object sender, MKAnnotationViewEventArgs e)
 
 次のスクリーンショットは、カスタマイズの前と後のマップを示しています。
 
-![](customized-pin-images/map-layout-android.png "カスタマイズの前と後のマップ コントロール")
+![](customized-pin-images/map-layout-android.png "Map Control Before and After Customization")
 
 Android では、ピンは*マーカー*と呼ばれ、カスタム イメージまたはさまざまな色のシステム定義のマーカーにすることができます。 マーカーでは*情報ウィンドウ*を表示することができます。このウィンドウは、マーカーをタップしたユーザーへの応答として表示されます。 情報ウィンドウには `Pin` インスタンスの `Label` および `Address` プロパティが表示されます。このウィンドウをカスタマイズして、他のコンテンツを含めることができます。 しかし、情報ウィンドウを表示できるのは一度に 1 つのみとなります。
 
@@ -383,7 +383,6 @@ namespace CustomRenderer.Droid
             {
                 var formsMap = (CustomMap)e.NewElement;
                 customPins = formsMap.CustomPins;
-                Control.GetMapAsync(this);
             }
         }
 
@@ -399,7 +398,7 @@ namespace CustomRenderer.Droid
 }
 ```
 
-カスタム レンダラーが新しい Xamarin.Forms 要素にアタッチされている場合、`OnElementChanged` メソッドで `MapView.GetMapAsync` メソッドが呼び出され、ビューに関連付けられている基になる `GoogleMap` が取得されます。 `GoogleMap` インスタンスが使用できるようになったら、`OnMapReady` オーバーライドが呼び出されます。 このメソッドでは `InfoWindowClick` イベントのイベント ハンドラーが登録され、イベントは[情報ウィンドウがクリックされた](#Clicking_on_the_Info_Window)ときに発生し、レンダラーがアタッチされている要素が変わったときにのみ、サブスクライブが解除されます。 また、`OnMapReady` オーバーライドでは `SetInfoWindowAdapter` メソッドを呼び出し、`CustomMapRenderer` クラス インスタンスで、情報ウィンドウをカスタマイズするためのメソッドが提供されるように指定します。
+カスタム レンダラーが新しい Xamarin.Forms 要素にアタッチされている場合は、`OnElementChanged` メソッドによってコントロールからカスタム ピンの一覧が取得されます。 `GoogleMap` インスタンスが使用できるようになったら、`OnMapReady` オーバーライドが呼び出されます。 このメソッドでは `InfoWindowClick` イベントのイベント ハンドラーが登録され、イベントは[情報ウィンドウがクリックされた](#Clicking_on_the_Info_Window)ときに発生し、レンダラーがアタッチされている要素が変わったときにのみ、サブスクライブが解除されます。 また、`OnMapReady` オーバーライドでは `SetInfoWindowAdapter` メソッドを呼び出し、`CustomMapRenderer` クラス インスタンスで、情報ウィンドウをカスタマイズするためのメソッドが提供されるように指定します。
 
 `CustomMapRenderer` クラスでは、[情報ウィンドウをカスタマイズする](#Customizing_the_Info_Window)ための `GoogleMap.IInfoWindowAdapter` インターフェイスが実装されます。 このインターフェイスで、次のメソッドを実装する必要があることを指定します。
 
@@ -511,7 +510,7 @@ void OnInfoWindowClick (object sender, GoogleMap.InfoWindowClickEventArgs e)
 
 次のスクリーンショットは、カスタマイズの前と後のマップを示しています。
 
-![](customized-pin-images/map-layout-uwp.png "カスタマイズの前と後のマップ コントロール")
+![](customized-pin-images/map-layout-uwp.png "Map Control Before and After Customization")
 
 UWP では、ピンは*マップ アイコン*と呼ばれ、カスタム イメージまたはシステム定義の既定のイメージにすることができます。 マップ アイコンでは、そのマップ アイコンをタップしたユーザーへの応答として表示される、`UserControl` を示すことができます。 `UserControl` では、`Pin` インスタンスの `Label` および `Address` プロパティを含む、すべてのコンテンツを表示できます。
 

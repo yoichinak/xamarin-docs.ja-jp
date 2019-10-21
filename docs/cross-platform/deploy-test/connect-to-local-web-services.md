@@ -5,13 +5,13 @@ ms.prod: xamarin
 ms.assetid: FD8FE199-898B-4841-8041-CC9CA1A00917
 author: davidbritch
 ms.author: dabritch
-ms.date: 01/22/2019
-ms.openlocfilehash: 1318d8e1563239d5215d8cfc03c971be8b2cff35
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.date: 10/16/2019
+ms.openlocfilehash: a29cc650d9aa3976b6fd7aaaa82e233317684335
+ms.sourcegitcommit: 20c645f41620d5124da75943de1b690261d00660
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647657"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72426561"
 ---
 # <a name="connect-to-local-web-services-from-ios-simulators-and-android-emulators"></a>iOS シミュレーターと Android エミュレーターからローカル Web サービスに接続する
 
@@ -66,9 +66,7 @@ iOS 上で実行される Xamarin アプリケーションでは、マネージ�
 
 ### <a name="android"></a>Android
 
-Android 上で実行される Xamarin アプリケーションでは、マネージド `HttpClientHandler` ネットワーク スタック、またはネイティブの `AndroidClientHandler` ネットワーク スタックを使用できます。 既定では、新しい Android プラットフォームのプロジェクトでは `AndroidClientHandler` ネットワーク スタックが使われ、TLS 1.2 がサポートされ、またパフォーマンスの向上と実行可能ファイルのサイズの縮小のためにネイティブ API が使われます。
-
-ただし、開発者のテストのために、ローカルで実行しているセキュリティで保護された Web サービスにアプリケーションで接続する必要がある場合は、マネージド ネットワーク スタックを使う方が簡単です。 したがって、デバッグ エミュレーターのビルド プロファイルはマネージド ネットワーク スタックを使うように設定し、リリースのビルド プロファイルはネイティブ ネットワーク スタックを使うように設定することをお勧めします。 各ネットワーク スタックは、プログラムから、またはプロジェクト オプションのセレクターを使って設定できます。 詳細については、「[HttpClient Stack and SSL/TLS Implementation selector for Android (Android 用の HttpClient スタックと SSL/TLS の実装セレクター)](~/android/app-fundamentals/http-stack.md)」をご覧ください。
+Android 上で実行される Xamarin アプリケーションでは、マネージド `HttpClientHandler` ネットワーク スタック、またはネイティブの `AndroidClientHandler` ネットワーク スタックを使用できます。 既定では、新しい Android プラットフォームのプロジェクトでは `AndroidClientHandler` ネットワーク スタックが使われ、TLS 1.2 がサポートされ、またパフォーマンスの向上と実行可能ファイルのサイズの縮小のためにネイティブ API が使われます。 Android のネットワーク スタックについて詳しくは、「[Android 用の HttpClient スタックと SSL/TLS の実装セレクター](~/android/app-fundamentals/http-stack.md)」をご覧ください。
 
 ## <a name="specify-the-local-machine-address"></a>ローカル コンピューターのアドレスを指定する
 
@@ -101,7 +99,11 @@ public static string TodoItemsUrl = $"{BaseAddress}/api/todoitems/";
 
 iOS シミュレーターまたは Android エミュレーターで実行されているアプリケーションからローカルのセキュリティで保護された Web サービスを呼び出そうとすると、各プラットフォーム上でマネージド ネットワーク スタックを使っている場合でも、`HttpRequestException` がスローされます。 これは、ローカルの HTTPS 開発証明書が自己署名であり、自己署名された証明書は iOS または Android で信頼されないためです。
 
-したがって、アプリケーションでローカルのセキュリティで保護された Web サービスを使用するときに、SSL エラーを無視する必要があります。 マネージド ネットワーク スタックを使っている場合、`ServicePointManager.ServerCertificateValidationCallback` プロパティを、ローカルの HTTPS 開発証明書に向けた証明書のセキュリティ チェックの結果を無視するコールバックに設定することで、これを実現できます。
+したがって、アプリケーションでローカルのセキュリティで保護された Web サービスを使用するときに、SSL エラーを無視する必要があります。 これを実現するためのメカニズムは、現在、iOS と Android で異なっています。
+
+### <a name="ios"></a>iOS
+
+マネージド ネットワーク スタックを使っている場合、`ServicePointManager.ServerCertificateValidationCallback` プロパティを、ローカルの HTTPS 開発証明書に向けた証明書のセキュリティ チェックの結果を無視するコールバックに設定することで、ローカルのセキュリティで保護された Web サービスに対して iOS 上で SSL エラーを無視できます。
 
 ```csharp
 #if DEBUG
@@ -114,10 +116,30 @@ iOS シミュレーターまたは Android エミュレーターで実行され�
 #endif
 ```
 
-このコード例では、検証が行われた証明書が `localhost` 証明書ではない場合に、サーバー証明書の検証結果が返されます。 この証明書に対して、検証結果が無視され、証明書が有効であることを示す `true` が返されます。 `LoadApplication(new App())` メソッドの呼び出しの前に、iOS では `AppDelegate.FinishedLaunching` メソッドに、Android では `MainActivity.OnCreate` メソッドにこのコードを追加する必要があります。
+このコード例では、検証が行われた証明書が `localhost` 証明書ではない場合に、サーバー証明書の検証結果が返されます。 この証明書に対して、検証結果が無視され、証明書が有効であることを示す `true` が返されます。 このコードは、`LoadApplication(new App())` メソッドの呼び出しの前に、iOS 上の `AppDelegate.FinishedLaunching` メソッドに追加する必要があります。
 
 > [!NOTE]
-> iOS と Android 上のネイティブ ネットワーク スタックは、`ServerCertificateValidationCallback` にフックされません。
+> iOS 上のネイティブ ネットワーク スタックは、`ServerCertificateValidationCallback` にフックされません。
+
+### <a name="android"></a>Android
+
+マネージドおよびネイティブ両方の `AndroidClientHandler` ネットワーク スタックを使っている場合、`HttpClientHandler` オブジェクトの `ServerCertificateCustomValidationCallback` プロパティを、ローカルの HTTPS 開発証明書に向けた証明書のセキュリティ チェックの結果を無視するコールバックに設定することで、ローカルのセキュリティで保護された Web サービスに対して Android 上で SSL エラーを無視できます。
+
+```csharp
+public HttpClientHandler GetInsecureHandler()
+{
+    var handler = new HttpClientHandler();
+    handler.ServerCertificateCustomValidationCallback = (message, cert, chain, errors) =>
+    {
+        if (cert.Issuer.Equals("CN=localhost"))
+            return true;
+        return errors == System.Net.Security.SslPolicyErrors.None;
+    };
+    return handler;
+}
+```
+
+このコード例では、検証が行われた証明書が `localhost` 証明書ではない場合に、サーバー証明書の検証結果が返されます。 この証明書に対して、検証結果が無視され、証明書が有効であることを示す `true` が返されます。 生成される `HttpClientHandler` オブジェクトを、`HttpClient` コンストラクターに対する引数として渡す必要があります。
 
 ## <a name="related-links"></a>関連リンク
 
