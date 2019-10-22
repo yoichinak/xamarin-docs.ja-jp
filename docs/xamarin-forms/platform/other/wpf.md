@@ -9,10 +9,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 04/05/2018
 ms.openlocfilehash: 38d9b42b3a29ea46d05a1d1cc4e38641d2445786
-ms.sourcegitcommit: 4cf434b126eb7df6b2fd9bb1d71613bf2b6aac0e
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/07/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "71997171"
 ---
 # <a name="wpf-platform-setup"></a>WPF プラットフォームのセットアップ
@@ -42,13 +42,13 @@ Windows 7、8、および10のデスクトップで実行される WPF アプリ
 
 3. **Wpf**拡張機能を使用してプロジェクトの名前を入力します。たとえば、「 **BOXVIEWCLOCK. WPF**」と入力します。 **参照**ボタンをクリックし、 **boxviewclock**フォルダーを選択して、 **[フォルダーの選択]** をクリックします。 これにより、ソリューション内の他のプロジェクトと同じディレクトリに WPF プロジェクトが配置されます。
 
-    ![新しい wpf プロジェクトを追加]する(wpf-images/add-new-project.png "新しい wpf プロジェクトを追加する")
+    ![新しい WPF プロジェクトを追加する](wpf-images/add-new-project.png "新しい WPF プロジェクトを追加する")
 
     [OK] を押して、プロジェクトを作成します。
 
 4. **ソリューションエクスプローラー**で、新しい**BOXVIEWCLOCK. WPF**プロジェクトを右クリックし、 **[NuGet パッケージの管理]** を選択します。 **[参照]** タブを選択し、 **[プレリリースを含める]** チェックボックスをオンにして、「 **Xamarin. フォーム**」を検索します。
 
-    ![Nuget パッケージを選択]する(wpf-images/select-nuget-package.png "nuget パッケージを選択")する
+    ![NuGet パッケージを選択します](wpf-images/select-nuget-package.png "NuGet パッケージを選択します")
 
     そのパッケージを選択し、 **[インストール]** ボタンをクリックします。
 
@@ -56,19 +56,19 @@ Windows 7、8、および10のデスクトップで実行される WPF アプリ
 
 6. **ソリューションエクスプローラー**でソリューション名を右クリックし、 **[ソリューションの NuGet パッケージの管理]** を選択します。 **[更新]** タブと **[Xamarin]** パッケージを選択します。 すべてのプロジェクトを選択し、同じ Xamarin. Forms バージョンに更新します。
 
-    ![Nuget パッケージを更新]する(wpf-images/update-nuget-package.png "nuget パッケージを更新")する
+    ![NuGet パッケージを更新する](wpf-images/update-nuget-package.png "NuGet パッケージを更新する")
 
 7. WPF プロジェクトで、 **[参照]** を右クリックします。 **[参照マネージャー]** ダイアログで、左側の **[プロジェクト]** を選択し、 **boxviewclock**プロジェクトの横にあるチェックボックスをオンにします。
 
-    共有プロジェクト参照![の参照](wpf-images/reference-shared-project.png "共有プロジェクト")
+    ![共有プロジェクトの参照](wpf-images/reference-shared-project.png "共有プロジェクトの参照")
 
-8. WPF プロジェクトの**mainwindow.xaml**ファイルを編集します。 @No__t-0 タグに、 **Xamarin** . .xml アセンブリと名前空間の XML 名前空間宣言を追加します。
+8. WPF プロジェクトの**mainwindow.xaml**ファイルを編集します。 @No__t_0 タグに、 **Xamarin** . .xml アセンブリと名前空間の XML 名前空間宣言を追加します。
 
     ```xaml
     xmlns:wpf="clr-namespace:Xamarin.Forms.Platform.WPF;assembly=Xamarin.Forms.Platform.WPF"
     ```
 
-    ここで、`Window` タグを `wpf:FormsApplicationPage` に変更します。 @No__t-0 設定をアプリケーションの名前 ( **Boxviewclock**など) に変更します。 完成した XAML ファイルは次のようになります。
+    ここで、`Window` タグを `wpf:FormsApplicationPage` に変更します。 @No__t_0 設定をアプリケーションの名前 ( **Boxviewclock**など) に変更します。 完成した XAML ファイルは次のようになります。
 
     ```xaml
     <wpf:FormsApplicationPage x:Class="BoxViewClock.WPF.MainWindow"
@@ -93,7 +93,7 @@ Windows 7、8、および10のデスクトップで実行される WPF アプリ
     using Xamarin.Forms.Platform.WPF;
     ```
 
-    @No__t-0 の基本クラスを `Window` から `FormsApplicationPage` に変更します。 @No__t-0 呼び出しの後に、次の2つのステートメントを追加します。
+    @No__t_0 の基本クラスを `Window` から `FormsApplicationPage` に変更します。 @No__t_0 の呼び出しの後に、次の2つのステートメントを追加します。
 
     ```csharp
     Forms.Init();
@@ -123,13 +123,13 @@ Windows 7、8、および10のデスクトップで実行される WPF アプリ
 
 10. **ソリューションエクスプローラー**で WPF プロジェクトを右クリックし、 **[スタートアッププロジェクトに設定]** を選択します。 F5 キーを押して、Windows デスクトップで Visual Studio デバッガーを使用してプログラムを実行します。
 
-    ![Wpf BoxView clock](wpf-images/wpf-boxviewclock.png "Wpf boxview clock" )
+    ![WPF BoxView Clock](wpf-images/wpf-boxviewclock.png "WPF BoxView Clock" )
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 ### <a name="platform-specifics"></a>プラットフォーム固有設定
 
-コードまたは XAML から、Xamarin アプリケーションが実行されているプラットフォームを特定できます。 これにより、WPF 上で実行されているときに、プログラムの特性を変更することができます。 コードで `Device.RuntimePlatform` の値を `Device.WPF` の定数 (文字列 "WPF" に相当) と比較します。 一致するものがある場合、アプリケーションは WPF で実行されています。
+コードまたは XAML から、Xamarin アプリケーションが実行されているプラットフォームを特定できます。 これにより、WPF 上で実行されているときに、プログラムの特性を変更することができます。 コードで、`Device.RuntimePlatform` の値を `Device.WPF` 定数 (文字列 "WPF" に相当) と比較します。 一致するものがある場合、アプリケーションは WPF で実行されています。
 
 XAML では、`OnPlatform` タグを使用して、プラットフォームに固有のプロパティ値を選択できます。
 

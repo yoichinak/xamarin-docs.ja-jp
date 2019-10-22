@@ -7,10 +7,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 04/26/2019
 ms.openlocfilehash: 3067493315c62c46f44fb94aa61a919e1449080b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70289708"
 ---
 # <a name="remoted-ios-simulator-for-windows"></a>Remoted iOS Simulator for Windows
@@ -34,7 +34,7 @@ Windows 用のリモート iOS シミュレーターは、Xamarin の一部と�
 
 - **Home** – iOS デバイスの [ホーム] ボタンをシミュレートします。
 - **Lock** –シミュレーターをロックします (ロック解除するにはスワイプします)。
-- **スクリーンショット**–シミュレーター ( **Pictures\Xamarin\iOS シミュレーター\\** に格納されています) のスクリーンショットを保存します。
+- **スクリーンショット**-シミュレーターのスクリーンショットを保存します ( **Pictures\Xamarin\iOS シミュレーター \\** に格納されています)。
 - [[**設定**](#settings)] –キーボード、場所、およびその他の設定が表示されます。
 - [**その他のオプション**](#other-options)–回転、シェイクジェスチャ、タッチ ID などのさまざまなシミュレーターオプションが表示されます。
 

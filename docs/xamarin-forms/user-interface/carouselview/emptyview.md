@@ -1,31 +1,33 @@
 ---
-title: Xamarin. Forms CollectionView EmptyView
-description: CollectionView では、表示可能なデータがない場合にユーザーにフィードバックを提供する空のビューを指定できます。 空のビューには、文字列、ビュー、または複数のビューを指定できます。
+title: Xamarin. Forms CarouselView EmptyView
+description: CarouselView では、表示可能なデータがない場合にユーザーにフィードバックを提供する空のビューを指定できます。 空のビューには、文字列、ビュー、または複数のビューを指定できます。
 ms.prod: xamarin
-ms.assetid: 6CEBCFE6-5577-4F68-9709-431062609153
+ms.assetid: C6DEE1A9-63FC-4889-BC77-F401D5D7DF32
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/06/2019
-ms.openlocfilehash: 9302b9a353173b0445d1d696849b4956134e555d
+ms.date: 10/03/2019
+ms.openlocfilehash: 55944b422495c9c3a7c93c6a2eab90a2db790780
 ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/21/2019
-ms.locfileid: "72696896"
+ms.locfileid: "72697843"
 ---
-# <a name="xamarinforms-collectionview-emptyview"></a>Xamarin. Forms CollectionView EmptyView
+# <a name="xamarinforms-carouselview-emptyview"></a>Xamarin. Forms CarouselView EmptyView
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
+![](~/media/shared/preview.png "This API is currently pre-release")
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)は、表示するデータがない場合にユーザーフィードバックを提供するために使用できる次のプロパティを定義します。
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
+
+[`CarouselView`](xref:Xamarin.Forms.CarouselView)は、表示するデータがない場合にユーザーフィードバックを提供するために使用できる次のプロパティを定義します。
 
 - 型 `object` の[`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView)、 [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)プロパティが `null` したときに表示される文字列、バインディング、またはビュー、または `ItemsSource` プロパティによって指定されたコレクションが `null` または空の場合に表示されます。 既定値は `null`です。
 - 指定した `EmptyView` の書式設定に使用するテンプレート[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)型の[`EmptyViewTemplate`](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate)。 既定値は `null`です。
 
 これらのプロパティは、 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty)のオブジェクトによってサポートされています。これは、プロパティをデータバインディングのターゲットにできることを意味します。
 
-[@No__t_1](xref:Xamarin.Forms.ItemsView.EmptyView)プロパティを設定するための主な使用シナリオでは、 [`CollectionView`](xref:Xamarin.Forms.CollectionView)でのフィルター処理操作によってデータが得られず、web サービスからデータを取得しているときにユーザーフィードバックが表示される場合に、ユーザーからのフィードバックが表示されます。
+[@No__t_1](xref:Xamarin.Forms.ItemsView.EmptyView)プロパティを設定するための主な使用シナリオでは、 [`CarouselView`](xref:Xamarin.Forms.CarouselView)でのフィルター処理操作によってデータが得られず、web サービスからデータを取得しているときにユーザーフィードバックが表示される場合に、ユーザーからのフィードバックが表示されます。
 
 > [!NOTE]
 > [@No__t_1](xref:Xamarin.Forms.ItemsView.EmptyView)プロパティは、必要に応じて、対話型コンテンツを含むビューに設定できます。
@@ -37,23 +39,21 @@ ms.locfileid: "72696896"
 [@No__t_1](xref:Xamarin.Forms.ItemsView.EmptyView)プロパティは、 [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)プロパティが `null` とき、または `ItemsSource` プロパティによって指定されたコレクションが `null` または空のときに表示される文字列に設定できます。 次の XAML は、このシナリオの例を示しています。
 
 ```xaml
-<CollectionView ItemsSource="{Binding EmptyMonkeys}"
-                EmptyView="No items to display" />
+<CarouselView ItemsSource="{Binding EmptyMonkeys}"
+              EmptyView="No items to display." />
 ```
 
 これに相当する C# コードを次に示します。
 
 ```csharp
-CollectionView collectionView = new CollectionView
+CarouselView carouselView = new CarouselView
 {
-    EmptyView = "No items to display"
+    EmptyView = "No items to display."
 };
-collectionView.SetBinding(ItemsView.ItemsSourceProperty, "EmptyMonkeys");
+carouselView.SetBinding(ItemsView.ItemsSourceProperty, "EmptyMonkeys");
 ```
 
 その結果、データバインドコレクションが `null` ため、 [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView)プロパティ値として設定された文字列が表示されます。
-
-[![IOS および Android での空の表示テキストを含む CollectionView 縦の一覧のスクリーンショット](emptyview-images/null-itemssource.png "テキストを空にした CollectionView の一覧表示")](emptyview-images/null-itemssource-large.png#lightbox "テキストを空にした CollectionView の一覧表示")
 
 ## <a name="display-views-when-data-is-unavailable"></a>データが使用できないときにビューを表示する
 
@@ -61,17 +61,11 @@ collectionView.SetBinding(ItemsView.ItemsSourceProperty, "EmptyMonkeys");
 
 ```xaml
 <StackLayout Margin="20">
-    <SearchBar x:Name="searchBar"
-               SearchCommand="{Binding FilterCommand}"
-               SearchCommandParameter="{Binding Source={x:Reference searchBar}, Path=Text}"
+    <SearchBar SearchCommand="{Binding FilterCommand}"
+               SearchCommandParameter="{Binding Source={RelativeSource Self}, Path=Text}"
                Placeholder="Filter" />
-    <CollectionView ItemsSource="{Binding Monkeys}">
-        <CollectionView.ItemTemplate>
-            <DataTemplate>
-                ...
-            </DataTemplate>
-        </CollectionView.ItemTemplate>
-        <CollectionView.EmptyView>
+    <CarouselView ItemsSource="{Binding Monkeys}">
+        <CarouselView.EmptyView>
             <StackLayout>
                 <Label Text="No results matched your filter."
                        Margin="10,25,10,10"
@@ -85,8 +79,11 @@ collectionView.SetBinding(ItemsView.ItemsSourceProperty, "EmptyMonkeys");
                        HorizontalOptions="Fill"
                        HorizontalTextAlignment="Center" />
             </StackLayout>
-        </CollectionView.EmptyView>
-    </CollectionView>
+        </CarouselView.EmptyView>
+        <CarouselView.ItemTemplate>
+            ...
+        </CarouselView.ItemTemplate>
+    </CarouselView>
 </StackLayout>
 ```
 
@@ -94,7 +91,7 @@ collectionView.SetBinding(ItemsView.ItemsSourceProperty, "EmptyMonkeys");
 
 ```csharp
 SearchBar searchBar = new SearchBar { ... };
-CollectionView collectionView = new CollectionView
+CarouselView carouselView = new CarouselView
 {
     EmptyView = new StackLayout
     {
@@ -105,12 +102,10 @@ CollectionView collectionView = new CollectionView
         }
     }
 };
-collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
+carouselView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 ```
 
-[@No__t_1](xref:Xamarin.Forms.SearchBar)が `FilterCommand` を実行すると、 [`CollectionView`](xref:Xamarin.Forms.CollectionView)によって表示されるコレクションが、 [`SearchBar.Text`](xref:Xamarin.Forms.SearchBar.Text)プロパティに格納されている検索用語に対してフィルター処理されます。 フィルター処理操作によってデータが生成されない場合、 [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView)プロパティ値として設定された[`StackLayout`](xref:Xamarin.Forms.StackLayout)が表示されます。
-
-[![IOS と Android 上のカスタムの空のビューを使用した CollectionView の一覧のスクリーンショット](emptyview-images/filter-multiple-views.png "カスタムの空のビューを使用した CollectionView の垂直方向の一覧表示")](emptyview-images/filter-multiple-views-large.png#lightbox "カスタムの空のビューを使用した CollectionView の垂直方向の一覧表示")
+[@No__t_1](xref:Xamarin.Forms.SearchBar)が `FilterCommand` を実行すると、 [`CarouselView`](xref:Xamarin.Forms.CarouselView)によって表示されるコレクションが、 [`SearchBar.Text`](xref:Xamarin.Forms.SearchBar.Text)プロパティに格納されている検索用語に対してフィルター処理されます。 フィルター処理操作によってデータが生成されない場合は、 [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView)プロパティ値として設定される[`StackLayout`](xref:Xamarin.Forms.StackLayout)ます。
 
 ## <a name="display-a-templated-custom-type-when-data-is-unavailable"></a>データが使用できないときに、テンプレート化されたカスタム型を表示する
 
@@ -120,18 +115,13 @@ collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 <StackLayout Margin="20">
     <SearchBar x:Name="searchBar"
                SearchCommand="{Binding FilterCommand}"
-               SearchCommandParameter="{Binding Source={x:Reference searchBar}, Path=Text}"
+               SearchCommandParameter="{Binding Source={RelativeSource Self}, Path=Text}"
                Placeholder="Filter" />
-    <CollectionView ItemsSource="{Binding Monkeys}">
-        <CollectionView.ItemTemplate>
-            <DataTemplate>
-                ...
-            </DataTemplate>
-        </CollectionView.ItemTemplate>
-        <CollectionView.EmptyView>
-            <views:FilterData Filter="{Binding Source={x:Reference searchBar}, Path=Text}" />
-        </CollectionView.EmptyView>
-        <CollectionView.EmptyViewTemplate>
+    <CarouselView ItemsSource="{Binding Monkeys}">
+        <CarouselView.EmptyView>
+            <controls:FilterData Filter="{Binding Source={x:Reference searchBar}, Path=Text}" />
+        </CarouselView.EmptyView>
+        <CarouselView.EmptyViewTemplate>
             <DataTemplate>
                 <Label Text="{Binding Filter, StringFormat='Your filter term of {0} did not match any records.'}"
                        Margin="10,25,10,10"
@@ -140,8 +130,11 @@ collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
                        HorizontalOptions="Fill"
                        HorizontalTextAlignment="Center" />
             </DataTemplate>
-        </CollectionView.EmptyViewTemplate>
-    </CollectionView>
+        </CarouselView.EmptyViewTemplate>
+        <CarouselView.ItemTemplate>
+            ...
+        </CarouselView.ItemTemplate>
+    </CarouselView>
 </StackLayout>
 ```
 
@@ -149,7 +142,7 @@ collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 
 ```csharp
 SearchBar searchBar = new SearchBar { ... };
-CollectionView collectionView = new CollectionView
+CarouselView carouselView = new CarouselView
 {
     EmptyView = new FilterData { Filter = searchBar.Text },
     EmptyViewTemplate = new DataTemplate(() =>
@@ -174,9 +167,7 @@ public class FilterData : BindableObject
 }
 ```
 
-[@No__t_1](xref:Xamarin.Forms.ItemsView.EmptyView)プロパティは `FilterData` オブジェクトに設定され、`Filter` プロパティデータは[`SearchBar.Text`](xref:Xamarin.Forms.SearchBar.Text)プロパティにバインドされます。 [@No__t_1](xref:Xamarin.Forms.SearchBar)が `FilterCommand` を実行すると、 [`CollectionView`](xref:Xamarin.Forms.CollectionView)によって表示されるコレクションが、`Filter` プロパティに格納されている検索用語に対してフィルター処理されます。 フィルター処理操作によってデータが生成されない場合、 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)で定義されている[`Label`](xref:Xamarin.Forms.Label) [`EmptyViewTemplate`](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate)プロパティ値として設定されます。
-
-[![IOS と Android の空のビューテンプレートを含む CollectionView の一覧のスクリーンショット](emptyview-images/emptyviewtemplate.png "空のビューテンプレートを含む CollectionView の一覧")](emptyview-images/emptyviewtemplate-large.png#lightbox "空のビューテンプレートを含む CollectionView の一覧")
+[@No__t_1](xref:Xamarin.Forms.ItemsView.EmptyView)プロパティは `FilterData` オブジェクトに設定され、`Filter` プロパティデータは[`SearchBar.Text`](xref:Xamarin.Forms.SearchBar.Text)プロパティにバインドされます。 [@No__t_1](xref:Xamarin.Forms.SearchBar)が `FilterCommand` を実行すると、 [`CarouselView`](xref:Xamarin.Forms.CarouselView)によって表示されるコレクションが、`Filter` プロパティに格納されている検索用語に対してフィルター処理されます。 フィルター処理操作によってデータが生成されない場合は、 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)で定義されている[`Label`](xref:Xamarin.Forms.Label) [`EmptyViewTemplate`](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate)プロパティ値として設定されます。
 
 > [!NOTE]
 > データが使用できないときに、テンプレート化されたカスタム型を表示する場合、 [`EmptyViewTemplate`](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate)プロパティは、複数の子ビューを含むビューに設定できます。
@@ -188,8 +179,12 @@ public class FilterData : BindableObject
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CollectionViewDemos.Views.EmptyViewSwapPage"
+             xmlns:viewmodels="clr-namespace:CarouselViewDemos.ViewModels"
+             x:Class="CarouselViewDemos.Views.EmptyViewSwapPage"
              Title="EmptyView (swap)">
+    <ContentPage.BindingContext>
+        <viewmodels:MonkeysViewModel />
+    </ContentPage.BindingContext>
     <ContentPage.Resources>
         <ContentView x:Key="BasicEmptyView">
             <StackLayout>
@@ -217,24 +212,20 @@ public class FilterData : BindableObject
             </StackLayout>
         </ContentView>
     </ContentPage.Resources>
-
     <StackLayout Margin="20">
-        <SearchBar x:Name="searchBar"
-                   SearchCommand="{Binding FilterCommand}"
-                   SearchCommandParameter="{Binding Source={x:Reference searchBar}, Path=Text}"
+        <SearchBar SearchCommand="{Binding FilterCommand}"
+                   SearchCommandParameter="{Binding Source={RelativeSource Self}, Path=Text}"
                    Placeholder="Filter" />
         <StackLayout Orientation="Horizontal">
             <Label Text="Toggle EmptyViews" />
             <Switch Toggled="OnEmptyViewSwitchToggled" />
         </StackLayout>
-        <CollectionView x:Name="collectionView"
-                        ItemsSource="{Binding Monkeys}">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    ...
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
+        <CarouselView x:Name="carouselView"
+                      ItemsSource="{Binding Monkeys}">
+            <CarouselView.ItemTemplate>
+                ...
+            </CarouselView.ItemTemplate>
+        </CarouselView>
     </StackLayout>
 </ContentPage>
 ```
@@ -244,13 +235,11 @@ public class FilterData : BindableObject
 ```csharp
 void ToggleEmptyView(bool isToggled)
 {
-    collectionView.EmptyView = isToggled ? Resources["BasicEmptyView"] : Resources["AdvancedEmptyView"];
+    carouselView.EmptyView = isToggled ? Resources["BasicEmptyView"] : Resources["AdvancedEmptyView"];
 }
 ```
 
-@No__t_0 メソッドは、`collectionView` オブジェクトの[`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView)プロパティを、 [`ResourceDictionary` プロパティの](xref:Xamarin.Forms.Switch.IsToggled)値に基づいて、 [`Switch.IsToggled`](xref:Xamarin.Forms.ResourceDictionary)に格納されている2つの[`ContentView`](xref:Xamarin.Forms.ContentView)オブジェクトのいずれかに設定します。 [@No__t_1](xref:Xamarin.Forms.SearchBar)が `FilterCommand` を実行すると、 [`CollectionView`](xref:Xamarin.Forms.CollectionView)によって表示されるコレクションが、 [`SearchBar.Text`](xref:Xamarin.Forms.SearchBar.Text)プロパティに格納されている検索用語に対してフィルター処理されます。 フィルター処理操作によってデータが生成されない場合は、`EmptyView` プロパティとして設定された `ContentView` オブジェクトが表示されます。
-
-[![IOS と Android で空のビューをスワップした CollectionView の一覧のスクリーンショット](emptyview-images/swap.png "スワップされる空のビューを含む CollectionView 縦の一覧")](emptyview-images/swap-large.png#lightbox "スワップされる空のビューを含む CollectionView 縦の一覧")
+@No__t_0 メソッドは、`carouselView` オブジェクトの[`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView)プロパティを、 [`ResourceDictionary` プロパティの](xref:Xamarin.Forms.Switch.IsToggled)値に基づいて、 [`Switch.IsToggled`](xref:Xamarin.Forms.ResourceDictionary)に格納されている2つの[`ContentView`](xref:Xamarin.Forms.ContentView)オブジェクトのいずれかに設定します。 [@No__t_1](xref:Xamarin.Forms.SearchBar)が `FilterCommand` を実行すると、 [`CarouselView`](xref:Xamarin.Forms.CarouselView)によって表示されるコレクションが、 [`SearchBar.Text`](xref:Xamarin.Forms.SearchBar.Text)プロパティに格納されている検索用語に対してフィルター処理されます。 フィルター処理操作によってデータが生成されない場合は、`EmptyView` プロパティとして設定された `ContentView` オブジェクトが表示されます。
 
 リソースディクショナリの詳細については、「 [Xamarin. フォームリソースディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)」を参照してください。
 
@@ -260,7 +249,7 @@ void ToggleEmptyView(bool isToggled)
 
 ```xaml
 <ContentPage ...
-             xmlns:controls="clr-namespace:CollectionViewDemos.Controls">
+             xmlns:controls="clr-namespace:CarouselViewDemos.Controls">
     <ContentPage.Resources>
         <DataTemplate x:Key="AdvancedTemplate">
             ...
@@ -278,11 +267,15 @@ void ToggleEmptyView(bool isToggled)
     <StackLayout Margin="20">
         <SearchBar x:Name="searchBar"
                    SearchCommand="{Binding FilterCommand}"
-                   SearchCommandParameter="{Binding Source={x:Reference searchBar}, Path=Text}"
+                   SearchCommandParameter="{Binding Source={RelativeSource Self}, Path=Text}"
                    Placeholder="Filter" />
-        <CollectionView ItemsSource="{Binding Monkeys}"
-                        EmptyView="{Binding Source={x:Reference searchBar}, Path=Text}"
-                        EmptyViewTemplate="{StaticResource SearchSelector}" />
+        <CarouselView ItemsSource="{Binding Monkeys}"
+                      EmptyView="{Binding Source={x:Reference searchBar}, Path=Text}"
+                      EmptyViewTemplate="{StaticResource SearchSelector}">
+            <CarouselView.ItemTemplate>
+                ...
+            </CarouselView.ItemTemplate>
+        </CarouselView>
     </StackLayout>
 </ContentPage>
 ```
@@ -291,17 +284,17 @@ void ToggleEmptyView(bool isToggled)
 
 ```csharp
 SearchBar searchBar = new SearchBar { ... };
-CollectionView collectionView = new CollectionView
+CarouselView carouselView = new CarouselView()
 {
     EmptyView = searchBar.Text,
     EmptyViewTemplate = new SearchTermDataTemplateSelector { ... }
 };
-collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
+carouselView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 ```
 
 [@No__t_1](xref:Xamarin.Forms.ItemsView.EmptyView)プロパティは[`SearchBar.Text`](xref:Xamarin.Forms.SearchBar.Text)プロパティに設定され、 [`EmptyViewTemplate`](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate)プロパティは `SearchTermDataTemplateSelector` オブジェクトに設定されます。
 
-[@No__t_1](xref:Xamarin.Forms.SearchBar)が `FilterCommand` を実行すると、 [`CollectionView`](xref:Xamarin.Forms.CollectionView)によって表示されるコレクションが、 [`SearchBar.Text`](xref:Xamarin.Forms.SearchBar.Text)プロパティに格納されている検索用語に対してフィルター処理されます。 フィルター処理操作によってデータが生成されない場合は、`SearchTermDataTemplateSelector` オブジェクトによって選択された[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)が[`EmptyViewTemplate`](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate)プロパティとして設定され、表示されます。
+[@No__t_1](xref:Xamarin.Forms.SearchBar)が `FilterCommand` を実行すると、 [`CarouselView`](xref:Xamarin.Forms.CarouselView)によって表示されるコレクションが、 [`SearchBar.Text`](xref:Xamarin.Forms.SearchBar.Text)プロパティに格納されている検索用語に対してフィルター処理されます。 フィルター処理操作によってデータが生成されない場合は、`SearchTermDataTemplateSelector` オブジェクトによって選択された[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)が[`EmptyViewTemplate`](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate)プロパティとして設定され、表示されます。
 
 次の例は、`SearchTermDataTemplateSelector` クラスを示しています。
 
@@ -321,13 +314,11 @@ public class SearchTermDataTemplateSelector : DataTemplateSelector
 
 @No__t_0 クラスは、さまざまなデータテンプレートに設定されている[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)プロパティの `DefaultTemplate` と `OtherTemplate` を定義します。 @No__t_0 のオーバーライドは、検索クエリが "xamarin" と等しくない場合に、ユーザーにメッセージを表示する `DefaultTemplate` を返します。 検索クエリが "xamarin" と等しい場合、`OnSelectTemplate` のオーバーライドは `OtherTemplate` を返します。これにより、ユーザーに基本メッセージが表示されます。
 
-[![IOS と Android での CollectionView runtime の空のビューテンプレートの選択のスクリーンショット](emptyview-images/datatemplateselector.png "CollectionView でのランタイムの空のビューテンプレートの選択")](emptyview-images/datatemplateselector-large.png#lightbox "CollectionView でのランタイムの空のビューテンプレートの選択")
-
 データテンプレートセレクターの詳細については、「 [DataTemplateSelector を作成する](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)」を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 
-- [CollectionView (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
+- [CarouselView (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
 - [Xamarin. フォームデータテンプレート](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
 - [Xamarin. フォームリソースディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [DataTemplateSelector を作成する](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)

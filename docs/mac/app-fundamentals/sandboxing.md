@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
 ms.openlocfilehash: 4558a9bd19810f8759010861d8a2e4b8cab09c56
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70770300"
 ---
 # <a name="sandboxing-a-xamarinmac-app"></a>Xamarin. Mac アプリのサンドボックス化
@@ -26,7 +26,7 @@ Xamarin. Mac C#アプリケーションでおよび .net を使用する場合�
 
 この記事では、Xamarin. Mac アプリケーションでのサンドボックスの使用の基本について説明します。また、サンドボックスに入るすべての要素 (コンテナーディレクトリ、権利、ユーザーが決定したアクセス許可、特権の分離、およびカーネル強制) についても説明します。 最初に、 [Hello, Mac](~/mac/get-started/hello-mac.md)の記事を使用して作業することを強くお勧めします。具体的には、 [Xcode と Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)および[アウトレットとアクション](~/mac/get-started/hello-mac.md#outlets-and-actions)に関するセクションで説明します。これは、で使用する主要な概念と手法に関するものです。この記事をご覧ください。
 
-確認することも、 [C# を公開するクラス/Objective-C メソッド](~/mac/internals/how-it-works.md)のセクション、 [Xamarin.Mac 内部](~/mac/internals/how-it-works.md)が説明されても、ドキュメント、`Register`と`Export`属性ネットワーク上での C# クラスを Objective-C オブジェクトと UI への要素に使用されます。
+[Xamarin. Mac の内部](~/mac/internals/how-it-works.md)ドキュメントの「[クラス/ C#メソッドを目的に公開](~/mac/internals/how-it-works.md)する」セクションを参照してください。 C#クラスを目的のものに接続するために使用される `Register` と `Export` の属性について説明しています。オブジェクトと UI 要素。
 
 ## <a name="about-the-app-sandbox"></a>アプリのサンドボックスについて
 
@@ -68,10 +68,10 @@ Xamarin. Mac C#アプリケーションでおよび .net を使用する場合�
 サンプルプロジェクトを作成するには、次の手順を実行します。
 
 1. Visual Studio for Mac を開始し、**新しいソリューション**をクリックします。 リンクをクリックしてください。
-2. **[新しいプロジェクト]** ダイアログボックスで、[ **Mac** > **アプリ** > **cocoa アプリ**] を選択します。
+2. **[新しいプロジェクト]** ダイアログボックスで、 **[Mac**  > **アプリ** > **cocoa アプリ**] を選択します。
 
     [![新しい Cocoa アプリを作成する](sandboxing-images/sample01.png "新しい Cocoa アプリを作成する")](sandboxing-images/sample01-large.png#lightbox)
-3. **[次へ]** ボタンを`MacSandbox`クリックし、プロジェクト名として「」と入力して、 **[作成]** ボタンをクリックします。
+3. **[次へ]** ボタンをクリックし、プロジェクト名として「`MacSandbox`」と入力して、 **[作成]** ボタンをクリックします。
 
     [![アプリ名の入力](sandboxing-images/sample02.png "アプリ名の入力")](sandboxing-images/sample02-large.png#lightbox)
 4. **Solution Pad**で、**メインの storyboard**ファイルをダブルクリックして、Xcode で編集するために開きます。
@@ -80,12 +80,12 @@ Xamarin. Mac C#アプリケーションでおよび .net を使用する場合�
 5. **Web ビュー**をウィンドウにドラッグし、コンテンツ領域に合わせてサイズを変更し、ウィンドウで拡大および縮小するように設定します。
 
     [![Web ビューの追加](sandboxing-images/sample04.png "Web ビューの追加")](sandboxing-images/sample04-large.png#lightbox)
-6. Web ビュー `webView`のアウトレットを次のように作成します。
+6. @No__t_0 という名前の web ビューのアウトレットを作成します。
 
     [![新しいアウトレットの作成](sandboxing-images/sample05.png "新しいアウトレットの作成")](sandboxing-images/sample05-large.png#lightbox)
 7. Visual Studio for Mac に戻り、 **Solution Pad**で**ViewController.cs**ファイルをダブルクリックして編集用に開きます。
-8. 次の using ステートメントを追加します。`using WebKit;`
-9. メソッドを`ViewDidLoad`次のようにします。
+8. 次の using ステートメントを追加します。 `using WebKit;`
+9. @No__t_0 メソッドを次のようにします。
 
     ```csharp
     public override void AwakeFromNib ()
@@ -114,19 +114,19 @@ Xamarin. Mac C#アプリケーションでおよび .net を使用する場合�
     [![Apple Developer ポータルへのログイン](sandboxing-images/sign01.png "Apple Developer ポータルへのログイン")](sandboxing-images/sign01-large.png#lightbox)
 2. **証明書、識別子 & プロファイル**を選択します。
 
-    [![証明書、ID、プロファイルの選択](sandboxing-images/sign02.png "証明書、ID、プロファイルの選択")](sandboxing-images/sign02-large.png#lightbox)
+    [![証明書、識別子 & プロファイルの選択](sandboxing-images/sign02.png "証明書、識別子 & プロファイルの選択")](sandboxing-images/sign02-large.png#lightbox)
 3. **[Mac アプリ]** で、 **[識別子]** を選択します。
 
     [![識別子の選択](sandboxing-images/sign03.png "識別子の選択")](sandboxing-images/sign03-large.png#lightbox)
 4. アプリケーションの新しい ID を作成します。
 
-    [![新しいアプリ ID を作成し]ています(sandboxing-images/sign04.png "新しいアプリ ID を作成し")ています](sandboxing-images/sign04-large.png#lightbox)
+    [![新しいアプリ ID を作成しています](sandboxing-images/sign04.png "新しいアプリ ID を作成しています")](sandboxing-images/sign04-large.png#lightbox)
 5. **[プロビジョニングプロファイル]** で、 **[開発]** を選択します。
 
     [![開発の選択](sandboxing-images/sign05.png "開発の選択")](sandboxing-images/sign05-large.png#lightbox)
 6. 新しいプロファイルを作成し、 **[Mac アプリ開発]** を選択します。
 
-    [![新しいプロファイルを作成し]ています(sandboxing-images/sign06.png "新しいプロファイルを作成し")ています](sandboxing-images/sign06-large.png#lightbox)
+    [![新しいプロファイルを作成しています](sandboxing-images/sign06.png "新しいプロファイルを作成しています")](sandboxing-images/sign06-large.png#lightbox)
 7. 上で作成したアプリ ID を選択します。
 
     [![アプリ ID の選択](sandboxing-images/sign07.png "アプリ ID の選択")](sandboxing-images/sign07-large.png#lightbox)
@@ -151,17 +151,17 @@ Xamarin. Mac C#アプリケーションでおよび .net を使用する場合�
     ![Xcode のアカウントの編集](sandboxing-images/sign11.png "Xcode のアカウントの編集")
 2. [詳細の**表示...** ] ボタンをクリックします。
 
-    [![詳細の表示] ボタンをクリックする][(sandboxing-images/sign12.png "詳細の表示] ボタンをクリックする")
+    ![[詳細の表示] ボタンをクリックする](sandboxing-images/sign12.png "[詳細の表示] ボタンをクリックする")
 3. **[更新]** ボタン (左下隅) をクリックします。
 4. **[完了]** ボタンをクリックします。
 
 次に、Xamarin. Mac プロジェクトで新しいアプリ ID とプロビジョニングプロファイルを選択する必要があります。 次の手順を実行してみましょう。
 
 1. **Solution Pad**で **、ファイルを**ダブルクリックして編集用に開きます。
-2. **バンドル識別子**が、上で作成したアプリ ID と一致して`com.appracatappra.MacSandbox`いることを確認します (例:)。
+2. **バンドル識別子**が、上で作成したアプリ ID と一致していることを確認します (例: `com.appracatappra.MacSandbox`)。
 
     [![バンドル識別子の編集](sandboxing-images/sign13.png "バンドル識別子の編集")](sandboxing-images/sign13-large.png#lightbox)
-3. 次に、**資格の plist**ファイルをダブルクリックし、Icloud のキーと**値のストア**と**icloud コンテナー**が、上記で作成したアプリ ID と一致`com.appracatappra.MacSandbox`していることを確認します (例:)。
+3. 次に、**資格の plist**ファイルをダブルクリックし、Icloud のキーと**値のストア**と**icloud コンテナー**が、上記で作成したアプリ ID と一致していることを確認します (例: `com.appracatappra.MacSandbox`)。
 
     [![権利の plist ファイルの編集](sandboxing-images/sign17.png "権利の plist ファイルの編集")](sandboxing-images/sign17-large.png#lightbox)
 4. 変更内容を保存します。
@@ -208,19 +208,19 @@ Xamarin. Mac C#アプリケーションでおよび .net を使用する場合�
 
 リソースブロックの動作とは別に、Xamarin アプリケーションが正常にサンドボックス化されているかどうかを確認するには、主に次の3つの方法があります。
 
-1. Finder で`~/Library/Containers/`フォルダーの内容を確認します。アプリがサンドボックス化されている場合は、アプリのバンドル識別子のような名前の`com.appracatappra.MacSandbox`フォルダーがあります (例:)。
+1. Finder で、`~/Library/Containers/` フォルダーの内容を確認します。アプリがサンドボックス化されている場合は、アプリのバンドル識別子のような名前のフォルダーがあります (例: `com.appracatappra.MacSandbox`)。
 
     [![アプリのバンドルを開く](sandboxing-images/sample09.png "アプリのバンドルを開く")](sandboxing-images/sample09-large.png#lightbox)
 2. システムにより、アプリはアクティビティモニターでサンドボックス化されていると認識されます。
-    - 利用状況モニター ( `/Applications/Utilities`) を起動します。
-    - [**列**の**表示** > ] を選択し、 **[サンドボックス]** メニュー項目がオンになっていることを確認します。
-    - アプリケーションのサンドボックス列が`Yes`次のように読み取られていることを確認します。
+    - 利用状況モニター (`/Applications/Utilities`) を起動します。
+    - [@No__t_1**列**の**表示**] を選択し、 **[サンドボックス]** メニュー項目がオンになっていることを確認します。
+    - サンドボックス列でアプリケーションの `Yes` が読み取られていることを確認します。
 
-    [![利用状況モニターのアプリを確認し]ています(sandboxing-images/sample10.png "利用状況モニターのアプリを確認し")ています](sandboxing-images/sample10-large.png#lightbox)
+    [![利用状況モニターのアプリを確認しています](sandboxing-images/sample10.png "利用状況モニターのアプリを確認しています")](sandboxing-images/sample10-large.png#lightbox)
 3. アプリのバイナリがサンドボックス化されていることを確認します。
     - ターミナルアプリを起動します。
-    - アプリケーション`bin`のディレクトリに移動します。
-    - 次のコマンドを`codesign -dvvv --entitlements :- executable_path`実行し`executable_path`ます (はアプリケーションへのパスです)。
+    - アプリケーション `bin` ディレクトリに移動します。
+    - 次のコマンドを発行します。 `codesign -dvvv --entitlements :- executable_path` (`executable_path` はアプリケーションへのパス) です。
 
     [![コマンドラインでのアプリの確認](sandboxing-images/sample11.png "コマンドラインでのアプリの確認")](sandboxing-images/sample11-large.png#lightbox)
 
@@ -230,7 +230,7 @@ Xamarin. Mac C#アプリケーションでおよび .net を使用する場合�
 
 [![必須オプションの設定](sandboxing-images/debug01.png "必須オプションの設定")](sandboxing-images/debug01-large.png#lightbox)
 
-**[発信ネットワーク接続 (クライアント) を許可する]** アクセス許可は、デバッガーに必要なアクセス許可です。これを有効にすると、デバッグが正常に実行できるようになります。 デバッグを行わずにデバッグすることはできない`CompileEntitlements`ため、 `msbuild`のターゲットを更新して、デバッグビルド用にサンドボックスされているすべてのアプリの権利にそのアクセス許可を自動的に追加するようにしました。 リリースビルドでは、権利ファイルで指定されている権利を変更せずに使用する必要があります。
+**[発信ネットワーク接続 (クライアント) を許可する]** アクセス許可は、デバッガーに必要なアクセス許可です。これを有効にすると、デバッグが正常に実行できるようになります。 デバッグを行わずにデバッグすることはできないため、`msbuild` の `CompileEntitlements` ターゲットを更新して、デバッグビルド用にサンドボックスされているすべてのアプリの権利にそのアクセス許可を自動的に追加します。 リリースビルドでは、権利ファイルで指定されている権利を変更せずに使用する必要があります。
 
 ### <a name="resolving-an-app-sandbox-violation"></a>アプリサンドボックス違反の解決
 
@@ -245,12 +245,12 @@ Xamarin. Mac アプリケーションでアプリサンドボックス違反が�
 次の手順で行います。
 
 1. 問題のアプリをコンパイルし、Visual Studio for Mac から実行します。
-2. (から `/Applications/Utilties/`) コンソールアプリケーションを開きます。
-3. サイドバーで **[すべてのメッセージ]** を`sandbox`選択し、検索に「」と入力します。
+2. (@No__t_1 から)**コンソール**アプリケーションを開きます。
+3. サイドバーの **[すべてのメッセージ]** を選択し、検索に「`sandbox`」と入力します。
 
     [![コンソールでのサンドボックスの問題の例](sandboxing-images/resolve01.png "コンソールでのサンドボックスの問題の例")](sandboxing-images/resolve01-large.png#lightbox)
 
-上記のアプリの例では、アプリのサンドボックスが原因で`network-outbound` 、カーネルがトラフィックをブロックしていることを確認できます。これは、その権限が要求されていないためです。
+上記のアプリの例では、カーネルがアプリのサンドボックスによって `network-outbound` トラフィックをブロックしていることを確認できます。これは、その権限が要求されていないためです。
 
 #### <a name="fixing-app-sandbox-violations-with-entitlements"></a>権利を使用したアプリサンドボックス違反の修正
 
@@ -293,22 +293,22 @@ Xamarin アプリケーションでアプリサンドボックスを採用する
 - **アプリコンテナーディレクトリ**-最初の実行時に、OS は、すべてのリソースが移動する特別な_コンテナーディレクトリ_を作成します。 アプリには、このディレクトリに対する完全な読み取り/書き込みアクセス権が付与されます。
 - **アプリグループコンテナーのディレクトリ**-アプリには、同じグループ内のアプリ間で共有される1つ以上の_グループコンテナー_へのアクセスを許可できます。
 - **ユーザー指定のファイル**-アプリケーションは、ユーザーによって明示的に開かれた、またはアプリケーションにドラッグアンドドロップされたファイルへのアクセスを自動的に取得します。
-- **関連項目**-適切な権利があれば、アプリケーションは同じ名前で拡張子が異なるファイルにアクセスできます。 たとえば、 `.txt`ファイル`.pdf`ととして保存されたドキュメントなどです。
+- **関連項目**-適切な権利があれば、アプリケーションは同じ名前で拡張子が異なるファイルにアクセスできます。 たとえば、`.txt` ファイルと `.pdf` の両方として保存されたドキュメントです。
 - **一時ディレクトリ、コマンドラインツールのディレクトリ、および世界で読み取り可能な特定の場所**: アプリには、システムによって指定された他の適切に定義された場所にあるファイルへのさまざまなアクセスレベルがあります。
 
 #### <a name="the-app-container-directory"></a>アプリコンテナーディレクトリ
 
 Xamarin アプリケーションのアプリコンテナーディレクトリには、次の特性があります。
 
-- ユーザーのホームディレクトリ内の非表示の場所 (通常`~Library/Containers`は) にあり、アプリケーション内の`NSHomeDirectory`関数 (下記参照) を使用してアクセスできます。 このファイルはホームディレクトリにあるため、各ユーザーはアプリ用の独自のコンテナーを取得します。
+- ユーザーのホームディレクトリ (通常は `~Library/Containers`) 内の非表示の場所にあり、アプリケーション内の `NSHomeDirectory` 関数 (下記参照) を使用してアクセスできます。 このファイルはホームディレクトリにあるため、各ユーザーはアプリ用の独自のコンテナーを取得します。
 - このアプリは、コンテナーディレクトリとそのサブディレクトリ内のすべてのサブディレクトリとファイルに対して、無制限の読み取り/書き込みアクセス権を持っています。
-- MacOS のパス検索 Api のほとんどは、アプリのコンテナーを基準としています。 たとえば、コンテナーには、(経由で `NSLibraryDirectory`アクセスされる) 独自のライブラリと、アプリケーションの**サポート**と**基本設定**のサブディレクトリがあります。
+- MacOS のパス検索 Api のほとんどは、アプリのコンテナーを基準としています。 たとえば、コンテナーには、(`NSLibraryDirectory` によってアクセスされる) 独自の**ライブラリ**と、**アプリケーションのサポート**と**基本設定**のサブディレクトリがあります。
 - macOS は、コード署名を使用して、アプリとそのコンテナーの間の接続を確立し、適用します。 別のアプリが**バンドル識別子**を使用してアプリのスプーフィングを試行する場合でも、コード署名のためにコンテナーにアクセスすることはできません。
 - コンテナーは、ユーザーが生成したファイル用ではありません。 代わりに、データベース、キャッシュ、その他の特定の種類のデータなど、アプリケーションで使用されるファイルを対象としています。
 - _Shoebox_の種類のアプリ (Apple の写真アプリなど) では、ユーザーのコンテンツはコンテナーに入ります。
 
 > [!IMPORTANT]
-> 残念ながら、xamarin. mac にはまだ 100% の api カバレッジがありません (xamarin とは異なります`NSHomeDirectory` )。その結果、api は現在のバージョンの xamarin. mac でマップされていません。
+> 残念ながら、Xamarin. Mac にはまだ100% の API カバレッジがありません (Xamarin とは異なります)。その結果、`NSHomeDirectory` API は現在のバージョンの Xamarin. Mac でマップされていません。
 
 一時的な回避策として、次のコードを使用できます。
 
@@ -325,9 +325,9 @@ public static string ContainerDirectory {
 
 #### <a name="the-app-group-container-directory"></a>アプリグループコンテナーディレクトリ
 
-Mac macOS 10.7.5 (以降) 以降では、アプリケーションは`com.apple.security.application-groups`権利を使用して、グループ内のすべてのアプリケーションに共通の共有コンテナーにアクセスできます。 この共有コンテナーは、データベースやその他の種類のサポートファイル (キャッシュなど) など、ユーザーによって接続されていないコンテンツに使用できます。
+Mac macOS 10.7.5 (以降) 以降では、アプリケーションは `com.apple.security.application-groups` の権利を使用して、グループ内のすべてのアプリケーションに共通の共有コンテナーにアクセスできます。 この共有コンテナーは、データベースやその他の種類のサポートファイル (キャッシュなど) など、ユーザーによって接続されていないコンテンツに使用できます。
 
-グループコンテナーは、各アプリのサンドボックスコンテナー (グループの一部である場合) に自動的に追加され、 `~/Library/Group Containers/<application-group-id>`に格納されます。 グループ ID は、開発チーム ID とピリオドで始まる_必要があり_ます。次に例を示します。
+グループコンテナーは、各アプリのサンドボックスコンテナー (グループの一部である場合) に自動的に追加され、`~/Library/Group Containers/<application-group-id>` に格納されます。 グループ ID は、開発チーム ID とピリオドで始まる_必要があり_ます。次に例を示します。
 
 ```plist
 <team-id>.com.company.<group-name>
@@ -340,10 +340,10 @@ Mac macOS 10.7.5 (以降) 以降では、アプリケーションは`com.apple.s
 サンドボックス化された Xamarin. Mac アプリケーションは、次の方法でコンテナーの外部のファイルシステムの場所にアクセスできます。
 
 - ユーザーの特定の方向 ([開く] および [保存] ダイアログを使用するか、ドラッグアンドドロップなどの他の方法で)。
-- 特定のファイルシステムの場所 ( `/bin`や`/usr/lib`など) に対して権利を使用する。
+- 特定のファイルシステムの場所 (`/bin` や `/usr/lib` など) に対して権利を使用する。
 - ファイルシステムの場所が、世界中で読み取り可能な特定のディレクトリにある場合 (共有など)。
 
-_Powerbox_は、ユーザーと対話して、サンドボックス化された Xamarin. Mac アプリのファイルアクセス権を拡張する macOS セキュリティテクノロジです。 Powerbox には API がありませんが、アプリがまたは`NSOpenPanel` `NSSavePanel`を呼び出すときに透過的にアクティブ化されます。 Powerbox へのアクセスは、Xamarin. Mac アプリケーションに設定した権利によって有効になります。
+_Powerbox_は、ユーザーと対話して、サンドボックス化された Xamarin. Mac アプリのファイルアクセス権を拡張する macOS セキュリティテクノロジです。 Powerbox には API がありませんが、アプリが `NSOpenPanel` または `NSSavePanel` を呼び出すときに透過的にアクティブ化されます。 Powerbox へのアクセスは、Xamarin. Mac アプリケーションに設定した権利によって有効になります。
 
 サンドボックス化されたアプリが開いたり保存のダイアログを表示したりすると、このウィンドウは Powerbox (および AppKit ではなく) によって表示されるため、ユーザーがアクセスできる任意のファイルまたはディレクトリにアクセスできます。
 
@@ -363,7 +363,7 @@ _Powerbox_は、ユーザーと対話して、サンドボックス化された 
   - `/usr/sbin`
   - `/usr/share`
   - `/System`
-- によって`NSTemporaryDirectory`作成されたディレクトリ内のファイルの読み取りと書き込みを行います。
+- @No__t_0 によって作成されたディレクトリ内のファイルの読み取りと書き込みを行います。
 
 既定では、サンドボックス化された Xamarin. Mac アプリによって開かれたファイルまたは保存されたファイルは、アプリが終了するまでアクセスできます (アプリが終了したときにファイルが開いていない場合を除きます)。 開いているファイルは、次回アプリを起動したときに macOS の再開機能を使用して、アプリのサンドボックスに自動的に復元されます。
 
@@ -371,25 +371,25 @@ Xamarin. Mac アプリのコンテナーの外部にあるファイルに永続�
 
 #### <a name="related-items"></a>関連項目
 
-アプリサンドボックスを使用すると、アプリは、同じファイル名で拡張子が異なる関連項目にアクセスできます。 この機能には2つの部分があります。 a) アプリの`Info.plst`ファイル b) コード内の関連する拡張機能の一覧を使用して、これらのファイルでアプリが実行する処理をサンドボックスに指示します。
+アプリサンドボックスを使用すると、アプリは、同じファイル名で拡張子が異なる関連項目にアクセスできます。 この機能には2つの部分があります。 a) アプリの `Info.plst` ファイル b) コード内の関連する拡張機能の一覧を使用して、これらのファイルでアプリが実行する処理をサンドボックスに指示します。
 
 これには、次の2つのシナリオがあります。
 
-1. アプリは、別のバージョンのファイル (新しい拡張子を持つ) を保存できる必要があります。 たとえば、ファイル`.pdf`への`.txt`ファイルのエクスポートです。 この状況に対処するには、を`NSFileCoordinator`使用してファイルにアクセスする必要があります。 最初に`WillMove(fromURL, toURL)`メソッドを呼び出し、ファイルを新しい拡張機能に移動して、を`ItemMoved(fromURL, toURL)`呼び出します。
-2. アプリは、1つの拡張子を持つメインファイルと、拡張機能が異なるいくつかのサポートファイルを開く必要があります。 たとえば、ムービーやサブタイトルファイルなどです。 セカンダリファイル`NSFilePresenter`にアクセスするには、を使用します。 `PrimaryPresentedItemURL`プロパティにメインファイルを、 `PresentedItemURL`プロパティにセカンダリファイルを指定します。 メインファイルが開いたら、 `AddFilePresenter` `NSFileCoordinator`クラスのメソッドを呼び出して、セカンダリファイルを登録します。
+1. アプリは、別のバージョンのファイル (新しい拡張子を持つ) を保存できる必要があります。 たとえば、`.txt` ファイルを `.pdf` ファイルにエクスポートすることができます。 この状況に対処するには、ファイルにアクセスするために `NSFileCoordinator` を使用する必要があります。 まず、`WillMove(fromURL, toURL)` メソッドを呼び出して、ファイルを新しい拡張機能に移動してから `ItemMoved(fromURL, toURL)` を呼び出します。
+2. アプリは、1つの拡張子を持つメインファイルと、拡張機能が異なるいくつかのサポートファイルを開く必要があります。 たとえば、ムービーやサブタイトルファイルなどです。 セカンダリファイルにアクセスするには、`NSFilePresenter` を使用します。 メインファイルを `PrimaryPresentedItemURL` プロパティに、セカンダリファイルを `PresentedItemURL` プロパティに指定します。 メインファイルが開いたら、`NSFileCoordinator` クラスの `AddFilePresenter` メソッドを呼び出して、セカンダリファイルを登録します。
 
-どちらのシナリオでも、アプリの**情報の plist**ファイルは、アプリが開くことのできるドキュメントの種類を宣言する必要があります。 任意のファイルの種類につい`NSIsRelatedItemType`て、 `CFBundleDocumentTypes`配列内の`YES`エントリに (値を持つ) を追加します。
+どちらのシナリオでも、アプリの**情報の plist**ファイルは、アプリが開くことのできるドキュメントの種類を宣言する必要があります。 任意のファイルの種類について、`CFBundleDocumentTypes` 配列内のエントリに `NSIsRelatedItemType` (値 `YES`) を追加します。
 
 #### <a name="open-and-save-dialog-behavior-with-sandboxed-apps"></a>サンドボックスアプリを使用してダイアログの動作を開いて保存する
 
-には、次の制限が`NSOpenPanel`適用`NSSavePanel`されます。これらの制限は、サンドボックス化された Xamarin. Mac アプリから呼び出すときに行われます。
+次の制限は、サンドボックス化された Xamarin. Mac アプリから呼び出すときに、`NSOpenPanel` と `NSSavePanel` に適用されます。
 
 - プログラムを使用して **[OK** ] ボタンを呼び出すことはできません。
-- では、 `NSOpenSavePanelDelegate`ユーザーの選択をプログラムで変更することはできません。
+- @No__t_0 では、ユーザーの選択をプログラムで変更することはできません。
 
 また、次の継承の変更が行われています。
 
-- **サンドボックスではないアプリ** -  `NSOpenPanel``NSSavePanel``NSPanel``NSWindow``NSResponder``NSObject``NSOpenPanel``NSSavePanel``NSObject``NSOpenPanel``NSSavePanel`
+- **サンドボックス化が不可能なアプリ** -  `NSOpenPanel` `NSSavePanel``NSPanel``NSWindow``NSResponder``NSObject``NSOpenPanel``NSSavePanel``NSObject``NSOpenPanel``NSSavePanel`
 
 ### <a name="security-scoped-bookmarks-and-persistent-resource-access"></a>セキュリティスコープのブックマークと永続的なリソースへのアクセス
 
@@ -403,27 +403,27 @@ _セキュリティスコープのブックマーク_を使用することによ
 
 - **アプリスコープのブックマークは、ユーザーが指定したファイルまたはフォルダーへの永続的なアクセスを提供します。**
 
-    たとえば、サンドボックス化された Xamarin. Mac アプリケーションでを使用して編集用に (を使用`NSOpenPanel`して) 外部ドキュメントを開くことが許可されている場合、アプリでは、アプリスコープのブックマークを作成して、後で同じファイルに再びアクセスできるようにすることができます。
+    たとえば、サンドボックス化された Xamarin. Mac アプリケーションでを使用して編集するために (`NSOpenPanel` を使用して) 外部ドキュメントを開くことが許可されている場合、アプリでは、アプリスコープのブックマークを作成して、今後同じファイルにアクセスできるようにすることができます。
 - **ドキュメントスコープのブックマークは、特定のドキュメントのサブファイルへの永続的なアクセスを提供します。**
 
 たとえば、個々の画像、ビデオクリップ、および後で1つのムービーに結合されるサウンドファイルにアクセスできるプロジェクトファイルを作成するビデオ編集アプリなどです。
 
-ユーザーが (を`NSOpenPanel`使用して) プロジェクトにリソースファイルをインポートすると、アプリはプロジェクトに格納されている項目のドキュメントスコープのブックマークを作成します。これにより、ファイルは常にアプリにアクセスできるようになります。
+ユーザーが (`NSOpenPanel` を使用して) プロジェクトにリソースファイルをインポートすると、アプリはプロジェクトに格納されている項目のドキュメントスコープのブックマークを作成します。これにより、ファイルが常にアプリにアクセスできるようになります。
 
 ドキュメントスコープのブックマークは、ブックマークデータとドキュメント自体を開くことのできる任意のアプリケーションによって解決できます。 これにより、移植性がサポートされるため、ユーザーはプロジェクトファイルを別のユーザーに送信し、すべてのブックマークを使用することもできます。
 
 > [!IMPORTANT]
-> ドキュメントスコープのブックマークは、フォルダーではなく1つのファイル_のみ_を指すことができ、そのファイルは、システムによって使用さ`/private`れる`/Library`場所 (やなど) には配置できません。
+> ドキュメントスコープのブックマークは、フォルダーではなく、1つのファイル_のみ_を指すことができ、そのファイルはシステムによって使用されている場所 (`/private` や `/Library` など) には配置できません。
 
 #### <a name="using-security-scoped-bookmarks"></a>セキュリティスコープのブックマークの使用
 
 どちらの種類のセキュリティスコープのブックマークを使用する場合でも、次の手順を実行する必要があります。
 
-1. **セキュリティスコープのブックマークを使用する必要がある Xamarin アプリで適切な権限を設定**します。アプリスコープのブックマークでは`com.apple.security.files.bookmarks.app-scope` 、権利キー `true`をに設定します。 ドキュメントスコープのブックマークの場合は、 `com.apple.security.files.bookmarks.document-scope`権利キーを`true`に設定します。
-2. **セキュリティスコープのブックマークを作成**する-この操作は、ユーザーがアクセスを提供したファイルまたはフォルダー ( `NSOpenPanel`など) に対して、アプリが永続的なアクセスを必要とする場合に実行します。 クラスのメソッドを使用して、ブックマークを作成します。 `public virtual NSData CreateBookmarkData (NSUrlBookmarkCreationOptions options, string[] resourceValues, NSUrl relativeUrl, out NSError error)` `NSUrl`
-3. **セキュリティスコープのブックマークを解決**する-アプリがリソースにもう一度アクセスする必要がある場合 (たとえば、再起動後)、セキュリティスコープの URL にブックマークを解決する必要があります。 クラスのメソッドを使用して、ブックマークを解決します。 `public static NSUrl FromBookmarkData (NSData data, NSUrlBookmarkResolutionOptions options, NSUrl relativeToUrl, out bool isStale, out NSError error)` `NSUrl`
-4. **ファイルへのアクセスを必要としているシステムに、セキュリティスコープの url から明示的に通知**する-この手順は、上のセキュリティスコープの url を取得した直後に行う必要があります。また、後でリソースへのアクセスを回復する場合は、放棄へのアクセスを許可します。 クラスのメソッドを呼び出して`StartAccessingSecurityScopedResource ()` 、セキュリティスコープの URL へのアクセスを開始します。 `NSUrl`
-5. **セキュリティスコープの URL からのファイルへのアクセスが完了したことをシステムに明示的に通知**する-できるだけ早く、アプリがファイルにアクセスする必要がなくなったことをシステムに通知する必要があります (ユーザーがファイルを閉じた場合など)。 セキュリティスコープの URL へ`NSUrl`のアクセスを停止するには、クラスのメソッドを呼び出します。`StopAccessingSecurityScopedResource ()`
+1. **セキュリティスコープのブックマークを使用する必要がある Xamarin アプリで適切な権限を設定**します。アプリスコープのブックマークの場合は、`com.apple.security.files.bookmarks.app-scope` の権利キーを `true` に設定します。 ドキュメントスコープのブックマークの場合は、`com.apple.security.files.bookmarks.document-scope` の権利キーを `true` に設定します。
+2. **セキュリティスコープのブックマークを作成**する-この操作は、ユーザーが (たとえば `NSOpenPanel` 経由で) アクセスを提供したファイルまたはフォルダーに対して、永続的なアクセスを必要とするファイルまたはフォルダーに対して実行します。 @No__t_1 クラスの `public virtual NSData CreateBookmarkData (NSUrlBookmarkCreationOptions options, string[] resourceValues, NSUrl relativeUrl, out NSError error)` メソッドを使用して、ブックマークを作成します。
+3. **セキュリティスコープのブックマークを解決**する-アプリがリソースにもう一度アクセスする必要がある場合 (たとえば、再起動後)、セキュリティスコープの URL にブックマークを解決する必要があります。 @No__t_1 クラスの `public static NSUrl FromBookmarkData (NSData data, NSUrlBookmarkResolutionOptions options, NSUrl relativeToUrl, out bool isStale, out NSError error)` メソッドを使用して、ブックマークを解決します。
+4. **ファイルへのアクセスを必要としているシステムに、セキュリティスコープの url から明示的に通知**する-この手順は、上のセキュリティスコープの url を取得した直後に行う必要があります。また、後でリソースへのアクセスを回復する場合は、放棄へのアクセスを許可します。 @No__t_1 クラスの `StartAccessingSecurityScopedResource ()` メソッドを呼び出して、セキュリティスコープの URL へのアクセスを開始します。
+5. **セキュリティスコープの URL からのファイルへのアクセスが完了したことをシステムに明示的に通知**する-できるだけ早く、アプリがファイルにアクセスする必要がなくなったことをシステムに通知する必要があります (ユーザーがファイルを閉じた場合など)。 @No__t_1 クラスの `StopAccessingSecurityScopedResource ()` メソッドを呼び出して、セキュリティスコープの URL へのアクセスを停止します。
 
 リソースへのアクセスを解放した後、再度手順4に戻ってアクセスを再確立する必要があります。 Xamarin アプリが再起動された場合は、手順3に戻ってブックマークを再解決する必要があります。
 
@@ -458,9 +458,9 @@ Exception Type:  EXC_BAD_INSTRUCTION (SIGILL)
 
 Apple の署名されたバージョンの Xamarin. Mac アプリを実行できるようにするには、次の操作を行います。
 
-1. ターミナルアプリ ( `/Applications/Utilities`) を開きます。
+1. ターミナルアプリ (`/Applications/Utilities`) を開きます。
 2. Apple の署名されたバージョンの Xamarin. Mac アプリに Finder ウィンドウを開きます。
-3. ターミナル`asctl container acl add -file`ウィンドウに「」と入力します。
+3. ターミナルウィンドウで「`asctl container acl add -file`」と入力します。
 4. [ファインダー] ウィンドウから Xamarin アプリのアイコンをドラッグし、ターミナルウィンドウにドロップします。
 5. ファイルへの完全なパスは、ターミナルのコマンドに追加されます。
 6. **Enter**キーを押してコマンドを実行します。
@@ -471,11 +471,11 @@ Apple の署名されたバージョンの Xamarin. Mac アプリを実行でき
 
 コンテナーの ACL でコード要件の一覧を表示するには、次の手順を実行します。
 
-1. ターミナルアプリ ( `/Applications/Utilities`) を開きます。
+1. ターミナルアプリ (`/Applications/Utilities`) を開きます。
 2. 「`asctl container acl list -bundle <container-name>`」と入力します。
 3. **Enter**キーを押してコマンドを実行します。
 
-は`<container-name>` 、通常、Xamarin. Mac アプリケーションのバンドル識別子です。
+通常、`<container-name>` は、Xamarin. Mac アプリケーションのバンドル識別子です。
 
 ## <a name="designing-a-xamarinmac-app-for-the-app-sandbox"></a>アプリサンドボックス用の Xamarin. Mac アプリの設計
 
@@ -501,7 +501,7 @@ Xamarin. Mac アプリのバンドルに含まれるすべての実行可能バ�
 find -H [Your-App-Bundle].app -print0 | xargs -0 file | grep "Mach-O .*executable"
 ```
 
-ここ`[Your-App-Bundle]`で、はアプリケーションのバンドルの名前とパスです。
+ここで `[Your-App-Bundle]` は、アプリケーションのバンドルの名前とパスです。
 
 ### <a name="determine-whether-a-xamarinmac-app-is-suitable-for-sandboxing"></a>Xamarin アプリがサンドボックスに適しているかどうかを判断する
 
@@ -512,12 +512,12 @@ find -H [Your-App-Bundle].app -print0 | xargs -0 file | grep "Mach-O .*executabl
 - **承認サービス**-アプリサンドボックスでは、「[承認サービス C リファレンス](https://developer.apple.com/library/prerelease/mac/documentation/Security/Reference/authorization_ref/index.html#//apple_ref/doc/uid/TP30000826)」で説明されている機能を使用することはできません。
 - **ユーザー補助 api** -スクリーンリーダーや、他のアプリケーションを制御するアプリなどの補助的なアプリをサンドボックスにすることはできません。
 - **Apple イベントを任意のアプリに送信する**-アプリで不明な任意のアプリに apple イベントを送信する必要がある場合は、サンドボックス化できません。 呼び出されたアプリの既知の一覧については、アプリをサンドボックス化することができ、権利には呼び出されたアプリの一覧を含める必要があります。
-- **他のタスクへの分散通知でのユーザー情報ディクショナリの送信**-アプリのサンドボックスを`userInfo`使用すると、他`NSDistributedNotificationCenter`のタスクのメッセージング用にオブジェクトに投稿するときに辞書を含めることはできません。
+- **他のタスクへの分散通知でのユーザー情報ディクショナリの送信**-アプリのサンドボックスを使用すると、他のタスクのメッセージング用に `NSDistributedNotificationCenter` オブジェクトに投稿するときに `userInfo` 辞書を含めることはできません。
 - **カーネル拡張機能の読み込み**-カーネル拡張機能の読み込みは、アプリのサンドボックスでは禁止されています。
 - **[開いて保存] ダイアログでユーザー入力をシミュレート**する-プログラムによって開いたり保存のダイアログを操作してユーザー入力をシミュレートまたは変更することは、アプリのサンドボックスでは禁止されています。
 - **他のアプリの基本設定へのアクセスまたは設定**-他のアプリの設定の操作は、アプリのサンドボックスでは禁止されています。
 - **ネットワーク設定の構成**-ネットワーク設定の操作は、アプリのサンドボックスでは禁止されています。
-- **他のアプリを終了**する-アプリサンド`NSRunningApplication`ボックスは、を使用して他のアプリを終了することを禁止します。
+- **他のアプリを終了**する-アプリサンドボックスでは、他のアプリを終了するために `NSRunningApplication` の使用が禁止されています。
 
 ### <a name="resolving-api-incompatibilities"></a>API の非互換性の解決
 
@@ -525,10 +525,10 @@ find -H [Your-App-Bundle].app -print0 | xargs -0 file | grep "Mach-O .*executabl
 
 いくつかの一般的な問題とその解決方法を次に示します。
 
-- **ドキュメントを開く、保存、追跡**する-以外`NSDocument`のテクノロジを使用してドキュメントを管理している場合は、アプリサンドボックスの組み込みサポートにより、ドキュメントに切り替える必要があります。 `NSDocument`PowerBox で自動的に動作し、ユーザーがファインダーでドキュメントを移動した場合に、サンドボックス内でドキュメントを保持するためのサポートを提供します。
+- **ドキュメントを開く、保存、追跡**する-`NSDocument` 以外のテクノロジを使用してドキュメントを管理している場合は、アプリサンドボックスの組み込みサポートにより、ドキュメントに切り替える必要があります。 `NSDocument` は PowerBox で自動的に動作し、ユーザーがファインダーでドキュメントを移動した場合に、サンドボックス内でドキュメントを保持するためのサポートを提供します。
 - **ファイルシステムリソースへのアクセスを保持**する-Xamarin アプリケーションがコンテナーの外部にあるリソースへの永続的なアクセスに依存している場合は、セキュリティスコープのブックマークを使用してアクセスを維持します。
-- **アプリのログイン項目を作成**する-アプリサンドボックスを使用して`LSSharedFileList`ログイン項目を作成することはできません`LSRegisterURL`。また、を使用して起動サービスの状態を操作することもできません。 「 `SMLoginItemSetEnabled` [サービス管理フレームワークのドキュメントを使用してログイン項目を追加する](https://developer.apple.com/library/prerelease/mac/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingLoginItems.html#//apple_ref/doc/uid/10000172i-SW5-SW1)」で説明されているように、関数を使用します。
-- **ユーザーデータへのアクセス**-などの POSIX 関数`getpwuid`を使用してディレクトリサービスからユーザーのホームディレクトリを取得する場合は、のような cocoa または Core `NSHomeDirectory`Foundation のシンボルを使用することを検討してください。
+- **アプリのログイン項目を作成**する-アプリサンドボックスを使用して、`LSSharedFileList` を使用してログイン項目を作成したり、`LSRegisterURL` を使用して起動サービスの状態を操作したりすることはできません。 「[サービス管理フレームワークのドキュメントを使用してログイン項目を追加する](https://developer.apple.com/library/prerelease/mac/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingLoginItems.html#//apple_ref/doc/uid/10000172i-SW5-SW1)」で説明されているように、`SMLoginItemSetEnabled` 関数を使用します。
+- **ユーザーデータへのアクセス**-`getpwuid` などの POSIX 機能を使用してディレクトリサービスからユーザーのホームディレクトリを取得する場合は、`NSHomeDirectory` などの cocoa または Core Foundation のシンボルを使用することを検討してください。
 - **他のアプリの基本設定**へのアクセス-アプリのサンドボックスでは、アプリのコンテナーにパス検索 api が指示されるため、設定の変更はそのコンテナー内で行われ、別のアプリの設定へのアクセスは許可されていません。
 - **Web ビューでの HTML5 Embedded ビデオの使用**-Xamarin アプリで WebKit を使用して埋め込み HTML5 ビデオを再生する場合は、アプリを AV Foundation framework にもリンクする必要があります。 アプリのサンドボックスでは、CoreMedia がこれらのビデオを再生できないようにします。
 
@@ -542,10 +542,10 @@ Xamarin. Mac アプリが必要とする権利を確認するには、次の手�
 
 1. アプリサンドボックスを有効にし、Xamarin. Mac アプリを実行します。
 2. アプリの機能を実行します。
-3. コンソールアプリ (で`/Applications/Utilities`利用可能) を開き、[すべての**メッセージ**] ログで [違反] を`sandboxd`探します。
-4. 違反が`sandboxd`発生するたびに、他のファイルシステムの場所ではなくアプリコンテナーを使用して問題を解決するか、アプリサンドボックスの権利を適用して制限された OS 機能にアクセスできるようにします。
+3. コンソールアプリ (`/Applications/Utilities` で利用可能) を開き、 **[すべてのメッセージ]** ログで `sandboxd` 違反を探します。
+4. @No__t_0 違反ごとに、他のファイルシステムの場所ではなくアプリコンテナーを使用して問題を解決するか、アプリサンドボックスの権利を適用して OS の制限された機能にアクセスできるようにします。
 5. すべての Xamarin. Mac アプリの機能を再実行して、もう一度テストします。
-6. すべて`sandboxd`の違反が解決されるまで繰り返します。
+6. すべての `sandboxd` 違反が解決されるまで繰り返します。
 
 ### <a name="add-privilege-separation-using-xpc"></a>XPC を使用して特権の分離を追加する
 

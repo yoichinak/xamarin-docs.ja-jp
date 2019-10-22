@@ -1,74 +1,78 @@
 ---
 title: Android プラットフォーム機能
-description: この記事では、Xamarin.Forms アプリケーションを Android 固有の機能を追加する方法について説明します。
+description: この記事では、Android 固有の機能を Xamarin Forms アプリケーションに追加する方法について説明します。
 ms.prod: xamarin
 ms.assetid: E24168F3-0138-4814-86EA-B467F6B8A545
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 01/07/2018
-ms.openlocfilehash: dc02fdc8754db4ae97c29ba2a496804b2263abdc
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.date: 09/24/2019
+ms.openlocfilehash: 73e838b3a63132230cf594a3461c9d7ee6f302b8
+ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65970727"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72696945"
 ---
 # <a name="android-platform-features"></a>Android プラットフォーム機能
 
-Android 用の Xamarin.Forms アプリケーションの開発には、Visual Studio が必要です。 [要件ページ](~/get-started/requirements.md)の前提条件の詳細が含まれています。
+Android 用の Xamarin. Forms アプリケーションを開発するには、Visual Studio が必要です。 [[要件] ページ](~/get-started/requirements.md)には、前提条件に関する詳細情報が表示されます。
 
-## <a name="platform-specifics"></a>プラットフォーム固有設定
+## <a name="platform-specifics"></a>プラットフォームの詳細
 
-プラットフォーム仕様はカスタム レンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ利用できる機能の使用を可能にします。
+プラットフォーム固有の機能を使用すると、カスタムレンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ使用できる機能を使用できます。
 
-Xamarin.Forms のビュー、ページ、および Android でのレイアウトを次のプラットフォーム固有の機能が提供されます。
+Android では、次のプラットフォーム固有の機能が Xamarin のビュー、ページ、およびレイアウト用に用意されています。
 
-- 描画の順番を決定するための視覚要素の Z オーダーの制御。 詳細については、次を参照してください。 [android VisualElement 昇格](visualelement-elevation.md)します。
-- サポートされている従来のカラー モードを無効にする[ `VisualElement`](xref:Xamarin.Forms.VisualElement)します。 詳細については、次を参照してください。 [android VisualElement レガシ カラー モード](legacy-color-mode.md)します。
+- 描画順序を決定するために、ビジュアル要素の Z オーダーを制御します。 詳細については、「 [Android での Visualelement の昇格](visualelement-elevation.md)」を参照してください。
+- サポートされている[`VisualElement`](xref:Xamarin.Forms.VisualElement)でレガシカラーモードを無効にする。 詳細については、「 [Android での Visualelement のレガシカラーモード](legacy-color-mode.md)」を参照してください。
 
-Android で Xamarin.Forms のビューでは、次のプラットフォームに固有の機能が提供されます。
+Android の Xamarin ビューでは、次のプラットフォーム固有の機能が用意されています。
 
-- 既定のパディングと Android のボタンの影の値を使用します。 詳細については、次を参照してください。[ボタンのパディングと Android でのシャドウ](button-padding-shadow.md)します。
-- 入力方式のソフト キーボードのエディター オプションの設定、 [ `Entry`](xref:Xamarin.Forms.Entry)します。 詳細については、次を参照してください。 [android エントリ入力方式エディター オプション](entry-ime-options.md)します。
-- ドロップ シャドウを有効にすると、`ImageButton`します。 詳細については、次を参照してください。 [android ImageButton ドロップ シャドウ](imagebutton-drop-shadow.md)します。
-- 高速のスクロールを有効にする、 [ `ListView` ](xref:Xamarin.Forms.ListView)詳細については、次を参照してください。 [Android で高速スクロールを ListView](listview-fast-scrolling.md)します。
-- 制御するかどうかを[ `WebView` ](xref:Xamarin.Forms.WebView)混合コンテンツを表示できます。 詳細については、次を参照してください。 [WebView 混合コンテンツ android](webview-mixed-content.md)します。
-- ズームを有効にすると、 [ `WebView`](xref:Xamarin.Forms.WebView)します。 詳細については、次を参照してください。 [android web ビューのズーム](webview-zoom-controls.md)します。
+- Android ボタンの既定の埋め込み値とシャドウ値を使用します。 詳細については、「 [Android でのボタンの余白と影](button-padding-shadow.md)」を参照してください。
+- [@No__t_1](xref:Xamarin.Forms.Entry)のソフトキーボードの Input Method Editor オプションを設定します。 詳細については、「 [Android の入力方式エディターオプション](entry-ime-options.md)」を参照してください。
+- @No__t_0 でのドロップシャドウの有効化。 詳細については、「 [Android での ImageButton ドロップシャドウ](imagebutton-drop-shadow.md)」を参照してください。
+- [@No__t_1](xref:Xamarin.Forms.ListView)での高速スクロールを有効にする詳細については、「 [ListView Fast スクロール (Android](listview-fast-scrolling.md))」を参照してください。
+- [@No__t_1](xref:Xamarin.Forms.WebView)が混合コンテンツを表示できるかどうかを制御します。 詳細については、「 [Android での WebView 混合コンテンツ](webview-mixed-content.md)」を参照してください。
+- [@No__t_1](xref:Xamarin.Forms.WebView)のズームを有効にする。 詳細については、「 [WebView Zoom On Android](webview-zoom-controls.md)」を参照してください。
 
-Android で Xamarin.Forms のページでは、次のプラットフォームに固有の機能が提供されます。
+Android 上の Xamarin. フォームセルには、次のプラットフォーム固有の機能が用意されています。
 
-- 上のナビゲーション バーの高さを設定、 [ `NavigationPage`](xref:Xamarin.Forms.NavigationPage)します。 詳細については、次を参照してください。 [android NavigationPage バーの高さ](navigationpage-bar-height.md)します。
-- 内のページ間を移動するときに、遷移アニメーションを無効にすると、 [ `TabbedPage`](xref:Xamarin.Forms.TabbedPage)します。 詳細については、次を参照してください。 [android TabbedPage ページ遷移アニメーション](tabbedpage-transition-animations.md)します。
-- [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)でのページ間のスワイプ操作の有効化。 詳細については、次を参照してください。 [TabbedPage ページは Android でスワイプ](tabbedpage-page-swiping.md)します。
-- ツールバーの配置と色を設定、 [ `TabbedPage`](xref:Xamarin.Forms.TabbedPage)します。 詳細については、次を参照してください。 [TabbedPage ツールバーの配置と Android での色](tabbedpage-toolbar-placement-color.md)します。
+- [@No__t_3](xref:Xamarin.Forms.ListView)内で選択された項目が変更されたときにコンテキストアクションメニューが更新されないように[`ViewCell`](xref:Xamarin.Forms.ViewCell)コンテキストアクションのレガシモードを有効にします。 詳細については、「 [Viewcell コンテキストアクション (Android](viewcell-context-actions.md))」を参照してください。
 
-Xamarin.Forms のプラットフォーム固有の次の機能が提供される[ `Application` ](xref:Xamarin.Forms.Application) Android 上のクラス。
+Android では、次のプラットフォーム固有の機能が Xamarin. Forms ページ用に用意されています。
 
-- ソフトキーボードの操作モードの設定。 詳細については、次を参照してください。 [Android でのソフト キーボードの入力モード](soft-keyboard-input-mode.md)します。
-- AppCompat を使用するアプリケーションに対し、一時停止や再開時に [`Disappearing`](xref:Xamarin.Forms.Page.Appearing)や[`Appearing`](xref:Xamarin.Forms.Page.Appearing) といったぺージのライフサイクルのイベントをそれぞれ無効化する。 詳細については、次を参照してください。 [Android でのページのライフ サイクル イベント](page-lifecycle-events.md)します。
+- [@No__t_1](xref:Xamarin.Forms.NavigationPage)のナビゲーションバーの高さを設定します。 詳細については、「 [Android での Navigationpage バーの高さ](navigationpage-bar-height.md)」を参照してください。
+- [@No__t_1](xref:Xamarin.Forms.TabbedPage)内のページ間を移動するときに切り替え効果アニメーションを無効にする。 詳細については、「 [Android での TabbedPage ページ切り替えアニメーション](tabbedpage-transition-animations.md)」を参照してください。
+- [@No__t_1](xref:Xamarin.Forms.TabbedPage)内のページ間をスワイプできるようにします。 詳細については、「 [TabbedPage Page スワイプ On Android](tabbedpage-page-swiping.md)」を参照してください。
+- [@No__t_1](xref:Xamarin.Forms.TabbedPage)上のツールバーの配置と色を設定します。 詳細については、「 [TabbedPage Toolbar Placement And Color On Android](tabbedpage-toolbar-placement-color.md)」を参照してください。
+
+Android 上の Xamarin. Forms [`Application`](xref:Xamarin.Forms.Application)クラスには、次のプラットフォーム固有の機能が用意されています。
+
+- ソフトキーボードの動作モードを設定します。 詳細については、「 [Android でのソフトキーボード入力モード](soft-keyboard-input-mode.md)」を参照してください。
+- AppCompat を使用するアプリケーションについて、 [`Disappearing`](xref:Xamarin.Forms.Page.Appearing)および[`Appearing`](xref:Xamarin.Forms.Page.Appearing)ページライフサイクルイベントをそれぞれ一時停止と再開で無効にする。 詳細については、「 [Android でのページライフサイクルイベント](page-lifecycle-events.md)」を参照してください。
 
 ## <a name="platform-support"></a>プラットフォームのサポート
 
-最初に、Xamarin.Forms の Android プロジェクトの既定では、Android 5.0 より前に共通したコントロールのレンダリングの以前のスタイルが使用されます。 テンプレートを使用して構築されたアプリケーションが`FormsApplicationActivity`メイン アクティビティの基本クラスとして。
+もともと、既定の Xamarin. Forms Android プロジェクトでは、Android 5.0 より前に共通だった従来のコントロールレンダリングが使用されていました。 テンプレートを使用してビルドされたアプリケーションは、メインアクティビティの基本クラスとして `FormsApplicationActivity` ます。
 
-## <a name="material-design-via-appcompat"></a>AppCompat 経由で素材のデザイン
+## <a name="material-design-via-appcompat"></a>AppCompat によるマテリアル設計
 
-Xamarin.Forms の Android プロジェクトに使用される`FormsAppCompatActivity`メイン アクティビティの基本クラスとして。 このクラスを使用して**AppCompat**マテリアル デザインのテーマを実装するために Android によって提供される機能です。
+Xamarin. Forms Android プロジェクトでは、メインアクティビティの基本クラスとして `FormsAppCompatActivity` が使用されるようになりました。 このクラスは、Android によって提供される**AppCompat**機能を使用して、マテリアルデザインテーマを実装します。
 
-Xamarin.Forms の Android プロジェクトには、マテリアル デザインのテーマを追加するには、次の[AppCompat のインストール手順についてのサポート](appcompat-material-design.md)
+マテリアルデザインのテーマを Xamarin. Forms Android プロジェクトに追加するには、 [AppCompat サポートのインストール手順](appcompat-material-design.md)に従ってください。
 
-ここでは、 **Todo** 、既定値は、サンプル`FormsApplicationActivity`:
+次に示すのは、既定の `FormsApplicationActivity` を使用した**Todo**サンプルです。
 
-[![](images/before-appcompat-sml.png "Todo サンプル アプリケーション AppCompat 使わず")](images/before-appcompat.png#lightbox "AppCompat なしの Todo サンプル アプリケーション")
+[![](images/before-appcompat-sml.png "Todo Sample Application Without AppCompat")](images/before-appcompat.png#lightbox "Todo Sample Application Without AppCompat")
 
-これは、使用するプロジェクトをアップグレードした後の同じコードと`FormsAppCompatActivity`(およびその他のテーマ情報を追加する)。
+これは、`FormsAppCompatActivity` を使用するためにプロジェクトをアップグレードした後のコードと同じです (追加のテーマ情報を追加します)。
 
-[![](images/post-appcompat-sml.png "AppCompat とテーマの Todo サンプル アプリケーション")](images/post-appcompat.png#lightbox "AppCompat とテーマの Todo サンプル アプリケーション")
+[![](images/post-appcompat-sml.png "Todo Sample Application With AppCompat and Theming")](images/post-appcompat.png#lightbox "Todo Sample Application With AppCompat and Theming")
 
 > [!NOTE]
-> 使用する場合`FormsAppCompatActivity`、[一部の Android カスタム レンダラー クラスの基本](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)異なるものになります。
+> @No__t_0 を使用する場合、[一部の Android カスタムレンダラーの基本クラス](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)は異なります。
 
 ## <a name="related-links"></a>関連リンク
 
-- [素材のデザインのサポートを追加します。](appcompat-material-design.md)
+- [マテリアルデザインサポートの追加](appcompat-material-design.md)

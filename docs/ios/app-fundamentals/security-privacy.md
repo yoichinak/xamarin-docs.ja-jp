@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
 ms.openlocfilehash: 7847148551c20dbcf49bcc263bdc50716a6ef14e
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70283172"
 ---
 # <a name="ios-security-and-privacy-features"></a>iOS のセキュリティとプライバシーの機能
@@ -27,7 +27,7 @@ Apple は、iOS 10 (およびそれ以降) のセキュリティとプライバ�
 IOS 10 のセキュリティとプライバシーには、次の一般的な変更が加えられています。
 
 - Common Data Security Architecture (CDSA) API は非推奨とされており、非対称キーを生成するには SecKey API で置き換える必要があります。
-- 新しい`NSAllowsArbitraryLoadsInWebContent`キーをアプリの**情報 plist**ファイルに追加すると、Apple Transport Security (ATS) 保護がアプリの残りの部分で有効になっている間も、web ページを正しく読み込むことができます。 詳細については、[アプリトランスポートのセキュリティ](~/ios/app-fundamentals/ats.md)に関するドキュメントを参照してください。
+- 新しい `NSAllowsArbitraryLoadsInWebContent` キーをアプリの**情報 plist**ファイルに追加すると、Apple Transport SECURITY (ATS) 保護がアプリの残りの部分で有効になっている間も web ページを正しく読み込むことができます。 詳細については、[アプリトランスポートのセキュリティ](~/ios/app-fundamentals/ats.md)に関するドキュメントを参照してください。
 - IOS 10 と macOS Sierra の新しいクリップボードを使用すると、デバイス間でコピーと貼り付けを行うことができます。そのため、特定のデバイスに対してクリップボードを制限し、特定の時点で自動的に消去されるようにタイムスタンプを設定できるように、API が拡張されています。 また、名前付き pasteboards は保持されなくなったため、共有のペーストボードコンテナーに置き換える必要があります。
 - すべての SSL/TLS 接続では、RC4 対称暗号が既定で無効になっています。 また、セキュリティで保護されたトランスポート API は SSLv3 をサポートしなくなりました。開発者は、できるだけ早く SHA-1 と3DES 暗号化の使用を停止することをお勧めします。
 
@@ -42,25 +42,25 @@ IOS 10 (またはそれ以降) で実行されているアプリでは、特定�
 
 次のプライバシー関連キーを使用できます。
 
-- **プライバシー-Apple Music 使用法の説明**(`NSAppleMusicUsageDescription`)-開発者は、アプリがユーザーのメディアライブラリにアクセスする理由を記述できます。
-- **プライバシー-Bluetooth 周辺機器の利用状況の説明**(`NSBluetoothPeripheralUsageDescription`)-開発者は、アプリがユーザーのデバイスで Bluetooth にアクセスする理由を記述できます。
-- **プライバシー-予定表の使用方法の説明**(`NSCalendarsUsageDescription`)-開発者は、アプリがユーザーの予定表にアクセスする理由を記述できます。
-- **プライバシー-カメラの使用方法の説明**(`NSCameraUsageDescription`)-開発者は、アプリがデバイスのカメラにアクセスする理由を記述できます。
-- **プライバシー-連絡先の使用方法の説明**(`NSContactsUsageDescription`)-開発者は、アプリがユーザーの連絡先にアクセスする理由を記述できます。
-- **プライバシー-正常性共有の使用状況の説明**(`NSHealthShareUsageDescription`)-開発者は、アプリがユーザーの正常性データにアクセスする理由を記述できます。 詳細については、Apple の[HKHealthStore クラスのリファレンス](https://developer.apple.com/reference/healthkit/hkhealthstore)を参照してください。
-- **プライバシー-ヘルス更新の利用状況の説明**(`NSHealthUpdateUsageDescription`)-開発者は、アプリがユーザーの正常性データを編集する理由を記述できます。 詳細については、Apple の[HKHealthStore クラスのリファレンス](https://developer.apple.com/reference/healthkit/hkhealthstore)を参照してください。
-- **プライバシー-ホームキットの利用状況の説明**(`NSHomeKitUsageDescription`)-開発者は、アプリがユーザーのホームキット構成データにアクセスする理由を記述できます。
-- **プライバシー-場所常に使用する説明**(`NSLocationAlwaysUsageDescription`)-開発者は、アプリが常にユーザーの場所にアクセスする必要がある理由を記述できます。
-- れ**プライバシー-場所の使用方法の説明**(`NSLocationUsageDescription`)-開発者は、アプリがユーザーの場所にアクセスする理由を記述できます。 *注: このキーは、iOS 8 以降では非推奨とされました。代わりに`NSLocationAlwaysUsageDescription` 、 `NSLocationWhenInUseUsageDescription`またはを使用してください。*
-- **プライバシー-使用中の使用状況の説明**(`NSLocationWhenInUseUsageDescription`)-開発者は、アプリケーションの実行中にユーザーの場所にアクセスする理由を記述できます。
-- れ**プライバシー-メディアライブラリの利用状況の説明**-開発者は、アプリがユーザーのメディアライブラリにアクセスする理由を記述できます。 *注: このキーは、iOS 8 以降では非推奨とされました。代わりに`NSAppleMusicUsageDescription`を使用してください。*
-- **プライバシー-マイクの使用方法の説明**(`NSMicrophoneUsageDescription`)-開発者は、アプリがデバイスのマイクにアクセスする理由を記述できます。
-- **プライバシー-モーションの使用方法の説明**(`NSMotionUsageDescription`)-開発者は、アプリがデバイスの加速度計にアクセスする理由を記述できます。
-- **プライバシー-フォトライブラリの使用方法の説明**(`NSPhotoLibraryUsageDescription`)-開発者は、アプリがユーザーの写真ライブラリにアクセスする理由を記述できます。
-- **プライバシー-リマインダーの使用方法の説明**(`NSRemindersUsageDescription`)-開発者は、アプリがユーザーの通知にアクセスする理由を記述できます。
-- **プライバシー-Siri の使用方法の説明**(`NSSiriUsageDescription`)-アプリケーションがユーザーデータを siri に送信する理由を開発者が記述できるようにします。
-- **プライバシー-音声認識の使用方法の説明**(`NSSpeechRecognitionUsageDescription`)-開発者は、アプリがユーザーデータを Apple の音声認識サーバーに送信する必要がある理由を記述できます。
-- **プライバシー-TV プロバイダーの利用状況の説明**(`NSVideoSubscriberAccountUsageDescription`)-開発者は、アプリがユーザーのテレビプロバイダーアカウントにアクセスする理由を記述できます。
+- **プライバシー-Apple Music 使用状況の説明**(`NSAppleMusicUsageDescription`)-開発者は、アプリがユーザーのメディアライブラリにアクセスする理由を記述できます。
+- **プライバシー-Bluetooth 周辺機器使用状況の説明**(`NSBluetoothPeripheralUsageDescription`)-アプリがユーザーのデバイスの Bluetooth にアクセスする理由を開発者が記述できるようにします。
+- **プライバシー-予定表の使用状況の説明**(`NSCalendarsUsageDescription`)-アプリがユーザーの予定表にアクセスする理由を開発者が記述できるようにします。
+- **プライバシー-カメラの使用状況の説明**(`NSCameraUsageDescription`)-アプリがデバイスのカメラにアクセスする理由を開発者が記述できるようにします。
+- **プライバシー-連絡先の使用状況の説明**(`NSContactsUsageDescription`)-アプリがユーザーの連絡先にアクセスする理由を開発者が記述できるようにします。
+- **プライバシー-正常性共有の使用状況の説明**(`NSHealthShareUsageDescription`)-アプリがユーザーの正常性データにアクセスする理由を開発者が記述できるようにします。 詳細については、Apple の[HKHealthStore クラスのリファレンス](https://developer.apple.com/reference/healthkit/hkhealthstore)を参照してください。
+- **プライバシー-正常性更新の使用状況の説明**(`NSHealthUpdateUsageDescription`)-開発者は、アプリがユーザーの正常性データを編集する理由を記述できます。 詳細については、Apple の[HKHealthStore クラスのリファレンス](https://developer.apple.com/reference/healthkit/hkhealthstore)を参照してください。
+- **プライバシー-ホームキットの使用法の説明**(`NSHomeKitUsageDescription`)-アプリがユーザーのホームキットの構成データにアクセスする理由を開発者が記述できるようにします。
+- **プライバシー-場所常に使用する説明**(`NSLocationAlwaysUsageDescription`)-アプリが常にユーザーの場所にアクセスする必要がある理由を開発者が記述できるようにします。
+- れ**プライバシー-場所の使用法の説明**(`NSLocationUsageDescription`)-アプリがユーザーの場所にアクセスする理由を開発者が記述できるようにします。 *注: このキーは、iOS 8 以降では非推奨となりました。代わりに、`NSLocationAlwaysUsageDescription` または `NSLocationWhenInUseUsageDescription` を使用してください。*
+- **プライバシー-使用時の使用状況の説明**(`NSLocationWhenInUseUsageDescription`)-開発者は、アプリの実行中にユーザーの場所にアクセスする理由を記述できます。
+- れ**プライバシー-メディアライブラリの利用状況の説明**-開発者は、アプリがユーザーのメディアライブラリにアクセスする理由を記述できます。 *注: このキーは、iOS 8 以降では非推奨となりました。代わりに `NSAppleMusicUsageDescription` を使用してください。*
+- **プライバシー-マイクの使用状況の説明**(`NSMicrophoneUsageDescription`)-アプリがデバイスのマイクにアクセスする理由を開発者が記述できるようにします。
+- **プライバシー-モーションの使用方法の説明**(`NSMotionUsageDescription`)-アプリがデバイスの加速度計にアクセスする理由を開発者が記述できるようにします。
+- **プライバシー-フォトライブラリの使用法の説明**(`NSPhotoLibraryUsageDescription`)-アプリがユーザーの写真ライブラリにアクセスする理由を開発者が記述できるようにします。
+- **プライバシー-リマインダーの使用状況の説明**(`NSRemindersUsageDescription`)-開発者は、アプリがユーザーの通知にアクセスする理由を記述できます。
+- **プライバシー-Siri 使用状況の説明**(`NSSiriUsageDescription`)-アプリがユーザーデータを siri に送信する理由を開発者が記述できるようにします。
+- **プライバシー-音声認識の使用状況の説明**(`NSSpeechRecognitionUsageDescription`)-アプリがユーザーデータを Apple の音声認識サーバーに送信する理由を開発者が記述できるようにします。
+- **プライバシー-Tv プロバイダーの利用状況の説明**(`NSVideoSubscriberAccountUsageDescription`)-アプリがユーザーのテレビプロバイダーアカウントにアクセスする理由を開発者が記述できるようにします。
 
 **Plist**キーの使用方法の詳細については、Apple の[Information プロパティリストキーのリファレンス](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Introduction/Introduction.html#//apple_ref/doc/uid/TP40009248-SW1)を参照してください。
 
@@ -68,7 +68,7 @@ IOS 10 (またはそれ以降) で実行されているアプリでは、特定�
 
 ## <a name="setting-privacy-keys"></a>プライバシーキーの設定
 
-次の例では、iOS 10 (以上) でホームキットにアクセスする場合、開発者は`NSHomeKitUsageDescription`キーをアプリの**情報 plist**ファイルに追加し、アプリがユーザーのホームキットデータベースにアクセスする理由を宣言する文字列を指定する必要があります。 この文字列は、アプリを初めて実行するときにユーザーに表示されます。
+次の例では、iOS 10 (以上) のホームキットにアクセスするために、開発者は `NSHomeKitUsageDescription` キーをアプリの**情報 plist**ファイルに追加し、アプリがユーザーのホームキットデータベースにアクセスする理由を宣言する文字列を指定する必要があります。 この文字列は、アプリを初めて実行するときにユーザーに表示されます。
 
 ![NSHomeKitUsageDescription アラートの例](security-privacy-images/info01.png "NSHomeKitUsageDescription アラートの例")
 
@@ -80,14 +80,14 @@ IOS 10 (またはそれ以降) で実行されているアプリでは、特定�
 2. プログラムの一覧から**汎用 PList エディター**を選択してファイルを開き、[ **OK]** をクリックします。
 
     ![汎用 PList エディターを選択します](security-privacy-images/InfoEditorSelectionVs.png "汎用 PList エディターを選択します")
-3. エディターの最後の行にある**ボタンをクリックして、一覧に新しいエントリを追加します。+** これは "カスタムプロパティ" と呼ばれ、型がに`String` 、空の値に設定されます。
+3. エディターの最後の行にある [ **+** ] ボタンをクリックして、一覧に新しいエントリを追加します。 これは "カスタムプロパティ" と呼ばれ、型が `String` に設定され、値が空になります。
 4. プロパティ名をクリックすると、ドロップダウンが表示されます。
 5. ドロップダウンリストから、プライバシーキー (**プライバシーホームキットの使用状況の説明**など) を選択します。 
 
-    ![プライバシーキーを選択し]てください(security-privacy-images/InfoPListEditorSelectKey.png "プライバシーキーを選択し")てください
+    ![プライバシーキーを選択してください](security-privacy-images/InfoPListEditorSelectKey.png "プライバシーキーを選択してください")
 6. 特定の機能またはユーザー情報にアプリがアクセスする理由の説明を 値列に入力してください。 
 
-    ![説明を入力してください](security-privacy-images/InfoPListSetValue.png "説明を入力してください")
+    ![説明を入力してください](security-privacy-images/InfoPListSetValue.png "説明の入力")
 7. 変更内容をファイルに保存します。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
@@ -99,16 +99,16 @@ IOS 10 (またはそれ以降) で実行されているアプリでは、特定�
 3. リストに新しい**エントリ**を追加します。
 4. ドロップダウンリストから、プライバシーキー (**プライバシーホームキットの使用状況の説明**など) を選択します。 
 
-    ![プライバシーキーを選択し]てください(security-privacy-images/info02.png "プライバシーキーを選択し")てください
+    ![プライバシーキーを選択してください](security-privacy-images/info02.png "プライバシーキーを選択してください")
 5. アプリが特定の機能またはユーザー情報にアクセスする理由の説明を入力します。 
 
-    ![説明を入力してください](security-privacy-images/info03.png "説明を入力してください")
+    ![説明を入力してください](security-privacy-images/info03.png "説明の入力")
 6. 変更内容をファイルに保存します。
 
 -----
 
 > [!IMPORTANT]
-> 上記の例では、 `NSHomeKitUsageDescription` **情報**ファイルにキーを設定しないと、iOS 10 (またはそれ以降) で実行したときに、アプリケーションが (実行時にシステムによって終了される) サイレントに_失敗_します。
+> 上記の例では、**情報 plist**ファイルで `NSHomeKitUsageDescription` キーを設定しなかった場合、iOS 10 (以上) で実行したときに、エラーが発生することなく (実行時にシステムによって終了される) アプリが_サイレントに失敗_することになります。
 
 <a name="Summary" />
 

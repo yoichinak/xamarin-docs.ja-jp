@@ -7,10 +7,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 02/28/2018
 ms.openlocfilehash: 982d5b81a22d6e69227081420a5947aed4d3aab1
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70755681"
 ---
 # <a name="accessibility-on-android"></a>Android でのユーザー補助機能
@@ -20,7 +20,7 @@ ms.locfileid: "70755681"
 
 ## <a name="describing-ui-elements"></a>UI 要素の記述
 
-Android には`ContentDescription` 、コントロールの目的についてのユーザー補助の説明を提供するために、画面読み取り api によって使用されるプロパティが用意されています。
+Android には `ContentDescription` プロパティが用意されています。このプロパティは、コントロールの目的についてのユーザー補助の説明を提供するために、画面読み取り Api で使用されます。
 
 コンテンツの説明は、AXML レイアウトC#ファイルのまたはで設定できます。
 
@@ -34,7 +34,7 @@ saveButton.ContentDescription = "Save data";
 
 **AXML レイアウト**
 
-XML レイアウトでは、 `android:contentDescription`属性を使用します。
+XML レイアウトでは、`android:contentDescription` 属性を使用します。
 
 ```xml
 <ImageButton
@@ -45,12 +45,12 @@ XML レイアウトでは、 `android:contentDescription`属性を使用しま�
 
 ### <a name="use-hint-for-textview"></a>TextView のヒントを使用する
 
-データ入力`TextView`用のおよびコントロールについて`EditText`は、 `ContentDescription`プロパティを使用して、必要な入力(ではなく)の説明を指定します。`Hint`
+データ入力の `EditText` および `TextView` コントロールについては、`Hint` プロパティを使用して、必要な入力 (`ContentDescription` ではなく) についての説明を入力します。
 テキストが入力されると、ヒントの代わりにテキスト自体が "読み取り" になります。
 
 **C#**
 
-次の`Hint`コードでプロパティを設定します。
+コードで `Hint` プロパティを設定します。
 
 ```csharp
 someText.Hint = "Enter some text"; // displays (and is "read") when control is empty
@@ -58,7 +58,7 @@ someText.Hint = "Enter some text"; // displays (and is "read") when control is e
 
 **AXML レイアウト**
 
-XML レイアウトファイルでは、 `android:hint`属性を使用します。
+XML レイアウトファイルでは、`android:hint` 属性を使用します。
 
 ```xml
 <EditText
@@ -68,11 +68,11 @@ XML レイアウトファイルでは、 `android:hint`属性を使用します�
 
 ### <a name="labelfor-links-input-fields-with-labels"></a>ラベルを含むリンクの入力フィールド
 
-データ入力コントロールにラベルを関連付けるには、プロパティを`LabelFor`使用します。
+データ入力コントロールにラベルを関連付けるには、`LabelFor` プロパティを使用します。
 
 **C#**
 
-でC#、 `LabelFor`プロパティを、このコンテンツが記述するコントロールのリソース ID に設定します (通常、このプロパティはラベルに設定され、他の入力コントロールを参照します)。
+でC#、[`LabelFor`] プロパティを、このコンテンツが記述するコントロールのリソース ID に設定します (通常、このプロパティはラベルに設定され、他の入力コントロールを参照します)。
 
 ```csharp
 EditText edit = FindViewById<EditText> (Resource.Id.editFirstName);
@@ -82,7 +82,7 @@ tv.LabelFor = Resource.Id.editFirstName;
 
 **AXML レイアウト**
 
-レイアウト XML では、 `android:labelFor`プロパティを使用して別のコントロールの識別子を参照します。
+レイアウト XML では、`android:labelFor` プロパティを使用して、別のコントロールの識別子を参照します。
 
 ```xml
 <TextView
@@ -96,9 +96,9 @@ tv.LabelFor = Resource.Id.editFirstName;
 
 ### <a name="announce-for-accessibility"></a>ユーザー補助のためのアナウンス
 
-ユーザー補助が有効になっている場合は、任意のビューコントロールに対してメソッドを使用して、イベントまたは状態の変更をユーザーに通知します。`AnnounceForAccessibility` この方法は、組み込みのナレーションによって十分なフィードバックが得られるが、ユーザーにとって追加情報が役に立つ場合に使用する必要があるほとんどの操作には必要ありません。
+ユーザー補助機能が有効になっている場合は、任意のビューコントロールの `AnnounceForAccessibility` メソッドを使用して、イベントまたは状態の変更をユーザーに通知します。 この方法は、組み込みのナレーションによって十分なフィードバックが得られるが、ユーザーにとって追加情報が役に立つ場合に使用する必要があるほとんどの操作には必要ありません。
 
-次のコードは、を呼び出す`AnnounceForAccessibility`簡単な例を示しています。
+次のコードは、`AnnounceForAccessibility` を呼び出す簡単な例を示しています。
 
 ```csharp
 button.Click += delegate {
@@ -109,11 +109,11 @@ button.Click += delegate {
 
 ## <a name="changing-focus-settings"></a>フォーカス設定の変更
 
-アクセス可能なナビゲーションは、使用可能な操作をユーザーが理解できるように、フォーカスを持つコントロールに依存します。 Android には`Focusable` 、ナビゲーション中にフォーカスを受け取ることができるように、コントロールにタグを付けることができるプロパティが用意されています。
+アクセス可能なナビゲーションは、使用可能な操作をユーザーが理解できるように、フォーカスを持つコントロールに依存します。 Android には `Focusable` プロパティが用意されており、ナビゲーション中にフォーカスを受け取ることができるように、コントロールにタグを付けることができます。
 
 **C#**
 
-コントロールがでフォーカスを得らC#れ`Focusable`ないようにするには、プロパティをに`false`設定します。
+コントロールがとのフォーカスを得らC#れないようにするには、`Focusable` プロパティを `false` に設定します。
 
 ```csharp
 label.Focusable = false;
@@ -121,13 +121,13 @@ label.Focusable = false;
 
 **AXML レイアウト**
 
-レイアウト XML ファイルで、次`android:focusable`の属性を設定します。
+レイアウト XML ファイルで、`android:focusable` 属性を設定します。
 
 ```xml
 <android:focusable="false" />
 ```
 
-`nextFocusDown`フォーカスの順序は`nextFocusLeft` `nextFocusUp` 、、、、の各属性を使用して制御することもできます。通常はレイアウト axml で設定します。 `nextFocusRight` これらの属性を使用して、ユーザーが画面上のコントロールを簡単に移動できるようにします。
+また、レイアウト AXML で通常設定される `nextFocusDown`、`nextFocusLeft`、`nextFocusRight`、`nextFocusUp` の属性を使用して、フォーカスの順序を制御することもできます。 これらの属性を使用して、ユーザーが画面上のコントロールを簡単に移動できるようにします。
 
 ## <a name="accessibility-and-localization"></a>アクセシビリティとローカライズ
 
@@ -145,16 +145,16 @@ label.Focusable = false;
 
 **C#**
 
-コードで文字列リテラルを使用する代わりに、次のようにして`Resources.GetText`文字列ファイルから翻訳された値を検索します。
+コードで文字列リテラルを使用する代わりに、`Resources.GetText` を使用して文字列ファイルから翻訳された値を参照します。
 
 ```csharp
 someText.Hint = Resources.GetText (Resource.String.enter_info);
 saveButton.ContentDescription = Resources.GetText (Resource.String.save_info);
 ```
 
-**AXML**
+**MAIN.AXML**
 
-では、および`hint` `contentDescription`のような XML アクセシビリティ属性を文字列識別子に設定できます。
+@No__t_0 や `contentDescription` などのレイアウト XML アクセシビリティ属性は、文字列識別子に設定できます。
 
 ```xml
 <TextView
@@ -177,4 +177,4 @@ Google Play からの[TalkBack](https://play.google.com/store/apps/details?id=co
 ## <a name="related-links"></a>関連リンク
 
 - [クロスプラットフォームのアクセシビリティ](~/cross-platform/app-fundamentals/accessibility.md)
-- [AndroidのアクセシビリティAPI](https://developer.android.com/guide/topics/ui/accessibility/index.html)
+- [Android アクセシビリティ Api](https://developer.android.com/guide/topics/ui/accessibility/index.html)

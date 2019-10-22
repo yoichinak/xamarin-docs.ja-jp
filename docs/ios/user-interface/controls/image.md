@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 07/13/2018
 ms.openlocfilehash: 255f308078c892605b9ce20b17fd737c5582eaed
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70768990"
 ---
 # <a name="displaying-images-with-xamarinios"></a>Xamarin を使用したイメージの表示
@@ -26,7 +26,7 @@ Visual Studio for Mac では、イメージファイルも格納できる**リ�
 
 このスクリーンショットは、ファイルが右クリックされたときに表示される**ビルドアクション**オプションを示しています。
 
- [![](image-images/image30a.png "ビルドアクションメニュー")](image-images/image30a.png#lightbox)
+ [![](image-images/image30a.png "Build Action menu")](image-images/image30a.png#lightbox)
 
 Visual Studio for Mac は通常、適切な**ビルドアクション**を自動的に選択しますが、プロジェクト内でファイルを移動する場合は特に、これらの設定に注意する必要があります。
 
@@ -34,15 +34,15 @@ Visual Studio for Mac は通常、適切な**ビルドアクション**を自動
 
 プロジェクトにイメージファイルを追加するには、まずプロジェクトを右クリックし、 **[ファイルの追加...]** を選択します。
 
- [![](image-images/image31a.png "ファイルの追加...メニュー")](image-images/image31a.png#lightbox)
+ [![](image-images/image31a.png "Add Files... menu")](image-images/image31a.png#lightbox)
 
 標準ファイルダイアログに含めるイメージ (またはイメージ) を選択します。 イメージの既定のビルドアクションは**BundleResource**になります。具体的な理由がない限り、この値をオーバーライドしないでください。
 
- [![](image-images/image32a.png "[ファイルの追加] ダイアログ")](image-images/image32a.png#lightbox)
+ [![](image-images/image32a.png "Add Files dialog")](image-images/image32a.png#lightbox)
 
 イメージがプロジェクトに追加され、コードで読み込んで表示できるようになります。 このスクリーンショットは、iOS アプリケーションプロジェクトに追加されたイメージを示しています。
 
- [![](image-images/image33a.png "プロジェクト内の画像")](image-images/image33a.png#lightbox)
+ [![](image-images/image33a.png "Image in project")](image-images/image33a.png#lightbox)
 
 ### <a name="what-is-the-resources-directory"></a>Resources ディレクトリとは何ですか。
 
@@ -59,11 +59,11 @@ Visual Studio for Mac は通常、適切な**ビルドアクション**を自動
 
 IOS デザイナーでイメージ**ビュー**を使用して、イメージまたはアニメーション化された一連のイメージを表示します。 ツールボックスの **[イメージビュー]** アイコンを次に示します。
 
- [![](image-images/image35a.png "ツールボックスの ImageView")](image-images/image35.png#lightbox)
+ [![](image-images/image35a.png "ImageView in Toolbox")](image-images/image35.png#lightbox)
 
 **[ツールボックス]** から**イメージビュー**をビューコントローラーにドラッグします。 次に、 **[イメージビュー > イメージ]** で、プロジェクト内の使用可能なすべてのイメージファイルの一覧がドロップダウンリストに表示されます。 これらのいずれかを選択して、イメージビューに追加します。
 
- [![](image-images/image36a.png "ツールボックスの ImageView")](image-images/image36.png#lightbox)
+ [![](image-images/image36a.png "ImageView in Toolbox")](image-images/image36.png#lightbox)
 
 ### <a name="displaying-the-image-programmatically"></a>プログラムによるイメージの表示
 

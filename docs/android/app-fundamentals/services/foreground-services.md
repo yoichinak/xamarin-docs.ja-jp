@@ -7,19 +7,19 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2018
 ms.openlocfilehash: 6f3427641ba4ace3b640fcc970fd33f55087a9c8
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "68644111"
 ---
 # <a name="foreground-services"></a>フォアグラウンド サービス
 
-フォアグラウンドサービスは、バインドされたサービスまたは開始されたサービスの特別な種類です。 場合によっては、ユーザーが積極的に認識する必要があるタスクを実行するサービスもあります。これらのサービスは、_フォアグラウンドサービス_と呼ばれています。 前景サービスの例としては、運転またはウォーキング中にユーザーに指示を与えるアプリがあります。 アプリがバックグラウンドで実行されている場合でも、正常に動作するのに十分なリソースがサービスにあること、およびユーザーがすばやく簡単にアプリにアクセスできるようにすることが重要です。 Android アプリの場合、フォアグラウンドサービスは "通常の" サービスより高い優先度を受け取る必要があります。また、サービスが`Notification`実行されている限り、android が表示するを提供する必要があります。
+フォアグラウンドサービスは、バインドされたサービスまたは開始されたサービスの特別な種類です。 場合によっては、ユーザーが積極的に認識する必要があるタスクを実行するサービスもあります。これらのサービスは、_フォアグラウンドサービス_と呼ばれています。 前景サービスの例としては、運転またはウォーキング中にユーザーに指示を与えるアプリがあります。 アプリがバックグラウンドで実行されている場合でも、正常に動作するのに十分なリソースがサービスにあること、およびユーザーがすばやく簡単にアプリにアクセスできるようにすることが重要です。 Android アプリの場合、フォアグラウンドサービスは "通常の" サービスより高い優先度を受け取る必要があります。また、フォアグラウンドサービスは、サービスが実行されている限り、Android で表示される `Notification` を提供する必要があります。
 
-フォアグラウンドサービスを開始するには、アプリが Android にサービスを開始するように指示するインテントをディスパッチする必要があります。 その後、サービスは Android でフォアグラウンドサービスとして登録する必要があります。 Android 8.0 (またはそれ以降) で実行されている`Context.StartForegroundService`アプリでは、メソッドを使用してサービスを開始する必要がありますが、以前のバージョンの Android を使用するデバイスで実行されているアプリでは、`Context.StartService`
+フォアグラウンドサービスを開始するには、アプリが Android にサービスを開始するように指示するインテントをディスパッチする必要があります。 その後、サービスは Android でフォアグラウンドサービスとして登録する必要があります。 Android 8.0 (またはそれ以降) で実行されているアプリでは、`Context.StartForegroundService` メソッドを使用してサービスを開始する必要がありますが、古いバージョンの Android を使用するデバイスで実行されているアプリではを使用する必要があり `Context.StartService`
 
-このC#拡張メソッドは、フォアグラウンドサービスを開始する方法の例です。 Android 8.0 以降では、 `StartForegroundService`メソッドが使用されます。それ以外の場合は、古い`StartService`メソッドが使用されます。
+このC#拡張メソッドは、フォアグラウンドサービスを開始する方法の例です。 Android 8.0 以降では、`StartForegroundService` メソッドが使用されます。それ以外の場合は、古い `StartService` メソッドが使用されます。
 
 ```csharp
 public static void StartForegroundServiceCompat<T>(this Context context, Bundle args = null) where T : Service
@@ -43,14 +43,14 @@ public static void StartForegroundServiceCompat<T>(this Context context, Bundle 
 
 ## <a name="registering-as-a-foreground-service"></a>フォアグラウンドサービスとして登録する
 
-フォアグラウンドサービスが開始されたら、を呼び出して、 [`StartForeground`](xref:Android.App.Service.StartForeground*)それ自体を Android に登録する必要があります。 サービスが`Service.StartForegroundService`メソッドで開始されていても、自身が登録されていない場合、Android はサービスを停止し、応答不能としてアプリにフラグを付けます。
+フォアグラウンドサービスが開始されたら、 [`StartForeground`](xref:Android.App.Service.StartForeground*)を呼び出すことによって、それ自体を Android に登録する必要があります。 サービスが `Service.StartForegroundService` メソッドで開始されていても、自身が登録されていない場合、Android はサービスを停止し、応答不能としてアプリにフラグを付けます。
 
-`StartForeground`2つのパラメーターが必要です。どちらも必須です。
+`StartForeground` は2つのパラメーターを受け取ります。どちらも必須です。
 
 - サービスを識別するためにアプリケーション内で一意である整数値。
-- サービスが実行されている限り、Android がステータスバーに表示するオブジェクト。`Notification`
+- サービスが実行されている間、Android がステータスバーに表示する `Notification` オブジェクト。
 
-Android では、サービスが実行されている間は、ステータスバーに通知が表示されます。 少なくとも通知は、サービスが実行されていることを示す視覚的な手掛かりを提供します。 理想的には、通知によって、アプリケーションへのショートカットがユーザーに提供されます。また、場合によっては、アプリケーションを制御するためのいくつかのアクションボタンも必要です この例としては、音楽&ndash;プレーヤーがあります。表示される通知には、音楽の一時停止/再生、前の曲への巻き戻し、または次の曲に進むためのボタンがあります。 
+Android では、サービスが実行されている間は、ステータスバーに通知が表示されます。 少なくとも通知は、サービスが実行されていることを示す視覚的な手掛かりを提供します。 理想的には、通知によって、アプリケーションへのショートカットがユーザーに提供されます。また、場合によっては、アプリケーションを制御するためのいくつかのアクションボタンも必要です この例としては、音楽プレーヤーがあります。表示される通知には、音楽の一時停止/再生、前の曲への巻き戻し、または次の曲への移動を行うためのボタンがある場合があり &ndash; ます。 
 
 次のコードスニペットは、サービスをフォアグラウンドサービスとして登録する例です。   
 
@@ -90,19 +90,19 @@ public override StartCommandResult OnStartCommand(Intent intent, StartCommandFla
 
 ## <a name="unregistering-as-a-foreground-service"></a>フォアグラウンドサービスとして登録解除しています
 
-サービスは、メソッド`StopForeground`を呼び出すことによって、そのサービス自体をフォアグラウンドサービスとして除外できます。 `StopForeground`はサービスを停止しませんが、通知アイコンを削除し、必要に応じてこのサービスをシャットダウンできることを Android に通知します。
+サービスは、`StopForeground` メソッドを呼び出すことによって、それ自体をフォアグラウンドサービスとして除外できます。 `StopForeground` はサービスを停止しませんが、通知アイコンを削除し、必要に応じてこのサービスをシャットダウンできることを Android に通知します。
 
-表示されるステータスバーの通知は、メソッドに渡す`true`ことによって削除することもできます。 
+表示されるステータスバーの通知は、メソッドに `true` を渡すことによって削除することもできます。 
 
 ```csharp
 StopForeground(true);
 ```
 
-`StopSelf`または`StopService`の呼び出しによってサービスが停止した場合、ステータスバーの通知は削除されます。
+@No__t_0 または `StopService` の呼び出しによってサービスが停止した場合、ステータスバーの通知は削除されます。
 
 ## <a name="related-links"></a>関連リンク
 
-- [Android.App.Service](xref:Android.App.Service)
+- [Android. App. サービス](xref:Android.App.Service)
 - [Android. Service. StartForeground](xref:Android.App.Service.StartForeground*)
 - [ローカル通知](~/android/app-fundamentals/notifications/local-notifications.md)
 - [ForegroundServiceDemo (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/applicationfundamentals-servicesamples-foregroundservicedemo)

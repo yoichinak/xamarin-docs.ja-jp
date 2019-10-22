@@ -9,10 +9,10 @@ author: maddyleger1
 ms.author: maleger
 ms.date: 02/04/2019
 ms.openlocfilehash: b287d523101bb8ca7faca8ea95ee898ccf9c0bb1
-ms.sourcegitcommit: e02b725e48af867eb2c53ac9e17805f778fbbc8c
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "68757267"
 ---
 # <a name="xaml-previewer-for-xamarinforms"></a>Xamarin. フォーム用の XAML プレビューアー
@@ -52,7 +52,7 @@ XAML ファイルを開くと、エディターは、[**ツール > オプショ
 
 **[プレビュー]** ボタンは、XAML ページを開いたときにエディターに表示されます。 任意の XAML ドキュメントウィンドウの左下にある **[プレビュー]** ボタンまたは **[分割]** ボタンを押して、プレビューアーを表示または非表示にします。
 
-[![プレビューまたは分割ボタンで有効になっている Xamarin. フォームプレビューアー](xaml-previewer-images/xamlp-list-sml.png)](xaml-previewer-images/xamlp-list.png#lightbox)
+[[プレビュー] ボタンまたは [分割] ボタンを使用して ![Xamarin フォームプレビューアーが有効になっている](xaml-previewer-images/xamlp-list-sml.png)](xaml-previewer-images/xamlp-list.png#lightbox)
 
 > [!NOTE]
 > 以前のバージョンの Visual Studio for Mac では、**プレビュー**ボタンはウィンドウの右上にありました。
@@ -64,7 +64,7 @@ XAML ファイルを開くと、エディターは、[**ツール > オプショ
 プレビューウィンドウの上部に表示されるオプションは次のとおりです。
 
 * **Android** –画面の android バージョンを表示する
-* **ios** –画面の ios バージョンを表示します *(注:Windows で Visual Studio を使用している場合、このモードを使用するには、[Mac とペアリング](~/ios/get-started/installation/windows/connecting-to-mac/index.md)しておく必要があります*)
+* **ios** –画面の ios バージョンを表示し*ます (注: Windows で Visual Studio を使用している場合、このモードを使用するには、 [Mac とペアリング](~/ios/get-started/installation/windows/connecting-to-mac/index.md)する必要があります)。*
 * **デバイス**-解像度と画面サイズを含む Android または iOS デバイスのドロップダウンリスト
 * **縦 (アイコン)** –プレビューで縦向きを使用します
 * **横 (アイコン)** –プレビューに横向きを使用します
@@ -95,10 +95,10 @@ if (!DesignMode.IsDesignModeEnabled)
 
 * プレビューアーが起動するまでに時間がかかることがあります。準備が整うまで、"レンダリングを初期化しています" と表示されます。
 * XAML ファイルを閉じてから再度開いてみてください。
-* `App`クラスにパラメーターなしのコンストラクターがあることを確認します。
+* @No__t_0 クラスにパラメーターなしのコンストラクターがあることを確認します。
 * Xamarin. Forms バージョンを確認します。これは少なくとも Xamarin. Forms 3.6 である必要があります。 NuGet を使用して最新の Xamarin. Forms バージョンに更新できます。
 * JDK のインストールを確認する-Android のプレビューには[jdk 8](https://www.oracle.com/technetwork/java/javase/downloads/index.html)以上が必要です。
-* C# で`if (!DesignMode.IsDesignModeEnabled)`、ページの分離コードに初期化されたクラスをラップしてみてください。
+* @No__t_1 で、ページのC#分離コードで初期化されたクラスをラップしてみてください。
 
 ### <a name="custom-controls-arent-rendering"></a>カスタムコントロールがレンダリングしない
 

@@ -7,10 +7,10 @@ author: profexorgeek
 ms.author: jusjohns
 ms.date: 06/07/2019
 ms.openlocfilehash: a4d0f5c5ceefcfe9a36a5fcf10c6fb4937c1db90
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "68739209"
 ---
 # <a name="azure-signalr-service-with-xamarinforms"></a>Azure SignalR Service と Xamarin. フォーム
@@ -52,7 +52,7 @@ Azure SignalR サービスの**キー**セクションには、作成された**
 
 サンプルアプリケーションをテストするには、Azure portal で新しい Azure Functions アプリを作成する必要があります。 この URL はサンプルアプリケーション**Constants.cs**ファイルで使用されるため、**アプリ名**をメモしておきます。 次のスクリーンショットは、"xdocsfunctions" という新しい Azure Functions アプリの作成を示しています。
 
-[![Azure Functions アプリの作成のスクリーンショット](azure-signalr-images/azure-functions-app-cropped.png)](azure-signalr-images/azure-functions-app-full.png#lightbox)
+[Azure Functions アプリ作成の ![Screenshot](azure-signalr-images/azure-functions-app-cropped.png)](azure-signalr-images/azure-functions-app-full.png#lightbox)
 
 Azure functions は、Visual Studio 2019 から Azure Functions アプリインスタンスにデプロイできます。 次のセクションでは、サンプルアプリケーションの2つの関数を Azure Functions アプリインスタンスに展開する方法について説明します。
 
@@ -60,7 +60,7 @@ Azure functions は、Visual Studio 2019 から Azure Functions アプリイン�
 
 サンプルアプリケーションには、**チャットサーバー**と呼ばれるクラスライブラリが含まれています。これには、 **Negotiate.cs**と**Talk.cs**という名前のファイルに2つのサーバーレス Azure Functions が含まれます。
 
-関数`Negotiate`は`AccessToken` 、プロパティと`Url`プロパティを含む`SignalRConnectionInfo`オブジェクトを使用して、web 要求に応答します。 モバイルアプリケーションは、これらの値を使用して自身を SignalR hub に登録します。 次のコードは、 `Negotiate`関数を示しています。
+@No__t_0 関数は、`AccessToken` プロパティと `Url` プロパティを含む `SignalRConnectionInfo` オブジェクトを使用して、web 要求に応答します。 モバイルアプリケーションは、これらの値を使用して自身を SignalR hub に登録します。 次のコードは、`Negotiate` 関数を示しています。
 
 ```csharp
 [FunctionName("Negotiate")]
@@ -74,7 +74,7 @@ public static SignalRConnectionInfo GetSignalRInfo(
 }
 ```
 
-関数`Talk`は、ポスト本文にメッセージオブジェクトを提供する HTTP POST 要求に応答します。 ポスト本文はに変換`SignalRMessage`され、SignalR hub に転送されます。 次のコードは、 `Talk`関数を示しています。
+@No__t_0 関数は、POST 本文にメッセージオブジェクトを提供する HTTP POST 要求に応答します。 ポスト本文は `SignalRMessage` に変換され、SignalR hub に転送されます。 次のコードは、`Talk` 関数を示しています。
 
 ```csharp
 [FunctionName("Talk")]
@@ -138,9 +138,9 @@ Azure Functions アプリインスタンスを選択すると、ターゲット 
 
 ## <a name="integrate-azure-signalr-service-with-xamarinforms"></a>Azure SignalR Service と Xamarin. Forms の統合
 
-Azure SignalR service と Xamarin. Forms アプリケーションの統合は、3つのイベントに割り当てられたイベント`MainPage`ハンドラーを使用してクラスでインスタンス化される SignalR サービスクラスです。 これらのイベントハンドラーの詳細については、「 [Xamarin. Forms での SignalR service クラスの使用](#use-the-signalr-service-class-in-xamarinforms)」を参照してください。
+Azure SignalR Service と SignalR アプリケーションの統合は、3つのイベントに割り当てられたイベントハンドラーを使用して `MainPage` クラスでインスタンス化されるサービスクラスです。 これらのイベントハンドラーの詳細については、「 [Xamarin. Forms での SignalR service クラスの使用](#use-the-signalr-service-class-in-xamarinforms)」を参照してください。
 
-サンプルアプリケーションには、Azure Functions アプリの URL エンドポイントでカスタマイズする必要がある**Constants.cs**クラスが含まれています。 `HostName`プロパティの値を Azure Functions アプリのアドレスに設定します。 次のコードは、 **Constants.cs**プロパティと値の`HostName`例を示しています。
+サンプルアプリケーションには、Azure Functions アプリの URL エンドポイントでカスタマイズする必要がある**Constants.cs**クラスが含まれています。 @No__t_0 プロパティの値を Azure Functions アプリのアドレスに設定します。 次のコードは、`HostName` 値の例を含む**Constants.cs**プロパティを示しています。
 
 ```csharp
 public static class Constants
@@ -162,13 +162,13 @@ public static class Constants
 ```
 
 > [!NOTE]
-> サンプル`Username`アプリケーションの**Constants.cs**ファイルのプロパティは、デバイスの`RuntimePlatform`値をユーザー名として使用します。 これにより、デバイスをクロスプラットフォームでテストし、どのデバイスがメッセージを送信しているかを識別しやすくなります。 実際のアプリケーションでは、この値は、サインアップまたはサインインプロセス中に収集される一意のユーザー名になる可能性があります。
+> サンプルアプリケーション**Constants.cs**ファイルの `Username` プロパティでは、デバイスの `RuntimePlatform` 値をユーザー名として使用します。 これにより、デバイスをクロスプラットフォームでテストし、どのデバイスがメッセージを送信しているかを識別しやすくなります。 実際のアプリケーションでは、この値は、サインアップまたはサインインプロセス中に収集される一意のユーザー名になる可能性があります。
 
 ### <a name="the-signalr-service-class"></a>SignalR service クラス
 
-サンプル`SignalRService`アプリケーションの**チャットクライアント**プロジェクトのクラスは、Azure Functions アプリ内の関数を呼び出して Azure SignalR サービスに接続する実装を示しています。
+サンプルアプリケーションの**チャットクライアント**プロジェクトの `SignalRService` クラスは、Azure SignalR サービスに接続するために Azure Functions アプリ内の関数を呼び出す実装を示しています。
 
-`SignalRService`クラスのメソッドは、Azure SignalR サービスに接続されているクライアントにメッセージを送信するために使用されます。 `SendMessageAsync` このメソッドは、JSON でシリアル化`Message`されたオブジェクトをポストペイロードとして含む、Azure Functions アプリでホストされている**トーク**関数に対して HTTP POST 要求を実行します。 **Talk**関数は、接続されているすべてのクライアントにブロードキャストするために、メッセージを Azure SignalR サービスに渡します。 `SendMessageAsync` メソッドのコードを次に示します。
+@No__t_1 クラスの `SendMessageAsync` メソッドは、Azure SignalR サービスに接続されているクライアントにメッセージを送信するために使用されます。 このメソッドは、Azure Functions アプリでホストされている**トーク**関数に対して HTTP post 要求を実行します。これには、JSON でシリアル化された `Message` オブジェクトがポストペイロードとして含まれます。 **Talk**関数は、接続されているすべてのクライアントにブロードキャストするために、メッセージを Azure SignalR サービスに渡します。 `SendMessageAsync` メソッドのコードを次に示します。
 
 ```csharp
 public async Task SendMessageAsync(string username, string message)
@@ -189,9 +189,9 @@ public async Task SendMessageAsync(string username, string message)
 }
 ```
 
-`SignalRService`クラス`ConnectAsync`のメソッドは、Azure Functions アプリでホストされている**Negotiate**関数に対して HTTP GET 要求を実行します。 **Negotiate**関数は、 `NegotiateInfo`クラスのインスタンスに逆シリアル化された JSON を返します。 オブジェクトが取得されると、 `HubConnection`クラスのインスタンスを使用して Azure SignalR サービスに直接登録するために使用されます。 `NegotiateInfo`
+@No__t_1 クラスの `ConnectAsync` メソッドは、Azure Functions アプリでホストされている**Negotiate**関数に対して HTTP GET 要求を実行します。 **Negotiate**関数は、`NegotiateInfo` クラスのインスタンスに逆シリアル化された JSON を返します。 @No__t_0 オブジェクトが取得されると、`HubConnection` クラスのインスタンスを使用して Azure SignalR サービスに直接登録するために使用されます。
 
-ASP.NET Core SignalR は、開いている接続から受信したデータをメッセージに変換し、開発者がメッセージの種類を定義し、イベントハンドラーを種類別に受信メッセージにバインドできるようにします。 メソッド`ConnectAsync`は、サンプルアプリケーションの**Constants.cs**ファイルで定義されているメッセージ名のイベントハンドラーを登録します。これは、既定では "newmessage" です。
+ASP.NET Core SignalR は、開いている接続から受信したデータをメッセージに変換し、開発者がメッセージの種類を定義し、イベントハンドラーを種類別に受信メッセージにバインドできるようにします。 @No__t_0 メソッドは、サンプルアプリケーションの**Constants.cs**ファイルで定義されているメッセージ名のイベントハンドラーを登録します。これは、既定では "newmessage" です。
 
 `ConnectAsync` メソッドのコードを次に示します。
 
@@ -226,7 +226,7 @@ public async Task ConnectAsync()
 }
 ```
 
-メソッドは、前のコードに示すように`ConnectAsync` 、メッセージのイベントハンドラーとしてバインドされます。 `AddNewMessage` メッセージを受信`AddNewMessage`すると、 `JObject`として提供されたメッセージデータを使用してメソッドが呼び出されます。 メソッド`AddNewMessage`は、を`JObject` `Message`クラスのインスタンスに変換し、バインドされている`NewMessageReceived`場合は、のハンドラーを呼び出します。 `AddNewMessage` メソッドのコードを次に示します。
+@No__t_0 メソッドは、前のコードに示すように、`ConnectAsync` メッセージのイベントハンドラーとしてバインドされます。 メッセージを受信すると、`JObject` として提供されたメッセージデータを使用して `AddNewMessage` メソッドが呼び出されます。 @No__t_0 メソッドは、`JObject` を `Message` クラスのインスタンスに変換し、バインドされている場合は `NewMessageReceived` のハンドラーを呼び出します。 `AddNewMessage` メソッドのコードを次に示します。
 
 ```csharp
 public void AddNewMessage(JObject message)
@@ -244,9 +244,9 @@ public void AddNewMessage(JObject message)
 
 ### <a name="use-the-signalr-service-class-in-xamarinforms"></a>SignalR のサービスクラスを使用する
 
-SignalR サービスクラスを Xamarin で使用することによって、クラス`SignalRService`のイベントを分離`MainPage`コードクラスにバインドすることができます。
+Xamarin で SignalR service クラスを使用すると、`MainPage` 分離コードクラスに `SignalRService` クラスのイベントをバインドすることによって実現できます。
 
-`SignalRService`クラスのイベントは、SignalR 接続が正常に完了したときに発生します。 `Connected` `SignalRService`クラスのイベントは、SignalR 接続が失敗したときに発生します。 `ConnectionFailed` イベントハンドラーメソッドは、 `MainPage`コンストラクター内の両方のイベントにバインドされます。 `SignalR_ConnectionChanged` このイベントハンドラーは、接続`success`引数に基づいて [接続] ボタンと [送信] ボタンの状態を更新し、 `AddMessage`メソッドを使用して、イベントによって提供されるメッセージをチャットキューに追加します。 次のコードは、 `SignalR_ConnectionChanged`イベントハンドラーメソッドを示しています。
+@No__t_1 クラスの `Connected` イベントは、SignalR 接続が正常に完了したときに発生します。 @No__t_1 クラスの `ConnectionFailed` イベントは、SignalR 接続が失敗したときに発生します。 @No__t_0 イベントハンドラーメソッドは、`MainPage` コンストラクター内の両方のイベントにバインドされます。 このイベントハンドラーは、接続 `success` 引数に基づいて [接続] ボタンと [送信] ボタンの状態を更新し、`AddMessage` メソッドを使用して、イベントによって提供されるメッセージをチャットキューに追加します。 次のコードは、`SignalR_ConnectionChanged` イベントハンドラーメソッドを示しています。
 
 ```csharp
 void SignalR_ConnectionChanged(object sender, bool success, string message)
@@ -259,7 +259,7 @@ void SignalR_ConnectionChanged(object sender, bool success, string message)
 }
 ```
 
-`SignalRService`クラスのイベントは、Azure SignalR サービスから新しいメッセージを受信したときに発生します。 `NewMessageReceived` イベントハンドラーメソッドは、 `MainPage`コンストラクター内の`NewMessageReceived`イベントにバインドされます。 `SignalR_NewMessageReceived` このイベントハンドラーは、受信`Message`したオブジェクトを文字列に変換し、 `AddMessage`メソッドを使用してそれをチャットキューに追加します。 次のコードは、 `SignalR_NewMessageReceived`イベントハンドラーメソッドを示しています。
+@No__t_1 クラスの `NewMessageReceived` イベントは、Azure SignalR サービスから新しいメッセージを受信したときに発生します。 @No__t_0 イベントハンドラーメソッドは、`MainPage` コンストラクターの `NewMessageReceived` イベントにバインドされています。 このイベントハンドラーは、受信 `Message` オブジェクトを文字列に変換し、`AddMessage` メソッドを使用してそれをチャットキューに追加します。 次のコードは、`SignalR_NewMessageReceived` イベントハンドラーメソッドを示しています。
 
 ```csharp
 void SignalR_NewMessageReceived(object sender, Model.Message message)
@@ -269,7 +269,7 @@ void SignalR_NewMessageReceived(object sender, Model.Message message)
 }
 ```
 
-メソッド`AddMessage`は、新しいメッセージを`Label`オブジェクトとしてチャットキューに追加します。 `AddMessage`メソッドは、メイン ui スレッドの外部からイベントハンドラーによって呼び出されることが多いため、メインスレッドで UI 更新が強制的に実行され、例外が発生しないようにします。 `AddMessage` メソッドのコードを次に示します。
+@No__t_0 メソッドは、新しいメッセージを `Label` オブジェクトとしてチャットキューに追加します。 @No__t_0 メソッドは、多くの場合、メイン UI スレッドの外部からイベントハンドラーによって呼び出されるため、例外を防ぐために、メインスレッドで UI 更新が強制的に実行されます。 `AddMessage` メソッドのコードを次に示します。
 
 ```csharp
 void AddMessage(string message)

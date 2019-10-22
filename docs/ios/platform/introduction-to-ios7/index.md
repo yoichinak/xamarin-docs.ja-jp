@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
 ms.openlocfilehash: d3a3c28e30e38562035b4d0c7c05366865157dd5
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70752061"
 ---
 # <a name="introduction-to-ios-7"></a>iOS 7 の概要
@@ -22,14 +22,14 @@ ios 7 は、iOS の主要な更新プログラムです。 アプリケーショ
 
 ## <a name="uiview-animation-enhancements"></a>UIView アニメーションの機能強化
 
-iOS 7 では、UIKit でのアニメーションのサポートが強化されており、以前にコアアニメーションフレームワークへの直接の削除が必要な処理をアプリケーションで実行できます。 たとえば、は`UIView` 、 `CAKeyframeAnimation`以前はに`CALayer`適用されていた、スプリングアニメーションおよびキーフレームアニメーションを実行できるようになりました。
+iOS 7 では、UIKit でのアニメーションのサポートが強化されており、以前にコアアニメーションフレームワークへの直接の削除が必要な処理をアプリケーションで実行できます。 たとえば、`UIView` は、以前は `CALayer` に適用された `CAKeyframeAnimation`、スプリングアニメーションとキーフレームアニメーションを実行できるようになりました。
 
 ### <a name="spring-animations"></a>Spring アニメーション
 
- `UIView`では、スプリング効果を使用してプロパティの変更をアニメーション化できるようになりました。 これを追加するには、 `AnimateNotify`次`AnimateNotifyAsync`に示すように、メソッドまたはメソッドのいずれかを呼び出して、spring の減衰率と最初の spring ベロシティの値を渡します。
+ `UIView` は、スプリング効果を使用してプロパティの変更をアニメーション化できるようになりました。 これを追加するには、次に示すように、`AnimateNotify` または `AnimateNotifyAsync` のいずれかのメソッドを呼び出して、spring の減衰率と最初の spring ベロシティの値を渡します。
 
-- `springWithDampingRatio`–0から1までの値。振幅の値は、小さい値になります。
-- `initialSpringVelocity`–1秒あたりのアニメーション距離の合計に対する割合で示す、最初の spring velocity。
+- `springWithDampingRatio` –0と1の間の値。この値を超えると、振幅が小さくなります。
+- `initialSpringVelocity` –1秒あたりのアニメーション距離の合計に対する割合で示す、最初の spring velocity。
 
 次のコードでは、イメージビューの中心が変化したときに spring effect が生成されます。
 
@@ -49,11 +49,11 @@ void AnimateWithSpring ()
 
 このばね効果は、次に示すように、イメージビューが新しい中心位置にアニメーションを完了すると、移動するように見えます。
 
- ![](images/spring-animation.png "このスプリング効果は、新しい中心位置にアニメーションが完了すると、イメージビューがバウンスされるようになります。")
+ ![](images/spring-animation.png "This spring effect causes the image view to appear to bounce as it completes its animation to a new center location")
 
 ### <a name="keyframe-animations"></a>キーフレームアニメーション
 
-クラス`UIView`には、 `UIView`に`AnimateWithKeyframes`キーフレームアニメーションを作成するメソッドが含まれるようになりました。 このメソッドは、他の`UIView`アニメーションメソッドと似ています`NSAction`が、追加のがパラメーターとして渡され、キーフレームが含まれる点が異なります。 内では`UIView.AddKeyframeWithRelativeStartTime` 、キーフレームはを呼び出すことによって追加`NSAction`されます。
+@No__t_0 クラスに、`UIView` でキーフレームアニメーションを作成するための `AnimateWithKeyframes` メソッドが含まれるようになりました。 このメソッドは、他の `UIView` アニメーションメソッドと似ていますが、キーフレームを含む追加の `NSAction` がパラメーターとして渡される点が異なります。 @No__t_0 内では、`UIView.AddKeyframeWithRelativeStartTime` を呼び出すことによってキーフレームが追加されます。
 
 たとえば、次のコードスニペットは、ビューの中心をアニメーション化し、ビューを回転するためのキーフレームアニメーションを作成します。
 
@@ -82,26 +82,26 @@ void AnimateViewWithKeyframes ()
 }
 ```
 
-メソッドの`AddKeyframeWithRelativeStartTime`最初の2つのパラメーターは、キーフレームの開始時刻と期間をそれぞれ、アニメーションの全体の長さに対する割合として指定します。 上の例では、最初の1秒間に新しい中心をアニメーション化した後、次の1秒間に90度回転したイメージビューが生成されます。 アニメーションではオプション`UIViewKeyframeAnimationOptions.Autoreverse`としてが指定されているため、両方のキーフレームが逆にアニメーション化されます。 最後に、最終的な値は、完了ハンドラーの初期状態に設定されます。
+@No__t_0 メソッドの最初の2つのパラメーターでは、キーフレームの開始時刻と期間をそれぞれ、アニメーションの全体の長さに対する割合として指定します。 上の例では、最初の1秒間に新しい中心をアニメーション化した後、次の1秒間に90度回転したイメージビューが生成されます。 アニメーションでは `UIViewKeyframeAnimationOptions.Autoreverse` がオプションとして指定されているため、両方のキーフレームが逆にアニメーション化されます。 最後に、最終的な値は、完了ハンドラーの初期状態に設定されます。
 
 次のスクリーンショットは、キーフレームを使用したアニメーションの結合を示しています。
 
- ![](images/keyframes.png "このスクリーンショットは、キーフレームを使用したアニメーションの結合を示しています。")
+ ![](images/keyframes.png "This screenshots illustrates the combined animation through the keyframes")
 
 ## <a name="uikit-dynamics"></a>UIKit Dynamics
 
 UIKit Dynamics は、アプリケーションが物理に基づいてアニメーション化された対話を作成できるようにする、UIKit の新しい Api のセットです。 UIKit Dynamics は、これを可能にするために2D 物理エンジンをカプセル化します。
 
-API は本質的に宣言されています。 オブジェクトと呼ばれる*動作*を作成して、物理的な相互作用がどのように動作するかを宣言します。これは、重力、コリジョン、スプリングなどの物理概念を表します。次に、ビューをカプセル化する*動的アニメーター*と呼ばれる別のオブジェクトに動作をアタッチします。 動的なアニメーターは、宣言された物理動作を、などの*動的項目*( `IUIDynamicItem`を`UIView`実装する項目) に適用することを考慮します。
+API は本質的に宣言されています。 オブジェクトと呼ばれる*動作*を作成して、物理的な相互作用がどのように動作するかを宣言します。これは、重力、コリジョン、スプリングなどの物理概念を表します。次に、ビューをカプセル化する*動的アニメーター*と呼ばれる別のオブジェクトに動作をアタッチします。 動的なアニメーターは、宣言された物理動作を*動的な項目*(`UIView` などの `IUIDynamicItem` を実装する項目) に適用することを考慮します。
 
 複雑な相互作用をトリガーするには、次のようなさまざまなプリミティブ動作があります。
 
-- `UIAttachmentBehavior`–2つの動的項目が一緒に移動するように、または動的な項目を添付ファイルポイントにアタッチするようにアタッチします。
-- `UICollisionBehavior`–動的な項目が競合に参加できるようにします。
-- `UIDynamicItemBehavior`–弾力性、密度、摩擦など、動的な項目に適用するプロパティの一般的なセットを指定します。
+- `UIAttachmentBehavior` –2つの動的項目が一緒に移動するように、または動的な項目を添付ファイルポイントにアタッチします。
+- `UICollisionBehavior` –動的な項目が競合に参加できるようにします。
+- `UIDynamicItemBehavior` –弾力性、密度、摩擦などの動的な項目に適用するプロパティの一般的なセットを指定します。
 - `UIGravityBehavior`-動的な項目に重力を適用し、gravitational 方向に項目を加速させます。
-- `UIPushBehavior`–動的な項目に強制的に適用されます。
-- `UISnapBehavior`–動的な項目を spring 効果を持つ位置にスナップできるようにします。
+- `UIPushBehavior` –動的な項目に強制的に適用されます。
+- `UISnapBehavior` –動的な項目を spring 効果を持つ位置にスナップできるようにします。
 
 多くのプリミティブがありますが、UIKit Dynamics を使用して、ビューに物理的に基づく相互作用を追加する一般的なプロセスは、動作間で一貫しています。
 
@@ -111,13 +111,13 @@ API は本質的に宣言されています。 オブジェクトと呼ばれる
 
 ### <a name="dynamics-example"></a>Dynamics の例
 
-に重心と衝突境界を追加する例を見てみましょう`UIView`。
+@No__t_0 に重心とコリジョン境界を追加する例を見てみましょう。
 
 #### <a name="uigravitybehavior"></a>UIGravityBehavior
 
 画像ビューに重力を追加すると、上記の3つの手順に従います。
 
-この例では、 `ViewDidLoad`メソッドを使用します。 まず、インスタンスを`UIImageView`次のように追加します。
+この例では、`ViewDidLoad` メソッドで作業します。 まず、次のように `UIImageView` インスタンスを追加します。
 
 ```csharp
 image = UIImage.FromFile ("monkeys.jpg");
@@ -129,21 +129,21 @@ imageView = new UIImageView (new CGRect (new CGPoint (View.Center.X - image.Size
 View.AddSubview (imageView);
 ```
 
-これにより、画面の上端に中央揃えでイメージビューが作成されます。 画像が重力で "フォール" されるようにするには`UIDynamicAnimator`、のインスタンスを作成します。
+これにより、画面の上端に中央揃えでイメージビューが作成されます。 画像が重力で "フォール" されるようにするには、`UIDynamicAnimator` のインスタンスを作成します。
 
 ```csharp
 dynAnimator = new UIDynamicAnimator (this.View);
 ```
 
-は`UIDynamicAnimator` 、参照`UIView`また`UICollectionViewLayout`はのインスタンスを受け取ります。これには、添付された動作ごとにアニメーション化される項目が含まれています。
+@No__t_0 は、参照 `UIView` または `UICollectionViewLayout` のインスタンスを受け取ります。このインスタンスには、添付された動作ごとにアニメーション化される項目が含まれています。
 
-次に、インスタンス`UIGravityBehavior`を作成します。 次の`IUIDynamicItem` `UIView`ように、を実装する1つ以上のオブジェクトを渡すことができます。
+次に、`UIGravityBehavior` インスタンスを作成します。 @No__t_1 のように、`IUIDynamicItem` を実装する1つ以上のオブジェクトを渡すことができます。
 
 ```csharp
 var gravity = new UIGravityBehavior (dynItems);
 ```
 
-動作はの`IUIDynamicItem`配列に渡されます。この例では、アニメーション`UIImageView`化する1つのインスタンスが含まれています。
+動作には `IUIDynamicItem` の配列が渡されます。この例では、アニメーション化する単一の `UIImageView` インスタンスが含まれています。
 
 最後に、動的なアニメーターに動作を追加します。
 
@@ -153,16 +153,16 @@ dynAnimator.AddBehavior (gravity);
 
 次に示すように、この結果、画像は重力で下にアニメーション化されます。
 
-![](images/gravity2.png "イメージの終了位置の開始イメージの場所")
-![](images/gravity3.png "")
+![](images/gravity2.png "The starting image location")
+![](images/gravity3.png "The ending image location")
 
-画面の境界が制限されていないため、イメージビューは単に一番下にありません。 画像が画面の端と競合するようにビューを制限するには、を`UICollisionBehavior`追加します。 これについては、次のセクションで説明します。
+画面の境界が制限されていないため、イメージビューは単に一番下にありません。 画像が画面の端と競合するようにビューを制限するには、`UICollisionBehavior` を追加します。 これについては、次のセクションで説明します。
 
 #### <a name="uicollisionbehavior"></a>UICollisionBehavior
 
-まずを作成`UICollisionBehavior`し、動的なアニメーターに追加します。これは、 `UIGravityBehavior`の場合と同様です。
+まず、`UICollisionBehavior` を作成し、それを動的なアニメーターに追加します。 `UIGravityBehavior` の場合と同様です。
 
-を含める`UICollisionBehavior`ようにコードを変更します。
+@No__t_0 を含めるようにコードを変更します。
 
 ```csharp
 using (image = UIImage.FromFile ("monkeys.jpg")) {
@@ -187,7 +187,7 @@ using (image = UIImage.FromFile ("monkeys.jpg")) {
 }
 ```
 
-に`UICollisionBehavior`は、という`TranslatesReferenceBoundsIntoBoundry`プロパティがあります。 これをに`true`設定すると、参照ビューの境界が衝突境界として使用されます。
+@No__t_0 には `TranslatesReferenceBoundsIntoBoundry` というプロパティがあります。 これを `true` に設定すると、参照ビューの境界が衝突境界として使用されます。
 
 これで、画像が重力で下にアニメーション化されたときに、残りの部分になる前に画面の下部から少し離れています。
 
@@ -197,9 +197,9 @@ using (image = UIImage.FromFile ("monkeys.jpg")) {
 
 #### <a name="uidynamicitembehavior"></a>UIDynamicItemBehavior
 
-その他の動作によって、イメージの表示ビューの動作をさらに制御できます。 たとえば、を`UIDynamicItemBehavior`追加して弾力性を高めることができます。これにより、画面の下部との競合が発生したときに、イメージビューのバウンスが増加します。
+その他の動作によって、イメージの表示ビューの動作をさらに制御できます。 たとえば、`UIDynamicItemBehavior` を追加して弾力性を高めることができます。これにより、画面の下部との競合が発生したときに、イメージビューのバウンスが増加します。
 
-を追加`UIDynamicItemBehavior`すると、他の動作と同じ手順に従います。 最初に動作を作成します。
+@No__t_0 の追加は、他の動作と同じ手順に従います。 最初に動作を作成します。
 
 ```csharp
 var dynBehavior = new UIDynamicItemBehavior (dynItems) {

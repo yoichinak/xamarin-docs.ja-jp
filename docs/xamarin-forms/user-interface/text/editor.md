@@ -1,35 +1,35 @@
 ---
-title: Xamarin.Forms のエディター
-description: この記事では、Xamarin.Forms エディター コントロールを使用して、アプリケーションで複数行テキスト入力をそのまま使用する方法について説明します。
+title: Xamarin. フォームエディター
+description: この記事では、Xamarin Editor コントロールを使用して、アプリケーションでの複数行テキスト入力を受け入れる方法について説明します。
 ms.prod: xamarin
 ms.assetid: 7074DB3A-30D2-4A6B-9A89-B029EEF20B07
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 02/26/2018
-ms.openlocfilehash: 684bdb21309028e02362dcc6bfd8c91c539430bd
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.date: 09/26/2019
+ms.openlocfilehash: 0c610d7bdecc5d3454079be38c7e6ede5f0596e1
+ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770182"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72696802"
 ---
-# <a name="xamarinforms-editor"></a>Xamarin.Forms のエディター
+# <a name="xamarinforms-editor"></a>Xamarin. フォームエディター
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
 _複数行テキスト入力_
 
-[ `Editor` ](xref:Xamarin.Forms.Editor)コントロールを使用すると、複数行の入力をそのまま使用します。 この記事では次の内容について説明します。
+[@No__t_1](xref:Xamarin.Forms.Editor)コントロールは、複数行の入力を受け入れるために使用されます。 この記事では次の内容について説明します。
 
-- **[カスタマイズ](#customization)** &ndash;キーボードと色のオプション。
-- **[対話機能](#interactivity)** &ndash;対話機能を提供する待機可能イベント。
+- **[カスタマイズ](#customization)** &ndash; キーボードと色のオプション。
+- **[インタラクティビティ &ndash; 対話](#interactivity)** 機能を提供するためにをリッスンできるイベントです。
 
 ## <a name="customization"></a>カスタマイズ
 
-### <a name="setting-and-reading-text"></a>設定やテキストの読み取り
+### <a name="setting-and-reading-text"></a>設定とテキストの読み取り
 
-[ `Editor`](xref:Xamarin.Forms.Editor)などの他のテキストを表すビューを公開、`Text`プロパティ。 このプロパティは、設定し、によって提示されるテキストの読み取りに使用できます、`Editor`します。 次の例では、設定、 `Text` XAML のプロパティ。
+[@No__t_1](xref:Xamarin.Forms.Editor)は、他のテキスト表示ビューと同様に、`Text` プロパティを公開します。 このプロパティを使用して、`Editor` によって表示されるテキストを設定および読み取ることができます。 次の例は、XAML で `Text` プロパティを設定する方法を示しています。
 
 ```xaml
 <Editor Text="I am an Editor" />
@@ -41,15 +41,15 @@ C# の場合:
 var MyEditor = new Editor { Text = "I am an Editor" };
 ```
 
-テキストを読み取るには、アクセス、`Text`プロパティ (C#)。
+テキストを読み取るには、のC#`Text` プロパティにアクセスします。
 
 ```csharp
 var text = MyEditor.Text;
 ```
 
-### <a name="setting-placeholder-text"></a>プレース ホルダー テキストを設定
+### <a name="setting-placeholder-text"></a>プレースホルダーテキストの設定
 
-[ `Editor` ](xref:Xamarin.Forms.Editor)プレース ホルダー テキストを表示するユーザー入力を格納するがない場合に設定することができます。 これは、設定によって実現されます、 [ `Placeholder` ](xref:Xamarin.Forms.Editor.Placeholder)プロパティを`string`は適切なコンテンツの種類を示すためによく使用して、 `Editor`。 さらに、プレース ホルダー テキストの色を設定して制御できます、 [ `PlaceholderColor` ](xref:Xamarin.Forms.Editor.PlaceholderColor)プロパティを[ `Color` ](xref:Xamarin.Forms.Color):
+[@No__t_1](xref:Xamarin.Forms.Editor)は、ユーザー入力を格納していない場合にプレースホルダーテキストを表示するように設定できます。 これを実現するには、 [`Placeholder`](xref:Xamarin.Forms.Editor.Placeholder)プロパティを `string` に設定します。これは、多くの場合、`Editor` に適したコンテンツの種類を示すために使用されます。 また、 [`PlaceholderColor`](xref:Xamarin.Forms.Editor.PlaceholderColor)プロパティを[`Color`](xref:Xamarin.Forms.Color)に設定して、プレースホルダーテキストの色を制御できます。
 
 ```xaml
 <Editor Placeholder="Enter text here" PlaceholderColor="Olive" />
@@ -61,7 +61,7 @@ var editor = new Editor { Placeholder = "Enter text here", PlaceholderColor = Co
 
 ### <a name="preventing-text-entry"></a>テキスト入力の防止
 
-の[`Editor`](xref:Xamarin.Forms.Editor)既定値である`IsReadOnly`プロパティを次の`false`ように設定することによって、のテキストを変更でき`true`ないようにすることができます。
+ユーザーは、既定値 `false` を持つ `IsReadOnly` プロパティを `true` に設定することによって、 [`Editor`](xref:Xamarin.Forms.Editor)のテキストを変更できないようにすることができます。
 
 ```xaml
 <Editor Text="This is a read-only Editor"
@@ -73,11 +73,11 @@ var editor = new Editor { Text = "This is a read-only Editor", IsReadOnly = true
 ```
 
 > [!NOTE]
-> プロパティは、の視覚的な外観を灰色`Editor`に[`Editor`](xref:Xamarin.Forms.Editor)変更する`IsEnabled`プロパティとは異なり、の外観を変更しません。 `IsReadonly`
+> @No__t_0 プロパティは、`Editor` の視覚的な外観を灰色に変更する `IsEnabled` プロパティとは異なり、 [`Editor`](xref:Xamarin.Forms.Editor)の外観を変更しません。
 
-### <a name="limiting-input-length"></a>入力の長さの制限
+### <a name="limiting-input-length"></a>制限 (入力の長さを)
 
-[ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength)で使用できるように入力文字列の長さを制限するプロパティを使用できます、 [ `Editor`](xref:Xamarin.Forms.Editor)します。 このプロパティは、正の整数に設定する必要があります。
+[@No__t_1](xref:Xamarin.Forms.InputView.MaxLength)プロパティを使用して、 [`Editor`](xref:Xamarin.Forms.Editor)に許可されている入力の長さを制限できます。 このプロパティは、正の整数に設定する必要があります。
 
 ```xaml
 <Editor ... MaxLength="10" />
@@ -87,16 +87,36 @@ var editor = new Editor { Text = "This is a read-only Editor", IsReadOnly = true
 var editor = new Editor { ... MaxLength = 10 };
 ```
 
-A [ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength)プロパティ値が 0 のでは、ある入力は許可されません、ことを示しますの値と`int.MaxValue`の既定値は、 [ `Editor` ](xref:Xamarin.Forms.Editor)、ことを示しますなし有効な入力可能性がありますの文字数制限。
+[@No__t_1](xref:Xamarin.Forms.InputView.MaxLength)のプロパティ値が0の場合は、入力が許可されないことを示し、 [`Editor`](xref:Xamarin.Forms.Editor)の既定値である `int.MaxValue` の値は、入力できる文字数に有効な制限がないことを示します。
 
-### <a name="auto-sizing-an-editor"></a>エディターを自動サイズ調整
+### <a name="character-spacing"></a>文字間隔
 
-[ `Editor` ](xref:Xamarin.Forms.Editor)を設定してそのコンテンツへの自動-サイズに行んだことができます、 [ `Editor.AutoSize` ](xref:Xamarin.Forms.Editor.AutoSize)プロパティを[ `TextChanges` ](xref:Xamarin.Forms.EditorAutoSizeOption.TextChanges)、これは、値、の[ `EditoAutoSizeOption` ](xref:Xamarin.Forms.EditorAutoSizeOption)列挙体。 この列挙体では、2 つの値があります。
+@No__t_2 プロパティを `double` 値に設定することによって、文字間隔を[`Editor`](xref:Xamarin.Forms.Editor)に適用できます。
 
-- [`Disabled`](xref:Xamarin.Forms.EditorAutoSizeOption.Disabled) 自動サイズ変更を無効にし、既定値を示します。
-- [`TextChanges`](xref:Xamarin.Forms.EditorAutoSizeOption.TextChanges) 自動サイズ変更が有効になっていることを示します。
+```xaml
+<Editor ...
+        CharacterSpacing="10" />
+```
 
-これは、ことができますように実行コードで。
+これに相当する C# コードを次に示します。
+
+```csharp
+Editor editor = new editor { CharacterSpacing = 10 };
+```
+
+結果として、 [`Editor`](xref:Xamarin.Forms.Editor)によって表示されるテキスト内の文字は、デバイスに依存しない単位 `CharacterSpacing` 間隔が区別されます。
+
+> [!NOTE]
+> @No__t_0 プロパティの値は、`Text` プロパティと `Placeholder` プロパティによって表示されるテキストに適用されます。
+
+### <a name="auto-sizing-an-editor"></a>エディターの自動サイズ変更
+
+[@No__t_3](xref:Xamarin.Forms.Editor.AutoSize)プロパティを[`TextChanges`](xref:Xamarin.Forms.EditorAutoSizeOption.TextChanges)に設定することにより、コンテンツへの自動サイズ変更を行う[`Editor`](xref:Xamarin.Forms.Editor)できます。これは、 [`EditoAutoSizeOption`](xref:Xamarin.Forms.EditorAutoSizeOption)列挙体の値です。 この列挙体には、次の2つの値があります。
+
+- [`Disabled`](xref:Xamarin.Forms.EditorAutoSizeOption.Disabled)は、自動サイズ変更が無効になっていることを示します。これは既定値です。
+- [`TextChanges`](xref:Xamarin.Forms.EditorAutoSizeOption.TextChanges)は、自動サイズ変更が有効になっていることを示します。
+
+これは、次のようにコードで行うことができます。
 
 ```xaml
 <Editor Text="Enter text here" AutoSize="TextChanges" />
@@ -106,50 +126,50 @@ A [ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength)プロパティ値が 0
 var editor = new Editor { Text = "Enter text here", AutoSize = EditorAutoSizeOption.TextChanges };
 ```
 
-自動サイズ変更を有効にするの高さ、 [ `Editor` ](xref:Xamarin.Forms.Editor)テキストで、ユーザーの入力し、ユーザーは、テキストを削除します。 高さは減らすが増加します。
+自動サイズ変更を有効にすると、ユーザーがテキストを入力したときに[`Editor`](xref:Xamarin.Forms.Editor)の高さが増加し、ユーザーがテキストを削除すると高さが減少します。
 
 > [!NOTE]
-> [ `Editor` ](xref:Xamarin.Forms.Editor)は場合に自動-サイズではなく、 [ `HeightRequest` ](xref:Xamarin.Forms.VisualElement.HeightRequest)プロパティが設定されています。
+> [@No__t_3](xref:Xamarin.Forms.VisualElement.HeightRequest)プロパティが設定されている場合、 [`Editor`](xref:Xamarin.Forms.Editor)は自動サイズ変更されません。
 
 ### <a name="customizing-the-keyboard"></a>キーボードのカスタマイズ
 
-ユーザーが対話する際に表示されるキーボード、 [ `Editor` ](xref:Xamarin.Forms.Editor)経由でプログラムによって設定できる、 [ `Keyboard` ](xref:Xamarin.Forms.InputView.Keyboard) から次のプロパティのいずれかのプロパティ[ `Keyboard` ](xref:Xamarin.Forms.Keyboard)クラス。
+ユーザーが[`Editor`](xref:Xamarin.Forms.Editor)と対話するときに表示されるキーボードは、 [`Keyboard`](xref:Xamarin.Forms.InputView.Keyboard)プロパティを使用して、 [`Keyboard`](xref:Xamarin.Forms.Keyboard)クラスの次のいずれかのプロパティにプログラムで設定できます。
 
-- [`Chat`](xref:Xamarin.Forms.Keyboard.Chat) – テキストの使用と絵文字が便利な場所。
-- [`Default`](xref:Xamarin.Forms.Keyboard.Default) – 既定のキーボード。
-- [`Email`](xref:Xamarin.Forms.Keyboard.Email) – 電子メール アドレスを入力するときに使用します。
-- [`Numeric`](xref:Xamarin.Forms.Keyboard.Numeric) – 数値を入力するときに使用します。
-- [`Plain`](xref:Xamarin.Forms.Keyboard.Plain) – なしのテキストを入力するときに使用される[ `KeyboardFlags` ](xref:Xamarin.Forms.KeyboardFlags)指定します。
-- [`Telephone`](xref:Xamarin.Forms.Keyboard.Telephone) – 電話番号を入力するときに使用します。
-- [`Text`](xref:Xamarin.Forms.Keyboard.Text) – テキストを入力するときに使用します。
-- [`Url`](xref:Xamarin.Forms.Keyboard.Url) – web アドレス (&)、ファイルのパスを入力するために使用します。
+- [`Chat`](xref:Xamarin.Forms.Keyboard.Chat) - 絵文字が使えるテキスト メッセージや場所に使います。
+- [`Default`](xref:Xamarin.Forms.Keyboard.Default) - 既定のキーボード。
+- [`Email`](xref:Xamarin.Forms.Keyboard.Email) - 電子メール アドレスを入力するときに使用します。
+- [`Numeric`](xref:Xamarin.Forms.Keyboard.Numeric) - 数値を入力するときに使用します。
+- [`Plain`](xref:Xamarin.Forms.Keyboard.Plain) - [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags) を指定しないで、テキストを入力するときに使用します。
+- [`Telephone`](xref:Xamarin.Forms.Keyboard.Telephone) - 電話番号を入力するときに使用します。
+- [`Text`](xref:Xamarin.Forms.Keyboard.Text) - テキストを入力するときに使用します。
+- [`Url`](xref:Xamarin.Forms.Keyboard.Url) - ファイル パスおよび Web アドレスを入力するために使用します。
 
-これで実行できます XAML には、次のようにします。
+XAML では次のようにしてこれを実現できます。
 
 ```xaml
 <Editor Keyboard="Chat" />
 ```
 
-同等の C# コードに示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 var editor = new Editor { Keyboard = Keyboard.Chat };
 ```
 
-各キーボードの例が記載されて、[レシピ](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/choose-keyboard-for-entry)リポジトリ。
+各キーボードの例については、「[レシピ](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/choose-keyboard-for-entry)リポジトリ」を参照してください。
 
-[ `Keyboard` ](xref:Xamarin.Forms.Keyboard)クラスがあります、 [ `Create` ](xref:Xamarin.Forms.Keyboard.Create*)大文字と小文字、スペル チェック、および修正候補の動作を指定することで、キーボードをカスタマイズするために使用するファクトリ メソッド。 [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags) 列挙値は、カスタマイズされたメソッドに引数として指定`Keyboard`返されます。 `KeyboardFlags`列挙には、次の値が含まれています。
+[`Keyboard`](xref:Xamarin.Forms.Keyboard) クラスには、大文字の設定、スペルチェック、および単語補完候補の動作を指定することで、キーボードをカスタマイズするために使用できる [`Create`](xref:Xamarin.Forms.Keyboard.Create*) ファクトリ メソッドもあります。 [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags) 列挙値がメソッドへの引数として指定され、カスタマイズされた `Keyboard` が返されます。 `KeyboardFlags` 列挙体には次の値が含まれます。
 
-- [`None`](xref:Xamarin.Forms.KeyboardFlags.None) – キーボード機能は追加されません。
-- [`CapitalizeSentence`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeSentence) – を各入力文の最初の単語の最初の文字は自動的に大文字で入力することを示します。
-- [`Spellcheck`](xref:Xamarin.Forms.KeyboardFlags.Spellcheck) – 入力したテキストでそのスペル チェックは実行を示します。
-- [`Suggestions`](xref:Xamarin.Forms.KeyboardFlags.Suggestions) – 入力したテキストの入力候補が提供されるその単語を示します。
-- [`CapitalizeWord`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeWord) – 各単語の最初の文字が自動的に大文字にすることを示します。
-- [`CapitalizeCharacter`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeCharacter) – すべての文字が自動的に大文字にすることを示します。
-- [`CapitalizeNone`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeNone) – 自動大文字と小文字が発生しないことを示します。
-- [`All`](xref:Xamarin.Forms.KeyboardFlags.All) – スペル チェック、単語の入力候補、および大文字が入力したテキストで発生することを示します。
+- [`None`](xref:Xamarin.Forms.KeyboardFlags.None) - キーボードに機能は追加されません。
+- [`CapitalizeSentence`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeSentence) - 入力された各文の最初の単語の最初の文字が自動的に大文字になることを示します。
+- [`Spellcheck`](xref:Xamarin.Forms.KeyboardFlags.Spellcheck) - 入力したテキストに対してスペル チェックが実行されることを示します。
+- [`Suggestions`](xref:Xamarin.Forms.KeyboardFlags.Suggestions) - 入力したテキストに対して単語補完が提供されることを示します。
+- [`CapitalizeWord`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeWord) - 各単語の最初の文字が自動的に大文字になることを示します。
+- [`CapitalizeCharacter`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeCharacter) - すべての文字が自動的に大文字になることを示します。
+- [`CapitalizeNone`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeNone) - 大文字の自動設定を行わないことを示します。
+- [`All`](xref:Xamarin.Forms.KeyboardFlags.All) - 入力したテキストに対して、スペルチェック、単語補完、および文への大文字の設定が行われることを示します。
 
-次の XAML コード例は、既定値をカスタマイズする方法を示しています。 [ `Keyboard` ](xref:Xamarin.Forms.Keyboard)をの単語候補を提供し、すべての入力した文字を大文字に変換します。
+次の XAML コード例は、既定の [`Keyboard`](xref:Xamarin.Forms.Keyboard) をカスタマイズして、単語補完を提供し、入力したすべての文字を大文字に設定する方法を示しています。
 
 ```xaml
 <Editor>
@@ -163,18 +183,18 @@ var editor = new Editor { Keyboard = Keyboard.Chat };
 </Editor>
 ```
 
-同等の C# コードに示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 var editor = new Editor();
 editor.Keyboard = Keyboard.Create(KeyboardFlags.Suggestions | KeyboardFlags.CapitalizeCharacter);
 ```
 
-### <a name="enabling-and-disabling-spell-checking"></a>有効にして、スペル チェックを無効化
+### <a name="enabling-and-disabling-spell-checking"></a>スペルチェックを有効または無効にする
 
-[ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled)プロパティ コントロールかどうかスペル チェックを有効にします。 既定では、プロパティに設定が`true`します。 テキストを入力すると、スペル ミスが示されます。
+[@No__t_1](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled)プロパティは、スペルチェックを有効にするかどうかを制御します。 既定では、プロパティは `true` に設定されています。 ユーザーがテキストを入力すると、スペルミスが示されます。
 
-ただし、ユーザー名を入力するなど、いくつかのテキスト エントリ シナリオのスペル チェックを提供、負のエクスペリエンスとこれを設定して無効にする必要があります、 [ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled)プロパティを`false`:
+ただし、一部のテキスト入力シナリオ (ユーザー名の入力など) では、スペルチェックで否定的なエクスペリエンスが提供されるため、 [`IsSpellCheckEnabled`](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled)プロパティを `false` に設定して無効にする必要があります。
 
 ```xaml
 <Editor ... IsSpellCheckEnabled="false" />
@@ -185,13 +205,13 @@ var editor = new Editor { ... IsSpellCheckEnabled = false };
 ```
 
 > [!NOTE]
-> ときに、 [ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled)プロパティに設定されて`false`、およびカスタムのキーボードが使用されていない、ネイティブのスペル チェックが無効になります。 ただし場合、 [ `Keyboard` ](xref:Xamarin.Forms.Keyboard)がされているセットをスペル チェックを無効にするチェックを行うなど[ `Keyboard.Chat` ](xref:Xamarin.Forms.Keyboard.Chat)、`IsSpellCheckEnabled`プロパティは無視されます。 そのため、スペル チェックを有効にするプロパティを使用できません、`Keyboard`を明示的に無効にします。
+> [@No__t_1](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled)プロパティが `false` に設定されていて、カスタムキーボードが使用されていない場合、ネイティブスペルチェックは無効になります。 ただし、 [`Keyboard.Chat`](xref:Xamarin.Forms.Keyboard.Chat)などのスペルチェックを無効にする[`Keyboard`](xref:Xamarin.Forms.Keyboard)が設定されている場合、`IsSpellCheckEnabled` プロパティは無視されます。 このため、プロパティを使用して、明示的に無効にした `Keyboard` のスペルチェックを有効にすることはできません。
 
-### <a name="enabling-and-disabling-text-prediction"></a>有効にして、予測入力を無効化
+### <a name="enabling-and-disabling-text-prediction"></a>テキスト予測の有効化と無効化
 
-プロパティ`IsTextPredictionEnabled`は、テキストの予測と自動テキスト修正が有効かどうかを制御します。 既定では、プロパティに設定が`true`します。 テキストを入力すると、word の予測が表示されます。
+@No__t_0 プロパティは、テキストの予測と自動テキスト修正が有効かどうかを制御します。 既定では、プロパティは `true` に設定されています。 ユーザーがテキストを入力すると、ワード予測が表示されます。
 
-ただし、テキスト入力のシナリオによっては、ユーザー名の入力、テキスト予測、自動テキスト修正などがありますが、プロパティを次`IsTextPredictionEnabled`のよう`false`に設定することで無効にする必要があります。
+ただし、テキスト入力のシナリオによっては、ユーザー名の入力、テキスト予測、自動テキスト修正などがあります。そのため、`IsTextPredictionEnabled` プロパティを `false` に設定して無効にする必要があります。
 
 ```xaml
 <Editor ... IsTextPredictionEnabled="false" />
@@ -202,11 +222,11 @@ var editor = new Editor { ... IsTextPredictionEnabled = false };
 ```
 
 > [!NOTE]
-> プロパティがに`false`設定されていて、カスタムキーボードが使用されていない場合、テキスト予測と自動テキスト修正は無効になります。 `IsTextPredictionEnabled` ただし場合、 [ `Keyboard` ](xref:Xamarin.Forms.Keyboard)を無効にします。 テキストの予測が設定されている、`IsTextPredictionEnabled`プロパティは無視されます。 そのための予測の入力を有効にするプロパティを使用できません、`Keyboard`を明示的に無効にします。
+> @No__t_0 プロパティが `false` に設定されていて、カスタムキーボードが使用されていない場合、テキスト予測と自動テキスト修正は無効になります。 ただし、テキストの予測を無効にする[`Keyboard`](xref:Xamarin.Forms.Keyboard)が設定されている場合、`IsTextPredictionEnabled` プロパティは無視されます。 このため、プロパティを使用して、明示的に無効にする `Keyboard` のテキスト予測を有効にすることはできません。
 
 ### <a name="colors"></a>色
 
-`Editor` 使用してカスタムの背景色を使用して、設定することができます、`BackgroundColor`プロパティ。 特別な注意は、色は各プラットフォームで使用できることを確認する必要があります。 各プラットフォームには、テキストの色の異なる既定値があるために、各プラットフォーム用のカスタムの背景色を設定する必要があります。 参照してください[プラットフォームな調整の操作](~/xamarin-forms/platform/device.md)詳細については、各プラットフォームの UI を最適化します。
+`Editor` は、`BackgroundColor` プロパティを使用してカスタムの背景色を使用するように設定できます。 各プラットフォームで色が使用できるようにするには、特別な注意が必要です。 各プラットフォームにはテキストの色について異なる既定値があるため、プラットフォームごとにカスタムの背景色を設定する必要がある場合があります。 各プラットフォームの UI の最適化の詳細については、「[プラットフォームの微](~/xamarin-forms/platform/device.md)調整の操作」を参照してください。
 
 C# の場合:
 
@@ -225,7 +245,7 @@ public partial class EditorPage : ContentPage
 }
 ```
 
-で XAML:
+XAML の場合:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -248,23 +268,23 @@ public partial class EditorPage : ContentPage
 </ContentPage>
 ```
 
-![](editor-images/textbackgroundcolor.png "エディターの BackgroundColor 例")
+![](editor-images/textbackgroundcolor.png "Editor with BackgroundColor Example")
 
-選択した色の背景とテキストの色は、各プラットフォームで使用し、プレース ホルダー テキストが不明瞭してください。
+選択した背景とテキストの色が各プラットフォームで使用できること、およびプレースホルダーのテキストが不明瞭になっていないことを確認します。
 
 ## <a name="interactivity"></a>対話機能
 
-`Editor` 2 つのイベントを公開します。
+`Editor` は、次の2つのイベントを公開します。
 
-- [TextChanged](xref:Xamarin.Forms.Editor.TextChanged) &ndash;エディターでテキストが変更されたときに発生します。 変更の前後にテキストを提供します。
-- [完了した](xref:Xamarin.Forms.Editor.Completed)&ndash;ユーザーには、キーボードの戻り値のキーを押して、入力が終了したときに発生します。
+- [TextChanged](xref:Xamarin.Forms.Editor.TextChanged) &ndash;、エディターのテキストが変更されたときに発生します。 変更前と変更後のテキストを提供します。
+- [完了](xref:Xamarin.Forms.Editor.Completed)&ndash;、ユーザーがキーボードの return キーを押して入力を終了したときに発生します。
 
 > [!NOTE]
-> 継承元のクラス[`VisualElement`](xref:Xamarin.Forms.VisualElement)は、と[`Unfocused`](xref:Xamarin.Forms.VisualElement.Unfocused)のイベント[`Focused`](xref:Xamarin.Forms.VisualElement.Focused)も持っています。 [`Entry`](xref:Xamarin.Forms.Entry)
+> [@No__t_3](xref:Xamarin.Forms.Entry)を継承する[`VisualElement`](xref:Xamarin.Forms.VisualElement)クラスにも[`Focused`](xref:Xamarin.Forms.VisualElement.Focused)および[`Unfocused`](xref:Xamarin.Forms.VisualElement.Unfocused)イベントがあります。
 
 ### <a name="completed"></a>完了
 
-`Completed`とのやり取りの完了に反応するイベントを使用する`Editor`します。 `Completed`は、ユーザーがキーボードに戻りキーを入力するか、UWP の Tab キーを押すことによって、入力をフィールドで終了したときに発生します。 イベントのハンドラーは、送信者を取得、汎用イベント ハンドラーと`EventArgs`:
+@No__t_0 イベントは、`Editor` との対話の完了に応答するために使用されます。 `Completed` は、キーボードに戻りキーを入力することによって (または UWP の Tab キーを押して)、ユーザーがフィールドで入力を終了したときに発生します。 イベントのハンドラーは、送信者と `EventArgs` を取得する汎用イベントハンドラーです。
 
 ```csharp
 void EditorCompleted (object sender, EventArgs e)
@@ -273,7 +293,7 @@ void EditorCompleted (object sender, EventArgs e)
 }
 ```
 
-完了イベントは、コードと XAML でサブスクライブできます。
+完成したイベントは、コードと XAML でサブスクライブできます。
 
 C# の場合:
 
@@ -292,7 +312,7 @@ public partial class EditorPage : ContentPage
 }
 ```
 
-で XAML:
+XAML の場合:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -310,9 +330,9 @@ Title="Editor Demo">
 
 ### <a name="textchanged"></a>TextChanged
 
-`TextChanged`イベントは、フィールドの内容の変更に対応するために使用します。
+@No__t_0 イベントは、フィールドの内容の変更に対処するために使用されます。
 
-`TextChanged` ときに発生しますが、`Text`の`Editor`変更します。 インスタンスを受け取り、イベントのハンドラーは`TextChangedEventArgs`します。 `TextChangedEventArgs` 新旧の値にアクセスできるように、 `Editor` `Text`を使用して、`OldTextValue`と`NewTextValue`プロパティ。
+`Editor` の `Text` が変更されるたびに `TextChanged` が発生します。 イベントのハンドラーは、`TextChangedEventArgs` のインスタンスを受け取ります。 `TextChangedEventArgs` は、`OldTextValue` および `NewTextValue` のプロパティを使用して、`Editor` `Text` の新旧の値へのアクセスを提供します。
 
 ```csharp
 void EditorTextChanged (object sender, TextChangedEventArgs e)
@@ -322,7 +342,7 @@ void EditorTextChanged (object sender, TextChangedEventArgs e)
 }
 ```
 
-完了イベントは、コードと XAML でサブスクライブできます。
+完成したイベントは、コードと XAML でサブスクライブできます。
 
 コードは次のとおりです。
 
@@ -341,7 +361,7 @@ public partial class EditorPage : ContentPage
 }
 ```
 
-で XAML:
+XAML の場合:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -359,5 +379,5 @@ Title="Editor Demo">
 
 ## <a name="related-links"></a>関連リンク
 
-- [テキスト (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
-- [エディターの API](xref:Xamarin.Forms.Editor)
+- [Text (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
+- [Editor API](xref:Xamarin.Forms.Editor)

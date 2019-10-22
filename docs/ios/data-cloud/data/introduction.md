@@ -8,17 +8,17 @@ author: conceptdev
 ms.author: crdun
 ms.date: 10/11/2016
 ms.openlocfilehash: 4000e4cc5d260457c0e0da275e3a7beecafd1a98
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70767027"
 ---
 # <a name="introduction-to-data-storage-in-xamarinios-apps"></a>Xamarin. iOS アプリのデータストレージの概要
 
 ## <a name="when-to-use-a-database"></a>データベースを使用する場合
 
-モバイルデバイスの記憶域と処理能力は増加していますが、スマートフォンやタブレットは&amp; 、対応するデスクトップノート pc の遅れを解消しています。 このため、データベースが常に適切な回答であると想定するだけではなく、アプリのデータストレージアーキテクチャを計画するには時間がかかります。 要件に応じて、次のようなさまざまなオプションがあります。
+モバイルデバイスの記憶域と処理能力が向上していますが、携帯電話やタブレットは、デスクトップ &amp; 対応するノート pc に遅れます。 このため、データベースが常に適切な回答であると想定するだけではなく、アプリのデータストレージアーキテクチャを計画するには時間がかかります。 要件に応じて、次のようなさまざまなオプションがあります。
 
 - **基本設定**– iOS には、データの単純なキーと値のペアを格納するための組み込みメカニズムが用意されています。 単純なユーザー設定または少量のデータ (パーソナル化情報など) を格納する場合は、プラットフォームのネイティブ機能を使用して、この種類の情報を格納します。 IOS の場合は、複数のデバイスを持つユーザーのバックアップと同期の両方で、このデータに対して iCloud 同期を利用することもできます。
 - **テキストファイル**-ダウンロードしたコンテンツのユーザー入力またはキャッシュ (例: HTML) は、ファイルシステムに直接格納できます。 ファイルの整理とデータの検索には、適切なファイルの名前付け規則を使用します。
@@ -67,4 +67,4 @@ SQLite は Windows プラットフォームでも使用できますが、この�
 - [このような場合の基本 (サンプル)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
 - [詳細設定 (サンプル)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
 - [iOS データレシピ](https://github.com/xamarin/recipes/tree/master/Recipes/ios/data/sqlite)
-- [Xamarin.Forms データアクセス](~/xamarin-forms/data-cloud/data/databases.md)
+- [Xamarin. フォームデータアクセス](~/xamarin-forms/data-cloud/data/databases.md)

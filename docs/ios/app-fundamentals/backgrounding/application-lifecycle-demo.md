@@ -8,24 +8,24 @@ author: conceptdev
 ms.author: crdun
 ms.date: 07/17/2018
 ms.openlocfilehash: d130d28b6cf0f15dab3a743a9a3fba144b75a67d
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70289432"
 ---
 # <a name="application-lifecycle-demo-for-xamarinios"></a>Xamarin. iOS のアプリケーションライフサイクルデモ
 
-この記事と[サンプルコード](https://docs.microsoft.com/samples/xamarin/ios-samples/lifecycledemo)では、iOS の4つのアプリケーション状態と、状態`AppDelegate`が変化したときにをアプリケーションに通知するためのメソッドの役割について説明します。 アプリが状態を変更するたびに、アプリケーションはコンソールに更新を出力します。
+この記事と[サンプルコード](https://docs.microsoft.com/samples/xamarin/ios-samples/lifecycledemo)では、iOS の4つのアプリケーション状態と、状態が変化したときにアプリケーションに通知するための `AppDelegate` メソッドの役割について説明します。 アプリが状態を変更するたびに、アプリケーションはコンソールに更新を出力します。
 
-[![](application-lifecycle-demo-images/image3-sml.png "サンプルアプリ")](application-lifecycle-demo-images/image3.png#lightbox)
+[![](application-lifecycle-demo-images/image3-sml.png "The sample app")](application-lifecycle-demo-images/image3.png#lightbox)
 
-[![](application-lifecycle-demo-images/image4.png "アプリが状態を変更するたびに、アプリによって更新内容がコンソールに出力されます。")](application-lifecycle-demo-images/image4.png#lightbox)
+[![](application-lifecycle-demo-images/image4.png "The app will print updates to the console whenever the app changes state")](application-lifecycle-demo-images/image4.png#lightbox)
 
 ## <a name="walkthrough"></a>チュートリアル
 
 1. **LifecycleDemo**ソリューションで**ライフサイクル**プロジェクトを開きます。
-1. `AppDelegate`クラスを開きます。 アプリケーションの状態がいつ変更されたかを示すログがライフサイクルメソッドに追加されました。
+1. @No__t_0 クラスを開きます。 アプリケーションの状態がいつ変更されたかを示すログがライフサイクルメソッドに追加されました。
 
     ```csharp
     public override void OnActivated(UIApplication application)
@@ -51,11 +51,11 @@ ms.locfileid: "70289432"
     }
     ```
 
-1. シミュレーターまたはデバイスでアプリケーションを起動します。 `OnActivated`アプリが起動すると、が呼び出されます。 これで、アプリケーションは_アクティブ_状態になります。
-1. シミュレーターまたはデバイスの [ホーム] ボタンをクリックして、アプリケーションをバックグラウンドにします。 `OnResignActivation`と`DidEnterBackground`は、アプリがから`Active`に、 `Backgrounded`状態に`Inactive`遷移するときに呼び出されます。 バックグラウンドで実行するように設定されたアプリケーションコードがないため、アプリケーションはメモリ内で_中断_されていると見なされます。
-1. アプリに戻り、前面に戻ります。 `WillEnterForeground`と`OnActivated`は両方とも呼び出されます。
+1. シミュレーターまたはデバイスでアプリケーションを起動します。 `OnActivated` は、アプリの起動時に呼び出されます。 これで、アプリケーションは_アクティブ_状態になります。
+1. シミュレーターまたはデバイスの [ホーム] ボタンをクリックして、アプリケーションをバックグラウンドにします。 `OnResignActivation` と `DidEnterBackground` は、アプリが `Active` から `Inactive` および `Backgrounded` 状態に遷移するときに呼び出されます。 バックグラウンドで実行するように設定されたアプリケーションコードがないため、アプリケーションはメモリ内で_中断_されていると見なされます。
+1. アプリに戻り、前面に戻ります。 `WillEnterForeground` と `OnActivated` は両方とも呼び出されます。
 
-    ![](application-lifecycle-demo-images/image4.png "コンソールに印刷される状態の変更")
+    ![](application-lifecycle-demo-images/image4.png "State changes printed to the console")
 
     ビューコントローラーの次のコード行は、アプリケーションが背景からフォアグラウンドに入ったときに実行され、画面に表示されるテキストを変更します。
 
@@ -73,7 +73,7 @@ ms.locfileid: "70289432"
 
     [![上にスワイプして実行中のアプリを削除する](application-lifecycle-demo-images/app-switcher-swipe-sml.png "上にスワイプして実行中のアプリを削除する")](application-lifecycle-demo-images/app-switcher-swipe.png#lightbox)
 
-iOS によってアプリケーションが終了します。 アプリケーションが`WillTerminate`バックグラウンドで既に_中断_されているため、が呼び出されないことに注意してください。
+iOS によってアプリケーションが終了します。 アプリケーションがバックグラウンドで既に_中断_されているため、`WillTerminate` は呼び出されないことに注意してください。
 
 ## <a name="related-links"></a>関連リンク
 

@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
 ms.openlocfilehash: 9bde1140f6590daa4b1d40a8b56edec314bfc66d
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70760231"
 ---
 # <a name="introduction-to-enterprise-app-development"></a>エンタープライズアプリ開発の概要
@@ -62,7 +62,7 @@ ms.locfileid: "70760231"
 
 図1-1 は、サンプルアプリケーションのアーキテクチャの概要を示しています。
 
-![](introduction-images/architecture.png "eShopOnContainers のアーキテクチャの概要")
+![](introduction-images/architecture.png "eShopOnContainers high-level architecture")
 
 **図 1-1**: eShopOnContainers のアーキテクチャの概要
 
@@ -83,15 +83,15 @@ Web アプリケーションの詳細については、「 [ASP.NET Core と Mic
 
 これらのバックエンドサービスは ASP.NET Core MVC を使用してマイクロサービスとして実装され、1つの Docker ホスト内に一意のコンテナーとしてデプロイされます。 これらのバックエンドサービスをまとめて、eShopOnContainers reference アプリケーションと呼びます。 クライアントアプリは、表現可能な状態転送 (REST) web インターフェイスを介してバックエンドサービスと通信します。 マイクロサービスと Docker の詳細については、「コンテナー化された[マイクロサービス](~/xamarin-forms/enterprise-application-patterns/containerized-microservices.md)」を参照してください。
 
-バックエンドサービスの実装の詳細については[、「.net マイクロサービス:Architecture for Containerized .NET Applications](https://aka.ms/microservicesebook)」(.NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ) を参照してください。
+バックエンドサービスの実装の詳細については、「 [.Net マイクロサービス: コンテナー化された .Net アプリケーションのアーキテクチャ](https://aka.ms/microservicesebook)」を参照してください。
 
 ### <a name="mobile-app"></a>モバイルアプリ
 
 このガイドでは、Xamarin を使用したクロスプラットフォームエンタープライズアプリの構築に焦点を当て、eShopOnContainers mobile アプリを例として使用します。 図1-2 に、前に説明した機能を提供する eShopOnContainers モバイルアプリのページを示します。
 
-[![](introduction-images/screenshots.png "EShopOnContainers モバイルアプリ")](introduction-images/screenshots-large.png#lightbox "EShopOnContainers モバイルアプリ")
+[![](introduction-images/screenshots.png "The eShopOnContainers mobile app")](introduction-images/screenshots-large.png#lightbox "The eShopOnContainers mobile app")
 
-**図 1-2**:EShopOnContainers モバイルアプリ
+**図 1-2**: eShopOnContainers モバイルアプリ
 
 モバイルアプリは、eShopOnContainers 参照アプリケーションによって提供されるバックエンドサービスを使用します。 ただし、バックエンドサービスのデプロイを回避するために、モックサービスからのデータを使用するように構成することもできます。
 
@@ -106,7 +106,7 @@ EShopOnContainers モバイルアプリは、次の Xamarin. フォーム機能�
 - コマンド
 - ビヘイビアー
 - トリガー
-- Effects
+- エフェクト
 - カスタム レンダラー
 - MessagingCenter
 - カスタム コントロール
@@ -119,16 +119,16 @@ EShopOnContainers モバイルアプリは、次の Xamarin. フォーム機能�
 
 EShopOnContainers mobile app ソリューションは、ソースコードとその他のリソースをプロジェクトに編成します。 すべてのプロジェクトは、フォルダーを使用してソースコードやその他のリソースをカテゴリに整理します。 次の表に、eShopOnContainers モバイルアプリを構成するプロジェクトの概要を示します。
 
-|Project|説明|
+|[プロジェクト]|説明|
 |--- |--- |
-|eShopOnContainers.Core|このプロジェクトは、共有コードと共有 UI を含む、ポータブルクラスライブラリ (PCL) プロジェクトです。|
-|eShopOnContainers.Droid|このプロジェクトは Android 固有のコードを保持し、Android アプリのエントリポイントです。|
-|eShopOnContainers.iOS|このプロジェクトは、iOS 固有のコードを保持し、iOS アプリのエントリポイントです。|
-|eShopOnContainers.UWP|このプロジェクトは、ユニバーサル Windows プラットフォーム (UWP) 固有のコードを保持し、Windows アプリのエントリポイントです。|
-|eShopOnContainers.TestRunner.Droid|このプロジェクトは、eShopOnContainers テストプロジェクトの Android テストランナーです。|
-|eShopOnContainers.TestRunner.iOS|このプロジェクトは、eShopOnContainers テストプロジェクトの iOS テストランナーです。|
-|eShopOnContainers.TestRunner.Windows|このプロジェクトは、eShopOnContainers テストプロジェクトのユニバーサル Windows プラットフォームテストランナーです。|
-|eShopOnContainers.UnitTests|このプロジェクトには、eShopOnContainers プロジェクトの単体テストが含まれています。|
+|eShopOnContainers|このプロジェクトは、共有コードと共有 UI を含む、ポータブルクラスライブラリ (PCL) プロジェクトです。|
+|eShopOnContainers|このプロジェクトは Android 固有のコードを保持し、Android アプリのエントリポイントです。|
+|eShopOnContainers|このプロジェクトは、iOS 固有のコードを保持し、iOS アプリのエントリポイントです。|
+|eShopOnContainers|このプロジェクトは、ユニバーサル Windows プラットフォーム (UWP) 固有のコードを保持し、Windows アプリのエントリポイントです。|
+|eShopOnContainers Testrunner.completed|このプロジェクトは、eShopOnContainers テストプロジェクトの Android テストランナーです。|
+|eShopOnContainers Testrunner.completed|このプロジェクトは、eShopOnContainers テストプロジェクトの iOS テストランナーです。|
+|eShopOnContainers Testrunner.completed|このプロジェクトは、eShopOnContainers テストプロジェクトのユニバーサル Windows プラットフォームテストランナーです。|
+|eShopOnContainers テスト|このプロジェクトには、eShopOnContainers プロジェクトの単体テストが含まれています。|
 
 EShopOnContainers モバイルアプリのクラスは、ほとんどまたはまったく変更することなく、すべての Xamarin. Forms アプリで再利用できます。
 
@@ -142,21 +142,21 @@ EShopOnContainers PCL プロジェクトには、次のフォルダーが含ま�
 |ビヘイビアー|ビュークラスに公開される動作を格納します。|
 |コントロール|アプリによって使用されるカスタムコントロールが含まれます。|
 |コンバーター|カスタムロジックをバインディングに適用する値コンバーターを格納します。|
-|Effects|`EntryLineColorEffect` クラスを含みます。これは特定の`Entry`コントロールの境界線の色を変更するために使用されます。|
-|例外|カスタム`ServiceAuthenticationException`を格納します。|
-|拡張機能|クラス`VisualElement` および`IEnumerable`クラスの拡張メソッドが含まれています。|
+|エフェクト|特定の `Entry` コントロールの境界線の色を変更するために使用される `EntryLineColorEffect` クラスを格納します。|
+|例外|カスタム `ServiceAuthenticationException` を格納します。|
+|の拡張|@No__t_0 クラスと `IEnumerable` クラスの拡張メソッドが含まれています。|
 |支援|アプリのヘルパークラスが含まれています。|
 |モデル|アプリのモデルクラスが含まれています。|
-|プロパティ|.Net `AssemblyInfo.cs`アセンブリメタデータファイルを含みます。|
-|サービス|アプリに提供されるサービスを実装するインターフェイスとクラスが含まれています。|
-|トリガー|XAML でアニメーションを呼び出すために使用されるトリガーが含まれています。`BeginAnimation`|
+|プロパティ|.NET アセンブリメタデータファイル `AssemblyInfo.cs` が含まれています。|
+|Services|アプリに提供されるサービスを実装するインターフェイスとクラスが含まれています。|
+|トリガー|XAML でアニメーションを呼び出すために使用される `BeginAnimation` トリガーを格納します。|
 |検証|データ入力の検証に関連するクラスが含まれています。|
 |ViewModels|ページに公開されているアプリケーションロジックを格納します。|
 |Views|アプリのページが含まれています。|
 
 ##### <a name="platform-projects"></a>プラットフォームプロジェクト
 
-プラットフォームプロジェクトには、エフェクトの実装、カスタムレンダラーの実装、およびその他のプラットフォーム固有のリソースが含まれています。
+プラットフォームプロジェクトには、効果の実装、カスタムレンダラーの実装、およびその他のプラットフォーム固有のリソースが含まれています。
 
 ## <a name="summary"></a>まとめ
 

@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 07/11/2017
 ms.openlocfilehash: 36e339139a0a7f853a770fdb188b5f03ee93f7ee
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70283356"
 ---
 # <a name="search-bars-in-xamarinios"></a>Xamarin. iOS の検索バー
@@ -57,7 +57,7 @@ TableView.TableHeaderView = searchBar;
 
 ![検索バーのプロパティ](searchbar-images/image6.png)
 
-[検索`SearchButtonClicked` ] ボタンが押されたときにイベントを発生させます。 これにより、検索ロジックが呼び出されます。
+[検索] ボタンが押されたときに `SearchButtonClicked` イベントを発生させます。 これにより、検索ロジックが呼び出されます。
 
 ```csharp
 searchBar.SearchButtonClicked += (sender, e) => {
@@ -88,7 +88,7 @@ searchBar.SearchButtonClicked += (sender, e) => {
   - [検索結果/ブックマーク] ボタンを表示する–検索バーに検索結果またはブックマークアイコンを表示します。
   - [キャンセル] ボタンを表示します。ユーザーは検索機能を終了できます。 これを選択することをお勧めします。
   - [スコープバー] を表示します。ユーザーは検索範囲を制限できます。 たとえば、music アプリ内で検索する場合、ユーザーは特定の楽曲やアーティストの Apple Music を検索するかライブラリを検索するかを選択できます。 さまざまなオプションを表示するには、 **Scopebartitles**プロパティにタイトルの配列を追加します。
-  ![検索バーのスコープのタイトル](searchbar-images/image4.png)
+  ![Search バーの範囲のタイトル ](searchbar-images/image4.png)
 
 - **テキストの動作**–これらのオプションは、入力時にユーザー入力がどのように書式設定されるかを指定するために使用されます。 大文字と小文字を区別すると、各単語または文の先頭、またはすべての文字が大文字に設定されます。 修正とスペルチェックでは、ユーザーに対して、入力された単語のスペルを確認します。
 - **キーボード**–入力に表示されるキーボードのスタイルを制御します。したがって、キーボードで使用できるキーを制御します。 これには、テンキー、電話パッド、電子メール、URL、およびその他のオプションが含まれます。

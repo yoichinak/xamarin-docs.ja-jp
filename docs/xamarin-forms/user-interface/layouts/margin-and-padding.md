@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
 ms.openlocfilehash: 66ac81631466131cf1ef44dde39aa768d31b65a1
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70772487"
 ---
 # <a name="margin-and-padding"></a>余白とスペース
@@ -22,22 +22,22 @@ _余白と余白のプロパティは、要素がユーザーインターフェ�
 
 余白と埋め込みは、関連するレイアウトの概念です。
 
-- プロパティ[`Margin`](xref:Xamarin.Forms.View.Margin)は、要素とそれに隣接する要素との距離を表し、要素のレンダリング位置と、その隣接する描画位置を制御するために使用されます。 `Margin`[レイアウト](~/xamarin-forms/user-interface/controls/layouts.md)および[ビュー](~/xamarin-forms/user-interface/controls/views.md)クラスに値を指定できます。
-- プロパティ[`Padding`](xref:Xamarin.Forms.Layout.Padding)は、要素とその子要素間の距離を表し、コントロールを独自のコンテンツから分離するために使用されます。 `Padding`[レイアウト](~/xamarin-forms/user-interface/controls/layouts.md)クラスで値を指定できます。
+- [@No__t_1](xref:Xamarin.Forms.View.Margin)プロパティは、要素とそれに隣接する要素との距離を表します。このプロパティは、要素のレンダリング位置と、その隣接する描画位置を制御するために使用されます。 `Margin` 値は、[レイアウト](~/xamarin-forms/user-interface/controls/layouts.md)および[ビュー](~/xamarin-forms/user-interface/controls/views.md)クラスで指定できます。
+- [@No__t_1](xref:Xamarin.Forms.Layout.Padding)プロパティは、要素とその子要素間の距離を表し、コントロールを独自のコンテンツから分離するために使用されます。 `Padding` 値は、[レイアウト](~/xamarin-forms/user-interface/controls/layouts.md)クラスで指定できます。
 
 次の図は、2つの概念を示しています。
 
-[余白とパディングの概念![(margin-and-padding-images/margins-and-padding-sml.png " ")]](margin-and-padding-images/margins-and-padding.png#lightbox "余白とパディングの概念")
+[![](margin-and-padding-images/margins-and-padding-sml.png "Margins and Padding Concepts")](margin-and-padding-images/margins-and-padding.png#lightbox "Margins and Padding Concepts")
 
-[`Margin`](xref:Xamarin.Forms.View.Margin)値は加法です。 したがって、2つの隣接する要素が20ピクセルの余白を指定すると、要素間の距離は40ピクセルになります。 さらに、余白と余白は両方とも適用されるときに追加されます。これは、要素とコンテンツとの間の距離が余白と埋め込みであることを示します。
+[@No__t_1](xref:Xamarin.Forms.View.Margin)値は加算的であることに注意してください。 したがって、2つの隣接する要素が20ピクセルの余白を指定すると、要素間の距離は40ピクセルになります。 さらに、余白と余白は両方とも適用されるときに追加されます。これは、要素とコンテンツとの間の距離が余白と埋め込みであることを示します。
 
 ## <a name="specifying-a-thickness"></a>太さの指定
 
-プロパティとプロパティは両方と[`Padding`](xref:Xamarin.Forms.Layout.Padding)も[`Thickness`](xref:Xamarin.Forms.Thickness)型です。 [`Margin`](xref:Xamarin.Forms.View.Margin) 構造体を作成する場合、 `Thickness`次の3つの可能性があります。
+[@No__t_1](xref:Xamarin.Forms.View.Margin)プロパティと[`Padding`](xref:Xamarin.Forms.Layout.Padding)プロパティは両方とも型[`Thickness`](xref:Xamarin.Forms.Thickness)です。 @No__t_0 構造を作成する場合、次の3つの可能性があります。
 
-- 1つ[`Thickness`](xref:Xamarin.Forms.Thickness)の均一な値で定義された構造体を作成します。 要素の左、上、右、および下側に1つの値が適用されます。
-- 水平および[`Thickness`](xref:Xamarin.Forms.Thickness)垂直の値で定義された構造体を作成します。 水平値は、要素の左右左右に対称的に適用されます。垂直方向の値は、要素の上下左右に対称的に適用されます。
-- 要素の[`Thickness`](xref:Xamarin.Forms.Thickness)左、上、右、および下側に適用される4つの個別の値によって定義される構造体を作成します。
+- 1つの均一な値で定義された[`Thickness`](xref:Xamarin.Forms.Thickness)構造体を作成します。 要素の左、上、右、および下側に1つの値が適用されます。
+- 水平および垂直の値で定義されている[`Thickness`](xref:Xamarin.Forms.Thickness)構造体を作成します。 水平値は、要素の左右左右に対称的に適用されます。垂直方向の値は、要素の上下左右に対称的に適用されます。
+- 要素の左、上、右、下側に適用される4つの個別の値によって定義される[`Thickness`](xref:Xamarin.Forms.Thickness)構造体を作成します。
 
 次の XAML コード例は、3つのすべての可能性を示しています。
 
@@ -63,11 +63,11 @@ var stackLayout = new StackLayout {
 ```
 
 > [!NOTE]
-> `Thickness`値には負の値を指定できます。通常は、コンテンツをクリップまたは過剰に描画します。
+> `Thickness` 値は負の値にすることができ、通常はコンテンツをクリップまたはオーバーします。
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>まとめ
 
-この記事では、プロパティと[`Margin`](xref:Xamarin.Forms.View.Margin) [`Padding`](xref:Xamarin.Forms.Layout.Padding)プロパティの違いと、プロパティの設定方法について説明します。 プロパティは、ユーザーインターフェイスで要素がレンダリングされるときのレイアウト動作を制御します。
+この記事では、 [`Margin`](xref:Xamarin.Forms.View.Margin)プロパティと[`Padding`](xref:Xamarin.Forms.Layout.Padding)プロパティの違いと、それらの設定方法について説明します。 プロパティは、ユーザーインターフェイスで要素がレンダリングされるときのレイアウト動作を制御します。
 
 ## <a name="related-links"></a>関連リンク
 

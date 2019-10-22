@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 05/18/2016
 ms.openlocfilehash: 943cdfaee07bc4fd4ed3273840036055ad40b89a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70766750"
 ---
 # <a name="accessibility-on-ios"></a>IOS でのユーザー補助
@@ -21,15 +21,15 @@ ms.locfileid: "70766750"
 
 ## <a name="describing-ui-elements"></a>UI 要素の記述
 
-iOS には`AccessibilityLabel` 、 `AccessibilityHint`開発者向けのプロパティとプロパティが用意されており、VoiceOver スクリーンリーダーがコントロールをより使いやすくするために使用できる説明的なテキストを追加します。 コントロールには、アクセス可能なモードで追加のコンテキストを提供する1つ以上の特徴をタグ付けすることもできます。
+iOS には、VoiceOver スクリーンリーダーがコントロールをより使いやすくするために使用できる説明文を追加するために、開発者が `AccessibilityLabel` と `AccessibilityHint` のプロパティが用意されています。 コントロールには、アクセス可能なモードで追加のコンテキストを提供する1つ以上の特徴をタグ付けすることもできます。
 
-一部のコントロールは、アクセスする必要がない場合があります (たとえば、テキスト入力のラベルや、純粋に装飾され`IsAccessibilityElement`ている画像など)。このような場合、は、ユーザー補助を無効にするために用意されています。
+一部のコントロールは、アクセスする必要がない場合があります (たとえば、テキスト入力のラベルや、純粋に装飾されているイメージの場合など)。このような場合、ユーザー補助を無効にするために `IsAccessibilityElement` が用意されています。
 
 **UI デザイナー**
 
 **Properties Pad**には、IOS UI デザイナーでコントロールを選択したときにこれらの設定を編集できるようにするアクセシビリティのセクションが含まれています。
 
-![](accessibility-images/ios-designer-sml.png "ユーザー補助の設定")
+![](accessibility-images/ios-designer-sml.png "Accessibility Settings")
 
 **C#**
 
@@ -44,15 +44,15 @@ displayOnlyText.AccessibilityTraits = UIAccessibilityTrait.Header | UIAccessibil
 
 ### <a name="what-is-accessibilityidentifier"></a>AccessibilityIdentifier とは
 
-は`AccessibilityIdentifier` 、uiautomation API を使用してユーザーインターフェイス要素を参照するために使用できる一意のキーを設定するために使用されます。
+@No__t_0 は、UIAutomation API を使用してユーザーインターフェイス要素を参照するために使用できる一意のキーを設定するために使用されます。
 
-の`AccessibilityIdentifier`値が話されていないか、ユーザーに表示されていません。
+@No__t_0 の値は、ユーザーに話されることも表示されることもありません。
 
 <a name="postnotification" />
 
 ## <a name="postnotification"></a>事後通知
 
-`UIAccessibility.PostNotification`メソッドを使用すると、直接の対話の外部でユーザーにイベントを発生させることができます (たとえば、特定のコントロールと対話する場合など)。
+@No__t_0 メソッドを使用すると、ユーザーが直接やり取りすることなくユーザーにイベントを発生させることができます (たとえば、特定のコントロールと対話する場合など)。
 
 ### <a name="announcement"></a>アナウンス
 
@@ -66,7 +66,7 @@ UIAccessibility.PostNotification (
 
 ### <a name="layoutchanged"></a>LayoutChanged
 
-`LayoutChanged`アナウンスは、画面レイアウトの場合に使用されます。
+@No__t_0 アナウンスは、画面レイアウトの場合に使用されます。
 
 ```csharp
 UIAccessibility.PostNotification (
@@ -78,9 +78,9 @@ UIAccessibility.PostNotification (
 
 ラベルやヒントなどのアクセシビリティプロパティは、ユーザーインターフェイス内の他のテキストと同様にローカライズできます。
 
-**MainStoryboard.strings**
+**Mainstoryboard.storyboard ファイル**
 
-ユーザーインターフェイスがストーリーボードにレイアウトされている場合は、他のプロパティと同じ方法でアクセシビリティプロパティの翻訳を提供できます。 次`UITextField`の例では、に`Pqa-aa-ury` **ローカライズ ID**と、スペイン語で設定されているアクセシビリティプロパティが2つあります。
+ユーザーインターフェイスがストーリーボードにレイアウトされている場合は、他のプロパティと同じ方法でアクセシビリティプロパティの翻訳を提供できます。 次の例では、`UITextField` に `Pqa-aa-ury` の**ローカライズ ID**と、スペイン語で設定されているアクセシビリティプロパティが2つあります。
 
 ```csharp
 /* Accessibility */
@@ -90,7 +90,7 @@ UIAccessibility.PostNotification (
 
 このファイルは、スペイン語のコンテンツの**es. lproj**ディレクトリに配置されます。
 
-**Localizable.strings**
+**ローカライズ可能な文字列**
 
 また、ローカライズされたコンテンツディレクトリ内のローカライズ可能な**文字列**ファイルに翻訳を追加することもできます ( ドイツ語の**lproj** ):
 
@@ -100,7 +100,7 @@ UIAccessibility.PostNotification (
 "Provide more information" = "escriba más información";
 ```
 
-これらの変換は、メソッドC#を使用`LocalizedString`してで使用できます。
+これらの変換は、`LocalizedString` C#メソッドを使用してで使用できます。
 
 ```csharp
 notesText.AccessibilityLabel = NSBundle.MainBundle.LocalizedString ("Notes", "");
@@ -115,7 +115,7 @@ notesText.AccessibilityHint = NSBundle.MainBundle.LocalizedString ("Provide more
 
 VoiceOver**は、** **全般 > アクセシビリティ > VoiceOver**:
 
-![](accessibility-images/settings-sml.png "読み上げ速度の設定")
+![](accessibility-images/settings-sml.png "Setting the speaking rate")
 
 また、 **[ユーザー補助]** 画面では、ズーム、テキストサイズ、色 & コントラストオプション、音声設定、およびその他の構成オプションの設定も提供されています。
 
@@ -125,12 +125,12 @@ IOS デバイスでアクセシビリティをテストするには、次の[Voi
 
 シミュレーターでテストする場合、アクセシビリティ**インスペクター**を使用して、ユーザー補助のプロパティとイベントが正しく構成されていることを確認できます。 [全般] > [アクセシビリティ] **> [アクセシビリティ**] [インスペクター] の順に移動して、**設定**アプリのインスペクターをオンにします。
 
-![](accessibility-images/settings-inspector-sml.png "アクセシビリティインスペクターを有効にする")
+![](accessibility-images/settings-inspector-sml.png "Enable Accessibility Inspector")
 
 有効にすると、[インスペクター] ウィンドウが常に [iOS] 画面に表示されます。
 テーブルビューの行が選択されたときの出力の例を次に示します。**ラベル**には、行の内容を示す文と、それが "done" であることも示されています (つまり、ティックは表示されています)。
 
-![](accessibility-images/tableview-a11y-sml.png "アクセシビリティインスペクターの使用")
+![](accessibility-images/tableview-a11y-sml.png "Using Accessibility Inspector")
 
 インスペクターが表示されている間、左上にある "X" アイコンを使用して、オーバーレイを一時的に表示および非表示にしたり、ユーザー補助の設定を有効または無効にしたりします。
 

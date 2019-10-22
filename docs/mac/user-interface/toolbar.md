@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
 ms.openlocfilehash: cd2490bfad880d128f5eaeebd4aac58ad3a4d8fa
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70772723"
 ---
 # <a name="toolbars-in-xamarinmac"></a>Xamarin. Mac のツールバー
@@ -26,7 +26,7 @@ MacOS のツールバーは、ウィンドウの上部のセクションに追�
 
 続行する前に、 [Hello, Mac](~/mac/get-started/hello-mac.md)に関する記事を参照してください。具体的には、このガイド全体で使用される主要な概念と手法について説明している、「 [Xcode And Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)と[アウトレットとアクション](~/mac/get-started/hello-mac.md#outlets-and-actions)の概要」セクションを参照してください。
 
-また、「 [Xamarin. Mac の内部](~/mac/internals/how-it-works.md)ドキュメント」の「[クラス/メソッドを目的の C に公開C#する](~/mac/internals/how-it-works.md)」セクションを参照してください。 クラスを目的`Register`の`Export` C クラスに接続C#するために使用される属性と属性について説明します。
+また、「 [Xamarin. Mac の内部](~/mac/internals/how-it-works.md)ドキュメント」の「[クラス/メソッドを目的の C に公開C#する](~/mac/internals/how-it-works.md)」セクションを参照してください。 ここでは、クラスを目的の C クラスC#に接続するために使用される `Register` および `Export` の属性について説明します。
 
 ## <a name="introduction-to-toolbars"></a>ツールバーの概要
 
@@ -66,7 +66,7 @@ Xcode の Interface Builder でツールバーを設定すると、開発者は�
 
 ツールバーは自動的に **[表示]** メニューに接続し、ユーザーはこのメニューを非表示にしたり、表示したり、カスタマイズしたりできます。
 
-[![表示] メニューのツールバーに関連する項目][(toolbar-images/info08.png "表示] メニューのツールバーに関連する項目")
+![[表示] メニューのツールバーに関連する項目](toolbar-images/info08.png "[表示] メニューのツールバーに関連する項目")
 
 詳細については、[組み込みのメニュー機能](~/mac/user-interface/menu.md)に関するドキュメントを参照してください。
 
@@ -114,7 +114,7 @@ UI 要素をアウトレットとC#アクションを使用してコードに公
 2. [**起動時に表示**する]-オンにすると、ツールバーが既定で表示されます。
 3. **カスタマイズ可能**-選択されている場合、ユーザーはツールバーを編集およびカスタマイズできます。
 4. **Separator** -選択されている場合、細い水平線はウィンドウのコンテンツからツールバーを分離します。
-5. **サイズ**-ツールバーのサイズを設定します。
+5. **[サイズ]** -ツールバーのサイズを設定します。
 6. **[自動保存]** : オンにすると、アプリケーションの起動時にユーザーのツールバーの構成の変更が保持されます。
 
 **[自動保存]** オプションを選択し、その他のプロパティはすべて既定の設定のままにします。 
@@ -139,7 +139,7 @@ UI 要素をアウトレットとC#アクションを使用してコードに公
 
      ![システムカラーピッカー](toolbar-images/edit07.png "システムカラーピッカー")
 
-- **フォントツールバー項目の表示**: 標準のシステムフォントダイアログが表示されます。 
+- **[フォントツールバー項目の表示]** : 標準のシステムフォントダイアログが表示されます。 
 
      ![フォントセレクター](toolbar-images/edit08.png "フォントセレクター")
 
@@ -150,7 +150,7 @@ UI 要素をアウトレットとC#アクションを使用してコードに公
 
 ツールバーに項目を追加するには、**インターフェイス階層**でツールバーを選択し、項目のいずれかをクリックすると、カスタマイズダイアログが表示されます。 次に、**ライブラリインスペクター**から、[許可されている**ツールバーアイテム]** 領域に新しいアイテムをドラッグします。
 
-![ツールバーの [カスタマイズ] ダイアログ ボックスの許可されているツールバー項目](toolbar-images/add01.png "ツールバーの [カスタマイズ] ダイアログ ボックスの許可されているツールバー項目")
+![ツールバーのカスタマイズダイアログで使用できるツールバー項目](toolbar-images/add01.png "ツールバーのカスタマイズダイアログで使用できるツールバー項目")
 
 新しい項目が既定のツールバーの一部であることを確認するには、 **[既定のツールバー項目]** 領域にドラッグします。 
 
@@ -198,7 +198,7 @@ UI 要素をアウトレットとC#アクションを使用してコードに公
 
 **イメージツールバー項目**を使用すると、 **Resources**フォルダーに追加されたビットマップイメージ (および**バンドルリソース**のビルドアクション) を、ツールバーにアイコンとして表示できます。
 
-1. Visual Studio for Mac の**Solution Pad**で、 **[リソース]** フォルダーを右クリック > し、[**追加]** **[ファイル]** の順に選択します。
+1. Visual Studio for Mac の**Solution Pad**で、 **[リソース]** フォルダーを右クリックし、[**追加** > **ファイル**の追加] を選択します。
 2. **[ファイルの追加]** ダイアログボックスで目的のイメージに移動し、選択して **[開く]** ボタンをクリックします。 
 
     [![追加するイメージの選択](toolbar-images/edit11.png "追加するイメージの選択")](toolbar-images/edit11-large.png#lightbox)
@@ -269,7 +269,7 @@ public void EraseDocument() {
 }
 ```
 
-次に、 **WindowController.cs**ファイルを編集し、 `WindowController`クラスの下部に次のコードを追加します。
+次に、 **WindowController.cs**ファイルを編集し、`WindowController` クラスの下部に次のコードを追加します。
 
 ```csharp
 [Export ("trashDocument:")]
@@ -288,9 +288,9 @@ void TrashDocument (NSObject sender) {
 
 ## <a name="disabling-toolbar-items"></a>ツールバー項目の無効化
 
-ツールバーの項目を無効にするには、 `NSToolbarItem`カスタムクラスを作成`Validate`し、メソッドをオーバーライドします。 次に、Interface Builder で、有効または無効にする項目にカスタム型を割り当てます。
+ツールバーの項目を無効にするには、カスタム `NSToolbarItem` クラスを作成し、`Validate` メソッドをオーバーライドします。 次に、Interface Builder で、有効または無効にする項目にカスタム型を割り当てます。
 
-カスタム`NSToolbarItem`クラスを作成するには、プロジェクトを右クリックし、[**新しいファイル**の**追加** > ...] を選択します。[**汎用** > **空のクラス**] を選択し、**名前**として「ActivatableItem」と入力して、 **[新規]** ボタンをクリックします。 
+カスタム `NSToolbarItem` クラスを作成するには、プロジェクトを右クリックし、 > **新しいファイル**の**追加** を選択します。**全般** >  **空のクラス** を選択し、**名前**として「ActivatableItem」と入力して、**新規** ボタンをクリックします。 
 
 ![Visual Studio for Mac に空のクラスを追加する](toolbar-images/custom01.png "Visual Studio for Mac に空のクラスを追加する")
 
@@ -338,7 +338,7 @@ Xcode をダブル**クリックし**て開きます。 上で作成した**ご�
 
 ![ツールバー項目のカスタムクラスの設定](toolbar-images/custom02.png "ツールバー項目のカスタムクラスの設定")
 
-ごみ箱のツールバー `trashItem`項目に対してというアウトレットを作成します。 Xcode と同期するには、変更を保存して Visual Studio for Mac に戻ります。 最後に、 **MainWindow.cs**を開き、 `AwakeFromNib`メソッドを更新して次のように読み取ります。
+**ごみ箱**のツールバー項目に `trashItem` というアウトレットを作成します。 Xcode と同期するには、変更を保存して Visual Studio for Mac に戻ります。 最後に、 **MainWindow.cs**を開き、`AwakeFromNib` メソッドを更新して、次のように読み取ります。
 
 ```csharp
 public override void AwakeFromNib ()

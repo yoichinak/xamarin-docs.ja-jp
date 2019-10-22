@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
 ms.openlocfilehash: 087dcdc7024026e6a3ed3a05baca3b2648053cc8
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70769947"
 ---
 # <a name="accessibility-on-macos"></a>MacOS のユーザー補助機能
@@ -23,7 +23,7 @@ MacOS でアクセシビリティ Api がどのように機能するかを理解
 
 ## <a name="describing-ui-elements"></a>UI 要素の記述
 
-Appkit は、 `NSAccessibility`プロトコルを使用して、ユーザーインターフェイスにアクセスできるようにする api を公開します。 これには、ボタンの`AccessibilityLabel`を設定するなど、アクセシビリティプロパティに意味のある値を設定しようとする既定の動作が含まれます。 ラベルは、通常、コントロールまたはビューを説明する1つの単語または短い語句です。
+AppKit は、`NSAccessibility` プロトコルを使用して、ユーザーインターフェイスにアクセスできるようにする Api を公開します。 これには、ボタンの `AccessibilityLabel` の設定など、アクセシビリティプロパティに意味のある値を設定しようとする既定の動作が含まれます。 ラベルは、通常、コントロールまたはビューを説明する1つの単語または短い語句です。
 
 ### <a name="storyboard-files"></a>ストーリーボードファイル
 
@@ -34,7 +34,7 @@ Xcode Interface Builder を使用して、ストーリーボードファイル�
 
 ### <a name="code"></a>コード
 
-現在、Xamarin は setter として`AccessibilityLabel`公開されていません。  アクセシビリティラベルを設定するには、次のヘルパーメソッドを追加します。
+現在、Xamarin は `AccessibilityLabel` setter として公開されていません。  アクセシビリティラベルを設定するには、次のヘルパーメソッドを追加します。
 
 ```csharp
 public static class AccessibilityHelper
@@ -55,10 +55,10 @@ public static class AccessibilityHelper
 AccessibilityHelper.SetAccessibilityLabel (someButton, "New Accessible Description");
 ```
 
-`AccessibilityHelp`プロパティは、コントロールまたはビューの動作を説明するためのものであり、ラベルが十分な情報を提供できない場合にのみ追加する必要があります。 ヘルプテキストは、"ドキュメントを削除する" など、可能な限り短くしておく必要があります。
+@No__t_0 プロパティは、コントロールまたはビューの機能について説明するためのものであり、ラベルが十分な情報を提供できない場合にのみ追加する必要があります。 ヘルプテキストは、"ドキュメントを削除する" など、可能な限り短くしておく必要があります。
 
 ユーザーインターフェイス要素の中には、アクセス可能なアクセスに関係のないものがあります (ユーザー補助ラベルとヘルプを持つ入力の横にあるラベルなど)。
-このような場合は`AccessibilityElement = false` 、これらのコントロールまたはビューがスクリーンリーダーやその他のユーザー補助ツールによってスキップされるように、を設定します。
+このような場合は、スクリーンリーダーやその他のユーザー補助ツールによってこれらのコントロールやビューがスキップされるように `AccessibilityElement = false` を設定します。
 
 Apple では、アクセシビリティラベルとヘルプテキストのベストプラクティスについて説明する[アクセシビリティのガイドライン](https://developer.apple.com/library/mac/documentation/Accessibility/Conceptual/AccessibilityMacOSX/EnhancingtheAccessibilityofStandardAppKitControls.html)を提供しています。
 
