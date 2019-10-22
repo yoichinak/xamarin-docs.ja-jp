@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/03/2018
 ms.openlocfilehash: 4d0e57b98a479112b9fdf4f9c503418f3966cc73
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "64749919"
 ---
 # <a name="skiasharp-platform-independent-examples"></a>SkiaSharp プラットフォームに依存しない例
@@ -22,7 +22,7 @@ SkiaSharp には、2D バッファーにレンダリングするために使用�
 
 ライブラリは、現在、クロスプラットフォーム[Nuget パッケージ](https://www.nuget.org/packages/SkiaSharp)として使用できます。 nuget 参照を追加することで、このライブラリをプロジェクトに追加できます。
 
-描画するには、コードでを`SkCanvas`作成します。これにより、描画操作が行われるサーフェイスが記述されます。
+描画するには、コードで描画操作を実行するサーフェイスを記述する `SkCanvas` を作成します。
 
 ## <a name="obtaining-an-skcanvas"></a>SKCanvas の取得
 
@@ -36,9 +36,9 @@ using (var surface = SKSurface.Create (width: 640, height: 480, SKImageInfo.Plat
 
 ## <a name="drawing-on-skcanvas"></a>SKCanvas での描画
 
-で`SKCanvas`は、使い慣れた他の描画モデルに似たような描画モデルを使用しており、オプションの透明度チャネルを使用して色を使用し、線、円弧、テキスト、およびイメージを描画できます。
+この `SKCanvas` では、使い慣れた他の描画モデルと同じような描画モデルを使用しており、オプションの透明度チャネルを使用して色を使用し、線、円弧、テキスト、およびイメージを描画できます。
 
-次に、SkiaSharp で実行できるさまざまな項目をいくつか紹介します。  次の例では、 `canvas`変数は skcanvas 型です。
+次に、SkiaSharp で実行できるさまざまな項目をいくつか紹介します。  次の例では、変数 `canvas` は SKCanvas 型です。
 
 ### <a name="drawing-xamagon"></a>Xamagon の描画
 
@@ -133,6 +133,6 @@ using (var paint = new SKPaint()) {
 }
 ```
 
-## <a name="more-information"></a>詳細情報
+## <a name="more-information"></a>説明
 
 SkiaSharp の使用方法の詳細については、 [API のドキュメント](https://docs.microsoft.com/dotnet/api/skiasharp)を参照してください。

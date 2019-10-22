@@ -8,24 +8,24 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
 ms.openlocfilehash: 2bed40c3ac2853a5f99c2b487e909164e12e676d
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70766954"
 ---
 # <a name="watchos-table-controls-in-xamarin"></a>Xamarin の watchOS Table コントロール
 
-WatchOS `WKInterfaceTable`コントロールは、対応する iOS よりもはるかに簡単ですが、同様の役割を果たします。 カスタムレイアウトを持つことができ、タッチイベントに応答する行のスクロールリストを作成します。
+WatchOS `WKInterfaceTable` コントロールは、対応する iOS よりもはるかに単純ですが、同様の役割を果たします。 カスタムレイアウトを持つことができ、タッチイベントに応答する行のスクロールリストを作成します。
 
-![](table-images/table-list-sml.png "ウォッチテーブルの一覧")![](table-images/table-detail-sml.png)
+![](table-images/table-list-sml.png "ウォッチテーブルの一覧") ![](table-images/table-detail-sml.png)
 <!-- watch image courtesy of http://infinitapps.com/bezel/ -->
 
 ## <a name="adding-a-table"></a>テーブルの追加
 
 **テーブル**コントロールをシーンにドラッグします。 既定では、次のようになります (1 つの指定されていない行のレイアウトを示します)。
 
-[![](table-images/add-table-sml.png "テーブルの追加")](table-images/add-table.png#lightbox)
+[![](table-images/add-table-sml.png "Adding a table")](table-images/add-table.png#lightbox)
 
 コードで参照できるように、 **[プロパティ]** パッドの **[名前]** ボックスにテーブルの名前を付けます。
 
@@ -35,13 +35,13 @@ WatchOS `WKInterfaceTable`コントロールは、対応する iOS よりもは�
 
 行コントローラーの**クラス**を設定するには、**ドキュメントアウトライン**で行を選択し、 **[プロパティ]** パッドでクラス名を入力します。
 
-[![](table-images/add-row-controller-sml.png "[プロパティ] パッドでのクラス名の入力")](table-images/add-row-controller.png#lightbox)
+[![](table-images/add-row-controller-sml.png "Entering a class name in the Properties pad")](table-images/add-row-controller.png#lightbox)
 
 行のコントローラーのクラスが設定されると、IDE によってプロジェクト内C#に対応するファイルが作成されます。 コントロール (ラベルなど) を行にドラッグし、コードで参照できるように名前を付けます。
 
 ## <a name="create-and-populate-rows"></a>行の作成と設定
 
-`SetNumberOfRows`を使用して`Identifier`正しい列を選択することにより、各行の行コントローラークラスを作成します。 行コントローラーにカスタムを設定`Identifier`した場合は、次のコードスニペットの**既定値**を、使用した識別子に変更します。 が`RowController`呼び出され、テーブルが表示`SetNumberOfRows`されると、*すべての行に対し*てが作成されます。
+`SetNumberOfRows` では、行ごとに行コントローラークラスを作成し、`Identifier` を使用して適切なものを選択します。 行コントローラーにカスタム `Identifier` を設定した場合は、次のコードスニペットの**既定値**を、使用した識別子に変更します。 *すべての行の*`RowController` は、`SetNumberOfRows` が呼び出され、テーブルが表示されたときに作成されます。
 
 ```csharp
 myTable.SetNumberOfRows ((nint)rows.Count, "default");
@@ -51,7 +51,7 @@ myTable.SetNumberOfRows ((nint)rows.Count, "default");
 > [!IMPORTANT]
 > テーブル行は、iOS でのようには仮想化されません。 行の数を制限します (Apple では20未満にすることをお勧めします)。
 
-行が作成されたら、各セル (iOS の場合と同様`GetCell` ) を設定する必要があります。 [WatchTables の例](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchtables)のこのコードスニペットでは、各行のラベルが更新されます。
+行が作成されたら、各セルを設定する必要があります (iOS での `GetCell` のように)。 [WatchTables の例](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchtables)のこのコードスニペットでは、各行のラベルが更新されます。
 
 ```csharp
 for (var i = 0; i < rows.Count; i++) {
@@ -61,18 +61,18 @@ for (var i = 0; i < rows.Count; i++) {
 ```
 
 > [!IMPORTANT]
-> を`SetNumberOfRows`使用し、を使用`GetRowController`してループすると、テーブル全体がウォッチに送信されます。 テーブルの後続のビューでは、特定の行を追加または削除する`InsertRowsAt`必要`RemoveRowsAt`がある場合は、とを使用してパフォーマンスを向上させます。
+> @No__t_0 を使用し、`GetRowController` を使用してループ処理を行うと、テーブル全体がウォッチに送信されます。 テーブルの後続のビューでは、特定の行を追加または削除する必要がある場合は `InsertRowsAt` と `RemoveRowsAt` を使用して、パフォーマンスを向上させることができます。
 
 ## <a name="respond-to-taps"></a>タップに応答する
 
 行の選択に応答するには、次の2つの方法があります。
 
-- インターフェイスコントローラーに対してメソッドを実装します。`DidSelectRow`
-- ストーリーボードにセグエを作成し、 `GetContextForSegue`行の選択で別のシーンを開く場合はを実装します。
+- インターフェイスコントローラーに `DidSelectRow` メソッドを実装します。
+- 行の選択で別のシーンを開く場合は、ストーリーボードにセグエを作成し、`GetContextForSegue` を実装します。
 
 ### <a name="didselectrow"></a>DidSelectRow
 
-行の`DidSelectRow`選択をプログラムで処理するには、メソッドを実装します。 新しいシーンを開くには、 `PushController`を使用して、シーンの識別子と、使用するデータコンテキストを渡します。
+行の選択をプログラムで処理するには、`DidSelectRow` メソッドを実装します。 新しいシーンを開くには、`PushController` を使用し、シーンの識別子と、使用するデータコンテキストを渡します。
 
 ```csharp
 public override void DidSelectRow (WKInterfaceTable table, nint rowIndex)
@@ -87,9 +87,9 @@ public override void DidSelectRow (WKInterfaceTable table, nint rowIndex)
 ### <a name="getcontextforsegue"></a>GetContextForSegue
 
 ストーリーボード上のセグエを、テーブルの行から別のシーンにドラッグします (ドラッグ中は**ctrl**キーを押したままにします)。
-セグエを選択し、 **[プロパティ]** パッドで識別子を指定します ( `secondLevel`以下の例を参照)。
+セグエを選択し、 **[プロパティ]** パッドで識別子を指定します (次の例では `secondLevel`)。
 
-インターフェイスコントローラーで、 `GetContextForSegue`メソッドを実装し、セグエによって示されるシーンに提供されるデータコンテキストを返します。
+インターフェイスコントローラーで、`GetContextForSegue` メソッドを実装し、セグエによって示されるシーンに提供されるデータコンテキストを返します。
 
 ```csharp
 public override NSObject GetContextForSegue (string segueIdentifier, WKInterfaceTable table, nint rowIndex)
@@ -101,19 +101,19 @@ public override NSObject GetContextForSegue (string segueIdentifier, WKInterface
 }
 ```
 
-このデータは、 `Awake`メソッド内のターゲットストーリーボードシーンに渡されます。
+このデータは、`Awake` メソッドでターゲットストーリーボードシーンに渡されます。
 
 ## <a name="multiple-row-types"></a>複数の行の種類
 
 既定では、テーブルコントロールには、デザインできる単一行の型があります。 行 ' templates ' を追加するには、**プロパティ**パッドの **[行]** ボックスを使用して、さらに行コントローラーを作成します。
 
-![](table-images/prototype-rows1.png "プロトタイプ行の数の設定")
+![](table-images/prototype-rows1.png "Setting the number of Prototype rows")
 
 **Rows**プロパティを**3**に設定すると、コントロールをにドラッグするための追加の行プレースホルダーが作成されます。 行ごとに、**プロパティ**パッドで**クラス**名を設定して、行コントローラークラスが作成されるようにします。
 
-![](table-images/prototype-rows2.png "デザイナーのプロトタイプ行")
+![](table-images/prototype-rows2.png "The prototype rows in the designer")
 
-異なる行の種類を含むテーブルにデータを`SetRowTypes`読み込むには、メソッドを使用して、テーブルの各行に使用する行コントローラーの種類を指定します。 行の識別子を使用して、行ごとに使用する行コントローラーを指定します。
+異なる行の種類を含むテーブルにデータを読み込むには、`SetRowTypes` メソッドを使用して、テーブルの各行に使用する行コントローラーの種類を指定します。 行の識別子を使用して、行ごとに使用する行コントローラーを指定します。
 
 この配列内の要素の数は、テーブルに含まれると予想される行数と一致している必要があります。
 
@@ -142,20 +142,20 @@ for (var i = 0; i < rows.Count; i++) {
 
 watchOS 3 ではテーブルの新機能が導入されました。テーブルに戻って別の行を選択しなくても、各行に関連する詳細ページをスクロールできます。 詳細画面をスクロールするには、上下にスワイプするか、Digital Crown を使用します。
 
-![](table-images/table-scroll-sml.png "垂直方向の詳細ページングの例")![](table-images/table-detail-sml.png)
+![](table-images/table-scroll-sml.png "垂直方向の詳細ページングの例") ![](table-images/table-detail-sml.png)
 
 > [!IMPORTANT]
 > この機能は現在、Xcode Interface Builder でストーリーボードを編集することによってのみ使用できます。
 
-この機能を有効にするに`WKInterfaceTable`は、デザイン画面でを選択し、**垂直方向の詳細ページング**オプションをオンにします。
+この機能を有効にするには、デザイン画面で `WKInterfaceTable` を選択し、**垂直方向の詳細ページング**オプションをオンにします。
 
-![](table-images/vertical-detail-paging-sml.png "垂直方向の詳細ページングオプションを選択する")
+![](table-images/vertical-detail-paging-sml.png "Selecting the Vertical Detail Paging option")
 
-[Apple によって説明](https://developer.apple.com/reference/watchkit/wkinterfacetable#1682023)されているように、テーブルナビゲーションでは、ページング機能が動作するためにセグエを使用する必要があります。 `PushController`を使用する既存のコードを再作成し、代わりにセグエを使用します。
+[Apple によって説明](https://developer.apple.com/reference/watchkit/wkinterfacetable#1682023)されているように、テーブルナビゲーションでは、ページング機能が動作するためにセグエを使用する必要があります。 代わりにセグエを使用する既存 `PushController` のコードを再記述して、代わりにを使用します。
 
 <a name="add_row_controller" />
 
-## <a name="appendix-row-controller-code-example"></a>付録:行コントローラーのコード例
+## <a name="appendix-row-controller-code-example"></a>付録: 行コントローラーのコード例
 
 デザイナーで行コントローラーを作成すると、IDE によって自動的に2つのコードファイルが作成されます。 これらの生成されたファイルのコードを次に示します。
 
@@ -176,7 +176,7 @@ namespace WatchTablesExtension
 }
 ```
 
-**Designer.cs**ファイルは部分クラス定義で、この例では1つ`WKInterfaceLabel`のコントロールを使用して、デザイナー画面に作成されるコンセントとアクションを含みます。
+**Designer.cs**ファイルは、デザイナー画面に作成されるコンセントとアクションを含む部分クラス定義です。この例では、1つの `WKInterfaceLabel` コントロールを使用します。
 
 ```csharp
 using Foundation;

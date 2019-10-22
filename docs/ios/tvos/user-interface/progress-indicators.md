@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
 ms.openlocfilehash: 202ce8d674a39b06fd1b07460dff4bf573062592
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70291413"
 ---
 # <a name="working-with-tvos-progress-indicators-in-xamarin"></a>Xamarin での tvOS 進行状況インジケーターの使用
@@ -77,8 +77,8 @@ TvOS アプリで進行状況インジケーターを操作する最も簡単な
 
 2. **[ツールボックス]** から**アクティビティインジケーター**をドラッグし、ビューにドロップします。 
 
-    ![アクティビティインジケーター。]アクティビティインジケーター(progress-indicators-images/activity01-vs.png
-    "")
+    ![アクティビティインジケーター](progress-indicators-images/activity01-vs.png
+    "アクティビティインジケーター")
 
 3. **プロパティエクスプローラー**の **[ウィジェット]** タブでは、**スタイル**、**動作**、**名前**など、アクティビティインジケーターのいくつかのプロパティを調整できます。 
 
@@ -106,7 +106,7 @@ TvOS アプリで進行状況インジケーターを操作する最も簡単な
 
 既に説明したように、アプリが長時間の長さの長いプロセスを実行している場合は、アクティビティインジケーターが表示されます。
 
-任意の時点で、 `IsAnimating`プロパティをチェックすることで、アクティビティインジケーターがアニメーション化されているかどうかを確認できます。 `HidesWhenStopped`プロパティが`true`の場合、アニメーションが停止されると、アクティビティインジケーターは自動的に非表示になります。
+任意の時点で、`IsAnimating` プロパティをチェックすることで、アクティビティインジケーターがアニメーション化されているかどうかを確認できます。 @No__t_0 プロパティが `true` 場合、アニメーションが停止されると、アクティビティインジケーターは自動的に非表示になります。
 
 アニメーションを開始するには、次のコードを使用します。 
 
@@ -127,7 +127,7 @@ ActivityIndicator.StopAnimating();
 
 ここでも、アプリが既知の期間に実行時間の長いタスクを実行するときは常に、進行状況バーを使用する必要があります。 
 
-`Progress`プロパティは、完了したタスクの量を 0 ~ 100% (0.0 から 1.0) に設定するために使用されます。 プロパティを使用して、[amount 完了] バーの色を`TrackTintColor`設定し、プロパティを使用して背景色 (未完了の金額) を設定します。 `ProgressTintColor`
+@No__t_0 プロパティは、完了したタスクの量を 0 ~ 100% (0.0 から 1.0) に設定するために使用されます。 @No__t_0 プロパティを使用して、[amount completed] バーの色を設定し、[`TrackTintColor`] プロパティを使用して、背景色 (未完了の金額) を設定します。
 
 ## <a name="summary"></a>まとめ
 

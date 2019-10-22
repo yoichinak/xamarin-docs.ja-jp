@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
 ms.openlocfilehash: 2129281f389c440d9ae746c4b9b06c4ddb32d1dc
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70770034"
 ---
 # <a name="xamarinmac-extension-support"></a>Xamarin.Mac 拡張機能のサポート
@@ -38,13 +38,13 @@ ms.locfileid: "70770034"
 
 次のヒントは、Xamarin. Mac で拡張機能を使用する場合に役立ちます。
 
-- 現在、Xamarin. Mac では拡張機能のデバッグがサポートされていないため、 `printf`デバッグエクスペリエンスは主に実行や like ステートメントに依存します。 ただし、拡張機能はサンドボックスプロセスで実行`Console.WriteLine`されるため、他の Xamarin. Mac アプリケーションと同様に動作しません。 を[ `NSLog`直接](https://gist.github.com/chamons/e2e409013a449cfbe1f2fbe5547f6554)呼び出すと、デバッグメッセージがシステムログに出力されます。
-- キャッチされていない例外が発生すると、拡張プロセスがクラッシュし、**システムログ**に表示される情報の量がわずかになります。 (例外) `NSLog`ブロックで`try/catch`厄介なコードをラップすることは、再スローの前に役に立つ可能性があります。
+- 現在、Xamarin. Mac では拡張機能のデバッグがサポートされていないため、デバッグエクスペリエンスは主に実行と `printf` のようなステートメントに依存します。 ただし、拡張機能はサンドボックスプロセスで実行されるため、`Console.WriteLine` は他の Xamarin. Mac アプリケーションと同様に動作しません。 [@No__t_1 を直接](https://gist.github.com/chamons/e2e409013a449cfbe1f2fbe5547f6554)呼び出すと、デバッグメッセージがシステムログに出力されます。
+- キャッチされていない例外が発生すると、拡張プロセスがクラッシュし、**システムログ**に表示される情報の量がわずかになります。 再スローする前に `NSLog` する `try/catch` (例外) ブロックで、厄介なコードをラップすることが役に立つ場合があります。
 - **システムログ**には、**コンソール**アプリの [**アプリケーション** > **ユーティリティ**] からアクセスできます。
 
-    [![](extensions-images/extension02.png "システムログ")](extensions-images/extension02.png#lightbox)
+    [![](extensions-images/extension02.png "The system log")](extensions-images/extension02.png#lightbox)
 - 前述のように、拡張機能ホストアプリケーションを実行すると、システムに登録されます。 登録を解除してアプリケーションバンドルを削除しています。 
-- アプリの拡張機能の "存在しない" バージョンが登録されている場合は、次のコマンドを使用してそれらを見つけます (削除することもできます)。`plugin kit -mv`
+- アプリの拡張機能の "存在しない" バージョンが登録されている場合は、次のコマンドを使用して検索します (削除することもできます)。 `plugin kit -mv`
 
 <a name="Walkthrough-and-Sample-App" />
 

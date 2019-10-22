@@ -8,17 +8,17 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 06/21/2018
 ms.openlocfilehash: 9ea105b27aacef9ca9d63af0c57de880d039ff53
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "68739180"
 ---
 # <a name="xamarinforms-local-databases"></a>Xamarin.Forms のローカル データベース
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)
 
-"_Xamarin.Forms では、SQLite データベース エンジンを使ったデータベース駆動型アプリケーションがサポートされています。これにより、共有コードでのオブジェクトの読み込みと保存が可能になります。この記事では、Xamarin.Forms アプリケーションで SQLite.Net を使用して、ローカルの SQLite データベースに対してデータの読み取りと書き込みを行う方法について説明します。_ "
+_Xamarin は、SQLite データベースエンジンを使用するデータベース駆動型アプリケーションをサポートします。これにより、共有コードでオブジェクトを読み込んで保存できるようになります。この記事では、SQLite.Net を使用して、Xamarin アプリケーションがローカルの SQLite データベースに対してデータの読み取りと書き込みを行う方法について説明します。_
 
 ## <a name="overview"></a>概要
 
@@ -26,7 +26,7 @@ Xamarin.Forms アプリケーションでは、[SQLite.NET PCL NuGet](https://ww
 
 付随している[サンプル アプリケーション](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)は、単純な Todo-list アプリケーションです。 次のスクリーンショットで、各プラットフォーム上でサンプルがどのように表示されるかを示します。
 
-[![Xamarin. フォームデータベースの例のスクリーンショット](databases-images/todo-list-sml.png "TodoList 最初のページのスクリーンショット")](databases-images/todo-list.png#lightbox "TodoList 最初のページのスクリーンショット")[ ![Xamarin. フォームデータベースの例スクリーン]ショット(databases-images/todo-list-sml.png "TodoList 最初のページのスクリーンショット")](databases-images/todo-list.png#lightbox "TodoList 最初のページのスクリーンショット")
+[![Xamarin. フォームデータベースの例サンプルスクリーンショット](databases-images/todo-list-sml.png "TodoList 最初のページのスクリーンショット")](databases-images/todo-list.png#lightbox "TodoList 最初のページのスクリーンショット") [![サンプルスクリーンショット](databases-images/todo-list-sml.png "TodoList 最初のページのスクリーンショット")](databases-images/todo-list.png#lightbox "TodoList 最初のページのスクリーンショット")
 
 <a name="Using_SQLite_with_PCL" />
 
@@ -34,7 +34,7 @@ Xamarin.Forms アプリケーションでは、[SQLite.NET PCL NuGet](https://ww
 
 Xamarin.Forms .NET Standard ライブラリに SQLite のサポートを追加するには、NuGet の検索機能を使用して **sqlite-net-pcl** を検索し、最新のパッケージをインストールします。
 
-![NuGet SQLite.NET PCL パッケージの追加](databases-images/vs2017-sqlite-pcl-nuget.png "Add NuGet SQLite.NET PCL パッケージの追加")
+![NuGet SQLite.NET PCL パッケージの追加](databases-images/vs2017-sqlite-pcl-nuget.png "NuGet SQLite.NET PCL パッケージの追加")
 
 類似した名前の NuGet パッケージがいくつかあります。正しいパッケージには、次の属性があります。
 

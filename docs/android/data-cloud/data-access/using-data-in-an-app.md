@@ -7,10 +7,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 02/08/2018
 ms.openlocfilehash: 922b1fa411a176df580050384e7555120fd68137
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70754454"
 ---
 # <a name="using-data-in-an-app"></a>アプリでのデータの使用
@@ -23,7 +23,7 @@ ms.locfileid: "70754454"
 
 ![Android のサンプルの詳細](using-data-in-an-app-images/image12.png "Android のサンプルの詳細")
 
-このセクションで示されているコードは、Orm ディレクトリ内に含まれています。 &ndash;
+このセクションに示されているコードが**Orm**ディレクトリ内に含まれる &ndash;、Android プロジェクトは次のようになります。
 
 ![Android プロジェクトツリー](using-data-in-an-app-images/image14.png "Android プロジェクトツリー")
 
@@ -36,7 +36,7 @@ Android でのアクティビティのネイティブ UI コードは、この�
 - リストを読み取っています
 - 個々のレコードの読み取り
 
-`StockDatabase`クラスの2つのメソッドは次のとおりです。
+@No__t_0 クラスの2つのメソッドは次のとおりです。
 
 ```csharp
 public IEnumerable<Stock> GetStocks ()
@@ -53,11 +53,11 @@ public Stock GetStock (int id)
 }
 ```
 
-Android では、 `ListView`データをとしてレンダリングします。
+Android では、データを `ListView` としてレンダリングします。
 
 ## <a name="create-and-update"></a>作成と更新
 
-アプリケーションコードを簡略化するために、PrimaryKey が設定されているかどうかに応じて挿入または更新を行う1つの save メソッドが用意されています。 プロパティは`[PrimaryKey]`属性でマークされているので、コードで設定しないでください。 `Id` このメソッドは、(主キープロパティをチェックして) 値が以前に保存されているかどうかを検出し、それに応じてオブジェクトを挿入または更新します。
+アプリケーションコードを簡略化するために、PrimaryKey が設定されているかどうかに応じて挿入または更新を行う1つの save メソッドが用意されています。 @No__t_0 プロパティは `[PrimaryKey]` 属性でマークされているので、コードで設定しないでください。 このメソッドは、(主キープロパティをチェックして) 値が以前に保存されているかどうかを検出し、それに応じてオブジェクトを挿入または更新します。
 
 ```csharp
 public int SaveStock (Stock item)
@@ -77,7 +77,7 @@ public int SaveStock (Stock item)
 
 ## <a name="delete"></a>削除
 
-`Delete<T>` `Stock`メソッドとメソッド`Update`とは異なり、メソッドは、完全なオブジェクトではなく、主キーの値のみを受け入れることができます。 `Insert` この例`Stock`では、オブジェクトはメソッドに渡されますが、Id プロパティのみが`Delete<T>`メソッドに渡されます。
+@No__t_0 メソッドと `Update` メソッドとは異なり、`Delete<T>` メソッドは、完全な `Stock` オブジェクトではなく、主キーの値のみを受け入れることができます。 この例では、`Stock` オブジェクトがメソッドに渡されますが、`Delete<T>` メソッドに渡されるのは Id プロパティだけです。
 
 ```csharp
 public int DeleteStock(Stock stock)
@@ -92,13 +92,13 @@ public int DeleteStock(Stock stock)
 
 一部のアプリケーションには、既にデータが格納されているデータベースが付属しています。 モバイルアプリケーションでこれを簡単に実現するには、既存の SQLite データベースファイルをアプリに発送し、書き込み可能なディレクトリにコピーしてからアクセスします。 SQLite は多くのプラットフォームで使用される標準のファイル形式であるため、SQLite データベースファイルを作成するために使用できるツールがいくつかあります。
 
-- **SQLite Manager Firefox 拡張機能**&ndash;は Mac と Windows で動作し、iOS および Android と互換性のあるファイルを生成します。
+- **SQLite Manager Firefox 拡張**&ndash; は、Mac と Windows で動作し、IOS および Android と互換性のあるファイルを生成します。
 
-- **コマンドライン**「[www.sqlite.org/sqlite.html](http://www.sqlite.org/sqlite.html)」を参照してください。&ndash;
+- **コマンドライン**&ndash; 「 [Www.sqlite.org/sqlite.html](http://www.sqlite.org/sqlite.html) 」を参照してください。
 
 アプリケーションと共に配布するデータベースファイルを作成する場合は、テーブルと列の名前付けを使用して、コードが期待するものと一致することを確認します。特に、SQLite.NET C#を使用していて、名前がクラスやプロパティと一致することを期待する場合は特に、または、関連付けられているカスタム属性)。
 
-Android アプリ内の他のコードの前に実行されるコードがあることを確認するには、最初に読み込むアクティビティにコード`Application`を配置するか、アクティビティの前に読み込まれるサブクラスを作成します。 次のコードは、 `Application`既存のデータベースファイルデータをコピーするサブクラスを示して**います。 sqlite**は、 **/また**はディレクトリにあります。
+Android アプリ内の他のコードよりも前に実行されるコードがあることを確認するには、最初に読み込むアクティビティにコードを配置するか、アクティビティの前に読み込まれる `Application` サブクラスを作成します。 次のコードは、既存のデータベースファイルデータをコピーする `Application` サブクラスを示して**います。 sqlite**は、 **/また**はディレクトリにあります。
 
 ```csharp
 [Application]
@@ -139,4 +139,4 @@ public class YourAndroidApp : Application {
 - [このような場合の基本 (サンプル)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
 - [詳細設定 (サンプル)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
 - [Android データレシピ](https://github.com/xamarin/recipes/tree/master/Recipes/android/data)
-- [Xamarin.Forms データアクセス](~/xamarin-forms/data-cloud/data/databases.md)
+- [Xamarin. フォームデータアクセス](~/xamarin-forms/data-cloud/data/databases.md)
