@@ -6,12 +6,12 @@ ms.assetid: FD8FE199-898B-4841-8041-CC9CA1A00917
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/16/2019
-ms.openlocfilehash: a29cc650d9aa3976b6fd7aaaa82e233317684335
-ms.sourcegitcommit: 20c645f41620d5124da75943de1b690261d00660
+ms.openlocfilehash: 0a2bd469477ce6e2aca03e1d4cf279bb5a7a16f9
+ms.sourcegitcommit: 94fa3bf464a2ee5ac4b6056691d264b8210b1192
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72426561"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72526824"
 ---
 # <a name="connect-to-local-web-services-from-ios-simulators-and-android-emulators"></a>iOS シミュレーターと Android エミュレーターからローカル Web サービスに接続する
 
@@ -27,7 +27,7 @@ iOS シミュレーターまたは Android エミュレーターで実行され�
 ただし、iOS シミュレーターまたは Android エミュレーターで実行されているアプリケーションで、HTTPS 経由で公開されているローカル Web サービスを使用する場合は、追加の作業が必要です。 このシナリオ用のプロセスは次のようになります。
 
 1. ご自身のコンピューター上に自己署名済み開発証明書を作成します。 詳しくは、「[Create a development certificate (開発証明書を作成する)](#create-a-development-certificate)」をご覧ください。
-1. デバッグ ビルド用にマネージド `HttpClient` ネットワーク スタックを使うようプロジェクトを構成します。 詳細については、「[Configure your project (プロジェクトを構成する)](#configure-your-project)」をご覧ください。
+1. デバッグ ビルド用に適切な `HttpClient` ネットワーク スタックを使うようプロジェクトを構成します。 詳細については、「[Configure your project (プロジェクトを構成する)](#configure-your-project)」をご覧ください。
 1. ご自分のローカル コンピューターのアドレスを指定します。 詳細については、「[Specify the local machine address (ローカル コンピューターのアドレスを指定する)](#specify-the-local-machine-address)」をご覧ください。
 1. ローカル開発証明書のセキュリティ チェックをバイパスします。 詳細については、「[Bypass the certificate security check (証明書のセキュリティ チェックをバイパスする)](#bypass-the-certificate-security-check)」をご覧ください。
 
@@ -66,7 +66,7 @@ iOS 上で実行される Xamarin アプリケーションでは、マネージ�
 
 ### <a name="android"></a>Android
 
-Android 上で実行される Xamarin アプリケーションでは、マネージド `HttpClientHandler` ネットワーク スタック、またはネイティブの `AndroidClientHandler` ネットワーク スタックを使用できます。 既定では、新しい Android プラットフォームのプロジェクトでは `AndroidClientHandler` ネットワーク スタックが使われ、TLS 1.2 がサポートされ、またパフォーマンスの向上と実行可能ファイルのサイズの縮小のためにネイティブ API が使われます。 Android のネットワーク スタックについて詳しくは、「[Android 用の HttpClient スタックと SSL/TLS の実装セレクター](~/android/app-fundamentals/http-stack.md)」をご覧ください。
+Android 上で実行される Xamarin アプリケーションでは、マネージド `HttpClient` ネットワーク スタック、またはネイティブの `AndroidClientHandler` ネットワーク スタックを使用できます。 既定では、新しい Android プラットフォームのプロジェクトでは `AndroidClientHandler` ネットワーク スタックが使われ、TLS 1.2 がサポートされ、またパフォーマンスの向上と実行可能ファイルのサイズの縮小のためにネイティブ API が使われます。 Android のネットワーク スタックについて詳しくは、「[Android 用の HttpClient スタックと SSL/TLS の実装セレクター](~/android/app-fundamentals/http-stack.md)」をご覧ください。
 
 ## <a name="specify-the-local-machine-address"></a>ローカル コンピューターのアドレスを指定する
 
