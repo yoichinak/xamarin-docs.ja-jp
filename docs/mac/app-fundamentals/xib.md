@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
 ms.openlocfilehash: be737dfb92cf2ce90dc64dd527f908d52cf2c580
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70770350"
 ---
 # <a name="xib-files-in-xamarinmac"></a>xib ファイル (Xamarin. Mac)
@@ -23,7 +23,7 @@ _この記事では、Xcode の Interface Builder で作成された xib ファ�
 
 ## <a name="overview"></a>概要
 
-同じユーザー インターフェイス要素にアクセスし、ツールで作業する開発者 Xamarin.Mac アプリケーションでは、c# と .NET で作業するとき*Objective-C*と*Xcode*はします。 Xcode は直接統合されているため、Xcode の_Interface Builder_を使用してユーザーインターフェイスを作成および管理できます (また、必要C#に応じて、コード内で直接作成することもできます)。
+Xamarin. Mac C#アプリケーションでと .net を使用する場合、 *Xcode と*で作業する開発者が行う*のと同じ*ユーザーインターフェイスの要素とツールにアクセスできます。 Xcode は直接統合されているため、Xcode の_Interface Builder_を使用してユーザーインターフェイスを作成および管理できます (また、必要C#に応じて、コード内で直接作成することもできます)。
 
 Xib ファイルは、Xcode の Interface Builder でグラフィカルに作成および維持される、アプリケーションのユーザーインターフェイス (メニュー、ウィンドウ、ビュー、ラベル、テキストフィールドなど) の要素を定義するために macOS によって使用されます。
 
@@ -31,17 +31,17 @@ Xib ファイルは、Xcode の Interface Builder でグラフィカルに作成
 
 この記事では、xib ファイルを Xamarin. Mac アプリケーションで操作するための基本について説明します。 この記事で使用する主要な概念と手法について説明しているため、最初に[Hello, Mac](~/mac/get-started/hello-mac.md)の記事を通じて作業することを強くお勧めします。
 
-確認することも、 [c# を公開するクラス/Objective-C メソッド](~/mac/internals/how-it-works.md)のセクション、 [Xamarin.Mac 内部](~/mac/internals/how-it-works.md)が説明されても、ドキュメント、`Register`と`Export`属性ネットワーク上での c# クラスを Objective-C オブジェクトと UI への要素に使用されます。
+[Xamarin. Mac の内部](~/mac/internals/how-it-works.md)ドキュメントの「[クラス/ C#メソッドを目的に公開](~/mac/internals/how-it-works.md)する」セクションを参照してください。 C#クラスを目的のものに接続するために使用される `Register` と `Export` の属性について説明しています。オブジェクトと UI 要素。
 
 ## <a name="introduction-to-xcode-and-interface-builder"></a>Xcode と Interface Builder の概要
 
-Xcode の一部として、Apple は Interface Builder というツールを作成しました。これにより、デザイナーでユーザーインターフェイスを視覚的に作成できます。 Xamarin.MacはInterface Builderとうまく統合されており、Objective-Cユーザーと同じツールでUIを作成することができます。
+Xcode の一部として、Apple は Interface Builder というツールを作成しました。これにより、デザイナーでユーザーインターフェイスを視覚的に作成できます。 自由は Interface Builder と統合されているため、目的の C ユーザーが実行するのと同じツールを使用して UI を作成できます。
 
 ### <a name="components-of-xcode"></a>Xcode のコンポーネント
 
 Visual Studio for Mac から Xcode で xib ファイルを開くと、左側に**プロジェクトナビゲーター** 、中央に**インターフェイス階層**と**インターフェイスエディター** 、右側に **[プロパティ & ユーティリティ]** セクションが表示されます。
 
-[![XCODE UI のコンポーネント](xib-images/xcode03.png "XCODE UI のコンポーネント")](xib-images/xcode03-large.png#lightbox)
+[![Xcode UI のコンポーネント](xib-images/xcode03.png "Xcode UI のコンポーネント")](xib-images/xcode03-large.png#lightbox)
 
 これらの Xcode の各セクションの内容と、それらを使用して Xamarin. Mac アプリケーションのインターフェイスを作成する方法を見てみましょう。
 
@@ -95,18 +95,18 @@ Xamarin アプリのユーザーインターフェイスを作成するには、
 Xib ベースの UI を使用するように切り替えるには、次の手順を実行します。
 
 1. Visual Studio for Mac を開き、新しい Xamarin. Mac プロジェクトを開始します。
-2. **Solution Pad**で、プロジェクトを右クリックし、[新しいファイルの**追加** >  **...** ] を選択します。
-3. **Mac** > **Windows コントローラー**の選択:
+2. **Solution Pad**で、プロジェクトを右クリックし、[ >  新しいファイルの**追加** **...** ] を選択します。
+3. [ **Mac**  > **Windows コントローラー**] を選択します。
 
     ![新しいウィンドウコントローラーの追加](xib-images/setup00.png "新しいウィンドウコントローラーの追加")
-4. 名前`MainWindow`として「」と入力し、 **[新規]** ボタンをクリックします。
+4. 名前として「`MainWindow`」と入力し、 **[新規]** ボタンをクリックします。
 
     ![新しいメインウィンドウの追加](xib-images/setup01.png "新しいメインウィンドウの追加")
-5. プロジェクトをもう一度右クリックし、[**新しいファイル**の**追加** > ] を選択します。
-6. **Mac** > **メインメニュー**の選択:
+5. プロジェクトをもう一度右クリックし、[**新しいファイル**を**追加** > ] を選択します。
+6. **メインメニュー** >  **Mac**を選択します。
 
     ![新しいメインメニューの追加](xib-images/setup02.png "新しいメインメニューの追加")
-7. 名前はそのまま`MainMenu`にして、 **[新規作成]** ボタンをクリックします。
+7. 名前を `MainMenu` のままにして、 **[新規]** ボタンをクリックします。
 8. **Solution Pad** **メインのストーリーボード**ファイルを選択し、右クリックして **[削除]** を選択します。
 
     ![メインストーリーボードの選択](xib-images/setup03.png "メインストーリーボードの選択")
@@ -114,22 +114,22 @@ Xib ベースの UI を使用するように切り替えるには、次の手順
 
     ![削除の確認](xib-images/setup04.png "削除の確認")
 10. **Solution Pad**で **、ファイルを**ダブルクリックして編集用に開きます。
-11. `MainMenu` **メインインターフェイス**のドロップダウンから、次のように選択します。
+11. **メインインターフェイス**のドロップダウンから [`MainMenu`] を選択します。
 
     [![メインメニューの設定](xib-images/setup05.png "メインメニューの設定")](xib-images/setup05-large.png#lightbox)
 12. **Solution Pad**で、 **xib**ファイルをダブルクリックして、Xcode の Interface Builder で編集するために開きます。
-13. **ライブラリインスペクター**で、検索フィールド`object`に「」と入力し、新しい**オブジェクト**をデザイン画面にドラッグします。
+13. **ライブラリインスペクター**で、[検索] フィールドに「`object`」と入力し、新しい**オブジェクト**をデザイン画面にドラッグします。
 
     [![メインメニューの編集](xib-images/setup06.png "メインメニューの編集")](xib-images/setup06-large.png#lightbox)
-14. **Id インスペクター**で、**クラス**と`AppDelegate`して「」と入力します。
+14. **Id インスペクター**で、**クラス**の `AppDelegate` を入力します。
 
     [![アプリのデリゲートを選択する](xib-images/setup07.png "アプリのデリゲートを選択する")](xib-images/setup07-large.png#lightbox)
-15. **インターフェイス階層**から**ファイルの所有者**を選択し、**接続インスペクター**に切り替えて、プロジェクトに追加したばかり`AppDelegate`の**オブジェクト**にデリゲートの行をドラッグします。
+15. **インターフェイス階層**から**ファイルの所有者**を選択し、**接続インスペクター**に切り替えて、デリゲートの行を、プロジェクトに追加したばかりの `AppDelegate`**オブジェクト**にドラッグします。
 
     [![アプリデリゲートの接続](xib-images/setup08.png "アプリデリゲートの接続")](xib-images/setup08-large.png#lightbox)
-16. 変更を保存し、for Mac を Visual Studio に戻る
+16. 変更を保存し、Visual Studio for Mac に戻ります。
 
-これらすべての変更にでは、編集、 **AppDelegate.cs**ファイルし、次のように表示します。
+これらの変更をすべて設定したら、 **AppDelegate.cs**ファイルを編集し、次のようにします。
 
 ```csharp
 using AppKit;
@@ -242,8 +242,8 @@ UI 要素をコードにC#公開するためのアウトレットとアクショ
 次の手順で行います。
 
 1. Xcode の Interface Builder でアプリのストーリーボードを開きます。
-2. `NSWindowController`デザインサーフェイスでを選択します。
-3. **[Identity Inspector]** ビューに切り替え、 `WindowController` **クラス名**として「」と入力します。
+2. デザインサーフェイスで `NSWindowController` を選択します。
+3. **[Identity Inspector]** ビューに切り替え、**クラス名**として「`WindowController`」と入力します。
 
     [![クラス名の編集](xib-images/windowcontroller01.png "クラス名の編集")](xib-images/windowcontroller01-large.png#lightbox)
 4. 変更を保存し、Visual Studio for Mac に戻って同期します。
@@ -264,11 +264,11 @@ UI 要素をコードにC#公開するためのアウトレットとアクショ
 
 Xcode では、*コントロールのドラッグ*によって、コンセントとアクションがコードに直接追加されます。 具体的には、アウトレットまたはアクションを作成するには、アウトレットまたはアクションを追加するコントロール要素を選択し、キーボードの**コントロール**ボタンを押したまま、コントロールをコードに直接ドラッグします。
 
-Xamarin.Mac 開発者コンセントまたはアクションを作成する (C#) ファイルに対応する Objective-C スタブ ファイルにドラッグすることを意味します。 Visual Studio for Mac Interface Builder を使用するために生成された shim Xcode プロジェクトの一部として、 **mainwindow.xaml**という名前のファイルを作成しました。
+Xamarin の開発者の場合、これは、アウトレットまたはアクションを作成するC#ファイルに対応する目的の C スタブファイルにドラッグすることを意味します。 Visual Studio for Mac Interface Builder を使用するために生成された shim Xcode プロジェクトの一部として、 **mainwindow.xaml**という名前のファイルを作成しました。
 
 [![Xcode の .h ファイルの例](xib-images/xcode16.png "Xcode の .h ファイルの例")](xib-images/xcode16-large.png#lightbox)
 
-この**MainWindow.designer.cs**ファイルは、新しい`NSWindow`が作成されたときに Xamarin. Mac プロジェクトに自動的に追加されるを反映しています。 このファイルは、Interface Builder によって行われた変更を同期するために使用されます。また、UI 要素がコードにC#公開されるように、アウトレットとアクションを作成します。
+この MainWindow.designer.cs ファイルは、新しい `NSWindow` が作成されたときに、Xamarin. Mac プロジェクトに自動的に追加されるを反映します。 このファイルは、Interface Builder によって行われた変更を同期するために使用されます。また、UI 要素がコードにC#公開されるように、アウトレットとアクションを作成します。
 
 #### <a name="adding-an-outlet"></a>アウトレットの追加
 
@@ -286,17 +286,17 @@ Xamarin.Mac 開発者コンセントまたはアクションを作成する (C#)
     [![正しい .h ファイルを選択する](xib-images/outlet02.png "正しい .h ファイルを選択する")](xib-images/outlet02-large.png#lightbox)
 5. Xcode で正しいファイルが選択されます。
 
-    [![正しいファイルが選択されまし]た(xib-images/outlet03.png "正しいファイルが選択されまし")た](xib-images/outlet03-large.png#lightbox)
+    [![正しいファイルが選択されました](xib-images/outlet03.png "正しいファイルが選択されました")](xib-images/outlet03-large.png#lightbox)
 6. **最後のステップは非常に重要です!** 正しいファイルが選択されていない場合、コンセントやアクションを作成することはできません。また、でC#間違ったクラスに公開されることもありません。
-7. **インターフェイスエディター**で、キーボードの**ctrl**キーを押したまま、前の手順で作成したラベルをコードエディターのコードの`@interface MainWindow : NSWindow { }`すぐ下にドラッグします。
+7. **インターフェイスエディター**で、キーボードの**ctrl**キーを押したまま、前の手順で作成したラベルをクリックして、コードエディターの `@interface MainWindow : NSWindow { }` コードのすぐ下にドラッグします。
 
     [![ドラッグして新しいアウトレットを作成する](xib-images/outlet04.png "ドラッグして新しいアウトレットを作成する")](xib-images/outlet04-large.png#lightbox)
-8. ダイアログ ボックスが表示されます。 **接続** を アウトレット の`ClickedLabel`ままにして、**名前**として「」と入力します。
+8. ダイアログ ボックスが表示されます。 **[接続]** を アウトレット のままにして、 **[名前]** に「`ClickedLabel`」と入力します。
 
     [![アウトレットのプロパティの設定](xib-images/outlet05.png "アウトレットのプロパティの設定")](xib-images/outlet05-large.png#lightbox)
 9. **[接続]** ボタンをクリックして、アウトレットを作成します。
 
-    ![完了]したアウトレット(xib-images/outlet06.png "完了")したアウトレット
+    ![完了したアウトレット](xib-images/outlet06.png "完了したアウトレット")
 10. 変更内容をファイルに保存します。
 
 #### <a name="adding-an-action"></a>アクションの追加
@@ -306,12 +306,12 @@ Xamarin.Mac 開発者コンセントまたはアクションを作成する (C#)
 次の手順で行います。
 
 1. まだ**アシスタントエディター**で、 **Mainwindow.xaml**ファイルが**コードエディター**に表示されていることを確認します。
-2. **インターフェイスエディター**で、キーボードの**ctrl**キーを押したまま、前の手順で作成したボタンをコードエディターのコードの`@property (assign) IBOutlet NSTextField *ClickedLabel;`すぐ下にドラッグします。
+2. **インターフェイスエディター**で、キーボードの**ctrl**キーを押したまま、前の手順で作成したボタンをクリックして、コードエディターの `@property (assign) IBOutlet NSTextField *ClickedLabel;` コードのすぐ下にドラッグします。
 
     [![ドラッグしてアクションを作成する](xib-images/action01.png "ドラッグしてアクションを作成する")](xib-images/action01-large.png#lightbox)
 3. **接続**の種類を action に変更します。
 
-    [![アクションの種類を選択し]ます(xib-images/action02.png "アクションの種類を選択し")ます](xib-images/action02-large.png#lightbox)
+    [![アクションの種類を選択します](xib-images/action02.png "アクションの種類を選択します")](xib-images/action02-large.png#lightbox)
 4. **[名前]** に「`ClickedButton`」を入力します。
 
     [![アクションの構成](xib-images/action03.png "アクションの構成")](xib-images/action03-large.png#lightbox)
@@ -328,7 +328,7 @@ Xamarin.Mac 開発者コンセントまたはアクションを作成する (C#)
 
 [![MainWindow.cs ファイル](xib-images/code01.png "MainWindow.cs ファイル")](xib-images/code01-large.png#lightbox)
 
-次のコードを`MainWindow`クラスに追加して、上で作成したサンプルアウトレットを操作します。
+次のコードを `MainWindow` クラスに追加して、上で作成したサンプルアウトレットを操作します。
 
 ```csharp
 private int numberOfTimesClicked = 0;
@@ -343,12 +343,12 @@ public override void AwakeFromNib ()
 }
 ```
 
-は、 `NSLabel` Xcode でアウトレットをC#作成したときに Xcode で割り当てたダイレクト名によってにアクセスされることに注意してください。 `ClickedLabel`この場合は、という名前になります。 公開されたオブジェクトのメソッドまたはプロパティには、通常C#のクラスと同じ方法でアクセスできます。
+@No__t_0 には、Xcode でアウトレットC#を作成したときに Xcode で割り当てたダイレクト名によってアクセスされることに注意してください。この場合は `ClickedLabel` と呼ばれます。 公開されたオブジェクトのメソッドまたはプロパティには、通常C#のクラスと同じ方法でアクセスできます。
 
 > [!IMPORTANT]
-> は、OS が`AwakeFromNib`読み込まれ、xib ファイルからユーザーインターフェイス`AwakeFromNib`がインスタンス化され_た後_に呼び出されるため、などの別のメソッド`Initialize`ではなくを使用する必要があります。 Xib ファイルが完全に読み込まれてインスタンス化される前にラベルコントロールにアクセスしようとすると、ラベル`NullReferenceException`コントロールがまだ作成されていないため、エラーが発生します。
+> @No__t_1 などの別のメソッドの代わりに `AwakeFromNib` を使用する必要があります。これは、OS が読み込まれ、xib ファイルからユーザーインターフェイスがインスタンス化され_た後_に `AwakeFromNib` が呼び出されるためです。 Xib ファイルが完全に読み込まれてインスタンス化される前にラベルコントロールにアクセスしようとすると、ラベルコントロールがまだ作成されていないため、`NullReferenceException` エラーが発生します。
 
-次に、次の部分クラスを`MainWindow`クラスに追加します。
+次に、次の部分クラスを `MainWindow` クラスに追加します。
 
 ```csharp
 partial void ClickedButton (Foundation.NSObject sender) {
@@ -360,7 +360,7 @@ partial void ClickedButton (Foundation.NSObject sender) {
 
 このコードは、Xcode および Interface Builder で作成したアクションにアタッチし、ユーザーがボタンをクリックするたびに呼び出されます。
 
-一部の UI 要素には、組み込みのアクションが自動的に組み込まれています。たとえば、 **[開く]** メニュー項目 (`openDocument:`) などの既定のメニューバーの項目があります。 **Solution Pad**で、 **AppDelegate.cs**ファイルをダブルクリックして編集用に開き、メソッドの`DidFinishLaunching`下に次のコードを追加します。
+一部の UI 要素には、組み込みのアクションが自動的に組み込まれています。たとえば、 **[開く]** メニュー項目 (`openDocument:`) などの既定のメニューバーの項目があります。 **Solution Pad**で、 **AppDelegate.cs**ファイルをダブルクリックして編集用に開き、次のコードを `DidFinishLaunching` メソッドの下に追加します。
 
 ```csharp
 [Export ("openDocument:")]
@@ -381,7 +381,7 @@ void OpenDialog (NSObject sender)
 }
 ```
 
-ここでの重要な`[Export ("openDocument:")]`のは、 `NSMenu` **appdelegate**が`openDocument:`アクションに応答する`void OpenDialog (NSObject sender)`メソッドを持っていることを示しています。
+ここで `[Export ("openDocument:")]` キー行は、`openDocument:` アクションに応答する `void OpenDialog (NSObject sender)` メソッドが**Appdelegate**にあることを `NSMenu` に示しています。
 
 メニューの操作の詳細については、[メニュー](~/mac/user-interface/menu.md)のドキュメントを参照してください。
 
@@ -423,8 +423,8 @@ Xcode の**mainwindow.xaml**ファイルの定義で行アップします。
 
 新しいウィンドウを追加するには、次の手順を実行します。
 
-1. **Solution Pad**で、プロジェクトを右クリックし、[新しいファイルの**追加** >  **..** .] を選択します。
-2. [新しいファイル] ダイアログボックスで **、次のように選択**し**ます。**  > 
+1. **Solution Pad**で、プロジェクトを右クリックし、[ >  新しいファイルの**追加** **..** .] を選択します。
+2. [新しいファイル] ダイアログボックスで、[ **Xamarin. Mac**  > **Cocoa] ウィンドウ**を選択します。
 
     ![新しいウィンドウコントローラーの追加](xib-images/new01.png "新しいウィンドウコントローラーの追加")
 3. **[名前]** に「`PreferencesWindow`」と入力し、 **[新規]** ボタンをクリックします。
@@ -436,7 +436,7 @@ Xcode の**mainwindow.xaml**ファイルの定義で行アップします。
     [![Windows レイアウトのデザイン](xib-images/new03.png "Windows レイアウトのデザイン")](xib-images/new03-large.png#lightbox)
 6. 変更を保存し Visual Studio for Mac に戻り、Xcode と同期します。
 
-次のコードを追加**AppDelegate.cs**新しいウィンドウを表示します。
+新しいウィンドウを表示するには、 **AppDelegate.cs**に次のコードを追加します。
 
 ```csharp
 [Export("applicationPreferences:")]
@@ -447,7 +447,7 @@ void ShowPreferences (NSObject sender)
 }
 ```
 
-この`var preferences = new PreferencesWindowController ();`行は、ウィンドウを xib ファイルから読み込み、増えする、ウィンドウコントローラーの新しいインスタンスを作成します。 線`preferences.Window.MakeKeyAndOrderFront (this);`は、ユーザーに新しいウィンドウを表示します。
+@No__t_0 の行は、xib ファイルからウィンドウを読み込み、それを増えするウィンドウコントローラーの新しいインスタンスを作成します。 @No__t_0 行には、新しいウィンドウがユーザーに表示されます。
 
 コードを実行し、[**アプリケーション] メニュー**の **[ユーザー設定...]** を選択すると、ウィンドウが表示されます。
 
@@ -463,8 +463,8 @@ Xamarin. Mac アプリケーションで Windows を操作する方法の詳細�
 
 新しいビューを追加するには、次の手順を実行します。
 
-1. **Solution Pad**で、プロジェクトを右クリックし、[新しいファイルの**追加** >  **..** .] を選択します。
-2. [新しいファイル] ダイアログボックスで、[ **Xamarin. Mac** > **cocoa View with Controller**] を選択します。
+1. **Solution Pad**で、プロジェクトを右クリックし、[ >  新しいファイルの**追加** **..** .] を選択します。
+2. [新しいファイル] ダイアログボックスで、[ **Xamarin. Mac**  > **cocoa View with Controller**] を選択します。
 
     ![新しいビューの追加](xib-images/view01.png "新しいビューの追加")
 3. **[名前]** に「`SubviewTable`」と入力し、 **[新規]** ボタンをクリックします。
@@ -509,7 +509,7 @@ public enum SubviewType
 }
 ```
 
-ビューを使用して表示するウィンドウの xib ファイルを編集します。 コードによってC#メモリに読み込まれた後、ビューのコンテナーとして機能する`ViewContainer`**カスタムビュー**を追加し、というアウトレットに公開します。
+ビューを使用して表示するウィンドウの xib ファイルを編集します。 コードによってC#メモリに読み込まれた後、ビューのコンテナーとして機能する**カスタムビュー**を追加し、`ViewContainer` という名前のアウトレットに公開します。
 
 [![必要なアウトレットの作成](xib-images/view03.png "必要なアウトレットの作成")](xib-images/view03-large.png#lightbox)
 
@@ -557,7 +557,7 @@ private void DisplaySubview(NSViewController controller, SubviewType type) {
 DisplaySubview(new SubviewTableController(), SubviewType.TableView);
 ```
 
-これにより、表示する新しいビューのビューコントローラーの新しいインスタンスが作成され、その型 (プロジェクトに追加された列挙型によって指定`DisplaySubview` ) が設定され、ウィンドウのクラスに追加されたメソッドを使用してビューが実際に表示されます。 次に例を示します。
+これにより、表示される新しいビューのビューコントローラーの新しいインスタンスが作成され、その型が (プロジェクトに追加された列挙体によって指定されたとおりに) 設定されます。また、ウィンドウのクラスに追加された `DisplaySubview` メソッドを使用して、実際にビューを表示します。 (例:
 
 [![サンプルアプリの実行](xib-images/view04.png "サンプルアプリの実行")](xib-images/view04-large.png#lightbox)
 

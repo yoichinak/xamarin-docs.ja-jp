@@ -1,34 +1,34 @@
 ---
-title: Xamarin.Forms のデバイス クラス
-description: この記事では、機能とレイアウトを細かく制御する、プラットフォームごとに、Xamarin.Forms のデバイス クラスを使用する方法について説明します。
+title: Xamarin. Forms デバイスクラス
+description: この記事では、Xamarin のデバイスクラスを使用して、プラットフォームごとに機能とレイアウトをきめ細かく制御する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 2F304AEC-8612-4833-81E5-B2F3F469B2DF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/12/2019
-ms.openlocfilehash: 77cc414cd9b15f99f95d4a54f7af5ce6f028c41a
-ms.sourcegitcommit: ab51d32f4ea0e0d4701f0bf2f1465c9323cd070b
+ms.openlocfilehash: 25ddbea75d0fd6858f848499281da5d5f0b68171
+ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70887447"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72697200"
 ---
-# <a name="xamarinforms-device-class"></a>Xamarin.Forms のデバイス クラス
+# <a name="xamarinforms-device-class"></a>Xamarin. Forms デバイスクラス
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithdevice)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithdevice)
 
-[ `Device` ](xref:Xamarin.Forms.Device)クラスには、さまざまなプロパティとレイアウトと、プラットフォームごとに機能をカスタマイズする開発者を支援するメソッドが含まれています。
+[@No__t_1](xref:Xamarin.Forms.Device)クラスには、開発者がプラットフォームごとにレイアウトと機能をカスタマイズするのに役立つさまざまなプロパティとメソッドが含まれています。
 
-`Device`クラスには、特定のハードウェアの種類とサイズでコードをターゲットにするためのメソッドとプロパティに加えて、バックグラウンドスレッドから UI コントロールを操作するために使用できるメソッドが用意されています。 詳細については、「[バックグラウンドスレッドから UI を操作する](#interact-with-the-ui-from-background-threads)」を参照してください。
+@No__t_0 クラスには、特定のハードウェアの種類とサイズでコードをターゲットにするためのメソッドとプロパティに加えて、バックグラウンドスレッドから UI コントロールを操作するために使用できるメソッドが含まれています。 詳細については、「[バックグラウンドスレッドから UI を操作する](#interact-with-the-ui-from-background-threads)」を参照してください。
 
 ## <a name="providing-platform-specific-values"></a>プラットフォーム固有の値の指定
 
-Xamarin.Forms 2.3.4、前に、アプリケーションが実行されていたプラットフォームを調べることによって入手でした、 [ `Device.OS` ](xref:Xamarin.Forms.Device.OS)プロパティと比較することに、 [ `TargetPlatform.iOS` ](xref:Xamarin.Forms.TargetPlatform.iOS)、 [`TargetPlatform.Android` ](xref:Xamarin.Forms.TargetPlatform.Android)、 [ `TargetPlatform.WinPhone` ](xref:Xamarin.Forms.TargetPlatform.WinPhone)、および[ `TargetPlatform.Windows` ](xref:Xamarin.Forms.TargetPlatform.Windows)列挙値。 同様に、1 つの[ `Device.OnPlatform` ](xref:Xamarin.Forms.Device.OnPlatform(System.Action,System.Action,System.Action,System.Action))コントロールにプラットフォーム固有の値を指定するオーバー ロードを使用する可能性があります。
+2\.3.4 の前に、アプリケーションが実行されていたプラットフォームを取得するには、 [`Device.OS`](xref:Xamarin.Forms.Device.OS)プロパティを調べ、それを[`TargetPlatform.iOS`](xref:Xamarin.Forms.TargetPlatform.iOS)、 [`TargetPlatform.Android`](xref:Xamarin.Forms.TargetPlatform.Android)、 [`TargetPlatform.WinPhone`](xref:Xamarin.Forms.TargetPlatform.WinPhone)、および[`TargetPlatform.Windows`](xref:Xamarin.Forms.TargetPlatform.Windows)列挙型と比較します。値. 同様に、 [`Device.OnPlatform`](xref:Xamarin.Forms.Device.OnPlatform(System.Action,System.Action,System.Action,System.Action))のオーバーロードの1つを使用して、プラットフォーム固有の値をコントロールに提供できます。
 
-ただし、Xamarin.Forms 2.3.4 以降これらの Api 非推奨とされ、置き換えられました。 [ `Device` ](xref:Xamarin.Forms.Device)クラスでは、プラットフォームを識別するパブリック文字列定数に含まれて[ `Device.iOS` ](xref:Xamarin.Forms.Device.iOS)、 [ `Device.Android` ](xref:Xamarin.Forms.Device.Android)、 `Device.WinPhone`(非推奨)、 `Device.WinRT` (非推奨)、 [ `Device.UWP` ](xref:Xamarin.Forms.Device.UWP)、および[ `Device.macOS`](xref:Xamarin.Forms.Device.macOS)します。 同様に、 [ `Device.OnPlatform` ](xref:Xamarin.Forms.Device.OnPlatform(System.Action,System.Action,System.Action,System.Action))オーバー ロードに置き換えられましたが、 [ `OnPlatform` ](xref:Xamarin.Forms.OnPlatform`1)と[ `On` ](xref:Xamarin.Forms.On) Api。
+ただし、2.3.4 はこれらの Api を非推奨と置き換えたため、 [@No__t_1](xref:Xamarin.Forms.Device)クラスには、プラットフォーム ( [`Device.iOS`](xref:Xamarin.Forms.Device.iOS)、 [`Device.Android`](xref:Xamarin.Forms.Device.Android)、`Device.WinPhone` (非推奨)、`Device.WinRT` (非推奨[)、`Device.UWP`、および](xref:Xamarin.Forms.Device.UWP) [`Device`1](xref:Xamarin.Forms.Device.macOS)を識別するパブリック文字列定数が含まれるようになりました。 同様に、 [`Device.OnPlatform`](xref:Xamarin.Forms.Device.OnPlatform(System.Action,System.Action,System.Action,System.Action))のオーバーロードは、 [`OnPlatform`](xref:Xamarin.Forms.OnPlatform`1) api と[`On`](xref:Xamarin.Forms.On) api に置き換えられました。
 
-C# で作成してプラットフォーム固有の値を指定できます、`switch`のステートメントで、 [ `Device.RuntimePlatform` ](xref:Xamarin.Forms.Device.RuntimePlatform)プロパティ、および提供`case`ステートメントの必要なプラットフォーム。
+でC#は、 [`Device.RuntimePlatform`](xref:Xamarin.Forms.Device.RuntimePlatform)プロパティに `switch` ステートメントを作成し、必要なプラットフォームに対して `case` ステートメントを指定することによって、プラットフォーム固有の値を指定できます。
 
 ```csharp
 double top;
@@ -46,7 +46,7 @@ switch (Device.RuntimePlatform)
 layout.Margin = new Thickness(5, top, 5, 0);
 ```
 
-[ `OnPlatform` ](xref:Xamarin.Forms.OnPlatform`1)と[ `On` ](xref:Xamarin.Forms.On)クラスは、XAML で同じ機能を提供します。
+[@No__t_1](xref:Xamarin.Forms.OnPlatform`1)クラスと[`On`](xref:Xamarin.Forms.On)クラスは、XAML と同じ機能を提供します。
 
 ```xaml
 <StackLayout>
@@ -60,27 +60,27 @@ layout.Margin = new Thickness(5, top, 5, 0);
 </StackLayout>
 ```
 
-[ `OnPlatform` ](xref:Xamarin.Forms.OnPlatform`1)クラスは、ジェネリック クラスをインスタンス化する必要があります、`x:TypeArguments`ターゲット型と一致する属性。 [ `On` ](xref:Xamarin.Forms.On)クラス、 [ `Platform` ](xref:Xamarin.Forms.On.Platform)属性は、1 つを受け入れることができる`string`値、またはコンマで区切られた複数`string`値。
+[@No__t_1](xref:Xamarin.Forms.OnPlatform`1)クラスは、ターゲットの型に一致する `x:TypeArguments` 属性を使用してインスタンス化する必要があるジェネリッククラスです。 [@No__t_1](xref:Xamarin.Forms.On)クラスでは、 [`Platform`](xref:Xamarin.Forms.On.Platform)属性は1つの `string` 値、または複数のコンマ区切り `string` 値を受け取ることができます。
 
 > [!IMPORTANT]
-> 提供が不適切な`Platform`属性の値、`On`クラスは、エラーは発生しません。 代わりに、コードは、適用されているプラットフォームに固有の値を指定せずに実行されます。
+> @No__t_1 クラスに正しくない `Platform` 属性値を指定しても、エラーは発生しません。 代わりに、プラットフォーム固有の値が適用されずにコードが実行されます。
 
-または、`OnPlatform`プラットフォームごとに UI の外観をカスタマイズするには、XAML マークアップ拡張機能を使用できます。 詳細については、次を参照してください。 [OnPlatform マークアップ拡張機能](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform)します。
+また、XAML で `OnPlatform` マークアップ拡張機能を使用して、プラットフォームごとに UI の外観をカスタマイズすることもできます。 詳細については、「 [Onplatform Markup Extension](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform)」を参照してください。
 
-## <a name="deviceidiom"></a>Device.Idiom
+## <a name="deviceidiom"></a>デバイス. 表現形式
 
-`Device.Idiom`レイアウトを変更するプロパティを使用できますか、デバイス、アプリケーションによって機能がで実行されています。 [ `TargetIdiom` ](xref:Xamarin.Forms.TargetIdiom)列挙には、次の値が含まれています。
+@No__t_0 プロパティを使用すると、アプリケーションが実行されているデバイスに応じてレイアウトまたは機能を変更できます。 [@No__t_1](xref:Xamarin.Forms.TargetIdiom)列挙には、次の値が含まれます。
 
-- **Phone** – iPhone、iPod touch、および Android デバイスの 600 dip より狭い幅 ^
-- **タブレット**: iPad、Windows デバイス、および Android デバイスの 600 dip よりも広い ^
-- **デスクトップ**– で返されるのみ[UWP アプリ](~/xamarin-forms/platform/windows/installation/index.md)Windows 10 のデスクトップ コンピューター (返します`Phone`Continuum シナリオにおけるを含む、Windows のモバイル デバイスで)
-- **テレビ**– Tizen TV のデバイス
-- **ウォッチ**– Tizen watch デバイス
-- **サポートされていない**– 使用されていません。
+- **電話**– IPhone、iPod touch、および Android デバイスが 600 dip ^ よりも狭い
+- **タブレット**– IPad、Windows デバイス、および Android デバイスが 600 dip ^ よりも大きい
+- **デスクトップ**– windows 10 デスクトップコンピューター上の[UWP アプリ](~/xamarin-forms/platform/windows/installation/index.md)でのみ返されます (連続性のあるシナリオでは、モバイル windows デバイスで `Phone` を返します)。
+- **Tv** – Tizen tv デバイス
+- **Watch** – Tizen watch デバイス
+- **サポート**されていない–未使用
 
-*^ dip とは限りません物理ピクセル数*
+*^ dip は必ずしも物理ピクセル数ではありません*
 
-`Idiom`プロパティは、次のように、大きな画面を活用するレイアウトを構築するために特に便利です。
+@No__t_0 プロパティは、次のように、大きな画面を利用するレイアウトを作成する場合に特に便利です。
 
 ```csharp
 if (Device.Idiom == TargetIdiom.Phone) {
@@ -90,7 +90,7 @@ if (Device.Idiom == TargetIdiom.Phone) {
 }
 ```
 
-[ `OnIdiom` ](xref:Xamarin.Forms.OnIdiom`1)クラスには、XAML で同じ機能が用意されています。
+[@No__t_1](xref:Xamarin.Forms.OnIdiom`1)クラスは、XAML と同じ機能を提供します。
 
 ```xaml
 <StackLayout>
@@ -105,46 +105,46 @@ if (Device.Idiom == TargetIdiom.Phone) {
 </StackLayout>
 ```
 
-[ `OnIdiom` ](xref:Xamarin.Forms.OnPlatform`1)クラスは、ジェネリック クラスをインスタンス化する必要があります、`x:TypeArguments`ターゲット型と一致する属性。
+[@No__t_1](xref:Xamarin.Forms.OnPlatform`1)クラスは、ターゲットの型に一致する `x:TypeArguments` 属性を使用してインスタンス化する必要があるジェネリッククラスです。
 
-または、`OnIdiom`で、アプリケーションが実行されているデバイスの表現形式に基づく UI の外観をカスタマイズするには、XAML マークアップ拡張機能を使用できます。 詳細については、次を参照してください。 [OnIdiom マークアップ拡張機能](~/xamarin-forms/xaml/markup-extensions/consuming.md#onidiom)します。
+また、XAML で `OnIdiom` マークアップ拡張機能を使用して、アプリケーションが実行されているデバイスの表現方法に基づいて UI の外観をカスタマイズすることもできます。 詳細については、「 [Onidiom のマークアップ拡張](~/xamarin-forms/xaml/markup-extensions/consuming.md#onidiom)」を参照してください。
 
-## <a name="deviceflowdirection"></a>Device.FlowDirection
+## <a name="deviceflowdirection"></a>System.windows.flowdirection>
 
-[ `Device.FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection)値の取得、 [ `FlowDirection` ](xref:Xamarin.Forms.FlowDirection)デバイスで使用されている現在のフローの方向を表す列挙値。 フロー方向とは、ページ上の UI 要素を視覚でスキャンしていく方向のことです。 列挙値は、次のとおりです。
+[@No__t_1](xref:Xamarin.Forms.VisualElement.FlowDirection)値は、デバイスによって使用されている現在のフロー方向を表す[`FlowDirection`](xref:Xamarin.Forms.FlowDirection)列挙値を取得します。 フロー方向とは、ページ上の UI 要素を視覚でスキャンしていく方向のことです。 列挙値は、次のとおりです。
 
 - [`LeftToRight`](xref:Xamarin.Forms.FlowDirection.LeftToRight)
 - [`RightToLeft`](xref:Xamarin.Forms.FlowDirection.RightToLeft)
 - [`MatchParent`](xref:Xamarin.Forms.FlowDirection.MatchParent)
 
-XAML、 [ `Device.FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection)を使用して値を取得することができます、`x:Static`マークアップ拡張機能。
+XAML では、`x:Static` マークアップ拡張機能を使用して[`Device.FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection)値を取得できます。
 
 ```xaml
 <ContentPage ... FlowDirection="{x:Static Device.FlowDirection}"> />
 ```
 
-C# での同等のコードに示します。
+のC#同等のコードは次のとおりです。
 
 ```csharp
 this.FlowDirection = Device.FlowDirection;
 ```
 
-フローの方向に関する詳細については、次を参照してください。[右から左のローカリゼーション](~/xamarin-forms/app-fundamentals/localization/right-to-left.md)します。
+フローの方向の詳細については、「[右から左へのローカライズ](~/xamarin-forms/app-fundamentals/localization/right-to-left.md)」を参照してください。
 
-## <a name="devicestyles"></a>Device.Styles
+## <a name="devicestyles"></a>デバイス. スタイル
 
-[ `Styles`プロパティ](~/xamarin-forms/user-interface/styles/index.md)一部のコントロールに適用できる組み込みのスタイル定義が含まれます (など`Label`)`Style`プロパティ。 使用可能なスタイルは次のとおりです。
+[@No__t_1 プロパティ](~/xamarin-forms/user-interface/styles/index.md)には、いくつかのコントロール (`Label` など) `Style` プロパティに適用できる組み込みのスタイル定義が含まれています。 使用できるスタイルは次のとおりです。
 
 - BodyStyle
 - CaptionStyle
 - ListItemDetailTextStyle
 - ListItemTextStyle
-- SubtitleStyle
-- TitleStyle
+- Subタイトルのスタイル
+- タイトルのスタイル
 
-## <a name="devicegetnamedsize"></a>Device.GetNamedSize
+## <a name="devicegetnamedsize"></a>デバイス. GetNamedSize
 
-`GetNamedSize` 設定時に使用できる[ `FontSize` ](~/xamarin-forms/user-interface/text/fonts.md) c# コードで。
+`GetNamedSize` は、コードでC# [`FontSize`](~/xamarin-forms/user-interface/text/fonts.md)を設定するときに使用できます。
 
 ```csharp
 myLabel.FontSize = Device.GetNamedSize (NamedSize.Small, myLabel);
@@ -155,30 +155,22 @@ someLabel.FontSize = Device.OnPlatform (
 );
 ```
 
-## <a name="deviceopenuri"></a>Device.OpenUri
+## <a name="devicestarttimer"></a>デバイス. StartTimer
 
-`OpenUri`基になるプラットフォームでネイティブの web ブラウザーで URL を開くなどの操作をトリガーするメソッドを使用できます (**Safari** iOS 上または**インターネット**Android 上)。
-
-```csharp
-Device.OpenUri(new Uri("https://evolve.xamarin.com/"));
-```
-
-[WebView サンプル](https://github.com/xamarin/xamarin-forms-samples/blob/master/WorkingWithWebview/WorkingWithWebview/WebAppPage.cs)使用例が含まれています。`OpenUri`を Url を開き、また電話呼び出しをトリガーします。
-
-[マップのサンプル](https://github.com/xamarin/xamarin-forms-samples/blob/master/WorkingWithMaps/WorkingWithMaps/MapAppPage.cs)では`Device.OpenUri`地図と道順ネイティブを使用して表示する**マップ**iOS と Android アプリ。
-
-## <a name="devicestarttimer"></a>Device.StartTimer
-
-`Device`クラスがあります、 `StartTimer` .NET Standard ライブラリを含む Xamarin.Forms の一般的なコードで動作する時間に依存するタスクをトリガーする簡単な方法を提供するメソッド。 渡す、`TimeSpan`間隔を設定して返す`true`実行されているタイマーを保持するまたは`false`を現在の呼び出しの後に停止します。
+@No__t_0 クラスには、`StartTimer` メソッドもあります。このメソッドを使用すると、.NET Standard ライブラリを含む、Xamarin. Forms 共通コードで動作する時間に依存するタスクを簡単にトリガーできます。 @No__t_0 を渡して間隔を設定し、`true` を返して、タイマーの実行を維持するか、現在の呼び出しの後に停止するように `false` します。
 
 ```csharp
-Device.StartTimer (new TimeSpan (0, 0, 60), () => {
+Device.StartTimer (new TimeSpan (0, 0, 60), () =>
+{
     // do something every 60 seconds
     return true; // runs again, or false to stop
 });
 ```
 
-タイマーの内部コードがユーザー インターフェイスとやり取りするかどうか (のテキストを設定するなど、`Label`または通知を表示する) 内で行う必要がありますが、`BeginInvokeOnMainThread`式 (下記参照)。
+タイマー内のコードがユーザーインターフェイスと対話する場合 (`Label` のテキストの設定や警告の表示など)、`BeginInvokeOnMainThread` 式 (下記参照) の内部で実行する必要があります。
+
+> [!NOTE]
+> @No__t_0 クラスと `System.Threading.Timer` クラスは、`Device.StartTimer` メソッドを使用する代替手段として .NET Standard ます。
 
 ## <a name="interact-with-the-ui-from-background-threads"></a>バックグラウンドスレッドから UI を操作する
 
@@ -186,18 +178,18 @@ IOS、Android、およびユニバーサル Windows プラットフォームを�
 
 アプリケーションでは、バックグラウンドスレッドを使用して、web サービスからデータを取得するなど、長時間実行される可能性がある操作を実行することがあります。 バックグラウンドスレッドで実行されているコードがユーザーインターフェイス要素にアクセスする必要がある場合は、メインスレッドでそのコードを実行する必要があります。
 
-クラス`Device`には、バックグラウンド`static`スレッドからユーザーインターフェイス要素を操作するために使用できる次のメソッドが含まれています。
+@No__t_0 クラスには、バックグラウンドスレッドからユーザーインターフェイス要素を操作するために使用できる次の `static` メソッドが含まれています。
 
 | メソッド | 引数 | 戻り値 | 目的 |
 |---|---|---|---|
-| `BeginInvokeOnMainThread` | `Action` | `void` | メインスレッド`Action`でを呼び出し、完了するまで待機しません。 |
+| `BeginInvokeOnMainThread` | `Action` | `void` | メインスレッドで `Action` を呼び出します。この処理が完了するまで待機しません。 |
 | `InvokeOnMainThreadAsync<T>` | `Func<T>` | `Task<T>` | メイン スレッド上で `Func<T>` を呼び出し、それが完了するまで待機します。 |
 | `InvokeOnMainThreadAsync` | `Action` | `Task` | メイン スレッド上で `Action` を呼び出し、それが完了するまで待機します。 |
 | `InvokeOnMainThreadAsync<T>`| `Func<Task<T>>` | `Task<T>` | メイン スレッド上で `Func<Task<T>>` を呼び出し、それが完了するまで待機します。 |
 | `InvokeOnMainThreadAsync` | `Func<Task>` | `Task` | メイン スレッド上で `Func<Task>` を呼び出し、それが完了するまで待機します。 |
 | `GetMainThreadSynchronizationContextAsync` | | `Task<SynchronizationContext>` | メイン スレッドの `SynchronizationContext` を返します。 |
 
-次のコードは、 `BeginInvokeOnMainThread`メソッドの使用例を示しています。
+次のコードは、`BeginInvokeOnMainThread` メソッドの使用例を示しています。
 
 ```csharp
 Device.BeginInvokeOnMainThread (() =>

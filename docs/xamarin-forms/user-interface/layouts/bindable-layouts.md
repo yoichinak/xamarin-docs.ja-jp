@@ -8,37 +8,37 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/18/2018
 ms.openlocfilehash: a824c892d21df9264b772bed09a4aef893f3b949
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "68647902"
 ---
 # <a name="bindable-layouts-in-xamarinforms"></a>Xamarin. Forms のバインド可能なレイアウト
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-bindablelayouts)
 
-バインド可能なレイアウトでは、 [`Layout<T>`](xref:Xamarin.Forms.Layout`1)クラスから派生した任意のレイアウトクラスを使用して、項目のコレクションにバインドすることによってコンテンツを生成できます。また、を[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)使用して各項目の外観を設定することもできます。 バインド可能なレイアウトは、 `BindableLayout`クラスによって提供されます。このクラスは、次の添付プロパティを公開します。
+バインド可能なレイアウトでは、 [`Layout<T>`](xref:Xamarin.Forms.Layout`1)クラスから派生する任意のレイアウトクラスを使用して、項目のコレクションにバインドすることによってコンテンツを生成できます。また、各項目の外観を[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)で設定することもできます。 バインド可能なレイアウトは `BindableLayout` クラスによって提供され、次の添付プロパティを公開します。
 
-- `ItemsSource`–レイアウトによって`IEnumerable`表示される項目のコレクションを指定します。
-- `ItemTemplate`–レイアウトに[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)よって表示される項目のコレクション内の各項目に適用するを指定します。
-- `ItemTemplateSelector`–実行時[`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)に項目のを[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)選択するために使用されるを指定します。
+- `ItemsSource` –レイアウトによって表示される `IEnumerable` 項目のコレクションを指定します。
+- `ItemTemplate` –レイアウトによって表示される項目のコレクション内の各項目に適用する[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)を指定します。
+- `ItemTemplateSelector` –実行時に項目の[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)を選択するために使用される[`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)を指定します。
 
-これらの[`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout)プロパティは[`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout) [`FlexLayout`](xref:Xamarin.Forms.FlexLayout) [`StackLayout`](xref:Xamarin.Forms.StackLayout) 、クラスから派生する、、、、およびの各クラスにアタッチできます。 [`Grid`](xref:Xamarin.Forms.Grid) [`Layout<T>`](xref:Xamarin.Forms.Layout`1)
+これらのプロパティは、 [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout)、 [`FlexLayout`](xref:Xamarin.Forms.FlexLayout)、 [`Grid`](xref:Xamarin.Forms.Grid)、 [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout)、および[`StackLayout`](xref:Xamarin.Forms.StackLayout)クラスにアタッチできます。これらのクラスはすべて、 [1](xref:Xamarin.Forms.Layout`1)クラスから派生します。
 
 > [!NOTE]
-> プロパティ`ItemTemplate` `ItemTemplate`とプロパティ`ItemTemplateSelector`の両方が設定されている場合は、プロパティが優先されます。
+> @No__t_1 と `ItemTemplateSelector` の両方のプロパティが設定されている場合は、`ItemTemplate` プロパティが優先されます。
 
-クラス`Layout<T>`は、レイアウト[`Children`](xref:Xamarin.Forms.Layout`1.Children)の子要素が追加されるコレクションを公開します。 プロパティが項目のコレクションに設定され、 [`Layout<T>`](xref:Xamarin.Forms.Layout`1)から派生したクラスに関連付けられている場合、 `Layout<T>.Children`コレクション内の各項目は、レイアウトによって表示されるようにコレクションに追加されます。 `BinableLayout.ItemsSource` `Layout<T>`派生クラスは、基になるコレクションが変更されたときに、その子ビューを更新します。 Xamarin のレイアウトサイクルの詳細については、「[カスタムレイアウトを作成する](~/xamarin-forms/user-interface/layouts/custom.md)」を参照してください。
+@No__t_0 クラスは、レイアウトの子要素が追加される[`Children`](xref:Xamarin.Forms.Layout`1.Children)コレクションを公開します。 @No__t_0 プロパティが項目のコレクションに設定され、 [`Layout<T>`](xref:Xamarin.Forms.Layout`1)派生クラスに関連付けられている場合、レイアウトによって表示されるように、コレクション内の各項目が `Layout<T>.Children` コレクションに追加されます。 @No__t_0 派生クラスは、基になるコレクションが変更されたときに子ビューを更新します。 Xamarin のレイアウトサイクルの詳細については、「[カスタムレイアウトを作成する](~/xamarin-forms/user-interface/layouts/custom.md)」を参照してください。
 
-バインド可能なレイアウトは、表示される項目のコレクションが小さく、スクロールと選択が不要な場合にのみ使用してください。 では、バインド可能なレイアウトをラップすることに[`ScrollView`](xref:Xamarin.Forms.ScrollView)よってスクロールできますが、バインド可能なレイアウトに UI 仮想化が存在しない場合は推奨されません。 スクロールが必要な場合[`ListView`](xref:Xamarin.Forms.ListView)は、や[`CollectionView`](xref:Xamarin.Forms.CollectionView)などの UI 仮想化を含むスクロール可能なビューを使用する必要があります。 この推奨事項に従わないと、パフォーマンスの問題が発生する可能性があります。
+バインド可能なレイアウトは、表示される項目のコレクションが小さく、スクロールと選択が不要な場合にのみ使用してください。 [@No__t_1](xref:Xamarin.Forms.ScrollView)にバインド可能なレイアウトをラップすることによってスクロールできますが、バインド可能なレイアウトに UI 仮想化が存在しない場合は推奨されません。 スクロールが必要な場合は、 [`ListView`](xref:Xamarin.Forms.ListView)や[`CollectionView`](xref:Xamarin.Forms.CollectionView)などの UI 仮想化を含む、スクロール可能なビューを使用する必要があります。 この推奨事項に従わないと、パフォーマンスの問題が発生する可能性があります。
 
 > [!IMPORTANT]
->[`Layout<T>`](xref:Xamarin.Forms.Layout`1)クラスから派生した任意のレイアウトクラスにバインド可能なレイアウトをアタッチすることは技術的に可能ですが、特に[`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout)、 [`Grid`](xref:Xamarin.Forms.Grid)、および[`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout)の各クラスでは、これを行うことは実用的ではありません。 たとえば、バインド可能なレイアウトを[`Grid`](xref:Xamarin.Forms.Grid)使用してのデータのコレクションを表示するシナリオを考えてみます。コレクション内の各項目は、複数のプロパティを含むオブジェクトです。 の各行には、コレクションのオブジェクトが表示されます。各列に`Grid`は、オブジェクトのプロパティの1つが表示されます。 `Grid` バインド可能`Grid`なレイアウトのには1つのオブジェクトのみを含めることができるため、そのオブジェクトは、それぞれが特定の列にあるオブジェクトのプロパティの1つを表示する複数のビューを含むレイアウトクラスである必要があります。 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) このシナリオはバインド可能なレイアウトと realised ことができますが、 `Grid`バインドされ`Grid`たコレクション内の各項目の子を含む親になります。これは、 `Grid`レイアウトの非常に非効率的で問題のある使用です。
+>[@No__t_1](xref:Xamarin.Forms.Layout`1)クラスから派生した任意のレイアウトクラスにバインド可能なレイアウトをアタッチすることは技術的に可能ですが、特に、 [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout)、 [`Grid`](xref:Xamarin.Forms.Grid)、および[`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout)クラスでは、これを行うことは実用的ではありません。 たとえば、バインド可能なレイアウトを使用して[`Grid`](xref:Xamarin.Forms.Grid)のデータのコレクションを表示するシナリオを考えてみます。コレクション内の各項目は、複数のプロパティを含むオブジェクトです。 @No__t_0 の各行は、コレクションのオブジェクトを表示する必要があります。また、`Grid` 内の各列には、オブジェクトのプロパティの1つが表示されます。 バインド可能なレイアウトの[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)には1つのオブジェクトのみを含めることができるため、そのオブジェクトは、特定の `Grid` 列にオブジェクトのプロパティの1つを表示する複数のビューを含むレイアウトクラスである必要があります。 このシナリオはバインド可能なレイアウトと realised ことができますが、バインドされたコレクション内の各項目の子 `Grid` を含む親 `Grid` になります。これは、`Grid` レイアウトの非常に非効率的で問題のある使用です。
 
 ## <a name="populating-a-bindable-layout-with-data"></a>バインド可能なレイアウトのデータへの読み込み
 
-バインド可能なレイアウトには、 `ItemsSource`プロパティをが実装`IEnumerable`されている任意のコレクションに設定[`Layout<T>`](xref:Xamarin.Forms.Layout`1)し、それを派生クラスにアタッチすることによって、データを設定します。
+バインド可能なレイアウトには、その `ItemsSource` プロパティを `IEnumerable` を実装する任意のコレクションに設定し、それを[`Layout<T>`](xref:Xamarin.Forms.Layout`1)派生クラスにアタッチすることによって、データが格納されます。
 
 ```xaml
 <Grid BindableLayout.ItemsSource="{Binding Items}" />
@@ -52,11 +52,11 @@ var grid = new Grid();
 BindableLayout.SetItemsSource(grid, items);
 ```
 
-`IEnumerable` `BindableLayout.ItemTemplate` `BindableLayout` [`Label`](xref:Xamarin.Forms.Label)添付プロパティがレイアウトに設定されていても、添付プロパティが設定されていない場合、コレクション内のすべての項目は、クラスによって作成されたによって表示されます。 `BindableLayout.ItemsSource`
+@No__t_0 添付プロパティがレイアウトに設定されていても、`BindableLayout.ItemTemplate` 添付プロパティが設定されていない場合、`IEnumerable` コレクション内のすべての項目は、`BindableLayout` クラスによって作成された[`Label`](xref:Xamarin.Forms.Label)によって表示されます。
 
 ## <a name="defining-item-appearance"></a>項目の外観の定義
 
-バインド可能な`BindableLayout.ItemTemplate` [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)レイアウトの各項目の外観は、添付プロパティをに設定することによって定義できます。
+バインド可能なレイアウトの各項目の外観を定義するには、`BindableLayout.ItemTemplate` 添付プロパティを[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)に設定します。
 
 ```xaml
 <StackLayout BindableLayout.ItemsSource="{Binding User.TopFollowers}"
@@ -83,15 +83,15 @@ BindableLayout.SetItemsSource(stackLayout, viewModel.User.TopFollowers);
 BindableLayout.SetItemTemplate(stackLayout, circleImageTemplate);
 ```
 
-この例では、 `TopFollowers`コレクション内のすべての項目が、 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)で`CircleImage`定義されているビューによって表示されます。
+この例では、`TopFollowers` コレクション内のすべての項目が、 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)で定義されている `CircleImage` ビューによって表示されます。
 
-![System.windows.datatemplate> を使用したバインド]可能なレイアウト(bindable-layouts-images/top-followers.png "データテンプレートを使用したバインド可能なレイアウト")
+![System.windows.datatemplate> を使用したバインド可能なレイアウト](bindable-layouts-images/top-followers.png "データテンプレートを使用したバインド可能なレイアウト")
 
 データ テンプレートについて詳しくは「[Xamarin.Forms Data Templates](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)」(Xamarin.Forms のデータ テンプレート) をご覧ください。
 
 ## <a name="choosing-item-appearance-at-runtime"></a>実行時の項目の外観の選択
 
-バインド可能な`BindableLayout.ItemTemplateSelector` [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)レイアウトの各項目の外観は、添付プロパティをに設定することによって、項目の値に基づいて実行時に選択できます。
+バインド可能なレイアウトの各項目の外観は、項目の値に基づいて実行時に選択できます。そのためには、`BindableLayout.ItemTemplateSelector` 添付プロパティを[`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)に設定します。
 
 ```xaml
 <FlexLayout BindableLayout.ItemsSource="{Binding User.FavoriteTech}"
@@ -108,7 +108,7 @@ BindableLayout.SetItemsSource(flexLayout, viewModel.User.FavoriteTech);
 BindableLayout.SetItemTemplateSelector(flexLayout, dataTemplateSelector);
 ```
 
-サンプル[`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)アプリケーションで使用されているは、次の例のようになります。
+サンプルアプリケーションで使用されている[`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)を次の例に示します。
 
 ```csharp
 public class TechItemTemplateSelector : DataTemplateSelector
@@ -123,9 +123,9 @@ public class TechItemTemplateSelector : DataTemplateSelector
 }
 ```
 
-クラス`TechItemTemplateSelector`は、さまざま`XamarinFormsTemplate`なデータテンプレートに設定されるプロパティと[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)プロパティを定義`DefaultTemplate`します。 メソッド`OnSelectTemplate`はを`XamarinFormsTemplate`返します。これにより、項目が "Xamarin. Forms" に等しい場合は、その横にハートが付いた濃い赤の項目が表示されます。 項目が "Xamarin. Forms" と等しくない場合、メソッド`OnSelectTemplate`はを返し`DefaultTemplate` [`Label`](xref:Xamarin.Forms.Label)ます。これは、の既定の色を使用して項目を表示します。
+@No__t_0 クラスは、さまざまなデータテンプレートに設定されている[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)プロパティの `DefaultTemplate` と `XamarinFormsTemplate` を定義します。 @No__t_0 メソッドは `XamarinFormsTemplate` を返します。これにより、項目が "Xamarin. Forms" と等しい場合に、赤い赤の項目が横のハートで表示されます。 項目が "Xamarin. Forms" と等しくない場合、`OnSelectTemplate` メソッドは、 [`Label`](xref:Xamarin.Forms.Label)の既定の色を使用して項目を表示する `DefaultTemplate` を返します。
 
-![DataTemplateSelector を使用したバインド]可能なレイアウト(bindable-layouts-images/favorite-tech.png "データテンプレートセレクターを使用したバインド可能なレイアウト")
+![DataTemplateSelector を使用したバインド可能なレイアウト](bindable-layouts-images/favorite-tech.png "データテンプレートセレクターを使用したバインド可能なレイアウト")
 
 データテンプレートセレクターの詳細については、「 [DataTemplateSelector の作成](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)」を参照してください。
 

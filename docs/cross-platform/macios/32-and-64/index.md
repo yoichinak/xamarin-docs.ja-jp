@@ -7,10 +7,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
 ms.openlocfilehash: bcee9c7e09a9470cbf80e99c047a7c52f61f888a
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "71249802"
 ---
 # <a name="3264-bit-platform-considerations"></a>32/64 ビットプラットフォームに関する考慮事項
@@ -21,7 +21,7 @@ IOS 11 以降では、32ビットのアプリは起動されなくなり、[ア�
 
 2018年1月以降、 [Mac App Store に送信された新しいアプリは64ビットをサポートする必要があり](https://developer.apple.com/news/?id=06282017a)、既存のアプリは6月の2018で更新する必要があります。
 
-Xamarin の Classic API (`XamMac.dll`および`monotouch.dll`) では、32ビットアプリケーションのみがサポートされていました。 ただし、新しい xamarin および xamarin アプリケーションでは、既定で[Unified API](~/cross-platform/macios/unified/index.md) (`Xamarin.iOS`と`Xamarin.Mac`) が使用されるため、必要に応じて32と64ビットの両方をターゲットにすることができます。
+Xamarin の Classic API (`XamMac.dll` と `monotouch.dll`) では、32ビットアプリケーションのみがサポートされていました。 ただし、新しい Xamarin および Xamarin アプリケーションでは、既定で[Unified API](~/cross-platform/macios/unified/index.md) (`Xamarin.iOS` と `Xamarin.Mac`) が使用されるため、必要に応じて32と64ビットの両方を対象にすることができます。
 
 ## <a name="ios"></a>iOS
 
@@ -40,9 +40,9 @@ Unified API に変換された Xamarin の iOS モバイルアプリケーショ
 
 1. **Solution Pad**で、アプリのプロジェクトをダブルクリックして、 **[プロジェクトオプション]** ウィンドウを開きます。
 2. **[IOS ビルド]** を選択します。
-3. IPhone シミュレーターの **[サポートされているアーキテクチャ]** ドロップダウンで、[ **\_x86 64** ] または [ **i386 + x86\_64**] を選択します。
+3. IPhone シミュレーターの **[サポートされているアーキテクチャ]** ドロップダウンで、[ **x86 \_64** ] または [ **i386 + x86 \_64**] を選択します。
 
-   [![サポートされている\_アーキテクチャを x86 64 また\_は i386 + x86 64 に設定する](Images/Image01.png "Setting Supported architectures to x86\_64 or i386 + x86\_64")](Images/Image01-large.png#lightbox) 
+   [![サポートされているアーキテクチャを x86 \_64 または i386 + x86 \_64 に設定する](Images/Image01.png "Setting Supported architectures to x86\_64 or i386 + x86\_64")](Images/Image01-large.png#lightbox) 
 
 4. 物理デバイスの場合は、使用可能な**ARM64**の組み合わせのいずれかを選択します。
 
@@ -55,9 +55,9 @@ Unified API に変換された Xamarin の iOS モバイルアプリケーショ
 
 1. **ソリューションエクスプローラー**で、アプリのプロジェクトを右クリックし、 **[プロパティ]** を選択します。
 2. **[IOS ビルド]** を選択します。
-3. IPhone シミュレーターでは、**サポートされているアーキテクチャ**を **\_x86 64**または**i386 + x86\_64**のいずれかに設定します。 
+3. IPhone シミュレーターの場合、**サポートされているアーキテクチャ**を**x86 \_64**または**i386 + x86 \_64**に設定します。 
 
-   [![サポートされているアーキテクチャを x86_64 また\_は i386 + x86 64 に設定する](Images/VS02.png "Setting Supported architectures to x86_64 or i386 + x86\_64")](Images/VS02-large.png#lightbox)
+   [![サポートされているアーキテクチャを x86_64 または i386 + x86 \_64 に設定する](Images/VS02.png "Setting Supported architectures to x86_64 or i386 + x86\_64")](Images/VS02-large.png#lightbox)
 
 4. 物理デバイスの場合は、使用可能な**ARM64**の組み合わせのいずれかを選択します。
     
@@ -81,7 +81,7 @@ Apple の32ビットから64ビットへの移行中は、iOS アプリを32ビ�
 32ビットアーキテクチャと64ビットアーキテクチャの両方をターゲットにすると、アプリケーションのサイズが大幅に増加します。 ただし、これにより、古いデバイスをサポートしながら、より新しいデバイスで最適化されたコードを実行できるようになります。
 
 > [!IMPORTANT]
-> IOS アプリケーションを iTunes App Store に送信するときに次のメッセージが表示さ_れた場合は、"WARNING itms-9000:64ビットのサポートがありません。2015年2月1日以降、アプリストアにアップロードされた新しい iOS アプリには64ビットのサポートが含まれている必要があります。また、Xcode 6 以降に含まれる iOS 8 SDK を使用してビルドする必要があります。プロジェクトで64ビットを有効にするには、"Standard アーキテクチャ" の既定の Xcode ビルド設定を使用して、32ビットと64ビットの両方のコードで1つのバイナリを構築することをお勧めします。_ サポートされているアーキテクチャを、(上記のように) 使用可能な**ARM64**の組み合わせのいずれかに切り替える必要があります。再コンパイルして再送信します。
+> IOS アプリケーションを iTunes App Store に送信するときに次のメッセージが表示された場合は、 _"WARNING ITMS-9000:64 ビットのサポートがありません。2015年2月1日以降、アプリストアにアップロードされた新しい iOS アプリには64ビットのサポートが含まれている必要があります。また、Xcode 6 以降に含まれる iOS 8 SDK を使用してビルドする必要があります。プロジェクトで64ビットを有効にするには、"Standard アーキテクチャ" の既定の Xcode ビルド設定を使用して、32ビットと64ビットの両方のコードで1つのバイナリを構築することをお勧めします。_ サポートされているアーキテクチャを、(上記のように) 使用可能な**ARM64**の組み合わせのいずれかに切り替える必要があります。再コンパイルして再送信します。
 
 ## <a name="mac"></a>Mac
 
@@ -92,7 +92,7 @@ Apple の32ビットから64ビットへの移行中は、iOS アプリを32ビ�
 
 IOS とは異なり、macOS の最近のバージョンで導入された新しいフレームワークの多くは、64ビットモード (CloudKit、EventKit、GameController、LocalAuthentication、MediaLibrary、MultipeerConnectivity、NotificationCenter、GLKit、SpriteKit、ソーシャル) でのみサポートされています。と MapKit など)。
 
-Unified API を使用すると、開発者は、生成するアプリケーションの種類を選択できます。32ビットまたは64ビット。
+Unified API を使用すると、開発者が生成するアプリケーションの種類 (32 ビットまたは64ビット) を選択できます。
 
 **32 ビットアプリケーション**は、32ビットと64ビットの Mac コンピューターの両方で実行され、アドレス空間は32ビットに制限されており、すべてのライブラリが32ビットである必要があります。
 

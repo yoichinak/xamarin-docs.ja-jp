@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
 ms.openlocfilehash: 7a19b2e70ff18ae43cb65804c6c125890fa1851b
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70770985"
 ---
 # <a name="menus-in-xamarinmac"></a>Xamarin. Mac のメニュー
@@ -32,7 +32,7 @@ Xamarin. Mac C#アプリケーションでおよび .net を使用する場合�
 
 この記事では、Xamarin. Mac アプリケーションでの Cocoa のメニューバー、メニュー、およびメニュー項目の操作の基本について説明します。 最初に、 [Hello, Mac](~/mac/get-started/hello-mac.md)の記事を使用して作業することを強くお勧めします。具体的には、 [Xcode と Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)および[アウトレットとアクション](~/mac/get-started/hello-mac.md#outlets-and-actions)に関するセクションで説明します。これは、で使用する主要な概念と手法に関するものです。この記事をご覧ください。
 
-[Xamarin. Mac の内部](~/mac/internals/how-it-works.md)ドキュメントの「[クラス/ C#メソッドを目的](~/mac/internals/how-it-works.md)として公開する」セクションを参照してください。 C#クラスをに接続する`Register`ため`Export`に使用される属性と属性についても説明します。目的 C オブジェクトと UI 要素。
+[Xamarin. Mac の内部](~/mac/internals/how-it-works.md)ドキュメントの「[クラス/ C#メソッドを目的に公開](~/mac/internals/how-it-works.md)する」セクションを参照してください。 C#クラスを目的のクラスに接続するために使用する `Register` と `Export` の属性についても説明します。オブジェクトと UI 要素。
 
 ## <a name="the-applications-menu-bar"></a>アプリケーションのメニューバー 
 
@@ -72,13 +72,13 @@ Xcode の Interface Builder で編集するために**メインのストーリ�
 
 メニューと項目の追加、編集、および削除については、この記事の後半で説明します。 ここでは、既定で使用できるメニューとメニュー項目、および定義済みの一連のアウトレットとアクションを使用してコードに自動的に公開される方法を確認するだけです (詳細については[、アウトレットとアクション](~/mac/get-started/hello-mac.md#outlets-and-actions)に関するドキュメントを参照してください)。
 
-たとえば、 **[開く]** メニュー項目`openDocument:`の**接続インスペクター**をクリックすると、自動的にアクションに接続されていることがわかります。 
+たとえば、 **[開く]** メニュー項目の**接続インスペクター**をクリックすると、[`openDocument:`] アクションに自動的に接続されていることがわかります。 
 
 [![添付されたアクションの表示](menu-images/defaultbar03.png "添付されたアクションの表示")](menu-images/defaultbar03-large.png#lightbox)
 
-**インターフェイス階層**で**最初のレスポンダー**を選択し、**接続インスペクター**を下にスクロールすると、[開く] メニュー項目がアタッチ`openDocument:`されているアクションの定義 (と共に表示されます) が表示されます。アプリケーションのその他の既定のアクションは、自動的にコントロールに接続されません。
+**インターフェイス階層**で**最初のレスポンダー**を選択し、**接続インスペクター**を下にスクロールすると、 **[開く]** メニュー項目がアタッチされている `openDocument:` アクションの定義が表示されます。アプリケーションの既定のアクションであり、コントロールに自動的に接続されていないアプリケーションの場合は、次の操作を実行します。
 
-[![すべてのアタッチされたアクションを表示]する(menu-images/defaultbar04.png "すべてのアタッチされたアクションを表示")する](menu-images/defaultbar04-large.png#lightbox) 
+[![すべてのアタッチされたアクションを表示する](menu-images/defaultbar04.png "すべてのアタッチされたアクションを表示する")](menu-images/defaultbar04-large.png#lightbox) 
 
 なぜこれが重要なのでしょうか。 次のセクションでは、これらの自動的に定義されたアクションが他の Cocoa ユーザーインターフェイス要素と連携して、メニュー項目を自動的に有効または無効にしたり、項目の組み込み機能を提供したりする方法について説明します。
 
@@ -88,7 +88,7 @@ Xcode の Interface Builder で編集するために**メインのストーリ�
 
 ### <a name="built-in-menu-functionality"></a>組み込みメニュー機能
 
-UI 項目またはコードを追加する前に新しく作成した Xamarin. Mac アプリケーションを実行すると、いくつかの項目が自動的に接続され、自動的に有効になります (たとえば、の**Quit** 項目)。**アプリ**メニュー:
+UI 項目またはコードを追加する前に新しく作成した Xamarin. Mac アプリケーションを実行すると、いくつかの項目が自動的に接続され、自動的に有効になります (たとえば、の **Quit 項目)。アプリ**メニュー:
 
 ![有効なメニュー項目](menu-images/appmenu03.png "有効なメニュー項目")
 
@@ -106,30 +106,30 @@ UI 項目またはコードを追加する前に新しく作成した Xamarin. M
 
 変更内容をユーザーインターフェイスのデザインに保存し、Visual Studio for Mac を切り替えて、変更を Xamarin プロジェクトと同期します。 ここで、アプリケーションを起動し、テキストビューにテキストを入力して選択し、 **[編集]** メニューを開きます。
 
-![メニュー項目は自動的に有効または無効]になります。(menu-images/appmenu07.png "メニュー項目は自動的に有効または無効")になります。
+![メニュー項目は自動的に有効または無効になります。](menu-images/appmenu07.png "メニュー項目は自動的に有効または無効になります。")
 
 **切り取り**、**コピー**、**貼り付け**の各項目が自動的に有効になり、完全に機能することに注意してください。1行のコードを記述する必要はありません。 
 
-ここで何が起こっているんですか。 組み込みの事前定義されたアクションは、既定のメニュー項目 (前述のとおり) に接続されるため、macOS に含まれる Cocoa のユーザーインターフェイス要素のほとんどは、特定のアクション ( `copy:`など) へのフックを構築しています。 そのため、ウィンドウに追加され、アクティブで、選択されると、対応するメニュー項目またはそのアクションに関連付けられている項目が自動的に有効になります。 ユーザーがそのメニュー項目を選択すると、UI 要素に組み込まれている機能が呼び出され、実行されます。開発者が介入する必要はありません。
+ここで何が起こっているんですか。 組み込みの事前定義されたアクションは、既定のメニュー項目 (前述のとおり) に接続されるため、macOS に含まれる Cocoa ユーザーインターフェイス要素のほとんどは特定のアクション (`copy:` など) へのフックを構築しています。 そのため、ウィンドウに追加され、アクティブで、選択されると、対応するメニュー項目またはそのアクションに関連付けられている項目が自動的に有効になります。 ユーザーがそのメニュー項目を選択すると、UI 要素に組み込まれている機能が呼び出され、実行されます。開発者が介入する必要はありません。
 
 ### <a name="enabling-and-disabling-menus-and-items"></a>メニューと項目の有効化と無効化
 
-既定では、ユーザーイベントが発生するたび`NSMenu`に、は、アプリケーションのコンテキストに基づいて、表示される各メニューおよびメニュー項目を自動的に有効または無効にします。 項目を有効または無効にするには、次の3つの方法があります。
+既定では、ユーザーイベントが発生するたびに、`NSMenu` は、アプリケーションのコンテキストに基づいて、表示される各メニューおよびメニュー項目を自動的に有効または無効にします。 項目を有効または無効にするには、次の3つの方法があります。
 
-- **自動メニューの有効化**-項目が接続され`NSMenu`ているアクションに応答する適切なオブジェクトがによって検出された場合に、メニュー項目が有効になります。 たとえば、上のテキストビューには、 `copy:`アクションへのフックが組み込まれています。
-- **カスタムアクションと validateMenuItem:** -[ウィンドウまたはビューコントローラーのカスタムアクション](#Working-with-Custom-Window-Actions)にバインドされているすべてのメニュー項目につい`validateMenuItem:`て、アクションを追加し、メニュー項目を手動で有効または無効にすることができます。
-- **手動メニューの有効化**-各メニューの`Enabled`各項目を`NSMenuItem`個別に有効または無効にするには、各プロパティを手動で設定します。
+- **自動メニューの有効化**-項目が接続されているアクションに応答する適切なオブジェクトを `NSMenu` が見つけられると、メニュー項目が有効になります。 たとえば、上のテキストビューには、`copy:` アクションへのフックが組み込まれています。
+- **カスタムアクションと validateMenuItem:** - [window または view controller カスタムアクション](#Working-with-Custom-Window-Actions)にバインドされているすべてのメニュー項目について、`validateMenuItem:` アクションを追加し、メニュー項目を手動で有効または無効にすることができます。
+- **手動メニューの有効化**-各 `NSMenuItem` の [`Enabled`] プロパティを手動で設定して、メニュー内の各項目を個別に有効または無効にします。
 
-システムを選択するには`AutoEnablesItems` `NSMenu`、のプロパティを設定します。 `true`は自動 (既定の動作) で`false`あり、手動です。 
+システムを選択するには、`NSMenu` の `AutoEnablesItems` プロパティを設定します。 `true` は自動 (既定の動作) であり、`false` は手動です。 
 
 > [!IMPORTANT]
-> 手動メニューの有効化を選択した場合は、のような`NSTextView`appkit クラスによって制御されていても、どのメニュー項目も自動的に更新されません。 コード内のすべての項目を手動で有効または無効にする責任があります。
+> 手動メニューの有効化を選択した場合、`NSTextView` などの AppKit クラスによって制御されているメニュー項目は、すべて自動的に更新されません。 コード内のすべての項目を手動で有効または無効にする責任があります。
 
 #### <a name="using-validatemenuitem"></a>ValidateMenuItem の使用
 
-前述のように、[ウィンドウまたはビューコントローラーのカスタムアクション](#Working-with-Custom-Window-Actions)にバインドされているすべてのメニュー項目に`validateMenuItem:`対して、アクションを追加し、メニュー項目を手動で有効または無効にすることができます。
+前述のように、[ウィンドウまたはビューコントローラーのカスタム動作](#Working-with-Custom-Window-Actions)にバインドされているメニュー項目については、`validateMenuItem:` アクションを追加し、メニュー項目を手動で有効または無効にすることができます。
 
-次の例`Tag`では、プロパティを使用して、内の選択したテキスト`NSTextView`の状態に基づいて、 `validateMenuItem:`アクションによって有効または無効にされるメニュー項目の種類を決定します。 プロパティ`Tag`は、各メニュー項目の Interface Builder で設定されています。
+次の例では、`Tag` プロパティを使用して、`NSTextView` 内の選択したテキストの状態に基づいて `validateMenuItem:` アクションによって有効または無効にするメニュー項目の種類を決定します。 @No__t_0 プロパティは、各メニュー項目の Interface Builder で設定されています。
 
 ![Tag プロパティの設定](menu-images/validate01.png "Tag プロパティの設定")
 
@@ -156,13 +156,13 @@ public bool ValidateMenuItem (NSMenuItem item) {
 }
 ```
 
-このコードが実行され、で`NSTextView`テキストが選択されていない場合、2つの wrap メニュー項目は無効になります (ビューコントローラー上のアクションに接続されている場合でも)。
+このコードが実行され、`NSTextView` でテキストが選択されていない場合、2つの wrap メニュー項目は無効になります (ビューコントローラーでのアクションに対しては、これらのメニュー項目がワイヤード (有線))。
 
-![無効化]された項目の表示(menu-images/validate02.png "無効化")された項目の表示
+![無効化された項目の表示](menu-images/validate02.png "無効化された項目の表示")
 
 テキストのセクションが選択され、メニューが再び開くと、2つの wrap メニュー項目が使用できるようになります。
 
-![表示 (有効な項目]を)(menu-images/validate03.png "表示 (有効な項目")を)
+![表示 (有効な項目を)](menu-images/validate03.png "表示 (有効な項目を)")
 
 ## <a name="enabling-and-responding-to-menu-items-in-code"></a>コード内のメニュー項目の有効化と応答
 
@@ -170,7 +170,7 @@ public bool ValidateMenuItem (NSMenuItem item) {
 
 たとえば、ユーザーが **[ファイル]** メニューの **[開く]** 項目を使用してフォルダーを選択できるようにするとします。 これはアプリケーション全体の機能であるため、ウィンドウまたは UI 要素を指定できるようにするため、アプリケーションデリゲートに対して処理するコードを追加します。
 
-**Solution Pad**で、 `AppDelegate.CS`ファイルをダブルクリックして開き、編集します。
+**Solution Pad**で、`AppDelegate.CS` ファイルをダブルクリックして編集用に開きます。
 
 ![アプリのデリゲートを選択する](menu-images/appmenu08.png "アプリのデリゲートを選択する")
 
@@ -201,13 +201,13 @@ void OpenDialog (NSObject sender)
 
 [メニューを**開く**] 項目が有効になっていることを確認します。 これを選択すると、[開く] ダイアログボックスが表示されます。
 
-![開い]ているダイアログ(menu-images/appmenu10.png "開い")ているダイアログ
+![開いているダイアログ](menu-images/appmenu10.png "開いているダイアログ")
 
 **[開く]** ボタンをクリックすると、アラートメッセージが表示されます。
 
 ![ダイアログメッセージの例](menu-images/appmenu11.png "ダイアログメッセージの例")
 
-ここでのキー行`[Export ("openDocument:")]`は、 **appdelegate**に`openDocument:`アクションに応答するメソッド`void OpenDialog (NSObject sender)`があることを示し`NSMenu`ています。 上記の手順を忘れた場合、 **[開く]** メニュー項目は、既定では Interface Builder で自動的にこのアクションに接続されます。
+ここでのキー行は `[Export ("openDocument:")]` でした。 **Appdelegate**に `openDocument:` アクションに応答する `void OpenDialog (NSObject sender)` メソッドがあることを `NSMenu` に伝えます。 上記の手順を忘れた場合、 **[開く]** メニュー項目は、既定では Interface Builder で自動的にこのアクションに接続されます。
 
 [![アタッチされたアクションの表示](menu-images/defaultbar03.png "アタッチされたアクションの表示")](menu-images/defaultbar03-large.png#lightbox)
 
@@ -215,7 +215,7 @@ void OpenDialog (NSObject sender)
 
 ### <a name="working-with-the-open-recent-menu"></a>開いている [最近使ったもの] メニューを操作する
 
-既定では、 **[ファイル]** メニューには、ユーザーがアプリを使用して開いた最後のいくつかのファイルを追跡する、**最近開い**た項目が表示されます。 ベースの Xamarin. Mac `NSDocument`アプリを作成する場合、このメニューは自動的に処理されます。 その他の種類の Xamarin. Mac アプリの場合は、このメニュー項目の管理と応答を手動で行う必要があります。
+既定では、 **[ファイル]** メニューには、ユーザーがアプリを使用して開いた最後のいくつかのファイルを追跡する、**最近開い**た項目が表示されます。 @No__t_0 ベースの Xamarin. Mac アプリを作成する場合、このメニューは自動的に処理されます。 その他の種類の Xamarin. Mac アプリの場合は、このメニュー項目の管理と応答を手動で行う必要があります。
 
 [**最近使っ**たもの] メニューを手動で処理するには、まず次のものを使用して新しいファイルが開かれたか、保存されたことを通知する必要があります。
 
@@ -224,9 +224,9 @@ void OpenDialog (NSObject sender)
 NSDocumentController.SharedDocumentController.NoteNewRecentDocumentURL(url);
 ```
 
-アプリがを`NSDocuments`使用していない場合でも、を`SharedDocumentController` `NSDocumentController`使用して、ファイル`NoteNewRecentDocumentURL`の場所が`NSUrl`のをに送信することにより、[**最近**使ったもの] メニューを維持します。
+アプリで `NSDocuments` が使用されていない場合でも、`NSDocumentController` を使用して、ファイルの場所が `SharedDocumentController` の `NSUrl` をファイルの `NoteNewRecentDocumentURL` メソッドに送信することで、 **[最近**使ったもの] メニューを維持します。
 
-次に、[**最近使っ**た`OpenFile`もの] メニューからユーザーが選択したファイルを開くために、アプリのデリゲートのメソッドをオーバーライドする必要があります。 次に例を示します。
+次に、[**最近使っ**たもの] メニューからユーザーが選択したファイルを開くために、アプリのデリゲートの `OpenFile` メソッドをオーバーライドする必要があります。 (例:
 
 ```csharp
 public override bool OpenFile (NSApplication sender, string filename)
@@ -242,15 +242,15 @@ public override bool OpenFile (NSApplication sender, string filename)
 }
 ```
 
-ファイル`true`を開くことができる場合はを返し`false`ます。それ以外の場合はを返し、ファイルを開くことができなかったことを示す警告がユーザーに表示されます。
+ファイルを開くことができる場合は `true` を返し、それ以外の場合は `false` を返します。また、ファイルを開くことができなかったことを示す警告がユーザーに表示されます。
 
-**[最近使っ**たもの] メニューから返されるファイル名とパスにはスペースが含まれる場合があるため、を`NSUrl`作成する前にこの文字を適切にエスケープする必要があります。そうしないと、エラーが発生します。 これを行うには、次のコードを使用します。
+**[最近使っ**たもの] メニューから返されるファイル名とパスにはスペースが含まれている場合があるため、`NSUrl` を作成する前にこの文字を正しくエスケープする必要があります。そうしないと、エラーが発生します。 これを行うには、次のコードを使用します。
 
 ```csharp
 filename = filename.Replace (" ", "%20");
 ```
 
-最後に、ファイルを`NSUrl`指すを作成し、app delegate のヘルパーメソッドを使用して新しいウィンドウを開き、そこにファイルを読み込みます。
+最後に、ファイルを指す `NSUrl` を作成し、app デリゲートのヘルパーメソッドを使用して新しいウィンドウを開き、そこにファイルを読み込みます。
 
 ```csharp
 var url = new NSUrl ("file://"+filename);
@@ -392,7 +392,7 @@ for(int n=0; n<NSApplication.SharedApplication.Windows.Length; ++n) {
 }
 ```
 
-`ViewController`クラスは、 `Path`プロパティ内のファイルへのパスを保持するように設計されています。 次に、アプリで現在開いているすべてのウィンドウをループします。 ファイルが既にいずれかのウィンドウで開かれている場合は、次を使用して、他のすべてのウィンドウの前面に移動します。
+ここでは、`Path` プロパティのファイルへのパスを保持するように `ViewController` クラスを設計しました。 次に、アプリで現在開いているすべてのウィンドウをループします。 ファイルが既にいずれかのウィンドウで開かれている場合は、次を使用して、他のすべてのウィンドウの前面に移動します。
 
 ```csharp
 NSApplication.SharedApplication.Windows[n].MakeKeyAndOrderFront(this);
@@ -425,7 +425,7 @@ NSDocumentController.SharedDocumentController.NoteNewRecentDocumentURL(url);
 
 標準メニュー項目に事前に接続されている、組み込みの**最初の応答側**アクションと同じように、新しいカスタムアクションを作成し、それらを Interface Builder のメニュー項目に接続することができます。
 
-まず、アプリのウィンドウコントローラーの1つにカスタムアクションを定義します。 次に例を示します。
+まず、アプリのウィンドウコントローラーの1つにカスタムアクションを定義します。 (例:
 
 ```csharp
 [Action("defineKeyword:")]
@@ -439,7 +439,7 @@ public void defineKeyword (NSObject sender) {
 
 ![属性インスペクター](menu-images/action01.png "属性インスペクター")
 
-[属性 **+** ]**インスペクター**の下部にあるボタンをクリックして、新しいカスタムアクションを追加します。
+**属性インスペクター**の下部にある [ **+** ] ボタンをクリックして、新しいカスタムアクションを追加します。
 
 ![新しいアクションの追加](menu-images/action02.png "新しいアクションの追加")
 
@@ -447,7 +447,7 @@ public void defineKeyword (NSObject sender) {
 
 ![アクション名の編集](menu-images/action03.png "アクション名の編集")
 
-コントロールをクリックし、メニュー項目から**アプリケーションシーン**の**最初の応答側**にドラッグします。 ポップアップリストから、先ほど作成した新しいアクション (`defineKeyword:`この例では) を選択します。
+コントロールをクリックし、メニュー項目から**アプリケーションシーン**の**最初の応答側**にドラッグします。 ポップアップリストから、先ほど作成した新しいアクション (この例では `defineKeyword:`) を選択します。
 
 ![アクションのアタッチ](menu-images/action04.png "アクションのアタッチ")
 
@@ -469,7 +469,7 @@ public void defineKeyword (NSObject sender) {
 
 特定の Xamarin. Mac アプリケーションでは、既定の **[表示]** メニューを使用しないので、削除します。 **インターフェイス階層**で、メインメニューバーの一部である **[表示]** メニュー項目を選択します。
 
-[![表示] メニュー項目の選択][(menu-images/maint02.png "表示] メニュー項目の選択")
+![[表示] メニュー項目の選択](menu-images/maint02.png "[表示] メニュー項目の選択")
 
 Del キーまたは backspace キーを押して、メニューを削除します。 次に、 **[書式]** メニューのすべての項目を使用するのではなく、使用しようとしている項目をサブメニューから移動します。 **インターフェイス階層**で、次のメニュー項目を選択します。
 
@@ -489,7 +489,7 @@ Del キーまたは backspace キーを押して、メニューを削除しま�
 
 **[書式]** メニューに戻り、 **[フォント]** サブメニュー項目を削除してみましょう。 次に、 **[書式]** メニューを選択し、"Font" という名前に変更します。
 
-[![フォント メニュー](menu-images/maint07.png "フォント メニュー")](menu-images/maint07-large.png#lightbox)
+[![[フォント] メニュー](menu-images/maint07.png "[フォント] メニュー")](menu-images/maint07-large.png#lightbox)
 
 次に、選択されたときにテキストビュー内のテキストに自動的に追加される、事前定義の語句のカスタムメニューを作成してみましょう。 **ライブラリインスペクター**の下部にある [検索] ボックスに、「menu」と入力します。 これにより、すべてのメニュー UI 要素を簡単に見つけて使用できるようになります。
 
@@ -499,7 +499,7 @@ Del キーまたは backspace キーを押して、メニューを削除しま�
 
 1. **メニュー項目**を**ライブラリインスペクター**から、 **[テキスト]** メニューと **[ウィンドウ]** メニューの間のメニューバーにドラッグします。 
 
-    ![ライブラリ内の新しいメニュー項目を選択]する(menu-images/maint10.png "ライブラリ内の新しいメニュー項目を選択")する
+    ![ライブラリ内の新しいメニュー項目を選択する](menu-images/maint10.png "ライブラリ内の新しいメニュー項目を選択する")
 2. 項目 "語句" の名前を変更します。 
 
     [![メニュー名の設定](menu-images/maint09.png "メニュー名の設定")](menu-images/maint09-large.png#lightbox)
@@ -532,10 +532,10 @@ Del キーまたは backspace キーを押して、メニューを削除しま�
     [![アクションの構成](menu-images/maint18.png "アクションの構成")](menu-images/maint18-large.png#lightbox)
 4. **日付**、**あいさつ**、**署名**の各メニュー項目に対して上記の手順を繰り返します。 
 
-    [![完了]したアクション(menu-images/maint19.png "完了")したアクション](menu-images/maint19-large.png#lightbox)
+    [![完了したアクション](menu-images/maint19.png "完了したアクション")](menu-images/maint19-large.png#lightbox)
 5. 変更内容をメニューバーに保存します。
 
-次に、テキストビューのアウトレットを作成して、コードからコンテンツを調整できるようにする必要があります。 **アシスタントエディター**で`documentText` **viewcontroller .h**ファイルを選択し、という名前の新しいアウトレットを作成します。
+次に、テキストビューのアウトレットを作成して、コードからコンテンツを調整できるようにする必要があります。 **アシスタントエディター**で**viewcontroller .h**ファイルを選択し、`documentText` という名前の新しいアウトレットを作成します。
 
 [![アウトレットの作成](menu-images/maint20.png "アウトレットの作成")](menu-images/maint20-large.png#lightbox)
 
@@ -606,7 +606,7 @@ namespace MacMenus
 }
 ```
 
-これにより、テキストビューのテキストが`ViewController`クラスの外部に公開され、ウィンドウがフォーカスを取得したとき、またはフォーカスを失ったときに、アプリのデリゲートが通知されます。 ここで、 **AppDelegate.cs**ファイルを編集し、次のように表示します。
+これにより、テキストビューのテキストが `ViewController` クラスの外部に公開され、ウィンドウが表示されるか、フォーカスを失ったときにアプリのデリゲートに通知されます。 ここで、 **AppDelegate.cs**ファイルを編集し、次のように表示します。
 
 ```csharp
 using AppKit;
@@ -682,7 +682,7 @@ namespace MacMenus
 }
 ```
 
-ここでは、Interface Builder `AppDelegate`で定義したアクションとアウトレットを使用できるように、部分クラスを作成しました。 また、を公開`textEditor`して、どのウィンドウが現在フォーカスされているかを追跡します。
+ここでは、Interface Builder で定義したアクションとアウトレットを使用できるように、部分クラス `AppDelegate` を作成しました。 また、`textEditor` を公開して、どのウィンドウが現在フォーカスされているかを追跡します。
 
 次のメソッドは、カスタムメニューおよびメニュー項目を処理するために使用されます。
 
@@ -773,7 +773,7 @@ namespace AppKit.TextKit.Formatter
 
 #### <a name="adding-menus-and-items"></a>メニューと項目の追加
 
-このクラスが定義されている場合、次のルーチン`LanguageFormatCommand`は、オブジェクトのコレクションを解析し、新しいメニューとメニュー項目を (Interface Builder で作成された) 既存のメニューの下部に追加することによって再帰的に作成します。
+このクラスが定義されている場合、次のルーチンは、`LanguageFormatCommand`objects のコレクションを解析し、渡された既存のメニュー (Interface Builder で作成) の下部に追加することで、新しいメニューとメニュー項目を再帰的にビルドします。
 
 ```csharp
 private void AssembleMenu(NSMenu menu, List<LanguageFormatCommand> commands) {
@@ -805,7 +805,7 @@ private void AssembleMenu(NSMenu menu, List<LanguageFormatCommand> commands) {
 }
 ``` 
 
-`LanguageFormatCommand` 空`Title`のプロパティを持つオブジェクトの場合、このルーチンはメニューセクションの間に**区切りのメニュー項目**(細い灰色の線) を作成します。
+空の `Title` プロパティを持つ `LanguageFormatCommand` オブジェクトの場合、このルーチンはメニューセクションの間に**区切りのメニュー項目**(細い灰色の線) を作成します。
 
 ```csharp
 menuItem = NSMenuItem.SeparatorItem;
@@ -817,7 +817,7 @@ menuItem = NSMenuItem.SeparatorItem;
 menuItem = new NSMenuItem (command.Title);
 ``` 
 
-オブジェクトに`LanguageFormatCommand`子`LanguageFormatCommand`オブジェクトが含まれている場合は、サブ`AssembleMenu`メニューが作成され、そのメニューを構築するためにメソッドが再帰的に呼び出されます。
+@No__t_0 オブジェクトに子 `LanguageFormatCommand` オブジェクトが含まれている場合は、サブメニューが作成され、そのメニューを構築するために `AssembleMenu` メソッドが再帰的に呼び出されます。
 
 ```csharp
 menuItem.Submenu = new NSMenu (command.Title);
@@ -835,7 +835,7 @@ menuItem.Activated += (sender, e) => {
 
 #### <a name="testing-the-menu-creation"></a>メニュー作成のテスト
 
-上記のすべてのコードを配置し、次のオブジェクトの`LanguageFormatCommand`コレクションが作成された場合。
+上記のすべてのコードで、次の `LanguageFormatCommand` オブジェクトのコレクションが作成された場合は、次のようにします。
 
 ```csharp
 // Define formatting commands
@@ -865,13 +865,13 @@ FormattingCommands.Add(new LanguageFormatCommand("Image","![](",")"));
 FormattingCommands.Add(new LanguageFormatCommand("Image Link","[![](",")](LinkImageHere)"));
 ```
 
-このコレクションは、([ `AssembleMenu` **書式**] メニューがベースとして設定された) 関数に渡され、次の動的メニューとメニュー項目が作成されます。
+このコレクションは `AssembleMenu` 関数に渡され ( **[書式]** メニューがベースとして設定されます)、次の動的メニューとメニュー項目が作成されます。
 
 ![実行中のアプリの新しいメニュー項目](menu-images/dynamic01.png "実行中のアプリの新しいメニュー項目")
 
 #### <a name="removing-menus-and-items"></a>メニューと項目の削除
 
-アプリのユーザーインターフェイスからメニューまたはメニュー項目を削除する必要がある場合は、削除する`RemoveItemAt`項目の 0 `NSMenu`から始まるインデックスを指定するだけで、クラスのメソッドを使用できます。
+アプリのユーザーインターフェイスからメニューまたはメニュー項目を削除する必要がある場合は、削除する項目の0から始まるインデックスを指定するだけで、`NSMenu` クラスの `RemoveItemAt` メソッドを使用できます。
 
 たとえば、上記のルーチンによって作成されたメニューとメニュー項目を削除するには、次のコードを使用します。
 
@@ -916,13 +916,13 @@ Xcode でメインの**ストーリーボード**ファイルを編集し、**�
     [![セグエクラスの設定](menu-images/context10.png "セグエクラスの設定")](menu-images/context10-large.png#lightbox)
 6. 同期する Visual Studio for Mac に戻り、Interface Builder に戻ります。
 7. **アシスタントエディター**に切り替えて、[**パネル**ファイル] を選択します。
-8. という名前`propertyDocument`の**ドキュメント**メニュー項目のアクションを作成します。 
+8. @No__t_1 という名前の**ドキュメント**メニュー項目のアクションを作成します。 
 
     [![アクションの構成](menu-images/context06.png "アクションの構成")](menu-images/context06-large.png#lightbox)
 9. 残りのメニュー項目に対して、操作の作成を繰り返します。 
 
     [![必要な操作](menu-images/context07.png "必要な操作")](menu-images/context07-large.png#lightbox)
-10. 最後に、という`propertyLabel`**プロパティラベル**のアウトレットを作成します。 
+10. 最後に、`propertyLabel` という**プロパティラベル**のアウトレットを作成します。 
 
     [![アウトレットの構成](menu-images/context08.png "アウトレットの構成")](menu-images/context08-large.png#lightbox)
 11. 変更を保存し Visual Studio for Mac に戻り、Xcode と同期します。
@@ -953,7 +953,7 @@ partial void propertyText (Foundation.NSObject sender) {
 
 ステータスバーメニューには、メニューやアプリケーションの状態を反映した画像など、ユーザーに対してまたはフィードバックとの対話を行うステータスメニュー項目のコレクションが表示されます。 アプリケーションがバックグラウンドで実行されている場合でも、アプリケーションのステータスバーメニューが有効になり、アクティブになります。 システム全体のステータスバーは、アプリケーションのメニューバーの右側にあり、macOS で現在利用可能なステータスバーのみです。
 
-**AppDelegate.cs**ファイルを編集して、メソッドを`DidFinishLaunching`次のようにしてみましょう。
+**AppDelegate.cs**ファイルを編集して、`DidFinishLaunching` メソッドを次のようにしてみましょう。
 
 ```csharp
 public override void DidFinishLaunching (NSNotification notification)
@@ -992,7 +992,7 @@ public override void DidFinishLaunching (NSNotification notification)
 }
 ```
 
-`NSStatusBar statusBar = NSStatusBar.SystemStatusBar;`システム全体のステータスバーへのアクセスを提供します。 `var item = statusBar.CreateStatusItem (NSStatusItemLength.Variable);`新しいステータスバー項目を作成します。 ここでは、メニューと多数のメニュー項目を作成し、作成したステータスバー項目にメニューを添付します。 
+`NSStatusBar statusBar = NSStatusBar.SystemStatusBar;` を使用すると、システム全体のステータスバーにアクセスできます。 `var item = statusBar.CreateStatusItem (NSStatusItemLength.Variable);` 新しいステータスバー項目が作成されます。 ここでは、メニューと多数のメニュー項目を作成し、作成したステータスバー項目にメニューを添付します。 
 
 アプリケーションを実行すると、新しいステータスバー項目が表示されます。 メニューから項目を選択すると、テキストビューのテキストが変更されます。 
 
@@ -1008,25 +1008,25 @@ public override void DidFinishLaunching (NSNotification notification)
 
 次の手順に従って、アプリケーションのカスタムドックメニューを作成してみましょう。
 
-1. Visual Studio for Mac で、アプリケーションのプロジェクトを右クリックし、[新しいファイルの**追加** >  **...** ] を選択します。[新しいファイル] ダイアログで、[ **Xamarin. Mac** > **空のインターフェイス定義**] を選択し、**名前**として "DockMenu" を使用します。次に、 **[新規]** ボタンをクリックして、新しい**DockMenu xib**ファイルを作成します。
+1. Visual Studio for Mac で、アプリケーションのプロジェクトを右クリックし、[ >  新しいファイルの**追加** **...** ] を選択します。[新しいファイル] ダイアログで、[ **Xamarin. Mac**  > **空のインターフェイス定義**] を選択し、**名前**として "DockMenu" を使用します。次に、 **[新規]** ボタンをクリックして、新しい**DockMenu xib**ファイルを作成します。
 
     ![空のインターフェイス定義の追加](menu-images/dock02.png "空のインターフェイス定義の追加")
-2. **Solution Pad**で、 **DockMenu xib**ファイルをダブルクリックして、Xcode で編集するために開きます。 次の項目を使用して、新しい**メニュー**を作成します。**住所**、**日付**、**あいさつ**、**署名** 
+2. **Solution Pad**で、 **DockMenu xib**ファイルをダブルクリックして、Xcode で編集するために開きます。 **[住所]** 、 **[日付]** 、 **[あいさつ]** 、 **[署名]** の各項目を使用して、新しい**メニュー**を作成します。 
 
     [![UI のレイアウト](menu-images/dock03.png "UI のレイアウト")](menu-images/dock03-large.png#lightbox)
-3. 次に、前の「[メニューの追加、編集、および削除](#Adding,_Editing_and_Deleting_Menus)」セクションでカスタムメニュー用に作成した既存のアクションに、新しいメニュー項目を接続してみましょう。 **接続インスペクター**に切り替えて、**インターフェイス階層**内の**最初のレスポンダー**を選択します。 下にスクロールして`phraseAddress:` 、アクションを見つけます。 そのアクションの円の線を **[アドレス]** メニュー項目にドラッグします。
+3. 次に、前の「[メニューの追加、編集、および削除](#Adding,_Editing_and_Deleting_Menus)」セクションでカスタムメニュー用に作成した既存のアクションに、新しいメニュー項目を接続してみましょう。 **接続インスペクター**に切り替えて、**インターフェイス階層**内の**最初のレスポンダー**を選択します。 下にスクロールし、[`phraseAddress:`] アクションを見つけます。 そのアクションの円の線を **[アドレス]** メニュー項目にドラッグします。
 
-    [![ドラッグしてアクション]を接続する(menu-images/dock04.png "ドラッグしてアクション")を接続する](menu-images/dock04-large.png#lightbox)
+    [![ドラッグしてアクションを接続する](menu-images/dock04.png "ドラッグしてアクションを接続する")](menu-images/dock04-large.png#lightbox)
 4. 他のすべてのメニュー項目についても繰り返して、対応するアクションにアタッチします。 
 
     [![必要な操作](menu-images/dock05.png "必要な操作")](menu-images/dock05-large.png#lightbox)
-5. 次に、**インターフェイス階層**で**アプリケーション**を選択します。 **接続インスペクター**で、 `dockMenu`コンセントの円から、先ほど作成したメニューに線をドラッグします。
+5. 次に、**インターフェイス階層**で**アプリケーション**を選択します。 **接続インスペクター**で、`dockMenu` コンセントの円の線を、先ほど作成したメニューにドラッグします。
 
     [![ケーブルをコンセントにドラッグする](menu-images/dock06.png "ケーブルをコンセントにドラッグする")](menu-images/dock06-large.png#lightbox)
 6. 変更を保存し、Visual Studio for Mac に戻って Xcode と同期します。
 7. ファイルをダブルクリックして開き、編集**し**ます。 
 
-    [![Info.plist ファイルの編集](menu-images/dock07.png "Info.plist ファイルの編集")](menu-images/dock07-large.png#lightbox)
+    [![情報の plist ファイルの編集](menu-images/dock07.png "情報の plist ファイルの編集")](menu-images/dock07-large.png#lightbox)
 8. 画面の下部にある **[ソース]** タブをクリックします。 
 
     [![ソースビューの選択](menu-images/dock08.png "ソースビューの選択")](menu-images/dock08-large.png#lightbox)
@@ -1051,12 +1051,12 @@ public override void DidFinishLaunching (NSNotification notification)
 1. Xcode の**メインのストーリーボード**ファイルを編集し、[**ライブラリ] インスペクター**から[コンテキストメニュー](#Contextual_Menus)セクションで作成した**パネル**ウィンドウに**ポップアップボタン**をドラッグします。 
 
     [![ポップアップボタンの追加](menu-images/popup01.png "ポップアップボタンの追加")](menu-images/popup01-large.png#lightbox)
-2. 新しいメニュー項目を追加し、ポップアップの項目のタイトルを次のように設定します。**住所**、**日付**、**あいさつ**、**署名** 
+2. 新しいメニュー項目を追加し、ポップアップの項目のタイトルを**アドレス**、**日付**、**あいさつ**、**署名**に設定します。 
 
     [![メニュー項目の構成](menu-images/popup02.png "メニュー項目の構成")](menu-images/popup02-large.png#lightbox)
-3. 次に、前の「[メニューの追加、編集、および削除](#Adding,_Editing_and_Deleting_Menus)」セクションでカスタムメニュー用に作成した既存のアクションに、新しいメニュー項目を接続してみましょう。 **接続インスペクター**に切り替えて、**インターフェイス階層**内の**最初のレスポンダー**を選択します。 下にスクロールして`phraseAddress:` 、アクションを見つけます。 そのアクションの円の線を **[アドレス]** メニュー項目にドラッグします。 
+3. 次に、前の「[メニューの追加、編集、および削除](#Adding,_Editing_and_Deleting_Menus)」セクションでカスタムメニュー用に作成した既存のアクションに、新しいメニュー項目を接続してみましょう。 **接続インスペクター**に切り替えて、**インターフェイス階層**内の**最初のレスポンダー**を選択します。 下にスクロールし、[`phraseAddress:`] アクションを見つけます。 そのアクションの円の線を **[アドレス]** メニュー項目にドラッグします。 
 
-    [![ドラッグしてアクション]を接続する(menu-images/popup03.png "ドラッグしてアクション")を接続する](menu-images/popup03-large.png#lightbox)
+    [![ドラッグしてアクションを接続する](menu-images/popup03.png "ドラッグしてアクションを接続する")](menu-images/popup03-large.png#lightbox)
 4. 他のすべてのメニュー項目についても繰り返して、対応するアクションにアタッチします。 
 
     [![すべての必要なアクション](menu-images/popup04.png "すべての必要なアクション")](menu-images/popup04-large.png#lightbox)

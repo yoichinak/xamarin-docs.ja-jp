@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 10/11/2016
 ms.openlocfilehash: 9441596cd457c3cc3a881e5db319ec3bbfc5a312
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70766858"
 ---
 # <a name="using-data-in-an-ios-app"></a>IOS アプリでのデータの使用
@@ -20,13 +20,13 @@ ms.locfileid: "70766858"
 
 データを追加した後、アプリケーション画面は次のようになります。
 
- ![](using-data-in-an-app-images/image9.png "iOS のサンプル一覧")
+ ![](using-data-in-an-app-images/image9.png "iOS sample list")
 
- ![](using-data-in-an-app-images/image10.png "iOS のサンプルの詳細")
+ ![](using-data-in-an-app-images/image10.png "iOS sample detail")
 
 IOS プロジェクトを以下に示します。このセクションで示すコードは、 **Orm**ディレクトリに含まれています。
 
- ![](using-data-in-an-app-images/image13.png "iOS プロジェクトツリー")
+ ![](using-data-in-an-app-images/image13.png "iOS project tree")
 
 IOS の ViewControllers のネイティブ UI コードは、このドキュメントの対象外です。
 UI コントロールの詳細については、「 [iOS のテーブルとセルの操作](~/ios/user-interface/controls/tables/index.md)ガイド」を参照してください。
@@ -38,7 +38,7 @@ UI コントロールの詳細については、「 [iOS のテーブルとセ�
 - リストを読み取っています
 - 個々のレコードの読み取り
 
-`StockDatabase`クラスの2つのメソッドは次のとおりです。
+@No__t_0 クラスの2つのメソッドは次のとおりです。
 
 ```csharp
 public IEnumerable<Stock> GetStocks ()
@@ -55,11 +55,11 @@ public Stock GetStock (int id)
 }
 ```
 
-iOS では、 `UITableView`としてデータが異なる方法で表示されます。
+iOS では、`UITableView` とは異なる方法でデータを表示します。
 
 ## <a name="create-and-update"></a>作成と更新
 
-アプリケーションコードを簡略化するために、PrimaryKey が設定されているかどうかに応じて挿入または更新を行う1つの save メソッドが用意されています。 プロパティは`[PrimaryKey]`属性でマークされているので、コードで設定しないでください。 `Id`
+アプリケーションコードを簡略化するために、PrimaryKey が設定されているかどうかに応じて挿入または更新を行う1つの save メソッドが用意されています。 @No__t_0 プロパティは `[PrimaryKey]` 属性でマークされているので、コードで設定しないでください。
 このメソッドは、(主キープロパティをチェックして) 値が以前に保存されているかどうかを検出し、それに応じてオブジェクトを挿入または更新します。
 
 ```csharp
@@ -81,8 +81,8 @@ public int SaveStock (Stock item)
 
 ## <a name="delete"></a>削除
 
-`Delete<T>` `Stock`メソッドとメソッド`Update`とは異なり、メソッドは、完全なオブジェクトではなく、主キーの値のみを受け入れることができます。 `Insert`
-この例`Stock`では、オブジェクトはメソッドに渡されますが、Id プロパティのみが`Delete<T>`メソッドに渡されます。
+@No__t_0 メソッドと `Update` メソッドとは異なり、`Delete<T>` メソッドは、完全な `Stock` オブジェクトではなく、主キーの値のみを受け入れることができます。
+この例では、`Stock` オブジェクトがメソッドに渡されますが、`Delete<T>` メソッドに渡されるのは Id プロパティだけです。
 
 ```csharp
 public int DeleteStock(Stock stock)
@@ -103,7 +103,7 @@ public int DeleteStock(Stock stock)
 
 アプリケーションと共に配布するデータベースファイルを作成する場合は、テーブルと列の名前付けを使用して、コードが期待するものと一致することを確認します。特に、SQLite.NET C#を使用していて、名前がクラスやプロパティと一致することを期待する場合は特に、または、関連付けられているカスタム属性)。
 
-IOS の場合は、アプリケーションに sqlite ファイルを含め、ビルドアクションで**マークされていることを確認します。コンテンツ**。 データメソッドを呼び出す`FinishedLaunching` *前に*、ファイルを書き込み可能なディレクトリにコピーするコードをに配置します。 次のコードでは、 **data. sqlite**という名前の既存のデータベースがまだ存在しない場合にのみコピーします。
+IOS の場合は、アプリケーションに sqlite ファイルを含め、**ビルドアクション: コンテンツ**でマークされていることを確認します。 データメソッドを呼び出す*前に*、`FinishedLaunching` にコードを配置して、書き込み可能なディレクトリにファイルをコピーします。 次のコードでは、 **data. sqlite**という名前の既存のデータベースがまだ存在しない場合にのみコピーします。
 
 ```csharp
 // Copy the database across (if it doesn't exist)
@@ -122,4 +122,4 @@ if (!File.Exists (Database.DatabaseFilePath))
 - [このような場合の基本 (サンプル)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
 - [詳細設定 (サンプル)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
 - [iOS データレシピ](https://github.com/xamarin/recipes/tree/master/Recipes/ios/data/sqlite)
-- [Xamarin.Forms データアクセス](~/xamarin-forms/data-cloud/data/databases.md)
+- [Xamarin. フォームデータアクセス](~/xamarin-forms/data-cloud/data/databases.md)

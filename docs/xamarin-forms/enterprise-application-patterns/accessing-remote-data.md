@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
 ms.openlocfilehash: 9c793f4d5f0cda5bff2dedef5e4e5e5bdfca69e5
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70770802"
 ---
 # <a name="accessing-remote-data"></a>リモート データへのアクセス
@@ -33,7 +33,7 @@ REST 要求からの応答では、標準の HTTP 状態コードが使用され
 
 RESTful web API は、接続されたリソースのセットを公開し、アプリがリソースを操作してそれらの間を簡単に移動できるようにするための主要な操作を提供します。 このため、一般的な RESTful web API を構成する Uri は、公開するデータに向いており、HTTP によって提供される機能を使用してこのデータを操作します。
 
-HTTP 要求でクライアントアプリによって含まれるデータと、web サーバーからの対応する応答メッセージは、メディアの種類と呼ばれるさまざまな形式で表現できます。 クライアントアプリは、メッセージの本文でデータを返す要求を送信するときに、要求の`Accept`ヘッダーで処理できるメディアの種類を指定できます。 Web サーバーがこのメディアの種類をサポートしている場合は、メッセージ本文の`Content-Type`データ形式を指定するヘッダーを含む応答で応答できます。 次に、応答メッセージを解析し、メッセージ本文の結果を適切に解釈するクライアントアプリの役割を担います。
+HTTP 要求でクライアントアプリによって含まれるデータと、web サーバーからの対応する応答メッセージは、メディアの種類と呼ばれるさまざまな形式で表現できます。 クライアントアプリは、メッセージの本文でデータを返す要求を送信するときに、要求の `Accept` ヘッダーで処理できるメディアの種類を指定できます。 Web サーバーがこのメディアの種類をサポートしている場合は、メッセージの本文のデータ形式を指定する `Content-Type` ヘッダーを含む応答で応答できます。 次に、応答メッセージを解析し、メッセージ本文の結果を適切に解釈するクライアントアプリの役割を担います。
 
 REST の詳細については、「 [api の設計](/azure/architecture/best-practices/api-design/)と[api の実装](/azure/architecture/best-practices/api-implementation/)」を参照してください。
 
@@ -43,21 +43,21 @@ EShopOnContainers モバイルアプリは、モデルビュービューモデ�
 
 ### <a name="making-web-requests"></a>Web 要求を作成する
 
-EShopOnContainers モバイルアプリでは、 `HttpClient`クラスを使用して HTTP 経由で要求を行い、JSON をメディアの種類として使用します。 このクラスは、HTTP 要求を非同期的に送信し、URI で識別されたリソースから HTTP 応答を受信するための機能を提供します。 クラス`HttpResponseMessage`は、http 要求が行われた後に REST API から受信した http 応答メッセージを表します。 状態コード、ヘッダー、および任意の本文を含む、応答に関する情報が含まれています。 `HttpContent`クラスなどを表します HTTP 本体およびコンテンツ ヘッダーは、`Content-Type`と`Content-Encoding`します。 コンテンツは、データの形式に応じて`ReadAs` 、 `ReadAsStringAsync`や`ReadAsByteArrayAsync`などの任意のメソッドを使用して読み取ることができます。
+EShopOnContainers モバイルアプリは、`HttpClient` クラスを使用して HTTP 経由で要求を行い、JSON をメディアの種類として使用します。 このクラスは、HTTP 要求を非同期的に送信し、URI で識別されたリソースから HTTP 応答を受信するための機能を提供します。 @No__t_0 クラスは、HTTP 要求が行われた後に REST API から受信した HTTP 応答メッセージを表します。 これには、ステータスコード、ヘッダー、および任意の本文を含む、応答に関する情報が含まれます。 @No__t_0 クラスは、`Content-Type` や `Content-Encoding` などの HTTP 本文およびコンテンツヘッダーを表します。 コンテンツは、データの形式に応じて、`ReadAsStringAsync` や `ReadAsByteArrayAsync` などの `ReadAs` の方法のいずれかを使用して読み取ることができます。
 
 <a name="making_a_get_request" />
 
 #### <a name="making-a-get-request"></a>GET 要求を行う
 
-`CatalogService`クラスは、カタログマイクロサービスからのデータ取得プロセスを管理するために使用されます。 クラスのメソッドでは、クラスは、Autofac依存関係挿入コンテナーを持つ型に対する型マッピングとして登録されます。`ICatalogService` `CatalogService` `RegisterDependencies` `ViewModelLocator` 次に、 `CatalogViewModel`クラスのインスタンスが作成されると、そのコンストラクターは`ICatalogService` 、 `CatalogService`クラスのインスタンスを返す Autofac に解決される型を受け入れます。 依存関係の挿入の詳細については、「[依存関係の挿入の概要](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#introduction_to_dependency_injection)」を参照してください。
+@No__t_0 クラスは、カタログマイクロサービスからのデータ取得プロセスを管理するために使用されます。 @No__t_1 クラスの `RegisterDependencies` メソッドでは、`CatalogService` クラスは、Autofac 依存関係挿入コンテナーを持つ `ICatalogService` 型に対する型マッピングとして登録されます。 次に、`CatalogViewModel` クラスのインスタンスが作成されると、そのコンストラクターは `ICatalogService` 型を受け取ります。この型は、Autofac によって解決され、`CatalogService` クラスのインスタンスを返します。 依存関係の挿入の詳細については、「[依存関係の挿入の概要](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#introduction_to_dependency_injection)」を参照してください。
 
-図10-1 は、 `CatalogView`によって表示されるようにカタログマイクロサービスからカタログデータを読み取るクラスの相互作用を示しています。
+図10-1 は、`CatalogView` によって表示されるようにカタログマイクロサービスからカタログデータを読み取るクラスの相互作用を示しています。
 
-[![](accessing-remote-data-images/catalogdata.png "カタログマイクロサービスからデータを取得する")](accessing-remote-data-images/catalogdata-large.png#lightbox "カタログマイクロサービスからデータを取得する")
+[![](accessing-remote-data-images/catalogdata.png "Retrieving data from the catalog microservice")](accessing-remote-data-images/catalogdata-large.png#lightbox "Retrieving data from the catalog microservice")
 
-**図 10-1**:カタログマイクロサービスからデータを取得する
+**図 10-1**: カタログマイクロサービスからのデータの取得
 
-に移動すると`OnInitialize` 、 `CatalogViewModel`クラスのメソッドが呼び出されます。 `CatalogView` このメソッドは、次のコード例に示すように、カタログマイクロサービスからカタログデータを取得します。
+@No__t_0 に移動すると、`CatalogViewModel` クラスの `OnInitialize` メソッドが呼び出されます。 このメソッドは、次のコード例に示すように、カタログマイクロサービスからカタログデータを取得します。
 
 ```csharp
 public override async Task InitializeAsync(object navigationData)  
@@ -68,7 +68,7 @@ public override async Task InitializeAsync(object navigationData)
 }
 ```
 
-このメソッドは、 `GetCatalogAsync` `CatalogViewModel` Autofac によっ`CatalogService`てに挿入されたインスタンスのメソッドを呼び出します。 次のコード例は、`GetCatalogAsync` メソッドを示しています。
+このメソッドは、Autofac によって `CatalogViewModel` に挿入された `CatalogService` インスタンスの `GetCatalogAsync` メソッドを呼び出します。 次のコード例は、`GetCatalogAsync` メソッドを示しています。
 
 ```csharp
 public async Task<ObservableCollection<CatalogItem>> GetCatalogAsync()  
@@ -83,9 +83,9 @@ public async Task<ObservableCollection<CatalogItem>> GetCatalogAsync()
 }
 ```
 
-このメソッドは、要求が送信されるリソースを識別する URI を構築し、 `RequestProvider`クラスを使用してリソースの GET HTTP メソッドを呼び出し、結果`CatalogViewModel`をに返します。 クラス`RequestProvider`には、リソースを識別する URI の形式で要求を送信する機能、そのリソースに対して実行される操作を示す HTTP メソッド、および操作を実行するために必要なデータを含む本文が含まれます。 `RequestProvider`クラスをに挿入する方法については`CatalogService class`、「[依存関係の挿入の概要](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#introduction_to_dependency_injection)」を参照してください。
+このメソッドは、要求が送信されるリソースを識別する URI を構築し、`RequestProvider` クラスを使用してリソースの GET HTTP メソッドを呼び出し、`CatalogViewModel` に結果を返します。 @No__t_0 クラスには、リソースを識別する URI 形式で要求を送信する機能、そのリソースに対して実行される操作を示す HTTP メソッド、および操作を実行するために必要なデータを含む本文が含まれます。 @No__t_0 クラスが `CatalogService class` に挿入される方法の詳細については、「[依存関係の挿入の概要](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#introduction_to_dependency_injection)」を参照してください。
 
-次のコード例は、 `GetAsync` `RequestProvider`クラスのメソッドを示しています。
+次のコード例は、`RequestProvider` クラスの `GetAsync` メソッドを示しています。
 
 ```csharp
 public async Task<TResult> GetAsync<TResult>(string uri, string token = "")  
@@ -103,9 +103,9 @@ public async Task<TResult> GetAsync<TResult>(string uri, string token = 
 }
 ```
 
-このメソッドは`CreateHttpClient` 、適切なヘッダーが設定された`HttpClient`クラスのインスタンスを返すメソッドを呼び出します。 次に、URI で識別されるリソースに非同期の GET 要求を送信し、応答を`HttpResponseMessage`インスタンスに格納します。 次に、メソッドが呼び出されます。これは、応答に成功 HTTP 状態コードが含まれていない場合に例外をスローします。 `HandleResponse` 次に、応答が文字列として読み取られ、JSON `CatalogRoot`からオブジェクトに変換され`CatalogService`、に返されます。
+このメソッドは `CreateHttpClient` メソッドを呼び出します。このメソッドは、適切なヘッダーが設定された `HttpClient` クラスのインスタンスを返します。 次に、URI で識別されるリソースに非同期 GET 要求を送信し、応答を `HttpResponseMessage` インスタンスに格納します。 次に、`HandleResponse` メソッドが呼び出されます。これは、応答に成功 HTTP 状態コードが含まれていない場合に例外をスローします。 次に、応答が文字列として読み取られ、JSON から `CatalogRoot` オブジェクトに変換され、`CatalogService` に返されます。
 
-`CreateHttpClient`メソッドを次のコード例に示します。
+@No__t_0 メソッドを次のコード例に示します。
 
 ```csharp
 private HttpClient CreateHttpClient(string token = "")  
@@ -123,9 +123,9 @@ private HttpClient CreateHttpClient(string token = "")
 }
 ```
 
-このメソッド`HttpClient`は、クラスの新しいインスタンスを作成し、 `HttpClient`インスタンス`Accept`によって行われたすべての要求`application/json`のヘッダーをに設定します。これは、JSON を使用して応答のコンテンツを書式設定することを想定していることを示します。 その後、アクセストークンが引数と`CreateHttpClient`してメソッドに渡された場合は、 `HttpClient`インスタンスに`Authorization`よって行われたすべての要求のヘッダーに、文字列`Bearer`がプレフィックスとして付加されます。 承認の詳細については、「[承認](~/xamarin-forms/enterprise-application-patterns/authentication-and-authorization.md#authorization)」を参照してください。
+このメソッドは、`HttpClient` クラスの新しいインスタンスを作成し、`HttpClient` インスタンスによって行われるすべての要求の `Accept` ヘッダーを `application/json` に設定します。これは、JSON を使用して応答のコンテンツを書式設定することを想定していることを示します。 次に、アクセストークンを引数として `CreateHttpClient` メソッドに渡すと、`HttpClient` インスタンスによって行われたすべての要求の `Authorization` ヘッダーに、文字列 `Bearer` がプレフィックスとして付加されます。 承認の詳細については、「[承認](~/xamarin-forms/enterprise-application-patterns/authentication-and-authorization.md#authorization)」を参照してください。
 
-`RequestProvider`クラスの`GetAsync`メソッドがを呼び出す`HttpClient.GetAsync`と、 `Items`次のコード`CatalogController`例に示すように、Catalog. API プロジェクトのクラスのメソッドが呼び出されます。
+@No__t_1 クラスの `GetAsync` メソッドが `HttpClient.GetAsync` を呼び出すと、Catalog. API プロジェクトの `CatalogController` クラスの `Items` メソッドが呼び出されます。これを次のコード例に示します。
 
 ```csharp
 [HttpGet]  
@@ -150,19 +150,19 @@ public async Task<IActionResult> Items(
 }
 ```
 
-このメソッドは、entityframework を使用して SQL データベースからカタログデータを取得し、成功 HTTP 状態コードと JSON 形式`CatalogItem`のインスタンスのコレクションを含む応答メッセージとして返します。
+このメソッドは、EntityFramework を使用して SQL データベースからカタログデータを取得し、成功 HTTP 状態コードと JSON 形式の `CatalogItem` インスタンスのコレクションを含む応答メッセージとして返します。
 
 #### <a name="making-a-post-request"></a>POST 要求を行う
 
-`BasketService`クラスは、バスケットマイクロサービスを使用してデータの取得と更新のプロセスを管理するために使用されます。 クラスのメソッドでは、クラスは、Autofac依存関係挿入コンテナーを持つ型に対する型マッピングとして登録されます。`IBasketService` `BasketService` `RegisterDependencies` `ViewModelLocator` 次に、 `BasketViewModel`クラスのインスタンスが作成されると、そのコンストラクターは`IBasketService` 、 `BasketService`クラスのインスタンスを返す Autofac に解決される型を受け入れます。 依存関係の挿入の詳細については、「[依存関係の挿入の概要](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#introduction_to_dependency_injection)」を参照してください。
+@No__t_0 クラスは、バスケットマイクロサービスを使用してデータの取得と更新のプロセスを管理するために使用されます。 @No__t_1 クラスの `RegisterDependencies` メソッドでは、`BasketService` クラスは、Autofac 依存関係挿入コンテナーを持つ `IBasketService` 型に対する型マッピングとして登録されます。 次に、`BasketViewModel` クラスのインスタンスが作成されると、そのコンストラクターは `IBasketService` 型を受け取ります。この型は、Autofac によって解決され、`BasketService` クラスのインスタンスを返します。 依存関係の挿入の詳細については、「[依存関係の挿入の概要](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#introduction_to_dependency_injection)」を参照してください。
 
-図10-2 は、によって`BasketView`表示されるバスケットデータを送信するクラスの相互作用をバスケットマイクロサービスに示しています。
+図10-2 に、`BasketView` によって表示されるバスケットデータを送信するクラスとバスケットマイクロサービスの相互作用を示します。
 
-[![](accessing-remote-data-images/basketdata.png "バスケットマイクロサービスにデータを送信しています")](accessing-remote-data-images/basketdata-large.png#lightbox "バスケットマイクロサービスにデータを送信しています")
+[![](accessing-remote-data-images/basketdata.png "Sending data to the basket microservice")](accessing-remote-data-images/basketdata-large.png#lightbox "Sending data to the basket microservice")
 
-**図 10-2**:バスケットマイクロサービスにデータを送信しています
+**図 10-2**: バスケットマイクロサービスへのデータの送信
 
-買い物かご`ReCalculateTotalAsync`に項目が追加されると、 `BasketViewModel`クラスのメソッドが呼び出されます。 このメソッドは、次のコード例に示すように、バスケット内の項目の合計値を更新し、バスケットデータをバスケットマイクロサービスに送信します。
+買い物かごに項目が追加されると、`BasketViewModel` クラスの `ReCalculateTotalAsync` メソッドが呼び出されます。 このメソッドは、次のコード例に示すように、バスケット内の項目の合計値を更新し、バスケットデータをバスケットマイクロサービスに送信します。
 
 ```csharp
 private async Task ReCalculateTotalAsync()  
@@ -176,7 +176,7 @@ private async Task ReCalculateTotalAsync()
 }
 ```
 
-このメソッドは、 `UpdateBasketAsync` `BasketViewModel` Autofac によっ`BasketService`てに挿入されたインスタンスのメソッドを呼び出します。 メソッドを`UpdateBasketAsync`次のメソッドに示します。
+このメソッドは、Autofac によって `BasketViewModel` に挿入された `BasketService` インスタンスの `UpdateBasketAsync` メソッドを呼び出します。 次のメソッドは、`UpdateBasketAsync` メソッドを示しています。
 
 ```csharp
 public async Task<CustomerBasket> UpdateBasketAsync(CustomerBasket customerBasket, string token)  
@@ -188,9 +188,9 @@ public async Task<CustomerBasket> UpdateBasketAsync(CustomerBasket customerB
 }
 ```
 
-このメソッドは、要求が送信されるリソースを識別する URI を構築し、 `RequestProvider`クラスを使用してリソースの POST HTTP メソッドを呼び出し、結果`BasketViewModel`をに返します。 バスケットマイクロサービスへの要求を承認するには、認証プロセス中に、サーバーから取得したアクセストークンが必要です。 承認の詳細については、「[承認](~/xamarin-forms/enterprise-application-patterns/authentication-and-authorization.md#authorization)」を参照してください。
+このメソッドは、要求が送信されるリソースを識別する URI を構築し、`RequestProvider` クラスを使用してリソースの POST HTTP メソッドを呼び出し、`BasketViewModel` に結果を返します。 バスケットマイクロサービスへの要求を承認するには、認証プロセス中に、サーバーから取得したアクセストークンが必要です。 承認の詳細については、「[承認](~/xamarin-forms/enterprise-application-patterns/authentication-and-authorization.md#authorization)」を参照してください。
 
-次のコード例は、 `PostAsync` `RequestProvider`クラスのメソッドの1つを示しています。
+次のコード例は、`RequestProvider` クラスの `PostAsync` メソッドの1つを示しています。
 
 ```csharp
 public async Task<TResult> PostAsync<TResult>(  
@@ -212,9 +212,9 @@ public async Task<TResult> PostAsync<TResult>(
 }
 ```
 
-このメソッドは`CreateHttpClient` 、適切なヘッダーが設定された`HttpClient`クラスのインスタンスを返すメソッドを呼び出します。 次に、URI によって識別されるリソースに非同期 POST 要求を送信します。これには、JSON 形式で送信されるシリアル化さ`HttpResponseMessage`れたバスケットデータと、インスタンスに格納されている応答が含まれます。 次に、メソッドが呼び出されます。これは、応答に成功 HTTP 状態コードが含まれていない場合に例外をスローします。 `HandleResponse` 次に、応答が文字列として読み取られ、JSON から`CustomerBasket`オブジェクトに変換され、 `BasketService`に返されます。 メソッドの`CreateHttpClient`詳細については、「 [GET 要求の作成](#making_a_get_request)」を参照してください。
+このメソッドは `CreateHttpClient` メソッドを呼び出します。このメソッドは、適切なヘッダーが設定された `HttpClient` クラスのインスタンスを返します。 次に、URI で識別されるリソースに非同期 POST 要求を送信します。これには、JSON 形式で送信されるシリアル化されたバスケットデータと、`HttpResponseMessage` インスタンスに格納されている応答が含まれます。 次に、`HandleResponse` メソッドが呼び出されます。これは、応答に成功 HTTP 状態コードが含まれていない場合に例外をスローします。 次に、応答が文字列として読み取られ、JSON から `CustomerBasket` オブジェクトに変換され、`BasketService` に返されます。 @No__t_0 メソッドの詳細については、「 [GET 要求の作成](#making_a_get_request)」を参照してください。
 
-`RequestProvider`クラスの`PostAsync`メソッドがを呼び出す`HttpClient.PostAsync`と、 `Post`次のコード`BasketController`例に示すように、バスケットの API プロジェクトのクラスのメソッドが呼び出されます。
+@No__t_1 クラスの `PostAsync` メソッドが `HttpClient.PostAsync` を呼び出すと、次のコード例に示すように、`BasketController` クラスの `Post` メソッドが呼び出されます。
 
 ```csharp
 [HttpPost]  
@@ -225,17 +225,17 @@ public async Task<IActionResult> Post([FromBody]CustomerBasket value)
 }
 ```
 
-このメソッドは、 `RedisBasketRepository`クラスのインスタンスを使用して、バスケットデータを Redis cache に保存し、成功 HTTP 状態コードと JSON 形式`CustomerBasket`のインスタンスを含む応答メッセージとしてそれを返します。
+このメソッドは、`RedisBasketRepository` クラスのインスタンスを使用して、バスケットデータを Redis cache に保存し、成功 HTTP 状態コードと JSON 形式の `CustomerBasket` インスタンスを含む応答メッセージとして返します。
 
 #### <a name="making-a-delete-request"></a>削除要求を行う
 
-図10-3 は、 `CheckoutView`のバスケットマイクロサービスからバスケットデータを削除するクラスの相互作用を示しています。
+図10-3 は、バスケットマイクロサービスからバスケットデータを削除するクラスと `CheckoutView` のやり取りを示しています。
 
-![](accessing-remote-data-images/checkoutdata.png "バスケットマイクロサービスからのデータの一回")
+![](accessing-remote-data-images/checkoutdata.png "Deleteing data from the basket microservice")
 
-**図 10-3**:バスケットマイクロサービスからデータを削除しています
+**図 10-3**: バスケットマイクロサービスからのデータの削除
 
-チェックアウトプロセスが呼び出されると、 `CheckoutAsync` `CheckoutViewModel`クラスのメソッドが呼び出されます。 このメソッドは、次のコード例に示すように、買い物かごをクリアする前に新しい注文を作成します。
+チェックアウトプロセスが呼び出されると、`CheckoutViewModel` クラスの `CheckoutAsync` メソッドが呼び出されます。 このメソッドは、次のコード例に示すように、買い物かごをクリアする前に新しい注文を作成します。
 
 ```csharp
 private async Task CheckoutAsync()  
@@ -246,7 +246,7 @@ private async Task CheckoutAsync()
 }
 ```
 
-このメソッドは、 `ClearBasketAsync` `CheckoutViewModel` Autofac によっ`BasketService`てに挿入されたインスタンスのメソッドを呼び出します。 メソッドを`ClearBasketAsync`次のメソッドに示します。
+このメソッドは、Autofac によって `CheckoutViewModel` に挿入された `BasketService` インスタンスの `ClearBasketAsync` メソッドを呼び出します。 次のメソッドは、`ClearBasketAsync` メソッドを示しています。
 
 ```csharp
 public async Task ClearBasketAsync(string guidUser, string token)  
@@ -258,9 +258,9 @@ public async Task ClearBasketAsync(string guidUser, string token)
 }
 ```
 
-このメソッドは、要求の送信先となるリソースを識別する URI を構築し、 `RequestProvider`クラスを使用してリソースの DELETE HTTP メソッドを呼び出します。 バスケットマイクロサービスへの要求を承認するには、認証プロセス中に、サーバーから取得したアクセストークンが必要です。 承認の詳細については、「[承認](~/xamarin-forms/enterprise-application-patterns/authentication-and-authorization.md#authorization)」を参照してください。
+このメソッドは、要求の送信先となるリソースを識別する URI を構築し、`RequestProvider` クラスを使用してリソースの DELETE HTTP メソッドを呼び出します。 バスケットマイクロサービスへの要求を承認するには、認証プロセス中に、サーバーから取得したアクセストークンが必要です。 承認の詳細については、「[承認](~/xamarin-forms/enterprise-application-patterns/authentication-and-authorization.md#authorization)」を参照してください。
 
-次のコード例は、 `DeleteAsync` `RequestProvider`クラスのメソッドを示しています。
+次のコード例は、`RequestProvider` クラスの `DeleteAsync` メソッドを示しています。
 
 ```csharp
 public async Task DeleteAsync(string uri, string token = "")  
@@ -270,9 +270,9 @@ public async Task DeleteAsync(string uri, string token = "")
 }
 ```
 
-このメソッドは`CreateHttpClient` 、適切なヘッダーが設定された`HttpClient`クラスのインスタンスを返すメソッドを呼び出します。 次に、URI によって識別されるリソースに非同期の DELETE 要求を送信します。 メソッドの`CreateHttpClient`詳細については、「 [GET 要求の作成](#making_a_get_request)」を参照してください。
+このメソッドは `CreateHttpClient` メソッドを呼び出します。このメソッドは、適切なヘッダーが設定された `HttpClient` クラスのインスタンスを返します。 次に、URI によって識別されるリソースに非同期の DELETE 要求を送信します。 @No__t_0 メソッドの詳細については、「 [GET 要求の作成](#making_a_get_request)」を参照してください。
 
-`RequestProvider`クラスの`DeleteAsync`メソッドがを呼び出す`HttpClient.DeleteAsync`と、 `Delete`次のコード`BasketController`例に示すように、バスケットの API プロジェクトのクラスのメソッドが呼び出されます。
+@No__t_1 クラスの `DeleteAsync` メソッドが `HttpClient.DeleteAsync` を呼び出すと、次のコード例に示すように、`BasketController` クラスの `Delete` メソッドが呼び出されます。
 
 ```csharp
 [HttpDelete("{id}")]  
@@ -282,7 +282,7 @@ public void Delete(string id)
 }
 ```
 
-このメソッドは、 `RedisBasketRepository`クラスのインスタンスを使用して、Redis cache からバスケットデータを削除します。
+このメソッドは、`RedisBasketRepository` クラスのインスタンスを使用して、Redis cache からバスケットデータを削除します。
 
 ## <a name="caching-data"></a>キャッシュされたデータ
 
@@ -298,7 +298,7 @@ EShopOnContainers reference アプリケーションなどの分散アプリケ�
 - 共有キャッシュ。複数のプロセスまたはコンピューターからアクセスできます。
 - プライベートキャッシュ。アプリを実行しているデバイス上でデータがローカルに保持されます。
 
-EShopOnContainers モバイルアプリでは、アプリのインスタンスを実行しているデバイス上でデータがローカルに保持されるプライベートキャッシュを使用します。 EShopOnContainers reference アプリケーションで使用されるキャッシュの詳細について[は、「.net マイクロサービス:Architecture for Containerized .NET Applications](https://aka.ms/microservicesebook)」(.NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ) を参照してください。
+EShopOnContainers モバイルアプリでは、アプリのインスタンスを実行しているデバイス上でデータがローカルに保持されるプライベートキャッシュを使用します。 EShopOnContainers reference アプリケーションで使用されるキャッシュの詳細については、「 [.Net マイクロサービス: コンテナー化された .Net アプリケーションのアーキテクチャ](https://aka.ms/microservicesebook)」を参照してください。
 
 > [!TIP]
 > キャッシュは、いつでも消失する可能性がある一時的なデータストアと考えることができます。 データが元のデータストアおよびキャッシュに保持されていることを確認します。 キャッシュが使用できなくなった場合、データが失われる可能性は最小限に抑えられます。
@@ -318,11 +318,11 @@ EShopOnContainers モバイルアプリでは、アプリのインスタンス�
 
 ### <a name="caching-images"></a>イメージのキャッシュ
 
-EShopOnContainers モバイルアプリは、キャッシュされることによるメリットが得られるリモートの製品イメージを消費します。 これらのイメージは、 [`Image`](xref:Xamarin.Forms.Image)コントロール`CachedImage`と、 [FFImageLoading](https://www.nuget.org/packages/Xamarin.FFImageLoading.Forms/)ライブラリによって提供されるコントロールによって表示されます。
+EShopOnContainers モバイルアプリは、キャッシュされることによるメリットが得られるリモートの製品イメージを消費します。 これらのイメージは、 [`Image`](xref:Xamarin.Forms.Image)コントロールと、 [FFImageLoading](https://www.nuget.org/packages/Xamarin.FFImageLoading.Forms/)ライブラリによって提供される `CachedImage` コントロールによって表示されます。
 
-Xamarin. Forms [`Image`](xref:Xamarin.Forms.Image)コントロールは、ダウンロードしたイメージのキャッシュをサポートしています。 キャッシュは既定で有効になり、イメージは24時間ローカルに保存されます。 また、 [`CacheValidity`](xref:Xamarin.Forms.UriImageSource.CacheValidity)プロパティを使用して有効期限を構成することもできます。 詳細については、「ダウンロードした[イメージのキャッシュ](~/xamarin-forms/user-interface/images.md#downloaded-image-caching)」を参照してください。
+Xamarin Forms [`Image`](xref:Xamarin.Forms.Image)コントロールは、ダウンロードしたイメージのキャッシュをサポートします。 キャッシュは既定で有効になり、イメージは24時間ローカルに保存されます。 また、有効期限は、 [`CacheValidity`](xref:Xamarin.Forms.UriImageSource.CacheValidity)プロパティを使用して構成できます。 詳細については、「ダウンロードした[イメージのキャッシュ](~/xamarin-forms/user-interface/images.md#downloaded-image-caching)」を参照してください。
 
-FFImageLoading の`CachedImage`コントロールは、追加の機能を有効に[`Image`](xref:Xamarin.Forms.Image)する追加のプロパティを提供する、Xamarin. フォームコントロールの代わりになります。 この機能の中で、コントロールは構成可能なキャッシュを提供し、エラーをサポートし、イメージのプレースホルダーを読み込みます。 次のコード例では、eShopOnContainers モバイルアプリで、 `CachedImage`でコントロール`CatalogView`に`ProductTemplate`よって[`ListView`](xref:Xamarin.Forms.ListView)使用されるデータテンプレートであるコントロールを使用する方法を示します。
+FFImageLoading の `CachedImage` コントロールは、追加の機能を有効にする追加のプロパティを提供する、Xamarin. Forms [`Image`](xref:Xamarin.Forms.Image)コントロールの代わりになります。 この機能の中で、コントロールは構成可能なキャッシュを提供し、エラーをサポートし、イメージのプレースホルダーを読み込みます。 次のコード例は、eShopOnContainers モバイルアプリが `ProductTemplate` の `CachedImage` コントロールを使用する方法を示しています。これは、`CatalogView` の[`ListView`](xref:Xamarin.Forms.ListView)コントロールによって使用されるデータテンプレートです。
 
 ```xaml
 <ffimageloading:CachedImage
@@ -344,9 +344,9 @@ FFImageLoading の`CachedImage`コントロールは、追加の機能を有効�
 </ffimageloading:CachedImage>
 ```
 
-コントロール`CachedImage`は、プロパティ`LoadingPlaceholder`と`ErrorPlaceholder`プロパティをプラットフォーム固有のイメージに設定します。 プロパティは、 `Source`プロパティによって指定されたイメージを取得するときに表示される`ErrorPlaceholder`イメージを指定し、プロパティは、イメージを取得しようとしたときにエラーが発生した場合に表示されるイメージを指定します。 `LoadingPlaceholder``Source`プロパティによって指定されます。
+@No__t_0 コントロールは、`LoadingPlaceholder` プロパティと `ErrorPlaceholder` プロパティをプラットフォーム固有のイメージに設定します。 @No__t_0 プロパティは、`Source` プロパティによって指定されたイメージを取得するときに表示されるイメージを指定します。また、`ErrorPlaceholder` プロパティは、によって指定されたイメージを取得しようとしたときにエラーが発生した場合に表示されるイメージを指定し `Source`".
 
-名前が示すように、 `CachedImage`コントロールは、 `CacheDuration`プロパティの値によって指定された時間に対して、デバイス上のリモートイメージをキャッシュします。 このプロパティ値が明示的に設定されていない場合、既定値の30日が適用されます。
+名前が示すように、`CachedImage` コントロールは、`CacheDuration` プロパティの値によって指定された時間、デバイス上のリモートイメージをキャッシュします。 このプロパティ値が明示的に設定されていない場合、既定値の30日が適用されます。
 
 ## <a name="increasing-resilience"></a>復元性の向上
 
@@ -378,9 +378,9 @@ FFImageLoading の`CachedImage`コントロールは、追加の機能を有効�
 > [!TIP]
 > 無限の再試行メカニズムを実装しないでください。 有限の回数の再試行を使用するか、サービスが復旧できるように[サーキットブレーカー](/azure/architecture/patterns/circuit-breaker/)パターンを実装します。
 
-EShopOnContainers モバイルアプリは、RESTful web 要求を行うときに、再試行パターンを現在実装していません。 ただし、 `CachedImage` [FFImageLoading](https://www.nuget.org/packages/Xamarin.FFImageLoading.Forms/)ライブラリによって提供されるコントロールは、イメージの読み込みを再試行することによって一時的なエラー処理をサポートします。 イメージの読み込みに失敗した場合は、さらに試行されます。 試行回数は`RetryCount`プロパティによって指定されます。再試行は、 `RetryDelay`プロパティによって指定された遅延の後に行われます。 これらのプロパティ値が明示的に設定されていない場合、プロパティ`RetryCount`には既定値が適用`RetryDelay`され、プロパティには250ミリ秒が適用されます。 コントロールの`CachedImage`詳細については、「[イメージのキャッシュ](#caching_images)」を参照してください。
+EShopOnContainers モバイルアプリは、RESTful web 要求を行うときに、再試行パターンを現在実装していません。 ただし、 [FFImageLoading](https://www.nuget.org/packages/Xamarin.FFImageLoading.Forms/)ライブラリによって提供される `CachedImage` コントロールは、イメージの読み込みを再試行することによって一時的なエラー処理をサポートします。 イメージの読み込みに失敗した場合は、さらに試行されます。 試行回数は `RetryCount` プロパティによって指定され、`RetryDelay` プロパティによって指定された遅延の後に再試行が行われます。 これらのプロパティ値が明示的に設定されていない場合、`RetryCount` プロパティには既定値が適用され、`RetryDelay` プロパティには250ミリ秒が適用されます。 @No__t_0 コントロールの詳細については、「[イメージのキャッシュ](#caching_images)」を参照してください。
 
-EShopOnContainers 参照アプリケーションは、再試行パターンを実装します。 再試行パターンを`HttpClient`クラスと組み合わせる方法の詳細については、「 [.net マイクロサービス:Architecture for Containerized .NET Applications](https://aka.ms/microservicesebook)」(.NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ) を参照してください。
+EShopOnContainers 参照アプリケーションは、再試行パターンを実装します。 再試行パターンと `HttpClient` クラスを組み合わせる方法の詳細については、「 [.Net マイクロサービス: コンテナー化された .Net アプリケーションのアーキテクチャ](https://aka.ms/microservicesebook)」を参照してください。
 
 再試行パターンの詳細については、[再試行](/azure/architecture/patterns/retry/)パターンを参照してください。
 
@@ -397,7 +397,7 @@ EShopOnContainers 参照アプリケーションは、再試行パターンを�
 
 サーキットブレーカーは、失敗する可能性のある操作のプロキシとして機能します。 プロキシは、発生した最近のエラーの数を監視し、この情報を使用して操作の続行を許可するか、例外を直ちに返すかを決定します。
 
-EShopOnContainers モバイルアプリは、現在、サーキットブレーカーパターンを実装していません。 ただし、eShopOnContainers はそのように動作します。 詳細については[、「.net マイクロサービス:Architecture for Containerized .NET Applications](https://aka.ms/microservicesebook)」(.NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ) を参照してください。
+EShopOnContainers モバイルアプリは、現在、サーキットブレーカーパターンを実装していません。 ただし、eShopOnContainers はそのように動作します。 詳細については、「 [.Net マイクロサービス: コンテナー化された .Net アプリケーションのアーキテクチャ](https://aka.ms/microservicesebook)」を参照してください。
 
 > [!TIP]
 > 再試行とサーキットブレーカーのパターンを結合します。 アプリでは、再試行パターンを使ってサーキットブレーカーを介して操作を呼び出すことにより、再試行とサーキットブレーカーのパターンを組み合わせることができます。 ただし、再試行ロジックは、サーキットブレーカーによって返される例外に依存し、障害が一時的でないことをサーキットブレーカーが示す場合は再試行を破棄する必要があります。

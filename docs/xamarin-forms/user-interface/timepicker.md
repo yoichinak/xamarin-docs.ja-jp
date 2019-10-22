@@ -1,41 +1,42 @@
 ---
-title: Xamarin.Forms TimePicker
-description: TimePicker は、ユーザーが時刻を選択できるようにする Xamarin 形式のビューです。 この記事では、Xamarin.Forms アプリケーションでの TimePicker を使用する方法について説明します。
+title: Xamarin. フォーム TimePicker
+description: TimePicker は、ユーザーが時刻を選択できるようにする Xamarin 形式のビューです。 この記事では、Xamarin. フォームアプリケーションで TimePicker を使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 2E99FB23-B82D-4EB4-AFB3-5002E736E7B2
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/16/2018
-ms.openlocfilehash: d5c4cc6600c8192718257abf4ef1cbec49c12eee
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: aae0791199b0e3042a3c619fcb11e7b877f52012
+ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656485"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72695924"
 ---
-# <a name="xamarinforms-timepicker"></a>Xamarin.Forms TimePicker
+# <a name="xamarinforms-timepicker"></a>Xamarin. フォーム TimePicker
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-timepicker)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-timepicker)
 
-_時刻を選択するユーザーを許可する Xamarin.Forms のビュー。_
+_ユーザーが時刻を選択できるようにする Xamarin 形式のビュー。_
 
-Xamarin.Forms [ `TimePicker` ](xref:Xamarin.Forms.TimePicker)プラットフォームの時間の選択コントロールを呼び出すし、時刻を選択できます。 `TimePicker` 次のプロパティを定義します。
+Xamarin [`TimePicker`](xref:Xamarin.Forms.TimePicker)は、プラットフォームのタイムピッカーコントロールを呼び出し、ユーザーが時刻を選択できるようにします。 `TimePicker` は、次のプロパティを定義します。
 
-- [`Time`](xref:Xamarin.Forms.TimePicker.Time) 型の`TimeSpan`、既定値は、選択した時間、 `TimeSpan` 0 です。 `TimeSpan`型が午前 0 時からの経過時間の期間を示します。
-- [`Format`](xref:Xamarin.Forms.TimePicker.Format) 型の`string`、[標準](/dotnet/standard/base-types/standard-date-and-time-format-strings/)または[カスタム](/dotnet/standard/base-types/custom-date-and-time-format-strings/).NET の文字列で、既定値は"t"、短い形式の時刻パターンの書式設定します。
-- [`TextColor`](xref:Xamarin.Forms.TimePicker.TextColor) 型の[ `Color` ](xref:Xamarin.Forms.Color)、既定値は、選択した時間を表示するために使用する色[ `Color.Default`](xref:Xamarin.Forms.Color.Default)します。
-- [`FontAttributes`](xref:Xamarin.Forms.TimePicker.FontAttributes) 型の[ `FontAttributes` ](xref:Xamarin.Forms.FontAttributes)、既定では[ `FontAtributes.None`](xref:Xamarin.Forms.FontAttributes.None)します。
-- [`FontFamily`](xref:Xamarin.Forms.TimePicker.FontFamily) 型の`string`、既定では`null`します。
-- [`FontSize`](xref:Xamarin.Forms.TimePicker.FontSize) 型の`double`、既定では-1.0。
+- `TimeSpan` 型の[`Time`](xref:Xamarin.Forms.TimePicker.Time) 、選択された時刻。既定値は 0 `TimeSpan` になります。 @No__t_0 の種類は、深夜からの時間を示します。
+- `string` 型の[`Format`](xref:Xamarin.Forms.TimePicker.Format)は、[標準](/dotnet/standard/base-types/standard-date-and-time-format-strings/)または[カスタム](/dotnet/standard/base-types/custom-date-and-time-format-strings/)の .net 書式指定文字列であり、既定では "t" で、短い時刻パターンが使用されます。
+- [`Color`](xref:Xamarin.Forms.Color)型の[`TextColor`](xref:Xamarin.Forms.TimePicker.TextColor) 、選択した時間の表示に使用される色。既定では[`Color.Default`](xref:Xamarin.Forms.Color.Default)になります。
+- [`FontAttributes`](xref:Xamarin.Forms.FontAttributes)型の[`FontAttributes`](xref:Xamarin.Forms.TimePicker.FontAttributes) 。既定では[`FontAtributes.None`](xref:Xamarin.Forms.FontAttributes.None)になります。
+- `string` 型の[`FontFamily`](xref:Xamarin.Forms.TimePicker.FontFamily) 。既定では `null` になります。
+- `double` 型の[`FontSize`](xref:Xamarin.Forms.TimePicker.FontSize) 。既定値は-1.0 です。
+- `double` 型の `CharacterSpacing` は `TimePicker` テキストの文字間隔です。
 
-これらすべてのプロパティに支えは[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)オブジェクト、つまりスタイルして、プロパティがデータ バインドの対象になることができます。 [ `Time` ](xref:Xamarin.Forms.TimePicker.Time)プロパティの既定のバインド モードは、 [ `BindingMode.TwoWay` ](xref:Xamarin.Forms.BindingMode.TwoWay)、つまり、使用するアプリケーションでのデータ バインディングのターゲットにできる、 [モデル-ビュー-ビューモデル (MVVM)](~/xamarin-forms/enterprise-application-patterns/mvvm.md)アーキテクチャ。
+これらのプロパティはすべて[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)オブジェクトによって支えられています。つまり、スタイル設定が可能であり、プロパティはデータバインディングのターゲットにすることができます。 [@No__t_1](xref:Xamarin.Forms.TimePicker.Time)プロパティには[`BindingMode.TwoWay`](xref:Xamarin.Forms.BindingMode.TwoWay)の既定のバインディングモードがあります。つまり、モデルビュービューモデル[(MVVM)](~/xamarin-forms/enterprise-application-patterns/mvvm.md)アーキテクチャを使用するアプリケーションでデータバインディングのターゲットにすることができます。
 
-[ `TimePicker` ](xref:Xamarin.Forms.TimePicker)を新しい選択を示すイベントを含まない[ `Time` ](xref:Xamarin.Forms.TimePicker.Time)値。 この通知を受ける必要がある場合は、ハンドラーを追加することができます、 [ `PropertyChanged` ](xref:Xamarin.Forms.BindableObject.PropertyChanged)イベント。
+[@No__t_1](xref:Xamarin.Forms.TimePicker)には、選択された新しい[`Time`](xref:Xamarin.Forms.TimePicker.Time)値を示すイベントは含まれていません。 この通知を受け取る必要がある場合は、 [`PropertyChanged`](xref:Xamarin.Forms.BindableObject.PropertyChanged)イベントのハンドラーを追加できます。
 
-## <a name="initializing-the-time-property"></a>時間プロパティの初期化
+## <a name="initializing-the-time-property"></a>Time プロパティの初期化
 
-コードでは、初期化することができます、 [ `Time` ](xref:Xamarin.Forms.TimePicker.Time)プロパティ型の値を`TimeSpan`:
+コードでは、 [`Time`](xref:Xamarin.Forms.TimePicker.Time)プロパティを `TimeSpan` 型の値に初期化できます。
 
 ```csharp
 TimePicker timePicker = new TimePicker
@@ -44,27 +45,27 @@ TimePicker timePicker = new TimePicker
 };
 ```
 
-ときに、 [ `Time` ](xref:Xamarin.Forms.TimePicker.Time) XAML でプロパティを指定するとの値に変換されます、 `TimeSpan` (ミリ秒) の数が、0 以上であること、時間数が 24 時間未満であることを確認する検証済みとします。 時間コンポーネントは、コロンで区切る必要があります。
+XAML で[`Time`](xref:Xamarin.Forms.TimePicker.Time)プロパティが指定されている場合、値は `TimeSpan` に変換され、ミリ秒数が0以上であること、および時間数が24未満であることを確認するために検証されます。 時刻部分は、コロンで区切る必要があります。
 
 ```xaml
 <TimePicker Time="4:15:26" />
 ```
 
-場合、 [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)プロパティの[ `TimePicker` ](xref:Xamarin.Forms.TimePicker)型のプロパティを格納している ViewModel のインスタンスに設定されている`TimeSpan`という`SelectedTime`インスタンス化できます (例)。`TimePicker`次のようにします。
+[@No__t_3](xref:Xamarin.Forms.TimePicker)の[`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)プロパティが、`SelectedTime` という名前の `TimeSpan` 型のプロパティを含むビューモデルのインスタンスに設定されている場合 (たとえば)、次のように `TimePicker` をインスタンス化できます。
 
 ```xaml
 <TimePicker Time="{Binding SelectedTime}" />
 ```
 
-この例で、 [ `Time` ](xref:Xamarin.Forms.TimePicker.Time)プロパティに初期化されます、`SelectedTime`ビューモデルのプロパティ。 `Time`プロパティのバインド モードは、 [ `TwoWay` ](xref:Xamarin.Forms.BindingMode.TwoWay)、新しい時間をユーザーが選択は ViewModel に自動的に反映されます。
+この例では、 [`Time`](xref:Xamarin.Forms.TimePicker.Time)プロパティは、ビューモデルの `SelectedTime` プロパティに初期化されます。 @No__t_0 プロパティには[`TwoWay`](xref:Xamarin.Forms.BindingMode.TwoWay)のバインドモードがあるため、ユーザーが選択した新しい時間は、自動的にビューモデルに反映されます。
 
-場合、 [ `TimePicker` ](xref:Xamarin.Forms.TimePicker)でバインドが含まれていないその[ `Time` ](xref:Xamarin.Forms.TimePicker.Time)プロパティ、アプリケーションはハンドラーをアタッチする必要があります、 [ `PropertyChanged` ](xref:Xamarin.Forms.BindableObject.PropertyChanged)イベント通知されず、ユーザーが新しい時刻を選択します。
+[@No__t_1](xref:Xamarin.Forms.TimePicker)に[`Time`](xref:Xamarin.Forms.TimePicker.Time)プロパティのバインドが含まれていない場合、アプリケーションは、ユーザーが新しい時刻を選択したときに通知されるように、ハンドラーを[`PropertyChanged`](xref:Xamarin.Forms.BindableObject.PropertyChanged)イベントにアタッチする必要があります。
 
-フォントのプロパティの設定については、[フォント](~/xamarin-forms/user-interface/text/fonts.md)を参照してください。
+フォントプロパティの設定の詳細については、「[フォント](~/xamarin-forms/user-interface/text/fonts.md)」を参照してください。
 
 ## <a name="timepicker-and-layout"></a>TimePicker とレイアウト
 
-制約のない水平レイアウト オプションを使用することは`Center`、 `Start`、または`End`で[ `TimePicker` ](xref:Xamarin.Forms.TimePicker):
+[@No__t_4](xref:Xamarin.Forms.TimePicker)では、`Center`、`Start`、`End` などの制約のない水平レイアウトオプションを使用することができます。
 
 ```xaml
 <TimePicker ···
@@ -72,14 +73,14 @@ TimePicker timePicker = new TimePicker
             ··· />
 ```
 
-ただし、これは推奨されません。 設定に応じて、 [ `Format` ](xref:Xamarin.Forms.TimePicker.Format)プロパティは、選択した時間は、別の表示幅を必要があります。 たとえば、"T"書式指定文字列と、 [ `TimePicker` ](xref:Xamarin.Forms.TimePicker)時間が長い形式で表示を表示し、"4時 15分: 26 AM"が"4時 15分 AM"の短い時刻形式 ("t") よりも大きい値の表示幅が必要です。 この違いがあります、プラットフォームによって、`TimePicker`ビュー レイアウトでは、またはが切り捨てられる表示幅を変更します。
+ただし、これは推奨されません。 [@No__t_1](xref:Xamarin.Forms.TimePicker.Format)プロパティの設定によっては、選択した時間の表示幅が異なる場合があります。 たとえば、"T" 書式指定文字列を使用すると、 [`TimePicker`](xref:Xamarin.Forms.TimePicker)ビューでは時間が長い形式で表示され、"4:15:26 am" は "4:15 am" の短い時刻形式 ("T") よりも高い表示幅を必要とします。 プラットフォームによっては、この違いにより、`TimePicker` ビューがレイアウトの幅を変更したり、表示が切り捨てられたりする可能性があります。
 
 > [!TIP]
-> 既定値を使用することをお勧め`HorizontalOptions`の設定`Fill`で[ `TimePicker`](xref:Xamarin.Forms.TimePicker)との幅を使用しないように`Auto`設定時に`TimePicker`で、`Grid`セル。
+> [@No__t_3](xref:Xamarin.Forms.TimePicker)で `Fill` の既定の `HorizontalOptions` 設定を使用することをお勧めします。 `TimePicker` セルに `Grid` を配置する場合は、`Auto` の幅を使用しないことをお勧めします。
 
-## <a name="timepicker-in-an-application"></a>アプリケーションで TimePicker
+## <a name="timepicker-in-an-application"></a>アプリケーションでの TimePicker
 
-[ **SetTimer** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-timepicker)サンプルが含まれます[ `TimePicker` ](xref:Xamarin.Forms.TimePicker)、 [ `Entry` ](xref:Xamarin.Forms.Entry)、および[ `Switch` ](xref:Xamarin.Forms.Switch)そのページのビュー。 `TimePicker` 、時刻を選択するために使用して、内のテキストのユーザーに通知する警告ダイアログが表示されますが発生した時刻を時、`Entry`に用意されている、`Switch`がオンにします。 XAML ファイルを次に示します。
+[**SetTimer**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-timepicker)サンプルには、ページ上の[`TimePicker`](xref:Xamarin.Forms.TimePicker)、 [`Entry`](xref:Xamarin.Forms.Entry)、および[`Switch`](xref:Xamarin.Forms.Switch)ビューが含まれています。 @No__t_0 を使用して時刻を選択することができます。この時間が経過すると、`Switch` がオンになっている場合に、`Entry` 内のテキストをユーザーに通知する警告ダイアログが表示されます。 XAML ファイルを次に示します。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -105,7 +106,7 @@ TimePicker timePicker = new TimePicker
 </ContentPage>
 ```
 
-[ `Entry` ](xref:Xamarin.Forms.Entry)選択した時間が発生したときに表示される通知のテキストを入力することができます。 [ `TimePicker` ](xref:Xamarin.Forms.TimePicker)が割り当てられている、 [ `Format` ](xref:Xamarin.Forms.TimePicker.Format)時間の長い時刻形式の"T"のプロパティ。 アタッチされているイベント ハンドラーを持つ、 [ `PropertyChanged` ](xref:Xamarin.Forms.BindableObject.PropertyChanged)イベント、および[ `Switch` ](xref:Xamarin.Forms.Switch)にハンドラーをアタッチがその[ `Toggled` ](xref:Xamarin.Forms.Switch.Toggled)イベント。 これらのイベント ハンドラーは、分離コード ファイルと呼び出し、`SetTriggerTime`メソッド。
+[@No__t_1](xref:Xamarin.Forms.Entry)を使用すると、選択した時間が経過したときに表示されるリマインダーテキストを入力できます。 [@No__t_1](xref:Xamarin.Forms.TimePicker)には、長い形式の "t" の[`Format`](xref:Xamarin.Forms.TimePicker.Format)プロパティが割り当てられています。 これには[`PropertyChanged`](xref:Xamarin.Forms.BindableObject.PropertyChanged)イベントにアタッチされたイベントハンドラーがあり、 [`Switch`](xref:Xamarin.Forms.Switch)には[`Toggled`](xref:Xamarin.Forms.Switch.Toggled)イベントにアタッチされたハンドラーがあります。 これらのイベントハンドラーは分離コードファイル内にあり、`SetTriggerTime` メソッドを呼び出します。
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -156,26 +157,26 @@ public partial class MainPage : ContentPage
 }
 ```
 
-`SetTriggerTime`メソッドに基づくタイマーの時間を計算する、`DateTime.Today`プロパティの値と`TimeSpan`から返される値、 [ `TimePicker`](xref:Xamarin.Forms.TimePicker)します。 これは、必要なため、`DateTime.Today`プロパティから返さ、`DateTime`現在の日付を示すが午前 0 時です。 タイマーの時間が既に渡されて今日場合、は、明日に想定が。
+@No__t_0 メソッドは、`DateTime.Today` プロパティ値と[`TimePicker`](xref:Xamarin.Forms.TimePicker)から返された `TimeSpan` 値に基づいて、タイマー時間を計算します。 これが必要なのは、`DateTime.Today` プロパティは現在の日付を示す `DateTime` を返しますが、時間は午前0時です。 タイマー時刻が既に過ぎている場合は、明日であると見なされます。
 
-タイマー刻みの実行、毎秒、`OnTimerTick`メソッドをチェックするかどうか、 [ `Switch` ](xref:Xamarin.Forms.Switch)がかどうかと、現在の時刻がより大きいまたはタイマーの時間をします。 タイマーの時間が発生したときに、 [ `DisplayAlert` ](xref:Xamarin.Forms.Page.DisplayAlert*)メソッドは、アラームとしてユーザーにアラート ダイアログを表示します。
+タイマー刻みは、1秒ごとに、 [`Switch`](xref:Xamarin.Forms.Switch)があるかどうか、および現在の時刻がタイマー時間以上であるかどうかをチェックする `OnTimerTick` メソッドを実行します。 タイマー時間が経過すると、 [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*)メソッドによって、通知としてユーザーに警告ダイアログが表示されます。
 
-サンプルを最初に実行時に、 [ `TimePicker` ](xref:Xamarin.Forms.TimePicker)ビューは、午前 11 時に初期化されます。 タップすると、`TimePicker`プラットフォーム時刻の選択を呼び出します。 プラットフォームは、非常にさまざまな方法で時刻の選択を実装しますが、それぞれのアプローチは、そのプラットフォームのユーザーにとって馴染み深い。
+このサンプルを最初に実行すると、 [`TimePicker`](xref:Xamarin.Forms.TimePicker)ビューが11am に初期化されます。 @No__t_0 をタップすると、プラットフォーム時間の選択が呼び出されます。 このプラットフォームでは、さまざまな方法でタイムピッカーが実装されていますが、各アプローチは、そのプラットフォームのユーザーにとってはよく知られています。
 
-[![日時選択](timepicker-images/timepicker-open.png "時刻を選択")](timepicker-images/timepicker-open-large.png#lightbox "時刻を選択します")
+[![時間の選択](timepicker-images/timepicker-open.png "時間の選択")](timepicker-images/timepicker-open-large.png#lightbox "時間の選択")
 
 > [!TIP]
-> Android では、 [ `TimePicker` ](xref:Xamarin.Forms.TimePicker)ダイアログをオーバーライドすることでカスタマイズできる、`CreateTimePickerDialog`カスタム レンダラーのメソッド。 これにより、たとえば、ダイアログ ボックスに追加するその他のボタン。
+> Android では、カスタムレンダラーで `CreateTimePickerDialog` メソッドをオーバーライドすることによって、[ [`TimePicker`](xref:Xamarin.Forms.TimePicker) ] ダイアログをカスタマイズできます。 これにより、たとえば、追加のボタンをダイアログに追加することができます。
 
-時刻を選択すると、選択した時間が表示されます、 [ `TimePicker` ](xref:Xamarin.Forms.TimePicker):
+時刻を選択すると、選択した時刻が[`TimePicker`](xref:Xamarin.Forms.TimePicker)に表示されます。
 
-[![選択された期間](timepicker-images/timepicker-selected.png "選択された期間")](timepicker-images/timepicker-selected-large.png#lightbox "選択された期間")
+[![選択された時刻](timepicker-images/timepicker-selected.png "選択された時刻")](timepicker-images/timepicker-selected-large.png#lightbox "選択された時刻")
 
-されるとき、 [ `Switch` ](xref:Xamarin.Forms.Switch)切り替えがオンの位置に、アプリケーションは内のテキストのユーザーを示す警告ダイアログが表示されます、 [ `Entry` ](xref:Xamarin.Forms.Entry)選択した時間が発生したとき。
+[@No__t_1](xref:Xamarin.Forms.Switch)がオンの位置に切り替えられると、アプリケーションは、選択された時間が発生したときに[`Entry`](xref:Xamarin.Forms.Entry)内のテキストをユーザーに通知するアラートダイアログを表示します。
 
-[![タイマーのポップアップ](timepicker-images/timer-test.png "タイマー ポップアップ")](timepicker-images/timer-test-large.png#lightbox "タイマーのポップアップ")
+[![タイマーポップアップ](timepicker-images/timer-test.png "タイマーポップアップ")](timepicker-images/timer-test-large.png#lightbox "タイマーポップアップ")
 
-警告ダイアログが表示されるとすぐに、 [ `Switch` ](xref:Xamarin.Forms.Switch)オフの位置に切り替えられます。
+アラートダイアログが表示されるとすぐに、 [`Switch`](xref:Xamarin.Forms.Switch)は [オフ] の位置に切り替わります。
 
 ## <a name="related-links"></a>関連リンク
 

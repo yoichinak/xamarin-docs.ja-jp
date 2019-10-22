@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/01/2016
 ms.openlocfilehash: f91d0127d0f2ffe37e3e0ff016dee551a679ad84
-ms.sourcegitcommit: e354aabfb39598e0ce11115db3e6bcebb9f68338
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/11/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "72273115"
 ---
 # <a name="layout-for-tablet-and-desktop-apps"></a>タブレットアプリとデスクトップアプリのレイアウト
@@ -42,7 +42,7 @@ Xamarin テンプレートには、 **[デバイスの >]** 設定を **[Univers
 IOS 9 より前では、すべてのアプリがデバイスで全画面表示を使用していましたが、一部の Ipad では、[分割画面のマルチタスキング](~/ios/platform/multitasking.md)を実行できます。
 つまり、アプリは画面の横、画面の幅の50%、または画面全体で、スリムな列のみを使用できます。
 
-[![](tablet-images/ipad-sml.png "iPad の分割画面の例")](tablet-images/ipad.png#lightbox "iPad の分割画面の例")
+[![](tablet-images/ipad-sml.png "iPad Split Screen Example")](tablet-images/ipad.png#lightbox "iPad Split Screen Example")
 
 画面の分割機能では、320ピクセル程度、または1366ピクセル幅の幅で動作するようにアプリを設計する必要があります。
 
@@ -59,7 +59,7 @@ Windows を実行しているタブレットおよびデスクトップコンピ
 
 Windows タブレットおよびデスクトップで実行されているアプリは、全画面を実行するだけでなく、任意の大きさに変更できます。
 
-[![](tablet-images/splitscreen-sml.png "Windows 分割画面の例")](tablet-images/splitscreen.png#lightbox "Windows 分割画面の例")
+[![](tablet-images/splitscreen-sml.png "Windows Split Screen Example")](tablet-images/splitscreen.png#lightbox "Windows Split Screen Example")
 
 <a name="optimize" />
 
@@ -67,9 +67,9 @@ Windows タブレットおよびデスクトップで実行されているアプ
 
 スマートフォンまたはタブレット/デスクトップデバイスが使用されているかどうかに応じて、Xamarin. フォームユーザーインターフェイスを調整できます。 これは、タブレットやデスクトップコンピューターなどの大画面デバイスのユーザーエクスペリエンスを最適化できることを意味します。
 
-### <a name="deviceidiom"></a>Device.Idiom
+### <a name="deviceidiom"></a>デバイス. 表現形式
 
-[@No__t-1](~/xamarin-forms/platform/device.md)クラスを使用して、アプリまたはユーザーインターフェイスの動作を変更できます。 @No__t 0 列挙体を使用して、
+[@No__t_1](~/xamarin-forms/platform/device.md)クラスを使用して、アプリまたはユーザーインターフェイスの動作を変更できます。 @No__t_0 列挙型を使用して、
 
 ```csharp
 if (Device.Idiom == TargetIdiom.Phone)
@@ -84,7 +84,7 @@ if (Device.Idiom == TargetIdiom.Phone)
 
 ### <a name="leveraging-masterdetailpage"></a>Masterのページを活用する
 
-[@No__t-1](xref:Xamarin.Forms.MasterDetailPage)は、特に、 [`UISplitViewController`](xref:UIKit.UISplitViewController)を使用してネイティブの iOS エクスペリエンスを提供する iPad で、大きな画面に最適です。
+[@No__t_1](xref:Xamarin.Forms.MasterDetailPage)は、特に、 [`UISplitViewController`](xref:UIKit.UISplitViewController)を使用してネイティブの iOS エクスペリエンスを提供する iPad では、大規模な画面に最適です。
 
 [この Xamarin のブログ記事](https://devblogs.microsoft.com/xamarin/bringing-xamarin-forms-apps-to-tablets/)をご覧になり、1つのレイアウトを使用する電話と、より大きい画面で別のレイアウト (`MasterDetailPage`) を使用できるようにユーザーインターフェイスを調整する方法を確認してください。
 
