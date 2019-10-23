@@ -115,11 +115,11 @@ sections:
               src: ~/media/icons/i_user-interface.svg
               href: listview/index.md
             title: ListView
-          - href: map.md
+          - href: map/index.md
             html: 必要なプラットフォーム構成や、マップへのピンの設定方法を含む、マップ コントロールの使用方法について説明します。
             image:
               src: ~/media/icons/i_user-interface.svg
-              href: map.md
+              href: map/index.md
             title: マップ
           - href: menuitem.md
             html: MenuItem クラスを使用して、ListView セルのコンテキスト メニューに項目を追加する方法について説明します。

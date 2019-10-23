@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 4ea10a3cc4eca0708d1de1aee68bed74c960cbc2
-ms.sourcegitcommit: 8ecfa339d0f3e7687977bfe4fc96448942690183
+ms.openlocfilehash: 80688c0796a112bcb444a15cd96a6b176b8c16e0
+ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67560005"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72715239"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -15,7 +15,7 @@ ms.locfileid: "67560005"
     > [!IMPORTANT]
     > このチュートリアルの C# スニペットと XAML スニペットでは、**StackLayoutTutorial** という名前のソリューションが必要です。 別の名前を使用すると、コードをこのチュートリアルからソリューションにコピーするときに、ビルド エラーが発生します。
 
-    作成される .NET Standard ライブラリの詳細については、[Xamarin.Forms クイック スタート Deep Dive](~/get-started/first-app/index.md) の [Xamarin.Forms アプリケーションの構造](~/get-started/first-app/index.md)に関するページを参照してください。
+    作成される .NET Standard ライブラリの詳細については、[Xamarin.Forms クイック スタート Deep Dive](~/get-started/quickstarts/deepdive.md) の [Xamarin.Forms アプリケーションの構造](~/get-started/quickstarts/deepdive.md#anatomy-of-a-xamarinforms-application)に関するページを参照してください。
 
 1. **ソリューション エクスプローラー**の **[StackLayoutTutorial]** プロジェクトで、 **[MainPage.xaml]** をダブルクリックして開きます。 次に、 **[MainPage.xaml]** のテンプレート コードをすべて削除し、次のコードに置き換えます。
 
@@ -39,7 +39,7 @@ ms.locfileid: "67560005"
 
 1. Visual Studio ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択したリモート iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
-    [![iOS と Android での StackLayout の子ビューのスクリーンショット](../images/create-stacklayout.png "Label インスタンスを含む StackLayout")](../images/create-stacklayout-large.png#lightbox "Label インスタンスを含む StackLayout")
+    [![iOS および Android 上の StackLayout の子ビューのスクリーンショット](../images/create-stacklayout.png "ラベル インスタンスを含む StackLayout")](../images/create-stacklayout-large.png#lightbox "ラベル インスタンスを含む StackLayout")
 
     [`StackLayout`](xref:Xamarin.Forms.StackLayout) の詳細については、「[Xamarin.Forms StackLayout](~/xamarin-forms/user-interface/layouts/stack-layout.md)」 (Xamarin.Forms の StackLayout) を参照してください。
 
@@ -76,7 +76,7 @@ ms.locfileid: "67560005"
 
 1. Visual Studio for Mac ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
-    [![iOS と Android での StackLayout の子ビューのスクリーンショット](../images/create-stacklayout.png "Label インスタンスを含む StackLayout")](../images/create-stacklayout-large.png#lightbox "Label インスタンスを含む StackLayout")
+    [![iOS および Android 上の StackLayout の子ビューのスクリーンショット](../images/create-stacklayout.png "ラベル インスタンスを含む StackLayout")](../images/create-stacklayout-large.png#lightbox "ラベル インスタンスを含む StackLayout")
 
     [`StackLayout`](xref:Xamarin.Forms.StackLayout) の詳細については、「[Xamarin.Forms StackLayout](~/xamarin-forms/user-interface/layouts/stack-layout.md)」 (Xamarin.Forms の StackLayout) を参照してください。
 

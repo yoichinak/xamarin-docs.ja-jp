@@ -200,6 +200,7 @@
 #### [初期化と構成](user-interface/map/index.md)
 #### [Pin](user-interface/map/pins.md)
 #### [多角形とポリライン](user-interface/map/polygons.md)
+#### [ジオコーディング](user-interface/map/geocoder.md)
 ### [MenuItem](user-interface/menuitem.md)
 ### [ピッカー](user-interface/picker/index.md)
 #### [ピッカーの ItemsSource プロパティの設定](user-interface/picker/populating-itemssource.md)
