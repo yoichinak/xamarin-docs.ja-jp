@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/16/2019
-ms.openlocfilehash: 3d215519a2046c19fb1d9d5dbf7d140ae1452de6
-ms.sourcegitcommit: 841590e3ed1b46473ab84e357e045afa7cfef549
-ms.translationtype: HT
+ms.openlocfilehash: 46a72534fba7a45323a82ad121e5844410472812
+ms.sourcegitcommit: dad4dfcd194b63ec9e903363351b6d9e543d4888
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72531804"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72584347"
 ---
 # <a name="xamarinforms-requirements"></a>Xamarin.Forms の要件
 
@@ -71,7 +71,7 @@ Xamarin.Forms アプリは macOS と Windows で開発できます。 ただし�
 
 ## <a name="mac-system-requirements"></a>Mac のシステム要件
 
-Visual Studio for Mac を使用して、macOS High (10.13) 以降で Xamarin. Forms アプリを開発できます。 IOS アプリを開発するには、最新バージョンの Xcode、iOS、macOS を使用することをお勧めします。
+Visual Studio for Mac を使用して、macOS High (10.13) 以降で Xamarin. Forms アプリを開発できます。 IOS アプリを開発するには、最新バージョンの Xcode、iOS、macOS を使用することをお勧めします。 特定のバージョンの要件については、最新の[Xamarin. iOS のリリースノート](/xamarin/ios/release-notes/)を参照してください。
 
 > [!NOTE]
 > Windows アプリを macOS で開発することはできません。
