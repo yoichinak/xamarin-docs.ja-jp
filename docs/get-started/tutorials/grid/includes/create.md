@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 807f0b7b2969d9f1039beb1a7ec7d535be5c84dc
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.openlocfilehash: b1a041f1a2baae9b06de023f6eae9c6598b80061
+ms.sourcegitcommit: 5efbf5ab53532b3a74c80129ff4e0ca84b476d21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67277318"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72678726"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -33,11 +33,11 @@ ms.locfileid: "67277318"
     このコードでは、[`Grid`](xref:Xamarin.Forms.Grid) の中の [`Label`](xref:Xamarin.Forms.Label) から構成されるページのユーザー インターフェイスを宣言によって定義します。 既定では、`Grid` で 1 つの場所にその子ビューが配置されます。 そのため、複数の子を含む `Grid` では、列と行を指定する必要があります。これについては、次の演習で説明します。 さらに、[`Margin`](xref:Xamarin.Forms.View.Margin) プロパティは、[`ContentPage`](xref:Xamarin.Forms.ContentPage) 内の `Grid` のレンダリング位置を示します。
 
     > [!NOTE]
-    > [`Margin`](xref:Xamarin.Forms.View.Margin) プロパティに加え、[`Padding`](xref:Xamarin.Forms.Layout.Padding) プロパティを [`Grid`](xref:Xamarin.Forms.Grid) に設定することもできます。 [`Padding`](xref:Xamarin.Forms.Layout.Padding) プロパティの値では、`Grid` のビュー間の距離が指定されます。 詳細については「[Margin and Padding](~/xamarin-forms/user-interface/layouts/margin-and-padding.md)」 (余白とスペース) を参照してください。
+    > [`Margin`](xref:Xamarin.Forms.View.Margin) プロパティに加え、[`Padding`](xref:Xamarin.Forms.Layout.Padding) プロパティを [`Grid`](xref:Xamarin.Forms.Grid) に設定することもできます。 [`Padding`](xref:Xamarin.Forms.Layout.Padding) プロパティ値では、`Grid` とその子の境界間の距離を指定します。 詳細については「[Margin and Padding](~/xamarin-forms/user-interface/layouts/margin-and-padding.md)」 (余白とスペース) を参照してください。
 
 1. Visual Studio ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS リモート シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
-    [![iOS および Android での、Grid 内の Label のスクリーンショット](../images/create-grid.png "Label を含む Grid")](../images/create-grid-large.png#lightbox "Label を含む Grids")
+    [![iOS と Android 上のグリッドのラベルのスクリーンショット](../images/create-grid.png "ラベルを含むグリッド")](../images/create-grid-large.png#lightbox "ラベルを含むグリッドs")
 
     [`Grid`](xref:Xamarin.Forms.Grid) の詳細については、「[Xamarin.Forms Grid](~/xamarin-forms/user-interface/layouts/grid.md)」 (Xamarin.Forms のグリッド) を参照してください。
 
@@ -72,6 +72,6 @@ ms.locfileid: "67277318"
 
 1. Visual Studio for Mac ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
-    [![iOS および Android での、Grid 内の Label のスクリーンショット](../images/create-grid.png "Label を含む Grid")](../images/create-grid-large.png#lightbox "Label を含む Grids")
+    [![iOS と Android 上のグリッドのラベルのスクリーンショット](../images/create-grid.png "ラベルを含むグリッド")](../images/create-grid-large.png#lightbox "ラベルを含むグリッドs")
 
     [`Grid`](xref:Xamarin.Forms.Grid) の詳細については、「[Xamarin.Forms Grid](~/xamarin-forms/user-interface/layouts/grid.md)」 (Xamarin.Forms のグリッド) を参照してください。

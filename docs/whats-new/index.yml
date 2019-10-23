@@ -19,6 +19,12 @@ sections:
         style: cards
         className: cardsB
         items:
+          - href: 2019-10.md
+            html: 'Xamarin ドキュメントの 2019 年 10 月の新着記事:Xamarin.Forms 4.3 がリリースされ、その他の更新が行われました。'
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_article.svg'
+              href: 2019-10.md
+            title: 2019 年 10 月
           - href: 2019-08.md
             html: 'Xamarin ドキュメントの 2019 年 8 月の新着記事: Xamarin.Forms 4.2 がリリースされ、ユーザー インターフェイスが更新され、その他の更新が行われました。'
             image:

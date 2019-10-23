@@ -43,6 +43,12 @@ sections:
               src: ~/media/icons/i_user-interface.svg
               href: button.md
             title: Button
+          - href: carouselview/index.md
+            html: CarouselView を使用して、データを線形のカルーセル レイアウトで表示する方法について説明します。
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: collectionview/index.md
+            title: CarouselView
           - href: checkbox.md
             html: チェックボックスを使用し、ブール値を設定する方法について説明します。
             image:
@@ -74,7 +80,7 @@ sections:
               href: datepicker.md
             title: DatePicker
           - href: pop-ups.md
-            html: ユーザーに簡単な質問をして、タスクの誘導を行うダイアログ ボックスを表示する方法について説明します。
+            html: ユーザーに簡単な質問をして、タスクの誘導を行い、プロンプトを表示するダイアログ ボックスを表示する方法について説明します。
             image:
               src: ~/media/icons/i_user-interface.svg
               href: pop-ups.md
@@ -133,6 +139,12 @@ sections:
               src: ~/media/icons/i_user-interface.svg
               href: progressbar.md
             title: ProgressBar
+          - href: refreshview.md
+            html: RefreshView を使用して、スクロール可能なコンテンツの更新機能にプルを提供する方法について説明します。
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: refreshview.md
+            title: RefreshView
           - href: searchbar.md
             html: SearchBar コントロールを使用した、検索の開始方法について説明します。
             image:

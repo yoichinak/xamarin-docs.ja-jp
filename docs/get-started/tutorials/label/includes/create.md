@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: ec74a049adaa72010bf0566691e4d1f066058d4a
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.openlocfilehash: 9d78f0e9bf3b8d6d227f76b2729be849e5cdd3a6
+ms.sourcegitcommit: 5efbf5ab53532b3a74c80129ff4e0ca84b476d21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67277314"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72678725"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -31,11 +31,11 @@ ms.locfileid: "67277314"
     </ContentPage>
     ```
 
-    このコードは、[`StackLayout`](xref:Xamarin.Forms.StackLayout) の中の [`Label`](xref:Xamarin.Forms.Label) から構成されるページのユーザー インターフェイスを宣言によって定義します。 [`Label.Text`](xref:Xamarin.Forms.Button.Text) プロパティは表示されるテキストを指定し、[`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) プロパティはテキストが水平方向の中央に配置されるように指定します。
+    このコードでは、[`StackLayout`](xref:Xamarin.Forms.StackLayout) の中の [`Label`](xref:Xamarin.Forms.Label) から構成されるページのユーザー インターフェイスを宣言によって定義します。 [`Label.Text`](xref:Xamarin.Forms.Button.Text) プロパティは表示されるテキストを指定し、[`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) プロパティは `Label` が水平方向の中央に配置されるように指定します。
 
 1. Visual Studio ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択したリモート iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
-    [![iOS および Android で中央に配置されたラベルのスクリーンショット](../images/create-label.png "中央に配置されたラベル")](../images/create-label-large.png#lightbox "中央に配置されたラベル")
+    [![iOS と Android 上の中央揃えのラベルのスクリーンショット](../images/create-label.png "中央揃えのラベル")](../images/create-label-large.png#lightbox "中央揃えのラベル")
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -66,4 +66,4 @@ ms.locfileid: "67277314"
 
 1. Visual Studio for Mac ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
-    [![iOS および Android で中央に配置されたラベルのスクリーンショット](../images/create-label.png "中央に配置されたラベル")](../images/create-label-large.png#lightbox "中央に配置されたラベル")
+    [![iOS と Android 上の中央揃えのラベルのスクリーンショット](../images/create-label.png "中央揃えのラベル")](../images/create-label-large.png#lightbox "中央揃えのラベル")
