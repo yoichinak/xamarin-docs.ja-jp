@@ -7,10 +7,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 01/28/2016
 ms.openlocfilehash: 2c630e58ff5a1221ec9e95099df4781041ecf2b4
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: dad4dfcd194b63ec9e903363351b6d9e543d4888
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/18/2019
 ms.locfileid: "70288053"
 ---
 # <a name="building-cross-platform-applications"></a>クロスプラットフォーム アプリケーションの構築
@@ -35,7 +35,7 @@ ms.locfileid: "70288053"
 
  <a name="Cross-Platform_Mobile_Application_Case_Studies" />
 
-## <a name="case-studies"></a>ケーススタディ
+## <a name="case-studies"></a>ケース スタディ
 
 このドキュメントで説明されている原則は、サンプルアプリケーション*Tasky*と、 [Xamarin CRM](https://xamarin.com/prebuilt/#xamarincrm)のような[事前に構築](https://xamarin.com/prebuilt)されたアプリケーションについて説明します。
 
@@ -46,7 +46,7 @@ ms.locfileid: "70288053"
 Tasky は、iOS、Android、および Windows Phone 用の単純な to do list アプリケーションです。
 Xamarin を使用してクロスプラットフォームアプリケーションを作成し、ローカルの SQLite データベースを使用する方法の基本について説明します。
 
- tasky リスト[ ![](images/iphone-list-sml.png)](images/iphone-list.png#lightbox) tasky リスト[ ![](images/iphone-list-sml.png)](images/iphone-list.png#lightbox)
+ リスト[![tasky リスト](images/iphone-list-sml.png)](images/iphone-list.png#lightbox)の[![tasky](images/iphone-list-sml.png)](images/iphone-list.png#lightbox)
 
 [Tasky のケーススタディ](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)を参照してください。
 
@@ -63,8 +63,8 @@ Xamarin を使用してクロスプラットフォームアプリケーション
 ## <a name="related-links"></a>関連リンク
 
 - [コード共有のオプション](~/cross-platform/app-fundamentals/code-sharing.md)
-- [ケーススタディ:Tasky](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)
+- [Case の学習:Tasky ](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)
 - [Tasky サンプルアプリ (github)](https://docs.microsoft.com/samples/xamarin/mobile-samples/taskyportable/)
-- [Xamarin モバイルアプリケーションの開発:クロスプラットフォームC#および Xamarin. Forms の基礎 (Amazon)](http://www.amazon.com/Xamarin-Mobile-Application-Development-Cross-Platform/dp/1484202155/)
+- [Xamarin モバイルアプリケーション開発:クロスプラットフォームC#および Xamarin. Forms の基礎 (Amazon) ](http://www.amazon.com/Xamarin-Mobile-Application-Development-Cross-Platform/dp/1484202155/)
 - [Greg Shackles C#によるモバイル開発 (O'Reilly)](http://shop.oreilly.com/product/0636920024002.do)
 - [Scott Olson、John Hunter、 C# Ben Horgen、Kenny Goers (Wrox) によるプロフェッショナルなクロスプラットフォームモバイル開発](http://www.wrox.com/WileyCDA/WroxTitle/Professional-Cross-Platform-Mobile-Development-in-C-.productCd-1118157702.html)
