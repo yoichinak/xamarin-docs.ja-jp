@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: ecc4686e9966de7a184730589c44a951e4daddb2
-ms.sourcegitcommit: 403e3ec789d075cf1ca23473190aeb6b87220d52
+ms.openlocfilehash: 1fe2611e26d357d910cc85800355b42d11e1104b
+ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72424865"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72697179"
 ---
 # <a name="highlighting-a-circular-area-on-a-map"></a>マップ上での円形の領域の強調表示
 
@@ -33,7 +33,7 @@ Xamarin.Forms アプリケーションによって [`Map`](xref:Xamarin.Forms.Ma
 1. 各プラットフォーム上でマップ用のカスタム レンダラーを作成することで、マップを[カスタマイズ](#Customizing_the_Map)します。
 
 > [!NOTE]
-> 使用する前に [`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps) を初期化して構成する必要があります。 詳細については、[`Maps Control`](~/xamarin-forms/user-interface/map.md)に関する記事を参照してください。
+> 使用する前に [`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps) を初期化して構成する必要があります。 詳細については、[`Maps Control`](~/xamarin-forms/user-interface/map/index.md)に関する記事を参照してください。
 
 カスタム レンダラーを使用してマップをカスタマイズする方法については、「[Customizing a Map Pin](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md)」(マップ ピンのカスタマイズ) を参照してください。
 

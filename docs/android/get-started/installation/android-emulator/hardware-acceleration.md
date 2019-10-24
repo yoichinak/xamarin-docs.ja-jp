@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/27/2018
-ms.openlocfilehash: 5c6eb6e49c7c8a4071591e46a5afc02a6ff6b4e6
-ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
+ms.openlocfilehash: 6060f7c7e31c52a122c5ccb7a7e7be8dfe58051a
+ms.sourcegitcommit: 5c22097bed2a8d51ecaf6ca197bf4d449dfe1377
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71105905"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72810543"
 ---
 # <a name="hardware-acceleration-for-emulator-performance-hyper-v--haxm"></a>エミュレーターのパフォーマンスのためのハードウェア高速化 (Hyper-V と HAXM)
 
@@ -57,7 +57,6 @@ Android エミュレーターの起動とデバッグについては、「[Andro
 
 ## <a name="accelerating-with-hyper-v"></a>Hyper-V による高速化
 
-Hyper-V は、Android エミュレーターを高速化する場合に推奨されます。
 Hyper-V を有効にする前に、次のセクションを読み、コンピューターが Hyper-V をサポートしていることを確認してください。
 
 ### <a name="verifying-support-for-hyper-v"></a>Hyper-V のサポートを確認する
