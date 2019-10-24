@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/14/2019
-ms.openlocfilehash: 7aa0c5833682518b02fca9fe73a9f69b168e60eb
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
-ms.translationtype: HT
+ms.openlocfilehash: 051bbc1732dc1b074d27080f74621a57a80aaaa4
+ms.sourcegitcommit: e71474f91639bb43159b22f5d534325c3270ba93
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72696962"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72749821"
 ---
 # <a name="xamarinforms-carouselview-layout"></a>CarouselView レイアウト
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/CarouselViewDemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView)は、レイアウトを制御する次のプロパティを定義します。
 
@@ -290,6 +290,6 @@ void OnImageTapped(object sender, EventArgs e)
 
 ## <a name="related-links"></a>関連リンク
 
-- [CarouselView (サンプル)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/CarouselViewDemos/)
+- [CarouselView (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
 - [右から左へのローカライズ](~/xamarin-forms/app-fundamentals/localization/right-to-left.md)
 - [CarouselView のスクロール](scrolling.md)
