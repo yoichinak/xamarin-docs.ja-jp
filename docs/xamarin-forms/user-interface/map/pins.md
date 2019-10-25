@@ -18,9 +18,9 @@ ms.locfileid: "72697669"
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
-Xamarin Forms `Maps` コントロールを使用すると、`Pin` オブジェクトでマークすることができます。 @No__t_0 は、クリックまたはタップしたときに情報ウィンドウを開くマップマーカーです。
+Xamarin Forms `Maps` コントロールを使用すると、`Pin` オブジェクトでマークすることができます。 `Pin` は、クリックまたはタップしたときに情報ウィンドウを開くマップマーカーです。
 
-@No__t_0 クラスには、次のプロパティがあります。
+`Pin` クラスには、次のプロパティがあります。
 
 - `Type` は `PinType` 列挙値 (Generic、Place、SavedPin、または SearchResult) です。
 - `Position` は、pin の緯度と経度を含む `Position` インスタンスです。
@@ -45,18 +45,18 @@ map.Pins.Add(pin1);
 ```
 
 > [!NOTE]
-> @No__t_0 値は、プラットフォームに応じて pin がどのようにレンダリングされるかに影響します。 Pin の外観をカスタマイズするには、カスタムレンダラーを作成する必要があります。 詳細については、「[マップのピン留めをカスタマイズする](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md)」を参照してください。
+> `PinType` 値は、プラットフォームに応じて pin がどのようにレンダリングされるかに影響します。 Pin の外観をカスタマイズするには、カスタムレンダラーを作成する必要があります。 詳細については、「[マップのピン留めをカスタマイズする](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md)」を参照してください。
 
 ## <a name="create-pins-with-data-binding"></a>データバインドを使用したピンの作成
 
-[@No__t_1](xref:Xamarin.Forms.Maps.Map)クラスは、次のプロパティを公開します。
+[`Map`](xref:Xamarin.Forms.Maps.Map)クラスは、次のプロパティを公開します。
 
 - `ItemsSource` –表示する `IEnumerable` 項目のコレクションを指定します。
 - `ItemTemplate` –表示されている項目のコレクション内の各項目に適用する[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)を指定します。
 - `ItemTemplateSelector` –実行時に項目の[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)を選択するために使用される[`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)を指定します。
 
 > [!NOTE]
-> @No__t_1 と `ItemTemplateSelector` の両方のプロパティが設定されている場合は、`ItemTemplate` プロパティが優先されます。
+> `ItemTemplate` と `ItemTemplateSelector` の両方のプロパティが設定されている場合は、`ItemTemplate` プロパティが優先されます。
 
 データバインディングを使用して、その `ItemsSource` プロパティを `IEnumerable` コレクションにバインドすることによって、 [`Map`](xref:Xamarin.Forms.Maps.Map)にデータを設定できます。
 
@@ -83,9 +83,9 @@ map.Pins.Add(pin1);
 </ContentPage>
 ```
 
-@No__t_0 プロパティデータは、接続されたビューモデルの `Locations` プロパティにバインドされます。これにより、カスタム型の `Location` オブジェクトの `ObservableCollection` が返されます。 各 `Location` オブジェクトは、型 `string` の `Address` と `Description` プロパティ、[および `Position` 型](xref:Xamarin.Forms.Maps.Position)の `Position` プロパティを定義します。
+`ItemsSource` プロパティデータは、接続されたビューモデルの `Locations` プロパティにバインドされます。これにより、カスタム型の `Location` オブジェクトの `ObservableCollection` が返されます。 各 `Location` オブジェクトは、型 `string` の `Address` と `Description` プロパティ、[および `Position` 型](xref:Xamarin.Forms.Maps.Position)の `Position` プロパティを定義します。
 
-@No__t_0 コレクション内の各項目の外観は、データを適切なプロパティにバインドする[`Pin`](xref:Xamarin.Forms.Maps.Pin)オブジェクトを含む[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)に `ItemTemplate` プロパティを設定することによって定義されます。
+`IEnumerable` コレクション内の各項目の外観は、データを適切なプロパティにバインドする[`Pin`](xref:Xamarin.Forms.Maps.Pin)オブジェクトを含む[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)に `ItemTemplate` プロパティを設定することによって定義されます。
 
 次のスクリーンショットは、データバインディングを使用して[`Pin`](xref:Xamarin.Forms.Maps.Pin)コレクションを表示する[`Map`](xref:Xamarin.Forms.Maps.Map)を示しています。
 
@@ -93,7 +93,7 @@ map.Pins.Add(pin1);
 
 ### <a name="choose-item-appearance-at-runtime"></a>実行時に項目の外観を選択する
 
-@No__t_0 コレクション内の各項目の外観は、項目の値に基づいて実行時に選択できます。そのためには、`ItemTemplateSelector` プロパティを[`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)に設定します。
+`IEnumerable` コレクション内の各項目の外観は、項目の値に基づいて実行時に選択できます。そのためには、`ItemTemplateSelector` プロパティを[`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)に設定します。
 
 ```xaml
 <ContentPage ...
@@ -143,13 +143,13 @@ public class MapItemTemplateSelector : DataTemplateSelector
 }
 ```
 
-@No__t_0 クラスは、さまざまなデータテンプレートに設定されている[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)プロパティの `DefaultTemplate` と `XamarinTemplate` を定義します。 @No__t_0 メソッドは、`XamarinTemplate` を返します。この場合、`Pin` がタップされたときに "Xamarin" というラベルが表示され、その項目に "サンフランシスコ" が含まれているアドレスが含まれています。 "サンフランシスコ" を含むアドレスが項目にない場合、`OnSelectTemplate` メソッドは `DefaultTemplate` を返します。
+`MapItemTemplateSelector` クラスは、さまざまなデータテンプレートに設定されている[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)プロパティの `DefaultTemplate` と `XamarinTemplate` を定義します。 `OnSelectTemplate` メソッドは、`XamarinTemplate` を返します。この場合、`Pin` がタップされたときに "Xamarin" というラベルが表示され、その項目に "サンフランシスコ" が含まれているアドレスが含まれています。 "サンフランシスコ" を含むアドレスが項目にない場合、`OnSelectTemplate` メソッドは `DefaultTemplate` を返します。
 
 データテンプレートセレクターの詳細については、「 [DataTemplateSelector の作成](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)」を参照してください。
 
 ## <a name="pin-events"></a>イベントのピン留め
 
-@No__t_0 クラスには、次の2つのイベントがあります。
+`Pin` クラスには、次の2つのイベントがあります。
 
 - pin がクリックまたはタップされると `MarkerClicked` が発生します。
 - `InfoWindowClicked` は、情報ウィンドウがクリックまたはタップされたときに発生します。

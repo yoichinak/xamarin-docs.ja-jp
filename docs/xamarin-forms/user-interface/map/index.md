@@ -57,8 +57,8 @@ Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
 プラットフォームごとに次のファイルにこの呼び出しを追加します。
 
 - `FinishedLaunching` メソッドの**iOS** -AppDelegate.cs file。
-- @No__t_1 メソッドの**Android** -MainActivity.cs ファイル。
-- @No__t_1 コンストラクター内の MainPage.xaml.cs ファイル。
+- `OnCreate` メソッドの**Android** -MainActivity.cs ファイル。
+- `MainPage` コンストラクター内の MainPage.xaml.cs ファイル。
 
 NuGet パッケージが追加され、各アプリケーション内部で初期化メソッドが呼び出されると、共通 .NET Standard ライブラリプロジェクトまたは共有プロジェクトコードで `Xamarin.Forms.Maps` Api を使用できるようになります。
 
@@ -189,7 +189,7 @@ map.MapType = MapType.Street;
 - **Mapspan. FromCenterAndRadius ()** -静的メソッド。 `Position` からスパンを作成し、`Distance` を指定します。
 - **新しい MapSpan ()** -`Position` と、表示する緯度と経度の角度を使用するコンストラクター。
 
-マップクラスの `MoveToRegion` メソッドを使用して、マップの位置またはズームレベルを変更できます。 位置を変更せずにマップのズームレベルを変更するには、マップコントロールの `VisibleRegion.Center` プロパティの現在の場所を使用して、新しい `MapSpan` を作成します。 @No__t_0 を使用すると、次のようにマップのズームを制御できます (ただし、マップコントロールに直接ズームすると、スライダーの値を更新することはできません)。
+マップクラスの `MoveToRegion` メソッドを使用して、マップの位置またはズームレベルを変更できます。 位置を変更せずにマップのズームレベルを変更するには、マップコントロールの `VisibleRegion.Center` プロパティの現在の場所を使用して、新しい `MapSpan` を作成します。 `Slider` を使用すると、次のようにマップのズームを制御できます (ただし、マップコントロールに直接ズームすると、スライダーの値を更新することはできません)。
 
 ```csharp
 Slider slider = new Slider (1, 18, 1);
@@ -211,7 +211,7 @@ map.MoveToLastRegionOnLayoutChange = false;
 
 ### <a name="map-clicks"></a>マップのクリック
 
-`Map` は、マップがタップされたときに発生する `MapClicked` イベントを定義します。 @No__t_1 イベントに付随する `MapClickedEventArgs` オブジェクトには、`Position` 型の `Position` という名前のプロパティが1つあります。 イベントが発生すると、`Position` プロパティの値が、タップされたマップの場所に設定されます。
+`Map` は、マップがタップされたときに発生する `MapClicked` イベントを定義します。 `MapClicked` イベントに付随する `MapClickedEventArgs` オブジェクトには、`Position` 型の `Position` という名前のプロパティが1つあります。 イベントが発生すると、`Position` プロパティの値が、タップされたマップの場所に設定されます。
 
 次のコード例は、`MapClicked` イベントのイベントハンドラーを示しています。
 
@@ -252,7 +252,7 @@ void OnMapClicked(object sender, MapClickedEventArgs e)
 > [!NOTE]
 > 追加の `xmlns` 名前空間の定義は、Xamarin. Forms. マップコントロールを参照するために必要です。 前の例では、`Xamarin.Forms.Maps` 名前空間が `maps` キーワードを通じて参照されています。
 
-@No__t_0 は、`Map` の名前付き参照を使用してコードで設定できます。
+`MapRegion` は、`Map` の名前付き参照を使用してコードで設定できます。
 
 ```csharp
 MyMap.MoveToRegion(

@@ -18,7 +18,7 @@ ms.locfileid: "72697114"
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-pop-ups)
 
-警告を表示する、ユーザーに選択を求める、またはプロンプトを表示することは、一般的な UI タスクです。 [@No__t_1](xref:Xamarin.Forms.Page)クラスには、 [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*)、 [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*)、および `DisplayPromptAsync` のポップアップを使用してユーザーと対話するための3つのメソッドがあります。 それらは適切なネイティブ コントロールを使用して、各プラットフォーム上に表示されます。
+警告を表示する、ユーザーに選択を求める、またはプロンプトを表示することは、一般的な UI タスクです。 [`Page`](xref:Xamarin.Forms.Page)クラスには、 [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*)、 [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*)、および `DisplayPromptAsync` のポップアップを使用してユーザーと対話するための3つのメソッドがあります。 それらは適切なネイティブ コントロールを使用して、各プラットフォーム上に表示されます。
 
 ## <a name="display-an-alert"></a>アラートを表示する
 
@@ -86,7 +86,7 @@ string result = await DisplayPromptAsync("Question 1", "What's your name?");
 
 [OK] ボタンをタップすると、入力した応答が `string` として返されます。 [キャンセル] ボタンがタップされると `null` が返されます。
 
-@No__t_0 メソッドの完全な引数リストは次のとおりです。
+`DisplayPromptAsync` メソッドの完全な引数リストは次のとおりです。
 
 - `string` 型の `title` は、プロンプトに表示するタイトルです。
 - `string` 型の `message` は、プロンプトに表示するメッセージです。
@@ -108,7 +108,7 @@ string result = await DisplayPromptAsync("Question 2", "What's 5 + 5?", maxLengt
 [![IOS と Android でのモーダルプロンプトのスクリーンショット](pop-ups-images/keyboard-prompt.png "モーダルプロンプト")](pop-ups-images/keyboard-prompt-large.png#lightbox "モーダルプロンプト")
 
 > [!NOTE]
-> @No__t_0 メソッドは現在、iOS と Android にのみ実装されています。
+> `DisplayPromptAsync` メソッドは現在、iOS と Android にのみ実装されています。
 
 ## <a name="related-links"></a>関連リンク
 

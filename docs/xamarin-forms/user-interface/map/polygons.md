@@ -20,27 +20,27 @@ ms.locfileid: "72697663"
 
 [iOS と Android での "多角形とポリラインのデモ" を ![](polygons-images/polygon-app-cropped.png)](polygons-images/polygon-app.png#lightbox)
 
-`Polygon` 要素と `Polyline` 要素を使用すると、マップ上の特定の領域を強調表示できます。 @No__t_0 は、ストロークと塗りつぶしの色を持つ、完全に囲まれた図形です。 @No__t_0 は、領域を完全に囲む線ではありません。
+`Polygon` 要素と `Polyline` 要素を使用すると、マップ上の特定の領域を強調表示できます。 `Polygon` は、ストロークと塗りつぶしの色を持つ、完全に囲まれた図形です。 `Polyline` は、領域を完全に囲む線ではありません。
 
 > [!NOTE]
-> @No__t_0 と `Polyline` の例については、サンプルプロジェクトの**PolygonsPage**を参照してください。
+> `Polygon` と `Polyline` の例については、サンプルプロジェクトの**PolygonsPage**を参照してください。
 
-@No__t_0 クラスと `Polyline` クラスは `MapElement` から派生し、次の[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)プロパティを公開します。
+`Polygon` クラスと `Polyline` クラスは `MapElement` から派生し、次の[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)プロパティを公開します。
 
 - `StrokeColor` は、線の色を決定する `Color` のプロパティです。
 - `StrokeWidth` は、線の幅を決定する `float` のプロパティです。
 - `Geopath` は `Polygon` と `Polyline` の両方で定義され、図形のポイントを指定する[`Position`](xref:Xamarin.Forms.Maps.Position)オブジェクトの一覧です。
 
-@No__t_0 クラスは、追加のプロパティを定義します。
+`Polygon` クラスは、追加のプロパティを定義します。
 
 - `FillColor` は、多角形の背景色を決定する `Color` プロパティです。
 
 > [!NOTE]
-> @No__t_0 プロパティが指定されていない場合、ストロークは既定で黒に設定されます。 @No__t_0 プロパティが指定されていない場合、塗りつぶしは既定で透過的になります。 したがって、どちらのプロパティも指定されていない場合、図形は塗りつぶされていない黒いアウトラインを持ちます。
+> `StrokeColor` プロパティが指定されていない場合、ストロークは既定で黒に設定されます。 `FillColor` プロパティが指定されていない場合、塗りつぶしは既定で透過的になります。 したがって、どちらのプロパティも指定されていない場合、図形は塗りつぶされていない黒いアウトラインを持ちます。
 
 ## <a name="create-a-polygon"></a>多角形を作成する
 
-@No__t_0 オブジェクトをインスタンス化し、マップの `MapElements` コレクションに追加することによって、マップに追加できます。
+`Polygon` オブジェクトをインスタンス化し、マップの `MapElements` コレクションに追加することによって、マップに追加できます。
 
 ```csharp
 // instantiate a polygon
@@ -89,14 +89,14 @@ XAML では、`Polygon` を作成することもできます。
 </maps:Map>
 ```
 
-多角形のアウトラインをカスタマイズするには、`StrokeColor` プロパティと `StrokeWidth` プロパティを指定します。 @No__t_0 プロパティ値は `StrokeColor` プロパティ値と一致しますが、透明にするために指定されたアルファ値を持っています。これにより、基になるマップを図形で表示できるようになります。 @No__t_0 プロパティには、多角形のポイントの地理的座標を定義する `Position` オブジェクトの一覧が含まれています。 @No__t_0 オブジェクトは、`Map` の `MapElements` コレクションに追加された後、マップに表示されます。
+多角形のアウトラインをカスタマイズするには、`StrokeColor` プロパティと `StrokeWidth` プロパティを指定します。 `FillColor` プロパティ値は `StrokeColor` プロパティ値と一致しますが、透明にするために指定されたアルファ値を持っています。これにより、基になるマップを図形で表示できるようになります。 `GeoPath` プロパティには、多角形のポイントの地理的座標を定義する `Position` オブジェクトの一覧が含まれています。 `Polygon` オブジェクトは、`Map` の `MapElements` コレクションに追加された後、マップに表示されます。
 
 > [!NOTE]
-> @No__t_0 は、完全に囲まれた図形です。 最初と最後のポイントが一致しない場合は、自動的に接続されます。
+> `Polygon` は、完全に囲まれた図形です。 最初と最後のポイントが一致しない場合は、自動的に接続されます。
 
 ## <a name="create-a-polyline"></a>ポリラインを作成する
 
-@No__t_0 オブジェクトをインスタンス化し、マップの `MapElements` コレクションに追加することによって、マップに追加できます。
+`Polyline` オブジェクトをインスタンス化し、マップの `MapElements` コレクションに追加することによって、マップに追加できます。
 
 ```csharp
 // instantiate a polyline
@@ -144,7 +144,7 @@ XAML では、`Polyline` を作成することもできます。
 </maps:Map>
 ```
 
-線をカスタマイズするには、`StrokeColor` と `StrokeWidth` のプロパティを指定します。 @No__t_0 プロパティには、ポリラインポイントの地理的座標を定義する `Position` オブジェクトの一覧が含まれています。 @No__t_0 オブジェクトは、`Map` の `MapElements` コレクションに追加された後、マップに表示されます。
+線をカスタマイズするには、`StrokeColor` と `StrokeWidth` のプロパティを指定します。 `GeoPath` プロパティには、ポリラインポイントの地理的座標を定義する `Position` オブジェクトの一覧が含まれています。 `Polyline` オブジェクトは、`Map` の `MapElements` コレクションに追加された後、マップに表示されます。
 
 ## <a name="related-links"></a>関連リンク
 
