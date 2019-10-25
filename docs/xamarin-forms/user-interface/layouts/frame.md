@@ -22,7 +22,7 @@ Xamarin [`Frame`](xref:Xamarin.Forms.Frame)クラスは、色、影、および�
 
 次のスクリーンショットは、iOS と Android の `Frame` コントロールを示しています。
 
-[![ "iOS と Android でのフレームの例"](frame-images/frame-cropped.png)](frame-images/frame-full.png#lightbox "IOS と Android のフレームの例")
+[![iOS と Android でのフレームの例](frame-images/frame-cropped.png)](frame-images/frame-full.png#lightbox "IOS と Android のフレームの例")
 
 @No__t_0 クラスは、次のプロパティを定義します。
 
@@ -84,7 +84,7 @@ Frame frame = new Frame
 
 @No__t_0 オブジェクトを `StackLayout` オブジェクトなどの `Layout` オブジェクトと組み合わせることで、より複雑な UI を作成できます。 次のスクリーンショットは、`Frame` オブジェクトを使用して作成されたカードの例を示しています。
 
-[![ "フレームで作成されたカードのスクリーンショット"](frame-images/frame-card-cropped.png)](frame-images/frame-full.png#lightbox "フレームで作成されたカードのスクリーンショット")
+[![フレームで作成されたカードのスクリーンショット](frame-images/frame-card-cropped.png)](frame-images/frame-full.png#lightbox "フレームで作成されたカードのスクリーンショット")
 
 次の XAML は、`Frame` クラスを使用してカードを作成する方法を示しています。
 
