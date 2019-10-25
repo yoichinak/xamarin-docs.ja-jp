@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 09/20/2019
-ms.openlocfilehash: b45a7af917e9147f519056ee5a9e5d06da51113a
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.openlocfilehash: 42c00a060e0477aff4ea02f6213fa751b2adf4dd
+ms.sourcegitcommit: 5c22097bed2a8d51ecaf6ca197bf4d449dfe1377
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72697663"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72810485"
 ---
 # <a name="xamarinforms-map-polygons-and-polylines"></a>Xamarin. フォームマップの多角形とポリライン
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
-[iOS と Android での "多角形とポリラインのデモ" を ![](polygons-images/polygon-app-cropped.png)](polygons-images/polygon-app.png#lightbox)
+[iOS と Android での "多角形とポリラインのデモ" を![](polygons-images/polygon-app-cropped.png)](polygons-images/polygon-app.png#lightbox)
 
 `Polygon` 要素と `Polyline` 要素を使用すると、マップ上の特定の領域を強調表示できます。 `Polygon` は、ストロークと塗りつぶしの色を持つ、完全に囲まれた図形です。 `Polyline` は、領域を完全に囲む線ではありません。
 
@@ -40,9 +40,41 @@ ms.locfileid: "72697663"
 
 ## <a name="create-a-polygon"></a>多角形を作成する
 
-`Polygon` オブジェクトをインスタンス化し、マップの `MapElements` コレクションに追加することによって、マップに追加できます。
+`Polygon` オブジェクトをインスタンス化し、マップの `MapElements` コレクションに追加することによって、マップに追加できます。 XAML では次のようにしてこれを実現できます。
+
+```xaml
+<ContentPage ...
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps">
+     <maps:Map>
+         <maps:Map.MapElements>
+             <maps:Polygon StrokeColor="#FF9900"
+                           StrokeWidth="8"
+                           FillColor="#88FF9900">
+                 <maps:Polygon.Geopath>
+                     <maps:Position>
+                         <x:Arguments>
+                             <x:Double>47.6368678</x:Double>
+                             <x:Double>-122.137305</x:Double>
+                         </x:Arguments>
+                     </maps:Position>
+                     ...
+                 </maps:Polygon.Geopath>
+             </maps:Polygon>
+         </maps:Map.MapElements>
+     </maps:Map>
+</ContentPage>
+```
+
+これに相当する C# コードを次に示します。
 
 ```csharp
+using Xamarin.Forms.Maps;
+// ...
+Map map = new Map
+{
+  // ...
+};
+
 // instantiate a polygon
 Polygon polygon = new Polygon
 {
@@ -61,44 +93,50 @@ Polygon polygon = new Polygon
         new Position(47.6384943, -122.1361248),
         new Position(47.6372943, -122.1376912)
     }
-}
+};
 
 // add the polygon to the map's MapElements collection
 map.MapElements.Add(polygon);
 ```
 
-XAML では、`Polygon` を作成することもできます。
-
-```xaml
-<maps:Map x:Name="map">
-    <maps:Map.MapElements>
-        <maps:Polygon StrokeColor="#FF9900"
-                      StrokeWidth="8"
-                      FillColor="#88FF9900">
-            <maps:Polygon.Geopath>
-                <maps:Position>
-                    <x:Arguments>
-                        <x:Double>47.6368678</x:Double>
-                        <x:Double>-122.137305</x:Double>
-                    </x:Arguments>
-                </maps:Position>
-                ...
-            </maps:Polygon.Geopath>
-        </maps:Polygon>
-    </maps:Map.MapElements>
-</maps:Map>
-```
-
-多角形のアウトラインをカスタマイズするには、`StrokeColor` プロパティと `StrokeWidth` プロパティを指定します。 `FillColor` プロパティ値は `StrokeColor` プロパティ値と一致しますが、透明にするために指定されたアルファ値を持っています。これにより、基になるマップを図形で表示できるようになります。 `GeoPath` プロパティには、多角形のポイントの地理的座標を定義する `Position` オブジェクトの一覧が含まれています。 `Polygon` オブジェクトは、`Map` の `MapElements` コレクションに追加された後、マップに表示されます。
+多角形のアウトラインをカスタマイズするには、`StrokeColor` プロパティと `StrokeWidth` プロパティを指定します。 `FillColor` プロパティ値は `StrokeColor` プロパティ値と一致しますが、透明にするために指定されたアルファ値を持っています。これにより、基になるマップを図形で表示できるようになります。 @No__t_0 プロパティには、多角形のポイントの地理的座標を定義する `Position` オブジェクトの一覧が含まれています。 @No__t_0 オブジェクトは、`Map` の `MapElements` コレクションに追加された後、マップに表示されます。
 
 > [!NOTE]
 > `Polygon` は、完全に囲まれた図形です。 最初と最後のポイントが一致しない場合は、自動的に接続されます。
 
 ## <a name="create-a-polyline"></a>ポリラインを作成する
 
-`Polyline` オブジェクトをインスタンス化し、マップの `MapElements` コレクションに追加することによって、マップに追加できます。
+`Polyline` オブジェクトをインスタンス化し、マップの `MapElements` コレクションに追加することによって、マップに追加できます。 XAML では次のようにしてこれを実現できます。
+
+```xaml
+<ContentPage ...
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps">
+     <maps:Map>
+         <maps:Map.MapElements>
+             <maps:Polyline StrokeColor="Blue"
+                            StrokeWidth="12">
+                 <maps:Polyline.Geopath>
+                     <maps:Position>
+                         <x:Arguments>
+                             <x:Double>47.6381401</x:Double>
+                             <x:Double>-122.1317367</x:Double>
+                         </x:Arguments>
+                     </maps:Position>
+                     ...
+                 </maps:Polyline.Geopath>
+             </maps:Polyline>
+         </maps:Map.MapElements>
+     </maps:Map>
+</ContentPage>
+```
 
 ```csharp
+using Xamarin.Forms.Maps;
+// ...
+Map map = new Map
+{
+  // ...
+};
 // instantiate a polyline
 Polyline polyline = new Polyline
 {
@@ -123,30 +161,8 @@ Polyline polyline = new Polyline
 map.MapElements.Add(polyline);
 ```
 
-XAML では、`Polyline` を作成することもできます。
-
-```xaml
-<maps:Map x:Name="map">
-    <maps:Map.MapElements>
-        <maps:Polyline StrokeColor="Blue"
-                       StrokeWidth="12">
-            <maps:Polyline.Geopath>
-                <maps:Position>
-                    <x:Arguments>
-                        <x:Double>47.6381401</x:Double>
-                        <x:Double>-122.1317367</x:Double>
-                    </x:Arguments>
-                </maps:Position>
-                ...
-            </maps:Polyline.Geopath>
-        </maps:Polyline>
-    </maps:Map.MapElements>
-</maps:Map>
-```
-
 線をカスタマイズするには、`StrokeColor` と `StrokeWidth` のプロパティを指定します。 `GeoPath` プロパティには、ポリラインポイントの地理的座標を定義する `Position` オブジェクトの一覧が含まれています。 `Polyline` オブジェクトは、`Map` の `MapElements` コレクションに追加された後、マップに表示されます。
 
 ## <a name="related-links"></a>関連リンク
 
-- [サンプルマッププロジェクト](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
-- [Xamarin. Forms マップ](~/xamarin-forms/user-interface/map/index.md)
+- [Maps サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)

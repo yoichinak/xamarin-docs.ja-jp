@@ -7,13 +7,13 @@ ms.technology: xamarin-ios
 ms.custom: xamu-video
 author: conceptdev
 ms.author: crdun
-ms.date: 10/05/2018
-ms.openlocfilehash: 1b43598cc8df31d8a113adbfe90e368aab233334
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.date: 10/16/2019
+ms.openlocfilehash: f8193dfbb68634702fdb12e330970d4a83d8e601
+ms.sourcegitcommit: dad4dfcd194b63ec9e903363351b6d9e543d4888
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287361"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72584327"
 ---
 # <a name="get-started-with-xamarinios"></a>Xamarin.iOS の概要
 
@@ -23,13 +23,16 @@ Xamarin.iOS を使用すると、開発者は Objective-C と Xcode で使用で
 
 Xamarin.iOS をビルドするには、以下のコンポーネントが必要です。
 
+- Visual Studio の最新バージョン
 - 最新の iOS SDK
 - 最新バージョンの Xcode
-- macOS Sierra (10.13) 以上
+- Xcode で必要な macOS の最小バージョン
+
+特定のバージョンの要件については、[最新の Xamarin.iOS のリリース ノート](/xamarin/ios/release-notes/)を参照してください。
 
 Xcode の最新バージョンは、[iOS Developer Center](https://developer.apple.com/devcenter/ios/index.action#downloads) (ログインが必要) から、または Mac App Store を通じてダウンロードできます。
 
-![Mac App Store での Xcode リスト ページのスクリーン ショット](installation/images/xcode.png "Mac App Store での Xcode")
+![Mac App Store の Xcode リスト ページのスクリーンショット](installation/images/xcode.png "Mac App Store の Xcode")
 
 ## <a name="getting-started-series"></a>概要シリーズ
 

@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 09/11/2017
 ms.openlocfilehash: 10bba38de1dc8908ad853d5e4ca2bb845b4ac8c6
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70771274"
 ---
 # <a name="introduction-to-xamarinforms-data-templates"></a>Xamarin.Forms データ テンプレートの概要
@@ -90,7 +90,7 @@ public WithoutDataTemplatePageCS()
 
 コレクション内のオブジェクトを表示するときに、[`ListView`](xref:Xamarin.Forms.ListView) によって `ToString` が呼び出されます。 次のスクリーンショットに示すように、`Person.ToString` のオーバーライドがないため、`ToString` から各オブジェクトの型名が返されます。
 
-![](introduction-images/no-data-template.png "データ テンプレートを使用しない ListView")
+![](introduction-images/no-data-template.png "ListView without a Data Template")
 
 次のコード例に示すように、意味のあるデータを表示するために `Person` オブジェクトによって `ToString` メソッドをオーバーライドできます。
 
@@ -107,7 +107,7 @@ public class Person
 
 この結果、次のスクリーンショットに示すように、[`ListView`](xref:Xamarin.Forms.ListView) でコレクション内の各オブジェクトの `Person.Name` プロパティ値が表示されます。
 
-![](introduction-images/override-tostring.png "データ テンプレートを使用する ListView")
+![](introduction-images/override-tostring.png "ListView with a Data Template")
 
 `Person.ToString` のオーバーライドから、`Name`、`Age`、および `Location` プロパティで構成される書式設定された文字列が返される可能性があります。 ただし、このアプローチでは、各データ項目の外観に対して制限されたコントロールのみが提供されます。 柔軟性を高めるために、データの外観を定義する [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) を作成することができます。
 

@@ -6,13 +6,13 @@ ms.assetid: 938E85C8-521D-43B9-92CB-D591A06D98A6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/23/2018
-ms.openlocfilehash: ace1129397251c02c5ffb682344ff2308a24c62a
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.date: 09/27/2019
+ms.openlocfilehash: fa92409b33717e528c3cfb83a24148c698836594
+ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653364"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72697143"
 ---
 # <a name="xamarinforms-data-binding"></a>Xamarin.Forms のデータ バインディング
 
@@ -35,7 +35,7 @@ Xamarin.Forms アプリケーションは 1 つ以上のページで構成され
 - 通常は同じページ上にある、`View` の別の派生物。
 - コード ファイル内のオブジェクト。
 
-[**DataBindingDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos) サンプルにあるようなデモ プログラムでは、`View` の 2 つの派生物間のデータ バインディングは、多くの場合、わかりやすさと簡潔さのために示されます。 ただし、`View` と別のオブジェクト間のデータ バインディングにも、同じ原則を適用できます。 アプリケーションが Model-View-ViewModel (MVVM) アーキテクチャを使って構築されている場合、基になるデータを使うクラスは多くの場合 ViewModel と呼ばれます。
+[**DataBindingDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos) サンプルにあるようなデモ プログラムでは、`View` の 2 つの派生物間のデータ バインディングは、多くの場合、わかりやすさと簡潔さのために示されます。 ただし、`View` と別のオブジェクト間のデータ バインディングにも、同じ原則を適用できます。 アプリケーションが Model-View-ViewModel (MVVM) アーキテクチャを使って構築されている場合、基になるデータを使うクラスは多くの場合 viewmodel と呼ばれます。
 
 データ バインディングついては、次の一連の記事で説明されています。
 
@@ -58,6 +58,10 @@ Xamarin.Forms アプリケーションは 1 つ以上のページで構成され
 ## <a name="binding-value-convertersconvertersmd"></a>[値コンバーターのバインディング](converters.md)
 
 値コンバーターのバインディングを使って、データ バインディング内の値を変更します。
+
+## <a name="relative-bindingsrelative-bindingsmd"></a>[相対的なバインディング](relative-bindings.md)
+
+相対バインドを使用して、バインド ターゲットの位置に対して相対的なバインド ソースを設定します。
 
 ## <a name="binding-fallbacksbinding-fallbacksmd"></a>[フォールバックのバインディング](binding-fallbacks.md)
 

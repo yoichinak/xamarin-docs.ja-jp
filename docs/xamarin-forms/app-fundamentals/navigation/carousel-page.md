@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: a243acc0273931c963a586fbfda29586623b612e
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: 5cfaeb8589514972dfcccd11009a02c00f95bfac
+ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69889169"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72696443"
 ---
 # <a name="xamarinforms-carousel-page"></a>Xamarin.Forms のカルーセル ページ
 
@@ -20,17 +20,20 @@ ms.locfileid: "69889169"
 
 _Xamarin.Forms の CarouselPage は、ギャラリーのように、ユーザーが端から端までスワイプしてコンテンツの各ページをナビゲートできるページです。この記事では、CarouselPage を使用してページのコレクション内を移動する方法を示します。_
 
+> [!IMPORTANT]
+> [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) は [`CarouselView`](xref:Xamarin.Forms.CarouselView) に置き換えられています。これにより、ユーザーがスワイプして項目のコレクション内を移動できるスクロール可能なレイアウトが提供されます。 `CarouselView` の詳細については、「[Xamarin.Forms CarouselView](~/xamarin-forms/user-interface/carouselview/index.md)」を参照してください。
+
 次のスクリーンショットは、各プラットフォームの [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) を示します。
 
-![](carousel-page-images/thirdpage.png "CarouselPage の 3 番目の項目")
+![](carousel-page-images/thirdpage.png "CarouselPage Third Item")
 
 [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) のレイアウトは、どのプラットフォームでも同じです。 右から左にスワイプするとコレクション内のページを前方に移動でき、左から右にスワイプするとコレクション内のページを後方に移動できます。 次のスクリーンショットは、[`CarouselPage`](xref:Xamarin.Forms.CarouselPage) インスタンスの最初のページです。
 
-![](carousel-page-images/firstpage.png "CarouselPage の 1 番目の項目")
+![](carousel-page-images/firstpage.png "CarouselPage First Item")
 
 次のスクリーンショットのように、右から左にスワイプすると 2 番目のページに移動します。
 
-![](carousel-page-images/secondpage.png "CarouselPage の 2 番目の項目")
+![](carousel-page-images/secondpage.png "CarouselPage Second Item")
 
 もう一度右から左にスワイプすると 3 番目のページに移動し、左から右にスワイプすると前のページに戻ります。
 
@@ -40,11 +43,6 @@ _Xamarin.Forms の CarouselPage は、ギャラリーのように、ユーザー
 [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) を [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) の [`Detail`](xref:Xamarin.Forms.MasterDetailPage.Detail) ページに埋め込む場合は、`CarouselPage` と `MasterDetailPage` の間でジェスチャが競合するのを防ぐため、[`MasterDetailPage.IsGestureEnabled`](xref:Xamarin.Forms.MasterDetailPage.IsGestureEnabledProperty) プロパティを `false` に設定する必要があります。
 
 [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) の詳細については、Charles Petzold 氏著作の Xamarin.Forms ブックの[第 25 章](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf)を参照してください。
-
-<!--
-> [!NOTE]
-> The [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) has been deprecated, and will be removed from Xamarin.Forms in a future release. Instead, the [`CarouselView`](xref:Xamarin.Forms.CarouselView) should be used to provide a gallery-like view, where users can swipe from side to side to move through a collection of items.
--->
 
 ## <a name="create-a-carouselpage"></a>CarouselPage を作成する
 

@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/07/2018
-ms.openlocfilehash: 78288680a1a522b2c6c413e1f8a2cec2a07835d6
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: a6eb3167fd0880984a74245c4653642ea3979354
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656981"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72678837"
 ---
 # <a name="right-to-left-localization"></a>右から左へのローカライズ
 
@@ -32,7 +32,7 @@ _右から左へのローカライズでは、右から左へのフロー方向�
 
 要素の [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) プロパティを [`RightToLeft`](xref:Xamarin.Forms.FlowDirection.RightToLeft) に設定すると、一般的に配置が右に、読む順が右から左に、コントロールのレイアウトが右から左に設定されます。
 
-[![右から左へのフロー方向のアラビア語の TodoItemPage](rtl-images/TodoItemPage-Arabic.png "右から左へのフロー方向のアラビア語の TodoItemPage")](rtl-images/TodoItemPage-Arabic-Large.png#lightbox "右から左へのフロー方向のアラビア語の TodoItemPage")
+[![右から左へのフロー方向を持つアラビア語の TodoItemPage](rtl-images/TodoItemPage-Arabic.png "右から左へのフロー方向を持つアラビア語の TodoItemPage")](rtl-images/TodoItemPage-Arabic-Large.png#lightbox "右から左へのフロー方向を持つアラビア語の TodoItemPage")
 
 > [!TIP]
 > 初期レイアウトでは [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) プロパティのみを設定する必要があります。 実行時にこの値を変更すると、パフォーマンスに影響を与える負荷の高いレイアウト プロセスが発生します。
@@ -72,7 +72,7 @@ this.FlowDirection = Device.FlowDirection;
 </array>
 ```
 
-![Info.plist でサポートされている言語](rtl-images/ios-locales.png "Info.plist でサポートされている言語")
+![Info.plist のサポートされる言語](rtl-images/ios-locales.png "Info.plist のサポートされる言語")
 
 詳細については、「[iOS でのローカライズの基本事項](https://docs.microsoft.com/xamarin/ios/app-fundamentals/localization/#localization-basics-in-ios)」を参照してください。
 
@@ -145,6 +145,46 @@ using System.Resources;
 - [`Editor`](xref:Xamarin.Forms.Editor) のテキストの配置は、[`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) プロパティではなく、デバイスのロケールによって制御されます。
 - [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) プロパティは子の [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) に継承されません。
 - [`ContextActions`](xref:Xamarin.Forms.Cell.ContextActions) のテキストの配置は、[`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) プロパティではなく、デバイスのロケールによって制御されます。
+
+## <a name="force-right-to-left-layout"></a>右から左へのレイアウトを強制する
+
+Xamarin.iOS および Xamarin.Android アプリケーションには、それぞれのプラットフォーム プロジェクトを変更することにより、デバイスの設定に関係なく、常に右から左へのレイアウトを使用するように強制することができます。
+
+### <a name="ios"></a>iOS
+
+Xamarin.iOS アプリケーションには、次のように **AppDelegate** クラスを変更することにより、常に右から左へのレイアウトを使用するように強制することができます。
+
+1. `IntPtr_objc_msgSend` 関数を `AppDelegate` クラスの最初の行として宣言します。
+
+   ```csharp
+   [System.Runtime.InteropServices.DllImport(ObjCRuntime.Constants.ObjectiveCLibrary, EntryPoint = "objc_msgSend")]
+   internal extern static IntPtr IntPtr_objc_msgSend(IntPtr receiver, IntPtr selector, UISemanticContentAttribute arg1);
+   ```
+
+1. `FinshedLaunching` メソッドから戻る前に、`FinishedLaunching` メソッドから `IntPtr_objc_msgSend` 関数を呼び出します。
+
+   ```csharp
+   bool result = base.FinishedLaunching(app, options);
+
+   ObjCRuntime.Selector selector = new ObjCRuntime.Selector("setSemanticContentAttribute:");
+   IntPtr_objc_msgSend(UIView.Appearance.Handle, selector.Handle, UISemanticContentAttribute.ForceRightToLeft);
+
+   return result;
+   ```
+
+この方法は、常に右から左へのレイアウトを必要とするアプリケーションの場合に役立ち、[`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) プロパティを設定する必要がなくなります。
+
+`IntrPtr_objc_msgSend` メソッドの詳細については、「[Xamarin. iOS の Objective-C セレクター](~/ios/internals/objective-c-selectors.md)」を参照してください。
+
+### <a name="android"></a>Android
+
+Xamarin.Android アプリケーションには、次の行を含むように **MainActivity** クラスを変更することで、常に右から左へのレイアウトを使用するように強制することができます。
+
+```csharp
+Window.DecorView.LayoutDirection = LayoutDirection.Rtl;
+```
+
+この方法は、常に右から左へのレイアウトを必要とするアプリケーションの場合に役立ち、[`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) プロパティを設定する必要がなくなります。
 
 ## <a name="right-to-left-language-support-with-xamarinuniversity"></a>Xamarin.University での右から左方向の言語のサポート
 

@@ -6,13 +6,13 @@ ms.assetid: F8F9471D-6771-4D23-96C0-2B79473A06D4
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/24/2019
-ms.openlocfilehash: 9e3acf1c5b101f021b0071947e91f0c9fc3dafcb
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.date: 09/25/2019
+ms.openlocfilehash: 400459d2701731726c91c70e020ef375a7031169
+ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68739248"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72695936"
 ---
 # <a name="xamarinforms-shell-search"></a>Xamarin.Forms シェルでの検索
 
@@ -20,11 +20,11 @@ ms.locfileid: "68739248"
 
 Xamarin.Forms シェルには、`SearchHandler` クラスによって提供される統合された検索機能が組み込まれています。 検索機能は、サブクラス化された `SearchHandler` オブジェクトを `Shell.SearchHandler` 添付プロパティに設定することで、ページに追加できます。 これにより、検索ボックスがページの上部に追加されます。
 
-[![iOS および Android 上での、シェルの SearchHandler のスクリーンショット](search-images/searchhandler.png "シェルの SearchHandler")](search-images/searchhandler-large.png#lightbox "シェルの SearchHandler")
+[![iOS および Android 上の Shell SearchHandler のスクリーンショット](search-images/searchhandler.png "Shell SearchHandler")](search-images/searchhandler-large.png#lightbox "Shell SearchHandler")
 
 検索ボックスにクエリが入力されると、`Query` プロパティが更新され、更新ごとに `OnQueryChanged` メソッドが実行されます。 このメソッドをオーバーライドして、検索候補領域にデータを設定できます。
 
-[![iOS および Android 上での、シェルの SearchHandler の検索結果を示したスクリーンショット](search-images/search-suggestions.png "シェルの SearchHandler の検索結果")](search-images/search-suggestions-large.png#lightbox "シェルの SearchHandler の検索結果")
+[![iOS および Android 上の Shell SearchHandler での検索結果のスクリーンショット](search-images/search-suggestions.png "Shell SearchHandler の検索結果")](search-images/search-suggestions-large.png#lightbox "Shell SearchHandler の検索結果")
 
 検索候補領域から結果が選択されると、`OnItemSelected` メソッドが実行されます。 このメソッドは、詳細ページに移動するなどによって、適切に応答するようにオーバーライドできます。
 
@@ -99,15 +99,15 @@ Shell.SetSearchHandler(this, new MonkeySearchHandler
 
 ユーザーが検索クエリを入力すると検索候補が表示されるように、`ShowsResults` プロパティは `true` に設定されます。
 
-[![iOS および Android 上での、シェルの SearchHandler の検索結果を示したスクリーンショット](search-images/search-results.png "シェルの SearchHandler の検索結果")](search-images/search-results-large.png#lightbox "シェルの SearchHandler の検索結果")
+[![iOS および Android 上の Shell SearchHandler での検索結果のスクリーンショット](search-images/search-results.png "Shell SearchHandler の検索結果")](search-images/search-results-large.png#lightbox "Shell SearchHandler の検索結果")
 
 検索クエリが変更されると、検索候補領域が更新されます。
 
-[![iOS および Android 上での、シェルの SearchHandler の検索結果を示したスクリーンショット](search-images/search-results-change.png "シェルの SearchHandler の検索結果")](search-images/search-results-change-large.png#lightbox "シェルの SearchHandler の検索結果")
+[![iOS および Android 上の Shell SearchHandler での検索結果のスクリーンショット](search-images/search-results-change.png "Shell SearchHandler の検索結果")](search-images/search-results-change-large.png#lightbox "Shell SearchHandler の検索結果")
 
 検索結果が選択されると、`MonkeyDetailPage` へナビゲートされ、選択されたサルに関するデータが表示されます。
 
-[![iOS および Android 上での、サルの詳細のスクリーンショット](search-images/detailpage.png "サルの詳細")](search-images/detailpage-large.png#lightbox "サルの詳細")
+[![iOS および Android 上のサルの詳細のスクリーンショット](search-images/detailpage.png "サルの詳細")](search-images/detailpage-large.png#lightbox "サルの詳細")
 
 ## <a name="define-search-results-item-appearance"></a>検索結果の項目の外観を定義する
 
@@ -172,7 +172,7 @@ Shell.SetSearchHandler(this, new MonkeySearchHandler
 
 次のスクリーンショットは、候補領域内の各項目をテンプレート化した結果を示しています。
 
-[![iOS および Android 上での、シェルの SearchHandler におけるテンプレート化された検索結果のスクリーンショット](search-images/search-results-template.png "シェルの SearchHandler のテンプレート化された検索結果")](search-images/search-results-template-large.png#lightbox "シェルの SearchHandler のテンプレート化された検索結果")
+[![iOS および Android 上の Shell SearchHandler でのテンプレート化された検索結果のスクリーンショット](search-images/search-results-template.png "Shell SearchHandler のテンプレート化された検索結果")](search-images/search-results-template-large.png#lightbox "Shell SearchHandler のテンプレート化された検索結果")
 
 データ テンプレートについて詳しくは「[Xamarin.Forms Data Templates](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)」(Xamarin.Forms のデータ テンプレート) をご覧ください。
 
@@ -211,12 +211,14 @@ Shell.SetSearchHandler(this, new MonkeySearchHandler
 
 - `BackgroundColor`:`Color` 型、検索ボックスのテキストの背景の色。
 - `CancelButtonColor`:`Color` 型、キャンセル ボタンの色。
+- `CharacterSpacing`: `double` 型、`SearchHandler` テキストの文字間の間隔。
 - `FontAttributes`:`FontAttributes` 型、ボ:ックスのテキストが斜体か太字かを示します。
 - `FontFamily`:`string` 型、検索ボックスのテキストに使用されるフォント ファミリ。
 - `FontSize`:`double` 型、検索ボックスのテキストのサイズ。
 - `HorizontalTextAlignment`:`TextAlignment` 型、検索ボックスのテキストの水平方向の配置。
 - `PlaceholderColor`:`Color` 型、プレースホルダー検索ボックスのテキストの色。
 - `TextColor`:`Color` 型、検索ボックスのテキストの色。
+- `VerticalTextAlignment`: `TextAlignment` 型、検索ボックスのテキストの垂直方向の配置。
 
 ## <a name="searchhandler-keyboard"></a>SearchHandler キーボード
 
