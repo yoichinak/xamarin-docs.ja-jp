@@ -5,13 +5,13 @@ ms.prod: xamarin
 ms.assetid: dd344d57-18e2-42a5-8c15-3f5be4123c72
 author: conceptdev
 ms.author: crdun
-ms.date: 04/26/2018
-ms.openlocfilehash: adedb10f3baf7faa97260ebbc94e3d1802b7d847
-ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
+ms.date: 10/16/2019
+ms.openlocfilehash: ebfe139d614db95c7dd1af0c76926d934144d74f
+ms.sourcegitcommit: dad4dfcd194b63ec9e903363351b6d9e543d4888
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71105944"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72584337"
 ---
 # <a name="system-requirements"></a>システム要件
 
@@ -59,6 +59,7 @@ Visual Studio 2019 および Visual Studio 2017 のインストーラーには�
 > [!NOTE]
 >
 > - Xamarin for Visual Studio では、Visual Studio 2019 または Visual Studio 2017 (Community、Professional、および Enterprise) がサポートされています。
+> - 最新バージョンの Android および iOS SDK を使用するには、最新バージョンの Visual Studio が必要です。 特定のバージョン要件については、[Xamarin.Android のリリース ノート](/xamarin/android/release-notes/)と [Xamarin.iOS のリリース ノート](/xamarin/ios/release-notes/)を参照してください。
 > - ユニバーサル Windows プラットフォーム (UWP) 用に Xamarin.Forms アプリを開発するには、Visual Studio 2017 がインストールされている Windows 10 が必要です。 Visual Studio 2019 をお勧めします。
 
 ### <a name="testing--debugging-on-windows"></a>Windows でのテストとデバッグ

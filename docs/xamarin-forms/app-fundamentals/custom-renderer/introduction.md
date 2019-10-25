@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/19/2016
 ms.openlocfilehash: ad2868a82f662f45066a6111a1dd3bd2aacad671
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70771879"
 ---
 # <a name="introduction-to-custom-renderers"></a>カスタム レンダラーの概要
@@ -56,7 +56,7 @@ public class MyEntry : Entry
 
 次のスクリーンショットに示すように、`MyEntry` カスタム コントロールは、各プラットフォームにグレーの背景でレンダリングされます。
 
-![](introduction-images/screenshots.png "プラットフォームごとの MyEntry カスタム コントロール")
+![](introduction-images/screenshots.png "MyEntry Custom Control on each Platform")
 
 各プラットフォームのコントロールの背景色を変更するには、コントロールをサブクラス化する必要があります。 ただし、プラットフォーム固有の拡張機能やカスタマイズを利用できないため、この手法は実行できるものに限られています。 必要な場合は、カスタム レンダラーを実装する必要があります。
 
