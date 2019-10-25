@@ -1,18 +1,18 @@
 ---
 title: Xamarin. フォーム素材ビジュアル
-description: Xamarin. Forms Material ビジュアルを使用すると、iOS と Android で同一またはほぼ同一の外観のフォームアプリケーションを作成できます。
+description: Xamarin. Forms Material ビジュアルを使用すると、iOS と Android でほぼ同じ外観の Xamarin アプリケーションを作成できます。
 ms.prod: xamarin
 ms.assetid: B774F68C-EF9E-49E1-B738-CDC64879ADA2
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/12/2019
-ms.openlocfilehash: b735541d51321231775b025745e68c54552697d3
-ms.sourcegitcommit: dad4dfcd194b63ec9e903363351b6d9e543d4888
+ms.date: 10/18/2019
+ms.openlocfilehash: b447bd255270eb87f6139ddacadb9d31348ab7d7
+ms.sourcegitcommit: db2cf1b54125499d5320636927484707810c8e27
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "71198492"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72850484"
 ---
 # <a name="xamarinforms-material-visual"></a>Xamarin. フォーム素材ビジュアル
 
@@ -20,36 +20,38 @@ ms.locfileid: "71198492"
 
 [マテリアルの設計](https://material.io)は、Google によって作成されたこだわりデザインシステムで、ビューやレイアウトの外観と動作について、サイズ、色、スペース、およびその他の側面を規定します。
 
-Xamarin. Forms Material ビジュアルを使用すると、マテリアルデザインルールを Xamarin. Forms アプリケーションに適用し、同一のアプリケーション、または iOS と Android でほぼ同一のアプリケーションを作成できます。 素材ビジュアルが有効になっている場合、サポートされているビューでは、同じデザインクロスプラットフォームが採用されており、統一されたルックアンドフィールが作成されます。 これは、マテリアルデザインルールを適用するマテリアルレンダラーで実現されます。
+Xamarin. Forms Material ビジュアルを使用すると、マテリアルデザインルールを Xamarin. Forms アプリケーションに適用し、iOS と Android でほぼ同じように見えるアプリケーションを作成できます。 素材ビジュアルが有効になっている場合、サポートされているビューでは、同じデザインクロスプラットフォームが採用されており、統一されたルックアンドフィールが作成されます。
+
+[![素材の視覚的スクリーンショット](material-visual-images/material-visual-cropped.png)](material-visual-images/material-visual.png#lightbox)
 
 アプリケーションで Xamarin を有効にするためのプロセスは次のとおりです。
 
 1. IOS および Android プラットフォームのプロジェクトに、 [Xamarin. Forms. Material](https://www.nuget.org/packages/Xamarin.Forms.Visual.Material/) NuGet パッケージを追加します。 この NuGet パッケージは、iOS および Android で最適化されたマテリアルデザインレンダラーを提供します。 IOS では、パッケージは[MaterialComponents](https://www.nuget.org/packages/Xamarin.iOS.MaterialComponents)に推移的なC#依存関係を提供します。これは、ios 用の Google の[マテリアルコンポーネント](https://material.io/develop/ios/)へのバインドです。 Android では、TargetFramework が正しくセットアップされていることを確認するために、パッケージにビルドターゲットが用意されています。
-1. 各プラットフォームプロジェクトのマテリアルレンダラーを初期化します。 詳細については、「[マテリアルレンダラーの初期化](#initialize-material-renderers)」を参照してください。
-1. マテリアルデザインルールを採用する必要のある任意のページで、 [`Visual`](xref:Xamarin.Forms.VisualElement.Visual)プロパティを `Material` に設定して、マテリアルレンダラーを使用します。 詳細については、「[マテリアルレンダラーの使用](#consume-material-renderers)」を参照してください。
-1. optionalマテリアルレンダラーをカスタマイズします。 詳細については、「[マテリアルレンダラーをカスタマイズ](#customize-material-renderers)する」を参照してください。
+1. 各プラットフォームプロジェクトのマテリアルビジュアルを初期化します。 詳細については、「[マテリアルビジュアルの初期化](#initialize-material-visual)」を参照してください。
+1. 素材デザインルールを採用する必要がある任意のページで、 [`Visual`](xref:Xamarin.Forms.VisualElement.Visual)プロパティを `Material` に設定して、素材ビジュアルコントロールを作成します。 詳細については、「[マテリアルレンダラーの使用](#apply-material-visual)」を参照してください。
+1. optionalマテリアルコントロールをカスタマイズします。 詳細については、「[マテリアルコントロールをカスタマイズ](#customize-material-visual)する」を参照してください。
 
 > [!IMPORTANT]
-> Android では、マテリアルレンダラーには 5.0 (API 21) 以上のバージョンと、バージョン 9.0 (API 28) の TargetFramework が必要です。 さらに、プラットフォームプロジェクトには Android サポートライブラリ28.0.0 以上が必要です。また、そのテーマは、マテリアルコンポーネントのテーマを継承するか、AppCompat テーマから継承する必要があります。 詳細については、「 [Android 用のマテリアルコンポーネントの概要](https://github.com/material-components/material-components-android/blob/master/docs/getting-started.md)」を参照してください。
+> Android では、マテリアルビジュアルには 5.0 (API 21) 以上のバージョンと、バージョン 9.0 (API 28) の TargetFramework が必要です。 さらに、プラットフォームプロジェクトには Android サポートライブラリ28.0.0 以上が必要です。また、そのテーマは、マテリアルコンポーネントのテーマを継承するか、AppCompat テーマから継承する必要があります。 詳細については、「 [Android 用のマテリアルコンポーネントの概要](https://github.com/material-components/material-components-android/blob/master/docs/getting-started.md)」を参照してください。
 
-次のビューについては、現在、マテリアルレンダラーが[Xamarin. Forms. material](https://www.nuget.org/packages/Xamarin.Forms.Visual.Material/) NuGet パッケージに含まれています。
+素材ビジュアルは現在、次のコントロールをサポートしています。
 
+- [`ActivityIndicator`](xref:Xamarin.Forms.ActivityIndicator)
 - [`Button`](xref:Xamarin.Forms.Button)
 - `CheckBox`
+- [`DatePicker`](xref:Xamarin.Forms.DatePicker)
+- [`Editor`](xref:Xamarin.Forms.Editor)
 - [`Entry`](xref:Xamarin.Forms.Entry)
 - [`Frame`](xref:Xamarin.Forms.Frame)
-- [`ProgressBar`](xref:Xamarin.Forms.ProgressBar)
-- [`DatePicker`](xref:Xamarin.Forms.DatePicker)
-- [`TimePicker`](xref:Xamarin.Forms.TimePicker)
 - [`Picker`](xref:Xamarin.Forms.Picker)
-- [`ActivityIndicator`](xref:Xamarin.Forms.ActivityIndicator)
-- [`Editor`](xref:Xamarin.Forms.Editor)
+- [`ProgressBar`](xref:Xamarin.Forms.ProgressBar)
 - [`Slider`](xref:Xamarin.Forms.Slider)
 - [`Stepper`](xref:Xamarin.Forms.Stepper)
+- [`TimePicker`](xref:Xamarin.Forms.TimePicker)
 
-機能的には、素材レンダラーは既定のレンダラーとは異なります。
+マテリアルコントロールは、マテリアルデザインルールを適用するマテリアルレンダラーによって実現されます。 機能的には、素材レンダラーは既定のレンダラーとは異なります。 詳細については、「[素材ビジュアルをカスタマイズ](#customize-material-visual)する」を参照してください。
 
-## <a name="initialize-material-renderers"></a>マテリアルレンダラーの初期化
+## <a name="initialize-material-visual"></a>マテリアルビジュアルの初期化
 
 [Xamarin. Forms. material](https://www.nuget.org/packages/Xamarin.Forms.Visual.Material/) NuGet パッケージをインストールした後、マテリアルレンダラーを各プラットフォームプロジェクトで初期化する必要があります。
 
@@ -67,9 +69,9 @@ global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 global::Xamarin.Forms.FormsMaterial.Init(this, savedInstanceState);
 ```
 
-## <a name="consume-material-renderers"></a>素材レンダラーを使用する
+## <a name="apply-material-visual"></a>マテリアルビジュアルの適用
 
-アプリケーションでは、ページ、レイアウト、またはビューの[`VisualElement.Visual`](xref:Xamarin.Forms.VisualElement.Visual)プロパティを `Material` に設定することによって、素材レンダラーの使用を選択できます。
+アプリケーションでは、ページ、レイアウト、またはビューの[`VisualElement.Visual`](xref:Xamarin.Forms.VisualElement.Visual)プロパティを `Material`に設定することによって、素材を視覚的に表示できます。
 
 ```xaml
 <ContentPage Visual="Material"
@@ -85,14 +87,14 @@ ContentPage contentPage = new ContentPage();
 contentPage.Visual = VisualMarker.Material;
 ```
 
-[@No__t_1](xref:Xamarin.Forms.VisualElement.Visual)プロパティは、`IVisual` を実装する任意の型に設定できます。 [`VisualMarker`](xref:Xamarin.Forms.VisualMarker)クラスでは、次の `IVisual` プロパティを指定できます。
+`VisualElement.Visual` プロパティを `Material` に設定すると、アプリケーションでは、既定のレンダラーの代わりに素材ビジュアルレンダラーを使用するように指示されます。 [`Visual`](xref:Xamarin.Forms.VisualElement.Visual)プロパティは、`IVisual`を実装する任意の型に設定できます。 [`VisualMarker`](xref:Xamarin.Forms.VisualMarker)クラスでは、次の `IVisual` プロパティを指定できます。
 
 - `Default` –ビューが既定のレンダラーを使用して表示する必要があることを示します。
 - `MatchParent` –ビューが直接の親と同じレンダラーを使用する必要があることを示します。
 - `Material` –ビューがマテリアルレンダラーを使用して表示する必要があることを示します。
 
 > [!IMPORTANT]
-> [@No__t_1](xref:Xamarin.Forms.VisualElement.Visual)プロパティは[`VisualElement`](xref:Xamarin.Forms.VisualElement)クラスで定義され、ビューは親から `Visual` プロパティ値を継承します。 したがって、 [`ContentPage`](xref:Xamarin.Forms.ContentPage)の `Visual` プロパティを設定すると、ページ内のサポートされているすべてのビューでそのビジュアルが使用されるようになります。 また、`Visual` プロパティはビューでオーバーライドできます。
+> [`Visual`](xref:Xamarin.Forms.VisualElement.Visual)プロパティは[`VisualElement`](xref:Xamarin.Forms.VisualElement)クラスで定義され、ビューは親から `Visual` プロパティ値を継承します。 したがって、 [`ContentPage`](xref:Xamarin.Forms.ContentPage)の `Visual` プロパティを設定すると、ページ内のサポートされているすべてのビューでそのビジュアルが使用されるようになります。 また、`Visual` プロパティはビューでオーバーライドできます。
 
 次のスクリーンショットは、既定のレンダラーを使用して表示されるユーザーインターフェイスを示しています。
 
@@ -107,9 +109,13 @@ contentPage.Visual = VisualMarker.Material;
 > [!NOTE]
 > マテリアルデザインコンポーネントは、Google のガイドラインに密接に準拠しています。 そのため、素材デザインレンダラーは、そのサイズと動作にバイアスをかけます。 スタイルまたは動作をより細かく制御する必要がある場合でも、独自の[効果](~/xamarin-forms/app-fundamentals/effects/index.md)、[動作](~/xamarin-forms/app-fundamentals/behaviors/index.md)、または[カスタムレンダラー](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)を作成して、必要な詳細を実現できます。
 
-## <a name="customize-material-renderers"></a>素材レンダラーをカスタマイズする
+## <a name="customize-material-visual"></a>素材ビジュアルのカスタマイズ
 
-必要に応じて、次の基本クラスを使用して、既定のレンダラーと同様に、マテリアルレンダラーをカスタマイズすることもできます。
+Material Visual NuGet パッケージは、Xamarin. Forms コントロールを認識するレンダラーのコレクションです。 カスタマイズ (素材を) ビジュアルコントロールは、既定のコントロールのカスタマイズと同じです。
+
+既存のコントロールをカスタマイズすることを目標とする場合は、効果が推奨される方法です。 マテリアルビジュアルレンダラーが存在する場合は、レンダラーをサブクラス化するよりも効果があるため、コントロールをカスタマイズする作業はあまりありません。 効果の詳細については、「 [Xamarin. フォームの効果](~/xamarin-forms/app-fundamentals/effects/index.md)」を参照してください。
+
+カスタムレンダラーは、マテリアルレンダラーが存在しない場合に推奨される方法です。 次のレンダラークラスは、素材ビジュアルに含まれています。
 
 - `MaterialButtonRenderer`
 - `MaterialCheckBoxRenderer`
@@ -124,7 +130,7 @@ contentPage.Visual = VisualMarker.Material;
 - `MaterialSliderRenderer`
 - `MaterialStepperRenderer`
 
-次のコードは、`MaterialProgressBarRenderer` クラスをカスタマイズする例を示しています。
+素材レンダラーのサブクラス化は、非マテリアルレンダラーとほぼ同じです。 ただし、素材レンダラーをサブクラス化するレンダラーをエクスポートする場合は、`VisualMarker.MaterialVisual` 型を指定する `ExportRenderer` 属性に3番目の引数を指定する必要があります。
 
 ```csharp
 using Xamarin.Forms.Material.Android;
@@ -134,7 +140,7 @@ namespace MyApp.Android
 {
     public class CustomMaterialProgressBarRenderer : MaterialProgressBarRenderer
     {
-        ...
+        //...
     }
 }
 ```
@@ -142,7 +148,7 @@ namespace MyApp.Android
 この例では、`ExportRendererAttribute` は、`CustomMaterialProgressBarRenderer` クラスを使用して[`ProgressBar`](xref:Xamarin.Forms.ProgressBar)ビューを表示することを指定し、`IVisual` 型を3番目の引数として登録します。
 
 > [!NOTE]
-> @No__t_1 の一部として `IVisual` 型を指定するレンダラーは、既定のレンダラーではなくビューにオプトインを表示するために使用されます。 レンダラーの選択時に、ビューの [`Visual`] プロパティが検査され、レンダラーの選択プロセスに含まれます。
+> `ExportRendererAttribute`の一部として `IVisual` 型を指定するレンダラーは、既定のレンダラーではなくビューにオプトインを表示するために使用されます。 レンダラーの選択時に、ビューの [`Visual`] プロパティが検査され、レンダラーの選択プロセスに含まれます。
 
 カスタムレンダラーの詳細については、「[カスタムレンダラー](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)」を参照してください。
 
@@ -150,4 +156,5 @@ namespace MyApp.Android
 
 - [素材ビジュアル (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-visualdemos)
 - [Xamarin. Forms ビジュアルレンダラーを作成する](create.md)
+- [Xamarin. フォームの効果](~/xamarin-forms/app-fundamentals/effects/index.md)
 - [カスタム レンダラー](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)
