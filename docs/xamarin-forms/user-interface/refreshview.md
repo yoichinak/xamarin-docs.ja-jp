@@ -18,7 +18,7 @@ ms.locfileid: "72697741"
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-refreshview/)
 
-@No__t_0 は、スクロール可能なコンテンツに対してプルを更新する機能を提供するコンテナーコントロールです。 したがって、`RefreshView` の子は、 [`ScrollView`](xref:Xamarin.Forms.ScrollView)、 [`CollectionView`](xref:Xamarin.Forms.CollectionView)、 [`ListView`](xref:Xamarin.Forms.ListView)などのスクロール可能なコントロールである必要があります。
+`RefreshView ` は、スクロール可能なコンテンツに対してプルを更新する機能を提供するコンテナーコントロールです。 したがって、`RefreshView` の子は、 [`ScrollView`](xref:Xamarin.Forms.ScrollView)、 [`CollectionView`](xref:Xamarin.Forms.CollectionView)、 [`ListView`](xref:Xamarin.Forms.ListView)などのスクロール可能なコントロールである必要があります。
 
 `RefreshView` は、次のプロパティを定義します。
 
@@ -68,20 +68,20 @@ scrollView.Content = flexLayout;
 refreshView.Content = scrollView;
 ```
 
-この例では、`RefreshView` は、子が[`FlexLayout`](xref:Xamarin.Forms.FlexLayout)である[`ScrollView`](xref:Xamarin.Forms.ScrollView)にプルを更新する機能を提供します。 @No__t_0 は、バインド可能なレイアウトを使用して、項目のコレクションにバインドしてコンテンツを生成し、各項目の外観を[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)で設定します。 バインド可能なレイアウトの詳細については、「 [Xamarin. Forms でのバインド](~/xamarin-forms/user-interface/layouts/bindable-layouts.md)可能なレイアウト」を参照してください。
+この例では、`RefreshView` は、子が[`FlexLayout`](xref:Xamarin.Forms.FlexLayout)である[`ScrollView`](xref:Xamarin.Forms.ScrollView)にプルを更新する機能を提供します。 `FlexLayout` は、バインド可能なレイアウトを使用して、項目のコレクションにバインドしてコンテンツを生成し、各項目の外観を[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)で設定します。 バインド可能なレイアウトの詳細については、「 [Xamarin. Forms でのバインド](~/xamarin-forms/user-interface/layouts/bindable-layouts.md)可能なレイアウト」を参照してください。
 
-@No__t_0 プロパティの値は、`RefreshView` の現在の状態を示します。 ユーザーによって更新がトリガーされると、このプロパティは自動的に `true` に移行します。 更新が完了したら、プロパティを `false` にリセットする必要があります。
+`RefreshView.IsRefreshing` プロパティの値は、`RefreshView` の現在の状態を示します。 ユーザーによって更新がトリガーされると、このプロパティは自動的に `true` に移行します。 更新が完了したら、プロパティを `false` にリセットする必要があります。
 
 ユーザーが更新を開始すると、`Command` プロパティによって定義された `ICommand` が実行されます。これにより、表示される項目が更新されます。 更新が行われている間に、更新の視覚化が表示されます。これは、アニメーションの進行状況の円で構成されます。
 
 [![IOS と Android での RefreshView によるデータの更新のスクリーンショット](refreshview-images/default-progress-circle.png "RefreshView によるデータの更新")](refreshview-images/default-progress-circle-large.png#lightbox "RefreshView によるデータの更新")
 
 > [!NOTE]
-> @No__t_0 プロパティを手動で `true` に設定すると、更新視覚化がトリガーされ、`Command` プロパティによって定義された `ICommand` が実行されます。
+> `IsRefreshing` プロパティを手動で `true` に設定すると、更新視覚化がトリガーされ、`Command` プロパティによって定義された `ICommand` が実行されます。
 
 ## <a name="refreshview-appearance"></a>RefreshView の外観
 
-[@No__t_2](xref:Xamarin.Forms.VisualElement)クラスから継承 `RefreshView` プロパティに加えて、`RefreshView` `RefreshColor` プロパティも定義します。 このプロパティを設定して、更新中に表示される進行状況の円の色を定義できます。
+[`VisualElement`](xref:Xamarin.Forms.VisualElement)クラスから継承 `RefreshView` プロパティに加えて、`RefreshView` `RefreshColor` プロパティも定義します。 このプロパティを設定して、更新中に表示される進行状況の円の色を定義できます。
 
 ```xaml
 <RefreshView RefreshColor="Teal"

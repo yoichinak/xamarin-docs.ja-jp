@@ -42,7 +42,7 @@ using Xamarin.Forms.PlatformConfiguration.WindowsSpecific;
 refreshView.On<Windows>().SetRefreshPullDirection(RefreshPullDirection.LeftToRight);
 ```
 
-@No__t_0 メソッドは、このプラットフォーム固有のがユニバーサル Windows プラットフォーム上でのみ実行されることを指定します。 [@No__t_2](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)名前空間の `RefreshView.SetRefreshPullDirection` メソッドは、`RefreshView` のプル方向を設定するために使用されます。 `RefreshPullDirection` 列挙体には、次の4つの値を指定できます。
+`RefreshView.On<Windows>` メソッドは、このプラットフォーム固有のがユニバーサル Windows プラットフォーム上でのみ実行されることを指定します。 [`Xamarin.Forms.PlatformConfiguration.WindowsSpecific`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)名前空間の `RefreshView.SetRefreshPullDirection` メソッドは、`RefreshView` のプル方向を設定するために使用されます。 `RefreshPullDirection` 列挙体には、次の4つの値を指定できます。
 
 - `LeftToRight` は、左から右へのプルによって更新が開始されることを示します。
 - `TopToBottom` は、上から下へのプルによって更新が開始され、`RefreshView` の既定のプル方向であることを示します。
