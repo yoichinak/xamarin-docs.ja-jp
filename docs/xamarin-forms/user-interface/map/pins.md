@@ -215,7 +215,7 @@ wharfPin.InfoWindowClicked += async (s, args) =>
 
 ### <a name="choose-item-appearance-at-runtime"></a>実行時に項目の外観を選択する
 
-@No__t_0 コレクション内の各項目の外観は、項目の値に基づいて実行時に選択できます。そのためには、`ItemTemplateSelector` プロパティを[`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)に設定します。
+`IEnumerable` コレクション内の各項目の外観は、項目の値に基づいて実行時に選択できます。そのためには、`ItemTemplateSelector` プロパティを[`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)に設定します。
 
 ```xaml
 <ContentPage ...
@@ -265,7 +265,7 @@ public class MapItemTemplateSelector : DataTemplateSelector
 }
 ```
 
-@No__t_0 クラスは、さまざまなデータテンプレートに設定されている[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)プロパティの `DefaultTemplate` と `XamarinTemplate` を定義します。 @No__t_0 メソッドは、`XamarinTemplate` を返します。この場合、`Pin` がタップされたときに "Xamarin" というラベルが表示され、その項目に "サンフランシスコ" が含まれているアドレスが含まれています。 "サンフランシスコ" を含むアドレスが項目にない場合、`OnSelectTemplate` メソッドは `DefaultTemplate` を返します。
+`MapItemTemplateSelector` クラスは、さまざまなデータテンプレートに設定されている[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)プロパティの `DefaultTemplate` と `XamarinTemplate` を定義します。 `OnSelectTemplate` メソッドは、`XamarinTemplate` を返します。この場合、`Pin` がタップされたときに "Xamarin" というラベルが表示され、その項目に "サンフランシスコ" が含まれているアドレスが含まれています。 "サンフランシスコ" を含むアドレスが項目にない場合、`OnSelectTemplate` メソッドは `DefaultTemplate` を返します。
 
 データテンプレートセレクターの詳細については、「 [DataTemplateSelector の作成](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)」を参照してください。
 

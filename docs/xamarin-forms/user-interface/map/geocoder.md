@@ -18,11 +18,11 @@ ms.locfileid: "72778794"
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
-[@No__t_1](xref:Xamarin.Forms.Maps.Geocoder)クラスを使用すると、 [`Position`](xref:Xamarin.Forms.Maps.Position)オブジェクトに格納されている文字列アドレスと緯度座標と経度座標を変換できます。
+[`Geocoder`](xref:Xamarin.Forms.Maps.Geocoder)クラスを使用すると、 [`Position`](xref:Xamarin.Forms.Maps.Position)オブジェクトに格納されている文字列アドレスと緯度座標と経度座標を変換できます。
 
 ## <a name="geocode-an-address"></a>Geocode のアドレス
 
-[@No__t_1](xref:Xamarin.Forms.Maps.Geocoder)インスタンスを作成し `Geocoder` インスタンスで[`GetPositionsForAddressAsync`](xref:Xamarin.Forms.Maps.Geocoder.GetPositionsForAddressAsync*)メソッドを呼び出すことによって、市区町村を緯度および経度の座標にコード化できます。
+[`Geocoder`](xref:Xamarin.Forms.Maps.Geocoder)インスタンスを作成し `Geocoder` インスタンスで[`GetPositionsForAddressAsync`](xref:Xamarin.Forms.Maps.Geocoder.GetPositionsForAddressAsync*)メソッドを呼び出すことによって、市区町村を緯度および経度の座標にコード化できます。
 
 ```csharp
 using Xamarin.Forms.Maps;
@@ -34,11 +34,11 @@ Position position = approximateLocations.FirstOrDefault();
 string coordinates = $"{position.Latitude}, {position.Longitude}";
 ```
 
-[@No__t_1](xref:Xamarin.Forms.Maps.Geocoder.GetPositionsForAddressAsync*)メソッドは、アドレスを表す `string` 引数を受け取り、アドレスを表す[`Position`](xref:Xamarin.Forms.Maps.Position)オブジェクトのコレクションを非同期に返します。
+[`GetPositionsForAddressAsync`](xref:Xamarin.Forms.Maps.Geocoder.GetPositionsForAddressAsync*)メソッドは、アドレスを表す `string` 引数を受け取り、アドレスを表す[`Position`](xref:Xamarin.Forms.Maps.Position)オブジェクトのコレクションを非同期に返します。
 
 ## <a name="reverse-geocode-an-address"></a>Geocode の逆引き
 
-[@No__t_1](xref:Xamarin.Forms.Maps.Geocoder)インスタンスを作成し、`Geocoder` インスタンスで[`GetAddressesForPositionAsync`](xref:Xamarin.Forms.Maps.Geocoder.GetAddressesForPositionAsync*)メソッドを呼び出すことによって、緯度と経度の座標を住所に逆方向に変換できます。
+[`Geocoder`](xref:Xamarin.Forms.Maps.Geocoder)インスタンスを作成し、`Geocoder` インスタンスで[`GetAddressesForPositionAsync`](xref:Xamarin.Forms.Maps.Geocoder.GetAddressesForPositionAsync*)メソッドを呼び出すことによって、緯度と経度の座標を住所に逆方向に変換できます。
 
 ```csharp
 using Xamarin.Forms.Maps;
@@ -50,7 +50,7 @@ IEnumerable<string> possibleAddresses = await geoCoder.GetAddressesForPositionAs
 string address = possibleAddresses.FirstOrDefault();
 ```
 
-[@No__t_1](xref:Xamarin.Forms.Maps.Geocoder.GetAddressesForPositionAsync*)メソッドは、緯度と経度の座標で構成される[`Position`](xref:Xamarin.Forms.Maps.Position)引数を受け取り、その位置の近くにあるアドレスを表す文字列のコレクションを非同期に返します。
+[`GetAddressesForPositionAsync`](xref:Xamarin.Forms.Maps.Geocoder.GetAddressesForPositionAsync*)メソッドは、緯度と経度の座標で構成される[`Position`](xref:Xamarin.Forms.Maps.Position)引数を受け取り、その位置の近くにあるアドレスを表す文字列のコレクションを非同期に返します。
 
 ## <a name="related-links"></a>関連リンク
 
