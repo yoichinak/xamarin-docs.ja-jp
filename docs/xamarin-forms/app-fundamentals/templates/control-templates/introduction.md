@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
 ms.openlocfilehash: 70646999154297592137c6966626b318fb73897c
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70771267"
 ---
 # <a name="introduction-to-xamarinforms-control-templates"></a>Xamarin.Forms のコントロール テンプレートの概要
@@ -26,7 +26,7 @@ _Xamarin.Forms のコントロール テンプレートには、実行時にア�
 
 [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) にはページまたはビューの外観が指定され、ルート レイアウトが含まれています。また、レイアウト内には、テンプレートを実装するコントロールが含まれています。 通常、`ControlTemplate` では、ページまたはビューによって表示されるコンテンツが表示される場所をマークするために、[`ContentPresenter`](xref:Xamarin.Forms.ContentPresenter) が利用されます。 `ControlTemplate` を使用するページまたはビューでは、`ContentPresenter` によって表示されるコンテンツを定義します。 次の図は、青い四角形でマークされた `ContentPresenter` を含め、多数のコントロールがあるページの `ControlTemplate` を示しています。
 
-![](introduction-images/control-template.png "ページのコントロール テンプレート")
+![](introduction-images/control-template.png "Control Template for a Page")
 
 [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) を以下の種類に適用するには、その `ControlTemplate` プロパティを設定します。
 

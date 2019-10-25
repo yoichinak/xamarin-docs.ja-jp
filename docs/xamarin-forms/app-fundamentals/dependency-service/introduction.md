@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 06/12/2019
 ms.openlocfilehash: b27b4b0c3c5662c6cc1c2c151dd9ebe1523da3a4
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "71198520"
 ---
 # <a name="xamarinforms-dependencyservice-introduction"></a>Xamarin.Forms の DependencyService の概要
@@ -29,7 +29,7 @@ ms.locfileid: "71198520"
 
 次の図は、ネイティブ プラットフォームの機能が Xamarin.Forms アプリケーション内でどのように呼び出されるかを示しています。
 
-![Xamarin.Forms の DependencyService クラスを使用したサービスの場所の概要](introduction-images/dependency-service.png "DependencyService サービスの場所")
+![Xamarin.Forms DependencyService クラスを使用したサービスの場所の概要](introduction-images/dependency-service.png "DependencyService サービスの場所")
 
 ## <a name="create-an-interface"></a>インターフェイスの作成
 
