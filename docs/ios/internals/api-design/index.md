@@ -63,7 +63,7 @@ Objective-C のコードと通信する低レベルのランタイムは、[Mono
 
 - ネイティブ C# 型:
 
-  - [`NSString`となり`string`](~/ios/internals/api-design/nsstring.md)
+  - [`NSString`は`string`となります](~/ios/internals/api-design/nsstring.md)
   - `uint` C# C#属性を使用`int` して列挙型に列挙されている必要があるパラメーターと`[Flags]`パラメーターを設定する
   - 型に依存`NSArray`しないオブジェクトではなく、配列を厳密に型指定された配列として公開します。
   - イベントと通知の場合は、次のいずれかの選択肢をユーザーに提供します。
@@ -78,7 +78,7 @@ Objective-C のコードと通信する低レベルのランタイムは、[Mono
 
 ### <a name="assemblies"></a>アセンブリ
 
-Xamarin.iOS には、 *Xamarin.IOS Profile*を構成するさまざまなアセンブリが含まれています。 [[アセンブリ](~/cross-platform/internals/available-assemblies.md)] ページに詳細情報があります。
+Xamarin.iOS には、 *Xamarin.iOS Profile*を構成するさまざまなアセンブリが含まれています。 [[アセンブリ](~/cross-platform/internals/available-assemblies.md)] ページに詳細情報があります。
 
 ### <a name="major-namespaces"></a>主要な名前空間
 
@@ -95,7 +95,7 @@ Xamarin.iOS は、C# で Objective-C のクラスの階層をミラーリング�
 
 この名前空間には、基になる Objective-C からの型のバインドが用意されていますが、いくつかのケースでは、基になる型を .NET 型にマップしています。 例えば:
 
-- このランタイムでは、 [nsstring](https://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString.html)と[nsstring](https://developer.apple.com/library/ios/#documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html)を処理する代わりにC#、これらを[文字列型](xref:System.String)および厳密に型指定された[配列](xref:System.Array)として API 全体に公開しています。
+- このランタイムでは、 [NSString](https://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString.html)と[NSArray](https://developer.apple.com/library/ios/#documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html)を処理する代わりに、これらを C# の[string](xref:System.String)および厳密に型指定された[配列](xref:System.Array)として API 全体に公開しています。
 
 - ここでは、開発者が Xamarin.iOS によって現在バインドされていないサードパーティの Objective-C Api、他の iOS Api、Api をバインドできるようにするために、さまざまなヘルパー Api が公開されています。
 
