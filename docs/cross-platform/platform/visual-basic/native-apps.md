@@ -3,15 +3,15 @@ title: Xamarin Android と Xamarin の Visual Basic
 description: このチュートリアルでは、Visual Basic.NET で記述されたビジネスロジックを使用するネイティブ Xamarin iOS および Xamarin Android アプリをビルドする方法について説明します。
 ms.prod: xamarin
 ms.assetid: 455fda67-3879-4299-8036-b12840e6a498
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/24/2019
-ms.openlocfilehash: ea4dc91b262c2ae153088f6e1a8416cc01cb0fa9
-ms.sourcegitcommit: f8583585c501607fdfa061b95e9a9f385ed1d591
+ms.openlocfilehash: 9f227f51596a4ed93fd830c3f3495a90c1f7f722
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "72959118"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73014559"
 ---
 # <a name="visual-basic-in-xamarin-android-and-ios"></a>Xamarin Android および iOS の Visual Basic
 

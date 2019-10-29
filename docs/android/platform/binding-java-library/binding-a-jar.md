@@ -4,15 +4,15 @@ description: このチュートリアルでは、Android から Xamarin Android 
 ms.prod: xamarin
 ms.assetid: 93F1D5C5-E2AF-46EA-8460-485A0860C176
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/11/2018
-ms.openlocfilehash: 9a9e7e9c5d189527d4fbdcc2001d6f003fa63dd7
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 59969abae739db1d9035ec31738c39a3912f47ae
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70757878"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73027768"
 ---
 # <a name="binding-a-jar"></a>.JAR のバインド
 
@@ -30,12 +30,12 @@ Xamarin ツールは、1つ以上の入力からバインドライブラリを�
 
 生成された MCW コードは、JNI (Java Native Interface) を使用して、API 呼び出しを基になるに転送します。JAR ファイル。 任意ののバインドライブラリを作成できます。Android と共に使用することを目的とした JAR ファイル (Xamarin ツールは、現在 Android 以外の Java ライブラリのバインドをサポートしていないことに注意してください)。 の内容を含めずに、バインドライブラリを構築することもできます。DLL がに依存していることを示す JAR ファイル。実行時の JAR。
 
-このガイドでは、1つのにバインドライブラリを作成する方法の基本について説明します。JAR ファイル。 ここでは、バインドのカスタマイズやデバッグが&ndash;不要な場合に、すべてが適切に動作する例を示します。 
+このガイドでは、1つのにバインドライブラリを作成する方法の基本について説明します。JAR ファイル。 ここでは、すべてが &ndash; 適切に動作する例を示します。この例では、バインドのカスタマイズやデバッグは必要ありません。 
 [メタデータを使用してバインディングを作成](~/android/platform/binding-java-library/customizing-bindings/java-bindings-metadata.md)すると、バインディングプロセスが完全に自動ではなく、一部の手動操作が必要になる、より高度なシナリオの例が提供されます。 一般的な Java ライブラリバインディングの概要 (基本的なコード例を含む) については、「 [Java ライブラリのバインド](~/android/platform/binding-java-library/index.md)」を参照してください。 
 
 ## <a name="walkthrough"></a>チュートリアル
 
-次のチュートリアルでは、バインド ライブラリを作成します[Picasso](http://square.github.io/picasso/)、人気のある Android。イメージの読み込みとキャッシュ機能を提供する JAR です。 次の手順を使用してバインドは**picasso-2.x.x.jar** Xamarin.Android プロジェクトで使用できる新しい .NET アセンブリを作成します。 
+次のチュートリアルでは、人気のある Android である[ピカソ](https://square.github.io/picasso/)のバインドライブラリを作成します。イメージの読み込みとキャッシュ機能を提供する JAR。 **Picasso-2**をバインドするには、次の手順を使用して、Xamarin. Android プロジェクトで使用できる新しい .net アセンブリを作成します。 
 
 1. 新しい Java バインドライブラリプロジェクトを作成します。
 
@@ -47,7 +47,7 @@ Xamarin ツールは、1つ以上の入力からバインドライブラリを�
 
 5. バインドライブラリをビルドします。
 
-バインド ライブラリを作成したら、バインド ライブラリ API を呼び出すことを示す小規模な Android アプリを開発します。 この例でのメソッドにアクセスする**picasso-2.x.x.jar**:
+バインドライブラリを作成したら、バインドライブラリで Api を呼び出す機能を示す小さな Android アプリを開発します。 この例では、 **picasso-2**のメソッドにアクセスします。
 
 ```java
 package com.squareup.picasso
@@ -62,7 +62,7 @@ public class Picasso
 }
 ```
 
-バインド ライブラリを生成後**picasso-2.x.x.jar**からこれらのメソッドを呼び出しC#します。 例えば:
+**Picasso-2**のバインドライブラリを生成した後は、からC#これらのメソッドを呼び出すことができます。 (例:
 
 ```csharp
 using Com.Squareup.Picasso;
@@ -75,31 +75,31 @@ Picasso.With (this)
 
 ### <a name="creating-the-bindings-library"></a>バインドライブラリの作成
 
-次の手順を開始する前にダウンロード[picasso-2.x.x.jar](http://repo1.maven.org/maven2/com/squareup/picasso/picasso/2.5.2/picasso-2.5.2.jar)します。
+以下の手順を実行する前に、 [picasso-2](http://repo1.maven.org/maven2/com/squareup/picasso/picasso/2.5.2/picasso-2.5.2.jar)をダウンロードしてください。
 
 最初に、新しいバインドライブラリプロジェクトを作成します。 Visual Studio for Mac または Visual Studio で、新しいソリューションを作成し、[ *Android バインドライブラリ*] テンプレートを選択します。 (このチュートリアルのスクリーンショットでは Visual Studio を使用しますが、Visual Studio for Mac はよく似ています)。ソリューションに**JarBinding**という名前を指定します。 
 
-[![JarBinding ライブラリプロジェクトの作成](binding-a-jar-images/01-new-bindings-library-sml.w157.png)](binding-a-jar-images/01-new-bindings-library.w157.png#lightbox)
+[JarBinding ライブラリプロジェクトを作成![には](binding-a-jar-images/01-new-bindings-library-sml.w157.png)](binding-a-jar-images/01-new-bindings-library.w157.png#lightbox)
 
 テンプレートには、を追加する**jar**フォルダーが含まれています。バインドライブラリプロジェクトへの JAR。 **[Jar]** フォルダーを右クリックし、 **[既存の項目の追加 >]** を選択します。 
 
 [![既存の項目を追加する](binding-a-jar-images/02-add-existing-item-sml.png)](binding-a-jar-images/02-add-existing-item.png#lightbox)
 
-移動し、**picasso-2.x.x.jar**ファイルが以前にダウンロードし、選択し、をクリックして**追加**: 
+先ほどダウンロードした**picasso-2**ファイルに移動し、それを選択して **[追加]** をクリックします。 
 
-[![Jar ファイルを選択し、[追加] をクリックします。](binding-a-jar-images/03-select-jar-file-sml.png)](binding-a-jar-images/03-select-jar-file.png#lightbox)
+[jar ファイルを選択![、[追加] をクリックします。](binding-a-jar-images/03-select-jar-file-sml.png)](binding-a-jar-images/03-select-jar-file.png#lightbox)
 
-いることを確認、**picasso-2.x.x.jar**ファイルがプロジェクトに正常に追加します。 
+**Picasso-2**ファイルがプロジェクトに正常に追加されたことを確認します。 
 
-[![プロジェクトに追加された Jar](binding-a-jar-images/04-jar-added-sml.png)](binding-a-jar-images/04-jar-added.png#lightbox)
+[プロジェクトに追加された![Jar](binding-a-jar-images/04-jar-added-sml.png)](binding-a-jar-images/04-jar-added.png#lightbox)
 
 Java バインドライブラリプロジェクトを作成する場合は、を指定する必要があります。JAR は、バインドライブラリに埋め込まれるか、個別にパッケージ化されます。 これを行うには、次のいずれかの*ビルドアクション*を指定します。 
 
-- **EmbeddedJar**&ndash; 。JAR はバインドライブラリに埋め込まれます。
+- **EmbeddedJar** &ndash; ます。JAR はバインドライブラリに埋め込まれます。
 
-- **Inputjar**&ndash; 。JAR はバインドライブラリとは別に保持されます。
+- **Inputjar**は &ndash; ます。JAR はバインドライブラリとは別に保持されます。
 
-通常は、 **EmbeddedJar**ビルドアクションを使用して、をにします。JAR は自動的にバインドライブラリにパッケージ化されます。 これは、の最も&ndash;簡単なオプションの Java バイトコードです。JAR は、Dex バイトコードに変換され、APK に (マネージ呼び出し可能ラッパーと共に) 埋め込まれます。 を保持する場合は。JAR はバインドライブラリとは別に、 **Inputjar**オプションを使用することができます。ただし、であることを確認する必要があります。JAR ファイルは、アプリを実行するデバイスで使用できます。 
+通常は、 **EmbeddedJar**ビルドアクションを使用して、をにします。JAR は自動的にバインドライブラリにパッケージ化されます。 これは、の Java バイトコード &ndash; 最も簡単なオプションです。JAR は、Dex バイトコードに変換され、APK に (マネージ呼び出し可能ラッパーと共に) 埋め込まれます。 を保持する場合は。JAR はバインドライブラリとは別に、 **Inputjar**オプションを使用することができます。ただし、であることを確認する必要があります。JAR ファイルは、アプリを実行するデバイスで使用できます。 
 
 ビルドアクションを**EmbeddedJar**に設定します。 
 
@@ -109,9 +109,9 @@ Java バインドライブラリプロジェクトを作成する場合は、を
 
 バインドライブラリのターゲット API レベルを設定します (この例では API レベル19を使用しています)。 
 
-[![API 19 に設定されるターゲット API レベル](binding-a-jar-images/06-set-target-framework-sml.png)](binding-a-jar-images/06-set-target-framework.png#lightbox)
+[API 19 に設定さ![ターゲット API レベル](binding-a-jar-images/06-set-target-framework-sml.png)](binding-a-jar-images/06-set-target-framework.png#lightbox)
 
-最後に、バインドライブラリをビルドします。 いくつかの警告メッセージが表示される場合がありますが、バインドライブラリプロジェクトは正常にビルドされ、出力が生成されます。次の場所にある DLL:**JarBinding/bin/Debug/JarBinding**
+最後に、バインドライブラリをビルドします。 いくつかの警告メッセージが表示される場合がありますが、バインドライブラリプロジェクトは正常にビルドされ、出力が生成されます。次の場所にある DLL: **JarBinding/bin/Debug/JarBinding**
 
 ### <a name="using-the-bindings-library"></a>バインドライブラリの使用
 
@@ -121,11 +121,11 @@ Java バインドライブラリプロジェクトを作成する場合は、を
 
 2. を呼び出します。マネージド呼び出し可能ラッパーを使用した JAR。 
 
-次の手順では、バインドライブラリを使用しての`ImageView`イメージをダウンロードして表示する最小限のアプリを作成します。 "重い処理" は、に存在するコードによって行われます。JAR ファイル。 
+次の手順では、バインドライブラリを使用して、`ImageView`のイメージをダウンロードして表示する最小限のアプリを作成します。"重い処理" は、に存在するコードによって行われます。JAR ファイル。 
 
 まず、バインドライブラリを使用する新しい Xamarin Android アプリを作成します。 ソリューションを右クリックし、 **[新しいプロジェクトの追加]** を選択します。新しいプロジェクトに**Bindingtest**という名前を指定します。 このチュートリアルを簡略化するために、このアプリをバインドライブラリと同じソリューションに作成しています。ただし、バインドライブラリを使用するアプリケーションは、別のソリューションに存在する可能性があります。 
 
-[![新しい BindingTest プロジェクトの追加](binding-a-jar-images/07-add-new-project-sml.w157.png)](binding-a-jar-images/07-add-new-project.w157.png#lightbox)
+[新しい BindingTest プロジェクトの追加![](binding-a-jar-images/07-add-new-project-sml.w157.png)](binding-a-jar-images/07-add-new-project.w157.png#lightbox)
 
 **Bindingtest**プロジェクトの **[参照]** ノードを右クリックし、 **[参照の追加]** を選択します。
 
@@ -133,13 +133,13 @@ Java バインドライブラリプロジェクトを作成する場合は、を
 
 前の手順で作成した**JarBinding**プロジェクトを確認し、[ **OK]** をクリックします。
 
-[![JarBinding プロジェクトの選択](binding-a-jar-images/09-choose-jar-binding-sml.png)](binding-a-jar-images/09-choose-jar-binding.png#lightbox)
+[JarBinding プロジェクトの選択![](binding-a-jar-images/09-choose-jar-binding-sml.png)](binding-a-jar-images/09-choose-jar-binding.png#lightbox)
 
 **Bindingtest**プロジェクトの **[参照設定]** ノードを開き、 **JarBinding**参照が存在することを確認します。 
 
-[![[参照] の下に JarBinding が表示される](binding-a-jar-images/10-references-shows-jarbinding-sml.png)](binding-a-jar-images/10-references-shows-jarbinding.png#lightbox)
+[![JarBinding が [参照] の下に表示される](binding-a-jar-images/10-references-shows-jarbinding-sml.png)](binding-a-jar-images/10-references-shows-jarbinding.png#lightbox)
 
-**Bindingtest**レイアウト (メインの**axml**) を`ImageView`次のように変更します。
+**Bindingtest**レイアウト (メインの**axml**) を次のように変更します。これにより、1つの `ImageView`が含まれるようになります。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -156,13 +156,13 @@ Java バインドライブラリプロジェクトを作成する場合は、を
 </LinearLayout>
 ```
 
-次`using`のステートメントを**MainActivity.cs** &ndash;に追加します。これにより、バインドライブラリに存在する Java `Picasso`ベースのクラスのメソッドに簡単にアクセスできるようになります。
+次の `using` ステートメントを**MainActivity.cs**に追加すると、バインドライブラリに存在する Java ベースの `Picasso` クラスのメソッドに簡単にアクセスできるようになり &ndash; ます。
 
 ```csharp
 using Com.Squareup.Picasso;
 ```
 
-クラスを使用して URL からイメージを読み込み、に表示するように`ImageView`メソッドを変更します。`OnCreate` `Picasso` 
+`Picasso` クラスを使用して URL からイメージを読み込み、`ImageView`に表示するように `OnCreate` メソッドを変更します。 
 
 ```csharp
 public class MainActivity : Activity
@@ -183,7 +183,7 @@ public class MainActivity : Activity
 
 **Bindingtest**プロジェクトをコンパイルして実行します。 アプリが起動し、短い遅延 (ネットワークの状態によって異なります) が発生すると、次のスクリーンショットのようなイメージがダウンロードされて表示されます。
 
-[![BindingTest が実行されているスクリーンショット](binding-a-jar-images/11-result-sml.png)](binding-a-jar-images/11-result.png#lightbox)
+[BindingTest が実行されている![スクリーンショット](binding-a-jar-images/11-result-sml.png)](binding-a-jar-images/11-result.png#lightbox)
 
 おめでとうございます! Java ライブラリが正常にバインドされました。JAR を作成し、Xamarin. Android アプリで使用します。
 

@@ -3,19 +3,19 @@ title: クロスプラットフォーム アプリケーションの構築
 description: このセクションでは、概要と6つの部分について説明します。 xamarin の開発プラットフォームを使用してアプリケーションを構築する方法については、Xamarin の機能を理解してモバイルアプリを設計し、さまざまなアプリストアにテストして展開する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 442FC40A-84DD-A218-0D15-EAD86594B6D7
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 01/28/2016
-ms.openlocfilehash: 2c630e58ff5a1221ec9e95099df4781041ecf2b4
-ms.sourcegitcommit: dad4dfcd194b63ec9e903363351b6d9e543d4888
+ms.openlocfilehash: b3444b962a032ceaeeba36f63ad975b3d80a9f14
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "70288053"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016927"
 ---
 # <a name="building-cross-platform-applications"></a>クロスプラットフォーム アプリケーションの構築
 
-クロスプラットフォームモバイルアプリケーション間でコードを共有するには、次の2つのオプションがあります。共有アセットプロジェクトとポータブルクラスライブラリ。 これらのオプションについては、[こちら](~/cross-platform/app-fundamentals/code-sharing.md)を参照してください。[ポータブルクラスライブラリ](~/cross-platform/app-fundamentals/pcl.md)と[共有プロジェクト](~/cross-platform/app-fundamentals/shared-projects.md)の詳細については、こちらも参照してください。
+クロスプラットフォームモバイルアプリケーション間でコードを共有するには、共有アセットプロジェクトとポータブルクラスライブラリの2つのオプションがあります。 これらのオプションについては、[こちら](~/cross-platform/app-fundamentals/code-sharing.md)を参照してください。[ポータブルクラスライブラリ](~/cross-platform/app-fundamentals/pcl.md)と[共有プロジェクト](~/cross-platform/app-fundamentals/shared-projects.md)の詳細については、こちらも参照してください。
 
 <a name="Sections" />
 
@@ -35,7 +35,7 @@ ms.locfileid: "70288053"
 
  <a name="Cross-Platform_Mobile_Application_Case_Studies" />
 
-## <a name="case-studies"></a>ケース スタディ
+## <a name="case-studies"></a>ケーススタディ
 
 このドキュメントで説明されている原則は、サンプルアプリケーション*Tasky*と、 [Xamarin CRM](https://xamarin.com/prebuilt/#xamarincrm)のような[事前に構築](https://xamarin.com/prebuilt)されたアプリケーションについて説明します。
 
@@ -46,7 +46,7 @@ ms.locfileid: "70288053"
 Tasky は、iOS、Android、および Windows Phone 用の単純な to do list アプリケーションです。
 Xamarin を使用してクロスプラットフォームアプリケーションを作成し、ローカルの SQLite データベースを使用する方法の基本について説明します。
 
- リスト[![tasky リスト](images/iphone-list-sml.png)](images/iphone-list.png#lightbox)の[![tasky](images/iphone-list-sml.png)](images/iphone-list.png#lightbox)
+ tasky リスト[![](images/iphone-list-sml.png)](images/iphone-list.png#lightbox) tasky リストを[![](images/iphone-list-sml.png)](images/iphone-list.png#lightbox)
 
 [Tasky のケーススタディ](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)を参照してください。
 
@@ -63,8 +63,8 @@ Xamarin を使用してクロスプラットフォームアプリケーション
 ## <a name="related-links"></a>関連リンク
 
 - [コード共有のオプション](~/cross-platform/app-fundamentals/code-sharing.md)
-- [Case の学習:Tasky ](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)
+- [ケース スタディ: Tasky](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)
 - [Tasky サンプルアプリ (github)](https://docs.microsoft.com/samples/xamarin/mobile-samples/taskyportable/)
-- [Xamarin モバイルアプリケーション開発:クロスプラットフォームC#および Xamarin. Forms の基礎 (Amazon) ](http://www.amazon.com/Xamarin-Mobile-Application-Development-Cross-Platform/dp/1484202155/)
-- [Greg Shackles C#によるモバイル開発 (O'Reilly)](http://shop.oreilly.com/product/0636920024002.do)
-- [Scott Olson、John Hunter、 C# Ben Horgen、Kenny Goers (Wrox) によるプロフェッショナルなクロスプラットフォームモバイル開発](http://www.wrox.com/WileyCDA/WroxTitle/Professional-Cross-Platform-Mobile-Development-in-C-.productCd-1118157702.html)
+- [Xamarin モバイルアプリケーション開発: クロスプラットフォームC#および Xamarin. Forms の基礎 (Amazon)](https://www.amazon.com/Xamarin-Mobile-Application-Development-Cross-Platform/dp/1484202155/)
+- [Greg Shackles C#によるモバイル開発 (O'Reilly)](https://shop.oreilly.com/product/0636920024002.do)
+- [Scott Olson、John Hunter、 C# Ben Horgen、Kenny Goers (Wrox) によるプロフェッショナルなクロスプラットフォームモバイル開発](https://www.wrox.com/WileyCDA/WroxTitle/Professional-Cross-Platform-Mobile-Development-in-C-.productCd-1118157702.html)

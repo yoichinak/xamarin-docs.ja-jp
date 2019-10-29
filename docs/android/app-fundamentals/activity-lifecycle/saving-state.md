@@ -4,15 +4,15 @@ description: アクティビティライフサイクルガイドでは、状態�
 ms.prod: xamarin
 ms.assetid: A6090101-67C6-4BDD-9416-F2FB74805A87
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/01/2018
-ms.openlocfilehash: febb9b297712a97c03613468b79ca583ec300e77
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: e449e6a62d0c8ca283f20c689477c1f1482611c5
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69887725"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73017000"
 ---
 # <a name="walkthrough---saving-the-activity-state"></a>チュートリアル - アクティビティの状態を保存する
 
@@ -20,9 +20,9 @@ _アクティビティライフサイクルガイドでは、状態の保存の�
 
 ## <a name="activity-state-walkthrough"></a>アクティビティの状態のチュートリアル
 
-( [Activitylifecycle サイクル](https://docs.microsoft.com/samples/xamarin/monodroid-samples/activitylifecycle)サンプルで) **ActivityLifecycle_Start**プロジェクトを開き、ビルドして実行します。 これは、アクティビティのライフサイクルを示す2つのアクティビティと、さまざまなライフサイクルメソッドの呼び出し方法を示す、非常に単純なプロジェクトです。 アプリケーションを起動すると、次の`MainActivity`画面が表示されます。
+( [Activitylifecycle サイクル](https://docs.microsoft.com/samples/xamarin/monodroid-samples/activitylifecycle)サンプルで) **ActivityLifecycle_Start**プロジェクトを開き、ビルドして実行します。 これは、アクティビティのライフサイクルを示す2つのアクティビティと、さまざまなライフサイクルメソッドの呼び出し方法を示す、非常に単純なプロジェクトです。 アプリケーションを起動すると、`MainActivity` の画面が表示されます。
 
-[![アクティビティの画面](saving-state-images/01-activity-a-sml.png)](saving-state-images/01-activity-a.png#lightbox)
+[画面![アクティビティ](saving-state-images/01-activity-a-sml.png)](saving-state-images/01-activity-a.png#lightbox)
 
 ### <a name="viewing-state-transitions"></a>状態遷移の表示
 
@@ -63,13 +63,13 @@ _アクティビティライフサイクルガイドでは、状態の保存の�
 
 ### <a name="adding-a-click-counter"></a>Click カウンターを追加する
 
-次に、アプリケーションを変更して、クリックされた回数をカウントして表示するボタンを作成します。 まず、インスタンス変数を`_counter`次のように`MainActivity`追加してみましょう。
+次に、アプリケーションを変更して、クリックされた回数をカウントして表示するボタンを作成します。 まず、`MainActivity`に `_counter` インスタンス変数を追加してみましょう。
 
 ```csharp
 int _counter = 0;
 ```
 
-次に、 **Resource/layout/Main axml**レイアウトファイルを編集し、ユーザーがボタンを`clickButton`クリックした回数を表示する新しいを追加します。 結果の**Main**は次のようになります。 
+次に、 **Resource/layout/Main axml**レイアウトファイルを編集し、ユーザーがボタンをクリックした回数を表示する新しい `clickButton` を追加します。 結果の**Main**は次のようになります。 
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -90,7 +90,7 @@ int _counter = 0;
 </LinearLayout>
 ```
 
-このコードの[OnCreate](xref:Android.App.Activity.OnCreate*) `MainActivity`メソッドの末尾に次のコードを追加して、 `clickButton`からのクリックイベントを処理します。 &ndash;
+`MainActivity` の[OnCreate](xref:Android.App.Activity.OnCreate*)メソッドの末尾に次のコードを追加します。このコードは `clickButton`からのクリックイベントを処理 &ndash; ます。
 
 ```csharp
 var clickbutton = FindViewById<Button> (Resource.Id.clickButton);
@@ -104,13 +104,13 @@ clickbutton.Click += (object sender, System.EventArgs e) =>
 } ;
 ```
 
-アプリを再度ビルドして実行すると、新しいボタンが表示されます。このボタン`_counter`をクリックするたびにの値が増加し、表示されます。
+アプリを再度ビルドして実行すると、新しいボタンが表示されます。このボタンをクリックするたびに `_counter` の値が表示されます。
 
-[![タッチカウントの追加](saving-state-images/03-touched-sml.png)](saving-state-images/03-touched.png#lightbox)
+[タッチカウントの追加![](saving-state-images/03-touched-sml.png)](saving-state-images/03-touched.png#lightbox)
 
 ただし、デバイスを横モードに回転させると、この数は失われます。
 
-[![横方向に回転すると、カウントがゼロに設定されます](saving-state-images/05-rotate-nosave-sml.png)](saving-state-images/05-rotate-nosave.png#lightbox)
+[横方向への回転![、カウントをゼロに戻します](saving-state-images/05-rotate-nosave-sml.png)](saving-state-images/05-rotate-nosave.png#lightbox)
 
 アプリケーションの出力を調べると、[縦] モードから [横] モードへの回転中に、*アクティビティ A*が一時停止、停止、破棄、再作成、再起動、再開されたことがわかります。 
 
@@ -128,7 +128,7 @@ clickbutton.Click += (object sender, System.EventArgs e) =>
 
 ### <a name="adding-code-to-preserve-instance-state"></a>インスタンスの状態を保持するコードの追加
 
-インスタンスの状態を保存する`MainActivity`ためのメソッドをに追加してみましょう。 *アクティビティ A*が破棄される前に、Android は自動的に[OnSaveInstanceState](xref:Android.App.Activity.OnSaveInstanceState*)を呼び出し、インスタンスの状態を格納するために使用できる[バンドル](xref:Android.OS.Bundle)を渡します。 それを使用して、クリック数を整数値として保存してみましょう。
+インスタンスの状態を保存する `MainActivity` するメソッドを追加してみましょう。 *アクティビティ A*が破棄される前に、Android は自動的に[OnSaveInstanceState](xref:Android.App.Activity.OnSaveInstanceState*)を呼び出し、インスタンスの状態を格納するために使用できる[バンドル](xref:Android.OS.Bundle)を渡します。 それを使用して、クリック数を整数値として保存してみましょう。
 
 ```csharp
 protected override void OnSaveInstanceState (Bundle outState)
@@ -141,7 +141,7 @@ protected override void OnSaveInstanceState (Bundle outState)
 }
 ```
 
-*アクティビティ A*を再作成して再開すると、 `Bundle` Android はこれ`OnCreate`をメソッドに渡します。 にコードを`OnCreate`追加して、渡さ`_counter`れた`Bundle`から値を復元してみましょう。 が定義されている`clickbutton`行の直前に、次のコードを追加します。 
+*アクティビティ A*を再作成して再開すると、Android はこの `Bundle` を `OnCreate` 方法に戻します。 `OnCreate` にコードを追加して、渡された `Bundle`から `_counter` 値を復元してみましょう。 `clickbutton` が定義されている行の直前に、次のコードを追加します。 
 
 ```csharp
 if (bundle != null)
@@ -153,7 +153,7 @@ if (bundle != null)
 
 もう一度アプリをビルドして実行し、2番目のボタンを数回クリックします。 デバイスを横モードに回転させると、カウントは保持されます。
 
-[![画面を回転すると、保持される4の数が示されます。](saving-state-images/06-rotate-save-sml.png)](saving-state-images/06-rotate-save.png#lightbox)
+[画面の回転![は、保持されている4の数を示します。](saving-state-images/06-rotate-save-sml.png)](saving-state-images/06-rotate-save.png#lightbox)
 
 出力ウィンドウを見て、何が起こったかを見てみましょう。
 
@@ -169,9 +169,9 @@ if (bundle != null)
 [ActivityLifecycle.MainActivity] Activity A - OnResume
 ```
 
-[OnStop](xref:Android.App.Activity.OnStop)メソッドが呼び出される前に、新しい`OnSaveInstanceState`メソッドが呼び出され、値`_counter` `Bundle`がに保存されました。 Android では`Bundle` 、 `OnCreate`メソッドを呼び出したときに、これを microsoft に戻しました。これを使用`_counter`して、中断した場所に値を復元できました。
+[OnStop](xref:Android.App.Activity.OnStop)メソッドが呼び出される前に、新しい `OnSaveInstanceState` メソッドが呼び出され、`_counter` の値が `Bundle`に保存されました。 Android では、`OnCreate` 方法を呼び出したときにこの `Bundle` が米国に戻されました。これを使用して、中断した場所に `_counter` 値を復元できました。
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>まとめ
 
 この記事では、アクティビティのライフサイクルに関する知識を使用して、状態データを保持しました。
 

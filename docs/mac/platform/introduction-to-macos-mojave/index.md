@@ -4,15 +4,15 @@ description: このドキュメントでは、macOS Mojave の新機能と更新
 ms.prod: xamarin
 ms.assetid: 4A41CD85-C807-44C9-85AB-B5441B145A73
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: 2878d1bea3590b8c3a7aabfebef8a0f2cca67551
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 8c296e32fd0d1491c83ea3cb16e0921c0f0c5f12
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292951"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73017043"
 ---
 # <a name="introduction-to-macos-mojave"></a>macOS Mojave の概要
 
@@ -38,7 +38,7 @@ Xamarin を使用した macOS Mojave アプリの構築を開始するには、 
 
 ## <a name="network-framework"></a>ネットワークフレームワーク
 
-IOS アプリケーションで一般的に使用され`URLSession`ている api の基礎となるネットワークスタックが、スタンドアロンフレームワークとして使用できるようになりました。これにより、TCP、UDP、TLS、IPv4/IPv6 などを簡単に操作できます。
+Network framework は、iOS アプリケーションで一般的に使用される `URLSession` Api の基礎となるネットワークスタックをスタンドアロンフレームワークとして使用できるようになり、TCP、UDP、TLS、IPv4/IPv6 などを簡単に操作できるようになりました。
 
 ## <a name="deprecations"></a>廃止
 

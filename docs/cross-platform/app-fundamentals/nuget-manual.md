@@ -3,15 +3,15 @@ title: Xamarin の NuGet パッケージを手動で作成する
 description: このドキュメントには、Xamarin プラットフォームを対象とする NuGet パッケージの構築に役立つヒントが含まれています。 NuGet パッケージ Xamarin プロファイル、プラットフォーム依存関係を備えた PCL Nuget、さまざまなオープンソースサンプルへのリンクについて説明します。
 ms.prod: xamarin
 ms.assetid: a5964686-5fc6-4280-b087-7ba27cc1c8bf
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 88feea4c0a638da99a0316d802f04f08f0fea689
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 583b1cb9e53ef0fb1002bc73ba53d063f99eff7c
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289203"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016777"
 ---
 # <a name="manually-creating-nuget-packages-for-xamarin"></a>Xamarin の NuGet パッケージを手動で作成する
 
@@ -51,7 +51,7 @@ _このページには、Xamarin プラットフォームを対象とする NuGe
 
 小数点のない一連の数値を使用してバージョンを指定することも、小数点を使用して指定することもできます。 小数点がない場合、NuGet は各数字の間に '. ' を挿入することによって、各数値を取得し、それを1つのバージョンに変換します。
 
-上記の "MonoAndroid10" は "Android 1.0" を意味します。 これは、プロジェクトの[ターゲットフレームワーク](~/android/app-fundamentals/android-api-levels.md)がモノ android バージョン1.0 以降である必要があることを意味します。 バージョンは、プロジェクトファイルの`<TargetFrameworkVersion>`要素で指定されます。
+上記の "MonoAndroid10" は "Android 1.0" を意味します。 これは、プロジェクトの[ターゲットフレームワーク](~/android/app-fundamentals/android-api-levels.md)がモノ android バージョン1.0 以降である必要があることを意味します。 バージョンは、プロジェクトファイルの `<TargetFrameworkVersion>` 要素で指定されます。
 
 明確にするには:
 
@@ -63,11 +63,11 @@ _このページには、Xamarin プラットフォームを対象とする NuGe
 
 PCL プロファイルは、アクセスできる .NET framework Api に限定されており、プラットフォーム固有のコードにはアクセスできません。 これらのサードパーティのリンクは、PCL とネイティブ Api を使用して Xamarin およびその他のプラットフォームとの互換性を提供する NuGet パッケージを作成するためのさまざまなアプローチについて説明します。
 
-- [ポータブルクラスライブラリを機能させる方法](http://blogs.msdn.com/b/dsplaisted/archive/2012/08/27/how-to-make-portable-class-libraries-work-for-you.aspx)
-- [Bait とスイッチの PCL トリック](http://log.paulbetts.org/the-bait-and-switch-pcl-trick/)
-- [Xamarin で動作する NuGet PCL を作成する](http://www.jimbobbennett.io/creating-a-nuget-pcl-that-works-with-xamarin-ios/)
+- [ポータブルクラスライブラリを機能させる方法](https://blogs.msdn.com/b/dsplaisted/archive/2012/08/27/how-to-make-portable-class-libraries-work-for-you.aspx)
+- [Bait とスイッチの PCL トリック](https://log.paulbetts.org/the-bait-and-switch-pcl-trick/)
+- [Xamarin で動作する NuGet PCL を作成する](https://www.jimbobbennett.io/creating-a-nuget-pcl-that-works-with-xamarin-ios/)
 
-この[PCL プロファイルの外部リストと NuGet ターゲット名](http://embed.plnkr.co/03ck2dCtnJogBKHJ9EjY)は、参考資料としても役に立ちます。
+この[PCL プロファイルの外部リストと NuGet ターゲット名](https://portablelibraryprofiles.stephencleary.com)は、参考資料としても役に立ちます。
 
 ## <a name="examples"></a>使用例
 

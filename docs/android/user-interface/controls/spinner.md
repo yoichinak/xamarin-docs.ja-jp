@@ -3,15 +3,15 @@ title: Xamarin. Android スピンボタン
 ms.prod: xamarin
 ms.assetid: 004089E9-7C1D-2285-765A-B69143091F2A
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/06/2018
-ms.openlocfilehash: 2c7f0de2347e614b8c24de32bf3f88362a212a94
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: ba4a83eb997b879e8a2398f9857e2fd80221f8ef
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510406"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029158"
 ---
 # <a name="xamarinandroid-spinner"></a>Xamarin. Android スピンボタン
 
@@ -21,7 +21,7 @@ ms.locfileid: "68510406"
 
 このチュートリアルの最初の部分では、惑星の一覧を表示する単純なスピンボタンウィジェットを作成します。 地球を選択すると、選択した項目がトーストメッセージに表示されます。
 
-[![HelloSpinner アプリのスクリーンショットの例](spinner-images/01-example-screenshots-sml.png)](spinner-images/01-example-screenshots.png#lightbox)
+[HelloSpinner アプリの![スクリーンショットの例](spinner-images/01-example-screenshots-sml.png)](spinner-images/01-example-screenshots.png#lightbox)
 
 **HelloSpinner**という名前の新しいプロジェクトを開始します。
 
@@ -49,7 +49,7 @@ ms.locfileid: "68510406"
 </LinearLayout>
 ```
 
-[`TextView`](xref:Android.Widget.TextView)の[属性と`Spinner`](xref:Android.Widget.Spinner)の属性`android:prompt`が同じ文字列リソースを参照していることに注意してください。 `android:text` このテキストは、ウィジェットのタイトルとして動作します。 に適用すると[`Spinner`](xref:Android.Widget.Spinner)、ウィジェットを選択したときに表示される選択ダイアログにタイトルのテキストが表示されます。
+[`TextView`](xref:Android.Widget.TextView)の `android:text` 属性と[`Spinner`](xref:Android.Widget.Spinner)の `android:prompt` 属性が同じ文字列リソースを参照していることに注意してください。 このテキストは、ウィジェットのタイトルとして動作します。 [`Spinner`](xref:Android.Widget.Spinner)に適用すると、ウィジェットを選択したときに表示される選択ダイアログにタイトルのテキストが表示されます。
 
 **Resources/Values/Strings .xml**を編集し、次のようにファイルを変更します。
 
@@ -71,16 +71,16 @@ ms.locfileid: "68510406"
 </resources>
 ```
 
-2番`<string>`目の要素は、上のレイアウト[`TextView`](xref:Android.Widget.TextView)で[`Spinner`](xref:Android.Widget.Spinner) 、およびによって参照されるタイトル文字列を定義します。
-要素`<string-array>`は、 [`Spinner`](xref:Android.Widget.Spinner)ウィジェットのリストとして表示される文字列のリストを定義します。
+2番目の `<string>` 要素は、上のレイアウトで[`TextView`](xref:Android.Widget.TextView)と[`Spinner`](xref:Android.Widget.Spinner)によって参照されるタイトル文字列を定義します。
+`<string-array>` 要素は、 [`Spinner`](xref:Android.Widget.Spinner)ウィジェットでリストとして表示される文字列の一覧を定義します。
 
-ここで、 **MainActivity.cs**を開き、 `using`次のステートメントを追加します。
+ここで、 **MainActivity.cs**を開き、次の `using` ステートメントを追加します。
 
 ```csharp
 using System;
 ```
 
-次に、メソッドの[`OnCreate()`](xref:Android.App.Activity.OnCreate*)次のコードを挿入します。
+次に、 [`OnCreate()`](xref:Android.App.Activity.OnCreate*)) メソッドの次のコードを挿入します。
 
 ```csharp
 protected override void OnCreate (Bundle bundle)
@@ -101,13 +101,13 @@ protected override void OnCreate (Bundle bundle)
 }
 ```
 
-レイアウトがコンテンツビュー [`Spinner`](xref:Android.Widget.Spinner)として設定されると、を使用[`FindViewById<>(int)`](xref:Android.App.Activity.FindViewById*)してレイアウトからウィジェットがキャプチャされます。 `Main.axml`
-、[`CreateFromResource()`](xref:Android.Widget.ArrayAdapter.CreateFromResource*)
-次に、メソッドは[`ArrayAdapter`](xref:Android.Widget.ArrayAdapter)新しいを作成します。これにより、文字列配列内の各[`Spinner`](xref:Android.Widget.Spinner)項目がの初期外観にバインドされます (これは、選択したときに各項目がスピンボタンにどのように表示されるかを示します)。 Id `Resource.Array.planets_array`は、上`string-array`で定義され`Android.Resource.Layout.SimpleSpinnerItem`たを参照し、id は、プラットフォームで定義されている標準のスピンボタンの外観のレイアウトを参照します。
+`Main.axml` レイアウトがコンテンツビューとして設定されると、 [`Spinner`](xref:Android.Widget.Spinner)ウィジェットが[`FindViewById<>(int)`](xref:Android.App.Activity.FindViewById*)でレイアウトからキャプチャされます。
+[`CreateFromResource()`](xref:Android.Widget.ArrayAdapter.CreateFromResource*)
+次に、メソッドは新しい[`ArrayAdapter`](xref:Android.Widget.ArrayAdapter)を作成します。これにより、文字列配列内の各項目が[`Spinner`](xref:Android.Widget.Spinner)の初期外観にバインドされます (選択したときに各項目がスピンボタンに表示されます)。 `Resource.Array.planets_array` ID は、上で定義された `string-array` を参照し、`Android.Resource.Layout.SimpleSpinnerItem` ID は、プラットフォームで定義されている標準のスピンボタンの外観のレイアウトを参照します。
 [`SetDropDownViewResource`](xref:Android.Widget.ArrayAdapter.SetDropDownViewResource*)
-は、ウィジェットが開かれたときに各項目の外観を定義するために呼び出されます。 最後に[`ArrayAdapter`](xref:Android.Widget.ArrayAdapter) 、 [`Adapter`](xref:Android.Widget.ArrayAdapter)プロパティを設定し[`Spinner`](xref:Android.Widget.Spinner)て、すべての項目をに関連付けるように設定されています。
+は、ウィジェットが開かれたときに各項目の外観を定義するために呼び出されます。 最後に、 [`ArrayAdapter`](xref:Android.Widget.ArrayAdapter)は[`Adapter`](xref:Android.Widget.ArrayAdapter)プロパティを設定して、すべての項目を[`Spinner`](xref:Android.Widget.Spinner)に関連付けるように設定されています。
 
-ここで、 [`Spinner`](xref:Android.Widget.Spinner)から項目を選択したときにアプリケーションを notifys するコールバックメソッドを提供します。 このメソッドは次のようになります。
+[`Spinner`](xref:Android.Widget.Spinner)から項目が選択されたときにアプリケーションを notifys するコールバックメソッドを提供するようになりました。 このメソッドは次のようになります。
 
 ```csharp
 private void spinner_ItemSelected (object sender, AdapterView.ItemSelectedEventArgs e)
@@ -118,32 +118,32 @@ private void spinner_ItemSelected (object sender, AdapterView.ItemSelectedEventA
 }
 ```
 
-項目を選択すると、その項目にアクセスできる[`Spinner`](xref:Android.Widget.Spinner)ように、送信側がにキャストされます。 でプロパティを使用すると、選択したオブジェクトのテキストを確認し、それを使用してを[`Toast`](xref:Android.Widget.Toast)表示できます。 `Position` `ItemEventArgs`
+項目を選択すると、その項目にアクセスできるように、送信側が[`Spinner`](xref:Android.Widget.Spinner)にキャストされます。 `ItemEventArgs`の `Position` プロパティを使用して、選択したオブジェクトのテキストを確認し、それを使用して[`Toast`](xref:Android.Widget.Toast)を表示できます。
 
 アプリケーションを実行します。次のようになります。
 
-[![地球として選択された火星のスクリーンショットの例](spinner-images/02-basic-example-sml.png)](spinner-images/02-basic-example.png#lightbox)
+[地球として選択された Mars を使用したスピンボタンの例の![スクリーンショット](spinner-images/02-basic-example-sml.png)](spinner-images/02-basic-example.png#lightbox)
 
 ## <a name="spinner-using-keyvalue-pairs"></a>キー/値ペアを使用したスピンボタン
 
-多くの場合、を使用`Spinner`して、アプリで使用される何らかの種類のデータに関連付けられているキー値を表示する必要があります。 は`Spinner`キーと値のペアを直接操作しないため、キーと値のペアを個別に格納し`Spinner` 、キー値をに設定してから、スピンボタンで選択したキーの位置を使用して、関連付けられているデータ値を検索する必要があります。 
+多くの場合、アプリで使用される何らかの種類のデータに関連付けられているキー値を表示するには、`Spinner` を使用する必要があります。 `Spinner` はキーと値のペアを直接操作しないため、キーと値のペアを個別に格納し、`Spinner` にキー値を設定してから、スピンボタンで選択したキーの位置を使用して、関連付けられているデータ値を検索する必要があります。 
 
 次の手順では、選択した地球の平均温度を表示するように**HelloSpinner**アプリを変更します。
 
-次`using`のステートメントを**MainActivity.cs**に追加します。
+次の `using` ステートメントを**MainActivity.cs**に追加します。
 
 ```csharp
 using System.Collections.Generic;
 ```
 
-次のインスタンス変数を`MainActivity`クラスに追加します。
+次のインスタンス変数を `MainActivity` クラスに追加します。
 この一覧には、惑星のキーと値のペアと、その平均温度が保持されます。
 
 ```csharp
 private List<KeyValuePair<string, string>> planets;
 ```
 
-メソッドで、が宣言される前に`adapter`次のコードを追加します。 `OnCreate`
+`OnCreate` メソッドで、`adapter` が宣言される前に次のコードを追加します。
 
 ```csharp
 planets = new List<KeyValuePair<string, string>>
@@ -169,14 +169,14 @@ foreach (var item in planets)
     planetNames.Add (item.Key);
 ```
 
-このリストを (リソース`ArrayAdapter`では`planets_array`なく) コンストラクターに渡します。
+このリストを `ArrayAdapter` コンストラクター (`planets_array` リソースではなく) に渡します。
 
 ```csharp
 var adapter = new ArrayAdapter<string>(this,
     Android.Resource.Layout.SimpleSpinnerItem, planetNames);
 ```
 
-選択`spinner_ItemSelected`した位置を使用して、選択した地球に関連付けられている値 (温度) を検索するように、を変更します。
+選択した位置を使用して、選択した地球に関連付けられている値 (気温) を検索するように `spinner_ItemSelected` を変更します。
 
 ```csharp
 private void spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
@@ -190,7 +190,7 @@ private void spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventAr
 
 アプリケーションを実行します。トーストは次のようになります。
 
-[![地球選択の表示温度の例](spinner-images/03-keyvalue-example-sml.png)](spinner-images/03-keyvalue-example.png#lightbox)
+[地球選択の表示温度の![例](spinner-images/03-keyvalue-example-sml.png)](spinner-images/03-keyvalue-example.png#lightbox)
 
 ## <a name="resources"></a>リソース
 
@@ -198,5 +198,5 @@ private void spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventAr
 - [`ArrayAdapter`](xref:Android.Widget.ArrayAdapter)
 - [`Spinner`](xref:Android.Widget.Spinner)
 
-*このページの一部は、Android オープンソースプロジェクトによって作成および共有*
-され、[*Creative Commons 2.5 属性*](http://creativecommons.org/licenses/by/2.5/)で説明されている条項に従って使用される作業に基づいて変更されます。
+*このページの一部は、Android オープンソースプロジェクトによって作成および共有*され、
+[*Creative Commons 2.5 属性のライセンス*](https://creativecommons.org/licenses/by/2.5/)に記載されている条項に従って使用される作業に基づいて変更されます。

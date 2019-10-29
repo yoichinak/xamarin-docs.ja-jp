@@ -4,15 +4,15 @@ description: このガイドでは、Android ジョブスケジューラ API を
 ms.prod: xamarin
 ms.assetid: 673BB8C3-C5CC-43EC-BA8F-758F15D986C9
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/19/2018
-ms.openlocfilehash: e2bfc64626d658cbcb22ba5f2ebd1f1ff069ec19
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 4d28b80b32ff0d20afbe643d9c000f301a8ea582
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70757760"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73027814"
 ---
 # <a name="android-job-scheduler"></a>Android ジョブのスケジューラ
 
@@ -26,36 +26,36 @@ Android アプリケーションをユーザーに応答するための最善の
 
 Android には、バックグラウンドでの作業の実行に役立つ次の Api が用意されていますが、それ自体でインテリジェントなジョブのスケジュール設定には不十分です。 
 
-- **[インテントサービス](~/android/app-fundamentals/services/creating-a-service/intent-services.md)** &ndash;インテントサービスは作業の実行に適していますが、作業をスケジュールする方法はありません。
-- **[AlarmManager](https://developer.android.com/reference/android/app/AlarmManager.html)** &ndash;これらの api では、作業をスケジュールすることのみが許可されますが、実際に作業を実行することはできません。 また、AlarmManager では時間ベースの制約のみが許可されます。これは、特定の時間または特定の期間が経過した後にアラームを発生させることを意味します。 
-- **[ブロードキャストレシーバー](~/android/app-fundamentals/broadcast-receivers.md)** &ndash; Android アプリでは、システム全体のイベントまたはインテントに応じて処理を実行するようにブロードキャストレシーバーを設定できます。 ただし、ブロードキャストレシーバーでは、ジョブをいつ実行するかを制御することはできません。 また、Android オペレーティングシステムでの変更によって、ブロードキャスト受信側が動作するタイミングや、応答できる作業の種類が制限されます。 
+- **[インテントサービス &ndash; インテント](~/android/app-fundamentals/services/creating-a-service/intent-services.md)** サービスは、作業の実行に適していますが、作業をスケジュールする方法はありません。
+- **[AlarmManager](https://developer.android.com/reference/android/app/AlarmManager.html)** &ndash; これらの api では、作業をスケジュールできますが、実際に作業を実行する方法はありません。 また、AlarmManager では時間ベースの制約のみが許可されます。これは、特定の時間または特定の期間が経過した後にアラームを発生させることを意味します。 
+- **[ブロードキャストレシーバー](~/android/app-fundamentals/broadcast-receivers.md)** &ndash; Android アプリでは、システム全体のイベントまたはインテントに応答して作業を実行するようにブロードキャストレシーバーを設定できます。 ただし、ブロードキャストレシーバーでは、ジョブをいつ実行するかを制御することはできません。 また、Android オペレーティングシステムでの変更によって、ブロードキャスト受信側が動作するタイミングや、応答できる作業の種類が制限されます。 
 
 バックグラウンド作業を効率的に実行するには、次の2つの重要な機能があります (_バックグラウンドジョブ_または_ジョブ_と呼ばれることもあります)。
 
-1. **作業をインテリジェントにスケジュールする**&ndash;アプリケーションがバックグラウンドで作業を行っているときは、それが優れた市民となることが重要です。 アプリケーションでは、ジョブの実行を要求しないことが理想的です。 代わりに、アプリケーションは、ジョブを実行できる条件を指定して、条件が満たされたときに処理を実行するオペレーティングシステムでそのジョブをスケジュールする必要があります。 これにより、Android はジョブを実行して、デバイスの効率を最大限に高めることができます。 たとえば、ネットワーク要求をバッチ処理して、ネットワークに関連するオーバーヘッドを最大限に活用するために、すべてを同時に実行することができます。
-2. **作業のカプセル**化&ndash;バックグラウンド作業を実行するコードは、ユーザーインターフェイスとは無関係に実行できる個別のコンポーネントにカプセル化する必要があります。また、何らかの理由で作業が完了しない場合は、比較的簡単に再スケジュールすることができます。
+1. **作業をインテリジェントにスケジュール**する &ndash;、アプリケーションがバックグラウンドで作業を行っているときに、優れた市民として作業を行うことが重要です。 アプリケーションでは、ジョブの実行を要求しないことが理想的です。 代わりに、アプリケーションは、ジョブを実行できる条件を指定して、条件が満たされたときに処理を実行するオペレーティングシステムでそのジョブをスケジュールする必要があります。 これにより、Android はジョブを実行して、デバイスの効率を最大限に高めることができます。 たとえば、ネットワーク要求をバッチ処理して、ネットワークに関連するオーバーヘッドを最大限に活用するために、すべてを同時に実行することができます。
+2. &ndash;**作業をカプセル**化することで、バックグラウンド作業を実行するコードを、ユーザーインターフェイスとは無関係に実行できる個別のコンポーネントにカプセル化する必要があります。また、作業の完了に失敗した場合には、比較的簡単に再スケジュールすることができます。理由.
 
 Android ジョブスケジューラは、Android オペレーティングシステムに組み込まれているフレームワークであり、バックグラウンド処理のスケジューリングを簡略化するための fluent API を提供します。  Android ジョブスケジューラは、次の種類で構成されています。
 
-- は`Android.App.Job.JobScheduler` 、Android アプリケーションの代わりにジョブをスケジュールし、実行し、必要に応じてキャンセルするために使用されるシステムサービスです。
-- `Android.App.Job.JobService`は、アプリケーションのメインスレッドでジョブを実行するロジックで拡張する必要がある抽象クラスです。 つまり、は、 `JobService`作業を非同期に実行する方法を担当します。
-- オブジェクト`Android.App.Job.JobInfo`は、ジョブの実行時に Android をガイドするための条件を保持します。
+- `Android.App.Job.JobScheduler` は、Android アプリケーションに代わってジョブのスケジュール設定、実行、および必要に応じてキャンセルを行うために使用されるシステムサービスです。
+- `Android.App.Job.JobService` は、アプリケーションのメインスレッドでジョブを実行するロジックで拡張する必要がある抽象クラスです。 つまり、`JobService` は、作業を非同期に実行する方法を担当します。
+- `Android.App.Job.JobInfo` オブジェクトは、ジョブの実行時に Android をガイドするための条件を保持します。
 
-Android ジョブスケジューラを使用して作業をスケジュールするには、Xamarin android アプリケーションで`JobService`クラスを拡張するクラスにコードをカプセル化する必要があります。 `JobService`には、ジョブの有効期間中に呼び出すことができるライフサイクルメソッドが3つあります。
+Android ジョブスケジューラを使用して作業をスケジュールするには、Xamarin Android アプリケーションで、`JobService` クラスを拡張するクラスにコードをカプセル化する必要があります。 `JobService` には、ジョブの有効期間中に呼び出すことができるライフサイクルメソッドが3つあります。
 
-- **Bool OnStartJob (JobParameters パラメーター)** このメソッドは、 `JobScheduler`処理を実行するためにによって呼び出され、アプリケーションのメインスレッドで実行されます。 &ndash; 作業を非同期`JobService`に実行`true`するのはの役割であり、残存作業がある場合、 `false`または作業が完了した場合はです。
+- **Bool OnStartJob (JobParameters parameters)** &ndash; このメソッドは、作業を実行するために `JobScheduler` によって呼び出され、アプリケーションのメインスレッドで実行されます。 作業を非同期に実行し、作業が残っている場合は `true` し、作業が完了している場合は `false` するのは、`JobService` の役割です。
     
-    が`JobScheduler`このメソッドを呼び出すと、ジョブの期間中、Android から wakelock を要求して保持します。 ジョブが完了したら、 `JobService` `JobFinished`メソッド (次に説明します) を`JobScheduler`呼び出すことによって、がこの事実を通知する役割を担います。
+    `JobScheduler` がこのメソッドを呼び出すと、ジョブの期間中、Android から wakelock が要求され、保持されます。 ジョブが完了したら、`JobFinished` メソッド (次に説明します) を呼び出すことによって、このファクトの `JobScheduler` を `JobService` する必要があります。
 
-- **Jobfinished (Jobfinished パラメーター、ブール値の再スケジュール)** このメソッドは、作業が完了`JobService`し`JobScheduler`たことをに通知するために、によって呼び出される必要があります。 &ndash; が`JobFinished` 呼び出さ`JobScheduler`れない場合、では wakelock が削除されず、不要なバッテリドレインが発生します。 
+- **Jobfinished (Jobfinished パラメーター、ブール値の再スケジュール)** &ndash; このメソッドを `JobService` が呼び出して、作業が完了したことを `JobScheduler` に通知する必要があります。 `JobFinished` が呼び出されていない場合、`JobScheduler` は wakelock を削除しないため、不要なバッテリのドレインが発生します。 
 
-- **Bool OnStopJob (JobParameters パラメーター)** &ndash;これは、Android によってジョブが途中で停止されたときに呼び出されます。 再試行条件に`true`基づいてジョブを再スケジュールする必要がある場合は、を返す必要があります (詳細については後述します)。
+- **Bool OnStopJob (JobParameters parameters)** &ndash; これは、Android によってジョブが途中で停止されたときに呼び出されます。 再試行条件に基づいてジョブを再スケジュールする必要がある場合は `true` が返されます (以下で詳細に説明します)。
 
 ジョブをいつ実行できるかを制御する_制約_または_トリガー_を指定することができます。 たとえば、デバイスが充電されたときにのみ実行されるようにジョブを制限したり、画像が取得されたときにジョブを開始したりすることができます。
 
-このガイドでは、 `JobService`クラスを実装し、 `JobScheduler`を使用してスケジュールを設定する方法について詳しく説明します。
+このガイドでは、`JobService` クラスを実装し、`JobScheduler`でスケジュールを設定する方法について詳しく説明します。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>［要件］
 
 Android ジョブスケジューラには、Android API レベル 21 (Android 5.0) 以降が必要です。 
 
@@ -64,21 +64,21 @@ Android ジョブスケジューラには、Android API レベル 21 (Android 5.
 Android JobScheduler API を使用するには、次の3つの手順を実行します。
 
 1. JobService の種類を実装して作業をカプセル化します。
-2. オブジェクトを`JobInfo.Builder`使用して、 `JobInfo` `JobScheduler`ジョブを実行するための条件を保持するオブジェクトを作成します。 
-3. を使用して`JobScheduler.Schedule`ジョブをスケジュールします。
+2. `JobInfo.Builder` オブジェクトを使用して、ジョブを実行する `JobScheduler` の条件を保持する `JobInfo` オブジェクトを作成します。 
+3. `JobScheduler.Schedule`を使用してジョブのスケジュールを設定します。
 
 ### <a name="implement-a-jobservice"></a>JobService を実装する
 
-Android ジョブスケジューラライブラリによって実行されるすべての作業は、 `Android.App.Job.JobService`抽象クラスを拡張する型で実行する必要があります。 の`JobService`作成は、Android フレームワークを使用`Service`したの作成によく似ています。 
+Android ジョブスケジューラライブラリによって実行されるすべての作業は、`Android.App.Job.JobService` 抽象クラスを拡張する型で実行する必要があります。 `JobService` の作成は、Android フレームワークで `Service` を作成することとよく似ています。 
 
-1. クラスを`JobService`拡張します。
-2. を使用`ServiceAttribute`してサブクラスを装飾`Name`し、パラメーターをパッケージ名とクラス名で構成された文字列に設定します (次の例を参照してください)。
-3. `Permission`の`android.permission.BIND_JOB_SERVICE`プロパティを文字列に設定します。 `ServiceAttribute`
-4. `OnStartJob`メソッドをオーバーライドして、作業を実行するコードを追加します。 Android は、ジョブを実行するアプリケーションのメインスレッドでこのメソッドを呼び出します。 アプリケーションがブロックされないようにするために、スレッドに対して数ミリ秒の実行時間がかかる作業です。
-5. 作業が完了したら、は`JobService` `JobFinished`メソッドを呼び出す必要があります。 このメソッドは、 `JobService` `JobScheduler`がその動作を行う方法を示しています。 を呼び出さ`JobFinished`ないと、デバイス`JobService`に不要な要求が発生し、バッテリの寿命が短縮されます。 
-6. `OnStopJob`メソッドをオーバーライドすることもお勧めします。 このメソッドは、 `JobService`ジョブが完了する前にシャットダウンされるときに Android によって呼び出され、リソースを適切に破棄する機会をに提供します。 ジョブを再スケジュール`true`する必要がある場合、またはジョブを`false`再実行する望ましいがない場合は、このメソッドはを返します。
+1. `JobService` クラスを拡張します。
+2. サブクラスを `ServiceAttribute` で修飾し、`Name` パラメーターをパッケージ名とクラス名で構成された文字列に設定します (次の例を参照)。
+3. `ServiceAttribute` の `Permission` プロパティを文字列 `android.permission.BIND_JOB_SERVICE`に設定します。
+4. `OnStartJob` メソッドをオーバーライドして、作業を実行するコードを追加します。 Android は、ジョブを実行するアプリケーションのメインスレッドでこのメソッドを呼び出します。 アプリケーションがブロックされないようにするために、スレッドに対して数ミリ秒の実行時間がかかる作業です。
+5. 作業が完了したら、`JobService` が `JobFinished` メソッドを呼び出す必要があります。 このメソッドは、`JobService` が `JobScheduler` を実行する方法を示しています。 `JobFinished` を呼び出さないと `JobService`、デバイスに不要な要求が発生し、バッテリの寿命が短縮されます。 
+6. `OnStopJob` メソッドをオーバーライドすることもお勧めします。 このメソッドは、ジョブが完了する前にシャットダウンされているときに Android によって呼び出され、`JobService` にリソースを適切に破棄する機会を提供します。 このメソッドは、ジョブを再スケジュールする必要がある場合は `true` を返し、ジョブを再実行するために望ましいされていない場合は `false` を返します。
 
-次のコードは、TPL を使用し`JobService`て何らかの処理を非同期に実行するアプリケーションの最も単純な例です。
+次のコードは、TPL を使用して何らかの処理を非同期に実行するアプリケーションの最も単純な `JobService` の例です。
 
 ```csharp
 [Service(Name = "com.xamarin.samples.downloadscheduler.DownloadJob", 
@@ -109,12 +109,12 @@ public class DownloadJob : JobService
 
 ### <a name="creating-a-jobinfo-to-schedule-a-job"></a>ジョブをスケジュールするための JobInfo の作成
 
-Xamarin Android アプリケーションは、を`JobService`直接インスタンス化しません。代わりに、 `JobInfo` `JobScheduler`オブジェクトをに渡します。 は、要求さ`JobService`れたオブジェクトをインスタンス化し`JobService` 、のメタデータ`JobInfo`に従ってをスケジュールして実行します。 `JobScheduler` オブジェクト`JobInfo`には、次の情報が含まれている必要があります。
+Xamarin Android アプリケーションは、`JobService` を直接インスタンス化しません。代わりに、`JobInfo` オブジェクトを `JobScheduler`に渡します。 `JobScheduler` は、要求された `JobService` オブジェクトをインスタンス化し、`JobInfo`のメタデータに従って `JobService` をスケジュールして実行します。 `JobInfo` オブジェクトには、次の情報が含まれている必要があります。
 
-- **JobId**これは、`JobScheduler`に対するジョブを識別するために使用される値です。`int` &ndash; この値を再利用すると、既存のジョブがすべて更新されます。 この値は、アプリケーションに対して一意である必要があります。 
-- **Jobservice**このパラメーターは、がジョブの実行に使用する`JobScheduler`型を明示的に識別するです。`ComponentName` &ndash; 
+- **JobId** &ndash; これは、`JobScheduler`に対するジョブを識別するために使用される `int` 値です。 この値を再利用すると、既存のジョブがすべて更新されます。 この値は、アプリケーションに対して一意である必要があります。 
+- **Jobservice** &ndash; このパラメーターは、`JobScheduler` がジョブを実行するために使用する必要がある型を明示的に識別する `ComponentName` です。 
 
-この拡張メソッドは、アクティビティなどの`JobInfo.Builder` Android `Context`を使用してを作成する方法を示しています。
+この拡張メソッドは、アクティビティなどの Android `Context`で `JobInfo.Builder` を作成する方法を示しています。
 
 ```csharp
 public static class JobSchedulerHelpers
@@ -133,7 +133,7 @@ var jobBuilder = this.CreateJobBuilderUsingJobId<DownloadJob>(1);
 var jobInfo = jobBuilder.Build();  // creates a JobInfo object.
 ```
 
-Android ジョブスケジューラの強力な機能として、ジョブを実行するタイミングや、ジョブが実行される条件を制御できます。 次の表では、ジョブの実行`JobInfo.Builder`時にアプリが影響を与えるようにするのメソッドの一部について説明します。  
+Android ジョブスケジューラの強力な機能として、ジョブを実行するタイミングや、ジョブが実行される条件を制御できます。 次の表では、ジョブの実行時にアプリが影響を与えるようにする `JobInfo.Builder` のメソッドの一部について説明します。  
 
 |  メソッド | 説明   |
 |---|---|
@@ -146,16 +146,16 @@ Android ジョブスケジューラの強力な機能として、ジョブを実
 | `SetPeriodic` | ジョブを定期的に実行することを指定します。 |
 | `SetPersisted` | このジョブは、デバイスの再起動に perisist 必要があります。 | 
 
-では、ジョブの実行を再試行`JobScheduler`するまでの待機時間について、いくつかのガイダンスを提供しています。`SetBackoffCriteria` バックオフ条件には2つの部分があります。遅延時間はミリ秒 (既定値は30秒)、もう1つは使用する必要があります (バックオフ_ポリシー_または_再試行ポリシー_と呼ばれることもあります)。 2つのポリシーは`Android.App.Job.BackoffPolicy`列挙型にカプセル化されます。
+`SetBackoffCriteria` は、`JobScheduler` がジョブの実行を再試行するまでの待機時間に関するガイダンスを提供します。 バックオフ条件には2つの部分があります。遅延時間はミリ秒 (既定値は30秒)、もう1つは使用する必要があります (バックオフ_ポリシー_または_再試行ポリシー_と呼ばれることもあります)。 2つのポリシーは `Android.App.Job.BackoffPolicy` 列挙型にカプセル化されます。
 
-- `BackoffPolicy.Exponential`&ndash;指数バックオフポリシーでは、エラーが発生するたびに初期バックオフ値が指数関数的に増加します。 ジョブが初めて失敗したとき、ライブラリはジョブの再スケジュールの前に指定されている最初の間隔 (例:30 秒) を待機します。 ジョブが2回目に失敗した場合、ライブラリはジョブの実行を試行する前に少なくとも60秒間待機します。 3回目の試行が失敗すると、ライブラリは120秒ほど待機します。 これが既定値です。
-- `BackoffPolicy.Linear`&ndash;この戦略は、(成功するまで) 設定された間隔で実行するようにジョブを再スケジュールする必要がある線形バックオフです。 線形バックオフは、可能な限り早く完了する必要がある作業や、自動的に解決される問題に最適です。 
+- 指数バックオフポリシーを &ndash; `BackoffPolicy.Exponential` と、エラーが発生するたびに初期バックオフ値が指数関数的に増加します。 ジョブが初めて失敗したとき、ライブラリはジョブの再スケジュールの前に指定されている最初の間隔 (例:30 秒) を待機します。 ジョブが2回目に失敗した場合、ライブラリはジョブの実行を試行する前に少なくとも60秒間待機します。 3回目の試行が失敗すると、ライブラリは120秒ほど待機します。 これは既定値です。
+- この方法 &ndash; `BackoffPolicy.Linear`、この方法では、ジョブを (成功まで) 設定された間隔で実行するように再スケジュールする必要があります。 線形バックオフは、可能な限り早く完了する必要がある作業や、自動的に解決される問題に最適です。 
 
-`JobInfo`オブジェクトを作成する方法の詳細については、 [ `JobInfo.Builder`クラスの Google のドキュメント](https://developer.android.com/reference/android/app/job/JobInfo.Builder.html)を参照してください。
+`JobInfo` オブジェクトの作成の詳細については、 [`JobInfo.Builder` クラスに関する Google のドキュメント](https://developer.android.com/reference/android/app/job/JobInfo.Builder.html)を参照してください。
 
 #### <a name="passing-parameters-to-a-job-via-the-jobinfo"></a>JobInfo を使用したジョブへのパラメーターの引き渡し
 
-パラメーターは、 `Job.Builder.SetExtras`メソッドと共に渡される`PersistableBundle`を作成することによって、ジョブに渡されます。
+パラメーターは、`Job.Builder.SetExtras` メソッドと共に渡される `PersistableBundle` を作成することによって、ジョブに渡されます。
 
 ```csharp
 var jobParameters = new PersistableBundle();
@@ -166,7 +166,7 @@ var jobBuilder = this.CreateJobBuilderUsingJobId<DownloadJob>(1)
                      .Build();
 ```
 
-は`PersistableBundle` 、の`Android.App.Job.JobParameters.Extras` メソッドの`OnStartJob`プロパティからアクセスします。`JobService`
+`PersistableBundle` には、`JobService`の `OnStartJob` メソッドの `Android.App.Job.JobParameters.Extras` プロパティからアクセスします。
 
 ```csharp
 public override bool OnStartJob(JobParameters jobParameters)
@@ -179,10 +179,10 @@ public override bool OnStartJob(JobParameters jobParameters)
 
 ### <a name="scheduling-a-job"></a>ジョブのスケジュール設定
 
-ジョブのスケジュールを設定するために、Xamarin アプリケーションは`JobScheduler` system サービスへの参照を取得し、前の手順で作成した`JobInfo`オブジェクトを使用して`JobScheduler.Schedule`メソッドを呼び出します。 `JobScheduler.Schedule`は、次の2つの整数値のいずれかを使用して直ちにを返します。
+ジョブのスケジュールを設定するために、Xamarin アプリケーションは `JobScheduler` システムサービスへの参照を取得し、前の手順で作成した `JobInfo` オブジェクトを使用して `JobScheduler.Schedule` メソッドを呼び出します。 `JobScheduler.Schedule` は、次の2つの整数値のいずれかを使用して直ちにを返します。
 
-- **Jobscheduler。 resultsuccess** &ndash;ジョブは正常にスケジュールされました。 
-- **Jobscheduler. resultfailure** &ndash;ジョブをスケジュールできませんでした。 これは、通常、パラメーター `JobInfo`の競合が原因で発生します。
+- ジョブが正常にスケジュールされた &ndash;、ジョブ**スケジューラ。 ResultSuccess** 。 
+- **Jobscheduler. ResultFailure** &ndash; ジョブをスケジュールできませんでした。 これは、通常、`JobInfo` パラメーターの競合が原因で発生します。
 
 このコードは、ジョブをスケジュールし、スケジュールの試行結果をユーザーに通知する例です。
 
@@ -204,7 +204,7 @@ else
 
 ### <a name="cancelling-a-job"></a>ジョブの取り消し
 
-スケジュールされているすべてのジョブ、または`JobsScheduler.CancelAll()`メソッド`JobScheduler.Cancel(jobId)`またはメソッドを使用して1つのジョブだけを取り消すことができます。
+スケジュールされたすべてのジョブ、または `JobsScheduler.CancelAll()` 方法または `JobScheduler.Cancel(jobId)` 方法を使用して1つのジョブだけを取り消すことができます。
 
 ```csharp
 // Cancel all jobs
@@ -214,9 +214,9 @@ jobScheduler.CancelAll();
 jobScheduler.Cancel(1)
 ```
   
-## <a name="summary"></a>Summary
+## <a name="summary"></a>まとめ
 
-このガイドでは、Android ジョブスケジューラを使用して、バックグラウンドで作業をインテリジェントに実行する方法について説明しました。 ここで`JobService` `JobTrigger`は、として実行される作業をカプセル化する方法と`JobScheduler` 、を使用して、で条件を指定し、を使用してエラーを`RetryStrategy`処理する方法について説明しました。
+このガイドでは、Android ジョブスケジューラを使用して、バックグラウンドで作業をインテリジェントに実行する方法について説明しました。 ここでは、`JobService` として実行される作業をカプセル化する方法と、`JobScheduler` を使用してその作業をスケジュールする方法、`JobTrigger` で条件を指定する方法、および `RetryStrategy`でエラーを処理する方法について説明しました。
 
 ## <a name="related-links"></a>関連リンク
 

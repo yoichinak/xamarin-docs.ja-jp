@@ -4,15 +4,15 @@ description: Xamarin Android アプリ内から組み込みの Maps アプリケ
 ms.prod: xamarin
 ms.assetid: 929EACB8-8950-50E1-093C-43FB5F1F1CD5
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/25/2018
-ms.openlocfilehash: b950326eb5a124d5040caa0044309630a2a53d38
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 7b74f564f2b6e9613874a774258a7e999002e61a
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70761672"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73027076"
 ---
 # <a name="launching-the-maps-application"></a>Maps アプリケーションの起動
 
@@ -38,17 +38,17 @@ StartActivity (mapIntent);
 
 上記のコードでは、geo スキームを使用して URI を作成しています。 この URI スキームでは、次のようないくつかの形式がサポートされています。
 
-- `geo:latitude,longitude`&ndash;マップアプリケーションを lat/lon の中央に開きます。 
+- `geo:latitude,longitude` &ndash; によって、マップアプリケーションが lat/lon の中央に表示されます。 
 
-- `geo:latitude,longitude?z=zoom`&ndash;マップアプリケーションを lat/lon で中央に開き、指定されたレベルに拡大します。 ズームレベルは、1 ~ 23 の範囲で指定できます。1地球全体を表示し、23は最も近いズームレベルを示します。
+- `geo:latitude,longitude?z=zoom` &ndash; によって、マップアプリケーションが lat/lon の中央に開き、指定されたレベルに拡大されます。 ズームレベルは、1 ~ 23: 1 の範囲で、地球全体を表示し、23は最も近いズームレベルです。
 
-- `geo:0,0?q=my+street+address`&ndash;地図アプリケーションを住所の場所に対して開きます。 
+- `geo:0,0?q=my+street+address` &ndash; は、地図アプリケーションを番地の場所に対して開きます。 
 
-- `geo:0,0?q=business+near+city`&ndash; Maps アプリケーションを開き、注釈付き検索結果を表示します。 
+- `geo:0,0?q=business+near+city` &ndash; は、maps アプリケーションを開き、注釈付き検索結果を表示します。 
 
-クエリを受け取る URI のバージョン (つまり、番地または検索語) は、Google の geocoder サービスを使用して、マップに表示される場所を取得します。 たとえば、URI `geo:0,0?q=coop+Cambridge`は次のようなマップになります。
+クエリを受け取る URI のバージョン (つまり、番地または検索語) は、Google の geocoder サービスを使用して、マップに表示される場所を取得します。 たとえば、URI `geo:0,0?q=coop+Cambridge` には、次のようなマップが表示されます。
 
-[![検索用語を含む Google マップを示すスクリーンショットの例](maps-application-images/02-mapsearch.png)](maps-application-images/02-mapsearch.png#lightbox)
+[Google Maps を検索語句と共に示す![のスクリーンショットの例](maps-application-images/02-mapsearch.png)](maps-application-images/02-mapsearch.png#lightbox)
 
 Geo URI スキームの詳細については、「[マップ上の場所の表示](https://developer.android.com/guide/components/intents-common.html#Maps)」を参照してください。
 
@@ -56,9 +56,9 @@ Geo URI スキームの詳細については、「[マップ上の場所の表�
 
 Geo スキームに加えて、Android では目的からのストリートビューの読み込みもサポートされています。 Xamarin. Android から起動したストリートビューアプリケーションの例を次に示します。
 
-[![ストリートビューのスクリーンショットの例](maps-application-images/03-streetview.png)](maps-application-images/03-streetview.png#lightbox)
+[![の例では、ストリートビューのスクリーンショット](maps-application-images/03-streetview.png)](maps-application-images/03-streetview.png#lightbox)
 
-ストリートビューを起動するには、次`google.streetview`のコードに示すように、単に URI スキームを使用します。
+ストリートビューを起動するには、次のコードに示すように、単に `google.streetview` URI スキームを使用します。
 
 ```csharp
 var streetViewUri = Android.Net.Uri.Parse (
@@ -75,16 +75,16 @@ google.streetview:cbll=lat,lng&cbp=1,yaw,,pitch,zoom&mz=mapZoom
 
 ご覧のように、次に示すように、いくつかのパラメーターがサポートされています。
 
-- `lat`&ndash;番地ビューに表示される場所の緯度。
+- `lat`、[番地] ビューに表示される場所の緯度 &ndash; ます。
 
-- `lng`&ndash;番地ビューに表示される位置の経度。
+- `lng`、[番地] ビューに表示される場所の経度 &ndash; ます。
 
-- `pitch`&ndash;ストリートビューパノラマの角度。この角度は、中心から、90°が垂直方向で、-90 °がまっすぐになります。
+- ストリートビューパノラマの &ndash; 角度を `pitch` します。この角度は、中心から、90°が垂直方向で、-90 °がまっすぐになります。
 
-- `yaw`&ndash;北から時計回りに測定した、ストリートビューパノラマのビューの中心。
+- `yaw` &ndash;、北から時計回りに測定して、ストリートビューパノラマの中央のビューを表示します。
 
-- `zoom`&ndash;ストリートビューパノラマのズーム乗数 (1.0 = 通常のズーム、2.0 = 拡大、3.0、拡大した4倍など)。
+- ストリートビューパノラマの `zoom` &ndash; ズーム乗数。ここで、1.0 = 通常のズーム、2.0 = 拡大した2、3.0 = 拡大した4倍などです。
 
-- `mz`&ndash;ストリートビューから maps アプリケーションに移動するときに使用されるマップのズームレベル。
+- [`mz` &ndash;] を使用すると、[地図] ビューからマップアプリケーションに移動するときに使用されるマップのズームレベルを指定できます。
 
 組み込みの maps アプリケーションまたは [番地] ビューを使用すると、簡単にマッピングサポートを追加することができます。 ただし、Android の Maps API では、マッピングエクスペリエンスをより細かく制御できます。

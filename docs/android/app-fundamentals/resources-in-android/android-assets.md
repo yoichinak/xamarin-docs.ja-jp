@@ -3,26 +3,26 @@ title: Android アセットの使用
 ms.prod: xamarin
 ms.assetid: 70ECDDC9-FA40-03B4-BF04-E7CFFFE4260D
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/13/2018
-ms.openlocfilehash: e3b7ccf74773e5a391b8f133ccc241ca0e18bfcb
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 9c8db5ad7bcb012befb2fa8dcd1ecd13fa355a55
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70755156"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73025426"
 ---
 # <a name="using-android-assets"></a>Android アセットの使用
 
 _アセット_を使用すると、テキスト、xml、フォント、音楽、ビデオなどの任意のファイルをアプリケーションに含めることができます。 これらのファイルを "リソース" として追加しようとすると、Android によってそれらのファイルがリソースシステムに処理されるため、生データを取得できなくなります。 データにアクセスする場合は、資産を使用する方法があります。
 
 プロジェクトに追加されたアセットは、 [AssetManager](xref:Android.Content.Res.AssetManager)を使用してアプリケーションで読み取ることができるファイルシステムと同様に表示されます。
-この簡単なデモでは、プロジェクトにテキストファイル資産を追加し、を使用し`AssetManager`てそれを読み取って、TextView に表示します。
+この簡単なデモでは、プロジェクトにテキストファイル資産を追加し、`AssetManager`を使用してそれを読み取って、それを TextView に表示します。
 
 ## <a name="add-asset-to-project"></a>プロジェクトへの資産の追加
 
-アセットは、 `Assets`プロジェクトのフォルダーにあります。 という名前`read_asset.txt`の新しいテキストファイルをこのフォルダーに追加します。 "私は資産から来ました" のようなテキストを入力します。
+アセットは、プロジェクトの [`Assets`] フォルダーにあります。 `read_asset.txt`という名前の新しいテキストファイルをこのフォルダーに追加します。 "私は資産から来ました" のようなテキストを入力します。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -34,7 +34,7 @@ Visual Studio では、このファイルの**ビルドアクション**を**And
 
 Visual Studio for Mac は、このファイルの**ビルドアクション**を**Androidasset**に設定する必要があります。
 
-[![AndroidAsset にビルドアクションを設定しています](android-assets-images/asset-properties-xs-sml.png)](android-assets-images/asset-properties-xs.png#lightbox)
+[ビルドアクションを AndroidAsset に設定![](android-assets-images/asset-properties-xs-sml.png)](android-assets-images/asset-properties-xs.png#lightbox)
 
 -----
 
@@ -42,7 +42,7 @@ Visual Studio for Mac は、このファイルの**ビルドアクション**を
 
 ## <a name="reading-assets"></a>アセットの読み取り
 
-アセットは[AssetManager](xref:Android.Content.Res.AssetManager)を使用して読み取られます。 の`AssetManager`インスタンスは、アクティビティなどのの[Assets](xref:Android.Content.Context.Assets)プロパティ`Android.Content.Context`にアクセスすることによって使用できます。
+アセットは[AssetManager](xref:Android.Content.Res.AssetManager)を使用して読み取られます。 `AssetManager` のインスタンスは、アクティビティなどの `Android.Content.Context`の[Assets](xref:Android.Content.Context.Assets)プロパティにアクセスすることによって使用できます。
 次のコードでは、 **read_asset**アセットを開き、内容を読み取って、TextView を使用して表示します。
 
 ```csharp
