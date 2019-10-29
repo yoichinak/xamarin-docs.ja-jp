@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin でビルドされた tvOS
 ms.prod: xamarin
 ms.assetid: A2DA4347-0563-4C72-A8D7-5B9DE9E28712
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 7eca637e546324f9282aedcac48dacffa72bf246
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: b1b6d07b221f702b54833bd87161d6abbadbd4e8
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769271"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030852"
 ---
 # <a name="working-with-tvos-icons-and-images-in-xamarin"></a>Xamarin での tvOS アイコンとイメージの操作
 
@@ -26,7 +26,7 @@ ms.locfileid: "70769271"
 - [TvOS プロジェクトイメージの設定](#Setting-Xamarin.tvOS-Project-Images)-tvOS アプリの起動イメージとアプリアイコンを設定するために必要な手順について説明します。
 
 > [!IMPORTANT]
-> Apple TV 上のすべてのイメージは1倍の解像度`@1x`() であり、このサイズのイメージ_のみ_を使用する必要があります。 より大きな解像度のグラフィックスを含めて、より多くのメモリとストレージをダウンロードして使用するだけでなく、実行時に動的にスケールする必要があり、描画のパフォーマンスに悪影響を及ぼします。
+> Apple TV 上のすべてのイメージは1倍の解像度 (`@1x`) であり、このサイズのイメージ_のみ_を使用する必要があります。 より大きな解像度のグラフィックスを含めて、より多くのメモリとストレージをダウンロードして使用するだけでなく、実行時に動的にスケールする必要があり、描画のパフォーマンスに悪影響を及ぼします。
 
 <a name="Launch-Image" />
 
@@ -55,15 +55,15 @@ Apple では、アプリの起動イメージを設計するために次の提�
 
 TvOS プロジェクトの起動イメージを設定するには、次の手順を実行します。
 
-1. **ソリューションエクスプローラー**で、ダブルクリック`Assets.xcassets`して開き、編集します。 
+1. **ソリューションエクスプローラー**で、[`Assets.xcassets`] をダブルクリックして開き、編集します。 
 
-    [![](icons-images-images/asset01.png "Assets. xcassets ファイル")](icons-images-images/asset01.png#lightbox)
-2. **アセットエディター**で、 `LaunchImages`資産をクリックします。 
+    [![](icons-images-images/asset01.png "The Assets.xcassets file")](icons-images-images/asset01.png#lightbox)
+2. **アセットエディター**で、[`LaunchImages` 資産] をクリックします。 
 
-    [![](icons-images-images/asset02.png "LaunchImages 資産")](icons-images-images/asset02.png#lightbox)
+    [![](icons-images-images/asset02.png "The LaunchImages asset")](icons-images-images/asset02.png#lightbox)
 3. **[1X APPLE TV]** エントリをクリックし、起動イメージを選択するか、またはファイルシステムから新しいイメージをドラッグします。 
 
-    [![](icons-images-images/asset03.png "起動イメージの選択")](icons-images-images/asset03.png#lightbox)
+    [![](icons-images-images/asset03.png "Select a Launch Image")](icons-images-images/asset03.png#lightbox)
 4. 変更内容を保存します。
 
 <a name="Layered-Images" />
@@ -74,7 +74,7 @@ Apple TV の新機能であるレイヤー化されたイメージは、視差�
 
 レイヤー化されたイメージには、完全なイメージを形成するために結合された 2 ~ 5 個の独立したレイヤーが含まれています。 背景層を除き、各レイヤーは、その Z オーダーと透明度を使用して、奥行を作成します。 ユーザーがレイヤー図を操作すると、より高い Z オーダーレイヤーが拡大縮小され、重なってこの効果が作成されます。
 
-[![](icons-images-images/layered01.png "レイヤー図 Z 順に並べられた図")](icons-images-images/layered01.png#lightbox)
+[![](icons-images-images/layered01.png "Layered Images Z-ordered diagram")](icons-images-images/layered01.png#lightbox)
 
 > [!IMPORTANT]
 > レイヤー化されたイメージはアプリのアイコンに必要であり、他のフォーカス可能な[項目](~/ios/tvos/app-fundamentals/navigation-focus.md#Focus-and-Selection)(上部の棚の画像など) ではオプションです。 しかし、Apple では、アプリにフォーカスを移すことができるすべてのイメージに対して、レイヤー化されたイメージを使用することが提案されて
@@ -88,7 +88,7 @@ Apple では、階層化されたイメージを設計するために次の提�
 - **セーフゾーンを含める**-視差効果の際に上位レイヤーをトリミングできるため、各レイヤーに安全なゾーンの境界線を作成する必要があります。 コンテンツを取得したときにレイヤーの端を閉じると、トリミングされることがあります。 上位レイヤーでは、下位レイヤーよりも拡大縮小とトリミングが発生します。 下の「[イメージレイヤーのサイズ変更](#Sizing-Image-Layers)」セクションを参照してください。
 - **プレビュー頻繁**: レイヤー図は、必要な3d 効果が発生し、個々のレイヤーのコンテンツがトリミングされていないことを確認するために、頻繁にプレビューする必要があります。 実際の Apple TV ハードウェアでレイヤー図をプレビューし、予想どおりにレンダリングされることを確認する必要があります。
 
-可能な場合は常に、組み込み`UIKit`のコントロールを使用して、レイヤー化されたイメージを表示する必要があります。これは、視差がフォーカスされたときに自動的に効果が得られるためです。
+可能な場合は常に、組み込みの `UIKit` コントロールを使用して、レイヤー化されたイメージを表示する必要があります。これは、視差がフォーカスに置かれると、自動的に効果が得られるためです。
 
 <a name="Sizing-Image-Layers" />
 
@@ -96,7 +96,7 @@ Apple では、階層化されたイメージを設計するために次の提�
 
 階層化されたイメージを構成する各レイヤーには、_安全なゾーン_の境界線を含めることが重要です。 視差効果の際に個々のレイヤーをスケーリングおよびトリミングできるため、レイヤーの端に近すぎる場合はレイヤーのコンテンツをトリミングできます。
 
-[![](icons-images-images/layered02.png "35ピクセル境界線")](icons-images-images/layered02.png#lightbox)
+[![](icons-images-images/layered02.png "35 pixel border")](icons-images-images/layered02.png#lightbox)
 
 <a name="Creating-Layered-Images" />
 
@@ -105,19 +105,19 @@ Apple では、階層化されたイメージを設計するために次の提�
 tvOS は、次の形式のレイヤーイメージで動作します。
 
 - **車両ファイル**-Apple によって作成された独自のアセットカタログ形式です。 車両ファイルは直接作成されず、コンパイル時に任意の LSR ファイルから作成され、アプリバンドルに含まれます。
-- **Lsr イメージ**-これは Apple によって作成された独自のイメージ形式です。 [視差エクスポーター Adobe Photoshop プラグイン](https://itunespartner.apple.com/assets/downloads/ParallaxExporter_Apps.zip)または[視差プレビューアー](http://itunespartner.apple.com/assets/downloads/Parallax%20Previewer.dmg)を使用して、Lsr 形式でレイヤー化されたイメージを作成およびプレビューします。
-- **Assets** (2) から 5 (5) の標準`.png`書式設定されたイメージから、コンパイル時に CAR または lsr でフォーマットされたレイヤー化イメージにコンパイルされる、アセットカタログに含まれる2つの形式の画像。
-- **LCR ファイル**-Apple によって作成された独自のファイル形式です。 LCR ファイルは、コンテンツサーバーの1つからダウンロードした追加のコンテンツとして使用することを目的としています。 LCR ファイルは、アプリバンドルに含めないでください。 LCR ファイルは、Xcode に付属のコマンドラインツールを`layerutil`使用して、lsr または Photoshop ファイルから生成されます。
+- **Lsr イメージ**-これは Apple によって作成された独自のイメージ形式です。 [視差エクスポーター Adobe Photoshop プラグイン](https://itunespartner.apple.com/assets/downloads/ParallaxExporter_Apps.zip)または[視差プレビューアー](https://itunespartner.apple.com/assets/downloads/Parallax%20Previewer.dmg)を使用して、Lsr 形式でレイヤー化されたイメージを作成およびプレビューします。
+- **Assets** (2) から 5 (5) 標準 `.png`、コンパイル時に CAR または lsr 形式のレイヤー化されたイメージにコンパイルされる、アセットカタログに含まれるフォーマット済みの画像。
+- **LCR ファイル**-Apple によって作成された独自のファイル形式です。 LCR ファイルは、コンテンツサーバーの1つからダウンロードした追加のコンテンツとして使用することを目的としています。 LCR ファイルは、アプリバンドルに含めないでください。 LCR ファイルは、Xcode に付属の `layerutil` コマンドラインツールを使用して、LSR または Photoshop のファイルから生成されます。
 
 <a name="The-Parallax-Previewer" />
 
 ### <a name="the-parallax-previewer"></a>視差プレビューアー
 
-Apple は、アプリアイコンおよびオプションのフォーカス可能な項目に必要なレイヤーイメージをプレビューおよび作成するために[視差プレビューアー](http://itunespartner.apple.com/assets/downloads/Parallax%20Previewer.dmg)を作成しました。 次のように、完成したレイヤードイメージを形成するすべてのレイヤーがプレビューアーによって表示されます。
+Apple は、アプリアイコンおよびオプションのフォーカス可能な項目に必要なレイヤーイメージをプレビューおよび作成するために[視差プレビューアー](https://itunespartner.apple.com/assets/downloads/Parallax%20Previewer.dmg)を作成しました。 次のように、完成したレイヤードイメージを形成するすべてのレイヤーがプレビューアーによって表示されます。
 
-[![](icons-images-images/layered03.png "視差プレビューアー")](icons-images-images/layered03.png#lightbox)
+[![](icons-images-images/layered03.png "The Parallax Previewer")](icons-images-images/layered03.png#lightbox)
 
-レイヤー化されたイメージをプレビューするときに、マウスを使用してイメージを回転し、視差効果をプレビューすることができます。 レイヤーを **+** 追加および削除する **-** には、(プラス) ボタンと (マイナス) ボタンを使用します。
+レイヤー化されたイメージをプレビューするときに、マウスを使用してイメージを回転し、視差効果をプレビューすることができます。 レイヤーを追加および削除するには、 **+** (プラス) ボタンと **-** (マイナス) ボタンを使用します。
 
 新しいレイヤー図を作成するときには、LSR 形式でエクスポートし、アプリのバンドルに含めることができます。
 
@@ -129,7 +129,7 @@ Apple は、アプリアイコンおよびオプションのフォーカス可�
 
 TvOS アプリでは、Apple TV ホーム画面のアプリアイコンだけでなく、アプリストアのアイコンも必要になります。 アプリアイコンは、ユーザーにとって優れた印象を得られるようにするための最初の変更であり、アプリの目的を一目で伝えなければなりません。
 
-[![](icons-images-images/icon01.png "アプリアイコン")](icons-images-images/icon01.png#lightbox)
+[![](icons-images-images/icon01.png "The App Icon")](icons-images-images/icon01.png#lightbox)
 
 すべてのアプリで、アプリアイコンの小さいバージョンと大きなバージョンの両方を提供する必要があります。 小さいアイコンは、アプリのインストール時に、Apple TV ホーム画面で使用されます。 大規模なバージョンは、App Store によって使用されます。 大きいアプリアイコンは、小さいアイコンバージョンのルックアンドフィールを模倣します。
 
@@ -160,21 +160,21 @@ Apple では、アプリアイコンの作成に関して次の提案が提供�
 
 TvOS プロジェクトに必要なアプリアイコンを設定するには、次の手順を実行します。
 
-1. **ソリューションエクスプローラー**で、ダブルクリック`Assets.xcassets`して開き、編集します。 
+1. **ソリューションエクスプローラー**で、[`Assets.xcassets`] をダブルクリックして開き、編集します。 
 
-    [![](icons-images-images/asset01.png "Assets。 xcassets fileg")](icons-images-images/asset01.png#lightbox)
-2. **アセットエディター**で、資産を`App Icon & Top Shelf Image`展開します。 
+    [![](icons-images-images/asset01.png "The Assets.xcassets fileg")](icons-images-images/asset01.png#lightbox)
+2. **アセットエディター**で、`App Icon & Top Shelf Image` 資産を展開します。 
 
-    [![](icons-images-images/asset04.png "一番上の棚のイメージ資産を展開する")](icons-images-images/asset04.png#lightbox)
-3. 次に、資産`App Icon - Small`を展開します。 
+    [![](icons-images-images/asset04.png "Expand the Top Shelf Image asset")](icons-images-images/asset04.png#lightbox)
+3. 次に、`App Icon - Small` 資産を展開します。 
 
-    [![](icons-images-images/asset05.png "アプリアイコン-小さいアセットを展開する")](icons-images-images/asset05.png#lightbox)
-4. `Back` 次`Contents`に、資産を展開し、エントリをクリックします。 
+    [![](icons-images-images/asset05.png "Expand the App Icon - Small asset")](icons-images-images/asset05.png#lightbox)
+4. 次に、`Back` 資産を展開し、`Contents` エントリをクリックします。 
 
-    [![](icons-images-images/asset06.png "次に、[戻る] 資産を展開します。")](icons-images-images/asset06.png#lightbox)
+    [![](icons-images-images/asset06.png "Then expand the Back asset")](icons-images-images/asset06.png#lightbox)
 5. [ **1X APPLE TV] エントリ**をクリックし、画像ファイルを選択します。
-6. `Front` および`Middle`アセットに対して上記の手順を繰り返します。
-7. 次に、同じ手順を繰り返して`App Icon - Large`資産を定義します。
+6. `Front` と `Middle` アセットに対して上記の手順を繰り返します。
+7. 次に、同じ手順を繰り返して、`App Icon - Large` の資産を定義します。
 8. 変更内容を保存します。
 
 <a name="Top-Shelf-Image" />
@@ -183,9 +183,9 @@ TvOS プロジェクトに必要なアプリアイコンを設定するには、
 
 ユーザーが Apple TV ホーム画面の一番上の行に tvOS アプリを配置した場合は、ユーザーがアプリを選択すると、大きな上部の棚の画像が表示されます。 このイメージは、アプリの機能を強調表示したり、コンテンツへの直接リンクを提供したりする必要があります。
 
-[![](icons-images-images/topshelf01.png "上部の棚の画像の例")](icons-images-images/topshelf01.png#lightbox)
+[![](icons-images-images/topshelf01.png "Top Shelf Image example")](icons-images-images/topshelf01.png#lightbox)
 
-一番上の棚のイメージは、1つの静的`.png`また`.lsr`はファイルとして提供するか (「[レイヤーイメージの作成](#Creating-Layered-Images)」を参照)、または実行時にフォーカス可能な項目の単一行として動的に作成することができます (以下の「[動的な上位シェルフコンテンツ](#Dynamic-Top-Shelf-Content)」を参照してください)。
+一番上の棚の画像は、1つの静的な `.png` または `.lsr` ファイルとして提供するか (「[レイヤーイメージの作成](#Creating-Layered-Images)」を参照)、または実行時にフォーカス可能な項目の単一行として動的に作成することができます (以下の「[動的な上位シェルフコンテンツ](#Dynamic-Top-Shelf-Content)」を参照してください)。
 
 |上部の棚の画像のサイズ|メモ|
 |---|---|
@@ -203,15 +203,15 @@ Apple では、トップシェルフイメージを作成するための次の�
 
 TvOS プロジェクトに必要な最大のシェルフイメージを設定するには、次の手順を実行します。
 
-1. **ソリューションエクスプローラー**で、ダブルクリック`Assets.xcassets`して開き、編集します。 
+1. **ソリューションエクスプローラー**で、[`Assets.xcassets`] をダブルクリックして開き、編集します。 
 
-    [![](icons-images-images/asset01.png "Assets. xcassets ファイル")](icons-images-images/asset01.png#lightbox)
-2. **アセットエディター**で、資産を`App Icon & Top Shelf Image`展開します。 
+    [![](icons-images-images/asset01.png "The Assets.xcassets file")](icons-images-images/asset01.png#lightbox)
+2. **アセットエディター**で、`App Icon & Top Shelf Image` 資産を展開します。 
 
-    [![](icons-images-images/asset04.png "一番上の棚のイメージ資産を展開する")](icons-images-images/asset04.png#lightbox)
-3. `Top Shelf Image`資産をクリックします。 
+    [![](icons-images-images/asset04.png "Expand the Top Shelf Image asset")](icons-images-images/asset04.png#lightbox)
+3. `Top Shelf Image` 資産をクリックします。 
 
-    [![](icons-images-images/asset07.png "トップシェルフのイメージ資産")](icons-images-images/asset07.png#lightbox)
+    [![](icons-images-images/asset07.png "The Top Shelf Image asset")](icons-images-images/asset07.png#lightbox)
 4. [ **1X APPLE TV] エントリ**をクリックし、画像ファイルを選択します。
 5. 変更内容を保存します。
 
@@ -234,9 +234,9 @@ TvOS プロジェクトに必要な最大のシェルフイメージを設定す
 ||ポスター (2:3)|四角 (1:1)|HDTV (16:9)|
 |---|---|---|---|
 |実際のサイズ|404x608px|608x608px|908x512px|
-|セーフゾーンのサイズ|380x570px|570x570px|852x479px|
+|セーフゾーンのサイズ|380x570px|570x570px|852x479 px|
 |見るサイズ|333x500px|500x500px|782x440px|
-|フォーカスサイズ|380x570px|570x570px|852x479px|
+|フォーカスサイズ|380x570px|570x570px|852x479 px|
 
 Apple では、次の提案されたコンテンツ行に対して次の提案を提供しています。
 
@@ -260,7 +260,7 @@ Apple では、次の提案されたコンテンツ行に対して次の提案�
 |見るサイズ|1740x560px|
 |フォーカスサイズ|1740x620px|
 
-スクロール用のバナーは、静的`.png`なファイルまたは階層`.lsr`化されたファイルとして提供できます。
+スクロール用のバナーは、静的な `.png` または階層化された `.lsr` ファイルとして提供できます。
 
 Apple では、スクロール用のバナーに関して次の提案が提供されています。
 
@@ -277,7 +277,7 @@ TvOS アプリがゲームであり、Game Center サポートが含まれてい
 
 - **アチーブメントアイコン**-円形に自動的にトリミングされる各アチーブメントに対し、不透明な画像が必要です。 アチーブメントはフォーカスできない項目です。
 - **ダッシュボードのアートワーク**-Game Center 内のアプリのダッシュボードの上部に表示されるオプションのイメージを指定できます。 これらのイメージにはフォーカスがありません。
-- **ランキングアートボード**: アプリでサポートされている各ランキングに対し、1 ~ 3 個の16:9 縦横比イメージを指定する必要があります。 これらは、静的`.png`なファイル`.lsr`でも、階層化されたファイルでもかまいません。 スコアボードのアートワークはフォーカスを持つことができます。
+- **ランキングアートボード**: アプリでサポートされている各ランキングに対し、1 ~ 3 個の16:9 縦横比イメージを指定する必要があります。 これらは、静的な `.png` または階層化された `.lsr` ファイルです。 スコアボードのアートワークはフォーカスを持つことができます。
 
 ||アチーブメントアイコン|ダッシュボードのアートワーク|ランキングアートワーク|
 |---|---|---|---|
@@ -303,18 +303,18 @@ TvOS 9 は iOS 9 のサブセットであるため、Xamarin. iOS アプリで�
 
 次の手順で行います。
 
-1. **ソリューションエクスプローラー**で、 `Info.plist`をダブルクリックして開き、編集します。 
+1. **ソリューションエクスプローラー**で、`Info.plist` をダブルクリックして開き、編集します。 
 
-    [![](icons-images-images/info01.png "情報の plist ファイル")](icons-images-images/info01.png#lightbox)
+    [![](icons-images-images/info01.png "The Info.plist file")](icons-images-images/info01.png#lightbox)
 2. 次のように、**アプリのアイコン**について、**情報エディター**で、[[アプリアイコンの設定](#Setting-the-App-Icons)] セクションで構成した Assets カタログを選択します。 
 
-    [![](icons-images-images/info02.png "情報 Plist エディター")](icons-images-images/info02.png#lightbox)
+    [![](icons-images-images/info02.png "The Info.Plist Editor")](icons-images-images/info02.png#lightbox)
 3. 次に、**起動イメージ**のアセットカタログ ([[起動イメージの設定](#Setting-the-Launch-Image)] セクションで構成したもの) を選択します。
 4. 変更内容を保存します。
 
 <a name="Summary" />
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>まとめ
 
 この記事では、tvOS アプリで使用されるすべてのイメージの種類とサイズについて説明しました。 まず、起動イメージ、階層化されたイメージ、アプリアイコン、上部の棚イメージ、Game Center イメージについて説明します。 次に、tvOS アプリのイメージの操作について説明します。
 

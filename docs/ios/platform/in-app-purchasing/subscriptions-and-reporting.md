@@ -4,15 +4,15 @@ description: このドキュメントでは、非更新サブスクリプショ�
 ms.prod: xamarin
 ms.assetid: 27EE4234-07F5-D2CD-DC1C-86E27C20141E
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 81e8f5c1beafeaafcf0d5dcbcc3bf4d66ee05a66
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 8f930e2358562df7e68841b87b6a3df0914805fe
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70752676"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032301"
 ---
 # <a name="subscriptions-and-reporting-in-xamarinios"></a>Xamarin. iOS のサブスクリプションとレポート
 
@@ -50,17 +50,17 @@ ms.locfileid: "70752676"
 
 ITunes Connect のホームページから、 **[マイアプリ]** を選択します。   
    
- [![](subscriptions-and-reporting-images/image2.png "[My Apps] を選びます")](subscriptions-and-reporting-images/image2.png#lightbox)  
+ [![](subscriptions-and-reporting-images/image2.png "Select My Apps")](subscriptions-and-reporting-images/image2.png#lightbox)  
 
 アプリケーションを選択し、 **[アプリ内購入]** タブをクリックします。
 
-[![](subscriptions-and-reporting-images/image6.png "[アプリ内購入] タブをクリックします。")](subscriptions-and-reporting-images/image6.png#lightbox)
+[![](subscriptions-and-reporting-images/image6.png "Click on the In-App Purchases tab")](subscriptions-and-reporting-images/image6.png#lightbox)
 
 ページの下部にある **[共有シークレットの表示または生成]** を選択します。
    
- [![](subscriptions-and-reporting-images/image40.png "[共有シークレットの表示または生成] を選択します。")](subscriptions-and-reporting-images/image40.png#lightbox)
+ [![](subscriptions-and-reporting-images/image40.png "Select View or generate a shared secret")](subscriptions-and-reporting-images/image40.png#lightbox)
 
- [![](subscriptions-and-reporting-images/image41.png "共有シークレットを生成する")](subscriptions-and-reporting-images/image41.png#lightbox)   
+ [![](subscriptions-and-reporting-images/image41.png "Generate a shared secret")](subscriptions-and-reporting-images/image41.png#lightbox)   
 
 共有シークレットを使用するには、次のように、自動更新可能なサブスクリプションのアプリ内購入確認を検証するときに、Apple のサーバーに送信される JSON ペイロードにそれを含めます。
 
@@ -100,7 +100,7 @@ SKPaymentTransaction オブジェクトにはサブスクリプションの用�
 
 ## <a name="reporting"></a>レポート
 
-iTunes Connect ( [itunesconnect.apple.com](http://itunesconnect.apple.com)) には次のものがあります。   
+iTunes Connect ( [itunesconnect.apple.com](https://itunesconnect.apple.com)) には次のものがあります。   
    
  **[売上と傾向**] –アプリのダウンロード、更新プログラム、アプリ内購入の詳細が表示されます。   
    
@@ -108,9 +108,9 @@ iTunes Connect ( [itunesconnect.apple.com](http://itunesconnect.apple.com)) に�
 
 次に、売上および傾向レポートの例を示します。   
 
- [![](subscriptions-and-reporting-images/image42.png "売上および傾向レポートの例")](subscriptions-and-reporting-images/image42.png#lightbox)   
+ [![](subscriptions-and-reporting-images/image42.png "An example Sales and Trends report")](subscriptions-and-reporting-images/image42.png#lightbox)   
    
- また、 [ **ITC Connect Mobile**IOS アプリ (iTunes リンク)](http://itunes.apple.com/us/app/itunes-connect-mobile/id376771144?mt=8)もあります。
+ また、 [ **ITC Connect Mobile**IOS アプリ (iTunes リンク)](https://itunes.apple.com/us/app/itunes-connect-mobile/id376771144?mt=8)もあります。
 使用できる統計情報の一部については、iPhone のスクリーンショットを次に示します。   
    
- [![](subscriptions-and-reporting-images/image43.png "利用可能な統計情報の一部に関する iPhone のスクリーンショット")](subscriptions-and-reporting-images/image43.png#lightbox)
+ [![](subscriptions-and-reporting-images/image43.png "iPhone screenshots for some of the statistics available")](subscriptions-and-reporting-images/image43.png#lightbox)

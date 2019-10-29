@@ -4,15 +4,15 @@ description: この記事では、Xamarin で記述された tvOS アプリで S
 ms.prod: xamarin
 ms.assetid: BDB9894A-236B-424B-9032-ACD12A6C5720
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 71a74d8f9046cd978a40b03da1921cd1fac9405f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 4255891174b639022a45c45c22e0022cd0403f26
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769177"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030588"
 ---
 # <a name="siri-remote-and-bluetooth-controllers-for-tvos-in-xamarin"></a>Xamarin の tvOS 用 siri リモートおよび Bluetooth コントローラー
 
@@ -20,7 +20,7 @@ TvOS アプリのユーザーは、iOS と直接やり取りするのではな�
 
 アプリがゲームの場合は、必要に応じて、アプリで iOS (MFI) [Bluetooth ゲームコントローラー](#Bluetooth-Game-Controllers)用に作成されたサードパーティのサポートを組み込むこともできます。
 
-[![](remote-bluetooth-images/intro01.png "Bluetooth リモートコントローラーとゲームコントローラー")](remote-bluetooth-images/intro01.png#lightbox)
+[![](remote-bluetooth-images/intro01.png "The Bluetooth Remote and Game Controller")](remote-bluetooth-images/intro01.png#lightbox)
 
 この記事では、 [Siri リモコン](#The-Siri-Remote)、[タッチスクリーンのジェスチャ](#Touch-Surface-Gestures)、および[siri のリモートボタン](#Siri-Remote-Buttons)について説明し、[ジェスチャ、ストーリーボード](#Gestures-and-Storyboards)、[ジェスチャ、コード](#Gestures-and-Code)、[低レベルのイベント処理](#Low-Level-Event-Handling)を使用してそれらを操作する方法を示します。 最後に、tvOS アプリでの[ゲームコントローラーの操作](#Working-with-Game-Controllers)について説明します。
 
@@ -32,7 +32,7 @@ TvOS アプリのユーザーは、iOS と直接やり取りするのではな�
 
 TvOS アプリ開発者としての課題は、Siri リモコンのタッチスクリーン、加速度計、ジャイロスコープ、およびボタンを活用する、簡単で使いやすく、視覚的に説得力のあるユーザーインターフェイスを作成することです。
 
-[![](remote-bluetooth-images/remote01.png "Siri リモート")](remote-bluetooth-images/remote01.png#lightbox)
+[![](remote-bluetooth-images/remote01.png "The Siri Remote")](remote-bluetooth-images/remote01.png#lightbox)
 
 Siri リモートには、tvOS アプリ内で次の機能と想定される使用法があります。
 
@@ -69,7 +69,7 @@ Apple では、タッチスクリーンのジェスチャを操作するため�
 
 タッチ画面でのジェスチャに加えて、アプリはタッチ画面をクリックするか、[再生/一時停止] ボタンを押すと、ユーザーに応答できます。 Game Controller フレームワークを使用して Siri リモートにアクセスしている場合は、押されたメニューボタンを検出することもできます。
 
-また、メニューボタンの押下は、標準`UIKit`の要素でジェスチャ認識エンジンを使用して検出できます。 押されたメニューボタンをインターセプトした場合は、現在のビューとビューコントローラーを閉じ、前のビューに戻る必要があります。
+また、メニューボタンの押下は、ジェスチャ認識エンジンと標準 `UIKit` 要素を使用して検出できます。 押されたメニューボタンをインターセプトした場合は、現在のビューとビューコントローラーを閉じ、前のビューに戻る必要があります。
 
 > [!IMPORTANT]
 > **常**に、リモートの再生/一時停止ボタンに関数を割り当てる必要があります。 機能しないボタンを使用すると、アプリがエンドユーザーに表示されることを防ぐことができます。 このボタンに有効な関数がない場合は、プライマリボタンと同じ機能を割り当てます (タッチスクリーンのクリック)。
@@ -82,20 +82,20 @@ TvOS アプリで Siri リモートを操作する最も簡単な方法は、イ
 
 ジェスチャ認識エンジンを追加するには、次の手順を実行します。
 
-1. **ソリューションエクスプローラー**で、 `Main.storyboard`ファイルをダブルクリックして開き、インターフェイスデザイナーを編集します。
+1. **ソリューションエクスプローラー**で、`Main.storyboard` ファイルをダブルクリックし、インターフェイスデザイナーを編集するために開きます。
 2. **タップジェスチャレコグナイザー**を**ライブラリ**からドラッグし、ビューにドロップします。
 
-    [![](remote-bluetooth-images/storyboard01.png "タップジェスチャレコグナイザー")](remote-bluetooth-images/storyboard01.png#lightbox)
+    [![](remote-bluetooth-images/storyboard01.png "A Tap Gesture Recognizer")](remote-bluetooth-images/storyboard01.png#lightbox)
 3. **属性インスペクター**の **[ボタン]** セクションで **[選択] を選択し**ます。
 
-    [![](remote-bluetooth-images/storyboard02.png "選択のチェック")](remote-bluetooth-images/storyboard02.png#lightbox)
+    [![](remote-bluetooth-images/storyboard02.png "Check Select")](remote-bluetooth-images/storyboard02.png#lightbox)
 4. **選択**すると、ユーザーに対してジェスチャが Siri リモートの**タッチ画面**をクリックしたときに応答します。 **メニュー**、**再生/一時停止**、**上**、**下**、**左**、**右**の各ボタンに応答するオプションも用意されています。
-5. 次に、**タップジェスチャ認識エンジン**から**アクション**を接続して、 `TouchSurfaceClicked`次のように呼び出します。
+5. 次に、**タップジェスチャ認識エンジン**から**アクション**を接続して `TouchSurfaceClicked`を呼び出します。
 
-    [![](remote-bluetooth-images/storyboard03.png "タップジェスチャ認識エンジンからのアクション")](remote-bluetooth-images/storyboard03.png#lightbox)
+    [![](remote-bluetooth-images/storyboard03.png "An Action from the Tap Gesture Recognizer")](remote-bluetooth-images/storyboard03.png#lightbox)
 6. 変更内容を保存し、Visual Studio for Mac に戻ります。
 
-ビューコントローラー (例`FirstViewController.cs`) ファイルを編集し、トリガーされるジェスチャを処理する次のコードを追加します。
+ビューコントローラー (例 `FirstViewController.cs`) ファイルを編集し、トリガーされるジェスチャを処理する次のコードを追加します。
 
 ```csharp
 using System;
@@ -186,13 +186,13 @@ namespace tvRemote
 
 ## <a name="low-level-event-handling"></a>低レベルのイベント処理
 
-TvOS アプリ (など`UIKit` `UIView`) でに基づいてカスタム型を作成する場合は、イベントによる`UIPress`ボタンの押下を低レベルで処理することもできます。
+TvOS アプリ (`UIView`など) の `UIKit` に基づいてカスタム型を作成する場合は、`UIPress` イベントを使用して、ボタンの押下を低レベルで処理することもできます。
 
-イベントは、iOS に対して`UITouch`イベントを tvOS することです`UIPress` 。ただし、siri リモートまたは接続されている他の Bluetooth デバイス (ゲームコントローラーなど) では、ボタンの押下に関する情報は返されません。 `UIPress` `UIPress`イベントは、押されているボタンとその状態 (開始、キャンセル、変更、または終了) を記述します。
+`UIPress` イベントは、`UITouch` イベントが iOS にどのようなものかを tvOS することです。ただし、`UIPress` は、Siri リモートまたは接続されている他の Bluetooth デバイス (ゲームコントローラーなど) でのボタンの押下に関する情報を返します。 `UIPress` イベントは、押されているボタンとその状態 (開始、キャンセル、変更、または終了) を記述します。
 
-Bluetooth ゲームコントローラーなどのデバイス上のアナログボタン`UIPress`の場合は、ボタンに適用されているフォースの量も返されます。 イベントのプロパティは`Type` 、状態が変更された物理ボタンを定義します。プロパティの残りの部分は、発生した変更を示します。 `UIPress`
+Bluetooth ゲームコントローラーなどのデバイス上のアナログボタンの場合、`UIPress` によって、ボタンに適用されているフォースの量も返されます。 `UIPress` イベントの `Type` プロパティは、どの物理ボタンが状態を変更したかを定義します。プロパティの残りの部分は、発生した変更を示します。
 
-次のコードは、 `UIPress` `UIView`の下位レベルのイベントを処理する例を示しています。
+次のコードは、`UIView`の低レベルの `UIPress` イベントを処理する例を示しています。
 
 ```csharp
 using System;
@@ -263,7 +263,7 @@ namespace tvRemote
 }
 ```
 
-イベントと`UITouch`同様に、任意`UIPress`のイベントオーバーライドを実装する必要がある場合は、4つすべてを実装する必要があります。
+`UITouch` イベントと同様に、`UIPress` イベントのオーバーライドを実装する必要がある場合は、4つすべてを実装する必要があります。
 
 <a name="Bluetooth-Game-Controllers" />
 
@@ -271,7 +271,7 @@ namespace tvRemote
 
 Apple TV に同梱されている標準 Siri リモートに加え、iOS (MFI) Bluetooth ゲームコントローラー用に作成されたサードパーティは、Apple TV とペアリングし、tvOS アプリを制御するために使用できます。
 
-[![](remote-bluetooth-images/game01.png "Bluetooth ゲームコントローラー")](remote-bluetooth-images/game01.png#lightbox)
+[![](remote-bluetooth-images/game01.png "Bluetooth Game Controllers")](remote-bluetooth-images/game01.png#lightbox)
 
 ゲームコントローラーを使用してゲームプレイを強化し、ゲームで immersion を実現できます。 また、標準の Apple TV インターフェイスを制御するために使用することもできます。そのため、リモートとコントローラーを使用する必要はありません。
 
@@ -282,7 +282,7 @@ Apple TV に同梱されている標準 Siri リモートに加え、iOS (MFI) B
 
 |機能|一般的なアプリの使用状況|ゲームアプリの使用状況|
 |---|---|---|
-|**D-Pad**|UI 要素をナビゲートします (変更にフォーカスがあります)。|ゲームに依存します。|
+|**D パッド**|UI 要素をナビゲートします (変更にフォーカスがあります)。|ゲームに依存します。|
 |**A**|選択した (フォーカスされている) 項目をアクティブにします。|プライマリボタン関数を実行し、ダイアログアクションを確認します。|
 |**B**|アプリのメイン画面で、前の画面に戻るか、ホーム画面を終了します。|2番目のボタンの機能を実行するか、前の画面に戻ります。|
 |**X**|メディアの再生を開始するか、再生を一時停止/再開します。|ゲームに依存します。|
@@ -309,8 +309,8 @@ Apple では、ゲームコントローラーを操作するための次の推�
 
 アプリで低レベルのコントローラー入力が必要な場合は、Apple の[ゲームコントローラーフレームワーク](https://developer.apple.com/library/prerelease/tvos/documentation/ServicesDiscovery/Conceptual/GameControllerPG/Introduction/Introduction.html#//apple_ref/doc/uid/TP40013276)を使用できます。これには、tvOS に対して次のような変更があります。
 
-- Siri リモートをターゲットに`GCMicroGamepad`するために、マイクロゲームコントローラープロファイル () が追加されました。
-- 新しい`GCEventViewController`クラスを使用して、アプリを通じてゲームコントローラーイベントをルーティングできます。 詳細については、後述の「[ゲームコントローラーの入力の決定](#determining-game-controller-input)」を参照してください。
+- Siri リモートをターゲットにするために、マイクロゲームコントローラープロファイル (`GCMicroGamepad`) が追加されました。
+- 新しい `GCEventViewController` クラスを使用して、アプリを通じてゲームコントローラーのイベントをルーティングできます。 詳細については、後述の「[ゲームコントローラーの入力の決定](#determining-game-controller-input)」を参照してください。
 
 <a name="Game-Controller-Support-Requirements" />
 
@@ -327,9 +327,9 @@ TvOS アプリでゲームコントローラーがサポートされている場
 
 ### <a name="enabling-game-controller-support"></a>ゲームコントローラーのサポートを有効にする
 
-TvOS アプリでゲームコントローラーのサポートを有効にするには、**ソリューションエクスプローラー**内`Info.plist`のファイルをダブルクリックして、編集用に開きます。
+TvOS アプリでゲームコントローラーのサポートを有効にするには、**ソリューションエクスプローラー**内の `Info.plist` ファイルをダブルクリックして編集用に開きます。
 
-[![](remote-bluetooth-images/game02.png "情報 plist エディター")](remote-bluetooth-images/game02.png#lightbox)
+[![](remote-bluetooth-images/game02.png "The Info.plist editor")](remote-bluetooth-images/game02.png#lightbox)
 
 **[Game Controller]** セクションで、[game controller] を**有効**にして、アプリでサポートされるすべてのゲームコントローラーの種類を確認します。
 
@@ -337,7 +337,7 @@ TvOS アプリでゲームコントローラーのサポートを有効にする
 
 ### <a name="using-the-siri-remote-as-a-game-controller"></a>ゲームコントローラーとしての Siri リモートの使用
 
-Apple TV に付属する Siri リモートは、限定されたゲームコントローラーとして使用できます。 他のゲームコントローラーと同様に、ゲームコントローラーフレームワークには`GCController`オブジェクトとして表示され、 `GCMicroGamepad`プロファイルとプロファイルの`GCMotion`両方をサポートします。
+Apple TV に付属する Siri リモートは、限定されたゲームコントローラーとして使用できます。 他のゲームコントローラーと同様に、Game Controller フレームワークには `GCController` オブジェクトとして表示され、`GCMotion` と `GCMicroGamepad` の両方のプロファイルをサポートします。
 
 Siri リモートは、ゲームコントローラーとして使用される場合、次の特性を持ちます。
 
@@ -351,17 +351,17 @@ Siri リモートは、ゲームコントローラーとして使用される場
 
 ### <a name="determining-game-controller-input"></a>ゲームコントローラーの入力を確認する
 
-ゲームコントローラーのイベントをタッチイベントと並行して受信できる iOS とは異なり、tvOS はすべての低レベルイベントを処理`UIKit`して、高レベルのイベントを配信します。 そのため、低レベルのゲームコントローラーイベントにアクセスする必要がある場合は、の既定の動作`UIKit`をオフにする必要があります。
+ゲームコントローラーのイベントをタッチイベントと並行して受信できる iOS とは異なり、tvOS はすべての低レベルイベントを処理して、高レベルの `UIKit` イベントを配信します。 その結果、低レベルのゲームコントローラーイベントにアクセスする必要がある場合は、`UIKit`の既定の動作をオフにする必要があります。
 
-TvOS でゲームコントローラーの入力を直接処理する場合は、(またはサブ`GCEventViewController`クラス) を使用してゲームのユーザーインターフェイスを表示する必要があります。 が最初のレスポンダーの場合、ゲームコントローラーの入力がキャプチャされ、game controller フレームワークを介してアプリに配信されます。 `GCEventViewController`
+TvOS でゲームコントローラーの入力を直接処理する場合は、`GCEventViewController` (またはサブクラス) を使用してゲームのユーザーインターフェイスを表示する必要があります。 `GCEventViewController` が*最初のレスポンダー*の場合は常に、ゲームコントローラーの入力がキャプチャされ、Game controller フレームワークを介してアプリに配信されます。
 
-クラスのプロパティ`UserInteractionEnabled`を使用して、イベントの処理方法と処理方法を切り替えることができます。 `GCEventViewController`
+`GCEventViewController` クラスの `UserInteractionEnabled` プロパティを使用して、イベントの処理方法と処理方法を切り替えることができます。
 
 ゲームコントローラーサポートの実装の詳細については、「[アプリプログラミングガイド (tvOS](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/index.html)および[ゲームコントローラープログラミングガイド](https://developer.apple.com/library/prerelease/tvos/documentation/ServicesDiscovery/Conceptual/GameControllerPG/Introduction/Introduction.html))」の「Apple の[ゲームコントローラーの操作](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/WorkingwithGameControllers.html)」セクションを参照してください。
 
 <a name="Summary" />
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>まとめ
 
 この記事では、Apple TV、タッチスクリーンジェスチャ、Siri リモートボタンに付属する新しい Siri リモコンについて説明しました。 次に、ジェスチャとストーリーボード、ジェスチャ、コードおよび低レベルのイベントの操作について説明します。 最後に、ゲームコントローラーの操作について説明します。
 

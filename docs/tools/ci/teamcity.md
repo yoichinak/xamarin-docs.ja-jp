@@ -3,21 +3,21 @@ title: Xamarin でのチーム City の使用
 description: このガイドでは、TeamCity を使用してモバイルアプリケーションをコンパイルし、Xamarin Test Cloud に送信するために必要な手順について説明します。
 ms.prod: xamarin
 ms.assetid: AC2626CB-28A7-4808-B2A9-789D67899546
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: ee1ef1ecda18ee9817fcf10b7dda0c7b4489bf9f
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 5a16ec338d5929a217ee2e4a622bdce4da617e86
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72273131"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029796"
 ---
 # <a name="using-team-city-with-xamarin"></a>Xamarin でのチーム City の使用
 
 _このガイドでは、TeamCity を使用してモバイルアプリケーションをコンパイルし、Xamarin Test Cloud に送信するために必要な手順について説明します。_
 
-「[継続的インテグレーションの概要](~/tools/ci/intro-to-ci.md)」で説明したように、継続的インテグレーション (CI) は、品質の高いモバイルアプリケーションを開発するときに便利な方法です。 継続的インテグレーションサーバーソフトウェアには、さまざまなオプションが用意されています。このガイドでは、JetBrains からの[Teamcity](http://www.jetbrains.com/teamcity/)に注目します。
+「[継続的インテグレーションの概要](~/tools/ci/intro-to-ci.md)」で説明したように、継続的インテグレーション (CI) は、品質の高いモバイルアプリケーションを開発するときに便利な方法です。 継続的インテグレーションサーバーソフトウェアには、さまざまなオプションが用意されています。このガイドでは、JetBrains からの[Teamcity](https://www.jetbrains.com/teamcity/)に注目します。
 
 TeamCity のインストールには、いくつかの異なる順列があります。 これらのいくつかの一覧を次に示します。
 
@@ -31,7 +31,7 @@ TeamCity のインストールには、いくつかの異なる順列があり�
 
 TeamCity の設定には、次のようないくつかの手順が含まれます。
 
-- **Teamcity のインストール**– teamcity のインストールについては、このガイドでは説明しません。 このガイドでは、TeamCity がインストールされ、ユーザーアカウントで実行されていることを前提としています。 [TeamCity のインストール](http://confluence.jetbrains.com/display/TCD8/Installation)手順については、JetBrains による[teamcity 8 のドキュメント](http://confluence.jetbrains.com/display/TCD8/TeamCity+Documentation)を参照してください。
+- **Teamcity のインストール**– teamcity のインストールについては、このガイドでは説明しません。 このガイドでは、TeamCity がインストールされ、ユーザーアカウントで実行されていることを前提としています。 [TeamCity のインストール](https://confluence.jetbrains.com/display/TCD8/Installation)手順については、JetBrains による[teamcity 8 のドキュメント](https://confluence.jetbrains.com/display/TCD8/TeamCity+Documentation)を参照してください。
 
 - **ビルドサーバーの準備**: この手順では、モバイルアプリケーションを構築し、配布の準備を行うために必要なソフトウェア、ツール、および証明書をインストールします。
 
@@ -39,7 +39,7 @@ TeamCity の設定には、次のようないくつかの手順が含まれま�
 
 - **TeamCity プロジェクトの作成**–前の3つの手順が完了したら、ソースコードを取得し、プロジェクトをコンパイルして、テストを Xamarin Test Cloud に送信するために必要なすべてのメタデータを含む teamcity プロジェクトを作成する必要があります。
 
-## <a name="requirements"></a>［要件］
+## <a name="requirements"></a>要件
 
 [App Center テスト](https://docs.microsoft.com/appcenter/test-cloud/)の経験が必要です。
 
@@ -61,7 +61,7 @@ TeamCity 8.1 に関する知識が必要です。 TeamCity のインストール
 3. **Xcode** – Xcode は、iOS アプリケーションをコンパイルして署名するために必要です。
 4. **Xcode コマンドラインツール**–「 [Ruby With rbenv の更新](https://github.com/calabash/calabash-ios/wiki)」ガイドの「インストール」セクションの手順 1. で説明されています。
 5. **& プロビジョニングプロファイルの署名 id** : XCode を使用して証明書とプロビジョニングプロファイルをインポートします。 詳細については[、「署名 id とプロビジョニングプロファイルのエクスポート](https://developer.apple.com/library/ios/recipes/xcode_help-accounts_preferences/articles/export_signing_assets.html)に関する Apple のガイド」を参照してください。
-6. **Android キーストア**–必要な android キーストアを teamcity ユーザーがアクセスできるディレクトリにコピーします。つまり、 `~/Documents/keystores/MyAndroidApp1`。
+6. **Android キーストア**–必要な android キーストアを teamcity ユーザーがアクセスできるディレクトリにコピーします。つまり、`~/Documents/keystores/MyAndroidApp1` です。
 7. **Calabash** –アプリケーションに calabash を使用して記述されたテストがある場合は、これは省略可能な手順です。 詳細については、「 [OS X Mavericks に Calabash をインストールする](https://github.com/calabash/calabash-ios/wiki)」および「 [Ruby With rbenv を更新](https://github.com/calabash/calabash-ios/wiki)する」ガイドを参照してください。
 
 次の図は、これらすべてのコンポーネントを示しています。
@@ -85,7 +85,7 @@ TeamCity では、コンパイルとモバイルアプリケーションの送�
 
 - [**psake**](https://github.com/psake/psake) - ソフトウェアを構築するための Windows Powershell ライブラリです
 
-- [**フェイク**](http://fsharp.github.io/FAKE/)–これは DSL ベースです。 F#これにより、必要に応じて既存の .net ライブラリを利用できるようになります。
+- [フェイク](https://fsharp.github.io/FAKE/)–これは DSL ベースです。 F#これにより、必要に応じて既存の .net ライブラリを利用できるようになります。
 
 どのスクリプト言語が使用されるかは、ユーザーの好みや要件によって異なります。 [Taskypro-Calabash](https://github.com/xamarin/test-cloud-samples/tree/master/TaskyPro/TaskyPro-Calabash)の例には、Rake を[ビルドスクリプト](https://github.com/xamarin/test-cloud-samples/blob/master/TaskyPro/TaskyPro-Calabash/Rakefile)として使用する例が含まれています。
 
@@ -211,4 +211,4 @@ TeamCity がインストールされ Visual Studio for Mac、プロジェクト�
 
 - [Xamarin Android アプリを準備する](/appcenter/test-cloud/preparing-for-upload/xamarin-android-uitest)
 - [Xamarin iOS アプリを準備しています](/appcenter/test-cloud/preparing-for-upload/xamarin-ios-uitest)
-- [TeamCity のインストールと構成](http://confluence.jetbrains.com/display/TCD8/Installing+and+Configuring+the+TeamCity+Server)
+- [TeamCity のインストールと構成](https://confluence.jetbrains.com/display/TCD8/Installing+and+Configuring+the+TeamCity+Server)
