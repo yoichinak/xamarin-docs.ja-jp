@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin の検索バーの使用�
 ms.prod: xamarin
 ms.assetid: 22A8249A-19C6-4734-8331-E49FE3170771
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/11/2017
-ms.openlocfilehash: 36e339139a0a7f853a770fdb188b5f03ee93f7ee
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 8b129e0e70bf3ded787094d1b1f740e73a8cbca1
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70283356"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021978"
 ---
 # <a name="search-bars-in-xamarinios"></a>Xamarin. iOS の検索バー
 
@@ -88,7 +88,7 @@ searchBar.SearchButtonClicked += (sender, e) => {
   - [検索結果/ブックマーク] ボタンを表示する–検索バーに検索結果またはブックマークアイコンを表示します。
   - [キャンセル] ボタンを表示します。ユーザーは検索機能を終了できます。 これを選択することをお勧めします。
   - [スコープバー] を表示します。ユーザーは検索範囲を制限できます。 たとえば、music アプリ内で検索する場合、ユーザーは特定の楽曲やアーティストの Apple Music を検索するかライブラリを検索するかを選択できます。 さまざまなオプションを表示するには、 **Scopebartitles**プロパティにタイトルの配列を追加します。
-  ![Search バーの範囲のタイトル ](searchbar-images/image4.png)
+  検索バーの範囲のタイトルを ![](searchbar-images/image4.png)
 
 - **テキストの動作**–これらのオプションは、入力時にユーザー入力がどのように書式設定されるかを指定するために使用されます。 大文字と小文字を区別すると、各単語または文の先頭、またはすべての文字が大文字に設定されます。 修正とスペルチェックでは、ユーザーに対して、入力された単語のスペルを確認します。
 - **キーボード**–入力に表示されるキーボードのスタイルを制御します。したがって、キーボードで使用できるキーを制御します。 これには、テンキー、電話パッド、電子メール、URL、およびその他のオプションが含まれます。

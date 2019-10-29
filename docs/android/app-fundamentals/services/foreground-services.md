@@ -3,15 +3,15 @@ title: フォアグラウンド サービス
 ms.prod: xamarin
 ms.assetid: C10FD999-7A91-4708-B642-0C1B0901BD24
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/19/2018
-ms.openlocfilehash: 6f3427641ba4ace3b640fcc970fd33f55087a9c8
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: aaef03d68f4ec374a3bc706daffe636e575e42ff
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "68644111"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73024759"
 ---
 # <a name="foreground-services"></a>フォアグラウンド サービス
 
@@ -98,7 +98,7 @@ public override StartCommandResult OnStartCommand(Intent intent, StartCommandFla
 StopForeground(true);
 ```
 
-@No__t_0 または `StopService` の呼び出しによってサービスが停止した場合、ステータスバーの通知は削除されます。
+`StopSelf` または `StopService`の呼び出しによってサービスが停止した場合、ステータスバーの通知は削除されます。
 
 ## <a name="related-links"></a>関連リンク
 

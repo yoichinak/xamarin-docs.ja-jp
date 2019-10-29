@@ -3,15 +3,15 @@ title: .NET 埋め込みのベストプラクティス-C
 description: このドキュメントでは、.NET 埋め込みを使用して、C を使用するためのさまざまなベストプラクティスについて説明します。 ここでは、マネージコードのサブセットの公開、chunkier API の公開、名前付けなどについて説明します。
 ms.prod: xamarin
 ms.assetid: 63C7F5D2-8933-4D4A-8348-E9CBDA45C472
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 11/14/2017
-ms.openlocfilehash: ff04c001193eb897aac81cdc66ed535c76d81717
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 2f632e3218d817aa0162a63ea81c61ca18c52b93
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285116"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73006773"
 ---
 # <a name="net-embedding-best-practices-for-objective-c"></a>.NET 埋め込みのベストプラクティス-C
 
@@ -66,7 +66,7 @@ Person *p = [[Person alloc] initWithFirstName:@"Sebastien" lastName:@"Pouliot"];
 
 ### <a name="types"></a>種類
 
-目標 C は名前空間をサポートしていません。 一般に、この型には、フレームワークを示す uikit のビューのよう`UIView`に、2 (Apple の場合) または 3 (サードパーティの場合) という文字プレフィックスが付いています。
+目標 C は名前空間をサポートしていません。 一般に、この型には、フレームワークを示す UIKit のビューの `UIView` のように、2 (Apple の場合) または 3 (サードパーティの場合) という文字プレフィックスが付いています。
 
 名前空間の重複や混乱を招く可能性があるため、.NET 型では名前空間を省略できません。 これにより、既存の .NET 型が非常に長くなります。たとえば、
 
@@ -101,15 +101,15 @@ id reader = [[XAMXmlConfigReader alloc] init];
 目的 C の名前付け規則は .NET とは異なります (pascal 形式ではなく camel 形式の場合は、より詳細です)。
 [Cocoa のコーディングガイドライン](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CodingGuidelines/Articles/NamingMethods.html#//apple_ref/doc/uid/20001282-BCIGIJJF)をお読みください。
 
-目標 C 開発者の観点から見ると、 `Get`プレフィックスを持つメソッドは、インスタンスを所有していないことを意味します。つまり、 [get 規則](https://developer.apple.com/library/content/documentation/CoreFoundation/Conceptual/CFMemoryMgmt/Concepts/Ownership.html#//apple_ref/doc/uid/20001148-SW1)です。
+C 開発者の観点から見ると、`Get` プレフィックスを持つメソッドは、インスタンス ( [get ルール](https://developer.apple.com/library/content/documentation/CoreFoundation/Conceptual/CFMemoryMgmt/Concepts/Ownership.html#//apple_ref/doc/uid/20001148-SW1)) を所有していないことを意味します。
 
-この名前付け規則は、.NET GC の世界では一致しません.net では、プレフィックス`Create`を持つ .net メソッドは同じように動作します。 ただし、C の開発者にとっては、通常、返されたインスタンス (つまり、[作成規則](https://developer.apple.com/library/content/documentation/CoreFoundation/Conceptual/CFMemoryMgmt/Concepts/Ownership.html#//apple_ref/doc/uid/20001148-103029)) を所有していることを意味します。
+この名前付け規則は、.NET GC の世界では一致しません。`Create` プレフィックスを持つ .NET メソッドは、.NET でも同じように動作します。 ただし、C の開発者にとっては、通常、返されたインスタンス (つまり、[作成規則](https://developer.apple.com/library/content/documentation/CoreFoundation/Conceptual/CFMemoryMgmt/Concepts/Ownership.html#//apple_ref/doc/uid/20001148-103029)) を所有していることを意味します。
 
 ## <a name="exceptions"></a>例外
 
 .NET では、例外を頻繁に使用してエラーを報告することが非常に一般的です。 ただし、これらは低速であり、目標 C ではまったく同じではありません。 可能な限り、C 開発者からは非表示にする必要があります。
 
-たとえば、.net `Try`パターンは、次のように、目的の C コードからはるかに簡単に使用できます。
+たとえば、.NET `Try` パターンは、目標 C コードからはるかに簡単に使用できます。
 
 ```csharp
 public int Parse (string number)
@@ -127,13 +127,13 @@ public bool TryParse (string number, out int value)
 }
 ```
 
-### <a name="exceptions-inside-init"></a>内部の例外`init*`
+### <a name="exceptions-inside-init"></a>`init*` 内の例外
 
 .NET では、コンストラクターは成功し、(_できれ_ば) 有効なインスタンスを返すか、または例外をスローする必要があります。
 
-これに対し、目標値 C `init*`では`nil` 、インスタンスを作成できない場合にを返すことができます。 これは一般的ではありませんが、多くの Apple のフレームワークで使用される一般的なパターンです。 他のケースでは`assert` 、が発生する場合があります (および現在のプロセスを終了します)。
+これに対し、目標-C を使用すると、インスタンスを作成できない場合に `nil` を返すことが `init*` できます。 これは一般的ではありませんが、多くの Apple のフレームワークで使用される一般的なパターンです。 他のケースでは、`assert` が発生する場合があります (および現在のプロセスを終了します)。
 
-ジェネレーターは、生成さ`return nil`れた`init*`メソッドに対して同じパターンに従います。 マネージ例外がスローされた場合は、を使用し`NSLog` `nil`て出力され、呼び出し元に返されます。
+ジェネレーターは、生成された `init*` メソッドに対して同じ `return nil` パターンに従います。 マネージ例外がスローされた場合は、(`NSLog`を使用して) 出力され、`nil` 呼び出し元に返されます。
 
 ## <a name="operators"></a>演算子
 
@@ -141,4 +141,4 @@ public bool TryParse (string number, out int value)
 
 ["わかりやすい"](https://docs.microsoft.com/dotnet/standard/design-guidelines/operator-overloads)名前付きメソッドは、見つかった場合は演算子のオーバーロードに優先して生成され、API を簡単に使用できるようになります。
 
-`==` 施し`!=`演算子をオーバーライドするクラスは、標準の Equals (Object) メソッドもオーバーライドする必要があります。
+施し `!=` `==` 演算子をオーバーライドするクラスは、標準の Equals (Object) メソッドもオーバーライドする必要があります。

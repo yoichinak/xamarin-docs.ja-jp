@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin の開発者が使用で�
 ms.prod: xamarin
 ms.assetid: C00EA232-ADCC-42AD-BF86-B526414A21C6
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 2979b51c954ab891da5e452e579a650a013a7572
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: fbf847ef49be83494f593291fbb0a00934bc3ced
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289535"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022044"
 ---
 # <a name="user-interface-controls-in-xamarinios"></a>Xamarin のユーザーインターフェイスコントロール
 
@@ -28,7 +28,7 @@ UIButton クラスは、iOS の画面のさまざまな異なるスタイルの�
 
 ## <a name="collection-viewsuicollectionviewmd"></a>[コレクション ビュー](uicollectionview.md)
 
-`UICollectionView`クラスで使用できるコレクションビューは、レイアウトを使用して複数の項目を画面に表示する、iOS 6 の新しい概念です。 にデータを提供して項目`UICollectionView`を作成し、それらの項目と対話するパターンは、iOS 開発でよく使用されるものと同じ委任とデータソースパターンに従います。
+`UICollectionView` クラスで使用できるコレクションビューは、レイアウトを使用して複数の項目を画面に表示する、iOS 6 の新しい概念です。 `UICollectionView` にデータを提供して項目を作成し、それらの項目を操作するパターンは、iOS 開発でよく使用されるものと同じ委任とデータソースパターンに従います。
 
 ## <a name="imagesimagemd"></a>[イメージ](image.md)
 
@@ -36,7 +36,7 @@ UIButton クラスは、iOS の画面のさまざまな異なるスタイルの�
 
 ## <a name="manual-camera-controlsintro-to-manual-camera-controlsmd"></a>[手動カメラ コントロール](intro-to-manual-camera-controls.md)
 
-Ios 8 `AVFoundation Framework`のに用意されている手動カメラコントロールは、モバイルアプリケーションが ios デバイスのカメラを完全に制御できるようにします。 この細かい制御レベルを使用して、プロフェッショナルレベルのカメラアプリケーションを作成し、静止画像やビデオを撮影しながら、カメラのパラメーターを調整することでアーティストコンポジションを提供できます。
+IOS 8 の `AVFoundation Framework` によって提供される手動カメラコントロールは、モバイルアプリケーションが iOS デバイスのカメラを完全に制御できるようにします。 この細かい制御レベルを使用して、プロフェッショナルレベルのカメラアプリケーションを作成し、静止画像やビデオを撮影しながら、カメラのパラメーターを調整することでアーティストコンポジションを提供できます。
 
 ## <a name="mapsios-mapsindexmd"></a>[マップ](ios-maps/index.md)
 
@@ -44,7 +44,7 @@ Maps は、すべての最新のモバイルオペレーティングシステム
 
 ## <a name="labelslabelsmd"></a>[ラベル](labels.md)
 
-`UILabel`コントロールは、単一行および複数行の読み取り専用のテキストを表示するために使用されます。
+`UILabel` コントロールは、単一行および複数行の読み取り専用のテキストを表示するために使用されます。
 
 ## <a name="pickers-and-date-pickerspickermd"></a>[ピッカーと日付のピッカー](picker.md)
 
@@ -54,7 +54,7 @@ Maps は、すべての最新のモバイルオペレーティングシステム
 
 ## <a name="progress-and-activity-indicatorsprogress-activity-indicatormd"></a>[進行状況とアクティビティのインジケーター](progress-activity-indicator.md)
 
-iOS には、アプリの進行状況を示す2つの主な方法が用意されています。アクティビティインジケーター (特定の_ネットワーク_アクティビティインジケーターを含む) と進行状況バー。
+iOS には、アプリの進行状況を示す2つの主な方法が用意されています。アクティビティインジケーター (特定の_ネットワーク_アクティビティインジケーターを含む) と進行状況バーです。
 
 ## <a name="search-barssearchbarmd"></a>[検索バー](searchbar.md)
 
@@ -62,11 +62,11 @@ UISearchBar は、値のリストを検索するために使用されます。
 
 ## <a name="sliders-switches-and-segmented-controlsslider-switch-segmented-controlsmd"></a>[スライダー、スイッチ、およびセグメント付きコントロール](slider-switch-segmented-controls.md)
 
-スライダーコントロールを使用すると、範囲内の数値を簡単に選択できます。 iOS では`UISwitch` 、他のプラットフォームのラジオボタンで表すことができるブール型の入力としてを使用します。 セグメント化されたコントロールは、ユーザーが少数のオプションと対話できるようにするための整理された方法です。
+スライダーコントロールを使用すると、範囲内の数値を簡単に選択できます。 iOS では、他のプラットフォームのラジオボタンで表すことができるブール型の入力として `UISwitch` を使用します。 セグメント化されたコントロールは、ユーザーが少数のオプションと対話できるようにするための整理された方法です。
 
 ## <a name="stack-viewuistackviewmd"></a>[スタック ビュー](uistackview.md)
 
-スタックビューコントロール (`UIStackView`) は、自動レイアウトクラスとサイズクラスの機能を活用して、マルチビューのスタックを水平方向または垂直方向に管理します。これは、iOS デバイスの向きと画面サイズに動的に反応します。
+スタックビューコントロール (`UIStackView`) は、自動レイアウトクラスとサイズクラスの機能を活用して、iOS デバイスの向きと画面サイズに動的に応答するサブビューのスタックを、水平方向または垂直方向に管理します。
 
 ## <a name="tables-and-cellstablesindexmd"></a>[テーブルとセル](tables/index.md)
 
@@ -74,7 +74,7 @@ UISearchBar は、値のリストを検索するために使用されます。
 
 ## <a name="text-inputtext-inputmd"></a>[テキスト入力](text-input.md)
 
-ユーザーテキスト入力の受け入れは、 `UITextField`複数行の編集可能なテキスト用の単一行入力と uitextview のを使用して行われます。 これらのコントロールのいずれかを画面にドラッグしてダブルクリックすると、初期のテキストを設定できます。
+ユーザーテキスト入力の受け入れは、単一行入力の `UITextField` と、複数行の編集可能なテキストの UITextView を使用して行われます。 これらのコントロールのいずれかを画面にドラッグしてダブルクリックすると、初期のテキストを設定できます。
 
 ## <a name="tab-bars-and-tab-bar-controllerscreating-tabbed-applicationsmd"></a>[タブ バーとタブ バー コント ローラー](creating-tabbed-applications.md)
 
@@ -82,7 +82,7 @@ UISearchBar は、値のリストを検索するために使用されます。
 
 ## <a name="web-viewsuiwebviewmd"></a>[Web ビュー](uiwebview.md)
 
-この記事では`UIWebView`、Apple によって提供される3つの Web ビュー (、 `WKWebview`、 `SFSafariViewController`、類似点と相違点、およびそれらを使用する方法) について説明します。
+この記事では、Apple によって提供される3つの Web ビュー (`UIWebView`、`WKWebview`、`SFSafariViewController`、その類似点と相違点、およびそれらの使用方法について説明します。
 
 ## <a name="related-links"></a>関連リンク
 

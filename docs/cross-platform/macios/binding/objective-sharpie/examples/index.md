@@ -3,15 +3,15 @@ title: 目標マジックペンの例
 description: このドキュメントでは、マジックペンツールを使用する方法について説明するさまざまなガイドにリンクしていますC# 。これは、目的の C コードへのバインドを作成するプロセスを自動化するために使用されます。
 ms.prod: xamarin
 ms.assetid: 1ACB0935-6D5F-4A5F-BE28-08DA1B675F0E
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: b2b595187ec8d011f45e26ea5139c253beb5c453
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 653b2a4397ce92b5b7501149258f172dd3d69e81
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290692"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016241"
 ---
 # <a name="objective-sharpie-examples"></a>目標マジックペンの例
 

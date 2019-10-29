@@ -4,15 +4,15 @@ description: このトピックでは、Monotouch.dialog API の設計、.NET �
 ms.prod: xamarin
 ms.assetid: 951713CD-D6AD-981C-A09E-4F2C98588D8B
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/05/2017
-ms.openlocfilehash: 4f6043190087d34ccaa4a63fcc801843194273ad
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 4157e73379be2adc7c92b8cdbc05c4cc4489daec
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291894"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022319"
 ---
 # <a name="ios-advanced-concepts-and-internals"></a>iOS の高度な概念と内部構造
 
@@ -31,15 +31,15 @@ API バインディングの背後にある設計原則について説明しま�
 また、Visual Studio for Mac と Xcode の Interface Builder で Interface Builder を使用して UI をデザインする方法についても説明します。
 
 > [!IMPORTANT]
-> このドキュメントでは、Visual Studio for Mac と Xcode の Interface Builder との統合についてのみ説明します。 iOS Designer の詳細については、 [iOS Designer](~/ios/user-interface/designer/index.md)ドキュメントを参照してください。
+> このドキュメントでは、Xcode の Interface Builder のみとの統合 Visual Studio for Mac について説明します。 IOS Designer の詳細については、 [Ios designer](~/ios/user-interface/designer/index.md)のドキュメントを参照してください。
 
 ## <a name="ios-architectureiosinternalsarchitecturemd"></a>[iOS のアーキテクチャ](~/ios/internals/architecture.md)
 
-Xamarin.iOS アプリケーションは Mono 実行環境内で実行され、完全な事前 (AOT) コンパイルを使用して C# コードを ARM アセンブリ言語にコンパイルします。 このガイドでは、低レベルでの Xamarin.iOS の詳細について説明します。
+Xamarin iOS アプリケーションは Mono 実行環境内で実行され、完全な事前 (AOT) コンパイルを使用しC#てコードを ARM アセンブリ言語にコンパイルします。 このガイドでは、低レベルでの Xamarin の詳細について説明します。
 
-## <a name="objective-c-selectorsiosinternalsobjective-c-selectorsmd"></a>[Objective-C セレクター](~/ios/internals/objective-c-selectors.md)
+## <a name="objective-c-selectorsiosinternalsobjective-c-selectorsmd"></a>[目標-C セレクター](~/ios/internals/objective-c-selectors.md)
 
-Objective-C セレクター (メソッド) を直接呼び出す場合の注意と使用方法。
+目的 C セレクター (メソッド) を直接呼び出す場合の注意と使用方法。
 
 ## <a name="limitationslimitationsmd"></a>[制限事項](limitations.md)
 

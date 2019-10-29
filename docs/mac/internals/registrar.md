@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin. Mac レジストラーと
 ms.prod: xamarin
 ms.assetid: 7CAAA6B7-D654-4AD3-BAEC-9DD01210978A
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 11/10/2017
-ms.openlocfilehash: d44f445b0c3bcc6fd498372f6cdf3e20be39d5b5
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 991d9b2d911b5aa4ac07225fd1df34877451df49
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290093"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73017321"
 ---
 # <a name="xamarinmac-registrar"></a>Xamarin. Mac レジストラー
 
@@ -44,4 +44,4 @@ Xamarin. Mac はマネージ (.NET) ワールドと Cocoa のランタイムの�
 - NSObject から派生したクラスを使用して起動後にプラグインが読み込まれました
 - NSObject から派生する動的に作成されたクラスインスタンス
 
-レジストラーは、開始時に何らかの型を登録する必要があることを認識できません。 メソッド`ObjCRuntime.Runtime.RegisterAssembly`は、他に考慮する型があることをレジストラーに通知するために用意されています。
+レジストラーは、開始時に何らかの型を登録する必要があることを認識できません。 `ObjCRuntime.Runtime.RegisterAssembly` メソッドは、他に考慮する型があることをレジストラーに通知するために用意されています。

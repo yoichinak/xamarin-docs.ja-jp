@@ -4,15 +4,15 @@ description: このドキュメントでは、リージョンの監視、バッ�
 ms.prod: xamarin
 ms.assetid: A2B2231A-C045-4C11-8176-F9966485197A
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 1d5a227f4acdba319eefc91b4991dead5a036eb9
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 2d56af364d63ff78bafbdd7d8043ae4d75d97959
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70756327"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73010699"
 ---
 # <a name="updating-a-xamarinios-app-in-the-background"></a>バックグラウンドでの Xamarin iOS アプリの更新
 
@@ -31,7 +31,7 @@ iOS には、バックグラウンド処理機能を備えた2つの場所認識
 1. *リージョンの監視*は、境界を持つリージョンを設定し、ユーザーがリージョンを入力または終了したときにデバイスをスリープ解除するプロセスです。 領域は循環しており、さまざまなサイズにすることができます。 ユーザーがリージョンの境界を越えると、デバイスはイベントを処理するためにウェイクアップします。通常は、通知を起動するか、タスクを開始します。 リージョンの監視には GPS が必要であり、バッテリとデータの使用量が増加します。
 1. *重要な場所の変更サービス*は、携帯電話機を搭載したデバイスで使用できる、よりシンプルで節電可能なオプションです。 重要な場所の変更をリッスンしているアプリケーションは、デバイスがセル塔を切り替えると通知されます。 このサービスは、中断または終了したアプリケーションをスリープ解除するために使用でき、バックグラウンドで新しいコンテンツを確認する機会を提供します。 バックグラウンド[タスク](~/ios/app-fundamentals/backgrounding/ios-backgrounding-techniques/ios-backgrounding-with-tasks.md)とのペアがない限り、バックグラウンドアクティビティは約10秒に制限されます。
 
-アプリケーションでは、これらの場所`UIBackgroundMode`を認識する api を使用する場所は必要ありません。 IOS では、ユーザーの場所での変更によってデバイスがウェイクアップされたときに実行できるタスクの種類は追跡されないため、これらの Api は iOS 6 のバックグラウンドでコンテンツを更新するための回避策を提供します。 *場所ベースの api を使用してバックグラウンド更新をトリガーすると、デバイスリソースが描画され、アプリケーションがその場所にアクセスする必要がある理由を理解していないユーザーを混乱させる可能性があることに注意してください*。 Location Api をまだ使用していないアプリケーションでは、バックグラウンド処理のためにリージョンの監視または重要な場所の変更を実装するときに、裁量を使用します。
+アプリケーションでは、これらの場所を認識する Api を使用するために `UIBackgroundMode` 場所を必要としません。 IOS では、ユーザーの場所での変更によってデバイスがウェイクアップされたときに実行できるタスクの種類は追跡されないため、これらの Api は iOS 6 のバックグラウンドでコンテンツを更新するための回避策を提供します。 *場所ベースの api を使用してバックグラウンド更新をトリガーすると、デバイスリソースが描画され、アプリケーションがその場所にアクセスする必要がある理由を理解していないユーザーを混乱させる可能性があることに注意してください*。 Location Api をまだ使用していないアプリケーションでは、バックグラウンド処理のためにリージョンの監視または重要な場所の変更を実装するときに、裁量を使用します。
 
 バックグラウンド処理の場所の監視を使用するアプリは、iOS 6 の欠陥を公開します。アプリケーションのニーズがバックグラウンドで必要なカテゴリに合わない場合、バックグラウンド処理オプションは限られています。 2つの新しい Api (*バックグラウンドフェッチ*と*リモート通知*) の導入により、iOS 7 (およびそれ以降) は、より多くのアプリケーションにバックグラウンド処理機会を提供します。 次の2つのセクションでは、これらの新しい Api について説明します。
 
@@ -43,9 +43,9 @@ IOS 6 では、フォアグラウンドに新しいコンテンツを読み込�
 
 バックグラウンドフェッチを実装するには、[*情報] plist*を編集し、[バックグラウンドモードおよび**バックグラウンドフェッチ** **を有効にする**] チェックボックスをオンにします。
 
- [![](updating-an-application-in-the-background-images/fetch.png "情報を編集し、[バックグラウンドモードとバックグラウンドフェッチを有効にする] チェックボックスをオンにします。")](updating-an-application-in-the-background-images/fetch.png#lightbox)
+ [![](updating-an-application-in-the-background-images/fetch.png "Edit the Info.plist and check the Enable Background Modes and Background Fetch check boxes")](updating-an-application-in-the-background-images/fetch.png#lightbox)
 
-次に、で`AppDelegate`、 `FinishedLaunching`メソッドをオーバーライドして最小フェッチ間隔を設定します。 この例では、OS が新しいコンテンツを取得する頻度を決定します。
+次に、`AppDelegate`で、`FinishedLaunching` メソッドをオーバーライドして最小フェッチ間隔を設定します。 この例では、OS が新しいコンテンツを取得する頻度を決定します。
 
 ```csharp
 public override bool FinishedLaunching (UIApplication application, NSDictionary launchOptions)
@@ -55,7 +55,7 @@ public override bool FinishedLaunching (UIApplication application, NSDictionary 
 }
 ```
 
-最後に、の`PerformFetch` `AppDelegate`メソッドをオーバーライドし、*完了ハンドラー*を渡すことによって、フェッチを実行します。 完了ハンドラーは、次の`UIBackgroundFetchResult`ものを受け取るデリゲートです。
+最後に、`AppDelegate`の `PerformFetch` メソッドをオーバーライドし、*完了ハンドラー*を渡すことによって、フェッチを実行します。 完了ハンドラーは、`UIBackgroundFetchResult`を受け取るデリゲートです。
 
 ```csharp
 public override void PerformFetch (UIApplication application, Action<UIBackgroundFetchResult> completionHandler)
@@ -77,17 +77,17 @@ public override void PerformFetch (UIApplication application, Action<UIBackgroun
 バックグラウンドフェッチを使用するアプリケーションは、呼び出しを実行して UI をバックグラウンドから更新できます。 ユーザーがアプリを開くと、UI が最新の状態になり、新しいコンテンツが表示されます。 これにより、アプリケーションのアプリスイッチャースナップショットも更新されるため、ユーザーはアプリケーションに新しいコンテンツがあることを確認できます。
 
 > [!IMPORTANT]
-> `PerformFetch`が呼び出されると、アプリケーションは、新しいコンテンツのダウンロードを開始するまで約30秒かかり、完了ハンドラーブロックを呼び出します。 この処理に時間がかかりすぎると、アプリは終了します。 メディアまたはその他の大きなファイルをダウンロードする場合は、バックグラウンド_転送サービス_でバックグラウンドフェッチを使用することを検討してください。
+> `PerformFetch` が呼び出されると、アプリケーションは、新しいコンテンツのダウンロードを開始するまで約30秒かかり、完了ハンドラーブロックを呼び出します。 この処理に時間がかかりすぎると、アプリは終了します。 メディアまたはその他の大きなファイルをダウンロードする場合は、バックグラウンド_転送サービス_でバックグラウンドフェッチを使用することを検討してください。
 
 ### <a name="backgroundfetchinterval"></a>BackgroundFetchInterval
 
-上記のサンプルコードでは、最小フェッチ間隔をに`BackgroundFetchIntervalMinimum`設定して、新しいコンテンツを取得する頻度を OS に決定します。 iOS には、次の3つのフェッチ間隔オプションが用意されています。
+上記のサンプルコードでは、最小フェッチ間隔を `BackgroundFetchIntervalMinimum`に設定することによって、新しいコンテンツをフェッチする頻度を OS に決定させます。 iOS には、次の3つのフェッチ間隔オプションが用意されています。
 
 1. `BackgroundFetchIntervalNever`-新しいコンテンツがフェッチされないようにシステムに指示します。 ユーザーがサインインしていない場合など、特定の状況でのフェッチをオフにするには、このオプションを使用します。 これは、フェッチ間隔の既定値です。 
 1. `BackgroundFetchIntervalMinimum`-システムで、ユーザーパターン、バッテリ寿命、データ使用量、および他のアプリケーションのニーズに基づいてフェッチする頻度を決定します。
 1. `BackgroundFetchIntervalCustom`-アプリケーションのコンテンツが更新される頻度がわかっている場合は、すべてのフェッチの後に "スリープ" 間隔を指定できます。その間、アプリケーションは、新しいコンテンツをフェッチできなくなります。 この間隔が経過すると、コンテンツをいつフェッチするかがシステムによって決定されます。
 
-`BackgroundFetchIntervalMinimum` と`BackgroundFetchIntervalCustom`はどちらもシステムを利用してフェッチをスケジュールします。 この間隔は動的であるため、デバイスのニーズに合わせて、個々のユーザーの習慣に適合させることができます。 たとえば、あるユーザーがアプリケーションを毎朝チェックし、1時間ごとに別のチェックを行う場合、iOS は、アプリケーションを開くたびに、両方のユーザーについてコンテンツが最新の状態であることを確認します。
+`BackgroundFetchIntervalMinimum` と `BackgroundFetchIntervalCustom` はどちらも、フェッチをスケジュールするためにシステムに依存しています。 この間隔は動的であるため、デバイスのニーズに合わせて、個々のユーザーの習慣に適合させることができます。 たとえば、あるユーザーがアプリケーションを毎朝チェックし、1時間ごとに別のチェックを行う場合、iOS は、アプリケーションを開くたびに、両方のユーザーについてコンテンツが最新の状態であることを確認します。
 
 バックグラウンドフェッチは、重要でないコンテンツを頻繁に更新するアプリケーションで使用する必要があります。 重要な更新プログラムが適用されているアプリケーションでは、リモート通知を使用する必要があります。 リモート通知は、バックグラウンドフェッチに基づいており、同じ完了ハンドラーを共有します。 次に、リモート通知について説明します。
 
@@ -101,9 +101,9 @@ IOS 6 では、受信プッシュ通知は、アプリケーションで問題�
 
 リモート通知を実装するには、[*情報] plist*を編集し、[バックグラウンドモードと**リモート通知** **を有効にする**] チェックボックスをオンにします。
 
- [![](updating-an-application-in-the-background-images/remote.png "バックグラウンドモードとリモート通知を有効にするために設定されたバックグラウンドモード")](updating-an-application-in-the-background-images/remote.png#lightbox)
+ [![](updating-an-application-in-the-background-images/remote.png "Background Mode set to Enable Background Modes and Remote notifications")](updating-an-application-in-the-background-images/remote.png#lightbox)
 
-次に、プッシュ`content-available`通知自体のフラグを1に設定します。 これにより、アプリケーションは、アラートを表示する前に新しいコンテンツを取得することができます。
+次に、プッシュ通知自体の `content-available` フラグを1に設定します。 これにより、アプリケーションは、アラートを表示する前に新しいコンテンツを取得することができます。
 
 ```csharp
 'aps' {
@@ -112,7 +112,7 @@ IOS 6 では、受信プッシュ通知は、アプリケーションで問題�
 }
 ```
 
-*Appdelegate*で、 `DidReceiveRemoteNotification`メソッドをオーバーライドして、利用可能なコンテンツの通知ペイロードを確認し、適切な完了ハンドラーブロックを呼び出します。
+*Appdelegate*で、`DidReceiveRemoteNotification` メソッドをオーバーライドして、利用可能なコンテンツの通知ペイロードを確認し、適切な完了ハンドラーブロックを呼び出します。
 
 ```csharp
 public override void DidReceiveRemoteNotification (UIApplication application, NSDictionary userInfo, Action<UIBackgroundFetchResult> completionHandler)
@@ -147,11 +147,11 @@ public override void DidReceiveRemoteNotification (UIApplication application, NS
 
 ただし、APNs は、通常のリモート通知またはキープアライブ応答と共にサイレント通知 "便乗" を使用します。 次の図に示すように、通常の通知はレート制限されていないため、APNs からデバイスに保存されたサイレント通知をプッシュするために使用できます。
 
- [![](updating-an-application-in-the-background-images/silent.png "次の図に示すように、通常の通知を使用すると、保存されているサイレント通知を APNs からデバイスにプッシュできます。")](updating-an-application-in-the-background-images/silent.png#lightbox)
+ [![](updating-an-application-in-the-background-images/silent.png "Regular notifications can be used to push stored silent notifications from the APNs to the device, as illustrated by this diagram")](updating-an-application-in-the-background-images/silent.png#lightbox)
 
 > [!IMPORTANT]
 > Apple では、アプリケーションが必要とするたびにサイレントプッシュ通知を送信することを開発者に促し、APNs が配信をスケジュールできるようにします。
 
 このセクションでは、バックグラウンドでコンテンツを更新して、バックグラウンドで必要なタスクを実行するためのさまざまなオプションについて説明しました。 では、これらの Api のいくつかを実際に見てみましょう。
 
- [次へ: パート 4-iOS バックグラウンド処理のチュートリアル](~/ios/app-fundamentals/backgrounding/ios-backgrounding-walkthroughs/index.md)
+ [次: パート 4-iOS バックグラウンド処理のチュートリアル](~/ios/app-fundamentals/backgrounding/ios-backgrounding-walkthroughs/index.md)

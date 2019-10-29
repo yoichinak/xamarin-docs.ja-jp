@@ -2,15 +2,15 @@
 ms.assetid: 814857C5-D54E-469F-97ED-EE1CAA0156BB
 title: デスクトップアプリの移植に関するガイダンス
 description: 既存の Windows フォームまたは WPF アプリを分離して、macOS、iOS、Android、UWP/Windows 10 で実行するクロスプラットフォームアプリを作成する方法について簡単に説明します。
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/26/2017
-ms.openlocfilehash: 2a678c2b1880cb69b1bece85ed558309aa611a62
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 181034a4936b2da010a2fcd280ded1a3419d43ae
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290345"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016449"
 ---
 # <a name="desktop-app-porting-guidance"></a>デスクトップアプリの移植に関するガイダンス
 

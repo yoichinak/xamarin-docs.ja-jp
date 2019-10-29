@@ -4,21 +4,21 @@ description: このドキュメントでは、Xamarin でビルドされたア�
 ms.prod: xamarin
 ms.assetid: 21248CFB-5A94-4C19-B223-C72E0DC5F1D5
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 5c147b43caf3018cde8870adb25bb73cb08f53ee
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: e42912add9dd94b9cce16d725a456b1b4da30e35
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768510"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022206"
 ---
 # <a name="working-with-tvos-split-view-controllers-in-xamarin"></a>Xamarin での tvOS Split ビューコントローラーの使用
 
 分割ビューコントローラーは、マスタービューコントローラーと詳細ビューコントローラーを同時に画面上に並べて表示し、管理します。 分割ビューコントローラーを使用すると、マスタービュー (左側の小さなセクション) と詳細ビュー (右側の大きなセクション) に、フォーカスがある永続的なコンテンツが表示されます。
 
-[![](split-views-images/intro01.png "分割ビューのサンプル")](split-views-images/intro01.png#lightbox)
+[![](split-views-images/intro01.png "Sample Split View")](split-views-images/intro01.png#lightbox)
 
 <a name="About-Split-View-Controllers" />
 
@@ -28,7 +28,7 @@ ms.locfileid: "70768510"
 
 また、マスタービューコントローラーは、必要に応じて非表示にしたり表示したりすることができます。 
 
-[![](split-views-images/intro02.png "マスタービューコントローラーの非表示")](split-views-images/intro02.png#lightbox)
+[![](split-views-images/intro02.png "The Master View Controller hidden")](split-views-images/intro02.png#lightbox)
 
 分割ビューコントローラーは、フィルター可能なコンテンツの一覧を表示するために使用されることがよくあります。これには、マスタービューのカテゴリと詳細ビューのフィルター処理された結果が含まれます。 これは通常、左側にテーブルビューとして表示され、右側には[コレクションビュー](~/ios/tvos/user-interface/collection-views.md)として表示されます。
 
@@ -48,41 +48,41 @@ TvOS アプリで分割ビューコントローラーを操作する最も簡単
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1. **Solution Pad**で、 `Main.storyboard`ファイルをダブルクリックして開き、編集します。
+1. **Solution Pad**で、`Main.storyboard` ファイルをダブルクリックして開き、編集します。
 1. **分割ビューコントローラー**を**ツールボックス**からドラッグし、ビューにドロップします。 
 
-    [![](split-views-images/activity01.png "分割ビューコントローラー")](split-views-images/activity01.png#lightbox)
+    [![](split-views-images/activity01.png "A Split View Controller")](split-views-images/activity01.png#lightbox)
 1. 既定では、iOS Designer は、マスタービューにナビゲーションコントローラーとビューコントローラーをインストールします。 これがアプリの要件に合わない場合は、単純に削除します。
 1. 既定のマスタービューを削除する場合は、新しいビューコントローラーをデザイン画面にドラッグします。 
 
-    [![](split-views-images/activity02.png "ビューコントローラー")](split-views-images/activity02.png#lightbox)
+    [![](split-views-images/activity02.png "A View Controller")](split-views-images/activity02.png#lightbox)
 1. コントロールをクリックし、分割ビューコントローラーから新しいマスタービューコントローラーにドラッグします。 
 1. **ポップアップメニュー**から **[Master]** を選択します。 
 
-    [![](split-views-images/activity03.png "ポップアップメニューから [Master] を選択します。")](split-views-images/activity03.png#lightbox)
+    [![](split-views-images/activity03.png "Select Master from the Popup Menu")](split-views-images/activity03.png#lightbox)
 1. マスタービューと詳細ビューの内容をデザインします。 
 
-    [![](split-views-images/activity04.png "レイアウトの例")](split-views-images/activity04.png#lightbox)
+    [![](split-views-images/activity04.png "Example layout")](split-views-images/activity04.png#lightbox)
 1. C#コード内で UI コントロールを操作するには、 **Properties Pad**の [**ウィジェット] タブ**で**名前**を割り当てます。
 1. 変更内容を保存し、Visual Studio for Mac に戻ります。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. **ソリューションエクスプローラー**で、 `Main.storyboard`ファイルをダブルクリックして開き、編集します。
+1. **ソリューションエクスプローラー**で、`Main.storyboard` ファイルをダブルクリックして開き、編集します。
 1. **分割ビューコントローラー**を**ツールボックス**からドラッグし、ビューにドロップします。 
 
-    [![](split-views-images/activity01-vs.png "分割ビューコントローラー")](split-views-images/activity01-vs.png#lightbox)
+    [![](split-views-images/activity01-vs.png "A Split View Controller")](split-views-images/activity01-vs.png#lightbox)
 1. 既定では、iOS Designer は、マスタービューにナビゲーションコントローラーとビューコントローラーを追加します。 これがアプリの要件に合わない場合は、単純に削除します。
 1. 既定のマスタービューを削除する場合は、新しいビューコントローラーをデザイン画面にドラッグします。 
 
-    [![](split-views-images/activity02-vs.png "ビューコントローラー")](split-views-images/activity02-vs.png#lightbox)
+    [![](split-views-images/activity02-vs.png "A View Controller")](split-views-images/activity02-vs.png#lightbox)
 1. コントロールをクリックし、分割ビューコントローラーから新しいマスタービューコントローラーにドラッグします。 
 1. **ポップアップメニュー**から **[Master]** を選択します。 
 
-    [![](split-views-images/activity03-vs.png "ポップアップメニューから [Master] を選択します。")](split-views-images/activity03-vs.png#lightbox)
+    [![](split-views-images/activity03-vs.png "Select Master from the Popup Menu")](split-views-images/activity03-vs.png#lightbox)
 1. マスタービューと詳細ビューの内容をデザインします。 
 
-    [![](split-views-images/activity04.png "コンテンツのレイアウト")](split-views-images/activity04.png#lightbox)
+    [![](split-views-images/activity04.png "Content layout")](split-views-images/activity04.png#lightbox)
 1. コードC#内で UI コントロールを操作するには、**プロパティエクスプローラー**の [**ウィジェット] タブ**で**名前**を割り当てます。
 1. 変更内容を保存します。
 
@@ -100,7 +100,7 @@ TvOS アプリで分割ビューコントローラーを操作する最も簡単
 
 ### <a name="accessing-master-and-detail"></a>マスターと詳細へのアクセス
 
-マスタービューコントローラーと詳細ビューコントローラーにプログラムでアクセスする必要がある`ViewControllers`場合は、分割ビューコントローラーのプロパティを使用します。 例えば:
+マスタービューコントローラーと詳細ビューコントローラーにプログラムでアクセスする必要がある場合は、分割ビューコントローラーの `ViewControllers` プロパティを使用します。 (例:
 
 ```csharp
 // Gain access to master and detail view controllers
@@ -122,7 +122,7 @@ var detailController = ViewControllers [1] as DetailViewController;
 public DetailViewController DetailController { get; set;}
 ```
 
-分割ビューコントローラーで、 `ViewDidLoad`メソッドをオーバーライドし、2つのビューを連結します。 例えば:
+分割ビューコントローラーで、`ViewDidLoad` メソッドをオーバーライドし、2つのビューを連結します。 (例:
 
 ```csharp
 public override void ViewDidLoad ()
@@ -146,7 +146,7 @@ public override void ViewDidLoad ()
 
 ### <a name="showing-and-hiding-master"></a>マスターの表示と非表示
 
-必要に応じて、分割ビューコントローラーの`PreferredDisplayMode`プロパティを使用して、マスタービューコントローラーの表示と非表示を切り替えることができます。 例えば:
+必要に応じて、分割ビューコントローラーの `PreferredDisplayMode` プロパティを使用して、マスタービューコントローラーの表示と非表示を切り替えることができます。 (例:
 
 ```csharp
 // Show hide split view
@@ -157,18 +157,18 @@ if (SplitViewController.DisplayMode == UISplitViewControllerDisplayMode.PrimaryH
 }
 ```
 
-Enum `UISplitViewControllerDisplayMode`は、次のいずれかとしてマスタービューコントローラーを表示する方法を定義します。
+`UISplitViewControllerDisplayMode` 列挙型は、次のいずれかとしてマスタービューコントローラーを表示する方法を定義します。
 
 - TvOS は、マスタービューと詳細ビューの表示を制御します。
 - **Primaryhidden** -マスタービューコントローラーを非表示にします。
 - **Allvisible** -マスタービューコントローラーと詳細ビューコントローラーの両方を横に並べて表示します。 これは通常の既定のプレゼンテーションです。
 - **Primaryoverlay** -詳細ビューコントローラーはの下で拡張され、マスターによってカバーされます。
 
-現在のプレゼンテーション状態を取得するには`DisplayMode` 、分割ビューコントローラーのプロパティを使用します。
+現在のプレゼンテーション状態を取得するには、分割ビューコントローラーの `DisplayMode` プロパティを使用します。
 
 <a name="Summary" />
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>まとめ
 
 この記事では、tvOS アプリ内の分割ビューコントローラーの設計と操作について説明しました。
 

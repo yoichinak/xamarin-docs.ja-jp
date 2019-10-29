@@ -6,13 +6,13 @@ ms.assetid: 02E6C553-5670-49A0-8EE9-5153ED21EA91
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 09/26/2019
-ms.openlocfilehash: 6ea8195d422da3c64175b164c5fbf2885eb234ab
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
-ms.translationtype: HT
+ms.date: 10/28/2019
+ms.openlocfilehash: ba23b7dee93c0c8938ee3b2b820ba081e420727c
+ms.sourcegitcommit: 93697a20e6fc7da547a8714ac109d7953b61d63f
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72696391"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72980875"
 ---
 # <a name="xamarinforms-label"></a>Xamarin. フォームラベル
 
@@ -70,39 +70,13 @@ Label label = new Label { Text = "Character spaced text", CharacterSpacing = 10 
 
 結果として、 [`Label`](xref:Xamarin.Forms.Label)によって表示されるテキスト内の文字は、デバイスに依存しない単位 `CharacterSpacing` 間隔が区別されます。
 
-## <a name="padding"></a>[間隔]
-
-余白は、要素とその子要素の間のスペースを表し、要素を独自のコンテンツから分離するために使用されます。 パディングは、`Label.Padding` プロパティを[`Thickness`](xref:Xamarin.Forms.Thickness)値に設定することによって[`Label`](xref:Xamarin.Forms.Label)インスタンスに適用できます。
-
-```xaml
-<Label Text="Padded text"
-       Padding="20" />
-```
-
-これに相当する C# コードを次に示します。
-
-```csharp
-Label label = new Label
-{
-    Text = "Padded text",
-    Padding = new Thickness(20)
-};
-```
-
-> [!IMPORTANT]
-> IOS では、`Padding` プロパティを設定する[`Label`](xref:Xamarin.Forms.Label)が作成されると、パディングが適用され、埋め込み値を後で更新できるようになります。 ただし、`Padding` プロパティを設定しない `Label` が作成された場合、後で設定しようとしても効果はありません。
->
-> Android およびユニバーサル Windows プラットフォームでは、`Padding` プロパティの値は `Label` の作成時に指定するか、後で指定することができます。
-
-埋め込みの詳細については、「[余白と埋め込み](~/xamarin-forms/user-interface/layouts/margin-and-padding.md)」を参照してください。
-
 ## <a name="colors"></a>色
 
 ラベルは、バインド可能な[`TextColor`](xref:Xamarin.Forms.Label.TextColor)プロパティを使用して、カスタムテキストの色を使用するように設定できます。
 
 各プラットフォームで色が使用できるようにするには、特別な注意が必要です。 各プラットフォームにはテキストと背景色について異なる既定値があるため、各プラットフォームで動作する既定値を選択する必要があります。
 
-次の XAML の例では、`Label`のテキストの色を設定します。
+次の XAML の例では、`Label` のテキストの色を設定します。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -185,7 +159,6 @@ var label =
 
 ![MaxLines のラベルの例](label-images/label-maxlines.png)
 
-
 ## <a name="display-html"></a>HTML の表示
 
 [`Label`](xref:Xamarin.Forms.Label)クラスには `TextType` プロパティがあり、`Label` インスタンスでプレーンテキストを表示するか、HTML テキストを表示するかを決定します。 このプロパティは、`TextType` 列挙体のいずれかのメンバーに設定する必要があります。
@@ -193,7 +166,7 @@ var label =
 - `Text` は、`Label` がプレーンテキストを表示し、`Label.TextType` プロパティの既定値であることを示します。
 - `Html` は、`Label` に HTML テキストが表示されることを示します。
 
-したがって、 [`Label`](xref:Xamarin.Forms.Label)インスタンスは、`Label.TextType` プロパティを `Html`に、`Label.Text` プロパティを html 文字列に設定することにより、html を表示できます。
+したがって、 [`Label`](xref:Xamarin.Forms.Label)インスタンスは、`Label.TextType` プロパティを `Html` に、`Label.Text` プロパティを html 文字列に設定することにより、html を表示できます。
 
 ```csharp
 Label label = new Label
@@ -242,7 +215,7 @@ XAML では、`<` と `>` シンボルをさらにエスケープすることに
 `FormattedText` プロパティの型は[`FormattedString`](xref:Xamarin.Forms.FormattedString)で、 [`Spans`](xref:Xamarin.Forms.FormattedString.Spans)プロパティを使用して設定された1つ以上の[`Span`](xref:Xamarin.Forms.Span)インスタンスで構成されています。 次の `Span` プロパティを使用して、外観を設定できます。
 
 - [`BackgroundColor`](xref:Xamarin.Forms.Span.BackgroundColor) –スパンの背景の色です。
-- `CharacterSpacing`: `double` 型、`Span` テキストの文字間の間隔。
+- `double` 型の `CharacterSpacing` は `Span` テキストの文字間隔です。
 - [`Font`](xref:Xamarin.Forms.Span.Font) –スパン内のテキストのフォント。
 - [`FontAttributes`](xref:Xamarin.Forms.Span.FontAttributes) –スパン内のテキストのフォント属性。
 - [`FontFamily`](xref:Xamarin.Forms.Span.FontFamily) –スパン内のテキストのフォントが属するフォントファミリ。
@@ -390,6 +363,48 @@ var label = new Label
 次のスクリーンショットは、 [`Span.LineHeight`](xref:Xamarin.Forms.Span.LineHeight)プロパティを1.8 に設定した結果を示しています。
 
 ![Span LineHeight の例](label-images/span-lineheight.png)
+
+## <a name="padding"></a>[間隔]
+
+余白は、要素とその子要素の間のスペースを表し、要素を独自のコンテンツから分離するために使用されます。 パディングは、`Label.Padding` プロパティを[`Thickness`](xref:Xamarin.Forms.Thickness)値に設定することによって[`Label`](xref:Xamarin.Forms.Label)インスタンスに適用できます。
+
+```xaml
+<Label Padding="10">
+    <Label.FormattedText>
+        <FormattedString>
+            <Span Text="Lorem ipsum" />
+            <Span Text="dolor sit amet." />
+        </FormattedString>
+    </Label.FormattedText>
+</Label>
+```
+
+これに相当する C# コードを次に示します。
+
+```csharp
+FormattedString formattedString = new FormattedString();
+formattedString.Spans.Add(new Span
+{
+  Text = "Lorem ipsum"
+});
+formattedString.Spans.Add(new Span
+{
+  Text = "dolor sit amet."
+});
+Label label = new Label
+{
+    FormattedText = formattedString,
+    Padding = new Thickness(20)
+};
+```
+
+> [!IMPORTANT]
+> IOS では、`Padding` プロパティを設定する[`Label`](xref:Xamarin.Forms.Label)が作成されると、パディングが適用され、埋め込み値を後で更新できるようになります。 ただし、`Padding` プロパティを設定しない `Label` が作成された場合、後で設定しようとしても効果はありません。
+>
+> Android およびユニバーサル Windows プラットフォームでは、`Padding` プロパティの値は `Label` の作成時に指定するか、後で指定することができます。
+
+埋め込みの詳細については、「[余白と埋め込み](~/xamarin-forms/user-interface/layouts/margin-and-padding.md)」を参照してください。
+
 
 ## <a name="hyperlinks"></a>ハイパーリンク
 

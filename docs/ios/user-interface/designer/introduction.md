@@ -4,15 +4,15 @@ description: このガイドでは、Xamarin Designer for iOS について説明
 ms.prod: xamarin
 ms.assetid: E7045E41-0DEF-416B-BCDB-52502350F61C
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 01/31/2018
-ms.openlocfilehash: bb772d2b0cd50c1bac9b1d119adf4e9a04a341a3
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 6b02a0f8476cf47ca6df279653095fe0845b36c9
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "71250151"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73004573"
 ---
 # <a name="ios-designer-basics"></a>iOS Designer の基本
 
@@ -96,7 +96,7 @@ IOS Designer を使用すると、開発者はアプリケーションのユー�
 
 -----
 
-- @No__t_1 クラスに関連するカスタムコードを使用して**ViewController.cs**を設定する必要があります。 このファイルでは、`ViewController` クラスがさまざまな iOS ビューコントローラーのライフサイクルメソッドに応答し、UI をカスタマイズして、ボタンタップなどのユーザー入力に応答できます。
+- `ViewController` クラスに関連するカスタムコードを使用して**ViewController.cs**を設定する必要があります。 このファイルでは、`ViewController` クラスがさまざまな iOS ビューコントローラーのライフサイクルメソッドに応答し、UI をカスタマイズして、ボタンタップなどのユーザー入力に応答できます。
 
 - **ViewController.designer.cs**は、視覚的に構築されたインターフェイスをコードにマップするために iOS デザイナーによって作成された、生成されたファイルです。 このファイルへの変更は上書きされるため、変更しないでください。 このファイルのプロパティ宣言を使用すると、`ViewController` クラスのコードが、iOS デザイナーで設定された**名前**でアクセスできるようになります。 **ViewController.designer.cs**を開くと、次のコードがわかります。
 
@@ -121,7 +121,7 @@ namespace Designer
 }
 ```
 
-@No__t_0 プロパティの宣言は、 **ViewController.designer.cs**ファイルだけでなく `ViewController` クラス全体を、ストーリーボードで定義されているボタンに接続します。 **ViewController.cs**は `ViewController` クラスの一部を定義するため、`SubmitButton` にアクセスできます。
+`SubmitButton` プロパティの宣言は、 **ViewController.designer.cs**ファイルだけでなく `ViewController` クラス全体を、ストーリーボードで定義されているボタンに接続します。 **ViewController.cs**は `ViewController` クラスの一部を定義するため、`SubmitButton` にアクセスできます。
 
 次のスクリーンショットは、IntelliSense が**ViewController.cs**の `SubmitButton` 参照を認識するようになったことを示しています。
 

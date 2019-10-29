@@ -4,21 +4,21 @@ description: このドキュメントでは、Xamarin. iOS で進行状況とア
 ms.prod: xamarin
 ms.assetid: 7AA887E4-51F7-4867-82C5-A8D2EA48AE07
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/11/2017
-ms.openlocfilehash: a2197a1ff9c37546fd97eb5a2459764ec05d4412
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 76e1ee54a5e1b729fdcb0b0a2c1f278703b2b4d6
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768925"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021971"
 ---
 # <a name="progress-and-activity-indicators-in-xamarinios"></a>Xamarin. iOS の進行状況とアクティビティインジケーター
 
 アプリでは、データの読み込みや処理などの実行時間の長いタスクを実行する必要があり、この遅延によって UI の更新に遅延が生じる可能性があります。 この間、システムがビジー状態であることをユーザーに知らせるためには、常に進行状況インジケーターを使用する必要があります。 これにより、ユーザーは、アプリが要求に対して作業していること、入力を待機していないこと、および、待機する必要がある時間を正確に詳述する手段を提供できます。
 
-iOS には、アプリでこの進行状況を示す2つの主な方法が用意されています。アクティビティインジケーター (特定の_ネットワーク_アクティビティインジケーターを含む) と進行状況バー。
+iOS には、アプリでこの進行状況を示す2つの主な方法が用意されています。アクティビティインジケーター (特定の_ネットワーク_アクティビティインジケーターを含む) と進行状況バーです。
 
 ## <a name="activity-indicator"></a>アクティビティインジケーター
 
@@ -32,7 +32,7 @@ Apple では、アクティビティインジケーターの使用に関して�
 
 ### <a name="implementing-an-activity-indicator"></a>アクティビティインジケーターの実装
 
-アクティビティインジケーターは、 [`UIActivityIndictorView`](xref:UIKit.UIActivityIndicatorView) `UIActivity`が実行されていることを示すためにクラスによって実装されます。
+アクティビティインジケーターは、`UIActivity` が発生していることを示すために[`UIActivityIndictorView`](xref:UIKit.UIActivityIndicatorView)クラスによって実装されます。
 
 ### <a name="activity-indicators-and-storyboards"></a>アクティビティインジケーターとストーリーボード
 
@@ -42,19 +42,19 @@ IOS Designer を使用して UI を作成する場合は、[ツールボック�
 
 ### <a name="managing-activity-indicator-behavior"></a>アクティビティインジケーターの動作の管理
 
-アクティビティインジケーターアニメーション`StopAnimating()`を開始または停止するには、メソッドとメソッドを使用します。`StartAnimating()`
+`StartAnimating()` メソッドと `StopAnimating()` メソッドを使用して、アクティビティインジケーターアニメーションを開始または停止します。
 
-が呼び出さ`HidesWhenStopped`れた`true`後`StopAnimating()`にアクティビティインジケーターが非表示になるようにするには、プロパティをに設定します。 既定では、 `true`これはに設定されています。 どの時点でも、プロパティを`IsAnimating`チェックすることで、アクティビティインジケーターがスピン中のアニメーションを実行しているかどうかを確認できます。 
+`StopAnimating()` が呼び出された後にアクティビティインジケーターが非表示になるようにするには、`HidesWhenStopped` プロパティを `true` に設定します。 既定では、これは `true` に設定されています。 任意の時点で、`IsAnimating` プロパティをチェックすることで、アクティビティインジケーターがスピン中のアニメーションを実行しているかどうかを確認できます。 
 
 ### <a name="managing-activity-indicator-appearances"></a>アクティビティインジケーターの外観を管理する
 
-アクティビティ`UIActivityIndicatorViewStyle`インジケーターをインスタンス化するときに、列挙体をパラメーターとして渡すことができます。 これを使用すると、visual スタイルを、 `Gray` `White`、または`WhiteLarge`に設定できます。たとえば、次のようになります。
+`UIActivityIndicatorViewStyle` 列挙体は、アクティビティインジケーターをインスタンス化するときにパラメーターとして渡すことができます。 これを使用すると、visual スタイルを `Gray`、`White`、または `WhiteLarge`に設定できます。次に例を示します。
 
 ```csharp
 activitySpinner = new UIActivityIndicatorView(UIActivityIndicatorViewStyle.WhiteLarge);
 ```
 
-によっ`UIActivityIndicatorViewStyle`て提供される色は、 `Color`プロパティを設定することによってオーバーライドできます。
+`UIActivityIndicatorViewStyle` によって提供される色は、`Color` プロパティを設定することによってオーバーライドできます。
 
 ## <a name="progress-bar"></a>進行状況バー
 
@@ -67,7 +67,7 @@ Apple では、進行状況バーの操作に関して次のような推奨事�
 
 ### <a name="implementing-an-progress-bar"></a>プログレスバーの実装
 
-進行状況バーは、[`UIProgressView`](xref:UIKit.UIProgressView)
+進行状況バーは、 [`UIProgressView`](xref:UIKit.UIProgressView)をインスタンス化することによって作成されます。
 
 ### <a name="progress-bars-and-storyboards"></a>進行状況バーとストーリーボード
 
@@ -79,13 +79,13 @@ IOS Designer を使用しているときに、進行状況バーを UI に追加
 
 ### <a name="managing-progress-bar-behavior"></a>進行状況バーの動作の管理
 
-バーの進行状況は、 `Progress`プロパティを使用して最初に設定できます。
+バーの進行状況は、最初に `Progress` プロパティを使用して設定できます。
 
 ```csharp
 ProgressBar.Progress = 0f;
 ```
 
-進行状況を調整するには、 `SetProgress`メソッドを使用して、変更をアニメーション化するかどうかを宣言するブール値を渡します。
+進行状況は、`SetProgress` メソッドを使用して、変更をアニメーション化するかどうかを示すブール値を渡すことによって調整できます。
 
 ```csharp
 ProgressBar.SetProgress(1.0f, true);
@@ -95,7 +95,7 @@ ProgressBar.SetProgress(1.0f, true);
 
 ### <a name="managing-progress-bar-appearance"></a>進行状況バーの外観の管理
 
-アクティビティインジケーターと同様に、 `UIProgressViewStyle`進行状況バーをインスタンス化するときに、列挙体をパラメーターとして渡すことができます。
+アクティビティインジケーターと同様に、進行状況バーをインスタンス化するときに、`UIProgressViewStyle` 列挙体をパラメーターとして渡すことができます。
 
 次のプロパティを使用して、進行状況とトラックイメージおよび濃淡の色を調整できます。
 

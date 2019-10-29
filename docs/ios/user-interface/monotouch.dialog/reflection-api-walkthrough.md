@@ -5,14 +5,14 @@ ms.prod: xamarin
 ms.assetid: C0F923D2-300E-DB9D-F390-9FA71B22DFD6
 ms.technology: xamarin-ios
 ms.date: 11/25/2015
-author: conceptdev
-ms.author: crdun
-ms.openlocfilehash: 7acd43597d033b4c6daac59016a9bdf41ade6f68
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+author: davidortinau
+ms.author: daortin
+ms.openlocfilehash: 323b92190dc3ea18bc78871f5c19e51d0a6ea94e
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768140"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73002217"
 ---
 # <a name="creating-a-xamarinios-application-using-the-reflection-api"></a>リフレクション API を使用して Xamarin iOS アプリケーションを作成する
 
@@ -20,19 +20,19 @@ MT。D リフレクション API を使用すると、MT の属性でクラス�
 
 ## <a name="setting-up-mtd"></a>MT を設定しています。A
 
-MT.D は、Xamarin. iOS と共に配布されます。 これを使用するには、Visual Studio 2017 または Visual Studio for Mac で Xamarin. iOS プロジェクトの **[参照]** ノードを右クリックし、 **monotouch.dialog**アセンブリへの参照を追加します。 次に、 `using MonoTouch.Dialog`必要に応じて、ソースコードにステートメントを追加します。
+MT.D は、Xamarin. iOS と共に配布されます。 これを使用するには、Visual Studio 2017 または Visual Studio for Mac で Xamarin. iOS プロジェクトの **[参照]** ノードを右クリックし、 **monotouch.dialog**アセンブリへの参照を追加します。 次に、必要に応じて、ソースコードに `using MonoTouch.Dialog` ステートメントを追加します。
 
 ## <a name="getting-started-with-the-reflection-api"></a>リフレクション API の概要
 
 リフレクション API の使用方法は次のように単純です。
 
 1. MT で修飾されたクラスを作成します。D 属性。
-1. `BindingContext`インスタンスを作成し、上記のクラスのインスタンスを渡します。 
-1. を作成し、を渡し`BindingContext’s` `RootElement`ます。 `DialogViewController` 
+1. `BindingContext` インスタンスを作成し、上記のクラスのインスタンスを渡します。 
+1. `DialogViewController` を作成し、`BindingContext’s` `RootElement` を渡します。 
 
 リフレクション API の使用方法を示す例を見てみましょう。 この例では、次のように単純なデータ入力画面を作成します。
 
- [![](reflection-api-walkthrough-images/01-expense-entry.png "この例では、次に示すように単純なデータ入力画面を作成します。")](reflection-api-walkthrough-images/01-expense-entry.png#lightbox)
+ [![](reflection-api-walkthrough-images/01-expense-entry.png "In this example, we'll build a simple data entry screen as shown here")](reflection-api-walkthrough-images/01-expense-entry.png#lightbox)
 
 ## <a name="creating-a-class-with-mtd-attributes"></a>MT を使用したクラスの作成。D 属性
 
@@ -57,23 +57,23 @@ public class Expense
 }
 ```
 
-では、セクションのヘッダーを`UITableView`設定するために文字列引数を使用して、のセクションが作成されます。 `SectionAttribute` セクションが宣言されると、その後に続くすべてのフィールドが、別のセクションが宣言されるまで、そのセクションに含まれます。
+`SectionAttribute` によって、セクションのヘッダーを設定するために使用される文字列引数を使用して、`UITableView` のセクションが作成されます。 セクションが宣言されると、その後に続くすべてのフィールドが、別のセクションが宣言されるまで、そのセクションに含まれます。
 フィールドに対して作成されるユーザーインターフェイス要素の型は、フィールドの型と MT によって異なります。D 属性を装飾します。
 
-たとえば、 `Name`フィールド`string`はで`EntryAttribute`あり、では修飾されています。 この結果、テキスト入力フィールドと指定されたキャプションを含む行がテーブルに追加されます。 同様に`IsApproved` 、フィールド`bool`はであるの`CheckboxAttribute`で、テーブルセルの右側にチェックボックスが表示されます。 MT.このケースでは、属性に指定されていないフィールド名 (スペースを自動的に追加する) を使用してキャプションを作成します。
+たとえば、`Name` フィールドは `string` であり、`EntryAttribute`で修飾されています。 この結果、テキスト入力フィールドと指定されたキャプションを含む行がテーブルに追加されます。 同様に、`IsApproved` フィールドは `CheckboxAttribute`を持つ `bool` であり、テーブルセルの右側にチェックボックスが表示されたテーブル行になります。 MT.このケースでは、属性に指定されていないフィールド名 (スペースを自動的に追加する) を使用してキャプションを作成します。
 
 ## <a name="adding-the-bindingcontext"></a>BindingContext の追加
 
-`Expense`クラスを使用するには、を`BindingContext`作成する必要があります。 `BindingContext`は、属性クラスのデータをバインドして要素の階層を作成するクラスです。 作成するには、単にインスタンス化し、属性付きクラスのインスタンスをコンストラクターに渡します。
+`Expense` クラスを使用するには、`BindingContext`を作成する必要があります。 `BindingContext` は、属性クラスのデータをバインドして要素の階層を作成するクラスです。 作成するには、単にインスタンス化し、属性付きクラスのインスタンスをコンストラクターに渡します。
 
-たとえば、 `Expense`クラスで属性を使用して宣言した UI を追加するには`AppDelegate`、の`FinishedLaunching`メソッドに次のコードを含めます。
+たとえば、`Expense` クラスの属性を使用して宣言した UI を追加するには、`AppDelegate`の `FinishedLaunching` メソッドに次のコードを含めます。
 
 ```csharp
 var expense = new Expense ();
 var bctx = new BindingContext (null, expense, "Create a task");
 ```
 
-次に示すように、UI を作成するために必要`BindingContext`な操作`DialogViewController`は、にを追加`RootViewController`し、ウィンドウのとして設定することだけです。
+次に示すように、UI を作成するために必要な作業は、`DialogViewController` に `BindingContext` を追加し、ウィンドウの `RootViewController` として設定することだけです。
 
 ```csharp
 UIWindow window;
@@ -97,18 +97,18 @@ public override bool FinishedLaunching (UIApplication app, NSDictionary options)
 
 ### <a name="adding-a-uinavigationcontroller"></a>UINavigationController の追加
 
-ただし、 `BindingContext`に渡された "タスクの作成" というタイトルは表示されないことに注意してください。 これは、 `DialogViewController`が`UINavigatonController`の一部ではないためです。 次に示す`UINavigationController` `UINavigationController`ように、を`RootViewController,`ウィンドウとして追加し、の`DialogViewController`ルートとしてを追加するコードを変更してみましょう。
+ただし、`BindingContext` に渡す "タスクを作成する" というタイトルは表示されません。 これは、`DialogViewController` が `UINavigatonController`の一部ではないためです。 次に示すように、コードを変更して、`UINavigationController` をウィンドウの `RootViewController,` として追加し、`DialogViewController` を `UINavigationController` のルートとして追加してみましょう。
 
 ```csharp
 nav = new UINavigationController(dvc);
 window.RootViewController = nav;
 ```
 
-アプリケーションを実行すると、次のスクリーンショットに示す`UINavigationController’s`ように、タイトルがナビゲーションバーに表示されます。
+アプリケーションを実行すると、次のスクリーンショットに示すように、`UINavigationController’s` のナビゲーションバーにタイトルが表示されるようになります。
 
- [![](reflection-api-walkthrough-images/02-create-task.png "アプリケーションを実行すると、UINavigationControllers ナビゲーションバーにタイトルが表示されるようになりました。")](reflection-api-walkthrough-images/02-create-task.png#lightbox)
+ [![](reflection-api-walkthrough-images/02-create-task.png "Now when we run the application, the title appears in the UINavigationControllers navigation bar")](reflection-api-walkthrough-images/02-create-task.png#lightbox)
 
-を含める`UINavigationController`ことにより、MT の他の機能を利用できるようになりました。ナビゲーションが必要な D。 たとえば、 `Expense`クラスに列挙を追加して、経費のカテゴリと MT を定義できます。D は選択画面を自動的に作成します。 例を示すために`Expense` 、次のよう`ExpenseCategory`にフィールドを含めるようにクラスを変更します。
+`UINavigationController`を含めることにより、MT の他の機能を利用できるようになりました。ナビゲーションが必要な D。 たとえば、`Expense` クラスに列挙を追加して、経費のカテゴリと MT を定義できます。D は選択画面を自動的に作成します。 例として、次のように `ExpenseCategory` フィールドを含めるように `Expense` クラスを変更します。
 
 ```csharp
 public enum Category
@@ -129,17 +129,17 @@ public class Expense
 
 アプリケーションを実行すると、次のように、カテゴリのテーブルに新しい行が生成されます。
 
- [![](reflection-api-walkthrough-images/03-set-details.png "アプリケーションを実行すると、次のように、カテゴリのテーブルに新しい行が表示されます。")](reflection-api-walkthrough-images/03-set-details.png#lightbox)
+ [![](reflection-api-walkthrough-images/03-set-details.png "Running the application now results in a new row in the table for the category as shown")](reflection-api-walkthrough-images/03-set-details.png#lightbox)
 
 行を選択すると、次に示すように、アプリケーションは列挙に対応する行を含む新しい画面に移動します。
 
- [![](reflection-api-walkthrough-images/04-set-category.png "行を選択すると、アプリケーションは、列挙に対応する行を含む新しい画面に移動します。")](reflection-api-walkthrough-images/04-set-category.png#lightbox)
+ [![](reflection-api-walkthrough-images/04-set-category.png "Selecting the row results in the application navigating to a new screen with rows corresponding to the enumeration")](reflection-api-walkthrough-images/04-set-category.png#lightbox)
 
  <a name="Summary" />
 
 ## <a name="summary"></a>まとめ
 
-この記事では、リフレクション API のチュートリアルについて説明します。 クラスに属性を追加して、表示される内容を制御する方法を説明しました。 また、を`BindingContext`使用して、クラスから作成された要素階層にデータをバインドする方法や、MT の使用方法についても説明しました。を`UINavigationController`持つ D。
+この記事では、リフレクション API のチュートリアルについて説明します。 クラスに属性を追加して、表示される内容を制御する方法を説明しました。 また、`BindingContext` を使用して、クラスから作成された要素階層にデータをバインドする方法、および MT の使用方法についても説明しました。`UINavigationController`を持つ D。
 
 ## <a name="related-links"></a>関連リンク
 

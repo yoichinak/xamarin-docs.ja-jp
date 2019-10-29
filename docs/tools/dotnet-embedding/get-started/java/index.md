@@ -3,21 +3,21 @@ title: Java の概要
 description: このドキュメントでは、Java での .NET 埋め込みの使用を開始する方法について説明します。 システム要件、インストール、およびサポートされているプラットフォームについて説明します。
 ms.prod: xamarin
 ms.assetid: B9A25E9B-3EC2-489A-8AD3-F78287609747
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/28/2018
-ms.openlocfilehash: 8d6bc284d07ce1be11ad273f875b75a70ae14a0f
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 09ea33724c2b1184654ce7768ea1cb2525b62c28
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70278404"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73007377"
 ---
 # <a name="getting-started-with-java"></a>Java の概要
 
 これは、サポートされているすべてのプラットフォームの基本を説明する Java の概要ページです。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>［要件］
 
 Java で .NET 埋め込みを使用するには、次のものが必要です。
 
@@ -59,7 +59,7 @@ nuget install Embeddinator-4000
 
 現在、Java は macOS、Windows、および Android のプレビュー状態です。
 
-プラットフォームを選択するには、 `--platform=<platform>`コマンドライン引数を .net 埋め込みツールに渡します。 現在`macOS` `Android` 、 `Windows`、、およびがサポートされています。
+プラットフォームを選択するには、`--platform=<platform>` コマンドライン引数を .NET 埋め込みツールに渡します。 現在 `macOS`、`Windows`、および `Android` がサポートされています。
 
 ### <a name="macos-and-windows"></a>macOS と Windows
 

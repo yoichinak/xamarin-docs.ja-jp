@@ -4,15 +4,15 @@ description: このガイドでは、Apple Pay と共に使用して、食品、
 ms.prod: xamarin
 ms.assetid: A25AE660-B145-465F-9CCE-8D82BFD614C6
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/05/2017
-ms.openlocfilehash: 1d9a65ab34cb0c02368f53679d38f1d07ec1f257
-ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
+ms.openlocfilehash: 87f81f96e51b6744e37a80819c3c88d1abb644f1
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71198557"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022229"
 ---
 # <a name="apple-pay-in-xamarinios"></a>Xamarin. iOS の Apple Pay
 
@@ -20,7 +20,7 @@ _このガイドでは、Apple Pay と共に使用して、食品、エンター
 
 Apple Pay は、iOS 8 と共に導入され、ユーザーは iOS デバイスを介して食品、エンターテイメント、メンバーシップなどの物理的な商品を支払うことができます。 IPhone 6 および iPhone 6 Plus で利用できます。また、ストア内購入の Apple Watch と組み合わせて使用することもできます。 IPhone で使用する場合、ユーザーのクレジットカードまたはデビットカードに対するトランザクションを確認して承認する手段として、Touch ID を使用します。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>［要件］
 
 Apple Pay は、iOS 8 以降でのみ使用できます。したがって、少なくとも Xcode 6 が必要です。
 
@@ -39,7 +39,7 @@ Apple Pay と*アプリ内購入*(iap) の主な違いは、販売する製品�
 
 使用されるフレームワークも重要な違いです。Apple Pay には[Pass kit](https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentAuthorizationViewController_Ref/)が使用されますが、 [storekit](https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentAuthorizationViewController_Ref/)には iap 用のフレームワーク API が用意されています。
 
-Apple Pay では、 [Apple は](https://developer.apple.com/apple-pay/Getting-Started-with-Apple-Pay.pdf)、"[はユーザー、商人、または開発者は支払いに Apple Pay を使用しません" ということを示しています。 これに対して、IAP ではトランザクションごとに 30% の料金が請求されます。 さらに、Apple Pay では、トランザクションが Apple を経由することはありません。代わりに、支払いプラットフォームが使用されます。
+Apple Pay では、 [Apple は](https://developer.apple.com/apple-pay/Getting-Started-with-Apple-Pay.pdf)、"[はユーザー、商人、または開発者は支払いに Apple Pay を使用しません" ということを示しています。 これに対して、IAP ではトランザクションごとに30% の料金が請求されます。 さらに、Apple Pay では、トランザクションが Apple を経由することはありません。代わりに、支払いプラットフォームが使用されます。
 
 ## <a name="using-a-payment-processor-platform"></a>支払いプロセッサプラットフォームの使用
 
@@ -79,7 +79,7 @@ IOS 10 を初めて使用する場合、開発者は**APPLEPAY JS**を使用し�
 
 ### <a name="passkit-framework-enhancements"></a>Pass Kit フレームワークの機能強化
 
-IOS 10 では、またはの`UIKit`外部で Apple Pay をサポートするように、pass kit フレームワークが拡張されており、カードの発行者がアプリ内から独自のカードを提示できるようになりました。
+IOS 10 では、Pass Kit フレームワークが拡張され、`UIKit` の外部 Apple Pay がサポートされるようになり、カードの発行者がアプリ内から独自のカードを提示できるようになりました。
 
 #### <a name="supporting-apple-pay-outside-of-uikit"></a>UIKit 外での Apple Pay のサポート
 
@@ -87,15 +87,15 @@ IOS 10 では、またはの`UIKit`外部で Apple Pay をサポートするよ�
 
 #### <a name="presenting-issuer-cards-from-within-apps"></a>アプリ内での発行者カードの提示
 
-IOS 10 では、カードの発行者が独自のアプリ内からカードを提示できるようにする新しい機能が、Pass Kit フレームワークに追加されています。 開発者は、カード`PKPaymentButtonTypeInStore`の Apple Pay ボタンを表示する uibutton をアプリのユーザーインターフェイスに追加できます。
+IOS 10 では、カードの発行者が独自のアプリ内からカードを提示できるようにする新しい機能が、Pass Kit フレームワークに追加されています。 開発者は、カードの Apple Pay ボタンを表示するアプリのユーザーインターフェイスに `PKPaymentButtonTypeInStore` UIButton を追加できます。
 
-[Pkpass library](https://developer.apple.com/reference/passkit/pkpasslibrary)クラスのメソッドを使用して、カードをプログラムで表示することもできます。`PresentPaymentPass`
+[Pkpass library](https://developer.apple.com/reference/passkit/pkpasslibrary)クラスの `PresentPaymentPass` メソッドを使用して、カードをプログラムで表示することもできます。
 
 ### <a name="new-payment-network-support"></a>新しい支払いネットワークのサポート
 
 IOS 10 を初めて使用する場合、アプリは、開発者がアプリケーションを変更して再コンパイルし、アプリストアに再送信することなく、新しい支払いネットワークが利用可能になったときに自動的にサポートできます。
 
-`PKPaymentNetwork`クラスの new [AvailableNetworks](https://developer.apple.com/reference/passkit/pkpaymentrequest/1833288-availablenetworks)メソッドを使用すると、アプリは実行時にユーザーのデバイスで利用可能なネットワークを検出できます。 さらに、 [Supportednetworks](https://developer.apple.com/reference/passkit/pkpaymentrequest/1619329-supportednetworks)プロパティが拡張され、支払プロバイダーの名前が引数として使用されるようになりました。 これらの方法を使用すると、アプリは、支払いプロバイダーがサポートする任意のネットワークを自動的にサポートできます。
+`PKPaymentNetwork` クラスの新しい[AvailableNetworks](https://developer.apple.com/reference/passkit/pkpaymentrequest/1833288-availablenetworks)メソッドを使用すると、アプリは実行時にユーザーのデバイスで利用可能なネットワークを検出できます。 さらに、 [Supportednetworks](https://developer.apple.com/reference/passkit/pkpaymentrequest/1619329-supportednetworks)プロパティが拡張され、支払プロバイダーの名前が引数として使用されるようになりました。 これらの方法を使用すると、アプリは、支払いプロバイダーがサポートする任意のネットワークを自動的にサポートできます。
 
 詳細については、 [Apple Pay の構成](~/ios/platform/apple-pay.md)と Apple の[Apple Pay ガイド](https://developer.apple.com/apple-pay/)を参照してください。
 

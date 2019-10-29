@@ -4,15 +4,15 @@ description: Xamarin を使用して Android 9 の円用アプリの開発を開
 ms.prod: xamarin
 ms.assetid: 6575DD32-9DC8-44E6-85EF-1F8BD07D3780
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/21/2018
-ms.openlocfilehash: 6475cd0f27e41321902b57dd28f59bfb250e0c8f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 0105b43116df697bc6688becb77298c236dfa601
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70757459"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73019885"
 ---
 # <a name="android-pie-features"></a>Android の円機能
 
@@ -26,18 +26,18 @@ _Xamarin を使用して Android 9 の円用アプリの開発を開始する方
 
 Android 9.0 では、Android の円グラフがサポートされています。 Android 用の Xamarin のサポートの詳細については、 [Android P Developer Preview 3](https://docs.microsoft.com/xamarin/android/release-notes/9/9.0/#android-p-dp1)のリリースノートを参照してください。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>［要件］
 
 Xamarin ベースのアプリで Android の円機能を使用するには、次の一覧が必要です。
 
-- **Visual Studio**&ndash; Visual Studio 2019 をお勧めします。
+- **Visual studio &ndash; Visual** studio 2019 をお勧めします。
     Visual Studio 2017 を使用している場合は、Windows update で Visual Studio 2017 バージョン15.8 以降に更新します。 MacOS で、Visual Studio 2017 for Mac バージョン7.6 以降に更新します。
 
-- **Xamarin 9.0.0.17**以降を Visual Studio と共にインストールする必要があります (xamarin android は、.net ワークロード**を使用したモバイル開発**の一部として自動的にインストールされます)。 &ndash;
+- **Xamarin 9.0.0.17**以降を Visual Studio と共にインストールする必要があります (xamarin android は、.net ワークロードを使用した**モバイル開発**の一部として自動的にインストールされます)。 &ndash;
 
-- **Java Developer Kit**Xamarin Android 9.0 開発には[JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)が必要です (または、Microsoft の[openjdk](~/android/get-started/installation/openjdk.md)の配布プレビューを試すことができます)。 &ndash; JDK8 は、.NET ワークロード**を使用したモバイル開発**の一部として自動的にインストールされます。
+- **Java Developer Kit** &ndash; Xamarin Android 9.0 開発には[JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)が必要です (または、Microsoft の[openjdk](~/android/get-started/installation/openjdk.md)の配布プレビューを試すことができます)。 JDK8 は、.NET ワークロード**を使用したモバイル開発**の一部として自動的にインストールされます。
 
-- **Android SDK**&ndash; Android SDK Manager を使用して Android SDK API 28 以降をインストールする必要があります。
+- Android SDK マネージャーを使用して**Android SDK** &ndash; Android SDK API 28 以降をインストールする必要があります。
 
 ## <a name="getting-started"></a>作業の開始
 
@@ -53,7 +53,7 @@ Xamarin android で Android の円アプリの開発を始めるには、最初�
 
 これらの各手順については、次のセクションで説明します。
 
-### <a name="update-visual-studio"></a>Visual Studio 2017 を更新する
+### <a name="update-visual-studio"></a>Visual Studio を更新する
 
 Xamarin を使用して Android の円アプリをビルドする場合は、Visual Studio 2019 をお勧めします。
 
@@ -67,11 +67,11 @@ Xamarin Android 9.0 を使用してプロジェクトを作成するには、最
 
 2. 右下隅にある歯車アイコンをクリックし、 **[リポジトリ > Google (サポートされていません)]** を選択します。
 
-    [![Google にリポジトリを設定しています](pie-images/vs/set-repo-sml.png)](pie-images/vs/set-repo.png#lightbox)
+    [リポジトリを Google に設定![](pie-images/vs/set-repo-sml.png)](pie-images/vs/set-repo.png#lightbox)
 
 3. **[プラットフォーム]** タブで**Android SDK Platform 28**と表示されている**Android の円**sdk パッケージをインストールします (sdk Manager の使用方法の詳細については、「 [Android SDK セットアップ](~/android/get-started/installation/android-sdk.md)」を参照してください)。
 
-    [![Android の円パッケージのインストール](pie-images/vs/sdk-manager-sml.png)](pie-images/vs/sdk-manager.png#lightbox)
+    [Android の円パッケージのインストール![](pie-images/vs/sdk-manager-sml.png)](pie-images/vs/sdk-manager.png#lightbox)
 
 4. エミュレーターを使用している場合は、 **API レベル 28**をサポートする仮想デバイスを作成します。 仮想デバイスの作成の詳細については、「 [Android Device Manager を使用した仮想デバイスの管理](~/android/get-started/installation/android-emulator/device-manager.md)」を参照してください。
 
@@ -92,13 +92,13 @@ Android プロジェクトを作成するときは、バージョン設定を An
 
 Android の円グラフには、さまざまな新機能が導入されています。 これらの新機能の一部は、最新の Android デバイスによって提供される新しいハードウェア機能を利用することを目的としていますが、Android ユーザーエクスペリエンスをさらに強化するように設計されています。
 
-- **切り取り線のサポートを表示**する新しい Android デバイス上の画面の上部にある_カットアウト_の位置と形状を検索するための api を提供します。 &ndash;
+- **カットアウトサポート**&ndash;、新しい Android デバイス上の画面の上部にある_カットアウト_の場所と形状を検索するための api を提供します。
 
-- **通知の機能強化**通知メッセージに画像を表示できるようになり`Person`ました。また、新しいクラスを使用して、メッセージ交換の参加者を簡略化します。 &ndash;
+- 通知メッセージ &ndash; 通知の**機能強化**により、画像を表示できるようになりました。また、新しい `Person` クラスを使用して、メッセージ交換の参加者を簡略化します。
 
-- **室内ポジショニング**&ndash; Wifi ラウンドトリップタイムプロトコルのプラットフォームサポート。これにより、アプリは、屋内設定のナビゲーションに wifi デバイスを使用できるようになります。
+- **屋内ポジショニング**&ndash; プラットフォームが Wifi ラウンドトリップタイムプロトコルをサポートします。これにより、アプリは、屋内設定のナビゲーションに wifi デバイスを使用できるようになります。
 
-- **マルチカメラのサポート**&ndash;では、複数の物理カメラ (デュアルフロントとデュアルバックカメラなど) からストリームに同時にアクセスする機能が提供されています。
+- **マルチカメラサポート**&ndash; は、複数の物理カメラ (デュアルフロントとデュアルバックカメラなど) からストリームに同時にアクセスする機能を提供します。
 
 以下のセクションでは、これらの機能について説明し、アプリでの使用を開始するのに役立つ簡単なコード例を示します。
 
@@ -107,15 +107,15 @@ Android の円グラフには、さまざまな新機能が導入されていま
 エッジツーエッジ画面を搭載した多くの新しい Android デバイスには、カメラとスピーカーのディスプレイの上部に表示される*カットアウト*("ノッチ") があります。
 次のスクリーンショットは、カットアウトのエミュレーターの例を示しています。
 
-[![カットアウトをシミュレートする Android エミュレーター](pie-images/02-example-cutout-sml.png)](pie-images/02-example-cutout.png#lightbox)
+[カットアウトをシミュレートする![Android エミュレーター](pie-images/02-example-cutout-sml.png)](pie-images/02-example-cutout.png#lightbox)
 
 アプリウィンドウで、表示をカットアウトしてデバイスにコンテンツを表示する方法を管理するために、Android の円グラフに新しい[LayoutInDisplayCutoutMode](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#layoutInDisplayCutoutMode)ウィンドウレイアウト属性が追加されました。 この属性は、次のいずれかの値に設定できます。
 
-- [LayoutInDisplayCutoutModeNever](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_NEVER)&ndash;ウィンドウは、カットアウト領域と重複することはできません。
+- [LayoutInDisplayCutoutModeNever](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_NEVER) &ndash;、ウィンドウが切り使用領域と重複することは許可されていません。
 
-- [LayoutInDisplayCutoutModeShortEdges](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES)&ndash;ウィンドウは、カットアウト領域に拡張できますが、画面の短辺にのみ表示されます。 
+- [LayoutInDisplayCutoutModeShortEdges](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES) &ndash; ウィンドウは、画面の短辺にのみ、カットアウト領域に拡張できます。 
 
-- [LayoutInDisplayCutoutModeDefault](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_DEFAULT)&ndash;システムバー内にカットアウトが含まれている場合、ウィンドウは切り出領域に拡張できます。
+- [LayoutInDisplayCutoutModeDefault](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_DEFAULT) &ndash;、システムバー内にカットアウトが含まれている場合、ウィンドウは切り出領域に拡張できます。
 
 たとえば、アプリウィンドウが切り使用領域と重ならないようにするには、レイアウトのカットアウトモードを [*なし*] に設定します。 
 
@@ -124,14 +124,14 @@ Window.Attributes.LayoutInDisplayCutoutMode =
     Android.Views.LayoutInDisplayCutoutMode.Never;
 ```
 
-これらのカットアウトモードの例を次に示します。 左側の最初のスクリーンショットは、非全画面モードのアプリです。 中央のスクリーンショットでは、がに`LayoutInDisplayCutoutMode` `LayoutInDisplayCutoutModeShortEdges`設定された状態でアプリが全画面表示されます。 アプリの白い背景が、表示のカットアウト領域まで拡大していることに注意してください。
+これらのカットアウトモードの例を次に示します。 左側の最初のスクリーンショットは、非全画面モードのアプリです。 中央のスクリーンショットでは、アプリは `LayoutInDisplayCutoutMode` が `LayoutInDisplayCutoutModeShortEdges`に設定された状態で全画面に表示されます。 アプリの白い背景が、表示のカットアウト領域まで拡大していることに注意してください。
 
-[![例エミュレーターでのカットアウトモードの表示](pie-images/03-cutout-modes-sml.png)](pie-images/03-cutout-modes.png#lightbox)
+[![の例エミュレーターでのカットアウトモードの表示](pie-images/03-cutout-modes-sml.png)](pie-images/03-cutout-modes.png#lightbox)
 
-最後のスクリーンショット (右側) では、 `LayoutInDisplayCutoutMode`が全画面表示になる前にに`LayoutInDisplayCutoutModeShortNever`設定されています。
+最後のスクリーンショット (右側) では、`LayoutInDisplayCutoutMode` が全画面表示になる前に `LayoutInDisplayCutoutModeShortNever` に設定されています。
 アプリの白い背景は、表示のカットアウト領域への拡張が許可されていないことに注意してください。
 
-デバイスの切り抜き領域に関する詳細情報が必要な場合は、新しい[Displaycutout](https://developer.android.com/reference/android/view/DisplayCutout.html)クラスを使用できます。 `DisplayCutout`コンテンツの表示に使用できないディスプレイの領域を表します。 この情報を使用して、アプリケーションが非機能領域のコンテンツを表示しないようにするために、カットアウトの場所と形状を取得できます。
+デバイスの切り抜き領域に関する詳細情報が必要な場合は、新しい[Displaycutout](https://developer.android.com/reference/android/view/DisplayCutout.html)クラスを使用できます。 `DisplayCutout` は、コンテンツの表示に使用できないディスプレイの領域を表します。 この情報を使用して、アプリケーションが非機能領域のコンテンツを表示しないようにするために、カットアウトの場所と形状を取得できます。
 
 Android P の新しいカットアウト機能の詳細については、「[切り取り線のサポートを表示](https://developer.android.com/about/versions/pie/android-9.0#cutout)する」を参照してください。
 
@@ -149,11 +149,11 @@ Android の円グラフでは、メッセージングエクスペリエンスを
 
 次の例は、新しい Api を使用して、イメージを含む通知を生成する方法を示しています。 次のスクリーンショットでは、テキスト通知が送信され、その後に埋め込み画像を含む通知が続きます。 (右側に示されているように) 通知が展開されると、最初の通知のテキストが表示され、2番目の通知に埋め込まれている画像が拡大されます。
 
-[![イメージを使用した通知の例](pie-images/04-example-notifications-sml.png)](pie-images/04-example-notifications.png#lightbox)
+[イメージを使用した通知の![例](pie-images/04-example-notifications-sml.png)](pie-images/04-example-notifications.png#lightbox)
 
-次の例は、Android の円通知に画像を含める方法を示しています。また、 `Person`新しいクラスの使用方法を示しています。
+次の例は、Android の円通知に画像を含める方法を示しています。また、新しい `Person` クラスの使用方法を示しています。
 
-1. 送信者`Person`を表すオブジェクトを作成します。 たとえば、送信者の名前とアイコンはに`fromPerson`含まれています。
+1. 送信者を表す `Person` オブジェクトを作成します。 たとえば、送信者の名前とアイコンは `fromPerson`に含まれています。
 
     ```csharp
     Icon senderIcon = Icon.CreateWithResource(this, Resource.Drawable.sender_icon);
@@ -163,8 +163,8 @@ Android の円グラフでは、メッセージングエクスペリエンスを
         .Build();
     ```
 
-2. 送信する`Notification.MessagingStyle.Message`イメージを含むを作成し、そのイメージを新しい[Notification. messagingstyle. Message. SetData](https://developer.android.com/reference/android/app/Notification.MessagingStyle.Message.html#setData%28java.lang.String,%20android.net.Uri)メソッドに渡します。
-   例:
+2. 送信するイメージを含む `Notification.MessagingStyle.Message` を作成し、そのイメージを新しい[Notification. MessagingStyle. Message. SetData](https://developer.android.com/reference/android/app/Notification.MessagingStyle.Message.html#setData%28java.lang.String,%20android.net.Uri)メソッドに渡します。
+   (例:
 
     ```csharp
     Uri imageUri = Uri.Parse("android.resource://com.xamarin.pminidemo/drawable/example_image");
@@ -173,14 +173,14 @@ Android の円グラフでは、メッセージングエクスペリエンスを
             .SetData("image/", imageUri);
     ```
 
-3. メッセージを`Notification.MessagingStyle`オブジェクトに追加します。 例:
+3. メッセージを `Notification.MessagingStyle` オブジェクトに追加します。 (例:
 
     ```csharp
     Notification.MessagingStyle style = new Notification.MessagingStyle(fromPerson)
             .AddMessage(message);
     ```
 
-4. このスタイルを通知ビルダーにプラグインします。 例:
+4. このスタイルを通知ビルダーにプラグインします。 (例:
 
     ```csharp
     builder = new Notification.Builder(this, MY_CHANNEL)
@@ -191,7 +191,7 @@ Android の円グラフでは、メッセージングエクスペリエンスを
         .SetChannelId(MY_CHANNEL);
     ```
 
-5. 通知を発行します。 例:
+5. 通知を発行します。 (例:
 
     ```csharp
     const int notificationId = 1000;
@@ -204,7 +204,7 @@ Android の円グラフでは、メッセージングエクスペリエンスを
 
 Android の円は、IEEE 802.11 mc ( _WiFi ラウンドトリップ時間_または_wifi RTT_とも呼ばれます) をサポートします。これにより、アプリは1つ以上の wi-fi アクセスポイントへの距離を検出できるようになります。 この情報を使用すると、アプリでは 1 ~ 2 メートルの精度で*室内ポジショニング*を利用することができます。 IEEE 801.11 mc のハードウェアサポートを提供する Android デバイスでは、アプリは、スマートアプライアンスの場所ベースの制御やストアによるターンスルーの指示などのナビゲーション機能を提供できます。
 
-[![WiFi RTT を使用した室内ナビゲーションの例](pie-images/05-wifi-rtt-sml.png)](pie-images/05-wifi-rtt.png#lightbox)
+[WiFi RTT を使用した室内ナビゲーションの![例](pie-images/05-wifi-rtt-sml.png)](pie-images/05-wifi-rtt.png#lightbox)
 
 新しい[WifiRttManager](https://developer.android.com/reference/android/net/wifi/rtt/WifiRttManager)クラスといくつかのヘルパークラスは、wi-fi デバイスへの距離を測定するための手段を提供します。 Android P で導入された屋内配置 Api の詳細については、「 [android .net. wi-fi](https://developer.android.com/reference/android/net/wifi/rtt/package-summary)」を参照してください。
 
@@ -223,7 +223,7 @@ Android P でのマルチカメラのサポートの詳細については、「[
 
 - 新しい[AnimatedImageDrawable](https://developer.android.com/reference/android/graphics/drawable/AnimatedImageDrawable.html)クラス。アニメーション化されたイメージを描画および表示するために使用できます。
 
-- `BitmapFactory` を置き換える新しい [ImageDecoder](https://developer.android.com/reference/android/graphics/ImageDecoder.html) クラス。 `ImageDecoder`をデコード`AnimatedImageDrawable`するために使用できます。
+- `BitmapFactory`を置き換える新しい[ImageDecoder](https://developer.android.com/reference/android/graphics/ImageDecoder.html)クラス。 `ImageDecoder` は、`AnimatedImageDrawable`をデコードするために使用できます。
 
 - HDR (High Dynamic Range) video および HEIF (高効率のイメージファイル形式) イメージのサポート。
 
@@ -245,7 +245,7 @@ Android P を対象とするアプリの動作変更の詳細については、�
 
 ## <a name="sample-code"></a>サンプル コード
 
-[Androidpminidemo](https://github.com/xamarin/monodroid-samples/tree/master/android-p/AndroidPMiniDemo)は、android 用の Xamarin サンプルアプリです。これは、表示のカットアウトモードを設定する方法、新しい`Person`クラスを使用する方法、およびイメージを含む通知を送信する方法を示しています。
+[Androidpminidemo](https://github.com/xamarin/monodroid-samples/tree/master/android-p/AndroidPMiniDemo)は、android 用の Xamarin サンプルアプリの円グラフです。これは、表示カットアウトモードの設定方法、新しい `Person` クラスの使用方法、およびイメージを含む通知の送信方法を示しています。
 
 ## <a name="summary"></a>まとめ
 

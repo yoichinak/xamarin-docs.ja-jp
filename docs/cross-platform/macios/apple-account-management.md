@@ -3,15 +3,15 @@ title: Apple のアカウント管理
 description: このドキュメントでは、Visual Studio for Mac と Visual Studio 2019 で Apple アカウント管理機能を使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 71388B83-699B-4E42-8CBF-8557A4A3CABF
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/06/2018
-ms.openlocfilehash: 65945a303375863f7b92b20405aa78e6b2edacda
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 81f161442b33eee94f32c506947ed029fd40aadb
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70766122"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016341"
 ---
 # <a name="apple-account-management"></a>Apple のアカウント管理
 
@@ -31,7 +31,7 @@ Apple ID の認証は、 [fastlane](https://fastlane.tools/)を使用してコ�
 
 IOS 自動プロビジョニングツールを使用して、署名 Id、アプリ Id、プロビジョニングプロファイルを自動的に作成および管理することもできます。 これらの機能の使用方法の詳細については、「 [Device Provisioning guide (デバイスプロビジョニング](~/ios/get-started/installation/device-provisioning/index.md)ガイド)」を参照してください。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>［要件］
 
 Apple アカウントの管理は、Visual Studio for Mac、Visual Studio 2019、Visual Studio 2017 (バージョン15.7 以降) で利用できます。
 
@@ -39,7 +39,7 @@ Apple アカウントの管理は、Visual Studio for Mac、Visual Studio 2019�
 
 - インターネットに接続されていることを確認します。 これは、fastlane が Apple Developer ポータルと直接通信するためです。
 - [Fastlane ツールがインストールされ](~/ios/deploy-test/provisioning/fastlane/index.md#Installation)ていることを確認します。
-- の[https://download.fastlane.tools](https://download.fastlane.tools)最新の fastlane ツールがあることを確認します。
+- [https://download.fastlane.tools](https://download.fastlane.tools)の最新の fastlane ツールがあることを確認します。
 - 開始する前に、[開発者ポータル](https://developer.apple.com/account/)でユーザーライセンス契約に同意してください。
 
 ## <a name="adding-an-apple-developer-account"></a>Apple developer アカウントの追加
@@ -50,7 +50,7 @@ Apple アカウントの管理は、Visual Studio for Mac、Visual Studio 2019�
 
     ![Apple 開発者アカウントのオプション](apple-account-management-images/image1.png)
 
-2. 次に示すように、**ボタンを押して[サインイン]ダイアログを表示します。+** 
+2. 次に示すように、[ **+** ] ボタンを押して [サインイン] ダイアログボックスを表示します。 
 
     ![fastlane ダイアログ。](apple-account-management-images/image2.png)
 
@@ -144,7 +144,7 @@ Apple アカウントの管理は、Visual Studio for Mac、Visual Studio 2019�
 
 ### <a name="if-you-are-experiencing-issues-logging-in-your-account-please-try-the-following"></a>アカウントのログ記録に問題が発生している場合は、次の操作を行ってください。
 
-- キーチェーンアプリケーションを開き、[カテゴリ] で [*パスワード*] を選択します。 すべての`deliver.`エントリを検索し、削除します。
+- キーチェーンアプリケーションを開き、[カテゴリ] で [*パスワード*] を選択します。 `deliver.`を検索し、すべてのエントリを削除します。
 
 ### <a name="error-adding-account-please-sign-in-with-an-app-specific-password"></a>"アカウントを追加中にエラーが発生しています。 アプリ固有のパスワードを使用してサインインしてください "
 

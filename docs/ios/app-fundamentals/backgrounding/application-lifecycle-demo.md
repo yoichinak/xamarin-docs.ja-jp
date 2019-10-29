@@ -4,15 +4,15 @@ description: このドキュメントでは、iOS アプリケーションでア
 ms.prod: xamarin
 ms.assetid: 5C8AACA6-49F8-4C6D-99C3-5F443C01B230
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/17/2018
-ms.openlocfilehash: d130d28b6cf0f15dab3a743a9a3fba144b75a67d
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 13f34f6287d68736ee509e6fb43e5fc47321b907
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70289432"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73011201"
 ---
 # <a name="application-lifecycle-demo-for-xamarinios"></a>Xamarin. iOS のアプリケーションライフサイクルデモ
 
@@ -25,7 +25,7 @@ ms.locfileid: "70289432"
 ## <a name="walkthrough"></a>チュートリアル
 
 1. **LifecycleDemo**ソリューションで**ライフサイクル**プロジェクトを開きます。
-1. @No__t_0 クラスを開きます。 アプリケーションの状態がいつ変更されたかを示すログがライフサイクルメソッドに追加されました。
+1. `AppDelegate` クラスを開きます。 アプリケーションの状態がいつ変更されたかを示すログがライフサイクルメソッドに追加されました。
 
     ```csharp
     public override void OnActivated(UIApplication application)

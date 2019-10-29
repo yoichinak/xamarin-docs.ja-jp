@@ -4,19 +4,19 @@ description: このドキュメントでは、Xamarin. iOS で UI スレッド�
 ms.prod: xamarin
 ms.assetid: 98762ACA-AD5A-4E1E-A536-7AF3BE36D77E
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: ab72034d7b565a31c59d997f03844b6c8c959785
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: ee7ab7c5d0503cffd2c12a493f314f191d912e92
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768178"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73002843"
 ---
 # <a name="working-with-the-ui-thread-in-xamarinios"></a>Xamarin で UI スレッドを操作する
 
-アプリケーションのユーザー インターフェイスは、マルチ スレッドのデバイスであっても、常にシングル スレッドです – 画面の表示は 1 つで、表示される内容の変更は 1 つの 'アクセス ポイント' を介して調整される必要があります。 これは複数のスレッドが (たとえば) 同時に同じピクセルを更新しようとすることを防ぎます。
+アプリケーションユーザーインターフェイスは、マルチスレッドデバイスでも、常にシングルスレッド化されます。画面の表現は1つだけで、表示される内容に対する変更は、1つの "アクセスポイント" によって調整する必要があります。 これにより、複数のスレッドが同じピクセルを同時に更新しようとするのを防ぐことができます (たとえば、)。
 
 コードでは、メイン (または UI) スレッドからのユーザーインターフェイスコントロールに対してのみ変更を行う必要があります。 別のスレッド (コールバックやバックグラウンドスレッドなど) で発生した UI の更新が画面に表示されない場合や、クラッシュが発生する場合もあります。
 
@@ -24,7 +24,7 @@ ms.locfileid: "70768178"
 
 コントロールをビューで作成したり、タッチなどのユーザーによって開始されるイベントを処理したりする場合、コードは既に UI スレッドのコンテキストで実行されています。
 
-コードがバックグラウンドスレッドで実行されている場合、タスクまたはコールバックでは、メイン UI スレッドで実行されていない可能性があります。 この場合は、次のように`InvokeOnMainThread` 、または`BeginInvokeOnMainThread`の呼び出しでコードをラップする必要があります。
+コードがバックグラウンドスレッドで実行されている場合、タスクまたはコールバックでは、メイン UI スレッドで実行されていない可能性があります。 この場合は、次のように `InvokeOnMainThread` または `BeginInvokeOnMainThread` の呼び出しでコードをラップする必要があります。
 
 ```csharp
 InvokeOnMainThread ( () => {
@@ -32,17 +32,17 @@ InvokeOnMainThread ( () => {
 });
 ```
 
-メソッド`InvokeOnMainThread`は、任意の`NSObject` uikit オブジェクト (ビューコントローラーやビューコントローラーなど) で定義されたメソッド内から呼び出すことができるように、で定義されています。
+`InvokeOnMainThread` メソッドは `NSObject` で定義されているため、ビューやビューコントローラーなど、任意の UIKit オブジェクトで定義されたメソッド内から呼び出すことができます。
 
 Xamarin の iOS アプリケーションのデバッグ中に、コードが間違ったスレッドから UI コントロールにアクセスしようとした場合に、エラーがスローされます。 これは、InvokeOnMainThread メソッドを使用して、これらの問題を追跡して修正するのに役立ちます。 これは、デバッグ中にのみ発生し、リリースビルドではエラーをスローしません。 次のようなエラーメッセージが表示されます。
 
- ![](ui-thread-images/image10.png "UI スレッドの実行")
+ ![](ui-thread-images/image10.png "UI Thread Execution")
 
  <a name="Background_Thread_Example" />
 
 ## <a name="background-thread-example"></a>バックグラウンドスレッドの例
 
-次に、単純なスレッドを使用してバックグラウンドスレッドからユーザー `UILabel`インターフェイスコントロール (a) にアクセスしようとする例を示します。
+次に示すのは、単純なスレッドを使用してバックグラウンドスレッドからユーザーインターフェイスコントロール (`UILabel`) にアクセスしようとする例です。
 
 ```csharp
 new System.Threading.Thread(new System.Threading.ThreadStart(() => {
@@ -50,7 +50,7 @@ new System.Threading.Thread(new System.Threading.ThreadStart(() => {
 })).Start();
 ```
 
-デバッグ中に、その`UIKitThreadAccessException`コードによってがスローされます。 この問題を解決する (およびユーザーインターフェイスコントロールにメイン UI スレッドからのみアクセスできるようにする) には、次のように、 `InvokeOnMainThread`式の中で UI コントロールを参照するすべてのコードをラップします。
+このコードは、デバッグ中に `UIKitThreadAccessException` をスローします。 この問題を解決する (およびユーザーインターフェイスコントロールにメイン UI スレッドからのみアクセスできるようにする) には、次のように `InvokeOnMainThread` 式内で UI コントロールを参照するすべてのコードをラップします。
 
 ```csharp
 new System.Threading.Thread(new System.Threading.ThreadStart(() => {
@@ -66,9 +66,9 @@ new System.Threading.Thread(new System.Threading.ThreadStart(() => {
 
 ## <a name="asyncawait-example"></a>Async/Await の例
 
-5つのC# async/await キーワード`InvokeOnMainThread`を使用する必要はありません。待機中のタスクが完了すると、呼び出し元のスレッドでメソッドが続行されるためです。
+5つのC# async/await キーワードを使用する場合`InvokeOnMainThread`は必要ありません。待機中のタスクが完了すると、呼び出し元のスレッドでメソッドが続行されるためです。
 
-このコード例では、(単にデモンストレーション目的で) 遅延メソッドの呼び出しを待機していますが、UI スレッドで呼び出される非同期メソッド (TouchUpInside ハンドラー) を示しています。 外側のメソッドは ui スレッドで呼び出されるため、のテキスト`UILabel`の設定やを`UIAlertView`表示するなどの ui 操作は、バックグラウンドスレッドで非同期操作が完了した後に安全に呼び出すことができます。
+このコード例では、(単にデモンストレーション目的で) 遅延メソッドの呼び出しを待機していますが、UI スレッドで呼び出される非同期メソッド (TouchUpInside ハンドラー) を示しています。 外側のメソッドが UI スレッドで呼び出されるため、`UILabel` のテキストの設定や `UIAlertView` の表示などの UI 操作は、バックグラウンドスレッドで非同期操作が完了した後に安全に呼び出すことができます。
 
 ```csharp
 async partial void button2_TouchUpInside (UIButton sender)
@@ -89,7 +89,7 @@ async partial void button2_TouchUpInside (UIButton sender)
 }
 ```
 
-非同期メソッドが (メイン UI スレッドではなく) `InvokeOnMainThread`バックグラウンドスレッドから呼び出された場合でも、が必要になります。
+非同期メソッドが (メイン UI スレッドではなく) バックグラウンドスレッドから呼び出された場合でも、`InvokeOnMainThread` が必要になります。
 
 ## <a name="related-links"></a>関連リンク
 

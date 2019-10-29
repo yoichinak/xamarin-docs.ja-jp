@@ -4,15 +4,15 @@ description: Android 3.0 では、スマートフォンやタブレットで検�
 ms.prod: xamarin
 ms.assetid: 1AFB4242-A337-F8E0-83D9-B8D850D7F384
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/15/2018
-ms.openlocfilehash: f25c587f6a51a6b196f201c1b5060ff401f8cad2
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 5d243429fe4f61768568a634b205055c1ad94297
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70761861"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73020252"
 ---
 # <a name="fragments"></a>フラグメント
 
@@ -28,17 +28,17 @@ _Android 3.0 では、スマートフォンやタブレットで検出された�
 
 たとえば、次の図は、さまざまなデバイスフォームファクターで1つのアプリケーションがフラグメントを使用する方法を示しています。
 
-[![タブレットとハンドセットでのフラグメントの使用方法の図](images/00.png)](images/00.png#lightbox)
+[タブレットとハンドセットでフラグメントがどのように使用されるかを![図](images/00.png)](images/00.png#lightbox)
 
 *フラグメント a*にはリストが含まれていますが、*フラグメント B*にはそのリストで選択された項目の詳細が含まれています。 アプリケーションをタブレットで実行すると、両方のフラグメントが同じアクティビティに表示されます。 (画面サイズが小さい) 受話器で同じアプリケーションを実行すると、フラグメントは2つの独立したアクティビティでホストされます。 フラグメント A とフラグメント B は両方のフォームファクターで同じですが、それらをホストするアクティビティは異なります。
 
-アクティビティがすべてのフラグメントを調整して管理できるように、Android では、 *Fragmentmanager*という新しいクラスが導入されました。 各アクティビティには、 `FragmentManager`ホストされているフラグメントを追加、削除、および検索するための独自のインスタンスがあります。 次の図は、フラグメントとアクティビティの関係を示しています。
+アクティビティがすべてのフラグメントを調整して管理できるように、Android では、 *Fragmentmanager*という新しいクラスが導入されました。 各アクティビティには、ホストされているフラグメントを追加、削除、および検索するための `FragmentManager` の独自のインスタンスがあります。 次の図は、フラグメントとアクティビティの関係を示しています。
 
-[![アクティビティ、フラグメントマネージャー、およびフラグメント間の関係を示す図](images/01.png)](images/01.png#lightbox)
+[アクティビティ、フラグメントマネージャー、フラグメント間のリレーションシップを示す![ダイアグラム](images/01.png)](images/01.png#lightbox)
 
 場合によっては、フラグメントを複合コントロールまたはミニアクティビティと見なすことができます。 UI の一部を再利用可能なモジュールにまとめて、アクティビティの開発者が個別に使用できるようにします。 フラグメントには、アクティビティと同様にビュー階層がありますが、アクティビティとは異なり、画面間で共有できます。 ビューは、フラグメントが独自のライフサイクルを持つという点で、フラグメントとは異なります。ビューにはありません。
 
-アクティビティは1つ以上のフラグメントのホストですが、フラグメント自体は直接認識されません。 同様に、フラグメントは、ホストアクティビティ内の他のフラグメントを直接認識しません。 ただし、フラグメントとアクティビティは、アクティビティ内`FragmentManager`のを認識します。 を使用`FragmentManager`すると、アクティビティまたはフラグメントがフラグメントの特定のインスタンスへの参照を取得し、そのインスタンスでメソッドを呼び出すことができます。 このようにして、アクティビティまたはフラグメントは、他のフラグメントと通信し、やり取りすることができます。
+アクティビティは1つ以上のフラグメントのホストですが、フラグメント自体は直接認識されません。 同様に、フラグメントは、ホストアクティビティ内の他のフラグメントを直接認識しません。 ただし、フラグメントとアクティビティは、アクティビティ内の `FragmentManager` を認識します。 `FragmentManager`を使用すると、アクティビティまたはフラグメントがフラグメントの特定のインスタンスへの参照を取得し、そのインスタンスでメソッドを呼び出すことができます。 このようにして、アクティビティまたはフラグメントは、他のフラグメントと通信し、やり取りすることができます。
 
 このガイドでは、次のようなフラグメントの使用方法について包括的に説明します。
 
@@ -46,15 +46,15 @@ _Android 3.0 では、スマートフォンやタブレットで検出された�
 - **フラグメントの管理とトランザクション**–実行時にフラグメントを操作する方法について説明します。
 - **Android サポートパッケージ**–以前のバージョンの Android でフラグメントを使用できるようにするライブラリを使用する方法について説明します。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>［要件］
 
 フラグメントは、次のスクリーンショットに示すように、API レベル 11 (Android 3.0) 以降の Android SDK で使用できます。
 
-[![Android SDK マネージャーでの API レベルの選択](images/02.png)](images/02.png#lightbox)
+[Android SDK マネージャーで API レベルを選択![には](images/02.png)](images/02.png#lightbox)
 
 フラグメントは、Xamarin. Android 4.0 以降で使用できます。 フラグメントを使用するには、Xamarin Android アプリケーションで少なくとも API レベル 11 (Android 3.0) 以上を対象にする必要があります。 ターゲットフレームワークは、次のようにプロジェクトプロパティで設定できます。
 
-[![プロジェクトオプションでのターゲットフレームワーク API レベルの設定](images/03-sml.png)](images/03.png#lightbox)
+[プロジェクトオプションでターゲットフレームワーク API レベルを設定![には](images/03-sml.png)](images/03.png#lightbox)
 
 Android サポートパッケージと Xamarin Android 4.2 以降を使用して、以前のバージョンの Android でフラグメントを使用することができます。 この方法については、このセクションのドキュメントで詳しく説明します。
 
@@ -63,4 +63,3 @@ Android サポートパッケージと Xamarin Android 4.2 以降を使用して
 - [Honeycomb ギャラリー (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/honeycombgallery)
 - [フラグメント](https://developer.android.com/guide/topics/fundamentals/fragments.html)
 - [サポートパッケージ](https://developer.android.com/sdk/compatibility-library.html)
-- [MOTODEV ウェビナー:フラグメントの概要](http://motodev.adobeconnect.com/p9h1aqk3ttn/)
