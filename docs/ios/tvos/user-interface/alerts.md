@@ -4,23 +4,23 @@ description: このドキュメントでは、Xamarin で tvOS アラートを�
 ms.prod: xamarin
 ms.assetid: F969BB28-FF2C-4A7D-88CA-F8076AD48538
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 2578272dcd38399f23f2aac67503ea4e1b09a027
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 76a9af2a3d845ce3f93b02358901cda8d9d02294
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769078"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030514"
 ---
 # <a name="working-with-tvos-alerts-in-xamarin"></a>Xamarin での tvOS アラートの使用
 
 _この記事では、UIAlertController を使用して tvOS のユーザーに警告メッセージを表示する方法について説明します。_
 
-TvOS ユーザーに注意を喚起する必要がある場合、または破壊的な操作 (ファイルの削除など) を実行するアクセス許可を要求する場合は、 `UIAlertViewController`を使用して警告メッセージを表示できます。
+TvOS ユーザーに注意を喚起する必要がある場合、または破壊的な操作 (ファイルの削除など) を実行するアクセス許可を要求する場合は、`UIAlertViewController`を使用して警告メッセージを表示できます。
 
-[![](alerts-images/alert01.png "UIAlertViewController の例")](alerts-images/alert01.png#lightbox)
+[![](alerts-images/alert01.png "An example UIAlertViewController")](alerts-images/alert01.png#lightbox)
 
 メッセージを表示するだけでなく、ボタンやテキストフィールドを警告に追加して、ユーザーがアクションに応答してフィードバックを提供できるようにすることもできます。
 
@@ -30,7 +30,7 @@ TvOS ユーザーに注意を喚起する必要がある場合、または破壊
 
 前述のように、アラートを使用してユーザーの注意を受け取り、アプリの状態またはフィードバックの要求を通知します。 アラートにはタイトルを指定する必要があります。また、必要に応じて、メッセージと1つ以上のボタンまたはテキストフィールドを含めることができます。
 
-[![](alerts-images/alert04.png "アラートの例")](alerts-images/alert04.png#lightbox)
+[![](alerts-images/alert04.png "An example alert")](alerts-images/alert04.png#lightbox)
 
 Apple では、アラートの使用に関して次のような提案があります。
 
@@ -55,13 +55,13 @@ Apple では、アラートにボタンを追加する際に次のことを提�
 
 - **2 つのボタンに制限する**: 可能な限り、アラートを最大2つのボタンに制限します。 1つのボタンのアラートは情報を提供しますが、アクションは提供しません。 2つのボタンのアラートは、単純な [はい]、[いいえ] のいずれかのアクションを提供します。
 - **簡潔で論理的なボタンタイトルを使用**します。ボタンのアクションが最適であることを明確に説明する2つの単語ボタンのタイトルです。 詳細については、[ボタンの操作に](~/ios/tvos/user-interface/buttons.md)関するドキュメントを参照してください。
-- **明確に破壊ボタンをマーク**する-破壊的な操作 (ファイルの削除など) を実行するボタンの場合は`UIAlertActionStyle.Destructive` 、スタイルで明示的にマークします。
+- **明確に破壊ボタンをマーク**する-破壊的な操作 (ファイルの削除など) を実行するボタンの場合は、`UIAlertActionStyle.Destructive` スタイルで明示的にマークします。
 
 <a name="Displaying-an-Alert" />
 
 ## <a name="displaying-an-alert"></a>アラートの表示
 
-アラートを表示するには、 `UIAlertViewController`のインスタンスを作成し、アクション (ボタン) を追加して警告のスタイルを選択して構成します。 たとえば、次のコードでは、[OK] および [キャンセル] アラートが表示されます。
+アラートを表示するには、`UIAlertViewController` のインスタンスを作成し、アクション (ボタン) を追加して警告のスタイルを選択して構成します。 たとえば、次のコードでは、[OK] および [キャンセル] アラートが表示されます。
 
 ```csharp
 const string title = "A Short Title is Best";
@@ -103,13 +103,13 @@ UIAlertAction.Create ("Button Title", UIAlertActionStyle.Default, _ =>
 );
 ```
 
-`UIAlertActionStyle`列挙体を使用すると、次のいずれかの方法でボタンのスタイルを設定できます。
+`UIAlertActionStyle` 列挙型を使用すると、次のいずれかの方法でボタンのスタイルを設定できます。
 
 - **[既定]** : このボタンは、警告が表示されたときに選択された既定のボタンになります。
 - **[キャンセル**]: このボタンは、アラートの [キャンセル] ボタンです。
 - **破壊的**-ファイルの削除など、破壊的なアクションとしてボタンを強調表示します。 現在、tvOS は、背景が赤の破壊的ボタンをレンダリングします。
 
-メソッド`AddAction`は、 `UIAlertViewController`指定されたアクションをに追加`PresentViewController (alertController, true, null)`し、最後にメソッドによって指定された警告をユーザーに表示します。
+`AddAction` メソッドは、指定されたアクションを `UIAlertViewController` に追加し、最後に `PresentViewController (alertController, true, null)` メソッドによって、指定された警告をユーザーに表示します。
 
 <a name="Adding-Text-Fields" />
 
@@ -117,11 +117,11 @@ UIAlertAction.Create ("Button Title", UIAlertActionStyle.Default, _ =>
 
 アラートにアクション (ボタン) を追加するだけでなく、テキストフィールドをアラートに追加して、ユーザーがユーザー Id やパスワードなどの情報を入力できるようにすることができます。
 
-[![](alerts-images/alert02.png "警告のテキストフィールド")](alerts-images/alert02.png#lightbox)
+[![](alerts-images/alert02.png "Text Field in an alert")](alerts-images/alert02.png#lightbox)
 
 ユーザーがテキストフィールドを選択すると、標準の tvOS キーボードが表示され、フィールドの値を入力できます。
 
-[![](alerts-images/alert03.png "入力 (テキストを)")](alerts-images/alert03.png#lightbox)
+[![](alerts-images/alert03.png "Entering text")](alerts-images/alert03.png#lightbox)
 
 次のコードでは、値を入力するための1つのテキストフィールドを含む、OK/キャンセルアラートを表示します。
 
@@ -160,7 +160,7 @@ alert.AddAction(UIAlertAction.Create("OK",UIAlertActionStyle.Default,(actionOK) 
 controller.PresentViewController(alert,true,null);
 ```
 
-メソッド`AddTextField`は、警告に新しいテキストフィールドを追加します。このフィールドは、プレースホルダーテキスト (フィールドが空のときに表示されるテキスト)、既定のテキスト値、キーボードの種類などのプロパティを設定することによって構成できます。 例えば:
+`AddTextField` メソッドは、新しいテキストフィールドを警告に追加します。このフィールドは、プレースホルダーテキスト (フィールドが空のときに表示されるテキスト)、既定のテキスト値、キーボードの種類などのプロパティを設定することによって構成できます。 (例:
 
 ```csharp
 // Initialize field
@@ -186,13 +186,13 @@ alert.AddTextField ((textField) => {
 });
 ```
 
-ユーザーがテキストフィールドに値を入力したら、 `field`変数を使用してその値にアクセスできます。
+ユーザーがテキストフィールドに値を入力した後、`field` 変数を使用してその値にアクセスできます。
 
 <a name="Alert-View-Controller-Helper-Class" />
 
 ## <a name="alert-view-controller-helper-class"></a>アラートビューコントローラーヘルパークラス
 
-を使用してシンプルで一般的な種類`UIAlertViewController`のアラートを表示すると、コードが重複して生成される可能性があるため、ヘルパークラスを使用して繰り返しコードの量を減らすことができます。 例えば:
+`UIAlertViewController` を使用してシンプルで一般的な種類のアラートを表示すると、コードが重複して生成される可能性があるため、ヘルパークラスを使用して繰り返しコードの量を減らすことができます。 (例:
 
 ```csharp
 using System;
@@ -363,9 +363,9 @@ partial void DisplayTextInputAlert (Foundation.NSObject sender) {
 
 <a name="Summary" />
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>まとめ
 
-この記事では、を`UIAlertController`使用して tvOS のユーザーに警告メッセージを表示する方法について説明しました。 まず、簡単なアラートを表示し、ボタンを追加する方法を示しました。 次に、テキストフィールドを警告に追加する方法について説明しました。 最後に、ヘルパークラスを使用して、アラートを表示するために必要な反復的なコードの量を減らす方法を説明しました。
+この記事では、`UIAlertController` を使用して、Xamarin. tvOS のユーザーにアラートメッセージを表示する方法について説明しました。 まず、簡単なアラートを表示し、ボタンを追加する方法を示しました。 次に、テキストフィールドを警告に追加する方法について説明しました。 最後に、ヘルパークラスを使用して、アラートを表示するために必要な反復的なコードの量を減らす方法を説明しました。
 
 ## <a name="related-links"></a>関連リンク
 

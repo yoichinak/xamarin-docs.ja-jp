@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin iOS で重大なアラー�
 ms.prod: xamarin
 ms.assetid: 75742257-081D-44F4-B49E-FB807DF85262
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 09/04/2018
-ms.openlocfilehash: 54a214215f77b66f6a4b134dcb8d27b26c44fb6c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 43b810b95e4da2927030617e68c0ade824a0beaa
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291287"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031978"
 ---
 # <a name="critical-alerts-in-xamarinios"></a>Xamarin. iOS の重大なアラート
 
@@ -28,8 +28,8 @@ Apple からこの権利を受け取り、それを使用するようにアプ�
 
 アプリの通知承認要求によって、アプリの通知を許可または禁止するように求めるメッセージがユーザーに表示されます。 通知承認要求によって重要なアラートを送信するアクセス許可が求められた場合、アプリでは、重要なアラートを選択する機会をユーザーに与えることもできます。
 
-次のコードでは、適切なを渡すことによって、重大なアラートと標準の通知とサウンドの両方を送信するアクセス許可を要求します。[`UNAuthorizationOptions`](xref:UserNotifications.UNAuthorizationOptions)
-[`RequestAuthorization`](xref:UserNotifications.UNUserNotificationCenter.RequestAuthorization*)値:
+次のコードは、適切な[`UNAuthorizationOptions`](xref:UserNotifications.UNAuthorizationOptions)を渡すことによって、重大なアラートと標準の通知およびサウンドの両方を送信するアクセス許可を要求します。
+[`RequestAuthorization`](xref:UserNotifications.UNUserNotificationCenter.RequestAuthorization*)する値:
 
 ```csharp
 public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
@@ -45,13 +45,13 @@ public override bool FinishedLaunching(UIApplication application, NSDictionary l
 
 ## <a name="local-critical-alerts"></a>ローカルの重大なアラート
 
-ローカルの重大なアラートを送信するには、[`UNMutableNotificationContent`](xref:UserNotifications.UNMutableNotificationContent)
-次のいずれ`Sound`かのプロパティを設定します。
+ローカルの重大なアラートを送信するには、 [`UNMutableNotificationContent`](xref:UserNotifications.UNMutableNotificationContent)を作成します
+`Sound` プロパティを次のいずれかに設定します。
 
-- `UNNotificationSound.DefaultCriticalSound`。既定の重大な通知音を使用します。
+- `UNNotificationSound.DefaultCriticalSound`、既定の重大な通知音を使用します。
 - `UNNotificationSound.GetCriticalSound`。アプリとボリュームにバンドルされているカスタムサウンドを指定できます。
 
-次に、通知`UNNotificationRequest`コンテンツからを作成し、通知センターに追加します。
+次に、通知コンテンツから `UNNotificationRequest` を作成し、通知センターに追加します。
 
 ```csharp
 var content = new UNMutableNotificationContent()
