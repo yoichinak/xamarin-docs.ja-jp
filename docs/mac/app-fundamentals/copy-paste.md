@@ -4,15 +4,15 @@ description: この記事では、ペーストボードを使用して、Xamarin
 ms.prod: xamarin
 ms.assetid: 7E9C99FB-B7B4-4C48-B20F-84CB48543083
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: cf6835b99ea70c3922dd68bc21af3e44815cc92e
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 446006b89b82a1f5070a45d7e296e0563d74dbe4
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70769938"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032625"
 ---
 # <a name="copy-and-paste-in-xamarinmac"></a>Xamarin. Mac にコピーして貼り付ける
 
@@ -414,7 +414,7 @@ public ImageDocument Document {
 }
 ```
 
-@No__t_0、`WillChangeValue` と `DidChangeValue` を使用することにより、Xcode でキー値のコーディングとデータバインディングを許可するように `Document` プロパティを設定しました。
+`Export`、`WillChangeValue` と `DidChangeValue`を使用することにより、Xcode でキー値のコーディングとデータバインディングを許可するように `Document` プロパティを設定しました。
 
 また、Xcode の UI に追加したイメージからも、次のプロパティを使用してイメージを公開しています。
 
@@ -643,7 +643,7 @@ MacOS (旧称 OS X) では、貼り付け機能 (`NSPasteboard`) によって、
 
 ### <a name="what-is-a-pasteboard"></a>ペーストボードとは
 
-@No__t_0 クラスは、アプリケーション間または特定のアプリ内で情報を交換するための標準化されたメカニズムを提供します。 貼り付けの主な機能は、コピーと貼り付け操作を処理することです。
+`NSPasteboard` クラスは、アプリケーション間または特定のアプリ内で情報を交換するための標準化されたメカニズムを提供します。 貼り付けの主な機能は、コピーと貼り付け操作を処理することです。
 
 1. ユーザーがアプリで項目を選択し、切り取り または **コピー** メニュー項目を使用すると、選択した項目の1つ以上の表現が**貼り**付けに配置されます。
 2. ユーザーが貼り付けメニュー項目 (同じアプリ内または別のアプリ内) を使用すると、処理できるデータのバージョンが**貼り付け**られ、アプリに追加されます。
@@ -697,7 +697,7 @@ MacOS (旧称 OS X) では、貼り付け機能 (`NSPasteboard`) によって、
 
 各ペーストボードは、新しい所有者が宣言されるたびに増加する_変更数_を保持します。 アプリでは、変更回数の値をチェックすることによって、最後にそのクリップボードの内容が変更されたかどうかを判断できます。
 
-@No__t_2 クラスの `ChangeCount` および `ClearContents` メソッドを使用して、特定のペーストボードの変更数を変更します。
+`NSPasteboard` クラスの `ChangeCount` および `ClearContents` メソッドを使用して、特定のペーストボードの変更数を変更します。
 
 ## <a name="copying-data-to-a-pasteboard"></a>ペーストボードへのデータのコピー
 
@@ -716,7 +716,7 @@ pasteboard.ClearContents();
 pasteboard.WriteObjects (new NSImage[] {image});
 ```
 
-通常は、上の例で行ったように、一般的なペーストボードに書き込むだけです。 @No__t_0 メソッドに送信するオブジェクトは、`INSPasteboardWriting` インターフェイスに準拠している*必要があり*ます。 いくつかの組み込みクラス (`NSString`、`NSImage`、`NSURL`、`NSColor`、`NSAttributedString`、`NSPasteboardItem`) は、このインターフェイスに自動的に準拠しています。
+通常は、上の例で行ったように、一般的なペーストボードに書き込むだけです。 `WriteObjects` メソッドに送信するオブジェクトは、`INSPasteboardWriting` インターフェイスに準拠している*必要があり*ます。 いくつかの組み込みクラス (`NSString`、`NSImage`、`NSURL`、`NSColor`、`NSAttributedString`、`NSPasteboardItem`) は、このインターフェイスに自動的に準拠しています。
 
 カスタムデータクラスをペーストボードに書き込む場合は、`INSPasteboardWriting` インターフェイスに準拠しているか、`NSPasteboardItem` クラスのインスタンスにラップされている必要があります (以下の「[カスタムデータ型](#Custom_Data_Types)」を参照してください)。
 
@@ -726,7 +726,7 @@ pasteboard.WriteObjects (new NSImage[] {image});
 
 ### <a name="simple-paste-operation"></a>単純な貼り付け操作
 
-@No__t_0 メソッドを使用して、ペーストボードからデータを読み取ります。 次の2つのパラメーターが必要です。
+`ReadObjectsForClasses` メソッドを使用して、ペーストボードからデータを読み取ります。 次の2つのパラメーターが必要です。
 
 1. ペーストボードから読み取る `NSObject` ベースのクラス型の配列。 最初に、必要なデータ型を使用して、その他の種類を優先するように指定する必要があります。
 2. 追加の制約 (特定の URL のコンテンツ型への制限など) を含むディクショナリ。それ以上の制約が不要な場合は空のディクショナリ。
@@ -767,8 +767,8 @@ public void PasteImage(NSObject sender) {
 
 作成される Xamarin. Mac アプリケーションの種類に基づいて、貼り付けられたデータの複数の表現を処理できる場合があります。 このような状況では、次の2つのシナリオで、ペーストボードからデータを取得します。
 
-1. @No__t_0 メソッドを1回呼び出して、必要なすべての表現の配列を (優先順に) 指定します。
-2. @No__t_0 メソッドに対して複数の呼び出しを行い、毎回異なる型の配列を要求します。
+1. `ReadObjectsForClasses` メソッドを1回呼び出して、必要なすべての表現の配列を (優先順に) 指定します。
+2. `ReadObjectsForClasses` メソッドに対して複数の呼び出しを行い、毎回異なる型の配列を要求します。
 
 ペーストボードからデータを取得する方法の詳細については、上記の「**単純な貼り付け操作**」セクションを参照してください。
 
@@ -982,7 +982,7 @@ public ImageInfo(NSCoder decoder) {
 
 #### <a name="writing-to-the-pasteboard"></a>ペーストボードへの書き込み
 
-@No__t_0 インターフェイスに準拠することにより、2つのメソッドを公開し、必要に応じて3番目のメソッドを公開して、クラスをペーストボードに書き込むことができるようにする必要があります。
+`INSPasteboardWriting` インターフェイスに準拠することにより、2つのメソッドを公開し、必要に応じて3番目のメソッドを公開して、クラスをペーストボードに書き込むことができるようにする必要があります。
 
 まず、カスタムクラスに書き込むことができるデータ型の表現を、ペーストボードに指示する必要があります。
 
@@ -1017,7 +1017,7 @@ public virtual NSObject GetPasteboardPropertyListForType (string type) {
 }
 ```
 
-@No__t_0 型の場合、単純な書式設定された `NSString` オブジェクトを返します。 カスタム `com.xamarin.image-info` 型の場合、`NSKeyedArchiver` と `NSCoder` インターフェイスを使用して、カスタムデータクラスをキーと値のペアのアーカイブにエンコードします。 実際にエンコードを処理するには、次のメソッドを実装する必要があります。
+`public.text` 型の場合、単純な書式設定された `NSString` オブジェクトを返します。 カスタム `com.xamarin.image-info` 型の場合、`NSKeyedArchiver` と `NSCoder` インターフェイスを使用して、カスタムデータクラスをキーと値のペアのアーカイブにエンコードします。 実際にエンコードを処理するには、次のメソッドを実装する必要があります。
 
 ```csharp
 [Export ("encodeWithCoder:")]
@@ -1057,7 +1057,7 @@ pasteboard.WriteObjects (new ImageInfo[] { Info });
 
 #### <a name="reading-from-the-pasteboard"></a>ペーストボードからの読み取り
 
-@No__t_0 インターフェイスに準拠することで、カスタムデータクラスをペーストボードから読み取ることができるように、3つのメソッドを公開する必要があります。
+`INSPasteboardReading` インターフェイスに準拠することで、カスタムデータクラスをペーストボードから読み取ることができるように、3つのメソッドを公開する必要があります。
 
 まず、カスタムクラスがクリップボードから読み取ることができるデータ型の表現を、貼り付けを指定する必要があります。
 
@@ -1090,7 +1090,7 @@ public static NSPasteboardReadingOptions GetReadingOptionsForType (string type, 
 }
 ```
 
-@No__t_0 型の場合、このクラスに追加した `initWithCoder:` コンストラクターを呼び出すことによって、`NSKeyedArchiver` で作成したキーと値のペアを、クリップボードに書き込むときに、ペーストボードに指示します。
+`com.xamarin.image-info` 型の場合、このクラスに追加した `initWithCoder:` コンストラクターを呼び出すことによって、`NSKeyedArchiver` で作成したキーと値のペアを、クリップボードに書き込むときに、ペーストボードに指示します。
 
 最後に、次のメソッドを追加して、他の UTI データ表現をペーストボードから読み取る必要があります。
 
@@ -1133,7 +1133,7 @@ if (ok) {
 
 カスタムの項目を、カスタムクラスを作成することが保証されていない場合や、データを共通の形式で提供する必要がある場合など、必要な場合もあります。 このような状況では、`NSPasteboardItem` を使用できます。
 
-@No__t_0 は、ペーストボードに書き込まれるデータをきめ細かく制御し、一時的なアクセス用に設計されています。これは、ペーストボードに書き込まれた後に破棄する必要があります。
+`NSPasteboardItem` は、ペーストボードに書き込まれるデータをきめ細かく制御し、一時的なアクセス用に設計されています。これは、ペーストボードに書き込まれた後に破棄する必要があります。
 
 #### <a name="writing-data"></a>データの書き込み
 
@@ -1202,7 +1202,7 @@ namespace MacCopyPaste
 
 カスタムデータクラスの場合と同様に、`Register` と `Export` ディレクティブを使用して、目的の C に公開する必要があります。 クラスは `NSPasteboardItemDataProvider` から継承する必要があり、`FinishedWithDataProvider` メソッドと `ProvideDataForType` メソッドを実装する必要があります。
 
-@No__t_0 メソッドを使用して、`NSPasteboardItem` にラップされるデータを次のように指定します。
+`ProvideDataForType` メソッドを使用して、`NSPasteboardItem` にラップされるデータを次のように指定します。
 
 ```csharp
 [Export ("pasteboard:item:provideDataForType:")]

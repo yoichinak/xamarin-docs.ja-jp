@@ -4,15 +4,15 @@ description: Google の Android 磨耗が導入されたことで、優れた An
 ms.prod: xamarin
 ms.assetid: EAEF99F0-8FBE-47E4-8644-E7244CFAF464
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/01/2018
-ms.openlocfilehash: 80c24765022a916fa36e97aaf47b36435b3f7a7b
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 3b1d27b1489cb71d4bd1922c2de993567ddf36bd
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70758498"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028622"
 ---
 # <a name="introduction-to-android-wear"></a>Android Wear の概要
 
@@ -44,7 +44,7 @@ Android の磨耗をサポートする最も簡単な方法は、ハンドヘル
 
 ### <a name="user-interface"></a>ユーザー インターフェイス
 
-磨耗の主要なナビゲーションパターンは、垂直方向に並べられた一連のカードです。 これらの各カードには、同じ行に重なっているアクションを関連付けることができます。 @No__t_0 クラスは、この機能を提供します。`ListView` と同じアダプターの概念に準拠しています。 通常、`GridViewPager` は、各行と列のセルを `Fragment` として表すことができる `FragmentGridPagerAdaptor` (または `GridPagerAdaptor`) に関連付けられています。 
+磨耗の主要なナビゲーションパターンは、垂直方向に並べられた一連のカードです。 これらの各カードには、同じ行に重なっているアクションを関連付けることができます。 `GridViewPager` クラスは、この機能を提供します。`ListView`と同じアダプターの概念に準拠しています。 通常、`GridViewPager` は、各行と列のセルを `Fragment` として表すことができる `FragmentGridPagerAdaptor` (または `GridPagerAdaptor`) に関連付けられています。 
 
 [![磨耗のナビゲーション](intro-to-wear-images/2d-picker-sml.png "磨耗のナビゲーション")](intro-to-wear-images/2d-picker.png#lightbox)
 
@@ -152,17 +152,17 @@ Android の摩耗2.0 アプリは、ハンドヘルドアプリから独立し�
 Android の磨耗を実行できるデバイスの例をいくつか次に示します。
 
 - [Motorola 360](https://moto360.motorola.com/)
-- [LG G ウォッチ](http://www.lg.com/us/smart-watches/lg-W100-g-watch)
-- [LG G Watch R](http://www.lg.com/us/smartwatch/g-watch-r)
-- [Samsung 歯車ライブ](http://www.samsung.com/global/microsite/gear/gearlive_design.html)
-- [Sony SmartWatch 3](http://www.sonymobile.com/global-en/products/smartwear/smartwatch-3-swr50/)
-- [ASUS ZenWatch](http://www.asus.com/us/Phones/ASUS_ZenWatch_WI500Q/)
+- [LG G ウォッチ](https://www.lg.com/us/smart-watches/lg-W100-g-watch)
+- [LG G Watch R](https://www.lg.com/us/smartwatch/g-watch-r)
+- [Samsung 歯車ライブ](https://www.samsung.com/global/microsite/gear/gearlive_design.html)
+- [Sony SmartWatch 3](https://www.sonymobile.com/global-en/products/smartwear/smartwatch-3-swr50/)
+- [ASUS ZenWatch](https://www.asus.com/us/Phones/ASUS_ZenWatch_WI500Q/)
 
 ## <a name="further-reading"></a>関連項目
 
 Google の Android の磨耗ドキュメントを確認してください。
 
-- [Android の磨耗について](http://www.android.com/wear/)
+- [Android の磨耗について](https://www.android.com/wear/)
 - [Android の摩耗アプリの設計](https://developer.android.com/design/wear/index.html)
 - [android. サポート. ウェアラブルライブラリ](https://developer.android.com/reference/android/support/wearable/view/package-summary.html)
 - [Android の磨耗2.0](https://developer.android.com/wear/preview/index.html)

@@ -4,15 +4,15 @@ description: このドキュメントでは、iOS で machine learning を使用
 ms.prod: xamarin
 ms.assetid: BE1E2CA1-E3AE-4C90-914C-CFDBD1DCB82B
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/30/2017
-ms.openlocfilehash: 96ea328901beede663c9ed3d8d42979544b041ea
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 4319d9ab07682795e8890779a65a0e2289f4501c
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292640"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032214"
 ---
 # <a name="introduction-to-coreml-in-xamarinios"></a>Xamarin. iOS の CoreML の概要
 
@@ -31,26 +31,26 @@ CoreML は機械学習を iOS にもたらします。アプリはトレーニ�
 
 ![Mars Habitat Price 予測のサンプルのスクリーンショット](coreml-images/marspricer-heading.png)
 
-### <a name="1-add-the-coreml-model-to-the-project"></a>1.CoreML モデルをプロジェクトに追加する
+### <a name="1-add-the-coreml-model-to-the-project"></a>1. CoreML モデルをプロジェクトに追加します。
 
 CoreML モデル ( **mlmodel**拡張子を持つファイル) をプロジェクトの**Resources**ディレクトリに追加します。 
 
 モデルファイルのプロパティでは、その**ビルドアクション**は**Coremlmodel**に設定されます。 これは、アプリケーションのビルド時に、このファイルが**mlmodelc**ファイルにコンパイルされることを意味します。
 
-### <a name="2-load-the-model"></a>2.モデルを読み込みます
+### <a name="2-load-the-model"></a>2. モデルを読み込む
 
-`MLModel.Create`静的メソッドを使用してモデルを読み込みます。
+`MLModel.Create` の静的メソッドを使用してモデルを読み込みます。
 
 ```csharp
 var assetPath = NSBundle.MainBundle.GetUrlForResource("NameOfModel", "mlmodelc");
 model = MLModel.Create(assetPath, out NSError error1);
 ```
 
-### <a name="3-set-the-parameters"></a>3.パラメーターを設定する
+### <a name="3-set-the-parameters"></a>3. パラメーターを設定する
 
-モデルパラメーターは、を実装`IMLFeatureProvider`するコンテナークラスを使用して渡されます。
+モデルパラメーターは `IMLFeatureProvider`を実装するコンテナークラスを使用して渡されます。
 
-機能プロバイダーのクラスは、文字列と`MLFeatureValue`s の辞書のように動作します。各特徴の値には、単純な文字列または数値、配列またはデータ、またはイメージを含むピクセルバッファーがあります。
+機能プロバイダークラスは、文字列と `MLFeatureValue`s の辞書のように動作します。各特徴値には、単純な文字列または数値、配列またはデータ、またはイメージを含むピクセルバッファーを指定できます。
 
 単一値の機能プロバイダーのコードを次に示します。
 
@@ -67,20 +67,20 @@ public class MyInput : NSObject, IMLFeatureProvider
   }
 ```
 
-このようなクラスを使用して、CoreML で認識される方法で入力パラメーターを指定できます。 機能の名前 (コード例のなど`myParam` ) は、モデルで想定されているものと一致している必要があります。
+このようなクラスを使用して、CoreML で認識される方法で入力パラメーターを指定できます。 機能の名前 (コード例では `myParam` など) は、モデルで想定されているものと一致する必要があります。
 
-### <a name="4-run-the-model"></a>4.モデルを実行する
+### <a name="4-run-the-model"></a>4. モデルを実行する
 
-このモデルを使用するには、機能プロバイダーがインスタンス化され、パラメーターが`GetPrediction`設定されている必要があります。その後、メソッドが呼び出されます。
+このモデルを使用するには、機能プロバイダーをインスタンス化し、パラメーターを設定し、`GetPrediction` メソッドを呼び出す必要があります。
 
 ```csharp
 var input = new MyInput {MyParam = 13};
 var outFeatures = model.GetPrediction(inputFeatures, out NSError error2);
 ```
 
-### <a name="5-extract-the-results"></a>5.結果を抽出する
+### <a name="5-extract-the-results"></a>5. 結果を抽出する
 
-この予測結果`outFeatures`は、の`IMLFeatureProvider`インスタンスでもあります。出力値に`GetFeatureValue`は、次の例のように、各`theResult`出力パラメーターの名前 (など) を指定してを使用してアクセスできます。
+予測結果 `outFeatures` は `IMLFeatureProvider`のインスタンスでもあります。出力値には、次の例のように、各出力パラメーターの名前 (`theResult`など) と共に `GetFeatureValue` を使用してアクセスできます。
 
 ```csharp
 var result = outFeatures.GetFeatureValue("theResult").DoubleValue; // eg. 6227020800
@@ -96,9 +96,9 @@ CoreML をビジョンフレームワークと組み合わせて使用して、�
 
 ![数値3の画像認識](coreml-images/vision3.png) ![番号5の画像認識](coreml-images/vision5.png)
 
-### <a name="1-create-a-vision-coreml-model"></a>1.ビジョン CoreML モデルを作成する
+### <a name="1-create-a-vision-coreml-model"></a>1. ビジョン CoreML モデルを作成する
 
-Coreml モデル_MNISTClassifier_が読み込まれ、にラップさ`VNCoreMLModel`れます。これにより、モデルをビジョンタスクで使用できるようになります。 このコードでは、イメージ内の四角形を検索するために最初に2つのビジョン要求を作成し、次に CoreML モデルで四角形を処理します。
+CoreML モデル_MNISTClassifier_が読み込まれ、`VNCoreMLModel` にラップされます。これにより、モデルをビジョンタスクで使用できるようになります。 このコードでは、イメージ内の四角形を検索するために最初に2つのビジョン要求を作成し、次に CoreML モデルで四角形を処理します。
 
 ```csharp
 // Load the ML model
@@ -113,9 +113,9 @@ RectangleRequest = new VNDetectRectanglesRequest(HandleRectangles);
 ClassificationRequest = new VNCoreMLRequest(model, HandleClassification);
 ```
 
-クラスは、次の手順 3 `HandleRectangles`と`HandleClassification` 4 に示すように、ビジョン要求のメソッドとメソッドを実装する必要があります。
+このクラスでは、次の手順3と4に示すように、ビジョン要求の `HandleRectangles` および `HandleClassification` メソッドを実装する必要があります。
 
-### <a name="2-start-the-vision-processing"></a>2.ビジョン処理を開始する
+### <a name="2-start-the-vision-processing"></a>2. ビジョン処理を開始する
 
 次のコードでは、要求の処理を開始します。 **Coremlvision**のサンプルでは、ユーザーがイメージを選択した後に、このコードが実行されます。
 
@@ -127,13 +127,13 @@ DispatchQueue.DefaultGlobalQueue.DispatchAsync(()=>{
 });
 ```
 
-このハンドラーは、 `ciImage`手順 1. で`VNDetectRectanglesRequest`作成したビジョンフレームワークにを渡します。
+このハンドラーは、手順 1. で作成したビジョンフレームワーク `VNDetectRectanglesRequest` に `ciImage` を渡します。
 
-### <a name="3-handle-the-results-of-vision-processing"></a>3.ビジョン処理の結果を処理する
+### <a name="3-handle-the-results-of-vision-processing"></a>3. ビジョン処理の結果を処理する
 
-四角形の検出が完了すると、メソッドが`HandleRectangles`実行されます。このメソッドは、イメージをトリミングして最初の四角形を抽出し、四角形のイメージをグレースケールに変換して、それを coreml モデルに渡して分類します。
+四角形の検出が完了すると、`HandleRectangles` メソッドが実行されます。このメソッドは、イメージをトリミングして最初の四角形を抽出し、四角形のイメージをグレースケールに変換して、それを CoreML モデルに渡して分類します。
 
-このメソッドに渡される`GetResults<VNRectangleObservation>()` パラメーターには、ビジョン要求の詳細が含まれています。メソッドを使用すると、イメージ内で見つかった四角形のリストが返されます。`request` 最初の四角形`observations[0]`が抽出され、coreml モデルに渡されます。
+このメソッドに渡される `request` パラメーターには、ビジョン要求の詳細が含まれており、`GetResults<VNRectangleObservation>()` メソッドを使用して、イメージ内で見つかった四角形のリストを返します。 最初の四角形 `observations[0]` が抽出され、CoreML モデルに渡されます。
 
 ```csharp
 void HandleRectangles(VNRequest request, NSError error) {
@@ -149,11 +149,11 @@ void HandleRectangles(VNRequest request, NSError error) {
 }
 ```
 
-は`ClassificationRequest` 、次の手順で定義され`HandleClassification`ているメソッドを使用するために、手順 1. で初期化されました。
+次の手順で定義されている `HandleClassification` メソッドを使用するために、手順1で `ClassificationRequest` が初期化されました。
 
-### <a name="4-handle-the-coreml"></a>4.CoreML を処理する
+### <a name="4-handle-the-coreml"></a>4. CoreML を処理する
 
-このメソッドに渡される`GetResults<VNClassificationObservation>()` パラメーターには、coreml要求の詳細が含まれています。メソッドを使用すると、信頼度によって並べ替えられた結果の一覧が返されます(最も信頼度が高い順)。`request`
+このメソッドに渡される `request` パラメーターには、CoreML 要求の詳細が含まれています。また、`GetResults<VNClassificationObservation>()` メソッドを使用すると、考えられる結果の一覧が信頼度の高い順序で並べ替えられます (最も信頼度が高い順)。
 
 ```csharp
 void HandleClassification(VNRequest request, NSError error){

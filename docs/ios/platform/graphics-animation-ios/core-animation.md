@@ -4,15 +4,15 @@ description: この記事では、主要なアニメーションフレームワ�
 ms.prod: xamarin
 ms.assetid: D4744147-FACB-415B-8155-3A6B3C35E527
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 730359824ec5a51a53261fbfc9519ac8560a77f5
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 60bab56440fc7227e14d31875a8b6108cd1a86f3
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70753067"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032482"
 ---
 # <a name="core-animation-in-xamarinios"></a>Xamarin のコアアニメーション
 
@@ -46,9 +46,9 @@ UIKit には、アプリケーションにアニメーションを簡単に追�
 
 ### <a name="view-controller-transitions"></a>ビュー コントローラーの切り替え
 
- `UIViewController`には、メソッドを使用した`PresentViewController`ビューコントローラー間の移行のサポートが組み込まれています。 を使用`PresentViewController`する場合、2つ目のコントローラーへの切り替えをアニメーション化することもできます。
+ `UIViewController` には、`PresentViewController` 方法を使用してビューコントローラー間を移行するための組み込みサポートが用意されています。 `PresentViewController`を使用する場合は、必要に応じて2つ目のコントローラーへの移行をアニメーション化できます。
 
-たとえば、2つのコントローラーを持つアプリケーションについて考えてみます。この場合`PresentViewController` 、最初のコントローラーのボタンに触れると2つ目のコントローラーが表示されます。 2番目のコントローラーを表示するために使用する遷移アニメーションを制御[`ModalTransitionStyle`](xref:UIKit.UIModalTransitionStyle)するには、次に示すようにプロパティを設定するだけです。
+たとえば、2つのコントローラーを持つアプリケーションがあるとします。1つ目のコントローラーのボタンに触れると `PresentViewController` が呼び出され、2つ目のコントローラーが表示されます。 2番目のコントローラーを表示するために使用する遷移アニメーションを制御するには、次のように[`ModalTransitionStyle`](xref:UIKit.UIModalTransitionStyle)プロパティを設定します。
 
 ```csharp
 SecondViewController vc2 = new SecondViewController {
@@ -56,27 +56,27 @@ SecondViewController vc2 = new SecondViewController {
 };
 ```
 
-この場合`PartialCurl` 、アニメーションが使用されますが、他にも次のようなものがあります。
+この場合、`PartialCurl` のアニメーションが使用されますが、他にも次のようなものがあります。
 
-- `CoverVertical`–画面の下部からスライドアップします。
-- `CrossDissolve`–新しいビューがフェードイン & 前のビューがフェードアウトします。
-- `FlipHorizontal`-右から左への水平方向の反転。 無視では、遷移は左から右へとフリップします。
+- `CoverVertical` –画面の下部からスライドアップします。
+- `CrossDissolve`-古いビューはフェードアウトし & 新しいビューがフェードインします。
+- `FlipHorizontal`-右から左への水平方向の反転です。 無視では、遷移は左から右へとフリップします。
 
-遷移をアニメーション化するに`true`は、次のよう`PresentViewController`に2番目の引数としてを渡します。
+遷移をアニメーション化するには、`PresentViewController`の2番目の引数として `true` を渡します。
 
 ```csharp
 PresentViewController (vc2, true, null);
 ```
 
-次のスクリーンショットは、このような`PartialCurl`場合に移行がどのように見えるかを示しています。
+次のスクリーンショットは、`PartialCurl` の場合の遷移を示しています。
 
- ![](core-animation-images/06-view-transitions.png "このスクリーンショットは、PartialCurl の遷移を示しています。")
+ ![](core-animation-images/06-view-transitions.png "This screenshot shows the PartialCurl transition")
 
 ### <a name="view-transitions"></a>切り替え効果の表示
 
 UIKit では、コントローラー間の遷移に加えて、ビュー間の切り替え効果をアニメーション化して、別のビューを切り替えることもできます。
 
-たとえば、と`UIImageView`いうコントローラーがあるとします。この場合、イメージでタップすると`UIImageView`2 番目のが表示されます。 イメージビューのスーパービューをアニメーション化して2番目のイメージビューに切り替えるには`UIView.Transition`、を呼び出す`toView`だけ`fromView`で、次のようにとを渡します。
+たとえば、`UIImageView`を持つコントローラーがあるとします。この場合、イメージでタップすると2つ目の `UIImageView`が表示されます。 イメージビューのスーパービューをアニメーション化して2番目のイメージビューに切り替えるには、`UIView.Transition`を呼び出したときと同じように単純にし、次に示すように `toView` と `fromView` を渡します。
 
 ```csharp
 UIView.Transition (
@@ -88,24 +88,24 @@ UIView.Transition (
   completion: () => { Console.WriteLine ("transition complete"); });
 ```
 
-`UIView.Transition`また、は`duration` 、アニメーションの実行[`options`](xref:UIKit.UIViewAnimationOptions)時間を制御したり、使用するアニメーションやイージング関数などを指定したりするためのパラメーターを受け取ります。 また、アニメーションが完了したときに呼び出される完了ハンドラーを指定することもできます。
+また `UIView.Transition` は、アニメーションの実行時間を制御する `duration` パラメーターと、使用するアニメーションやイージング関数などを指定するための[`options`](xref:UIKit.UIViewAnimationOptions)を受け取ります。 また、アニメーションが完了したときに呼び出される完了ハンドラーを指定することもできます。
 
-次のスクリーンショットは、を使用した場合`TransitionFlipFromTop`のイメージビュー間のアニメーション化された切り替えを示しています。
+次のスクリーンショットは、`TransitionFlipFromTop` が使用されている場合のイメージビュー間のアニメーション化された切り替えを示しています。
 
- ![](core-animation-images/07-animated-transition.png "このスクリーンショットは、TransitionFlipFromTop が使用されたときのイメージビュー間のアニメーション化された切り替えを示しています。")
+ ![](core-animation-images/07-animated-transition.png "This screenshot shows the animated transition between the image views when TransitionFlipFromTop is used")
 
 ### <a name="view-property-animations"></a>プロパティアニメーションの表示
 
-Uikit では、 `UIView`クラスのさまざまなプロパティを自由にアニメーション化できます。これには次のものが含まれます。
+UIKit では、`UIView` クラスのさまざまなプロパティを自由にアニメーション化できます。これには次のものが含まれます。
 
 - フレーム
 - 線
 - 中央揃え
 - [アルファ]
-- 変換
-- 色
+- Transform
+- Color
 
-これらのアニメーションは、静的`NSAction` `UIView.Animate`メソッドに渡されるデリゲートでプロパティの変更を指定することによって暗黙的に行われます。 たとえば、次のコードでは、 `UIImageView`の中心点をアニメーション化しています。
+これらのアニメーションは、静的な `UIView.Animate` メソッドに渡される `NSAction` デリゲートでプロパティの変更を指定することによって暗黙的に行われます。 たとえば、次のコードは、`UIImageView`の中心点をアニメーション化します。
 
 ```csharp
 pt = imgView.Center;
@@ -125,27 +125,27 @@ UIView.Animate (
 
 次に示すように、この結果、イメージが画面の上部で前後にアニメーション化されます。
 
- ![](core-animation-images/08-animate-center.png "画面の上部から出力としてアニメーション化する画像")
+ ![](core-animation-images/08-animate-center.png "An image animating back and forth across the top of the screen as the output")
 
-メソッドと同様に、 `Animate`では、イージング関数と共に期間を設定できます。 `Transition` この例では`UIViewAnimationOptions.Autoreverse` 、オプションも使用しています。これにより、アニメーションは、値から最初の値にアニメーション化されます。 ただし、このコードでは、 `Center`完了ハンドラーの初期値にも設定します。 アニメーションは、時間の経過と共にプロパティ値を補間しますが、プロパティの実際のモデル値は常に設定されている最終的な値になります。 この例では、値はスーパービューの右側にあるポイントです。 を初期の`Center`ポイントに設定しないと、次に示すように、アニメーション`Autoreverse`が完了した後、イメージは右側にスナップバックされます。
+`Transition` メソッドと同様に、`Animate` では、イージング関数と共に期間を設定できます。 この例では、`UIViewAnimationOptions.Autoreverse` オプションも使用しています。これにより、アニメーションは、値から最初の値にアニメーション化されます。 ただし、このコードでは、`Center` を完了ハンドラーの初期値に設定することもできます。 アニメーションは、時間の経過と共にプロパティ値を補間しますが、プロパティの実際のモデル値は常に設定されている最終的な値になります。 この例では、値はスーパービューの右側にあるポイントです。 最初のポイントに `Center` を設定しないと、次に示すように、アニメーションが完了した後に、アニメーションが `Autoreverse` 完了した後で、イメージが右側にスナップバックされます。
 
- ![](core-animation-images/09-animation-complete.png "中央を最初のポイントに設定しないと、アニメーションが完了した後、イメージは右側にスナップバックされます。")
+ ![](core-animation-images/09-animation-complete.png "Without setting the Center to the initial point, the image would snap back to the right side after the animation completes")
 
 ## <a name="using-core-animation"></a>コアアニメーションの使用
 
- `UIView`アニメーションは多数の機能を使用でき、実装が簡単なため、可能であれば使用する必要があります。 既に説明したように、UIView アニメーションでは、コアアニメーションフレームワークが使用されます。 ただし、アニメーションで`UIView`は実行できないものもあります。たとえば、ビューでアニメーション化できない追加のプロパティをアニメーション化したり、非線形パスに沿って補間したりすることはできません。 さらに細かい制御が必要な場合は、コアアニメーションを直接使用することもできます。
+ `UIView` のアニメーションでは多数の機能が許可されるため、実装が簡単になるため、可能であれば使用する必要があります。 既に説明したように、UIView アニメーションでは、コアアニメーションフレームワークが使用されます。 ただし、`UIView` のアニメーションでは実行できないものもあります。たとえば、ビューでアニメーション化できない追加のプロパティをアニメーション化する場合や、非線形パスに沿って補間する場合などです。 さらに細かい制御が必要な場合は、コアアニメーションを直接使用することもできます。
 
 ### <a name="layers"></a>レイヤー
 
-コアアニメーションを使用する場合、アニメーションは*レイヤー*(型`CALayer`) を介して行われます。 レイヤーは、ビュー階層のようにレイヤー階層があるという点で、概念的にはビューに似ています。 実際には、レイヤーがビューに戻り、ビューでユーザー操作のサポートが追加されます。 ビューの`Layer`プロパティを使用して、任意のビューのレイヤーにアクセスできます。 実際、の`Draw` `UIView`メソッドで使用されるコンテキストは、実際にはレイヤーから作成されます。 内部的には、を`UIView`バッキングするレイヤーには、そのデリゲートがビュー自体に設定`Draw`されます。これはを呼び出します。 そのため、に`UIView`描画すると、実際にはレイヤーに描画されます。
+コアアニメーションを使用する場合、アニメーションは `CALayer`型の*レイヤー*を介して行われます。 レイヤーは、ビュー階層のようにレイヤー階層があるという点で、概念的にはビューに似ています。 実際には、レイヤーがビューに戻り、ビューでユーザー操作のサポートが追加されます。 ビューの `Layer` プロパティを使用して、任意のビューのレイヤーにアクセスできます。 実際、`UIView` の `Draw` メソッドで使用されるコンテキストは、実際にはレイヤーから作成されます。 内部的には、`UIView` をバッキングするレイヤーには、そのデリゲートがビュー自体に設定されます。これは `Draw`呼び出しです。 したがって、`UIView`に描画すると、実際にはレイヤーに描画されます。
 
 レイヤーアニメーションは、暗黙的または明示的にすることができます。 暗黙のアニメーションは宣言型です。 変更するレイヤープロパティを宣言するだけで、アニメーションが動作します。 一方、明示的なアニメーションは、レイヤーに追加されるアニメーションクラスを使用して作成されます。 明示的なアニメーションを使用すると、アニメーションの作成方法をさらに制御できます。 以下のセクションでは、暗黙的および明示的なアニメーションについて詳しく説明します。
 
 ### <a name="implicit-animations"></a>暗黙のアニメーション
 
-レイヤーのプロパティをアニメーション化する方法の1つは、暗黙的なアニメーションを使用することです。 `UIView`アニメーションでは、暗黙的なアニメーションを作成します。 ただし、暗黙的なアニメーションをレイヤーに対して直接作成することもできます。
+レイヤーのプロパティをアニメーション化する方法の1つは、暗黙的なアニメーションを使用することです。 `UIView` アニメーションは、暗黙的なアニメーションを作成します。 ただし、暗黙的なアニメーションをレイヤーに対して直接作成することもできます。
 
-たとえば、次のコードでは、イメージから`Contents`レイヤーのを設定し、境界線の幅と色を設定し、ビューのレイヤーのサブレイヤーとしてレイヤーを追加しています。
+たとえば、次のコードでは、イメージからレイヤーの `Contents` を設定し、境界線の幅と色を設定し、ビューのレイヤーのサブレイヤーとしてレイヤーを追加します。
 
 ```csharp
 public override void ViewDidLoad ()
@@ -164,7 +164,7 @@ public override void ViewDidLoad ()
 }
 ```
 
-レイヤーの暗黙的なアニメーションを追加するには`CATransaction`、でプロパティの変更をラップするだけです。 これにより、次に示すように、ビューアニメーション`BorderWidth` `BorderColor`で system.windows.media.animation.animatable> されないプロパティをアニメーション化できます。
+レイヤーに対して暗黙的なアニメーションを追加するには、`CATransaction`でプロパティの変更をラップするだけです。 これにより、次に示すように、`BorderWidth` や `BorderColor` などのビューアニメーションで system.windows.media.animation.animatable> されないプロパティをアニメーション化できます。
 
 ```csharp
 public override void ViewDidAppear (bool animated)
@@ -180,21 +180,21 @@ public override void ViewDidAppear (bool animated)
 }
 ```
 
-また、このコードでは、 `Position`スーパーレイヤーの座標の左上から測定されたレイヤーのアンカーポイントの位置であるレイヤーのをアニメーション化します。 レイヤーのアンカーポイントは、レイヤーの座標系内の正規化されたポイントです。
+このコードは、スーパーレイヤーの座標の左上から測定されたレイヤーのアンカーポイントの位置であるレイヤーの `Position`もアニメーション化します。 レイヤーのアンカーポイントは、レイヤーの座標系内の正規化されたポイントです。
 
 次の図は、位置とアンカーポイントを示しています。
 
- ![](core-animation-images/10-postion-anchorpt.png "この図は、位置とアンカーポイントを示しています。")
+ ![](core-animation-images/10-postion-anchorpt.png "This figure shows the position and anchor point")
 
-この例を実行`Position` `BorderWidth`すると、次の`BorderColor`スクリーンショットに示すように、、およびアニメーション化されます。
+この例を実行すると、次のスクリーンショットに示すように、`Position`、`BorderWidth`、および `BorderColor` アニメーション化されます。
 
- ![](core-animation-images/11-implicit-animation.png "この例を実行すると、Position、BorderWidth、BorderColor は、次のようにアニメーション化されます。")
+ ![](core-animation-images/11-implicit-animation.png "When the example is run, the Position, BorderWidth and BorderColor animate as shown")
 
 ### <a name="explicit-animations"></a>明示的なアニメーション
 
-暗黙的なアニメーションに加えて、コアアニメーションには、から`CAAnimation`継承されるさまざまなクラスが含まれています。これを使用すると、レイヤーに明示的に追加されたアニメーションをカプセル化できます。 これにより、アニメーションの開始値の変更、アニメーションのグループ化、非線形パスを許可するためのキーフレームの指定など、アニメーションをきめ細かく制御できます。
+暗黙的なアニメーションに加えて、コアアニメーションには、レイヤーに明示的に追加されたアニメーションをカプセル化できるようにする `CAAnimation` から継承するさまざまなクラスが含まれています。 これにより、アニメーションの開始値の変更、アニメーションのグループ化、非線形パスを許可するためのキーフレームの指定など、アニメーションをきめ細かく制御できます。
 
-次のコードは、前に示したレイヤーに対し`CAKeyframeAnimation`てを使用する明示的なアニメーションの例を示しています (「暗黙的なアニメーション」セクション)。
+次のコードは、前に示したレイヤー ([暗黙的なアニメーション] セクション) の `CAKeyframeAnimation` を使用した明示的なアニメーションの例を示しています。
 
 ```csharp
 public override void ViewDidAppear (bool animated)
@@ -225,13 +225,13 @@ public override void ViewDidAppear (bool animated)
 }
 ```
 
-このコードでは`Position` 、キーフレームアニメーションの定義に使用されるパスを作成することによって、レイヤーのを変更します。 レイヤーの`Position`がアニメーション`Position`からの最終的な値に設定されていることに注意してください。 これを行わないと、アニメーションは実際の`Position`モデル値ではなくプレゼンテーション値のみを変更するため、レイヤーはアニメーションの前にに戻ります。 モデル値をアニメーションの最終的な値に設定すると、アニメーションの最後にレイヤーが配置されたままになります。
+このコードでは、キーフレームアニメーションの定義に使用されるパスを作成することによって、レイヤーの `Position` を変更します。 レイヤーの `Position` が、アニメーションの `Position` の最終的な値に設定されていることに注意してください。 この操作を行わないと、アニメーションは実際のモデル値ではなくプレゼンテーション値のみを変更するため、レイヤーはアニメーションの前に `Position` に戻ります。 モデル値をアニメーションの最終的な値に設定すると、アニメーションの最後にレイヤーが配置されたままになります。
 
 次のスクリーンショットは、指定されたパスをアニメーション化するイメージを含むレイヤーを示しています。
 
- ![](core-animation-images/12-explicit-animation.png "このスクリーンショットは、指定されたパスをアニメーション化している画像を含むレイヤーを示しています。")
+ ![](core-animation-images/12-explicit-animation.png "This screenshot shows the layer containing the image animating through the specified path")
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>まとめ
 
 この記事では、*主要なアニメーション*フレームワークによって提供されるアニメーション機能について説明しました。 ここでは、UIKit でのアニメーションの動作と、下位レベルのアニメーションコントロールに対して直接使用する方法の両方を示す、コアアニメーションを検証しています。
 

@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin で watchOS を使用し�
 ms.prod: xamarin
 ms.assetid: 2049C430-7566-45F8-9E3D-1446F484981E
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/13/2017
-ms.openlocfilehash: 0e0336e65532c4487e3ec8c1984b132544b5b547
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: b688d830ad345a347bf54b3d3bd450eb34fec7d3
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768658"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028330"
 ---
 # <a name="watchos-background-tasks-in-xamarin"></a>watchOS のバックグラウンドタスク (Xamarin)
 
@@ -28,7 +28,7 @@ WatchOS 3 では、watch アプリで情報を最新の状態に保つには、�
 
 次の例を参照してください。
 
-[![](background-tasks-images/update00.png "ユーザーが1日中に iPhone とその Apple Watch 間を移動する方法")](background-tasks-images/update00.png#lightbox)
+[![](background-tasks-images/update00.png "How a user might move between their iPhone and their Apple Watch throughout the day")](background-tasks-images/update00.png#lightbox)
 
 1. 朝には、コーヒーの行を待っている間、ユーザーは iPhone の現在のニュースを数分間参照します。
 2. コーヒーショップを離れる前に、時計を簡単に確認してください。
@@ -41,7 +41,7 @@ WatchOS 3 では、watch アプリで情報を最新の状態に保つには、�
 
 Apple が watchOS 3 に追加した新しい Api を使用することにより、アプリは_バックグラウンド更新_のスケジュールを設定し、必要な情報をユーザーに要求する前に準備できます。 上記の気象の複雑な例を見てください。
 
-[![](background-tasks-images/update01.png "天気の複雑な例")](background-tasks-images/update01.png#lightbox)
+[![](background-tasks-images/update01.png "An example of the Weather Complication")](background-tasks-images/update01.png#lightbox)
 
 1. アプリは、特定の時刻にシステムによってウェイクアップされるようにスケジュールします。 
 2. アプリでは、更新プログラムを生成するために必要な情報がフェッチされます。
@@ -50,11 +50,11 @@ Apple が watchOS 3 に追加した新しい Api を使用することにより�
 
 前述のように、watchOS システムは、使用可能なプールが非常に限られている1つ以上のタスクを使用してアプリをスリープ解除します。
 
-[![](background-tasks-images/update02.png "WatchOS システムは、1つまたは複数のタスクを使用してアプリをスリープ解除します")](background-tasks-images/update02.png#lightbox)
+[![](background-tasks-images/update02.png "The watchOS system wakes the app using one or more Tasks")](background-tasks-images/update02.png#lightbox)
 
 Apple は、アプリがそれ自体を更新するプロセスを完了するまで、このタスクを保持することによって (アプリに限定されたリソースであるため)、このタスクを最大限に活用することを提案します。
 
-システムは、 `HandleBackgroundTasks` `WKExtensionDelegate`デリゲートの新しいメソッドを呼び出すことによってこれらのタスクを提供します。 例えば:
+システムは、`WKExtensionDelegate` デリゲートの新しい `HandleBackgroundTasks` メソッドを呼び出すことによって、これらのタスクを提供します。 (例:
 
 ```csharp
 using System;
@@ -84,7 +84,7 @@ namespace MonkeyWatch.MonkeySeeExtension
 
 アプリは、指定されたタスクを完了すると、完了をマークしてシステムに返します。
 
-[![](background-tasks-images/update03.png "完了をマークすることで、タスクがシステムに戻る")](background-tasks-images/update03.png#lightbox)
+[![](background-tasks-images/update03.png "The Task returns to the system by marking it completed")](background-tasks-images/update03.png#lightbox)
 
 <a name="New-Background-Tasks" />
 
@@ -103,19 +103,19 @@ watchOS 3 では、アプリを開く前にユーザーが必要とするコン�
 
 ### <a name="wkapplicationrefreshbackgroundtask"></a>WKApplicationRefreshBackgroundTask
 
-は`WKApplicationRefreshBackgroundTask` 、アプリを将来の日付でウェイクアップするようにスケジュールできる汎用タスクです。
+`WKApplicationRefreshBackgroundTask` は、アプリを将来の日付でウェイクアップするようにスケジュールできる汎用タスクです。
 
-[![](background-tasks-images/update04.png "将来の日付で WKApplicationRefreshBackgroundTask がウェイクアップ")](background-tasks-images/update04.png#lightbox)
+[![](background-tasks-images/update04.png "A WKApplicationRefreshBackgroundTask woken at a future date")](background-tasks-images/update04.png#lightbox)
 
-タスクの実行時に、アプリは、複雑なタイムラインを更新したり、を`NSUrlSession`使用して必要なデータを取得したりするなど、あらゆる種類のローカル処理を実行できます。
+タスクの実行時に、アプリは、複雑なタイムラインを更新したり、必要なデータを `NSUrlSession`でフェッチしたりするなど、あらゆる種類のローカル処理を実行できます。
 
 <a name="WKURLSessionRefreshBackgroundTask" />
 
 ### <a name="wkurlsessionrefreshbackgroundtask"></a>WKURLSessionRefreshBackgroundTask
 
-データのダウンロードが完了`WKURLSessionRefreshBackgroundTask`し、アプリで処理できる状態になると、システムからが送信されます。
+データのダウンロードが完了し、アプリで処理できる状態になると、システムは `WKURLSessionRefreshBackgroundTask` を送信します。
 
-[![](background-tasks-images/update05.png "データのダウンロードが完了したときの WKURLSessionRefreshBackgroundTask")](background-tasks-images/update05.png#lightbox)
+[![](background-tasks-images/update05.png "The WKURLSessionRefreshBackgroundTask when the data has finished downloading")](background-tasks-images/update05.png#lightbox)
 
 データがバックグラウンドでダウンロードされている間、アプリは実行されません。 代わりに、アプリはデータの要求をスケジュールし、中断された後、データのダウンロードを処理します。ダウンロードが完了すると、アプリの reawakening のみを行います。
 
@@ -125,26 +125,26 @@ watchOS 3 では、アプリを開く前にユーザーが必要とするコン�
 
 WatchOS 3 では、Apple がドッキングを追加し、ユーザーがお気に入りのアプリをピン留めしてすぐにアクセスできるようにしました。 ユーザーが Apple Watch の横にあるボタンを押すと、ピン留めされたアプリスナップショットのギャラリーが表示されます。 ユーザーは、左または右にスワイプして目的のアプリを見つけ、アプリをタップして起動し、スナップショットを実行中のアプリのインターフェイスに置き換えることができます。
 
-[![](background-tasks-images/update06.png "実行中のアプリのインターフェイスにスナップショットを置き換える")](background-tasks-images/update06.png#lightbox)
+[![](background-tasks-images/update06.png "Replacing the Snapshot with the running apps interface")](background-tasks-images/update06.png#lightbox)
 
-システムは、(を`WKSnapshotRefreshBackgroundTask`送信することによって) アプリの UI のスナップショットを定期的に取得し、それらのスナップショットを使用してドックにデータを設定します。 watchOS は、このスナップショットを取得する前に、アプリにコンテンツと UI を更新する機会を与えます。
+システムは、(`WKSnapshotRefreshBackgroundTask`を送信することによって) アプリの UI のスナップショットを定期的に取得し、それらのスナップショットを使用してドックにデータを設定します。 watchOS は、このスナップショットを取得する前に、アプリにコンテンツと UI を更新する機会を与えます。
 
 スナップショットは、アプリのプレビューイメージと起動イメージの両方として機能するため、watchOS 3 では非常に重要です。 ドック内のアプリでユーザーがを終了すると、全画面に展開され、フォアグラウンドに入り、実行が開始されるため、スナップショットを最新の状態にする必要があります。
 
-[![](background-tasks-images/update07.png "ユーザーがドッキング中のアプリでの作業を行うと、[全画面表示] に展開されます。")](background-tasks-images/update07.png#lightbox)
+[![](background-tasks-images/update07.png "If the user settles on an app in the Dock, it will expand to full screen")](background-tasks-images/update07.png#lightbox)
 
-この場合も、システムによっ`WKSnapshotRefreshBackgroundTask`てが発行されます。これにより、アプリはスナップショットが作成される前に (データと UI を更新して) 準備できるようになります。
+この場合も、システムは `WKSnapshotRefreshBackgroundTask` を発行して、スナップショットが作成される前に (データと UI を更新して) アプリが準備できるようにします。
 
-[![](background-tasks-images/update08.png "アプリは、スナップショットが作成される前にデータと UI を更新することによって準備できます。")](background-tasks-images/update08.png#lightbox)
+[![](background-tasks-images/update08.png "The app can prepare by updating the data and the UI before the snapshot is taken")](background-tasks-images/update08.png#lightbox)
 
-アプリがを`WKSnapshotRefreshBackgroundTask`完了すると、システムは自動的にアプリの UI のスナップショットを取得します。
+アプリが `WKSnapshotRefreshBackgroundTask` 完了したとマークすると、アプリケーションの UI のスナップショットが自動的に作成されます。
 
 > [!IMPORTANT]
-> アプリが新しいデータを受信し`WKSnapshotRefreshBackgroundTask`てユーザーインターフェイスを更新した後にを常にスケジュールすることが重要です。そうしないと、変更された情報がユーザーに表示されません。
+> アプリが新しいデータを受信し、そのユーザーインターフェイスを更新した後、またはユーザーに変更された情報が表示されない場合は、常に `WKSnapshotRefreshBackgroundTask` をスケジュールすることが重要です。
 
 さらに、ユーザーがアプリから通知を受信し、タップしてアプリをフォアグラウンドにすると、起動画面としても動作しているため、スナップショットを最新の状態にする必要があります。
 
-[![](background-tasks-images/update09.png "ユーザーはアプリから通知を受け取り、タップしてアプリを前景に移動します。")](background-tasks-images/update09.png#lightbox)
+[![](background-tasks-images/update09.png "The user receives a notification from the app and taps it to bring the app to the foreground")](background-tasks-images/update09.png#lightbox)
 
 ユーザーが watchOS アプリと対話してから1時間以上経過している場合は、既定の状態に戻ることができます。 既定の状態は、アプリによって異なることを意味します。アプリの設計によっては、既定の状態がまったくない場合があります。
 
@@ -154,18 +154,18 @@ WatchOS 3 では、Apple がドッキングを追加し、ユーザーがお気�
 
 ### <a name="wkwatchconnectivityrefreshbackgroundtask"></a>WKWatchConnectivityRefreshBackgroundTask
 
-WatchOS 3 では、Apple は新しい`WKWatchConnectivityRefreshBackgroundTask`を通じて、バックグラウンド更新 API との監視接続を統合しています。 この新機能を使用すると、iPhone アプリは、watchOS アプリがバックグラウンドで実行されている間、watch アプリに新しいデータを配信できます。
+WatchOS 3 では、Apple は新しい `WKWatchConnectivityRefreshBackgroundTask`によって、バックグラウンド更新 API との監視接続を統合しています。 この新機能を使用すると、iPhone アプリは、watchOS アプリがバックグラウンドで実行されている間、watch アプリに新しいデータを配信できます。
 
-[![](background-tasks-images/update10.png "IPhone アプリでは、watchOS アプリがバックグラウンドで実行されている間、対応する watch アプリに新しいデータを配信できます。")](background-tasks-images/update10.png#lightbox)
+[![](background-tasks-images/update10.png "An iPhone app can deliver fresh data to its watch app counterpart, while the watchOS app is running in the background")](background-tasks-images/update10.png#lightbox)
 
 複雑なプッシュ、アプリコンテキスト、iPhone アプリからのユーザー情報の更新を開始すると、Apple Watch アプリがバックグラウンドでスリープ解除されます。
 
-Watch アプリがに`WKWatchConnectivityRefreshBackgroundTask`よってウェイクアップされた場合、iPhone アプリからデータを受信するには、標準の API メソッドを使用する必要があります。
+Watch アプリを `WKWatchConnectivityRefreshBackgroundTask` 経由でウェイクアップする場合、iPhone アプリからデータを受信するには、標準の API メソッドを使用する必要があります。
 
-[![](background-tasks-images/update11.png "WKWatchConnectivityRefreshBackgroundTask データフロー")](background-tasks-images/update11.png#lightbox)
+[![](background-tasks-images/update11.png "The WKWatchConnectivityRefreshBackgroundTask data flow")](background-tasks-images/update11.png#lightbox)
 
 1. セッションがアクティブになっていることを確認します。
-2. 新しい`HasContentPending`プロパティを監視します。値が`true`の場合は、アプリに処理するデータが残っています。 前と同様に、アプリはすべてのデータの処理が完了するまで、タスクを保持する必要があります。
+2. 値が `true`である限り、新しい `HasContentPending` プロパティを監視します。アプリに処理するデータが残っています。 前と同様に、アプリはすべてのデータの処理が完了するまで、タスクを保持する必要があります。
 3. 処理するデータがなくなった場合 (`HasContentPending = false`)、タスクが完了したことをシステムに返すようにマークします。 これを行わないと、アプリに割り当てられたバックグラウンドランタイムが枯渇し、クラッシュレポートが生成されます。
 
 <a name="The-Background-API-Lifecycle" />
@@ -174,12 +174,12 @@ Watch アプリがに`WKWatchConnectivityRefreshBackgroundTask`よってウェ�
 
 新しいバックグラウンドタスク API のすべての部分を一緒に配置すると、一般的な一連の対話は次のようになります。
 
-[![](background-tasks-images/update12.png "バックグラウンド API のライフサイクル")](background-tasks-images/update12.png#lightbox)
+[![](background-tasks-images/update12.png "The Background API Lifecycle")](background-tasks-images/update12.png#lightbox)
 
 1. まず、watchOS アプリでは、バックグラウンドタスクが将来のある時点としてスリープ状態されるようにスケジュールします。
 2. アプリはシステムによってウェイクアップされ、タスクが送信されます。
 3. アプリは、必要な作業を完了するためにタスクを処理します。
-4. タスクを処理した結果として、アプリでは、を`NSUrlSession`使用してより多くのコンテンツをダウンロードするなど、今後より多くの作業を完了するために、より多くのバックグラウンドタスクをスケジュールする必要がある場合があります。
+4. タスクを処理した結果として、アプリでより多くの作業を完了するために、より多くのバックグラウンドタスクをスケジュールすることが必要になる場合があります。たとえば、`NSUrlSession`を使用して追加のコンテンツをダウンロードする場合などです。
 5. アプリによってタスクが完了したとマークされ、システムに返されます。
 
 <a name="Using-Resources-Responsibly" />
@@ -190,7 +190,7 @@ WatchOS アプリは、システムの共有リソースのドレインを制限
 
 次のシナリオを見てみましょう。
 
-[![](background-tasks-images/update13.png "WatchOS アプリは、システムの共有リソースに対するドレインを制限します。")](background-tasks-images/update13.png#lightbox)
+[![](background-tasks-images/update13.png "A watchOS app limits its drain on the system's shared resources")](background-tasks-images/update13.png#lightbox)
 
 1. ユーザーは、午後1:00 に watchOS アプリを起動します。
 2. アプリは、午後2:00 時に、新しいコンテンツをウェイクアップしてダウンロードするタスクをスケジュールします。
@@ -207,7 +207,7 @@ WatchOS アプリは、システムの共有リソースのドレインを制限
 
 一般的な使用シナリオを次に示します。
 
-[![](background-tasks-images/update14.png "一般的な使用シナリオ")](background-tasks-images/update14.png#lightbox)
+[![](background-tasks-images/update14.png "The typical usage scenario")](background-tasks-images/update14.png#lightbox)
 
 ユーザーのお気に入りのサッカーチームは、7:00 PM から 9:00 PM までの大きな一致を再生しているので、アプリはユーザーがスコアを定期的にチェックし、30分の更新間隔を決定します。
 
@@ -246,9 +246,9 @@ private void ScheduleNextBackgroundUpdate ()
 }
 ```
 
-アプリの awoken が`NSDate`必要になったときに新しい30分が作成され、要求`NSMutableDictionary`されたタスクの詳細を保持するためのが作成されます。 `ScheduleBackgroundRefresh` のメソッドは、タスクをスケジュールするように要求するために`SharedExtension`使用されます。
+アプリの awoken が必要になったときに30分後に新しい `NSDate` を作成し、要求されたタスクの詳細を保持するための `NSMutableDictionary` を作成します。 `SharedExtension` の `ScheduleBackgroundRefresh` メソッドを使用して、タスクのスケジュール設定を要求します。
 
-要求されたタスク`NSError`をスケジュールできなかった場合、システムはを返します。
+要求されたタスクをスケジュールできなかった場合、システムは `NSError` を返します。
 
 <a name="Processing-the-Update" />
 
@@ -256,7 +256,7 @@ private void ScheduleNextBackgroundUpdate ()
 
 次に、スコアを更新するために必要な手順を示す5分のウィンドウについて詳しく見てみましょう。
 
-[![](background-tasks-images/update15.png "スコアを更新するために必要な手順を示す5分のウィンドウ")](background-tasks-images/update15.png#lightbox)
+[![](background-tasks-images/update15.png "The 5 minute window showing the steps required to update the score")](background-tasks-images/update15.png#lightbox)
 
 1. 午後7:30:02 に、システムによってアプリがスリープ解除され、更新プログラムのバックグラウンドタスクが付与されます。 最初の優先順位は、サーバーから最新のスコアを取得することです。 後述[の「nq&a をスケジュールする」を](#Scheduling-a-NSUrlSession)参照してください。
 2. 7:30:05 では、アプリが元のタスクを完了すると、システムはアプリをスリープ状態にし、要求されたデータをバックグラウンドでダウンロードし続けます。
@@ -285,13 +285,13 @@ private void ScheduleURLUpdateSession ()
 }
 ```
 
-新しい`NSUrlSession`を構成して作成し、そのセッションを使用して、 `CreateDownloadTask`メソッドを使用して新しいダウンロードタスクを作成します。 ダウンロードタスクの`Resume`メソッドを呼び出して、セッションを開始します。
+新しい `NSUrlSession`を構成して作成し、そのセッションを使用して、`CreateDownloadTask` メソッドを使用して新しいダウンロードタスクを作成します。 ダウンロードタスクの `Resume` メソッドを呼び出して、セッションを開始します。
 
 <a name="Handling-Background-Tasks" />
 
 ## <a name="handling-background-tasks"></a>バックグラウンドタスクの処理
 
-`HandleBackgroundTasks`のメソッドをオーバーライドすることにより、アプリは受信バックグラウンドタスクを処理できます。`WKExtensionDelegate`
+`WKExtensionDelegate`の `HandleBackgroundTasks` メソッドをオーバーライドすることにより、アプリは受信バックグラウンドタスクを処理できます。
 
 ```csharp
 using System;
@@ -347,7 +347,7 @@ namespace MonkeySoccer.MonkeySoccerExtension
 }
 ```
 
-メソッド`HandleBackgroundTasks`は、システムがを検索するため`WKUrlSessionRefreshBackgroundTask`にアプリに送信したすべての`backgroundTasks`タスク (では) を順番に実行します。 見つかった場合は、セッションに再度参加し、ダウンロード`NSUrlSessionDownloadDelegate`の完了を処理するためのをアタッチします (以下[のダウンロードの処理](#Handling-the-Download-Completing)に関する説明を参照してください)。
+`HandleBackgroundTasks` メソッドは、システムが `WKUrlSessionRefreshBackgroundTask`を検索するアプリに送信したすべてのタスク (`backgroundTasks`) を順番に実行します。 見つかった場合は、セッションに再度参加し、ダウンロードの完了を処理する `NSUrlSessionDownloadDelegate` をアタッチします (以下[のダウンロードの処理](#Handling-the-Download-Completing)に関する説明を参照してください)。
 
 ```csharp
 // Create new session
@@ -379,7 +379,7 @@ if (urlTask != null) {
 
 ## <a name="handling-the-download-completing"></a>ダウンロードの完了の処理
 
-Monkeysoccer アプリでは、次`NSUrlSessionDownloadDelegate`のデリゲートを使用して、要求されたデータのダウンロードを完了し、処理します。
+MonkeySoccer アプリでは、次の `NSUrlSessionDownloadDelegate` デリゲートを使用して、ダウンロードを完了し、要求されたデータを処理します。
 
 ```csharp
 using System;
@@ -420,7 +420,7 @@ namespace MonkeySoccer.MonkeySoccerExtension
 }
 ```
 
-初期化されると、 `ExtensionDelegate`とそれを生成したの`WKRefreshBackgroundTask`両方へのハンドルを保持します。 `DidFinishDownloading`メソッドをオーバーライドして、ダウンロードの完了を処理します。 は、の`CompleteTask`メソッドを使用`ExtensionDelegate`して、タスクが完了したことを通知し、保留中のタスクのコレクションから削除します。 前の「[バックグラウンドタスクの処理](#Handling-Background-Tasks)」を参照してください。
+初期化されると、`ExtensionDelegate` とそれを生成した `WKRefreshBackgroundTask` の両方へのハンドルを保持します。 `DidFinishDownloading` メソッドをオーバーライドして、ダウンロードの完了を処理します。 次に、`ExtensionDelegate` の `CompleteTask` メソッドを使用して、タスクが完了したことを通知し、保留中のタスクのコレクションから削除します。 前の「[バックグラウンドタスクの処理](#Handling-Background-Tasks)」を参照してください。
 
 <a name="Scheduling-a-Snapshot-Update" />
 
@@ -451,15 +451,15 @@ private void ScheduleSnapshotUpdate ()
 }
 ```
 
-上記の`ScheduleURLUpdateSession`メソッドと同様に、アプリの`NSDate` awoken `NSMutableDictionary`が必要になったときにの新しいを作成し、要求されたタスクの詳細を保持するを作成します。 `ScheduleSnapshotRefresh` のメソッドは、タスクをスケジュールするように要求するために`SharedExtension`使用されます。
+上記の `ScheduleURLUpdateSession` メソッドと同様に、アプリを awoken したいときの新しい `NSDate` を作成し、要求されたタスクの詳細を保持するための `NSMutableDictionary` を作成します。 `SharedExtension` の `ScheduleSnapshotRefresh` メソッドを使用して、タスクのスケジュール設定を要求します。
 
-要求されたタスク`NSError`をスケジュールできなかった場合、システムはを返します。
+要求されたタスクをスケジュールできなかった場合、システムは `NSError` を返します。
 
 <a name="Handling-a-Snapshot-Update" />
 
 ## <a name="handling-a-snapshot-update"></a>スナップショット更新の処理
 
-スナップショットタスク`HandleBackgroundTasks`を処理するには、メソッド (上記の[バックグラウンドタスクの処理](#Handling-Background-Tasks)に関するページを参照) を次のように変更します。
+スナップショットタスクを処理するには、`HandleBackgroundTasks` メソッド (前述の「[バックグラウンドタスクの処理](#Handling-Background-Tasks)」を参照) を次のように変更します。
 
 ```csharp
 public override void HandleBackgroundTasks (NSSet<WKRefreshBackgroundTask> backgroundTasks)
@@ -502,20 +502,20 @@ public override void HandleBackgroundTasks (NSSet<WKRefreshBackgroundTask> backg
 }
 ```
 
-メソッドは、処理されているタスクの種類をテストします。 次の場合は`WKSnapshotRefreshBackgroundTask` 、タスクにアクセスできます。
+メソッドは、処理されているタスクの種類をテストします。 `WKSnapshotRefreshBackgroundTask` の場合は、次のタスクにアクセスできます。
 
 ```csharp
 var snapshotTask = task as WKSnapshotRefreshBackgroundTask;
 ```
 
-メソッドは、ユーザーインターフェイスを更新した`NSDate`後、スナップショットが古くなったことをシステムに通知するを作成します。 新しいスナップショットを`NSMutableDictionary`記述するユーザー情報を持つを作成し、この情報を使用して完了したスナップショットタスクをマークします。
+メソッドは、ユーザーインターフェイスを更新した後、スナップショットが古くなったときにシステムに通知するための `NSDate` を作成します。 新しいスナップショットを記述するユーザー情報を含む `NSMutableDictionary` を作成し、この情報を使用して完了したスナップショットタスクをマークします。
 
 ```csharp
 // Mark task complete
 snapshotTask.SetTaskCompleted (false, expirationDate, userInfo);
 ```
 
-また、アプリが既定の状態 (最初のパラメーター) に戻らないことをスナップショットタスクに通知します。 既定の状態の概念がないアプリでは、常にこのプロパティ`true`をに設定する必要があります。
+また、アプリが既定の状態 (最初のパラメーター) に戻らないことをスナップショットタスクに通知します。 既定の状態の概念がないアプリでは、常にこのプロパティを `true`に設定する必要があります。
 
 <a name="Working-Efficiently" />
 
@@ -523,7 +523,7 @@ snapshotTask.SetTaskCompleted (false, expirationDate, userInfo);
 
 前の例では、MonkeySoccer アプリによってスコアが更新されました。これは、効率的に作業し、新しい watchOS 3 バックグラウンドタスクを使用することにより、アプリは合計15秒間のみアクティブでした。 
 
-[![](background-tasks-images/update16.png "アプリは合計15秒間アクティブでした")](background-tasks-images/update16.png#lightbox)
+[![](background-tasks-images/update16.png "The app was only active for a total of 15 seconds")](background-tasks-images/update16.png#lightbox)
 
 これにより、アプリが使用可能な Apple Watch リソースとバッテリ寿命の両方に与える影響が少なくなります。また、アプリは、ウォッチ中に実行されている他のアプリとの連携を向上させることができます。
 
@@ -539,9 +539,9 @@ WatchOS 3 アプリがフォアグラウンドにある間は、常に実行が�
 
 - 特定のタスクを完了するのに数秒しか与えられません。 システムは、渡される時間だけでなく、アプリがこの制限を導き出すために使用している CPU 電力の量も考慮します。
 - 制限を超えたすべてのアプリは、次のエラーコードを使用して強制終了されます。
-  - **CPU** - 0xc51bad01
+  - **CPU** -0xc51bad01
   - **時間**-0xc51bad02
-- システムは、アプリで実行するように要求されたバックグラウンドタスクの種類に基づいて、異なる制限を課します。 たとえば、タスク`WKApplicationRefreshBackgroundTask`と`WKURLSessionRefreshBackgroundTask`タスクには、他の種類のバックグラウンドタスクよりもやや長いランタイムが指定されています。
+- システムは、アプリで実行するように要求されたバックグラウンドタスクの種類に基づいて、異なる制限を課します。 たとえば、`WKApplicationRefreshBackgroundTask` タスクと `WKURLSessionRefreshBackgroundTask` タスクには、他の種類のバックグラウンドタスクよりもやや長いランタイムが与えられます。
 
 <a name="Complications-and-App-Updates" />
 
@@ -558,7 +558,7 @@ Apple が watchOS 3 に追加した新しいバックグラウンドタスクに
 
 開発者は、ユーザーが上記の理由でユーザーをウォッチ式に追加することをユーザーに誘導するために、常に説得力のあるアプリの複雑さを作る必要があります。
 
-WatchOS 2 では、アプリがバックグラウンドでランタイムを受信した主な方法は複雑でした。 WatchOS 3 では、1時間に複数の更新プログラムを受信するように、複雑なアプリが引き続き`WKExtensions`保証されますが、を使用して、その複雑さを更新するためにより多くのランタイムを要求することができます。
+WatchOS 2 では、アプリがバックグラウンドでランタイムを受信した主な方法は複雑でした。 WatchOS 3 では、1時間に複数の更新プログラムを受信するように、より複雑なアプリを保証しますが、`WKExtensions` を使用して、その複雑さを更新するためにより多くのランタイムを要求することができます。
 
 接続されている iPhone アプリからの複雑さを更新するために使用される次のコードを見てみましょう。
 
@@ -603,7 +603,7 @@ private void UpdateComplication ()
 }
 ```
 
-の`RemainingComplicationUserInfoTransfers` プロパティ`WCSession`を使用して、アプリがその日に残された高優先度転送の数を確認し、その数に基づいてアクションを実行します。 アプリが低レベルの転送の実行を開始すると、マイナー更新を送信しても、重要な変更がある場合にのみ情報を送信することができます。
+`WCSession` の [`RemainingComplicationUserInfoTransfers`] プロパティを使用して、アプリがその日に残っている優先度の高い転送の数を確認し、その数に基づいてアクションを実行します。 アプリが低レベルの転送の実行を開始すると、マイナー更新を送信しても、重要な変更がある場合にのみ情報を送信することができます。
 
 <a name="Scheduling-and-Dock" />
 
@@ -611,7 +611,7 @@ private void UpdateComplication ()
 
 WatchOS 3 では、Apple がドッキングを追加し、ユーザーがお気に入りのアプリをピン留めしてすぐにアクセスできるようにしました。 ユーザーが Apple Watch の横にあるボタンを押すと、ピン留めされたアプリスナップショットのギャラリーが表示されます。 ユーザーは、左または右にスワイプして目的のアプリを見つけ、アプリをタップして起動し、スナップショットを実行中のアプリのインターフェイスに置き換えることができます。
 
-[![](background-tasks-images/dock01.png "Dock")](background-tasks-images/dock01.png#lightbox)
+[![](background-tasks-images/dock01.png "The Dock")](background-tasks-images/dock01.png#lightbox)
 
 システムは、アプリの UI のスナップショットを定期的に取得し、それらのスナップショットを使用してドキュメントを作成します。watchOS は、このスナップショットを取得する前に、アプリにコンテンツと UI を更新する機会を与えます。
 
@@ -649,9 +649,9 @@ Apple では、バックグラウンドタスクを操作するときに、次�
   - 警告.
   - 複雑になった更新。
   - バックグラウンド更新。
-- 次`ScheduleBackgroundRefresh`のような汎用のバックグラウンドランタイムに使用します。
+- 次のような汎用のバックグラウンドランタイムには `ScheduleBackgroundRefresh` を使用します。
   - システムに情報をポーリングしています。
-  - バックグラウンドデータ`NSURLSessions`を要求するように未来をスケジュールします。 
+  - バックグラウンドデータを要求するように、今後の `NSURLSessions` をスケジュールします。 
   - 既知の時間遷移。
   - 複雑になった更新をトリガーしています。
 
@@ -670,9 +670,9 @@ Apple では、バックグラウンドタスクを操作するときに、次�
 
 Apple では、データフローを操作するために次のことを提案しています。
 
-[![](background-tasks-images/update17.png "アプリデータフローダイアグラム")](background-tasks-images/update17.png#lightbox)
+[![](background-tasks-images/update17.png "App Data Flow Diagram")](background-tasks-images/update17.png#lightbox)
 
-外部イベント (Watch の接続など) によってアプリがウェイクアップされます。 これにより、アプリはそのデータモデルを強制的に更新します (アプリの現在の状態を表します)。 データモデルの変更の結果、アプリの複雑さを更新し、新しいスナップショットを要求する必要があります。バックグラウンド`NSURLSession`を起動して、より多くのデータをプルし、バックグラウンド更新をスケジュールすることができます。
+外部イベント (Watch の接続など) によってアプリがウェイクアップされます。 これにより、アプリはそのデータモデルを強制的に更新します (アプリの現在の状態を表します)。 データモデルの変更の結果、アプリはその複雑さを更新し、新しいスナップショットを要求する必要があります。バックグラウンド `NSURLSession` を開始して、より多くのデータをプルし、さらにバックグラウンド更新をスケジュールすることができます。
 
 <a name="The-App-Lifecycle" />
 
@@ -683,7 +683,7 @@ Apple では、データフローを操作するために次のことを提案�
 Apple には次のような提案があります。
 
 - フォアグラウンドアクティベーションを入力したときに、できるだけ早く、アプリがバックグラウンドタスクを完了するようにします。
-- を呼び出し`NSProcessInfo.PerformExpiringActivity`て背景を入力する前に、すべてのフォアグラウンド作業を完了していることを確認します。
+- `NSProcessInfo.PerformExpiringActivity`を呼び出して背景を入力する前に、すべてのフォアグラウンド作業を完了していることを確認します。
 - WatchOS シミュレーターでアプリをテストする場合、アプリが機能を適切にテストするために必要な量だけ更新できるように、どのタスク予算も適用されません。
 - ITunes Connect に発行する前に、アプリが予算を超えて実行されていないことを確認するために、実際の Apple Watch ハードウェアで常にテストしてください。
 - Apple は、テストとデバッグの際に、充電時の Apple Watch を維持することを提案します。
@@ -693,7 +693,7 @@ Apple には次のような提案があります。
 
 <a name="Summary" />
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>まとめ
 
 この記事では、Apple が watchOS に加えた拡張機能と、それらを使用して監視アプリを最新の状態に保つ方法について説明しました。 まず、Apple によって watchOS 3 に追加された新しいバックグラウンドタスクのすべてについて説明しました。 次に、バックグラウンド API のライフサイクルと、Xamarin watchOS アプリにバックグラウンドタスクを実装する方法について説明します。 最後に、スケジューリングのしくみとベストプラクティスについて説明しました。
 

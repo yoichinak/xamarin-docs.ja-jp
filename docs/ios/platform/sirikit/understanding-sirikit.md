@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin iOS アプリで SiriKit �
 ms.prod: xamarin
 ms.assetid: 99EC5C1E-484F-4371-8555-58C9F60DE37F
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/02/2017
-ms.openlocfilehash: 3b99e4485bfb621b32fa001a49d75038b2072775
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 45dd1a47712de559ddf62ed92347619438b08f9b
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769461"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031501"
 ---
 # <a name="understanding-sirikit-concepts"></a>SiriKit の概念の理解
 
@@ -56,7 +56,7 @@ Siri とマップはどちらも、ユーザーのすべての対話を管理し
 
 このセクションでは、SiriKit を使用してユーザーがアプリと対話する方法の概要について説明します。 この例では、フェイク MonkeyChat アプリを使用します。
 
-[![](understanding-sirikit-images/monkeychat01.png "MonkeyChat アイコン")](understanding-sirikit-images/monkeychat01.png#lightbox)
+[![](understanding-sirikit-images/monkeychat01.png "The MonkeyChat icon")](understanding-sirikit-images/monkeychat01.png#lightbox)
 
 MonkeyChat では、ユーザーの友人に固有の連絡先ブックが保持されます。各ユーザーは、(Bobo などのように) 画面名に関連付けられています。また、ユーザーは、画面名で各フレンドにテキストチャットを送信できます。
 
@@ -64,33 +64,33 @@ MonkeyChat では、ユーザーの友人に固有の連絡先ブックが保持
 
 たとえば、ユーザーが友人 Bobo にメッセージを送信する場合、Siri との次のメッセージ交換が必要になることがあります。
 
-_ユーザーズSiri にご報告ください。 MonkeyChat メッセージを送信してください。_<br />
-_Siri誰が。_<br />
-_ユーザーズBobo。_<br />
-_SiriBobo を使用するにはどうすればいいですか。_<br />
-_ユーザーズさらに Bananas を送信してください。_<br />
+_ユーザー: 次のように、MonkeyChat メッセージを送信します。_<br />
+_Siri: ユーザーはだれか。_<br />
+_User: Bobo。_<br />
+_Siri: Bobo とは何ですか。_<br />
+_ユーザー: さらに Bananas を送信してください。_<br />
 
 別のユーザーが別のメッセージ交換で同じ要求を行う場合があります。
 
-_ユーザーズMonkeyChat で Bobo にメッセージを送信します。_<br />
-_SiriBobo を使用するにはどうすればいいですか。_<br />
-_ユーザーズさらに bananas を送信してください。_<br />
+_ユーザー: MonkeyChat で Bobo にメッセージを送信します。_<br />
+_Siri: Bobo とは何ですか。_<br />
+_ユーザー: さらに bananas を送信してください。_<br />
 
 もう1つのユーザーは、さらに短い要求を行う可能性があります。
 
-_ユーザーズMonkeyChat Bobo では、さらに bananas を送信してください。_<br />
-_Siriはい、メッセージを送信しています。 Monkeychat で Bobo にさらに bananas を送信してください。_<br />
+_ユーザー: MonkeyChat Bobo で、さらに bananas を送信してください。_<br />
+_Siri: Ok、メッセージを送信しています。 Monkeychat で Bobo にさらに bananas を送信してください。_<br />
 
 または、同じ要求を別の言語で行うこともできます。
 
-_ユーザーズMonkeyChat Bobo ' il vous plaît envoyer + de bananes。_<br />
-_SiriOui、envoi message ' il vous plaît envoyer plus de bananes 氏 Bobo .sur Monkeychat。_<br />
+_ユーザー: MonkeyChat Bobo ' il vous plaît envoyer + de bananes。_<br />
+_Siri: Oui、envoi message ' il vous plaît envoyer + de bananes 氏 Bobo .sur Monkeychat。_<br />
 
 それでも、他のユーザーがメッセージ交換で非常に冗長になる可能性があります。
 
-_ユーザーズSiri にご協力ください。これを選択して MonkeyChat アプリを起動し、メッセージと共にテキストを送信することができます。詳細については、bananas を送信してください。_<br />
-_Siri誰が。_<br />
-_ユーザーズ私の最高の pal Bobo。_<br />
+_ユーザー: Siri です。優先して MonkeyChat アプリを起動して、メッセージと共にテキストを送信することができます。 bananas を送信してください。_<br />
+_Siri: ユーザーはだれか。_<br />
+_ユーザー: My best pal Bobo。_<br />
 
 また、Siri が要求に応答する方法は多数あります。要求の作成方法によって異なります。
 
@@ -103,7 +103,7 @@ _ユーザーズ私の最高の pal Bobo。_<br />
 
 ユーザーが Siri の口頭による要求を行うと、次のような手順で Siri が使用されます。
 
-[![](understanding-sirikit-images/monkeychat02.png "Siri が従う手順")](understanding-sirikit-images/monkeychat02.png#lightbox)
+[![](understanding-sirikit-images/monkeychat02.png "The steps that Siri will follow")](understanding-sirikit-images/monkeychat02.png#lightbox)
 
 1. まず、Siri はユーザーの**音声**の音声を受け取り、それをテキストに変換します。
 2. 次に、テキストは、ユーザーの要求の構造化表現である**インテント**に変換されます。
@@ -112,7 +112,7 @@ _ユーザーズ私の最高の pal Bobo。_<br />
 
 Siri とのユーザーの会話にアプリを参加させるには、主に次の3つの方法があります。
 
-[![](understanding-sirikit-images/monkeychat03.png "Siri とのユーザーの会話にアプリが参加できる主な3つの方法")](understanding-sirikit-images/monkeychat03.png#lightbox)
+[![](understanding-sirikit-images/monkeychat03.png "The three main ways that the app can take part in the users conversation with Siri")](understanding-sirikit-images/monkeychat03.png#lightbox)
 
 1. **ボキャブラリ**-これは、アプリが情報を操作するために必要な単語を siri に伝えるためのものです。
 2. **アプリロジック**-アプリが特定のインテントに基づいて実行するアクションと応答です。
@@ -122,27 +122,27 @@ Siri とのユーザーの会話にアプリを参加させるには、主に次
 
 上記の情報については、次のメッセージ交換が MonkeyChat アプリとどのように対話するかを確認してください。
 
-_ユーザーズSiri では、MonkeyChat で Bobo にメッセージを送信します。_<br />
-_SiriBobo を使用するにはどうすればいいですか。_<br />
-_ユーザーズさらに bananas を送信してください。_<br />
+_ユーザー: 次のように、MonkeyChat で Bobo にメッセージを送信します。_<br />
+_Siri: Bobo とは何ですか。_<br />
+_ユーザー: さらに bananas を送信してください。_<br />
 
 アプリがメッセージ交換に使用する最初のロールは、ユーザーの音声を Siri が理解するのに役立ちます。
 
-[![](understanding-sirikit-images/monkeychat04.png "ユーザーの音声を Siri が理解できるようにする")](understanding-sirikit-images/monkeychat04.png#lightbox)
+[![](understanding-sirikit-images/monkeychat04.png "Helping Siri understand the users speech")](understanding-sirikit-images/monkeychat04.png#lightbox)
 
 Siri では、データベースに "Bobo" という名前はありませんが、アプリはこの情報をボキャブラリを介して Siri と共有しています。 また、このアプリは、Bobo が受信者であることを Siri が認識するのにも役立ちます。これは、Siri を*連絡先*として指定したためです。
 
-Siri は、受信者だけでなくメッセージを送信するためにより多くの要求が必要であることを認識しているため、アプリの拡張機能を使用して、メッセージにコンテンツが必要かどうかをすばやく確認します。 MonkeyChat が行われるため、Siri は次の質問でユーザーに応答します。 *「Bobo とは何ですか。」*
+Siri は、受信者だけでなくメッセージを送信するためにより多くの要求が必要であることを認識しているため、アプリの拡張機能を使用して、メッセージにコンテンツが必要かどうかをすばやく確認します。 MonkeyChat が行われるため、Siri はユーザーに *"Bobo に言うべきこと*を指定してください" という質問が表示され、ユーザーに応答します。
 
 上記の例では、ユーザーが *「より多くの bananas を送信してください」* というメッセージが表示され、siri が構造的な**目的**でバンドルされています。
 
-[![](understanding-sirikit-images/monkeychat05.png "Siri は、ユーザーの応答を構造化されたインテントにバンドルします。")](understanding-sirikit-images/monkeychat05.png#lightbox)
+[![](understanding-sirikit-images/monkeychat05.png "Siri will bundle the user's response into a structured Intent")](understanding-sirikit-images/monkeychat05.png#lightbox)
 
 構造化インテントには、次の情報が含まれます。
 
-- **領域**Messages
+- **ドメイン:** 送信
 - **インテント:** sendMessage
-- **人**Bobo
+- **受信者:** Bobo
 - **コンテンツ:** さらに bananas を送信してください
 
 すべてのドメインは、一連の既知の*アクション*を持つことができ、ドメインとアクションに基づきます。アプリに送信されるインテントには、0個以上のパラメーターが含まれる場合があります。
@@ -151,13 +151,13 @@ Siri は、受信者だけでなくメッセージを送信するためにより
 
 また、各 IntentResponse には、アプリが要求を完了できたかどうかを Siri に伝える**応答コード**も含まれています。 一部のドメインには、非常に具体的なエラー応答コードが含まれている場合もあります。
 
-最後に、intentresponse にはが`NSUserActivity`含まれます (ハンドオフのサポートに使用されるものと同様)。 応答`NSUserActivity`で siri 環境のままにする必要がある場合は、を使用してアプリを起動し、完了するにはアプリを入力します。
+最後に、IntentResponse には `NSUserActivity` (ハンドオフのサポートに使用されるものなど) が含まれます。 応答で Siri 環境のままにする必要がある場合は、`NSUserActivity` を使用してアプリを起動し、完了するにはアプリを入力します。
 
-Siri は、アプリケーションを開始`NSUserActivity`するための適切なを自動的に作成し、siri 環境でユーザーが退職した場所をピックアップします。 ただし、必要に応じて、カスタマイズ`NSUserActivity`された情報をアプリに提供することができます。
+Siri は、アプリケーションを開始するための適切な `NSUserActivity` を自動的に作成し、Siri 環境でユーザーが退職した場所をピックアップします。 ただし、アプリは、必要に応じてカスタマイズされた情報を含む独自の `NSUserActivity` を提供できます。
 
 アプリはインテントを処理し、Siri に応答を返した後、結果をユーザーに提示します (口頭で他者と視覚的の両方)。
 
-[![](understanding-sirikit-images/monkeychat06.png "口頭で他者と視覚的の両方の結果がユーザーに表示されます。")](understanding-sirikit-images/monkeychat06.png#lightbox)
+[![](understanding-sirikit-images/monkeychat06.png "The results presented to the user both verbally and visually")](understanding-sirikit-images/monkeychat06.png#lightbox)
 
 Siri には、アプリで使用可能な各ドメイン用の組み込みの応答ユーザーインターフェイスがいくつか用意されています。 ただし、MonkeyChat には省略可能なインテント UI 拡張機能が用意されているため、これを使用して、上記の例のユーザーにメッセージ交換の結果を提示します。
 
@@ -165,7 +165,7 @@ Siri には、アプリで使用可能な各ドメイン用の組み込みの応
 
 インテントを処理するときにアプリ拡張機能が実行する必要がある主なタスクは3つあります。
 
-[![](understanding-sirikit-images/monkeychat07.png "インテントライフサイクル")](understanding-sirikit-images/monkeychat07.png#lightbox)
+[![](understanding-sirikit-images/monkeychat07.png "The Intent Lifecycle")](understanding-sirikit-images/monkeychat07.png#lightbox)
 
 1. アプリは、イベントのすべてのパラメーターを**解決**する必要があります。 その結果、アプリは、(各パラメーターにつき1回ずつ) Resolve を呼び出し、アプリとユーザーが要求されている内容に同意するまで同じパラメーターで複数回呼び出されることがあります。
 2. アプリは、要求されたインテントを処理できることを**確認**し、期待される結果を siri に伝える必要があります。
@@ -238,7 +238,7 @@ IOS 10 の SiriKit では、Apple によって次の2つの新しい拡張ポイ
 
 インテント拡張は、次のように、アプリと Siri の間の主なやり取りを処理します。
 
-[![](understanding-sirikit-images/intents01.png "インテント拡張")](understanding-sirikit-images/intents01.png#lightbox)
+[![](understanding-sirikit-images/intents01.png "The Intents Extension")](understanding-sirikit-images/intents01.png#lightbox)
 
 インテント拡張では、1つ以上のインテントをサポートできます。開発者は、アプリで SiriKit を実装する方法を決定します。 開発者は、処理する必要がある各インテントに対して、個別のインテント拡張を追加することもできます。  しかし、Apple は、開発者がインテント拡張機能の数を制限して、Siri がアプリに対して複数のプロセスを開いていないことを要求します。これにより、より多くのメモリと処理時間が必要になります。
 
@@ -248,7 +248,7 @@ IOS 10 の SiriKit では、Apple によって次の2つの新しい拡張ポイ
 
 Apple は、Siri を使用するときにユーザーのプライベート情報が安全であることを確認するための優れた手段を採用しており、ユーザーが iOS デバイスにログインする必要がある対話がいくつかあります。 たとえば、乗り物を要求したり、支払いを行ったりする場合です。
 
-また、デバイスにログインしているユーザーに制限することが必要な特定の動作があります。 このような状況では、アプリは**ロック中に制限**された動作を要求できます。 これは、ファイルの設定によっ`Info.plist`て行われます。
+また、デバイスにログインしているユーザーに制限することが必要な特定の動作があります。 このような状況では、アプリは**ロック中に制限**された動作を要求できます。 これは、`Info.plist` ファイルの設定を使用して行います。
 
 ローカル認証フレームワークはインテント拡張に使用できます。これにより、デバイスが既にロック解除されている場合でも、アプリはユーザーに追加の認証情報を要求できます。
 
@@ -264,16 +264,16 @@ Apple では、ユーザーとの自然な流動的な会話を実行するた�
 
 インテント UI 拡張機能は、アプリの UI とブランド化を Siri エクスペリエンスに導入し、ユーザーがアプリに接続できるようにする機会を提供します。 この拡張機能を使用すると、アプリは、視覚情報やその他の情報などの情報をトランスクリプトに取り込むことができます。
 
-[![](understanding-sirikit-images/intents02.png "インテント UI 拡張出力の例")](understanding-sirikit-images/intents02.png#lightbox)
+[![](understanding-sirikit-images/intents02.png "Example Intents UI Extension output")](understanding-sirikit-images/intents02.png#lightbox)
 
-インテント UI 拡張機能は常にを`UIViewController`返し、アプリはビューコントローラー内の任意のものを追加できます。たとえば、最初の応答を超える追加情報が表示されます。 インテント UI では、実行時間の長いイベントの状態でユーザーを更新することもできます。たとえば、車両の場所に到着するまでの時間を長くすることができます。
+インテント UI 拡張機能は常に `UIViewController` を返します。アプリは、最初の応答を超える追加情報を表示するなど、ビューコントローラー内の任意のものを追加できます。 インテント UI では、実行時間の長いイベントの状態でユーザーを更新することもできます。たとえば、車両の場所に到着するまでの時間を長くすることができます。
 
 インテント UI 拡張は、常に、アプリのアイコンや名前などの他の Siri コンテンツと共に表示されます。また、目的に応じて、ボタン ([送信] や [キャンセル] など) が下部に表示される場合もあります。
 
 アプリケーションで、Siri が表示する情報を既定でユーザーに置き換えることができるインスタンスがいくつかあります。このような場合、アプリは既定のエクスペリエンスをアプリに合わせて置き換えることができます。
 
 > [!IMPORTANT]
-> `UIButtons`または`UITextFields` の`UIViewController`ような対話型の要素をインテント ui 拡張機能に追加することはできますが、これらは、非対話型のインテント ui として厳密には禁止されているため、ユーザーは対話できません。
+> インテント UI 拡張機能の `UIViewController`に `UIButtons` や `UITextFields` などの対話的な要素を追加することもできますが、これらは、非対話型のインテント UI として厳密には禁止されており、ユーザーはそれらを対話できません。
 
 Siri には各インテント型の既定の UI セットが含まれているため、アプリでインテント UI 拡張機能を提供することは完全にオプションです。 また、インテント UI インターフェイスは、Apple によってユーザーにとって役に立つと思われる特定のインテントにのみ使用できます。
 
@@ -285,11 +285,11 @@ SiriKit を実装する最後の部分は、必要なボキャブラリを提供
 
 ### <a name="app-specific-vocabulary"></a>アプリ固有のボキャブラリ
 
-アプリ固有のボキャブラリは、車両の種類やトレーニング名など、アプリのすべてのユーザーに認識される特定の語と語句を定義します。 これらはアプリケーションの一部であるため、メインアプリケーションバンドルの`AppIntentVocabulary.plist`一部としてファイルで定義されます。 また、これらの単語と語句はローカライズする必要があります。
+アプリ固有のボキャブラリは、車両の種類やトレーニング名など、アプリのすべてのユーザーに認識される特定の語と語句を定義します。 これらはアプリケーションの一部であるため、メインアプリケーションバンドルの一部として `AppIntentVocabulary.plist` ファイルで定義されます。 また、これらの単語と語句はローカライズする必要があります。
 
-ボキャブラリ`AppIntentVocabulary.plist`ファイルにはいくつかの部分があります。
+ボキャブラリ `AppIntentVocabulary.plist` ファイルにはいくつかの部分があります。
 
-- **アプリの使用例**-ユーザーがアプリを作成できる要求に対して一般的なユースケースのセットを提供します。 例えば: *「MonkeyFit でトレーニングを開始する」*
+- **アプリの使用例**-ユーザーがアプリを作成できる要求に対して一般的なユースケースのセットを提供します。 たとえば *、"MonkeyFit でトレーニングを開始する" と*いうことです。
 - **Parameters** -アプリに固有の標準ではないパラメーターの種類のセットが用意されています。 たとえば、MonkeyFit アプリのトレーニング名があります。 次の要素で構成されます。
   - **語句**-アプリで一意の用語を定義できるようにします。 例: MonkeyFit アプリの "Bananarific" トレーニングの種類。
   - **発音**-特定の語句の簡単な発音の綴りを siri に示します。 たとえば、"ba nana ri f)" のようになります。
@@ -402,7 +402,7 @@ Siri は、アプリの代わりにユーザーとのメッセージ交換を行
 
 アプリに問題がある1つの値が表示された場合は、Siri でユーザーに確認を求めることをお勧めします。 たとえば、 *"Bobo はすばらしいと思いましたか?"* で、単純な [はい] または [いいえ] の答えで返信できます。
 
-1つの値に対していくつかの選択肢が適切な場合は、あいまいさを解消する方法をお勧めします。 このような状況では、Siri はユーザーに対して最大10個のオプションを選択できます。 例えば:
+1つの値に対していくつかの選択肢が適切な場合は、あいまいさを解消する方法をお勧めします。 このような状況では、Siri はユーザーに対して最大10個のオプションを選択できます。 (例:
 
 ```csharp
 Who do you want to send the message to?
@@ -438,7 +438,7 @@ Siri には、認識しているドメインとアクションごとに、いく
 
 会話インターフェイスの設計を整えるために Apple が提案するいくつかの手順があります。 まず、明確で簡潔なボキャブラリとユースケースの例を Siri に提供します。
 
-ユーザーがアプリを検出する方法の1つは、Siri を使用してメッセージ交換を開始し、 *「何ができるか*」とたずねることです。 Siri では、開発者のアプリや、 `plist`ファイルを介して提供されるヒーローの例を含む、さまざまなことが可能です。
+ユーザーがアプリを検出する方法の1つは、Siri を使用してメッセージ交換を開始し、 *「何ができるか*」とたずねることです。 Siri では、開発者のアプリや、`plist` ファイルを通じて提供されたヒーローの例を含む、いくつかの異なる機能が表示されます。
 
 適切な例のユースケースを記述する方法:
 
@@ -457,7 +457,7 @@ Siri には、認識しているドメインとアクションごとに、いく
 
 Siri との会話 (アプリに代わって) を使用することは、自然で、自然であると言えます。
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>まとめ
 
 この記事では、SiriKit を使用するために必要な主要な概念について説明しました。また、この記事では、Xamarin iOS アプリと対話して、Siri および iOS デバイス上の Maps アプリを使用してユーザーがアクセスできるサービスを提供することができます。
 

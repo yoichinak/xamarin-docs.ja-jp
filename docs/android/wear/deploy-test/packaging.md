@@ -3,23 +3,23 @@ title: パッケージウェアアプリ
 ms.prod: xamarin
 ms.assetid: E32DD855-78DD-46F8-B234-4EAC0756BDA2
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/02/2018
-ms.openlocfilehash: fa35f6fe2388484875180594f18041947963ef7a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: aa4a4f1ab3ae3024de2d969f9325c2efa4db48af
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70763976"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028642"
 ---
 # <a name="packaging-wear-apps"></a>パッケージウェアアプリ
 
-Android Wear アプリは、Google Play で配布するための完全な Android アプリでパッケージ化されます。 
+Android の摩耗アプリは、Google Play で配布するための完全な Android アプリでパッケージ化されます。 
 
 ## <a name="automatic-packaging"></a>自動パッケージング
 
-Xamarin Android 5.0 以降では、ハンドヘルドプロジェクトから Wear プロジェクトへのプロジェクト参照を作成するときに、Wear アプリが自動的にリソースとしてハンドヘルドアプリにパッケージされます。 この関連付けを作成するには、次の手順を実行します。 
+Xamarin Android 5.0 以降では、ハンドヘルドプロジェクトから磨耗プロジェクトへのプロジェクト参照を作成するときに、磨耗アプリが自動的にリソースとしてハンドヘルドアプリにパッケージされます。 この関連付けを作成するには、次の手順を実行します。 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -47,22 +47,22 @@ Xamarin Android 5.0 以降では、ハンドヘルドプロジェクトから We
 
 -----
 
-Wear アプリのパッケージ名が、ハンドヘルドアプリのパッケージ名と一致しない場合、 **XA5211**エラーが表示されることに注意してください。 例えば:
+磨耗アプリのパッケージ名が、ハンドヘルドアプリのパッケージ名と一致しない場合、 **XA5211**エラーが表示されることに注意してください。 (例:
 
 ```shell
 Error XA5211: Embedded wear app package name differs from handheld 
 app package name (com.companyname.mywearapp != com.companyname.myapp). (XA5211)
 ```
 
-このエラーを修正するには、ハンドヘルドアプリのパッケージ名と一致するように、Wear アプリのパッケージ名を変更します。
+このエラーを修正するには、ハンドヘルドアプリのパッケージ名と一致するように、磨耗アプリのパッケージ名を変更します。
 
 **[ビルド > ビルド]** をクリックすると、この関連付けによって、磨耗プロジェクトの自動パッケージングがメインハンドヘルド (電話) プロジェクトにトリガーされます。 磨耗アプリは自動的にビルドされ、ハンドヘルドアプリのリソースとして含まれます。
 
-Wear アプリプロジェクトによって生成されるアセンブリは、ハンドヘルド (Phone) プロジェクトのアセンブリ参照としては使用されません。 代わりに、ビルドプロセスによって次の処理が行われます。
+磨耗アプリプロジェクトによって生成されるアセンブリは、ハンドヘルド (Phone) プロジェクトのアセンブリ参照としては使用されません。 代わりに、ビルドプロセスによって次の処理が行われます。
 
 - パッケージ名が一致することを確認します。 
 
-- は XML を生成し、それをハンドヘルドプロジェクトに追加して、それを Wear アプリに関連付けます。 例えば: 
+- は XML を生成し、それをハンドヘルドプロジェクトに追加して、それを磨耗アプリに関連付けます。 (例: 
 
     ```xml
     <!-- Handheld (Phone) Project.csproj -->
@@ -73,11 +73,11 @@ Wear アプリプロジェクトによって生成されるアセンブリは、
     </ProjectReference>
     ```
 
-- ハンドヘルドプロジェクトに**未加工**のリソースとして、Wear アプリを追加します。 
+- ハンドヘルドプロジェクトに**未加工**のリソースとして、磨耗アプリを追加します。 
 
 ## <a name="manual-packaging"></a>手動パッケージング
 
-Android Wear アプリは、バージョン5.0 より前の Xamarin Android に記述できますが、アプリを配布するには、次の手動のパッケージ化手順に従う必要があります。 
+Android の摩耗アプリは、バージョン5.0 より前の Xamarin Android に記述できますが、アプリを配布するには、次の手動のパッケージ化手順に従う必要があります。 
 
 1. ウェアラブルプロジェクトとハンドヘルド (電話) プロジェクトのバージョン番号とパッケージ名が同じであることを確認します。
 
@@ -95,7 +95,7 @@ Android Wear アプリは、バージョン5.0 より前の Xamarin Android に�
     </wearableApp>
     ```
 
-5. 新しい xml リソース`<meta-data />`を参照する要素をハンドヘルドプロジェクトの`<application>` **androidmanifest**要素に手動で追加します。
+5. 新しい XML リソースを参照する `<meta-data />` 要素を、ハンドヘルドプロジェクトの**Androidmanifest .xml** `<application>` 要素に手動で追加します。
 
     ```xml
     <meta-data android:name="com.google.android.wearable.beta.app"

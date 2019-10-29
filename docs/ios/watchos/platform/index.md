@@ -4,15 +4,15 @@ description: このドキュメントでは、Apple Pay、通知、複雑さ、�
 ms.prod: xamarin
 ms.assetid: 13F23E01-BAED-43EB-A70E-3B30EF53D379
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: 2b987992bcb3dd4d2575a46e21a2302ed78d8d70
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: e571132b5f1e30bececb8302f2dacfcd908ad42e
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282284"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028290"
 ---
 # <a name="watchos-platform-features"></a>watchOS プラットフォームの機能
 
@@ -46,7 +46,7 @@ Watch アプリでカスタム通知処理を提供する方法について説�
 
 ## <a name="proactive-suggestionsioswatchosplatformproactive-suggestionsmd"></a>[プロアクティブな提案](~/ios/watchos/platform/proactive-suggestions.md)
 
-watchOS 3 を使用すると、アプリは特定のコンテキスト内でユーザーに情報を事前に提示できます。 この機能をサポートするために、 [nsuseractivity](https://developer.apple.com/reference/foundation/nsuseractivity)に`MapItem`は、アプリが他のアプリで後で使用するための場所情報を提供できるようにするプロパティが含まれるようになりました。
+watchOS 3 を使用すると、アプリは特定のコンテキスト内でユーザーに情報を事前に提示できます。 この機能をサポートするために、 [Nsuseractivity](https://developer.apple.com/reference/foundation/nsuseractivity)に `MapItem` プロパティが含まれるようになりました。これにより、アプリは、他のアプリで後で使用するための場所情報を提供できるようになります。
 
 ## <a name="quick-interaction-techniquesioswatchosplatformquick-interaction-techniquesmd"></a>[クイック操作の手法](~/ios/watchos/platform/quick-interaction-techniques.md)
 
@@ -54,4 +54,4 @@ watchOS 3 を使用すると、アプリは特定のコンテキスト内でユ�
 
 ## <a name="workout-app-enhancementsioswatchosplatformworkout-appsmd"></a>[トレーニングアプリの機能強化](~/ios/watchos/platform/workout-apps.md)
 
-WatchOS 3 の新機能であるトレーニング関連のアプリは、Apple Watch のバックグラウンドで実行することができます。 この機能を有効にする (および HealthKit データへのアクセス権を取得する) `WKBackgroundModes`には、 `Info.plist`アプリで値`workout-processing`を持つキーをファイルに含める必要があります。
+WatchOS 3 の新機能であるトレーニング関連のアプリは、Apple Watch のバックグラウンドで実行することができます。 この機能を有効にする (および HealthKit データへのアクセス権を取得する) には、アプリで `Info.plist` ファイルに `workout-processing`という値の `WKBackgroundModes` キーを含める必要があります。

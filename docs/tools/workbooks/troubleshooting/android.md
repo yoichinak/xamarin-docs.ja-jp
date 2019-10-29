@@ -3,15 +3,15 @@ title: Android での Xamarin Workbooks のトラブルシューティング
 description: このドキュメントでは、Android での Xamarin Workbooks の使用に関するトラブルシューティングのヒントを提供します。 エミュレーターのサポート、読み込まれないブック、およびその他のトピックについて説明します。
 ms.prod: xamarin
 ms.assetid: F1BD293B-4EB7-4C18-A699-718AB2844DFB
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/30/2017
-ms.openlocfilehash: 04f02e6136d9d489a36e994575519e579770ac3d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: be19005ab1125c060ab0111e9f37568d5f4abe45
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291154"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029589"
 ---
 # <a name="troubleshooting-xamarin-workbooks-on-android"></a>Android での Xamarin Workbooks のトラブルシューティング
 
@@ -22,7 +22,7 @@ Android ブックを実行するには、Android エミュレーターを使用�
 コンピューターでサポートされている場合は、Google のエミュレーターと HAXM を使用することをお勧めします。
 システムで Hyper-v が有効になっている必要がある場合は、代わりに Visual Studio Android Emulator にアクセスしてください。
 
-Android 5.0 以降を実行するエミュレーターが必要です。 ARM エミュレーターはサポートされていません。 また`x86` は`x86_64`デバイスのみを使用します。
+Android 5.0 以降を実行するエミュレーターが必要です。 ARM エミュレーターはサポートされていません。 `x86` または `x86_64` デバイスのみを使用します。
 
 このプロセスに慣れていない場合は、 [Android エミュレーターの設定に関するドキュメントを][android-emu]参照してください。
 
@@ -41,8 +41,8 @@ Android 5.0 以降を実行するエミュレーターが必要です。 ARM エ
 
 1. **重要なネットワーク操作が完了していることを確認します。これにより、Windows がインターネットから一時的に切断される可能性があります。**
 1. エミュレーターを閉じます。
-1. `Hyper-V Manager`を開きます。
-1. で、を`Virtual Switch Manager...`開きます。 `Actions`
+1. `Hyper-V Manager` を開きます。
+1. `Actions`で、`Virtual Switch Manager...`を開きます。
 1. すべての仮想スイッチを削除します。
 1. [`OK`] をクリックします。
 1. VS Android Emulator を起動します。 仮想ネットワークスイッチを再作成するよう求めるメッセージが表示される場合があります。

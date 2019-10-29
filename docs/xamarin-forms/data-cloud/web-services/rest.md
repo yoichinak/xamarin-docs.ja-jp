@@ -1,66 +1,66 @@
 ---
 title: RESTful Web サービスを使用する
-description: アプリケーションへの web サービスの統合は、一般的なシナリオです。 この記事では、Xamarin.Forms アプリケーションから rest ベースの web サービスを使用する方法を示します。
+description: Web サービスをアプリケーションに統合することは、一般的なシナリオです。 この記事では、Xamarin アプリケーションから RESTful web サービスを使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: B540910C-9C51-416A-AAB9-057BF76489C3
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/22/2018
-ms.openlocfilehash: 9b99421755b1ad979b4beed279bef6e194659ab7
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: 6ccbb24be8c03d634c884853fb0ec339d49cf49d
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69888863"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029554"
 ---
 # <a name="consume-a-restful-web-service"></a>RESTful Web サービスを使用する
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)
 
-_アプリケーションへの web サービスの統合は、一般的なシナリオです。この記事では、Xamarin.Forms アプリケーションから rest ベースの web サービスを使用する方法を示します。_
+_Web サービスをアプリケーションに統合することは、一般的なシナリオです。この記事では、Xamarin アプリケーションから RESTful web サービスを使用する方法について説明します。_
 
-Representational State Transfer (REST) は、web サービスを構築するためのアーキテクチャ スタイルです。 REST 要求は、web ページを取得し、サーバーにデータを送信する web ブラウザーを使用して、同じ HTTP 動詞を使用して HTTP 経由で行われます。 動詞は次のとおりです。
+表現は、web サービスを構築するためのアーキテクチャスタイルです。 REST 要求は、web ブラウザーが web ページの取得やサーバーへのデータの送信に使用するのと同じ HTTP 動詞を使用して HTTP 経由で実行されます。 動詞は次のとおりです。
 
-- **GET**– この操作は web サービスからのデータの取得に使用します。
-- **POST** – この操作は、web サービスでデータの新しい項目の作成に使用されます。
-- **PUT** – この操作は web サービス上のデータ項目の更新に使用します。
-- **PATCH**– この操作は、項目を変更する方法に関する一連の命令を記述することで、web サービス上のデータ項目の更新を使用します。 この動作は、サンプル アプリケーションでは使用されません。
-- **DELETE**– この操作を使用して、web サービス上のデータ項目を削除します。
+- **GET** –この操作は、web サービスからデータを取得するために使用されます。
+- **POST** -この操作は、web サービスでデータの新しい項目を作成するために使用されます。
+- **PUT** –この操作は、web サービス上のデータ項目を更新するために使用されます。
+- **PATCH** –この操作は、項目の変更方法に関する一連の命令を記述することによって、web サービス上のデータ項目を更新するために使用されます。 この動詞は、サンプルアプリケーションでは使用されません。
+- **[削除]** –この操作は、web サービス上のデータの項目を削除するために使用されます。
 
-Web サービスの REST に準拠している Api では、RESTful Api と呼ばれ、使用して定義されます。
+REST に準拠する Web サービス Api は RESTful Api と呼ばれ、次のものを使用して定義されます。
 
 - ベース URI。
 - GET、POST、PUT、PATCH、DELETE などの HTTP メソッド。
-- データは、JavaScript Object Notation (JSON) などのメディアの種類。
+- データのメディアの種類 (JavaScript Object Notation (JSON) など)。
 
-通常、RESTful web サービスは、クライアントにデータを返す JSON メッセージを使用します。 JSON は、テキスト ベースのデータ交換形式で結果が生成されます compact ペイロードでは、データを送信するときに、帯域幅要件が短くなることです。 サンプル アプリケーション、オープン ソースを使用して[NewtonSoft JSON.NET ライブラリ](http://www.newtonsoft.com/json)およびメッセージを逆シリアル化します。
+RESTful web サービスは通常、JSON メッセージを使用して、クライアントにデータを返します。 JSON は、コンパクトなペイロードを生成するテキストベースのデータ交換形式であり、データの送信時に帯域幅の要件が少なくなります。 このサンプルアプリケーションでは、オープンソースの[Newtonsoft JSON.NET ライブラリ](https://www.newtonsoft.com/json)を使用してメッセージをシリアル化および逆シリアル化します。
 
-REST の簡潔さが、モバイル アプリケーションの web サービスにアクセスする主な方法を行うことができました。
+REST の簡潔さは、モバイルアプリケーションで web サービスにアクセスするための主要な方法として役立ちました。
 
 サンプルアプリケーションを実行すると、次のスクリーンショットに示すように、ローカルにホストされている REST サービスに接続します。
 
-![](rest-images/portal.png "サンプル アプリケーション")
+![](rest-images/portal.png "Sample Application")
 
 > [!NOTE]
-> iOS 9 以降ではは、アプリのトランスポート セキュリティ (ATS) は、機密情報の誤った情報開示を回避をセキュリティで保護された接続 (アプリのバック エンド サーバーなど) のインターネット リソースと、アプリの間に強制します。 ATS が iOS 9 用にビルドされたアプリで既定で有効になるために、すべての接続は ATS セキュリティ要件に応じたされます。 接続はこれらの要件を満たしていない場合は、例外で失敗します。
+> IOS 9 以降では、アプリトランスポートセキュリティ (ATS) によって、インターネットリソース (アプリのバックエンドサーバーなど) とアプリの間にセキュリティで保護された接続が適用されるため、機密情報が誤って開示されるのを防ぐことができます。 IOS 9 用に構築されたアプリでは、ATS が既定で有効になっているため、すべての接続は、ATS のセキュリティ要件の対象となります。 接続がこれらの要件を満たしていない場合、例外が発生して失敗します。
 >
->使用することができない場合の ATS を選択することができます、 **HTTPS**プロトコルし、インターネット リソースのための通信をセキュリティで保護します。 これは、アプリの更新することで実現できます**Info.plist**ファイル。 詳細については、[アプリ トランスポート セキュリティ](~/ios/app-fundamentals/ats.md)を参照してください。
+>インターネットリソースに対して**HTTPS**プロトコルとセキュリティで保護された通信を使用できない場合は、ATS をオプトアウトできます。 これは、アプリの**情報**ファイルを更新することで実現できます。 詳細については、「[アプリトランスポートセキュリティ](~/ios/app-fundamentals/ats.md)」を参照してください。
 
-## <a name="consuming-the-web-service"></a>Web サービスの使用
+## <a name="consuming-the-web-service"></a>Web サービスを使用する
 
-REST サービスでは、ASP.NET Core を使用して記述し、次の操作を提供します。
+REST サービスは ASP.NET Core を使用して記述され、次の操作を提供します。
 
 |操作|HTTP メソッド|相対 URI|パラメーター|
 |--- |--- |--- |--- |
 |To Do アイテムのリストの取得|GET|/api/todoitems/|
-|新しい to do 項目を作成します。|POST|/api/todoitems/|JSON 形式の TodoItem|
-|To Do アイテムの更新|PUT|/api/todoitems/|JSON 形式の TodoItem|
+|新しい to do 項目を作成する|投稿|/api/todoitems/|JSON 形式の TodoItem|
+|To Do アイテムの更新|投入|/api/todoitems/|JSON 形式の TodoItem|
 |To Do アイテムの削除|Del|/api/todoitems/{id}|
 
-Uri の大部分が含まれて、`TodoItem`パス内の ID。 たとえば、削除するため、 `TodoItem` ID が持つ`6bb8a868-dba1-4f1a-93b7-24ebce87e243`、クライアントに DELETE 要求を送信`http://hostname/api/todoitems/6bb8a868-dba1-4f1a-93b7-24ebce87e243`。 サンプル アプリケーションで使用されるデータ モデルの詳細については、[、データのモデリング](~/xamarin-forms/data-cloud/web-services/introduction.md)を参照してください。
+Uri の大部分には、パス内の `TodoItem` ID が含まれます。 たとえば、ID が `6bb8a868-dba1-4f1a-93b7-24ebce87e243``TodoItem` を削除するために、クライアントは `http://hostname/api/todoitems/6bb8a868-dba1-4f1a-93b7-24ebce87e243`に DELETE 要求を送信します。 サンプルアプリケーションで使用されるデータモデルの詳細については、「[データのモデリング](~/xamarin-forms/data-cloud/web-services/introduction.md)」を参照してください。
 
-Web API フレームワークは、要求を受信すると、アクションに要求をルーティングします。 これらのアクションは単なるパブリック メソッド、`TodoItemsController`クラス。 フレームワークでは、ルーティング テーブルを使ってを呼び出す次のコード例に示されている要求に応答するアクションを決定します。
+Web API フレームワークは、要求を受信すると、要求をアクションにルーティングします。 これらのアクションは、単に `TodoItemsController` クラスのパブリックメソッドです。 フレームワークは、ルーティングテーブルを使用して、次のコード例に示すように、要求に応じて呼び出すアクションを決定します。
 
 ```csharp
 config.Routes.MapHttpRoute(
@@ -70,21 +70,21 @@ config.Routes.MapHttpRoute(
 );
 ```
 
-ルーティング テーブルには、ルート テンプレートが含まれています、ルーティング テーブルにルート テンプレートに対して URI と照合しようと、Web API フレームワークは、HTTP 要求を受け取るとします。 一致するクライアントが 404 (見つかりません) エラーを受信ルートを見つけることはできません。 一致するルートが見つかった場合 Web API を選択、コント ローラーとアクションには、次のようにします。
+ルーティングテーブルにはルートテンプレートが含まれており、Web API フレームワークは HTTP 要求を受信すると、URI とルーティングテーブル内のルートテンプレートを一致させようとします。 一致するルートが見つからない場合、クライアントは 404 (見つかりません) エラーを受け取ります。 一致するルートが見つかった場合、Web API は次のようにコントローラーとアクションを選択します。
 
-- コント ローラーを検索するには、Web API では、値に"controller"を追加、 *{controller}* 変数。
-- アクションを検索するは、Web API は HTTP メソッドが、属性として同じ HTTP メソッドで装飾するコント ローラー アクションではします。
-- *{Id}* プレース ホルダー変数は、アクション パラメーターにマップされます。
+- コントローラーを検索するために、Web API は *{controller}* 変数の値に "controller" を追加します。
+- アクションを検索するために、Web API は HTTP メソッドを参照し、属性と同じ HTTP メソッドで修飾されたコントローラーアクションを調べます。
+- *{Id}* プレースホルダー変数がアクションパラメーターにマップされています。
 
-REST サービスでは、基本認証を使用します。 詳細については、[RESTful web サービスを認証](~/xamarin-forms/data-cloud/authentication/rest.md)を参照してください。 ASP.NET Web API ルーティングの詳細については、次を参照してください。 [ASP.NET Web API におけるルーティング](http://www.asp.net/web-api/overview/web-api-routing-and-actions/routing-in-aspnet-web-api)、ASP.NET web サイト。 ASP.NET Core を使用して REST サービスの構築についての詳細については、[ネイティブ モバイル アプリケーションのバックエンド サービスを作成する](/aspnet/core/mobile/native-mobile-backend/)を参照してください。
+REST サービスは基本認証を使用します。 詳細について[は、「RESTful web サービスの認証](~/xamarin-forms/data-cloud/authentication/rest.md)」を参照してください。 ASP.NET Web API ルーティングの詳細については、ASP.NET web サイトの「[ルーティング」 ASP.NET Web API](https://www.asp.net/web-api/overview/web-api-routing-and-actions/routing-in-aspnet-web-api)を参照してください。 ASP.NET Core を使用した REST サービスの構築の詳細については、「[ネイティブモバイルアプリケーションのバックエンドサービスの作成](/aspnet/core/mobile/native-mobile-backend/)」を参照してください。
 
-`HttpClient`クラスは HTTP 経由で要求を送受信するために使用します。 HTTP 要求を送信する機能を提供し、リソースを識別する URI から HTTP 応答を受信します。 各要求は、非同期操作として送信されます。 非同期操作の詳細については、[非同期サポートの概要](~/cross-platform/platform/async.md)を参照してください。
+`HttpClient` クラスは、HTTP 経由で要求を送受信するために使用されます。 HTTP 要求を送信し、URI で識別されるリソースから HTTP 応答を受信するための機能を提供します。 各要求は、非同期操作として送信されます。 非同期操作の詳細については、「 [Async Support の概要](~/cross-platform/platform/async.md)」を参照してください。
 
-`HttpResponseMessage`クラスは、HTTP 要求が行われた後に、web サービスから受信した HTTP 応答メッセージを表します。 状態コード、ヘッダー、および任意の本文を含む、応答に関する情報が含まれています。 `HttpContent`クラスなどを表します HTTP 本体およびコンテンツ ヘッダーは、`Content-Type`と`Content-Encoding`します。 いずれかを使用して、コンテンツを読み取ることができます、`ReadAs`メソッドなど`ReadAsStringAsync`と`ReadAsByteArrayAsync`データの形式に応じて、します。
+`HttpResponseMessage` クラスは、HTTP 要求が行われた後に web サービスから受信した HTTP 応答メッセージを表します。 これには、ステータスコード、ヘッダー、および任意の本文を含む、応答に関する情報が含まれます。 `HttpContent` クラスは、`Content-Type` や `Content-Encoding`などの HTTP 本文およびコンテンツヘッダーを表します。 コンテンツは、データの形式に応じて、`ReadAsStringAsync` や `ReadAsByteArrayAsync`などの `ReadAs` の方法のいずれかを使用して読み取ることができます。
 
-### <a name="creating-the-httpclient-object"></a>HTTPClient オブジェクトを作成します。
+### <a name="creating-the-httpclient-object"></a>HTTPClient オブジェクトの作成
 
-`HttpClient`の次のコード例に示すように HTTP 要求を実行するアプリケーションに必要な限りのオブジェクトが存在するために、クラス レベルでインスタンスが宣言されています。
+`HttpClient` インスタンスはクラスレベルで宣言されるので、次のコード例に示すように、アプリケーションが HTTP 要求を行う必要がある限り、オブジェクトが存在するようになります。
 
 ```csharp
 public class RestService : IRestService
@@ -102,7 +102,7 @@ public class RestService : IRestService
 
 ### <a name="retrieving-data"></a>データの取得
 
-`HttpClient.GetAsync`の次のコード例に示すように、URI で指定された web サービスに GET 要求を送信し、web サービスから応答を受信するメソッドを使用します。
+`HttpClient.GetAsync` メソッドを使用して、URI で指定された web サービスに GET 要求を送信した後、web サービスから応答を受信します。次のコード例を参照してください。
 
 ```csharp
 public async Task<List<TodoItem>> RefreshDataAsync ()
@@ -120,13 +120,13 @@ public async Task<List<TodoItem>> RefreshDataAsync ()
 }
 ```
 
-REST サービスでの HTTP ステータス コードの送信、`HttpResponseMessage.IsSuccessStatusCode`を HTTP 要求が成功または失敗するかどうかを示すために、プロパティ。 この操作の残りの部分は、サービスは、応答の要求された情報は、応答で要求が成功したことを示すには、HTTP 状態コード 200 (OK) を送信します。
+REST サービスは、http 要求が成功したか失敗したかを示す HTTP 状態コードを `HttpResponseMessage.IsSuccessStatusCode` プロパティに送信します。 この操作では、REST サービスは HTTP 状態コード 200 (OK) を応答に送信します。これは、要求が成功したことと、要求された情報が応答内にあることを示します。
 
-HTTP 操作が成功した場合、応答のコンテンツを読み取り表示するため、します。 `HttpResponseMessage.Content`プロパティは、HTTP 応答のコンテンツを表す、`HttpContent.ReadAsStringAsync`メソッドでは、文字列に、HTTP コンテンツを非同期に書き込みます。 このコンテンツはから JSON に変換し、`List`の`TodoItem`インスタンス。
+HTTP 操作が成功した場合は、応答の内容が読み取られて表示されます。 `HttpResponseMessage.Content` プロパティは HTTP 応答の内容を表し、`HttpContent.ReadAsStringAsync` メソッドは HTTP コンテンツを非同期的に文字列に書き込みます。 このコンテンツは、JSON から `TodoItem` インスタンスの `List` に変換されます。
 
 ### <a name="creating-data"></a>データの作成
 
-`HttpClient.PostAsync`メソッドは、URI で指定された web サービスに POST 要求を送信するために使用し、次のコード例に示すように、web サービスから応答を受信します。
+`HttpClient.PostAsync` メソッドは、URI で指定された web サービスに POST 要求を送信し、次のコード例に示すように web サービスから応答を受信するために使用されます。
 
 ```csharp
 public async Task SaveTodoItemAsync (TodoItem item, bool isNewItem = false)
@@ -153,17 +153,17 @@ public async Task SaveTodoItemAsync (TodoItem item, bool isNewItem = false)
 }
 ```
 
-`TodoItem`インスタンスは、web サービスに送信するための JSON ペイロードに変換されます。 このペイロードで要求が行われる前に、web サービスに送信される HTTP コンテンツの本文に埋め込まれている、`PostAsync`メソッド。
+`TodoItem` インスタンスは、web サービスに送信するために JSON ペイロードに変換されます。 このペイロードは、`PostAsync` メソッドを使用して要求が行われる前に、web サービスに送信される HTTP コンテンツの本文に埋め込まれます。
 
-REST サービスでの HTTP ステータス コードの送信、`HttpResponseMessage.IsSuccessStatusCode`を HTTP 要求が成功または失敗するかどうかを示すために、プロパティ。 この操作の一般的な応答は次のとおりです。
+REST サービスは、http 要求が成功したか失敗したかを示す HTTP 状態コードを `HttpResponseMessage.IsSuccessStatusCode` プロパティに送信します。 この操作の一般的な応答は次のとおりです。
 
-- **201 (CREATED)** – 応答の送信前に作成される新しいリソースに要求が発生しました。
-- **400 (BAD REQUEST)** – 要求がサーバーで認識されません。
-- **409 (CONFLICT)** – サーバー上の競合のため、要求が実行できないことです。
+- **201 (作成済み)** –要求により、応答が送信される前に新しいリソースが作成されました。
+- **400 (無効な要求)** -要求がサーバーで認識されません。
+- **409 (競合)** –サーバーの競合により、要求を実行できませんでした。
 
 ### <a name="updating-data"></a>データの更新
 
-`HttpClient.PutAsync`の次のコード例に示すように、URI で指定された web サービスに PUT 要求を送信し、web サービスから応答を受信するメソッドを使用します。
+`HttpClient.PutAsync` メソッドは、URI で指定された web サービスに PUT 要求を送信し、web サービスから応答を受信するために使用されます。次のコード例を参照してください。
 
 ```csharp
 public async Task SaveTodoItemAsync (TodoItem item, bool isNewItem = false)
@@ -174,17 +174,17 @@ public async Task SaveTodoItemAsync (TodoItem item, bool isNewItem = false)
 }
 ```
 
-操作、`PutAsync`メソッドは、 `PostAsync` web サービスでデータを作成するために使用されるメソッド。 ただし、web サービスから送信されたような応答は異なります。
+`PutAsync` メソッドの操作は、web サービスでデータを作成するために使用される `PostAsync` メソッドと同じです。 ただし、web サービスから送信される可能性のある応答は異なります。
 
-REST サービスでの HTTP ステータス コードの送信、`HttpResponseMessage.IsSuccessStatusCode`を HTTP 要求が成功または失敗するかどうかを示すために、プロパティ。 この操作の一般的な応答は次のとおりです。
+REST サービスは、http 要求が成功したか失敗したかを示す HTTP 状態コードを `HttpResponseMessage.IsSuccessStatusCode` プロパティに送信します。 この操作の一般的な応答は次のとおりです。
 
-- **204 (NO CONTENT)** – 要求が正常に処理され、応答は意図的に空白です。
-- **400 (BAD REQUEST)** – 要求がサーバーで認識されません。
-- **404 (NOT FOUND)** : 要求されたリソースがサーバー上に存在しません。
+- **204 (コンテンツなし)** –要求が正常に処理され、応答が意図的に空白になります。
+- **400 (無効な要求)** -要求がサーバーで認識されません。
+- **404 (見つかりません)** -要求されたリソースがサーバーに存在しません。
 
 ### <a name="deleting-data"></a>データの削除
 
-`HttpClient.DeleteAsync`の次のコード例に示すように、URI で指定された web サービスに DELETE 要求を送信し、web サービスから応答を受信するメソッドを使用します。
+`HttpClient.DeleteAsync` メソッドを使用して、URI で指定された web サービスに DELETE 要求を送信した後、web サービスから応答を受信します。次のコード例を参照してください。
 
 ```csharp
 public async Task DeleteTodoItemAsync (string id)
@@ -200,14 +200,14 @@ public async Task DeleteTodoItemAsync (string id)
 }
 ```
 
-REST サービスでの HTTP ステータス コードの送信、`HttpResponseMessage.IsSuccessStatusCode`を HTTP 要求が成功または失敗するかどうかを示すために、プロパティ。 この操作の一般的な応答は次のとおりです。
+REST サービスは、http 要求が成功したか失敗したかを示す HTTP 状態コードを `HttpResponseMessage.IsSuccessStatusCode` プロパティに送信します。 この操作の一般的な応答は次のとおりです。
 
-- **204 (NO CONTENT)** – 要求が正常に処理され、応答は意図的に空白です。
-- **400 (BAD REQUEST)** – 要求がサーバーで認識されません。
-- **404 (NOT FOUND)** : 要求されたリソースがサーバー上に存在しません。
+- **204 (コンテンツなし)** –要求が正常に処理され、応答が意図的に空白になります。
+- **400 (無効な要求)** -要求がサーバーで認識されません。
+- **404 (見つかりません)** -要求されたリソースがサーバーに存在しません。
 
 ## <a name="related-links"></a>関連リンク
 
 - [ネイティブ モバイル アプリケーションのバックエンド サービスの作成](/aspnet/core/mobile/native-mobile-backend/)
-- [この TodoREST (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)
+- [TodoREST (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)
 - [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.110).aspx)

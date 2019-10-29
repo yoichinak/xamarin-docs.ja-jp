@@ -4,15 +4,15 @@ description: この記事では、Xamarin. Mac アプリケーションでのイ
 ms.prod: xamarin
 ms.assetid: C6B539C2-FC6A-4C38-B839-32BFFB9B16A7
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/15/2017
-ms.openlocfilehash: 99604b59e5557ba5a7aa3d5ba61bc1bff414f000
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 233d4429915530dcb44013a9b4ab82cfe7656977
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70770319"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030149"
 ---
 # <a name="images-in-xamarinmac"></a>Xamarin. Mac のイメージ
 
@@ -130,7 +130,7 @@ Xamarin. Mac アプリケーションでは、任意の png、jpg、または pd
 
 Xamarin. Mac アプリケーションに追加するグラフィック資産 (アイコン、カスタムコントロール、カスタムカーソル、カスタムアートワークなど) には、標準解像度のバージョンに加えて、高解像度バージョンが必要です。 これは、Retina に装備されている Mac コンピューターで実行した場合にアプリケーションが最適な状態になるようにするために必要です。
 
-### <a name="adopt-the-2x-naming-convention"></a>@No__t_0 の名前付け規則を採用する
+### <a name="adopt-the-2x-naming-convention"></a>@2x の名前付け規則を採用する
 
 > [!IMPORTANT]
 > MacOS アプリでイメージを操作するこの方法は、Apple によって非推奨とされています。 代わりに、[アセットカタログのイメージセット](#asset-catalogs)を使用して、アプリのイメージを管理する必要があります。
@@ -154,7 +154,7 @@ Xamarin. Mac プロジェクトの**Resources**フォルダーに追加したイ
 
 Interface builder でイメージを使用するには、次の手順を実行します。
 
-1. @No__t_2 の**ビルドアクション**を使用して、 **Resources**フォルダーにイメージを追加します。 
+1. `BundleResource`の**ビルドアクション**を使用して、 **Resources**フォルダーにイメージを追加します。 
 
      ![Solution Pad 内のイメージリソース](image-images/ib00.png "Solution Pad 内のイメージリソース")
 2. メインの storyboard ファイルをダブルクリックして、Interface Builder で編集するために開き**ます。** 

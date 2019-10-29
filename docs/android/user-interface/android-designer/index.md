@@ -4,15 +4,15 @@ description: この記事では、Android Designer の機能について説明�
 ms.prod: xamarin
 ms.assetid: E38C9AD9-56AA-B983-8B21-E1F466C4DB36
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/25/2018
-ms.openlocfilehash: 176037db501c2577775bdfb817fea01f16a02242
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 8793dafe5bc44999cb884621d0c41956674b05e0
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70761641"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029392"
 ---
 # <a name="xamarinandroid-designer"></a>Xamarin. Android Designer
 
@@ -47,7 +47,7 @@ Xamarin Android では、XML ファイルに基づくユーザーインターフ
 
  [素材のデザイン機能](~/android/user-interface/android-designer/material-design-features.md)
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>まとめ
 
 この記事では、Android Designer の機能セットについて説明しました。
 このチュートリアルでは、デザイナーの使用を開始する方法と、そのさまざまな部分について説明しました。 ここでは、**デザイナー画面**と**ソース**ビューの両方を使用して、レイアウトを読み込む方法と、ウィジェットを追加および変更する方法について説明しています。 また、さまざまなリソースとデバイス構成を操作する方法についても説明しました。 最後に、このデザイナーを使用して、横や縦などの代替ビュー専用に構築されたユーザーインターフェイスを開発し、そのようなビュー間で発生する可能性のある競合を解決する方法を確認します。

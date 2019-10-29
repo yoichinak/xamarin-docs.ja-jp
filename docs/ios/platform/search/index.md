@@ -4,15 +4,15 @@ description: この記事では、iOS 9 に用意されている新しいアプ�
 ms.prod: xamarin
 ms.assetid: 7323EB3D-A78F-4BF0-9990-3160C7E83CF0
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: e64ae5e04fbdd5b4c69a0b00c2bbc087b7cdf62a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: ec63407189b635a9586b02e848647518aaf0170f
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769496"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031563"
 ---
 # <a name="search-apis-in-xamarinios"></a>Xamarin での Api の検索
 
@@ -22,7 +22,7 @@ IOS 9 では Search が拡張されており、Xamarin iOS アプリ内の情報
 
 また、新しい検索 Api を使用すると、以前に検索を実装することなく、アプリ内の検索を簡単に統合できます。 このため、Apple は、アプリ検索を使用して、iOS 9 アプリのコンテンツを汎用的に検索できるように、通常は数時間かかることを要求しています。
 
-[![](images/intro01.png "アプリ検索を使用して、汎用的に検索可能な iOS 9 アプリコンテンツの例")](images/intro01.png#lightbox)
+[![](images/intro01.png "An example of iOS 9 app content universally searchable using App Search")](images/intro01.png#lightbox)
 
 アプリ検索は、3つの個別の Api で構成されています。
 
@@ -36,7 +36,7 @@ IOS 9 では Search が拡張されており、Xamarin iOS アプリ内の情報
 
 実装する方法を決定する方法は、アプリによって提供される相互作用の種類と、アプリが提示するコンテンツの種類によって異なります。
 
-次のガイドラインに従ってください。
+次のガイドラインを参考にしてください。
 
 - [**Nsuseractivity**](nsuseractivity.md) –このフレームワークを使用して、パブリックコンテンツとプライベートコンテンツの両方に対して検索機能を提供し、アプリ内のナビゲーションポイントを検索できます。
 
@@ -64,7 +64,7 @@ Apple では、アプリで検索インデックスを提供するコンテン�
 IOS 10 のコアスポットライトは、次のようなアプリ検索に対していくつかの機能強化を提供します。
 
 - **引き出しディープリンクの人気度 (差分プライバシー)** -検索結果でディープリンクアプリのコンテンツを昇格する方法を提供します。
-- **アプリ内検索**-新しい`CSSearchQuery`クラスを使用して、メール、メッセージ、ノートアプリの動作と同様に、アプリ内スポットライト検索機能を提供します。
+- **アプリ内検索**-新しい `CSSearchQuery` クラスを使用して、メール、メッセージ、ノートアプリの動作と同様に、アプリ内スポットライト検索機能を提供します。
 - **[検索の継続]** -ユーザーがスポットライトまたは Safari で検索を開始し、アプリを開いて検索を続行できるようにします。
 - **検証結果の視覚化**-Apple の[App Search API 検証ツール](https://search.developer.apple.com/appsearch-validation-tool)では、テストを事前に形成するときに、web サイトのマークアップとディープリンクが視覚的に表示されるようになりました。
 - **メッセージアプリイメージの共有**-メッセージ (メッセージアプリ拡張機能を使用) での共有用に提供された、人気のあるアプリ内イメージがスポットライト検索に表示されます。
@@ -86,7 +86,7 @@ iOS 10 は、システムが適切なタイミングで有益な情報をユー�
 
 詳細については、「[プロアクティブな提案](~/ios/platform/search/proactive-suggestions.md)ガイド」を参照してください。
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>まとめ
 
 この記事では、iOS 9 が Xamarin iOS アプリ用に提供する新しい Search API の機能について説明しました。 ここでは、コンテンツのインデックスを作成するための[Nsuseractivity](nsuseractivity.md)、[コアスポットライト](corespotlight.md)、 [Web マークアップ](web-markup.md)メソッドについて説明しています。 ここでは、特定の検索方法を使用するタイミングと、インデックスを作成する必要があるコンテンツの種類について簡単に説明しました。
 

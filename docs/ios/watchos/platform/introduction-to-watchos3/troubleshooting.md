@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin で watchOS 3 を使用す
 ms.prod: xamarin
 ms.assetid: 5911D898-0E23-40CC-9F3C-5F61B4D50ADC
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: f10fb237bca92f49ac77657778ada8a47ed69c49
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 093ac4a3242866413042de0b650433d4369ad35f
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292171"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028250"
 ---
 # <a name="watchos-3-troubleshooting"></a>watchOS 3 のトラブルシューティング
 
@@ -49,7 +49,7 @@ WatchOS 3 beta 2 (またはそれ以降) と macOS Sierra beta 2 (またはそ�
 - **0xc51bad02** -アプリが使用しているウォール時間が多すぎます。
 - **0xc51bad03** -アプリには、現在のタスクを完了するための十分なランタイムがありませんでした。
 
-## <a name="clock"></a>時計
+## <a name="clock"></a>Clock
 
 新しくインストールされた Apple Watch アプリの複雑さは、空白として表示されることがあります。 この問題を解決するには Apple Watch を再起動してください。
 
@@ -64,31 +64,31 @@ WatchOS 3 beta 2 (またはそれ以降) と macOS Sierra beta 2 (またはそ�
 
 メディア添付ファイルが大きすぎる場合は、ユーザーの iPhone に表示されますが、Apple Watch は表示されません。
 
-## <a name="nsurlconnection"></a>NSURLConnection
+## <a name="nsurlconnection"></a>N・ Lconnection
 
-以前`NSURLConnection`の TLS プロトコルを使用している接続はすべて失敗します。 すべての SSL/TLS 接続では、RC4 対称暗号が既定で無効になっています。 さらに、セキュリティで保護されたトランスポート API は SSLv3 をサポートしなくなりました。アプリは、できるだけ早く SHA-1 と3DES 暗号化の使用を停止することをお勧めします。
+以前の TLS プロトコルを使用している `NSURLConnection` 接続はすべて失敗します。 すべての SSL/TLS 接続では、RC4 対称暗号が既定で無効になっています。 さらに、セキュリティで保護されたトランスポート API は SSLv3 をサポートしなくなりました。アプリは、できるだけ早く SHA-1 と3DES 暗号化の使用を停止することをお勧めします。
 
 WatchOS 3 では、SSL/TLS 接続のセキュリティは Apple によって厳密に適用されています。 影響を受けるサービスとアプリは、最新の TLS プロトコルバージョンを使用するように web サーバーを更新する必要があります。
 
 ## <a name="nsurlsession"></a>NSURLSession
 
-WatchOS 3 の時点で、 `HTTPBodyStream`では、 `NSMutableURLRequest`クラスのプロパティを未開封のストリーム`NSURLConnection` `NSURLSession`に設定し、この要件を厳密に適用する必要があります。
+WatchOS 3 の時点では、`NSMutableURLRequest` クラスの `HTTPBodyStream` プロパティを未開封ストリームに設定する必要があります。これは `NSURLConnection` と `NSURLSession` がこの要件を厳密に適用するためです。
 
 ## <a name="privacy"></a>プライバシー
 
 既知の問題:
 
-Url を使用`https://`する`NSURLConnection`場合、とでは、TLSハンドシェイク中にRC4暗号スイートがサポートされなく`NSURLSession`なりました。 次のエラーコードのいずれかが生成される可能性があります。
+`https://` Url を使用する場合 `NSURLSession` と `NSURLConnection` は、TLS ハンドシェイク中に RC4 暗号スイートをサポートしなくなりました。 次のエラーコードのいずれかが生成される可能性があります。
 
-- **-1200 または-98** - `NSURLErrorSecurityConnectionFailed`および securetransport エラー。
+- **-1200 または-98** -`NSURLErrorSecurityConnectionFailed` と securetransport のエラーの場合。
 - **-1200 [3:-9824]** -Http の読み込みに失敗しました。
-- **-**  -  1200`NSURLConnection`はエラーで終了しました。
+- **-1200** - `NSURLConnection` 完了しましたが、エラーが発生しました。
 
 WatchOS 3 では、SSL/TLS 接続のセキュリティは Apple によって厳密に適用されています。 影響を受けるサービスとアプリは、最新の TLS プロトコルバージョンを使用するように web サーバーを更新する必要があります。 詳細については、上記の[Nn1 接続](#nsurlconnection)を参照してください。
 
 ## <a name="snapshots"></a>スナップショット
 
-新しい`HandelBackgroundTask` API を採用していない WatchKit アプリは、watchOS 3 で定期的な更新プログラムを受信しなくなります。 
+新しい `HandelBackgroundTask` API を採用していない WatchKit アプリは、watchOS 3 で定期的な更新プログラムを受信しなくなります。 
 
 ## <a name="watchkit"></a>WatchKit
 

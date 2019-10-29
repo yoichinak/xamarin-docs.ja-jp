@@ -4,15 +4,15 @@ description: コアイメージは、iOS 5 で導入された新しいフレー�
 ms.prod: xamarin
 ms.assetid: 91E0780B-FF8A-E70D-9CD4-419119612B2D
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: ffaa6553830a64589818c991e8f729ff7232e367
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 5525373d9bf904f67bdf02d7ec8df72e7bbd3f55
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70752841"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032369"
 ---
 # <a name="core-image-in-xamarinios"></a>Xamarin のコアイメージ
 
@@ -28,7 +28,7 @@ _コアイメージは、iOS 5 で導入された新しいフレームワーク�
 
 これらの例では、Xamarin の iOS アプリケーションにコアイメージ機能を組み込む方法について説明します。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>［要件］
 
 Xcode の最新バージョンを使用する必要があります。
 
@@ -46,7 +46,7 @@ var ciImage = CIImage.FromCGImage(image.CGImage);
 CIFeature[] features = detector.FeaturesInImage(ciImage);
 ```
 
-特徴配列には、 `CIFaceFeature`オブジェクト (任意の顔が検出された場合) が設定されます。 各面`CIFaceFeature`にはがあります。 `CIFaceFeature`には、次のプロパティがあります。
+特徴配列には `CIFaceFeature` オブジェクト (顔が検出された場合) が設定されます。 各面には `CIFaceFeature` があります。 `CIFaceFeature` には、次のプロパティがあります。
 
 - HasMouthPosition –この顔で口が検出されたかどうかを指定します。
 - HasLeftEyePosition –この顔に対して左目が検出されたかどうかを指定します。
@@ -55,7 +55,7 @@ CIFeature[] features = detector.FeaturesInImage(ciImage);
 - LeftEyePosition –この顔の左側の視点の座標です。
 - RightEyePosition –この顔の右目の座標です。
 
-これらのすべてのプロパティの座標の原点は、左上にあります。これは、左上を原点として使用する UIKit とは異なります。 座標を使用する場合`CIFaceFeature`は、必ず ' 反転 ' してください。 CoreImage\CoreImageViewController.cs のこの非常に基本的なカスタムイメージビューでは、イメージに ' face indicator ' 三角形を描画する`FlipForBottomOrigin`方法を示しています (メソッドに注意してください)。
+これらのすべてのプロパティの座標の原点は、左上にあります。これは、左上を原点として使用する UIKit とは異なります。 座標を使用する場合は `CIFaceFeature` 必ず ' 反転 ' してください。 CoreImage\CoreImageViewController.cs のこの非常に基本的なカスタムイメージビューでは、イメージに ' face indicator ' 三角形を描画する方法を示しています (`FlipForBottomOrigin` メソッドに注意してください)。
 
 ```csharp
 public class FaceDetectImageView : UIView
@@ -120,7 +120,7 @@ faceView.SetNeedsDisplay();
 
 画像にフィルターを適用するには、イメージの読み込み、フィルターの作成、フィルターの適用、結果の保存 (または表示) という4つの手順を実行します。
 
-まず、イメージを`CIImage`オブジェクトに読み込みます。
+まず、`CIImage` オブジェクトにイメージを読み込みます。
 
 ```csharp
 var uiimage = UIImage.FromFile ("photo.JPG");
@@ -135,7 +135,7 @@ sepia.Image = ciimage;
 sepia.Intensity = 0.8f;
 ```
 
-3番目に`OutputImage` 、プロパティにアクセス`CreateCGImage`し、メソッドを呼び出して最終的な結果を表示します。
+3番目の方法として、`OutputImage` プロパティにアクセスし、`CreateCGImage` メソッドを呼び出して最終結果を表示します。
 
 ```csharp
 CIImage output = sepia.OutputImage;
@@ -150,9 +150,9 @@ var ui = UIImage.FromImage (cgimage);
 imgview.Image = ui;
 ```
 
-これらのスクリーンショットは、coreimage `CIHueAdjust` . .zip サンプルコードに示されているフィルター `CISepia`とフィルターの結果を示しています。
+これらのスクリーンショットは、CoreImage. .zip サンプルコードに示されている `CISepia` および `CIHueAdjust` フィルターの結果を示しています。
 
-`CIColorControls`フィルターの例については、「[イメージレシピのコントラクトと明るさの調整](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/coreimage/adjust_contrast_and_brightness_of_an_image)」を参照してください。
+`CIColorControls` フィルターの例については、「[イメージレシピのコントラクトと明るさの調整](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/coreimage/adjust_contrast_and_brightness_of_an_image)」を参照してください。
 
 ```csharp
 var uiimage = UIImage.FromFile("photo.JPG");
@@ -212,11 +212,11 @@ foreach (var filter in filters){
 
 リストのカテゴリの出力はシミュレーターでは次のようになります。リストをスクロールして、すべてのフィルターとそのパラメーターを表示できます。
 
- [![](introduction-to-coreimage-images/coreimage05.png "リストのカテゴリの出力は、シミュレーターでは次のようになります。")](introduction-to-coreimage-images/coreimage05.png#lightbox)
+ [![](introduction-to-coreimage-images/coreimage05.png "The List Categories output looks like this on the simulator")](introduction-to-coreimage-images/coreimage05.png#lightbox)
 
 一覧表示されている各フィルターは、Xamarin. iOS のクラスとして公開されています。そのため、アセンブリブラウザーで Xamarin. iOS. CoreImage API を探索したり、Visual Studio for Mac または Visual Studio でオートコンプリートを使用したりすることもできます。 
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>まとめ
 
 この記事では、顔検出や画像へのフィルターの適用など、新しい iOS 5 コアイメージフレームワークの機能の一部を使用する方法について説明しました。 フレームワークで使用できるイメージフィルターは多数あります。
 

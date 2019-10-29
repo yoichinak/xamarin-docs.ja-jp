@@ -3,15 +3,15 @@ title: Android でのデータストレージの概要
 ms.prod: xamarin
 ms.assetid: FDAC0771-4749-4758-865A-F1BD190CA54B
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/28/2017
-ms.openlocfilehash: 69d5222bb6c50870d0c42bea6ff71236e3d1580c
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 21e3421125e6fd918a379c5501a44c15620f5d94
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70754564"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73023779"
 ---
 # <a name="introduction"></a>概要
 
@@ -53,13 +53,13 @@ SQLite は小規模で高速なので、使用に関していくつかの注意�
 - Table RENAME と ADDCOLUMN のみがサポートされています。 スキーマに対して他の変更を行うことはできません。
 - ビューは読み取り専用です。
 
-SQLite の詳細については、 [SQLite.org](http://SQLite.org)を参照してください。ただし、Xamarin で sqlite を使用するために必要なすべての情報は、このドキュメントおよび関連するサンプルに含まれています。 Android 2 以降では、SQLite データベースエンジンが Android でサポートされています。
+SQLite の詳細については、 [SQLite.org](https://SQLite.org)を参照してください。ただし、Xamarin で sqlite を使用するために必要なすべての情報は、このドキュメントおよび関連するサンプルに含まれています。 Android 2 以降では、SQLite データベースエンジンが Android でサポートされています。
 この章では説明しませんが、SQLite は Windows Phone および Windows アプリケーションでも使用できます。
 
 ## <a name="windows-and-windows-phone"></a>Windows および Windows Phone
 
 SQLite は Windows プラットフォームでも使用できますが、このドキュメントでは説明しません。
-詳細については、「 [Tasky](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)と[tasky Pro](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)ケーススタディ」と「 [Tim heuer のブログ](http://timheuer.com/blog/archive/2012/06/28/seeding-your-metro-style-app-with-sqlite-database.aspx)」を参照してください。
+詳細については、「 [Tasky](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)と[tasky Pro](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)ケーススタディ」と「 [Tim heuer のブログ](https://timheuer.com/blog/archive/2012/06/28/seeding-your-metro-style-app-with-sqlite-database.aspx)」を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 

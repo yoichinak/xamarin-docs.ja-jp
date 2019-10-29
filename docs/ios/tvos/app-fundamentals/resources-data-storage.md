@@ -4,15 +4,15 @@ description: この記事では、Xamarin でビルドされた tvOS アプリ�
 ms.prod: xamarin
 ms.assetid: C56B5046-D2C0-4B63-9CE0-ADAA0EFD368A
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 4b50ba09488f1f052f3e41302a42c691089727ff
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: d84752afd5579216272895f750522a8f38ece34a
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769652"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030804"
 ---
 # <a name="tvos-resources-and-data-storage-in-xamarin"></a>Xamarin でのリソースとデータストレージの tvOS
 
@@ -22,7 +22,7 @@ _この記事では、tvOS アプリでのリソースと永続データスト�
 
 ## <a name="tvos-resource-limitations"></a>tvOS リソースの制限事項
 
-IOS デバイスとは異なり、新しい Apple TV は、tvOS アプリまたはデータに対して非常に限定された永続的なローカルストレージを提供します。 非常に小さな項目 (ユーザー設定など) の場合、tvOS アプリでは、 `NSUserDefaults` [500 KB のデータの制限](https://forums.developer.apple.com/message/50696#50696)でにアクセスできます。 ただし、tvOS アプリでより多くの情報を保持する必要がある場合は、 [iCloud](#iCloud-Data-Storage)からそのデータを格納して取得する必要があります。
+IOS デバイスとは異なり、新しい Apple TV は、tvOS アプリまたはデータに対して非常に限定された永続的なローカルストレージを提供します。 非常に小さな項目 (ユーザー設定など) の場合、tvOS アプリでは、 [500 KB のデータに制限](https://forums.developer.apple.com/message/50696#50696)された `NSUserDefaults` にアクセスできます。 ただし、tvOS アプリでより多くの情報を保持する必要がある場合は、 [iCloud](#iCloud-Data-Storage)からそのデータを格納して取得する必要があります。
 
 さらに、tvOS では Apple TV アプリのサイズが 200 MB に制限されています。 アプリがこのサイズを超えるリソースを必要とする場合は、[オンデマンドリソース](#On-Demand-Resources)(最大で 2 gb まで) を使用してパッケージ化して読み込む必要があります。 これらの制限事項を考慮して、アプリのユーザーに最適なエクスペリエンスを提供するために、追加のアセットのダウンロードを正しく行うことが重要です。 詳細については、Apple の[オンデマンドリソースに関するガイド](https://developer.apple.com/library/prerelease/tvos/documentation/FileManagement/Conceptual/On_Demand_Resources_Guide/index.html#//apple_ref/doc/uid/TP40015083)を参照してください。
 
@@ -74,7 +74,7 @@ Xcode を使用して、リソースの提供タグに関連付けられてい�
 
 <a name="Summary" />
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>まとめ
 
 この記事では、tvOS システムによって tvOS アプリに適用されるサイズ、リソース、およびデータストレージの制限事項について説明しました。 アプリの優れたユーザーエクスペリエンスを実現するために、これらの制限と提案を回避するオプションが示されています。
 

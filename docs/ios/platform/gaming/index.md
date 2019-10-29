@@ -4,15 +4,15 @@ description: この記事では、iOS 9 によって提供される新しいゲ�
 ms.prod: xamarin
 ms.assetid: 958D38FD-9240-482E-9A42-D6671ED8F2B0
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: b1fa8cd69a2255d462066be88ad7ef695b71076e
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: fd79153520036ae49fd6fd9abe652e2c7459b30d
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70753105"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032515"
 ---
 # <a name="ios-gaming-apis-in-xamarinios"></a>Xamarin の iOS ゲーム Api
 
@@ -21,7 +21,7 @@ _この記事では、iOS 9 によって提供される新しいゲーム拡張�
 Apple は、iOS 9 のゲーム Api に技術的にいくつかの機能強化を行っています。これにより、Xamarin iOS アプリでゲームグラフィックスとオーディオを簡単に実装できるようになりました。
 これには、高レベルのフレームワークを使用した簡単な開発と、iOS デバイスの GPU 機能を活用して速度とグラフィック能力を向上させることが含まれます。
 
-[![](images/flocking01.png "Flocking を実行するアプリの例")](images/flocking01.png#lightbox)
+[![](images/flocking01.png "An example of an app running flocking")](images/flocking01.png#lightbox)
 
 これには、MetalKit、SceneKit、および SpriteKit の新機能として、再生キット、ReplayKit、モデル i/o、、金属パフォーマンスシェーダーが含まれます。
 
@@ -56,7 +56,7 @@ Pathfinding はゲームの AI 要素がゲームボードを囲む方法を見�
 
 次のマップについて考えてみましょう。
 
-[![](images/gkpathfindpath.png "Pathfinding マップの例")](images/gkpathfindpath.png#lightbox)
+[![](images/gkpathfindpath.png "An example pathfinding map")](images/gkpathfindpath.png#lightbox)
 
 Pathfinding 使用しC#てこのコードを検索すると、マップを通じて次のような結果が得られます。
 
@@ -145,7 +145,7 @@ protected Func<GKRuleSystem, bool> mod(int m)
 }
 ```
 
-特定のルールセット (`GKRule`) と既知の入力セットに基づいて、上級システム (`GKRuleSystem`) によって予測可能な出力`fizzbuzz`が作成されます (上記の例をご覧ください)。
+特定のルールセット (`GKRule`) と既知の入力セットに基づいて、エキスパートシステム (`GKRuleSystem`) は予測可能な出力を作成します (上記の例では`fizzbuzz`)。
 
 ### <a name="flocking"></a>Flocking
 
@@ -365,15 +365,15 @@ public override void ViewWillLayoutSubviews ()
 
 実行すると、わずかなアニメーションの _"Boids"_ が指タップに flock ます。
 
-[![](images/flocking01.png "小さなアニメーション化された Boids は、指タップを flock します。")](images/flocking01.png#lightbox)
+[![](images/flocking01.png "The little animated Boids will flock around the finger taps")](images/flocking01.png#lightbox)
 
 ### <a name="other-apple-examples"></a>その他の Apple の例
 
 前に示したサンプルに加えて、Apple には、と Xamarin にC#トランスコードできる次のサンプルアプリが用意されています。
 
-- [4:相手の AI に対するストラテジスト Playkit Minmax の使用](https://developer.apple.com/library/prerelease/ios/samplecode/FourInARow/Introduction/Intro.html#//apple_ref/doc/uid/TP40016142)
-- [AgentsCatalog:Agents システムの使用](https://developer.apple.com/library/prerelease/ios/samplecode/AgentsCatalog/Introduction/Intro.html#//apple_ref/doc/uid/TP40016141)
-- [DemoBots:SpriteKit とゲームプレイキットを使用したクロスプラットフォームゲームの構築](https://developer.apple.com/library/prerelease/ios/samplecode/DemoBots/Introduction/Intro.html#//apple_ref/doc/uid/TP40015179)
+- [4番の Inaro: 対戦相手 AI 用のストラテジスト Playkit Minmax の使用](https://developer.apple.com/library/prerelease/ios/samplecode/FourInARow/Introduction/Intro.html#//apple_ref/doc/uid/TP40016142)
+- [AgentsCatalog: Agents システムの使用](https://developer.apple.com/library/prerelease/ios/samplecode/AgentsCatalog/Introduction/Intro.html#//apple_ref/doc/uid/TP40016141)
+- [DemoBots: SpriteKit とゲームプレイキットを使用したクロスプラットフォームゲームの構築](https://developer.apple.com/library/prerelease/ios/samplecode/DemoBots/Introduction/Intro.html#//apple_ref/doc/uid/TP40015179)
 
 ## <a name="metal"></a>メタル
 
@@ -427,7 +427,7 @@ Apple のモデル i/o フレームワークを使用すると、3D アセット
 
 Apple の新しい ReplayKit フレームワークを使用すると、iOS ゲームにゲームプレイの記録を簡単に追加し、ユーザーがアプリ内からこのビデオをすばやく簡単に編集および共有できるようにすることができます。
 
-詳細については、次を参照してください。 Apple の[replaykit と Game Center ビデオ](https://developer.apple.com/videos/wwdc/2015/?id=605)とその[demobots をご覧ください。SpriteKit と playkit](https://developer.apple.com/library/prerelease/ios/samplecode/DemoBots/Introduction/Intro.html#//apple_ref/doc/uid/TP40015179)サンプルアプリを使用してクロスプラットフォームゲームを構築します。
+詳細については、「 [ReplayKit を使用した](https://developer.apple.com/videos/wwdc/2015/?id=605)Apple の継続的なソーシャル」と Game Center ビデオとその[Demobots: SpriteKit とゲームプレイキットの](https://developer.apple.com/library/prerelease/ios/samplecode/DemoBots/Introduction/Intro.html#//apple_ref/doc/uid/TP40015179)サンプルアプリを使用したクロスプラットフォームゲームの構築に関するビデオを参照してください。
 
 ## <a name="scenekit"></a>SceneKit
 
@@ -440,10 +440,10 @@ Apple の新しい ReplayKit フレームワークを使用すると、iOS ゲ�
 Apple では、iOS 9 の SceneKit に次の新機能が追加されました。
 
 - Xcode では、Xcode 内から直接シーンを編集することで、ゲームや対話型の3D アプリをすばやく作成できるシーンエディターが提供されるようになりました。
-- クラス`SCNView` と`SCNSceneRenderer`クラスを使用して、(サポートされている iOS デバイスで) 金属のレンダリングを有効にすることができます。
-- クラス`SCNAudioPlayer`と`SCNNode`クラスを使用すると、iOS アプリに対してプレーヤーの位置を自動的に追跡する空間オーディオ効果を追加できます。
+- `SCNView` クラスと `SCNSceneRenderer` クラスを使用して、(サポートされている iOS デバイスで) 金属レンダリングを有効にすることができます。
+- `SCNAudioPlayer` クラスと `SCNNode` クラスを使用すると、iOS アプリのプレーヤーの位置を自動的に追跡する空間オーディオ効果を追加できます。
 
-詳細については、 [SceneKit のドキュメント](~/ios/platform/introduction-to-ios8.md#scenekit)と Apple の[SceneKit Framework リファレンス](https://developer.apple.com/library/prerelease/ios/documentation/SceneKit/Reference/SceneKit_Framework/index.html#//apple_ref/doc/uid/TP40012283)および[Fox を参照してください。Xcode シーンエディター](https://developer.apple.com/library/prerelease/ios/samplecode/Fox/Introduction/Intro.html#//apple_ref/doc/uid/TP40016154)サンプルプロジェクトを使用して SceneKit ゲームを構築します。
+詳細については、 [SceneKit のドキュメント](~/ios/platform/introduction-to-ios8.md#scenekit)と Apple の[SceneKit Framework リファレンス](https://developer.apple.com/library/prerelease/ios/documentation/SceneKit/Reference/SceneKit_Framework/index.html#//apple_ref/doc/uid/TP40012283)および「 [Fox: Xcode シーンエディターのサンプルプロジェクトを使用した SceneKit ゲームの構築](https://developer.apple.com/library/prerelease/ios/samplecode/Fox/Introduction/Intro.html#//apple_ref/doc/uid/TP40016154)」を参照してください。
 
 ## <a name="spritekit"></a>SpriteKit
 
@@ -455,14 +455,14 @@ Apple の 2D game framework であるスプライトキットには、iOS 8 と 
 
 Apple では、iOS 9 の SpriteKit に次の新機能が追加されました。
 
-- プレーヤーの位置を`SKAudioNode`クラスで自動的に追跡する空間オーディオ効果。
+- `SKAudioNode` クラスを使用してプレーヤーの位置を自動的に追跡する空間オーディオ効果。
 - Xcode では、2D ゲームとアプリの作成を容易にするシーンエディターとアクションエディターが機能するようになりました。
-- 新しいカメラノード (`SKCameraNode`) オブジェクトによるゲームのサポートが簡単になります。
+- 新しいカメラノード (`SKCameraNode`) オブジェクトを使用した簡単なスクロールゲームサポート。
 - 金属をサポートする iOS デバイスでは、カスタム OpenGL ES シェーダーを既に使用している場合でも、SpriteKit はレンダリングに自動的にそれを使用します。
 
-詳細については、 [SpriteKit のドキュメント](~/ios/platform/introduction-to-ios8.md#spritekit)「Apple の[SpriteKit Framework リファレンス](https://developer.apple.com/library/prerelease/ios/documentation/SpriteKit/Reference/SpriteKitFramework_Ref/index.html#//apple_ref/doc/uid/TP40013041)と[その demobots」を参照してください。SpriteKit と playkit](https://developer.apple.com/library/prerelease/ios/samplecode/DemoBots/Introduction/Intro.html#//apple_ref/doc/uid/TP40015179)サンプルアプリを使用してクロスプラットフォームゲームを構築します。
+詳細については、 [SpriteKit のドキュメント](~/ios/platform/introduction-to-ios8.md#spritekit)「Apple の[SpriteKit Framework リファレンス](https://developer.apple.com/library/prerelease/ios/documentation/SpriteKit/Reference/SpriteKitFramework_Ref/index.html#//apple_ref/doc/uid/TP40013041)」および「SpriteKit and のサンプルアプリ[を使用したクロスプラットフォームゲームの構築](https://developer.apple.com/library/prerelease/ios/samplecode/DemoBots/Introduction/Intro.html#//apple_ref/doc/uid/TP40015179)」を参照してください。
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>まとめ
 
 この記事では、iOS 9 が Xamarin の iOS アプリ用に提供する新しいゲーム機能について説明しました。
 この記事では、お勧めのプレイキットとモデル i/o を導入しました。金属の主な機能強化SceneKit と SpriteKit の新機能。
