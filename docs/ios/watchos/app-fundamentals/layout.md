@@ -1,84 +1,84 @@
 ---
-title: WatchOS で Xamarin のレイアウトの操作
-description: このドキュメントでは、Xamarin を使用して、watchOS レイアウトを作成する方法について説明します。 インターフェイス コント ローラー、グループ、区切り記号、およびコンテンツ コントロールがについて説明します。
+title: Xamarin での watchOS レイアウトの使用
+description: このドキュメントでは、Xamarin を使用して watchOS レイアウトを作成する方法について説明します。 インターフェイスコントローラー、グループ、区切り記号、およびコンテンツコントロールについて説明します。
 ms.prod: xamarin
 ms.assetid: BEDB62A1-2249-4459-986F-413A41E63DF0
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 0f9f8981325785d69d36ccd9d4de1cd69956a155
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 568d1e354d0ee840aeed980d6e8cc6b83068a1c8
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768750"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73001539"
 ---
-# <a name="working-with-watchos-layout-in-xamarin"></a>WatchOS で Xamarin のレイアウトの操作
+# <a name="working-with-watchos-layout-in-xamarin"></a>Xamarin での watchOS レイアウトの使用
 
-Apple Watch のレイアウトを設計[画面サイズ](~/ios/watchos/app-fundamentals/screen-sizes.md)固有の課題を表示します。
+Apple Watch[画面サイズ](~/ios/watchos/app-fundamentals/screen-sizes.md)のレイアウトを設計すると、独自の課題が生じます。
 
-## <a name="design-tips"></a>デザインに関するヒント
+## <a name="design-tips"></a>デザインのヒント
 
-重要なポイント: 読み取り可能で、大規模な本の指での小さなウォッチ画面では、使用可能なユーザー インターフェイスを作成します。 デザインするのに陥る可能性はありません、 **iOS シミュレーター** (これは非常に大きな表示) と**マウス ポインター** (これは小さなタッチのターゲットを持つ動作します)。
+重要な点は、ユーザーインターフェイスを読み取り可能にして、大きな指で小さな watch 画面で使用できるようにすることです。 **IOS シミュレーター** (非常に大きい) と**マウスポインター** (小さなタッチターゲットで動作) の設計のトラップには含まれません。
 
-- 黒の背景を使用して、-、ウォッチのベゼルを黒より大きな画面の効果を作成します。
+- 黒の背景を使用します。これは、ウォッチの黒いベゼルを使用して、大きな画面の錯覚を作成します。
 
-- 画面のレイアウトの周りに埋め込む操作を行います - ドアが自然なビジュアルのパディングを形成します。
+- 画面レイアウトの周囲に埋め込まないでください。ベゼルは、自然な視覚的余白を形成します。
 
-- 読みやすさに注目します。 テキストが読み取り可能であることを確認するのに、フォント サイズや色を慎重に使用します。 自動の動的な型のサポートを受けるには、組み込みのテキストのスタイルを使用します。
+- 読みやすさに重点を置いてください。 フォントサイズと色を慎重に使用して、テキストを判読できるようにします。 組み込みのテキストスタイルを使用して、動的な型の自動サポートを実現します。
 
-![](layout-images/type.png "動的な型のサポートの例")
+![](layout-images/type.png "Example of Dynamic Type support")
 
-- タッチのターゲットのサイズに注目します。 テキスト ラベルが付いたボタン/tappable テーブルの行は、画面全体にまたがる必要があります。 Apple では、「配置してはいけない以上 3 つの項目で並列」、およびアイコンとテキスト ラベルではなく使用するかどうかを述べています。
+- タッチターゲットのサイズに注目します。 ボタン/tappable テーブルの行をテキストラベルで表示するには、画面全体にまたがる必要があります。 Apple では、"2 つ以上の項目を並べて表示しない" と表示され、テキストラベルではなくアイコンを使用していることが示されています。
 
-- 使用して、 [ `Menu`コントロール](~/ios/watchos/user-interface/menu.md)明確かつ簡潔なアプリの設計を維持する公開の使用頻度の低い機能にします。
+- [`Menu` コントロール](~/ios/watchos/user-interface/menu.md)を使用して、アプリの設計を明確かつ簡潔に保つために使用頻度の低い機能を公開します。
 
 ## <a name="implementation"></a>実装
 
-ウォッチ キットには、魅力的の watch アプリのレイアウトを構築するための次のコントロールが含まれています。
+Watch Kit には、魅力的なウォッチアプリのレイアウトを作成するための次のコントロールが含まれています。
 
-### <a name="interface-controller"></a>インターフェイス コント ローラー
+### <a name="interface-controller"></a>インターフェイスコントローラー
 
-`WKInterfaceController`シーンのすべての基本クラスです。
+`WKInterfaceController` は、すべてのシーンの基本クラスです。
 
-インターフェイス コント ローラーのデザイン サーフェイスに垂直方向のように動作**グループ**: インターフェイス コント ローラーにその他のコントロールをドラッグして、上下に並べて配置を自動的に 1 つになります。
+インターフェイスコントローラーのデザインサーフェイスは、垂直方向の**グループ**のように動作します。他のコントロールをインターフェイスコントローラーにドラッグすると、他のコントロールの上に自動的に配置されます。
 
-![](layout-images/controller-scene.png "コントロールは、上下に並べて配置を自動的に 1 つです。")
+![](layout-images/controller-scene.png "Controls are automatically laid-out one above the other")
 
-設定することができます、**位置**と**サイズ**の外観を制御するには、各コントロールのプロパティ。
+各コントロールの**Position**プロパティと**Size**プロパティを設定して、外観を制御できます。
 
-![](layout-images/positionsize-attributes.png "各コントロールの位置とサイズのプロパティを設定します。")
+![](layout-images/positionsize-attributes.png "Set the Position and Size properties on each control")
 
-サイズを設定すると**コンテナーからの相対**比例値とオフセットの調整を行うことができます。 このスクリーン ショットは、ウォッチ画面の幅の 80% を使用して設定されているボタンを示しています (**0.8**)。
+サイズが**コンテナーに対して相対的**に設定されている場合は、比例値とオフセット調整を指定できます。 このスクリーンショットは、ウォッチ画面の幅 (**0.8**) の80% を使用するように設定されたボタンを示しています。
 
-![](layout-images/button-attributes.png "比例値とオフセットの調整を提供します。")
+![](layout-images/button-attributes.png "Provide a proportional value and an offset adjustment")
 
 ### <a name="group"></a>グループ化
 
-`WKInterfaceGroup` 垂直方向または水平方向にスタックを構成できるシンプルなレイアウト コンテナーが制御します。 既定では、各コントロール間の間隔が含まれていますでの間隔 (およびくぼみ) を変更することができます、**属性**インスペクター。
+`WKInterfaceGroup` は、垂直方向または水平方向にコントロールを積み重ねるように構成できる単純なレイアウトコンテナーです。 既定では、各コントロールの間隔が含まれますが、 **[属性]** インスペクターで間隔 (およびインセット) を変更できます。
 
-![](layout-images/group-attributes.png "Attributes inspector のくぼみと間隔を変更します。")
+![](layout-images/group-attributes.png "Modify the spacing and insets in the Attributes inspector")
 
-グループできます自体は、サイズ、周囲のコントロールに対して相対的に配置されているし、複雑なレイアウトを作成するグループを入れ子にすることができます。
+グループは、その周囲のコントロールを基準にしてサイズを指定し、配置することができます。また、グループを入れ子にして、複雑なレイアウトを作成することもできます。
 
-![](layout-images/group-scene.png "複雑なレイアウトを作成するグループを入れ子にすることができます。")
+![](layout-images/group-scene.png "Groups can be nested to create complex layouts")
 
 ### <a name="separator"></a>区切り記号
 
-区切り記号コントロールはレイアウトでは、視覚的なガイダンスを提供するためのものです。 区切り記号 (または背景色またはイメージ)、画面に関連するコンテンツをわかりやすくを使用します。
+区切り記号コントロールは、レイアウトの視覚的なガイダンスを提供するためのものです。 区切り記号 (または背景色や画像) を使用して、画面上でどのコンテンツが関連しているかをユーザーが理解できるようにします。
 
-![](layout-images/separator-scene.png "区切り記号の使用方法の例")
+![](layout-images/separator-scene.png "Example of Separator usage")
 
-画面の幅全体を使用していない青と緑の区切り記号は、いずれかで構成されているに注意してください。**固定**または**コンテナーからの相対**サイズ。
+注: 画面の全幅を使用しない青と緑の区切り記号は、**固定**または**コンテナーサイズからの相対**値で構成されています。
 
 ### <a name="content-controls"></a>コンテンツ コントロール
 
-レイアウトは完璧とはせず、 `Label`、 `Image`、 `Button`、 `Switch`、 `Slider`、 `Map`、および[他のコントロール](~/ios/watchos/user-interface/index.md)します。
-これらを使用して、レイアウトに配置できる**グループ**または各コントロールの位置とサイズを設定します。
+`Label`、`Image`、`Button`、`Switch`、`Slider`、`Map`、および[その他のコントロール](~/ios/watchos/user-interface/index.md)を使用せずにレイアウトを完了することはできません。
+これらは、**グループ**、または各コントロールの位置とサイズの設定を使用して、レイアウトに配置できます。
 
 ## <a name="related-links"></a>関連リンク
 
 - [WatchKitCatalog (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
-- [Apple のレイアウトのリファレンス](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/WatchHumanInterfaceGuidelines/Layout.html)
-- [Apple の色と文字体裁を参照します。](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/WatchHumanInterfaceGuidelines/ColorandTypography.html)
+- [Apple のレイアウトリファレンス](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/WatchHumanInterfaceGuidelines/Layout.html)
+- [Apple の色 & タイポグラフィリファレンス](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/WatchHumanInterfaceGuidelines/ColorandTypography.html)
