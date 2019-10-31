@@ -4,15 +4,15 @@ description: このガイドでは、Windows で Visual Studio 用の Xamarin.An
 ms.prod: xamarin
 ms.assetid: 2BE4D5AD-D468-B177-8F96-837D084E7DE1
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/22/2018
-ms.openlocfilehash: 315cb8e58b0b9f29c06e4d0af2b8cf9adffb06e3
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 0caea0c31275a7459286c143cc92ca90731dd93b
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70758524"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73020700"
 ---
 # <a name="windows-installation"></a>Windows のインストール
 
@@ -20,7 +20,7 @@ _このガイドでは、Windows で Visual Studio 用の Xamarin.Android をイ
 
 ## <a name="overview"></a>概要
 
-Xamarin は現在、追加料金なしで Visual Studio のすべてのエディションに含まれ、別個のライセンスは必要ないため、Visual Studio インストーラーを使用して、Xamarin.Android ツールをダウンロードしてインストールすることができます 
+Xamarin は現在、追加料金なしで Visual Studio のすべてのエディションに含まれ、別個のライセンスは必要ないため、Visual Studio インストーラーを使用して、Xamarin.Android ツールをダウンロードしてインストールすることができます
 (以前のバージョンの Xamarin.Android では必要だった手動のインストールとライセンス手順は不要になりました)。このガイドでは、次のことを学習します。
 
 - Java Development Kit、Android SDK、および Android NDK のカスタムの場所を構成する方法。
@@ -39,7 +39,7 @@ Windows での Visual Studio を使用するための Xamarin のインストー
 
 ## <a name="configuration"></a>構成
 
-Xamarin.Android では Java Development Kit (JDK) と Android SDK を使用して、アプリをビルドします。 インストール中に、Visual Studio インストーラーは既定の場所にこれらのツールを配置し、適切なパス構成で開発環境を構成します。 これらの場所は、**[ツール]、[オプション]、[Xamarin]、[Android 設定]** の順にクリックして表示し、変更することができます。
+Xamarin.Android では Java Development Kit (JDK) と Android SDK を使用して、アプリをビルドします。 インストール中に、Visual Studio インストーラーは既定の場所にこれらのツールを配置し、適切なパス構成で開発環境を構成します。 これらの場所は、 **[ツール]、[オプション]、[Xamarin]、[Android 設定]** の順にクリックして表示し、変更することができます。
 
 ![Xamarin Android の設定ダイアログのスクリーン ショット](windows-images/07-settings.png)
 

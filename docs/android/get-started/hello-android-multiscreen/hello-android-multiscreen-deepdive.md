@@ -1,21 +1,21 @@
 ---
-title: 'Hello, Android マルチスクリーン: 詳細'
+title: Hello Android のマルチスクリーン:詳しく調べる
 description: 2 部構成のこのガイドでは、2 つ目の画面を処理するために、(「Hello, Android」ガイドで作成された) 基本的な Phoneword アプリケーションが展開されます。 その過程で、基本的な Android アプリケーションの構成ブロックが紹介されます。 Android アーキテクチャの詳細も含まれます。これは、Android アプリケーションの構造と機能の理解を深めるのに役立ちます。
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: E4150036-7760-4023-BD33-B7BDE7B7AF5B
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: 3eee66032a33e66d3a6a22ca43cb931fbd59888f
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 4acbfe810abefd9a25721ddf59c9f4f197afdf28
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122986"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73020976"
 ---
-# <a name="hello-android-multiscreen-deep-dive"></a>Hello, Android マルチスクリーン: 詳細
+# <a name="hello-android-multiscreen-deep-dive"></a>Hello Android のマルチスクリーン:詳しく調べる
 
 _2 部構成のこのガイドでは、2 つ目の画面を処理するために、(「Hello, Android」ガイドで作成された) 基本的な Phoneword アプリケーションが展開されます。その過程で、基本的な Android アプリケーションの構成ブロックが紹介されます。Android アーキテクチャの詳細も含まれます。これは、Android アプリケーションの構造と機能の理解を深めるのに役立ちます。_
 

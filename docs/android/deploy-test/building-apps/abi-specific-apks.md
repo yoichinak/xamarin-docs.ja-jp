@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin.Android を使用する単
 ms.prod: xamarin
 ms.assetid: D21B195B-4530-4EB2-8704-5C4349A2CDD8
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/15/2018
-ms.openlocfilehash: 0c3bb547a21457a1666db5fe84560e10e3bb8eb1
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: b11f21b0d0932013c65ea9298ad9425747afdf79
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70754272"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028137"
 ---
 # <a name="building-abi-specific-apks"></a>ABI 固有の APK のビルド
 
@@ -35,7 +35,7 @@ APK が複数あると配布が困難になる場合がある - Google Play で�
 1. 前の手順の **AndroidManifest.XML** を使用して、アプリケーションをビルドする。
 1. 署名および zipalign を実行して、リリース用に APK を準備する。
 
-このガイドの最後は、[Rake](http://martinfowler.com/articles/rake.html) を使用して、これらの手順をスクリプト化する方法を示すチュートリアルです。
+このガイドの最後は、[Rake](https://martinfowler.com/articles/rake.html) を使用して、これらの手順をスクリプト化する方法を示すチュートリアルです。
 
 ### <a name="creating-the-version-code-for-the-apk"></a>APK のバージョン コードの作成
 
@@ -157,7 +157,7 @@ rake タスクが完了すると、ファイル `xamarin.helloworld.apk` を含�
 [![xamarin.helloworld.apk を含むプラットフォーム固有のフォルダーの場所](abi-specific-apks-images/image01.png)](abi-specific-apks-images/image01.png#lightbox)
 
 > [!NOTE]
-> このガイドで概説されているビルド プロセスは、さまざまなビルド システムのいずれかに実装できます。 事前に記述した例はありませんが、これは [Powershell](https://technet.microsoft.com/scriptcenter/powershell.aspx) / [psake](https://github.com/psake/psake) または [Fake](http://fsharp.github.io/FAKE/) でも可能です。
+> このガイドで概説されているビルド プロセスは、さまざまなビルド システムのいずれかに実装できます。 事前に記述した例はありませんが、これは [Powershell](https://technet.microsoft.com/scriptcenter/powershell.aspx) / [psake](https://github.com/psake/psake) または [Fake](https://fsharp.github.io/FAKE/) でも可能です。
 
 ## <a name="summary"></a>まとめ
 
