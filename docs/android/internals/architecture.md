@@ -3,28 +3,28 @@ title: アーキテクチャ
 ms.prod: xamarin
 ms.assetid: 7DC22A08-808A-DC0C-B331-2794DD1F9229
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/25/2018
-ms.openlocfilehash: 06817c563f12425e5c339cb8f2560f37f9ace0b5
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: fe0903eca5c907fc104728ca0ad7c676a45a5180
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70756689"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73027908"
 ---
 # <a name="architecture"></a>アーキテクチャ
 
 Xamarin Android アプリケーションは、Mono 実行環境内で実行されます。
-この実行環境は、Android Runtime (アート) 仮想マシンとサイドバイサイドで実行されます。 両方のランタイム環境では、Linux カーネル上で実行し、開発者が基になるシステムにアクセスできるユーザー コードにさまざまな API を公開します。 Mono ランタイムは C 言語で記述されています。
+この実行環境は、Android Runtime (アート) 仮想マシンとサイドバイサイドで実行されます。 どちらのランタイム環境も、Linux カーネル上で実行され、開発者が基になるシステムにアクセスできるようにするためのさまざまな Api をユーザーコードに公開します。 Mono ランタイムは C 言語で記述されています。
 
 [System](xref:System)、 [System.IO](xref:System.IO)、 [System.Net](xref:System.Net) 、およびその他の .net クラスライブラリを使用して、基盤となる Linux オペレーティングシステムの機能にアクセスできます。
 
-Android では、オーディオ、画像、OpenGL、およびテレフォニーのようなシステム機能のほとんどはネイティブ アプリケーションを直接使用できませんのいずれかに存在するランタイムの Android Java API を介してのみ公開されている、 [Java](xref:Java.Lang)*。名前空間または[Android](xref:Android)。 * 名前空間。 アーキテクチャは、このような約です。
+Android では、オーディオ、グラフィックス、OpenGL、テレフォニーなどのほとんどのシステム機能をネイティブアプリケーションで直接使用することはできません。これらは、 [java](xref:Java.Lang). * 名前空間または android のいずれかに存在する [Android](xref:Android) ランタイム Java api を介してのみ公開されます。 . * 名前空間。 アーキテクチャは次のようになります。
 
-[![カーネルと .NET/Java + バインドの下にある Mono と ART の図](architecture-images/architecture1.png)](architecture-images/architecture1.png#lightbox)
+[カーネルと .NET/Java + バインドの下にある Mono と ART の![図](architecture-images/architecture1.png)](architecture-images/architecture1.png#lightbox)
 
-Xamarin.Android 開発者アクセス (の低レベルのアクセス許可) がわかっている .NET API を呼び出すかによって公開されている Java API へのブリッジを提供する Android 名前空間で公開されているクラスを使用して、オペレーティング システムのさまざまな機能Android ランタイム。
+Xamarin Android 開発者は、ユーザーが認識している .NET Api を呼び出すか (低レベルのアクセスの場合)、または Android 名前空間で公開されているクラスを使用して、オペレーティングシステムのさまざまな機能にアクセスします。この Api は、Android ランタイム。
 
 Android クラスが Android ランタイムクラスと通信する方法の詳細については、 [API の設計](~/android/internals/api-design.md)に関するドキュメントを参照してください。
 
@@ -56,7 +56,7 @@ Xamarin android アプリケーションには、android からマネージコ�
 
 グローバル参照を明示的に解放するには、マネージ呼び出し可能ラッパーで[()](xref:Java.Lang.Object.Dispose)を呼び出します。 これにより、Java インスタンスとマネージインスタンスの間のマッピングが削除され、Java インスタンスを収集できるようになります。 マネージコードから Java インスタンスに再度アクセスする場合は、新しいマネージ呼び出し可能ラッパーが作成されます。
 
-インスタンスが他のスレッドからの参照に影響を与えるように、インスタンスが誤ってスレッド間で共有される可能性がある場合は、マネージ呼び出し可能ラッパーを破棄するときに注意が必要です。 安全性を最大限に確保`Dispose()`するために、*または*メソッド`new`から割り当てられたインスタンスのうち *、常に*新しいインスタンスを割り当てていて、キャッシュされていないインスタンスの場合、レッド.
+インスタンスが他のスレッドからの参照に影響を与えるように、インスタンスが誤ってスレッド間で共有される可能性がある場合は、マネージ呼び出し可能ラッパーを破棄するときに注意が必要です。 安全性を最大限に確保するために、`new` 経由で割り当てられたインスタンスの `Dispose()`、*または*、常に新しいインスタンスを割り当て、キャッシュされたインスタンスではなく、スレッド間で誤ってインスタンスを共有する可能性があることが*わかっ*ているメソッドからインスタンスが割り当てられます。
 
 ## <a name="managed-callable-wrapper-subclasses"></a>マネージド呼び出し可能ラッパーサブクラス
 
@@ -92,11 +92,11 @@ Xamarin android アプリケーションには、android からマネージコ�
 
 4. *TextView*コンストラクターでは、 *getDefaultMovementMethod ()* を呼び出しています。
 
-5. *getDefaultMovementMethod ()* は*n_getDefaultMovementMethod (* ) を呼び出し、n_getDefaultMovementMethod () を呼び出して () を呼び出します。これにより、 *(* ) が[呼び出されます。&lt;TextView&gt; (ハンドル、j/handle、所有権の移動)](xref:Java.Lang.Object.GetObject*) 。
+5. *getDefaultMovementMethod ()* は*n_getDefaultMovementMethod (* ) を呼び出し、n_getDefaultMovementMethod () を呼び出して () を呼び出します。これにより、 *(* ) @no_ が呼び出されます。 [_t_4_ TextView&gt; (ハンドル、j)](xref:Java.Lang.Object.GetObject*) 。
 
-6. *Java.Lang.Object.GetObject&lt;TextView&gt;()* checks to see if there is already a corresponding C# instance for *handle* . 存在する場合は、それが返されます。 このシナリオでは、オブジェクトがないため、 *GetObject&lt;t&gt;()* で作成する必要があります。
+6. *&lt;TextView&gt;()* は、対応するC#インスタンスが既に*ハンドル*用に存在するかどうかを確認します。 存在する場合は、それが返されます。 このシナリオでは、 *&lt;t&gt;()* ではなく、オブジェクトを作成する必要があります。
 
-7. *GetObject&lt;T&gt;()* は*logtextbox (IntPtr, JniHandleOwneship)* コンストラクターを検索し、それを呼び出して、*ハンドル*と作成されたインスタンスの間のマッピングを作成し、作成されたインスタンスを返します。
+7. *GetObject&lt;t&gt;()* は、 *Logtextbox (IntPtr, JniHandleOwneship)* コンストラクターを検索し、それを呼び出し、*ハンドル*と作成されたインスタンスの間のマッピングを作成し、作成されたインスタンスを返します。
 
 8. *N_GetDefaultMovementMethod ()* は、 *Logtextbox. DefaultMovementMethod*プロパティ getter を呼び出します。
 
@@ -165,8 +165,8 @@ Java オブジェクトが使用されなくなったことがわかっている
 
 ## <a name="application-startup"></a>アプリケーションの起動
 
-アクティビティやサービスなどが起動されると、Android はまず、アクティビティやサービスなどをホストするために実行されているプロセスがあるかどうかを確認します。このようなプロセスが存在しない場合は、新しいプロセスが作成され、 [androidmanifest .xml](https://developer.android.com/guide/topics/manifest/manifest-intro.html)が読み取られ、 [/manifest/application/@android:name](https://developer.android.com/guide/topics/manifest/application-element.html#nm)属性に指定された型が読み込まれてインスタンス化されます。 次に、 [/manifest/application/provider/@android:name](https://developer.android.com/guide/topics/manifest/provider-element.html#nm)属性値によって指定されたすべての型がインスタンス化され、その[contentprovider. attachinfo% 28)](xref:Android.Content.ContentProvider.AttachInfo*)メソッドが呼び出されます。 Xamarin Android は、mono を追加することによってこれにフックします。 *ビルド処理中の MonoRuntimeProvider* *Contentprovider*から AndroidManifest .xml。 *Mono。MonoRuntimeProvider. attachInfo ()* メソッドは、Mono ランタイムをプロセスに読み込みます。
+アクティビティやサービスなどが起動されると、Android はまず、アクティビティやサービスなどをホストするために実行されているプロセスがあるかどうかを確認します。このようなプロセスが存在しない場合は、新しいプロセスが作成され、 [Androidmanifest .xml](https://developer.android.com/guide/topics/manifest/manifest-intro.html)が読み取られ、 [/manifest/application/@android:name](https://developer.android.com/guide/topics/manifest/application-element.html#nm)属性で指定された型が読み込まれてインスタンス化されます。 次に、 [/manifest/application/provider/@android:name](https://developer.android.com/guide/topics/manifest/provider-element.html#nm)属性値によって指定されたすべての型がインスタンス化され、その[Contentprovider. attachinfo %28)](xref:Android.Content.ContentProvider.AttachInfo*)メソッドが呼び出されます。 Xamarin Android は、mono を追加することによってこれにフックします。 *ビルド処理中の MonoRuntimeProvider* *Contentprovider*から AndroidManifest .xml。 *Mono。MonoRuntimeProvider. attachInfo ()* メソッドは、Mono ランタイムをプロセスに読み込みます。
 この時点より前に Mono を使用しようとすると、失敗します。 (*注*:これは、アプリケーションインスタンスが Mono を初期化する前に作成されるため、 [Android. App. アプリケーション](xref:Android.App.Application)では、 [(IntPtr, jの所有権) コンストラクター](https://github.com/xamarin/monodroid-samples/blob/a9e8ef23/SanityTests/Hello.cs#L103)を提供する必要があるためです。
 
-プロセスの初期化が完了する`AndroidManifest.xml`と、は、起動するアクティビティ/サービスなどのクラス名を検索するように求められます。 たとえば、 [ /manifest/application/activity/@android:name属性](https://developer.android.com/guide/topics/manifest/activity-element.html#nm)は、読み込むアクティビティの名前を決定するために使用されます。 アクティビティの場合、この型は[android. app. Activity](xref:Android.App.Activity)を継承する必要があります。
+プロセスの初期化が完了すると、`AndroidManifest.xml` は、起動するアクティビティ/サービスなどのクラス名を検索します。 たとえば、 [/manifest/application/activity/@android:name 属性](https://developer.android.com/guide/topics/manifest/activity-element.html#nm)は、読み込むアクティビティの名前を決定するために使用されます。 アクティビティの場合、この型は[android. app. Activity](xref:Android.App.Activity)を継承する必要があります。
 指定された型は、[クラス. forName ()](https://developer.android.com/reference/java/lang/Class.html#forName(java.lang.String))によって読み込まれます。この場合、型は Java 型である必要があります。したがって、Android 呼び出し可能ラッパーがインスタンス化されます。 Android 呼び出し可能ラッパーインスタンスを作成すると、対応するC#型のインスタンスの作成がトリガーされます。 その後、Android は[onCreate (バンドル)](https://developer.android.com/reference/android/app/Activity.html#onCreate(android.os.Bundle))を起動します。これにより、対応する[onCreate (バンドル)](xref:Android.App.Activity.OnCreate*)が呼び出され、競合が発生しなくなります。
