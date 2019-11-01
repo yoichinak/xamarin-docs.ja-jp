@@ -3,23 +3,23 @@ title: IOS と macOS のネイティブ型
 description: このドキュメントでは、Xamarin の Unified API が、コンパイルターゲットアーキテクチャに基づき、必要に応じて .NET 型を32ビットおよび64ビットのネイティブ型にマップする方法について説明します。
 ms.prod: xamarin
 ms.assetid: B5237770-0FC3-4B01-9E22-766B35C9A952
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 01/25/2016
-ms.openlocfilehash: f370bc816fa72f94af8dae32ac295448f858dbb8
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 1168dfe0f2120e87c57b46011caba5e7a8a0c020
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290791"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73015482"
 ---
 # <a name="native-types-for-ios-and-macos"></a>IOS と macOS のネイティブ型
 
-Mac および iOS API は、アーキテクチャに固有のデータ型を使用します。32 ビット プラットフォームでは常に 32 ビットであり、64 ビット プラットフォームでは常に 64 ビットとなります。
+Mac および iOS Api では、アーキテクチャ固有のデータ型を使用します。これは、32ビットプラットフォームでは常に32ビット、64ビットプラットフォームでは64ビットです。
 
-たとえば、Objective-C は`NSInteger`データ型を 32 ビット システムでは`int32_t`に、64 ビット システムでは`int64_t`にマップします。
+たとえば、`NSInteger` データ型は、32ビットシステムでは `int32_t`、64ビットシステムでは `int64_t` にマップされます。
 
-この動作を適合させるために、統合 API では、以前に使用`int`されて`System.nint`いた (.net では`System.Int32`常にであると定義されている) を新しいデータ型に置き換えます。 "N" は "ネイティブ" の意味であると考えることができます。したがって、プラットフォームのネイティブ整数型です。
+この動作に対応するために、統合 API では、以前の `int` (.NET では、常に `System.Int32`として定義されている) を新しいデータ型である `System.nint`に置き換えます。 "N" は "ネイティブ" の意味であると考えることができます。したがって、プラットフォームのネイティブ整数型です。
 
 これらの新しいデータ型では、コンパイルフラグに応じて、同じソースコードが32ビットおよび64ビットアーキテクチャ用にコンパイルされます。
 
@@ -45,19 +45,19 @@ Mac および iOS API は、アーキテクチャに固有のデータ型を使�
 
 明示的な変換演算子は、データ損失の可能性がある場合に提供されます (64 ビット値は32または32のストレージの場所に格納されています)。
 
-`int`、 `uint` 、 `float`およびは`nint`すべてに`nfloat`暗黙的に変換可能であり、32ビットは常に32または64ビットに収まります。`nuint`
+`int`、`uint`、および `float` は、すべて `nint`、`nuint`、および `nfloat` に暗黙的に変換可能であり、32ビットは常に32または64ビットに収まります。
 
-`nint`、 `nuint` 、 `nfloat`および`long`はすべてに`double`暗黙的に変換可能であり、32または64ビット値は常に64ビットストレージに収まります。`ulong`
+`nint`、`nuint` および `nfloat` はすべて `long`に暗黙的に変換でき、`ulong` は32または64ビット値は常に64ビットストレージに収まります。
 
-ネイティブ型は64ビットの`nint`ストレージを保持し`uint`て`float`いる可能性があるため、 `nuint`と`nfloat` `int`の間の明示的な変換を使用する必要があります。
+ネイティブ型で64ビットのストレージが保持される可能性があるため、`nint`、`nuint`、および `nfloat` からの明示的な変換を `int`、`uint`、および `float` に使用する必要があります。
 
-ネイティブ型で`long`は、 `ulong` 32 ビットのストレージしか保持`nfloat`できない場合があるため、と`double` `nint` `nuint`の間の明示的な変換を使用する必要があります。
+ネイティブ型は32ビットのストレージしか保持できないため、`long`、`ulong`、および `double` からの明示的な変換を `nint`、`nuint`、および `nfloat` に使用する必要があります。
 
 ## <a name="coregraphics-types"></a>CoreGraphics 型
 
-CoreGraphics で使用されるポイント、サイズ、および四角形のデータ型では、実行されているデバイスに応じて32または64ビットが使用されます。  最初に iOS と Mac の Api をバインドしたときに、ホストプラットフォームのサイズ (で`System.Drawing`はデータ型) に一致するようになった既存のデータ構造を使用しました。
+CoreGraphics で使用されるポイント、サイズ、および四角形のデータ型では、実行されているデバイスに応じて32または64ビットが使用されます。  最初に iOS と Mac の Api をバインドしたときに、ホストプラットフォームのサイズ (`System.Drawing`のデータ型) に一致するようになった既存のデータ構造を使用しました。
 
-**統合**に移行する場合は、次の表に示す`System.Drawing`ように`CoreGraphics` 、のインスタンスを対応するインスタンスに置き換える必要があります。
+**統合**に移行する場合は、次の表に示すように、`System.Drawing` のインスタンスを対応する `CoreGraphics` に置き換える必要があります。
 
 |System.string の古い型|新しいデータ型 CoreGraphics|説明|
 |--- |--- |--- |
@@ -65,7 +65,7 @@ CoreGraphics で使用されるポイント、サイズ、および四角形の�
 |`SizeF`|`CGSize`|浮動小数点サイズ情報を保持します (幅、高さ)|
 |`PointF`|`CGPoint`|浮動小数点の情報 (X, Y) を保持します。|
 
-新しいデータ型は、データ構造体の要素を格納するために使用されますが`System.nfloat`、新しいデータ型はを使用します。
+新しいデータ型は、データ構造の要素を格納するために float で使用されますが、新しいデータ型は `System.nfloat`を使用します。
 
 ## <a name="related-links"></a>関連リンク
 

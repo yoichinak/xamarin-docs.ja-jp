@@ -4,23 +4,23 @@ description: このドキュメントでは、Xamarin. iOS でラベルを使用
 ms.prod: xamarin
 ms.assetid: 54DA1221-13E4-4D45-B263-5F22A0AC7B53
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/11/2017
-ms.openlocfilehash: 275acd02e6cece0842344d8e5833c23af1014a0f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 04d33d986d76daf29fc7392206c62f77d34dd969
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768948"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022020"
 ---
 # <a name="labels-in-xamarinios"></a>Xamarin. iOS のラベル
 
-`UILabel`コントロールは、単一行および複数行の読み取り専用のテキストを表示するために使用されます。
+`UILabel` コントロールは、単一行および複数行の読み取り専用のテキストを表示するために使用されます。
 
 ## <a name="implementing-a-label"></a>ラベルの実装
 
-新しいラベルは、をインスタンス化する[`UILabel`](xref:UIKit.UILabel)ことによって作成されます。
+新しいラベルは、 [`UILabel`](xref:UIKit.UILabel)をインスタンス化することによって作成されます。
 
 ```csharp
 UILabel label = new UILabel();
@@ -74,9 +74,9 @@ label.AttributedText = new NSAttributedString(
             );
 ```
 
-を使用したテキストのスタイル`NSAttributedString`設定の詳細については、「[スタイルテキスト](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/text_field/style_text)レシピ」を参照してください。
+`NSAttributedString` を使用したテキストのスタイル設定の詳細については、「[スタイルテキスト](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/text_field/style_text)」レシピを参照してください。
 
-既定では、ラベル`Enabled`はが true に設定されていますが、特定のコントロールが無効になっていることをユーザーに示すヒントをユーザーに与えることができます。
+既定では、ラベルには `Enabled` が true に設定されていますが、特定のコントロールが無効になっていることをユーザーにヒントとして設定することもできます。
 
 ```csharp
 label.Enabled = false;

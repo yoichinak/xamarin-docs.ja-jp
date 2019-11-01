@@ -4,15 +4,15 @@ description: IOS 8 では、Apple は楽しみな気持ちと満足させるの�
 ms.prod: xamarin
 ms.assetid: 33AD66C0-3743-49FE-9DCE-88ED3A16BA63
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/14/2017
-ms.openlocfilehash: 713e433f852f3bafc13b3ac32074c574d12ef7f1
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 2da018b3595850582331280909fa327cee4ff6e0
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70752011"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031805"
 ---
 # <a name="introduction-to-ios-8"></a>iOS 8 の概要
 
@@ -26,7 +26,7 @@ IOS 7 がユーザーのために使用されていた場合、iOS 8 では、�
 
 IOS 8 では非推奨とされているいくつかの Api もあります。これについては、このドキュメントの最後で説明します。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>［要件］
 
 Visual Studio for Mac で iOS 8 アプリを作成するには、次のものが必要です。
 
@@ -48,9 +48,9 @@ IPhone からアプライアンスを制御することは、新しいテクノ�
 
 次の図は、ホームキットのアクセサリの構成の基本階層を示しています。
 
-![](introduction-to-ios8-images/image1.png "この図は、ホームキットのアクセサリの構成の基本階層を示しています。")
+![](introduction-to-ios8-images/image1.png "This diagram shows the basic hierarchy of the configuration of HomeKit accessories")
 
-ホームキットの使用を開始するには、開発者は、プロビジョニングプロファイルに [ホームキット] サービスが選択されていることを確認する必要があります。 Apple では、Xcode 用のホームキットシミュレーターアドインも開発者に提供しています。 これは、 [Apple Developer Center](https://developer.apple.com/downloads/index.action)のの下`Hardware IO Tools for Xcode`にあります。 
+ホームキットの使用を開始するには、開発者は、プロビジョニングプロファイルに [ホームキット] サービスが選択されていることを確認する必要があります。 Apple では、Xcode 用のホームキットシミュレーターアドインも開発者に提供しています。 これは、 [Apple Developer Center](https://developer.apple.com/downloads/index.action)の [`Hardware IO Tools for Xcode`] の下にあります。 
 
 詳細については、「[ホームキット](~/ios/platform/homekit.md)ガイド」を参照してください。
 
@@ -68,9 +68,9 @@ IOS8 を使用すると、開発者は、アプリを使用できるユーザー
 
 アプリ拡張機能を作成するための最初の手順は、正しい拡張ポイントを定義することです。これは、適切な Api の動作と可用性を確保するために重要です。 Visual Studio for Mac でアプリ拡張機能を作成するには、ソリューションに新しいプロジェクトを追加して、既存のアプリケーションに追加します。
 
-**[新しいプロジェクト]** ダイアログで、 **C#**  > 次のスクリーンショットに示すように、 **iOS** > **Unified API** > の**拡張機能**に移動します。
+**[新しいプロジェクト]** ダイアログで、 **C#** 次のスクリーンショットに示すように、 > **IOS** > **Unified API** > **拡張機能**に移動します。
 
-![](introduction-to-ios8-images/image2.png "新しい拡張機能の作成")
+![](introduction-to-ios8-images/image2.png "Creating a new extension")
 
 [新しいプロジェクト] ダイアログには、アプリ拡張機能を作成するための7つの新しいプロジェクトテンプレートが用意されています。次に説明します。 拡張機能の多くは、iOS の他の新しい Api (ドキュメントピッカーなど) に関連しています。
 
@@ -91,7 +91,7 @@ Xamarin でのアプリ拡張機能の使用の詳細については、[アプ�
 
 まず、新しいキーチェーン Access Control リスト (Acl) を使用して、既存のキーチェーンサービスを支援します。 キーチェーンデータは、ユーザーの指紋の認証が成功したときにロックを解除することができます。
 
-次に、LocalAuthentication は、アプリケーションをローカルで認証する2つの方法を提供します。 開発者は`CanEvaluatePolicy` 、を使用して、デバイスがタッチ ID を受け入れることが`EvaluatePolicy`できるかどうかを判断し、次に認証操作を開始する必要があります。
+次に、LocalAuthentication は、アプリケーションをローカルで認証する2つの方法を提供します。 開発者は、`CanEvaluatePolicy` を使用して、デバイスがタッチ ID を受け入れることができるかどうかを判断し、`EvaluatePolicy` 認証操作を開始する必要があります。
 
 Touch ID の詳細と、それを Xamarin. iOS アプリケーションに統合する方法については、TouchID ガイドの[概要](~/ios/platform/touchid.md)に関するページを参照してください。
 
@@ -112,7 +112,7 @@ Touch ID の詳細と、それを Xamarin. iOS アプリケーションに統合
 ## <a name="unified-storyboards"></a>統合ストーリーボード
 iOS 8 には、ユーザーインターフェイスを作成するための、統合されたストーリーボードという新しい簡単な使用機構が含まれています。 1つのストーリーボードを使用してさまざまなハードウェア画面サイズをすべてカバーすることで、高速および応答性の高いビューを、真の "デザイン1、多くの使用" スタイルで作成できます。
 
-IOS8 より前の開発者`UIInterfaceOrientation`は、縦モードと横モードを区別`UIInterfaceIdiom`し、iOS デバイスを区別するために使用されていました。 IOS8 では、iPhone と iPad デバイス用に個別のストーリーボードを作成する必要がなくなりました。向きとデバイスは、*サイズクラス*を使用して決定されます。
+IOS8 より前の開発者は、縦モードと横モードを区別するために `UIInterfaceOrientation` を使用し、iOS デバイスを区別するために `UIInterfaceIdiom` していました。 IOS8 では、iPhone と iPad デバイス用に個別のストーリーボードを作成する必要がなくなりました。向きとデバイスは、*サイズクラス*を使用して決定されます。
 
 すべてのデバイスはサイズクラスによって、垂直軸と水平軸の両方で定義されます。また、iOS 8 のサイズクラスには次の2種類があります。
 
@@ -121,7 +121,7 @@ IOS8 より前の開発者`UIInterfaceOrientation`は、縦モードと横モー
 
 2つの概念が一緒に使用されている場合は、次の図に示すように、異なる向きの両方で使用できるさまざまなサイズを定義する2つの x 2 グリッドが生成されます。
 
-![](introduction-to-ios8-images/image3.png "異なる向きの両方で使用できるさまざまなサイズを定義する 2 x 2 グリッドを表す図")
+![](introduction-to-ios8-images/image3.png "A diagram representing the 2 x 2 grid that defines the different possible sizes that can be used in both the differing orientations")
 
 サイズクラスの詳細については、「[統合ストーリーボードの概要](~/ios/user-interface/storyboards/unified-storyboards.md)」を参照してください。
 
@@ -161,7 +161,7 @@ IOS 8 で加えられたすべての機能強化により、いくつかの Api 
 
 - **[Uisearchdisplaycontroller](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UISearchDisplayController_Class/index.html#//apple_ref/occ/cl/UISearchDisplayController)** – IOS8 の uisearchcontroller に置き換えられました。
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>まとめ
 この記事では、iOS 8 で Apple によって導入された新機能について説明しました。
 
 ## <a name="related-links"></a>関連リンク

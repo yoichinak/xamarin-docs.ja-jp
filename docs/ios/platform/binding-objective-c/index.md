@@ -5,26 +5,26 @@ ms.prod: xamarin
 ms.assetid: EBDC50DC-B44B-4003-AB2B-1EEB868A5E01
 ms.technology: xamarin-ios
 ms.custom: xamu-video
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 24203d8a3a4356fb4de08d132c164d9f2d19a0c9
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 61d1adfc997b34302f1f89f56653af906ca90135
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291801"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022224"
 ---
 # <a name="binding-ios-libraries"></a>IOS ライブラリのバインド
 
 次のリンクを使用して、ターゲット C ライブラリのバインドと Xamarin 用の Cocoアポストロフィのバインドについて学習します。
 
 - [**概要**](~/cross-platform/macios/binding/overview.md)-
-  バインディングのしくみについて説明します。
-- [**バインディングの目的 C ライブラリ**](~/cross-platform/macios/binding/objective-c-libraries.md)-
-  Xamarin プロジェクトで使用する目的の C ライブラリをバインドする方法について説明します。
+  バインドのしくみについて説明します。
+- 「[**目標 c ライブラリのバインド**](~/cross-platform/macios/binding/objective-c-libraries.md)」では、Xamarin プロジェクトで使用する目的の c ライブラリをバインドする方法について -
+  説明します。
 - [**型定義のリファレンスガイド**](~/cross-platform/macios/binding/binding-types-reference.md)-
-  バインディングの生成プロセスを実行するために作成者が使用できるすべての属性について説明します。
+  バインド作成者がバインディング生成プロセスを駆動するために使用できるすべての属性について説明します。
 
 ## <a name="objective-sharpiecross-platformmaciosbindingobjective-sharpieindexmd"></a>[Objective Sharpie](~/cross-platform/macios/binding/objective-sharpie/index.md)
 

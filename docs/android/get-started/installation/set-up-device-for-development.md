@@ -4,15 +4,15 @@ description: この記事では、Android デバイスを Xamarin.Android アプ
 ms.prod: xamarin
 ms.assetid: 9116A3AA-EA00-56AF-AE70-BAEEC045EF11
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/22/2018
-ms.openlocfilehash: a2b69152ab616e74761d9acf6a74d30144fe43b3
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: f5b92bc202cbf9765a63219ad653442152c3eb24
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925057"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73020709"
 ---
 # <a name="set-up-device-for-development"></a>開発用のデバイスの設定
 
@@ -71,7 +71,7 @@ Windows コンピューターが USB で接続された Android デバイスを�
 
 ### <a name="download-the-usb-drivers"></a>USB ドライバーをダウンロードする
 
-Google Nexus デバイス (Galaxy Nexus を除く) では、Google USB ドライバーが必要です。 Galaxy Nexus 用のドライバーは [Samsung によって配布](http://www.samsung.com/us/support/downloads/)されます。
+Google Nexus デバイス (Galaxy Nexus を除く) では、Google USB ドライバーが必要です。 Galaxy Nexus 用のドライバーは [Samsung によって配布](https://www.samsung.com/us/support/downloads/)されます。
 他のすべての Android デバイスでは、[それぞれの製造元の USB ドライバー](https://developer.android.com/tools/extras/oem-usb.html#Drivers)を使用する必要があります。
 
 Android SDK マネージャーを起動し、以下のスクリーン ショットに示されているように、**Extras** フォルダーを展開して、**Google USB ドライバー** パッケージをインストールします。
@@ -183,7 +183,7 @@ adb devices
 
 - [Android Debug Bridge](https://developer.android.com/tools/help/adb.html)
 - [ハードウェア デバイスの使用](https://developer.android.com/tools/device.html)
-- [Samsung ドライバーのダウンロード](http://www.samsung.com/us/support/downloads/)
+- [Samsung ドライバーのダウンロード](https://www.samsung.com/us/support/downloads/)
 - [OEM USB ドライバー](https://developer.android.com/tools/extras/oem-usb.html#Drivers)
 - [Google USB ドライバー](https://developer.android.com/sdk/win-usb.html)
-- [XDA 開発者: Windows 8 - ADB/高速ブート ドライバーの問題が解決されました](http://forum.xda-developers.com/showthread.php?t=1583801)
+- [XDA 開発者: Windows 8 - ADB/高速ブート ドライバーの問題が解決されました](https://forum.xda-developers.com/showthread.php?t=1583801)

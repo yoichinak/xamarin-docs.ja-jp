@@ -3,26 +3,26 @@ title: Cocoアポストロフィ Ds を使用した実際の例
 description: このドキュメントでは、目標マジックペンを使用してC# 、Cocoアポストロフィ d からバインド定義を自動的に生成する方法を示します。
 ms.prod: xamarin
 ms.assetid: 233B781D-5841-4250-9F63-0585231D2112
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/28/2018
-ms.openlocfilehash: 0f730b1c0a0deacdb84c198cfe4af47308a268cc
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: cf117880eb46b028d709a44aa453e111b007b441
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290029"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016262"
 ---
 # <a name="real-world-example-using-cocoapods"></a>Cocoアポストロフィ Ds を使用した実際の例
 
 > [!NOTE]
 > この例では、 [Afnetworking Cocoアポストロフィ d](https://cocoapods.org/pods/AFNetworking)を使用します。
 
-バージョン3.0 の新機能である目標マジックペンは、cocoアポストロフィのバインドをサポートして`sharpie pod`います。また、コマンド () を使用して、開発、構成、および開発を非常に簡単に行うことができます。 この機能を使用する前に、一般的に[Cocoアポストロフィに](https://cocoapods.org)ついて理解しておく必要があります。
+バージョン3.0 の新機能である目標マジックペンは、Cocoアポストロフィのバインドをサポートしています。また、コマンド (`sharpie pod`) を使用して、開発、構成、およびビルドを非常に簡単に行うことができます。 この機能を使用する前に、一般的に[Cocoアポストロフィに](https://cocoapods.org)ついて理解しておく必要があります。
 
 ## <a name="creating-a-binding-for-a-cocoapod"></a>Cocoアポストロフィ d のバインドの作成
 
-この`sharpie pod`コマンドには、1つのグローバルオプションと2つのサブコマンドがあります。
+`sharpie pod` コマンドには、1つのグローバルオプションと2つのサブコマンドがあります。
 
 ```bash
 $ sharpie pod -help
@@ -37,7 +37,7 @@ Available Commands:
   bind         Bind an existing Xamarin C# CocoaPods project
 ```
 
-サブ`init`コマンドには、次のような役に立つヘルプもあります。
+`init` サブコマンドには、いくつかの役に立つヘルプもあります。
 
 ```bash
 $ sharpie pod init -help
@@ -48,7 +48,7 @@ Init Options:
                    it even if one already exists
 ```
 
-には、複数の Cocoアポストロフィ d 名とサブ仕様名`init`を指定できます。
+`init`には、複数の Cocoアポストロフィ d 名とサブ仕様名を指定できます。
 
 ```bash
 $ sharpie pod init ios AFNetworking
@@ -87,10 +87,10 @@ Binding...
 Done.
 ```
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 **ApiDefinitions.cs**ファイルと**StructsAndEnums.cs**ファイルを生成したら、次のドキュメントを参照して、アプリで使用するアセンブリを生成します。
 
 - [バインディングの目的-C の概要](~/cross-platform/macios/binding/overview.md)
 - [バインディングの目的 C ライブラリ](~/cross-platform/macios/binding/objective-c-libraries.md)
-- [チュートリアル: IOS の目的 C ライブラリのバインド](~/ios/platform/binding-objective-c/walkthrough.md)
+- [チュートリアル: iOS の目的 C ライブラリのバインド](~/ios/platform/binding-objective-c/walkthrough.md)

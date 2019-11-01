@@ -4,15 +4,15 @@ description: この記事では、iOS 10 で導入されたユーザー通知フ
 ms.prod: xamarin
 ms.assetid: 4E0C60AE-6F54-4098-8FA0-AADF9AC86805
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/03/2018
-ms.openlocfilehash: cd6458b7d27a50744839fff57b4031943193d7f7
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.openlocfilehash: 75ee2c4df9c7f54fa0200272ebc1e9682622ab31
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71250109"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031449"
 ---
 # <a name="advanced-user-notifications-in-xamarinios"></a>Xamarin. iOS の高度なユーザー通知
 
@@ -65,7 +65,7 @@ IOS 10 の新機能であるユーザー通知 UI API を使用すると、Xamar
 
 ただし、小さなイメージの送信にはサイズが関係しているため、リモート通知ペイロードへのアタッチは実用的ではなくなります。 この状況に対処するために、開発者は iOS 10 の新しいサービス拡張機能を使用して、別のソース (CloudKit データストアなど) からイメージをダウンロードし、ユーザーに表示する前に通知のコンテンツに添付できます。
 
-リモート通知をサービス拡張によって変更するには、そのペイロードを変更可能としてマークする必要があります。 次に例を示します。
+リモート通知をサービス拡張によって変更するには、そのペイロードを変更可能としてマークする必要があります。 (例:
 
 ```csharp
 {
@@ -79,9 +79,9 @@ IOS 10 の新機能であるユーザー通知 UI API を使用すると、Xamar
 
 プロセスの概要については、次を参照してください。
 
-[![](advanced-user-notifications-images/extension02.png "メディア添付ファイルの追加プロセス")](advanced-user-notifications-images/extension02.png#lightbox)
+[![](advanced-user-notifications-images/extension02.png "Adding Media Attachments process")](advanced-user-notifications-images/extension02.png#lightbox)
 
-リモート通知がデバイスに (APNs 経由で) 配信されると、サービス拡張は、必要な方法 ( `NSURLSession`など) を使用して必要なイメージをダウンロードし、イメージを受信した後で、通知の内容を変更して表示することができます。これをユーザーに対して行います。
+リモート通知がデバイスに (APNs 経由で) 配信されると、サービス拡張は、必要な方法 (`NSURLSession`など) を使用して必要なイメージをダウンロードし、イメージを受信した後で、通知の内容を変更して表示することができます。ユーザー。
 
 このプロセスがコードで処理される方法の例を次に示します。
 
@@ -134,11 +134,11 @@ namespace MonkeyNotification
 }
 ```
 
-APNs から通知を受信すると、イメージのカスタムアドレスがコンテンツから読み取られ、ファイルがサーバーからダウンロードされます。 次に`UNNotificationAttachement` 、一意の ID とイメージのローカルの場所 ( `NSUrl`) を使用して、が作成されます。 通知コンテンツの変更可能なコピーが作成され、メディア添付ファイルが追加されます。 最後に、を呼び出し`contentHandler`て、通知をユーザーに表示します。
+APNs から通知を受信すると、イメージのカスタムアドレスがコンテンツから読み取られ、ファイルがサーバーからダウンロードされます。 次に、一意の ID とイメージのローカルの場所 (`NSUrl`) を使用して `UNNotificationAttachement` が作成されます。 通知コンテンツの変更可能なコピーが作成され、メディア添付ファイルが追加されます。 最後に、`contentHandler`を呼び出すことによって、通知がユーザーに表示されます。
 
 通知に添付ファイルが追加されると、システムはファイルの移動と管理を引き継ぎます。
 
-上に示したリモート通知に加えて、メディアの添付ファイルはローカル通知からもサポート`UNNotificationAttachement`されます。ここでは、が作成され、その内容と共に通知に添付されます。
+上に示したリモート通知に加えて、メディアの添付ファイルはローカル通知からもサポートされます。ここでは、`UNNotificationAttachement` が作成され、その内容と共に通知に添付されます。
 
 IOS 10 の通知では、イメージ (静的および Gif)、オーディオまたはビデオ、およびシステムのメディア添付ファイルがサポートされており、ユーザーに通知が表示されるときに、これらの種類の添付ファイルごとに正しいカスタム UI が表示されます。
 
@@ -155,7 +155,7 @@ IOS 10 の通知では、イメージ (静的および Gif)、オーディオま
 
 カスタム UI を使用したユーザー通知をユーザーに提示すると、次の要素が表示されます。
 
-[![](advanced-user-notifications-images/customui01.png "カスタム UI 要素を使用したユーザー通知")](advanced-user-notifications-images/customui01.png#lightbox)
+[![](advanced-user-notifications-images/customui01.png "A User Notification with a Custom UI elements")](advanced-user-notifications-images/customui01.png#lightbox)
 
 ユーザーがカスタムアクション (通知の下に表示される) と対話する場合は、ユーザーインターフェイスを更新して、特定のアクションを呼び出したときの動作をユーザーにフィードバックすることができます。
 
@@ -168,16 +168,16 @@ IOS 10 の通知では、イメージ (静的および Gif)、オーディオま
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. Visual Studio for Mac でアプリのソリューションを開きます。
-2. **Solution Pad**でソリューション名を右クリックし、[**追加** > ] **[新しいプロジェクト]** の順に選択します。
-3. **IOS**拡張機能の > 通知コンテンツ拡張機能を選択し、[次へ] ボタンをクリックします。 >  
+2. **Solution Pad**でソリューション名を右クリックし、 **[追加]**  >  **[新しいプロジェクトの追加]** の順に選択します。
+3. [ **IOS** > **拡張機能** > **通知コンテンツ拡張機能**] を選択し、 **[次へ]** ボタンをクリックします。 
 
-    [![](advanced-user-notifications-images/notify01.png "通知コンテンツの拡張機能の選択")](advanced-user-notifications-images/notify01.png#lightbox)
+    [![](advanced-user-notifications-images/notify01.png "Select Notification Content Extensions")](advanced-user-notifications-images/notify01.png#lightbox)
 4. 拡張機能の**名前**を入力し、 **[次へ]** ボタンをクリックします。 
 
-    [![](advanced-user-notifications-images/notify02.png "拡張機能の名前を入力してください")](advanced-user-notifications-images/notify02.png#lightbox)
+    [![](advanced-user-notifications-images/notify02.png "Enter a Name for the extension")](advanced-user-notifications-images/notify02.png#lightbox)
 5. 必要に応じて**プロジェクト名**または**ソリューション名**を調整し、 **[作成]** ボタンをクリックします。 
 
-    [![](advanced-user-notifications-images/notify03.png "プロジェクト名またはソリューション名の調整")](advanced-user-notifications-images/notify03.png#lightbox)
+    [![](advanced-user-notifications-images/notify03.png "Adjust the Project Name and/or Solution Name")](advanced-user-notifications-images/notify03.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -185,7 +185,7 @@ IOS 10 の通知では、イメージ (静的および Gif)、オーディオま
 2. **ソリューションエクスプローラー**でソリューション名を右クリックし、 **[> 新しいプロジェクトの追加]** を選択します。
 3. **[Visual C# > IOS Extensions > Notification Content Extension]** を選択します。
 
-    [![](advanced-user-notifications-images/notify01.w157-sml.png "通知コンテンツの拡張機能の選択")](advanced-user-notifications-images/notify01.w157.png#lightbox)
+    [![](advanced-user-notifications-images/notify01.w157-sml.png "Select Notification Content Extensions")](advanced-user-notifications-images/notify01.w157.png#lightbox)
 4. 拡張機能の**名前**を入力し、 **[OK]** をクリックします。
 
 -----
@@ -196,7 +196,7 @@ IOS 10 の通知では、イメージ (静的および Gif)、オーディオま
 2. `MainInterface.storyboard`-開発者は、iOS デザイナーで通知コンテンツ拡張機能の表示可能な UI をレイアウトします。
 3. `Info.plist`-通知コンテンツ拡張機能の構成を制御します。
 
-既定`NotificationViewController.cs`のファイルは次のようになります。
+既定の `NotificationViewController.cs` ファイルは次のようになります。
 
 ```csharp
 using System;
@@ -240,7 +240,7 @@ namespace MonkeyChatNotifyExtension
 }
 ```
 
-通知がユーザーによって拡張されると、 `UNNotification`メソッドが呼び出されます。これにより、通知コンテンツの拡張機能がのコンテンツを使用してカスタムUIにデータを入力できるようになります。`DidReceiveNotification` 上の例では、ラベルがビューに追加され、という名前`label`のコードに公開され、通知の本文を表示するために使用されます。
+`DidReceiveNotification` メソッドは、通知がユーザーによって拡張されるときに呼び出されます。これにより、Notification Content 拡張機能によって、`UNNotification`の内容をカスタム UI に設定できるようになります。 上の例では、ラベルがビューに追加され、`label` という名前のコードに公開され、通知の本文を表示するために使用されます。
 
 ### <a name="setting-the-notification-content-extensions-categories"></a>通知コンテンツ拡張機能のカテゴリの設定
 
@@ -248,59 +248,59 @@ namespace MonkeyChatNotifyExtension
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1. Solution Pad 内の拡張機能の`Info.plist`ファイルをダブルクリックして、編集用に開きます。
+1. **Solution Pad**内の拡張機能の `Info.plist` ファイルをダブルクリックして、編集用に開きます。
 2. **ソース**ビューに切り替えます。
-3. キーを`NSExtension`展開します。
-4. 拡張機能`UNNotificationExtensionCategory`が属しているカテゴリの値 (この例では "イベント招待") を**文字列**型としてキーを追加します。 
+3. `NSExtension` キーを展開します。
+4. 拡張機能が属しているカテゴリの値 (この例では "イベント招待") を**文字列**型として `UNNotificationExtensionCategory` キーを追加します。 
 
-    [![](advanced-user-notifications-images/customui02.png "UNNotificationExtensionCategory キーを追加する")](advanced-user-notifications-images/customui02.png#lightbox)
+    [![](advanced-user-notifications-images/customui02.png "Add the UNNotificationExtensionCategory key")](advanced-user-notifications-images/customui02.png#lightbox)
 5. 変更内容を保存します。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. ソリューションエクスプローラー内の拡張機能の`Info.plist`ファイルをダブルクリックして、編集用に開きます。
-2. キーを`NSExtension`展開します。
-3. 拡張機能`UNNotificationExtensionCategory`が属しているカテゴリの値 (この例では "イベント招待") を**文字列**型としてキーを追加します。 
+1. **ソリューションエクスプローラー**内の拡張機能の `Info.plist` ファイルをダブルクリックして、編集用に開きます。
+2. `NSExtension` キーを展開します。
+3. 拡張機能が属しているカテゴリの値 (この例では "イベント招待") を**文字列**型として `UNNotificationExtensionCategory` キーを追加します。 
 
-    [![](advanced-user-notifications-images/customui02w.png "UNNotificationExtensionCategory キーを追加する")](advanced-user-notifications-images/customui02w.png#lightbox)
+    [![](advanced-user-notifications-images/customui02w.png "Add the UNNotificationExtensionCategory key")](advanced-user-notifications-images/customui02w.png#lightbox)
 4. 変更内容を保存します。
 
 -----
 
-通知コンテンツ拡張機能の`UNNotificationExtensionCategory`カテゴリ () は、通知アクションの登録に使用されるのと同じカテゴリ値を使用します。 アプリが複数のカテゴリに同じ UI を使用する場合は、を型の`UNNotificationExtensionCategory` **配列**に切り替えて、必要なすべてのカテゴリを指定します。 次に例を示します。
+通知コンテンツ拡張機能のカテゴリ (`UNNotificationExtensionCategory`) は、通知アクションの登録に使用されるのと同じカテゴリ値を使用します。 アプリが複数のカテゴリに同じ UI を使用する場合は、`UNNotificationExtensionCategory` を型の**配列**に切り替えて、必要なすべてのカテゴリを指定します。 (例:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-[![](advanced-user-notifications-images/customui03.png "通知コンテンツの拡張機能のカテゴリ")](advanced-user-notifications-images/customui03.png#lightbox)
+[![](advanced-user-notifications-images/customui03.png "Notification Content Extension Categories")](advanced-user-notifications-images/customui03.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![](advanced-user-notifications-images/customui03w.png "通知コンテンツの拡張機能のカテゴリ")](advanced-user-notifications-images/customui03w.png#lightbox)
+[![](advanced-user-notifications-images/customui03w.png "Notification Content Extension Categories")](advanced-user-notifications-images/customui03w.png#lightbox)
 
 -----
 
 ### <a name="hiding-the-default-notification-content"></a>既定の通知コンテンツを非表示にする
 
-カスタム通知 UI に既定の通知 (タイトル、サブタイトル、本文が通知 UI の下部に自動的に表示される) と同じ内容が表示される場合、この既定の情報は、 `UNNotificationExtensionDefaultContentHidden`拡張機能の`NSExtensionAttributes` `YES`ファイル内の値を持つブール型`Info.plist`のキーに対するキー。
+カスタム通知 UI に既定の通知 (タイトル、サブタイトル、本文が通知 UI の下部に自動的に表示される) と同じ内容が表示される場合、この既定の情報は、を追加することで非表示にすることができ `UNNotificationExtensionDefaultContentHidden`拡張機能の `Info.plist` ファイルで `YES` の値を使用して、`NSExtensionAttributes` キーの**ブール**型としてキーを指定します。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-[![](advanced-user-notifications-images/customui04.png "既定の情報の検索")](advanced-user-notifications-images/customui04.png#lightbox)
+[![](advanced-user-notifications-images/customui04.png "Finding default information")](advanced-user-notifications-images/customui04.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![](advanced-user-notifications-images/customui04w.png "既定の情報の検索")](advanced-user-notifications-images/customui04w.png#lightbox)
+[![](advanced-user-notifications-images/customui04w.png "Finding default information")](advanced-user-notifications-images/customui04w.png#lightbox)
 
 -----
 
 ### <a name="designing-the-custom-ui"></a>カスタム UI のデザイン
 
-Notification Content 拡張機能のカスタムユーザーインターフェイスをデザインするには、 `MainInterface.storyboard`ファイルをダブルクリックして iOS デザイナーで編集できるようにし、目的のインターフェイスを構築するために必要な要素をドラッグします ( `UILabels`や`UIImageViews`など)。
+Notification Content 拡張機能のカスタムユーザーインターフェイスをデザインするには、`MainInterface.storyboard` ファイルをダブルクリックして iOS デザイナーで編集できるように開き、目的のインターフェイスを構築するために必要な要素をドラッグします (`UILabels` や `UIImageViews`など)。
 
 > [!NOTE]
 > IOS 12 の場合、通知コンテンツの拡張機能には、ボタンやテキストフィールドなどの対話型のコントロールを含めることができます。 詳細については、 [iOS 12](~/ios/platform/introduction-to-ios12/notifications/interactive.md)ドキュメントの「対話型通知」を参照してください。
 
-Ui がレイアウトされ、必要なコントロールがコードにC#公開されたら、 `NotificationViewController.cs`を編集するために`DidReceiveNotification`を開き、ユーザーが通知を展開するときに ui を設定するようにメソッドを変更します。 次に例を示します。
+UI がレイアウトされ、必要なコントロールがコードにC#公開されたら、編集のために`NotificationViewController.cs`を開き、ユーザーが通知を展開するときに ui を設定するための`DidReceiveNotification`メソッドを変更します。 (例:
 
 ```csharp
 using System;
@@ -357,19 +357,19 @@ namespace MonkeyChatNotifyExtension
 
 ### <a name="setting-the-content-area-size"></a>コンテンツ領域のサイズを設定する
 
-ユーザーに表示されるコンテンツ領域のサイズを調整するには、次のコードで`PreferredContentSize`は、 `ViewDidLoad`メソッドのプロパティを目的のサイズに設定しています。 このサイズは、iOS デザイナーのビューに制約を適用することによって調整することもできます。開発者は、最適な方法を選択します。
+ユーザーに表示されるコンテンツ領域のサイズを調整するには、次のコードでは、`ViewDidLoad` メソッドの `PreferredContentSize` プロパティを目的のサイズに設定しています。 このサイズは、iOS デザイナーのビューに制約を適用することによって調整することもできます。開発者は、最適な方法を選択します。
 
 通知コンテンツの拡張機能が呼び出される前に通知システムが既に実行されているため、コンテンツ領域は完全にサイズが変更され、ユーザーに表示されると要求されたサイズまでアニメーション化されます。
 
-この影響をなくすには、 `Info.plist`拡張機能のファイルを編集し`UNNotificationExtensionInitialContentSizeRatio` 、 `NSExtensionAttributes`キーのキーに、目的の比率を表す値**を入力し**ます。 次に例を示します。
+この影響をなくすには、拡張機能の `Info.plist` ファイルを編集し、`NSExtensionAttributes` キーの `UNNotificationExtensionInitialContentSizeRatio` キーを、目的の比率を表す値で type **Number**に設定します。 (例:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-[![](advanced-user-notifications-images/customui05.png "UNNotificationExtensionInitialContentSizeRatio キー")](advanced-user-notifications-images/customui05.png#lightbox)
+[![](advanced-user-notifications-images/customui05.png "The UNNotificationExtensionInitialContentSizeRatio key")](advanced-user-notifications-images/customui05.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![](advanced-user-notifications-images/customui05w.png "UNNotificationExtensionInitialContentSizeRatio キー")](advanced-user-notifications-images/customui05w.png#lightbox)
+[![](advanced-user-notifications-images/customui05w.png "The UNNotificationExtensionInitialContentSizeRatio key")](advanced-user-notifications-images/customui05w.png#lightbox)
 
 -----
 
@@ -377,7 +377,7 @@ namespace MonkeyChatNotifyExtension
 
 メディア添付ファイル (上記の「[メディア添付ファイルの追加](#adding-media-attachments)」セクションを参照) は通知ペイロードの一部であるため、既定の通知 UI の場合と同様に、通知コンテンツの拡張機能にアクセスして表示できます。
 
-たとえば、上のカスタム UI に、 `UIImageView`コードにC#公開されたが含まれている場合、次のコードを使用して、メディアの添付ファイルをに読み込むことができます。
+たとえば、上のカスタム UI にコードにC#公開された `UIImageView` が含まれていた場合、次のコードを使用して、メディア添付ファイルをに読み込むことができます。
 
 ```csharp
 using System;
@@ -440,7 +440,7 @@ namespace MonkeyChatNotifyExtension
 }
 ```
 
-メディア添付ファイルはシステムによって管理されているため、アプリのサンドボックスの外部にあります。 拡張機能は、 `StartAccessingSecurityScopedResource`メソッドを呼び出すことによって、ファイルへのアクセスが必要であることをシステムに通知する必要があります。 ファイルを使用して拡張機能を実行する場合は、を`StopAccessingSecurityScopedResource`呼び出して、その接続を解放する必要があります。
+メディア添付ファイルはシステムによって管理されているため、アプリのサンドボックスの外部にあります。 拡張機能は、`StartAccessingSecurityScopedResource` メソッドを呼び出すことによって、ファイルへのアクセスが必要であることをシステムに通知する必要があります。 ファイルを使用して拡張機能を実行する場合は、その接続を解放するために `StopAccessingSecurityScopedResource` を呼び出す必要があります。
 
 ### <a name="adding-custom-actions-to-a-custom-ui"></a>カスタム UI へのカスタムアクションの追加
 
@@ -453,7 +453,7 @@ namespace MonkeyChatNotifyExtension
 
 また、通知コンテンツの拡張機能では、ユーザーがカスタムアクションのいずれかを実行したときに UI を更新することもできます。たとえば、ユーザーが [カスタムアクションを**受け入れる**] ボタンをタップしたときに受理された日付を表示できます。 また、通知コンテンツの拡張機能は、通知を閉じる前にユーザーがアクションの効果を確認できるように、通知 UI の無視を遅らせるようにシステムに指示することができます。
 
-これを行うには、完了ハンドラーを含む`DidReceiveNotification` 2 番目のバージョンのメソッドを実装します。 次に例を示します。
+これを行うには、完了ハンドラーを含む2番目のバージョンの `DidReceiveNotification` メソッドを実装します。 (例:
 
 ```csharp
 using System;
@@ -527,7 +527,7 @@ namespace myApp {
 }
 ```
 
-通知コンテンツ拡張`Server.PostEventResponse`機能の`DidReceiveNotification`メソッドにハンドラーを追加することで、拡張機能はすべてのカスタムアクションを処理*する必要があり*ます。 拡張機能では、 `UNNotificationContentExtensionResponseOption`を変更することによって、それを含むアプリにカスタムアクションを転送することもできます。 次に例を示します。
+Notification Content 拡張機能の `DidReceiveNotification` メソッドに `Server.PostEventResponse` ハンドラーを追加することにより、拡張機能はすべてのカスタムアクションを処理*する必要があり*ます。 また、拡張機能は、`UNNotificationContentExtensionResponseOption`を変更することによって、それを含むアプリにカスタムアクションを転送できます。 (例:
 
 ```csharp
 // Close Notification
@@ -538,7 +538,7 @@ completionHandler (UNNotificationContentExtensionResponseOption.DismissAndForwar
 
 アプリの設計と通知によっては、ユーザーが通知にテキストを入力する必要がある場合があります (メッセージへの返信など)。 通知コンテンツの拡張機能は、標準の通知と同様に、組み込みのテキスト入力アクションにアクセスできます。
 
-次に例を示します。
+(例:
 
 ```csharp
 using System;
@@ -676,7 +676,7 @@ namespace MonkeyChatNotifyExtension
 }
 ```
 
-このコードは、新しいテキスト入力アクションを作成し、拡張機能のカテゴリ ( `MakeExtensionCategory`) メソッドに追加します。 `DidReceive`オーバーライドメソッドでは、次のコードを使用してテキストを入力するユーザーを処理します。
+このコードは、新しいテキスト入力アクションを作成し、拡張機能のカテゴリ (`MakeExtensionCategory`) メソッドに追加します。 `DidReceive` override メソッドでは、次のコードを使用してテキストを入力するユーザーを処理します。
 
 ```csharp
 // Is text input?

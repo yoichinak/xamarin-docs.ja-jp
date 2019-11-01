@@ -3,15 +3,15 @@ title: ビルド プロセス
 ms.prod: xamarin
 ms.assetid: 3BE5EE1E-3FF6-4E95-7C9F-7B443EE3E94C
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/22/2019
-ms.openlocfilehash: 45d57f818fc6d90cb712b9f43ef815d44059ea68
-ms.sourcegitcommit: 13e43f510da37ad55f1c2f5de1913fb0aede6362
+ms.openlocfilehash: 06e40fce69ee6d614bcf27bd563d9452595bd6ab
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71021368"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028144"
 ---
 # <a name="build-process"></a>ビルド プロセス
 
@@ -232,7 +232,7 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
 
   このプロパティは既定で `True` です。
 
-- **AndroidFastDeploymentType** &ndash; `$(EmbedAssembliesIntoApk)` MSBuild プロパティが `False` の場合に、ターゲット デバイスの[高速展開ディレクトリ](#Fast_Deployment)に展開できる型を制御する値の `:` (コロン) 区切りのリスト。 リソースが高速展開される場合、そのリソースが生成された `.apk` に埋め込まれ*ない*ため、展開時間を短縮することができます  (高速展開が増えるほど、`.apk` を再ビルドする頻度が減り、インストール プロセスを高速化できます)。有効な値を次に示します。
+- **AndroidFastDeploymentType** &ndash; `$(EmbedAssembliesIntoApk)` MSBuild プロパティが `False` の場合に、ターゲット デバイスの[高速展開ディレクトリ](#Fast_Deployment)に展開できる型を制御する値の `:` (コロン) 区切りのリスト。 リソースが高速展開される場合、そのリソースが生成された `.apk` に埋め込まれ*ない*ため、展開時間を短縮することができます (高速展開が増えるほど、`.apk` を再ビルドする頻度が減り、インストール プロセスを高速化できます)。有効な値を次に示します。
 
   - `Assemblies`:アプリケーション アセンブリを展開します。
 
@@ -520,13 +520,13 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
 
   - **All**: 利用可能なすべてのエンコードが含まれます。
 
-  - **CJK**: *日本語 (EUC)* \[enc-jp, CP51932\]、*日本語 (Shift-JIS)* \[iso-2022-jp, shift\_jis, CP932\]、*日本語 (JIS)* \[CP50220\]、*簡体字中国語 (GB2312)*\[gb2312, CP936\]、*韓国語 (UHC)* \[ks\_c\_5601-1987, CP949\]、*韓国語 (EUC)* \[euc-kr, CP51949\]、*繁体字中国語 (Big5)* \[big5, CP950\]、および*簡体字中国語 (GB18030)* \[GB18030, CP54936\] などの中国語、日本語、および韓国語のエンコードが含まれます。
+  - **CJK**: *日本語 (EUC)* \[enc-jp, CP51932\]、*日本語 (Shift-JIS)* \[iso-2022-jp, shift\_jis, CP932\]、*日本語 (JIS)* \[CP50220\]、*簡体中国語 (GB2312)* \[gb2312, CP936\]、*韓国語 (UHC)* \[ks\_c\_5601-1987, CP949\]、*韓国語 (EUC)* \[euc-kr, CP51949\]、*繁体中国語 (Big5)* \[big5, CP950\]、および*簡体中国語 (GB18030)* \[GB18030, CP54936\] などの中国語、日本語、および韓国語のエンコードが含まれます。
 
   - **MidEast**: *トルコ語 (Windows)* \[iso-8859-9, CP1254\]、*ヘブライ語 (Windows)* \[windows-1255, CP1255\]、*アラビア語 (Windows)* \[windows-1256, CP1256\]、*アラビア語 (ISO)* \[iso-8859-6, CP28596\]、*ヘブライ語 (ISO)* \[iso-8859-8, CP28598\]、*ラテン 5 (ISO)* \[iso-8859-9, CP28599\]、および*ヘブライ語 (Iso 代替)* \[iso-8859-8, CP38598\] などの中東のエンコードが含まれます。
 
   - **Other**: *キリル語 (Windows)* \[CP1251\]、*バルト語 (Windows)* \[iso-8859-4, CP1257\]、*ベトナム語 (Windows)* \[CP1258\]、*キリル語 (KOI8-R)* \[koi8-r, CP1251\]、*ウクライナ語 (KOI8 U)* \[koi8-u, CP1251\]、*バルト語 (ISO)* \[iso-8859-4, CP1257\]、*キリル語 (ISO)* \[iso-8859-5, CP1251\]、*ISCII デーヴァナーガリー語* \[x-iscii-de, CP57002\]、*ISCII ベンガル語* \[x-iscii-be, CP57003\]、*ISCII タミール語* \[x-iscii-ta, CP57004\]、*ISCII テルグ語* \[x-iscii-te, CP57005\]、*ISCII アッサム語* \[x-iscii-as, CP57006\]、*ISCII オリヤー語* \[x-iscii-or, CP57007\]、*ISCII カンナダ語* \[x-iscii-ka, CP57008\]、*ISCII マラヤーラム語* \[x-iscii-ma, CP57009\]、*ISCII グジャラート語* \[x-iscii-gu, CP57010\]、*ISCII パンジャーブ語* \[x-iscii-pa, CP57011\]、および*タイ語 (Windows)* \[CP874\] などのその他のエンコードが含まれます。
 
-  - **Rare**: *IBM EBCDIC (トルコ語)*\[CP1026\]、*IBM EBCDIC (オープン システム ラテン 1)*\[CP1047\]、*IBM EBCDIC (米国-カナダとユーロ)*\[CP1140\]、*IBM EBCDIC (ドイツとユーロ)*\[CP1141\]、*IBM EBCDIC (デンマーク/ノルウェーとユーロ)*\[CP1142\]、*IBM EBCDIC (フィンランド/スウェーデンとユーロ)*\[CP1143\]、*IBMEBCDIC (イタリアとユーロ)*\[CP1144\]、*IBM EBCDIC (ラテン アメリカ/スペインとユーロ)*\[CP1145\]、*IBM EBCDIC (イギリスとユーロ)*\[CP1146\]、*IBM EBCDIC (フランスとユーロ)*\[CP1147\]、*IBM EBCDIC (インターナショナルとユーロ)*\[CP1148\]、*IBM EBCDIC (アイスランド語とユーロ)*\[CP1149\]、*IBM EBCDIC (ドイツ)*\[CP20273\]、*IBM EBCDIC (デンマーク/ノルウェー)*\[CP20277\]、*IBM EBCDIC (フィンランド/スウェーデン)*\[CP20278\]、*IBM EBCDIC (イタリア)*\[CP20280\]、*IBM EBCDIC (ラテン アメリカ/スペイン)*\[CP20284\]、*IBM EBCDIC (イギリス)*\[CP20285\]、*IBM EBCDIC (日本語カタカナ拡張)*\[CP20290\]、*IBM EBCDIC (フランス)*\[CP20297\]、*IBM EBCDIC (アラビア語)*\[CP20420\]、*IBM EBCDIC (ヘブライ語)*\[CP20424\]、*IBM EBCDIC (アイスランド語)*\[CP20871\]、*IBM EBCDIC (キリル、セルビア語、ブルガリア語)*\[CP21025\]、*IBM EBCDIC (米国-カナダ)*\[CP37\]、*IBM EBCDIC (インターナショナル)*\[CP500\]、*アラビア語 (ASMO 708)*\[CP708\]、*中央ヨーロッパ言語 (DOS)*\[CP852\]*, キリル言語 (DOS)*\[CP855\]、*トルコ語 (DOS)*\[CP857\]*西ヨーロッパ言語 (DOS とユーロ)*\[CP858\]、*ヘブライ語 (DOS)*\[CP862\]、*アラビア語 (DOS)*\[CP864\]、*ロシア語 (DOS)*\[CP866\]、*ギリシャ語 (DOS)*\[CP869\]、*IBM EBCDIC (ラテン 2)*\[CP870\]、*IBM EBCDIC (ギリシャ語)*\[CP875\] などのまれなエンコードが含まれます。
+  - **Rare**: *IBM EBCDIC (トルコ語)* \[CP1026\]、*IBM EBCDIC (オープン システム ラテン 1)* \[CP1047\]、*IBM EBCDIC (米国-カナダとユーロ)* \[CP1140\]、*IBM EBCDIC (ドイツとユーロ)* \[CP1141\]、*IBM EBCDIC (デンマーク/ノルウェーとユーロ)* \[CP1142\]、*IBM EBCDIC (フィンランド/スウェーデンとユーロ)* \[CP1143\]、*IBMEBCDIC (イタリアとユーロ)* \[CP1144\]、*IBM EBCDIC (ラテン アメリカ/スペインとユーロ)* \[CP1145\]、*IBM EBCDIC (イギリスとユーロ)* \[CP1146\]、*IBM EBCDIC (フランスとユーロ)* \[CP1147\]、*IBM EBCDIC (インターナショナルとユーロ)* \[CP1148\]、*IBM EBCDIC (アイスランド語とユーロ)* \[CP1149\]、*IBM EBCDIC (ドイツ)* \[CP20273\]、*IBM EBCDIC (デンマーク/ノルウェー)* \[CP20277\]、*IBM EBCDIC (フィンランド/スウェーデン)* \[CP20278\]、*IBM EBCDIC (イタリア)* \[CP20280\]、*IBM EBCDIC (ラテン アメリカ/スペイン)* \[CP20284\]、*IBM EBCDIC (イギリス)* \[CP20285\]、*IBM EBCDIC (日本語カタカナ拡張)* \[CP20290\]、*IBM EBCDIC (フランス)* \[CP20297\]、*IBM EBCDIC (アラビア語)* \[CP20420\]、*IBM EBCDIC (ヘブライ語)* \[CP20424\]、*IBM EBCDIC (アイスランド語)* \[CP20871\]、*IBM EBCDIC (キリル、セルビア語、ブルガリア語)* \[CP21025\]、*IBM EBCDIC (米国-カナダ)* \[CP37\]、*IBM EBCDIC (インターナショナル)* \[CP500\]、*アラビア語 (ASMO 708)* \[CP708\]、*中央ヨーロッパ言語 (DOS)* \[CP852\] *, キリル言語 (DOS)* \[CP855\]、*トルコ語 (DOS)* \[CP857\]*西ヨーロッパ言語 (DOS とユーロ)* \[CP858\]、*ヘブライ語 (DOS)* \[CP862\]、*アラビア語 (DOS)* \[CP864\]、*ロシア語 (DOS)* \[CP866\]、*ギリシャ語 (DOS)* \[CP869\]、*IBM EBCDIC (ラテン 2)* \[CP870\]、*IBM EBCDIC (ギリシャ語)* \[CP875\] などのまれなエンコードが含まれます。
 
   - **West**: *西ヨーロッパ言語 (Mac)* \[macintosh, CP10000\]、*アイスランド語 (Mac)* \[x-mac-icelandic, CP10079\]、*中央ヨーロッパ言語 (Windows)* \[iso-8859-2, CP1250\]、*西ヨーロッパ言語 (Windows)* \[iso-8859-1, CP1252\]、*ギリシャ語 (Windows)* \[iso-8859-7, CP1253\]、*中央ヨーロッパ言語 (ISO)* \[iso-8859-2, CP28592\]、*ラテン 3 (ISO)* \[iso-8859-3, CP28593\]、*ギリシャ語 (ISO)* \[iso-8859-7, CP28597\]、*ラテン 9 (ISO)* \[iso-8859-15, CP28605\]、*OEM 米国* \[CP437\]、*西ヨーロッパ言語 (DOS)* \[CP850\]、*ポルトガル語 (DOS)* \[CP860\]、*アイスランド語 (DOS)* \[CP861\]、*フランス語 (カナダ) (DOS)* \[CP863\]、および*北欧語 (DOS)* \[CP865\] などの欧文のエンコードが含まれます。
 

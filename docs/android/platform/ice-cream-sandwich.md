@@ -4,15 +4,15 @@ description: この記事では、Android 4 の API アイスクリームを使�
 ms.prod: xamarin
 ms.assetid: 78E18A62-C12F-A699-37FA-44B9F6B44273
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/09/2018
-ms.openlocfilehash: 8cbb7c9c3da92b1ea5140e6f85accf53dab0bf80
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 382315f755102d7111db1a5c0f71d43bdea97a10
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70761459"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73020181"
 ---
 # <a name="ice-cream-sandwich-features"></a>アイスクリームサンドイッチの機能
 
@@ -22,10 +22,10 @@ _この記事では、Android 4 の API アイスクリームを使用して、�
 
 Android OS バージョン 4.0 (API レベル 14) は、Android オペレーティングシステムの主要な作り替えるを表し、次のような重要な変更とアップグレードが多数含まれています。
 
-- **ユーザーインターフェイスが更新されまし**た。新しい UI 機能によって、開発者はアプリケーションユーザーインターフェイスを作成するときに、より強力で柔軟性を高めることができます。 これらの新機能`GridLayout`には、 `Switch` `PopupMenu` 、、ウィ`TextureView`ジェット、およびがあります。 
+- **ユーザーインターフェイスが更新されまし**た。新しい UI 機能によって、開発者はアプリケーションユーザーインターフェイスを作成するときに、より強力で柔軟性を高めることができます。 これらの新機能には、`GridLayout`、`PopupMenu`、`Switch` ウィジェット、`TextureView` があります。 
 - **ハードウェアアクセラレータの向上**–2d レンダリングは、すべての Android コントロールの GPU で実行されるようになりました。 また、既定では、Android 4.0 用に開発されたすべてのアプリケーションでハードウェアアクセラレータがオンになっています。 
 - **新しいデータ api** –カレンダーデータやデバイス所有者のユーザープロファイルなど、以前は正式にアクセスできなかったデータへの新しいアクセス権があります。 
-- **アプリ データの共有**– アプリケーションとデバイス間のデータを共有するが、テクノロジ経由でこれまでよりも簡単になど、 `ShareActionProvider` 、しやすく、操作バーから共有アクションを作成して*Android ビーム*  *近距離通信 (NFC)* 、相互に近接デバイス間でデータを共有する簡単になります。 
+- **アプリデータの共有**–アプリケーションとデバイス間でのデータの共有は、`ShareActionProvider` などのテクノロジにより、これまで以上に簡単になりました。これにより、操作バーからの共有アクションを簡単に作成でき、近距離通信用の*Android ビーム* *(NFC)* を使用すると、互いに近接しているデバイス間でデータを共有するためのスナップができます。 
 
 この記事では、Android 4.0 API に加えられたこれらの機能とその他の変更について説明します。また、各機能を Xamarin Android で使用する方法についても説明します。
 
@@ -38,7 +38,7 @@ Android 4 では、次のようなさまざまな新しいユーザーインタ�
 - **[Textureview](~/android/user-interface/controls/texture-view.md)** –ビュー内でビデオと OpenGL のコンテンツを有効にします。 
 - **[ナビゲーションバー](~/android/user-interface/controls/navigation-bar.md)** – [戻る]、[ホーム]、および [マルチタスク] の仮想ボタンが表示されます。 
 
-さらに、他の UI 要素も強化されて`<a href"/guides/android/user_interface/popup_menus">PopupMenu</a>`います。たとえば、より使いやすく、より洗練された外観を備えたタブを使用できます。
+さらに、他の UI 要素も強化されています。たとえば、`<a href"/guides/android/user_interface/popup_menus">PopupMenu</a>`が使いやすくなり、より洗練された外観を備えたタブが使用できるようになりました。
 
 ## <a name="sharing-features"></a>機能の共有
 
@@ -53,7 +53,7 @@ Android 4 には、デバイス間およびアプリケーション間でデー�
 
 ICS は、x86 エミュレーターを使用した開発をまだサポートしていません。 x86 エミュレーターは、Android 2.3.3、API レベル10でのみサポートされています。 詳細について[は、「X86 Emulator の構成](~/android/get-started/installation/android-emulator/index.md)」を参照してください。
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>まとめ
 
 この記事では、Android 4 で利用できるようになったさまざまな新しいテクノロジについて説明しました。 *GridLayout*、 *PopupMenu*、 *Switch*の各ウィジェットなどの新しいユーザーインターフェイス機能を確認しています。 また、システム UI の制御に関する新しいサポートと、 *Textureview*の使用方法についても説明しました。 次に、さまざまな新しい共有テクノロジについて説明しました。 ここでは、 *Android ビーム*で、 *NFC*を使用するデバイス間で情報を共有する方法、新しい*Calendar API*について説明し、組み込みの共有*actionprovider*の使用方法について説明しました。
 最後に、 *ContactsContract*プロバイダーを使用してユーザープロファイルデータにアクセスする方法を説明します。

@@ -3,19 +3,19 @@ title: アーキテクチャの概要
 description: このドキュメントでは、Xamarin Workbooks のアーキテクチャについて説明し、対話型エージェントと対話型クライアントがどのように連携して動作するかを調べます。
 ms.prod: xamarin
 ms.assetid: 6C0226BE-A0C4-4108-B482-0A903696AB04
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/30/2017
-ms.openlocfilehash: 7129d0bedddb272ef87e3d209cb05c2ca0c0acf4
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7b3f2613e315bc05fedfb5b2fa70d11c2874ba65
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285282"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029616"
 ---
 # <a name="architecture-overview"></a>アーキテクチャの概要
 
-Xamarin Workbooks は、互いに連携して動作する必要がある2つの主要なコンポーネントを備えています。_エージェント_と_クライアント_。
+Xamarin Workbooks には、_エージェント_と_クライアント_と連携して動作する必要がある2つの主要コンポーネントがあります。
 
 ## <a name="interactive-agent"></a>対話型エージェント
 

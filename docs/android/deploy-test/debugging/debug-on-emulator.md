@@ -4,15 +4,15 @@ description: このガイドでは、Visual Studio 内で Android Emulator を�
 ms.prod: xamarin
 ms.assetid: AEA165A4-D81A-411B-91DF-2DED2EED27B5
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/22/2018
-ms.openlocfilehash: 761b1a8b2c3fd97ca3f1560b79b042e0fd89da92
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 8ca13b4f9c961b8bb206d065ce3cf641a8662160
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70754181"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028084"
 ---
 # <a name="debugging-on-the-android-emulator"></a>Android Emulator でのデバッグ
 
@@ -20,7 +20,7 @@ _このガイドでは、アプリをデバッグしてテストするために 
 
 ## <a name="overview"></a>概要
 
-Android Emulator (**.NET によるモバイル開発**のワークロードの一部としてインストールされている) は各種の Android デバイスをシミュレートするために、さまざまな構成で実行することができます。 これらの構成がそれぞれ、_仮想デバイス_として作成されます。 このガイドでは、Visual Studio からエミュレーターを起動する方法、および仮想デバイスでアプリを実行する方法を説明します。 Android Emulator の構成と、新しい仮想デバイスの作成については、「[Android Emulator のセットアップ](~/android/get-started/installation/android-emulator/index.md)」を参照してください。
+Android Emulator ( **.NET によるモバイル開発**のワークロードの一部としてインストールされている) は各種の Android デバイスをシミュレートするために、さまざまな構成で実行することができます。 これらの構成がそれぞれ、_仮想デバイス_として作成されます。 このガイドでは、Visual Studio からエミュレーターを起動する方法、および仮想デバイスでアプリを実行する方法を説明します。 Android Emulator の構成と、新しい仮想デバイスの作成については、「[Android Emulator のセットアップ](~/android/get-started/installation/android-emulator/index.md)」を参照してください。
 
 ## <a name="using-a-pre-configured-virtual-device"></a>構成済み仮想デバイスの使用
 
@@ -38,13 +38,13 @@ Visual Studio には、デバイスのドロップダウン メニューに表�
 
 [![仮想デバイス](debug-on-emulator-images/win/01-virtual-devices-sml.png)](debug-on-emulator-images/win/01-virtual-devices.png#lightbox)
 
-通常、電話アプリをテストしてデバッグする場合は、**VisualStudio\_android-23\_x86\_phone** 仮想デバイスを選択します。 これらの構成済み仮想デバイスのいずれかが要件を満たしている (つまり、アプリのターゲット API レベルと一致している) 場合は、「[エミュレーターの起動](#launching)」に進み、エミュレーターでのアプリの実行を開始します  (Android API レベルについてまだよく理解していない場合は、「[Understanding Android API Levels](~/android/app-fundamentals/android-api-levels.md)」 (Android API レベルについて) を参照してください)。
+通常、電話アプリをテストしてデバッグする場合は、**VisualStudio\_android-23\_x86\_phone** 仮想デバイスを選択します。 これらの構成済み仮想デバイスのいずれかが要件を満たしている (つまり、アプリのターゲット API レベルと一致している) 場合は、「[エミュレーターの起動](#launching)」に進み、エミュレーターでのアプリの実行を開始します (Android API レベルについてまだよく理解していない場合は、「[Understanding Android API Levels](~/android/app-fundamentals/android-api-levels.md)」 (Android API レベルについて) を参照してください)。
 
 Xamarin.Android プロジェクトで、使用可能な仮想マシンと互換性のないターゲット フレームワーク レベルを使用している場合は、ドロップダウン メニューの **[サポートされていないデバイス]** に使用不可の仮想デバイスがリストされます。 たとえば、以下のプロジェクトでは、ターゲット フレームワークが、この例にリストされている **Android 6.0** 仮想デバイスと互換性のない **Android 7.1 Nougat (API 25)** に設定されています。
 
 [![互換性のない仮想デバイス](debug-on-emulator-images/win/02-incompatible-level-sml.png)](debug-on-emulator-images/win/02-incompatible-level.png#lightbox)
 
-使用可能な仮想デバイスの API レベルと一致するように、**[最小 Android ターゲットの変更]** をクリックして、プロジェクトの最小 Android バージョンを変更することができます。 また、[Android Device Manager](~/android/get-started/installation/android-emulator/device-manager.md) を使用して、ターゲット API レベルをサポートする新しい仮想デバイスを作成することもできます。
+使用可能な仮想デバイスの API レベルと一致するように、 **[最小 Android ターゲットの変更]** をクリックして、プロジェクトの最小 Android バージョンを変更することができます。 また、[Android Device Manager](~/android/get-started/installation/android-emulator/device-manager.md) を使用して、ターゲット API レベルをサポートする新しい仮想デバイスを作成することもできます。
 新しい API レベル用に仮想デバイスを構成するには、まず、その API レベルに対応するシステム イメージをインストールする必要があります (「[Xamarin.Android 向け Android SDK を設定する](~/android/get-started/installation/android-sdk.md)」を参照)。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
@@ -57,7 +57,7 @@ Visual Studio for Mac には、デバイスのドロップダウン メニュー
 
 [![仮想デバイス](debug-on-emulator-images/mac/01-virtual-devices-sml.png)](debug-on-emulator-images/mac/01-virtual-devices.png#lightbox)
 
-通常、電話アプリをテストしてデバッグする場合は、**Android\_Accelerated\_x86** 仮想デバイスを選択します。 この構成済み仮想デバイスが要件を満たしている (つまり、アプリのターゲット API レベルと一致している) 場合は、「[エミュレーターの起動](#launching)」に進み、エミュレーターでのアプリの実行を開始します  (Android API レベルについてまだよく理解していない場合は、「[Understanding Android API Levels](~/android/app-fundamentals/android-api-levels.md)」 (Android API レベルについて) を参照してください)。
+通常、電話アプリをテストしてデバッグする場合は、**Android\_Accelerated\_x86** 仮想デバイスを選択します。 この構成済み仮想デバイスが要件を満たしている (つまり、アプリのターゲット API レベルと一致している) 場合は、「[エミュレーターの起動](#launching)」に進み、エミュレーターでのアプリの実行を開始します (Android API レベルについてまだよく理解していない場合は、「[Understanding Android API Levels](~/android/app-fundamentals/android-api-levels.md)」 (Android API レベルについて) を参照してください)。
 
 -----
 
@@ -69,7 +69,7 @@ Visual Studio for Mac には、デバイスのドロップダウン メニュー
 
 ## <a name="launching-the-emulator"></a>エミュレーターの起動
 
-VisuaI Studio の上部近くにドロップダウン メニューがあります。このメニューを使用して、**デバッグ** モードまたは**リリース** モードを選択できます。 **[デバッグ]** を選択すると、アプリの起動後にエミュレーター内で実行されているアプリケーション プロセスにデバッガーがアタッチされます。 **[リリース]** モードを選択すると、デバッガーが無効になります (ただし、アプリを実行し、ログ ステートメントを使用してデバッグすることはできます)。 デバイスのドロップダウン メニューから仮想デバイスを選択した後、**[デバッグ]** または **[リリース]** のいずれかのモードを選択し、[再生] ボタンをクリックしてアプリケーションを実行します。
+VisuaI Studio の上部近くにドロップダウン メニューがあります。このメニューを使用して、**デバッグ** モードまたは**リリース** モードを選択できます。 **[デバッグ]** を選択すると、アプリの起動後にエミュレーター内で実行されているアプリケーション プロセスにデバッガーがアタッチされます。 **[リリース]** モードを選択すると、デバッガーが無効になります (ただし、アプリを実行し、ログ ステートメントを使用してデバッグすることはできます)。 デバイスのドロップダウン メニューから仮想デバイスを選択した後、 **[デバッグ]** または **[リリース]** のいずれかのモードを選択し、[再生] ボタンをクリックしてアプリケーションを実行します。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 

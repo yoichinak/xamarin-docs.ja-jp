@@ -4,15 +4,15 @@ description: この記事では、Xamarin. Mac アプリでのコレクション
 ms.prod: xamarin
 ms.assetid: 6EE32256-5948-4AE4-8133-6D0B3F4173E8
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/24/2017
-ms.openlocfilehash: a3673f017a5dd50e5cc3ae44790bf359c2871440
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 565441762bc7d9dcf7f73b42a34e3feb0bff86f1
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70279621"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73025833"
 ---
 # <a name="collection-views-in-xamarinmac"></a>Xamarin. Mac のコレクションビュー
 
@@ -20,21 +20,21 @@ _この記事では、Xamarin. Mac アプリでのコレクションビューの
 
 Xamarin. Mac C#アプリでと .net を使用する場合、開発者は同じ Appkit コレクションビューコントロールにアクセスできます。これは、 *Xcode と*で作業*している*開発者が行います。 Xcode は直接統合されているため、開発者は Xcode の_Interface Builder_を使用してコレクションビューを作成および管理します。
 
-は`NSCollectionView` 、`NSCollectionViewLayout`を使用して整理されたサブビューのグリッドを表示します。 グリッド内の各サブビューは、 `NSCollectionViewItem` `.xib`ファイルからのビューのコンテンツの読み込みを管理するによって表されます。
+`NSCollectionView` には、`NSCollectionViewLayout`を使用して整理されたサブビューのグリッドが表示されます。 グリッド内の各サブビューは、`.xib` ファイルからのビューのコンテンツの読み込みを管理する `NSCollectionViewItem` によって表されます。
 
-[![アプリの実行例](collection-view-images/intro01.png)](collection-view-images/intro01.png#lightbox)
+[アプリの実行例を![する](collection-view-images/intro01.png)](collection-view-images/intro01.png#lightbox)
 
 この記事では、Xamarin. Mac アプリでコレクションビューを操作する方法の基本について説明します。 使用される主要な概念と手法について説明しているように、最初に[Hello, Mac](~/mac/get-started/hello-mac.md)の記事「 [Xcode と Interface Builder の概要](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)」と「[アクション](~/mac/get-started/hello-mac.md#outlets-and-actions)」セクションをご覧になることを強くお勧めします。この記事全体をご覧ください。
 
-[Xamarin. Mac の内部](~/mac/internals/how-it-works.md)ドキュメントの「[クラス/ C#メソッドを目的に公開](~/mac/internals/how-it-works.md)する」セクションを参照して、 C#クラスをに接続するために使用`Register`さ`Export`れるコマンドとコマンドについて説明します。目的 C オブジェクトと UI 要素。
+[Xamarin. Mac の内部](~/mac/internals/how-it-works.md)ドキュメントの「 C# [クラス/ C#メソッドを目的](~/mac/internals/how-it-works.md)として公開する」セクションを参照することもできます。ここでは、クラスを目的のために接続するために使用する`Register`と`Export`のコマンドについて説明します。オブジェクトと UI 要素。
 
 <a name="About_Collection_Views"/>
 
 ## <a name="about-collection-views"></a>コレクションビューについて
 
-コレクションビュー (`NSCollectionView`) の主な目的は、コレクションビューレイアウト (`NSCollectionViewLayout`) を使用して整理された方法でオブジェクトのグループを視覚的に配置すること`NSCollectionViewItem`です。個々のオブジェクト () は、より大きなコレクションで独自のビューを取得します。 コレクションビューはデータバインディングとキー値のコーディング手法によって動作するため、この記事を続行する前に、[データバインディングとキー値のコーディング](~/mac/app-fundamentals/databinding.md)に関するドキュメントを読む必要があります。
+コレクションビュー (`NSCollectionView`) の主な目的は、コレクションビューレイアウト (`NSCollectionViewLayout`) を使用して整理された方法でオブジェクトのグループを視覚的に配置することです。個々のオブジェクト (`NSCollectionViewItem`) は、より大きいコレクションで独自のビューを取得します。 コレクションビューはデータバインディングとキー値のコーディング手法によって動作するため、この記事を続行する前に、[データバインディングとキー値のコーディング](~/mac/app-fundamentals/databinding.md)に関するドキュメントを読む必要があります。
 
-コレクションビューには、標準の組み込みコレクションビューアイテム (アウトラインやテーブルビューなど) がないため、開発者は、イメージフィールド、テキストフィールド、ラベルなどの他の AppKit コントロールを使用して、_プロトタイプビュー_をデザインおよび実装する責任があります。等.このプロトタイプビューは、コレクションビューによって管理され、 `.xib`ファイルに格納されている各項目を表示および操作するために使用されます。
+コレクションビューには、標準の組み込みコレクションビューアイテム (アウトラインやテーブルビューなど) がないため、開発者は、イメージフィールド、テキストフィールド、ラベルなどの他の AppKit コントロールを使用して、_プロトタイプビュー_をデザインおよび実装する責任があります。等.このプロトタイプビューは、コレクションビューによって管理されている各項目を表示および操作するために使用され、`.xib` ファイルに格納されます。
 
 開発者はコレクションビューアイテムのルックアンドフィールを担当しているため、コレクションビューには、グリッド内で選択された項目を強調表示するためのサポートが組み込まれていません。 この機能の実装については、この記事で説明します。
 
@@ -183,48 +183,48 @@ namespace MacDatabinding
 }
 ```
 
-データ`PersonModel`モデルは、この記事の残りの部分で使用されます。
+`PersonModel` データモデルは、この記事の残りの部分で使用されます。
 
 <a name="Working_with_a_Collection_View"/>
 
 ## <a name="working-with-a-collection-view"></a>コレクションビューの操作
 
-コレクションビューを使用したデータバインディングは、コレクションにデータを提供するため`NSCollectionViewDataSource`に使用されるテーブルビューとのバインドとよく似ています。 コレクションビューには事前設定された表示形式がないため、ユーザーの操作に関するフィードバックを提供し、ユーザーの選択を追跡するために、より多くの作業が必要になります。
+コレクションビューを使用したデータバインディングは、コレクションにデータを提供するために `NSCollectionViewDataSource` を使用するため、テーブルビューとのバインドとよく似ています。 コレクションビューには事前設定された表示形式がないため、ユーザーの操作に関するフィードバックを提供し、ユーザーの選択を追跡するために、より多くの作業が必要になります。
 
 <a name="Creating-the-Cell-Prototype"/>
 
 ### <a name="creating-the-cell-prototype"></a>セルプロトタイプの作成
 
-コレクションビューには既定のセルプロトタイプが含まれていないため、開発者は1つ`.xib`以上のファイルを Xamarin. Mac アプリに追加して、個々のセルのレイアウトとコンテンツを定義する必要があります。
+コレクションビューには既定のセルプロトタイプが含まれていないため、開発者は1つ以上の `.xib` ファイルを Xamarin. Mac アプリに追加して、個々のセルのレイアウトとコンテンツを定義する必要があります。
 
 次の手順で行います。
 
-1. **ソリューションエクスプローラー**で、プロジェクト名を右クリックし、[新しいファイルの**追加** >  **...** ] を選択します。
-2. [ **Mac** > **ビューコントローラー**] を選択し、名前 ( `EmployeeItem`この例ではなど) を指定して、[**新規**作成] ボタンをクリックします。 
+1. **ソリューションエクスプローラー**で、プロジェクト名を右クリックし、 **[追加]** [ > **新しいファイル...** ] の順に選択します。
+2. [ **Mac** > **ビューコントローラー**] を選択し、名前 (この例では `EmployeeItem` など) を指定して、[**新規**作成] をクリックします。 
 
     ![新しいビューコントローラーの追加](collection-view-images/proto01.png)
 
-    これにより、 `EmployeeItem.cs`、 `EmployeeItemController.cs`および`EmployeeItemController.xib`ファイルがプロジェクトのソリューションに追加されます。
-3. `EmployeeItemController.xib`ファイルをダブルクリックして、Xcode の Interface Builder で編集するために開きます。
-4. ビューにとという`NSLabel` 2 つのコントロールを追加し、次のようにレイアウトします。 `NSImageView` `NSBox`
+    これにより、`EmployeeItem.cs`、`EmployeeItemController.cs`、および `EmployeeItemController.xib` ファイルがプロジェクトのソリューションに追加されます。
+3. `EmployeeItemController.xib` ファイルをダブルクリックして、Xcode の Interface Builder で編集するために開きます。
+4. `NSBox`、`NSImageView`、および2つの `NSLabel` コントロールをビューに追加し、次のようにレイアウトします。
 
     ![セルプロトタイプのレイアウトのデザイン](collection-view-images/proto02.png)
-5. **アシスタントエディター**を開き、の**アウトレット**を作成し`NSBox`て、セルの選択状態を示すために使用できるようにします。
+5. **アシスタントエディター**を開き、`NSBox` の**アウトレット**を作成して、セルの選択状態を示すために使用できるようにします。
 
     ![アウトレットでの NSBox の公開](collection-view-images/proto03.png)
 6. **標準エディター**に戻り、[イメージ] ビューを選択します。
-7. **バインドインスペクター**で、[**ファイルの所有者** **にバインドする** > ] を選択し、**モデルキーのパス**を次の`self.Person.Icon`ように入力します。
+7. **バインドインスペクター**で、[ > **ファイルの所有者** **にバインドする**] を選択し、`self.Person.Icon`の**モデルキーのパス**を入力します。
 
     ![アイコンのバインド](collection-view-images/proto04.png)
-8. 最初のラベルを選択し、**バインドインスペクター**で [**ファイルの所有者** **にバインドする** > ] を選択し、 `self.Person.Name`次のような**モデルキーパス**を入力します。
+8. 最初のラベルを選択し、**バインドインスペクター**で [ > **ファイルの所有者** **にバインドする**] を選択し、`self.Person.Name`の**モデルキーのパス**を入力します。
 
     ![名前のバインド](collection-view-images/proto05.png)
-9. 2番目のラベルを選択し、**バインドインスペクター**で [**ファイルの所有者** **にバインドする** > ] を選択`self.Person.Occupation`し、次のような**モデルキーパス**を入力します。
+9. 2番目のラベルを選択し、**バインドインスペクター**で [ > **ファイルの所有者** **にバインドする**] を選択し、`self.Person.Occupation`の**モデルキーのパス**を入力します。
 
     ![職業のバインド](collection-view-images/proto06.png)
-10. 変更内容を`.xib`ファイルに保存し、Visual Studio に戻って変更を同期します。
+10. 変更を `.xib` ファイルに保存し、Visual Studio に戻り、変更を同期します。
 
-`EmployeeItemController.cs`ファイルを編集し、次のように表示します。
+`EmployeeItemController.cs` ファイルを編集し、次のように表示します。
 
 ```csharp
 using System;
@@ -344,9 +344,9 @@ namespace MacCollectionNew
 }
 ```
 
-このコードを詳しく見ると、クラスはから`NSCollectionViewItem`継承されるため、コレクションビューセルのプロトタイプとして機能できます。 プロパティ`Person`は、イメージビューにデータをバインドするために使用されたクラスと、Xcode のラベルを公開します。 これは、 `PersonModel`上で作成したのインスタンスです。
+このコードについて詳しく説明すると、クラスは、コレクションビューセルのプロトタイプとして機能できるように、`NSCollectionViewItem` から継承されます。 `Person` プロパティは、Xcode の画像ビューおよびラベルへのデータバインドに使用されたクラスを公開します。 これは、上で作成した `PersonModel` のインスタンスです。
 
-プロパティは、セルの選択状態`NSBox`を表示`FillColor`するために使用されるコントロールのへのショートカットです。 `BackgroundColor` 次のコード`Selected`では、 `NSCollectionViewItem`のプロパティをオーバーライドすることにより、この選択状態を設定またはクリアします。
+`BackgroundColor` プロパティは、セルの選択状態を表示するために使用される、`NSBox` コントロールの `FillColor` へのショートカットです。 次のコードでは、`NSCollectionViewItem`の `Selected` プロパティをオーバーライドすることにより、この選択状態を設定またはクリアします。
 
 ```csharp
 public override bool Selected
@@ -373,9 +373,9 @@ public override bool Selected
 
 ### <a name="creating-the-collection-view-data-source"></a>コレクションビューのデータソースの作成
 
-コレクションビューのデータソース (`NSCollectionViewDataSource`) は、コレクションビューのすべてのデータを提供し、コレクション内の各項目に必要な`.xib`コレクションビューのセル (プロトタイプを使用) を作成して設定します。
+コレクションビューのデータソース (`NSCollectionViewDataSource`) は、コレクションビューのすべてのデータを提供し、コレクション内の各項目に対して必要に応じてコレクションビューのセル (`.xib` プロトタイプを使用) を作成および設定します。
 
-プロジェクトに新しいクラスを追加し、それ`CollectionViewDataSource`を呼び出して、次のように表示します。
+プロジェクトに新しいクラスを追加し、`CollectionViewDataSource` 呼び出して、次のように表示します。
 
 ```csharp
 using System;
@@ -462,11 +462,11 @@ namespace MacCollectionNew
 }
 ```
 
-このコードを詳しく見ると、クラスはから`NSCollectionViewDataSource`継承し、 `Data`プロパティを通じ`PersonModel`てインスタンスのリストを公開します。
+このコードについて詳しく説明すると、クラスは `NSCollectionViewDataSource` から継承し、`Data` プロパティを使用して `PersonModel` インスタンスのリストを公開します。
 
-このコレクションにはセクションが1つしかないため、 `GetNumberOfSections`コードはメソッドを`1`オーバーライドし、常にを返します。 さらに、 `GetNumberofItems`メソッドは、 `Data`プロパティリスト内の項目の数を返します。
+このコレクションにはセクションが1つしかないため、コードは `GetNumberOfSections` メソッドをオーバーライドし、常に `1`を返します。 さらに、`GetNumberofItems` メソッドは、`Data` プロパティリスト内の項目の数を返します。
 
-`GetItem`メソッドは、新しいセルが必要になるたびに呼び出され、次のようになります。
+`GetItem` メソッドは、新しいセルが必要になるたびに呼び出され、次のようになります。
 
 ```csharp
 public override NSCollectionViewItem GetItem(NSCollectionView collectionView, NSIndexPath indexPath)
@@ -478,23 +478,23 @@ public override NSCollectionViewItem GetItem(NSCollectionView collectionView, NS
 }
 ```
 
-コレクションビューの`EmployeeItemController` `Person`メソッドは、の再利用可能なインスタンスを作成または返すために呼び出され、そのプロパティは、要求されたセルに表示される項目に設定されます。 `MakeItem` 
+コレクションビューの `MakeItem` メソッドは、`EmployeeItemController` の再利用可能なインスタンスを作成または返すために呼び出され、その `Person` プロパティは、要求されたセルに表示される項目に設定されます。 
 
-をコレクションビューコントローラーに事前に登録するには、次のコードを使用する必要があります。`EmployeeItemController`
+`EmployeeItemController` は、次のコードを使用して、事前にコレクションビューコントローラーに登録する必要があります。
 
 ```csharp
 EmployeeCollection.RegisterClassForItem(typeof(EmployeeItemController), "EmployeeCell");
 ``` 
 
-呼び出しで使用`EmployeeCell`される**識別子**( ) は、コレクションビューに登録されているビューコントローラーの名前と一致する必要があります。 `MakeItem` この手順については、以下で詳しく説明します。
+`MakeItem` 呼び出しで使用されている**識別子**(`EmployeeCell`) は、コレクションビューに登録されているビューコントローラーの名前と一致_する必要があり_ます。 この手順については、以下で詳しく説明します。
 
 <a name="Handling-Item-Selection"/>
 
 ### <a name="handling-item-selection"></a>項目の選択の処理
 
-コレクション`NSCollectionViewDelegate`内の項目の選択と deselection を処理するには、が必要です。 この例では、組み込み`NSCollectionViewFlowLayout`のレイアウト型を使用するため`NSCollectionViewDelegateFlowLayout` 、このデリゲートの特定のバージョンが必要になります。
+コレクション内の項目の選択と deselection を処理するには、`NSCollectionViewDelegate` が必要です。 この例では、組み込みの `NSCollectionViewFlowLayout` レイアウトの種類を使用するため、このデリゲートの `NSCollectionViewDelegateFlowLayout` 固有のバージョンが必要になります。
 
-新しいクラスをプロジェクトに追加し、それ`CollectionViewDelegate`を呼び出して、次のように表示します。
+新しいクラスをプロジェクトに追加し、`CollectionViewDelegate` 呼び出して、次のようにします。
 
 ```csharp
 using System;
@@ -565,7 +565,7 @@ namespace MacCollectionNew
 }
 ``` 
 
-メソッド`ItemsSelected` `PersonSelected`と`ItemsDeselected`メソッドはオーバーライドされ、ユーザーが項目を選択または選択解除したときに、コレクションビューを処理するビューコントローラーのプロパティを設定またはクリアするために使用されます。 これについては、以下で詳しく説明します。
+`ItemsSelected` メソッドと `ItemsDeselected` メソッドはオーバーライドされ、ユーザーが項目を選択または選択解除したときにコレクションビューを処理するビューコントローラーの `PersonSelected` プロパティを設定またはクリアするために使用されます。 これについては、以下で詳しく説明します。
 
 <a name="Creating-the-Collection-View-in-Interface-Builder"/>
 
@@ -575,7 +575,7 @@ namespace MacCollectionNew
 
 次の手順で行います。
 
-1. `Main.Storyboard` **ソリューションエクスプローラー**内のファイルをダブルクリックして、Xcode の Interface Builder で編集するために開きます。
+1. **ソリューションエクスプローラー**内の `Main.Storyboard` ファイルをダブルクリックして、Xcode の Interface Builder で編集するために開きます。
 2. コレクションビューをメインビューにドラッグして、ビューに合わせてサイズを変更します。
 
     ![レイアウトへのコレクションビューの追加](collection-view-images/collection01.png)
@@ -591,11 +591,11 @@ namespace MacCollectionNew
 
 ## <a name="bringing-it-all-together"></a>まとめ
 
-データモデル (`PersonModel`) として機能するクラスを含むすべてのサポート部分が配置されました。データ`NSCollectionViewDataSource` `NSCollectionViewDelegateFlowLayout`を供給するためにが追加され、項目の選択を処理する`NSCollectionView`ためにが作成され、がメインのストーリーボードに追加されました。およびはアウトレット (`EmployeeCollection`) として公開されます。
+データモデル (`PersonModel`) として機能するクラスを使用して、サポートするすべての部分が配置されました。データを供給するための `NSCollectionViewDataSource` が追加されました。項目の選択を処理するために `NSCollectionViewDelegateFlowLayout` が作成され、`NSCollectionView` がメインのストーリーボードに追加されました。アウトレット (`EmployeeCollection`) として公開されます。
 
 最後の手順では、コレクションビューを含むビューコントローラーを編集し、すべての要素をまとめて、コレクションにデータを設定し、項目の選択を処理します。
 
-`ViewController.cs`ファイルを編集し、次のように表示します。
+`ViewController.cs` ファイルを編集し、次のように表示します。
 
 ```csharp
 using System;
@@ -736,28 +736,28 @@ namespace MacCollectionNew
 }
 ```
 
-このコードを詳しく見ていくと、 `Datasource`プロパティはコレクションビューのデータを提供するのインスタンス`CollectionViewDataSource`を保持するように定義されます。 プロパティは、 `PersonModel`コレクションビューで現在選択されている項目を表すを保持するように定義されます。 `PersonSelected` このプロパティは、選択`SelectionChanged`内容が変更された場合にもイベントを発生させます。
+このコードの詳細については、コレクションビューのデータを提供する `CollectionViewDataSource` のインスタンスを保持するように `Datasource` プロパティを定義します。 `PersonSelected` プロパティは、コレクションビューで現在選択されている項目を表す `PersonModel` を保持するように定義されています。 このプロパティは、選択が変更された場合にも `SelectionChanged` イベントを発生させます。
 
-`ConfigureCollectionView`クラスは、次の行を使用して、コレクションビューでセルプロトタイプとして機能するビューコントローラーを登録するために使用されます。
+`ConfigureCollectionView` クラスは、次の行を使用して、コレクションビューでセルプロトタイプとして機能するビューコントローラーを登録するために使用されます。
 
 ```csharp
 EmployeeCollection.RegisterClassForItem(typeof(EmployeeItemController), "EmployeeCell");
 ```
 
-プロトタイプの登録に使用`EmployeeCell`された識別子 () が、上記で`CollectionViewDataSource`定義さ`GetItem`れているのメソッドで呼び出された識別子と一致していることに注意してください。
+プロトタイプの登録に使用された識別子 (`EmployeeCell`) は、上記で定義した `CollectionViewDataSource` の `GetItem` メソッドで呼び出された**識別子**と一致していることに注意してください。
 
 ```csharp
 var item = collectionView.MakeItem("EmployeeCell", indexPath) as EmployeeItemController;
 ...
 ```
 
-また、ビューコントローラーの種類は、プロトタイプを**正確**に定義する`.xib`ファイルの名前と一致**する必要があり**ます。 この例`EmployeeItemController`の場合は、と`EmployeeItemController.xib`です。
+また、ビューコントローラーの型は、プロトタイプを**正確**に定義する `.xib` ファイルの名前と一致して**いる必要があり**ます。 この例の場合は、`EmployeeItemController` および `EmployeeItemController.xib`ます。
 
-コレクションビュー内の項目の実際のレイアウトは、コレクションビューレイアウトクラスによって制御され、新しいインスタンスを`CollectionViewLayout`プロパティに割り当てることによって、実行時に動的に変更できます。 このプロパティを変更すると、変更をアニメーション化せずにコレクションビューの外観が更新されます。
+コレクションビュー内の項目の実際のレイアウトは、コレクションビューレイアウトクラスによって制御され、`CollectionViewLayout` プロパティに新しいインスタンスを割り当てることによって、実行時に動的に変更できます。 このプロパティを変更すると、変更をアニメーション化せずにコレクションビューの外観が更新されます。
 
-Apple では、最も一般的な使用方法`NSCollectionViewFlowLayout`であるとを処理するコレクションビューを使用して、2つの組み込みのレイアウトの種類を提供し`NSCollectionViewGridLayout`ています。 開発者が円に項目を配置するなどのカスタム書式を必要とした場合は、の`NSCollectionViewLayout`カスタムインスタンスを作成し、必要なメソッドをオーバーライドして目的の効果を実現できます。
+Apple では、最も一般的な使用方法である `NSCollectionViewFlowLayout` と `NSCollectionViewGridLayout`を処理するコレクションビューで、2つの組み込みのレイアウトの種類が提供されています。 開発者が円に項目を配置するなどのカスタム書式を必要とした場合、`NSCollectionViewLayout` のカスタムインスタンスを作成し、必要なメソッドをオーバーライドして目的の効果を実現できます。
 
-この例では、既定のフローレイアウトを使用して`NSCollectionViewFlowLayout`クラスのインスタンスを作成し、次のように構成します。
+この例では、既定のフローレイアウトを使用して `NSCollectionViewFlowLayout` クラスのインスタンスを作成し、次のように構成します。
 
 ```csharp
 var flowLayout = new NSCollectionViewFlowLayout()
@@ -769,9 +769,9 @@ var flowLayout = new NSCollectionViewFlowLayout()
 };
 ```
 
-プロパティ`ItemSize`は、コレクション内の個々のセルのサイズを定義します。 プロパティ`SectionInset`は、セルがレイアウトされるコレクションの端からのインセットを定義します。 `MinimumInteritemSpacing`項目間の最小間隔を定義`MinimumLineSpacing`し、コレクション内の行の間の最小間隔を定義します。
+`ItemSize` プロパティは、コレクション内の個々のセルのサイズを定義します。 `SectionInset` プロパティは、セルがレイアウトされるコレクションの端からのインセットを定義します。 `MinimumInteritemSpacing` は、項目間の最小間隔を定義し `MinimumLineSpacing` コレクション内の行の間の最小間隔を定義します。
 
-レイアウトはコレクションビューに割り当てられ、の`CollectionViewDelegate`インスタンスは項目の選択を処理するためにアタッチされます。
+レイアウトがコレクションビューに割り当てられ、項目の選択を処理するために `CollectionViewDelegate` のインスタンスがアタッチされます。
 
 ```csharp
 // Setup collection view
@@ -779,7 +779,7 @@ EmployeeCollection.CollectionViewLayout = flowLayout;
 EmployeeCollection.Delegate = new CollectionViewDelegate(this);
 ```
 
-メソッド`PopulateWithData`は、 `CollectionViewDataSource`の新しいインスタンスを作成し、それにデータを設定して、それをコレクションビューに`ReloadData`アタッチし、メソッドを呼び出して項目を表示します。
+`PopulateWithData` メソッドは、`CollectionViewDataSource`の新しいインスタンスを作成し、それにデータを設定して、それをコレクションビューにアタッチし、`ReloadData` メソッドを呼び出して項目を表示します。
 
 ```csharp
 private void PopulateWithData()
@@ -796,7 +796,7 @@ private void PopulateWithData()
 }
 ```
 
-メソッドはオーバーライドされ、メソッド`ConfigureCollectionView`と`PopulateWithData`メソッドを呼び出して、最後のコレクションビューをユーザーに表示します。 `ViewDidLoad`
+`ViewDidLoad` メソッドはオーバーライドされ、`ConfigureCollectionView` メソッドと `PopulateWithData` メソッドを呼び出して、最終的なコレクションビューをユーザーに表示します。
 
 ```csharp
 public override void ViewDidLoad()

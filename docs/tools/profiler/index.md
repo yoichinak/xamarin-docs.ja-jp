@@ -3,15 +3,15 @@ title: Xamarin Profiler
 description: このガイドでは、Xamarin Profiler の主な機能について説明します。 ここでは、プロファイラー、プロファイリング、使用する時期、および Xamarin アプリケーションをプロファイリングするための標準的なワークフローについて説明します。
 ms.prod: xamarin
 ms.assetid: 3247fcee-6acc-470d-ab87-c1c511d67363
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/03/2018
-ms.openlocfilehash: b567985fcfd9e133587c5c285e17d21465fda659
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.openlocfilehash: 330d41ea795754388402fbb7c660ba8d77f1aa4b
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71250080"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73019410"
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
@@ -34,8 +34,8 @@ Xamarin Profiler はスタンドアロンアプリケーションであり、IDE
 
 プラットフォームのインストールパッケージをダウンロードします。
 
-- [**macOS**](https://dl.xamarin.com/profiler/profiler-mac.pkg)
-- [**Windows**](https://dl.xamarin.com/profiler/profiler-windows.msi)
+- [**Os**](https://dl.xamarin.com/profiler/profiler-mac.pkg)
+- [**ウィンドウ**](https://dl.xamarin.com/profiler/profiler-windows.msi)
 
 ダウンロードが完了したら、インストーラーを起動して、システムに Xamarin Profiler を追加します。
 
@@ -55,11 +55,11 @@ Xamarin Profiler を使用すると、開発者は Visual Studio for Mac また�
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-現時点では、Xamarin Profiler を使用して、Mac 上の Xamarin アプリケーション (Visual Studio for Mac 経由) をテストできます。 プロファイラーは IDE とは別のプロセスであるため、Visual Studio for Mac から起動するだけでなく、それをスタンドアロンアプリケーションとして使用して、 `.mlpd` [mono ログプロファイラー](https://www.mono-project.com/docs/debug+profile/profile/profiler/)から生成された .exe とファイルを調べることもできます。
+現時点では、Xamarin Profiler を使用して、Mac 上の Xamarin アプリケーション (Visual Studio for Mac 経由) をテストできます。 プロファイラーは IDE とは別のプロセスであるため、Visual Studio for Mac から起動するだけでなく、それをスタンドアロンアプリケーションとして使用して、 [mono ログプロファイラー](https://www.mono-project.com/docs/debug+profile/profile/profiler/)から生成された .exe および `.mlpd` ファイルを調べることができます。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-現時点では、Xamarin Profiler を使用して、Windows 上の Xamarin Android アプリをテストすることができます (Visual Studio および Visual Studio for Mac を使用)。 プロファイラーは IDE とは別のプロセスであるため、Visual Studio から起動するだけでなく、それをスタンドアロンアプリケーションとして使用して、 `.mlpd` [mono ログプロファイラー](https://www.mono-project.com/docs/debug+profile/profile/profiler/)から生成された .exe とファイルを調べることもできます。
+現時点では、Xamarin Profiler を使用して、Windows 上の Xamarin Android アプリをテストすることができます (Visual Studio および Visual Studio for Mac を使用)。 プロファイラーは IDE とは別のプロセスであるため、Visual Studio から起動するだけでなく、それをスタンドアロンアプリケーションとして使用して、 [mono ログプロファイラー](https://www.mono-project.com/docs/debug+profile/profile/profiler/)から生成された .exe ファイルと `.mlpd` ファイルを調べることができます。
 
 -----
 
@@ -186,11 +186,11 @@ Xamarin Profiler は、次に示す5つのセクションで構成されてい�
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-[![Visual Studio for Mac のプロファイラーセクション](images/profiler-mac-sml.png)](images/profiler-mac.png#lightbox) 
+[Visual Studio for Mac のプロファイラーセクションの![](images/profiler-mac-sml.png)](images/profiler-mac.png#lightbox) 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![Visual Studio のプロファイラーセクション](images/profiler-vs.png)](images/profiler-vs.png#lightbox)
+[Visual Studio でのプロファイラーセクションの![](images/profiler-vs.png)](images/profiler-vs.png#lightbox)
 
 -----
 
@@ -198,7 +198,7 @@ Xamarin Profiler は、次に示す5つのセクションで構成されてい�
 - **[インストルメントの一覧]** –プロファイルセッション用に読み込まれたすべての音色が一覧表示されます。
 - **プロットグラフ**–これらのグラフは、インストルメントリスト内の関連する音色に水平に関連付けられています。 スライダー (タイムプロファイラーの下に表示) を使用して、スケールを変更できます。
 - **[インストルメントの詳細領域]** -現在のインストルメントの選択したビューで表示されるデータが含まれます。 これらのビューについては、以下のセクションで詳しく説明します。
-- **Inspector View** –セグメント化されたコントロールで選択できるセクションが含まれます。 これらのセクションは、選択したインストルメントに依存し、次のものが含まれます。構成設定、統計情報、スタックトレース情報、およびルートへのパス。
+- **Inspector View** –セグメント化されたコントロールで選択できるセクションが含まれます。 セクションは、選択したインストルメントに依存します。これには、構成設定、統計、スタックトレース情報、およびルートへのパスが含まれます。
 
 ### <a name="allocations"></a>割り当て
 
@@ -208,11 +208,11 @@ Xamarin Profiler は、次に示す5つのセクションで構成されてい�
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-[![割り当てインストルメント](images/allocations1.png)](images/allocations1.png#lightbox) 
+[![割り当てのインストルメント](images/allocations1.png)](images/allocations1.png#lightbox) 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![割り当てインストルメント](images/allocations1-vs.png)](images/allocations1-vs.png#lightbox)
+[![割り当てのインストルメント](images/allocations1-vs.png)](images/allocations1-vs.png#lightbox)
 
 -----
 
@@ -222,11 +222,11 @@ Xamarin Profiler は、次に示す5つのセクションで構成されてい�
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-  [![[割り当て] タブ](images/allocations3.png)](images/allocations3.png#lightbox) 
+  [![の割り当て タブ](images/allocations3.png)](images/allocations3.png#lightbox) 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-  [![[割り当て] タブ](images/allocations2-vs.png)](images/allocations2-vs.png#lightbox)
+  [![の割り当て タブ](images/allocations2-vs.png)](images/allocations2-vs.png#lightbox)
 
 -----
 
@@ -238,11 +238,11 @@ Xamarin Profiler は、次に示す5つのセクションで構成されてい�
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-  [![[コールツリー] タブ](images/allocations2.png)](images/allocations2.png#lightbox) 
+  [![コールツリー タブ](images/allocations2.png)](images/allocations2.png#lightbox) 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-  [![[コールツリー] タブ](images/allocations3-vs.png)](images/allocations3-vs.png#lightbox)
+  [![コールツリー タブ](images/allocations3-vs.png)](images/allocations3-vs.png#lightbox)
 
 -----
 
@@ -250,11 +250,11 @@ Xamarin Profiler は、次に示す5つのセクションで構成されてい�
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-  [![[スナップショット] タブ](images/allocations4.png)](images/allocations4.png#lightbox) 
+  [![スナップショット タブ](images/allocations4.png)](images/allocations4.png#lightbox) 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-  [![[スナップショット] タブ](images/allocations4-vs.png)](images/allocations4-vs.png#lightbox)
+  [![スナップショット タブ](images/allocations4-vs.png)](images/allocations4-vs.png#lightbox)
 
 -----
 
@@ -266,15 +266,15 @@ Xamarin Profiler は、次に示す5つのセクションで構成されてい�
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-[![時間プロファイラーのインストルメント](images/time1.png)](images/time1.png#lightbox) 
+[![Time Profiler インストルメント](images/time1.png)](images/time1.png#lightbox) 
 
-[![時間プロファイラーインストルメント-サンプル一覧](images/time3.png)](images/time3.png#lightbox) 
+[![Time Profiler インストルメント-サンプル一覧](images/time3.png)](images/time3.png#lightbox) 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![時間プロファイラーのインストルメント](images/time1-vs.png)](images/time1-vs.png#lightbox) 
+[![Time Profiler インストルメント](images/time1-vs.png)](images/time1-vs.png#lightbox) 
 
-[![時間プロファイラーインストルメント-サンプル一覧](images/time3-vs.png)](images/time3-vs.png#lightbox) 
+[![Time Profiler インストルメント-サンプル一覧](images/time3-vs.png)](images/time3-vs.png#lightbox) 
 
 -----
 
@@ -282,11 +282,11 @@ Xamarin Profiler は、次に示す5つのセクションで構成されてい�
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-  [![時間プロファイラーインストルメント-コールツリー](images/time2.png)](images/time2.png#lightbox) 
+  [![Time Profiler インストルメント-コールツリー](images/time2.png)](images/time2.png#lightbox) 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-  [![時間プロファイラーインストルメント-コールツリー](images/time2-vs.png)](images/time2-vs.png#lightbox) 
+  [![Time Profiler インストルメント-コールツリー](images/time2-vs.png)](images/time2-vs.png#lightbox) 
 
 -----
 
@@ -296,11 +296,11 @@ Xamarin Profiler は、次に示す5つのセクションで構成されてい�
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-[![サイクルの音色](images/cycles.m751-sml.png)](images/cycles.m751.png#lightbox) 
+[![サイクルのインストルメント](images/cycles.m751-sml.png)](images/cycles.m751.png#lightbox) 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![サイクルの音色](images/cycles-vs-sml.png)](images/cycles-vs.png#lightbox) 
+[![サイクルのインストルメント](images/cycles-vs-sml.png)](images/cycles-vs.png#lightbox) 
 
 -----
 
@@ -312,11 +312,11 @@ Xamarin Profiler は、次に示す5つのセクションで構成されてい�
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-[![プロファイルエラーダイアログ](images/image001.png)](images/image001.png#lightbox) 
+[プロファイルエラーの![ダイアログ](images/image001.png)](images/image001.png#lightbox) 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![プロファイルエラーダイアログ](images/image1vs.png)](images/image1vs.png#lightbox) 
+[プロファイルエラーの![ダイアログ](images/image1vs.png)](images/image1vs.png#lightbox) 
 
 -----
 

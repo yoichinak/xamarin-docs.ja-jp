@@ -5,15 +5,15 @@ ms.prod: xamarin
 ms.assetid: 20246E87-2A49-438A-9BD7-756A1B50A617
 ms.technology: xamarin-ios
 ms.custom: xamu-video
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: bde76891b4b01800384ee0579e3fbe14987c5420
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: b4a8507d4d1497964f6b60307622ca3e1dc4cd90
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768387"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021802"
 ---
 # <a name="stack-views-in-xamarinios"></a>Xamarin. iOS のスタックビュー
 
@@ -22,13 +22,13 @@ _この記事では、Xamarin. iOS アプリで新しい UIStackView コント�
 > [!IMPORTANT]
 > StackView は iOS Designer でサポートされていますが、安定チャネルを使用するとユーザビリティのバグが発生する可能性があることに注意してください。 ベータチャネルまたはアルファチャネルを切り替えると、この問題が軽減されます。 このチュートリアルでは、必要な修正が安定したチャネルに実装されるまで、Xcode を使用してこのチュートリアルを提示することを決定しました。
 
-スタックビューコントロール (`UIStackView`) は、自動レイアウトクラスとサイズクラスの機能を活用して、マルチビューのスタックを水平方向または垂直方向に管理します。これは、iOS デバイスの向きと画面サイズに動的に反応します。
+スタックビューコントロール (`UIStackView`) は、自動レイアウトクラスとサイズクラスの機能を活用して、iOS デバイスの向きと画面サイズに動的に応答するサブビューのスタックを、水平方向または垂直方向に管理します。
 
 スタックビューにアタッチされているすべてのサブビューのレイアウトは、軸、分布、配置、スペースなどの開発者が定義したプロパティに基づいて、it 部門によって管理されます。
 
-[![](uistackview-images/stacked01.png "スタックビューのレイアウトダイアグラム")](uistackview-images/stacked01.png#lightbox)
+[![](uistackview-images/stacked01.png "Stack View layout diagram")](uistackview-images/stacked01.png#lightbox)
 
-Xamarin ios アプリ`UIStackView`でを使用する場合、開発者は、ios デザイナーのストーリーボード内でサブビューを定義するか、またはコードでC#サブビューを追加および削除することができます。
+Xamarin iOS アプリで `UIStackView` を使用する場合、開発者は iOS デザイナーのストーリーボード内でサブビューを定義するか、またはコードでC#サブビューを追加および削除することができます。
 
 このドキュメントは、2つの部分で構成されています。最初のスタックビューを実装するのに役立つクイックスタートと、そのしくみについての技術的な詳細について説明します。
 
@@ -38,17 +38,17 @@ Xamarin ios アプリ`UIStackView`でを使用する場合、開発者は、ios 
 
 ## <a name="uistackview-quickstart"></a>UIStackView クイックスタート
 
-`UIStackView`コントロールを簡単に紹介するために、ユーザーが 1 ~ 5 の評価を入力できる単純なインターフェイスを作成します。 ここでは、2つのスタックビューを使用します。1つは、デバイスの画面にインターフェイスを垂直方向に配置し、もう1つは画面全体で1-5 の評価アイコンを上下に配置します。
+`UIStackView` コントロールの簡単な概要として、ユーザーが 1 ~ 5 の評価を入力できる単純なインターフェイスを作成します。 ここでは、2つのスタックビューを使用します。1つは、デバイスの画面にインターフェイスを垂直方向に配置し、もう1つは画面全体で1-5 の評価アイコンを上下に配置します。
 
 ### <a name="define-the-ui"></a>UI を定義する
 
 新しい Xamarin. iOS プロジェクトを開始し、Xcode の Interface Builder の**メインのストーリーボード**ファイルを編集します。 まず、**ビューコントローラー**に1つの**垂直方向のスタックビュー**をドラッグします。
 
-[![](uistackview-images/quick01.png "ビューコントローラーに1つの垂直方向のスタックビューをドラッグする")](uistackview-images/quick01.png#lightbox)
+[![](uistackview-images/quick01.png "Drag a single Vertical Stack View on the View Controller")](uistackview-images/quick01.png#lightbox)
 
 **属性インスペクター**で、次のオプションを設定します。
 
-[![](uistackview-images/quick02.png "スタックビューのオプションを設定する")](uistackview-images/quick02.png#lightbox)
+[![](uistackview-images/quick02.png "Set the Stack View options")](uistackview-images/quick02.png#lightbox)
 
 この場合、
 
@@ -62,21 +62,21 @@ Xamarin ios アプリ`UIStackView`でを使用する場合、開発者は、ios 
 スタックビューを使用する場合、**配置**は、サブビューの**X**および**Y**位置、および**高さ**と**幅**とし**て考える**ことができます。
 
 > [!IMPORTANT]
-> `UIStackView`は非レンダリングコンテナービューとして設計されているため、の`UIView`他のサブクラスと同様にキャンバスに描画されることはありません。 そのため、 `BackgroundColor`やのオーバーライド`DrawRect`などのプロパティを設定しても視覚効果はありません。
+> `UIStackView` は、非レンダリングコンテナービューとして設計されているため、`UIView`の他のサブクラスと同様にキャンバスに描画されることはありません。 したがって、`BackgroundColor` や `DrawRect` のオーバーライドなどのプロパティを設定しても視覚効果はありません。
 
 次のように、ラベル、ImageView、2つのボタン、水平スタックビューを追加して、アプリのインターフェイスのレイアウトを続けます。
 
-[![](uistackview-images/quick03.png "スタックビュー UI のレイアウト")](uistackview-images/quick03.png#lightbox)
+[![](uistackview-images/quick03.png "Laying out the Stack View UI")](uistackview-images/quick03.png#lightbox)
 
 次のオプションを使用して、水平方向のスタックビューを構成します。
 
-[![](uistackview-images/quick04.png "水平方向のスタックビューのオプションを構成する")](uistackview-images/quick04.png#lightbox)
+[![](uistackview-images/quick04.png "Configure the Horizontal Stack View options")](uistackview-images/quick04.png#lightbox)
 
 横方向のスタックビューに追加したときに、評価の各 "ポイント" を表すアイコンを拡大する必要がないので、**配置**を [**中央**揃え] に設定し、**分布**を**均等に塗りつぶす**ように設定しました。
 
 最後に、次の**アウトレット**と**アクション**を接続します。
 
-[![](uistackview-images/quick05.png "スタックビューのコンセントとアクション")](uistackview-images/quick05.png#lightbox)
+[![](uistackview-images/quick05.png "The Stack View Outlets and Actions")](uistackview-images/quick05.png#lightbox)
 
 ### <a name="populate-a-uistackview-from-code"></a>コードから UIStackView にデータを設定する
 
@@ -132,7 +132,7 @@ partial void DecreaseRating (Foundation.NSObject sender) {
 }
 ```
 
-このコードのいくつかの部分を詳しく見てみましょう。 まず、 `if`ステートメントを使用して、5つ以上の "星" または0未満の値があることを確認します。
+このコードのいくつかの部分を詳しく見てみましょう。 まず、`if` ステートメントを使用して、5つ以上の "星" または0未満であることを確認します。
 
 新しい "star" を追加するには、イメージを読み込み、その**コンテンツモード**を **[縦横合わせる]** に設定します。
 
@@ -149,7 +149,7 @@ icon.ContentMode = UIViewContentMode.ScaleAspectFit;
 RatingView.AddArrangedSubview(icon);
 ```
 
-は`UIImageView` 、に`UIStackView`では`ArrangedSubviews`なく、のプロパティに追加されていることがわかります。`SubView` スタックビューでレイアウトを制御するビューを`ArrangedSubviews`プロパティに追加する必要があります。
+`UIImageView` は、`SubView`ではなく、`UIStackView`の `ArrangedSubviews` プロパティに追加されていることがわかります。 スタックビューでレイアウトを制御するビューは、`ArrangedSubviews` プロパティに追加する必要があります。
 
 スタックビューからサブビューを削除するには、まず、削除するサブビューを取得します。
 
@@ -157,7 +157,7 @@ RatingView.AddArrangedSubview(icon);
 var icon = RatingView.ArrangedSubviews[RatingView.ArrangedSubviews.Length-1];
 ```
 
-次に、 `ArrangedSubviews`コレクションとスーパービューの両方から削除する必要があります。
+次に、`ArrangedSubviews` コレクションとスーパービューの両方から削除する必要があります。
 
 ```csharp
 // Remove from stack and screen
@@ -165,7 +165,7 @@ RatingView.RemoveArrangedSubview(icon);
 icon.RemoveFromSuperview();
 ```
 
-`ArrangedSubviews`コレクションだけからサブビューを削除すると、スタックビューのコントロールから除外されますが、画面からは削除されません。
+`ArrangedSubviews` コレクションだけからサブビューを削除すると、スタックビューのコントロールから除外されますが、画面からは削除されません。
 
 ### <a name="testing-the-ui"></a>UI のテスト
 
@@ -173,37 +173,37 @@ icon.RemoveFromSuperview();
 
 ユーザーが [評価の**拡大**] ボタンをタップすると、別の "星" が画面に追加されます (最大5個まで)。
 
-[![](uistackview-images/intro01.png "サンプル アプリの実行")](uistackview-images/intro01.png#lightbox)
+[![](uistackview-images/intro01.png "The sample app run")](uistackview-images/intro01.png#lightbox)
 
 "星" は、水平スタックビューで自動的に中央揃えになり、均等に配分されます。 ユーザーが [評価を**下げる**] ボタンをタップすると、"star" が削除されます (いずれかが残っている場合)。
 
 ## <a name="stack-view-details"></a>スタックビューの詳細
 
-これで、 `UIStackView`コントロールの概要と動作方法がわかりました。次は、その機能と詳細について詳しく見ていきましょう。
+`UIStackView` コントロールの概要と動作方法についての概要を説明したので、その機能と詳細について詳しく見ていきましょう。
 
 ### <a name="auto-layout-and-size-classes"></a>自動レイアウトとサイズのクラス
 
 前に説明したように、ビューがスタックビューに追加されると、[自動レイアウト] と [サイズ] クラスを使用して、配置されたビューの位置とサイズを示す、そのスタックビューによってレイアウトが全体的に制御されます。
 
-スタックビューでは、コレクション内の最初と最後のサブビューが、垂直スタックビューの**上端**と**下端**、および水平スタックビューの**左端**と**右端**に_固定_されます。 `LayoutMarginsRelativeArrangement`プロパティをに`true`設定した場合、ビューでは、境界線がエッジではなく関連する余白にピン留めされます。
+スタックビューでは、コレクション内の最初と最後のサブビューが、垂直スタックビューの**上端**と**下端**、および水平スタックビューの**左端**と**右端**に_固定_されます。 [`LayoutMarginsRelativeArrangement`] プロパティを [`true`] に設定すると、ビューでは、そのサブビューがエッジではなく関連する余白にピン留めされます。
 
-スタックビューは、定義され`IntrinsicContentSize`たに沿って`Axis`サブビューのサイズを計算するときに`FillEqually Distribution`サブビューのプロパティを使用します (を除く)。 で`FillEqually Distribution`は、すべてのサブビューのサイズが同じになるようにサイズが変更さ`Axis`れるため、に沿ってスタックビューが塗りつぶされます。
+スタックビューは、定義された `Axis` (`FillEqually Distribution`を除く) に沿ってサブビューのサイズを計算するときに、サブビューの `IntrinsicContentSize` プロパティを使用します。 `FillEqually Distribution` では、すべてのサブビューのサイズが同じになるようにサイズを変更します。これにより、`Axis`に沿ってスタックビューが塗りつぶされます。
 
-を除き`Fill Alignment`、スタックビューはサブビューの`IntrinsicContentSize`プロパティを使用して、指定さ`Axis`れたに対するビューのサイズを垂直に計算します。 では、すべてのサブビューのサイズが変更され、指定さ`Axis`れたに対してスタックビューが垂直になります。 `Fill Alignment`
+`Fill Alignment`を除き、スタックビューでは、サブビューの `IntrinsicContentSize` プロパティを使用して、指定された `Axis`に対して垂直にビューのサイズを計算します。 `Fill Alignment`では、すべてのサブビューのサイズが変更され、特定の `Axis`に垂直方向にスタックビューが表示されます。
 
 ### <a name="positioning-and-sizing-the-stack-view"></a>スタックビューの配置とサイズ変更
 
-スタックビューには、サブビューのレイアウト全体の制御があります (や`Axis` `Distribution`などのプロパティに基づいています) が、Auto layout クラス`UIStackView`と Size クラスを使用して、その親ビュー内でスタックビュー () を配置する必要があります。
+スタックビューには、サブビューのレイアウト全体の制御があります (`Axis` や `Distribution`などのプロパティに基づいています) が、[自動レイアウト] と [サイズ] クラスを使用して、その親ビュー内でスタックビュー (`UIStackView`) を配置する必要があります。
 
 一般に、これは、展開とコントラクトを行うためにスタックビューの少なくとも2つの端を固定して、その位置を定義することを意味します。 追加の制約がなければ、次のように、すべてのサブビューに合わせてスタックビューのサイズが自動的に変更されます。
 
-- のサイズ`Axis`は、すべてのサブビューのサイズに加え、各サブビュー間に定義されているすべての領域の合計になります。
-- `LayoutMarginsRelativeArrangement`プロパティが`true`の場合は、スタックビューのサイズに余白用の領域も含まれます。
-- に垂直のサイズが`Axis` 、コレクション内の最大のサブビューに設定されます。
+- `Axis` のサイズは、すべてのサブビューのサイズに加え、各サブビュー間に定義されているすべての領域の合計になります。
+- `LayoutMarginsRelativeArrangement` プロパティが `true`の場合、スタックビューのサイズには余白用の領域も含まれます。
+- `Axis` に垂直なサイズは、コレクション内の最大のサブビューに設定されます。
 
-また、スタックビューの**高さ**と**幅**に対して制約を指定することもできます。 この場合、サブビューは、 `Distribution`および`Alignment`プロパティによって決定されるスタックビューで指定された領域を埋めるようにレイアウト (サイズ設定) されます。
+また、スタックビューの**高さ**と**幅**に対して制約を指定することもできます。 この場合、`Distribution` と `Alignment` のプロパティによって決定されるように、スタックビューで指定された領域を埋めるようにサブビューがレイアウト (サイズ設定) されます。
 
-- プロパティが`true`の場合、サブビューは、上、下、または中央の Y 位置を使用するのではなく、最初または最後のサブビューのベースラインに基づいてレイアウトされます。 `BaselineRelativeArrangement` これらは、次のようにスタックビューのコンテンツで計算されます。
+`BaselineRelativeArrangement` プロパティが `true`の場合、**上**、**下**、または**中央**- **Y**位置を使用するのではなく、最初または最後のサブビューのベースラインに基づいてサブビューがレイアウトされます。 これらは、次のようにスタックビューのコンテンツで計算されます。
 
 - 垂直スタックビューでは、最初のベースラインの最初のサブビューと最後のサブビューが返されます。 これらのサブビューがそれ自体のスタックビューである場合は、その最初または最後のベースラインが使用されます。
 - 水平スタックビューでは、最初と最後のベースラインの両方に対して最も高いサブビューが使用されます。 最も高いビューがスタックビューでもある場合は、ベースラインとして最も基本的なサブビューが使用されます。
@@ -215,14 +215,14 @@ icon.RemoveFromSuperview();
 
 スタックビューコントロールでは、いくつかのレイアウトの種類に対応しています。 Apple によると、一般的な使用方法がいくつかあります。
 
-- **軸に沿ってサイズを定義**します。スタックビューの`Axis`端と隣接する端のどちらかを固定して位置を設定することにより、そのサブビューで定義されている領域に合わせて、スタックビューが軸に沿って拡大されます。
+- **軸に沿ってサイズを定義**します。スタックビューの `Axis` と隣接する端のどちらかに沿って両方の端を固定すると、そのサブビューで定義されている領域に合わせて、軸に沿ってスタックビューが拡大されます。
 - サブ**ビューの位置を定義**します。これは、親ビューのスタックビューの隣接する端にピン留めすることによって、両方のディメンションで、サブビューが含まれていることに合わせてスタックビューを拡大します。
 - スタック**のサイズと位置を定義**する–スタックビューの4つのすべての辺を親ビューに固定することで、スタックビューで定義されている領域に基づいてサブビューが配置されます。
-- **軸の垂直方向のサイズを定義**します。スタックビュー `Axis`に垂直方向にピン留めすることにより、軸に沿って位置を設定することによって、スタックビューは、サブビューで定義されている領域に合わせて、軸に対して垂直方向に拡大されます。
+- **軸の垂直方向のサイズを定義**します。これにより、スタックビューの `Axis` に垂直方向にピン留めし、軸に沿って位置を設定することにより、そのサブビューで定義されている空間に合わせて、スタックビューが軸に対して垂直方向に拡大されます。
 
 ### <a name="managing-the-appearance"></a>外観の管理
 
-は非レンダリングコンテナービューとして設計されているため、の`UIView`他のサブクラスと同様にキャンバスに描画されることはありません。 `UIStackView` `BackgroundColor`やのオーバーライド`DrawRect`などのプロパティを設定しても、視覚効果はありません。
+`UIStackView` は、非レンダリングコンテナービューとして設計されているため、`UIView`の他のサブクラスと同様にキャンバスに描画されることはありません。 `BackgroundColor` や `DrawRect` のオーバーライドなどのプロパティを設定しても、視覚効果はありません。
 
 スタックビューでサブビューのコレクションをどのように配置するかを制御するプロパティがいくつかあります。
 
@@ -230,7 +230,7 @@ icon.RemoveFromSuperview();
 - **Alignment** –スタックビュー内でサブビューをどのように配置するかを制御します。
 - **Distribution** –スタックビュー内でサブビューのサイズを設定する方法を制御します。
 - **スペーシング**–スタックビュー内の各サブビュー間の最小限の空白を制御します。
-- **ベースライン相対**– `true`の場合、各サブビューの上下の間隔は、そのベースラインから派生します。
+- **ベースライン相対**– `true`場合、各サブビューの上下の間隔は、そのベースラインから派生します。
 - **[相対レイアウト]** -標準レイアウトの余白を基準にサブビューを配置します。
 
 通常は、少数のサブビューを配置するためにスタックビューを使用します。 1つ以上のスタックビューを相互に入れ子にすることにより、より複雑なユーザーインターフェイスを作成できます (上記の[Uistackview クイックスタート](#uistackview-quickstart)で行ったように)。
@@ -239,20 +239,20 @@ icon.RemoveFromSuperview();
 
 ### <a name="maintaining-arranged-views-and-sub-views-consistency"></a>配置されたビューとサブビューの一貫性の維持
 
-スタックビューは、次の規則`ArrangedSubviews`を使用して、プロパティが`Subviews`常にそのプロパティのサブセットであることを確認します。
+スタックビューは、次の規則を使用して、その `ArrangedSubviews` プロパティが常にその `Subviews` プロパティのサブセットであることを確認します。
 
-- サブビューがコレクションに`ArrangedSubviews`追加されると、コレクションに自動的に追加`Subviews`されます (コレクションに含まれていない場合)。
-- サブビューが`Subviews`コレクションから削除された場合 (表示から削除された場合)、 `ArrangedSubviews`コレクションからも削除されます。
-- `ArrangedSubviews`コレクションからサブビューを削除しても、 `Subviews`コレクションからは削除されません。 スタックビューによってレイアウトされることはなくなりますが、画面に表示されます。
+- サブビューが `ArrangedSubviews` コレクションに追加されると、そのサブビューは `Subviews` コレクションに自動的に追加されます (コレクションに含まれていない場合)。
+- サブビューが `Subviews` コレクションから削除された場合 (表示から削除された場合)、`ArrangedSubviews` コレクションからも削除されます。
+- `ArrangedSubviews` コレクションからサブビューを削除しても、`Subviews` コレクションからは削除されません。 スタックビューによってレイアウトされることはなくなりますが、画面に表示されます。
 
-コレクションは常に`Subview`コレクションのサブセットですが、各コレクション内の個々のサブビューの順序は、次のように分けられ、制御されます。 `ArrangedSubviews`
+`ArrangedSubviews` コレクションは常に `Subview` コレクションのサブセットですが、各コレクション内の個々のサブビューの順序は、次のように分けられ、制御されます。
 
-- `ArrangedSubviews`コレクション内のサブビューの順序によって、スタック内での表示順序が決まります。
-- `Subview`コレクション内のサブビューの順序によって、ビュー内のそれぞれの Z オーダー (またはレイヤー) が手前に戻ります。
+- `ArrangedSubviews` コレクション内のサブビューの順序によって、スタック内での表示順序が決まります。
+- `Subview` コレクション内のサブビューの順序によって、ビュー内のそれぞれの Z オーダー (またはレイヤー) が前面に戻されます。
 
 ### <a name="dynamically-changing-content"></a>コンテンツの動的な変更
 
-サブビューが追加、削除、または非表示になるたびに、スタックビューによってサブビューのレイアウトが自動的に調整されます。 また、スタックビューの任意のプロパティ (など`Axis`) が調整された場合にも、レイアウトが調整されます。
+サブビューが追加、削除、または非表示になるたびに、スタックビューによってサブビューのレイアウトが自動的に調整されます。 また、スタックビューの任意のプロパティ (`Axis`など) が調整された場合にも、レイアウトが調整されます。
 
 レイアウトの変更は、アニメーションブロック内に配置することによってアニメーション化できます。次に例を示します。
 
@@ -268,7 +268,7 @@ UIView.Animate(0.25, ()=>{
 
 ## <a name="summary"></a>まとめ
 
-この記事では、Xamarin `UIStackView` ios アプリで水平方向または垂直方向に配置された一連のサブビューを管理する新しいコントロール (iOS 9 用) について説明しました。
+この記事では、Xamarin iOS アプリで水平方向または垂直方向に配置された一連のサブビューを管理するための新しい `UIStackView` コントロール (iOS 9 用) について説明しました。
 ここでは、スタックビューを使用して UI を作成する簡単な例から始めて、スタックビューとそのプロパティと機能について詳しく見ていきました。
 
 ## <a name="related-links"></a>関連リンク

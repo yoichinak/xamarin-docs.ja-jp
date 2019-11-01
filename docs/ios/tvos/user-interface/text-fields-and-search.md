@@ -4,25 +4,25 @@ description: このドキュメントでは、Xamarin でビルドされた tvOS
 ms.prod: xamarin
 ms.assetid: 9EE63CA6-2F31-4EE0-AAE5-82E18CFAC06C
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 71efb000b3f78283863193e0cc1db5dc45100c0a
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.openlocfilehash: cfe747d89b3ccbff390326c915dc1311e40a60fc
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71250158"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022164"
 ---
 # <a name="working-with-tvos-text-and-search-fields-in-xamarin"></a>Xamarin での tvOS Text フィールドと検索フィールドの操作
 
 必要に応じて、tvOS アプリはテキストフィールドとスクリーンキーボードを使用して、ユーザー (ユーザー Id やパスワードなど) から小さなテキストを要求できます。
 
-[![](text-fields-and-search-images/intro01.png "サンプル検索フィールド")](text-fields-and-search-images/intro01.png#lightbox)
+[![](text-fields-and-search-images/intro01.png "Sample Search Field")](text-fields-and-search-images/intro01.png#lightbox)
 
 必要に応じて、検索フィールドを使用して、アプリのコンテンツのキーワード検索機能を提供することができます。
 
-[![](text-fields-and-search-images/intro02.png "検索結果のサンプル")](text-fields-and-search-images/intro02.png#lightbox)
+[![](text-fields-and-search-images/intro02.png "Sample Search Results")](text-fields-and-search-images/intro02.png#lightbox)
 
 このドキュメントでは、tvOS アプリでのテキストフィールドと検索フィールドの操作の詳細について説明します。
 
@@ -40,7 +40,7 @@ ms.locfileid: "71250158"
 
 TvOS では、テキストフィールドは、ユーザーがクリックしたときにスクリーンキーボードを起動する、固定高さの角の丸い角の入力ボックスとして表示されます。
 
-[![](text-fields-and-search-images/text01.png "TvOS のテキストフィールド")](text-fields-and-search-images/text01.png#lightbox)
+[![](text-fields-and-search-images/text01.png "Text Fields In tvOS")](text-fields-and-search-images/text01.png#lightbox)
 
 ユーザーが特定のテキストフィールドに[フォーカス](~/ios/tvos/app-fundamentals/navigation-focus.md)を移動すると、拡大して詳細な影が表示されます。 テキストフィールドは、フォーカスがあるときに他の UI 要素と重複する可能性があるため、ユーザーインターフェイスをデザインするときはこの点に注意する必要があります。
 
@@ -57,7 +57,7 @@ Apple には、テキストフィールドを操作するための次のよう�
 
 ユーザーがユーザーインターフェイスのテキストフィールドをクリックするたびに、線形のスクリーンキーボードが表示されます。 ユーザーは、 [Siri リモート](~/ios/tvos/platform/remote-bluetooth.md#The-Siri-Remote)のタッチ画面を使用して、キーボードから個々の文字を選択し、要求された情報を入力します。
 
-[![](text-fields-and-search-images/keyboard01.png "Siri リモートキーボード")](text-fields-and-search-images/keyboard01.png#lightbox)
+[![](text-fields-and-search-images/keyboard01.png "The Siri Remote keyboard")](text-fields-and-search-images/keyboard01.png#lightbox)
 
 現在のビューに複数のテキストフィールドがある場合は、[**次**へ] ボタンが自動的に表示され、ユーザーは次のテキストフィールドに移動します。 最後のテキストフィールドに **[完了]** ボタンが表示され、テキスト入力が終了して、前の画面にユーザーが返されます。
 
@@ -76,7 +76,7 @@ Apple には、スクリーンキーボードでの作業に関して次のよ�
 
 検索フィールドには、ユーザーがキーボードの下に表示される項目のコレクションをフィルター処理できるようにする、テキストフィールドとスクリーンキーボードを提供する特殊な画面が用意されています。
 
-[![](text-fields-and-search-images/search01.png "検索結果のサンプル")](text-fields-and-search-images/search01.png#lightbox)
+[![](text-fields-and-search-images/search01.png "Sample search results")](text-fields-and-search-images/search01.png#lightbox)
 
 ユーザーが検索フィールドに文字を入力すると、以下の結果には検索結果が自動的に反映されます。 ユーザーはいつでも、結果にフォーカスを移動して、表示される項目のいずれかを選択できます。
 
@@ -100,19 +100,19 @@ TvOS アプリでテキストフィールドを操作する最も簡単な方法
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1. **Solution Pad**で、 `Main.storyboard`ファイルをダブルクリックして編集用に開きます。
+1. **Solution Pad**で、`Main.storyboard` ファイルをダブルクリックして編集用に開きます。
 1. 1つまたは複数の**テキストフィールド**をドラッグして、デザインサーフェイスをビューに表示します。
 
-    [![](text-fields-and-search-images/text02.png "テキストフィールド")](text-fields-and-search-images/text02.png#lightbox)
+    [![](text-fields-and-search-images/text02.png "A Text Field")](text-fields-and-search-images/text02.png#lightbox)
 1. **テキストフィールド**を選択し、 **Properties Pad**の **[ウィジェット]** タブにそれぞれ一意の**名前**を付けます。
 
-    [![](text-fields-and-search-images/text03.png "Properties Pad の [ウィジェット] タブ")](text-fields-and-search-images/text03.png#lightbox)
+    [![](text-fields-and-search-images/text03.png "The Widget tab of the Properties Pad")](text-fields-and-search-images/text03.png#lightbox)
 1. **[テキストフィールド]** セクションでは、**プレースホルダー**ヒントや既定**値**などの要素を定義できます。
 
-    [![](text-fields-and-search-images/text04.png "テキストフィールドセクション")](text-fields-and-search-images/text04.png#lightbox)
+    [![](text-fields-and-search-images/text04.png "The Text Field section")](text-fields-and-search-images/text04.png#lightbox)
 1. 下にスクロールして**スペルチェック**、**大文字小文字**、キーボードの既定の**種類**などのプロパティを定義します。
 
-    [![](text-fields-and-search-images/text05.png "スペルチェック、大文字小文字、および既定のキーボードの種類")](text-fields-and-search-images/text05.png#lightbox)
+    [![](text-fields-and-search-images/text05.png "Spell Checking, Capitalization and the default Keyboard Type")](text-fields-and-search-images/text05.png#lightbox)
 1. 変更内容をストーリーボードに保存します。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
@@ -120,27 +120,27 @@ TvOS アプリでテキストフィールドを操作する最も簡単な方法
 1. **ソリューション エクスプローラー**で `Main.storyboard` ファイルをダブルクリックして、編集用に開きます。
 1. 1つまたは複数の**テキストフィールド**をドラッグして、デザインサーフェイスをビューに表示します。
 
-    [![](text-fields-and-search-images/text02-vs.png "テキストフィールド")](text-fields-and-search-images/text02-vs.png#lightbox)
+    [![](text-fields-and-search-images/text02-vs.png "A Text Field")](text-fields-and-search-images/text02-vs.png#lightbox)
 1. **テキストフィールド**を選択し、**プロパティエクスプローラー**の **[ウィジェット]** タブにそれぞれ一意の**名前**を付けます。
 
-    [![](text-fields-and-search-images/text03-vs.png "[ウィジェット] タブ")](text-fields-and-search-images/text03-vs.png#lightbox)
+    [![](text-fields-and-search-images/text03-vs.png "The Widget tab")](text-fields-and-search-images/text03-vs.png#lightbox)
 1. **[テキストフィールド]** セクションでは、**プレースホルダー**ヒントや既定**値**などの要素を定義できます。
 
-    [![](text-fields-and-search-images/text04-vs.png "テキストフィールドセクション")](text-fields-and-search-images/text04-vs.png#lightbox)
+    [![](text-fields-and-search-images/text04-vs.png "The Text Field section")](text-fields-and-search-images/text04-vs.png#lightbox)
 1. 下にスクロールして**スペルチェック**、**大文字小文字**、キーボードの既定の**種類**などのプロパティを定義します。
 
-    [![](text-fields-and-search-images/text05-vs.png "スペルチェック、大文字小文字、および既定のキーボードの種類")](text-fields-and-search-images/text05-vs.png#lightbox)
+    [![](text-fields-and-search-images/text05-vs.png "Spell Checking, Capitalization and the default Keyboard Type")](text-fields-and-search-images/text05-vs.png#lightbox)
 1. 変更内容をストーリーボードに保存します。
 
 -----
 
-コードでは、 `Text`プロパティを使用してテキストフィールドの値を取得または設定できます。
+コードでは、`Text` プロパティを使用して、テキストフィールドの値を取得または設定できます。
 
 ```csharp
 Console.WriteLine ("User ID {0} and Password {1}", UserId.Text, Password.Text);
 ```
 
-必要に応じて、 `Started`および`Ended`テキストフィールドイベントを使用して、テキストエントリの開始と終了に応答できます。
+必要に応じて、`Started` および `Ended` テキストフィールドイベントを使用して、テキストエントリの開始と終了に応答できます。
 
 <a name="Working-with-Search-Fields" />
 
@@ -152,20 +152,20 @@ TvOS アプリで検索フィールドを操作する最も簡単な方法は、
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1. **Solution Pad**で、 `Main.storyboard`ファイルをダブルクリックして編集用に開きます。
+1. **Solution Pad**で、`Main.storyboard` ファイルをダブルクリックして編集用に開きます。
 1. 新しいコレクションビューコントローラーをストーリーボードにドラッグして、ユーザーの検索結果を表示します。
 
-    [![](text-fields-and-search-images/search02.png "コレクションビューコントローラー")](text-fields-and-search-images/search02.png#lightbox)
-1. **Properties Pad**の **[ウィジェット**] タブで、 `SearchResultsViewController` **クラス**と`SearchResults` **ストーリーボード ID**にを使用します。
+    [![](text-fields-and-search-images/search02.png "A Collection View Controller")](text-fields-and-search-images/search02.png#lightbox)
+1. **Properties Pad**の **[ウィジェット]** タブで、**クラス**の `SearchResultsViewController` と**ストーリーボード ID**に `SearchResults` を使用します。
 
-    [![](text-fields-and-search-images/search03.png "[ウィジェット] タブ")](text-fields-and-search-images/search03.png#lightbox)
+    [![](text-fields-and-search-images/search03.png "The Widget tab")](text-fields-and-search-images/search03.png#lightbox)
 1. デザイン画面で**セルプロトタイプ**を選択します。
-1. **プロパティエクスプローラー**の **[ウィジェット]** タブで、 `SearchResultCell` **クラス** `ImageCell`にを、**識別子**にを使用します。
+1. **プロパティエクスプローラー**の **[ウィジェット]** タブで、**クラス**に `SearchResultCell` を、**識別子**に `ImageCell` を使用します。
 
-    [![](text-fields-and-search-images/search04.png "[ウィジェット] タブ")](text-fields-and-search-images/search04.png#lightbox)
+    [![](text-fields-and-search-images/search04.png "The Widget tab")](text-fields-and-search-images/search04.png#lightbox)
 1. **セルプロトタイプ**のデザインをレイアウトし、**プロパティエクスプローラー**の **[ウィジェット]** タブで、各要素を一意の**名前**で公開します。
 
-    [![](text-fields-and-search-images/search05.png "レイアウト (セルプロトタイプのデザインを)")](text-fields-and-search-images/search05.png#lightbox)
+    [![](text-fields-and-search-images/search05.png "Layout the design of the Cell Prototype")](text-fields-and-search-images/search05.png#lightbox)
 1. 変更内容をストーリーボードに保存します。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
@@ -173,17 +173,17 @@ TvOS アプリで検索フィールドを操作する最も簡単な方法は、
 1. **ソリューション エクスプローラー**で `Main.storyboard` ファイルをダブルクリックして、編集用に開きます。
 1. 新しいコレクションビューコントローラーをストーリーボードにドラッグして、ユーザーの検索結果を表示します。
 
-    [![](text-fields-and-search-images/seach02-vs.png "コレクションビューコントローラー")](text-fields-and-search-images/seach02-vs.png#lightbox)
-1. **プロパティエクスプローラー**の **[ウィジェット]** タブで、 `SearchResultsViewController` **クラス**と`SearchResults` **ストーリーボード ID**にを使用します。
+    [![](text-fields-and-search-images/seach02-vs.png "A Collection View Controller")](text-fields-and-search-images/seach02-vs.png#lightbox)
+1. **プロパティエクスプローラー**の **[ウィジェット]** タブで、**クラス**に `SearchResultsViewController` を使用し、**ストーリーボード ID**に `SearchResults` を使用します。
 
-    [![](text-fields-and-search-images/search03-vs.png "[ウィジェット] タブ")](text-fields-and-search-images/search03-vs.png#lightbox)
+    [![](text-fields-and-search-images/search03-vs.png "The Widget tab")](text-fields-and-search-images/search03-vs.png#lightbox)
 1. デザイン画面で**セルプロトタイプ**を選択します。
-1. **プロパティエクスプローラー**の **[ウィジェット]** タブで、 `SearchResultCell` **クラス** `ImageCell`にを、**識別子**にを使用します。
+1. **プロパティエクスプローラー**の **[ウィジェット]** タブで、**クラス**に `SearchResultCell` を、**識別子**に `ImageCell` を使用します。
 
-    [![](text-fields-and-search-images/search04-vs.png "[ウィジェット] タブ")](text-fields-and-search-images/search04-vs.png#lightbox)
+    [![](text-fields-and-search-images/search04-vs.png "The Widget tab")](text-fields-and-search-images/search04-vs.png#lightbox)
 1. **セルプロトタイプ**のデザインをレイアウトし、**プロパティエクスプローラー**の **[ウィジェット]** タブで、各要素を一意の**名前**で公開します。
 
-    [![](text-fields-and-search-images/search05-vs.png "レイアウト (セルプロトタイプのデザインを)")](text-fields-and-search-images/search05-vs.png#lightbox)
+    [![](text-fields-and-search-images/search05-vs.png "Layout the design of the Cell Prototype")](text-fields-and-search-images/search05-vs.png#lightbox)
 1. 変更内容をストーリーボードに保存します。
 
 -----
@@ -194,15 +194,15 @@ TvOS アプリで検索フィールドを操作する最も簡単な方法は、
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-次に、ユーザーが検索する結果のデータモデルとして機能するクラスを指定する必要があります。 **ソリューションエクスプローラー**で、プロジェクト名を右クリックし、[新しいファイルの**追加** >  **...** ] を選択します。一般に空のクラスと名前を指定します。 >   > 
+次に、ユーザーが検索する結果のデータモデルとして機能するクラスを指定する必要があります。 **ソリューションエクスプローラー**で、プロジェクト名を右クリックし、 **[追加]** [ > **新しいファイル...**  > **全般** > **空のクラス**] の順に選択し、**名前**を指定します。
 
-[![](text-fields-and-search-images/search06.png "空のクラスを選択し、名前を指定します")](text-fields-and-search-images/search06.png#lightbox)
+[![](text-fields-and-search-images/search06.png "Select Empty Class and provide a Name")](text-fields-and-search-images/search06.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-次に、ユーザーが検索する結果のデータモデルとして機能するクラスを指定する必要があります。 **ソリューションエクスプローラー**で、プロジェクト名を右クリックし、[**新しい項目**の**追加** > ] を選択します。 Apple のその他の > クラスと名前を指定します。  >  > 
+次に、ユーザーが検索する結果のデータモデルとして機能するクラスを指定する必要があります。 **ソリューションエクスプローラー**で、プロジェクト名を右クリックし、[**追加** > **新しい項目...**  > **Apple** > その**他**の > **クラス**] を選択して、**名前**を指定します。
 
-[![](text-fields-and-search-images/search06-vs.png "クラスを選択して名前を指定します")](text-fields-and-search-images/search06-vs.png#lightbox)
+[![](text-fields-and-search-images/search06-vs.png "Select Class and provide a Name")](text-fields-and-search-images/search06-vs.png#lightbox)
 
 -----
 
@@ -293,13 +293,13 @@ namespace tvText
 }
 ```
 
-メソッドは、プロパティが更新されるたびに、名前付き UI 要素の`PictureInfo` **画像情報**項目 (プロパティ) の個々のフィールドを表示するために使用されます。 `UpdateUI` たとえば、画像に関連付けられている画像やタイトルなどです。
+`UpdateUI` メソッドは、プロパティが更新されるたびに、名前付き UI 要素の**画像情報**項目 (`PictureInfo` プロパティ) の個々のフィールドを表示するために使用されます。 たとえば、画像に関連付けられている画像やタイトルなどです。
 
 <a name="The-Collection-View-Controller" />
 
 ### <a name="the-collection-view-controller"></a>コレクションビューコントローラー
 
-次に、検索結果コレクションビューコントローラー (`SearchResultsViewController.cs`) を編集して、次のように表示します。
+次に、検索結果コレクションビューコントローラー (`SearchResultsViewController.cs`) を編集し、次のように表示します。
 
 ```csharp
 using Foundation;
@@ -451,7 +451,7 @@ namespace tvText
 }
 ```
 
-まず、 `IUISearchResultsUpdating`ユーザーによって更新される検索コントローラーフィルターを処理するために、クラスにインターフェイスを追加します。
+まず、ユーザーによって更新される検索コントローラーフィルターを処理するために、クラスに `IUISearchResultsUpdating` インターフェイスを追加します。
 
 ```csharp
 public partial class SearchResultsViewController : UICollectionViewController , IUISearchResultsUpdating
@@ -481,7 +481,7 @@ public string SearchFilter {
 }
 ```
 
-`SearchFilter`が変更されると、一致する項目の一覧が更新され、コレクションビューのコンテンツが再読み込みされます。 ルーチン`FindPictures`は、新しい検索用語に一致する項目を検索します。
+`SearchFilter` が変更されると、一致する項目の一覧が更新され、コレクションビューのコンテンツが再読み込みされます。 `FindPictures` ルーチンは、新しい検索用語と一致する項目を検索します。
 
 ```csharp
 private void FindPictures ()
@@ -502,7 +502,7 @@ private void FindPictures ()
 }
 ```
 
-ユーザーが検索コントローラー `SearchFilter`でフィルターを変更すると、の値が更新されます (結果コレクションビューが更新されます)。
+ユーザーが検索コントローラーでフィルターを変更すると、`SearchFilter` の値 (結果コレクションビューが更新されます) が更新されます。
 
 ```csharp
 public void UpdateSearchResultsForSearchController (UISearchController searchController)
@@ -512,7 +512,7 @@ public void UpdateSearchResultsForSearchController (UISearchController searchCon
 }
 ```
 
-メソッド`PopulatePictures`は、最初に使用可能な項目のコレクションを設定します。
+`PopulatePictures` メソッドは、最初に使用可能な項目のコレクションを設定します。
 
 ```csharp
 private void PopulatePictures ()
@@ -528,7 +528,7 @@ private void PopulatePictures ()
 
 この例では、コレクションビューコントローラーが読み込まれるときに、すべてのサンプルデータがメモリ内に作成されています。 実際のアプリでは、このデータはデータベースまたは web サービスから読み取られる可能性があり、Apple TV の制限されたメモリのオーバーランを防ぐために必要なだけです。
 
-メソッド`NumberOfSections` と`GetItemsCount`メソッドは、一致する項目の数を提供します。
+`NumberOfSections` メソッドと `GetItemsCount` メソッドは、一致する項目の数を提供します。
 
 ```csharp
 public override nint NumberOfSections (UICollectionView collectionView)
@@ -544,7 +544,7 @@ public override nint GetItemsCount (UICollectionView collectionView, nint sectio
 }
 ```
 
-メソッド`GetCell`は、コレクションビューの各項目について`CellID` 、(ストーリーボードで定義されているに基づいて) 新しい**プロトタイプセル**を返します。
+`GetCell` メソッドは、コレクションビューの各項目について、(ストーリーボードで定義されている `CellID` に基づいて) 新しい**プロトタイプセル**を返します。
 
 ```csharp
 public override UICollectionViewCell GetCell (UICollectionView collectionView, NSIndexPath indexPath)
@@ -555,7 +555,7 @@ public override UICollectionViewCell GetCell (UICollectionView collectionView, N
 }
 ```
 
-`WillDisplayCell`メソッドは、セルが表示される前に呼び出され、構成できるようになります。
+`WillDisplayCell` メソッドは、セルが表示される前に呼び出されるので、次のように構成できます。
 
 ```csharp
 public override void WillDisplayCell (UICollectionView collectionView, UICollectionViewCell cell, NSIndexPath indexPath)
@@ -571,7 +571,7 @@ public override void WillDisplayCell (UICollectionView collectionView, UICollect
 }
 ```
 
-メソッド`DidUpdateFocus`は、結果コレクションビューで項目を強調表示するときに、視覚的なフィードバックをユーザーに提供します。
+`DidUpdateFocus` メソッドは、結果コレクションビューで項目を強調表示するときにユーザーに視覚的なフィードバックを提供します。
 
 ```csharp
 public override void DidUpdateFocus (UIFocusUpdateContext context, UIFocusAnimationCoordinator coordinator)
@@ -592,7 +592,7 @@ public override void DidUpdateFocus (UIFocusUpdateContext context, UIFocusAnimat
 }
 ```
 
-最後に、 `ItemSelected`メソッドは、結果コレクションビューの項目を選択するユーザー (siri リモートのタッチサーフェイスをクリック) を処理します。
+最後に、`ItemSelected` メソッドは、結果コレクションビューで項目を選択するユーザー (Siri リモートのタッチサーフェイスをクリック) を処理します。
 
 ```csharp
 public override void ItemSelected (UICollectionView collectionView, NSIndexPath indexPath)
@@ -607,7 +607,7 @@ public override void ItemSelected (UICollectionView collectionView, NSIndexPath 
 }
 ```
 
-検索フィールドを、それを呼び出しているビューの上部にモーダルダイアログビューとして表示した場合は`DismissViewController` 、ユーザーが項目を選択したときに、メソッドを使用して検索ビューを閉じます。 この例では、[検索] フィールドは [タブビュー] タブのコンテンツとして表示されるため、ここでは無視されません。
+検索フィールドを、それを呼び出しているビューの上部にモーダルダイアログビューとして表示した場合は、`DismissViewController` メソッドを使用して、ユーザーが項目を選択したときに検索ビューを閉じます。 この例では、[検索] フィールドは [タブビュー] タブのコンテンツとして表示されるため、ここでは無視されません。
 
 コレクションビューの詳細については、[コレクションビュー](~/ios/tvos/user-interface/collection-views.md)の使用に関するドキュメントを参照してください。
 
@@ -704,7 +704,7 @@ namespace tvText
 public const string SearchResultsID = "SearchResults";
 ```
 
-次に、 `ShowSearchController`メソッドは新しい検索ビューコレクションコントローラーを作成し、必要なものを表示します。
+次に、`ShowSearchController` メソッドによって新しい検索ビューコレクションコントローラーが作成され、必要であることが表示されます。
 
 ```csharp
 public void ShowSearchController ()
@@ -736,16 +736,16 @@ public void ShowSearchController ()
 }
 ```
 
-上のメソッド`SearchResultsViewController`では、がストーリーボードからインスタンス化されると、 `UISearchController`検索フィールドとスクリーンキーボードをユーザーに表示する新しいが作成されます。 (で`SearchResultsViewController`定義されているように) 検索結果のコレクションがこのキーボードに表示されます。
+上記の方法では、ストーリーボードから `SearchResultsViewController` がインスタンス化されると、ユーザーに検索フィールドとスクリーンキーボードを表示する新しい `UISearchController` が作成されます。 (`SearchResultsViewController`で定義されているように) 検索結果のコレクションがこのキーボードに表示されます。
 
-次に`SearchBar` 、は**プレースホルダー**ヒントなどの情報で構成されます。 これにより、処理中の検索の種類に関する情報がユーザーに提供されます。
+次に、`SearchBar` は**プレースホルダー**ヒントなどの情報で構成されます。 これにより、処理中の検索の種類に関する情報がユーザーに提供されます。
 
 その後、次の2つの方法のいずれかで、検索フィールドがユーザーに表示されます。
 
-- **モーダルダイアログビュー** -既存`PresentViewController`のビューの全画面表示で検索を表示するために、メソッドが呼び出されます。
-- [**内容**の表示`UISearchContainerViewController` ]-検索コントローラーを含むが作成されます。 検索コンテナーを格納するための`AddChildViewController (navController)` `View.Add (navController.View)`が作成された後、ナビゲーションコントローラーがビューコントローラーに追加され、ビューが表示`UINavigationController`されます。
+- **モーダルダイアログビュー** -`PresentViewController` メソッドを呼び出して、既存のビュー (全画面) で検索を表示します。
+- **[内容の表示]** -検索コントローラーを含む `UISearchContainerViewController` が作成されます。 検索コンテナーを含むように `UINavigationController` が作成された後、ナビゲーションコントローラーがビューコントローラー `AddChildViewController (navController)`に追加され、ビュー `View.Add (navController.View)`表示されます。
 
-最後に、プレゼンテーションの種類`ViewDidLoad`に基づいて、 `ShowSearchController`メソッドまたは`ViewDidAppear`メソッドがメソッドを呼び出して、検索をユーザーに提示します。
+最後に、プレゼンテーションの種類に基づいて、`ViewDidLoad` または `ViewDidAppear` のいずれかのメソッドが `ShowSearchController` メソッドを呼び出して、ユーザーに検索を提示します。
 
 ```csharp
 public override void ViewDidLoad ()
@@ -770,11 +770,11 @@ public override void ViewDidAppear (bool animated)
 
 ユーザーがアプリを実行し、[検索] タブを選択すると、フィルター処理されていない項目の完全な一覧がユーザーに表示されます。
 
-[![](text-fields-and-search-images/intro02.png "既定の検索結果")](text-fields-and-search-images/intro02.png#lightbox)
+[![](text-fields-and-search-images/intro02.png "Default search results")](text-fields-and-search-images/intro02.png#lightbox)
 
 ユーザーが検索語句の入力を開始すると、結果の一覧がその用語によってフィルター処理され、自動的に更新されます。
 
-[![](text-fields-and-search-images/intro03.png "フィルター処理された検索結果")](text-fields-and-search-images/intro03.png#lightbox)
+[![](text-fields-and-search-images/intro03.png "Filtered search results")](text-fields-and-search-images/intro03.png#lightbox)
 
 ユーザーはいつでも、検索結果の項目にフォーカスを切り替え、Siri リモートのタッチ画面をクリックして選択できます。
 

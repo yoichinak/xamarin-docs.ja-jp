@@ -4,21 +4,21 @@ description: このドキュメントでは、Xamarin でビルドされたア�
 ms.prod: xamarin
 ms.assetid: 23AD94CC-E93A-40B1-8E2B-ECD21FA355BE
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: deac7c5eee4ac0276c9d1a67cbfede8fc41378d6
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 0bedd898232b39898e6079a204bd7409587cde82
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769060"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030393"
 ---
 # <a name="working-with-tvos-segmented-controls-in-xamarin"></a>Xamarin での tvOS セグメント化されるコントロールの操作
 
 セグメント化されたコントロールは、一連の線形要素を提供します。各要素にはアイコンまたはテキストを含めることができ、関連する一連の選択肢をユーザーに提供するために使用されます。
 
-[![](segmented-controls-images/segment01.png "サンプルセグメントコントロール")](segmented-controls-images/segment01.png#lightbox)
+[![](segmented-controls-images/segment01.png "Sample segment controls")](segmented-controls-images/segment01.png#lightbox)
 
 次に、セグメント化されたコントロールの操作に関する推奨事項を示します。
 
@@ -42,7 +42,7 @@ Apple では、検索のための虫眼鏡など、セグメントアイコン�
 
 Apple では、セグメントテキストを操作するために次の提案を行います。
 
-- **わかりやすい、意味**のある名詞を使用する-セグメントタイトルは、指定されたセグメントを選択するときにユーザーが期待するコンテンツの種類を明確に示す必要があります。 例えば:音楽またはビデオ。
+- **わかりやすい、意味**のある名詞を使用する-セグメントタイトルは、指定されたセグメントを選択するときにユーザーが期待するコンテンツの種類を明確に示す必要があります。 例: Music または Videos。
 - **タイトル**の大文字と小文字を区別する-セグメントタイトルのすべての単語は、記事、接続詞、および前置詞の4文字未満の部分を除いて大文字にする必要があります。
 - **短いタイトルのタイトルを使用**します。タイトルは短くし、セグメントを選択したときに想定されるコンテンツの種類に重点を置いています。
 
@@ -56,34 +56,34 @@ TvOS アプリでセグメントコントロールを操作する最も簡単な
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1. **Solution Pad**で、 `Main.storyboard`ファイルをダブルクリックして開き、編集します。
+1. **Solution Pad**で、`Main.storyboard` ファイルをダブルクリックして開き、編集します。
 1. **[ツールボックス]** から**セグメントコントロール**をドラッグし、ビューにドロップします。 
 
-    [![](segmented-controls-images/segment02.png "セグメントコントロール")](segmented-controls-images/segment02.png#lightbox)
+    [![](segmented-controls-images/segment02.png "A Segment Control")](segmented-controls-images/segment02.png#lightbox)
 1. **プロパティパッド**の [**ウィジェット] タブ**では、**スタイル**や**状態**など、セグメントコントロールのいくつかのプロパティを調整できます。 
 
-    [![](segmented-controls-images/segment03.png "[ウィジェット] タブ")](segmented-controls-images/segment03.png#lightbox)
+    [![](segmented-controls-images/segment03.png "The Widget Tab")](segmented-controls-images/segment03.png#lightbox)
 1. **[セグメント]** フィールドを使用して、コントローラー内のセグメントの数を制御します。
 1. [**セグメント] ドロップダウン**から特定のセグメントを選択し、 **[タイトル]** や **[画像]** などの個々のプロパティを調整して、コントロールの表示時に特定のセグメントが有効に**なって**いるか**選択さ**れているかを制御します。
-1. 最後に、コントロールに**名前**を割り当てて、コードでC#それらに応答できるようにします。 例えば: 
+1. 最後に、コントロールに**名前**を割り当てて、コードでC#それらに応答できるようにします。 (例: 
 
-    [![](segmented-controls-images/segment04.png "名前を割り当てる")](segmented-controls-images/segment04.png#lightbox)
+    [![](segmented-controls-images/segment04.png "Assign a Name")](segmented-controls-images/segment04.png#lightbox)
 1. 変更内容を保存します。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. **ソリューションエクスプローラー**で、 `Main.storyboard`ファイルをダブルクリックして開き、編集します。
+1. **ソリューションエクスプローラー**で、`Main.storyboard` ファイルをダブルクリックして開き、編集します。
 1. **[ツールボックス]** から**セグメントコントロール**をドラッグし、ビューにドロップします。 
 
-    [![](segmented-controls-images/segment02-vs.png "セグメントコントロール")](segmented-controls-images/segment02-vs.png#lightbox)
+    [![](segmented-controls-images/segment02-vs.png "A Segment Control")](segmented-controls-images/segment02-vs.png#lightbox)
 1. **プロパティエクスプローラー**の [**ウィジェット] タブ**では、 **[スタイル]** や **[状態]** など、セグメントコントロールのいくつかのプロパティを調整できます。 
 
-    [![](segmented-controls-images/segment03-vs.png "[ウィジェット] タブ")](segmented-controls-images/segment03-vs.png#lightbox)
+    [![](segmented-controls-images/segment03-vs.png "The Widget Tab")](segmented-controls-images/segment03-vs.png#lightbox)
 1. **[セグメント]** フィールドを使用して、コントローラー内のセグメントの数を制御します。
 1. [**セグメント] ドロップダウン**から特定のセグメントを選択し、 **[タイトル]** や **[画像]** などの個々のプロパティを調整して、コントロールの表示時に特定のセグメントが有効に**なって**いるか**選択さ**れているかを制御します。
-1. 最後に、コントロールに**名前**を割り当てて、コードでC#それらに応答できるようにします。 例えば: 
+1. 最後に、コントロールに**名前**を割り当てて、コードでC#それらに応答できるようにします。 (例: 
 
-    [![](segmented-controls-images/segment04-vs.png "名前を割り当てる")](segmented-controls-images/segment04-vs.png#lightbox)
+    [![](segmented-controls-images/segment04-vs.png "Assign a Name")](segmented-controls-images/segment04-vs.png#lightbox)
 1. 変更内容を保存します。
 
 -----
@@ -125,9 +125,9 @@ partial void PlayerCountChanged (Foundation.NSObject sender) {
 }
 ```
 
-上の例の場合、セグメントコントロールは`PlayerCount`名前`PlayerCountChanged`とイベントアクションとして公開されていました。 アクションとアウトレットの操作の詳細については、「 [Hello, tvOS クイックスタートガイド](~/ios/tvos/get-started/hello-tvos.md)」の「[アウトレットとアクションを使用したコードの記述](~/ios/tvos/get-started/hello-tvos.md#Writing-the-Code)」を参照してください。
+上の例の場合、セグメントコントロールは `PlayerCount` 名と `PlayerCountChanged` イベントアクションとして公開されていました。 アクションとアウトレットの操作の詳細については、「 [Hello, tvOS クイックスタートガイド](~/ios/tvos/get-started/hello-tvos.md)」の「[アウトレットとアクションを使用したコードの記述](~/ios/tvos/get-started/hello-tvos.md#Writing-the-Code)」を参照してください。
 
-プロパティ`SelectedSegment`は、現在選択されているセグメントを0から始まるインデックスとして取得または設定します。 したがって、5つのセグメントがある場合、最初のセグメントのインデックスはゼロ (0) で、最後のインデックスは 4 (4) になります。
+`SelectedSegment` プロパティは、現在選択されているセグメントを0から始まるインデックスとして取得または設定します。 したがって、5つのセグメントがある場合、最初のセグメントのインデックスはゼロ (0) で、最後のインデックスは 4 (4) になります。
 
 <a name="Modifying-Segments" />
 
@@ -143,7 +143,7 @@ SegmentedControl.InsertSegment(UIImage.FromFile("icon.png"), 0, true);
 SegmentedControl.InsertSegment("New Segment", 0, true);
 ```
 
-2番目のパラメーターは、0から始まるインデックスを使用して、セグメントが挿入される場所を定義します。 最後のパラメーターが`true`の場合、挿入はアニメーション化されます。
+2番目のパラメーターは、0から始まるインデックスを使用して、セグメントが挿入される場所を定義します。 最後のパラメーターが `true` 場合、挿入はアニメーション化されます。
 
 特定のセグメントを削除するには、次のように指定します。
 
@@ -157,7 +157,7 @@ SegmentedControl.RemoveSegmentAtIndex(0, true);
 SegmentedControl.RemoveAllSegments();
 ```
 
-ここでも、最後のパラメーター `true`がの場合、削除はアニメーション化されます。 現在の`NumberOfSegments`セグメント数を取得するには、プロパティを使用します。
+ここでも、最後のパラメーターが `true`の場合、削除はアニメーション化されます。 現在のセグメント数を返すには、`NumberOfSegments` プロパティを使用します。
 
 特定のセグメントの**タイトル**または**アイコン**を取得するには、次のように指定します。
 
@@ -204,7 +204,7 @@ SegmentedControl.SetEnabled(false, 0);
 SegmentedControl.SetBackgroundImage (UIImage.FromFile("background.png"), UIControlState.Normal, UIBarMetrics.Default);
 ```
 
-ここ`UIControlState`では、イメージを設定するコントロールの状態をとして指定します。
+ここで `UIControlState` では、イメージを設定するコントロールの状態をとして指定します。
 
 - 標準
 - '95'5c
@@ -212,10 +212,10 @@ SegmentedControl.SetBackgroundImage (UIImage.FromFile("background.png"), UIContr
 - 選択済み
 - フォーカスされている
 
-と`UIBarMetrics`は、次のように使用するメトリックを指定します。
+と `UIBarMetrics` は、次のように使用するメトリックを指定します。
 
-- 既定値
-- コンパクト
+- 既定
+- Cd-r
 - DefaultPrompt
 - CompactPrompt
 
@@ -225,11 +225,11 @@ SegmentedControl.SetBackgroundImage (UIImage.FromFile("background.png"), UIContr
 SegmentedControl.SetDividerImage (UIImage.FromFile("divider.png"), UIControlState.Normal, UIControlState.Normal, UIBarMetrics.Default);
 ```
 
-最初`UIControlState`のは、区分線の左側にあるセグメントの状態を指定し、2 `UIControlState`番目のは右側のセグメントの状態を指定します。
+最初の `UIControlState` では、区分線の左側にあるセグメントの状態を指定し、2番目の `UIControlState` は右側のセグメントの状態を指定します。
 
 <a name="Summary" />
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>まとめ
 
 この記事では、tvOS アプリ内のセグメント化されたコントロールの設計と操作について説明しました。
 

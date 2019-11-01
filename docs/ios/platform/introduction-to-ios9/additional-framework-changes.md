@@ -4,21 +4,21 @@ description: このドキュメントでは、iOS 9 で導入された追加の�
 ms.prod: xamarin
 ms.assetid: CFDE1FC4-9327-402B-95A0-581D4AA0E9D5
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: cb16ad3889453f866f3dc9e66f5bcc8860bd094a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: ef0bcba7a59984c6bad7091431fe00b1f1b7eee3
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70751983"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031789"
 ---
 # <a name="additional-ios-9-frameworks-changes"></a>IOS 9 フレームワークのその他の変更
 
 _この記事では、iOS 9 用の既存のフレームワークの追加、軽微な変更、強化された機能について説明します。_
 
-[![](additional-framework-changes-images/ios9-sml.png "iOS 9 ロゴ")](additional-framework-changes-images/ios9.png#lightbox)
+[![](additional-framework-changes-images/ios9-sml.png "iOS 9 Logo")](additional-framework-changes-images/ios9.png#lightbox)
 
 IOS に加えられた主な変更に加えて、Apple は、iOS 9 の既存の複数のフレームワークに対して変更や機能強化を加えました。
 
@@ -32,7 +32,7 @@ AVFoundation framework では、 [AVSpeechSynthesisVoice](xref:AVFoundation.AVSp
 var voices = AVSpeechSynthesisVoice.GetSpeechVoices ();
 ```
 
-次に、 `Voice` [AVSpeachUtterance](xref:AVFoundation.AVSpeechUtterance)クラスのインスタンスのプロパティとして設定することで、一覧のいずれかの音声を使用できます。
+次に、 [AVSpeachUtterance](xref:AVFoundation.AVSpeechUtterance)クラスのインスタンスの `Voice` プロパティとして設定することで、一覧のいずれかの音声を使用できます。
 
 [Avqueueplayer](xref:AVFoundation.AVQueuePlayer)クラスは、キュー内のインターネットストリーミングとファイルベースのメディアを組み合わせてサポートするようになりました。 以前のバージョンでは、同じ種類のメディアのみをキューに置いていました。
 
@@ -40,10 +40,10 @@ var voices = AVSpeechSynthesisVoice.GetSpeechVoices ();
 
 ## <a name="avkit-framework-additions"></a>AVKit フレームワークの追加
 
-新しい画像形式 (PIP) 機能を使用するために、avkit フレームワークには、new `AVPictureInPictureController`クラスと[AVPlayerViewController](xref:AVKit.AVPlayerViewController)クラスが含まれています。
+新しい画像形式 (PIP) 機能を使用するために、AVKit フレームワークには、新しい `AVPictureInPictureController` クラスと[AVPlayerViewController](xref:AVKit.AVPlayerViewController)クラスが含まれています。
 
 - **Avピクチャ Inピクチャコントローラー** -このクラスを使用すると、iOS 9 アプリはユーザーに応答して、iPad 上のサイズ変更可能なフローティング状態の PIP ウィンドウでビデオの再生を開始することができます。
-- **AVPlayerViewController** -iPad 上`AVPlayer`のサイズ変更可能なフローティング状態の PIP ウィンドウにビデオを表示するために使用されるコントローラーを管理します。
+- **AVPlayerViewController** -iPad 上のサイズ変更可能なフローティング状態の PIP ウィンドウにビデオを表示するために使用される `AVPlayer` コントローラーを管理します。
 
 詳細については、 [iPad のドキュメント用のマルチタスキングに](~/ios/platform/introduction-to-ios9/index.md#multitasking)関するドキュメントと Apple の[Av画像 inピクチャコントローラーのリファレンス](https://developer.apple.com/library/prerelease/ios/documentation/AVKit/Reference/AVPictureInPictureController_Class/index.html#//apple_ref/occ/cl/AVPictureInPictureController)と[AVPlayerViewController リファレンス](https://developer.apple.com/library/prerelease/ios/documentation/AVFoundation/Reference/AVPlayerViewController_Class/index.html#//apple_ref/occ/cl/AVPlayerViewController)を参照してください。
 
@@ -62,7 +62,7 @@ CloudKit フレームワークを使用すると、iCloud にアクセスする�
 - [Cloudkit クイックスタート](https://developer.apple.com/library/prerelease/ios/documentation/DataManagement/Conceptual/CloudKitQuickStart/Introduction/Introduction.html#//apple_ref/doc/uid/TP40014987)-Apple が cloudkit を紹介します。
 - [CLOUDKIT Js リファレンス](https://developer.apple.com/library/prerelease/ios/documentation/CloudKitJS/Reference/CloudKitJavaScriptReference/index.html#//apple_ref/doc/uid/TP40015359)-Apple の cloudkit js ドキュメント。
 - [Cloudkit Web サービスリファレンス](https://developer.apple.com/library/prerelease/ios/documentation/DataManagement/Conceptual/CloutKitWebServicesReference/Introduction/Introduction.html#//apple_ref/doc/uid/TP40015240)-cloudkit への HTTP インターフェイスについて説明している Apple のリファレンスです。
-- [CloudKit カタログ:Cloudkit (cocoa および JavaScript)](https://developer.apple.com/library/prerelease/ios/samplecode/CloudAtlas/Introduction/Intro.html#//apple_ref/doc/uid/TP40014599)の概要-cloudkit と cloudkit JS を使用した Apple のサンプルアプリ。
+- [Cloudkit カタログ: cloudkit (Cocoa および JavaScript) の概要](https://developer.apple.com/library/prerelease/ios/samplecode/CloudAtlas/Introduction/Intro.html#//apple_ref/doc/uid/TP40014599)-CloudKit と CLOUDKIT JS を使用した Apple のサンプルアプリ。
 
 > [!IMPORTANT]
 > Apple からは、開発者が欧州連合の一般データ保護規則 (GDPR) を適切に処理するための[ツールが提供](https://developer.apple.com/support/allowing-users-to-manage-data/)されています。
@@ -75,8 +75,8 @@ Apple では、iOS 9 の Foundation framework に次の変更が加えられて�
 
 IOS 9 の[Nsbundle](xref:Foundation.NSBundle)クラスには、次の変更が加えられました。
 
-- `GetPreservationPriorityForTag (NSString tag)`-指定されたタグを持つリソースの現在の保存優先度を取得します。 有効な値はからの`0.0`範囲`1.0`内で、最も低い優先順位のリソースが最初に削除されます。
-- `SetPreservationPriorityForTag (double priority, NSSet tags)`-指定されたタグを持つリソースの現在の保存優先度を設定します。 有効な値はからの`0.0`範囲`1.0`内で、最も低い優先順位のリソースが最初に削除されます。
+- `GetPreservationPriorityForTag (NSString tag)`-指定されたタグを持つリソースの現在の保存優先度を取得します。 有効な値は、`1.0``0.0` 範囲内にあります。最も低い優先順位のリソースが最初に削除されます。
+- `SetPreservationPriorityForTag (double priority, NSSet tags)`-指定されたタグを持つリソースの現在の保存優先度を設定します。 有効な値は、`1.0``0.0` 範囲内にあります。最も低い優先順位のリソースが最初に削除されます。
 
 詳細については、「Apple の[Nsbundle リファレンス](https://developer.apple.com/library/prerelease/ios/documentation/Cocoa/Reference/Foundation/Classes/NSBundle_Class/index.html#//apple_ref/occ/cl/NSBundle)」を参照してください。
 
@@ -101,7 +101,7 @@ NSProcessInfo.ProcessInfo.EndActivity(activity);
 
 ### <a name="reacting-to-low-power-mode"></a>低電力モードへの対応
 
-[Nsprocessinfo](xref:Foundation.NSProcessInfo)クラスのプロパティを使用して、アプリが実行されているiOSデバイスで低電力モードが有効になっているかどうかを確認します。`LowPowerModeEnabled` 例えば:
+[Nsprocessinfo](xref:Foundation.NSProcessInfo)クラスの `LowPowerModeEnabled` プロパティを使用して、アプリが実行されている iOS デバイスで低電力モードが有効になっているかどうかを確認します。 (例:
 
 ```csharp
 // Is the device in low power mode?
@@ -117,7 +117,7 @@ if (NSProcessInfo.ProcessInfo.LowPowerModeEnabled) {
 Apple では、iOS 9 の[HealthKit](xref:HealthKit)フレームワークに次の変更が加えられています。
 
 - HealthKit データベース内のエントリの一括削除と削除の追跡をサポートします。 詳細については、Apple の[Hkdeletedobject](https://developer.apple.com/library/prerelease/ios/documentation/HealthKit/Reference/HKDeletedObject_ClassReference/index.html#//apple_ref/occ/cl/HKDeletedObject)、 [HKAnchoredObjectQuery](https://developer.apple.com/library/prerelease/ios/documentation/HealthKit/Reference/HKAnchoredObjectQuery_Class/index.html#//apple_ref/occ/cl/HKAnchoredObjectQuery) 、および[HKHealthStore クラスリファレンス](https://developer.apple.com/library/prerelease/ios/documentation/HealthKit/Reference/HKHealthStore_Class/index.html#//apple_ref/doc/uid/TP40014708)を参照してください。
-- `HKQuantityTypeIdentifier`クラス ( `UVExposure`など) や`HKCategoryTypeIdentifier`クラス ( `OvulationTestResult`など) に、新しい追跡カテゴリと特性が追加されました。 詳細については、「Apple の[HealthKit 定数](https://developer.apple.com/library/prerelease/ios/documentation/HealthKit/Reference/HealthKit_Constants/index.html#//apple_ref/doc/uid/TP40014710)」を参照してください。
+- 新しい追跡カテゴリと特性が `HKQuantityTypeIdentifier` クラス (`UVExposure`など) と `HKCategoryTypeIdentifier` クラス (`OvulationTestResult`など) に追加されました。 詳細については、「Apple の[HealthKit 定数](https://developer.apple.com/library/prerelease/ios/documentation/HealthKit/Reference/HealthKit_Constants/index.html#//apple_ref/doc/uid/TP40014710)」を参照してください。
 
 Xamarin. iOS での HealthKit の使用方法の詳細については、 [HealthKit の概要に](~/ios/platform/healthkit.md)関するドキュメントを参照してください。
 
@@ -125,7 +125,7 @@ Xamarin. iOS での HealthKit の使用方法の詳細については、 [Health
 
 Apple では、iOS 9 の[ローカル認証](xref:LocalAuthentication)フレームワークに次の変更が加えられています。
 
-- [LAContext クラス](xref:LocalAuthentication.LAContext)の`EvaluatePolicy`メソッドとメソッドを使用して、前回成功したロック解除試行とのタッチ ID 一致を再利用できるようになりました。 `EvaluateAccessControl`
+- [LAContext](xref:LocalAuthentication.LAContext)クラスの `EvaluateAccessControl` および `EvaluatePolicy` メソッドを使用して、前回成功したロック解除試行とのタッチ ID 一致を再利用できるようになりました。
 - 現在登録されている指の一覧を取得する機能。
 - 指が認証に追加または削除されたときの追跡のサポート。
 - キーチェーンの呼び出しと、キーチェーンアクセス制御リストの評価をサポートする_認証コンテキスト_を使用する機能。
@@ -137,13 +137,13 @@ Apple では、iOS 9 の[ローカル認証](xref:LocalAuthentication)フレー�
 
 IOS 9 の[LAContext](xref:LocalAuthentication.LAContext)クラスには、次の変更が加えられました。
 
-- **TouchIdAuthenticationMaximumAllowableReuseDuration** -最大タッチ ID の認証を再利用可能な時間を返します。
+- **TouchIdAuthenticationMaximumAllowableReuseDuration** -タッチ ID 認証を再利用できる最長時間を返します。
 - **EvaluatedPolicyDomainState** -評価されたポリシーの状態を取得または設定します。
 - **MaxBiometryFailures** -iOS 9 では、減価償却が行われています。
-- **TouchIdAuthenticationAllowableReuseDuration** を取得またはタッチ ID の認証を再利用可能な時間を設定します。
+- **TouchIdAuthenticationAllowableReuseDuration**Touch ID 認証を再利用できる時間を取得します。値の設定も可能です。
 - **EvaluateAccessControl** -認証ポリシーを非同期に評価します。
 - **無効**-特定のタッチ ID 認証を無効にします。
-- **Iscredentialset** -資格`true`情報が現在設定されている場合は、を返します。
+- **Iscredentialset** -資格情報が現在設定されている場合に `true` を返します。
 - **Setcredentialtype**指定された資格情報の種類を設定します。
 
 詳細については、Apple の[LAContext のリファレンス](https://developer.apple.com/library/prerelease/ios/documentation/LocalAuthentication/Reference/LAContext_Class/index.html#//apple_ref/occ/instm/LAContext/evaluatePolicy:localizedReason:reply:)を参照してください。
@@ -154,7 +154,7 @@ Apple では、iOS 9 の[Mapkit](xref:MapKit)フレームワークに次の変�
 
 - MapKit は、転送方向にマップアプリを直接起動し、 [Mklaunchoptions](xref:MapKit.MKLaunchOptions)および[mk道順](xref:MapKit.MKLaunchOptions)クラスを使用して到着の推定所要時間 (ETA) を照会するためのサポートを提供するようになりました。
 - MapKit と[Clgeocoder](xref:CoreLocation.CLGeocoder)クラスによって返される検索結果では、結果のタイムゾーンを指定することもできます。
-- `DetailCalloutAccessoryView` [MKAnnotationView](xref:MapKit.MKAnnotationView)クラスのプロパティを使用して、iOS アプリによって提示されたマップの注釈を完全にカスタマイズできるようになりました。
+- [MKAnnotationView](xref:MapKit.MKAnnotationView)クラスの [`DetailCalloutAccessoryView` プロパティを使用して、iOS アプリによって表示されるマップの注釈を完全にカスタマイズできるようになりました。
 
 Xamarin でマップと注釈を操作する方法の詳細については、「 [Ios マップ](~/ios/user-interface/controls/ios-maps/index.md)と[チュートリアル-mapkit での注釈とオーバーレイの調査](~/ios/user-interface/controls/ios-maps/ios-maps-walkthrough.md)」を参照してください。詳細については、Ios と Apple の[clgeocoder リファレンス](https://developer.apple.com/library/prerelease/ios/documentation/CoreLocation/Reference/CLGeocoder_class/index.html#//apple_ref/occ/cl/CLGeocoder)を参照してください。
 
@@ -193,17 +193,17 @@ Apple には、iOS 9 用の[Uikit](xref:UIKit)フレームワークのいくつ�
 
 ### <a name="3d-touch-events"></a>3D タッチイベント
 
-IOS 9 および iPhone 6s と iPhone 6s Plus の新機能である3D タッチにより、負荷の高いジェスチャが iOS アプリに追加されます。 その結果、アプリが ios 9 (またはそれ以降) で実行されていて、ios デバイスが3d タッチをサポートできる場合、負荷`TouchesMoved`の変化によってイベントが発生します。
+IOS 9 および iPhone 6s と iPhone 6s Plus の新機能である3D タッチにより、負荷の高いジェスチャが iOS アプリに追加されます。 その結果、アプリが iOS 9 (またはそれ以降) で実行されていて、iOS デバイスが3D タッチをサポートできる場合、負荷の変化によって `TouchesMoved` イベントが発生します。
 
-この動作の変更のため、X/Y 座標が変更され`TouchesMoved`ていない場合でも、イベントがより頻繁に呼び出されるように iOS アプリを準備する必要があります。
+この動作の変更のため、X/Y 座標が変更されていない場合でも、`TouchesMoved` イベントをより頻繁に呼び出すには、iOS アプリを準備する必要があります。
 
 詳細については、「 [3D タッチ](~/ios/platform/3d-touch.md)ガイドの概要」を参照してください。
 
 ### <a name="document-open-in-place-functionality"></a>ドキュメントのオープンインプレース機能
 
-[Uiapplicationdelegate](xref:UIKit.UIApplicationDelegate)クラス`FinishedLaunching (application, launchOptions)`の`WillFinishLaunching (Application, launchOptions)`メソッドまたはメソッドを使用することにより、ドキュメントを開いて (コピーで作業するのではなく) 変更できるようになりました。
+[Uiapplicationdelegate](xref:UIKit.UIApplicationDelegate)クラスの `FinishedLaunching (application, launchOptions)` または `WillFinishLaunching (Application, launchOptions)` のいずれかのメソッドを使用することにより、ドキュメントを開いて (コピーで作業するのではなく) 変更できます。
 
-新しいオープンインプレース機能をサポートするには、Xamarin. iOS `LSSupportsOpeningDocumentsInPlace`アプリの**情報**ファイルにキーを追加します。このファイルには、 `YES`という値を指定します。
+新しいオープンインプレース機能をサポートするには、`LSSupportsOpeningDocumentsInPlace` キーを、`YES`の値を持つ Xamarin. iOS アプリの**情報 plist**ファイルに追加します。
 
 詳細については、Apple の[Uiapplicationdelegate のリファレンス](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intf/UIApplicationDelegate)を参照してください。
 
@@ -215,25 +215,25 @@ Apple では、iOS 9 のタッチイベントに対していくつかの機能�
 
 ### <a name="fetching-tailored-content"></a>調整したコンテンツを取得する
 
-新しい`NSDataAsset`クラスを使用すると、Xamarin ios アプリは、現在実行されている iOS デバイスのメモリおよびグラフィック機能に合わせて調整されたコンテンツを取得できます。
+新しい `NSDataAsset` クラスを使用すると、Xamarin iOS アプリは、現在実行されている iOS デバイスのメモリおよびグラフィック機能に合わせて調整されたコンテンツを取得できます。
 
 ### <a name="new-layout-anchors"></a>新しいレイアウトアンカー
 
-新しい`NSLayoutAnchor` `LeadingAnchor`と`NSLayoutDimension`レイアウトのアンカークラスは、 [uiview](xref:UIKit.UIView)クラス (や`WidthAnchor`など) の新しいアンカープロパティと連携して、iOS 9 でのレイアウトを簡単にすることができます。
+新しい `NSLayoutAnchor` および `NSLayoutDimension` レイアウトのアンカークラスは、 [Uiview](xref:UIKit.UIView)クラス (`LeadingAnchor` や `WidthAnchor`など) の新しいアンカープロパティと連携して、iOS 9 でのレイアウトを簡単にします。
 
 Xamarin でのオートレイアウトとサイズのクラスの操作の詳細については、統合されたストーリーボードのドキュメントの[概要に](~/ios/user-interface/storyboards/unified-storyboards.md)関する記事をご覧ください。 iOS アプリと Apple の[nslayoutanchor リファレンス](https://developer.apple.com/library/prerelease/ios/documentation/AppKit/Reference/NSLayoutAnchor_ClassReference/index.html#//apple_ref/occ/cl/NSLayoutAnchor)、 [nslayoutanchor リファレンス](https://developer.apple.com/library/prerelease/ios/documentation/AppKit/Reference/NSLayoutDimension_ClassReference/index.html#//apple_ref/occ/cl/NSLayoutDimension) [、](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/cl/UIView)詳細については、「UIView リファレンス」を参照してください。
 
 ### <a name="new-readable-content-margins"></a>新しい読み取り可能なコンテンツの余白
 
-新しい`UILayoutGuide`クラスを使用すると、読み取り可能なコンテンツの余白を提供し、ビュー内のコンテンツの描画領域を定義できます。 詳細については、「Apple の[UILayoutGuide リファレンス](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UILayoutGuide_Class_Reference/index.html#//apple_ref/occ/cl/UILayoutGuide)」を参照してください。
+新しい `UILayoutGuide` クラスを使用して、読み取り可能なコンテンツの余白を指定したり、ビュー内のコンテンツの描画領域を定義したりすることができます。 詳細については、「Apple の[UILayoutGuide リファレンス](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UILayoutGuide_Class_Reference/index.html#//apple_ref/occ/cl/UILayoutGuide)」を参照してください。
 
 ### <a name="text-input-in-notifications-modifications"></a>通知の変更時のテキスト入力
 
-[Uiusernotificationaction](xref:UIKit.UIUserNotificationAction)クラスには、通知`Behavior`からのテキスト入力をサポートするために使用できる新しいプロパティがあります。
+[Uiusernotificationaction](xref:UIKit.UIUserNotificationAction)クラスには、通知からのテキスト入力をサポートするために使用できる新しい `Behavior` プロパティがあります。
 
 ### <a name="uiapplicationdelegate-changes"></a>UIApplicationDelegate の変更
 
-Apple で`FinishedLaunching (UIApplication application, NSDictionary launchOptions)`は正式に非推奨とされていますが`FinishedLaunching (UIApplication application)` 、 [uiapplicationdelegate](xref:UIKit.UIApplicationDelegate)クラスのメソッドへのすべての`WillFinishLaunching (UIApplication application, NSDictionary launchOptions)`呼び出しをメソッドまたはメソッドに置き換えることをお勧めします。
+Apple では正式に非推奨とされていますが、 [Uiapplicationdelegate](xref:UIKit.UIApplicationDelegate)クラスの `FinishedLaunching (UIApplication application)` メソッドへのすべての呼び出しを、`FinishedLaunching (UIApplication application, NSDictionary launchOptions)` または `WillFinishLaunching (UIApplication application, NSDictionary launchOptions)` メソッドで置き換えることをお勧めします。
 
 詳細については、Apple の[Uiapplicationdelegate のリファレンス](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intf/UIApplicationDelegate)を参照してください。
 
@@ -242,8 +242,8 @@ Apple で`FinishedLaunching (UIApplication application, NSDictionary launchOptio
 Apple では、iOS 9 の UIKit Dynamics に次の変更が加えられています。
 
 - Dynamics では、四角形を使用しない衝突境界がサポートされるようになりました。
-- 新しいカスタマイズ可能`UIFieldBehavior`なクラスは、さまざまなフィールドの種類をサポートするために使用されます。
-- 追加の添付ファイルの`UIAttachmentBehavior`種類がクラスに追加されました。
+- 新しいカスタマイズ可能な `UIFieldBehavior` クラスは、さまざまなフィールドの種類をサポートするために使用されます。
+- 追加の添付ファイルの種類が `UIAttachmentBehavior` クラスに追加されました。
 
 詳細については、Apple の[Uiattachment のリファレンス](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIAttachmentBehavior_Class/index.html#//apple_ref/occ/cl/UIAttachmentBehavior)を参照してください。
 
@@ -257,7 +257,7 @@ IOS 9 では、この自動サイズ変更は発生せず、画面のサイズ�
 
 ### <a name="new-uitextinputassistantitem-class"></a>New UITextInputAssistantItem クラス
 
-新しい`UITextInputAssistantItem`クラスを使用して、_ショートカットバー_のレイアウトバーボタングループにします。 ショートカットバーは、ソフトキーボードで入力ショートカットを提供するために使用できる新しい領域です。
+_ショートカットバー_のレイアウトバーボタングループには、新しい `UITextInputAssistantItem` クラスを使用します。 ショートカットバーは、ソフトキーボードで入力ショートカットを提供するために使用できる新しい領域です。
 
 ## <a name="related-links"></a>関連リンク
 

@@ -3,23 +3,23 @@ title: カスタム ボタン
 ms.prod: xamarin
 ms.assetid: C523D41E-5855-248D-079D-6B12B74B7617
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/06/2018
-ms.openlocfilehash: 4504045eb1692d95ee1e981bbec3da3a45699db3
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: d85c67cf18c61af04cf12bfab58a5b516d380f62
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70758926"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029354"
 ---
 # <a name="custom-button"></a>カスタム ボタン
 
-このセクションでは、テキストではなくカスタムイメージを使用するボタンを作成します[`Button`](xref:Android.Widget.Button) 。ウィジェットと、さまざまなボタンの状態に使用する3つの異なるイメージを定義する XML ファイルを使用します。 このボタンが押されると、短いメッセージが表示されます。
+このセクションでは、 [`Button`](xref:Android.Widget.Button)ウィジェットと、さまざまなボタンの状態に使用する3つの異なるイメージを定義する XML ファイルを使用して、テキストではなくカスタムイメージを含むボタンを作成します。 このボタンが押されると、短いメッセージが表示されます。
 
 次の3つのイメージを右クリックしてダウンロードし、プロジェクトの**Resources/** 作成ディレクトリにコピーします。 これらは、さまざまなボタンの状態に使用されます。
 
- 通常の[ ![](custom-button-images/android-pressed.png)](custom-button-images/android-pressed.png#lightbox)状態[ ![](custom-button-images/android-normal.png)](custom-button-images/android-normal.png#lightbox) [の緑色のandroidアイコンフォーカス状態![用の android アイコン](custom-button-images/android-focused.png)](custom-button-images/android-focused.png#lightbox)押された状態の黄色の android アイコン
+ [通常の状態の緑色の android アイコン](custom-button-images/android-normal.png)](custom-button-images/android-normal.png#lightbox) [![フォーカス状態の Android アイコンがオレンジ色](custom-button-images/android-focused.png)](custom-button-images/android-focused.png#lightbox)に[![黄色の android](custom-button-images/android-pressed.png)](custom-button-images/android-pressed.png#lightbox)アイコンが押された状態であることを示す![
 
 **Android_button**という名前の**リソース/** 作成されたディレクトリに新しいファイルを作成します。 次の XML を挿入します。
 
@@ -34,13 +34,13 @@ ms.locfileid: "70758926"
 </selector>
 ```
 
-これにより、1つの描画リソースが定義されます。これにより、ボタンの現在の状態に基づいてイメージが変更されます。 最初`<item>`のは、ボタンが押されたときにイメージとして**android_pressed**を定義します (アクティブ化`<item>`されています)。2番目のは、ボタンがフォーカスされたときにイメージとして**android_focused**を定義します (ボタンがトラックボールまたは方向パッドを使用して強調表示);3番目`<item>`のは、通常の状態 (押されていない場合またはフォーカスされていない場合) のイメージとして**android_normal**を定義します。 この XML ファイルは、 [`Button`](xref:Android.Widget.Button) 1 つの作成されたリソースを表し、によってバックグラウンドで参照されるときに、この3つの状態に基づいて表示されるイメージを変更します。
+これにより、1つの描画リソースが定義されます。これにより、ボタンの現在の状態に基づいてイメージが変更されます。 最初の `<item>` は、ボタンが押されたときにイメージとして**android_pressed**を定義します (アクティブ化されています)。2番目の `<item>` では、ボタンがフォーカスされたときに画像として**android_focused**を定義します (ボタンがトラックボールまたは方向パッドを使用して強調表示されている場合)。3番目の `<item>` では、通常の状態のイメージとして**android_normal**が定義されています (押されていない場合またはフォーカスされていない場合)。 この XML ファイルは、1つの作成されたリソースを表し、背景の[`Button`](xref:Android.Widget.Button)によって参照されると、表示されるイメージはこれら3つの状態に基づいて変化します。
 
 > [!NOTE]
-> `<item>`要素の順序は重要です。 この描画が参照されて`<item>`いる場合、現在のボタンの状態に適しているかどうかを判断するために、が走査されます。
-> "通常の" イメージは最後にあるため、条件`android:state_pressed`とが両方と`android:state_focused`も false を評価した場合にのみ適用されます。
+> `<item>` 要素の順序は重要です。 この描画が参照されている場合、`<item>`s は、現在のボタンの状態に適しているかどうかを判断するために走査されます。
+> "通常の" イメージは最後のものであるため、条件 `android:state_pressed` と `android:state_focused` 評価が false の場合にのみ適用されます。
 
-**Resources/layout/Main. axml**ファイルを開き、要素を[`Button`](xref:Android.Widget.Button)追加します。
+**Resources/layout/Main. axml**ファイルを開き、 [`Button`](xref:Android.Widget.Button)要素を追加します。
 
 ```xml
 <Button
@@ -51,9 +51,9 @@ ms.locfileid: "70758926"
         android:background="@drawable/android_button" />
 ```
 
-属性`android:background`は、ボタンの背景に使用する、描画できるリソースを指定します。これは、**リソース/描画元/android .xml**で`@drawable/android`保存したときに、として参照されます。 これにより、システム全体のボタンに使用される通常の背景イメージが置き換えられます。 描画用のイメージをボタンの状態に基づいて変更するには、イメージを背景に適用する必要があります。
+`android:background` 属性は、ボタンの背景に使用する、描画できるリソースを指定します (これは、 **Resources/** `@drawable/android`で保存されている場合、または config.xml として参照されます)。 これにより、システム全体のボタンに使用される通常の背景イメージが置き換えられます。 描画用のイメージをボタンの状態に基づいて変更するには、イメージを背景に適用する必要があります。
 
-ボタンが押されたときに実行されるようにするには、の末尾に次のコードを追加します。[`OnCreate()`](xref:Android.App.Activity.OnCreate*)
+ボタンが押されたときに実行されるようにするには、の末尾に次のコードを追加し[`OnCreate()`](xref:Android.App.Activity.OnCreate*)
 b
 
 ```csharp
@@ -64,9 +64,9 @@ button.Click += (o, e) => {
 };
 ```
 
-これにより[`Button`](xref:Android.Widget.Button) 、レイアウトからがキャプチャされ[`Toast`](xref:Android.Widget.Toast) 、 [`Button`](xref:Android.Widget.Button)がクリックされたときに表示されるメッセージが追加されます。
+これにより、レイアウトから[`Button`](xref:Android.Widget.Button)がキャプチャされ、 [`Button`](xref:Android.Widget.Button)をクリックしたときに表示される[`Toast`](xref:Android.Widget.Toast)メッセージが追加されます。
 
 次に、アプリケーションを実行します。
 
-*このページの一部は、Android オープンソースプロジェクトによって作成および共有*
-され、[*Creative Commons 2.5 属性*](http://creativecommons.org/licenses/by/2.5/)で説明されている条項に従って使用される作業に基づいて変更されます。
+*このページの一部は、Android オープンソースプロジェクトによって作成および共有*され、
+[*Creative Commons 2.5 属性のライセンス*](https://creativecommons.org/licenses/by/2.5/)に記載されている条項に従って使用される作業に基づいて変更されます。

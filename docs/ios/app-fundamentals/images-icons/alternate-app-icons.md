@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin. iOS で別のアプリア
 ms.prod: xamarin
 ms.assetid: 302fa818-33b9-4ea1-ab63-0b2cb312299a
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: d391c57c2c63cd4e371bd97ba455962aa053f9ed
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: ed31f1dca3f823ccd0374b4fcbac1bbd9e80e022
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70767351"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73004312"
 ---
 # <a name="alternate-app-icons-in-xamarinios"></a>Xamarin. iOS の別のアプリアイコン
 
@@ -21,31 +21,31 @@ _この記事では、Xamarin の別のアプリアイコンの使用につい�
 Apple では、アプリによるアイコンの管理を可能にする iOS 10.3 の機能強化がいくつか追加されています。
 
 - `ApplicationIconBadgeNumber`-スプリングボードのアプリアイコンのバッジを取得または設定します。
-- `SupportsAlternateIcons`-アプリ`true`に別のアイコンのセットがある場合。
-- `AlternateIconName`-現在選択されている代替アイコンの名前`null`を返します。プライマリアイコンを使用する場合はを返します。
+- `SupportsAlternateIcons`-アプリに別のアイコンのセットがある場合 `true`。
+- `AlternateIconName`-プライマリアイコンを使用している場合に、現在選択さ `null` れている代替アイコンの名前を返します。
 - `SetAlternameIconName`-アプリのアイコンを指定した代替アイコンに切り替えるには、このメソッドを使用します。
 
-![](alternate-app-icons-images/icons04.png "アプリがアイコンを変更したときのアラートのサンプル")
+![](alternate-app-icons-images/icons04.png "A sample alert when an app changes its icon")
 
 <a name="Adding-Alternate-Icons" />
 
 ## <a name="adding-alternate-icons-to-a-xamarinios-project"></a>Xamarin. iOS プロジェクトへの代替アイコンの追加
 
-アプリが別のアイコンに切り替えることができるようにするには、アイコンイメージのコレクションを Xamarin. iOS アプリプロジェクトに含める必要があります。 これらのイメージは、通常`Assets.xcassets`のメソッドを使用してプロジェクトに追加することはできません。**リソース**フォルダーに直接追加する必要があります。
+アプリが別のアイコンに切り替えることができるようにするには、アイコンイメージのコレクションを Xamarin. iOS アプリプロジェクトに含める必要があります。 これらのイメージは、通常の `Assets.xcassets` メソッドを使用してプロジェクトに追加することはできません。**リソース**フォルダーに直接追加する必要があります。
 
 次の手順で行います。
 
 1. フォルダー内の必要なアイコンイメージを選択し、[すべて] を選択して、**ソリューションエクスプローラー**の **[リソース]** フォルダーにドラッグします。
 
-    ![](alternate-app-icons-images/icons00.png "フォルダーからアイコンイメージを選択する")
+    ![](alternate-app-icons-images/icons00.png "Select the icons images from a folder")
 
 2. メッセージが表示されたら、 **[コピー]** を選択し、**選択したすべてのファイルに同じアクションを使用**して、 **[OK]** ボタンをクリックします。
 
-    ![](alternate-app-icons-images/icons02.png "[フォルダーへのファイルの追加] ダイアログボックス")
+    ![](alternate-app-icons-images/icons02.png "The Add File to Folder dialog box")
 
 3. 完了すると、 **Resources**フォルダーは次のようになります。
 
-    ![](alternate-app-icons-images/icons01.png "Resources フォルダーは次のようになります。")
+    ![](alternate-app-icons-images/icons01.png "The Resources folder should look like this")
 
 <a name="Modifying-the-Info.plist-File" />
 
@@ -58,16 +58,16 @@ Apple では、アプリによるアイコンの管理を可能にする iOS 10.
 1. **ソリューション エクスプローラー**で、**Info.plist** ファイルをダブルクリックして開き、編集します。
 2. **ソース**ビューに切り替えます。
 3. **バンドルアイコン**キーを追加し、**型**を**Dictionary**に設定したままにします。
-4. キーを追加し、**型**を Dictionary に設定します。 `CFBundleAlternateIcons`
-5. キーを追加し、**型**を Dictionary に設定します。 `AppIcon2` これは、新しいアプリアイコンセットの名前になります。
-6. キーを`CFBundleIconFiles`追加し、**型**を**配列**に設定します。
-7. 拡張機能と、、など`CFBundleIconFiles` `@3x`の`@2x`サフィックス (例`100_icon`) を除いて、各アイコンファイルの配列に新しい文字列を追加します。 代替アイコンセットを構成するすべてのファイルに対して、この手順を繰り返します。
-8. ディクショナリにキーを追加し、[型] を [ブール] に設定し、値を [いいえ] に設定します。 `UIPrerenderedIcon` `AppIcon2`
+4. `CFBundleAlternateIcons` キーを追加し、**型**を**Dictionary**に設定します。
+5. `AppIcon2` キーを追加し、**型**を**Dictionary**に設定します。 これは、新しいアプリアイコンセットの名前になります。
+6. `CFBundleIconFiles` キーを追加し、**型**を**配列**に設定します。
+7. 各アイコンファイルの `CFBundleIconFiles` 配列に新しい文字列を追加して、拡張子と `@2x`、`@3x`などのサフィックス (例 `100_icon`) を除外します。 代替アイコンセットを構成するすべてのファイルに対して、この手順を繰り返します。
+8. `AppIcon2` ディクショナリに `UIPrerenderedIcon` キーを追加し、 **[型]** を **[ブール]** に設定し、値を **[いいえ]** に設定します。
 9. 変更内容をファイルに保存します。
 
 完成した**情報の plist**ファイルは、次のようになります。
 
-![](alternate-app-icons-images/icons03.png "完成した情報 plist ファイル")
+![](alternate-app-icons-images/icons03.png "The completed Info.plist file")
 
 または、テキストエディターで開かれた場合は、次のようになります。
 
@@ -111,7 +111,7 @@ Apple では、アプリによるアイコンの管理を可能にする iOS 10.
 
 Xamarin. iOS プロジェクトに含まれるアイコンイメージと、適切に構成された**情報**ファイルを使用して、開発者は ios 10.3 に追加された多くの新機能のいずれかを使用して、アプリのアイコンを制御できます。
 
-クラスのプロパティに`SupportsAlternateIcons`より、開発者は、アプリで代替アイコンがサポートされているかどうかを確認できます。 `UIApplication` 例えば:
+`UIApplication` クラスの `SupportsAlternateIcons` プロパティを使用すると、アプリで代替アイコンがサポートされているかどうかを開発者が確認できます。 (例:
 
 ```csharp
 // Can the app select a different icon?
@@ -119,14 +119,14 @@ PrimaryIconButton.Enabled = UIApplication.SharedApplication.SupportsAlternateIco
 AlternateIconButton.Enabled = UIApplication.SharedApplication.SupportsAlternateIcons;
 ```
 
-クラスのプロパティを`ApplicationIconBadgeNumber`使用すると、開発者はスプリングボードのアプリアイコンの現在のバッジ番号を取得または設定できます。 `UIApplication` 既定値は 0 です。 例えば:
+`UIApplication` クラスの `ApplicationIconBadgeNumber` プロパティを使用すると、開発者はスプリングボードのアプリアイコンの現在のバッジ番号を取得または設定できます。 既定値は 0 です。 (例:
 
 ```csharp
 // Set the badge number to 1
 UIApplication.SharedApplication.ApplicationIconBadgeNumber = 1;
 ```
 
-クラスのプロパティを`AlternateIconName`使用すると、開発者は現在選択されている代替アプリのアイコンの`null`名前を取得できます。また、アプリがプライマリアイコンを使用している場合は、を返します。 `UIApplication` 例えば:
+`UIApplication` クラスの `AlternateIconName` プロパティを使用すると、開発者は現在選択されている代替アプリのアイコンの名前を取得したり、アプリがプライマリアイコンを使用している場合は `null` を返したりできます。 (例:
 
 ```csharp
 // Get the name of the currently selected alternate
@@ -138,7 +138,7 @@ if (name != null ) {
 }
 ```
 
-クラスのプロパティを使用すると、開発者はアプリアイコンを変更できます。 `SetAlternameIconName` `UIApplication` アイコンの名前を渡して、選択する`null`か、プライマリアイコンに戻ります。 例えば:
+`UIApplication` クラスの `SetAlternameIconName` プロパティを使用すると、開発者はアプリのアイコンを変更できます。 アイコンの名前を選択するか `null` して、プライマリアイコンに戻ります。 (例:
 
 ```csharp
 partial void UsePrimaryIcon (Foundation.NSObject sender)
@@ -158,15 +158,15 @@ partial void UseAlternateIcon (Foundation.NSObject sender)
 
 アプリが実行され、ユーザーが別のアイコンを選択すると、次のようなアラートが表示されます。
 
-![](alternate-app-icons-images/icons04.png "アプリがアイコンを変更したときのアラートのサンプル")
+![](alternate-app-icons-images/icons04.png "A sample alert when an app changes its icon")
 
 ユーザーがプライマリアイコンに戻ると、次のようなアラートが表示されます。
 
-![](alternate-app-icons-images/icons05.png "アプリがプライマリアイコンに変化したときのアラートのサンプル")
+![](alternate-app-icons-images/icons05.png "A sample alert when an app changes to the primary icon")
 
 <a name="Summary" />
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>まとめ
 
 この記事では、別のアプリアイコンを Xamarin の iOS プロジェクトに追加し、アプリ内で使用する方法について説明しました。
 

@@ -4,15 +4,15 @@ description: この記事では、Xcode の Interface Builder で作成された
 ms.prod: xamarin
 ms.assetid: 6AF3D216-448D-4B2D-9026-74E4FFF5923A
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: be737dfb92cf2ce90dc64dd527f908d52cf2c580
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 6d40dd3cc994ef8ab21ffb9658f226d36cd97913
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70770350"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021772"
 ---
 # <a name="xib-files-in-xamarinmac"></a>xib ファイル (Xamarin. Mac)
 
@@ -343,10 +343,10 @@ public override void AwakeFromNib ()
 }
 ```
 
-@No__t_0 には、Xcode でアウトレットC#を作成したときに Xcode で割り当てたダイレクト名によってアクセスされることに注意してください。この場合は `ClickedLabel` と呼ばれます。 公開されたオブジェクトのメソッドまたはプロパティには、通常C#のクラスと同じ方法でアクセスできます。
+`NSLabel` には、Xcode でアウトレットC#を作成したときに Xcode で割り当てたダイレクト名によってアクセスされることに注意してください。この場合は`ClickedLabel`と呼ばれます。 公開されたオブジェクトのメソッドまたはプロパティには、通常C#のクラスと同じ方法でアクセスできます。
 
 > [!IMPORTANT]
-> @No__t_1 などの別のメソッドの代わりに `AwakeFromNib` を使用する必要があります。これは、OS が読み込まれ、xib ファイルからユーザーインターフェイスがインスタンス化され_た後_に `AwakeFromNib` が呼び出されるためです。 Xib ファイルが完全に読み込まれてインスタンス化される前にラベルコントロールにアクセスしようとすると、ラベルコントロールがまだ作成されていないため、`NullReferenceException` エラーが発生します。
+> `Initialize`などの別のメソッドの代わりに `AwakeFromNib`を使用する必要があります。これは、OS が読み込まれ、xib ファイルからユーザーインターフェイスがインスタンス化され_た後_に `AwakeFromNib` が呼び出されるためです。 Xib ファイルが完全に読み込まれてインスタンス化される前にラベルコントロールにアクセスしようとすると、ラベルコントロールがまだ作成されていないため、`NullReferenceException` エラーが発生します。
 
 次に、次の部分クラスを `MainWindow` クラスに追加します。
 
@@ -381,7 +381,7 @@ void OpenDialog (NSObject sender)
 }
 ```
 
-ここで `[Export ("openDocument:")]` キー行は、`openDocument:` アクションに応答する `void OpenDialog (NSObject sender)` メソッドが**Appdelegate**にあることを `NSMenu` に示しています。
+ここで `[Export ("openDocument:")]`キー行は、`openDocument:` アクションに応答する `void OpenDialog (NSObject sender)` メソッドが**Appdelegate**にあることを `NSMenu` に示しています。
 
 メニューの操作の詳細については、[メニュー](~/mac/user-interface/menu.md)のドキュメントを参照してください。
 
@@ -447,7 +447,7 @@ void ShowPreferences (NSObject sender)
 }
 ```
 
-@No__t_0 の行は、xib ファイルからウィンドウを読み込み、それを増えするウィンドウコントローラーの新しいインスタンスを作成します。 @No__t_0 行には、新しいウィンドウがユーザーに表示されます。
+`var preferences = new PreferencesWindowController ();` の行は、xib ファイルからウィンドウを読み込み、それを増えするウィンドウコントローラーの新しいインスタンスを作成します。 `preferences.Window.MakeKeyAndOrderFront (this);` 行には、新しいウィンドウがユーザーに表示されます。
 
 コードを実行し、[**アプリケーション] メニュー**の **[ユーザー設定...]** を選択すると、ウィンドウが表示されます。
 

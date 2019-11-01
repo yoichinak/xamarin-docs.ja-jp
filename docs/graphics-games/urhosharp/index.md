@@ -1,58 +1,58 @@
 ---
-title: UrhoSharp の 3D/2 D エンジン
-description: UrhoSharp は、クロスプラット フォームで高度な 3D および 2D エンジンのジオメトリで素材、ライトとカメラを使用して、アプリケーションのアニメーションが 2D と 3D のシーンを作成するために使用できます。
+title: UrhoSharp-3D/2D エンジン
+description: UrhoSharp はクロスプラットフォームの高レベル3D および2D エンジンであり、ジオメトリ、素材、ライト、カメラを使用して、アプリケーション用のアニメーション化された3D および2D シーンを作成するために使用できます。
 ms.prod: xamarin
 ms.assetid: E6C5B86C-3756-49DF-843B-0B3D981E1C01
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 06f1372d712f23078d120be824a01627d657d0a1
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 10cdec5755a5fa45989396ce53da15233553a88f
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832565"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73005075"
 ---
-# <a name="urhosharp---3d2d-engine"></a>UrhoSharp の 3D/2 D エンジン
+# <a name="urhosharp---3d2d-engine"></a>UrhoSharp-3D/2D エンジン
 
-_UrhoSharp は、クロスプラット フォームで高度な 3D が 2D とエンジンが 2D と 3D のシーンがアニメーション化されたジオメトリ、素材、ライト、およびカメラを使用してアプリケーションを作成するために使用できます。_
+_UrhoSharp は、クロスプラットフォームの高レベル3D および2D エンジンで、ジオメトリ、素材、ライト、カメラを使用して、アプリケーション用のアニメーション化された3D および2D シーンを作成するために使用できます。_
 
-![UrhoSharp のゲームをサンプルします。](images/video.gif)
+![サンプル UrhoSharp ゲーム](images/video.gif)
 
-UrhoSharp for Mac に Visual Studio または Visual Studio のいずれかでインストールできますし、次のプラットフォームのいずれかをターゲットに使用できる NuGet パッケージとして配布されます。Android、MacOS、iOS、tvOS、および Windows。
+UrhoSharp は、Visual Studio または Visual Studio for Mac にインストールできる NuGet パッケージとして配布され、Android、MacOS、iOS、tvOS、Windows のいずれかのプラットフォームを対象として使用できます。
 
 ## <a name="introduction-to-urhosharpgraphics-gamesurhosharpintroductionmd"></a>[UrhoSharp の概要](~/graphics-games/urhosharp/introduction.md)
 
-この記事では、UrhoSharp および 3D 視覚化、および単純な 3D ゲームで使用するためにその機能の概要を提供します。
+この記事では、簡単な3d ゲームで使用できるように、UrhoSharp の概要と3D 視覚化の機能の概要について説明します。
 
 ## <a name="using-urhosharpgraphics-gamesurhosharpusingmd"></a>[UrhoSharp の使用](~/graphics-games/urhosharp/using.md)
 
-このドキュメントでは、ゲームをビルドまたはアプリケーションの 3D ビジュアル化の作成に使用するもの UrhoSharp の主要な概念について説明します。
+このドキュメントでは、ゲームの構築やアプリケーションの3D 視覚化の作成に使用する UrhoSharp の主要な概念について説明します。
 
-## <a name="urho-and-your-platformgraphics-gamesurhosharpplatformindexmd"></a>[Urho とプラットフォーム](~/graphics-games/urhosharp/platform/index.md)
+## <a name="urho-and-your-platformgraphics-gamesurhosharpplatformindexmd"></a>[Urho とお使いのプラットフォーム](~/graphics-games/urhosharp/platform/index.md)
 
-これらのガイドでは、各ターゲット プラットフォーム Urho のセットアップ手順を説明し、Urho を既存の Android や iOS アプリケーションと統合する方法について説明します。
+これらのガイドでは、各ターゲットプラットフォームでの Urho のセットアップ手順を説明し、Urho を既存の Android および iOS アプリケーションと統合する方法について説明します。
 
 ## <a name="programming-urhosharp-with-fgraphics-gamesurhosharpfsharpmd"></a>[F# による UrhoSharp のプログラミング](~/graphics-games/urhosharp/fsharp.md)
 
-このガイドは、単純な"Hello, world!"の作成手順について説明します UrhoSharp のソリューションを使用してF#と Visual Studio for mac。
+このガイドでは、単純な "Hello, World!" を作成する手順について説明します。 および Visual Studio for Mac を使用するF# UrhoSharp ソリューション。
 
 ## <a name="samples"></a>サンプル
 
-作成した[GitHub のサンプル](https://github.com/xamarin/urho-samples)UrhoSharp を使用する方法を説明します。
+UrhoSharp の使用方法を示す[サンプルを GitHub で](https://github.com/xamarin/urho-samples)作成しました。
 
-- **FeatureSamples** Urho の特定の機能を紹介する 40 以上の個々 のサンプルを示しています。
+- **FeatureSamples**は、Urho の特定の機能を紹介する40を超える個別のサンプルを示しています。
 
-- **SamplyGame** Shooty Skies ゲームのサンプル実装です。
+- **SamplyGame**は、Shooty ゲームの実装サンプルです。
 
-- **FormsSample** Xamarin.Forms アプリケーションで UrhoSharp を使用する方法を紹介します。
+- フォーム**サンプル**は、Xamarin アプリケーションで UrhoSharp を使用する方法を示しています。
 
-すべてのサンプルの実行では、Android、iOS、Mac および Windows。
+すべてのサンプルは、Android、iOS、Mac、Windows で実行されます。
 
 ## <a name="copyright"></a>Copyright
 
-このドキュメントは、Xamarin Inc から元のコンテンツが含まれていますが、Urho3D プロジェクトのオープン ソース ドキュメントから幅広くを描画し、Cocos2D プロジェクトのスクリーン ショットが含まれています。
+このドキュメントには、Xamarin Inc. の元のコンテンツが含まれていますが、Urho3D プロジェクトのオープンソースドキュメントから広く使用されており、Cocos2D プロジェクトのスクリーンショットが含まれています。
 
-## <a name="license"></a>License
+## <a name="license"></a>ライセンス
 
-UrhoSharp のライセンスは、 [http://download.xamarin.com/content/licenses/URHO.LICENSE](http://download.xamarin.com/content/licenses/URHO.LICENSE)
+UrhoSharp ライセンスは、 [https://github.com/xamarin/urho/blob/master/LICENSE](https://github.com/xamarin/urho/blob/master/LICENSE)

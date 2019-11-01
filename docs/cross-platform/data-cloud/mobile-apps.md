@@ -3,15 +3,15 @@ title: Microsoft Azure Mobile Apps
 description: このドキュメントでは、Azure に接続されている Xamarin アプリを構築する方法について説明しているガイドへのリンクを示します。 このトピックでは、Xamarin Azure コンポーネント、ユーザー、およびプッシュ通知の使用方法について説明します。
 ms.prod: xamarin
 ms.assetid: 7B9AA8D9-C181-4C33-8AB0-2F56E4DBFC03
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/02/2017
-ms.openlocfilehash: 7d39615f20cdd52bb862d9ee998e9a45bbb6834e
-ms.sourcegitcommit: d116fdcad9f5f0587ce64749cd8d791eee87f8aa
+ms.openlocfilehash: 84517e4961dc3ad728b6cc352e9fb992d9e8b5bf
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72246535"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016592"
 ---
 # <a name="microsoft-azure-mobile-apps"></a>Microsoft Azure Mobile Apps
 
@@ -28,12 +28,12 @@ as https://developer xamarin com/guides/cross-platform/data-cloud/mobile-service
 A redirect has been put in place to /mobile-apps/ HOWEVER the /Resources/ .ZIP files are still located in /mobile-services/ so that the following permalinks don't break
 
 The ZIPs in /Resources/ are also referenced by inbound links
-Getting Started http://go.microsoft.com/fwlink/p/?LinkId=331359
-Get started with data http://go.microsoft.com/fwlink/p/?LinkId=331302
-Get started with push http://go.microsoft.com/fwlink/p/?LinkId=331303
-Get started with authentication http://go.microsoft.com/fwlink/p/?LinkId=331328
-Get started with Notification Hubs http://go.microsoft.com/fwlink/p/?LinkId=331329
-Validate and modify data  http://go.microsoft.com/fwlink/p/?LinkId=331330
+Getting Started https://go.microsoft.com/fwlink/p/?LinkId=331359
+Get started with data https://go.microsoft.com/fwlink/p/?LinkId=331302
+Get started with push https://go.microsoft.com/fwlink/p/?LinkId=331303
+Get started with authentication https://go.microsoft.com/fwlink/p/?LinkId=331328
+Get started with Notification Hubs https://go.microsoft.com/fwlink/p/?LinkId=331329
+Validate and modify data  https://go.microsoft.com/fwlink/p/?LinkId=331330
 -->
 
 これらのリンクは、 [Azure Mobile Apps](https://docs.microsoft.com/azure/app-service-mobile/) web サイトで入手できる Xamarin ドキュメント用です。
@@ -48,8 +48,8 @@ Validate and modify data  http://go.microsoft.com/fwlink/p/?LinkId=331330
 この記事では、初めての Xamarin Azure アプリを起動して実行する手順について説明します。
 ポータルでの新しい Azure モバイルアプリの作成と、事前に構成されたアプリのダウンロードと実行について説明します。
 
-- [iOS](https://docs.microsoft.com/azure/app-service-mobile/app-service-mobile-xamarin-ios-get-started/)
-- [Android](https://docs.microsoft.com/azure/app-service-mobile/app-service-mobile-xamarin-android-get-started/)
+- [Android](https://docs.microsoft.com/azure/app-service-mobile/app-service-mobile-xamarin-ios-get-started/)
+- [Outlook Web Access (OWA)](https://docs.microsoft.com/azure/app-service-mobile/app-service-mobile-xamarin-android-get-started/)
 - [Xamarin.Forms](https://docs.microsoft.com/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started)
 
 <!--
@@ -74,8 +74,8 @@ A quick example of paging large sets of data using Skip() and Take().
 
 Azure Mobile Services を使用してログイン画面を構成およびコーディングするための完全な手順について説明します。 サポートされている認証プロバイダーには、Microsoft、Google、Facebook、Twitter があります。
 
-- [iOS](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-ios-get-started-users/)
-- [Android](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-android-get-started-users/)
+- [Android](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-ios-get-started-users/)
+- [Outlook Web Access (OWA)](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-android-get-started-users/)
 
 ## <a name="authorize-users-in-scripts"></a>スクリプトでユーザーを承認する
 
@@ -87,15 +87,15 @@ Javascript バックエンドのサンプルコード
 
 Apple および Google websites でプッシュ通知を構成する手順を完了し、Azure Mobile Services からデバイスにプッシュ通知を送信します。
 
-- [iOS](https://docs.microsoft.com/azure/app-service-mobile/app-service-mobile-xamarin-ios-get-started-push)
-- [Android](https://docs.microsoft.com/azure/app-service-mobile/app-service-mobile-xamarin-android-get-started-push)
+- [Android](https://docs.microsoft.com/azure/app-service-mobile/app-service-mobile-xamarin-ios-get-started-push)
+- [Outlook Web Access (OWA)](https://docs.microsoft.com/azure/app-service-mobile/app-service-mobile-xamarin-android-get-started-push)
 
 ## <a name="get-started-with-notification-hubs"></a>Notification Hubs を使ってみる
 
 Apple および Google websites でプッシュ通知を構成する手順を完了し、Azure Notification Hub を構成して、デバイスへのプッシュ通知を生成します。
 
-- [iOS](https://docs.microsoft.com/azure/notification-hubs/xamarin-notification-hubs-ios-push-notification-apns-get-started)
-- [Android](https://docs.microsoft.com/azure/notification-hubs/xamarin-notification-hubs-push-notifications-android-gcm)
+- [Android](https://docs.microsoft.com/azure/notification-hubs/xamarin-notification-hubs-ios-push-notification-apns-get-started)
+- [Outlook Web Access (OWA)](https://docs.microsoft.com/azure/notification-hubs/xamarin-notification-hubs-push-notifications-android-gcm)
 
 ## <a name="related-links"></a>関連リンク
 

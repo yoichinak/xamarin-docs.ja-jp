@@ -4,15 +4,15 @@ description: このドキュメントでは、Apple が iOS 10 のウィジェ�
 ms.prod: xamarin
 ms.assetid: D66FD9E1-9E23-4BB6-825C-ED19B8F72A81
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 969d7fc78af9dd10f7ad57f58a6f4f619d0a201a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: ca6ccce934b32fa0d7e48cd8f295d9acefe6e121
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769453"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031509"
 ---
 # <a name="search-and-home-screen-widget-enhancements-in-ios-10"></a>IOS 10 での検索とホーム画面のウィジェットの機能強化
 
@@ -24,7 +24,7 @@ Apple では、ウィジェットシステムにいくつかの機能強化が�
 
 ウィジェットは高度なカスタマイズが可能であり、テキスト、画像、ボタンなどの UI 要素を含めることができます。さらに、開発者はウィジェットのレイアウトをカスタマイズすることもできます。
 
-[![](widgets-images/widgets01.png "ウィジェットの例")](widgets-images/widgets01.png#lightbox)
+[![](widgets-images/widgets01.png "Example widgets")](widgets-images/widgets01.png#lightbox)
 
 ユーザーはアプリのウィジェットを表示して操作できる主な場所が2つあります。
 
@@ -50,14 +50,14 @@ Apple では、ウィジェットシステムにいくつかの機能強化が�
 
 ## <a name="working-with-vibrancy"></a>Vibrancy の操作
 
-Vibrancy を使うと、ウィジェットの光源に表示されるときにウィジェットのテキストが読みやすくなり、(システムによって提供される) ぼやけた背景が保証されます。 IOS 10 より前の開発者は、ウィジェットの vibrancy に[NotificationCenterVibrancyEffect](https://developer.apple.com/reference/uikit/uivibrancyeffect/1613917-notificationcentervibrancyeffect)を使用します。 例えば:
+Vibrancy を使うと、ウィジェットの光源に表示されるときにウィジェットのテキストが読みやすくなり、(システムによって提供される) ぼやけた背景が保証されます。 IOS 10 より前の開発者は、ウィジェットの vibrancy に[NotificationCenterVibrancyEffect](https://developer.apple.com/reference/uikit/uivibrancyeffect/1613917-notificationcentervibrancyeffect)を使用します。 (例:
 
 ```csharp
 // DEPRECATED: Get Widget Vibrancy Effect
 var vibrancy = UIVibrancyEffect.CreateForNotificationCenter ();
 ```
 
-これは iOS 10 で非推奨とされており、 [WidgetPrimaryVibrancyEffect](https://developer.apple.com/reference/uikit/uivibrancyeffect/1771278-widgetprimaryvibrancyeffect)または[WidgetSecondaryVibrancyEffect](https://developer.apple.com/reference/uikit/uivibrancyeffect/1771277-widgetsecondaryvibrancyeffect)のいずれかで置き換える必要があります。 例えば:
+これは iOS 10 で非推奨とされており、 [WidgetPrimaryVibrancyEffect](https://developer.apple.com/reference/uikit/uivibrancyeffect/1771278-widgetprimaryvibrancyeffect)または[WidgetSecondaryVibrancyEffect](https://developer.apple.com/reference/uikit/uivibrancyeffect/1771277-widgetsecondaryvibrancyeffect)のいずれかで置き換える必要があります。 (例:
 
 ```csharp
 // Get Primary Widget Vibrancy Effect
@@ -188,7 +188,7 @@ public void WidgetActiveDisplayModeDidChange (NCWidgetDisplayMode activeDisplayM
 
 状態 (折りたたまれているか展開されている) ごとに要求されたサイズを設定するだけでなく、表示されているコンテンツを新しいサイズに合わせて更新することもできます。
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>まとめ
 
 この記事では、iOS 10 のウィジェットシステムに加えられた Apple の機能強化について説明し、Xamarin に実装する方法を示しました。
 

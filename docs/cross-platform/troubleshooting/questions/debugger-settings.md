@@ -3,15 +3,15 @@ title: デバッガーに必要なプロジェクト設定を教えてくださ�
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 3A024E4E-ACA3-4C7A-ADEF-541665D15779
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/08/2018
-ms.openlocfilehash: a3677117e30538c4df8c9b797acce0be602c3b59
-ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
+ms.openlocfilehash: 856c04d129058e8cbac30dcdf619e8b2b5a66cb6
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71106085"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73014257"
 ---
 # <a name="what-project-settings-are-required-for-the-debugger"></a>デバッガーに必要なプロジェクト設定を教えてください
 
@@ -19,7 +19,7 @@ ms.locfileid: "71106085"
 
 環境設定を確認するには、次の手順に従ってください。
 
-## <a name="visual-studio"></a>Visual Studio
+## <a name="visual-studio"></a>Visual Studio
 
 1. プロジェクトオプションを開く
 2. **ビルド > 詳細**に進む...デバッグ情報を**完全**に設定する

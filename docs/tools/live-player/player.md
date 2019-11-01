@@ -3,15 +3,15 @@ title: Xamarin Live Player アプリ
 description: このドキュメントでは、デバイスでライブでコード変更をプレビューするために使用できる Xamarin Live Player アプリについて説明します。 セットアップ、サンプル、ログ、設定、デバイスの管理などについて説明します。
 ms.prod: xamarin
 ms.assetid: A7EB73C1-38D7-46C5-9AF6-4C571C168BE7
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/13/2019
-ms.openlocfilehash: d4cf596d70be746e85f21bace3e5ddf662076e6d
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: f1d3adfad3b9d2a64990ff11f81bf3a1a39825bb
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70772325"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029658"
 ---
 # <a name="xamarin-live-player-app"></a>Xamarin Live Player アプリ
 
@@ -39,7 +39,7 @@ ms.locfileid: "70772325"
 
 アプリの下部にある情報ボタン **(i)** を押すと、 **[オプション]** メニューが表示されます。
 
-[![[オプション] メニューのスクリーンショット](player-images/options-sml.png)](player-images/options.png#lightbox)
+[[オプション] メニューの![スクリーンショット](player-images/options-sml.png)](player-images/options.png#lightbox)
 
 ### <a name="logs"></a>ログ
 
@@ -51,7 +51,7 @@ ms.locfileid: "70772325"
 - バージョン情報。
 - フィードバックを送信します。
 
-[![設定のスクリーンショット](player-images/settings-sml.png)](player-images/settings.png#lightbox)
+[設定のスクリーンショットを![](player-images/settings-sml.png)](player-images/settings.png#lightbox)
 
 ## <a name="managing-devices"></a>デバイスの管理
 
@@ -59,7 +59,7 @@ ms.locfileid: "70772325"
 
 # <a name="visual-studio-2017tabwindows"></a>[Visual Studio 2017](#tab/windows)
 
-Visual Studio で、次のように選択します**ツール > Xamarin Live Player > デバイスを管理しています...**
+Visual Studio で、[ツール] を選択し、[**デバイスの管理] > Xamarin Live Player >** ます。
 
 ![デバイスの管理ウィンドウ](player-images/manage-tools-menu-vs.png)
 
@@ -73,7 +73,7 @@ Visual Studio で、次のように選択します**ツール > Xamarin Live Pla
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-Visual studio for Mac では、次のように選択します**ツール > (Xamarin Live Player) デバイスを管理しています...**
+Visual Studio for Mac で、[**ツール] > (Xamarin Live Player) [デバイスの管理**] を選択します。
 
 ![デバイスの管理ウィンドウ](player-images/manage-tools-menu.png)
 

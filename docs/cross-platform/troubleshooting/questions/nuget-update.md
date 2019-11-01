@@ -3,15 +3,15 @@ title: NuGet の更新方法を教えてください
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 40DDE713-DE80-422F-BE34-A732E40C3F81
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 11/25/2015
-ms.openlocfilehash: 753afbda38a79cdc472a9b635a2354c6b9934617
-ms.sourcegitcommit: 61a35d0643eb3bf5adb8f8831da54771d8dde626
+ms.openlocfilehash: 96e5343dbd17f14000f7ce407576e664f8971fa8
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71033367"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73013586"
 ---
 # <a name="how-can-i-update-nuget"></a>NuGet の更新方法を教えてください
 
@@ -19,7 +19,7 @@ NuGet の更新プログラム、拡張機能、アドインは、 **Nuget パ�
 
 IDE でサポートされている最新バージョンの NuGet がインストールされていない場合は、これらのメニューに更新プログラム*のみ*が表示されます。
 
-## <a name="visual-studio"></a>Visual Studio
+## <a name="visual-studio"></a>Visual Studio
 
 1. **Visual Studio ギャラリー > > の拡張機能と更新プログラムの > ツールを**開く
 2. **Visual Studio の NuGet パッケージマネージャー [Year]** を選択します

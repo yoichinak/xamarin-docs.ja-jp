@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin. Mac アプリをビルド
 ms.prod: xamarin
 ms.assetid: BF0A3517-17D8-453D-87F7-C8A34BEA8FF5
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/17/2016
-ms.openlocfilehash: b4934fa82d862ad2e8ab53579137873ed9e4bcca
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: b508cc12f468e5b9dfef91718585f61bfd633816
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770165"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030059"
 ---
 # <a name="common-patterns-and-idioms-in-xamarinmac"></a>Xamarin. Mac での一般的なパターンと表現
 
@@ -37,21 +37,21 @@ WPF などの他のライブラリの MVVM (モデルビュービューモデル
 
 ## <a name="data-source--delegate--subclassing"></a>データソース/デリゲート/サブクラス化
 
-Cocoa のもう1つの一般的なパターンでは、UI 要素にデータを提供し、ユーザーの操作に反応します。 を`NSTableView`例として使用するには、各行のデータ、その行を表す UI 要素のセット、ユーザーの操作に反応する一連の動作、および場合によってはカスタマイズが必要です。 データソースとデリゲートパターンを使用すると、自分でサブクラス`NSTableView`化する必要がなく、ほとんどのケースを処理できます。
+Cocoa のもう1つの一般的なパターンでは、UI 要素にデータを提供し、ユーザーの操作に反応します。 例として `NSTableView` を使用する場合は、各行のデータ、その行を表す一連の UI 要素、ユーザー操作に対応する一連の動作、および場合によってはカスタマイズを提供する必要があります。 データソースとデリゲートパターンを使用すると、`NSTableView` を自分でサブクラス化することなく、ほとんどのケースを処理できます。
 
-- プロパティ`DataSource`には、の`NSTableViewDataSource`カスタムサブクラスのインスタンスが割り当てられます。このインスタンスは、と`GetObjectValue`を`GetRowCount`使用して、テーブルにデータを設定するために呼び出されます。
+- `DataSource` プロパティには、`NSTableViewDataSource` のカスタムサブクラスのインスタンスが割り当てられます。このインスタンスは、(`GetRowCount` および `GetObjectValue`を使用して) テーブルにデータを設定するために呼び出されます。
 
-- プロパティ`Delegate`には、の`NSTableViewDelegate`カスタムサブクラスのインスタンスが割り当てられます。このクラスは`DidClickTableColumn`、を介し`GetViewForItem`て特定のモデルオブジェクトのビューを`MouseDownInHeaderOfTableColumn`提供し、UI の相互作用 (、など) を処理します。
+- `Delegate` プロパティには、`NSTableViewDelegate` のカスタムサブクラスのインスタンスが割り当てられます。このインスタンスは `GetViewForItem`を介して特定のモデルオブジェクトのビューを提供し、`DidClickTableColumn`、`MouseDownInHeaderOfTableColumn`などを使用して、UI のやり取りを処理します。
 
 場合によっては、デリゲートまたはデータソースで指定されたフックを超える方法でコントロールをカスタマイズし、ビューを直接サブクラス化することができます。 ただし、多くの場合、既定の動作を上書きすることで、すべての動作を自分で処理する必要があります (選択動作をカスタマイズすると、すべての選択動作を自分で実装することが必要になる場合があります)。
 
-Xamarin. iOS では、などの一部の`UITableView` api が、デリゲートとデータソース (`UITableViewSource`) の両方を実装するプロパティを使用して拡張されています。 これは、1つC#のクラスが1つの基底クラスしか持つことができないという一般的な制限を回避するためのものであり、プロトコルの提示は基本クラスを介して行われます。
+Xamarin. iOS では、`UITableView` などの一部の Api が、デリゲートとデータソース (`UITableViewSource`) の両方を実装するプロパティを使用して拡張されています。 これは、1つC#のクラスが1つの基底クラスしか持つことができないという一般的な制限を回避するためのものであり、プロトコルの提示は基本クラスを介して行われます。
 
 Xamarin. Mac アプリケーションでテーブルビューを操作する方法の詳細については、[表ビュー](~/mac/user-interface/table-view.md)のドキュメントを参照してください。
 
 ## <a name="protocols"></a>プロトコル
 
-目標 C のプロトコルは、のC#インターフェイスと比較することができ、多くの場合、同様の状況で使用されます。 たとえば、上記の例では、デリゲートとデータソースの両方が実際にプロトコルです。`NSTableView` これらは、オーバーライド可能な仮想メソッドを使用して基本クラスとして公開されます。 C#インターフェイスと目標 C プロトコルの主な違いは、プロトコルの一部のメソッドを実装することができないことです。 オプションを決定するには、API のドキュメントや定義を確認する必要があります。
+目標 C のプロトコルは、のC#インターフェイスと比較することができ、多くの場合、同様の状況で使用されます。 たとえば、上記の `NSTableView` 例では、デリゲートとデータソースの両方が実際にプロトコルです。 これらは、オーバーライド可能な仮想メソッドを使用して基本クラスとして公開されます。 C#インターフェイスと目標 C プロトコルの主な違いは、プロトコルの一部のメソッドを実装することができないことです。 オプションを決定するには、API のドキュメントや定義を確認する必要があります。
 
 詳細について[は、デリゲート、プロトコル、およびイベントに](~/ios/app-fundamentals/delegates-protocols-and-events.md)関するドキュメントを参照してください。
 
@@ -60,4 +60,4 @@ Xamarin. Mac アプリケーションでテーブルビューを操作する方�
 - [テーブルビュー](~/mac/user-interface/table-view.md)
 - [Windows の操作](~/mac/user-interface/window.md)
 - [デリゲート、プロトコル、およびイベント](~/ios/app-fundamentals/delegates-protocols-and-events.md)
-- [Model-View-Controller](https://developer.apple.com/library/ios/documentation/general/conceptual/CocoaEncyclopedia/Model-View-Controller/Model-View-Controller.html)
+- [モデルビューコントローラー](https://developer.apple.com/library/ios/documentation/general/conceptual/CocoaEncyclopedia/Model-View-Controller/Model-View-Controller.html)

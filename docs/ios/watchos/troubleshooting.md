@@ -5,15 +5,15 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 27C31DB8-451E-4888-BBC1-CE0DFC2F9DEC
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: efd120e785e55bfa3806cd193bd5f155f35a5e18
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 1f5c4135dc1db874de16f6783a86fa7ea927676c
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70767726"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032734"
 ---
 # <a name="watchos-troubleshooting"></a>watchOS のトラブルシューティング
 
@@ -36,18 +36,18 @@ ms.locfileid: "70767726"
 <a name="deploy" />
 
 - 以前のリリースの Visual Studio for Mac では、 **AppleCompanionSettings**アイコンの1つが正しくないとして表示されます。これにより、App Store に送信しようとするとアイコンが表示されないという**エラーが発生**します。
-    このアイコンは 87 x 87 ピクセルである必要があります (29 単位 **@3x** Retina 画面)。 Xcode のイメージ資産を編集するか、([このサンプル](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132)に一致するように) 手動で**ファイルを**編集すること Visual Studio for Mac で、これを修正することはできません。
+    このアイコンは87x87 ピクセル ( **@3x** Retina 画面の場合は29単位) にする必要があります。 Xcode のイメージ資産を編集するか、([このサンプル](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132)に一致するように) 手動で**ファイルを**編集すること Visual Studio for Mac で、これを修正することはできません。
 
 - Watch 拡張機能プロジェクトの**WKApp バンドル id**が watch アプリの**バンドル id**と一致するように[正しく設定](~/ios/watchos/get-started/project-references.md)されていない場合、デバッガーは接続に失敗し、"デバッガーを待機 Visual Studio for Mac しています >。 *"接続"* 。
 
-- デバッグは**通知**モードでサポートされていますが、信頼性が低い可能性があります。 再試行は機能する場合があります。 Watch アプリの**情報** `WKCompanionAppBundleIdentifier`が、iOS の親/コンテナーアプリのバンドル識別子 (iPhone で実行されるもの) に一致するように設定されていることを確認します。
+- デバッグは**通知**モードでサポートされていますが、信頼性が低い可能性があります。 再試行は機能する場合があります。 Watch アプリの**情報**`WKCompanionAppBundleIdentifier` が、iOS の親/コンテナーアプリのバンドル識別子 (iPhone で実行されているもの) に一致するように設定されていることを確認します。
 
 - iOS デザイナーでは、表示や通知インターフェイスコントローラーのエントリポイント矢印は表示されません。
 
-- ストーリーボードに 2 `WKNotificationControllers`つを追加することはできません。
-    回避策:ストーリーボード XML 内の`id`要素は、常に同じで挿入されます。`notificationCategory` この問題を回避するには、2つ (以上) の通知コントローラーを追加し、ストーリーボードファイルをテキストエディターで開き、 `id`要素を一意になるように手動で変更します。
+- ストーリーボードに2つの `WKNotificationControllers` を追加することはできません。
+    回避策: ストーリーボード XML の `notificationCategory` 要素は、常に同じ `id`で挿入されます。 この問題を回避するには、2つ (またはそれ以上) の通知コントローラーを追加し、ストーリーボードファイルをテキストエディターで開き、`id` 要素を手動で変更して一意にすることができます。
 
-    [![](troubleshooting-images/duplicate-id-sml.png "ストーリーボードファイルをテキストエディターで開き、id 要素を手動で変更して一意にする")](troubleshooting-images/duplicate-id.png#lightbox)
+    [![](troubleshooting-images/duplicate-id-sml.png "Opening the storyboard file in a text editor and manually change the id element to be unique")](troubleshooting-images/duplicate-id.png#lightbox)
 
 - アプリを起動しようとすると、"アプリケーションがビルドされていません" というエラーが表示されることがあります。 このエラーは、スタートアッププロジェクトが watch 拡張機能プロジェクトに設定されている場合、**クリーン**後に発生します。
     この問題を解決するには、 **[ビルド > リビルド]** を選択し、アプリを再起動します。
@@ -74,7 +74,7 @@ with an alpha channel. Icons should not have an alpha channel.
 
 2. アルファチャネルが存在する場合、表示されるダイアログには **[アルファ]** チェックボックスが表示されます。
 
-    ![](troubleshooting-images/remove-alpha-sml.png "アルファチャネルが存在する場合、表示されるダイアログには [アルファ] チェックボックスが表示されます。")
+    ![](troubleshooting-images/remove-alpha-sml.png "The dialog that appears will include an Alpha checkbox if an alpha channel is present")
 
 3. **アルファ**チェックボックスを*オフにし*、正しい場所にファイルを**保存**します。
 
@@ -91,15 +91,15 @@ Xcode Interface Builder を使用して*いる場合*は、次の手順に従っ
 
 1. **Xcode Interface Builder**で watch アプリのインターフェイスを開きます **。**
 
-    ![](troubleshooting-images/add-6.png "Xcode Interface Builder でストーリーボードを開く")
+    ![](troubleshooting-images/add-6.png "Opening the storyboard in Xcode Interface Builder")
 
-2. 新しい`InterfaceController`をストーリーボードにドラッグします。
+2. 新しい `InterfaceController` をストーリーボードにドラッグします。
 
-    ![](troubleshooting-images/add-1.png "InterfaceController")
+    ![](troubleshooting-images/add-1.png "A InterfaceController")
 
 3. コントロールをインターフェイスコントローラーにドラッグできるようになりました (例 ラベルとボタン) を作成することはできません **。 h**ヘッダーファイルがないためです。 次の手順を実行すると、必要な **.h**ヘッダーファイルが作成されます。
 
-    ![](troubleshooting-images/add-2.png "レイアウト内のボタン")
+    ![](troubleshooting-images/add-2.png "A button in the layout")
 
 4. ストーリーボードを閉じて Visual Studio for Mac に戻ります。 C# **Watch アプリ拡張機能**プロジェクトに新しいファイル**MyInterfaceController.cs** (または好きな名前) を作成します (ストーリーボードがある watch アプリ自体ではありません)。 次のコードを追加します (名前空間、classname、コンストラクター名を更新します)。
 
@@ -137,7 +137,7 @@ Xcode Interface Builder を使用して*いる場合*は、次の手順に従っ
     }
     ```
 
-5. C# **Watch アプリ拡張機能**プロジェクトに別の新しいファイル**MyInterfaceController.designer.cs**を作成し、次のコードを追加します。 名前空間、クラス名、および`Register`属性を必ず更新してください。
+5. C# **Watch アプリ拡張機能**プロジェクトに別の新しいファイル**MyInterfaceController.designer.cs**を作成し、次のコードを追加します。 名前空間、classname、および `Register` 属性を必ず更新してください。
 
     ```csharp
     using Foundation;
@@ -158,34 +158,34 @@ Xcode Interface Builder を使用して*いる場合*は、次の手順に従っ
     > [!TIP]
     > このファイルを最初のファイルの子ノードにする (必要に応じて) Visual Studio for Mac Solution Pad 内のC#他のファイルにドラッグすることもできます。 その後、次のように表示されます。
 
-    ![](troubleshooting-images/add-5.png "ソリューションパッド")
+    ![](troubleshooting-images/add-5.png "The Solution pad")
 
-6. Xcode 同期で、使用した新しいクラス (属性を`Register`使用) が認識されるように、[**ビルド >** ビルド] を選択します。
+6. Xcode 同期で、使用した新しいクラス (`Register` 属性を使用) が認識されるように、[**ビルド >** ビルド] を選択します。
 
 7. ウォッチ アプリのストーリーボードファイルを右クリックし、 **Open With > Xcode Interface Builder** を選択して、ストーリーボードを再度開きます。
 
-    ![](troubleshooting-images/add-6.png "Interface Builder でストーリーボードを開く")
+    ![](troubleshooting-images/add-6.png "Opening the storyboard in Interface Builder")
 
-8. 新しいインターフェイスコントローラーを選択し、前の手順で定義したクラス名を指定します。例を示します。 `MyInterfaceController`。
+8. 新しいインターフェイスコントローラーを選択し、前の手順で定義したクラス名を指定します。例を示します。 `MyInterfaceController`.
     すべてが正常に動作している場合は、 **[クラス:]** ドロップダウンリストに自動的に表示され、そこから選択できます。
 
-    ![](troubleshooting-images/add-4.png "カスタムクラスの設定")
+    ![](troubleshooting-images/add-4.png "Setting a custom class")
 
 9. ストーリーボードとコードをサイドバイサイドで表示できるように、Xcode (2 つの重なり合う円があるアイコン) で**アシスタントエディター**ビューを選択します。
 
-    ![](troubleshooting-images/add-7.png "アシスタントエディターのツールバー項目")
+    ![](troubleshooting-images/add-7.png "The Assistant Editor toolbar item")
 
     コードペインにフォーカスがある場合は、 **.h**ヘッダーファイルを参照していることを確認し、階層リンクバーを右クリックして適切なファイル (**MyInterfaceController**) を選択します。
 
-    ![](troubleshooting-images/add-8.png "MyInterfaceController の選択")
+    ![](troubleshooting-images/add-8.png "Select MyInterfaceController")
 
 10. **Ctrl キーを押しながら**、ストーリーボードから **.h**ヘッダーファイルにドラッグして、コンセントとアクションを作成できるようになりました。
 
-    ![](troubleshooting-images/add-9.png "アウトレットとアクションの作成")
+    ![](troubleshooting-images/add-9.png "Creating outlets and actions")
 
     ドラッグを解除すると、アウトレットまたはアクションを作成するかどうかを選択し、その名前を選択するように求められます。
 
-    ![](troubleshooting-images/add-a.png "アウトレットとアクションダイアログ")
+    ![](troubleshooting-images/add-a.png "The outlet and an action dialog")
 
 11. ストーリーボードの変更が保存され、Xcode が閉じられたら、Visual Studio for Mac に戻ります。 このメソッドは、ヘッダーファイルの変更を検出し、 **designer.cs**ファイルにコードを自動的に追加します。
 
@@ -224,7 +224,7 @@ Xcode Interface Builder を使用して*いる場合*は、次の手順に従っ
 --launchsimwatch=/path/to/watchkitproject/watchsample/bin/iPhoneSimulator/Debug/watchsample.app
 ```
 
-アプリを反映するために更新する必要がある`launchsimwatch`パラメーターは次のとおりです。
+アプリを反映するために更新する必要があるパラメーターは `launchsimwatch`次のとおりです。
 
 ### <a name="--launchsimwatch"></a>--launchシム watch
 
@@ -241,7 +241,7 @@ Xcode Interface Builder を使用して*いる場合*は、次の手順に従っ
 
 ## <a name="notification-mode"></a>通知モード
 
-アプリの[**通知**モード](~/ios/watchos/platform/notifications.md)をテストするには、 `watchlaunchmode`パラメーターを`Notification`に設定し、テスト通知ペイロードを含む JSON ファイルへのパスを指定します。
+アプリの[**通知**モード](~/ios/watchos/platform/notifications.md)をテストするには、`watchlaunchmode` パラメーターを `Notification` に設定し、テスト通知ペイロードを含む JSON ファイルへのパスを指定します。
 
 通知モードでは、ペイロードパラメーターが*必要*です。
 
@@ -257,7 +257,7 @@ Xcode Interface Builder を使用して*いる場合*は、次の手順に従っ
 
 ### <a name="--sdkroot"></a>--sdkroot
 
-必須。 Xcode (6.2 以降) へのパスを指定します。
+必須です。 Xcode (6.2 以降) へのパスを指定します。
 
 例:
 

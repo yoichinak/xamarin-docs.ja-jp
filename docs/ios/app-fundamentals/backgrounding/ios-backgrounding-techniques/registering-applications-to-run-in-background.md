@@ -4,15 +4,15 @@ description: このドキュメントでは、バックグラウンドで実行�
 ms.prod: xamarin
 ms.assetid: 8F89BE63-DDB5-4740-A69D-F60AEB21150D
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 6466d4c7edf6fde38fd3e9e8a6aaa48c2e5f9b4a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 61b7926f28253acbcc45bc204c466d76a00c72b0
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70757695"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73010830"
 ---
 # <a name="registering-xamarinios-apps-to-run-in-the-background"></a>バックグラウンドで実行する Xamarin iOS アプリを登録しています
 
@@ -34,15 +34,15 @@ ms.locfileid: "70757695"
 
 アプリケーションを登録するには、アプリケーションの*情報*で **[必要なバックグラウンドモード]** プロパティを設定します。 アプリケーションは、必要な数だけカテゴリに登録できます。
 
- [![](registering-applications-to-run-in-background-images/bgmodes.png "バックグラウンドモードの設定")](registering-applications-to-run-in-background-images/bgmodes.png#lightbox)
+ [![](registering-applications-to-run-in-background-images/bgmodes.png "Setting the background modes")](registering-applications-to-run-in-background-images/bgmodes.png#lightbox)
 
 バックグラウンドの場所の更新用にアプリケーションを登録する手順については、「[バックグラウンドの場所」チュートリアル](~/ios/app-fundamentals/backgrounding/ios-backgrounding-walkthroughs/location-walkthrough.md)を参照してください。
 
 ## <a name="application-does-not-run-in-background-property"></a>アプリケーションはバックグラウンドプロパティでは実行されません
 
-*情報 plist*で設定できるもう1つのプロパティは、*アプリケーションがバックグラウンドで実行さ*れない`UIApplicationExitsOnSuspend`場合、またはプロパティである場合です。
+*情報 plist*で設定できるもう1つのプロパティは、*アプリケーションがバックグラウンドで実行されない*か、`UIApplicationExitsOnSuspend` プロパティです。
 
- [![](registering-applications-to-run-in-background-images/plist.png "バックグラウンド実行の無効化")](registering-applications-to-run-in-background-images/plist.png#lightbox)
+ [![](registering-applications-to-run-in-background-images/plist.png "Disabling Background Running")](registering-applications-to-run-in-background-images/plist.png#lightbox)
 
 これは、iOS 7 以降では、バックグラウンドアプリの更新設定をオフに設定した場合とまったく同じ効果があります。ただし、この設定は、開発者側でのみ変更でき、iOS 4 以上で使用できます。 バックグラウンドの入力直後にアプリケーションは中断され、処理を実行することはできません。
 

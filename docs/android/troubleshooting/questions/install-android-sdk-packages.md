@@ -4,21 +4,21 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: F136AAE0-C6D2-4B0F-8F8C-7A6A94877266
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/30/2018
-ms.openlocfilehash: bd0f2a7704e5d666f6b32d4ccc489e069ec6ade6
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: d48767ea29c5f610e02fade20ae92c5e085cc9be
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70757244"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73026963"
 ---
 # <a name="which-android-sdk-packages-should-i-install"></a>インストールする必要がある Android SDK パッケージを教えてください
 
 Android SDK をインストールすると、開発に必要な最小限のパッケージが自動的に含まれなくなります。 個々の開発者のニーズは異なりますが、Xamarin を使用した開発には通常、次のパッケージが必要になります。
 
-## <a name="tools"></a>ツール
+## <a name="tools"></a>Tools
 
 SDK manager の Tools フォルダーから最新のツールをインストールします。
 
@@ -50,4 +50,4 @@ API 15 および23の SDK プラットフォームをインストールする必
 通常、Android SDK エクストラは必須ではありません。ただし、ユースケースによっては必要になる場合があるため、注意が必要です。
 
 ## <a name="further-reading"></a>関連項目
-次のガイドでは、これらのオプションについて説明し、SDK manager に用意されているさまざまなパッケージについて詳しく説明します。[Android SDK Manager セットアップガイド](http://www.themethodology.net/2015/02/android-sdk-manager-setup-for.html?m=1)
+次のガイドでは、これらのオプションについて説明し、SDK manager に用意されているさまざまなパッケージ ( [Android SDK Manager セットアップガイド](http://www.themethodology.net/2015/02/android-sdk-manager-setup-for.html?m=1)) について詳しく説明します。

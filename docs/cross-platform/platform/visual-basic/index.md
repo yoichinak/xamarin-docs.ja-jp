@@ -1,83 +1,66 @@
 ---
-title: 移植可能な Visual Basic.NET
-description: このガイドでは、Visual Basic を使用して、Xamarin.iOS と Xamarin.Android を対象としたソリューションで使用できるポータブル クラス ライブラリ (PCL) プロジェクトを作成する方法について説明します。
+title: Visual Basic と .NET Standard
+description: このガイドでは、Visual Basic を使用して、Xamarin および Xamarin Android を対象とするソリューションで使用できるプロジェクトを .NET Standard 作成する方法について説明します。
 ms.prod: xamarin
 ms.assetid: f264c632-8feb-4015-a5e5-cb9c681c787d
-author: asb3993
-ms.author: amburns
-ms.date: 03/23/2017
-ms.openlocfilehash: e4c8c43b4df1a7bfc5436f14564c6d0164216c46
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
-ms.translationtype: HT
+author: davidortinau
+ms.author: daortin
+ms.date: 04/24/2019
+ms.openlocfilehash: 594f7584e914b7bd8f4d7b72b3c82c42bb2fb73e
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61167194"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73014569"
 ---
-# <a name="portable-visual-basicnet"></a>移植可能な Visual Basic.NET
+# <a name="visual-basic-and-net-standard"></a>Visual Basic と .NET Standard
 
-Xamarin iOS、Android プロジェクト ネイティブでサポートしない Visual Basic です。ただし開発者は iOS と Android では、既存の Visual Basic コードに移行する、または Visual Basic では、アプリケーション ロジックの大部分を記述するポータブル クラス ライブラリを使用できます。 Xamarin.Forms アプリケーションは、Visual Basic の (カスタム レンダラー、依存関係サービスでは、XAML 分離コードを除く) で完全作成できます。
+Xamarin Android および iOS プロジェクトは、Visual Basic をネイティブでサポートしていません。ただし、開発者は[.NET Standard](~/cross-platform/app-fundamentals/net-standard.md)ライブラリを使用して、既存の Visual Basic コードを Android や iOS に移行したり、Visual Basic にアプリケーションロジックの重要な部分を書き込んだりすることができます。 Xamarin. Forms アプリケーションは、Visual Basic (カスタムレンダラー、依存サービス、および XAML 分離コードを除く) 全体で作成できます。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>［要件］
 
-Xamarin.Android 4.10.1、Xamarin.iOS 7.0.4、つまり、これらのツールで作成したすべての Xamarin プロジェクトが Visual Basic の PCL のアセンブリに組み込むことができます、Xamarin Studio 4.2 でポータブル クラス ライブラリのサポートが追加されました。
-
-作成および Visual Basic のポータブル クラス ライブラリをコンパイルするには、Windows (Visual Studio 2012 以降) で Visual Studio を使用する必要があります。
+.NET Standard ライブラリ Visual Basic を作成してコンパイルするには、Windows 上の Visual Studio (Visual Studio 2017 以降) を使用する必要があります。
 
 > [!NOTE]
-> Visual Basic ライブラリのみ作成でき、Visual Studio を使用してコンパイルします。 Xamarin.iOS および Xamarin.Android では、Visual Basic 言語はサポートされません。
+> Visual Basic ライブラリは、Visual Studio を使用して作成およびコンパイルすることしかできません。 Xamarin Android と Xamarin. iOS では、Visual Basic 言語はサポートされていません。
 >
-> Visual Studio でのみ作業する場合は、Xamarin.iOS および Xamarin.Android プロジェクトから Visual Basic プロジェクトを参照できます。
+> Visual Studio だけで作業する場合は、Xamarin. Android プロジェクトと Xamarin. iOS プロジェクトから Visual Basic プロジェクトを参照できます。
 >
-> IOS と Android プロジェクトする必要がありますも読み込む場合に Visual Studio for Mac は、Visual Basic PCL から出力アセンブリを参照してください。
+> Android および iOS プロジェクトも Visual Studio for Mac に読み込む必要がある場合は、Visual Basic アセンブリから出力アセンブリを参照する必要があります。
 
+## <a name="creating-a-visual-basicnet-net-standard-library"></a>Visual Basic.NET .NET Standard ライブラリの作成
 
-## <a name="creating-a-visual-basicnet-pcl"></a>Visual Basic.NET PCL を作成します。
+このセクションでは、Visual Studio 2019 を使用して Visual Basic .NET Standard ライブラリを作成する方法について説明します。
+その後、ライブラリは、Xamarin Android、Xamarin、xamarin、Xamarin などの他のプロジェクトで参照できます。
 
-このセクションで、Visual Studio を使用して Visual Basic のポータブル クラス ライブラリを作成する方法を説明します。
-ライブラリは、Xamarin.iOS、Xamarin.Android、および Xamarin.Forms アプリを含む、他のプロジェクトで参照できます。
+Visual Studio で Visual Basic .NET Standard ライブラリを追加する場合、適切なプロジェクトの種類を選択する必要があります。
 
-### <a name="creating-a-pcl"></a>PCL を作成します。
+1. Visual Studio 2019 から **、[新しいプロジェクトの作成**] を選択します。
 
-Visual Studio で Visual Basic の PCL を追加するときに、どのようなプラットフォーム、ライブラリと互換性があるかを説明するプロファイルを選択する必要があります。 プロファイルは PCL のドキュメントの概要について説明します。
+2. **Visual Basic ライブラリ**を入力してプロジェクトオプションをフィルター処理し、 **[クラスライブラリ (.NET Standard)]** オプションを Visual Basic アイコンで選択します。
 
-PCL を作成し、そのプロファイルを選択する手順は次のとおりです。
+    [Visual Basic ライブラリの![フィルター](xamarin-forms-images/06-sml.png)](xamarin-forms-images/06.png#lightbox)
 
-1.  **新しいプロジェクト**画面で、、 **Visual Basic > クラス ライブラリ (ポータブル)** オプション。
+3. 次の画面で、プロジェクトの名前を入力し、 **[作成]** をクリックします。
 
-    [![](images/image1-sml.png "新しい Visual Basic のポータブル ライブラリを作成します。")](images/image1.png#lightbox)
+4. 次のように、Visual Basic プロジェクトが**ソリューションエクスプローラー**に表示されます。
 
-1.  Visual Studio は、次のすぐに促します**ポータブル クラス ライブラリの追加**ダイアログ、プロファイルを構成できるようにします。 キーを押すし、サポートする必要のあるプラットフォームのチェック マークを付けて**OK**します。
+    [空の Visual Basic プロジェクトを![](images/new-library-sml.png)](images/new-library.png#lightbox)
 
-    [![](images/image2-sml.png "プラットフォームを選択して、PCL プロファイルを選択します")](images/image2.png#lightbox)
-
-1.  ように、Visual Basic の PCL プロジェクトが表示されます、**ソリューション エクスプ ローラー**次のようにします。
-
-    [![](images/image3-sml.png "空の Visual Studio の PCL プロジェクト")](images/image3.png#lightbox)
-
-
-PCL は、Visual Basic コードを追加する準備ができました。 PCL プロジェクトは、他のプロジェクト (アプリケーション プロジェクト、ライブラリ プロジェクトとその他の PCL プロジェクト) で参照できます。
-
-### <a name="editing-the-pcl-profile"></a>PCL プロファイルの編集
-
-(つまり、PCL と互換性のあるプラットフォームを制御するには)、PCL プロファイルを表示および変更でプロジェクトを右クリックし、選択できる**プロパティ > ライブラリ > 変更しています.**.表示されるダイアログでは、このスクリーン ショットに示されます。
-
- [![](images/image4-sml.png "プロジェクトのプロパティで PCL プロファイルを編集します。")](images/image4.png#lightbox)
-
-コードは既に、PCL に追加した後、プロファイルが変更されると、そのコードは、新しく選択したプロファイルの一部ではない機能を参照している場合、ライブラリがコンパイルされなく可能性があります。
-
+これで、プロジェクトの Visual Basic コードを追加できるようになりました。 .NET Standard プロジェクトは、他のプロジェクト (アプリケーションプロジェクトまたはライブラリプロジェクト) で参照できます。
 
 ## <a name="summary"></a>まとめ
 
-この記事で説明した方法: Visual Studio とポータブル クラス ライブラリを使用して Xamarin アプリケーションでの Visual Basic コードを使用します。 IOS および Android アプリに含まれる Visual Basic で記述されたコードを PCL に Visual Basic のコンパイルのにより、場合でも、Xamarin で Visual Basic が直接サポートされていません。
+この記事では、Visual Studio を使用して Xamarin アプリケーションの Visual Basic コードを使用する方法について説明しました。 Xamarin は Visual Basic を直接サポートしていませんが、Visual Basic を .NET Standard ライブラリにコンパイルすることで、Visual Basic で記述されたコードを Android および iOS アプリに組み込むことができます。
 
-次のページには、ネイティブ モードまたは Xamarin.Forms アプリで Visual Basic.NET Pcl を使用する方法について説明します。
+次のページでは、ネイティブまたは Xamarin で Visual Basic.NET .NET Standard ライブラリを使用する方法について説明します。
 
-- [VB を使用する Xamarin.iOS および Xamarin.Android のネイティブ アプリのビルド](native-apps.md)
-- [VB で Xamarin.Forms アプリの構築](xamarin-forms.md)
-
+- [VB を使用するネイティブ Xamarin iOS アプリと Xamarin Android アプリのビルド](native-apps.md)
+- [VB での Xamarin Forms アプリのビルド](xamarin-forms.md)
 
 ## <a name="related-links"></a>関連リンク
 
-- [TaskyPortableVB (サンプル)](https://github.com/xamarin/mobile-samples/tree/master/VisualBasic/TaskyPortableVB)
-- [XamarinFormsVB (sample)](https://github.com/xamarin/mobile-samples/tree/master/VisualBasic/XamarinFormsVB)
-- [.NET Framework (マイクロソフト) を使用したクロス プラットフォーム開発](https://msdn.microsoft.com/library/gg597391(v=vs.110).aspx)
+- [TaskyVB (サンプル)](https://docs.microsoft.com/samples/xamarin/mobile-samples/visualbasic-taskyvb/)
+- [XamarinFormsVB (サンプル)](https://docs.microsoft.com/samples/xamarin/mobile-samples/visualbasic-xamarinformsvb/)
+- [.NET Standard と Xamarin](~/cross-platform/app-fundamentals/net-standard.md)
+- [.NET Standard](/dotnet/standard/net-standard/)

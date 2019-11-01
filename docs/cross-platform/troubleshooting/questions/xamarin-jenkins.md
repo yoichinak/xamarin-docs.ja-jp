@@ -4,15 +4,15 @@ description: このドキュメントでは、大まかな Jenkins CI システ�
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 9951F980-2C6C-47C0-8A35-A78F06C20BEB
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/05/2018
-ms.openlocfilehash: a8dc27574dc9959cc375a98fc0d7a18aac8bd6b7
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 7be60eaa1135284522ef1e6ce81c911a68ff9915
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70756969"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73012227"
 ---
 # <a name="why-isnt-jenkins-supported-by-microsoft"></a>Jenkins が Microsoft によってサポートされないのはなぜですか。
 
@@ -32,7 +32,7 @@ Jenkins はオープンソースの CI スイートです。このため、Jenki
 
 この問題のエラーメッセージは次のようになります。
 
-> エラー XA5205:Android SDK ディレクトリが見つかりませんでした。 /P を使用して設定してください: AndroidSdkDirectory
+> エラー XA5205: Android SDK ディレクトリが見つかりませんでした。 /P を使用して設定してください: AndroidSdkDirectory
 
 SDK の場所を設定するためのオプションは、使用している Jenkins Android プラグインによって異なる場合があります。この設定方法については、「プラグインガイド」を参照してください。 たとえば、次のようになります。[Android Emulator プラグイン](https://wiki.jenkins-ci.org/display/JENKINS/Android+Emulator+Plugin#AndroidEmulatorPlugin-Systemconfiguration)は SDK を自動的に検索しますが、見つからない場合は検出します。この場所は、そのプラグインの [Jenkins システム構成] ページで設定することもできます。 
 
@@ -44,10 +44,10 @@ SDK の場所を設定するためのオプションは、使用している Jen
 ### <a name="jenkins-reports-an-invalid-xamarin-license"></a>Jenkins は無効な Xamarin ライセンスを報告します
 通常、この問題のエラーメッセージは次のようになります。
 
-> XA9008 エラー:コマンドラインから構築するには、ビジネスライセンスが必要です
+> XA9008 エラー: コマンドラインからのビルドにはビジネスライセンスが必要です
 
-または
+、または
 
-> エラー :Xamarin の Starter Edition では、Xamarin Studio 外でのビルドはサポートされていません 
+> エラー: Xamarin の Starter Edition では、Xamarin Studio 外でのビルドはサポートされていません 
 
-このシナリオの最も一般的な原因は、Xamarin ライセンスに関連付けられていないユーザーアカウントでログインすることによって Jenkins を使用することです。 これを解決する最も簡単な方法は、ユーザーアカウントを使用して直接 Jenkins をアプリとしてインストールすることです。 そのプロセスとその他の考慮事項については、次を参照してください。[https://forums.xamarin.com/discussion/comment/99397/#Comment_99397](https://forums.xamarin.com/discussion/comment/99397/#Comment_99397)
+このシナリオの最も一般的な原因は、Xamarin ライセンスに関連付けられていないユーザーアカウントでログインすることによって Jenkins を使用することです。 これを解決する最も簡単な方法は、ユーザーアカウントを使用して直接 Jenkins をアプリとしてインストールすることです。 このプロセスとその他の考慮事項については、「」を参照してください[https://forums.xamarin.com/discussion/comment/99397/#Comment_99397](https://forums.xamarin.com/discussion/comment/99397/#Comment_99397)

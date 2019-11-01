@@ -3,15 +3,15 @@ title: 32/64 ビットプラットフォームに関する考慮事項
 description: このドキュメントでは、Xamarin iOS または Xamarin. Mac アプリケーションの32ビットアーキテクチャと64ビットアーキテクチャを対象とする場合に留意すべきさまざまな考慮事項について説明します。
 ms.prod: xamarin
 ms.assetid: F7126340-04B2-4A10-B14D-394E23527C1A
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: bcee9c7e09a9470cbf80e99c047a7c52f61f888a
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 5ba451de857444bc5b12b750ae479b62abdb75a3
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "71249802"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016331"
 ---
 # <a name="3264-bit-platform-considerations"></a>32/64 ビットプラットフォームに関する考慮事項
 
@@ -40,9 +40,9 @@ Unified API に変換された Xamarin の iOS モバイルアプリケーショ
 
 1. **Solution Pad**で、アプリのプロジェクトをダブルクリックして、 **[プロジェクトオプション]** ウィンドウを開きます。
 2. **[IOS ビルド]** を選択します。
-3. IPhone シミュレーターの **[サポートされているアーキテクチャ]** ドロップダウンで、[ **x86 \_64** ] または [ **i386 + x86 \_64**] を選択します。
+3. IPhone シミュレーターの **[サポートされているアーキテクチャ]** ドロップダウンで、 **x86\_64**または**i386 + x86\_64**を選択します。
 
-   [![サポートされているアーキテクチャを x86 \_64 または i386 + x86 \_64 に設定する](Images/Image01.png "Setting Supported architectures to x86\_64 or i386 + x86\_64")](Images/Image01-large.png#lightbox) 
+   [![サポートされているアーキテクチャを x86\_64 または i386 + x86\_64 に設定する](Images/Image01.png "Setting Supported architectures to x86\_64 or i386 + x86\_64")](Images/Image01-large.png#lightbox) 
 
 4. 物理デバイスの場合は、使用可能な**ARM64**の組み合わせのいずれかを選択します。
 
@@ -55,9 +55,9 @@ Unified API に変換された Xamarin の iOS モバイルアプリケーショ
 
 1. **ソリューションエクスプローラー**で、アプリのプロジェクトを右クリックし、 **[プロパティ]** を選択します。
 2. **[IOS ビルド]** を選択します。
-3. IPhone シミュレーターの場合、**サポートされているアーキテクチャ**を**x86 \_64**または**i386 + x86 \_64**に設定します。 
+3. IPhone シミュレーターでは、**サポートされているアーキテクチャ**を**x86\_64**または**i386 + x86\_64**のいずれかに設定します。 
 
-   [![サポートされているアーキテクチャを x86_64 または i386 + x86 \_64 に設定する](Images/VS02.png "Setting Supported architectures to x86_64 or i386 + x86\_64")](Images/VS02-large.png#lightbox)
+   [![サポートされているアーキテクチャを x86_64 または i386 + x86\_64 に設定する](Images/VS02.png "Setting Supported architectures to x86_64 or i386 + x86\_64")](Images/VS02-large.png#lightbox)
 
 4. 物理デバイスの場合は、使用可能な**ARM64**の組み合わせのいずれかを選択します。
     

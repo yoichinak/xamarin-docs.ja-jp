@@ -3,21 +3,21 @@ title: Microsoft Azure と Xamarin
 description: このドキュメントでは、Visual Studio for Mac、Azure Mobile Apps、Active Directory 認証、WebAPI の接続済みサービスに関するドキュメントへのリンクを示します。
 ms.prod: xamarin
 ms.assetid: 7b9aa8d9-c181-4c33-8ab0-2f56e4dbfc04
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/09/2017
-ms.openlocfilehash: 11a98b61d958e2e0d0fb226ba4eb05c458b5bbf2
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 273a1a8fec4cf40893ff94fef4b1394065a8547b
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70766100"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016621"
 ---
 # <a name="microsoft-azure-and-xamarin"></a>Microsoft Azure と Xamarin
 
-[![](images/evolve-mikej-azure-sml.png "Azure アプリ Services の機能は、クラウドデータストレージやクロスプラットフォームのプッシュ通知など、Xamarin アプリに簡単に追加することができる")](https://evolve.xamarin.com/session/56ec886fde91c6253c277bc6)
+[![](images/evolve-mikej-azure-sml.png "Azure App Services features are easy to add to Xamarin apps, including cloud data storage and cross-platform push notifications")](https://evolve.xamarin.com/session/56ec886fde91c6253c277bc6)
 
-[Evolve 2016:Azure と Xamarin を使用した接続型アプリの開発](https://evolve.xamarin.com/session/56ec886fde91c6253c277bc6)
+[進化 2016: Azure と Xamarin を使用した接続型アプリの開発](https://evolve.xamarin.com/session/56ec886fde91c6253c277bc6)
 
 ## <a name="connected-services-in-visual-studio-for-mac"></a>Visual Studio for Mac の接続済みサービス
 
@@ -35,7 +35,7 @@ Mobile Apps、Web Api、ストレージなどにアクセスするように、 [
 [Azure Active Directory](~/cross-platform/data-cloud/active-directory/index.md)を使用すると、Xamarin [. Auth コンポーネント](https://www.nuget.org/packages/Xamarin.Auth/)を使用して xamarin アプリのユーザーをログインできます。
 その後、アプリは Office 365 などの追加サービスにアクセスできます。
 
-## <a name="webapi"></a>WebAPI
+## <a name="webapi"></a>webAPI
 
 Microsoft の Web API は、Xamarin アプリケーションで簡単に使用できる REST のようなインターフェイスを公開しています。
 [Azure の Web サイト](https://trywebsites.azurewebsites.net/)を簡単に作成し、WebAPI ベースのアプリを構築して Xamarin アプリに接続することができます。
@@ -58,6 +58,6 @@ Microsoft の Web API は、Xamarin アプリケーションで簡単に使用�
 
 ## <a name="related-links"></a>関連リンク
 
-- [Azure PCL の例 ( @paulbatumby) (サンプル)](https://github.com/paulbatum/mobile-services-xamarin-pcl)
+- [Azure PCL の例 (@paulbatum) (サンプル)](https://github.com/paulbatum/mobile-services-xamarin-pcl)
 - [Azure portal](https://azure.microsoft.com/)
 - [Xamarin 用モバイルクライアント (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/)

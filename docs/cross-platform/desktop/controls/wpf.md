@@ -2,15 +2,15 @@
 ms.assetid: 1BB412D1-FC3D-4E69-8B01-B976A3DB6328
 title: 'WPF と Xamarin. Forms: 類似点 & 相違点'
 description: このドキュメントでは、WPF と Xamarin. Forms を比較して比較します。 コントロールテンプレート、XAML、バインドインフラストラクチャ、データテンプレート、ItemsControl、UserControl、ナビゲーション、および URL ナビゲーションについて説明します。
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/26/2017
-ms.openlocfilehash: de8e3445679e185b488311e58221ae5f4c28f85c
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 798839457a418d457bac83e6e20397722423dbac
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "71106028"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016487"
 ---
 # <a name="wpf-vs-xamarinforms-similarities--differences"></a>WPF と Xamarin. Forms: 類似点 & 相違点
 
@@ -68,7 +68,7 @@ Xamarin. Forms のバインド可能なプロパティの定義は、WPF と同�
 
 1. オブジェクトは `BindableObject` から派生しなければなりません。
 2. プロパティのバッキングストレージキーを定義するために宣言 `BindableProperty` 型のパブリック静的フィールドが必要です。
-3. @No__t_0 と `SetValue` を使用してプロパティ値を取得および変更するパブリックインスタンスプロパティラッパーが必要です。
+3. `GetValue` と `SetValue` を使用してプロパティ値を取得および変更するパブリックインスタンスプロパティラッパーが必要です。
 
 完全な例については、「 [Xamarin. Forms でのバインド](~/xamarin-forms/xaml/bindable-properties.md)可能なプロパティ」を参照してください。
 
@@ -102,7 +102,7 @@ Xamarin. Forms のバインド可能なプロパティの定義は、WPF と同�
 
 #### <a name="relativesource"></a>RelativeSource
 
-@No__t_0 バインドはサポートされていません。 WPF では、XAML で定義されている他のビジュアル要素にバインドできます。 Xamarin. Forms では、この同じ機能を `{x:Reference}` マークアップ拡張機能を使用して実現できます。 たとえば、テキストプロパティを持つ "otherControl" という名前のコントロールがあるとします。このコントロールには、次のようにバインドできます。
+`RelativeSource` バインドはサポートされていません。 WPF では、XAML で定義されている他のビジュアル要素にバインドできます。 Xamarin. Forms では、この同じ機能を `{x:Reference}` マークアップ拡張機能を使用して実現できます。 たとえば、テキストプロパティを持つ "otherControl" という名前のコントロールがあるとします。このコントロールには、次のようにバインドできます。
 
 **WPF**
 
@@ -116,7 +116,7 @@ Text={Binding RelativeSource={RelativeSource otherControl}, Path=Text}
 Text={Binding Source={x:Reference otherControl}, Path=Text}
 ```
 
-@No__t_0 機能にも同じ機能を使用できます。 ただし、先祖を型 (`{RelativeSource FindAncestor}`) で検索することはサポートされていません。
+`{RelativeSource Self}` 機能にも同じ機能を使用できます。 ただし、先祖を型 (`{RelativeSource FindAncestor}`) で検索することはサポートされていません。
 
 #### <a name="binding-context"></a>バインドコンテキスト
 
@@ -141,7 +141,7 @@ WPF に組み込まれている `RoutedCommand` は、使用されることが�
 また、どちらの環境でも `SynchronziationContext` がサポートされ、適切なスレッドマーシャリングを行うために / `await` `async` ます。 WPF には、すべてのビジュアル要素に `Dispatcher` クラスが含まれています。 Xamarin. Forms には、使用できる静的メソッド `Device.BeginInvokeOnMainThread` があります (ただし、クロスプラットフォームコーディングには `SynchronizationContext` が優先されます)。
 
 - Xamarin. フォームには、コレクションの変更通知をサポートする `ObservableCollection<T>` が含まれています。
-- @No__t_0 を使用して、コレクションのスレッド間の更新を有効にすることができます。 API は WPF のバリエーションと若干異なります。[詳細について](xref:Xamarin.Forms.BindingBase.EnableCollectionSynchronization*)は、ドキュメントを確認してください。
+- `BindingBase.EnableCollectionSynchronization` を使用して、コレクションのスレッド間の更新を有効にすることができます。 API は WPF のバリエーションと若干異なります。[詳細について](xref:Xamarin.Forms.BindingBase.EnableCollectionSynchronization*)は、ドキュメントを確認してください。
 
 ## <a name="data-templates"></a>データ テンプレート
 
@@ -149,7 +149,7 @@ WPF に組み込まれている `RoutedCommand` は、使用されることが�
 
 また、これらのユーザーは、WPF に対応する柔軟性はあまりありません。
 
-1. @No__t_0 のルート要素は、_常に_`ViewCell` オブジェクトである必要があります。
+1. `DataTemplate` のルート要素は、_常に_`ViewCell` オブジェクトである必要があります。
 2. データトリガーはデータテンプレートで完全にサポートされますが、トリガーが関連付けられているプロパティの型を示す `DataType` プロパティを含める必要があります。
 3. `DataTemplateSelector` もサポートされていますが、`DataTemplate` から派生するので、`ItemTemplate` プロパティに直接割り当てられます ( WPF での `ItemTemplateSelector`)。
 
@@ -174,7 +174,7 @@ WPF には、"ブラウザーのような" ナビゲーション機能を提供�
 |タブ|TabbedPage|
 |左または右にスワイプ|CarouselView|
 
-@No__t_0 は最も一般的な方法です。すべてのページには、ナビゲーションスタックに対してページをプッシュまたはポップするために使用できる `Navigation` プロパティがあります。 これは、WPF の `NavigationService` と最も近いものです。
+`NavigationPage` は最も一般的な方法です。すべてのページには、ナビゲーションスタックに対してページをプッシュまたはポップするために使用できる `Navigation` プロパティがあります。 これは、WPF の `NavigationService` と最も近いものです。
 
 ### <a name="url-navigation"></a>URL のナビゲーション
 

@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin のプレビューリリ�
 ms.prod: xamarin
 ms.assetid: 037F7FFF-2155-4017-B99A-839CE7EC5C9C
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: f5028fe6ae7ee726ffd94d7908a089ce3bdcb385
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 94fea1786497d04602ea6cf06d875206cf69eb3e
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287951"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030547"
 ---
 # <a name="introduction-to-tvos-12"></a>tvOS 12 の概要
 
@@ -26,11 +26,11 @@ tvOS 12 には TVUIKit が含まれています。これは、tvOS 開発者が�
 
 ## <a name="password-autofill"></a>パスワードのオートコンプリート
 
-TvOS 12 では、ユーザーは iOS デバイスを使用して、1回のタップで tvOS アプリにサインインできます。 これは、ユーザー名とパスワード`UITextContentType`のフィールド、関連付けられているドメインを指定して iOS アプリと tvOS アプリの間の関係を確立するために使用する組み合わせによって有効になります。また、ユーザーの後にフォーカスを受け取る項目を選択するための推奨される環境です。ユーザー名とパスワードを提供します。
+TvOS 12 では、ユーザーは iOS デバイスを使用して、1回のタップで tvOS アプリにサインインできます。 これは、ユーザー名とパスワードのフィールドを指定するための `UITextContentType` 使用法の組み合わせ、iOS アプリと tvOS アプリの間の関係を確立するために関連付けられているドメイン、ユーザーの後にフォーカスを受け取る項目を選択するための推奨される環境の組み合わせによって有効になります。ユーザー名とパスワードを提供します。
 
 ## <a name="focus-engine-enhancements"></a>フォーカスエンジンの機能強化
 
-tvOS 12 では、レンダリング方法に関係なくすべてのアプリがフォーカスエンジンと対話できます。 Siri リモートとのユーザーのやり取りを通じて、フォーカスエンジンを任意のアプリと共に使用して、項目を選択したり、影響を受ける可能性のある変更や、自然な更新に焦点を当てることができます。 これは、カスタムアプリケーションで、uikit の`IUIFocusItemContainer`インターフェイス`UIFocusMovementHint` 、クラス、 `IUIFocusItemScrollableContainer`インターフェイス、およびその他の関連するクラスおよびメソッドを使用して有効にします。
+tvOS 12 では、レンダリング方法に関係なくすべてのアプリがフォーカスエンジンと対話できます。 Siri リモートとのユーザーのやり取りを通じて、フォーカスエンジンを任意のアプリと共に使用して、項目を選択したり、影響を受ける可能性のある変更や、自然な更新に焦点を当てることができます。 これは、カスタムアプリケーションで、UIKit の `IUIFocusItemContainer` インターフェイス、`UIFocusMovementHint` クラス、`IUIFocusItemScrollableContainer` インターフェイス、およびその他の関連するクラスおよびメソッドを使用して有効にします。
 
 ## <a name="vision-framework"></a>ビジョンフレームワーク
 

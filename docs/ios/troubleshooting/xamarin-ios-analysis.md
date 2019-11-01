@@ -5,15 +5,15 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: C29B69F5-08E4-4DCC-831E-7FD692AB0886
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/06/2018
-ms.openlocfilehash: 211bb94b595a6b4e2f4f8c05ab6a90ba200d44e5
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: c0f40ea6fc7d429867f90d3d3c1b49dacb63acb5
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292046"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030866"
 ---
 # <a name="xamarinios-analysis-rules"></a>Xamarin. iOS 分析ルール
 

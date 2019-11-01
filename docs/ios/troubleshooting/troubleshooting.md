@@ -5,15 +5,15 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: B50FE9BD-9E01-AE88-B178-10061E3986DA
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/22/2018
-ms.openlocfilehash: e6a1b6f4d35a6b8774901ed5a505b5333511c848
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 21b1f0c29962b7aeb45a836c976ec2635a39622e
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769703"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030877"
 ---
 # <a name="troubleshooting-tips-for-xamarinios"></a>Xamarin のトラブルシューティングのヒント 
 
@@ -21,9 +21,9 @@ ms.locfileid: "70769703"
 
 このエラーは、Visual Studio との互換性がないことが原因で発生します。
 
-- **Visual Studio 2017 更新プログラム 1**(バージョン15.1 またはそれ以前) は、 **System. ValueTuple NuGet 4.3.0** (またはそれ以前) とのみ互換性があります。
+- **Visual Studio 2017 Update 1** (バージョン15.1 以前) は、 **System. valuetuple NuGet 4.3.0** (またはそれ以前) とのみ互換性があります。
 
-- **Visual Studio 2017 更新プログラム 2**(バージョン15.2 以降) は、4.3.1 またはそれ以降のバージョンとのみ互換性があり**ます**。
+- **Visual Studio 2017 Update 2** (バージョン15.2 以降) は、4.3.1 またはそれ以降のバージョンとのみ互換性があり**ます**。
 
 Visual Studio 2017 のインストールに対応する適切な system.servicemodel タプル NuGet を選択してください。
 
@@ -45,7 +45,7 @@ Visual Studio for Mac と Visual Studio の Xamarin Designer for iOS の導入�
 
 このメンバーはリンカーによって削除される可能性があるため、実行時にアセンブリに存在しません。  これには、次のようないくつかのソリューションがあります。
 
-- メンバーに[`[Preserve]`](http://www.go-mono.com/docs/index.aspx?link=T:MonoTouch.Foundation.PreserveAttribute)属性を追加します。  これにより、リンカーによる削除が防止されます。
+- [`[Preserve]`](http://www.go-mono.com/docs/index.aspx?link=T:MonoTouch.Foundation.PreserveAttribute)属性をメンバーに追加します。  これにより、リンカーによる削除が防止されます。
 - [**Mtouch**](http://www.go-mono.com/docs/index.aspx?link=man:mtouch%281%29)を呼び出すときは、 **-nolink**オプションまたは **-linksdkonly**オプションを使用します。
   - **-nolink は、すべての**リンクを無効にします。
   - **-linksdkonly**では、ユーザーが作成したアセンブリ (つまり、アプリプロジェクト) 内のすべての種類を**保持しながら**、xamarin などの ios 提供のアセンブリのみをリンクします。
@@ -72,7 +72,7 @@ TypeName XXXX {
 }
 ```
 
-上記の定義は、 `NAME_OF_YOUR_XIB_FILE.designer.xib.cs`ファイルで Visual Studio for Mac に追加するすべての XIB ファイルの Visual Studio for Mac によって自動的に生成されます。
+上記の定義は、`NAME_OF_YOUR_XIB_FILE.designer.xib.cs` ファイルで Visual Studio for Mac に追加するすべての XIB ファイルについて、Visual Studio for Mac によって自動的に生成されます。
 
 また、上記のコードを含む型は、 [NSObject](xref:Foundation.NSObject)のサブクラスである必要があります。  含んでいる型が名前空間内にある場合は、名前空間を持たない型名を提供する[[Register]](xref:Foundation.RegisterAttribute)属性も必要になります (Interface Builder は型の名前空間をサポートしていません)。
 
@@ -110,13 +110,13 @@ IntPtr ハンドルを持つコンストラクターは、マネージオブジ�
 public Bar (IntPtr handle) : base (handle) { }
 ```
 
-## <a name="type-foo--does-not-contain-a-definition-for-getnativefield-and-no-extension-method-getnativefield-of-type-foo-could-be-found"></a>型 {foo} にの`GetNativeField`定義が含まれておらず、型 {foo} の拡張メソッド`GetNativeField`が見つかりませんでした
+## <a name="type-foo--does-not-contain-a-definition-for-getnativefield-and-no-extension-method-getnativefield-of-type-foo-could-be-found"></a>型 {Foo} には `GetNativeField` の定義が含まれていません。型 {Foo} の拡張メソッド `GetNativeField` が見つかりませんでした
 
 デザイナーで生成されたファイル (*. xib.designer.cs) でこのエラーが発生した場合は、次の2つのいずれかを意味します。
 
  **1) 部分クラスまたは基底クラスがありません**
 
-デザイナーによって生成される部分クラスは`NSObject` `UIViewController`、のサブクラスから継承されるユーザーコード内の対応する部分クラスを持つ必要があります。 エラーが発生している型のクラスがあることを確認します。
+デザイナーによって生成される部分クラスには、`NSObject`の一部のサブクラスから継承されるユーザーコード (多くの場合 `UIViewController`) の対応する部分クラスが必要です。 エラーが発生している型のクラスがあることを確認します。
 
  **2) 既定の名前空間が変更されました**
 
@@ -142,17 +142,17 @@ public Bar (IntPtr handle) : base (handle) { }
 1. Mac OS X Leopard を使用する (10.5)
 1. シミュレーター内でアプリを実行します。
 
-問題は、Mono がリストで iphonesimulator の`libsqlite3.dylib` `libsqlite3.dylib`ファイルではなく OS X を選択していることです。 アプリ*は*デバイスで動作しますが、シミュレーターでは動作しません。
+問題は、Mono がリストで iphonesimulator の `libsqlite3.dylib` ファイルではなく、OS X `libsqlite3.dylib`を選択していることです。 アプリ*は*デバイスで動作しますが、シミュレーターでは動作しません。
 
 ## <a name="deploy-to-device-fails-with-systemexception-amdeviceinstallapplication-returned-3892346901"></a>デバイスへの展開がシステムで失敗します。例外:AMDeviceInstallApplication から3892346901が返されました
 
-このエラーは、証明書/バンドル id のコード署名構成が、デバイスにインストールされているプロビジョニングプロファイルと一致しないことを意味します。  確認する、適切な証明書があるプロジェクトのオプションで選択されているバンドル署名 、iPhone]-> [し、プロジェクトのオプションで指定された正しいバンドル id が iPhone アプリケーション ->
+このエラーは、証明書/バンドル id のコード署名構成が、デバイスにインストールされているプロビジョニングプロファイルと一致しないことを意味します。  [プロジェクトオプション-> iPhone バンドル署名] で適切な証明書が選択されていること、および [プロジェクトオプション-> iPhone アプリケーション] で指定されている正しいバンドル id があることを確認します。
 
 ## <a name="code-completion-is-not-working-in-visual-studio-for-mac"></a>コード補完が Visual Studio for Mac で機能していません
 
 最新バージョンの Visual Studio for Mac と Xamarin. iOS を使用していることを確認します。
 
-問題が解決しない場合は、[バグを提出](http://monodevelop.com/Developers#Reporting_Bugs)し、 **~/Library/Logs/XamarinStudio-{VERSION}/Ide-{TIMESTAMP}.log**、 **androidtools-{Timestamp} .log**、および**Components-{timestamp} .log**のログファイルを添付してください。
+問題が解決しない場合は、[バグを提出](https://monodevelop.com/Developers#Reporting_Bugs)し、 **~/Library/Logs/XamarinStudio-{VERSION}/Ide-{TIMESTAMP}.log**、 **androidtools-{Timestamp} .log**、および**Components-{timestamp} .log**のログファイルを添付してください。
 
 他のすべての操作が失敗した場合は、コード補完キャッシュを削除して、再生成されるようにすることができます。
 
@@ -309,7 +309,7 @@ Xamarin. iOS と Visual Studio for Mac の現在のリリースは、プロジ�
 
 (Ed Anuff が提供)
 
-この場合は、以下の手順に従ってください。
+次の手順に従います。
 
 - IPhone ビルドの SDK バージョンを3.2 に変更します。または、iTunes connect は、3.2 よりも前のバージョンの SDK を使用してビルドされた iPad 互換アプリを表示しているため、アップロード時にそのバージョンを拒否します。
 - プロジェクトに対してカスタムの MinimumOSVersion を作成し、その中で明示的に3.0 に設定します。   これにより、MinimumOSVersion によって設定された3.2 の値が上書きされます。   この操作を行わないと、アプリは iPhone で実行できなくなります。
@@ -368,7 +368,7 @@ SDK のバージョンは、[OS の最小バージョン] 設定と混同しな�
 
 これは、XCode 4 がインストールされていることを意味します。   XCode 4 では、ツール ibtool が削除されているため、スタンドアロンツールを使用して XIB ファイルを編集することはできなくなりました。
 
-Interface Builder を使用する場合は、Apple の web サイトから入手できる[XCode series 3](http://connect.apple.com/cgi-bin/WebObjects/MemberSite.woa/wa/getSoftware?bundleID=20792)をインストールします。
+Interface Builder を使用する場合は、Apple の web サイトから入手できる[XCode series 3](https://connect.apple.com/cgi-bin/WebObjects/MemberSite.woa/wa/getSoftware?bundleID=20792)をインストールします。
 
 ## <a name="cant-create-display-binding-for-mime-type-applicationvndapple-interface-builder"></a>"Mime の種類: application/vnd. apple-interface-builder" の表示バインドを作成できません。
 
@@ -394,13 +394,13 @@ Interface Builder を使用する場合は、Apple の web サイトから入手
 これは、アプリケーション名に '. ' が含まれている場合に発生する可能性があります。(ドット) を名前で指定します。
 これは、他の多くのケース (デバイスなど) で動作する場合でも、CFBundleExecutable の実行可能ファイル名としては禁止されています。
 
- \* "値には名前の拡張子を含めないでください。"-[https://developer.apple.com/library/mac/documentation/General/Reference/InfoPlistKeyReference/InfoPlistKeyReference.pdf](https://developer.apple.com/library/mac/documentation/General/Reference/InfoPlistKeyReference/InfoPlistKeyReference.pdf)
+ \* "値には名前の拡張子を含めないでください。"- [https://developer.apple.com/library/mac/documentation/General/Reference/InfoPlistKeyReference/InfoPlistKeyReference.pdf](https://developer.apple.com/library/mac/documentation/General/Reference/InfoPlistKeyReference/InfoPlistKeyReference.pdf)
 
 ## <a name="error-custom-attribute-type-0x43-is-not-supported-when-double-clicking-xib-files"></a>エラー :Xib ファイルをダブルクリックすると、カスタム属性の種類0x43 はサポートされません。
 
 これは、環境変数が正しく設定されていない場合に xib ファイルを開こうとすると発生します。 これは、Visual Studio for Mac/Xamarin. iOS の通常の使用時には発生しません。また、アプリケーションから Visual Studio for Mac を再起動すると、問題を解決する必要があります。
 
-ソフトウェアを更新しようとしたときに、このエラーメッセージが表示された場合は、電子メールを送信してください *support@xamarin.com*
+ソフトウェアを更新しようとして、このエラーメッセージが表示された場合は、電子メール *support@xamarin.com*
 
 ## <a name="application-runs-on-simulator-but-fails-on-device"></a>アプリケーションはシミュレーターで実行されますが、デバイスでは失敗します
 
@@ -410,6 +410,6 @@ Interface Builder を使用する場合は、Apple の web サイトから入手
 
 ## <a name="systemnotsupportedexception-no-data-is-available-for-encoding-437"></a>NotSupportedException:エンコード437に使用できるデータがありません
 
-Xamarin. iOS アプリにサードパーティ製のライブラリを含めると、次の形式でエラーが表示されることがあります。 "NotSupportedException:アプリをコンパイルして実行しようとすると、エンコード437に使用できるデータがありません。 たとえば、などのライブラリ`Ionic.Zip.ZipFile`では、操作中にこの例外がスローされる場合があります。
+Xamarin. iOS アプリにサードパーティ製のライブラリを含めると、次の形式でエラーが表示されることがあります。 "NotSupportedException:アプリをコンパイルして実行しようとすると、エンコード437に使用できるデータがありません。 たとえば、`Ionic.Zip.ZipFile`などのライブラリでは、操作中にこの例外がスローされる場合があります。
 
-これを解決するには、Xamarin. ios プロジェクトのオプションを開き、[ **iOS** > ] **[国際化]** の順に移動して、 **[西]** 国際化 をオンにします。
+これを解決するには、Xamarin. iOS プロジェクトのオプションを開き、[ **Ios ビルド** > **国際化**] に移動して、[**西**国際化] をオンにします。

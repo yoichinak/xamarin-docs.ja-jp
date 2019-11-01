@@ -4,21 +4,21 @@ description: IOS 12 では、ローカルおよびリモートの通知用の対
 ms.prod: xamarin
 ms.assetid: E3562E1B-E0EF-4C99-9F51-59DE22AFDE46
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 09/04/2018
-ms.openlocfilehash: 572b369755e37f123fbfdf5850a635e7ada12a9b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: e629cd8f481558991d02c7fb879502ebd54753bd
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291239"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031940"
 ---
 # <a name="interactive-notification-user-interfaces-in-xamarinios"></a>Xamarin の対話型通知ユーザーインターフェイス
 
 IOS 10 で導入された[通知コンテンツ拡張機能](~/ios/platform/user-notifications/advanced-user-notifications.md)により、通知用のカスタムユーザーインターフェイスを作成できるようになります。 IOS 12 以降、通知ユーザーインターフェイスには、ボタンやスライダーなどの対話的な要素を含めることができます。
 
-## <a name="sample-app-redgreennotifications"></a>サンプル アプリ:RedGreenNotifications
+## <a name="sample-app-redgreennotifications"></a>サンプルアプリ: RedGreenNotifications
 
 [RedGreenNotifications](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-redgreennotifications)サンプルアプリには、対話ユーザーインターフェイスを備えた notification content 拡張機能が含まれています。
 
@@ -58,15 +58,15 @@ IOS 10 で導入された[通知コンテンツ拡張機能](~/ios/platform/user
 
 次の機能に注意してください。
 
-- 配列`UNNotificationExtensionCategory`は、コンテンツ拡張機能が処理する通知カテゴリの種類を指定します。
-- 対話形式のコンテンツをサポートするために、通知コンテンツの`UNNotificationExtensionUserInteractionEnabled`拡張機能`true`によってキーがに設定されます。
-- キー `UNNotificationExtensionInitialContentSizeRatio`は、コンテンツ拡張機能のインターフェイスの初期の高さと幅の比率を指定します。
+- `UNNotificationExtensionCategory` 配列は、コンテンツ拡張機能が処理する通知カテゴリの種類を指定します。
+- 対話形式のコンテンツをサポートするために、notification content 拡張機能は `UNNotificationExtensionUserInteractionEnabled` キーを `true`に設定します。
+- `UNNotificationExtensionInitialContentSizeRatio` キーは、コンテンツ拡張機能のインターフェイスの初期の高さと幅の比率を指定します。
 
 ## <a name="interactive-interface"></a>対話型インターフェイス
 
-通知コンテンツ拡張機能のインターフェイスを定義する**Maininterface storyboard**は、1つのビューコントローラーを含む標準のストーリーボードです。 このサンプルアプリでは、ビューコントローラーの種類`NotificationViewController`はで、イメージビュー、3つのボタン、およびスライダーが含まれています。 ストーリーボードは、 **NotificationViewController.cs**で定義されているハンドラーとこれらのコントロールを関連付けます。
+通知コンテンツ拡張機能のインターフェイスを定義する**Maininterface storyboard**は、1つのビューコントローラーを含む標準のストーリーボードです。 このサンプルアプリでは、ビューコントローラーは `NotificationViewController`型で、イメージビュー、3つのボタン、およびスライダーが含まれています。 ストーリーボードは、 **NotificationViewController.cs**で定義されているハンドラーとこれらのコントロールを関連付けます。
 
-- **アプリの起動**ボタンハンドラーは、 `PerformNotificationDefaultAction`で`ExtensionContext`アクションメソッドを呼び出し、アプリを起動します。
+- **アプリの起動**ボタンハンドラーは `ExtensionContext`で `PerformNotificationDefaultAction` アクションメソッドを呼び出し、アプリを起動します。
 
     ```csharp
     partial void HandleLaunchAppButtonTap(UIButton sender)
@@ -75,7 +75,7 @@ IOS 10 で導入された[通知コンテンツ拡張機能](~/ios/platform/user
     }
     ```
 
-    アプリでは、ユーザー通知センターの`Delegate` (サンプルアプリでは`AppDelegate`) が`DidReceiveNotificationResponse`メソッドの相互作用に応答できます。
+    アプリでは、ユーザー通知センターの `Delegate` (サンプルアプリでは `AppDelegate`) が `DidReceiveNotificationResponse` メソッドの対話に応答できます。
 
     ```csharp
     [Export("userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:")]
@@ -87,7 +87,7 @@ IOS 10 で導入された[通知コンテンツ拡張機能](~/ios/platform/user
             // ...
     ```
 
-- **[通知を閉じる]** ボタン`DismissNotificationContentExtension`ハンドラー `ExtensionContext`は、通知を閉じるでを呼び出します。
+- **通知**を閉じるボタンハンドラーは `ExtensionContext`で `DismissNotificationContentExtension` を呼び出し、通知を閉じます。
 
     ```csharp
     partial void HandleDismissNotificationButtonTap(UIButton sender)

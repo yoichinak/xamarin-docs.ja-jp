@@ -4,33 +4,33 @@ description: このドキュメントでは、Xamarin. iOS でファイルシス
 ms.prod: xamarin
 ms.assetid: 37DF2F38-901E-8F8E-269A-5EE0CCD28C08
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 11/12/2018
-ms.openlocfilehash: daa9625ccbac3661d3678889d4efd6319e0bd424
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: c9e5b2504fd8af8b4232eea0dcf39d9c4760b555
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70198133"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73010615"
 ---
 # <a name="file-system-access-in-xamarinios"></a>Xamarin. iOS でのファイルシステムアクセス
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/ios-samples/filesystemsamplecode)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/ios-samples/filesystemsamplecode)
 
-Ios ファイルシステムにアクセスするには`System.IO` 、 *.net 基本クラスライブラリ (BCL)* の Xamarin およびクラスを使用します。 `File` クラスでは、ファイルを作成し、削除し、読み込むことができます。`Directory` クラスでは、ディレクトリの内容を作成し、削除し、列挙できます。 また、サブクラス`Stream`を使用することもできます。これにより、ファイルの操作 (圧縮やファイル内の位置検索など) をより細かく制御できます。
+IOS ファイルシステムにアクセスするには、 *.Net 基本クラスライブラリ (BCL)* の Xamarin. iOS と `System.IO` クラスを使用します。 `File` クラスでは、ファイルを作成し、削除し、読み込むことができます。`Directory` クラスでは、ディレクトリの内容を作成し、削除し、列挙できます。 また、`Stream` サブクラスを使用することもできます。これにより、ファイルの操作 (圧縮やファイル内の位置検索など) をより細かく制御できます。
 
 iOS では、アプリケーションのデータのセキュリティを維持し、malignant アプリからユーザーを保護するために、ファイルシステムで実行できる処理についていくつかの制限が課されています。 これらの制限は、アプリケーション*サンドボックス*に含まれています。アプリケーションのファイル、基本設定、ネットワークリソース、ハードウェアなどへのアクセスを制限する一連の規則です。アプリケーションでは、ホームディレクトリ (インストール場所) 内のファイルの読み取りと書き込みが制限されています。別のアプリケーションのファイルにアクセスすることはできません。
 
-iOS には、ファイルシステム固有の機能がいくつかあります。一部のディレクトリでは、バックアップとアップグレードに関して特別な処理が必要であり、アプリケーションはファイル (iOS 11 以降) と iTunes を使用して、ファイルを相互に共有することもできます。
+iOS には、ファイルシステム固有の機能がいくつかあります。一部のディレクトリでは、バックアップとアップグレードに関して特別な処理が必要であり、アプリケーションはファイル (iOS 11 以降) と iTunes を使用し**て、ファイル**を相互に共有することもできます。
 
 この記事では、iOS ファイルシステムの機能と制限について説明します。また、Xamarin を使用していくつかの単純なファイルシステム操作を実行する方法を示すサンプルアプリケーションを紹介します。
 
-[![いくつかの単純なファイルシステム操作を実行する iOS のサンプル](file-system-images/01-sampleapp-sml.png)](file-system-images/01-sampleapp.png#lightbox)
+[いくつかの単純なファイルシステム操作を実行する iOS のサンプルを![する](file-system-images/01-sampleapp-sml.png)](file-system-images/01-sampleapp.png#lightbox)
 
 ## <a name="general-file-access"></a>一般的なファイルアクセス
 
-Xamarin では、ios でファイルシステム操作`System.IO`に .net クラスを使用できます。
+Xamarin iOS では、iOS でファイルシステム操作に .NET `System.IO` クラスを使用できます。
 
 次のコードスニペットは、一般的なファイル操作を示しています。 これらはすべて、この記事のサンプルアプリケーションの**SampleCode.cs**ファイルに含まれています。
 
@@ -57,7 +57,7 @@ Console.WriteLine(text);
 
 ### <a name="xml-serialization"></a>XML シリアル化
 
-完全な`System.Xml`名前空間を使用することはこの記事の範囲を超えていますが、次のコードスニペットのような StreamReader を使用して、ファイルシステムから XML ドキュメントを簡単に逆シリアル化できます。
+この記事では、完全な `System.Xml` 名前空間の操作については説明しませんが、次のコードスニペットのような StreamReader を使用して、ファイルシステムから XML ドキュメントを簡単に逆シリアル化することができます。
 
 ```csharp
 using (TextReader reader = new StreamReader("./TestData/test.xml")) {
@@ -66,11 +66,11 @@ using (TextReader reader = new StreamReader("./TestData/test.xml")) {
 }
 ```
 
-詳細については、 [system.xml](xref:System.Xml)と[シリアル化](xref:System.Xml.Serialization)に関するドキュメントを参照してください。 リンカーの[Xamarin. iOS のドキュメント](~/ios/deploy-test/linker.md)を参照してください。多くの`[Preserve]`場合、シリアル化するクラスに属性を追加する必要があります。
+詳細については、 [system.xml](xref:System.Xml)と[シリアル化](xref:System.Xml.Serialization)に関するドキュメントを参照してください。 リンカーに関する[Xamarin. iOS のドキュメント](~/ios/deploy-test/linker.md)を参照してください。多くの場合、シリアル化するクラスに `[Preserve]` 属性を追加する必要があります。
 
 ### <a name="creating-files-and-directories"></a>ファイルとディレクトリの作成
 
-このサンプルでは、 `Environment`クラスを使用して、ファイルとディレクトリを作成できる Documents フォルダーにアクセスする方法を示します。
+このサンプルでは、`Environment` クラスを使用して、ファイルとディレクトリを作成できる Documents フォルダーにアクセスする方法を示します。
 
 ```csharp
 var documents =
@@ -94,9 +94,9 @@ Directory.CreateDirectory(directoryname);
 
 [Json.NET](http://www.newtonsoft.com/json)は、Xamarin で動作する高パフォーマンスの Json フレームワークであり、NuGet で利用できます。 Visual Studio for Mac で**nuget を追加**して、nuget パッケージをアプリケーションプロジェクトに追加します。
 
-[![](file-system-images/json01.png "アプリケーションプロジェクトへの NuGet パッケージの追加")](file-system-images/json01.png#lightbox)
+[![](file-system-images/json01.png "Adding the NuGet package to the applications project")](file-system-images/json01.png#lightbox)
 
-次に、シリアル化/逆シリアル化のデータモデルとして機能するクラスを`Account.cs`追加します (この場合は)。
+次に、シリアル化/逆シリアル化のデータモデルとして機能するクラスを追加します (この場合 `Account.cs`)。
 
 ```csharp
 using System;
@@ -119,7 +119,7 @@ namespace FileSystem
 }
 ```
 
-最後に、 `Account`クラスのインスタンスを作成し、それを json データにシリアル化してファイルに書き込みます。
+最後に、`Account` クラスのインスタンスを作成し、それを json データにシリアル化してファイルに書き込みます。
 
 ```csharp
 // Create a new record
@@ -139,7 +139,7 @@ var filename = Path.Combine (documents, "account.json");
 File.WriteAllText(filename, json);
 ```
 
-.NET アプリケーションで json データを操作する方法の詳細については、「Json. NET の[ドキュメント](http://www.newtonsoft.com/json/help)」を参照してください。
+.NET アプリケーションで json データを操作する方法の詳細については、「Json. NET の[ドキュメント](https://www.newtonsoft.com/json/help)」を参照してください。
 
 ## <a name="special-considerations"></a>特別な考慮事項
 
@@ -149,11 +149,11 @@ Xamarin の iOS と .NET のファイル操作 (iOS と Xamarin) の類似性は
 
 既定では、プロジェクトにファイルを追加しても、最終的なアセンブリには含まれないため、アプリケーションでは使用できません。 アセンブリにファイルを含めるには、コンテンツと呼ばれる特別なビルドアクションを使用してファイルをマークする必要があります。
 
-ファイルを含めるようにマークするには、ファイルを右クリックし、Visual Studio for Mac で [**アクション&gt;コンテンツのビルド**] を選択します。 また、ファイルの**プロパティ**シートで**ビルドアクション**を変更することもできます。
+ファイルを含めるようにマークするには、ファイルを右クリックし、Visual Studio for Mac で [**ビルドアクション &gt; コンテンツ**] を選択します。 また、ファイルの**プロパティ**シートで**ビルドアクション**を変更することもできます。
 
 ### <a name="case-sensitivity"></a>大文字と小文字の区別
 
-IOS ファイルシステムでは*大文字と小文字が区別*されることを理解しておくことが重要です。 大文字と小文字の区別は、ファイル名とディレクトリ名が完全に一致する必要があることを意味します。 readme.txt と**readme.txt**は、異なるファイル名と見なされます。
+IOS ファイルシステムでは*大文字と小文字が区別*されることを理解しておくことが重要です。 大文字と小文字の区別は、ファイル名とディレクトリ名が完全に一致する必要があることを**意味します。 readme.txt と** **readme.txt**は、異なるファイル名と見なされます。
 
 これは、Windows ファイルシステムに慣れている .NET 開発者が、**ファイル**、**ファイル**、**ファイル**がすべて同じディレクトリを参照している*場合*に、混乱を招く可能性があります。
 
@@ -165,7 +165,7 @@ IOS ファイルシステムでは*大文字と小文字が区別*されるこ�
 
 iOS では、パスの区切り記号としてスラッシュ '/' が使用されます (これは、円記号 ' \ ' を使用する Windows とは異なります)。
 
-このような違いがあるため、特定のパス区切り記号`System.IO.Path.Combine`をハードコーディングするのではなく、現在のプラットフォームに合わせて調整するメソッドを使用することをお勧めします。 これは、コードを他のプラットフォームに移植できるようにするための簡単な手順です。
+この違いにより、特定のパス区切り記号をハードコーディングするのではなく、現在のプラットフォームに合わせて調整する `System.IO.Path.Combine` メソッドを使用することをお勧めします。 これは、コードを他のプラットフォームに移植できるようにするための簡単な手順です。
 
 ## <a name="application-sandbox"></a>アプリケーションサンドボックス
 
@@ -186,7 +186,7 @@ Mac OS でアプリケーションバンドルを参照すると、他のディ�
 
 このアイコンを右クリックし、 **[パッケージの内容の表示]** を選択して、アプリケーションバンドルディレクトリの内容を参照します。 次に示すように、コンテンツは通常のディレクトリの内容と同様に表示されます。
 
-[![アプリバンドルの内容](file-system-images/45-bundle-sml.png)](file-system-images/45-bundle.png#lightbox)
+[アプリバンドルの内容を![する](file-system-images/45-bundle-sml.png)](file-system-images/45-bundle.png#lightbox)
 
 アプリケーションバンドルは、テスト中にシミュレーターまたはデバイスにインストールされるものです。最終的に、アプリストアに含まれるように Apple に送信されます。
 
@@ -200,20 +200,20 @@ Mac OS でアプリケーションバンドルを参照すると、他のディ�
 
 |ディレクトリ|説明|
 |---|---|
-|[ApplicationName]。アプリ/|**IOS 7 以前で**は、これは`ApplicationBundle`アプリケーションの実行可能ファイルが格納されているディレクトリです。 アプリで作成したディレクトリ構造は、このディレクトリに存在します (たとえば、Visual Studio for Mac プロジェクトでリソースとしてマークしたイメージやその他のファイルの種類など)。<br /><br />アプリケーションバンドル内のコンテンツファイルにアクセスする必要がある場合は、 `NSBundle.MainBundle.BundlePath`プロパティを介してこのディレクトリへのパスを使用できます。|
-|ドキュメント|ユーザードキュメントとアプリケーションデータファイルを格納するには、このディレクトリを使用します。<br /><br />このディレクトリの内容は、iTunes ファイル共有を通じてユーザーが使用できるようにすることができます (ただし、既定では無効になっています)。 ユーザーがこれらのファイルにアクセスできるようにするには、情報 plist ファイルにブールキーを追加します。`UIFileSharingEnabled`<br /><br />アプリケーションでファイル共有をすぐに有効にしない場合でも、このディレクトリ (共有する予定がない限り、データベースファイルなど) のユーザーに対して非表示にする必要があるファイルは配置しないようにしてください。 機密ファイルが非表示のままであれば、将来のバージョンでファイル共有が有効になっていると、これらのファイルは公開されません (また、iTunes によって移動、変更、または削除される可能性があります)。<br /><br /> `Environment.GetFolderPath (Environment.SpecialFolder.MyDocuments)`メソッドを使用して、アプリケーションの Documents ディレクトリへのパスを取得できます。<br /><br />このディレクトリの内容は、iTunes によってバックアップされます。|
+|[ApplicationName]。アプリ/|**IOS 7 以前で**は、これはアプリケーションの実行可能ファイルが格納されている `ApplicationBundle` ディレクトリです。 アプリで作成したディレクトリ構造は、このディレクトリに存在します (たとえば、Visual Studio for Mac プロジェクトでリソースとしてマークしたイメージやその他のファイルの種類など)。<br /><br />アプリケーションバンドル内のコンテンツファイルにアクセスする必要がある場合は、`NSBundle.MainBundle.BundlePath` プロパティを使用してこのディレクトリへのパスを取得できます。|
+|ドキュメント|ユーザードキュメントとアプリケーションデータファイルを格納するには、このディレクトリを使用します。<br /><br />このディレクトリの内容は、iTunes ファイル共有を通じてユーザーが使用できるようにすることができます (ただし、既定では無効になっています)。 ユーザーがこれらのファイルにアクセスできるようにするには、`UIFileSharingEnabled` ブール型キーを情報 plist ファイルに追加します。<br /><br />アプリケーションでファイル共有をすぐに有効にしない場合でも、このディレクトリ (共有する予定がない限り、データベースファイルなど) のユーザーに対して非表示にする必要があるファイルは配置しないようにしてください。 機密ファイルが非表示のままであれば、将来のバージョンでファイル共有が有効になっていると、これらのファイルは公開されません (また、iTunes によって移動、変更、または削除される可能性があります)。<br /><br /> `Environment.GetFolderPath (Environment.SpecialFolder.MyDocuments)` メソッドを使用して、アプリケーションの Documents ディレクトリへのパスを取得できます。<br /><br />このディレクトリの内容は、iTunes によってバックアップされます。|
 |ライブラリ|ライブラリディレクトリは、データベースやその他のアプリケーションで生成されたファイルなど、ユーザーによって直接作成されていないファイルを格納するのに適した場所です。 このディレクトリの内容は、iTunes を介してユーザーに公開されることはありません。<br /><br />独自のサブディレクトリをライブラリに作成することができます。ただし、ここでは、ユーザー設定やキャッシュなど、システムによって作成されたディレクトリがいくつか存在します。<br /><br />このディレクトリの内容 (キャッシュサブディレクトリを除く) は、iTunes によってバックアップされます。 ライブラリに作成したカスタムディレクトリがバックアップされます。|
-|ライブラリ/設定/|アプリケーション固有の基本設定ファイルは、このディレクトリに格納されます。 これらのファイルは直接作成しないでください。 代わりに、 `NSUserDefaults`クラスを使用します。<br /><br />このディレクトリの内容は、iTunes によってバックアップされます。|
+|ライブラリ/設定/|アプリケーション固有の基本設定ファイルは、このディレクトリに格納されます。 これらのファイルは直接作成しないでください。 代わりに、`NSUserDefaults` クラスを使用します。<br /><br />このディレクトリの内容は、iTunes によってバックアップされます。|
 |ライブラリ/キャッシュ/|キャッシュディレクトリは、アプリケーションの実行に役立つデータファイルを格納するのに適した場所ですが、簡単に再作成することができます。 アプリケーションでは、必要に応じてこれらのファイルを作成および削除する必要があり、必要に応じてこれらのファイルを再作成することができます。 iOS 5 では、これらのファイル (記憶域が不足している場合) も削除される場合がありますが、アプリケーションの実行中は削除されません。<br /><br />このディレクトリの内容は iTunes によってバックアップされません。つまり、ユーザーがデバイスを復元しても、更新されたバージョンのアプリケーションがインストールされた後には存在しない可能性があることを意味します。<br /><br />たとえば、アプリケーションがネットワークに接続できない場合は、キャッシュディレクトリを使用してデータまたはファイルを格納し、適切なオフラインエクスペリエンスを実現することができます。 このアプリケーションでは、ネットワーク応答の待機中にこのデータをすばやく保存して取得できますが、バックアップする必要はなく、復元やバージョンの更新後に簡単に回復または再作成することができます。|
-|tmp/|アプリケーションは、このディレクトリ内の短時間のみ必要な一時ファイルを格納できます。 領域を節約するには、不要になったファイルを削除する必要があります。 オペレーティングシステムは、アプリケーションが実行されていない場合に、このディレクトリからファイルを削除することもあります。<br /><br />このディレクトリの内容は、iTunes によってバックアップされません。<br /><br />たとえば、tmp ディレクトリは、ユーザーに表示するためにダウンロードされる一時ファイル (Twitter アバターや電子メールの添付ファイルなど) を格納するために使用されますが、表示された後に削除される可能性があります (今後必要になった場合は、再度ダウンロードされます).|
+|tmp|アプリケーションは、このディレクトリ内の短時間のみ必要な一時ファイルを格納できます。 領域を節約するには、不要になったファイルを削除する必要があります。 オペレーティングシステムは、アプリケーションが実行されていない場合に、このディレクトリからファイルを削除することもあります。<br /><br />このディレクトリの内容は、iTunes によってバックアップされません。<br /><br />たとえば、tmp ディレクトリは、ユーザーに表示するためにダウンロードされる一時ファイル (Twitter アバターや電子メールの添付ファイルなど) を格納するために使用されますが、表示された後に削除される可能性があります (今後必要になった場合は、再度ダウンロードされます).|
 
 このスクリーンショットは、Finder ウィンドウのディレクトリ構造を示しています。
 
-[![](file-system-images/08-library-directory.png "このスクリーンショットは、Finder ウィンドウのディレクトリ構造を示しています。")](file-system-images/08-library-directory.png#lightbox)
+[![](file-system-images/08-library-directory.png "This screenshot shows the directory structure in a Finder window")](file-system-images/08-library-directory.png#lightbox)
 
 ### <a name="accessing-other-directories-programmatically"></a>プログラムによる他のディレクトリへのアクセス
 
-ディレクトリに`Documents`アクセスする前のディレクトリとファイルの例を示します。 別のディレクトリに書き込むには、次に示すように "." 構文を使用してパスを作成する必要があります。
+以前のディレクトリとファイルの例では、`Documents` ディレクトリにアクセスしています。 別のディレクトリに書き込むには、次に示すように "." 構文を使用してパスを作成する必要があります。
 
 ```csharp
 var documents = Environment.GetFolderPath (Environment.SpecialFolder.MyDocuments);
@@ -231,7 +231,7 @@ var directoryname = Path.Combine (library, "NewLibraryDirectory");
 Directory.CreateDirectory(directoryname);
 ```
 
-ディレクトリとディレクトリ`Caches`へ`tmp`のパスは、次のように構築できます。
+`Caches` ディレクトリと `tmp` ディレクトリへのパスは次のように構築できます。
 
 ```csharp
 var documents = Environment.GetFolderPath (Environment.SpecialFolder.MyDocuments);
@@ -241,7 +241,7 @@ var tmp = Path.Combine (documents, "..", "tmp");
 
 ## <a name="sharing-with-the-files-app"></a>ファイルアプリと共有する
 
-iOS 11 では 、ファイルアプリが導入されました。これは、ユーザーが iCloud でファイルを表示して操作したり、それをサポートするアプリケーションによって保存したりできるようにする、ios 用のファイルブラウザーです。 ユーザーがアプリ内のファイルに直接アクセスできるようにするには、次のように、ファイル`LSSupportsOpeningDocumentsInPlace`に新しいブール値の`true`キーを作成し、をに設定します。
+iOS 11**では、ファイルアプリが**導入されました。これは、ユーザーが iCloud でファイルを表示して操作したり、それをサポートするアプリケーションによって保存したりできるようにする、ios 用のファイルブラウザーです。 ユーザーがアプリ内のファイルに直接アクセスできるようにするには、次のように、ファイル `LSSupportsOpeningDocumentsInPlace` に新しいブール値のキーを作成し、`true`に設定**します。**
 
 ![LSSupportsOpeningDocumentsInPlace の設定](file-system-images/51-supports-opening.png)
 
@@ -251,13 +251,13 @@ iOS 11 では 、ファイルアプリが導入されました。これは、ユ
 
 ## <a name="sharing-files-with-the-user-through-itunes"></a>ITunes を使用してユーザーとファイルを共有する
 
-ユーザーは、次に示すように、**ソース**ビューで iTunes `Info.plist`共有 (`UIFileSharingEnabled`) エントリを**サポートするアプリケーション**を編集して作成することによって、アプリケーションの Documents ディレクトリ内のファイルにアクセスできます。
+ユーザーは、次に示すように、`Info.plist` を編集し、**ソース**ビューで iTunes 共有 (`UIFileSharingEnabled`) エントリを**サポートするアプリケーション**を作成することによって、アプリケーションの Documents ディレクトリ内のファイルにアクセスできます。
 
-[![アプリケーションの追加で iTunes 共有プロパティがサポートされる](file-system-images/09-uifilesharingenabled-plist-sml.png)](file-system-images/09-uifilesharingenabled-plist.png#lightbox)
+[アプリケーションの追加![iTunes 共有プロパティをサポートする](file-system-images/09-uifilesharingenabled-plist-sml.png)](file-system-images/09-uifilesharingenabled-plist.png#lightbox)
 
-これらのファイルには、デバイスが接続されていて、ユーザーが`Apps`タブを選択すると、iTunes でアクセスできます。たとえば、次のスクリーンショットは、選択したアプリ内のファイルが iTunes 経由で共有されていることを示しています。
+これらのファイルには、デバイスが接続されていて、ユーザーが [`Apps`] タブを選択すると、iTunes でアクセスできます。たとえば、次のスクリーンショットは、選択したアプリ内のファイルが iTunes 経由で共有されていることを示しています。
 
-[![このスクリーンショットは、選択したアプリ内のファイルが iTunes 経由で共有されていることを示します](file-system-images/10-itunes-file-sharing-sml.png)](file-system-images/10-itunes-file-sharing.png#lightbox)
+[このスクリーンショット![、選択したアプリ内のファイルが iTunes 経由で共有されていることを示します](file-system-images/10-itunes-file-sharing-sml.png)](file-system-images/10-itunes-file-sharing.png#lightbox)
 
 ユーザーは、iTunes を使用して、このディレクトリ内の最上位レベルの項目にのみアクセスできます。 サブディレクトリの内容を表示することはできません (ただし、それらをコンピューターにコピーしたり、削除したりすることはできます)。 たとえば、GoodReader を使用すると、PDF ファイルと EPUB ファイルをアプリケーションと共有して、ユーザーが自分の iOS デバイスで読み取ることができるようにすることができます。
 
@@ -265,11 +265,11 @@ iOS 11 では 、ファイルアプリが導入されました。これは、ユ
 
 この記事のサンプルコードでは、Documents フォルダー ( **SampleCode.cs**) にファイルとフォルダーの両方を作成し、ファイル共有を有効にします **。** このスクリーンショットは、iTunes でこれらがどのように表示されるかを示しています。
 
-[![このスクリーンショットは、iTunes でファイルがどのように表示されるかを示しています。](file-system-images/15-itunes-file-sharing-example-sml.png)](file-system-images/15-itunes-file-sharing-example.png#lightbox)
+[このスクリーンショット![、ファイルが iTunes でどのように表示されるかを示します。](file-system-images/15-itunes-file-sharing-example-sml.png)](file-system-images/15-itunes-file-sharing-example.png#lightbox)
 
 アプリケーションのアイコンを設定する方法と、作成するカスタムドキュメントの種類については、「[イメージの操作](~/ios/app-fundamentals/images-icons/index.md)」を参照してください。
 
-`UIFileSharingEnabled`キーが false の場合、または存在しない場合、ファイル共有は既定で無効になり、ユーザーはドキュメントディレクトリと対話できません。
+`UIFileSharingEnabled` キーが false であるか存在しない場合、ファイル共有は既定で無効になり、ユーザーはドキュメントディレクトリと対話できません。
 
 ## <a name="backup-and-restore"></a>バックアップと復元
 
@@ -290,15 +290,15 @@ iOS 11 では 、ファイルアプリが導入されました。これは、ユ
 > [!NOTE]
 > このポリシーは最初に iOS 5 で導入されていましたが (これはかなり前のように見えます)、現在もアプリに関連しています。
 
-Apple では、iOS 5 で*ICloud バックアップ*機能が導入されました。 Icloud バックアップが有効になっている場合、アプリケーションのホームディレクトリ内のすべてのファイル (通常はバックアップされていないディレクトリ (アプリバンドル`Caches`、 `tmp`、など) は icloud サーバーにバックアップされます。 この機能により、デバイスが紛失、盗難、または破損した場合に備えて、完全なバックアップをユーザーに提供できます。
+Apple では、iOS 5 で*ICloud バックアップ*機能が導入されました。 ICloud バックアップが有効になっている場合、アプリケーションのホームディレクトリ内のすべてのファイル (通常はバックアップされていないディレクトリ (アプリバンドル、`Caches`、`tmp`など) は iCloud サーバーにバックアップされます。 この機能により、デバイスが紛失、盗難、または破損した場合に備えて、完全なバックアップをユーザーに提供できます。
 
 ICloud では、各ユーザーに 5 Gb の空き領域を提供するだけで、帯域幅を不必要に使用しないようにするために、アプリケーションではユーザーが基本的に生成したデータのみをバックアップすることを想定しています。 IOS データストレージのガイドラインに準拠するには、次の項目に従うことで、バックアップされるデータの量を制限する必要があります。
 
 - ユーザーが生成したデータまたは再作成できないデータだけを Documents ディレクトリ (バックアップ対象) に格納します。
-- またはで`Library/Caches`簡単に再作成または`tmp`再ダウンロードできるその他のデータを格納します (バックアップされていない、"クリーニング済み" の場合があります)。
-- フォルダー `Library/Caches`または`tmp`フォルダーに適切なファイルがあっても、"クリーニング" したくない場合は、ファイルを別の場所 ( `Library/YourData`など) に保存し、"バックアップしない" 属性を適用して、ファイルで iCloud バックアップを使用しないようにします。帯域幅と記憶域の容量。 このデータはデバイスの空き領域を維持するため、慎重に管理し、可能な場合は削除する必要があります。
+- `Library/Caches` または `tmp` で簡単に再作成または再ダウンロードできるその他のデータを保存します (これはバックアップされず、"クリーニング済み" になる場合があります)。
+- `Library/Caches` または `tmp` フォルダーに適切なファイルがあっても、"クリーニング" したくない場合は、ファイルを別の場所 (`Library/YourData`など) に保存して、"バックアップしない" 属性を適用して、ファイルが iCloud バックアップ帯域幅と stora を使用しないようにします。ge space。 このデータはデバイスの空き領域を維持するため、慎重に管理し、可能な場合は削除する必要があります。
 
-"バックアップしない" 属性は、 `NSFileManager`クラスを使用して設定されます。 クラスがである`using Foundation`ことを`SetSkipBackupAttribute`確認し、次のようにを呼び出します。
+"バックアップしない" 属性は、`NSFileManager` クラスを使用して設定されます。 クラスが `using Foundation` ことを確認し、次のように `SetSkipBackupAttribute` を呼び出します。
 
 ```csharp
 var documents = Environment.GetFolderPath (Environment.SpecialFolder.MyDocuments);
@@ -307,7 +307,7 @@ File.WriteAllText(filename, "This file will never get backed-up. It would need t
 NSFileManager.SetSkipBackupAttribute (filename, true); // backup will be skipped for this file
 ```
 
-が`SetSkipBackupAttribute` `Documents`の場合、ファイルは、ディレクトリに格納されているディレクトリに関係なく、バックアップされません。 `true` `GetSkipBackupAttribute`メソッドを使用して属性に対してクエリを実行できます。また、 `SetSkipBackupAttribute`次の`false`ようにを使用してメソッドを呼び出すことによって、この属性をリセットできます。
+`SetSkipBackupAttribute` が `true` 場合、ファイルは、格納されているディレクトリ (`Documents` ディレクトリも含む) に関係なく、バックアップされません。 `GetSkipBackupAttribute` メソッドを使用して属性に対してクエリを実行し、次のように `false`で `SetSkipBackupAttribute` メソッドを呼び出すことによって、この属性をリセットできます。
 
 ```csharp
 NSFileManager.SetSkipBackupAttribute (filename, false); // file will be backed-up
@@ -339,7 +339,7 @@ Console.WriteLine ("Group Path: " + appGroupContainerPath);
 ```
 
 > [!IMPORTANT]
-> 返されるグループパスが`null`の場合は、権利とプロビジョニングプロファイルの構成を確認し、正しいことを確認します。
+> 返されたグループパスが `null`場合は、権利とプロビジョニングプロファイルの構成を確認し、正しいことを確認します。
 
 ## <a name="application-version-updates"></a>アプリケーションのバージョンの更新
 

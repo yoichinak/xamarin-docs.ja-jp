@@ -4,15 +4,15 @@ description: C#Xamarin のコードは、バインドを使用して Java ライ
 ms.prod: xamarin
 ms.assetid: 27CB3C16-33F3-F580-E2C0-968005A7E02E
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/09/2018
-ms.openlocfilehash: 046c392709f2c94664120e9fac3f4198e9f50dbf
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 1f06601b2b419141b4bd44677826df4e64a831fc
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70756606"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73020568"
 ---
 # <a name="java-bindings-metadata"></a>Java バインド メタデータ
 
@@ -20,7 +20,7 @@ _C#Xamarin のコードは、バインドを使用して Java ライブラリを
 
 ## <a name="overview"></a>概要
 
-Xamarin.Android **Java バインディング ライブラリ**とも呼ばれるツールのヘルプで既存の Android ライブラリをバインドするために必要な作業の多くが自動化しようとする、_バインディング ジェネレーター_します。 Java ライブラリをバインドするときに、Xamarin.Android は Java のクラスを検査し、すべてのパッケージ、型、およびメンバーの一覧を生成すると、バインドします。 含まれる XML ファイルにこの API の一覧が格納されている **\{プロジェクト directory}\obj\Release\api.xml** の **リリース** ビルドで **\{プロジェクトdirectory}\obj\Debug\api.xml** の **デバッグ** を構築します。
+Xamarin Android **Java バインドライブラリ**では、_バインドジェネレーター_と呼ばれるツールを使用して、既存の android ライブラリをバインドするために必要な作業の多くを自動化しようとしています。 Java ライブラリをバインドすると、Xamarin Android は Java クラスを検査し、バインドするすべてのパッケージ、型、およびメンバーの一覧を生成します。 この Api の一覧は XML ファイルに格納されています。これは、**リリース**ビルドの場合は **\{プロジェクトディレクトリ}** \obj\Debug\api.xml、**デバッグ**ビルドの場合は **\{プロジェクトディレクトリ}** にあります。
 
 ![Obj/Debug フォルダー内の api .xml ファイルの場所](java-bindings-metadata-images/java-bindings-metadata-01.png)
 
@@ -45,7 +45,7 @@ Xamarin.Android **Java バインディング ライブラリ**とも呼ばれる
 </api>
 ```
 
-この例では、 **api .xml**は、 `android` `java.lang.Object`を拡張するという`Manifest`名前のパッケージ内のクラスを宣言します。
+この例では、 **api .xml**は `java.lang.Object`を拡張する `Manifest` という名前の `android` パッケージ内のクラスを宣言します。
 
 多くの場合、Java API の ".NET と同様" の感覚を持つように、またはバインディングアセンブリがコンパイルされない原因となる問題を修正するために、人間の支援が必要です。 たとえば、Java パッケージ名を .NET 名前空間に変更したり、クラスの名前を変更したり、メソッドの戻り値の型を変更したりすることが必要になる場合があります。
 
@@ -54,11 +54,11 @@ Xamarin.Android **Java バインディング ライブラリ**とも呼ばれる
 
 これらの XML マッピングファイルは、プロジェクトの **[変換]** フォルダーにあります。
 
-- **メタデータ .xml** &ndash;を使用すると、生成されたバインディングの名前空間を変更するなど、最終的な API に変更を加えることができます。 
+- **Xml** &ndash; を使用すると、生成されたバインディングの名前空間を変更するなど、最終的な API に変更を加えることができます。 
 
-- **Enumfields .xml** &ndash;には、Java `int`定数とC# `enums`の間のマッピングが含まれています。 
+- **Enumfields .xml** &ndash; には、Java `int` 定数とC#`enums`間のマッピングが含まれています。 
 
-- **Enummethods .xml** &ndash;を使用すると、メソッドのパラメーターと戻り`int`値のC# `enums`型を Java 定数からに変更できます。 
+- **Enummethods .xml** &ndash; を使用すると、Java `int` 定数から`enums`にC#メソッドのパラメーターと戻り値の型を変更できます。 
 
 **メタデータの .xml**ファイルは、次のような一般的な目的の変更を可能にするため、これらのファイルを最も多くインポートします。
 
@@ -77,9 +77,9 @@ Xamarin.Android **Java バインディング ライブラリ**とも呼ばれる
 既に学習したように、ファイル**メタデータ .xml**はバインドジェネレーターによって使用され、バインディングアセンブリの作成に影響を及ぼします。
 メタデータ形式は[XPath](https://www.w3.org/TR/xpath/)構文を使用し、「 [gapi メタデータ](https://www.mono-project.com/docs/gui/gtksharp/gapi/#metadata)ガイド」で説明されている*gapi メタデータ*とほぼ同じです。 この実装は、ほとんどの場合、XPath 1.0 の完全な実装であるため、1.0 標準の項目をサポートします。 このファイルは、API ファイル内の要素または属性を変更、追加、非表示、または移動するための強力な XPath ベースの機構です。 メタデータ仕様のすべてのルール要素には、ルールが適用されるノードを識別するパス属性が含まれています。 規則は次の順序で適用されます。
 
-- **add-node**&ndash;パス属性で指定されたノードに子ノードを追加します。
-- **attr**&ndash; Path 属性によって指定された要素の属性の値を設定します。
-- **remove-node**&ndash;指定された XPath と一致するノードを削除します。
+- **ノードの追加**&ndash; は、path 属性で指定されたノードに子ノードを追加します。
+- **attr** &ndash;、path 属性によって指定された要素の属性の値を設定します。
+- **ノードの削除**&ndash; は、指定された XPath に一致するノードを削除します。
 
 次に、**メタデータの .xml**ファイルの例を示します。
 
@@ -101,17 +101,17 @@ Xamarin.Android **Java バインディング ライブラリ**とも呼ばれる
 
 次に、Java API の一般的に使用される XPath 要素の一部を示します。
 
-- `interface`&ndash; Java インターフェイスを検索するために使用されます。 `/interface[@name='AuthListener']`例:
+- `interface` &ndash; Java インターフェイスを見つけるために使用されます。 例: `/interface[@name='AuthListener']`。
 
-- `class`&ndash;クラスを検索するために使用します。 `/class[@name='MapView']`例:
+- クラスを検索するために使用 &ndash; `class`。 例: `/class[@name='MapView']`。
 
-- `method`&ndash; Java クラスまたはインターフェイスのメソッドを検索するために使用します。 `/class[@name='MapView']/method[@name='setTitleSource']`例:
+- `method` &ndash; Java クラスまたはインターフェイスのメソッドを検索するために使用されます。 例: `/class[@name='MapView']/method[@name='setTitleSource']`。
 
-- `parameter`&ndash;メソッドのパラメーターを指定します。 など.`/parameter[@name='p0']`
+- メソッドのパラメーターを識別 &ndash; `parameter` ます。 例: `/parameter[@name='p0']`
 
 ### <a name="adding-types"></a>型の追加
 
-要素は、新しいラッパークラスを**api .xml**に追加するように、Xamarin. Android バインドプロジェクトに指示します。 `add-node` たとえば、次のスニペットは、コンストラクターと1つのフィールドを持つクラスを作成するようにバインドジェネレーターに指示します。
+`add-node` 要素は、新しいラッパークラスを**api .xml**に追加するように Xamarin Android プロジェクトに指示します。 たとえば、次のスニペットは、コンストラクターと1つのフィールドを持つクラスを作成するようにバインドジェネレーターに指示します。
 
 ```xml
 <add-node path="/api/package[@name='org.alljoyn.bus']">
@@ -124,7 +124,7 @@ Xamarin.Android **Java バインディング ライブラリ**とも呼ばれる
 
 ### <a name="removing-types"></a>型の削除
 
-Java の種類を無視してバインドしないように、Xamarin の Android バインドジェネレーターに指示することができます。 これを行うには、 `remove-node` xml 要素を**メタデータ .xml**ファイルに追加します。
+Java の種類を無視してバインドしないように、Xamarin の Android バインドジェネレーターに指示することができます。 これを行うには、`remove-node` XML 要素を**メタデータ .xml**ファイルに追加します。
 
 ```xml
 <remove-node path="/api/package[@name='{package_name}']/class[@name='{name}']" />
@@ -132,9 +132,9 @@ Java の種類を無視してバインドしないように、Xamarin の Androi
 
 ### <a name="renaming-members"></a>メンバー名の変更
 
-Xamarin Android には元の Java ネイティブインターフェイス (JNI) 名が必要なため、 **api .xml**ファイルを直接編集しても、メンバーの名前を変更することはできません。 したがって、属性を変更することはできません。属性がの場合、バインドは機能しません。 `//class/@name`
+Xamarin Android には元の Java ネイティブインターフェイス (JNI) 名が必要なため、 **api .xml**ファイルを直接編集しても、メンバーの名前を変更することはできません。 したがって、`//class/@name` 属性を変更することはできません。の場合、バインドは機能しません。
 
-型の名前を変更する場合を考えてみ`android.Manifest`ます。
+`android.Manifest`型の名前を変更する場合を考えてみます。
 これを実現するには、 **api .xml**を直接編集し、次のようにクラスの名前を変更します。
 
 ```xml
@@ -149,9 +149,9 @@ Xamarin Android には元の Java ネイティブインターフェイス (JNI) 
 public class NewName : Java.Lang.Object { ... }
 ```
 
-ラッパークラスの名前がに`NewName`変更されていることに注意してください。元の Java の型はのまま`Manifest`です。 Xamarin. Android バインドクラスは、の`android.Manifest`どのメソッドにもアクセスできなくなりました。ラッパークラスは、存在しない Java 型にバインドされています。
+ラッパークラスの名前が `NewName`に変更されたことに注意してください。元の Java の種類はまだ `Manifest`。 `android.Manifest`上のメソッドにアクセスするために、Xamarin. Android バインドクラスを使用できなくなりました。ラッパークラスは、存在しない Java 型にバインドされています。
 
-ラップされた型 (またはメソッド) のマネージ名を適切に変更するには、 `managedName`次の例に示すように属性を設定する必要があります。
+ラップされた型 (またはメソッド) のマネージ名を適切に変更するには、次の例に示すように `managedName` 属性を設定する必要があります。
 
 ```xml
 <attr path="/api/package[@name='android']/class[@name='Manifest']" 
@@ -160,21 +160,21 @@ public class NewName : Java.Lang.Object { ... }
 
 <a name="Renaming_EventArg_Wrapper_Classes" />
 
-#### <a name="renaming-eventarg-wrapper-classes"></a>ラッパー `EventArg`クラスの名前の変更
+#### <a name="renaming-eventarg-wrapper-classes"></a>`EventArg` ラッパークラスの名前変更
 
-Xamarin. Android バインドジェネレーターが_リスナー型_の`onXXX` setter メソッドを識別すると、Java C#ベースの`EventArgs`リスナーパターン用の .net flavoured API をサポートするために、イベントとサブクラスが生成されます。 例として、次の Java クラスとメソッドについて考えてみます。
+Flavoured バインドジェネレーターが_リスナー型_に対して `onXXX` setter メソッドを識別すると、Java C#ベースのリスナーパターン用の .net API をサポートするために、event サブクラスと`EventArgs`サブクラスが生成されます。 例として、次の Java クラスとメソッドについて考えてみます。
 
 ```xml
 com.someapp.android.mpa.guidance.NavigationManager.on2DSignNextManuever(NextManueverListener listener);
 ```
 
-Xamarin Android は setter メソッドからプレフィックス`on`を削除し、代わりに`EventArgs`サブクラス`2DSignNextManuever`の名前の基準としてを使用します。 サブクラスには次のような名前が付けられます。
+Xamarin Android は setter メソッドからプレフィックス `on` を削除し、代わりに `EventArgs` サブクラスの名前の基準として `2DSignNextManuever` を使用します。 サブクラスには次のような名前が付けられます。
 
 ```csharp
 NavigationManager.2DSignNextManueverEventArgs
 ```
 
-これは、有効C#なクラス名ではありません。 この問題を解決するには、バインド作成者`argsType`が属性を使用しC# 、 `EventArgs`サブクラスに有効な名前を指定する必要があります。
+これは、有効C#なクラス名ではありません。 この問題を解決するには、バインド作成者は `argsType` 属性を使用しC# 、`EventArgs`サブクラスに有効な名前を指定する必要があります。
 
 ```xml
 <attr path="/api/package[@name='com.someapp.android.mpa.guidance']/
@@ -185,11 +185,11 @@ NavigationManager.2DSignNextManueverEventArgs
 
 ## <a name="supported-attributes"></a>サポートされる属性
 
-次のセクションでは、Java API を変換するための属性について説明します。
+以下のセクションでは、Java Api を変換するためのいくつかの属性について説明します。
 
 ### <a name="argstype"></a>argsType
 
-この属性は、 `EventArg` Java リスナーをサポートするために生成されるサブクラスに名前を指定する setter メソッドに配置されます。 詳細については、このガイドで後述する「 [EventArg ラッパークラスの名前変更](#Renaming_EventArg_Wrapper_Classes)」を参照してください。
+この属性は、Java リスナーをサポートするために生成される `EventArg` サブクラスに名前を指定する setter メソッドに配置されます。 詳細については、このガイドで後述する「 [EventArg ラッパークラスの名前変更](#Renaming_EventArg_Wrapper_Classes)」を参照してください。
 
 ### <a name="eventname"></a>eventName
 
@@ -198,14 +198,14 @@ NavigationManager.2DSignNextManueverEventArgs
 
 ### <a name="managedname"></a>managedName
 
-これは、パッケージ、クラス、メソッド、またはパラメーターの名前を変更するために使用されます。 たとえば、Java クラス`MyClass`の名前をに`NewClassName`変更するには、次のようにします。
+これは、パッケージ、クラス、メソッド、またはパラメーターの名前を変更するために使用されます。 たとえば、Java クラスの名前を `MyClass` に変更するには `NewClassName`次のようにします。
 
 ```xml
 <attr path="/api/package[@name='com.my.application']/class[@name='MyClass']" 
     name="managedName">NewClassName</attr>
 ```
 
-次の例は、メソッド`java.lang.object.toString`の名前をに変更する`Java.Lang.Object.NewManagedName`ための XPath 式を示しています。
+次の例は、メソッド `java.lang.object.toString` の名前を `Java.Lang.Object.NewManagedName`に変更するための XPath 式を示しています。
 
 ```xml
 <attr path="/api/package[@name='java.lang']/class[@name='Object']/method[@name='toString']" 
@@ -214,9 +214,9 @@ NavigationManager.2DSignNextManueverEventArgs
 
 ### <a name="managedtype"></a>managedType
 
-`managedType`は、メソッドの戻り値の型を変更するために使用されます。 場合によっては、バインドジェネレーターが Java メソッドの戻り値の型を誤って推論し、コンパイル時エラーが発生することがあります。 このような状況で考えられる解決策の1つは、メソッドの戻り値の型を変更することです。
+メソッドの戻り値の型を変更するには、`managedType` を使用します。 場合によっては、バインドジェネレーターが Java メソッドの戻り値の型を誤って推論し、コンパイル時エラーが発生することがあります。 このような状況で考えられる解決策の1つは、メソッドの戻り値の型を変更することです。
 
-たとえば、バインドジェネレーターは、Java メソッド`de.neom.neoreadersdk.resolution.compareTo()`がを`int`返す必要があることを認識します。これ**により、エラーメッセージエラー CS0535 が返されます。解放.Neom. Neoreadersdk ' は、インターフェイスメンバー ' Java. Lang.ini.... オブジェクト '** を実装していません。 次のスニペットは、 C# `DE.Neom.Neoreadersdk.Resolution`生成されたメソッドのパラメーターの型をからに`Java.Lang.Object`変更する方法を示しています。 
+たとえば、バインドジェネレーターは、Java メソッド `de.neom.neoreadersdk.resolution.compareTo()` が `int`を返す必要があることを認識します。これにより、エラーメッセージ**CS0535: ' DE ' が返されます。Neom. Neoreadersdk ' は、インターフェイスメンバー ' Java. Lang.ini.... オブジェクト ' を実装していません**。 次のスニペットは、生成されC#たメソッドのパラメーターの型を`DE.Neom.Neoreadersdk.Resolution`から `Java.Lang.Object`に変更する方法を示しています。 
 
 ```xml
 <attr path="/api/package[@name='de.neom.neoreadersdk']/
@@ -228,7 +228,7 @@ NavigationManager.2DSignNextManueverEventArgs
 
 ### <a name="managedreturn"></a>managedReturn
 
-メソッドの戻り値の型を変更します。 これによって、return 属性が変更されることはありません (戻り属性を変更すると、JNI 署名に互換性のない変更が発生する可能性があります)。 次の例`append`では、メソッドの戻り値の型がから`SpannableStringBuilder`に`IAppendable`変更されています (共変の戻り値の型がサポートされていないことを思い出してC#ください)。
+メソッドの戻り値の型を変更します。 これによって、return 属性が変更されることはありません (戻り属性を変更すると、JNI 署名に互換性のない変更が発生する可能性があります)。 次の例では、`append` メソッドの戻り値の型が `SpannableStringBuilder` から `IAppendable` に変更されC#ています (では、共変の戻り値の型がサポートされていません)。
 
 ```xml
 <attr path="/api/package[@name='android.text']/
@@ -241,7 +241,7 @@ NavigationManager.2DSignNextManueverEventArgs
 
 Java ライブラリを難読化するツールは、Xamarin の Android バインドジェネレーターとラッパークラスを生成C#する機能に干渉する可能性があります。 難読化したクラスの特性は次のとおりです。 
 
-- クラス名には **$** 、、つまり **$. クラス**が含まれます。
+- クラス名には、 **$** 、つまり **$. クラス**が含まれています。
 - クラス名は、小文字、つまり **. クラス**で完全に侵害されます。
 
 このスニペットは、"難読化されていない" C#型を生成する方法の例です。
@@ -255,7 +255,7 @@ Java ライブラリを難読化するツールは、Xamarin の Android バイ�
 
 この属性は、マネージプロパティの名前を変更するために使用できます。
 
-を使用する特殊な`propertyName`ケースとして、Java クラスにフィールドの getter メソッドのみがある状況があります。 このような状況では、バインドジェネレーターは書き込み専用のプロパティを作成します。これは .NET では推奨されません。 次のスニペットは、を空の`propertyName`文字列に設定して .net プロパティを "削除" する方法を示しています。
+`propertyName` を使用する特殊なケースとして、Java クラスにフィールドの getter メソッドのみが含まれている場合があります。 このような状況では、バインドジェネレーターは書き込み専用のプロパティを作成します。これは .NET では推奨されません。 次のスニペットは、`propertyName` を空の文字列に設定することによって .NET プロパティを "削除" する方法を示しています。
 
 ```xml
 <attr path="/api/package[@name='org.java_websocket.handshake']/class[@name='HandshakeImpl1Client']/method[@name='setResourceDescriptor' 
@@ -271,7 +271,7 @@ Setter メソッドと getter メソッドは、バインドジェネレータ�
 
 ### <a name="sender"></a>sender
 
-メソッドがイベントにマップされるときに`sender` 、メソッドのパラメーターをパラメーターに指定する必要があるかどうかを指定します。 値にはまた`true`は`false`を指定できます。 例:
+メソッドがイベントにマップされるときに、メソッドのパラメーターを `sender` パラメーターとして指定する必要があるかどうかを指定します。 値は `true` または `false`できます。 (例:
 
 ```xml
 <attr path="/api/package[@name='android.app']/
@@ -283,7 +283,7 @@ Setter メソッドと getter メソッドは、バインドジェネレータ�
 
 ### <a name="visibility"></a>参照可能範囲
 
-この属性は、クラス、メソッド、またはプロパティの可視性を変更するために使用されます。 たとえば、対応C#するラッパーが次のように`protected`なるように、Java メソッドを昇格さ`public`せる必要がある場合があります。
+この属性は、クラス、メソッド、またはプロパティの可視性を変更するために使用されます。 たとえば、対応C#するラッパーが`public`されるように、`protected` Java メソッドを昇格する必要がある場合があります。
 
 ```xml
 <!-- Change the visibility of a class -->
@@ -299,7 +299,7 @@ Android ライブラリが整数定数を使用して、ライブラリのプロ
 
 ### <a name="defining-an-enum-using-enumfieldsxml"></a>EnumFields .xml を使用した列挙型の定義
 
-**Enumfields .xml**ファイルには、Java `int`定数とC# `enums`の間のマッピングが含まれています。 定数の`int`セットに対して作成さC#れる列挙型の次の例を見てみましょう。 
+**Enumfields .xml**ファイルには、Java `int` 定数とC#`enums`間のマッピングが含まれています。 次に、一連の`int`定数にC#対して作成される列挙型の例を見てみましょう。 
 
 ```xml 
 <mapping jni-class="com/skobbler/ngx/map/realreach/SKRealReachSettings" clr-enum-type="Skobbler.Ngx.Map.RealReach.SKMeasurementUnit">
@@ -309,13 +309,13 @@ Android ライブラリが整数定数を使用して、ライブラリのプロ
 </mapping>
 ```
 
-ここでは、Java クラス`SKRealReachSettings`を取得し、名前空間`SKMeasurementUnit` `Skobbler.Ngx.Map.RealReach`でと呼ばれる列挙型をC#定義しました。 エントリ`field`は、Java 定数 (例`UNIT_SECOND`) の名前、列挙エントリの名前 (例`Second`)、および両方のエンティティによって表される整数値 (例`0`) を定義します。 
+ここでは、Java クラス `SKRealReachSettings` を取得し、 C#名前空間`Skobbler.Ngx.Map.RealReach`で`SKMeasurementUnit`と呼ばれる列挙型を定義しました。 `field` エントリは、Java 定数 (例 `UNIT_SECOND`) の名前、列挙エントリの名前 (例 `Second`)、および両方のエンティティによって表される整数値 (例 `0`) を定義します。 
 
 ### <a name="defining-gettersetter-methods-using-enummethodsxml"></a>EnumMethods を使用した Getter メソッドと Setter メソッドの定義
 
-**Enummethods .xml**ファイルを使用すると、メソッドのパラメーターと戻り値`int`の型C# `enums`を Java 定数からに変更できます。 つまり、列挙**型 (enumfields .xml**ファイルで定義C#されている) の読み取りと書き込みを Java `int`の定数`get`および`set`メソッドにマップします。
+**Enummethods .xml**ファイルを使用すると、メソッドのパラメーターと戻り値の型をC# Java `int` 定数から`enums`に変更できます。 言い換えると、列挙**型 (enumfields .xml**ファイルでC#定義されている) の読み取りと書き込みを Java `int`定数`get`および`set`メソッドにマップします。
 
-上記の`SKRealReachSettings`列挙型が指定されている場合、次の**enummethods**ファイルは、この列挙型の getter/setter を定義します。
+上で定義された `SKRealReachSettings` 列挙型の場合、次の**enummethods**ファイルはこの列挙型の getter/setter を定義します。
 
 ```xml
 <mapping jni-class="com/skobbler/ngx/map/realreach/SKRealReachSettings">
@@ -324,9 +324,9 @@ Android ライブラリが整数定数を使用して、ライブラリのプロ
 </mapping>
 ```
 
-最初`method`の行は、Java `getMeasurementUnit`メソッドの戻り値を`SKMeasurementUnit`列挙型にマップします。 2番`method`目の行は、 `setMeasurementUnit`の最初のパラメーターを同じ列挙型にマップします。
+最初の `method` 行は、Java `getMeasurementUnit` メソッドの戻り値を `SKMeasurementUnit` 列挙型にマップします。 2番目の `method` 行は、`setMeasurementUnit` の最初のパラメーターを同じ列挙型にマップします。
 
-これらの変更をすべて適用したら、Xamarin. Android の次のコードを使用してを`MeasurementUnit`設定できます。 
+これらの変更をすべて適用したら、Xamarin. Android の次のコードを使用して、`MeasurementUnit`を設定できます。 
 
 ```csharp
 realReachSettings.MeasurementUnit = SKMeasurementUnit.Second;

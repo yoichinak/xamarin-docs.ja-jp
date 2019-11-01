@@ -4,15 +4,15 @@ description: アプリケーションに機能を追加するには、多くの�
 ms.prod: xamarin
 ms.assetid: 98A4676F-992B-4593-8D38-6EEB2EB0801C
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/06/2018
-ms.openlocfilehash: d7a2f14b55d9f8de2ea01bdfa5c68c5c9f8f2555
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 6250dfa24361601c2b9929d80fec3cc7a18cab2d
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70756150"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028570"
 ---
 # <a name="working-with-capabilities-in-xamarinios"></a>Xamarin.iOS の機能の使用
 

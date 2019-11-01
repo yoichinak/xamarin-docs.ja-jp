@@ -3,23 +3,23 @@ title: Android での ADO.NET の使用
 ms.prod: xamarin
 ms.assetid: F6ABCEF1-951E-40D8-9EA9-DD79123C2650
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/08/2018
-ms.openlocfilehash: ff29b51cec6f612f4dac497e75eddba4dbd4c1e2
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 6592bd6d5cf7b78918fa2d020be723d662625e06
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70754469"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73023767"
 ---
 # <a name="using-adonet-with-android"></a>Android での ADO.NET の使用
 
-Xamarin には、Android で利用できる SQLite データベースのサポートが組み込まれており、使い慣れた ADO.NET に似た構文を使用して公開できます。 これらの api を使用するには`CREATE TABLE` `SELECT` 、、、 `INSERT`ステートメントなど、SQLite によって処理される SQL ステートメントを記述する必要があります。
+Xamarin には、Android で利用できる SQLite データベースのサポートが組み込まれており、使い慣れた ADO.NET に似た構文を使用して公開できます。 これらの Api を使用するには、`CREATE TABLE`、`INSERT`、`SELECT` ステートメントなど、SQLite によって処理される SQL ステートメントを記述する必要があります。
 
 ## <a name="assembly-references"></a>アセンブリ参照
 
-ADO.NET 経由で SQLite へのアクセスを使用`System.Data`する`Mono.Data.Sqlite`には、次に示すように、Android プロジェクトを追加して参照する必要があります。
+ADO.NET 経由で SQLite へのアクセスを使用するには、次に示すように、Android プロジェクトに `System.Data` と `Mono.Data.Sqlite` 参照を追加する必要があります。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows) 
 
@@ -35,12 +35,12 @@ ADO.NET 経由で SQLite へのアクセスを使用`System.Data`する`Mono.Dat
 
 ## <a name="about-monodatasqlite"></a>Mono. Data. Sqlite の概要
 
-`Mono.Data.Sqlite.SqliteConnection`クラスを使用して、空のデータベースファイルを作成し、その`SqliteCommand`後、データベースに対して SQL 命令を実行するために使用できるオブジェクトをインスタンス化します。
+`Mono.Data.Sqlite.SqliteConnection` クラスを使用して、空のデータベースファイルを作成し、その後、データベースに対して SQL 命令を実行するために使用できる `SqliteCommand` オブジェクトをインスタンス化します。
 
-**空のデータベースの作成**有効な`CreateFile` (つまり書き込み可能な) ファイルパスを使用してメソッドを呼び出します。 &ndash; このメソッドを呼び出す前に、ファイルが既に存在するかどうかを確認する必要があります。そうしないと、新しい (空の) データベースが古いデータベースの先頭に作成され、古いファイルのデータは失われます。
-`Mono.Data.Sqlite.SqliteConnection.CreateFile (dbPath);`変数`dbPath`は、このドキュメントで既に説明したルールに従って決定する必要があります。
+**空のデータベースを作成する**場合は、有効な (つまり書き込み可能な) ファイルパスを指定して、`CreateFile` メソッド &ndash; 呼び出します。 このメソッドを呼び出す前に、ファイルが既に存在するかどうかを確認する必要があります。そうしないと、新しい (空の) データベースが古いデータベースの先頭に作成され、古いファイルのデータは失われます。
+`Mono.Data.Sqlite.SqliteConnection.CreateFile (dbPath);` `dbPath` 変数は、このドキュメントで既に説明したルールに従って決定する必要があります。
 
-**データベース接続の作成**&ndash; SQLite データベースファイルが作成されたら、そのデータにアクセスするための接続オブジェクトを作成できます。 接続は、次に示すように、という`Data Source=file_path`形式の接続文字列を使用して構築されます。
+**データベース接続の作成**SQLite データベースファイルが作成された後 &ndash;、データにアクセスするための接続オブジェクトを作成できます。 接続は、次に示すように、`Data Source=file_path`の形式の接続文字列を使用して構築されます。
 
 ```csharp
 var connection = new SqliteConnection ("Data Source=" + dbPath);
@@ -51,7 +51,7 @@ connection.Close();
 
 既に説明したように、異なるスレッド間で接続を再利用することはできません。 不明な場合は、必要に応じて接続を作成し、完了したら閉じます。しかし、必要以上に多くのことを行うことに注意してください。
 
-**データベースコマンドの作成と実行**&ndash;接続が完了したら、それに対して任意の SQL コマンドを実行できます。 次のコードは、 `CREATE TABLE`ステートメントが実行されていることを示しています。
+接続が確立されたら、**データベースコマンドを作成して実行**&ndash;、任意の SQL コマンドを実行できます。 次のコードは、実行されている `CREATE TABLE` ステートメントを示しています。
 
 ```csharp
 using (var command = connection.CreateCommand ()) {
@@ -60,7 +60,7 @@ using (var command = connection.CreateCommand ()) {
 }
 ```
 
-データベースに対して SQL を直接実行する場合は、既に存在するテーブルを作成しようとするなど、無効な要求を行わないようにするための通常の予防措置を講じる必要があります。 `SqliteException` **SQLite エラーテーブル [Items] が既に存在**するなどのが発生しないように、データベースの構造を記録しておきます。
+データベースに対して SQL を直接実行する場合は、既に存在するテーブルを作成しようとするなど、無効な要求を行わないようにするための通常の予防措置を講じる必要があります。 **SQLite エラーテーブル [Items] が既に存在**するなどの `SqliteException` が発生しないように、データベースの構造を記録しておきます。
 
 ## <a name="basic-data-access"></a>基本的なデータアクセス
 
@@ -142,17 +142,17 @@ public static string DoSomeDataAccess ()
 
 ## <a name="more-complex-queries"></a>より複雑なクエリ
 
-SQLite ではデータに対して任意`CREATE` `UPDATE`の SQL コマンドを実行できるため、任意の`INSERT`、、 `DELETE`、、 `SELECT`またはステートメントを実行できます。 SQLite でサポートされている SQL コマンドについては、SQLite の web サイトを参照してください。 SQL ステートメントは、 `SqliteCommand`オブジェクトに対して次の3つのメソッドのいずれかを使用して実行されます。
+SQLite を使用すると、任意の SQL コマンドをデータに対して実行できるため、任意の `CREATE`、`INSERT`、`UPDATE`、`DELETE`、または `SELECT` のステートメントを実行できます。 SQLite でサポートされている SQL コマンドについては、SQLite の web サイトを参照してください。 SQL ステートメントは、`SqliteCommand` オブジェクトに対して次の3つのメソッドのいずれかを使用して実行されます。
 
-- **ExecuteNonQuery**&ndash;通常、テーブルの作成またはデータの挿入に使用されます。 一部の操作の戻り値は、影響を受ける行の数を示します。それ以外の場合は-1 になります。
+- **ExecuteNonQuery** &ndash; 通常、テーブルの作成またはデータの挿入に使用します。 一部の操作の戻り値は、影響を受ける行の数を示します。それ以外の場合は-1 になります。
 
-- **ExecuteReader**行のコレクションを`SqlDataReader`として返す必要がある場合に使用します。 &ndash;
+- **ExecuteReader** &ndash;、行のコレクションを `SqlDataReader`として返す必要がある場合に使用します。
 
-- **ExecuteScalar**&ndash; 1 つの値 (集計など) を取得します。
+- **ExecuteScalar** &ndash; は、1つの値 (集計など) を取得します。
 
 ### <a name="executenonquery"></a>EXECUTENONQUERY
 
-`INSERT`、 `UPDATE`、および`DELETE`の各ステートメントは、影響を受けた行数を返します。 その他の SQL ステートメントはすべて-1 を返します。
+`INSERT`、`UPDATE`、および `DELETE` ステートメントは、影響を受ける行の数を返します。 その他の SQL ステートメントはすべて-1 を返します。
 
 ```csharp
 using (var c = connection.CreateCommand ()) {
@@ -163,7 +163,7 @@ using (var c = connection.CreateCommand ()) {
 
 ### <a name="executereader"></a>EXECUTEREADER
 
-次のメソッドは、 `WHERE` `SELECT`ステートメントの句を示しています。
+次のメソッドは、`SELECT` ステートメント内の `WHERE` 句を示しています。
 コードは完全な SQL ステートメントを作成するため、文字列の前後の引用符 (') などの予約文字をエスケープする必要があります。
 
 ```csharp
@@ -191,15 +191,15 @@ public static string MoreComplexQuery ()
 }
 ```
 
-`ExecuteReader` メソッドは `SqliteDataReader` オブジェクトを返します。 この例に示さ`Read`れているメソッドに加えて、次のような便利なプロパティもあります。
+`ExecuteReader` メソッドは `SqliteDataReader` オブジェクトを返します。 この例に示されている `Read` メソッドに加えて、次のような便利なプロパティもあります。
 
-- **RowsAffected**&ndash;クエリの影響を受けた行の数。
+- **RowsAffected** &ndash; クエリの影響を受ける行の数。
 
-- **Hasrows**&ndash;行が返されたかどうか。
+- **Hasrows**は、行が返されたかどうか &ndash; ます。
 
 ### <a name="executescalar"></a>EXECUTESCALAR
 
-この値は`SELECT` 、1つの値 (集計など) を返すステートメントに使用します。
+これは、1つの値 (集計など) を返す `SELECT` ステートメントに使用します。
 
 ```csharp
 using (var contents = connection.CreateCommand ()) {
@@ -208,11 +208,11 @@ using (var contents = connection.CreateCommand ()) {
 }
 ```
 
-メソッドの戻り値の型`object`は&ndash; 、データベースクエリに応じて結果をキャストする必要があります。 `ExecuteScalar` 結果として、 `COUNT`クエリからの整数、または単一列`SELECT`クエリの文字列を指定できます。 これは、リーダーオブジェクトを返す`Execute`他のメソッド、または影響を受ける行の数のカウントとは異なることに注意してください。
+`ExecuteScalar` メソッドの戻り値の型は `object` &ndash;、データベースクエリに応じて結果をキャストする必要があります。 結果として、`COUNT` クエリの整数、または1つの列 `SELECT` クエリの文字列を指定できます。 これは、リーダーオブジェクトまたは影響を受ける行の数のカウントを返す他の `Execute` メソッドとは異なることに注意してください。
 
 ## <a name="related-links"></a>関連リンク
 
 - [このような場合の基本 (サンプル)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
 - [詳細設定 (サンプル)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
 - [Android データレシピ](https://github.com/xamarin/recipes/tree/master/Recipes/android/data)
-- [Xamarin.Forms データアクセス](~/xamarin-forms/data-cloud/data/databases.md)
+- [Xamarin. フォームデータアクセス](~/xamarin-forms/data-cloud/data/databases.md)

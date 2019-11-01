@@ -3,15 +3,15 @@ title: Xamarin Android でサービスを開始しました
 ms.prod: xamarin
 ms.assetid: 8CC3A850-4CD2-4F93-98EE-AF3470794000
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 1b7bed0fc6dba1d9f80524ac3429b7fdcb751ab9
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: f5b5f8cf224c18852a0a0e7e4f591b49905ba026
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70755071"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73024773"
 ---
 # <a name="started-services-with-xamarinandroid"></a>Xamarin Android でサービスを開始しました
 
@@ -26,7 +26,7 @@ ms.locfileid: "70755071"
 - `OnStartCommand` は、`StartService` への呼び出しまたはシステムによる再起動に応じて、サービスを開始する要求ごとに呼び出さ &ndash; ます。 これは、サービスが実行時間の長いタスクを開始できる場所です。 このメソッドは、メモリ不足によるシャットダウン後に、システムがサービスの再起動を処理する必要があるかどうかを示す `StartCommandResult` 値を返します。 この呼び出しはメインスレッドで行われます。 この方法については、以下で詳しく説明します。
 - このメソッドは、サービスが破棄されているときに呼び出さ &ndash; `OnDestroy` ます。 これは、最終的に必要なクリーンアップを実行するために使用されます。
 
-開始したサービスの重要な方法は、`OnStartCommand` メソッドです。 サービスが何らかの処理を行う要求を受け取るたびに呼び出されます。 @No__t_0 の例を次のコードスニペットに示します。 
+開始したサービスの重要な方法は、`OnStartCommand` メソッドです。 サービスが何らかの処理を行う要求を受け取るたびに呼び出されます。 `OnStartCommand`の例を次のコードスニペットに示します。 
 
 ```csharp
 public override StartCommandResult OnStartCommand (Android.Content.Intent intent, StartCommandFlags flags, int startId)
@@ -45,13 +45,13 @@ public override StartCommandResult OnStartCommand (Android.Content.Intent intent
 
 最後に、3番目のパラメーターは、要求を識別するアプリケーションに固有の整数値です。 複数の呼び出し元が同じサービスオブジェクトを呼び出す可能性があります。 この値は、サービスを停止する要求を、サービスを開始するための特定の要求に関連付けるために使用されます。 詳細については、「[サービスを停止](#Stopping_the_Service)する」セクションを参照してください。 
 
-リソース制約のためにサービスが強制終了された場合の対処方法については、サービスによって `StartCommandResult` 値が Android に提示されます。 @No__t_0 には、次の3つの値を指定できます。
+リソース制約のためにサービスが強制終了された場合の対処方法については、サービスによって `StartCommandResult` 値が Android に提示されます。 `StartCommandResult`には、次の3つの値を指定できます。
 
 - **[Startcommandresult. NotSticky](xref:Android.App.StartCommandResult.NotSticky)** &ndash; この値は、強制終了されたサービスを再起動する必要がないことを Android に通知します。 この例として、アプリでギャラリーのサムネイルを生成するサービスについて考えてみます。 サービスを強制終了した場合は、サムネイルをすぐに再作成することは重要ではなく、次にアプリを実行するときにサムネイルを再作成 &ndash; ます。
 - **[Startcommandresult. スティッキービット](xref:Android.App.StartCommandResult.Sticky)** &ndash; これは、サービスを再起動するように Android に指示しますが、サービスを開始した最後のインテントを配信しません。 処理する保留中のインテントが存在しない場合は、目的のパラメーターに対して `null` が提供されます。 この例としては、音楽プレーヤーアプリがあります。サービスは、音楽を再生する準備ができましたが、最後の曲を再生します。
-- **[RedeliverIntent](xref:Android.App.StartCommandResult.RedeliverIntent)** &ndash; この値は、サービスを再起動し、最後の `Intent` を再配信するように Android に指示します。 この例として、アプリのデータファイルをダウンロードするサービスがあります。 サービスを強制終了した場合でも、データファイルをダウンロードする必要があります。 @No__t_0 を返すことによって、Android がサービスを再起動するときに、サービスに対して (ダウンロードするファイルの URL を保持する) 目的も提供されます。 これにより、ダウンロードは再起動または再開できます (コードの正確な実装によって異なります)。
+- **[RedeliverIntent](xref:Android.App.StartCommandResult.RedeliverIntent)** &ndash; この値は、サービスを再起動し、最後の `Intent` を再配信するように Android に指示します。 この例として、アプリのデータファイルをダウンロードするサービスがあります。 サービスを強制終了した場合でも、データファイルをダウンロードする必要があります。 `StartCommandResult.RedeliverIntent`を返すことによって、Android がサービスを再起動するときに、サービスに対して (ダウンロードするファイルの URL を保持する) 目的も提供されます。 これにより、ダウンロードは再起動または再開できます (コードの正確な実装によって異なります)。
 
-@No__t_0 &ndash; `StartCommandResult.ContinuationMask` には4番目の値があります。 この値は `OnStartCommand` によって返され、Android が強制終了したサービスを続行する方法を説明します。 通常、この値はサービスを開始するために使用されません。
+`StartCommandResult` &ndash; `StartCommandResult.ContinuationMask`には4番目の値があります。 この値は `OnStartCommand` によって返され、Android が強制終了したサービスを続行する方法を説明します。 通常、この値はサービスを開始するために使用されません。
 
 開始したサービスのキーライフサイクルイベントを次の図に示します。 
 
@@ -77,7 +77,7 @@ public override StartCommandResult OnStartCommand (Android.Content.Intent intent
 
 ### <a name="using-startid-to-stop-a-service"></a>StartId を使用したサービスの停止
 
-複数の呼び出し元は、サービスの開始を要求できます。 未処理の開始要求がある場合、サービスは、`OnStartCommand` に渡された `startId` を使用して、サービスが途中で停止されるのを防ぐことができます。 @No__t_0 は `StartService` の最新の呼び出しに対応し、が呼び出されるたびにインクリメントされます。 したがって、後続の `StartService` 要求によって `OnStartCommand` の呼び出しがまだ行われていない場合、サービスは `StopSelfResult` を呼び出し、受信した `startId` の最新の値 (単に `StopSelf` を呼び出すのではなく) を渡すことができます。 @No__t_0 の呼び出しによって `OnStartCommand` への対応する呼び出しがまだ行われていない場合、`StopSelf` の呼び出しで使用されている `startId` は最新の `StartService` 呼び出しに対応していないため、システムはサービスを停止しません。
+複数の呼び出し元は、サービスの開始を要求できます。 未処理の開始要求がある場合、サービスは、`OnStartCommand` に渡された `startId` を使用して、サービスが途中で停止されるのを防ぐことができます。 `startId` は `StartService`の最新の呼び出しに対応し、が呼び出されるたびにインクリメントされます。 したがって、後続の `StartService` 要求によって `OnStartCommand` の呼び出しがまだ行われていない場合、サービスは `StopSelfResult` を呼び出し、受信した `startId` の最新の値 (単に `StopSelf` を呼び出すのではなく) を渡すことができます。 `StartService` の呼び出しによって `OnStartCommand`への対応する呼び出しがまだ行われていない場合、`StopSelf` の呼び出しで使用されている `startId` は最新の `StartService` 呼び出しに対応していないため、システムはサービスを停止しません。
 
 ## <a name="related-links"></a>関連リンク
 

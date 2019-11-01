@@ -4,15 +4,15 @@ description: この記事では、iOS 7 で導入された主要な新しい Api
 ms.prod: xamarin
 ms.assetid: 2C33018F-D64A-4BAA-A34E-082EF311D162
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: d3a3c28e30e38562035b4d0c7c05366865157dd5
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: b405643096699e1d965f485bdc590afa178881d6
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70752061"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031817"
 ---
 # <a name="introduction-to-ios-7"></a>iOS 7 の概要
 
@@ -53,7 +53,7 @@ void AnimateWithSpring ()
 
 ### <a name="keyframe-animations"></a>キーフレームアニメーション
 
-@No__t_0 クラスに、`UIView` でキーフレームアニメーションを作成するための `AnimateWithKeyframes` メソッドが含まれるようになりました。 このメソッドは、他の `UIView` アニメーションメソッドと似ていますが、キーフレームを含む追加の `NSAction` がパラメーターとして渡される点が異なります。 @No__t_0 内では、`UIView.AddKeyframeWithRelativeStartTime` を呼び出すことによってキーフレームが追加されます。
+`UIView` クラスに、`UIView`でキーフレームアニメーションを作成するための `AnimateWithKeyframes` メソッドが含まれるようになりました。 このメソッドは、他の `UIView` アニメーションメソッドと似ていますが、キーフレームを含む追加の `NSAction` がパラメーターとして渡される点が異なります。 `NSAction`内では、`UIView.AddKeyframeWithRelativeStartTime`を呼び出すことによってキーフレームが追加されます。
 
 たとえば、次のコードスニペットは、ビューの中心をアニメーション化し、ビューを回転するためのキーフレームアニメーションを作成します。
 
@@ -82,7 +82,7 @@ void AnimateViewWithKeyframes ()
 }
 ```
 
-@No__t_0 メソッドの最初の2つのパラメーターでは、キーフレームの開始時刻と期間をそれぞれ、アニメーションの全体の長さに対する割合として指定します。 上の例では、最初の1秒間に新しい中心をアニメーション化した後、次の1秒間に90度回転したイメージビューが生成されます。 アニメーションでは `UIViewKeyframeAnimationOptions.Autoreverse` がオプションとして指定されているため、両方のキーフレームが逆にアニメーション化されます。 最後に、最終的な値は、完了ハンドラーの初期状態に設定されます。
+`AddKeyframeWithRelativeStartTime` メソッドの最初の2つのパラメーターでは、キーフレームの開始時刻と期間をそれぞれ、アニメーションの全体の長さに対する割合として指定します。 上の例では、最初の1秒間に新しい中心をアニメーション化した後、次の1秒間に90度回転したイメージビューが生成されます。 アニメーションでは `UIViewKeyframeAnimationOptions.Autoreverse` がオプションとして指定されているため、両方のキーフレームが逆にアニメーション化されます。 最後に、最終的な値は、完了ハンドラーの初期状態に設定されます。
 
 次のスクリーンショットは、キーフレームを使用したアニメーションの結合を示しています。
 
@@ -111,7 +111,7 @@ API は本質的に宣言されています。 オブジェクトと呼ばれる
 
 ### <a name="dynamics-example"></a>Dynamics の例
 
-@No__t_0 に重心とコリジョン境界を追加する例を見てみましょう。
+`UIView`に重心とコリジョン境界を追加する例を見てみましょう。
 
 #### <a name="uigravitybehavior"></a>UIGravityBehavior
 
@@ -135,9 +135,9 @@ View.AddSubview (imageView);
 dynAnimator = new UIDynamicAnimator (this.View);
 ```
 
-@No__t_0 は、参照 `UIView` または `UICollectionViewLayout` のインスタンスを受け取ります。このインスタンスには、添付された動作ごとにアニメーション化される項目が含まれています。
+`UIDynamicAnimator` は、参照 `UIView` または `UICollectionViewLayout`のインスタンスを受け取ります。このインスタンスには、添付された動作ごとにアニメーション化される項目が含まれています。
 
-次に、`UIGravityBehavior` インスタンスを作成します。 @No__t_1 のように、`IUIDynamicItem` を実装する1つ以上のオブジェクトを渡すことができます。
+次に、`UIGravityBehavior` インスタンスを作成します。 `UIView`のように、`IUIDynamicItem`を実装する1つ以上のオブジェクトを渡すことができます。
 
 ```csharp
 var gravity = new UIGravityBehavior (dynItems);
@@ -162,7 +162,7 @@ dynAnimator.AddBehavior (gravity);
 
 まず、`UICollisionBehavior` を作成し、それを動的なアニメーターに追加します。 `UIGravityBehavior` の場合と同様です。
 
-@No__t_0 を含めるようにコードを変更します。
+`UICollisionBehavior`を含めるようにコードを変更します。
 
 ```csharp
 using (image = UIImage.FromFile ("monkeys.jpg")) {
@@ -187,7 +187,7 @@ using (image = UIImage.FromFile ("monkeys.jpg")) {
 }
 ```
 
-@No__t_0 には `TranslatesReferenceBoundsIntoBoundry` というプロパティがあります。 これを `true` に設定すると、参照ビューの境界が衝突境界として使用されます。
+`UICollisionBehavior` には `TranslatesReferenceBoundsIntoBoundry`というプロパティがあります。 これを `true` に設定すると、参照ビューの境界が衝突境界として使用されます。
 
 これで、画像が重力で下にアニメーション化されたときに、残りの部分になる前に画面の下部から少し離れています。
 
@@ -199,7 +199,7 @@ using (image = UIImage.FromFile ("monkeys.jpg")) {
 
 その他の動作によって、イメージの表示ビューの動作をさらに制御できます。 たとえば、`UIDynamicItemBehavior` を追加して弾力性を高めることができます。これにより、画面の下部との競合が発生したときに、イメージビューのバウンスが増加します。
 
-@No__t_0 の追加は、他の動作と同じ手順に従います。 最初に動作を作成します。
+`UIDynamicItemBehavior` の追加は、他の動作と同じ手順に従います。 最初に動作を作成します。
 
 ```csharp
 var dynBehavior = new UIDynamicItemBehavior (dynItems) {

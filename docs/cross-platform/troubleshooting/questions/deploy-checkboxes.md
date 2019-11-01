@@ -3,15 +3,15 @@ title: 構成マネージャーで無効になっているチェック ボック
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: aaf675cd-d885-4dac-9754-77dbcaea3be9
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 12/02/2016
-ms.openlocfilehash: 82ff1a684ffad75a301f0db6b0f8e3116be6746d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: edf471f1d9a2ee4adc11f09e0c7b7ad3cf6f78f1
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285063"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73014255"
 ---
 # <a name="deploy-checkboxes-disabled-in-configuration-manager"></a>構成マネージャーで無効になっているチェック ボックスを配置する
 
@@ -19,8 +19,8 @@ Xamarin 3.5 以降では、 **[スタート]** ツールバーボタンを押す
 
 このため、Visual Studio Configuration Manager for Xamarin. iOS プロジェクトでは、 **[配置]** チェックボックスは意図的に無効になっています。
 
-![](deploy-checkboxes-images/configuration.png "Xamarin. iOS プロジェクトの [配置] チェックボックスが Xamarin 3.5 で無効になっていることを示す Configuration Manager Visual Studio")
+![](deploy-checkboxes-images/configuration.png "Visual Studio Configuration Manager showing the 'Deploy' checkbox disabled for a Xamarin.iOS project in Xamarin 3.5")
 
 この変更により、Xamarin iOS アプリプロジェクトが展開するように設定されていない場合に、Xamarin の以前のバージョン (バージョン3.3 以前) で表示されるエラーがなくなります。
 
-![](deploy-checkboxes-images/error.png "エラーダイアログ:プロジェクトを開始する前に、iPhoneApp1 プロジェクトを配置する必要があります。ソリューション Configuration Manager に配置するプロジェクトが選択されていることを確認します。")
+![](deploy-checkboxes-images/error.png "Error dialog: The project iPhoneApp1 needs to be deployed before it can be started. Verify the project is selected to be deployed in the Solution Configuration Manager.")

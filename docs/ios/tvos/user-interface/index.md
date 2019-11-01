@@ -4,15 +4,15 @@ description: ユーザーインターフェイス (UI) コントロールを含�
 ms.prod: xamarin
 ms.assetid: 8CF80705-B36A-42D6-B66B-52BC8586FA5A
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/07/2016
-ms.openlocfilehash: f0633b0f91bf39d10ad42e1ee41997213ca3047e
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: c8bf8aad6804fcbbc984b942fdafd12522299998
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769041"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030450"
 ---
 # <a name="building-tvos-user-interfaces-with-xamarin"></a>Xamarin を使用した tvOS ユーザーインターフェイスの構築
 
@@ -24,7 +24,7 @@ Xamarin ベースのC# tvOS でと .net を使用する場合、開発者が目�
 
 ## <a name="working-with-alertsiostvosuser-interfacealertsmd"></a>[アラートの操作](~/ios/tvos/user-interface/alerts.md)
 
-この記事では、 `UIAlertController`を使用して tvOS のユーザーに警告メッセージを表示する方法について説明します。
+この記事では、`UIAlertController` を使用して、tvOS のユーザーに警告メッセージを表示する方法について説明します。
 
 ## <a name="working-with-buttonsiostvosuser-interfacebuttonsmd"></a>[ボタンの操作](~/ios/tvos/user-interface/buttons.md)
 

@@ -3,21 +3,21 @@ title: .NET Embedding
 description: .Net 埋め込みによって、既存C#のF#.net コード (、など) を他のプログラミング言語で記述されたコードで使用できるようになります。
 ms.prod: xamarin
 ms.assetid: 617C38CA-B921-4A76-8DFC-B0A3DF90E48A
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 11/14/2017
-ms.openlocfilehash: af068e5a09cc11eec33508a4f2eb33186168aae6
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 5a0e7eeaee9b3189de63d0b82a3822cc68023505
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290224"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73006943"
 ---
 # <a name="net-embedding"></a>.NET Embedding
 
 ![[プレビュー]](~/media/shared/preview.png)
 
-.NET の埋め込みにより、既存の .NET コード (C#、F#、および他のユーザー) を他のプログラミング言語から、さまざまな異なる環境で使用します。
+.Net 埋め込みでは、既存のC#.net F#コード (、など) を他のプログラミング言語やさまざまな環境で使用できます。
 
 つまり、既存の iOS アプリから使用する .NET ライブラリがある場合は、それを行うことができます。   また、ネイティブC++ライブラリとリンクする場合は、これを行うこともできます。   または Java から .NET コードを使用します。
 
@@ -29,9 +29,9 @@ ms.locfileid: "70290224"
 
 さまざまな言語コンシューマーがサポートされるため、.NET コードは慣用的なコードとしてターゲット言語で公開されます。   現在サポートされている言語の一覧を次に示します。
 
-- [**Objective C** ](objective-c/index.md) – 慣用 Objective-C API への .NET のマッピング
-- [**Java** ](android/index.md) – 慣用 Java API への .NET のマッピング
-- [**C** ](get-started/c.md) – C API と同様のオブジェクト指向への .NET のマッピング
+- [**目的-c**](objective-c/index.md) – .net から慣用的なへのマッピング-c api
+- [**Java**](android/index.md) – .net から慣用的な Java api へのマッピング
+- [**C**](get-started/c.md) – .Net を c api のようなオブジェクト指向にマッピングする
 
 その他の言語については後で説明します。
 

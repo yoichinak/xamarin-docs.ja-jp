@@ -4,15 +4,15 @@ description: Xamarin Android の背後にある基になるアーキテクチャ
 ms.prod: xamarin
 ms.assetid: CC6A0D52-E9FA-4270-B3FA-84660621D6D5
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/21/2018
-ms.openlocfilehash: 4f860d493c5709e2f6c7f89e6f3a50981cf62dc3
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 97382243ac5f767d94a782b895401c1f2f8ae554
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70757822"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73027853"
 ---
 # <a name="advanced-concepts-and-internals"></a>高度な概念と内部構造
 
@@ -24,9 +24,9 @@ _このセクションには、Xamarin Android のアーキテクチャ、API �
 
 ## <a name="api-designandroidinternalsapi-designmd"></a>[API の設計](~/android/internals/api-design.md)
 
-Mono の一部である基本クラス ライブラリのコアだけでなく Xamarin.Android Mono とネイティブ Android アプリケーションを作成するためにさまざまな Android API のバインドに付属します。
+Mono に含まれるコア基本クラスライブラリに加えて、Xamarin にはさまざまな Android Api のバインドが付属しており、開発者は Mono を使用してネイティブの Android アプリケーションを作成できます。
 
-Xamarin.Android のコアがありますが、相互運用機能のエンジン、Java の世界中でそのブリッジ、C# の世界と、C# または他の .NET 言語からの Java API にアクセス権を持つ開発者。
+Xamarin Android の中核にある相互運用エンジンにより、Java 環境でC#世界を橋渡しし、開発者はまたはその他の .net 言語C#から java api にアクセスできるようになります。
 
 ## <a name="assembliescross-platforminternalsavailable-assembliesmd"></a>[アセンブリ](~/cross-platform/internals/available-assemblies.md)
 
