@@ -3,15 +3,15 @@ title: 既存のアプリを Unified API に更新する
 description: このドキュメントでは、Xamarin アプリケーションを Unified API に更新する方法について説明しているさまざまなガイドにリンクしています。 Xamarin iOS アプリ、Xamarin、Mac アプリについて説明します。 Xamarin Forms apps、クロスプラットフォームアプリのネイティブ型、およびバインドプロジェクト。
 ms.prod: xamarin
 ms.assetid: 8A654C95-5DCA-4BB5-A582-F96C2BECC81C
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: c7742622bae16e874411fad1374c3ee522dba183
-ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
+ms.openlocfilehash: d4904688302ac7f17c6326249ff08315d929e23c
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71106059"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73015022"
 ---
 # <a name="updating-existing-apps-to-the-unified-api"></a>既存のアプリを Unified API に更新する
 
@@ -43,7 +43,7 @@ ms.locfileid: "71106059"
 
 ### <a name="xamarinforms-appscross-platformmaciosunifiedupdating-xamarin-forms-appsmd"></a>[Xamarin.Forms アプリ](~/cross-platform/macios/unified/updating-xamarin-forms-apps.md)
 
-次の手順に従って、Unified API を使用するように既存の Xamarin. Forms ソリューションを iOS プロジェクトに更新します。 Unified API サポートは、Xamarin.Forms 1.3 以降でのみ使用できます。この[手順](~/cross-platform/macios/unified/updating-xamarin-forms-apps.md)では、Xamarin.Forms アプリをバージョン1.3 に更新する方法についても説明します。 これらの[ヒント](~/cross-platform/macios/unified/updating-tips.md)は、カスタムレンダラーまたは依存関係サービスのネイティブな iOS コードを更新するのに役立ちます。
+次の手順に従って、Unified API を使用するように既存の Xamarin. Forms ソリューションを iOS プロジェクトに更新します。 Unified API サポートは、Xamarin. Forms 1.3 以降でのみ使用できます。この手順では、Xamarin. Forms アプリをバージョン1.3 に更新する方法についても説明[し](~/cross-platform/macios/unified/updating-xamarin-forms-apps.md)ます。 これらの[ヒント](~/cross-platform/macios/unified/updating-tips.md)は、カスタムレンダラーまたは依存関係サービスのネイティブな iOS コードを更新するのに役立ちます。
 
 ## <a name="working-with-native-types-in-cross-platform-appscross-platformmaciosnativetypesmd"></a>[クロスプラットフォーム アプリでのネイティブ型の使用](~/cross-platform/macios/nativetypes.md)
 
@@ -58,7 +58,7 @@ ms.locfileid: "71106059"
 
 - [IOS アプリの更新](~/cross-platform/macios/unified/updating-ios-apps.md)
 - [Mac アプリを更新しています](~/cross-platform/macios/unified/updating-mac-apps.md)
-- [Xamarin.Forms アプリの更新](~/cross-platform/macios/unified/updating-xamarin-forms-apps.md)
+- [Xamarin. Forms アプリの更新](~/cross-platform/macios/unified/updating-xamarin-forms-apps.md)
 - [バインドの更新](~/cross-platform/macios/unified/update-binding.md)
 - [ヒントの更新](~/cross-platform/macios/unified/updating-tips.md)
 - [クラシックと Unified API の違い](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/ios/api_changes/classic-vs-unified-8.6.0/index.md)

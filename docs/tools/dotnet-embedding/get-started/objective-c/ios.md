@@ -3,19 +3,19 @@ title: IOS の概要
 description: このドキュメントでは、iOS での .NET 埋め込みの使用を開始する方法について説明します。 要件について説明し、マネージアセンブリをバインドし、その出力を Xcode プロジェクトで使用する方法を示すサンプルアプリを示します。
 ms.prod: xamarin
 ms.assetid: D5453695-69C9-44BC-B226-5B86950956E2
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 11/14/2017
-ms.openlocfilehash: d5bde89ed90e55724fbc25fc473e265affa9ce2f
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 5697d20077b746d9d33db985111c2d04908d5d01
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292938"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029759"
 ---
 # <a name="getting-started-with-ios"></a>IOS の概要
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>［要件］
 
 「[目的 C の](~/tools/dotnet-embedding/get-started/objective-c/index.md)概要」ガイドの要件に加えて、以下も必要になります。
 

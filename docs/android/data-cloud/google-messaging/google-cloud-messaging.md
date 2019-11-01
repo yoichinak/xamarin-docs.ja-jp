@@ -4,15 +4,15 @@ description: Google Cloud Messaging (GCM) は、モバイルアプリとサー�
 ms.prod: xamarin
 ms.assetid: DF8EF401-F63D-4BA0-B2C6-B22DF8FD60CB
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/02/2019
-ms.openlocfilehash: fef12ab6dc2c42f97e5a2725f58ba4392c21762f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 742555da24120eaeadcc4b6232b24d23f41da283
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70754499"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73023703"
 ---
 # <a name="google-cloud-messaging"></a>Google Cloud Messaging
 
@@ -31,7 +31,7 @@ _Google Cloud Messaging (GCM) は、モバイルアプリとサーバーアプ�
 
 Google Cloud Messaging (GCM) は、サーバーアプリケーションとモバイルクライアントアプリ間でのメッセージの送信、ルーティング、およびキューを処理するサービスです。 *クライアントアプリ*は、デバイスで実行される GCM 対応アプリです。 *アプリサーバー* (お客様または会社が提供) は、クライアントアプリが gcm を介して通信する gcm 対応サーバーです。
 
-[![クライアントアプリとアプリサーバーの間に GCM が存在する](google-cloud-messaging-images/01-server-gcm-app-sml.png)](google-cloud-messaging-images/01-server-gcm-app.png#lightbox)
+[クライアントアプリとアプリサーバーの間に GCM が存在する![](google-cloud-messaging-images/01-server-gcm-app-sml.png)](google-cloud-messaging-images/01-server-gcm-app.png#lightbox)
 
 GCM を使用すると、アプリサーバーは、1つのデバイス、デバイスのグループ、またはトピックにサブスクライブしている複数のデバイスにメッセージを送信できます。 クライアントアプリは GCM を使用して、アプリサーバーからのダウンストリームメッセージをサブスクライブできます (たとえば、リモート通知を受信します)。 また、GCM を使用すると、クライアントアプリがアップストリームメッセージをアプリケーションサーバーに送信できるようになります。
 
@@ -43,15 +43,15 @@ GCM 用のアプリサーバーの実装の詳細については、「 [Gcm 接�
 
 GCM は、次の資格情報を使用してアプリサーバーとクライアントアプリを識別し、これらの資格情報を使用して GCM 経由のメッセージトランザクションを承認します。
 
-- **API キー**API キーを使用すると、アプリサーバーは Google services にアクセスできます。 &ndash;GCM は、このキーを使用してアプリサーバーを認証します。
+- **Api キー &ndash;** *api キー*を使用すると、アプリサーバーは Google サービスにアクセスできます。GCM は、このキーを使用してアプリサーバーを認証します。
     GCM サービスを使用するには、まず、*プロジェクト*を作成して、 [Google DEVELOPER Console](https://console.developers.google.com/)から API キーを取得する必要があります。 API キーは安全に保つ必要があります。API キーの保護の詳細については、「 [api キーを安全に使用するためのベストプラクティス](https://support.google.com/cloud/answer/6310037?hl=en)」を参照してください。
 
-- **送信者 ID**送信者*ID*は、アプリサーバーをクライアントアプリ&ndash;に対して承認します。これは、クライアントアプリへのメッセージの送信が許可されているアプリサーバーを識別する一意の番号です。 &ndash;
+- 送信**者 id** &ndash;*送信者 id*は、アプリサーバーをクライアントアプリに対して承認し &ndash; クライアントアプリへのメッセージの送信が許可されているアプリサーバーを識別する一意の番号です。
     送信者 ID もプロジェクト番号です。プロジェクトを登録するときに、Google 開発者コンソールから送信者 ID を取得します。
 
-- **登録トークン**登録トークンは、特定のデバイス上のクライアントアプリの GCM id です。 &ndash; 登録トークンは実行&ndash;時に生成されます。アプリは、デバイスでの実行中に GCM に初めて登録するときに、登録トークンを受け取ります。 登録トークンは、(特定のデバイスで実行されている) クライアントアプリのインスタンスに対して、GCM からメッセージを受信することを承認します。
+- **登録トークン &ndash;** *登録トークン*は、特定のデバイス上のクライアントアプリの GCM id です。 登録トークンは実行時に生成され &ndash; アプリは、デバイスでの実行中に GCM に最初に登録するときに登録トークンを受け取ります。 登録トークンは、(特定のデバイスで実行されている) クライアントアプリのインスタンスに対して、GCM からメッセージを受信することを承認します。
 
-- **アプリケーション ID**&ndash; GCM からメッセージを受信するように登録されているクライアントアプリの id (特定のデバイスに依存しません)。 Android では、アプリケーション ID は、など、 `com.xamarin.gcmexample` **androidmanifest .xml**に記録されたパッケージ名です。
+- **アプリケーション ID**は、GCM からメッセージを受信するように登録されているクライアントアプリの Id &ndash; ます (特定のデバイスに依存しません)。 Android では、アプリケーション ID は、`com.xamarin.gcmexample`など、 **Androidmanifest .xml**に記録されたパッケージ名です。
 
 [Google Cloud Messaging の設定](#settingup)(このガイドの後半) では、プロジェクトを作成し、これらの資格情報を生成するための詳細な手順について説明します。
 
@@ -80,7 +80,7 @@ Google が[クライアントアプリを登録](https://developers.google.com/c
 
 アプリケーションサーバーは、ダウンストリームメッセージをクライアントアプリに送信するときに、次の図に示す手順に従います。
 
-[![ダウンストリームメッセージングストアアンドフォワードダイアグラム](google-cloud-messaging-images/03-downstream-sml.png)](google-cloud-messaging-images/03-downstream.png#lightbox)
+[ダウンストリームメッセージングストアアンドフォワードダイアグラムの![](google-cloud-messaging-images/03-downstream-sml.png)](google-cloud-messaging-images/03-downstream.png#lightbox)
 
 1. アプリサーバーから GCM にメッセージが送信されます。
 
@@ -106,7 +106,7 @@ Android での下流の GCM メッセージの受信に関する詳細 (コー�
 
 クライアントアプリが[Xmpp](https://developers.google.com/cloud-messaging/ccs)をサポートするサーバーに接続する場合、次の図に示すように、アプリケーションサーバーにメッセージを返信できます。
 
-[![アップストリームメッセージングの図](google-cloud-messaging-images/04-upstream-sml.png)](google-cloud-messaging-images/04-upstream.png#lightbox)
+[アップストリームメッセージングの![ダイアグラム](google-cloud-messaging-images/04-upstream-sml.png)](google-cloud-messaging-images/04-upstream.png#lightbox)
 
 1. クライアントアプリは GCM XMPP 接続サーバーにメッセージを送信します。
 
@@ -130,38 +130,38 @@ Google の[上流メッセージ](https://developers.google.com/cloud-messaging/
 
 1. Google アカウント (gmail のアドレスなど) を使用して[Google 開発者コンソール](https://developers.google.com/mobile/add?platform=android)にサインインし、新しいプロジェクトを作成します。 既存のプロジェクトがある場合は、GCM が有効になるプロジェクトを選択します。 次の例では、 **XamarinGCM**という名前の新しいプロジェクトが作成されます。
 
-    [![XamarinGCM プロジェクトの作成](google-cloud-messaging-images/05-create-gcm-app-sml.png)](google-cloud-messaging-images/05-create-gcm-app.png#lightbox)
+    [XamarinGCM プロジェクトの作成![](google-cloud-messaging-images/05-create-gcm-app-sml.png)](google-cloud-messaging-images/05-create-gcm-app.png#lightbox)
 
 2. 次に、アプリのパッケージ名 (この例では、パッケージ名は " **com. xamarin. gcmexample**) を入力し、[続行] をクリックし**てサービスを選択して構成**します。
 
-    [![パッケージ名の入力](google-cloud-messaging-images/06-package-name-sml.png)](google-cloud-messaging-images/06-package-name.png#lightbox)
+    [パッケージ名の入力![](google-cloud-messaging-images/06-package-name-sml.png)](google-cloud-messaging-images/06-package-name.png#lightbox)
 
     このパッケージ名は、アプリのアプリケーション ID でもあることに注意してください。
 
 3. **[サービスの選択と構成**] セクションには、アプリに追加できる Google サービスが一覧表示されます。 **[クラウドメッセージング]** をクリックします。
 
-    [![クラウドメッセージングの選択](google-cloud-messaging-images/07-choose-gcm-service-sml.png)](google-cloud-messaging-images/07-choose-gcm-service.png#lightbox)
+    [クラウドメッセージングを選択![には](google-cloud-messaging-images/07-choose-gcm-service-sml.png)](google-cloud-messaging-images/07-choose-gcm-service.png#lightbox)
 
 4. 次に、 **[GOOGLE CLOUD MESSAGING を有効にする]** をクリックします。
 
-    [![Google Cloud Messaging を有効にする](google-cloud-messaging-images/08-enable-gcm-sml.png)](google-cloud-messaging-images/08-enable-gcm.png#lightbox)
+    [Google Cloud Messaging を有効に![には](google-cloud-messaging-images/08-enable-gcm-sml.png)](google-cloud-messaging-images/08-enable-gcm.png#lightbox)
 
 5. **サーバー API キー**と**送信者 ID**がアプリに対して生成されます。 これらの値を記録し、 **[閉じる]** をクリックします。
 
     [![サーバー API キーと送信者 ID が表示されます](google-cloud-messaging-images/09-get-api-key-and-id-sml.png)](google-cloud-messaging-images/09-get-api-key-and-id.png#lightbox)
 
-    パブリックに使用する&ndash;ためのものではない API キーを保護します。 API キーが侵害されると、承認されていないサーバーがクライアントアプリケーションにメッセージを公開する可能性があります。
+    API キーは、一般に使用するためのものではない &ndash; 保護します。 API キーが侵害されると、承認されていないサーバーがクライアントアプリケーションにメッセージを公開する可能性があります。
     Api キー[を安全に使用するためのベストプラクティス](https://support.google.com/cloud/answer/6310037?hl=en)では、api キーを保護するためのガイドラインについて説明します。
 
 ### <a name="view-your-project-settings"></a>プロジェクトの設定を表示する
 
 [Google Cloud Console](https://console.cloud.google.com/)にサインインしてプロジェクトを選択すると、いつでもプロジェクトの設定を表示できます。 たとえば、ページの上部にあるプルダウンメニューでプロジェクトを選択して、**送信者 ID**を表示できます (この例では、プロジェクトは**XamarinGCM**と呼ばれています)。 このスクリーンショットに示されているように、Sender ID はプロジェクト番号です (送信者 ID は**9349932736**)。
 
-[![送信者 ID の表示](google-cloud-messaging-images/10-view-server-id-sml.png)](google-cloud-messaging-images/10-view-server-id.png#lightbox)
+[送信者 ID の表示![](google-cloud-messaging-images/10-view-server-id-sml.png)](google-cloud-messaging-images/10-view-server-id.png#lightbox)
 
 **Api キー**を表示するには、 **[api マネージャー]** をクリックし、 **[資格情報]** をクリックします。
 
-[![API キーの表示](google-cloud-messaging-images/11-view-credentials-sml.png)](google-cloud-messaging-images/11-view-credentials.png#lightbox)
+[API キーの表示![](google-cloud-messaging-images/11-view-credentials-sml.png)](google-cloud-messaging-images/11-view-credentials.png#lightbox)
 
 ## <a name="for-further-reading"></a>関連項目
 
@@ -169,7 +169,7 @@ Google の[上流メッセージ](https://developers.google.com/cloud-messaging/
 
 - [Rfc 6120](https://tools.ietf.org/html/rfc6120)および[rfc 6121](https://tools.ietf.org/html/rfc6121)では、拡張可能なメッセージングとプレゼンスプロトコル (xmpp) について説明し、定義します。
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>まとめ
 
 この記事では、Google Cloud Messaging (GCM) の概要について説明しました。 ここでは、アプリサーバーとクライアントアプリ間のメッセージングを識別および承認するために使用されるさまざまな資格情報について説明しました。 ここでは、最も一般的なメッセージングシナリオについて説明し、gcm サービスを使用するためにアプリケーションを GCM に登録する手順について詳しく説明します。
 

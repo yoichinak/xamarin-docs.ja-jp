@@ -4,15 +4,15 @@ description: このドキュメントでは、PhotoKit について説明し、�
 ms.prod: xamarin
 ms.assetid: 7FDEE394-3787-40FA-8372-76A05BF184B3
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/14/2017
-ms.openlocfilehash: 433e50632ce7334f7a815fb8952dda2dfc110578
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 82cff753e7569c2642c467db692c2d2d84347df0
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290522"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031619"
 ---
 # <a name="photokit-in-xamarinios"></a>Xamarin の PhotoKit
 
@@ -20,18 +20,18 @@ PhotoKit は、アプリケーションがシステムイメージライブラ�
 
 ## <a name="model-objects"></a>モデルオブジェクト
 
-PhotoKit は、モデルオブジェクトを呼び出す対象の資産を表します。 写真やビデオ自体を表すモデルオブジェクトの種類`PHAsset`はです。 に`PHAsset`は、資産のメディアの種類や作成日などのメタデータが含まれています。
-同様に、 `PHAssetCollection`クラス`PHCollectionList`とクラスには、それぞれアセットコレクションとコレクションリストに関するメタデータが含まれています。 資産コレクションは、特定の年のすべての写真やビデオなどの資産のグループです。 同様に、コレクションリストは、年別にグループ化された写真やビデオなどの資産コレクションのグループです。
+PhotoKit は、モデルオブジェクトを呼び出す対象の資産を表します。 写真とビデオ自体を表すモデルオブジェクトの種類は `PHAsset`です。 `PHAsset` には、資産のメディアの種類や作成日などのメタデータが含まれています。
+同様に、`PHAssetCollection` クラスと `PHCollectionList` クラスには、資産コレクションとコレクションリストに関するメタデータがそれぞれ含まれています。 資産コレクションは、特定の年のすべての写真やビデオなどの資産のグループです。 同様に、コレクションリストは、年別にグループ化された写真やビデオなどの資産コレクションのグループです。
 
 ## <a name="querying-model-data"></a>モデルデータのクエリ
 
-PhotoKit を使用すると、さまざまなフェッチ方法でモデルデータのクエリを簡単に実行できます。 たとえば、すべてのイメージを取得するには、 `PHAsset.Fetch`メディアの種類`PHAssetMediaType.Image`を渡してを呼び出します。
+PhotoKit を使用すると、さまざまなフェッチ方法でモデルデータのクエリを簡単に実行できます。 たとえば、すべてのイメージを取得するには、`PHAsset.Fetch`を呼び出し、`PHAssetMediaType.Image` メディアの種類を渡します。
 
 ```csharp
 PHFetchResult fetchResults = PHAsset.FetchAssets (PHAssetMediaType.Image, null);
 ```
 
-インスタンス`PHFetchResult`には、イメージを表す`PHAsset`すべてのインスタンスが含まれます。 イメージ自体を取得するには、 `PHImageManager` (またはのキャッシュ`PHCachingImageManager`バージョン) を使用して、を呼び出し`RequestImageForAsset`てイメージに対する要求を行います。 たとえば、次のコードは、コレクションビューのセルに表示`PHFetchResult`する内の各資産のイメージを取得します。
+`PHFetchResult` インスタンスには、イメージを表すすべての `PHAsset` インスタンスが含まれます。 イメージ自体を取得するには、`PHImageManager` (またはキャッシュバージョン、`PHCachingImageManager`) を使用して、`RequestImageForAsset`を呼び出してイメージに対する要求を行います。 たとえば、次のコードは、コレクションビューセルに表示する `PHFetchResult` 内の各資産のイメージを取得します。
 
 ```csharp
 public override UICollectionViewCell GetCell (UICollectionView collectionView, NSIndexPath indexPath)
@@ -51,7 +51,7 @@ public override UICollectionViewCell GetCell (UICollectionView collectionView, N
 
 この結果、次のようにイメージのグリッドが表示されます。
 
-![](photokit-images/image4.png "イメージのグリッドを表示している実行中のアプリ")
+![](photokit-images/image4.png "The running app displaying a grid of images")
 
 ## <a name="saving-changes-to-the-photo-library"></a>フォトライブラリへの変更の保存
 
@@ -123,8 +123,8 @@ void ApplyNoirFilter (object sender, EventArgs e)
 
 ユーザーがボタンを選択すると、フィルターが適用されます。
 
-![](photokit-images/image5.png "適用されるフィルターの例")
+![](photokit-images/image5.png "An example of the filter being applied")
 
 PHPhotoLibraryChangeObserver のおかげで、ユーザーが移動したときに、変更がコレクションビューに反映されます。
 
-![](photokit-images/image6.png "変更は、ユーザーが戻ったときにコレクションビューに反映されます。")
+![](photokit-images/image6.png "The change is reflected in the collection view when the user navigates back")

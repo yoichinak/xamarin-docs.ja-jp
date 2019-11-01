@@ -4,15 +4,15 @@ description: このドキュメントでは、watchOS アプリケーション�
 ms.prod: xamarin
 ms.technology: xamarin-ios
 ms.assetid: 6968606B-C287-424F-A321-2492E12BC0BB
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: fec6cef22ddbc47aca0027aa026e0524b38bec4e
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: e117fce77e9cdc8d9e9dc8b9ed7b3aa22eca4e39
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768059"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73001710"
 ---
 # <a name="working-with-watchos-app-groups-in-xamarin"></a>Xamarin での watchOS App Groups の使用
 
@@ -28,23 +28,23 @@ ms.locfileid: "70768059"
 
 ### <a name="provisioning"></a>プロビジョニング
 
-アプリグループには識別子があります。これは通常、 `group.`プレフィックスを持つバンドル ID です。 たとえば、バンドル ID `com.xamarin.WatchSettings`とアプリグループ`group.com.xamarin.WatchSettings`を使用できます。
+アプリグループには識別子があります。これは通常、`group.` プレフィックスを持つバンドル ID です。 たとえば、バンドル ID `com.xamarin.WatchSettings` とアプリグループ `group.com.xamarin.WatchSettings`を使用できます。
 
-[![](app-groups-images/app-group-sml.png "バンドル ID WatchSettings とアプリグループ WatchSettings を使用します。この場合、")](app-groups-images/app-group.png#lightbox)
+[![](app-groups-images/app-group-sml.png "Use the Bundle ID com.xamarin.WatchSettings and the app group   group.com.xamarin.WatchSettings")](app-groups-images/app-group.png#lightbox)
 
 ### <a name="entitlementsplist"></a>Entitlements.plist
 
 プロビジョニングプロファイルを構成するだけでなく、 **[権利]** の [**アプリグループ] を有効に**し、選択した ID を入力します。
 
-[![](app-groups-images/entitlements-sml.png "Plist を構成して ID を入力する")](app-groups-images/entitlements.png#lightbox)
+[![](app-groups-images/entitlements-sml.png "Configure the plist and enter the ID")](app-groups-images/entitlements.png#lightbox)
 
 ### <a name="deployment"></a>展開
 
 [デプロイ](~/ios/watchos/deploy-test/index.md#App_Groups)のプロビジョニングで、アプリグループが正しく構成されていることを確認します。
 
-詳細についてを参照してください、[アプリ グループ機能](~/ios/deploy-test/provisioning/capabilities/app-groups-capabilities.md)ドキュメント。
+詳細については、[アプリグループ機能](~/ios/deploy-test/provisioning/capabilities/app-groups-capabilities.md)のドキュメントを参照してください。
 
 ## <a name="related-links"></a>関連リンク
 
-- [Apple のデータを含むアプリを共有します。](https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/ExtensionScenarios.html)
+- [アプリを含む Apple の共有データ](https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/ExtensionScenarios.html)
 - [Apple の App Group ドキュメント](https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/EntitlementKeyReference/Chapters/EnablingAppSandbox.html#//apple_ref/doc/uid/TP40011195-CH4-SW19)

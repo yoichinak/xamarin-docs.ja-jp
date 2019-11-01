@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin. Mac での事前コンパ
 ms.prod: xamarin
 ms.assetid: 38B8A017-5A58-429C-A6E9-9860A1DCEF63
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 11/10/2017
-ms.openlocfilehash: 6797428596fddb0361fb307240bf8237a1e8554d
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: dac98ba74f389bec9016e52fa7a3f2f34ec71f0a
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769831"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029965"
 ---
 # <a name="xamarinmac-ahead-of-time-compilation"></a>Xamarin. Mac の事前コンパイル
 
@@ -29,7 +29,7 @@ C#やF#などのマネージ言語で記述されたコードは、IL と呼ば�
 
 各オプションには、いくつかの利点とトレードオフがあります。
 
-- **JIT**
+- **コンパイラ**
   - **起動時間**– JIT コンパイルは起動時に実行する必要があります。 ほとんどのアプリケーションでは、これは100ミリ秒の順序になっていますが、大規模なアプリケーションの場合は、この時間が大幅に長くなる可能性があります。
   - **実行**–使用される特定のプロセッサに合わせて JIT コードを最適化できるため、コードを少し改善することができます。 ほとんどのアプリケーションでは、これはほとんどの場合、数パーセントのポイントになります。
 - **AOT**

@@ -2,15 +2,15 @@
 ms.assetid: 77F12838-DBB1-48AC-ACF8-B934998B6EC8
 title: クロスプラットフォームデスクトップのサンプル
 description: このドキュメントでは、Xamarin を使用してクロスプラットフォームアプリとして実行するように移植されたさまざまなサンプルアプリケーションについて説明します。
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/26/2017
-ms.openlocfilehash: 3363fe8c1835db18dae47559f0c07ddaa4cc7594
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 2797237fed9dab1b7e101b63b17e04281bc5de1d
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290348"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016403"
 ---
 # <a name="cross-platform-desktop-samples"></a>クロスプラットフォームデスクトップのサンプル
 
@@ -42,7 +42,7 @@ Xamarin を使用すると、元のアプリは、モバイル、タブレット
 
 * [.NET マイクロサービス電子ブック](https://aka.ms/microservicesebook)
 * [コンテナー化された Docker アプリケーションライフサイクル電子ブック](https://aka.ms/dockerlifecycleebook)
-* [Xamarin.Forms ebook を使用したエンタープライズアプリケーションパターン](~/xamarin-forms/enterprise-application-patterns/index.md)
+* [Xamarin. Forms ebook を使用したエンタープライズアプリケーションパターン](~/xamarin-forms/enterprise-application-patterns/index.md)
 
 ## <a name="mobile-app-samples"></a>モバイルアプリのサンプル
 

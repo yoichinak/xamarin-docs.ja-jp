@@ -3,15 +3,15 @@ title: Xamarin Live Player Visual Studio の構成
 description: このドキュメントでは、Xamarin Live Player を使用して、実行中のアプリケーションをライブ編集する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 5DDF9203-8826-4B04-93F5-B8D07EDE3873
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/13/2019
-ms.openlocfilehash: 94f1d36bf97aab7eabb57e6f2712c9850b390ab1
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 3dfe63cf3cf87a99d15879a0d4791248fa06f195
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290484"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029687"
 ---
 # <a name="xamarin-live-player-visual-studio-configuration"></a>Xamarin Live Player Visual Studio の構成
 
@@ -29,34 +29,34 @@ ms.locfileid: "70290484"
 
 デバイスに Xamarin Live Player アプリが既にある必要があります。 ダウンロードすることはできません。
 
-1. 開いている**Visual Studio 2017**します。
-2. 移動して**ツール > オプション.** を選択し、 **Xamarin > その他の**タブ。
-3. ティック**Xamarin Live Player を有効にする**:
+1. **Visual Studio 2017**を開きます。
+2. [**ツール] > [オプション**] にアクセスし、 **[Xamarin > その他]** タブを選択します。
+3. ティックの**有効化 Xamarin Live Player**:
 
-    ![チェック オプション ウィンドウで、Xamarin Live Player を有効にするボックス](install-images/vs2017-options.png)
+    ![[オプション] ウィンドウの [有効化 Xamarin Live Player] チェックボックスをオンにします。](install-images/vs2017-options.png)
 
-4. 作成するか、Xamarin プロジェクトを開きます (または[サンプル](~/tools/live-player/samples.md))。
-5. 選択**Live Player**デバイスの一覧で。
+4. Xamarin プロジェクト (または[サンプル](~/tools/live-player/samples.md)) を作成または開きます。
+5. デバイスの一覧で **[Live Player]** を選択します。
 
-    ![デバイスの一覧には、Xamarin Live Player のオプションが含まれています。](install-images/devices-empty-windows.png)
+    ![デバイス一覧に Xamarin Live Player オプションが含まれています](install-images/devices-empty-windows.png)
 
-    - 既にデバイスをペアリングがある場合は、オプションとして使用ができます。
-    - それ以外の場合求められますを必要な場合にデバイスをペアリングします。
+    - 既にデバイスをペアリングしている場合は、オプションとして使用できます。
+    - それ以外の場合は、必要に応じてデバイスをペアリングするように求められます。
 
-6. キーを押して、**実行**ボタン、または、次のいずれかのオプションから選択、**実行**または右クリック メニュー。
+6. **[実行]** ボタンを押すか、または **[実行]** メニューまたは右クリックメニューから次のいずれかのオプションを選択します。
 
-    - **デバッグなしで開始**– アプリとデバイスの変更が発生する参照を編集することができます (アプリが、変更を加えるし、ファイルの保存と再起動される)。
-    - **デバッグの開始**– ブレークポイントを設定し、変数を検査することができますが、コードを編集することはできません。
+    - **[デバッグなしで開始]** –アプリを編集して、デバイスで変更が発生したことを確認できます (変更が加えられ、ファイルが保存されると、アプリが再起動されます)。
+    - **デバッグを開始**する–ブレークポイントを設定し、変数を検査できますが、コードを編集することはできません。
 
-    または、選択**ツール > Xamarin Live Player > 現在のビューの実行を Live**アプリとデバイスの変更が発生する参照を編集することができます。 (アプリケーションのメイン画面) ではなく、現在のビューが表示されます。
+    または、ツール Xamarin Live Player > を選択し、**ライブ実行の現在のビュー** を > します。これにより、アプリを編集して、デバイスで行われた変更を確認できます。 (アプリケーションのメイン画面ではなく) 現在のビューが表示されます。
 
-7. デバイスは既にペアリングされています、Xamarin Live Player アプリがデバイスで実行されている場合は、コードはすぐ実行されます。
+7. デバイスが既にペアリングされており、Xamarin Live Player アプリがデバイスで実行されている場合、コードはすぐに実行されます。
 
-    デバイスをペアリングしていない場合、デバイスをペアリングする手順について QR コードに表示されます。
+    デバイスがペアリングされていない場合は、デバイスをペアリングする方法を説明する QR コードが表示されます。
 
-    ![ペアのデバイス ウィンドウ](install-images/manage-empty-windows.png)
+    ![デバイスウィンドウをペアリングする](install-images/manage-empty-windows.png)
 
-    ペアリングには、デバイスに接続できない場合は、エラーが表示される可能性があります。
+    ペアリングのためにデバイスに接続できない場合は、エラーが表示されることがあります。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -64,42 +64,42 @@ ms.locfileid: "70290484"
 
 デバイスに Xamarin Live Player アプリが既にある必要があります。 ダウンロードすることはできません。
 
-1. 開いている**Visual Studio for Mac**します。
-2. 移動して**Visual Studio > の基本設定.** を選択し、**プロジェクト > Xamarin Live Player (プレビュー)** タブ。
-3. ティック**Xamarin Live Player を有効にする**:
+1. **Visual Studio for Mac**を開きます。
+2. **Visual Studio > の [基本設定...** ] にアクセスし、 **[プロジェクト > Xamarin Live Player (プレビュー)]** タブを選択します。
+3. ティックの**有効化 Xamarin Live Player**:
 
-    [![Xamarin Live Player を有効にするボックス](install-images/vsmac-options-sml.png)](install-images/vsmac-options.png#lightbox)
+    [![[オプション] ウィンドウの [Xamarin Live Player を有効にする] チェックボックスをオンにします。](install-images/vsmac-options-sml.png)](install-images/vsmac-options.png#lightbox)
 
-4. 作成するか、Xamarin プロジェクトを開きます (または[サンプル](~/tools/live-player/samples.md))。
-5. 選択**Live Player**デバイスの一覧にします。
+4. Xamarin プロジェクト (または[サンプル](~/tools/live-player/samples.md)) を作成または開きます。
+5. デバイスの一覧で **[Live Player]** を選択します。
 
-    ![デバイスの一覧には、Xamarin Live Player のオプションが含まれています。](install-images/devices.png)
+    ![デバイス一覧に Xamarin Live Player オプションが含まれています](install-images/devices.png)
 
-    - 既にデバイスをペアリングがある場合は、オプションとして使用ができます。
-    - それ以外の場合求められますを必要な場合にデバイスをペアリングします。
-    - 選択**Xamarin Live Player デバイスしています.** の Xamarin Live Player を使用するデバイスを管理します。
+    - 既にデバイスをペアリングしている場合は、オプションとして使用できます。
+    - それ以外の場合は、必要に応じてデバイスをペアリングするように求められます。
+    - Xamarin Live Player で使用するデバイスを管理するには、 **[Xamarin Live Player デバイス...]** を選択します。
 
-6. キーを押して、**実行**ボタン、または、次のいずれかのオプションから選択、**実行**または右クリック メニュー。
+6. **[実行]** ボタンを押すか、または **[実行]** メニューまたは右クリックメニューから次のいずれかのオプションを選択します。
 
-    ![メニュー オプションを実行します。](install-images/run-menu.png)
+    ![[実行] メニューオプション](install-images/run-menu.png)
 
-    - **デバッグなしで開始**– アプリとデバイスの変更が発生する参照を編集することができます (アプリが、変更を加えるし、ファイルの保存と再起動される)。
-    - **デバッグの開始**– ブレークポイントを設定し、変数を検査することができますが、コードを編集することはできません。
-    - **ライブ実行の現在のビュー** – アプリとデバイスの変更が発生する参照を編集することができます。 (アプリケーションのメイン画面) ではなく、現在のビューが表示されます。
+    - **[デバッグなしで開始]** –アプリを編集して、デバイスで変更が発生したことを確認できます (変更が加えられ、ファイルが保存されると、アプリが再起動されます)。
+    - **デバッグを開始**する–ブレークポイントを設定し、変数を検査できますが、コードを編集することはできません。
+    - **ライブ実行の現在のビュー** –アプリを編集して、デバイスで行われた変更を確認できます。 (アプリケーションのメイン画面ではなく) 現在のビューが表示されます。
 
-7. デバイスは既にペアリングされています、Xamarin Live Player アプリがデバイスで実行されている場合は、コードはすぐ実行されます。
+7. デバイスが既にペアリングされており、Xamarin Live Player アプリがデバイスで実行されている場合、コードはすぐに実行されます。
 
-    デバイスをペアリングしていない場合、デバイスをペアリングする手順について QR コードに表示されます。
+    デバイスがペアリングされていない場合は、デバイスをペアリングする方法を説明する QR コードが表示されます。
 
-    ![ペアのデバイス ウィンドウ](install-images/manage-empty.png)
+    ![デバイスウィンドウをペアリングする](install-images/manage-empty.png)
 
-    ペアリングには、デバイスに接続できない場合は、エラーが表示されます。
+    ペアリングのためにデバイスに接続できない場合は、次のエラーが表示されます。
 
-    ![エラー メッセージをデバイスに接続できません。](install-images/error-cannot-connect.png)
+    ![デバイスのエラーメッセージに接続できません](install-images/error-cannot-connect.png)
 
 -----
 
-問題が発生するか、または接続できない場合は、[制限事項とトラブルシューティング](~/tools/live-player/troubleshooting.md)を参照してください。
+問題が発生した場合、または接続できない場合は、「[制限事項とトラブルシューティング](~/tools/live-player/troubleshooting.md)」を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 

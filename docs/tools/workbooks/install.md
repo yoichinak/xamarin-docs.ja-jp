@@ -3,15 +3,15 @@ title: ブックのインストールと要件
 description: このドキュメントでは、Xamarin Workbooks をダウンロードしてインストールする方法について説明します。サポートされるプラットフォームとシステム要件について説明します。
 ms.prod: xamarin
 ms.assetid: 9D4E10E8-A288-4C6C-9475-02969198C119
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/19/2018
-ms.openlocfilehash: 6fc204e8524d53820407b2efd3ab0de6af28c669
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.openlocfilehash: 92b08a9cfd725c1114b71fad4f29e6f28cd828b3
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71249906"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029629"
 ---
 # <a name="workbooks-installation-and-requirements"></a>ブックのインストールと要件
 
@@ -35,7 +35,7 @@ ms.locfileid: "71249906"
 
 -----
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>［要件］
 
 #### <a name="supported-operating-systems"></a>Supported Operating Systems
 
@@ -44,7 +44,7 @@ ms.locfileid: "71249906"
 
 #### <a name="supported-app-platforms"></a>サポートされているアプリプラットフォーム
 
-|アプリのプラットフォーム|OS のサポート|メモ|
+|アプリのプラットフォーム|OS のサポート|ノート|
 |--- |--- |--- |
 |Mac|Mac でのみサポートされています|
 |iOS|Mac および Windows でサポートされています|Mac には、Xamarin iOS 11.0 と Xcode 9.0 以降をインストールする必要があります。 Windows で iOS ブックを実行するには、上記のすべてを実行している Mac ビルドホストと、Windows にインストールされている[リモート Ios シミュレーター](~/tools/ios-simulator/index.md)が必要です。|
@@ -61,7 +61,7 @@ ms.locfileid: "71249906"
 
 常にブックのクライアントログファイルをアタッチする:
 
-- Mac`~/Library/Logs/Xamarin/Workbooks/Xamarin Workbooks {date}.log`
+- Mac: `~/Library/Logs/Xamarin/Workbooks/Xamarin Workbooks {date}.log`
 - Windows: `%LOCALAPPDATA%\Xamarin\Workbooks\logs\Xamarin Workbooks {date}.log`
 
 1.4. x では、メインメニューから直接 Finder (macOS) またはエクスプローラー (Windows) のログファイルを選択する機能もあります。
@@ -70,7 +70,7 @@ ms.locfileid: "71249906"
 
 #### <a name="log-paths-for-workbooks-13-and-earlier"></a>ブック1.3 以前のログパス:
 
-- Mac`~/Library/Logs/Xamarin/Inspector/Xamarin Inspector {date}.log`
+- Mac: `~/Library/Logs/Xamarin/Inspector/Xamarin Inspector {date}.log`
 - Windows: `%LOCALAPPDATA%\Xamarin\Inspector\logs\Xamarin Inspector {date}.log`
 
 ### <a name="platform-version-information"></a>プラットフォームのバージョン情報
@@ -103,11 +103,11 @@ IOS または Android ブックの接続に問題があり、[トラブルシュ
 
 - 接続しようとしているデバイスの名前
 - デバイスの OS バージョン
-- AndroidX86 エミュレーターを使用していることを確認する
-- Androidどのエミュレータープラットフォームを使用していますか? Google Emulator ですか?
-  Visual Studio Android Emulator ですか? Xamarin Android Player ますか?
-- Windows 上の iOS:Xamarin リモート iOS シミュレーターのバージョンはインストールした (確認 **プログラムの追加/削除** で **コントロール パネルの**) でしょうか。
-- Windows 上の iOS:Mac ビルドホストのプラットフォームバージョン情報も指定してください
+- Android: x86 エミュレーターを使用していることを確認する
+- Android: どのエミュレータープラットフォームを使用していますか? Google Emulator ですか?
+  Visual Studio Android Emulator ですか? Xamarin Android Player。
+- Windows 上の iOS: どのバージョンの Xamarin リモート iOS シミュレーターがインストールされていますか (**コントロールパネル**の **[プログラムの追加と削除]** を確認してください)。
+- Windows 上の iOS: Mac ビルドホストのプラットフォームバージョン情報も指定してください
 - デバイスはネットワークに接続されていますか (web ブラウザーで確認してください)。
 
 [bugs]: https://github.com/Microsoft/workbooks/issues/new
@@ -128,7 +128,7 @@ Visual Studio 2017 を使用している場合は**Visual Studio インストー
 
 > **システム > アプリ & の機能 > > 設定を開始します**
 
-![](install-images/windows-remove.png "&quot;アプリ&amp;の機能に記載されている Xamarin Workbooks&quot;")
+![](install-images/windows-remove.png "Xamarin Workbooks as listed in &quot;Apps &amp; features&quot;")
 
 **その場合でも、Visual Studio インストーラーの手順に従って、ブックがユーザーの知らないうちに再インストールされないようにする必要があります。**
 
@@ -144,7 +144,7 @@ sudo /Library/Frameworks/Xamarin.Interactive.framework/Versions/Current/uninstal
 
 アンインストーラーは、削除するファイルとディレクトリの詳細を確認し、続行する前に確認メッセージを表示します。
 
-より高度なシナリオを`uninstall`実現するには、スクリプトに引数を渡します。`-help`
+より高度なシナリオを実現するには、`uninstall` スクリプトに `-help` 引数を渡します。
 
 古いバージョンでは、次のものを手動で削除する必要があります。
 
@@ -155,11 +155,11 @@ sudo /Library/Frameworks/Xamarin.Interactive.framework/Versions/Current/uninstal
 
 ## <a name="downgrading"></a>ダウングレード
 
-ブックとインスペクターが完全に分割されているため、 `com.xamarin.Inspector` 1.4 `com.xamarin.Workbooks`リリースのからに変更されたアプリのバンドル識別子。
+ブックとインスペクターが完全に分割されているため、1.4 リリースの `com.xamarin.Inspector` から `com.xamarin.Workbooks` に変更されたアプリのバンドル識別子 **。**
 
 以前のインストーラーのバグにより、1.3.2 またはそれ以前のインストーラーを使用して1.4 またはそれ以降のリリースをダウングレードすることはできません。
 
 1\.4 以降から1.3.2 またはそれ以降にダウングレードするには、次のようにします。
 
 1. [ブック & インスペクターを手動でアンインストールする](#uninstall-macos)
-2. 1\.3.2 またはそれ以前`.pkg`のインストーラーを実行する
+2. 1\.3.2 またはそれ以前の `.pkg` インストーラーを実行する

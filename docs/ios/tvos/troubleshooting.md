@@ -5,15 +5,15 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 124E4953-4DFA-42B0-BCFC-3227508FE4A6
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: f54edead87459282ccd6a44225269542fad9d0e4
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 11ac6289b7d2f278f534f5a65679754d212b5067
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769099"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030525"
 ---
 # <a name="troubleshooting-tvos-apps-built-with-xamarin"></a>Xamarin でビルドされた tvOS アプリのトラブルシューティング
 
@@ -25,12 +25,12 @@ _この記事では、Xamarin の tvOS サポートの使用中に発生する�
 
 Xamarin の tvOS サポートの現在のリリースには、次の既知の問題があります。
 
-- Mono**フレームワーク**– Mono 4.3 ProtectedData は、mono 4.2 からのデータの暗号化解除に失敗します。 その結果、保護された nuget ソースが構成され`Data unprotection failed`ていると、nuget パッケージはエラーが発生して復元に失敗します。
+- Mono**フレームワーク**– Mono 4.3 ProtectedData は、mono 4.2 からのデータの暗号化解除に失敗します。 その結果、保護された NuGet ソースが構成されている場合、NuGet パッケージはエラー `Data unprotection failed` で復元に失敗します。
   - **回避策**: Visual Studio for Mac、パッケージの復元を再試行する前に、パスワード認証を使用するすべての NuGet パッケージソースを追加し直す必要があります。
 - **Visual Studio for Mac w/ F#アドイン**-Windows で Android テンプレートをF#作成するときにエラーが発生します。 これは Mac でも正常に機能します。
-- **Xamarin. mac** –ターゲットフレームワークがに`Unsupported`設定された xamarin の統合テンプレートプロジェクトを実行すると、ポップアップ`Could not connect to the debugger`が表示される場合があります。
+- **Xamarin. mac** –ターゲットフレームワークが `Unsupported`に設定されている xamarin の統合テンプレートプロジェクトを実行すると、ポップアップ `Could not connect to the debugger` が表示される場合があります。
   - **考えられる回避策**–安定したチャネルで利用できる Mono フレームワークのバージョンをダウングレードします。
-- **Xamarin visual studio & xamarin. iOS** – WatchKit アプリケーションを visual studio にデプロイすると、 `The file ‘bin\iPhoneSimulator\Debug\WatchKitApp1WatchKitApp.app\WatchKitApp1WatchKitApp’ does not exist`エラーが表示されることがあります。
+- **Xamarin Visual studio & xamarin. iOS** – visual Studio で WatchKit アプリケーションを配置するときに、エラー `The file ‘bin\iPhoneSimulator\Debug\WatchKitApp1WatchKitApp.app\WatchKitApp1WatchKitApp’ does not exist` が表示されることがあります。
 
 [GitHub](https://github.com/xamarin/xamarin-macios/issues/new)で見つかったすべてのバグを報告してください。
 
@@ -47,8 +47,8 @@ TvOS アプリを Apple TV App Store に送信しようとすると、 _"無効�
 1. Visual Studio for Mac で、**ソリューションエクスプローラー**で TvOS プロジェクトファイルを右クリックし、 **[オプション]** を選択します。
 2. **[TvOS Build]** を選択し、**リリース**構成になっていることを確認します。 
 
-    [![](troubleshooting-images/ts01.png "TvOS ビルドオプションの選択")](troubleshooting-images/ts01.png#lightbox)
-3. [ `--bitcode=asmonly`追加の**mtouch 引数**] フィールドにを追加し、 **[OK]** ボタンをクリックします。
+    [![](troubleshooting-images/ts01.png "Select tvOS Build options")](troubleshooting-images/ts01.png#lightbox)
+3. **[追加の mtouch 引数]** フィールドに `--bitcode=asmonly` を追加し、 **[OK]** ボタンをクリックします。
 4. **リリース**構成でアプリをリビルドします。
 
 ### <a name="verifying-that-your-tvos-app-contains-bitcode"></a>TvOS アプリにビットコードが含まれていることを確認しています
@@ -76,11 +76,11 @@ Section
  reserved2 0
 ```
 
-`addr`と`size`は異なりますが、他のフィールドは同じである必要があります。
+`addr` と `size` は異なりますが、他のフィールドは同じである必要があります。
 
-使用しているサードパーティの静的 (`.a`) ライブラリが (iOS ライブラリではなく) tvOS ライブラリに対してビルドされていること、およびビットコード情報も含まれていることを確認する必要があります。
+使用しているサードパーティの静的 (`.a`) ライブラリが (iOS ライブラリではなく) tvOS ライブラリに対してビルドされていること、および bitcode 情報も含まれていることを確認する必要があります。
 
-有効な bitcode を含むアプリまたはライブラリ`size`の場合、は1より大きくなります。 ライブラリが bitcode マーカーを持つことができる状況もありますが、有効な bitcode は含まれていません。 例えば:
+有効な bitcode を含むアプリまたはライブラリの場合、`size` は1より大きくなります。 ライブラリが bitcode マーカーを持つことができる状況もありますが、有効な bitcode は含まれていません。 (例:
 
 **無効な Bitcode**
 
@@ -102,7 +102,7 @@ $ otool -l -arch arm64 libDownloadableAgent-tvos.a |grep __bitcode -A 3
       size 0x0000000000045440
 ```
 
-上記の例の`size` 2 つのライブラリの違いに注意してください。 このサイズの問題の解決策として、bitcode が有効になっ`ENABLE_BITCODE`ている Xcode archive ビルド (Xcode 設定) からライブラリを生成する必要があります。
+上記の例の2つのライブラリ間の `size` の違いに注意してください。 このサイズの問題の解決策として、bitcode が有効になっている Xcode archive ビルド (Xcode 設定 `ENABLE_BITCODE`) からライブラリを生成する必要があります。
 
 ### <a name="apps-that-only-contain-the-arm64-slice-must-also-have-arm64-in-the-list-of-uirequireddevicecapabilities-in-infoplist"></a>Arm64 スライスだけを含むアプリも、UIRequiredDeviceCapabilities の一覧に "arm64" が含まれている必要があります。
 
@@ -110,7 +110,7 @@ $ otool -l -arch arm64 libDownloadableAgent-tvos.a |grep __bitcode -A 3
 
 _"Arm64 スライスだけを含むアプリには、UIRequiredDeviceCapabilities の一覧に" arm64 "が含まれている必要もあります。_
 
-この問題が発生した`Info.plist`場合は、ファイルを編集し、次のキーが含まれていることを確認します。
+この問題が発生した場合は、`Info.plist` ファイルを編集し、次のキーが含まれていることを確認します。
 
 ```xml
 <key>UIRequiredDeviceCapabilities</key>
@@ -123,22 +123,22 @@ _"Arm64 スライスだけを含むアプリには、UIRequiredDeviceCapabilitie
 
 ### <a name="task-mtouch-execution----failed"></a>タスク "MTouch" の実行-失敗
 
-サードパーティ製のライブラリ (モノゲームなど) を使用していて、で`Task "MTouch" execution -- FAILED`終了する長い一連のエラーメッセージがリリースコンパイルに失敗した場合は、追加の**タッチ引数**を追加`-gcc_flags="-framework OpenAL"`してみてください。
+サードパーティ製のライブラリ (モノゲームなど) を使用していて、`Task "MTouch" execution -- FAILED`で終わる長い一連のエラーメッセージでリリースのコンパイルが失敗した場合は、**追加のタッチ引数**に `-gcc_flags="-framework OpenAL"` を追加してみてください。
 
-[![](troubleshooting-images/mtouch01.png "タスクの MTouch 実行")](troubleshooting-images/mtouch01.png#lightbox)
+[![](troubleshooting-images/mtouch01.png "Task MTouch execution")](troubleshooting-images/mtouch01.png#lightbox)
 
-また、追加の`--bitcode=asmonly` **タッチ引数**にを含め、リンカーオプションを **[すべてリンク]** に設定して、クリーンコンパイルを実行する必要があります。
+また、**追加のタッチ引数**に `--bitcode=asmonly` を含め、リンカーオプションを **[すべてリンク]** に設定し、クリーンコンパイルを実行する必要があります。
 
 ### <a name="itms-90471-error-the-large-icon-is-missing"></a>ITMS-90471 エラー。 大きいアイコンがありません
 
 "ITMS-90471 エラー" という形式のメッセージが表示された場合。 TvOS アプリをリリース用の Apple TV App Store に送信しようとしているときに、大きいアイコンがありません。次のことを確認してください。
 
-1. [アプリアイコン](~/ios/tvos/app-fundamentals/icons-images.md#App-Icons)のドキュメントを使用して、作成し`Assets.car`たファイルに大きなアイコン資産が含まれていることを確認します。
-2. 最終的なアプリケーションバンドルで`Assets.car` 、[アイコンとイメージの操作](~/ios/tvos/app-fundamentals/icons-images.md)に関するドキュメントに記載されているファイルが含まれていることを確認します。
+1. [アプリアイコン](~/ios/tvos/app-fundamentals/icons-images.md#App-Icons)のドキュメントを使用して作成した `Assets.car` ファイルに大きなアイコン資産が含まれていることを確認します。
+2. 最終的なアプリケーションバンドルで、[アイコンとイメージの操作](~/ios/tvos/app-fundamentals/icons-images.md)に関するドキュメントの `Assets.car` ファイルが含まれていることを確認します。
 
 ### <a name="invalid-bundle--an-app-that-supports-game-controllers-must-also-support-the-apple-tv-remote"></a>無効なバンドル–ゲームコントローラーをサポートするアプリは、Apple TV リモコンもサポートする必要があります。
 
-または 
+、または 
 
 ### <a name="invalid-bundle--apple-tv-apps-with-the-gamecontroller-framework-must-include-the-gcsupportedgamecontrollers-key-in-the-apps-infoplist"></a>バンドルが無効です– GameController フレームワークを使用する Apple TV アプリでは、GCSupportedGameControllers キーをアプリの情報に含める必要があります。 plist
 
@@ -150,11 +150,11 @@ _"アプリ名" の最新の配信に関する1つ以上の問題が検出され
 
 _無効なバンドル–ゲームコントローラーをサポートするアプリは、Apple TV リモコンもサポートする必要があります。_
 
-または 
+、または 
 
 _バンドルが無効です– GameController フレームワークを使用した Apple TV アプリでは、GCSupportedGameControllers キーをアプリの情報 plist に含める必要があります。_
 
-この問題を解決するには、アプリケーションの`GCMicroGamepad` `Info.plist`ファイルに siri リモート () のサポートを追加します。 Apple は、Siri リモートをターゲットにするために、マイクロゲームコントローラーのプロファイルを追加しました。 たとえば、次のキーを含めます。
+この問題を解決するには、Siri リモート (`GCMicroGamepad`) のサポートをアプリの `Info.plist` ファイルに追加します。 Apple は、Siri リモートをターゲットにするために、マイクロゲームコントローラーのプロファイルを追加しました。 たとえば、次のキーを含めます。
 
 ```xml
 <key>GCSupportedGameControllers</key>  
@@ -183,7 +183,7 @@ _バンドルが無効です– GameController フレームワークを使用し
 
 _互換性のないターゲットフレームワーク:。NetPortable、Version = v1.0、Profile = Profile78_
 
-この問題を解決するには、という`Xamarin.TVOS.xml`名前の XML ファイルを次の内容で追加します。
+この問題を解決するには、次の内容を含む `Xamarin.TVOS.xml` という名前の XML ファイルを追加します。
 
 ```xml
 <Framework Identifier="Xamarin.TVOS" MinimumVersion="1.0" Profile="*" DisplayName="Xamarin.TVOS"/>

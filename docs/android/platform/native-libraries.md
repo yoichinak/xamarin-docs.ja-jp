@@ -3,19 +3,19 @@ title: ネイティブ ライブラリの使用
 ms.prod: xamarin
 ms.assetid: 7AA6CEC8-C09E-BBDA-FDD6-E40559143548
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/09/2018
-ms.openlocfilehash: fad17bdda9566eeabcbe173c19c4d951bed630a7
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 7ef9e0415d7d1e5fe75be70e0ccf6e06a5eaf332
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70761280"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73027063"
 ---
 # <a name="using-native-libraries"></a>ネイティブ ライブラリの使用
 
-Xamarin Android では、標準の PInvoke 機構によるネイティブライブラリの使用がサポートされています。 .apk に OS の一部ではないその他のネイティブ ライブラリをバンドルすることもできます。
+Xamarin Android では、標準の PInvoke 機構によるネイティブライブラリの使用がサポートされています。 また、OS に含まれていない追加のネイティブライブラリを apk にバンドルすることもできます。
 
 Xamarin Android アプリケーションを使用してネイティブライブラリを配置するには、ライブラリバイナリをプロジェクトに追加し、**ビルドアクション**を**androidのライブラリ**に設定します。
 
@@ -25,9 +25,9 @@ Android では複数のアプリケーションバイナリインターフェイ
 これを行うには 2 つの方法があります。
 
 1. パス "スニッフィング"
-1. プロジェクトファイル内`AndroidNativeLibrary/Abi`の要素を使用する
+1. プロジェクトファイル内の `AndroidNativeLibrary/Abi` 要素を使用する
 
-パス スニッフィングを使用すると、ネイティブ ライブラリの親ディレクトリ名が、ライブラリがターゲットとする ABI を指定するために使用されます。 したがって、をプロジェクト`lib/armeabi/libfoo.so`に追加すると、ABI はとして`armeabi`"スニッフィングさ" になります。
+パス スニッフィングを使用すると、ネイティブ ライブラリの親ディレクトリ名が、ライブラリがターゲットとする ABI を指定するために使用されます。 このため、プロジェクトに `lib/armeabi/libfoo.so` を追加すると、ABI は `armeabi`として "スニッフィングさ" になります。
 
 または、プロジェクトファイルを編集して、使用する ABI を明示的に指定することもできます。
 

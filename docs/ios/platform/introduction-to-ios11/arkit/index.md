@@ -4,15 +4,15 @@ description: このドキュメントでは、ARKit を使用した iOS 11 の�
 ms.prod: xamarin
 ms.assetid: 70291430-BCC1-445F-9D41-6FBABE87078E
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/30/2017
-ms.openlocfilehash: b05991be60e34cad6b7bfc5af15fe521e1ff6dd1
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 0094a496ce99addb08648431d993bd4afddca2f4
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70752596"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032244"
 ---
 # <a name="introduction-to-arkit-in-xamarinios"></a>Xamarin の ARKit の概要
 
@@ -31,15 +31,15 @@ ARKit は、拡張されたさまざまな現実のアプリケーションや�
 
 ![カメライメージでの Jet 3D モデルフローティング](images/jet-sml.png)
 
-### <a name="1-add-a-3d-model"></a>1. 3D モデルの追加
+### <a name="1-add-a-3d-model"></a>1.3D モデルの追加
 
 アセットは、 **SceneKitAsset**ビルドアクションを使用してプロジェクトに追加する必要があります。
 
 ![プロジェクト内の SceneKit アセット](images/scene-assets.png)
 
-### <a name="2-configure-the-view"></a>2. ビューを構成する
+### <a name="2-configure-the-view"></a>2.ビューを構成する
 
-ビューコントローラーの`ViewDidLoad`メソッドで、シーンアセットを読み込み、ビューのプロパティ`Scene`を設定します。
+ビューコントローラーの `ViewDidLoad` メソッドで、シーンアセットを読み込み、ビューの `Scene` プロパティを設定します。
 
 ```csharp
 ARSCNView SceneView = (View as ARSCNView);
@@ -66,7 +66,7 @@ public class SessionDelegate : ARSessionDelegate
 }
 ```
 
-`ViewDidLoad`メソッドで、デリゲートをに割り当てます。
+`ViewDidLoad` メソッドで、デリゲートをに割り当てます。
 
 ```csharp
 // Track changes to the session
@@ -75,7 +75,7 @@ SceneView.Session.Delegate = new SessionDelegate();
 
 ### <a name="4-position-the-3d-model-in-the-world"></a>4.3D モデルを世界中に配置する
 
-で`ViewWillAppear`は、次のコードで arkit セッションを確立し、デバイスのカメラに対して相対的な空間で3d モデルの位置を設定します。
+`ViewWillAppear`では、次のコードは ARKit セッションを確立し、デバイスのカメラに対して相対的な空間で3D モデルの位置を設定します。
 
 ```csharp
 // Create a session configuration
@@ -95,17 +95,17 @@ ship.Position = new SCNVector3(2f, -2f, -9f);
 
 アプリケーションが実行または再開されるたびに、3D モデルがカメラの前面に配置されます。 モデルが配置されたら、カメラを移動し、ARKit によってモデルが配置されたままになるようにします。
 
-### <a name="5-pause-the-augmented-reality-session"></a>5。拡張された現実のセッションを一時停止する
+### <a name="5-pause-the-augmented-reality-session"></a>5.拡張された現実のセッションを一時停止する
 
-ビューコントローラーが表示されていない場合 (メソッドの`ViewWillDisappear`場合) は、arkit セッションを一時停止することをお勧めします。
+`ViewWillDisappear` メソッドで、ビューコントローラーが表示されていないときに ARKit セッションを一時停止することをお勧めします。
 
 ```csharp
 SceneView.Session.Pause();
 ```
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>まとめ
 
-上記のコードでは、単純な ARKit アプリケーションが生成されます。 さらに複雑な例としては、拡張された現実`IARSCNViewDelegate`セッションをホストするビューコントローラーがを実装し、追加のメソッドを実装することが想定されています。
+上記のコードでは、単純な ARKit アプリケーションが生成されます。 より複雑な例としては、拡張された現実セッションをホストするビューコントローラーが `IARSCNViewDelegate`を実装し、追加のメソッドを実装することが想定されています。
 
 ARKit は、surface tracking やユーザー操作など、より高度な機能を備えています。 ARKit の追跡と UrhoSharp の組み合わせの例については、 [urhosharp デモ](urhosharp.md)を参照してください。
 

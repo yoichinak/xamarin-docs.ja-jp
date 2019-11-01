@@ -3,20 +3,20 @@ title: Xamarin Android TableLayout
 ms.prod: xamarin
 ms.assetid: 0C7B9C95-5E5F-A069-BA37-984E49F7DCAD
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/06/2018
-ms.openlocfilehash: 0e09bf2364df9b672a9612829eaa7a8ba343b0e9
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 4175b1fa62b2bc0e4209d13934c2bdbdd1e2a085
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70758399"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028749"
 ---
 # <a name="xamarinandroid-tablelayout"></a>Xamarin Android TableLayout
 
-[`TableLayout`](xref:Android.Widget.TableLayout)はです。[`ViewGroup`](xref:Android.Views.ViewGroup)
-子を表示する[`View`](xref:Android.Views.View)
+[`TableLayout`](xref:Android.Widget.TableLayout)は[`ViewGroup`](xref:Android.Views.ViewGroup)
+子[`View`](xref:Android.Views.View)が表示されます。
 行と列の要素。
 
 **HelloTableLayout**という名前の新しいプロジェクトを開始します。
@@ -102,12 +102,12 @@ ms.locfileid: "70758399"
 </TableLayout>
 ```
 
-これが HTML テーブルの構造に似ていることに注意してください。 、[`TableLayout`](xref:Android.Widget.TableLayout)
-要素は HTML `<table>`要素に似ています。[`TableRow`](xref:Android.Widget.TableRow)
-は要素に`<tr>`似ていますが、セルの場合は任意の種類[`View`](xref:Android.Views.View)の要素を使用できます。 この例では、[`TextView`](xref:Android.Widget.TextView)
-は、各セルに対して使用されます。 一部の行の間には、水平線を描画[`View`](xref:Android.Views.View)するために使用される基本もあります。
+これが HTML テーブルの構造に似ていることに注意してください。 [`TableLayout`](xref:Android.Widget.TableLayout)
+要素は HTML `<table>` 要素に似ています。[`TableRow`](xref:Android.Widget.TableRow)
+は `<tr>` の要素に似ています。ただし、セルに対しては、任意の種類の[`View`](xref:Android.Views.View)要素を使用できます。 この例では、 [`TextView`](xref:Android.Widget.TextView)
+は、各セルに対して使用されます。 一部の行の間には、基本的な[`View`](xref:Android.Views.View)もあります。これは、水平線を描画するために使用されます。
 
-**HelloTableLayout**アクティビティによって、このレイアウトが[`OnCreate()`](xref:Android.App.Activity.OnCreate*)
+**HelloTableLayout**アクティビティによって、このレイアウトが読み込まれることを確認します。 [`OnCreate()`](xref:Android.App.Activity.OnCreate*)
 b
 
 ```csharp
@@ -118,16 +118,16 @@ protected override void OnCreate (Bundle savedInstanceState)
 }
 ```
 
-) [`SetContentView(int)`](xref:Android.App.Activity.SetContentView*)メソッドは、リソース ID [`Activity`](xref:Android.App.Activity) &mdash; `Resource.Layout.Main`によって指定されたのレイアウトファイルを読み込み、リソース **/レイアウト/メインの axml**レイアウトファイルを参照します。
+[`SetContentView(int)`](xref:Android.App.Activity.SetContentView*)) メソッドは、リソース ID によって指定された[`Activity`](xref:Android.App.Activity)のレイアウトファイルを読み込み `Resource.Layout.Main` &mdash; リソース **/レイアウト/メインの axml**レイアウトファイルを参照します。
 
 アプリケーションを実行します。 次のように表示されます。
 
 [![複数のテーブル行を表示している TableLayout アプリのスクリーンショットの例](table-layout-images/helloviews3.png)](table-layout-images/helloviews3.png#lightbox)
 
-## <a name="references"></a>リファレンス
+## <a name="references"></a>関連項目
 
 - [`TableLayout`](xref:Android.Widget.TableLayout)
 - [`TableRow`](xref:Android.Widget.TableRow)
 - [`TextView`](xref:Android.Widget.TextView)
 
-_このページの一部は、Android オープンソースプロジェクトによって作成および共有され、 [Creative Commons 2.5 属性](http://creativecommons.org/licenses/by/2.5/)で説明されている条項に従って使用される作業に基づいて変更されます。_
+_このページの一部は、Android オープンソースプロジェクトによって作成および共有され、 [Creative Commons 2.5 属性](https://creativecommons.org/licenses/by/2.5/)で説明されている条項に従って使用される作業に基づいて変更されます。_

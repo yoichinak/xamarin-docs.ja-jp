@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin で watchOS force touch �
 ms.prod: xamarin
 ms.assetid: 5A7F83FB-9BC4-4812-92C5-CEC8DAE8211E
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: c37d8592b7aadc2c88c31826bc954abfa3c0836d
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: f848433a5a668e247142aa4f47374c2c6531b55d
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70766802"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032694"
 ---
 # <a name="watchos-menu-control-force-touch-in-xamarin"></a>Xamarin の watchOS Menu コントロール (Force Touch)
 
@@ -85,7 +85,7 @@ void MenuItemTapped ()
 
 ### <a name="removing-at-runtime"></a>削除 (実行時に)
 
-@No__t_0 メソッドを呼び出して、*プログラムによって追加された*すべてのメニュー項目を削除できます。
+`ClearAllMenuItems` メソッドを呼び出して、*プログラムによって追加された*すべてのメニュー項目を削除できます。
 
 ストーリーボードで構成されているメニュー項目を消去することはできません。
 

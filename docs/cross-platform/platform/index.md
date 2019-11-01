@@ -3,15 +3,15 @@ title: Xamarin でのプログラミング言語のサポート
 description: このドキュメントでは、Xamarin でサポートされるさまざまなプログラミング言語について説明します。 、、 C#ポータブルF#ビジュアル Basic.NET、および Razor テンプレートについて説明します。
 ms.prod: xamarin
 ms.assetid: CEE8C464-67D7-45F4-9614-EAEF5217CACC
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/18/2018
-ms.openlocfilehash: 95c63d446f961738ad71242671d632620316b879
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: db963a38322e809d1aa82c02fbb9ae5cc4a650fc
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290900"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73014628"
 ---
 # <a name="programming-language-support-in-xamarin"></a>Xamarin でのプログラミング言語のサポート
 
@@ -23,7 +23,7 @@ Version 5 でC#は、非同期操作を表すために、async と await の2つ
 
 ### <a name="c-6-language-featurescross-platformplatformcsharp-sixmd"></a>[C# 6 の言語機能](~/cross-platform/platform/csharp-six.md)
 
-C#言語の最新バージョン (バージョン 6) では、言語を進化させて、定型句を小さくし、わかりやすくし、一貫性を高めることができます。 クリーンな初期化構文、ブロック内で`await` `catch/finally`使用する機能、および null 条件`?`演算子は特に便利です。
+C#言語の最新バージョン (バージョン 6) では、言語を進化させて、定型句を小さくし、わかりやすくし、一貫性を高めることができます。 クリーンな初期化構文、`catch/finally` ブロックで `await` を使用する機能、および null 条件付き `?` 演算子は特に便利です。
 
 ## <a name="ffsharpindexmd"></a>[F#](fsharp/index.md)
 

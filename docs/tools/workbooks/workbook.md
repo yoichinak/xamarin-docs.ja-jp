@@ -3,15 +3,15 @@ title: 対話型 Workbooks
 description: このドキュメントでは、Xamarin Workbooks を使用して、実験C# 、教育、トレーニング、または調査のためのコードを含むライブドキュメントを作成する方法について説明します。
 ms.prod: xamarin
 ms.assetid: B79E5DE9-5389-4691-9AA3-FF4336CE294E
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/30/2017
-ms.openlocfilehash: 7b3c356460d9427821843dc084b3f306c026ffa0
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: a6ca347c231d001cab521d7280a66b714b6a5aef
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70293086"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029564"
 ---
 # <a name="interactive-workbooks"></a>対話型 Workbooks
 
@@ -27,25 +27,25 @@ ms.locfileid: "70293086"
 
 コード編集ウィンドウでは、コード補完、構文の色分け、インラインライブ診断、および複数行のステートメントのサポートが提供されます。
 
-[![](workbook-images/inspector-0.6.0-repl-small.png "コードの編集ウィンドウでは、コード補完、構文の色分け、インラインライブ診断、および複数行のステートメントのサポートが提供されます。")](workbook-images/inspector-0.6.0-repl.png#lightbox)
+[![](workbook-images/inspector-0.6.0-repl-small.png "The code editing window provides code completion, syntax coloring, inline live-diagnostics, and multi-line statement support")](workbook-images/inspector-0.6.0-repl.png#lightbox)
 
-Xamarin Workbooks は、 `.workbook`ファイルに保存されます。これは、上部にメタデータを含む commonmark ファイルです (ブックを保存する方法の詳細については、「[ブックのファイルの種類](#workbooks-files-types)」を参照してください)。
+Xamarin Workbooks は `.workbook` ファイルに保存されます。これは、上部にいくつかのメタデータを含む CommonMark ファイルです (ブックを保存する方法の詳細については、「[ブックのファイルの種類](#workbooks-files-types)」を参照してください)。
 
 ### <a name="nuget-package-support"></a>NuGet パッケージのサポート
 
-多くの一般的な NuGet パッケージは、Xamarin Workbooks で直接サポートされています。 パッケージを検索するには、**ファイル > 追加パッケージ**を参照します。 パッケージを追加すると、パッケージ`#r`アセンブリを参照するステートメントが自動的に作成され、すぐに使用できるようになります。
+多くの一般的な NuGet パッケージは、Xamarin Workbooks で直接サポートされています。 パッケージを検索するには、**ファイル > 追加パッケージ**を参照します。 パッケージを追加すると、パッケージアセンブリを参照するステートメントが自動的に `#r` され、すぐに使用できるようになります。
 
 パッケージ参照を含むブックを保存すると、それらの参照も保存されます。 ブックを別のユーザーと共有すると、参照先のパッケージが自動的にダウンロードされます。
 
 ブックでの NuGet パッケージのサポートには、いくつかの既知の制限があります。
 
 - ネイティブライブラリは、iOS でのみサポートされ、マネージライブラリにリンクされている場合にのみサポートされます。
-- ファイルまたは PowerShell `.targets`スクリプトに依存するパッケージは、予期したとおりに動作しない可能性があります。
+- `.targets` ファイルまたは PowerShell スクリプトに依存するパッケージは、予期したとおりに動作しない可能性があります。
 - パッケージの依存関係を削除または変更するには、テキストエディターでブックのマニフェストを編集します。 適切なパッケージ管理を行うことができます。
 
 ### <a name="xamarinforms-support"></a>Xamarin. フォームのサポート
 
-ブックで Xamarin. Forms NuGet パッケージを参照すると、ブックアプリによってメインビューが Xamarin. フォームベースに変更されます。 にアクセスするには`Xamarin.Forms.Application.Current.MainPage`、を使用します。
+ブックで Xamarin. Forms NuGet パッケージを参照すると、ブックアプリによってメインビューが Xamarin. フォームベースに変更されます。 アクセスするには `Xamarin.Forms.Application.Current.MainPage`を使用します。
 
 [ビューインスペクター] タブには、レイアウトを理解するのに役立つ、Xamarin のビュー階層を表示するための特別なサポートも用意されています。
 
@@ -53,7 +53,7 @@ Xamarin Workbooks は、 `.workbook`ファイルに保存されます。これ�
 
 次に示すように、含まれているリッチテキストエディターを使用して、コードの周囲のテキストを編集できます。
 
-![](workbook-images/inspector-0.6.2-editing.gif "組み込みのリッチテキストエディターを使用して、コードの周囲のテキストを編集する")
+![](workbook-images/inspector-0.6.2-editing.gif "Edit the text around the code using the built-in rich text editor")
 
 ### <a name="markdown-authoring"></a>Markdown の作成
 
@@ -61,7 +61,7 @@ Xamarin Workbooks は、 `.workbook`ファイルに保存されます。これ�
 
 ブックを編集してブッククライアント内に保存すると、CommonMark のテキストが再フォーマットされる場合があることに注意してください。
 
-ブックファイルで yaml メタデータを有効にするために使用している commonmark 拡張`---`機能により、はその目的のために予約されていることに注意してください。 テキストに[テーマ](http://spec.commonmark.org/0.27/#thematic-break)を作成する場合は、代わりにまたは`***` `___`を使用する必要があります。 保存中のバグが原因で、ブック1.2 およびそれより前のバージョンでは、このような中断を避ける必要があります。
+ブックファイルで YAML メタデータを有効にするために使用している CommonMark 拡張機能により、`---` はその目的のために予約されていることに注意してください。 テキストに[テーマ](https://spec.commonmark.org/0.27/#thematic-break)を作成する場合は、代わりに `***` または `___` を使用する必要があります。 保存中のバグが原因で、ブック1.2 およびそれより前のバージョンでは、このような中断を避ける必要があります。
 
 ### <a name="improvements-in-workbooks-13"></a>ブック1.3 の機能強化
 
@@ -80,7 +80,7 @@ Xamarin Workbooks は、 `.workbook`ファイルに保存されます。これ�
 1. 英数字とダッシュ以外の文字はすべて削除されます。
 1. すべてのスペースはダッシュで置き換えられます。
 
-これは、"重要なヘッダー" のようなヘッダーがの`important-header` id を取得し、ブック内のへ`#important-header`のリンクを挿入することによってリンクできることを意味します。
+これは、"重要なヘッダー" のようなヘッダーが `important-header` の id を取得し、ブック内の `#important-header` へのリンクを挿入することによってリンクできることを意味します。
 
 ## <a name="document-structure"></a>ドキュメント構造
 
@@ -118,29 +118,29 @@ Xamarin Workbooks は、 `.workbook`ファイルに保存されます。これ�
 
 ### <a name="plain-files"></a>プレーンファイル
 
-既定では、ブックは commonmark 形式の`.workbook`テキストを含むプレーンテキストファイルとして保存されます。
+既定では、ブックは CommonMark 形式のテキストを含むプレーンテキスト `.workbook` ファイルとして保存されます。
 
 ### <a name="packages"></a>パッケージ
 
-ブックパッケージは、 `.workbook`拡張子を持つという名前のディレクトリです。
+ブックパッケージは、`.workbook` 拡張子を持つという名前のディレクトリです。
 Mac の Finder で Xamarin Workbooks [開く] ダイアログと [最近使ったファイル] メニューでは、このディレクトリはファイルであるかのように認識されます。
 
-ディレクトリには、Xamarin Workbooks `index.workbook`に読み込まれる実際のプレーンテキストブックであるファイルが含まれている必要があります。 ディレクトリには、イメージや他の`index.workbook`ファイルなど、で必要なリソースを含めることもできます。
+ディレクトリには `index.workbook` ファイルが含まれている必要があります。これは Xamarin Workbooks に読み込まれる実際のプレーンテキストブックです。 ディレクトリには、イメージやその他のファイルなど、`index.workbook`に必要なリソースを含めることもできます。
 
-同じディレクトリのリソース`.workbook`を参照するプレーンテキストファイルがブック0.99.3 以降で開かれている場合、そのファイルが保存されると、 `.workbook`パッケージに変換されます。 これは、Mac と Windows の両方で当てはまります。
+同じディレクトリのリソースを参照するプレーンテキスト `.workbook` ファイルが0.99.3 以降のブックで開かれている場合、そのファイルは保存されるときに `.workbook` パッケージに変換されます。 これは、Mac と Windows の両方で当てはまります。
 
 > [!NOTE]
-> Windows ユーザーは`package.workbook\index.workbook`ファイルを直接開きますが、それ以外の場合、パッケージは Mac と同じように動作します。
+> Windows ユーザーは `package.workbook\index.workbook` ファイルを直接開きますが、それ以外の場合、パッケージは Mac と同じように動作します。
 
 ### <a name="archives"></a>アーカイブ
 
-フォルダーであるブックパッケージは、インターネット経由で簡単に配布することが困難な場合があります。 このソリューションは、ブックアーカイブです。 ブックアーカイブは、という`.workbook`拡張子を持つ、zip 圧縮されたブックパッケージです。
+フォルダーであるブックパッケージは、インターネット経由で簡単に配布することが困難な場合があります。 このソリューションは、ブックアーカイブです。 ブックアーカイブは、zip 圧縮されたブックパッケージであり、`.workbook` の拡張子を持つという名前が付けられています。
 
 ブック1.1 以降では、ブックパッケージを保存するときに、[保存] ダイアログボックスで、アーカイブとして保存することを選択できます。 ブック1.0 には、アーカイブを作成または保存するための組み込みの方法はありませんでした。
 
 ブック1.0 では、ブックのアーカイブが開かれると、ブックは透過的にブックパッケージに変換され、zip ファイルは失われていました。 ブック1.1 では、zip ファイルはそのまま残ります。 ユーザーがアーカイブを保存すると、新しい zip ファイルに置き換えられます。
 
-ブックのアーカイブを手動で作成するには、ブックパッケージを右クリックして [Mac で**圧縮**] を選択するか、Windows の **> 圧縮 (zip 形式) フォルダーに送信**します。 次に、zip ファイルの名前を`.workbook`ファイル拡張子に変更します。 これは、プレーンブックファイルではなく、ブックパッケージでのみ機能します。
+ブックのアーカイブを手動で作成するには、ブックパッケージを右クリックして [Mac で**圧縮**] を選択するか、Windows の **> 圧縮 (zip 形式) フォルダーに送信**します。 次に、zip ファイルの名前を `.workbook` ファイル拡張子に変更します。 これは、プレーンブックファイルではなく、ブックパッケージでのみ機能します。
 
 ## <a name="related-links"></a>関連リンク
 

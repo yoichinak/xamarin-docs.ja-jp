@@ -4,15 +4,15 @@ description: このドキュメントでは、DataAccess_Adv サンプルにつ�
 ms.prod: xamarin
 ms.assetid: 2CB8150E-CD2C-4E97-8605-1EE8CBACFEEC
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/11/2016
-ms.openlocfilehash: 9441596cd457c3cc3a881e5db319ec3bbfc5a312
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 060e4b8e7856e0024e6d236652c2b04c1da16f66
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70766858"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73008251"
 ---
 # <a name="using-data-in-an-ios-app"></a>IOS アプリでのデータの使用
 
@@ -38,7 +38,7 @@ UI コントロールの詳細については、「 [iOS のテーブルとセ�
 - リストを読み取っています
 - 個々のレコードの読み取り
 
-@No__t_0 クラスの2つのメソッドは次のとおりです。
+`StockDatabase` クラスの2つのメソッドは次のとおりです。
 
 ```csharp
 public IEnumerable<Stock> GetStocks ()
@@ -59,7 +59,7 @@ iOS では、`UITableView` とは異なる方法でデータを表示します�
 
 ## <a name="create-and-update"></a>作成と更新
 
-アプリケーションコードを簡略化するために、PrimaryKey が設定されているかどうかに応じて挿入または更新を行う1つの save メソッドが用意されています。 @No__t_0 プロパティは `[PrimaryKey]` 属性でマークされているので、コードで設定しないでください。
+アプリケーションコードを簡略化するために、PrimaryKey が設定されているかどうかに応じて挿入または更新を行う1つの save メソッドが用意されています。 `Id` プロパティは `[PrimaryKey]` 属性でマークされているので、コードで設定しないでください。
 このメソッドは、(主キープロパティをチェックして) 値が以前に保存されているかどうかを検出し、それに応じてオブジェクトを挿入または更新します。
 
 ```csharp
@@ -81,7 +81,7 @@ public int SaveStock (Stock item)
 
 ## <a name="delete"></a>削除
 
-@No__t_0 メソッドと `Update` メソッドとは異なり、`Delete<T>` メソッドは、完全な `Stock` オブジェクトではなく、主キーの値のみを受け入れることができます。
+`Insert` メソッドと `Update` メソッドとは異なり、`Delete<T>` メソッドは、完全な `Stock` オブジェクトではなく、主キーの値のみを受け入れることができます。
 この例では、`Stock` オブジェクトがメソッドに渡されますが、`Delete<T>` メソッドに渡されるのは Id プロパティだけです。
 
 ```csharp
@@ -99,7 +99,7 @@ public int DeleteStock(Stock stock)
 モバイルアプリケーションでこれを簡単に実現するには、既存の SQLite データベースファイルをアプリに発送し、書き込み可能なディレクトリにコピーしてからアクセスします。 SQLite は多くのプラットフォームで使用される標準のファイル形式であるため、SQLite データベースファイルを作成するために使用できるツールがいくつかあります。
 
 - **SQLite Manager Firefox Extension** – Mac および Windows で動作し、IOS および Android と互換性のあるファイルを生成します。
-- **コマンドライン**–「 [Www.sqlite.org/sqlite.html](http://www.sqlite.org/sqlite.html) 」を参照してください。
+- **コマンドライン**–「 [Www.sqlite.org/sqlite.html](https://www.sqlite.org/sqlite.html) 」を参照してください。
 
 アプリケーションと共に配布するデータベースファイルを作成する場合は、テーブルと列の名前付けを使用して、コードが期待するものと一致することを確認します。特に、SQLite.NET C#を使用していて、名前がクラスやプロパティと一致することを期待する場合は特に、または、関連付けられているカスタム属性)。
 

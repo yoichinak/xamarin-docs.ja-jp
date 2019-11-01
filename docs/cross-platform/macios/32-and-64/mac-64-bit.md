@@ -3,15 +3,15 @@ title: Xamarin. Mac 統合アプリケーションを64ビットに更新する
 description: このガイドでは、64ビットをターゲットとするように Xamarin. Mac アプリケーションを更新する方法について説明します。 また、この変更を行うときに発生する可能性があるエラーの種類の例も示します。
 ms.prod: xamarin
 ms.assetid: C3810A74-539C-4FFB-B47F-68CA5F7BCDAD
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/22/2018
-ms.openlocfilehash: 5539bab417c5efc0064cd1753cb74c7524463ee5
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 1ae807869e44ad035d2681cf777af0e66ced8255
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70765922"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016321"
 ---
 # <a name="updating-xamarinmac-unified-applications-to-64-bit"></a>Xamarin. Mac 統合アプリケーションを64ビットに更新する
 
@@ -25,7 +25,7 @@ ms.locfileid: "70765922"
 
    ![プロジェクトのコンテキストメニュー](mac-64-bit-images/1-contextual_menu-vsmac.png "プロジェクトのコンテキストメニュー")
 
-2. **Mac ビルド**を選択し、**サポートされているアーキテクチャ**を**x86 \_64**に設定します。
+2. **Mac ビルド**を選択し、**サポートされているアーキテクチャ**を**x86\_64**に設定します。
 
    [![サポートされているアーキテクチャを x86_64 に設定する](mac-64-bit-images/2-project_options-vsmac.png "サポートされているアーキテクチャを x86_64 に設定する")](mac-64-bit-images/2-project_options-vsmac-large.png#lightbox)
 

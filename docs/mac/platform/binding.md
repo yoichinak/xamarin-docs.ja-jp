@@ -4,26 +4,26 @@ description: このドキュメントでは、マジックペンとサンプル�
 ms.prod: xamarin
 ms.assetid: 521707CD-79D3-488A-84CB-A37EBF93AC94
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 01/13/2017
-ms.openlocfilehash: 59ac5a4f9949f1e65e67b9629c43ddb4b822bf43
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: c478437a9c84475e8c31484523db16336f8808e6
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290061"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029929"
 ---
 # <a name="binding-mac-libraries-for-xamarinmac"></a>Xamarin. Mac 用の Mac ライブラリのバインド
 
 Xamarin. Mac での目的 C ライブラリのバインドについては、次のリンク先を参照してください。
 
 - [**概要**](~/cross-platform/macios/binding/overview.md)-
-  バインディングのしくみについて説明します。
-- [**バインディングの目的 C ライブラリ**](~/cross-platform/macios/binding/objective-c-libraries.md)-
-  Xamarin プロジェクトで使用する目的の C ライブラリをバインドする方法について説明します。
+  バインドのしくみについて説明します。
+- 「[**目標 c ライブラリのバインド**](~/cross-platform/macios/binding/objective-c-libraries.md)」では、Xamarin プロジェクトで使用する目的の c ライブラリをバインドする方法について -
+  説明します。
 - [**型定義のリファレンスガイド**](~/cross-platform/macios/binding/binding-types-reference.md)-
-  バインディングの生成プロセスを実行するために作成者が使用できるすべての属性について説明します。
+  バインド作成者がバインディング生成プロセスを駆動するために使用できるすべての属性について説明します。
 
 ## <a name="objective-sharpiecross-platformmaciosbindingobjective-sharpieindexmd"></a>[Objective Sharpie](~/cross-platform/macios/binding/objective-sharpie/index.md)
 

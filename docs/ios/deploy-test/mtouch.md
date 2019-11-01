@@ -4,15 +4,15 @@ description: このドキュメントでは mtouch について説明します�
 ms.prod: xamarin
 ms.assetid: BCA491DA-E4C1-8689-3EC9-E4C72495A798
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/05/2017
-ms.openlocfilehash: 9b2cb44dff7712953454a9add71f092956e3c759
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 2a0f9d063b319c0f412f6e8f47a59f0f994678ae
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70762769"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73026281"
 ---
 # <a name="using-mtouch-to-bundle-xamarinios-apps"></a>mtouch を使用する Xamarin.iOS アプリのバンドル
 
@@ -120,6 +120,3 @@ $ mtouch —sdkroot /Applications/Xcode.app -installdev=MyApp.app
 
 その他のコマンド ライン オプションについては、[mtouch(1)](http://docs.go-mono.com/?link=man%3amtouch(1)) マニュアル ページをご覧ください。
 
-## <a name="related-links"></a>関連リンク
-
-- [mtouch(1)](http://iosapi.xamarin.com/?link=man%3amtouch(1))

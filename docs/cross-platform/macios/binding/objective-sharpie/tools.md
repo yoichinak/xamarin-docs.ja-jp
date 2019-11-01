@@ -3,15 +3,15 @@ title: 目標マジックペンツール & コマンド
 description: このドキュメントでは、マジックペンに含まれるツールの概要と、それらで使用するコマンドライン引数について説明します。
 ms.prod: xamarin
 ms.assetid: A84E209B-8932-4CC1-BAD1-7FD51F798A97
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/05/2015
-ms.openlocfilehash: 13f3000315e91cec7ff2422cff3b520997ba26fd
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 2179154aa6dc78a8b0b6b418d780e7996f8e557d
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280910"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73015921"
 ---
 # <a name="objective-sharpie-tools--commands"></a>目標マジックペンツール & コマンド
 
@@ -51,16 +51,16 @@ Available Tools:
 
 目標マジックペンには、次のツールが用意されています。
 
-|Tool|説明|
+|ツール|説明|
 |--- |--- |
 |**xcode**|現在の Xcode のインストールと、使用可能な iOS および Mac Sdk のバージョンに関する情報を提供します。 この情報は、後でバインドを生成するときに使用します。|
-|**pod**|(ローカルディレクトリ内の) を検索し、構成し、インストールします。また、マスター仕様リポジトリから使用できる目的の C [Cocoa](https://cocoapods.org/)ライブラリをバインドします。 このツールは、インストールされているを評価して、次の`bind`ツールに渡す正しい入力を自動的に推測します。 3\.0 の新。|
-|**bind**|目的の C ライブラリの`*.h`ヘッダーファイル () を解析し、初期の[ApiDefinition.cs ファイルと StructsAndEnums.cs](~/cross-platform/macios/binding/objective-sharpie/platform/apidefinitions-structsandenums.md)ファイルに挿入します。|
+|**ポッド**|(ローカルディレクトリ内の) を検索し、構成し、インストールします。また、マスター仕様リポジトリから使用できる目的の C [Cocoa](https://cocoapods.org/)ライブラリをバインドします。 このツールは、インストールされているを評価して、次の `bind` ツールに渡す正しい入力を自動的に推測します。 3\.0 の新。|
+|**bind**|ApiDefinition.cs ライブラリ内のヘッダーファイル (`*.h`) を、初期の[ファイルと StructsAndEnums.cs](~/cross-platform/macios/binding/objective-sharpie/platform/apidefinitions-structsandenums.md)ファイルに解析します。|
 |**update**|新しいバージョンの目標マジックペンを確認し、インストーラーが使用可能な場合はダウンロードして起動します。|
-|**verify-docs**|属性に関する`[Verify]`詳細情報を表示します。|
+|**verify-docs**|`[Verify]` の属性に関する詳細情報を表示します。|
 |**docs**|既定の web ブラウザーでこのドキュメントに移動します。|
 
-特定の目的のマジックペンツールに関するヘルプを表示するには、ツールの名前`-help`とオプションを入力します。 たとえば、は`sharpie xcode -help`次の出力を返します。
+特定の目標マジックペンツールに関するヘルプを表示するには、ツールの名前と `-help` オプションを入力します。 たとえば、`sharpie xcode -help` は次の出力を返します。
 
 ```
 $ sharpie xcode -help
@@ -74,7 +74,7 @@ Xcode Options:
   -sdks            List all available Xcode SDKs. Pass -verbose for more details.
 ```
 
-バインドプロセスを開始する前に、次のコマンドをターミナル`sharpie xcode -sdks`に入力して、現在インストールされている sdk に関する情報を取得する必要があります。 インストールされている Xcode のバージョンによっては、出力が異なる場合があります。 目標マジックペンは、次のディレクトリに`Xcode*.app`インストールさ`/Applications`れている sdk を検索します。
+バインドプロセスを開始する前に、次のコマンドをターミナル `sharpie xcode -sdks`に入力して、現在インストールされている Sdk に関する情報を取得する必要があります。 インストールされている Xcode のバージョンによっては、出力が異なる場合があります。 目標マジックペンは、`/Applications` ディレクトリの `Xcode*.app` にインストールされている Sdk を検索します。
 
 ```
 $ sharpie xcode -sdks
@@ -87,4 +87,4 @@ sdk: macosx10.10     arch: x86_64  i386
 sdk: watchos2.0      arch: armv7
 ```
 
-この記事では、 `iphoneos9.1` SDK がコンピューターにインストールされており、アーキテクチャが`arm64`サポートされていることがわかります。 このセクションのすべてのサンプルに対して、この値を使用します。 この情報が記載されたので、目的の C ライブラリヘッダーファイルを最初`ApiDefinition.cs`のおよび`StructsAndEnums.cs`バインドプロジェクトに解析する準備ができました。
+上記の手順では、`iphoneos9.1` SDK がコンピューターにインストールされており、`arm64` アーキテクチャのサポートがあることがわかります。 このセクションのすべてのサンプルに対して、この値を使用します。 この情報が記載されたので、目的の C ライブラリのヘッダーファイルを、バインドプロジェクトの初期 `ApiDefinition.cs` と `StructsAndEnums.cs` に解析する準備ができました。

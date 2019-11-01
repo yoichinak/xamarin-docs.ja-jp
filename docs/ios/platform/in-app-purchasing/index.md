@@ -4,15 +4,15 @@ description: このドキュメントでは、StoreKit Api を使用してデジ
 ms.prod: xamarin
 ms.assetid: B41929D8-47E4-466D-1F09-6CC3C09C83B2
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: f0cc04896b5c6e9b620b24c84d5c9d2a09b9cf4a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 1efb8df4bac307d0e73da6bcbf645077cb63c839
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70752636"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032358"
 ---
 # <a name="in-app-purchasing-in-xamarinios"></a>Xamarin. iOS でのアプリ内購入
 
@@ -28,11 +28,11 @@ iOS アプリケーションでは、StoreKit を使用してデジタル製品�
 
 このドキュメントでは、これらのすべての手順を完了して、Xamarin. iOS を使用してアプリ内購入を提供する方法について説明します。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>［要件］
 
 アプリ内購入をサポートするには、Xcode 7 以降で Xamarin. iOS 5.0 以降を使用する必要があります。
 
-## <a name="contents"></a>目次
+## <a name="contents"></a>コンテンツ
 
 - [アプリ内購入の基本と構成](~/ios/platform/in-app-purchasing/in-app-purchase-basics-and-configuration.md)
 
@@ -46,7 +46,7 @@ iOS アプリケーションでは、StoreKit を使用してデジタル製品�
 
 - [サブスクリプションとレポート](~/ios/platform/in-app-purchasing/subscriptions-and-reporting.md)
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>まとめ
 
 この記事では、アプリ内購入の概念を紹介しました。この記事では、Xamarin を使用してアプリケーションを構成し、それを利用し、例を紹介する方法を説明しました。 ここで説明しました。
 

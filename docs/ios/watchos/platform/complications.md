@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin で watchOS の複雑さ�
 ms.prod: xamarin
 ms.assetid: 7ACD9A2B-CF69-46EA-B0C8-10E7D81216E8
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/03/2017
-ms.openlocfilehash: a4d96b9a092dfc534f40e3e62737af2a3a0004f5
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 5aea7ae094e0b79831a5fb84397108ca09e18360
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768626"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028300"
 ---
 # <a name="watchos-complications-in-xamarin"></a>Xamarin の watchOS の複雑さ
 
@@ -22,9 +22,9 @@ _watchOS を使用すると、開発者はウォッチ顔に関するカスタ�
 
 各 watchOS アプリケーションでは、1つの複雑なアプリケーションしか使用できないことに注意してください。
 
-まず、 [Apple のドキュメント](https://developer.apple.com/library/watchos/documentation/General/Conceptual/WatchKitProgrammingGuide/ManagingComplications.html)を読んで、アプリが複雑に適しているかどうかを判断します。 表示には`CLKComplicationFamily` 、次の5種類から選択できます。
+まず、 [Apple のドキュメント](https://developer.apple.com/library/watchos/documentation/General/Conceptual/WatchKitProgrammingGuide/ManagingComplications.html)を読んで、アプリが複雑に適しているかどうかを判断します。 表示には、次の5種類の `CLKComplicationFamily` を選択できます。
 
-[![](complications-images/all-complications-sml.png "5種類の CLKComplicationFamily を使用できます。小、モジュール式 s、モジュール式 l、Utilitarian s、Utilitarian l")](complications-images/all-complications.png#lightbox)
+[![](complications-images/all-complications-sml.png "The 5 CLKComplicationFamily types available: Circular Small, Modular Small, Modular Large, Utilitarian Small, Utilitarian Large")](complications-images/all-complications.png#lightbox)
 
 アプリでは、表示されるデータに応じて、1つまたは5つのスタイルのみを実装できます。
 また、時間の移動をサポートし、ユーザーが Digital Crown をオンにしたときの過去または将来の時刻の値を指定することもできます。
@@ -41,13 +41,13 @@ _watchOS を使用すると、開発者はウォッチ顔に関するカスタ�
 
 **[新しいプロジェクトの追加]** ウィザードには、複雑なコントローラークラスを自動的に作成し、**情報**ファイルを構成するためのチェックボックスがあります。
 
-![](complications-images/file-new-project-sml.png "[複雑なものを含める] チェックボックス")
+![](complications-images/file-new-project-sml.png "The Include Complication checkbox")
 
 ### <a name="existing-projects"></a>既存のプロジェクト
 
 既存のプロジェクトに複雑なものを追加するには、次のようにします。
 
-1. 新しい**ComplicationController.cs**クラスファイルを作成し、 `CLKComplicationDataSource`を実装します。
+1. 新しい**ComplicationController.cs**クラスファイルを作成し、`CLKComplicationDataSource`を実装します。
 2. アプリの情報を構成**し**て、複雑なものを公開し、どのような複雑なファミリがサポートされているかを識別します。
 
 これらの手順については、以下で詳しく説明します。
@@ -56,7 +56,7 @@ _watchOS を使用すると、開発者はウォッチ顔に関するカスタ�
 
 ### <a name="clkcomplicationdatasource-class"></a>CLKComplicationDataSource クラス
 
-次C#のテンプレートには、を`CLKComplicationDataSource`実装するために最低限必要なメソッドが含まれています。
+次C#のテンプレートには、`CLKComplicationDataSource`を実装するために最低限必要なメソッドが含まれています。
 
 ```csharp
 [Register ("ComplicationController")]
@@ -81,23 +81,23 @@ public class ComplicationController : CLKComplicationDataSource
 
 ### <a name="infoplist"></a>Info.plist
 
-Watch 拡張機能の**情報 plist**ファイルでは、 `CLKComplicationDataSource`の名前と、サポートする必要のある複雑なファミリを指定する必要があります。
+Watch 拡張機能の**情報 plist**ファイルには、`CLKComplicationDataSource` の名前と、サポートする必要のある複雑なファミリを指定する必要があります。
 
-[![](complications-images/complications-config-sml.png "複雑なファミリの種類")](complications-images/complications-config.png#lightbox)
+[![](complications-images/complications-config-sml.png "The complication family types")](complications-images/complications-config.png#lightbox)
 
-**データソースクラス**のエントリの一覧には、複雑な`CLKComplicationDataSource`ロジックを含むサブクラスをサブクラス化するクラス名が表示されます。
+**データソースクラス**のエントリの一覧には、複雑なロジックを含む `CLKComplicationDataSource` サブクラスをサブクラス化するクラス名が表示されます。
 
 ## <a name="clkcomplicationdatasource"></a>CLKComplicationDataSource
 
-すべての複雑な機能は、 `CLKComplicationDataSource` `ICLKComplicationDataSource`インターフェイスを実装する抽象クラスのメソッドをオーバーライドして、1つのクラスに実装されます。
+すべての複雑な機能は1つのクラスに実装され、`CLKComplicationDataSource` 抽象クラス (`ICLKComplicationDataSource` インターフェイスを実装) からメソッドをオーバーライドします。
 
 ### <a name="required-methods"></a>必須のメソッド
 
 複雑な動作を実行するには、次のメソッドを実装する必要があります。
 
-- `GetPlaceholderTemplate`-構成中、またはアプリが値を指定できないときに使用される静的ディスプレイを返します。
-- `GetCurrentTimelineEntry`-複雑な動作が実行されている場合は、適切な表示を計算します。
-- `GetSupportedTimeTravelDirections``CLKComplicationTimeTravelDirections` - `None`、 、`Forward`、などのオプションを返します。`Forward | Backward` `Backward`
+- `GetPlaceholderTemplate`-構成中、またはアプリが値を指定できないときに使用される静的表示を返します。
+- `GetCurrentTimelineEntry`-複雑な動作が実行されている場合に適切な表示を計算します。
+- `GetSupportedTimeTravelDirections`-`None`、`Forward`、`Backward`、`Forward | Backward`などの `CLKComplicationTimeTravelDirections` からのオプションを返します。
 
 ### <a name="privacy"></a>プライバシー
 
@@ -105,17 +105,17 @@ Watch 拡張機能の**情報 plist**ファイルでは、 `CLKComplicationDataS
 
 - `GetPrivacyBehavior` - `CLKComplicationPrivacyBehavior.ShowOnLockScreen` または `HideOnLockScreen`
 
-このメソッドからが`HideOnLockScreen`返された場合は、ウォッチがロックされているときに、アイコンまたはアプリケーション名 (およびデータではありません) のいずれかが表示されます。
+このメソッドが `HideOnLockScreen` 返す場合は、ウォッチがロックされているときに、アイコンまたはアプリケーション名 (およびデータではありません) のいずれかが表示されます。
 
-### <a name="updates"></a>Updates
+### <a name="updates"></a>更新
 
-- `GetNextRequestedUpdateDate`-オペレーティングシステムが次にアプリに対して、更新された複雑な表示データを照会する必要がある時間を返します。
+- `GetNextRequestedUpdateDate`-オペレーティングシステムが次にアプリに対してクエリを実行して、更新された複雑なデータを表示する必要がある時間を返します。
 
 IOS アプリから強制的に更新することもできます。
 
 ### <a name="supporting-time-travel"></a>タイムトラベルのサポート
 
-タイムトラベルのサポートは省略可能であり、 `GetSupportedTimeTravelDirections`メソッドによって制御されます。 、 `Forward` `Forward | Backward` 、またはが返された場合は、次のメソッドを実装する必要があります。 `Backward`
+タイムトラベルのサポートは省略可能であり、`GetSupportedTimeTravelDirections` メソッドによって制御されます。 `Forward`、`Backward`、または `Forward | Backward` が返された場合は、次のメソッドを実装する必要があります。
 
 - `GetTimelineStartDate`
 - `GetTimelineEndDate`
@@ -134,7 +134,7 @@ The [sample]() for this article supports more template styles.
 
 ## <a name="sample-code"></a>サンプル コード
 
-この例では`UtilitarianLarge`テンプレートのみがサポートされているため、この種の複雑な機能をサポートする特定のウォッチ面でのみ選択できます。 ウォッチで複雑さを*選択*すると、その**複雑さが表示さ**れ、*実行*時にはテキスト**分**  (時間の部分) が表示されます。
+この例では `UtilitarianLarge` テンプレートのみがサポートされているので、このような複雑な機能をサポートする特定のウォッチ面でのみ選択できます。 ウォッチで複雑さを*選択*すると、その**複雑さが表示さ**れ、*実行*時にはテキスト**分**  (時間の部分) が表示されます。
 
 ```csharp
 [Register ("ComplicationController")]
@@ -190,7 +190,7 @@ public class ComplicationController : CLKComplicationDataSource
 
 ### <a name="circular-small"></a>円 (小)
 
-これらのテンプレートクラス名の先頭に`CLKComplicationTemplateCircularSmall`は、次の名前が付けられます。
+これらのテンプレートクラス名の先頭には `CLKComplicationTemplateCircularSmall`が付きます。
 
 - **RingImage** -1 つのイメージを表示します。その周囲には、進行状況のリングが表示されます。
 - **RingText** -1 行のテキストを表示し、その周囲に進行状況のリングを表示します。
@@ -201,7 +201,7 @@ public class ComplicationController : CLKComplicationDataSource
 
 ### <a name="modular-small"></a>モジュール小
 
-これらのテンプレートクラス名の先頭に`CLKComplicationTemplateModularSmall`は、次の名前が付けられます。
+これらのテンプレートクラス名の先頭には `CLKComplicationTemplateModularSmall`が付きます。
 
 - **ColumnsText** -テキスト値 (2 行と2列) の小さなグリッドを表示します。
 - **RingImage** -1 つのイメージを表示します。その周囲には、進行状況のリングが表示されます。
@@ -213,7 +213,7 @@ public class ComplicationController : CLKComplicationDataSource
 
 ### <a name="modular-large"></a>モジュール l
 
-これらのテンプレートクラス名の先頭に`CLKComplicationTemplateModularLarge`は、次の名前が付けられます。
+これらのテンプレートクラス名の先頭には `CLKComplicationTemplateModularLarge`が付きます。
 
 - **[列]** -2 つの列を含む3行のグリッドを表示します。必要に応じて、各行の左側に画像を含めることもできます。
 - **Standardbody** -2 行のプレーンテキストを含む太字のヘッダー文字列を表示します。 ヘッダーでは、必要に応じて、左側に画像を表示できます。
@@ -222,7 +222,7 @@ public class ComplicationController : CLKComplicationDataSource
 
 ### <a name="utilitarian-small"></a>Utilitarian s
 
-これらのテンプレートクラス名の先頭に`CLKComplicationTemplateUtilitarianSmall`は、次の名前が付けられます。
+これらのテンプレートクラス名の先頭には `CLKComplicationTemplateUtilitarianSmall`が付きます。
 
 - **Flat** -1 行に画像といくつかのテキストを表示します (テキストは短くする必要があります)。
 - **RingImage** -1 つのイメージを表示します。その周囲には、進行状況のリングが表示されます。
@@ -231,7 +231,7 @@ public class ComplicationController : CLKComplicationDataSource
 
 ### <a name="utilitarian-large"></a>Utilitarian Large
 
-この複雑なスタイル`CLKComplicationTemplateUtilitarianLargeFlat`には、テンプレートが1つだけあります。
+このような複雑なスタイルのテンプレートは1つだけあります: `CLKComplicationTemplateUtilitarianLargeFlat`。
 1つの画像といくつかのテキストが1行に表示されます。
 
 ## <a name="related-links"></a>関連リンク

@@ -4,15 +4,15 @@ description: バインドプロセスを制御するメタデータを編集す�
 ms.prod: xamarin
 ms.assetid: 63C5078D-9E42-4F70-AF8C-8CEEA84FB6AF
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 09/25/2017
-ms.openlocfilehash: 37e91070ea10defedbeebdbb06220fabbd2554fc
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 04f3720d8684129476c955819390e91330a7800a
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70756641"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73020652"
 ---
 # <a name="customizing-bindings"></a>バインドのカスタマイズ
 
@@ -24,7 +24,7 @@ Xamarin. Android では、バインドプロセスの多くが自動化されま
 
 - 不足している型、難読化された型、重複する名前、クラスの可視性の問題、および Xamarin Android ツールで解決できないその他の状況によって発生するビルドエラーを解決しています。 
 
-- Android API をC#のさまざまな型にバインドするために使用されるマッピングを変更する (たとえば、多くの開発者が`int` Java 定数C# `enum`を定数にマップすることを好む)。
+- Android API をのC#さまざまな型にバインドするために使用するマッピングを変更する (たとえば、多くの開発者が Java `int`定数をC#`enum`定数にマップすることを好む)。
 
 - バインドする必要のない未使用の型を削除しています。 
 

@@ -3,15 +3,15 @@ title: Android の概要
 description: このドキュメントでは、Android での .NET 埋め込みの使用を開始する方法について説明します。 .NET 埋め込みのインストール、Android ライブラリプロジェクトの作成、Android Studio プロジェクトで生成された出力の使用、およびその他の考慮事項について説明します。
 ms.prod: xamarin
 ms.assetid: 870F0C18-A794-4C5D-881B-64CC78759E30
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/28/2018
-ms.openlocfilehash: 9b0da6f5b195ecef5fd4e5e2b4585b660573a5be
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: bcda03d41cb3bafcfb3ee4b92046014cc5b0c119
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70278558"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029771"
 ---
 # <a name="getting-started-with-android"></a>Android の概要
 
@@ -33,7 +33,7 @@ Visual Studio for Windows または Mac を開き、新しい Android クラス�
 
 **HelloActivity.cs**という名前の新しい android アクティビティを追加し、その後に**リソース/レイアウト/こんにちは. Axml**で android レイアウトを追加します。
 
-レイアウトに新しい`TextView`を追加し、テキストを楽しいものに変更します。
+レイアウトに新しい `TextView` を追加し、テキストを楽しいものに変更します。
 
 レイアウトソースは次のようになります。
 
@@ -53,7 +53,7 @@ Visual Studio for Windows または Mac を開き、新しい Android クラス�
 </LinearLayout>
 ```
 
-アクティビティで、新しいレイアウトでを呼び出し`SetContentView`ていることを確認します。
+アクティビティで、新しいレイアウトで `SetContentView` を呼び出すようにします。
 
 ```csharp
 [Activity(Label = "HelloActivity"),
@@ -70,9 +70,9 @@ public class HelloActivity : Activity
 ```
 
 > [!NOTE]
-> 属性を忘れ`[Register]`ないでください。 詳細については、「[制限事項](#current-limitations-on-android)」を参照してください。
+> `[Register]` 属性を忘れないでください。 詳細については、「[制限事項](#current-limitations-on-android)」を参照してください。
 
-プロジェクトをビルドします。 結果として得られる`bin/Debug/hello-from-csharp.dll`アセンブリは、に保存されます。
+プロジェクトをビルドします。 結果として得られるアセンブリは `bin/Debug/hello-from-csharp.dll`に保存されます。
 
 ## <a name="installing-net-embedding-from-nuget"></a>NuGet からの .NET 埋め込みのインストール
 
@@ -111,7 +111,7 @@ if exist %E4K_OUTPUT% rmdir /S /Q %E4K_OUTPUT%
 
 ![Android Studio の依存関係](android-images/androidstudiodependencies.png)
 
-アクティビティで、新しい`onResume`メソッドを追加し、次のコードを使用してC#アクティビティを起動します。
+アクティビティで、新しい `onResume` メソッドを追加し、次のコードを使用してC#アクティビティを起動します。
 
 ```java
 import hello_from_csharp.*;
@@ -159,7 +159,7 @@ com.xamarin.hellocsharp A/monodroid: No assemblies found in '(null)' or '<unavai
 
 次の点に注意してください。
 
-- Java をサブC#クラス化`HelloActivity`するクラスがあります。
+- Java のサブC#クラスである`HelloActivity`クラスがあります。
 - Android リソースファイルがあります
 - これらは、の Java から使用されてい Android Studio
 
@@ -169,11 +169,11 @@ com.xamarin.hellocsharp A/monodroid: No assemblies found in '(null)' or '<unavai
 - **アセット/アセンブリ**に含まれる .net アセンブリ
 - アクティビティのための xml の変更 (など) C#
 - Android のリソースと .NET ライブラリからのアセット
-- 任意`Java.Lang.Object`のサブクラスの[Android 呼び出し可能ラッパー](~/android/platform/java-integration/android-callable-wrappers.md)
+- 任意の `Java.Lang.Object` サブクラスの[Android 呼び出し可能ラッパー](~/android/platform/java-integration/android-callable-wrappers.md)
 
 追加のチュートリアルをお探しの場合は、次のビデオを参照してください。これは、Android Studio プロジェクトでのチャールズ Petzold 著) の[FingerPaint demo](https://docs.microsoft.com/samples/xamarin/monodroid-samples/applicationfundamentals-fingerpaint)の埋め込みを示しています。
 
-[![Embeddinator-4000 for Android](https://img.youtube.com/vi/ZVcrXUpCNpI/0.jpg)](https://www.youtube.com/watch?v=ZVcrXUpCNpI)
+[Android 用の![Embeddinator-4000](https://img.youtube.com/vi/ZVcrXUpCNpI/0.jpg)](https://www.youtube.com/watch?v=ZVcrXUpCNpI)
 
 ## <a name="using-java-18"></a>Java 1.8 の使用
 
@@ -207,7 +207,7 @@ android {
 
 ## <a name="current-limitations-on-android"></a>Android に関する現在の制限事項
 
-現在、サブクラス`Java.Lang.Object`を使用すると、.net 埋め込みではなく、Xamarin android によって Java スタブ (android 呼び出し可能ラッパー) が生成されます。 このため、Java を Xamarin Android にエクスポートC#する場合は、同じ規則に従う必要があります。 例えば:
+現時点では、`Java.Lang.Object`をサブクラス化すると、.NET 埋め込みではなく、Xamarin Android によって Java スタブ (Android 呼び出し可能ラッパー) が生成されます。 このため、Java を Xamarin Android にエクスポートC#する場合は、同じ規則に従う必要があります。 (例:
 
 ```csharp
 [Register("mono.embeddinator.android.ViewSubclass")]
@@ -223,10 +223,10 @@ public class ViewSubclass : TextView
 }
 ```
 
-- `[Register]`は、必要な Java パッケージ名にマップするために必要です
-- `[Export]`Java からメソッドを参照できるようにするには、が必要です。
+- 必要な Java パッケージ名にマップするために `[Register]` が必要です
+- メソッドを Java から参照できるようにするには `[Export]` が必要です
 
-Java では`ViewSubclass` 、次のようにを使用できます。
+Java では、次のように `ViewSubclass` を使用できます。
 
 ```java
 import mono.embeddinator.android.ViewSubclass;

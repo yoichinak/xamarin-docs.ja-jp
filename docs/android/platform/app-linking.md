@@ -4,15 +4,15 @@ description: このガイドでは、モバイルアプリが web サイトの U
 ms.prod: xamarin
 ms.assetid: 48174E39-19FD-43BC-B54C-9AF11D4B1F91
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: d65e8fabff88489571bba9d03379ff605a6ed0fe
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 0c7df5f1013c912f69514ee08bac56d0c25c99c1
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70757732"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73027747"
 ---
 # <a name="app-linking-in-android"></a>Android でのアプリリンク
 
@@ -20,23 +20,23 @@ _このガイドでは、モバイルアプリが web サイトの Url に応答
 
 ## <a name="app-linking-overview"></a>アプリリンクの概要
 
-モバイルアプリケーションは、多くの場合、 &ndash;ビジネスの重要なコンポーネントであり、web サイトと共にサイロに存在しなくなりました。 ビジネスでは、web プレゼンスとモバイルアプリケーションをシームレスに接続し、モバイルアプリケーションを起動し、関連するコンテンツをモバイルアプリに表示する web サイトのリンクを使用することをお勧めします。 *アプリリンク*(*ディープリンク*とも呼ばれます) は、モバイルデバイスが uri に応答し、その uri に対応するモバイルアプリケーションを起動できるようにする手法の1つです。
+モバイルアプリケーションは、多くの場合、ビジネスの重要なコンポーネントであり、web サイトと共に、サイロ &ndash; には存在しなくなりました。 ビジネスでは、web プレゼンスとモバイルアプリケーションをシームレスに接続し、モバイルアプリケーションを起動し、関連するコンテンツをモバイルアプリに表示する web サイトのリンクを使用することをお勧めします。 *アプリリンク*(*ディープリンク*とも呼ばれます) は、モバイルデバイスが uri に応答し、その uri に対応するモバイルアプリケーションを起動できるようにするための1つの手法です。
 
-Android では、ユーザーがモバイルブラウザーでリンクをクリックしたときに、*インテントシステム* &ndash;を使用してアプリリンクを処理します。モバイルブラウザーは、登録されたアプリケーションに対して android が委任するという意図をディスパッチします。 たとえば、料理の web サイトのリンクをクリックすると、その web サイトに関連付けられているモバイルアプリが開き、特定のレシピがユーザーに表示されます。 その目的を処理するために複数のアプリケーションが登録されている場合、Android ではあいまいさを解消する*ダイアログ*と呼ばれるものが生成されます。これは、意図を処理する必要があるアプリケーションを選択するアプリケーションをユーザーに要求します。次に例を示します。
+Android は目的の &ndash;*システム*を介してアプリリンクを処理します。ユーザーがモバイルブラウザーでリンクをクリックすると、モバイルブラウザーは、登録されたアプリケーションに対して android が委任するインテントをディスパッチします。 たとえば、料理の web サイトのリンクをクリックすると、その web サイトに関連付けられているモバイルアプリが開き、特定のレシピがユーザーに表示されます。 その目的を処理するために複数のアプリケーションが登録されている場合、Android ではあいまいさを解消する*ダイアログ*と呼ばれるものが生成されます。これは、意図を処理する必要があるアプリケーションを選択するアプリケーションをユーザーに要求します。次に例を示します。
 
 ![不明瞭なダイアログの例のスクリーンショット](app-linking-images/01-disambiguation-dialog.png)
 
-Android 6.0 では、自動リンク処理が使用されています。 Android では、アプリケーションを URI &ndash;の既定のハンドラーとして自動的に登録することができます。これにより、アプリは自動的に起動され、関連するアクティビティに直接移動します。 Android 6.0 で URI クリックを処理する方法は、次の条件によって異なります。
+Android 6.0 では、自動リンク処理が使用されています。 Android では、アプリケーションを URI の既定のハンドラーとして自動的に登録することができます。アプリが自動的に起動され、関連するアクティビティに直接移動 &ndash; ます。 Android 6.0 で URI クリックを処理する方法は、次の条件によって異なります。
 
-1. **既存のアプリは既に URI に関連付けられています**&ndash;ユーザーは既に既存のアプリを URI に関連付けている可能性があります。 その場合、Android は引き続きそのアプリケーションを使用します。
-2. **URI に関連付けられている既存のアプリはありませんが、サポートアプリがインストール**されています&ndash;このシナリオでは、ユーザーは既存のアプリを指定していないため、Android は、インストールされているサポートアプリケーションを使用して要求を処理します。
-3. **URI に関連付けられている既存のアプリはありませんが、多くのサポートアプリがインストール**されています&ndash; Uri をサポートするアプリケーションが複数存在するため、あいまいさを解消するダイアログが表示され、ユーザーは uri を処理するアプリを選択する必要があります。
+1. 既存のアプリが既に uri と関連付けられている &ndash;、**既存のアプリが既に uri と関連付けら**れている可能性があります。 その場合、Android は引き続きそのアプリケーションを使用します。
+2. **既存のアプリは URI に関連付けられていませんが、このシナリオでサポートアプリがインストール**されて &ndash;、ユーザーは既存のアプリを指定していません。そのため、Android は、インストールされているサポートアプリケーションを使用して要求を処理します。
+3. **既存のアプリは uri に関連付けられていませんが、多くのサポートアプリがインストール**されています。これは、uri をサポートする複数のアプリケーションが存在するため &ndash; がインストールされているためです。このダイアログボックスが表示され、ユーザーは uri を処理するアプリを選択する必要があります。
 
 URI をサポートするアプリがインストールされておらず、その後にインストールされたアプリがある場合、Android は uri に関連付けられている web サイトとの関連付けを確認した後に、そのアプリケーションを URI の既定のハンドラーとして設定します。
 
 このガイドでは、android 6.0 アプリケーションを構成する方法と、Android 6.0 でのアプリリンクをサポートするデジタル資産リンクファイルを作成して発行する方法について説明します。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>［要件］
 
 このガイドでは、Xamarin 6.1 と、Android 6.0 (API レベル 23) 以降を対象とするアプリケーションが必要です。
 
@@ -46,8 +46,8 @@ URI をサポートするアプリがインストールされておらず、そ�
 
 Android 6.0 でのアプリリンクの設定には、次の2つの主要な手順が含まれます。
 
-1. **Web サイト URI の1つまたは複数のインテントフィルターを追加する**&ndash;インテントフィルターガイド「Android」では、モバイルブラウザーで URL クリックを処理する方法を説明しています。
-2. **発行、 *デジタル資産へのリンクの JSON* 、web サイト上のファイル** &ndash;は web サイトにアップロードされ、Android によってモバイル アプリと web サイトのドメイン間のリレーションシップを確認するために使用するファイルです。 これを行わないと、Android は URI の既定のハンドルとしてアプリをインストールできません。ユーザーは手動で行う必要があります。
+1. **Web サイト URI の1つまたは複数のインテントフィルターを追加する**&ndash; インテントフィルターガイド Android では、モバイルブラウザーで URL クリックを処理する方法を説明しています。
+2. ***デジタル資産リンク*を発行する JSON &ndash; ファイル**は web サイトにアップロードされます。このファイルは、web サイトにアップロードされ、Android によって使用されて、モバイルアプリと web サイトのドメインの関係を確認します。 これを行わないと、Android は URI の既定のハンドルとしてアプリをインストールできません。ユーザーは手動で行う必要があります。
 
 <a name="configure-intent-filter" />
 
@@ -55,14 +55,14 @@ Android 6.0 でのアプリリンクの設定には、次の2つの主要な手�
 
 Web サイトの URI (または一連の Uri) を Android アプリケーションのアクティビティにマップするインテントフィルターを構成する必要があります。 Xamarin Android では、この関係は、 [Intentfilterattribute](xref:Android.App.IntentFilterAttribute)を使用してアクティビティを装飾することによって確立されます。 インテントフィルターでは、次の情報を宣言する必要があります。
 
-- **`Intent.ActionView`** &ndash;これにより、情報を表示する要求に応答するインテントフィルターが登録されます
-- **`Categories`** &ndash;  インテント フィルターは、両方を登録する必要があります **[Intent.CategoryBrowsable](xref:Android.Content.Intent.CategoryBrowsable)** と **[Intent.CategoryDefault](xref:Android.Content.Intent.CategoryDefault)** ができなければ正しくweb の URI を処理します。
-- **`DataScheme`** インテントフィルターでは、 `http` /または`https`を宣言する必要があります。 &ndash; これらは、2つの有効なスキームだけです。
-- **`DataHost`** &ndash;これは、uri の生成元となるドメインです。
-- **`DataPathPrefix`** &ndash;これは、web サイト上のリソースへの省略可能なパスです。
-- **`AutoVerify`** 属性は、アプリケーションと web サイト間の関係を確認するように Android に指示し`autoVerify`ます。 &ndash; 詳細については、以下で説明します。
+- **`Intent.ActionView`** &ndash; 情報の表示要求に応答するインテントフィルターを登録します
+- インテントフィルターが &ndash; を **`Categories`** するには、両方のインテントを登録する必要があり **[ます。カテゴリ](xref:Android.Content.Intent.CategoryBrowsable)** の参照可能および **[インテント。カテゴリの既定](xref:Android.Content.Intent.CategoryDefault)** では、web URI を適切に処理できるようになります。
+- インテントフィルターが `http` および/または `https`を宣言する必要がある &ndash; **`DataScheme`** ます。 これらは、2つの有効なスキームだけです。
+- **`DataHost`** &ndash; これは uri の生成元となるドメインです。
+- **`DataPathPrefix`** &ndash; これは、web サイト上のリソースへの省略可能なパスです。
+- `autoVerify` 属性を **`AutoVerify`** &ndash;、アプリケーションと web サイト間の関係を確認するように Android に指示します。 詳細については、以下で説明します。
 
-次の例では、 [intentfilterattribute](xref:Android.App.IntentFilterAttribute)を使用して、と`https://www.recipe-app.com/recipes` `http://www.recipe-app.com/recipes`の間のリンクを処理する方法を示します。
+次の例では、 [Intentfilterattribute](xref:Android.App.IntentFilterAttribute)を使用して、`https://www.recipe-app.com/recipes` と `http://www.recipe-app.com/recipes`からのリンクを処理する方法を示します。
 
 ```csharp
 [IntentFilter(new [] { Intent.ActionView },
@@ -84,15 +84,15 @@ Android では、URI の既定のハンドラーとしてアプリケーショ�
 Android 6.0 のアプリリンクを使用するには、アプリケーションを URI の既定のハンドラーとして設定する前に、Android でアプリケーションと web サイトの関連付けを確認する必要があります。 この確認は、アプリケーションが最初にインストールされたときに行われます。 *デジタル資産リンク*ファイルは、関連する webdomain によってホストされる JSON ファイルです。
 
 > [!NOTE]
-> 属性`android:autoVerify`はインテントフィルター &ndash;によって設定する必要があります。そうしないと、Android は検証を実行しません。
+> `android:autoVerify` 属性は、インテント &ndash; フィルターによって設定する必要があります。そうしないと、Android では検証が実行されません。
 
-ファイルは、その場所 **https://domain/.well-known/assetlinks.json** にあるドメインの web マスターによって配置されます。
+このファイルは、 **https://domain/.well-known/assetlinks.json** の場所にあるドメインの web マスターによって配置されます。
 
 デジタル資産ファイルには、Android が関連付けを確認するために必要なメタデータが含まれています。 **Assetlinks**ファイルには、次のキーと値のペアがあります。
 
-- `namespace`&ndash; Android アプリケーションの名前空間。
-- `package_name`&ndash; (アプリケーションマニフェストで宣言されている) Android アプリケーションのパッケージ名。
-- `sha256_cert_fingerprints`&ndash;署名されたアプリケーションの SHA256 指紋。 アプリケーションの SHA1 フィンガープリントを取得する方法の詳細については、「[キーストアの MD5 または Sha1 署名の検索](~/android/deploy-test/signing/keystore-signature.md)」ガイドを参照してください。
+- Android アプリケーションの名前空間 &ndash; `namespace` ます。
+- (アプリケーションマニフェストで宣言されている) Android アプリケーションのパッケージ名を `package_name` &ndash; ます。
+- 署名されたアプリケーションの SHA256 指紋 &ndash; `sha256_cert_fingerprints` します。 アプリケーションの SHA1 フィンガープリントを取得する方法の詳細については、「[キーストアの MD5 または Sha1 署名の検索](~/android/deploy-test/signing/keystore-signature.md)」ガイドを参照してください。
 
 次のスニペットは、1つのアプリケーションが一覧表示された**assetlinks**の例です。
 
@@ -173,11 +173,11 @@ https://digitalassetlinks.googleapis.com/v1/statements:list?source.web.site=
     $ adb shell dumpsys package domain-preferred-apps
     ```
 
-    - **`Package`** &ndash;アプリケーションのパッケージ名。
-    - **`Domain`** &ndash;アプリケーションによって処理される web リンクを持つドメイン (スペース区切り)
-    - **`Status`** &ndash;これは、アプリの現在のリンク処理状態です。 値は**常に**、アプリケーション`android:autoVerify=true`がを宣言し、システムの検証に合格したことを意味します。 その後に、設定の Android システムのレコードを表す16進数が続きます。
+    - アプリケーションのパッケージ名 &ndash; **`Package`** ます。
+    - web リンクがアプリケーションによって処理されるドメインを (スペースで区切って) **`Domain`** &ndash; します。
+    - **`Status`** &ndash; これはアプリの現在のリンク処理状態です。 の値は**常に**、アプリケーションが宣言され `android:autoVerify=true`、システムの検証に合格したことを意味します。 その後に、設定の Android システムのレコードを表す16進数が続きます。
 
-    例えば:
+    (例:
 
     ```shell
     $ adb shell dumpsys package domain-preferred-apps
@@ -188,7 +188,7 @@ https://digitalassetlinks.googleapis.com/v1/statements:list?source.web.site=
     Status: always : 200000002
     ```
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>まとめ
 
 このガイドでは、Android 6.0 でのアプリリンクのしくみについて説明しました。 次に、アプリリンクをサポートし、応答するように Android 6.0 アプリケーションを構成する方法について説明します。 また、Android アプリケーションでアプリリンクをテストする方法についても説明しました。
 
@@ -196,6 +196,6 @@ https://digitalassetlinks.googleapis.com/v1/statements:list?source.web.site=
 
 - [キーストアの MD5 または SHA1 署名の検索](~/android/deploy-test/signing/keystore-signature.md)
 - [アクティビティとインテント](https://university.xamarin.com/classes#4)
-- [AppLinks](http://applinks.org/)
+- [りんごのインク](https://developers.facebook.com/docs/applinks)
 - [Google デジタル資産のリンク](https://developers.google.com/digital-asset-links/)
 - [ステートメントリストジェネレーターとテスト担当者](https://developers.google.com/digital-asset-links/tools/generator)

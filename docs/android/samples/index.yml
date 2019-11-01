@@ -3,8 +3,8 @@ documentType: LandingData
 title: Xamarin.Android のサンプル
 metadata:
   description: モバイル開発者向け Xamarin.Android のサンプル アプリです。
-  author: conceptdev
-  ms.author: crdun
+  author: davidortinau
+  ms.author: daortin
   ms.date: 07/30/2019
   ms.topic: sample
 abstract:

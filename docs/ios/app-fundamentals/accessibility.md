@@ -4,15 +4,15 @@ description: このドキュメントでは、iOS でのユーザー補助につ
 ms.prod: xamarin
 ms.assetid: 88D59B36-05A3-4356-AE29-EC2B69CE7162
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/18/2016
-ms.openlocfilehash: 943cdfaee07bc4fd4ed3273840036055ad40b89a
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 31cae6d6770b4c8fc4ff722e67f4ddce8ffdd7c6
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70766750"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73011296"
 ---
 # <a name="accessibility-on-ios"></a>IOS でのユーザー補助
 
@@ -44,15 +44,15 @@ displayOnlyText.AccessibilityTraits = UIAccessibilityTrait.Header | UIAccessibil
 
 ### <a name="what-is-accessibilityidentifier"></a>AccessibilityIdentifier とは
 
-@No__t_0 は、UIAutomation API を使用してユーザーインターフェイス要素を参照するために使用できる一意のキーを設定するために使用されます。
+`AccessibilityIdentifier` は、UIAutomation API を使用してユーザーインターフェイス要素を参照するために使用できる一意のキーを設定するために使用されます。
 
-@No__t_0 の値は、ユーザーに話されることも表示されることもありません。
+`AccessibilityIdentifier` の値は、ユーザーに話されることも表示されることもありません。
 
 <a name="postnotification" />
 
 ## <a name="postnotification"></a>事後通知
 
-@No__t_0 メソッドを使用すると、ユーザーが直接やり取りすることなくユーザーにイベントを発生させることができます (たとえば、特定のコントロールと対話する場合など)。
+`UIAccessibility.PostNotification` メソッドを使用すると、ユーザーが直接やり取りすることなくユーザーにイベントを発生させることができます (たとえば、特定のコントロールと対話する場合など)。
 
 ### <a name="announcement"></a>アナウンス
 
@@ -66,7 +66,7 @@ UIAccessibility.PostNotification (
 
 ### <a name="layoutchanged"></a>LayoutChanged
 
-@No__t_0 アナウンスは、画面レイアウトの場合に使用されます。
+`LayoutChanged` アナウンスは、画面レイアウトの場合に使用されます。
 
 ```csharp
 UIAccessibility.PostNotification (
@@ -138,4 +138,4 @@ IOS デバイスでアクセシビリティをテストするには、次の[Voi
 
 - [クロスプラットフォームのアクセシビリティ](~/cross-platform/app-fundamentals/accessibility.md)
 - [iOS アクセシビリティ (Apple)](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Accessibility_on_iPhone/Accessibility_on_iPhone.html)
-- [iOS VoiceOver](http://www.apple.com/accessibility/ios/voiceover/)
+- [iOS VoiceOver](https://www.apple.com/accessibility/ios/voiceover/)

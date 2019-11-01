@@ -4,15 +4,15 @@ description: この記事では、Xamarin iOS アプリケーションを開発�
 ms.prod: xamarin
 ms.assetid: 24397498-2688-4575-A572-F1B19B1B4EA5
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 09/05/2018
-ms.openlocfilehash: 6d4303ebcd77ad5234b4750b46bbd0c84ffc5356
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: cbed65ce39e9298d397051740737aa164fadbc0b
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291746"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031850"
 ---
 # <a name="troubleshooting-ios-12-development-with-xamarin"></a>Xamarin を使用した iOS 12 開発のトラブルシューティング
 
@@ -23,7 +23,6 @@ ms.locfileid: "70291746"
 既知の問題については、次のリソースを確認してください。
 
 - リリース ノート
-  - [Xamarin リリース](http://releases.xamarin.com/)ブログ
   - Xamarin の[リリースノート](https://docs.microsoft.com/xamarin/ios/release-notes/)アーカイブ
   - Visual Studio for Mac ([安定](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-mac-relnotes)、[プレビュー](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-mac-preview-relnotes))
   - Visual Studio 2017 ([安定](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes)、[プレビュー](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-preview-relnotes))
@@ -40,5 +39,5 @@ ms.locfileid: "70291746"
 
 Xamarin. iOS で特定の iOS 12 機能を実装する方法に関する質問については、以下を参照してください。
 
-- [Xamarin フォーラム](http://forums.xamarin.com/categories/ios)
+- [Xamarin フォーラム](https://forums.xamarin.com/categories/ios)
 - [スタック オーバーフロー](https://stackoverflow.com/search?tab=newest&q=xamarin)

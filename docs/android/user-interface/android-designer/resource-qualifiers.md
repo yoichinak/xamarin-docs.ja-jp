@@ -4,19 +4,19 @@ description: このトピックでは、一部の修飾子値が一致した場�
 ms.prod: xamarin
 ms.assetid: 2111C18A-3EDA-3787-25E1-3869FF4BE441
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/25/2018
-ms.openlocfilehash: 6ae10e73c3f41226560beb8cf8c50608fc6adf3f
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: ccac795333dff52d35a66e8cd205c7b5bbd1bb2c
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70762619"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029411"
 ---
 # <a name="resource-qualifiers-and-visualization-options"></a>リソース修飾子と視覚化オプション
 
-_このトピックでは、一部の修飾子値が一致した場合にのみ使用されるリソースを定義する方法について説明します。単純な例として、言語で修飾された文字列リソースがあります。文字列リソースは既定値として定義でき、他の言語で使用するために他のリソースが定義されています。すべてのリソースの種類は、レイアウトそのものを含めて修飾できます。_
+このトピックでは、一部の修飾子値が一致した場合にのみ使用されるリソースを定義する方法について説明し _します。単純な例として、言語で修飾された文字列リソースがあります。文字列リソースは既定値として定義でき、他の言語で使用するために他のリソースが定義されています。すべてのリソースの種類は、レイアウトそのものを含めて修飾できます。_
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -24,7 +24,7 @@ _このトピックでは、一部の修飾子値が一致した場合にのみ�
 
 **リソース修飾子のオプション**にアクセスするには、**横**モードボタンの右側にある省略記号アイコンをクリックします。
 
-[![Resource 修飾子オプション](resource-qualifiers-images/vs/08-resource-qual-opt-sml.png)](resource-qualifiers-images/vs/08-resource-qual-opt.png#lightbox)
+[![リソース修飾子のオプション](resource-qualifiers-images/vs/08-resource-qual-opt-sml.png)](resource-qualifiers-images/vs/08-resource-qual-opt.png#lightbox)
 
 このダイアログボックスには、次のリソース修飾子のプルダウンメニューが表示されます。
 
@@ -34,11 +34,11 @@ _このトピックでは、一部の修飾子値が一致した場合にのみ�
 
 これらの各プルダウンメニューでは、新しいダイアログボックスが開き、リソース修飾子を選択して構成できます (次の説明をご覧ください)。
 
-### <a name="language"></a>言語
+### <a name="language"></a>[言語]
 
 **[言語]** プルダウンメニューには、リソースが定義されている言語 (既定では**すべての言語**) のみが表示されます。 ただし、新しい言語を一覧に追加することができる **[言語/地域の追加...]** オプションもあります。
 
-[![Add 言語/地域](resource-qualifiers-images/vs/09-add-language-region-sml.png)](resource-qualifiers-images/vs/09-add-language-region.png#lightbox)
+[![言語/地域の追加](resource-qualifiers-images/vs/09-add-language-region-sml.png)](resource-qualifiers-images/vs/09-add-language-region.png#lightbox)
 
 **[言語/地域の追加...]** をクリックすると、 **[言語の選択]** ダイアログボックスが開き、使用可能な言語と地域のドロップダウンリストが表示されます。
 
@@ -103,7 +103,7 @@ Android**バージョン**セレクターは、デザイナーでレイアウト
 
 **リソース修飾子のオプション**にアクセスするには、**横**モードボタンの右側にある省略記号アイコンをクリックします。
 
-[![Resource 修飾子オプション](resource-qualifiers-images/xs/08-resource-qual-opt-m75-sml.png)](resource-qualifiers-images/xs/08-resource-qual-opt-m75.png#lightbox)
+[![リソース修飾子のオプション](resource-qualifiers-images/xs/08-resource-qual-opt-m75-sml.png)](resource-qualifiers-images/xs/08-resource-qual-opt-m75.png#lightbox)
 
 このダイアログボックスには、次のリソース修飾子のプルダウンメニューが表示されます。
 
@@ -113,19 +113,19 @@ Android**バージョン**セレクターは、デザイナーでレイアウト
 
 これらの各プルダウンメニューでは、新しいダイアログボックスが開き、リソース修飾子を選択して構成できます (次の説明をご覧ください)。
 
-### <a name="language"></a>言語
+### <a name="language"></a>[言語]
 
 **[言語]** プルダウンメニューには、リソースが定義されている言語 (既定では**すべての言語**) のみが表示されます。 ただし、新しい言語を一覧に追加することができる **[言語/地域の追加...]** オプションもあります。
 
-[![Add 言語/地域](resource-qualifiers-images/xs/09-add-language-region-m75-sml.png)](resource-qualifiers-images/xs/09-add-language-region-m75.png#lightbox)
+[![言語/地域の追加](resource-qualifiers-images/xs/09-add-language-region-m75-sml.png)](resource-qualifiers-images/xs/09-add-language-region-m75.png#lightbox)
 
 **[言語/地域の追加...]** をクリックすると、 **[言語の選択]** ダイアログボックスが開き、使用可能な言語と地域のドロップダウンリストが表示されます。
 
-[![List 言語](resource-qualifiers-images/xs/10-languages-m75-sml.png)](resource-qualifiers-images/xs/10-languages-m75.png#lightbox)
+[![言語の一覧](resource-qualifiers-images/xs/10-languages-m75-sml.png)](resource-qualifiers-images/xs/10-languages-m75.png#lightbox)
 
 この例では、フランス語の地域言語に対して**fr (フランス語)** **を選択して**います。 特定の地域に関係なく多くの言語を指定できるため、 **Region**フィールドは省略可能です。 **[言語]** プルダウンメニューを再び開くと、新しく追加された言語/地域のリソースが表示されます。
 
-[選択された ![Language とリージョン](resource-qualifiers-images/xs/11-language-region-added-m75-sml.png)](resource-qualifiers-images/xs/11-language-region-added-m75.png#lightbox)
+[選択された![言語と地域](resource-qualifiers-images/xs/11-language-region-added-m75-sml.png)](resource-qualifiers-images/xs/11-language-region-added-m75.png#lightbox)
 
 新しい言語を追加しても、新しい言語用のリソースを作成しない場合、次回プロジェクトを開いたときに追加された言語は表示されなくなります。
 
@@ -144,7 +144,7 @@ Android UI モードの詳細については、「 [Uimodemanager](xref:Android.
 
 **[アクションバーの設定]** アイコンは、ペイントブラシ (テーマエディター) アイコンの左側にあります。
 
-[![Action バーの設定](resource-qualifiers-images/xs/13-action-bar-m75-sml.png)](resource-qualifiers-images/xs/13-action-bar-m75.png#lightbox)
+[操作バー設定の![](resource-qualifiers-images/xs/13-action-bar-m75-sml.png)](resource-qualifiers-images/xs/13-action-bar-m75.png#lightbox)
 
 このアイコンは、次の3つの操作バーモードのいずれかを選択する方法を提供するダイアログ segue を開きます。
 
@@ -158,17 +158,17 @@ Android UI モードの詳細については、「 [Uimodemanager](xref:Android.
 
 **[テーマ]** ドロップダウンメニューには、プロジェクトで定義されているすべてのテーマが表示されます。 **[その他のテーマ]** を選択すると、次に示すように、インストールされている Android SDK で使用可能なすべてのテーマの一覧を含むダイアログが開きます。
 
-[![More のテーマの一覧](resource-qualifiers-images/xs/14-theme-menu-m75-sml.png)](resource-qualifiers-images/xs/14-theme-menu-m75.png#lightbox)
+[![その他のテーマの一覧](resource-qualifiers-images/xs/14-theme-menu-m75-sml.png)](resource-qualifiers-images/xs/14-theme-menu-m75.png#lightbox)
 
 テーマを選択すると、デザインサーフェイスが更新され、新しいテーマの効果が表示されます。 この変更は、 **[テーマ]** ダイアログで **[OK** ] ボタンをクリックした場合にのみ、永続的になります。 選択したテーマは、次に示すように、**テーマ**のドロップダウンメニューに表示されます。
 
-[![Light テーマを使用できるようになりました](resource-qualifiers-images/xs/15-light-theme-m75-sml.png)](resource-qualifiers-images/xs/15-light-theme-m75.png#lightbox)
+[![明るいテーマを使用できるようになりました](resource-qualifiers-images/xs/15-light-theme-m75-sml.png)](resource-qualifiers-images/xs/15-light-theme-m75.png#lightbox)
 
 ## <a name="android-version"></a>Android バージョン
 
 Android**バージョン**セレクターは、デザイナーでレイアウトを表示するために使用される android バージョンを設定します。 セレクターには、プロジェクトのターゲットフレームワークバージョンと互換性のあるすべてのバージョンが表示されます。
 
-[Android バージョンの ![List](resource-qualifiers-images/xs/16-android-version-m75-sml.png)](resource-qualifiers-images/xs/16-android-version-m75.png#lightbox)
+[Android バージョンの![一覧](resource-qualifiers-images/xs/16-android-version-m75-sml.png)](resource-qualifiers-images/xs/16-android-version-m75.png#lightbox)
 
 ターゲットフレームワークのバージョンは、プロジェクトの設定の **[プロジェクトオプション > ビルド > 全般]** セクションで設定できます。 ターゲットフレームワークのバージョンの詳細については、「 [ANDROID API レベル](~/android/app-fundamentals/android-api-levels.md)について」を参照してください。
 

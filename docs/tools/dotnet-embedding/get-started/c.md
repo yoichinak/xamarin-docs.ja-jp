@@ -3,19 +3,19 @@ title: C の概要
 description: このドキュメントでは、.NET 埋め込みを使用して C アプリケーションに .NET コードを埋め込む方法について説明します。 ここでは、Visual Studio 2019 と Visual Studio for Mac の両方で .NET 埋め込みを使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 2A27BE0F-95FB-4C3A-8A43-72540179AA85
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/19/2018
-ms.openlocfilehash: 1dc68a709f8e1f864961bbe87af112b648b0dd2a
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 9660eccd3e14a6c4ecad901064650fe1e25458f8
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70278741"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029782"
 ---
 # <a name="getting-started-with-c"></a>C の概要
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>［要件］
 
 C で .NET 埋め込みを使用するには、次の動作を実行する Mac または Windows コンピューターが必要です。
 
@@ -71,7 +71,7 @@ Generating binding code...
     Generated: mono_embeddinator.h
 ```
 
-このフラグ`--compile`はツールに渡されたため、.net 埋め込みでは、出力ファイルを共有ライブラリにコンパイルする必要がありました。これは、生成されたファイルの横、macOS の**libmanaged .lib**ファイル、および Windows の**マネージ .dll**です。
+`--compile` フラグはツールに渡されたため、.NET 埋め込みでは、出力ファイルを共有ライブラリにコンパイルする必要があります。これは、生成されたファイル、macOS 上の**libmanaged. dylib**ファイル、および Windows 上の**マネージ dll**の横にあります。
 
 共有ライブラリを使用するには、マネージヘッダーファイルをインクルードし**ます**。このファイルは、それぞれのマネージライブラリ api に対応する C 宣言を提供し、前に説明したコンパイル済み共有ライブラリとリンクします。
 

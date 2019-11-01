@@ -3,15 +3,15 @@ title: Xamarin for Visual Studio の完全なアンインストールを実行�
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: c1742239-05ea-449d-9c99-611e5e5a90e4
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 12/02/2016
-ms.openlocfilehash: 1596e7ed7b3f6d71e13f19a64d111873efb7445c
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: ed0171c2b6bd98e5b29ec100d0235131d36acb05
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70764946"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73013341"
 ---
 # <a name="how-do-i-perform-a-thorough-uninstall-for-xamarin-for-visual-studio"></a>Xamarin for Visual Studio の完全なアンインストールを実行するにはどうすればいいですか
 
@@ -25,11 +25,11 @@ ms.locfileid: "70764946"
 
 2. エクスプローラーで、Xamarin Visual Studio 拡張機能フォルダー (_プログラムファイル_と_プログラムファイル (x86)_ の両方を含むすべてのバージョン) から残りのファイルを削除します。
 
-    _C:\\Program Files\*MicrosoftVisualStudio1\*.0Common7\\IDE\\ExtensionsXamarin\\\\\\_
+    _C:\\プログラムファイル\*\\Microsoft Visual Studio 1\*.0\\Common7\\IDE\\拡張機能\\Xamarin_
 
 3. Visual Studio の MEF コンポーネントキャッシュディレクトリも削除します。
 
-    _%LOCALAPPDATA%\\Microsoft\\VisualStudio\\1\*.0\\ComponentModelCache_
+    _% LOCALAPPDATA%\\Microsoft\\VisualStudio\\1\*. 0\\ComponentModelCache_
 
     実際、この手順では、次のようなエラーを解決するのに十分な場合があります。
 
@@ -37,7 +37,7 @@ ms.locfileid: "70764946"
 
     - "プロジェクトファイル...を開くことができません。 プロジェクトのサブタイプがありません "
 
-    - "オブジェクト参照がオブジェクトのインスタンスに設定されていません。  at Xamarin.VisualStudio.IOS.XamarinIOSPackage.Initialize()"
+    - "オブジェクト参照がオブジェクトのインスタンスに設定されていません。  VisualStudio () XamarinIOSPackage にあります。
 
     - "パッケージの SetSite に失敗しました" (Visual Studio の_Activitylog .xml_)
 
@@ -45,29 +45,29 @@ ms.locfileid: "70764946"
 
     (「 [CLEAR MEF Component Cache](https://visualstudiogallery.msdn.microsoft.com/22b94661-70c7-4a93-9ca3-8b6dd45f47cd) Visual Studio extension」も参照してください。  また、このようなエラーを引き起こす可能性のある Visual Studio のアップストリームの問題については[、バグ40781、コメント 19](https://bugzilla.xamarin.com/show_bug.cgi?id=40781#c19)に関する説明を参照してください。)
 
-4. また、 _virtualstore_ディレクトリで、_拡張機能\\Xamarin_または_componentmodelcache_ディレクトリのオーバーレイファイルが Windows に格納されているかどうかを確認します。
+4. また、 _Virtualstore_ディレクトリをチェックインして、Windows に_拡張機能_のオーバーレイファイルが格納されているかどうかを確認します。 Xamarin または_componentmodelcache_ディレクトリ\\ます。
 
-    _%LOCALAPPDATA%\\VirtualStore_
+    _% LOCALAPPDATA%\\VirtualStore_
 
 5. レジストリエディター (`regedit`) を開きます。
 
 6. 次のキーを探します。
 
-    _HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\SharedDlls_
+    _HKEY\_ローカル\_マシン\\ソフトウェア\\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\SharedDlls_
 
 7. 次のパターンに一致するエントリがあれば、削除します。
 
-    _C:\\Program Files\*MicrosoftVisualStudio1\*.0Common7\\IDE\\ExtensionsXamarin\\\\\\_
+    _C:\\プログラムファイル\*\\Microsoft Visual Studio 1\*.0\\Common7\\IDE\\拡張機能\\Xamarin_
 
 8. このキーを探します。
 
-    _HKEY\_CURRENT\_USERSoftware\\Microsoft\\VisualStudio1\*.0ExtensionManagerpendingdeletions\\\\\\\\_
+    _HKEY\_現在\_ユーザー\\ソフトウェア\\Microsoft\\VisualStudio\\1\*.0\\ExtensionManager\\PendingDeletions_
 
 9. Xamarin に関連すると考えられるすべてのエントリを削除します。  たとえば、以前のバージョンの Xamarin では、次のような問題が発生します。
 
-    _Mono.VisualStudio.Shell,1.0_
+    _VisualStudio、1.0_
 
-10. 管理者`cmd.exe`コマンドプロンプトを開き、インストールされて`devenv /updateconfiguration`いる Visual Studio の各バージョンに対して、コマンド`devenv /setup`とコマンドを実行します。  たとえば、Visual Studio 2015 では次のようになります。
+10. 管理者 `cmd.exe` コマンドプロンプトを開き、インストールされている Visual Studio の各バージョンに対して `devenv /setup` と `devenv /updateconfiguration` のコマンドを実行します。  たとえば、Visual Studio 2015 では次のようになります。
 
     ```
     "%ProgramFiles(x86)%\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe" /setup
@@ -88,8 +88,8 @@ ms.locfileid: "70764946"
 
 3. 拡張機能が正しく読み込まれた場合、元のユーザーの格納されている設定のいくつかによって問題が発生する可能性が最も高くなります。
 
-    - **エクスプローラーで**- _% localappdata%\\Microsoft\\VisualStudio\\1\*.0_
-    - **Regedit** – _\_HKEY CURRENT\_USERSoftwareMicrosoft\\VisualStudio1\\.0\\\\\*_
-    - **Regedit** – _\_HKEY CURRENT\_USERSoftwareMicrosoft\\VisualStudio 1.0\*Config\\\\\\\__
+    - **エクスプローラ**: _% localappdata%\\Microsoft\\VisualStudio\\1\*.0_
+    - **Regedit** – _HKEY\_現在\_ユーザー\\ソフトウェア\\Microsoft\\VisualStudio\\1\*.0_
+    - **Regedit** – _HKEY\_現在\_ユーザー\\ソフトウェア\\Microsoft\\VisualStudio\\1\*.0\_構成_
 
 4. これらの格納されている設定が問題であると思われる場合は、バックアップを実行してから削除することができます。

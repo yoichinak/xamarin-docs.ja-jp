@@ -3,19 +3,19 @@ title: パート 6 - テストと App Store の承認
 description: このドキュメントでは、デバイス上でクロスプラットフォームアプリケーションをテストする方法、テストケースを管理する方法、テストを自動化する方法、単体テストを実行する方法、およびアプリ送信プロセスを使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 46E0578A-7EB9-C105-ABB0-A043E501F36B
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: bf6ea18c73226a620ce002797d2d2b04b48c7cc8
-ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
+ms.openlocfilehash: 07eab1e8229cd6600bb8abdd324cb3eb12a8f886
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71198424"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016851"
 ---
 # <a name="part-6---testing-and-app-store-approvals"></a>パート 6 - テストと App Store の承認
 
-## <a name="testing"></a>テスト
+## <a name="testing"></a>テスト中
 
 多くのアプリ (一部のストア) では、発行前に承認プロセスを渡す必要があります。そのため、アプリが市場に到達したことを確認するためにテストが不可欠です (お客様に対してのみ成功します)。 テストでは、開発者レベルの単体テストからさまざまなハードウェアでのベータテストの管理まで、さまざまな形を取ることができます。
 
@@ -50,15 +50,15 @@ Xamarin [UITest](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-u
 
 ## <a name="unit-testing"></a>単体テスト
 
-### <a name="touchunit"></a>Touch.Unit
+### <a name="touchunit"></a>タッチ単位
 
 Xamarin. iOS には、JUnit/NUnit スタイルの作成テストの後に続く、Touch と呼ばれる単体テストフレームワークが含まれています。
 
 テストの作成と Touch の実行に関する詳細については、「 [Xamarin の単体テスト](~/ios/deploy-test/touch.unit.md)」を参照してください。
 
-### <a name="andrunit"></a>Andr.Unit
+### <a name="andrunit"></a>Andr. 単位
 
-Android では、オープンソースに相当する Touch が Andr. Unit と呼ばれています。 [Github](https://github.com/spouliot/Andr.Unit)からダウンロードして、 [ @spouliotのブログ](http://spouliot.wordpress.com/2011/10/30/andr-unit-joins-the-family/)でツールを確認することができます。
+Android では、オープンソースに相当する Touch が Andr. Unit と呼ばれています。 [Github](https://github.com/spouliot/Andr.Unit)からダウンロードして、 [@spouliotのブログ](https://spouliot.wordpress.com/2011/10/30/andr-unit-joins-the-family/)でツールを読むことができます。
 
 ## <a name="app-store-approvals"></a>App Store の承認
 
@@ -129,7 +129,7 @@ Windows 開発者は同様に注意する必要があります。よくある間
 
 開発とテストのために、アプリケーションのメタデータに多くの労力を置きます。 アプリケーションは、メタデータ内のマイナー infringements に対して拒否されるため、適切に取得するのに時間がかかることがあります。
 
-### <a name="app-stores-not-for-everyone"></a>アプリストア:すべてのユーザーに対して使用しない
+### <a name="app-stores-not-for-everyone"></a>アプリストア: すべてのユーザーではありません
 
 各プラットフォームでのストアの主な目的は、コンシューマーの配布です。できる限り多くの顧客にリーチすることができます。 ただし、すべてのアプリケーションがコンシューマーを対象としているわけではありませんが、社内およびエクストラネットに似たアプリケーションのベースが急速に増加しており、従業員、サプライヤー、顧客への限定的な配布が必要になる場合があります。 開発者は、終了したユーザーグループへの配布を制御するため、これらのアプリは "販売用" ではなく、承認を必要としません。
 この種類の展開のサポートは、プラットフォームによって異なります。

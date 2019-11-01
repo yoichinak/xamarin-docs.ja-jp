@@ -4,17 +4,17 @@ ms.prod: xamarin
 ms.topic: tutorial
 ms.assetid: ED368FA9-A34E-DC39-D535-5C34C32B9761
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/21/2018
-ms.openlocfilehash: 4471f5ec199ef52a2dcb68ab85cc9a1209eb4802
-ms.sourcegitcommit: 9a2a21974d35353c3765eb683ef2fd7161c1d94a
+ms.openlocfilehash: 043ad02f9ca9148910364ac82917551ee58d72ba
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68329979"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73027404"
 ---
-# <a name="fragments-walkthrough-ndash-phone"></a>フラグメントの&ndash;チュートリアル電話
+# <a name="fragments-walkthrough-ndash-phone"></a>フラグメントのチュートリアル &ndash; phone
 
 これは、Android デバイスを縦向きで対象とする Xamarin Android アプリを作成するチュートリアルの最初の部分です。 このチュートリアルでは、Xamarin. Android でフラグメントを作成する方法と、それらをサンプルに追加する方法について説明します。
 
@@ -22,21 +22,21 @@ ms.locfileid: "68329979"
 
 このアプリに対して次のクラスが作成されます:
 
-1. `PlayQuoteFragment`&nbsp;このフラグメントでは、ウィリアムシェイクスピアーによる play の引用符が表示されます。 これはによって`PlayQuoteActivity`ホストされます。
-1. `Shakespeare`&nbsp;このクラスは、ハードコードされた2つの配列をプロパティとして保持します。
-1. `TitlesFragment`&nbsp;このフラグメントにより、ウィリアムシェイクスピアーによって書き込まれた再生タイトルの一覧が表示されます。 これはによって`MainActivity`ホストされます。
-1. `PlayQuoteActivity`は、ユーザー `PlayQuoteActivity`が再生を選択すると`TitlesFragment`応答してを開始します。 &nbsp; `TitlesFragment`
+1. `PlayQuoteFragment` &nbsp; このフラグメントにより、ウィリアムシェイクスピアーによる play の引用符が表示されます。 `PlayQuoteActivity`によってホストされます。
+1. `Shakespeare` &nbsp; このクラスは、ハードコードされた2つの配列をプロパティとして保持します。
+1. `TitlesFragment` &nbsp; このフラグメントにより、ウィリアムシェイクスピアーによって書き込まれた再生タイトルの一覧が表示されます。 `MainActivity`によってホストされます。
+1. `PlayQuoteActivity` &nbsp; `TitlesFragment` は、ユーザーが `TitlesFragment`で再生を選択したときに `PlayQuoteActivity` を開始します。
 
-## <a name="1-create-the-android-project"></a>1.Android プロジェクトを作成する
+## <a name="1-create-the-android-project"></a>1. Android プロジェクトを作成する
 
 **Fragmentsample**という名前の新しい Xamarin Android プロジェクトを作成します。
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![新しい Xamarin. Android プロジェクトを作成する](./walkthrough-images/01-newproject.w157-sml.png)](./walkthrough-images/01-newproject.w157.png#lightbox)
+[新しい Xamarin Android プロジェクトを作成![には](./walkthrough-images/01-newproject.w157-sml.png)](./walkthrough-images/01-newproject.w157.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-[![新しい Xamarin. Android プロジェクトの作成](./walkthrough-images/01-newproject.m742-sml.png)](./walkthrough-images/01-newproject.m742.png#lightbox)
+[新しい Xamarin Android プロジェクトを作成![には](./walkthrough-images/01-newproject.m742-sml.png)](./walkthrough-images/01-newproject.m742.png#lightbox)
 
 このチュートリアルでは、**最新の開発**を選択することをお勧めします。
 
@@ -44,14 +44,14 @@ ms.locfileid: "68329979"
 
 -----
 
-## <a name="2-add-the-data"></a>2.データを追加する
+## <a name="2-add-the-data"></a>2. データを追加する
 
-このアプリケーションのデータは、クラス名`Shakespeare`のプロパティである2つのハードコードされた文字列配列に格納されます。
+このアプリケーションのデータは、クラス名 `Shakespeare`のプロパティである2つのハードコードされた文字列配列に格納されます。
 
-* `Shakespeare.Titles`&nbsp;この配列は、ウィリアムシェイクスピアーからの再生の一覧を保持します。 これは、 `TitlesFragment`のデータソースです。
-* `Shakespeare.Dialogue`この配列は、に`Shakespeare.Titles`含まれるいずれかの再生の引用符のリストを保持します。 &nbsp; これは、 `PlayQuoteFragment`のデータソースです。
+* `Shakespeare.Titles` &nbsp;、この配列には、ウィリアムシェイクスピアーからの再生の一覧が格納されます。 これは、`TitlesFragment`のデータソースです。
+* この配列 &nbsp;、`Shakespeare.Titles`に含まれているいずれかの再生の引用符のリストを保持 `Shakespeare.Dialogue` ます。 これは、`PlayQuoteFragment`のデータソースです。
 
-新しいC#クラスを**fragmentsample**プロジェクトに追加し、 **Shakespeare.cs**という名前を指定します。 このファイル内に、次のC#内容を`Shakespeare`含むという名前の新しいクラスを作成します。
+新しいC#クラスを**fragmentsample**プロジェクトに追加し、 **Shakespeare.cs**という名前を指定します。 このファイル内に、次のC#内容を含む`Shakespeare`という名前の新しいクラスを作成します。
 
 ```csharp
 class Shakespeare
@@ -80,17 +80,17 @@ class Shakespeare
 }
 ```
 
-## <a name="3-create-the-playquotefragment"></a>3.PlayQuoteFragment を作成する
+## <a name="3-create-the-playquotefragment"></a>3. PlayQuoteFragment を作成する
 
-は`PlayQuoteFragment` 、アプリケーションで先にユーザーが選択したシェイクスピアー play の引用符を表示する Android フラグメントです。このフラグメントは android レイアウトファイルを使用しません。代わりに、ユーザーインターフェイスを動的に作成します。 という名前`Fragment` `PlayQuoteFragment`の新しいクラスをプロジェクトに追加します。
+`PlayQuoteFragment` は Android のフラグメントであり、アプリケーションの前にユーザーが選択したシェイクスピアー play の引用符が表示されます。このフラグメントは、Android レイアウトファイルを使用しません。代わりに、ユーザーインターフェイスを動的に作成します。 `PlayQuoteFragment` という名前の新しい `Fragment` クラスをプロジェクトに追加します。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![新しいC#クラスを追加する](./walkthrough-images/04-addfragment.w157-sml.png)](./walkthrough-images/02-addclass.w157.png#lightbox)
+[新しいC#クラスを追加![には](./walkthrough-images/04-addfragment.w157-sml.png)](./walkthrough-images/02-addclass.w157.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-[![新しいC#クラスを追加する](./walkthrough-images/04-addfragment.m742-sml.png)](./walkthrough-images/02-addclass.m742.png#lightbox)
+[新しいC#クラスを追加![には](./walkthrough-images/04-addfragment.m742-sml.png)](./walkthrough-images/02-addclass.m742.png#lightbox)
 
 -----
 
@@ -129,28 +129,28 @@ public class PlayQuoteFragment : Fragment
 }
 ```
 
-これは、フラグメントをインスタンス化するファクトリメソッドを提供するための Android アプリの一般的なパターンです。 これにより、適切に機能するために必要なパラメーターを使用して、フラグメントが作成されます。 このチュートリアルでは、アプリケーションでメソッドを使用し`PlayQuoteFragment.NewInstance`て、引用符が選択されるたびに新しいフラグメントを作成することを想定しています。 このメソッドは、表示する引用符&ndash;のインデックスを1つのパラメーターとして受け取ります。 `NewInstance`
+これは、フラグメントをインスタンス化するファクトリメソッドを提供するための Android アプリの一般的なパターンです。 これにより、適切に機能するために必要なパラメーターを使用して、フラグメントが作成されます。 このチュートリアルでは、アプリは、`PlayQuoteFragment.NewInstance` メソッドを使用して、引用符が選択されるたびに新しいフラグメントを作成することが想定されています。 `NewInstance` メソッドは、表示する引用符のインデックス &ndash; 1 つのパラメーターを受け取ります。
 
-この`OnCreateView`メソッドは、画面にフラグメントをレンダリングする時間があるときに Android によって呼び出されます。 このメソッドは、フラグメント`View`である Android オブジェクトを返します。 このフラグメントは、レイアウトファイルを使用してビューを作成することはありません。 代わりに、プログラムによってビューを作成します。このためには、コメントを保持する**TextView**をインスタンス化し、そのウィジェットを**ScrollView**で表示します。
+`OnCreateView` メソッドは、画面上にフラグメントをレンダリングする時間があれば、Android によって呼び出されます。 このメソッドは、フラグメントである Android `View` オブジェクトを返します。 このフラグメントは、レイアウトファイルを使用してビューを作成することはありません。 代わりに、プログラムによってビューを作成します。このためには、コメントを保持する**TextView**をインスタンス化し、そのウィジェットを**ScrollView**で表示します。
 
 > [!NOTE]
 > フラグメントサブクラスには、パラメーターを持たないパブリックな既定のコンストラクターが必要です。
 
-## <a name="4-create-the-playquoteactivity"></a>4.PlayQuoteActivity を作成する
+## <a name="4-create-the-playquoteactivity"></a>4. PlayQuoteActivity を作成する
 
-フラグメントはアクティビティ内でホストする必要があるため、このアプリには`PlayQuoteFragment`をホストするアクティビティが必要です。 アクティビティは、実行時にそのフラグメントをレイアウトに動的に追加します。 アプリケーションに新しいアクティビティを追加し、次の`PlayQuoteActivity`ように名前を指定します。
+フラグメントはアクティビティ内でホストする必要があるため、このアプリには `PlayQuoteFragment`をホストするアクティビティが必要です。 アクティビティは、実行時にそのフラグメントをレイアウトに動的に追加します。 アプリケーションに新しいアクティビティを追加し、`PlayQuoteActivity`という名前を指定します。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![Android アクティビティをプロジェクトに追加する](./walkthrough-images/03-addactivity.w157-sml.png)](./walkthrough-images/03-addactivity.w157.png#lightbox)
+[Android アクティビティをプロジェクトに追加![には](./walkthrough-images/03-addactivity.w157-sml.png)](./walkthrough-images/03-addactivity.w157.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-[![Android アクティビティをプロジェクトに追加する](./walkthrough-images/03-addactivity.m742-sml.png)](./walkthrough-images/03-addactivity.m742.png#lightbox)
+[Android アクティビティをプロジェクトに追加![には](./walkthrough-images/03-addactivity.m742-sml.png)](./walkthrough-images/03-addactivity.m742.png#lightbox)
 
 -----
 
-で`PlayQuoteActivity`コードを編集します。
+`PlayQuoteActivity`でコードを編集します。
 
 ```csharp
 [Activity(Label = "PlayQuoteActivity")]
@@ -170,21 +170,21 @@ public class PlayQuoteActivity : Activity
 }
 ```
 
-が`PlayQuoteActivity`作成されると、新しい`PlayQuoteFragment`がインスタンス化され、そのフラグメントがのコンテキスト`FragmentTransaction`でルートビューに読み込まれます。 このアクティビティでは、ユーザーインターフェイスの Android レイアウトファイルは読み込まれないことに注意してください。 代わりに、アプリケーションの`PlayQuoteFragment`ルートビューに新しいが追加されます。 リソース識別子`Android.Resource.Id.Content`は、特定の識別子を知らなくても、アクティビティのルートビューを参照するために使用されます。
+`PlayQuoteActivity` が作成されると、新しい `PlayQuoteFragment` がインスタンス化され、そのフラグメントが `FragmentTransaction`のコンテキストでルートビューに読み込まれます。 このアクティビティでは、ユーザーインターフェイスの Android レイアウトファイルは読み込まれないことに注意してください。 代わりに、アプリケーションのルートビューに新しい `PlayQuoteFragment` が追加されます。 リソース識別子 `Android.Resource.Id.Content` は、特定の識別子を知らずにアクティビティのルートビューを参照するために使用されます。
 
-## <a name="5-create-titlesfragment"></a>5.TitlesFragment の作成
+## <a name="5-create-titlesfragment"></a>5. TitlesFragment を作成する
 
-は、と呼ばれる特殊なフラグメントをサブクラス化します。これ`ListView`は、フラグメントにを表示するためのロジックをカプセル化します。 `ListFragment` `TitlesFragment` は`ListFragment` 、の`ListAdapter`内容を表示`ListView`するためにによって使用されるプロパティを公開`OnListItemClick`し、という名前のイベントハンドラーを公開します。これにより`ListView`、フラグメントは、によって表示される行のクリックに応答できます。
+`TitlesFragment` は、フラグメントに `ListView` を表示するためのロジックをカプセル化する `ListFragment` と呼ばれる特殊なフラグメントをサブクラス化します。 `ListFragment` は、その内容を表示するために `ListView` によって使用される) `ListAdapter` プロパティと `OnListItemClick` という名前のイベントハンドラーを公開します。これにより、フラグメントは `ListView`によって表示される行のクリックに応答できます。
 
 作業を開始するには、プロジェクトに新しいフラグメントを追加し、 **TitlesFragment**という名前を指定します。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![Android フラグメントをプロジェクトに追加](./walkthrough-images/04-addfragment.w157-sml.png)](./walkthrough-images/04-addfragment.w157.png#lightbox)
+[Android フラグメントをプロジェクトに追加![には](./walkthrough-images/04-addfragment.w157-sml.png)](./walkthrough-images/04-addfragment.w157.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-[![Android フラグメントをプロジェクトに追加](./walkthrough-images/04-addfragment.m742-sml.png)](./walkthrough-images/04-addfragment.m742.png#lightbox)
+[Android フラグメントをプロジェクトに追加![には](./walkthrough-images/04-addfragment.m742-sml.png)](./walkthrough-images/04-addfragment.m742.png#lightbox)
 
 -----
 
@@ -231,11 +231,11 @@ public class TitlesFragment : ListFragment
 }
 ```
 
-アクティビティが作成されると、Android は`OnActivityCreated`フラグメントのメソッドを呼び出します。これは、 `ListView`のリストアダプターが作成される場所です。  メソッドは、 `PlayQuoteActivity`のインスタンスを起動して、選択した再生の見積もりを表示します。 `ShowQuoteFromPlay`
+アクティビティが作成されると、Android はフラグメントの `OnActivityCreated` メソッドを呼び出します。ここで、`ListView` のリストアダプターが作成されます。  `ShowQuoteFromPlay` メソッドによって `PlayQuoteActivity` のインスタンスが開始され、選択した再生の見積もりが表示されます。
 
 ## <a name="display-titlesfragment-in-mainactivity"></a>MainActivity に TitlesFragment を表示する
 
-最後の手順は、内`TitlesFragment` `MainActivity`にを表示することです。 アクティビティは、フラグメントを動的に読み込みません。 代わりに、 `fragment`要素を使用してアクティビティのレイアウトファイルで宣言することによって、フラグメントが静的に読み込まれます。 読み込むフラグメントは、 `android:name`属性をフラグメントクラス (型の名前空間を含む) に設定することによって識別されます。 たとえば、を使用`TitlesFragment` `android:name`するには、をに`FragmentSample.TitlesFragment`設定します。
+最後の手順では、`MainActivity`内に `TitlesFragment` を表示します。 アクティビティは、フラグメントを動的に読み込みません。 代わりに、フラグメントは、`fragment` 要素を使用して、アクティビティのレイアウトファイルで宣言することによって、静的に読み込まれます。 読み込むフラグメントは、`android:name` 属性をフラグメントクラス (型の名前空間を含む) に設定することによって識別されます。 たとえば、`TitlesFragment`を使用する場合、`android:name` は `FragmentSample.TitlesFragment`に設定されます。
 
 レイアウトファイル**activity_main**を編集し、既存の xml を次のように置き換えます。
 
@@ -256,7 +256,7 @@ public class TitlesFragment : ListFragment
 ```
 
 > [!NOTE]
-> 属性`class`は、の`android:name`有効な代替です。 どの形式が推奨されているかについての正式なガイダンスはありませんが`class` 、と`android:name`同じ意味で使用されるコードベースの例が多数あります。
+> `class` 属性は `android:name`の有効な代替です。 どの形式が推奨されているかについての正式なガイダンスはありません。 `class` を `android:name`と同じ意味で使用するコードベースの例が多数あります。
 
 MainActivity にはコードの変更は必要ありません。 このクラスのコードは、次のスニペットと非常によく似ている必要があります。
 
@@ -276,6 +276,6 @@ public class MainActivity : Activity
 
 コードが完成したので、デバイスでアプリを実行して動作を確認します。
 
-[![電話で実行されているアプリケーションのスクリーンショット。](./walkthrough-images/05-app-screenshots-sml.png)](./walkthrough-images/05-app-screenshots.png#lightbox)
+[電話で実行されているアプリケーションのスクリーンショットを![します。](./walkthrough-images/05-app-screenshots-sml.png)](./walkthrough-images/05-app-screenshots.png#lightbox)
 
 [このチュートリアルのパート 2](./walkthrough-landscape.md)では、横モードで実行されているデバイスに対して、このアプリケーションを最適化します。

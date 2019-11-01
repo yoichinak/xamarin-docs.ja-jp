@@ -4,15 +4,15 @@ description: この記事では、watchOS 3 での Apple の Apple Pay に加え
 ms.prod: xamarin
 ms.assetid: 32FF5D21-C252-485D-83AC-A7E592237962
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 579f2afd8e52251973900f35ef91ac086adf7603
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 372b034b7e14f3cfaadde8fe5a5370e368f161db
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768648"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030125"
 ---
 # <a name="apple-pay-on-watchos-in-xamarin"></a>Xamarin での watchOS の Apple Pay
 
@@ -26,7 +26,7 @@ IOS 10 と watchOS 3 では、iOS と watchOS の両方を使用して、動的�
 
 ## <a name="passkit-framework-enhancements"></a>Pass Kit フレームワークの機能強化
 
-IOS 10 では、またはの`UIKit`外部で Apple Pay をサポートするように、pass kit フレームワークが拡張され、カードの発行者がアプリ内からカードを提示できるようになりました。 
+IOS 10 では、Pass Kit フレームワークが拡張され、`UIKit` の外部 Apple Pay がサポートされるようになり、カードの発行者がアプリ内からカードを提示できるようになりました。 
 
 ### <a name="supporting-apple-pay-outside-of-uikit"></a>UIKit 外での Apple Pay のサポート
 
@@ -34,15 +34,15 @@ IOS 10 では、またはの`UIKit`外部で Apple Pay をサポートするよ�
 
 ### <a name="presenting-issuer-cards-from-within-apps"></a>アプリ内での発行者カードの提示
 
-IOS 10 と watchOS 3 では、カードの発行者が独自のアプリ内から支払いカードを提示できるようにする新しい機能が、Pass Kit フレームワークに追加されました。 開発者は、カード`PKPaymentButtonTypeInStore`の Apple Pay ボタンを表示する uibutton をアプリのユーザーインターフェイスに追加できます。
+IOS 10 と watchOS 3 では、カードの発行者が独自のアプリ内から支払いカードを提示できるようにする新しい機能が、Pass Kit フレームワークに追加されました。 開発者は、カードの Apple Pay ボタンを表示するアプリのユーザーインターフェイスに `PKPaymentButtonTypeInStore` UIButton を追加できます。
 
-[Pkpass library](https://developer.apple.com/reference/passkit/pkpasslibrary)クラスのメソッドを使用して、カードをプログラムで表示することもできます。`PresentPaymentPass`
+[Pkpass library](https://developer.apple.com/reference/passkit/pkpasslibrary)クラスの `PresentPaymentPass` メソッドを使用して、カードをプログラムで表示することもできます。
 
 ## <a name="new-payment-network-support"></a>新しい支払いネットワークのサポート
 
 IOS 10 と watchOS 3 を初めて使用する場合、アプリは、開発者がアプリケーションを変更して再コンパイルし、アプリストアに再送信することなく、新しい支払いネットワークが利用可能になったときに自動的にサポートできます。
 
-`PKPaymentNetwork`クラスの new [AvailableNetworks](https://developer.apple.com/reference/passkit/pkpaymentrequest/1833288-availablenetworks)メソッドを使用すると、アプリは実行時にユーザーのデバイスで利用可能なネットワークを検出できます。 さらに、 [Supportednetworks](https://developer.apple.com/reference/passkit/pkpaymentrequest/1619329-supportednetworks)プロパティが拡張され、支払プロバイダーの名前が引数として使用されるようになりました。 これらの方法を使用すると、アプリは、支払いプロバイダーがサポートする任意のネットワークを自動的にサポートできます。
+`PKPaymentNetwork` クラスの新しい[AvailableNetworks](https://developer.apple.com/reference/passkit/pkpaymentrequest/1833288-availablenetworks)メソッドを使用すると、アプリは実行時にユーザーのデバイスで利用可能なネットワークを検出できます。 さらに、 [Supportednetworks](https://developer.apple.com/reference/passkit/pkpaymentrequest/1619329-supportednetworks)プロパティが拡張され、支払プロバイダーの名前が引数として使用されるようになりました。 これらの方法を使用すると、アプリは、支払いプロバイダーがサポートする任意のネットワークを自動的にサポートできます。
 
 詳細については、 [Apple Pay の構成](~/ios/platform/apple-pay.md)と Apple の[Apple Pay ガイド](https://developer.apple.com/apple-pay/)を参照してください。
 
@@ -60,6 +60,6 @@ IOS 10 と watchOS 3 では、Apple は新しいテスト環境を導入しま�
 > [!NOTE]
 > ICloud アカウントを切り替えると、デバイスは自動的に新しいテスト環境に切り替わります。 ただし、Apple では、iTunes App Store に送信する前に、実稼働環境で実際のカードを使用してアプリをテストする**必要があり**ます。
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>まとめ
 
 この記事では、watchOS 3 での Apple の Apple Pay に加えられた拡張機能と、それらを Xamarin. iOS で実装する方法について説明しました。

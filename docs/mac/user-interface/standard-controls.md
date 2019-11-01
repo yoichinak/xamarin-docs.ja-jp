@@ -4,15 +4,15 @@ description: この記事では、Xamarin. Mac アプリケーションでのボ
 ms.prod: xamarin
 ms.assetid: d2593883-d255-431f-9781-75f04d8cecea
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 18ce7eb4dcd68596027f739579fd5a4b70497829
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: fe887d837930ebc75fed0fb7c163a3f30ad83af9
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70772704"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73008365"
 ---
 # <a name="standard-controls-in-xamarinmac"></a>Xamarin. Mac の標準コントロール
 
@@ -22,11 +22,11 @@ Xamarin. Mac C#アプリケーションでと .net を使用する場合、 *Xco
 
 AppKit コントロールは、Xamarin. Mac アプリケーションのユーザーインターフェイスを作成するために使用される UI 要素です。 これらは、ボタン、ラベル、テキストフィールド、チェックボックス、セグメント化されたコントロールなどの要素で構成され、ユーザーが操作すると、インスタントアクションや表示される結果が発生します。
 
-[![](standard-controls-images/intro01.png "サンプルアプリのメイン画面")](standard-controls-images/intro01.png#lightbox)
+[![](standard-controls-images/intro01.png "The example app main screen")](standard-controls-images/intro01.png#lightbox)
 
 この記事では、Xamarin. Mac アプリケーションで AppKit コントロールを操作するための基本について説明します。 最初に、 [Hello, Mac](~/mac/get-started/hello-mac.md)の記事を使用して作業することを強くお勧めします。具体的には、 [Xcode と Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)および[アウトレットとアクション](~/mac/get-started/hello-mac.md#outlets-and-actions)に関するセクションで説明します。これは、で使用する主要な概念と手法に関するものです。この記事をご覧ください。
 
-[Xamarin. Mac の内部](~/mac/internals/how-it-works.md)ドキュメントの「[クラス/ C#メソッドを目的に公開](~/mac/internals/how-it-works.md)する」セクションを参照して、 C#クラスをに接続するために使用`Register`さ`Export`れるコマンドとコマンドについて説明します。目的 C オブジェクトと UI 要素。
+[Xamarin. Mac の内部](~/mac/internals/how-it-works.md)ドキュメントの「 C# [クラス/ C#メソッドを目的](~/mac/internals/how-it-works.md)として公開する」セクションを参照することもできます。ここでは、クラスを目的のために接続するために使用する`Register`と`Export`のコマンドについて説明します。オブジェクトと UI 要素。
 
 <a name="Introduction_to_Controls_and_Views" />
 
@@ -51,14 +51,14 @@ Apple では、AppKit コントロールを使用するときに、次のガイ�
 
 AppKit コントロールのサブセットには、ウィンドウのフレーム領域に含めることができる表示スタイルが含まれています。 例については、メールアプリのツールバーをご覧ください。
 
-[![](standard-controls-images/mailapp.png "Mac ウィンドウフレーム")](standard-controls-images/mailapp.png#lightbox)
+[![](standard-controls-images/mailapp.png "A Mac Window frame")](standard-controls-images/mailapp.png#lightbox)
 
-- `NSButton`のスタイル`NSTexturedRoundedBezelStyle`を使用して、**テクスチャボタンを丸め**ます。
-- というスタイルを`NSSegmentStyleTexturedRounded`持つ、 `NSSegmentedControl` **丸めら**れたセグメント化されたコントロール。
-- というスタイルを`NSSegmentStyleSeparated`持つ、 `NSSegmentedControl` **丸めら**れたセグメント化されたコントロール。
-- **テクスチャのポップアップメニュー** - `NSPopUpButton`の`NSTexturedRoundedBezelStyle`スタイルを持つ。
-- の`NSPopUpButton` スタイルを使用して、テクスチャを丸めたドロップダウン`NSTexturedRoundedBezelStyle`メニュー。
-- **検索バー** -A `NSSearchField`.
+- **丸いテクスチャボタン**-スタイルが `NSTexturedRoundedBezelStyle`の `NSButton`。
+- **丸めら**れた分割されたコントロール-スタイルが `NSSegmentStyleTexturedRounded`の `NSSegmentedControl`。
+- **丸めら**れた分割されたコントロール-スタイルが `NSSegmentStyleSeparated`の `NSSegmentedControl`。
+- **[テクスチャの丸め] ポップアップメニュー** -スタイルが `NSTexturedRoundedBezelStyle`の `NSPopUpButton`。
+- `NSTexturedRoundedBezelStyle`のスタイルを使用した `NSPopUpButton` の**丸いテクスチャドロップダウンメニュー** 。
+- **検索バー** -`NSSearchField`。
 
 Apple では、AppKit コントロールをウィンドウフレームで操作するときに、次のガイドラインを提案しています。
 
@@ -71,17 +71,17 @@ Apple では、AppKit コントロールをウィンドウフレームで操作�
 
 ## <a name="creating-a-user-interface-in-interface-builder"></a>Interface Builder でのユーザーインターフェイスの作成
 
-新しい Xamarin. Mac Cocoa アプリケーションを作成すると、既定で標準の空白のウィンドウが表示されます。 このウィンドウは、プロジェクトに`.storyboard`自動的に含まれるファイルに定義されています。 Windows のデザインを編集するには、**ソリューションエクスプローラー**で、 `Main.storyboard`ファイルをダブルクリックします。
+新しい Xamarin. Mac Cocoa アプリケーションを作成すると、既定で標準の空白のウィンドウが表示されます。 このウィンドウは、プロジェクトに自動的に含まれる `.storyboard` ファイルで定義されています。 Windows のデザインを編集するには、**ソリューションエクスプローラー**で、`Main.storyboard` ファイルをダブルクリックします。
 
-[![](standard-controls-images/edit01.png "ソリューションエクスプローラーでメインのストーリーボードを選択する")](standard-controls-images/edit01.png#lightbox)
+[![](standard-controls-images/edit01.png "Selecting the Main Storyboard in the Solution Explorer")](standard-controls-images/edit01.png#lightbox)
 
 これにより、Xcode の Interface Builder でウィンドウのデザインが開きます。
 
-[![](standard-controls-images/edit02.png "Xcode でストーリーボードを編集する")](standard-controls-images/edit02.png#lightbox)
+[![](standard-controls-images/edit02.png "Editing the storyboard in Xcode")](standard-controls-images/edit02.png#lightbox)
 
 ユーザーインターフェイスを作成するには、**ライブラリインスペクター**から Interface Builder の**インターフェイスエディター**に UI 要素 (appkit コントロール) をドラッグします。 次の例では、**垂直分割ビュー**コントロールが**ライブラリインスペクター**から薬品を作成し、**インターフェイスエディター**でウィンドウに配置されています。
 
-[![](standard-controls-images/edit03.png "ライブラリから分割ビューを選択する")](standard-controls-images/edit03.png#lightbox)
+[![](standard-controls-images/edit03.png "Selecting a Split View from the Library")](standard-controls-images/edit03.png#lightbox)
 
 Interface Builder でのユーザーインターフェイスの作成の詳細については、 [Xcode の概要と Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)のドキュメントを参照してください。
 
@@ -91,21 +91,21 @@ Interface Builder でのユーザーインターフェイスの作成の詳細�
 
 コントロールがユーザーインターフェイスに含まれている場合は、**制約エディター**を使用して、手動で値を入力して位置とサイズを設定し、親ウィンドウまたはビューのサイズが変更されたときに、コントロールの位置とサイズを自動的に設定する方法を制御します。
 
-[![](standard-controls-images/edit04.png "制約の設定")](standard-controls-images/edit04.png#lightbox)
+[![](standard-controls-images/edit04.png "Setting the constraints")](standard-controls-images/edit04.png#lightbox)
 
-**Autoresizing**ボックスの外側の**赤い I ビーム**を使用して、特定の (x, y) 位置にコントロールを_貼り_付けます。 例えば: 
+**Autoresizing**ボックスの外側の**赤い I ビーム**を使用して、特定の (x, y) 位置にコントロールを_貼り_付けます。 (例: 
 
-[![](standard-controls-images/edit05.png "制約の編集")](standard-controls-images/edit05.png#lightbox)
+[![](standard-controls-images/edit05.png "Editing a constraint")](standard-controls-images/edit05.png#lightbox)
 
-サイズを変更または移動したときに、選択したコントロール (**階層ビュー** & **インターフェイスエディター**内) がウィンドウまたはビューの上部および右側の位置にスタックするように指定します。 
+(**階層ビュー** & **インターフェイスエディター**で) 選択されたコントロールがサイズ変更または移動されるときに、ウィンドウまたはビューの上部および右側の位置にスタックするように指定します。 
 
 エディターのその他の要素は、Height や Width などのプロパティを制御します。
 
-[![](standard-controls-images/edit06.png "高さの設定")](standard-controls-images/edit06.png#lightbox)
+[![](standard-controls-images/edit06.png "Setting the height")](standard-controls-images/edit06.png#lightbox)
 
 **配置エディター**を使用して、制約を持つ要素の配置を制御することもできます。
 
-[![](standard-controls-images/edit07.png "配置エディター")](standard-controls-images/edit07.png#lightbox)
+[![](standard-controls-images/edit07.png "The Alignment Editor")](standard-controls-images/edit07.png#lightbox)
 
 > [!IMPORTANT]
 > IOS の場合 (0, 0) は画面の左上隅、macOS (0, 0) は左下隅にあります。 これは、macOS では数値の値が上と右に増加する数学的な座標系が使用されるためです。 ユーザーインターフェイスに AppKit コントロールを配置するときは、この点に注意する必要があります。
@@ -193,27 +193,27 @@ namespace AppKit
 }
 ```
 
-ここで、 `SourceListView`命令はクラスを目的の C に公開し、を Interface Builder で使用できるようにします。 `[Register("SourceListView")]` 詳細については、「Xamarin. Mac の`Register`内部ドキュメント」の「[クラス/メソッドを目的にC#公開](~/mac/internals/how-it-works.md)する」セクションを参照`Export`してください。 C#クラスをに接続するために使用されるコマンドとコマンドについて説明して[います。](~/mac/internals/how-it-works.md)目的 C オブジェクトと UI 要素。
+ここで、`[Register("SourceListView")]` 命令は、を Interface Builder で使用できるように、`SourceListView` クラスを目的の C クラスに公開します。 詳細については、「 [Xamarin. Mac の内部](~/mac/internals/how-it-works.md)ドキュメント」の「 C# [クラス/メソッドを目的C# ](~/mac/internals/how-it-works.md)として公開する」セクションを参照してください。クラスを目的のものに接続するために使用する`Register`と`Export`のコマンドについて説明します。オブジェクトと UI 要素。
 
-上記のコードを使用して、拡張する基本型の AppKit コントロールをデザイン画面 (下の例では**ソースリスト**) にドラッグし、 **id インスペクター**に切り替えて、**カスタムクラス**を次の名前に設定します。次のように、目的の C `SourceListView`(例) に公開しています。
+上記のコードを使用して、拡張する基本型の AppKit コントロールをデザイン画面 (下の例では**ソースリスト**) にドラッグし、 **id インスペクター**に切り替えて、**カスタムクラス**を次の名前に設定します。次のように、目的の C (例 `SourceListView`) に公開しています。
 
-[![](standard-controls-images/edit10.png "Xcode でのカスタムクラスの設定")](standard-controls-images/edit10.png#lightbox)
+[![](standard-controls-images/edit10.png "Setting a custom class in Xcode")](standard-controls-images/edit10.png#lightbox)
 
 <a name="Exposing_Outlets_and_Actions" />
 
 ### <a name="exposing-outlets-and-actions"></a>アウトレットとアクションの公開
 
-コードでC# Appkit コントロールにアクセスする前に、**アウトレット**または**アクション**として公開する必要があります。 これを行うには、**インターフェイス階層**または**インターフェイスエディター**で指定されたコントロールを選択し、**アシスタントビュー**に切り替えます ( `.h`ウィンドウのが編集用に選択されていることを確認してください)。
+コードでC# Appkit コントロールにアクセスする前に、**アウトレット**または**アクション**として公開する必要があります。 これを行うには、**インターフェイス階層**または**インターフェイスエディター**で指定されたコントロールを選択し、**アシスタントビュー**に切り替えます (ウィンドウの `.h` が編集用に選択されていることを確認します)。
 
-[![](standard-controls-images/edit11.png "正しいファイルを選択して編集する")](standard-controls-images/edit11.png#lightbox)
+[![](standard-controls-images/edit11.png "Selecting the correct file to edit")](standard-controls-images/edit11.png#lightbox)
 
-制御-appkit コントロールから、次のように`.h` 、**アウトレット**または**アクション**の作成を開始するためのファイルを指定ファイルにドラッグします。
+Control-AppKit コントロールから、`.h` のファイルにドラッグして、**アウトレット**または**アクション**の作成を開始します。
 
-[![](standard-controls-images/edit12.png "ドラッグしてアウトレットまたはアクションを作成する")](standard-controls-images/edit12.png#lightbox)
+[![](standard-controls-images/edit12.png "Dragging to create an Outlet or Action")](standard-controls-images/edit12.png#lightbox)
 
 作成する露出の種類を選択し、**アウトレット**または**アクション**に**名前**を付けます。 
 
-[![](standard-controls-images/edit13.png "アウトレットまたはアクションを構成する")](standard-controls-images/edit13.png#lightbox)
+[![](standard-controls-images/edit13.png "Configuring the Outlet or Action")](standard-controls-images/edit13.png#lightbox)
 
 **アウトレット**と**アクション**の操作の詳細については、 [Xcode と Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)のドキュメントの概要に関する記事の「[アウトレットとアクション](~/mac/get-started/hello-mac.md#outlets-and-actions)」セクションを参照してください。
 
@@ -223,11 +223,11 @@ namespace AppKit
 
 Xcode から Visual Studio for Mac に戻ると、Xcode で行ったすべての変更が自動的に Xamarin. Mac プロジェクトと同期されます。
 
-`SplitViewController.designer.cs` **ソリューションエクスプローラー**でを選択すると、次のC#コードで**アウトレット**と**アクション**がどのようにつながっているかを確認できます。
+**ソリューションエクスプローラー**で `SplitViewController.designer.cs` を選択すると、次のC#コードで**アウトレット**と**アクション**がどのようにつながっているかを確認できます。
 
-[![](standard-controls-images/sync01.png "Xcode との変更の同期")](standard-controls-images/sync01.png#lightbox)
+[![](standard-controls-images/sync01.png "Synchronizing Changes with Xcode")](standard-controls-images/sync01.png#lightbox)
 
-`SplitViewController.designer.cs`ファイル内の定義は次のようになります。
+`SplitViewController.designer.cs` ファイルの定義は次のようになります。
 
 ```csharp
 [Outlet]
@@ -240,7 +240,7 @@ AppKit.NSSplitViewItem RightController { get; set; }
 AppKit.NSSplitView SplitView { get; set; }
 ```
 
-Xcode の`MainWindow.h`ファイル内の定義で行アップします。
+Xcode の `MainWindow.h` ファイル内の定義で行アップします。
 
 ```csharp
 @interface SplitViewController : NSSplitViewController {
@@ -256,9 +256,9 @@ Xcode の`MainWindow.h`ファイル内の定義で行アップします。
 @property (nonatomic, retain) IBOutlet NSSplitView *SplitView;
 ```
 
-ご覧のように、Visual Studio for Mac は`.h`ファイルへの変更をリッスンし、それぞれ`.designer.cs`のファイルでこれらの変更を自動的に同期して、アプリケーションに公開します。 また、 `SplitViewController.designer.cs`は部分クラスであるため、クラスに加えられた変更を`SplitViewController.cs`上書きするように Visual Studio for Mac を変更する必要がないことにも注意してください。
+ご覧のように、Visual Studio for Mac は `.h` ファイルへの変更をリッスンし、それぞれの `.designer.cs` ファイルでこれらの変更を自動的に同期して、アプリケーションに公開します。 `SplitViewController.designer.cs` は部分クラスであるため、Visual Studio for Mac では、クラスに加えられた変更を上書きする `SplitViewController.cs` を変更する必要がないことにも気付きます。
 
-通常、を開く必要はありませ`SplitViewController.designer.cs`ん。ここでは、教育目的でのみ提供されていました。
+通常は、`SplitViewController.designer.cs` を自分で開く必要はありません。ここでは、教育目的でのみ提供されています。
 
 > [!IMPORTANT]
 > ほとんどの場合、Visual Studio for Mac は Xcode で行われた変更を自動的に確認し、それらを Xamarin. Mac プロジェクトに同期します。 同期が自動的に行われないときは Xcode に戻り、再び Visual Studio for Mac に戻ります。 こうすると通常、同期サイクルが開始します。
@@ -269,7 +269,7 @@ Xcode の`MainWindow.h`ファイル内の定義で行アップします。
 
 AppKit には、ユーザーインターフェイスの設計で使用できるいくつかの種類のボタンが用意されています。 詳細については、「Apple の[OS X ヒューマンインターフェイスガイドライン](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)」の「[ボタン](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsButtons.html#//apple_ref/doc/uid/20000957-CH48-SW1)」セクションを参照してください。 
 
-[![](standard-controls-images/buttons01.png "さまざまなボタンの種類の例")](standard-controls-images/buttons01.png#lightbox)
+[![](standard-controls-images/buttons01.png "An example of the different button types")](standard-controls-images/buttons01.png#lightbox)
 
 ボタンが**コンセント**経由で公開されている場合、次のコードは押されていることに応答します。
 
@@ -279,7 +279,7 @@ ButtonOutlet.Activated += (sender, e) => {
 };
 ```
 
-**アクション**によって公開されているボタン`public partial`の場合、Xcode で選択した名前を使用して、メソッドが自動的に作成されます。 **アクション**に応答するには、**アクション**が定義されているクラスの部分メソッドを完了します。 例えば:
+**アクション**によって公開されているボタンの場合、Xcode で選択した名前を使用して、`public partial` メソッドが自動的に作成されます。 **アクション**に応答するには、**アクション**が定義されているクラスの部分メソッドを完了します。 (例:
 
 ```csharp
 partial void ButtonAction (Foundation.NSObject sender) {
@@ -288,7 +288,7 @@ partial void ButtonAction (Foundation.NSObject sender) {
 }
 ```
 
-状態 ( **On**や**Off**など) が設定されているボタンの場合は、その状態をチェック`State`するか、 `NSCellStateValue`列挙型に対してプロパティを使用して設定できます。 例えば:
+状態が ( **On**や**Off**などの) ボタンについては、状態をチェックするか、`NSCellStateValue` 列挙型に対して `State` プロパティを使用して設定できます。 (例:
 
 ```csharp
 DisclosureButton.Activated += (sender, e) => {
@@ -296,9 +296,9 @@ DisclosureButton.Activated += (sender, e) => {
 };
 ```
 
-次`NSCellStateValue`の場所を指定できます。
+`NSCellStateValue` は次のようになります。
 
-- **で** - ボタンをクリックするか (チェック ボックスのチェック) など、コントロールが選択されています。
+- **[オン**]-ボタンがプッシュされるか、またはコントロールが選択されます (チェックボックスをオンにするなど)。
 - **オフ**-ボタンが押されていないか、コントロールが選択されていません。
 - **Mixed** -**オン**と**オフ**の状態の組み合わせ。
 
@@ -310,7 +310,7 @@ DisclosureButton.Activated += (sender, e) => {
 
 ボタンを既定として設定するには、Xcode の Interface Builder でそのボタンを選択します。 次に、**属性インスペクター**で、同等の**キー**フィールドを選択し、Enter キー**または enter**キーを押します。
 
-[![](standard-controls-images/buttons03.png "同等のキーの編集")](standard-controls-images/buttons03.png#lightbox)
+[![](standard-controls-images/buttons03.png "Editing the Key Equivalent")](standard-controls-images/buttons03.png#lightbox)
 
 同様に、マウスの代わりにキーボードを使用してボタンをアクティブ化するために使用できる任意のキーシーケンスを割り当てることができます。 たとえば、上の図のコマンド-C キーを押します。
 
@@ -322,9 +322,9 @@ DisclosureButton.Activated += (sender, e) => {
 
 AppKit には、ユーザーインターフェイスの設計で使用できる複数の種類のチェックボックスとオプションボタングループが用意されています。 詳細については、「Apple の[OS X ヒューマンインターフェイスガイドライン](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)」の「[ボタン](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsButtons.html#//apple_ref/doc/uid/20000957-CH48-SW1)」セクションを参照してください。 
 
-[![](standard-controls-images/buttons02.png "使用可能な checkbox 型の例")](standard-controls-images/buttons02.png#lightbox)
+[![](standard-controls-images/buttons02.png "An example of the available checkbox types")](standard-controls-images/buttons02.png#lightbox)
 
-チェックボックスおよびラジオボタン (**コンセント**経由**で**公開されます) には状態 (オンと**オフ**など) があり、 `State` `NSCellStateValue`列挙型に対してプロパティを使用して状態を確認または設定できます。 例えば:
+チェックボックスおよびラジオボタン (**コンセント**経由で公開されます) には状態 (**オン**と**オフ**など) があります。状態は、`NSCellStateValue` 列挙型に対して、`State` プロパティを使用して確認または設定できます。 (例:
 
 ```csharp
 AdjustTime.Activated += (sender, e) => {
@@ -332,13 +332,13 @@ AdjustTime.Activated += (sender, e) => {
 };
 ```
 
-次`NSCellStateValue`の場所を指定できます。
+`NSCellStateValue` は次のようになります。
 
-- **で** - ボタンをクリックするか (チェック ボックスのチェック) など、コントロールが選択されています。
+- **[オン**]-ボタンがプッシュされるか、またはコントロールが選択されます (チェックボックスをオンにするなど)。
 - **オフ**-ボタンが押されていないか、コントロールが選択されていません。
 - **Mixed** -**オン**と**オフ**の状態の組み合わせ。
 
-ラジオボタングループのボタンを選択するには、ラジオボタンを**コンセント**として選択し、その`State`プロパティを設定します。 たとえば、次のように入力します。
+ラジオボタングループのボタンを選択するには、ラジオボタンを**コンセント**として選択し、その `State` プロパティを設定します。 たとえば、次のように入力します。
 
 ```csharp
 partial void SelectCar (Foundation.NSObject sender) {
@@ -349,11 +349,11 @@ partial void SelectCar (Foundation.NSObject sender) {
 
 グループとして機能するラジオボタンのコレクションを取得し、選択した状態を自動的に処理するには、新しい**アクション**を作成し、グループ内のすべてのボタンをそれにアタッチします。
 
-![](standard-controls-images/buttons04.png "新しいアクションの作成")
+![](standard-controls-images/buttons04.png "Creating a new Action")
 
-次に、 `Tag` **属性インスペクター**の各ラジオボタンに一意のを割り当てます。
+次に、**属性インスペクター**の各オプションボタンに一意の `Tag` を割り当てます。
 
-![](standard-controls-images/buttons05.png "ラジオボタンのタグの編集")
+![](standard-controls-images/buttons05.png "Editing a radio button tag")
 
 変更を保存し Visual Studio for Mac に戻り、すべてのオプションボタンがアタッチされている**アクション**を処理するコードを追加します。
 
@@ -365,7 +365,7 @@ partial void NumberChanged(Foundation.NSObject sender)
 }
 ```
 
-プロパティを使用し`Tag`て、どのオプションボタンが選択されたかを確認できます。
+`Tag` プロパティを使用して、どのオプションボタンが選択されたかを確認できます。
 
 <a name="Working_with_Menu_Controls" />
 
@@ -373,7 +373,7 @@ partial void NumberChanged(Foundation.NSObject sender)
 
 AppKit には、ユーザーインターフェイスの設計で使用できるさまざまな種類のメニューコントロールが用意されています。 詳細については、Apple の[OS X ヒューマンインターフェイスガイドライン](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)の[メニューコントロール](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlswithMenus.html#//apple_ref/doc/uid/20000957-CH100-SW1)に関するセクションを参照してください。 
 
-[![](standard-controls-images/menu01.png "メニューコントロールの例")](standard-controls-images/menu01.png#lightbox)
+[![](standard-controls-images/menu01.png "Example menu controls")](standard-controls-images/menu01.png#lightbox)
 
 <a name="Providing-Menu-Control-Data" />
 
@@ -385,7 +385,7 @@ MacOS で使用できるメニューコントロールは、内部リスト (Int
 
 #### <a name="working-with-internal-data"></a>内部データの操作
 
-Interface Builder での項目の定義に加えて、メニューコントロール ( `NSComboBox`など) には、保持する内部リストの項目を追加、編集、または削除できるメソッドの完全なセットが用意されています。
+Interface Builder での項目の定義に加えて、メニューコントロール (`NSComboBox`など) には、保持している内部リストの項目を追加、編集、または削除できるメソッドの完全なセットが用意されています。
 
 - `Add`-新しい項目をリストの末尾に追加します。
 - `GetItem`-指定されたインデックス位置にある項目を返します。
@@ -393,11 +393,11 @@ Interface Builder での項目の定義に加えて、メニューコントロ�
 - `IndexOf`-指定された項目のインデックスを返します。
 - `Remove`-指定された項目を一覧から削除します。
 - `RemoveAll`-リストからすべての項目を削除します。
-- `RemoveAt`-指定されたインデックス位置にある項目を削除します。
+- `RemoveAt`-指定したインデックス位置にある項目を削除します。
 - `Count`-リスト内の項目の数を返します。
 
 > [!IMPORTANT]
-> Extern データソース (`UsesDataSource = true`) を使用している場合は、上記のメソッドのいずれかを呼び出すと例外がスローされます。
+> Extern データソース (`UsesDataSource = true`) を使用している場合は、上記のメソッドのいずれかを呼び出すと、例外がスローされます。
 
 <a name="Working-with-an-External-Data-Source" />
 
@@ -405,12 +405,12 @@ Interface Builder での項目の定義に加えて、メニューコントロ�
 
 組み込みの内部データを使用してメニューコントロールの行を提供するのではなく、必要に応じて外部データソースを使用して、項目のバッキングストア (SQLite データベースなど) を提供できます。
 
-外部データソースを操作するには、メニューコントロールのデータソースのインスタンスを作成し (`NSComboBoxDataSource`たとえば)、必要なデータを提供するいくつかのメソッドをオーバーライドします。
+外部データソースを操作するには、メニューコントロールのデータソースのインスタンスを作成し (たとえば`NSComboBoxDataSource`)、いくつかのメソッドをオーバーライドして必要なデータを提供します。
 
 - `ItemCount`-リスト内の項目の数を返します。
 - `ObjectValueForItem`-指定されたインデックスの項目の値を返します。
-- `IndexOfItem`-指定された項目の値のインデックスを返します。
-- `CompletedString`-部分的に型指定された項目の値について、最初に一致した項目の値を返します。 このメソッドは、オートコンプリートが有効になって`Completes = true`いる場合にのみ呼び出されます ()。
+- `IndexOfItem`-指定した項目の値のインデックスを返します。
+- `CompletedString`-部分的に型指定された項目の値について、最初に一致した項目の値を返します。 このメソッドは、オートコンプリートが有効になっている場合にのみ呼び出されます (`Completes = true`)。
 
 詳細については、[データベースの操作](~/mac/app-fundamentals/databases.md)に関するドキュメントの「[データベースとコンボ](~/mac/app-fundamentals/databases.md#Databases-and-ComboBoxes)セクション」を参照してください。
 
@@ -420,14 +420,14 @@ Interface Builder での項目の定義に加えて、メニューコントロ�
 
 メニューコントロールの外観を調整するには、次のメソッドを使用できます。
 
-- `HasVerticalScroller`-の`true`場合、コントロールに垂直スクロールバーが表示されます。 
+- `HasVerticalScroller`-`true`の場合、コントロールに垂直スクロールバーが表示されます。 
 - `VisibleItems`-コントロールを開いたときに表示される項目の数を調整します。 既定値は5です。
-- `IntercellSpacing`-が左余白と右余白を`NSSize` `Width`指定し、が`Height`項目の前後のスペースを指定するを指定して、指定した項目の周囲の余白を調整します。
+- `IntercellSpacing`-`Width` が左右の余白を指定し、`Height` が項目の前後のスペースを指定する `NSSize` を指定して、特定の項目の周囲の余白を調整します。
 - `ItemHeight`-リスト内の各項目の高さを指定します。
 
-の`NSPopupButtons`ドロップダウン型の場合、最初のメニュー項目にコントロールのタイトルが表示されます。 たとえば、次のように入力します。 
+`NSPopupButtons`のドロップダウン型の場合、最初のメニュー項目にコントロールのタイトルが表示されます。 たとえば、次のように入力します。 
 
-[![](standard-controls-images/menu02.png "メニューコントロールの例")](standard-controls-images/menu02.png#lightbox)
+[![](standard-controls-images/menu02.png "An example menu control")](standard-controls-images/menu02.png#lightbox)
 
 タイトルを変更するには、この項目を**アウトレット**として公開し、次のようなコードを使用します。
 
@@ -441,13 +441,13 @@ DropDownSelected.Title = "Item 1";
 
 次のメソッドとプロパティを使用すると、メニューコントロールの一覧で選択した項目を操作できます。
 
-- `SelectItem`-指定されたインデックス位置にある項目を選択します。
+- `SelectItem`-指定されたインデックスにある項目を選択します。
 - `Select`-指定された項目の値を選択します。
-- `DeselectItem`-指定されたインデックス位置にある項目を選択解除します。
+- `DeselectItem`-指定したインデックスにある項目を選択解除します。
 - `SelectedIndex`-現在選択されている項目のインデックスを返します。
 - `SelectedValue`-現在選択されている項目の値を返します。
 
-を使用して、リストの先頭にある指定したインデックス位置に項目を`ScrollItemAtIndexToVisible`表示し、をスクロールして、指定したインデックスの項目が表示されるまで一覧をスクロールします。 `ScrollItemAtIndexToTop`
+`ScrollItemAtIndexToTop` を使用して、リストの先頭にある指定したインデックスの項目を表示し、指定したインデックスの項目が表示されるまでスクロールする `ScrollItemAtIndexToVisible` を一覧に表示します。
 
 <a name="Responding to Events" />
 
@@ -456,11 +456,11 @@ DropDownSelected.Title = "Item 1";
 メニューコントロールは、ユーザーの操作に応答するために次のイベントを提供します。
 
 - `SelectionChanged`-ユーザーがリストから値を選択したときに呼び出されます。
-- `SelectionIsChanging`-新しいユーザーが選択した項目がアクティブな選択項目になる前に、が呼び出されます。
-- `WillPopup`-項目のドロップダウンリストが表示される前に、が呼び出されます。
-- `WillDismiss`-項目のドロップダウンリストが閉じられる前に、が呼び出されます。
+- `SelectionIsChanging`-新しいユーザーが選択した項目がアクティブな選択になる前に呼び出されます。
+- `WillPopup`-項目のドロップダウンリストが表示される前に呼び出されます。
+- `WillDismiss`-項目のドロップダウンリストが閉じられる前に呼び出されます。
 
-コントロール`NSComboBox`の場合は、ユーザーがコンボボックス内のテキスト`NSTextField`の値を編集`Changed`するたびに呼び出されるイベントなど、と同じイベントのすべてが含まれます。
+`NSComboBox` コントロールの場合、ユーザーがコンボボックス内のテキストの値を編集するたびに呼び出される `Changed` イベントなど、`NSTextField`と同じイベントのすべてが含まれます。
 
 必要に応じて、項目を**アクション**にアタッチし、次のようなコードを使用して、ユーザーによってトリガーされる**アクション**に応答することによって、選択 Interface Builder で定義されている内部データメニュー項目に応答できます。
 
@@ -479,9 +479,9 @@ partial void ItemOne (Foundation.NSObject sender) {
 
 AppKit には、ユーザーインターフェイスの設計で使用できるいくつかの種類の選択コントロールが用意されています。 詳細については、「Apple の[OS X ヒューマンインターフェイスガイドライン](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)」の「[選択コントロール](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsSelection.html#//apple_ref/doc/uid/20000957-CH49-SW1)」セクションを参照してください。 
 
-[![](standard-controls-images/select01.png "選択範囲コントロールの例")](standard-controls-images/select01.png#lightbox)
+[![](standard-controls-images/select01.png "Example selection controls")](standard-controls-images/select01.png#lightbox)
 
-選択コントロールにユーザー操作があるタイミングを追跡するには、2つの方法があります。これは、選択コントロールを**アクション**として公開することによって行います。 例えば:
+選択コントロールにユーザー操作があるタイミングを追跡するには、2つの方法があります。これは、選択コントロールを**アクション**として公開することによって行います。 (例:
 
 ```csharp
 partial void SegmentButtonPressed (Foundation.NSObject sender) {
@@ -489,7 +489,7 @@ partial void SegmentButtonPressed (Foundation.NSObject sender) {
 }
 ```
 
-または、 `Activated`イベントに**デリゲート**をアタッチします。 例えば:
+または、`Activated` イベントに**デリゲート**をアタッチします。 (例:
 
 ```csharp
 TickedSlider.Activated += (sender, e) => {
@@ -497,7 +497,7 @@ TickedSlider.Activated += (sender, e) => {
 };
 ```
 
-選択コントロールの値を設定または読み取るには、 `IntValue`プロパティを使用します。 例えば:
+選択コントロールの値を設定または読み取るには、`IntValue` プロパティを使用します。 (例:
 
 ```csharp
 FeedbackLabel.StringValue = string.Format("Stepper Value: {0:###}",TickedSlider.IntValue);
@@ -511,12 +511,12 @@ ImageWell.Image = NSImage.ImageNamed ("tag.png");
 
 ```
 
-に`NSDatePicker`は、日付と時刻を直接操作するための次のプロパティがあります。
+`NSDatePicker` には、日付と時刻を直接操作するための次のプロパティがあります。
 
-- **DateValue** -現在の日付と時刻の値を`NSDate`として指定します。
-- **Local** -として`NSLocal`のユーザーの場所。
-- **Timeinterval** -として`Double`の時間の値。
-- **TimeZone** -として`NSTimeZone`のユーザーのタイムゾーン。
+- **DateValue** -現在の日付と時刻の値を `NSDate`として指定します。
+- **ローカル**-ユーザーの場所を `NSLocal`として指定します。
+- **Timeinterval** -`Double`としての時間の値。
+- **TimeZone** -ユーザーのタイムゾーンを `NSTimeZone`として。
 
 <a name="Working_with_Indicator_Controls" />
 
@@ -524,9 +524,9 @@ ImageWell.Image = NSImage.ImageNamed ("tag.png");
 
 AppKit には、ユーザーインターフェイスの設計で使用できるいくつかの種類のインジケーターコントロールが用意されています。 詳細については、Apple の[OS X ヒューマンインターフェイスガイドライン](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)の[インジケーターコントロール](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsIndicators.html#//apple_ref/doc/uid/20000957-CH50-SW1)に関するセクションを参照してください。 
 
-[![](standard-controls-images/level01.png "インジケーターコントロールの例")](standard-controls-images/level01.png#lightbox)
+[![](standard-controls-images/level01.png "Example indicator controls")](standard-controls-images/level01.png#lightbox)
 
-インジケーターコントロールにユーザーの操作があるタイミングを追跡するには、次の2つの方法があります。これは、インジケーターコントロール`Activated`を**アクション**または**アウトレット**として公開し、**デリゲート**をイベントにアタッチすることによって行います。 例えば:
+インジケーターコントロールにユーザーの操作があるタイミングを追跡するには、次の2つの方法があります。これは、インジケーターコントロールを**アクション**または**アウトレット**として公開し、**デリゲート**を `Activated` イベントにアタッチすることによって行います。 (例:
 
 ```csharp
 LevelIndicator.Activated += (sender, e) => {
@@ -534,20 +534,20 @@ LevelIndicator.Activated += (sender, e) => {
 };
 ```
 
-インジケーターコントロールの値を読み取りまたは設定するには、 `DoubleValue`プロパティを使用します。 例えば:
+インジケーターコントロールの値を読み取りまたは設定するには、`DoubleValue` プロパティを使用します。 (例:
 
 ```csharp
 FeedbackLabel.StringValue = string.Format("Rating: {0:###}",Rating.DoubleValue);
 ```
 
-表示すると、不確定および非同期の進行状況インジケーターをアニメーション化する必要があります。 アニメーションが表示されたら、メソッドを使用してアニメーションを開始します。`StartAnimation` 例えば:
+表示すると、不確定および非同期の進行状況インジケーターをアニメーション化する必要があります。 `StartAnimation` メソッドを使用して、アニメーションが表示されたときに開始します。 (例:
 
 ```csharp
 Indeterminate.StartAnimation (this);
 AsyncProgress.StartAnimation (this);
 ```
 
-メソッドを`StopAnimation`呼び出すと、アニメーションが停止します。
+`StopAnimation` メソッドを呼び出すと、アニメーションが停止されます。
 
 <a name="Working_with_Text_Controls" />
 
@@ -555,7 +555,7 @@ AsyncProgress.StartAnimation (this);
 
 AppKit には、ユーザーインターフェイスの設計で使用できるさまざまな種類のテキストコントロールが用意されています。 詳細については、Apple の[OS X ヒューマンインターフェイスガイドライン](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)の[テキストコントロール](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsText.html#//apple_ref/doc/uid/20000957-CH51-SW1)に関するセクションを参照してください。 
 
-[![](standard-controls-images/text01.png "テキストコントロールの例")](standard-controls-images/text01.png#lightbox)
+[![](standard-controls-images/text01.png "Example text controls")](standard-controls-images/text01.png#lightbox)
 
 テキストフィールド (`NSTextField`) の場合、次のイベントを使用してユーザーの操作を追跡できます。
 
@@ -563,19 +563,19 @@ AppKit には、ユーザーインターフェイスの設計で使用できる�
 - 編集が**開始**されました-ユーザーが編集のためにフィールドを選択すると、が発生します。
 - **編集が終了**-ユーザーがフィールドで enter キーを押すか、フィールドの外に移動したとき。
 
-`StringValue`プロパティを使用して、フィールドの値を読み取りまたは設定します。 例えば:
+フィールドの値を読み取りまたは設定するには、`StringValue` プロパティを使用します。 (例:
 
 ```csharp
 FeedbackLabel.StringValue = string.Format("User ID: {0}",UserField.StringValue);
 ```
 
-数値を表示または編集するフィールドの場合は、 `IntValue`プロパティを使用できます。 例えば:
+数値を表示または編集するフィールドの場合は、`IntValue` プロパティを使用できます。 (例:
 
 ```csharp
 FeedbackLabel.StringValue = string.Format("Number: {0}",NumberField.IntValue);
 ```
 
-に`NSTextView`は、組み込みの書式設定を備えた、すべての機能を備えたテキストの編集と表示領域が用意されています。 と同様に、 `StringValue`プロパティを使用して、領域の値を読み取ったり設定したりします。 `NSTextField`
+`NSTextView` には、組み込みの書式設定を含む、すべての機能を備えたテキストの編集と表示領域が用意されています。 `NSTextField`と同様に、`StringValue` プロパティを使用して、領域の値を読み取ったり設定したりします。
 
 Xamarin. Mac アプリでテキストビューを操作する複雑な例の例については、 [Sourcewriter サンプルアプリ](https://docs.microsoft.com/samples/xamarin/mac-samples/sourcewriter)を参照してください。 SourceWriter は、コードの完了とシンプルな構文の強調表示をサポートするシンプルなソース コード エディターです。
 
@@ -587,7 +587,7 @@ SourceWriter コード全体に詳細なコメントが付いていて、可能�
 
 AppKit には、ユーザーインターフェイスの設計で使用できるさまざまな種類のコンテンツビューが用意されています。 詳細については、「Apple の[OS X ヒューマンインターフェイスガイドライン](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)」の「[コンテンツビュー](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsView.html#//apple_ref/doc/uid/20000957-CH52-SW1) 」セクションを参照してください。
 
-[![](standard-controls-images/content01.png "コンテンツビューの例")](standard-controls-images/content01.png#lightbox)
+[![](standard-controls-images/content01.png "An example content view")](standard-controls-images/content01.png#lightbox)
 
 <a name="Popovers" />
 
@@ -597,19 +597,19 @@ Segue は、特定のコントロールまたは画面領域に直接関連す�
 
 Segue を作成するには、次の手順を実行します。
 
-1. Segue を追加するウィンドウの ファイルを開きます。これを行うには、ソリューションエクスプローラーでダブルクリックし`.storyboard`ます。
+1. Segue を追加するウィンドウの `.storyboard` ファイルを、**ソリューションエクスプローラー**でダブルクリックして開きます。
 2. **ビューコントローラー**を**ライブラリインスペクター**から**インターフェイスエディター**にドラッグします。 
 
-    [![](standard-controls-images/content02.png "ライブラリからビューコントローラーを選択する")](standard-controls-images/content02.png#lightbox)
+    [![](standard-controls-images/content02.png "Selecting a View Controller from the Library")](standard-controls-images/content02.png#lightbox)
 3. **カスタムビュー**のサイズとレイアウトを定義します。 
 
-    [![](standard-controls-images/content04.png "レイアウトの編集")](standard-controls-images/content04.png#lightbox)
+    [![](standard-controls-images/content04.png "Editing the layout")](standard-controls-images/content04.png#lightbox)
 4. コントロールをクリックし、ポップアップのソースから**ビューコントローラー**にドラッグします。 
 
-    [![](standard-controls-images/content05.png "ドラッグしてセグエを作成する")](standard-controls-images/content05.png#lightbox)
+    [![](standard-controls-images/content05.png "Dragging to create a segue")](standard-controls-images/content05.png#lightbox)
 5. ポップアップメニューから **[segue]** を選択します。 
 
-    [![](standard-controls-images/content06.png "セグエ型の設定")](standard-controls-images/content06.png#lightbox)
+    [![](standard-controls-images/content06.png "Setting the segue type")](standard-controls-images/content06.png#lightbox)
 6. 変更を保存し Visual Studio for Mac に戻り、Xcode と同期します。
 
 <a name="Tab_Views" />
@@ -620,11 +620,11 @@ Segue を作成するには、次の手順を実行します。
 
 Xcode の Interface Builder でタブビューを操作するときは、**属性インスペクター**を使用してタブの数を設定します。
 
-[![](standard-controls-images/content08.png "タブの数の編集")](standard-controls-images/content08.png#lightbox)
+[![](standard-controls-images/content08.png "Editing the number of tabs")](standard-controls-images/content08.png#lightbox)
 
 **インターフェイス階層**内の各タブを選択して、その**タイトル**を設定し、UI 要素を**ペイン**に追加します。
 
-[![](standard-controls-images/content09.png "Xcode のタブの編集")](standard-controls-images/content09.png#lightbox)
+[![](standard-controls-images/content09.png "Editing the tabs in Xcode")](standard-controls-images/content09.png#lightbox)
 
 <a name="Data_Binding_AppKit_Controls" />
 
@@ -632,7 +632,7 @@ Xcode の Interface Builder でタブビューを操作するときは、**属�
 
 UI 要素を設定して操作するために、Xamarin. Mac アプリケーションでキー値のコードとデータバインディングの手法を使用することにより、記述して維持する必要があるコードの量を大幅に減らすことができます。 また、フロントエンドのユーザーインターフェイス (_モデルビューコントローラー_) からバッキングデータ (_データモデル_) をさらに分離することもできます。これにより、管理が容易になり、アプリケーションの設計をより柔軟に行うことができます。
 
-キー値のコーディング (KVC) は、オブジェクトのプロパティに間接的にアクセスするためのメカニズムです。キー (特殊な書式設定文字列) を使用して、インスタンス変数また`get/set`はアクセサーメソッド () を使用してアクセスするのではなく、プロパティを識別します。 Xamarin. Mac アプリケーションでキー値のコーディングに準拠したアクセサーを実装することによって、キー値の観察 (KVO)、データバインディング、コアデータ、Cocoa バインド、および scriptability などの他の macOS 機能にアクセスできます。
+キー値のコーディング (KVC) は、キー (特別に書式設定された文字列) を使用して、インスタンス変数またはアクセサーメソッド (`get/set`) を介してアクセスするのではなく、プロパティを識別するために、オブジェクトのプロパティに間接的にアクセスするメカニズムです。 Xamarin. Mac アプリケーションでキー値のコーディングに準拠したアクセサーを実装することによって、キー値の観察 (KVO)、データバインディング、コアデータ、Cocoa バインド、および scriptability などの他の macOS 機能にアクセスできます。
 
 詳細については、[データバインディングとキー値のコーディング](~/mac/app-fundamentals/databinding.md)に関するドキュメントの「[単純なデータバインディング](~/mac/app-fundamentals/databinding.md#Simple_Data_Binding)」を参照してください。
 

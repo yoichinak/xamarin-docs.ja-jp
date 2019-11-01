@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/25/2019
-ms.openlocfilehash: ddf0b96295f7153803db65a1fd741cc5df473730
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.openlocfilehash: 83aca8c9e64ffb01eb9773c17b42333f73c1aab5
+ms.sourcegitcommit: 9fa7cf9fae44ed092bc9cab17c843a443001734e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72697114"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72971251"
 ---
 # <a name="display-pop-ups"></a>ポップアップを表示する
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-pop-ups)
 
-警告を表示する、ユーザーに選択を求める、またはプロンプトを表示することは、一般的な UI タスクです。 [`Page`](xref:Xamarin.Forms.Page)クラスには、 [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*)、 [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*)、および `DisplayPromptAsync` のポップアップを使用してユーザーと対話するための3つのメソッドがあります。 それらは適切なネイティブ コントロールを使用して、各プラットフォーム上に表示されます。
+警告を表示する、ユーザーに選択を求める、またはプロンプトを表示することは、一般的な UI タスクです。 [`Page`](xref:Xamarin.Forms.Page)クラスには、 [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*)、 [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*)、および `DisplayPromptAsync`のポップアップを使用してユーザーと対話するための3つのメソッドがあります。 それらは適切なネイティブ コントロールを使用して、各プラットフォーム上に表示されます。
 
 ## <a name="display-an-alert"></a>アラートを表示する
 
@@ -100,7 +100,6 @@ string result = await DisplayPromptAsync("Question 1", "What's your name?");
 
 ```csharp
 string result = await DisplayPromptAsync("Question 2", "What's 5 + 5?", maxLength: 2, keyboard: Keyboard.Numeric);
-}
 ```
 
 このコードは、入力できる文字数を2に制限し、ユーザー入力用の数値キーボードを表示します。

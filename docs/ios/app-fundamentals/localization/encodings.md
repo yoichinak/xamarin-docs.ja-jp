@@ -4,15 +4,15 @@ description: このドキュメントでは、使用可能なエンコードに�
 ms.prod: xamarin
 ms.assetid: F5117294-28BB-4583-B6A0-A339B050FDE1
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/28/2017
-ms.openlocfilehash: c8e82f9261601db48ec48092a5f3f81394a86eec
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 2d204aeac18fc08bf6eb2221b6f64ecbbded8121
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70763409"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73010004"
 ---
 # <a name="internationalization-encodings-in-xamarinios"></a>Xamarin の国際化エンコーディングエンコード
 
@@ -22,17 +22,17 @@ ms.locfileid: "70763409"
 
 これを行うには、Visual Studio for Mac または Visual Studio の iOS のビルド/詳細ウィンドウで追加のエンコーディングを選択します。
 
- [![](encodings-images/00.png "追加のエンコーディングの選択")](encodings-images/00.png#lightbox)
+ [![](encodings-images/00.png "Selecting the extra encodings")](encodings-images/00.png#lightbox)
 
- [![](encodings-images/00a.png "追加のエンコーディングの選択")](encodings-images/00a.png#lightbox)
+ [![](encodings-images/00a.png "Selecting the extra encodings")](encodings-images/00a.png#lightbox)
 
 次のいずれかを選択できます。
 
 - cjk: Chineese、日本語、および韓国語
-- mideast:アラビア語、ヘブライ語、トルコ語、および Latin5。
-- 他のキリル語、バルト言語、ベトナム語、ウクライナ語、およびタイ語
-- 珍しいEBCDIC エンコーディングとその他のまれなコードページ
-- 南西ラテン言語、イースター、西ヨーロッパ
+- mideast: アラビア語、ヘブライ語、トルコ語、および Latin5。
+- その他: キリル、バルト言語、ベトナム語、ウクライナ語、タイ語
+- まれ: EBCDIC エンコーディングおよびその他のまれなコードページ
+- 西ヨーロッパ: ラテン言語、イースター、西ヨーロッパ
 - all
 
  <a name="cjk" />

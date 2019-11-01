@@ -3,21 +3,21 @@ title: サービスの作成
 ms.prod: xamarin
 ms.assetid: A78A55E7-FB5C-4C42-8E3E-939B5E98F9EB
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/03/2018
-ms.openlocfilehash: 4cec06287963fb607ba2f523c6f47e56c08e655f
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 658bb65c9f9dea2c68b782736de02d95df368dd3
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70754891"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73024861"
 ---
 # <a name="creating-a-service"></a>サービスの作成
 
 Xamarin Android サービスは、次の2つの Android サービスの規則に従う必要があります。
 
-- [@No__t_1](xref:Android.App.Service)を拡張する必要があります。
+- [`Android.App.Service`](xref:Android.App.Service)を拡張する必要があります。
 - これらは、 [`Android.App.ServiceAttribute`](xref:Android.App.ServiceAttribute)で修飾する必要があります。
 
 Android サービスのもう1つの要件は、ユーザーが**Androidmanifest .xml**に登録され、一意の名前が指定されていることです。 Xamarin Android は、ビルド時に必要な XML 属性を使用してサービスをマニフェストに自動的に登録します。
@@ -56,7 +56,7 @@ public class DemoService : Service
 
 サービスには、サービスの作成時に呼び出されるコールバックメソッドを含む独自のライフサイクルがあります。 どのメソッドが呼び出されるかは、サービスの種類によって異なります。 開始されるサービスは、バインドされたサービスとは異なるライフサイクルメソッドを実装する必要があります。一方、ハイブリッドサービスは、開始されたサービスとバインドされたサービスの両方に対してコールバックメソッドを実装する必要があります。 これらのメソッドは、`Service` クラスのすべてのメンバーです。サービスの開始方法によって、どのライフサイクルメソッドが呼び出されるかが決まります。 これらのライフサイクル方法については、後で詳しく説明します。
 
-既定では、サービスは Android アプリケーションと同じプロセスで開始されます。 @No__t_0 プロパティを true に設定することで、独自のプロセスでサービスを開始することができます。
+既定では、サービスは Android アプリケーションと同じプロセスで開始されます。 `ServiceAttribute.IsolatedProcess` プロパティを true に設定することで、独自のプロセスでサービスを開始することができます。
 
 ```csharp
 [Service(IsolatedProcess=true)]

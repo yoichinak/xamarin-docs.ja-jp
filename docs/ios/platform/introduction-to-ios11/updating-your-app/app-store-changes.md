@@ -4,15 +4,15 @@ description: このドキュメントでは、iOS 11 でのアプリストアの
 ms.prod: xamarin
 ms.assetid: 4A7A03FD-B4F2-4969-8676-A17260730FD6
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 09/13/2016
-ms.openlocfilehash: 0ac9b486defb74cac7ccd946d2b35b283e6aeca5
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 356509fb6f588b96a2a1224879675bbad36f8524
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70752321"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032134"
 ---
 # <a name="app-store-changes-in-ios-11"></a>IOS 11 でのアプリストアの変更点
 
@@ -50,7 +50,7 @@ Apple は、app Store でアプリ内購入をさらに発見可能にしまし�
 
 ![ITune Connect のアプリストアのプロモーションセクション](app-store-changes-images/image4.png)
 
-また、アプリの`ShouldAddStorePayment` `SKPaymentTransactionObserver`プロトコルにメソッドを追加する必要があります。
+また、アプリの `SKPaymentTransactionObserver` プロトコルに `ShouldAddStorePayment` メソッドを追加する必要があります。
 
 アプリ内購入プロモーションの詳細については、Apple の[アプリ内購入の昇格](https://developer.apple.com/app-store/promoting-in-app-purchases/)に関するページを参照してください。
 

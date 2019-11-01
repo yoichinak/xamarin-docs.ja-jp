@@ -1,24 +1,24 @@
 ---
 title: スプラッシュ スクリーン
-description: Android アプリの起動には時間がかかります。特に、アプリがデバイスで最初に起動されるときです。 スプラッシュスクリーンは起動の進捗状態やブランドを表示します。
+description: Android アプリの起動には時間がかかります。特に、アプリがデバイスで最初に起動されるときです。 スプラッシュスクリーンで、[開始の進行状況] がユーザーに表示されるか、ブランド化が示されることがあります。
 ms.prod: xamarin
 ms.assetid: 26480465-CE19-71CD-FC7D-69D0990D05DE
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/02/2019
-ms.openlocfilehash: 4633811b2c0b001ab220f5fedaf116b1b269344a
-ms.sourcegitcommit: 5110d1279809a2af58d3d66cd14c78113bb51436
+ms.openlocfilehash: 8f225df47b299ae4748c3a3fea586f277e14213d
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72032555"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028723"
 ---
 # <a name="splash-screen"></a>スプラッシュ スクリーン
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/monodroid-samples/splashscreen)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/monodroid-samples/splashscreen)
 
-@no__t、Android アプリが起動するまでに時間がかかります。特に、アプリがデバイスで最初に起動される場合です。スプラッシュスクリーンは起動の進捗状態やブランドを表示します。_
+_Android アプリの起動には時間がかかります。特に、アプリがデバイスで最初に起動されるときです。スプラッシュスクリーンで、[開始の進行状況] がユーザーに表示されるか、ブランド化が示されることがあります。_
 
 ## <a name="overview"></a>概要
 
@@ -32,9 +32,9 @@ Android アプリの起動には時間がかかります。特に、デバイス
 
 3. 前の手順で作成したテーマによって定義されたスプラッシュスクリーンとして使用される、新しいアクティビティをアプリケーションに追加します。
 
-[![ サンプル Xamarin ロゴスプラッシュスクリーンの後にアプリ画面が表示される](splash-screen-images/splashscreen-01-sml.png)](splash-screen-images/splashscreen-01.png#lightbox)
+[![サンプル Xamarin ロゴスプラッシュスクリーンの後にアプリ画面が表示される](splash-screen-images/splashscreen-01-sml.png)](splash-screen-images/splashscreen-01.png#lightbox)
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>［要件］
 
 このガイドでは、アプリケーションが Android API レベル21以上を対象としていることを前提としています。 また、アプリケーションに**は、プロジェクト**に追加された v7 パッケージと**xamarin. android** .......
 
@@ -77,11 +77,11 @@ Android アプリの起動には時間がかかります。特に、デバイス
 </resources>
 ```
 
-@No__t 0 のオブジェクトの詳細については、Android の組み込みの[Google ドキュメント](https://developer.android.com/reference/android/graphics/drawable/Drawable)を参照してください。
+`Drawable` オブジェクトの詳細については、Android の描画用の[Google ドキュメント](https://developer.android.com/reference/android/graphics/drawable/Drawable)を参照してください。
 
 ### <a name="implementing-a-theme"></a>テーマを実装する
 
-スプラッシュスクリーン活動用のカスタムテーマを作成するには、ファイル**値/スタイル .xml**を編集 (または追加) し、スプラッシュスクリーン用に新しい `style` 要素を作成します。 サンプル**値/スタイルの .xml**ファイルは、 **mytheme**という名前の @no__t で示されています。
+スプラッシュスクリーン活動用のカスタムテーマを作成するには、ファイル**値/スタイル .xml**を編集 (または追加) し、スプラッシュスクリーン用の新しい `style` 要素を作成します。 次に、サンプル**値/スタイルの .xml**ファイルと、 **mytheme**という名前の `style` を示します。
 
 ```xml
 <resources>
@@ -101,7 +101,7 @@ Android アプリの起動には時間がかかります。特に、デバイス
 </resources>
 ```
 
-Spartan は、ウィンドウの背景を宣言し、ウィンドウからタイトルバーを明示的に削除し、それが全画面表示であることを宣言する @no__t、非常にです **。** アクティビティが最初のレイアウトを増えする前に、アプリの UI をエミュレートするスプラッシュスクリーンを作成する場合は、スタイル定義で `windowBackground` ではなく `windowContentOverlay` を使用できます。 この場合は、UI のエミュレーションを表示するように**splash_screen**の作成されたファイルを変更する必要もあります。
+Spartan は、ウィンドウの背景を宣言し、ウィンドウからタイトルバーを明示的に削除し、それが全画面表示であることを宣言 &ndash; 非常にです **。** アクティビティが最初のレイアウトを増えする前に、アプリの UI をエミュレートするスプラッシュスクリーンを作成する場合は、スタイル定義で `windowBackground` ではなく `windowContentOverlay` を使用できます。 この場合は、UI のエミュレーションを表示するように**splash_screen**の作成されたファイルを変更する必要もあります。
 
 ### <a name="create-a-splash-activity"></a>スプラッシュアクティビティを作成する
 
@@ -139,17 +139,17 @@ public class SplashActivity : AppCompatActivity
 ```
 
 `SplashActivity` は、前のセクションで作成したテーマを明示的に使用して、アプリケーションの既定のテーマをオーバーライドします。
-背景として描画されたをテーマが宣言しているため `OnCreate` でレイアウトを読み込む必要はありません。
+テーマが描画をバックグラウンドとして宣言しているため、`OnCreate` にレイアウトを読み込む必要はありません。
 
-@No__t-0 属性を設定して、アクティビティがバックスタックから削除されるようにすることが重要です。 [戻る] ボタンによってスタートアッププロセスがキャンセルされないようにするには、`OnBackPressed` をオーバーライドして、何もしないようにすることもできます。
+`NoHistory=true` 属性を設定して、アクティビティがバックスタックから削除されるようにすることが重要です。 [戻る] ボタンによってスタートアッププロセスがキャンセルされないようにするには、`OnBackPressed` をオーバーライドして何も実行しないようにすることもできます。
 
 ```csharp
 public override void OnBackPressed() { }
 ```
 
-スタートアップ作業は @no__t 0 で非同期に実行されます。 これは、起動作業の速度が低下したり、起動画面が表示されなくなったりしないようにするために必要です。 作業が完了すると、`SplashActivity` が `MainActivity` を起動し、ユーザーがアプリとの対話を開始する可能性があります。
+スタートアップ作業は `OnResume`で非同期に実行されます。 これは、起動作業の速度が低下したり、起動画面が表示されなくなったりしないようにするために必要です。 作業が完了すると、`SplashActivity` が `MainActivity` 起動し、ユーザーがアプリとの対話を開始する可能性があります。
 
-この新しい `SplashActivity` は、`MainLauncher` 属性を `true` に設定することによって、アプリケーションのランチャーアクティビティとして設定されます。 @No__t-0 はランチャーアクティビティであるため、`MainActivity.cs` を編集し、`MainLauncher` 属性を `MainActivity` から削除する必要があります。
+この新しい `SplashActivity` は、`MainLauncher` 属性を `true`に設定することによって、アプリケーションのランチャーアクティビティとして設定されます。 `SplashActivity` はランチャーアクティビティであるため、`MainActivity.cs`を編集し、`MainActivity`から `MainLauncher` 属性を削除する必要があります。
 
 ```csharp
 [Activity(Label = "@string/ApplicationName")]
@@ -167,7 +167,7 @@ public class MainActivity : AppCompatActivity
 
 1. [**リソース/** 作成] フォルダーで、使用するスプラッシュスクリーンイメージの横バージョンを追加します。 この例では、splash_logo_land は、上の例で使用したロゴの横バージョンです (青ではなくホワイト文字を使用し**ます**)。
 
-2. **Resources/** splash_screen_land というフォルダーで、前に定義した (たとえば、) 1 つの @no__t の作成されたコードの横バージョンを作成します。 このファイルで、ビットマップパスをスプラッシュスクリーンイメージの横バージョンに設定します。 次の例では、 **splash_screen_land**は**splash_logo_land**を使用します。
+2. **Resources/** splash_screen_land フォルダーで、前に定義した (たとえば、) 前に定義した `layer-list` の描画用の風景バージョンを作成します。 このファイルで、ビットマップパスをスプラッシュスクリーンイメージの横バージョンに設定します。 次の例では、 **splash_screen_land**は**splash_logo_land**を使用します。
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -188,7 +188,7 @@ public class MainActivity : AppCompatActivity
 
 4. ファイルの**色 .xml**と**スタイル .xml**を**値-土地**に追加します (これらは、既存の**値/色 .xml**と**値/スタイルの .xml**ファイルからコピーおよび変更できます)。
 
-5. **Values-land/スタイルの .xml**を変更して、`windowBackground` 用の描画用のランドスケープバージョンを使用するようにします。 この例では、 **splash_screen_land**が使用されます。
+5. **Values-land/スタイルの xml**を変更して、`windowBackground`に対して、のランドスケープバージョンを使用するようにします。 この例では、 **splash_screen_land**が使用されます。
 
     ```xml
     <resources>
@@ -221,7 +221,7 @@ public class MainActivity : AppCompatActivity
 
 7. アプリをもう一度ビルドして実行します。 スプラッシュスクリーンがまだ表示されている状態で、デバイスを横モードに切り替えます。 スプラッシュスクリーンが横向きバージョンに変わります。
 
-    [スプラッシュスクリーンの横向きモードへの ![ 回転](splash-screen-images/landscape-splash-sml.png)](splash-screen-images/landscape-splash.png#lightbox)
+    [スプラッシュスクリーンから横モードへの![回転](splash-screen-images/landscape-splash-sml.png)](splash-screen-images/landscape-splash.png#lightbox)
 
 横モードのスプラッシュスクリーンを使用しても、常にシームレスなエクスペリエンスが提供されるわけではないことに注意してください。 既定では、Android は縦モードでアプリを起動し、デバイスが既に横モードになっている場合でも横モードに切り替えます。 その結果、デバイスが横モードになっているときにアプリを起動すると、デバイスは簡単に縦向きのスプラッシュスクリーンを表示し、縦から横方向のスプラッシュスクリーンへの回転をアニメーション化します。 残念ながら、スプラッシュアクティビティのフラグに `ScreenOrientation = Android.Content.PM.ScreenOrientation.Landscape` が指定されている場合でも、この初期の縦から横への移行が行われます。 この制限を回避する最善の方法は、縦モードと横モードの両方で正しくレンダリングされるスプラッシュスクリーンイメージを1つ作成することです。
 

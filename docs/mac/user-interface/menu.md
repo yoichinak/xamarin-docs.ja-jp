@@ -4,15 +4,15 @@ description: この記事では、Xamarin. Mac アプリケーションでのメ
 ms.prod: xamarin
 ms.assetid: 5D367F8E-3A76-4995-8A89-488530FAD802
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 7a19b2e70ff18ae43cb65804c6c125890fa1851b
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 7cca5be2ea13deb17b27e5452df389a998c6eb09
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70770985"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73026167"
 ---
 # <a name="menus-in-xamarinmac"></a>Xamarin. Mac のメニュー
 
@@ -129,7 +129,7 @@ UI 項目またはコードを追加する前に新しく作成した Xamarin. M
 
 前述のように、[ウィンドウまたはビューコントローラーのカスタム動作](#Working-with-Custom-Window-Actions)にバインドされているメニュー項目については、`validateMenuItem:` アクションを追加し、メニュー項目を手動で有効または無効にすることができます。
 
-次の例では、`Tag` プロパティを使用して、`NSTextView` 内の選択したテキストの状態に基づいて `validateMenuItem:` アクションによって有効または無効にするメニュー項目の種類を決定します。 @No__t_0 プロパティは、各メニュー項目の Interface Builder で設定されています。
+次の例では、`Tag` プロパティを使用して、`NSTextView` 内の選択したテキストの状態に基づいて `validateMenuItem:` アクションによって有効または無効にするメニュー項目の種類を決定します。 `Tag` プロパティは、各メニュー項目の Interface Builder で設定されています。
 
 ![Tag プロパティの設定](menu-images/validate01.png "Tag プロパティの設定")
 
@@ -207,7 +207,7 @@ void OpenDialog (NSObject sender)
 
 ![ダイアログメッセージの例](menu-images/appmenu11.png "ダイアログメッセージの例")
 
-ここでのキー行は `[Export ("openDocument:")]` でした。 **Appdelegate**に `openDocument:` アクションに応答する `void OpenDialog (NSObject sender)` メソッドがあることを `NSMenu` に伝えます。 上記の手順を忘れた場合、 **[開く]** メニュー項目は、既定では Interface Builder で自動的にこのアクションに接続されます。
+ここでのキー行は `[Export ("openDocument:")]`でした。 **Appdelegate**に `openDocument:` アクションに応答する `void OpenDialog (NSObject sender)` メソッドがあることを `NSMenu` に伝えます。 上記の手順を忘れた場合、 **[開く]** メニュー項目は、既定では Interface Builder で自動的にこのアクションに接続されます。
 
 [![アタッチされたアクションの表示](menu-images/defaultbar03.png "アタッチされたアクションの表示")](menu-images/defaultbar03-large.png#lightbox)
 
@@ -215,7 +215,7 @@ void OpenDialog (NSObject sender)
 
 ### <a name="working-with-the-open-recent-menu"></a>開いている [最近使ったもの] メニューを操作する
 
-既定では、 **[ファイル]** メニューには、ユーザーがアプリを使用して開いた最後のいくつかのファイルを追跡する、**最近開い**た項目が表示されます。 @No__t_0 ベースの Xamarin. Mac アプリを作成する場合、このメニューは自動的に処理されます。 その他の種類の Xamarin. Mac アプリの場合は、このメニュー項目の管理と応答を手動で行う必要があります。
+既定では、 **[ファイル]** メニューには、ユーザーがアプリを使用して開いた最後のいくつかのファイルを追跡する、**最近開い**た項目が表示されます。 `NSDocument` ベースの Xamarin. Mac アプリを作成する場合、このメニューは自動的に処理されます。 その他の種類の Xamarin. Mac アプリの場合は、このメニュー項目の管理と応答を手動で行う必要があります。
 
 [**最近使っ**たもの] メニューを手動で処理するには、まず次のものを使用して新しいファイルが開かれたか、保存されたことを通知する必要があります。
 
@@ -817,7 +817,7 @@ menuItem = NSMenuItem.SeparatorItem;
 menuItem = new NSMenuItem (command.Title);
 ``` 
 
-@No__t_0 オブジェクトに子 `LanguageFormatCommand` オブジェクトが含まれている場合は、サブメニューが作成され、そのメニューを構築するために `AssembleMenu` メソッドが再帰的に呼び出されます。
+`LanguageFormatCommand` オブジェクトに子 `LanguageFormatCommand` オブジェクトが含まれている場合は、サブメニューが作成され、そのメニューを構築するために `AssembleMenu` メソッドが再帰的に呼び出されます。
 
 ```csharp
 menuItem.Submenu = new NSMenu (command.Title);
@@ -916,7 +916,7 @@ Xcode でメインの**ストーリーボード**ファイルを編集し、**�
     [![セグエクラスの設定](menu-images/context10.png "セグエクラスの設定")](menu-images/context10-large.png#lightbox)
 6. 同期する Visual Studio for Mac に戻り、Interface Builder に戻ります。
 7. **アシスタントエディター**に切り替えて、[**パネル**ファイル] を選択します。
-8. @No__t_1 という名前の**ドキュメント**メニュー項目のアクションを作成します。 
+8. `propertyDocument`という名前の**ドキュメント**メニュー項目のアクションを作成します。 
 
     [![アクションの構成](menu-images/context06.png "アクションの構成")](menu-images/context06-large.png#lightbox)
 9. 残りのメニュー項目に対して、操作の作成を繰り返します。 

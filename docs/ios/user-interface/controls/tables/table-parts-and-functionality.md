@@ -4,29 +4,29 @@ description: このドキュメントでは、iOS の UITableView のさまざ�
 ms.prod: xamarin
 ms.assetid: B4139C8B-28F2-4C0F-297F-BF5432C5A915
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 158b3575589df5854a32e95ec80c6ef02d21e661
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 0e8014263d417cef39147b440ed3b38155f226bb
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768353"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021855"
 ---
 # <a name="table-parts-and-functionality-in-xamarinios"></a>Xamarin. iOS のテーブルパーツと機能
 
 UITableView は、"グループ化" または "plain" スタイルを持つことができ、次の部分で構成されます。
 
 - [セクションヘッダー](#Section_Header)
-- [セル](#Cells)(必要に応じて、または行)
+- [セル](#Cells)(または必要に応じて行)
 - [セクションフッター](#Section_Footer)
-- [Index](#Index)
-- [編集モード](#Edit_Features)(行の順序を変更するために ' スワイプする ' とドラッグハンドルを含む) 
+- [インデックス](#Index)
+- [編集モード](#Edit_Features)(行の順序を変更するには ' スワイプする ' とドラッグハンドルを含む) 
 
 これらのスクリーンショットは、セクション行、ヘッダー、フッター、編集コントロール、およびインデックスがどのように表示されるかを示しています。
 
- [![](table-parts-and-functionality-images/image1a.png "これらのスクリーンショットは、セクション行、ヘッダー、フッター、編集コントロール、およびインデックスがどのように表示されるかを示しています。")](table-parts-and-functionality-images/image1a.png#lightbox)
+ [![](table-parts-and-functionality-images/image1a.png "These screenshots show how section rows, headers, footers, edit controls and the index are displayed")](table-parts-and-functionality-images/image1a.png#lightbox)
 
 これらの部分については、以下で詳しく説明します。
 
@@ -72,7 +72,7 @@ UITableView は、"グループ化" または "plain" スタイルを持つこ�
 
 テーブルビューの表示に使用される主なクラスを次に示します。
 
-[![](table-parts-and-functionality-images/classdiagram.png "テーブルビューを表示するために使用される主なクラスを次に示します。")](table-parts-and-functionality-images/classdiagram.png#lightbox)
+[![](table-parts-and-functionality-images/classdiagram.png "The primary classes used to display table views are shown here")](table-parts-and-functionality-images/classdiagram.png#lightbox)
 
 各クラスの目的は次のとおりです。
 

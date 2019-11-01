@@ -3,15 +3,15 @@ title: Android アプリでのデータの使用
 ms.prod: xamarin
 ms.assetid: D5932AEB-0B6E-4F37-8B32-9BE4775AEE85
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/08/2018
-ms.openlocfilehash: 922b1fa411a176df580050384e7555120fd68137
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: c0ff15c516fa2eb85ac9748004df5a14425b510c
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70754454"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73023733"
 ---
 # <a name="using-data-in-an-app"></a>アプリでのデータの使用
 
@@ -36,7 +36,7 @@ Android でのアクティビティのネイティブ UI コードは、この�
 - リストを読み取っています
 - 個々のレコードの読み取り
 
-@No__t_0 クラスの2つのメソッドは次のとおりです。
+`StockDatabase` クラスの2つのメソッドは次のとおりです。
 
 ```csharp
 public IEnumerable<Stock> GetStocks ()
@@ -57,7 +57,7 @@ Android では、データを `ListView` としてレンダリングします。
 
 ## <a name="create-and-update"></a>作成と更新
 
-アプリケーションコードを簡略化するために、PrimaryKey が設定されているかどうかに応じて挿入または更新を行う1つの save メソッドが用意されています。 @No__t_0 プロパティは `[PrimaryKey]` 属性でマークされているので、コードで設定しないでください。 このメソッドは、(主キープロパティをチェックして) 値が以前に保存されているかどうかを検出し、それに応じてオブジェクトを挿入または更新します。
+アプリケーションコードを簡略化するために、PrimaryKey が設定されているかどうかに応じて挿入または更新を行う1つの save メソッドが用意されています。 `Id` プロパティは `[PrimaryKey]` 属性でマークされているので、コードで設定しないでください。 このメソッドは、(主キープロパティをチェックして) 値が以前に保存されているかどうかを検出し、それに応じてオブジェクトを挿入または更新します。
 
 ```csharp
 public int SaveStock (Stock item)
@@ -77,7 +77,7 @@ public int SaveStock (Stock item)
 
 ## <a name="delete"></a>削除
 
-@No__t_0 メソッドと `Update` メソッドとは異なり、`Delete<T>` メソッドは、完全な `Stock` オブジェクトではなく、主キーの値のみを受け入れることができます。 この例では、`Stock` オブジェクトがメソッドに渡されますが、`Delete<T>` メソッドに渡されるのは Id プロパティだけです。
+`Insert` メソッドと `Update` メソッドとは異なり、`Delete<T>` メソッドは、完全な `Stock` オブジェクトではなく、主キーの値のみを受け入れることができます。 この例では、`Stock` オブジェクトがメソッドに渡されますが、`Delete<T>` メソッドに渡されるのは Id プロパティだけです。
 
 ```csharp
 public int DeleteStock(Stock stock)
@@ -94,7 +94,7 @@ public int DeleteStock(Stock stock)
 
 - **SQLite Manager Firefox 拡張**&ndash; は、Mac と Windows で動作し、IOS および Android と互換性のあるファイルを生成します。
 
-- **コマンドライン**&ndash; 「 [Www.sqlite.org/sqlite.html](http://www.sqlite.org/sqlite.html) 」を参照してください。
+- **コマンドライン**&ndash; 「 [Www.sqlite.org/sqlite.html](https://www.sqlite.org/sqlite.html) 」を参照してください。
 
 アプリケーションと共に配布するデータベースファイルを作成する場合は、テーブルと列の名前付けを使用して、コードが期待するものと一致することを確認します。特に、SQLite.NET C#を使用していて、名前がクラスやプロパティと一致することを期待する場合は特に、または、関連付けられているカスタム属性)。
 
