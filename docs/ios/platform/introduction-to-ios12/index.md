@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin のプレビューリリ�
 ms.prod: xamarin
 ms.assetid: 99EA7090-315D-493C-87D3-26AB73D9E1A9
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/08/2018
-ms.openlocfilehash: b3f3db32e87d83ea4e076d439df3342e5ca2ed50
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 39d954626bc9e789446e7f1deac67e2e0fca51c8
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284630"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032000"
 ---
 # <a name="introduction-to-ios-12"></a>iOS 12 の概要
 
@@ -56,7 +56,7 @@ iOS 12 を使用すると、ユーザーや開発者がパスワードを簡単�
 
 - パスワードのオートフィルと自動強力なパスワードを使用すると、アプリケーションにサインアップしてログインするときに、iOS アプリケーションで強力なパスワードを自動的に生成、保存、および使用することができます。
 - セキュリティコードのオートコンプリートを使用すると、手動による切り取りと貼り付けや覚えやすいようを行わなくても、SMS ベースの認証コードを使用できます。
-- クラス`ASWebAuthenticationSession`は、フェデレーション認証サービスを使用するプロセスを効率化します。
+- `ASWebAuthenticationSession` クラスを使用すると、フェデレーション認証サービスを使用するプロセスが効率化されます。
 - 資格情報プロバイダー拡張機能を使用すると、サードパーティのパスワードアプリケーションがログインフィールドにユーザー名とパスワードを入力できるようになります。
 
 ## <a name="healthkit-updates"></a>HealthKit の更新
@@ -69,7 +69,7 @@ IOS 12 では、iMessage アプリでプレゼンテーションコンテキス�
 
 ## <a name="network-framework"></a>ネットワークフレームワーク
 
-IOS アプリケーションで一般的に使用され`URLSession`ている api の基礎となるネットワークスタックが、スタンドアロンフレームワークとして使用できるようになりました。これにより、TCP、UDP、TLS、IPv4/IPv6 などを簡単に操作できます。
+Network framework は、iOS アプリケーションで一般的に使用される `URLSession` Api の基礎となるネットワークスタックをスタンドアロンフレームワークとして使用できるようになり、TCP、UDP、TLS、IPv4/IPv6 などを簡単に操作できるようになりました。
 
 ## <a name="carplay"></a>CarPlay
 
@@ -80,4 +80,4 @@ IOS 12 では、サードパーティ製のアプリは、新しい CarPlay フ�
 IOS 12 では、Apple は非推奨となりました。
 
 - OpenGL ES では、[開発者](https://developer.apple.com/ios/whats-new/)が金属を採用するようにしています。
-- [`UIWebView`](xref:UIKit.UIWebView)。を[優先`WKWebView`](https://developer.apple.com/documentation/webkit/wkwebview?language=objc)します。
+- [`UIWebView`](xref:UIKit.UIWebView)、 [`WKWebView`を優先](https://developer.apple.com/documentation/webkit/wkwebview?language=objc)します。

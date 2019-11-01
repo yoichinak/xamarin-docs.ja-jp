@@ -4,53 +4,53 @@ description: DatePickerDialog およびビューフラグメントを使用し�
 ms.prod: xamarin
 ms.assetid: F2BCD8D4-8957-EA53-C5A8-6BB603ADB47B
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 01/22/2018
-ms.openlocfilehash: ef9abbd60fc83622631b916c50f4993c1c848b00
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: b54a0795dee0bd7a02b419da497f9a1b3f3ee7ff
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510252"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029212"
 ---
 # <a name="android-date-picker"></a>Android 日付の選択
 
 ## <a name="overview"></a>概要
 
-ユーザーが Android アプリケーションにデータを入力する必要がある場合があります。 これを支援するために、Android フレームワークに[`DatePicker`](xref:Android.Widget.DatePicker)はウィジェット[`DatePickerDialog`](xref:Android.App.DatePickerDialog)とが用意されています。 を`DatePicker`使用すると、ユーザーは、デバイスとアプリケーションの間で一貫したインターフェイスで年、月、日を選択できます。 は、ダイアログ`DatePicker`でをカプセル化するヘルパークラスです。`DatePickerDialog`
+ユーザーが Android アプリケーションにデータを入力する必要がある場合があります。 これを支援するために、Android framework には[`DatePicker`](xref:Android.Widget.DatePicker)ウィジェットと[`DatePickerDialog`](xref:Android.App.DatePickerDialog)が用意されています。 `DatePicker` を使用すると、ユーザーはデバイスとアプリケーションの間で一貫したインターフェイスで年、月、日を選択できます。 `DatePickerDialog` は、ダイアログで `DatePicker` をカプセル化するヘルパークラスです。
 
-最新の Android アプリケーションでは`DatePickerDialog` 、を[`DialogFragment`](xref:Android.App.DialogFragment)に表示する必要があります。 これにより、アプリケーションでポップアップダイアログとして DatePicker を表示したり、アクティビティに埋め込んだりすることができます。 さら`DialogFragment`に、は、ダイアログのライフサイクルと表示を管理し、実装する必要があるコードの量を減らします。
+最新の Android アプリケーションでは、 [`DialogFragment`](xref:Android.App.DialogFragment)に `DatePickerDialog` が表示されます。 これにより、アプリケーションでポップアップダイアログとして DatePicker を表示したり、アクティビティに埋め込んだりすることができます。 さらに、`DialogFragment` は、ダイアログのライフサイクルと表示を管理し、実装する必要があるコードの量を減らします。
 
-このガイドでは、 `DatePickerDialog` `DialogFragment`でラップされたの使用方法について説明します。 このサンプルアプリケーションでは、 `DatePickerDialog`ユーザーがアクティビティのボタンをクリックすると、がモーダルダイアログとして表示されます。 ユーザーが日付を設定すると、が選択`TextView`された日付で更新されます。
+このガイドでは、`DialogFragment`でラップされた `DatePickerDialog`の使用方法について説明します。 このサンプルアプリケーションでは、ユーザーがアクティビティのボタンをクリックすると、`DatePickerDialog` がモーダルダイアログとして表示されます。 ユーザーが日付を設定した場合、`TextView` は選択された日付で更新されます。
 
-[![[選択日] ボタンの後に [日付の選択] ダイアログのスクリーンショット](date-picker-images/image-01-sml.png)](date-picker-images/image-01.png#lightbox)
+[[選択日] ボタンの後に [日付の選択] ダイアログボックスを![スクリーンショット](date-picker-images/image-01-sml.png)](date-picker-images/image-01.png#lightbox)
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>［要件］
 
 このガイドのサンプルアプリケーションでは、Android 4.1 (API レベル) を対象としています。
 16) 以上。ただし、Android 3.0 (API レベル11以上) に適用されます。 Android サポートライブラリ v4 をプロジェクトに追加し、一部のコードを変更することで、以前のバージョンの Android をサポートすることができます。
 
 ## <a name="using-the-datepicker"></a>DatePicker を使用する
 
-このサンプルは、 `DialogFragment`を拡張します。 サブクラスは、を`DatePickerDialog`ホストして表示します。
+このサンプルでは、`DialogFragment`を拡張します。 サブクラスは、`DatePickerDialog`をホストして表示します。
 
 ![クローズアップの日付選択ダイアログ](date-picker-images/image-02.png)
 
-ユーザーが日付を選択し、 **[OK** ] ボタン`DatePickerDialog`をクリックすると、は[`IOnDateSetListener.OnDateSet`](xref:Android.App.DatePickerDialog.IOnDateSetListener.OnDateSet*)メソッドを呼び出します。
-このインターフェイスは、ホスト`DialogFragment`によって実装されます。 ユーザーが **[キャンセル**] ボタンをクリックすると、フラグメントとダイアログが自動的に破棄されます。
+ユーザーが日付を選択して **[OK** ] ボタンをクリックすると、`DatePickerDialog` は[`IOnDateSetListener.OnDateSet`](xref:Android.App.DatePickerDialog.IOnDateSetListener.OnDateSet*)メソッドを呼び出します。
+このインターフェイスは、ホスティング `DialogFragment`によって実装されます。 ユーザーが **[キャンセル**] ボタンをクリックすると、フラグメントとダイアログが自動的に破棄されます。
 
-では、 `DialogFragment`選択した日付をホスティングアクティビティに返す方法がいくつかあります。
+`DialogFragment` では、選択した日付をホスティングアクティビティに返す方法がいくつかあります。
 
-1. **メソッドを呼び出す、またはプロパティを設定する**&ndash;このアクティビティは、この値の設定専用のプロパティまたはメソッドを提供できます。
+1. **メソッドを呼び出すか、またはプロパティを設定**し &ndash; アクティビティは、この値を設定するためのプロパティまたはメソッドを提供できます。
 
-2. **イベントを発生させる**&ndash;は、`DialogFragment`が呼び出されたとき`OnDateSet`に発生するイベントを定義できます。
+2. **イベントを発生させる**&ndash; `DialogFragment` は `OnDateSet` が呼び出されたときに発生するイベントを定義できます。
 
-3. を使用`DialogFragment`すると、を呼び出し **`Action`** `Action<DateTime>`て、アクティビティの日付を表示できます。 &ndash; アクティビティは、を`Action<DateTime` `DialogFragment`インスタンス化するときに、を提供します。 このサンプルでは3番目の手法を使用し、アクティビティが`Action<DateTime>`に`DialogFragment`を提供することを要求します。
+3. `DialogFragment` が `Action<DateTime>` を呼び出して、アクティビティの日付を表示する &ndash; **`Action`を使用**します。 アクティビティは、`DialogFragment`をインスタンス化するときに、`Action<DateTime` を提供します。 このサンプルでは3番目の手法を使用し、アクティビティが `DialogFragment`に `Action<DateTime>` を提供する必要があります。
 
 ### <a name="extending-dialogfragment"></a>コードフラグメントの拡張
 
-を`DatePickerDialog`表示するには、まずサブクラス`DialogFragment`を作成`IOnDateSetListener`し、次のようにインターフェイスを実装します。
+`DatePickerDialog` を表示するための最初の手順は、`DialogFragment` をサブクラス化し、`IOnDateSetListener` インターフェイスを実装することです。
 
 ```csharp
 public class DatePickerFragment : DialogFragment, 
@@ -90,16 +90,16 @@ public class DatePickerFragment : DialogFragment,
 }
 ```
 
-メソッドは、新しい`DatePickerFragment`をインスタンス化するために呼び出されます。 `NewInstance` このメソッドは、 `Action<DateTime>`ユーザーがの`DatePickerDialog` **[OK** ] ボタンをクリックしたときに呼び出されるを受け取ります。
+`NewInstance` メソッドは、新しい `DatePickerFragment`をインスタンス化するために呼び出されます。 このメソッドは、ユーザーが `DatePickerDialog`の **[OK** ] ボタンをクリックしたときに呼び出される `Action<DateTime>` を受け取ります。
 
-フラグメントを表示すると、Android はメソッド`OnCreateDialog`を呼び出します。 このメソッドは、新しい`DatePickerDialog`オブジェクトを作成し、現在`DatePickerFragment`の日付とコールバックオブジェクト (の現在のインスタンス) を使用して初期化します。
+フラグメントを表示すると、Android は `OnCreateDialog`メソッドを呼び出します。 このメソッドは、新しい `DatePickerDialog` オブジェクトを作成し、現在の日付とコールバックオブジェクト (`DatePickerFragment`の現在のインスタンス) を使用して初期化します。
 
 > [!NOTE]
-> が呼び出されたとき`IOnDateSetListener.OnDateSet`の月の値は、1 ~ 12 ではなく 0 ~ 11 の範囲内であることに注意してください。 月の日にちは、選択された月に応じて 1 ~ 31 の範囲になります。
+> `IOnDateSetListener.OnDateSet` が呼び出される月の値は、1 ~ 12 ではなく 0 ~ 11 の範囲内であることに注意してください。 月の日にちは、選択された月に応じて 1 ~ 31 の範囲になります。
 
 ### <a name="showing-the-datepickerfragment"></a>DatePickerFragment を表示する
 
-`DialogFragment`が実装されたので、このセクションでは、アクティビティでフラグメントを使用する方法を確認します。 このガイドに付属するサンプルアプリでは、アクティビティは`DialogFragment` `NewInstance`ファクトリメソッドを使用してをインスタンス化し、 `DialogFragment.Show`呼び出しを表示します。 の`DialogFragment`インスタンス化の一環として、アクティビティは`Action<DateTime>`を渡します。これにより、 `TextView`アクティビティによってホストされているに日付が表示されます。
+`DialogFragment` が実装されたので、このセクションでは、アクティビティでフラグメントを使用する方法を確認します。 このガイドに付属するサンプルアプリでは、アクティビティは `NewInstance` ファクトリメソッドを使用して `DialogFragment` をインスタンス化してから、`DialogFragment.Show`呼び出しを表示します。 `DialogFragment`のインスタンス化の一環として、アクティビティは `Action<DateTime>`を渡します。これにより、アクティビティによってホストされる `TextView` に日付が表示されます。
 
 ```csharp
 [Activity(Label = "@string/app_name", MainLauncher = true, Icon = "@drawable/icon")]
@@ -129,13 +129,13 @@ public class MainActivity : Activity
 }
 ```
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>まとめ
 
-このサンプルでは、Android アクティビティ`DatePicker`の一部としてウィジェットをポップアップモーダルダイアログとして表示する方法について説明しました。 ここでは、サンプルの表示フラグメントを実装`IOnDateSetListener`し、インターフェイスについて説明しました。 また、このサンプルでは、選択した日付を表示するために、表示フラグメントがホストアクティビティと対話する方法も示しています。
+このサンプルでは、Android アクティビティの一部として `DatePicker` ウィジェットをポップアップモーダルダイアログとして表示する方法について説明しました。 ここでは、サンプルの表示フラグメントを実装し、`IOnDateSetListener` インターフェイスについて説明しました。 また、このサンプルでは、選択した日付を表示するために、表示フラグメントがホストアクティビティと対話する方法も示しています。
 
 ## <a name="related-links"></a>関連リンク
 
-- [DialogFragment](xref:Android.App.DialogFragment)
+- ["コードフラグメント"](xref:Android.App.DialogFragment)
 - [DatePicker](xref:Android.Widget.DatePicker)
 - [DatePickerDialog](xref:Android.App.DatePickerDialog)
 - [DatePickerDialog.IOnDateSetListener](xref:Android.App.DatePickerDialog.IOnDateSetListener)

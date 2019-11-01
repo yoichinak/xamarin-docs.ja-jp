@@ -3,15 +3,15 @@ title: .NET 埋め込みの制限事項
 description: このドキュメントでは、.net 埋め込みの制限事項について説明します。これは、他のプログラミング言語で .NET コードを使用するためのツールです。
 ms.prod: xamarin
 ms.assetid: EBBBB886-1CEF-4DF4-AFDD-CA96049F878E
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 11/14/2017
-ms.openlocfilehash: cf431d4e3d30ac2ec06bfebc9cebe101411faa1c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 4e2b653365a747b30016a1fbd42b8a01c4c87848
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292706"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029741"
 ---
 # <a name="net-embedding-limitations"></a>.NET 埋め込みの制限事項
 
@@ -41,9 +41,9 @@ ms.locfileid: "70292706"
 
 ### <a name="nullability"></a>属性
 
-.NET には、API に対して null 参照が許容できるかどうかを通知するメタデータはありません。 ほとんどの api は`ArgumentNullException` 、引数を`null`扱うことができない場合にスローします。 この問題が発生するのは、例外を C で処理することが、推奨される回避方法であるためです。
+.NET には、API に対して null 参照が許容できるかどうかを通知するメタデータはありません。 ほとんどの Api は、`null` 引数を扱うことができない場合に `ArgumentNullException` をスローします。 この問題が発生するのは、例外を C で処理することが、推奨される回避方法であるためです。
 
-ヘッダーファイル内で正確な null 値を許容する注釈を生成することはできず、マネージ例外を最小限に`NS_ASSUME_NONNULL_BEGIN`抑える必要があるため、既定では null 以外の引数 () が使用されます。また、有効桁数が許容される場合は、null 値の許容属性を追加します。
+ヘッダーファイルで正確な null 値を許容する注釈を生成することはできず、マネージ例外を最小限に抑える必要があるため、既定では null 以外の引数 (`NS_ASSUME_NONNULL_BEGIN`) が使用されます。また、有効桁数が許容される場合は、null 値を許容する注釈が追加されます。
 
 ### <a name="bitcode-ios"></a>Bitcode (iOS)
 

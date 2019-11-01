@@ -4,21 +4,21 @@ description: このドキュメントでは、Xamarin iOS アプリでタッチ�
 ms.prod: xamarin
 ms.assetid: E3904713-6018-4755-A315-EB045DFB3500
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 01/23/2017
-ms.openlocfilehash: dfd1a3c88d2c9c87c84a18736dd0f4c8c7e79005
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7aac9a3e2a86f5cdcfa2d6ab27961dd83998bb0f
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283000"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73009357"
 ---
 # <a name="handling-touch-in-xamarinios-apps"></a>Xamarin iOS アプリでのタッチ処理
 
 他のモバイルプラットフォームと同様に、iOS にはタッチを処理するさまざまな方法が用意されています。 マルチタッチ (画面上の多数の接点) と複雑なジェスチャをサポートできます。 このガイドでは、iOS でのタッチとジェスチャの実装の particularities に加えて、いくつかの概念について説明します。
 
-iOS で`UITouch`は、クラスのタッチデータをカプセル化しています。これは`UIResponder` 、一連のメソッドを通じてアプリケーションで使用できます。 アプリケーションは、および`UIView` `UIViewController`のサブクラスでこれらのメソッドをオーバーライドできます`UIResponder`。どちらもから継承されます。
+iOS は `UITouch` クラスのタッチデータをカプセル化します。これは一連の `UIResponder` 方法を通じてアプリケーションで使用できます。 アプリケーションは、これらのメソッドを `UIView` および `UIViewController`のサブクラスでオーバーライドできます。どちらも `UIResponder`から継承されます。
 
 タッチデータをキャプチャするだけでなく、iOS はジェスチャへのタッチパターンを解釈するための手段を提供します。 これらのジェスチャレコグナイザーは、イメージの回転やページのめくりなど、アプリケーション固有のコマンドを解釈するために使用できます。 iOS には、最小限のコードを追加した一般的なジェスチャを処理するクラスの豊富なコレクションが用意されています。
 

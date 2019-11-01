@@ -4,26 +4,26 @@ description: Android アクティビティに RatingBar ウィジェットを追
 ms.prod: xamarin
 ms.assetid: d7a1f9bb-926d-4f93-9e8e-0fa933e330e7
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/29/2018
-ms.openlocfilehash: 51f88dba25ca2b4f7e33bb8b5c813c43a214c062
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 529fecb4e24e83ef7b783815843e132347d99262
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70764851"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029153"
 ---
 # <a name="xamarinandroid-ratingbar"></a>Xamarin Android RatingBar
 
-RatingBar は、1 ~ 5 個の星の評価を表示する UI ウィジェットです。 ユーザーは、このセクションの星にタップで評価を選択できます。ウィジェットを作成し、ユーザーが[`RatingBar`](xref:Android.Widget.RatingBar)ウィジェットで評価を提供できるようにします。
+RatingBar は、1 ~ 5 個の星の評価を表示する UI ウィジェットです。 ユーザーは、このセクションの星でタップによって評価を選択できます。ユーザーが[`RatingBar`](xref:Android.Widget.RatingBar)ウィジェットで評価を提供できるようにするウィジェットを作成します。
 
 ![RatingBar の例](ratingbar-images/01-ratingbar.png)
 
 ## <a name="creating-a-ratingbar"></a>RatingBar の作成
 
-1. **Resource/layout/Main. axml**ファイルを開き、[`RatingBar`](xref:Android.Widget.RatingBar)
-   要素 (内[`LinearLayout`](xref:Android.Widget.LinearLayout)):
+1. **リソース/レイアウト/メインの axml**ファイルを開き、 [`RatingBar`](xref:Android.Widget.RatingBar)を追加します。
+   要素 ( [`LinearLayout`](xref:Android.Widget.LinearLayout)内):
 
    ```xml
    <RatingBar android:id="@+id/ratingbar"
@@ -33,9 +33,9 @@ RatingBar は、1 ~ 5 個の星の評価を表示する UI ウィジェットで
             android:stepSize="1.0"/>
    ```
 
-   属性`android:numStars`は、評価バーに表示する星の数を定義します。 属性`android:stepSize`では、各星の粒度を定義します (たとえば`0.5` 、の値は半星評価を許可します)。
+   `android:numStars` 属性は、評価バーに表示する星の数を定義します。 `android:stepSize` 属性は、各星の粒度を定義します (たとえば、`0.5` の値によって星の評価が許可されます)。
 
-2. 新しい評価を設定したときに何かを行うには、の末尾に次のコードを追加します。[`OnCreate()`](xref:Android.App.Activity.OnCreate*)
+2. 新しい評価を設定したときに何かを行うには、の末尾に次のコードを追加し[`OnCreate()`](xref:Android.App.Activity.OnCreate*)
    b
 
     ```csharp
@@ -46,6 +46,6 @@ RatingBar は、1 ~ 5 個の星の評価を表示する UI ウィジェットで
     };
     ```
 
-    これにより[`RatingBar`](xref:Android.Widget.RatingBar) 、を使用[`FindViewById`](xref:Android.App.Activity.FindViewById*)してレイアウトからウィジェットをキャプチャし、次にイベントメソッドを設定して、ユーザーが評価を設定したときに実行するアクションを定義します。 この場合、単純な[`Toast`](xref:Android.Widget.Toast)メッセージに新しい評価が表示されます。
+    これにより、 [`FindViewById`](xref:Android.App.Activity.FindViewById*)を使用してレイアウトから[`RatingBar`](xref:Android.Widget.RatingBar)ウィジェットがキャプチャされ、次にイベントメソッドを設定して、ユーザーが評価を設定したときに実行するアクションを定義します。 この場合、単純な[`Toast`](xref:Android.Widget.Toast)メッセージに新しい評価が表示されます。
 
 3. アプリケーションを実行します。

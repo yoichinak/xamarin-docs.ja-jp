@@ -4,64 +4,64 @@ description: このドキュメントでは、NSUserActivity にインデック�
 ms.prod: xamarin
 ms.assetid: 0B28B284-C7C9-4C0D-A782-D471FBBC4CAE
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: 9714d78419754413ae5f1d0e5015a418fa8ab884
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: c6ceb6e10abc4dbd26bffecbb6fefa5835f3d630
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769558"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031554"
 ---
 # <a name="search-with-nsuseractivity-in-xamarinios"></a>Xamarin で NSUserActivity を検索します。 iOS
 
-`NSUserActivity`は、iOS 8 で導入され、ハンドオフ用のデータを提供するために使用されます。
+`NSUserActivity` は、iOS 8 で導入され、ハンドオフ用のデータを提供するために使用されます。
 これにより、アプリの特定の部分でアクティビティを作成し、別の iOS デバイスで実行されているアプリの別のインスタンスに渡すことができます。 受信デバイスは、前のデバイスで開始されたアクティビティを続行して、ユーザーが中断した場所を右に移動できます。 ハンドオフの使用の詳細については、「[ハンドオフ](~/ios/platform/handoff.md)ドキュメントの概要」を参照してください。
 
-IOS 9 を初めて`NSUserActivity`使用する場合は、(パブリックとプライベートの両方の) インデックスを作成し、スポットライト検索および Safari から検索することができます。 を検索可能`NSUserActivity`としてマークし、インデックス可能なメタデータを追加することにより、アクティビティは iOS デバイスの検索結果に一覧表示されます。
+IOS 9 を初めて使用する場合は、`NSUserActivity` (パブリックとプライベートの両方) にインデックスを作成し、スポットライト検索と Safari から検索することができます。 `NSUserActivity` を検索可能としてマークし、インデックス可能なメタデータを追加することにより、アクティビティは iOS デバイスの検索結果に一覧表示されます。
 
-[![](nsuseractivity-images/apphistory01.png "アプリ履歴の概要")](nsuseractivity-images/apphistory01.png#lightbox)
+[![](nsuseractivity-images/apphistory01.png "The App History overview")](nsuseractivity-images/apphistory01.png#lightbox)
 
-アプリからアクティビティに属する検索結果をユーザーが選択すると、アプリが起動され、によって`NSUserActivity`記述されたアクティビティが再起動され、ユーザーに表示されます。
+アプリからアクティビティに属する検索結果をユーザーが選択すると、アプリが起動され、`NSUserActivity` によって説明されているアクティビティが再起動され、ユーザーに表示されます。
 
-アプリケーション検索をサポート`NSUserActivity`するには、の次のプロパティを使用します。
+アプリの検索をサポートするには、次の `NSUserActivity` のプロパティを使用します。
 
-- `EligibleForHandoff`–の`true`場合、このアクティビティはハンドオフ操作で使用できます。
-- `EligibleForSearch`–の`true`場合、このアクティビティはデバイス上のインデックスに追加され、検索結果に表示されます。
-- `EligibleForPublicIndexing`–の`true`場合、このアクティビティは Apple のクラウドベースのインデックスに追加され、iOS デバイスにまだアプリがインストールされていないユーザーに (検索を使用して) 表示されます。 詳細については、以下の「[パブリック検索のインデックス作成](#public-search-indexing)」セクションを参照してください。
-- `Title`–アクティビティのタイトルを提供し、検索結果に表示されます。 ユーザーは、タイトル自体のテキストを検索することもできます。
-- `Keywords`–は、インデックスが作成され、エンドユーザーによって検索可能になるアクティビティを説明するために使用される文字列の配列です。
-- `ContentAttributeSet`–アクティビティを`CSSearchableItemAttributeSet`詳細に説明し、検索結果に豊富なコンテンツを提供するために使用されます。
-- `ExpirationDate`–特定の日付までアクティビティを表示する場合は、ここでその日付を指定できます。
-- `WebpageURL`– Web でアクティビティを表示できる場合、またはアプリが Safari のディープリンクをサポートしている場合は、ここにアクセスするようにリンクを設定できます。
+- `EligibleForHandoff` – `true`の場合、このアクティビティはハンドオフ操作で使用できます。
+- `EligibleForSearch` – `true`場合、このアクティビティはデバイス上のインデックスに追加され、検索結果に表示されます。
+- `EligibleForPublicIndexing` – `true`場合、このアクティビティは Apple のクラウドベースのインデックスに追加され、iOS デバイスにまだアプリがインストールされていないユーザーに (検索を使用して) 表示されます。 詳細については、以下の「[パブリック検索のインデックス作成](#public-search-indexing)」セクションを参照してください。
+- `Title` –アクティビティのタイトルを提供し、検索結果に表示されます。 ユーザーは、タイトル自体のテキストを検索することもできます。
+- `Keywords` –エンドユーザーがインデックスを作成し、検索可能にするアクティビティを説明するために使用される文字列の配列です。
+- `ContentAttributeSet` –アクティビティを詳細に説明したり、検索結果に豊富なコンテンツを提供したりするために使用される `CSSearchableItemAttributeSet` です。
+- `ExpirationDate` –特定の日付までアクティビティを表示する場合は、ここでその日付を指定できます。
+- `WebpageURL`-web でアクティビティを表示できる場合、またはアプリが Safari のディープリンクをサポートしている場合は、ここにアクセスするようにリンクを設定できます。
 
 ## <a name="nsuseractivity-quickstart"></a>NSUserActivity のクイックスタート
 
-アプリで検索`NSUserActivity`可能なを実装するには、次の手順に従います。
+アプリで検索可能な `NSUserActivity` を実装するには、次の手順に従います。
 
 - [アクティビティの種類の識別子の作成](#creatingtypeid)
 - [アクティビティの作成](#createactivity)
 - [アクティビティへの応答](#respondactivity)
 - [パブリック検索インデックス作成](#indexing)
 
-を使用`NSUserActivity`すると、コンテンツを検索可能にするための[追加の利点](#benefits)がいくつかあります。
+`NSUserActivity` を使用してコンテンツを検索可能にすることには、いくつかの[利点](#benefits)があります。
 
 <a name="creatingtypeid" />
 
 ## <a name="creating-activity-type-identifiers"></a>アクティビティの種類の識別子の作成
 
-検索活動を作成する前に、_アクティビティの種類_を識別するための識別子を作成する必要があります。 アクティビティの種類の識別子は、特定のユーザーアクティビティ`NSUserActivityTypes`の種類を一意に識別するために使用される、アプリの**情報 plist**ファイルの配列に追加される短い文字列です。 アプリがサポートし、アプリ検索に公開されるアクティビティごとに、配列に1つのエントリがあります。 
+検索活動を作成する前に、_アクティビティの種類_を識別するための識別子を作成する必要があります。 アクティビティの種類の識別子は、特定のユーザーアクティビティの種類を一意に識別するために使用される、アプリの**情報 plist**ファイルの `NSUserActivityTypes` 配列に追加される短い文字列です。 アプリがサポートし、アプリ検索に公開されるアクティビティごとに、配列に1つのエントリがあります。 
 
-Apple では、競合を避けるために、アクティビティの種類の識別子に対して逆引き DNS スタイルの表記を使用することを提案しています。 たとえば、特定`com.company-name.appname.activity`のアプリベースのアクティビティ、 `com.company-name.activity`または複数のアプリで実行できるアクティビティなどです。
+Apple では、競合を避けるために、アクティビティの種類の識別子に対して逆引き DNS スタイルの表記を使用することを提案しています。 例: 特定のアプリベースのアクティビティの `com.company-name.appname.activity`、または複数のアプリで実行できるアクティビティの `com.company-name.activity`。
 
-アクティビティタイプ識別子は、アクティビティの種類を`NSUserActivity`識別するためにインスタンスを作成するときに使用されます。 ユーザーが検索結果をタップしたときにアクティビティが続行されると、アクティビティの種類 (アプリのチーム ID と共に) によって、アクティビティを続行するために起動するアプリが決まります。
+アクティビティの種類の識別子は、アクティビティの種類を識別するために `NSUserActivity` インスタンスを作成するときに使用されます。 ユーザーが検索結果をタップしたときにアクティビティが続行されると、アクティビティの種類 (アプリのチーム ID と共に) によって、アクティビティを続行するために起動するアプリが決まります。
 
-この動作をサポートするために必要なアクティビティの種類の識別子を作成するには、**情報の plist**ファイルを編集し、**ソース**ビューに切り替えます。 キーを`NSUserActivityTypes`追加し、次の形式で識別子を作成します。
+この動作をサポートするために必要なアクティビティの種類の識別子を作成するには、**情報の plist**ファイルを編集し、**ソース**ビューに切り替えます。 `NSUserActivityTypes` キーを追加し、次の形式で識別子を作成します。
 
-[![](nsuseractivity-images/type01.png "Plist エディターでの NSUserActivityTypes キーと必須識別子")](nsuseractivity-images/type01.png#lightbox)
+[![](nsuseractivity-images/type01.png "The NSUserActivityTypes key and required identifiers in the plist editor")](nsuseractivity-images/type01.png#lightbox)
 
-上の例では、検索アクティビティ (`com.xamarin.platform`) に新しいアクティビティの種類の識別子を1つ作成しました。 独自のアプリを作成するときに、 `NSUserActivityTypes`配列の内容を、アプリがサポートするアクティビティに固有のアクティビティの種類の識別子に置き換えます。
+上の例では、search アクティビティ (`com.xamarin.platform`) の新しいアクティビティの種類の識別子を1つ作成しました。 独自のアプリを作成するときに、`NSUserActivityTypes` 配列の内容を、アプリがサポートするアクティビティに固有のアクティビティの種類の識別子に置き換えます。
 
 <a name="createactivity" />
 
@@ -86,17 +86,17 @@ activity.EligibleForSearch = true;
 activity.BecomeCurrent();
 ```
 
-`ContentAttributeSet` 次`NSUserActivity`のように、のプロパティを設定して詳細を追加できます。
+`NSUserActivity` の `ContentAttributeSet` プロパティを次のように設定して、詳細を追加できます。
 
-[![](nsuseractivity-images/apphistory02.png "追加の検索の詳細の概要")](nsuseractivity-images/apphistory02.png#lightbox)
+[![](nsuseractivity-images/apphistory02.png "Addition Search Details overview")](nsuseractivity-images/apphistory02.png#lightbox)
 
-を使用`ContentAttributeSet`すると、エンドユーザーが対話できるようにする、豊富な検索結果を作成できます。
+`ContentAttributeSet` を使用することにより、エンドユーザーが対話できるようにする、豊富な検索結果を作成できます。
 
 <a name="respondactivity" />
 
 ## <a name="responding-to-an-activity"></a>アクティビティへの応答
 
-アプリの検索結果 (`NSUserActivity`) をタップしてユーザーに応答するには、 **AppDelegate.cs** `ContinueUserActivity`ファイルを編集し、メソッドをオーバーライドします。 例えば:
+アプリの検索結果 (`NSUserActivity`) をタップしてユーザーに応答するには、 **AppDelegate.cs**ファイルを編集し、`ContinueUserActivity` メソッドをオーバーライドします。 (例:
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)
@@ -115,7 +115,7 @@ public override bool ContinueUserActivity (UIApplication application, NSUserActi
 
 これは、ハンドオフ要求への応答に使用されるメソッドオーバーライドと同じであることに注意してください。 これで、ユーザーがスポットライト検索結果のアプリからリンクをクリックすると、アプリがフォアグラウンドになり (まだ実行されていない場合は開始され)、そのリンクによって表されるコンテンツ、ナビゲーション、機能が表示されます。
 
-[![](nsuseractivity-images/apphistory03.png "以前の状態を検索から復元する")](nsuseractivity-images/apphistory03.png#lightbox)
+[![](nsuseractivity-images/apphistory03.png "Restore Previous State from Search")](nsuseractivity-images/apphistory03.png#lightbox)
 
 <a name="indexing" />
 
@@ -151,7 +151,7 @@ activity.EligibleForPublicIndexing = true;
 activity.BecomeCurrent();
 ```
 
-設定`EligibleForPublicIndexing = true`によってパブリックインデックス作成にアクティビティが設定されているため、これは Apple のパブリッククラウドインデックスに自動的に追加されるという意味ではありません。 最初に、次の条件を満たす必要があります。
+`EligibleForPublicIndexing = true`を設定することによってパブリックインデックス作成にアクティビティが設定されているので、Apple のパブリッククラウドインデックスに自動的に追加されるわけではありません。 最初に、次の条件を満たす必要があります。
 
 1. 検索結果に表示され、多くのユーザーが選択できる必要があります。 アクティビティのエンゲージメントしきい値に達するまで、結果はプライベートのままです。
 2. アプリのプロビジョニングでは、ユーザー固有のデータのインデックスを作成してパブリックにすることはできません。
@@ -160,7 +160,7 @@ activity.BecomeCurrent();
 
 ## <a name="additional-benefits"></a>その他の利点
 
-アプリでアプリ検索を`NSUserActivity`使用することによって、次の機能も利用できます。
+アプリで `NSUserActivity` を使用してアプリ検索を導入することで、次の機能も利用できます。
 
 - **ハンドオフ**-アプリの検索では、ハンドオフ (`NSUserActivity`) と同じメカニズムを使用してコンテンツ、ナビゲーション、または機能を公開しているため、アプリのユーザーが1つのデバイスでアクティビティを開始して別のデバイスで続行できるようにすることが簡単にできます。
 - **Siri の提案**-Siri の提案によって通常作成される標準の提案と共に、アプリからの在職者を自動的に提案することができます。

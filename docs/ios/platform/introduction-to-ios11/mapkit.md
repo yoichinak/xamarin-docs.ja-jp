@@ -4,15 +4,15 @@ description: このドキュメントでは、iOS 11 の新しい MapKit 機能�
 ms.prod: xamarin
 ms.assetid: 304AE5A3-518F-422F-BE24-92D62CE30F34
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/30/2017
-ms.openlocfilehash: cef87d68c3b87697ee1f18fc85d185c1cc6d1b9a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 02bd25c4b4e251536dfdabdef109eb659fe3be37
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70752470"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032153"
 ---
 # <a name="new-features-in-mapkit-on-ios-11"></a>IOS 11 の MapKit の新機能
 
@@ -31,11 +31,11 @@ iOS 11 では、MapKit に次の新機能が追加されています。
 
 サンプル[Mapkit サンプル "Tandm"](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-mapkitsample)は、新しい iOS 11 注釈クラスタリング機能を実装する方法を示しています。
 
-### <a name="1-create-an-mkpointannotation-subclass"></a>1. サブクラス`MKPointAnnotation`を作成する
+### <a name="1-create-an-mkpointannotation-subclass"></a>1. `MKPointAnnotation` サブクラスを作成する
 
-Point 注釈クラスは、マップ上の各マーカーを表します。 これらは、 `MapView.AddAnnotation()`またはを使用`MapView.AddAnnotations()`して配列から個別に追加できます。
+Point 注釈クラスは、マップ上の各マーカーを表します。 これらは、`MapView.AddAnnotation()` を使用して個別に追加することも、`MapView.AddAnnotations()`を使用して配列から追加することもできます。
 
-ポイント注釈クラスには、ビジュアル表現がありません。マーカーに関連付けられているデータ (最も重要なプロパティ`Coordinate` 、マップ上の緯度と経度)、およびカスタムプロパティを表すためにのみ必要です。
+ポイント注釈クラスには視覚的な表現がありません。マーカーに関連付けられているデータ (最も重要なもの、マップの緯度と経度である `Coordinate` プロパティ)、およびカスタムプロパティを表すためにのみ必要です。
 
 ```csharp
 public class Bike : MKPointAnnotation
@@ -57,14 +57,14 @@ public class Bike : MKPointAnnotation
 }
 ```
 
-### <a name="2-create-an-mkmarkerannotationview-subclass-for-single-markers"></a>2. 単一のマーカーのサブクラスを作成する`MKMarkerAnnotationView`
+### <a name="2-create-an-mkmarkerannotationview-subclass-for-single-markers"></a>2. 1 つのマーカーに対して `MKMarkerAnnotationView` サブクラスを作成する
 
 マーカー注釈ビューは、各注釈を視覚的に表現したものであり、次のようなプロパティを使用してスタイルが付けられています。
 
 - **MarkerTintColor** –マーカーの色です。
 - **GlyphText** –マーカーに表示されるテキストです。
 - **GlyphImage** –マーカーに表示されるイメージを設定します。
-- **DisplayPriority** –マップにマーカーがある場合の z オーダー (スタック動作) を決定します。 、 `Required` `DefaultLow`、またはのいずれかを使用します。 `DefaultHigh`
+- **DisplayPriority** –マップにマーカーがある場合の z オーダー (スタック動作) を決定します。 `Required`、`DefaultHigh`、`DefaultLow`のいずれかを使用します。
 
 自動クラスタリングをサポートするには、次の設定も行う必要があります。
 
@@ -104,7 +104,7 @@ public class BikeView : MKMarkerAnnotationView
   }
 ```
 
-### <a name="3-create-an-mkannotationview-to-represent-clusters-of-markers"></a>3.マーカーのクラスターを表すを作成する`MKAnnotationView`
+### <a name="3-create-an-mkannotationview-to-represent-clusters-of-markers"></a>3. マーカーのクラスターを表す `MKAnnotationView` を作成する
 
 マーカーのクラスターを表す注釈ビューは単純なイメージ_である場合_がありますが、ユーザーは、グループ化されたマーカーの数について視覚的な手掛かりを提供するようアプリに要求します。
 
@@ -112,8 +112,8 @@ public class BikeView : MKMarkerAnnotationView
 
 次の設定も行う必要があります。
 
-- **DisplayPriority** –マップにマーカーがある場合の z オーダー (スタック動作) を決定します。 、 `Required` `DefaultLow`、またはのいずれかを使用します。 `DefaultHigh`
-- **CollisionMode** – `Circle`また`Rectangle`は。
+- **DisplayPriority** –マップにマーカーがある場合の z オーダー (スタック動作) を決定します。 `Required`、`DefaultHigh`、`DefaultLow`のいずれかを使用します。
+- **CollisionMode** – `Circle` または `Rectangle`します。
 
 ```csharp
 [Register("ClusterView")]
@@ -179,7 +179,7 @@ public class ClusterView : MKAnnotationView
 }
 ```
 
-### <a name="4-register-the-view-classes"></a>4.ビュークラスの登録
+### <a name="4-register-the-view-classes"></a>4. ビュークラスを登録する
 
 マップビューコントロールを作成してビューに追加するときに、マップが拡大または縮小されたときの自動クラスタリング動作を有効にするために、注釈ビューの種類を登録します。
 
@@ -188,7 +188,7 @@ MapView.Register(typeof(BikeView), MKMapViewDefault.AnnotationViewReuseIdentifie
 MapView.Register(typeof(ClusterView), MKMapViewDefault.ClusterAnnotationViewReuseIdentifier);
 ```
 
-### <a name="5-render-the-map"></a>5。マップを表示します!
+### <a name="5-render-the-map"></a>5. マップを表示します。
 
 マップがレンダリングされると、注釈マーカーは、ズームレベルに応じてクラスター化または表示されます。 ズームレベルが変化すると、マーカーはクラスターとの間でアニメーション化されます。
 
@@ -215,13 +215,13 @@ NavigationItem.RightBarButtonItem = new UIBarButtonItem(compass);
 MapView.ShowsCompass = false; // so we don't have two compasses!
 ```
 
-プロパティ`ShowsCompass`は、マップビュー内の既定のコンパスの表示を制御するために使用できます。
+`ShowsCompass` プロパティは、マップビュー内の既定のコンパスの表示を制御するために使用できます。
 
 <a name="scale" />
 
 ## <a name="scale-view"></a>スケールビュー
 
-ビュー内の他の場所にスケールを`MKScaleView.FromMapView()`追加するには、メソッドを使用して、[スケール] ビューのインスタンスを取得し、ビュー階層内の他の場所に追加します。
+`MKScaleView.FromMapView()` メソッドを使用してビュー内の他の場所にスケールを追加し、ビュー階層内の他の場所にスケールビューのインスタンスを追加します。
 
 ![マップに重ねて表示されるスケールビュー](mapkit-images/scale-sml.png)
 
@@ -233,13 +233,13 @@ View.AddSubview(scale); // constraints omitted for simplicity
 MapView.ShowsScale = false; // so we don't have two scale displays!
 ```
 
-プロパティ`ShowsScale`は、マップビュー内の既定のコンパスの表示を制御するために使用できます。
+`ShowsScale` プロパティは、マップビュー内の既定のコンパスの表示を制御するために使用できます。
 
 <a name="user-tracking" />
 
 ## <a name="user-tracking-button"></a>[ユーザーの追跡] ボタン
 
-[ユーザーの追跡] ボタンをクリックすると、ユーザーの現在の場所にマップが配置されます。 `MKUserTrackingButton.FromMapView()`メソッドを使用して、ボタンのインスタンスを取得し、書式設定の変更を適用して、ビュー階層内の他の場所に追加します。
+[ユーザーの追跡] ボタンをクリックすると、ユーザーの現在の場所にマップが配置されます。 `MKUserTrackingButton.FromMapView()` メソッドを使用して、ボタンのインスタンスを取得し、書式設定の変更を適用して、ビュー階層内の他の場所に追加します。
 
 ![マップに重ねて配置される [ユーザーの場所] ボタン](mapkit-images/user-location-sml.png)
 

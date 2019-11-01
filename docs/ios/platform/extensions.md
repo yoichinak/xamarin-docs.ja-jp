@@ -5,15 +5,15 @@ ms.prod: xamarin
 ms.assetid: 3DEB3D43-3E4A-4099-8331-93C1E7A77095
 ms.technology: xamarin-ios
 ms.custom: xamu-video
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 5995ba06873b2fb5f75c593fbc7136806e50d982
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 0cf44a05f8b40a07dcc099d5789171f4a234a0c2
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70290602"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032569"
 ---
 # <a name="ios-extensions-in-xamarinios"></a>Xamarin の iOS 拡張機能
 
@@ -92,10 +92,10 @@ IOS 10 で[追加の拡張ポイント](~/ios/platform/introduction-to-ios10/ind
 - コンテナーアプリのバンドル識別子で始まるバンドル識別子が必要です。 たとえば、コンテナーアプリのに `com.myCompany.ContainerApp` のバンドル識別子が含まれている場合、拡張機能の識別子が `com.myCompany.ContainerApp.MyExtension` 可能性があります。 
 
   ![](extensions-images/bundleidentifiers.png) 
-- @No__t_3 ファイル内の適切な値 (**今日**の Notification Center ウィジェットの `com.apple.widget-extension` など) を使用して、キー `NSExtensionPointIdentifier` を定義する必要があります。
+- `Info.plist` ファイル内の適切な値 (**今日**の Notification Center ウィジェットの `com.apple.widget-extension` など) を使用して、キー `NSExtensionPointIdentifier`を定義する必要があります。
 - また、適切な値を使用して、`Info.plist` ファイル内の `NSExtensionMainStoryboard` キーまたは `NSExtensionPrincipalClass` キーの*どちらか*を定義する必要があります。
-  - @No__t_0 キーを使用して、拡張機能のメイン UI を表示するストーリーボードの名前を指定します (マイナス `.storyboard`)。 たとえば、`Main.storyboard` ファイルの `Main` です。
-  - @No__t_0 キーを使用して、拡張機能の開始時に初期化されるクラスを指定します。 値は、`UIViewController` の**レジスタ**値と一致している必要があります。 
+  - `NSExtensionMainStoryboard` キーを使用して、拡張機能のメイン UI を表示するストーリーボードの名前を指定します (マイナス `.storyboard`)。 たとえば、`Main.storyboard` ファイルの `Main` です。
+  - `NSExtensionPrincipalClass` キーを使用して、拡張機能の開始時に初期化されるクラスを指定します。 値は、`UIViewController` の**レジスタ**値と一致している必要があります。 
 
   ![](extensions-images/registerandprincipalclass.png)
 
@@ -166,7 +166,7 @@ IOS 10 で[追加の拡張ポイント](~/ios/platform/introduction-to-ios10/ind
 3. (画面の下部から)**ソースビュー**を選択し、[`NSExtension`] ノードを開きます。 
 
     [![](extensions-images/code03.png "Select the Source View from the bottom of the screen and open the NSExtension node")](extensions-images/code03.png#lightbox)
-4. @No__t_0 キーを削除し、`CodeBasedViewController` 値を持つ `NSExtensionPrincipalClass` を追加します。 
+4. `NSExtensionMainStoryboard` キーを削除し、`CodeBasedViewController`値を持つ `NSExtensionPrincipalClass` を追加します。 
 
     [![](extensions-images/code04.png "Remove the NSExtensionMainStoryboard key and add a NSExtensionPrincipalClass with the value CodeBasedViewController")](extensions-images/code04.png#lightbox)
 5. 変更内容を保存します。
@@ -207,7 +207,7 @@ namespace DaysRemaining
 }
 ```
 
-@No__t_0 が、上記の `NSExtensionPrincipalClass` に指定した値と一致することに注意してください。
+`[Register("CodeBasedViewController")]` が、上記の `NSExtensionPrincipalClass` に指定した値と一致することに注意してください。
 
 ### <a name="coding-the-extension"></a>拡張機能のコーディング
 
@@ -286,7 +286,7 @@ IOS シミュレーターで拡張機能をテストするには、 **TodayConta
 
 拡張機能を使用する場合は、Uniform Type Identifier (UTI) を使用して、アプリ、他のアプリ、サービスの間で交換されるデータを作成および操作します。
 
-@No__t_0 の静的クラスは、Apple の `kUTType...` 定義に関連する次のヘルパープロパティを定義します。
+`MobileCoreServices.UTType` の静的クラスは、Apple の `kUTType...` 定義に関連する次のヘルパープロパティを定義します。
 
 - `kUTTypeAlembic` - `Alembic`
 - `kUTTypeAliasFile` - `AliasFile`

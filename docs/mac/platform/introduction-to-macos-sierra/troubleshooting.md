@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin. Mac アプリで macOS Si
 ms.prod: xamarin
 ms.assetid: 323DD5EE-87CE-48E4-B234-1CF61B45A019
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 09/22/2016
-ms.openlocfilehash: 51276a7682599c6480c637fac385992feaf06e49
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: a4e7f7169e4c7ec0ec2947e17b1434179f47488f
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70278895"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73017034"
 ---
 # <a name="xamarinmac---macos-sierra-troubleshooting"></a>Xamarin. Mac-macOS Sierra のトラブルシューティング
 
@@ -32,7 +32,7 @@ _この記事では、Xamarin. Mac アプリで macOS Sierra を操作するた�
 
 <a name="App-Store" />
 
-## <a name="app-store"></a>アプリ ストア
+## <a name="app-store"></a>App Store
 
 既知の問題:
 
@@ -51,16 +51,16 @@ Apple Pay に新しい支払カードを追加するときに、無効な有効�
 
 既知の問題:
 
-- を`NSObject.ValueForKey`呼び出す`null`と、キーによって例外が発生します。
-- と`NSURLSession`は`NSURLConnection`どちらも、url の TLS ハンドシェイク中に RC4 `http://`暗号スイートを使用しなくなりました。
-- `ViewWillLayoutSubviews`またはのいずれかのメソッドでスーパービューのジオメトリを変更する`LayoutSubviews`と、アプリがハングすることがあります。
+- `NSObject.ValueForKey` を呼び出すと、`null` キーによって例外が発生します。
+- `NSURLSession` と `NSURLConnection` はどちらも `http://` Url の TLS ハンドシェイク中に RC4 暗号スイートを使用しなくなりました。
+- `ViewWillLayoutSubviews` または `LayoutSubviews` のいずれかのメソッドでスーパービューのジオメトリを変更すると、アプリがハングすることがあります。
 - すべての SSL/TLS 接続では、RC4 対称暗号が既定で無効になっています。 さらに、セキュリティで保護されたトランスポート API は SSLv3 をサポートしなくなりました。アプリは、できるだけ早く SHA-1 と3DES 暗号化の使用を停止することをお勧めします。
 
 <a name="CFNetwork-HTTP-Protocol" />
 
 ## <a name="cfnetwork-http-protocol"></a>CFNetwork HTTP プロトコル
 
-クラスのプロパティは、から`NSURLConnection`開かれていないストリームに設定`NSURLSession`する必要があります。これにより、この要件が厳密に適用されるようになります。 `HTTPBodyStream` `NSMutableURLRequest`
+`NSMutableURLRequest` クラスの `HTTPBodyStream` プロパティは、`NSURLConnection` によって、また `NSURLSession` によってこの要件が厳密に適用されるようになったため、開かれていないストリームに設定する必要があります。
 
 <a name="CloudKit" />
 
@@ -72,7 +72,7 @@ Apple Pay に新しい支払カードを追加するときに、無効な有効�
 
 ## <a name="core-image"></a>コアイメージ
 
-API `CIImageProcessor`では、任意の入力イメージの数がサポートされるようになりました。 `CIImageProcessor`MacOS Sierra beta 1 に含まれていた API は削除されます。
+`CIImageProcessor` API では、任意の入力イメージ数がサポートされるようになりました。 macOS Sierra beta 1 に含まれていた `CIImageProcessor` API は削除されます。
 
 <a name="Notifications" />
 
@@ -84,13 +84,13 @@ API `CIImageProcessor`では、任意の入力イメージの数がサポート�
 
 ## <a name="nsuseractivity"></a>NSUserActivity
 
-ハンドオフ操作の後、 `UserInfo` `NSUserActivity`オブジェクトのプロパティが空になる場合があります。 現在の`BecomeCurrent`回避策としてオブジェクトを明示的に呼び出し`NSUserActivity`ます。
+ハンドオフ操作後、`NSUserActivity` オブジェクトの `UserInfo` プロパティが空になる場合があります。 現在の回避策として `BecomeCurrent` `NSUserActivity` オブジェクトを明示的に呼び出します。
 
 <a name="Safari" />
 
 ## <a name="safari"></a>Safari
 
-Webgeolocation は、iOS 10`https://`と macOS Sierra の両方で動作し、場所データの悪意のある使用を防ぐために、セキュリティで保護された () URL を必要とします。
+WebGeolocation は、iOS 10 と macOS Sierra の両方で動作し、場所データの悪意のある使用を防ぐために、セキュリティで保護された (`https://`) URL を必要とします。
 
 ## <a name="related-links"></a>関連リンク
 

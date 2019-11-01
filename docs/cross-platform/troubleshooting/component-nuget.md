@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin コンポーネントス�
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 9E6C986F-3FBA-4599-8367-FB0C565C0ADE
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/18/2018
-ms.openlocfilehash: e9bd54523fa46625e9a9e6e46247b92987f3d427
-ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
+ms.openlocfilehash: 47f47882cb270a8e2517f7cab6f1d6af1cf473f3
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71106075"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73014344"
 ---
 # <a name="updating-component-references-to-nuget"></a>コンポーネント参照を NuGet に更新しています
 
@@ -37,11 +37,11 @@ Visual Studio for Mac の 15.6 7.4 リリースでは、プロジェクトのコ
 
 プロジェクトからコンポーネントを削除するには、次のようにします。
 
-1. **.Csproj**ファイルを開きます。 これを行うには、プロジェクト名を右クリックし、**プロジェクトのアンロード**を選択します 
+1. **.Csproj**ファイルを開きます。 これを行うには、プロジェクト名を右クリックし、 **[プロジェクトのアンロード]** を選択します。 
 
-2. アンロードされたプロジェクトを再度右クリックし、 **{プロジェクト名には、} .csproj の編集**を選択しま。
+2. アンロードしたプロジェクトでもう一度右クリックし、 **[{プロジェクト名} の編集]** を選択します。
 
-3. ファイル内の参照`XamarinComponentReference`を探します。 次の例のようになっています。 これは、次の例のようになります。
+3. `XamarinComponentReference`するファイル内の参照を検索します。 これは、次の例のようになります。
 
     ```xml
     <ItemGroup>
@@ -60,7 +60,7 @@ Visual Studio for Mac の 15.6 7.4 リリースでは、プロジェクトのコ
     </ItemGroup>
     ```
 
-4. 参照`XamarinComponentReference`を削除し、ファイルを保存します。 上記の例の`ItemGroup`全体を削除しても大丈夫です。
+4. `XamarinComponentReference` への参照を削除し、ファイルを保存します。 上記の例では、`ItemGroup`全体を安全に削除できます。
 
 5. ファイルが保存されたら、プロジェクト名を右クリックし、 **[プロジェクトの再読み込み]** を選択します。
 
@@ -74,9 +74,9 @@ Visual Studio for Mac の 15.6 7.4 リリースでは、プロジェクトのコ
 
 プロジェクトからコンポーネントを削除するには、次のようにします。
 
-1. .cproj ファイルを開きます。 これを行うには、プロジェクト名を右クリックし、**プロジェクトのアンロード**を選択します
+1. .Csproj ファイルを開きます。 これを行うには、プロジェクト名を右クリックし、[**ツール] > [ファイルの編集**] の順に選択します。
 
-2. ファイル内の参照`XamarinComponentReference`を探します。 次の例のようになっています。 これは、次の例のようになります。
+2. `XamarinComponentReference`するファイル内の参照を検索します。 これは、次の例のようになります。
 
     ```xml
     <ItemGroup>
@@ -95,7 +95,7 @@ Visual Studio for Mac の 15.6 7.4 リリースでは、プロジェクトのコ
     </ItemGroup>
     ```
 
-3. 参照`XamarinComponentReference`を削除し、ファイルを保存します。 上記の例では、全体を削除するのは安全です。`ItemGroup`
+3. `XamarinComponentReference` への参照を削除し、ファイルを保存します。 上記の例では、`ItemGroup` 全体を安全に削除できます。
 
 4. ソリューション内のプロジェクトごとに上記の手順を繰り返します。
 
@@ -159,8 +159,8 @@ _NuGet の依存関係が含まれている場合がありますが、これら�
 
 例として、次のように検索することで、一般的な**sqlite-net pcl**パッケージを見つけることができます。
 
-- [`sqlite-net-pcl`](https://www.nuget.org/packages?q=sqlite-net-pcl)–製品名。
-- [`praeclarum`](https://www.nuget.org/packages?q=praeclarum)–作成者のプロファイル。
+- [`sqlite-net-pcl`](https://www.nuget.org/packages?q=sqlite-net-pcl) –製品名。
+- [`praeclarum`](https://www.nuget.org/packages?q=praeclarum) -作成者のプロファイル。
 
 ### <a name="updating-the-solution"></a>ソリューションを更新しています
 

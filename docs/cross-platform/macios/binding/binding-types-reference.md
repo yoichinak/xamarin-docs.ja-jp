@@ -3,15 +3,15 @@ title: バインディングの種類のリファレンスガイド
 description: このリファレンスガイドでは、目的の C ライブラリへのバインドを作成C#するときに理解しておく必要があるさまざまな属性と概念について説明します。
 ms.prod: xamarin
 ms.assetid: C6618E9D-07FA-4C84-D014-10DAC989E48D
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/06/2018
-ms.openlocfilehash: ef94c90cec11c374b24ddfb159674adb468e72de
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: e89cbf98dbaf5a96fdfa51069f580b914ba5ff76
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70765786"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016298"
 ---
 # <a name="binding-types-reference-guide"></a>バインディングの種類のリファレンスガイド
 
@@ -30,12 +30,12 @@ interface MyType : [Protocol1, Protocol2] {
 }
 ```
 
-生成されたオブジェクトの基本型を[`[BaseType]`](#BaseTypeAttribute)宣言する属性を持つ、コントラクト定義内のすべてのインターフェイス。 上記の宣言では`MyType` 、 C#という名前`MyType`の目的の C 型にバインドするクラス型が生成されます。
+生成されたオブジェクトの基本型を宣言する[`[BaseType]`](#BaseTypeAttribute)属性を持つ、コントラクト定義内のすべてのインターフェイス。 上記の宣言では、`MyType`C#と呼ばれる目標 C 型にバインドする `MyType` クラス型が生成されます。
 
-インターフェイスの継承構文を使用して、(上`Protocol1` `Protocol2`のサンプルでは) typename の後に型を指定した場合、それらのインターフェイスの内容は、の`MyType`コントラクトの一部としてインライン化されます。
+インターフェイスの継承構文を使用して、typename の後に型を指定した場合 (上記のサンプル `Protocol1` および `Protocol2`)、これらのインターフェイスの内容は `MyType`のコントラクトに含まれているかのようにインライン化されます。
 Xamarin の iOS では、型がプロトコルを採用する方法として、プロトコルで宣言されたすべてのメソッドとプロパティを型自体にインライン展開します。
 
-次に、の目的の C の`UITextField`宣言を Xamarin. iOS コントラクトで定義する方法を示します。
+次に、`UITextField` の目的 C の宣言を Xamarin. iOS コントラクトで定義する方法を示します。
 
 ```objc
 @interface UITextField : UIControl <UITextInput> {
@@ -51,11 +51,11 @@ interface UITextField : UITextInput {
 }
 ```
 
-他の属性をインターフェイスに適用したり、 [`[BaseType]`](#BaseTypeAttribute)属性を構成したりすることによって、コード生成の他の多くの側面を制御できます。
+他の属性をインターフェイスに適用したり、 [`[BaseType]`](#BaseTypeAttribute)属性を構成したりすることにより、コード生成の他の多くの側面を制御できます。
 
 ### <a name="generating-events"></a>生成 (イベントを)
 
-Xamarin および Xamarin API の設計の1つの機能として、目的の C デリゲートクラスをイベントとC#コールバックとしてマップすることが挙げられます。 ユーザーは、目的 c のプログラミングパターンを採用するかどうかにかかわらず、目的の c ランタイムが呼び出すさまざまな`Delegate`メソッドを実装するクラスのインスタンスなどのプロパティに割り当てることによって、インスタンス単位で選択できます。または、スタイルのC#イベントとプロパティを選択します。
+Xamarin および Xamarin API の設計の1つの機能として、目的の C デリゲートクラスをイベントとC#コールバックとしてマップすることが挙げられます。 ユーザーは、目標 C プログラミングパターンを採用するかどうかをインスタンス単位で選択できます。そのためには、目的の C ランタイムが呼び出すさまざまなメソッドを実装するクラスのインスタンス `Delegate` などのプロパティに割り当てるか、またはC#-スタイルのイベントとプロパティ。
 
 目的の C モデルを使用する方法の一例を見てみましょう。
 
@@ -85,7 +85,7 @@ class MyScrollViewDelegate : UIScrollViewDelegate {
 }
 ```
 
-上の例では、2つのメソッドを上書きすることを選択したことがわかります。これは、スクロールイベントが発生したことを示す通知です。2番目のメソッド`scrollView`は、スクロールする必要があるかどうかを示すブール値を返すコールバックです。top または not。
+上の例では、2つのメソッドを上書きすることを選択したことがわかります。これは、スクロールイベントが発生したことを示す通知です。2番目のメソッドは、トップまたは n にスクロールする必要があるかどうか `scrollView` を指示するブール値を返すコールバックであることを示しています。ot.
 
 C#モデルを使用すると、ライブラリのユーザーは、 C#イベント構文またはプロパティ構文を使用して通知をリッスンし、値を返すことが想定されているコールバックをフックできます。
 
@@ -103,17 +103,17 @@ void Setup ()
 }
 ```
 
-イベントは値を返さないため (戻り値の型が void であるため)、複数のコピーを接続できます。 はイベントではなく、次のシグネチャを持つ型`UIScrollViewCondition`を持つプロパティです。 `ShouldScrollToTop`
+イベントは値を返さないため (戻り値の型が void であるため)、複数のコピーを接続できます。 `ShouldScrollToTop` はイベントではなく、次のシグネチャを持つ `UIScrollViewCondition` 型のプロパティです。
 
 ```csharp
 public delegate bool UIScrollViewCondition (UIScrollView scrollView);
 ```
 
-この例で`bool`は、値を返します。この場合、ラムダ構文を使用すると、 `MakeDecision`関数から値を返すことができます。
+この例では `bool` 値が返されます。この場合、ラムダ構文を使用すると、`MakeDecision` 関数から値を返すだけで済みます。
 
-バインディングジェネレーター `UIScrollView`は、のよう`UIScrollViewDelegate`なクラスをにリンクするイベントおよびプロパティの生成をサポートしています (これらのモデルクラスを呼び出すことも`Events`可能です)。これは、と[`[BaseType]`](#BaseTypeAttribute) `Delegates`を使用して定義に注釈を付けることによって行われます。パラメーター (以下で説明)。 これらのパラメーター [`[BaseType]`](#BaseTypeAttribute)を使用してに注釈を付けるだけでなく、いくつかのコンポーネントをジェネレーターに通知する必要があります。
+バインディングジェネレーターは、`UIScrollView` のようなクラスを `UIScrollViewDelegate` とリンクするイベントおよびプロパティの生成をサポートしています (これらのモデルクラスを呼び出すこともよくあります)。これは、 [`[BaseType]`](#BaseTypeAttribute)定義に `Events` と `Delegates` のパラメーターで注釈を付けることによって行われます (次に説明します)。 これらのパラメーターを使用して[`[BaseType]`](#BaseTypeAttribute)に注釈を付けるだけでなく、いくつかのコンポーネントをジェネレーターに通知する必要があります。
 
-複数のパラメーターを受け取るイベントの場合 (目的 C では、デリゲートクラスの最初のパラメーターが sender オブジェクトのインスタンスであること)、生成`EventArgs`されたクラスに対して使用する名前を指定する必要があります。 これは、 [`[EventArgs]`](#EventArgsAttribute)モデルクラスのメソッド宣言の属性を使用して行います。 例:
+複数のパラメーターを受け取るイベントの場合 (目的 C では、デリゲートクラスの最初のパラメーターが sender オブジェクトのインスタンスであること)、生成された `EventArgs` クラスの名前を指定する必要があります。 これを行うには、モデルクラスのメソッド宣言の[`[EventArgs]`](#EventArgsAttribute)属性を使用します。 (例:
 
 ```csharp
 [BaseType (typeof (UINavigationControllerDelegate))]
@@ -124,7 +124,7 @@ public interface UIImagePickerControllerDelegate {
 }
 ```
 
-上記の宣言は、から`UIImagePickerImagePickedEventArgs` `EventArgs`派生するクラスを生成し、 `UIImage`との両方の`NSDictionary`パラメーターをパックします。 ジェネレーターは次のものを生成します。
+上記の宣言は、`EventArgs` から派生し、パラメーター、`UIImage`、および `NSDictionary`の両方をパックする `UIImagePickerImagePickedEventArgs` クラスを生成します。 ジェネレーターは次のものを生成します。
 
 ```csharp
 public partial class UIImagePickerImagePickedEventArgs : EventArgs {
@@ -134,13 +134,13 @@ public partial class UIImagePickerImagePickedEventArgs : EventArgs {
 }
 ```
 
-その後、 `UIImagePickerController`クラスで次のものを公開します。
+その後、`UIImagePickerController` クラスで次のものを公開します。
 
 ```csharp
 public event EventHandler<UIImagePickerImagePickedEventArgs> FinishedPickingImage { add; remove; }
 ```
 
-値を返すモデルメソッドは、異なる方法でバインドされます。 これには、生成さC#れたデリゲートの名前 (メソッドのシグネチャ) と、ユーザーが実装を提供しない場合に返す既定値が必要です。 たとえば、 `ShouldScrollToTop`定義は次のようになります。
+値を返すモデルメソッドは、異なる方法でバインドされます。 これには、生成さC#れたデリゲートの名前 (メソッドのシグネチャ) と、ユーザーが実装を提供しない場合に返す既定値が必要です。 たとえば、`ShouldScrollToTop` 定義は次のようになります。
 
 ```csharp
 [BaseType (typeof (NSObject))]
@@ -151,9 +151,9 @@ public interface UIScrollViewDelegate {
 }
 ```
 
-上の例では`UIScrollViewCondition` 、上に示したシグネチャを持つデリゲートを作成します。ユーザーが実装を提供していない場合、戻り値は true になります。
+上の例では、上に示したシグネチャを使用して `UIScrollViewCondition` デリゲートを作成します。ユーザーが実装を提供していない場合、戻り値は true になります。
 
-[`[DefaultValue]`](#DefaultValueAttribute)属性に加えて、呼び出し[`[NoDefaultValue]`](#NoDefaultValueAttribute)で指定された[`[DefaultValueFromArgument]`](#DefaultValueFromArgumentAttribute)パラメーターの値を返すようにジェネレーターに指示する属性、または既定値がないことをジェネレーターに指示するパラメーターを使用することもできます。数値.
+[`[DefaultValue]`](#DefaultValueAttribute)属性に加えて、 [`[DefaultValueFromArgument]`](#DefaultValueFromArgumentAttribute)属性を使用して、呼び出しで指定されたパラメーターの値を返すようにジェネレーターに指示することもできます。また、 [`[NoDefaultValue]`](#NoDefaultValueAttribute)パラメーターを使用して、存在することをジェネレーターに指示することもできます。既定値はありません。
 
 <a name="BaseTypeAttribute" />
 
@@ -176,9 +176,9 @@ public class BaseTypeAttribute : Attribute {
 
 #### <a name="basetypename"></a>BaseType.Name
 
-この型が`Name`目的の C 言語でバインドされる名前を制御するには、プロパティを使用します。 これは通常、.NET Framework 設計ガイドラインC#に準拠している名前を型に指定するために使用されますが、この規則に従っていない目的で C の名前にマップされます。
+この型が目的の C 言語でバインドされる名前を制御するには、`Name` プロパティを使用します。 これは通常、.NET Framework 設計ガイドラインC#に準拠している名前を型に指定するために使用されますが、この規則に従っていない目的で C の名前にマップされます。
 
-たとえば、次の例では、.NET Framework 設計ガイドラインで`NSURLConnection`は " `NSUrlConnection`url" ではなく "url" を使用しているので、目的の C 型をにマップします。
+たとえば、次の例では、.NET Framework 設計ガイドラインでは "URL" ではなく "Url" を使用しているので、目的の C `NSURLConnection` 型を `NSUrlConnection`にマップします。
 
 ```csharp
 [BaseType (typeof (NSObject), Name="NSURLConnection")]
@@ -186,13 +186,13 @@ interface NSUrlConnection {
 }
 ```
 
-指定された名前は、バインディングで生成`[Register]`される属性の値として使用されます。 が`Name`指定されていない場合、型の短い名前が、生成さ`[Register]`れる出力の属性の値として使用されます。
+指定された名前は、バインディングで生成される `[Register]` 属性の値として使用されます。 `Name` が指定されていない場合は、生成された出力の `[Register]` 属性の値として、型の短い名前が使用されます。
 
 #### <a name="basetypeevents-and-basetypedelegates"></a>BaseType. イベントと BaseType
 
-これらのプロパティは、生成されたC#クラスでスタイルの生成イベントを駆動するために使用されます。 これらは、特定のクラスとその目的の C デリゲートクラスをリンクするために使用されます。 クラスがデリゲートクラスを使用して通知とイベントを送信する多くのケースが発生します。 たとえば、に`BarcodeScanner`はコンパニオン`BardodeScannerDelegate`クラスがあります。 クラス`BarcodeScanner`には、通常、 `Delegate`のインスタンスを割り当てるプロパティがあります`BarcodeScannerDelegate` 。これは、ユーザー C#に似たスタイルのイベントインターフェイスを公開したい場合があります。そのような場合は、 `Events` `Delegates`属性のプロパティとプロパティ。 [`[BaseType]`](#BaseTypeAttribute)
+これらのプロパティは、生成されたC#クラスでスタイルの生成イベントを駆動するために使用されます。 これらは、特定のクラスとその目的の C デリゲートクラスをリンクするために使用されます。 クラスがデリゲートクラスを使用して通知とイベントを送信する多くのケースが発生します。 たとえば、`BarcodeScanner` には、コンパニオン `BardodeScannerDelegate` クラスがあります。 `BarcodeScanner` クラスには、通常、`BarcodeScannerDelegate` のインスタンスを割り当てる `Delegate` のプロパティがあります。これは、ユーザーに似たスタイルのイベントインターフェイスを公開C#し、そのような場合には`Events`と @no__t_5 を使用することをお勧めします。[`[BaseType]`](#BaseTypeAttribute)属性のプロパティ。
 
-これらのプロパティは常に一緒に設定され、同じ数の要素を持ち、同期されたままにする必要があります。配列`Delegates`には、ラップする弱い型指定のデリゲートごとに1つの文字列が含ま`Events`れます。配列には、関連付ける型ごとに1つの型が含まれています。
+これらのプロパティは常に一緒に設定され、同じ数の要素を持ち、同期されたままにする必要があります。`Delegates` 配列には、ラップする弱い型指定デリゲートごとに1つの文字列が含まれています。また、`Events` 配列には、関連付ける型ごとに1つの型が含まれています。
 
 ```csharp
 [BaseType (typeof (NSObject),
@@ -207,11 +207,11 @@ public interface UIAccelerometerDelegate {
 }
 ```
 
-#### <a name="basetypekeeprefuntil"></a>BaseType.KeepRefUntil
+#### <a name="basetypekeeprefuntil"></a>KeepRefUntil
 
-このクラスの新しいインスタンスが作成されたときにこの属性を適用すると、そのオブジェクトのインスタンスは、 `KeepRefUntil`によって参照されるメソッドが呼び出されるまで保持されます。 これは、ユーザーがコードを使用するためにオブジェクトへの参照を保持する必要がない場合に、Api の使いやすさを向上させるために役立ちます。 このプロパティの値は、 `Delegate`クラス内のメソッドの名前であるため、プロパティ`Events`と`Delegates`プロパティの組み合わせでも使用する必要があります。
+このクラスの新しいインスタンスが作成されたときにこの属性を適用すると、そのオブジェクトのインスタンスは、`KeepRefUntil` によって参照されるメソッドが呼び出されるまで保持されます。 これは、ユーザーがコードを使用するためにオブジェクトへの参照を保持する必要がない場合に、Api の使いやすさを向上させるために役立ちます。 このプロパティの値は `Delegate` クラスのメソッドの名前であるため、`Events` と `Delegates` プロパティと組み合わせて使用する必要があります。
 
-次の例では、Xamarin ので`UIActionSheet`を使用する方法を示します。
+次の例では、Xamarin の `UIActionSheet` によってこれがどのように使用されるかを示します。
 
 ```csharp
 [BaseType (typeof (NSObject), KeepRefUntil="Dismissed")]
@@ -234,7 +234,7 @@ public interface UIActionSheetDelegate {
 
 ### <a name="designateddefaultctorattribute"></a>DesignatedDefaultCtorAttribute
 
-この属性がインターフェイス定義に適用されると、既定の`[DesignatedInitializer]` (生成される) コンストラクターに属性が生成され、 `init`セレクターにマップされます。
+この属性がインターフェイス定義に適用されると、既定の (生成される) コンストラクターに `[DesignatedInitializer]` 属性が生成され、`init` セレクターにマップされます。
 
 <a name="DisableDefaultCtorAttribute" />
 
@@ -256,7 +256,7 @@ public interface UIActionSheetDelegate {
 
 この属性を型定義で使用して、目的の C カテゴリをバインドし、 C#それらを拡張メソッドとして公開し、目的の c が機能を公開する方法をミラー化します。
 
-カテゴリは、クラスで使用可能なメソッドとプロパティのセットを拡張するために使用される、目的の C の機構です。   実際には、特定のフレームワークがリンク`NSObject` `UIKit`されている場合 (たとえば)、新しいフレームワークがにリンクされている場合にのみ、基本クラスの機能を拡張する (たとえば) ために使用されます。   場合によっては、機能によってクラスの特徴を整理するために使用されます。   これらは、スピリットの拡張C#メソッドに似ています。
+カテゴリは、クラスで使用可能なメソッドとプロパティのセットを拡張するために使用される、目的の C の機構です。   実際には、特定のフレームワークがリンクされている (たとえば `UIKit`) ときに基本クラスの機能を拡張するために使用されます (たとえば、`NSObject`)。新しいフレームワークがリンクされている場合にのみ、メソッドを使用できるようにします。   場合によっては、機能によってクラスの特徴を整理するために使用されます。   これらは、スピリットの拡張C#メソッドに似ています。
 
 このカテゴリは、次のようになります。
 
@@ -266,11 +266,11 @@ public interface UIActionSheetDelegate {
 @end
 ```
 
-上の例は、メソッド`UIView` `makeBackgroundRed`を使用してのインスタンスを拡張するライブラリにあります。
+上の例は、メソッド `makeBackgroundRed`を使用して `UIView` のインスタンスを拡張するライブラリにあります。
 
-これらをバインドするには、インターフェイス[`[Category]`](#CategoryAttribute)定義で属性を使用します。   [`[Category]`](#CategoryAttribute)属性を使用すると、 [`[BaseType]`](#BaseTypeAttribute)属性の意味が、拡張する基底クラスを指定するために使用されるように変更されます。
+これらをバインドするには、インターフェイス定義で[`[Category]`](#CategoryAttribute)属性を使用します。   [`[Category]`](#CategoryAttribute)属性を使用すると、 [`[BaseType]`](#BaseTypeAttribute)属性の意味が、拡張する基底クラスを指定するために使用されるように変更され、拡張する型になります。
 
-拡張機能がどのよう`UIView`にバインドされ、拡張C#メソッドに変換されるかを次に示します。
+`UIView` の拡張機能がどのようにバインドされ、 C#拡張メソッドに変換されるかを次に示します。
 
 ```csharp
 [BaseType (typeof (UIView))]
@@ -281,7 +281,7 @@ interface MyUIViewExtension {
 }
 ```
 
-上の例では`MyUIViewExtension` 、 `MakeBackgroundRed`拡張メソッドを含むクラスを作成します。   これは、任意`MakeBackgroundRed` `UIView`のサブクラスでを呼び出すことができるようになったことを意味します。これにより、目的の C でも同じ機能が得られます。
+上の例では、`MakeBackgroundRed` 拡張メソッドを含むクラス `MyUIViewExtension` を作成します。   つまり、任意の `UIView` サブクラスで `MakeBackgroundRed` を呼び出すことができるので、目的の C でも同じ機能を使用できます。
 
 場合によっては、次の例のように、**静的**メンバーがカテゴリ内に存在することがあります。
 
@@ -305,7 +305,7 @@ interface FooObject_Extensions {
 }
 ```
 
-これは正しくありません。 `BoolMethod`の`FooObject`インスタンスが必要な拡張機能を使用するが、objc**静的**拡張をバインドしているためです。これは、 C#拡張メソッドの実装方法の事実による副作用になります。
+`BoolMethod` 拡張機能を使用して `FooObject` のインスタンスが必要ですが、ObjC**静的**拡張をバインドしているため、これは正しくありません。これは、 C#拡張メソッドの実装方法の事実による副作用です。
 
 上記の定義を使用する唯一の方法は、次のような厄介なコードです。
 
@@ -313,7 +313,7 @@ interface FooObject_Extensions {
 (null as FooObject).BoolMethod (range);
 ```
 
-これを回避するための推奨事項は`BoolMethod` 、 `FooObject`インターフェイス定義の内部で定義をインライン化することです。これにより、意図`FooObject.BoolMethod (range)`したようにこの拡張機能を呼び出すことができます。
+これを回避するための推奨事項は、`FooObject` インターフェイス定義内で `BoolMethod` 定義をインライン化することです。これにより、`FooObject.BoolMethod (range)`意図したように、この拡張機能を呼び出すことができます。
 
 ```csharp
 [BaseType (typeof (NSObject))]
@@ -325,15 +325,15 @@ interface FooObject {
 }
 ```
 
-定義内でメンバーが見つかった[`[Static]`](#StaticAttribute)場合は常に、警告 (BI1117) を発行します。 [`[Category]`](#CategoryAttribute) [`[Static]`](#StaticAttribute)実際に[`[Category]`](#CategoryAttribute)定義内にメンバーを作成する場合は、またはを使用し`[Category (allowStaticMembers: true)]`て警告を無音にし、 [`[Category]`](#CategoryAttribute)メンバーまたは[`[Internal]`](#InternalAttribute)インターフェイスの定義をで修飾することができます。
+[`[Category]`](#CategoryAttribute)定義内に[`[Static]`](#StaticAttribute)メンバーが見つかるたびに、警告 (BI1117) が発行されます。 [`[Category]`](#CategoryAttribute)定義内にメンバーを[`[Static]`](#StaticAttribute)する場合は、`[Category (allowStaticMembers: true)]` を使用するか、メンバーまたは[`[Category]`](#CategoryAttribute)インターフェイス定義を[`[Internal]`](#InternalAttribute)で修飾することにより、警告を無音にすることができます。
 
 <a name="StaticAttribute_Class" />
 
 ### <a name="staticattribute"></a>StaticAttribute
 
-この属性がクラスに適用されると、静的クラス (から`NSObject`派生したものではない) が生成されます。その[`[BaseType]`](#BaseTypeAttribute)ため、属性は無視されます。 静的クラスは、公開する C パブリック変数をホストするために使用されます。
+この属性がクラスに適用されると、静的クラス (`NSObject`から派生したものではない) が生成されます。そのため、 [`[BaseType]`](#BaseTypeAttribute)属性は無視されます。 静的クラスは、公開する C パブリック変数をホストするために使用されます。
 
-例:
+(例:
 
 ```csharp
 [Static]
@@ -356,15 +356,15 @@ public partial class CBAdvertisement  {
 これは、ランタイムが、実際に上書きされたメソッドのみを目的の C に登録する点が異なります。
 それ以外の場合、メソッドは登録されません。
 
-これは一般に、 `ModelAttribute`でフラグが設定されたクラスをサブクラス化する場合、基本メソッドを呼び出さないことを意味します。   このメソッドを呼び出すと、例外がスローされます。オーバーライドするメソッドについては、サブクラスに対して動作全体を実装することになります。
+これは一般に、`ModelAttribute`でフラグが設定されたクラスをサブクラス化する場合、基本メソッドを呼び出さないことを意味します。   このメソッドを呼び出すと、例外がスローされます。オーバーライドするメソッドについては、サブクラスに対して動作全体を実装することになります。
 
 <a name="AbstractAttribute" />
 
 ### <a name="abstractattribute"></a>AbstractAttribute
 
-既定では、プロトコルの一部であるメンバーは必須ではありません。 これにより、ユーザーは、の`Model` C#クラスから派生するだけでオブジェクトのサブクラスを作成し、注意するメソッドのみをオーバーライドできます。 場合によっては、ユーザーがこのメソッドの実装を提供することが必要になることが`@required`あります (これには、ターゲット-C のディレクティブでフラグが付けられます)。 そのような場合は、 `[Abstract]`属性を使用してこれらのメソッドにフラグを付ける必要があります。
+既定では、プロトコルの一部であるメンバーは必須ではありません。 これにより、ユーザーは、単にのC#クラスから派生させ、関心のあるメソッドだけをオーバーライドすることによって、`Model` オブジェクトのサブクラスを作成できます。 場合によっては、ユーザーがこのメソッドの実装を提供しなければならないことがあります (これは、目的の `@required` ディレクティブでフラグが付けられます)。 そのような場合は、`[Abstract]` 属性を使用してこれらのメソッドにフラグを付ける必要があります。
 
-属性`[Abstract]`は、メソッドまたはプロパティのいずれかに適用でき、生成されたメンバーに abstract としてフラグを設定し、クラスを抽象クラスにします。
+`[Abstract]` 属性は、メソッドまたはプロパティのいずれかに適用でき、生成されたメンバーに abstract としてフラグを設定し、クラスを抽象クラスにします。
 
 Xamarin からは次のものが作成されます。
 
@@ -393,7 +393,7 @@ public class DefaultValueAttribute : Attribute {
 }
 ```
 
-たとえば、 `Camera`クラスの次の虚数デリゲートクラスでは、 `Camera`クラスのプロパティと`ShouldUploadToServer`して公開されるを提供します。 `Camera`クラスのユーザーが、true または false に応答できるラムダに値を明示的に設定していない場合、この場合の既定値は false になり、 `DefaultValue`属性に指定した値が返されます。
+たとえば、`Camera` クラスの次の虚数デリゲートクラスでは、`Camera` クラスのプロパティとして公開される `ShouldUploadToServer` を提供します。 `Camera` クラスのユーザーが、true または false に応答できるラムダに値を明示的に設定していない場合、この場合の既定値は false になり、`DefaultValue` 属性で指定した値になります。:
 
 ```csharp
 [BaseType (typeof (NSObject))]
@@ -411,7 +411,7 @@ var camera = new Camera ();
 camera.ShouldUploadToServer = (camera, action) => return SomeDecision ();
 ```
 
-関連項目: [`[NoDefaultValue]`](#NoDefaultValueAttribute)「 [`[DefaultValueFromArgument]`](#DefaultValueFromArgumentAttribute)」、「」
+関連項目: [`[NoDefaultValue]`](#NoDefaultValueAttribute)、 [`[DefaultValueFromArgument]`](#DefaultValueFromArgumentAttribute)。
 
 <a name="DefaultValueFromArgumentAttribute" />
 
@@ -439,9 +439,9 @@ public interface NSAnimationDelegate {
 }
 ```
 
-上記のケースでは、 `NSAnimation`クラスのユーザーがC#イベント/プロパティを使用することを選択し、メソッドまたは`NSAnimation.ComputeAnimationCurve`ラムダに設定しなかった場合、戻り値は progress パラメーターで渡される値になります。
+上記の例では、`NSAnimation` クラスのユーザーがいずれかのC#イベント/プロパティを使用するように選択し、`NSAnimation.ComputeAnimationCurve`をメソッドまたはラムダに設定しなかった場合、戻り値は progress パラメーターに渡された値になります。
 
-関連項目: [`[NoDefaultValue]`](#NoDefaultValueAttribute)「」、「」[`[DefaultValue]`](#DefaultValueAttribute)
+関連項目: [`[NoDefaultValue]`](#NoDefaultValueAttribute)、 [`[DefaultValue]`](#DefaultValueAttribute)
 
 ### <a name="ignoredindelegateattribute"></a>IgnoredInDelegateAttribute
 
@@ -507,9 +507,9 @@ public Func<NSAnimation, float, float> ComputeAnimationCurve { get; set; }
 
 ### <a name="eventargsattribute"></a>EventArgsAttribute
 
-複数のパラメーターを受け取るイベントの場合 (目的 C では、デリゲートクラスの最初のパラメーターが sender オブジェクトのインスタンスであること)、生成された EventArgs クラスの名前をに指定する必要があります。 これは、 `Model`クラスの`[EventArgs]`メソッド宣言の属性を使用して行います。
+複数のパラメーターを受け取るイベントの場合 (目的 C では、デリゲートクラスの最初のパラメーターが sender オブジェクトのインスタンスであること)、生成された EventArgs クラスの名前をに指定する必要があります。 これを行うには、`Model` クラスのメソッド宣言の `[EventArgs]` 属性を使用します。
 
-例:
+(例:
 
 ```csharp
 [BaseType (typeof (UINavigationControllerDelegate))]
@@ -520,7 +520,7 @@ public interface UIImagePickerControllerDelegate {
 }
 ```
 
-上記の宣言は、EventArgs `UIImagePickerImagePickedEventArgs`から派生したクラスを生成し、 `UIImage`と`NSDictionary`の両方のパラメーターをパックします。 ジェネレーターは次のものを生成します。
+上記の宣言は、EventArgs から派生した `UIImagePickerImagePickedEventArgs` クラスを生成し、パラメーター、`UIImage`、および `NSDictionary`の両方をパックします。 ジェネレーターは次のものを生成します。
 
 ```csharp
 public partial class UIImagePickerImagePickedEventArgs : EventArgs {
@@ -530,7 +530,7 @@ public partial class UIImagePickerImagePickedEventArgs : EventArgs {
 }
 ```
 
-その後、 `UIImagePickerController`クラスで次のものを公開します。
+その後、`UIImagePickerController` クラスで次のものを公開します。
 
 ```csharp
 public event EventHandler<UIImagePickerImagePickedEventArgs> FinishedPickingImage { add; remove; }
@@ -540,14 +540,14 @@ public event EventHandler<UIImagePickerImagePickedEventArgs> FinishedPickingImag
 
 この属性は、クラスで生成されたイベントまたはプロパティの名前をジェネレーターが変更できるようにするために使用されます。 モデルクラスのメソッドの名前がモデルクラスにとって意味があるものの、元のクラスではイベントまたはプロパティとして奇妙に見える場合に役立つことがあります。
 
-たとえば、は`UIWebView` 、の`UIWebViewDelegate`次のビットを使用します。
+たとえば、`UIWebView` は `UIWebViewDelegate`の次のビットを使用します。
 
 ```csharp
 [Export ("webViewDidFinishLoad:"), EventArgs ("UIWebView"), EventName ("LoadFinished")]
 void LoadingFinished (UIWebView webView);
 ```
 
-上のは`LoadingFinished` 、の`UIWebViewDelegate`メソッドとしてを`LoadFinished`公開し`UIWebView`ますが、にフックするイベントとしてを公開します。
+上の例では、`UIWebViewDelegate`のメソッドとして `LoadingFinished` を公開していますが、`UIWebView`でフックするイベントとして `LoadFinished` しています。
 
 ```csharp
 var webView = new UIWebView (...);
@@ -558,7 +558,7 @@ webView.LoadFinished += delegate { Console.WriteLine ("done!"); }
 
 ### <a name="modelattribute"></a>ModelAttribute
 
-コントラクト API の型`[Model]`定義に属性を適用すると、ユーザーがクラスのメソッドを上書きした場合に、クラスのメソッドへの呼び出しのみを実行する特殊なコードがランタイムによって生成されます。 この属性は、通常、目的の C デリゲートクラスをラップするすべての Api に適用されます。
+コントラクト API の型定義に `[Model]` 属性を適用すると、ユーザーがクラスのメソッドを上書きした場合に、クラスのメソッドへの呼び出しのみを実行する特殊なコードがランタイムによって生成されます。 この属性は、通常、目的の C デリゲートクラスをラップするすべての Api に適用されます。
 
 <a name="NoDefaultValueAttribute" />
 
@@ -566,7 +566,7 @@ webView.LoadFinished += delegate { Console.WriteLine ("done!"); }
 
 モデルのメソッドが既定の戻り値を提供しないことを指定します。
 
-これは、目的の c ランタイム要求に応答`false`して、指定されたセレクターがこのクラスに実装されているかどうかを判断することで、目的の c ランタイムで動作します。
+これは、指定したセレクターがこのクラスに実装されているかどうかを判断するために、目的の C ランタイム要求に `false` 応答することによって、目的 C ランタイムで動作します。
 
 ```csharp
 [BaseType (typeof (NSObject))]
@@ -577,7 +577,7 @@ interface CameraDelegate {
 }
 ```
 
-関連項目: [`[DefaultValue]`](#DefaultValueAttribute)「」、「」[`[DefaultValueFromArgument]`](#DefaultValueFromArgumentAttribute)  
+関連項目: [`[DefaultValue]`](#DefaultValueAttribute)、 [`[DefaultValueFromArgument]`](#DefaultValueFromArgumentAttribute)  
 
 <a name="ProtocolAttribute" />
 
@@ -585,7 +585,7 @@ interface CameraDelegate {
 
 「」では、C プロトコルの概念は実際C#には存在しません。 プロトコルはインターフェイスにC#似ていますが、プロトコルで宣言されているすべてのメソッドとプロパティが、それを採用するクラスによって実装されている必要はありません。 代わりに、一部のメソッドとプロパティは省略可能です。
 
-一部のプロトコルは通常、モデルクラスとして使用されます[`[Model]`](#ModelAttribute) 。これらは属性を使用してバインドする必要があります。
+一部のプロトコルは通常、モデルクラスとして使用されます。これらは、 [`[Model]`](#ModelAttribute)属性を使用してバインドする必要があります。
 
 ```csharp
 [BaseType (typeof (NSObject))]
@@ -602,7 +602,7 @@ interface MyProtocol {
 }
 ```
 
-Xamarin 以降では、新たに強化されたプロトコルバインド機能が組み込まれてい7.0 ます。  属性を`[Protocol]`含む定義では、次の3つのサポートクラスが生成され、プロトコルの使用方法が大幅に向上します。
+Xamarin 以降では、新たに強化されたプロトコルバインド機能が組み込まれてい7.0 ます。  `[Protocol]` 属性を含む定義では、次の3つのサポートクラスを実際に生成して、プロトコルの使用方法を大幅に向上させます。
 
 ```csharp
 // Full method implementation, contains all methods
@@ -657,7 +657,7 @@ interface MyTool {
 }
 ```
 
-のバインド時には、 `IMyProtocol`が存在しないため、空のインターフェイスを提供する必要があるため、上記の手順が必要になります。
+`IMyProtocol` が存在しない場合はバインド時に、空のインターフェイスを提供する必要があるため、上記が必要です。
 
 ### <a name="adopting-protocol-generated-interfaces"></a>プロトコルによって生成されたインターフェイスの導入
 
@@ -686,7 +686,7 @@ class MyDelegate : NSObject, IUITableViewDelegate {
 
 ### <a name="protocol-inlining"></a>プロトコルインライン展開
 
-プロトコルの導入として宣言されている既存の目標 C 型をバインドするときに、プロトコルを直接インライン化する必要があります。 これを行うには、単に[`[BaseType]`](#BaseTypeAttribute)属性を指定せずにインターフェイスとしてプロトコルを宣言し、インターフェイスの基本インターフェイスの一覧にプロトコルを列挙します。
+プロトコルの導入として宣言されている既存の目標 C 型をバインドするときに、プロトコルを直接インライン化する必要があります。 これを行うには、単に、 [`[BaseType]`](#BaseTypeAttribute)属性のないインターフェイスとしてプロトコルを宣言し、インターフェイスの基本インターフェイスの一覧でプロトコルを一覧表示します。
 
 例:
 
@@ -709,7 +709,7 @@ interface Robot : SpeakProtocol {
 
 ### <a name="alignattribute"></a>AlignAttribute
 
-プロパティの戻り値の型のアラインメント値を指定するために使用します。 特定のプロパティでは、特定の境界に沿って配置する必要があるアドレスへのポインターを取得し`GLKBaseEffect`ます (Xamarin では、16バイトでアラインする必要があるいくつかのプロパティを使用する場合などに発生します)。 このプロパティを使用して getter を装飾し、alignment 値を使用できます。 これは、通常、 `OpenTK.Vector4`および型と共に使用し`OpenTK.Matrix4`て、目的の C api と統合する場合に使用します。
+プロパティの戻り値の型のアラインメント値を指定するために使用します。 特定のプロパティでは、特定の境界に沿って配置する必要があるアドレスへのポインターを取得します (Xamarin では、たとえば、16バイトでアラインする必要があるいくつかの `GLKBaseEffect` プロパティを使用します)。 このプロパティを使用して getter を装飾し、alignment 値を使用できます。 これは通常、目的の C Api と統合するときに、`OpenTK.Vector4` および `OpenTK.Matrix4` 型と共に使用されます。
 
 例:
 
@@ -722,9 +722,9 @@ public interface GLKBaseEffect {
 
 ### <a name="appearanceattribute"></a>外観属性
 
-属性`[Appearance]`は、外観マネージャーが導入された iOS 5 に限定されています。
+`[Appearance]` 属性は、外観マネージャーが導入された iOS 5 に限定されています。
 
-この属性は、 `UIAppearance`フレームワークに参加する任意のメソッドまたはプロパティに適用できます。 `[Appearance]` この属性がクラスのメソッドまたはプロパティに適用されると、このクラスのすべてのインスタンスのスタイルを設定するために使用される厳密に型指定された外観クラス、または特定の条件に一致するインスタンスを作成するために、バインディングジェネレーターによって指示されます。
+`[Appearance]` 属性は、`UIAppearance` framework に参加する任意のメソッドまたはプロパティに適用できます。 この属性がクラスのメソッドまたはプロパティに適用されると、このクラスのすべてのインスタンスのスタイルを設定するために使用される厳密に型指定された外観クラス、または特定の条件に一致するインスタンスを作成するために、バインディングジェネレーターによって指示されます。
 
 例:
 
@@ -757,23 +757,23 @@ public partial class UIToolbar {
 
 ### <a name="autoreleaseattribute-xamarinios-54"></a>AutoReleaseAttribute (Xamarin 5.4)
 
-メソッドとプロパティを使用して、メソッドの呼び出しを`NSAutoReleasePool`内のメソッドにラップします。 `[AutoReleaseAttribute]`
+メソッドとプロパティの `[AutoReleaseAttribute]` を使用して、`NSAutoReleasePool`内のメソッドへのメソッド呼び出しをラップします。
 
-目的 C では、既定`NSAutoReleasePool`値に追加される値を返すメソッドがいくつかあります。 既定では、これらはスレッド`NSAutoReleasePool`に移動しますが、Xamarin. iOS はマネージオブジェクトが存在する限りオブジェクトへの参照を保持するため、では、スレッドが処理されるまでは、 `NSAutoReleasePool`余分な参照を使用しないようにする必要があります。次のスレッドに制御を戻すか、メインループに戻ります。
+目的 C では、既定の `NSAutoReleasePool`に追加される値を返すメソッドがいくつかあります。 既定では、これらはスレッド `NSAutoReleasePool`に移動しますが、Xamarin. iOS はマネージオブジェクトが存在する限り、オブジェクトへの参照を保持するため、`NSAutoReleasePool` には追加の参照を保持しないようにします。これは、スレッドが戻るまでドレインされません。次のスレッドに制御を戻すか、メインループに戻ります。
 
-この属性は、既定値`UIImage.FromFile` `NSAutoReleasePool`に追加されたオブジェクトを返す、高負荷なプロパティ (など) に適用されます。 この属性がない場合、スレッドがメインループに制御を返さない限り、画像は保持されます。 Uf スレッドが、常に生きていて作業を待機しているバックグラウンドダウンローダーの一種であった場合、イメージは解放されません。
+この属性は、既定の `NSAutoReleasePool`に追加されたオブジェクトを返す、高負荷なプロパティ (`UIImage.FromFile`など) の例に適用されます。 この属性がない場合、スレッドがメインループに制御を返さない限り、画像は保持されます。 Uf スレッドが、常に生きていて作業を待機しているバックグラウンドダウンローダーの一種であった場合、イメージは解放されません。
 
 ### <a name="forcedtypeattribute"></a>ForcedTypeAttribute
 
-返さ`[ForcedTypeAttribute]`れるアンマネージオブジェクトがバインディング定義で記述されている型と一致しない場合でも、は、マネージ型の作成を強制するために使用されます。
+`[ForcedTypeAttribute]` は、返されたアンマネージオブジェクトがバインディング定義で記述されている型と一致しない場合でも、マネージ型の作成を強制するために使用されます。
 
-これは、ヘッダーに記述されている型がネイティブメソッドの戻り値の型と一致しない場合に便利です。たとえば、から`NSURLSession`次のような C の定義を取得します。
+これは、ヘッダーに記述されている型が、ネイティブメソッドの戻り値の型と一致しない場合に便利です。たとえば、`NSURLSession`から次のような C の定義を使用します。
 
 `- (NSURLSessionDownloadTask *)downloadTaskWithRequest:(NSURLRequest *)request`
 
-これは、 `NSURLSessionDownloadTask`インスタンスを返すことを明確に示していますが`NSURLSessionTask`、が**返さ**れます。これは、スーパー `NSURLSessionDownloadTask`クラスであり、に変換できないことを示します。 これはタイプセーフなコンテキストであるため、 `InvalidCastException`が発生します。
+これは `NSURLSessionDownloadTask` インスタンスを返すことを明確に示していますが、`NSURLSessionTask`を**返し**ます。これはスーパークラスであるため、`NSURLSessionDownloadTask`に変換できません。 これはタイプセーフなコンテキストであるため、`InvalidCastException` が発生します。
 
-ヘッダーの説明に従ってを回避`InvalidCastException` `[ForcedTypeAttribute]`するには、を使用します。
+ヘッダーの説明に従って `InvalidCastException`を回避するには、`[ForcedTypeAttribute]` を使用します。
 
 ```csharp
 [BaseType (typeof (NSObject), Name="NSURLSession")]
@@ -785,19 +785,19 @@ interface NSUrlSession {
 }
 ```
 
-は`[ForcedTypeAttribute]` 、 `false`既定`Owns`ではという名前のブール値も受け入れます`[ForcedType (owns: true)]`。 所有しているパラメーターは、 **Core Foundation**オブジェクトの[所有権ポリシー](https://developer.apple.com/library/content/documentation/CoreFoundation/Conceptual/CFMemoryMgmt/Concepts/Ownership.html)に従うために使用されます。
+`[ForcedTypeAttribute]` は、既定の `[ForcedType (owns: true)]`で `false` される `Owns` という名前のブール値も受け入れます。 所有しているパラメーターは、 **Core Foundation**オブジェクトの[所有権ポリシー](https://developer.apple.com/library/content/documentation/CoreFoundation/Conceptual/CFMemoryMgmt/Concepts/Ownership.html)に従うために使用されます。
 
-は`[ForcedTypeAttribute]` 、パラメーター、プロパティ、および戻り値でのみ有効です。
+`[ForcedTypeAttribute]` は、パラメーター、プロパティ、および戻り値でのみ有効です。
 
 <a name="BindAsAttribute" />
 
 ### <a name="bindasattribute"></a>BindAsAttribute
 
-で`[BindAsAttribute]`は、 `NSNumber`より`NSValue`正確C#な型へのバインドと`NSString`(列挙) が許可されます。 属性を使用すると、ネイティブ API でより正確で正確な .NET API を作成できます。
+`[BindAsAttribute]` を使用すると、`NSNumber`、`NSValue`、および `NSString`(列挙型C# ) をより正確な型にバインドできます。 属性を使用すると、ネイティブ API でより正確で正確な .NET API を作成できます。
 
-メソッド (戻り値)、パラメーター、およびプロパティは、を使用`BindAs`して装飾できます。 唯一の制限は、メンバーがインターフェイスまたは[`[Model]`](#ModelAttribute)インターフェイスの`[Protocol]`内側に配置さ**れていない**ことです。
+メソッド (戻り値)、パラメーター、およびプロパティを `BindAs`で装飾できます。 唯一の制限は、メンバーが `[Protocol]` インターフェイスまたは[`[Model]`](#ModelAttribute)インターフェイス内に存在してはいけ**ない**ことです。
 
-例:
+(例:
 
 ```csharp
 [return: BindAs (typeof (bool?))]
@@ -812,7 +812,7 @@ NSNumber ShouldDraw ([BindAs (typeof (CGRect))] NSValue rect);
 bool? ShouldDraw (CGRect rect) { ... }
 ```
 
-内部的には、 `bool?`  <->  `NSNumber`との変換`CGRect`を行います。  <->  `NSValue`
+内部的には、`bool?` <-> `NSNumber` および `CGRect` <-> `NSValue` 変換を行います。
 
 現在サポートされているカプセル化の種類は次のとおりです。
 
@@ -822,7 +822,7 @@ bool? ShouldDraw (CGRect rect) { ... }
 
 #### <a name="nsvalue"></a>NSValue
 
-次C#のデータ型は、と`NSValue`の間でカプセル化することがサポートされています。
+次C#のデータ型は、`NSValue`からのカプセル化がサポートされています。
 
 * Cgの Inetransform 変換
 * NSRange
@@ -844,12 +844,12 @@ bool? ShouldDraw (CGRect rect) { ... }
 
 #### <a name="nsnumber"></a>NSNumber
 
-次C#のデータ型は、と`NSNumber`の間でカプセル化することがサポートされています。
+次C#のデータ型は、`NSNumber`からのカプセル化がサポートされています。
 
 * bool
 * byte
-* double
-* float
+* 二重線
+* フローティング
 * short
 * int
 * long
@@ -864,7 +864,7 @@ bool? ShouldDraw (CGRect rect) { ... }
 
 #### <a name="nsstring"></a>NSString
 
-[`[BindAs]`](#BindAsAttribute)[NSString 定数によって列挙](#enum-attributes)された conjuntion で機能します。これにより、次のように、より優れた .net API を作成できます。
+[`[BindAs]`](#BindAsAttribute)は、 [nsstring 定数によって列挙](#enum-attributes)された conjuntion で動作するため、より優れた .net API を作成できます。次に例を示します。
 
 ```csharp
 [BindAs (typeof (CAScroll))]
@@ -879,11 +879,11 @@ NSString SupportedScrollMode { get; set; }
 CAScroll SupportedScrollMode { get; set; }
 ```
 
-`enum` <-> `NSString` 変換は、指定された列挙型が [`[BindAs]`](#BindAsAttribute) になるよう [nsstring 定数によって](#enum-attributes)サポートされている場合にのみ処理されます。
+[`[BindAs]`](#BindAsAttribute)に指定された列挙型が[nsstring 定数によってサポート](#enum-attributes)されている場合にのみ、`enum` <-> `NSString` 変換を処理します。
 
 #### <a name="arrays"></a>配列
 
-[`[BindAs]`](#BindAsAttribute)では、サポートされる任意の型の配列もサポートされています。例として、次の API 定義を使用できます。
+また、サポートされている任意の型の配列もサポートしているため、次のような API 定義を例として使用できます。 [`[BindAs]`](#BindAsAttribute)
 
 ```csharp
 [return: BindAs (typeof (CAScroll []))]
@@ -898,17 +898,17 @@ NSString [] GetScrollModes ([BindAs (typeof (CGRect []))] NSValue [] rects);
 CAScroll? [] GetScrollModes (CGRect [] rects) { ... }
 ```
 
-パラメーター `rects`は、 `CAScroll?`それぞれ`NSArray` のを含む`NSValue`にカプセル化され、返されたの値`NSArray`を使用して作成されたの配列を取得します。 `CGRect`を`NSStrings`含む。
+`rects` パラメーターは `CGRect` ごとに `NSValue` を含む `NSArray` にカプセル化され、返された `CAScroll?` を含む返された `NSArray` の値を使用して作成された `NSStrings`の配列を取得します。
 
 <a name="BindAttribute" />
 
 ### <a name="bindattribute"></a>BindAttribute
 
-この`[Bind]`属性には、メソッドまたはプロパティの宣言に適用されるときに2つのが使用されます。また、プロパティの getter または setter に個別に適用される場合もあります。
+`[Bind]` 属性には、メソッドまたはプロパティの宣言に適用する場合は2つ、プロパティの getter または setter に適用する場合は2つのを使用します。
 
-メソッドまたはプロパティに対して使用する場合、 `[Bind]`属性の効果は、指定されたセレクターを呼び出すメソッドを生成することです。 ただし、生成されたメソッドは[`[Export]`](#ExportAttribute)属性で修飾されていません。これは、メソッドのオーバーライドに参加できないことを意味します。 これは通常、目的の C 拡張`[Target]`メソッドを実装するための属性と組み合わせて使用されます。
+メソッドまたはプロパティに対して使用する場合、`[Bind]` 属性の効果は、指定されたセレクターを呼び出すメソッドを生成することです。 ただし、生成されたメソッドは、 [`[Export]`](#ExportAttribute)属性では修飾されません。これは、メソッドのオーバーライドに参加できないことを意味します。 これは通常、目的の C 拡張メソッドを実装するために、`[Target]` 属性と組み合わせて使用されます。
 
-例えば:
+(例:
 
 ```csharp
 public interface UIView {
@@ -917,10 +917,10 @@ public interface UIView {
 }
 ```
 
-Getter または setter で使用した場合`[Bind]` 、属性を使用して、プロパティの getter および setter 目標-C セレクターの名前を生成するときに、コードジェネレーターによって推論される既定値を変更します。 既定では、という名前`fooBar`のプロパティにフラグを設定すると、ジェネレーターによって getter と`setFooBar:` setter のエクスポートが`fooBar`生成されます。 場合によっては、目的の C がこの規則に従わないことがあり`isFooBar`ます。通常は、getter 名をに変更します。
+Getter または setter で使用した場合、`[Bind]` 属性を使用して、プロパティの getter および setter 目標-C セレクター名を生成するときに、コードジェネレーターによって推論される既定値を変更します。 既定では、`fooBar`という名前のプロパティにフラグを設定すると、ジェネレーターによって、セッターの getter および `setFooBar:` の `fooBar` エクスポートが生成されます。 場合によっては、目的の C がこの規則に従わないことがあります。通常は、getter 名を `isFooBar`に変更します。
 この属性を使用して、こののジェネレーターを通知します。
 
-例:
+(例:
 
 ```csharp
 // Default behavior
@@ -940,7 +940,7 @@ Xamarin. iOS 6.3 以降でのみ使用できます。
 
 この属性は、最後の引数として完了ハンドラーを受け取るメソッドに適用できます。
 
-属性は、 `[Async]`最後の引数がコールバックであるメソッドで使用できます。  メソッドにこのを適用すると、バインドジェネレーターは、サフィックス`Async`を使用して、そのメソッドのバージョンを生成します。  コールバックがパラメーターを受け取らない場合、戻り値`Task`はになります。コールバックがパラメーターを受け取ると、結果はに`Task<T>`なります。
+最後の引数がコールバックであるメソッドでは、`[Async]` 属性を使用できます。  メソッドにこのを適用すると、バインドジェネレーターは `Async`サフィックスを付けて、そのメソッドのバージョンを生成します。  コールバックがパラメーターを受け取らない場合、戻り値は `Task`になります。コールバックがパラメーターを受け取る場合、結果は `Task<T>`になります。
 
 ```csharp
 [Export ("upload:complete:")]
@@ -954,7 +954,7 @@ void LoadFile (string file, NSAction complete)
 Task LoadFileAsync (string file);
 ```
 
-コールバックが複数のパラメーターを受け取る場合`ResultType`は、または`ResultTypeName`を設定して、すべてのプロパティを保持する、生成される型の目的の名前を指定する必要があります。
+コールバックが複数のパラメーターを受け取る場合は、`ResultType` または `ResultTypeName` を設定して、すべてのプロパティを保持する、生成される型の目的の名前を指定する必要があります。
 
 ```csharp
 delegate void OnComplete (string [] files, nint byteCount);
@@ -964,13 +964,13 @@ delegate void OnComplete (string [] files, nint byteCount);
 void LoadFiles (string file, OnComplete complete)
 ```
 
-次の例では、この非同期メソッド`FileLoading`が生成されます`files` 。 `byteCount`には、との両方にアクセスするプロパティが含まれています。
+次の例では、`files` と `byteCount`の両方にアクセスするためのプロパティが `FileLoading` に含まれています。この非同期メソッドが生成されます。
 
 ```csharp
 Task<FileLoading> LoadFile (string file);
 ```
 
-コールバックの最後のパラメーターが`NSError`の場合、生成`Async`されたメソッドは、値が null でないかどうかを確認します。その場合、生成された非同期メソッドはタスクの例外を設定します。
+コールバックの最後のパラメーターが `NSError`の場合、生成された `Async` メソッドは、値が null でないかどうかを確認します。その場合は、生成された非同期メソッドによってタスクの例外が設定されます。
 
 ```csharp
 [Export ("upload:onComplete:")]
@@ -984,17 +984,17 @@ void Upload (string file, Action<string,NSError> onComplete);
 Task<string> UploadAsync (string file);
 ```
 
-また、エラーが発生した場合、結果として得`NSErrorException`ら`NSError`れるをラップするに例外が設定されます。
+また、エラーが発生した場合は、結果の `NSError`をラップする `NSErrorException` に例外が設定されます。
 
-#### <a name="asyncattributeresulttype"></a>AsyncAttribute.ResultType
+#### <a name="asyncattributeresulttype"></a>AsyncAttribute。 ResultType
 
-このプロパティを使用して、返さ`Task`れるオブジェクトの値を指定します。   このパラメーターは既存の型を受け取ります。そのため、コア api 定義の1つで定義する必要があります。
+このプロパティを使用して、返される `Task` オブジェクトの値を指定します。   このパラメーターは既存の型を受け取ります。そのため、コア api 定義の1つで定義する必要があります。
 
-#### <a name="asyncattributeresulttypename"></a>AsyncAttribute.ResultTypeName
+#### <a name="asyncattributeresulttypename"></a>AsyncAttribute. ResultTypeName
 
-このプロパティを使用して、返さ`Task`れるオブジェクトの値を指定します。   このパラメーターは、目的の型名の名前を受け取ります。ジェネレーターは、コールバックによって実行されるパラメーターごとに1つずつ、一連のプロパティを生成します。
+このプロパティを使用して、返される `Task` オブジェクトの値を指定します。   このパラメーターは、目的の型名の名前を受け取ります。ジェネレーターは、コールバックによって実行されるパラメーターごとに1つずつ、一連のプロパティを生成します。
 
-#### <a name="asyncattributemethodname"></a>AsyncAttribute.MethodName
+#### <a name="asyncattributemethodname"></a>AsyncAttribute. MethodName
 
 このプロパティを使用して、生成される非同期メソッドの名前をカスタマイズします。   既定では、メソッドの名前を使用して "Async" というテキストを追加します。これを使用すると、この既定値を変更できます。
 
@@ -1002,18 +1002,18 @@ Task<string> UploadAsync (string file);
 
 ### <a name="designatedinitializerattribute"></a>Designated初期化 Erattribute
 
-この属性がコンストラクターに適用されると、最終的なプラットフォーム`[DesignatedInitializer]`アセンブリでも同じものが生成されます。 これは、IDE がサブクラスでどのコンストラクターを使用する必要があるかを示すのに役立ちます。
+この属性がコンストラクターに適用されると、最終的なプラットフォームアセンブリで同じ `[DesignatedInitializer]` が生成されます。 これは、IDE がサブクラスでどのコンストラクターを使用する必要があるかを示すのに役立ちます。
 
-これは、の目的の C/clang の`__attribute__((objc_designated_initializer))`使用にマップされる必要があります。
+これは、`__attribute__((objc_designated_initializer))`の目的、C、clang の使用にマップする必要があります。
 
 <a name="DisableZeroCopyAttribute" />
 
-### <a name="disablezerocopyattribute"></a>DisableZeroCopyAttribute
+### <a name="disablezerocopyattribute"></a>Disableゼロ Copyattribute
 
 この属性は、文字列パラメーターまたは文字列プロパティに適用され、このパラメーターに対してゼロコピーの文字列のマーシャリングを使用しないようにコードジェネレーターに指示しますC# 。代わりに、文字列から新しい nsstring インスタンスを作成します。
-この属性は、 `--zero-copy`コマンドラインオプションを使用して、またはアセンブリレベルの属性`ZeroCopyStringsAttribute`を設定して、ゼロコピーの文字列のマーシャリングを使用するようジェネレーターに指示する場合にのみ、文字列に必要です。
+この属性は、`--zero-copy` のコマンドラインオプションを使用するか、アセンブリレベルの属性 `ZeroCopyStringsAttribute`を設定することによって、ゼロコピーの文字列のマーシャリングを使用するようジェネレーターに指示する場合にのみ、文字列に必要です。
 
-これは、プロパティが`retain` `copy`プロパティではなくプロパティまたは`assign`プロパティであることを目的とする場合に必要です。 これらは通常、開発者が誤って "最適化" したサードパーティのライブラリで発生します。 一般に、 `retain`また`assign`はの`NSMutableString` `NSString` ユーザー`NSString`派生クラスがライブラリコードを知らずに文字列の内容を変更する可能性があるため、またはプロパティが正しくありません。適用. 通常、これは、最適化が早すぎることが原因で発生します。
+これは、プロパティが、`copy` プロパティではなく、`retain` または `assign` プロパティとして使用される場合に必要です。 これらは通常、開発者が誤って "最適化" したサードパーティのライブラリで発生します。 一般に、`NSMutableString` またはユーザーによって派生した `NSString` では、ライブラリコードに関する知識がなくても文字列の内容を変更する可能性があるため、`retain` または `assign` の `NSString` のプロパティは正しくありません。 通常、これは、最適化が早すぎることが原因で発生します。
 
 次に、このような2つのプロパティを示します。
 
@@ -1026,11 +1026,11 @@ Task<string> UploadAsync (string file);
 
 ### <a name="disposeattribute"></a>DisposeAttribute
 
-をクラス`[DisposeAttribute]`に適用する場合は、クラスの`Dispose()`メソッド実装に追加されるコードスニペットを指定します。
+クラスに `[DisposeAttribute]` を適用する場合は、クラスの `Dispose()` メソッドの実装に追加されるコードスニペットを指定します。
 
-`Dispose` `[Dispose]`メソッドはツール`bmac-native` と`btouch-native`ツールによって自動的に生成されるため、属性を使用して、生成されたメソッドの実装にコードを挿入する必要があります。 `Dispose`
+`Dispose` メソッドは `bmac-native` ツールと `btouch-native` ツールによって自動的に生成されるため、`[Dispose]` の属性を使用して、生成された `Dispose` メソッドの実装にコードを挿入する必要があります。
 
-例:
+(例:
 
 ```csharp
 [BaseType (typeof (NSObject))]
@@ -1043,7 +1043,7 @@ interface DatabaseConnection {
 
 ### <a name="exportattribute"></a>ExportAttribute
 
-属性`[Export]`は、目的の C ランタイムに公開されるメソッドまたはプロパティにフラグを設定するために使用されます。 この属性は、バインドツールと、実際の Xamarin、iOS、および Xamarin. Mac ランタイム間で共有されます。 メソッドの場合、パラメーターは生成されたコードに逐語的に渡されます。プロパティの場合は、基本宣言に基づいて getter および setter のエクスポート[`[BindAttribute]`](#BindAttribute)が生成されます (バインディングツールの動作を変更する方法の詳細については、「」のセクションを参照してください)。
+`[Export]` 属性は、目的の C ランタイムに公開されるメソッドまたはプロパティにフラグを設定するために使用されます。 この属性は、バインドツールと、実際の Xamarin、iOS、および Xamarin. Mac ランタイム間で共有されます。 メソッドの場合、パラメーターは生成されたコードに逐語的に渡されます。プロパティの場合は、基本宣言に基づいて getter および setter のエクスポートが生成されます (バインディングツールの動作を変更する方法の詳細については、 [`[BindAttribute]`](#BindAttribute)の「」を参照してください)。
 
 構文:
 
@@ -1083,7 +1083,7 @@ public class FieldAttribute : Attribute {
 }
 ```
 
-は`symbolName` 、リンク先の C 記号です。 既定では、このは、型が定義されている名前空間から推論される名前を持つライブラリから読み込まれます。 シンボルが検索されるライブラリでない場合は、 `libraryName`パラメーターを渡す必要があります。 スタティックライブラリをリンクする場合は、 `__Internal` `libraryName`パラメーターとしてを使用します。
+`symbolName` は、リンク先の C 記号です。 既定では、このは、型が定義されている名前空間から推論される名前を持つライブラリから読み込まれます。 シンボルが検索されるライブラリでない場合は、`libraryName` パラメーターを渡す必要があります。 スタティックライブラリをリンクしている場合は、`libraryName` パラメーターとして `__Internal` を使用します。
 
 生成されるプロパティは常に static です。
 
@@ -1115,11 +1115,11 @@ interface CameraEffects {
 
 ### <a name="internalattribute"></a>InternalAttribute
 
-この`[Internal]`属性は、メソッドまたはプロパティに適用できます。また、生成されたコードに`internal`対して、生成されたアセンブリ内のコードにのみアクセスできるようにするC#キーワードを使用してフラグを設定することによって、この属性にも適用できます。 これは通常、低レベルの Api を非表示にしたり、改善する必要のある最適ではないパブリック API を提供したり、ジェネレーターでサポートされておらず、何らかのハンドコーディングを必要とする api を提供したりするために使用されます。
+`[Internal]` 属性は、メソッドまたはプロパティに適用できます。また、生成されたコードに対してC# 、生成されたアセンブリ内のコードのみがアクセスできるようにするために、`internal` キーワードを使用してフラグを設定するという効果があります。 これは通常、低レベルの Api を非表示にしたり、改善する必要のある最適ではないパブリック API を提供したり、ジェネレーターでサポートされておらず、何らかのハンドコーディングを必要とする api を提供したりするために使用されます。
 
 バインディングをデザインするときは、通常、この属性を使用してメソッドまたはプロパティを非表示にし、メソッドまたはプロパティに別のC#名前を指定します。次に、補完的なサポートファイルで、を公開する厳密に型指定されたラッパーを追加します。基になる機能。
 
-例:
+(例:
 
 ```csharp
 [Internal]
@@ -1148,18 +1148,18 @@ public NSObject this [NSObject idx] {
 
 ### <a name="isthreadstaticattribute"></a>IsThreadStaticAttribute
 
-この属性は、プロパティのバッキングフィールドに、.net `[ThreadStatic]`属性で注釈を付けるようにフラグを設定します。 これは、フィールドがスレッドの静的変数である場合に便利です。
+この属性は、.NET `[ThreadStatic]` 属性で注釈を付けるプロパティのバッキングフィールドにフラグを設定します。 これは、フィールドがスレッドの静的変数である場合に便利です。
 
 ### <a name="marshalnativeexceptions-xamarinios-606"></a>Marshalの例外 (Xamarin 6.0.6)
 
 この属性は、メソッドがネイティブ (目的 C) の例外をサポートするようにします。
-呼び出しは、 `objc_msgSend`直接呼び出すのではなく、特定の trampoline ec 例外をキャッチし、それらをマネージ例外にマーシャリングするカスタムのを経由します。
+`objc_msgSend` を直接呼び出すのではなく、呼び出しはカスタム trampoline を通じて実行され、その例外をキャッチし、それらをマネージ例外にマーシャリングします。
 
-現在のところ、 `objc_msgSend`サポートされているシグネチャはごくわずかです (バインディングを使用するアプリのネイティブリンクが不足しているために署名がサポートされていないかどうかを確認して*ください monotouch_)* 。ただし、要求に追加することもできます。
+現在サポートされている `objc_msgSend` 署名はごくわずかです (バインディングを使用するアプリのネイティブリンクが monotouch_ の*送信*シンボルで失敗した場合、署名がサポートされていないかどうかを確認できます) が、要求に追加することができます。
 
 ### <a name="newattribute"></a>NewAttribute
 
-この属性は、ジェネレーターが宣言の前にキーワードを`new`生成するように、メソッドとプロパティに適用されます。
+この属性は、ジェネレーターが宣言の前に `new` キーワードを生成するように、メソッドとプロパティに適用されます。
 
 基底クラスに既に存在するサブクラスで同じメソッドまたはプロパティ名が導入された場合に、コンパイラの警告を回避するために使用されます。
 
@@ -1169,9 +1169,9 @@ public NSObject this [NSObject idx] {
 
 この属性をフィールドに適用して、ジェネレーターが厳密に型指定されたヘルパー通知クラスを生成するようにすることができます。
 
-この属性は、ペイロードを含まない通知の引数なしで使用できます。また`System.Type` 、API 定義で別のインターフェイスを参照するを指定することもできます。この場合、通常は "EventArgs" で終わる名前が使用されます。 ジェネレーターは、サブ`EventArgs`クラスを持つクラスにインターフェイスを変換し、そこに一覧表示されているすべてのプロパティを含めます。 属性を`EventArgs`クラスで使用して、値を取得する目的の C 辞書を検索するために使用するキーの名前を一覧表示する必要があります。 [`[Export]`](#ExportAttribute)
+この属性は、ペイロードを含まない通知の引数なしで使用できます。また、API 定義で別のインターフェイスを参照する `System.Type` を指定することもできます。この場合、通常は "EventArgs" で終わる名前が使用されます。 ジェネレーターは、`EventArgs` サブクラスを持つクラスにインターフェイスを変換し、そこに一覧表示されているすべてのプロパティを含みます。 `EventArgs` クラスでは、 [`[Export]`](#ExportAttribute)属性を使用して、値を取得する目的の C 辞書を検索するために使用するキーの名前を一覧表示する必要があります。
 
-例:
+(例:
 
 ```csharp
 interface MyClass {
@@ -1181,7 +1181,7 @@ interface MyClass {
 }
 ```
 
-上記のコードでは、次の`MyClass.Notifications`メソッドを使用して、入れ子になったクラスを生成します。
+上記のコードでは、次のメソッドを使用して、入れ子になったクラス `MyClass.Notifications` が生成されます。
 
 ```csharp
 public class MyClass {
@@ -1201,7 +1201,7 @@ var token = MyClass.Notifications.ObserverDidStart ((notification) => {
 });
 ```
 
-または、監視する特定のオブジェクトを設定します。 このメソッドに`null`を`objectToObserve`渡すと、その他のピアと同様に動作します。
+または、監視する特定のオブジェクトを設定します。 `objectToObserve` に `null` を渡すと、このメソッドは他のピアと同様に動作します。
 
 ```csharp
 var token = MyClass.Notifications.ObserverDidStart (objectToObserve, (notification) => {
@@ -1209,13 +1209,13 @@ var token = MyClass.Notifications.ObserverDidStart (objectToObserve, (notificati
 });
 ```
 
-から`ObserveDidStart`返された値を使用して、通知の受信を簡単に停止できます。次に例を示します。
+次のように、`ObserveDidStart` から返された値を使用して、通知の受信を簡単に停止できます。
 
 ```csharp
 token.Dispose ();
 ```
 
-または、 [Nsnotification](xref:Foundation.NSNotificationCenter.RemoveObserver(Foundation.NSObject))を呼び出して、トークンを渡すこともできます。 通知にパラメーターが含まれている場合は、 `EventArgs`次のようにヘルパーインターフェイスを指定する必要があります。
+または、 [Nsnotification](xref:Foundation.NSNotificationCenter.RemoveObserver(Foundation.NSObject))を呼び出して、トークンを渡すこともできます。 通知にパラメーターが含まれている場合は、次のように、ヘルパー `EventArgs` インターフェイスを指定する必要があります。
 
 ```csharp
 interface MyClass {
@@ -1238,7 +1238,7 @@ interface MyScreenChangedEventArgs {
 }
 ```
 
-上の例`ScreenX`では`MyScreenChangedEventArgs` 、 `ScreenY`プロパティとプロパティを持つクラスが生成されます。これらのプロパティは、 `ScreenYKey`それぞれキー `ScreenXKey`を使用して[nsnotification. UserInfo](xref:Foundation.NSNotification.UserInfo)ディクショナリからデータをフェッチし、適切な変換。 属性は、値を抽出するのではなく、 `UserInfo`でキーが設定されているかどうかを調べるジェネレーターに使用されます。 `[ProbePresence]` これは、キーの存在が値である場合 (通常はブール値の場合) に使用されます。
+上の例では、`ScreenX` プロパティと `ScreenY` プロパティを使用して `MyScreenChangedEventArgs` クラスが生成され[ます。](xref:Foundation.NSNotification.UserInfo)これらのプロパティは、それぞれキー `ScreenXKey` および `ScreenYKey` を使用して、適切な変換を適用します。 `[ProbePresence]` 属性は、値を抽出するのではなく、`UserInfo`でキーが設定されているかどうかを検査するためにジェネレーターで使用されます。 これは、キーの存在が値である場合 (通常はブール値の場合) に使用されます。
 
 これにより、次のようなコードを記述できます。
 
@@ -1248,11 +1248,11 @@ var token = MyClass.NotificationsObserveScreenChanged ((notification) => {
 });
 ```
 
-場合によっては、ディクショナリで渡された値に定数が関連付けられていないことがあります。  Apple はパブリックシンボル定数を使用することがあり、場合によっては文字列定数を使用します。  既定[`[Export]`](#ExportAttribute)では、指定した`EventArgs`クラスの属性は、実行時に検索されるパブリックシンボルとして指定された名前を使用します。  そうでない場合は、文字列定数として検索されるので、エクスポート属性に`ArgumentSemantic.Assign`値を渡します。
+場合によっては、ディクショナリで渡された値に定数が関連付けられていないことがあります。  Apple はパブリックシンボル定数を使用することがあり、場合によっては文字列定数を使用します。  既定では、指定した `EventArgs` クラスの[`[Export]`](#ExportAttribute)属性は、実行時に検索されるパブリックシンボルとして指定された名前を使用します。  そうでない場合は、文字列定数として検索されるので、`ArgumentSemantic.Assign` 値を Export 属性に渡します。
 
 **Xamarin の新。 iOS 8.4**
 
-場合によっては、通知の有効期間が引数なしで[`[Notification]`](#NotificationAttribute)開始されることがあるため、引数を指定せずに使用することも可能です。  しかし、通知のパラメーターが導入されることもあります。  このシナリオをサポートするには、属性を複数回適用できます。
+場合によっては、通知の有効期間が引数なしで開始されることがあるため、引数を指定せずに[`[Notification]`](#NotificationAttribute)を使用することは許容されます。  しかし、通知のパラメーターが導入されることもあります。  このシナリオをサポートするには、属性を複数回適用できます。
 
 バインドを開発していて、既存のユーザーコードが破損しないようにするには、次のようにして既存の通知を有効にします。
 
@@ -1279,13 +1279,13 @@ interface MyClass {
 
 ### <a name="nullallowedattribute"></a>NullAllowedAttribute
 
-これがプロパティに適用されると、値`null`が割り当てられるようにプロパティにフラグが設定されます。 これは、参照型に対してのみ有効です。
+これがプロパティに適用されると、値 `null` を割り当てることができるようにプロパティにフラグが設定されます。 これは、参照型に対してのみ有効です。
 
-これがメソッドシグネチャのパラメーターに適用されると、指定されたパラメーターが null になる可能性があり、値を渡す`null`ためにチェックを実行する必要がないことを示します。
+これがメソッドシグネチャのパラメーターに適用されると、指定されたパラメーターが null になる可能性があること、および `null` 値を渡すためにチェックを実行する必要がないことを示します。
 
-参照型にこの属性がない場合、バインディングツールは、割り当てられている値のチェックを生成してから目的の C に渡し、割り当てられた値が`ArgumentNullException` `null`の場合にをスローするチェックを生成します。
+参照型にこの属性がない場合、バインディングツールは、割り当てられている値のチェックを生成してから目的の C に渡します。割り当てられた値が `null`場合は、`ArgumentNullException` をスローするチェックが生成されます。
 
-例:
+(例:
 
 ```csharp
 // In properties
@@ -1301,7 +1301,7 @@ void SetImage ([NullAllowed] UIImage image, State forState);
 
 ### <a name="overrideattribute"></a>OverrideAttribute
 
-この属性を使用して、この特定のメソッドのバインディングに`override`キーワードでフラグを設定する必要があることをバインディングジェネレーターに指示します。
+この属性を使用して、この特定のメソッドのバインディングに `override` キーワードでフラグを設定する必要があることをバインディングジェネレーターに指示します。
 
 ### <a name="presnippetattribute"></a>PreSnippetAttribute
 
@@ -1350,7 +1350,7 @@ public interface NSOperation {
 }
 ```
 
-この場合、 `Dependencies` `NSOperation`オブジェクトの依存関係を追加または削除した後に、プロパティが呼び出されます。これにより、実際に読み込まれたオブジェクトを表すグラフが作成され、メモリリークとメモリの破損が両方とも防止されます。
+この場合、`Dependencies` プロパティは、`NSOperation` オブジェクトの依存関係を追加または削除した後に呼び出され、実際に読み込まれたオブジェクトを表すグラフがあることを確認します。これにより、メモリリークだけでなく、メモリの破損を防ぐことができます。
 
 ### <a name="postsnippetattribute"></a>PostSnippetAttribute
 
@@ -1366,7 +1366,7 @@ void Demo ();
 
 ### <a name="proxyattribute"></a>ProxyAttribute
 
-この属性は、プロキシオブジェクトとしてフラグを設定する戻り値に適用されます。 一部の目的 C Api は、ユーザーバインドと区別できないプロキシオブジェクトを返します。 この属性の効果は、オブジェクトを`DirectBinding`オブジェクトとしてフラグを付けることです。 Xamarin. Mac のシナリオでは、[このバグに](https://bugzilla.novell.com/show_bug.cgi?id=670844)ついての説明を参照できます。
+この属性は、プロキシオブジェクトとしてフラグを設定する戻り値に適用されます。 一部の目的 C Api は、ユーザーバインドと区別できないプロキシオブジェクトを返します。 この属性の効果は、オブジェクトを `DirectBinding` オブジェクトとしてフラグを付けることです。 Xamarin. Mac のシナリオでは、[このバグに](https://bugzilla.novell.com/show_bug.cgi?id=670844)ついての説明を参照できます。
 
 ### <a name="retainlistattribute"></a>RetainListAttribute
 
@@ -1380,13 +1380,13 @@ public class RetainListAttribute: Attribute {
 }
 ```
 
-の`doAdd`値が true の場合、パラメーターは`__mt_{0}_var List<NSObject>;`に追加されます。 ここ`{0}`で、は指定さ`listName`れたに置き換えられます。 相補的な部分クラスでこのバッキングフィールドを API に宣言する必要があります。
+`doAdd` の値が true の場合、パラメーターが `__mt_{0}_var List<NSObject>;`に追加されます。 ここで `{0}` は、指定した `listName`に置き換えられます。 相補的な部分クラスでこのバッキングフィールドを API に宣言する必要があります。
 
 例については、「 [foundation.cs](https://github.com/mono/maccore/blob/master/src/foundation.cs) and [NSNotificationCenter.cs](https://github.com/mono/maccore/blob/master/src/Foundation/NSNotificationCenter.cs) 」を参照してください。
 
 ### <a name="releaseattribute-xamarinios-60"></a>ReleaseAttribute (Xamarin. iOS 6.0)
 
-これは、を返す前に、ジェネレーターがオブジェクトに対して`Release`を呼び出す必要があることを示すために、戻り値の型に適用できます。 これは、メソッドが保持されたオブジェクトを提供する場合にのみ必要です。これは、最も一般的なシナリオである autoreleased オブジェクトとは対照的です。
+これは、を返す前に、ジェネレーターがオブジェクトの `Release` を呼び出す必要があることを示すために、戻り値の型に適用できます。 これは、メソッドが保持されたオブジェクトを提供する場合にのみ必要です。これは、最も一般的なシナリオである autoreleased オブジェクトとは対照的です。
 
 例:
 
@@ -1406,9 +1406,9 @@ NSObject GetAndRetainObject ();
 
 ### <a name="staticattribute"></a>StaticAttribute
 
-メソッドまたはプロパティに属性を適用すると、静的メソッドまたは静的プロパティが生成されます。`[Static]` この属性が指定されていない場合、ジェネレーターはインスタンスメソッドまたはプロパティを生成します。
+`[Static]` 属性がメソッドまたはプロパティに適用されると、静的メソッドまたは静的プロパティが生成されます。 この属性が指定されていない場合、ジェネレーターはインスタンスメソッドまたはプロパティを生成します。
 
-### <a name="transientattribute"></a>TransientAttribute
+### <a name="transientattribute"></a>遷移属性
 
 この属性を使用して、一時的に値が設定されているプロパティ、つまり iOS によって一時的に作成され、有効期間の短いオブジェクトにフラグを設定します。 この属性がプロパティに適用されている場合、ジェネレーターはこのプロパティのバッキングフィールドを作成しません。つまり、マネージクラスはオブジェクトへの参照を保持しません。
 
@@ -1416,9 +1416,9 @@ NSObject GetAndRetainObject ();
 
 ### <a name="wrapattribute"></a>WrapAttribute
 
-Xamarin. iOS/xamarin. Mac バインド`[Wrap]`の設計では、属性を使用して、厳密に型指定されたオブジェクトを使用して、弱い型指定のオブジェクトをラップします。 これは、主に、型または`id` `NSObject`型として宣言されている目的 C デリゲートオブジェクトを使用して動作します。 Xamarin. iOS と xamarin. Mac で使用される規則は、これらのデリゲートまたはデータソースを型`NSObject`として公開し、公開される名前という規則を使用して名前を付けます。 目的の C の`NSObject WeakDelegate { get; set; }` プロパティは、APIコントラクトファイルのプロパティとして公開されます。`id delegate`
+Xamarin. iOS/Xamarin. Mac バインドの設計では、厳密に型指定されたオブジェクトを使用して、弱い型指定のオブジェクトをラップするために、`[Wrap]` 属性が使用されます。 これは、主に、`id` または `NSObject`型として宣言されている目的 C のデリゲートオブジェクトを使用して動作します。 Xamarin. iOS と Xamarin. Mac で使用される規則は、これらのデリゲートまたはデータソースを `NSObject` 型として公開し、公開される名前という規則を使用して名前を付けます。 目標 C からの `id delegate` プロパティは、API コントラクトファイルの `NSObject WeakDelegate { get; set; }` プロパティとして公開されます。
 
-ただし、通常、このデリゲートに割り当てられる値は厳密な型であるため、厳密な型を使用し`[Wrap]`て属性を適用します。これは、ユーザーが細かい制御が必要な場合や、低レベルの tric に頼る必要がある場合に、弱い型を使用することを選択できることを意味します。または、ほとんどの作業に対して厳密に型指定されたプロパティを使用できます。
+ただし、通常、このデリゲートに割り当てられる値は厳密な型であるため、厳密な型を使用して `[Wrap]` 属性を適用します。これは、ユーザーが細かい制御が必要な場合、または低レベルのテクニックに頼る必要がある場合に、弱い型を使用することを選択できることを意味します。または、ほとんどの作業に対して厳密に型指定されたプロパティを使用できます。
 
 例:
 
@@ -1454,7 +1454,7 @@ var demo = new Demo ();
 demo.WeakDelegate = new SomeObject ();
 ```
 
-これは、ユーザーが厳密に型指定されたバージョンを使用する方法であり、ユーザー C#はの型システムを利用し、その意図`[Export]`を宣言するために override キーワードを使用します。ユーザーのバインドで動作しました。
+これは、ユーザーが厳密に型指定されたバージョンを使用する方法であり、ユーザー C#が型システムを利用し、その意図を宣言するために override キーワードを使用しており、メソッドを手動で装飾する必要がないことに注意してください `[Export]`これは、ユーザーのバインドで動作しているためです。
 
 ```csharp
 // This is the strong case,
@@ -1466,7 +1466,7 @@ var strongDemo = new Demo ();
 demo.Delegate = new MyDelegate ();
 ```
 
-属性のもう 1 `[Wrap]`つの用途は、厳密に型指定されたメソッドのバージョンをサポートすることです。  例えば:
+`[Wrap]` 属性のもう1つの用途は、厳密に型指定されたメソッドのバージョンをサポートすることです。  (例:
 
 ```csharp
 [BaseType (typeof (NSObject))]
@@ -1479,14 +1479,14 @@ interface XyzPanel {
 }
 ```
 
-属性を`This`使用して修飾された型内のメソッドに属性が適用される場合は、拡張メソッドが生成されるため、を最初の引数として含める必要があります。`[Wrap]` `[Category]` 例えば:
+`[Category]` 属性で修飾された型内のメソッドに `[Wrap]` 属性が適用される場合、拡張メソッドが生成されるため、`This` を最初の引数として含める必要があります。 (例:
 
 ```csharp
 [Wrap ("Write (This, image, options?.Dictionary, out error)")]
 bool Write (CIImage image, CIImageRepresentationOptions options, out NSError error);
 ```
 
-に`[Wrap]`よって生成される`virtual`メンバーは、既定では使用`virtual`されません。 `true`メンバーが`isVirtual`必要な場合は、省略可能なパラメーターにを設定できます。
+`[Wrap]` によって生成されるメンバーは、既定では `virtual` されません。 `virtual` メンバーが必要な場合は、オプションの `isVirtual` パラメーターを `true` に設定できます。
 
 ```csharp
 [BaseType (typeof (NSObject))]
@@ -1499,7 +1499,7 @@ interface FooExplorer {
 }
 ```
 
-`[Wrap]`は、プロパティの getter および setter で直接使用することもできます。
+`[Wrap]` は、プロパティの getter および setter で直接使用することもできます。
 これにより、に対してフルコントロールを設定し、必要に応じてコードを調整できます。
 たとえば、スマートな列挙型を使用する次の API 定義を考えてみます。
 
@@ -1535,7 +1535,7 @@ PersonRelationship PresenceType {
 
 ## <a name="parameter-attributes"></a>パラメーター属性
 
-ここでは、メソッド定義のパラメーターに適用できる属性と、 `[NullAttribute]`プロパティ全体に適用される属性について説明します。
+ここでは、メソッド定義のパラメーターに適用できる属性と、プロパティ全体に適用される `[NullAttribute]` について説明します。
 
 <a name="BlockCallback" />
 
@@ -1549,7 +1549,7 @@ PersonRelationship PresenceType {
 typedef returnType (^SomeTypeDefinition) (int parameter1, NSString *parameter2);
 ```
 
-参照:[Ccallback](#CCallback)。
+参照: [Ccallback](#CCallback)
 
 <a name="CCallback" />
 
@@ -1563,11 +1563,11 @@ typedef returnType (^SomeTypeDefinition) (int parameter1, NSString *parameter2);
 typedef returnType (*SomeTypeDefinition) (int parameter1, NSString *parameter2);
 ```
 
-参照:[Blockcallback](#BlockCallback)。
+「 [Blockcallback](#BlockCallback)」も参照してください。
 
 ### <a name="params"></a>Params
 
-メソッド定義の最後`[Params]`の配列パラメーターに属性を使用して、ジェネレーターが定義に "params" を挿入することができます。   これにより、バインドで省略可能なパラメーターを簡単に使用できるようになります。
+メソッド定義の最後の配列パラメーターで `[Params]` 属性を使用して、ジェネレーターが定義に "params" を挿入できるようにすることができます。   これにより、バインドで省略可能なパラメーターを簡単に使用できるようになります。
 
 たとえば、次のような定義があるとします。
 
@@ -1589,10 +1589,10 @@ foo.LoadFiles (new NSUrl (url1), new NSUrl (url2), new NSUrl (url3));
 
 ### <a name="plainstring"></a>PlainString
 
-文字列パラメーターの前`[PlainString]`に属性を使用すると、パラメーターをと`NSString`して渡す代わりに、文字列を C 文字列として渡すようにバインドジェネレーターに指示できます。
+文字列パラメーターの前に `[PlainString]` 属性を使用して、パラメーターを `NSString`として渡すのではなく、文字列を C 文字列として渡すようにバインドジェネレーターに指示できます。
 
-ほとんどの目的 C api で`NSString`はパラメーターが使用されますが、 `char *`いくつかの api は、 `NSString`バリエーションではなく文字列を渡すための api を公開しています。
-その`[PlainString]`ような場合は、を使用します。
+ほとんどの目的 C Api は `NSString` パラメーターを使用しますが、いくつかの Api は `NSString` のバリエーションではなく、文字列を渡すための `char *` API を公開します。
+そのような場合は、`[PlainString]` を使用します。
 
 たとえば、次のような C の宣言があります。
 
@@ -1613,7 +1613,7 @@ void LogMessage ([PlainString] string theText);
 
 ### <a name="retainattribute"></a>RetainAttribute
 
-指定されたパラメーターへの参照を保持するようジェネレーターに指示します。 ジェネレーターによって、このフィールドのバッキングストアが提供されます。また、 `WrapName`値を格納する名前 () を指定することもできます。 これは、目的の C にパラメーターとして渡されるマネージオブジェクトへの参照を保持するのに便利です。また、C はこのオブジェクトのコピーのみを保持することがわかっている場合に便利です。 たとえば、のような`SetDisplay (SomeObject)` API では、setdisplay で一度に1つのオブジェクトしか表示できない可能性があるため、この属性が使用されます。 複数のオブジェクト (たとえば、スタックに似た API) を追跡する必要がある場合は、 `[RetainList]`属性を使用します。
+指定されたパラメーターへの参照を保持するようジェネレーターに指示します。 ジェネレーターによって、このフィールドのバッキングストアが提供されます。また、値を格納する名前 (`WrapName`) を指定することもできます。 これは、目的の C にパラメーターとして渡されるマネージオブジェクトへの参照を保持するのに便利です。また、C はこのオブジェクトのコピーのみを保持することがわかっている場合に便利です。 たとえば、`SetDisplay (SomeObject)` のような API では、SetDisplay で一度に1つのオブジェクトしか表示できない可能性があるため、この属性が使用されます。 複数のオブジェクトを追跡する必要がある場合 (たとえば、スタックに似た API の場合) は、`[RetainList]` 属性を使用します。
 
 構文:
 
@@ -1637,13 +1637,13 @@ public class RetainListAttribute: Attribute {
 }
 ```
 
-の`doAdd`値が true の場合、パラメーターは`__mt_{0}_var List<NSObject>`に追加されます。 ここ`{0}`で、は指定さ`listName`れたに置き換えられます。 相補的な部分クラスでこのバッキングフィールドを API に宣言する必要があります。
+`doAdd` の値が true の場合、パラメーターが `__mt_{0}_var List<NSObject>`に追加されます。 ここで `{0}` は、指定した `listName`に置き換えられます。 相補的な部分クラスでこのバッキングフィールドを API に宣言する必要があります。
 
 例については、「 [foundation.cs](https://github.com/mono/maccore/blob/master/src/foundation.cs) and [NSNotificationCenter.cs](https://github.com/mono/maccore/blob/master/src/Foundation/NSNotificationCenter.cs) 」を参照してください。
 
-### <a name="transientattribute"></a>TransientAttribute
+### <a name="transientattribute"></a>遷移属性
 
-この属性はパラメーターに適用され、目的の C からにC#移行する場合にのみ使用されます。  これらの遷移では、さまざまな`NSObject`目的 C パラメーターがオブジェクトのマネージ表現にラップされます。
+この属性はパラメーターに適用され、目的の C からにC#移行する場合にのみ使用されます。  これらの遷移では、さまざまな目的 C `NSObject` パラメーターがオブジェクトのマネージ表現にラップされます。
 
 ランタイムは、ネイティブオブジェクトへの参照を受け取り、オブジェクトへの最後に管理された参照がなくなるまで参照を保持し、GC は実行される可能性があります。
 
@@ -1696,10 +1696,10 @@ interface MyMutableString {
 
 ## <a name="enum-attributes"></a>列挙型の属性
 
-定数`NSString`を列挙値にマップすると、より適切な .net API を簡単に作成できます。 し
+`NSString` 定数を列挙値にマッピングすると、より適切な .NET API を簡単に作成できます。 し
 
 * API に対して正しい値**のみ**を表示することにより、コード補完をより効果的にすることができます。
-* タイプセーフを追加し、間違った`NSString`コンテキストで別の定数を使用することはできません。
+* タイプセーフを追加します。間違ったコンテキストで別の `NSString` 定数を使用することはできません。そして
 * では、一部の定数を非表示にすることができます
 
 例:
@@ -1719,7 +1719,7 @@ enum NSRunLoopMode {
 }
 ```
 
-上記のバインディング定義から、ジェネレーターは`enum`それ自体を作成し、列挙値と`NSString`定数間の2つの方法の変換メソッドを含む静的な`*Extensions`型も作成します。 つまり、API に含まれていない場合でも、開発者は定数を使用できます。
+上記のバインディング定義から、ジェネレーターは `enum` 自体を作成します。また、列挙値と `NSString` 定数間の2つの方法の変換メソッドを含む静的な型 `*Extensions` も作成します。 つまり、API に含まれていない場合でも、開発者は定数を使用できます。
 
 次に例を示します。
 
@@ -1746,7 +1746,7 @@ var x = (NSRunLoopMode) 99;
 Call (x.GetConstant ()); // NSDefaultRunLoopMode will be used
 ```
 
-列挙値が装飾されてい`NotSupportedException`ない場合は、がスローされます。
+修飾されている列挙値がない場合は、`NotSupportedException` がスローされます。
 
 ### <a name="errordomainattribute"></a>ErrorDomainAttribute
 
@@ -1766,13 +1766,13 @@ public enum AVKitError : nint {
 }
 ```
 
-次に、拡張メソッド`GetDomain`を呼び出して、任意のエラーのドメイン定数を取得できます。
+次に、拡張メソッド `GetDomain` を呼び出して、任意のエラーのドメイン定数を取得できます。
 
 ### <a name="fieldattribute"></a>FieldAttribute
 
-これは、型`[Field]`の中の定数に使用される属性と同じです。 また、特定の定数に値をマップするために、列挙型の内部で使用することもできます。
+これは、型の中の定数に使用される `[Field]` 属性と同じです。 また、特定の定数に値をマップするために、列挙型の内部で使用することもできます。
 
-値`null`は、 `NSString`定数が指定されて`null`いる場合に返される列挙値を指定するために使用できます。
+`null` 値を使用して、`null` `NSString` 定数が指定されている場合に返される列挙値を指定できます。
 
 上記の例から:
 
@@ -1781,11 +1781,11 @@ var constant = NSRunLoopMode.NewInWatchOS3; // will be null in watchOS 2.x
 Call (NSRunLoopModeExtensions.GetValue (constant)); // will return 1000
 ```
 
-値が存在しない場合は`ArgumentNullException` 、がスローされます。 `null`
+`null` 値が存在しない場合は、`ArgumentNullException` がスローされます。
 
 ## <a name="global-attributes"></a>グローバル属性
 
-グローバル属性`[assembly:]`は、やの[`[LinkWithAttribute]`](#LinkWithAttribute)ような属性修飾子を使用して適用されます。また[`[Since]`](#SinceAndLionAttributes) 、属性[`[Lion]`](#SinceAndLionAttributes)や属性など、任意の場所で使用することもできます。
+グローバル属性は、 [`[LinkWithAttribute]`](#LinkWithAttribute)のような `[assembly:]` 属性修飾子を使用して適用されるか、 [`[Lion]`](#SinceAndLionAttributes)や[`[Since]`](#SinceAndLionAttributes)属性のように任意の場所で使用できます。
 
 <a name="LinkWithAttribute" />
 
@@ -1829,9 +1829,9 @@ public class LinkWithAttribute : Attribute {
 [assembly: LinkWith ("libCorePlot-CocoaTouch.a", LinkTarget.ArmV7 | LinkTarget.ArmV7s | LinkTarget.Simulator, Frameworks = "CoreGraphics QuartzCore", ForceLoad = true)]
 ```
 
-`[LinkWith]`属性を使用すると、指定さ`libraryName`れたが生成されたアセンブリに埋め込まれます。これにより、ユーザーは、アンマネージ依存関係だけでなく、Xamarin. iOS のライブラリ。
+`[LinkWith]` 属性を使用すると、指定された `libraryName` が生成されたアセンブリに埋め込まれます。これにより、ユーザーは、アンマネージ依存関係と、からライブラリを適切に使用するために必要なコマンドラインフラグの両方を含む単一の DLL を出荷できるようになります。Xamarin. iOS.
 
-を提供`libraryName`しないこともできます。その`LinkWith`場合、属性を使用して追加のリンカーフラグを指定するだけで済みます。
+また、`libraryName`を提供しないことも可能です。この場合、`LinkWith` 属性を使用して、追加のリンカーフラグのみを指定できます。
 
 ``` csharp
 [assembly: LinkWith (LinkerFlags = "-lsqlite3")]
@@ -1841,7 +1841,7 @@ public class LinkWithAttribute : Attribute {
 
 これらのコンストラクターを使用すると、ライブラリを指定して、結果のアセンブリにリンクして埋め込むことができます。また、ライブラリでサポートされているサポート対象のターゲット、およびライブラリとリンクするために必要な任意のライブラリフラグを指定することもできます。
 
-`LinkTarget`引数は Xamarin. iOS によって推論されるため、設定する必要はありません。
+`LinkTarget` 引数は Xamarin. iOS によって推論されるため、設定する必要はありません。
 
 次に例を示します。
 
@@ -1859,55 +1859,55 @@ public class LinkWithAttribute : Attribute {
 [assembly: LinkWith ("libDemo.a", LinkTarget.Thumb | LinkTarget.Simulator, SmartLink = true, ForceLoad = true, IsCxx = true);
 ```
 
-#### <a name="linkwithattributeforceload"></a>LinkWithAttribute.ForceLoad
+#### <a name="linkwithattributeforceload"></a>LinkWithAttribute. ForceLoad
 
-プロパティは、ネイティブライブラリのリンクに`-force_load`リンクフラグを使用するかどうかを決定するために使用されます。 `ForceLoad` 現時点では、これは常に true である必要があります。
+`ForceLoad` プロパティは、ネイティブライブラリのリンクに `-force_load` リンクフラグを使用するかどうかを決定するために使用されます。 現時点では、これは常に true である必要があります。
 
-#### <a name="linkwithattributeframeworks"></a>LinkWithAttribute.Frameworks
+#### <a name="linkwithattributeframeworks"></a>LinkWithAttribute. フレームワーク
 
-バインドされているライブラリが、および`Foundation` `UIKit`以外の任意のフレームワークに対してハード要件を持って`Frameworks`いる場合は、プロパティを、必要なプラットフォームフレームワークの空白で区切られた一覧を含む文字列に設定する必要があります。 たとえば、およびを`CoreGraphics`必要と`CoreText`するライブラリをバインドする場合は、 `Frameworks`プロパティをに`"CoreGraphics CoreText"`設定します。
+バインドされているライブラリが、(`Foundation` および `UIKit`を除く) どのフレームワークでもハード要件を持つ場合は、`Frameworks` プロパティを、必要なプラットフォームフレームワークのスペース区切りの一覧を含む文字列に設定する必要があります。 たとえば、`CoreGraphics` と `CoreText`を必要とするライブラリをバインドする場合は、`Frameworks` プロパティを `"CoreGraphics CoreText"`に設定します。
 
-#### <a name="linkwithattributeiscxx"></a>LinkWithAttribute.IsCxx
+#### <a name="linkwithattributeiscxx"></a>LinkWithAttribute. IsCxx
 
 生成された実行可能ファイルを、既定値ではなくC++コンパイラを使用してコンパイルする必要がある場合は、このプロパティを true に設定します。 バインドしているライブラリがにC++記述されている場合は、これを使用します。
 
-#### <a name="linkwithattributelibraryname"></a>LinkWithAttribute.LibraryName
+#### <a name="linkwithattributelibraryname"></a>LinkWithAttribute. LibraryName
 
 バンドルするアンマネージライブラリの名前。 これは拡張子が ". a" のファイルで、複数のプラットフォーム (たとえば、シミュレーターの場合は ARM、x86) のオブジェクトコードを含むことができます。
 
-以前のバージョンの Xamarin では、 `LinkTarget`プロパティをチェックしてライブラリがサポートされているプラットフォームを特定しましたが`LinkTarget` 、これは自動検出され、プロパティは無視されるようになりました。
+以前のバージョンの Xamarin。 iOS は、ライブラリがサポートされているプラットフォームを特定するために `LinkTarget` プロパティをチェックしましたが、これは自動検出され、`LinkTarget` プロパティは無視されます。
 
-#### <a name="linkwithattributelinkerflags"></a>LinkWithAttribute.LinkerFlags
+#### <a name="linkwithattributelinkerflags"></a>LinkWithAttribute. LinkerFlags
 
-`LinkerFlags`文字列を使用すると、作成者はネイティブライブラリをアプリケーションにリンクするときに必要な追加のリンカーフラグを指定することができます。
+`LinkerFlags` 文字列は、作成者がネイティブライブラリをアプリケーションにリンクするときに必要な追加のリンカーフラグを指定するための方法を提供します。
 
-たとえば、ネイティブライブラリに libxml2 と zlib が必要な場合は、 `LinkerFlags`文字列をに`"-lxml2 -lz"`設定します。
+たとえば、ネイティブライブラリに libxml2 と zlib が必要な場合は、`LinkerFlags` 文字列を `"-lxml2 -lz"`に設定します。
 
-#### <a name="linkwithattributelinktarget"></a>LinkWithAttribute.LinkTarget
+#### <a name="linkwithattributelinktarget"></a>LinkWithAttribute. LinkTarget
 
-以前のバージョンの Xamarin では、 `LinkTarget`プロパティをチェックしてライブラリがサポートされているプラットフォームを特定しましたが`LinkTarget` 、これは自動検出され、プロパティは無視されるようになりました。
+以前のバージョンの Xamarin。 iOS は、ライブラリがサポートされているプラットフォームを特定するために `LinkTarget` プロパティをチェックしましたが、これは自動検出され、`LinkTarget` プロパティは無視されます。
 
-#### <a name="linkwithattributeneedsgccexceptionhandling"></a>LinkWithAttribute.NeedsGccExceptionHandling
+#### <a name="linkwithattributeneedsgccexceptionhandling"></a>LinkWithAttribute. NeedsGccExceptionHandling
 
 リンクするライブラリに GCC 例外処理ライブラリ (gcc_eh) が必要な場合は、このプロパティを true に設定します。
 
-#### <a name="linkwithattributesmartlink"></a>LinkWithAttribute.SmartLink
+#### <a name="linkwithattributesmartlink"></a>LinkWithAttribute. SmartLink
 
-プロパティ`SmartLink`を true に設定して、Xamarin でが必須かどう`ForceLoad`かを判断する必要があります。
+`SmartLink` プロパティは、`ForceLoad` が必要かどうかを判断するために true に設定する必要があります。
 
-#### <a name="linkwithattributeweakframeworks"></a>LinkWithAttribute.WeakFrameworks
+#### <a name="linkwithattributeweakframeworks"></a>LinkWithAttribute. このフレームワーク
 
-プロパティは、 `Frameworks`プロパティと同じように動作します。ただし、 `-weak_framework`リンク時には、指定された各フレームワークの gcc に指定子が渡されます。 `WeakFrameworks`
+`WeakFrameworks` プロパティは、`Frameworks` プロパティと同じように動作しますが、リンク時には、一覧表示されている各フレームワークの gcc に `-weak_framework` 指定子が渡される点が異なります。
 
-`WeakFrameworks`を使用すると、ライブラリやアプリケーションがプラットフォームフレームワークに対して脆弱なリンクを作成できるようになり、使用可能な場合には必要に応じてそれらを使用できるようになります。また、ライブラリが新しい機能を追加することを意図している場合に便利です。iOS のバージョン。 弱いリンクの詳細については、[弱リンク](https://developer.apple.com/library/mac/#documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WeakLinking.html)に関する Apple のドキュメントを参照してください。
+`WeakFrameworks` を使用すると、ライブラリとアプリケーションをプラットフォームフレームワークに対して脆弱な状態にすることが可能になり、使用可能な場合には必要に応じて使用できます。また、ライブラリが機能を追加することを意図している場合に便利です。新しいバージョンの iOS。 弱いリンクの詳細については、[弱リンク](https://developer.apple.com/library/mac/#documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WeakLinking.html)に関する Apple のドキュメントを参照してください。
 
-脆弱なリンクの候補とし`Frameworks`ては、 `CoreBluetooth`アカウント`CoreImage`、 `GLKit`、 `NewsstandKit` 、 `Twitter` 、およびが iOS 5 でのみ利用可能であるというものがあります。
+脆弱なリンクの候補は、iOS 5 でのみ利用可能であるため、アカウント、`CoreBluetooth`、`CoreImage`、`GLKit`、`NewsstandKit`、`Twitter` のように `Frameworks` ます。
 
 <a name="SinceAndLionAttributes" />
 
 ### <a name="sinceattribute-ios-and-lionattribute-macos"></a>SinceAttribute (iOS) と LionAttribute (macOS)
 
-`[Since]`属性を使用して、特定の時点で導入されているものとして api にフラグを付けることができます。 属性は、基になるクラス、メソッド、またはプロパティが使用できない場合に、ランタイムの問題を引き起こす可能性のある型およびメソッドにフラグを設定するためにのみ使用する必要があります。
+`[Since]` 属性を使用して、特定の時点で導入されているものとして Api にフラグを付けることができます。 属性は、基になるクラス、メソッド、またはプロパティが使用できない場合に、ランタイムの問題を引き起こす可能性のある型およびメソッドにフラグを設定するためにのみ使用する必要があります。
 
 構文:
 
@@ -1945,7 +1945,7 @@ public interface UITableViewController {
     bool ClearsSelectionOnViewWillAppear { get; set; }
 ```
 
-`[Lion]`属性は、ライオンで導入された型に対しても同じように適用されます。 Ios で使用さ`[Lion]`れるより具体的なバージョン番号と比較して使用する理由として、ios は非常に頻繁に変更されますが、主要な OS X のリリースはめったに発生しません。また、オペレーティングシステムは、バージョン番号よりもコードネームによって簡単に覚えることができます。
+`[Lion]` 属性は、ライオンで導入された型に対して同じ方法で適用されます。 IOS で使用されている特定のバージョン番号と `[Lion]` 使用する理由は、iOS は非常に頻繁に変更されますが、主要な OS X のリリースはめったに発生せず、オペレーティングシステムのバージョン番号よりもコードネームによってオペレーティングシステムを覚える方が簡単であるということです。
 
 ### <a name="adviceattribute"></a>AdviceAttribute
 
@@ -1955,17 +1955,17 @@ public interface UITableViewController {
 
 ### <a name="requiressuperattribute"></a>RequiresSuperAttribute
 
-これは、 `[Advice]`属性の特化されたサブクラスであり、メソッドをオーバーライドする場合に、基本 (オーバーライドされた) メソッドを呼び出す**必要**があることを開発者にヒントに使用できます。
+これは、`[Advice]` 属性の特化されたサブクラスであり、メソッドをオーバーライドする場合に、基本 (オーバーライドされた) メソッドを呼び出す**必要**があることを開発者にヒントに使用できます。
 
-これはに`clang`対応します。[`__attribute__((objc_requires_super))`](https://clang.llvm.org/docs/AttributeReference.html#objc-requires-super)
+これは `clang` に対応[`__attribute__((objc_requires_super))`](https://clang.llvm.org/docs/AttributeReference.html#objc-requires-super)
 
 ### <a name="zerocopystringsattribute"></a>ZeroCopyStringsAttribute
 
 Xamarin 5.4 以降でのみ使用できます。
 
-この属性は、この特定のライブラリ (で適用されて`[assembly:]`いる場合) または型のバインディングが、高速ゼロコピー文字列のマーシャリングを使用する必要があることをジェネレーターに指示します。 この属性は、コマンドラインオプション`--zero-copy`をジェネレーターに渡すことと同じです。
+この属性は、この特定のライブラリ (`[assembly:]`に適用されている場合) または型のバインドが高速ゼロコピー文字列のマーシャリングを使用する必要があることをジェネレーターに指示します。 この属性は、コマンドラインオプション `--zero-copy` をジェネレーターに渡すことと同じです。
 
-文字列にゼロコピーを使用する場合、ジェネレーターは、新しいC# `NSString`オブジェクトを作成せずに、文字列からC#へのデータのコピーを回避して、目的の C が使用する文字列と同じ文字列を効果的に使用します。目的-C 文字列。 0個のコピー文字列を使用する場合の唯一の欠点は、ラップする文字列プロパティに、 `retain`または`copy` `[DisableZeroCopy]`属性が設定されているかどうかを確認する必要があることです。 これは、ゼロコピー文字列のハンドルがスタックに割り当てられており、関数の戻り値では無効であるために必要です。
+文字列にゼロコピーを使用する場合、ジェネレーターは、新しい`NSString`C#オブジェクトを作成せずに、文字列からC#目的のデータをコピーすることを避けるために、目的の c で使用される文字列と同じ文字列を効果的に使用します。文字列. 0個のコピー文字列を使用する唯一の欠点は、ラップする文字列プロパティに `retain` または `[DisableZeroCopy]` `copy` としてフラグが設定されているかどうかを確認する必要があることです。 これは、ゼロコピー文字列のハンドルがスタックに割り当てられており、関数の戻り値では無効であるために必要です。
 
 例:
 
@@ -1994,7 +1994,7 @@ interface MyBinding {
 
 ## <a name="strongly-typed-dictionaries"></a>厳密に型指定されたディクショナリ
 
-Xamarin. iOS 8.0 では、をラップ`NSDictionaries`する厳密に型指定されたクラスを簡単に作成できるようになりました。
+Xamarin. iOS 8.0 では、`NSDictionaries`をラップする厳密に型指定されたクラスを簡単に作成できるようになりました。
 
 常に、 [Dictionarycontainer](xref:Foundation.DictionaryContainer)データ型を手動の API と共に使用できるようになりましたが、これははるかに簡単になりました。  詳細については、「[厳密な型の提示](~/cross-platform/macios/binding/objective-c-libraries.md#Surfacing_Strong_Types)」を参照してください。
 
@@ -2004,11 +2004,11 @@ Xamarin. iOS 8.0 では、をラップ`NSDictionaries`する厳密に型指定�
 
 この属性がインターフェイスに適用されると、ジェネレーターは、 [Dictionarycontainer](xref:Foundation.DictionaryContainer)から派生したインターフェイスと同じ名前のクラスを生成し、インターフェイスで定義されている各プロパティを、厳密に型指定された getter とに対する setter に変換します。バイナリ.
 
-これにより、新しいを作成した既存`NSDictionary`のまたはからインスタンス化できるクラスが自動的に生成されます。
+これにより、既存の `NSDictionary` からインスタンス化したり、新しいを作成したりできるクラスが自動的に生成されます。
 
 この属性は、1つのパラメーターを受け取ります。これは、ディクショナリの要素にアクセスするために使用されるキーを含むクラスの名前です。   既定では、属性を持つインターフェイスの各プロパティは、"Key" というサフィックスが付いた名前の指定された型のメンバーを参照します。
 
-例:
+(例:
 
 ```csharp
 [StrongDictionary ("MyOptionKeys")]
@@ -2030,7 +2030,7 @@ interface MyOptionKeys {
 
 ```
 
-上記の場合、 `MyOption`クラスは、 `MyOptionKeys.NameKey`文字列を取得するために`Name`ディクショナリのキーとしてを使用するの文字列プロパティを生成します。   とは、 `MyOptionKeys.AgeKey`をキーとしてディクショナリに使用して`NSNumber` 、int を含むを取得します。
+上記の例では、`MyOption` クラスによって、文字列を取得するためにディクショナリにキーとして `MyOptionKeys.NameKey` を使用する `Name` の文字列プロパティが生成されます。   とは、`MyOptionKeys.AgeKey` をキーとしてディクショナリに使用して、int を含む `NSNumber` を取得します。
 
 別のキーを使用する場合は、プロパティで export 属性を使用できます。次に例を示します。
 
@@ -2058,22 +2058,22 @@ interface MyColoringKeys {
 
 #### <a name="strong-dictionary-types"></a>強い辞書型
 
-`StrongDictionary`定義では、次のデータ型がサポートされています。
+`StrongDictionary` 定義では、次のデータ型がサポートされています。
 
-|C#インターフェイスの種類|`NSDictionary`ストレージの種類|
+|C#インターフェイスの種類|`NSDictionary` ストレージの種類|
 |---|---|
-|`bool`|`Boolean`に格納されます。`NSNumber`|
-|列挙値|に格納されている整数`NSNumber`|
-|`int`|32-に格納されているビット整数`NSNumber`|
-|`uint`|32-に格納されたビット符号なし整数`NSNumber`|
-|`nint`|`NSInteger`に格納されます。`NSNumber`|
-|`nuint`|`NSUInteger`に格納されます。`NSNumber`|
-|`long`|64-に格納されているビット整数`NSNumber`|
-|`float`|32-として格納されるビット整数`NSNumber`|
-|`double`|64-として格納されるビット整数`NSNumber`|
-|`NSObject`およびサブクラス|`NSObject`|
+|`bool`|`NSNumber` に格納されている `Boolean`|
+|列挙値|`NSNumber` に格納されている整数|
+|`int`|32-`NSNumber` に格納されているビット整数|
+|`uint`|`NSNumber` に格納されている32ビット符号なし整数|
+|`nint`|`NSNumber` に格納されている `NSInteger`|
+|`nuint`|`NSNumber` に格納されている `NSUInteger`|
+|`long`|64-`NSNumber` に格納されているビット整数|
+|`float`|`NSNumber` として格納された32ビット整数|
+|`double`|`NSNumber` として格納された64ビット整数|
+|`NSObject` およびサブクラス|`NSObject`|
 |`NSDictionary`|`NSDictionary`|
 |`string`|`NSString`|
 |`NSString`|`NSString`|
-|C#`Array`の`NSObject`|`NSArray`|
-|C#`Array`列挙型の|`NSArray`格納`NSNumber`する値|
+|C#`NSObject`の`Array`|`NSArray`|
+|C#列挙型の`Array`|`NSNumber` 値を含む `NSArray`|

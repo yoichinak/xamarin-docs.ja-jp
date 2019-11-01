@@ -4,19 +4,19 @@ description: 操作を実行するためにユーザーがタップする UI 要
 ms.prod: xamarin
 ms.assetid: 4FBB7789-A8DA-4B8B-A46C-849181388A8D
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/18/2017
-ms.openlocfilehash: 87b39c3968e09d34c1ffadbb7d527abac7cb76ca
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: ec5c907eac1c7ec7fbdde56ac146f16c323692ed
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69523034"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029335"
 ---
 # <a name="buttons-in-xamarinandroid"></a>Xamarin. Android のボタン
 
-クラス`Button`は、Android の画面のさまざまな異なるスタイルのボタンを表すために使用されます。 このセクションでは、Xamarin Android でボタンを操作するためのさまざまなオプションについて説明します。
+`Button` クラスは、Android の画面のさまざまな異なるスタイルのボタンを表すために使用されます。 このセクションでは、Xamarin Android でボタンを操作するためのさまざまなオプションについて説明します。
 
 - [RadioButton](~/android/user-interface/controls/buttons/radio-button.md)を使用すると、ユーザーは1つのオプションをセットから選択できます。
 

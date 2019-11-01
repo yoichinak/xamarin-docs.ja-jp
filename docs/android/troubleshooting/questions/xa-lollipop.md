@@ -4,15 +4,15 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 63B6E10C-098D-4C82-9253-07CA62EA85A5
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: d5edb5f4e2ce1ca39ba27a1de1a51760ea167e8b
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 9e36189c771ed0c91a6030fd0ab615ab9af4dd52
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70757129"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73026712"
 ---
 # <a name="what-version-of-xamarinandroid-added-lollipop-support"></a>Lollipop のサポートが追加された Xamarin.Android のバージョンを教えてください
 
@@ -22,7 +22,7 @@ ms.locfileid: "70757129"
 - [Xamarin android 4.17](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/android/xamarin.android_4/xamarin.android_4.17/index.md) Android L Preview サポートが追加されました。
 - [Xamarin android 4.20](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/android/xamarin.android_4/xamarin.android_4.20/index.md) android ロリポップのサポートが追加されました。
 
-Xamarin では、Xamarin ツールの現在の安定したリリースのみがアクティブにサポートされています。 以前のバージョンのツールでは、以下の情報が "その他" として提供されています。 Xamarin のリリースに関する最新情報については、[こちら](http://releases.xamarin.com/)をご覧ください。
+Xamarin では、Xamarin ツールの現在の安定したリリースのみがアクティブにサポートされています。 以前のバージョンのツールでは、以下の情報が "その他" として提供されています。 Xamarin リリースの最新情報については、[リリースノート](https://docs.microsoft.com/xamarin/whats-new/#product-release-notes)を確認してください。
 
 ## <a name="missing-androidjar-for-api-level-21-in-android-l-preview"></a>Android L Preview の "API レベル21の android .jar がありません"
 
@@ -42,12 +42,12 @@ Error 1 Could not find android.jar for API Level 21.
 
 2. Android-21 フォルダーの名前を「android-21」から「android-L」に変更します。 (これは、一時的な修正としてのみ使用する必要があり、まったくうまく機能しない可能性があります)。
 
-   **%LOCALAPPDATA%\\Android\\android-sdk\\platforms\\android-21**
+   **% LOCALAPPDATA%\\android\\android\\プラットフォーム\\android-21**
 
 3. Android API レベル 21 "L" preview [1] に一時的にダウングレードします。
 
-    1. 削除、 **%localappdata%\\Android\\android sdk\\platforms\\android 21** 
-    2. [1] を**C\\: Users\\\\\\ユーザー名&gt;AppData AppData ローカルAndroid\\androidsdk\\プラットフォームを作成する\\&lt;** **android-L**フォルダー。
+    1. Android **\\\\プラットフォームの% Localappdata%\\android\\** を削除します。 
+    2. [1] を**C:\\ユーザー\\&lt;ユーザー名&gt;\\AppData\\ローカル\\android\\android-sdk\\プラットフォーム**を作成して、 **android-L**フォルダーを作成します。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -75,4 +75,4 @@ Error: Could not find android.jar for API Level 21.**
 
 -----
 
-[1] - [https://dl-ssl.google.com/android/repository/android-L_r04.zip](https://dl-ssl.google.com/android/repository/android-L_r04.zip)
+[1]- [https://dl-ssl.google.com/android/repository/android-L_r04.zip](https://dl-ssl.google.com/android/repository/android-L_r04.zip)

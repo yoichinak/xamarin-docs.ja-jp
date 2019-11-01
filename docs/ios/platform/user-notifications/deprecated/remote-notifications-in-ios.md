@@ -4,15 +4,15 @@ description: このドキュメントでは、iOS 9 以前でプッシュ通知�
 ms.prod: xamarin
 ms.assetid: 64B3BE6A-A3E2-4B1B-95ED-02D27A8FDAAC
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 31c3c629686d6c7be03b95d7bfe0740599228bbd
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 468d0e16a3bd5745a243b2d7c09e642e3aeffd1d
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769407"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031366"
 ---
 # <a name="push-notifications-in-ios"></a>IOS でのプッシュ通知
 
@@ -26,9 +26,9 @@ IOS でのプッシュ通知の中心は、 *Apple Push Notification Gateway サ
 
 リモート通知自体は、[IOS 開発者ドキュメント](https://developer.apple.com/devcenter/ios/index.action)の「[ローカルおよびプッシュ通知のプログラミングガイド](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/)」の「[通知ペイロード](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/CreatingtheNotificationPayload.html#//apple_ref/doc/uid/TP40008194-CH10-SW1)」セクションで指定されている形式とプロトコルに準拠する JSON 形式の文字列です。
 
-Apple は APNS の2つの環境を保持します。*サンドボックス*と*運用*環境です。 サンドボックス環境は、開発段階でのテストを目的としており`gateway.sandbox.push.apple.com` 、TCP ポート2195で確認できます。 実稼働環境は、デプロイされたアプリケーションで使用することを意図しており`gateway.push.apple.com` 、TCP ポート2195のにあります。
+Apple は APNS の2つの環境を保持します。*サンドボックス*と*運用*環境です。 サンドボックス環境は、開発段階でのテストを目的としており、TCP ポート2195の `gateway.sandbox.push.apple.com` を参照してください。 運用環境は、展開されたアプリケーションで使用することを意図しており、TCP ポート2195の `gateway.push.apple.com` にあります。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 プッシュ通知は、APNS のアーキテクチャによって規定された次の規則に従う必要があります。
 
@@ -42,37 +42,37 @@ Apple は APNS の2つの環境を保持します。*サンドボックス*と*�
 
 1. 証明書を作成するには、次のスクリーンショットに示すように、Apple の web サイトで iOS プロビジョニングポータルに移動します (左側の [アプリ Id] メニュー項目に注意してください)。
 
-    [![](remote-notifications-in-ios-images/image5new.png "Apple web サイトの iOS プロビジョニングポータル")](remote-notifications-in-ios-images/image5new.png#lightbox)
+    [![](remote-notifications-in-ios-images/image5new.png "The iOS Provisioning Portal on Apples website")](remote-notifications-in-ios-images/image5new.png#lightbox)
 
 2. 次に、次のスクリーンショットに示すように、アプリ ID のセクションに移動し、新しいアプリ ID を作成します。
 
-    [![](remote-notifications-in-ios-images/image6new.png "[アプリ Id] セクションに移動し、新しいアプリ ID を作成します。")](remote-notifications-in-ios-images/image6new.png#lightbox)
+    [![](remote-notifications-in-ios-images/image6new.png "Navigate to the App IDs section and create a new app ID")](remote-notifications-in-ios-images/image6new.png#lightbox)
 
-3. この **+** ボタンをクリックすると、次のスクリーンショットに示すように、アプリ ID の説明とバンドル識別子を入力できるようになります。
+3. [ **+** ] ボタンをクリックすると、次のスクリーンショットに示すように、アプリ ID の説明とバンドル識別子を入力できるようになります。
 
-    [![](remote-notifications-in-ios-images/image7new.png "アプリ ID の説明とバンドル識別子を入力してください")](remote-notifications-in-ios-images/image7new.png#lightbox)
+    [![](remote-notifications-in-ios-images/image7new.png "Enter the description and a Bundle Identifier for the app ID")](remote-notifications-in-ios-images/image7new.png#lightbox)
 
-4. 必ず [ `*` **明示的なアプリ ID** ] を選択し、バンドル識別子の末尾がで終わらないようにします。 これにより、複数のアプリケーションに適した識別子が作成され、プッシュ通知証明書が1つのアプリケーションに対して必要になります。
+4. 必ず **[明示的なアプリ ID]** を選択し、バンドル識別子が `*` で終了しないことを確認します。 これにより、複数のアプリケーションに適した識別子が作成され、プッシュ通知証明書が1つのアプリケーションに対して必要になります。
 
 5. App Services で、 **[プッシュ通知]** を選択します。
 
-    [![](remote-notifications-in-ios-images/image8new.png "プッシュ通知の選択")](remote-notifications-in-ios-images/image8new.png#lightbox)
+    [![](remote-notifications-in-ios-images/image8new.png "Select Push Notifications")](remote-notifications-in-ios-images/image8new.png#lightbox)
 
 6. 次に、 **[送信]** をクリックして、新しいアプリ ID の登録を確認します。
 
-    [![](remote-notifications-in-ios-images/image9new.png "新しいアプリ ID の登録の確認")](remote-notifications-in-ios-images/image9new.png#lightbox)
+    [![](remote-notifications-in-ios-images/image9new.png "Confirm registration of the new App ID")](remote-notifications-in-ios-images/image9new.png#lightbox)
 
-7. 次に、アプリ ID の証明書を作成する必要があります。 左側のナビゲーションで、 **[証明書]** に移動し、次`+`のスクリーンショットに示すように、ボタンを選択します。 > ます。
+7. 次に、アプリ ID の証明書を作成する必要があります。 左側のナビゲーションで、 **[証明書]** を参照し、次のスクリーンショットに示すように [`+`] ボタンを選択し > ます。
 
-    [![](remote-notifications-in-ios-images/image10new.png "アプリ ID の証明書を作成する")](remote-notifications-in-ios-images/image8.png#lightbox)
+    [![](remote-notifications-in-ios-images/image10new.png "Create the certificate for the app ID")](remote-notifications-in-ios-images/image8.png#lightbox)
 
 8. 開発証明書と運用証明書のどちらを使用するかを選択します。
 
-    [![](remote-notifications-in-ios-images/image11new.png "開発証明書または運用証明書の選択")](remote-notifications-in-ios-images/image11new.png#lightbox)
+    [![](remote-notifications-in-ios-images/image11new.png "Select a Development or Production certificate")](remote-notifications-in-ios-images/image11new.png#lightbox)
 
 9. 次に、先ほど作成した新しいアプリ ID を選択します。
 
-    [![](remote-notifications-in-ios-images/image12new.png "作成したばかりの新しいアプリ ID を選択します")](remote-notifications-in-ios-images/image12new.png#lightbox)
+    [![](remote-notifications-in-ios-images/image12new.png "Select the new App ID just created")](remote-notifications-in-ios-images/image12new.png#lightbox)
 
 10. これにより、Mac で**キーチェーンアクセス**アプリケーションを使用して*証明書署名要求*を作成する手順が表示されます。
 
@@ -81,10 +81,10 @@ Apple は APNS の2つの環境を保持します。*サンドボックス*と*�
 12. 開発プロビジョニングプロファイルを作成するには、 **[プロビジョニングプロファイル]** セクションに移動し、先ほど作成したアプリ Id を使用して作成した手順に従います。
 
 13. プロビジョニングプロファイルを作成したら、 **Xcode オーガナイザー**を開き、更新します。 作成したプロビジョニングプロファイルが表示されない場合は、iOS プロビジョニングポータルからプロファイルをダウンロードして手動でインポートすることが必要な場合があります。 次のスクリーンショットは、プロビジョニングプロファイルが追加されたオーガナイザーの例を示しています。  
-    [![](remote-notifications-in-ios-images/image13new.png "このスクリーンショットは、プロビジョニングプロファイルが追加されたオーガナイザーの例を示しています。")](remote-notifications-in-ios-images/image13new.png#lightbox)
+    [![](remote-notifications-in-ios-images/image13new.png "This screen shot shows an example of the Organizer with the provision profile added")](remote-notifications-in-ios-images/image13new.png#lightbox)
 
 14. この時点で、新しく作成されたプロビジョニングプロファイルを使用するように Xamarin プロジェクトを構成する必要があります。 これは、次のスクリーンショットに示すように、 **[IOS バンドル署名]** タブの **[プロジェクトオプション]** ダイアログで行います。  
-    [![](remote-notifications-in-ios-images/image11.png "この新しく作成されたプロビジョニングプロファイルを使用するように Xamarin プロジェクトを構成します")](remote-notifications-in-ios-images/image11.png#lightbox)
+    [![](remote-notifications-in-ios-images/image11.png "Configure the Xamarin.iOS project to use this newly created provisioning profile")](remote-notifications-in-ios-images/image11.png#lightbox)
 
 この時点で、アプリケーションはプッシュ通知と連携するように構成されています。 ただし、証明書に必要な手順は他にもいくつかあります。 この証明書は、(Personal Information Exchange) 証明書を必要とする PushSharp と互換性のない DER 形式です。 PushSharp で証明書を使用できるように変換するには、次の最後の手順を実行します。
 
@@ -101,9 +101,9 @@ IOS アプリケーションでリモート通知を受信する前に、APNS �
 
 理論的には、デバイストークンは、iOS アプリケーションが自分自身を APNS に登録するたびに変わる可能性がありますが、実際には、これは頻繁には行われません。 最適化として、アプリケーションは最新のデバイストークンをキャッシュし、変更された場合にのみアプリケーションサーバーを更新することができます。 次の図は、登録とデバイストークンの取得のプロセスを示しています。
 
- ![](remote-notifications-in-ios-images/image12.png "この図は、デバイストークンの登録と取得のプロセスを示しています。")
+ ![](remote-notifications-in-ios-images/image12.png "This diagram illustrates the process of registration and obtaining a device token")
 
-APNS による登録は、現在`FinishedLaunching` `UIApplication`のオブジェクトでを呼び出す`RegisterForRemoteNotificationTypes`ことによって、アプリケーションデリゲートクラスのメソッドで処理されます。 IOS アプリケーションが APNS に登録するときは、受信するリモート通知の種類も指定する必要があります。 これらのリモート通知の種類は、列挙`UIRemoteNotificationType`体で宣言されます。 次のコードスニペットは、iOS アプリケーションを登録して、リモート警告とバッジ通知を受信する方法を示しています。
+APNS による登録は、現在の `UIApplication` オブジェクトで `RegisterForRemoteNotificationTypes` を呼び出すことによって、アプリケーションデリゲートクラスの `FinishedLaunching` メソッドで処理されます。 IOS アプリケーションが APNS に登録するときは、受信するリモート通知の種類も指定する必要があります。 これらのリモート通知の種類は、列挙 `UIRemoteNotificationType`で宣言されています。 次のコードスニペットは、iOS アプリケーションを登録して、リモート警告とバッジ通知を受信する方法を示しています。
 
 ```csharp
 if (UIDevice.CurrentDevice.CheckSystemVersion (8, 0)) {
@@ -119,7 +119,7 @@ if (UIDevice.CurrentDevice.CheckSystemVersion (8, 0)) {
 }
 ```
 
-APNS 登録要求はバックグラウンドで行われます。応答が受信されると、iOS は`RegisteredForRemoteNotifications` `AppDelegate`クラスのメソッドを呼び出し、登録されたデバイストークンを渡します。 トークンは、 `NSData`オブジェクトに格納されます。 次のコードスニペットは、APNS が提供するデバイストークンを取得する方法を示しています。
+APNS 登録要求はバックグラウンドで行われます。応答を受信すると、iOS は `AppDelegate` クラスのメソッド `RegisteredForRemoteNotifications` を呼び出し、登録されたデバイストークンを渡します。 トークンは、`NSData` オブジェクトに格納されます。 次のコードスニペットは、APNS が提供するデバイストークンを取得する方法を示しています。
 
 ```csharp
 public override void RegisteredForRemoteNotifications (
@@ -145,7 +145,7 @@ UIApplication application, NSData deviceToken)
 }
 ```
 
-何らかの理由で登録が失敗した場合 (デバイスがインターネットに接続されていない場合`FailedToRegisterForRemoteNotifications`など)、iOS はアプリケーションデリゲートクラスでを呼び出します。 次のコードスニペットは、登録が失敗したことを通知する警告をユーザーに表示する方法を示しています。
+何らかの理由で登録が失敗した場合 (デバイスがインターネットに接続されていない場合など)、iOS はアプリケーションデリゲートクラスで `FailedToRegisterForRemoteNotifications` を呼び出します。 次のコードスニペットは、登録が失敗したことを通知する警告をユーザーに表示する方法を示しています。
 
 ```csharp
 public override void FailedToRegisterForRemoteNotifications (UIApplication application , NSError error)
@@ -164,7 +164,7 @@ APNS は、*フィードバックサービス*を提供するために使用さ�
 
 > 410-デバイストークンがトピックでアクティブではなくなりました。
 
-さらに、新しい`timestamp` JSON データキーが応答本文に含まれます。
+さらに、新しい `timestamp` JSON データキーが応答本文に含まれます。
 
 > : Status ヘッダーの値が410の場合、このキーの値は、デバイストークンがトピックに対して有効ではなくなったことが APNs によって確認された最後の時刻になります。
 >
@@ -178,5 +178,5 @@ APNS は、*フィードバックサービス*を提供するために使用さ�
 
 - [通知-ローカル通知とリモート通知のデモンストレーション (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/notifications)
 - [開発者向けのローカル通知とプッシュ通知](https://developer.apple.com/notifications/)
-- [UIApplication](http://iosapi.xamarin.com/?link=T%3aMonoTouch.UIKit.UIApplication)
-- [UIRemoteNotificationType](http://iosapi.xamarin.com/?link=T%3aMonoTouch.UIKit.UIRemoteNotificationType)
+- [UIApplication](https://docs.microsoft.com/dotnet/api/uikit.uiapplication)
+- [UIRemoteNotificationType](https://docs.microsoft.com/dotnet/api/uikit.UIRemoteNotificationType)

@@ -53,7 +53,7 @@ using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
 viewCell.On<Android>().SetIsContextActionsLegacyModeEnabled(true);
 ```
 
-`ViewCell.On<Android>` メソッドは、このプラットフォーム固有のが Android でのみ実行されることを指定します。 [`ViewCell`](xref:Xamarin.Forms.ViewCell)コンテキストアクションメニューレガシモードを有効にするために、 [`Xamarin.Forms.PlatformConfiguration.AndroidSpecific`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)名前空間の `ViewCell.SetIsContextActionsLegacyModeEnabled` メソッドを使用します。これにより、 [`ListView`](xref:Xamarin.Forms.ListView)で選択した項目が変更されたときにコンテキストアクションメニューが更新されません。 また、`ViewCell.GetIsContextActionsLegacyModeEnabled` メソッドを使用して、コンテキストアクションのレガシモードが有効になっているかどうかを返すことができます。
+@No__t_0 メソッドは、このプラットフォーム固有のが Android でのみ実行されることを指定します。 [@No__t_4](xref:Xamarin.Forms.ViewCell)コンテキストアクションメニューレガシモードを有効にするために、 [`Xamarin.Forms.PlatformConfiguration.AndroidSpecific`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)名前空間の `ViewCell.SetIsContextActionsLegacyModeEnabled` メソッドを使用します。これにより、 [`ListView`](xref:Xamarin.Forms.ListView)で選択した項目が変更されたときにコンテキストアクションメニューが更新されません。 また、`ViewCell.GetIsContextActionsLegacyModeEnabled` メソッドを使用して、コンテキストアクションのレガシモードが有効になっているかどうかを返すことができます。
 
 次のスクリーンショットは[`ViewCell`](xref:Xamarin.Forms.ViewCell)コンテキストアクションのレガシモードが有効になっていることを示しています。
 

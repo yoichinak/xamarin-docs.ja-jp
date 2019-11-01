@@ -3,15 +3,15 @@ title: Android でのユーザー補助機能
 ms.prod: xamarin
 ms.assetid: 157F0899-4E3E-4538-90AF-B59B8A871204
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/28/2018
-ms.openlocfilehash: 982d5b81a22d6e69227081420a5947aed4d3aab1
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 6e86663be0bb06697fbfe0e8c360d733bca18da0
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70755681"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73017020"
 ---
 # <a name="accessibility-on-android"></a>Android でのユーザー補助機能
 
@@ -154,7 +154,7 @@ saveButton.ContentDescription = Resources.GetText (Resource.String.save_info);
 
 **MAIN.AXML**
 
-@No__t_0 や `contentDescription` などのレイアウト XML アクセシビリティ属性は、文字列識別子に設定できます。
+`hint` や `contentDescription` などのレイアウト XML アクセシビリティ属性は、文字列識別子に設定できます。
 
 ```xml
 <TextView

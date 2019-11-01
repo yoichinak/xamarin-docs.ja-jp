@@ -3,15 +3,15 @@ title: Xamarin アプリのユーザー補助機能
 description: このドキュメントでは、ユーザー補助アプリを作成するためのさまざまなヒントを提供します。 たとえば、大きなフォント、ハイコントラスト、自己記述型のインターフェイスなどに関する推奨事項が含まれています。
 ms.prod: xamarin
 ms.assetid: E587F0CF-7C1D-41F8-B5A8-DA3E738EDA81
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 55d531036336cdd6c3ac7efa1c5ba21b09a7be9e
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 23ef499005994c33586e1918ac3b2a9d28640d04
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70758133"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030274"
 ---
 # <a name="accessibility-in-xamarin-apps"></a>Xamarin アプリのユーザー補助機能
 
@@ -19,7 +19,7 @@ _アプリが最も多くのユーザーによって利用可能であること�
 
 アクセシビリティとは、大規模な種類、ハイコントラスト、ズームイン、画面の読み取り (音声合成)、ビジュアルまたは haptic フィードバックの手掛かりなど、オペレーティングシステムの表示と入力支援機能を適切に動作させるアプリユーザーインターフェイスの設計の概念を指します。代替の入力方法。
 
-IOS、Android、Windows などのデスクトップおよびモバイルプラットフォームには、開発者が[Google TalkBack](https://play.google.com/store/apps/details?id=com.google.android.marvin.talkback)や[Apple の VoiceOver](http://www.apple.com/accessibility/ios/voiceover/)などのアクセス可能なアプリを構築するのに役立つ組み込み api が用意されています。
+IOS、Android、Windows などのデスクトップおよびモバイルプラットフォームには、開発者が[Google TalkBack](https://play.google.com/store/apps/details?id=com.google.android.marvin.talkback)や[Apple の VoiceOver](https://www.apple.com/accessibility/ios/voiceover/)などのアクセス可能なアプリを構築するのに役立つ組み込み api が用意されています。
 
 ## <a name="platform-specific-apis"></a>プラットフォーム固有の Api
 
@@ -34,7 +34,7 @@ IOS、Android、Windows などのデスクトップおよびモバイルプラ�
 
 ## <a name="accessibility-checklist"></a>アクセシビリティのチェックリスト
 
-これらのヒントに従って、アプリが可能な限り幅広くアクセスできることを確認します。 詳細については、 [Android アクセシビリティテストチェックリスト](https://developer.android.com/training/accessibility/testing.html)と[Apple のアクセシビリティ](http://www.apple.com/accessibility/)に関するページを参照してください。
+これらのヒントに従って、アプリが可能な限り幅広くアクセスできることを確認します。 詳細については、 [Android アクセシビリティテストチェックリスト](https://developer.android.com/training/accessibility/testing.html)と[Apple のアクセシビリティ](https://www.apple.com/accessibility/)に関するページを参照してください。
 
 ### <a name="support-large-fonts-and-high-contrast"></a>大きなフォントとハイコントラストをサポートする
 

@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin iOS アプリで UITableVi
 ms.prod: xamarin
 ms.assetid: 04DF47DD-4E17-75D7-AC7C-8CF4A574CD21
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 01/06/2016
-ms.openlocfilehash: 1d888cbc779cbb4fcaf8312b87627f1bd18fe719
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 7f5af84a8dfb9f774822e28e50cf8bbca9acf94b
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768405"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021890"
 ---
 # <a name="working-with-tables-and-cells-in-xamarinios"></a>Xamarin でのテーブルとセルの操作
 
@@ -22,14 +22,14 @@ Xamarin を使用したクロスプラットフォームアプリケーション
 
 これらの記事では、次のようなテーブルの使用について、包括的に説明します。
 
-- **テーブルパーツ**– `UITableView`コントロールのビジュアル要素の概要と説明。 
+- **テーブルパーツ**– `UITableView` コントロールのビジュアル要素の概要と説明です。 
 - テーブル**でのデータの表示**–テーブルを作成および設定する方法を示すと共に、さまざまなテーブルとセルスタイルを使用して、セルオブジェクトを再利用することにより、メモリの問題を回避します。 
 - **高度な使用法**–カスタムセルを作成し、UITableView クラスの編集機能を使用します。 
 - **テーブルを視覚的に作成**する-Xamarin Designer for iOS を使用して、ストーリーボードを含むテーブルドリブンインターフェイスを作成します。 
 
-## <a name="contents"></a>目次
+## <a name="contents"></a>コンテンツ
 
- [テーブルパーツ&amp;の機能](~/ios/user-interface/controls/tables/table-parts-and-functionality.md)
+ [テーブルパーツ &amp; 機能](~/ios/user-interface/controls/tables/table-parts-and-functionality.md)
 
  [テーブルへのデータの読み込み](~/ios/user-interface/controls/tables/populating-a-table-with-data.md)
 

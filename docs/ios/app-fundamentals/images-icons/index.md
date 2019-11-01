@@ -4,26 +4,26 @@ description: このセクションには、Xamarin iOS アプリでのイメー�
 ms.prod: xamarin
 ms.assetid: 0AB8CC07-11E4-0D75-4119-AED1A1252424
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 6940e07c51dbc19615454e0c51188152db22c63f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 08698fab2bdd1528e7f532dc02c86219f98fd611
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70767213"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73010205"
 ---
 # <a name="images-and-icons-in-xamarinios"></a>Xamarin. iOS のイメージとアイコン
 
 _このセクションには、Xamarin iOS アプリでのイメージの操作に関するさまざまな記事が含まれています。これには、アイコンや起動画面を使用したり、コントロールに追加したり、カスタムドキュメントの種類のアイコンを指定したりできます。_
 
-IOS アプリ内でイメージアセットを使用するには、いくつかの方法があります。 単純に、アプリの ui の一部としてイメージを表示し、 `UIButton`または`UIImageView`などの ui コントロールに割り当てて、アイコンと起動画面を提供するから、次の方法で ios アプリに優れたアートワークを簡単に追加できるようになります。 
+IOS アプリ内でイメージアセットを使用するには、いくつかの方法があります。 アプリの UI の一部としてイメージを表示し、`UIButton` や `UIImageView`などの UI コントロールに割り当てて、アイコンと起動画面を提供するだけでなく、次の方法で iOS アプリに優れたアートワークを簡単に追加できるようになります。: 
 
 - **解像度に依存しない画像**– iOS の組み込みサポートを使用して、さまざまなデバイスの解像度と種類 (IPhone、iPad など) でのイメージの操作をサポートします。
 - **アセットカタログのイメージセット**-**アセットカタログのイメージセット**を使用して、アプリで必要な特定のイメージ資産のすべてのバージョンを管理およびグループ化します。
 - **Ios designer のイメージ**-ios designer を使用して、コントロールのイメージを設定します。
-- **コード内のイメージ**–クラス`UIImage`のメソッドを使用して、イメージアセットを読み込んで操作し、コード内C#の UI コントロールに割り当てます。
+- **コード内のイメージ**– `UIImage` クラスのメソッドを使用して、イメージアセットを読み込んで操作し、コード内C#の UI コントロールに割り当てます。
 - **アプリケーションアイコン**-すべての iOS アプリで必要なアプリアイコンを定義します。 これは、アプリを起動するためにユーザーが iOS ホーム画面からタップするアイコンです。 また、このアイコンは Game Center によって使用されます (該当する場合)。
 - **スポットライトアイコン**-アプリのスポットライトアイコンを定義します。 ユーザーがスポットライト検索でアプリの名前を入力するたびに、このアイコンが表示されます。
 - **設定アイコン**-アプリの**設定**アイコンを定義します。 ユーザーが iOS デバイスで**設定**アプリを入力すると、アプリの設定リストの最後にこのアイコンが表示されます。 
@@ -46,8 +46,8 @@ IOS アプリのイメージ資産を作成する際には、いくつかの考�
 Apple では、アプリによるアイコンの管理を可能にする iOS 10.3 の機能強化がいくつか追加されています。
 
 - `ApplicationIconBadgeNumber`-スプリングボードのアプリアイコンのバッジを取得または設定します。
-- `SupportsAlternateIcons`-アプリ`true`に別のアイコンのセットがある場合。
-- `AlternateIconName`-現在選択されている代替アイコンの名前`null`を返します。プライマリアイコンを使用する場合はを返します。
+- `SupportsAlternateIcons`-アプリに別のアイコンのセットがある場合 `true`。
+- `AlternateIconName`-プライマリアイコンを使用している場合に、現在選択さ `null` れている代替アイコンの名前を返します。
 - `SetAlternameIconName`-アプリのアイコンを指定した代替アイコンに切り替えるには、このメソッドを使用します。
 
 ## <a name="launch-screensiosapp-fundamentalsimages-iconslaunch-screensmd"></a>[起動画面](~/ios/app-fundamentals/images-icons/launch-screens.md)

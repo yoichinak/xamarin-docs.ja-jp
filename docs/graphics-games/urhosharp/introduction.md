@@ -6,12 +6,12 @@ ms.assetid: 18041443-5093-4AF7-8B20-03E00478EF35
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 441a3cc19b4246fb2bdea54508142a894af5c051
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 37540053cee03a83582fe19ffb1dcf9e1cf4564c
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "67832541"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73011738"
 ---
 # <a name="introduction-to-urhosharp"></a>UrhoSharp の概要
 
@@ -19,7 +19,7 @@ ms.locfileid: "67832541"
 
 UrhoSharp は、Xamarin および .NET 開発者向けの強力な3D ゲームエンジンです。  これは、Apple の SceneKit と SpriteKit に似ています。また、クロスプラットフォームでも、物理、ナビゲーション、ネットワークなどが含まれています。
 
-これは[Urho3D](http://urho3d.github.io/)エンジンへの .net バインドであり、開発者は、同じコードベースで Android、IOS、Windows、および Mac を対象とし、OpenGL システムと Direct3D システムの両方にレンダリングできるクロスプラットフォームコードを作成できます。
+これは[Urho3D](https://urho3d.github.io/)エンジンへの .net バインドであり、開発者は、同じコードベースで Android、IOS、Windows、および Mac を対象とし、OpenGL システムと Direct3D システムの両方にレンダリングできるクロスプラットフォームコードを作成できます。
 
 UrhoSharp は、さまざまな機能を備えたゲームエンジンです。
 
@@ -135,7 +135,7 @@ class MySample : Application {
 new MySample().Run();
 ```
 
-ランタイムは、`Setup` と `Start` メソッドを呼び出します。  @No__t_0 をオーバーライドする場合は、エンジンパラメーターを構成できます (このサンプルでは示していません)。
+ランタイムは、`Setup` と `Start` メソッドを呼び出します。  `Setup` をオーバーライドする場合は、エンジンパラメーターを構成できます (このサンプルでは示していません)。
 
 これによってゲームが開始されるため、`Start` をオーバーライドする必要があります。  この方法では、アセットの読み込み、イベントハンドラーの接続、シーンの設定、必要なアクションの開始を行います。  このサンプルでは、2つの UI を作成して、ユーザーに表示したり、3D シーンを設定したりします。
 

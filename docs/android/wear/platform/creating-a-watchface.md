@@ -4,15 +4,15 @@ description: このガイドでは、Android 用のカスタムウォッチフ�
 ms.prod: xamarin
 ms.assetid: 4D3F9A40-A820-458D-A12A-D784BB11F643
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/23/2018
-ms.openlocfilehash: a6dfab949eb19708f69d838a7c792f2e7bbd76b3
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 38123e2b1ef20144606bcc77ad33af572aa3707a
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70758516"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030381"
 ---
 # <a name="creating-a-watch-face"></a>ウォッチの文字盤を作成する
 
@@ -122,20 +122,20 @@ Android 磨耗は、`CanvasWatchFaceService` クラスを使用してウォッ�
 
 以下のセクションでは、次の手順に従ってカスタムウォッチフェイスサービスを作成します。
 
-1. @No__t_1 から派生した `MyWatchFaceService` というクラスを定義します。
+1. `CanvasWatchFaceService`から派生した `MyWatchFaceService` というクラスを定義します。
 
-2. @No__t_0 内で、`CanvasWatchFaceService.Engine` から派生した `MyWatchFaceEngine` という名前の入れ子になったクラスを作成します。
+2. `MyWatchFaceService`内で、`CanvasWatchFaceService.Engine`から派生した `MyWatchFaceEngine` という名前の入れ子になったクラスを作成します。
 
-3. @No__t_0 で、`MyWatchFaceEngine` をインスタンス化して返す `CreateEngine` メソッドを実装します。
+3. `MyWatchFaceService`で、`MyWatchFaceEngine` をインスタンス化して返す `CreateEngine` メソッドを実装します。
 
-4. @No__t_0 では、`OnCreate` メソッドを実装して、ウォッチフェイススタイルを作成し、その他の初期化タスクを実行します。
+4. `MyWatchFaceEngine`では、`OnCreate` メソッドを実装して、ウォッチフェイススタイルを作成し、その他の初期化タスクを実行します。
 
-5. @No__t_1 の `OnDraw` メソッドを実装します。 このメソッドは、ウォッチフェイスを再描画する必要がある (つまり、*無効化*される) たびに呼び出されます。 `OnDraw` は、時間、分、2番目の針などのウォッチ式を描画 (および再描画) するメソッドです。
+5. `MyWatchFaceEngine`の `OnDraw` メソッドを実装します。 このメソッドは、ウォッチフェイスを再描画する必要がある (つまり、*無効化*される) たびに呼び出されます。 `OnDraw` は、時間、分、2番目の針などのウォッチ式を描画 (および再描画) するメソッドです。
 
-6. @No__t_1 の `OnTimeTick` メソッドを実装します。
+6. `MyWatchFaceEngine`の `OnTimeTick` メソッドを実装します。
     `OnTimeTick` は、(アンビエントモードと対話モードの両方で) 1 分間に1回以上呼び出されるか、日付/時刻が変更されたときに呼び出されます。
 
-@No__t_0 の詳細については、Android [CanvasWatchFaceService](https://developer.android.com/reference/android/support/wearable/watchface/CanvasWatchFaceService.html) API のドキュメントを参照してください。
+`CanvasWatchFaceService`の詳細については、Android [CanvasWatchFaceService](https://developer.android.com/reference/android/support/wearable/watchface/CanvasWatchFaceService.html) API のドキュメントを参照してください。
 同様に、CanvasWatchFaceService は、ウォッチ式の実際の実装について説明し[ます](https://developer.android.com/reference/android/support/wearable/watchface/CanvasWatchFaceService.Engine.html)。
 
 ### <a name="add-the-canvaswatchfaceservice"></a>CanvasWatchFaceService を追加する
@@ -186,7 +186,7 @@ namespace WatchFace
 
 ### <a name="implement-the-engine-oncreate-method"></a>Engine OnCreate メソッドを実装する
 
-@No__t_0 メソッドは、ウォッチ式を初期化します。 @No__t_0 に次のフィールドを追加します。
+`OnCreate` メソッドは、ウォッチ式を初期化します。 `MyWatchFaceEngine`に次のフィールドを追加します。
 
 ```csharp
 Paint hoursPaint;
@@ -211,9 +211,9 @@ public override void OnCreate(ISurfaceHolder holder)
 }
 ```
 
-`OnCreate` は `MyWatchFaceEngine` が開始された直後に呼び出されます。 @No__t_0 (磨耗デバイスがユーザーとどのように対話するかを制御する) を設定し、時刻を表示するために使用される `Paint` オブジェクトをインスタンス化します。
+`OnCreate` は `MyWatchFaceEngine` が開始された直後に呼び出されます。 `WatchFaceStyle` (磨耗デバイスがユーザーとどのように対話するかを制御する) を設定し、時刻を表示するために使用される `Paint` オブジェクトをインスタンス化します。
 
-@No__t_0 を呼び出すと、次のことが行われます。
+`SetWatchFaceStyle` を呼び出すと、次のことが行われます。
 
 1. *ピークモード*を `PeekModeShort` に設定します。これにより、通知がディスプレイに小さな "ピーク" カードとして表示されます。
 
@@ -223,11 +223,11 @@ public override void OnCreate(ISurfaceHolder holder)
 
 これらおよびその他のウォッチフェイスのスタイルオプションの詳細については、Android [WatchFaceStyle](https://developer.android.com/reference/android/support/wearable/watchface/WatchFaceStyle.Builder.html) API のドキュメントを参照してください。
 
-@No__t_0 が完了すると、`OnCreate` によって `Paint` オブジェクト (`hoursPaint`) がインスタンス化され、その色が白に、テキストサイズが48ピクセルに設定されます (高さはピクセル単位で指定[する必要が](https://developer.android.com/reference/android/graphics/Paint.html#setTextSize%28float%29)あります)。
+`SetWatchFaceStyle` が完了すると、`OnCreate` によって `Paint` オブジェクト (`hoursPaint`) がインスタンス化され、その色が白に、テキストサイズが48ピクセルに設定されます (高さはピクセル単位で指定[する必要が](https://developer.android.com/reference/android/graphics/Paint.html#setTextSize%28float%29)あります)。
 
 ### <a name="implement-the-engine-ondraw-method"></a>エンジン OnDraw メソッドを実装する
 
-@No__t_0 メソッドは、数字や時計の顔などのウォッチ式を実際に描画するメソッド &ndash;、最も重要な `CanvasWatchFaceService.Engine` メソッドです。
+`OnDraw` メソッドは、数字や時計の顔などのウォッチ式を実際に描画するメソッド &ndash;、最も重要な `CanvasWatchFaceService.Engine` メソッドです。
 次の例では、ウォッチの表面に時間の文字列を描画します。
 次のメソッドを `MyWatchFaceEngine` に追加します。
 
@@ -243,7 +243,7 @@ public override void OnDraw (Canvas canvas, Rect frame)
 
 Android が `OnDraw` を呼び出すと、`Canvas` インスタンスと、その面を描画できる境界が渡されます。 上のコード例では、`DateTime` を使用して、現在の時刻を時間と分 (12 時間形式) で計算しています。 結果として得られる時間文字列は、`Canvas.DrawText` メソッドを使用してキャンバスに描画されます。 この文字列は、左端から70ピクセル、上端から80ピクセルが表示されます。
 
-@No__t_0 方法の詳細については、Android の[onDraw](https://developer.android.com/reference/android/support/wearable/watchface/CanvasWatchFaceService.Engine#ondraw) API のドキュメントを参照してください。
+`OnDraw` 方法の詳細については、Android の[onDraw](https://developer.android.com/reference/android/support/wearable/watchface/CanvasWatchFaceService.Engine#ondraw) API のドキュメントを参照してください。
 
 ### <a name="implement-the-engine-ontimetick-method"></a>Engine OnTimeTick メソッドを実装する
 
@@ -256,9 +256,9 @@ public override void OnTimeTick()
 }
 ```
 
-この `OnTimeTick` の実装では、単に `Invalidate` を呼び出します。 @No__t_0 メソッドは、ウォッチの表面を再描画するための `OnDraw` をスケジュールします。
+この `OnTimeTick` の実装では、単に `Invalidate` を呼び出します。 `Invalidate` メソッドは、ウォッチの表面を再描画するための `OnDraw` をスケジュールします。
 
-@No__t_0 方法の詳細については、Android [Ontimetick](https://developer.android.com/reference/android/support/wearable/watchface/WatchFaceService.Engine.html#onTimeTick()) API のドキュメントを参照してください。
+`OnTimeTick` 方法の詳細については、Android [Ontimetick](https://developer.android.com/reference/android/support/wearable/watchface/WatchFaceService.Engine.html#onTimeTick()) API のドキュメントを参照してください。
 
 ## <a name="register-the-canvaswatchfaceservice"></a>CanvasWatchFaceService を登録する
 
@@ -286,13 +286,13 @@ public override void OnTimeTick()
 
 この XML は、次のことを行います。
 
-1. @No__t_0 のアクセス許可を設定します。 このアクセス許可は、デバイス上のシステムの壁紙を変更するアクセス許可を watch face サービスに与えます。 このアクセス許可は、外側の `<application>` セクションではなく、`<service>` セクションで設定する必要があることに注意してください。
+1. `android.permission.BIND_WALLPAPER` のアクセス許可を設定します。 このアクセス許可は、デバイス上のシステムの壁紙を変更するアクセス許可を watch face サービスに与えます。 このアクセス許可は、外側の `<application>` セクションではなく、`<service>` セクションで設定する必要があることに注意してください。
 
-2. @No__t_0 リソースを定義します。 このリソースは、`wallpaper` リソースを宣言する短い XML ファイルです (このファイルは次のセクションで作成されます)。
+2. `watch_face` リソースを定義します。 このリソースは、`wallpaper` リソースを宣言する短い XML ファイルです (このファイルは次のセクションで作成されます)。
 
 3. [ウォッチピッカーの選択] 画面に表示される `preview` と呼ばれる描画可能なイメージを宣言します。
 
-4. @No__t_1 にウォッチ式が表示されることを Android に知らせるための `intent-filter` が含まれています。
+4. `MyWatchFaceService` にウォッチ式が表示されることを Android に知らせるための `intent-filter` が含まれています。
 
 これで、基本的な `WatchFace` の例のコードを完成させることができます。 次の手順では、必要なリソースを追加します。
 
@@ -377,7 +377,7 @@ Watch サービスを実行する前に、 **watch_face**リソースとプレ�
 
 2. 時間、分、および秒の針を描画するために `Paint` オブジェクトを初期化します。
 
-3. @No__t_0 オブジェクトを初期化して、ウォッチフェイスの端を中心とした時間の目盛りを描画します。
+3. `Paint` オブジェクトを初期化して、ウォッチフェイスの端を中心とした時間の目盛りを描画します。
 
 4. 2番目のハンドが毎秒再描画されるように `Invalidate` (再描画) メソッドを呼び出すタイマーを作成します。 このタイマーが必要になるのは、`OnTimeTick` が1分ごとに1回だけ `Invalidate` を呼び出すことができるためです。
 
@@ -401,19 +401,19 @@ Watch サービスを実行する前に、 **watch_face**リソースとプレ�
 
 #### <a name="onpropertieschanged"></a>OnPropertiesChanged
 
-このメソッドは、磨耗デバイス (低ビットのアンビエントモードや書き込み保護など) のプロパティについて `MyWatchFaceEngine` に通知するために呼び出されます。 @No__t_0 では、このメソッドは低いビットアンビエントモードのみをチェックします (低ビットのアンビエントモードでは、画面は各色に対してより少ないビットをサポートします)。
+このメソッドは、磨耗デバイス (低ビットのアンビエントモードや書き込み保護など) のプロパティについて `MyWatchFaceEngine` に通知するために呼び出されます。 `MyWatchFaceEngine`では、このメソッドは低いビットアンビエントモードのみをチェックします (低ビットのアンビエントモードでは、画面は各色に対してより少ないビットをサポートします)。
 
 このメソッドの詳細については、Android [Onpropertieschanged](https://developer.android.com/reference/android/support/wearable/watchface/WatchFaceService.Engine.html#onPropertiesChanged%28android.os.Bundle%29) API のドキュメントを参照してください。
 
 #### <a name="onambientmodechanged"></a>OnAmbientModeChanged
 
-このメソッドは、摩耗デバイスがアンビエントモードに入ったり終了したりしたときに呼び出されます。 @No__t_0 の実装では、モニターの顔がアンビエントモードのときにアンチエイリアシングを無効にします。
+このメソッドは、摩耗デバイスがアンビエントモードに入ったり終了したりしたときに呼び出されます。 `MyWatchFaceEngine` の実装では、モニターの顔がアンビエントモードのときにアンチエイリアシングを無効にします。
 
 このメソッドの詳細については、Android [onAmbientModeChanged](https://developer.android.com/reference/android/support/wearable/watchface/WatchFaceService.Engine.html#onAmbientModeChanged%28boolean%29) API のドキュメントを参照してください。
 
 #### <a name="onvisibilitychanged"></a>OnVisibilityChanged
 
-このメソッドは、ウォッチが表示または非表示になるたびに呼び出されます。 @No__t_0 では、このメソッドは、表示状態に応じて、タイムゾーン受信者 (以下で説明) の登録/登録解除を行います。
+このメソッドは、ウォッチが表示または非表示になるたびに呼び出されます。 `MyWatchFaceEngine`では、このメソッドは、表示状態に応じて、タイムゾーン受信者 (以下で説明) の登録/登録解除を行います。
 
 このメソッドの詳細については、Android [onVisibilityChanged](https://developer.android.com/reference/android/support/wearable/watchface/WatchFaceService.Engine.html#onVisibilityChanged%28boolean%29) API のドキュメントを参照してください。
 
@@ -433,7 +433,7 @@ public class TimeZoneReceiver: BroadcastReceiver
 }
 ```
 
-@No__t_0 メソッドと `UnregisterTimezoneReceiver` メソッドは `OnVisibilityChanged` メソッドによって呼び出されます。
+`RegisterTimezoneReceiver` メソッドと `UnregisterTimezoneReceiver` メソッドは `OnVisibilityChanged` メソッドによって呼び出されます。
 `UnregisterTimezoneReceiver` は、ウォッチフェイスの表示状態が非表示に変更されると呼び出されます。 ウォッチフェイスが再び表示されると、`RegisterTimezoneReceiver` が呼び出されます (`OnVisibilityChanged` メソッドを参照してください)。
 
 エンジン `RegisterTimezoneReceiver` メソッドは、このタイムゾーン受信者の `Receive` イベントのハンドラーを宣言します。このハンドラーは、タイムゾーンが交差するたびに新しい時間で `time` オブジェクトを更新します。
@@ -453,7 +453,7 @@ IntentFilter filter = new IntentFilter(Intent.ActionTimezoneChanged);
 Application.Context.RegisterReceiver (timeZoneReceiver, filter);
 ```
 
-@No__t_0 メソッドは、タイムゾーン受信者の登録を解除します。
+`UnregisterTimezoneReceiver` メソッドは、タイムゾーン受信者の登録を解除します。
 
 ```csharp
 Application.Context.UnregisterReceiver (timeZoneReceiver);
@@ -469,7 +469,7 @@ Application.Context.UnregisterReceiver (timeZoneReceiver);
 
 ## <a name="summary"></a>まとめ
 
-このチュートリアルでは、カスタム Android 磨耗 1.0 watchface を実装し、テストしました。 @No__t_0 クラスと `CanvasWatchFaceService.Engine` クラスが導入され、単純なデジタルウォッチ面を作成するためにエンジンクラスの重要なメソッドが実装されました。 この実装は、アナログウォッチ式を作成するためのより多くの機能で更新されました。また、デバイスプロパティの可視性、アンビエントモード、および違いの変化を処理するために、追加のメソッドが実装されています。 最後に、タイムゾーンブロードキャストレシーバーが実装されました。これにより、ウォッチがタイムゾーンを超えた時間が自動的に更新されます。
+このチュートリアルでは、カスタム Android 磨耗 1.0 watchface を実装し、テストしました。 `CanvasWatchFaceService` クラスと `CanvasWatchFaceService.Engine` クラスが導入され、単純なデジタルウォッチ面を作成するためにエンジンクラスの重要なメソッドが実装されました。 この実装は、アナログウォッチ式を作成するためのより多くの機能で更新されました。また、デバイスプロパティの可視性、アンビエントモード、および違いの変化を処理するために、追加のメソッドが実装されています。 最後に、タイムゾーンブロードキャストレシーバーが実装されました。これにより、ウォッチがタイムゾーンを超えた時間が自動的に更新されます。
 
 ## <a name="related-links"></a>関連リンク
 

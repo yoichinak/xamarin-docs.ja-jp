@@ -4,19 +4,19 @@ description: このドキュメントでは、アプリトランスポートセ�
 ms.prod: xamarin
 ms.assetid: 608403AE-B09F-4D9C-8F59-F9DE9F0B1CF1
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/21/2017
-ms.openlocfilehash: 59257dafc1d92756feb85046df43de7b9da0cc42
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 0ccdde29183645b93831b7261909714f9baf3fa4
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290150"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73010021"
 ---
 # <a name="xamarinios-application-fundamentals"></a>Xamarin iOS アプリケーションの基礎
 
-このセクションでは、開発者がXamarin.iOS (旧称 MonoTouch) アプリケーションを開発するときに注意する必要がある一般的なタスクや概念についてガイドを提供します。
+このセクションでは、開発者が Xamarin iOS (旧称 Monotouch.dialog) アプリケーションを開発する際に注意する必要がある、より一般的なタスクまたは概念について説明します。
 
 ## <a name="accessibilityiosapp-fundamentalsaccessibilitymd"></a>[ユーザー補助](~/ios/app-fundamentals/accessibility.md)
 
@@ -24,11 +24,11 @@ ms.locfileid: "70290150"
 
 ## <a name="app-transport-securityiosapp-fundamentalsatsmd"></a>[アプリケーション トランスポート セキュリティ](~/ios/app-fundamentals/ats.md)
 
-この記事はiOS 9アプリにおいてApp Transport Securityによって必要となるセキュリティに関する変更とそれがあなたのXamarin.iOSプロジェクトにもたらす意味を紹介します。 この記事はATS構成オプションと必要な場合にATSからオプトアウトする方法を説明します。ATSは既定で有効となっているため、iOS 9アプリでは(明示的に許可しない限り)あらゆるセキュアでないインターネット接続によって例外が発生します。
+この記事では、iOS 9 アプリでアプリトランスポートセキュリティによって適用されるセキュリティの変更について説明します。また、Xamarin のプロジェクトでは、この方法について説明します。また、必要に応じて、ats をオプトアウトする方法についても説明します。 ATS は既定で有効になっているため、セキュリティで保護されていないインターネット接続では、iOS 9 アプリで例外が発生します (明示的に許可している場合を除く)。
 
 ## <a name="backgroundingiosapp-fundamentalsbackgroundingindexmd"></a>[バックグラウンド処理](~/ios/app-fundamentals/backgrounding/index.md)
 
-バック グラウンド処理または backgrounding は、別のアプリケーションがフォア グラウンドで実行中に、アプリケーションにバック グラウンドでタスクを実行させる処理です。 このガイドは、iOSにおけるバック グラウンド処理の概要を説明します。
+バックグラウンド処理またはバックグラウンド処理は、別のアプリケーションがフォアグラウンドで実行されている間に、アプリケーションがバックグラウンドでタスクを実行できるようにするプロセスです。 このガイドは、iOS でのバックグラウンド処理の概要として機能します。
 
 ## <a name="creating-ios-applications-in-codeiosapp-fundamentalsios-code-onlymd"></a>[コードでの iOS アプリケーションの作成](~/ios/app-fundamentals/ios-code-only.md)
 
@@ -40,7 +40,7 @@ ms.locfileid: "70290150"
 
 ## <a name="events-protocols-and-delegatesiosapp-fundamentalsdelegates-protocols-and-eventsmd"></a>[イベント、プロトコル、およびデリゲート](~/ios/app-fundamentals/delegates-protocols-and-events.md)
 
-この記事では、コールバックを受信して、ユーザー インターフェイス コントロールにデータを設定する場合に鍵となるiOS テクノロジを示します。 具体的には、イベント、プロトコル、およびデリゲートです。この記事では、それぞれどのようなものであるか、それぞれの C# からの使用方法を説明します。 この記事は Xamarin.iOSが iOSコントロールを使って使い慣れた .NET イベントを公開する方法だけでなく、Xamarin.iOSが プロトコルやデリゲートといった Objective-Cの概念をサポートする方法を示します。 (Objective-C デリゲートとC# デリゲートを混同しないように) この記事は プロトコルがObjective-C デリゲートと非デリゲートシナリオの両方の基盤としてどのように使うのかについても例を示します。
+この記事では、コールバックを受信し、ユーザーインターフェイスコントロールにデータを設定するために使用される主要な iOS テクノロジについて説明します。 これらのテクノロジは、イベント、プロトコル、およびデリゲートです。この記事では、これらの各機能と、それぞれがどのC#ように使用されるかについて説明します。 このサンプルでは、Xamarin で ios コントロールを使用して、使い慣れた .NET イベントを公開する方法と、Xamarin がプロトコルやデリゲートなどの目的 C の概念をサポートする方法を示します (目的C#の c デリゲートは、デリゲートと混同しないようにする必要があります)。 また、この記事では、ターゲット C デリゲートの基礎としても、非デリゲートのシナリオでも、プロトコルがどのように使用されるかを示す例も示しています。
 
 ## <a name="working-with-the-file-systemiosapp-fundamentalsfile-systemmd"></a>[ファイルシステムの操作](~/ios/app-fundamentals/file-system.md)
 
@@ -72,4 +72,4 @@ Apple は、iOS 10 (およびそれ以降) のセキュリティとプライバ�
 
 ## <a name="working-with-user-defaultsiosapp-fundamentalsuser-defaultsmd"></a>[ユーザーの既定値の使用](~/ios/app-fundamentals/user-defaults.md)
 
-クラス`NSUserDefaults`を使用すると、iOS アプリと拡張機能がシステム全体の既定のシステムとプログラムを使用して対話することができます。 ユーザーは、既定のシステムを使用して、アプリの動作またはスタイル設定 (アプリの設計に基づく) を構成できます。 たとえば、メトリックと英国の測定値にデータを表示したり、特定の UI テーマを選択したりすることができます。
+`NSUserDefaults` クラスを使用すると、iOS アプリと拡張機能がシステム全体の既定のシステムとプログラムを使用して対話することができます。 ユーザーは、既定のシステムを使用して、アプリの動作またはスタイル設定 (アプリの設計に基づく) を構成できます。 たとえば、メトリックと英国の測定値にデータを表示したり、特定の UI テーマを選択したりすることができます。

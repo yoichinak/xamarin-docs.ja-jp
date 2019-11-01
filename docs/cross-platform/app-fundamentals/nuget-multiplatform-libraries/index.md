@@ -1,66 +1,66 @@
 ---
-title: NuGet のマルチプラット フォーム ライブラリ プロジェクト (Nugetizer 3000 とも呼ばれます)
+title: NuGet マルチプラットフォームライブラリプロジェクト (別名 Nugetizer 3000)
 description: このドキュメントでは、Nugetizer 3000 ツールを使用して、プラットフォーム間でコードを共有する NuGet パッケージを自動的に作成する方法について説明します。
 ms.prod: xamarin
 ms.assetid: F0A5A9BB-86CD-44C9-8EE8-74D1E5E74A30
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/25/2018
-ms.openlocfilehash: 6d3f7b316e397705ecb9bd404007dcd9ef5aa183
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 5744bb9947b196ee319535729338bcf64a5cd09e
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61266790"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016763"
 ---
-# <a name="nuget-multiplatform-library-projects-nugetizer-3000"></a>マルチプラット フォーム ライブラリ プロジェクトの NuGet (Nugetizer 3000)
+# <a name="nuget-multiplatform-library-projects-nugetizer-3000"></a>NuGet マルチプラットフォームライブラリプロジェクト (Nugetizer 3000)
 
-_Nugetizer 3000 を使用してプラットフォーム間でコードを共有する NuGet パッケージを自動的に作成します。_
+_' Nugetizer 3000 ' を使用してプラットフォーム間でコードを共有する NuGet パッケージを自動的に作成します。_
 
-使用してプラットフォーム間でコードを共有する NuGet パッケージを自動的に作成することは、 _Nugetizer 3000_します。 これにより、新しいまたは既存のライブラリ プロジェクトから NuGet パッケージを作成することができます**マルチプラット フォーム ライブラリ プロジェクト**します。
+_Nugetizer 3000_を使用して、プラットフォーム間でコードを共有する NuGet パッケージを自動的に作成することができます。 これにより、既存のライブラリプロジェクトから NuGet パッケージを作成したり、新しい**マルチプラットフォームライブラリプロジェクト**を作成したりすることができます。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-Nugetizer 3000 は Visual Studio for Mac に含まれている&ndash;を探して、**ライブラリ > Mulitplatform ライブラリ**プロジェクトの種類で、**ファイル > 新規**ウィンドウ。
+Visual Studio for Mac には、Nugetizer 3000 が含まれており、**ライブラリ > Mulitplatform library**プロジェクトの種類を**ファイル > 新しい**ウィンドウで検索 &ndash; ます。
 
-[![](images/mulitplatform-library-sml.png "マルチプラット フォーム ライブラリの新しいウィンドウを作成します。")](images/mulitplatform-library.png#lightbox)
+[![](images/mulitplatform-library-sml.png "Create new Multiplatform Library window")](images/mulitplatform-library.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-Visual Studio で Nugetizer 3000 を使用してください。[をダウンロードして、VSIX インストーラーを実行](http://bit.ly/nugetizer-2017)します。
+Visual Studio で Nugetizer 3000 を使用するには、 [VSIX インストーラーをダウンロードして実行](https://bit.ly/nugetizer-2017)してください。
 
 -----
 
-## <a name="building-nuget-packages"></a>NuGet パッケージをビルドします。
+## <a name="building-nuget-packages"></a>NuGet パッケージのビルド
 
-プロジェクトのすべてのビルド出力コードを内部的にその他のアプリを共有するために使用またはアップロードすることができますが、完全な NuGet パッケージで構成されると、 [NuGet.org](https://www.nuget.org)します。
+構成が完了すると、プロジェクトのすべてのビルドによって完全な NuGet パッケージが出力されます。このパッケージを使用して、他のアプリと内部でコードを共有したり、 [NuGet.org](https://www.nuget.org)にアップロードしたりできます。
 
-この機能を使用するための 3 つのシナリオがあります。
+この機能を使用するには、次の3つのシナリオがあります。
 
 - [既存のライブラリ プロジェクト](existing-library.md)
 
-  既存の PCL (または .NET Standard) のプロジェクトから NuGet パッケージを作成します。
+  既存の PCL (または .NET Standard) プロジェクトから NuGet パッケージを作成します。
 
-- [新しいマルチプラット フォーム ライブラリ プロジェクトを作成します。](single-codebase.md)
+- [新しいマルチプラットフォームライブラリプロジェクトの作成](single-codebase.md)
 
-  PCL または .NET Standard を使用して NuGet を使用して一般的なコードを共有する新しいライブラリを作成します。
+  PCL または .NET Standard を使用して、NuGet 経由で共通コードを共有する新しいライブラリを作成します。
 
-- [新しいプラットフォームに固有のライブラリ プロジェクトの作成](platform-specific.md)
+- [新しいプラットフォーム固有のライブラリプロジェクトの作成](platform-specific.md)
 
-  IOS と Android のプラットフォームに固有のコードを含む、共有プロジェクトを使用して、一般的なコードと iOS または Android 固有の機能をサポートするプラットフォームに固有のプロジェクトを含めることが、NuGet、新しいライブラリを作成します。
+  IOS および Android 用のプラットフォーム固有のコードを含む新しいライブラリと NuGet を作成し、共有プロジェクトを使用して、iOS または Android 固有の機能をサポートするための共通コードおよびプラットフォーム固有のプロジェクトを含めます。
 
-参照してください、[メタデータ ガイド](metadata.md)詳細については、必須および省略可能なメタデータ、NuGet パッケージに追加する必要があります。
+任意の NuGet パッケージに追加する必要がある必須およびオプションのメタデータの詳細については、[メタデータガイド](metadata.md)を参照してください。
 
-## <a name="further-nuget-information"></a>NuGet の詳細
+## <a name="further-nuget-information"></a>NuGet の詳細情報
 
-詳細をご覧ください[Xamarin 用 Nuget を手動で作成する](~/cross-platform/app-fundamentals/nuget-manual.md)する方法と[アプリで NuGet パッケージを含める](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)します。
+詳細については、 [Xamarin 用に nuget を手動で作成](~/cross-platform/app-fundamentals/nuget-manual.md)する方法と、[アプリに NuGet パッケージを含める](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)方法に関する説明を参照してください。
 
-Microsoft の[NuGet のドキュメント](https://docs.microsoft.com/nuget/)でより詳細な情報が含まれています、 **.nupkg**形式と Visual Studio で NuGet パッケージを使用します。
+Microsoft の[NuGet ドキュメント](https://docs.microsoft.com/nuget/)には、Visual Studio での**nupkg**形式と NuGet パッケージの使用に関する詳細情報が記載されています。
 
-NuGet パッケージのプロジェクトのデザインのディスカッション (別名。 NuGetizer 3000) は、 [NuGet GitHub リポジトリ](https://github.com/NuGet/Home/wiki/NuGetizer-3000)します。
+NuGet パッケージプロジェクトの設計に関する説明 (別名) NuGetizer 3000) は、 [NuGet GitHub リポジトリ](https://github.com/NuGet/Home/wiki/NuGetizer-3000)で入手できます。
 
 ## <a name="related-links"></a>関連リンク
 
-- [NuGetizer 3000 ユース ケース](https://github.com/NuGet/Home/wiki/NuGetizer-Core-Scenarios)
-- [Xamarin 用 NuGet パッケージを手動で作成します。](~/cross-platform/app-fundamentals/nuget-manual.md)
+- [NuGetizer-3000 ユースケース](https://github.com/NuGet/Home/wiki/NuGetizer-Core-Scenarios)
+- [Xamarin の NuGet パッケージを手動で作成する](~/cross-platform/app-fundamentals/nuget-manual.md)
 - [NuGet のドキュメント](https://docs.microsoft.com/nuget/)

@@ -3,15 +3,15 @@ title: パート 3-Xamarin クロスプラットフォームソリューショ�
 description: このドキュメントでは、Xamarin でクロスプラットフォームソリューションを設定する方法について説明します。 共有プロジェクトや .NET Standard など、さまざまなコード共有方法について説明します。
 ms.prod: xamarin
 ms.assetid: 4139A6C2-D477-C563-C1AB-98CCD0D10A93
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/27/2017
-ms.openlocfilehash: acec74585487e9f0a0a13a80c5da49a187a4042f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 843887282c9a5af671d46699ae2f601fd32902e0
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70758152"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016881"
 ---
 # <a name="part-3---setting-up-a-xamarin-cross-platform-solution"></a>パート 3-Xamarin クロスプラットフォームソリューションの設定
 
@@ -63,7 +63,7 @@ Xamarin のアプローチでは、コードを次の2つのプロジェクト�
 
 ### <a name="core-project"></a>コアプロジェクト
 
-共有コードプロジェクトは、すべてのプラットフォーム (ie) で使用できるアセンブリのみを参照する必要があります。`System`、 、`System.Core`などの共通のフレームワーク名前空間。 `System.Xml`
+共有コードプロジェクトは、すべてのプラットフォーム (ie) で使用できるアセンブリのみを参照する必要があります。`System`、`System.Core`、`System.Xml`などの共通のフレームワークの名前空間。
 
 共有プロジェクトは、可能な限り多くの UI 以外の機能を実装する必要があります。これには、次の層が含まれる可能性があります。
 
@@ -89,22 +89,22 @@ Xamarin のアプローチでは、コードを次の2つのプロジェクト�
 
 アプリケーションのアーキテクチャを次の図に示します。
 
- [![](setting-up-a-xamarin-cross-platform-solution-images/conceptualarchitecture.png "アプリケーションのアーキテクチャを次の図に示します。")](setting-up-a-xamarin-cross-platform-solution-images/conceptualarchitecture.png#lightbox)
+ [![](setting-up-a-xamarin-cross-platform-solution-images/conceptualarchitecture.png "The application architecture is illustrated in this diagram")](setting-up-a-xamarin-cross-platform-solution-images/conceptualarchitecture.png#lightbox)
 
 このスクリーンショットは、共有コアプロジェクト、iOS、および Android アプリケーションプロジェクトを使用したソリューションのセットアップを示しています。 共有プロジェクトには、各アーキテクチャレイヤー (ビジネス、サービス、データ、およびデータアクセスコード) に関連するコードが含まれています。
 
- ![](setting-up-a-xamarin-cross-platform-solution-images/core-solution-example.png "共有プロジェクトには、各アーキテクチャレイヤー (ビジネス、サービス、データ、およびデータアクセスコード) に関連するコードが含まれています。")
+ ![](setting-up-a-xamarin-cross-platform-solution-images/core-solution-example.png "The Shared Project contains code relating to each of the architectural layers (Business, Service, Data and Data Access code)")
 
  <a name="Project_References" />
 
-## <a name="project-references"></a>プロジェクトの参照
+## <a name="project-references"></a>プロジェクト参照
 
 プロジェクト参照には、プロジェクトの依存関係が反映されます。 コアプロジェクトは、コードを簡単に共有できるように、共通アセンブリへの参照を制限します。
 プラットフォーム固有のアプリケーションプロジェクトは、共有コードと、ターゲットプラットフォームを利用するために必要なその他のプラットフォーム固有のアセンブリを参照します。
 
 アプリケーションは各参照共有プロジェクトを射影し、次のスクリーンショットに示すように、ユーザーに機能を提供するために必要なユーザーインターフェイスコードを含みます。
 
-![](setting-up-a-xamarin-cross-platform-solution-images/solution-android.png "アプリケーションは、共有プロジェクトの参照をプロジェクト") ![](setting-up-a-xamarin-cross-platform-solution-images/solution-ios.png "アプリケーション プロジェクトの共有プロジェクトの参照")
+![](setting-up-a-xamarin-cross-platform-solution-images/solution-android.png "アプリケーションは各参照共有プロジェクトを射影します。") ![](setting-up-a-xamarin-cross-platform-solution-images/solution-ios.png "アプリケーションは各参照共有プロジェクトを射影します。")
 
 ケーススタディでは、プロジェクトを構造化する方法の具体的な例を示します。
 
@@ -118,12 +118,12 @@ Xamarin のアプローチでは、コードを次の2つのプロジェクト�
 
 特定のファイルの種類に対して適切なビルドアクションを設定することが重要です。 この一覧には、いくつかの一般的なファイルの種類のビルドアクションが表示されます。
 
-- **すべてC#のファイル**–ビルドアクション:コンパイル
-- **Xamarin のイメージ & Windows** -ビルドアクション:Content
-- **Xamarin の XIB ファイルとストーリーボードファイル**–ビルドアクション:InterfaceDefinition
-- **Android でのイメージと AXML レイアウト**–ビルドアクション:AndroidResource
-- **Windows プロジェクトの XAML ファイル**–ビルドアクション:ページ
-- **Xamarin .xaml XAML ファイル**–ビルドアクション:EmbeddedResource
+- **すべてC#のファイル**–ビルドアクション: コンパイル
+- **Xamarin のイメージ & Windows** -ビルドアクション: コンテンツ
+- **Xamarin の XIB ファイルとストーリーボードファイル**–ビルドアクション: interfacedefinition
+- **Android でのイメージと AXML レイアウト**–ビルドアクション: AndroidResource
+- **Windows プロジェクトの XAML ファイル**–ビルドアクション: ページ
+- **Xamarin .xaml XAML ファイル**–ビルドアクション: EmbeddedResource
 
 一般に、IDE はファイルの種類を検出し、正しいビルドアクションを提案します。
 

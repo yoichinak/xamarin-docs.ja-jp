@@ -4,15 +4,15 @@ description: Xamarin Android アプリのビジュアル構造の定義
 ms.prod: xamarin
 ms.assetid: 2BA72B0E-230D-4F98-B4D5-4EFB0D479789
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/18/2017
-ms.openlocfilehash: 60752760415bd416d339cc2a3729075b4fca0d32
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: f15aeff8590cf6d82168fd3e39ba6f78d649d2ab
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70764474"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028971"
 ---
 # <a name="xamarinandroid-layouts"></a>Xamarin Android のレイアウト
 
@@ -34,7 +34,7 @@ ms.locfileid: "70764474"
 
     ![リサイクラービューの例](images/recycler-view.png)
 
-- [ListView](~/android/user-interface/layouts/list-view/index.md)は、スクロール可能な項目の一覧を作成するビューグループです。 リストの項目は、リストアダプターを使用してリストに自動的に挿入されます。 は`ListView` Android アプリケーションの重要な UI コンポーネントです。これは、メニューオプションの短い一覧から、連絡先やインターネットのお気に入りの一覧に至るまで、あらゆる場所で使用されるためです。 この機能を使用すると、組み込みスタイルで書式設定したり、広範にカスタマイズしたりできる行のスクロールリストを簡単に表示できます。 ListView インスタンスには、行ビューに含まれるデータをフィードするアダプターが必要です。
+- [ListView](~/android/user-interface/layouts/list-view/index.md)は、スクロール可能な項目の一覧を作成するビューグループです。 リストの項目は、リストアダプターを使用してリストに自動的に挿入されます。 `ListView` は Android アプリケーションの重要な UI コンポーネントです。これは、メニューオプションの短い一覧から、連絡先やインターネットのお気に入りの一覧に至るまで、あらゆる場所で使用されるためです。 この機能を使用すると、組み込みスタイルで書式設定したり、広範にカスタマイズしたりできる行のスクロールリストを簡単に表示できます。 ListView インスタンスには、行ビューに含まれるデータをフィードするアダプターが必要です。
 
     ![リストビューの例](images/list-view.png)
 

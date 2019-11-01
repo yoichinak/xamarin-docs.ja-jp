@@ -4,21 +4,21 @@ description: このドキュメントでは、backgrounded アプリケーショ
 ms.prod: xamarin
 ms.assetid: F8EEA0FD-5614-47FE-ADAC-80A5BCA6EB5F
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 9f4708b56b8cf8a243785816440c63b743059cf5
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 625826e729a6b4153396286361730d6a2b878dca
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70756277"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73010472"
 ---
 # <a name="walkthrough---background-location-in-xamarinios"></a>チュートリアル-Xamarin のバックグラウンドの場所
 
 この例では、現在の場所に関する情報 (緯度、経度、およびその他のパラメーター) を画面に出力する iOS ロケーションアプリケーションを作成します。 このアプリケーションでは、アプリケーションがアクティブまたは Backgrounded の間に位置情報の更新を適切に実行する方法を示します。
 
-このチュートリアルでは、バックグラウンドで必要なアプリケーションとしてのアプリの登録、アプリが backgrounded されたときの UI 更新の中断、および`WillEnterBackground` `WillEnterForeground` `AppDelegate`メソッドの操作など、いくつかの重要なバックグラウンド処理の概念について説明します.
+このチュートリアルでは、バックグラウンドで必要なアプリケーションとしてのアプリの登録、アプリの backgrounded 時の UI 更新の中断、`WillEnterBackground` `WillEnterForeground` および `AppDelegate` メソッドの操作など、いくつかの重要なバックグラウンド処理の概念について説明します。
 
 ## <a name="application-set-up"></a>アプリケーションのセットアップ
 
@@ -30,7 +30,7 @@ ms.locfileid: "70756277"
 
     Visual Studio for Mac では、次のようになります。
 
-    [![](location-walkthrough-images/image7.png "[バックグラウンドモードを有効にする] チェックボックスと [場所の更新] チェックボックスの両方をオンにします。")](location-walkthrough-images/image7.png#lightbox)
+    [![](location-walkthrough-images/image7.png "Place a check by both the Enable Background Modes and the Location Updates checkboxes")](location-walkthrough-images/image7.png#lightbox)
 
     Visual Studio では、次のキーと値のペアを追加して、手動で**情報**を更新する必要があります。
 
@@ -41,9 +41,9 @@ ms.locfileid: "70756277"
     </array>
     ```
 
-1. これで、アプリケーションが登録されたので、デバイスから場所データを取得できます。 IOS では、 `CLLocationManager`クラスを使用して位置情報にアクセスし、場所の更新を提供するイベントを発生させることができます。
+1. これで、アプリケーションが登録されたので、デバイスから場所データを取得できます。 IOS では、`CLLocationManager` クラスを使用して位置情報にアクセスし、場所の更新を提供するイベントを発生させることができます。
 
-1. コードで、という名前`LocationManager`の新しいクラスを作成します。これにより、場所の更新をサブスクライブするための、さまざまな画面とコードのための単一の場所が提供されます。 クラスで、 `CLLocationManager`という名前`LocMgr`ののインスタンスを作成します。 `LocationManager`
+1. コードで、`LocationManager` という名前の新しいクラスを作成します。これにより、場所の更新をサブスクライブするための、さまざまな画面やコードのための単一の場所が提供されます。 `LocationManager` クラスで、`LocMgr`という `CLLocationManager` のインスタンスを作成します。
 
     ```csharp
     public class LocationManager
@@ -73,18 +73,18 @@ ms.locfileid: "70756277"
 
     上記のコードでは、 [Cllocationmanager](xref:CoreLocation.CLLocationManager)クラスに対するいくつかのプロパティと権限を設定しています。
 
-    - `PausesLocationUpdatesAutomatically`–これは、システムが位置情報の更新を一時停止できるかどうかに応じて設定できるブール値です。 一部のデバイスでは、 `true`既定でに設定されます。これにより、デバイスは約15分後にバックグラウンドの場所の更新の取得を停止する可能性があります。
-    - `RequestAlwaysAuthorization`-このメソッドを渡す必要があります。これにより、アプリのユーザーは、バックグラウンドで場所にアクセスできるようになります。 `RequestWhenInUseAuthorization`アプリがフォアグラウンドにあるときにのみ場所へのアクセスを許可するオプションをユーザーに付与する場合にも渡すことができます。
-    - `AllowsBackgroundLocationUpdates`–これは、iOS 9 で導入されたブール型のプロパティであり、中断されたときにアプリが位置情報の更新を受け取ることができるように設定できます。
+    - `PausesLocationUpdatesAutomatically` –システムが位置情報の更新を一時停止できるかどうかに応じて設定できるブール値です。 一部のデバイスでは、既定で `true`に設定されています。これにより、約15分後にデバイスがバックグラウンドの場所の更新プログラムの取得を停止する可能性があります。
+    - `RequestAlwaysAuthorization`-このメソッドを渡す必要があります。これにより、アプリのユーザーに対して、バックグラウンドで場所へのアクセスを許可するオプションを与える必要があります。 アプリがフォアグラウンドにあるときにのみ場所へのアクセスを許可するオプションをユーザーに付与する場合は、`RequestWhenInUseAuthorization` を渡すこともできます。
+    - `AllowsBackgroundLocationUpdates` –これは、iOS 9 で導入されたブール型のプロパティであり、中断されたときにアプリが位置情報の更新を受け取ることができるように設定できます。
 
     > [!IMPORTANT]
     > iOS 8 (およびそれ以降) では、ユーザーを承認要求の一部として表示するために、**情報 plist**ファイルのエントリも必要です。
 
-1. 場所データへ`NSLocationAlwaysUsageDescription`の`NSLocationWhenInUseUsageDescription`アクセスを要求する警告で、ユーザーに表示されるキーまたは文字列を追加します。
+1. 場所データへのアクセスを要求する警告でユーザーに表示される文字列を使用して、キー `NSLocationAlwaysUsageDescription` または `NSLocationWhenInUseUsageDescription` を追加します。
 
-1. iOS 9 `AllowsBackgroundLocationUpdates`では、**情報**を使用するときに、キー `UIBackgroundModes`と値`location`が含まれている必要があります。 このチュートリアルの手順2を完了している場合は、既に情報 plist ファイルに含まれています。
+1. iOS 9 では、`AllowsBackgroundLocationUpdates` を使用する場合、`location`値を持つキー `UIBackgroundModes`**が含まれ**ている必要があります。 このチュートリアルの手順2を完了している場合は、既に情報 plist ファイルに含まれています。
 
-1. クラス内で、次のコードを`StartLocationUpdates`使用してというメソッドを作成します。 `LocationManager` このコードは、 `CLLocationManager`から場所の更新の受信を開始する方法を示しています。
+1. `LocationManager` クラス内で、次のコードを使用して `StartLocationUpdates` というメソッドを作成します。 このコードは、`CLLocationManager`から場所の更新の受信を開始する方法を示しています。
 
     ```csharp
     if (CLLocationManager.LocationServicesEnabled) {
@@ -99,20 +99,20 @@ ms.locfileid: "70756277"
     }
     ```
 
-    この方法では、いくつかの重要な点があります。 まず、アプリケーションがデバイス上の場所データにアクセスできるかどうかを確認します。 これを確認するに`LocationServicesEnabled`は、 `CLLocationManager`でを呼び出します。 ユーザーが場所情報へのアプリケーションのアクセスを拒否した場合、このメソッドは**false**を返します。
+    この方法では、いくつかの重要な点があります。 まず、アプリケーションがデバイス上の場所データにアクセスできるかどうかを確認します。 このことを確認するには、`CLLocationManager`で `LocationServicesEnabled` を呼び出します。 ユーザーが場所情報へのアプリケーションのアクセスを拒否した場合、このメソッドは**false**を返します。
 
-1. 次に、ロケーションマネージャーに更新頻度を通知します。 `CLLocationManager`には、更新の頻度など、場所データのフィルター処理と構成に関する多くのオプションが用意されています。 この例では、場所`DesiredAccuracy`がメーターによって変更されるたびに、を更新するようにを設定します。 場所の更新頻度とその他の設定の構成の詳細については、Apple のドキュメントの「 [Cllocationmanager クラスリファレンス](https://developer.apple.com/library/ios/#documentation/CoreLocation/Reference/CLLocationManager_Class/CLLocationManager/CLLocationManager.html)」を参照してください。
+1. 次に、ロケーションマネージャーに更新頻度を通知します。 `CLLocationManager` には、更新の頻度など、場所データのフィルター処理や構成に関する多くのオプションが用意されています。 この例では、メーターによって場所が変更されるたびに、`DesiredAccuracy` を更新するように設定します。 場所の更新頻度とその他の設定の構成の詳細については、Apple のドキュメントの「 [Cllocationmanager クラスリファレンス](https://developer.apple.com/library/ios/#documentation/CoreLocation/Reference/CLLocationManager_Class/CLLocationManager/CLLocationManager.html)」を参照してください。
 
-1. 最後に、 `StartUpdatingLocation` `CLLocationManager`インスタンスでを呼び出します。 これにより、ロケーションマネージャーは、現在の場所で最初の修正を取得し、更新の送信を開始するように指示します。
+1. 最後に、`CLLocationManager` インスタンスで `StartUpdatingLocation` を呼び出します。 これにより、ロケーションマネージャーは、現在の場所で最初の修正を取得し、更新の送信を開始するように指示します。
 
-ここまでで、ロケーションマネージャーが作成され、受信するデータの種類で構成され、初期の場所が決定されています。 ここで、コードで位置データをユーザーインターフェイスに表示する必要があります。 これは、を`CLLocation`引数として受け取るカスタムイベントで実行できます。
+ここまでで、ロケーションマネージャーが作成され、受信するデータの種類で構成され、初期の場所が決定されています。 ここで、コードで位置データをユーザーインターフェイスに表示する必要があります。 これは、引数として `CLLocation` を受け取るカスタムイベントで実行できます。
 
 ```csharp
 // event for the location changing
 public event EventHandler<LocationUpdatedEventArgs>LocationUpdated = delegate { };
 ```
 
-次の手順では、から`CLLocationManager`場所の更新をサブスクライブし、新しい場所のデータが使用可能になったときにカスタム`LocationUpdated`イベントを発生させて、その場所を引数として渡します。 これを行うには、新しいクラス**LocationUpdateEventArgs.cs**を作成します。 このコードはメインアプリケーション内でアクセスでき、イベントが発生したときにデバイスの場所を返します。
+次の手順では、`CLLocationManager`から位置情報の更新をサブスクライブし、新しい場所のデータが使用可能になったときにカスタムの `LocationUpdated` イベントを発生させて、その場所を引数として渡します。 これを行うには、新しいクラス**LocationUpdateEventArgs.cs**を作成します。 このコードはメインアプリケーション内でアクセスでき、イベントが発生したときにデバイスの場所を返します。
 
 ```csharp
 public class LocationUpdatedEventArgs : EventArgs
@@ -139,9 +139,9 @@ public class LocationUpdatedEventArgs : EventArgs
 
     レイアウトは次のようになります。
 
-    ![](location-walkthrough-images/image8.png "IOS Designer の UI レイアウトの例")
+    ![](location-walkthrough-images/image8.png "An example UI layout in the iOS Designer")
 
-1. Solution Pad で、 `ViewController.cs`ファイルをダブルクリックして編集し、locationmanager の新しいインスタンスを作成してを呼び出し`StartLocationUpdates`ます。
+1. Solution Pad で、`ViewController.cs` ファイルをダブルクリックして編集し、LocationManager の新しいインスタンスを作成して、それに対して `StartLocationUpdates`を呼び出します。
   コードを次のように変更します。
 
     ```csharp
@@ -166,7 +166,7 @@ public class LocationUpdatedEventArgs : EventArgs
 
     これにより、アプリケーションの起動時に位置情報の更新が開始されます。ただし、データは表示されません。
 
-1. 場所の更新が受信されたので、場所情報で画面を更新します。 次のメソッドは、 `LocationUpdated`イベントから場所を取得し、UI に表示します。
+1. 場所の更新が受信されたので、場所情報で画面を更新します。 次のメソッドは、`LocationUpdated` イベントから場所を取得し、UI に表示します。
 
     ```csharp
     #region Public Methods
@@ -186,7 +186,7 @@ public class LocationUpdatedEventArgs : EventArgs
     #endregion
     ```
 
-引き続き、appdelegate で`LocationUpdated`イベントをサブスクライブし、新しいメソッドを呼び出して UI を更新する必要があります。 呼び出しの`ViewDidLoad,` `StartLocationUpdates`直後に、次のコードを追加します。
+引き続き、AppDelegate で `LocationUpdated` イベントをサブスクライブし、新しいメソッドを呼び出して UI を更新する必要があります。 `StartLocationUpdates` 呼び出しの直後に `ViewDidLoad,` 次のコードを追加します。
 
 ```csharp
 public override void ViewDidLoad ()
@@ -202,11 +202,11 @@ public override void ViewDidLoad ()
 
 アプリケーションを実行すると、次のようになります。
 
-[![](location-walkthrough-images/image5.png "アプリの実行例")](location-walkthrough-images/image5.png#lightbox)
+[![](location-walkthrough-images/image5.png "An example app run")](location-walkthrough-images/image5.png#lightbox)
 
 ## <a name="handling-active-and-background-states"></a>アクティブ状態とバックグラウンド状態の処理
 
-1. アプリケーションは、フォアグラウンドでアクティブなときに場所の更新を出力しています。 アプリがバックグラウンドに入ったときの動作を示すために`AppDelegate` 、アプリケーションの状態の変更を追跡するメソッドをオーバーライドして、フォアグラウンドとバックグラウンドの間でアプリケーションがコンソールに書き込まれるようにします。
+1. アプリケーションは、フォアグラウンドでアクティブなときに場所の更新を出力しています。 アプリがバックグラウンドに入ったときの動作を示すために、アプリケーションの状態の変更を追跡する `AppDelegate` メソッドをオーバーライドして、アプリケーションがフォアグラウンドとバックグラウンドの間を移行するときにコンソールに書き込むようにします。
 
     ```csharp
     public override void DidEnterBackground (UIApplication application)
@@ -220,7 +220,7 @@ public override void ViewDidLoad ()
     }
     ```
 
-    次のコードをに追加`LocationManager`して、更新された場所のデータをアプリケーションの出力に継続的に出力し、場所情報がまだバックグラウンドで使用可能であることを確認します。
+    次のコードを `LocationManager` に追加して、更新された場所のデータをアプリケーション出力に継続的に出力し、場所情報がまだバックグラウンドで使用可能であることを確認します。
 
     ```csharp
     public class LocationManager
@@ -246,9 +246,9 @@ public override void ViewDidLoad ()
 
 1. コードにもう1つ問題があります。アプリが backgrounded されたときに UI を更新しようとすると、iOS によって終了されます。 アプリがバックグラウンドになると、コードは場所の更新の登録を解除し、UI の更新を停止する必要があります。
 
-    iOS では、アプリが別のアプリケーション状態に移行しようとしているときに通知を提供します。 この場合、 `ObserveDidEnterBackground`通知をサブスクライブできます。
+    iOS では、アプリが別のアプリケーション状態に移行しようとしているときに通知を提供します。 この場合、`ObserveDidEnterBackground` 通知をサブスクライブできます。
 
-    次のコードスニペットは、通知を使用して、UI の更新をいつ停止するかをビューに表示させる方法を示しています。 次のように`ViewDidLoad`なります。
+    次のコードスニペットは、通知を使用して、UI の更新をいつ停止するかをビューに表示させる方法を示しています。 これは `ViewDidLoad`にあります。
 
     ```csharp
     UIApplication.Notifications.ObserveDidEnterBackground ((sender, args) => {
@@ -258,7 +258,7 @@ public override void ViewDidLoad ()
 
     アプリが実行されている場合、出力は次のようになります。
 
-    ![](location-walkthrough-images/image6.png "コンソールでの場所の出力例")
+    ![](location-walkthrough-images/image6.png "Example of the location output in the console")
 
 1. アプリケーションは、フォアグラウンドで動作しているときに場所の更新を画面に出力し、バックグラウンドで動作している間、アプリケーションの出力ウィンドウにデータを出力し続けます。
 

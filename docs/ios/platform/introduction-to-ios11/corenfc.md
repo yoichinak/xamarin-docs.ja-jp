@@ -4,15 +4,15 @@ description: このドキュメントでは、iOS 11 で導入された Api を�
 ms.prod: xamarin
 ms.technology: xamarin-ios
 ms.assetid: 846B59D3-F66A-48F3-A78C-84217697194E
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 09/25/2017
-ms.openlocfilehash: c7a9d359842dde916fc14ffea5ec6e3f453dfee0
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 110df71dd043f627b89a7c4a906db0418a8cfae8
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70752430"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032204"
 ---
 # <a name="core-nfc-in-xamarinios"></a>Xamarin のコア NFC
 
@@ -63,20 +63,20 @@ CoreNFC を有効にするには、プロジェクトで次の3つの項目を�
 
 新しい**アプリ ID**を作成し、 **NFC タグ読み取り**サービスが実行されていることを確認します。
 
-[![開発者ポータルでの NFC タグの読み取りが選択された新しいアプリ ID ページ](corenfc-images/app-services-nfc-sml.png)](corenfc-images/app-services-nfc.png#lightbox)
+[![開発者ポータルの新しいアプリ ID ページで、NFC タグの読み取りが選択されました](corenfc-images/app-services-nfc-sml.png)](corenfc-images/app-services-nfc.png#lightbox)
 
 その後、このアプリ ID 用の新しいプロビジョニングプロファイルを作成し、それをダウンロードして開発用 Mac にインストールする必要があります。
 
 ## <a name="reading-a-tag"></a>タグの読み取り
 
-プロジェクトが構成されたら、 `using CoreNFC;`ファイルの先頭にを追加し、次の3つの手順に従って NFC タグ読み取り機能を実装します。
+プロジェクトが構成されたら、ファイルの先頭に `using CoreNFC;` を追加し、次の3つの手順に従って NFC タグ読み取り機能を実装します。
 
-### <a name="1-implement-infcndefreadersessiondelegate"></a>1.導入`INFCNdefReaderSessionDelegate`
+### <a name="1-implement-infcndefreadersessiondelegate"></a>1. `INFCNdefReaderSessionDelegate` を実装する
 
 インターフェイスには、次の2つのメソッドを実装できます。
 
-- `DidDetect`–タグが正常に読み取られたときに呼び出されます。
-- `DidInvalidate`–エラーが発生したとき、または60秒のタイムアウトに達したときに呼び出されます。
+- `DidDetect` –タグが正常に読み取られたときに呼び出されます。
+- `DidInvalidate` –エラーが発生したとき、または60秒のタイムアウトに達したときに呼び出されます。
 
 #### <a name="diddetect"></a>DidDetect
 
@@ -96,7 +96,7 @@ public void DidDetect(NFCNdefReaderSession session, NFCNdefMessage[] messages)
 }
 ```
 
-セッションで複数のタグ読み取りが許可されている場合、このメソッドは複数回 (およびメッセージの配列が渡される可能性があります) に呼び出されることがあります。 これは、 `Start` ([手順 2](#step2)で説明した) メソッドの3番目のパラメーターを使用して設定します。
+セッションで複数のタグ読み取りが許可されている場合、このメソッドは複数回 (およびメッセージの配列が渡される可能性があります) に呼び出されることがあります。 これは、`Start` メソッドの3番目のパラメーター ([手順 2](#step2)で説明) を使用して設定します。
 
 #### <a name="didinvalidate"></a>DidInvalidate
 
@@ -125,7 +125,7 @@ public void DidInvalidate(NFCNdefReaderSession session, NSError error)
 
 <a name="step2" />
 
-### <a name="2-start-an-nfcndefreadersession"></a>2.開始`NFCNdefReaderSession`
+### <a name="2-start-an-nfcndefreadersession"></a>2. `NFCNdefReaderSession` を開始する
 
 スキャンは、ボタンを押すなどのユーザー要求で開始する必要があります。
 次のコードでは、スキャンセッションを作成して開始します。
@@ -135,25 +135,25 @@ Session = new NFCNdefReaderSession(this, null, true);
 Session?.BeginSession();
 ```
 
-`NFCNdefReaderSession`コンストラクターのパラメーターは次のとおりです。
+`NFCNdefReaderSession` コンストラクターのパラメーターは次のとおりです。
 
-- `delegate`–の`INFCNdefReaderSessionDelegate`実装。 このサンプルコードでは、デリゲートはテーブルビューコントローラーに実装されて`this`いるため、デリゲートパラメーターとして使用されます。
-- `queue`–コールバックが処理されるキュー。 この場合`null`、(サンプルに示されているように`DispatchQueue.MainQueue` ) ユーザーインターフェイスコントロールを更新するときに必ずを使用する必要があります。
-- `invalidateAfterFirstRead`–の`true`場合、スキャンは最初に成功した後に`false`停止します。スキャンが続行され、複数の結果が返されるまで、スキャンが取り消されるか、60秒のタイムアウトに達します。
+- `delegate` – `INFCNdefReaderSessionDelegate`の実装。 このサンプルコードでは、デリゲートはテーブルビューコントローラーに実装されているため、`this` はデリゲートパラメーターとして使用されます。
+- `queue` –コールバックが処理されるキュー。 `null`することができます。その場合は、(サンプルに示されているように) ユーザーインターフェイスコントロールを更新するときに必ず `DispatchQueue.MainQueue` を使用してください。
+- `invalidateAfterFirstRead` – `true`した場合、スキャンは最初に成功した後に停止します。`false` スキャンが続行され、スキャンが取り消されるか、60秒のタイムアウトに達するまで、複数の結果が返されます。
 
-### <a name="3-cancel-the-scanning-session"></a>3.スキャンセッションをキャンセルする
+### <a name="3-cancel-the-scanning-session"></a>3. スキャンセッションをキャンセルする
 
 ユーザーは、ユーザーインターフェイスのシステム指定のボタンを使用して、スキャンセッションを取り消すことができます。
 
 ![スキャン中の [キャンセル] ボタン](corenfc-images/scan-cancel-sml.png)
 
-アプリでは、メソッドを`InvalidateSession`呼び出すことによって、プログラムでスキャンを取り消すことができます。
+アプリは、`InvalidateSession` メソッドを呼び出すことによって、プログラムでスキャンをキャンセルできます。
 
 ```csharp
 Session.InvalidateSession();
 ```
 
-どちらの場合も、デリゲートの`DidInvalidate`メソッドが呼び出されます。
+どちらの場合も、デリゲートの `DidInvalidate` メソッドが呼び出されます。
 
 ## <a name="summary"></a>まとめ
 

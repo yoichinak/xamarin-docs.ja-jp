@@ -3,15 +3,15 @@ title: バインディングの目的 C ライブラリ
 description: このドキュメントでは、目的 C コードへのバインディングをC#作成する方法の概要を説明し、イベント、メソッド、カスタムコントロールなどをバインドする方法について説明します。
 ms.prod: xamarin
 ms.assetid: 8A832A76-A770-1A7C-24BA-B3E6F57617A0
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/06/2018
-ms.openlocfilehash: df90bc764200434e8d546a1ebf61e039498517bb
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 6841e94ad13357c51e6ccf59e35c659dfb9954aa
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70199411"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016292"
 ---
 # <a name="binding-objective-c-libraries"></a>バインディングの目的 C ライブラリ
 
@@ -39,23 +39,23 @@ C ライブラリを静的にリンクする方法の詳細については、「
 バインディングを作成する最も簡単な方法は、Xamarin の iOS バインドプロジェクトを作成することです。
 これを行うには、プロジェクトの種類、 **iOS > ライブラリ > バインドライブラリ** の順に選択し Visual Studio for Mac します。
 
-[![](objective-c-libraries-images/00-sml.png "これを行うには、[プロジェクトの種類]、[iOS ライブラリバインドライブラリ] の順に選択し Visual Studio for Mac します。")](objective-c-libraries-images/00.png#lightbox)
+[![](objective-c-libraries-images/00-sml.png "Do this from Visual Studio for Mac by selecting the project type, iOS Library Bindings Library")](objective-c-libraries-images/00.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 バインディングを作成する最も簡単な方法は、Xamarin の iOS バインドプロジェクトを作成することです。
 これを行うには、Windows の Visual Studio で、プロジェクトの種類、 **[ C# visual > IOS > バインドライブラリ (ios)]** の順に選択します。
 
-[![](objective-c-libraries-images/00vs-sml.png "iOS バインドライブラリ iOS")](objective-c-libraries-images/00vs.png#lightbox)
+[![](objective-c-libraries-images/00vs-sml.png "iOS Bindings Library iOS")](objective-c-libraries-images/00vs.png#lightbox)
 
 > [!IMPORTANT]
-> メモ:**Xamarin. Mac**のバインドプロジェクトは、Visual Studio for Mac でのみサポートされています。
+> 注: **Xamarin. Mac**のバインドプロジェクトは、Visual Studio for Mac でのみサポートされています。
 
 -----
 
-生成されたプロジェクトには、編集できる小さなテンプレートが含まれて`ApiDefinition.cs`おり、と`StructsAndEnums.cs`の2つのファイルが含まれています。
+生成されたプロジェクトには、編集できる小さなテンプレートが含まれており、`ApiDefinition.cs` と `StructsAndEnums.cs`の2つのファイルが含まれています。
 
-は`ApiDefinition.cs` 、API コントラクトを定義する場所です。これは、基になる目標 C API がどのようにC#射影されるかを記述するファイルです。 このファイルの構文と内容は、このドキュメントの説明の主要なトピックであり、その内容はインターフェイスとC# C#デリゲート宣言に限定されています。 `StructsAndEnums.cs`ファイルは、インターフェイスおよびデリゲートで必要とされる定義を入力するファイルです。 これには、コードで使用される可能性がある列挙値と構造体が含まれます。
+`ApiDefinition.cs` では、API コントラクトを定義します。これは、基になる目標 C API がどのようにC#射影されるかを記述するファイルです。 このファイルの構文と内容は、このドキュメントの説明の主要なトピックであり、その内容はインターフェイスとC# C#デリゲート宣言に限定されています。 `StructsAndEnums.cs` ファイルは、インターフェイスおよびデリゲートで必要とされる定義を入力するファイルです。 これには、コードで使用される可能性がある列挙値と構造体が含まれます。
 
 <a name="Binding_an_API" />
 
@@ -91,24 +91,24 @@ namespace Cocos2D {
 }
 ```
 
-上の`Cocos2D.Camera`サンプルでは、 `NSObject`基本型から派生するというクラスを定義して`Foundation.NSObject`います。このクラスは、静的`ZEye`プロパティ ()、引数を受け取らない2つのメソッド、3つのメソッドを受け取るメソッドを定義します。数値.
+上のサンプルでは、`NSObject` 基本型から派生する `Cocos2D.Camera` というクラスを定義しています (この型は `Foundation.NSObject`から取得されます)。また、静的プロパティ (`ZEye`)、引数を受け取らない2つのメソッド、および3つの引数を受け取るメソッドを定義します。
 
 API ファイルの形式と使用できる属性の詳細については、後述の「 [api 定義ファイル](~/cross-platform/macios/binding/objective-c-libraries.md#The_API_definition_file)」を参照してください。
 
 完全なバインドを作成するには、通常、次の4つのコンポーネントを処理します。
 
-- (`ApiDefinition.cs`テンプレート内の) API 定義ファイル。
-- 省略可能: API 定義ファイル (`StructsAndEnums.cs`テンプレート内) に必要な列挙型、型、構造体。
+- API 定義ファイル (テンプレート内の`ApiDefinition.cs`)。
+- 省略可能: API 定義ファイル (テンプレート内の`StructsAndEnums.cs`) で必要とされる列挙型、型、構造体。
 - 省略可能: 生成されたバインディングを拡張する可能性のある追加C#のソース。またC#は、よりわかりやすい API (プロジェクトに追加するすべてのファイル) を提供します。
 - バインドするネイティブライブラリ。
 
 このグラフは、次のファイル間の関係を示しています。
 
- [![](objective-c-libraries-images/screen-shot-2012-02-08-at-3.33.07-pm.png "このグラフは、ファイル間の関係を示します。")](objective-c-libraries-images/screen-shot-2012-02-08-at-3.33.07-pm.png#lightbox)
+ [![](objective-c-libraries-images/screen-shot-2012-02-08-at-3.33.07-pm.png "This chart shows the relationship between the files")](objective-c-libraries-images/screen-shot-2012-02-08-at-3.33.07-pm.png#lightbox)
 
 API 定義ファイルには、(インターフェイスが含むことのできるすべてのメンバーを含む) 名前空間とインターフェイスの定義のみが含まれます。クラス、列挙体、デリゲート、または構造体を含めることはできません。 API 定義ファイルは、API の生成に使用されるコントラクトにすぎません。
 
-列挙型やサポートクラスなどに必要な追加のコードは、別のファイルでホストする必要があります。上記の例では、"CameraMode" は CS ファイルに存在せず、別のファイルでホストする必要が`StructsAndEnums.cs`ある列挙値です。たとえば、:
+列挙型やサポートクラスなどの追加のコードは、別のファイルでホストする必要があります。上記の例では、"CameraMode" は CS ファイルに存在せず、別のファイルでホストする必要がある列挙値です。 `StructsAndEnums.cs`たとえば、次のようになります。:
 
 ```csharp
 public enum CameraMode {
@@ -116,9 +116,9 @@ public enum CameraMode {
 }
 ```
 
-ファイルは`StructsAndEnum`クラスと組み合わされ、ライブラリのコアバインドを生成するために使用されます。 `APIDefinition.cs` 生成されたライブラリをそのまま使用できますが、通常は、結果として得られるライブラリC#を調整して、ユーザーの利点を得るための機能を追加します。 例としては`ToString()` 、メソッドのC#実装、インデクサーの指定、一部のネイティブ型との間での暗黙的な変換の追加、または一部のメソッドの厳密に型指定されたバージョンの提供などがあります。 これらの機能強化は、 C#余分なファイルに格納されます。 C#ファイルをプロジェクトに追加するだけで、このビルドプロセスに含まれるようになります。
+`APIDefinition.cs` ファイルは `StructsAndEnum` クラスと組み合わされ、ライブラリのコアバインドを生成するために使用されます。 生成されたライブラリをそのまま使用できますが、通常は、結果として得られるライブラリC#を調整して、ユーザーの利点を得るための機能を追加します。 いくつかの例として、`ToString()` C#メソッドの実装、インデクサーの指定、一部のネイティブ型との間での暗黙的な変換の追加、または一部のメソッドの厳密に型指定されたバージョンの提供などがあります。 これらの機能強化は、 C#余分なファイルに格納されます。 C#ファイルをプロジェクトに追加するだけで、このビルドプロセスに含まれるようになります。
 
-これは、ファイルにコードを実装する方法`Extra.cs`を示しています。 部分クラスを使用することに注意してください。これにより、 `ApiDefinition.cs` `StructsAndEnums.cs`とのコアバインドの組み合わせから生成される部分クラスが拡張されます。
+ここでは、`Extra.cs` ファイルにコードを実装する方法を示します。 部分クラスを使用することに注意してください。これにより、`ApiDefinition.cs` と `StructsAndEnums.cs` コアバインドの組み合わせから生成される部分クラスが拡張されます。
 
 ```csharp
 public partial class Camera {
@@ -132,12 +132,12 @@ public partial class Camera {
 
 ライブラリをビルドすると、ネイティブバインドが生成されます。
 
-このバインディングを完了するには、ネイティブライブラリをプロジェクトに追加する必要があります。  これを行うには、ソリューションエクスプローラーでネイティブライブラリを Finder からプロジェクトにドラッグアンドドロップするか、プロジェクトを右クリックして [追加] [**ファイル**の追加] の順に選択 > し、プロジェクトにネイティブライブラリを追加します。ネイティブライブラリを選択します。
+このバインディングを完了するには、ネイティブライブラリをプロジェクトに追加する必要があります。  これを行うには、ネイティブライブラリをプロジェクトに追加します。そのためには、ソリューションエクスプローラーで Finder からネイティブライブラリをプロジェクトにドラッグアンドドロップするか、プロジェクトを右クリックして **追加** を選択し > **ファイルの追加** を選択します。ネイティブライブラリ。
 ネイティブライブラリは、"lib" という語で始まり、拡張子 ". a" で終わります。 この操作を行うと、Visual Studio for Mac によって2つのファイルが追加されますC# 。このファイルには、ネイティブライブラリに含まれる内容に関する情報を含むファイルと、自動的に設定されたファイルがあります。
 
- [![](objective-c-libraries-images/screen-shot-2012-02-08-at-3.45.06-pm.png "ネイティブライブラリは慣例により、\"lib\" から始まり、拡張子で終わります。")](objective-c-libraries-images/screen-shot-2012-02-08-at-3.45.06-pm.png#lightbox)
+ [![](objective-c-libraries-images/screen-shot-2012-02-08-at-3.45.06-pm.png "Native libraries by convention start with the word lib and end with the extension .a")](objective-c-libraries-images/screen-shot-2012-02-08-at-3.45.06-pm.png#lightbox)
 
-`libMagicChord.linkwith.cs`ファイルの内容には、このライブラリの使用方法に関する情報が含まれており、このバイナリを結果の DLL ファイルにパッケージ化するように IDE に指示します。
+`libMagicChord.linkwith.cs` ファイルの内容には、このライブラリの使用方法に関する情報が含まれており、このバイナリを結果の DLL ファイルにパッケージ化するように IDE に指示します。
 
 ```csharp
 using System;
@@ -146,10 +146,10 @@ using ObjCRuntime;
 [assembly: LinkWith ("libMagicChord.a", SmartLink = true, ForceLoad = true)]
 ```
 
-の使用方法に関する完全な詳細情報[`[LinkWith]`](~/cross-platform/macios/binding/binding-types-reference.md#LinkWithAttribute) 
+[`[LinkWith]`](~/cross-platform/macios/binding/binding-types-reference.md#LinkWithAttribute)の使用方法の詳細 
 属性の説明については、「[バインドの種類リファレンスガイド](~/cross-platform/macios/binding/binding-types-reference.md)」を参照してください。
 
-プロジェクトをビルドすると、バインドとネイティブライブラリの両方`MagicChords.dll`を含むファイルが作成されるようになります。 このプロジェクトまたは生成された DLL を他の開発者に配布して、独自に使用することができます。
+プロジェクトをビルドすると、バインドとネイティブライブラリの両方を含む `MagicChords.dll` ファイルが作成されるようになります。 このプロジェクトまたは生成された DLL を他の開発者に配布して、独自に使用することができます。
 
 場合によっては、いくつかの列挙値、デリゲート定義、またはその他の型が必要になることがあります。 API 定義ファイルには配置しないでください。これは単なるコントラクトであるためです。
 
@@ -157,7 +157,7 @@ using ObjCRuntime;
 
 ## <a name="the-api-definition-file"></a>API 定義ファイル
 
-API 定義ファイルは、さまざまなインターフェイスで構成されています。 API 定義内のインターフェイスはクラス宣言に変換され、クラスの基底クラスを指定する[`[BaseType]`](~/cross-platform/macios/binding/binding-types-reference.md#BaseTypeAttribute)ために属性で装飾する必要があります。
+API 定義ファイルは、さまざまなインターフェイスで構成されています。 API 定義内のインターフェイスはクラス宣言に変換され、クラスの基底クラスを指定するために、 [`[BaseType]`](~/cross-platform/macios/binding/binding-types-reference.md#BaseTypeAttribute)属性で装飾する必要があります。
 
 コントラクト定義のインターフェイスではなく、クラスを使用していない理由があるかもしれません。 インターフェイスを選択しました。これは、API 定義ファイルにメソッド本体を指定したり、例外をスローしたり、意味のある値を返したりする必要があった本体を提供したりすることなく、メソッドのコントラクトを記述できるようにするためです。
 
@@ -167,8 +167,8 @@ API 定義ファイルは、さまざまなインターフェイスで構成さ�
 
 ### <a name="binding-methods"></a>バインドメソッド
 
-最も簡単なバインドは、メソッドをバインドすることです。 C#名前付け規則を使用してインターフェイスのメソッドを宣言し、メソッドを[`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)
-属性. 属性[`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)は、Xamarin. iOS C#ランタイムの名前と目的の C 名をリンクします。 のパラメーター[`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) 
+最も簡単なバインドは、メソッドをバインドすることです。 C#名前付け規則を使用してインターフェイスのメソッドを宣言し、メソッドを[`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)で修飾するだけです。
+属性. [`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)属性は、Xamarin. iOS C#ランタイムの名前と目的の C 名をリンクします。 のパラメーター [`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) 
 属性は、目的の C セレクターの名前です。 以下に、いくつかの例を示します。
 
 ```csharp
@@ -185,7 +185,7 @@ nint Add (nint a, nint b);
 void Draw (string text, nint column, nint row);
 ```
 
-上のサンプルでは、インスタンスメソッドをバインドする方法を示しています。 静的メソッドをバインドするには、次[`[Static]`](~/cross-platform/macios/binding/binding-types-reference.md#StaticAttribute)のように属性を使用する必要があります。
+上のサンプルでは、インスタンスメソッドをバインドする方法を示しています。 静的メソッドをバインドするには、次のように[`[Static]`](~/cross-platform/macios/binding/binding-types-reference.md#StaticAttribute)属性を使用する必要があります。
 
 ```csharp
 // A static method, that takes no arguments
@@ -195,7 +195,7 @@ void Beep ();
 
 これは、コントラクトがインターフェイスの一部であり、インターフェイスに静的な vs インスタンス宣言の概念がないために必要です。したがって、属性を再指定するには、もう一度必要となります。 バインディングから特定のメソッドを非表示にする場合は、 [`[Internal]`](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute)属性を使用してメソッドを装飾できます。
 
-コマンド`btouch-native`では、参照パラメーターが null でないかどうかのチェックが行われます。 特定のパラメーターに null 値を許可する場合は、[`[NullAllowed]`](~/cross-platform/macios/binding/binding-types-reference.md#NullAllowedAttribute)
+`btouch-native` コマンドでは、参照パラメーターが null でないかどうかのチェックが行われます。 特定のパラメーターに null 値を許可する場合は、 [`[NullAllowed]`](~/cross-platform/macios/binding/binding-types-reference.md#NullAllowedAttribute)を使用します。
 次のように、パラメーターの属性です。
 
 ```csharp
@@ -203,20 +203,20 @@ void Beep ();
 string SetText ([NullAllowed] string text);
 ```
 
-[`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)キーワードを使用して参照型をエクスポートする場合は、割り当てセマンティクスを指定することもできます。 これは、データが漏洩しないようにするために必要です。
+参照型をエクスポートするときに、 [`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)キーワードを使用して、割り当てセマンティクスを指定することもできます。 これは、データが漏洩しないようにするために必要です。
 
 <a name="Binding_Properties" />
 
 ### <a name="binding-properties"></a>バインドのプロパティ
 
-メソッドと同様に、目的の C プロパティはを使用してバインドされます。[`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)
-属性とをプロパティにC#直接マップします。 メソッドと同様に、プロパティは、[`[Static]`](~/cross-platform/macios/binding/binding-types-reference.md#StaticAttribute)
+メソッドと同様に、目標 C プロパティはを使用[`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)してバインドされます。
+属性とをプロパティにC#直接マップします。 メソッドと同様に、プロパティはを使用して装飾でき[`[Static]`](~/cross-platform/macios/binding/binding-types-reference.md#StaticAttribute)
 および[`[Internal]`](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute)
 アトリビュート.
 
-内部のプロパティで[`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)属性を使用する場合は、実際には、getter と setter の2つのメソッドをバインドします。 エクスポートするために指定する名前は、 "set" という語を前に付加することによって計算されます。 set を使用して、**ベース**の最初の文字を大文字に変換し、セレクターが引数を受け取るようにします。 これは、 `[Export ("label")]`プロパティに適用されたは、実際には "label" と "setlabel:" をバインドすることを意味します。目的 C のメソッド。
+内部のプロパティで[`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)属性を使用すると、ネイティブでは、get アクセス操作子とセッターという2つのメソッドがバインドされます。 エクスポートするために指定する名前は、"set" という語を前に付加することによって計算されます。 set を使用して、**ベース**の最初の文字を大文字に変換し、セレクターが引数を受け取るよう**にします**。 つまり、プロパティに適用された `[Export ("label")]` は、"label" メソッドと "setLabel:" という目的で実際にバインドされます。
 
-場合によっては、目的の C プロパティが上記のパターンに従わず、名前が手動で上書きされることがあります。 そのような場合は、を使用して、バインディングの生成方法を制御できます。[`[Bind]`](~/cross-platform/macios/binding/binding-types-reference.md#BindAttribute) 
+場合によっては、目的の C プロパティが上記のパターンに従わず、名前が手動で上書きされることがあります。 そのような場合は、 [`[Bind]`](~/cross-platform/macios/binding/binding-types-reference.md#BindAttribute)を使用して、バインディングの生成方法を制御できます。 
 get アクセス操作子または setter の属性。次に例を示します。
 
 ```csharp
@@ -238,16 +238,16 @@ interface UIView_MyIn
 }
 ```
 
-Get アクセス操作子と setter は、上の`name` `setName`バインドとバインドではとして明示的に定義されます。
+ここでは、get アクセス操作子と setter が、上の `name` および `setName` のバインドとして明示的に定義されています。
 
-を使用し[`[Static]`](~/cross-platform/macios/binding/binding-types-reference.md#StaticAttribute)た静的プロパティのサポートに加えて、次のように[`[IsThreadStatic]`](~/cross-platform/macios/binding/binding-types-reference.md#IsThreadStaticAttribute)、を使用してスレッド静的プロパティを装飾することもできます。
+[`[Static]`](~/cross-platform/macios/binding/binding-types-reference.md#StaticAttribute)を使用した静的プロパティのサポートに加えて、次のように[`[IsThreadStatic]`](~/cross-platform/macios/binding/binding-types-reference.md#IsThreadStaticAttribute)でスレッド静的プロパティを装飾することもできます。
 
 ```csharp
 [Export ("currentRunLoop")][Static][IsThreadStatic]
 NSRunLoop Current { get; }
 ```
 
-メソッドと同様に、一部のパラメーターにフラグ[`[NullAllowed]`](~/cross-platform/macios/binding/binding-types-reference.md#NullAllowedAttribute)を付けることができます。[`[NullAllowed]`](~/cross-platform/macios/binding/binding-types-reference.md#NullAllowedAttribute)
+メソッドと同様に、一部のパラメーターには[`[NullAllowed]`](~/cross-platform/macios/binding/binding-types-reference.md#NullAllowedAttribute)でフラグを付けることができ[`[NullAllowed]`](~/cross-platform/macios/binding/binding-types-reference.md#NullAllowedAttribute)
 プロパティには、null がプロパティの有効な値であることを示します。次に例を示します。
 
 ```csharp
@@ -255,7 +255,7 @@ NSRunLoop Current { get; }
 string Text { get; set; }
 ```
 
-パラメーター [`[NullAllowed]`](~/cross-platform/macios/binding/binding-types-reference.md#NullAllowedAttribute)は、setter で直接指定することもできます。
+Setter では、 [`[NullAllowed]`](~/cross-platform/macios/binding/binding-types-reference.md#NullAllowedAttribute)パラメーターを直接指定することもできます。
 
 ```csharp
 [Export ("text")]
@@ -266,7 +266,7 @@ string Text { get; [NullAllowed] set; }
 
 カスタムコントロールのバインドを設定するときは、次の点に注意する必要があります。
 
-1. **バインドプロパティは静的でなければなりません**。プロパティのバインド[`[Static]`](~/cross-platform/macios/binding/binding-types-reference.md#StaticAttribute)を定義するときは、属性を使用する必要があります。
+1. **バインドプロパティは静的でなければなりません**。プロパティのバインドを定義するときは、 [`[Static]`](~/cross-platform/macios/binding/binding-types-reference.md#StaticAttribute)属性を使用する必要があります。
 2. **プロパティ名は正確に一致する必要があり**ます。プロパティのバインドに使用される名前は、カスタムコントロールのプロパティの名前と正確に一致している必要があります。
 3. **プロパティの型は、厳密に一致する必要があり**ます。プロパティのバインドに使用される変数の型は、カスタムコントロールのプロパティの型と正確に一致する必要があります。
 4. プロパティの getter メソッドまたは setter メソッドに配置された**ブレークポイントとゲッター/setter** -ブレークポイントはヒットしません。
@@ -278,14 +278,14 @@ string Text { get; [NullAllowed] set; }
 
 #### <a name="objective-c-mutable-pattern-and-properties"></a>目的-C の変更可能なパターンとプロパティ
 
-目的 C のフレームワークでは、一部のクラスが変更可能なサブクラスで不変である場合の表現形式を使用します。 たとえば`NSString` 、は変更できないバージョン`NSMutableString`ですが、は変異させるサブクラスです。
+目的 C のフレームワークでは、一部のクラスが変更可能なサブクラスで不変である場合の表現形式を使用します。 たとえば `NSString` は変更できないバージョンであり、`NSMutableString` は変異を可能にするサブクラスです。
 
 これらのクラスでは、変更できない基底クラスに、getter を持つプロパティが含まれていますが、setter は含まれていません。 変更可能なバージョンで setter を導入するために使用します。 これはでは実際にC#は不可能であるため、この表現表現をでC#使用できる表現にマップする必要がありました。
 
-このをマップするC#方法は、基本クラスに getter と setter の両方を追加することですが、set アクセス操作子のフラグを[`[NotImplemented]`](~/cross-platform/macios/binding/binding-types-reference.md#NotImplementedAttribute)
+このをマップするC#方法は、基本クラスに getter と setter の両方を追加することですが、set アクセス操作子には[`[NotImplemented]`](~/cross-platform/macios/binding/binding-types-reference.md#NotImplementedAttribute)
 属性.
 
-次に、mutable サブクラスで、[`[Override]`](~/cross-platform/macios/binding/binding-types-reference.md#OverrideAttribute) 
+次に、mutable サブクラスで、 [`[Override]`](~/cross-platform/macios/binding/binding-types-reference.md#OverrideAttribute)を使用します。 
 プロパティが親の動作を実際にオーバーライドしていることを確認するための属性。
 
 例:
@@ -307,14 +307,14 @@ interface MyMutableTree {
 
 ### <a name="binding-constructors"></a>バインディングコンストラクター
 
-ツール`btouch-native`は、クラス内に4つ`Foo`のコンストラクターを自動的に生成します。クラスには、次のものが生成されます。
+`btouch-native` ツールは、クラスに 4 `Foo`つのコンストラクターを自動的に生成します。クラスには、次のように生成されます。
 
 - `Foo ()`: 既定のコンストラクター (目標 C の "init" コンストラクターにマップ)
 - `Foo (NSCoder)`: NIB files の逆シリアル化中に使用されるコンストラクター (目的の C の "initWithCoder:" コンストラクターにマップされます)。
-- `Foo (IntPtr handle)`: ハンドルベースの作成のコンストラクター。ランタイムがアンマネージオブジェクトからマネージオブジェクトを公開する必要がある場合に、ランタイムによって呼び出されます。
+- `Foo (IntPtr handle)`: ハンドルベースの作成のコンストラクターは、ランタイムがアンマネージオブジェクトからマネージオブジェクトを公開する必要がある場合に、ランタイムによって呼び出されます。
 - `Foo (NSEmptyFlag)`: これは、二重初期化を防ぐために派生クラスによって使用されます。
 
-定義するコンストラクターについては、インターフェイス定義内で次のシグネチャを使用して宣言する必要があり`IntPtr`ます。これらは、値を返す必要があり、メソッドの名前はコンストラクターである必要があります。 たとえば、 `initWithFrame:`コンストラクターをバインドするには、次のように使用します。
+定義するコンストラクターについては、インターフェイス定義内で次のシグネチャを使用して宣言する必要があります。これらのコンストラクターは、`IntPtr` 値を返す必要があり、メソッドの名前はコンストラクターである必要があります。 たとえば、`initWithFrame:` コンストラクターをバインドするには、次のように使用します。
 
 ```csharp
 [Export ("initWithFrame:")]
@@ -325,12 +325,12 @@ IntPtr Constructor (CGRect frame);
 
 ### <a name="binding-protocols"></a>プロトコルのバインド
 
-API の設計ドキュメントで説明されているように、[モデルとプロトコルの説明](~/ios/internals/api-design/index.md#models)に関するセクションでは、Xamarin. iOS は、目的の C プロトコルを、[`[Model]`](~/cross-platform/macios/binding/binding-types-reference.md#ModelAttribute)
+API の設計ドキュメントで説明されているように、[モデルとプロトコルの説明](~/ios/internals/api-design/index.md#models)に関するセクションでは、Xamarin. iOS は、目的の C プロトコルを[`[Model]`](~/cross-platform/macios/binding/binding-types-reference.md#ModelAttribute)でフラグが設定されたクラスにマップします。
 属性. これは通常、目的の C デリゲートクラスを実装するときに使用されます。
 
 通常のバインドされたクラスとデリゲートクラスの大きな違いは、デリゲートクラスには1つ以上のオプションのメソッドがある場合があるということです。
 
-たとえば、 `UIKit`クラス`UIAccelerometerDelegate`について考えてみましょう。これは、Xamarin でのバインド方法です。
+たとえば、`UIKit` クラス `UIAccelerometerDelegate`について考えてみます。これは、Xamarin でのバインド方法です。
 
 ```csharp
 [BaseType (typeof (NSObject))]
@@ -341,14 +341,14 @@ interface UIAccelerometerDelegate {
 }
 ```
 
-これは、の`UIAccelerometerDelegate`定義では省略可能なメソッドであるため、他に行うことはできません。 ただし、プロトコルに必要なメソッドがあった場合は、[`[Abstract]`](~/cross-platform/macios/binding/binding-types-reference.md#AbstractAttribute)
+これは `UIAccelerometerDelegate` の定義では省略可能なメソッドであるため、他に行うことはできません。 ただし、プロトコルに必要なメソッドがあった場合は、 [`[Abstract]`](~/cross-platform/macios/binding/binding-types-reference.md#AbstractAttribute)を追加する必要があります。
 属性をメソッドに対して行います。 これにより、実装のユーザーがメソッドの本体を実際に提供するようになります。
 
 一般に、プロトコルは、メッセージに応答するクラスで使用されます。 これは、通常、プロトコルのメソッドに応答するオブジェクトのインスタンスを "delegate" プロパティに割り当てることによって行われます。
 
-Xamarin の慣例では、の任意の`NSObject`インスタンスをデリゲートに割り当てることができ、厳密に型指定されたバージョンを公開する、目的 C の疎結合スタイルの両方をサポートします。 このため、通常は、厳密に型`Delegate`指定されたプロパティと、 `WeakDelegate`厳密に型指定されていないプロパティの両方を提供します。 通常、疎型のバージョンをに[`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)バインドし、 [`[Wrap]`](~/cross-platform/macios/binding/binding-types-reference.md#WrapAttribute)属性を使用して厳密に型指定されたバージョンを提供します。
+Xamarin の慣例では、`NSObject` の任意のインスタンスをデリゲートに割り当てることができ、厳密に型指定されたバージョンを公開するという、目的 C の疎結合スタイルの両方をサポートします。 このため、通常は、厳密に型指定された `Delegate` プロパティと、厳密に型指定されていない `WeakDelegate` の両方を提供します。 通常、 [`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)では、弱い型指定されたバージョンをバインドし、 [`[Wrap]`](~/cross-platform/macios/binding/binding-types-reference.md#WrapAttribute)属性を使用して厳密に型指定されたバージョンを提供します。
 
-これは、クラスをバインド`UIAccelerometer`した方法を示しています。
+これは `UIAccelerometer` クラスをバインドした方法を示しています。
 
 ```csharp
 [BaseType (typeof (NSObject))]
@@ -373,9 +373,9 @@ interface UIAccelerometer {
 
 Monotouch.dialog 7.0 以降では、新たに強化されたプロトコルバインド機能が導入されました。  この新しいサポートにより、特定のクラスで1つ以上のプロトコルを採用するために、目的の C の表現を簡単に使用できるようになります。
 
-目的が C の`MyProtocol`すべてのプロトコル定義に対して、すべて`IMyProtocol`の必要なメソッドをプロトコルから一覧表示するインターフェイスと、すべてのオプションのメソッドを提供する拡張クラスを使用できるようになりました。  上記のを Xamarin Studio エディターの新しいサポートと組み合わせることで、開発者は、前の抽象モデルクラスの個別のサブクラスを使用しなくても、プロトコルメソッドを実装できます。
+すべてのプロトコル定義 (目的: C) では、すべての必要なメソッドをプロトコルから、すべての省略可能なメソッドを提供する拡張クラスを一覧表示する `IMyProtocol` インターフェイスが `MyProtocol` ます。  上記のを Xamarin Studio エディターの新しいサポートと組み合わせることで、開発者は、前の抽象モデルクラスの個別のサブクラスを使用しなくても、プロトコルメソッドを実装できます。
 
-属性を[`[Protocol]`](~/cross-platform/macios/binding/binding-types-reference.md#ProtocolAttribute)含む定義では、次の3つのサポートクラスが生成され、プロトコルの使用方法が大幅に向上します。
+[`[Protocol]`](~/cross-platform/macios/binding/binding-types-reference.md#ProtocolAttribute)属性を含む定義では、次の3つのサポートクラスを実際に生成して、プロトコルの使用方法を大幅に向上させます。
 
 ```csharp
 // Full method implementation, contains all methods
@@ -401,7 +401,7 @@ static class IMyProtocol_Extensions {
 
 生成された**インターフェイス定義**はにあります。  これは、プロトコルから必要なすべてのメソッドを含むインターフェイスです。  これにより、開発者は、インターフェイスを実装するだけで、プロトコルを実装することができます。  ランタイムは、プロトコルを採用するときに型を自動的に登録します。
 
-インターフェイスには、必要なメソッドが一覧表示されるだけで、オプションのメソッドが公開されることに注意してください。  これは、プロトコルを採用するクラスが、必要なメソッドの完全な型チェックを取得することを意味しますが、弱い型指定を行う必要があります (手動で[`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) 
+インターフェイスには、必要なメソッドが一覧表示されるだけで、オプションのメソッドが公開されることに注意してください。  これは、プロトコルを採用するクラスが必要なメソッドの完全な型チェックを取得することを意味しますが、弱い型指定を行う必要があります (を使用して手動で入力する必要があり[`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) 
 省略可能なプロトコルメソッドの属性と一致します。
 
 プロトコルを使用する API を簡単に使用できるようにするために、バインディングツールは、すべての省略可能なメソッドを公開する拡張メソッドクラスも生成します。  これは、API を使用している限り、すべてのメソッドを含むプロトコルとして扱うことができることを意味します。
@@ -431,7 +431,7 @@ interface MyTool {
 }
 ```
 
-のバインド時には、 `IMyProtocol`が存在しないため、空のインターフェイスを提供する必要があるため、上記の手順が必要になります。
+`IMyProtocol` が存在しない場合はバインド時に、空のインターフェイスを提供する必要があるため、上記が必要です。
 
 #### <a name="adopting-protocol-generated-interfaces"></a>プロトコルによって生成されたインターフェイスの導入
 
@@ -462,10 +462,10 @@ class MyDelegate : NSObject, IUITableViewDelegate {
 
 ### <a name="binding-class-extensions"></a>バインディングクラスの拡張
 
-目的 C では、スピリットC#の拡張メソッドと同様に、新しいメソッドでクラスを拡張することができます。 これらのメソッドのいずれかが存在する場合は、[`[BaseType]`](~/cross-platform/macios/binding/binding-types-reference.md#BaseTypeAttribute) 
+目的 C では、スピリットC#の拡張メソッドと同様に、新しいメソッドでクラスを拡張することができます。 これらのメソッドのいずれかが存在する場合は、を使用でき[`[BaseType]`](~/cross-platform/macios/binding/binding-types-reference.md#BaseTypeAttribute) 
 目的の C メッセージの受信者としてメソッドにフラグを付ける属性。
 
-たとえば、Xamarin では、がの`NSString` `NSStringDrawingExtensions`メソッドとしてインポートされるときに`UIKit` 、に定義されている拡張メソッドをバインドしました。次に例を示します。
+たとえば、Xamarin では、次のように `UIKit` が `NSStringDrawingExtensions`のメソッドとしてインポートされた場合に `NSString` で定義されている拡張メソッドをバインドしました。
 
 ```csharp
 [Category, BaseType (typeof (NSString))]
@@ -479,7 +479,7 @@ interface NSStringDrawingExtensions {
 
 ### <a name="binding-objective-c-argument-lists"></a>バインディング目標-C 引数リスト
 
-可変個引数は、引数をサポートします。 例えば:
+可変個引数は、引数をサポートします。 (例:
 
 ```objc
 - (void) appendWorkers:(XWorker *) firstWorker, ...
@@ -522,14 +522,14 @@ public void AppendWorkers(params Worker[] workers)
 
 通常、これらのフィールドには、参照する必要がある文字列または整数値が含まれます。 一般的に、特定の通知を表す文字列として使用され、ディクショナリのキーとして使用されます。
 
-フィールドをバインドするには、インターフェイス定義ファイルにプロパティを追加し、 [`[Field]`](~/cross-platform/macios/binding/binding-types-reference.md#FieldAttribute)属性を使用してプロパティを装飾します。 この属性は、1つのパラメーター (参照するシンボルの C 名) を受け取ります。 例えば:
+フィールドをバインドするには、インターフェイス定義ファイルにプロパティを追加し、 [`[Field]`](~/cross-platform/macios/binding/binding-types-reference.md#FieldAttribute)属性を使用してプロパティを装飾します。 この属性は、1つのパラメーター (参照するシンボルの C 名) を受け取ります。 (例:
 
 ```csharp
 [Field ("NSSomeEventNotification")]
 NSString NSSomeEventNotification { get; }
 ```
 
-から`NSObject`派生していない静的クラス内のさまざまなフィールドをラップする場合は、[`[Static]`](~/cross-platform/macios/binding/binding-types-reference.md#StaticAttribute_Class) 
+`NSObject`から派生しない静的クラス内のさまざまなフィールドをラップする場合は、 [`[Static]`](~/cross-platform/macios/binding/binding-types-reference.md#StaticAttribute_Class)を使用できます。 
 クラスの属性: 次のようになります。
 
 ```csharp
@@ -540,17 +540,17 @@ interface LonelyClass {
 }
 ```
 
-上のは、から`LonelyClass` `NSObject`派生せず、として公開される`NSString`への`NSSomeEventNotification` 
- `NSString`バインディングを格納するを生成します。
+上の例では、`NSObject` から派生せず、`NSString` として公開 `NSString``NSSomeEventNotification`
+へのバインドを含む `LonelyClass` が生成されます。
 
-属性[`[Field]`](~/cross-platform/macios/binding/binding-types-reference.md#FieldAttribute)は、次のデータ型に適用できます。
+[`[Field]`](~/cross-platform/macios/binding/binding-types-reference.md#FieldAttribute)属性は、次のデータ型に適用できます。
 
-- `NSString`参照 (読み取り専用プロパティのみ)
-- `NSArray`参照 (読み取り専用プロパティのみ)
+- `NSString` 参照 (読み取り専用プロパティのみ)
+- `NSArray` 参照 (読み取り専用プロパティのみ)
 - 32ビット整数 (`System.Int32`)
 - 64ビット整数 (`System.Int64`)
-- 32ビット浮動小数点`System.Single`()
-- 64ビット浮動小数点`System.Double`()
+- 32ビット浮動小数点 (`System.Single`)
+- 64ビット浮動小数点 (`System.Double`)
 - `System.Drawing.SizeF`
 - `CGSize`
 
@@ -564,7 +564,7 @@ interface LonelyClass {
 }
 ```
 
-静的にリンクして`__Internal`いる場合は、バインド先のライブラリがないため、という名前を使用する必要があります。
+静的にリンクする場合は、バインド先のライブラリがないため、`__Internal` 名を使用する必要があります。
 
 ```csharp
 [Static]
@@ -578,7 +578,7 @@ interface LonelyClass {
 
 ### <a name="binding-enums"></a>列挙型のバインド
 
-バインドファイルに`enum`を直接追加することで、(バインディングと最終的なプロジェクトの両方でコンパイルする必要がある) 別のソースファイルを使用しなくても、API 定義内で簡単に使用できるようになります。
+バインドファイルに `enum` を直接追加することにより、(バインディングと最終的なプロジェクトの両方でコンパイルする必要がある) 別のソースファイルを使用しなくても、API 定義内で簡単に使用できるようになります。
 
 例:
 
@@ -592,7 +592,7 @@ interface MyType {
 }
 ```
 
-また、定数を置換`NSString`する独自の列挙型を作成することもできます。 この場合、ジェネレーターは**自動的に**、列挙値と nsstring 定数を変換するメソッドを作成します。
+また、独自の列挙体を作成して `NSString` 定数を置き換えることもできます。 この場合、ジェネレーターは**自動的に**、列挙値と nsstring 定数を変換するメソッドを作成します。
 
 例:
 
@@ -619,20 +619,20 @@ interface MyType {
 }
 ```
 
-上の例では、 `void Perform (NSString mode);` [`[Internal]`](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute)属性を使用して修飾することができます。 これにより、バインドコンシューマーからの定数ベースの API が**非表示**になります。
+上の例では、 [`[Internal]`](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute)属性を使用して `void Perform (NSString mode);` を装飾することができます。 これにより、バインドコンシューマーからの定数ベースの API が**非表示**になります。
 
-ただし、これにより、API の代替手段として属性[`[Wrap]`](~/cross-platform/macios/binding/binding-types-reference.md#WrapAttribute)が使用されるため、型のサブクラスが制限されます。 これらのメソッドは生成`virtual`されません。つまり、オーバーライドすることはできません。つまり、適切な選択である可能性があります。
+ただし、これにより、API の代替手段として[`[Wrap]`](~/cross-platform/macios/binding/binding-types-reference.md#WrapAttribute)属性が使用されるため、型のサブクラスが制限されます。 生成されたメソッドは `virtual`ではありません。つまり、オーバーライドすることはできません。つまり、適切な選択である可能性があります。
 
-別の方法として、元`NSString`の、ベースの定義`[Protected]`をとしてマークする方法もあります。 これにより、必要に応じてサブクラス化を行うことができ、wrap'ed バージョンは引き続き動作し、オーバーライドされたメソッドを呼び出します。
+代替手段として、元の `NSString`ベースの定義を `[Protected]`としてマークする方法があります。 これにより、必要に応じてサブクラス化を行うことができ、wrap'ed バージョンは引き続き動作し、オーバーライドされたメソッドを呼び出します。
 
-### <a name="binding-nsvalue-nsnumber-and-nsstring-to-a-better-type"></a>、 `NSValue` 、`NSNumber`および`NSString`をより適切な型にバインドする
+### <a name="binding-nsvalue-nsnumber-and-nsstring-to-a-better-type"></a>`NSValue`、`NSNumber`、および `NSString` をより適切な型にバインドする
 
-属性[`[BindAs]`](~/cross-platform/macios/binding/binding-types-reference.md#BindAsAttribute)を使用すると`NSValue` 、 `NSString`より正確C#な型へのバインド`NSNumber`と (列挙) が可能になります。 属性を使用すると、ネイティブ API でより正確で正確な .NET API を作成できます。
+[`[BindAs]`](~/cross-platform/macios/binding/binding-types-reference.md#BindAsAttribute)属性を使用すると、`NSNumber`、`NSValue`、および `NSString`(列挙型C# ) をより正確な型にバインドできます。 属性を使用すると、ネイティブ API でより正確で正確な .NET API を作成できます。
 
-メソッド (戻り値)、パラメーター、およびプロパティは、を使用[`[BindAs]`](~/cross-platform/macios/binding/binding-types-reference.md#BindAsAttribute)して装飾できます。 唯一の制限は、メンバーを内に配置することはでき**ません**。[`[Protocol]`](~/cross-platform/macios/binding/binding-types-reference.md#ProtocolAttribute) 
-また[`[Model]`](~/cross-platform/macios/binding/binding-types-reference.md#ModelAttribute)はインターフェイス。
+メソッド (戻り値)、パラメーター、およびプロパティを[`[BindAs]`](~/cross-platform/macios/binding/binding-types-reference.md#BindAsAttribute)で装飾できます。 唯一の制限は、メンバーを[`[Protocol]`](~/cross-platform/macios/binding/binding-types-reference.md#ProtocolAttribute)内に配置することはでき**ない**ということです。 
+または[`[Model]`](~/cross-platform/macios/binding/binding-types-reference.md#ModelAttribute)インターフェイス。
 
-例:
+(例:
 
 ```csharp
 [return: BindAs (typeof (bool?))]
@@ -647,11 +647,11 @@ NSNumber ShouldDraw ([BindAs (typeof (CGRect))] NSValue rect);
 bool? ShouldDraw (CGRect rect) { ... }
 ```
 
-内部的には、 `bool?`  <->  `NSNumber`との変換`CGRect`を行います。  <->  `NSValue`
+内部的には、`bool?` <-> `NSNumber` および `CGRect` <-> `NSValue` 変換を行います。
 
-[`[BindAs]`](~/cross-platform/macios/binding/binding-types-reference.md#BindAsAttribute)また、はおよび`NSNumber` ( `NSString`列挙型) の`NSValue`配列もサポートしています。
+[`[BindAs]`](~/cross-platform/macios/binding/binding-types-reference.md#BindAsAttribute)は、`NSNumber` `NSValue` と `NSString`(列挙型) の配列もサポートしています。
 
-例:
+(例:
 
 ```csharp
 [BindAs (typeof (CAScroll []))]
@@ -666,23 +666,23 @@ NSString [] SupportedScrollModes { get; set; }
 CAScroll [] SupportedScrollModes { get; set; }
 ```
 
-`CAScroll`は、 `NSString`サポートされている列挙型です`NSString` 。適切な値を取得し、型変換を処理します。
+`NSString` がサポートされている列挙型の `CAScroll` は、正しい `NSString` 値を取得し、型変換を処理します。
 
-サポートされ[`[BindAs]`](~/cross-platform/macios/binding/binding-types-reference.md#BindAsAttribute)ている変換の種類については、ドキュメントを参照してください。
+サポートされている変換の種類については、 [`[BindAs]`](~/cross-platform/macios/binding/binding-types-reference.md#BindAsAttribute)のドキュメントを参照してください。
 
 <a name="Binding_Notifications" />
 
 ### <a name="binding-notifications"></a>バインド通知
 
-通知とは、 `NSNotificationCenter.DefaultCenter`にポストされたメッセージであり、アプリケーションのある部分から別の部分にメッセージをブロードキャストするメカニズムとして使用されます。 開発者は、通常、 [Nsnotificationcenter](xref:Foundation.NSNotificationCenter)の[Addobserver](xref:Foundation.NSNotificationCenter.AddObserver(Foundation.NSString,System.Action{Foundation.NSNotification}))メソッドを使用して通知をサブスクライブします。 アプリケーションは、メッセージを通知センターにポストするときに、通常、 [Nsnotification. UserInfo](xref:Foundation.NSNotification.UserInfo) dictionary に格納されているペイロードを格納します。 このディクショナリは厳密に型指定されていません。ユーザーは通常、ディクショナリで使用できるキーとディクショナリに格納できる値の型をドキュメントに読み込む必要があるため、情報を取得することは間違いが起こりやすくなります。 キーの存在は、ブール値としても使用されることがあります。
+通知は、`NSNotificationCenter.DefaultCenter` にポストされたメッセージであり、アプリケーションのある部分から別の部分にメッセージをブロードキャストするメカニズムとして使用されます。 開発者は、通常、 [Nsnotificationcenter](xref:Foundation.NSNotificationCenter)の[Addobserver](xref:Foundation.NSNotificationCenter.AddObserver(Foundation.NSString,System.Action{Foundation.NSNotification}))メソッドを使用して通知をサブスクライブします。 アプリケーションは、メッセージを通知センターにポストするときに、通常、 [Nsnotification. UserInfo](xref:Foundation.NSNotification.UserInfo) dictionary に格納されているペイロードを格納します。 このディクショナリは厳密に型指定されていません。ユーザーは通常、ディクショナリで使用できるキーとディクショナリに格納できる値の型をドキュメントに読み込む必要があるため、情報を取得することは間違いが起こりやすくなります。 キーの存在は、ブール値としても使用されることがあります。
 
-Xamarin. iOS バインディングジェネレーターは、開発者が通知をバインドできるようにします。 これを行うには、[`[Notification]`](~/cross-platform/macios/binding/binding-types-reference.md#NotificationAttribute)
-でタグ付けされたプロパティの属性[`[Field]`](~/cross-platform/macios/binding/binding-types-reference.md#FieldAttribute)
+Xamarin. iOS バインディングジェネレーターは、開発者が通知をバインドできるようにします。 これを行うには、 [`[Notification]`](~/cross-platform/macios/binding/binding-types-reference.md#NotificationAttribute)を設定します。
+[`[Field]`](~/cross-platform/macios/binding/binding-types-reference.md#FieldAttribute)でタグ付けされたプロパティの属性
 プロパティ (パブリックまたはプライベートにすることができます)。
 
-この属性は、ペイロードを含まない通知の引数なしで使用できます。また`System.Type` 、API 定義で別のインターフェイスを参照するを指定することもできます。この場合、通常は "EventArgs" で終わる名前が使用されます。 ジェネレーターは、サブ`EventArgs`クラスを持つクラスにインターフェイスを変換し、そこに一覧表示されているすべてのプロパティを含めます。 属性[`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)を EventArgs クラスで使用して、値を取得する目的の C 辞書を検索するために使用するキーの名前を一覧表示する必要があります。
+この属性は、ペイロードを含まない通知の引数なしで使用できます。また、API 定義で別のインターフェイスを参照する `System.Type` を指定することもできます。この場合、通常は "EventArgs" で終わる名前が使用されます。 ジェネレーターは、`EventArgs` サブクラスを持つクラスにインターフェイスを変換し、そこに一覧表示されているすべてのプロパティを含みます。 [`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)属性を EventArgs クラスで使用して、値を取得する目的の C 辞書を検索するために使用するキーの名前を一覧表示する必要があります。
 
-例:
+(例:
 
 ```csharp
 interface MyClass {
@@ -692,7 +692,7 @@ interface MyClass {
 }
 ```
 
-上記のコードでは、次の`MyClass.Notifications`メソッドを使用して、入れ子になったクラスを生成します。
+上記のコードでは、次のメソッドを使用して、入れ子になったクラス `MyClass.Notifications` が生成されます。
 
 ```csharp
 public class MyClass {
@@ -711,13 +711,13 @@ var token = MyClass.Notifications.ObserverDidStart ((notification) => {
 });
 ```
 
-から`ObserveDidStart`返された値を使用して、通知の受信を簡単に停止できます。次に例を示します。
+次のように、`ObserveDidStart` から返された値を使用して、通知の受信を簡単に停止できます。
 
 ```csharp
 token.Dispose ();
 ```
 
-または、 [Nsnotification](xref:Foundation.NSNotificationCenter.RemoveObserver(Foundation.NSObject))を呼び出して、トークンを渡すこともできます。 通知にパラメーターが含まれている場合は、 `EventArgs`次のようにヘルパーインターフェイスを指定する必要があります。
+または、 [Nsnotification](xref:Foundation.NSNotificationCenter.RemoveObserver(Foundation.NSObject))を呼び出して、トークンを渡すこともできます。 通知にパラメーターが含まれている場合は、次のように、ヘルパー `EventArgs` インターフェイスを指定する必要があります。
 
 ```csharp
 interface MyClass {
@@ -740,7 +740,7 @@ interface MyScreenChangedEventArgs {
 }
 ```
 
-上の例では`MyScreenChangedEventArgs` 、 `ScreenY`プロパティと`ScreenX`プロパティを持つクラスが生成されます。これらのプロパティは、キー "screenxkey" と "screenxkey" をそれぞれ使用して、適切なを適用し[ます。](xref:Foundation.NSNotification.UserInfo)移行. 属性は、値を抽出するのではなく、 `UserInfo`でキーが設定されているかどうかを調べるジェネレーターに使用されます。 `[ProbePresence]` これは、キーの存在が値である場合 (通常はブール値の場合) に使用されます。
+上の例では、`ScreenX` と `ScreenY` プロパティを持つ `MyScreenChangedEventArgs` クラスを生成し[ます。](xref:Foundation.NSNotification.UserInfo)これらのプロパティは、キー "screenxkey" と "Screenxkey" をそれぞれ使用して、適切な変換を適用します。 `[ProbePresence]` 属性は、値を抽出するのではなく、`UserInfo`でキーが設定されているかどうかを検査するためにジェネレーターで使用されます。 これは、キーの存在が値である場合 (通常はブール値の場合) に使用されます。
 
 これにより、次のようなコードを記述できます。
 
@@ -754,7 +754,7 @@ var token = MyClass.NotificationsObserveScreenChanged ((notification) => {
 
 ### <a name="binding-categories"></a>バインドのカテゴリ
 
-カテゴリは、クラスで使用可能なメソッドとプロパティのセットを拡張するために使用される、目的の C の機構です。   実際には、特定のフレームワークがリンク`NSObject` `UIKit`されている場合 (たとえば)、新しいフレームワークがにリンクされている場合にのみ、基本クラスの機能を拡張する (たとえば) ために使用されます。   場合によっては、機能によってクラスの特徴を整理するために使用されます。   これらは、スピリットの拡張C#メソッドに似ています。このカテゴリは、次のようになります。
+カテゴリは、クラスで使用可能なメソッドとプロパティのセットを拡張するために使用される、目的の C の機構です。   実際には、特定のフレームワークがリンクされている (たとえば `UIKit`) ときに基本クラスの機能を拡張するために使用されます (たとえば、`NSObject`)。新しいフレームワークがリンクされている場合にのみ、メソッドを使用できるようにします。   場合によっては、機能によってクラスの特徴を整理するために使用されます。   これらは、スピリットの拡張C#メソッドに似ています。このカテゴリは、次のようになります。
 
 ```csharp
 @interface UIView (MyUIViewExtension)
@@ -762,13 +762,13 @@ var token = MyClass.NotificationsObserveScreenChanged ((notification) => {
 @end
 ```
 
-上の例でライブラリに見つかった場合は、メソッド`UIView` `makeBackgroundRed`を使用してのインスタンスを拡張します。
+上の例では、ライブラリで見つかった場合、`makeBackgroundRed`メソッドを使用して `UIView` のインスタンスを拡張します。
 
-これらをバインドするには、インターフェイス[`[Category]`](~/cross-platform/macios/binding/binding-types-reference.md#CategoryAttribute)定義で属性を使用します。  を使用する場合[`[Category]`](~/cross-platform/macios/binding/binding-types-reference.md#CategoryAttribute)
-属性。[`[BaseType]`](~/cross-platform/macios/binding/binding-types-reference.md#BaseTypeAttribute) 
+これらをバインドするには、インターフェイス定義で[`[Category]`](~/cross-platform/macios/binding/binding-types-reference.md#CategoryAttribute)属性を使用します。  [`[Category]`](~/cross-platform/macios/binding/binding-types-reference.md#CategoryAttribute)を使用する場合
+属性 ( [`[BaseType]`](~/cross-platform/macios/binding/binding-types-reference.md#BaseTypeAttribute)の意味) 
 属性の変更は、拡張する基底クラスを指定するために使用されます。これは、拡張する型になります。
 
-拡張機能がどのよう`UIView`にバインドされ、拡張C#メソッドに変換されるかを次に示します。
+`UIView` の拡張機能がどのようにバインドされ、 C#拡張メソッドに変換されるかを次に示します。
 
 ```csharp
 [BaseType (typeof (UIView))]
@@ -779,7 +779,7 @@ interface MyUIViewExtension {
 }
 ```
 
-上の例では`MyUIViewExtension` 、 `MakeBackgroundRed`拡張メソッドを含むクラスを作成します。  これは、任意`UIView`のサブクラスで "makebackgroundred" を呼び出すことができることを意味します。これにより、目的の C でも同じ機能が得られます。 場合によっては、カテゴリを使用してシステムクラスを拡張するのではなく、装飾のために機能を整理します。  以下に例を示します。
+上の例では、`MakeBackgroundRed` 拡張メソッドを含むクラス `MyUIViewExtension` を作成します。  これにより、任意の `UIView` サブクラスで "MakeBackgroundRed" を呼び出すことができるようになりました。これにより、目的の C でも同じ機能が得られます。 場合によっては、カテゴリを使用してシステムクラスを拡張するのではなく、装飾のために機能を整理します。  以下に例を示します。
 
 ```csharp
 @interface SocialNetworking (Twitter)
@@ -792,7 +792,7 @@ picture;
 @end
 ```
 
-を使用できますが、[`[Category]`](~/cross-platform/macios/binding/binding-types-reference.md#CategoryAttribute)
+[`[Category]`](~/cross-platform/macios/binding/binding-types-reference.md#CategoryAttribute)を使用することもできます。
 属性この装飾スタイルの宣言に加えて、すべてをクラス定義に追加することもできます。  これらはどちらも同じことを実現します。
 
 ```csharp
@@ -832,13 +832,13 @@ interface SocialNetworking {
 
 ### <a name="binding-blocks"></a>バインドブロック
 
-ブロックは、Apple によって導入された新しいコンストラクトでC#あり、匿名メソッドに相当するものを目的の C にします。 たとえば、クラスは`NSSet`このメソッドを公開するようになりました。
+ブロックは、Apple によって導入された新しいコンストラクトでC#あり、匿名メソッドに相当するものを目的の C にします。 たとえば、`NSSet` クラスでは、次のメソッドが公開されます。
 
 ```csharp
 - (void) enumerateObjectsUsingBlock:(void (^)(id obj, BOOL *stop) block
 ```
 
-上の説明は、という`enumerateObjectsUsingBlock:` 1 つの引数を`block`受け取るという名前のメソッドを宣言しています。 このブロックは、現在のC#環境 ("this" ポインター、ローカル変数とパラメーターへのアクセス) のキャプチャをサポートしているという点で、匿名メソッドに似ています。 上の`NSSet`上のメソッドは、2つの`NSObject`パラメーター ( `id obj`部分) `BOOL *stop`とブール値 () へのポインターを持つブロックを呼び出します。
+上の説明は、`block`という1つの引数を受け取る `enumerateObjectsUsingBlock:` という名前のメソッドを宣言しています。 このブロックは、現在のC#環境 ("this" ポインター、ローカル変数とパラメーターへのアクセス) のキャプチャをサポートしているという点で、匿名メソッドに似ています。 上記の `NSSet` のメソッドは、`NSObject` (`id obj` 部分) とブール型 (`BOOL *stop`) 部分へのポインターの2つのパラメーターを持つブロックを呼び出します。
 
 この種の API を btouch にバインドするには、最初にブロックの型シグネチャをC#デリゲートとして宣言し、次のように api エントリポイントから参照する必要があります。
 
@@ -877,10 +877,10 @@ s.Enumerate ((obj, stop) => {
 
 ### <a name="asynchronous-methods"></a>非同期メソッド
 
-バインディングジェネレーターは、特定のクラスのメソッドを、非同期のわかりやすいメソッド (タスクまたはタスク&lt;T&gt;を返すメソッド) に変換できます。
+バインディングジェネレーターは、特定のクラスのメソッドを、非同期のわかりやすいメソッド (タスクまたはタスクを返すメソッド&lt;T&gt;) に変換できます。
 
-使用できるのは、[`[Async]`](~/cross-platform/macios/binding/binding-types-reference.md#AsyncAttribute) 
-void を返し、最後の引数がコールバックであるメソッドの属性。  メソッドにこのを適用すると、バインドジェネレーターは、サフィックス`Async`を使用して、そのメソッドのバージョンを生成します。  コールバックがパラメーターを受け取らない場合、戻り値`Task`はになります。コールバックがパラメーターを受け取ると、結果はに`Task<T>`なります。  コールバックが複数のパラメーターを受け取る場合`ResultType`は、または`ResultTypeName`を設定して、すべてのプロパティを保持する、生成される型の目的の名前を指定する必要があります。
+を使用することができ[`[Async]`](~/cross-platform/macios/binding/binding-types-reference.md#AsyncAttribute) 
+void を返し、最後の引数がコールバックであるメソッドの属性。  メソッドにこのを適用すると、バインドジェネレーターは `Async`サフィックスを付けて、そのメソッドのバージョンを生成します。  コールバックがパラメーターを受け取らない場合、戻り値は `Task`になります。コールバックがパラメーターを受け取る場合、結果は `Task<T>`になります。  コールバックが複数のパラメーターを受け取る場合は、`ResultType` または `ResultTypeName` を設定して、すべてのプロパティを保持する、生成される型の目的の名前を指定する必要があります。
 
 例:
 
@@ -901,11 +901,11 @@ Task<string> LoadFileAsync (string file);
 
 ### <a name="surfacing-strong-types-for-weak-nsdictionary-parameters"></a>弱い NSDictionary パラメーターの厳密な型を提示しています
 
-目標 C API の多くの場所では、パラメーターは特定のキーと値`NSDictionary`を持つ弱く型指定された api として渡されますが、エラーが発生しやすくなります (無効なキーを渡したり、警告を受け取ったりすることはできません)。を使用するには、使用可能なキーの名前と値を参照するために、ドキュメントへの複数のトリップが必要になります。
+目標 C API の多くの場所では、パラメーターは、特定のキーと値を持つ厳密に型指定されていない `NSDictionary` Api として渡されますが、これらはエラーが発生しやすくなります (無効な値を渡して警告を表示することはできません。また、警告は表示されません)。そのため、使用可能なキーの名前と値を参照するために、ドキュメントへの複数のトリップが必要になります。
 
 この解決策は、厳密に型指定されたバージョンの API を提供する厳密に型指定されたバージョンを提供することです。また、背後では、基になるさまざまなキーと値をマップします。
 
-たとえば、目的の C API が`NSDictionary`を受け入れ、0.0 から 1.0 `XyzCaptionKey`のボリューム値を受け取り`NSNumber` 、文字列`XyzVolumeKey`を受け取るキーを取得するという説明がある場合、ユーザーにとって優れた API を使用する必要があります。次のようになります。
+たとえば、目的の C API が `NSDictionary` を受け入れ、0.0 から1.0 のボリューム値と文字列を受け取る `XyzCaptionKey` を `NSNumber` 受け取るキー `XyzVolumeKey` を取得しているとします。では、ユーザーは次のような優れた API を使用できます。
 
 ```csharp
 public class  XyzOptions {
@@ -914,12 +914,12 @@ public class  XyzOptions {
 }
 ```
 
-この`Volume`プロパティは、null 値を許容する float として定義されます。これは、目的の C では、これらのディクショナリに値を設定する必要がないため、値が設定されない場合があります。
+`Volume` プロパティは、null 値を許容する float として定義されます。これは、目的の C では、これらのディクショナリに値を設定する必要がないため、値が設定されない場合があります。
 
 これを行うには、いくつかの操作を行う必要があります。
 
 - 厳密に型指定されたクラスを作成します。これは、 [Dictionarycontainer](xref:Foundation.DictionaryContainer)をサブクラスにし、各プロパティのさまざまな getter および setter を提供します。
-- 新しい厳密に型指定さ`NSDictionary`れたバージョンを取得するために使用するメソッドのオーバーロードを宣言します。
+- 新しい厳密に型指定されたバージョンを取得するために `NSDictionary` を受け取るメソッドのオーバーロードを宣言します。
 
 厳密に型指定されたクラスを手動で作成することも、ジェネレーターを使用して作業を行うこともできます。  まず、何が行われているかを理解し、次に自動アプローチについて理解するために、この方法を手動で試してみましょう。
 
@@ -956,13 +956,13 @@ interface XyzPanel {
 }
 ```
 
-API を上書きする必要がない場合は、「」を使用して、NSDictionary ベースの API を安全に非表示にすることができます。[`[Internal]`](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute)
+API を上書きする必要がない場合は、を使用して、NSDictionary ベースの API を安全に非表示にすることができ[`[Internal]`](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute)
 属性.
 
-ご覧のとおり、[`[Wrap]`](~/cross-platform/macios/binding/binding-types-reference.md#WrapAttribute)
-属性を使用して新しい API エントリポイントを作成し、厳密に型指定`XyzOptions`されたクラスを使用します。  ラッパーメソッドでは、null を渡すこともできます。
+ご覧のように、 [`[Wrap]`](~/cross-platform/macios/binding/binding-types-reference.md#WrapAttribute)を使用します。
+属性を使用して新しい API エントリポイントを作成し、厳密に型指定された `XyzOptions` クラスを使用します。  ラッパーメソッドでは、null を渡すこともできます。
 
-ここでは、 `XyzOptionsKeys`値がどこから来たかについて説明しませんでした。  次のよう`XyzOptionsKeys`に、通常は API が静的クラスに表示するキーをグループ化します。
+ここで説明しなかったのは、`XyzOptionsKeys` 値の取得元となる点です。  通常、次のように、API が `XyzOptionsKeys`のような静的クラスにあるキーをグループ化します。
 
 ```csharp
 [Static]
@@ -977,7 +977,7 @@ class XyzOptionKeys {
 
 これらの厳密に型指定された辞書を作成するための自動サポートについて説明します。  これにより、多くの定型句が回避され、外部ファイルを使用する代わりに、API コントラクトで直接ディクショナリを定義できます。
 
-厳密に型指定されたディクショナリを作成するには、API にインターフェイスを導入し、 [StrongDictionary](~/cross-platform/macios/binding/binding-types-reference.md#StrongDictionary)属性を使用してそれを装飾します。  これにより、ジェネレーターは、から`DictionaryContainer`派生し、厳密に型指定されたアクセサーを提供するインターフェイスと同じ名前を持つクラスを作成する必要があることをジェネレーターに指示します。
+厳密に型指定されたディクショナリを作成するには、API にインターフェイスを導入し、 [StrongDictionary](~/cross-platform/macios/binding/binding-types-reference.md#StrongDictionary)属性を使用してそれを装飾します。  これは、`DictionaryContainer` から派生し、厳密に型指定されたアクセサーを提供するインターフェイスと同じ名前のクラスを作成する必要があることをジェネレーターに通知します。
 
 [`[StrongDictionary]`](~/cross-platform/macios/binding/binding-types-reference.md#StrongDictionary)属性は、1つのパラメーターを受け取ります。これは、ディクショナリキーを含む静的クラスの名前です。  その後、インターフェイスの各プロパティは、厳密に型指定されたアクセサーになります。  既定では、コードは、静的クラスでサフィックスが "Key" のプロパティの名前を使用してアクセサーを作成します。
 
@@ -1010,7 +1010,7 @@ interface XyzPanel {
 }
 ```
 
-`XyzOption`メンバー内で別のフィールド (サフィックス`Key`が付いたプロパティの名前ではない) を参照する必要がある場合は、プロパティを[`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) 
+`XyzOption` メンバーで別のフィールド (サフィックス `Key`を持つプロパティの名前ではない) を参照する必要がある場合は、を使用してプロパティを装飾でき[`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) 
 使用する名前を持つ属性。
 
 <a name="Type_mappings" />
@@ -1027,16 +1027,16 @@ interface XyzPanel {
 
 |目的-C 型の名前|Xamarin Unified API の種類|
 |---|---|
-|`BOOL`, `GLboolean`|`bool`|
+|`BOOL`、 `GLboolean`|`bool`|
 |`NSInteger`|`nint`|
 |`NSUInteger`|`nuint`|
 |`CFTimeInterval` / `NSTimeInterval`|`double`|
-|`NSString`([NSString のバインドに関する詳細](~/ios/internals/api-design/nsstring.md))|`string`|
-|`char *`|`string`(関連項目: [`[PlainString]`](~/cross-platform/macios/binding/binding-types-reference.md#plainstring))|
+|`NSString` ([NSString のバインドに関する詳細](~/ios/internals/api-design/nsstring.md))|`string`|
+|`char *`|`string` (関連項目: [`[PlainString]`](~/cross-platform/macios/binding/binding-types-reference.md#plainstring))|
 |`CGRect`|`CGRect`|
 |`CGPoint`|`CGPoint`|
 |`CGSize`|`CGSize`|
-|`CGFloat`, `GLfloat`|`nfloat`|
+|`CGFloat`、 `GLfloat`|`nfloat`|
 |CoreFoundation types (`CF*`)|`CoreFoundation.CF*`|
 |`GLint`|`nint`|
 |`GLfloat`|`nfloat`|
@@ -1055,7 +1055,7 @@ interface XyzPanel {
 
 ### <a name="arrays"></a>配列
 
-Xamarin の iOS ランタイムは、変換後の配列C#へ`NSArrays`の変換を自動的に実行します。たとえば、 `NSArray`の`UIViews`を返す架空の目的 C のメソッドなどです。
+Xamarin の iOS ランタイムは、次のようにC# 、配列を`NSArrays`に変換して変換を実行する処理を自動的に行います。たとえば、`UIViews`の`NSArray`を返す架空の目標 C メソッドなどです。
 
 ```csharp
 // Get the peer views - untyped
@@ -1077,13 +1077,13 @@ void SetViews (UIView [] views);
 
 この方法では、厳密に型指定C#された配列を使用することをお勧めします。これにより、IDE はユーザーに推測を強制することなく、実際の型で適切なコード補完を提供できます。また、ドキュメントを参照して、配列に格納されているオブジェクトの実際の型を調べることもできます。
 
-配列に格納されている実際のほとんどの派生型を追跡できない場合は、を`NSObject []`戻り値として使用できます。
+配列に格納されている実際のほとんどの派生型を追跡できない場合は、`NSObject []` を戻り値として使用できます。
 
 <a name="Selectors" />
 
 ### <a name="selectors"></a>セレクター
 
-セレクターは、特殊な型`SEL`として目的の C API に表示されます。 セレクターをバインドする場合は、型をに`ObjCRuntime.Selector`マップします。  通常、セレクターは、オブジェクト、ターゲットオブジェクト、およびターゲットオブジェクトで呼び出すセレクターの両方を持つ API で公開されます。 これらの両方を基本的に、 C#デリゲートに対応します。これは、呼び出すメソッドと、メソッドを呼び出すオブジェクトの両方をカプセル化するものです。
+セレクターは、特殊な型 `SEL`として、目的の C API に表示されます。 セレクターをバインドする場合は、型を `ObjCRuntime.Selector`にマップします。  通常、セレクターは、オブジェクト、ターゲットオブジェクト、およびターゲットオブジェクトで呼び出すセレクターの両方を持つ API で公開されます。 これらの両方を基本的に、 C#デリゲートに対応します。これは、呼び出すメソッドと、メソッドを呼び出すオブジェクトの両方をカプセル化するものです。
 
 バインディングは次のようになります。
 
@@ -1111,7 +1111,7 @@ class DialogPrint : UIViewController {
 }
 ```
 
-開発者C#にとってこのバインディングを簡単にするために、通常`NSAction`はパラメーターを受け取るメソッドを提供します。これによりC# 、 `Target+Selector`の代わりにデリゲートとラムダを使用できるようになります。 これを行うには、通常、 `SetTarget`次のようにフラグを付けてメソッドを非表示にします。[`[Internal]`](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute)
+開発者にC#とってこのバインディングを簡単にするために、通常は`NSAction`パラメーターを受け取るメソッドをC#提供します。これにより、`Target+Selector`の代わりにデリゲートとラムダを使用できるようになります。 これを行うには、通常、 [`[Internal]`](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute)でフラグを付けて `SetTarget` メソッドを非表示にします。
 次のように、新しいヘルパーメソッドを公開します。
 
 ```csharp
@@ -1154,11 +1154,11 @@ class DialogPrint : UIViewController {
 
 ### <a name="strings"></a>文字列
 
-を受け取る`NSString`メソッドをバインドする場合は、戻り値の型とパラメーターのC#両方で文字列型に置き換えることができます。
+`NSString`を受け取るメソッドをバインドする場合は、戻り値の型とパラメーターのC#両方で文字列型に置き換えることができます。
 
-を`NSString`直接使用する場合は、文字列をトークンとして使用する必要があります。 文字列と`NSString`の詳細については、「 [nsstring の API 設計](~/ios/internals/api-design/nsstring.md)」ドキュメントを参照してください。
+`NSString` を直接使用する場合は、文字列がトークンとして使用されている場合のみです。 文字列と `NSString`の詳細については、 [NSString ドキュメントの API 設計](~/ios/internals/api-design/nsstring.md)に関する記事を参照してください。
 
-まれに、API が、目的の c 文字列 (`char *``NSString *`) ではなく、c に似た文字列 () を公開する場合があります。 そのような場合は、パラメーターに[`[PlainString]`](~/cross-platform/macios/binding/binding-types-reference.md#plainstring)
+まれに、API が、目的の C 文字列 (`NSString *`) ではなく、C に似た文字列 (`char *`) を公開する場合があります。 そのような場合は、パラメーターに注釈を付けて[`[PlainString]`](~/cross-platform/macios/binding/binding-types-reference.md#plainstring)
 属性.
 
 <a name="outref_parameters" />
@@ -1174,7 +1174,7 @@ Api によっては、パラメーターの値が返されます。または、�
 - (void) someString:(NSObject **)byref
 ```
 
-最初の例では、共通の目的 C の表現を使用してエラーコードを`NSError`返し、ポインターへのポインターが渡され、戻り時に値が設定されています。   2番目のメソッドは、目的の C メソッドがオブジェクトを取得し、その内容を変更する方法を示しています。   これは、純粋な出力値ではなく、参照渡しになります。
+最初の例は、エラーコードを返す一般的な目的 C の表現、`NSError` ポインターへのポインターが渡されたとき、戻り値が設定されていることを示しています。   2番目のメソッドは、目的の C メソッドがオブジェクトを取得し、その内容を変更する方法を示しています。   これは、純粋な出力値ではなく、参照渡しになります。
 
 バインドは次のようになります。
 
@@ -1209,7 +1209,7 @@ void SomeString (ref NSObject byref);
 
 #### <a name="using-internal"></a>使用 [Internal]
 
-使用できるのは、[`[Internal]`](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute)
+を使用することができ[`[Internal]`](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute)
 パブリック API からメソッドを非表示にする属性です。 公開されている API が低レベルで、この方法に基づいて別のファイルに高レベルの実装を提供する場合に、この操作を行うことができます。
 
 また、バインドジェネレーターで制限が発生した場合にも使用できます。たとえば、一部の高度なシナリオではバインドされていない型が公開され、独自の方法でバインドする場合があり、独自の方法で型をラップする必要があります。
@@ -1232,7 +1232,7 @@ button.Clicked += delegate {
 
 Xamarin. iOS 1.4 以降では、特定の目的 C デリゲートのバインドを生成するようジェネレーターに指示し、ホスト型のイベントとプロパティC#としてデリゲートを公開することもできます。
 
-このプロセスには2つのクラスが関係しています。これは、現在イベントを出力しているホスト`Delegate`クラス`WeakDelegate`であり、これらのクラスをまたはおよび実際のデリゲートクラスに送信します。
+このプロセスには2つのクラスが関係しています。ホストクラスは、現在イベントを出力しており、`Delegate` または `WeakDelegate` および実際のデリゲートクラスに送信します。
 
 次のセットアップを検討してください。
 
@@ -1255,8 +1255,8 @@ interface MyClassDelegate {
 
 クラスをラップするには、次のことを行う必要があります。
 
-- ホストクラスで、にを追加します。[`[BaseType]`](~/cross-platform/macios/binding/binding-types-reference.md#BaseTypeAttribute)  
-   デリゲートとして機能する型と、公開しC#た名前を宣言します。 上記の例では、 `typeof (MyClassDelegate)`と`WeakDelegate`はそれぞれとです。
+- ホストクラスで、を[`[BaseType]`](~/cross-platform/macios/binding/binding-types-reference.md#BaseTypeAttribute)に追加します。  
+   デリゲートとして機能する型と、公開しC#た名前を宣言します。 上記の例では、これらはそれぞれ `typeof (MyClassDelegate)` と `WeakDelegate` です。
 - デリゲートクラスで、3つ以上のパラメーターを持つ各メソッドで、自動的に生成された EventArgs クラスに使用する型を指定する必要があります。
 
 バインディングジェネレーターは、1つのイベント変換先のみをラップするように制限されていません。一部の目的 C クラスは、複数のデリゲートにメッセージを出力することができます。そのため、このセットアップをサポートする配列を用意する必要があります。 ほとんどのセットアップでは必要ありませんが、ジェネレーターはそのようなケースをサポートする準備ができています。
@@ -1282,7 +1282,7 @@ interface MyClassDelegate {
 }
 ```
 
-は`EventArgs` 、生成する`EventArgs`クラスの名前を指定するために使用されます。 署名ごとに1つを使用する必要があります`EventArgs` (この例`With`では、には nint 型のプロパティが含まれています)。
+`EventArgs` は、生成される `EventArgs` クラスの名前を指定するために使用されます。 署名ごとに1つを使用する必要があります (この例では、`EventArgs` には nint 型の `With` プロパティが含まれます)。
 
 上記の定義では、ジェネレーターによって生成される MyClass に次のイベントが生成されます。
 
@@ -1306,14 +1306,14 @@ c.Loaded += delegate (sender, args){
 };
 ```
 
-コールバックは、イベントの呼び出しと同じように、複数の潜在的なサブスクライバーを使用するのではなく (たとえば、 `Clicked`複数のメソッド`DownloadFinished`がイベントまたはイベントにフックできる)、コールバックは1つのサブスクライバーだけを持つことができます。
+コールバックは、イベント呼び出しと同じように、複数の潜在的なサブスクライバーを使用するのではなく (たとえば、複数のメソッドが `Clicked` イベントまたは `DownloadFinished` イベントにフックできる)、コールバックは1つのサブスクライバーのみを持つことができます。
 
-プロセスは同じですが、唯一の違いは、生成される`EventArgs`クラスの名前を公開するのではなく、実際には、結果として得C#られるデリゲート名の名前を指定するために EventArgs を使用することです。
+プロセスは同じですが、唯一の違いは、生成される `EventArgs` クラスの名前を公開するのではなく、実際には、結果としC#て得られるデリゲート名の名前を指定するために EventArgs を使用することです。
 
-デリゲートクラスのメソッドが値を返す場合、バインディングジェネレーターはこれをイベントではなく親クラスのデリゲートメソッドにマップします。 このような場合は、ユーザーがデリゲートにフックしていない場合に、メソッドによって返される既定値を指定する必要があります。 これを行うには、[`[DefaultValue]`](~/cross-platform/macios/binding/binding-types-reference.md#DefaultValueAttribute)
-また[`[DefaultValueFromArgument]`](~/cross-platform/macios/binding/binding-types-reference.md#DefaultValueFromArgumentAttribute)は属性。
+デリゲートクラスのメソッドが値を返す場合、バインディングジェネレーターはこれをイベントではなく親クラスのデリゲートメソッドにマップします。 このような場合は、ユーザーがデリゲートにフックしていない場合に、メソッドによって返される既定値を指定する必要があります。 これを行うには、 [`[DefaultValue]`](~/cross-platform/macios/binding/binding-types-reference.md#DefaultValueAttribute)を使用します。
+または[`[DefaultValueFromArgument]`](~/cross-platform/macios/binding/binding-types-reference.md#DefaultValueFromArgumentAttribute)属性。
 
-[`[DefaultValue]`](~/cross-platform/macios/binding/binding-types-reference.md#DefaultValueAttribute)は、戻り値をハードコーディングします。[`[DefaultValueFromArgument]`](~/cross-platform/macios/binding/binding-types-reference.md#DefaultValueFromArgumentAttribute)
+[`[DefaultValue]`](~/cross-platform/macios/binding/binding-types-reference.md#DefaultValueAttribute)は戻り値をハードコーディングし[`[DefaultValueFromArgument]`](~/cross-platform/macios/binding/binding-types-reference.md#DefaultValueFromArgumentAttribute)
 は、返される入力引数を指定するために使用されます。
 
 <a name="Enumerations_and_Base_Types" />
@@ -1328,16 +1328,16 @@ Btouch インターフェイス定義システムによって直接サポート�
 
 アプリケーションに含まれていない Api をバインドする場合は、実行可能ファイルがこれらのライブラリにリンクされていることを確認する必要があります。
 
-Xamarin に通知する必要があります。ライブラリをリンクするには、ビルド構成を変更して、 `mtouch`コマンドを呼び出すようにビルド構成を変更するか、"-gcc_flags" オプションを使用して新しいライブラリとリンクする方法を指定するいくつかのビルド引数を追加します。次のように、プログラムに必要なすべての追加ライブラリを含む、引用符で囲まれた文字列が続きます。
+Xamarin に通知する必要があります。ライブラリをリンクするには、ビルド構成を変更して、gcc_flags コマンドを `mtouch` 呼び出すようにビルド構成を変更するか、"-" オプションを使用して新しいライブラリとリンクする方法を指定するいくつかのビルド引数を追加します。に続けて、次のように、プログラムに必要なすべての追加ライブラリを含む、引用符で囲まれた文字列を指定します。
 
 ```bash
 -gcc_flags "-L${ProjectDir} -lMylibrary -force_load -lSystemLibrary -framework CFNetwork -ObjC"
 ```
 
-上の例では`libMyLibrary.a`、 `libSystemLibrary.dylib` `CFNetwork`最終的な実行可能ファイルにフレームワークライブラリがリンクされています。
+上の例では、`libMyLibrary.a`、`libSystemLibrary.dylib`、および `CFNetwork` framework ライブラリを最終的な実行可能ファイルにリンクします。
 
-または、コントラクトファイル ( [`[LinkWithAttribute]`](~/cross-platform/macios/binding/binding-types-reference.md#LinkWithAttribute) `AssemblyInfo.cs`など) に埋め込むことができるアセンブリレベルを利用することもできます。
-[`[LinkWithAttribute]`](~/cross-platform/macios/binding/binding-types-reference.md#LinkWithAttribute)を使用する場合は、バインディングの作成時にネイティブライブラリを使用できるようにする必要があります。これにより、ネイティブライブラリがアプリケーションと共に埋め込まれます。 例:
+または、コントラクトファイル (`AssemblyInfo.cs`など) に埋め込むことができるアセンブリレベルの[`[LinkWithAttribute]`](~/cross-platform/macios/binding/binding-types-reference.md#LinkWithAttribute)を利用することもできます。
+[`[LinkWithAttribute]`](~/cross-platform/macios/binding/binding-types-reference.md#LinkWithAttribute)を使用する場合は、バインディングの作成時にネイティブライブラリを使用できるようにする必要があります。これにより、ネイティブライブラリがアプリケーションと共に埋め込まれます。 (例:
 
 ```csharp
 // Specify only the library name as a constructor argument and specify everything else with properties:
@@ -1347,7 +1347,7 @@ Xamarin に通知する必要があります。ライブラリをリンクする
 [assembly: LinkWith ("libMyLibrary.a", LinkTarget.ArmV6 | LinkTarget.ArmV7 | LinkTarget.Simulator, ForceLoad = true, IsCxx = true)]
 ```
 
-なぜコマンドが必要`-force_load`なのでしょうか。また、-objc フラグはのコードをコンパイルしますが、カテゴリをサポートするために必要なメタデータを保持しません (リンカーとコンパイラによるコードの削除によって除去されます)。Xamarin. iOS の実行時に必要になります。
+`-force_load` のコマンドが必要な理由は、のコードをコンパイルするのに-ObjC フラグが使用されているので、必要なカテゴリをサポートするために必要なメタデータ (リンカー/コンパイラのコードの削除) が保持されていないことについて、Xamarin. iOS のランタイム。
 
 <a name="Assisted_References" />
 
@@ -1355,7 +1355,7 @@ Xamarin に通知する必要があります。ライブラリをリンクする
 
 アクションシートやアラートボックスなどの一部の一時的なオブジェクトは、開発者を追跡するのが面倒であり、バインドジェネレーターがここで少し役に立ちます。
 
-たとえば、メッセージを表示した後にイベントを`Done`生成したクラスがある場合、従来の方法では次のように処理されます。
+たとえば、メッセージを表示して `Done` イベントを生成したクラスがある場合、従来の方法では次のように処理されます。
 
 ```csharp
 class Demo {
@@ -1383,7 +1383,7 @@ class Demo {
 
 インスタンスで変数を保持する必要がなくなったことに注意してください。変数はローカル変数で動作し、オブジェクトが死んだときに参照をクリアする必要はありません。
 
-これを利用するには、クラスの[`[BaseType]`](~/cross-platform/macios/binding/binding-types-reference.md#BaseTypeAttribute)宣言に Events プロパティを設定し、 `KeepUntilRef`さらに、次のように、オブジェクトが処理を完了したときに呼び出されるメソッドの名前に設定された変数に設定する必要があります。
+これを活用するには、クラスで[`[BaseType]`](~/cross-platform/macios/binding/binding-types-reference.md#BaseTypeAttribute)宣言に Events プロパティを設定し、次のように、オブジェクトが処理を完了したときに呼び出されるメソッドの名前に設定された `KeepUntilRef` 変数に設定する必要があります。
 
 ```csharp
 [BaseType (typeof (NSObject), KeepUntilRef="Dismiss"), Delegates=new string [] { "WeakDelegate" }, Events=new Type [] { typeof (SomeDelegate) }) ]
@@ -1397,9 +1397,9 @@ class Demo {
 
 ## <a name="inheriting-protocols"></a>プロトコルの継承
 
-Xamarin. iOS v2.0 では、 [`[Model]`](~/cross-platform/macios/binding/binding-types-reference.md#ModelAttribute)プロパティでマークされたプロトコルからの継承がサポートされています。 これ`MapKit`は、 `MKOverlay` `NSObject`プロトコルがプロトコルから継承されるなど、特定の API パターンで役立ち、から継承される多数のクラスによって採用されます。 `MKAnnotation`
+Xamarin. iOS v2.0 では、 [`[Model]`](~/cross-platform/macios/binding/binding-types-reference.md#ModelAttribute)プロパティでマークされたプロトコルからの継承がサポートされています。 これは、`MKOverlay` プロトコルが `MKAnnotation` プロトコルから継承し、`NSObject`から継承する複数のクラスによって採用されている `MapKit` など、特定の API パターンで役立ちます。
 
-これまでは、すべての実装にプロトコルをコピーする必要があり`MKShape`ましたが、このような場合は、クラスが`MKOverlay`プロトコルから継承し、必要なすべてのメソッドが自動的に生成されるようになりました。
+これまでは、プロトコルをすべての実装にコピーする必要がありましたが、このような場合は、`MKShape` クラスが `MKOverlay` プロトコルから継承し、必要なすべてのメソッドが自動的に生成されるようになりました。
 
 ## <a name="related-links"></a>関連リンク
 

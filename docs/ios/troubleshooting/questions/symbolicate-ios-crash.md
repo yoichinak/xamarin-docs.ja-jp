@@ -4,15 +4,15 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: CB8607B9-FFDA-4617-8210-8E43EC512588
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/09/2018
-ms.openlocfilehash: cc681e94187530c5442ad4fb12557017b92b2bb4
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 418a0196849099da03983085aca9ceed2077207b
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769221"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030914"
 ---
 # <a name="where-can-i-find-the-dsym-file-to-symbolicate-ios-crash-logs"></a>iOS クラッシュ ログにシンボル名を付加するための .dSYM ファイルはどこで入手できますか。
 
@@ -20,17 +20,17 @@ Visual Studio for Mac または Visual Studio 2017 を使用して iOS アプリ
 
 - デバイス固有のビルドを有効にした場合、dSYM は次のディレクトリにあります。
 
-    **&lt;プロジェクトディレクトリ&gt;/bin/&lt;platform&gt;/configuration/device-builds/&gt;デバイス&lt;&gt; &lt;- &lt;os-バージョン&gt;/**
+    **&lt;プロジェクトディレクトリ&gt;/bin/&lt;プラットフォーム&gt;/&lt;構成&gt;/device-builds/&lt;デバイス&gt;-&lt;os バージョン&gt;/**
 
-    例えば:
+    (例:
   
     **TestApp/bin/iPhone/Release/デバイス-ビルド/iphone 8.4-11.3.1/**
 
 - デバイス固有のビルドを有効にしていない場合、dSYM は次のディレクトリにあります。
 
-    **&lt;プロジェクトディレクトリ&gt;/bin/&lt;platform&gt;/の&lt;構成&gt;/**
+    **&lt;プロジェクトディレクトリ&gt;/bin/&lt;プラットフォーム&gt;/&lt;構成&gt;/**
 
-    例えば:
+    (例:
 
     **TestApp/bin/iPhone/Release/**
 

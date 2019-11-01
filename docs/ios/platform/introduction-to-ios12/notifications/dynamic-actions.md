@@ -4,21 +4,21 @@ description: IOS 12 では、通知コンテンツの拡張機能を使用して
 ms.prod: xamarin
 ms.assetid: 6B34AD78-5117-42D0-B6E7-C8B4B453EAFF
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 09/04/2018
-ms.openlocfilehash: 5be233e9b07069dc7c9842a3ddd00e7d46d9c22f
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: cb38d222cecd1a6c5bb65b0fb376888770dd0e49
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291279"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031966"
 ---
 # <a name="dynamic-notification-action-buttons-in-xamarinios"></a>Xamarin. iOS の動的通知アクションボタン
 
 IOS 12 では、通知によって、関連付けられているアクションボタンを動的に追加、削除、および更新できます。 このようなカスタマイズにより、通知のコンテンツに直接関連するアクションをユーザーに提供できるようになり、ユーザーとの対話が可能になります。
 
-## <a name="sample-app-redgreennotifications"></a>サンプルアプリ:RedGreenNotifications
+## <a name="sample-app-redgreennotifications"></a>サンプルアプリ: RedGreenNotifications
 
 このガイドのコードスニペットは、 [RedGreenNotifications](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-redgreennotifications)サンプルアプリから抜粋したものです。 ios 12 では、Xamarin を使用して通知アクションボタンを操作する方法を示しています。
 
@@ -32,12 +32,12 @@ IOS 12 では、通知によって、関連付けられているアクション�
 通知のカテゴリによって、既定のアクションボタンが決まります。
 
 アプリケーションの起動時に、通知カテゴリを作成して登録します。
-たとえば、[サンプルアプリ](#sample-app-redgreennotifications) `FinishedLaunching`では、の`AppDelegate`メソッドは次のことを実行します。
+たとえば、[サンプルアプリ](#sample-app-redgreennotifications)では、`AppDelegate` の `FinishedLaunching` メソッドは次のことを行います。
 
 - 赤の通知に1つのカテゴリを定義し、緑の通知に対して別のカテゴリを定義します
-- を呼び出して、これらのカテゴリを登録します。[`SetNotificationCategories`](xref:UserNotifications.UNUserNotificationCenter.SetNotificationCategories*)
-のメソッド`UNUserNotificationCenter`
-- 1つのをアタッチします[`UNNotificationAction`](xref:UserNotifications.UNNotificationAction)
+- これらのカテゴリを登録するには、 [`SetNotificationCategories`](xref:UserNotifications.UNUserNotificationCenter.SetNotificationCategories*)を呼び出します。
+`UNUserNotificationCenter` のメソッド
+- 1つの[`UNNotificationAction`](xref:UserNotifications.UNNotificationAction)をアタッチします
 各カテゴリに
 
 次のサンプルコードは、このしくみを示しています。
@@ -74,14 +74,14 @@ public override bool FinishedLaunching(UIApplication application, NSDictionary l
 }
 ```
 
-このコードに基づいて、[`Content.CategoryIdentifier`](xref:UserNotifications.UNNotificationContent.CategoryIdentifier)
+このコードに基づいて、 [`Content.CategoryIdentifier`](xref:UserNotifications.UNNotificationContent.CategoryIdentifier)
 "red category" または "green-category" は、既定では **[20 °回転]** アクションボタンを表示します。
 
 ## <a name="in-app-handling-of-notification-action-buttons"></a>通知アクションボタンのアプリ内処理
 
-`UNUserNotificationCenter`に[型`IUNUserNotificationCenterDelegate`](xref:UserNotifications.IUNUserNotificationCenterDelegate)のプロパティがあります。 `Delegate`
+`UNUserNotificationCenter` には、 [`IUNUserNotificationCenterDelegate`](xref:UserNotifications.IUNUserNotificationCenterDelegate)型の `Delegate` プロパティがあります。
 
-サンプルアプリでは、 `AppDelegate`は、で`FinishedLaunching`ユーザー通知センターのデリゲートとして自身を設定します。
+このサンプルアプリでは、`FinishedLaunching`のユーザー通知センターのデリゲートとして `AppDelegate` 設定します。
 
 ```csharp
 public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
@@ -95,7 +95,7 @@ public override bool FinishedLaunching(UIApplication application, NSDictionary l
         // ...
 ```
 
-次に`AppDelegate` 、を実装します。[`DidReceiveNotificationResponse`](xref:UserNotifications.UNUserNotificationCenterDelegate_Extensions.DidReceiveNotificationResponse*)
+次に、`AppDelegate` がを実装[`DidReceiveNotificationResponse`](xref:UserNotifications.UNUserNotificationCenterDelegate_Extensions.DidReceiveNotificationResponse*)
 アクションボタンのタップを処理するには:
 
 ```csharp
@@ -119,29 +119,29 @@ public void DidReceiveNotificationResponse(UNUserNotificationCenter center, UNNo
         }
 ```
 
-の`DidReceiveNotificationResponse`この実装は、通知の **[20 °回転]** アクションボタンを処理しません。 代わりに、通知のコンテンツ拡張機能によって、このボタンのタップが処理されます。 次のセクションでは、通知アクションボタンの処理について詳しく説明します。
+この `DidReceiveNotificationResponse` の実装では、通知の **[20 °回転]** アクションボタンは処理されません。 代わりに、通知のコンテンツ拡張機能によって、このボタンのタップが処理されます。 次のセクションでは、通知アクションボタンの処理について詳しく説明します。
 
 ## <a name="action-buttons-in-the-notification-content-extension"></a>Notification content 拡張機能のアクションボタン
 
 通知コンテンツ拡張機能には、通知のカスタムインターフェイスを定義するビューコントローラーが含まれています。
 
-このビューコントローラーは`GetNotificationActions` `SetNotificationActions` 、その[`ExtensionContext`](xref:UIKit.UIViewController.ExtensionContext)
+このビューコントローラーは、その[`ExtensionContext`](xref:UIKit.UIViewController.ExtensionContext)で `GetNotificationActions` および `SetNotificationActions` メソッドを使用できます
 通知のアクションボタンにアクセスして変更するためのプロパティです。
 
 サンプルアプリでは、通知コンテンツ拡張機能のビューコントローラーは、既に存在するアクションボタンの tap に応答する場合にのみ、アクションボタンを変更します。
 
 > [!NOTE]
-> 通知コンテンツの拡張機能は、ビューコントローラーの[`DidReceiveNotificationResponse`](xref:UserNotificationsUI.UNNotificationContentExtension_Extensions.DidReceiveNotificationResponse*)メソッドで、 [iunnotificationcontentextension](xref:UserNotificationsUI.IUNNotificationContentExtension)の一部として宣言されているアクションボタンをタップすると応答できます。
+> 通知コンテンツの拡張機能は、ビューコントローラーの[`DidReceiveNotificationResponse`](xref:UserNotificationsUI.UNNotificationContentExtension_Extensions.DidReceiveNotificationResponse*)メソッドで、 [Iunnotificationcontentextension](xref:UserNotificationsUI.IUNNotificationContentExtension)の一部として宣言されているアクションボタンをタップすると応答できます。
 >
-> `DidReceiveNotificationResponse`前に[説明](#in-app-handling-of-notification-action-buttons)した方法で名前を共有しますが、これは別の方法です。
+> [前に説明](#in-app-handling-of-notification-action-buttons)した `DidReceiveNotificationResponse` 方法で名前を共有しますが、これは別の方法です。
 >
 > 通知コンテンツの拡張機能がボタンのタップの処理を終了したら、メインアプリケーションに対して同じボタンのタップを処理するように指示するかどうかを選択できます。 これを行うには、次のように、 [Unnotificationcontentextensionresponseoption](xref:UserNotificationsUI.UNNotificationContentExtensionResponseOption)の適切な値を完了ハンドラーに渡す必要があります。
 >
-> - `Dismiss`通知インターフェイスを破棄する必要があり、メインアプリがボタンのタップを処理する必要がないことを示します。
-> - `DismissAndForwardAction`通知インターフェイスを破棄する必要があり、メインアプリもボタンのタップを処理する必要があることを示します。
-> - `DoNotDismiss`通知インターフェイスを破棄しないこと、およびメインアプリがボタンのタップを処理する必要がないことを示します。
+> - `Dismiss` は、通知インターフェイスを破棄する必要があり、メインアプリがボタンのタップを処理する必要がないことを示します。
+> - `DismissAndForwardAction` は通知インターフェイスを破棄する必要があり、メインアプリもボタンのタップを処理する必要があることを示します。
+> - `DoNotDismiss` は、通知インターフェイスを破棄しないこと、およびメインアプリがボタンのタップを処理する必要がないことを示します。
 
-コンテンツ拡張機能の`DidReceiveNotificationResponse`メソッドは、タップされたアクションボタンを判別し、通知のインターフェイスで画像を回転し、 **[リセット]** アクションボタンの表示と非表示を切り替えます。
+コンテンツ拡張機能の `DidReceiveNotificationResponse` メソッドは、タップされたアクションボタンを判別し、通知のインターフェイスで画像を回転し、 **[リセット]** アクションボタンの表示と非表示を切り替えます。
 
 ```csharp
 [Export("didReceiveNotificationResponse:completionHandler:")]
@@ -184,7 +184,7 @@ public void DidReceiveNotificationResponse(UNNotificationResponse response, Acti
 }
 ```
 
-この場合、メソッドは完了ハンドラー `UNNotificationContentExtensionResponseOption.DoNotDismiss`にを渡します。 これは、通知のインターフェイスが開いたままになることを意味します。
+この場合、メソッドは `UNNotificationContentExtensionResponseOption.DoNotDismiss` を完了ハンドラーに渡します。 これは、通知のインターフェイスが開いたままになることを意味します。
 
 ## <a name="related-links"></a>関連リンク
 

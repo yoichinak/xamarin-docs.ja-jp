@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin を使用して iOS 12、t
 ms.prod: xamarin
 ms.assetid: 6C0F0133-1A5F-408B-8BCA-BDCA313A55C2
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 09/19/2018
-ms.openlocfilehash: 480e7c1d5ff0aa7335b3f45d8e05f276bc5be208
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 1db249a9e07f178461bcb052508d08f54ecea121
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287017"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032021"
 ---
 # <a name="get-started-with-ios-12-tvos-12-and-watchos-5"></a>IOS 12、tvOS 12、watchOS 5 を使ってみる
 
@@ -26,7 +26,7 @@ ms.locfileid: "70287017"
 
 3. **Update Visual Studio for Mac と Visual Studio 2017** – Xamarin の最新の安定バージョンがあることを確認します。
 
-4. _(省略可能)_ Ios**デバイスに ios 12 をインストールする**–
+4. _(省略可能)_ ios**デバイスに ios 12 をインストールする**–
 
    Xcode 10 で導入された Api を使用するアプリのデバイステストでは、登録済みの Apple 開発者は、自分のデバイスにオペレーティングシステムを[ダウンロード](https://developer.apple.com/download)してインストールできます。
 

@@ -4,15 +4,15 @@ description: この記事では、Xamarin の ios 9 を操作するためのさ�
 ms.prod: xamarin
 ms.assetid: DCE83E36-CBD9-4D96-8E7F-384CB8A54563
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: c624dc9be86161305fddba56e58ae5b99d674770
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 437698fcda6e85090cd7bdce90959300436e0bc2
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292929"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031754"
 ---
 # <a name="xamarinios-9--troubleshooting"></a>Xamarin iOS 9 –トラブルシューティング
 
@@ -24,37 +24,37 @@ Xamarin iOS Designer では、Xcode 7 の機能はまだサポートされてい
 
 iOS Designer による Xcode 7 機能のサポートは、今後のサイクル6機能リリースを対象としています。 サイクル6のプレビューバージョンは現在、アルファチャネルで使用でき、新しい Xcode 7 機能のサポートは制限されています。
 
-Visual Studio for Mac の部分的な回避策:ストーリーボードを右クリックし、[ **Open With** > **Xcode Interface Builder**] を選択します。
+Visual Studio for Mac の部分的な回避策: ストーリーボードを右クリックし、[ > **Xcode Interface Builder** **で開く**] を選択します。
 
 ## <a name="where-are-the-ios-8-simulators"></a>IOS 8 シミュレータはどこにありますか。
 
 Xcode 7 (またはそれ以降) がインストールされている場合、既定ではすべての iOS 8 シミュレーターが iOS 9 シミュレーターに自動的に置き換えられます。 それでも iOS 8 でテストする必要がある場合は、Xcode を起動し、iOS 8 シミュレーターをダウンロードしてインストールします。
 
-Xcode で、 **[Xcode]** 、 **[基本設定...]** の順に選択します。 > **ダウンロード**:
+Xcode で、 **[Xcode]** 、 **[Preferences...]**  >  **[ダウンロード]** の順に選択します。
 
-[![](troubleshooting-images/ios8.png "iOS 8 シミュレーターダウンロード")](troubleshooting-images/ios8.png#lightbox)
+[![](troubleshooting-images/ios8.png "iOS 8 Simulators Downloads")](troubleshooting-images/ios8.png#lightbox)
 
 [**今すぐ確認してインストール**する] ボタンをクリックして、iOS 8 シミュレーターを再インストールします。
 
 ## <a name="layout-constraint-with-leftright-attribute-errors"></a>左/右の属性エラーがあるレイアウトの制約
 
-IOS 8 (およびそれ以前) では、ストーリーボードの UI 要素は、**右** & **左**の属性 (`NSLayoutAttributeRight` & `NSLayoutAttributeLeft`) と**先頭** & の**末尾**の属性の両方を組み合わせて使用できます ()を同じレイアウト`NSLayoutAttributeLeading`で行います。  &  `NSLayoutAttributeTrailing`
+IOS 8 (およびそれ以前) では、ストーリーボードの UI 要素は、**右** & **左側**の属性 (`NSLayoutAttributeRight` & `NSLayoutAttributeLeft`) と**先頭**の ** & の**属性 (`NSLayoutAttributeLeading` & `NSLayoutAttributeTrailing`) の両方を組み合わせて使用できます。同じレイアウト。
 
 同じストーリーボードが iOS 9 で実行されている場合、次の形式で例外が発生します。
 
-> キャッチされることのない例外 ' NSInvalidArgumentException ' により、アプリを終了しています。理由: ' * * * + [NSLayoutConstraint constraintWithItem: 属性: 関係者: toItem: 属性: 乗数: 定数:]:先頭/末尾の属性と右/左の属性の間に制約を設定することはできません。 またはのどちらにも先頭と末尾を使用します。
+> キャッチされていない例外が発生したため、アプリを終了しています。 ' NSInvalidArgumentException '、理由: ' * * * + [NSLayoutConstraint constraintWithItem: 属性: 関連付け: toItem: 属性: 乗数: 定数:]: 先頭と末尾の間で制約を設定することはできません属性と右/左の属性。 またはのどちらにも先頭と末尾を使用します。
 
-iOS 9 では、**右** & **左**_または_**先頭** & の**末尾**の属性を使用するレイアウトが適用されますが、両方を使用することはでき*ません*。 この問題を解決するには、ストーリーボードファイル内で同じ属性セットを使用するように、すべてのレイアウト制約を変更します。
+iOS 9 では、右 & **右側**の**属性**また**は** **先頭**の & を使用するようにレイアウトが適用されますが、両方を使用することはでき*ません*。 この問題を解決するには、ストーリーボードファイル内で同じ属性セットを使用するように、すべてのレイアウト制約を変更します。
 
 詳細については、「 [iOS 9 の制約エラー](https://stackoverflow.com/questions/32692841/ios-9-constraint-error) Stack Overflow」を参照してください。
 
-## <a name="error-itms-90535-unexpected-cfbundleexecutable-key"></a>エラー 90535:予期しない CFBundleExecutable キー
+## <a name="error-itms-90535-unexpected-cfbundleexecutable-key"></a>エラー ITMS-90535: 予期しない CFBundleExecutable キー
 
 Ios 9 への切り替え後、アプリから iOS 8 (またはそれ以前) でコンパイルおよび実行されたサードパーティ製のコンポーネント (具体的には、既存の Google Maps コンポーネント) を使用する場合、新しいビルドを iTunes Connect に送信しようとすると、次の形式でエラーが発生する可能性があります。
 
-> エラー 90535:予期しない CFBundleExecutable キーです。 ' Payload/app-name/component. バンドル ' のバンドルにバンドル実行可能ファイルが含まれていません...
+> エラー ITMS-90535: 予期しない CFBundleExecutable キーです。 ' Payload/app-name/component. バンドル ' のバンドルにバンドル実行可能ファイルが含まれていません...
 
-この問題は、通常、プロジェクト内の名前付きバンドルを検索することによって解決できます。これは`Info.plist` 、エラーメッセージによって、バンドル`CFBundleExecutable`内のがキーを削除して表示されていることがわかります。 キーもに`BNDL`設定する必要があります。 `CFBundlePackageType`
+この問題は、通常、プロジェクト内の名前付きバンドルを検索することによって解決できます。これは、エラーメッセージに示されているように、`CFBundleExecutable` キーを削除することにより、バンドル内の `Info.plist` が編集されたことを示します。 `CFBundlePackageType` キーも `BNDL` に設定する必要があります。
 
 これらの変更を行った後、プロジェクト全体をクリーンにしてリビルドします。 これらの変更を行った後は、問題なく iTunes Connect に送信できます。
 
@@ -76,9 +76,9 @@ Ios 9 への切り替え後、アプリから iOS 8 (またはそれ以前) で�
 Temporary exceptions can be configured via your app's Info.plist file.
 ```
 
-IOS9 では、アプリトランスポートセキュリティ (ATS) は、インターネットリソース (アプリのバックエンドサーバーなど) とアプリの間にセキュリティで保護された接続を適用します。 さらに、ATS では、 `HTTPS`プロトコルを使用した通信と高レベルの API 通信が TLS バージョン1.2 を使用して転送される必要があります。
+IOS9 では、アプリトランスポートセキュリティ (ATS) は、インターネットリソース (アプリのバックエンドサーバーなど) とアプリの間にセキュリティで保護された接続を適用します。 さらに、ATS では、`HTTPS` プロトコルと高レベルの API 通信を使用した通信が、転送機密性を持つ TLS バージョン1.2 を使用して暗号化されている必要があります。
 
-IOS 9 および OS X 10.11 (El Capitan) 用に構築されたアプリでは、ats が既定で`NSURLConnection`有効`CFURL`に`NSURLSession`なっているため、またはを使用するすべての接続は、ats のセキュリティ要件の対象となります。 接続がこれらの要件を満たしていない場合、例外が発生して失敗します。
+IOS 9 および OS X 10.11 (El Capitan) 用に構築されたアプリでは、ATS が既定で有効になっているため、`NSURLConnection`、`CFURL` または `NSURLSession` を使用するすべての接続は、ATS のセキュリティ要件の対象となります。 接続がこれらの要件を満たしていない場合、例外が発生して失敗します。
 
 この問題を解決する方法の詳細については、[アプリトランスポートセキュリティ](~/ios/app-fundamentals/ats.md)ガイドの「 [ATS のオプトアウト](~/ios/app-fundamentals/ats.md)」セクションを参照してください。
 
@@ -90,9 +90,9 @@ IOS 9 で実行する既存のアプリの再構築と再デプロイの手順�
 
 ## <a name="uicollectionviewcellcontentview-is-null-in-constructors"></a>コンストラクターの UICollectionViewCell が Null です
 
-**理由**Ios `initWithFrame:` 9 では、 [UICollectionView ドキュメントの状態](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/#//apple_ref/occ/instm/UICollectionView/dequeueReusableCellWithReuseIdentifier:forIndexPath)として、ios 9 の動作が変更されたため、コンストラクターが必要になりました。 指定された識別子に対してクラスを登録し、新しいセルを作成する必要がある場合は、その`initWithFrame:`メソッドを呼び出すことによってセルが初期化されるようになりました。
+**理由:** IOS 9 では、`initWithFrame:` のコンストラクターが必要になりました。これは、 [UICollectionView ドキュメントの状態](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/#//apple_ref/occ/instm/UICollectionView/dequeueReusableCellWithReuseIdentifier:forIndexPath)として、ios 9 の動作が変更されたためです。 指定された識別子に対してクラスを登録し、新しいセルを作成する必要がある場合、そのセルは `initWithFrame:` メソッドを呼び出すことによって初期化されるようになりました。
 
-**ファイル**次の`initWithFrame:`ようにコンストラクターを追加します。
+**修正:** 次のように `initWithFrame:` コンストラクターを追加します。
 
 ```csharp
 [Export ("initWithFrame:")]
@@ -102,15 +102,15 @@ public YourCellClassName (CGRect frame) : base (frame)
 }
 ```
 
-関連するサンプル:[Motiongraph](https://github.com/xamarin/monotouch-samples/commit/3c1b7a4170c001e7290db9babb2b7a6dddeb8bcb)、 [TextKitDemo](https://github.com/xamarin/monotouch-samples/commit/23ea01b37326963b5ebf68bbcc1edd51c66a28d6)
+関連サンプル: [Motiongraph](https://github.com/xamarin/monotouch-samples/commit/3c1b7a4170c001e7290db9babb2b7a6dddeb8bcb)、 [TextKitDemo](https://github.com/xamarin/monotouch-samples/commit/23ea01b37326963b5ebf68bbcc1edd51c66a28d6)
 
 <a name="UIView-fails-to-Init-with-Coder-when-Loading-a-View-from-a-Xib/Nib" />
 
 ## <a name="uiview-fails-to-init-with-coder-when-loading-a-view-from-a-xibnib"></a>Xib/Nib からビューを読み込むときに、UIView がプログラマによる初期化に失敗する
 
-**理由**`initWithCoder:`コンストラクターは、Interface Builder Xib ファイルからビューを読み込むときに呼び出されるコンストラクターです。 このコンストラクターがエクスポートされていない場合、アンマネージコードはマネージバージョンのマネージドバージョンを呼び出すことができません。 以前 ( iOS 8 では、 `IntPtr`コンストラクターはビューを初期化するために呼び出されました。
+**理由:** `initWithCoder:` コンストラクターは、Interface Builder Xib ファイルからビューを読み込むときに呼び出されるコンストラクターです。 このコンストラクターがエクスポートされていない場合、アンマネージコードはマネージバージョンのマネージドバージョンを呼び出すことができません。 以前 ( iOS 8 では、`IntPtr` コンストラクターがビューを初期化するために呼び出されました。
 
-**ファイル**次のように`initWithCoder:`コンストラクターを作成してエクスポートします。
+**修正:** 次のように `initWithCoder:` コンストラクターを作成してエクスポートします。
 
 ```csharp
 [Export ("initWithCoder:")]
@@ -120,9 +120,9 @@ public YourClassName (NSCoder coder) : base (coder)
 }
 ```
 
-関連するサンプル:[コミュニティ](https://github.com/xamarin/monotouch-samples/commit/7b81138d52e5f3f1aa3769fcb08f46122e9b6a88)
+関連サンプル:[チャット](https://github.com/xamarin/monotouch-samples/commit/7b81138d52e5f3f1aa3769fcb08f46122e9b6a88)
 
-## <a name="dyld-message-no-cache-image-with-name"></a>Dyld メッセージ:名前のキャッシュイメージがありません...
+## <a name="dyld-message-no-cache-image-with-name"></a>Dyld メッセージ: 名前のキャッシュイメージがありません...
 
 ログに次の情報が表示された場合、クラッシュが発生する可能性があります。
 
@@ -131,39 +131,39 @@ Dyld Error Message:
 Dyld Message: no cach image with name (/System/Library/PrivateFrameworks/JavaScriptCore.framework/JavaScriptCore)
 ```
 
-**理由**これは、Apple のネイティブリンカーのバグであり、プライベートフレームワークをパブリックにすると (JavaScriptCore は iOS 7 で公開されていましたが、プライベートフレームワークではなくなりました)、アプリのデプロイターゲットは、フレームワークがプライベートであるときの iOS バージョン用です。 この場合、Apple のリンカーは、パブリックバージョンではなく、フレームワークのプライベートバージョンとリンクします。
+**理由:** これは、Apple のネイティブリンカーのバグであり、プライベートフレームワークをパブリックにすると (JavaScriptCore は iOS 7 で公開されていましたが、プライベートフレームワークではなくなりました)、アプリのデプロイターゲットは、フレームワークがプライベートであるときの iOS バージョン用です。 この場合、Apple のリンカーは、パブリックバージョンではなく、フレームワークのプライベートバージョンとリンクします。
 
-**ファイル**これは iOS 9 に対応していますが、その間にすぐに適用できる簡単な回避策があります。 (この場合は、iOS 7 を試すことができます)、後で簡単に適用できます。 他のフレームワークでも同様の問題が発生する可能性があります。たとえば、WebKit フレームワークは iOS 8 で公開されています (したがって、iOS 7 を対象とすると、このエラーが発生します。アプリで WebKit を使用するには、iOS 8 を対象にする必要があります)。
+**修正:** これは iOS 9 に対応していますが、その間にすぐに適用できる簡単な回避策があります。 (この場合は、iOS 7 を試すことができます)、後で簡単に適用できます。 他のフレームワークでも同様の問題が発生する可能性があります。たとえば、WebKit フレームワークは iOS 8 で公開されています (したがって、iOS 7 を対象とすると、このエラーが発生します。アプリで WebKit を使用するには、iOS 8 を対象にする必要があります)。
 
 ## <a name="untrusted-enterprise-developer"></a>信頼されていないエンタープライズ開発者
 
-Ios 9 バージョンの Xamarin iOS アプリを実際の iOS ハードウェアで実行しようとすると、開発者アカウントがデバイス上で信頼されていないというメッセージが表示されることがあります。 例:
+Ios 9 バージョンの Xamarin iOS アプリを実際の iOS ハードウェアで実行しようとすると、開発者アカウントがデバイス上で信頼されていないというメッセージが表示されることがあります。 (例:
 
-[![](troubleshooting-images/untrusted01.png "信頼されていない企業の開発者向けアラート")](troubleshooting-images/untrusted01.png#lightbox)
+[![](troubleshooting-images/untrusted01.png "Untrusted Enterprise Developer alert")](troubleshooting-images/untrusted01.png#lightbox)
 
 この問題を解決するには、次の手順を実行します。
 
 1. 開発用 Mac で Xcode (最新のベータ版) を開始します。
 2. **ウィンドウ** メニューの **デバイス** を選択して、デバイス ウィンドウを開きます。 
 
-    [![](troubleshooting-images/untrusted02.png "[デバイス] ウィンドウ")](troubleshooting-images/untrusted02.png#lightbox)
+    [![](troubleshooting-images/untrusted02.png "The Devices Window")](troubleshooting-images/untrusted02.png#lightbox)
 3. **[デバイス]** サイドパネルで、デバイスを選択し、右クリックして、 **[プロビジョニングプロファイルの表示]** を選択します。 
 
-    [![](troubleshooting-images/untrusted03.png "プロビジョニングプロファイルを表示する")](troubleshooting-images/untrusted03.png#lightbox)
-4. 現在デバイス上にある各プロビジョニングプロファイルを選択し **-** 、ボタンをクリックして削除します。 
+    [![](troubleshooting-images/untrusted03.png "SShow Provisioning Profiles")](troubleshooting-images/untrusted03.png#lightbox)
+4. 現在デバイス上にある各プロビジョニングプロファイルを選択し、[ **-** ] ボタンをクリックして削除します。 
 
-    [![](troubleshooting-images/untrusted04.png "プロビジョニングプロファイルを削除しています")](troubleshooting-images/untrusted04.png#lightbox)
+    [![](troubleshooting-images/untrusted04.png "Deleting a provisioning profile")](troubleshooting-images/untrusted04.png#lightbox)
 5. **[Xcode]** メニューの **[基本設定...]** を選択し、 **[アカウント]** を選択します。 
 
-    [![](troubleshooting-images/untrusted05.png "Xcode アカウントの基本設定")](troubleshooting-images/untrusted05.png#lightbox)
+    [![](troubleshooting-images/untrusted05.png "Xcode account preferences")](troubleshooting-images/untrusted05.png#lightbox)
 6. **[詳細の表示...]** ボタンをクリックし、 **[すべてダウンロード]** ボタンをクリックします。 
 
-    [![](troubleshooting-images/untrusted06.png "すべてのプロファイルのダウンロード")](troubleshooting-images/untrusted06.png#lightbox)
+    [![](troubleshooting-images/untrusted06.png "Download all profiles")](troubleshooting-images/untrusted06.png#lightbox)
 7. 一覧の更新が完了したら、**完了** ボタンをクリックして、設定 ウィンドウを閉じます。
 8. IOS デバイスからテストしようとしていた既存のバージョンの Xamarin iOS アプリを削除します。
 9. Visual Studio for Mac に戻り、クリーンビルドを実行して、デバイスでアプリを再実行します。
 
-Xcode によって読み込まれた新しいプロビジョニングプロファイルが表示される前に、Visual Studio for Mac を停止して再起動することが必要になる場合があります。 調整を設定することも、 **iOS バンドル署名** Xamarin.iOS アプリが新しいプロビジョニング プロファイルを選択するオプションです。
+Xcode によって読み込まれた新しいプロビジョニングプロファイルが表示される前に、Visual Studio for Mac を停止して再起動することが必要になる場合があります。 また、Xamarin iOS アプリの**Ios バンドル署名**オプションを調整して、新しいプロビジョニングプロファイルを選択することが必要になる場合もあります。
 
 ## <a name="launch-screen-issues"></a>起動画面の問題
 
@@ -177,14 +177,14 @@ iOS 9 では、起動画面の要件が適用されるようになりました�
 
 IOS 9 用の既存の Xamarin iOS アプリをコンパイルして実行すると、次の形式でエラーが表示される場合があります。
 
-> 目標-C 例外がスローされました。  名前:NSInternalInconsistencyException の理由:アプリケーションウィンドウには、アプリケーションの起動の最後にルートビューコントローラーが必要です。
+> 目標-C 例外がスローされました。  名前: NSInternalInconsistencyException Reason: アプリケーションウィンドウには、アプリケーションの起動の最後にルートビューコントローラーが必要です
 
 このエラーが発生しているのは、アプリケーションの起動の最後にアプリウィンドウにルートビューコントローラーがあることが想定されていて、既存のアプリが存在しないためです。
 
 この問題には、少なくとも2つの回避策があります。
 
-1. ファイルでは`xib`なくストーリーボードファイルを使用してユーザーインターフェイスを定義するようにアプリを更新します。 これには、アプリのサイズによっては非常に多くの時間が必要であり、iOS デザイナー (または Xcode の Interface Builder) を使用してストーリーボードをレイアウトする方法についての知識が必要です。 詳細については、統合されたストーリーボードのドキュメントの[概要に](~/ios/user-interface/storyboards/unified-storyboards.md)関する記事をご覧ください。
-2. アプリ`RootViewController`の UI でビューコントローラー `FinishedLaunching`をポイント`AppDelegate`するために、クラスのメソッド内のアプリウィンドウのセットアッププロパティ。
+1. `xib` ファイルの代わりにストーリーボードファイルを使用してユーザーインターフェイスを定義するようにアプリを更新します。 これには、アプリのサイズによっては非常に多くの時間が必要であり、iOS デザイナー (または Xcode の Interface Builder) を使用してストーリーボードをレイアウトする方法についての知識が必要です。 詳細については、統合されたストーリーボードのドキュメントの[概要に](~/ios/user-interface/storyboards/unified-storyboards.md)関する記事をご覧ください。
+2. アプリの UI のビューコントローラーを指すように `AppDelegate` クラスの `FinishedLaunching` メソッドで、アプリウィンドウの `RootViewController` プロパティを設定します。
 
 ## <a name="when-to-initialize-views-and-view-controllers"></a>ビューを初期化してコントローラーを表示する場合
 

@@ -3,15 +3,15 @@ title: アプリケーションの発行
 ms.prod: xamarin
 ms.assetid: 51E19000-040A-2B74-C462-EC57C617085C
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: fe1422aa55e5c1518134e6d0fbbf40047b577767
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 765adf10e5bdf20191c5ee1c089d39032ea07ce0
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70753805"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021377"
 ---
 # <a name="publishing-an-application"></a>アプリケーションの発行
 
@@ -33,7 +33,7 @@ Xamarin.Android アプリケーション開発の最終手順は、アプリケ�
 
 - **Web サイトから** &ndash; Xamarin.Android アプリケーションを Web サイトでダウンロードできます。ユーザーはサイトでリンクをクリックしてアプリケーションをインストールします。
 - **電子メールで** &ndash; ユーザーは Xamarin.Android アプリケーションを電子メールからインストールできます。 Android 搭載デバイスで添付ファイルを開くと、アプリケーションがインストールされます。
-- **マーケットから** &ndash; [Google Play](http://play.google.com/) や [Amazon App Store for Android](http://www.amazon.com/mobile-apps/b?ie=UTF8&node=2350149011) など、配信を行っているアプリケーション マーケットプレイスがいくつかあります。
+- **マーケットから** &ndash; [Google Play](https://play.google.com/) や [Amazon App Store for Android](https://www.amazon.com/mobile-apps/b?ie=UTF8&node=2350149011) など、配信を行っているアプリケーション マーケットプレイスがいくつかあります。
 
 人気のマーケットプレイスをアプリケーション公開に使うことが一般的です。市場が広く、配布管理が行き届いています。 ただし、マーケットプレイスでアプリケーションを公開する場合、さらに一手間かかります。
 

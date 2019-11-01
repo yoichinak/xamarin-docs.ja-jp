@@ -4,15 +4,15 @@ description: 今日の多くのデバイスでタッチスクリーンを使用�
 ms.prod: xamarin
 ms.assetid: 61874769-978A-4562-9B2A-7FFD45F58B38
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 54f036b2a845b7d2f6603b6b9f54472ad2af8bcd
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 43637d8592631b2732e5922544f52d91947dd3bd
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70754718"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73024281"
 ---
 # <a name="touch-and-gestures-in-xamarinandroid"></a>Xamarin. Android でのタッチとジェスチャ
 
@@ -22,7 +22,7 @@ _今日の多くのデバイスでタッチスクリーンを使用すると、�
 
 iOS と Android は、タッチ処理の方法に似ています。 どちらも、画面と複雑なジェスチャで、マルチタッチの多くの接点をサポートできます。 このガイドでは、概念のいくつかの類似点と、両方のプラットフォームでのタッチとジェスチャの実装の particularities について説明します。
 
-Android では`MotionEvent` 、オブジェクトを使用してタッチデータをカプセル化し、ビューオブジェクトにメソッドを使用してタッチを待機します。
+Android では、`MotionEvent` オブジェクトを使用してタッチデータをカプセル化し、ビューオブジェクトにメソッドを使用してタッチを待機します。
 
 タッチデータをキャプチャするだけでなく、iOS と Android はどちらもジェスチャへのタッチパターンを解釈するための手段を提供します。 これらのジェスチャレコグナイザーは、イメージの回転やページのめくりなど、アプリケーション固有のコマンドを解釈するために使用できます。 Android では、サポートされるジェスチャがいくつか提供されています。また、複雑なカスタムジェスチャを簡単に追加するためのリソースも用意されています。
 
@@ -36,7 +36,7 @@ Android と iOS のどちらで作業している場合でも、タッチ認識�
 - [チュートリアル: Android でのタッチの使用](~/android/app-fundamentals/touch/android-touch-walkthrough.md)
 - [マルチタッチトラッキング](touch-tracking.md)
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>まとめ
 
 このガイドでは、Android でのタッチについて説明します。 どちらのオペレーティングシステムでも、タッチを有効にし、タッチイベントに応答する方法を学習しました。 次に、いくつかの一般的なシナリオを処理するために Android と iOS の両方で提供されるジェスチャとジェスチャ認識機能について学習しました。 カスタムジェスチャを作成し、アプリケーションに実装する方法について説明します。 チュートリアルでは、動作している各オペレーティングシステムの概念と Api について説明しました。また、個々の指を追跡する方法についても説明しました。
 

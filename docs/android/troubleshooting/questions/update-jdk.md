@@ -5,15 +5,15 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 4b3ac51d-18dd-4034-87b4-4365194e4ece
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 09/07/2018
-ms.openlocfilehash: d3f4c602f7e581cab74b61072e248a22eede9a22
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 0f7499551db7d86d7978b9c3e1f562a2f054c202
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70762020"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73019527"
 ---
 # <a name="how-do-i-update-the-java-development-kit-jdk-version"></a>Java Development Kit (JDK) のバージョンの更新方法を教えてください
 
@@ -41,7 +41,7 @@ Microsoft Mobile OpenJDK に更新するには、「 [Microsoft Mobile Openjdk P
 
 4. Visual Studio を開き、 **Java Development kit の場所**を更新して、[ツール > オプション] の下の新しい JDK をポイントし **> Xamarin > Android の設定 > java Development kit の場所**に移動します。
 
-    [![[Android の設定] ページの JDK のパス設定](update-jdk-images/image4-sml.png)](update-jdk-images/image4.png#lightbox)
+    [[Android の設定] ページの JDK の![パス設定](update-jdk-images/image4-sml.png)](update-jdk-images/image4.png#lightbox)
 
 場所を更新した後、必ず Visual Studio を再起動してください。
 
@@ -57,6 +57,6 @@ Microsoft Mobile OpenJDK に更新するには、「 [Microsoft Mobile Openjdk P
 
 **/System/Library/Frameworks/JavaVM.framework/Versions/Current**を更新すると、新しい JDK バージョンが既定値として自動的に設定されます。 Mac OS 次に、 **JAVA sdk (jdk)** の場所が、予想される既定値である **/usr**に設定されていることを再確認できます。 **Visual Studio for Mac > 基本設定 > プロジェクト > SDK 場所 > ANDROID > 場所 > java Sdk (jdk) の場所**:
 
-[![[Android の場所] タブで JDK の場所を設定する](update-jdk-images/image6-sml.png)](update-jdk-images/image6.png#lightbox)
+[[Android の場所] タブで JDK の場所を設定![](update-jdk-images/image6-sml.png)](update-jdk-images/image6.png#lightbox)
 
 -----

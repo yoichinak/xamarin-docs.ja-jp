@@ -3,8 +3,8 @@ documentType: LandingData
 title: クロスプラットフォームのサンプル
 metadata:
   description: モバイル開発者向けクロスプラットフォーム Xamarin サンプル アプリです。
-  author: conceptdev
-  ms.author: crdun
+  author: davidortinau
+  ms.author: daortin
   ms.date: 07/30/2019
   ms.topic: sample
 abstract:
@@ -14,7 +14,7 @@ abstract:
       - href: 'https://docs.microsoft.com/samples/browse/?products=xamarin'
         text: すべての Xamarin サンプル
 sections:
-  - title: 開始するには
+  - title: はじめに
     items:
       - type: list
         style: cards

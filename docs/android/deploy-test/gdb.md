@@ -3,15 +3,15 @@ title: GDB
 ms.prod: xamarin
 ms.assetid: CD0BE462-FA38-4881-B481-82AD05B3B8FE
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/05/2018
-ms.openlocfilehash: 0599b2374addf461e59948a1926de06e6e1e746a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 51ebb8932f4b1ef8f10ba699e59ce53c98a38a50
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70754059"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021482"
 ---
 # <a name="gdb"></a>GDB
 
@@ -57,7 +57,7 @@ $ /Library/Frameworks/Mono.framework/Commands/xbuild /t:_Gdb *.csproj
 `_Gdb` ターゲットは `gdb-symbols` ディレクトリを作成し、ターゲットの `/system/lib` および `$APPDIR/lib` ディレクトリの内容をそこにコピーします。
 
 > [!NOTE]
-> `gdb-symbols` ディレクトリの内容は、展開された Android ターゲットに関連付けられており、ターゲットを変更した場合、自動的に置き換えられません  (これをバグと見なします)。Android ターゲット デバイスを変更する場合は、このディレクトリを手動で削除する必要があります。
+> `gdb-symbols` ディレクトリの内容は、展開された Android ターゲットに関連付けられており、ターゲットを変更した場合、自動的に置き換えられません (これをバグと見なします)。Android ターゲット デバイスを変更する場合は、このディレクトリを手動で削除する必要があります。
 
 最後に、生成された `gdb` コマンドをコピーし、シェルで実行します。
 
@@ -110,7 +110,7 @@ GNU gdb (GDB) 7.3.1-gg2
 
 アプリ内に `gdbserver` を含めるには、次のようにします。
 
-1. Android NDK 内で `gdbserver` (**$ANDROID\_NDK\_PATH/prebuilt/android-arm/gdbserver/gdbserver** にある) を見つけ、それを Project ディレクトリにコピーします。
+1. Android NDK 内で `gdbserver` ( **$ANDROID\_NDK\_PATH/prebuilt/android-arm/gdbserver/gdbserver** にある) を見つけ、それを Project ディレクトリにコピーします。
 
 2. `gdbserver` の名前を **libs/armeabi-v7a/libgdbserver.so** に変更します。
 
@@ -160,7 +160,7 @@ GNU gdb (GDB) 7.3.1-gg2
 
 ### <a name="mono_pmip-doesnt-work"></a>`mono_pmip` が機能しない
 
-`mono_pmip` 関数 ([マネージド スタック フレームを取得する](https://www.mono-project.com/docs/debug+profile/debug/#debugging-with-gdb)場合に役立つ) が (現在、`_Gdb` ターゲットがプルダウンしていない) `libmonosgen-2.0.so` からエクスポートされます  (この問題は今後のリリースで修正される予定です)。
+`mono_pmip` 関数 ([マネージド スタック フレームを取得する](https://www.mono-project.com/docs/debug+profile/debug/#debugging-with-gdb)場合に役立つ) が (現在、`_Gdb` ターゲットがプルダウンしていない) `libmonosgen-2.0.so` からエクスポートされます (この問題は今後のリリースで修正される予定です)。
 
 `libmonosgen-2.0.so` にある関数の呼び出しを有効にするには、次のようにターゲット デバイスから `gdb-symbols` ディレクトリにコピーします。
 
@@ -194,6 +194,6 @@ Copyright (C) 2011 Free Software Foundation, Inc.
 No stack.
 ```
 
-これは通常、`gdb-symbols` ディレクトリの内容が Android ターゲットと同期されていないことを示しています  (Android ターゲットを変更しましたか?)。
+これは通常、`gdb-symbols` ディレクトリの内容が Android ターゲットと同期されていないことを示しています (Android ターゲットを変更しましたか?)。
 
 `gdb-symbols` ディレクトリを削除して、再試行してください。

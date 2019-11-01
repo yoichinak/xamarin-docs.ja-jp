@@ -3,32 +3,32 @@ title: 既知の問題 & 回避策
 description: このドキュメントでは、Xamarin Workbooks に関する既知の問題と回避策について説明します。 CultureInfo の問題、JSON の問題などについて説明します。
 ms.prod: xamarin
 ms.assetid: 495958BA-C9C2-4910-9BAD-F48A425208CF
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/30/2017
-ms.openlocfilehash: b7b73e214af6a5a45426b4e2d2d7e01a436b379e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: c7b9f93c2d6339ba1fd26b27742ecfc0f438c5de
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292779"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73018166"
 ---
 # <a name="known-issues--workarounds"></a>既知の問題 & 回避策
 
 ## <a name="persistence-of-cultureinfo-across-cells"></a>セル間の CultureInfo の永続化
 
-`System.Threading.CurrentThread.CurrentCulture` [Monoの`AppContext.SetSwitch`実装でのバグ][appcontext-bug]のため、またはの設定は`System.Globalization.CultureInfo.CurrentCulture` 、mono ベースのブックターゲット (Mac、iOS、および Android) のブックセル間で保持されません。
+[Mono の `AppContext.SetSwitch`実装のバグ][appcontext-bug]により、`System.Threading.CurrentThread.CurrentCulture` または `System.Globalization.CultureInfo.CurrentCulture` の設定は、mono ベースのブックターゲット (Mac、iOS、および Android) のブックセル間で保持されません。
 
 ### <a name="workarounds"></a>問題回避
 
-- アプリケーションをドメインローカル`DefaultThreadCurrentCulture`に設定します。
+- アプリケーションドメインローカル `DefaultThreadCurrentCulture`を設定します。
 
 ```csharp
 using System.Globalization;
 CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("de-DE")
 ```
 
-- または、ブック1.2.1 以降に更新します。これにより`System.Threading.CurrentThread.CurrentCulture` 、 `System.Globalization.CultureInfo.CurrentCulture`割り当てがに書き直され、目的の動作 (Mono のバグの回避) が提供されます。
+- または、ブック1.2.1 以降に更新します。これにより、割り当てが `System.Threading.CurrentThread.CurrentCulture` に書き直され、目的の動作 (Mono のバグに対処) を実現する `System.Globalization.CultureInfo.CurrentCulture` になります。
 
 ## <a name="unable-to-use-newtonsoftjson"></a>Newtonsoft. Json を使用できません
 
@@ -39,7 +39,7 @@ CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("de-DE")
 
 ### <a name="details"></a>説明
 
-Newtonsoft. Json 10 がリリースされました。これにより、サポート`dynamic`に提供されているバージョンのブックと競合する Microsoft CSharp への依存関係がバンプされました。 これについては、ブック1.3 プレビューリリースで取り上げられていますが、ここでは、9.0.1 をバージョンに明示的に固定することでこれを回避しました。
+Newtonsoft. Json 10 がリリースされました。これにより、`dynamic`をサポートするために提供されるバージョンのブックと競合する、CSharp への依存関係があります。 これについては、ブック1.3 プレビューリリースで取り上げられていますが、ここでは、9.0.1 をバージョンに明示的に固定することでこれを回避しました。
 
 Newtonsoft. Json 10 以降に明示的に依存している NuGet パッケージは、現在は alpha チャネルにあるブック1.3 でのみサポートされています。
 

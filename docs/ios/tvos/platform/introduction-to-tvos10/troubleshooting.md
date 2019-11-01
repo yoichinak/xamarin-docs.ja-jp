@@ -4,15 +4,15 @@ description: この記事では、Xamarin アプリで tvOS 10 を操作する�
 ms.prod: xamarin
 ms.assetid: EA5564BB-C415-49A2-B70C-3DBF5E0F3FAB
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: c734bfdd1baaf89cf25d687657e5f14bdbc7834c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: a6588dee675aee3e2580b70dfdea2920c6235775
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283450"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030611"
 ---
 # <a name="troubleshooting-tvos-10-apps-built-with-xamarin"></a>Xamarin でビルドされた tvOS 10 アプリのトラブルシューティング
 
@@ -28,7 +28,7 @@ ms.locfileid: "70283450"
 
 <a name="App-Store" />
 
-## <a name="app-store"></a>アプリ ストア
+## <a name="app-store"></a>App Store
 
 既知の問題:
 
@@ -41,17 +41,17 @@ ms.locfileid: "70283450"
 
 既知の問題:
 
-- を`NSObject.ValueForKey`呼び出す`null`と、キーによって例外が発生します。
-- を呼び出す`UIFont.WithName`ときに名前でフォントを参照すると、クラッシュが発生します。
-- と`NSURLSession`は`NSURLConnection`どちらも、url の TLS ハンドシェイク中に RC4 `http://`暗号スイートを使用しなくなりました。
-- `ViewWillLayoutSubviews`またはのいずれかのメソッドでスーパービューのジオメトリを変更する`LayoutSubviews`と、アプリがハングすることがあります。
+- `NSObject.ValueForKey` を呼び出すと、`null` キーによって例外が発生します。
+- `UIFont.WithName` を呼び出すときに名前でフォントを参照すると、クラッシュが発生します。
+- `NSURLSession` と `NSURLConnection` はどちらも `http://` Url の TLS ハンドシェイク中に RC4 暗号スイートを使用しなくなりました。
+- `ViewWillLayoutSubviews` または `LayoutSubviews` のいずれかのメソッドでスーパービューのジオメトリを変更すると、アプリがハングすることがあります。
 - すべての SSL/TLS 接続では、RC4 対称暗号が既定で無効になっています。 さらに、セキュリティで保護されたトランスポート API は SSLv3 をサポートしなくなりました。アプリは、できるだけ早く SHA-1 と3DES 暗号化の使用を停止することをお勧めします。
 
 <a name="CFNetwork-HTTP-Protocol" />
 
 ## <a name="cfnetwork-http-protocol"></a>CFNetwork HTTP プロトコル
 
-クラスのプロパティは、から`NSURLConnection`開かれていないストリームに設定`NSURLSession`する必要があります。これにより、この要件が厳密に適用されるようになります。 `HTTPBodyStream` `NSMutableURLRequest`
+`NSMutableURLRequest` クラスの `HTTPBodyStream` プロパティは、`NSURLConnection` によって、また `NSURLSession` によってこの要件が厳密に適用されるようになったため、開かれていないストリームに設定する必要があります。
 
 <a name="CloudKit" />
 
@@ -63,13 +63,13 @@ ms.locfileid: "70283450"
 
 ## <a name="core-image"></a>コアイメージ
 
-API `CIImageProcessor`では、任意の入力イメージの数がサポートされるようになりました。 `CIImageProcessor`TvOS 10 beta 1 に含まれていた API は削除されます。
+`CIImageProcessor` API では、任意の入力イメージ数がサポートされるようになりました。 tvOS 10 beta 1 に含まれていた `CIImageProcessor` API は削除されます。
 
 <a name="NSUserActivity" />
 
 ## <a name="nsuseractivity"></a>NSUserActivity
 
-ハンドオフ操作の後、 `UserInfo` `NSUserActivity`オブジェクトのプロパティが空になる場合があります。 現在の`BecomeCurrent`回避策として nsuseractivity ' オブジェクトを明示的に呼び出します。
+ハンドオフ操作後、`NSUserActivity` オブジェクトの `UserInfo` プロパティが空になる場合があります。 現在の回避策として `BecomeCurrent` NSUserActivity ' オブジェクトを明示的に呼び出します。
 
 <a name="UIKit" />
 
@@ -77,12 +77,12 @@ API `CIImageProcessor`では、任意の入力イメージの数がサポート�
 
 既知の問題:
 
-- の背景の`UINavigationBar` `UITabBar`外観が変更され`UIToolBar`たか、またはレイアウトパスによって新しい外観が解決される可能性があります。 `LayoutSubviews`、 、`UpdateConstraints`または`DidUpdateSubviews`イベントの内部でこれらの外観を変更しようとすると、レイアウトループが無限になる可能性があります。 `WillLayoutSubviews`
-- TvOS 10 では、 `RemoveGestureRecognizer` `UIView`オブジェクトのメソッドを呼び出すと、進行中のジェスチャ認識エンジンが明示的に取り消されます。
+- `UINavigationBar`、`UITabBar` または `UIToolBar` の背景の外観を変更すると、レイアウトパスによって新しい外観が解決される場合があります。 `LayoutSubviews`、`UpdateConstraints`、`WillLayoutSubviews` または `DidUpdateSubviews` イベント内でこれらの外観を変更しようとすると、レイアウトループが無限になる可能性があります。
+- TvOS 10 では、`UIView` オブジェクトの `RemoveGestureRecognizer` メソッドを呼び出すと、実行中のジェスチャ認識エンジンが明示的に取り消されます。
 - 表示されたビューコントローラーは、ステータスバーの外観に影響を与えるようになりました。
-- tvOS 10 では`base.AwakeFromNib` `AwakeFromNib` 、メソッドをサブクラス`UIViewController`化およびオーバーライドするときに、を呼び出す必要があります。
-- を呼び出す`UIView` `LayoutSubviews` 前`base.LayoutSubviews`にレイアウトをオーバーライドしてダーティにするカスタムサブクラスを持つアプリは、tvOS 10 で無限のレイアウトループをトリガーすることがあります。
-- 方向固有または flippable の画像アセットは、オブジェクトに`UIButton`割り当てられたときには反転されません。
+- tvOS 10 では、`UIViewController` をサブクラス化し、`AwakeFromNib` メソッドをオーバーライドするときに、開発者が `base.AwakeFromNib` を呼び出す必要があります。
+- `base.LayoutSubviews` を呼び出す前に `LayoutSubviews` をオーバーライドしてレイアウトを変更するカスタム `UIView` サブクラスを持つアプリは、tvOS 10 で無限のレイアウトループをトリガーすることがあります。
+- 方向固有または flippable の画像アセットは、`UIButton` オブジェクトに割り当てられたときには反転されません。
 
 ## <a name="related-links"></a>関連リンク
 

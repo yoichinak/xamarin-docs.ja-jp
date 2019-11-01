@@ -4,15 +4,15 @@ description: バインドされたサービスは、クライアント (Android 
 ms.prod: xamarin
 ms.assetid: 809ECE88-EF08-4E9A-B389-A2DC08C51A6E
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/04/2018
-ms.openlocfilehash: 584f523446584192cfa882697c0f76865ce78a10
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: a3b0e8499d208f209de481163a236e5241c83ee6
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70754923"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73024990"
 ---
 # <a name="bound-services-in-xamarinandroid"></a>Xamarin. Android のバインドされたサービス
 
@@ -20,7 +20,7 @@ _バインドされたサービスは、クライアント (Android アクティ
 
 ## <a name="bound-services-overview"></a>バインドされたサービスの概要
 
-クライアントがサービスと直接対話するためのクライアントサーバーインターフェイスを提供するサービスは、バインドされた_サービス_と呼ばれます。  サービスの1つのインスタンスに同時に接続されている複数のクライアントが存在する場合があります。 バインドされたサービスとクライアントは相互に分離されます。 代わりに、Android には、2つの間の接続の状態を管理する一連の中間オブジェクトが用意されています。 この状態は、 [`Android.Content.IServiceConnection`](xref:Android.Content.IServiceConnection)インターフェイスを実装するオブジェクトによって維持されます。  このオブジェクトは、クライアントによって作成され、 [`BindService`](xref:Android.Content.Context.BindService*)メソッドにパラメーターとして渡されます。 @No__t_0 は、任意の[`Android.Content.Context`](xref:Android.Content.Context)オブジェクト (アクティビティなど) で使用できます。 これは、サービスを起動してクライアントをバインドするための Android オペレーティングシステムへの要求です。 クライアントが `BindService` メソッドを使用してサービスにバインドするには、次の3つの方法があります。
+クライアントがサービスと直接対話するためのクライアントサーバーインターフェイスを提供するサービスは、バインドされた_サービス_と呼ばれます。  サービスの1つのインスタンスに同時に接続されている複数のクライアントが存在する場合があります。 バインドされたサービスとクライアントは相互に分離されます。 代わりに、Android には、2つの間の接続の状態を管理する一連の中間オブジェクトが用意されています。 この状態は、 [`Android.Content.IServiceConnection`](xref:Android.Content.IServiceConnection)インターフェイスを実装するオブジェクトによって維持されます。  このオブジェクトは、クライアントによって作成され、 [`BindService`](xref:Android.Content.Context.BindService*)メソッドにパラメーターとして渡されます。 `BindService` は、任意の[`Android.Content.Context`](xref:Android.Content.Context)オブジェクト (アクティビティなど) で使用できます。 これは、サービスを起動してクライアントをバインドするための Android オペレーティングシステムへの要求です。 クライアントが `BindService` メソッドを使用してサービスにバインドするには、次の3つの方法があります。
 
 - サービスバインダー &ndash;**サービス**バインダーは、 [`Android.OS.IBinder`](xref:Android.OS.IBinder)インターフェイスを実装するクラスです。 ほとんどのアプリケーションは、このインターフェイスを直接実装するのではなく、 [`Android.OS.Binder`](xref:Android.OS.Binder)クラスを拡張します。 これは最も一般的な方法であり、サービスとクライアントが同じプロセス内に存在する場合に適しています。
 - **Messenger を使用**する &ndash; この手法は、サービスが別のプロセスに存在する可能性がある場合に適しています。 代わりに、サービス要求は、 [`Android.OS.Messenger`](xref:Android.OS.Messenger)を介してクライアントとサービスの間でマーシャリングされます。 サービスには、`Messenger` 要求を処理する[`Android.OS.Handler`](xref:Android.OS.Handler)が作成されます。 これについては、別のガイドで説明します。
@@ -36,20 +36,20 @@ _バインドされたサービスは、クライアント (Android アクティ
 
 このガイドでは、`Service` クラスを拡張して、バインドされたサービスを実装する方法について説明します。 また、クライアントがサービスと通信できるようにするために、`IServiceConnection` の実装と `Binder` の拡張についても説明します。 サンプルアプリは、このガイドに付属しています。このガイドには、 **[Boundservicedemo](https://github.com/xamarin/monodroid-samples/tree/master/ApplicationFundamentals/ServiceSamples/BoundServiceDemo)** と呼ばれる単一の Xamarin Android プロジェクトを含むソリューションが含まれています。 これは、サービスを実装する方法と、そのサービスにアクティビティをバインドする方法を示す、非常に基本的なアプリケーションです。 バインドされたサービスには、メソッドが1つだけ含まれる非常に単純な API があります。 `GetFormattedTimestamp` は、サービスが開始されたときにユーザーに通知する文字列と、その実行時間を示します。 このアプリでは、ユーザーが手動でサービスのバインドを解除してバインドすることもできます。
 
-[Android フォンで実行されているアプリケーションの ![Screenshot](bound-services-images/bound-services-03-sml.png)](bound-services-images/bound-services-03.png#lightbox)
+[Android フォンで実行されているアプリケーションのスクリーンショットを![します。](bound-services-images/bound-services-03-sml.png)](bound-services-images/bound-services-03.png#lightbox)
 
 ## <a name="implementing-and-consuming-a-bound-service"></a>バインドされたサービスの実装と使用
 
 Android アプリケーションでバインドされたサービスを使用するには、次の3つのコンポーネントを実装する必要があります。
 
-1. **@No__t_1 クラスを拡張し、ライフサイクルコールバックメソッドを実装し**ます &ndash; このクラスには、サービスに要求される作業を実行するコードが含まれます。 詳細については、以下で詳しく説明します。
-2. @No__t_2 **`IServiceConnection` を実装するクラスを作成**します。このインターフェイスは、サービスへの接続が変更されたときにクライアントに通知するために Android によって呼び出されるコールバックメソッドを提供します。つまり、クライアントがサービスに接続または切断されたことを示します。 サービス接続は、クライアントがサービスと直接対話するために使用できるオブジェクトへの参照も提供します。 この参照は、_バインダー_と呼ばれます。
-3. @No__t_2 **`IBinder` を実装するクラスを作成**する_バインダー_の実装は、クライアントがサービスとの通信に使用する API を提供します。 バインダーは、バインドされたサービスへの参照を提供することにより、メソッドを直接呼び出すことができます。また、バインダーは、バインドされたサービスをアプリケーションからカプセル化して非表示にするクライアント API を提供できます。 @No__t_0 は、リモートプロシージャ呼び出しに必要なコードを提供する必要があります。 @No__t_0 インターフェイスを直接実装する必要はありません (または推奨されません)。 代わりに、アプリケーションは、`IBinder` に必要な基本機能の大部分を提供する `Binder` の種類を拡張する必要があります。
+1. **`Service` クラスを拡張し、ライフサイクルコールバックメソッドを実装し**ます &ndash; このクラスには、サービスに要求される作業を実行するコードが含まれます。 詳細については、以下で詳しく説明します。
+2. &ndash; **`IServiceConnection`を実装するクラスを作成**します。このインターフェイスは、サービスへの接続が変更されたときにクライアントに通知するために Android によって呼び出されるコールバックメソッドを提供します。つまり、クライアントがサービスに接続または切断されたことを示します。 サービス接続は、クライアントがサービスと直接対話するために使用できるオブジェクトへの参照も提供します。 この参照は、_バインダー_と呼ばれます。
+3. &ndash; **`IBinder`を実装するクラスを作成**する_バインダー_の実装は、クライアントがサービスとの通信に使用する API を提供します。 バインダーは、バインドされたサービスへの参照を提供することにより、メソッドを直接呼び出すことができます。また、バインダーは、バインドされたサービスをアプリケーションからカプセル化して非表示にするクライアント API を提供できます。 `IBinder` は、リモートプロシージャ呼び出しに必要なコードを提供する必要があります。 `IBinder` インターフェイスを直接実装する必要はありません (または推奨されません)。 代わりに、アプリケーションは、`IBinder` に必要な基本機能の大部分を提供する `Binder` の種類を拡張する必要があります。
 4. サービス接続、バインダー、およびサービスを作成した後に、サービス**を開始してバインド**する &ndash;、Android アプリケーションはサービスを開始し、それにバインドします。
 
 これらの各手順については、以降のセクションで詳しく説明します。
 
-### <a name="extend-the-service-class"></a>@No__t_0 クラスを拡張する
+### <a name="extend-the-service-class"></a>`Service` クラスを拡張する
 
 装飾を使用してサービスを作成するには、`Service` をサブクラス化し、 [`ServiceAttribute`](xref:Android.App.ServiceAttribute)でクラスをする必要があります。 この属性は、Xamarin. Android ビルドツールによって使用されます。アクティビティと同様に、アプリの**Androidmanifest .xml**ファイルにサービスを適切に登録するために、バインドされたサービスには、の重要なイベントに関連付けられた独自のライフサイクルとコールバックメソッドがあります。ライフサイクルです。 次の一覧は、サービスが実装する一般的なコールバックメソッドの例を示しています。
 
@@ -124,11 +124,11 @@ namespace BoundServiceDemo
 }
 ```
 
-このサンプルでは、`OnCreate` メソッドによって、クライアントによって要求されるタイムスタンプを取得して書式設定するためのロジックを保持するオブジェクトが初期化されます。 最初のクライアントがサービスにバインドしようとすると、Android は `OnBind` メソッドを呼び出します。 このサービスは、クライアントが実行中のサービスのこのインスタンスにアクセスできるようにする `TimestampBinder` オブジェクトをインスタンス化します。 @No__t_0 クラスについては、次のセクションで説明します。
+このサンプルでは、`OnCreate` メソッドによって、クライアントによって要求されるタイムスタンプを取得して書式設定するためのロジックを保持するオブジェクトが初期化されます。 最初のクライアントがサービスにバインドしようとすると、Android は `OnBind` メソッドを呼び出します。 このサービスは、クライアントが実行中のサービスのこのインスタンスにアクセスできるようにする `TimestampBinder` オブジェクトをインスタンス化します。 `TimestampBinder` クラスについては、次のセクションで説明します。
 
 ### <a name="implementing-ibinder"></a>IBinder の実装
 
-前述のように、`IBinder` オブジェクトは、クライアントとサービス間の通信チャネルを提供します。 Android アプリケーションでは `IBinder` インターフェイスを実装しないでください。 [`Android.OS.Binder`](xref:Android.OS.Binder)を拡張する必要があります。 @No__t_0 クラスは、(別のプロセスで実行されている可能性がある) バインダーオブジェクトをサービスからクライアントにマーシャリングするために必要なインフラストラクチャの多くを提供します。 ほとんどの場合、`Binder` サブクラスは数行のコードにすぎないため、サービスへの参照をラップします。 この例では、`TimestampBinder` には `TimestampService` をクライアントに公開するプロパティがあります。
+前述のように、`IBinder` オブジェクトは、クライアントとサービス間の通信チャネルを提供します。 Android アプリケーションでは `IBinder` インターフェイスを実装しないでください。 [`Android.OS.Binder`](xref:Android.OS.Binder)を拡張する必要があります。 `Binder` クラスは、(別のプロセスで実行されている可能性がある) バインダーオブジェクトをサービスからクライアントにマーシャリングするために必要なインフラストラクチャの多くを提供します。 ほとんどの場合、`Binder` サブクラスは数行のコードにすぎないため、サービスへの参照をラップします。 この例では、`TimestampBinder` には `TimestampService` をクライアントに公開するプロパティがあります。
 
 ```csharp
 public class TimestampBinder : Binder
@@ -148,11 +148,11 @@ public class TimestampBinder : Binder
 string currentTimestamp = serviceConnection.Binder.Service.GetFormattedTimestamp()
 ```
 
-@No__t_0 が拡張されたら、すべての接続に `IServiceConnection` を実装する必要があります。
+`Binder` が拡張されたら、すべての接続に `IServiceConnection` を実装する必要があります。
 
 ### <a name="creating-the-service-connection"></a>サービス接続の作成
 
-@No__t_0 によって表示される | 導入 | 公開 | `Binder` オブジェクトをクライアントに接続します。 @No__t_0 インターフェイスの実装に加えて、クラスは `Java.Lang.Object` を拡張する必要があります。 また、サービス接続では、クライアントが `Binder` にアクセスできる何らかの方法 (したがって、バインドされたサービスと通信する) も提供する必要があります。
+`IServiceConnection` によって表示される | 導入 | 公開 | `Binder` オブジェクトをクライアントに接続します。 `IServiceConnection` インターフェイスの実装に加えて、クラスは `Java.Lang.Object`を拡張する必要があります。 また、サービス接続では、クライアントが `Binder` にアクセスできる何らかの方法 (したがって、バインドされたサービスと通信する) も提供する必要があります。
 
 このコードは、付随するサンプルプロジェクトからのものであり、`IServiceConnection` を実装する方法の1つとして考えられます。
 
@@ -226,7 +226,7 @@ namespace BoundServiceDemo
 
 バインドプロセスの一環として、Android は `OnServiceConnected` メソッドを呼び出し、バインドされるサービスの `name` と、サービス自体への参照を保持する `binder` を提供します。 この例では、サービス接続に2つのプロパティがあります。1つはバインダーへの参照を保持し、もう1つはクライアントがサービスに接続されている場合はのブール値フラグです。
 
-@No__t_0 メソッドは、クライアントとサービス間の接続が予期せず失われたり、破損したりした場合にのみ呼び出されます。 このメソッドを使用すると、クライアントはサービスの中断に応答する可能性があります。  
+`OnServiceDisconnected` メソッドは、クライアントとサービス間の接続が予期せず失われたり、破損したりした場合にのみ呼び出されます。 このメソッドを使用すると、クライアントはサービスの中断に応答する可能性があります。  
 
 ## <a name="starting-and-binding-to-a-service-with-an-explicit-intent"></a>明示的なインテントを使用してサービスを開始およびバインドする
 

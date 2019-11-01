@@ -4,15 +4,15 @@ description: Xamarin での tvOS の内部動作について説明したドキ�
 ms.prod: xamarin
 ms.assetid: 8C076FED-9C03-44DE-9723-0E20272DD16B
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/07/2016
-ms.openlocfilehash: ffcf4d3a491cb6ad865da35d387782b7bd1fca01
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 4712b7b75e735da047d7f44f7c6c47f42b9ad7a8
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283573"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030659"
 ---
 # <a name="tvos-in-xamarin-internals"></a>Xamarin の tvOS –内部 
 
@@ -54,7 +54,7 @@ iOS で使用できるアプリケーションにプロジェクトをビルド�
 
 ### <a name="linking-native-librariesiosplatformnative-interopmd"></a>[ネイティブライブラリのリンク](~/ios/platform/native-interop.md)
 
-Xamarin. iOS は、ネイティブ C ライブラリと目的 C ライブラリの両方を使用したリンクをサポートします。 このドキュメントでは、ネイティブ C ライブラリを Xamarin. iOS プロジェクトにリンクする方法について説明します。 目的 c ライブラリについても同様に説明します。詳細&nbsp;については、「[バインディングの目的-c の型](~/ios/platform/binding-objective-c/index.md)&nbsp;」を参照してください。
+Xamarin. iOS は、ネイティブ C ライブラリと目的 C ライブラリの両方を使用したリンクをサポートします。 このドキュメントでは、ネイティブ C ライブラリを Xamarin. iOS プロジェクトにリンクする方法について説明します。 目的 C のライブラリについても同様に説明します。詳細については、「&nbsp; の[バインドの目的-c の型](~/ios/platform/binding-objective-c/index.md)&nbsp;」を参照してください。
 
 ## <a name="objective-c-selectorsiosinternalsobjective-c-selectorsmd"></a>[目標-C セレクター](~/ios/internals/objective-c-selectors.md)
 

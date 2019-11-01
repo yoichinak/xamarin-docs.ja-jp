@@ -4,15 +4,15 @@ description: このドキュメントでは、自然言語フレームワーク�
 ms.prod: xamarin
 ms.assetid: 126C8764-F873-4EB9-98A3-D82AB5689111
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/20/2018
-ms.openlocfilehash: 7b0d07f2153a0395146506a371631e0bcf75ebef
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 1598bad7bdbea8334b7fdfa2b950400b698579b0
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292918"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031995"
 ---
 # <a name="using-the-natural-language-framework-with-xamarinios"></a>Xamarin で自然言語フレームワークを使用する
 
@@ -22,7 +22,7 @@ IOS 12 で導入された自然言語フレームワークは、デバイス上�
 
 [NSLinguisticTagger](xref:Foundation.NSLinguisticTagger)クラスは引き続き使用できます。 ただし、自然言語フレームワークは、自然言語処理に使用するために推奨されるメカニズムです。
 
-## <a name="sample-app-xamarinnl"></a>サンプルアプリ:XamarinNL
+## <a name="sample-app-xamarinnl"></a>サンプルアプリ: XamarinNL
 
 Xamarin. iOS で自然言語フレームワークを使用する方法については、 [XamarinNL サンプルアプリ](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-xamarinnl)を参照してください。
 このサンプルアプリでは、自然言語フレームワークを使用して次のことを行う方法を示します。
@@ -33,7 +33,7 @@ Xamarin. iOS で自然言語フレームワークを使用する方法につい�
 
 ## <a name="recognizing-languages"></a>言語の認識
 
-サンプルアプリの **[レコグナイザー]** タブでは、[`NLLanguageRecognizer`](xref:NaturalLanguage.NLLanguageRecognizer)
+サンプルアプリの **[レコグナイザー]** タブは、の使用方法を示してい[`NLLanguageRecognizer`](xref:NaturalLanguage.NLLanguageRecognizer)
 テキストのブロックの言語を決定する場合は。
 
 > [!NOTE]
@@ -43,8 +43,8 @@ Xamarin. iOS で自然言語フレームワークを使用する方法につい�
 
 **[言語]** ボタンをタップして、ユーザー入力で優先される言語を特定します。
 
-の`HandleDetermineLanguageButtonTap` メソッド`LanguageRecognizerViewController`では、[`GetDominantLanguage`](xref:NaturalLanguage.NLLanguageRecognizer.GetDominantLanguage*)
-をフェッチ`NLLanguageRecognizer`するのメソッド[`NLLanguage`](xref:NaturalLanguage.NLLanguage)
+`LanguageRecognizerViewController` の `HandleDetermineLanguageButtonTap` メソッドは[`GetDominantLanguage`](xref:NaturalLanguage.NLLanguageRecognizer.GetDominantLanguage*)を使用します。
+[`NLLanguage`](xref:NaturalLanguage.NLLanguage)をフェッチするための `NLLanguageRecognizer` のメソッド
 テキストで見つかった主言語:
 
 ```csharp
@@ -63,9 +63,9 @@ partial void HandleDetermineLanguageButtonTap(UIButton sender)
 
 **[言語確率]** ボタンをタップして、ユーザー入力の言語仮説の一覧を取得します。
 
-クラスのメソッドは`HandleLanguageProbabilitiesButtonTap` 、をインスタンス`NLLanguageRecognizer`化し、 `LanguageRecognizerViewController`[`Process`](xref:NaturalLanguage.NLLanguageRecognizer.Process*)
-ユーザーのテキスト。 次に、言語認識エンジンを呼び出します。[`GetNativeLanguageHypotheses`](xref:NaturalLanguage.NLLanguageRecognizer.GetNativeLanguageHypotheses*)
-メソッド。言語の辞書と関連する確率を取得します。 クラス`LanguageRecognizerTableViewController`は、これらの言語と確率をレンダリングします。
+`LanguageRecognizerViewController` クラスの `HandleLanguageProbabilitiesButtonTap` メソッドは `NLLanguageRecognizer` をインスタンス化し、それを要求し[`Process`](xref:NaturalLanguage.NLLanguageRecognizer.Process*)
+ユーザーのテキスト。 次に、言語認識エンジンの[`GetNativeLanguageHypotheses`](xref:NaturalLanguage.NLLanguageRecognizer.GetNativeLanguageHypotheses*)を呼び出します。
+メソッド。言語の辞書と関連する確率を取得します。 次に、`LanguageRecognizerTableViewController` クラスによって、これらの言語と確率がレンダリングされます。
 
 ```csharp
 partial void HandleLanguageProbabilitiesButtonTap(UIButton sender)
@@ -81,7 +81,7 @@ partial void HandleLanguageProbabilitiesButtonTap(UIButton sender)
 }
 ```
 
-次`NLLanguage`のような値が考えられます。
+考えられる `NLLanguage` 値は次のとおりです。
 
 - `Amharic`
 - `Arabic`
@@ -141,18 +141,18 @@ partial void HandleLanguageProbabilitiesButtonTap(UIButton sender)
 - `Urdu`
 - `Vietnamese`
 
-サポートされている言語の完全な一覧については、「」を参照してください。[`NLLanguage`](xref:NaturalLanguage.NLLanguage)
+サポートされている言語の完全な一覧については、 [`NLLanguage`](xref:NaturalLanguage.NLLanguage)を参照してください。
 API のドキュメントを列挙します。
 
 ## <a name="tokenizing-text-into-words-sentences-and-paragraphs"></a>単語、文、および段落にテキストをトークン化
 
-サンプルアプリの **[トークナイザ]** タブでは、テキストのブロックをのコンポーネント語または文[`NLTokenizer`](xref:NaturalLanguage.NLTokenizer)に分割する方法を示します。
+サンプルアプリの **[トークナイザ]** \ (構成 \) タブでは、テキストのブロックをコンポーネント語や文に分割する方法を、 [`NLTokenizer`](xref:NaturalLanguage.NLTokenizer)で示します。
 
 [**単語**または**文**] ボタンをタップして、トークンの一覧を取得します。 各トークンは、元のテキストの単語または文に関連付けられています。
 
-`ShowTokens`を呼び出すことによって、ユーザーの入力をトークンに分割します。[`GetTokens`](xref:NaturalLanguage.NLTokenizer.GetTokens*)
-の`NLTokenizer`メソッド。 このメソッドは、の配列を返します。[`NSValue`](xref:Foundation.NSValue)
-オブジェクト。各オブジェクトは`NSRange` 、元のテキストのトークンに対応する値をラップします。
+`ShowTokens` は、 [`GetTokens`](xref:NaturalLanguage.NLTokenizer.GetTokens*)を呼び出して、ユーザーの入力をトークンに分割します
+`NLTokenizer`のメソッド。 このメソッドは、の配列を返し[`NSValue`](xref:Foundation.NSValue)
+オブジェクト。各オブジェクトは、元のテキストのトークンに対応する `NSRange` 値をラップします。
 
 ```csharp
 void ShowTokens(NLTokenUnit unit)
@@ -168,7 +168,7 @@ void ShowTokens(NLTokenUnit unit)
 }
 ```
 
-`LanguageTokenizerTableViewController`各テーブルセルに1つのトークンをレンダリングします。 `NSRange` トークン`NSValue`からを抽出し、対応する文字列を元のテキストで検索し、テーブルビューのセルにラベルを設定します。
+`LanguageTokenizerTableViewController` では、各テーブルセルに1つのトークンがレンダリングされます。 トークン `NSValue`から `NSRange` を抽出し、対応する文字列を元のテキストで検索し、テーブルビューのセルにラベルを設定します。
 
 ```csharp
 public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
@@ -182,7 +182,7 @@ public override UITableViewCell GetCell(UITableView tableView, NSIndexPath index
 
 ## <a name="tagging-named-entities-and-parts-of-speech"></a>名前付きエンティティと音声の一部のタグ付け
 
-XamarinNL サンプルアプリの **[Tagger]** タブでは、[`NLTagger`](xref:NaturalLanguage.NLTagger)
+XamarinNL サンプルアプリの**Tagger**タブは[`NLTagger`](xref:NaturalLanguage.NLTagger) 、の使用方法を示しています。
 カテゴリを入力文字列のトークンに関連付けるクラス。
 自然言語フレームワークには、人間、場所、組織、および音声の一部を認識するためのサポートが組み込まれています。
 
@@ -191,13 +191,13 @@ XamarinNL サンプルアプリの **[Tagger]** タブでは、[`NLTagger`](xref
 
 **名前付きエンティティ**または**音声認識の部分**をタップしてフェッチします。
 
-- オブジェクトの`NSValue`配列。各オブジェクトは、 `NSRange`元のテキストのトークンのをラップします。
-- 値の[`NLTag`](xref:NaturalLanguage.NLTag)配列–同じ配列インデックスに`NSValue`あるトークンのカテゴリ。
+- `NSValue` オブジェクトの配列。それぞれが元のテキストのトークンの `NSRange` をラップします。
+- [`NLTag`](xref:NaturalLanguage.NLTag)値の配列–同じ配列インデックスにある `NSValue` トークンのカテゴリ。
 
-`LanguageTaggerViewController` `ShowTags` [`NLTagScheme`](xref:NaturalLanguage.NLTagScheme) `NLTagScheme.NameType`では、と`HandleNamedEntitiesButtonTap`の各呼び出しは、 (音声の一部に対して)または(名前付きエンティティの場合)を渡します。`NLTagScheme.LexicalClass` `HandlePartsOfSpeechButtonTap`
+`LanguageTaggerViewController`では、各呼び出し `ShowTags`を `HandlePartsOfSpeechButtonTap` して `HandleNamedEntitiesButtonTap`、 [`NLTagScheme`(](xref:NaturalLanguage.NLTagScheme)音声の一部) または `NLTagScheme.LexicalClass` (名前付きエンティティの場合) のいずれかを渡します。
 
-`ShowTags`を作成し`NLTagScheme` `NLTagScheme` 、クエリ対象の型の配列 (この場合は、渡された値のみ) を使用してインスタンス化します。 `NLTagger` 次のものを使用します。[`GetTags`](xref:NaturalLanguage.NLTagger.GetTags*)
-ユーザー入力の`NLTagger`テキストに関連するタグを特定するためのメソッド。
+`ShowTags` は、`NLTagger`を作成し、クエリを実行する `NLTagScheme` 型の配列を使用してインスタンス化します (この例では、渡された `NLTagScheme` 値のみ)。 次に、 [`GetTags`](xref:NaturalLanguage.NLTagger.GetTags*)を使用します。
+`NLTagger` のメソッドを指定して、ユーザー入力のテキストに関連するタグを決定します。
 
 ```csharp
 void ShowTags(NLTagScheme tagScheme)
@@ -217,9 +217,9 @@ void ShowTags(NLTagScheme tagScheme)
 }
 ```
 
-タグは、 `LanguageTaggerTableViewController`によってテーブル内に表示されます。
+タグは、`LanguageTaggerTableViewController`によってテーブルに表示されます。
 
-次`NLTag`のような値が考えられます。
+考えられる `NLTag` 値は次のとおりです。
 
 - `Adjective`
 - `Adverb`
@@ -253,7 +253,7 @@ void ShowTags(NLTagScheme tagScheme)
 - `Word`
 - `WordJoiner`
 
-サポートされているタグの完全な一覧は、「」の一部として利用できます。[`NLTag`](xref:NaturalLanguage.NLTag)
+サポートされているタグの完全な一覧については、 [`NLTag`](xref:NaturalLanguage.NLTag)を参照してください。
 API のドキュメントを列挙します。
 
 ## <a name="related-links"></a>関連リンク

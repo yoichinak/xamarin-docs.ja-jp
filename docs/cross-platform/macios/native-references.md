@@ -3,15 +3,15 @@ title: ネイティブは、iOS、Mac、およびバインドプロジェクト�
 description: ネイティブ参照を使用すると、ネイティブフレームワークを Xamarin. iOS、Xamarin、またはバインドプロジェクトに埋め込むことができます。
 ms.prod: xamarin
 ms.assetid: E53185FB-CEF5-4AB5-94F9-CC9B57C52300
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: 1ad7a98b92c34cf956e50ebc7a6cec73580f8f04
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: b3adfac067964e0a0f169b5d8f8860f34deffe62
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70765504"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73015620"
 ---
 # <a name="native-references-in-ios-mac-and-bindings-projects"></a>IOS、Mac、およびバインドプロジェクトでのネイティブ参照
 
@@ -30,7 +30,7 @@ IOS 8 以降では、**埋め込みフレームワーク**は、静的にリン�
 
 <a name="Static-vs-Dynamic-Frameworks" />
 
-### <a name="static-vs-dynamic-frameworks"></a>静的と動的フレームワーク
+### <a name="static-vs-dynamic-frameworks"></a>静的フレームワークと動的フレームワーク
 
 **静的フレームワーク**はコンパイル時にリンクされます。**動的フレームワーク**は実行時にリンクされ、れるためは再リンクせずに変更できます。 IOS 8 より前のサードパーティ製のフレームワークを使用していた場合は、アプリにコンパイルされた**静的フレームワーク**を使用していました。 詳細については、Apple の[ダイナミックライブラリプログラミング](https://developer.apple.com/library/mac/documentation/DeveloperTools/Conceptual/DynamicLibraries/100-Articles/OverviewOfDynamicLibraries.html#//apple_ref/doc/uid/TP40001873-SW1)に関するドキュメントを参照してください。
 
@@ -42,7 +42,7 @@ IOS 8 以降では、**埋め込みフレームワーク**は、静的にリン�
 
 <a name="Thin-vs-Fat-Frameworks" />
 
-### <a name="thin-vs-fat-frameworks"></a>シンとFat フレームワーク
+### <a name="thin-vs-fat-frameworks"></a>シンおよび Fat のフレームワーク
 
 **シンフレームワーク**には、特定のシステムアーキテクチャ用にコンパイルされたコードのみが含まれており、 **Fat フレームワーク**には複数のアーキテクチャ用のコードが含まれています。 フレームワークにコンパイルされたアーキテクチャ固有のコードベースは、それぞれ_スライス_と呼ばれます。 たとえば、2つの iOS シミュレーターアーキテクチャ (i386 と X86_64) 用にコンパイルされたフレームワークがある場合、2つのスライスが含まれています。
 
@@ -52,7 +52,7 @@ IOS 8 以降では、**埋め込みフレームワーク**は、静的にリン�
 
 ## <a name="working-with-embedded-frameworks"></a>埋め込みフレームワークの操作
 
-Xamarin または Xamarin. Mac アプリで埋め込みフレームワークを使用するには、次の2つの手順を完了する必要があります。Fat フレームワークを作成し、フレームワークを埋め込みます。
+Xamarin または Xamarin. Mac アプリで埋め込みフレームワークを操作するには、次の2つの手順を実行する必要があります。 Fat フレームワークの作成とフレームワークの埋め込み。
 
 <a name="Overview" />
 
@@ -62,7 +62,7 @@ Xamarin または Xamarin. Mac アプリで埋め込みフレームワークを�
 
 フレームワークとコンシューマーアプリが同じ Xcode プロジェクト内にある場合、Xcode は同じビルド設定を使用してフレームワークとアプリの両方をビルドするので、これは問題にはなりません。 Xamarin アプリは埋め込みフレームワークを作成できないため、この手法は使用できません。
 
-この問題を解決するに`lipo`は、コマンドラインツールを使用して、2つ以上のフレームワークを、必要なスライスをすべて含む1つの Fat フレームワークにマージします。 `lipo`コマンドの使用方法の詳細については、[ネイティブライブラリのリンク](~/ios/platform/native-interop.md)に関するドキュメントを参照してください。
+この問題を解決するには、`lipo` コマンドラインツールを使用して、2つ以上のフレームワークを、必要なすべてのスライスを含む1つの Fat フレームワークにマージします。 `lipo` コマンドの使用方法の詳細については、[ネイティブライブラリのリンク](~/ios/platform/native-interop.md)に関するドキュメントを参照してください。
 
 <a name="Embedding-a-Framework" />
 
@@ -71,15 +71,15 @@ Xamarin または Xamarin. Mac アプリで埋め込みフレームワークを�
 ネイティブ参照を使用して Xamarin または Xamarin. Mac プロジェクトにフレームワークを埋め込むには、次の手順を実行する必要があります。
 
 1. 新しいを作成するか、既存の Xamarin、iOS、Xamarin、またはバインドプロジェクトを開きます。
-2. **ソリューションエクスプローラー**で、プロジェクト名を右クリックし、[**追加** > ] [**ネイティブ参照**の追加] の順に選択します。 
+2. **ソリューションエクスプローラー**で、プロジェクト名を右クリックし、 **[追加]**  >  **[ネイティブ参照の追加]** の順に選択します。 
 
-    [![](native-references-images/ref01.png "ソリューションエクスプローラーで、プロジェクト名を右クリックし、[ネイティブ参照の追加] を選択します。")](native-references-images/ref01.png#lightbox)
+    [![](native-references-images/ref01.png "In the Solution Explorer, right-click on the project name and select Add Native Reference")](native-references-images/ref01.png#lightbox)
 3. **[開く]** ダイアログボックスで、埋め込むネイティブフレームワークの名前を選択し、 **[開く]** ボタンをクリックします。 
 
-    [![](native-references-images/ref02.png "埋め込むネイティブフレームワークの名前を選択し、[開く] ボタンをクリックします。")](native-references-images/ref02.png#lightbox)
+    [![](native-references-images/ref02.png "Select the name of the Native Framework to embed and click the Open button")](native-references-images/ref02.png#lightbox)
 4. フレームワークがプロジェクトのツリーに追加されます。 
 
-    [![](native-references-images/ref03.png "フレームワークがプロジェクトツリーに追加されます")](native-references-images/ref03.png#lightbox)
+    [![](native-references-images/ref03.png "The framework will be added to the projects tree")](native-references-images/ref03.png#lightbox)
 
 プロジェクトをコンパイルすると、ネイティブフレームワークはアプリのバンドルに埋め込まれます。
 
@@ -95,6 +95,6 @@ IOS を対象とする拡張機能とアプリがないアプリ
 
 <a name="Summary" />
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>まとめ
 
 この記事では、ネイティブフレームワークを Xamarin iOS または Xamarin. Mac アプリケーションに埋め込む方法について詳しく説明しました。

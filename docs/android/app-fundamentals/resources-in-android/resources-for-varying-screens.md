@@ -3,15 +3,15 @@ title: さまざまな画面のリソース作成
 ms.prod: xamarin
 ms.assetid: 3D17DE45-115C-7192-5685-44F8EEE07DCC
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/28/2018
-ms.openlocfilehash: 6db927409e07b97ef5b7b1e7f54b6bcbdc60e115
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.openlocfilehash: cbd392dcae173eb3baf0fb8f0c3c4ec7c0da23a1
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71249661"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73025116"
 ---
 # <a name="creating-resources-for-varying-screens"></a>さまざまな画面用のリソースの作成
 
@@ -21,19 +21,19 @@ Android 自体はさまざまなデバイスで実行され、それぞれの解
 
 複数の画面をサポートするために、いくつかの用語と概念を理解しておくことが重要です。
 
-- **画面のサイズ**&ndash;アプリケーションを表示するための物理領域の量
+- **画面サイズ**&ndash; アプリケーションを表示するための物理領域の量
 
-- **画面の密度**&ndash;画面上の特定の領域のピクセル数。 一般的な測定単位は、ドット/インチ (dpi) です。
+- 画面の**密度**は、画面上の特定の領域のピクセル数 &ndash; ます。 一般的な測定単位は、ドット/インチ (dpi) です。
 
-- **解決策**&ndash;画面上の合計ピクセル数。 アプリケーションを開発する場合、解像度は画面のサイズや密度ほど重要ではありません。
+- **解像度**&ndash; 画面上の合計ピクセル数です。 アプリケーションを開発する場合、解像度は画面のサイズや密度ほど重要ではありません。
 
-- **密度に依存しないピクセル (dp)** &ndash;密度に関係なくレイアウトを設計できるようにする測定単位。 この数式は、dp を画面ピクセルに変換するために使用されます。
+- **密度に依存しないピクセル (dp)** は、密度に依存しないレイアウトを作成できるようにする測定単位 &ndash; します。 この数式は、dp を画面ピクセルに変換するために使用されます。
 
     px &equals; dp &times; dpi &divide; 160
 
-- **向き**&ndash;画面の向きは、高さよりも幅が広い場合は横向きと見なされます。 これに対して、縦向きは、画面の高さが幅よりも大きい場合にあります。 ユーザーがデバイスを回転させるときに、アプリケーションの有効期間中に向きが変化することがあります。
+- 画面の向き &ndash; 高さよりも幅が広い場合は横**方向**と見なされます。 これに対して、縦向きは、画面の高さが幅よりも大きい場合にあります。 ユーザーがデバイスを回転させるときに、アプリケーションの有効期間中に向きが変化することがあります。
 
-これらの概念のうち、最初の3つは相互&ndash;に関連しています。密度を上げることなく解像度を上げると、画面のサイズが大きくなります。 ただし、密度と解像度の両方が増加しても、画面のサイズは変更されないままになります。 画面のサイズ、密度、解像度の関係により、画面のサポートが迅速になります。
+これらの概念のうち、最初の3つは相互に &ndash; 関連しています。密度を上げることなく解像度を上げると、画面のサイズが大きくなります。 ただし、密度と解像度の両方が増加しても、画面のサイズは変更されないままになります。 画面のサイズ、密度、解像度の関係により、画面のサポートが迅速になります。
 
 この複雑さに対処するために、Android framework では画面レイアウトに*密度に依存しないピクセル (dp)* を使用することを推奨しています。 密度に依存しないピクセルを使用すると、ユーザーには、異なる密度を持つ画面で同じ物理サイズの UI 要素が表示されます。
 
@@ -106,13 +106,13 @@ API レベル 13 (Android 3.2) 以降では、sw*N*dp 修飾子の使用を優�
 
 - **一般的な電話**&ndash; 320 dp: 一般的な電話
 
-- **5 つの "タブレット/" tweener "デバイス**&ndash; 480 dp: Samsung Note など
+- **5 つの "タブレット/" tweener "デバイス**&ndash; 480 Dp: Samsung Note など
 
-- **7 "タブレット**600 dp: Barnes &amp;立派 nook など&ndash;
+- **7 "タブレット**&ndash; 600 Dp: Barnes &amp; 立派 nook
 
-- **10 "タブレット**&ndash; 720 dp: Motorola xoom など
+- **10 個の "タブレット**&ndash; 720 Dp: Motorola xoom など
 
-API レベルを最大 12 (Android 3.1) にするアプリケーションの場合、レイアウトは、の汎化と同じように**small**/**normal**/**large**/**特大**という修飾子を使用するディレクトリに移動する必要があります。ほとんどのデバイスで使用できるさまざまな画面サイズ。 たとえば、次の図には、4つの異なる画面サイズの代替リソースがあります。
+API レベルを最大 12 (Android 3.1) にするアプリケーションでは、さまざまな画面の汎化として、**小さい**/**通常**/**大**/**特大**という修飾子を使用するディレクトリにレイアウトを設定する必要があります。ほとんどのデバイスで使用できるサイズ。 たとえば、次の図には、4つの異なる画面サイズの代替リソースがあります。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -163,7 +163,7 @@ Android では、必要に応じてデバイスのビットマップが拡張さ
 
 さまざまな密度のビットマップの作成は、少し面倒になることがあります。 そのため、Google は、 [**Android Asset Studio**](https://romannurik.github.io/AndroidAssetStudio/)と呼ばれるこれらのビットマップの作成に関連する面倒な作業の一部を減らすことができるオンラインユーティリティを作成しました。
 
-[![Android Asset Studio](resources-for-varying-screens-images/08-android-asset-studio-sml.png)](resources-for-varying-screens-images/08-android-asset-studio.png#lightbox)
+[Android Asset Studio の![](resources-for-varying-screens-images/08-android-asset-studio-sml.png)](resources-for-varying-screens-images/08-android-asset-studio.png#lightbox)
 
 この web サイトは、1つのイメージを提供することで、4つの一般的な画面密度を対象とするビットマップの作成に役立ちます。 Android Asset Studio は、いくつかのカスタマイズでビットマップを作成し、zip ファイルとしてダウンロードできるようにします。
 
@@ -171,14 +171,14 @@ Android では、必要に応じてデバイスのビットマップが拡張さ
 
 Android は困惑のデバイスで実行され、画面のサイズと画面密度の組み合わせには圧倒される可能性があります。 次のヒントは、さまざまなデバイスをサポートするために必要な作業を最小限に抑えるのに役立ちます。
 
-- **必要なものの設計と開発のみ**&ndash;多数のデバイスがありますが、の設計と開発にかなりの労力を要する可能性がある、まれなフォームファクターに存在するものもあります。 [**画面のサイズと密度**](https://developer.android.com/resources/dashboard/screens.html)のダッシュボードは、Google によって提供されるページであり、画面サイズ/画面密度マトリックスの内訳に関するデータを提供します。 この内訳では、画面のサポートに関する開発作業についての洞察を提供します。
+- いくつかの異なるデバイスが存在する &ndash;、**必要なものに対してのみ設計と開発**を行いますが、の設計と開発にかなりの労力を要する可能性がある、まれなフォームファクターに存在することもあります。 [**画面のサイズと密度**](https://developer.android.com/resources/dashboard/screens.html)のダッシュボードは、Google によって提供されるページであり、画面サイズ/画面密度マトリックスの内訳に関するデータを提供します。 この内訳では、画面のサポートに関する開発作業についての洞察を提供します。
 
 - **ピクセル単位ではなく、DPs を使用する**と、画面の密度が変化します。 ピクセル値をハードコーディングしないでください。 Dp (密度に依存しないピクセル) を優先するピクセルは避けてください。
 
-- **避ける**[AbsoluteLayout](xref:Android.Widget.AbsoluteLayout)
-  **可能**な限り&ndash; 、API レベル 3 (Android 1.5) では非推奨とされます。これにより、レイアウトが不安定になります。 使用しないでください。 代わりに、 [**LinearLayout**](xref:Android.Widget.LinearLayout)、 [**RelativeLayout**](xref:Android.Widget.RelativeLayout)、new [**GridLayout**](xref:Android.Widget.GridLayout)などのより柔軟なレイアウトウィジェットを使用してみてください。
+- **可能な**限り、 [AbsoluteLayout](xref:Android.Widget.AbsoluteLayout)
+  は使用し**ない**でください &ndash; API レベル 3 (Android 1.5) で非推奨とされ、レイアウトが不安定になります。 使用しないでください。 代わりに、 [**LinearLayout**](xref:Android.Widget.LinearLayout)、 [**RelativeLayout**](xref:Android.Widget.RelativeLayout)、new [**GridLayout**](xref:Android.Widget.GridLayout)などのより柔軟なレイアウトウィジェットを使用してみてください。
 
-- **既定のレイアウトの向きを1つ選択する**たとえば、代替リソースレイアウトとレイアウトポートを提供するのではなく、横長のリソースをレイアウトに、縦のリソースをレイアウトポートに配置します。 &ndash;
+- **既定の &ndash; として1つのレイアウトの向きを選択し**ます。たとえば、代替リソース**レイアウト**と**レイアウトポート**を指定する代わりに、**レイアウト**に横長のリソースを配置し、縦長のリソースを**layout-port**。
 
 - **Height と Width に LayoutParams を使用する**-XML レイアウトファイルで UI 要素を定義する場合、 **wrap_content**と**fill_parent**の値を使用する Android アプリケーションでは、ピクセルまたは密度に依存しない単位を使用します。 これらのディメンション値により、Android はビットマップリソースを必要に応じてスケーリングします。 これと同じ理由から、密度に依存しない単位は、UI 要素の余白と埋め込みを指定する場合に最適です。
 

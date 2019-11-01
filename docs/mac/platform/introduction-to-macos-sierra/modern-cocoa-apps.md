@@ -4,15 +4,15 @@ description: この記事では、開発者が Xamarin. Mac で最新の macOS �
 ms.prod: xamarin
 ms.assetid: F20EE590-246E-40EB-B309-D9D8C090C7F1
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 4be5670829b2b8c1a5a73f564b4c031b6a26bd54
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 0ddf6cfc26e811505a50c2d89596f830658f0c1d
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769857"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029900"
 ---
 # <a name="building-modern-macos-apps"></a>最新の macOS アプリの構築
 
@@ -24,7 +24,7 @@ _この記事では、開発者が Xamarin. Mac で最新の macOS アプリを�
 
 最新の外観には、次に示すアプリ例のような最新のウィンドウとツールバーの外観が含まれます。
 
-[![](modern-cocoa-apps-images/content08.png "最新の Mac アプリ UI の例")](modern-cocoa-apps-images/content08.png#lightbox)
+[![](modern-cocoa-apps-images/content08.png "An example of a modern Mac app UI")](modern-cocoa-apps-images/content08.png#lightbox)
 
 <a name="Enabling-Full-Sized-Content-Views" />
 
@@ -32,7 +32,7 @@ _この記事では、開発者が Xamarin. Mac で最新の macOS アプリを�
 
 これを実現するために、開発者は_フルサイズのコンテンツビュー_を使用することをお勧めします。つまり、コンテンツはツール領域とタイトルバー領域の下に拡張され、macOS によって自動的に不鮮明になります。
 
-この機能をコードで有効にするには`NSWindowController` 、のカスタムクラスを作成し、次のようにします。
+この機能をコードで有効にするには、`NSWindowController` のカスタムクラスを作成し、次のようにします。
 
 ```csharp
 using System;
@@ -64,7 +64,7 @@ namespace MacModern
 
 この機能は、ウィンドウを選択し、**フルサイズのコンテンツビュー**をチェックすることで、Xcode の Interface Builder で有効にすることもできます。
 
-[![](modern-cocoa-apps-images/content01.png "Xcode の Interface Builder のメインストーリーボードの編集")](modern-cocoa-apps-images/content01.png#lightbox)
+[![](modern-cocoa-apps-images/content01.png "Editing the main storyboard in Xcode's Interface Builder")](modern-cocoa-apps-images/content01.png#lightbox)
 
 フルサイズのコンテンツビューを使用する場合、開発者はタイトルとツールバー領域の下にあるコンテンツをオフセットして、特定のコンテンツ (ラベルなど) がその下にスライドしないようにする必要があります。
 
@@ -72,7 +72,7 @@ namespace MacModern
 
 その結果、ユーザーインターフェイスをレイアウトするときにオフセットをハードコーディングするだけでは動作しなくなります。 開発者は動的なアプローチを行う必要があります。
 
-Apple では、コード内の現在のコンテンツ領域`NSWindow`を取得するために、クラスの "[観測](~/mac/app-fundamentals/databinding.md#Observing_Value_Changes) `ContentLayoutRect`可能なキー" プロパティが含まれています。 開発者は、この値を使用して、コンテンツ領域が変更されたときに必要な要素を手動で配置できます。
+Apple は、コード内の現在のコンテンツ領域を取得するために、`NSWindow` クラスの[キー値観測](~/mac/app-fundamentals/databinding.md#Observing_Value_Changes)可能な `ContentLayoutRect` プロパティを含めました。 開発者は、この値を使用して、コンテンツ領域が変更されたときに必要な要素を手動で配置できます。
 
 より適切な解決策は、Auto Layout クラスと Size クラスを使用して、コードまたは Interface Builder に UI 要素を配置することです。
 
@@ -123,15 +123,15 @@ namespace MacModern
 public NSLayoutConstraint topConstraint { get; set; }
 ```
 
-ビューコントローラーの`UpdateViewConstraints`メソッドをオーバーライドすることにより、開発者は必要な制約が既に構築されているかどうかをテストし、必要に応じて作成することができます。
+ビューコントローラーの `UpdateViewConstraints` メソッドをオーバーライドすることにより、開発者は必要な制約が既に構築されているかどうかをテストし、必要に応じて作成することができます。
 
-新しい制約を構築する必要がある場合、 `ContentLayoutGuide`制約が必要なコントロールをウィンドウのプロパティにアクセスし、 `NSLayoutGuide`にキャストします。
+新しい制約を構築する必要がある場合、制約が必要なコントロールがウィンドウの [`ContentLayoutGuide`] プロパティにアクセスされ、`NSLayoutGuide`にキャストされます。
 
 ```csharp
 var contentLayoutGuide = ItemTitle.Window?.ContentLayoutGuide as NSLayoutGuide;
 ```
 
-の topanchor プロパティ`NSLayoutGuide`がアクセスされ、使用できる場合は、目的のオフセット金額を持つ新しい制約を作成するために使用されます。新しい制約がアクティブになり、適用されます。
+`NSLayoutGuide` の TopAnchor プロパティがアクセスされ、使用可能な場合は、目的のオフセット量を使用して新しい制約を作成するために使用されます。新しい制約がアクティブになり、適用されます。
 
 ```csharp
 // Assemble constraint and activate it
@@ -145,13 +145,13 @@ topConstraint.Active = true;
 
 通常の macOS ウィンドウには、ウィンドウの上端に沿って実行される標準のタイトルバーが含まれています。 ウィンドウにツールバーも含まれている場合は、次のタイトルバー領域の下に表示されます。
 
-[![](modern-cocoa-apps-images/content02.png "標準の Mac ツールバー")](modern-cocoa-apps-images/content02.png#lightbox)
+[![](modern-cocoa-apps-images/content02.png "A standard Mac Toolbar")](modern-cocoa-apps-images/content02.png#lightbox)
 
 簡素化されたツールバーを使用すると、タイトル領域が消え、ツールバーがウィンドウの [閉じる]、[最小化]、[最大化] の各ボタンを使用して、タイトルバーの位置に移動します。
 
-[![](modern-cocoa-apps-images/content03.png "簡略化した Mac ツールバー")](modern-cocoa-apps-images/content03.png#lightbox)
+[![](modern-cocoa-apps-images/content03.png "A streamlined Mac Toolbar")](modern-cocoa-apps-images/content03.png#lightbox)
 
-合理化されたツールバーを有効`ViewWillAppear`にするに`NSViewController`は、のメソッドをオーバーライドし、次のようにします。
+合理化されたツールバーを有効にするには、`NSViewController` の `ViewWillAppear` メソッドをオーバーライドし、次のようにします。
 
 ```csharp
 public override void ViewWillAppear ()
@@ -171,7 +171,7 @@ public override void ViewWillAppear ()
 
 アプリの設計によっては、開発者はタイトルバー領域を補完する必要がある場合もあります。アクセサリビューコントローラーは、タイトル/ツールバー領域のすぐ下に表示され、アクティビティに基づいてユーザーにコンテキストに依存するコントロールを提供します。現在の参加:
 
-[![](modern-cocoa-apps-images/content04.png "アクセサリビューコントローラーの例")](modern-cocoa-apps-images/content04.png#lightbox)
+[![](modern-cocoa-apps-images/content04.png "An example Accessory View Controller")](modern-cocoa-apps-images/content04.png#lightbox)
 
 アクセサリビューコントローラーは、開発者の関与なしで、システムによって自動的にぼやけてサイズが変更されます。
 
@@ -180,17 +180,17 @@ public override void ViewWillAppear ()
 1. **ソリューション エクスプローラー**で `Main.storyboard` ファイルをダブルクリックして、編集用に開きます。
 2. **カスタムビューコントローラー**をウィンドウの階層にドラッグします。 
 
-    [![](modern-cocoa-apps-images/content05.png "新しいカスタムビューコントローラーの追加")](modern-cocoa-apps-images/content05.png#lightbox)
+    [![](modern-cocoa-apps-images/content05.png "Adding a new Custom View Controller")](modern-cocoa-apps-images/content05.png#lightbox)
 3. アクセサリビューの UI のレイアウト: 
 
-    [![](modern-cocoa-apps-images/content06.png "新しいビューのデザイン")](modern-cocoa-apps-images/content06.png#lightbox)
+    [![](modern-cocoa-apps-images/content06.png "Designing the new view")](modern-cocoa-apps-images/content06.png#lightbox)
 4. アクセサリビューを、その UI の**アウトレット**とその他の**アクション**または**アウトレット**として公開します。 
 
-    [![](modern-cocoa-apps-images/content07.png "必要なアウトレットの追加")](modern-cocoa-apps-images/content07.png#lightbox)
+    [![](modern-cocoa-apps-images/content07.png "Adding the required OUtlet")](modern-cocoa-apps-images/content07.png#lightbox)
 5. 変更を保存します。
 6. Visual Studio for Mac に戻り、変更を同期します。
 
-を編集`NSWindowController`し、次のように表示します。
+`NSWindowController` を編集して、次のようにします。
 
 ```csharp
 using System;
@@ -234,13 +234,13 @@ namespace MacModern
 accessoryView.View = AccessoryViewGoBar;
 ```
 
-アクセサリが表示される_場所_を定義する。`LayoutAttribute`
+アクセサリが表示される_場所_を定義する `LayoutAttribute` は次のとおりです。
 
 ```csharp
 accessoryView.LayoutAttribute = NSLayoutAttribute.Bottom;
 ```
 
-MacOS は完全にローカライズされて`Left`いる`Right`ため、プロパティと`NSLayoutAttribute`プロパティは非推奨と`Leading`さ`Trailing`れており、およびに置き換える必要があります。
+MacOS は完全にローカライズされているため、`Left` および `Right` の `NSLayoutAttribute` プロパティは非推奨とされており、`Leading` および `Trailing`に置き換える必要があります。
 
 <a name="Using-Tabbed-Windows" />
 
@@ -248,18 +248,18 @@ MacOS は完全にローカライズされて`Left`いる`Right`ため、プロ�
 
 さらに、macOS システムは、アクセサリビューコントローラーをアプリのウィンドウに追加する場合があります。 たとえば、いくつかのアプリのウィンドウが1つの仮想ウィンドウにマージされるタブ付きウィンドウを作成するには、次のようにします。
 
-[![](modern-cocoa-apps-images/content08.png "タブ付きの Mac ウィンドウの例")](modern-cocoa-apps-images/content08.png#lightbox)
+[![](modern-cocoa-apps-images/content08.png "An example of a tabbed Mac Window")](modern-cocoa-apps-images/content08.png#lightbox)
 
 通常、開発者は Xamarin. Mac アプリで [タブ付きウィンドウを使用する] の操作を制限する必要があります。システムは次のように自動的に処理します。
 
-- メソッドが呼び出されると、 `OrderFront` Windows は自動的にタブになります。
-- メソッドが呼び出されると、 `OrderOut` Windows は自動的にタブ解除されます。
+- `OrderFront` メソッドが呼び出されると、Windows は自動的にタブになります。
+- `OrderOut` メソッドが呼び出されると、Windows は自動的にタブ解除されます。
 - コードでは、すべてのタブ付きウィンドウは依然として "visible" と見なされますが、すべての非表示タブは、CoreGraphics を使用してシステムによって非表示になります。
-- のプロパティ`TabbingIdentifier`を使用`NSWindow`して、ウィンドウを複数のタブにグループ化します。
-- `NSDocument`ベースのアプリの場合、これらの機能のいくつかは、開発者の操作なしで自動的に有効になります (たとえば、タブバーに追加されるプラスボタン)。
-- ベース以外のアプリでは、タブグループの "プラス" ボタンを使用して、 `NSWindowsController`の`GetNewWindowForTab`メソッドをオーバーライドすることにより、新しいドキュメントを追加できます。`NSDocument`
+- `NSWindow` の `TabbingIdentifier` プロパティを使用して、ウィンドウを複数のタブにグループ化します。
+- `NSDocument` ベースのアプリである場合、これらの機能のいくつかは、開発者の操作なしで自動的に有効になります (たとえば、タブバーに追加されるプラスボタン)。
+- `NSDocument` ベースでないアプリでは、タブグループの "プラス" ボタンを使用して、`NSWindowsController`の `GetNewWindowForTab` 方法を上書きすることによって新しいドキュメントを追加できます。
 
-システムベースのタブ付きウィンドウを使用`AppDelegate`する必要があるアプリのは、すべての要素をまとめて、次のようになります。
+システムベースのタブ付きウィンドウを使用する必要があるアプリの `AppDelegate` は、すべての要素をまとめて、次のようになります。
 
 ```csharp
 using AppKit;
@@ -308,9 +308,9 @@ namespace MacModern
 }
 ```
 
-このプロパティ`NewDocumentNumber`は、作成された新しいドキュメントの数を追跡`NewDocument`し、メソッドは新しいドキュメントを作成して表示します。
+`NewDocumentNumber` プロパティは、作成された新しいドキュメントの数を追跡し、`NewDocument` メソッドは新しいドキュメントを作成して表示します。
 
-次`NSWindowController`のようになります。
+`NSWindowController` は次のようになります。
 
 ```csharp
 using System;
@@ -389,7 +389,7 @@ namespace MacModern
 }
 ```
 
-ここで、 `App`静的プロパティは、 `AppDelegate`にアクセスするためのショートカットを提供します。 メソッド`SetDefaultDocumentTitle`は、新しく作成されたドキュメントの数に基づいて、新しいドキュメントのタイトルを設定します。
+ここで、静的な `App` プロパティは、`AppDelegate`にアクセスするためのショートカットを提供します。 `SetDefaultDocumentTitle` メソッドは、新しく作成されたドキュメントの数に基づいて、新しいドキュメントのタイトルを設定します。
 
 次のコードは、アプリがタブを使用することを推奨し、アプリのウィンドウをタブにグループ化するための文字列を提供することを macOS に指示します。
 
@@ -415,28 +415,28 @@ public override void GetNewWindowForTab (NSObject sender)
 
 コアアニメーションは、macOS に組み込まれている高電力グラフィックスレンダリングエンジンです。 コアアニメーションは、CPU 上でグラフィックス操作を実行するのではなく、最新の macOS ハードウェアで使用できる GPU (グラフィックス処理ユニット) を活用するように最適化されています。これにより、コンピューターの速度が低下する可能性があります。
 
-コア`CALayer`アニメーションによって提供されるは、高速で滑らかなスクロールやアニメーションなどのタスクに使用できます。 アプリのユーザーインターフェイスは、コアアニメーションを完全に活用するために、複数のサブビューとレイヤーで構成されている必要があります。
+コアアニメーションによって提供される `CALayer`は、高速で滑らかなスクロールやアニメーションなどのタスクに使用できます。 アプリのユーザーインターフェイスは、コアアニメーションを完全に活用するために、複数のサブビューとレイヤーで構成されている必要があります。
 
-`CALayer`オブジェクトにはいくつかのプロパティが用意されており、開発者は、次のようにユーザーに表示される内容を制御できます。
+`CALayer` オブジェクトは、次のように、ユーザーに表示される情報を開発者が制御できるようにするいくつかのプロパティを提供します。
 
-- `Content`-レイヤーのコンテンツ`NSImage`を`CGImage`提供するまたはを指定できます。
-- `BackgroundColor`-レイヤーの背景色をとして設定します。`CGColor`
+- `Content`-レイヤーのコンテンツを提供する `NSImage` または `CGImage` を指定できます。
+- `BackgroundColor`-レイヤーの背景色を `CGColor` として設定します
 - `BorderWidth`-境界線の幅を設定します。
 - `BorderColor`-境界線の色を設定します。
 
 アプリの UI で主要なグラフィックスを利用するには、_レイヤーがサポート_されたビューを使用する必要があります。 Apple は、ウィンドウのコンテンツビューで常にを有効にすることをお勧めします。 これにより、すべての子ビューでレイヤーのバッキングも自動的に継承されます。
 
-さらに、Apple では、新しい`CALayer`をサブレイヤーとして追加するのではなく、レイヤーでサポートされているビューを使用することを提案しています。これは、必要な設定 (Retina ディスプレイで必要な設定など) の一部がシステムによって自動的に処理されるためです。
+さらに、Apple では、新しい `CALayer` をサブレイヤーとして追加するのではなく、レイヤーでサポートされているビューを使用することを提案しています。これは、必要な設定 (Retina ディスプレイで必要な設定など) がシステムによって自動的に処理されるためです。
 
-レイヤー `WantsLayer` のバッキング`true`を有効にするには、**ビュー効果インスペクター** の Xcode の Interface Builder 内またはその内部で、次のようにコアアニメーションレイヤーをチェックします。`NSView`
+レイヤーのバッキングを有効にするには、次のように**コアアニメーションレイヤー**を確認して、**ビュー効果インスペクター**の下にある Xcode の Interface Builder の `true` またはその内部に `NSView` の `WantsLayer` を設定します。
 
-[![](modern-cocoa-apps-images/content09.png "ビュー効果インスペクター")](modern-cocoa-apps-images/content09.png#lightbox)
+[![](modern-cocoa-apps-images/content09.png "The View Effects Inspector")](modern-cocoa-apps-images/content09.png#lightbox)
 
 <a name="Redrawing-Views-with-Layers" />
 
 #### <a name="redrawing-views-with-layers"></a>レイヤーを使用したビューの再描画
 
-Xamarin. Mac アプリでレイヤーによってサポートされるビューを使用する場合`LayerContentsRedrawPolicy`のもう`NSView` 1 `OnSetNeedsDisplay`つの`NSViewController`重要な手順は、のをに設定することです。 例えば:
+Xamarin. Mac アプリでレイヤーによってサポートされるビューを使用する場合のもう1つの重要な手順は、`NSViewController`で `OnSetNeedsDisplay` に `NSView` の `LayerContentsRedrawPolicy` を設定することです。 (例:
 
 ```csharp
 public override void ViewWillAppear ()
@@ -448,17 +448,17 @@ public override void ViewWillAppear ()
 }
 ```
 
-開発者がこのプロパティを設定していない場合は、そのフレームの元の変更が発生するたびにビューが再描画されます。これは、パフォーマンス上の理由からは不要です。 ただし、このプロパティを`OnSetNeedsDisplay`に設定すると、開発者`NeedsDisplay`は`true`手動でをに設定して、コンテンツを強制的に再描画する必要があります。
+開発者がこのプロパティを設定していない場合は、そのフレームの元の変更が発生するたびにビューが再描画されます。これは、パフォーマンス上の理由からは不要です。 このプロパティをに設定すると `OnSetNeedsDisplay` 開発者は手動で `NeedsDisplay` を `true` に設定して、コンテンツを強制的に再描画する必要があります。
 
-ビューがダーティとマークされている場合、システム`WantsUpdateLayer`はビューのプロパティを確認します。 がを返す`true` `UpdateLayer`場合は、メソッド`DrawRect`が呼び出されます。それ以外の場合は、ビューの内容を更新するためにビューのメソッドが呼び出されます。
+ビューがダーティとマークされている場合、システムはビューの `WantsUpdateLayer` プロパティを確認します。 `true` が返された場合は、`UpdateLayer` メソッドが呼び出されます。それ以外の場合は、ビューの内容を更新するためにビューの `DrawRect` メソッドが呼び出されます。
 
 Apple には、必要に応じてビューの内容を更新するための次の提案があります。
 
-- Apple では`UpdateLater` 、 `DrawRect`パフォーマンスを大幅に向上させるため、可能な限りを使用することを推奨しています。
-- 似たよう`layer.Contents`な UI 要素に対しても同じを使用します。
-- また`NSTextField`、開発者は、可能な限り、などの標準ビューを使用して UI を作成することもできます。
+- Apple では、パフォーマンスが大幅に向上するため、可能な限り `DrawRect` に `UpdateLater` を使用することを推奨しています。
+- 似たような UI 要素には、同じ `layer.Contents` を使用します。
+- また、開発者は、可能な限り、`NSTextField`などの標準ビューを使用して UI を作成することも推奨されます。
 
-を使用`UpdateLayer`するには`NSView` 、のカスタムクラスを作成し、コードを次のようにします。
+`UpdateLayer`を使用するには、`NSView` のカスタムクラスを作成し、コードを次のようにします。
 
 ```csharp
 using System;
@@ -546,9 +546,9 @@ namespace MacModern
 }
 ```
 
-Flocking 効果は、の`BeginDraggingSession`メソッドにドラッグされる各項目を、配列内の個別の要素として送信する`NSView`ことによって実現されました。
+Flocking 効果は、ドラッグされている各項目を、配列内の個別の要素として `NSView` の `BeginDraggingSession` メソッドに送信することによって実現されました。
 
-またはを使用する`NSOutlineView`場合は、 `PastboardWriterForRow` `NSTableViewDataSource`クラスのメソッドを使用してドラッグ操作を開始します。 `NSTableView`
+`NSTableView` または `NSOutlineView`を使用する場合は、`NSTableViewDataSource` クラスの `PastboardWriterForRow` メソッドを使用してドラッグ操作を開始します。
 
 ```csharp
 using System;
@@ -580,19 +580,19 @@ namespace MacModern
 }
 ```
 
-これにより、開発者は、 `NSDraggingItem`すべての行を1つのグループとしてペーストボードに書き込む前`WriteRowsWith`の方法とは対照的に、ドラッグするテーブル内のすべての項目に対して個人を提供できます。
+これにより、開発者は、すべての行を1つのグループとしてペーストボードに書き込む前の `WriteRowsWith` 方法ではなく、ドラッグするテーブル内のすべての項目に対して個別の `NSDraggingItem` を提供できます。
 
-を使用する場合は`PasteboardWriterForItemAt` `WriteItemsAt` 、ドラッグを開始するときにメソッドではなく、メソッドをもう一度`NSCollectionViews`使用します。
+`NSCollectionViews`を使用する場合は、ドラッグの開始時に `WriteItemsAt` メソッドではなく、`PasteboardWriterForItemAt` メソッドを使用します。
 
-開発者は、クリップボードに大きなファイルを配置することは常に避ける必要があります。 MacOS Sierra を初めて使用すると、開発者は、新しい`NSFilePromiseProvider`クラスと`NSFilePromiseReceiver`クラスを使用してユーザーがドロップ操作を終了したときに後で処理されるように、指定したファイルへの参照を、後で実行できるように、ファイルの promise に配置できます。
+開発者は、クリップボードに大きなファイルを配置することは常に避ける必要があります。 MacOS Sierra を初めて_使用する_と、開発者は、新しい `NSFilePromiseProvider` クラスおよび `NSFilePromiseReceiver` クラスを使用してユーザーがドロップ操作を終了したときに後で処理されるように、指定されたファイルへの参照を、後で実行できるようにすることができます。
 
 <a name="Using-Modern-Event-Tracking" />
 
 ## <a name="using-modern-event-tracking"></a>最新のイベント追跡の使用
 
-タイトルまたはツールバー領域に追加さ`NSButton`れたユーザーインターフェイス要素 (など) の場合、ユーザーは要素をクリックして、標準としてイベントを発生させることができます (ポップアップウィンドウの表示など)。 ただし、項目はタイトルまたはツールバー領域にもあるため、ユーザーは要素をクリックしてドラッグし、ウィンドウを移動できる必要があります。
+タイトルまたはツールバー領域に追加されたユーザーインターフェイス要素 (`NSButton`など) の場合、ユーザーは要素をクリックして、通常どおりにイベントを発生させることができます (ポップアップウィンドウの表示など)。 ただし、項目はタイトルまたはツールバー領域にもあるため、ユーザーは要素をクリックしてドラッグし、ウィンドウを移動できる必要があります。
 
-これをコードで実現するには、要素のカスタムクラス ( `NSButton`など) を作成し、次のようにイベントを`MouseDown`オーバーライドします。
+これをコードで実現するには、要素のカスタムクラス (`NSButton`など) を作成し、次のように `MouseDown` イベントをオーバーライドします。
 
 ```csharp
 public override void MouseDown (NSEvent theEvent)
@@ -618,9 +618,9 @@ public override void MouseDown (NSEvent theEvent)
 }
 ```
 
-このコードでは`TrackEventsMatching` 、UI 要素`NSWindow` `LeftMouseUp`がアタッチされているのメソッドを使用`LeftMouseDragged`して、イベントとイベントをインターセプトします。 `LeftMouseUp`イベントの場合、UI 要素は通常どおりに応答します。 イベントの場合、イベントは、画面上の`NSWindow`ウィンドウ`PerformWindowDrag`を移動するために、のメソッドに渡されます。 `LeftMouseDragged`
+このコードでは、UI 要素がアタッチされている `NSWindow` の `TrackEventsMatching` メソッドを使用して、`LeftMouseUp` および `LeftMouseDragged` イベントをインターセプトします。 `LeftMouseUp` イベントの場合、UI 要素は通常どおりに応答します。 `LeftMouseDragged` イベントの場合、イベントが `NSWindow`の `PerformWindowDrag` メソッドに渡され、画面上のウィンドウが移動します。
 
-クラスのメソッドを`PerformWindowDrag`呼び出すと、次のような利点があります。 `NSWindow`
+`NSWindow` クラスの `PerformWindowDrag` メソッドを呼び出すと、次のような利点があります。
 
 - これにより、アプリがハングしている場合 (ディープループを処理する場合など) でも、ウィンドウを移動できます。
 - スペースの切り替えは想定どおりに動作します。
@@ -637,7 +637,7 @@ macOS Sierra には、以前のバージョンの OS で使用できる既存の
 
 ## <a name="table-view-enhancements"></a>テーブルビューの機能強化
 
-開発者は、などのコンテナー `NSView`ビューコントロール`NSTableView`の新しいバージョンを常に使用する必要があります。 例えば:
+開発者は、常に新しい `NSView` ベースのバージョンのコンテナービューコントロール (`NSTableView`など) を使用する必要があります。 (例:
 
 ```csharp
 using System;
@@ -670,7 +670,7 @@ namespace MacModern
 }
 ```
 
-これにより、テーブル内の特定の行にカスタムテーブル行アクションをアタッチできます (行を削除するためのスワイプ権限など)。 この動作を有効にするに`RowActions`は`NSTableViewDelegate`、のメソッドをオーバーライドします。
+これにより、テーブル内の特定の行にカスタムテーブル行アクションをアタッチできます (行を削除するためのスワイプ権限など)。 この動作を有効にするには、`NSTableViewDelegate`の `RowActions` メソッドをオーバーライドします。
 
 ```csharp
 using System;
@@ -726,7 +726,7 @@ namespace MacModern
 }
 ```
 
-Static `NSTableViewRowAction.FromStyle`は、次のスタイルの新しいテーブル行アクションを作成するために使用されます。
+静的 `NSTableViewRowAction.FromStyle` は、次のスタイルの新しいテーブル行アクションを作成するために使用されます。
 
 - `Regular`-行の内容の編集など、非破壊的な標準のアクションを実行します。
 - `Destructive`-テーブルから行を削除するなどの破壊的なアクションを実行します。 これらのアクションは、背景が赤で表示されます。
@@ -735,16 +735,16 @@ Static `NSTableViewRowAction.FromStyle`は、次のスタイルの新しいテ�
 
 ## <a name="scroll-view-enhancements"></a>スクロールビューの機能強化 
 
-スクロールビュー (`NSScrollView`) を直接使用する場合、または別のコントロール ( `NSTableView`など) の一部として使用する場合、スクロールビューの内容は、最新の外観とビューを使用して、Xamarin. Mac アプリのタイトルとツールバーの領域の下にスライドできます。
+スクロールビュー (`NSScrollView`) を直接使用する場合、または別のコントロール (`NSTableView`など) の一部として使用する場合、スクロールビューの内容は、最新の外観とビューを使用して、Xamarin. Mac アプリのタイトルとツールバーの領域の下にスライドできます。
 
 その結果、スクロールビューコンテンツ領域の最初の項目は、タイトルとツールバー領域によって部分的に隠される可能性があります。
 
-この問題を修正するために、Apple はクラスに 2 `NSScrollView`つの新しいプロパティを追加しました。
+この問題を修正するために、Apple は `NSScrollView` クラスに2つの新しいプロパティを追加しました。
 
-- `ContentInsets`-スクロールビューの上部に適用`NSEdgeInsets`されるオフセットを定義するオブジェクトを開発者が指定できるようにします。
-- `AutomaticallyAdjustsContentInsets`-スクロール`true`ビューが開発者`ContentInsets`のを自動的に処理する場合は。
+- `ContentInsets`-スクロールビューの上部に適用されるオフセットを定義する `NSEdgeInsets` オブジェクトを開発者が指定できるようにします。
+- `AutomaticallyAdjustsContentInsets`-`true` スクロールビューを使用すると、開発者の `ContentInsets` が自動的に処理されます。
 
-開発者は`ContentInsets`を使用して、次のようなアクセサリを含めることができるように、スクロールビューの開始を調整できます。
+開発者は `ContentInsets` を使用することによって、次のようなアクセサリを含めることができるように、スクロールビューの開始を調整できます。
 
 - メールアプリに示されているような並べ替えインジケーター。
 - 検索フィールド。
@@ -779,20 +779,20 @@ Apple には、開発者が国際化 macOS アプリを簡単に作成できる�
 Apple では、次のことを提案しています。
 
 - **固定幅制約を削除**する-テキストベースのすべてのビューのサイズをコンテンツに基づいて調整できます。 固定幅ビューでは、特定の言語でコンテンツをトリミングすることができます。
-- **組み込みのコンテンツサイズを使用**する-既定では、テキストベースのビューがコンテンツに合わせて自動的にサイズ変更されます。 適切にサイズ変更されていないテキストベースのビューの場合は、Xcode の Interface Builder でそれらを選択してから、[**コンテンツに合わせてサイズを** **編集** > ] を選択します。
-- **先頭と末尾の属性を適用**する-テキストの方向はユーザーの言語に基づいて変化する可能性がある`Leading`ため`Trailing` 、既存`Right`のおよび`Left`を使用するのではなく、新しい制約と制約の属性を使用します。アトリビュート. `Leading`と`Trailing`は、言語の方向に基づいて自動的に調整されます。
+- **組み込みのコンテンツサイズを使用**する-既定では、テキストベースのビューがコンテンツに合わせて自動的にサイズ変更されます。 サイズが正しく設定されていないテキストベースのビューの場合は、Xcode の Interface Builder でそれらを選択し、[**編集** > **サイズをコンテンツに合わせる**] を選択します。
+- **先頭と末尾の属性の適用**-テキストの方向はユーザーの言語に基づいて変化する可能性があるため、既存の `Right` および `Left` 属性とは対照的に、新しい `Leading` と `Trailing` の制約属性を使用します。 `Leading` と `Trailing` は、言語の方向に基づいて自動的に調整されます。
 - **隣接するビューにビューをピン留め**する-選択した言語に応じてビューを変更するビューの位置を調整したり、サイズを変更したりできます。
 - **Windows の最小サイズと最大サイズのいずれかまたは両方を設定しない**-選択した言語がコンテンツ領域のサイズを変更したときに、windows によるサイズ変更を許可します。
 - アプリでの開発中に行われる**テストレイアウトの変更**は、常に異なる言語でテストする必要があります。 詳細については、Apple の[国際化アプリのテストに](https://developer.apple.com/library/content/documentation/MacOSX/Conceptual/BPInternational/TestingYourInternationalApp/TestingYourInternationalApp.html#//apple_ref/doc/uid/10000171i-CH7-SW1)関するドキュメントを参照してください。
-- **Nsstackviews を使用** - してビュー`NSStackViews`をピン留めすると、予測可能な方法でコンテンツをシフトしたり拡大したりできます。また、選択した言語に基づいてコンテンツのサイズが変更されます。
+- **NSStackViews を使用する**と、ビューを - `NSStackViews` にピン留めして、予測可能な方法でコンテンツをシフトしたり拡大したりできます。また、選択した言語に基づいてコンテンツのサイズが変更されます。
 
 <a name="Localizing-in-Xcodes-Interface-Builder" />
 
 ### <a name="localizing-in-xcodes-interface-builder"></a>Xcode の Interface Builder でのローカライズ
 
-Apple では、Xcode の Interface Builder にいくつかの機能が用意されており、ローカリゼーションをサポートするアプリの UI を設計または編集するときに開発者が使用できます。 **属性インスペクター**の **[テキストの方向]** セクションでは、開発者は、選択したテキストベースのビューで方向を使用および更新する方法に`NSTextField`関するヒントを提供できます (など)。
+Apple では、Xcode の Interface Builder にいくつかの機能が用意されており、ローカリゼーションをサポートするアプリの UI を設計または編集するときに開発者が使用できます。 **属性インスペクター**の **[テキストの方向]** セクションでは、開発者は、選択したテキストベースのビュー (`NSTextField`など) で方向を使用および更新する方法に関するヒントを提供できます。
 
-[![](modern-cocoa-apps-images/content10.png "[テキストの方向] オプション")](modern-cocoa-apps-images/content10.png#lightbox)
+[![](modern-cocoa-apps-images/content10.png "The Text Direction options")](modern-cocoa-apps-images/content10.png#lightbox)
 
 **テキストの方向**には、次の3つの値を指定できます。
 
@@ -834,9 +834,9 @@ public override void ViewDidLoad ()
 }
 ```
 
-とは、コントロール`UserInterfaceLayoutDirection`のに基づいて設定されます。 `ImagePosition` `Alignment`
+`Alignment` と `ImagePosition` が、コントロールの `UserInterfaceLayoutDirection` に基づいて設定されています。
 
-macOS Sierra は、いくつかのパラメーター (Title、 `CreateButton` Image、Action など) を受け取る新しい便利なコンストラクターをいくつか追加し、自動的に適切にミラー化します。 例えば:
+macOS Sierra は、いくつかのパラメーター (Title、Image、Action など) を受け取る新しい便利な `CreateButton` コンストラクターをいくつか追加し、自動的に適切にミラー化します。 (例:
 
 ```csharp
 var button2 = NSButton.CreateButton (myTitle, myImage, () => {
@@ -851,9 +851,9 @@ var button2 = NSButton.CreateButton (myTitle, myImage, () => {
 
 最新の macOS アプリでは、イメージの作成、編集、プレゼンテーションアプリに適した新しい濃いインターフェイスの外観を採用できます。
 
-[![](modern-cocoa-apps-images/content11.png "Mac ウィンドウのダーク UI の例")](modern-cocoa-apps-images/content11.png#lightbox)
+[![](modern-cocoa-apps-images/content11.png "An example of a dark Mac Window UI")](modern-cocoa-apps-images/content11.png#lightbox)
 
-これを行うには、ウィンドウが表示される前に1行のコードを追加します。 例えば:
+これを行うには、ウィンドウが表示される前に1行のコードを追加します。 (例:
 
 ```csharp
 using System;
@@ -881,11 +881,11 @@ namespace MacModern
 }
 ```
 
-クラスの静的`GetAppearance`メソッドは、システムから名前付きの外観を取得するために使用され`NSAppearance.NameVibrantDark`ます (この場合は)。 `NSAppearance`
+`NSAppearance` クラスの静的 `GetAppearance` メソッドを使用して、システムから名前付きの外観を取得します (この場合は `NSAppearance.NameVibrantDark`)。
 
 システムの外観を使用する場合、Apple には次のような推奨事項があります。
 
-- ハードコードされた値 (やなど`LabelColor` ) `SelectedControlColor`に対して名前付きの色を優先します。
+- ハードコードされた値 (`LabelColor` や `SelectedControlColor`など) に対して名前付きの色を優先します。
 - 可能な場合は、システム標準コントロールスタイルを使用します。
 
 システムの外観を使用する macOS アプリは、システム環境設定アプリのユーザー補助機能を有効にしたユーザーに対して自動的に正しく動作します。 その結果、Apple は、開発者が macOS アプリでシステムの外観を常に使用する必要があることを示唆しています。
@@ -898,7 +898,7 @@ namespace MacModern
 
 開発者は、コントローラーを使用して、要素をコンポジションの単位に収集し、セグエ abstract を実行し、ビュー階層全体で移動するために必要な一般的な "グルーコード" を削除できます。
 
-[![](modern-cocoa-apps-images/content12.png "Xcode の Interface Builder の UI の編集")](modern-cocoa-apps-images/content12.png#lightbox)
+[![](modern-cocoa-apps-images/content12.png "Editing the UI in Xcode's Interface Builder")](modern-cocoa-apps-images/content12.png#lightbox)
 
 詳細については、[ストーリーボードの概要に](~/mac/platform/storyboards/index.md)関するドキュメントを参照してください。
 
@@ -908,7 +908,7 @@ namespace MacModern
 - Ui の柔軟性を制限するため、UI 構造的 dependancies をハードコーディングしないようにします。
 - インターフェイスC#を使用して、汎用データ dependancies を提供します。
 
-セグエのソースとして動作するビューコントローラーは、 `PrepareForSegue`メソッドをオーバーライドし、セグエを実行してターゲットビューコントローラーを表示する前に、必要な初期化 (データの受け渡しなど) を実行できます。 例えば:
+セグエのソースとして動作するビューコントローラーは、メソッドを `PrepareForSegue` オーバーライドし、ターゲットビューコントローラーを表示するためにセグエが実行される前に必要な初期化 (データの受け渡しなど) を実行できます。 (例:
 
 ```csharp
 public override void PrepareForSegue (NSStoryboardSegue segue, NSObject sender)
@@ -941,10 +941,10 @@ MacOS アプリの設計によっては、ui コントロールのアクショ�
 
 Apple には、次のように、開発者が最も多くの Mac プラットフォームを作成できるようにするために、macOS Sierra にユーザー向けの機能がいくつか組み込まれています。
 
-- **Nsuseractivity** -これにより、アプリは、ユーザーが現在使用しているアクティビティを記述できます。 `NSUserActivity`は、最初はハンドオフをサポートするように作成されています。この場合、ユーザーのデバイスの1つで開始されたアクティビティを取得し、別のデバイスで続行することができます。 `NSUserActivity`macOS では、iOS の場合と同じように動作します。詳細については、「[ハンドオフ](~/ios/platform/handoff.md)iOS ドキュメントの概要」を参照してください。
-- **Siri on Mac** -siri は、現在のアクティビティ`NSUserActivity`() を使用して、ユーザーが発行できるコマンドにコンテキストを提供します。
-- **状態の復元**-ユーザーが macOS でアプリを終了し、後で relaunches すると、アプリは自動的に以前の状態に戻ります。 開発者は、状態の復元 API を使用して、ユーザーインターフェイスがユーザーに表示される前に、一時的な UI の状態をエンコードおよび復元できます。 アプリが`NSDocument`ベースの場合、状態の復元は自動的に処理されます。 `NSDocument`ベースでないアプリの状態の復元を有効にする`Restorable`には`NSWindow` 、クラス`true`のをに設定します。
-- **クラウド内のドキュメント**-macOS Sierra する前に、アプリはユーザーの iCloud ドライブにあるドキュメントを使用することを明示的に選択する必要がありました。 MacOS Sierra、ユーザーの**デスクトップ**フォルダーと**ドキュメント**フォルダーは、システムによって自動的に iCloud ドライブと同期される場合があります。 その結果、ユーザーのコンピューター上の領域を解放するために、ドキュメントのローカルコピーが削除される可能性があります。 `NSDocument`この変更は、ベースのアプリによって自動的に処理されます。 他のすべてのアプリの種類では`NSFileCoordinator` 、を使用してドキュメントの読み取りと書き込みを同期する必要があります。
+- **Nsuseractivity** -これにより、アプリは、ユーザーが現在使用しているアクティビティを記述できます。 `NSUserActivity` は、最初はハンドオフをサポートするように作成されています。この場合、ユーザーのデバイスの1つで開始されたアクティビティを、別のデバイスで取得して続行することができます。 `NSUserActivity` は、iOS の場合と同様に macOS でも動作します。詳細については、ハンドオフ iOS のドキュメントの[概要に](~/ios/platform/handoff.md)関する記事をご覧ください。
+- **Siri On Mac** -siri は、現在のアクティビティ (`NSUserActivity`) を使用して、ユーザーが発行できるコマンドのコンテキストを提供します。
+- **状態の復元**-ユーザーが macOS でアプリを終了し、後で relaunches すると、アプリは自動的に以前の状態に戻ります。 開発者は、状態の復元 API を使用して、ユーザーインターフェイスがユーザーに表示される前に、一時的な UI の状態をエンコードおよび復元できます。 アプリが `NSDocument` 基づいている場合、状態の復元は自動的に処理されます。 `NSDocument` ベースでないアプリの状態の復元を有効にするには、`NSWindow` クラスの `Restorable` を `true`に設定します。
+- **クラウド内のドキュメント**-macOS Sierra する前に、アプリはユーザーの iCloud ドライブにあるドキュメントを使用することを明示的に選択する必要がありました。 MacOS Sierra、ユーザーの**デスクトップ**フォルダーと**ドキュメント**フォルダーは、システムによって自動的に iCloud ドライブと同期される場合があります。 その結果、ユーザーのコンピューター上の領域を解放するために、ドキュメントのローカルコピーが削除される可能性があります。 この変更は、`NSDocument` ベースのアプリによって自動的に処理されます。 他のすべてのアプリの種類では、ドキュメントの読み取りと書き込みを同期するために `NSFileCoordinator` を使用する必要があります。
 
 <a name="Summary" />
 

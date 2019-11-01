@@ -3,15 +3,15 @@ title: Xamarin Profiler のトラブルシューティング
 description: このドキュメントでは、Xamarin Profiler に関するトラブルシューティング情報を提供します。 ログ記録と診断、IDE、およびその他のトピックに関連する問題について説明します。
 ms.prod: xamarin
 ms.assetid: 0060E9D1-C003-4E4C-ADE8-B406978FE891
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/27/2017
-ms.openlocfilehash: c6a05e332bf0c08f8c7ea328c2793f7d0bf00fb7
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 915f7df80e3ae29ab3c598ea95fabbc054e916dd
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285694"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73019210"
 ---
 # <a name="xamarin-profiler-troubleshooting"></a>Xamarin Profiler のトラブルシューティング
 
@@ -25,9 +25,9 @@ Xamarin チームは、次のような情報を提供すると、問題を追跡
 
 ### <a name="getting-log-outputs"></a>ログ出力の取得
 
-Mac では、ログは`~/Library/Logs/Xamarin.Profiler/Profiler.<date>.log`に保存されます。
+Mac 上のログは `~/Library/Logs/Xamarin.Profiler/Profiler.<date>.log`に保存されます。
 
-Windows では、問題を`%appdata%Local//Xamarin/Log/Xamarin.Profiler/Profiler.<date>.log`送信するたびに最新のログが保存されます。
+Windows では、これらは `%appdata%Local//Xamarin/Log/Xamarin.Profiler/Profiler.<date>.log` に保存されます。問題を送信するたびに、最新のログを含めてください。
 
 ここでは、ログ記録を追加しています。この出力は、時間の経過と共に増加し、より有用になります。
 
@@ -37,17 +37,17 @@ Windows では、問題を`%appdata%Local//Xamarin/Log/Xamarin.Profiler/Profiler
 
 **Mlpd**ファイルは、mono ランタイムプロファイラーの圧縮された出力です。 Xamarin Profiler GUI は、 **mlpd**からデータを読み取り、ユーザーに対して表示します。 **mlpd**ファイルは、プロファイラーがデータに関する問題を診断するのに役立つ、Xamarin 用のデバッグツールとして便利です。
 
-現在のセッションの**mlpd**は、Mac の`/tmp`ディレクトリに自動的に保存され、タイムスタンプで識別できます。 ログ記録を有効にすると、最初の出力が**mlpd**ファイルへのパスになります。 Mlpd ファイルは通常、~/var/folders... のディレクトリに保存され**ます。**
+現在のセッションの**mlpd**は、Mac の `/tmp` ディレクトリに自動的に保存され、タイムスタンプで識別できます。 ログ記録を有効にすると、最初の出力が**mlpd**ファイルへのパスになります。 Mlpd ファイルは通常、~/var/folders... のディレクトリに保存され**ます。**
 
 現在のセッションの**mlpd**を保存するには、**ファイル > 名前を付けて保存...** プロファイラーのメニューから次のようにします。
 
 **Visual Studio for Mac**:
 
-![](troubleshooting-images/image17.png "Visual Studio for Mac に mlpd ファイルを保存しています")
+![](troubleshooting-images/image17.png "Saving .mlpd file in Visual Studio for Mac")
 
 **Visual Studio**:
 
-![](troubleshooting-images/image17-vs.png "Visual Studio での mlpd ファイルの保存")
+![](troubleshooting-images/image17-vs.png "Saving .mlpd file in Visual Studio")
 
 これは重要なことです **。 mlpd**には多くの情報が含まれており、ファイルサイズは大きくなることに注意してください。
 
@@ -73,13 +73,13 @@ Windows では、問題を`%appdata%Local//Xamarin/Log/Xamarin.Profiler/Profiler
 
 Visual Studio でプロファイラーを使用するときにこのエラーボックスが表示される場合は、次のようにします。
 
-![](troubleshooting-images/error.png "Visual Studio でプロファイラーを使用する場合のエラーボックス")
+![](troubleshooting-images/error.png "Error box when using the profiler in Visual Studio")
 
 通常、シミュレーターまたはエミュレーターに起動できないことが原因です。 通常はアプリを正常に実行し、それによって得られる問題を修正してから、もう一度プロファイラーを使用してみてください。
 
 #### <a name="to-watch-a-specific-thread"></a>特定のスレッドを監視するには
 
-特に観察したいスレッドがある場合は、作成の先頭にあるスレッドに名前を付けることで、ではなくを取得`ThreadName`するの`0x0`が理想的です。 たとえば、スレッド名をとして`UI`設定するには、次のコードを使用します。
+特に見たいスレッドがある場合は、作成の開始時にスレッドに名前を付けることで、`0x0`ではなく `ThreadName` を取得するのが理想的です。 たとえば、スレッド名を `UI`として設定するには、次のコードを使用します。
 
 ```csharp
 RunOnUiThread (() => {

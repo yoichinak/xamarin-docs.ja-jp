@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin.iOS アプリ用に一時�
 ms.prod: xamarin
 ms.assetid: 9801644A-89BB-4491-AD28-7F3B97D2CD62
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/05/2017
-ms.openlocfilehash: e8f08a96d42aa02cb00f37337ecbc2620a8785e4
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: b2452c50fa978f3cabb718afe7330bf0fb701ce3
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70762959"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030238"
 ---
 # <a name="execution-environment-for-xamarinios-apps"></a>Xamarin.iOS アプリの実行環境
 

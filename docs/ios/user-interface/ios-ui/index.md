@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin iOS アプリでユーザ�
 ms.prod: xamarin
 ms.assetid: 1BB46561-F503-491E-A27C-7878E7EBE00B
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/14/2017
-ms.openlocfilehash: 954e3b8f612fd710dd178cfc296889c9da372183
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 325898b3c934e25ae1610a3437f787476dcd22cb
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768306"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73003340"
 ---
 # <a name="user-interfaces-in-ios"></a>iOS のユーザー インターフェイス
 
@@ -22,11 +22,11 @@ iOS では、ユーザーインターフェイスコントロールの多くの�
 
 ## <a name="creating-user-interface-objectsiosuser-interfaceios-uicreating-ui-objectsmd"></a>[ユーザー インターフェイス オブジェクトの作成](~/ios/user-interface/ios-ui/creating-ui-objects.md)
 
-Apple は、関連する機能の一部を "フレームワーク" にグループ化します。これは、Xamarin の iOS 名前空間に相当します。 `UIKit`は、iOS のすべてのユーザーインターフェイスコントロールを含む名前空間です。
+Apple は、関連する機能の一部を "フレームワーク" にグループ化します。これは、Xamarin の iOS 名前空間に相当します。 `UIKit` は、iOS のすべてのユーザーインターフェイスコントロールを含む名前空間です。
 
 ## <a name="layout-optionsiosuser-interfaceios-uilayout-optionsmd"></a>[レイアウト オプション](~/ios/user-interface/ios-ui/layout-options.md)
 
-ビューのサイズ変更時または回転時にレイアウトを制御するには、次の2つの異なるメカニズムがあります。自動サイズ調整と自動レイアウト。
+ビューのサイズ変更時または回転時にレイアウトを制御するには、自動サイズ調整と自動レイアウトの2つの異なるメカニズムがあります。
 
 ## <a name="providing-haptic-feedbackiosuser-interfaceios-uihaptic-feedbackmd"></a>[Haptic フィードバックの提供](~/ios/user-interface/ios-ui/haptic-feedback.md)
 

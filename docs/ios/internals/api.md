@@ -4,22 +4,22 @@ description: このドキュメントでは、xamarin API のリファレンス�
 ms.prod: xamarin
 ms.assetid: 4C1669A4-C12B-9C49-4A39-9046576D10DC
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 11/25/2015
-ms.openlocfilehash: 3b95710f7e847cd8b6dd8357512cb253e5582884
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 9d3f4388601c1bdf38f0446b4fa58cdf79b20612
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291939"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022373"
 ---
 # <a name="xamarinios-api-overview"></a>Xamarin. iOS API の概要
 
-Xamarin.iOS は、 CocoaTouch API への C #/visual CIL バインディングを公開し、また、ECMA CIL API と .NET のさまざまな API へのアクセスも提供します。
+Xamarin では、CocoaTouch C#API に対してまたは cil バインドを公開します。また、ECMA cil api やその他のさまざまな .net api へのアクセスも提供します。
 
- **API リファレンス**:API リファレンスは[docs.microsoft.com/dotnet/api/](https://docs.microsoft.com/dotnet/api/)で入手でき[ます。](https://docs.microsoft.com/dotnet/api/?view=xamarin-ios-sdk-12)ネイティブ iPhone api の api バインドについては、Xamarin から開始します。または、.net API に関するドキュメントについては、「[基底クラスライブラリ」ノード](https://docs.microsoft.com/dotnet/api/?view=xamarinios-10.8)を参照してください。
+ **Api リファレンス**: api リファレンスは[docs.microsoft.com/dotnet/api/](https://docs.microsoft.com/dotnet/api/)で入手できます。 Xamarin から開始します。ネイティブ iPhone api の api バインドの場合は、次のドキュメントについては、「[基底クラスライブラリ」ノード](https://docs.microsoft.com/dotnet/api/?view=xamarinios-10.8)に進んで[ください。](https://docs.microsoft.com/dotnet/api/?view=xamarin-ios-sdk-12).NET API。
 
- **API の設計**:CIL/CocoaTouch バインディングの API 設計については、「 [Xamarin. IOS Api design](~/ios/internals/api-design/index.md) 」ドキュメントで説明されています。また、この api では、目標 c Api と c Api C#をからバインドし、それらを/CIL ワールドに公開する方法について説明しています。
+ **Api の設計**: CIL/CocoaTouch バインディングの api 設計については、「 [XAMARIN. iOS api design](~/ios/internals/api-design/index.md) 」ドキュメントで説明されています。また、目的の c api と c api をからC#バインドし、それらを/CIL の世界に公開する方法についても説明します。
 
- **アセンブリ**:/CIL/ECMA の Api と Xamarin で使用できる Api の詳細については、バインドされ[たアセンブリの一覧](~/cross-platform/internals/available-assemblies.md)を確認してください。 C#
+ **アセンブリ**: バインドされた[アセンブリの一覧](~/cross-platform/internals/available-assemblies.md)で、 C#/CIL/ECMA の api を Xamarin で使用できる詳細なリファレンスがあるかどうかを確認します。

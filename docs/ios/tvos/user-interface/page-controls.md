@@ -4,21 +4,21 @@ description: このドキュメントでは、Xamarin でビルドされたア�
 ms.prod: xamarin
 ms.assetid: 19198D46-7BBE-4D04-9BFA-7D1C5C9F9FC6
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 8bb517eaa549567ae92695fbad300d055f42771f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 12fe9645ab832db1db37e36b0342664bbd2fe9f8
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769046"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030413"
 ---
 # <a name="working-with-tvos-page-controls-in-xamarin"></a>Xamarin での tvOS Page コントロールの使用
 
 場合によっては、tvOS アプリに一連のページまたはイメージを表示する必要があります。 ページコントロールは、ユーザーが最大ページ数を超えているページを明確に示すように設計されています。 ページコントロールには、暗い楕円形の背景に対して一連のドットが表示されます。 現在のページには塗りつぶされたドットが表示され、他のすべてのページは中空点として表示されます。 ページコントロールは、背景領域に収まりきらない場合に、最も外側のドットをクリップします。
 
-[![](page-controls-images/page01.png "サンプルページコントロール")](page-controls-images/page01.png#lightbox)
+[![](page-controls-images/page01.png "Sample Page control")](page-controls-images/page01.png#lightbox)
 
 ユーザーのみにフィードバックを提供するように設計された非対話型の要素のページコントロール。 現在のページ番号 (ジェスチャやボタンなど) を変更するには、他のコントロールを追加する必要があります。
 
@@ -35,40 +35,40 @@ TvOS アプリでページコントロールを操作する最も簡単な方法
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1. **Solution Pad**で、 `Main.storyboard`ファイルをダブルクリックして開き、編集します。
+1. **Solution Pad**で、`Main.storyboard` ファイルをダブルクリックして開き、編集します。
 1. **ツールボックス**から**ページコントロール**をドラッグし、ビューにドロップします。
 
-    [![](page-controls-images/page02.png "ページコントロール")](page-controls-images/page02.png#lightbox)
+    [![](page-controls-images/page02.png "A Page Control")](page-controls-images/page02.png#lightbox)
 1. **Properties Pad**の [**ウィジェット] タブ**では、ページコントロールの**現在のページ**や**ページの**数など、いくつかのプロパティを調整できます。
 
-    [![](page-controls-images/page03.png "[ウィジェット] タブ")](page-controls-images/page03.png#lightbox)
+    [![](page-controls-images/page03.png "The Widget Tab")](page-controls-images/page03.png#lightbox)
 1. 次に、コントロールまたはジェスチャをビューに追加して、ページのコレクションを前後に移動します。
-1. 最後に、コントロールに**名前**を割り当てて、コードでC#それらに応答できるようにします。 例えば:
+1. 最後に、コントロールに**名前**を割り当てて、コードでC#それらに応答できるようにします。 (例:
 
-    [![](page-controls-images/page04.png "コントロールに名前を指定する")](page-controls-images/page04.png#lightbox)
+    [![](page-controls-images/page04.png "Name the control")](page-controls-images/page04.png#lightbox)
 1. 変更内容を保存します。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. **ソリューションエクスプローラー**で、 `Main.storyboard`ファイルをダブルクリックして開き、編集します。
+1. **ソリューションエクスプローラー**で、`Main.storyboard` ファイルをダブルクリックして開き、編集します。
 1. **ツールボックス**から**ページコントロール**をドラッグし、ビューにドロップします。
 
-    [![](page-controls-images/page02-vs.png "ページコントロール")](page-controls-images/page02-vs.png#lightbox)
+    [![](page-controls-images/page02-vs.png "A Page Control")](page-controls-images/page02-vs.png#lightbox)
 1. **プロパティエクスプローラー**の [**ウィジェット] タブ**では、**現在のページ**やページ**の**数など、ページコントロールのいくつかのプロパティを調整できます。
 
-    [![](page-controls-images/page03-vs.png "[ウィジェット] タブ")](page-controls-images/page03-vs.png#lightbox)
+    [![](page-controls-images/page03-vs.png "The Widget tab")](page-controls-images/page03-vs.png#lightbox)
 1. 次に、コントロールまたはジェスチャをビューに追加して、ページのコレクションを前後に移動します。
-1. 最後に、コントロールに**名前**を割り当てて、コードでC#それらに応答できるようにします。 例えば:
+1. 最後に、コントロールに**名前**を割り当てて、コードでC#それらに応答できるようにします。 (例:
 
-    [![](page-controls-images/page04-vs.png "コントロールに名前を指定する")](page-controls-images/page04-vs.png#lightbox)
+    [![](page-controls-images/page04-vs.png "Name the control")](page-controls-images/page04-vs.png#lightbox)
 1. 変更内容を保存します。
 
 -----
 
 > [!IMPORTANT]
-> など`TouchUpInside`のイベントを、iOS デザイナーの UI 要素 (uibutton など) に割り当てることはできますが、Apple TV にタッチスクリーンやタッチイベントのサポートがないために呼び出されることはありません。 TvOS ユーザーインターフェイス要素の`Primary Action`イベントハンドラーを作成するときは、常にイベントを使用する必要があります。
+> `TouchUpInside` などのイベントを iOS デザイナーの UI 要素 (UIButton など) に割り当てることはできますが、Apple TV にタッチスクリーンやタッチイベントのサポートがないため、呼び出されません。 TvOS ユーザーインターフェイス要素のイベントハンドラーを作成するときは、常に `Primary Action` イベントを使用する必要があります。
 
-ビューコントローラー (例`ViewController.cs`) ファイルを編集し、変更されているページを処理するコードを追加します。 例えば:
+ビューコントローラー (例 `ViewController.cs`) ファイルを編集し、変更されているページを処理するコードを追加します。 (例:
 
 ```csharp
 using System;
@@ -154,13 +154,13 @@ PageView.Pages = 6;
 PageView.CurrentPage = PageNumber;
 ```
 
-`CurrentPage`プロパティはゼロ (0) に基づいているため、最初のページはゼロになり、最後のページはページの最大数を引いたものになります。
+`CurrentPage` プロパティはゼロ (0) に基づいているため、最初のページはゼロになり、最後のページはページの最大数を引いたものになります。
 
 ストーリーボードの操作の詳細については、「 [Hello, tvOS クイックスタートガイド](~/ios/tvos/get-started/hello-tvos.md)」を参照してください。
 
 <a name="Summary" />
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>まとめ
 
 この記事では、tvOS アプリ内でのページコントロールの設計と操作について説明しました。
 

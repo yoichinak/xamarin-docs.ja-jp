@@ -3,15 +3,15 @@ title: インスペクターのインストールと要件
 description: このドキュメントでは、Xamarin Inspector のインストール方法と、サポートされているオペレーティングシステム、Ide、およびアプリプラットフォームについて説明します。
 ms.prod: xamarin
 ms.assetid: 81174493-02D3-4FF5-AD57-04F3288A7F94
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/19/2018
-ms.openlocfilehash: 1273a51d29d7abcbecb9b19ae42e111db8ccc06c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 19c4a15fb2490c7bace4798b0cb8e062b1379a04
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292304"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029695"
 ---
 # <a name="inspector-installation-and-requirements"></a>インスペクターのインストールと要件
 
@@ -31,9 +31,9 @@ ms.locfileid: "70292304"
 
 -----
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>［要件］
 
-### <a name="supported-operating-systems"></a>サポートされるオペレーティング システム
+### <a name="supported-operating-systems"></a>Supported Operating Systems
 
 - **Mac** -OS X 10.11 以上
 - **Windows** -windows 7 以降 (Internet Explorer 11 以降および .net 4.6.1 以上)
@@ -49,7 +49,7 @@ ms.locfileid: "70292304"
 
 ### <a name="supported-app-platforms"></a>サポートされているアプリプラットフォーム
 
-|アプリのプラットフォーム|IDE のサポート|メモ|
+|アプリのプラットフォーム|IDE のサポート|ノート|
 |--- |--- |--- |
 |Mac|Visual Studio for Mac でのみサポートされています|
 |iOS|Visual Studio 2017 および Visual Studio for Mac でサポートされています| リンカーの動作は **[リンクしない]** に設定する必要があります ( **[iOS ビルド]** プロジェクトオプション の下) |
@@ -86,7 +86,7 @@ Visual Studio
 
 インスペクタークライアント
 
-- Mac`~/Library/Logs/Xamarin/Inspector/Xamarin Inspector {date}.log`
+- Mac: `~/Library/Logs/Xamarin/Inspector/Xamarin Inspector {date}.log`
 - Windows: `%LOCALAPPDATA%\Xamarin\Inspector\logs\Xamarin Inspector {date}.log`
 
 1.4. x では、メインメニューから直接 Finder (macOS) またはエクスプローラー (Windows) のログファイルを選択する機能もあります。
@@ -114,8 +114,8 @@ Android と iOS の場合、検査するときに、どのデバイスがデバ�
 
 - IDE に表示されているデバイスの名前
 - デバイスの OS バージョン
-- AndroidX86 エミュレーターを使用していることを確認する
-- Androidどのエミュレータープラットフォームを使用していますか? Google Emulator ですか? Visual Studio Android Emulator ですか? Xamarin Android Player ますか?
+- Android: x86 エミュレーターを使用していることを確認する
+- Android: どのエミュレータープラットフォームを使用していますか? Google Emulator ですか? Visual Studio Android Emulator ですか? Xamarin Android Player。
 - デバッグ中のアプリがデバイスで正しく表示され、機能しているか。
 - デバイスはネットワークに接続されていますか (web ブラウザーで確認してください)。
 

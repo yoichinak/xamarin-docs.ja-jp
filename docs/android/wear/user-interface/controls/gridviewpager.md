@@ -3,15 +3,15 @@ title: GridViewPager
 ms.prod: xamarin
 ms.assetid: A1CDD5F0-049B-4DFA-A268-8A875D26A675
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/02/2018
-ms.openlocfilehash: ff054b1bd9607dd0dade874453a6ddf99ea4fd77
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 77c5eb65601e5bfdac2cbaad2e196a8ae2813981
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70758209"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030322"
 ---
 # <a name="gridviewpager"></a>GridViewPager
 
@@ -19,7 +19,7 @@ ms.locfileid: "70758209"
 
 ![正方形ディスプレイの GridViewPager のスクリーンショットの例](gridviewpager-images/gridviewpager.png)
 
-まず、 [Xamarin Android Wear サポート](https://www.nuget.org/packages/Xamarin.Android.Wear/)NuGet パッケージをプロジェクトに追加します。
+まず、 [Xamarin Android 磨耗サポート](https://www.nuget.org/packages/Xamarin.Android.Wear/)NuGet パッケージをプロジェクトに追加します。
 
 レイアウト XML は次のようになります。
 
@@ -31,11 +31,11 @@ ms.locfileid: "70758209"
     android:keepScreenOn="true" />
 ```
 
-を作成する[`GridPagerAdapter`](https://developer.android.com/reference/android/support/wearable/view/GridPagerAdapter.html)
-(またはのようなサブクラスです。[`FragmentGridPagerAdapter`](https://developer.android.com/reference/android/support/wearable/view/FragmentGridPagerAdapter.html)
+[`GridPagerAdapter`](https://developer.android.com/reference/android/support/wearable/view/GridPagerAdapter.html)を作成する
+(または[`FragmentGridPagerAdapter`](https://developer.android.com/reference/android/support/wearable/view/FragmentGridPagerAdapter.html)のようなサブクラス
 ユーザーが移動したときに表示するビューを指定します。
 
-[サンプルアダプター](https://github.com/xamarin/monodroid-samples/blob/master/wear/GridViewPager/GridViewPager/SimpleGridPagerAdapter.cs)は、、 `RowCount` `GetColumnCount` `GetBackground`、、およびのオーバーライドなど、必要なメソッドを実装する方法を示しています。`GetFragment`
+[サンプルアダプター](https://github.com/xamarin/monodroid-samples/blob/master/wear/GridViewPager/GridViewPager/SimpleGridPagerAdapter.cs)は、`RowCount`、`GetColumnCount`、`GetBackground`、`GetFragment` およびのオーバーライドなど、必要なメソッドを実装する方法を示しています。
 
 次に示すように、アダプターを接続します。
 
